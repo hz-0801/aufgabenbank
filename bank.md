@@ -1,6 +1,7 @@
 # Aufgabenbank – Form und Regeln
 
-Stand 2026-09-26, erste Fassung (Prüfstein prozentrechnung).
+Stand 2026-09-26, zweite Fassung (nach den Prüfsteinen
+prozentrechnung und quadratische-funktionen).
 
 ## Zweck
 
@@ -18,6 +19,9 @@ Struktur.
     bank/<eintrag>/zone.jsonl     die Voraussetzungen (Blatt 0)
     bank/<eintrag>/stand.md       Katalog-Commit, Datum, Zahlen
     werkzeuge/bank-pruef.py       rechnet jede Lösung nach
+    werkzeuge/mappe.py            baut die Mappe eines Eintrags
+    mappen/<eintrag>.md           Quellen eines Eintrags in einer Datei
+    mappen/_bausteine.md          Bausteine der Vorlage (Kurzreferenz)
 
 `<eintrag>` ist der Dateiname des Katalogeintrags ohne `.md`.
 JSONL: eine Aufgabe je Zeile, ein JSON-Objekt, UTF-8, keine
@@ -40,7 +44,8 @@ Leerzeilen. Reihenfolge der Zeilen = Reihenfolge der Kette.
     hoehe         "vorstufe" | "grundfall" | "sprosse" |
                   "pruefung" | "pflicht"
     pflicht       nur bei hoehe pflicht: "fehler" | "begruenden" |
-                  "darstellung" | "anwendung"
+                  "darstellung" | "anwendung"; bei jeder anderen
+                  hoehe fehlt der Schlüssel
     variante      1, 2, 3 …
     aufgabe       der Aufgabentext, LaTeX-fähig, mit den Bausteinen
                   der Vorlage hz-0801/blattbau (Anleitung_mathblatt.md),
@@ -48,22 +53,43 @@ Leerzeilen. Reihenfolge der Zeilen = Reihenfolge der Kette.
                   Zusammenbau
     form          "teil" | "gleichungsraster" | "dreisatz" |
                   "streifenfeld" | "streifenleer" | "ankreuzen" |
-                  "tabelle" | "zeichnen" | "text"
+                  "tabelle" | "zeichnen" | "text"; "streifenfeld"
+                  für jedes Ablesen am Streifen mit Eintrag, auch
+                  wenn die Grafik `\streifen` ist; "streifenleer"
+                  für Einzeichnen oder Einteilen in einen leeren
+                  Streifen
     antwort       Antwortgerüst wie auf dem Blatt ("__ %",
-                  "x1 = __, x2 = __") oder ""
+                  "x1 = __, x2 = __") oder ""; antwort trägt das
+                  Gerüst, aufgabe kein `\leerfeld` – außer in einem
+                  Lückensatz, wo die Lücke Teil des Satzes ist.
+                  Ankreuzoptionen stehen in aufgabe, je `\kreuz`
+                  eine Zeile
     loesung       die Lösung, wie sie in der Lösungsdatei steht
                   (Rechen- und Ablesetypen: Ergebnis; Sachaufgabe:
                   mit Zwischenergebnis; Original: knapper Weg;
                   Begründen: Kern in einem Satz; Fehler finden:
-                  Fehler benannt und richtige Rechnung)
+                  Fehler benannt und richtige Rechnung);
+                  LaTeX-fähig wie aufgabe (für \erg), Tausender
+                  mit `\,`, das Prüfskript zieht sie zusammen
     pruef         Python-Ausdruck, der die Lösungszahl ergibt
-                  (mehrere: Liste); "" bei Begründen und Zeichnen
+                  (mehrere: Liste); bei Rundungsaufgaben der
+                  ungerundete Wert, das Skript rundet kaufmännisch
+                  auf die Stellen der Lösung; bei Brüchen Zähler
+                  und Nenner als Liste; "" nur bei Begründen,
+                  Zeichnen oder einer Lösung ohne Ziffer
     original      null oder {"id": "2018-OS-K7a", "jahr": 2018,
-                  "papier": "FOR"} – nur bei hoehe pruefung
+                  "papier": "OS"} – nur bei hoehe pruefung; papier
+                  aus der Spalte papier der Prüfungsdatei (CSV)
     grafik        "" oder der Bausteinaufruf der Grafik, aus den
                   Aufgabenwerten berechnet
+    loesungsgrafik "" oder der Bausteinaufruf der Lösungsgrafik –
+                  für Skizzieraufgaben, deren Lösung nicht durch
+                  zwei bis drei Punkte beschreibbar ist
     quelle        Zeile des Katalogeintrags, aus der die Sprosse
                   stammt (Zeilennummer beim Stand-Commit)
+
+Prüfkennung „(P10 Jahr Papier)" am Ende des Fragesatzes
+(unterrichtsblatt 3.6), vor den Ankreuzoptionen.
 
 ## Mengen je Kette
 
@@ -72,6 +98,25 @@ je Original des Katalogs (verfremdet); Pflichtelemente je
 Einheit: fehler 3, begruenden 3, anwendung 3, darstellung 3, wo
 die Typen der Einheit sie tragen. Zone: je Fertigkeit 2 sehr
 leichte, 1 mittlere, je Fallstrick 1.
+
+Erkennungsschritt 4 Zeilen: eigene Kette, nur Sprosse 0; er
+steht einmal, in der ersten Einheit seines Bereichs
+(unterrichtsblatt 2.3 a). Typ ohne Kette 3 Zeilen: eine Sprosse,
+hoehe sprosse (nicht grundfall, damit je Einheit genau der
+Grundfall der Kette 5 Zeilen hat). Zone: einmal je Zone ein Paar
+aus Fehler finden und gleichartiger Rechenaufgabe zum häufigsten
+Fallstrick (unterrichtsblatt 2.2), 2 Zeilen – Fehler finden mit
+hoehe pflicht, pflicht fehler, danach die Rechenaufgabe mit hoehe
+sprosse; beide als Sprossen in der Kette der Fertigkeit, zu der
+der Fallstrick gehört.
+
+## Reihenfolge je Datei
+
+Erkennungsschritte (eigene Ketten, nur Sprosse 0) →
+Verfahrenskette des Katalogs → Typen ohne Kette →
+Pflichtelemente als eigene Kette mit dem Namen der
+Verfahrenskette. kette_nr zählt in dieser Folge; die
+Verfahrenskette ist daher nicht immer k1.
 
 ## Regeln für den Inhalt
 
@@ -82,6 +127,10 @@ leichte, 1 mittlere, je Fallstrick 1.
 - Keine ganze Gleichung, kein Term, kein Zahlenpaar und keine
   Funktion aus Merkkasten, Beispiel oder Original des Eintrags;
   einzelne Ziffern und kleine Grundfallzahlen sind frei.
+  Ausnahme: Frei sind der Gegenstand der Kette und die Form, die
+  der Sprossentext selbst nennt (x², 2x², (x − d)² + e als Form).
+  Gesperrt bleiben konkrete Zahlbelegungen aus Kasten und
+  Original (etwa (x − 3)² + 1), Zahlenpaare und Ergebnisse.
 - Ein Original wird verfremdet: gleiches Verfahren, gleiche
   Falle, gleiche Form, andere Zahlen, anderer Kontext; das Feld
   original trägt Kennung, Jahr und Papier.
@@ -102,6 +151,18 @@ leichte, 1 mittlere, je Fallstrick 1.
 - Streifen, Tabelle, Skizze nur, wenn an ihr gelesen, gefärbt
   oder eingeteilt wird.
 - Operatoren in KMK-Bedeutung; Formulierungen eindeutig.
+
+## Quellen je Sitzung
+
+Eine Sitzung liest nur mappen/<eintrag>.md, mappen/_bausteine.md
+und bank.md; Katalog, Anleitung, Prompt und CSV liest sie nicht
+selbst. Grund: Kosten.
+
+## Befunde
+
+Was eine Sitzung am Katalog, an bank.md oder am Prüfskript für
+falsch hält, steht in stand.md unter „Befunde"; sie ändert es
+nicht.
 
 ## Prüfung
 
