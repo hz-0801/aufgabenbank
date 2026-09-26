@@ -166,12 +166,30 @@ nicht.
 
 ## Prüfung
 
-`werkzeuge/bank-pruef.py <eintrag>` liest alle jsonl des
-Eintrags, prüft die Felder (Pflichtfelder, id-Muster,
-Kettenfolge lückenlos, Mengen), wertet jedes pruef aus und
-vergleicht mit den Zahlen in loesung (Zahlenwerte, nicht
-Schreibweisen); Ausgabe je Aufgabe eine Zeile OK/ABWEICHUNG und
-zuletzt die Zahl der Abweichungen. Erst bei null wird
-committet. Weicht eine Lösung ab, wird die Aufgabe korrigiert,
-nicht das Skript – außer das Skript hat erkennbar falsch
-modelliert.
+`werkzeuge/bank-pruef.py <eintrag>` (v0.2) liest alle jsonl des
+Eintrags, dazu mappen/<eintrag>.md und mappen/_bausteine.md.
+Ausgabe je Aufgabe eine Zeile OK/ABWEICHUNG, Warnungen als
+WARNUNG-Zeilen, zuletzt je Datei und gesamt die Zahl der
+Abweichungen und Warnungen.
+
+Abweichungen: Pflichtfelder, id-Muster, Kettenfolge lückenlos;
+jede pruef-Zahl steht an der Ergebnisstelle der Lösung – erste
+Zahl, nach „=" oder „≈", ein Punkt (x|y) oder Bruch dort, oder
+ein Glied einer Aufzählung von Ergebnissen –, nach Rundung auf die
+Stellen der Lösung, Toleranz 0,005; bei form ankreuzen steht die
+Lösungszahl in genau einer Zahloption; jeder Baustein in aufgabe,
+loesung, grafik, loesungsgrafik steht in mappen/_bausteine.md mit
+passender Argumentzahl; bei ksys-Grafiken liegen die Punkte der
+Lösung, jeder Scheitel einer \parabel und jeder \punkt im
+Achsenbereich; form zeichnen oder „Graph" in aufgabe verlangt
+grafik; kein Zahlenpaar, keine Gleichung und kein belegter Term
+aus Merkkasten, Typische Fehler und den Originalen der Mappe in
+aufgabe (Sperre, Ausnahme nach „Regeln für den Inhalt"); keine
+Aufgabe doppelt (aufgabe und grafik zusammen).
+
+Warnungen: Mengen aus „Mengen je Kette", das Zone-Paar, ein
+fehlendes Feld loesungsgrafik, eine fehlende Mappe.
+
+Erst bei null Abweichungen wird committet. Weicht eine Lösung ab,
+wird die Aufgabe korrigiert, nicht das Skript – außer das Skript
+hat erkennbar falsch modelliert; das steht dann unter „Befunde".
