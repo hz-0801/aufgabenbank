@@ -300,7 +300,9 @@ def pruefe_eintrag(eintrag, katalog=None, wurzel=Path(".")):
             if aid in ids:
                 befunde.append(f"id doppelt (auch {ids[aid]})")
             ids[aid] = datei.name
-            t = re.sub(r"\s+", " ", a.get("aufgabe", "")).strip()
+            # gleiche Aufgabe = gleicher Text und gleiche Grafik
+            t = re.sub(r"\s+", " ", a.get("aufgabe", "") + " | "
+                       + a.get("grafik", "")).strip()
             if t and t in texte:
                 befunde.append(f"aufgabe doppelt (wie {texte[t]})")
             texte[t] = aid
