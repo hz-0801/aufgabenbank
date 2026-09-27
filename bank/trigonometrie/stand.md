@@ -91,3 +91,18 @@ e4, zeilenweise ersetzt.
   Seiten sind aus den Koordinaten gerechnet, nicht angesehen.
 - Bedeutung des Sterns der Sinussatz-Originale bleibt offen (Katalog).
 - Rechtwinkelmarke und Höhe in `\dreieck` fehlen der Vorlage.
+
+## Nachbesserung 2026-09-27
+
+- Prüfskript v0.5: 0 Abweichungen, 0 Warnungen vor und nach der
+  Nachbesserung; keine jsonl-Zeile geändert oder gestrichen.
+- Prüfungshöhe: Alle vier Ketten enden auf einer Prüfungshöhe mit
+  P10-Original; keine Prüfungshöhe ohne Original steht als hoehe
+  sprosse, nichts umgestellt.
+- Erkennungsschritte: Die fünf mit gleichem Handgriff waren schon
+  entfallen (siehe Befunde); „sin, cos oder tan?“ und „Mal oder
+  geteilt?“ (e1 k1, k2) verlangen einen anderen Handgriff als die
+  Vorstufe (H, G, A beschriften) und bleiben.
+- Befunde: Keiner ist mit v0.5 erledigt; `\sin` fehlt weiter in
+  STANDARD, ein pruef mit zwei Zahlen gilt bei ksys weiter als
+  Punkt.
