@@ -1,0 +1,2080 @@
+{
+ "laeufe": 83,
+ "ergebnis": [
+  [
+   "blattfuss",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "blattkopf",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "star",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "einheitenkopf",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "verz",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "zweigzeile",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "verfahren",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "verzeichniszeile",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "verztrenn",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "begin:abhakseite",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "abhakgruppe",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "abhak",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "abhakauto",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "aufgabe",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "weit",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "uebersichtskasten",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "begin:aufgabe",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "begin:teile",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "teil",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "steil",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "begin:teilezwei",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "tz",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "leerfeld",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "feld",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "stz",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "begin:geruest",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "gz",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "gzs",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "begin:gleichungsraster",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "gl",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "sgl",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "anweisung",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "rechenplatz",
+   55,
+   [
+    "flaechen-e1-k5-s4-v1",
+    "koerper-e1-k1-s5-v1",
+    "kreis-e1-k4-s1-v1",
+    "matrizen-und-uebergangsprozesse-e3-k1-s2-v2",
+    "pyramide-kegel-kugel-e1-k5-s11-v1"
+   ],
+   {
+    "flaechen-e1-k5-s4-v1": [],
+    "koerper-e1-k1-s5-v1": [],
+    "kreis-e1-k4-s1-v1": [],
+    "matrizen-und-uebergangsprozesse-e3-k1-s2-v2": [],
+    "pyramide-kegel-kugel-e1-k5-s11-v1": []
+   },
+   ""
+  ],
+  [
+   "beispiel",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "rechnung",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "begin:beispiel",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "streifen",
+   17,
+   [
+    "brueche-dezimalzahlen-e1-k1-s6-v17",
+    "prozentrechnung-e3-k1-s1-v1",
+    "brueche-dezimalzahlen-e1-k1-s6-v18",
+    "prozentrechnung-e3-k1-s1-v2",
+    "prozentrechnung-e3-k1-s1-v3"
+   ],
+   {
+    "brueche-dezimalzahlen-e1-k1-s6-v17": [],
+    "prozentrechnung-e3-k1-s1-v1": [],
+    "brueche-dezimalzahlen-e1-k1-s6-v18": [],
+    "prozentrechnung-e3-k1-s1-v2": [],
+    "prozentrechnung-e3-k1-s1-v3": []
+   },
+   ""
+  ],
+  [
+   "mbox",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "feldl",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "punktfeld",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "janein",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "kreuz",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "mnliste",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "nullstellenliste",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "punktprobenliste",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "begleitteil",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "erg",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "hilfeseite",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "begin:schritte",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "schritt",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "achtung",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "wertetabelle",
+   120,
+   [
+    "ableitung-und-aenderungsrate-e3-k1-s1-v1",
+    "extremalprobleme-e1-k2-s3-v3",
+    "funktionsklassen-und-eigenschaften-e6-k1-s1-v1",
+    "kreis-e1-k6-s4-v1",
+    "lineare-funktionen-e1-k1-s0-v1"
+   ],
+   {
+    "ableitung-und-aenderungsrate-e3-k1-s1-v1": [],
+    "extremalprobleme-e1-k2-s3-v3": [],
+    "funktionsklassen-und-eigenschaften-e6-k1-s1-v1": [],
+    "kreis-e1-k6-s4-v1": [],
+    "lineare-funktionen-e1-k1-s0-v1": []
+   },
+   ""
+  ],
+  [
+   "wertetabelleleer",
+   15,
+   [
+    "funktionsklassen-und-eigenschaften-e6-k1-s4-v1",
+    "lineare-gleichungen-e1-k3-s2-v1",
+    "zuordnungen-e1-k1-s0-v1",
+    "funktionsklassen-und-eigenschaften-e6-k1-s4-v2",
+    "lineare-gleichungen-e1-k3-s2-v2"
+   ],
+   {
+    "funktionsklassen-und-eigenschaften-e6-k1-s4-v1": [],
+    "lineare-gleichungen-e1-k3-s2-v1": [],
+    "zuordnungen-e1-k1-s0-v1": [],
+    "funktionsklassen-und-eigenschaften-e6-k1-s4-v2": [],
+    "lineare-gleichungen-e1-k3-s2-v2": []
+   },
+   ""
+  ],
+  [
+   "begin:ksys",
+   930,
+   [
+    "ableitung-und-aenderungsrate-e1-k1-s2-v2",
+    "ableitungsregeln-e2-k1-s5-v1",
+    "abstaende-e1-k2-s5-v1",
+    "bedingte-wahrscheinlichkeit-und-bayes-e3-k1-s3-v1",
+    "brueche-dezimalzahlen-e1-k1-s3-v3"
+   ],
+   {
+    "ableitung-und-aenderungsrate-e1-k1-s2-v2": [],
+    "ableitungsregeln-e2-k1-s5-v1": [],
+    "abstaende-e1-k2-s5-v1": [],
+    "bedingte-wahrscheinlichkeit-und-bayes-e3-k1-s3-v1": [],
+    "brueche-dezimalzahlen-e1-k1-s3-v3": []
+   },
+   ""
+  ],
+  [
+   "gerade",
+   135,
+   [
+    "ableitung-und-aenderungsrate-e1-k1-s9-v3",
+    "ableitungsregeln-e3-k1-s6-v1",
+    "abstaende-e1-k2-s5-v1",
+    "gleichungen-loesen-e1-k3-s4-v1",
+    "konfidenzintervalle-zone-f3-v1"
+   ],
+   {
+    "ableitung-und-aenderungsrate-e1-k1-s9-v3": [],
+    "ableitungsregeln-e3-k1-s6-v1": [],
+    "abstaende-e1-k2-s5-v1": [],
+    "gleichungen-loesen-e1-k3-s4-v1": [],
+    "konfidenzintervalle-zone-f3-v1": []
+   },
+   ""
+  ],
+  [
+   "punkt",
+   183,
+   [
+    "ableitung-und-aenderungsrate-e2-k1-s2-v1",
+    "abstaende-e4-k1-s2-v1",
+    "extremalprobleme-e1-k2-s3-v1",
+    "flaecheninhalt-und-volumen-im-raum-e1-k2-s7-v5",
+    "kurvenuntersuchung-e1-k1-s0-v1"
+   ],
+   {
+    "ableitung-und-aenderungsrate-e2-k1-s2-v1": [],
+    "abstaende-e4-k1-s2-v1": [],
+    "extremalprobleme-e1-k2-s3-v1": [],
+    "flaecheninhalt-und-volumen-im-raum-e1-k2-s7-v5": [],
+    "kurvenuntersuchung-e1-k1-s0-v1": []
+   },
+   ""
+  ],
+  [
+   "steigungsdreieck",
+   7,
+   [
+    "ableitung-und-aenderungsrate-zone-f1-v3",
+    "lineare-funktionen-e2-k3-s0-v1",
+    "lineare-funktionen-e2-k3-s0-v2",
+    "lineare-funktionen-e2-k3-s0-v3",
+    "lineare-funktionen-e2-k3-s0-v4"
+   ],
+   {
+    "ableitung-und-aenderungsrate-zone-f1-v3": [],
+    "lineare-funktionen-e2-k3-s0-v1": [],
+    "lineare-funktionen-e2-k3-s0-v2": [],
+    "lineare-funktionen-e2-k3-s0-v3": [],
+    "lineare-funktionen-e2-k3-s0-v4": []
+   },
+   ""
+  ],
+  [
+   "parabel",
+   90,
+   [
+    "ableitung-und-aenderungsrate-e1-k2-s4-v3",
+    "ableitungsregeln-e2-k1-s5-v1",
+    "funktionsklassen-und-eigenschaften-e5-k1-s3-v1",
+    "gleichungen-loesen-e1-k3-s4-v1",
+    "lineare-funktionen-e2-k5-s6-v9"
+   ],
+   {
+    "ableitung-und-aenderungsrate-e1-k2-s4-v3": [],
+    "ableitungsregeln-e2-k1-s5-v1": [],
+    "funktionsklassen-und-eigenschaften-e5-k1-s3-v1": [],
+    "gleichungen-loesen-e1-k3-s4-v1": [],
+    "lineare-funktionen-e2-k5-s6-v9": []
+   },
+   ""
+  ],
+  [
+   "funktion",
+   241,
+   [
+    "ableitung-und-aenderungsrate-e1-k1-s2-v2",
+    "ableitungsregeln-e2-k1-s5-v1",
+    "bedingte-wahrscheinlichkeit-und-bayes-e3-k1-s3-v1",
+    "extremalprobleme-e1-k1-s2-v1",
+    "flaecheninhalt-durch-integration-e1-k1-s0-v1"
+   ],
+   {
+    "ableitung-und-aenderungsrate-e1-k1-s2-v2": [],
+    "ableitungsregeln-e2-k1-s5-v1": [],
+    "bedingte-wahrscheinlichkeit-und-bayes-e3-k1-s3-v1": [],
+    "extremalprobleme-e1-k1-s2-v1": [],
+    "flaecheninhalt-durch-integration-e1-k1-s0-v1": []
+   },
+   ""
+  ],
+  [
+   "funktionab",
+   157,
+   [
+    "ableitung-und-aenderungsrate-e3-k1-s2-v2",
+    "bedingte-wahrscheinlichkeit-und-bayes-zone-f5-v3",
+    "brueche-dezimalzahlen-e1-k1-s3-v3",
+    "flaecheninhalt-und-volumen-im-raum-e4-k1-s7-v7",
+    "funktionsscharen-und-ortskurven-e1-k1-s5-v1"
+   ],
+   {
+    "ableitung-und-aenderungsrate-e3-k1-s2-v2": [],
+    "bedingte-wahrscheinlichkeit-und-bayes-zone-f5-v3": [],
+    "brueche-dezimalzahlen-e1-k1-s3-v3": [],
+    "flaecheninhalt-und-volumen-im-raum-e4-k1-s7-v7": [],
+    "funktionsscharen-und-ortskurven-e1-k1-s5-v1": []
+   },
+   ""
+  ],
+  [
+   "begin:ksys3",
+   91,
+   [
+    "ebenen-e1-k2-s4-v2",
+    "flaecheninhalt-und-volumen-im-raum-e1-k2-s4-v1",
+    "geraden-e1-k3-s4-v1",
+    "lagebeziehungen-zone-f6-v2",
+    "punkte-und-strecken-im-koordinatensystem-e1-k1-s1-v1"
+   ],
+   {
+    "ebenen-e1-k2-s4-v2": [],
+    "flaecheninhalt-und-volumen-im-raum-e1-k2-s4-v1": [],
+    "geraden-e1-k3-s4-v1": [],
+    "lagebeziehungen-zone-f6-v2": [],
+    "punkte-und-strecken-im-koordinatensystem-e1-k1-s1-v1": []
+   },
+   ""
+  ],
+  [
+   "rpunkt",
+   42,
+   [
+    "ebenen-e1-k2-s4-v2",
+    "flaecheninhalt-und-volumen-im-raum-e1-k2-s4-v1",
+    "geraden-e1-k3-s4-v2",
+    "lagebeziehungen-zone-f6-v2",
+    "punkte-und-strecken-im-koordinatensystem-e1-k1-s1-v1"
+   ],
+   {
+    "ebenen-e1-k2-s4-v2": [],
+    "flaecheninhalt-und-volumen-im-raum-e1-k2-s4-v1": [],
+    "geraden-e1-k3-s4-v2": [],
+    "lagebeziehungen-zone-f6-v2": [],
+    "punkte-und-strecken-im-koordinatensystem-e1-k1-s1-v1": []
+   },
+   ""
+  ],
+  [
+   "rvektor",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "rvektorab",
+   9,
+   [
+    "vektoren-und-rechenoperationen-e2-k1-s3-v1",
+    "vektoren-und-rechenoperationen-e2-k1-s6-v1",
+    "vektoren-und-rechenoperationen-e2-k1-s6-v2",
+    "vektoren-und-rechenoperationen-e2-k1-s6-v3",
+    "vektoren-und-rechenoperationen-e2-k2-s3-v1"
+   ],
+   {
+    "vektoren-und-rechenoperationen-e2-k1-s3-v1": [],
+    "vektoren-und-rechenoperationen-e2-k1-s6-v1": [],
+    "vektoren-und-rechenoperationen-e2-k1-s6-v2": [],
+    "vektoren-und-rechenoperationen-e2-k1-s6-v3": [],
+    "vektoren-und-rechenoperationen-e2-k2-s3-v1": []
+   },
+   ""
+  ],
+  [
+   "rgerade",
+   13,
+   [
+    "scharen-von-geraden-und-ebenen-e1-k2-s6-v1",
+    "schnittmengen-e3-k1-s5-v1",
+    "vektoren-und-rechenoperationen-e1-k2-s5-v1",
+    "scharen-von-geraden-und-ebenen-e1-k2-s6-v2",
+    "schnittmengen-e3-k1-s5-v2"
+   ],
+   {
+    "scharen-von-geraden-und-ebenen-e1-k2-s6-v1": [],
+    "schnittmengen-e3-k1-s5-v1": [],
+    "vektoren-und-rechenoperationen-e1-k2-s5-v1": [],
+    "scharen-von-geraden-und-ebenen-e1-k2-s6-v2": [],
+    "schnittmengen-e3-k1-s5-v2": []
+   },
+   ""
+  ],
+  [
+   "rebene",
+   1,
+   [
+    "ebenen-e3-k2-s4-v2"
+   ],
+   {
+    "ebenen-e3-k2-s4-v2": []
+   },
+   ""
+  ],
+  [
+   "rebenepar",
+   4,
+   [
+    "spiegelung-e3-k1-s3-v3",
+    "vektoren-und-rechenoperationen-e2-k1-s6-v1",
+    "vektoren-und-rechenoperationen-e2-k1-s6-v2",
+    "vektoren-und-rechenoperationen-e2-k1-s6-v3"
+   ],
+   {
+    "spiegelung-e3-k1-s3-v3": [],
+    "vektoren-und-rechenoperationen-e2-k1-s6-v1": [],
+    "vektoren-und-rechenoperationen-e2-k1-s6-v2": [],
+    "vektoren-und-rechenoperationen-e2-k1-s6-v3": []
+   },
+   ""
+  ],
+  [
+   "rquader",
+   39,
+   [
+    "punkte-und-strecken-im-koordinatensystem-e1-k1-s2-v1",
+    "scharen-von-geraden-und-ebenen-e4-k1-s0-v1",
+    "schnittmengen-e3-k1-s4-v1",
+    "spiegelung-e3-k1-s3-v1",
+    "vektoren-und-rechenoperationen-e2-k1-s0-v1"
+   ],
+   {
+    "punkte-und-strecken-im-koordinatensystem-e1-k1-s2-v1": [],
+    "scharen-von-geraden-und-ebenen-e4-k1-s0-v1": [],
+    "schnittmengen-e3-k1-s4-v1": [],
+    "spiegelung-e3-k1-s3-v1": [],
+    "vektoren-und-rechenoperationen-e2-k1-s0-v1": []
+   },
+   ""
+  ],
+  [
+   "rpyramide",
+   6,
+   [
+    "scharen-von-geraden-und-ebenen-e4-k1-s0-v4",
+    "schnittmengen-e3-k1-s2-v1",
+    "spiegelung-e3-k1-s3-v2",
+    "schnittmengen-e3-k1-s2-v2",
+    "scharen-von-geraden-und-ebenen-e4-k1-s1-v5"
+   ],
+   {
+    "scharen-von-geraden-und-ebenen-e4-k1-s0-v4": [],
+    "schnittmengen-e3-k1-s2-v1": [],
+    "spiegelung-e3-k1-s3-v2": [],
+    "schnittmengen-e3-k1-s2-v2": [],
+    "scharen-von-geraden-und-ebenen-e4-k1-s1-v5": []
+   },
+   ""
+  ],
+  [
+   "dreieckrw",
+   42,
+   [
+    "flaechen-e3-k1-s2-v1",
+    "pythagoras-e1-k1-s0-v1",
+    "strahlensaetze-e2-k1-s9-v1",
+    "symmetrie-abbildungen-e2-k2-s6-v3",
+    "winkel-dreiecke-e3-k2-s0-v1"
+   ],
+   {
+    "flaechen-e3-k1-s2-v1": [],
+    "pythagoras-e1-k1-s0-v1": [],
+    "strahlensaetze-e2-k1-s9-v1": [],
+    "symmetrie-abbildungen-e2-k2-s6-v3": [],
+    "winkel-dreiecke-e3-k2-s0-v1": []
+   },
+   ""
+  ],
+  [
+   "dreieck",
+   79,
+   [
+    "flaechen-e3-k1-s0-v1",
+    "pythagoras-e1-k1-s0-v2",
+    "symmetrie-abbildungen-e2-k2-s0-v4",
+    "terme-e1-k1-s3-v2",
+    "trigonometrie-e1-k1-s0-v1"
+   ],
+   {
+    "flaechen-e3-k1-s0-v1": [],
+    "pythagoras-e1-k1-s0-v2": [
+     "Fehler: Missing $ inserted. | <inserted text> $",
+     "Fehler: Extra }, or forgotten $. | <recently read> }",
+     "Fehler: Undefined control sequence. | \\dreieck code ...de[midway,above right,font=\\small ] {$#4$}; \\path (A) -- (C) node[midway,above left,font=\\small ] {$#5$}; \\path (A) -- (B) node[midway,below,font=\\small ] {$#6$}; \\node [font=\\small ]",
+     "Fehler: Missing } inserted. | <inserted text> }",
+     "Fehler: Extra }, or forgotten $. | <recently read> }",
+     "Fehler: Undefined control sequence. | \\dreieck code ... -- (C) node[midway,above left,font=\\small ] {$#5$}; \\path (A) -- (B) node[midway,below,font=\\small ] {$#6$}; \\node [font=\\small ] at ($(A)+(0.55,0.22)$) {$#7$}; \\node [font=\\small ] ",
+     "Fehler: Missing } inserted. | <inserted text> }",
+     "Fehler: Extra }, or forgotten $. | <recently read> }",
+     "Fehler: Undefined control sequence. | \\endtikzpicture ...et \\pgf@trimleft@final@smuggle =\\pgf@trimleft \\global \\let \\pgf@trimright@final@smuggle =\\pgf@trimright \\global \\let \\pgf@remember@smuggle =\\ifpgfrememberpicturepositiononpage \\pgf@",
+     "Fehler: Missing $ inserted. | <inserted text> $",
+     "Fehler: Missing } inserted. | <inserted text> }",
+     "Fehler: Package tikz Error: Giving up on this path. Did you forget a semicolon?. | See the tikz package documentation for explanation.",
+     "Fehler: Extra }, or forgotten \\endgroup. | \\endpgfpicture ...pgf@picminx \\xdef \\pgf@trimleft@final {-\\the \\pgf@x }\\pgf@process {\\pgf@trimright }\\global \\advance \\pgf@x by-\\pgf@picmaxx \\xdef \\pgf@trimright@final {\\the \\pgf@x }\\pgf@remember@laye",
+     "Fehler: Extra }, or forgotten \\endgroup. | \\endpgfpicture ...the \\pgf@x }\\pgf@remember@layerlist@globally \\endgroup \\hss \\egroup \\pgf@restore@layerlist@from@global \\pgf@insertlayers \\endgroup \\pgfsys@discardpath \\endgroup \\pgfsys@endscope \\pgf",
+     "Fehler: Missing } inserted. | <inserted text> }",
+     "Fehler: LaTeX Error: Something's wrong--perhaps a missing \\item. | See the LaTeX manual or LaTeX Companion for explanation.",
+     "Fehler: LaTeX Error: Something's wrong--perhaps a missing \\item. | See the LaTeX manual or LaTeX Companion for explanation.",
+     "Fehler: LaTeX Error: \\begin{tikzpicture} on input line 19 ended by \\end{list}. | See the LaTeX manual or LaTeX Companion for explanation.",
+     "Fehler: LaTeX Error: \\begin{tikzpicture} on input line 19 ended by \\end{teile}. | See the LaTeX manual or LaTeX Companion for explanation.",
+     "Fehler: Missing } inserted. | <inserted text> }",
+     "Fehler: Extra }, or forgotten \\endgroup. | \\endminipage ->\\par \\unskip \\ifvoid \\@mpfootins \\else \\vskip \\skip \\@mpfootins \\normalcolor \\footnoterule \\unvbox \\@mpfootins \\fi \\@minipagefalse \\color@endgroup \\egroup \\expandafter \\@iiiparbox \\@mpa",
+     "Fehler: LaTeX Error: \\begin{tikzpicture} on input line 19 ended by \\end{minipage}. | See the LaTeX manual or LaTeX Companion for explanation.",
+     "Fehler: LaTeX Error: \\begin{list} on input line 16 ended by \\end{lrbox}. | See the LaTeX manual or LaTeX Companion for explanation.",
+     "Fehler: LaTeX Error: \\begin{teile} on input line 16 ended by \\end{aufgabe}. | See the LaTeX manual or LaTeX Companion for explanation."
+    ],
+    "symmetrie-abbildungen-e2-k2-s0-v4": [],
+    "terme-e1-k1-s3-v2": [],
+    "trigonometrie-e1-k1-s0-v1": []
+   },
+   "außerhalb: Fehler: LaTeX Error: \\begin{minipage} on input line 15 ended by \\end{document}. | See the LaTeX manual or LaTeX Companion for explanation.; Fehler: You can't use `\\end' in internal vertical mode. | \\enddocument ...el@new@label@record@testdef \\@tempswafalse \\makeatletter \\@@input \\jobname .aux \\fi \\UseOneTimeHook {enddocument/afteraux}\\UseOneTimeHook {enddocument/info}\\endgroup \\UseOneTimeHook {e; Fehler: LaTeX Error: \\begin{minipage} on input line 15 ended by \\end{document}. | See the LaTeX manual or LaTeX Companion for explanation."
+  ],
+  [
+   "quader",
+   11,
+   [
+    "koerper-e1-k1-s1-v1",
+    "punkte-und-strecken-im-koordinatensystem-zone-f2-v1",
+    "pythagoras-e3-k2-s0-v3",
+    "koerper-e1-k1-s1-v5",
+    "pythagoras-e3-k2-s14-v1"
+   ],
+   {
+    "koerper-e1-k1-s1-v1": [],
+    "punkte-und-strecken-im-koordinatensystem-zone-f2-v1": [],
+    "pythagoras-e3-k2-s0-v3": [],
+    "koerper-e1-k1-s1-v5": [],
+    "pythagoras-e3-k2-s14-v1": []
+   },
+   ""
+  ],
+  [
+   "zylinder",
+   11,
+   [
+    "koerper-e1-k1-s0-v3",
+    "pyramide-kegel-kugel-e1-k1-s0-v2",
+    "pythagoras-e3-k2-s13-v1",
+    "koerper-e1-k1-s1-v3",
+    "pythagoras-e3-k2-s13-v2"
+   ],
+   {
+    "koerper-e1-k1-s0-v3": [],
+    "pyramide-kegel-kugel-e1-k1-s0-v2": [],
+    "pythagoras-e3-k2-s13-v1": [],
+    "koerper-e1-k1-s1-v3": [],
+    "pythagoras-e3-k2-s13-v2": []
+   },
+   ""
+  ],
+  [
+   "prismadreieck",
+   13,
+   [
+    "koerper-e1-k1-s0-v1",
+    "koerper-e1-k1-s0-v2",
+    "koerper-e1-k1-s1-v2",
+    "koerper-e1-k5-s4-v2",
+    "koerper-e3-k1-s0-v2"
+   ],
+   {
+    "koerper-e1-k1-s0-v1": [],
+    "koerper-e1-k1-s0-v2": [],
+    "koerper-e1-k1-s1-v2": [],
+    "koerper-e1-k5-s4-v2": [],
+    "koerper-e3-k1-s0-v2": []
+   },
+   ""
+  ],
+  [
+   "pyramide",
+   19,
+   [
+    "koerper-e1-k1-s0-v4",
+    "punkte-und-strecken-im-koordinatensystem-zone-f2-v2",
+    "pyramide-kegel-kugel-e1-k1-s0-v1",
+    "pythagoras-e3-k1-s0-v2",
+    "koerper-e1-k1-s2-v3"
+   ],
+   {
+    "koerper-e1-k1-s0-v4": [],
+    "punkte-und-strecken-im-koordinatensystem-zone-f2-v2": [],
+    "pyramide-kegel-kugel-e1-k1-s0-v1": [],
+    "pythagoras-e3-k1-s0-v2": [],
+    "koerper-e1-k1-s2-v3": []
+   },
+   ""
+  ],
+  [
+   "kegel",
+   17,
+   [
+    "koerper-e1-k1-s1-v4",
+    "pythagoras-e3-k1-s0-v1",
+    "pyramide-kegel-kugel-e2-k2-s0-v1",
+    "pythagoras-e3-k2-s10-v1",
+    "pyramide-kegel-kugel-e2-k2-s0-v2"
+   ],
+   {
+    "koerper-e1-k1-s1-v4": [],
+    "pythagoras-e3-k1-s0-v1": [],
+    "pyramide-kegel-kugel-e2-k2-s0-v1": [],
+    "pythagoras-e3-k2-s10-v1": [],
+    "pyramide-kegel-kugel-e2-k2-s0-v2": []
+   },
+   ""
+  ],
+  [
+   "kugel",
+   3,
+   [
+    "pyramide-kegel-kugel-e1-k1-s0-v3",
+    "pyramide-kegel-kugel-e3-k1-s0-v1",
+    "pyramide-kegel-kugel-e3-k2-s3-v2"
+   ],
+   {
+    "pyramide-kegel-kugel-e1-k1-s0-v3": [],
+    "pyramide-kegel-kugel-e3-k1-s0-v1": [],
+    "pyramide-kegel-kugel-e3-k2-s3-v2": []
+   },
+   ""
+  ],
+  [
+   "begin:kreis",
+   11,
+   [
+    "kreis-e1-k2-s0-v1",
+    "winkel-dreiecke-zone-f5-v3",
+    "kreis-e1-k2-s0-v2",
+    "kreis-e1-k2-s0-v3",
+    "kreis-e1-k2-s0-v4"
+   ],
+   {
+    "kreis-e1-k2-s0-v1": [],
+    "winkel-dreiecke-zone-f5-v3": [],
+    "kreis-e1-k2-s0-v2": [],
+    "kreis-e1-k2-s0-v3": [],
+    "kreis-e1-k2-s0-v4": []
+   },
+   ""
+  ],
+  [
+   "mittelpunkt",
+   11,
+   [
+    "kreis-e1-k2-s0-v1",
+    "winkel-dreiecke-zone-f5-v3",
+    "kreis-e1-k2-s0-v2",
+    "kreis-e1-k2-s0-v3",
+    "kreis-e1-k2-s0-v4"
+   ],
+   {
+    "kreis-e1-k2-s0-v1": [],
+    "winkel-dreiecke-zone-f5-v3": [],
+    "kreis-e1-k2-s0-v2": [],
+    "kreis-e1-k2-s0-v3": [],
+    "kreis-e1-k2-s0-v4": []
+   },
+   ""
+  ],
+  [
+   "kreispunkt",
+   2,
+   [
+    "kreis-e1-k3-s1-v1",
+    "kreis-e1-k3-s1-v2"
+   ],
+   {
+    "kreis-e1-k3-s1-v1": [],
+    "kreis-e1-k3-s1-v2": []
+   },
+   ""
+  ],
+  [
+   "radius",
+   7,
+   [
+    "kreis-e1-k2-s0-v2",
+    "winkel-dreiecke-zone-f5-v3",
+    "kreis-e1-k2-s0-v4",
+    "kreis-e1-k3-s1-v3",
+    "kreis-e2-k2-s1-v1"
+   ],
+   {
+    "kreis-e1-k2-s0-v2": [],
+    "winkel-dreiecke-zone-f5-v3": [],
+    "kreis-e1-k2-s0-v4": [],
+    "kreis-e1-k3-s1-v3": [],
+    "kreis-e2-k2-s1-v1": []
+   },
+   ""
+  ],
+  [
+   "durchmesser",
+   4,
+   [
+    "kreis-e1-k2-s0-v1",
+    "winkel-dreiecke-zone-f5-v3",
+    "kreis-e1-k2-s0-v3",
+    "kreis-e1-k3-s1-v3"
+   ],
+   {
+    "kreis-e1-k2-s0-v1": [],
+    "winkel-dreiecke-zone-f5-v3": [],
+    "kreis-e1-k2-s0-v3": [],
+    "kreis-e1-k3-s1-v3": []
+   },
+   ""
+  ],
+  [
+   "sehne",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "tangente",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "sektor",
+   3,
+   [
+    "kreis-e2-k2-s1-v1",
+    "kreis-e2-k2-s1-v2",
+    "kreis-e2-k2-s1-v3"
+   ],
+   {
+    "kreis-e2-k2-s1-v1": [],
+    "kreis-e2-k2-s1-v2": [],
+    "kreis-e2-k2-s1-v3": []
+   },
+   ""
+  ],
+  [
+   "bogen",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "geradenkreuzung",
+   14,
+   [
+    "symmetrie-abbildungen-zone-f2-v1",
+    "winkel-dreiecke-e2-k2-s0-v1",
+    "winkel-dreiecke-e2-k2-s0-v2",
+    "winkel-dreiecke-e2-k2-s1-v1",
+    "winkel-dreiecke-e2-k2-s1-v2"
+   ],
+   {
+    "symmetrie-abbildungen-zone-f2-v1": [],
+    "winkel-dreiecke-e2-k2-s0-v1": [],
+    "winkel-dreiecke-e2-k2-s0-v2": [],
+    "winkel-dreiecke-e2-k2-s1-v1": [],
+    "winkel-dreiecke-e2-k2-s1-v2": []
+   },
+   ""
+  ],
+  [
+   "parallelenpaar",
+   17,
+   [
+    "winkel-dreiecke-e2-k1-s0-v1",
+    "winkel-dreiecke-e2-k1-s0-v2",
+    "winkel-dreiecke-e2-k1-s0-v3",
+    "winkel-dreiecke-e2-k1-s0-v4",
+    "winkel-dreiecke-e2-k2-s0-v3"
+   ],
+   {
+    "winkel-dreiecke-e2-k1-s0-v1": [],
+    "winkel-dreiecke-e2-k1-s0-v2": [],
+    "winkel-dreiecke-e2-k1-s0-v3": [],
+    "winkel-dreiecke-e2-k1-s0-v4": [],
+    "winkel-dreiecke-e2-k2-s0-v3": []
+   },
+   ""
+  ],
+  [
+   "winkel",
+   34,
+   [
+    "flaechen-zone-f6-v1",
+    "kreis-zone-f5-v3",
+    "symmetrie-abbildungen-zone-f6-v1",
+    "trigonometrie-zone-f2-v3",
+    "trigonometrische-funktionen-zone-f5-v4"
+   ],
+   {
+    "flaechen-zone-f6-v1": [],
+    "kreis-zone-f5-v3": [],
+    "symmetrie-abbildungen-zone-f6-v1": [],
+    "trigonometrie-zone-f2-v3": [],
+    "trigonometrische-funktionen-zone-f5-v4": []
+   },
+   ""
+  ],
+  [
+   "winkelstrahl",
+   33,
+   [
+    "kreis-zone-f5-v4",
+    "winkel-dreiecke-e4-k1-s1-v1",
+    "winkel-dreiecke-e4-k1-s6-v1",
+    "winkel-dreiecke-e5-k1-s7-v1"
+   ],
+   {
+    "kreis-zone-f5-v4": [],
+    "winkel-dreiecke-e4-k1-s1-v1": [],
+    "winkel-dreiecke-e4-k1-s6-v1": [],
+    "winkel-dreiecke-e5-k1-s7-v1": []
+   },
+   ""
+  ],
+  [
+   "viereck",
+   21,
+   [
+    "flaechen-e1-k2-s4-v2",
+    "pythagoras-e3-k2-s0-v2",
+    "symmetrie-abbildungen-e2-k2-s3-v2",
+    "terme-e1-k1-s3-v1",
+    "winkel-dreiecke-e2-k2-s9-v2"
+   ],
+   {
+    "flaechen-e1-k2-s4-v2": [],
+    "pythagoras-e3-k2-s0-v2": [],
+    "symmetrie-abbildungen-e2-k2-s3-v2": [],
+    "terme-e1-k1-s3-v1": [],
+    "winkel-dreiecke-e2-k2-s9-v2": []
+   },
+   ""
+  ],
+  [
+   "parallelogramm",
+   14,
+   [
+    "flaechen-e2-k1-s0-v1",
+    "symmetrie-abbildungen-e2-k2-s4-v2",
+    "trigonometrie-e3-k1-s0-v2",
+    "winkel-dreiecke-e2-k2-s9-v1",
+    "flaechen-e2-k1-s0-v2"
+   ],
+   {
+    "flaechen-e2-k1-s0-v1": [],
+    "symmetrie-abbildungen-e2-k2-s4-v2": [],
+    "trigonometrie-e3-k1-s0-v2": [],
+    "winkel-dreiecke-e2-k2-s9-v1": [],
+    "flaechen-e2-k1-s0-v2": []
+   },
+   ""
+  ],
+  [
+   "rechteck",
+   6,
+   [
+    "symmetrie-abbildungen-e2-k1-s0-v1",
+    "winkel-dreiecke-zone-f1-v1",
+    "symmetrie-abbildungen-e2-k2-s0-v3",
+    "winkel-dreiecke-zone-f4-v2",
+    "symmetrie-abbildungen-e2-k6-s3-v3"
+   ],
+   {
+    "symmetrie-abbildungen-e2-k1-s0-v1": [],
+    "winkel-dreiecke-zone-f1-v1": [],
+    "symmetrie-abbildungen-e2-k2-s0-v3": [],
+    "winkel-dreiecke-zone-f4-v2": [],
+    "symmetrie-abbildungen-e2-k6-s3-v3": []
+   },
+   ""
+  ],
+  [
+   "trapez",
+   14,
+   [
+    "flaechen-e4-k1-s0-v1",
+    "pythagoras-e3-k2-s3-v1",
+    "symmetrie-abbildungen-e2-k1-s0-v4",
+    "winkel-dreiecke-e2-k2-s9-v3",
+    "pythagoras-e3-k2-s3-v2"
+   ],
+   {
+    "flaechen-e4-k1-s0-v1": [],
+    "pythagoras-e3-k2-s3-v1": [],
+    "symmetrie-abbildungen-e2-k1-s0-v4": [],
+    "winkel-dreiecke-e2-k2-s9-v3": [],
+    "pythagoras-e3-k2-s3-v2": []
+   },
+   ""
+  ],
+  [
+   "raute",
+   11,
+   [
+    "brueche-dezimalzahlen-e1-k1-s6-v15",
+    "flaechen-e4-k1-s0-v3",
+    "pythagoras-e3-k1-s0-v3",
+    "symmetrie-abbildungen-e2-k1-s0-v2",
+    "symmetrie-abbildungen-e2-k2-s0-v2"
+   ],
+   {
+    "brueche-dezimalzahlen-e1-k1-s6-v15": [],
+    "flaechen-e4-k1-s0-v3": [],
+    "pythagoras-e3-k1-s0-v3": [],
+    "symmetrie-abbildungen-e2-k1-s0-v2": [],
+    "symmetrie-abbildungen-e2-k2-s0-v2": []
+   },
+   ""
+  ],
+  [
+   "drachen",
+   13,
+   [
+    "flaechen-e4-k1-s0-v2",
+    "pythagoras-e3-k2-s0-v4",
+    "symmetrie-abbildungen-e2-k1-s0-v3",
+    "winkel-dreiecke-e3-k2-s11-v3",
+    "symmetrie-abbildungen-e2-k2-s0-v1"
+   ],
+   {
+    "flaechen-e4-k1-s0-v2": [],
+    "pythagoras-e3-k2-s0-v4": [],
+    "symmetrie-abbildungen-e2-k1-s0-v3": [],
+    "winkel-dreiecke-e3-k2-s11-v3": [],
+    "symmetrie-abbildungen-e2-k2-s0-v1": []
+   },
+   ""
+  ],
+  [
+   "netzquader",
+   1,
+   [
+    "koerper-e2-k6-s4-v2"
+   ],
+   {
+    "koerper-e2-k6-s4-v2": []
+   },
+   ""
+  ],
+  [
+   "netzwuerfel",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "netzpyramide",
+   6,
+   [
+    "koerper-e1-k5-s4-v1",
+    "pyramide-kegel-kugel-e1-k5-s0-v4",
+    "pyramide-kegel-kugel-e1-k5-s10-v1",
+    "pyramide-kegel-kugel-e1-k5-s10-v2",
+    "pyramide-kegel-kugel-e1-k5-s10-v3"
+   ],
+   {
+    "koerper-e1-k5-s4-v1": [],
+    "pyramide-kegel-kugel-e1-k5-s0-v4": [],
+    "pyramide-kegel-kugel-e1-k5-s10-v1": [],
+    "pyramide-kegel-kugel-e1-k5-s10-v2": [],
+    "pyramide-kegel-kugel-e1-k5-s10-v3": []
+   },
+   ""
+  ],
+  [
+   "netzzylinder",
+   3,
+   [
+    "koerper-e1-k5-s4-v3",
+    "strahlensaetze-zone-f6-v4",
+    "koerper-e4-k3-s4-v3"
+   ],
+   {
+    "koerper-e1-k5-s4-v3": [],
+    "strahlensaetze-zone-f6-v4": [],
+    "koerper-e4-k3-s4-v3": []
+   },
+   ""
+  ],
+  [
+   "strahlensatz",
+   26,
+   [
+    "strahlensaetze-e3-k1-s0-v1",
+    "strahlensaetze-e3-k1-s0-v2",
+    "strahlensaetze-e3-k1-s0-v3",
+    "strahlensaetze-e3-k1-s0-v4",
+    "strahlensaetze-e3-k1-s1-v1"
+   ],
+   {
+    "strahlensaetze-e3-k1-s0-v1": [],
+    "strahlensaetze-e3-k1-s0-v2": [],
+    "strahlensaetze-e3-k1-s0-v3": [],
+    "strahlensaetze-e3-k1-s0-v4": [],
+    "strahlensaetze-e3-k1-s1-v1": []
+   },
+   ""
+  ],
+  [
+   "baumzwei",
+   54,
+   [
+    "bedingte-wahrscheinlichkeit-und-bayes-e2-k1-s1-v1",
+    "binomialverteilung-e1-k2-s4-v1",
+    "kenngroessen-von-verteilungen-e1-k5-s3-v3",
+    "unabhaengigkeit-e1-k3-s4-v2",
+    "wahrscheinlichkeit-e1-k3-s3-v1"
+   ],
+   {
+    "bedingte-wahrscheinlichkeit-und-bayes-e2-k1-s1-v1": [],
+    "binomialverteilung-e1-k2-s4-v1": [],
+    "kenngroessen-von-verteilungen-e1-k5-s3-v3": [],
+    "unabhaengigkeit-e1-k3-s4-v2": [],
+    "wahrscheinlichkeit-e1-k3-s3-v1": []
+   },
+   ""
+  ],
+  [
+   "saeulen",
+   9,
+   [
+    "binomialverteilung-e5-k1-s5-v2",
+    "kenngroessen-von-verteilungen-e1-k5-s3-v1",
+    "zufallsgroessen-und-verteilungen-e1-k3-s4-v1",
+    "binomialverteilung-e5-k3-s4-v1",
+    "kenngroessen-von-verteilungen-e4-k2-s3-v2"
+   ],
+   {
+    "binomialverteilung-e5-k1-s5-v2": [
+     "Fehler: Extra }, or forgotten $. | \\saeulenab code ...(\\i ,\\sabymin ) {\\k }; \\else \\node [below,font=\\small ,inner sep=4pt] at (\\i ,\\sabymin ) {\\k }; \\fi } \\draw [-{Stealth[length=2mm]}] (0,\\sabymin ) -- (0,\\sabo ) node[above right,fon",
+     "Fehler: Undefined control sequence. | \\saeulenab code ...bymin ) {\\k }; \\else \\node [below,font=\\small ,inner sep=4pt] at (\\i ,\\sabymin ) {\\k }; \\fi } \\draw [-{Stealth[length=2mm]}] (0,\\sabymin ) -- (0,\\sabo ) node[above right,font=\\small",
+     "Fehler: Undefined control sequence. | \\endtikzpicture ...et \\pgf@trimleft@final@smuggle =\\pgf@trimleft \\global \\let \\pgf@trimright@final@smuggle =\\pgf@trimright \\global \\let \\pgf@remember@smuggle =\\ifpgfrememberpicturepositiononpage \\pgf@",
+     "Fehler: Missing $ inserted. | <inserted text> $",
+     "Fehler: Missing } inserted. | <inserted text> }",
+     "Fehler: Package tikz Error: Giving up on this path. Did you forget a semicolon?. | See the tikz package documentation for explanation.",
+     "Fehler: Extra }, or forgotten \\endgroup. | \\endpgfpicture ...pgf@picminx \\xdef \\pgf@trimleft@final {-\\the \\pgf@x }\\pgf@process {\\pgf@trimright }\\global \\advance \\pgf@x by-\\pgf@picmaxx \\xdef \\pgf@trimright@final {\\the \\pgf@x }\\pgf@remember@laye",
+     "Fehler: Extra }, or forgotten \\endgroup. | \\endpgfpicture ...the \\pgf@x }\\pgf@remember@layerlist@globally \\endgroup \\hss \\egroup \\pgf@restore@layerlist@from@global \\pgf@insertlayers \\endgroup \\pgfsys@discardpath \\endgroup \\pgfsys@endscope \\pgf",
+     "Fehler: Missing } inserted. | <inserted text> }",
+     "Fehler: LaTeX Error: Something's wrong--perhaps a missing \\item. | See the LaTeX manual or LaTeX Companion for explanation.",
+     "Fehler: LaTeX Error: Something's wrong--perhaps a missing \\item. | See the LaTeX manual or LaTeX Companion for explanation.",
+     "Fehler: LaTeX Error: \\begin{tikzpicture} on input line 10 ended by \\end{list}. | See the LaTeX manual or LaTeX Companion for explanation.",
+     "Fehler: LaTeX Error: \\begin{tikzpicture} on input line 10 ended by \\end{teile}. | See the LaTeX manual or LaTeX Companion for explanation.",
+     "Fehler: Missing } inserted. | <inserted text> }",
+     "zu breit: 231.29956 pt",
+     "Fehler: Extra }, or forgotten \\endgroup. | \\endminipage ->\\par \\unskip \\ifvoid \\@mpfootins \\else \\vskip \\skip \\@mpfootins \\normalcolor \\footnoterule \\unvbox \\@mpfootins \\fi \\@minipagefalse \\color@endgroup \\egroup \\expandafter \\@iiiparbox \\@mpa",
+     "Fehler: LaTeX Error: \\begin{tikzpicture} on input line 10 ended by \\end{minipage}. | See the LaTeX manual or LaTeX Companion for explanation.",
+     "Fehler: LaTeX Error: \\begin{list} on input line 7 ended by \\end{lrbox}. | See the LaTeX manual or LaTeX Companion for explanation.",
+     "Fehler: LaTeX Error: \\begin{teile} on input line 7 ended by \\end{aufgabe}. | See the LaTeX manual or LaTeX Companion for explanation."
+    ],
+    "kenngroessen-von-verteilungen-e1-k5-s3-v1": [],
+    "zufallsgroessen-und-verteilungen-e1-k3-s4-v1": [],
+    "binomialverteilung-e5-k3-s4-v1": [],
+    "kenngroessen-von-verteilungen-e4-k2-s3-v2": []
+   },
+   "außerhalb: Fehler: LaTeX Error: \\begin{minipage} on input line 6 ended by \\end{document}. | See the LaTeX manual or LaTeX Companion for explanation.; Fehler: You can't use `\\end' in internal vertical mode. | \\enddocument ...el@new@label@record@testdef \\@tempswafalse \\makeatletter \\@@input \\jobname .aux \\fi \\UseOneTimeHook {enddocument/afteraux}\\UseOneTimeHook {enddocument/info}\\endgroup \\UseOneTimeHook {e; Fehler: LaTeX Error: \\begin{minipage} on input line 6 ended by \\end{document}. | See the LaTeX manual or LaTeX Companion for explanation."
+  ],
+  [
+   "saeulenab",
+   30,
+   [
+    "binomialverteilung-e5-k1-s1-v1",
+    "kenngroessen-von-verteilungen-e1-k5-s3-v2",
+    "matrizen-und-uebergangsprozesse-zone-f3-v1",
+    "zufallsgroessen-und-verteilungen-e1-k1-s0-v2",
+    "zufallsgroessen-und-verteilungen-e1-k3-s4-v2"
+   ],
+   {
+    "binomialverteilung-e5-k1-s1-v1": [
+     "Fehler: Extra }, or forgotten $. | \\saeulenab code ...(\\i ,\\sabymin ) {\\k }; \\else \\node [below,font=\\small ,inner sep=4pt] at (\\i ,\\sabymin ) {\\k }; \\fi } \\draw [-{Stealth[length=2mm]}] (0,\\sabymin ) -- (0,\\sabo ) node[above right,fon",
+     "Fehler: Undefined control sequence. | \\saeulenab code ...bymin ) {\\k }; \\else \\node [below,font=\\small ,inner sep=4pt] at (\\i ,\\sabymin ) {\\k }; \\fi } \\draw [-{Stealth[length=2mm]}] (0,\\sabymin ) -- (0,\\sabo ) node[above right,font=\\small",
+     "Fehler: Undefined control sequence. | \\endtikzpicture ...et \\pgf@trimleft@final@smuggle =\\pgf@trimleft \\global \\let \\pgf@trimright@final@smuggle =\\pgf@trimright \\global \\let \\pgf@remember@smuggle =\\ifpgfrememberpicturepositiononpage \\pgf@",
+     "Fehler: Missing $ inserted. | <inserted text> $",
+     "Fehler: Missing } inserted. | <inserted text> }",
+     "Fehler: Package tikz Error: Giving up on this path. Did you forget a semicolon?. | See the tikz package documentation for explanation.",
+     "Fehler: Extra }, or forgotten \\endgroup. | \\endpgfpicture ...pgf@picminx \\xdef \\pgf@trimleft@final {-\\the \\pgf@x }\\pgf@process {\\pgf@trimright }\\global \\advance \\pgf@x by-\\pgf@picmaxx \\xdef \\pgf@trimright@final {\\the \\pgf@x }\\pgf@remember@laye",
+     "Fehler: Extra }, or forgotten \\endgroup. | \\endpgfpicture ...the \\pgf@x }\\pgf@remember@layerlist@globally \\endgroup \\hss \\egroup \\pgf@restore@layerlist@from@global \\pgf@insertlayers \\endgroup \\pgfsys@discardpath \\endgroup \\pgfsys@endscope \\pgf",
+     "Fehler: Missing } inserted. | <inserted text> }",
+     "Fehler: LaTeX Error: Something's wrong--perhaps a missing \\item. | See the LaTeX manual or LaTeX Companion for explanation.",
+     "Fehler: LaTeX Error: Something's wrong--perhaps a missing \\item. | See the LaTeX manual or LaTeX Companion for explanation.",
+     "Fehler: LaTeX Error: \\begin{tikzpicture} on input line 10 ended by \\end{list}. | See the LaTeX manual or LaTeX Companion for explanation.",
+     "Fehler: LaTeX Error: \\begin{tikzpicture} on input line 10 ended by \\end{teile}. | See the LaTeX manual or LaTeX Companion for explanation.",
+     "Fehler: Missing } inserted. | <inserted text> }",
+     "Fehler: Extra }, or forgotten \\endgroup. | \\endminipage ->\\par \\unskip \\ifvoid \\@mpfootins \\else \\vskip \\skip \\@mpfootins \\normalcolor \\footnoterule \\unvbox \\@mpfootins \\fi \\@minipagefalse \\color@endgroup \\egroup \\expandafter \\@iiiparbox \\@mpa",
+     "Fehler: LaTeX Error: \\begin{tikzpicture} on input line 10 ended by \\end{minipage}. | See the LaTeX manual or LaTeX Companion for explanation.",
+     "Fehler: LaTeX Error: \\begin{list} on input line 7 ended by \\end{lrbox}. | See the LaTeX manual or LaTeX Companion for explanation.",
+     "Fehler: LaTeX Error: \\begin{teile} on input line 7 ended by \\end{aufgabe}. | See the LaTeX manual or LaTeX Companion for explanation."
+    ],
+    "kenngroessen-von-verteilungen-e1-k5-s3-v2": [
+     "Fehler: Extra }, or forgotten $. | \\saeulenab code ...(\\i ,\\sabymin ) {\\k }; \\else \\node [below,font=\\small ,inner sep=4pt] at (\\i ,\\sabymin ) {\\k }; \\fi } \\draw [-{Stealth[length=2mm]}] (0,\\sabymin ) -- (0,\\sabo ) node[above right,fon",
+     "Fehler: Undefined control sequence. | \\saeulenab code ...bymin ) {\\k }; \\else \\node [below,font=\\small ,inner sep=4pt] at (\\i ,\\sabymin ) {\\k }; \\fi } \\draw [-{Stealth[length=2mm]}] (0,\\sabymin ) -- (0,\\sabo ) node[above right,font=\\small",
+     "Fehler: Undefined control sequence. | \\endtikzpicture ...et \\pgf@trimleft@final@smuggle =\\pgf@trimleft \\global \\let \\pgf@trimright@final@smuggle =\\pgf@trimright \\global \\let \\pgf@remember@smuggle =\\ifpgfrememberpicturepositiononpage \\pgf@",
+     "Fehler: Missing $ inserted. | <inserted text> $",
+     "Fehler: Missing } inserted. | <inserted text> }",
+     "Fehler: Package tikz Error: Giving up on this path. Did you forget a semicolon?. | See the tikz package documentation for explanation.",
+     "Fehler: Extra }, or forgotten \\endgroup. | \\endpgfpicture ...pgf@picminx \\xdef \\pgf@trimleft@final {-\\the \\pgf@x }\\pgf@process {\\pgf@trimright }\\global \\advance \\pgf@x by-\\pgf@picmaxx \\xdef \\pgf@trimright@final {\\the \\pgf@x }\\pgf@remember@laye",
+     "Fehler: Extra }, or forgotten \\endgroup. | \\endpgfpicture ...the \\pgf@x }\\pgf@remember@layerlist@globally \\endgroup \\hss \\egroup \\pgf@restore@layerlist@from@global \\pgf@insertlayers \\endgroup \\pgfsys@discardpath \\endgroup \\pgfsys@endscope \\pgf",
+     "Fehler: Missing } inserted. | <inserted text> }",
+     "Fehler: LaTeX Error: Something's wrong--perhaps a missing \\item. | See the LaTeX manual or LaTeX Companion for explanation.",
+     "Fehler: LaTeX Error: Something's wrong--perhaps a missing \\item. | See the LaTeX manual or LaTeX Companion for explanation.",
+     "Fehler: LaTeX Error: \\begin{tikzpicture} on input line 19 ended by \\end{list}. | See the LaTeX manual or LaTeX Companion for explanation.",
+     "Fehler: LaTeX Error: \\begin{tikzpicture} on input line 19 ended by \\end{teile}. | See the LaTeX manual or LaTeX Companion for explanation.",
+     "Fehler: Missing } inserted. | <inserted text> }",
+     "Fehler: Extra }, or forgotten \\endgroup. | \\endminipage ->\\par \\unskip \\ifvoid \\@mpfootins \\else \\vskip \\skip \\@mpfootins \\normalcolor \\footnoterule \\unvbox \\@mpfootins \\fi \\@minipagefalse \\color@endgroup \\egroup \\expandafter \\@iiiparbox \\@mpa",
+     "Fehler: LaTeX Error: \\begin{tikzpicture} on input line 19 ended by \\end{minipage}. | See the LaTeX manual or LaTeX Companion for explanation.",
+     "Fehler: LaTeX Error: \\begin{list} on input line 16 ended by \\end{lrbox}. | See the LaTeX manual or LaTeX Companion for explanation.",
+     "Fehler: LaTeX Error: \\begin{teile} on input line 16 ended by \\end{aufgabe}. | See the LaTeX manual or LaTeX Companion for explanation."
+    ],
+    "matrizen-und-uebergangsprozesse-zone-f3-v1": [],
+    "zufallsgroessen-und-verteilungen-e1-k1-s0-v2": [],
+    "zufallsgroessen-und-verteilungen-e1-k3-s4-v2": []
+   },
+   "außerhalb: Fehler: LaTeX Error: \\begin{minipage} on input line 15 ended by \\end{document}. | See the LaTeX manual or LaTeX Companion for explanation.; Fehler: You can't use `\\end' in internal vertical mode. | \\enddocument ...el@new@label@record@testdef \\@tempswafalse \\makeatletter \\@@input \\jobname .aux \\fi \\UseOneTimeHook {enddocument/afteraux}\\UseOneTimeHook {enddocument/info}\\endgroup \\UseOneTimeHook {e; Fehler: LaTeX Error: \\begin{minipage} on input line 15 ended by \\end{document}. | See the LaTeX manual or LaTeX Companion for explanation."
+  ],
+  [
+   "balkenab",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "liniendia",
+   2,
+   [
+    "matrizen-und-uebergangsprozesse-zone-f3-v3",
+    "zuordnungen-e1-k4-s4-v1"
+   ],
+   {
+    "matrizen-und-uebergangsprozesse-zone-f3-v3": [],
+    "zuordnungen-e1-k4-s4-v1": []
+   },
+   ""
+  ],
+  [
+   "saeule",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "baumdreigleich",
+   8,
+   [
+    "binomialverteilung-e2-k2-s4-v3",
+    "wahrscheinlichkeit-e1-k3-s3-v3",
+    "zufallsexperimente-und-pfadregeln-e3-k1-s5-v2",
+    "wahrscheinlichkeit-e3-k1-s0-v4",
+    "zufallsexperimente-und-pfadregeln-e7-k2-s4-v2"
+   ],
+   {
+    "binomialverteilung-e2-k2-s4-v3": [],
+    "wahrscheinlichkeit-e1-k3-s3-v3": [],
+    "zufallsexperimente-und-pfadregeln-e3-k1-s5-v2": [],
+    "wahrscheinlichkeit-e3-k1-s0-v4": [],
+    "zufallsexperimente-und-pfadregeln-e7-k2-s4-v2": []
+   },
+   ""
+  ],
+  [
+   "baumdrei",
+   7,
+   [
+    "wahrscheinlichkeit-e4-k1-s6-v1",
+    "zufallsexperimente-und-pfadregeln-e3-k1-s5-v3",
+    "wahrscheinlichkeit-e4-k1-s6-v2",
+    "zufallsexperimente-und-pfadregeln-e4-k1-s2-v1",
+    "wahrscheinlichkeit-e4-k1-s6-v3"
+   ],
+   {
+    "wahrscheinlichkeit-e4-k1-s6-v1": [],
+    "zufallsexperimente-und-pfadregeln-e3-k1-s5-v3": [],
+    "wahrscheinlichkeit-e4-k1-s6-v2": [],
+    "zufallsexperimente-und-pfadregeln-e4-k1-s2-v1": [],
+    "wahrscheinlichkeit-e4-k1-s6-v3": []
+   },
+   ""
+  ],
+  [
+   "kreisdiagramm",
+   16,
+   [
+    "brueche-dezimalzahlen-e1-k1-s0-v2",
+    "kreis-e3-k3-s4-v1",
+    "wahrscheinlichkeit-e2-k2-s0-v1",
+    "brueche-dezimalzahlen-e1-k1-s0-v4",
+    "wahrscheinlichkeit-e2-k2-s0-v2"
+   ],
+   {
+    "brueche-dezimalzahlen-e1-k1-s0-v2": [],
+    "kreis-e3-k3-s4-v1": [],
+    "wahrscheinlichkeit-e2-k2-s0-v1": [],
+    "brueche-dezimalzahlen-e1-k1-s0-v4": [],
+    "wahrscheinlichkeit-e2-k2-s0-v2": []
+   },
+   ""
+  ],
+  [
+   "kreisdiagrammleer",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "kreisleer",
+   5,
+   [
+    "brueche-dezimalzahlen-e1-k1-s6-v16",
+    "kreis-e3-k3-s4-v2"
+   ],
+   {
+    "brueche-dezimalzahlen-e1-k1-s6-v16": [],
+    "kreis-e3-k3-s4-v2": []
+   },
+   ""
+  ],
+  [
+   "sachtabelle",
+   104,
+   [
+    "ableitung-und-aenderungsrate-e1-k1-s2-v1",
+    "binomialverteilung-e2-k1-s9-v1",
+    "bruchrechnung-e2-k1-s0-v1",
+    "brueche-dezimalzahlen-e4-k2-s1-v1",
+    "einheiten-e1-k9-s6-v1"
+   ],
+   {
+    "ableitung-und-aenderungsrate-e1-k1-s2-v1": [],
+    "binomialverteilung-e2-k1-s9-v1": [],
+    "bruchrechnung-e2-k1-s0-v1": [],
+    "brueche-dezimalzahlen-e4-k2-s1-v1": [],
+    "einheiten-e1-k9-s6-v1": []
+   },
+   ""
+  ],
+  [
+   "leerzelle",
+   49,
+   [
+    "ableitung-und-aenderungsrate-e2-k4-s4-v3",
+    "brueche-dezimalzahlen-e4-k2-s1-v2",
+    "einheiten-e1-k9-s6-v2",
+    "hypothesentests-e3-k3-s4-v1",
+    "kenngroessen-von-verteilungen-e1-k1-s1-v1"
+   ],
+   {
+    "ableitung-und-aenderungsrate-e2-k4-s4-v3": [],
+    "brueche-dezimalzahlen-e4-k2-s1-v2": [],
+    "einheiten-e1-k9-s6-v2": [],
+    "hypothesentests-e3-k3-s4-v1": [],
+    "kenngroessen-von-verteilungen-e1-k1-s1-v1": []
+   },
+   ""
+  ],
+  [
+   "strichliste",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "kreissektor",
+   10,
+   [
+    "brueche-dezimalzahlen-e1-k1-s6-v17",
+    "kreis-e3-k1-s0-v1",
+    "wahrscheinlichkeit-e2-k6-s3-v3",
+    "brueche-dezimalzahlen-e1-k1-s6-v18",
+    "kreis-e3-k1-s0-v2"
+   ],
+   {
+    "brueche-dezimalzahlen-e1-k1-s6-v17": [],
+    "kreis-e3-k1-s0-v1": [],
+    "wahrscheinlichkeit-e2-k6-s3-v3": [],
+    "brueche-dezimalzahlen-e1-k1-s6-v18": [],
+    "kreis-e3-k1-s0-v2": []
+   },
+   ""
+  ],
+  [
+   "vierfeldertafel",
+   45,
+   [
+    "bedingte-wahrscheinlichkeit-und-bayes-e1-k1-s1-v3",
+    "unabhaengigkeit-e1-k2-s1-v1",
+    "vierfeldertafel-e1-k2-s1-v1",
+    "zufallsexperimente-und-pfadregeln-e1-k1-s6-v2",
+    "bedingte-wahrscheinlichkeit-und-bayes-e1-k1-s1-v4"
+   ],
+   {
+    "bedingte-wahrscheinlichkeit-und-bayes-e1-k1-s1-v3": [],
+    "unabhaengigkeit-e1-k2-s1-v1": [],
+    "vierfeldertafel-e1-k2-s1-v1": [],
+    "zufallsexperimente-und-pfadregeln-e1-k1-s6-v2": [],
+    "bedingte-wahrscheinlichkeit-und-bayes-e1-k1-s1-v4": []
+   },
+   ""
+  ],
+  [
+   "binomialverteilung",
+   37,
+   [
+    "binomialverteilung-e3-k4-s4-v2",
+    "kenngroessen-von-verteilungen-e3-k3-s1-v1",
+    "normalverteilung-und-sigma-regeln-zone-f3-v1",
+    "binomialverteilung-e3-k4-s4-v3",
+    "kenngroessen-von-verteilungen-e3-k3-s1-v2"
+   ],
+   {
+    "binomialverteilung-e3-k4-s4-v2": [],
+    "kenngroessen-von-verteilungen-e3-k3-s1-v1": [],
+    "normalverteilung-und-sigma-regeln-zone-f3-v1": [],
+    "binomialverteilung-e3-k4-s4-v3": [],
+    "kenngroessen-von-verteilungen-e3-k3-s1-v2": []
+   },
+   ""
+  ],
+  [
+   "normalverteilung",
+   12,
+   [
+    "normalverteilung-und-sigma-regeln-e1-k1-s1-v1",
+    "normalverteilung-und-sigma-regeln-e1-k1-s1-v2",
+    "normalverteilung-und-sigma-regeln-e1-k1-s1-v3",
+    "normalverteilung-und-sigma-regeln-e1-k1-s1-v4",
+    "normalverteilung-und-sigma-regeln-e1-k1-s1-v5"
+   ],
+   {
+    "normalverteilung-und-sigma-regeln-e1-k1-s1-v1": [],
+    "normalverteilung-und-sigma-regeln-e1-k1-s1-v2": [],
+    "normalverteilung-und-sigma-regeln-e1-k1-s1-v3": [],
+    "normalverteilung-und-sigma-regeln-e1-k1-s1-v4": [],
+    "normalverteilung-und-sigma-regeln-e1-k1-s1-v5": []
+   },
+   ""
+  ],
+  [
+   "begin:boxplots",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "bp",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "histogramm",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "ableitungspaar",
+   1,
+   [
+    "ableitung-und-aenderungsrate-e4-k2-s4-v3"
+   ],
+   {
+    "ableitung-und-aenderungsrate-e4-k2-s4-v3": []
+   },
+   ""
+  ],
+  [
+   "flaeche",
+   5,
+   [
+    "rekonstruktion-von-bestaenden-e1-k3-s3-v2",
+    "uneigentliche-integrale-e2-k1-s0-v1",
+    "uneigentliche-integrale-e2-k1-s0-v2",
+    "uneigentliche-integrale-e2-k1-s0-v3",
+    "uneigentliche-integrale-e2-k1-s0-v4"
+   ],
+   {
+    "rekonstruktion-von-bestaenden-e1-k3-s3-v2": [],
+    "uneigentliche-integrale-e2-k1-s0-v1": [],
+    "uneigentliche-integrale-e2-k1-s0-v2": [],
+    "uneigentliche-integrale-e2-k1-s0-v3": [],
+    "uneigentliche-integrale-e2-k1-s0-v4": []
+   },
+   ""
+  ],
+  [
+   "flaechezwischen",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "tangentean",
+   10,
+   [
+    "ableitung-und-aenderungsrate-e2-k4-s4-v2",
+    "ableitungsregeln-zone-f5-v1",
+    "kurvenuntersuchung-e4-k1-s2-v1",
+    "stammfunktion-und-hauptsatz-zone-f5-v3",
+    "tangente-normale-schnittwinkel-e1-k1-s8-v1"
+   ],
+   {
+    "ableitung-und-aenderungsrate-e2-k4-s4-v2": [],
+    "ableitungsregeln-zone-f5-v1": [],
+    "kurvenuntersuchung-e4-k1-s2-v1": [],
+    "stammfunktion-und-hauptsatz-zone-f5-v3": [],
+    "tangente-normale-schnittwinkel-e1-k1-s8-v1": []
+   },
+   ""
+  ],
+  [
+   "hochpunkt",
+   1,
+   [
+    "kurvenuntersuchung-zone-f6-v4"
+   ],
+   {
+    "kurvenuntersuchung-zone-f6-v4": []
+   },
+   ""
+  ],
+  [
+   "tiefpunkt",
+   6,
+   [
+    "ableitungsregeln-e2-k1-s5-v1",
+    "ableitungsregeln-e2-k1-s5-v2",
+    "ableitungsregeln-e3-k1-s6-v1",
+    "ableitungsregeln-e3-k1-s6-v2",
+    "ableitungsregeln-e3-k1-s6-v3"
+   ],
+   {
+    "ableitungsregeln-e2-k1-s5-v1": [],
+    "ableitungsregeln-e2-k1-s5-v2": [],
+    "ableitungsregeln-e3-k1-s6-v1": [],
+    "ableitungsregeln-e3-k1-s6-v2": [],
+    "ableitungsregeln-e3-k1-s6-v3": []
+   },
+   ""
+  ],
+  [
+   "wendepunkt",
+   3,
+   [
+    "kurvenuntersuchung-e5-k1-s2-v1",
+    "kurvenuntersuchung-e5-k1-s2-v2",
+    "kurvenuntersuchung-e5-k1-s2-v3"
+   ],
+   {
+    "kurvenuntersuchung-e5-k1-s2-v1": [],
+    "kurvenuntersuchung-e5-k1-s2-v2": [],
+    "kurvenuntersuchung-e5-k1-s2-v3": []
+   },
+   ""
+  ],
+  [
+   "asymptote",
+   11,
+   [
+    "rekonstruktion-von-funktionsgleichungen-e1-k1-s6-v2",
+    "symmetrie-abbildungen-e2-k3-s1-v1",
+    "symmetrie-abbildungen-e2-k3-s1-v2",
+    "symmetrie-abbildungen-e2-k3-s1-v3",
+    "symmetrie-abbildungen-e2-k3-s1-v4"
+   ],
+   {
+    "rekonstruktion-von-funktionsgleichungen-e1-k1-s6-v2": [],
+    "symmetrie-abbildungen-e2-k3-s1-v1": [],
+    "symmetrie-abbildungen-e2-k3-s1-v2": [],
+    "symmetrie-abbildungen-e2-k3-s1-v3": [],
+    "symmetrie-abbildungen-e2-k3-s1-v4": []
+   },
+   ""
+  ],
+  [
+   "zahlenstrahl",
+   45,
+   [
+    "brueche-dezimalzahlen-e3-k1-s5-v1",
+    "einheiten-zone-f5-v1",
+    "rationale-zahlen-e1-k1-s0-v1",
+    "reelle-zahlen-e1-k1-s5-v1",
+    "symmetrie-abbildungen-zone-f3-v1"
+   ],
+   {
+    "brueche-dezimalzahlen-e3-k1-s5-v1": [],
+    "einheiten-zone-f5-v1": [],
+    "rationale-zahlen-e1-k1-s0-v1": [],
+    "reelle-zahlen-e1-k1-s5-v1": [],
+    "symmetrie-abbildungen-zone-f3-v1": []
+   },
+   ""
+  ],
+  [
+   "begin:zahlengerade",
+   5,
+   [
+    "konfidenzintervalle-e1-k1-s3-v1",
+    "konfidenzintervalle-e1-k1-s3-v2",
+    "konfidenzintervalle-e1-k1-s3-v3",
+    "konfidenzintervalle-e2-k1-s3-v3",
+    "konfidenzintervalle-e2-k1-s3-v4"
+   ],
+   {
+    "konfidenzintervalle-e1-k1-s3-v1": [],
+    "konfidenzintervalle-e1-k1-s3-v2": [],
+    "konfidenzintervalle-e1-k1-s3-v3": [],
+    "konfidenzintervalle-e2-k1-s3-v3": [],
+    "konfidenzintervalle-e2-k1-s3-v4": []
+   },
+   ""
+  ],
+  [
+   "intervall",
+   5,
+   [
+    "konfidenzintervalle-e1-k1-s3-v1",
+    "konfidenzintervalle-e1-k1-s3-v2",
+    "konfidenzintervalle-e1-k1-s3-v3",
+    "konfidenzintervalle-e2-k1-s3-v3",
+    "konfidenzintervalle-e2-k1-s3-v4"
+   ],
+   {
+    "konfidenzintervalle-e1-k1-s3-v1": [],
+    "konfidenzintervalle-e1-k1-s3-v2": [],
+    "konfidenzintervalle-e1-k1-s3-v3": [],
+    "konfidenzintervalle-e2-k1-s3-v3": [],
+    "konfidenzintervalle-e2-k1-s3-v4": []
+   },
+   ""
+  ],
+  [
+   "intervallo",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "bruchkreis",
+   11,
+   [
+    "brueche-dezimalzahlen-e1-k1-s0-v1",
+    "brueche-dezimalzahlen-e1-k1-s1-v2",
+    "brueche-dezimalzahlen-e1-k1-s1-v4",
+    "brueche-dezimalzahlen-e1-k1-s2-v2",
+    "brueche-dezimalzahlen-e1-k1-s4-v1"
+   ],
+   {
+    "brueche-dezimalzahlen-e1-k1-s0-v1": [],
+    "brueche-dezimalzahlen-e1-k1-s1-v2": [],
+    "brueche-dezimalzahlen-e1-k1-s1-v4": [],
+    "brueche-dezimalzahlen-e1-k1-s2-v2": [],
+    "brueche-dezimalzahlen-e1-k1-s4-v1": []
+   },
+   ""
+  ],
+  [
+   "bruchrechteck",
+   48,
+   [
+    "bruchrechnung-e1-k3-s0-v1",
+    "brueche-dezimalzahlen-e1-k1-s0-v3",
+    "prozentrechnung-e1-k3-s3-v3",
+    "bruchrechnung-e1-k3-s0-v2",
+    "brueche-dezimalzahlen-e1-k1-s1-v1"
+   ],
+   {
+    "bruchrechnung-e1-k3-s0-v1": [],
+    "brueche-dezimalzahlen-e1-k1-s0-v3": [],
+    "prozentrechnung-e1-k3-s3-v3": [],
+    "bruchrechnung-e1-k3-s0-v2": [],
+    "brueche-dezimalzahlen-e1-k1-s1-v1": []
+   },
+   ""
+  ],
+  [
+   "termbaum",
+   3,
+   [
+    "terme-e1-k4-s2-v1",
+    "terme-e1-k4-s2-v2"
+   ],
+   {
+    "terme-e1-k4-s2-v1": [],
+    "terme-e1-k4-s2-v2": []
+   },
+   ""
+  ],
+  [
+   "tb",
+   3,
+   [
+    "terme-e1-k4-s2-v1",
+    "terme-e1-k4-s2-v2"
+   ],
+   {
+    "terme-e1-k4-s2-v1": [],
+    "terme-e1-k4-s2-v2": []
+   },
+   ""
+  ],
+  [
+   "einheitskreis",
+   7,
+   [
+    "trigonometrische-funktionen-e1-k1-s0-v3",
+    "trigonometrische-funktionen-e1-k1-s2-v1",
+    "trigonometrische-funktionen-e1-k1-s2-v2",
+    "trigonometrische-funktionen-e1-k1-s2-v3",
+    "trigonometrische-funktionen-e1-k1-s5-v1"
+   ],
+   {
+    "trigonometrische-funktionen-e1-k1-s0-v3": [],
+    "trigonometrische-funktionen-e1-k1-s2-v1": [],
+    "trigonometrische-funktionen-e1-k1-s2-v2": [],
+    "trigonometrische-funktionen-e1-k1-s2-v3": [],
+    "trigonometrische-funktionen-e1-k1-s5-v1": []
+   },
+   ""
+  ],
+  [
+   "sinus",
+   1,
+   [
+    "funktionsklassen-und-eigenschaften-e5-k2-s3-v2"
+   ],
+   {
+    "funktionsklassen-und-eigenschaften-e5-k2-s3-v2": []
+   },
+   ""
+  ],
+  [
+   "kosinus",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "streifenleer",
+   8,
+   [
+    "prozentrechnung-e1-k3-s3-v1",
+    "prozentrechnung-e1-k3-s3-v2",
+    "prozentrechnung-e2-k2-s0-v1"
+   ],
+   {
+    "prozentrechnung-e1-k3-s3-v1": [],
+    "prozentrechnung-e1-k3-s3-v2": [],
+    "prozentrechnung-e2-k2-s0-v1": []
+   },
+   ""
+  ],
+  [
+   "streifenvoll",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "streifenfrage",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "streifenfeld",
+   9,
+   [
+    "prozentrechnung-e1-k1-s1-v1",
+    "prozentrechnung-e1-k1-s1-v2",
+    "prozentrechnung-e1-k1-s1-v3",
+    "prozentrechnung-e1-k1-s1-v4",
+    "prozentrechnung-e1-k1-s1-v5"
+   ],
+   {
+    "prozentrechnung-e1-k1-s1-v1": [],
+    "prozentrechnung-e1-k1-s1-v2": [],
+    "prozentrechnung-e1-k1-s1-v3": [],
+    "prozentrechnung-e1-k1-s1-v4": [],
+    "prozentrechnung-e1-k1-s1-v5": []
+   },
+   ""
+  ],
+  [
+   "streifenreihe",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "streifenwertreihe",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "begin:dreisatz",
+   6,
+   [
+    "prozentrechnung-e2-k5-s3-v3",
+    "prozentrechnung-zone-f4-v1",
+    "prozentrechnung-zone-f4-v2",
+    "prozentrechnung-zone-f4-v3",
+    "prozentrechnung-zone-f4-v4"
+   ],
+   {
+    "prozentrechnung-e2-k5-s3-v3": [],
+    "prozentrechnung-zone-f4-v1": [],
+    "prozentrechnung-zone-f4-v2": [],
+    "prozentrechnung-zone-f4-v3": [],
+    "prozentrechnung-zone-f4-v4": []
+   },
+   ""
+  ],
+  [
+   "dsz",
+   6,
+   [
+    "prozentrechnung-e2-k5-s3-v3",
+    "prozentrechnung-zone-f4-v1",
+    "prozentrechnung-zone-f4-v2",
+    "prozentrechnung-zone-f4-v3",
+    "prozentrechnung-zone-f4-v4"
+   ],
+   {
+    "prozentrechnung-e2-k5-s3-v3": [],
+    "prozentrechnung-zone-f4-v1": [],
+    "prozentrechnung-zone-f4-v2": [],
+    "prozentrechnung-zone-f4-v3": [],
+    "prozentrechnung-zone-f4-v4": []
+   },
+   ""
+  ],
+  [
+   "dsp",
+   6,
+   [
+    "prozentrechnung-e2-k5-s3-v3",
+    "prozentrechnung-zone-f4-v1",
+    "prozentrechnung-zone-f4-v2",
+    "prozentrechnung-zone-f4-v3",
+    "prozentrechnung-zone-f4-v4"
+   ],
+   {
+    "prozentrechnung-e2-k5-s3-v3": [],
+    "prozentrechnung-zone-f4-v1": [],
+    "prozentrechnung-zone-f4-v2": [],
+    "prozentrechnung-zone-f4-v3": [],
+    "prozentrechnung-zone-f4-v4": []
+   },
+   ""
+  ],
+  [
+   "dsleer",
+   6,
+   [
+    "prozentrechnung-e2-k5-s3-v3",
+    "prozentrechnung-zone-f4-v1",
+    "prozentrechnung-zone-f4-v2",
+    "prozentrechnung-zone-f4-v3",
+    "prozentrechnung-zone-f4-v4"
+   ],
+   {
+    "prozentrechnung-e2-k5-s3-v3": [],
+    "prozentrechnung-zone-f4-v1": [],
+    "prozentrechnung-zone-f4-v2": [],
+    "prozentrechnung-zone-f4-v3": [],
+    "prozentrechnung-zone-f4-v4": []
+   },
+   ""
+  ],
+  [
+   "swz",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "swa",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "swb",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "swfrage",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ],
+  [
+   "mbstreifenrahmen",
+   0,
+   [],
+   {},
+   "in keinem grafik-Feld"
+  ]
+ ]
+}

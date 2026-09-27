@@ -1,0 +1,32 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\begin{document}
+\weit
+\typeout{PROBE-BEGIN kurvenuntersuchung-e5-k1-s2-v1}
+\begin{aufgabe}{\detokenize{kurvenuntersuchung-e5-k1-s2-v1}}
+\begin{teile}
+\teil Probe
+
+\begin{ksys}[xmin=0,xmax=20,ymin=0,ymax=90,xstep=5,ystep=10,xlabel=t in min,ylabel=h in m,ablesen] \funktionab{-0.02*\x^3+0.6*\x^2}{h}{0}{20} \wendepunkt{10}{40}{W} \end{ksys}
+\end{teile}
+\end{aufgabe}
+\typeout{PROBE-END kurvenuntersuchung-e5-k1-s2-v1}
+\typeout{PROBE-BEGIN kurvenuntersuchung-e5-k1-s2-v2}
+\begin{aufgabe}{\detokenize{kurvenuntersuchung-e5-k1-s2-v2}}
+\begin{teile}
+\teil Probe
+
+\begin{ksys}[xmin=0,xmax=20,ymin=0,ymax=45,xstep=5,ystep=5,xlabel=t in h,ylabel=V,ablesen] \funktionab{40+0.01*\x^3-0.3*\x^2}{V}{0}{20} \wendepunkt{10}{20}{W} \end{ksys}
+\end{teile}
+\end{aufgabe}
+\typeout{PROBE-END kurvenuntersuchung-e5-k1-s2-v2}
+\typeout{PROBE-BEGIN kurvenuntersuchung-e5-k1-s2-v3}
+\begin{aufgabe}{\detokenize{kurvenuntersuchung-e5-k1-s2-v3}}
+\begin{teile}
+\teil Probe
+
+\begin{ksys}[xmin=0,xmax=20,ymin=0,ymax=4500,xstep=5,ystep=500,xlabel=t in d,ylabel=I,ablesen] \funktionab{-\x^3+30*\x^2}{I}{0}{20} \wendepunkt{10}{2000}{W} \end{ksys}
+\end{teile}
+\end{aufgabe}
+\typeout{PROBE-END kurvenuntersuchung-e5-k1-s2-v3}
+\end{document}

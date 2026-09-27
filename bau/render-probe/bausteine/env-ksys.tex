@@ -1,0 +1,52 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\begin{document}
+\weit
+\typeout{PROBE-BEGIN ableitung-und-aenderungsrate-e1-k1-s2-v2}
+\begin{aufgabe}{\detokenize{ableitung-und-aenderungsrate-e1-k1-s2-v2}}
+\begin{teile}
+\teil Probe
+
+\begin{ksys}[xmin=0,xmax=4,ymin=0,ymax=1800,xstep=1,ystep=200,xlabel=t in h,ylabel=a,ablesen]\funktion{100*\x^2}{a}\end{ksys}
+\end{teile}
+\end{aufgabe}
+\typeout{PROBE-END ableitung-und-aenderungsrate-e1-k1-s2-v2}
+\typeout{PROBE-BEGIN ableitungsregeln-e2-k1-s5-v1}
+\begin{aufgabe}{\detokenize{ableitungsregeln-e2-k1-s5-v1}}
+\begin{teile}
+\teil Probe
+
+\begin{ksys}[xmin=-3,xmax=4,ymin=-3,ymax=5,ablesen] \funktion{0.5*\x^2-1}{f} \parabel{1}{1}{-2}{g} \tiefpunkt{1}{-2}{T} \end{ksys}
+\end{teile}
+\end{aufgabe}
+\typeout{PROBE-END ableitungsregeln-e2-k1-s5-v1}
+\typeout{PROBE-BEGIN abstaende-e1-k2-s5-v1}
+\begin{aufgabe}{\detokenize{abstaende-e1-k2-s5-v1}}
+\begin{teile}
+\teil Probe
+
+\begin{ksys}[xmin=0,xmax=4,ymin=0,ymax=8,xlabel=s,ylabel=t,ablesen]
+\gerade{2}{0}{}
+\end{ksys}
+\end{teile}
+\end{aufgabe}
+\typeout{PROBE-END abstaende-e1-k2-s5-v1}
+\typeout{PROBE-BEGIN bedingte-wahrscheinlichkeit-und-bayes-e3-k1-s3-v1}
+\begin{aufgabe}{\detokenize{bedingte-wahrscheinlichkeit-und-bayes-e3-k1-s3-v1}}
+\begin{teile}
+\teil Probe
+
+\begin{ksys}[xmin=0,xmax=1,ymin=0,ymax=1,xstep=0.2,ystep=0.2,ablesen] \funktion{0.15/(0.15+0.7*\x)}{A} \funktion{1-\x}{B} \funktion{0.15/(0.15+0.7*(1-\x))}{C} \end{ksys}
+\end{teile}
+\end{aufgabe}
+\typeout{PROBE-END bedingte-wahrscheinlichkeit-und-bayes-e3-k1-s3-v1}
+\typeout{PROBE-BEGIN brueche-dezimalzahlen-e1-k1-s3-v3}
+\begin{aufgabe}{\detokenize{brueche-dezimalzahlen-e1-k1-s3-v3}}
+\begin{teile}
+\teil Probe
+
+\begin{ksys}[xmin=0,xmax=4,ymin=0,ymax=2,ablesen] \funktionab{2-\x}{}{0}{2} \end{ksys}
+\end{teile}
+\end{aufgabe}
+\typeout{PROBE-END brueche-dezimalzahlen-e1-k1-s3-v3}
+\end{document}
