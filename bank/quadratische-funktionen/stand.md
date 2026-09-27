@@ -114,50 +114,50 @@ längere Zahl an, Skript geschärft). Nichts ist zweimal gescheitert.
 
 ## Befunde zu bank.md
 
-- Kein Feld für die Lösungsgrafik. Zeichenaufgaben (Parabel
-  skizzieren, Spiegelbild) haben die Lösung nur als Punktliste;
-  unterrichtsblatt 3.5 will für Parabeln eine Lösungsgrafik.
-  Vorschlag: Feld grafik_loesung mit dem Bausteinaufruf
-  (ksys[klein] mit \parabel).
+- (erledigt v0.5) Kein Feld für die Lösungsgrafik. Zeichenaufgaben
+  (Parabel skizzieren, Spiegelbild) haben die Lösung nur als Punktliste;
+  unterrichtsblatt 3.5 will für Parabeln eine Lösungsgrafik. Vorschlag:
+  Feld grafik_loesung mit dem Bausteinaufruf (ksys[klein] mit \parabel).
 - form kennt kein „ablesen"; Ablesegrafiken laufen als teil oder
   ankreuzen mit grafik. Auswählen lassen sie sich nur über
   grafik ≠ "".
-- Wo die Pflichtelemente stehen (Kette, Sprosse), regelt bank.md
-  nicht; beide Sitzungen haben eine eigene letzte Kette gewählt.
+- (erledigt v0.5) Wo die Pflichtelemente stehen (Kette, Sprosse), regelt
+  bank.md nicht; beide Sitzungen haben eine eigene letzte Kette gewählt.
 - Prüfungshöhe mit zwei Originalen in einem Katalogschritt: eine
   oder zwei Sprossen? Nicht geregelt.
-- Zone: sprosse_text = Fertigkeit und hoehe grundfall/sprosse für
-  leicht, mittel, Fallstrick sind Konvention des Skripts, nicht
-  bank.md.
-- Das Beispiel „2018-OS-K7a … papier FOR" widerspricht der CSV
-  (papier OS für alle OS-Kennungen).
-- Sperre: bei Objektthemen ist die Grundfunktion (x²) selbst
-  Kastenfunktion; eine Ausnahme für den Gegenstand der Kette fehlt.
-- pruef "" erlaubt bank.md nur bei Begründen und Zeichnen; das
-  Skript erlaubt es auch bei Lösungen ohne Ziffer (Ankreuzen
-  „Gerade"/„Parabel") – bank.md nachziehen.
+- (erledigt v0.5) Zone: sprosse_text = Fertigkeit und hoehe
+  grundfall/sprosse für leicht, mittel, Fallstrick sind Konvention des
+  Skripts, nicht bank.md.
+- (erledigt v0.5) Das Beispiel „2018-OS-K7a … papier FOR" widerspricht
+  der CSV (papier OS für alle OS-Kennungen).
+- (erledigt v0.5) Sperre: bei Objektthemen ist die Grundfunktion (x²)
+  selbst Kastenfunktion; eine Ausnahme für den Gegenstand der Kette
+  fehlt.
+- (erledigt v0.5) pruef "" erlaubt bank.md nur bei Begründen und
+  Zeichnen; das Skript erlaubt es auch bei Lösungen ohne Ziffer
+  (Ankreuzen „Gerade"/„Parabel") – bank.md nachziehen.
 
 ## Befunde zum Prüfskript (Grafikaufgaben)
 
-- grafik wird nicht geprüft: weder Makroname und Argumentzahl noch
-  Achsenbereich. Ein \parabel mit drei Argumenten oder ein Scheitel
-  außerhalb der Fläche ginge durch. Hier mit eigenem Skript geprüft
-  (Name, Argumentzahl, Ursprung im Bereich, Fläche höchstens 16 cm,
-  jeder gefragte Punkt im Bereich).
-- Die Regel „form zeichnen ⇒ grafik nicht leer" fehlt.
+- (erledigt v0.5) grafik wird nicht geprüft: weder Makroname und
+  Argumentzahl noch Achsenbereich. Ein \parabel mit drei Argumenten oder
+  ein Scheitel außerhalb der Fläche ginge durch. Hier mit eigenem Skript
+  geprüft (Name, Argumentzahl, Ursprung im Bereich, Fläche höchstens 16
+  cm, jeder gefragte Punkt im Bereich).
+- (erledigt v0.5) Die Regel „form zeichnen ⇒ grafik nicht leer" fehlt.
 - Ob die Grafik zu den Aufgabenwerten passt (\parabel{1}{2}{-3} zu
   f(x) = x² − 4x + 1), prüft das Skript nicht. Vorschlag: \parabel,
   \gerade, \punkt aus grafik lesen und die Punkte der Lösung darin
   auswerten.
-- Doppelprüfung nur über aufgabe: Ablesegrafiken mit gleichem Text
-  und anderer Grafik gelten als doppelt. Vorschlag: aufgabe und
-  grafik zusammen vergleichen.
-- Zahlenfang: „- 4" mit Leerzeichen wird als +4 gelesen; bei
-  Termen (x² − 6x) richtig, bei Ergebnissen eine Falle
-  (Entscheidung 15). „x^2" liefert eine 2, „x_1" eine 1 – harmlos,
-  weil nur pruef ⊂ loesung geprüft wird.
-- Keine Sperrprüfung (Kasten- und Originalterme in aufgabe); hier
-  eigenes Skript mit Musterliste.
+- (erledigt v0.5) Doppelprüfung nur über aufgabe: Ablesegrafiken mit
+  gleichem Text und anderer Grafik gelten als doppelt. Vorschlag:
+  aufgabe und grafik zusammen vergleichen.
+- (erledigt v0.5) Zahlenfang: „- 4" mit Leerzeichen wird als +4 gelesen;
+  bei Termen (x² − 6x) richtig, bei Ergebnissen eine Falle (Entscheidung
+  15). „x^2" liefert eine 2, „x_1" eine 1 – harmlos, weil nur pruef ⊂
+  loesung geprüft wird.
+- (erledigt v0.5) Keine Sperrprüfung (Kasten- und Originalterme in
+  aufgabe); hier eigenes Skript mit Musterliste.
 - --katalog prüft sprosse_text als Teilstring der Zeile quelle;
   bei Pflichtelementen geht damit jeder Teilstring durch.
 
@@ -176,3 +176,65 @@ längere Zahl an, Skript geschärft). Nichts ist zweimal gescheitert.
 - Generator und Sperrskript dieser Sitzung liegen nicht im Repo
   (Auftrag: nur unter bank/quadratische-funktionen/ schreiben);
   bei Bedarf nach werkzeuge/ übernehmen.
+
+## Nachbesserung 2026-09-27
+
+- Prüfskript v0.5 vorher 33 Abweichungen, 6 Warnungen, nachher
+  0/0.
+- Alle 257 Zeilen tragen das Feld loesungsgrafik, überall "";
+  die Parabel-Zeichenaufgaben haben ihre Lösung weiter als
+  Punktliste.
+- Zone-Paar: zone-f4-v5 (Fehler finden, Mittelglied vergessen)
+  trägt jetzt hoehe pflicht, pflicht fehler; f4-v6 bleibt die
+  gleichartige Rechenaufgabe (Entscheidung 7).
+- pruef an der Ergebnisstelle: Bei Termlösungen nennt pruef das
+  Mittelglied mit Vorzeichen (zone-f4-v1 bis v4, v6), bei
+  Nachweis, Fehler finden und Gleichung-Aufstellen die erste Zahl
+  der Lösung (zone-f4-v5, e2-k1-s5, e3-k1-s5, e3-k1-s10,
+  e3-k2-s1-v1, e4-k1-s0), bei der Brücke $-8$ (e1-k2-s4-v1); die
+  Lösungen bleiben wortgleich.
+- e3-k1-s3 und s4: die Lösung beginnt mit der Normalform, die
+  Rechnung folgt nach „denn"; pruef ist das Mittelglied.
+- e2-k1-s11-v1 und v2: das Ergebnis (Verschiebung um 6, zwei
+  gemeinsame Punkte) steht am Satzanfang, pruef wie vorher;
+  v3 pruef 2.
+- e3-k1-s8-v2: pruef ohne die 5 aus der Aufgabe; zone-f2-v2
+  (Punkt eintragen, form zeichnen) und zone-f8-v6: pruef "" bzw.
+  $-2$.
+- e4-k1-s7-v3: Sperre x² + 4x (Typische Fehler, Zeile 91);
+  Aufgabe jetzt $f(x) = x^2 + 5x$ und $g(x) = -x - 5$, Lösungen
+  $-1$ und $-5$.
+- Prüfungshöhen: alle zehn Prüfungssprossen tragen ein Original;
+  keine Zeile geändert (Befund N1).
+- Erkennungsschritte: keiner steht im Eintrag, also keiner
+  gestrichen; vier der sechs verdoppeln die Vorstufe ihrer Einheit
+  und entfallen ohnehin (Befund N2).
+
+## Befunde der Nachbesserung
+
+- N1 Katalog/bank.md: e1 s8, e2 s12 und e4 s12 tragen im Katalog
+  „(ohne Original; Zielmarke nach RLP und LISUM-PH …)", stehen aber
+  vor der „Prüfungshöhe:" mit Originalen (e1 s8 sogar vor s9).
+  bank.md gibt der Prüfungshöhe ohne Original hoehe pruefung, behält
+  pruefung aber der letzten Sprosse vor; hier als hoehe sprosse
+  belassen.
+- N2 Katalog: „Gerade oder Parabel?", „Wo steht der Scheitel?",
+  „Welche Form ist das?" und „Was wird gleichgesetzt?" (Zeilen
+  38, 41, 42, 43) verlangen denselben Handgriff wie die Vorstufe
+  von e1, e2, e3, e4; der Katalog führt beide.
+- N3 Lücke: „Minus und Quadrat" (Zeile 39) und „Nach oben oder
+  nach unten?" (Zeile 40) haben keine Zeilen; nach bank.md stünden
+  sie als eigene Ketten mit je 4 Zeilen in e1 (kette_nr der
+  folgenden Ketten rückten auf). Nicht nachgetragen, weil der
+  Auftrag nur Nachbesserung war.
+- N4 bank.md: e2 darstellung „Aussagen zur Parabel als
+  wahr/falsch beurteilen" ist ein Typ ohne Kette (Entscheidung 8),
+  steht aber als pflicht darstellung; nach bank.md wäre er eine
+  eigene Kette mit hoehe sprosse, 3 Zeilen, vor den
+  Pflichtelementen.
+- N5 bank.md 2026-09-27b: Punkte „als Zeilentupel mit senkrechtem
+  Strich, A(1 | 2 | 0)"; der Eintrag schreibt S(1|2) ohne
+  Leerzeichen. Nicht geändert; das Skript liest beides.
+- N6 Prüfskript: Bei Termlösungen und Nachweisen prüft pruef nur
+  eine Zahl (erste Zahl der Lösung); das absolute Glied einer
+  Normalform liegt nie an der Ergebnisstelle.
