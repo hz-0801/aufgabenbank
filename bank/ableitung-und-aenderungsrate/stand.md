@@ -58,7 +58,7 @@ Nachtwächter 2026-09-27.
 | e1    |    ? |     ? | frühere Sitzung, nicht überliefert |
 | e2    |    ? |     ? | frühere Sitzung, nicht überliefert |
 | e3    |    0 |     0 | – |
-| e4    |    7 |     0 | „Lies … ab“ ohne Grafik (5), Ergebnisstelle (2) |
+| e4    |    7 |     0 | „Lies … ab“ ohne Grafik (5), Ergebnis (2) |
 
 Keine Einheit scheiterte zweimal. zone, e1, e2 bestanden beim Start
 dieser Sitzung ohne Abweichung und wurden nicht verändert.
