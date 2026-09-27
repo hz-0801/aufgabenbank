@@ -155,3 +155,19 @@ berichtigt; sonst 0 Treffer.
 - Einige Zahlen kehren in verschiedenen Sprossen wieder (etwa
   Kegel r = 4 cm, Kugel r = 3 cm) mit anderer gesuchter Größe;
   keine Aufgabe ist doppelt.
+
+## Nachbesserung 2026-09-27
+
+- Nachprüfung mit bank-pruef.py v0.5 und bank.md Stand
+  2026-09-27b: 0 Abweichungen, 0 Warnungen vor und nach der
+  Nachbesserung; keine Zeile geändert.
+- Prüfungshöhen: alle drei tragen ein Original (e1 K6b/c, e2 K2d,
+  e3 K3c/d); keine Prüfungshöhe ohne Original steht als hoehe
+  sprosse.
+- Erkennungsschritte: „Welche Strecke ist das?" ist bereits
+  entfallen (Befund 1); die übrigen fünf verlangen keinen
+  Handgriff einer Vorstufe derselben Einheit, keiner gestrichen.
+- Befund 3 bleibt offen: v0.5 fängt „$\sqrt{12^2 + 5^2}$" und
+  „$\frac{4}{3} \cdot \pi \cdot 5^3$" in aufgabe weiterhin nicht
+  (Probe an einer Kopie von e2 k2-s1). Befunde 2, 4, 5 und 6
+  bleiben offen; bank.md 2026-09-27b regelt sie nicht.
