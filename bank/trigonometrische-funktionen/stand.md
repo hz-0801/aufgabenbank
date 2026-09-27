@@ -84,3 +84,15 @@ Prüfskript: werkzeuge/bank-pruef.py v0.4; Endstand 0 Abweichungen,
   ungeprüft; beim Messen des Winkels darf keine erscheinen.
 - Gefüllte \wertetabelle mit 0.71 setzt vermutlich einen Punkt
   statt eines Kommas (e2 s2).
+
+## Nachbesserung 2026-09-27
+
+- Prüfskript v0.5: 0 Abweichungen, 0 Warnungen vor und nach der
+  Nachbesserung; keine jsonl-Zeile geändert oder gestrichen.
+- Prüfungshöhe: Alle vier Zielmarken ohne P10-Original stehen schon
+  als hoehe pruefung, original null, 3 Zeilen; nichts umgestellt.
+- Erkennungsschritte: Alle sieben waren schon entfallen, weil jede
+  Vorstufe denselben Handgriff trägt; keine weitere Streichung.
+- Befunde: Keiner ist mit v0.5 erledigt; `\sin` und `\cos` fehlen
+  weiter in STANDARD, ksys_bereiche kennt trigo weiter nicht, FOLGE
+  kennt „°“ weiter nicht.
