@@ -10,12 +10,12 @@ Prüfskript: werkzeuge/bank-pruef.py v0.2, Endstand 0 Abweichungen,
 ## Zahlen je Datei
 
     Datei   Zeilen  vorstufe grundfall sprosse pruefung pflicht
-    zone      28       0        0        27       0        1
-    e1        48       4       10        21       4        9
+    zone      28       0       10        17       0        1
+    e1        48       4       10        18       7        9
     e2        47      12        5        18       6        6
-    e3        36       4        5        21       0        6
+    e3        36       4        5        18       3        6
     e4        40       0        5        15       8       12
-    gesamt   199      20       25       102      18       34
+    gesamt   199      20       35        86      24       34
 
 Pflicht je Einheit:
 - e1: fehler 3, begruenden 3, darstellung 3
@@ -120,7 +120,7 @@ Keine Einheit scheiterte zweimal.
 
 ## Befunde
 
-1. bank.md/Gegenprobe: „grundfall je Einheit 5" setzt eine
+1. (erledigt v0.5) bank.md/Gegenprobe: „grundfall je Einheit 5" setzt eine
    Verfahrenskette je Einheit voraus. Einheit 1 hat laut Katalog
    zwei (Lösung prüfen, Durch Probieren lösen), also 10. Das
    Skript zählt je Kette und warnt nicht.
@@ -130,21 +130,58 @@ Keine Einheit scheiterte zweimal.
    Merkmal ein. Umgesetzt mit der Klammer als Block (erst
    teilen, dann Strich). Vorschlag: Sprosse „Klammer als Block"
    in Kette Umformen vor der Prüfungshöhe.
-3. Katalog: Vorstufen stehen doppelt, als Sprosse der
+3. (erledigt v0.5) Katalog: Vorstufen stehen doppelt, als Sprosse der
    Verfahrenskette und als Erkennungsschritt (Einheit 2 und 3).
-4. bank.md regelt die Prüfungshöhe ohne Original nicht; das
+4. (erledigt v0.5) bank.md regelt die Prüfungshöhe ohne Original nicht; das
    Skript verlangt bei hoehe pruefung ein original.
-5. Skript: Bei Termergebnissen gilt nur die erste Zahl als
+5. (teilweise erledigt v0.5: „$-\,6$" wird als −6 gelesen; das
+   Zahlglied bleibt ungeprüft) Skript: Bei Termergebnissen gilt nur die erste Zahl als
    Ergebnisstelle; das Zahlglied (5x + 4 → 4) ist nicht
    prüfbar. „$-\,6$" wird nicht als −6 gelesen.
-6. Skript: Bei Ankreuzen mit Gleichungen als Optionen prüft es
+6. (erledigt v0.5) Skript: Bei Ankreuzen mit Gleichungen als Optionen prüft es
    nur die Zahl in der Lösung, nicht, welche Option gemeint ist.
+7. Katalog: Die Vorstufe der Kette Umformen heißt „Umformung nur
+   anschreiben (Vorstufe, Blatt 0)", der gleiche Handgriff steht
+   als Erkennungsschritt „nicht auf Blatt 0" (Zeile 31/34). Hier
+   als Vorstufe in e2 geführt, nicht in der Zone.
 
 ## Offene Punkte
 
 - Waage als Grundvorstellung (Katalog Zeile 75) hat in bank.md
   keinen Platz und keinen Baustein; nicht umgesetzt.
-- Befund 1: Gilt die Gegenprobe je Kette oder je Einheit?
+- (erledigt v0.5) Befund 1: Gilt die Gegenprobe je Kette oder je Einheit?
 - Befund 2: Klammer in der Prüfungshöhe der Einheit 2.
 - Mindeststoff (D/E gegen F, Katalog Zeile 74) steht in keinem
   Feld; beim Blattbau aus sprosse und kette ableiten.
+
+## Nachbesserung 2026-09-27
+
+Prüfskript v0.5 vorher 0 Abweichungen, 10 Warnungen; nachher 0/0.
+
+- zone: Die zehn Zeilen mit sprosse 1 tragen hoehe grundfall statt
+  sprosse (Warnung „Zone s1 hat hoehe grundfall"; ersetzt
+  Entscheidung 2 für sprosse 1).
+- e1-k3-s5-v1 bis v3: Die Zielmarke ohne P10-Original (Durch
+  Probieren lösen) trägt hoehe pruefung statt sprosse, original
+  bleibt null (ersetzt Entscheidung 7).
+- e3-k1-s7-v1 bis v3 (vorher k2): Die Prüfungshöhe „Klammer und x
+  beidseitig" ohne Original trägt hoehe pruefung statt sprosse,
+  original bleibt null (ersetzt Entscheidung 7).
+- e2: Der Erkennungsschritt „Nur die Umformung anschreiben"
+  entfällt als eigene Kette; weil der Katalog die Vorstufe nicht
+  gesondert angelegt hatte (Entscheidung 4), wurden seine vier
+  Zeilen nicht gestrichen, sondern zur Vorstufe der Kette Umformen
+  (kette „Umformen", sprosse_text „Umformung nur anschreiben
+  (Vorstufe, Blatt 0)", quelle 79) und stehen jetzt direkt vor
+  deren Sprosse 1; aufgabe und Lösung unverändert.
+- e2: kette_nr und ids rücken auf: Reihenfolge bestimmen k3 → k2,
+  Umformen k4 → k3, Pflichtkette k5 → k4.
+- e3: Der Erkennungsschritt „Seite mit weniger x finden" entfällt
+  ebenso; seine vier Zeilen sind die Vorstufe der Kette x
+  beidseitig (kette „x beidseitig", sprosse_text „erst Seite mit
+  weniger x finden (Vorstufe)", quelle 80), ids bleiben k1-s0.
+- e3: kette_nr und ids rücken auf: x beidseitig k2 → k1,
+  Dezimalzahlen k3 → k2, Pflichtkette k4 → k3.
+- Tabelle „Zahlen je Datei" auf den neuen Stand gebracht; Befunde
+  1, 3, 4, 6 als erledigt, Befund 5 als teilweise erledigt
+  markiert, Befund 7 neu.
