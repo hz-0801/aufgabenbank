@@ -186,3 +186,18 @@ Zeichenaufgaben und die zwei Preisaufgaben von Hand.
   `\rechnung` im Fließtext (e4 Fehler finden) ungerendert.
 - e4 Prüfungshöhe 2016-OS-K2d ist Niveau III (Vorrat, Z. 90); beim
   Blattbau als Zielmarke setzen.
+
+## Nachbesserung 2026-09-27
+
+Prüfskript v0.5, bank.md Stand 2026-09-27b. Vorher und nachher 0
+Abweichungen, 0 Warnungen in allen fünf Dateien; keine Zeile
+geändert oder gestrichen.
+
+- Prüfungshöhe ohne Original: e2 s8 steht schon als hoehe pruefung,
+  original null, 3 Zeilen (Entscheidung 9); nichts nachzuziehen.
+- Erkennungsschritte: die zwei verbliebenen in e2 („Vorzeichen oder
+  Rechenzeichen?“, „Zeichen zusammenfassen“) verlangen einen
+  anderen Handgriff als die Vorstufe „Pfeil an der Zahlengeraden“;
+  sie bleiben. Die drei doppelten sind schon gestrichen (Befund 1).
+- Befund 4 gegen v0.5 geprüft: pruef "" ist weiter nur bei einer
+  Lösung ohne Ziffer erlaubt; der Befund bleibt offen.
