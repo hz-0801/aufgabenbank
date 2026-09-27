@@ -1,8 +1,21 @@
 #!/usr/bin/env python3
 """Prüft die Bank eines Katalogeintrags (bank.md, Abschnitt „Prüfung").
 
-v0.3, 2026-09-27 (nach acht Einträgen; bank.md dritte Fassung).
-Änderungen gegenüber v0.2:
+v0.4, 2026-09-27 (nach achtzehn Einträgen; bank.md dritte Fassung).
+Änderungen gegenüber v0.3:
+  a) Ausgabe still: nur ABWEICHUNG, WARNUNG und Summen; --alle
+     druckt wie v0.3 auch die OK-Zeilen.
+  b) original: Kennungen von MSA, FHR und Abitur gelten.
+papier je Prüfung (Mappen, Abschnitt „2 Originale“, Zeile „jahr …
+papier …“ unter der Kennung):
+  MSA     2018-OS-K7a               papier OS, FOR oder GYM
+  FHR     2025-C-2b                 papier A, B oder C (Buchstabe
+                                    der Kennung)
+  Abitur  2025MerhoehtAAGLAA121-a   papier <jahr>-iqb-ea (erhoeht)
+          2025MgrundlegendAAGLAA12  oder <jahr>-iqb-ga (grundlegend)
+Das Skript prüft die Kennung, nicht den Wert von papier.
+
+Änderungen v0.3 gegenüber v0.2:
   a) hoehe pruefung mit original null erlaubt; original an jeder
      hoehe, wenn vollständig; Menge Prüfungshöhe ohne Original 3.
   b) Zone: s1 hoehe grundfall, ab s2 sprosse; merkmal ab s3 beginnt
@@ -20,12 +33,13 @@ v0.3, 2026-09-27 (nach acht Einträgen; bank.md dritte Fassung).
      Einheit.
 
 Aufruf:
-    python3 werkzeuge/bank-pruef.py <eintrag> [--katalog DATEI]
+    python3 werkzeuge/bank-pruef.py <eintrag> [--katalog DATEI] [--alle]
     python3 werkzeuge/bank-pruef.py --selbsttest
 
 Liest bank/<eintrag>/zone.jsonl und e<n>.jsonl, dazu
 mappen/<eintrag>.md (Sperrprobe) und mappen/_bausteine.md
-(Bausteinprobe). Ausgabe je Aufgabe eine Zeile OK/ABWEICHUNG,
+(Bausteinprobe). Ausgabe je fehlerhafter Aufgabe eine Zeile
+ABWEICHUNG (mit --alle je Aufgabe OK/ABWEICHUNG),
 Warnungen als WARNUNG-Zeilen, Ketten- und Mengenbefunde als eigene
 Zeilen, zuletzt je Datei und gesamt die Zahl der Abweichungen und
 Warnungen. Rückgabewert 1 bei Abweichungen; Warnungen allein
@@ -64,6 +78,10 @@ MENGE_PFLICHT = 3
 MENGE_ORIGINAL = 2
 MENGE_OHNE_ORIGINAL = 3      # Prüfungshöhe mit original null
 TOLERANZ = Decimal("0.005")
+# Kennungen der Originale: MSA, FHR, Abitur (IQB-Pool).
+KENNUNG = re.compile(r"\d{4}-[A-Z]+-[A-Z]\d+[a-z]"
+                     r"|\d{4}-[A-C]-\d[a-z]"
+                     r"|\d{4}M(erhoeht|grundlegend)[A-Z0-9]+(-[a-z])?")
 
 # Zahl mit Dezimalkomma; Tausender sind vorher zusammengezogen.
 ZAHL = re.compile(r"(?<![\d,])[-−]?\d+(?:,\d+)?")
@@ -690,7 +708,7 @@ def pruefe_zeile(a, eintrag, einheit, ctx=None):
     if o is not None and not (
             isinstance(o, dict) and set(o) == {"id", "jahr", "papier"}
             and isinstance(o["id"], str)
-            and re.fullmatch(r"\d{4}-[A-Z]+-[A-Z]\d+[a-z]", o["id"])
+            and KENNUNG.fullmatch(o["id"])
             and o["id"].startswith(str(o["jahr"]))):
         b.append("original unvollständig")
     for f in ("kette", "sprosse_text", "merkmal", "aufgabe", "loesung"):
@@ -902,7 +920,7 @@ def kontext(eintrag, wurzel):
     return ctx, w
 
 
-def pruefe_eintrag(eintrag, katalog=None, wurzel=Path(".")):
+def pruefe_eintrag(eintrag, katalog=None, wurzel=Path("."), alle=False):
     ordner = wurzel / "bank" / eintrag
     dateien = sorted(ordner.glob("*.jsonl"),
                      key=lambda p: (p.stem != "zone", p.stem))
@@ -946,7 +964,7 @@ def pruefe_eintrag(eintrag, katalog=None, wurzel=Path(".")):
             if befunde:
                 da += 1
                 print(f"ABWEICHUNG {aid}: " + "; ".join(befunde))
-            else:
+            elif alle:
                 print(f"OK {aid}")
             for x in warnungen:
                 dw += 1
@@ -1018,7 +1036,8 @@ def selbsttest():
         print(f"{zeichen} {zeile['id']}" + ("" if ist else ": "
                                            + "; ".join(befunde)))
         ok &= ist == soll
-    for punkt, text, ist, soll in faelle_v03(basis):
+    for punkt, text, ist, soll in (faelle_v03(basis)
+                                   + faelle_v04(basis)):
         zeichen = "OK" if ist == soll else "FEHLER"
         print(f"{zeichen} {punkt}) {text}")
         ok &= ist == soll
@@ -1184,18 +1203,75 @@ def faelle_v03(basis):
     ]
 
 
+def faelle_v04(basis):
+    """[(Punkt, Beschreibung, ist, soll)] für die Änderungen a–b der
+    v0.4; je Punkt ein Fall, der in v0.3 falsch lief, und einer, der
+    richtig bleibt. ist/soll: True = wie erwartet ohne Befund bzw.
+    Zeile gedruckt."""
+    import contextlib
+    import io
+    import tempfile
+
+    def zeile(v, **k):
+        z = dict(basis, eintrag="t", variante=v, sprosse=2,
+                 hoehe="pruefung", aufgabe=f"$3$ von $4$? ({v})",
+                 loesung="$75\\,\\%$", pruef="75",
+                 id=f"t-e2-k1-s2-v{v}")
+        z.update(k)
+        return z
+
+    def ohne(o):
+        return not pruefe_zeile(zeile(1, original=o), "t", 2)[0]
+
+    with tempfile.TemporaryDirectory() as d:
+        ordner = Path(d) / "bank" / "t"
+        ordner.mkdir(parents=True)
+        (ordner / "e2.jsonl").write_text(
+            json.dumps(zeile(1), ensure_ascii=False) + "\n"
+            + json.dumps(zeile(2, loesung="$70\\,\\%$"),
+                         ensure_ascii=False) + "\n", encoding="utf-8")
+        aus = {}
+        for alle in (False, True):
+            puffer = io.StringIO()
+            with contextlib.redirect_stdout(puffer):
+                pruefe_eintrag("t", None, Path(d), alle)
+            aus[alle] = puffer.getvalue().split("\n")
+    return [
+        ("a", "ohne --alle keine OK-Zeile",
+         "OK t-e2-k1-s2-v1" not in aus[False], True),
+        ("a", "ohne --alle ABWEICHUNG und Summe gedruckt",
+         any(x.startswith("ABWEICHUNG t-e2-k1-s2-v2") for x in aus[False])
+         and any(x.startswith("e2.jsonl: Abweichungen") for x in aus[False])
+         and any(x.startswith("Abweichungen:") for x in aus[False]), True),
+        ("a", "--alle druckt die OK-Zeile",
+         "OK t-e2-k1-s2-v1" in aus[True], True),
+        ("b", "FHR-Kennung 2025-C-2b gilt",
+         ohne({"id": "2025-C-2b", "jahr": 2025, "papier": "C"}), True),
+        ("b", "Abitur-Kennung 2025MerhoehtAAGLAA121-a gilt",
+         ohne({"id": "2025MerhoehtAAGLAA121-a", "jahr": 2025,
+               "papier": "2025-iqb-ea"}), True),
+        ("b", "MSA-Kennung 2018-OS-K7a gilt weiter",
+         ohne({"id": "2018-OS-K7a", "jahr": 2018, "papier": "OS"}), True),
+        ("b", "FHR-Kennung mit Heft D bleibt Abweichung",
+         ohne({"id": "2025-D-2b", "jahr": 2025, "papier": "D"}), False),
+    ]
+
+
 def main(argv):
     if argv[1:] == ["--selbsttest"]:
         return selbsttest()
-    if len(argv) not in (2, 4) or (len(argv) == 4
-                                   and argv[2] != "--katalog"):
+    args = argv[1:]
+    alle = "--alle" in args
+    args = [x for x in args if x != "--alle"]
+    if len(args) not in (1, 3) or (len(args) == 3
+                                   and args[1] != "--katalog"):
         print(__doc__)
         return 2
     katalog = None
-    if len(argv) == 4:
-        katalog = Path(argv[3]).read_text(encoding="utf-8").split("\n")
+    if len(args) == 3:
+        katalog = Path(args[2]).read_text(encoding="utf-8").split("\n")
     wurzel = Path(__file__).resolve().parent.parent
-    return 1 if pruefe_eintrag(argv[1], katalog, wurzel) else 0
+    return 1 if pruefe_eintrag(args[0], katalog, wurzel, alle) else 0
 
 
 if __name__ == "__main__":
