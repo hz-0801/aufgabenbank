@@ -87,8 +87,9 @@ Nach der Korrektur bleibt eine Warnung: e2 k1 s8, 4 Zeilen statt 3
 - Katalogbefund: Einheit 2 hat in beiden Ketten eine Prüfungshöhe,
   bank.md erlaubt eine Sprosse mit hoehe pruefung je Einheit.
 - Katalogbefund: 2024MerhoehtBAGLAA2WTR1-1c,
-  2026MgrundlegendBAGLAA2WTR1-1c und 2026MerhoehtBAGLAA2MMS2-1b stehen in Sprossen, fehlen aber in
-  Abschnitt 2 der Mappe und sind daher nicht als original nutzbar.
+  2026MgrundlegendBAGLAA2WTR1-1c und 2026MerhoehtBAGLAA2MMS2-1b
+  stehen in Sprossen, fehlen aber in Abschnitt 2 der Mappe und sind
+  daher nicht als original nutzbar.
 - bank.md: „Prüfungshöhe 2 je Original“ klärt nicht, ob wortgleiche
   Dubletten eins oder zwei Originale sind; das Prüfskript zählt je
   Kennung.
