@@ -46,7 +46,9 @@ Prüfskript: werkzeuge/bank-pruef.py v0.5, 0 Abweichungen
 Sperre: Tripel heißt ein Tripel aus Merkkasten oder Original.
 
 Nach der Korrektur bleibt eine Warnung: e2 k1 s8, 4 Zeilen statt 3
-(siehe Entscheidungen). Keine Einheit scheiterte zweimal.
+(siehe Entscheidungen). Keine Einheit scheiterte zweimal. Nach der
+Gegenprobe wurden in 22 Zeilen (e2, e3, e4) mehrstellige
+Kastenzahlen ersetzt, die die Sperre nicht meldet (siehe Befunde).
 
 ## Entscheidungen
 
@@ -98,6 +100,10 @@ Nach der Korrektur bleibt eine Warnung: e2 k1 s8, 4 Zeilen statt 3
 - Prüfskript: „im Koordinatensystem“ im Wortlaut des Originals
   2022-bebb-gk-A1.4b („Beschreibe die Lage … im Koordinatensystem“)
   gilt als Zeichenauftrag und verlangt eine Grafik.
+- Prüfskript: Die Sperre meldet einzelne mehrstellige Kastenzahlen
+  (10, 11, 12, 15, 20, 24) in aufgabe nicht; die Gegenprobe des
+  Auftrags verlangt sie. Die Jahreszahl 2021 des Kastens steht nur
+  in Prüfkennungen „(Abitur 2021 GK)“ und bleibt.
 
 ## Offene Punkte
 
