@@ -16,7 +16,7 @@ kenngroessen-von-verteilungen-e4-k2-s2-v2: „liegt das Maximum genau zwischen i
 
 ## Punkt 2 – eindeutig lösbar
 
-kenngroessen-von-verteilungen-e4-k1-s1-v4, kenngroessen-von-verteilungen-e4-k1-s1-v5: Die höchste Säule ist am Diagramm kaum von der Nachbarsäule zu unterscheiden (n = 30, p = 0,2: 0,180 bei 6 gegen 0,172 bei 5; n = 40, p = 0,1: 0,206 bei 4 gegen 0,200 bei 3), und beide Nachbarn ergeben einen ganzzahligen Erwartungswert mit plausiblem $p$ – Parameter mit deutlicherem Maximum wählen, etwa n = 20, p = 0,3 bzw. n = 25, p = 0,2 (Verhältnis ≥ 1,1 wie in den übrigen Zeilen).
+kenngroessen-von-verteilungen-e4-k1-s1-v4, kenngroessen-von-verteilungen-e4-k1-s1-v5: Die höchste Säule ist am Diagramm kaum von der Nachbarsäule zu unterscheiden (n = 30, p = 0,2: 0,180 bei 6 gegen 0,172 bei 5; n = 40, p = 0,1: 0,206 bei 4 gegen 0,200 bei 3), und beide Nachbarn ergeben einen ganzzahligen Erwartungswert mit plausiblem $p$ – bei ganzzahligem $\mu = np$ ist das Verhältnis zur Nachbarsäule mindestens $1 + 1/\max(np;\, n(1-p))$; für ≥ 1,1 wie in den übrigen Zeilen $n(1-p) \le 10$ wählen, etwa n = 9, p = 1/3 oder n = 12, p = 1/6.
 
 ## Punkt 6 – Fehler finden
 
