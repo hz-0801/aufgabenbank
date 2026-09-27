@@ -15,7 +15,7 @@ Prüfskript: werkzeuge/bank-pruef.py v0.3, Endstand 334 Zeilen OK,
 | e1    |     87 |       12 |        10 |      51 |        2 |      12 |
 | e2    |     59 |        4 |         5 |      36 |        2 |      12 |
 | e3    |     68 |        8 |        10 |      36 |        2 |      12 |
-| e4    |     74 |        8 |        10 |      45 |        2 |       9 |
+| e4    |     74 |        8 |        10 |      42 |        5 |       9 |
 
 Pflicht je Einheit (fehler/begruenden/anwendung/darstellung):
 e1 3/3/3/3 · e2 3/3/3/3 · e3 3/3/3/3 · e4 3/3/3/–;
@@ -135,9 +135,25 @@ e1 2025-C-2b, e3 2022-B-2d, e4 2022-B-2b – je 3 Zeilen, Kennung
     Lösung im Tor.
 18. Operatoren in Du-Form („Weise nach“, „Begründe“, „Berechne“).
 
+## Nachbesserung 2026-09-27
+
+Prüfskript v0.5, bank.md Stand 2026-09-27b; erster Lauf 0
+Abweichungen, 0 Warnungen, Endstand ebenso.
+
+- e4-k2-s4 (fhr 2022-B-2b, nicht in der Mappe) trägt jetzt hoehe
+  pruefung mit original null, 3 Zeilen (bank.md „Prüfungshöhe ohne
+  P10-Original“).
+- e1-k3-s5 trägt das Feld original 2025-C-2b (papier C) und e3-k2-s3
+  das Feld original 2022-B-2d (papier B), je 3 Zeilen; v0.5 nimmt
+  die Kennungen an, weil sie in Abschnitt 2 der Mappe stehen
+  (Offener Punkt, Befund 1). hoehe bleibt sprosse (Befund 11).
+- Erkennungsschritte: nichts zu streichen; der einzige verbliebene
+  (e1-k1, Z. 47) verlangt einen anderen Handgriff als die Vorstufe
+  von e1-k2 (Z. 115) und e1-k3 (Z. 119).
+
 ## Befunde
 
-1. Prüfskript: Das Feld original nimmt nur Kennungen nach
+1. (erledigt v0.5) Prüfskript: Das Feld original nimmt nur Kennungen nach
    `\d{4}-[A-Z]+-[A-Z]\d+[a-z]` an; fhr-Kennungen wie 2025-C-2b
    ergeben „original unvollständig“ (Probe). bank.md regelt
    Sek-II-Originale nicht („Prüfungshöhe ohne P10-Original: null“
@@ -180,6 +196,15 @@ e1 2025-C-2b, e3 2022-B-2d, e4 2022-B-2b – je 3 Zeilen, Kennung
     gelesen dürfen sie in keiner Aufgabe als Ziffer stehen; das
     zwingt Wörter („mal hundert“). bank.md könnte die
     Umrechnungszahlen eines Einheiten-Eintrags ausnehmen.
+11. bank.md gegen Nachbesserung: e1-k3-s5 (2025-C-2b) und e3-k2-s3
+    (2022-B-2d) sind Prüfungshöhen mit Original in der Mappe. Nach
+    bank.md trügen sie hoehe pruefung mit 2 Zeilen je Original; mit
+    3 Zeilen warnt v0.5 („Original 3×, Menge 2“). Die Nachbesserung
+    streicht nur Erkennungsschritte; hoehe pruefung und die Streichung
+    je einer Variante (v3) stehen zur Entscheidung.
+12. Befunde 4, 5 und 6 bestehen unter v0.5 fort (Probe: „13:12 Uhr“
+    liest nur 13; „$6$ cm²; $18$ m²“ bricht die Aufzählung; `\int`
+    gilt als unbekannter Baustein).
 
 ## Offene Punkte
 
@@ -188,8 +213,8 @@ e1 2025-C-2b, e3 2022-B-2d, e4 2022-B-2b – je 3 Zeilen, Kennung
   in der Kopfzeile und mit Uhrzeiten, `\leerfeld` mitten im Satz,
   `\leerzelle` in der Einheitentafel.
 - Uhrzeit-Lösungen: pruef prüft nur die Stunde (Entscheidung 11).
-- Sek-II-Sprossen ohne Feld original (Entscheidung 3); nachtragen,
-  sobald das Prüfskript fhr-Kennungen annimmt.
+- (erledigt v0.5) Sek-II-Sprossen ohne Feld original (Entscheidung
+  3); nachtragen, sobald das Prüfskript fhr-Kennungen annimmt.
 - Die Zone hat keine Einheitenumrechnung; ob Blatt 0 für diesen
   Eintrag Größen mit Einheit zeigen soll (Fertigkeit Z. 33 nennt
   „null Komma null sechs Meter“), ist zu entscheiden.
