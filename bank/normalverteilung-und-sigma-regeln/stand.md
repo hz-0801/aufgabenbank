@@ -25,12 +25,14 @@ bank.md: Stand 2026-09-27b; Prüfskript v0.5
   2022MerhoehtBStochastikWTR2-3a; Typ ohne Kette:
   2017MerhoehtBStochastikCAS2-3c
 
-Nur als Prüfkennung im Text, Feld null: e1 k1 s1
-(2022MerhoehtAStochastik13-b), e2 k1 s1 (2023MerhoehtBStochastik-
-WTR3-2a, 2024MerhoehtBStochastikWTR2-2a), e3 k1 s1
-(2024MerhoehtBStochastikWTR2-2c, 2025MerhoehtBStochastikWTR1-2a),
-e3 k1 s2 (2022MerhoehtBStochastikWTR2-3b), e3 k1 s3
-(2024MerhoehtBStochastikWTR2-2b).
+Nur als Prüfkennung im Text, Feld null:
+- e1 k1 s1: 2022MerhoehtAStochastik13-b
+- e2 k1 s1: 2023MerhoehtBStochastikWTR3-2a,
+  2024MerhoehtBStochastikWTR2-2a
+- e3 k1 s1: 2024MerhoehtBStochastikWTR2-2c,
+  2025MerhoehtBStochastikWTR1-2a
+- e3 k1 s2: 2022MerhoehtBStochastikWTR2-3b
+- e3 k1 s3: 2024MerhoehtBStochastikWTR2-2b
 
 ## Prüfskript vor der Korrektur
 
