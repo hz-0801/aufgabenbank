@@ -1,6 +1,6 @@
 # Gegenlese: uneigentliche-integrale
 
-Datum: 2026-09-27 21:58 UTC
+Datum: 2026-09-27 21:46 UTC
 Modell: Claude Code, Web-Sitzung (Modellkennung nach Sitzungsregel nicht im Repo)
 Geprüfte Zeilen: 59 (zone 16, e1 23, e2 20)
 Korrekturen: 0
