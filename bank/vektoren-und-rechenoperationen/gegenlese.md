@@ -1,6 +1,6 @@
 # Gegenlese: vektoren-und-rechenoperationen
 
-Datum: 2026-09-27 22:12 UTC
+Datum: 2026-09-27 21:48 UTC
 Modell: Claude Code, Web-Sitzung (Modellkennung nach Sitzungsregel nicht im Repo)
 Geprüfte Zeilen: 134 (zone 27, e1 41, e2 43, e3 23)
 Korrekturen: 0
