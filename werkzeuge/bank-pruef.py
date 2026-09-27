@@ -1,11 +1,19 @@
 #!/usr/bin/env python3
 """Prüft die Bank eines Katalogeintrags (bank.md, Abschnitt „Prüfung").
 
-v0.4, 2026-09-27 (nach achtzehn Einträgen; bank.md dritte Fassung).
-Änderungen gegenüber v0.3:
+v0.5, 2026-09-27 (nach den Sek-II-Prüfsteinen; bank.md vierte Fassung).
+Änderungen gegenüber v0.4:
+  a) original: Kennung gilt, wenn sie als „### <id>“ in Abschnitt
+     „2 Originale“ der Mappe steht; das Muster KENNUNG entfällt.
+  b) Tripel (x|y|z): Ergebnisstelle, ksys3-Bereich und Sperre wie
+     beim Paar, mit dritter Zahl.
+  c) mathnorm: hochgestellte Ziffern ⁰–⁹ werden ^n (x⁴ = x^4).
+
+Änderungen v0.4 gegenüber v0.3:
   a) Ausgabe still: nur ABWEICHUNG, WARNUNG und Summen; --alle
      druckt wie v0.3 auch die OK-Zeilen.
-  b) original: Kennungen von MSA, FHR und Abitur gelten.
+  b) original: Kennungen von MSA, FHR und Abitur gelten (in v0.5
+     ersetzt durch den Abgleich mit der Mappe).
 papier je Prüfung (Mappen, Abschnitt „2 Originale“, Zeile „jahr …
 papier …“ unter der Kennung):
   MSA     2018-OS-K7a               papier OS, FOR oder GYM
@@ -13,7 +21,8 @@ papier …“ unter der Kennung):
                                     der Kennung)
   Abitur  2025MerhoehtAAGLAA121-a   papier <jahr>-iqb-ea (erhoeht)
           2025MgrundlegendAAGLAA12  oder <jahr>-iqb-ga (grundlegend)
-Das Skript prüft die Kennung, nicht den Wert von papier.
+Das Skript prüft die Kennung, nicht den Wert von papier (nur, dass
+es gesetzt ist).
 
 Änderungen v0.3 gegenüber v0.2:
   a) hoehe pruefung mit original null erlaubt; original an jeder
@@ -78,15 +87,12 @@ MENGE_PFLICHT = 3
 MENGE_ORIGINAL = 2
 MENGE_OHNE_ORIGINAL = 3      # Prüfungshöhe mit original null
 TOLERANZ = Decimal("0.005")
-# Kennungen der Originale: MSA, FHR, Abitur (IQB-Pool).
-KENNUNG = re.compile(r"\d{4}-[A-Z]+-[A-Z]\d+[a-z]"
-                     r"|\d{4}-[A-C]-\d[a-z]"
-                     r"|\d{4}M(erhoeht|grundlegend)[A-Z0-9]+(-[a-z])?")
 
 # Zahl mit Dezimalkomma; Tausender sind vorher zusammengezogen.
 ZAHL = re.compile(r"(?<![\d,])[-−]?\d+(?:,\d+)?")
+# Punkt (x|y) oder Tripel (x|y|z); Gruppe 3 leer beim Paar.
 PUNKT = re.compile(r"\(\s*([-−]?\d+(?:,\d+)?)\s*\|\s*([-−]?\d+(?:,\d+)?)"
-                   r"\s*\)")
+                   r"(?:\s*\|\s*([-−]?\d+(?:,\d+)?))?\s*\)")
 
 # LaTeX- und amsmath-Befehle, die keine Bausteine der Vorlage sind.
 STANDARD = set("""
@@ -164,9 +170,9 @@ FOLGE = re.compile(r"[\s$]*(?:[%€]|[A-Za-z]{1,3})?[\s$]*(?:[,;]|und|oder)"
 
 def ergebnis_zahlen(text):
     """Zahlen an der Ergebnisstelle: die erste Zahl, jede Zahl direkt
-    nach = oder ≈, beide Zahlen eines Punkts (x|y) oder Bruchs a/b an
-    der Ergebnisstelle, und die Glieder einer Aufzählung von
-    Ergebnissen (4; 1; 0)."""
+    nach = oder ≈, alle Zahlen eines Punkts (x|y), Tripels (x|y|z)
+    oder Bruchs a/b an der Ergebnisstelle, und die Glieder einer
+    Aufzählung von Ergebnissen (4; 1; 0)."""
     t = normiert(text)
     aus = []
     treffer = list(ZAHL.finditer(t))
@@ -182,7 +188,7 @@ def ergebnis_zahlen(text):
         else:
             vorige = None
     for m in PUNKT.finditer(t):
-        aus += [zahl(m.group(1)), zahl(m.group(2))]
+        aus += [zahl(g) for g in m.groups() if g is not None]
     return aus
 
 
@@ -347,6 +353,28 @@ def ksys_bereiche(grafik):
     return aus
 
 
+def ksys3_bereiche(grafik):
+    """[((x1min, x1max), (x2min, x2max), (x3min, x3max))] je ksys3;
+    Voreinstellung nach _bausteine.md."""
+    aus = []
+    for m in re.finditer(r"\\begin\{ksys3\}", grafik):
+        opt = ""
+        if grafik[m.end():m.end() + 1] == "[":
+            e = klammer(grafik, m.end())
+            opt = grafik[m.end() + 1:e - 1]
+        w = {"x1min": -2, "x1max": 6, "x2min": -3, "x2max": 6,
+             "x3min": -2, "x3max": 5}
+        for teil in opt.split(","):
+            k, _, v = teil.strip().partition("=")
+            if k.strip() in w:
+                try:
+                    w[k.strip()] = float(v)
+                except ValueError:
+                    pass
+        aus.append(tuple((w[f"x{i}min"], w[f"x{i}max"]) for i in (1, 2, 3)))
+    return aus
+
+
 # Ablese- oder Zeichenauftrag: verlangt eine Grafik (das Wort
 # „Graph“ allein nicht, etwa „Liegt P auf dem Graphen von f?“).
 # Imperativ „lies“, „zeichne“; „liest“, „ohne zu zeichnen“ und ein
@@ -367,17 +395,25 @@ def grafikprobe(a):
         b.append("grafik leer (form zeichnen oder Ablese-/Zeichenauftrag "
                  "in aufgabe)")
     bereiche = ksys_bereiche(grafik)
-    if not bereiche:
+    raeume = ksys3_bereiche(grafik)
+    if not bereiche and not raeume:
         return b
-    punkte = [("loesung", float(zahl(x)[0]), float(zahl(y)[0]))
-              for x, y in PUNKT.findall(normiert(a["loesung"]))]
+    # Paare gehören ins ksys, Tripel ins ksys3.
+    punkte, tripel = [], []
+    for m in PUNKT.finditer(normiert(a["loesung"])):
+        k = [float(zahl(g)[0]) for g in m.groups() if g is not None]
+        (tripel if len(k) == 3 else punkte).append(("loesung", *k))
     if a["pruef"]:
         try:
             for w in werte_aus(a["pruef"]):
                 if isinstance(w, (list, tuple)) and len(w) == 2:
                     punkte.append(("pruef", float(w[0]), float(w[1])))
+                elif isinstance(w, (list, tuple)) and len(w) == 3:
+                    tripel.append(("pruef", *map(float, w)))
         except Exception:  # noqa: BLE001 – meldet vergleiche()
             pass
+    if not bereiche:
+        punkte = []
     for name, pflicht in aufrufe(grafik):
         try:
             if name == "parabel" and len(pflicht) == 4:
@@ -392,6 +428,11 @@ def grafikprobe(a):
         if not any(x0 <= x <= x1 and y0 <= y <= y1
                    for x0, x1, y0, y1 in bereiche):
             b.append(f"Punkt ({x:g}|{y:g}) aus {wo} außerhalb des ksys")
+    for wo, *k in tripel if raeume else []:
+        if not any(all(lo <= v <= hi for v, (lo, hi) in zip(k, r))
+                   for r in raeume):
+            b.append(f"Punkt ({k[0]:g}|{k[1]:g}|{k[2]:g}) aus {wo} "
+                     f"außerhalb des ksys3")
     return b
 
 
@@ -485,9 +526,20 @@ def ankreuzprobe(a):
 
 # --- Sperre --------------------------------------------------------------
 
+HOCH = str.maketrans("⁰¹²³⁴⁵⁶⁷⁸⁹", "0123456789")
+
+
+def hochzahlen(t):
+    """Hochgestellte Ziffern zu ^{n} (x⁴ -> x^{4}); ² und ³ allein
+    bleiben, sie sind die Zielform von ^2 und ^3."""
+    return re.sub(r"[⁰¹²³⁴⁵⁶⁷⁸⁹]+",
+                  lambda m: m.group() if m.group() in "²³"
+                  else "^{" + m.group().translate(HOCH) + "}", t)
+
+
 def mathnorm(text):
-    """Text und LaTeX auf eine Schreibweise: 3/4, ·, ², -, ohne $."""
-    t = gemischt(text.replace("{,}", ",")).replace("\\%", "%")
+    """Text und LaTeX auf eine Schreibweise: 3/4, ·, ², ^n, -, ohne $."""
+    t = gemischt(hochzahlen(text).replace("{,}", ",")).replace("\\%", "%")
     t = re.sub(r"\\[dt]?frac\{([^{}]*)\}\{([^{}]*)\}", r"(\1)/(\2)", t)
     t = re.sub(r"\((\w+(?:,\d+)?)\)/\((\w+(?:,\d+)?)\)", r"\1/\2", t)
     t = re.sub(r"\^\{?2\}?", "²", t)
@@ -507,7 +559,7 @@ def ohne_raum(t):
 
 # ein Token: Zahl, Wort, Zeichen
 TOKEN = re.compile(r"\d+(?:,\d+)?|[A-Za-zÄÖÜäöüß]+|\S")
-OPERATOR = set("+-·:/=≈()|²³√%")
+OPERATOR = set("+-·:/=≈()|²³√%^")
 
 
 def gleichungen(text):
@@ -565,14 +617,21 @@ def ausgeglichen(s):
 
 
 def zahlenpaare(text):
-    """Paare: Punkt (a|b), Anteil (a von b, a : b), Produkt. Ein
-    einzelner Bruch a/b ist kein Paar; Zähler oder Nenner eines Bruchs
-    bilden mit einem Faktor daneben kein Paar (1/12 · 3)."""
+    """Paare: Punkt (a|b), Tripel (a|b|c), Anteil (a von b, a : b),
+    Produkt. Ein einzelner Bruch a/b ist kein Paar; Zähler oder Nenner
+    eines Bruchs bilden mit einem Faktor daneben kein Paar (1/12 · 3);
+    der Ursprung (0|0) bzw. (0|0|0) ist keine Zahlbelegung."""
     t = mathnorm(text)
     n = r"(-?\d+(?:,\d+)?)"
     aus = set()
     for a, b in re.findall(r"\(\s*" + n + r"\s*\|\s*" + n + r"\s*\)", t):
-        aus.add(("Punkt", zahl(a)[0], zahl(b)[0]))
+        if zahl(a)[0] or zahl(b)[0]:
+            aus.add(("Punkt", zahl(a)[0], zahl(b)[0]))
+    for a, b, c in re.findall(r"\(\s*" + n + r"\s*\|\s*" + n + r"\s*\|\s*"
+                              + n + r"\s*\)", t):
+        k = tuple(zahl(x)[0] for x in (a, b, c))
+        if any(k):
+            aus.add(("Tripel",) + k)
     for muster, art in ((n + r"\s*%?\s*von\s*" + n, "Anteil"),
                         (n + r"\s*:\s*" + n, "Anteil"),
                         (n + r"\s*·\s*" + n, "Produkt")):
@@ -590,6 +649,15 @@ def zahlenpaare(text):
 def lade_sperre(mappe):
     """{('gleichung'|'paar', muster): herkunft} aus der Mappe."""
     return sperre_aus(mappe.read_text(encoding="utf-8"))
+
+
+def originale_aus(text):
+    """Kennungen der Überschriften „### <id> …“ in „## 2 Originale“."""
+    if "## 2 Originale" not in text:
+        return set()
+    orig = text.split("## 2 Originale")[1].split("\n## ")[0]
+    return {z[4:].split(" ")[0] for z in orig.split("\n")
+            if z.startswith("### ")}
 
 
 def sperre_aus(text):
@@ -631,9 +699,10 @@ def sperre_aus(text):
 
 
 def paar_text(p):
-    art, x, y = p
-    if art == "Punkt":
-        return f"({x}|{y})"
+    art, *k = p
+    if art in ("Punkt", "Tripel"):
+        return "(" + "|".join(str(v) for v in k) + ")"
+    x, y = k
     return f"{x} {'von' if art == 'Anteil' else '·'} {y}"
 
 
@@ -650,7 +719,8 @@ def sperrprobe(a, sperre):
                          + r"(?![\w²³,+\-·/^(])", aufgabe):
                 b.append(f"Sperre: {muster} ({herkunft})")
         elif muster in paare:
-            b.append(f"Sperre: Zahlenpaar {paar_text(muster)} "
+            wort = "Tripel" if muster[0] == "Tripel" else "Zahlenpaar"
+            b.append(f"Sperre: {wort} {paar_text(muster)} "
                      f"({herkunft})")
     return b
 
@@ -704,13 +774,21 @@ def pruefe_zeile(a, eintrag, einheit, ctx=None):
         b.append("sprosse 0 genau dann, wenn hoehe vorstufe")
     o = a["original"]
     # original null auch bei pruefung (Zielmarke ohne P10-Original);
-    # ein original an jeder hoehe, wenn vollständig.
-    if o is not None and not (
-            isinstance(o, dict) and set(o) == {"id", "jahr", "papier"}
-            and isinstance(o["id"], str)
-            and KENNUNG.fullmatch(o["id"])
-            and o["id"].startswith(str(o["jahr"]))):
-        b.append("original unvollständig")
+    # ein original an jeder hoehe, wenn vollständig: id, jahr, papier
+    # gesetzt, id beginnt mit jahr und steht als „### <id>“ in
+    # Abschnitt 2 der Mappe (ohne Mappe entfällt dieser Teil).
+    if o is not None:
+        if not (isinstance(o, dict) and set(o) == {"id", "jahr", "papier"}
+                and isinstance(o["id"], str) and o["id"]
+                and isinstance(o["jahr"], int)
+                and not isinstance(o["jahr"], bool)
+                and isinstance(o["papier"], str) and o["papier"]
+                and o["id"].startswith(str(o["jahr"]))):
+            b.append("original unvollständig")
+        elif (ctx.get("originale") is not None
+              and o["id"] not in ctx["originale"]):
+            b.append(f"original {o['id']} nicht in der Mappe "
+                     f"(Abschnitt 2 Originale)")
     for f in ("kette", "sprosse_text", "merkmal", "aufgabe", "loesung"):
         if not isinstance(a[f], str) or not a[f].strip():
             b.append(f"{f} leer")
@@ -915,8 +993,10 @@ def kontext(eintrag, wurzel):
     mp = wurzel / "mappen" / f"{eintrag}.md"
     if mp.exists():
         ctx["sperre"] = lade_sperre(mp)
+        ctx["originale"] = originale_aus(mp.read_text(encoding="utf-8"))
     else:
-        w.append(f"mappen/{eintrag}.md fehlt – Sperrprobe entfällt")
+        w.append(f"mappen/{eintrag}.md fehlt – Sperrprobe und "
+                 f"Kennungsprobe entfallen")
     return ctx, w
 
 
@@ -994,8 +1074,8 @@ def pruefe_eintrag(eintrag, katalog=None, wurzel=Path("."), alle=False):
 
 def selbsttest():
     """Sechs Beispielzeilen (drei richtige, drei falsche), dann je
-    Änderung a–g ein Fall, der in v0.2 falsch lief, und einer, der
-    richtig bleibt."""
+    Änderung von v0.3, v0.4 und v0.5 ein Fall, der in der Vorfassung
+    falsch lief, und einer, der richtig bleibt."""
     basis = {"eintrag": "test", "einheit": 2, "kette": "Prozentsatz",
              "kette_nr": 1, "merkmal": "Ganzes 100",
              "form": "teil", "antwort": "__ %", "original": None,
@@ -1037,7 +1117,8 @@ def selbsttest():
                                            + "; ".join(befunde)))
         ok &= ist == soll
     for punkt, text, ist, soll in (faelle_v03(basis)
-                                   + faelle_v04(basis)):
+                                   + faelle_v04(basis)
+                                   + faelle_v05(basis)):
         zeichen = "OK" if ist == soll else "FEHLER"
         print(f"{zeichen} {punkt}) {text}")
         ok &= ist == soll
@@ -1220,8 +1301,12 @@ def faelle_v04(basis):
         z.update(k)
         return z
 
+    # seit v0.5 gilt eine Kennung, wenn sie in der Mappe steht
+    mappe = {"originale": {"2025-C-2b", "2025MerhoehtAAGLAA121-a",
+                           "2018-OS-K7a"}}
+
     def ohne(o):
-        return not pruefe_zeile(zeile(1, original=o), "t", 2)[0]
+        return not pruefe_zeile(zeile(1, original=o), "t", 2, mappe)[0]
 
     with tempfile.TemporaryDirectory() as d:
         ordner = Path(d) / "bank" / "t"
@@ -1254,6 +1339,117 @@ def faelle_v04(basis):
          ohne({"id": "2018-OS-K7a", "jahr": 2018, "papier": "OS"}), True),
         ("b", "FHR-Kennung mit Heft D bleibt Abweichung",
          ohne({"id": "2025-D-2b", "jahr": 2025, "papier": "D"}), False),
+    ]
+
+
+def faelle_v05(basis):
+    """[(Punkt, Beschreibung, ist, soll)] für die Änderungen a–c der
+    v0.5; je Punkt Fälle, die in v0.4 falsch liefen, und Fälle, die
+    richtig bleiben. ist/soll: True = ohne Befund."""
+    import contextlib
+    import io
+    import tempfile
+
+    mini = ("## 1 Katalogeintrag\n"
+            " 40  ### Merkkasten\n"
+            " 41  Punkt A(1 | 2 | 0); Beispiel f(x) = 2x⁴ − 5x; "
+            "Punkt (12|5)\n"
+            "## 2 Originale (3)\n"
+            "### 2019-be-gk-A1.1a (abi-katalog.csv)\n"
+            "- jahr 2019, papier 2019-be-gk\n"
+            "### 2021MerhoehtAAnalysis12-a (iqb-katalog.csv)\n"
+            "### 2017MgrundlegendBAnalysisWTR-1d (iqb-katalog.csv)\n"
+            "## 3 Maßstab\n"
+            "### 3.6\n")
+
+    def zeile(v=1, **k):
+        z = dict(basis, eintrag="t", variante=v, sprosse=2,
+                 hoehe="sprosse", aufgabe=f"$3$ von $4$? ({v})",
+                 loesung="$75\\,\\%$", pruef="75",
+                 id=f"t-e2-k1-s2-v{v}")
+        z.update(k)
+        return z
+
+    with tempfile.TemporaryDirectory() as d:
+        (Path(d) / "mappen").mkdir()
+        (Path(d) / "mappen" / "t.md").write_text(mini, encoding="utf-8")
+        ctx, _ = kontext("t", Path(d))
+        # ohne Mappe: Warnung, Kennungsprobe ausgesetzt
+        ordner = Path(d) / "bank" / "u"
+        ordner.mkdir(parents=True)
+        fremd = {"id": "2019-be-gk-Z9.9z", "jahr": 2019,
+                 "papier": "2019-be-gk"}
+        (ordner / "e2.jsonl").write_text(json.dumps(
+            zeile(eintrag="u", id="u-e2-k1-s1-v1", sprosse=1,
+                  hoehe="grundfall", original=fremd),
+            ensure_ascii=False) + "\n", encoding="utf-8")
+        puffer = io.StringIO()
+        with contextlib.redirect_stdout(puffer):
+            ohne_mappe = pruefe_eintrag("u", None, Path(d))
+        druck = puffer.getvalue()
+
+    def ohne(z, c=ctx):
+        return not pruefe_zeile(z, "t", 2, c)[0]
+
+    def orig(kid, jahr=None, papier="x"):
+        return {"id": kid, "jahr": jahr or int(kid[:4]), "papier": papier}
+
+    def gesperrt(aufgabe):
+        return not sperrprobe(zeile(aufgabe=aufgabe), ctx["sperre"])
+
+    def grafik(loesung, pruef, g):
+        return not grafikprobe(zeile(loesung=loesung, pruef=pruef,
+                                     grafik=g))
+
+    ksys3 = "\\begin{ksys3}[x1max=4] \\end{ksys3}"
+    return [
+        ("a", "Landeskennung 2019-be-gk-A1.1a aus der Mappe gilt",
+         ohne(zeile(original=orig("2019-be-gk-A1.1a"))), True),
+        ("a", "IQB-Kennung 2021MerhoehtAAnalysis12-a gilt",
+         ohne(zeile(original=orig("2021MerhoehtAAnalysis12-a"))), True),
+        ("a", "Teil-B-Kennung 2017MgrundlegendBAnalysisWTR-1d gilt",
+         ohne(zeile(original=orig("2017MgrundlegendBAnalysisWTR-1d"))),
+         True),
+        ("a", "2019-be-gk-Z9.9z fehlt in der Mappe: Abweichung",
+         ohne(zeile(original=orig("2019-be-gk-Z9.9z"))), False),
+        ("a", "id beginnt nicht mit jahr: Abweichung",
+         ohne(zeile(original=orig("2019-be-gk-A1.1a", 2020))), False),
+        ("a", "papier leer: Abweichung",
+         ohne(zeile(original=orig("2019-be-gk-A1.1a", papier=""))), False),
+        ("a", "Überschrift aus Abschnitt 3 ist keine Kennung",
+         ohne(zeile(original=orig("3.6", 3))), False),
+        ("a", "ohne Mappe Warnung, Kennung nicht geprüft",
+         ohne_mappe == 0 and "Kennungsprobe entfallen" in druck, True),
+        ("b", "Tripel (3 | -1 | 2): alle drei an der Ergebnisstelle",
+         not vergleiche("[3, -1, 2]",
+                        "$A(1 | 2 | 0)$, $B(3 | -1 | 2)$"), True),
+        ("b", "Paar (4|-2) weiter mit beiden Zahlen gelesen",
+         not vergleiche("[4, -2]", "Scheitel $S(4 | -2)$"), True),
+        ("b", "Tripel A(1 | 2 | 0) aus dem Kasten gesperrt",
+         gesperrt("Liegt $A(1 \\mid 2 \\mid 0)$ auf g?"), False),
+        ("b", "anderes Tripel (1 | 2 | 5) frei",
+         gesperrt("Liegt $P(1 | 2 | 5)$ auf g?"), True),
+        ("b", "Tripel (12 | 5 | 1) ist nicht das Paar (12|5)",
+         gesperrt("Liegt $Q(12 | 5 | 1)$ auf g?"), True),
+        ("b", "Paar (12|5) bleibt gesperrt",
+         gesperrt("Liegt $(12|5)$ auf f?"), False),
+        ("b", "Ursprung (0 | 0 | 0) ist kein gesperrtes Tripel",
+         not ("paar", ("Tripel", 0, 0, 0)) in sperre_aus(
+             mini.replace("A(1 | 2 | 0)", "O(0 | 0 | 0)")), True),
+        ("b", "Tripel außerhalb des ksys3: Abweichung",
+         grafik("$P(5 | 1 | 1)$", "5", ksys3), False),
+        ("b", "Tripel im ksys3 ohne Befund",
+         grafik("$P(4 | -3 | 5)$", "4", ksys3), True),
+        ("b", "Paar außerhalb des ksys bleibt Abweichung",
+         grafik("$(9 | 1)$", "[9, 1]", "\\begin{ksys}\\end{ksys}"),
+         False),
+        ("c", "2x⁴ − 5x der Mappe sperrt 2x^4 - 5x",
+         gesperrt("Leite $g(x) = 2x^4 - 5x$ ab."), False),
+        ("c", "2x^4 - 7x bleibt frei",
+         gesperrt("Leite $g(x) = 2x^4 - 7x$ ab."), True),
+        ("c", "x¹⁰ und x^{10} gleich normiert, x² bleibt x²",
+         mathnorm("x¹⁰") == mathnorm("x^{10}")
+         and mathnorm("x²") == mathnorm("x^2") == "x²", True),
     ]
 
 
