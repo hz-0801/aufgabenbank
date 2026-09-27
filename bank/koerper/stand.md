@@ -107,6 +107,21 @@ behoben.
 12. Einheiten als Unicode außerhalb der Mathematik („cm³“, „m²“);
     Buchstaben nur mit Erklärung im Text (Kegelformel in e5).
 
+## Nachbesserung 2026-09-27
+
+Prüfskript v0.5, bank.md Stand 2026-09-27b; erster Lauf 0
+Abweichungen, 0 Warnungen, Endstand ebenso.
+
+- Keine Zeile geändert: die einzige Prüfungshöhe ohne Original
+  (Aquarium, e2-k1-s8) trägt schon hoehe pruefung mit original
+  null, 3 Zeilen, und der einzige Erkennungsschritt (e4-k1 „Welche
+  Einheit?“) verlangt einen anderen Handgriff als die Vorstufe von
+  e4-k2 („Radius oder Durchmesser benennen“).
+- Befund 5 besteht unter v0.5 fort (Probe: „$\pi \cdot 3^2 \cdot
+  10$“ und „$1\,000 : (\pi \cdot 16)$“ ohne Abweichung,
+  „$5 \cdot 4 \cdot 2$“ gefangen); kein Befund ist durch v0.5
+  erledigt.
+
 ## Befunde
 
 1. Katalog: Fünf Erkennungsschritte wiederholen die Vorstufe der
