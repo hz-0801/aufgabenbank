@@ -7,7 +7,7 @@ unter bank/<eintrag>/.
 
 Vorlage: `<eintrag>` ist der Dateiname des Katalogeintrags ohne
 `.md` (etwa lineare-funktionen); vor dem Einsatz überall ersetzen.
-Stand der Vorlage: 2026-09-27, nach acht Einträgen.
+Stand der Vorlage: 2026-09-27b, nach achtzehn Einträgen.
 
 ## Ausgangslage
 
@@ -18,12 +18,13 @@ bank.md; was dort steht, wird nicht neu entschieden.
 
 ## Quellen
 
-Nur diese drei, aus dem Repo:
+Nur diese drei, aus dem Repo, jede genau einmal gelesen:
 - mappen/<eintrag>.md – Katalogeintrag mit Zeilennummern (Feld
   quelle), Originale mit Spalten aus den Prüfungsdateien,
   Maßstab aus unterrichtsblatt.md (2.2, 2.3 c, 2.4 b–c, 3.6).
-  Der Katalog-Commit im Kopf der Mappe ist der Stand für
-  stand.md.
+  Lange Quellenzeilen sind gekürzt; sie tragen zum Schreiben
+  nichts bei. Der Katalog-Commit im Kopf der Mappe ist der Stand
+  für stand.md.
 - mappen/_bausteine.md – Bausteine der Vorlage (Name,
   Argumentzahl, Beispiele).
 - bank.md.
@@ -46,9 +47,12 @@ Mappe, bricht die Sitzung ab und sagt es im Bericht.
    „<eintrag>: zone", push.
 3. Einheiten nacheinander, je Einheit: e<n>.jsonl mit allen
    Ketten in der Reihenfolge nach bank.md („Reihenfolge je
-   Datei"), die ganze Datei in einem Schreibvorgang;
-   `python3 werkzeuge/bank-pruef.py <eintrag>` bis null
-   Abweichungen; Commit „<eintrag>: e<n>", push. Fehlerregel:
+   Datei"), der erste Wurf als ganze Datei in einem
+   Schreibvorgang; `python3 werkzeuge/bank-pruef.py <eintrag>`
+   bis null Abweichungen; Commit „<eintrag>: e<n>", push.
+   Korrekturen ändern nur die gemeldete Zeile (Edit), nie die
+   ganze Datei; die Datei wird nach dem Schreiben nicht
+   zurückgelesen – das Skript sagt, was falsch ist. Fehlerregel:
    Scheitert eine Einheit zweimal am Prüfskript, bleibt sie mit
    dem Stand liegen, stand.md sagt es, die nächste Einheit folgt.
    Dabei nach bank.md: Grundfall je Verfahrenskette; Prüfungshöhe
@@ -56,11 +60,14 @@ Mappe, bricht die Sitzung ab und sagt es im Bericht.
    Original an einer Kettensprosse im Feld original; ein
    Erkennungsschritt, der die Vorstufe einer Kette derselben
    Einheit wiederholt, entfällt (Befund in stand.md).
-4. stand.md: Katalog-Commit (aus dem Kopf der Mappe), Datum aus
-   `date`, je Datei Zahl der Zeilen und Zahl je hoehe, Originale
-   je Einheit, Abweichungen und Warnungen des Prüfskripts vor der
-   Korrektur je Datei, „Entscheidungen", „Befunde" (bank.md,
-   „Befunde"), „Offene Punkte". Commit „<eintrag>: stand", push.
+4. stand.md, kurz: Katalog-Commit (aus dem Kopf der Mappe), Datum
+   aus `date`, eine Tabelle Zeilen je Datei und hoehe, Originale
+   je Einheit als Kennungen, Abweichungen und Warnungen des
+   Prüfskripts vor der Korrektur als Zahl je Datei mit dem
+   häufigsten Grund. „Entscheidungen": nur, was von Katalog oder
+   bank.md abweicht oder was beide offenlassen, je ein Satz,
+   höchstens zehn. „Befunde" (bank.md, „Befunde") und „Offene
+   Punkte" je ein Satz. Commit „<eintrag>: stand", push.
 
 ## Gegenprobe
 
@@ -88,10 +95,8 @@ Option wortgleich.
 
 ## Bericht
 
-Im Chat, am Ende. Erste Zeile das Modell. Je Einheit: Zeilen,
-davon grundfall/sprosse/pruefung/pflicht, Abweichungen und
-Warnungen des Prüfskripts vor der Korrektur, was zweimal
-scheiterte. Die Gegenprobe im Wortlaut mit Ist-Wert. Drei
-Beispielzeilen (je eine aus Grundfall, Prüfungshöhe, Fehler
-finden) wortgleich. Letzte Zeile: „gepusht auf main, Commit
-<hash>".
+Im Chat, am Ende, kurz. Erste Zeile das Modell. Je Einheit eine
+Zeile: Zeilen, davon grundfall/sprosse/pruefung/pflicht,
+Abweichungen vor der Korrektur, was zweimal scheiterte. Die
+Gegenprobe als Ist-Werte. Letzte Zeile: „gepusht auf main,
+Commit <hash>".
