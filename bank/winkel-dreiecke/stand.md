@@ -62,6 +62,17 @@ Prüfskript: werkzeuge/bank-pruef.py, 0 Abweichungen, 0 Warnungen
 - Lage an Parallelen steht im Text (oberhalb, links von k);
   \parallelenpaar ohne Labels, da deren Lage ungeprüft ist.
 
+## Nachbesserung 2026-09-27
+
+- Prüfskript v0.5 meldet 0 Abweichungen und 0 Warnungen; keine
+  Zeile geändert.
+- Keine Prüfungshöhe ohne Original steht als hoehe sprosse; E4 und
+  E5 tragen sie bereits als hoehe pruefung mit original null.
+- Die drei verbliebenen Erkennungsschritte („Welche Skala?“, „Sind
+  die Geraden parallel?“, „Welches Teildreieck?“) verlangen einen
+  anderen Handgriff als die Vorstufe ihrer Einheit; keiner
+  entfällt.
+
 ## Befunde
 
 - Katalog: Die Erkennungsschritte „Welche Winkelart?“, „Wie liegen
