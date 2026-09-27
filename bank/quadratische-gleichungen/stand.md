@@ -9,12 +9,14 @@ Prüfskript: werkzeuge/bank-pruef.py v0.2 – Endstand 0 Abweichungen,
 ## Dateien
 
     Datei       Zeilen vorstufe grundfall sprosse pruefung pflicht
-    zone.jsonl      34        0         0      33        0       1
-    e1.jsonl        67       12         5      36        2      12
-    e2.jsonl        47        8         5      24        4       6
-    e3.jsonl        83       16         5      36       14      12
-    e4.jsonl        43        8         5      24        0       6
-    gesamt         274       44        20     153       20      37
+    zone.jsonl      34        0        16      17        0       1
+    e1.jsonl        63        8         5      36        2      12
+    e2.jsonl        43        4         5      24        4       6
+    e3.jsonl        79       12         5      36       14      12
+    e4.jsonl        39        4         5      21        3       6
+    gesamt         258       28        36     134       23      37
+
+(Zahlen nach der Nachbesserung 2026-09-27.)
 
 Pflicht je Einheit: e1 und e3 fehler, begruenden, darstellung,
 anwendung je 3; e2 und e4 fehler und begruenden je 3. Zone: ein
@@ -58,14 +60,17 @@ zweimal.
    Klammern; e3 „Was sind p und q?“ an Termen, Vorstufe an ganzen
    Gleichungen mit unsichtbarer Eins und fehlender Zahl; e4
    Erkennung Länge/Anzahl, Vorstufe mit dem Fall „beide“
-   (Zahlenrätsel).
+   (Zahlenrätsel). (Überholt, Nachbesserung 2026-09-27: die vier
+   Erkennungsschritte sind gestrichen.)
 2. „Zwei, eine oder keine?“ ohne Null-Fall: x² = 0 steht im
    Merkkasten. Den Null-Fall trägt die Vorstufe mit (x − 4)² = 0.
+   (Erkennungsschritt gestrichen, Nachbesserung 2026-09-27.)
 3. P10-Form-Sprossen in der Kettenmitte (e1 s2 zu 2020-OS-B1d,
    s6 zu 2022-OS-K2d) als hoehe sprosse, 3 Zeilen, ohne original
    und ohne Prüfkennung – das Skript verlangt steigende hoehe.
 4. Prüfungshöhe e4 ohne Original als hoehe sprosse mit 3 Zeilen –
-   das Skript verlangt bei pruefung ein original.
+   das Skript verlangt bei pruefung ein original. (Überholt,
+   Nachbesserung 2026-09-27: jetzt hoehe pruefung, original null.)
 5. Eine Prüfungshöhen-Sprosse trägt alle Originale der Kette, je 2
    Zeilen. 2017-OS-K5d (Nebenmarke der Zielmarke e3, nicht in der
    Kettenzeile) ist aufgenommen.
@@ -97,6 +102,7 @@ zweimal.
     kette und sprosse_text = Fertigkeit bis zum Doppelpunkt; hoehe
     sprosse. Zone-Paar an f1 (Vorzeichen beim Quadrieren), s4 fehler,
     s5 Rechenaufgabe. Varianten laufen je Fertigkeit 1..n durch.
+    (hoehe überholt, Nachbesserung 2026-09-27: s1 grundfall.)
 11. gleichungsraster: aufgabe ist nur die Gleichung, ohne $ (für
     \gl{…}) und ohne Fragewort – die Anweisung trägt die Hauptnummer.
 12. Ankreuzen: jede Option nach „\\ “ in eigener Zeile. Wortoptionen
@@ -119,26 +125,31 @@ zweimal.
 
 1. Prüfskript/bank.md: Das Zone-ID-Muster hat keine Sprossennummer;
    das Skript verlangt darum Varianten 1..n über die ganze
-   Fertigkeit. bank.md sagt das nicht.
+   Fertigkeit. bank.md sagt das nicht. (erledigt v0.5)
 2. Prüfskript/bank.md: bank.md erlaubt original null bei pruefung,
    das Skript nicht. Eine Einheit ohne Original (e4) kann keine
-   Prüfungshöhe tragen.
+   Prüfungshöhe tragen. (erledigt v0.5)
 3. Prüfskript/Katalog: hoehe muss in der Kette steigen, der Katalog
    setzt P10-Form-Sprossen in die Mitte (e1). Deren Originale gehen
-   dem Feld original verloren.
+   dem Feld original verloren. (erledigt v0.5: original steht an
+   jeder hoehe; die Daten nutzen es noch nicht, Befund 11)
 4. Prüfskript, Sperre: meldet x² = 36 (Merkkasten) nicht (Probe)
    und nicht (x + 3)² in (x + 3)² = 25 (Typische Fehler,
-   2017-OS-K5d).
+   2017-OS-K5d). (erledigt v0.5)
 5. Prüfskript, Ergebnisstelle: „x^2 - 12x“ wird als 12 gelesen, das
    Minus geht mit dem Leerzeichen verloren; Terme sind nur über den
-   ersten Koeffizienten prüfbar.
+   ersten Koeffizienten prüfbar. (erledigt v0.5 für das Minus;
+   Terme bleiben nur über einen Koeffizienten prüfbar)
 6. Prüfskript: pruef "" gilt als „pruef fehlt“, sobald loesung eine
-   Ziffer enthält, auch die 2 in x^2.
+   Ziffer enthält, auch die 2 in x^2. (erledigt v0.5)
 7. Katalog: Die Erkennungsschritte „Zwei, eine oder keine?“, „Steht
    rechts eine Null?“ und „Welche Lösung passt zur Frage?“ decken
    sich mit den Vorstufen der Ketten e1, e2, e4; mit bank.md
    (Erkennungsschritt als eigene Kette plus Vorstufe 4) entsteht
-   Doppelung.
+   Doppelung. Dasselbe gilt für „Was sind p und q?“ und die Vorstufe
+   der p-q-Formel (e3, beide: p und q mit Vorzeichen einkreisen).
+   Nach bank.md 2026-09-27b sind die vier Erkennungsschritte in der
+   Bank gestrichen; der Katalog führt weiter beide.
 8. Katalog: Die Prüfungshöhe e2 (2020-OS-K3e) verlangt Faktorisieren
    einer Normalform, das die Kette nicht einführt (2.4 c).
 9. Katalog: Die Prüfungshöhe e3 (2021-OS-K2c, 2022-OS-K3c,
@@ -146,6 +157,11 @@ zweimal.
    über den Typ ohne Kette abgefangen.
 10. Katalog: Zielmarke e4 nennt 2014-OS-K7a; das ist Gleichsetzen
     Gerade–Parabel und gehört zu e3.
+11. Bank: Die P10-Form-Sprossen e1 s2 (2020-OS-B1d) und s6
+    (2022-OS-K2d) tragen original null und keine Prüfkennung; nach
+    bank.md darf das Feld dort stehen. Nicht nachgezogen, weil der
+    Auftrag es nicht nennt und die Mengenregel dafür offen ist (3
+    Zeilen als Sprosse oder 2 je Original).
 
 ## Offene Punkte
 
@@ -155,4 +171,28 @@ zweimal.
 - Konvention gleichungsraster (aufgabe ohne $) mit dem Zusammenbau
   abgleichen.
 - Die eigene Sperrliste ist von Hand aus der Mappe gezogen; eine
-  vollständige Sperre gehört ins Skript (Befund 4).
+  vollständige Sperre gehört ins Skript (Befund 4, erledigt v0.5).
+
+## Nachbesserung 2026-09-27
+
+Prüfskript v0.5, bank.md Stand 2026-09-27b. Vorher 3 Abweichungen,
+16 Warnungen; nachher 0 Abweichungen, 0 Warnungen in allen fünf
+Dateien.
+
+- Sperre: e1-k1-s0-v3 (x − 2)² = 11 wird (x − 6)² = 11 (Original
+  2022-OS-K3c).
+- Sperre: e1 s8 v1 (x − 2)² = 16 wird (x − 6)² = 16, Lösungen 10
+  und 2 (Original 2022-OS-K3c).
+- Sperre: e2 s6 v2 x² + 4x = 0 wird x² + 11x = 0, Lösungen 0 und
+  −11 (Original 2024-OS-K3d).
+- Zone: die 16 Zeilen mit sprosse 1 tragen hoehe grundfall statt
+  sprosse.
+- e4 Sachaufgaben s8 (Prüfungshöhe ohne P10-Original, Entscheidung
+  4) trägt hoehe pruefung, original null, 3 Zeilen.
+- Erkennungsschritte gestrichen, weil sie denselben Handgriff wie
+  die Vorstufe der Kette verlangen: e1 „Zwei, eine oder keine?“, e2
+  „Steht rechts eine Null?“, e3 „Was sind p und q?“, e4 „Welche
+  Lösung passt zur Frage?“, je 4 Zeilen; kette_nr und id der
+  folgenden Ketten rücken um eins auf.
+- Tabelle „Dateien“ auf die neuen Zahlen gebracht; Entscheidungen
+  1, 2, 4 und 10 als überholt vermerkt.
