@@ -2,7 +2,7 @@
 
 Katalog-Commit: 95b0f8b09856c14466ca030dd604451b8d259cfa (2026-09-26)
 Datum: 2026-09-27
-Prüfskript: werkzeuge/bank-pruef.py v0.4
+Prüfskript: werkzeuge/bank-pruef.py v0.4, nachgeprüft mit v0.5
 
 ## Zeilen je Datei und hoehe
 
@@ -41,6 +41,9 @@ Echte Abweichungen darunter: e1 ein falsches pruef, e2 eine Sperre
 (f(0) = 1) und ein fehlendes pruef. Nach der Korrektur bleiben 37
 Abweichungen, alle „original unvollständig" (Befund 1).
 
+v0.5: 0 Abweichungen, 0 Warnungen, ohne Änderung an den jsonl;
+auch die Sperre für x⁴, x⁵ aus der Mappe trifft keine Aufgabe.
+
 ## Entscheidungen
 
 - Zone: kette und sprosse_text enden am ersten Doppelpunkt, sonst
@@ -68,9 +71,10 @@ Abweichungen, alle „original unvollständig" (Befund 1).
 
 - Prüfskript: KENNUNG verwirft Landesabitur-Kennungen
   (2019-be-gk-A1.1a) und IQB-Kennungen mit Kleinbuchstaben
-  (2021MerhoehtAAnalysis12-a); die Kennungen sind nach Mappe richtig.
+  (2021MerhoehtAAnalysis12-a); die Kennungen sind nach Mappe
+  richtig. (v0.5)
 - Prüfskript: Die Sperre vergleicht x⁴, x⁵ der Mappe nicht mit x^4,
-  x^5 der Bank; Terme ab Exponent 4 sind damit nie gesperrt.
+  x^5 der Bank; Terme ab Exponent 4 sind damit nie gesperrt. (v0.5)
 - Prüfskript: pruef sieht bei Termen nur die erste Zahl; zwei
   fehlende Klammern in e3 s5 fand erst die Durchsicht.
 - Prüfskript: Mehrstellige Kastenzahlen prüft es nicht; die zwölf
@@ -87,8 +91,6 @@ Abweichungen, alle „original unvollständig" (Befund 1).
 
 ## Offene Punkte
 
-- Die 37 Kennungs-Abweichungen verschwinden erst mit einem
-  korrigierten KENNUNG-Muster im Prüfskript.
 - Ohne Zeile: 2017-be-gk-B1.2a, 2017-be-gk-cas-B1.2b,
   2018-bb-ea-cas-B2.1e, 2017MgrundlegendBAnalysisWTR-1d,
   2017MerhoehtBAnalysisWTR2-1d.
