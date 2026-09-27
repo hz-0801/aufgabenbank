@@ -142,3 +142,18 @@ Kopie von e2 wurden alle gemeldet.
   Zusammenbau klären.
 - Konvention gleichungsraster (Anweisungssatz mit $…$ wie terme
   oder nur die Gleichung wie quadratische-gleichungen) angleichen.
+
+## Nachbesserung 2026-09-27
+
+Nach bank.md Stand 2026-09-27b und Prüfskript v0.5; vorher und
+nachher 0 Abweichungen, 0 Warnungen in allen Dateien, keine
+Aufgabenzeile geändert.
+
+- Prüfungshöhe ohne Original: e1-k1-s11 und e3-k1-s10 tragen schon
+  hoehe pruefung mit original null; nichts zu ändern.
+- Erkennungsschritte: Die fünf mit dem Handgriff einer Vorstufe
+  fehlen schon (Befund 1); „Gleiche Klammer zweimal?“ (e2 k1,
+  Quadrat einer Klammer ankreuzen und als Klammer mal Klammer
+  schreiben) verlangt einen anderen Handgriff als die Vorstufe
+  „Formel erkennen und a, b einkreisen“ und bleibt.
+- Befunde 2 bis 6 bleiben offen; v0.5 ändert an ihnen nichts.
