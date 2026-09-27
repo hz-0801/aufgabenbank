@@ -99,27 +99,32 @@ im ersten Lauf 3 Treffer (13 und 16 in vorgegebenen Fehlrechnungen,
 
 ## Befunde
 
-1. Prüfskript: Der Exponent in `$x^2$` gilt als Lösungsziffer. Eine
-   Lösung, die nur eine Formel ist, verlangt darum ein pruef; bei
-   form ankreuzen steht die „2“ dann in allen Optionen. Probe:
-   Ankreuzlösung „$z^2 = x^2 + y^2$“ mit pruef "" → „pruef fehlt“.
-2. Prüfskript: Die Sperrprobe fängt Zahlenpaare (Probe „(2|1)“
-   erkannt), aber keine belegten Terme und Gleichungen aus dem
-   Merkkasten: „$6^2 + 8^2$“, „$6² + 8²$“, „$x² + y² = z²$“,
+1. (erledigt v0.5) Prüfskript: Der Exponent in `$x^2$` gilt als
+   Lösungsziffer. Eine Lösung, die nur eine Formel ist, verlangt darum
+   ein pruef; bei form ankreuzen steht die „2“ dann in allen Optionen.
+   Probe: Ankreuzlösung „$z^2 = x^2 + y^2$“ mit pruef "" → „pruef
+   fehlt“.
+2. (teilweise erledigt v0.5: „$6^2 + 8^2$“ und „$6² + 8²$“ werden
+   gefangen; „$x² + y² = z²$“ und „√74“ gehen in einer Probezeile weiter
+   ohne Abweichung durch) Prüfskript: Die Sperrprobe fängt Zahlenpaare
+   (Probe „(2|1)“ erkannt), aber keine belegten Terme und Gleichungen
+   aus dem Merkkasten: „$6^2 + 8^2$“, „$6² + 8²$“, „$x² + y² = z²$“,
    „√74“ gingen in einer Probezeile ohne Abweichung durch.
-3. Prüfskript: Der Kettenname wird nicht gegen die Mappe geprüft
-   (Probe „Hypotenuse (Einheit 1)“ ohne Abweichung).
-4. Katalog: Drei Erkennungsschritte decken sich mit der Vorstufe
-   der Kette derselben Einheit („Wo ist der rechte Winkel?“ /
-   Rechtwinkelmarke einkreisen; „Lange oder kurze Seite
-   gesucht?“; „Teildreieck nachfahren“). bank.md verlangt beide
-   (4 + 4 Zeilen); zu klären, ob die Vorstufe dann entfällt.
-5. bank.md: „Prüfungshöhe 2 je Original des Katalogs“ lässt offen,
-   ob nur die Originale der Kettenzeile gemeint sind oder alle der
+3. Prüfskript: Der Kettenname wird nicht gegen die Mappe geprüft (Probe
+   „Hypotenuse (Einheit 1)“ ohne Abweichung).
+4. (erledigt v0.5; bank.md regelt den Fall, die drei Erkennungsschritte
+   sind gestrichen) Katalog: Drei Erkennungsschritte decken sich mit der
+   Vorstufe der Kette derselben Einheit („Wo ist der rechte Winkel?“ /
+   Rechtwinkelmarke einkreisen; „Lange oder kurze Seite gesucht?“;
+   „Teildreieck nachfahren“). bank.md verlangt beide (4 + 4 Zeilen); zu
+   klären, ob die Vorstufe dann entfällt.
+5. bank.md: „Prüfungshöhe 2 je Original des Katalogs“ lässt offen, ob
+   nur die Originale der Kettenzeile gemeint sind oder alle der
    Zielmarke. Das Prüfskript warnt in keinem Fall.
-6. Auftrag, Gegenprobe: „Die Kastenzahlen … kommen in keiner
-   aufgabe vor“ widerspricht wörtlich bank.md („einzelne Ziffern
-   … sind frei“); hier als mehrstellige Zahlen gelesen.
+6. (erledigt v0.5; bank.md: frei sind einzelne Ziffern und Zahlen unter
+   10) Auftrag, Gegenprobe: „Die Kastenzahlen … kommen in keiner aufgabe
+   vor“ widerspricht wörtlich bank.md („einzelne Ziffern … sind frei“);
+   hier als mehrstellige Zahlen gelesen.
 
 ## Offene Punkte
 
@@ -135,3 +140,30 @@ im ersten Lauf 3 Treffer (13 und 16 in vorgegebenen Fehlrechnungen,
 - Einige pythagoreische Tripel kommen in mehreren Einheiten vor
   (etwa 9, 40, 41), jeweils mit anderer gesuchter Seite oder Figur;
   keine Aufgabe ist doppelt.
+
+## Nachbesserung 2026-09-27
+
+- Prüfskript v0.5 vorher 6 Abweichungen, 18 Warnungen, nachher
+  0/0.
+- Zone: die 18 Zeilen mit sprosse 1 (je Fertigkeit zwei sehr
+  leichte) tragen jetzt hoehe grundfall statt sprosse
+  (Entscheidung 4 insoweit überholt).
+- e1 „Gleichung unter vier Optionen ankreuzen" und e2
+  „Kathetengleichung unter vier Optionen ankreuzen": die sechs
+  Lösungen nennen die richtige Option wortgleich statt ihrer
+  Position (Entscheidung 9 insoweit überholt).
+- Erkennungsschritte gestrichen, weil sie denselben Handgriff wie
+  die Vorstufe derselben Einheit verlangen (Befund 4): e1 „Wo ist
+  der rechte Winkel?", e2 „Lange oder kurze Seite gesucht?", e3
+  „Teildreieck nachfahren", je 4 Zeilen; kette_nr und id der
+  folgenden Ketten je um eins aufgerückt (Entscheidung 6
+  überholt).
+- Zeilen jetzt: zone 38 (grundfall 18, sprosse 19, pflicht 1),
+  e1 65, e2 58, e3 75 (vorstufe je 8); die Tabelle oben zeigt den
+  Stand vor der Nachbesserung.
+- Prüfungshöhen: alle neun tragen ein Original der Kettenzeile;
+  keine Prüfungshöhe ohne Original steht als hoehe sprosse.
+- Befunde 3 und 5 bleiben offen: der Kettenname wird ohne
+  --katalog nicht gegen die Mappe geprüft (Probe mit
+  „Hypotenuse (Einheit 1)" für die ganze Kette: 0/0), und bank.md
+  2026-09-27b klärt die Menge je Original der Zielmarke nicht.
