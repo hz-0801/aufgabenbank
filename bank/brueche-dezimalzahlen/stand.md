@@ -14,12 +14,12 @@ Mappe: sprosse_text und kette wortgleich, 0 Abweichungen.
 | Datei  | Zeilen | vorst. | grundf. | sprosse | pruef. | pflicht |
 |--------|-------:|-------:|--------:|--------:|-------:|--------:|
 | zone   |     30 |      0 |      14 |      15 |      0 |       1 |
-| e1     |     79 |      8 |      10 |      31 |     18 |      12 |
+| e1     |     79 |      8 |      10 |      27 |     22 |      12 |
 | e2     |     47 |      4 |       5 |      24 |      2 |      12 |
 | e3     |     41 |      4 |       5 |      18 |      2 |      12 |
 | e4     |     49 |      4 |       5 |      24 |      4 |      12 |
 | e5     |     65 |      8 |       5 |      30 |     10 |      12 |
-| gesamt |    311 |     28 |      44 |     142 |     36 |      61 |
+| gesamt |    311 |     28 |      44 |     138 |     40 |      61 |
 
 Pflicht je Einheit: e1 bis e5 je 3 fehler, 3 begruenden,
 3 darstellung, 3 anwendung. Zone: 1 fehler (Zone-Paar).
@@ -30,7 +30,8 @@ Grundfall je Verfahrenskette 5 Zeilen (e1 hat zwei Ketten).
 - e1, Prüfungshöhe „Anteil bestimmen": 2019-OS-B1c, 2024-OS-B1b,
   2014-OS-B1i, 2022-OS-B1a, 2023-OS-B1d, 2017-OS-B1a,
   2021-OS-B1b, 2025-OS-B1c, 2026-FOR-B1b; P10-Form-Sprosse
-  „Bruchteil einer Größe" (hoehe sprosse): 2015-OS-B1h,
+  „Bruchteil einer Größe" (hoehe pruefung, siehe Nachbesserung):
+  2015-OS-B1h,
   2018-OS-B1a
 - e2: 2014-OS-B1i
 - e3: 2014-OS-B1c
@@ -154,7 +155,7 @@ blieb danach bei 0 Abweichungen.
    Z. 42 = „Vergleichsweg ankreuzen" (Z. 114), Z. 43 =
    „Nachkommastellen zählen" (Z. 115), Z. 44 = „Nullen anhängen"
    (Z. 116). Nach bank.md entfallen sie; der Katalog führt beide.
-2. Auftrag, Gegenprobe „genau eine Sprosse mit hoehe pruefung je
+2. (erledigt v0.5) Auftrag, Gegenprobe „genau eine Sprosse mit hoehe pruefung je
    Einheit" gegen Katalog e1: beide Verfahrensketten haben eine
    Prüfungshöhe mit Originalen. Die zweite steht als P10-Form-
    Sprosse an hoehe sprosse; bank.md regelt deren Menge nicht,
@@ -202,4 +203,23 @@ blieb danach bei 0 Abweichungen.
   s5 und e4 s3 die Lösung; dann Skala ohne Zahlen setzen.
 - Prüfungshöhen mit Prozent (e1) und mit Wurzeln oder negativen
   Zahlen (e4, e5) beim Blattbau als Zielmarke kennzeichnen.
-- Warnung e1 k2 s6 bleibt bis zur Entscheidung zu Befund 2.
+- (erledigt v0.5) Warnung e1 k2 s6 bleibt bis zur Entscheidung zu
+  Befund 2.
+
+## Nachbesserung 2026-09-27
+
+Nach bank.md Stand 2026-09-27b und Prüfskript v0.5; vorher
+0 Abweichungen, 1 Warnung, danach 0 Abweichungen, 0 Warnungen in
+allen Dateien.
+
+- e1.jsonl: Die Prüfungshöhe der Kette „Bruchteil einer Größe“
+  (e1-k2-s6, Z. 112, vier Zeilen, 2 je Original) trägt hoehe
+  pruefung statt sprosse, weil bank.md die Prüfungshöhe der
+  letzten Sprosse jeder Verfahrenskette gibt; e1 hat damit zwei
+  Prüfungssprossen, eine je Kette (Entscheidung 4 überholt).
+- Tabelle „Zeilen je Datei und hoehe“ und Abschnitt „Originale“
+  auf den neuen Stand gebracht.
+- Prüfungshöhe ohne Original: keine im Eintrag; nichts zu ändern.
+- Erkennungsschritte: „Welche Form?“ (e5 k1, Formen ankreuzen)
+  verlangt einen anderen Handgriff als die Vorstufe „Nullen
+  anhängen“ und bleibt; die übrigen sechs fehlen schon (Befund 1).
