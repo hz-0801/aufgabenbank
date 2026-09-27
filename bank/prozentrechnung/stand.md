@@ -12,13 +12,13 @@ in Zeile quelle) ebenfalls 0.
 ## Zahlen
 
     Datei       Zeilen  vorstufe  grundfall  sprosse  pruefung  pflicht
-    zone.jsonl      30         0         12       18         0        0
+    zone.jsonl      32         0         12       19         0        1
     e1.jsonl        47         0          5       18        12       12
     e2.jsonl        57        12          5       18        10       12
     e3.jsonl        48         0          5       21        10       12
     e4.jsonl        41         8          5       12         4       12
     e5.jsonl        52         8          5       18        12        9
-    gesamt         275        28         37      105        48       57
+    gesamt         277        28         37      106        48       58
 
 Zone: grundfall = sehr leicht, sprosse = mittel und Fallstricke.
 Pflicht je Einheit: fehler 3, begruenden 3, anwendung 3; darstellung
@@ -118,12 +118,61 @@ Fünftel, 20/100“ steht als Begründen-Aufgabe e3-k3-s2-v3).
     je 0 Befunde. Die jsonl wurden mit einem Python-Erzeuger
     außerhalb des Repos geschrieben; maßgeblich ist die jsonl.
 
+## Nachbesserung 2026-09-27
+
+- Prüfskript v0.5 vorher: 46 Abweichungen, 7 Warnungen; nachher 0
+  Abweichungen, 0 Warnungen in allen sechs Dateien; keine Zeile
+  gestrichen.
+- Alle 275 Zeilen tragen jetzt das Feld loesungsgrafik (leer),
+  eingefügt vor quelle.
+- Zone: Das Zone-Paar steht neu an f6 (f6-v6 Fehler finden, hoehe
+  pflicht, pflicht fehler; f6-v7 gleichartige Rechenaufgabe, hoehe
+  sprosse), zum Fallstrick „gefragt ist der Rest, nicht der Teil“ –
+  gewählt, weil ihm „Ersparnis und neuer Preis verwechselt“ (Typische
+  Fehler Z. 85) mit drei P10-Originalen entspricht, mehr als jedem
+  anderen Fallstrick der Zone.
+- Zone f4 v1–v5 und f6 v4: die Lösung zeigt jetzt die Rechnung mit
+  „=“, damit Zwischenwert und Ergebnis an der Ergebnisstelle stehen;
+  Zahlen und pruef unverändert.
+- Bei 28 Lösungen in e1 bis e5 steht ein geprüfter Zwischen- oder
+  Endwert jetzt nach „=“ oder vorn (e1 k1 s6 v3, s8 v3–v4, k2 s1
+  v1–v3; e2 k5 s3 v1–v3, s4 v1; e3 k3 s3 v1–v3, s4 v2–v3; e4 k3 s3
+  v1–v3, s4 v2–v3; e5 k2 s1 v1–v5, s11 v1, k3 s3 v1–v2); Zahlen und
+  pruef unverändert.
+- Aus pruef entfernt, weil kein Ergebnis, sondern Distraktor oder
+  gegebene Größe: der Restpreis (e3 k1 s8 v3–v4), der Aufschlag
+  allein (e5 k2 s9 v1–v2), der Rabatt in Euro (e5 k2 s10 v1–v2) und
+  die gegebenen Werte bei „Was ist gesucht?“ (e4 k1 s0 v1–v4, pruef
+  jetzt "").
+- e1 k1 s7 v1–v2 (Ankreuzen mit Aussagen): die Lösung beginnt jetzt
+  mit der Option wortgleich, pruef "" (Optionen sind keine Zahlen).
+- e1 k1 s7 v2: 6 % durch 8 % ersetzt (Optionen und Lösung), weil
+  „6 von 100“ das Zahlenpaar aus 2025-OS-K4b ist (Sperre).
+- Kein Erkennungsschritt zu streichen: „Was ist das Ganze?“ und
+  „Streifen einteilen“ (e2), „Was ist gegeben, was gesucht?“ (e4),
+  „Welcher Wert ist der alte?“ (e5) verlangen einen anderen
+  Handgriff als die Vorstufe ihrer Einheit.
+- Keine Prüfungshöhe ohne Original: alle Prüfungssprossen tragen
+  P10-Originale und stehen als hoehe pruefung.
+
+## Befunde
+
+1. bank.md: „hoehe pruefung bleibt der letzten Sprosse
+   vorbehalten“; hier verteilt sich die Prüfungshöhe nach
+   Entscheidung 5 auf mehrere Sprossen je Kette (e1 s7–s9, e2
+   s7–s9, e3 s8–s10, e5 s8–s11). Nicht geändert: als hoehe sprosse
+   mit original gälte die Menge 3 je Sprosse statt 2 je Original,
+   das hieße Zeilen streichen oder ergänzen; das Skript meldet den
+   Fall nicht.
+
 ## Offene Punkte
 
-- Zone ohne Fehler-finden-Paar: unterrichtsblatt 2.2 verlangt es
-  einmal je Zone, die Mengen in bank.md nennen es nicht.
-- Mengen für Erkennungsschritte (4) und Typen ohne Kette (3) sind
-  hier gesetzt; bank.md regelt sie nicht.
+- (erledigt v0.5) Zone ohne Fehler-finden-Paar: unterrichtsblatt
+  2.2 verlangt es einmal je Zone, die Mengen in bank.md nennen es
+  nicht. Seit der Nachbesserung steht es an f6.
+- (erledigt v0.5) Mengen für Erkennungsschritte (4) und Typen ohne
+  Kette (3) sind hier gesetzt; bank.md regelt sie nicht. bank.md
+  nennt jetzt dieselben Mengen.
 - Das id-Muster der Zone trägt keine Sprosse; die Stufe steht nur
   im Feld sprosse.
 - Befund für den Katalog: Die Vorstufe von Einheit 4 („wie viel ist
