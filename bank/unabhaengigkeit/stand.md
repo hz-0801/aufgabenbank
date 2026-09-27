@@ -29,12 +29,12 @@ Prüfskript: bank-pruef.py v0.5, am Ende 0 Abweichungen, 0 Warnungen
 
 ## Prüfskript vor der Korrektur
 
-| Datei | Abweichungen | Warnungen | häufigster Grund |
-|-------|-------------:|----------:|------------------|
-| zone  |            0 |         0 | – |
-| e1    |            1 |         0 | pruef-Zahl nicht an der Ergebnisstelle |
-| e2    |            1 |         0 | pruef-Zahl nicht an der Ergebnisstelle |
-| e3    |            1 |         0 | pruef fehlt (Ziffer in einer Begründung) |
+| Datei | Abw. | Warn. | häufigster Grund |
+|-------|-----:|------:|------------------|
+| zone  |    0 |     0 | – |
+| e1    |    1 |     0 | pruef-Zahl nicht an der Ergebnisstelle |
+| e2    |    1 |     0 | pruef-Zahl nicht an der Ergebnisstelle |
+| e3    |    1 |     0 | pruef fehlt (Ziffer in einer Begründung) |
 
 Dazu zwei Korrekturen, die das Skript nicht meldet: in e2 (k1-s2-v3)
 ein Randeintrag der Parametertafel, der nicht zur Spaltensumme passte;
