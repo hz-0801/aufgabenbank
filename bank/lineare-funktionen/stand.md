@@ -11,12 +11,12 @@ Prüfskript: werkzeuge/bank-pruef.py v0.2, Endstand 0 Abweichungen,
 | Datei  | Zeilen | vorst. | grundf. | sprosse | pruef. | pflicht |
 |--------|-------:|-------:|--------:|--------:|-------:|--------:|
 | zone   |     26 |      0 |      12 |      13 |      0 |       1 |
-| e1     |     45 |      4 |       5 |      24 |      0 |      12 |
+| e1     |     45 |      4 |       5 |      21 |      3 |      12 |
 | e2     |     82 |     12 |      10 |      33 |     18 |       9 |
 | e3     |     58 |      4 |       5 |      21 |     16 |      12 |
 | e4     |     41 |      0 |       5 |      18 |      6 |      12 |
-| e5     |     58 |      8 |       5 |      15 |     18 |      12 |
-| gesamt |    310 |     28 |      42 |     124 |     58 |      58 |
+| e5     |     54 |      4 |       5 |      15 |     18 |      12 |
+| gesamt |    306 |     24 |      42 |     121 |     61 |      58 |
 
 Pflicht je Einheit: e1, e3, e4, e5 je 3 fehler, 3 begruenden,
 3 darstellung, 3 anwendung; e2 je 3 fehler, begruenden,
@@ -140,17 +140,17 @@ bereinigt).
 
 ## Befunde
 
-1. Prüfskript: Jede Zeile mit hoehe pruefung braucht ein
+1. (erledigt v0.5) Prüfskript: Jede Zeile mit hoehe pruefung braucht ein
    original. Der Katalog gibt Einheit 1 ausdrücklich kein
    P10-Original, sondern eine Zielmarke; bank.md regelt den Fall
    nicht. Vorschlag: bank.md legt fest, ob eine Zielmarke ohne
    Original hoehe pruefung mit original null trägt, und das
    Skript lässt das zu.
-2. bank.md „Mengen je Kette" gibt dem Grundfall 5 Zeilen je
+2. (erledigt v0.5) bank.md „Mengen je Kette" gibt dem Grundfall 5 Zeilen je
    Kette; die Gegenprobe des Auftrags verlangt 5 je Einheit.
    Einheit 2 hat laut Katalog zwei Verfahrensketten, also 10.
    Beides zugleich geht nicht.
-3. Prüfskript: Das Wort „Graph" im Aufgabentext verlangt eine
+3. (erledigt v0.5) Prüfskript: Das Wort „Graph" im Aufgabentext verlangt eine
    Grafik, auch bei reinen Rechenaufgaben („liegt P auf dem
    Graphen von f?"). Die P10-Formulierung ist so nicht
    übernehmbar; die Regel sollte auf Ablese- und Zeichenaufträge
@@ -163,21 +163,29 @@ bereinigt).
    Einheit in der Zielmarke, und seine Typen liegen ausdrücklich
    bei zuordnungen.md. Nicht aufgenommen, bis der Katalog es
    einer Einheit zuordnet.
-6. Katalog e5: Der Erkennungsschritt „Anfangswert und Änderung
+6. (erledigt v0.5) Katalog e5: Der Erkennungsschritt „Anfangswert und Änderung
    im Text finden" und die Vorstufe der Kette „Anfangswert und
    Änderung im Text markieren" sind fast derselbe Schritt. Beide
    angelegt (8 Vorstufenzeilen), mit verschiedener Antwortform.
-7. Prüfskript (vermutlich): Bei Ankreuzaufgaben mit Gleichungen
+7. (erledigt v0.5) Prüfskript (vermutlich): Bei Ankreuzaufgaben mit Gleichungen
    als Optionen steht die Lösungszahl m in mehreren Optionen,
    ohne dass das Skript es meldet; die Regel „genau eine
    Zahloption" greift offenbar nur bei reinen Zahloptionen.
 8. Sperre: Das Skript vergleicht ganze Terme und Zahlenpaare,
    keine Teilstrings. Das ist richtig so; Scheintreffer wie
    „−0,5x" gegen „x = −0,5" bleiben erlaubt.
+9. bank.md und Prüfskript v0.5, Ankreuzen: Beide gehen von genau
+   einer richtigen Option aus („nennt genau eine Option
+   wortgleich"). 2021-OS-K2b verlangt zwei richtige Aussagen; die
+   Probe besteht eine solche Lösung nur, wenn sie mit einer
+   Option beginnt oder genau eine wortgleich nennt (e3-k2-s7-v14
+   nennt nur „Die Gerade f fällt" wortgleich und besteht). Regel
+   für Mehrfachauswahl fehlt.
 
 ## Offene Punkte
 
-- Befund 2 entscheiden; bis dahin hat e2 zehn Grundfallzeilen.
+- (erledigt v0.5) Befund 2 entscheiden; bis dahin hat e2 zehn
+  Grundfallzeilen.
 - 2021-OS-K6b einer Einheit zuordnen oder streichen.
 - Grafiken sind nicht kompiliert (kein LaTeX): ungeprüft sind
   \funktion mit max() und abs(), \funktionab mit 2/\x, die
@@ -187,3 +195,21 @@ bereinigt).
 - Anwendungszeilen mit Freikilometern (2023-OS-K3a) zeigen den
   Knick als Funktionsgraph; ob der Zusammenbau das so setzt,
   klärt der erste Render.
+
+## Nachbesserung 2026-09-27
+
+Prüfskript v0.5 vorher 1 Abweichung, 0 Warnungen; nachher 0/0.
+
+- e3-k2-s7-v13: loesung nennt die beiden richtigen Optionen
+  wortgleich statt umschrieben (Abweichung „Ankreuzlösung nennt
+  keine oder mehrere Optionen"; Befund 9).
+- e1-k1-s8-v1 bis v3: Die Zielmarke ohne P10-Original trägt jetzt
+  hoehe pruefung statt sprosse, original bleibt null (bank.md
+  „Mengen je Kette"; ersetzt Entscheidung 7).
+- e5: Der Erkennungsschritt „Anfangswert und Änderung im Text
+  finden" (4 Zeilen) ist gestrichen, weil er den Handgriff der
+  Vorstufe „Anfangswert und Änderung im Text markieren" verlangt;
+  kette_nr und ids der folgenden Ketten rücken um eins auf (k2–k5
+  → k1–k4), sonst unverändert.
+- Tabelle „Zeilen je Datei und hoehe" auf den neuen Stand
+  gebracht; Befunde 1, 2, 3, 6, 7 als erledigt markiert.
