@@ -89,3 +89,18 @@ Prüfskript: werkzeuge/bank-pruef.py, am Ende 0 Abweichungen,
   ohne Achsen fehlt in der Vorlage.
 - Die Gegenprobe der Kastenzahlen findet „10“ nur in der
   Prüfkennung „P10“; sonst keine Kastenzahl in einer aufgabe.
+
+## Nachbesserung 2026-09-27
+
+- Prüfskript v0.5: 0 Abweichungen, 0 Warnungen vor und nach der
+  Nachbesserung; keine Zeile geändert.
+- Die Prüfungshöhen ohne Original (e2 k1 s12, e3 k1 s9) stehen
+  schon als hoehe pruefung mit original null.
+- Der Erkennungsschritt „Gleiche Einheit?“ (e1 k1) bleibt: Er
+  verlangt einen anderen Handgriff als die Vorstufen von k2
+  („kleiner oder größer“, „mal oder geteilt“) und k3 („passt es
+  ins Feld“).
+- Kein Befund ist mit v0.5 erledigt; die Ankreuzprobe nimmt
+  weiter eine Lösung an, die mit der kürzeren Option beginnt
+  („ähnlich oder nicht ähnlich“ bei den Optionen „ähnlich“ und
+  „nicht ähnlich“).
