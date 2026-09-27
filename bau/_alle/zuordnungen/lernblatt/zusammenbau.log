@@ -1,0 +1,189 @@
+# zusammenbau v0.1: zusammenbau.py zuordnungen
+VORLAGE mathblatt.sty: Version 2026-09-28a
+EINHEITEN [1, 2, 3, 4]
+AUSWAHL zuordnungen-zone-f1-v1 – Zone f1 „Punkte im Koordinatensystem eintragen un“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL zuordnungen-zone-f1-v3 – Zone f1 „Punkte im Koordinatensystem eintragen un“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f1 „Punkte im Koordinatensystem eintragen un“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL zuordnungen-zone-f2-v1 – Zone f2 „Multiplizieren und Dividieren mit Dezima“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL zuordnungen-zone-f2-v3 – Zone f2 „Multiplizieren und Dividieren mit Dezima“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f2 „Multiplizieren und Dividieren mit Dezima“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL zuordnungen-zone-f3-v1 – Zone f3 „Vielfache und Teiler erkennen (zwölf ist“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL zuordnungen-zone-f3-v3 – Zone f3 „Vielfache und Teiler erkennen (zwölf ist“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f3 „Vielfache und Teiler erkennen (zwölf ist“ – Sprossen [3, 4, 5] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL zuordnungen-zone-f4-v1 – Zone f4 „Bruchteil einer Größe (die Hälfte, ein V“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL zuordnungen-zone-f4-v3 – Zone f4 „Bruchteil einer Größe (die Hälfte, ein V“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f4 „Bruchteil einer Größe (die Hälfte, ein V“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL zuordnungen-zone-f5-v1 – Zone f5 „Einheiten umrechnen (Cent ↔ Euro, Minute“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL zuordnungen-zone-f5-v3 – Zone f5 „Einheiten umrechnen (Cent ↔ Euro, Minute“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f5 „Einheiten umrechnen (Cent ↔ Euro, Minute“ – Sprossen [3, 4] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL zuordnungen-zone-f3-v5 – Zone-Paar, Fehler finden
+AUSWAHL zuordnungen-zone-f3-v6 – Zone-Paar, gleichartige Rechenaufgabe
+AUSWAHL zuordnungen-e1-k1-s0-v1 – e1 k1 „Darstellen“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL zuordnungen-e1-k1-s1-v1 – e1 k1 „Darstellen“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL zuordnungen-e1-k1-s2-v1 – e1 k1 „Darstellen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL zuordnungen-e1-k1-s3-v1 – e1 k1 „Darstellen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL zuordnungen-e1-k1-s4-v1 – e1 k1 „Darstellen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL zuordnungen-e1-k1-s5-v1 – e1 k1 „Darstellen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL zuordnungen-e1-k1-s6-v1 – e1 k1 „Darstellen“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL zuordnungen-e1-k1-s7-v1 – e1 k1 „Darstellen“ (verfahren), Sprosse 7: Variante 1; übergangen v2
+KETTE e1 k1 „Darstellen“ (verfahren) → eine Hauptnummer
+AUSWAHL zuordnungen-e1-k2-s0-v1 – e1 k2 „Achseneinteilung“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL zuordnungen-e1-k2-s1-v1 – e1 k2 „Achseneinteilung“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL zuordnungen-e1-k2-s2-v1 – e1 k2 „Achseneinteilung“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL zuordnungen-e1-k2-s3-v1 – e1 k2 „Achseneinteilung“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL zuordnungen-e1-k2-s4-v1 – e1 k2 „Achseneinteilung“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL zuordnungen-e1-k2-s5-v1 – e1 k2 „Achseneinteilung“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL zuordnungen-e1-k2-s6-v1 – e1 k2 „Achseneinteilung“ (verfahren), Sprosse 6: Variante 1; übergangen v2
+KETTE e1 k2 „Achseneinteilung“ (verfahren) → eine Hauptnummer
+AUSWAHL zuordnungen-e1-k3-s1-v1 – e1 k3 „Formel aus Tabelle (y = 4 · x)“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e1 k3 „Formel aus Tabelle (y = 4 · x)“ (ohne) → eine Hauptnummer
+AUSWAHL zuordnungen-e1-k4-s1-v1 – e1 k4 „Darstellen“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL zuordnungen-e1-k4-s2-v1 – e1 k4 „Darstellen“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL zuordnungen-e1-k4-s3-v1 – e1 k4 „Darstellen“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL zuordnungen-e1-k4-s4-v1 – e1 k4 „Darstellen“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e1 k4 „Darstellen“ (pflicht) → eine Hauptnummer
+AUSWAHL zuordnungen-e2-k1-s0-v1 – e2 k1 „Was ist hier eine Portion?“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e2 k1 „Was ist hier eine Portion?“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL zuordnungen-e2-k2-s0-v1 – e2 k2 „Minitabelle anlegen“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e2 k2 „Minitabelle anlegen“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL zuordnungen-e2-k3-s0-v1 – e2 k3 „Pfeile beidseitig“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e2 k3 „Pfeile beidseitig“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL zuordnungen-e2-k4-s0-v1 – e2 k4 „Dreisatz proportional“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL zuordnungen-e2-k4-s1-v1 – e2 k4 „Dreisatz proportional“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL zuordnungen-e2-k4-s2-v1 – e2 k4 „Dreisatz proportional“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL zuordnungen-e2-k4-s3-v1 – e2 k4 „Dreisatz proportional“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL zuordnungen-e2-k4-s4-v1 – e2 k4 „Dreisatz proportional“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL zuordnungen-e2-k4-s5-v1 – e2 k4 „Dreisatz proportional“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL zuordnungen-e2-k4-s6-v1 – e2 k4 „Dreisatz proportional“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL zuordnungen-e2-k4-s7-v1 – e2 k4 „Dreisatz proportional“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+KETTE e2 k4 „Dreisatz proportional“ (verfahren) → eine Hauptnummer
+AUSWAHL zuordnungen-e2-k5-s1-v1 – e2 k5 „fester Faktor angeben (Preis je Einheit), Gleichung y = k · x“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k5 „fester Faktor angeben (Preis je Einheit), Gleichung y = k · x“ (ohne) → eine Hauptnummer
+AUSWAHL zuordnungen-e2-k6-s1-v1 – e2 k6 „Graph zeichnen (Ursprungsgerade) und Werte ablesen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k6 „Graph zeichnen (Ursprungsgerade) und Werte ablesen“ (ohne) → eine Hauptnummer
+AUSWAHL zuordnungen-e2-k7-s1-v1 – e2 k7 „Verhältnisgleichung aufstellen (Vorrat)“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k7 „Verhältnisgleichung aufstellen (Vorrat)“ (ohne) → eine Hauptnummer
+AUSWAHL zuordnungen-e2-k8-s1-v1 – e2 k8 „Dreisatz proportional“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL zuordnungen-e2-k8-s2-v1 – e2 k8 „Dreisatz proportional“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL zuordnungen-e2-k8-s3-v1 – e2 k8 „Dreisatz proportional“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL zuordnungen-e2-k8-s4-v1 – e2 k8 „Dreisatz proportional“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e2 k8 „Dreisatz proportional“ (pflicht) → eine Hauptnummer
+AUSWAHL zuordnungen-e3-k1-s0-v1 – e3 k1 „Antiproportional“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL zuordnungen-e3-k1-s1-v1 – e3 k1 „Antiproportional“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL zuordnungen-e3-k1-s2-v1 – e3 k1 „Antiproportional“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL zuordnungen-e3-k1-s3-v1 – e3 k1 „Antiproportional“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL zuordnungen-e3-k1-s4-v1 – e3 k1 „Antiproportional“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL zuordnungen-e3-k1-s5-v1 – e3 k1 „Antiproportional“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL zuordnungen-e3-k1-s6-v1 – e3 k1 „Antiproportional“ (verfahren), Sprosse 6: Variante 1; übergangen v2
+KETTE e3 k1 „Antiproportional“ (verfahren) → eine Hauptnummer
+AUSWAHL zuordnungen-e3-k2-s1-v1 – e3 k2 „Graph als fallende Kurve, Werte ablesen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e3 k2 „Graph als fallende Kurve, Werte ablesen“ (ohne) → eine Hauptnummer
+AUSWAHL zuordnungen-e3-k3-s1-v1 – e3 k3 „Antiproportional“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL zuordnungen-e3-k3-s2-v1 – e3 k3 „Antiproportional“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL zuordnungen-e3-k3-s3-v1 – e3 k3 „Antiproportional“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL zuordnungen-e3-k3-s4-v1 – e3 k3 „Antiproportional“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e3 k3 „Antiproportional“ (pflicht) → eine Hauptnummer
+AUSWAHL zuordnungen-e4-k1-s0-v1 – e4 k1 „Nullwert prüfen“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e4 k1 „Nullwert prüfen“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL zuordnungen-e4-k2-s0-v1 – e4 k2 „Erkennen“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL zuordnungen-e4-k2-s1-v1 – e4 k2 „Erkennen“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL zuordnungen-e4-k2-s2-v1 – e4 k2 „Erkennen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL zuordnungen-e4-k2-s3-v1 – e4 k2 „Erkennen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL zuordnungen-e4-k2-s4-v1 – e4 k2 „Erkennen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL zuordnungen-e4-k2-s5-v1 – e4 k2 „Erkennen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL zuordnungen-e4-k2-s6-v1 – e4 k2 „Erkennen“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+KETTE e4 k2 „Erkennen“ (verfahren) → eine Hauptnummer
+AUSWAHL zuordnungen-e4-k3-s0-v1 – e4 k3 „Rate“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL zuordnungen-e4-k3-s1-v1 – e4 k3 „Rate“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL zuordnungen-e4-k3-s2-v1 – e4 k3 „Rate“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL zuordnungen-e4-k3-s3-v1 – e4 k3 „Rate“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL zuordnungen-e4-k3-s4-v1 – e4 k3 „Rate“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL zuordnungen-e4-k3-s5-v1 – e4 k3 „Rate“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3, v4, v5, v6, v7, v8
+AUSWAHL zuordnungen-e4-k3-s6-v1 – e4 k3 „Rate“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3, v4, v5, v6
+KETTE e4 k3 „Rate“ (verfahren) → eine Hauptnummer
+AUSWAHL zuordnungen-e4-k4-s1-v1 – e4 k4 „Gegenbeispiele (Alter und Größe, Tarif mit Grundgebühr)“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e4 k4 „Gegenbeispiele (Alter und Größe, Tarif mit Grundgebühr)“ (ohne) → eine Hauptnummer
+AUSWAHL zuordnungen-e4-k5-s1-v1 – e4 k5 „Erkennen“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL zuordnungen-e4-k5-s2-v1 – e4 k5 „Erkennen“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL zuordnungen-e4-k5-s3-v1 – e4 k5 „Erkennen“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL zuordnungen-e4-k5-s4-v1 – e4 k5 „Erkennen“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e4 k5 „Erkennen“ (pflicht) → eine Hauptnummer
+KOPF Einheit 1: „Einheit 1 von 4 · Zuordnungen darstellen“; Marken „OS Kl. 6 · GYM Kl. 6–7 (LS 6, Fundamente 7, Elemente 6) · P10 · nicht für alle: Mathematik 2023 6 Üben, Mathematik 2023 7 Vertiefen, Schnittpunkt 8 EXTRA“ → Zeitmarke „ab Kl. 6“, Prüfungswort „P10“
+WARNUNG Nr. 8: 8 Teilaufgaben, 6 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+WARNUNG Nr. 9: 7 Teilaufgaben, 3 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 2: „Einheit 2 von 4 · Proportionale Zuordnungen und Dreisatz“; Marken „OS Kl. 6 · GYM Kl. 6–7 (LS 6, Fundamente 7, Elemente 6) · P10 · nicht für alle: Sekundo 7 LVL, Schnittpunkt 8 EXTRA“ → Zeitmarke „ab Kl. 6“, Prüfungswort „P10“
+WARNUNG Nr. 15: 8 Teilaufgaben, 1 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 3: „Einheit 3 von 4 · Antiproportionale Zuordnungen“; Marken „OS Kl. 7 · GYM Kl. 7 · P10 · nicht für alle: Mathematik 2023 6 Vertiefen, Schnittpunkt 6 EXTRA, Elemente 7 Zum Selbstlernen“ → Zeitmarke „ab Kl. 7“, Prüfungswort „P10“
+KOPF Einheit 4: „Einheit 4 von 4 · Zuordnungstypen erkennen und anwenden“; Marken „OS Kl. 7 · GYM Kl. 7 · P10 oft · nicht für alle: Sekundo 7 LVL“ → Zeitmarke „ab Kl. 7“, Prüfungswort „P10 oft“
+WARNUNG Nr. 24: 7 Teilaufgaben, 4 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+TODO 69 Stellen in den Quelltexten:
+  abhaken.tex:2: TODO Ich-kann-Sätze: Platzhalter wie in den Aufgabendateien
+  blatt0_a.tex:5: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 1
+  blatt0_a.tex:6: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 1
+  blatt0_a.tex:19: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 2
+  blatt0_a.tex:20: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 2
+  blatt0_a.tex:28: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 3
+  blatt0_a.tex:29: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 3
+  blatt0_a.tex:37: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 4
+  blatt0_a.tex:38: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 4
+  blatt0_a.tex:46: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 5
+  blatt0_a.tex:47: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 5
+  blatt0_a.tex:55: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 6
+  blatt0_a.tex:56: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 6
+  blatt0_a.tex:63: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 7
+  blatt0_a.tex:64: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 7
+  e1_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 1
+  e1_a.tex:7: TODO \verfahren{…}: Verfahrensüberschrift in Sachsprache fehlt in der Bank (2.3 b)
+  e1_a.tex:8: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 8
+  e1_a.tex:9: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 8
+  e1_a.tex:11: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e1_a.tex:37: TODO \verfahren{…}: Verfahrensüberschrift in Sachsprache fehlt in der Bank (2.3 b)
+  e1_a.tex:38: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 9
+  e1_a.tex:39: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 9
+  e1_a.tex:41: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e1_a.tex:59: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 10
+  e1_a.tex:60: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 10
+  e1_a.tex:70: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 11
+  e1_a.tex:71: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 11
+  e2_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 2
+  e2_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 12
+  e2_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 12
+  e2_a.tex:15: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 13
+  e2_a.tex:16: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 13
+  e2_a.tex:23: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 14
+  e2_a.tex:24: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 14
+  e2_a.tex:31: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 15
+  e2_a.tex:32: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 15
+  e2_a.tex:34: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e2_a.tex:49: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 16
+  e2_a.tex:50: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 16
+  e2_a.tex:57: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 17
+  e2_a.tex:58: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 17
+  e2_a.tex:67: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 18
+  e2_a.tex:68: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 18
+  e2_a.tex:75: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 19
+  e2_a.tex:76: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 19
+  e3_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 3
+  e3_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 20
+  e3_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 20
+  e3_a.tex:10: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e3_a.tex:22: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 21
+  e3_a.tex:23: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 21
+  e3_a.tex:33: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 22
+  e3_a.tex:34: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 22
+  e4_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 4
+  e4_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 23
+  e4_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 23
+  e4_a.tex:15: TODO \verfahren{…}: Verfahrensüberschrift in Sachsprache fehlt in der Bank (2.3 b)
+  e4_a.tex:16: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 24
+  e4_a.tex:17: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 24
+  e4_a.tex:19: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e4_a.tex:39: TODO \verfahren{…}: Verfahrensüberschrift in Sachsprache fehlt in der Bank (2.3 b)
+  e4_a.tex:40: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 25
+  e4_a.tex:41: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 25
+  e4_a.tex:43: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e4_a.tex:55: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 26
+  e4_a.tex:56: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 26
+  e4_a.tex:63: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 27
+  e4_a.tex:64: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 27
+STRUKTUR 0 Fehler

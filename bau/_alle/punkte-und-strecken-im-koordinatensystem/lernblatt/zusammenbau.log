@@ -1,0 +1,163 @@
+# zusammenbau v0.1: zusammenbau.py punkte-und-strecken-im-koordinatensystem
+VORLAGE mathblatt.sty: Version 2026-09-28a
+EINHEITEN [1, 2, 3, 4, 5]
+AUSWAHL punkte-und-strecken-im-koordinatensystem-zone-f1-v1 – Zone f1 „Punkte im ebenen Koordinatensystem mit v“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL punkte-und-strecken-im-koordinatensystem-zone-f1-v3 – Zone f1 „Punkte im ebenen Koordinatensystem mit v“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f1 „Punkte im ebenen Koordinatensystem mit v“ – Sprossen [3, 4] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-zone-f2-v1 – Zone f2 „Schrägbilder von Quadern, Prismen und Py“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL punkte-und-strecken-im-koordinatensystem-zone-f2-v3 – Zone f2 „Schrägbilder von Quadern, Prismen und Py“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f2 „Schrägbilder von Quadern, Prismen und Py“ – Sprossen [3, 4] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-zone-f3-v1 – Zone f3 „Verbindungsvektor bilden (Spitze minus F“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL punkte-und-strecken-im-koordinatensystem-zone-f3-v3 – Zone f3 „Verbindungsvektor bilden (Spitze minus F“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f3 „Verbindungsvektor bilden (Spitze minus F“ – Sprossen [3, 4, 5, 6] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-zone-f4-v1 – Zone f4 „Satz des Pythagoras anwenden und mit Wur“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL punkte-und-strecken-im-koordinatensystem-zone-f4-v3 – Zone f4 „Satz des Pythagoras anwenden und mit Wur“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f4 „Satz des Pythagoras anwenden und mit Wur“ – Sprossen [3, 4] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-zone-f5-v1 – Zone f5 „Flächenformeln (Dreieck, Trapez), Prozen“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL punkte-und-strecken-im-koordinatensystem-zone-f5-v3 – Zone f5 „Flächenformeln (Dreieck, Trapez), Prozen“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f5 „Flächenformeln (Dreieck, Trapez), Prozen“ – Sprossen [3, 4, 5] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-zone-f6-v1 – Zone f6 „Skalarprodukt in Koordinaten berechnen u“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL punkte-und-strecken-im-koordinatensystem-zone-f6-v3 – Zone f6 „Skalarprodukt in Koordinaten berechnen u“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f6 „Skalarprodukt in Koordinaten berechnen u“ – Sprossen [3, 4] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-zone-f7-v1 – Zone f7 „Eigenschaften der Dreiecke und Vierecke “, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL punkte-und-strecken-im-koordinatensystem-zone-f7-v3 – Zone f7 „Eigenschaften der Dreiecke und Vierecke “, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f7 „Eigenschaften der Dreiecke und Vierecke “ – Sprossen [3, 4] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-zone-f8-v1 – Zone f8 „Kollinearität zweier Vektoren prüfen (Vi“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL punkte-und-strecken-im-koordinatensystem-zone-f8-v3 – Zone f8 „Kollinearität zweier Vektoren prüfen (Vi“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f8 „Kollinearität zweier Vektoren prüfen (Vi“ – Sprossen [3, 4] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-zone-f3-v6 – Zone-Paar, Fehler finden
+AUSWAHL punkte-und-strecken-im-koordinatensystem-zone-f3-v7 – Zone-Paar, gleichartige Rechenaufgabe
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s0-v1 – e1 k1 „Darstellen und Lage lesen“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s1-v1 – e1 k1 „Darstellen und Lage lesen“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s2-v1 – e1 k1 „Darstellen und Lage lesen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s3-v1 – e1 k1 „Darstellen und Lage lesen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s4-v1 – e1 k1 „Darstellen und Lage lesen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s5-v1 – e1 k1 „Darstellen und Lage lesen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s6-v1 – e1 k1 „Darstellen und Lage lesen“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s7-v1 – e1 k1 „Darstellen und Lage lesen“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s8-v1 – e1 k1 „Darstellen und Lage lesen“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3, v4
+KETTE e1 k1 „Darstellen und Lage lesen“ (verfahren) → eine Hauptnummer
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k2-s1-v1 – e1 k2 „Darstellen und Lage lesen“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k2-s2-v1 – e1 k2 „Darstellen und Lage lesen“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+KETTE e1 k2 „Darstellen und Lage lesen“ (pflicht) → eine Hauptnummer
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s0-v1 – e2 k1 „Streckenlänge, Mittelpunkt, Teilpunkte“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s1-v1 – e2 k1 „Streckenlänge, Mittelpunkt, Teilpunkte“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s2-v1 – e2 k1 „Streckenlänge, Mittelpunkt, Teilpunkte“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s3-v1 – e2 k1 „Streckenlänge, Mittelpunkt, Teilpunkte“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s4-v1 – e2 k1 „Streckenlänge, Mittelpunkt, Teilpunkte“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s5-v1 – e2 k1 „Streckenlänge, Mittelpunkt, Teilpunkte“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s6-v1 – e2 k1 „Streckenlänge, Mittelpunkt, Teilpunkte“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s7-v1 – e2 k1 „Streckenlänge, Mittelpunkt, Teilpunkte“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s8-v1 – e2 k1 „Streckenlänge, Mittelpunkt, Teilpunkte“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s9-v1 – e2 k1 „Streckenlänge, Mittelpunkt, Teilpunkte“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3, v4, v5, v6
+KETTE e2 k1 „Streckenlänge, Mittelpunkt, Teilpunkte“ (verfahren) → eine Hauptnummer
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k2-s1-v1 – e2 k2 „Streckenlänge, Mittelpunkt, Teilpunkte“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k2-s2-v1 – e2 k2 „Streckenlänge, Mittelpunkt, Teilpunkte“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+KETTE e2 k2 „Streckenlänge, Mittelpunkt, Teilpunkte“ (pflicht) → eine Hauptnummer
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s0-v1 – e3 k1 „Dreiecke nachweisen“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s1-v1 – e3 k1 „Dreiecke nachweisen“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s2-v1 – e3 k1 „Dreiecke nachweisen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s3-v1 – e3 k1 „Dreiecke nachweisen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s4-v1 – e3 k1 „Dreiecke nachweisen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s5-v1 – e3 k1 „Dreiecke nachweisen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s6-v1 – e3 k1 „Dreiecke nachweisen“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s7-v1 – e3 k1 „Dreiecke nachweisen“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s8-v1 – e3 k1 „Dreiecke nachweisen“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s9-v1 – e3 k1 „Dreiecke nachweisen“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s10-v1 – e3 k1 „Dreiecke nachweisen“ (verfahren), Sprosse 10: Variante 1; übergangen v2, v3, v4
+KETTE e3 k1 „Dreiecke nachweisen“ (verfahren) → eine Hauptnummer
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k2-s1-v1 – e3 k2 „Dreiecke nachweisen“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k2-s2-v1 – e3 k2 „Dreiecke nachweisen“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+KETTE e3 k2 „Dreiecke nachweisen“ (pflicht) → eine Hauptnummer
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s0-v1 – e4 k1 „Vierecke nachweisen“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s1-v1 – e4 k1 „Vierecke nachweisen“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s2-v1 – e4 k1 „Vierecke nachweisen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s3-v1 – e4 k1 „Vierecke nachweisen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s4-v1 – e4 k1 „Vierecke nachweisen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s5-v1 – e4 k1 „Vierecke nachweisen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s6-v1 – e4 k1 „Vierecke nachweisen“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s7-v1 – e4 k1 „Vierecke nachweisen“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s8-v1 – e4 k1 „Vierecke nachweisen“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s9-v1 – e4 k1 „Vierecke nachweisen“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s10-v1 – e4 k1 „Vierecke nachweisen“ (verfahren), Sprosse 10: Variante 1; übergangen v2, v3, v4, v5, v6, v7, v8
+KETTE e4 k1 „Vierecke nachweisen“ (verfahren) → eine Hauptnummer
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k2-s1-v1 – e4 k2 „Vierecke nachweisen“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k2-s2-v1 – e4 k2 „Vierecke nachweisen“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+KETTE e4 k2 „Vierecke nachweisen“ (pflicht) → eine Hauptnummer
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s0-v1 – e5 k1 „Körper und Drehungen“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s1-v1 – e5 k1 „Körper und Drehungen“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s2-v1 – e5 k1 „Körper und Drehungen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s3-v1 – e5 k1 „Körper und Drehungen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s4-v1 – e5 k1 „Körper und Drehungen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s5-v1 – e5 k1 „Körper und Drehungen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s6-v1 – e5 k1 „Körper und Drehungen“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s7-v1 – e5 k1 „Körper und Drehungen“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s8-v1 – e5 k1 „Körper und Drehungen“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3, v4, v5, v6, v7, v8, v9, v10
+KETTE e5 k1 „Körper und Drehungen“ (verfahren) → eine Hauptnummer
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k2-s1-v1 – e5 k2 „Körper und Drehungen“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k2-s2-v1 – e5 k2 „Körper und Drehungen“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+KETTE e5 k2 „Körper und Drehungen“ (pflicht) → eine Hauptnummer
+KOPF Einheit 1: „Einheit 1 von 5 · Punkte darstellen und Lage lesen“; Marken „BE Q3 · BB Q3 · GK · Abitur GK · Abitur LK“ → Zeitmarke „None“, Prüfungswort „Abitur GK“
+WARNUNG Nr. 11: 9 Teilaufgaben, 7 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 2: „Einheit 2 von 5 · Streckenlängen, Mittelpunkt und Teilpunkte“; Marken „BE Q3 · BB Q3 · GK · Abitur GK · Abitur LK“ → Zeitmarke „None“, Prüfungswort „Abitur GK“
+KOPF Einheit 3: „Einheit 3 von 5 · Dreiecke nachweisen“; Marken „BE Q3 · BB Q3 · GK · Abitur GK · Abitur LK“ → Zeitmarke „None“, Prüfungswort „Abitur GK“
+KOPF Einheit 4: „Einheit 4 von 5 · Vierecke nachweisen“; Marken „BE Q3 · BB Q3 · GK · Abitur GK · Abitur LK“ → Zeitmarke „None“, Prüfungswort „Abitur GK“
+KOPF Einheit 5: „Einheit 5 von 5 · Körper im Koordinatensystem und Drehungen“; Marken „BE Q3 · BB Q3 · GK · Abitur GK · Abitur LK“ → Zeitmarke „None“, Prüfungswort „Abitur GK“
+TODO 56 Stellen in den Quelltexten:
+  abhaken.tex:2: TODO Ich-kann-Sätze: Platzhalter wie in den Aufgabendateien
+  blatt0_a.tex:5: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 1
+  blatt0_a.tex:6: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 1
+  blatt0_a.tex:20: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 2
+  blatt0_a.tex:21: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 2
+  blatt0_a.tex:34: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 3
+  blatt0_a.tex:35: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 3
+  blatt0_a.tex:43: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 4
+  blatt0_a.tex:44: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 4
+  blatt0_a.tex:52: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 5
+  blatt0_a.tex:53: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 5
+  blatt0_a.tex:61: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 6
+  blatt0_a.tex:62: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 6
+  blatt0_a.tex:70: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 7
+  blatt0_a.tex:71: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 7
+  blatt0_a.tex:79: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 8
+  blatt0_a.tex:80: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 8
+  blatt0_a.tex:88: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 9
+  blatt0_a.tex:89: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 9
+  blatt0_a.tex:96: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 10
+  blatt0_a.tex:97: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 10
+  e1_a.tex:2: TODO Zeitmarke Einheit 1: Marken-Zeile nicht lesbar
+  e1_a.tex:3: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 1
+  e1_a.tex:8: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 11
+  e1_a.tex:9: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 11
+  e1_a.tex:11: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e1_a.tex:40: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 12
+  e1_a.tex:41: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 12
+  e2_a.tex:2: TODO Zeitmarke Einheit 2: Marken-Zeile nicht lesbar
+  e2_a.tex:3: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 2
+  e2_a.tex:8: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 13
+  e2_a.tex:9: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 13
+  e2_a.tex:11: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e2_a.tex:26: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 14
+  e2_a.tex:27: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 14
+  e3_a.tex:2: TODO Zeitmarke Einheit 3: Marken-Zeile nicht lesbar
+  e3_a.tex:3: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 3
+  e3_a.tex:8: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 15
+  e3_a.tex:9: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 15
+  e3_a.tex:11: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e3_a.tex:27: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 16
+  e3_a.tex:28: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 16
+  e4_a.tex:2: TODO Zeitmarke Einheit 4: Marken-Zeile nicht lesbar
+  e4_a.tex:3: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 4
+  e4_a.tex:8: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 17
+  e4_a.tex:9: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 17
+  e4_a.tex:11: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e4_a.tex:27: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 18
+  e4_a.tex:28: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 18
+  e5_a.tex:2: TODO Zeitmarke Einheit 5: Marken-Zeile nicht lesbar
+  e5_a.tex:3: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 5
+  e5_a.tex:8: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 19
+  e5_a.tex:9: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 19
+  e5_a.tex:11: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e5_a.tex:25: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 20
+  e5_a.tex:26: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 20
+STRUKTUR 0 Fehler

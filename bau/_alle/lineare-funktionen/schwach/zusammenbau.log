@@ -1,0 +1,267 @@
+# zusammenbau v0.1: zusammenbau.py lineare-funktionen --schwach
+VORLAGE mathblatt.sty: Version 2026-09-28a
+EINHEITEN [1, 2, 3, 4, 5]
+AUSWAHL lineare-funktionen-zone-f1-v1 – Zone f1 „Koordinaten lesen und eintragen, 4 Quadr“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL lineare-funktionen-zone-f1-v3 – Zone f1 „Koordinaten lesen und eintragen, 4 Quadr“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f1 „Koordinaten lesen und eintragen, 4 Quadr“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL lineare-funktionen-zone-f2-v1 – Zone f2 „Proportionale Zuordnung erkennen und hoc“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL lineare-funktionen-zone-f2-v3 – Zone f2 „Proportionale Zuordnung erkennen und hoc“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f2 „Proportionale Zuordnung erkennen und hoc“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL lineare-funktionen-zone-f3-v1 – Zone f3 „Negative Zahlen multiplizieren und divid“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL lineare-funktionen-zone-f3-v3 – Zone f3 „Negative Zahlen multiplizieren und divid“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f3 „Negative Zahlen multiplizieren und divid“ – Sprossen [3, 4, 5] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL lineare-funktionen-zone-f4-v1 – Zone f4 „Brüche als Steigung (½, −¾), Bruch mal g“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL lineare-funktionen-zone-f4-v3 – Zone f4 „Brüche als Steigung (½, −¾), Bruch mal g“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f4 „Brüche als Steigung (½, −¾), Bruch mal g“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL lineare-funktionen-zone-f5-v1 – Zone f5 „Lineare Gleichung zweischrittig lösen (n“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL lineare-funktionen-zone-f5-v3 – Zone f5 „Lineare Gleichung zweischrittig lösen (n“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f5 „Lineare Gleichung zweischrittig lösen (n“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL lineare-funktionen-zone-f6-v1 – Zone f6 „Terme zusammenfassen“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL lineare-funktionen-zone-f6-v3 – Zone f6 „Terme zusammenfassen“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f6 „Terme zusammenfassen“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL lineare-funktionen-zone-f3-v5 – Zone-Paar, Fehler finden
+AUSWAHL lineare-funktionen-zone-f3-v6 – Zone-Paar, gleichartige Rechenaufgabe
+AUSWAHL lineare-funktionen-e1-k1-s0-v1 – e1 k1 „Proportionale Funktion“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL lineare-funktionen-e1-k1-s1-v1 – e1 k1 „Proportionale Funktion“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-funktionen-e1-k1-s1-v2 – e1 k1 „Proportionale Funktion“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-funktionen-e1-k1-s1-v3 – e1 k1 „Proportionale Funktion“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-funktionen-e1-k1-s1-v4 – e1 k1 „Proportionale Funktion“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-funktionen-e1-k1-s1-v5 – e1 k1 „Proportionale Funktion“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-funktionen-e1-k1-s2-v1 – e1 k1 „Proportionale Funktion“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e1-k1-s3-v1 – e1 k1 „Proportionale Funktion“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e1-k1-s4-v1 – e1 k1 „Proportionale Funktion“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e1-k1-s5-v1 – e1 k1 „Proportionale Funktion“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e1-k1-s6-v1 – e1 k1 „Proportionale Funktion“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e1-k1-s7-v1 – e1 k1 „Proportionale Funktion“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e1-k1-s8-v1 – e1 k1 „Proportionale Funktion“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+KETTE e1 k1 „Proportionale Funktion“ (verfahren) → eine Hauptnummer
+AUSWAHL lineare-funktionen-e1-k2-s1-v1 – e1 k2 „Dreisatz als Kontrolle“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e1 k2 „Dreisatz als Kontrolle“ (ohne) → eine Hauptnummer
+AUSWAHL lineare-funktionen-e1-k3-s1-v1 – e1 k3 „Proportionale Funktion“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e1-k3-s2-v1 – e1 k3 „Proportionale Funktion“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e1-k3-s3-v1 – e1 k3 „Proportionale Funktion“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e1-k3-s4-v1 – e1 k3 „Proportionale Funktion“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e1 k3 „Proportionale Funktion“ (pflicht) → eine Hauptnummer
+AUSWAHL lineare-funktionen-e2-k1-s0-v1 – e2 k1 „m und n in der Gleichung markieren“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e2 k1 „m und n in der Gleichung markieren“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL lineare-funktionen-e2-k2-s0-v1 – e2 k2 „Steigungsrichtung ohne Zeichnen“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e2 k2 „Steigungsrichtung ohne Zeichnen“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL lineare-funktionen-e2-k3-s0-v1 – e2 k3 „Steigungsdreieck lesen“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e2 k3 „Steigungsdreieck lesen“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL lineare-funktionen-e2-k4-s1-v1 – e2 k4 „Graph zeichnen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-funktionen-e2-k4-s1-v2 – e2 k4 „Graph zeichnen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-funktionen-e2-k4-s1-v3 – e2 k4 „Graph zeichnen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-funktionen-e2-k4-s1-v4 – e2 k4 „Graph zeichnen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-funktionen-e2-k4-s1-v5 – e2 k4 „Graph zeichnen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-funktionen-e2-k4-s2-v1 – e2 k4 „Graph zeichnen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e2-k4-s3-v1 – e2 k4 „Graph zeichnen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e2-k4-s4-v1 – e2 k4 „Graph zeichnen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e2-k4-s5-v1 – e2 k4 „Graph zeichnen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e2-k4-s6-v1 – e2 k4 „Graph zeichnen“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e2-k4-s7-v1 – e2 k4 „Graph zeichnen“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e2-k4-s8-v1 – e2 k4 „Graph zeichnen“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3, v4, v5, v6, v7, v8
+KETTE e2 k4 „Graph zeichnen“ (verfahren) → eine Hauptnummer
+AUSWAHL lineare-funktionen-e2-k5-s1-v1 – e2 k5 „Ablesen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-funktionen-e2-k5-s1-v2 – e2 k5 „Ablesen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-funktionen-e2-k5-s1-v3 – e2 k5 „Ablesen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-funktionen-e2-k5-s1-v4 – e2 k5 „Ablesen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-funktionen-e2-k5-s1-v5 – e2 k5 „Ablesen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-funktionen-e2-k5-s2-v1 – e2 k5 „Ablesen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e2-k5-s3-v1 – e2 k5 „Ablesen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e2-k5-s4-v1 – e2 k5 „Ablesen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e2-k5-s5-v1 – e2 k5 „Ablesen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e2-k5-s6-v1 – e2 k5 „Ablesen“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3, v4, v5, v6, v7, v8, v9, v10
+KETTE e2 k5 „Ablesen“ (verfahren) → eine Hauptnummer
+AUSWAHL lineare-funktionen-e2-k6-s1-v1 – e2 k6 „Parameter deuten (steigend, fallend, parallel, Sonderfall m = 0)“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k6 „Parameter deuten (steigend, fallend, parallel, Sonderfall m = 0)“ (ohne) → eine Hauptnummer
+AUSWAHL lineare-funktionen-e2-k7-s1-v1 – e2 k7 „Graph zeichnen“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e2-k7-s2-v1 – e2 k7 „Graph zeichnen“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e2-k7-s3-v1 – e2 k7 „Graph zeichnen“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+KETTE e2 k7 „Graph zeichnen“ (pflicht) → eine Hauptnummer
+AUSWAHL lineare-funktionen-e3-k1-s0-v1 – e3 k1 „Punkt in Gleichung einsetzen“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e3 k1 „Punkt in Gleichung einsetzen“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL lineare-funktionen-e3-k2-s1-v1 – e3 k2 „Funktionswert“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-funktionen-e3-k2-s1-v2 – e3 k2 „Funktionswert“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-funktionen-e3-k2-s1-v3 – e3 k2 „Funktionswert“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-funktionen-e3-k2-s1-v4 – e3 k2 „Funktionswert“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-funktionen-e3-k2-s1-v5 – e3 k2 „Funktionswert“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-funktionen-e3-k2-s2-v1 – e3 k2 „Funktionswert“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e3-k2-s3-v1 – e3 k2 „Funktionswert“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e3-k2-s4-v1 – e3 k2 „Funktionswert“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e3-k2-s5-v1 – e3 k2 „Funktionswert“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e3-k2-s6-v1 – e3 k2 „Funktionswert“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e3-k2-s7-v1 – e3 k2 „Funktionswert“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16
+KETTE e3 k2 „Funktionswert“ (verfahren) → eine Hauptnummer
+AUSWAHL lineare-funktionen-e3-k3-s1-v1 – e3 k3 „Wertetabelle“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e3 k3 „Wertetabelle“ (ohne) → eine Hauptnummer
+AUSWAHL lineare-funktionen-e3-k4-s1-v1 – e3 k4 „Schnittpunkt mit y-Achse“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e3 k4 „Schnittpunkt mit y-Achse“ (ohne) → eine Hauptnummer
+AUSWAHL lineare-funktionen-e3-k5-s1-v1 – e3 k5 „Funktionswert“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e3-k5-s2-v1 – e3 k5 „Funktionswert“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e3-k5-s3-v1 – e3 k5 „Funktionswert“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e3-k5-s4-v1 – e3 k5 „Funktionswert“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e3 k5 „Funktionswert“ (pflicht) → eine Hauptnummer
+AUSWAHL lineare-funktionen-e4-k1-s1-v1 – e4 k1 „Gleichung bestimmen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-funktionen-e4-k1-s1-v2 – e4 k1 „Gleichung bestimmen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-funktionen-e4-k1-s1-v3 – e4 k1 „Gleichung bestimmen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-funktionen-e4-k1-s1-v4 – e4 k1 „Gleichung bestimmen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-funktionen-e4-k1-s1-v5 – e4 k1 „Gleichung bestimmen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-funktionen-e4-k1-s2-v1 – e4 k1 „Gleichung bestimmen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e4-k1-s3-v1 – e4 k1 „Gleichung bestimmen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e4-k1-s4-v1 – e4 k1 „Gleichung bestimmen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e4-k1-s5-v1 – e4 k1 „Gleichung bestimmen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e4-k1-s6-v1 – e4 k1 „Gleichung bestimmen“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3, v4, v5, v6
+KETTE e4 k1 „Gleichung bestimmen“ (verfahren) → eine Hauptnummer
+AUSWAHL lineare-funktionen-e4-k2-s1-v1 – e4 k2 „Gerade durch zwei Punkte zeichnen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e4 k2 „Gerade durch zwei Punkte zeichnen“ (ohne) → eine Hauptnummer
+AUSWAHL lineare-funktionen-e4-k3-s1-v1 – e4 k3 „Schnittpunkt zweier Geraden rechnerisch“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e4 k3 „Schnittpunkt zweier Geraden rechnerisch“ (ohne) → eine Hauptnummer
+AUSWAHL lineare-funktionen-e4-k4-s1-v1 – e4 k4 „Gleichung bestimmen“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e4-k4-s2-v1 – e4 k4 „Gleichung bestimmen“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e4-k4-s3-v1 – e4 k4 „Gleichung bestimmen“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e4-k4-s4-v1 – e4 k4 „Gleichung bestimmen“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e4 k4 „Gleichung bestimmen“ (pflicht) → eine Hauptnummer
+AUSWAHL lineare-funktionen-e5-k1-s0-v1 – e5 k1 „Anwendung“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL lineare-funktionen-e5-k1-s1-v1 – e5 k1 „Anwendung“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-funktionen-e5-k1-s1-v2 – e5 k1 „Anwendung“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-funktionen-e5-k1-s1-v3 – e5 k1 „Anwendung“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-funktionen-e5-k1-s1-v4 – e5 k1 „Anwendung“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-funktionen-e5-k1-s1-v5 – e5 k1 „Anwendung“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-funktionen-e5-k1-s2-v1 – e5 k1 „Anwendung“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e5-k1-s3-v1 – e5 k1 „Anwendung“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e5-k1-s4-v1 – e5 k1 „Anwendung“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e5-k1-s5-v1 – e5 k1 „Anwendung“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18
+KETTE e5 k1 „Anwendung“ (verfahren) → eine Hauptnummer
+AUSWAHL lineare-funktionen-e5-k2-s1-v1 – e5 k2 „Graph zu Tarif zuordnen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e5 k2 „Graph zu Tarif zuordnen“ (ohne) → eine Hauptnummer
+AUSWAHL lineare-funktionen-e5-k3-s1-v1 – e5 k3 „Situation zu Gleichung beschreiben“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e5 k3 „Situation zu Gleichung beschreiben“ (ohne) → eine Hauptnummer
+AUSWAHL lineare-funktionen-e5-k4-s1-v1 – e5 k4 „Anwendung“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e5-k4-s2-v1 – e5 k4 „Anwendung“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e5-k4-s3-v1 – e5 k4 „Anwendung“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL lineare-funktionen-e5-k4-s4-v1 – e5 k4 „Anwendung“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e5 k4 „Anwendung“ (pflicht) → eine Hauptnummer
+KOPF Einheit 1: „Einheit 1 von 5 · Proportionale Funktion“; Marken „OS Kl. 8 · GYM Kl. 8 · P10 oft · nicht für alle: Sekundo 9 LVL, Schnittpunkt 8 EXTRA“ → Zeitmarke „ab Kl. 8“, Prüfungswort „P10 oft“
+WARNUNG Nr. 9: 14 Teilaufgaben, 13 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 2: „Einheit 2 von 5 · Lineare Funktion f(x) = m·x + n“; Marken „OS Kl. 8 · GYM Kl. 8 · P10 oft · nicht für alle: Sekundo 9 Zusatzstoff“ → Zeitmarke „ab Kl. 8“, Prüfungswort „P10 oft“
+WARNUNG Nr. 15: 13 Teilaufgaben, 12 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+WARNUNG Nr. 16: 11 Teilaufgaben, 10 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 3: „Einheit 3 von 5 · Punkte und Werte“; Marken „OS Kl. 8 · GYM Kl. 8 · P10 oft · nicht für alle: Mathematik 2023 8 Vertiefen, Elemente 8 Zum Selbstlernen“ → Zeitmarke „ab Kl. 8“, Prüfungswort „P10 oft“
+WARNUNG Nr. 20: 12 Teilaufgaben, 1 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 4: „Einheit 4 von 5 · Gleichung bestimmen“; Marken „OS Kl. 8 · GYM Kl. 8 · P10 · nicht für alle: Mathematik 2023 8 Vertiefen“ → Zeitmarke „ab Kl. 8“, Prüfungswort „P10“
+WARNUNG Nr. 24: 11 Teilaufgaben, 6 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 5: „Einheit 5 von 5 · Anwendungen“; Marken „OS Kl. 8 · GYM Kl. 8 · P10 oft · nicht für alle: Mathematik 2023 8 Üben“ → Zeitmarke „ab Kl. 8“, Prüfungswort „P10 oft“
+TODO 112 Stellen in den Quelltexten:
+  abhaken.tex:2: TODO Ich-kann-Sätze: Platzhalter wie in den Aufgabendateien
+  blatt0_a.tex:4: TODO Grundvorstellungs-Aufgabe als erste Hauptnummer der Zone (2.8) fehlt in der Bank
+  blatt0_a.tex:6: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 1
+  blatt0_a.tex:7: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 1
+  blatt0_a.tex:13: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 2
+  blatt0_a.tex:14: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 2
+  blatt0_a.tex:16: TODO Darstellung für schwach fehlt in der Bank (lineare-funktionen-zone-f2-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:18: TODO Darstellung für schwach fehlt in der Bank (lineare-funktionen-zone-f2-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:22: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 3
+  blatt0_a.tex:23: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 3
+  blatt0_a.tex:25: TODO Darstellung für schwach fehlt in der Bank (lineare-funktionen-zone-f3-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:27: TODO Darstellung für schwach fehlt in der Bank (lineare-funktionen-zone-f3-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:31: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 4
+  blatt0_a.tex:32: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 4
+  blatt0_a.tex:34: TODO Darstellung für schwach fehlt in der Bank (lineare-funktionen-zone-f4-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:36: TODO Darstellung für schwach fehlt in der Bank (lineare-funktionen-zone-f4-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:40: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 5
+  blatt0_a.tex:41: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 5
+  blatt0_a.tex:43: TODO Darstellung für schwach fehlt in der Bank (lineare-funktionen-zone-f5-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:45: TODO Darstellung für schwach fehlt in der Bank (lineare-funktionen-zone-f5-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:49: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 6
+  blatt0_a.tex:50: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 6
+  blatt0_a.tex:52: TODO Darstellung für schwach fehlt in der Bank (lineare-funktionen-zone-f6-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:54: TODO Darstellung für schwach fehlt in der Bank (lineare-funktionen-zone-f6-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:58: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 7
+  blatt0_a.tex:59: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 7
+  blatt0_a.tex:64: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 8
+  blatt0_a.tex:65: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 8
+  blatt0_a.tex:67: TODO Darstellung für schwach fehlt in der Bank (lineare-funktionen-zone-f3-v6; Abschnitt „Für schwache Schüler“)
+  blatt0_l.tex:3: TODO Zuordnung Nr. 1: Fertigkeit nicht in den Voraussetzungen der Mappe gefunden
+  e1_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 1
+  e1_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 9
+  e1_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 9
+  e1_a.tex:26: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 10
+  e1_a.tex:27: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 10
+  e1_a.tex:29: TODO Darstellung für schwach fehlt in der Bank (lineare-funktionen-e1-k2-s1-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:33: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 11
+  e1_a.tex:34: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 11
+  e1_a.tex:42: TODO Merkkasten Einheit 1 nicht in der Mappe lesbar
+  e1_l.tex:4: TODO Lösung der Erklärzeile 9g) fehlt in der Bank
+  e2_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 2
+  e2_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 12
+  e2_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 12
+  e2_a.tex:15: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 13
+  e2_a.tex:16: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 13
+  e2_a.tex:23: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 14
+  e2_a.tex:24: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 14
+  e2_a.tex:29: TODO \verfahren{…}: Verfahrensüberschrift in Sachsprache fehlt in der Bank (2.3 b)
+  e2_a.tex:30: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 15
+  e2_a.tex:31: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 15
+  e2_a.tex:48: TODO \verfahren{…}: Verfahrensüberschrift in Sachsprache fehlt in der Bank (2.3 b)
+  e2_a.tex:49: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 16
+  e2_a.tex:50: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 16
+  e2_a.tex:67: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 17
+  e2_a.tex:68: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 17
+  e2_a.tex:70: TODO Darstellung für schwach fehlt in der Bank (lineare-funktionen-e2-k6-s1-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:74: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 18
+  e2_a.tex:75: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 18
+  e2_l.tex:7: TODO Lösung der Erklärzeile 15f) fehlt in der Bank
+  e2_l.tex:9: TODO Lösung der Erklärzeile 16f) fehlt in der Bank
+  e3_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 3
+  e3_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 19
+  e3_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 19
+  e3_a.tex:15: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 20
+  e3_a.tex:16: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 20
+  e3_a.tex:18: TODO Darstellung für schwach fehlt in der Bank (lineare-funktionen-e3-k2-s1-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:20: TODO Darstellung für schwach fehlt in der Bank (lineare-funktionen-e3-k2-s1-v2; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:22: TODO Darstellung für schwach fehlt in der Bank (lineare-funktionen-e3-k2-s1-v3; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:24: TODO Darstellung für schwach fehlt in der Bank (lineare-funktionen-e3-k2-s1-v4; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:26: TODO Darstellung für schwach fehlt in der Bank (lineare-funktionen-e3-k2-s1-v5; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:29: TODO Darstellung für schwach fehlt in der Bank (lineare-funktionen-e3-k2-s2-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:31: TODO Darstellung für schwach fehlt in der Bank (lineare-funktionen-e3-k2-s3-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:33: TODO Darstellung für schwach fehlt in der Bank (lineare-funktionen-e3-k2-s4-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:35: TODO Darstellung für schwach fehlt in der Bank (lineare-funktionen-e3-k2-s5-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:37: TODO Darstellung für schwach fehlt in der Bank (lineare-funktionen-e3-k2-s6-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:42: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 21
+  e3_a.tex:43: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 21
+  e3_a.tex:48: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 22
+  e3_a.tex:49: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 22
+  e3_a.tex:51: TODO Darstellung für schwach fehlt in der Bank (lineare-funktionen-e3-k4-s1-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:55: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 23
+  e3_a.tex:56: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 23
+  e3_l.tex:5: TODO Lösung der Erklärzeile 20f) fehlt in der Bank
+  e4_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 4
+  e4_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 24
+  e4_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 24
+  e4_a.tex:16: TODO Darstellung für schwach fehlt in der Bank (lineare-funktionen-e4-k1-s2-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:18: TODO Darstellung für schwach fehlt in der Bank (lineare-funktionen-e4-k1-s3-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:20: TODO Darstellung für schwach fehlt in der Bank (lineare-funktionen-e4-k1-s4-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:22: TODO Darstellung für schwach fehlt in der Bank (lineare-funktionen-e4-k1-s5-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:27: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 25
+  e4_a.tex:28: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 25
+  e4_a.tex:33: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 26
+  e4_a.tex:34: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 26
+  e4_a.tex:36: TODO Darstellung für schwach fehlt in der Bank (lineare-funktionen-e4-k3-s1-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:40: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 27
+  e4_a.tex:41: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 27
+  e4_l.tex:4: TODO Lösung der Erklärzeile 24f) fehlt in der Bank
+  e5_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 5
+  e5_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 28
+  e5_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 28
+  e5_a.tex:29: TODO Darstellung für schwach fehlt in der Bank (lineare-funktionen-e5-k1-s2-v1; Abschnitt „Für schwache Schüler“)
+  e5_a.tex:31: TODO Darstellung für schwach fehlt in der Bank (lineare-funktionen-e5-k1-s3-v1; Abschnitt „Für schwache Schüler“)
+  e5_a.tex:33: TODO Darstellung für schwach fehlt in der Bank (lineare-funktionen-e5-k1-s4-v1; Abschnitt „Für schwache Schüler“)
+  e5_a.tex:38: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 29
+  e5_a.tex:39: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 29
+  e5_a.tex:44: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 30
+  e5_a.tex:45: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 30
+  e5_a.tex:47: TODO Darstellung für schwach fehlt in der Bank (lineare-funktionen-e5-k3-s1-v1; Abschnitt „Für schwache Schüler“)
+  e5_a.tex:51: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 31
+  e5_a.tex:52: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 31
+  e5_l.tex:4: TODO Lösung der Erklärzeile 28g) fehlt in der Bank
+STRUKTUR 0 Fehler

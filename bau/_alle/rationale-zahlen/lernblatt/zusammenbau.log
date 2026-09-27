@@ -1,0 +1,165 @@
+# zusammenbau v0.1: zusammenbau.py rationale-zahlen
+VORLAGE mathblatt.sty: Version 2026-09-28a
+EINHEITEN [1, 2, 3, 4]
+AUSWAHL rationale-zahlen-zone-f1-v1 – Zone f1 „Natürliche Zahlen addieren, subtrahieren“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL rationale-zahlen-zone-f1-v3 – Zone f1 „Natürliche Zahlen addieren, subtrahieren“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f1 „Natürliche Zahlen addieren, subtrahieren“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL rationale-zahlen-zone-f2-v1 – Zone f2 „Zahlenstrahl“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL rationale-zahlen-zone-f2-v3 – Zone f2 „Zahlenstrahl“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f2 „Zahlenstrahl“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL rationale-zahlen-zone-f3-v1 – Zone f3 „Dezimalzahlen und Brüche addieren, subtr“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL rationale-zahlen-zone-f3-v3 – Zone f3 „Dezimalzahlen und Brüche addieren, subtr“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f3 „Dezimalzahlen und Brüche addieren, subtr“ – Sprossen [3, 4] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL rationale-zahlen-zone-f4-v1 – Zone f4 „Punkt vor Strich und Klammern mit natürl“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL rationale-zahlen-zone-f4-v3 – Zone f4 „Punkt vor Strich und Klammern mit natürl“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f4 „Punkt vor Strich und Klammern mit natürl“ – Sprossen [3, 4, 5] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL rationale-zahlen-zone-f5-v1 – Zone f5 „Wert eines Terms mit Platzhalter berechn“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL rationale-zahlen-zone-f5-v3 – Zone f5 „Wert eines Terms mit Platzhalter berechn“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f5 „Wert eines Terms mit Platzhalter berechn“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL rationale-zahlen-zone-f4-v5 – Zone-Paar, Fehler finden
+AUSWAHL rationale-zahlen-zone-f4-v6 – Zone-Paar, gleichartige Rechenaufgabe
+AUSWAHL rationale-zahlen-e1-k1-s0-v1 – e1 k1 „Ordnen“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL rationale-zahlen-e1-k1-s1-v1 – e1 k1 „Ordnen“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL rationale-zahlen-e1-k1-s2-v1 – e1 k1 „Ordnen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL rationale-zahlen-e1-k1-s3-v1 – e1 k1 „Ordnen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL rationale-zahlen-e1-k1-s4-v1 – e1 k1 „Ordnen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL rationale-zahlen-e1-k1-s5-v1 – e1 k1 „Ordnen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL rationale-zahlen-e1-k1-s6-v1 – e1 k1 „Ordnen“ (verfahren), Sprosse 6: Variante 1; übergangen v2
+AUSWAHL rationale-zahlen-e1-k1-s7-v1 – e1 k1 „Ordnen“ (verfahren), Sprosse 7: Variante 1; übergangen v2
+KETTE e1 k1 „Ordnen“ (verfahren) → eine Hauptnummer
+AUSWAHL rationale-zahlen-e1-k2-s1-v1 – e1 k2 „Mitte zweier Zahlen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e1 k2 „Mitte zweier Zahlen“ (ohne) → eine Hauptnummer
+AUSWAHL rationale-zahlen-e1-k3-s1-v1 – e1 k3 „runden“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e1 k3 „runden“ (ohne) → eine Hauptnummer
+AUSWAHL rationale-zahlen-e1-k4-s1-v1 – e1 k4 „Punkte in vier Quadranten“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e1 k4 „Punkte in vier Quadranten“ (ohne) → eine Hauptnummer
+AUSWAHL rationale-zahlen-e1-k5-s1-v1 – e1 k5 „Ordnen“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL rationale-zahlen-e1-k5-s2-v1 – e1 k5 „Ordnen“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL rationale-zahlen-e1-k5-s3-v1 – e1 k5 „Ordnen“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL rationale-zahlen-e1-k5-s4-v1 – e1 k5 „Ordnen“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e1 k5 „Ordnen“ (pflicht) → eine Hauptnummer
+AUSWAHL rationale-zahlen-e2-k1-s0-v1 – e2 k1 „Vorzeichen oder Rechenzeichen?“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e2 k1 „Vorzeichen oder Rechenzeichen?“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL rationale-zahlen-e2-k2-s0-v1 – e2 k2 „Zeichen zusammenfassen“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e2 k2 „Zeichen zusammenfassen“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL rationale-zahlen-e2-k3-s0-v1 – e2 k3 „Addieren/Subtrahieren“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL rationale-zahlen-e2-k3-s1-v1 – e2 k3 „Addieren/Subtrahieren“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL rationale-zahlen-e2-k3-s2-v1 – e2 k3 „Addieren/Subtrahieren“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL rationale-zahlen-e2-k3-s3-v1 – e2 k3 „Addieren/Subtrahieren“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL rationale-zahlen-e2-k3-s4-v1 – e2 k3 „Addieren/Subtrahieren“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL rationale-zahlen-e2-k3-s5-v1 – e2 k3 „Addieren/Subtrahieren“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL rationale-zahlen-e2-k3-s6-v1 – e2 k3 „Addieren/Subtrahieren“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL rationale-zahlen-e2-k3-s7-v1 – e2 k3 „Addieren/Subtrahieren“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL rationale-zahlen-e2-k3-s8-v1 – e2 k3 „Addieren/Subtrahieren“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+KETTE e2 k3 „Addieren/Subtrahieren“ (verfahren) → eine Hauptnummer
+AUSWAHL rationale-zahlen-e2-k4-s1-v1 – e2 k4 „Beträge: gleiche Vorzeichen addieren, verschiedene subtrahieren“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k4 „Beträge: gleiche Vorzeichen addieren, verschiedene subtrahieren“ (ohne) → eine Hauptnummer
+AUSWAHL rationale-zahlen-e2-k5-s1-v1 – e2 k5 „Dezimalzahlen und Brüche“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k5 „Dezimalzahlen und Brüche“ (ohne) → eine Hauptnummer
+AUSWAHL rationale-zahlen-e2-k6-s1-v1 – e2 k6 „Umkehrung: Rechnung zu Ergebnis finden“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k6 „Umkehrung: Rechnung zu Ergebnis finden“ (ohne) → eine Hauptnummer
+AUSWAHL rationale-zahlen-e2-k7-s1-v1 – e2 k7 „Addieren/Subtrahieren“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL rationale-zahlen-e2-k7-s2-v1 – e2 k7 „Addieren/Subtrahieren“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL rationale-zahlen-e2-k7-s3-v1 – e2 k7 „Addieren/Subtrahieren“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL rationale-zahlen-e2-k7-s4-v1 – e2 k7 „Addieren/Subtrahieren“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e2 k7 „Addieren/Subtrahieren“ (pflicht) → eine Hauptnummer
+AUSWAHL rationale-zahlen-e3-k1-s0-v1 – e3 k1 „Multiplizieren/Dividieren“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL rationale-zahlen-e3-k1-s1-v1 – e3 k1 „Multiplizieren/Dividieren“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL rationale-zahlen-e3-k1-s2-v1 – e3 k1 „Multiplizieren/Dividieren“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL rationale-zahlen-e3-k1-s3-v1 – e3 k1 „Multiplizieren/Dividieren“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL rationale-zahlen-e3-k1-s4-v1 – e3 k1 „Multiplizieren/Dividieren“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL rationale-zahlen-e3-k1-s5-v1 – e3 k1 „Multiplizieren/Dividieren“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL rationale-zahlen-e3-k1-s6-v1 – e3 k1 „Multiplizieren/Dividieren“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL rationale-zahlen-e3-k1-s7-v1 – e3 k1 „Multiplizieren/Dividieren“ (verfahren), Sprosse 7: Variante 1; übergangen v2
+AUSWAHL rationale-zahlen-e3-k1-s8-v1 – e3 k1 „Multiplizieren/Dividieren“ (verfahren), Sprosse 8: Variante 1; übergangen v2
+AUSWAHL rationale-zahlen-e3-k1-s9-v1 – e3 k1 „Multiplizieren/Dividieren“ (verfahren), Sprosse 9: Variante 1; übergangen v2
+AUSWAHL rationale-zahlen-e3-k1-s10-v1 – e3 k1 „Multiplizieren/Dividieren“ (verfahren), Sprosse 10: Variante 1; übergangen v2
+KETTE e3 k1 „Multiplizieren/Dividieren“ (verfahren) → eine Hauptnummer
+AUSWAHL rationale-zahlen-e3-k2-s1-v1 – e3 k2 „Vorzeichenregel als Aussage prüfen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e3 k2 „Vorzeichenregel als Aussage prüfen“ (ohne) → eine Hauptnummer
+AUSWAHL rationale-zahlen-e3-k3-s1-v1 – e3 k3 „Multiplizieren/Dividieren“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL rationale-zahlen-e3-k3-s2-v1 – e3 k3 „Multiplizieren/Dividieren“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL rationale-zahlen-e3-k3-s3-v1 – e3 k3 „Multiplizieren/Dividieren“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+KETTE e3 k3 „Multiplizieren/Dividieren“ (pflicht) → eine Hauptnummer
+AUSWAHL rationale-zahlen-e4-k1-s0-v1 – e4 k1 „Terme und Sachaufgaben“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL rationale-zahlen-e4-k1-s1-v1 – e4 k1 „Terme und Sachaufgaben“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL rationale-zahlen-e4-k1-s2-v1 – e4 k1 „Terme und Sachaufgaben“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL rationale-zahlen-e4-k1-s3-v1 – e4 k1 „Terme und Sachaufgaben“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL rationale-zahlen-e4-k1-s4-v1 – e4 k1 „Terme und Sachaufgaben“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL rationale-zahlen-e4-k1-s5-v1 – e4 k1 „Terme und Sachaufgaben“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL rationale-zahlen-e4-k1-s6-v1 – e4 k1 „Terme und Sachaufgaben“ (verfahren), Sprosse 6: Variante 1; übergangen v2
+AUSWAHL rationale-zahlen-e4-k1-s7-v1 – e4 k1 „Terme und Sachaufgaben“ (verfahren), Sprosse 7: Variante 1; übergangen v2
+KETTE e4 k1 „Terme und Sachaufgaben“ (verfahren) → eine Hauptnummer
+AUSWAHL rationale-zahlen-e4-k2-s1-v1 – e4 k2 „Rechenvorteile (Tauschen, geschickt zusammenfassen)“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e4 k2 „Rechenvorteile (Tauschen, geschickt zusammenfassen)“ (ohne) → eine Hauptnummer
+AUSWAHL rationale-zahlen-e4-k3-s1-v1 – e4 k3 „Terme und Sachaufgaben“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL rationale-zahlen-e4-k3-s2-v1 – e4 k3 „Terme und Sachaufgaben“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL rationale-zahlen-e4-k3-s3-v1 – e4 k3 „Terme und Sachaufgaben“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+KETTE e4 k3 „Terme und Sachaufgaben“ (pflicht) → eine Hauptnummer
+KOPF Einheit 1: „Einheit 1 von 4 · Negative Zahlen kennen und ordnen“; Marken „OS Kl. 6–7 (Mathematik 2023 7, Schnittpunkt 6, Mathematik heute 7) · GYM Kl. 6–7 (LS 6, Fundamente 7, Elemente 7) · P10 · nicht für alle: Sekundo 7 LVL, Mathematik 2023 6 Vertiefen, Schnittpunkt 6 EXTRA“ → Zeitmarke „ab Kl. 6, je nach Buch bis Kl. 7“, Prüfungswort „P10“
+WARNUNG Nr. 8: 8 Teilaufgaben, 3 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 2: „Einheit 2 von 4 · Addieren und Subtrahieren“; Marken „OS Kl. 6–7 (Mathematik 2023 7, Schnittpunkt 6, Mathematik heute 7) · GYM Kl. 7 · P10 · nicht für alle: Sekundo 7 LVL“ → Zeitmarke „ab Kl. 6, je nach Buch bis Kl. 7 (am Gymnasium ab Kl. 7)“, Prüfungswort „P10“
+WARNUNG Nr. 15: 9 Teilaufgaben, 1 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 3: „Einheit 3 von 4 · Multiplizieren und Dividieren“; Marken „OS Kl. 7 · GYM Kl. 7 · P10“ → Zeitmarke „ab Kl. 7“, Prüfungswort „P10“
+KOPF Einheit 4: „Einheit 4 von 4 · Terme und Sachaufgaben“; Marken „OS Kl. 7 · GYM Kl. 7 · P10 · nicht für alle: Mathematik 2023 7 Üben, Schnittpunkt 7 EXTRA“ → Zeitmarke „ab Kl. 7“, Prüfungswort „P10“
+TODO 59 Stellen in den Quelltexten:
+  abhaken.tex:2: TODO Ich-kann-Sätze: Platzhalter wie in den Aufgabendateien
+  blatt0_a.tex:5: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 1
+  blatt0_a.tex:6: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 1
+  blatt0_a.tex:14: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 2
+  blatt0_a.tex:15: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 2
+  blatt0_a.tex:29: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 3
+  blatt0_a.tex:30: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 3
+  blatt0_a.tex:38: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 4
+  blatt0_a.tex:39: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 4
+  blatt0_a.tex:47: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 5
+  blatt0_a.tex:48: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 5
+  blatt0_a.tex:56: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 6
+  blatt0_a.tex:57: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 6
+  blatt0_a.tex:64: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 7
+  blatt0_a.tex:65: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 7
+  e1_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 1
+  e1_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 8
+  e1_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 8
+  e1_a.tex:10: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e1_a.tex:29: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 9
+  e1_a.tex:30: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 9
+  e1_a.tex:37: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 10
+  e1_a.tex:38: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 10
+  e1_a.tex:45: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 11
+  e1_a.tex:46: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 11
+  e1_a.tex:56: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 12
+  e1_a.tex:57: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 12
+  e2_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 2
+  e2_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 13
+  e2_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 13
+  e2_a.tex:15: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 14
+  e2_a.tex:16: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 14
+  e2_a.tex:23: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 15
+  e2_a.tex:24: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 15
+  e2_a.tex:26: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e2_a.tex:42: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 16
+  e2_a.tex:43: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 16
+  e2_a.tex:50: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 17
+  e2_a.tex:51: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 17
+  e2_a.tex:58: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 18
+  e2_a.tex:59: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 18
+  e2_a.tex:66: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 19
+  e2_a.tex:67: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 19
+  e3_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 3
+  e3_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 20
+  e3_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 20
+  e3_a.tex:10: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e3_a.tex:26: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 21
+  e3_a.tex:27: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 21
+  e3_a.tex:34: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 22
+  e3_a.tex:35: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 22
+  e4_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 4
+  e4_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 23
+  e4_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 23
+  e4_a.tex:10: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e4_a.tex:23: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 24
+  e4_a.tex:24: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 24
+  e4_a.tex:31: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 25
+  e4_a.tex:32: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 25
+STRUKTUR 0 Fehler

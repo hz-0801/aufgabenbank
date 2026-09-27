@@ -1,0 +1,35 @@
+% Einheit 2 von 2 – Einheit 2 (bank/zufallsgroessen-und-verteilungen/e2.jsonl, zusammenbau v0.1)
+%% TODO Prüfungswort Einheit 2: nicht in der Marken-Zeile
+%% TODO Zeitmarke Einheit 2: Marken-Zeile nicht lesbar
+%% TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 2
+%% TODO Einheitentitel 2 nicht in der Mappe lesbar
+\einheitenkopf[e2]{Einheit 2 von 2 · Einheit 2}
+\setcounter{aufgabe}{8}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 9
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 9
+\begin{aufgabe}{Verteilung lesen}
+%% TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+\begin{teile}
+\teil Kann das Diagramm die vollständige Verteilung einer Zufallsgröße zeigen? \kreuz{ja}\\ \kreuz{nein}
+
+\saeulenab[ymax=0.5,ystep=0.1,yfein=0.05,ylabel=Wahrscheinlichkeit]{0/0.2,1/0.5,2/0.3}
+\teil $X$ nimmt die Werte $0$ bis $4$ an, die Verteilung ist symmetrisch, $P(X = 2) = 0{,}4$ – $P(X \le 2)$?
+\teil Zwei Würfel tragen die Zahlen $0$ bis $3$; $X$ ist ihre Augensumme. $Y$ ist die Anzahl der Treffer bei sechs Würfen auf einen Korb mit der Trefferquote $80\,\%$. Ordne $X$ und $Y$ je einem der Diagramme I, II, III zu und begründe. \hfill (Abitur 2022 LK)
+
+I: \saeulenab[ymax=0.4,ystep=0.1,yfein=0.05,ylabel=Wahrscheinlichkeit]{0/0.1,1/0.15,2/0.15,3/0.2,4/0.15,5/0.15,6/0.1} \quad II: \saeulenab[ymax=0.4,ystep=0.1,yfein=0.05,ylabel=Wahrscheinlichkeit]{0/0.0625,1/0.125,2/0.1875,3/0.25,4/0.1875,5/0.125,6/0.0625} \quad III: \saeulenab[ymax=0.4,ystep=0.1,yfein=0.05,ylabel=Wahrscheinlichkeit]{0/0,1/0.002,2/0.015,3/0.082,4/0.246,5/0.393,6/0.262}
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 10
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 10
+\begin{aufgabe}{Verteilung lesen – Fehler finden, Begründen, Anwendung, Darstellungswechsel}
+\begin{teile}
+\teil $X$ nimmt die Werte $0$ bis $4$ an, die Verteilung ist symmetrisch, $P(X = 2) = 0{,}2$ – wo ist der Fehler? \rechnung{P(X \le 2) &= 0{,}2}
+\teil Warum verteilt sich bei einer symmetrischen Verteilung der Rest ohne den mittleren Wert zu gleichen Teilen auf beide Seiten?
+\teil Die Füllmenge einer Saftflasche ist $490$, $495$, $500$, $505$ oder $510$ ml, symmetrisch verteilt; genau $500$ ml enthält die Hälfte der Flaschen. Wie wahrscheinlich enthält eine Flasche mindestens $500$ ml?
+\teil Zeichne das Säulendiagramm von $X$ = Anzahl Kopf bei drei Münzwürfen.
+
+\saeulen{0/,1/,2/,3/}{0.5}{0.125}{$P(X = k)$}
+\end{teile}
+\end{aufgabe}

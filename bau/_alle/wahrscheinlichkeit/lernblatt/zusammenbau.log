@@ -1,0 +1,167 @@
+# zusammenbau v0.1: zusammenbau.py wahrscheinlichkeit
+VORLAGE mathblatt.sty: Version 2026-09-28a
+EINHEITEN [1, 2, 3, 4]
+AUSWAHL wahrscheinlichkeit-zone-f1-v1 – Zone f1 „Brüche kürzen; Bruch ↔ Dezimalzahl ↔ Pro“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL wahrscheinlichkeit-zone-f1-v3 – Zone f1 „Brüche kürzen; Bruch ↔ Dezimalzahl ↔ Pro“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f1 „Brüche kürzen; Bruch ↔ Dezimalzahl ↔ Pro“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL wahrscheinlichkeit-zone-f2-v1 – Zone f2 „Anteil einer Menge nehmen (30 % von 10 F“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL wahrscheinlichkeit-zone-f2-v3 – Zone f2 „Anteil einer Menge nehmen (30 % von 10 F“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f2 „Anteil einer Menge nehmen (30 % von 10 F“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL wahrscheinlichkeit-zone-f3-v1 – Zone f3 „Relative Häufigkeit berechnen (Anzahl ge“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL wahrscheinlichkeit-zone-f3-v3 – Zone f3 „Relative Häufigkeit berechnen (Anzahl ge“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f3 „Relative Häufigkeit berechnen (Anzahl ge“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL wahrscheinlichkeit-zone-f4-v1 – Zone f4 „Anzahl der Zahlen in einem Bereich (101 “, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL wahrscheinlichkeit-zone-f4-v3 – Zone f4 „Anzahl der Zahlen in einem Bereich (101 “, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f4 „Anzahl der Zahlen in einem Bereich (101 “ – Sprossen [3, 4, 5] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL wahrscheinlichkeit-zone-f5-v1 – Zone f5 „Brüche multiplizieren (auch drei Faktore“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL wahrscheinlichkeit-zone-f5-v3 – Zone f5 „Brüche multiplizieren (auch drei Faktore“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f5 „Brüche multiplizieren (auch drei Faktore“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL wahrscheinlichkeit-zone-f4-v5 – Zone-Paar, Fehler finden
+AUSWAHL wahrscheinlichkeit-zone-f4-v6 – Zone-Paar, gleichartige Rechenaufgabe
+AUSWAHL wahrscheinlichkeit-e1-k1-s0-v1 – e1 k1 „Zählen“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL wahrscheinlichkeit-e1-k1-s1-v1 – e1 k1 „Zählen“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL wahrscheinlichkeit-e1-k1-s2-v1 – e1 k1 „Zählen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e1-k1-s3-v1 – e1 k1 „Zählen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e1-k1-s4-v1 – e1 k1 „Zählen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e1-k1-s5-v1 – e1 k1 „Zählen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e1-k1-s6-v1 – e1 k1 „Zählen“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e1-k1-s7-v1 – e1 k1 „Zählen“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e1-k1-s8-v1 – e1 k1 „Zählen“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e1-k1-s9-v1 – e1 k1 „Zählen“ (verfahren), Sprosse 9: Variante 1; übergangen v2
+KETTE e1 k1 „Zählen“ (verfahren) → eine Hauptnummer
+AUSWAHL wahrscheinlichkeit-e1-k2-s1-v1 – e1 k2 „Ergebnisse zu „mindestens einmal …“ aufzählen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e1 k2 „Ergebnisse zu „mindestens einmal …“ aufzählen“ (ohne) → eine Hauptnummer
+AUSWAHL wahrscheinlichkeit-e1-k3-s1-v1 – e1 k3 „Zählen“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e1-k3-s2-v1 – e1 k3 „Zählen“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e1-k3-s3-v1 – e1 k3 „Zählen“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e1-k3-s4-v1 – e1 k3 „Zählen“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e1 k3 „Zählen“ (pflicht) → eine Hauptnummer
+AUSWAHL wahrscheinlichkeit-e2-k1-s0-v1 – e2 k1 „Wie viele Stufen?“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e2 k1 „Wie viele Stufen?“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL wahrscheinlichkeit-e2-k2-s0-v1 – e2 k2 „Gleich groß?“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e2 k2 „Gleich groß?“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL wahrscheinlichkeit-e2-k3-s0-v1 – e2 k3 „Einstufig“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL wahrscheinlichkeit-e2-k3-s1-v1 – e2 k3 „Einstufig“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL wahrscheinlichkeit-e2-k3-s2-v1 – e2 k3 „Einstufig“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e2-k3-s3-v1 – e2 k3 „Einstufig“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e2-k3-s4-v1 – e2 k3 „Einstufig“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e2-k3-s5-v1 – e2 k3 „Einstufig“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e2-k3-s6-v1 – e2 k3 „Einstufig“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e2-k3-s7-v1 – e2 k3 „Einstufig“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e2-k3-s8-v1 – e2 k3 „Einstufig“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e2-k3-s9-v1 – e2 k3 „Einstufig“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e2-k3-s10-v1 – e2 k3 „Einstufig“ (verfahren), Sprosse 10: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e2-k3-s11-v1 – e2 k3 „Einstufig“ (verfahren), Sprosse 11: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e2-k3-s12-v1 – e2 k3 „Einstufig“ (verfahren), Sprosse 12: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e2-k3-s13-v1 – e2 k3 „Einstufig“ (verfahren), Sprosse 13: Variante 1; übergangen v2
+KETTE e2 k3 „Einstufig“ (verfahren) → eine Hauptnummer
+AUSWAHL wahrscheinlichkeit-e2-k4-s1-v1 – e2 k4 „Topf mit P = 50 % auswählen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k4 „Topf mit P = 50 % auswählen“ (ohne) → eine Hauptnummer
+AUSWAHL wahrscheinlichkeit-e2-k5-s1-v1 – e2 k5 „erwartete Anzahl bei n Versuchen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k5 „erwartete Anzahl bei n Versuchen“ (ohne) → eine Hauptnummer
+AUSWAHL wahrscheinlichkeit-e2-k6-s1-v1 – e2 k6 „Einstufig“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e2-k6-s2-v1 – e2 k6 „Einstufig“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e2-k6-s3-v1 – e2 k6 „Einstufig“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e2-k6-s4-v1 – e2 k6 „Einstufig“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e2 k6 „Einstufig“ (pflicht) → eine Hauptnummer
+AUSWAHL wahrscheinlichkeit-e3-k1-s0-v1 – e3 k1 „Ein Pfad oder mehrere?“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e3 k1 „Ein Pfad oder mehrere?“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL wahrscheinlichkeit-e3-k2-s0-v1 – e3 k2 „Nicht oder mindestens?“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e3 k2 „Nicht oder mindestens?“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL wahrscheinlichkeit-e3-k3-s0-v1 – e3 k3 „Mit Zurücklegen“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL wahrscheinlichkeit-e3-k3-s1-v1 – e3 k3 „Mit Zurücklegen“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL wahrscheinlichkeit-e3-k3-s2-v1 – e3 k3 „Mit Zurücklegen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e3-k3-s3-v1 – e3 k3 „Mit Zurücklegen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e3-k3-s4-v1 – e3 k3 „Mit Zurücklegen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e3-k3-s5-v1 – e3 k3 „Mit Zurücklegen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e3-k3-s6-v1 – e3 k3 „Mit Zurücklegen“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e3-k3-s7-v1 – e3 k3 „Mit Zurücklegen“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e3-k3-s8-v1 – e3 k3 „Mit Zurücklegen“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e3-k3-s9-v1 – e3 k3 „Mit Zurücklegen“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e3-k3-s10-v1 – e3 k3 „Mit Zurücklegen“ (verfahren), Sprosse 10: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e3-k3-s11-v1 – e3 k3 „Mit Zurücklegen“ (verfahren), Sprosse 11: Variante 1; übergangen v2
+KETTE e3 k3 „Mit Zurücklegen“ (verfahren) → eine Hauptnummer
+AUSWAHL wahrscheinlichkeit-e3-k4-s1-v1 – e3 k4 „Mit Zurücklegen“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e3-k4-s2-v1 – e3 k4 „Mit Zurücklegen“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e3-k4-s3-v1 – e3 k4 „Mit Zurücklegen“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e3-k4-s4-v1 – e3 k4 „Mit Zurücklegen“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e3 k4 „Mit Zurücklegen“ (pflicht) → eine Hauptnummer
+AUSWAHL wahrscheinlichkeit-e4-k1-s0-v1 – e4 k1 „Ohne Zurücklegen“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL wahrscheinlichkeit-e4-k1-s1-v1 – e4 k1 „Ohne Zurücklegen“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL wahrscheinlichkeit-e4-k1-s2-v1 – e4 k1 „Ohne Zurücklegen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e4-k1-s3-v1 – e4 k1 „Ohne Zurücklegen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e4-k1-s4-v1 – e4 k1 „Ohne Zurücklegen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e4-k1-s5-v1 – e4 k1 „Ohne Zurücklegen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e4-k1-s6-v1 – e4 k1 „Ohne Zurücklegen“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e4-k1-s7-v1 – e4 k1 „Ohne Zurücklegen“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e4-k1-s8-v1 – e4 k1 „Ohne Zurücklegen“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e4-k1-s9-v1 – e4 k1 „Ohne Zurücklegen“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e4-k1-s10-v1 – e4 k1 „Ohne Zurücklegen“ (verfahren), Sprosse 10: Variante 1; übergangen v2
+KETTE e4 k1 „Ohne Zurücklegen“ (verfahren) → eine Hauptnummer
+AUSWAHL wahrscheinlichkeit-e4-k2-s1-v1 – e4 k2 „Ohne Zurücklegen“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e4-k2-s2-v1 – e4 k2 „Ohne Zurücklegen“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e4-k2-s3-v1 – e4 k2 „Ohne Zurücklegen“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL wahrscheinlichkeit-e4-k2-s4-v1 – e4 k2 „Ohne Zurücklegen“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e4 k2 „Ohne Zurücklegen“ (pflicht) → eine Hauptnummer
+KOPF Einheit 1: „Einheit 1 von 4 · Zählen und Ergebnismengen“; Marken „OS Kl. 5–10 (Sekundo 10, Mathematik 2023 7, Schnittpunkt 5, Mathematik heute 8) · GYM Kl. 6–10 (Fundamente 10, Elemente 6, mathe.delta 8) · P10 · nicht für alle: Sekundo 10 LVL, Mathematik 2023 6 Vertiefen“ → Zeitmarke „ab Kl. 5, je nach Buch bis Kl. 10 (am Gymnasium ab Kl. 6)“, Prüfungswort „P10“
+KOPF Einheit 2: „Einheit 2 von 4 · Wahrscheinlichkeit einstufig“; Marken „OS Kl. 6–7 (Mathematik 2023 7, Schnittpunkt 7, Mathematik heute 6) · GYM Kl. 6–8 (LS 8, Fundamente 8, Elemente 6, mathe.delta 8) · P10 oft · nicht für alle: Sekundo 7 LVL, Mathematik 2023 6 Vertiefen, Schnittpunkt 6 EXTRA“ → Zeitmarke „ab Kl. 6, je nach Buch bis Kl. 7“, Prüfungswort „P10 oft“
+WARNUNG Nr. 13: 14 Teilaufgaben, 2 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 3: „Einheit 3 von 4 · Baumdiagramm und Pfadregeln“; Marken „OS Kl. 8–10 (Sekundo 8, Mathematik 2023 10, Schnittpunkt 10, Mathematik heute 8) · GYM Kl. 8–10 (LS 8, Fundamente 8, Elemente 10, mathe.delta 8) · P10 oft · nicht für alle: Schnittpunkt 7 EXTRA“ → Zeitmarke „ab Kl. 8, je nach Buch bis Kl. 10“, Prüfungswort „P10 oft“
+WARNUNG Nr. 19: 12 Teilaufgaben, 4 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 4: „Einheit 4 von 4 · Ohne Zurücklegen“; Marken „OS Kl. 10 · GYM Kl. 10 · P10 oft“ → Zeitmarke „ab Kl. 10“, Prüfungswort „P10 oft“
+WARNUNG Nr. 21: 11 Teilaufgaben, 2 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+TODO 53 Stellen in den Quelltexten:
+  abhaken.tex:2: TODO Ich-kann-Sätze: Platzhalter wie in den Aufgabendateien
+  blatt0_a.tex:5: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 1
+  blatt0_a.tex:6: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 1
+  blatt0_a.tex:14: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 2
+  blatt0_a.tex:15: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 2
+  blatt0_a.tex:23: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 3
+  blatt0_a.tex:24: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 3
+  blatt0_a.tex:32: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 4
+  blatt0_a.tex:33: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 4
+  blatt0_a.tex:41: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 5
+  blatt0_a.tex:42: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 5
+  blatt0_a.tex:50: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 6
+  blatt0_a.tex:51: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 6
+  blatt0_a.tex:58: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 7
+  blatt0_a.tex:59: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 7
+  e1_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 1
+  e1_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 8
+  e1_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 8
+  e1_a.tex:10: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e1_a.tex:25: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 9
+  e1_a.tex:26: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 9
+  e1_a.tex:33: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 10
+  e1_a.tex:34: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 10
+  e2_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 2
+  e2_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 11
+  e2_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 11
+  e2_a.tex:15: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 12
+  e2_a.tex:16: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 12
+  e2_a.tex:25: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 13
+  e2_a.tex:26: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 13
+  e2_a.tex:28: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e2_a.tex:51: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 14
+  e2_a.tex:52: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 14
+  e2_a.tex:59: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 15
+  e2_a.tex:60: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 15
+  e2_a.tex:67: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 16
+  e2_a.tex:68: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 16
+  e3_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 3
+  e3_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 17
+  e3_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 17
+  e3_a.tex:17: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 18
+  e3_a.tex:18: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 18
+  e3_a.tex:25: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 19
+  e3_a.tex:26: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 19
+  e3_a.tex:28: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e3_a.tex:53: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 20
+  e3_a.tex:54: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 20
+  e4_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 4
+  e4_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 21
+  e4_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 21
+  e4_a.tex:10: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e4_a.tex:30: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 22
+  e4_a.tex:31: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 22
+STRUKTUR 0 Fehler

@@ -1,0 +1,52 @@
+% Einheit 3 von 4 – Von der Sekante zur Tangente (bank/ableitung-und-aenderungsrate/e3.jsonl, zusammenbau v0.1)
+%% TODO Zeitmarke Einheit 3: Marken-Zeile nicht lesbar
+%% TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 3
+\einheitenkopf[e3]{Einheit 3 von 4 · Von der Sekante zur Tangente}
+\zweigzeile{Abitur GK}
+\setcounter{aufgabe}{15}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 16
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 16
+\begin{aufgabe}{Von der Sekante zur Tangente}
+%% TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+\begin{teile}
+\teil Für eine Funktion $f$ ist der Term $\frac{f(5) - f(2)}{5 - 2}$ gegeben. Was gibt er an? \\ \kreuz{Sekantensteigung – mittlere Änderungsrate} \\ \kreuz{Tangentensteigung – momentane Änderungsrate}
+\teil Gegeben ist $f(x) = x^2$ und der Punkt $P(2 | 4)$ auf dem Graphen. Berechne die Steigung $m$ der Sekante durch $P$ und $Q(2 + h | f(2 + h))$ für $h = 1$; $0{,}5$; $0{,}1$; $0{,}01$ und trage sie in die Tabelle ein. Welchem Wert nähern sich die Steigungen? Das ist die Tangentensteigung $f'(2)$.
+
+\wertetabelle{h}{m}{1,0{,}5,0{,}1,0{,}01}
+f'(2) = \leerfeld
+\teil Die Abbildung zeigt den Graphen von $f(x) = x^3 - 3x^2 + 2$ mit dem Wendepunkt $W(1 | 0)$. Berechne die mittlere Steigung des Graphen im Bereich $0 \le x \le 2$. Bestimme grafisch die Steigung des Graphen im Wendepunkt \hfill (Abitur 2024 LK).
+
+\begin{ksys}[xmin=-1,xmax=3,ymin=-3,ymax=4,ablesen]\funktion{\x^3-3*\x^2+2}{f}\end{ksys}
+\teil Die Temperatur eines Kaffees wird durch $T(x) = 55 \cdot \mathrm{e}^{-x/200} + 21$ beschrieben ($x$ in Minuten seit dem Einschenken, $T(x)$ in °C); $T'(x) = -0{,}275 \cdot \mathrm{e}^{-x/200}$. Prüfe, ob die mittlere Änderungsrate der Temperatur in den ersten 40 Minuten um mehr als $10\,\%$ von der momentanen Änderungsrate nach 40 Minuten abweicht \hfill (Abitur 2026 GK).
+\teil Gegeben ist $f(x) = x^3 - 3x$. Weise nach, dass mindestens eine Stelle $x_0$ die Gleichung $f'(x_0) = \frac{f(3) - f(0)}{3 - 0}$ erfüllt, und gib die geometrische Bedeutung von $x_0$ an \hfill (Abitur 2022 GK).
+\teil Gegeben sind $f(x) = \sqrt{x}$ für $x \ge 0$ und die Gerade $g$: $y = 0{,}5x$. Der Graph von $f$ und $g$ schneiden sich in zwei Punkten. Im Intervall zwischen den x-Koordinaten der Schnittpunkte gibt es eine Stelle, an der die lokale Änderungsrate von $f$ mit der mittleren Änderungsrate von $f$ in diesem Intervall übereinstimmt. Bestimme diese Stelle \hfill (Abitur 2024 GK). x = \leerfeld
+\teil Gegeben ist $f(x) = x^3 - 4x$. Betrachtet wird die Rechnung $\frac{f(2) - f(-2)}{2 - (-2)} = f'(x)$ ⇔ $x \approx -1{,}15$ oder $x \approx 1{,}15$. Formuliere eine Aufgabenstellung, die zu dieser Rechnung passt \hfill (Abitur 2022 LK).
+\teil Die Abbildung zeigt den Graphen $G$ von $f(x) = \sqrt{x - 1}$ für $x \ge 1$ und den Punkt $P(5 | 2)$. Die Tangente in $P$ hat die Steigung $0{,}25$ und mit $G$ nur den Punkt $P$ gemeinsam. Betrachtet werden alle Geraden, die mit $G$ sowohl $P$ als auch einen weiteren Punkt gemeinsam haben. Gib die Steigungen dieser Geraden an \hfill (Abitur 2025 LK).
+
+\begin{ksys}[xmin=0,xmax=10,ymin=-1,ymax=4,ablesen]\funktionab{sqrt(\x-1)}{f}{1}{10}\punkt{5}{2}{P}\end{ksys}
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 17
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 17
+\begin{aufgabe}{Differenzen- und Differentialquotient durch Sekante und Tangente veranschaulichen und im Sachzusammenhang deuten}
+\begin{teile}
+\teil Die Abbildung zeigt den Wasserstand $w(t)$ eines Flusses ($t$ in Stunden seit Messbeginn, $w(t)$ in cm). Gegeben sind die Terme I: $\frac{w(8) - w(2)}{8 - 2}$ und II: der Grenzwert von $\frac{w(3) - w(x)}{3 - x}$ für $x \to 3$. Veranschauliche jeden Term in der Abbildung durch eine Gerade und gib seine Bedeutung im Sachzusammenhang an \hfill (Abitur 2018 LK).
+
+\begin{ksys}[xmin=0,xmax=12,ymin=0,ymax=60,xstep=1,ystep=10,xlabel=t in h,ylabel=w in cm,ablesen]\funktion{-0.5*\x^2+8*\x+20}{w}\end{ksys}
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 18
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 18
+\begin{aufgabe}{Von der Sekante zur Tangente – Fehler finden, Begründen, Anwendung, Darstellungswechsel}
+\begin{teile}
+\teil Für $f(x) = \sqrt{x}$ mit $P(4 | 2)$ hat die Tangente in $P$ die Steigung $0{,}25$. Mia soll die Steigungen aller Geraden angeben, die mit dem Graphen $P$ und einen weiteren Punkt gemeinsam haben. Sie antwortet: „alle $m$ mit $0 < m \le 0{,}5$“. Finde den Fehler.
+\teil Durch einen festen Punkt $P$ des Graphen von $f$ und einen zweiten Graphenpunkt $Q$ wird eine Sekante gelegt. Begründe, warum sich die Steigung der Sekante der Tangentensteigung in $P$ nähert, wenn $Q$ auf $P$ zuwandert.
+\teil Der Ladestand eines Akkus wird durch $L(t) = 100 - 80 \cdot \mathrm{e}^{-0{,}1t}$ beschrieben ($t$ in Minuten seit Ladebeginn, $L(t)$ in Prozent). Das Ladegerät zeigt die mittlere Laderate der ersten 10 Minuten und die momentane Laderate nach 10 Minuten an. Berechne beide Werte. Um welchen Anteil liegt die momentane Rate unter der mittleren?
+\teil Die Abbildung zeigt den Graphen von $f(x) = 0{,}25x^2 + 1$. Zeichne die Gerade ein, deren Steigung der Term $\frac{f(4) - f(0)}{4 - 0}$ angibt, und die Gerade, deren Steigung $f'(2)$ ist. Was fällt auf?
+
+\begin{ksys}[xmin=-1,xmax=5,ymin=-1,ymax=7,ablesen]\parabel{0.25}{0}{1}{f}\end{ksys}
+\end{teile}
+\end{aufgabe}

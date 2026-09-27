@@ -1,0 +1,404 @@
+# zusammenbau v0.1: zusammenbau.py einheiten --schwach
+VORLAGE mathblatt.sty: Version 2026-09-28a
+EINHEITEN [1, 2, 3, 4]
+AUSWAHL einheiten-zone-f1-v1 – Zone f1 „Multiplizieren und Dividieren mit zehn, “, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL einheiten-zone-f1-v3 – Zone f1 „Multiplizieren und Dividieren mit zehn, “, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f1 „Multiplizieren und Dividieren mit zehn, “ – Sprossen [3, 4, 5] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL einheiten-zone-f2-v1 – Zone f2 „Stellenwerttafel lesen und schreiben, Nu“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL einheiten-zone-f2-v3 – Zone f2 „Stellenwerttafel lesen und schreiben, Nu“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f2 „Stellenwerttafel lesen und schreiben, Nu“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL einheiten-zone-f3-v1 – Zone f3 „Dezimalzahlen mit einer Zahl malnehmen u“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL einheiten-zone-f3-v3 – Zone f3 „Dezimalzahlen mit einer Zahl malnehmen u“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f3 „Dezimalzahlen mit einer Zahl malnehmen u“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL einheiten-zone-f4-v1 – Zone f4 „Dezimalzahlen vergleichen und ordnen (st“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL einheiten-zone-f4-v3 – Zone f4 „Dezimalzahlen vergleichen und ordnen (st“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f4 „Dezimalzahlen vergleichen und ordnen (st“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL einheiten-zone-f5-v1 – Zone f5 „Skala am Lineal und an der Uhr lesen (Un“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL einheiten-zone-f5-v3 – Zone f5 „Skala am Lineal und an der Uhr lesen (Un“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f5 „Skala am Lineal und an der Uhr lesen (Un“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL einheiten-zone-f6-v1 – Zone f6 „Längen im Koordinatensystem als Differen“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL einheiten-zone-f6-v3 – Zone f6 „Längen im Koordinatensystem als Differen“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f6 „Längen im Koordinatensystem als Differen“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL einheiten-zone-f7-v1 – Zone f7 „Bruchteil einer Größe bilden (ein Vierte“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL einheiten-zone-f7-v3 – Zone f7 „Bruchteil einer Größe bilden (ein Vierte“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f7 „Bruchteil einer Größe bilden (ein Vierte“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL einheiten-zone-f8-v1 – Zone f8 „Quadrat und dritte Potenz einer Länge mi“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL einheiten-zone-f8-v3 – Zone f8 „Quadrat und dritte Potenz einer Länge mi“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f8 „Quadrat und dritte Potenz einer Länge mi“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL einheiten-zone-f9-v1 – Zone f9 „Prozentwert einer Größe berechnen (zehn “, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL einheiten-zone-f9-v3 – Zone f9 „Prozentwert einer Größe berechnen (zehn “, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f9 „Prozentwert einer Größe berechnen (zehn “ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL einheiten-zone-f10-v1 – Zone f10 „Formel nach einer Größe umstellen (aus e“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL einheiten-zone-f10-v3 – Zone f10 „Formel nach einer Größe umstellen (aus e“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f10 „Formel nach einer Größe umstellen (aus e“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL einheiten-zone-f11-v1 – Zone f11 „Fläche eines Rechtecks und eines Dreieck“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL einheiten-zone-f11-v3 – Zone f11 „Fläche eines Rechtecks und eines Dreieck“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f11 „Fläche eines Rechtecks und eines Dreieck“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL einheiten-zone-f1-v5 – Zone-Paar, Fehler finden
+AUSWAHL einheiten-zone-f1-v6 – Zone-Paar, gleichartige Rechenaufgabe
+AUSWAHL einheiten-e1-k1-s0-v1 – e1 k1 „Passt die Angabe?“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e1 k1 „Passt die Angabe?“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL einheiten-e1-k2-s0-v1 – e1 k2 „Länge, Masse und Geld umrechnen“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL einheiten-e1-k2-s1-v1 – e1 k2 „Länge, Masse und Geld umrechnen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL einheiten-e1-k2-s1-v2 – e1 k2 „Länge, Masse und Geld umrechnen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL einheiten-e1-k2-s1-v3 – e1 k2 „Länge, Masse und Geld umrechnen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL einheiten-e1-k2-s1-v4 – e1 k2 „Länge, Masse und Geld umrechnen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL einheiten-e1-k2-s1-v5 – e1 k2 „Länge, Masse und Geld umrechnen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL einheiten-e1-k2-s2-v1 – e1 k2 „Länge, Masse und Geld umrechnen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e1-k2-s3-v1 – e1 k2 „Länge, Masse und Geld umrechnen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e1-k2-s4-v1 – e1 k2 „Länge, Masse und Geld umrechnen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e1-k2-s5-v1 – e1 k2 „Länge, Masse und Geld umrechnen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e1-k2-s6-v1 – e1 k2 „Länge, Masse und Geld umrechnen“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e1-k2-s7-v1 – e1 k2 „Länge, Masse und Geld umrechnen“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e1-k2-s8-v1 – e1 k2 „Länge, Masse und Geld umrechnen“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e1-k2-s9-v1 – e1 k2 „Länge, Masse und Geld umrechnen“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e1-k2-s10-v1 – e1 k2 „Länge, Masse und Geld umrechnen“ (verfahren), Sprosse 10: Variante 1; übergangen v2
+KETTE e1 k2 „Länge, Masse und Geld umrechnen“ (verfahren) → eine Hauptnummer
+AUSWAHL einheiten-e1-k3-s0-v1 – e1 k3 „Maßstab im Koordinatensystem, Sek II“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL einheiten-e1-k3-s1-v1 – e1 k3 „Maßstab im Koordinatensystem, Sek II“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL einheiten-e1-k3-s1-v2 – e1 k3 „Maßstab im Koordinatensystem, Sek II“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL einheiten-e1-k3-s1-v3 – e1 k3 „Maßstab im Koordinatensystem, Sek II“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL einheiten-e1-k3-s1-v4 – e1 k3 „Maßstab im Koordinatensystem, Sek II“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL einheiten-e1-k3-s1-v5 – e1 k3 „Maßstab im Koordinatensystem, Sek II“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL einheiten-e1-k3-s2-v1 – e1 k3 „Maßstab im Koordinatensystem, Sek II“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e1-k3-s3-v1 – e1 k3 „Maßstab im Koordinatensystem, Sek II“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e1-k3-s4-v1 – e1 k3 „Maßstab im Koordinatensystem, Sek II“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e1-k3-s5-v1 – e1 k3 „Maßstab im Koordinatensystem, Sek II“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+KETTE e1 k3 „Maßstab im Koordinatensystem, Sek II“ (verfahren) → eine Hauptnummer
+AUSWAHL einheiten-e1-k4-s1-v1 – e1 k4 „Einheiten der Länge, der Masse und des Geldes der Größe nach ordnen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e1 k4 „Einheiten der Länge, der Masse und des Geldes der Größe nach ordnen“ (ohne) → eine Hauptnummer
+AUSWAHL einheiten-e1-k5-s1-v1 – e1 k5 „Repräsentanten zuordnen (welche Angabe passt zu welchem Gegenstand)“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e1 k5 „Repräsentanten zuordnen (welche Angabe passt zu welchem Gegenstand)“ (ohne) → eine Hauptnummer
+AUSWAHL einheiten-e1-k6-s1-v1 – e1 k6 „drei bis vier Größen ordnen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e1 k6 „drei bis vier Größen ordnen“ (ohne) → eine Hauptnummer
+AUSWAHL einheiten-e1-k7-s1-v1 – e1 k7 „Umrechnen mit gegebenem Faktor bei nichtmetrischen Einheiten (Fuß, Meile, Zoll; P10-Form)“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e1 k7 „Umrechnen mit gegebenem Faktor bei nichtmetrischen Einheiten (Fuß, Meile, Zoll; P10-Form)“ (ohne) → eine Hauptnummer
+AUSWAHL einheiten-e1-k8-s1-v1 – e1 k8 „Größen mit gleicher Einheit addieren und subtrahieren“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e1 k8 „Größen mit gleicher Einheit addieren und subtrahieren“ (ohne) → eine Hauptnummer
+AUSWAHL einheiten-e1-k9-s1-v1 – e1 k9 „Länge, Masse und Geld umrechnen“ (pflicht), Sprosse 1: Variante 1; übergangen v2
+AUSWAHL einheiten-e1-k9-s2-v1 – e1 k9 „Länge, Masse und Geld umrechnen“ (pflicht), Sprosse 2: Variante 1
+AUSWAHL einheiten-e1-k9-s3-v1 – e1 k9 „Länge, Masse und Geld umrechnen“ (pflicht), Sprosse 3: Variante 1; übergangen v2
+AUSWAHL einheiten-e1-k9-s4-v1 – e1 k9 „Länge, Masse und Geld umrechnen“ (pflicht), Sprosse 4: Variante 1
+AUSWAHL einheiten-e1-k9-s5-v1 – e1 k9 „Länge, Masse und Geld umrechnen“ (pflicht), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e1-k9-s6-v1 – e1 k9 „Länge, Masse und Geld umrechnen“ (pflicht), Sprosse 6: Variante 1; übergangen v2, v3
+KETTE e1 k9 „Länge, Masse und Geld umrechnen“ (pflicht) → eine Hauptnummer
+AUSWAHL einheiten-e2-k1-s0-v1 – e2 k1 „Zeit umrechnen und Zeitspannen berechnen“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL einheiten-e2-k1-s1-v1 – e2 k1 „Zeit umrechnen und Zeitspannen berechnen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL einheiten-e2-k1-s1-v2 – e2 k1 „Zeit umrechnen und Zeitspannen berechnen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL einheiten-e2-k1-s1-v3 – e2 k1 „Zeit umrechnen und Zeitspannen berechnen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL einheiten-e2-k1-s1-v4 – e2 k1 „Zeit umrechnen und Zeitspannen berechnen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL einheiten-e2-k1-s1-v5 – e2 k1 „Zeit umrechnen und Zeitspannen berechnen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL einheiten-e2-k1-s2-v1 – e2 k1 „Zeit umrechnen und Zeitspannen berechnen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e2-k1-s3-v1 – e2 k1 „Zeit umrechnen und Zeitspannen berechnen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e2-k1-s4-v1 – e2 k1 „Zeit umrechnen und Zeitspannen berechnen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e2-k1-s5-v1 – e2 k1 „Zeit umrechnen und Zeitspannen berechnen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e2-k1-s6-v1 – e2 k1 „Zeit umrechnen und Zeitspannen berechnen“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e2-k1-s7-v1 – e2 k1 „Zeit umrechnen und Zeitspannen berechnen“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e2-k1-s8-v1 – e2 k1 „Zeit umrechnen und Zeitspannen berechnen“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e2-k1-s9-v1 – e2 k1 „Zeit umrechnen und Zeitspannen berechnen“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e2-k1-s10-v1 – e2 k1 „Zeit umrechnen und Zeitspannen berechnen“ (verfahren), Sprosse 10: Variante 1; übergangen v2
+KETTE e2 k1 „Zeit umrechnen und Zeitspannen berechnen“ (verfahren) → eine Hauptnummer
+AUSWAHL einheiten-e2-k2-s1-v1 – e2 k2 „Zeiteinheiten nennen und ordnen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k2 „Zeiteinheiten nennen und ordnen“ (ohne) → eine Hauptnummer
+AUSWAHL einheiten-e2-k3-s1-v1 – e2 k3 „Startzeit aus Endzeit und Dauer“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k3 „Startzeit aus Endzeit und Dauer“ (ohne) → eine Hauptnummer
+AUSWAHL einheiten-e2-k4-s1-v1 – e2 k4 „Fahrplan: nächste Abfahrt, Fahrzeit“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k4 „Fahrplan: nächste Abfahrt, Fahrzeit“ (ohne) → eine Hauptnummer
+AUSWAHL einheiten-e2-k5-s1-v1 – e2 k5 „Dauer in eine sinnvolle Einheit bringen (Sekunden in Minuten, Stunden in Tage)“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k5 „Dauer in eine sinnvolle Einheit bringen (Sekunden in Minuten, Stunden in Tage)“ (ohne) → eine Hauptnummer
+AUSWAHL einheiten-e2-k6-s1-v1 – e2 k6 „Zeit umrechnen und Zeitspannen berechnen“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e2-k6-s2-v1 – e2 k6 „Zeit umrechnen und Zeitspannen berechnen“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e2-k6-s3-v1 – e2 k6 „Zeit umrechnen und Zeitspannen berechnen“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e2-k6-s4-v1 – e2 k6 „Zeit umrechnen und Zeitspannen berechnen“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e2 k6 „Zeit umrechnen und Zeitspannen berechnen“ (pflicht) → eine Hauptnummer
+AUSWAHL einheiten-e3-k1-s0-v1 – e3 k1 „Flächen- und Volumeneinheiten umrechnen“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL einheiten-e3-k1-s1-v1 – e3 k1 „Flächen- und Volumeneinheiten umrechnen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL einheiten-e3-k1-s1-v2 – e3 k1 „Flächen- und Volumeneinheiten umrechnen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL einheiten-e3-k1-s1-v3 – e3 k1 „Flächen- und Volumeneinheiten umrechnen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL einheiten-e3-k1-s1-v4 – e3 k1 „Flächen- und Volumeneinheiten umrechnen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL einheiten-e3-k1-s1-v5 – e3 k1 „Flächen- und Volumeneinheiten umrechnen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL einheiten-e3-k1-s2-v1 – e3 k1 „Flächen- und Volumeneinheiten umrechnen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e3-k1-s3-v1 – e3 k1 „Flächen- und Volumeneinheiten umrechnen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e3-k1-s4-v1 – e3 k1 „Flächen- und Volumeneinheiten umrechnen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e3-k1-s5-v1 – e3 k1 „Flächen- und Volumeneinheiten umrechnen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e3-k1-s6-v1 – e3 k1 „Flächen- und Volumeneinheiten umrechnen“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e3-k1-s7-v1 – e3 k1 „Flächen- und Volumeneinheiten umrechnen“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e3-k1-s8-v1 – e3 k1 „Flächen- und Volumeneinheiten umrechnen“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e3-k1-s9-v1 – e3 k1 „Flächen- und Volumeneinheiten umrechnen“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e3-k1-s10-v1 – e3 k1 „Flächen- und Volumeneinheiten umrechnen“ (verfahren), Sprosse 10: Variante 1; übergangen v2
+KETTE e3 k1 „Flächen- und Volumeneinheiten umrechnen“ (verfahren) → eine Hauptnummer
+AUSWAHL einheiten-e3-k2-s0-v1 – e3 k2 „Flächen- und Volumeneinheiten im Koordinatensystem, Sek II“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL einheiten-e3-k2-s1-v1 – e3 k2 „Flächen- und Volumeneinheiten im Koordinatensystem, Sek II“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL einheiten-e3-k2-s1-v2 – e3 k2 „Flächen- und Volumeneinheiten im Koordinatensystem, Sek II“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL einheiten-e3-k2-s1-v3 – e3 k2 „Flächen- und Volumeneinheiten im Koordinatensystem, Sek II“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL einheiten-e3-k2-s1-v4 – e3 k2 „Flächen- und Volumeneinheiten im Koordinatensystem, Sek II“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL einheiten-e3-k2-s1-v5 – e3 k2 „Flächen- und Volumeneinheiten im Koordinatensystem, Sek II“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL einheiten-e3-k2-s2-v1 – e3 k2 „Flächen- und Volumeneinheiten im Koordinatensystem, Sek II“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e3-k2-s3-v1 – e3 k2 „Flächen- und Volumeneinheiten im Koordinatensystem, Sek II“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+KETTE e3 k2 „Flächen- und Volumeneinheiten im Koordinatensystem, Sek II“ (verfahren) → eine Hauptnummer
+AUSWAHL einheiten-e3-k3-s1-v1 – e3 k3 „Flächeneinheiten ordnen (mm² bis km², a und ha einordnen)“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e3 k3 „Flächeneinheiten ordnen (mm² bis km², a und ha einordnen)“ (ohne) → eine Hauptnummer
+AUSWAHL einheiten-e3-k4-s1-v1 – e3 k4 „Repräsentanten zuordnen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e3 k4 „Repräsentanten zuordnen“ (ohne) → eine Hauptnummer
+AUSWAHL einheiten-e3-k5-s1-v1 – e3 k5 „Flächen- und Volumeneinheiten umrechnen“ (pflicht), Sprosse 1: Variante 1; übergangen v2
+AUSWAHL einheiten-e3-k5-s2-v1 – e3 k5 „Flächen- und Volumeneinheiten umrechnen“ (pflicht), Sprosse 2: Variante 1
+AUSWAHL einheiten-e3-k5-s3-v1 – e3 k5 „Flächen- und Volumeneinheiten umrechnen“ (pflicht), Sprosse 3: Variante 1; übergangen v2
+AUSWAHL einheiten-e3-k5-s4-v1 – e3 k5 „Flächen- und Volumeneinheiten umrechnen“ (pflicht), Sprosse 4: Variante 1
+AUSWAHL einheiten-e3-k5-s5-v1 – e3 k5 „Flächen- und Volumeneinheiten umrechnen“ (pflicht), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e3-k5-s6-v1 – e3 k5 „Flächen- und Volumeneinheiten umrechnen“ (pflicht), Sprosse 6: Variante 1; übergangen v2, v3
+KETTE e3 k5 „Flächen- und Volumeneinheiten umrechnen“ (pflicht) → eine Hauptnummer
+AUSWAHL einheiten-e4-k1-s0-v1 – e4 k1 „Mit Größen rechnen im Sachzusammenhang“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL einheiten-e4-k1-s1-v1 – e4 k1 „Mit Größen rechnen im Sachzusammenhang“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL einheiten-e4-k1-s1-v2 – e4 k1 „Mit Größen rechnen im Sachzusammenhang“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL einheiten-e4-k1-s1-v3 – e4 k1 „Mit Größen rechnen im Sachzusammenhang“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL einheiten-e4-k1-s1-v4 – e4 k1 „Mit Größen rechnen im Sachzusammenhang“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL einheiten-e4-k1-s1-v5 – e4 k1 „Mit Größen rechnen im Sachzusammenhang“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL einheiten-e4-k1-s2-v1 – e4 k1 „Mit Größen rechnen im Sachzusammenhang“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e4-k1-s3-v1 – e4 k1 „Mit Größen rechnen im Sachzusammenhang“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e4-k1-s4-v1 – e4 k1 „Mit Größen rechnen im Sachzusammenhang“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e4-k1-s5-v1 – e4 k1 „Mit Größen rechnen im Sachzusammenhang“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e4-k1-s6-v1 – e4 k1 „Mit Größen rechnen im Sachzusammenhang“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e4-k1-s7-v1 – e4 k1 „Mit Größen rechnen im Sachzusammenhang“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e4-k1-s8-v1 – e4 k1 „Mit Größen rechnen im Sachzusammenhang“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e4-k1-s9-v1 – e4 k1 „Mit Größen rechnen im Sachzusammenhang“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e4-k1-s10-v1 – e4 k1 „Mit Größen rechnen im Sachzusammenhang“ (verfahren), Sprosse 10: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e4-k1-s11-v1 – e4 k1 „Mit Größen rechnen im Sachzusammenhang“ (verfahren), Sprosse 11: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e4-k1-s12-v1 – e4 k1 „Mit Größen rechnen im Sachzusammenhang“ (verfahren), Sprosse 12: Variante 1; übergangen v2
+KETTE e4 k1 „Mit Größen rechnen im Sachzusammenhang“ (verfahren) → eine Hauptnummer
+AUSWAHL einheiten-e4-k2-s0-v1 – e4 k2 „Kosten und Einnahmen, Sek II“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL einheiten-e4-k2-s1-v1 – e4 k2 „Kosten und Einnahmen, Sek II“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL einheiten-e4-k2-s1-v2 – e4 k2 „Kosten und Einnahmen, Sek II“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL einheiten-e4-k2-s1-v3 – e4 k2 „Kosten und Einnahmen, Sek II“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL einheiten-e4-k2-s1-v4 – e4 k2 „Kosten und Einnahmen, Sek II“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL einheiten-e4-k2-s1-v5 – e4 k2 „Kosten und Einnahmen, Sek II“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL einheiten-e4-k2-s2-v1 – e4 k2 „Kosten und Einnahmen, Sek II“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e4-k2-s3-v1 – e4 k2 „Kosten und Einnahmen, Sek II“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL einheiten-e4-k2-s4-v1 – e4 k2 „Kosten und Einnahmen, Sek II“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e4 k2 „Kosten und Einnahmen, Sek II“ (verfahren) → eine Hauptnummer
+AUSWAHL einheiten-e4-k3-s1-v1 – e4 k3 „Dichte aus Masse und Volumen (Vorrat)“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e4 k3 „Dichte aus Masse und Volumen (Vorrat)“ (ohne) → eine Hauptnummer
+AUSWAHL einheiten-e4-k4-s1-v1 – e4 k4 „Euro und Cent in einer Rechnung“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e4 k4 „Euro und Cent in einer Rechnung“ (ohne) → eine Hauptnummer
+AUSWAHL einheiten-e4-k5-s1-v1 – e4 k5 „Mit Größen rechnen im Sachzusammenhang“ (pflicht), Sprosse 1: Variante 1; übergangen v2
+AUSWAHL einheiten-e4-k5-s2-v1 – e4 k5 „Mit Größen rechnen im Sachzusammenhang“ (pflicht), Sprosse 2: Variante 1
+AUSWAHL einheiten-e4-k5-s3-v1 – e4 k5 „Mit Größen rechnen im Sachzusammenhang“ (pflicht), Sprosse 3: Variante 1; übergangen v2
+AUSWAHL einheiten-e4-k5-s4-v1 – e4 k5 „Mit Größen rechnen im Sachzusammenhang“ (pflicht), Sprosse 4: Variante 1
+AUSWAHL einheiten-e4-k5-s5-v1 – e4 k5 „Mit Größen rechnen im Sachzusammenhang“ (pflicht), Sprosse 5: Variante 1; übergangen v2, v3
+KETTE e4 k5 „Mit Größen rechnen im Sachzusammenhang“ (pflicht) → eine Hauptnummer
+KOPF Einheit 1: „Einheit 1 von 4 · Länge, Masse, Geld“; Marken „OS Kl. 5 · GYM Kl. 5 · P10 · FHR“ → Zeitmarke „ab Kl. 5“, Prüfungswort „P10“
+WARNUNG Nr. 15: 16 Teilaufgaben, 0 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 2: „Einheit 2 von 4 · Zeit“; Marken „OS Kl. 5 · GYM Kl. 5 · P10“ → Zeitmarke „ab Kl. 5“, Prüfungswort „P10“
+WARNUNG Nr. 23: 16 Teilaufgaben, 0 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 3: „Einheit 3 von 4 · Flächen- und Volumeneinheiten“; Marken „OS Kl. 5 · GYM Kl. 5 · P10 · FHR“ → Zeitmarke „ab Kl. 5“, Prüfungswort „P10“
+WARNUNG Nr. 29: 16 Teilaufgaben, 0 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 4: „Einheit 4 von 4 · Mit Größen rechnen im Sachzusammenhang“; Marken „OS Kl. 8 · GYM – · P10 · FHR · nicht für alle: Sekundo 7 LVL, Mathematik 2023 8 Üben“ → Zeitmarke „ab Kl. 8“, Prüfungswort „P10“
+WARNUNG Nr. 34: 18 Teilaufgaben, 0 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+TODO 207 Stellen in den Quelltexten:
+  abhaken.tex:2: TODO Ich-kann-Sätze: Platzhalter wie in den Aufgabendateien
+  blatt0_a.tex:4: TODO Grundvorstellungs-Aufgabe als erste Hauptnummer der Zone (2.8) fehlt in der Bank
+  blatt0_a.tex:6: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 1
+  blatt0_a.tex:7: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 1
+  blatt0_a.tex:9: TODO Darstellung für schwach fehlt in der Bank (einheiten-zone-f1-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:11: TODO Darstellung für schwach fehlt in der Bank (einheiten-zone-f1-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:15: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 2
+  blatt0_a.tex:16: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 2
+  blatt0_a.tex:18: TODO Darstellung für schwach fehlt in der Bank (einheiten-zone-f2-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:20: TODO Darstellung für schwach fehlt in der Bank (einheiten-zone-f2-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:24: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 3
+  blatt0_a.tex:25: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 3
+  blatt0_a.tex:27: TODO Darstellung für schwach fehlt in der Bank (einheiten-zone-f3-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:29: TODO Darstellung für schwach fehlt in der Bank (einheiten-zone-f3-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:33: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 4
+  blatt0_a.tex:34: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 4
+  blatt0_a.tex:36: TODO Darstellung für schwach fehlt in der Bank (einheiten-zone-f4-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:38: TODO Darstellung für schwach fehlt in der Bank (einheiten-zone-f4-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:42: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 5
+  blatt0_a.tex:43: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 5
+  blatt0_a.tex:49: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 6
+  blatt0_a.tex:50: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 6
+  blatt0_a.tex:52: TODO Darstellung für schwach fehlt in der Bank (einheiten-zone-f6-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:54: TODO Darstellung für schwach fehlt in der Bank (einheiten-zone-f6-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:58: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 7
+  blatt0_a.tex:59: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 7
+  blatt0_a.tex:61: TODO Darstellung für schwach fehlt in der Bank (einheiten-zone-f7-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:63: TODO Darstellung für schwach fehlt in der Bank (einheiten-zone-f7-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:67: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 8
+  blatt0_a.tex:68: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 8
+  blatt0_a.tex:70: TODO Darstellung für schwach fehlt in der Bank (einheiten-zone-f8-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:72: TODO Darstellung für schwach fehlt in der Bank (einheiten-zone-f8-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:76: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 9
+  blatt0_a.tex:77: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 9
+  blatt0_a.tex:79: TODO Darstellung für schwach fehlt in der Bank (einheiten-zone-f9-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:81: TODO Darstellung für schwach fehlt in der Bank (einheiten-zone-f9-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:85: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 10
+  blatt0_a.tex:86: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 10
+  blatt0_a.tex:88: TODO Darstellung für schwach fehlt in der Bank (einheiten-zone-f10-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:90: TODO Darstellung für schwach fehlt in der Bank (einheiten-zone-f10-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:94: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 11
+  blatt0_a.tex:95: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 11
+  blatt0_a.tex:97: TODO Darstellung für schwach fehlt in der Bank (einheiten-zone-f11-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:99: TODO Darstellung für schwach fehlt in der Bank (einheiten-zone-f11-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:103: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 12
+  blatt0_a.tex:104: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 12
+  blatt0_a.tex:109: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 13
+  blatt0_a.tex:110: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 13
+  blatt0_a.tex:112: TODO Darstellung für schwach fehlt in der Bank (einheiten-zone-f1-v6; Abschnitt „Für schwache Schüler“)
+  blatt0_l.tex:3: TODO Zuordnung Nr. 6: Fertigkeit nicht in den Voraussetzungen der Mappe gefunden
+  blatt0_l.tex:4: TODO Zuordnung Nr. 8: Fertigkeit nicht in den Voraussetzungen der Mappe gefunden
+  e1_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 1
+  e1_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 14
+  e1_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 14
+  e1_a.tex:15: TODO \verfahren{…}: Verfahrensüberschrift in Sachsprache fehlt in der Bank (2.3 b)
+  e1_a.tex:16: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 15
+  e1_a.tex:17: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 15
+  e1_a.tex:22: TODO Darstellung für schwach fehlt in der Bank (einheiten-e1-k2-s1-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:24: TODO Darstellung für schwach fehlt in der Bank (einheiten-e1-k2-s1-v2; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:26: TODO Darstellung für schwach fehlt in der Bank (einheiten-e1-k2-s1-v3; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:28: TODO Darstellung für schwach fehlt in der Bank (einheiten-e1-k2-s1-v4; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:30: TODO Darstellung für schwach fehlt in der Bank (einheiten-e1-k2-s1-v5; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:33: TODO Darstellung für schwach fehlt in der Bank (einheiten-e1-k2-s2-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:35: TODO Darstellung für schwach fehlt in der Bank (einheiten-e1-k2-s3-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:37: TODO Darstellung für schwach fehlt in der Bank (einheiten-e1-k2-s4-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:39: TODO Darstellung für schwach fehlt in der Bank (einheiten-e1-k2-s5-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:41: TODO Darstellung für schwach fehlt in der Bank (einheiten-e1-k2-s6-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:43: TODO Darstellung für schwach fehlt in der Bank (einheiten-e1-k2-s7-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:45: TODO Darstellung für schwach fehlt in der Bank (einheiten-e1-k2-s8-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:47: TODO Darstellung für schwach fehlt in der Bank (einheiten-e1-k2-s9-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:52: TODO \verfahren{…}: Verfahrensüberschrift in Sachsprache fehlt in der Bank (2.3 b)
+  e1_a.tex:53: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 16
+  e1_a.tex:54: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 16
+  e1_a.tex:59: TODO Darstellung für schwach fehlt in der Bank (einheiten-e1-k3-s1-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:61: TODO Darstellung für schwach fehlt in der Bank (einheiten-e1-k3-s1-v2; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:63: TODO Darstellung für schwach fehlt in der Bank (einheiten-e1-k3-s1-v3; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:65: TODO Darstellung für schwach fehlt in der Bank (einheiten-e1-k3-s1-v4; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:67: TODO Darstellung für schwach fehlt in der Bank (einheiten-e1-k3-s1-v5; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:70: TODO Darstellung für schwach fehlt in der Bank (einheiten-e1-k3-s2-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:72: TODO Darstellung für schwach fehlt in der Bank (einheiten-e1-k3-s3-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:74: TODO Darstellung für schwach fehlt in der Bank (einheiten-e1-k3-s4-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:76: TODO Darstellung für schwach fehlt in der Bank (einheiten-e1-k3-s5-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:80: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 17
+  e1_a.tex:81: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 17
+  e1_a.tex:83: TODO Darstellung für schwach fehlt in der Bank (einheiten-e1-k4-s1-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:87: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 18
+  e1_a.tex:88: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 18
+  e1_a.tex:90: TODO Darstellung für schwach fehlt in der Bank (einheiten-e1-k5-s1-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:94: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 19
+  e1_a.tex:95: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 19
+  e1_a.tex:97: TODO Darstellung für schwach fehlt in der Bank (einheiten-e1-k6-s1-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:101: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 20
+  e1_a.tex:102: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 20
+  e1_a.tex:104: TODO Darstellung für schwach fehlt in der Bank (einheiten-e1-k7-s1-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:108: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 21
+  e1_a.tex:109: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 21
+  e1_a.tex:111: TODO Darstellung für schwach fehlt in der Bank (einheiten-e1-k8-s1-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:115: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 22
+  e1_a.tex:116: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 22
+  e1_a.tex:126: TODO Merkkasten Einheit 1: 6 Zeilen, Vorgabe höchstens fünf (3.1)
+  e1_l.tex:5: TODO Lösung der Erklärzeile 15g) fehlt in der Bank
+  e1_l.tex:7: TODO Lösung der Erklärzeile 16g) fehlt in der Bank
+  e2_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 2
+  e2_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 23
+  e2_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 23
+  e2_a.tex:13: TODO Darstellung für schwach fehlt in der Bank (einheiten-e2-k1-s1-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:15: TODO Darstellung für schwach fehlt in der Bank (einheiten-e2-k1-s1-v2; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:17: TODO Darstellung für schwach fehlt in der Bank (einheiten-e2-k1-s1-v3; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:19: TODO Darstellung für schwach fehlt in der Bank (einheiten-e2-k1-s1-v4; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:21: TODO Darstellung für schwach fehlt in der Bank (einheiten-e2-k1-s1-v5; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:24: TODO Darstellung für schwach fehlt in der Bank (einheiten-e2-k1-s2-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:26: TODO Darstellung für schwach fehlt in der Bank (einheiten-e2-k1-s3-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:28: TODO Darstellung für schwach fehlt in der Bank (einheiten-e2-k1-s4-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:30: TODO Darstellung für schwach fehlt in der Bank (einheiten-e2-k1-s5-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:32: TODO Darstellung für schwach fehlt in der Bank (einheiten-e2-k1-s6-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:34: TODO Darstellung für schwach fehlt in der Bank (einheiten-e2-k1-s7-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:36: TODO Darstellung für schwach fehlt in der Bank (einheiten-e2-k1-s8-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:38: TODO Darstellung für schwach fehlt in der Bank (einheiten-e2-k1-s9-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:43: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 24
+  e2_a.tex:44: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 24
+  e2_a.tex:46: TODO Darstellung für schwach fehlt in der Bank (einheiten-e2-k2-s1-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:50: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 25
+  e2_a.tex:51: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 25
+  e2_a.tex:53: TODO Darstellung für schwach fehlt in der Bank (einheiten-e2-k3-s1-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:57: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 26
+  e2_a.tex:58: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 26
+  e2_a.tex:63: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 27
+  e2_a.tex:64: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 27
+  e2_a.tex:66: TODO Darstellung für schwach fehlt in der Bank (einheiten-e2-k5-s1-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:70: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 28
+  e2_a.tex:71: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 28
+  e2_l.tex:4: TODO Lösung der Erklärzeile 23g) fehlt in der Bank
+  e3_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 3
+  e3_a.tex:7: TODO \verfahren{…}: Verfahrensüberschrift in Sachsprache fehlt in der Bank (2.3 b)
+  e3_a.tex:8: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 29
+  e3_a.tex:9: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 29
+  e3_a.tex:14: TODO Darstellung für schwach fehlt in der Bank (einheiten-e3-k1-s1-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:16: TODO Darstellung für schwach fehlt in der Bank (einheiten-e3-k1-s1-v2; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:18: TODO Darstellung für schwach fehlt in der Bank (einheiten-e3-k1-s1-v3; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:20: TODO Darstellung für schwach fehlt in der Bank (einheiten-e3-k1-s1-v4; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:22: TODO Darstellung für schwach fehlt in der Bank (einheiten-e3-k1-s1-v5; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:25: TODO Darstellung für schwach fehlt in der Bank (einheiten-e3-k1-s2-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:27: TODO Darstellung für schwach fehlt in der Bank (einheiten-e3-k1-s3-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:29: TODO Darstellung für schwach fehlt in der Bank (einheiten-e3-k1-s4-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:31: TODO Darstellung für schwach fehlt in der Bank (einheiten-e3-k1-s5-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:33: TODO Darstellung für schwach fehlt in der Bank (einheiten-e3-k1-s6-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:35: TODO Darstellung für schwach fehlt in der Bank (einheiten-e3-k1-s7-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:40: TODO Darstellung für schwach fehlt in der Bank (einheiten-e3-k1-s9-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:45: TODO \verfahren{…}: Verfahrensüberschrift in Sachsprache fehlt in der Bank (2.3 b)
+  e3_a.tex:46: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 30
+  e3_a.tex:47: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 30
+  e3_a.tex:52: TODO Darstellung für schwach fehlt in der Bank (einheiten-e3-k2-s1-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:54: TODO Darstellung für schwach fehlt in der Bank (einheiten-e3-k2-s1-v2; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:56: TODO Darstellung für schwach fehlt in der Bank (einheiten-e3-k2-s1-v3; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:58: TODO Darstellung für schwach fehlt in der Bank (einheiten-e3-k2-s1-v4; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:60: TODO Darstellung für schwach fehlt in der Bank (einheiten-e3-k2-s1-v5; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:63: TODO Darstellung für schwach fehlt in der Bank (einheiten-e3-k2-s2-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:65: TODO Darstellung für schwach fehlt in der Bank (einheiten-e3-k2-s3-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:69: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 31
+  e3_a.tex:70: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 31
+  e3_a.tex:72: TODO Darstellung für schwach fehlt in der Bank (einheiten-e3-k3-s1-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:76: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 32
+  e3_a.tex:77: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 32
+  e3_a.tex:79: TODO Darstellung für schwach fehlt in der Bank (einheiten-e3-k4-s1-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:83: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 33
+  e3_a.tex:84: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 33
+  e3_l.tex:4: TODO Lösung der Erklärzeile 29g) fehlt in der Bank
+  e3_l.tex:6: TODO Lösung der Erklärzeile 30g) fehlt in der Bank
+  e4_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 4
+  e4_a.tex:7: TODO \verfahren{…}: Verfahrensüberschrift in Sachsprache fehlt in der Bank (2.3 b)
+  e4_a.tex:8: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 34
+  e4_a.tex:9: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 34
+  e4_a.tex:14: TODO Darstellung für schwach fehlt in der Bank (einheiten-e4-k1-s1-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:16: TODO Darstellung für schwach fehlt in der Bank (einheiten-e4-k1-s1-v2; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:18: TODO Darstellung für schwach fehlt in der Bank (einheiten-e4-k1-s1-v3; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:20: TODO Darstellung für schwach fehlt in der Bank (einheiten-e4-k1-s1-v4; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:22: TODO Darstellung für schwach fehlt in der Bank (einheiten-e4-k1-s1-v5; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:25: TODO Darstellung für schwach fehlt in der Bank (einheiten-e4-k1-s2-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:27: TODO Darstellung für schwach fehlt in der Bank (einheiten-e4-k1-s3-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:29: TODO Darstellung für schwach fehlt in der Bank (einheiten-e4-k1-s4-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:31: TODO Darstellung für schwach fehlt in der Bank (einheiten-e4-k1-s5-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:33: TODO Darstellung für schwach fehlt in der Bank (einheiten-e4-k1-s6-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:35: TODO Darstellung für schwach fehlt in der Bank (einheiten-e4-k1-s7-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:37: TODO Darstellung für schwach fehlt in der Bank (einheiten-e4-k1-s8-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:39: TODO Darstellung für schwach fehlt in der Bank (einheiten-e4-k1-s9-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:41: TODO Darstellung für schwach fehlt in der Bank (einheiten-e4-k1-s10-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:43: TODO Darstellung für schwach fehlt in der Bank (einheiten-e4-k1-s11-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:48: TODO \verfahren{…}: Verfahrensüberschrift in Sachsprache fehlt in der Bank (2.3 b)
+  e4_a.tex:49: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 35
+  e4_a.tex:50: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 35
+  e4_a.tex:55: TODO Darstellung für schwach fehlt in der Bank (einheiten-e4-k2-s1-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:57: TODO Darstellung für schwach fehlt in der Bank (einheiten-e4-k2-s1-v2; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:59: TODO Darstellung für schwach fehlt in der Bank (einheiten-e4-k2-s1-v3; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:61: TODO Darstellung für schwach fehlt in der Bank (einheiten-e4-k2-s1-v4; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:63: TODO Darstellung für schwach fehlt in der Bank (einheiten-e4-k2-s1-v5; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:66: TODO Darstellung für schwach fehlt in der Bank (einheiten-e4-k2-s2-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:68: TODO Darstellung für schwach fehlt in der Bank (einheiten-e4-k2-s3-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:73: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 36
+  e4_a.tex:74: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 36
+  e4_a.tex:76: TODO Darstellung für schwach fehlt in der Bank (einheiten-e4-k3-s1-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:80: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 37
+  e4_a.tex:81: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 37
+  e4_a.tex:83: TODO Darstellung für schwach fehlt in der Bank (einheiten-e4-k4-s1-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:87: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 38
+  e4_a.tex:88: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 38
+  e4_l.tex:4: TODO Lösung der Erklärzeile 34g) fehlt in der Bank
+  e4_l.tex:6: TODO Lösung der Erklärzeile 35g) fehlt in der Bank
+STRUKTUR 0 Fehler

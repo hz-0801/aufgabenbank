@@ -1,0 +1,47 @@
+% Einheit 2 von 3 – Vektorterme am Körper (bank/vektoren-und-rechenoperationen/e2.jsonl, zusammenbau v0.1)
+%% TODO Zeitmarke Einheit 2: Marken-Zeile nicht lesbar
+%% TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 2
+\einheitenkopf[e2]{Einheit 2 von 3 · Vektorterme am Körper}
+\zweigzeile{Abitur LK}
+\setcounter{aufgabe}{11}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 12
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 12
+\begin{aufgabe}{Vektorterme am Körper}
+%% TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+\begin{teile}
+\teil Wohin führt $\overrightarrow{AP} = \overrightarrow{AB} + \overrightarrow{BF}$? \\ \kreuz{Ecke} \\ \kreuz{Kantenmitte} \\ \kreuz{Flächenmitte}
+
+\begin{ksys3}[x1max=7] \rquader{0,0,0}{6}{4}{3} \rpunkt*{0}{0}{0}{A} \rpunkt*{6}{0}{0}{B} \rpunkt*{6}{4}{0}{C} \rpunkt*{0}{4}{0}{D} \rpunkt*{0}{0}{3}{E} \rpunkt*{6}{0}{3}{F} \rpunkt*{6}{4}{3}{G} \rpunkt*{0}{4}{3}{H} \end{ksys3}
+\teil Trage $P$ mit $\overrightarrow{AP} = \frac{1}{2} \cdot \overrightarrow{AC} + \overrightarrow{AE}$ ein. \hfill (Abitur 2021 GK)
+
+\begin{ksys3}[x1max=7] \rquader{0,0,0}{6}{4}{3} \rpunkt*{0}{0}{0}{A} \rpunkt*{6}{0}{0}{B} \rpunkt*{6}{4}{0}{C} \rpunkt*{0}{4}{0}{D} \rpunkt*{0}{0}{3}{E} \rpunkt*{6}{0}{3}{F} \rpunkt*{6}{4}{3}{G} \rpunkt*{0}{4}{3}{H} \end{ksys3}
+\teil Beschreibe die Lage von $P$ mit $\overrightarrow{AP} = \frac{1}{2} \cdot (\overrightarrow{AG} - \overrightarrow{AB})$. \hfill (Abitur 2021 GK)
+
+\begin{ksys3}[x1max=7] \rquader{0,0,0}{6}{4}{3} \rpunkt*{0}{0}{0}{A} \rpunkt*{6}{0}{0}{B} \rpunkt*{6}{4}{0}{C} \rpunkt*{0}{4}{0}{D} \rpunkt*{0}{0}{3}{E} \rpunkt*{6}{0}{3}{F} \rpunkt*{6}{4}{3}{G} \rpunkt*{0}{4}{3}{H} \end{ksys3}
+\teil $M_1$ Mitte von $CG$, $M_2$ Mitte von $EH$: Zeichne $\overrightarrow{M_1M_2}$ ein. $r$, $s$, $t$ mit $\overrightarrow{M_1M_2} = r\vec u + s\vec v + t\vec w$? \hfill (Abitur 2026 LK) \\
+
+\begin{ksys3}[x1max=7] \rquader{0,0,0}{6}{4}{3} \rpunkt*{0}{0}{0}{A} \rpunkt*{6}{0}{0}{B} \rpunkt*{6}{4}{0}{C} \rpunkt*{0}{4}{0}{D} \rpunkt*{0}{0}{3}{E} \rpunkt*{6}{0}{3}{F} \rpunkt*{6}{4}{3}{G} \rpunkt*{0}{4}{3}{H} \rvektorab[below]{0,0,0}{6,0,0}{\vec u} \rvektorab[left]{0,0,0}{0,4,0}{\vec v} \rvektorab[left]{0,0,0}{0,0,3}{\vec w} \end{ksys3}
+r = \leerfeld , s = \leerfeld , t = \leerfeld
+\teil $B(2 | 0 | 2)$, $C(4 | 2 | 1)$, $D(5 | 0 | -1)$; $BCDE$ ist ein Quadrat: $E$? \hfill (Abitur 2022 LK) \\ E( \leerfeld | \leerfeld | \leerfeld )
+\teil Quader mit $A(2 | 0 | 1)$, $G(6 | 4 | 5)$, $H(2 | 4 | 5)$; er wird so verschoben, dass der Schnittpunkt seiner Raumdiagonalen im Ursprung liegt: $H'$? \hfill (Abitur 2024 GK) \\ H'( \leerfeld | \leerfeld | \leerfeld )
+\teil $g$ durchstößt die $x_1x_2$-Ebene in $S$, $P_1$ liegt auf $g$. Trage $P_2$ mit $\overrightarrow{OP_2} = \overrightarrow{OP_1} - 3 \cdot \overrightarrow{SP_1}$ ein. \hfill (Abitur 2019 LK)
+
+\begin{ksys3}[x3min=-3] \rebenepar*{-1,-1,0}{6,0,0}{0,6,0}{E} \rgerade{2,2,0}{1,1,1}{g} \rpunkt*{2}{2}{0}{S} \rpunkt{3}{3}{1}{P_1} \rvektorab{2,2,0}{3,3,1}{} \end{ksys3}
+\teil $L$ ist der Lotfußpunkt von $K$, $\vec r$ ist bekannt. $Q$ liegt von $L$ aus im Abstand $3 \cdot |\overrightarrow{KL}|$ in Richtung $\vec r$. Term für $\overrightarrow{OQ}$? \hfill (Abitur 2022 LK)
+\teil Ein Prisma steht mit der Kante $AB$ von $A(3 | 0 | 0)$ nach $B(0 | 4 | 0)$ auf der $x_1x_2$-Ebene; $F(0 | 4 | 2)$ liegt senkrecht über $B$. Es wird um $AB$ gedreht, bis $F$ in der $x_1x_2$-Ebene liegt und eine positive $x_1$-Koordinate hat: $F'$. Term für $\overrightarrow{OF'}$? \hfill (Abitur 2026 GK)
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 13
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 13
+\begin{aufgabe}{Vektorterme am Körper – Fehler finden, Begründen, Darstellungswechsel, Anwendung}
+\begin{teile}
+\teil Ich finde den Fehler: Quader mit $A(0 | 0 | 0)$, $B(6 | 0 | 0)$, $D(0 | 4 | 0)$, $E(0 | 0 | 3)$ wie oben; $\overrightarrow{AP} = \overrightarrow{AB} + \frac{1}{2} \cdot \overrightarrow{BF}$. Ben: $P(6 | 0 | 3)$.
+\teil Warum liefert jeder Weg über die Ecken des Quaders von $A$ nach $G$ denselben Vektor?
+\teil Gib $\overrightarrow{AP}$ mit $\vec u$, $\vec v$, $\vec w$ an.
+
+\begin{ksys3}[x1max=7] \rquader{0,0,0}{6}{4}{3} \rpunkt*{0}{0}{0}{A} \rpunkt*{6}{0}{0}{B} \rpunkt*{6}{4}{0}{C} \rpunkt*{0}{4}{0}{D} \rpunkt*{0}{0}{3}{E} \rpunkt*{6}{0}{3}{F} \rpunkt*{6}{4}{3}{G} \rpunkt*{0}{4}{3}{H} \rvektorab[below]{0,0,0}{6,0,0}{\vec u} \rvektorab[left]{0,0,0}{0,4,0}{\vec v} \rvektorab[left]{0,0,0}{0,0,3}{\vec w} \rpunkt*{6}{2}{3}{P} \end{ksys3}
+\teil Ein Raum ist 5 m lang ($x_1$), 4 m breit ($x_2$) und 2,5 m hoch ($x_3$), eine Bodenecke liegt im Ursprung. Die Lampe hängt in der Mitte der Decke. Wo sitzt ihr Haken? ( \leerfeld | \leerfeld | \leerfeld )
+\end{teile}
+\end{aufgabe}

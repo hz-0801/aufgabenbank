@@ -1,0 +1,26 @@
+% Einheit 2 von 2 – Kumulieren gegen eine Schranke: hypergeometrische Einzelwahrscheinlichkeiten aufsummieren und die größte (oder kleinste) Trefferzahl gegen eine Schranke bestimmen (bank/hypergeometrische-verteilung/e2.jsonl, zusammenbau v0.1)
+%% TODO Zeitmarke Einheit 2: Marken-Zeile nicht lesbar
+%% TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 2
+\einheitenkopf[e2]{Einheit 2 von 2 · Kumulieren gegen eine Schranke: hypergeometrische Einzelwahrscheinlichkeiten aufsummieren und die größte (oder kleinste) Trefferzahl gegen eine Schranke bestimmen}
+\zweigzeile{Abitur LK}
+\setcounter{aufgabe}{8}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 9
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 9
+\begin{aufgabe}{Kumulieren}
+%% TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+\begin{teile}
+\teil Kreuze den richtigen Ansatz an, ohne zu rechnen: Aus $10$ Kugeln, $4$ davon rot, werden $3$ ohne Zurücklegen gezogen. Gesucht ist $P(X = 2)$ für $X$ = Zahl der roten Kugeln. \\ \kreuz{$\frac{(4 \text{ über } 2) \cdot (6 \text{ über } 1)}{(10 \text{ über } 3)}$} \\ \kreuz{$(3 \text{ über } 2) \cdot 0{,}4^2 \cdot 0{,}6$} \\ \kreuz{$\frac{(4 \text{ über } 2)}{(10 \text{ über } 3)}$}
+\teil Aus einer Urne mit $10$ Kugeln, davon $4$ rot, werden $3$ ohne Zurücklegen gezogen; $X$ ist die Zahl der roten Kugeln. Bestimme die größte Zahl $k$, für die $P(X \le k) < 0{,}7$ gilt, und belege beide Nachbarwerte.
+\teil Eine Reisegruppe besteht aus $24$ Personen, $9$ davon sprechen Spanisch. Für einen Ausflug werden $6$ Personen zufällig ausgewählt; $X$ ist die Zahl der Spanischsprechenden. Ermittle das größtmögliche $n$ mit $P(X \le n) < 40\,\%$. \hfill (Abitur 2023 LK)
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 10
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 10
+\begin{aufgabe}{Kumulieren – Fehler finden, Begründen}
+\begin{teile}
+\teil Finde den Fehler und rechne richtig. Von $10$ Glühbirnen sind $4$ defekt; $3$ werden entnommen, $X$ zählt die defekten. Gesucht ist das größte $k$ mit $P(X \le k) < 0{,}66$. Nina rechnet mit $p = 0{,}4$: $P(X \le 1) = 0{,}6^3 + 3 \cdot 0{,}4 \cdot 0{,}6^2 = 0{,}648 < 0{,}66$, also $k = 1$.
+\teil Begründe, warum man für die größte Trefferzahl unter einer Schranke zwei kumulierte Werte angeben muss.
+\end{teile}
+\end{aufgabe}

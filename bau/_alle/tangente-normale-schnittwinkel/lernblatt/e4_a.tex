@@ -1,0 +1,44 @@
+% Einheit 4 von 5 – Steigungswinkel und Schnittwinkel (bank/tangente-normale-schnittwinkel/e4.jsonl, zusammenbau v0.1)
+%% TODO Zeitmarke Einheit 4: Marken-Zeile nicht lesbar
+%% TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 4
+\einheitenkopf[e4]{Einheit 4 von 5 · Steigungswinkel und Schnittwinkel}
+\zweigzeile{Abitur GK}
+\setcounter{aufgabe}{19}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 20
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 20
+\begin{aufgabe}{Winkel}
+%% TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+\begin{teile}
+\teil Gesucht ist die Stelle, an der ein Hang unter $12^\circ$ ansteigt. Was ist gegeben? \\ \kreuz{ein Punkt} \\ \kreuz{eine Steigung} \\ \kreuz{ein Winkel}
+\teil Eine Gerade hat die Steigung $2$ – Steigungswinkel? $\alpha \approx$ \leerfeld °
+\teil $f(x) = \frac{1}{3}x^3 - x^2$ – Steigungswinkel des Graphen im Punkt $(3 | f(3))$? $\alpha \approx$ \leerfeld °
+\teil $f(x) = (2x + 1) \cdot e^{-x}$ mit $f'(x) = (1 - 2x) \cdot e^{-x}$ – Gleichung der Tangente $t$ im Punkt $P(1 | f(1))$ und Winkel, unter dem $t$ die $x$-Achse schneidet? \hfill (Abitur 2020 GK) \\ $t(x) \approx$ \leerfeld , Winkel: \leerfeld °
+\teil Die Profillinie eines Werkstücks ist $f(x) = 2 - \frac{3}{8}x^2$ für $-2 \le x \le 2$; die linke Seitenkante verläuft senkrecht bei $x = -2$. Winkel zwischen Profillinie und linker Seitenkante? \hfill (Abitur 2026 LK) \\ \leerfeld °
+\teil Die Abbildung zeigt eine Rutsche: links ein waagerechtes Podest in $4$ m Höhe, ab $x = 0$ die Rutschbahn $r(x) = \frac{1}{4}(x - 4)^2$ ($1$ LE = $1$ m). Es gilt $r'(0) = \mathrm{tan}\,\alpha$ mit $\alpha < 0^\circ$ und $\beta = 180^\circ - |\alpha|$. Zeichne $\alpha$ und $\beta$ ein und gib die Bedeutung von $\beta$ im Sachzusammenhang an. \hfill (Abitur 2025 LK)
+
+\begin{ksys}[xmin=-3,xmax=5,ymin=0,ymax=5] \funktionab{4+0*\x}{}{-3}{0} \funktionab{0.25*(\x-4)^2}{r}{0}{4} \end{ksys}
+\teil Die Graphen von $f(x) = (x + 2) \cdot e^{-\frac{1}{4}x}$ und $g(x) = 2x + 2$ schneiden sich im Punkt $S(0 | 2)$. Unter welchem Winkel schneiden sich die Tangente an den Graphen von $f$ in $S$ und die Gerade $g$? \hfill (Abitur 2018 GK) Kontrolle: $f'(x) = (\frac{1}{2} - \frac{1}{4}x) \cdot e^{-\frac{1}{4}x}$. \leerfeld °
+\teil Für $k > 0$ schneiden sich die Graphen von $f(x) = 3e^{kx}$ und $g(x) = 3e^{-kx}$ senkrecht. Wert von $k$? \hfill (Abitur 2026 LK) \\ $k =$ \leerfeld
+\teil $f(x) = x^3 - 3x^2 + 2$ – Wendetangente, ihr Steigungswinkel und ihr $y$-Achsenabschnitt? \leerfeld
+\teil Für $0 \le x \le 3$ ist $f(x) = \frac{1}{3}x^3$. In welchem Bereich beträgt der Steigungswinkel des Graphen mindestens $60^\circ$? \leerfeld
+\teil $f(x) = x \cdot e^{-0{,}1x^2}$; die Tangente im Ursprung ist $t$: $y = x$. Die Gerade $g_u$ verläuft durch den Ursprung und den Punkt $(u | f(u))$. Für welche $u$ halbiert $g_u$ den Winkel zwischen $x$-Achse und $t$? \hfill (Abitur 2026 LK) \\ $u \approx$ \leerfeld
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 21
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 21
+\begin{aufgabe}{Steigungswinkel einer Tangente als größten Kippwinkel im Sachzusammenhang deuten}
+\begin{teile}
+\teil Ein Balancebrett hat eine gewölbte Unterseite mit der Profillinie $p$; der Boden ist die $x$-Achse. Die Gerade durch den Profilpunkt $(1 | p(1))$ und den Randpunkt $(3 | p(3))$ ist die Tangente an das Profil in $(1 | p(1))$; ihr Steigungswinkel beträgt etwa $28^\circ$. Welche Bedeutung hat dieser Winkel für die Bewegung des Bretts? \hfill (Abitur 2017 LK)
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 22
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 22
+\begin{aufgabe}{Winkel – Fehler finden, Begründen}
+\begin{teile}
+\teil Ich finde den Fehler: Die Tangenten an zwei Graphen im gemeinsamen Punkt haben die Steigungen $3$ und $1$. Pia rechnet den Schnittwinkel: \rechnung{3 - 1 &= 2 \\ \mathrm{tan}^{-1}(2) &\approx 63{,}4^\circ}
+\teil Begründe, warum für den Steigungswinkel $\alpha$ einer Geraden mit Steigung $m$ gilt: $\mathrm{tan}\,\alpha = m$.
+\end{teile}
+\end{aufgabe}

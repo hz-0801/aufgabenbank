@@ -1,0 +1,140 @@
+# zusammenbau v0.1: zusammenbau.py flaecheninhalt-und-volumen-im-raum
+VORLAGE mathblatt.sty: Version 2026-09-28a
+EINHEITEN [1, 2, 3, 4]
+AUSWAHL flaecheninhalt-und-volumen-im-raum-zone-f1-v1 – Zone f1 „Flächenformeln der ebenen Figuren (Dreie“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL flaecheninhalt-und-volumen-im-raum-zone-f1-v3 – Zone f1 „Flächenformeln der ebenen Figuren (Dreie“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f1 „Flächenformeln der ebenen Figuren (Dreie“ – Sprossen [3, 4, 5, 6] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-zone-f2-v1 – Zone f2 „Volumen- und Oberflächenformeln der Elem“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL flaecheninhalt-und-volumen-im-raum-zone-f2-v3 – Zone f2 „Volumen- und Oberflächenformeln der Elem“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f2 „Volumen- und Oberflächenformeln der Elem“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-zone-f3-v1 – Zone f3 „Verbindungsvektoren bilden, Beträge bere“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL flaecheninhalt-und-volumen-im-raum-zone-f3-v3 – Zone f3 „Verbindungsvektoren bilden, Beträge bere“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f3 „Verbindungsvektoren bilden, Beträge bere“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-zone-f4-v1 – Zone f4 „Skalarprodukt und „null heißt senkrecht““, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL flaecheninhalt-und-volumen-im-raum-zone-f4-v3 – Zone f4 „Skalarprodukt und „null heißt senkrecht““, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f4 „Skalarprodukt und „null heißt senkrecht““ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-zone-f5-v1 – Zone f5 „Satz des Pythagoras für Seitenhöhen und “, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL flaecheninhalt-und-volumen-im-raum-zone-f5-v3 – Zone f5 „Satz des Pythagoras für Seitenhöhen und “, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f5 „Satz des Pythagoras für Seitenhöhen und “ – Sprossen [3, 4] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-zone-f6-v1 – Zone f6 „Gleichungen aus Formeln lösen (nach eine“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL flaecheninhalt-und-volumen-im-raum-zone-f6-v3 – Zone f6 „Gleichungen aus Formeln lösen (nach eine“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f6 „Gleichungen aus Formeln lösen (nach eine“ – Sprossen [3, 4] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-zone-f1-v6 – Zone-Paar, Fehler finden
+AUSWAHL flaecheninhalt-und-volumen-im-raum-zone-f1-v7 – Zone-Paar, gleichartige Rechenaufgabe
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e1-k1-s0-v1 – e1 k1 „Welche Figur, welche Formel?“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e1 k1 „Welche Figur, welche Formel?“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e1-k2-s0-v1 – e1 k2 „Dreiecksflächen“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e1-k2-s1-v1 – e1 k2 „Dreiecksflächen“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e1-k2-s2-v1 – e1 k2 „Dreiecksflächen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e1-k2-s3-v1 – e1 k2 „Dreiecksflächen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e1-k2-s4-v1 – e1 k2 „Dreiecksflächen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e1-k2-s5-v1 – e1 k2 „Dreiecksflächen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e1-k2-s6-v1 – e1 k2 „Dreiecksflächen“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e1-k2-s7-v1 – e1 k2 „Dreiecksflächen“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3, v4, v5, v6
+KETTE e1 k2 „Dreiecksflächen“ (verfahren) → eine Hauptnummer
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e1-k3-s1-v1 – e1 k3 „Dreiecksflächen“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e1-k3-s2-v1 – e1 k3 „Dreiecksflächen“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e1-k3-s3-v1 – e1 k3 „Dreiecksflächen“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e1-k3-s4-v1 – e1 k3 „Dreiecksflächen“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e1 k3 „Dreiecksflächen“ (pflicht) → eine Hauptnummer
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e2-k1-s0-v1 – e2 k1 „Vierecksflächen“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e2-k1-s1-v1 – e2 k1 „Vierecksflächen“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e2-k1-s2-v1 – e2 k1 „Vierecksflächen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e2-k1-s3-v1 – e2 k1 „Vierecksflächen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e2-k1-s4-v1 – e2 k1 „Vierecksflächen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e2-k1-s5-v1 – e2 k1 „Vierecksflächen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e2-k1-s6-v1 – e2 k1 „Vierecksflächen“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3, v4, v5, v6, v7
+KETTE e2 k1 „Vierecksflächen“ (verfahren) → eine Hauptnummer
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e2-k2-s1-v1 – e2 k2 „Ebene Figur: Flächeninhalt des Schattens eines geneigten Rechtecks bei senkrechtem Lichteinfall über eine Querschnittsskizze begründen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k2 „Ebene Figur: Flächeninhalt des Schattens eines geneigten Rechtecks bei senkrechtem Lichteinfall über eine Querschnittsskizze begründen“ (ohne) → eine Hauptnummer
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e2-k3-s1-v1 – e2 k3 „Vierecksflächen“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e2-k3-s2-v1 – e2 k3 „Vierecksflächen“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e2-k3-s3-v1 – e2 k3 „Vierecksflächen“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e2-k3-s4-v1 – e2 k3 „Vierecksflächen“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e2 k3 „Vierecksflächen“ (pflicht) → eine Hauptnummer
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e3-k1-s0-v1 – e3 k1 „Volumen und Oberfläche“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e3-k1-s1-v1 – e3 k1 „Volumen und Oberfläche“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e3-k1-s2-v1 – e3 k1 „Volumen und Oberfläche“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e3-k1-s3-v1 – e3 k1 „Volumen und Oberfläche“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e3-k1-s4-v1 – e3 k1 „Volumen und Oberfläche“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e3-k1-s5-v1 – e3 k1 „Volumen und Oberfläche“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e3-k1-s6-v1 – e3 k1 „Volumen und Oberfläche“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3, v4, v5
+KETTE e3 k1 „Volumen und Oberfläche“ (verfahren) → eine Hauptnummer
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e3-k2-s1-v1 – e3 k2 „Volumen und Oberfläche“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e3-k2-s2-v1 – e3 k2 „Volumen und Oberfläche“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e3-k2-s3-v1 – e3 k2 „Volumen und Oberfläche“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+KETTE e3 k2 „Volumen und Oberfläche“ (pflicht) → eine Hauptnummer
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s0-v1 – e4 k1 „Zusammengesetzt und Verhältnisse“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s1-v1 – e4 k1 „Zusammengesetzt und Verhältnisse“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s2-v1 – e4 k1 „Zusammengesetzt und Verhältnisse“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s3-v1 – e4 k1 „Zusammengesetzt und Verhältnisse“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s4-v1 – e4 k1 „Zusammengesetzt und Verhältnisse“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s5-v1 – e4 k1 „Zusammengesetzt und Verhältnisse“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s6-v1 – e4 k1 „Zusammengesetzt und Verhältnisse“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s7-v1 – e4 k1 „Zusammengesetzt und Verhältnisse“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3, v4, v5, v6, v7, v8
+KETTE e4 k1 „Zusammengesetzt und Verhältnisse“ (verfahren) → eine Hauptnummer
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k2-s1-v1 – e4 k2 „Zusammengesetzt und Verhältnisse“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k2-s2-v1 – e4 k2 „Zusammengesetzt und Verhältnisse“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k2-s3-v1 – e4 k2 „Zusammengesetzt und Verhältnisse“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k2-s4-v1 – e4 k2 „Zusammengesetzt und Verhältnisse“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e4 k2 „Zusammengesetzt und Verhältnisse“ (pflicht) → eine Hauptnummer
+KOPF Einheit 1: „Einheit 1 von 4 · Dreiecksflächen“; Marken „BE Q3 · BB Q3 · GK · Abitur GK · Abitur LK“ → Zeitmarke „None“, Prüfungswort „Abitur GK“
+WARNUNG Nr. 10: 8 Teilaufgaben, 1 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 2: „Einheit 2 von 4 · Vierecksflächen“; Marken „BE Q3 · BB Q3 · GK · Abitur GK · Abitur LK“ → Zeitmarke „None“, Prüfungswort „Abitur GK“
+KOPF Einheit 3: „Einheit 3 von 4 · Einheit 3“; Marken „None“ → Zeitmarke „None“, Prüfungswort „None“
+KOPF Einheit 4: „Einheit 4 von 4 · Einheit 4“; Marken „None“ → Zeitmarke „None“, Prüfungswort „None“
+TODO 53 Stellen in den Quelltexten:
+  abhaken.tex:2: TODO Ich-kann-Sätze: Platzhalter wie in den Aufgabendateien
+  blatt0_a.tex:5: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 1
+  blatt0_a.tex:6: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 1
+  blatt0_a.tex:14: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 2
+  blatt0_a.tex:15: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 2
+  blatt0_a.tex:23: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 3
+  blatt0_a.tex:24: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 3
+  blatt0_a.tex:32: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 4
+  blatt0_a.tex:33: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 4
+  blatt0_a.tex:41: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 5
+  blatt0_a.tex:42: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 5
+  blatt0_a.tex:50: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 6
+  blatt0_a.tex:51: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 6
+  blatt0_a.tex:59: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 7
+  blatt0_a.tex:60: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 7
+  blatt0_a.tex:67: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 8
+  blatt0_a.tex:68: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 8
+  e1_a.tex:2: TODO Zeitmarke Einheit 1: Marken-Zeile nicht lesbar
+  e1_a.tex:3: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 1
+  e1_a.tex:8: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 9
+  e1_a.tex:9: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 9
+  e1_a.tex:16: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 10
+  e1_a.tex:17: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 10
+  e1_a.tex:19: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e1_a.tex:39: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 11
+  e1_a.tex:40: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 11
+  e2_a.tex:2: TODO Zeitmarke Einheit 2: Marken-Zeile nicht lesbar
+  e2_a.tex:3: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 2
+  e2_a.tex:8: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 12
+  e2_a.tex:9: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 12
+  e2_a.tex:11: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e2_a.tex:27: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 13
+  e2_a.tex:28: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 13
+  e2_a.tex:35: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 14
+  e2_a.tex:36: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 14
+  e3_a.tex:2: TODO Prüfungswort Einheit 3: nicht in der Marken-Zeile
+  e3_a.tex:3: TODO Zeitmarke Einheit 3: Marken-Zeile nicht lesbar
+  e3_a.tex:4: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 3
+  e3_a.tex:5: TODO Einheitentitel 3 nicht in der Mappe lesbar
+  e3_a.tex:9: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 15
+  e3_a.tex:10: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 15
+  e3_a.tex:12: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e3_a.tex:24: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 16
+  e3_a.tex:25: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 16
+  e4_a.tex:2: TODO Prüfungswort Einheit 4: nicht in der Marken-Zeile
+  e4_a.tex:3: TODO Zeitmarke Einheit 4: Marken-Zeile nicht lesbar
+  e4_a.tex:4: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 4
+  e4_a.tex:5: TODO Einheitentitel 4 nicht in der Mappe lesbar
+  e4_a.tex:9: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 17
+  e4_a.tex:10: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 17
+  e4_a.tex:12: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e4_a.tex:25: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 18
+  e4_a.tex:26: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 18
+STRUKTUR 0 Fehler

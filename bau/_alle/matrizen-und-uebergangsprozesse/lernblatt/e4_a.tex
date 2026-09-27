@@ -1,0 +1,38 @@
+% Einheit 4 von 5 – Übergangsmodell (bank/matrizen-und-uebergangsprozesse/e4.jsonl, zusammenbau v0.1)
+%% TODO Zeitmarke Einheit 4: Marken-Zeile nicht lesbar
+%% TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 4
+\einheitenkopf[e4]{Einheit 4 von 5 · Übergangsmodell}
+\zweigzeile{keine Prüfungsaufgabe}
+\setcounter{aufgabe}{14}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 15
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 15
+\begin{aufgabe}{Übergangsmodell}
+%% TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+\begin{teile}
+\teil Es gilt $v_{n+1} = M \cdot v_n$; die Zustände sind A, B, C in dieser Reihenfolge. In Zeile 3, Spalte 1 von M steht $0{,}2$. Von wo nach wo wechseln diese 20\,\%? \\ \kreuz{von A nach C} \\ \kreuz{von C nach A}
+\teil Es gilt $v_{n+1} = M \cdot v_n$; Zustände: Studio A, Studio B; $M = ((0{,}9 | 0{,}15), (0{,}1 | 0{,}85))$. Zeichne das Übergangsdiagramm.
+
+\rechenplatz{4}
+\teil Übergangsdiagramm: Schleife an A mit $0{,}8$, Pfeil A → B mit $0{,}2$, Pfeil B → A mit $0{,}35$, Schleife an B mit $0{,}65$. Stelle M auf (Reihenfolge A, B; $v_{n+1} = M \cdot v_n$). (( \leerfeld | \leerfeld ), ( \leerfeld | \leerfeld ))
+\teil Es gilt $v_{n+1} = M \cdot v_n$; Studierende wählen täglich zwischen den Mensen P und Q (Reihenfolge P, Q); $M = ((0{,}75 | 0{,}4), (0{,}25 | 0{,}6))$. Deute den Eintrag $0{,}4$.
+\teil Es gilt $v_{n+1} = M \cdot v_n$; $M = ((0{,}8 | 0{,}3), (0{,}2 | 0{,}7))$, $v_0 = (500 | 500)$. Berechne $v_1$ und $v_2$. v1 = ( \leerfeld | \leerfeld ), v2 = ( \leerfeld | \leerfeld )
+\end{teile}
+\begin{gleichungsraster}[2]
+\gl{\text{Es gilt $v_{n+1} = M \cdot v_n$; $M = ((0{,}7 | 0{,}1), (0{,}3 | 0{,}9))$. Jetzt ist die Verteilung $(340 | 660)$. Bestimme die Verteilung einen Schritt vorher.}} &
+\gl{\text{Es gilt $v_{n+1} = M \cdot v_n$; $M = ((0{,}8 | 0{,}1), (0{,}2 | 0{,}9))$, $v_0 = (a | 600)$. Nach einem Schritt sind 460 bei A. Bestimme a.}} \\
+\end{gleichungsraster}
+\begin{teile}
+\teil Es gilt $v_{n+1} = M \cdot v_n$; zwei Buchläden A, B teilen sich 1000 Stammkunden; $M = ((0{,}9 | 0{,}2), (0{,}1 | 0{,}8))$. Begründe, dass $(165 | 835)$ im Modell nicht die Kundenverteilung eines Jahres sein kann, das auf ein anderes Modelljahr folgt \hfill (Abitur 2026 GK).
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 16
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 16
+\begin{aufgabe}{Übergangsmodell – Fehler finden, Begründen, Anwendung}
+\begin{teile}
+\teil Übergangsdiagramm: A bleibt $0{,}6$, A → B $0{,}4$, B → A $0{,}1$, B bleibt $0{,}9$. Emil schreibt $M = ((0{,}6 | 0{,}4), (0{,}1 | 0{,}9))$ für $v_{n+1} = M \cdot v_n$. Finde den Fehler und gib M richtig an.
+\teil Begründe, warum in $v_{n+1} = M \cdot v_n$ die Spalten von M zu den Ausgangszuständen gehören.
+\teil Ein Betreiber hat zwei Fitnessstudios. Von A bleiben monatlich 90\,\% der Mitglieder, 10\,\% wechseln nach B; von B bleiben 80\,\%, 20\,\% wechseln nach A. Jetzt hat A 1200 und B 800 Mitglieder. Studio B braucht mindestens 700 Mitglieder. Reicht das in den nächsten zwei Monaten?
+\end{teile}
+\end{aufgabe}

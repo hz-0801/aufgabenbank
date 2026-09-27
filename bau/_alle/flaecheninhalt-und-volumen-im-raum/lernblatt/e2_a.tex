@@ -1,0 +1,46 @@
+% Einheit 2 von 4 – Vierecksflächen (bank/flaecheninhalt-und-volumen-im-raum/e2.jsonl, zusammenbau v0.1)
+%% TODO Zeitmarke Einheit 2: Marken-Zeile nicht lesbar
+%% TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 2
+\einheitenkopf[e2]{Einheit 2 von 4 · Vierecksflächen}
+\zweigzeile{Abitur GK}
+\setcounter{aufgabe}{11}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 12
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 12
+\begin{aufgabe}{Vierecksflächen}
+%% TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+\begin{teile}
+\teil Ein Viereck hat vier gleich lange Seiten, seine Diagonalen sind verschieden lang. Welche Formel für den Flächeninhalt? \\ \kreuz{Seite mal Seite} \\ \kreuz{halbe Summe der parallelen Seiten mal Höhe} \\ \kreuz{halbes Diagonalenprodukt}
+\teil $P(1 | 0 | 0)$, $Q(1 | 4 | 3)$, $R(1 | 10 | -5)$. Zeige, dass bei $Q$ ein rechter Winkel liegt, und berechne den Flächeninhalt des Rechtecks $PQRS$. A = \leerfeld FE
+\teil Das Viereck mit $P(3 | 4 | 4)$, $Q(-3 | 7 | 4)$, $R(-1 | 2 | 0)$, $S(5 | -1 | 0)$ ist eine Raute. Flächeninhalt? A = \leerfeld FE
+\teil Das Trapez $PQRS$ mit $P(0 | 1 | 1)$, $Q(8 | 1 | 1)$, $R(6 | 4 | 5)$, $S(2 | 4 | 5)$ hat die parallelen Seiten $PQ$ und $SR$ und gleich lange Schenkel. Flächeninhalt? \hfill (Abitur 2019 GK) \\ A = \leerfeld FE
+\teil Ein Quadrat liegt in der $x$-$y$-Ebene, eine Ecke ist der Ursprung $O$. Sein Diagonalenschnittpunkt $M$ liegt auf der Geraden $\vec x = (2 | 4 | 4) + t \cdot (2 | 2 | -2)$. Bestimme $M$ und den Flächeninhalt des Quadrats. \hfill (Abitur 2024 GK)
+\end{teile}
+\begin{gleichungsraster}[2]
+\gl{\text{Das Rechteck $PQRS$ mit $P(1 | 2 | 0)$, $Q(4 | 6 | 0)$ und $S(1 | 2 | k)$, $k > 0$, hat den Flächeninhalt 30. Wert von $k$?}} &
+\end{gleichungsraster}
+\begin{teile}
+\teil Das Quadrat $PQRS$ mit $P(0 | 1 | 0)$, $Q(8 | 1 | 0)$, $R(8 | 9 | 0)$, $S(0 | 9 | 0)$ wird verändert: $P$ und $S$ werden auf der $y$-Achse gleich weit aufeinander zu verschoben, sodass ein gleichschenkliges Trapez $P'QRS'$ mit drei Vierteln der Quadratfläche entsteht. Bestimme $P'$ und $S'$. \hfill (Abitur 2021 GK)
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 13
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 13
+\begin{aufgabe}{Ebene Figur: Flächeninhalt des Schattens eines geneigten Rechtecks bei senkrechtem Lichteinfall über eine Querschnittsskizze begründen}
+\begin{teile}
+\teil Ein rechteckiges Vordach ist gegen die Waagerechte geneigt, eine seiner Seiten verläuft waagerecht. Sonnenlicht fällt als parallele Strahlen senkrecht auf die Dachfläche und wirft einen rechteckigen Schatten auf den waagerechten Boden. Begründe mithilfe einer beschrifteten Querschnittsskizze, dass der Schatten einen größeren Flächeninhalt hat als das Vordach. \hfill (Abitur 2017 GK)
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 14
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 14
+\begin{aufgabe}{Vierecksflächen – Fehler finden, Begründen, Darstellungswechsel, Anwendung}
+\begin{teile}
+\teil Das Trapez $PQRS$ mit $P(1 | 0 | 2)$, $Q(11 | 0 | 2)$, $R(8 | 4 | 2)$, $S(4 | 4 | 2)$ hat die parallelen Seiten $PQ$ und $SR$. Mia rechnet: \rechnung{|QR| &= 5 \\ A &= \tfrac{1}{2} \cdot (10 + 4) \cdot 5 = 35} Finde den Fehler und rechne richtig.
+\teil Begründe: Die Höhe eines Trapezes wird senkrecht zwischen den parallelen Seiten gemessen, nicht am Schenkel.
+\teil Stelle für das Viereck $PQRS$ im Koordinatensystem einen Flächenterm „Rechteck plus rechtwinkliges Dreieck“ auf und berechne den Flächeninhalt.
+
+\begin{ksys}[xmin=-1,xmax=7,ymin=-1,ymax=6] \punkt{0}{0}{P} \punkt{6}{0}{Q} \punkt{6}{5}{R} \punkt{0}{2}{S} \end{ksys}
+\teil Eine schräge Zuschauertribüne ist ein symmetrisches Trapez mit den Ecken $P(0 | 0 | 0)$, $Q(20 | 0 | 0)$, $R(16 | 12 | 9)$, $S(4 | 12 | 9)$ (1 LE = 1 m). Pro Zuschauer rechnet man 0{,}6\,m². Wie viele Zuschauer passen auf die Tribüne? \leerfeld Zuschauer
+\end{teile}
+\end{aufgabe}

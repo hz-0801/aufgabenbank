@@ -1,0 +1,37 @@
+% Einheit 3 von 3 – Spuren, Schnittgeraden und Schnittfiguren (bank/schnittmengen/e3.jsonl, zusammenbau v0.1)
+%% TODO Zeitmarke Einheit 3: Marken-Zeile nicht lesbar
+%% TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 3
+\einheitenkopf[e3]{Einheit 3 von 3 · Spuren, Schnittgeraden und Schnittfiguren}
+\zweigzeile{Abitur GK}
+\setcounter{aufgabe}{15}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 16
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 16
+\begin{aufgabe}{Spuren, Schnittgeraden und Schnittfiguren}
+%% TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+\begin{teile}
+\teil Der Spurpunkt einer Ebene auf der $y$-Achse – welche Koordinaten sind null? \\ \kreuz{$x$ und $z$} \\ \kreuz{nur $y$} \\ \kreuz{nur $x$}
+\teil Bestimme die Spurpunkte der Ebene $2x + 3y + 6z = 6$ auf den Koordinatenachsen. $S_x($ \leerfeld |0|0), $S_y(0|$ \leerfeld |0), $S_z(0|0|$ \leerfeld )
+\teil Ein Holzkörper ist eine Pyramide über dem Quadrat $ABCD$ mit $A(0|0|0)$, $B(5|0|0)$, $C(5|5|0)$, $D(0|5|0)$ und der Spitze $E(0|5|4)$ senkrecht über $D$; eine Längeneinheit entspricht 1 cm. Die Ebene $L$: $4x + 5z = 20$ schneidet die $z$-Achse im Punkt $F$. Bestimme $F$ und zeichne die Schnittgeraden von $L$ mit der $xz$-Ebene und mit der $yz$-Ebene in das Schrägbild ein. \hfill (Abitur 2021 GK)
+
+\begin{ksys3}[xyz,x1min=0,x1max=6,x2min=0,x2max=6,x3min=0,x3max=5] \rpyramide{0,0,0}{5}{5}{0,5,4} \end{ksys3}
+\teil Das ebene Viereck $ABCD$ hat die Ecken $A(0|0|0)$, $B(0|5|0)$, $C(-2|9|6)$ und $D(-2|4|6)$. Die Ebene $z = 3$ schneidet das Viereck in einer Strecke. Bestimme die Koordinaten ihrer Endpunkte. \hfill (Abitur 2018 LK) \\ ( \leerfeld | \leerfeld | \leerfeld ), ( \leerfeld | \leerfeld | \leerfeld )
+\teil Gegeben ist der Würfel $ABCDEFGH$ mit $A(0|0|0)$, $B(7|0|0)$, $C(7|7|0)$, $D(0|7|0)$ und der Deckfläche $EFGH$ mit $E(0|0|7)$ und $F(7|0|7)$. Die Ebene $L$ enthält $E$, $F$ und den Mittelpunkt $M(7|3{,}5|0)$ der Kante $BC$. Zeichne die Schnittfigur von $L$ mit dem Würfel in das Schrägbild ein. \hfill (Abitur 2025 LK)
+
+\begin{ksys3}[xyz,x1min=0,x1max=8,x2min=0,x2max=8,x3min=0,x3max=8] \rquader{0,0,0}{7}{7}{7} \end{ksys3}
+\teil Die Abbildung zeigt den Quader mit $A(7|0|0)$, $B(7|7|0)$, $C(0|7|0)$ und $F(7|7|2)$, die Gerade $h$ durch $B$ und $F$ sowie die Schnittfigur des Quaders mit einer Ebene durch $A$, $C$ und einen Punkt $P$ von $h$. Beschreibe, wie man mithilfe der Abbildung ermitteln kann, dass $P$ die $z$-Koordinate 4 hat. \hfill (Abitur 2018 GK)
+
+\begin{ksys3}[xyz,x1min=0,x1max=8,x2min=0,x2max=8,x3min=0,x3max=5] \rquader{0,0,0}{7}{7}{2} \rgerade[0:1]{7,0,0}{0,3.5,2}{} \rgerade[0:1]{7,3.5,2}{-3.5,3.5,0}{} \rgerade[0:1]{3.5,7,2}{-3.5,0,-2}{} \rgerade[0:1]{0,7,0}{7,-7,0}{} \rgerade[0:5]{7,7,0}{0,0,1}{h} \end{ksys3}
+\teil Gegeben ist das Quadrat $ABCD$ mit $A(0|0|0)$, $B(8|0|0)$, $C(8|8|0)$ und $D(0|8|0)$ sowie die Ebenen $E_1$: $x = 4$, $E_2$: $x + y = 8$ und $E_3$: $y = 2$. Entscheide für jede der drei Ebenen, ob sie das Quadrat in zwei Figuren mit gleichem Flächeninhalt teilt, und begründe. \hfill (Abitur 2021 GK)
+\teil Gegeben sind die Ebenen $E_1: \vec{x} = (5|0|0) + r \cdot (-1|1|0) + s \cdot (-1|0|1)$ und $E_2$: $2x + 2y + z = 10$. Begründe, dass $E_1$ und $E_2$ nicht parallel sind, und bestimme eine Gleichung ihrer Schnittgeraden. \hfill (Abitur 2020 GK) \\ x = \leerfeld + r · \leerfeld
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 17
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 17
+\begin{aufgabe}{Spuren, Schnittgeraden und Schnittfiguren – Fehler finden, Begründen}
+\begin{teile}
+\teil Ich finde den Fehler: Zur Ebene $2x + 5y + 3z = 30$ gibt Tim die Spurpunkte $(2|0|0)$, $(0|5|0)$ und $(0|0|3)$ an.
+\teil Begründe, warum eine Ebene zwei gegenüberliegende Seitenflächen eines Würfels in parallelen Strecken schneidet.
+\end{teile}
+\end{aufgabe}

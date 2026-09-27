@@ -1,0 +1,42 @@
+% Einheit 2 von 3 – Rate und Bestand als Paar (bank/rekonstruktion-von-bestaenden/e2.jsonl, zusammenbau v0.1)
+%% TODO Zeitmarke Einheit 2: Marken-Zeile nicht lesbar
+%% TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 2
+\einheitenkopf[e2]{Einheit 2 von 3 · Rate und Bestand als Paar}
+\zweigzeile{Abitur LK}
+\setcounter{aufgabe}{10}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 11
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 11
+\begin{aufgabe}{Rate und Bestand als Paar}
+%% TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+\begin{teile}
+\teil Die Abbildung zeigt eine Zuflussrate $r$. Wann ist der Bestand am größten? \\ \kreuz{$t = 2{,}5$} \\ \kreuz{$t = 5$}
+
+\begin{ksys}[xmin=0,xmax=8,ymin=-3,ymax=2,xlabel=t,ylabel=r,ablesen] \funktionab{0.2*\x*(5-\x)}{r}{0}{7} \end{ksys}
+\teil Die Zuflussrate in einen Behälter ist $r(t) = 0{,}5t \cdot (8 - t)$ (m³ je Stunde, $0 \le t \le 10$). Begründe, dass der Inhalt für $0 < t < 8$ durchgehend zunimmt.
+\teil Die Länge einer Warteschlange ändert sich mit $r(t) = -0{,}5t \cdot (t - 2) \cdot (t - 6)$ (Personen je Minute, $0 \le t \le 7$); r hat die Nullstellen 0, 2 und 6. Wann ist die Schlange am längsten? Begründe. \hfill (Abitur 2023 LK) \\ t = \leerfeld
+\teil Die Länge einer Warteschlange ändert sich mit $r(t) = 6t - 3t^2$ (Personen je Minute, $t$ in Minuten seit Öffnung, $0 \le t \le 3$); zu Beginn steht niemand an. Begründe, dass $L(t) = 3t^2 - t^3$ die Länge angibt, und bestätige rechnerisch, dass sich die Schlange nach drei Minuten aufgelöst hat. \hfill (Abitur 2023 LK)
+\teil Ein Baum ist bei der Pflanzung 1{,}5\,m hoch, seine Wachstumsrate ist $r(t)$ (m je Jahr, $t$ in Jahren seit der Pflanzung). Für $W$ gilt $W' = r$ und $W(0) = 0$, außerdem $\mathrm{lim}_{t \to \infty} (W(t) + 1{,}5) = 18$. Deute $W(t)$, $W(t) + 1{,}5$ und den Wert 18 im Sachzusammenhang. \hfill (Abitur 2026 LK)
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 12
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 12
+\begin{aufgabe}{Zeitraum der Abnahme eines Bestands über Nullstellen und Vorzeichen der Änderungsrate berechnen}
+\begin{teile}
+\teil Die Änderungsrate des Wassers in einem Becken ist $r(t) = 0{,}5t \cdot (t^2 - 15t + 50)$ (m³ je Stunde, $0 \le t \le 12$). Berechne den Zeitraum, in dem das Volumen abnimmt. \hfill (Abitur 2017 LK)
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 13
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 13
+\begin{aufgabe}{Rate und Bestand als Paar – Fehler finden, Begründen, Darstellungswechsel, Anwendung}
+\begin{teile}
+\teil Die Zuflussrate ist $r(t) = -t^2 + 8t$ (Liter je Minute, $0 \le t \le 10$). Emma rechnet: \rechnung{r'(t) &= -2t + 8 = 0 \\ t &= 4 \quad \text{(größter Bestand)}} Finde den Fehler und gib den richtigen Zeitpunkt an.
+\teil Begründe: An einer Nullstelle der Rate mit Wechsel von plus nach minus hat der Bestand einen Hochpunkt.
+\teil Das erste Koordinatensystem zeigt die Rate $r$. Skizziere im zweiten den Bestand $B$ mit $B(0) = 1$.
+
+\begin{ksys}[xmin=0,xmax=7,ymin=-2,ymax=3,xlabel=t,ylabel=r] \funktionab{2-0.5*\x}{r}{0}{6} \end{ksys} \begin{ksys}[xmin=0,xmax=7,ymin=0,ymax=6,xlabel=t,ylabel=B] \end{ksys}
+\teil Ein Freibad öffnet um 9 Uhr. Die Änderungsrate der Gäste ist $r(t) = 20t \cdot (7 - t)$ (Gäste je Stunde, $t$ in Stunden seit 9 Uhr, $0 \le t \le 10$). Zu welcher Uhrzeit sollte die Aufsicht am stärksten besetzt sein?
+\end{teile}
+\end{aufgabe}

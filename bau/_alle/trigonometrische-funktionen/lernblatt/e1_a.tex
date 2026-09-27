@@ -1,0 +1,48 @@
+% Einheit 1 von 4 – Einheitskreis und Bogenmaß (bank/trigonometrische-funktionen/e1.jsonl, zusammenbau v0.1)
+%% TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 1
+\einheitenkopf[e1]{Einheit 1 von 4 · Einheitskreis und Bogenmaß}
+\zweigzeile{ab Kl. 10 · keine P10-Aufgabe}
+\setcounter{aufgabe}{13}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 14
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 14
+\begin{aufgabe}{Einheitskreis und Bogenmaß}
+%% TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+\begin{teile}
+\teil Grad oder Bogenmaß? Die Winkelangabe lautet 2,4. Kreuze das Maß und den passenden Modus an.\\ \kreuz{Gradmaß}\kreuz{Bogenmaß}\\ \kreuz{DEG}\kreuz{RAD}
+\teil Zeichne den Punkt P zum Winkel 40° auf dem Einheitskreis ein.
+
+\begin{ksys}[xmin=-1.2,xmax=1.2,ymin=-1.2,ymax=1.2,xstep=0.2,ystep=0.2]\funktionab{sqrt(abs(1-\x^2))}{}{-1}{1}\funktionab{-sqrt(abs(1-\x^2))}{}{-1}{1}\end{ksys}
+\teil Miss den Winkel $\alpha$ zum Punkt P.
+
+\einheitskreis[ohne]{100}
+$\alpha \approx$ \leerfeld[°]
+\teil Lies sin $\alpha$ und cos $\alpha$ für den Punkt P ab (eine Stelle).
+
+\begin{ksys}[xmin=-1.2,xmax=1.2,ymin=-1.2,ymax=1.2,xstep=0.2,ystep=0.2,ablesen]\funktionab{sqrt(abs(1-\x^2))}{}{-1}{1}\funktionab{-sqrt(abs(1-\x^2))}{}{-1}{1}\punkt{0.6}{0.8}{P}\end{ksys}
+sin $\alpha \approx$ \leerfeld, cos $\alpha \approx$ \leerfeld
+\teil P liegt ganz oben auf dem Einheitskreis – Winkel, Sinuswert und Kosinuswert? $\alpha = $ \leerfeld[°], sin $\alpha = $ \leerfeld, cos $\alpha = $ \leerfeld
+\teil Am Einheitskreis wurde sin 50° ≈ 0,8 abgelesen. Prüfe mit dem Taschenrechner im Grad-Modus (zwei Stellen).
+
+\einheitskreis{50}
+\leerfeld
+\teil 160° – welches Vorzeichen haben Sinuswert und Kosinuswert? sin: \leerfeld, cos: \leerfeld
+\teil sin $\alpha = 0{,}6$ – welche beiden Winkel im ersten Vollkreis ab 0° passen? Runde auf eine Stelle. $\alpha_1 \approx$ \leerfeld[°], $\alpha_2 \approx$ \leerfeld[°]
+\teil 60° ist ein Sechstel des Vollwinkels. Begründe mit dem Umfang des Einheitskreises, dass das Bogenmaß $\frac{\pi}{3}$ ist.
+\teil 40° ins Bogenmaß – als Vielfaches von $\pi$ und auf zwei Stellen? \leerfeld
+\teil $\frac{3}{4}\pi$ ins Gradmaß – wie viel Grad? \leerfeld[°]
+\teil Welches Bogenmaß gehört zu 60°?\\ \kreuz{$\frac{\pi}{6}$}\kreuz{$\frac{\pi}{3}$}\kreuz{$\frac{\pi}{2}$}\kreuz{$\frac{2\pi}{3}$}
+\teil Der Rechner zeigt für sin 1 den Wert 0,017. Welcher Modus ist eingestellt, und was zeigt er im anderen Modus (zwei Stellen)? \leerfeld
+\teil Eine Diagonale e wird mit dem Sinussatz berechnet: e = 5,3 · sin 128° : sin 31° (in cm). Berechne e auf zwei Stellen und zeige am Einheitskreis, warum es sin 128° gibt, obwohl kein rechtwinkliges Dreieck einen Winkel von 128° hat. \hfill (P10 2015 OS) \\ $e \approx$ \leerfeld[cm]
+\teil a) 105° – wie groß im Bogenmaß (zwei Stellen)? b) $\frac{4}{3}\pi$ – wie groß im Gradmaß? c) Erkläre am Einheitskreis, woher sin 105° kommt, und gib den Wert auf zwei Stellen an. a) \leerfeld\quad b) \leerfeld[°]\quad c) \leerfeld
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 15
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 15
+\begin{aufgabe}{Einheitskreis und Bogenmaß – Fehler finden, Begründen}
+\begin{teile}
+\teil Lena berechnet sin 25° und erhält −0,13. Finde den Fehler und gib den richtigen Wert an.
+\teil Begründe am Einheitskreis, warum sin $\alpha$ nie größer als 1 sein kann.
+\end{teile}
+\end{aufgabe}

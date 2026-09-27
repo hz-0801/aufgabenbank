@@ -1,0 +1,184 @@
+# zusammenbau v0.1: zusammenbau.py winkel-dreiecke
+VORLAGE mathblatt.sty: Version 2026-09-28a
+EINHEITEN [1, 2, 3, 4, 5]
+AUSWAHL winkel-dreiecke-zone-f1-v1 – Zone f1 „Mit Lineal und Geodreieck zeichnen“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL winkel-dreiecke-zone-f1-v3 – Zone f1 „Mit Lineal und Geodreieck zeichnen“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f1 „Mit Lineal und Geodreieck zeichnen“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL winkel-dreiecke-zone-f2-v1 – Zone f2 „Addieren und Subtrahieren im Bereich bis“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL winkel-dreiecke-zone-f2-v3 – Zone f2 „Addieren und Subtrahieren im Bereich bis“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f2 „Addieren und Subtrahieren im Bereich bis“ – Sprossen [3, 4, 5] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL winkel-dreiecke-zone-f3-v1 – Zone f3 „Längeneinheiten m und km umrechnen (1,5 “, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL winkel-dreiecke-zone-f3-v3 – Zone f3 „Längeneinheiten m und km umrechnen (1,5 “, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f3 „Längeneinheiten m und km umrechnen (1,5 “ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL winkel-dreiecke-zone-f4-v1 – Zone f4 „Vierecksarten kennen“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL winkel-dreiecke-zone-f4-v3 – Zone f4 „Vierecksarten kennen“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f4 „Vierecksarten kennen“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL winkel-dreiecke-zone-f5-v1 – Zone f5 „Kreis mit dem Zirkel zeichnen, Radius un“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL winkel-dreiecke-zone-f5-v3 – Zone f5 „Kreis mit dem Zirkel zeichnen, Radius un“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f5 „Kreis mit dem Zirkel zeichnen, Radius un“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL winkel-dreiecke-zone-f2-v5 – Zone-Paar, Fehler finden
+AUSWAHL winkel-dreiecke-zone-f2-v6 – Zone-Paar, gleichartige Rechenaufgabe
+AUSWAHL winkel-dreiecke-e1-k1-s0-v1 – e1 k1 „Welche Skala?“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e1 k1 „Welche Skala?“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL winkel-dreiecke-e1-k2-s0-v1 – e1 k2 „Winkel messen“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL winkel-dreiecke-e1-k2-s1-v1 – e1 k2 „Winkel messen“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL winkel-dreiecke-e1-k2-s2-v1 – e1 k2 „Winkel messen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e1-k2-s3-v1 – e1 k2 „Winkel messen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e1-k2-s4-v1 – e1 k2 „Winkel messen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e1-k2-s5-v1 – e1 k2 „Winkel messen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e1-k2-s6-v1 – e1 k2 „Winkel messen“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e1-k2-s7-v1 – e1 k2 „Winkel messen“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e1-k2-s8-v1 – e1 k2 „Winkel messen“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e1-k2-s9-v1 – e1 k2 „Winkel messen“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3, v4
+KETTE e1 k2 „Winkel messen“ (verfahren) → eine Hauptnummer
+AUSWAHL winkel-dreiecke-e1-k3-s1-v1 – e1 k3 „Winkel schätzen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e1 k3 „Winkel schätzen“ (ohne) → eine Hauptnummer
+AUSWAHL winkel-dreiecke-e1-k4-s1-v1 – e1 k4 „Winkel messen“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e1-k4-s2-v1 – e1 k4 „Winkel messen“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e1-k4-s3-v1 – e1 k4 „Winkel messen“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+KETTE e1 k4 „Winkel messen“ (pflicht) → eine Hauptnummer
+AUSWAHL winkel-dreiecke-e2-k1-s0-v1 – e2 k1 „Sind die Geraden parallel?“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e2 k1 „Sind die Geraden parallel?“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL winkel-dreiecke-e2-k2-s0-v1 – e2 k2 „Winkel an Geraden“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL winkel-dreiecke-e2-k2-s1-v1 – e2 k2 „Winkel an Geraden“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL winkel-dreiecke-e2-k2-s2-v1 – e2 k2 „Winkel an Geraden“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e2-k2-s3-v1 – e2 k2 „Winkel an Geraden“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e2-k2-s4-v1 – e2 k2 „Winkel an Geraden“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e2-k2-s5-v1 – e2 k2 „Winkel an Geraden“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e2-k2-s6-v1 – e2 k2 „Winkel an Geraden“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e2-k2-s7-v1 – e2 k2 „Winkel an Geraden“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e2-k2-s8-v1 – e2 k2 „Winkel an Geraden“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e2-k2-s9-v1 – e2 k2 „Winkel an Geraden“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e2-k2-s10-v1 – e2 k2 „Winkel an Geraden“ (verfahren), Sprosse 10: Variante 1; übergangen v2, v3, v4
+KETTE e2 k2 „Winkel an Geraden“ (verfahren) → eine Hauptnummer
+AUSWAHL winkel-dreiecke-e2-k3-s1-v1 – e2 k3 „Parallelität aus gleichen Stufenwinkeln prüfen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k3 „Parallelität aus gleichen Stufenwinkeln prüfen“ (ohne) → eine Hauptnummer
+AUSWAHL winkel-dreiecke-e2-k4-s1-v1 – e2 k4 „Winkel an Geraden“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e2-k4-s2-v1 – e2 k4 „Winkel an Geraden“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e2-k4-s3-v1 – e2 k4 „Winkel an Geraden“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+KETTE e2 k4 „Winkel an Geraden“ (pflicht) → eine Hauptnummer
+AUSWAHL winkel-dreiecke-e3-k1-s0-v1 – e3 k1 „Welches Teildreieck?“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e3 k1 „Welches Teildreieck?“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL winkel-dreiecke-e3-k2-s0-v1 – e3 k2 „Winkelsumme“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL winkel-dreiecke-e3-k2-s1-v1 – e3 k2 „Winkelsumme“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL winkel-dreiecke-e3-k2-s2-v1 – e3 k2 „Winkelsumme“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e3-k2-s3-v1 – e3 k2 „Winkelsumme“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e3-k2-s4-v1 – e3 k2 „Winkelsumme“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e3-k2-s5-v1 – e3 k2 „Winkelsumme“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e3-k2-s6-v1 – e3 k2 „Winkelsumme“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e3-k2-s7-v1 – e3 k2 „Winkelsumme“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e3-k2-s8-v1 – e3 k2 „Winkelsumme“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e3-k2-s9-v1 – e3 k2 „Winkelsumme“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e3-k2-s10-v1 – e3 k2 „Winkelsumme“ (verfahren), Sprosse 10: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e3-k2-s11-v1 – e3 k2 „Winkelsumme“ (verfahren), Sprosse 11: Variante 1; übergangen v2, v3, v4
+KETTE e3 k2 „Winkelsumme“ (verfahren) → eine Hauptnummer
+AUSWAHL winkel-dreiecke-e3-k3-s1-v1 – e3 k3 „Innenwinkelsumme von Fünf- und Sechseck über Dreiecke“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e3 k3 „Innenwinkelsumme von Fünf- und Sechseck über Dreiecke“ (ohne) → eine Hauptnummer
+AUSWAHL winkel-dreiecke-e3-k4-s1-v1 – e3 k4 „Winkelsumme“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e3-k4-s2-v1 – e3 k4 „Winkelsumme“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e3-k4-s3-v1 – e3 k4 „Winkelsumme“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+KETTE e3 k4 „Winkelsumme“ (pflicht) → eine Hauptnummer
+AUSWAHL winkel-dreiecke-e4-k1-s0-v1 – e4 k1 „Konstruieren“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL winkel-dreiecke-e4-k1-s1-v1 – e4 k1 „Konstruieren“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL winkel-dreiecke-e4-k1-s2-v1 – e4 k1 „Konstruieren“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e4-k1-s3-v1 – e4 k1 „Konstruieren“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e4-k1-s4-v1 – e4 k1 „Konstruieren“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e4-k1-s5-v1 – e4 k1 „Konstruieren“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e4-k1-s6-v1 – e4 k1 „Konstruieren“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e4-k1-s7-v1 – e4 k1 „Konstruieren“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e4-k1-s8-v1 – e4 k1 „Konstruieren“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e4-k1-s9-v1 – e4 k1 „Konstruieren“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e4-k1-s10-v1 – e4 k1 „Konstruieren“ (verfahren), Sprosse 10: Variante 1; übergangen v2, v3, v4, v5
+KETTE e4 k1 „Konstruieren“ (verfahren) → eine Hauptnummer
+AUSWAHL winkel-dreiecke-e4-k2-s1-v1 – e4 k2 „Dreieck skizzieren und beschriften“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e4 k2 „Dreieck skizzieren und beschriften“ (ohne) → eine Hauptnummer
+AUSWAHL winkel-dreiecke-e4-k3-s1-v1 – e4 k3 „Konstruieren“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e4-k3-s2-v1 – e4 k3 „Konstruieren“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e4-k3-s3-v1 – e4 k3 „Konstruieren“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+KETTE e4 k3 „Konstruieren“ (pflicht) → eine Hauptnummer
+AUSWAHL winkel-dreiecke-e5-k1-s0-v1 – e5 k1 „Besondere Linien“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL winkel-dreiecke-e5-k1-s1-v1 – e5 k1 „Besondere Linien“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL winkel-dreiecke-e5-k1-s2-v1 – e5 k1 „Besondere Linien“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e5-k1-s3-v1 – e5 k1 „Besondere Linien“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e5-k1-s4-v1 – e5 k1 „Besondere Linien“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e5-k1-s5-v1 – e5 k1 „Besondere Linien“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e5-k1-s6-v1 – e5 k1 „Besondere Linien“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e5-k1-s7-v1 – e5 k1 „Besondere Linien“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e5-k1-s8-v1 – e5 k1 „Besondere Linien“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e5-k1-s9-v1 – e5 k1 „Besondere Linien“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+KETTE e5 k1 „Besondere Linien“ (verfahren) → eine Hauptnummer
+AUSWAHL winkel-dreiecke-e5-k2-s1-v1 – e5 k2 „Besondere Linien“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e5-k2-s2-v1 – e5 k2 „Besondere Linien“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL winkel-dreiecke-e5-k2-s3-v1 – e5 k2 „Besondere Linien“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+KETTE e5 k2 „Besondere Linien“ (pflicht) → eine Hauptnummer
+KOPF Einheit 1: „Einheit 1 von 5 · Winkel messen und zeichnen“; Marken „OS Kl. 5 · GYM Kl. 5–6 (LS 6, Fundamente 6, Elemente 5) · P10“ → Zeitmarke „ab Kl. 5“, Prüfungswort „P10“
+WARNUNG Nr. 9: 10 Teilaufgaben, 6 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 2: „Einheit 2 von 5 · Winkel an Geradenkreuzungen und Parallelen“; Marken „OS Kl. 6–7 (Schnittpunkt 7, Mathematik heute 6) · GYM Kl. 5–7 (LS 7, Fundamente 6, Elemente 5) · P10 oft · nicht für alle: Mathematik 2023 5 Vertiefen, Schnittpunkt 5 EXTRA“ → Zeitmarke „ab Kl. 6, je nach Buch bis Kl. 7 (am Gymnasium ab Kl. 5)“, Prüfungswort „P10 oft“
+WARNUNG Nr. 13: 11 Teilaufgaben, 9 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 3: „Einheit 3 von 5 · Winkelsummen, Dreiecke und Vierecke“; Marken „OS Kl. 5 · GYM Kl. 5 · P10 oft · nicht für alle: Sekundo 7 LVL, Sekundo 8 LVL, Schnittpunkt 5 EXTRA“ → Zeitmarke „ab Kl. 5“, Prüfungswort „P10 oft“
+WARNUNG Nr. 17: 12 Teilaufgaben, 1 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 4: „Einheit 4 von 5 · Dreiecke konstruieren“; Marken „OS Kl. 6–7 (Mathematik 2023 6, Schnittpunkt 7, Mathematik heute 6) · GYM Kl. 5–7 (LS 7, Fundamente 7, Elemente 5) · P10 · nicht für alle: Mathematik 2023 7 Arbeiten mit dem Computer“ → Zeitmarke „ab Kl. 6, je nach Buch bis Kl. 7 (am Gymnasium ab Kl. 5)“, Prüfungswort „P10“
+WARNUNG Nr. 20: 11 Teilaufgaben, 6 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 5: „Einheit 5 von 5 · Besondere Linien im Dreieck und Satz des Thales“; Marken „OS Kl. 6–7 (Mathematik 2023 6, Schnittpunkt 7, Mathematik heute 7) · GYM Kl. 6–8 (LS 8, Fundamente 6, Elemente 7) · P10 · nicht für alle: Sekundo 8 LVL, Mathematik 2023 6 Arbeiten mit dem Computer, Mathematik 2023 6 Vertiefen, Schnittpunkt 7 EXTRA“ → Zeitmarke „ab Kl. 6, je nach Buch bis Kl. 7“, Prüfungswort „P10“
+WARNUNG Nr. 23: 10 Teilaufgaben, 7 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+TODO 59 Stellen in den Quelltexten:
+  abhaken.tex:2: TODO Ich-kann-Sätze: Platzhalter wie in den Aufgabendateien
+  blatt0_a.tex:5: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 1
+  blatt0_a.tex:6: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 1
+  blatt0_a.tex:19: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 2
+  blatt0_a.tex:20: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 2
+  blatt0_a.tex:28: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 3
+  blatt0_a.tex:29: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 3
+  blatt0_a.tex:37: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 4
+  blatt0_a.tex:38: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 4
+  blatt0_a.tex:48: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 5
+  blatt0_a.tex:49: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 5
+  blatt0_a.tex:62: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 6
+  blatt0_a.tex:63: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 6
+  blatt0_a.tex:70: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 7
+  blatt0_a.tex:71: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 7
+  e1_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 1
+  e1_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 8
+  e1_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 8
+  e1_a.tex:17: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 9
+  e1_a.tex:18: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 9
+  e1_a.tex:20: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e1_a.tex:50: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 10
+  e1_a.tex:51: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 10
+  e1_a.tex:60: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 11
+  e1_a.tex:61: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 11
+  e2_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 2
+  e2_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 12
+  e2_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 12
+  e2_a.tex:17: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 13
+  e2_a.tex:18: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 13
+  e2_a.tex:20: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e2_a.tex:62: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 14
+  e2_a.tex:63: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 14
+  e2_a.tex:70: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 15
+  e2_a.tex:71: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 15
+  e3_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 3
+  e3_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 16
+  e3_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 16
+  e3_a.tex:15: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 17
+  e3_a.tex:16: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 17
+  e3_a.tex:18: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e3_a.tex:37: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 18
+  e3_a.tex:38: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 18
+  e3_a.tex:45: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 19
+  e3_a.tex:46: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 19
+  e4_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 4
+  e4_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 20
+  e4_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 20
+  e4_a.tex:10: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e4_a.tex:38: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 21
+  e4_a.tex:39: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 21
+  e4_a.tex:48: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 22
+  e4_a.tex:49: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 22
+  e5_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 5
+  e5_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 23
+  e5_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 23
+  e5_a.tex:10: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e5_a.tex:46: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 24
+  e5_a.tex:47: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 24
+STRUKTUR 0 Fehler

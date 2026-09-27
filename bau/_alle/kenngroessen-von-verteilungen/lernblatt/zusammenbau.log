@@ -1,0 +1,172 @@
+# zusammenbau v0.1: zusammenbau.py kenngroessen-von-verteilungen
+VORLAGE mathblatt.sty: Version 2026-09-28a
+EINHEITEN [1, 2, 3, 4]
+AUSWAHL kenngroessen-von-verteilungen-zone-f1-v1 – Zone f1 „Verteilungstabelle einer Zufallsgröße au“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL kenngroessen-von-verteilungen-zone-f1-v3 – Zone f1 „Verteilungstabelle einer Zufallsgröße au“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f1 „Verteilungstabelle einer Zufallsgröße au“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL kenngroessen-von-verteilungen-zone-f2-v1 – Zone f2 „Pfadregeln und Gegenereignis (mit und oh“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL kenngroessen-von-verteilungen-zone-f2-v3 – Zone f2 „Pfadregeln und Gegenereignis (mit und oh“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f2 „Pfadregeln und Gegenereignis (mit und oh“ – Sprossen [3, 4, 5] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL kenngroessen-von-verteilungen-zone-f3-v1 – Zone f3 „Bernoulli-Kette erkennen“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL kenngroessen-von-verteilungen-zone-f3-v3 – Zone f3 „Bernoulli-Kette erkennen“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f3 „Bernoulli-Kette erkennen“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL kenngroessen-von-verteilungen-zone-f4-v1 – Zone f4 „Brüche gewichten und addieren, Prozentre“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL kenngroessen-von-verteilungen-zone-f4-v3 – Zone f4 „Brüche gewichten und addieren, Prozentre“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f4 „Brüche gewichten und addieren, Prozentre“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL kenngroessen-von-verteilungen-zone-f5-v1 – Zone f5 „Lineare und quadratische Gleichungen sow“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL kenngroessen-von-verteilungen-zone-f5-v3 – Zone f5 „Lineare und quadratische Gleichungen sow“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f5 „Lineare und quadratische Gleichungen sow“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL kenngroessen-von-verteilungen-zone-f6-v1 – Zone f6 „Wurzelterme bilden und vergleichen“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL kenngroessen-von-verteilungen-zone-f6-v3 – Zone f6 „Wurzelterme bilden und vergleichen“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f6 „Wurzelterme bilden und vergleichen“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL kenngroessen-von-verteilungen-zone-f2-v5 – Zone-Paar, Fehler finden
+AUSWAHL kenngroessen-von-verteilungen-zone-f2-v6 – Zone-Paar, gleichartige Rechenaufgabe
+AUSWAHL kenngroessen-von-verteilungen-e1-k1-s0-v1 – e1 k1 „Erwartungswert berechnen und deuten“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL kenngroessen-von-verteilungen-e1-k1-s1-v1 – e1 k1 „Erwartungswert berechnen und deuten“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL kenngroessen-von-verteilungen-e1-k1-s2-v1 – e1 k1 „Erwartungswert berechnen und deuten“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL kenngroessen-von-verteilungen-e1-k1-s3-v1 – e1 k1 „Erwartungswert berechnen und deuten“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL kenngroessen-von-verteilungen-e1-k1-s4-v1 – e1 k1 „Erwartungswert berechnen und deuten“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL kenngroessen-von-verteilungen-e1-k1-s5-v1 – e1 k1 „Erwartungswert berechnen und deuten“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3, v4
+KETTE e1 k1 „Erwartungswert berechnen und deuten“ (verfahren) → eine Hauptnummer
+AUSWAHL kenngroessen-von-verteilungen-e1-k2-s1-v1 – e1 k2 „Prozentuale Abweichung einer Anzahl vom Erwartungswert berechnen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e1 k2 „Prozentuale Abweichung einer Anzahl vom Erwartungswert berechnen“ (ohne) → eine Hauptnummer
+AUSWAHL kenngroessen-von-verteilungen-e1-k3-s1-v1 – e1 k3 „Erwartungswert der Augensumme aus dem Erwartungswert der Trefferzahl berechnen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e1 k3 „Erwartungswert der Augensumme aus dem Erwartungswert der Trefferzahl berechnen“ (ohne) → eine Hauptnummer
+AUSWAHL kenngroessen-von-verteilungen-e1-k4-s1-v1 – e1 k4 „Gesamtzahl der Gruppen aus der Personenzahl und der mittleren Gruppengröße unter einer vereinfachenden Annahme schätzen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e1 k4 „Gesamtzahl der Gruppen aus der Personenzahl und der mittleren Gruppengröße unter einer vereinfachenden Annahme schätzen“ (ohne) → eine Hauptnummer
+AUSWAHL kenngroessen-von-verteilungen-e1-k5-s1-v1 – e1 k5 „Erwartungswert berechnen und deuten“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL kenngroessen-von-verteilungen-e1-k5-s2-v1 – e1 k5 „Erwartungswert berechnen und deuten“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL kenngroessen-von-verteilungen-e1-k5-s3-v1 – e1 k5 „Erwartungswert berechnen und deuten“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL kenngroessen-von-verteilungen-e1-k5-s4-v1 – e1 k5 „Erwartungswert berechnen und deuten“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e1 k5 „Erwartungswert berechnen und deuten“ (pflicht) → eine Hauptnummer
+AUSWAHL kenngroessen-von-verteilungen-e2-k1-s0-v1 – e2 k1 „Rückwärts“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL kenngroessen-von-verteilungen-e2-k1-s1-v1 – e2 k1 „Rückwärts“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL kenngroessen-von-verteilungen-e2-k1-s2-v1 – e2 k1 „Rückwärts“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL kenngroessen-von-verteilungen-e2-k1-s3-v1 – e2 k1 „Rückwärts“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL kenngroessen-von-verteilungen-e2-k1-s4-v1 – e2 k1 „Rückwärts“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL kenngroessen-von-verteilungen-e2-k1-s5-v1 – e2 k1 „Rückwärts“ (verfahren), Sprosse 5: Variante 1; übergangen v2
+KETTE e2 k1 „Rückwärts“ (verfahren) → eine Hauptnummer
+AUSWAHL kenngroessen-von-verteilungen-e2-k2-s1-v1 – e2 k2 „Erwartungswertgleichung für einen Glücksradparameter aus den Spielregeln herleiten“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k2 „Erwartungswertgleichung für einen Glücksradparameter aus den Spielregeln herleiten“ (ohne) → eine Hauptnummer
+AUSWAHL kenngroessen-von-verteilungen-e2-k3-s1-v1 – e2 k3 „Zwei Wahrscheinlichkeiten einer Verteilung aus dem Erwartungswert und der Summe 1 bestimmen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k3 „Zwei Wahrscheinlichkeiten einer Verteilung aus dem Erwartungswert und der Summe 1 bestimmen“ (ohne) → eine Hauptnummer
+AUSWAHL kenngroessen-von-verteilungen-e2-k4-s1-v1 – e2 k4 „Restwahrscheinlichkeit und Erwartungswert eines Teilgewinns aus dem Gesamterwartungswert bestimmen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k4 „Restwahrscheinlichkeit und Erwartungswert eines Teilgewinns aus dem Gesamterwartungswert bestimmen“ (ohne) → eine Hauptnummer
+AUSWAHL kenngroessen-von-verteilungen-e2-k5-s1-v1 – e2 k5 „Verhältnis zweier Auszahlungen aus dem Ausgleich der Erwartungswerte berechnen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k5 „Verhältnis zweier Auszahlungen aus dem Ausgleich der Erwartungswerte berechnen“ (ohne) → eine Hauptnummer
+AUSWAHL kenngroessen-von-verteilungen-e2-k6-s1-v1 – e2 k6 „Kugelzahl für den größten Erwartungswert der Auszahlung ermitteln“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k6 „Kugelzahl für den größten Erwartungswert der Auszahlung ermitteln“ (ohne) → eine Hauptnummer
+AUSWAHL kenngroessen-von-verteilungen-e2-k7-s1-v1 – e2 k7 „Untere Schranke für eine Kugelbeschriftung aus dem Erwartungswert der Summe ohne Rechnung begründen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k7 „Untere Schranke für eine Kugelbeschriftung aus dem Erwartungswert der Summe ohne Rechnung begründen“ (ohne) → eine Hauptnummer
+AUSWAHL kenngroessen-von-verteilungen-e2-k8-s1-v1 – e2 k8 „Aussage über gleiche Erwartungswerte aufeinanderfolgender Parameterwerte über eine Gleichung beurteilen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k8 „Aussage über gleiche Erwartungswerte aufeinanderfolgender Parameterwerte über eine Gleichung beurteilen“ (ohne) → eine Hauptnummer
+AUSWAHL kenngroessen-von-verteilungen-e2-k9-s1-v1 – e2 k9 „Rückwärts“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL kenngroessen-von-verteilungen-e2-k9-s2-v1 – e2 k9 „Rückwärts“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL kenngroessen-von-verteilungen-e2-k9-s3-v1 – e2 k9 „Rückwärts“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+KETTE e2 k9 „Rückwärts“ (pflicht) → eine Hauptnummer
+AUSWAHL kenngroessen-von-verteilungen-e3-k1-s0-v1 – e3 k1 „Streuung“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL kenngroessen-von-verteilungen-e3-k1-s1-v1 – e3 k1 „Streuung“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL kenngroessen-von-verteilungen-e3-k1-s2-v1 – e3 k1 „Streuung“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL kenngroessen-von-verteilungen-e3-k1-s3-v1 – e3 k1 „Streuung“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL kenngroessen-von-verteilungen-e3-k1-s4-v1 – e3 k1 „Streuung“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL kenngroessen-von-verteilungen-e3-k1-s5-v1 – e3 k1 „Streuung“ (verfahren), Sprosse 5: Variante 1; übergangen v2
+KETTE e3 k1 „Streuung“ (verfahren) → eine Hauptnummer
+AUSWAHL kenngroessen-von-verteilungen-e3-k2-s1-v1 – e3 k2 „Stichprobenumfang aus einer vorgegebenen Standardabweichung der Binomialverteilung berechnen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e3 k2 „Stichprobenumfang aus einer vorgegebenen Standardabweichung der Binomialverteilung berechnen“ (ohne) → eine Hauptnummer
+AUSWAHL kenngroessen-von-verteilungen-e3-k3-s1-v1 – e3 k3 „Verhältnis der Varianzen zweier Binomialverteilungen aus dem Erwartungswert im Diagramm bestimmen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e3 k3 „Verhältnis der Varianzen zweier Binomialverteilungen aus dem Erwartungswert im Diagramm bestimmen“ (ohne) → eine Hauptnummer
+AUSWAHL kenngroessen-von-verteilungen-e3-k4-s1-v1 – e3 k4 „Streuung“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL kenngroessen-von-verteilungen-e3-k4-s2-v1 – e3 k4 „Streuung“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL kenngroessen-von-verteilungen-e3-k4-s3-v1 – e3 k4 „Streuung“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL kenngroessen-von-verteilungen-e3-k4-s4-v1 – e3 k4 „Streuung“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e3 k4 „Streuung“ (pflicht) → eine Hauptnummer
+AUSWAHL kenngroessen-von-verteilungen-e4-k1-s0-v1 – e4 k1 „Diagramm“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL kenngroessen-von-verteilungen-e4-k1-s1-v1 – e4 k1 „Diagramm“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL kenngroessen-von-verteilungen-e4-k1-s2-v1 – e4 k1 „Diagramm“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL kenngroessen-von-verteilungen-e4-k1-s3-v1 – e4 k1 „Diagramm“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL kenngroessen-von-verteilungen-e4-k1-s4-v1 – e4 k1 „Diagramm“ (verfahren), Sprosse 4: Variante 1; übergangen v2
+KETTE e4 k1 „Diagramm“ (verfahren) → eine Hauptnummer
+AUSWAHL kenngroessen-von-verteilungen-e4-k2-s1-v1 – e4 k2 „Diagramm“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL kenngroessen-von-verteilungen-e4-k2-s2-v1 – e4 k2 „Diagramm“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL kenngroessen-von-verteilungen-e4-k2-s3-v1 – e4 k2 „Diagramm“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL kenngroessen-von-verteilungen-e4-k2-s4-v1 – e4 k2 „Diagramm“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e4 k2 „Diagramm“ (pflicht) → eine Hauptnummer
+KOPF Einheit 1: „Einheit 1 von 4 · Erwartungswert berechnen und deuten: die Verteilung beschaffen (Tabelle, Sachtext, Baumpfade, Kosten je Ausgang; fehlende Wahrscheinlichkeit über die Summe 1), die gewichtete Summe bilden (bei Anzahlen n · p), das Ergebnis deuten“; Marken „BE Q2/4 · BB Q2 · GK · Abitur GK · Abitur LK · FHR“ → Zeitmarke „None“, Prüfungswort „Abitur GK“
+KOPF Einheit 2: „Einheit 2 von 4 · Rückwärts“; Marken „BE Q4 · BB Q2 · GK · Abitur GK · Abitur LK“ → Zeitmarke „None“, Prüfungswort „Abitur GK“
+KOPF Einheit 3: „Einheit 3 von 4 · Einheit 3“; Marken „None“ → Zeitmarke „None“, Prüfungswort „None“
+KOPF Einheit 4: „Einheit 4 von 4 · Einheit 4“; Marken „None“ → Zeitmarke „None“, Prüfungswort „None“
+TODO 73 Stellen in den Quelltexten:
+  abhaken.tex:2: TODO Ich-kann-Sätze: Platzhalter wie in den Aufgabendateien
+  blatt0_a.tex:5: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 1
+  blatt0_a.tex:6: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 1
+  blatt0_a.tex:17: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 2
+  blatt0_a.tex:18: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 2
+  blatt0_a.tex:26: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 3
+  blatt0_a.tex:27: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 3
+  blatt0_a.tex:35: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 4
+  blatt0_a.tex:36: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 4
+  blatt0_a.tex:44: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 5
+  blatt0_a.tex:45: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 5
+  blatt0_a.tex:53: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 6
+  blatt0_a.tex:54: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 6
+  blatt0_a.tex:62: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 7
+  blatt0_a.tex:63: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 7
+  blatt0_a.tex:70: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 8
+  blatt0_a.tex:71: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 8
+  e1_a.tex:2: TODO Zeitmarke Einheit 1: Marken-Zeile nicht lesbar
+  e1_a.tex:3: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 1
+  e1_a.tex:8: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 9
+  e1_a.tex:9: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 9
+  e1_a.tex:11: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e1_a.tex:25: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 10
+  e1_a.tex:26: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 10
+  e1_a.tex:33: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 11
+  e1_a.tex:34: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 11
+  e1_a.tex:41: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 12
+  e1_a.tex:42: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 12
+  e1_a.tex:49: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 13
+  e1_a.tex:50: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 13
+  e2_a.tex:2: TODO Zeitmarke Einheit 2: Marken-Zeile nicht lesbar
+  e2_a.tex:3: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 2
+  e2_a.tex:8: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 14
+  e2_a.tex:9: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 14
+  e2_a.tex:11: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e2_a.tex:26: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 15
+  e2_a.tex:27: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 15
+  e2_a.tex:34: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 16
+  e2_a.tex:35: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 16
+  e2_a.tex:42: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 17
+  e2_a.tex:43: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 17
+  e2_a.tex:50: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 18
+  e2_a.tex:51: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 18
+  e2_a.tex:58: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 19
+  e2_a.tex:59: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 19
+  e2_a.tex:66: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 20
+  e2_a.tex:67: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 20
+  e2_a.tex:74: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 21
+  e2_a.tex:75: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 21
+  e2_a.tex:82: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 22
+  e2_a.tex:83: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 22
+  e3_a.tex:2: TODO Prüfungswort Einheit 3: nicht in der Marken-Zeile
+  e3_a.tex:3: TODO Zeitmarke Einheit 3: Marken-Zeile nicht lesbar
+  e3_a.tex:4: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 3
+  e3_a.tex:5: TODO Einheitentitel 3 nicht in der Mappe lesbar
+  e3_a.tex:9: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 23
+  e3_a.tex:10: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 23
+  e3_a.tex:12: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e3_a.tex:27: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 24
+  e3_a.tex:28: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 24
+  e3_a.tex:35: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 25
+  e3_a.tex:36: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 25
+  e3_a.tex:46: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 26
+  e3_a.tex:47: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 26
+  e4_a.tex:2: TODO Prüfungswort Einheit 4: nicht in der Marken-Zeile
+  e4_a.tex:3: TODO Zeitmarke Einheit 4: Marken-Zeile nicht lesbar
+  e4_a.tex:4: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 4
+  e4_a.tex:5: TODO Einheitentitel 4 nicht in der Mappe lesbar
+  e4_a.tex:9: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 27
+  e4_a.tex:10: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 27
+  e4_a.tex:12: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e4_a.tex:35: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 28
+  e4_a.tex:36: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 28
+STRUKTUR 0 Fehler

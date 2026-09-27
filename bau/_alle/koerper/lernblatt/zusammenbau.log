@@ -1,0 +1,202 @@
+# zusammenbau v0.1: zusammenbau.py koerper
+VORLAGE mathblatt.sty: Version 2026-09-28a
+EINHEITEN [1, 2, 3, 4, 5]
+AUSWAHL koerper-zone-f1-v1 – Zone f1 „Räumliches Vorstellen“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL koerper-zone-f1-v3 – Zone f1 „Räumliches Vorstellen“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f1 „Räumliches Vorstellen“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL koerper-zone-f2-v1 – Zone f2 „Flächeninhalt von Rechteck, Dreieck, Tra“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL koerper-zone-f2-v3 – Zone f2 „Flächeninhalt von Rechteck, Dreieck, Tra“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f2 „Flächeninhalt von Rechteck, Dreieck, Tra“ – Sprossen [3, 4, 5, 6] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL koerper-zone-f3-v1 – Zone f3 „Längen- und Volumeneinheiten, Kubikdezim“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL koerper-zone-f3-v3 – Zone f3 „Längen- und Volumeneinheiten, Kubikdezim“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f3 „Längen- und Volumeneinheiten, Kubikdezim“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL koerper-zone-f4-v1 – Zone f4 „Formel nach einer Größe umstellen (V = G“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL koerper-zone-f4-v3 – Zone f4 „Formel nach einer Größe umstellen (V = G“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f4 „Formel nach einer Größe umstellen (V = G“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL koerper-zone-f5-v1 – Zone f5 „Multiplizieren mit Dezimalzahlen und π, “, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL koerper-zone-f5-v3 – Zone f5 „Multiplizieren mit Dezimalzahlen und π, “, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f5 „Multiplizieren mit Dezimalzahlen und π, “ – Sprossen [3, 4] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL koerper-zone-f6-v1 – Zone f6 „Prozentwert berechnen (zehn Prozent von “, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL koerper-zone-f6-v3 – Zone f6 „Prozentwert berechnen (zehn Prozent von “, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f6 „Prozentwert berechnen (zehn Prozent von “ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL koerper-zone-f2-v6 – Zone-Paar, Fehler finden
+AUSWAHL koerper-zone-f2-v7 – Zone-Paar, gleichartige Rechenaufgabe
+AUSWAHL koerper-e1-k1-s0-v1 – e1 k1 „Körper und Netze“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL koerper-e1-k1-s1-v1 – e1 k1 „Körper und Netze“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL koerper-e1-k1-s2-v1 – e1 k1 „Körper und Netze“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e1-k1-s3-v1 – e1 k1 „Körper und Netze“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e1-k1-s4-v1 – e1 k1 „Körper und Netze“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e1-k1-s5-v1 – e1 k1 „Körper und Netze“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e1-k1-s6-v1 – e1 k1 „Körper und Netze“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e1-k1-s7-v1 – e1 k1 „Körper und Netze“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e1-k1-s8-v1 – e1 k1 „Körper und Netze“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3, v4
+KETTE e1 k1 „Körper und Netze“ (verfahren) → eine Hauptnummer
+AUSWAHL koerper-e1-k2-s1-v1 – e1 k2 „Grund- und Deckfläche, Seitenflächen benennen (auch beim liegenden Prisma)“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e1 k2 „Grund- und Deckfläche, Seitenflächen benennen (auch beim liegenden Prisma)“ (ohne) → eine Hauptnummer
+AUSWAHL koerper-e1-k3-s1-v1 – e1 k3 „Schrägbild lesen: verdeckte Kanten, Maße entnehmen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e1 k3 „Schrägbild lesen: verdeckte Kanten, Maße entnehmen“ (ohne) → eine Hauptnummer
+AUSWAHL koerper-e1-k4-s1-v1 – e1 k4 „Körper in ein Schrägbild einzeichnen (Kegel im Quader)“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e1 k4 „Körper in ein Schrägbild einzeichnen (Kegel im Quader)“ (ohne) → eine Hauptnummer
+AUSWAHL koerper-e1-k5-s1-v1 – e1 k5 „Körper und Netze“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e1-k5-s2-v1 – e1 k5 „Körper und Netze“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e1-k5-s3-v1 – e1 k5 „Körper und Netze“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e1-k5-s4-v1 – e1 k5 „Körper und Netze“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e1 k5 „Körper und Netze“ (pflicht) → eine Hauptnummer
+AUSWAHL koerper-e2-k1-s0-v1 – e2 k1 „Quader“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL koerper-e2-k1-s1-v1 – e2 k1 „Quader“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL koerper-e2-k1-s2-v1 – e2 k1 „Quader“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e2-k1-s3-v1 – e2 k1 „Quader“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e2-k1-s4-v1 – e2 k1 „Quader“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e2-k1-s5-v1 – e2 k1 „Quader“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e2-k1-s6-v1 – e2 k1 „Quader“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e2-k1-s7-v1 – e2 k1 „Quader“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e2-k1-s8-v1 – e2 k1 „Quader“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3, v4, v5
+KETTE e2 k1 „Quader“ (verfahren) → eine Hauptnummer
+AUSWAHL koerper-e2-k2-s1-v1 – e2 k2 „Oberfläche ohne Deckel (Kiste, Aquarium)“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k2 „Oberfläche ohne Deckel (Kiste, Aquarium)“ (ohne) → eine Hauptnummer
+AUSWAHL koerper-e2-k3-s1-v1 – e2 k3 „Würfelkante aus V (Kubikzahlen)“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k3 „Würfelkante aus V (Kubikzahlen)“ (ohne) → eine Hauptnummer
+AUSWAHL koerper-e2-k4-s1-v1 – e2 k4 „Einheiten cm³, dm³ = l, m³ (1 l = 1000 cm³)“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k4 „Einheiten cm³, dm³ = l, m³ (1 l = 1000 cm³)“ (ohne) → eine Hauptnummer
+AUSWAHL koerper-e2-k5-s1-v1 – e2 k5 „Aquarium: Füllmenge in Litern, Füllhöhe“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k5 „Aquarium: Füllmenge in Litern, Füllhöhe“ (ohne) → eine Hauptnummer
+AUSWAHL koerper-e2-k6-s1-v1 – e2 k6 „Quader“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e2-k6-s2-v1 – e2 k6 „Quader“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e2-k6-s3-v1 – e2 k6 „Quader“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e2-k6-s4-v1 – e2 k6 „Quader“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e2 k6 „Quader“ (pflicht) → eine Hauptnummer
+AUSWAHL koerper-e3-k1-s0-v1 – e3 k1 „Prisma“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL koerper-e3-k1-s1-v1 – e3 k1 „Prisma“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL koerper-e3-k1-s2-v1 – e3 k1 „Prisma“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e3-k1-s3-v1 – e3 k1 „Prisma“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e3-k1-s4-v1 – e3 k1 „Prisma“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e3-k1-s5-v1 – e3 k1 „Prisma“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e3-k1-s6-v1 – e3 k1 „Prisma“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e3-k1-s7-v1 – e3 k1 „Prisma“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e3-k1-s8-v1 – e3 k1 „Prisma“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e3-k1-s9-v1 – e3 k1 „Prisma“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e3-k1-s10-v1 – e3 k1 „Prisma“ (verfahren), Sprosse 10: Variante 1; übergangen v2
+KETTE e3 k1 „Prisma“ (verfahren) → eine Hauptnummer
+AUSWAHL koerper-e3-k2-s1-v1 – e3 k2 „Prisma“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e3-k2-s2-v1 – e3 k2 „Prisma“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e3-k2-s3-v1 – e3 k2 „Prisma“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e3-k2-s4-v1 – e3 k2 „Prisma“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e3 k2 „Prisma“ (pflicht) → eine Hauptnummer
+AUSWAHL koerper-e4-k1-s0-v1 – e4 k1 „Welche Einheit?“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e4 k1 „Welche Einheit?“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL koerper-e4-k2-s0-v1 – e4 k2 „Zylinder“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL koerper-e4-k2-s1-v1 – e4 k2 „Zylinder“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL koerper-e4-k2-s2-v1 – e4 k2 „Zylinder“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e4-k2-s3-v1 – e4 k2 „Zylinder“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e4-k2-s4-v1 – e4 k2 „Zylinder“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e4-k2-s5-v1 – e4 k2 „Zylinder“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e4-k2-s6-v1 – e4 k2 „Zylinder“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e4-k2-s7-v1 – e4 k2 „Zylinder“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e4-k2-s8-v1 – e4 k2 „Zylinder“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e4-k2-s9-v1 – e4 k2 „Zylinder“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e4-k2-s10-v1 – e4 k2 „Zylinder“ (verfahren), Sprosse 10: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e4-k2-s11-v1 – e4 k2 „Zylinder“ (verfahren), Sprosse 11: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e4-k2-s12-v1 – e4 k2 „Zylinder“ (verfahren), Sprosse 12: Variante 1; übergangen v2
+KETTE e4 k2 „Zylinder“ (verfahren) → eine Hauptnummer
+AUSWAHL koerper-e4-k3-s1-v1 – e4 k3 „Zylinder“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e4-k3-s2-v1 – e4 k3 „Zylinder“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e4-k3-s3-v1 – e4 k3 „Zylinder“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e4-k3-s4-v1 – e4 k3 „Zylinder“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e4 k3 „Zylinder“ (pflicht) → eine Hauptnummer
+AUSWAHL koerper-e5-k1-s0-v1 – e5 k1 „Zusammengesetzt“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL koerper-e5-k1-s1-v1 – e5 k1 „Zusammengesetzt“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL koerper-e5-k1-s2-v1 – e5 k1 „Zusammengesetzt“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e5-k1-s3-v1 – e5 k1 „Zusammengesetzt“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e5-k1-s4-v1 – e5 k1 „Zusammengesetzt“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e5-k1-s5-v1 – e5 k1 „Zusammengesetzt“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e5-k1-s6-v1 – e5 k1 „Zusammengesetzt“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e5-k1-s7-v1 – e5 k1 „Zusammengesetzt“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e5-k1-s8-v1 – e5 k1 „Zusammengesetzt“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e5-k1-s9-v1 – e5 k1 „Zusammengesetzt“ (verfahren), Sprosse 9: Variante 1; übergangen v2
+KETTE e5 k1 „Zusammengesetzt“ (verfahren) → eine Hauptnummer
+AUSWAHL koerper-e5-k2-s1-v1 – e5 k2 „Füllstand in Prozent“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e5 k2 „Füllstand in Prozent“ (ohne) → eine Hauptnummer
+AUSWAHL koerper-e5-k3-s1-v1 – e5 k3 „Oberfläche eines zusammengesetzten Körpers“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e5 k3 „Oberfläche eines zusammengesetzten Körpers“ (ohne) → eine Hauptnummer
+AUSWAHL koerper-e5-k4-s1-v1 – e5 k4 „Zusammengesetzt“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e5-k4-s2-v1 – e5 k4 „Zusammengesetzt“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e5-k4-s3-v1 – e5 k4 „Zusammengesetzt“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL koerper-e5-k4-s4-v1 – e5 k4 „Zusammengesetzt“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e5 k4 „Zusammengesetzt“ (pflicht) → eine Hauptnummer
+KOPF Einheit 1: „Einheit 1 von 5 · Körper erkennen, Netze, Schrägbilder“; Marken „OS Kl. 5–6 (Mathematik 2023 5, Schnittpunkt 6, Mathematik heute 5) · GYM Kl. 5–6 (LS 5, Fundamente 5, Elemente 6) · P10 oft · nicht für alle: Elemente 8 Zum Selbstlernen“ → Zeitmarke „ab Kl. 5, je nach Buch bis Kl. 6“, Prüfungswort „P10 oft“
+WARNUNG Nr. 9: 9 Teilaufgaben, 9 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 2: „Einheit 2 von 5 · Quader und Würfel“; Marken „OS Kl. 5–6 (Mathematik 2023 6, Schnittpunkt 6, Mathematik heute 5) · GYM Kl. 5–6 (LS 5, Fundamente 5, Elemente 6) · P10 oft“ → Zeitmarke „ab Kl. 5, je nach Buch bis Kl. 6“, Prüfungswort „P10 oft“
+KOPF Einheit 3: „Einheit 3 von 5 · Prisma“; Marken „OS Kl. 8 · GYM Kl. 7–8 (LS 8, Fundamente 8, Elemente 7, mathe.delta 7) · P10“ → Zeitmarke „ab Kl. 8 (am Gymnasium ab Kl. 7)“, Prüfungswort „P10“
+WARNUNG Nr. 20: 11 Teilaufgaben, 3 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 4: „Einheit 4 von 5 · Zylinder“; Marken „OS Kl. 8 · GYM Kl. 7–8 (LS 8, Fundamente 8, Elemente 7, mathe.delta 7) · P10“ → Zeitmarke „ab Kl. 8 (am Gymnasium ab Kl. 7)“, Prüfungswort „P10“
+WARNUNG Nr. 23: 13 Teilaufgaben, 0 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 5: „Einheit 5 von 5 · Zusammengesetzte Körper und Anwendungen“; Marken „OS Kl. 6–9 (Mathematik 2023 9, Schnittpunkt 8, Mathematik heute 6) · GYM Kl. 9 · P10 · nicht für alle: Mathematik 2023 8 Üben, Elemente 8 Zum Selbstlernen“ → Zeitmarke „ab Kl. 6, je nach Buch bis Kl. 9 (am Gymnasium ab Kl. 9)“, Prüfungswort „P10“
+TODO 67 Stellen in den Quelltexten:
+  abhaken.tex:2: TODO Ich-kann-Sätze: Platzhalter wie in den Aufgabendateien
+  blatt0_a.tex:5: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 1
+  blatt0_a.tex:6: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 1
+  blatt0_a.tex:14: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 2
+  blatt0_a.tex:15: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 2
+  blatt0_a.tex:23: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 3
+  blatt0_a.tex:24: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 3
+  blatt0_a.tex:32: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 4
+  blatt0_a.tex:33: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 4
+  blatt0_a.tex:41: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 5
+  blatt0_a.tex:42: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 5
+  blatt0_a.tex:50: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 6
+  blatt0_a.tex:51: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 6
+  blatt0_a.tex:59: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 7
+  blatt0_a.tex:60: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 7
+  blatt0_a.tex:67: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 8
+  blatt0_a.tex:68: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 8
+  e1_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 1
+  e1_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 9
+  e1_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 9
+  e1_a.tex:10: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e1_a.tex:46: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 10
+  e1_a.tex:47: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 10
+  e1_a.tex:56: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 11
+  e1_a.tex:57: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 11
+  e1_a.tex:64: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 12
+  e1_a.tex:65: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 12
+  e1_a.tex:74: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 13
+  e1_a.tex:75: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 13
+  e2_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 2
+  e2_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 14
+  e2_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 14
+  e2_a.tex:10: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e2_a.tex:24: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 15
+  e2_a.tex:25: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 15
+  e2_a.tex:32: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 16
+  e2_a.tex:33: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 16
+  e2_a.tex:40: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 17
+  e2_a.tex:41: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 17
+  e2_a.tex:48: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 18
+  e2_a.tex:49: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 18
+  e2_a.tex:56: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 19
+  e2_a.tex:57: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 19
+  e3_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 3
+  e3_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 20
+  e3_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 20
+  e3_a.tex:10: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e3_a.tex:33: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 21
+  e3_a.tex:34: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 21
+  e4_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 4
+  e4_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 22
+  e4_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 22
+  e4_a.tex:15: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 23
+  e4_a.tex:16: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 23
+  e4_a.tex:18: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e4_a.tex:36: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 24
+  e4_a.tex:37: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 24
+  e5_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 5
+  e5_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 25
+  e5_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 25
+  e5_a.tex:10: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e5_a.tex:25: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 26
+  e5_a.tex:26: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 26
+  e5_a.tex:33: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 27
+  e5_a.tex:34: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 27
+  e5_a.tex:41: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 28
+  e5_a.tex:42: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 28
+STRUKTUR 0 Fehler

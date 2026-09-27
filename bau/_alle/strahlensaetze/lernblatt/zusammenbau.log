@@ -1,0 +1,163 @@
+# zusammenbau v0.1: zusammenbau.py strahlensaetze
+VORLAGE mathblatt.sty: Version 2026-09-28a
+EINHEITEN [1, 2, 3]
+AUSWAHL strahlensaetze-zone-f1-v1 – Zone f1 „Dezimalzahlen und ganze Zahlen mal und g“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL strahlensaetze-zone-f1-v3 – Zone f1 „Dezimalzahlen und ganze Zahlen mal und g“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f1 „Dezimalzahlen und ganze Zahlen mal und g“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL strahlensaetze-zone-f2-v1 – Zone f2 „Längeneinheiten umrechnen (m in cm und z“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL strahlensaetze-zone-f2-v3 – Zone f2 „Längeneinheiten umrechnen (m in cm und z“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f2 „Längeneinheiten umrechnen (m in cm und z“ – Sprossen [3, 4, 5, 6] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL strahlensaetze-zone-f3-v1 – Zone f3 „Vielfache und Teiler, „doppelt“, „halb“,“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL strahlensaetze-zone-f3-v3 – Zone f3 „Vielfache und Teiler, „doppelt“, „halb“,“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f3 „Vielfache und Teiler, „doppelt“, „halb“,“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL strahlensaetze-zone-f4-v1 – Zone f4 „Dreisatz und fester Faktor („pro Portion“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL strahlensaetze-zone-f4-v3 – Zone f4 „Dreisatz und fester Faktor („pro Portion“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f4 „Dreisatz und fester Faktor („pro Portion“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL strahlensaetze-zone-f5-v1 – Zone f5 „Strecken auf Millimeter messen und zeich“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL strahlensaetze-zone-f5-v3 – Zone f5 „Strecken auf Millimeter messen und zeich“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f5 „Strecken auf Millimeter messen und zeich“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL strahlensaetze-zone-f6-v1 – Zone f6 „Draufsicht, Netz und Schrägbild eines Kö“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL strahlensaetze-zone-f6-v3 – Zone f6 „Draufsicht, Netz und Schrägbild eines Kö“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f6 „Draufsicht, Netz und Schrägbild eines Kö“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL strahlensaetze-zone-f7-v1 – Zone f7 „Verhältnis lesen und als Division schrei“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL strahlensaetze-zone-f7-v3 – Zone f7 „Verhältnis lesen und als Division schrei“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f7 „Verhältnis lesen und als Division schrei“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL strahlensaetze-zone-f8-v1 – Zone f8 „Gleichung mit einer Variablen und Verhäl“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL strahlensaetze-zone-f8-v3 – Zone f8 „Gleichung mit einer Variablen und Verhäl“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f8 „Gleichung mit einer Variablen und Verhäl“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL strahlensaetze-zone-f9-v1 – Zone f9 „Winkel messen und vergleichen, Winkelsum“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL strahlensaetze-zone-f9-v3 – Zone f9 „Winkel messen und vergleichen, Winkelsum“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f9 „Winkel messen und vergleichen, Winkelsum“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL strahlensaetze-zone-f2-v6 – Zone-Paar, Fehler finden
+AUSWAHL strahlensaetze-zone-f2-v7 – Zone-Paar, gleichartige Rechenaufgabe
+AUSWAHL strahlensaetze-e1-k1-s0-v1 – e1 k1 „Gleiche Einheit?“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e1 k1 „Gleiche Einheit?“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL strahlensaetze-e1-k2-s0-v1 – e1 k2 „Maßstab umrechnen“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL strahlensaetze-e1-k2-s1-v1 – e1 k2 „Maßstab umrechnen“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL strahlensaetze-e1-k2-s2-v1 – e1 k2 „Maßstab umrechnen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e1-k2-s3-v1 – e1 k2 „Maßstab umrechnen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e1-k2-s4-v1 – e1 k2 „Maßstab umrechnen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e1-k2-s5-v1 – e1 k2 „Maßstab umrechnen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e1-k2-s6-v1 – e1 k2 „Maßstab umrechnen“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e1-k2-s7-v1 – e1 k2 „Maßstab umrechnen“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e1-k2-s8-v1 – e1 k2 „Maßstab umrechnen“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e1-k2-s9-v1 – e1 k2 „Maßstab umrechnen“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3, v4
+KETTE e1 k2 „Maßstab umrechnen“ (verfahren) → eine Hauptnummer
+AUSWAHL strahlensaetze-e1-k3-s0-v1 – e1 k3 „Maßstabsgerecht zeichnen“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL strahlensaetze-e1-k3-s1-v1 – e1 k3 „Maßstabsgerecht zeichnen“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL strahlensaetze-e1-k3-s2-v1 – e1 k3 „Maßstabsgerecht zeichnen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e1-k3-s3-v1 – e1 k3 „Maßstabsgerecht zeichnen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e1-k3-s4-v1 – e1 k3 „Maßstabsgerecht zeichnen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e1-k3-s5-v1 – e1 k3 „Maßstabsgerecht zeichnen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e1-k3-s6-v1 – e1 k3 „Maßstabsgerecht zeichnen“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e1-k3-s7-v1 – e1 k3 „Maßstabsgerecht zeichnen“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e1-k3-s8-v1 – e1 k3 „Maßstabsgerecht zeichnen“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e1-k3-s9-v1 – e1 k3 „Maßstabsgerecht zeichnen“ (verfahren), Sprosse 9: Variante 1; übergangen v2
+KETTE e1 k3 „Maßstabsgerecht zeichnen“ (verfahren) → eine Hauptnummer
+AUSWAHL strahlensaetze-e1-k4-s1-v1 – e1 k4 „Maßstab umrechnen“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e1-k4-s2-v1 – e1 k4 „Maßstab umrechnen“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e1-k4-s3-v1 – e1 k4 „Maßstab umrechnen“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e1-k4-s4-v1 – e1 k4 „Maßstab umrechnen“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e1 k4 „Maßstab umrechnen“ (pflicht) → eine Hauptnummer
+AUSWAHL strahlensaetze-e2-k1-s0-v1 – e2 k1 „Zentrische Streckung und Ähnlichkeit“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL strahlensaetze-e2-k1-s1-v1 – e2 k1 „Zentrische Streckung und Ähnlichkeit“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL strahlensaetze-e2-k1-s2-v1 – e2 k1 „Zentrische Streckung und Ähnlichkeit“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e2-k1-s3-v1 – e2 k1 „Zentrische Streckung und Ähnlichkeit“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e2-k1-s4-v1 – e2 k1 „Zentrische Streckung und Ähnlichkeit“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e2-k1-s5-v1 – e2 k1 „Zentrische Streckung und Ähnlichkeit“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e2-k1-s6-v1 – e2 k1 „Zentrische Streckung und Ähnlichkeit“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e2-k1-s7-v1 – e2 k1 „Zentrische Streckung und Ähnlichkeit“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e2-k1-s8-v1 – e2 k1 „Zentrische Streckung und Ähnlichkeit“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e2-k1-s9-v1 – e2 k1 „Zentrische Streckung und Ähnlichkeit“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e2-k1-s10-v1 – e2 k1 „Zentrische Streckung und Ähnlichkeit“ (verfahren), Sprosse 10: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e2-k1-s11-v1 – e2 k1 „Zentrische Streckung und Ähnlichkeit“ (verfahren), Sprosse 11: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e2-k1-s12-v1 – e2 k1 „Zentrische Streckung und Ähnlichkeit“ (verfahren), Sprosse 12: Variante 1; übergangen v2, v3
+KETTE e2 k1 „Zentrische Streckung und Ähnlichkeit“ (verfahren) → eine Hauptnummer
+AUSWAHL strahlensaetze-e2-k2-s1-v1 – e2 k2 „Zentrum aus Original und Bild finden“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k2 „Zentrum aus Original und Bild finden“ (ohne) → eine Hauptnummer
+AUSWAHL strahlensaetze-e2-k3-s1-v1 – e2 k3 „Zentrische Streckung und Ähnlichkeit“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e2-k3-s2-v1 – e2 k3 „Zentrische Streckung und Ähnlichkeit“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e2-k3-s3-v1 – e2 k3 „Zentrische Streckung und Ähnlichkeit“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+KETTE e2 k3 „Zentrische Streckung und Ähnlichkeit“ (pflicht) → eine Hauptnummer
+AUSWAHL strahlensaetze-e3-k1-s0-v1 – e3 k1 „Strahlensätze“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL strahlensaetze-e3-k1-s1-v1 – e3 k1 „Strahlensätze“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL strahlensaetze-e3-k1-s2-v1 – e3 k1 „Strahlensätze“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e3-k1-s3-v1 – e3 k1 „Strahlensätze“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e3-k1-s4-v1 – e3 k1 „Strahlensätze“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e3-k1-s5-v1 – e3 k1 „Strahlensätze“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e3-k1-s6-v1 – e3 k1 „Strahlensätze“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e3-k1-s7-v1 – e3 k1 „Strahlensätze“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e3-k1-s8-v1 – e3 k1 „Strahlensätze“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e3-k1-s9-v1 – e3 k1 „Strahlensätze“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+KETTE e3 k1 „Strahlensätze“ (verfahren) → eine Hauptnummer
+AUSWAHL strahlensaetze-e3-k2-s1-v1 – e3 k2 „Voraussetzung prüfen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e3 k2 „Voraussetzung prüfen“ (ohne) → eine Hauptnummer
+AUSWAHL strahlensaetze-e3-k3-s1-v1 – e3 k3 „Strecke in n gleiche Teile teilen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e3 k3 „Strecke in n gleiche Teile teilen“ (ohne) → eine Hauptnummer
+AUSWAHL strahlensaetze-e3-k4-s1-v1 – e3 k4 „Strahlensätze“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e3-k4-s2-v1 – e3 k4 „Strahlensätze“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e3-k4-s3-v1 – e3 k4 „Strahlensätze“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL strahlensaetze-e3-k4-s4-v1 – e3 k4 „Strahlensätze“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e3 k4 „Strahlensätze“ (pflicht) → eine Hauptnummer
+KOPF Einheit 1: „Einheit 1 von 3 · Maßstab“; Marken „OS Kl. 5 · GYM Kl. 5–8 (LS 5, Fundamente 5, Elemente 5, mathe.delta 8) · P10“ → Zeitmarke „ab Kl. 5“, Prüfungswort „P10“
+WARNUNG Nr. 14: 10 Teilaufgaben, 7 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 2: „Einheit 2 von 3 · Zentrische Streckung und Ähnlichkeit“; Marken „OS Kl. 8–9 (Sekundo 9, Mathematik 2023 9, Schnittpunkt 9, Mathematik heute 8) · GYM Kl. 7–9 (LS 9, Fundamente 7, Elemente 8, mathe.delta 8) · keine P10-Aufgabe · nicht für alle: Elemente 8 Zum Selbstlernen, mathe.delta 8 fakultativ“ → Zeitmarke „ab Kl. 8, je nach Buch bis Kl. 9 (am Gymnasium ab Kl. 7)“, Prüfungswort „keine P10-Aufgabe“
+WARNUNG Nr. 16: 13 Teilaufgaben, 4 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 3: „Einheit 3 von 3 · Strahlensätze“; Marken „OS Kl. 9 · GYM Kl. 9 · keine P10-Aufgabe · nicht für alle: Fundamente 8 Streifzug, mathe.delta 8 fakultativ“ → Zeitmarke „ab Kl. 9“, Prüfungswort „keine P10-Aufgabe“
+WARNUNG Nr. 19: 10 Teilaufgaben, 9 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+TODO 54 Stellen in den Quelltexten:
+  abhaken.tex:2: TODO Ich-kann-Sätze: Platzhalter wie in den Aufgabendateien
+  blatt0_a.tex:5: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 1
+  blatt0_a.tex:6: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 1
+  blatt0_a.tex:14: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 2
+  blatt0_a.tex:15: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 2
+  blatt0_a.tex:23: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 3
+  blatt0_a.tex:24: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 3
+  blatt0_a.tex:32: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 4
+  blatt0_a.tex:33: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 4
+  blatt0_a.tex:41: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 5
+  blatt0_a.tex:42: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 5
+  blatt0_a.tex:54: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 6
+  blatt0_a.tex:55: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 6
+  blatt0_a.tex:63: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 7
+  blatt0_a.tex:64: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 7
+  blatt0_a.tex:72: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 8
+  blatt0_a.tex:73: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 8
+  blatt0_a.tex:81: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 9
+  blatt0_a.tex:82: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 9
+  blatt0_a.tex:90: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 10
+  blatt0_a.tex:91: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 10
+  blatt0_a.tex:98: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 11
+  blatt0_a.tex:99: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 11
+  e1_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 1
+  e1_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 12
+  e1_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 12
+  e1_a.tex:15: TODO \verfahren{…}: Verfahrensüberschrift in Sachsprache fehlt in der Bank (2.3 b)
+  e1_a.tex:16: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 13
+  e1_a.tex:17: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 13
+  e1_a.tex:19: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e1_a.tex:34: TODO \verfahren{…}: Verfahrensüberschrift in Sachsprache fehlt in der Bank (2.3 b)
+  e1_a.tex:35: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 14
+  e1_a.tex:36: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 14
+  e1_a.tex:38: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e1_a.tex:69: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 15
+  e1_a.tex:70: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 15
+  e2_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 2
+  e2_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 16
+  e2_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 16
+  e2_a.tex:10: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e2_a.tex:36: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 17
+  e2_a.tex:37: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 17
+  e2_a.tex:46: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 18
+  e2_a.tex:47: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 18
+  e3_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 3
+  e3_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 19
+  e3_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 19
+  e3_a.tex:10: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e3_a.tex:49: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 20
+  e3_a.tex:50: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 20
+  e3_a.tex:57: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 21
+  e3_a.tex:58: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 21
+  e3_a.tex:67: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 22
+  e3_a.tex:68: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 22
+STRUKTUR 0 Fehler

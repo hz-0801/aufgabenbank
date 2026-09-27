@@ -89,6 +89,20 @@ def pct(text):
     return re.sub(r"(?<!\\)%", r"\\%", text)
 
 
+def _mathe_wort(m):
+    w = re.sub(r"([_^])\(([^()]*)\)", r"\1{(\2)}", m.group(0))
+    return f"${w}$"
+
+
+def klar(text):
+    """Klartext (Kettenname, Mappe, Antwortgerüst) für LaTeX: % zu \\%,
+    Wörter mit _ oder ^ außerhalb $…$ in Mathe, ^(…) zu ^{(…)}."""
+    teile = re.split(r"((?<!\\)\$[^$]*(?<!\\)\$)", text)
+    for i in range(0, len(teile), 2):
+        teile[i] = re.sub(r"[^\s$]*(?<!\\)[_^][^\s$]*", _mathe_wort, teile[i])
+    return pct("".join(teile))
+
+
 # --- Mappe ---------------------------------------------------------------
 
 class Mappe:
@@ -291,7 +305,7 @@ def antwortfeld(antwort):
     if not antwort:
         return ""
     stuecke = antwort.split("__")
-    aus = [stuecke[0].strip()]
+    aus = [klar(stuecke[0].strip())]
     for rest in stuecke[1:]:
         m = re.match(r"^ (\S+)(.*)$", rest)
         if m and m.group(1).rstrip(",;") in EINHEIT_WORT:
@@ -303,7 +317,7 @@ def antwortfeld(antwort):
         rest = rest.strip()
         if rest:
             rest = re.sub(r"(?<![$\\])([<>])", r"$\1$", rest)
-            aus.append(pct(rest))
+            aus.append(klar(rest))
     return " ".join(a for a in aus if a)
 
 
@@ -604,7 +618,7 @@ class Bau:
     # Satz
     def satz_hauptnummer(self, h):
         aus = []
-        titel = pct(h.titel)
+        titel = klar(h.titel)
         aus.append(f"%% TODO Titel: Ich-kann-Satz fehlt in der Bank "
                    f"(Platzhalter: Kettenname) – Nr. {h.nr}")
         aus.append(f"%% TODO Anweisung: ein Satz über der ersten Teilaufgabe "
@@ -668,7 +682,7 @@ class Bau:
         if len(zeilen) > 5:
             aus.append(f"%% TODO Merkkasten Einheit {n}: {len(zeilen)} Zeilen, "
                        "Vorgabe höchstens fünf (3.1)")
-        inhalt = [re.sub(r"\s{3,}", r" \\quad ", pct(z.replace("&", "und")))
+        inhalt = [re.sub(r"\s{3,}", r" \\quad ", klar(z.replace("&", "und")))
                   for z in zeilen]
         aus.append("\\uebersichtskasten{" + " \\\\ ".join(inhalt) + "}")
         return aus
@@ -807,7 +821,7 @@ class Bau:
         def nummern(a, b):
             return f"Nr.~{a}" if a == b else f"Nr.~{a}–{b}"
 
-        verz_e = [f"\\verz{{e{n}}}{{{pos} {pct(t)} ({nummern(a, b)})}}"
+        verz_e = [f"\\verz{{e{n}}}{{{pos} {klar(t)} ({nummern(a, b)})}}"
                   for n, pos, t, a, b in bereiche]
         e_inputs = []
         for i, (n, _) in enumerate(einheiten):
@@ -857,12 +871,12 @@ class Bau:
               "\\begin{abhakseite}"]
         if zone:
             ab += ["\\ifdefined\\mitzone", "\\abhakgruppe{Kennst du schon}"]
-            ab += [f"\\abhak{{{h.nr}}}{{{pct(h.titel)}}}" for h in zone]
+            ab += [f"\\abhak{{{h.nr}}}{{{klar(h.titel)}}}" for h in zone]
             ab.append("\\fi")
         for (n, hs), (_, pos, titel, _, _) in zip(
                 [e for e in einheiten if e[1]], bereiche):
-            ab.append(f"\\abhakgruppe{{Einheit {pos} · {pct(titel)}}}")
-            ab += [f"\\abhak{{{h.nr}}}{{{pct(h.titel)}}}" for h in hs]
+            ab.append(f"\\abhakgruppe{{Einheit {pos} · {klar(titel)}}}")
+            ab += [f"\\abhak{{{h.nr}}}{{{klar(h.titel)}}}" for h in hs]
         ab.append("\\end{abhakseite}")
         dateien["abhaken.tex"] = ab
         return dateien
@@ -871,6 +885,86 @@ class Bau:
 # --- Strukturprüfung ------------------------------------------------------
 
 UMLAUT_ALT = re.compile(r"\\\"[aouAOUs]|\\ss\b|\\glqq|\\grqq|\\euro\b")
+
+# Mathe-Modus: Befehle mit Text in den Argumenten (werden durchlaufen),
+# Befehle mit Mathe im Argument, Textbefehle in Mathe, Ausrichtungen.
+# Andere Bausteine (Grafik, Rahmen) werden samt Argumenten übergangen.
+TEXT_ARG = {"teil", "steil", "tz", "stz", "swz", "swa", "swfrage", "erg",
+            "abhak", "abhakgruppe", "uebersichtskasten", "einheitenkopf",
+            "zweigzeile", "verz", "verzeichniszeile", "blattkopf",
+            "leerfeld", "kreuz", "verfahren", "achtung"}
+MATHE_ARG = {"gl", "sgl", "rechnung"}
+TEXT_IN_MATHE = {"text", "textbf", "textit", "mbox", "emph"}
+AUSRICHTUNG = {"tabular", "array", "aligned", "matrix", "pmatrix", "cases",
+               "gleichungsraster"}
+GRAFIK_UMGEBUNG = {"ksys", "ksys3", "boxplots", "kreis", "dreisatz",
+                   "zahlengerade"}
+
+
+def modusfehler(rein, zeile):
+    """[(zeile, meldung)]: _ ^ # außerhalb Mathe, & außerhalb einer
+    Ausrichtung, $ in Mathe-Argumenten, \\rechnung in Mathe."""
+    aus = set()
+    modus, gruppen, umg, naechste = ["t"], [], [], None
+    k = 0
+    while k < len(rein):
+        c = rein[k]
+        if c == "\\":
+            m = re.match(r"\\(?:([A-Za-z]+)\*?|(.))", rein[k:], re.S)
+            name, e = m.group(1), k + m.end()
+            if name in ("begin", "end"):
+                u = re.match(r"\{([^}]*)\}", rein[e:])
+                if u:
+                    if name == "begin" and u.group(1) in GRAFIK_UMGEBUNG:
+                        j = rein.find("\\end{" + u.group(1) + "}", e)
+                        k = len(rein) if j < 0 else j + len(u.group(1)) + 6
+                        continue
+                    if name == "begin":
+                        umg.append(u.group(1))
+                    elif umg and umg[-1] == u.group(1):
+                        umg.pop()
+                    e += u.end()
+            elif name in MATHE_ARG:
+                if name == "rechnung" and any(x != "t" for x in modus):
+                    aus.add((zeile(k), "\\rechnung in Mathe oder \\text "
+                             "(Absatz im Argument)"))
+                naechste = "m"
+            elif name in TEXT_IN_MATHE:
+                if modus[-1] != "t":
+                    naechste = "t"
+            elif name and name not in TEXT_ARG and name not in BP.STANDARD:
+                while e < len(rein) and rein[e] in "[{":
+                    e = BP.klammer(rein, e)
+            elif m.group(2) in ("(", "["):
+                modus.append("m")
+            elif m.group(2) in (")", "]") and len(modus) > 1:
+                modus.pop()
+            k = e
+            continue
+        if c == "{":
+            gruppen.append(len(modus))
+            if naechste:
+                modus.append(naechste)
+                naechste = None
+        elif c == "}":
+            if gruppen:
+                del modus[max(gruppen.pop(), 1):]
+        elif c == "$":
+            if modus[-1] == "$":
+                modus.pop()
+            elif modus[-1] == "m":
+                aus.add((zeile(k), "$ in einem Mathe-Argument (\\gl, "
+                         "\\rechnung)"))
+            else:
+                modus.append("$")
+        elif c in "_^" and modus[-1] == "t":
+            aus.add((zeile(k), f"{c} außerhalb Mathe"))
+        elif c == "#":
+            aus.add((zeile(k), "# im Text"))
+        elif c == "&" and modus[-1] == "t" and not (set(umg) & AUSRICHTUNG):
+            aus.add((zeile(k), "& außerhalb einer Ausrichtung"))
+        k += 1
+    return sorted(aus)
 
 
 def pruefe_struktur(dateien, sig):
@@ -918,6 +1012,7 @@ def pruefe_struktur(dateien, sig):
         dollar = [m.start() for m in re.finditer(r"(?<!\\)\$", rein)]
         if len(dollar) % 2:
             fehler.append((name, zeile(dollar[-1]), "ungerade Zahl von $"))
+        fehler += [(name, zl, meldung) for zl, meldung in modusfehler(rein, zeile)]
         # Befehle und Umgebungen
         stapel = []
         teil_zaehler = None

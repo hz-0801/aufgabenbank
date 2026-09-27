@@ -1,0 +1,173 @@
+# zusammenbau v0.1: zusammenbau.py pythagoras
+VORLAGE mathblatt.sty: Version 2026-09-28a
+EINHEITEN [1, 2, 3]
+AUSWAHL pythagoras-zone-f1-v1 – Zone f1 „Quadrieren mit dem Taschenrechner, auch “, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL pythagoras-zone-f1-v3 – Zone f1 „Quadrieren mit dem Taschenrechner, auch “, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f1 „Quadrieren mit dem Taschenrechner, auch “ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL pythagoras-zone-f2-v1 – Zone f2 „Quadratwurzel mit dem Taschenrechner zie“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL pythagoras-zone-f2-v3 – Zone f2 „Quadratwurzel mit dem Taschenrechner zie“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f2 „Quadratwurzel mit dem Taschenrechner zie“ – Sprossen [3, 4, 5] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL pythagoras-zone-f3-v1 – Zone f3 „Rechtwinkliges Dreieck erkennen: Rechtwi“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL pythagoras-zone-f3-v3 – Zone f3 „Rechtwinkliges Dreieck erkennen: Rechtwi“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f3 „Rechtwinkliges Dreieck erkennen: Rechtwi“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL pythagoras-zone-f4-v1 – Zone f4 „Längeneinheiten: Ergebnis mit Einheit, c“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL pythagoras-zone-f4-v3 – Zone f4 „Längeneinheiten: Ergebnis mit Einheit, c“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f4 „Längeneinheiten: Ergebnis mit Einheit, c“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL pythagoras-zone-f5-v1 – Zone f5 „Formel nach einer Größe umstellen mit St“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL pythagoras-zone-f5-v3 – Zone f5 „Formel nach einer Größe umstellen mit St“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f5 „Formel nach einer Größe umstellen mit St“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL pythagoras-zone-f6-v1 – Zone f6 „Koordinaten ablesen und Differenzen bild“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL pythagoras-zone-f6-v3 – Zone f6 „Koordinaten ablesen und Differenzen bild“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f6 „Koordinaten ablesen und Differenzen bild“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL pythagoras-zone-f7-v1 – Zone f7 „Höhe, Seitenhöhe, Seitenkante, Mantellin“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL pythagoras-zone-f7-v3 – Zone f7 „Höhe, Seitenhöhe, Seitenkante, Mantellin“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f7 „Höhe, Seitenhöhe, Seitenkante, Mantellin“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL pythagoras-zone-f8-v1 – Zone f8 „Eigenschaften von gleichschenkligem Drei“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL pythagoras-zone-f8-v3 – Zone f8 „Eigenschaften von gleichschenkligem Drei“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f8 „Eigenschaften von gleichschenkligem Drei“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL pythagoras-zone-f9-v1 – Zone f9 „Strecke halbieren, halbe Differenz zweie“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL pythagoras-zone-f9-v3 – Zone f9 „Strecke halbieren, halbe Differenz zweie“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f9 „Strecke halbieren, halbe Differenz zweie“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL pythagoras-zone-f2-v5 – Zone-Paar, Fehler finden
+AUSWAHL pythagoras-zone-f2-v6 – Zone-Paar, gleichartige Rechenaufgabe
+AUSWAHL pythagoras-e1-k1-s0-v1 – e1 k1 „Gilt der Satz hier?“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e1 k1 „Gilt der Satz hier?“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL pythagoras-e1-k2-s0-v1 – e1 k2 „Hypotenuse“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL pythagoras-e1-k2-s1-v1 – e1 k2 „Hypotenuse“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL pythagoras-e1-k2-s2-v1 – e1 k2 „Hypotenuse“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e1-k2-s3-v1 – e1 k2 „Hypotenuse“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e1-k2-s4-v1 – e1 k2 „Hypotenuse“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e1-k2-s5-v1 – e1 k2 „Hypotenuse“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e1-k2-s6-v1 – e1 k2 „Hypotenuse“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e1-k2-s7-v1 – e1 k2 „Hypotenuse“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e1-k2-s8-v1 – e1 k2 „Hypotenuse“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e1-k2-s9-v1 – e1 k2 „Hypotenuse“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e1-k2-s10-v1 – e1 k2 „Hypotenuse“ (verfahren), Sprosse 10: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e1-k2-s11-v1 – e1 k2 „Hypotenuse“ (verfahren), Sprosse 11: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e1-k2-s12-v1 – e1 k2 „Hypotenuse“ (verfahren), Sprosse 12: Variante 1; übergangen v2
+AUSWAHL pythagoras-e1-k2-s13-v1 – e1 k2 „Hypotenuse“ (verfahren), Sprosse 13: Variante 1; übergangen v2
+KETTE e1 k2 „Hypotenuse“ (verfahren) → eine Hauptnummer
+AUSWAHL pythagoras-e1-k3-s1-v1 – e1 k3 „Quadrate über den Seiten zeichnen und Flächen vergleichen (Kästchen zählen)“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e1 k3 „Quadrate über den Seiten zeichnen und Flächen vergleichen (Kästchen zählen)“ (ohne) → eine Hauptnummer
+AUSWAHL pythagoras-e1-k4-s1-v1 – e1 k4 „Ergebnis mit sinnvoller Genauigkeit angeben“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e1 k4 „Ergebnis mit sinnvoller Genauigkeit angeben“ (ohne) → eine Hauptnummer
+AUSWAHL pythagoras-e1-k5-s1-v1 – e1 k5 „Hypotenuse“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e1-k5-s2-v1 – e1 k5 „Hypotenuse“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e1-k5-s3-v1 – e1 k5 „Hypotenuse“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e1-k5-s4-v1 – e1 k5 „Hypotenuse“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e1 k5 „Hypotenuse“ (pflicht) → eine Hauptnummer
+AUSWAHL pythagoras-e2-k1-s0-v1 – e2 k1 „Welche Seite ist die längste?“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e2 k1 „Welche Seite ist die längste?“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL pythagoras-e2-k2-s0-v1 – e2 k2 „Kathete“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL pythagoras-e2-k2-s1-v1 – e2 k2 „Kathete“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL pythagoras-e2-k2-s2-v1 – e2 k2 „Kathete“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e2-k2-s3-v1 – e2 k2 „Kathete“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e2-k2-s4-v1 – e2 k2 „Kathete“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e2-k2-s5-v1 – e2 k2 „Kathete“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e2-k2-s6-v1 – e2 k2 „Kathete“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e2-k2-s7-v1 – e2 k2 „Kathete“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e2-k2-s8-v1 – e2 k2 „Kathete“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e2-k2-s9-v1 – e2 k2 „Kathete“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e2-k2-s10-v1 – e2 k2 „Kathete“ (verfahren), Sprosse 10: Variante 1; übergangen v2
+AUSWAHL pythagoras-e2-k2-s11-v1 – e2 k2 „Kathete“ (verfahren), Sprosse 11: Variante 1; übergangen v2
+AUSWAHL pythagoras-e2-k2-s12-v1 – e2 k2 „Kathete“ (verfahren), Sprosse 12: Variante 1; übergangen v2
+KETTE e2 k2 „Kathete“ (verfahren) → eine Hauptnummer
+AUSWAHL pythagoras-e2-k3-s1-v1 – e2 k3 „pythagoreische Tripel erkennen und vervielfachen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k3 „pythagoreische Tripel erkennen und vervielfachen“ (ohne) → eine Hauptnummer
+AUSWAHL pythagoras-e2-k4-s1-v1 – e2 k4 „Kathete“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e2-k4-s2-v1 – e2 k4 „Kathete“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e2-k4-s3-v1 – e2 k4 „Kathete“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e2-k4-s4-v1 – e2 k4 „Kathete“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e2 k4 „Kathete“ (pflicht) → eine Hauptnummer
+AUSWAHL pythagoras-e3-k1-s0-v1 – e3 k1 „Ganz oder halb?“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e3 k1 „Ganz oder halb?“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL pythagoras-e3-k2-s0-v1 – e3 k2 „Figuren und Körper“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL pythagoras-e3-k2-s1-v1 – e3 k2 „Figuren und Körper“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL pythagoras-e3-k2-s2-v1 – e3 k2 „Figuren und Körper“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e3-k2-s3-v1 – e3 k2 „Figuren und Körper“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e3-k2-s4-v1 – e3 k2 „Figuren und Körper“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e3-k2-s5-v1 – e3 k2 „Figuren und Körper“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e3-k2-s6-v1 – e3 k2 „Figuren und Körper“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e3-k2-s7-v1 – e3 k2 „Figuren und Körper“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e3-k2-s8-v1 – e3 k2 „Figuren und Körper“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e3-k2-s9-v1 – e3 k2 „Figuren und Körper“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e3-k2-s10-v1 – e3 k2 „Figuren und Körper“ (verfahren), Sprosse 10: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e3-k2-s11-v1 – e3 k2 „Figuren und Körper“ (verfahren), Sprosse 11: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e3-k2-s12-v1 – e3 k2 „Figuren und Körper“ (verfahren), Sprosse 12: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e3-k2-s13-v1 – e3 k2 „Figuren und Körper“ (verfahren), Sprosse 13: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e3-k2-s14-v1 – e3 k2 „Figuren und Körper“ (verfahren), Sprosse 14: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e3-k2-s15-v1 – e3 k2 „Figuren und Körper“ (verfahren), Sprosse 15: Variante 1; übergangen v2
+AUSWAHL pythagoras-e3-k2-s16-v1 – e3 k2 „Figuren und Körper“ (verfahren), Sprosse 16: Variante 1; übergangen v2
+AUSWAHL pythagoras-e3-k2-s17-v1 – e3 k2 „Figuren und Körper“ (verfahren), Sprosse 17: Variante 1; übergangen v2
+AUSWAHL pythagoras-e3-k2-s18-v1 – e3 k2 „Figuren und Körper“ (verfahren), Sprosse 18: Variante 1; übergangen v2
+KETTE e3 k2 „Figuren und Körper“ (verfahren) → eine Hauptnummer
+AUSWAHL pythagoras-e3-k3-s1-v1 – e3 k3 „Rampe, Leiter, Seil an der Wand mit Skizze“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e3 k3 „Rampe, Leiter, Seil an der Wand mit Skizze“ (ohne) → eine Hauptnummer
+AUSWAHL pythagoras-e3-k4-s1-v1 – e3 k4 „Figuren und Körper“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e3-k4-s2-v1 – e3 k4 „Figuren und Körper“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e3-k4-s3-v1 – e3 k4 „Figuren und Körper“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL pythagoras-e3-k4-s4-v1 – e3 k4 „Figuren und Körper“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e3 k4 „Figuren und Körper“ (pflicht) → eine Hauptnummer
+KOPF Einheit 1: „Einheit 1 von 3 · Satz und Hypotenuse“; Marken „OS Kl. 8–9 (Sekundo 9, Mathematik 2023 8, Schnittpunkt 9, Mathematik heute 8) · GYM Kl. 8–9 (LS 9, Fundamente 8, Elemente 8, mathe.delta 8) · P10 oft · nicht für alle: Sekundo 9 LVL, Schnittpunkt 8 EXTRA“ → Zeitmarke „ab Kl. 8, je nach Buch bis Kl. 9“, Prüfungswort „P10 oft“
+WARNUNG Nr. 13: 14 Teilaufgaben, 8 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 2: „Einheit 2 von 3 · Kathete und Umkehrung“; Marken „OS Kl. 8–9 (Sekundo 9, Mathematik 2023 8, Schnittpunkt 9, Mathematik heute 8) · GYM Kl. 8–9 (LS 9, Fundamente 8, Elemente 8) · P10 oft · nicht für alle: Sekundo 9 LVL, Mathematik 2023 8 Vertiefen“ → Zeitmarke „ab Kl. 8, je nach Buch bis Kl. 9“, Prüfungswort „P10 oft“
+WARNUNG Nr. 18: 13 Teilaufgaben, 3 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 3: „Einheit 3 von 3 · Pythagoras in Figuren und Körpern“; Marken „OS Kl. 8–9 (Sekundo 9, Schnittpunkt 9, Mathematik heute 8) · GYM Kl. 8–9 (LS 9, Fundamente 8, Elemente 8, mathe.delta 8) · P10 oft“ → Zeitmarke „ab Kl. 8, je nach Buch bis Kl. 9“, Prüfungswort „P10 oft“
+WARNUNG Nr. 22: 19 Teilaufgaben, 12 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+TODO 55 Stellen in den Quelltexten:
+  abhaken.tex:2: TODO Ich-kann-Sätze: Platzhalter wie in den Aufgabendateien
+  blatt0_a.tex:5: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 1
+  blatt0_a.tex:6: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 1
+  blatt0_a.tex:14: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 2
+  blatt0_a.tex:15: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 2
+  blatt0_a.tex:23: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 3
+  blatt0_a.tex:24: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 3
+  blatt0_a.tex:34: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 4
+  blatt0_a.tex:35: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 4
+  blatt0_a.tex:43: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 5
+  blatt0_a.tex:44: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 5
+  blatt0_a.tex:52: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 6
+  blatt0_a.tex:53: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 6
+  blatt0_a.tex:64: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 7
+  blatt0_a.tex:65: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 7
+  blatt0_a.tex:73: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 8
+  blatt0_a.tex:74: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 8
+  blatt0_a.tex:82: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 9
+  blatt0_a.tex:83: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 9
+  blatt0_a.tex:91: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 10
+  blatt0_a.tex:92: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 10
+  blatt0_a.tex:99: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 11
+  blatt0_a.tex:100: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 11
+  e1_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 1
+  e1_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 12
+  e1_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 12
+  e1_a.tex:17: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 13
+  e1_a.tex:18: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 13
+  e1_a.tex:20: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e1_a.tex:61: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 14
+  e1_a.tex:62: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 14
+  e1_a.tex:72: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 15
+  e1_a.tex:73: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 15
+  e1_a.tex:80: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 16
+  e1_a.tex:81: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 16
+  e2_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 2
+  e2_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 17
+  e2_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 17
+  e2_a.tex:15: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 18
+  e2_a.tex:16: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 18
+  e2_a.tex:18: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e2_a.tex:44: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 19
+  e2_a.tex:45: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 19
+  e2_a.tex:52: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 20
+  e2_a.tex:53: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 20
+  e3_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 3
+  e3_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 21
+  e3_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 21
+  e3_a.tex:17: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 22
+  e3_a.tex:18: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 22
+  e3_a.tex:20: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e3_a.tex:78: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 23
+  e3_a.tex:79: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 23
+  e3_a.tex:89: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 24
+  e3_a.tex:90: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 24
+STRUKTUR 0 Fehler

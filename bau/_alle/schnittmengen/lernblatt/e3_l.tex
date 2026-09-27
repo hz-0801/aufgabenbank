@@ -1,0 +1,15 @@
+% Lösungen Einheit 3 von 3 – Spuren, Schnittgeraden und Schnittfiguren (zusammenbau v0.1)
+\einheitenkopf{Einheit 3 von 3 · Spuren, Schnittgeraden und Schnittfiguren}
+
+\erg{16}{a) $x$ und $z$ – auf der $y$-Achse sind die beiden anderen Koordinaten null. \quad b) $S_x(3|0|0)$, $S_y(0|2|0)$, $S_z(0|0|1)$ – je zwei Koordinaten null gesetzt; die Achsenabschnitte sind $\frac{6}{2}$, $\frac{6}{3}$ und $\frac{6}{6}$, nicht die Koeffizienten. \quad c) $F(0|0|4)$ aus $x = y = 0$; die Spurgerade in der $xz$-Ebene verbindet $B(5|0|0)$ und $F$, die in der $yz$-Ebene verläuft wegen $z = 4$ durch $F$ und $E(0|5|4)$. \quad d) Seite $AD$: $\vec{x} = (0|0|0) + k \cdot (-2|4|6)$, $6k = 3$ liefert $k = 0{,}5$ und den Endpunkt $(-1|2|3)$; ebenso auf $BC$: $(-1|7|3)$ – der Parameter gehört auf die Seiten, nicht auf die Diagonale $AC$. \quad e) $L$ schneidet die Seitenflächen $x = 7$ und $x = 0$ in parallelen Strecken von $F$ nach $M(7|3{,}5|0)$ und von $E$ nach $N(0|3{,}5|0)$; die Schnittfigur ist das Rechteck $EFMN$ – sie endet an den Kantenmitten, nicht an den Ecken $B$ und $C$. \quad f) Die Seite der Schnittfigur in der Seitenfläche $x = 7$ (von $A$ nach oben) über die Deckfläche hinaus verlängern, bis sie $h$ trifft; dieser Schnittpunkt ist $P$. Seine Höhe abzählen: $z = 4$ – $P$ liegt nicht in der Schnittfigur selbst. \quad g) $E_1$ schneidet das Quadrat in der Strecke mit $x = 4$ – zwei gleich große Rechtecke, ja. $E_2$ enthält $B$ und $D$ und schneidet entlang der Diagonale $BD$ – zwei kongruente Dreiecke, ja. $E_3$ schneidet bei $y = 2$ – Rechtecke mit den Breiten 2 und 6, nein. \quad h) Ein Normalenvektor von $E_1$ ist $(1|1|1)$ (senkrecht zu beiden Spannvektoren), einer von $E_2$ ist $(2|2|1)$; sie sind keine Vielfachen voneinander, also sind die Ebenen nicht parallel. Parameterform von $E_1$ in $E_2$ einsetzen: $2(5 - r - s) + 2r + s = 10$, $10 - s = 10$, also $s = 0$; Schnittgerade $\vec{x} = (5|0|0) + r \cdot (-1|1|0)$}
+
+16c)
+
+\begin{ksys3}[xyz,x1min=0,x1max=6,x2min=0,x2max=6,x3min=0,x3max=5] \rpyramide{0,0,0}{5}{5}{0,5,4} \rpunkt*{0}{0}{4}{F} \rgerade[0:1]{5,0,0}{-5,0,4}{} \rgerade[0:1]{0,0,4}{0,5,0}{} \end{ksys3}
+
+
+16e)
+
+\begin{ksys3}[xyz,x1min=0,x1max=8,x2min=0,x2max=8,x3min=0,x3max=8] \rquader{0,0,0}{7}{7}{7} \rgerade[0:1]{0,0,7}{7,0,0}{} \rgerade[0:1]{7,0,7}{0,3.5,-7}{} \rgerade[0:1]{7,3.5,0}{-7,0,0}{} \rgerade[0:1]{0,3.5,0}{0,-3.5,7}{} \end{ksys3}
+
+\erg{17}{a) Tim hat die Koeffizienten genommen. Richtig: je zwei Koordinaten null, also $2x = 30$, $5y = 30$, $3z = 30$; Spurpunkte $(15|0|0)$, $(0|6|0)$ und $(0|0|10)$. \quad b) Gegenüberliegende Seitenflächen liegen in parallelen Ebenen; eine dritte Ebene schneidet parallele Ebenen in parallelen Geraden, also sind auch die Schnittkanten parallel.}

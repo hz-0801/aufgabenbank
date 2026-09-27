@@ -1,0 +1,240 @@
+# zusammenbau v0.1: zusammenbau.py quadratische-funktionen --schwach
+VORLAGE mathblatt.sty: Version 2026-09-28a
+EINHEITEN [1, 2, 3, 4]
+AUSWAHL quadratische-funktionen-zone-f1-v1 – Zone f1 „Quadrieren auch negativer Zahlen und Dez“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL quadratische-funktionen-zone-f1-v3 – Zone f1 „Quadrieren auch negativer Zahlen und Dez“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f1 „Quadrieren auch negativer Zahlen und Dez“ – Sprossen [3, 4, 5, 6] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL quadratische-funktionen-zone-f2-v1 – Zone f2 „Koordinaten lesen und eintragen, vier Qu“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL quadratische-funktionen-zone-f2-v3 – Zone f2 „Koordinaten lesen und eintragen, vier Qu“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f2 „Koordinaten lesen und eintragen, vier Qu“ – Sprossen [3, 4, 5] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL quadratische-funktionen-zone-f3-v1 – Zone f3 „Lineare Funktion f(x) = m·x + n: Gerade “, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL quadratische-funktionen-zone-f3-v3 – Zone f3 „Lineare Funktion f(x) = m·x + n: Gerade “, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f3 „Lineare Funktion f(x) = m·x + n: Gerade “ – Sprossen [3, 4, 5] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL quadratische-funktionen-zone-f4-v1 – Zone f4 „Binomische Formel ausmultiplizieren und “, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL quadratische-funktionen-zone-f4-v3 – Zone f4 „Binomische Formel ausmultiplizieren und “, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f4 „Binomische Formel ausmultiplizieren und “ – Sprossen [3, 4, 5] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL quadratische-funktionen-zone-f5-v1 – Zone f5 „Lineare Gleichung lösen, Terme mit x auf“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL quadratische-funktionen-zone-f5-v3 – Zone f5 „Lineare Gleichung lösen, Terme mit x auf“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f5 „Lineare Gleichung lösen, Terme mit x auf“ – Sprossen [3, 4] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL quadratische-funktionen-zone-f6-v1 – Zone f6 „Schnittpunkt zweier Geraden durch Gleich“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL quadratische-funktionen-zone-f6-v3 – Zone f6 „Schnittpunkt zweier Geraden durch Gleich“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f6 „Schnittpunkt zweier Geraden durch Gleich“ – Sprossen [3, 4] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL quadratische-funktionen-zone-f7-v1 – Zone f7 „Quadratwurzel ziehen, auch mit dem Tasch“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL quadratische-funktionen-zone-f7-v3 – Zone f7 „Quadratwurzel ziehen, auch mit dem Tasch“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f7 „Quadratwurzel ziehen, auch mit dem Tasch“ – Sprossen [3, 4] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL quadratische-funktionen-zone-f8-v1 – Zone f8 „Quadratische Gleichung durch Wurzelziehe“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL quadratische-funktionen-zone-f8-v3 – Zone f8 „Quadratische Gleichung durch Wurzelziehe“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f8 „Quadratische Gleichung durch Wurzelziehe“ – Sprossen [3, 4, 5] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL quadratische-funktionen-zone-f4-v5 – Zone-Paar, Fehler finden
+AUSWAHL quadratische-funktionen-zone-f4-v6 – Zone-Paar, gleichartige Rechenaufgabe
+AUSWAHL quadratische-funktionen-e1-k1-s0-v1 – e1 k1 „Normalparabel und Streckfaktor“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL quadratische-funktionen-e1-k1-s1-v1 – e1 k1 „Normalparabel und Streckfaktor“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL quadratische-funktionen-e1-k1-s1-v2 – e1 k1 „Normalparabel und Streckfaktor“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL quadratische-funktionen-e1-k1-s1-v3 – e1 k1 „Normalparabel und Streckfaktor“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL quadratische-funktionen-e1-k1-s1-v4 – e1 k1 „Normalparabel und Streckfaktor“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL quadratische-funktionen-e1-k1-s1-v5 – e1 k1 „Normalparabel und Streckfaktor“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL quadratische-funktionen-e1-k1-s2-v1 – e1 k1 „Normalparabel und Streckfaktor“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e1-k1-s3-v1 – e1 k1 „Normalparabel und Streckfaktor“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e1-k1-s4-v1 – e1 k1 „Normalparabel und Streckfaktor“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e1-k1-s5-v1 – e1 k1 „Normalparabel und Streckfaktor“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e1-k1-s6-v1 – e1 k1 „Normalparabel und Streckfaktor“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e1-k1-s7-v1 – e1 k1 „Normalparabel und Streckfaktor“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e1-k1-s8-v1 – e1 k1 „Normalparabel und Streckfaktor“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e1-k1-s9-v1 – e1 k1 „Normalparabel und Streckfaktor“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e1-k1-s10-v1 – e1 k1 „Normalparabel und Streckfaktor“ (verfahren), Sprosse 10: Variante 1; übergangen v2
+AUSWAHL quadratische-funktionen-e1-k1-s11-v1 – e1 k1 „Normalparabel und Streckfaktor“ (verfahren), Sprosse 11: Variante 1; übergangen v2
+KETTE e1 k1 „Normalparabel und Streckfaktor“ (verfahren) → eine Hauptnummer
+AUSWAHL quadratische-funktionen-e1-k2-s1-v1 – e1 k2 „Normalparabel und Streckfaktor“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e1-k2-s2-v1 – e1 k2 „Normalparabel und Streckfaktor“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e1-k2-s3-v1 – e1 k2 „Normalparabel und Streckfaktor“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e1-k2-s4-v1 – e1 k2 „Normalparabel und Streckfaktor“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e1 k2 „Normalparabel und Streckfaktor“ (pflicht) → eine Hauptnummer
+AUSWAHL quadratische-funktionen-e2-k1-s0-v1 – e2 k1 „Scheitelpunktform“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL quadratische-funktionen-e2-k1-s1-v1 – e2 k1 „Scheitelpunktform“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL quadratische-funktionen-e2-k1-s1-v2 – e2 k1 „Scheitelpunktform“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL quadratische-funktionen-e2-k1-s1-v3 – e2 k1 „Scheitelpunktform“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL quadratische-funktionen-e2-k1-s1-v4 – e2 k1 „Scheitelpunktform“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL quadratische-funktionen-e2-k1-s1-v5 – e2 k1 „Scheitelpunktform“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL quadratische-funktionen-e2-k1-s2-v1 – e2 k1 „Scheitelpunktform“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e2-k1-s3-v1 – e2 k1 „Scheitelpunktform“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e2-k1-s4-v1 – e2 k1 „Scheitelpunktform“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e2-k1-s5-v1 – e2 k1 „Scheitelpunktform“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e2-k1-s6-v1 – e2 k1 „Scheitelpunktform“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e2-k1-s7-v1 – e2 k1 „Scheitelpunktform“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e2-k1-s8-v1 – e2 k1 „Scheitelpunktform“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e2-k1-s9-v1 – e2 k1 „Scheitelpunktform“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e2-k1-s10-v1 – e2 k1 „Scheitelpunktform“ (verfahren), Sprosse 10: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e2-k1-s11-v1 – e2 k1 „Scheitelpunktform“ (verfahren), Sprosse 11: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e2-k1-s12-v1 – e2 k1 „Scheitelpunktform“ (verfahren), Sprosse 12: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e2-k1-s13-v1 – e2 k1 „Scheitelpunktform“ (verfahren), Sprosse 13: Variante 1; übergangen v2
+AUSWAHL quadratische-funktionen-e2-k1-s14-v1 – e2 k1 „Scheitelpunktform“ (verfahren), Sprosse 14: Variante 1; übergangen v2
+AUSWAHL quadratische-funktionen-e2-k1-s15-v1 – e2 k1 „Scheitelpunktform“ (verfahren), Sprosse 15: Variante 1; übergangen v2
+KETTE e2 k1 „Scheitelpunktform“ (verfahren) → eine Hauptnummer
+AUSWAHL quadratische-funktionen-e2-k2-s1-v1 – e2 k2 „Scheitelpunktform“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e2-k2-s2-v1 – e2 k2 „Scheitelpunktform“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e2-k2-s3-v1 – e2 k2 „Scheitelpunktform“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e2-k2-s4-v1 – e2 k2 „Scheitelpunktform“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e2 k2 „Scheitelpunktform“ (pflicht) → eine Hauptnummer
+AUSWAHL quadratische-funktionen-e3-k1-s0-v1 – e3 k1 „Normalform“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL quadratische-funktionen-e3-k1-s1-v1 – e3 k1 „Normalform“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL quadratische-funktionen-e3-k1-s1-v2 – e3 k1 „Normalform“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL quadratische-funktionen-e3-k1-s1-v3 – e3 k1 „Normalform“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL quadratische-funktionen-e3-k1-s1-v4 – e3 k1 „Normalform“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL quadratische-funktionen-e3-k1-s1-v5 – e3 k1 „Normalform“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL quadratische-funktionen-e3-k1-s2-v1 – e3 k1 „Normalform“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e3-k1-s3-v1 – e3 k1 „Normalform“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e3-k1-s4-v1 – e3 k1 „Normalform“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e3-k1-s5-v1 – e3 k1 „Normalform“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e3-k1-s6-v1 – e3 k1 „Normalform“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e3-k1-s7-v1 – e3 k1 „Normalform“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e3-k1-s8-v1 – e3 k1 „Normalform“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e3-k1-s9-v1 – e3 k1 „Normalform“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3, v4
+AUSWAHL quadratische-funktionen-e3-k1-s10-v1 – e3 k1 „Normalform“ (verfahren), Sprosse 10: Variante 1; übergangen v2
+KETTE e3 k1 „Normalform“ (verfahren) → eine Hauptnummer
+AUSWAHL quadratische-funktionen-e3-k2-s1-v1 – e3 k2 „Normalform“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e3-k2-s2-v1 – e3 k2 „Normalform“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+KETTE e3 k2 „Normalform“ (pflicht) → eine Hauptnummer
+AUSWAHL quadratische-funktionen-e4-k1-s0-v1 – e4 k1 „Nullstellen und Schnittpunkte“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL quadratische-funktionen-e4-k1-s1-v1 – e4 k1 „Nullstellen und Schnittpunkte“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL quadratische-funktionen-e4-k1-s1-v2 – e4 k1 „Nullstellen und Schnittpunkte“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL quadratische-funktionen-e4-k1-s1-v3 – e4 k1 „Nullstellen und Schnittpunkte“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL quadratische-funktionen-e4-k1-s1-v4 – e4 k1 „Nullstellen und Schnittpunkte“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL quadratische-funktionen-e4-k1-s1-v5 – e4 k1 „Nullstellen und Schnittpunkte“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL quadratische-funktionen-e4-k1-s2-v1 – e4 k1 „Nullstellen und Schnittpunkte“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e4-k1-s3-v1 – e4 k1 „Nullstellen und Schnittpunkte“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e4-k1-s4-v1 – e4 k1 „Nullstellen und Schnittpunkte“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e4-k1-s5-v1 – e4 k1 „Nullstellen und Schnittpunkte“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e4-k1-s6-v1 – e4 k1 „Nullstellen und Schnittpunkte“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e4-k1-s7-v1 – e4 k1 „Nullstellen und Schnittpunkte“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e4-k1-s8-v1 – e4 k1 „Nullstellen und Schnittpunkte“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e4-k1-s9-v1 – e4 k1 „Nullstellen und Schnittpunkte“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e4-k1-s10-v1 – e4 k1 „Nullstellen und Schnittpunkte“ (verfahren), Sprosse 10: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e4-k1-s11-v1 – e4 k1 „Nullstellen und Schnittpunkte“ (verfahren), Sprosse 11: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e4-k1-s12-v1 – e4 k1 „Nullstellen und Schnittpunkte“ (verfahren), Sprosse 12: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e4-k1-s13-v1 – e4 k1 „Nullstellen und Schnittpunkte“ (verfahren), Sprosse 13: Variante 1; übergangen v2
+AUSWAHL quadratische-funktionen-e4-k1-s14-v1 – e4 k1 „Nullstellen und Schnittpunkte“ (verfahren), Sprosse 14: Variante 1; übergangen v2
+AUSWAHL quadratische-funktionen-e4-k1-s15-v1 – e4 k1 „Nullstellen und Schnittpunkte“ (verfahren), Sprosse 15: Variante 1; übergangen v2
+KETTE e4 k1 „Nullstellen und Schnittpunkte“ (verfahren) → eine Hauptnummer
+AUSWAHL quadratische-funktionen-e4-k2-s1-v1 – e4 k2 „Nullstellen und Schnittpunkte“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e4-k2-s2-v1 – e4 k2 „Nullstellen und Schnittpunkte“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e4-k2-s3-v1 – e4 k2 „Nullstellen und Schnittpunkte“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL quadratische-funktionen-e4-k2-s4-v1 – e4 k2 „Nullstellen und Schnittpunkte“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e4 k2 „Nullstellen und Schnittpunkte“ (pflicht) → eine Hauptnummer
+KOPF Einheit 1: „Einheit 1 von 4 · Normalparabel und Streckfaktor“; Marken „OS Kl. 9–10 (Sekundo 10, Mathematik 2023 9, Schnittpunkt 9, Mathematik heute 9) · GYM Kl. 9 · P10 oft · nicht für alle: Sekundo 10 LVL“ → Zeitmarke „ab Kl. 9, je nach Buch bis Kl. 10“, Prüfungswort „P10 oft“
+WARNUNG Nr. 11: 17 Teilaufgaben, 5 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 2: „Einheit 2 von 4 · Scheitelpunktform“; Marken „OS Kl. 9–10 (Sekundo 10, Mathematik 2023 9, Schnittpunkt 9, Mathematik heute 9) · GYM Kl. 9 · P10 oft · nicht für alle: Sekundo 10 LVL“ → Zeitmarke „ab Kl. 9, je nach Buch bis Kl. 10“, Prüfungswort „P10 oft“
+WARNUNG Nr. 13: 21 Teilaufgaben, 5 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 3: „Einheit 3 von 4 · Normalform“; Marken „OS Kl. 9–10 (Sekundo 10, Mathematik 2023 9, Schnittpunkt 9) · GYM Kl. 9 · P10 oft“ → Zeitmarke „ab Kl. 9, je nach Buch bis Kl. 10“, Prüfungswort „P10 oft“
+WARNUNG Nr. 15: 16 Teilaufgaben, 4 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 4: „Einheit 4 von 4 · Nullstellen und Schnittpunkte berechnen“; Marken „OS Kl. 10 · GYM Kl. 9 · P10 oft“ → Zeitmarke „ab Kl. 10 (am Gymnasium ab Kl. 9)“, Prüfungswort „P10 oft“
+WARNUNG Nr. 17: 21 Teilaufgaben, 0 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+TODO 106 Stellen in den Quelltexten:
+  abhaken.tex:2: TODO Ich-kann-Sätze: Platzhalter wie in den Aufgabendateien
+  blatt0_a.tex:4: TODO Grundvorstellungs-Aufgabe als erste Hauptnummer der Zone (2.8) fehlt in der Bank
+  blatt0_a.tex:6: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 1
+  blatt0_a.tex:7: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 1
+  blatt0_a.tex:9: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-zone-f1-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:11: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-zone-f1-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:15: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 2
+  blatt0_a.tex:16: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 2
+  blatt0_a.tex:26: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 3
+  blatt0_a.tex:27: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 3
+  blatt0_a.tex:29: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-zone-f3-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:31: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-zone-f3-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:35: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 4
+  blatt0_a.tex:36: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 4
+  blatt0_a.tex:38: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-zone-f4-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:40: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-zone-f4-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:44: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 5
+  blatt0_a.tex:45: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 5
+  blatt0_a.tex:47: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-zone-f5-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:49: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-zone-f5-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:53: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 6
+  blatt0_a.tex:54: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 6
+  blatt0_a.tex:56: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-zone-f6-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:58: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-zone-f6-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:62: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 7
+  blatt0_a.tex:63: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 7
+  blatt0_a.tex:65: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-zone-f7-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:67: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-zone-f7-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:71: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 8
+  blatt0_a.tex:72: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 8
+  blatt0_a.tex:74: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-zone-f8-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:76: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-zone-f8-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:80: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 9
+  blatt0_a.tex:81: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 9
+  blatt0_a.tex:86: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 10
+  blatt0_a.tex:87: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 10
+  blatt0_a.tex:89: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-zone-f4-v6; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 1
+  e1_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 11
+  e1_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 11
+  e1_a.tex:13: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e1-k1-s1-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:16: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e1-k1-s1-v2; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:19: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e1-k1-s1-v3; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:22: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e1-k1-s1-v4; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:25: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e1-k1-s1-v5; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:35: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e1-k1-s4-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:37: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e1-k1-s5-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:59: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 12
+  e1_a.tex:60: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 12
+  e1_l.tex:4: TODO Lösung der Erklärzeile 11g) fehlt in der Bank
+  e2_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 2
+  e2_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 13
+  e2_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 13
+  e2_a.tex:13: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e2-k1-s1-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:15: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e2-k1-s1-v2; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:17: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e2-k1-s1-v3; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:19: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e2-k1-s1-v4; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:21: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e2-k1-s1-v5; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:24: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e2-k1-s2-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:31: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e2-k1-s5-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:36: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e2-k1-s7-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:38: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e2-k1-s8-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:40: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e2-k1-s9-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:42: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e2-k1-s10-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:44: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e2-k1-s11-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:46: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e2-k1-s12-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:56: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 14
+  e2_a.tex:57: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 14
+  e2_l.tex:4: TODO Lösung der Erklärzeile 13g) fehlt in der Bank
+  e3_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 3
+  e3_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 15
+  e3_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 15
+  e3_a.tex:13: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e3-k1-s1-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:15: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e3-k1-s1-v2; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:17: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e3-k1-s1-v3; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:19: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e3-k1-s1-v4; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:21: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e3-k1-s1-v5; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:24: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e3-k1-s2-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:26: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e3-k1-s3-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:28: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e3-k1-s4-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:30: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e3-k1-s5-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:47: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 16
+  e3_a.tex:48: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 16
+  e3_l.tex:4: TODO Lösung der Erklärzeile 15g) fehlt in der Bank
+  e4_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 4
+  e4_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 17
+  e4_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 17
+  e4_a.tex:13: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e4-k1-s1-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:15: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e4-k1-s1-v2; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:17: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e4-k1-s1-v3; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:19: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e4-k1-s1-v4; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:21: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e4-k1-s1-v5; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:24: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e4-k1-s2-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:26: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e4-k1-s3-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:28: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e4-k1-s4-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:30: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e4-k1-s5-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:32: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e4-k1-s6-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:34: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e4-k1-s7-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:36: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e4-k1-s8-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:38: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e4-k1-s9-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:40: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e4-k1-s10-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:42: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e4-k1-s11-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:44: TODO Darstellung für schwach fehlt in der Bank (quadratische-funktionen-e4-k1-s12-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:51: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 18
+  e4_a.tex:52: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 18
+  e4_l.tex:4: TODO Lösung der Erklärzeile 17g) fehlt in der Bank
+STRUKTUR 2 Fehler
+  FEHLER e3_a.tex:50: \rechnung in Mathe oder \text (Absatz im Argument)
+  FEHLER e4_a.tex:54: \rechnung in Mathe oder \text (Absatz im Argument)

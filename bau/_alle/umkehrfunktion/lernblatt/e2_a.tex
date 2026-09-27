@@ -1,0 +1,35 @@
+% Einheit 2 von 2 – Spiegelung an der Winkelhalbierenden (bank/umkehrfunktion/e2.jsonl, zusammenbau v0.1)
+%% TODO Zeitmarke Einheit 2: Marken-Zeile nicht lesbar
+%% TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 2
+\einheitenkopf[e2]{Einheit 2 von 2 · Spiegelung an der Winkelhalbierenden}
+\zweigzeile{Abitur LK}
+\setcounter{aufgabe}{10}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 11
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 11
+\begin{aufgabe}{Spiegelung an der Winkelhalbierenden}
+%% TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+\begin{teile}
+\teil Der Punkt (2 | 5) wird an der Geraden $y = x$ gespiegelt. Wo liegt das Bild? \kreuz{$(5 | 2)$} \\ \kreuz{$(-2 | 5)$} \\ \kreuz{$(2 | -5)$}
+\teil Spiegle die Punkte A(2 | 6) und B(−1 | 4) an der Geraden $y = x$.
+\teil Die Tangente an den Graphen von f im Punkt P(1 | 2) hat die Steigung 3. g ist die Umkehrfunktion. Welche Steigung hat die Tangente an den Graphen von g im Punkt P'(2 | 1)? \leerfeld
+\teil $f(x) = 6e^{-\frac{1}{2}x} - 2$ ist umkehrbar, g ist die Umkehrfunktion. t ist die Tangente an den Graphen von f im Punkt Q mit der Steigung −1. Begründe ohne Rechnung, dass t auch den Graphen von g berührt, und gib den Berührpunkt an \hfill (Abitur 2026 LK).
+\teil Die Punkte A(0 | 4) und B(1 | 7) werden an $y = x$ gespiegelt. Begründe, dass A, B, B' und A' ein Trapez bilden, und berechne seinen Flächeninhalt. \leerfeld
+\teil f und g sind auf $[0;\, \infty[$ definiert, g ist die Umkehrfunktion von f. Die Abbildung zeigt beide Graphen; sie schneiden sich im Ursprung und im Punkt S mit der x-Koordinate $x_S$. Beurteile ohne Rechnung die Aussage: „Das Integral von 0 bis $x_S$ über $g(x) - x$ ist gleich dem Integral von 0 bis $x_S$ über $x - f(x)$.“ \hfill (Abitur 2025 LK)
+
+\begin{ksys}[xmin=0,xmax=5,ymin=0,ymax=5,ablesen] \funktionab{0.25*\x^2}{f}{0}{4.4} \funktionab{2*sqrt(\x)}{g}{0}{5} \gerade{1}{0}{y = x} \end{ksys}
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 12
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 12
+\begin{aufgabe}{Spiegelung an der Winkelhalbierenden – Fehler finden, Begründen, Anwendung, Darstellungswechsel}
+\begin{teile}
+\teil Mia sagt: „Die Fläche zwischen dem Graphen von f und der Geraden y = x ist sicher kleiner als die zwischen y = x und dem Graphen der Umkehrfunktion, weil die Graphen verschieden aussehen.“ Finde den Fehler.
+\teil Begründe, warum die Spiegelung an der Geraden y = x die Koordinaten eines Punktes vertauscht.
+\teil Eine Pflanze wächst am fünften Tag um 2 cm pro Tag. Wie viele Tage braucht sie an dieser Stelle je Zentimeter Wachstum? Deute die Antwort als Steigung der Umkehrfunktion.
+\teil Die Abbildung zeigt den Graphen der Umkehrfunktion g. Lies drei Punkte ab und gib die zugehörigen Punkte des Graphen von f an.
+
+\begin{ksys}[xmin=-1,xmax=6,ymin=-3,ymax=6,ablesen] \funktionab{ln(\x)/ln(2)}{g}{0.1}{5.5} \gerade{1}{0}{y = x} \end{ksys}
+\end{teile}
+\end{aufgabe}

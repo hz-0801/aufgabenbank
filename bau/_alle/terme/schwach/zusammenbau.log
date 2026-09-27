@@ -1,0 +1,234 @@
+# zusammenbau v0.1: zusammenbau.py terme --schwach
+VORLAGE mathblatt.sty: Version 2026-09-28a
+EINHEITEN [1, 2, 3, 4]
+AUSWAHL terme-zone-f1-v1 – Zone f1 „Addieren und Subtrahieren negativer Zahl“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL terme-zone-f1-v3 – Zone f1 „Addieren und Subtrahieren negativer Zahl“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f1 „Addieren und Subtrahieren negativer Zahl“ – Sprossen [3, 4, 5] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL terme-zone-f2-v1 – Zone f2 „Multiplizieren mit Vorzeichen“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL terme-zone-f2-v3 – Zone f2 „Multiplizieren mit Vorzeichen“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f2 „Multiplizieren mit Vorzeichen“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL terme-zone-f3-v1 – Zone f3 „Dezimalzahlen und einfache Brüche als Vo“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL terme-zone-f3-v3 – Zone f3 „Dezimalzahlen und einfache Brüche als Vo“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f3 „Dezimalzahlen und einfache Brüche als Vo“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL terme-zone-f4-v1 – Zone f4 „Punkt vor Strich mit Zahlen“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL terme-zone-f4-v3 – Zone f4 „Punkt vor Strich mit Zahlen“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f4 „Punkt vor Strich mit Zahlen“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL terme-zone-f1-v5 – Zone-Paar, Fehler finden
+AUSWAHL terme-zone-f1-v6 – Zone-Paar, gleichartige Rechenaufgabe
+AUSWAHL terme-e1-k1-s1-v1 – e1 k1 „Term aufstellen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL terme-e1-k1-s1-v2 – e1 k1 „Term aufstellen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL terme-e1-k1-s1-v3 – e1 k1 „Term aufstellen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL terme-e1-k1-s1-v4 – e1 k1 „Term aufstellen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL terme-e1-k1-s1-v5 – e1 k1 „Term aufstellen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL terme-e1-k1-s2-v1 – e1 k1 „Term aufstellen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL terme-e1-k1-s3-v1 – e1 k1 „Term aufstellen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL terme-e1-k1-s4-v1 – e1 k1 „Term aufstellen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL terme-e1-k1-s5-v1 – e1 k1 „Term aufstellen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL terme-e1-k1-s6-v1 – e1 k1 „Term aufstellen“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL terme-e1-k1-s7-v1 – e1 k1 „Term aufstellen“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3, v4
+KETTE e1 k1 „Term aufstellen“ (verfahren) → eine Hauptnummer
+AUSWAHL terme-e1-k2-s1-v1 – e1 k2 „Termwert berechnen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e1 k2 „Termwert berechnen“ (ohne) → eine Hauptnummer
+AUSWAHL terme-e1-k3-s1-v1 – e1 k3 „Situation zu Term angeben“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e1 k3 „Situation zu Term angeben“ (ohne) → eine Hauptnummer
+AUSWAHL terme-e1-k4-s1-v1 – e1 k4 „Term aufstellen“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL terme-e1-k4-s2-v1 – e1 k4 „Term aufstellen“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL terme-e1-k4-s3-v1 – e1 k4 „Term aufstellen“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+KETTE e1 k4 „Term aufstellen“ (pflicht) → eine Hauptnummer
+AUSWAHL terme-e2-k1-s0-v1 – e2 k1 „Gleichartige Glieder erkennen“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e2 k1 „Gleichartige Glieder erkennen“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL terme-e2-k2-s0-v1 – e2 k2 „Vorzahl lesen“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e2 k2 „Vorzahl lesen“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL terme-e2-k3-s0-v1 – e2 k3 „Vorzeichen als Teil des Gliedes“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e2 k3 „Vorzeichen als Teil des Gliedes“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL terme-e2-k4-s1-v1 – e2 k4 „Zusammenfassen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL terme-e2-k4-s1-v2 – e2 k4 „Zusammenfassen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL terme-e2-k4-s1-v3 – e2 k4 „Zusammenfassen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL terme-e2-k4-s1-v4 – e2 k4 „Zusammenfassen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL terme-e2-k4-s1-v5 – e2 k4 „Zusammenfassen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL terme-e2-k4-s2-v1 – e2 k4 „Zusammenfassen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL terme-e2-k4-s3-v1 – e2 k4 „Zusammenfassen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL terme-e2-k4-s4-v1 – e2 k4 „Zusammenfassen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL terme-e2-k4-s5-v1 – e2 k4 „Zusammenfassen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL terme-e2-k4-s6-v1 – e2 k4 „Zusammenfassen“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL terme-e2-k4-s7-v1 – e2 k4 „Zusammenfassen“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL terme-e2-k4-s8-v1 – e2 k4 „Zusammenfassen“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL terme-e2-k4-s9-v1 – e2 k4 „Zusammenfassen“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL terme-e2-k4-s10-v1 – e2 k4 „Zusammenfassen“ (verfahren), Sprosse 10: Variante 1; übergangen v2, v3
+AUSWAHL terme-e2-k4-s11-v1 – e2 k4 „Zusammenfassen“ (verfahren), Sprosse 11: Variante 1; übergangen v2
+KETTE e2 k4 „Zusammenfassen“ (verfahren) → eine Hauptnummer
+AUSWAHL terme-e2-k5-s1-v1 – e2 k5 „Malnehmen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL terme-e2-k5-s1-v2 – e2 k5 „Malnehmen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL terme-e2-k5-s1-v3 – e2 k5 „Malnehmen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL terme-e2-k5-s1-v4 – e2 k5 „Malnehmen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL terme-e2-k5-s1-v5 – e2 k5 „Malnehmen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL terme-e2-k5-s2-v1 – e2 k5 „Malnehmen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL terme-e2-k5-s3-v1 – e2 k5 „Malnehmen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL terme-e2-k5-s4-v1 – e2 k5 „Malnehmen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL terme-e2-k5-s5-v1 – e2 k5 „Malnehmen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL terme-e2-k5-s6-v1 – e2 k5 „Malnehmen“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL terme-e2-k5-s7-v1 – e2 k5 „Malnehmen“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+KETTE e2 k5 „Malnehmen“ (verfahren) → eine Hauptnummer
+AUSWAHL terme-e2-k6-s1-v1 – e2 k6 „Zusammenfassen“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL terme-e2-k6-s2-v1 – e2 k6 „Zusammenfassen“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL terme-e2-k6-s3-v1 – e2 k6 „Zusammenfassen“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL terme-e2-k6-s4-v1 – e2 k6 „Zusammenfassen“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e2 k6 „Zusammenfassen“ (pflicht) → eine Hauptnummer
+AUSWAHL terme-e3-k1-s0-v1 – e3 k1 „Zeichen vor der Klammer feststellen“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e3 k1 „Zeichen vor der Klammer feststellen“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL terme-e3-k2-s1-v1 – e3 k2 „Klammern“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL terme-e3-k2-s1-v2 – e3 k2 „Klammern“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL terme-e3-k2-s1-v3 – e3 k2 „Klammern“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL terme-e3-k2-s1-v4 – e3 k2 „Klammern“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL terme-e3-k2-s1-v5 – e3 k2 „Klammern“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL terme-e3-k2-s2-v1 – e3 k2 „Klammern“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL terme-e3-k2-s3-v1 – e3 k2 „Klammern“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL terme-e3-k2-s4-v1 – e3 k2 „Klammern“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL terme-e3-k2-s5-v1 – e3 k2 „Klammern“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL terme-e3-k2-s6-v1 – e3 k2 „Klammern“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL terme-e3-k2-s7-v1 – e3 k2 „Klammern“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+KETTE e3 k2 „Klammern“ (verfahren) → eine Hauptnummer
+AUSWAHL terme-e3-k3-s1-v1 – e3 k3 „Klammern“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL terme-e3-k3-s2-v1 – e3 k3 „Klammern“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL terme-e3-k3-s3-v1 – e3 k3 „Klammern“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+KETTE e3 k3 „Klammern“ (pflicht) → eine Hauptnummer
+AUSWAHL terme-e4-k1-s1-v1 – e4 k1 „Ausklammern“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL terme-e4-k1-s1-v2 – e4 k1 „Ausklammern“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL terme-e4-k1-s1-v3 – e4 k1 „Ausklammern“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL terme-e4-k1-s1-v4 – e4 k1 „Ausklammern“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL terme-e4-k1-s1-v5 – e4 k1 „Ausklammern“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL terme-e4-k1-s2-v1 – e4 k1 „Ausklammern“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL terme-e4-k1-s3-v1 – e4 k1 „Ausklammern“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL terme-e4-k1-s4-v1 – e4 k1 „Ausklammern“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL terme-e4-k1-s5-v1 – e4 k1 „Ausklammern“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL terme-e4-k1-s6-v1 – e4 k1 „Ausklammern“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL terme-e4-k1-s7-v1 – e4 k1 „Ausklammern“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL terme-e4-k1-s8-v1 – e4 k1 „Ausklammern“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+KETTE e4 k1 „Ausklammern“ (verfahren) → eine Hauptnummer
+AUSWAHL terme-e4-k2-s1-v1 – e4 k2 „Ausklammern“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e4 k2 „Ausklammern“ (pflicht) → eine Hauptnummer
+KOPF Einheit 1: „Einheit 1 von 4 · Terme aufstellen und berechnen“; Marken „OS Kl. 6–7 (Mathematik 2023 6, Schnittpunkt 6, Mathematik heute 7) · GYM Kl. 6–7 (LS 6, Fundamente 7, Elemente 6) · P10 oft · nicht für alle: Fundamente 5 Streifzug“ → Zeitmarke „ab Kl. 6, je nach Buch bis Kl. 7“, Prüfungswort „P10 oft“
+WARNUNG Nr. 7: 12 Teilaufgaben, 1 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 2: „Einheit 2 von 4 · Terme zusammenfassen“; Marken „OS Kl. 7–8 (Sekundo 7, Mathematik 2023 8, Schnittpunkt 7, Mathematik heute 8) · GYM Kl. 7 · P10 · nicht für alle: Sekundo 7 LVL“ → Zeitmarke „ab Kl. 7, je nach Buch bis Kl. 8“, Prüfungswort „P10“
+WARNUNG Nr. 14: 16 Teilaufgaben, 0 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 3: „Einheit 3 von 4 · Klammern auflösen“; Marken „OS Kl. 7–8 (Sekundo 8, Mathematik 2023 8, Schnittpunkt 7, Mathematik heute 8) · GYM Kl. 7–8 (LS 7, Fundamente 8, Elemente 7, mathe.delta 7) · keine P10-Aufgabe“ → Zeitmarke „ab Kl. 7, je nach Buch bis Kl. 8“, Prüfungswort „keine P10-Aufgabe“
+WARNUNG Nr. 18: 12 Teilaufgaben, 1 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 4: „Einheit 4 von 4 · Ausklammern“; Marken „OS Kl. 8 · GYM Kl. 7–8 (LS 7, Fundamente 8, Elemente 7) · keine P10-Aufgabe“ → Zeitmarke „ab Kl. 8 (am Gymnasium ab Kl. 7)“, Prüfungswort „keine P10-Aufgabe“
+WARNUNG Nr. 20: 13 Teilaufgaben, 0 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+TODO 115 Stellen in den Quelltexten:
+  abhaken.tex:2: TODO Ich-kann-Sätze: Platzhalter wie in den Aufgabendateien
+  blatt0_a.tex:4: TODO Grundvorstellungs-Aufgabe als erste Hauptnummer der Zone (2.8) fehlt in der Bank
+  blatt0_a.tex:6: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 1
+  blatt0_a.tex:7: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 1
+  blatt0_a.tex:9: TODO Darstellung für schwach fehlt in der Bank (terme-zone-f1-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:11: TODO Darstellung für schwach fehlt in der Bank (terme-zone-f1-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:15: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 2
+  blatt0_a.tex:16: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 2
+  blatt0_a.tex:18: TODO Darstellung für schwach fehlt in der Bank (terme-zone-f2-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:20: TODO Darstellung für schwach fehlt in der Bank (terme-zone-f2-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:24: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 3
+  blatt0_a.tex:25: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 3
+  blatt0_a.tex:27: TODO Darstellung für schwach fehlt in der Bank (terme-zone-f3-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:29: TODO Darstellung für schwach fehlt in der Bank (terme-zone-f3-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:33: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 4
+  blatt0_a.tex:34: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 4
+  blatt0_a.tex:36: TODO Darstellung für schwach fehlt in der Bank (terme-zone-f4-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:38: TODO Darstellung für schwach fehlt in der Bank (terme-zone-f4-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:42: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 5
+  blatt0_a.tex:43: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 5
+  blatt0_a.tex:48: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 6
+  blatt0_a.tex:49: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 6
+  blatt0_a.tex:51: TODO Darstellung für schwach fehlt in der Bank (terme-zone-f1-v6; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 1
+  e1_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 7
+  e1_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 7
+  e1_a.tex:26: TODO Darstellung für schwach fehlt in der Bank (terme-e1-k1-s2-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:29: TODO Darstellung für schwach fehlt in der Bank (terme-e1-k1-s4-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:31: TODO Darstellung für schwach fehlt in der Bank (terme-e1-k1-s5-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:33: TODO Darstellung für schwach fehlt in der Bank (terme-e1-k1-s6-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:40: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 8
+  e1_a.tex:41: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 8
+  e1_a.tex:43: TODO Darstellung für schwach fehlt in der Bank (terme-e1-k2-s1-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:47: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 9
+  e1_a.tex:48: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 9
+  e1_a.tex:50: TODO Darstellung für schwach fehlt in der Bank (terme-e1-k3-s1-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:54: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 10
+  e1_a.tex:55: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 10
+  e1_a.tex:62: TODO Merkkasten Einheit 1 nicht in der Mappe lesbar
+  e1_l.tex:4: TODO Lösung der Erklärzeile 7f) fehlt in der Bank
+  e2_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 2
+  e2_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 11
+  e2_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 11
+  e2_a.tex:15: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 12
+  e2_a.tex:16: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 12
+  e2_a.tex:23: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 13
+  e2_a.tex:24: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 13
+  e2_a.tex:31: TODO \verfahren{…}: Verfahrensüberschrift in Sachsprache fehlt in der Bank (2.3 b)
+  e2_a.tex:32: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 14
+  e2_a.tex:33: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 14
+  e2_a.tex:35: TODO Darstellung für schwach fehlt in der Bank (terme-e2-k4-s1-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:37: TODO Darstellung für schwach fehlt in der Bank (terme-e2-k4-s1-v2; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:39: TODO Darstellung für schwach fehlt in der Bank (terme-e2-k4-s1-v3; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:41: TODO Darstellung für schwach fehlt in der Bank (terme-e2-k4-s1-v4; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:43: TODO Darstellung für schwach fehlt in der Bank (terme-e2-k4-s1-v5; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:46: TODO Darstellung für schwach fehlt in der Bank (terme-e2-k4-s2-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:48: TODO Darstellung für schwach fehlt in der Bank (terme-e2-k4-s3-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:50: TODO Darstellung für schwach fehlt in der Bank (terme-e2-k4-s4-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:52: TODO Darstellung für schwach fehlt in der Bank (terme-e2-k4-s5-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:54: TODO Darstellung für schwach fehlt in der Bank (terme-e2-k4-s6-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:56: TODO Darstellung für schwach fehlt in der Bank (terme-e2-k4-s7-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:58: TODO Darstellung für schwach fehlt in der Bank (terme-e2-k4-s8-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:60: TODO Darstellung für schwach fehlt in der Bank (terme-e2-k4-s9-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:62: TODO Darstellung für schwach fehlt in der Bank (terme-e2-k4-s10-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:67: TODO \verfahren{…}: Verfahrensüberschrift in Sachsprache fehlt in der Bank (2.3 b)
+  e2_a.tex:68: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 15
+  e2_a.tex:69: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 15
+  e2_a.tex:71: TODO Darstellung für schwach fehlt in der Bank (terme-e2-k5-s1-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:73: TODO Darstellung für schwach fehlt in der Bank (terme-e2-k5-s1-v2; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:75: TODO Darstellung für schwach fehlt in der Bank (terme-e2-k5-s1-v3; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:77: TODO Darstellung für schwach fehlt in der Bank (terme-e2-k5-s1-v4; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:79: TODO Darstellung für schwach fehlt in der Bank (terme-e2-k5-s1-v5; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:82: TODO Darstellung für schwach fehlt in der Bank (terme-e2-k5-s2-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:84: TODO Darstellung für schwach fehlt in der Bank (terme-e2-k5-s3-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:86: TODO Darstellung für schwach fehlt in der Bank (terme-e2-k5-s4-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:88: TODO Darstellung für schwach fehlt in der Bank (terme-e2-k5-s5-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:90: TODO Darstellung für schwach fehlt in der Bank (terme-e2-k5-s6-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:95: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 16
+  e2_a.tex:96: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 16
+  e2_l.tex:7: TODO Lösung der Erklärzeile 14f) fehlt in der Bank
+  e2_l.tex:9: TODO Lösung der Erklärzeile 15f) fehlt in der Bank
+  e3_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 3
+  e3_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 17
+  e3_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 17
+  e3_a.tex:15: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 18
+  e3_a.tex:16: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 18
+  e3_a.tex:18: TODO Darstellung für schwach fehlt in der Bank (terme-e3-k2-s1-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:20: TODO Darstellung für schwach fehlt in der Bank (terme-e3-k2-s1-v2; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:22: TODO Darstellung für schwach fehlt in der Bank (terme-e3-k2-s1-v3; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:24: TODO Darstellung für schwach fehlt in der Bank (terme-e3-k2-s1-v4; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:26: TODO Darstellung für schwach fehlt in der Bank (terme-e3-k2-s1-v5; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:30: TODO Darstellung für schwach fehlt in der Bank (terme-e3-k2-s3-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:32: TODO Darstellung für schwach fehlt in der Bank (terme-e3-k2-s4-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:34: TODO Darstellung für schwach fehlt in der Bank (terme-e3-k2-s5-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:36: TODO Darstellung für schwach fehlt in der Bank (terme-e3-k2-s6-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:41: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 19
+  e3_a.tex:42: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 19
+  e3_l.tex:5: TODO Lösung der Erklärzeile 18f) fehlt in der Bank
+  e4_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 4
+  e4_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 20
+  e4_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 20
+  e4_a.tex:10: TODO Darstellung für schwach fehlt in der Bank (terme-e4-k1-s1-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:12: TODO Darstellung für schwach fehlt in der Bank (terme-e4-k1-s1-v2; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:14: TODO Darstellung für schwach fehlt in der Bank (terme-e4-k1-s1-v3; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:16: TODO Darstellung für schwach fehlt in der Bank (terme-e4-k1-s1-v4; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:18: TODO Darstellung für schwach fehlt in der Bank (terme-e4-k1-s1-v5; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:21: TODO Darstellung für schwach fehlt in der Bank (terme-e4-k1-s2-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:23: TODO Darstellung für schwach fehlt in der Bank (terme-e4-k1-s3-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:25: TODO Darstellung für schwach fehlt in der Bank (terme-e4-k1-s4-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:27: TODO Darstellung für schwach fehlt in der Bank (terme-e4-k1-s5-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:29: TODO Darstellung für schwach fehlt in der Bank (terme-e4-k1-s6-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:31: TODO Darstellung für schwach fehlt in der Bank (terme-e4-k1-s7-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:36: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 21
+  e4_a.tex:37: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 21
+  e4_l.tex:4: TODO Lösung der Erklärzeile 20f) fehlt in der Bank
+STRUKTUR 0 Fehler

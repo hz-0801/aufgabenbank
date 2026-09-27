@@ -1,0 +1,34 @@
+% Einheit 1 von 5 – Monotonie und erste Ableitung (bank/kurvenuntersuchung/e1.jsonl, zusammenbau v0.1)
+%% TODO Zeitmarke Einheit 1: Marken-Zeile nicht lesbar
+%% TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 1
+\einheitenkopf[e1]{Einheit 1 von 5 · Monotonie und erste Ableitung}
+\zweigzeile{Abitur GK}
+\setcounter{aufgabe}{8}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 9
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 9
+\begin{aufgabe}{Monotonie}
+%% TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+\begin{teile}
+\teil Die Abbildung zeigt den Graphen von $f$. Lege ein Lineal als Tangente an den Punkt $P$: Steigt der Graph dort, fällt er oder ist er waagerecht? \\ \kreuz{steigt} \kreuz{fällt} \kreuz{waagerecht}
+
+\begin{ksys}[xmin=-3,xmax=3,ymin=-3,ymax=3,ablesen] \funktion{0.5*\x^3-1.5*\x}{f} \punkt{2}{1}{P} \end{ksys}
+\teil Gegeben ist die Ableitung $f'(x) = 2x - 6$. Welches Vorzeichen hat $f'(x)$ auf dem Intervall $[4; 6]$? Kreuze an. \\ \kreuz{$f$ steigt auf diesem Intervall} \\ \kreuz{$f$ fällt auf diesem Intervall}
+\teil Bestimme die Monotonieintervalle von $f(x) = x^3 - 3x^2 - 9x + 1$.
+\teil Bestimme die Monotonieintervalle von $f(x) = -x^3 + 3x^2 + 9x$. Prüfe das Vorzeichen von $f'$ in jedem Intervall an einer Probestelle.
+\teil Eine ganzrationale Funktion $f$ dritten Grades hat genau die Extrempunkte $H(-2 | 5)$ und $T(1 | -3)$. Gib ohne Rechnung an, wo $f$ steigt und wo $f$ fällt.
+\teil Zeige, dass der Graph von $f(x) = \frac{1}{3}x^3 + 2$ monoton steigend ist. \hfill (Abitur 2026 GK)
+\teil Begründe mit der Ableitung, dass der Graph von $f(x) = x^3 + 2x - 1$ keinen Extrempunkt hat.
+\teil Gegeben sind $f(x) = \frac{1}{4}x^3 - x^2 + 2x + 1$ und $p(x) = -x^2 + 5x - 4$. Für $0 \le x \le 4$ liegt der Graph von $f$ oberhalb des Graphen von $p$; $d(x) = f(x) - p(x)$ ist ihr senkrechter Abstand. Ermittle, wo $d$ steigt und wo $d$ fällt, und gib den Wertebereich von $d$ an. \hfill (Abitur 2021 GK)
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 10
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 10
+\begin{aufgabe}{Monotonie – Fehler finden, Begründen, Anwendung}
+\begin{teile}
+\teil Finde den Fehler und stelle richtig. Gesucht war, wo der Graph von $f(x) = x^3 - 6x^2$ steigt. \rechnung{f''(x) &= 6x - 12 \\ 6x - 12 &> 0 &&\text{für } x > 2} Antwort: Der Graph steigt für $x > 2$.
+\teil Begründe ohne zu rechnen, warum $f'(x) = (x - 2)^2 + 1$ nie null wird.
+\teil Die Zahl der Grippekranken (in Hundert) in zwei Städten wird für die Tage $t$ ab Beginn einer Welle modelliert durch $A(t) = -0{,}1t^3 + 1{,}5t^2$ mit $0 \le t \le 15$ und $B(t) = -0{,}2t^3 + 2{,}4t^2$ mit $0 \le t \le 12$. Beurteile die Aussage: „In Stadt A nimmt die Zahl der Kranken länger zu als in Stadt B.“
+\end{teile}
+\end{aufgabe}

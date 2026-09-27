@@ -1,0 +1,50 @@
+% Einheit 1 von 4 – Dreiecksflächen (bank/flaecheninhalt-und-volumen-im-raum/e1.jsonl, zusammenbau v0.1)
+%% TODO Zeitmarke Einheit 1: Marken-Zeile nicht lesbar
+%% TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 1
+\einheitenkopf[e1]{Einheit 1 von 4 · Dreiecksflächen}
+\zweigzeile{Abitur GK}
+\setcounter{aufgabe}{8}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 9
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 9
+\begin{aufgabe}{Welche Figur, welche Formel?}
+\begin{teile}
+\teil Ein Dach hat vier gleiche dreieckige Seitenflächen. Welche Formel für eine Seitenfläche? \\ \kreuz{Grundseite mal Höhe} \\ \kreuz{halbe Grundseite mal Höhe} \\ \kreuz{halbes Diagonalenprodukt}
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 10
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 10
+\begin{aufgabe}{Dreiecksflächen}
+%% TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+\begin{teile}
+\teil Im Dreieck $PQR$ ist $M$ der Mittelpunkt von $PQ$, und $MR$ steht senkrecht auf $PQ$. Was ist $MR$? \\ \kreuz{Höhe zu PQ} \\ \kreuz{schräge Seite}
+\teil $P(1 | 1 | 0)$, $Q(4 | 5 | 0)$, $R(-4 | 11 | 0)$, rechtwinklig bei $Q$. Flächeninhalt des Dreiecks $PQR$? A = \leerfeld FE
+\teil Das Dreieck mit $P(1 | 0 | 2)$, $Q(5 | 4 | 0)$, $R(5 | 1 | 3)$ ist gleichschenklig mit der Basis $PQ$. Flächeninhalt? A = \leerfeld FE
+\teil Die Ebene $3x - 2y + z = 12$ schneidet die $x$-Achse und die $y$-Achse. Diese beiden Schnittpunkte und der Ursprung bilden ein Dreieck. Flächeninhalt? A = \leerfeld FE
+\teil Licht fällt in Richtung $(0 | 1 | -1)$ auf das Dreieck mit $P(1 | 0 | 2)$, $Q(4 | 0 | 2)$, $R(1 | 1 | 4)$. Bestimme die Schattenpunkte in der $x$-$y$-Ebene, zeichne das Schattendreieck ein und berechne seinen Flächeninhalt.
+
+\begin{ksys3}[x1min=-1,x1max=6,x2min=-1,x2max=6,x3min=0,x3max=5] \rpunkt{1}{0}{2}{P} \rpunkt{4}{0}{2}{Q} \rpunkt{1}{1}{4}{R} \end{ksys3}
+A = \leerfeld FE
+\end{teile}
+\begin{gleichungsraster}[2]
+\gl{\text{Der Ursprung $O$, $P(6 | 8 | 0)$ und $R(3 | 4 | z)$ mit $z > 0$ bilden ein gleichschenkliges Dreieck mit der Basis $OP$ und dem Flächeninhalt 40. Wert von $z$? (Abitur 2022 GK)}} &
+\end{gleichungsraster}
+\begin{teile}
+\teil $P(1 | 0 | 0)$, $Q(3 | 1 | 0)$, $R(2 | 4 | 1)$; für $T$ gilt $\overrightarrow{OT} = \overrightarrow{OR} - 3 \cdot \overrightarrow{PQ}$. Bestimme $T$ und das Verhältnis der Flächeninhalte von Dreieck $PQR$ und Viereck $PQRT$. \hfill (Abitur 2024 GK)
+\teil Für die Punkte $R$, $S$, $T$ gilt $\overrightarrow{OT} = \overrightarrow{OR} + 2 \cdot \overrightarrow{RS}$. Begründe ohne Rechnung anhand einer Skizze, dass die Dreiecke $ORS$ und $OST$ denselben Flächeninhalt haben. \hfill (Abitur 2023 LK)
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 11
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 11
+\begin{aufgabe}{Dreiecksflächen – Fehler finden, Begründen, Darstellungswechsel, Anwendung}
+\begin{teile}
+\teil Das Dreieck mit $P(0 | 0 | 1)$, $Q(6 | 0 | 1)$, $R(3 | 4 | 1)$ ist gleichschenklig mit der Basis $PQ$. Tom rechnet: \rechnung{|PR| &= 5 \\ A &= \tfrac{1}{2} \cdot 6 \cdot 5 = 15} Finde den Fehler und rechne richtig.
+\teil Begründe: Im gleichschenkligen Dreieck geht die Höhe zur Basis durch den Mittelpunkt der Basis.
+\teil Stelle für das Dreieck $PQR$ im Koordinatensystem einen Flächenterm „Rechteck minus Randdreiecke“ auf und berechne den Flächeninhalt.
+
+\begin{ksys}[xmin=-1,xmax=6,ymin=-1,ymax=5] \punkt{0}{1}{P} \punkt{5}{0}{Q} \punkt{3}{4}{R} \end{ksys}
+\teil Ein dreieckiges Sonnensegel ist an zwei Pfosten in $P(0 | 0 | 2)$ und $Q(6 | 0 | 2)$ und an der Hauswand in $R(3 | 4 | 5)$ befestigt (1 LE = 1 m); es ist gleichschenklig mit der Basis $PQ$. Der Stoff kostet 12\,€ pro m². Was kostet das Segel? \leerfeld[€]
+\end{teile}
+\end{aufgabe}

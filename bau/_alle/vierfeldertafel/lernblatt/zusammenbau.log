@@ -1,0 +1,82 @@
+# zusammenbau v0.1: zusammenbau.py vierfeldertafel
+VORLAGE mathblatt.sty: Version 2026-09-28a
+EINHEITEN [1, 2]
+AUSWAHL vierfeldertafel-zone-f1-v1 – Zone f1 „Anteile, Prozentsätze und absolute Häufi“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL vierfeldertafel-zone-f1-v3 – Zone f1 „Anteile, Prozentsätze und absolute Häufi“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f1 „Anteile, Prozentsätze und absolute Häufi“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL vierfeldertafel-zone-f2-v1 – Zone f2 „Zweistufige Zufallsexperimente und Pfadr“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL vierfeldertafel-zone-f2-v3 – Zone f2 „Zweistufige Zufallsexperimente und Pfadr“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f2 „Zweistufige Zufallsexperimente und Pfadr“ – Sprossen [3, 4, 5] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL vierfeldertafel-zone-f3-v1 – Zone f3 „Gegenereignis und Komplement (der Rest z“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL vierfeldertafel-zone-f3-v3 – Zone f3 „Gegenereignis und Komplement (der Rest z“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f3 „Gegenereignis und Komplement (der Rest z“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL vierfeldertafel-zone-f4-v1 – Zone f4 „Tabellen lesen und ausfüllen (Zeilen- un“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL vierfeldertafel-zone-f4-v3 – Zone f4 „Tabellen lesen und ausfüllen (Zeilen- un“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f4 „Tabellen lesen und ausfüllen (Zeilen- un“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL vierfeldertafel-zone-f5-v1 – Zone f5 „Lineare Gleichungen und Ungleichungen mi“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL vierfeldertafel-zone-f5-v3 – Zone f5 „Lineare Gleichungen und Ungleichungen mi“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f5 „Lineare Gleichungen und Ungleichungen mi“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL vierfeldertafel-zone-f2-v5 – Zone-Paar, Fehler finden
+AUSWAHL vierfeldertafel-zone-f2-v6 – Zone-Paar, gleichartige Rechenaufgabe
+AUSWAHL vierfeldertafel-e1-k1-s0-v1 – e1 k1 „Weder–noch, entweder–oder, oder?“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e1 k1 „Weder–noch, entweder–oder, oder?“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL vierfeldertafel-e1-k2-s0-v1 – e1 k2 „Die Tafel füllen“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL vierfeldertafel-e1-k2-s1-v1 – e1 k2 „Die Tafel füllen“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL vierfeldertafel-e1-k2-s2-v1 – e1 k2 „Die Tafel füllen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL vierfeldertafel-e1-k2-s3-v1 – e1 k2 „Die Tafel füllen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL vierfeldertafel-e1-k2-s4-v1 – e1 k2 „Die Tafel füllen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL vierfeldertafel-e1-k2-s5-v1 – e1 k2 „Die Tafel füllen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL vierfeldertafel-e1-k2-s6-v1 – e1 k2 „Die Tafel füllen“ (verfahren), Sprosse 6: Variante 1; übergangen v2
+KETTE e1 k2 „Die Tafel füllen“ (verfahren) → eine Hauptnummer
+AUSWAHL vierfeldertafel-e1-k3-s1-v1 – e1 k3 „Die Tafel füllen“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL vierfeldertafel-e1-k3-s2-v1 – e1 k3 „Die Tafel füllen“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+KETTE e1 k3 „Die Tafel füllen“ (pflicht) → eine Hauptnummer
+AUSWAHL vierfeldertafel-e2-k1-s0-v1 – e2 k1 „Aus der Tafel rechnen“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL vierfeldertafel-e2-k1-s1-v1 – e2 k1 „Aus der Tafel rechnen“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL vierfeldertafel-e2-k1-s2-v1 – e2 k1 „Aus der Tafel rechnen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL vierfeldertafel-e2-k1-s3-v1 – e2 k1 „Aus der Tafel rechnen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL vierfeldertafel-e2-k1-s4-v1 – e2 k1 „Aus der Tafel rechnen“ (verfahren), Sprosse 4: Variante 1; übergangen v2
+KETTE e2 k1 „Aus der Tafel rechnen“ (verfahren) → eine Hauptnummer
+AUSWAHL vierfeldertafel-e2-k2-s1-v1 – e2 k2 „Aus der Tafel rechnen“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL vierfeldertafel-e2-k2-s2-v1 – e2 k2 „Aus der Tafel rechnen“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+KETTE e2 k2 „Aus der Tafel rechnen“ (pflicht) → eine Hauptnummer
+KOPF Einheit 1: „Einheit 1 von 2 · Einheit 1“; Marken „None“ → Zeitmarke „None“, Prüfungswort „None“
+WARNUNG Nr. 9: 7 Teilaufgaben, 5 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 2: „Einheit 2 von 2 · Einheit 2“; Marken „None“ → Zeitmarke „None“, Prüfungswort „None“
+TODO 35 Stellen in den Quelltexten:
+  abhaken.tex:2: TODO Ich-kann-Sätze: Platzhalter wie in den Aufgabendateien
+  blatt0_a.tex:5: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 1
+  blatt0_a.tex:6: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 1
+  blatt0_a.tex:14: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 2
+  blatt0_a.tex:15: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 2
+  blatt0_a.tex:23: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 3
+  blatt0_a.tex:24: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 3
+  blatt0_a.tex:32: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 4
+  blatt0_a.tex:33: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 4
+  blatt0_a.tex:43: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 5
+  blatt0_a.tex:44: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 5
+  blatt0_a.tex:54: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 6
+  blatt0_a.tex:55: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 6
+  blatt0_a.tex:62: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 7
+  blatt0_a.tex:63: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 7
+  e1_a.tex:2: TODO Prüfungswort Einheit 1: nicht in der Marken-Zeile
+  e1_a.tex:3: TODO Zeitmarke Einheit 1: Marken-Zeile nicht lesbar
+  e1_a.tex:4: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 1
+  e1_a.tex:5: TODO Einheitentitel 1 nicht in der Mappe lesbar
+  e1_a.tex:9: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 8
+  e1_a.tex:10: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 8
+  e1_a.tex:17: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 9
+  e1_a.tex:18: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 9
+  e1_a.tex:20: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e1_a.tex:43: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 10
+  e1_a.tex:44: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 10
+  e2_a.tex:2: TODO Prüfungswort Einheit 2: nicht in der Marken-Zeile
+  e2_a.tex:3: TODO Zeitmarke Einheit 2: Marken-Zeile nicht lesbar
+  e2_a.tex:4: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 2
+  e2_a.tex:5: TODO Einheitentitel 2 nicht in der Mappe lesbar
+  e2_a.tex:9: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 11
+  e2_a.tex:10: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 11
+  e2_a.tex:12: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e2_a.tex:24: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 12
+  e2_a.tex:25: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 12
+STRUKTUR 0 Fehler

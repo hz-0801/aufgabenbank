@@ -1,0 +1,51 @@
+% Einheit 4 von 4 – Einheit 4 (bank/kenngroessen-von-verteilungen/e4.jsonl, zusammenbau v0.1)
+%% TODO Prüfungswort Einheit 4: nicht in der Marken-Zeile
+%% TODO Zeitmarke Einheit 4: Marken-Zeile nicht lesbar
+%% TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 4
+%% TODO Einheitentitel 4 nicht in der Mappe lesbar
+\einheitenkopf[e4]{Einheit 4 von 4 · Einheit 4}
+\setcounter{aufgabe}{26}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 27
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 27
+\begin{aufgabe}{Diagramm}
+%% TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+\begin{teile}
+\teil Eine Münze wird zehnmal geworfen; das Diagramm zeigt die Verteilung der Anzahl von Zahl. Was ist der Erwartungswert dieser Anzahl? \\ \kreuz{Er ist die Trefferzahl, die bei jedem Durchgang herauskommt.} \\ \kreuz{Er ist der Durchschnitt der Trefferzahlen vieler Durchgänge.} \\ \kreuz{Er ist die Höhe der höchsten Säule.}
+
+\binomialverteilung{10}{0.5}
+\teil Das Diagramm zeigt die Verteilung einer binomialverteilten Zufallsgröße $X$ mit $n = 10$; der Erwartungswert von $X$ ist ganzzahlig. Lies ihn ab und bestimme $p$.
+
+\binomialverteilung{10}{0.3}
+$p = $ \leerfeld
+\teil Die Diagramme zeigen die Verteilungen von $X$ und $Y$, beide binomialverteilt mit $n = 10$ und ganzzahligem Erwartungswert. Welche hat die größere Trefferwahrscheinlichkeit? Bestimme beide.
+
+\binomialverteilung{10}{0.2} \binomialverteilung{10}{0.6}
+$p_X = $ \leerfeld , $p_Y = $ \leerfeld
+\teil $X$ ist binomialverteilt mit unbekanntem $n$ und der Trefferwahrscheinlichkeit 50\,\%. Das Diagramm zeigt zwei gleich hohe höchste Säulen bei 7 und 8. Begründe, dass $n$ nicht gerade ist \hfill (Abitur 2025 GK).
+
+\binomialverteilung{15}{0.5}
+\teil $X$ ist binomialverteilt mit $n = 100$ und der Trefferwahrscheinlichkeit 50\,\%; $\mu$ ist der Erwartungswert, $\sigma$ die Standardabweichung. Das Diagramm zeigt die Säulenhöhen etwa 0{,}080 bei 50, 0{,}078 bei 49 und 51 sowie 0{,}074 bei 48 und 52. Bestimme einen Näherungswert für $P(\mu - 0{,}5 \cdot \sigma \le X \le \mu + 0{,}5 \cdot \sigma)$ \hfill (Abitur 2026 LK).
+
+\binomialverteilung[von=40,bis=60]{100}{0.5}
+$P \approx $ \leerfeld
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 28
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 28
+\begin{aufgabe}{Diagramm – Fehler finden, Begründen, Darstellungswechsel, Anwendung}
+\begin{teile}
+\teil Das Diagramm zeigt die Verteilung einer binomialverteilten Zufallsgröße mit $n = 10$ und ganzzahligem Erwartungswert. Tim sagt: „Die höchste Säule ist etwa 0{,}25 hoch, also ist $p = 0{,}25$.“ Finde den Fehler und bestimme $p$ richtig.
+
+\binomialverteilung{10}{0.4}
+\teil Begründe, warum bei einer Binomialverteilung mit ganzzahligem Erwartungswert die höchste Säule genau beim Erwartungswert steht.
+\teil Das Diagramm zeigt die Verteilung einer binomialverteilten Zufallsgröße $X$ mit $n = 6$. Lies die Wahrscheinlichkeiten ab und trage sie auf zwei Stellen in die Tabelle ein.
+
+\binomialverteilung{6}{0.5} \sachtabelle{lccccccc}{$k$ & 0 & 1 & 2 & 3 & 4 & 5 & 6}{$P(X = k)$ & \leerzelle & \leerzelle & \leerzelle & \leerzelle & \leerzelle & \leerzelle & \leerzelle}
+\teil Ein Test hat zwölf Fragen mit je vier Antworten, von denen eine richtig ist; wer rät, trifft je Frage mit der Wahrscheinlichkeit $\frac{1}{4}$. Das Diagramm zeigt die Verteilung der richtigen Antworten beim Raten. Ab wie vielen richtigen Antworten liegt man über $\mu + 2\sigma$ ($\mu$ Erwartungswert, $\sigma$ Standardabweichung), sodass man kaum noch von Raten ausgehen kann?
+
+\binomialverteilung{12}{0.25}
+ab \leerfeld richtigen Antworten
+\end{teile}
+\end{aufgabe}

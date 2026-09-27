@@ -1,0 +1,45 @@
+% Einheit 3 von 3 – Maximum bestimmen und deuten (bank/extremalprobleme/e3.jsonl, zusammenbau v0.1)
+%% TODO Zeitmarke Einheit 3: Marken-Zeile nicht lesbar
+%% TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 3
+\einheitenkopf[e3]{Einheit 3 von 3 · Maximum bestimmen und deuten}
+\zweigzeile{Abitur GK}
+\setcounter{aufgabe}{12}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 13
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 13
+\begin{aufgabe}{Maximum bestimmen}
+%% TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+\begin{teile}
+\teil Frage: „Wie groß ist der größtmögliche Flächeninhalt?“ Was ist verlangt? \kreuz{die Stelle $x$} \\ \kreuz{die Seitenlängen} \\ \kreuz{der Flächeninhalt}
+\end{teile}
+\begin{gleichungsraster}[2]
+\gl{\text{Die Zielfunktion $A(a) = 30a - 2a^2$, $0 < a < 15$, beschreibt einen Flächeninhalt. Bestimme die Stelle mit $A'(a) = 0$ im Definitionsbereich.}} &
+\end{gleichungsraster}
+\begin{teile}
+\teil Für ein Beet an einer Mauer mit 24 m Zaun für drei Seiten gilt $A(a) = 24a - 2a^2$ ($a$ senkrecht zur Mauer, in m). Bestimme Maße und Flächeninhalt des größten Beets und weise nach, dass es ein Maximum ist.
+\teil Die Zielfunktion $A(x) = -0{,}6x^5 + 2x^3 + 24x$ beschreibt für $0 < x < 3$ den Flächeninhalt eines Dreiecks. Bestimme die Extremstelle im Intervall und weise nach, dass dort der Flächeninhalt maximal ist. \hfill (FHR 2023)
+\teil Der Ursprung und $P(u | f(u))$ mit $u > 0$ auf dem Graphen von $f(x) = (x + 3) \cdot e^{-0{,}5x}$ sind gegenüberliegende Ecken eines achsenparallelen Rechtecks; genau ein $u$ liefert den größten Flächeninhalt. Bestimme die Koordinaten von $P$ für diesen Fall (Kontrolle: $A'(u) = (-0{,}5u^2 + 0{,}5u + 3) \cdot e^{-0{,}5u}$). \hfill (Abitur 2022 GK)
+\teil Ein Skispringer fliegt entlang $f(x) = -0{,}01x^2 + 40$, der Hang verläuft entlang $g(x) = -0{,}5x + 40$ (1 LE = 1 m); der Sprung endet bei $x = 50$. Weise nach, dass der größte vertikale Abstand zwischen Springer und Hang $6{,}25$ m beträgt. Auf die hinreichende Bedingung darf verzichtet werden. \hfill (Abitur 2018 GK)
+\teil Unter dem Graphen von $f(x) = -x^2 + 10x$ liegen die Trapeze mit den Ecken $(0 | 0)$, $(10 | 0)$, $(10 - u | f(u))$ und $(u | f(u))$, $0 < u < 5$; ihr Flächeninhalt ist $T(u) = (10 - u) \cdot f(u)$. Eines hat den größten Inhalt. Bestimme den zugehörigen Wert von $u$. \hfill (Abitur 2019 GK) \\ u = \leerfeld
+\teil Für $0 < x < 2$ legt der Punkt $P(x | f(x))$ auf dem Graphen von $f(x) = 4 - x^2$ mit dem Ursprung ein achsenparalleles Rechteck fest, dessen Flächeninhalt für genau ein $x$ maximal ist. Weise nach, dass diese Stelle nicht $x = 1$ ist. \hfill (Abitur 2021 GK)
+\teil Gegeben ist $f(x) = 9 - x^2$. Die Schritte (1) $A(u) = \tfrac{1}{2} \cdot (u + 3) \cdot f(u)$, (2) $A'(u) = 0 \Leftrightarrow u = 1$, (3) $A''(1) < 0$, (4) $A(1) = 16$ lösen eine Extremwertaufgabe. Formuliere eine passende Aufgabenstellung und erläutere die Schritte. \hfill (Abitur 2024 LK)
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 14
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 14
+\begin{aufgabe}{Kleinsten Abstand eines Punktes zu einem Graphen über die Abstandsfunktion bestimmen}
+\begin{teile}
+\teil Bestimme den kleinsten Abstand des Punkts $(2 | 0)$ vom Graphen von $f(x) = \sqrt{x}$. \hfill (Abitur 2018 LK)
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 15
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 15
+\begin{aufgabe}{Maximum bestimmen – Fehler finden, Begründen, Anwendung}
+\begin{teile}
+\teil Finde den Fehler. Für $A(x) = 75x - x^3$, $0 < x < \sqrt{75}$, rechnet Jonas: $A'(x) = 75 - 3x^2 = 0$, also $x = 5$ oder $x = -5$ – es gibt zwei größte Rechtecke.
+\teil Begründe ohne Rechnung, dass es unter den Rechtecken mit einer Ecke im Ursprung und der gegenüberliegenden Ecke auf dem Graphen von $f(x) = 4 - x^2$, $0 < x < 2$, ein größtes, aber kein kleinstes gibt.
+\teil Aus einem quadratischen Karton mit 30 cm Seitenlänge wird eine offene Schachtel gefaltet, indem an den Ecken Quadrate der Seitenlänge $x$ ausgeschnitten werden; ihr Volumen ist $V(x) = 4x^3 - 120x^2 + 900x$, $0 < x < 15$. Wie groß müssen die Quadrate sein, damit die Schachtel möglichst viel fasst, und wie viel fasst sie dann?
+\end{teile}
+\end{aufgabe}

@@ -1,0 +1,63 @@
+% Einheit 1 von 4 – Normalparabel und Streckfaktor (bank/quadratische-funktionen/e1.jsonl, zusammenbau v0.1)
+%% TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 1
+\einheitenkopf[e1]{Einheit 1 von 4 · Normalparabel und Streckfaktor}
+\zweigzeile{ab Kl. 9, je nach Buch bis Kl. 10 · P10 oft}
+\setcounter{aufgabe}{10}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 11
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 11
+\begin{aufgabe}{Normalparabel und Streckfaktor}
+%% TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+\begin{teile}
+\teil $f(x) = 4x - 1$ – Gerade oder Parabel? \kreuz{Gerade} \kreuz{Parabel}
+\teil Wertetabelle zu $f(x) = x^2$ – fülle aus.
+\wertetabelle{x}{f(x)}{-2,-1,0,1,2}
+\teil Trage die Punkte ein und zeichne die Parabel zu $f(x) = x^2$ als Bogen.
+\wertetabelle[9,4,1,0,1,4,9]{x}{f(x)}{-3,-2,-1,0,1,2,3}
+
+\begin{ksys}[xmin=-4,xmax=4,ymin=-1,ymax=10]
+\end{ksys}
+\teil Normalparabel $f(x) = x^2$ – Scheitel und Symmetrieachse?
+
+\begin{ksys}[xmin=-4,xmax=4,ymin=-1,ymax=9,ablesen]
+\parabel{1}{0}{0}{f}
+\end{ksys}
+S( \leerfeld | \leerfeld ), Symmetrieachse: \leerfeld
+\teil $f(x) = x^2$ – $f(-6)$? f(-6) = \leerfeld
+\teil Wertetabelle zu $f(x) = 4x^2$ – fülle aus.
+\wertetabelle{x}{f(x)}{-2,-1,0,1,2}
+\teil $f(x) = -4x^2$ – \kreuz{nach oben} \kreuz{nach unten} \\ \kreuz{schmaler} \kreuz{breiter} als die Normalparabel
+\teil Welche Tabelle gehört zu $f(x) = 0{,}5x^2$? \\ A: \wertetabelle[2,0{,}5,0,0{,}5,2]{x}{y}{-2,-1,0,1,2} \\ B: \wertetabelle[1,0{,}25,0,0{,}25,1]{x}{y}{-2,-1,0,1,2} \\ C: \wertetabelle[4,1,0,1,4]{x}{y}{-2,-1,0,1,2} \\ \kreuz{A} \kreuz{B} \kreuz{C}
+\teil $f(x) = 0{,}5x^2$ – zeichne die Parabel mit den halbierten Werten der Normalparabel.
+
+\begin{ksys}[xmin=-5,xmax=5,ymin=-1,ymax=9]
+\end{ksys}
+\teil Welche Gleichung gehört zum Graphen? \\ \kreuz{$f(x) = x^2 + 3$} \\ \kreuz{$f(x) = -x^2 - 3$} \\ \kreuz{$f(x) = x^2 - 3$} \\ \kreuz{$f(x) = -x^2 + 3$}
+
+\begin{ksys}[xmin=-4,xmax=4,ymin=-5,ymax=5,ablesen]
+\funktion{-1*\x^2+(3)}{f}
+\end{ksys}
+\teil Welche Wertetabelle gehört zu $y = 4x^2$? \\ A: \wertetabelle[-8,-4,0,4,8]{x}{y}{-2,-1,0,1,2} \\ B: \wertetabelle[16,4,0,4,16]{x}{y}{-2,-1,0,1,2} \\ C: \wertetabelle[64,16,0,16,64]{x}{y}{-2,-1,0,1,2} \\ \kreuz{A} \kreuz{B} \kreuz{C} \hfill (P10 2026 FOR)
+\teil Ein Stein fällt von einer $45\,$m hohen Brücke. Der Graph zeigt seine Höhe $h$ (in m) nach $t$ Sekunden. Welche Gleichung passt? Kreuze an und begründe. \\ \kreuz{$h(t) = 5t^2 + 45$} \\ \kreuz{$h(t) = 5t^2 - 45$} \\ \kreuz{$h(t) = -5t^2 + 45$} \\ \kreuz{$h(t) = -5t^2 - 45$} \hfill (P10 2015 OS)
+
+\begin{ksys}[xmin=0,xmax=4,ymin=0,ymax=50,xstep=0.5,ystep=5,xlabel=$t$ in s,ylabel=$h$ in m,ablesen]
+\funktionab{-5*\x^2+45}{h}{0}{3}
+\end{ksys}
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 12
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 12
+\begin{aufgabe}{Normalparabel und Streckfaktor – Fehler finden, Begründen, Darstellungswechsel, Anwendung}
+\begin{teile}
+\teil Mia füllt die Tabelle zu $f(x) = x^2$ so aus: \\ \wertetabelle[-16,-4,0,4,16]{x}{f(x)}{-4,-2,0,2,4} \\ Finde den Fehler und korrigiere.
+\teil $f(x) = x^2$ hat bei $x = 8$ und bei $x = -8$ denselben Wert. Warum?
+\teil Die Tabelle gehört zu $f(x) = a \cdot x^2$. \\ \wertetabelle[7,28,63]{x}{f(x)}{1,2,3} \\ Wie heißt $a$? a = \leerfeld
+\teil Der Bogen einer Brücke folgt $h(x) = -0{,}02x^2$ ($x$ und $h$ in m, der Ursprung liegt im höchsten Punkt des Bogens). Wie tief liegt der Bogen $20\,$m neben der Mitte unter dem höchsten Punkt?
+
+\begin{ksys}[xmin=-30,xmax=30,ymin=-20,ymax=5,xstep=10,ystep=5,xlabel=$x$ in m,ylabel=$h$ in m]
+\funktion{-0.02*\x^2}{h}
+\end{ksys}
+\leerfeld[m]
+\end{teile}
+\end{aufgabe}

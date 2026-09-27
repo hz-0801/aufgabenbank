@@ -1,0 +1,241 @@
+# zusammenbau v0.1: zusammenbau.py pyramide-kegel-kugel --schwach
+VORLAGE mathblatt.sty: Version 2026-09-28a
+EINHEITEN [1, 2, 3]
+AUSWAHL pyramide-kegel-kugel-zone-f1-v1 – Zone f1 „Flächeninhalt von Quadrat, Rechteck, Dre“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL pyramide-kegel-kugel-zone-f1-v3 – Zone f1 „Flächeninhalt von Quadrat, Rechteck, Dre“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f1 „Flächeninhalt von Quadrat, Rechteck, Dre“ – Sprossen [3, 4] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL pyramide-kegel-kugel-zone-f2-v1 – Zone f2 „Volumen von Prisma und Zylinder als Grun“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL pyramide-kegel-kugel-zone-f2-v3 – Zone f2 „Volumen von Prisma und Zylinder als Grun“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f2 „Volumen von Prisma und Zylinder als Grun“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL pyramide-kegel-kugel-zone-f3-v1 – Zone f3 „Satz des Pythagoras“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL pyramide-kegel-kugel-zone-f3-v3 – Zone f3 „Satz des Pythagoras“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f3 „Satz des Pythagoras“ – Sprossen [3, 4] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL pyramide-kegel-kugel-zone-f4-v1 – Zone f4 „Quadrieren und hoch drei, Wurzel und Kub“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL pyramide-kegel-kugel-zone-f4-v3 – Zone f4 „Quadrieren und hoch drei, Wurzel und Kub“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f4 „Quadrieren und hoch drei, Wurzel und Kub“ – Sprossen [3, 4, 5] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL pyramide-kegel-kugel-zone-f5-v1 – Zone f5 „Ein Drittel und vier Drittel einer Zahl“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL pyramide-kegel-kugel-zone-f5-v3 – Zone f5 „Ein Drittel und vier Drittel einer Zahl“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f5 „Ein Drittel und vier Drittel einer Zahl“ – Sprossen [3, 4] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL pyramide-kegel-kugel-zone-f6-v1 – Zone f6 „Formel aus der Formelsammlung entnehmen “, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL pyramide-kegel-kugel-zone-f6-v3 – Zone f6 „Formel aus der Formelsammlung entnehmen “, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f6 „Formel aus der Formelsammlung entnehmen “ – Sprossen [3, 4] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL pyramide-kegel-kugel-zone-f7-v1 – Zone f7 „Radius aus Durchmesser“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL pyramide-kegel-kugel-zone-f7-v3 – Zone f7 „Radius aus Durchmesser“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f7 „Radius aus Durchmesser“ – Sprossen [3, 4, 5] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL pyramide-kegel-kugel-zone-f8-v1 – Zone f8 „Volumeneinheiten cm³ → dm³ = l mit 1000,“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL pyramide-kegel-kugel-zone-f8-v3 – Zone f8 „Volumeneinheiten cm³ → dm³ = l mit 1000,“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f8 „Volumeneinheiten cm³ → dm³ = l mit 1000,“ – Sprossen [3, 4, 5] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL pyramide-kegel-kugel-zone-f9-v1 – Zone f9 „Termumformung mit Variablen“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL pyramide-kegel-kugel-zone-f9-v3 – Zone f9 „Termumformung mit Variablen“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f9 „Termumformung mit Variablen“ – Sprossen [3, 4, 5] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL pyramide-kegel-kugel-zone-f7-v5 – Zone-Paar, Fehler finden
+AUSWAHL pyramide-kegel-kugel-zone-f7-v6 – Zone-Paar, gleichartige Rechenaufgabe
+AUSWAHL pyramide-kegel-kugel-e1-k1-s0-v1 – e1 k1 „Säule, Spitze oder Kugel?“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e1 k1 „Säule, Spitze oder Kugel?“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL pyramide-kegel-kugel-e1-k2-s0-v1 – e1 k2 „Stützdreieck einzeichnen“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e1 k2 „Stützdreieck einzeichnen“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL pyramide-kegel-kugel-e1-k3-s0-v1 – e1 k3 „Volumen oder Oberfläche?“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e1 k3 „Volumen oder Oberfläche?“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL pyramide-kegel-kugel-e1-k4-s0-v1 – e1 k4 „Welche Formel?“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e1 k4 „Welche Formel?“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL pyramide-kegel-kugel-e1-k5-s0-v1 – e1 k5 „Pyramide“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL pyramide-kegel-kugel-e1-k5-s1-v1 – e1 k5 „Pyramide“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL pyramide-kegel-kugel-e1-k5-s1-v2 – e1 k5 „Pyramide“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL pyramide-kegel-kugel-e1-k5-s1-v3 – e1 k5 „Pyramide“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL pyramide-kegel-kugel-e1-k5-s1-v4 – e1 k5 „Pyramide“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL pyramide-kegel-kugel-e1-k5-s1-v5 – e1 k5 „Pyramide“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL pyramide-kegel-kugel-e1-k5-s2-v1 – e1 k5 „Pyramide“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e1-k5-s3-v1 – e1 k5 „Pyramide“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e1-k5-s4-v1 – e1 k5 „Pyramide“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e1-k5-s5-v1 – e1 k5 „Pyramide“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e1-k5-s6-v1 – e1 k5 „Pyramide“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e1-k5-s7-v1 – e1 k5 „Pyramide“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e1-k5-s8-v1 – e1 k5 „Pyramide“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e1-k5-s9-v1 – e1 k5 „Pyramide“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e1-k5-s10-v1 – e1 k5 „Pyramide“ (verfahren), Sprosse 10: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e1-k5-s11-v1 – e1 k5 „Pyramide“ (verfahren), Sprosse 11: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e1-k5-s12-v1 – e1 k5 „Pyramide“ (verfahren), Sprosse 12: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e1-k5-s13-v1 – e1 k5 „Pyramide“ (verfahren), Sprosse 13: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e1-k5-s14-v1 – e1 k5 „Pyramide“ (verfahren), Sprosse 14: Variante 1; übergangen v2, v3, v4
+KETTE e1 k5 „Pyramide“ (verfahren) → eine Hauptnummer
+AUSWAHL pyramide-kegel-kugel-e1-k6-s1-v1 – e1 k6 „Pyramide“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e1-k6-s2-v1 – e1 k6 „Pyramide“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e1-k6-s3-v1 – e1 k6 „Pyramide“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e1-k6-s4-v1 – e1 k6 „Pyramide“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e1 k6 „Pyramide“ (pflicht) → eine Hauptnummer
+AUSWAHL pyramide-kegel-kugel-e2-k1-s0-v1 – e2 k1 „Radius oder Durchmesser?“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e2 k1 „Radius oder Durchmesser?“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL pyramide-kegel-kugel-e2-k2-s0-v1 – e2 k2 „Kegel“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL pyramide-kegel-kugel-e2-k2-s1-v1 – e2 k2 „Kegel“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL pyramide-kegel-kugel-e2-k2-s1-v2 – e2 k2 „Kegel“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL pyramide-kegel-kugel-e2-k2-s1-v3 – e2 k2 „Kegel“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL pyramide-kegel-kugel-e2-k2-s1-v4 – e2 k2 „Kegel“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL pyramide-kegel-kugel-e2-k2-s1-v5 – e2 k2 „Kegel“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL pyramide-kegel-kugel-e2-k2-s2-v1 – e2 k2 „Kegel“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e2-k2-s3-v1 – e2 k2 „Kegel“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e2-k2-s4-v1 – e2 k2 „Kegel“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e2-k2-s5-v1 – e2 k2 „Kegel“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e2-k2-s6-v1 – e2 k2 „Kegel“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e2-k2-s7-v1 – e2 k2 „Kegel“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e2-k2-s8-v1 – e2 k2 „Kegel“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e2-k2-s9-v1 – e2 k2 „Kegel“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e2-k2-s10-v1 – e2 k2 „Kegel“ (verfahren), Sprosse 10: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e2-k2-s11-v1 – e2 k2 „Kegel“ (verfahren), Sprosse 11: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e2-k2-s12-v1 – e2 k2 „Kegel“ (verfahren), Sprosse 12: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e2-k2-s13-v1 – e2 k2 „Kegel“ (verfahren), Sprosse 13: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e2-k2-s14-v1 – e2 k2 „Kegel“ (verfahren), Sprosse 14: Variante 1; übergangen v2
+KETTE e2 k2 „Kegel“ (verfahren) → eine Hauptnummer
+AUSWAHL pyramide-kegel-kugel-e2-k3-s1-v1 – e2 k3 „Kegel“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e2-k3-s2-v1 – e2 k3 „Kegel“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e2-k3-s3-v1 – e2 k3 „Kegel“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e2-k3-s4-v1 – e2 k3 „Kegel“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e2 k3 „Kegel“ (pflicht) → eine Hauptnummer
+AUSWAHL pyramide-kegel-kugel-e3-k1-s0-v1 – e3 k1 „Kugel“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL pyramide-kegel-kugel-e3-k1-s1-v1 – e3 k1 „Kugel“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL pyramide-kegel-kugel-e3-k1-s1-v2 – e3 k1 „Kugel“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL pyramide-kegel-kugel-e3-k1-s1-v3 – e3 k1 „Kugel“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL pyramide-kegel-kugel-e3-k1-s1-v4 – e3 k1 „Kugel“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL pyramide-kegel-kugel-e3-k1-s1-v5 – e3 k1 „Kugel“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL pyramide-kegel-kugel-e3-k1-s2-v1 – e3 k1 „Kugel“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e3-k1-s3-v1 – e3 k1 „Kugel“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e3-k1-s4-v1 – e3 k1 „Kugel“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e3-k1-s5-v1 – e3 k1 „Kugel“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e3-k1-s6-v1 – e3 k1 „Kugel“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e3-k1-s7-v1 – e3 k1 „Kugel“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e3-k1-s8-v1 – e3 k1 „Kugel“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e3-k1-s9-v1 – e3 k1 „Kugel“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e3-k1-s10-v1 – e3 k1 „Kugel“ (verfahren), Sprosse 10: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e3-k1-s11-v1 – e3 k1 „Kugel“ (verfahren), Sprosse 11: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e3-k1-s12-v1 – e3 k1 „Kugel“ (verfahren), Sprosse 12: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e3-k1-s13-v1 – e3 k1 „Kugel“ (verfahren), Sprosse 13: Variante 1; übergangen v2, v3, v4
+KETTE e3 k1 „Kugel“ (verfahren) → eine Hauptnummer
+AUSWAHL pyramide-kegel-kugel-e3-k2-s1-v1 – e3 k2 „Kugel“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e3-k2-s2-v1 – e3 k2 „Kugel“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e3-k2-s3-v1 – e3 k2 „Kugel“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL pyramide-kegel-kugel-e3-k2-s4-v1 – e3 k2 „Kugel“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e3 k2 „Kugel“ (pflicht) → eine Hauptnummer
+KOPF Einheit 1: „Einheit 1 von 3 · Pyramide“; Marken „OS Kl. 8–9 (Sekundo 9, Mathematik 2023 8, Schnittpunkt 9, Mathematik heute 9) · GYM Kl. 8–10 (LS 10, Fundamente 8, Elemente 10, mathe.delta 8) · keine P10-Aufgabe · nicht für alle: Sekundo 9 LVL, Sekundo 10 LVL“ → Zeitmarke „ab Kl. 8, je nach Buch bis Kl. 9“, Prüfungswort „keine P10-Aufgabe“
+WARNUNG Nr. 16: 20 Teilaufgaben, 3 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 2: „Einheit 2 von 3 · Kegel“; Marken „OS Kl. 8–10 (Sekundo 9, Mathematik 2023 8, Schnittpunkt 9, Mathematik heute 10) · GYM Kl. 8–10 (LS 10, Fundamente 9, Elemente 10, mathe.delta 8) · P10 · nicht für alle: Sekundo 9 LVL, Sekundo 10 LVL“ → Zeitmarke „ab Kl. 8, je nach Buch bis Kl. 10“, Prüfungswort „P10“
+WARNUNG Nr. 19: 20 Teilaufgaben, 2 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 3: „Einheit 3 von 3 · Kugel“; Marken „OS Kl. 8–10 (Sekundo 10, Mathematik 2023 8, Schnittpunkt 9, Mathematik heute 10) · GYM Kl. 9–10 (LS 10, Fundamente 9, Elemente 10, mathe.delta 9) · P10“ → Zeitmarke „ab Kl. 8, je nach Buch bis Kl. 10 (am Gymnasium ab Kl. 9)“, Prüfungswort „P10“
+WARNUNG Nr. 21: 19 Teilaufgaben, 2 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+TODO 117 Stellen in den Quelltexten:
+  abhaken.tex:2: TODO Ich-kann-Sätze: Platzhalter wie in den Aufgabendateien
+  blatt0_a.tex:4: TODO Grundvorstellungs-Aufgabe als erste Hauptnummer der Zone (2.8) fehlt in der Bank
+  blatt0_a.tex:6: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 1
+  blatt0_a.tex:7: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 1
+  blatt0_a.tex:9: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-zone-f1-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:11: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-zone-f1-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:15: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 2
+  blatt0_a.tex:16: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 2
+  blatt0_a.tex:18: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-zone-f2-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:20: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-zone-f2-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:24: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 3
+  blatt0_a.tex:25: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 3
+  blatt0_a.tex:27: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-zone-f3-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:29: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-zone-f3-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:33: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 4
+  blatt0_a.tex:34: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 4
+  blatt0_a.tex:36: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-zone-f4-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:38: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-zone-f4-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:42: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 5
+  blatt0_a.tex:43: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 5
+  blatt0_a.tex:45: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-zone-f5-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:47: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-zone-f5-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:51: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 6
+  blatt0_a.tex:52: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 6
+  blatt0_a.tex:54: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-zone-f6-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:56: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-zone-f6-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:60: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 7
+  blatt0_a.tex:61: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 7
+  blatt0_a.tex:63: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-zone-f7-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:65: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-zone-f7-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:69: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 8
+  blatt0_a.tex:70: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 8
+  blatt0_a.tex:72: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-zone-f8-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:74: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-zone-f8-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:78: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 9
+  blatt0_a.tex:79: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 9
+  blatt0_a.tex:81: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-zone-f9-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:83: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-zone-f9-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:87: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 10
+  blatt0_a.tex:88: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 10
+  blatt0_a.tex:93: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 11
+  blatt0_a.tex:94: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 11
+  blatt0_a.tex:96: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-zone-f7-v6; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 1
+  e1_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 12
+  e1_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 12
+  e1_a.tex:15: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 13
+  e1_a.tex:16: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 13
+  e1_a.tex:21: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 14
+  e1_a.tex:22: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 14
+  e1_a.tex:29: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 15
+  e1_a.tex:30: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 15
+  e1_a.tex:37: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 16
+  e1_a.tex:38: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 16
+  e1_a.tex:43: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e1-k5-s1-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:45: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e1-k5-s1-v2; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:47: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e1-k5-s1-v3; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:49: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e1-k5-s1-v4; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:51: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e1-k5-s1-v5; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:54: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e1-k5-s2-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:56: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e1-k5-s3-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:58: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e1-k5-s4-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:60: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e1-k5-s5-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:62: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e1-k5-s6-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:64: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e1-k5-s7-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:66: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e1-k5-s8-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:68: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e1-k5-s9-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:72: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e1-k5-s12-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:74: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e1-k5-s13-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:79: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 17
+  e1_a.tex:80: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 17
+  e1_l.tex:8: TODO Lösung der Erklärzeile 16g) fehlt in der Bank
+  e2_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 2
+  e2_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 18
+  e2_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 18
+  e2_a.tex:15: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 19
+  e2_a.tex:16: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 19
+  e2_a.tex:21: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e2-k2-s1-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:23: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e2-k2-s1-v2; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:25: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e2-k2-s1-v3; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:27: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e2-k2-s1-v4; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:29: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e2-k2-s1-v5; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:32: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e2-k2-s2-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:34: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e2-k2-s3-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:36: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e2-k2-s4-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:38: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e2-k2-s5-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:40: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e2-k2-s6-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:42: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e2-k2-s7-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:44: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e2-k2-s8-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:47: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e2-k2-s10-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:49: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e2-k2-s11-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:51: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e2-k2-s12-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:53: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e2-k2-s13-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:58: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 20
+  e2_a.tex:59: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 20
+  e2_l.tex:5: TODO Lösung der Erklärzeile 19g) fehlt in der Bank
+  e3_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 3
+  e3_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 21
+  e3_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 21
+  e3_a.tex:13: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e3-k1-s1-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:15: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e3-k1-s1-v2; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:17: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e3-k1-s1-v3; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:19: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e3-k1-s1-v4; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:21: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e3-k1-s1-v5; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:24: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e3-k1-s2-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:26: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e3-k1-s3-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:28: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e3-k1-s4-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:30: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e3-k1-s5-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:33: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e3-k1-s7-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:35: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e3-k1-s8-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:37: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e3-k1-s9-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:39: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e3-k1-s10-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:41: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e3-k1-s11-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:43: TODO Darstellung für schwach fehlt in der Bank (pyramide-kegel-kugel-e3-k1-s12-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:48: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 22
+  e3_a.tex:49: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 22
+  e3_l.tex:4: TODO Lösung der Erklärzeile 21g) fehlt in der Bank
+STRUKTUR 0 Fehler

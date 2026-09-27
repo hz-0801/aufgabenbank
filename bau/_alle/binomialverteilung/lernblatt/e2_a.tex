@@ -1,0 +1,37 @@
+% Einheit 2 von 5 – Bernoulli-Formel (bank/binomialverteilung/e2.jsonl, zusammenbau v0.1)
+%% TODO Zeitmarke Einheit 2: Marken-Zeile nicht lesbar
+%% TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 2
+\einheitenkopf[e2]{Einheit 2 von 5 · Bernoulli-Formel}
+\zweigzeile{Abitur GK}
+\setcounter{aufgabe}{12}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 13
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 13
+\begin{aufgabe}{Bernoulli-Formel}
+%% TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+\begin{teile}
+\teil Ein Glücksrad wird 10-mal gedreht; X ist die Anzahl der Drehungen mit Rot. „Genau viermal Rot“ – welcher Ansatz passt? \kreuz{$P(X = 4)$} \\ \kreuz{$P(X \le 4)$} \\ \kreuz{$1 - P(X \le 3)$}
+\teil Ein Glücksrad bleibt mit der Wahrscheinlichkeit $0{,}35$ auf Gold stehen und wird 6-mal gedreht; X ist die Anzahl der Drehungen mit Gold. Gib den Term für $P(X = 2)$ an und berechne ihn.
+\teil 12\,\% der Smartphones einer Serie haben einen Displayfehler. 8 Geräte werden zufällig geprüft. Genau 3 mit Displayfehler – mit welcher Wahrscheinlichkeit? Runde auf vier Stellen. P ≈ \leerfeld
+\teil Ein Versandhändler weiß, dass 8\,\% seiner Pakete zu spät ankommen. 30 Pakete werden zufällig ausgewählt. Mit welcher Wahrscheinlichkeit kommt keines davon zu spät an? Runde auf vier Stellen \hfill (Abitur 2017 GK). \leerfeld
+\teil 90\,\% der Fluggäste erscheinen zu ihrem Flug. 20 Gäste haben gebucht. Mit welcher Wahrscheinlichkeit erscheinen genau 18? Zähle die Gäste, die nicht erscheinen, und runde auf vier Stellen. \leerfeld
+\teil Ein Würfel wird viermal geworfen. Gib einen Term an, mit dem man die Wahrscheinlichkeit für „höchstens eine Sechs“ berechnen kann \hfill (Abitur 2026 GK).
+\teil X ist binomialverteilt mit der Trefferwahrscheinlichkeit $\frac{2}{5}$. Vervollständige: $P(X = \square) = (\square \text{ über } 4) \cdot (\square)^3 \cdot \left(\frac{2}{5}\right)^4$ \hfill (Abitur 2021 GK).
+\teil In einer Großstadt fahren 35\,\% der Pendler mit dem Rad. 120 Pendler werden zufällig befragt. Mit welcher Wahrscheinlichkeit fahren genau 40 davon mit dem Rad? Runde auf vier Stellen. \leerfeld
+\teil Ein Glücksrad wird 20-mal gedreht; im Mittel bringen 7 Drehungen einen Gewinn. Mit welcher Wahrscheinlichkeit gibt es genau 7 Gewinne? Runde auf vier Stellen. \leerfeld
+\teil 12\,\% der Autos auf einem Parkplatz sind Elektroautos. 50 Autos werden zufällig ausgewählt; X ist die Anzahl der Elektroautos. Die Tabelle zeigt Werte der summierten Binomialverteilung. Lies ab und berechne die Wahrscheinlichkeiten für genau 6 Elektroautos und für weniger als 6 Elektroautos \hfill (Abitur 2022 GK).
+
+\sachtabelle{lcccc}{$k$ & 4 & 5 & 6 & 7}{$P(X \le k)$ & 0{,}2680 & 0{,}4353 & 0{,}6065 & 0{,}7533}
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 14
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 14
+\begin{aufgabe}{Bernoulli-Formel – Fehler finden, Begründen, Anwendung, Darstellungswechsel}
+\begin{teile}
+\teil Jonas berechnet die Wahrscheinlichkeit für genau zwei Sechsen bei fünf Würfen: \rechnung{P &= \left(\tfrac{1}{6}\right)^2 \cdot \left(\tfrac{5}{6}\right)^3 \approx 0{,}0161} Finde den Fehler.
+\teil Bei drei Versuchen mit Treffer T und Niete N gibt es die Pfade TTN, TNT und NTT. Begründe, warum sie alle dieselbe Wahrscheinlichkeit haben.
+\teil Eine Fluggesellschaft verkauft 52 Tickets für ein Flugzeug mit 50 Plätzen, weil erfahrungsgemäß 4\,\% der Gäste nicht erscheinen. Mit welcher Wahrscheinlichkeit reichen die Plätze nicht, erscheint also höchstens einer der Gäste nicht? Runde auf vier Stellen.
+\teil Beschreibe ein Zufallsexperiment und ein Ereignis, dessen Wahrscheinlichkeit der Term $(6 \text{ über } 2) \cdot 0{,}15^2 \cdot 0{,}85^4$ angibt.
+\end{teile}
+\end{aufgabe}

@@ -1,0 +1,192 @@
+# zusammenbau v0.1: zusammenbau.py funktionsklassen-und-eigenschaften
+VORLAGE mathblatt.sty: Version 2026-09-28a
+EINHEITEN [1, 2, 3, 4, 5, 6]
+AUSWAHL funktionsklassen-und-eigenschaften-zone-f1-v1 – Zone f1 „Termwerte berechnen“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL funktionsklassen-und-eigenschaften-zone-f1-v3 – Zone f1 „Termwerte berechnen“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f1 „Termwerte berechnen“ – Sprossen [3, 4, 5, 6] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL funktionsklassen-und-eigenschaften-zone-f2-v1 – Zone f2 „Lineare Funktionen“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL funktionsklassen-und-eigenschaften-zone-f2-v3 – Zone f2 „Lineare Funktionen“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f2 „Lineare Funktionen“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL funktionsklassen-und-eigenschaften-zone-f3-v1 – Zone f3 „Maßstab und Einheiten“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL funktionsklassen-und-eigenschaften-zone-f3-v3 – Zone f3 „Maßstab und Einheiten“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f3 „Maßstab und Einheiten“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL funktionsklassen-und-eigenschaften-zone-f4-v1 – Zone f4 „Quadratische Gleichungen lösen“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL funktionsklassen-und-eigenschaften-zone-f4-v3 – Zone f4 „Quadratische Gleichungen lösen“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f4 „Quadratische Gleichungen lösen“ – Sprossen [3, 4] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL funktionsklassen-und-eigenschaften-zone-f5-v1 – Zone f5 „Die Grundgraphen kennen“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL funktionsklassen-und-eigenschaften-zone-f5-v3 – Zone f5 „Die Grundgraphen kennen“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f5 „Die Grundgraphen kennen“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL funktionsklassen-und-eigenschaften-zone-f6-v1 – Zone f6 „Spiegeln im Koordinatensystem“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL funktionsklassen-und-eigenschaften-zone-f6-v3 – Zone f6 „Spiegeln im Koordinatensystem“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f6 „Spiegeln im Koordinatensystem“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL funktionsklassen-und-eigenschaften-zone-f1-v6 – Zone-Paar, Fehler finden
+AUSWAHL funktionsklassen-und-eigenschaften-zone-f1-v7 – Zone-Paar, gleichartige Rechenaufgabe
+AUSWAHL funktionsklassen-und-eigenschaften-e1-k1-s0-v1 – e1 k1 „Funktionswert und Punkt“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL funktionsklassen-und-eigenschaften-e1-k1-s1-v1 – e1 k1 „Funktionswert und Punkt“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL funktionsklassen-und-eigenschaften-e1-k1-s2-v1 – e1 k1 „Funktionswert und Punkt“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e1-k1-s3-v1 – e1 k1 „Funktionswert und Punkt“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e1-k1-s4-v1 – e1 k1 „Funktionswert und Punkt“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e1-k1-s5-v1 – e1 k1 „Funktionswert und Punkt“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e1-k1-s6-v1 – e1 k1 „Funktionswert und Punkt“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e1-k1-s7-v1 – e1 k1 „Funktionswert und Punkt“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e1-k1-s8-v1 – e1 k1 „Funktionswert und Punkt“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e1-k1-s9-v1 – e1 k1 „Funktionswert und Punkt“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3, v4, v5, v6
+KETTE e1 k1 „Funktionswert und Punkt“ (verfahren) → eine Hauptnummer
+AUSWAHL funktionsklassen-und-eigenschaften-e1-k2-s1-v1 – e1 k2 „Nullstellen und Werte: Werte a mit vorgegebener Lösungsanzahl von f(x) = a über die lokalen Extremwerte am Graphen angeben“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e1 k2 „Nullstellen und Werte: Werte a mit vorgegebener Lösungsanzahl von f(x) = a über die lokalen Extremwerte am Graphen angeben“ (ohne) → eine Hauptnummer
+AUSWAHL funktionsklassen-und-eigenschaften-e1-k3-s1-v1 – e1 k3 „Funktionswert und Punkt“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e1-k3-s2-v1 – e1 k3 „Funktionswert und Punkt“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e1-k3-s3-v1 – e1 k3 „Funktionswert und Punkt“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e1-k3-s4-v1 – e1 k3 „Funktionswert und Punkt“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e1 k3 „Funktionswert und Punkt“ (pflicht) → eine Hauptnummer
+AUSWAHL funktionsklassen-und-eigenschaften-e2-k1-s0-v1 – e2 k1 „Nullstellen“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL funktionsklassen-und-eigenschaften-e2-k1-s1-v1 – e2 k1 „Nullstellen“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL funktionsklassen-und-eigenschaften-e2-k1-s2-v1 – e2 k1 „Nullstellen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e2-k1-s3-v1 – e2 k1 „Nullstellen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e2-k1-s4-v1 – e2 k1 „Nullstellen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e2-k1-s5-v1 – e2 k1 „Nullstellen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e2-k1-s6-v1 – e2 k1 „Nullstellen“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e2-k1-s7-v1 – e2 k1 „Nullstellen“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e2-k1-s8-v1 – e2 k1 „Nullstellen“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e2-k1-s9-v1 – e2 k1 „Nullstellen“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3, v4, v5, v6
+KETTE e2 k1 „Nullstellen“ (verfahren) → eine Hauptnummer
+AUSWAHL funktionsklassen-und-eigenschaften-e2-k2-s1-v1 – e2 k2 „Nullstellen und Werte: y-Achsenschnittpunkt angeben und Anzahl der Nullstellen aus Grenzverhalten und Tiefpunkt ohne Rechnung begründen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k2 „Nullstellen und Werte: y-Achsenschnittpunkt angeben und Anzahl der Nullstellen aus Grenzverhalten und Tiefpunkt ohne Rechnung begründen“ (ohne) → eine Hauptnummer
+AUSWAHL funktionsklassen-und-eigenschaften-e2-k3-s1-v1 – e2 k3 „Nullstellen“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e2-k3-s2-v1 – e2 k3 „Nullstellen“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e2-k3-s3-v1 – e2 k3 „Nullstellen“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+KETTE e2 k3 „Nullstellen“ (pflicht) → eine Hauptnummer
+AUSWAHL funktionsklassen-und-eigenschaften-e3-k1-s1-v1 – e3 k1 „Definitionsbereich, Wertemenge und Schranken“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL funktionsklassen-und-eigenschaften-e3-k1-s2-v1 – e3 k1 „Definitionsbereich, Wertemenge und Schranken“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e3-k1-s3-v1 – e3 k1 „Definitionsbereich, Wertemenge und Schranken“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e3-k1-s4-v1 – e3 k1 „Definitionsbereich, Wertemenge und Schranken“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e3-k1-s5-v1 – e3 k1 „Definitionsbereich, Wertemenge und Schranken“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e3-k1-s6-v1 – e3 k1 „Definitionsbereich, Wertemenge und Schranken“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3, v4
+KETTE e3 k1 „Definitionsbereich, Wertemenge und Schranken“ (verfahren) → eine Hauptnummer
+AUSWAHL funktionsklassen-und-eigenschaften-e3-k2-s1-v1 – e3 k2 „Definitionsbereich, Wertemenge und Schranken“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e3-k2-s2-v1 – e3 k2 „Definitionsbereich, Wertemenge und Schranken“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e3-k2-s3-v1 – e3 k2 „Definitionsbereich, Wertemenge und Schranken“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+KETTE e3 k2 „Definitionsbereich, Wertemenge und Schranken“ (pflicht) → eine Hauptnummer
+AUSWAHL funktionsklassen-und-eigenschaften-e4-k1-s0-v1 – e4 k1 „Symmetrie“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL funktionsklassen-und-eigenschaften-e4-k1-s1-v1 – e4 k1 „Symmetrie“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL funktionsklassen-und-eigenschaften-e4-k1-s2-v1 – e4 k1 „Symmetrie“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e4-k1-s3-v1 – e4 k1 „Symmetrie“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e4-k1-s4-v1 – e4 k1 „Symmetrie“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e4-k1-s5-v1 – e4 k1 „Symmetrie“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e4-k1-s6-v1 – e4 k1 „Symmetrie“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e4-k1-s7-v1 – e4 k1 „Symmetrie“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e4-k1-s8-v1 – e4 k1 „Symmetrie“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3, v4, v5, v6
+KETTE e4 k1 „Symmetrie“ (verfahren) → eine Hauptnummer
+AUSWAHL funktionsklassen-und-eigenschaften-e4-k2-s1-v1 – e4 k2 „Symmetrie“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e4-k2-s2-v1 – e4 k2 „Symmetrie“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+KETTE e4 k2 „Symmetrie“ (pflicht) → eine Hauptnummer
+AUSWAHL funktionsklassen-und-eigenschaften-e5-k1-s0-v1 – e5 k1 „Transformationen“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL funktionsklassen-und-eigenschaften-e5-k1-s1-v1 – e5 k1 „Transformationen“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL funktionsklassen-und-eigenschaften-e5-k1-s2-v1 – e5 k1 „Transformationen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e5-k1-s3-v1 – e5 k1 „Transformationen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e5-k1-s4-v1 – e5 k1 „Transformationen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e5-k1-s5-v1 – e5 k1 „Transformationen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e5-k1-s6-v1 – e5 k1 „Transformationen“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e5-k1-s7-v1 – e5 k1 „Transformationen“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e5-k1-s8-v1 – e5 k1 „Transformationen“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e5-k1-s9-v1 – e5 k1 „Transformationen“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e5-k1-s10-v1 – e5 k1 „Transformationen“ (verfahren), Sprosse 10: Variante 1; übergangen v2, v3, v4
+KETTE e5 k1 „Transformationen“ (verfahren) → eine Hauptnummer
+AUSWAHL funktionsklassen-und-eigenschaften-e5-k2-s1-v1 – e5 k2 „Transformationen“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e5-k2-s2-v1 – e5 k2 „Transformationen“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e5-k2-s3-v1 – e5 k2 „Transformationen“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e5-k2-s4-v1 – e5 k2 „Transformationen“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e5 k2 „Transformationen“ (pflicht) → eine Hauptnummer
+AUSWAHL funktionsklassen-und-eigenschaften-e6-k1-s0-v1 – e6 k1 „Graph und Term“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL funktionsklassen-und-eigenschaften-e6-k1-s1-v1 – e6 k1 „Graph und Term“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL funktionsklassen-und-eigenschaften-e6-k1-s2-v1 – e6 k1 „Graph und Term“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e6-k1-s3-v1 – e6 k1 „Graph und Term“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e6-k1-s4-v1 – e6 k1 „Graph und Term“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e6-k1-s5-v1 – e6 k1 „Graph und Term“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e6-k1-s6-v1 – e6 k1 „Graph und Term“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e6-k1-s7-v1 – e6 k1 „Graph und Term“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e6-k1-s8-v1 – e6 k1 „Graph und Term“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e6-k1-s9-v1 – e6 k1 „Graph und Term“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e6-k1-s10-v1 – e6 k1 „Graph und Term“ (verfahren), Sprosse 10: Variante 1; übergangen v2, v3, v4, v5, v6
+KETTE e6 k1 „Graph und Term“ (verfahren) → eine Hauptnummer
+AUSWAHL funktionsklassen-und-eigenschaften-e6-k2-s1-v1 – e6 k2 „Graph und Term“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e6-k2-s2-v1 – e6 k2 „Graph und Term“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e6-k2-s3-v1 – e6 k2 „Graph und Term“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL funktionsklassen-und-eigenschaften-e6-k2-s4-v1 – e6 k2 „Graph und Term“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e6 k2 „Graph und Term“ (pflicht) → eine Hauptnummer
+KOPF Einheit 1: „Einheit 1 von 6 · Funktionswert und Punkt“; Marken „BE Q1 · BB Q1 · GK · Abitur GK · Abitur LK · FHR“ → Zeitmarke „None“, Prüfungswort „Abitur GK“
+WARNUNG Nr. 9: 10 Teilaufgaben, 2 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 2: „Einheit 2 von 6 · Nullstellen“; Marken „BE Q1/2 · BB Q1 · GK · Abitur GK · Abitur LK“ → Zeitmarke „None“, Prüfungswort „Abitur GK“
+KOPF Einheit 3: „Einheit 3 von 6 · Einheit 3“; Marken „None“ → Zeitmarke „None“, Prüfungswort „None“
+KOPF Einheit 4: „Einheit 4 von 6 · Symmetrie“; Marken „BE Q1 · BB Q1 · GK · Abitur GK · Abitur LK · FHR“ → Zeitmarke „None“, Prüfungswort „Abitur GK“
+KOPF Einheit 5: „Einheit 5 von 6 · Transformationen“; Marken „BE Q1 · BB Q1 · GK · Abitur GK · Abitur LK“ → Zeitmarke „None“, Prüfungswort „Abitur GK“
+WARNUNG Nr. 19: 11 Teilaufgaben, 1 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 6: „Einheit 6 von 6 · Graph und Term“; Marken „BE Q1 · BB Q1 · GK · Abitur GK · FHR“ → Zeitmarke „None“, Prüfungswort „Abitur GK“
+WARNUNG Nr. 21: 11 Teilaufgaben, 7 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+TODO 65 Stellen in den Quelltexten:
+  abhaken.tex:2: TODO Ich-kann-Sätze: Platzhalter wie in den Aufgabendateien
+  blatt0_a.tex:5: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 1
+  blatt0_a.tex:6: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 1
+  blatt0_a.tex:14: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 2
+  blatt0_a.tex:15: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 2
+  blatt0_a.tex:23: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 3
+  blatt0_a.tex:24: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 3
+  blatt0_a.tex:32: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 4
+  blatt0_a.tex:33: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 4
+  blatt0_a.tex:41: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 5
+  blatt0_a.tex:42: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 5
+  blatt0_a.tex:50: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 6
+  blatt0_a.tex:51: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 6
+  blatt0_a.tex:59: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 7
+  blatt0_a.tex:60: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 7
+  blatt0_a.tex:67: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 8
+  blatt0_a.tex:68: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 8
+  e1_a.tex:2: TODO Zeitmarke Einheit 1: Marken-Zeile nicht lesbar
+  e1_a.tex:3: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 1
+  e1_a.tex:8: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 9
+  e1_a.tex:9: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 9
+  e1_a.tex:11: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e1_a.tex:30: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 10
+  e1_a.tex:31: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 10
+  e1_a.tex:40: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 11
+  e1_a.tex:41: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 11
+  e2_a.tex:2: TODO Zeitmarke Einheit 2: Marken-Zeile nicht lesbar
+  e2_a.tex:3: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 2
+  e2_a.tex:8: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 12
+  e2_a.tex:9: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 12
+  e2_a.tex:11: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e2_a.tex:32: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 13
+  e2_a.tex:33: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 13
+  e2_a.tex:40: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 14
+  e2_a.tex:41: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 14
+  e3_a.tex:2: TODO Prüfungswort Einheit 3: nicht in der Marken-Zeile
+  e3_a.tex:3: TODO Zeitmarke Einheit 3: Marken-Zeile nicht lesbar
+  e3_a.tex:4: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 3
+  e3_a.tex:5: TODO Einheitentitel 3 nicht in der Mappe lesbar
+  e3_a.tex:9: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 15
+  e3_a.tex:10: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 15
+  e3_a.tex:12: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e3_a.tex:23: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 16
+  e3_a.tex:24: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 16
+  e4_a.tex:2: TODO Zeitmarke Einheit 4: Marken-Zeile nicht lesbar
+  e4_a.tex:3: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 4
+  e4_a.tex:8: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 17
+  e4_a.tex:9: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 17
+  e4_a.tex:11: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e4_a.tex:25: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 18
+  e4_a.tex:26: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 18
+  e5_a.tex:2: TODO Zeitmarke Einheit 5: Marken-Zeile nicht lesbar
+  e5_a.tex:3: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 5
+  e5_a.tex:8: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 19
+  e5_a.tex:9: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 19
+  e5_a.tex:11: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e5_a.tex:29: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 20
+  e5_a.tex:30: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 20
+  e6_a.tex:2: TODO Zeitmarke Einheit 6: Marken-Zeile nicht lesbar
+  e6_a.tex:3: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 6
+  e6_a.tex:8: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 21
+  e6_a.tex:9: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 21
+  e6_a.tex:11: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e6_a.tex:41: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 22
+  e6_a.tex:42: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 22
+STRUKTUR 0 Fehler

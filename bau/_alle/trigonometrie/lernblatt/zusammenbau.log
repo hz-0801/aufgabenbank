@@ -1,0 +1,205 @@
+# zusammenbau v0.1: zusammenbau.py trigonometrie
+VORLAGE mathblatt.sty: Version 2026-09-28a
+EINHEITEN [1, 2, 3, 4]
+AUSWAHL trigonometrie-zone-f1-v1 – Zone f1 „Rechtwinkliges Dreieck erkennen, Rechtwi“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL trigonometrie-zone-f1-v3 – Zone f1 „Rechtwinkliges Dreieck erkennen, Rechtwi“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f1 „Rechtwinkliges Dreieck erkennen, Rechtwi“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL trigonometrie-zone-f2-v1 – Zone f2 „Winkel benennen (α, β, γ, auch β1, β2, ε“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL trigonometrie-zone-f2-v3 – Zone f2 „Winkel benennen (α, β, γ, auch β1, β2, ε“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f2 „Winkel benennen (α, β, γ, auch β1, β2, ε“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL trigonometrie-zone-f3-v1 – Zone f3 „Taschenrechner“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL trigonometrie-zone-f3-v3 – Zone f3 „Taschenrechner“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f3 „Taschenrechner“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL trigonometrie-zone-f4-v1 – Zone f4 „Gleichung mit einem Bruch nach einer Grö“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL trigonometrie-zone-f4-v3 – Zone f4 „Gleichung mit einem Bruch nach einer Grö“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f4 „Gleichung mit einem Bruch nach einer Grö“ – Sprossen [3, 4, 5] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL trigonometrie-zone-f5-v1 – Zone f5 „Bruch als Verhältnis lesen und in eine D“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL trigonometrie-zone-f5-v3 – Zone f5 „Bruch als Verhältnis lesen und in eine D“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f5 „Bruch als Verhältnis lesen und in eine D“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL trigonometrie-zone-f6-v1 – Zone f6 „Satz des Pythagoras als zweiter Weg zur “, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL trigonometrie-zone-f6-v3 – Zone f6 „Satz des Pythagoras als zweiter Weg zur “, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f6 „Satz des Pythagoras als zweiter Weg zur “ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL trigonometrie-zone-f7-v1 – Zone f7 „Winkelsumme im Dreieck, die beiden spitz“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL trigonometrie-zone-f7-v3 – Zone f7 „Winkelsumme im Dreieck, die beiden spitz“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f7 „Winkelsumme im Dreieck, die beiden spitz“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL trigonometrie-zone-f8-v1 – Zone f8 „Längeneinheiten vor dem Rechnen angleich“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL trigonometrie-zone-f8-v3 – Zone f8 „Längeneinheiten vor dem Rechnen angleich“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f8 „Längeneinheiten vor dem Rechnen angleich“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL trigonometrie-zone-f9-v1 – Zone f9 „Höhe, Diagonale, Überstand am Trapez, Fu“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL trigonometrie-zone-f9-v3 – Zone f9 „Höhe, Diagonale, Überstand am Trapez, Fu“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f9 „Höhe, Diagonale, Überstand am Trapez, Fu“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL trigonometrie-zone-f4-v5 – Zone-Paar, Fehler finden
+AUSWAHL trigonometrie-zone-f4-v6 – Zone-Paar, gleichartige Rechenaufgabe
+AUSWAHL trigonometrie-e1-k1-s0-v1 – e1 k1 „sin, cos oder tan?“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e1 k1 „sin, cos oder tan?“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL trigonometrie-e1-k2-s0-v1 – e1 k2 „Mal oder geteilt?“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e1 k2 „Mal oder geteilt?“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL trigonometrie-e1-k3-s0-v1 – e1 k3 „Seite berechnen“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL trigonometrie-e1-k3-s1-v1 – e1 k3 „Seite berechnen“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL trigonometrie-e1-k3-s2-v1 – e1 k3 „Seite berechnen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e1-k3-s3-v1 – e1 k3 „Seite berechnen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e1-k3-s4-v1 – e1 k3 „Seite berechnen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e1-k3-s5-v1 – e1 k3 „Seite berechnen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e1-k3-s6-v1 – e1 k3 „Seite berechnen“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e1-k3-s7-v1 – e1 k3 „Seite berechnen“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e1-k3-s8-v1 – e1 k3 „Seite berechnen“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e1-k3-s9-v1 – e1 k3 „Seite berechnen“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e1-k3-s10-v1 – e1 k3 „Seite berechnen“ (verfahren), Sprosse 10: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e1-k3-s11-v1 – e1 k3 „Seite berechnen“ (verfahren), Sprosse 11: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e1-k3-s12-v1 – e1 k3 „Seite berechnen“ (verfahren), Sprosse 12: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e1-k3-s13-v1 – e1 k3 „Seite berechnen“ (verfahren), Sprosse 13: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e1-k3-s14-v1 – e1 k3 „Seite berechnen“ (verfahren), Sprosse 14: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e1-k3-s15-v1 – e1 k3 „Seite berechnen“ (verfahren), Sprosse 15: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e1-k3-s16-v1 – e1 k3 „Seite berechnen“ (verfahren), Sprosse 16: Variante 1; übergangen v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14
+KETTE e1 k3 „Seite berechnen“ (verfahren) → eine Hauptnummer
+AUSWAHL trigonometrie-e1-k4-s1-v1 – e1 k4 „Seiten vom zweiten spitzen Winkel aus neu benennen (Gegen- und Ankathete tauschen)“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e1 k4 „Seiten vom zweiten spitzen Winkel aus neu benennen (Gegen- und Ankathete tauschen)“ (ohne) → eine Hauptnummer
+AUSWAHL trigonometrie-e1-k5-s1-v1 – e1 k5 „Seitenverhältnis aus gegebenen Längen als Dezimalzahl und Vergleich mit dem Taschenrechnerwert des Winkels“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e1 k5 „Seitenverhältnis aus gegebenen Längen als Dezimalzahl und Vergleich mit dem Taschenrechnerwert des Winkels“ (ohne) → eine Hauptnummer
+AUSWAHL trigonometrie-e1-k6-s1-v1 – e1 k6 „Ergebnis prüfen: Kathete kürzer als Hypotenuse“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e1 k6 „Ergebnis prüfen: Kathete kürzer als Hypotenuse“ (ohne) → eine Hauptnummer
+AUSWAHL trigonometrie-e1-k7-s1-v1 – e1 k7 „Seite berechnen“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e1-k7-s2-v1 – e1 k7 „Seite berechnen“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e1-k7-s3-v1 – e1 k7 „Seite berechnen“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+KETTE e1 k7 „Seite berechnen“ (pflicht) → eine Hauptnummer
+AUSWAHL trigonometrie-e2-k1-s0-v1 – e2 k1 „Winkel berechnen“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL trigonometrie-e2-k1-s1-v1 – e2 k1 „Winkel berechnen“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL trigonometrie-e2-k1-s2-v1 – e2 k1 „Winkel berechnen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e2-k1-s3-v1 – e2 k1 „Winkel berechnen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e2-k1-s4-v1 – e2 k1 „Winkel berechnen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e2-k1-s5-v1 – e2 k1 „Winkel berechnen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e2-k1-s6-v1 – e2 k1 „Winkel berechnen“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e2-k1-s7-v1 – e2 k1 „Winkel berechnen“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e2-k1-s8-v1 – e2 k1 „Winkel berechnen“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e2-k1-s9-v1 – e2 k1 „Winkel berechnen“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e2-k1-s10-v1 – e2 k1 „Winkel berechnen“ (verfahren), Sprosse 10: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e2-k1-s11-v1 – e2 k1 „Winkel berechnen“ (verfahren), Sprosse 11: Variante 1; übergangen v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12
+KETTE e2 k1 „Winkel berechnen“ (verfahren) → eine Hauptnummer
+AUSWAHL trigonometrie-e2-k2-s1-v1 – e2 k2 „Winkel prüfen: die längere Kathete liegt dem größeren Winkel gegenüber“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k2 „Winkel prüfen: die längere Kathete liegt dem größeren Winkel gegenüber“ (ohne) → eine Hauptnummer
+AUSWAHL trigonometrie-e2-k3-s1-v1 – e2 k3 „Umkehrtaste am Taschenrechner (SHIFT sin, cos, tan; Anzeige sin⁻¹)“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k3 „Umkehrtaste am Taschenrechner (SHIFT sin, cos, tan; Anzeige sin⁻¹)“ (ohne) → eine Hauptnummer
+AUSWAHL trigonometrie-e2-k4-s1-v1 – e2 k4 „Winkel berechnen“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e2-k4-s2-v1 – e2 k4 „Winkel berechnen“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e2-k4-s3-v1 – e2 k4 „Winkel berechnen“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+KETTE e2 k4 „Winkel berechnen“ (pflicht) → eine Hauptnummer
+AUSWAHL trigonometrie-e3-k1-s0-v1 – e3 k1 „Teildreiecke und Vermessung“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL trigonometrie-e3-k1-s1-v1 – e3 k1 „Teildreiecke und Vermessung“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL trigonometrie-e3-k1-s2-v1 – e3 k1 „Teildreiecke und Vermessung“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e3-k1-s3-v1 – e3 k1 „Teildreiecke und Vermessung“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e3-k1-s4-v1 – e3 k1 „Teildreiecke und Vermessung“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e3-k1-s5-v1 – e3 k1 „Teildreiecke und Vermessung“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e3-k1-s6-v1 – e3 k1 „Teildreiecke und Vermessung“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e3-k1-s7-v1 – e3 k1 „Teildreiecke und Vermessung“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e3-k1-s8-v1 – e3 k1 „Teildreiecke und Vermessung“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e3-k1-s9-v1 – e3 k1 „Teildreiecke und Vermessung“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e3-k1-s10-v1 – e3 k1 „Teildreiecke und Vermessung“ (verfahren), Sprosse 10: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e3-k1-s11-v1 – e3 k1 „Teildreiecke und Vermessung“ (verfahren), Sprosse 11: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e3-k1-s12-v1 – e3 k1 „Teildreiecke und Vermessung“ (verfahren), Sprosse 12: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e3-k1-s13-v1 – e3 k1 „Teildreiecke und Vermessung“ (verfahren), Sprosse 13: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e3-k1-s14-v1 – e3 k1 „Teildreiecke und Vermessung“ (verfahren), Sprosse 14: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e3-k1-s15-v1 – e3 k1 „Teildreiecke und Vermessung“ (verfahren), Sprosse 15: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e3-k1-s16-v1 – e3 k1 „Teildreiecke und Vermessung“ (verfahren), Sprosse 16: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e3-k1-s17-v1 – e3 k1 „Teildreiecke und Vermessung“ (verfahren), Sprosse 17: Variante 1; übergangen v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12
+KETTE e3 k1 „Teildreiecke und Vermessung“ (verfahren) → eine Hauptnummer
+AUSWAHL trigonometrie-e3-k2-s1-v1 – e3 k2 „Strecke aus Teilstrecken nach der Trigonometrie“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e3 k2 „Strecke aus Teilstrecken nach der Trigonometrie“ (ohne) → eine Hauptnummer
+AUSWAHL trigonometrie-e3-k3-s1-v1 – e3 k3 „Teildreiecke und Vermessung“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e3-k3-s2-v1 – e3 k3 „Teildreiecke und Vermessung“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e3-k3-s3-v1 – e3 k3 „Teildreiecke und Vermessung“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+KETTE e3 k3 „Teildreiecke und Vermessung“ (pflicht) → eine Hauptnummer
+AUSWAHL trigonometrie-e4-k1-s0-v1 – e4 k1 „Sinussatz“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL trigonometrie-e4-k1-s1-v1 – e4 k1 „Sinussatz“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL trigonometrie-e4-k1-s2-v1 – e4 k1 „Sinussatz“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e4-k1-s3-v1 – e4 k1 „Sinussatz“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e4-k1-s4-v1 – e4 k1 „Sinussatz“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e4-k1-s5-v1 – e4 k1 „Sinussatz“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e4-k1-s6-v1 – e4 k1 „Sinussatz“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e4-k1-s7-v1 – e4 k1 „Sinussatz“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e4-k1-s8-v1 – e4 k1 „Sinussatz“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e4-k1-s9-v1 – e4 k1 „Sinussatz“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e4-k1-s10-v1 – e4 k1 „Sinussatz“ (verfahren), Sprosse 10: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e4-k1-s11-v1 – e4 k1 „Sinussatz“ (verfahren), Sprosse 11: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e4-k1-s12-v1 – e4 k1 „Sinussatz“ (verfahren), Sprosse 12: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e4-k1-s13-v1 – e4 k1 „Sinussatz“ (verfahren), Sprosse 13: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e4-k1-s14-v1 – e4 k1 „Sinussatz“ (verfahren), Sprosse 14: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e4-k1-s15-v1 – e4 k1 „Sinussatz“ (verfahren), Sprosse 15: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e4-k1-s16-v1 – e4 k1 „Sinussatz“ (verfahren), Sprosse 16: Variante 1; übergangen v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12
+KETTE e4 k1 „Sinussatz“ (verfahren) → eine Hauptnummer
+AUSWAHL trigonometrie-e4-k2-s1-v1 – e4 k2 „Sinussatz“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e4-k2-s2-v1 – e4 k2 „Sinussatz“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL trigonometrie-e4-k2-s3-v1 – e4 k2 „Sinussatz“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+KETTE e4 k2 „Sinussatz“ (pflicht) → eine Hauptnummer
+KOPF Einheit 1: „Einheit 1 von 4 · Seite berechnen mit Sinus, Kosinus und Tangens“; Marken „OS Kl. 10 · GYM Kl. 9–10 (LS 10, Fundamente 9, Elemente 9, mathe.delta 9) · P10 oft · nicht für alle: Sekundo 10 LVL“ → Zeitmarke „ab Kl. 10 (am Gymnasium ab Kl. 9)“, Prüfungswort „P10 oft“
+WARNUNG Nr. 14: 17 Teilaufgaben, 5 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 2: „Einheit 2 von 4 · Winkel berechnen“; Marken „OS Kl. 10 · GYM Kl. 9–10 (LS 10, Elemente 9, mathe.delta 9) · P10 oft · nicht für alle: Mathematik 2023 10 Üben, Fundamente 9 Streifzug“ → Zeitmarke „ab Kl. 10 (am Gymnasium ab Kl. 9)“, Prüfungswort „P10 oft“
+WARNUNG Nr. 19: 12 Teilaufgaben, 2 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 3: „Einheit 3 von 4 · Rechtwinklige Teildreiecke in Figuren und Vermessung“; Marken „OS Kl. 10 · GYM Kl. 9–10 (LS 10, Fundamente 9, mathe.delta 9) · P10 oft · nicht für alle: Mathematik 2023 10 Üben, Elemente 9 Zum Selbstlernen, Elemente 9 Sonderseite“ → Zeitmarke „ab Kl. 10 (am Gymnasium ab Kl. 9)“, Prüfungswort „P10 oft“
+WARNUNG Nr. 23: 18 Teilaufgaben, 1 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 4: „Einheit 4 von 4 · Sinussatz“; Marken „OS Kl. 10 · GYM Kl. 9–10 (LS 10, Fundamente 9, Elemente 9, mathe.delta 9) · P10 oft · nicht für alle: Sekundo 10 Zusatzstoff“ → Zeitmarke „ab Kl. 10 (am Gymnasium ab Kl. 9)“, Prüfungswort „P10 oft“
+WARNUNG Nr. 26: 17 Teilaufgaben, 0 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+TODO 63 Stellen in den Quelltexten:
+  abhaken.tex:2: TODO Ich-kann-Sätze: Platzhalter wie in den Aufgabendateien
+  blatt0_a.tex:5: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 1
+  blatt0_a.tex:6: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 1
+  blatt0_a.tex:17: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 2
+  blatt0_a.tex:18: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 2
+  blatt0_a.tex:28: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 3
+  blatt0_a.tex:29: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 3
+  blatt0_a.tex:37: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 4
+  blatt0_a.tex:38: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 4
+  blatt0_a.tex:46: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 5
+  blatt0_a.tex:47: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 5
+  blatt0_a.tex:55: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 6
+  blatt0_a.tex:56: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 6
+  blatt0_a.tex:64: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 7
+  blatt0_a.tex:65: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 7
+  blatt0_a.tex:73: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 8
+  blatt0_a.tex:74: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 8
+  blatt0_a.tex:82: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 9
+  blatt0_a.tex:83: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 9
+  blatt0_a.tex:91: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 10
+  blatt0_a.tex:92: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 10
+  blatt0_a.tex:99: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 11
+  blatt0_a.tex:100: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 11
+  e1_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 1
+  e1_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 12
+  e1_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 12
+  e1_a.tex:17: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 13
+  e1_a.tex:18: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 13
+  e1_a.tex:25: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 14
+  e1_a.tex:26: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 14
+  e1_a.tex:28: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e1_a.tex:67: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 15
+  e1_a.tex:68: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 15
+  e1_a.tex:75: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 16
+  e1_a.tex:76: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 16
+  e1_a.tex:83: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 17
+  e1_a.tex:84: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 17
+  e1_a.tex:91: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 18
+  e1_a.tex:92: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 18
+  e2_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 2
+  e2_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 19
+  e2_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 19
+  e2_a.tex:10: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e2_a.tex:33: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 20
+  e2_a.tex:34: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 20
+  e2_a.tex:41: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 21
+  e2_a.tex:42: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 21
+  e2_a.tex:49: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 22
+  e2_a.tex:50: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 22
+  e3_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 3
+  e3_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 23
+  e3_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 23
+  e3_a.tex:10: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e3_a.tex:35: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 24
+  e3_a.tex:36: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 24
+  e3_a.tex:43: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 25
+  e3_a.tex:44: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 25
+  e4_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 4
+  e4_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 26
+  e4_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 26
+  e4_a.tex:10: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e4_a.tex:32: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 27
+  e4_a.tex:33: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 27
+STRUKTUR 0 Fehler

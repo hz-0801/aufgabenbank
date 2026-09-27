@@ -1,0 +1,36 @@
+% Einheit 1 von 3 – Figur und Term (bank/extremalprobleme/e1.jsonl, zusammenbau v0.1)
+%% TODO Zeitmarke Einheit 1: Marken-Zeile nicht lesbar
+%% TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 1
+\einheitenkopf[e1]{Einheit 1 von 3 · Figur und Term}
+\zweigzeile{Abitur LK}
+\setcounter{aufgabe}{8}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 9
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 9
+\begin{aufgabe}{Figur und Term}
+%% TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+\begin{teile}
+\teil Ein Rechteck hat eine Ecke im Ursprung, eine auf der x-Achse an der Stelle $u$ und eine auf dem Graphen von $f$ genau darüber. Wie hoch ist das Rechteck? \kreuz{$u$} \\ \kreuz{$f(u)$} \\ \kreuz{$u \cdot f(u)$}
+\teil Der Punkt $P(2 | f(2))$ auf dem Graphen von $f(x) = 9 - x^2$ ist eine Ecke eines Rechtecks; die gegenüberliegende Ecke liegt im Ursprung, die Seiten liegen auf den Achsen. Gib Breite und Höhe des Rechtecks an. Breite \leerfeld , Höhe \leerfeld
+\teil Die Graphen von $f(x) = 4 - 0{,}25x^2$ und von $-f$ begrenzen ein Gehäuse. Darin liegt ein Rechteck mit den Ecken $(-u | -f(u))$, $(u | -f(u))$, $(u | f(u))$ und $(-u | f(u))$, $0 < u < 4$. Zeichne das Rechteck für $u = 2$ ein und berechne seinen Flächeninhalt (1 LE = 1 cm). \hfill (FHR 2020)
+
+\begin{ksys}[xmin=-5,xmax=5,ymin=-5,ymax=5] \funktion{4-0.25*\x^2}{f} \funktion{-4+0.25*\x^2}{} \end{ksys}
+\teil Für $a > 0$ bilden $O(0 | 0)$, $P(a | 0)$ und $Q(a | f(a))$ mit $f(x) = x^2 \cdot e^{-x}$ ein Dreieck. Begründe, dass sein Flächeninhalt $\tfrac{1}{2} a^3 \cdot e^{-a}$ beträgt. \hfill (Abitur 2020 LK)
+\teil Gegeben ist $f(x) = -x^2 + 10x$. Die Trapeze mit den Ecken $A(0 | 0)$, $B(10 | 0)$, $C_u(10 - u | f(u))$ und $D_u(u | f(u))$, $0 < u < 5$, haben den Flächeninhalt $(10 - u) \cdot f(u)$. Begründe den Term geometrisch und gib einen Term für die Länge des Schenkels $AD_u$ an. \hfill (Abitur 2019 GK)
+\teil Der Graph von $f(x) = 0{,}5x^2 + 1$ wird von den Parallelen zur x-Achse $y = k$, $1 < k < 5$, in den Punkten $A_k$ und $B_k$ geschnitten; mit $C(0 | 5)$ entsteht jeweils ein Dreieck. Zeichne das Dreieck für $k = 3$ ein, begründe ohne Rechnung, dass es kein Dreieck mit kleinstem, wohl aber eines mit größtem Flächeninhalt gibt, und gib den Flächeninhalt in Abhängigkeit vom x-Wert $u$ des Eckpunkts im I. Quadranten an. \hfill (Abitur 2017 LK)
+
+\begin{ksys}[xmin=-4,xmax=4,ymin=-1,ymax=6] \funktion{0.5*\x^2+1}{f} \end{ksys}
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 10
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 10
+\begin{aufgabe}{Figur und Term – Fehler finden, Begründen, Darstellungswechsel}
+\begin{teile}
+\teil Finde den Fehler. Das Dreieck $O(0 | 0)$, $P(a | 0)$, $Q(a | f(a))$ mit $f(x) = 6 - x$ hat laut Rechnung den Flächeninhalt $A = \tfrac{1}{2} \cdot a \cdot a$.
+\teil Ein Rechteck hat eine Ecke im Ursprung, die gegenüberliegende Ecke $(u | f(u))$ liegt auf dem Graphen, die Seiten liegen auf den Achsen. Begründe, warum seine Seiten $u$ und $f(u)$ lang sind.
+\teil Im Bild ist der Punkt $P$ auf dem Graphen von $f(x) = 8 - x^2$ markiert. Ein Rechteck hat eine Ecke im Ursprung und die gegenüberliegende Ecke $P$. Lies die Koordinaten von $P$ ab, gib den Flächeninhalt an und stelle den Flächeninhalt für eine beliebige Stelle $u$ als Term auf.
+
+\begin{ksys}[xmin=-1,xmax=4,ymin=-1,ymax=9,ablesen] \funktion{8-\x^2}{f} \punkt{2}{4}{P} \end{ksys}
+\end{teile}
+\end{aufgabe}

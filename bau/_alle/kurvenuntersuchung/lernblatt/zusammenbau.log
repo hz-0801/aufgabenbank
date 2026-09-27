@@ -1,0 +1,250 @@
+# zusammenbau v0.1: zusammenbau.py kurvenuntersuchung
+VORLAGE mathblatt.sty: Version 2026-09-28a
+EINHEITEN [1, 2, 3, 4, 5]
+AUSWAHL kurvenuntersuchung-zone-f1-v1 – Zone f1 „Ableitungen bilden“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL kurvenuntersuchung-zone-f1-v3 – Zone f1 „Ableitungen bilden“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f1 „Ableitungen bilden“ – Sprossen [3, 4] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL kurvenuntersuchung-zone-f2-v1 – Zone f2 „Gleichungen lösen“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL kurvenuntersuchung-zone-f2-v3 – Zone f2 „Gleichungen lösen“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f2 „Gleichungen lösen“ – Sprossen [3, 4, 5, 6, 7] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL kurvenuntersuchung-zone-f3-v1 – Zone f3 „Charakteristische Punkte (Achsenschnitt-“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL kurvenuntersuchung-zone-f3-v3 – Zone f3 „Charakteristische Punkte (Achsenschnitt-“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f3 „Charakteristische Punkte (Achsenschnitt-“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL kurvenuntersuchung-zone-f4-v1 – Zone f4 „Funktionswerte berechnen und Punktprobe“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL kurvenuntersuchung-zone-f4-v3 – Zone f4 „Funktionswerte berechnen und Punktprobe“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f4 „Funktionswerte berechnen und Punktprobe“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL kurvenuntersuchung-zone-f5-v1 – Zone f5 „Verlauf quadratischer und kubischer Grap“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL kurvenuntersuchung-zone-f5-v3 – Zone f5 „Verlauf quadratischer und kubischer Grap“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f5 „Verlauf quadratischer und kubischer Grap“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL kurvenuntersuchung-zone-f6-v1 – Zone f6 „Ableitung als Tangentensteigung und loka“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL kurvenuntersuchung-zone-f6-v3 – Zone f6 „Ableitung als Tangentensteigung und loka“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f6 „Ableitung als Tangentensteigung und loka“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL kurvenuntersuchung-zone-f2-v7 – Zone-Paar, Fehler finden
+AUSWAHL kurvenuntersuchung-zone-f2-v8 – Zone-Paar, gleichartige Rechenaufgabe
+AUSWAHL kurvenuntersuchung-e1-k1-s0-v1 – e1 k1 „Monotonie“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL kurvenuntersuchung-e1-k1-s1-v1 – e1 k1 „Monotonie“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL kurvenuntersuchung-e1-k1-s2-v1 – e1 k1 „Monotonie“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e1-k1-s3-v1 – e1 k1 „Monotonie“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e1-k1-s4-v1 – e1 k1 „Monotonie“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e1-k1-s5-v1 – e1 k1 „Monotonie“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e1-k1-s6-v1 – e1 k1 „Monotonie“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e1-k1-s7-v1 – e1 k1 „Monotonie“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3, v4, v5, v6
+KETTE e1 k1 „Monotonie“ (verfahren) → eine Hauptnummer
+AUSWAHL kurvenuntersuchung-e1-k2-s1-v1 – e1 k2 „Monotonie“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e1-k2-s2-v1 – e1 k2 „Monotonie“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e1-k2-s3-v1 – e1 k2 „Monotonie“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+KETTE e1 k2 „Monotonie“ (pflicht) → eine Hauptnummer
+AUSWAHL kurvenuntersuchung-e2-k1-s0-v1 – e2 k1 „Extrempunkte berechnen“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL kurvenuntersuchung-e2-k1-s1-v1 – e2 k1 „Extrempunkte berechnen“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL kurvenuntersuchung-e2-k1-s2-v1 – e2 k1 „Extrempunkte berechnen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e2-k1-s3-v1 – e2 k1 „Extrempunkte berechnen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e2-k1-s4-v1 – e2 k1 „Extrempunkte berechnen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e2-k1-s5-v1 – e2 k1 „Extrempunkte berechnen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e2-k1-s6-v1 – e2 k1 „Extrempunkte berechnen“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e2-k1-s7-v1 – e2 k1 „Extrempunkte berechnen“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e2-k1-s8-v1 – e2 k1 „Extrempunkte berechnen“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e2-k1-s9-v1 – e2 k1 „Extrempunkte berechnen“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e2-k1-s10-v1 – e2 k1 „Extrempunkte berechnen“ (verfahren), Sprosse 10: Variante 1; übergangen v2, v3, v4
+KETTE e2 k1 „Extrempunkte berechnen“ (verfahren) → eine Hauptnummer
+AUSWAHL kurvenuntersuchung-e2-k2-s0-v1 – e2 k2 „Extrempunkte nachweisen“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL kurvenuntersuchung-e2-k2-s1-v1 – e2 k2 „Extrempunkte nachweisen“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL kurvenuntersuchung-e2-k2-s2-v1 – e2 k2 „Extrempunkte nachweisen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e2-k2-s3-v1 – e2 k2 „Extrempunkte nachweisen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e2-k2-s4-v1 – e2 k2 „Extrempunkte nachweisen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e2-k2-s5-v1 – e2 k2 „Extrempunkte nachweisen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e2-k2-s6-v1 – e2 k2 „Extrempunkte nachweisen“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e2-k2-s7-v1 – e2 k2 „Extrempunkte nachweisen“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e2-k2-s8-v1 – e2 k2 „Extrempunkte nachweisen“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e2-k2-s9-v1 – e2 k2 „Extrempunkte nachweisen“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+KETTE e2 k2 „Extrempunkte nachweisen“ (verfahren) → eine Hauptnummer
+AUSWAHL kurvenuntersuchung-e2-k3-s1-v1 – e2 k3 „Abstand zweier Extrempunkte verschiedener Graphen mit einer Schranke vergleichen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k3 „Abstand zweier Extrempunkte verschiedener Graphen mit einer Schranke vergleichen“ (ohne) → eine Hauptnummer
+AUSWAHL kurvenuntersuchung-e2-k4-s1-v1 – e2 k4 „Abstand zweier Extrempunkte über die Punktsymmetrie berechnen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k4 „Abstand zweier Extrempunkte über die Punktsymmetrie berechnen“ (ohne) → eine Hauptnummer
+AUSWAHL kurvenuntersuchung-e2-k5-s1-v1 – e2 k5 „Extrempunkte berechnen und ihre Verbindungsgerade als Winkelhalbierende nachweisen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k5 „Extrempunkte berechnen und ihre Verbindungsgerade als Winkelhalbierende nachweisen“ (ohne) → eine Hauptnummer
+AUSWAHL kurvenuntersuchung-e2-k6-s1-v1 – e2 k6 „Nullstellen und Extremstelle einer Parabel berechnen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k6 „Nullstellen und Extremstelle einer Parabel berechnen“ (ohne) → eine Hauptnummer
+AUSWAHL kurvenuntersuchung-e2-k7-s1-v1 – e2 k7 „Berührung des Graphen mit der x-Achse über die Extrempunkte begründen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k7 „Berührung des Graphen mit der x-Achse über die Extrempunkte begründen“ (ohne) → eine Hauptnummer
+AUSWAHL kurvenuntersuchung-e2-k8-s1-v1 – e2 k8 „Größten Funktionswert über Monotonie, Grenzverhalten und Symmetrie begründen und Wertemenge angeben“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k8 „Größten Funktionswert über Monotonie, Grenzverhalten und Symmetrie begründen und Wertemenge angeben“ (ohne) → eine Hauptnummer
+AUSWAHL kurvenuntersuchung-e2-k9-s1-v1 – e2 k9 „Extremstelle zwischen zwei Stellen mit gleichem Funktionswert ohne Rechnung begründen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k9 „Extremstelle zwischen zwei Stellen mit gleichem Funktionswert ohne Rechnung begründen“ (ohne) → eine Hauptnummer
+AUSWAHL kurvenuntersuchung-e2-k10-s1-v1 – e2 k10 „Lage eines Graphen zwischen zwei Geraden auf einem Intervall über die Differenzfunktionen nachweisen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k10 „Lage eines Graphen zwischen zwei Geraden auf einem Intervall über die Differenzfunktionen nachweisen“ (ohne) → eine Hauptnummer
+AUSWAHL kurvenuntersuchung-e2-k11-s1-v1 – e2 k11 „Aussagen über Funktions- und Ableitungswert nahe dem Tiefpunkt ohne Rechnung beurteilen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k11 „Aussagen über Funktions- und Ableitungswert nahe dem Tiefpunkt ohne Rechnung beurteilen“ (ohne) → eine Hauptnummer
+AUSWAHL kurvenuntersuchung-e2-k12-s1-v1 – e2 k12 „Extrempunkte berechnen“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e2-k12-s2-v1 – e2 k12 „Extrempunkte berechnen“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e2-k12-s3-v1 – e2 k12 „Extrempunkte berechnen“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+KETTE e2 k12 „Extrempunkte berechnen“ (pflicht) → eine Hauptnummer
+AUSWAHL kurvenuntersuchung-e3-k1-s0-v1 – e3 k1 „Wendepunkte und Krümmung“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL kurvenuntersuchung-e3-k1-s1-v1 – e3 k1 „Wendepunkte und Krümmung“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL kurvenuntersuchung-e3-k1-s2-v1 – e3 k1 „Wendepunkte und Krümmung“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e3-k1-s3-v1 – e3 k1 „Wendepunkte und Krümmung“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e3-k1-s4-v1 – e3 k1 „Wendepunkte und Krümmung“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e3-k1-s5-v1 – e3 k1 „Wendepunkte und Krümmung“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e3-k1-s6-v1 – e3 k1 „Wendepunkte und Krümmung“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e3-k1-s7-v1 – e3 k1 „Wendepunkte und Krümmung“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e3-k1-s8-v1 – e3 k1 „Wendepunkte und Krümmung“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e3-k1-s9-v1 – e3 k1 „Wendepunkte und Krümmung“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e3-k1-s10-v1 – e3 k1 „Wendepunkte und Krümmung“ (verfahren), Sprosse 10: Variante 1; übergangen v2, v3, v4, v5, v6
+KETTE e3 k1 „Wendepunkte und Krümmung“ (verfahren) → eine Hauptnummer
+AUSWAHL kurvenuntersuchung-e3-k2-s1-v1 – e3 k2 „Gerade durch die beiden Wendepunkte aufstellen und parallele Gerade mit genau einem gemeinsamen Punkt einzeichnen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e3 k2 „Gerade durch die beiden Wendepunkte aufstellen und parallele Gerade mit genau einem gemeinsamen Punkt einzeichnen“ (ohne) → eine Hauptnummer
+AUSWAHL kurvenuntersuchung-e3-k3-s1-v1 – e3 k3 „Punktprobe am Graphen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e3 k3 „Punktprobe am Graphen“ (ohne) → eine Hauptnummer
+AUSWAHL kurvenuntersuchung-e3-k4-s1-v1 – e3 k4 „Wendestelle nachweisen und Winkel der Wendetangente mit der x-Achse über die Steigung −1 zeigen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e3 k4 „Wendestelle nachweisen und Winkel der Wendetangente mit der x-Achse über die Steigung −1 zeigen“ (ohne) → eine Hauptnummer
+AUSWAHL kurvenuntersuchung-e3-k5-s1-v1 – e3 k5 „Wendestellen einer Sinusfunktion als ganzzahlig nachweisen und die beiden Wendetangentensteigungen zeigen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e3 k5 „Wendestellen einer Sinusfunktion als ganzzahlig nachweisen und die beiden Wendetangentensteigungen zeigen“ (ohne) → eine Hauptnummer
+AUSWAHL kurvenuntersuchung-e3-k6-s1-v1 – e3 k6 „Anzahl der Schnittpunkte von Geraden durch den Wendepunkt mit dem Graphen nach der Steigung unterscheiden“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e3 k6 „Anzahl der Schnittpunkte von Geraden durch den Wendepunkt mit dem Graphen nach der Steigung unterscheiden“ (ohne) → eine Hauptnummer
+AUSWAHL kurvenuntersuchung-e3-k7-s1-v1 – e3 k7 „Wendepunkte und Krümmung“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e3-k7-s2-v1 – e3 k7 „Wendepunkte und Krümmung“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e3-k7-s3-v1 – e3 k7 „Wendepunkte und Krümmung“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+KETTE e3 k7 „Wendepunkte und Krümmung“ (pflicht) → eine Hauptnummer
+AUSWAHL kurvenuntersuchung-e4-k1-s0-v1 – e4 k1 „Graph und Ableitungsgraph“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL kurvenuntersuchung-e4-k1-s1-v1 – e4 k1 „Graph und Ableitungsgraph“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL kurvenuntersuchung-e4-k1-s2-v1 – e4 k1 „Graph und Ableitungsgraph“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e4-k1-s3-v1 – e4 k1 „Graph und Ableitungsgraph“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e4-k1-s4-v1 – e4 k1 „Graph und Ableitungsgraph“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e4-k1-s5-v1 – e4 k1 „Graph und Ableitungsgraph“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e4-k1-s6-v1 – e4 k1 „Graph und Ableitungsgraph“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e4-k1-s7-v1 – e4 k1 „Graph und Ableitungsgraph“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e4-k1-s8-v1 – e4 k1 „Graph und Ableitungsgraph“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3, v4
+KETTE e4 k1 „Graph und Ableitungsgraph“ (verfahren) → eine Hauptnummer
+AUSWAHL kurvenuntersuchung-e4-k2-s1-v1 – e4 k2 „Gemeinsamen Punkt zweier Graphen über gleiche Flächeninhalte indirekt begründen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e4 k2 „Gemeinsamen Punkt zweier Graphen über gleiche Flächeninhalte indirekt begründen“ (ohne) → eine Hauptnummer
+AUSWAHL kurvenuntersuchung-e4-k3-s1-v1 – e4 k3 „Logarithmus einer Exponentialfunktion als lineare Funktion nachweisen und Steigung und Achsenabschnitt angeben“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e4 k3 „Logarithmus einer Exponentialfunktion als lineare Funktion nachweisen und Steigung und Achsenabschnitt angeben“ (ohne) → eine Hauptnummer
+AUSWAHL kurvenuntersuchung-e4-k4-s1-v1 – e4 k4 „Graph und Ableitungsgraph“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e4-k4-s2-v1 – e4 k4 „Graph und Ableitungsgraph“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e4-k4-s3-v1 – e4 k4 „Graph und Ableitungsgraph“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+KETTE e4 k4 „Graph und Ableitungsgraph“ (pflicht) → eine Hauptnummer
+AUSWAHL kurvenuntersuchung-e5-k1-s0-v1 – e5 k1 „Sachzusammenhang“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL kurvenuntersuchung-e5-k1-s1-v1 – e5 k1 „Sachzusammenhang“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL kurvenuntersuchung-e5-k1-s2-v1 – e5 k1 „Sachzusammenhang“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e5-k1-s3-v1 – e5 k1 „Sachzusammenhang“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e5-k1-s4-v1 – e5 k1 „Sachzusammenhang“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e5-k1-s5-v1 – e5 k1 „Sachzusammenhang“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e5-k1-s6-v1 – e5 k1 „Sachzusammenhang“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e5-k1-s7-v1 – e5 k1 „Sachzusammenhang“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e5-k1-s8-v1 – e5 k1 „Sachzusammenhang“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e5-k1-s9-v1 – e5 k1 „Sachzusammenhang“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3, v4
+KETTE e5 k1 „Sachzusammenhang“ (verfahren) → eine Hauptnummer
+AUSWAHL kurvenuntersuchung-e5-k2-s1-v1 – e5 k2 „Funktionswert im Sachzusammenhang deuten“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e5 k2 „Funktionswert im Sachzusammenhang deuten“ (ohne) → eine Hauptnummer
+AUSWAHL kurvenuntersuchung-e5-k3-s1-v1 – e5 k3 „Mittleren Wert einer periodisch schwankenden Größe am Graphen ablesen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e5 k3 „Mittleren Wert einer periodisch schwankenden Größe am Graphen ablesen“ (ohne) → eine Hauptnummer
+AUSWAHL kurvenuntersuchung-e5-k4-s1-v1 – e5 k4 „Sachzusammenhang“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e5-k4-s2-v1 – e5 k4 „Sachzusammenhang“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e5-k4-s3-v1 – e5 k4 „Sachzusammenhang“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL kurvenuntersuchung-e5-k4-s4-v1 – e5 k4 „Sachzusammenhang“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e5 k4 „Sachzusammenhang“ (pflicht) → eine Hauptnummer
+KOPF Einheit 1: „Einheit 1 von 5 · Monotonie und erste Ableitung“; Marken „BE Q1 · BB Q1 · GK · Abitur GK · Abitur LK“ → Zeitmarke „None“, Prüfungswort „Abitur GK“
+WARNUNG Nr. 9: 8 Teilaufgaben, 1 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 2: „Einheit 2 von 5 · Extrempunkte“; Marken „BE Q1 · BB Q1 · GK · Abitur GK · Abitur LK · FHR“ → Zeitmarke „None“, Prüfungswort „Abitur GK“
+WARNUNG Nr. 11: 11 Teilaufgaben, 1 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 3: „Einheit 3 von 5 · Krümmung und Wendepunkte“; Marken „BE Q1 · BB Q1 · GK · Abitur GK · Abitur LK · FHR“ → Zeitmarke „None“, Prüfungswort „Abitur GK“
+WARNUNG Nr. 23: 11 Teilaufgaben, 1 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 4: „Einheit 4 von 5 · Graph und Ableitungsgraph“; Marken „BE Q1/2 · BB Q1 · GK · Abitur GK · Abitur LK“ → Zeitmarke „None“, Prüfungswort „Abitur GK“
+WARNUNG Nr. 30: 9 Teilaufgaben, 7 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 5: „Einheit 5 von 5 · Kurvenuntersuchung im Sachzusammenhang“; Marken „BE Q1 · BB Q1 · GK · Abitur GK · Abitur LK · FHR“ → Zeitmarke „None“, Prüfungswort „Abitur GK“
+WARNUNG Nr. 34: 10 Teilaufgaben, 3 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+TODO 93 Stellen in den Quelltexten:
+  abhaken.tex:2: TODO Ich-kann-Sätze: Platzhalter wie in den Aufgabendateien
+  blatt0_a.tex:5: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 1
+  blatt0_a.tex:6: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 1
+  blatt0_a.tex:14: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 2
+  blatt0_a.tex:15: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 2
+  blatt0_a.tex:23: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 3
+  blatt0_a.tex:24: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 3
+  blatt0_a.tex:38: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 4
+  blatt0_a.tex:39: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 4
+  blatt0_a.tex:47: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 5
+  blatt0_a.tex:48: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 5
+  blatt0_a.tex:56: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 6
+  blatt0_a.tex:57: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 6
+  blatt0_a.tex:70: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 7
+  blatt0_a.tex:71: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 7
+  blatt0_a.tex:78: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 8
+  blatt0_a.tex:79: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 8
+  e1_a.tex:2: TODO Zeitmarke Einheit 1: Marken-Zeile nicht lesbar
+  e1_a.tex:3: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 1
+  e1_a.tex:8: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 9
+  e1_a.tex:9: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 9
+  e1_a.tex:11: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e1_a.tex:26: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 10
+  e1_a.tex:27: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 10
+  e2_a.tex:2: TODO Zeitmarke Einheit 2: Marken-Zeile nicht lesbar
+  e2_a.tex:3: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 2
+  e2_a.tex:8: TODO \verfahren{…}: Verfahrensüberschrift in Sachsprache fehlt in der Bank (2.3 b)
+  e2_a.tex:9: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 11
+  e2_a.tex:10: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 11
+  e2_a.tex:12: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e2_a.tex:34: TODO \verfahren{…}: Verfahrensüberschrift in Sachsprache fehlt in der Bank (2.3 b)
+  e2_a.tex:35: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 12
+  e2_a.tex:36: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 12
+  e2_a.tex:38: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e2_a.tex:53: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 13
+  e2_a.tex:54: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 13
+  e2_a.tex:61: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 14
+  e2_a.tex:62: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 14
+  e2_a.tex:69: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 15
+  e2_a.tex:70: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 15
+  e2_a.tex:77: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 16
+  e2_a.tex:78: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 16
+  e2_a.tex:85: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 17
+  e2_a.tex:86: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 17
+  e2_a.tex:93: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 18
+  e2_a.tex:94: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 18
+  e2_a.tex:101: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 19
+  e2_a.tex:102: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 19
+  e2_a.tex:109: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 20
+  e2_a.tex:110: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 20
+  e2_a.tex:117: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 21
+  e2_a.tex:118: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 21
+  e2_a.tex:125: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 22
+  e2_a.tex:126: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 22
+  e3_a.tex:2: TODO Zeitmarke Einheit 3: Marken-Zeile nicht lesbar
+  e3_a.tex:3: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 3
+  e3_a.tex:8: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 23
+  e3_a.tex:9: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 23
+  e3_a.tex:11: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e3_a.tex:29: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 24
+  e3_a.tex:30: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 24
+  e3_a.tex:39: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 25
+  e3_a.tex:40: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 25
+  e3_a.tex:47: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 26
+  e3_a.tex:48: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 26
+  e3_a.tex:55: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 27
+  e3_a.tex:56: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 27
+  e3_a.tex:63: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 28
+  e3_a.tex:64: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 28
+  e3_a.tex:71: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 29
+  e3_a.tex:72: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 29
+  e4_a.tex:2: TODO Zeitmarke Einheit 4: Marken-Zeile nicht lesbar
+  e4_a.tex:3: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 4
+  e4_a.tex:8: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 30
+  e4_a.tex:9: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 30
+  e4_a.tex:11: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e4_a.tex:39: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 31
+  e4_a.tex:40: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 31
+  e4_a.tex:47: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 32
+  e4_a.tex:48: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 32
+  e4_a.tex:55: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 33
+  e4_a.tex:56: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 33
+  e5_a.tex:2: TODO Zeitmarke Einheit 5: Marken-Zeile nicht lesbar
+  e5_a.tex:3: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 5
+  e5_a.tex:8: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 34
+  e5_a.tex:9: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 34
+  e5_a.tex:11: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e5_a.tex:32: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 35
+  e5_a.tex:33: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 35
+  e5_a.tex:40: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 36
+  e5_a.tex:41: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 36
+  e5_a.tex:50: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 37
+  e5_a.tex:51: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 37
+STRUKTUR 0 Fehler

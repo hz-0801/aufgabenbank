@@ -1,0 +1,45 @@
+% Einheit 3 von 3 – Fehlerarten und Güte: den Fehler zweiter Art für selbst gewählte Anteile berechnen (p dort wählen, wo die Nullhypothese falsch ist), einordnen und im Sachzusammenhang beschreiben; Mindestanteile für eine Fehlerschranke; die Gütekurve lesen (Ablehnwahrscheinlichkeit in Abhängigkeit von p (bank/hypothesentests/e3.jsonl, zusammenbau v0.1)
+%% TODO Zeitmarke Einheit 3: Marken-Zeile nicht lesbar
+%% TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 3
+\einheitenkopf[e3]{Einheit 3 von 3 · Fehlerarten und Güte: den Fehler zweiter Art für selbst gewählte Anteile berechnen (p dort wählen, wo die Nullhypothese falsch ist), einordnen und im Sachzusammenhang beschreiben; Mindestanteile für eine Fehlerschranke; die Gütekurve lesen (Ablehnwahrscheinlichkeit in Abhängigkeit von p}
+\zweigzeile{Abitur LK}
+\setcounter{aufgabe}{12}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 13
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 13
+\begin{aufgabe}{Fehlerarten und Güte}
+%% TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+\begin{teile}
+\teil Getestet wird $H_0\colon p \le 0{,}25$. Für welchen wahren Anteil $p$ ist ein Fehler zweiter Art möglich? \\ \kreuz{$p = 0{,}2$} \\ \kreuz{$p = 0{,}25$} \\ \kreuz{$p = 0{,}35$}
+\teil Ein Reiseportal verlängert ein Gewinnspiel, wenn sich das lohnt; das ist bei einer Buchungswahrscheinlichkeit $p$ von mindestens 4\,\% der Fall. Es testet $H_0\colon p \ge 0{,}04$ mit 500 Teilnehmern und lehnt $H_0$ ab, wenn weniger als 13 buchen. Berechne den Fehler zweiter Art für zwei geeignete Werte von $p$ und deute ihn im Sachzusammenhang. \hfill (Abitur 2023 LK)
+\teil Ein Weinkenner behauptet, er erkenne den Jahrgang am Geschmack. Bei 12 Proben wird $H_0$: „Er entscheidet höchstens mit Wahrscheinlichkeit 0,45 richtig“ ab 9 richtigen Antworten abgelehnt. Die Abbildung zeigt die Wahrscheinlichkeit, $H_0$ abzulehnen, in Abhängigkeit von der Trefferwahrscheinlichkeit $p$. Wähle ein geeignetes $p$ und bestimme mithilfe der Abbildung den Fehler zweiter Art. \hfill (Abitur 2018 LK)
+
+\begin{ksys}[xmin=0,xmax=1,ymin=0,ymax=1,xstep=0.1,ystep=0.1,ablesen,xlabel=$p$]\funktion{220*\x^9*(1-\x)^3+66*\x^10*(1-\x)^2+12*\x^11*(1-\x)+\x^12}{}\end{ksys}
+\teil Getestet wird $H_0$: „Höchstens 35\,\% der Besucher kommen mit dem Rad“ an 300 Besuchern; der Ablehnungsbereich ist $\{120; \ldots; 300\}$. Weise nach, dass der Fehler zweiter Art mehr als 90\,\% betragen kann. \hfill (Abitur 2024 LK)
+\teil Ein Fährbetrieb testet $H_0$: „Höchstens 12\,\% der Fahrgäste haben ein Rad dabei“ an 300 Fahrgästen und lehnt ab, wenn mehr als 45 ein Rad dabeihaben; nur dann fährt eine zusätzliche Radfähre. Der Fehler zweiter Art soll höchstens 10\,\% betragen. Wie groß muss der Anteil der Fahrgäste mit Rad mindestens sein (auf ganze Prozent)? Beschreibe den Fehler zweiter Art im Sachzusammenhang. \hfill (Abitur 2025 LK)
+\teil Ein Händler testet $H_0$: „Mindestens 5\,\% der Armbänder sind fehlerhaft“; abgelehnt wird bei höchstens 3 fehlerhaften Armbändern in der Stichprobe. Die Abbildung zeigt für den gewählten Stichprobenumfang die Wahrscheinlichkeit, $H_0$ abzulehnen, in Abhängigkeit vom Anteil $p$. Begründe mithilfe der Abbildung, dass der Stichprobenumfang größer als hundert ist. \hfill (Abitur 2022 LK)
+
+\begin{ksys}[xmin=0,xmax=0.1,ymin=0,ymax=1,xstep=0.01,ystep=0.1,ablesen,xlabel=$p$]\funktionab{(1-\x)^150+exp(5.0106+1*ln(\x)+149*ln(1-\x))+exp(9.3214+2*ln(\x)+148*ln(1-\x))+exp(13.2200+3*ln(\x)+147*ln(1-\x))}{}{0.001}{0.1}\end{ksys}
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 14
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 14
+\begin{aufgabe}{Fehlentscheidungen eines Tests im Sachzusammenhang beschreiben}
+\begin{teile}
+\teil Ein Hersteller von LED-Lampen will, dass höchstens 8\,\% der Lampen früh ausfallen. Er prüft 120 Lampen und stellt die Fertigung nur um, wenn mindestens 15 früh ausfallen. Beschreibe die Fehlentscheidungen, die bei dieser Kontrolle auftreten können. \hfill (Abitur 2017 LK)
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 15
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 15
+\begin{aufgabe}{Fehlerarten und Güte – Fehler finden, Begründen, Anwendung, Darstellungswechsel}
+\begin{teile}
+\teil Getestet wird $H_0\colon p \le 0{,}35$ mit 40 Versuchen, abgelehnt wird ab 20 Treffern. Tom berechnet den Fehler zweiter Art für $p = 0{,}3$: $P(X \le 19) \approx 0{,}9937$. Finde den Fehler.
+\teil Begründe, warum der Fehler zweiter Art vom gewählten wahren Anteil $p$ abhängt.
+\teil Eine Abfüllanlage wird gewartet, wenn der Test von $H_0$: „Höchstens 2,5\,\% der Flaschen sind falsch befüllt“ bei 300 geprüften Flaschen ablehnt, also ab 13 falsch befüllten. Wie wahrscheinlich bleibt eine Anlage mit 5\,\% Fehlbefüllung ungewartet? Ist das vertretbar?
+\teil Getestet wird $H_0\colon p \le 0{,}4$ mit 15 Versuchen, abgelehnt wird ab 10 Treffern. Lies die Ablehnwahrscheinlichkeiten für die $p$-Werte der Tabelle an der Gütekurve ab und trage sie ein.
+
+\begin{ksys}[xmin=0,xmax=1,ymin=0,ymax=1,xstep=0.1,ystep=0.1,ablesen,xlabel=$p$]\funktion{3003*\x^10*(1-\x)^5+1365*\x^11*(1-\x)^4+455*\x^12*(1-\x)^3+105*\x^13*(1-\x)^2+15*\x^14*(1-\x)+\x^15}{}\end{ksys} \sachtabelle{lcccc}{$p$ & 0,6 & 0,7 & 0,8 & 0,9}{Ablehnwahrscheinlichkeit & \leerzelle & \leerzelle & \leerzelle & \leerzelle}
+\end{teile}
+\end{aufgabe}

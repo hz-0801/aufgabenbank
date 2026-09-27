@@ -1,0 +1,108 @@
+% Zone „Das kennst du schon“ – aus bank/binomialverteilung/zone.jsonl (zusammenbau v0.1)
+\einheitenkopf[zone][Kennst du schon]{Das kennst du schon}
+\setcounter{aufgabe}{0}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 1
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 1
+\begin{aufgabe}{Baumdiagramm und Pfadregeln mit Zurücklegen}
+\begin{teile}
+\teil Ein Glücksrad bleibt mit der Wahrscheinlichkeit $0{,}2$ auf Blau stehen. Es wird zweimal gedreht. Zweimal Blau – mit welcher Wahrscheinlichkeit? \leerfeld
+\teil In einer Urne liegen 3 rote und 2 blaue Kugeln. Es wird zweimal mit Zurücklegen gezogen. Zweimal dieselbe Farbe – mit welcher Wahrscheinlichkeit? \leerfeld
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 2
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 2
+\begin{aufgabe}{Ziehen mit und ohne Zurücklegen unterscheiden (Urnenmodell)}
+\begin{teile}
+\teil In einer Urne liegen 4 rote und 6 weiße Kugeln. Eine Kugel wird gezogen und zurückgelegt, dann wird noch einmal gezogen. Rot beim zweiten Zug – mit welcher Wahrscheinlichkeit? \leerfeld
+\teil Unter 20 Losen sind 5 Gewinne. Zwei Lose werden ohne Zurücklegen gezogen. Zwei Gewinne – mit welcher Wahrscheinlichkeit? \leerfeld
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 3
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 3
+\begin{aufgabe}{Binomialkoeffizient (n über k) als Anzahl der Auswahlen von k aus n, mit der Rechnertaste nCr und für kleine Zahlen im Kopf; Fakultät}
+\begin{teile}
+\teil Berechne $4!$ im Kopf. \leerfeld
+\teil Aus 10 Fragen einer Liste werden 3 für eine Probe ausgewählt. Wie viele Auswahlen gibt es? Nutze die Taste nCr. \leerfeld
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 4
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 4
+\begin{aufgabe}{Rechnerfunktionen für die Binomialverteilung (Einzelwahrscheinlichkeit und kumulierte Wahrscheinlichkeit, je nach Gerät binompdf und binomcdf) bedienen oder die Tabelle der summierten Binomialverteilung lesen (Spalte p, Zeile k; bei p über ein Halb Treffer und Niete tauschen)}
+\begin{teile}
+\teil Die Tabelle zeigt für eine Hotline den Anteil der Nachtstunden mit höchstens $k$ Anrufen. Lies ab: Anteil der Stunden mit höchstens 3 Anrufen.
+
+\sachtabelle{lccccccc}{Anrufe $k$ & 0 & 1 & 2 & 3 & 4 & 5 & 6}{höchstens $k$ Anrufe & 0{,}05 & 0{,}20 & 0{,}42 & 0{,}65 & 0{,}83 & 0{,}95 & 1{,}00}
+\leerfeld
+\teil Die Tabelle zeigt für eine Hotline den Anteil der Nachtstunden mit höchstens $k$ Anrufen. Lies ab und rechne: Anteil der Stunden mit mehr als 5 Anrufen.
+
+\sachtabelle{lccccccc}{Anrufe $k$ & 0 & 1 & 2 & 3 & 4 & 5 & 6}{höchstens $k$ Anrufe & 0{,}05 & 0{,}20 & 0{,}42 & 0{,}65 & 0{,}83 & 0{,}95 & 1{,}00}
+\leerfeld
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 5
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 5
+\begin{aufgabe}{Anteile, Prozente und Anzahlen ineinander umrechnen und eine Ungleichung nach der gesuchten Größe umformen (Ungleichheitszeichen dreht beim Teilen durch eine negative Zahl), Ergebnis nach dem Sinn auf- oder abrunden}
+\begin{teile}
+\teil 30\,\% von 50 Gästen – wie viele Gäste? \leerfeld
+\teil Mindestens 15\,\% von 70 Befragten sollen zustimmen. Wie viele Personen sind das mindestens? \leerfeld
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 6
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 6
+\begin{aufgabe}{Säulendiagramm lesen (Höhe am Gitter ablesen, Säulen addieren) und zeichnen; Summenzeichen lesen (untere und obere Grenze, Laufvariable)}
+\begin{teile}
+\teil Das Säulendiagramm zeigt, wie viele Familien einer Siedlung wie viele Kinder haben. Lies ab: Wie viele Familien haben genau 2 Kinder?
+
+\saeulenab[ymax=40,ystep=10,yfein=2,ylabel=Familien]{0 Kinder/8,1 Kind/22,2 Kinder/34,3 Kinder/16,4 Kinder/6}
+\leerfeld
+\teil Das Säulendiagramm zeigt, wie viele Familien einer Siedlung wie viele Kinder haben. Lies ab: Wie viele Familien haben mindestens 3 Kinder?
+
+\saeulenab[ymax=40,ystep=10,yfein=2,ylabel=Familien]{0 Kinder/8,1 Kind/22,2 Kinder/34,3 Kinder/16,4 Kinder/6}
+\leerfeld
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 7
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 7
+\begin{aufgabe}{Potenzen mit einer Basis zwischen null und eins}
+\begin{teile}
+\teil Berechne $0{,}5^3$ im Kopf. \leerfeld
+\teil Löse $0{,}6^n = 0{,}1$ mit dem Logarithmus. Runde auf zwei Stellen. n ≈ \leerfeld
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 8
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 8
+\begin{aufgabe}{Erwartungswert μ = n · p berechnen und als mittlere Trefferzahl deuten}
+\begin{teile}
+\teil Ein Würfel wird 60-mal geworfen. Wie oft ist im Mittel eine Eins zu erwarten? \leerfeld
+\teil 15\,\% der Kunden eines Ladens zahlen bar. Wie viele von 240 Kunden zahlen im Mittel bar? \leerfeld
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 9
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 9
+\begin{aufgabe}{Rechnerfunktionen für die Binomialverteilung (Einzelwahrscheinlichkeit und kumulierte Wahrscheinlichkeit, je nach Gerät binompdf und binomcdf) bedienen oder die Tabelle der summierten Binomialverteilung lesen (Spalte p, Zeile k; bei p über ein Halb Treffer und Niete tauschen) – Fehler finden}
+\begin{teile}
+\teil Die Tabelle zeigt für eine Hotline den Anteil der Nachtstunden mit höchstens $k$ Anrufen. Tom liest für den Anteil der Stunden mit mindestens 3 Anrufen ab: $1 - 0{,}65 = 0{,}35$. Finde den Fehler.
+
+\sachtabelle{lccccccc}{Anrufe $k$ & 0 & 1 & 2 & 3 & 4 & 5 & 6}{höchstens $k$ Anrufe & 0{,}05 & 0{,}20 & 0{,}42 & 0{,}65 & 0{,}83 & 0{,}95 & 1{,}00}
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 10
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 10
+\begin{aufgabe}{Rechnerfunktionen für die Binomialverteilung (Einzelwahrscheinlichkeit und kumulierte Wahrscheinlichkeit, je nach Gerät binompdf und binomcdf) bedienen oder die Tabelle der summierten Binomialverteilung lesen (Spalte p, Zeile k; bei p über ein Halb Treffer und Niete tauschen) – selbst rechnen}
+\begin{teile}
+\teil Die Tabelle zeigt für eine Hotline den Anteil der Nachtstunden mit höchstens $k$ Anrufen. Lies ab und rechne: Anteil der Stunden mit mindestens 5 Anrufen.
+
+\sachtabelle{lccccccc}{Anrufe $k$ & 0 & 1 & 2 & 3 & 4 & 5 & 6}{höchstens $k$ Anrufe & 0{,}05 & 0{,}20 & 0{,}42 & 0{,}65 & 0{,}83 & 0{,}95 & 1{,}00}
+\leerfeld
+\end{teile}
+\end{aufgabe}

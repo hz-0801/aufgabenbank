@@ -1,0 +1,35 @@
+% Einheit 2 von 3 – Produkte aus Polynom und e-Funktion (bank/grenzwerte-und-verhalten-im-unendlichen/e2.jsonl, zusammenbau v0.1)
+%% TODO Zeitmarke Einheit 2: Marken-Zeile nicht lesbar
+%% TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 2
+\einheitenkopf[e2]{Einheit 2 von 3 · Produkte aus Polynom und e-Funktion}
+\zweigzeile{Abitur GK}
+\setcounter{aufgabe}{12}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 13
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 13
+\begin{aufgabe}{Produkte aus Polynom und e-Funktion}
+%% TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+\begin{teile}
+\teil Welche Seite? Für welche Richtung geht bei $f(x) = (x - 6) \cdot e^{x}$ der e-Faktor gegen null? \kreuz{für $x \to +\infty$} \\ \kreuz{für $x \to -\infty$}
+\teil $f(x) = e^{3x}$. Verhalten für $x \to +\infty$ und $x \to -\infty$? x → +∞: f(x) → \leerfeld ; x → −∞: f(x) → \leerfeld
+\teil $f(x) = (4 - x) \cdot e^{x}$. Gib das Verhalten für $x \to -\infty$ und $x \to +\infty$ an und sage, von welcher Seite sich der Graph der $x$-Achse nähert. \hfill (Abitur 2025 GK) \\ x → +∞: f(x) → \leerfeld ; x → −∞: f(x) → \leerfeld
+\teil $f(x) = (x + 4) \cdot e^{-x}$. Grenzwert für $x \to +\infty$? Beschreibe den Verlauf des Graphen dort. \hfill (Abitur 2022 GK) \\ Grenzwert: \leerfeld
+\teil $f(x) = 0{,}5 \cdot (x^2 - 9) \cdot e^{x}$. Verhalten für $x \to +\infty$ und $x \to -\infty$? \hfill (Abitur 2023 GK) \\ x → +∞: f(x) → \leerfeld ; x → −∞: f(x) → \leerfeld
+\teil Nach einem Regenguss ist der Pegel eines Bachs $w(t) = 6t \cdot e^{-0{,}5t} + 40$ ($t$ in h, $w$ in cm). Wie verhalten sich die Werte für $t \to +\infty$, und was bedeutet das? \hfill (Abitur 2019 GK)
+\teil $f(x) = (x - 5) \cdot e^{0{,}5x}$. Nullstelle und Verhalten für $x \to -\infty$ und $x \to +\infty$? \hfill (Abitur 2025 GK) \\ x = \leerfeld ; x → +∞: f(x) → \leerfeld ; x → −∞: f(x) → \leerfeld
+\teil $f_a(x) = (2a - x) \cdot e^{x}$, $a \ne 0$. Gib das Verhalten von $f_a(x)$ für $x \to +\infty$ und $x \to -\infty$ an. \hfill (Abitur 2023 LK)
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 14
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 14
+\begin{aufgabe}{Produkte aus Polynom und e-Funktion – Fehler finden, Begründen, Anwendung, Darstellungswechsel}
+\begin{teile}
+\teil $f(x) = (x^2 + 3) \cdot e^{-x}$. Ein Schüler schreibt: „$x^2 + 3$ wächst, also gilt $f(x) \to +\infty$ für $x \to +\infty$.“ Finde den Fehler.
+\teil Begründe, warum $f(x) = (x - 1) \cdot e^{x}$ keine Nullstelle außer $x = 1$ hat.
+\teil Die Konzentration eines Medikaments im Blut ist $c(t) = 20t \cdot e^{-0{,}5t}$ ($t$ in h, $c$ in mg/l). Was passiert langfristig, und was bedeutet das?
+\teil Welcher Term passt zum Graphen? \kreuz{$(x - 1) \cdot e^{x}$} \\ \kreuz{$(1 - x) \cdot e^{x}$} \\ \kreuz{$(x - 1) \cdot e^{-x}$}
+
+\begin{ksys}[xmin=-4,xmax=2,ymin=-2,ymax=3,ablesen] \funktion{(\x-1)*exp(\x)}{f} \end{ksys}
+\end{teile}
+\end{aufgabe}

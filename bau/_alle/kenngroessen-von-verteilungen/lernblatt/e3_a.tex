@@ -1,0 +1,57 @@
+% Einheit 3 von 4 – Einheit 3 (bank/kenngroessen-von-verteilungen/e3.jsonl, zusammenbau v0.1)
+%% TODO Prüfungswort Einheit 3: nicht in der Marken-Zeile
+%% TODO Zeitmarke Einheit 3: Marken-Zeile nicht lesbar
+%% TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 3
+%% TODO Einheitentitel 3 nicht in der Mappe lesbar
+\einheitenkopf[e3]{Einheit 3 von 4 · Einheit 3}
+\setcounter{aufgabe}{22}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 23
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 23
+\begin{aufgabe}{Streuung}
+%% TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+\begin{teile}
+\teil Ein Würfel wird 30-mal geworfen; $X$ ist die Anzahl der Sechsen. Welche Formel liefert die Standardabweichung von $X$? \\ \kreuz{Binomialformel} \\ \kreuz{allgemeine Formel}
+\teil $X$ ist binomialverteilt mit $n = 100$ und dem Erwartungswert $\mu = 50$. Bestimme $p$ und die Standardabweichung $\sigma$. $p = $ \leerfeld , $\sigma = $ \leerfeld
+\end{teile}
+\begin{gleichungsraster}[2]
+\gl{\text{$X$ ist binomialverteilt mit dem Erwartungswert 12 und der Varianz 3. Bestimme $n$ und $p$ (Abitur 2017 GK).}} &
+\end{gleichungsraster}
+\begin{teile}
+\teil $X$ nimmt den Wert 0 mit der Wahrscheinlichkeit 0{,}9 und den Wert 10 mit 0{,}1 an. Berechne $E(X)$ und zeige mit dem Summanden der Varianz für $x = 10$, dass die Standardabweichung größer als 2{,}5 ist. $E(X) = $ \leerfeld
+\teil Bei 50 Versuchen hat eine binomialverteilte Zufallsgröße die Standardabweichung $\sigma$. Wie viele Versuche braucht man bei gleicher Trefferwahrscheinlichkeit für die doppelte Standardabweichung? Begründe mit der Formel. $n = $ \leerfeld
+\teil Ein Graph zeigt $\sigma$ in Abhängigkeit von $p$ für binomialverteilte Zufallsgrößen mit $n = 1\,200$; die Achsen tragen Kästchen, aber keine Zahlen. Der Bogen beginnt im Ursprung und trifft nach zwanzig Kästchen wieder die $p$-Achse; über dem fünften Kästchen der $p$-Achse liegt er genau fünf Kästchen hoch. Gib an, welcher Wert zu einem Kästchen jeder Achse gehört, und erläutere dein Vorgehen \hfill (Abitur 2024 GK). $p$-Achse: \leerfeld je Kästchen, $\sigma$-Achse: \leerfeld je Kästchen
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 24
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 24
+\begin{aufgabe}{Stichprobenumfang aus einer vorgegebenen Standardabweichung der Binomialverteilung berechnen}
+\begin{gleichungsraster}[2]
+\gl{\text{Die Trefferzahl einer Bernoulli-Kette mit der Trefferwahrscheinlichkeit 10\,\% soll die Standardabweichung 6 haben. Wie viele Versuche sind nötig (Abitur 2017 GK)?}} & \\
+\end{gleichungsraster}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 25
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 25
+\begin{aufgabe}{Verhältnis der Varianzen zweier Binomialverteilungen aus dem Erwartungswert im Diagramm bestimmen}
+\begin{teile}
+\teil Die Diagramme zeigen die Verteilungen von $X$ und $Y$, beide binomialverteilt mit $n = 10$; die Erwartungswerte sind ganzzahlig. Lies sie an den höchsten Säulen ab und bestimme das Verhältnis der Varianz von $X$ zur Varianz von $Y$.
+
+\binomialverteilung{10}{0.2} \binomialverteilung{10}{0.5}
+\leerfeld
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 26
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 26
+\begin{aufgabe}{Streuung – Fehler finden, Begründen, Darstellungswechsel, Anwendung}
+\begin{teile}
+\teil $X$ ist binomialverteilt mit $\mu = 40$ und $\sigma = 6$. Emil sucht $p$. Finde den Fehler und rechne richtig. \rechnung{6 &= 40 \cdot (1 - p) \\ 1 - p &= 0{,}15 \\ p &= 0{,}85}
+\teil Begründe, warum die Varianz einer Binomialverteilung bei festem $n$ in Abhängigkeit von $p$ eine Parabel ist, und was ihr Scheitel bedeutet.
+\teil Für binomialverteilte Zufallsgrößen mit $n = 100$ hängt $\sigma$ von $p$ ab. Fülle die Tabelle aus.
+
+\sachtabelle{lccccc}{$p$ & 0{,}1 & 0{,}2 & 0{,}5 & 0{,}8 & 0{,}9}{$\sigma$ & \leerzelle & \leerzelle & \leerzelle & \leerzelle & \leerzelle}
+\teil Eine Maschine füllt Schrauben in Packungen zu 500 Stück; jede Schraube ist unabhängig mit der Wahrscheinlichkeit 2\,\% defekt. Mit wie vielen defekten Schrauben je Packung ist zu rechnen, und wie stark schwankt die Zahl typischerweise? Runde auf zwei Stellen. $\mu = $ \leerfeld , $\sigma \approx $ \leerfeld
+\end{teile}
+\end{aufgabe}

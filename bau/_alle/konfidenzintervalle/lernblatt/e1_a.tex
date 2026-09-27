@@ -1,0 +1,38 @@
+% Einheit 1 von 3 – Das Intervall lesen und deuten: die Überdeckungsdeutung (verträglich heißt: der angenommene Anteil wird vom Intervall überdeckt (bank/konfidenzintervalle/e1.jsonl, zusammenbau v0.1)
+%% TODO Zeitmarke Einheit 1: Marken-Zeile nicht lesbar
+%% TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 1
+\einheitenkopf[e1]{Einheit 1 von 3 · Das Intervall lesen und deuten: die Überdeckungsdeutung (verträglich heißt: der angenommene Anteil wird vom Intervall überdeckt}
+\zweigzeile{keine Prüfungsaufgabe}
+\setcounter{aufgabe}{8}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 9
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 9
+\begin{aufgabe}{Lesen und Überdeckung}
+%% TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+\begin{teile}
+\teil Richtig oder falsch gedeutet? Nur ankreuzen: „Der Anteil $0{,}3$ ist mit dem Ergebnis verträglich, weil das Konfidenzintervall ihn überdeckt.“ \\ \kreuz{richtig gedeutet} \\ \kreuz{falsch gedeutet}
+\teil Die Grafik zeigt Grenzgraphen für Stichproben vom Umfang $n = 100$ (Sicherheitswahrscheinlichkeit 95\,\%). In einer Stichprobe gibt es 30 Treffer. Lies das Konfidenzintervall ab.
+
+\begin{ksys}[xmin=0,xmax=1,ymin=0,ymax=1,xstep=0.1,ystep=0.1,xlabel=p,ylabel=h,ablesen] \funktion{\x-1.96*sqrt(\x*(1-\x)/100)}{g_1} \funktion{\x+1.96*sqrt(\x*(1-\x)/100)}{g_2} \end{ksys}
+[ \leerfeld ; \leerfeld ]
+\teil Vermutet wird ein Anteil von 50\,\%. In einer Stichprobe vom Umfang $n = 100$ gibt es 42 Treffer. Lies das Konfidenzintervall zur Sicherheitswahrscheinlichkeit 95\,\% ab und beurteile die Vermutung.
+
+\begin{ksys}[xmin=0,xmax=1,ymin=0,ymax=1,xstep=0.1,ystep=0.1,xlabel=p,ylabel=h,ablesen] \funktion{\x-1.96*sqrt(\x*(1-\x)/100)}{g_1} \funktion{\x+1.96*sqrt(\x*(1-\x)/100)}{g_2} \end{ksys}
+\teil Die Grafik zeigt die Konfidenzintervalle aus 8 Stichproben (Anteile in Prozent). Lies ab: Gib einen Anteil an, der mit genau 6 der 8 Stichprobenergebnisse verträglich ist.
+
+\begin{zahlengerade}[xmin=30,xmax=65] \intervall[1]{38}{52}{1} \intervall[2]{42}{56}{2} \intervall[3]{35}{49}{3} \intervall[4]{44}{58}{4} \intervall[5]{40}{54}{5} \intervall[6]{47}{61}{6} \intervall[7]{36}{50}{7} \intervall[8]{43}{57}{8} \end{zahlengerade}
+\leerfeld \%
+\teil Aus 25 weiteren Stichproben vom Umfang 400 wird jeweils das Konfidenzintervall zur Sicherheitswahrscheinlichkeit 90\,\% bestimmt; der wahre Anteil p bleibt gleich. Y ist die Anzahl der Intervalle, die p überdecken. Gib die Verteilung von Y mit Begründung an und weise nach: Die Wahrscheinlichkeit, dass genau 23 Intervalle p überdecken, ist kleiner als 27\,\% \hfill (Abitur 2026 LK).
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 10
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 10
+\begin{aufgabe}{Lesen und Überdeckung – Fehler finden, Begründen}
+\begin{teile}
+\teil Die Grafik zeigt die Grenzgraphen zur Sicherheitswahrscheinlichkeit 95\,\% für $n = 50$. Bei 40 Treffern schneidet Mia die Senkrechte bei $p = 0{,}8$ mit beiden Graphen und liest $[0{,}69; 0{,}91]$ ab. Finde den Fehler und lies richtig ab.
+
+\begin{ksys}[xmin=0,xmax=1,ymin=0,ymax=1,xstep=0.1,ystep=0.1,xlabel=p,ylabel=h,ablesen] \funktion{\x-1.96*sqrt(\x*(1-\x)/50)}{g_1} \funktion{\x+1.96*sqrt(\x*(1-\x)/50)}{g_2} \end{ksys}
+\teil Begründe, warum die Anzahl der Konfidenzintervalle, die den wahren Anteil überdecken, binomialverteilt ist, und nenne ihre Trefferwahrscheinlichkeit.
+\end{teile}
+\end{aufgabe}

@@ -1,0 +1,54 @@
+% Einheit 6 von 6 – Graph und Term (bank/funktionsklassen-und-eigenschaften/e6.jsonl, zusammenbau v0.1)
+%% TODO Zeitmarke Einheit 6: Marken-Zeile nicht lesbar
+%% TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 6
+\einheitenkopf[e6]{Einheit 6 von 6 · Graph und Term}
+\zweigzeile{Abitur GK}
+\setcounter{aufgabe}{20}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 21
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 21
+\begin{aufgabe}{Graph und Term}
+%% TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+\begin{teile}
+\teil $f(x) = -2x^4 + x$ – wohin verläuft der Graph für $x \to +\infty$? \\ \kreuz{nach oben} \\ \kreuz{nach unten}
+\teil Fülle die Wertetabelle von $f(x) = x^2 - 2$ aus und übertrage die Punkte ins Koordinatensystem.
+
+\wertetabelle{x}{f(x)}{-2,-1,0,1,2}\begin{ksys}[xmin=-3,xmax=3,ymin=-3,ymax=3]\end{ksys}
+\teil $f(x) = -x^3 + 3x$ hat den Tiefpunkt $(-1 | -2)$, den Hochpunkt $(1 | 2)$ und die Nullstellen $0$ und $\pm\sqrt{3}$. Berechne die Randwerte und zeichne den Graphen für $-2 \le x \le 2{,}5$.
+
+\begin{ksys}[xmin=-3,xmax=3,ymin=-9,ymax=3]\end{ksys}
+\teil Der Graph von $f(x) = x^3 - 12x$ soll für $-4 \le x \le 4$ gezeichnet werden; die Werte reichen von $-16$ bis $16$, für die Hochachse sind $8$ cm Platz. Wie viele Einheiten entspricht $1$ cm?
+\teil Fischbestand in einem Teich: $B(t) = 200 \cdot 1{,}5^t$ ($t$ in Jahren). Lege eine Wertetabelle für $0 \le t \le 4$ an und zeichne den Graphen in ein selbst eingeteiltes Koordinatensystem.
+
+\wertetabelleleer{t}{B(t)}{5}
+\teil Welcher Graph gehört zu $f(x) = -x^3 + 2x^2$? Begründe über Merkmale. \\ \kreuz{A} \\ \kreuz{B} \\ \kreuz{C}
+
+\begin{ksys}[xmin=-2,xmax=3,ymin=-3,ymax=3]\funktion{\x^3-2*\x^2}{A}\funktion{-\x^3+2*\x^2}{B}\funktion{-\x^3+2*\x}{C}\end{ksys}
+\teil Eine symmetrische Schale ist oben $8$ cm breit, ihr tiefster Punkt liegt $2$ cm unter dem Rand. In einer Zeichnung ohne Achsen gehört dazu der Term $f(x) = 0{,}125x^2 - 2$ (1 Längeneinheit entspricht 1 cm). Wo liegen die Achsen?
+\teil Lies am Graphen $f(3)$ ab und entscheide mit Begründung, ob $f'(3)$ positiv oder negativ ist.
+
+\begin{ksys}[xmin=-1,xmax=5,ymin=-2,ymax=5,ablesen]\funktion{-0.5*\x^2+2*\x+1}{f}\end{ksys}
+\teil Der Graph einer ganzrationalen Funktion ist gezeichnet. Welchen Grad hat sie mindestens?
+
+\begin{ksys}[xmin=-4,xmax=4,ymin=-4,ymax=3]\funktion{0.25*\x^4-2*\x^2+1}{f}\end{ksys}
+\teil $f(x) = 2\,\mathrm{cos}(x)$ – auf welcher Geraden liegen alle Hochpunkte?
+\teil $f(x) = x^4 - 18x^2$ hat die Tiefpunkte $T_1(-3 | -81)$ und $T_2(3 | -81)$ und den Hochpunkt $H(0 | 0)$. Zeichne den Graphen für $-4 \le x \le 4$ mit geeigneter Achseneinteilung, insbesondere für die y-Achse \hfill (FHR 2023).
+
+\wertetabelleleer{x}{f(x)}{9}
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 22
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 22
+\begin{aufgabe}{Graph und Term – Fehler finden, Begründen, Darstellungswechsel, Anwendung}
+\begin{teile}
+\teil Ich finde den Fehler: „Der Graph hat zwei Nullstellen und drei Extrempunkte, also ist die Funktion vom Grad $2$.“
+\teil Begründe: Eine ganzrationale Funktion mit drei Extrempunkten hat mindestens den Grad vier.
+\teil Lies am Graphen die Werte an den Stellen $-2$, $0$ und $2$ ab und trage sie in die Tabelle ein.
+
+\begin{ksys}[xmin=-3,xmax=3,ymin=-2,ymax=3,ablesen]\funktion{0.5*\x^2-1}{f}\end{ksys}\wertetabelle{x}{f(x)}{-2,0,2}
+\teil Der Graph zeigt die Zahl $B$ der Besucher eines Freizeitparks in Tausend, $t$ in Stunden nach 8 Uhr. Lies den Hochpunkt ab und deute beide Koordinaten.
+
+\begin{ksys}[xmin=0,xmax=12,ymin=0,ymax=10,xstep=1,ystep=1,xlabel=t in h,ylabel=B in Tausend,ablesen]\funktion{-0.25*\x^2+3*\x}{B}\end{ksys}
+\end{teile}
+\end{aufgabe}

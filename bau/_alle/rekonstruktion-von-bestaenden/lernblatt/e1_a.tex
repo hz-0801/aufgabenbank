@@ -1,0 +1,45 @@
+% Einheit 1 von 3 – Bestand aus Rate (bank/rekonstruktion-von-bestaenden/e1.jsonl, zusammenbau v0.1)
+%% TODO Zeitmarke Einheit 1: Marken-Zeile nicht lesbar
+%% TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 1
+\einheitenkopf[e1]{Einheit 1 von 3 · Bestand aus Rate}
+\zweigzeile{Abitur LK}
+\setcounter{aufgabe}{7}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 8
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 8
+\begin{aufgabe}{Bestand aus Rate}
+%% TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+\begin{teile}
+\teil „35 Liter je Minute“ beschreibt … \\ \kreuz{einen Bestand} \\ \kreuz{eine Rate}
+\teil Die Zuflussrate in einen Tank ist $r(t) = 3t^2 - 12t + 15$ (Liter je Stunde, $t$ in Stunden). Berechne $∫_0^4 r(t)\,\mathrm{d}t$ und deute den Wert. \leerfeld
+\teil In einem Behälter sind zu Beginn 50 Liter, die Zuflussrate ist $r(t) = 4t + 2$ (Liter je Minute). Wie viel ist nach 3 Minuten im Behälter? \leerfeld[l]
+\teil Die Abbildung zeigt die Änderungsrate $r$ der Temperatur eines Bauteils in °C je Minute. Bestimme mithilfe der Kästchen näherungsweise die Temperaturänderung in den ersten vier Minuten und gib an, ob die Temperatur zu- oder abnimmt. \hfill (Abitur 2017 GK) \\
+
+\begin{ksys}[xmin=0,xmax=6,ymin=-2,ymax=2,xlabel=t,ylabel=r,ablesen] \funktionab{1.5*\x-0.375*\x^2}{r}{0}{5} \end{ksys}
+\leerfeld °C
+\teil Ein Zug beschleunigt nach der Abfahrt mit $v(t) = 90t$ (km/h, $t$ in Minuten seit Abfahrt, $0 \le t \le 3$). Welche Strecke legt er in den ersten zwei Minuten zurück? \hfill (Abitur 2022 LK) \\ \leerfeld[km]
+\teil Zu Beginn sind 5\,m³ in einem Becken, $r(t)$ ist die Zuflussrate in m³ je Stunde. Gib eine Gleichung an, mit der man den Zeitpunkt $T$ bestimmt, zu dem 20\,m³ im Becken sind.
+\teil Die Rate der Anmeldungen zu einem Online-Kurs ist $r(t) = 300 + 60t - 6t^2$ (Anmeldungen je Stunde, $t$ in Stunden seit 8 Uhr). Eine Liste zeigt 1\,000 Anmeldungen um 9 Uhr und 2\,600 um 13 Uhr. Wie viele Anmeldungen gab es laut Modell von 9 bis 13 Uhr, und um wie viel Prozent weicht das vom Listenwert ab? \hfill (Abitur 2024 LK)
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 9
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 9
+\begin{aufgabe}{Zeitpunkt mit gleichem Bestand wie zu Beginn über das Integral der Änderungsrate gleich null untersuchen}
+\begin{teile}
+\teil Die Änderungsrate des Wassers in einem Becken ist $r(t) = 3t^2 - 12t$ (m³ je Stunde, $0 \le t \le 8$). Zu welchem Zeitpunkt $T > 0$ ist wieder genauso viel Wasser im Becken wie zu Beginn? T = \leerfeld
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 10
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 10
+\begin{aufgabe}{Bestand aus Rate – Fehler finden, Begründen, Darstellungswechsel, Anwendung}
+\begin{teile}
+\teil Zu Beginn sind 80 Liter in einem Tank, der Zufluss ist $r(t) = 6t$ (Liter je Minute). Jonas rechnet für den Inhalt nach vier Minuten: \rechnung{∫_0^4 6t\,\mathrm{d}t &= 48 \\ \text{Inhalt} &= 48\,\mathrm{l}} Finde den Fehler und rechne richtig.
+\teil Begründe: Der Bestand am Ende ist der Bestand am Anfang plus das Integral der Rate über den Zeitraum.
+\teil $r$ ist die Zuflussrate in Litern je Minute. Markiere im Koordinatensystem die Fläche, die $∫_1^3 r(t)\,\mathrm{d}t$ darstellt, und sage, was sie bedeutet.
+
+\begin{ksys}[xmin=0,xmax=5,ymin=0,ymax=5,xlabel=t,ylabel=r] \funktionab{1+0.25*\x^2}{r}{0}{4} \end{ksys}
+\teil Ein leeres Regenrückhaltebecken fasst 900\,m³. Bei Starkregen fließt $r(t) = 240 - 20t$ (m³ je Stunde, $0 \le t \le 6$) zu. Läuft es über?
+\end{teile}
+\end{aufgabe}

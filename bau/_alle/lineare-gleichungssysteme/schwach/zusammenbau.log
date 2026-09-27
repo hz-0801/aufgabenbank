@@ -1,0 +1,356 @@
+# zusammenbau v0.1: zusammenbau.py lineare-gleichungssysteme --schwach
+VORLAGE mathblatt.sty: Version 2026-09-28a
+EINHEITEN [1, 2, 3, 4, 5]
+AUSWAHL lineare-gleichungssysteme-zone-f1-v1 – Zone f1 „Lösung durch Einsetzen prüfen, Ergebnis “, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL lineare-gleichungssysteme-zone-f1-v3 – Zone f1 „Lösung durch Einsetzen prüfen, Ergebnis “, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f1 „Lösung durch Einsetzen prüfen, Ergebnis “ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL lineare-gleichungssysteme-zone-f2-v1 – Zone f2 „Gleichung nach einer Variablen umstellen“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL lineare-gleichungssysteme-zone-f2-v3 – Zone f2 „Gleichung nach einer Variablen umstellen“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f2 „Gleichung nach einer Variablen umstellen“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL lineare-gleichungssysteme-zone-f3-v1 – Zone f3 „Gerade aus der Gleichung zeichnen (n und“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL lineare-gleichungssysteme-zone-f3-v3 – Zone f3 „Gerade aus der Gleichung zeichnen (n und“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f3 „Gerade aus der Gleichung zeichnen (n und“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL lineare-gleichungssysteme-zone-f4-v1 – Zone f4 „Lineare Gleichung mit Klammern, Dezimalz“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL lineare-gleichungssysteme-zone-f4-v3 – Zone f4 „Lineare Gleichung mit Klammern, Dezimalz“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f4 „Lineare Gleichung mit Klammern, Dezimalz“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL lineare-gleichungssysteme-zone-f5-v1 – Zone f5 „Klammer ausmultiplizieren (Zahl mal Klam“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL lineare-gleichungssysteme-zone-f5-v3 – Zone f5 „Klammer ausmultiplizieren (Zahl mal Klam“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f5 „Klammer ausmultiplizieren (Zahl mal Klam“ – Sprossen [3, 4, 5] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL lineare-gleichungssysteme-zone-f6-v1 – Zone f6 „Rechnen mit Dezimalzahlen (Geld) und neg“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL lineare-gleichungssysteme-zone-f6-v3 – Zone f6 „Rechnen mit Dezimalzahlen (Geld) und neg“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f6 „Rechnen mit Dezimalzahlen (Geld) und neg“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL lineare-gleichungssysteme-zone-f7-v1 – Zone f7 „Gleichung mit einer Variablen aus einem “, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL lineare-gleichungssysteme-zone-f7-v3 – Zone f7 „Gleichung mit einer Variablen aus einem “, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f7 „Gleichung mit einer Variablen aus einem “ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL lineare-gleichungssysteme-zone-f8-v1 – Zone f8 „Sek II: Terme mit drei Variablen zusamme“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL lineare-gleichungssysteme-zone-f8-v3 – Zone f8 „Sek II: Terme mit drei Variablen zusamme“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f8 „Sek II: Terme mit drei Variablen zusamme“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL lineare-gleichungssysteme-zone-f9-v1 – Zone f9 „Sek II: lineare Ungleichungen in einer V“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL lineare-gleichungssysteme-zone-f9-v3 – Zone f9 „Sek II: lineare Ungleichungen in einer V“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f9 „Sek II: lineare Ungleichungen in einer V“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL lineare-gleichungssysteme-zone-f10-v1 – Zone f10 „Sek II: Tripel als Punkte und Vektoren l“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL lineare-gleichungssysteme-zone-f10-v3 – Zone f10 „Sek II: Tripel als Punkte und Vektoren l“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f10 „Sek II: Tripel als Punkte und Vektoren l“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL lineare-gleichungssysteme-zone-f5-v5 – Zone-Paar, Fehler finden
+AUSWAHL lineare-gleichungssysteme-zone-f5-v6 – Zone-Paar, gleichartige Rechenaufgabe
+AUSWAHL lineare-gleichungssysteme-e1-k1-s0-v1 – e1 k1 „Grafisch“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL lineare-gleichungssysteme-e1-k1-s1-v1 – e1 k1 „Grafisch“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e1-k1-s1-v2 – e1 k1 „Grafisch“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e1-k1-s1-v3 – e1 k1 „Grafisch“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e1-k1-s1-v4 – e1 k1 „Grafisch“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e1-k1-s1-v5 – e1 k1 „Grafisch“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e1-k1-s2-v1 – e1 k1 „Grafisch“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL lineare-gleichungssysteme-e1-k1-s3-v1 – e1 k1 „Grafisch“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL lineare-gleichungssysteme-e1-k1-s4-v1 – e1 k1 „Grafisch“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL lineare-gleichungssysteme-e1-k1-s5-v1 – e1 k1 „Grafisch“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL lineare-gleichungssysteme-e1-k1-s6-v1 – e1 k1 „Grafisch“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL lineare-gleichungssysteme-e1-k1-s7-v1 – e1 k1 „Grafisch“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL lineare-gleichungssysteme-e1-k1-s8-v1 – e1 k1 „Grafisch“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL lineare-gleichungssysteme-e1-k1-s9-v1 – e1 k1 „Grafisch“ (verfahren), Sprosse 9: Variante 1; übergangen v2
+KETTE e1 k1 „Grafisch“ (verfahren) → eine Hauptnummer
+AUSWAHL lineare-gleichungssysteme-e1-k2-s0-v1 – e1 k2 „Grafisch, Sek II“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL lineare-gleichungssysteme-e1-k2-s1-v1 – e1 k2 „Grafisch, Sek II“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e1-k2-s1-v2 – e1 k2 „Grafisch, Sek II“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e1-k2-s1-v3 – e1 k2 „Grafisch, Sek II“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e1-k2-s1-v4 – e1 k2 „Grafisch, Sek II“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e1-k2-s1-v5 – e1 k2 „Grafisch, Sek II“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e1-k2-s2-v1 – e1 k2 „Grafisch, Sek II“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+KETTE e1 k2 „Grafisch, Sek II“ (verfahren) → eine Hauptnummer
+AUSWAHL lineare-gleichungssysteme-e1-k3-s1-v1 – e1 k3 „Grafisch“ (pflicht), Sprosse 1: Variante 1
+AUSWAHL lineare-gleichungssysteme-e1-k3-s2-v1 – e1 k3 „Grafisch“ (pflicht), Sprosse 2: Variante 1
+AUSWAHL lineare-gleichungssysteme-e1-k3-s3-v1 – e1 k3 „Grafisch“ (pflicht), Sprosse 3: Variante 1
+AUSWAHL lineare-gleichungssysteme-e1-k3-s4-v1 – e1 k3 „Grafisch“ (pflicht), Sprosse 4: Variante 1
+AUSWAHL lineare-gleichungssysteme-e1-k3-s5-v1 – e1 k3 „Grafisch“ (pflicht), Sprosse 5: Variante 1
+AUSWAHL lineare-gleichungssysteme-e1-k3-s6-v1 – e1 k3 „Grafisch“ (pflicht), Sprosse 6: Variante 1
+KETTE e1 k3 „Grafisch“ (pflicht) → eine Hauptnummer
+AUSWAHL lineare-gleichungssysteme-e2-k1-s0-v1 – e2 k1 „Einsetzen“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL lineare-gleichungssysteme-e2-k1-s1-v1 – e2 k1 „Einsetzen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e2-k1-s1-v2 – e2 k1 „Einsetzen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e2-k1-s1-v3 – e2 k1 „Einsetzen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e2-k1-s1-v4 – e2 k1 „Einsetzen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e2-k1-s1-v5 – e2 k1 „Einsetzen“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e2-k1-s2-v1 – e2 k1 „Einsetzen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL lineare-gleichungssysteme-e2-k1-s3-v1 – e2 k1 „Einsetzen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL lineare-gleichungssysteme-e2-k1-s4-v1 – e2 k1 „Einsetzen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL lineare-gleichungssysteme-e2-k1-s5-v1 – e2 k1 „Einsetzen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL lineare-gleichungssysteme-e2-k1-s6-v1 – e2 k1 „Einsetzen“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL lineare-gleichungssysteme-e2-k1-s7-v1 – e2 k1 „Einsetzen“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL lineare-gleichungssysteme-e2-k1-s8-v1 – e2 k1 „Einsetzen“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL lineare-gleichungssysteme-e2-k1-s9-v1 – e2 k1 „Einsetzen“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL lineare-gleichungssysteme-e2-k1-s10-v1 – e2 k1 „Einsetzen“ (verfahren), Sprosse 10: Variante 1; übergangen v2
+KETTE e2 k1 „Einsetzen“ (verfahren) → eine Hauptnummer
+AUSWAHL lineare-gleichungssysteme-e2-k2-s1-v1 – e2 k2 „Bruch als Lösung (Vorrat)“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k2 „Bruch als Lösung (Vorrat)“ (ohne) → eine Hauptnummer
+AUSWAHL lineare-gleichungssysteme-e2-k3-s1-v1 – e2 k3 „Einsetzen“ (pflicht), Sprosse 1: Variante 1
+AUSWAHL lineare-gleichungssysteme-e2-k3-s2-v1 – e2 k3 „Einsetzen“ (pflicht), Sprosse 2: Variante 1
+AUSWAHL lineare-gleichungssysteme-e2-k3-s3-v1 – e2 k3 „Einsetzen“ (pflicht), Sprosse 3: Variante 1
+AUSWAHL lineare-gleichungssysteme-e2-k3-s4-v1 – e2 k3 „Einsetzen“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e2 k3 „Einsetzen“ (pflicht) → eine Hauptnummer
+AUSWAHL lineare-gleichungssysteme-e3-k1-s0-v1 – e3 k1 „Addition“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL lineare-gleichungssysteme-e3-k1-s1-v1 – e3 k1 „Addition“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e3-k1-s1-v2 – e3 k1 „Addition“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e3-k1-s1-v3 – e3 k1 „Addition“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e3-k1-s1-v4 – e3 k1 „Addition“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e3-k1-s1-v5 – e3 k1 „Addition“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e3-k1-s2-v1 – e3 k1 „Addition“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL lineare-gleichungssysteme-e3-k1-s3-v1 – e3 k1 „Addition“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL lineare-gleichungssysteme-e3-k1-s4-v1 – e3 k1 „Addition“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL lineare-gleichungssysteme-e3-k1-s5-v1 – e3 k1 „Addition“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL lineare-gleichungssysteme-e3-k1-s6-v1 – e3 k1 „Addition“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL lineare-gleichungssysteme-e3-k1-s7-v1 – e3 k1 „Addition“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL lineare-gleichungssysteme-e3-k1-s8-v1 – e3 k1 „Addition“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL lineare-gleichungssysteme-e3-k1-s9-v1 – e3 k1 „Addition“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+KETTE e3 k1 „Addition“ (verfahren) → eine Hauptnummer
+AUSWAHL lineare-gleichungssysteme-e3-k2-s0-v1 – e3 k2 „Addition, Sek II“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL lineare-gleichungssysteme-e3-k2-s1-v1 – e3 k2 „Addition, Sek II“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e3-k2-s1-v2 – e3 k2 „Addition, Sek II“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e3-k2-s1-v3 – e3 k2 „Addition, Sek II“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e3-k2-s1-v4 – e3 k2 „Addition, Sek II“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e3-k2-s1-v5 – e3 k2 „Addition, Sek II“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e3-k2-s2-v1 – e3 k2 „Addition, Sek II“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL lineare-gleichungssysteme-e3-k2-s3-v1 – e3 k2 „Addition, Sek II“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+KETTE e3 k2 „Addition, Sek II“ (verfahren) → eine Hauptnummer
+AUSWAHL lineare-gleichungssysteme-e3-k3-s1-v1 – e3 k3 „Dezimalzahlen und Brüche“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e3 k3 „Dezimalzahlen und Brüche“ (ohne) → eine Hauptnummer
+AUSWAHL lineare-gleichungssysteme-e3-k4-s1-v1 – e3 k4 „Addition“ (pflicht), Sprosse 1: Variante 1
+AUSWAHL lineare-gleichungssysteme-e3-k4-s2-v1 – e3 k4 „Addition“ (pflicht), Sprosse 2: Variante 1
+AUSWAHL lineare-gleichungssysteme-e3-k4-s3-v1 – e3 k4 „Addition“ (pflicht), Sprosse 3: Variante 1
+AUSWAHL lineare-gleichungssysteme-e3-k4-s4-v1 – e3 k4 „Addition“ (pflicht), Sprosse 4: Variante 1; übergangen v2
+AUSWAHL lineare-gleichungssysteme-e3-k4-s5-v1 – e3 k4 „Addition“ (pflicht), Sprosse 5: Variante 1
+KETTE e3 k4 „Addition“ (pflicht) → eine Hauptnummer
+AUSWAHL lineare-gleichungssysteme-e4-k1-s0-v1 – e4 k1 „Sachaufgaben“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL lineare-gleichungssysteme-e4-k1-s1-v1 – e4 k1 „Sachaufgaben“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e4-k1-s1-v2 – e4 k1 „Sachaufgaben“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e4-k1-s1-v3 – e4 k1 „Sachaufgaben“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e4-k1-s1-v4 – e4 k1 „Sachaufgaben“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e4-k1-s1-v5 – e4 k1 „Sachaufgaben“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e4-k1-s2-v1 – e4 k1 „Sachaufgaben“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL lineare-gleichungssysteme-e4-k1-s3-v1 – e4 k1 „Sachaufgaben“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL lineare-gleichungssysteme-e4-k1-s4-v1 – e4 k1 „Sachaufgaben“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL lineare-gleichungssysteme-e4-k1-s5-v1 – e4 k1 „Sachaufgaben“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL lineare-gleichungssysteme-e4-k1-s6-v1 – e4 k1 „Sachaufgaben“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL lineare-gleichungssysteme-e4-k1-s7-v1 – e4 k1 „Sachaufgaben“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL lineare-gleichungssysteme-e4-k1-s8-v1 – e4 k1 „Sachaufgaben“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3, v4, v5, v6, v7, v8
+KETTE e4 k1 „Sachaufgaben“ (verfahren) → eine Hauptnummer
+AUSWAHL lineare-gleichungssysteme-e4-k2-s0-v1 – e4 k2 „Sachaufgaben, Sek II“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL lineare-gleichungssysteme-e4-k2-s1-v1 – e4 k2 „Sachaufgaben, Sek II“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e4-k2-s1-v2 – e4 k2 „Sachaufgaben, Sek II“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e4-k2-s1-v3 – e4 k2 „Sachaufgaben, Sek II“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e4-k2-s1-v4 – e4 k2 „Sachaufgaben, Sek II“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e4-k2-s1-v5 – e4 k2 „Sachaufgaben, Sek II“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e4-k2-s2-v1 – e4 k2 „Sachaufgaben, Sek II“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL lineare-gleichungssysteme-e4-k2-s3-v1 – e4 k2 „Sachaufgaben, Sek II“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+KETTE e4 k2 „Sachaufgaben, Sek II“ (verfahren) → eine Hauptnummer
+AUSWAHL lineare-gleichungssysteme-e4-k3-s1-v1 – e4 k3 „Mischungen und Alter (Vorrat)“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e4 k3 „Mischungen und Alter (Vorrat)“ (ohne) → eine Hauptnummer
+AUSWAHL lineare-gleichungssysteme-e4-k4-s1-v1 – e4 k4 „Probe im Text (Rechnung mit den Zahlen der Aufgabe)“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e4 k4 „Probe im Text (Rechnung mit den Zahlen der Aufgabe)“ (ohne) → eine Hauptnummer
+AUSWAHL lineare-gleichungssysteme-e4-k5-s1-v1 – e4 k5 „Bestandteile einer Gleichung deuten“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e4 k5 „Bestandteile einer Gleichung deuten“ (ohne) → eine Hauptnummer
+AUSWAHL lineare-gleichungssysteme-e4-k6-s1-v1 – e4 k6 „Sachaufgaben“ (pflicht), Sprosse 1: Variante 1
+AUSWAHL lineare-gleichungssysteme-e4-k6-s2-v1 – e4 k6 „Sachaufgaben“ (pflicht), Sprosse 2: Variante 1
+AUSWAHL lineare-gleichungssysteme-e4-k6-s3-v1 – e4 k6 „Sachaufgaben“ (pflicht), Sprosse 3: Variante 1
+AUSWAHL lineare-gleichungssysteme-e4-k6-s4-v1 – e4 k6 „Sachaufgaben“ (pflicht), Sprosse 4: Variante 1; übergangen v2
+AUSWAHL lineare-gleichungssysteme-e4-k6-s5-v1 – e4 k6 „Sachaufgaben“ (pflicht), Sprosse 5: Variante 1
+KETTE e4 k6 „Sachaufgaben“ (pflicht) → eine Hauptnummer
+AUSWAHL lineare-gleichungssysteme-e5-k1-s0-v1 – e5 k1 „Drei Variablen und Lösungsvielfalt“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL lineare-gleichungssysteme-e5-k1-s1-v1 – e5 k1 „Drei Variablen und Lösungsvielfalt“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e5-k1-s1-v2 – e5 k1 „Drei Variablen und Lösungsvielfalt“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e5-k1-s1-v3 – e5 k1 „Drei Variablen und Lösungsvielfalt“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e5-k1-s1-v4 – e5 k1 „Drei Variablen und Lösungsvielfalt“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e5-k1-s1-v5 – e5 k1 „Drei Variablen und Lösungsvielfalt“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL lineare-gleichungssysteme-e5-k1-s2-v1 – e5 k1 „Drei Variablen und Lösungsvielfalt“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL lineare-gleichungssysteme-e5-k1-s3-v1 – e5 k1 „Drei Variablen und Lösungsvielfalt“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL lineare-gleichungssysteme-e5-k1-s4-v1 – e5 k1 „Drei Variablen und Lösungsvielfalt“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL lineare-gleichungssysteme-e5-k1-s5-v1 – e5 k1 „Drei Variablen und Lösungsvielfalt“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL lineare-gleichungssysteme-e5-k1-s6-v1 – e5 k1 „Drei Variablen und Lösungsvielfalt“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL lineare-gleichungssysteme-e5-k1-s7-v1 – e5 k1 „Drei Variablen und Lösungsvielfalt“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL lineare-gleichungssysteme-e5-k1-s8-v1 – e5 k1 „Drei Variablen und Lösungsvielfalt“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+KETTE e5 k1 „Drei Variablen und Lösungsvielfalt“ (verfahren) → eine Hauptnummer
+AUSWAHL lineare-gleichungssysteme-e5-k2-s1-v1 – e5 k2 „Drei Variablen und Lösungsvielfalt“ (pflicht), Sprosse 1: Variante 1
+AUSWAHL lineare-gleichungssysteme-e5-k2-s2-v1 – e5 k2 „Drei Variablen und Lösungsvielfalt“ (pflicht), Sprosse 2: Variante 1
+AUSWAHL lineare-gleichungssysteme-e5-k2-s3-v1 – e5 k2 „Drei Variablen und Lösungsvielfalt“ (pflicht), Sprosse 3: Variante 1
+AUSWAHL lineare-gleichungssysteme-e5-k2-s4-v1 – e5 k2 „Drei Variablen und Lösungsvielfalt“ (pflicht), Sprosse 4: Variante 1; übergangen v2
+AUSWAHL lineare-gleichungssysteme-e5-k2-s5-v1 – e5 k2 „Drei Variablen und Lösungsvielfalt“ (pflicht), Sprosse 5: Variante 1
+KETTE e5 k2 „Drei Variablen und Lösungsvielfalt“ (pflicht) → eine Hauptnummer
+KOPF Einheit 1: „Einheit 1 von 5 · Gleichungen mit zwei Variablen und grafisches Lösen“; Marken „OS Kl. 9 · GYM Kl. 8 · P10 · nicht für alle: Sekundo 9 LVL“ → Zeitmarke „ab Kl. 9 (am Gymnasium ab Kl. 8)“, Prüfungswort „P10“
+WARNUNG Nr. 13: 15 Teilaufgaben, 9 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+WARNUNG Nr. 14: 8 Teilaufgaben, 6 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 2: „Einheit 2 von 5 · Einsetzungsverfahren“; Marken „OS Kl. 9 · GYM Kl. 8 · P10 · nicht für alle: Elemente 8 Zum Selbstlernen“ → Zeitmarke „ab Kl. 9 (am Gymnasium ab Kl. 8)“, Prüfungswort „P10“
+WARNUNG Nr. 16: 16 Teilaufgaben, 0 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 3: „Einheit 3 von 5 · Additionsverfahren“; Marken „OS Kl. 9 · GYM Kl. 8 · keine P10-Aufgabe“ → Zeitmarke „ab Kl. 9 (am Gymnasium ab Kl. 8)“, Prüfungswort „keine P10-Aufgabe“
+WARNUNG Nr. 19: 15 Teilaufgaben, 0 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 4: „Einheit 4 von 5 · Sachaufgaben“; Marken „OS Kl. 9 · GYM Kl. 8 · P10 · nicht für alle: Mathematik 2023 9 Üben“ → Zeitmarke „ab Kl. 9 (am Gymnasium ab Kl. 8)“, Prüfungswort „P10“
+WARNUNG Nr. 23: 14 Teilaufgaben, 0 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 5: „Einheit 5 von 5 · Drei Variablen und Lösungsvielfalt (Sek II)“; Marken „BE Q3 · BB Q1/3 · GK · keine Prüfungsaufgabe“ → Zeitmarke „None“, Prüfungswort „keine Prüfungsaufgabe“
+WARNUNG Nr. 29: 14 Teilaufgaben, 0 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+TODO 168 Stellen in den Quelltexten:
+  abhaken.tex:2: TODO Ich-kann-Sätze: Platzhalter wie in den Aufgabendateien
+  blatt0_a.tex:4: TODO Grundvorstellungs-Aufgabe als erste Hauptnummer der Zone (2.8) fehlt in der Bank
+  blatt0_a.tex:6: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 1
+  blatt0_a.tex:7: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 1
+  blatt0_a.tex:9: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-zone-f1-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:11: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-zone-f1-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:15: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 2
+  blatt0_a.tex:16: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 2
+  blatt0_a.tex:18: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-zone-f2-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:20: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-zone-f2-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:24: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 3
+  blatt0_a.tex:25: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 3
+  blatt0_a.tex:31: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 4
+  blatt0_a.tex:32: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 4
+  blatt0_a.tex:34: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-zone-f4-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:36: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-zone-f4-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:40: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 5
+  blatt0_a.tex:41: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 5
+  blatt0_a.tex:43: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-zone-f5-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:45: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-zone-f5-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:49: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 6
+  blatt0_a.tex:50: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 6
+  blatt0_a.tex:52: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-zone-f6-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:54: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-zone-f6-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:58: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 7
+  blatt0_a.tex:59: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 7
+  blatt0_a.tex:61: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-zone-f7-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:63: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-zone-f7-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:67: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 8
+  blatt0_a.tex:68: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 8
+  blatt0_a.tex:70: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-zone-f8-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:72: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-zone-f8-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:76: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 9
+  blatt0_a.tex:77: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 9
+  blatt0_a.tex:79: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-zone-f9-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:81: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-zone-f9-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:85: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 10
+  blatt0_a.tex:86: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 10
+  blatt0_a.tex:88: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-zone-f10-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:90: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-zone-f10-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:94: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 11
+  blatt0_a.tex:95: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 11
+  blatt0_a.tex:100: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 12
+  blatt0_a.tex:101: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 12
+  blatt0_a.tex:103: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-zone-f5-v6; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 1
+  e1_a.tex:7: TODO \verfahren{…}: Verfahrensüberschrift in Sachsprache fehlt in der Bank (2.3 b)
+  e1_a.tex:8: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 13
+  e1_a.tex:9: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 13
+  e1_a.tex:20: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e1-k1-s2-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:24: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e1-k1-s5-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:34: TODO \verfahren{…}: Verfahrensüberschrift in Sachsprache fehlt in der Bank (2.3 b)
+  e1_a.tex:35: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 14
+  e1_a.tex:36: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 14
+  e1_a.tex:50: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 15
+  e1_a.tex:51: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 15
+  e1_l.tex:4: TODO Lösung der Erklärzeile 13g) fehlt in der Bank
+  e1_l.tex:6: TODO Lösung der Erklärzeile 14g) fehlt in der Bank
+  e2_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 2
+  e2_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 16
+  e2_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 16
+  e2_a.tex:13: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e2-k1-s1-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:15: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e2-k1-s1-v2; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:17: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e2-k1-s1-v3; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:19: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e2-k1-s1-v4; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:21: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e2-k1-s1-v5; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:24: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e2-k1-s2-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:26: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e2-k1-s3-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:28: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e2-k1-s4-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:30: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e2-k1-s5-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:32: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e2-k1-s6-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:34: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e2-k1-s7-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:36: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e2-k1-s8-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:38: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e2-k1-s9-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:43: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 17
+  e2_a.tex:44: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 17
+  e2_a.tex:46: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e2-k2-s1-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:50: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 18
+  e2_a.tex:51: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 18
+  e2_l.tex:4: TODO Lösung der Erklärzeile 16g) fehlt in der Bank
+  e3_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 3
+  e3_a.tex:7: TODO \verfahren{…}: Verfahrensüberschrift in Sachsprache fehlt in der Bank (2.3 b)
+  e3_a.tex:8: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 19
+  e3_a.tex:9: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 19
+  e3_a.tex:14: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e3-k1-s1-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:16: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e3-k1-s1-v2; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:18: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e3-k1-s1-v3; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:20: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e3-k1-s1-v4; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:22: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e3-k1-s1-v5; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:25: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e3-k1-s2-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:27: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e3-k1-s3-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:29: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e3-k1-s4-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:31: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e3-k1-s5-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:33: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e3-k1-s6-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:35: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e3-k1-s7-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:37: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e3-k1-s8-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:42: TODO \verfahren{…}: Verfahrensüberschrift in Sachsprache fehlt in der Bank (2.3 b)
+  e3_a.tex:43: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 20
+  e3_a.tex:44: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 20
+  e3_a.tex:49: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e3-k2-s1-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:51: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e3-k2-s1-v2; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:53: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e3-k2-s1-v3; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:55: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e3-k2-s1-v4; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:57: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e3-k2-s1-v5; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:60: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e3-k2-s2-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:65: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 21
+  e3_a.tex:66: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 21
+  e3_a.tex:68: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e3-k3-s1-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:72: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 22
+  e3_a.tex:73: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 22
+  e3_l.tex:4: TODO Lösung der Erklärzeile 19g) fehlt in der Bank
+  e3_l.tex:6: TODO Lösung der Erklärzeile 20g) fehlt in der Bank
+  e4_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 4
+  e4_a.tex:7: TODO \verfahren{…}: Verfahrensüberschrift in Sachsprache fehlt in der Bank (2.3 b)
+  e4_a.tex:8: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 23
+  e4_a.tex:9: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 23
+  e4_a.tex:14: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e4-k1-s1-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:16: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e4-k1-s1-v2; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:18: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e4-k1-s1-v3; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:20: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e4-k1-s1-v4; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:22: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e4-k1-s1-v5; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:25: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e4-k1-s2-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:27: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e4-k1-s3-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:29: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e4-k1-s4-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:31: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e4-k1-s5-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:33: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e4-k1-s6-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:35: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e4-k1-s7-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:40: TODO \verfahren{…}: Verfahrensüberschrift in Sachsprache fehlt in der Bank (2.3 b)
+  e4_a.tex:41: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 24
+  e4_a.tex:42: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 24
+  e4_a.tex:47: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e4-k2-s1-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:49: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e4-k2-s1-v2; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:51: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e4-k2-s1-v3; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:53: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e4-k2-s1-v4; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:55: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e4-k2-s1-v5; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:58: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e4-k2-s2-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:63: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 25
+  e4_a.tex:64: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 25
+  e4_a.tex:66: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e4-k3-s1-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:70: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 26
+  e4_a.tex:71: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 26
+  e4_a.tex:73: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e4-k4-s1-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:77: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 27
+  e4_a.tex:78: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 27
+  e4_a.tex:80: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e4-k5-s1-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:84: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 28
+  e4_a.tex:85: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 28
+  e4_l.tex:4: TODO Lösung der Erklärzeile 23g) fehlt in der Bank
+  e4_l.tex:6: TODO Lösung der Erklärzeile 24g) fehlt in der Bank
+  e5_a.tex:2: TODO Zeitmarke Einheit 5: Marken-Zeile nicht lesbar
+  e5_a.tex:3: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 5
+  e5_a.tex:8: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 29
+  e5_a.tex:9: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 29
+  e5_a.tex:14: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e5-k1-s1-v1; Abschnitt „Für schwache Schüler“)
+  e5_a.tex:16: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e5-k1-s1-v2; Abschnitt „Für schwache Schüler“)
+  e5_a.tex:18: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e5-k1-s1-v3; Abschnitt „Für schwache Schüler“)
+  e5_a.tex:20: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e5-k1-s1-v4; Abschnitt „Für schwache Schüler“)
+  e5_a.tex:22: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e5-k1-s1-v5; Abschnitt „Für schwache Schüler“)
+  e5_a.tex:25: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e5-k1-s2-v1; Abschnitt „Für schwache Schüler“)
+  e5_a.tex:27: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e5-k1-s3-v1; Abschnitt „Für schwache Schüler“)
+  e5_a.tex:29: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e5-k1-s4-v1; Abschnitt „Für schwache Schüler“)
+  e5_a.tex:31: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e5-k1-s5-v1; Abschnitt „Für schwache Schüler“)
+  e5_a.tex:33: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e5-k1-s6-v1; Abschnitt „Für schwache Schüler“)
+  e5_a.tex:35: TODO Darstellung für schwach fehlt in der Bank (lineare-gleichungssysteme-e5-k1-s7-v1; Abschnitt „Für schwache Schüler“)
+  e5_a.tex:40: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 30
+  e5_a.tex:41: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 30
+  e5_a.tex:50: TODO Merkkasten Einheit 5: 8 Zeilen, Vorgabe höchstens fünf (3.1)
+  e5_l.tex:4: TODO Lösung der Erklärzeile 29g) fehlt in der Bank
+STRUKTUR 0 Fehler

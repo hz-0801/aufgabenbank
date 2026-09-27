@@ -1,0 +1,125 @@
+# zusammenbau v0.1: zusammenbau.py zinsrechnung
+VORLAGE mathblatt.sty: Version 2026-09-28a
+EINHEITEN [1, 2]
+AUSWAHL zinsrechnung-zone-f1-v1 – Zone f1 „Prozentwert berechnen“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL zinsrechnung-zone-f1-v3 – Zone f1 „Prozentwert berechnen“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f1 „Prozentwert berechnen“ – Sprossen [3, 4, 5] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL zinsrechnung-zone-f2-v1 – Zone f2 „Prozentsatz berechnen“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL zinsrechnung-zone-f2-v3 – Zone f2 „Prozentsatz berechnen“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f2 „Prozentsatz berechnen“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL zinsrechnung-zone-f3-v1 – Zone f3 „Grundwert berechnen“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL zinsrechnung-zone-f3-v3 – Zone f3 „Grundwert berechnen“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+AUSWAHL zinsrechnung-zone-f4-v1 – Zone f4 „Dezimalzahlen addieren und multipliziere“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL zinsrechnung-zone-f4-v3 – Zone f4 „Dezimalzahlen addieren und multipliziere“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f4 „Dezimalzahlen addieren und multipliziere“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL zinsrechnung-zone-f5-v1 – Zone f5 „Dreisatz und fester Faktor („pro Monat“,“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL zinsrechnung-zone-f5-v3 – Zone f5 „Dreisatz und fester Faktor („pro Monat“,“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f5 „Dreisatz und fester Faktor („pro Monat“,“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL zinsrechnung-zone-f6-v1 – Zone f6 „Erhöhung um p % als Wachstumsfaktor“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL zinsrechnung-zone-f6-v3 – Zone f6 „Erhöhung um p % als Wachstumsfaktor“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f6 „Erhöhung um p % als Wachstumsfaktor“ – Sprossen [3, 4] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL zinsrechnung-zone-f7-v1 – Zone f7 „Potenz mit dem Taschenrechner“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL zinsrechnung-zone-f7-v3 – Zone f7 „Potenz mit dem Taschenrechner“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f7 „Potenz mit dem Taschenrechner“ – Sprossen [3, 4] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL zinsrechnung-zone-f8-v1 – Zone f8 „Tabelle lesen und fortschreiben“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL zinsrechnung-zone-f8-v3 – Zone f8 „Tabelle lesen und fortschreiben“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f8 „Tabelle lesen und fortschreiben“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL zinsrechnung-zone-f1-v5 – Zone-Paar, Fehler finden
+AUSWAHL zinsrechnung-zone-f1-v6 – Zone-Paar, gleichartige Rechenaufgabe
+AUSWAHL zinsrechnung-e1-k1-s0-v1 – e1 k1 „Zinsen berechnen“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL zinsrechnung-e1-k1-s1-v1 – e1 k1 „Zinsen berechnen“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL zinsrechnung-e1-k1-s2-v1 – e1 k1 „Zinsen berechnen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL zinsrechnung-e1-k1-s3-v1 – e1 k1 „Zinsen berechnen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL zinsrechnung-e1-k1-s4-v1 – e1 k1 „Zinsen berechnen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL zinsrechnung-e1-k1-s5-v1 – e1 k1 „Zinsen berechnen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL zinsrechnung-e1-k1-s6-v1 – e1 k1 „Zinsen berechnen“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL zinsrechnung-e1-k1-s7-v1 – e1 k1 „Zinsen berechnen“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL zinsrechnung-e1-k1-s8-v1 – e1 k1 „Zinsen berechnen“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL zinsrechnung-e1-k1-s9-v1 – e1 k1 „Zinsen berechnen“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL zinsrechnung-e1-k1-s10-v1 – e1 k1 „Zinsen berechnen“ (verfahren), Sprosse 10: Variante 1; übergangen v2, v3
+AUSWAHL zinsrechnung-e1-k1-s11-v1 – e1 k1 „Zinsen berechnen“ (verfahren), Sprosse 11: Variante 1; übergangen v2, v3, v4, v5, v6
+KETTE e1 k1 „Zinsen berechnen“ (verfahren) → eine Hauptnummer
+AUSWAHL zinsrechnung-e1-k2-s0-v1 – e1 k2 „Monats- und Tageszinsen“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL zinsrechnung-e1-k2-s1-v1 – e1 k2 „Monats- und Tageszinsen“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL zinsrechnung-e1-k2-s2-v1 – e1 k2 „Monats- und Tageszinsen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL zinsrechnung-e1-k2-s3-v1 – e1 k2 „Monats- und Tageszinsen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL zinsrechnung-e1-k2-s4-v1 – e1 k2 „Monats- und Tageszinsen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL zinsrechnung-e1-k2-s5-v1 – e1 k2 „Monats- und Tageszinsen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+KETTE e1 k2 „Monats- und Tageszinsen“ (verfahren) → eine Hauptnummer
+AUSWAHL zinsrechnung-e1-k3-s1-v1 – e1 k3 „Überschlag: 1 % von … , dann grob mal p“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e1 k3 „Überschlag: 1 % von … , dann grob mal p“ (ohne) → eine Hauptnummer
+AUSWAHL zinsrechnung-e1-k4-s1-v1 – e1 k4 „Zinsen berechnen“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL zinsrechnung-e1-k4-s2-v1 – e1 k4 „Zinsen berechnen“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL zinsrechnung-e1-k4-s3-v1 – e1 k4 „Zinsen berechnen“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+KETTE e1 k4 „Zinsen berechnen“ (pflicht) → eine Hauptnummer
+AUSWAHL zinsrechnung-e2-k1-s0-v1 – e2 k1 „Zinseszins“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL zinsrechnung-e2-k1-s1-v1 – e2 k1 „Zinseszins“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL zinsrechnung-e2-k1-s2-v1 – e2 k1 „Zinseszins“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL zinsrechnung-e2-k1-s3-v1 – e2 k1 „Zinseszins“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL zinsrechnung-e2-k1-s4-v1 – e2 k1 „Zinseszins“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL zinsrechnung-e2-k1-s5-v1 – e2 k1 „Zinseszins“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL zinsrechnung-e2-k1-s6-v1 – e2 k1 „Zinseszins“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL zinsrechnung-e2-k1-s7-v1 – e2 k1 „Zinseszins“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL zinsrechnung-e2-k1-s8-v1 – e2 k1 „Zinseszins“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL zinsrechnung-e2-k1-s9-v1 – e2 k1 „Zinseszins“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL zinsrechnung-e2-k1-s10-v1 – e2 k1 „Zinseszins“ (verfahren), Sprosse 10: Variante 1; übergangen v2, v3, v4
+KETTE e2 k1 „Zinseszins“ (verfahren) → eine Hauptnummer
+AUSWAHL zinsrechnung-e2-k2-s1-v1 – e2 k2 „Guthaben nach n Jahren mit jährlicher Einzahlung (Tabelle statt Formel)“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k2 „Guthaben nach n Jahren mit jährlicher Einzahlung (Tabelle statt Formel)“ (ohne) → eine Hauptnummer
+AUSWAHL zinsrechnung-e2-k3-s1-v1 – e2 k3 „Ratenkauf und Kredit mit Zinseszins (Vorrat, Verbrauchersicht)“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k3 „Ratenkauf und Kredit mit Zinseszins (Vorrat, Verbrauchersicht)“ (ohne) → eine Hauptnummer
+AUSWAHL zinsrechnung-e2-k4-s1-v1 – e2 k4 „Zinseszins“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL zinsrechnung-e2-k4-s2-v1 – e2 k4 „Zinseszins“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL zinsrechnung-e2-k4-s3-v1 – e2 k4 „Zinseszins“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL zinsrechnung-e2-k4-s4-v1 – e2 k4 „Zinseszins“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e2 k4 „Zinseszins“ (pflicht) → eine Hauptnummer
+KOPF Einheit 1: „Einheit 1 von 2 · Jahreszins, Monats- und Tageszins“; Marken „OS Kl. 8 · GYM Kl. 7 · P10 · nicht für alle: Mathematik 2023 8 Vertiefen, Elemente 7 Zum Selbstlernen“ → Zeitmarke „ab Kl. 8 (am Gymnasium ab Kl. 7)“, Prüfungswort „P10“
+WARNUNG Nr. 11: 12 Teilaufgaben, 1 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 2: „Einheit 2 von 2 · Zinseszins und Guthabentabelle“; Marken „OS Kl. 8–10 (Sekundo 10, Mathematik 2023 8, Schnittpunkt 8) · GYM Kl. 7 · P10 · nicht für alle: Sekundo 9 LVL, Mathematik 2023 10 Üben, Fundamente 7 Streifzug“ → Zeitmarke „ab Kl. 8, je nach Buch bis Kl. 10 (am Gymnasium ab Kl. 7)“, Prüfungswort „P10“
+WARNUNG Nr. 15: 11 Teilaufgaben, 3 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+TODO 44 Stellen in den Quelltexten:
+  abhaken.tex:2: TODO Ich-kann-Sätze: Platzhalter wie in den Aufgabendateien
+  blatt0_a.tex:5: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 1
+  blatt0_a.tex:6: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 1
+  blatt0_a.tex:14: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 2
+  blatt0_a.tex:15: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 2
+  blatt0_a.tex:23: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 3
+  blatt0_a.tex:24: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 3
+  blatt0_a.tex:32: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 4
+  blatt0_a.tex:33: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 4
+  blatt0_a.tex:41: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 5
+  blatt0_a.tex:42: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 5
+  blatt0_a.tex:50: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 6
+  blatt0_a.tex:51: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 6
+  blatt0_a.tex:59: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 7
+  blatt0_a.tex:60: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 7
+  blatt0_a.tex:68: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 8
+  blatt0_a.tex:69: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 8
+  blatt0_a.tex:83: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 9
+  blatt0_a.tex:84: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 9
+  blatt0_a.tex:91: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 10
+  blatt0_a.tex:92: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 10
+  e1_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 1
+  e1_a.tex:7: TODO \verfahren{…}: Verfahrensüberschrift in Sachsprache fehlt in der Bank (2.3 b)
+  e1_a.tex:8: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 11
+  e1_a.tex:9: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 11
+  e1_a.tex:11: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e1_a.tex:30: TODO \verfahren{…}: Verfahrensüberschrift in Sachsprache fehlt in der Bank (2.3 b)
+  e1_a.tex:31: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 12
+  e1_a.tex:32: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 12
+  e1_a.tex:34: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e1_a.tex:45: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 13
+  e1_a.tex:46: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 13
+  e1_a.tex:53: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 14
+  e1_a.tex:54: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 14
+  e2_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 2
+  e2_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 15
+  e2_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 15
+  e2_a.tex:10: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e2_a.tex:35: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 16
+  e2_a.tex:36: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 16
+  e2_a.tex:46: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 17
+  e2_a.tex:47: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 17
+  e2_a.tex:54: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 18
+  e2_a.tex:55: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 18
+STRUKTUR 0 Fehler

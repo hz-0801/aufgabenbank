@@ -1,0 +1,67 @@
+% Einheit 4 von 5 – Graph und Ableitungsgraph (bank/kurvenuntersuchung/e4.jsonl, zusammenbau v0.1)
+%% TODO Zeitmarke Einheit 4: Marken-Zeile nicht lesbar
+%% TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 4
+\einheitenkopf[e4]{Einheit 4 von 5 · Graph und Ableitungsgraph}
+\zweigzeile{Abitur GK}
+\setcounter{aufgabe}{29}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 30
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 30
+\begin{aufgabe}{Graph und Ableitungsgraph}
+%% TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+\begin{teile}
+\teil Die Abbildung zeigt den Graphen von $f$ mit den Punkten $A$, $B$ und $C$. Trage für jeden Punkt nur ein Zeichen für die Steigung ein: plus, minus oder null.
+
+\begin{ksys}[xmin=-3,xmax=3,ymin=-3,ymax=3,ablesen] \funktionab{0.5*\x^3-1.5*\x}{f}{-2.3}{2.3} \punkt{-2}{-1}{A} \punkt{-1}{1}{B} \punkt{0}{0}{C} \end{ksys}
+\teil Die Abbildung zeigt den Graphen von $f$. Gib die Nullstellen von $f'$ an und trage das Vorzeichen von $f'$ in jedem Abschnitt dazwischen ein.
+
+\begin{ksys}[xmin=-3,xmax=3,ymin=-3,ymax=3,ablesen] \funktionab{0.5*\x^3-1.5*\x}{f}{-2.3}{2.3} \end{ksys}
+\teil Die Abbildung zeigt den Graphen von $f$ mit der Tangente an der Stelle $1$. Lies $f'(1)$ ab und gib die Wendestelle von $f$ an.
+
+\begin{ksys}[xmin=-1,xmax=5,ymin=-1,ymax=5,ablesen] \funktionab{-\x^3/6+\x^2}{f}{-1}{4.8} \tangentean{-\x^3/6+\x^2}{1}{t} \end{ksys}
+\teil Die Abbildung zeigt den Graphen von $f$. Markiere einen Punkt $P$ des Graphen mit $f'(x) < 0$ und $f''(x) > 0$ und begründe deine Wahl.
+
+\begin{ksys}[xmin=-3,xmax=3,ymin=-3,ymax=3] \funktionab{0.5*\x^3-1.5*\x}{f}{-2.3}{2.3} \end{ksys}
+\teil Gegeben ist $f(x) = -0{,}25x^3 + 1{,}5x^2 - 2$ mit $f'(x) = -0{,}75x^2 + 3x$. Zeichne die Graphen von $f$ und $f'$ für $-1 \le x \le 5$ in das Koordinatensystem. \hfill (Abitur 2020 GK)
+
+\begin{ksys}[xmin=-1,xmax=5,ymin=-4,ymax=7]  \end{ksys}
+\teil Von einer ganzrationalen Funktion $f$ ist bekannt: $f(-2) = 0$; $f'(0) = 0$ und $f''(0) \ne 0$; $f'$ hat bei $x = 2$ ein Minimum, und $f$ steigt für $x < 0$. Skizziere einen möglichen Graphen von $f$ in das Koordinatensystem. \hfill (Abitur 2023 LK)
+
+\begin{ksys}[xmin=-3,xmax=6,ymin=-2,ymax=4]  \end{ksys}
+\teil Von einer ganzrationalen, nicht linearen Funktion $f$ ist bekannt: $f(1) = 0$; $f'(3) = 0$ und $f''(3) \ne 0$; $f'$ hat bei $x = 5$ ein Maximum. Begründe, dass $f$ mindestens den Grad $3$ hat. \hfill (Abitur 2023 LK)
+\teil Die Abbildung zeigt den Graphen der Differenzfunktion $d(x) = f(x) - g(x)$. Beschreibe die Lage der Graphen von $f$ und $g$ zueinander.
+
+\begin{ksys}[xmin=-2,xmax=4,ymin=-3,ymax=3,ablesen] \funktionab{-0.5*\x^2+\x+1.5}{d}{-2}{4} \end{ksys}
+\teil Gegeben ist $f(x) = (x - 3) \cdot \mathrm{e}^{-x + 5}$ mit $f'(x) = (4 - x) \cdot \mathrm{e}^{-x + 5}$; der Graph hat den Wendepunkt $W(5 | 2)$. Beurteile die Aussagen. I: Die Gerade durch $A(3 | 0)$ und $W$ ist senkrecht zur am stärksten fallenden Tangente des Graphen. II: Jede Parallele zur $x$-Achse $y = k$ mit $k \le -1$ hat mit dem Graphen von $f'$ keinen gemeinsamen Punkt. \hfill (Abitur 2024 GK)
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 31
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 31
+\begin{aufgabe}{Gemeinsamen Punkt zweier Graphen über gleiche Flächeninhalte indirekt begründen}
+\begin{teile}
+\teil Die Graphen von $f$ und $g$ verlaufen auf $[0; 4]$ oberhalb der $x$-Achse und schließen dort mit ihr gleich große Flächen ein. Begründe indirekt, dass sie auf diesem Intervall einen gemeinsamen Punkt haben.
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 32
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 32
+\begin{aufgabe}{Logarithmus einer Exponentialfunktion als lineare Funktion nachweisen und Steigung und Achsenabschnitt angeben}
+\begin{teile}
+\teil Gegeben ist $f(x) = 5 \cdot \mathrm{e}^{0{,}4x}$. Weise nach, dass $g(x) = \mathrm{ln}(f(x))$ eine lineare Funktion ist, und gib Steigung und $y$-Achsenabschnitt an.
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 33
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 33
+\begin{aufgabe}{Graph und Ableitungsgraph – Fehler finden, Begründen, Darstellungswechsel}
+\begin{teile}
+\teil Die Abbildung zeigt den Graphen von $f'$. Mia schreibt: „$f$ hat bei $x = 0$ einen Hochpunkt, weil der Graph dort am höchsten ist.“ Finde den Fehler und stelle richtig.
+
+\begin{ksys}[xmin=-3,xmax=3,ymin=-3,ymax=3,ablesen] \funktionab{-0.5*\x^2+2}{f'}{-3}{3} \end{ksys}
+\teil Begründe, warum die Nullstellen von $f'$ genau unter den Hoch- und Tiefpunkten des Graphen von $f$ liegen.
+\teil Die Abbildung zeigt den Graphen von $f'$. Zeichne einen möglichen Graphen von $f$ mit $f(0) = 1$ in dasselbe Koordinatensystem.
+
+\begin{ksys}[xmin=-2,xmax=4,ymin=-3,ymax=4] \funktionab{\x-1}{f'}{-2}{4} \end{ksys}
+\end{teile}
+\end{aufgabe}

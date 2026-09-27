@@ -1,0 +1,20 @@
+% Lösungen Einheit 3 von 5 – Krümmung und Wendepunkte (zusammenbau v0.1)
+\einheitenkopf{Einheit 3 von 5 · Krümmung und Wendepunkte}
+
+\erg{23}{a) $f'''(x_0) \ne 0$ – der Wert $f'''(1) = 6$ ist gegeben. \quad b) $f'(x) = 3x^2 - 12x + 4$; $f''(x) = 6x - 12$; $f'''(x) = 6$ \quad c) $f''(x) = 6x - 6 = 0$ für $x = 1$; $f'''(1) = 6 \ne 0$; $f(1) = 3$; $W(1 | 3)$ \quad d) $f''(x) = 12x^2 - 12 = 0 \Leftrightarrow x^2 = 1$, also $x_1 = -1$, $x_2 = 1$; $f'''(x) = 24x$, $f'''(\pm 1) = \pm 24 \ne 0$; $W_1(-1 | -2)$, $W_2(1 | -2)$ \quad e) $f''(x) = 12x^2 - 48x + 36 = 12(x - 1)(x - 3) = 0$ für $x_1 = 1$, $x_2 = 3$; $f''(0) = 36 > 0$: linksgekrümmt auf $]-\infty; 1]$; $f''(2) = -12 < 0$: rechtsgekrümmt auf $[1; 3]$; $f''(4) = 36 > 0$: linksgekrümmt auf $[3; \infty[$ \quad f) $f''(x) = \frac{1}{4}(6x - 18)$, $f''(3) = 0$; $f'''(3) = 1{,}5 \ne 0$; $f(3) = 0$; $f'(x) = \frac{1}{4}(3x^2 - 18x + 18)$, $f'(3) = -2{,}25$; Wendetangente $t(x) = -2{,}25(x - 3) = -2{,}25x + 6{,}75$ \quad g) $f''(x) = 6x - 12$, $f''(2) = 0$; $f'''(2) = 6 \ne 0$; $f(2) = 8 - 24 + 16 - 3 = -3$, also ist $W(2 | -3)$ Wendepunkt. \quad h) $f'(x) = 3x^4 - 6x^2$, $f''(x) = 12x^3 - 12x = 12x(x^2 - 1) = 0$ für $x = 0$, $x = \pm 1$; $f'''(x) = 36x^2 - 12$: $f'''(0) = -12 \ne 0$, $f'''(\pm 1) = 24 \ne 0$; $W_1(-1 | 1{,}4)$, $W_2(1 | -1{,}4)$ und $S(0 | 0)$ mit $f'(0) = 0$, also Sattelpunkt. \quad i) $f''(x) = (2x + 2)\,\mathrm{e}^{x} + (x^2 + 2x - 1)\,\mathrm{e}^{x} = (x^2 + 4x + 1)\,\mathrm{e}^{x} = 0 \Leftrightarrow x^2 + 4x + 1 = 0$, also $x = -2 \pm \sqrt{3}$; $W_1(-3{,}73 | 0{,}31)$, $W_2(-0{,}27 | -0{,}71)$ \quad j) $f''(x) = 6x^3 - 6x$, $f''(1) = 0$; $f'''(x) = 18x^2 - 6$, $f'''(1) = 12 \ne 0$; $f(1) = 1{,}3$; wegen der Punktsymmetrie ist auch $W'(-1 | -1{,}3)$ Wendepunkt. \quad k) Tiefpunkt bei $x = 2$: $T(2 | -1{,}47)$ im IV. Quadranten, dort ist der Graph linksgekrümmt; rechts davon steigt er und nähert sich von unten der $x$-Achse, ohne sie zu erreichen – dafür muss er in eine Rechtskrümmung übergehen, dort liegt ein Wendepunkt. $g''$ muss man nicht berechnen.}
+
+23k)
+
+\begin{ksys}[xmin=-1,xmax=10,ymin=-2,ymax=1,klein] \funktionab{-2*\x*exp(-0.5*\x)}{g}{-0.5}{10} \tiefpunkt{2}{-1.47}{T} \end{ksys}
+
+\erg{24}{a) $f''(x) = -6x^2 + 12x = -6x(x - 2)$, Vorzeichenwechsel bei $0$ und $2$: $W_1(0 | 0)$, $W_2(2 | 8)$; $g(x) = 4x$; die Parallele berührt den Bogen dazwischen: $f'(x) = -2x^3 + 6x^2 = 4$ für $x = 1$, Berührpunkt $(1 | 1{,}5)$, Gerade $y = 4x - 2{,}5$.}
+
+24a)
+
+\begin{ksys}[xmin=-1,xmax=3,ymin=-3,ymax=9,ystep=2,klein] \funktionab{-0.5*\x^4+2*\x^3}{f}{0}{2} \gerade{4}{0}{g} \gerade{4}{-2.5}{p} \end{ksys}
+
+\erg{25}{a) $W_2(2 | 1)$ – $f''(x) = -3x + 6 = 0$ für $x = 2$, $f'''(2) = -3 \ne 0$ und $f(2) = 1$; $W_3$ hat die richtige Stelle, aber den falschen Wert; $W_4$ liegt auf dem Graphen, ist aber kein Wendepunkt.}
+\erg{26}{a) $f''(x) = 6x + 6$, $f''(-1) = 0$; $f'(x) = 3x^2 + 6x + 2$, $f'(-1) = -1$; $\mathrm{tan}\,\alpha = 1$, also $\alpha = 45°$.}
+\erg{27}{a) $s(x) = -2 \Leftrightarrow \mathrm{sin}\left(\frac{\pi}{2}x\right) = 0 \Leftrightarrow x = 2k$, also ganzzahlig; $s'(x) = \frac{3\pi}{2}\,\mathrm{cos}\left(\frac{\pi}{2}x\right)$ mit $\mathrm{cos}(k\pi) = \pm 1$: Steigung $\pm\frac{3\pi}{2} \approx \pm 4{,}71$}
+\erg{28}{a) Für $m < 3$ (flacher als die Wendetangente): drei gemeinsame Punkte; für $m \ge 3$: nur $W$ – bei $m = 3$ ist es die Wendetangente selbst.}
+\erg{29}{a) Fehler: $f'' < 0$ bedeutet rechtsgekrümmt. Richtig: rechtsgekrümmt auf $]-\infty; -2]$, linksgekrümmt auf $[-2; \infty[$, denn $f''(0) = 12 > 0$. \quad b) Ein Wendepunkt ist ein Wechsel der Krümmung, also muss $f''$ bei $x_0$ das Vorzeichen wechseln. Beispiel $f(x) = x^4$: $f''(0) = 0$, aber $f''(x) = 12x^2$ ist auf beiden Seiten positiv – der Graph bleibt linksgekrümmt, bei $0$ liegt ein Tiefpunkt. \quad c) $f''(x) = -\frac{3}{8}x^2 + \frac{3}{2} = 0$ für $x = \pm 2$; $f''(0) = 1{,}5 > 0$: konvex für $-2 \le x \le 2$, außerhalb davon ist $f'' < 0$.}

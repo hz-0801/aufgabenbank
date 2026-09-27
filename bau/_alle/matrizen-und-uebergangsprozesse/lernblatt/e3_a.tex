@@ -1,0 +1,36 @@
+% Einheit 3 von 5 – Verflechtung (bank/matrizen-und-uebergangsprozesse/e3.jsonl, zusammenbau v0.1)
+%% TODO Zeitmarke Einheit 3: Marken-Zeile nicht lesbar
+%% TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 3
+\einheitenkopf[e3]{Einheit 3 von 5 · Verflechtung}
+\zweigzeile{keine Prüfungsaufgabe}
+\setcounter{aufgabe}{12}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 13
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 13
+\begin{aufgabe}{Verflechtung}
+%% TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+\begin{teile}
+\teil Die Bedarfsmatrix A hat die Zeilen R1, R2 (Rohstoffe) und die Spalten Z1, Z2 (Zwischenprodukte). In Zeile 1, Spalte 2 steht 4. Welcher Pfeil im Verflechtungsdiagramm trägt die 4? \\ \kreuz{von R1 nach Z2} \\ \kreuz{von R2 nach Z1}
+\teil Eine Bäckerei braucht je Blech Apfelkuchen 2 kg Mehl und 1 kg Zucker, je Blech Nusskuchen 3 kg Mehl und 2 kg Zucker: $A = ((2 | 3), (1 | 2))$ (Zeilen Mehl, Zucker). Berechne den Bedarf für 5 Bleche Apfel- und 4 Bleche Nusskuchen. ( \leerfeld | \leerfeld )
+\teil Im Verflechtungsdiagramm führen die Pfeile R1 → Z1 mit 2, R1 → Z2 mit 5, R2 → Z2 mit 1 und R3 → Z1 mit 4. Gib die Matrix A an (Zeilen R1, R2, R3; Spalten Z1, Z2). (( \leerfeld | \leerfeld ), ( \leerfeld | \leerfeld ), ( \leerfeld | \leerfeld ))
+\teil Ein Betrieb verarbeitet 4 Rohstoffe zu 3 Zwischenprodukten und daraus zu 2 Endprodukten. Welches Format haben A (Rohstoffe je Zwischenprodukt), B (Zwischenprodukte je Endprodukt) und $C = A \cdot B$?
+\teil $A = ((1 | 2), (3 | 0))$ (Zeilen R1, R2; Spalten Z1, Z2) und $B = ((2 | 1), (1 | 4))$ (Zeilen Z1, Z2; Spalten E1, E2). Bestätige über die Pfade den Eintrag von $C = A \cdot B$ in Zeile 1, Spalte 2.
+\end{teile}
+\begin{gleichungsraster}[2]
+\gl{\text{$C = ((2 | 1), (1 | 4))$ (Zeilen R1, R2; Spalten E1, E2). Verbraucht wurden 50 ME R1 und 95 ME R2. Wie viele Stück E1 und E2 wurden hergestellt?}} &
+\end{gleichungsraster}
+\begin{teile}
+\teil Je Stück eines Produkts braucht man 3 kg R1, 5 kg R2 und 2 kg R3. Im Lager sind 120 kg R1, 150 kg R2 und 90 kg R3. Wie viele Stück kann man höchstens herstellen? \leerfeld[Stück]
+\teil Eine Möbelwerkstatt fertigt aus Gestellen (Z1) und Platten (Z2) Tische (E1) und Bänke (E2); $B = ((2 | 1), (0 | 3))$ gibt die Zwischenprodukte je Endprodukt an. Für einen Auftrag über 20 Tische und 10 Bänke gilt $(z | 3z) \cdot B \cdot (20 | 10) = 1400$. Erläutere die Gleichung im Sachzusammenhang und löse sie \hfill (Abitur 2025 LK).
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 14
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 14
+\begin{aufgabe}{Verflechtung – Fehler finden, Begründen, Anwendung}
+\begin{teile}
+\teil $A = ((1 | 2), (2 | 1))$ gibt Rohstoffe je Zwischenprodukt, $B = ((1 | 1), (0 | 2))$ Zwischenprodukte je Endprodukt an. Für 10 Stück E1 und 20 Stück E2 rechnet Kai den Rohstoffbedarf als $A \cdot (10 | 20) = (50 | 40)$. Finde den Fehler und rechne richtig.
+\teil Begründe, warum die Gesamtmatrix das Produkt $A \cdot B$ ist und nicht $B \cdot A$ (A: Rohstoffe je Zwischenprodukt, B: Zwischenprodukte je Endprodukt).
+\teil Eine Kelterei mischt aus Apfel- und Traubensaft zwei Säfte: je Liter „Mild“ $0{,}7$ l Apfel und $0{,}3$ l Traube, je Liter „Herb“ $0{,}4$ l Apfel und $0{,}6$ l Traube. Im Lager sind 1000 l Apfel- und 800 l Traubensaft. Kann die Kelterei einen Auftrag über 1000 l Mild und 500 l Herb erfüllen?
+\end{teile}
+\end{aufgabe}

@@ -1,0 +1,59 @@
+# zusammenbau v0.1: zusammenbau.py uneigentliche-integrale
+VORLAGE mathblatt.sty: Version 2026-09-28a
+EINHEITEN [1, 2]
+AUSWAHL uneigentliche-integrale-zone-f1-v1 – Zone f1 „Grenzverhalten erkennen“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL uneigentliche-integrale-zone-f1-v3 – Zone f1 „Grenzverhalten erkennen“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f1 „Grenzverhalten erkennen“ – Sprossen [3, 4] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL uneigentliche-integrale-zone-f2-v1 – Zone f2 „Hauptsatz lesen“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL uneigentliche-integrale-zone-f2-v3 – Zone f2 „Hauptsatz lesen“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f2 „Hauptsatz lesen“ – Sprossen [3, 4, 5, 6] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL uneigentliche-integrale-zone-f3-v1 – Zone f3 „Flächen unter Graphen als Integrale deut“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL uneigentliche-integrale-zone-f3-v3 – Zone f3 „Flächen unter Graphen als Integrale deut“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f3 „Flächen unter Graphen als Integrale deut“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL uneigentliche-integrale-zone-f2-v6 – Zone-Paar, Fehler finden
+AUSWAHL uneigentliche-integrale-zone-f2-v7 – Zone-Paar, gleichartige Rechenaufgabe
+AUSWAHL uneigentliche-integrale-e1-k1-s0-v1 – e1 k1 „Der Begriff“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL uneigentliche-integrale-e1-k1-s1-v1 – e1 k1 „Der Begriff“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL uneigentliche-integrale-e1-k1-s2-v1 – e1 k1 „Der Begriff“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL uneigentliche-integrale-e1-k1-s3-v1 – e1 k1 „Der Begriff“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3, v4, v5
+KETTE e1 k1 „Der Begriff“ (verfahren) → eine Hauptnummer
+AUSWAHL uneigentliche-integrale-e1-k2-s1-v1 – e1 k2 „Der Begriff“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL uneigentliche-integrale-e1-k2-s2-v1 – e1 k2 „Der Begriff“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+KETTE e1 k2 „Der Begriff“ (pflicht) → eine Hauptnummer
+AUSWAHL uneigentliche-integrale-e2-k1-s0-v1 – e2 k1 „Die Näherungsdeutung“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL uneigentliche-integrale-e2-k1-s1-v1 – e2 k1 „Die Näherungsdeutung“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL uneigentliche-integrale-e2-k1-s2-v1 – e2 k1 „Die Näherungsdeutung“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL uneigentliche-integrale-e2-k1-s3-v1 – e2 k1 „Die Näherungsdeutung“ (verfahren), Sprosse 3: Variante 1; übergangen v2
+KETTE e2 k1 „Die Näherungsdeutung“ (verfahren) → eine Hauptnummer
+AUSWAHL uneigentliche-integrale-e2-k2-s1-v1 – e2 k2 „Die Näherungsdeutung“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL uneigentliche-integrale-e2-k2-s2-v1 – e2 k2 „Die Näherungsdeutung“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+KETTE e2 k2 „Die Näherungsdeutung“ (pflicht) → eine Hauptnummer
+KOPF Einheit 1: „Einheit 1 von 2 · Der Begriff“; Marken „BE Q2/4 · BB Q2 · nur LK · keine Prüfungsaufgabe“ → Zeitmarke „None“, Prüfungswort „keine Prüfungsaufgabe“
+KOPF Einheit 2: „Einheit 2 von 2 · Die Näherungsdeutung“; Marken „BE Q2/4 · BB Q2 · nur LK · Abitur LK“ → Zeitmarke „None“, Prüfungswort „Abitur LK“
+TODO 25 Stellen in den Quelltexten:
+  abhaken.tex:2: TODO Ich-kann-Sätze: Platzhalter wie in den Aufgabendateien
+  blatt0_a.tex:5: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 1
+  blatt0_a.tex:6: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 1
+  blatt0_a.tex:14: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 2
+  blatt0_a.tex:15: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 2
+  blatt0_a.tex:23: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 3
+  blatt0_a.tex:24: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 3
+  blatt0_a.tex:32: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 4
+  blatt0_a.tex:33: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 4
+  blatt0_a.tex:40: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 5
+  blatt0_a.tex:41: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 5
+  e1_a.tex:2: TODO Zeitmarke Einheit 1: Marken-Zeile nicht lesbar
+  e1_a.tex:3: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 1
+  e1_a.tex:8: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 6
+  e1_a.tex:9: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 6
+  e1_a.tex:11: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e1_a.tex:22: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 7
+  e1_a.tex:23: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 7
+  e2_a.tex:2: TODO Zeitmarke Einheit 2: Marken-Zeile nicht lesbar
+  e2_a.tex:3: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 2
+  e2_a.tex:8: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 8
+  e2_a.tex:9: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 8
+  e2_a.tex:11: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e2_a.tex:24: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 9
+  e2_a.tex:25: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 9
+STRUKTUR 0 Fehler

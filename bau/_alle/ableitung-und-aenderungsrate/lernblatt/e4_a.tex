@@ -1,0 +1,38 @@
+% Einheit 4 von 4 – Die Rate als Funktion (bank/ableitung-und-aenderungsrate/e4.jsonl, zusammenbau v0.1)
+%% TODO Zeitmarke Einheit 4: Marken-Zeile nicht lesbar
+%% TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 4
+\einheitenkopf[e4]{Einheit 4 von 4 · Die Rate als Funktion}
+\zweigzeile{Abitur GK}
+\setcounter{aufgabe}{18}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 19
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 19
+\begin{aufgabe}{Die Rate als Funktion}
+%% TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+\begin{teile}
+\teil $f(t)$ ist die Wassermenge in einem Becken in Litern nach $t$ Minuten. Was beschreibt $f$, und wo ist die größte Zuflussrate zu suchen? \\ \kreuz{Bestand (Höhe, Anzahl, Menge) – größte Rate bei den Nullstellen der zweiten Ableitung} \\ \kreuz{Rate (je Zeiteinheit) – größte Rate bei den Nullstellen der ersten Ableitung}
+\teil Die Zuflussrate in ein Becken wird durch $r$ beschrieben ($t$ in Stunden, $r(t)$ in Litern je Stunde); es gilt $r'(t) = (6 - t) \cdot \mathrm{e}^{-0{,}5t}$. Gib die Nullstelle von $r'$ an und nenne den Zeitpunkt der größten Zuflussrate an. t = \leerfeld
+\teil $f$ beschreibt die Anzahl der neu registrierten Nutzer je Tag ($t$ in Tagen seit dem Start); es gilt $f'(t) = 5 \cdot (1 - \frac{t}{60}) \cdot \mathrm{e}^{-t/60}$. Gib den Zeitpunkt der größten Registrierungsrate an \hfill (Abitur 2021 LK). t = \leerfeld
+\teil Gegeben ist $f(x) = 0{,}5x^3 - 3x + 2$. Unter den Tangenten an den Graphen von $f$ hat eine die kleinste Steigung. Berechne diese Steigung \hfill (Abitur 2019 GK). m = \leerfeld
+\teil Die Höhe eines Bambus wird durch $w(t) = -t^3 + 12t^2$ beschrieben ($t$ in Wochen, $w(t)$ in cm, $0 \le t \le 8$); $w'(t) = -3t^2 + 24t$. Berechne die höchste Wachstumsgeschwindigkeit in cm je Woche; die notwendige Bedingung genügt \hfill (Abitur 2019 GK). \leerfeld[cm] je Woche
+\teil Die Ankunftsrate der Gäste eines Cafés wird für $0 \le t \le 6$ durch $r(t) = 50t^2 \cdot \mathrm{e}^{-0{,}8t}$ beschrieben ($t$ in Stunden nach 7:15 Uhr, $r(t)$ in Gästen je Stunde); die Rate hat genau ein Maximum. Berechne den Zeitpunkt als Uhrzeit und den Wert der größten Ankunftsrate \hfill (Abitur 2026 LK).
+\teil Die momentane Zuflussrate in ein Auffangbecken wird für $0 \le x \le 6$ durch $z(x) = 0{,}5x \cdot (6 - x)^2$ beschrieben ($x$ in Stunden, $z(x)$ in m³ je Stunde). Berechne die größte und die kleinste momentane Zuflussrate in diesem Zeitraum \hfill (Abitur 2025 LK).
+\teil Die Höhe einer Drohne wird für $0 \le t \le 15$ durch $h(t) = 0{,}2t^3 - 6t^2 + 45t$ beschrieben ($t$ in Minuten, $h(t)$ in m); die Phase des Aufstiegs dauert von 0 bis 5 Minuten, $h'(t) = 0{,}6t^2 - 12t + 45$. Bestimme den Zeitraum in dieser Phase, in dem die Steiggeschwindigkeit mindestens $23{,}4$ m je min beträgt \hfill (Abitur 2022 GK).
+\teil Die Anzahl der je Stunde eingehenden Bestellungen in einem Onlineshop wird durch $r(t) = 15t - 1{,}5t^2$ modelliert ($t$ in Stunden seit Beginn einer Aktion). Begründe, dass das Modell für $t > 10$ nicht geeignet ist.
+\teil Zwei Bäume wachsen nach $a(t) = 18t^2 - t^3$ und $b(t) = 3t^2$ ($t$ in Jahren, Höhe in cm, $0 \le t \le 12$). Berechne den Zeitpunkt, zu dem der Unterschied der Wachstumsgeschwindigkeiten am größten ist, und diesen Unterschied \hfill (Abitur 2019 GK).
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 20
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 20
+\begin{aufgabe}{Die Rate als Funktion – Fehler finden, Begründen, Anwendung, Darstellungswechsel}
+\begin{teile}
+\teil Die Höhe einer Pflanze wird durch $h(t) = -0{,}5t^3 + 6t^2$ beschrieben ($t$ in Wochen, $h(t)$ in cm, $0 \le t \le 8$). Gesucht ist die größte Wachstumsgeschwindigkeit. Ben rechnet $h'(t) = -1{,}5t^2 + 12t = 0$ ⇔ $t = 8$ und antwortet: „Nach 8 Wochen wächst die Pflanze am schnellsten.“ Finde den Fehler.
+\teil $f$ beschreibt einen Bestand. Begründe, warum die größte Änderungsrate von $f$ an einer Wendestelle von $f$ liegt.
+\teil Die Konzentration eines Medikaments im Blut wird durch $c(t) = 4t \cdot \mathrm{e}^{-0{,}5t}$ beschrieben ($t$ in Stunden nach der Einnahme, $c(t)$ in mg je Liter); $c'(t) = 4 \cdot (1 - 0{,}5t) \cdot \mathrm{e}^{-0{,}5t}$. Wann nimmt die Konzentration am stärksten ab, und wie schnell sinkt sie dann?
+\teil Die Abbildung zeigt den Graphen der Änderungsrate $f'$ eines Wasserstands ($t$ in Stunden, $f'(t)$ in cm je Stunde). Lies ab, wann der Wasserstand am schnellsten steigt und wie groß die Rate dann ist.
+
+\begin{ksys}[xmin=0,xmax=8,ymin=-2,ymax=10,xstep=1,ystep=2,xlabel=t in h,ylabel=f'(t),ablesen]\funktion{-0.5*\x^2+4*\x}{f'}\end{ksys}
+t = \leerfeld , \leerfeld[cm] je h
+\end{teile}
+\end{aufgabe}

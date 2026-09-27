@@ -1,0 +1,27 @@
+% Lösungen Einheit 4 von 5 – Graph und Ableitungsgraph (zusammenbau v0.1)
+\einheitenkopf{Einheit 4 von 5 · Graph und Ableitungsgraph}
+
+\erg{30}{a) $A$: plus, $B$: null, $C$: minus \quad b) Nullstellen von $f'$: $x = -1$ und $x = 1$ (Hoch- und Tiefpunkt); $f' > 0$ für $x < -1$, $f' < 0$ zwischen $-1$ und $1$, $f' > 0$ für $x > 1$ \quad c) $f'(1) = 1{,}5$; Wendestelle $x = 2$ – dort ist der Graph am steilsten. \quad d) Jeder Punkt mit $0 < x < 1$, etwa $P(0{,}5 | -0{,}69)$: dort fällt der Graph ($f' < 0$) und ist linksgekrümmt ($f'' > 0$). \quad e) $f$: Tiefpunkt $T(0 | -2)$, Hochpunkt $H(4 | 6)$, Randwerte $f(-1) = -0{,}25$ und $f(5) = 4{,}25$; $f'$: nach unten geöffnete Parabel mit den Nullstellen $0$ und $4$ (Extremstellen von $f$) und dem Scheitel $(2 | 3)$. \quad f) Graph durch $(-2 | 0)$ steigend bis zum Hochpunkt bei $x = 0$, dann fallend und bei $x = 2$ am steilsten (Wendepunkt, Minimum von $f'$), danach ein Tiefpunkt und wieder steigend. Bei $x = 2$ kein Extrempunkt zeichnen. \quad g) Grad mindestens $3$: $f'$ hat ein Maximum, ist also keine Gerade und hat mindestens Grad $2$; damit hat $f$ mindestens Grad $3$. Die Nullstelle und die Extremstelle allein hätte schon eine Parabel. \quad h) Schnittstellen bei $x = -1$ und $x = 3$ (Nullstellen von $d$); für $-1 < x < 3$ ist $d > 0$, der Graph von $f$ liegt oberhalb des Graphen von $g$, sonst unterhalb; den größten Abstand $2$ haben sie bei $x = 1$. \quad i) I wahr: die am stärksten fallende Tangente liegt im Wendepunkt, $f'(5) = -1$; die Gerade $AW$ hat die Steigung $m = 1$, und $1 \cdot (-1) = -1$. II falsch: $f'$ hat bei $5$ sein Minimum $-1$, die Gerade $y = -1$ berührt den Graphen von $f'$.}
+
+30d)
+
+\begin{ksys}[xmin=-3,xmax=3,ymin=-3,ymax=3,klein] \funktionab{0.5*\x^3-1.5*\x}{f}{-2.3}{2.3} \punkt{0.5}{-0.69}{P} \end{ksys}
+
+
+30e)
+
+\begin{ksys}[xmin=-1,xmax=5,ymin=-4,ymax=7,klein] \funktionab{-0.25*\x^3+1.5*\x^2-2}{f}{-1}{5} \funktionab{-0.75*\x^2+3*\x}{f'}{-1}{5} \end{ksys}
+
+
+30f)
+
+\begin{ksys}[xmin=-3,xmax=6,ymin=-2,ymax=4,klein] \funktionab{(\x^3/3-2*\x^2+32/3)/4}{f}{-2.5}{5.5} \end{ksys}
+
+\erg{31}{a) Angenommen, sie hätten keinen gemeinsamen Punkt. Dann läge ein Graph überall oberhalb des anderen, und seine Fläche wäre größer – im Widerspruch zu den gleich großen Flächen. Also haben sie einen gemeinsamen Punkt.}
+\erg{32}{a) $g(x) = \mathrm{ln}\,5 + \mathrm{ln}(\mathrm{e}^{0{,}4x}) = 0{,}4x + \mathrm{ln}\,5$, also linear; Steigung $m = 0{,}4$, Achsenabschnitt $b = \mathrm{ln}\,5 \approx 1{,}61$}
+\erg{33}{a) Fehler: Mia liest den Graphen von $f'$ wie den von $f$. Der Hochpunkt von $f'$ bei $x = 0$ ist eine Wendestelle von $f$. Die Extremstellen von $f$ sind die Nullstellen von $f'$: bei $x = -2$ Wechsel von $-$ nach $+$ (Tiefpunkt), bei $x = 2$ von $+$ nach $-$ (Hochpunkt). \quad b) In einem Hoch- oder Tiefpunkt ist die Tangente waagerecht, ihre Steigung ist null; $f'$ gibt die Steigung an, also ist $f'$ an dieser Stelle null – der Graph von $f'$ schneidet dort die $x$-Achse. \quad c) $f'$ wechselt bei $x = 1$ von $-$ nach $+$: Tiefpunkt bei $x = 1$; $f'$ ist eine Gerade, also ist $f$ eine nach oben geöffnete Parabel durch $(0 | 1)$, etwa mit $T(1 | 0{,}5)$.}
+
+33c)
+
+\begin{ksys}[xmin=-2,xmax=4,ymin=-3,ymax=4,klein] \funktionab{\x-1}{f'}{-2}{4} \funktionab{0.5*\x^2-\x+1}{f}{-1.6}{3.6} \end{ksys}
+

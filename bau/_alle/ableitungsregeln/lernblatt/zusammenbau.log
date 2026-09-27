@@ -1,0 +1,120 @@
+# zusammenbau v0.1: zusammenbau.py ableitungsregeln
+VORLAGE mathblatt.sty: Version 2026-09-28a
+EINHEITEN [1, 2, 3]
+AUSWAHL ableitungsregeln-zone-f1-v1 – Zone f1 „Potenzen mit natürlichem Exponenten lese“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL ableitungsregeln-zone-f1-v3 – Zone f1 „Potenzen mit natürlichem Exponenten lese“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f1 „Potenzen mit natürlichem Exponenten lese“ – Sprossen [3, 4, 5] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL ableitungsregeln-zone-f2-v1 – Zone f2 „Terme umformen“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL ableitungsregeln-zone-f2-v3 – Zone f2 „Terme umformen“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f2 „Terme umformen“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL ableitungsregeln-zone-f3-v1 – Zone f3 „Bruch- und Dezimalkoeffizienten multipli“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL ableitungsregeln-zone-f3-v3 – Zone f3 „Bruch- und Dezimalkoeffizienten multipli“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f3 „Bruch- und Dezimalkoeffizienten multipli“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL ableitungsregeln-zone-f4-v1 – Zone f4 „Die e-Funktion als Funktion, die sich se“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL ableitungsregeln-zone-f4-v3 – Zone f4 „Die e-Funktion als Funktion, die sich se“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f4 „Die e-Funktion als Funktion, die sich se“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL ableitungsregeln-zone-f5-v1 – Zone f5 „Ableitung als Tangentensteigung und Ände“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL ableitungsregeln-zone-f5-v3 – Zone f5 „Ableitung als Tangentensteigung und Ände“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f5 „Ableitung als Tangentensteigung und Ände“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL ableitungsregeln-zone-f6-v1 – Zone f6 „Funktionswerte berechnen und Punktprobe,“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL ableitungsregeln-zone-f6-v3 – Zone f6 „Funktionswerte berechnen und Punktprobe,“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f6 „Funktionswerte berechnen und Punktprobe,“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL ableitungsregeln-zone-f7-v1 – Zone f7 „Verschiebung und Streckung eines Graphen“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL ableitungsregeln-zone-f7-v3 – Zone f7 „Verschiebung und Streckung eines Graphen“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f7 „Verschiebung und Streckung eines Graphen“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL ableitungsregeln-zone-f1-v5 – Zone-Paar, Fehler finden
+AUSWAHL ableitungsregeln-zone-f1-v6 – Zone-Paar, gleichartige Rechenaufgabe
+AUSWAHL ableitungsregeln-e1-k1-s0-v1 – e1 k1 „Zahl oder Variable?“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e1 k1 „Zahl oder Variable?“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL ableitungsregeln-e1-k2-s0-v1 – e1 k2 „Potenz-, Faktor- und Summenregel“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL ableitungsregeln-e1-k2-s1-v1 – e1 k2 „Potenz-, Faktor- und Summenregel“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL ableitungsregeln-e1-k2-s2-v1 – e1 k2 „Potenz-, Faktor- und Summenregel“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL ableitungsregeln-e1-k2-s3-v1 – e1 k2 „Potenz-, Faktor- und Summenregel“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL ableitungsregeln-e1-k2-s4-v1 – e1 k2 „Potenz-, Faktor- und Summenregel“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL ableitungsregeln-e1-k2-s5-v1 – e1 k2 „Potenz-, Faktor- und Summenregel“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL ableitungsregeln-e1-k2-s6-v1 – e1 k2 „Potenz-, Faktor- und Summenregel“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL ableitungsregeln-e1-k2-s7-v1 – e1 k2 „Potenz-, Faktor- und Summenregel“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL ableitungsregeln-e1-k2-s8-v1 – e1 k2 „Potenz-, Faktor- und Summenregel“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL ableitungsregeln-e1-k2-s9-v1 – e1 k2 „Potenz-, Faktor- und Summenregel“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3, v4
+KETTE e1 k2 „Potenz-, Faktor- und Summenregel“ (verfahren) → eine Hauptnummer
+AUSWAHL ableitungsregeln-e1-k3-s1-v1 – e1 k3 „Verhalten im Unendlichen bestimmen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e1 k3 „Verhalten im Unendlichen bestimmen“ (ohne) → eine Hauptnummer
+AUSWAHL ableitungsregeln-e1-k4-s1-v1 – e1 k4 „Potenz-, Faktor- und Summenregel“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL ableitungsregeln-e1-k4-s2-v1 – e1 k4 „Potenz-, Faktor- und Summenregel“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+KETTE e1 k4 „Potenz-, Faktor- und Summenregel“ (pflicht) → eine Hauptnummer
+AUSWAHL ableitungsregeln-e2-k1-s0-v1 – e2 k1 „Kettenregel“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL ableitungsregeln-e2-k1-s1-v1 – e2 k1 „Kettenregel“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL ableitungsregeln-e2-k1-s2-v1 – e2 k1 „Kettenregel“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL ableitungsregeln-e2-k1-s3-v1 – e2 k1 „Kettenregel“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL ableitungsregeln-e2-k1-s4-v1 – e2 k1 „Kettenregel“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL ableitungsregeln-e2-k1-s5-v1 – e2 k1 „Kettenregel“ (verfahren), Sprosse 5: Variante 1; übergangen v2
+KETTE e2 k1 „Kettenregel“ (verfahren) → eine Hauptnummer
+AUSWAHL ableitungsregeln-e2-k2-s1-v1 – e2 k2 „Term einer höheren Ableitung einer Sinusfunktion über die Periodizität der Ableitungen angeben“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k2 „Term einer höheren Ableitung einer Sinusfunktion über die Periodizität der Ableitungen angeben“ (ohne) → eine Hauptnummer
+AUSWAHL ableitungsregeln-e2-k3-s1-v1 – e2 k3 „Kettenregel“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL ableitungsregeln-e2-k3-s2-v1 – e2 k3 „Kettenregel“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+KETTE e2 k3 „Kettenregel“ (pflicht) → eine Hauptnummer
+AUSWAHL ableitungsregeln-e3-k1-s0-v1 – e3 k1 „Produktregel“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL ableitungsregeln-e3-k1-s1-v1 – e3 k1 „Produktregel“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL ableitungsregeln-e3-k1-s2-v1 – e3 k1 „Produktregel“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL ableitungsregeln-e3-k1-s3-v1 – e3 k1 „Produktregel“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL ableitungsregeln-e3-k1-s4-v1 – e3 k1 „Produktregel“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL ableitungsregeln-e3-k1-s5-v1 – e3 k1 „Produktregel“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL ableitungsregeln-e3-k1-s6-v1 – e3 k1 „Produktregel“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL ableitungsregeln-e3-k1-s7-v1 – e3 k1 „Produktregel“ (verfahren), Sprosse 7: Variante 1; übergangen v2
+KETTE e3 k1 „Produktregel“ (verfahren) → eine Hauptnummer
+AUSWAHL ableitungsregeln-e3-k2-s1-v1 – e3 k2 „Produktregel“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL ableitungsregeln-e3-k2-s2-v1 – e3 k2 „Produktregel“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+KETTE e3 k2 „Produktregel“ (pflicht) → eine Hauptnummer
+KOPF Einheit 1: „Einheit 1 von 3 · Potenz-, Faktor- und Summenregel“; Marken „BE Q1 · BB Q1 · GK · Abitur GK · Abitur LK · FHR“ → Zeitmarke „None“, Prüfungswort „Abitur GK“
+KOPF Einheit 2: „Einheit 2 von 3 · Kettenregel“; Marken „BE Q1 · BB Q1 · GK · keine Prüfungsaufgabe“ → Zeitmarke „None“, Prüfungswort „keine Prüfungsaufgabe“
+KOPF Einheit 3: „Einheit 3 von 3 · Produktregel“; Marken „BE Q1 · BB Q1 · GK · Abitur GK · Abitur LK“ → Zeitmarke „None“, Prüfungswort „Abitur GK“
+WARNUNG Nr. 17: 8 Teilaufgaben, 1 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+TODO 46 Stellen in den Quelltexten:
+  abhaken.tex:2: TODO Ich-kann-Sätze: Platzhalter wie in den Aufgabendateien
+  blatt0_a.tex:5: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 1
+  blatt0_a.tex:6: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 1
+  blatt0_a.tex:14: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 2
+  blatt0_a.tex:15: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 2
+  blatt0_a.tex:23: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 3
+  blatt0_a.tex:24: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 3
+  blatt0_a.tex:32: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 4
+  blatt0_a.tex:33: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 4
+  blatt0_a.tex:41: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 5
+  blatt0_a.tex:42: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 5
+  blatt0_a.tex:53: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 6
+  blatt0_a.tex:54: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 6
+  blatt0_a.tex:62: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 7
+  blatt0_a.tex:63: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 7
+  blatt0_a.tex:71: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 8
+  blatt0_a.tex:72: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 8
+  blatt0_a.tex:79: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 9
+  blatt0_a.tex:80: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 9
+  e1_a.tex:2: TODO Zeitmarke Einheit 1: Marken-Zeile nicht lesbar
+  e1_a.tex:3: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 1
+  e1_a.tex:8: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 10
+  e1_a.tex:9: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 10
+  e1_a.tex:16: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 11
+  e1_a.tex:17: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 11
+  e1_a.tex:19: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e1_a.tex:34: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 12
+  e1_a.tex:35: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 12
+  e1_a.tex:42: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 13
+  e1_a.tex:43: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 13
+  e2_a.tex:2: TODO Zeitmarke Einheit 2: Marken-Zeile nicht lesbar
+  e2_a.tex:3: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 2
+  e2_a.tex:8: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 14
+  e2_a.tex:9: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 14
+  e2_a.tex:11: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e2_a.tex:25: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 15
+  e2_a.tex:26: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 15
+  e2_a.tex:33: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 16
+  e2_a.tex:34: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 16
+  e3_a.tex:2: TODO Zeitmarke Einheit 3: Marken-Zeile nicht lesbar
+  e3_a.tex:3: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 3
+  e3_a.tex:8: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 17
+  e3_a.tex:9: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 17
+  e3_a.tex:11: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e3_a.tex:27: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 18
+  e3_a.tex:28: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 18
+STRUKTUR 0 Fehler

@@ -1,0 +1,97 @@
+# zusammenbau v0.1: zusammenbau.py normalverteilung-und-sigma-regeln
+VORLAGE mathblatt.sty: Version 2026-09-28a
+EINHEITEN [1, 2, 3]
+AUSWAHL normalverteilung-und-sigma-regeln-zone-f1-v1 – Zone f1 „Erwartungswert und Standardabweichung al“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL normalverteilung-und-sigma-regeln-zone-f1-v3 – Zone f1 „Erwartungswert und Standardabweichung al“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f1 „Erwartungswert und Standardabweichung al“ – Sprossen [3, 4] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL normalverteilung-und-sigma-regeln-zone-f2-v1 – Zone f2 „Flächeninhalt unter einem Graphen als Gr“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL normalverteilung-und-sigma-regeln-zone-f2-v3 – Zone f2 „Flächeninhalt unter einem Graphen als Gr“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f2 „Flächeninhalt unter einem Graphen als Gr“ – Sprossen [3, 4, 5, 6] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL normalverteilung-und-sigma-regeln-zone-f3-v1 – Zone f3 „Binomialverteilung und ihr Säulendiagram“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL normalverteilung-und-sigma-regeln-zone-f3-v3 – Zone f3 „Binomialverteilung und ihr Säulendiagram“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f3 „Binomialverteilung und ihr Säulendiagram“ – Sprossen [3, 4] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL normalverteilung-und-sigma-regeln-zone-f4-v1 – Zone f4 „Gegenereignis und Prozentrechnung“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL normalverteilung-und-sigma-regeln-zone-f4-v3 – Zone f4 „Gegenereignis und Prozentrechnung“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f4 „Gegenereignis und Prozentrechnung“ – Sprossen [3, 4] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL normalverteilung-und-sigma-regeln-zone-f5-v1 – Zone f5 „Den Rechner für Verteilungswahrscheinlic“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL normalverteilung-und-sigma-regeln-zone-f5-v3 – Zone f5 „Den Rechner für Verteilungswahrscheinlic“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f5 „Den Rechner für Verteilungswahrscheinlic“ – Sprossen [3, 4] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL normalverteilung-und-sigma-regeln-zone-f2-v6 – Zone-Paar, Fehler finden
+AUSWAHL normalverteilung-und-sigma-regeln-zone-f2-v7 – Zone-Paar, gleichartige Rechenaufgabe
+AUSWAHL normalverteilung-und-sigma-regeln-e1-k1-s0-v1 – e1 k1 „Modell und Glockenkurve“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL normalverteilung-und-sigma-regeln-e1-k1-s1-v1 – e1 k1 „Modell und Glockenkurve“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL normalverteilung-und-sigma-regeln-e1-k1-s2-v1 – e1 k1 „Modell und Glockenkurve“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL normalverteilung-und-sigma-regeln-e1-k1-s3-v1 – e1 k1 „Modell und Glockenkurve“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL normalverteilung-und-sigma-regeln-e1-k1-s4-v1 – e1 k1 „Modell und Glockenkurve“ (verfahren), Sprosse 4: Variante 1; übergangen v2
+KETTE e1 k1 „Modell und Glockenkurve“ (verfahren) → eine Hauptnummer
+AUSWAHL normalverteilung-und-sigma-regeln-e1-k2-s1-v1 – e1 k2 „Modell und Glockenkurve“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL normalverteilung-und-sigma-regeln-e1-k2-s2-v1 – e1 k2 „Modell und Glockenkurve“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+KETTE e1 k2 „Modell und Glockenkurve“ (pflicht) → eine Hauptnummer
+AUSWAHL normalverteilung-und-sigma-regeln-e2-k1-s0-v1 – e2 k1 „Wahrscheinlichkeiten berechnen“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL normalverteilung-und-sigma-regeln-e2-k1-s1-v1 – e2 k1 „Wahrscheinlichkeiten berechnen“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL normalverteilung-und-sigma-regeln-e2-k1-s2-v1 – e2 k1 „Wahrscheinlichkeiten berechnen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL normalverteilung-und-sigma-regeln-e2-k1-s3-v1 – e2 k1 „Wahrscheinlichkeiten berechnen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL normalverteilung-und-sigma-regeln-e2-k1-s4-v1 – e2 k1 „Wahrscheinlichkeiten berechnen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL normalverteilung-und-sigma-regeln-e2-k1-s5-v1 – e2 k1 „Wahrscheinlichkeiten berechnen“ (verfahren), Sprosse 5: Variante 1; übergangen v2
+KETTE e2 k1 „Wahrscheinlichkeiten berechnen“ (verfahren) → eine Hauptnummer
+AUSWAHL normalverteilung-und-sigma-regeln-e2-k2-s1-v1 – e2 k2 „Wahrscheinlichkeiten berechnen“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL normalverteilung-und-sigma-regeln-e2-k2-s2-v1 – e2 k2 „Wahrscheinlichkeiten berechnen“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+KETTE e2 k2 „Wahrscheinlichkeiten berechnen“ (pflicht) → eine Hauptnummer
+AUSWAHL normalverteilung-und-sigma-regeln-e3-k1-s0-v1 – e3 k1 „Umkehraufgaben und Argumente“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL normalverteilung-und-sigma-regeln-e3-k1-s1-v1 – e3 k1 „Umkehraufgaben und Argumente“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL normalverteilung-und-sigma-regeln-e3-k1-s2-v1 – e3 k1 „Umkehraufgaben und Argumente“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL normalverteilung-und-sigma-regeln-e3-k1-s3-v1 – e3 k1 „Umkehraufgaben und Argumente“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL normalverteilung-und-sigma-regeln-e3-k1-s4-v1 – e3 k1 „Umkehraufgaben und Argumente“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3, v4
+KETTE e3 k1 „Umkehraufgaben und Argumente“ (verfahren) → eine Hauptnummer
+AUSWAHL normalverteilung-und-sigma-regeln-e3-k2-s1-v1 – e3 k2 „Standardabweichung einer Normalverteilung aus einer vorgegebenen Wahrscheinlichkeit bei festem Erwartungswert ermitteln“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e3 k2 „Standardabweichung einer Normalverteilung aus einer vorgegebenen Wahrscheinlichkeit bei festem Erwartungswert ermitteln“ (ohne) → eine Hauptnummer
+AUSWAHL normalverteilung-und-sigma-regeln-e3-k3-s1-v1 – e3 k3 „Umkehraufgaben und Argumente“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL normalverteilung-und-sigma-regeln-e3-k3-s2-v1 – e3 k3 „Umkehraufgaben und Argumente“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+KETTE e3 k3 „Umkehraufgaben und Argumente“ (pflicht) → eine Hauptnummer
+KOPF Einheit 1: „Einheit 1 von 3 · Modell und Glockenkurve: die Dichtefunktion lesen und skizzieren (μ als Symmetrieachse und Maximumsstelle, σ als Breitenmaß“; Marken „BE Q4 · BB Q4 · nur LK · keine Prüfungsaufgabe“ → Zeitmarke „None“, Prüfungswort „keine Prüfungsaufgabe“
+KOPF Einheit 2: „Einheit 2 von 3 · Einheit 2“; Marken „None“ → Zeitmarke „None“, Prüfungswort „None“
+KOPF Einheit 3: „Einheit 3 von 3 · Einheit 3“; Marken „None“ → Zeitmarke „None“, Prüfungswort „None“
+TODO 42 Stellen in den Quelltexten:
+  abhaken.tex:2: TODO Ich-kann-Sätze: Platzhalter wie in den Aufgabendateien
+  blatt0_a.tex:5: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 1
+  blatt0_a.tex:6: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 1
+  blatt0_a.tex:14: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 2
+  blatt0_a.tex:15: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 2
+  blatt0_a.tex:23: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 3
+  blatt0_a.tex:24: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 3
+  blatt0_a.tex:35: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 4
+  blatt0_a.tex:36: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 4
+  blatt0_a.tex:44: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 5
+  blatt0_a.tex:45: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 5
+  blatt0_a.tex:53: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 6
+  blatt0_a.tex:54: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 6
+  blatt0_a.tex:61: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 7
+  blatt0_a.tex:62: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 7
+  e1_a.tex:2: TODO Zeitmarke Einheit 1: Marken-Zeile nicht lesbar
+  e1_a.tex:3: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 1
+  e1_a.tex:8: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 8
+  e1_a.tex:9: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 8
+  e1_a.tex:11: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e1_a.tex:28: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 9
+  e1_a.tex:29: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 9
+  e2_a.tex:2: TODO Prüfungswort Einheit 2: nicht in der Marken-Zeile
+  e2_a.tex:3: TODO Zeitmarke Einheit 2: Marken-Zeile nicht lesbar
+  e2_a.tex:4: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 2
+  e2_a.tex:5: TODO Einheitentitel 2 nicht in der Mappe lesbar
+  e2_a.tex:9: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 10
+  e2_a.tex:10: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 10
+  e2_a.tex:12: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e2_a.tex:28: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 11
+  e2_a.tex:29: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 11
+  e3_a.tex:2: TODO Prüfungswort Einheit 3: nicht in der Marken-Zeile
+  e3_a.tex:3: TODO Zeitmarke Einheit 3: Marken-Zeile nicht lesbar
+  e3_a.tex:4: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 3
+  e3_a.tex:5: TODO Einheitentitel 3 nicht in der Mappe lesbar
+  e3_a.tex:9: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 12
+  e3_a.tex:10: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 12
+  e3_a.tex:12: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e3_a.tex:22: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 13
+  e3_a.tex:23: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 13
+  e3_a.tex:30: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 14
+  e3_a.tex:31: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 14
+STRUKTUR 0 Fehler

@@ -1,0 +1,172 @@
+# zusammenbau v0.1: zusammenbau.py symmetrie-abbildungen
+VORLAGE mathblatt.sty: Version 2026-09-28a
+EINHEITEN [1, 2, 3]
+AUSWAHL symmetrie-abbildungen-zone-f1-v1 – Zone f1 „Kästchen im Raster abzählen und Strecken“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL symmetrie-abbildungen-zone-f1-v3 – Zone f1 „Kästchen im Raster abzählen und Strecken“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f1 „Kästchen im Raster abzählen und Strecken“ – Sprossen [3, 4, 5] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL symmetrie-abbildungen-zone-f2-v1 – Zone f2 „Senkrechte und parallele Geraden mit dem“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL symmetrie-abbildungen-zone-f2-v3 – Zone f2 „Senkrechte und parallele Geraden mit dem“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f2 „Senkrechte und parallele Geraden mit dem“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL symmetrie-abbildungen-zone-f3-v1 – Zone f3 „Negative Zahlen an der Zahlengeraden abl“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL symmetrie-abbildungen-zone-f3-v3 – Zone f3 „Negative Zahlen an der Zahlengeraden abl“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f3 „Negative Zahlen an der Zahlengeraden abl“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL symmetrie-abbildungen-zone-f4-v1 – Zone f4 „Vierecksarten und Dreiecksarten an ihren“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL symmetrie-abbildungen-zone-f4-v3 – Zone f4 „Vierecksarten und Dreiecksarten an ihren“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f4 „Vierecksarten und Dreiecksarten an ihren“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL symmetrie-abbildungen-zone-f5-v1 – Zone f5 „Diagonalen eines Vierecks einzeichnen un“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL symmetrie-abbildungen-zone-f5-v3 – Zone f5 „Diagonalen eines Vierecks einzeichnen un“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f5 „Diagonalen eines Vierecks einzeichnen un“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL symmetrie-abbildungen-zone-f6-v1 – Zone f6 „Winkel messen und zeichnen, rechten Wink“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL symmetrie-abbildungen-zone-f6-v3 – Zone f6 „Winkel messen und zeichnen, rechten Wink“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f6 „Winkel messen und zeichnen, rechten Wink“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL symmetrie-abbildungen-zone-f7-v1 – Zone f7 „Strecken messen und gleich lange Strecke“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL symmetrie-abbildungen-zone-f7-v3 – Zone f7 „Strecken messen und gleich lange Strecke“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f7 „Strecken messen und gleich lange Strecke“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL symmetrie-abbildungen-zone-f1-v5 – Zone-Paar, Fehler finden
+AUSWAHL symmetrie-abbildungen-zone-f1-v6 – Zone-Paar, gleichartige Rechenaufgabe
+AUSWAHL symmetrie-abbildungen-e1-k1-s0-v1 – e1 k1 „„Erst rechts, dann hoch““ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e1 k1 „„Erst rechts, dann hoch““ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL symmetrie-abbildungen-e1-k2-s0-v1 – e1 k2 „Punkte und Figuren im Koordinatensystem“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL symmetrie-abbildungen-e1-k2-s1-v1 – e1 k2 „Punkte und Figuren im Koordinatensystem“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL symmetrie-abbildungen-e1-k2-s2-v1 – e1 k2 „Punkte und Figuren im Koordinatensystem“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL symmetrie-abbildungen-e1-k2-s3-v1 – e1 k2 „Punkte und Figuren im Koordinatensystem“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL symmetrie-abbildungen-e1-k2-s4-v1 – e1 k2 „Punkte und Figuren im Koordinatensystem“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL symmetrie-abbildungen-e1-k2-s5-v1 – e1 k2 „Punkte und Figuren im Koordinatensystem“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL symmetrie-abbildungen-e1-k2-s6-v1 – e1 k2 „Punkte und Figuren im Koordinatensystem“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL symmetrie-abbildungen-e1-k2-s7-v1 – e1 k2 „Punkte und Figuren im Koordinatensystem“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL symmetrie-abbildungen-e1-k2-s8-v1 – e1 k2 „Punkte und Figuren im Koordinatensystem“ (verfahren), Sprosse 8: Variante 1; übergangen v2
+KETTE e1 k2 „Punkte und Figuren im Koordinatensystem“ (verfahren) → eine Hauptnummer
+AUSWAHL symmetrie-abbildungen-e1-k3-s1-v1 – e1 k3 „Achsen und Ursprung benennen, Einteilung ablesen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e1 k3 „Achsen und Ursprung benennen, Einteilung ablesen“ (ohne) → eine Hauptnummer
+AUSWAHL symmetrie-abbildungen-e1-k4-s1-v1 – e1 k4 „Schreibweise P(x | y) lesen und schreiben (erste Zahl nach rechts, zweite nach oben)“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e1 k4 „Schreibweise P(x | y) lesen und schreiben (erste Zahl nach rechts, zweite nach oben)“ (ohne) → eine Hauptnummer
+AUSWAHL symmetrie-abbildungen-e1-k5-s1-v1 – e1 k5 „Streckenlänge parallel zu einer Achse abzählen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e1 k5 „Streckenlänge parallel zu einer Achse abzählen“ (ohne) → eine Hauptnummer
+AUSWAHL symmetrie-abbildungen-e1-k6-s1-v1 – e1 k6 „Punkte und Figuren im Koordinatensystem“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL symmetrie-abbildungen-e1-k6-s2-v1 – e1 k6 „Punkte und Figuren im Koordinatensystem“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL symmetrie-abbildungen-e1-k6-s3-v1 – e1 k6 „Punkte und Figuren im Koordinatensystem“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL symmetrie-abbildungen-e1-k6-s4-v1 – e1 k6 „Punkte und Figuren im Koordinatensystem“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e1 k6 „Punkte und Figuren im Koordinatensystem“ (pflicht) → eine Hauptnummer
+AUSWAHL symmetrie-abbildungen-e2-k1-s0-v1 – e2 k1 „„Wie viele Achsen?““ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e2 k1 „„Wie viele Achsen?““ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL symmetrie-abbildungen-e2-k2-s0-v1 – e2 k2 „Symmetrieachsen bestimmen“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL symmetrie-abbildungen-e2-k2-s1-v1 – e2 k2 „Symmetrieachsen bestimmen“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL symmetrie-abbildungen-e2-k2-s2-v1 – e2 k2 „Symmetrieachsen bestimmen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL symmetrie-abbildungen-e2-k2-s3-v1 – e2 k2 „Symmetrieachsen bestimmen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL symmetrie-abbildungen-e2-k2-s4-v1 – e2 k2 „Symmetrieachsen bestimmen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL symmetrie-abbildungen-e2-k2-s5-v1 – e2 k2 „Symmetrieachsen bestimmen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL symmetrie-abbildungen-e2-k2-s6-v1 – e2 k2 „Symmetrieachsen bestimmen“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL symmetrie-abbildungen-e2-k2-s7-v1 – e2 k2 „Symmetrieachsen bestimmen“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL symmetrie-abbildungen-e2-k2-s8-v1 – e2 k2 „Symmetrieachsen bestimmen“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL symmetrie-abbildungen-e2-k2-s9-v1 – e2 k2 „Symmetrieachsen bestimmen“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3, v4
+AUSWAHL symmetrie-abbildungen-e2-k2-s10-v1 – e2 k2 „Symmetrieachsen bestimmen“ (verfahren), Sprosse 10: Variante 1; übergangen v2
+KETTE e2 k2 „Symmetrieachsen bestimmen“ (verfahren) → eine Hauptnummer
+AUSWAHL symmetrie-abbildungen-e2-k3-s0-v1 – e2 k3 „Spiegeln und Spiegelbild benennen“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL symmetrie-abbildungen-e2-k3-s1-v1 – e2 k3 „Spiegeln und Spiegelbild benennen“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL symmetrie-abbildungen-e2-k3-s2-v1 – e2 k3 „Spiegeln und Spiegelbild benennen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL symmetrie-abbildungen-e2-k3-s3-v1 – e2 k3 „Spiegeln und Spiegelbild benennen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL symmetrie-abbildungen-e2-k3-s4-v1 – e2 k3 „Spiegeln und Spiegelbild benennen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL symmetrie-abbildungen-e2-k3-s5-v1 – e2 k3 „Spiegeln und Spiegelbild benennen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL symmetrie-abbildungen-e2-k3-s6-v1 – e2 k3 „Spiegeln und Spiegelbild benennen“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL symmetrie-abbildungen-e2-k3-s7-v1 – e2 k3 „Spiegeln und Spiegelbild benennen“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL symmetrie-abbildungen-e2-k3-s8-v1 – e2 k3 „Spiegeln und Spiegelbild benennen“ (verfahren), Sprosse 8: Variante 1; übergangen v2
+KETTE e2 k3 „Spiegeln und Spiegelbild benennen“ (verfahren) → eine Hauptnummer
+AUSWAHL symmetrie-abbildungen-e2-k4-s1-v1 – e2 k4 „prüfen, ob eine eingezeichnete Gerade Symmetrieachse ist (falten oder messen)“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k4 „prüfen, ob eine eingezeichnete Gerade Symmetrieachse ist (falten oder messen)“ (ohne) → eine Hauptnummer
+AUSWAHL symmetrie-abbildungen-e2-k5-s1-v1 – e2 k5 „Symmetrie der Vierecksarten im Haus der Vierecke zuordnen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k5 „Symmetrie der Vierecksarten im Haus der Vierecke zuordnen“ (ohne) → eine Hauptnummer
+AUSWAHL symmetrie-abbildungen-e2-k6-s1-v1 – e2 k6 „Symmetrieachsen bestimmen“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL symmetrie-abbildungen-e2-k6-s2-v1 – e2 k6 „Symmetrieachsen bestimmen“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL symmetrie-abbildungen-e2-k6-s3-v1 – e2 k6 „Symmetrieachsen bestimmen“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL symmetrie-abbildungen-e2-k6-s4-v1 – e2 k6 „Symmetrieachsen bestimmen“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e2 k6 „Symmetrieachsen bestimmen“ (pflicht) → eine Hauptnummer
+AUSWAHL symmetrie-abbildungen-e3-k1-s0-v1 – e3 k1 „Drehen, Verschieben, Punktsymmetrie“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL symmetrie-abbildungen-e3-k1-s1-v1 – e3 k1 „Drehen, Verschieben, Punktsymmetrie“ (verfahren), Sprosse 1: Variante 1; übergangen v2, v3, v4, v5
+AUSWAHL symmetrie-abbildungen-e3-k1-s2-v1 – e3 k1 „Drehen, Verschieben, Punktsymmetrie“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL symmetrie-abbildungen-e3-k1-s3-v1 – e3 k1 „Drehen, Verschieben, Punktsymmetrie“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL symmetrie-abbildungen-e3-k1-s4-v1 – e3 k1 „Drehen, Verschieben, Punktsymmetrie“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL symmetrie-abbildungen-e3-k1-s5-v1 – e3 k1 „Drehen, Verschieben, Punktsymmetrie“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL symmetrie-abbildungen-e3-k1-s6-v1 – e3 k1 „Drehen, Verschieben, Punktsymmetrie“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL symmetrie-abbildungen-e3-k1-s7-v1 – e3 k1 „Drehen, Verschieben, Punktsymmetrie“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL symmetrie-abbildungen-e3-k1-s8-v1 – e3 k1 „Drehen, Verschieben, Punktsymmetrie“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL symmetrie-abbildungen-e3-k1-s9-v1 – e3 k1 „Drehen, Verschieben, Punktsymmetrie“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL symmetrie-abbildungen-e3-k1-s10-v1 – e3 k1 „Drehen, Verschieben, Punktsymmetrie“ (verfahren), Sprosse 10: Variante 1; übergangen v2, v3
+KETTE e3 k1 „Drehen, Verschieben, Punktsymmetrie“ (verfahren) → eine Hauptnummer
+AUSWAHL symmetrie-abbildungen-e3-k2-s1-v1 – e3 k2 „drehsymmetrische Figuren erkennen und den Drehwinkel angeben (Vorrat)“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e3 k2 „drehsymmetrische Figuren erkennen und den Drehwinkel angeben (Vorrat)“ (ohne) → eine Hauptnummer
+AUSWAHL symmetrie-abbildungen-e3-k3-s1-v1 – e3 k3 „Original und Bild vergleichen: Längen und Winkel bleiben gleich, kongruente Figuren“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e3 k3 „Original und Bild vergleichen: Längen und Winkel bleiben gleich, kongruente Figuren“ (ohne) → eine Hauptnummer
+AUSWAHL symmetrie-abbildungen-e3-k4-s1-v1 – e3 k4 „Drehen, Verschieben, Punktsymmetrie“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL symmetrie-abbildungen-e3-k4-s2-v1 – e3 k4 „Drehen, Verschieben, Punktsymmetrie“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL symmetrie-abbildungen-e3-k4-s3-v1 – e3 k4 „Drehen, Verschieben, Punktsymmetrie“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL symmetrie-abbildungen-e3-k4-s4-v1 – e3 k4 „Drehen, Verschieben, Punktsymmetrie“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e3 k4 „Drehen, Verschieben, Punktsymmetrie“ (pflicht) → eine Hauptnummer
+KOPF Einheit 1: „Einheit 1 von 3 · Koordinatensystem“; Marken „OS Kl. 5 · GYM Kl. 5 · P10 · nicht für alle: Mathematik 2023 6 Vertiefen, Schnittpunkt 7 EXTRA, Elemente 7 Zum Selbstlernen“ → Zeitmarke „ab Kl. 5“, Prüfungswort „P10“
+WARNUNG Nr. 11: 9 Teilaufgaben, 6 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 2: „Einheit 2 von 3 · Achsensymmetrie und Spiegeln“; Marken „OS Kl. 5–8 (Sekundo 8, Mathematik 2023 6, Schnittpunkt 5, Mathematik heute 6) · GYM Kl. 5 · P10“ → Zeitmarke „ab Kl. 5, je nach Buch bis Kl. 8“, Prüfungswort „P10“
+WARNUNG Nr. 17: 11 Teilaufgaben, 6 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+WARNUNG Nr. 18: 9 Teilaufgaben, 6 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 3: „Einheit 3 von 3 · Punktsymmetrie, Drehung, Verschiebung“; Marken „OS Kl. 5–8 (Sekundo 8, Mathematik 2023 6, Schnittpunkt 5, Mathematik heute 6) · GYM Kl. 5 · keine P10-Aufgabe · nicht für alle: Schnittpunkt 5 EXTRA, Mathematik heute 6 Im Blickpunkt, Fundamente 5 Streifzug“ → Zeitmarke „ab Kl. 5, je nach Buch bis Kl. 8“, Prüfungswort „keine P10-Aufgabe“
+WARNUNG Nr. 22: 11 Teilaufgaben, 11 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+TODO 60 Stellen in den Quelltexten:
+  abhaken.tex:2: TODO Ich-kann-Sätze: Platzhalter wie in den Aufgabendateien
+  blatt0_a.tex:5: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 1
+  blatt0_a.tex:6: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 1
+  blatt0_a.tex:14: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 2
+  blatt0_a.tex:15: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 2
+  blatt0_a.tex:25: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 3
+  blatt0_a.tex:26: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 3
+  blatt0_a.tex:40: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 4
+  blatt0_a.tex:41: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 4
+  blatt0_a.tex:51: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 5
+  blatt0_a.tex:52: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 5
+  blatt0_a.tex:64: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 6
+  blatt0_a.tex:65: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 6
+  blatt0_a.tex:78: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 7
+  blatt0_a.tex:79: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 7
+  blatt0_a.tex:93: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 8
+  blatt0_a.tex:94: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 8
+  blatt0_a.tex:101: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 9
+  blatt0_a.tex:102: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 9
+  e1_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 1
+  e1_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 10
+  e1_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 10
+  e1_a.tex:17: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 11
+  e1_a.tex:18: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 11
+  e1_a.tex:20: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e1_a.tex:48: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 12
+  e1_a.tex:49: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 12
+  e1_a.tex:59: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 13
+  e1_a.tex:60: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 13
+  e1_a.tex:67: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 14
+  e1_a.tex:68: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 14
+  e1_a.tex:75: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 15
+  e1_a.tex:76: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 15
+  e2_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 2
+  e2_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 16
+  e2_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 16
+  e2_a.tex:18: TODO \verfahren{…}: Verfahrensüberschrift in Sachsprache fehlt in der Bank (2.3 b)
+  e2_a.tex:19: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 17
+  e2_a.tex:20: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 17
+  e2_a.tex:22: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e2_a.tex:52: TODO \verfahren{…}: Verfahrensüberschrift in Sachsprache fehlt in der Bank (2.3 b)
+  e2_a.tex:53: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 18
+  e2_a.tex:54: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 18
+  e2_a.tex:56: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e2_a.tex:83: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 19
+  e2_a.tex:84: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 19
+  e2_a.tex:93: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 20
+  e2_a.tex:94: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 20
+  e2_a.tex:101: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 21
+  e2_a.tex:102: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 21
+  e3_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 3
+  e3_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 22
+  e3_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 22
+  e3_a.tex:10: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e3_a.tex:50: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 23
+  e3_a.tex:51: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 23
+  e3_a.tex:58: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 24
+  e3_a.tex:59: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 24
+  e3_a.tex:66: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 25
+  e3_a.tex:67: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 25
+STRUKTUR 0 Fehler

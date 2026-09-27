@@ -1,0 +1,10 @@
+% Lösungen Einheit 2 von 2 – Die Näherungsdeutung (zusammenbau v0.1)
+\einheitenkopf{Einheit 2 von 2 · Die Näherungsdeutung}
+
+\erg{8}{a) vernachlässigbar klein \quad b) den Inhalt der Fläche zwischen dem Graphen von $f$, der x-Achse und den Geraden $x = 0$ und $x = b$ \quad c) Restfläche von $x = 6$ bis $x = w$; der Graph liegt dort unter $f(6) \approx 0{,}01$ und fällt weiter, die Restfläche ist kleiner als $4e^{-6} \approx 0{,}01$ \quad d) $F(b) - F(0)$ ist das Integral von $x = 0$ bis $x = b$, also der Inhalt der Fläche unter dem Graphen bis $b$; sie besteht aus der Fläche bis $x = 40$ und der Zusatzfläche von $40$ bis $b$; weil der Graph gegen null läuft, ist die Zusatzfläche vernachlässigbar klein – aber nicht null}
+
+8c)
+
+\begin{ksys}[xmin=0,xmax=10,ymin=0,ymax=4,klein]\funktion{4*exp(-\x)}{f}\flaeche{4*exp(-\x)}{6}{10}{R}\end{ksys}
+
+\erg{9}{a) Fehler: die Aussage vergleicht keine Stammfunktionswerte, die Differenz ist eine Fläche. Richtig: $F(b) - F(0)$ ist die Fläche unter dem Graphen von $x = 0$ bis $x = b$, ungefähr so groß wie die Fläche bis $x = 20$ \quad b) Nach dem Hauptsatz ist $F(b) - F(a)$ das Integral von $a$ bis $b$; für $f \ge 0$ ist das der Inhalt der Fläche zwischen Graph und x-Achse über diesem Intervall.}

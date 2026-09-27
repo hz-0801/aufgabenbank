@@ -1,0 +1,55 @@
+% Einheit 5 von 5 – Verteilung im Diagramm (bank/binomialverteilung/e5.jsonl, zusammenbau v0.1)
+%% TODO Zeitmarke Einheit 5: Marken-Zeile nicht lesbar
+%% TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 5
+\einheitenkopf[e5]{Einheit 5 von 5 · Verteilung im Diagramm}
+\zweigzeile{Abitur GK}
+\setcounter{aufgabe}{21}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 22
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 22
+\begin{aufgabe}{Verteilung im Diagramm}
+%% TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+\begin{teile}
+\teil Ein Elfmeterschütze trifft mit 80\,\%. Zu 10 Schüssen gehört der Term $(10 \text{ über } 3) \cdot 0{,}2^3 \cdot 0{,}8^7$. Was wird mit der 3 gezählt? \kreuz{Tore} \\ \kreuz{Fehlschüsse}
+\teil Das Säulendiagramm zeigt die Verteilung der Anzahl X der Treffer (Werte gerundet). Lies $P(X = 2)$ ab.
+
+\saeulenab[ymax=35,ystep=5,yfein=1,ylabel=$P(X = k)$ in \%]{0/8,1/24,2/33,3/24,4/10,5/2,6/0}
+\leerfeld
+\teil 15\,\% der Äpfel einer Plantage haben Druckstellen. 90 Äpfel werden zufällig ausgewählt; X ist die Anzahl mit Druckstellen. Welche Anzahl tritt mit der größten Wahrscheinlichkeit auf? \hfill (Abitur 2017 GK) \\ \leerfeld
+\teil Ein Würfelspiel gelingt mit der Wahrscheinlichkeit $0{,}3$ und wird 40-mal gespielt. Ben sagt: „Am wahrscheinlichsten gelingt es 20-mal, das ist die Hälfte.“ Beurteile ohne Wahrscheinlichkeiten zu berechnen.
+\teil X ist binomialverteilt mit 10 Versuchen und der Trefferwahrscheinlichkeit $0{,}3$. Genau eine der drei Abbildungen zeigt die Verteilung von X (Werte in Prozent). Entscheide begründet, welche \hfill (Abitur 2023 GK).
+
+\textbf{Abb. 1} \saeulenab[ymax=50,ystep=10,yfein=2,ylabel=\%]{0/0,1/1,2/4,3/12,4/21,5/25,6/21,7/12,8/4,9/1,10/0} \quad \textbf{Abb. 2} \saeulenab[ymax=50,ystep=10,yfein=2,ylabel=\%]{0/3,1/12,2/23,3/27,4/20,5/10,6/4,7/1,8/0,9/0,10/0} \quad \textbf{Abb. 3} \saeulenab[ymax=50,ystep=10,yfein=2,ylabel=\%]{0/5,1/22,2/41,3/49,4/36,5/18,6/7,7/2,8/0,9/0,10/0}
+\teil Das Säulendiagramm zeigt die Verteilung der Anzahl X der Treffer bei 8 Versuchen (Werte gerundet). Y = 8 − X zählt die Nieten. Lies $P(Y = 6)$ ab.
+
+\saeulenab[ymax=30,ystep=5,yfein=1,ylabel=$P(X = k)$ in \%]{0/3,1/14,2/26,3/28,4/19,5/8,6/2,7/0,8/0}
+\leerfeld
+\teil Das Diagramm zeigt die kumulierten Wahrscheinlichkeiten $P(X \le k)$ einer Binomialverteilung mit 6 Versuchen (Werte gerundet). Lies $P(X \le 3)$ ab.
+
+\saeulenab[ymax=100,ystep=20,yfein=2,ylabel=$P(X \le k)$ in \%]{0/3,1/16,2/44,3/74,4/93,5/99,6/100}
+\leerfeld
+\teil X ist binomialverteilt mit 12 Versuchen und der Trefferwahrscheinlichkeit $0{,}5$; es gilt $P(X \le 4) \approx 0{,}1938$. Bestimme ohne Rechner $P(5 \le X \le 7)$. \leerfeld
+\teil X ist binomialverteilt mit 15 Versuchen und der Trefferwahrscheinlichkeit $0{,}5$; die Verteilung ist symmetrisch. Es gilt $P(X \ge 6) \approx 0{,}85$ und $P(X = 9) \approx 0{,}15$. Bestimme damit einen Näherungswert für $P(X = 7)$ \hfill (Abitur 2025 GK). \leerfeld
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 23
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 23
+\begin{aufgabe}{Obere Grenze einer im Diagramm markierten kumulierten Wahrscheinlichkeit über den Erwartungswert ermitteln}
+\begin{teile}
+\teil X ist binomialverteilt mit 24 Versuchen und der Trefferwahrscheinlichkeit $0{,}5$. In einem Diagramm sind die Säulen von 0 bis zu einer Grenze k markiert; zusammen ergeben sie etwa 58\,\%. Bestimme k über den Erwartungswert. k = \leerfeld
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 24
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 24
+\begin{aufgabe}{Verteilung im Diagramm – Fehler finden, Begründen, Anwendung, Darstellungswechsel}
+\begin{teile}
+\teil X ist binomialverteilt mit 40 Versuchen und der Trefferwahrscheinlichkeit $0{,}2$. Lars sagt: „Die höchste Säule liegt in der Mitte, bei 20.“ Finde den Fehler.
+\teil Begründe, warum sich die Säulenhöhen im Diagramm einer Binomialverteilung zu eins addieren müssen.
+\teil Eine Bäckerei backt täglich 200 Brötchen; jedes misslingt unabhängig mit 3\,\%. Welche Anzahl misslungener Brötchen ist an einem Tag am wahrscheinlichsten?
+\teil Eine faire Münze wird viermal geworfen; X ist die Anzahl der Würfe mit Zahl. Zeichne das Säulendiagramm der Verteilung von X (Werte in Prozent).
+
+\saeulen{0/,1/,2/,3/,4/}{40}{10}{$P(X = k)$ in \%}
+\end{teile}
+\end{aufgabe}

@@ -1,0 +1,48 @@
+% Einheit 5 von 5 – Stationär und langfristig (bank/matrizen-und-uebergangsprozesse/e5.jsonl, zusammenbau v0.1)
+%% TODO Zeitmarke Einheit 5: Marken-Zeile nicht lesbar
+%% TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 5
+\einheitenkopf[e5]{Einheit 5 von 5 · Stationär und langfristig}
+\zweigzeile{keine Prüfungsaufgabe}
+\setcounter{aufgabe}{16}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 17
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 17
+\begin{aufgabe}{Stationär und langfristig}
+%% TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+\begin{teile}
+\teil Es gilt $v_{n+1} = M \cdot v_n$; v ist die heutige Verteilung. Was beschreibt $M^3 \cdot v$? \\ \kreuz{drei Schritte vorwärts} \\ \kreuz{drei Schritte rückwärts} \\ \kreuz{einen Schritt vorwärts}
+\end{teile}
+\begin{gleichungsraster}[2]
+\gl{\text{Es gilt $v_{n+1} = M \cdot v_n$; $M = ((0{,}8 | 0{,}4), (0{,}2 | 0{,}6))$, Gesamtzahl 900. Berechne die stationäre Verteilung.}} &
+\end{gleichungsraster}
+\begin{teile}
+\teil Es gilt $v_{n+1} = M \cdot v_n$; $M = ((0{,}6 | 0), (0{,}4 | 1))$ (Reihenfolge A, B), Gesamtzahl 500. Gib die stationäre Verteilung an. ( \leerfeld | \leerfeld )
+\end{teile}
+\begin{gleichungsraster}[2]
+\gl{\text{Es gilt $v_{n+1} = M \cdot v_n$; $M = ((0{,}8 | p), (0{,}2 | 1 - p))$; die Verteilung $(300 | 200)$ ist stationär. Bestimme p.}} &
+\end{gleichungsraster}
+\begin{teile}
+\teil Es gilt $v_{n+1} = M \cdot v_n$; $M = ((0{,}9 | 0{,}2), (0{,}1 | 0{,}8))$ (Reihenfolge A, B), $v = (800 | 400)$. Wie viele wechseln von A nach B, wie viele von B nach A? Was folgt daraus?
+\teil Es gilt $v_{n+1} = M \cdot v_n$; $M = ((0 | 0 | 4), (0{,}5 | 0 | 0), (0 | 0{,}5 | 0))$. Zeige $M^3 = E$ und deute das Ergebnis.
+\teil Es gilt $v_{n+1} = M \cdot v_n$; $M = ((0 | 3), (0{,}5 | 0{,}5))$ und $v = (6 | 3)$. Zeige, dass $M \cdot v$ ein Vielfaches von v ist, und gib den Faktor an.
+\teil Eine Lichterkette wechselt jede Sekunde zwischen Rot, Gelb und Blau (in dieser Reihenfolge) nach $K_b = ((b | 2b | 0), (2b | b | 0), (1 - 3b | 1 - 3b | 1))$ mit $0 \le b \le \frac{1}{3}$. Für $b < \frac{1}{3}$ nähern sich die Potenzen $K_b^k$ der Matrix mit den Zeilen $(0 | 0 | 0)$, $(0 | 0 | 0)$, $(1 | 1 | 1)$. Beschreibe die Farbwechsel in Abhängigkeit von b \hfill (Abitur 2022 LK).
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 18
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 18
+\begin{aufgabe}{Übergangsprozess: Eignung eines Populationsmodells zur langfristigen Beschreibung beurteilen}
+\begin{teile}
+\teil Eine Vogelpopulation auf einer kleinen Insel wächst im Modell jedes Jahr um den Faktor $1{,}2$. Beurteile, ob das Modell die Entwicklung über 50 Jahre beschreiben kann.
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 19
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 19
+\begin{aufgabe}{Stationär und langfristig – Fehler finden, Begründen, Anwendung}
+\begin{teile}
+\teil Es gilt $v_{n+1} = M \cdot v_n$; $M = ((0{,}9 | 0{,}4), (0{,}1 | 0{,}6))$, der Verein hat 1000 Mitglieder in zwei Gruppen. Anna sagt: „Stationär ist $(4 | 1)$.“ Finde den Fehler und gib die stationäre Verteilung an.
+\teil Begründe, warum man beim Fixvektor einer Übergangsmatrix mit zwei Zuständen eine der beiden Gleichungen durch die Gesamtzahl ersetzt.
+\teil In einem Ort gibt es zwei Bäckereien. Von A wechseln jede Woche 10\,\% der Kunden zu B, von B 15\,\% zu A; zusammen sind es 2000 Kunden. Bäckerei A braucht ab 1100 Kunden eine zweite Verkäuferin. Braucht sie auf Dauer eine?
+\end{teile}
+\end{aufgabe}

@@ -1,0 +1,43 @@
+% Einheit 1 von 4 – Mittlere Änderungsrate und Sekante (bank/ableitung-und-aenderungsrate/e1.jsonl, zusammenbau v0.1)
+%% TODO Zeitmarke Einheit 1: Marken-Zeile nicht lesbar
+%% TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 1
+\einheitenkopf[e1]{Einheit 1 von 4 · Mittlere Änderungsrate und Sekante}
+\zweigzeile{Abitur GK}
+\setcounter{aufgabe}{9}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 10
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 10
+\begin{aufgabe}{Mittlere Änderungsrate}
+%% TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+\begin{teile}
+\teil „Wie stark hat der Wasserstand in den ersten fünf Stunden durchschnittlich je Stunde zugenommen?“ \\ \kreuz{Zeitraum – Differenzenquotient, Sekante} \\ \kreuz{Zeitpunkt – Ableitung, Tangente}
+\teil Um 8 Uhr sind 120 Besucher im Zoo, um 11 Uhr 300. Wie groß ist die mittlere Änderungsrate der Besucherzahl in diesem Zeitraum? \leerfeld Besucher je Stunde
+\teil Die Tabelle zeigt, wie viele Anmeldungen bis zur jeweiligen Uhrzeit eingegangen sind. Berechne die mittlere Anzahl der Anmeldungen je Stunde zwischen 7:45 Uhr und 9:15 Uhr \hfill (Abitur 2024 LK).
+
+\sachtabelle{lccccc}{Uhrzeit & 7:00 & 7:45 & 8:30 & 9:15 & 10:00}{Anmeldungen & 210 & 480 & 890 & 1\,530 & 2\,100}
+\leerfeld je Stunde
+\teil Der Hormonspiegel eines Patienten wird durch $h(t) = 6t \cdot \mathrm{e}^{-0{,}05t} + 40$ beschrieben ($t$ in Tagen seit Behandlungsbeginn, $h(t)$ in Prozent des Sollwerts). Berechne die mittlere Änderungsrate des Hormonspiegels in den ersten fünf Tagen \hfill (Abitur 2019 GK). \leerfeld Prozentpunkte je Tag
+\teil Der Wasserstand eines Bachs wird durch $h(t) = 0{,}5t^3 - 6t^2 + 20t + 30$ beschrieben ($t$ in Stunden seit Regenbeginn, $h(t)$ in cm). Berechne den Wert des Terms $\frac{1}{3} \cdot (h(5) - h(2))$ und deute ihn im Sachzusammenhang \hfill (Abitur 2025 LK).
+\teil Ein Höhenprofil wird für $0 \le x \le 6$ durch $f(x) = (x + 2) \cdot \mathrm{e}^{-0{,}4x}$ beschrieben (1 LE = 1 km). Im Intervall $[1; 5]$ soll das Profil näherungsweise durch die Gerade durch die Punkte $(1 | f(1))$ und $(5 | f(5))$ ersetzt werden. Gib eine Gleichung dieser Geraden an \hfill (Abitur 2018 GK).
+\teil Ein Höhenprofil wird durch $f(x) = (x + 2) \cdot \mathrm{e}^{-0{,}4x}$ beschrieben (1 LE = 1 km). Von einem zweiten Profil $h$ ist bekannt: $h(0) = 1{,}8$ und $h(5) = 0{,}6$. Vergleiche die Beträge der mittleren Steigungen von $f$ und $h$ im Intervall $[0; 5]$ \hfill (Abitur 2018 GK).
+\teil Der Schienenverlauf einer Modelleisenbahn besteht aus vier gleichen Bögen von je $3{,}2$ m Länge und zwei Halbkreisen mit dem Radius $0{,}5$ m, die die Bögen verbinden. Ein Zug fährt im Durchschnitt $4$ m je Minute. Wie lange braucht er für eine volle Runde? \hfill (Abitur 2026 GK) \\ \leerfeld[min]
+\teil Der Bestand eines Rohstoffs wird durch $k(t) = 0{,}1t^3 - 1{,}5t^2 + 100$ beschrieben ($t$ in Jahren, $k(t)$ in Mio. Tonnen). Die Gleichung $\frac{k(c) - k(0)}{c} = -5$ hat genau zwei Lösungen. Bestimme die kleinere Lösung und deute Gleichung und Lösung im Sachzusammenhang \hfill (Abitur 2026 GK).
+\teil Der Graph zeigt das Höhenprofil eines Skateparks (1 LE = 1 m). Kriterium: Die Gerade durch Anfangs- und Endpunkt darf gegen die Waagerechte höchstens $45°$ geneigt sein. Zeichne die $45°$-Gerade durch den Anfangspunkt und die Sekante ein und beurteile ohne Rechnung, ob das Kriterium erfüllt ist \hfill (Abitur 2024 LK).
+
+\begin{ksys}[xmin=0,xmax=4,ymin=0,ymax=4,ablesen]\funktion{0.1*\x^3}{f}\end{ksys}
+\teil Die Kosten für die Produktion von $x$ Kubikmetern einer Flüssigkeit werden für $0 \le x \le 8$ durch $K(x) = x^3 - 9x^2 + 30x + 10$ beschrieben ($K(x)$ in 1\,000 Euro). Aussage: „Je größer die Produktionsmenge, desto höher sind die Kosten für einen zusätzlichen Kubikmeter.“ Beurteile die Aussage \hfill (Abitur 2018 GK).
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 11
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 11
+\begin{aufgabe}{Mittlere Änderungsrate – Fehler finden, Begründen, Anwendung, Darstellungswechsel}
+\begin{teile}
+\teil Um 9:00 Uhr sind 250 Besucher im Museum, um 13:00 Uhr 850. Lea gibt als mittlere Änderungsrate an: „$850 - 250 = 600$ Besucher je Stunde.“ Finde den Fehler.
+\teil Begründe, warum die mittlere Änderungsrate von $f$ auf $[a; b]$ genau die Steigung der Sekante durch $(a | f(a))$ und $(b | f(b))$ ist.
+\teil Ein Wassertank fasst zu Beginn $800$ Liter, nach $6$ Stunden noch $380$ Liter. Der Betreiber darf höchstens $60$ Liter je Stunde verbrauchen. Hält er die Vorgabe im Mittel ein?
+\teil Der Graph zeigt den Wasserstand $w$ (in cm) eines Bachs in Abhängigkeit von der Zeit $t$ (in h). Zeichne die Sekante durch die Punkte bei $t = 1$ und $t = 3$ ein und gib ihre Steigung als mittlere Änderungsrate mit Einheit an.
+
+\begin{ksys}[xmin=0,xmax=4,ymin=0,ymax=8,xlabel=t in h,ylabel=w in cm,ablesen]\funktion{2+\x^2/2+\x/2}{w}\end{ksys}
+\end{teile}
+\end{aufgabe}

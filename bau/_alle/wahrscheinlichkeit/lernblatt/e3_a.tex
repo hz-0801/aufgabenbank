@@ -1,0 +1,64 @@
+% Einheit 3 von 4 – Baumdiagramm und Pfadregeln (bank/wahrscheinlichkeit/e3.jsonl, zusammenbau v0.1)
+%% TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 3
+\einheitenkopf[e3]{Einheit 3 von 4 · Baumdiagramm und Pfadregeln}
+\zweigzeile{ab Kl. 8, je nach Buch bis Kl. 10 · P10 oft}
+\setcounter{aufgabe}{16}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 17
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 17
+\begin{aufgabe}{Ein Pfad oder mehrere?}
+\begin{teile}
+\teil Der Baum zeigt zweimaliges Drehen eines Glücksrads. Welche Pfade gehören zum Ereignis „genau einmal Rot“? Schreibe sie auf, rechne nicht.
+
+\baumzwei{rot/,blau/}{rot/,blau/}{rot/,blau/}
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 18
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 18
+\begin{aufgabe}{Nicht oder mindestens?}
+\begin{teile}
+\teil Ein Würfel wird zweimal geworfen. Ereignis: „mindestens eine Sechs“. Nenne das Gegenereignis.
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 19
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 19
+\begin{aufgabe}{Mit Zurücklegen}
+%% TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+\begin{teile}
+\teil Aus einer Dose wird ein Keks genommen und gegessen, dann ein zweiter. Mit oder ohne Zurücklegen? Kreuze an. \\ \kreuz{mit Zurücklegen} \\ \kreuz{ohne Zurücklegen}
+\teil Eine Münze wird zweimal geworfen. Trage im Baum an jeden Ast die Wahrscheinlichkeit ein.
+
+\baumzwei{Kopf/,Zahl/}{Kopf/,Zahl/}{Kopf/,Zahl/}
+\teil Ein grüner Würfel trägt die Zahlen 2, 3, 3, 5, 6, 6, ein gelber Würfel 1, 2, 4, 4, 6, 6. Erst wird der grüne, dann der gelbe geworfen; betrachtet wird gerade oder ungerade. Ergänze die fehlenden Wahrscheinlichkeiten im Baum. \hfill (P10 2026 FOR)
+
+\baumzwei{gerade/\frac{3}{6},ungerade/}{gerade/\frac{5}{6},ungerade/}{gerade/,ungerade/}
+\teil In einer Urne liegen 3 grüne und 5 gelbe Kugeln. Es wird zweimal mit Zurücklegen gezogen. Wie groß ist die Wahrscheinlichkeit für zweimal Grün?
+\teil Zwei Glücksräder haben je vier gleich große Felder: links 7, 8, 7, 7, rechts 8, 9, 8, 7. Beide werden gedreht; gelesen wird erst links, dann rechts. Wie groß ist die Wahrscheinlichkeit für 78 oder 87? \hfill (P10 2025 OS)
+\teil Ein Glücksrad hat 8 gleich große Felder: 5-mal rot, 2-mal blau, 1-mal grün. Es wird zweimal gedreht. Wie groß ist die Wahrscheinlichkeit, zweimal dieselbe Farbe zu drehen? \hfill (P10 2014 OS)
+\teil Ein Würfel wird zweimal geworfen. Wie groß ist die Wahrscheinlichkeit für mindestens eine 6?
+\teil Ein roter Würfel trägt die Zahlen 1, 2, 2, 3, 5, 6, ein blauer Würfel 2, 3, 3, 5, 5, 5. Erst wird der rote, dann der blaue geworfen. Wie groß ist die Wahrscheinlichkeit, dass nicht zweimal eine ungerade Zahl fällt? \hfill (P10 2026 FOR)
+\teil Eine Münze wird dreimal geworfen. Wie groß ist die Wahrscheinlichkeit für dreimal Kopf?
+\teil Zwei Glücksräder haben je vier gleich große Felder: links 5, 6, 5, 7, rechts 6, 7, 6, 5. Beide werden gedreht; gelesen wird erst links, dann rechts. Eva behauptet: „66 ist genauso wahrscheinlich wie 77.“ Hat Eva Recht? Begründe. \hfill (P10 2025 OS)
+\teil Zwei leere Glücksräder haben je vier gleich große Felder; gelesen wird erst das linke, dann das rechte. Trage Ziffern so ein, dass die Wahrscheinlichkeit für 57 genau $\frac{3}{8}$ ist, und zeige es mit einer Rechnung. \hfill (P10 2025 OS)
+
+\kreisdiagramm{/1,/1,/1,/1} \kreisdiagramm{/1,/1,/1,/1}
+\teil Jana dreht ein Glücksrad mit 4 gleich großen Feldern (1 Stern, 3 leer) dreimal. Sie gewinnt, wenn mindestens zweimal der Stern kommt. Beschrifte alle Äste des Baums und berechne die Gewinnwahrscheinlichkeit. \hfill (P10 2020 OS)
+
+\baumdreigleich{Stern/,leer/}
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 20
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 20
+\begin{aufgabe}{Mit Zurücklegen – Fehler finden, Begründen, Darstellungswechsel, Anwendung}
+\begin{teile}
+\teil In einer Urne liegen 1 weiße und 3 schwarze Kugeln; es wird zweimal mit Zurücklegen gezogen. Ali rechnet für genau einmal Weiß: $\frac{1}{4} \cdot \frac{3}{4} \cdot \frac{3}{4} \cdot \frac{1}{4} = \frac{9}{256}$. Finde den Fehler.
+\teil Begründe, warum die Wahrscheinlichkeiten an den Ästen eines Verzweigungspunkts zusammen 1 ergeben.
+\teil Der Baum zeigt einen zweistufigen Zufallsversuch. Beschreibe einen Zufallsversuch, der zu diesem Baum passt (Gerät, Beschriftung, wie oft).
+
+\baumzwei{rot/\frac{2}{5},blau/\frac{3}{5}}{rot/\frac{2}{5},blau/\frac{3}{5}}{rot/\frac{2}{5},blau/\frac{3}{5}}
+\teil Eine Elfmeterschützin trifft erfahrungsgemäß mit der Wahrscheinlichkeit $0{,}8$. Wie groß ist die Wahrscheinlichkeit, dass sie zwei Elfmeter nacheinander verwandelt?
+\end{teile}
+\end{aufgabe}

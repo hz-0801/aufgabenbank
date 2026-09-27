@@ -1,0 +1,40 @@
+% Einheit 1 von 2 – Verteilung aufstellen: die Werte der Zufallsgröße aus den Regeln gewinnen (alle Ergebnisfolgen durchrechnen), die Tabelle durch Abzählen füllen (günstige Paare je Wert), fehlende Wahrscheinlichkeiten über die Summe eins (bank/zufallsgroessen-und-verteilungen/e1.jsonl, zusammenbau v0.1)
+%% TODO Zeitmarke Einheit 1: Marken-Zeile nicht lesbar
+%% TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 1
+\einheitenkopf[e1]{Einheit 1 von 2 · Verteilung aufstellen: die Werte der Zufallsgröße aus den Regeln gewinnen (alle Ergebnisfolgen durchrechnen), die Tabelle durch Abzählen füllen (günstige Paare je Wert), fehlende Wahrscheinlichkeiten über die Summe eins}
+\zweigzeile{Abitur LK}
+\setcounter{aufgabe}{5}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 6
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 6
+\begin{aufgabe}{„Was muss eins ergeben?“}
+\begin{teile}
+\teil $X$ ist eine Zufallsgröße: \sachtabelle{lcccc}{$k$ & 0 & 1 & 2 & 3}{$P(X = k)$ & $0{,}1$ & \leerzelle & $0{,}4$ & $0{,}2$} Was muss zusammen eins ergeben? \kreuz{alle vier Einträge der unteren Zeile}\\ \kreuz{nur die drei gegebenen Einträge}\\ \kreuz{die Werte $k$ der oberen Zeile}
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 7
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 7
+\begin{aufgabe}{Verteilung aufstellen}
+%% TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+\begin{teile}
+\teil Zwei Münzen werden geworfen; $X$ zählt, wie oft Kopf fällt – welche Werte kann $X$ annehmen? \kreuz{$0, 1, 2$}\\ \kreuz{$1, 2$}\\ \kreuz{$0, 1, 2, 3$}
+\teil Zwei Tetraederwürfel (Augenzahlen $1$ bis $4$) werden geworfen; $X$ ist die Augensumme. Fülle die Tabelle. \sachtabelle{lcccc}{$k$ & 2 & 3 & 4 & 5}{$P(X = k)$ & \leerzelle & \leerzelle & \leerzelle & \leerzelle}
+\teil Ein Glücksrad mit den gleich großen Feldern $1$ und $3$ wird zweimal gedreht; ausgezahlt wird das Produkt in Euro, der Einsatz ist $2$ €. Zeige, dass der Gewinn (Auszahlung minus Einsatz) nur die Werte $-1$, $1$ und $7$ annimmt.
+\teil Die Auszahlung eines Spiels ist $0$ €, $2$ € oder $10$ € mit den Wahrscheinlichkeiten $2p$, $5p$ und $p$. Zeige, dass $p = \frac{1}{8}$. \hfill (Abitur 2021 LK)
+\teil Drei Briefe werden zufällig in drei adressierte Umschläge gesteckt; $X$ ist die Anzahl der richtig steckenden Briefe. Es gilt $P(X = 0) = \frac{1}{3}$ und $P(X = 1) = \frac{1}{2}$. Bestimme $P(X = 2)$ und $P(X = 3)$. \hfill (Abitur 2022 GK)
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 8
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 8
+\begin{aufgabe}{Verteilung aufstellen – Fehler finden, Begründen, Anwendung, Darstellungswechsel}
+\begin{teile}
+\teil Ein Glücksrad mit den gleich großen Feldern $2$ und $5$ wird zweimal gedreht, $X$ ist die Summe – wo ist der Fehler? \rechnung{\text{Werte: } &4,\ 7,\ 7,\ 10 \\ P(X = 7) &= \tfrac{1}{4}}
+\teil Warum ergeben die Wahrscheinlichkeiten aller Werte einer Zufallsgröße zusammen eins?
+\teil Auf dem Schulfest kostet ein Los $1$ €. Man zieht zweimal mit Zurücklegen aus einem Beutel mit einer goldenen und drei weißen Kugeln: zwei goldene bringen $10$ €, genau eine goldene $1$ €, sonst nichts. Verteilung des Gewinns – und wie wahrscheinlich ist, dass man den Einsatz verliert?
+\teil Zeichne das Säulendiagramm zur Tabelle. \sachtabelle{lcccc}{$k$ & 0 & 1 & 2 & 3}{$P(X = k)$ & $\frac{1}{8}$ & $\frac{3}{8}$ & $\frac{3}{8}$ & $\frac{1}{8}$}
+
+\saeulen{0/,1/,2/,3/}{0.5}{0.125}{$P(X = k)$}
+\end{teile}
+\end{aufgabe}

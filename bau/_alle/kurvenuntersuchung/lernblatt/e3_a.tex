@@ -1,0 +1,79 @@
+% Einheit 3 von 5 – Krümmung und Wendepunkte (bank/kurvenuntersuchung/e3.jsonl, zusammenbau v0.1)
+%% TODO Zeitmarke Einheit 3: Marken-Zeile nicht lesbar
+%% TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 3
+\einheitenkopf[e3]{Einheit 3 von 5 · Krümmung und Wendepunkte}
+\zweigzeile{Abitur GK}
+\setcounter{aufgabe}{22}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 23
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 23
+\begin{aufgabe}{Wendepunkte und Krümmung}
+%% TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+\begin{teile}
+\teil Kreuze an, welcher Nachweis für den Wendepunkt verlangt oder möglich ist, ohne zu rechnen: „Zeigen Sie, dass $W(1 | 4)$ ein Wendepunkt ist; es gilt $f'''(1) = 6$.“ \\ \kreuz{$f'''(x_0) \ne 0$} \\ \kreuz{Vorzeichenwechsel von $f''$} \\ \kreuz{kein Nachweis nötig}
+\teil Bilde die erste, zweite und dritte Ableitung von $f(x) = x^3 - 6x^2 + 4x$.
+\teil Bestimme den Wendepunkt des Graphen von $f(x) = x^3 - 3x^2 + 5$.
+\teil Bestimme die Wendepunkte des Graphen von $f(x) = x^4 - 6x^2 + 3$.
+\teil Gib an, wo der Graph von $f(x) = x^4 - 8x^3 + 18x^2$ links- und wo er rechtsgekrümmt ist. Prüfe das Vorzeichen von $f''$ an Probestellen.
+\teil Gegeben ist $f(x) = \frac{1}{4}(x^3 - 9x^2 + 18x)$. Zeige, dass $W(3 | 0)$ ein Wendepunkt ist, und bestimme die Gleichung der Tangente in $W$. \hfill (Abitur 2018 GK)
+\teil Zeige, dass $W(2 | -3)$ ein Wendepunkt des Graphen von $f(x) = x^3 - 6x^2 + 8x - 3$ ist.
+\teil Gegeben ist $f(x) = 0{,}6x^5 - 2x^3$. Weise nach, dass der Graph Wendepunkte besitzt, bestimme ihre Koordinaten und zeige, dass einer davon ein Sattelpunkt ist. \hfill (FHR 2024)
+\teil Gegeben ist $f(x) = (x^2 - 1) \cdot \mathrm{e}^{x}$ mit $f'(x) = (x^2 + 2x - 1) \cdot \mathrm{e}^{x}$; der Graph besitzt zwei Wendepunkte. Berechne ihre Koordinaten auf zwei Nachkommastellen gerundet. \hfill (Abitur 2023 GK)
+\teil Der Graph von $f(x) = 0{,}3x^5 - x^3 + 2x$ ist punktsymmetrisch zum Ursprung. Weise nach, dass $W(1 | 1{,}3)$ ein Wendepunkt ist, und gib ohne weitere Rechnung einen zweiten Wendepunkt an.
+\teil Gegeben ist $g(x) = -2x \cdot \mathrm{e}^{-0{,}5x}$ mit $g(x) \to 0$ für $x \to +\infty$ und $g'(x) = (x - 2) \cdot \mathrm{e}^{-0{,}5x}$. Begründe mithilfe einer Skizze in das Koordinatensystem, dass der Graph von $g$ einen Wendepunkt besitzt. \hfill (Abitur 2021 GK)
+
+\begin{ksys}[xmin=-1,xmax=10,ymin=-2,ymax=1] \end{ksys}
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 24
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 24
+\begin{aufgabe}{Gerade durch die beiden Wendepunkte aufstellen und parallele Gerade mit genau einem gemeinsamen Punkt einzeichnen}
+\begin{teile}
+\teil Gegeben ist $f(x) = -0{,}5x^4 + 2x^3$ für $0 \le x \le 2$; die Abbildung zeigt den Graphen. Bestimme die Gleichung der Geraden $g$ durch die beiden Wendepunkte und zeichne eine zu $g$ parallele Gerade ein, die für $0 \le x \le 2$ mit dem Graphen genau einen Punkt gemeinsam hat. \hfill (Abitur 2021 GK)
+
+\begin{ksys}[xmin=-1,xmax=3,ymin=-3,ymax=9,ystep=2] \funktionab{-0.5*\x^4+2*\x^3}{f}{0}{2} \end{ksys}
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 25
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 25
+\begin{aufgabe}{Punktprobe am Graphen}
+\begin{teile}
+\teil Gegeben ist $f(x) = -0{,}5x^3 + 3x^2 - 4x + 1$. Prüfe, welcher der vier Punkte der Wendepunkt des Graphen ist, und begründe. \hfill (FHR 2021) \\ \kreuz{$W_1(-2 | 1)$} \\ \kreuz{$W_2(2 | 1)$} \\ \kreuz{$W_3(2 | 5)$} \\ \kreuz{$W_4(3 | 2{,}5)$}
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 26
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 26
+\begin{aufgabe}{Wendestelle nachweisen und Winkel der Wendetangente mit der x-Achse über die Steigung −1 zeigen}
+\begin{teile}
+\teil Der Graph von $f(x) = x^3 + 3x^2 + 2x$ hat genau einen Wendepunkt. Weise nach, dass seine Wendestelle $-1$ ist und die Wendetangente mit der $x$-Achse einen Winkel von $45°$ einschließt. \hfill (Abitur 2026 GK)
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 27
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 27
+\begin{aufgabe}{Wendestellen einer Sinusfunktion als ganzzahlig nachweisen und die beiden Wendetangentensteigungen zeigen}
+\begin{teile}
+\teil Gegeben ist $s(x) = 3\,\mathrm{sin}\left(\frac{\pi}{2}x\right) - 2$; die Wendepunkte sind die Punkte des Graphen mit $y$-Koordinate $-2$. Weise nach, dass alle Wendestellen ganzzahlig sind, und zeige, dass die Wendetangenten die Steigung $\frac{3\pi}{2}$ oder $-\frac{3\pi}{2}$ haben. \hfill (Abitur 2022 LK)
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 28
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 28
+\begin{aufgabe}{Anzahl der Schnittpunkte von Geraden durch den Wendepunkt mit dem Graphen nach der Steigung unterscheiden}
+\begin{teile}
+\teil Der Graph von $f(x) = -(x - 2)^3 + 3(x - 2) + 1$ hat den Wendepunkt $W(2 | 1)$, die Wendetangente hat die Steigung $3$. Betrachtet werden Geraden durch $W$ mit positiver Steigung $m$. Gib an, wie viele gemeinsame Punkte sie je nach $m$ mit dem Graphen haben. \hfill (Abitur 2018 LK)
+\end{teile}
+\end{aufgabe}
+
+%% TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 29
+%% TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 29
+\begin{aufgabe}{Wendepunkte und Krümmung – Fehler finden, Begründen, Anwendung}
+\begin{teile}
+\teil Finde den Fehler und stelle richtig. Gesucht war das Krümmungsverhalten von $f(x) = x^3 + 6x^2$. \rechnung{f''(x) &= 6x + 12 = 0 &&\Rightarrow x = -2 \\ f''(-3) &= -6 < 0 &&\Rightarrow \text{linksgekrümmt für } x \le -2}
+\teil Begründe, warum $f''(x_0) = 0$ allein noch keinen Wendepunkt garantiert.
+\teil Der Längsschnitt eines Glases wird für $-4 \le x \le 4$ durch $f(x) = -\frac{1}{32}x^4 + \frac{3}{4}x^2$ beschrieben (Rotationsachse auf der $y$-Achse, 1 LE = 2 cm). Die Form heißt in einem Bereich konvex, wenn der Graph dort linksgekrümmt ist. Bestimme die $x$-Koordinaten des Bereichs, in dem das Glas konvex ist. \hfill (Abitur 2017 LK)
+\end{teile}
+\end{aufgabe}

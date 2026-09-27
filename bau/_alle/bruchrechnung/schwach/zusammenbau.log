@@ -1,0 +1,293 @@
+# zusammenbau v0.1: zusammenbau.py bruchrechnung --schwach
+VORLAGE mathblatt.sty: Version 2026-09-28a
+EINHEITEN [1, 2, 3, 4, 5]
+AUSWAHL bruchrechnung-zone-f1-v1 – Zone f1 „Bruch als Anteil lesen, am Streifen einz“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL bruchrechnung-zone-f1-v3 – Zone f1 „Bruch als Anteil lesen, am Streifen einz“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f1 „Bruch als Anteil lesen, am Streifen einz“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL bruchrechnung-zone-f2-v1 – Zone f2 „Kürzen und Erweitern; gleichwertige Brüc“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL bruchrechnung-zone-f2-v3 – Zone f2 „Kürzen und Erweitern; gleichwertige Brüc“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f2 „Kürzen und Erweitern; gleichwertige Brüc“ – Sprossen [3, 4, 5] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL bruchrechnung-zone-f3-v1 – Zone f3 „Vielfache und Teiler (kgV von vier und s“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL bruchrechnung-zone-f3-v3 – Zone f3 „Vielfache und Teiler (kgV von vier und s“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f3 „Vielfache und Teiler (kgV von vier und s“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL bruchrechnung-zone-f4-v1 – Zone f4 „Stellenwerte der Dezimalzahlen (Zehntel,“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL bruchrechnung-zone-f4-v3 – Zone f4 „Stellenwerte der Dezimalzahlen (Zehntel,“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f4 „Stellenwerte der Dezimalzahlen (Zehntel,“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL bruchrechnung-zone-f5-v1 – Zone f5 „Schriftliches Rechnen mit natürlichen Za“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL bruchrechnung-zone-f5-v3 – Zone f5 „Schriftliches Rechnen mit natürlichen Za“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f5 „Schriftliches Rechnen mit natürlichen Za“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL bruchrechnung-zone-f6-v1 – Zone f6 „Bruch ↔ Dezimalzahl bei einfachen Brüche“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL bruchrechnung-zone-f6-v3 – Zone f6 „Bruch ↔ Dezimalzahl bei einfachen Brüche“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f6 „Bruch ↔ Dezimalzahl bei einfachen Brüche“ – Sprossen [3] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL bruchrechnung-zone-f2-v5 – Zone-Paar, Fehler finden
+AUSWAHL bruchrechnung-zone-f2-v6 – Zone-Paar, gleichartige Rechenaufgabe
+AUSWAHL bruchrechnung-e1-k1-s0-v1 – e1 k1 „Gleicher Nenner – ja oder nein?“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e1 k1 „Gleicher Nenner – ja oder nein?“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL bruchrechnung-e1-k2-s0-v1 – e1 k2 „Womit erweitere ich?“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e1 k2 „Womit erweitere ich?“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL bruchrechnung-e1-k3-s0-v1 – e1 k3 „Addieren/Subtrahieren“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL bruchrechnung-e1-k3-s1-v1 – e1 k3 „Addieren/Subtrahieren“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL bruchrechnung-e1-k3-s1-v2 – e1 k3 „Addieren/Subtrahieren“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL bruchrechnung-e1-k3-s1-v3 – e1 k3 „Addieren/Subtrahieren“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL bruchrechnung-e1-k3-s1-v4 – e1 k3 „Addieren/Subtrahieren“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL bruchrechnung-e1-k3-s1-v5 – e1 k3 „Addieren/Subtrahieren“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL bruchrechnung-e1-k3-s2-v1 – e1 k3 „Addieren/Subtrahieren“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL bruchrechnung-e1-k3-s3-v1 – e1 k3 „Addieren/Subtrahieren“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL bruchrechnung-e1-k3-s4-v1 – e1 k3 „Addieren/Subtrahieren“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL bruchrechnung-e1-k3-s5-v1 – e1 k3 „Addieren/Subtrahieren“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL bruchrechnung-e1-k3-s6-v1 – e1 k3 „Addieren/Subtrahieren“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL bruchrechnung-e1-k3-s7-v1 – e1 k3 „Addieren/Subtrahieren“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3, v4, v5, v6, v7, v8
+AUSWAHL bruchrechnung-e1-k3-s8-v1 – e1 k3 „Addieren/Subtrahieren“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3, v4
+KETTE e1 k3 „Addieren/Subtrahieren“ (verfahren) → eine Hauptnummer
+AUSWAHL bruchrechnung-e1-k4-s1-v1 – e1 k4 „ganze Zahl plus Bruch“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e1 k4 „ganze Zahl plus Bruch“ (ohne) → eine Hauptnummer
+AUSWAHL bruchrechnung-e1-k5-s1-v1 – e1 k5 „Addieren/Subtrahieren“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL bruchrechnung-e1-k5-s2-v1 – e1 k5 „Addieren/Subtrahieren“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL bruchrechnung-e1-k5-s3-v1 – e1 k5 „Addieren/Subtrahieren“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL bruchrechnung-e1-k5-s4-v1 – e1 k5 „Addieren/Subtrahieren“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e1 k5 „Addieren/Subtrahieren“ (pflicht) → eine Hauptnummer
+AUSWAHL bruchrechnung-e2-k1-s0-v1 – e2 k1 „Dezimal addieren/subtrahieren“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL bruchrechnung-e2-k1-s1-v1 – e2 k1 „Dezimal addieren/subtrahieren“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL bruchrechnung-e2-k1-s1-v2 – e2 k1 „Dezimal addieren/subtrahieren“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL bruchrechnung-e2-k1-s1-v3 – e2 k1 „Dezimal addieren/subtrahieren“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL bruchrechnung-e2-k1-s1-v4 – e2 k1 „Dezimal addieren/subtrahieren“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL bruchrechnung-e2-k1-s1-v5 – e2 k1 „Dezimal addieren/subtrahieren“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL bruchrechnung-e2-k1-s2-v1 – e2 k1 „Dezimal addieren/subtrahieren“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL bruchrechnung-e2-k1-s3-v1 – e2 k1 „Dezimal addieren/subtrahieren“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL bruchrechnung-e2-k1-s4-v1 – e2 k1 „Dezimal addieren/subtrahieren“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL bruchrechnung-e2-k1-s5-v1 – e2 k1 „Dezimal addieren/subtrahieren“ (verfahren), Sprosse 5: Variante 1; übergangen v2
+KETTE e2 k1 „Dezimal addieren/subtrahieren“ (verfahren) → eine Hauptnummer
+AUSWAHL bruchrechnung-e2-k2-s1-v1 – e2 k2 „ganze Zahl plus Dezimalzahl“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k2 „ganze Zahl plus Dezimalzahl“ (ohne) → eine Hauptnummer
+AUSWAHL bruchrechnung-e2-k3-s1-v1 – e2 k3 „Überschlag vorab“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k3 „Überschlag vorab“ (ohne) → eine Hauptnummer
+AUSWAHL bruchrechnung-e2-k4-s1-v1 – e2 k4 „Dezimal addieren/subtrahieren“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL bruchrechnung-e2-k4-s2-v1 – e2 k4 „Dezimal addieren/subtrahieren“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL bruchrechnung-e2-k4-s3-v1 – e2 k4 „Dezimal addieren/subtrahieren“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+KETTE e2 k4 „Dezimal addieren/subtrahieren“ (pflicht) → eine Hauptnummer
+AUSWAHL bruchrechnung-e3-k1-s0-v1 – e3 k1 „Von heißt mal“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e3 k1 „Von heißt mal“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL bruchrechnung-e3-k2-s0-v1 – e3 k2 „Multiplizieren“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL bruchrechnung-e3-k2-s1-v1 – e3 k2 „Multiplizieren“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL bruchrechnung-e3-k2-s1-v2 – e3 k2 „Multiplizieren“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL bruchrechnung-e3-k2-s1-v3 – e3 k2 „Multiplizieren“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL bruchrechnung-e3-k2-s1-v4 – e3 k2 „Multiplizieren“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL bruchrechnung-e3-k2-s1-v5 – e3 k2 „Multiplizieren“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL bruchrechnung-e3-k2-s2-v1 – e3 k2 „Multiplizieren“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL bruchrechnung-e3-k2-s3-v1 – e3 k2 „Multiplizieren“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL bruchrechnung-e3-k2-s4-v1 – e3 k2 „Multiplizieren“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL bruchrechnung-e3-k2-s5-v1 – e3 k2 „Multiplizieren“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3, v4, v5, v6
+AUSWAHL bruchrechnung-e3-k2-s6-v1 – e3 k2 „Multiplizieren“ (verfahren), Sprosse 6: Variante 1; übergangen v2
+KETTE e3 k2 „Multiplizieren“ (verfahren) → eine Hauptnummer
+AUSWAHL bruchrechnung-e3-k3-s1-v1 – e3 k3 „Dividieren“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL bruchrechnung-e3-k3-s1-v2 – e3 k3 „Dividieren“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL bruchrechnung-e3-k3-s1-v3 – e3 k3 „Dividieren“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL bruchrechnung-e3-k3-s1-v4 – e3 k3 „Dividieren“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL bruchrechnung-e3-k3-s1-v5 – e3 k3 „Dividieren“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL bruchrechnung-e3-k3-s2-v1 – e3 k3 „Dividieren“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL bruchrechnung-e3-k3-s3-v1 – e3 k3 „Dividieren“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL bruchrechnung-e3-k3-s4-v1 – e3 k3 „Dividieren“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL bruchrechnung-e3-k3-s5-v1 – e3 k3 „Dividieren“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+KETTE e3 k3 „Dividieren“ (verfahren) → eine Hauptnummer
+AUSWAHL bruchrechnung-e3-k4-s1-v1 – e3 k4 „Multiplizieren“ (pflicht), Sprosse 1: Variante 1; übergangen v2
+AUSWAHL bruchrechnung-e3-k4-s2-v1 – e3 k4 „Multiplizieren“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL bruchrechnung-e3-k4-s3-v1 – e3 k4 „Multiplizieren“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+KETTE e3 k4 „Multiplizieren“ (pflicht) → eine Hauptnummer
+AUSWAHL bruchrechnung-e3-k5-s1-v1 – e3 k5 „Dividieren“ (pflicht), Sprosse 1: Variante 1
+AUSWAHL bruchrechnung-e3-k5-s2-v1 – e3 k5 „Dividieren“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+KETTE e3 k5 „Dividieren“ (pflicht) → eine Hauptnummer
+AUSWAHL bruchrechnung-e4-k1-s0-v1 – e4 k1 „Wie viele Kommastellen hat das Ergebnis?“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e4 k1 „Wie viele Kommastellen hat das Ergebnis?“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL bruchrechnung-e4-k2-s1-v1 – e4 k2 „Dezimal multiplizieren/dividieren“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL bruchrechnung-e4-k2-s1-v2 – e4 k2 „Dezimal multiplizieren/dividieren“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL bruchrechnung-e4-k2-s1-v3 – e4 k2 „Dezimal multiplizieren/dividieren“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL bruchrechnung-e4-k2-s1-v4 – e4 k2 „Dezimal multiplizieren/dividieren“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL bruchrechnung-e4-k2-s1-v5 – e4 k2 „Dezimal multiplizieren/dividieren“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL bruchrechnung-e4-k2-s2-v1 – e4 k2 „Dezimal multiplizieren/dividieren“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL bruchrechnung-e4-k2-s3-v1 – e4 k2 „Dezimal multiplizieren/dividieren“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL bruchrechnung-e4-k2-s4-v1 – e4 k2 „Dezimal multiplizieren/dividieren“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL bruchrechnung-e4-k2-s5-v1 – e4 k2 „Dezimal multiplizieren/dividieren“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL bruchrechnung-e4-k2-s6-v1 – e4 k2 „Dezimal multiplizieren/dividieren“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL bruchrechnung-e4-k2-s7-v1 – e4 k2 „Dezimal multiplizieren/dividieren“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL bruchrechnung-e4-k2-s8-v1 – e4 k2 „Dezimal multiplizieren/dividieren“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3, v4
+AUSWAHL bruchrechnung-e4-k2-s9-v1 – e4 k2 „Dezimal multiplizieren/dividieren“ (verfahren), Sprosse 9: Variante 1; übergangen v2
+KETTE e4 k2 „Dezimal multiplizieren/dividieren“ (verfahren) → eine Hauptnummer
+AUSWAHL bruchrechnung-e4-k3-s1-v1 – e4 k3 „Dezimal multiplizieren/dividieren“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL bruchrechnung-e4-k3-s2-v1 – e4 k3 „Dezimal multiplizieren/dividieren“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL bruchrechnung-e4-k3-s3-v1 – e4 k3 „Dezimal multiplizieren/dividieren“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+KETTE e4 k3 „Dezimal multiplizieren/dividieren“ (pflicht) → eine Hauptnummer
+AUSWAHL bruchrechnung-e5-k1-s0-v1 – e5 k1 „Punkt vor Strich“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL bruchrechnung-e5-k1-s1-v1 – e5 k1 „Punkt vor Strich“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL bruchrechnung-e5-k1-s1-v2 – e5 k1 „Punkt vor Strich“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL bruchrechnung-e5-k1-s1-v3 – e5 k1 „Punkt vor Strich“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL bruchrechnung-e5-k1-s1-v4 – e5 k1 „Punkt vor Strich“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL bruchrechnung-e5-k1-s1-v5 – e5 k1 „Punkt vor Strich“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL bruchrechnung-e5-k1-s2-v1 – e5 k1 „Punkt vor Strich“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL bruchrechnung-e5-k1-s3-v1 – e5 k1 „Punkt vor Strich“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL bruchrechnung-e5-k1-s4-v1 – e5 k1 „Punkt vor Strich“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL bruchrechnung-e5-k1-s5-v1 – e5 k1 „Punkt vor Strich“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL bruchrechnung-e5-k1-s6-v1 – e5 k1 „Punkt vor Strich“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3, v4
+AUSWAHL bruchrechnung-e5-k1-s7-v1 – e5 k1 „Punkt vor Strich“ (verfahren), Sprosse 7: Variante 1; übergangen v2
+KETTE e5 k1 „Punkt vor Strich“ (verfahren) → eine Hauptnummer
+AUSWAHL bruchrechnung-e5-k2-s1-v1 – e5 k2 „Distributivgesetz (Ausklammern bei Dezimalzahlen)“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e5 k2 „Distributivgesetz (Ausklammern bei Dezimalzahlen)“ (ohne) → eine Hauptnummer
+AUSWAHL bruchrechnung-e5-k3-s1-v1 – e5 k3 „Überschlag und Prüfen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e5 k3 „Überschlag und Prüfen“ (ohne) → eine Hauptnummer
+AUSWAHL bruchrechnung-e5-k4-s1-v1 – e5 k4 „Punkt vor Strich“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL bruchrechnung-e5-k4-s2-v1 – e5 k4 „Punkt vor Strich“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL bruchrechnung-e5-k4-s3-v1 – e5 k4 „Punkt vor Strich“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+KETTE e5 k4 „Punkt vor Strich“ (pflicht) → eine Hauptnummer
+KOPF Einheit 1: „Einheit 1 von 5 · Brüche addieren und subtrahieren“; Marken „OS Kl. 5–6 (Mathematik 2023 5, Schnittpunkt 6, Mathematik heute 5) · GYM Kl. 6 · keine P10-Aufgabe“ → Zeitmarke „ab Kl. 5, je nach Buch bis Kl. 6 (am Gymnasium ab Kl. 6)“, Prüfungswort „keine P10-Aufgabe“
+WARNUNG Nr. 11: 14 Teilaufgaben, 1 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 2: „Einheit 2 von 5 · Dezimalzahlen addieren und subtrahieren“; Marken „OS Kl. 5–6 (Mathematik 2023 5, Schnittpunkt 6, Mathematik heute 5) · GYM Kl. 6 · keine P10-Aufgabe“ → Zeitmarke „ab Kl. 5, je nach Buch bis Kl. 6 (am Gymnasium ab Kl. 6)“, Prüfungswort „keine P10-Aufgabe“
+WARNUNG Nr. 14: 11 Teilaufgaben, 1 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 3: „Einheit 3 von 5 · Brüche multiplizieren und dividieren“; Marken „OS Kl. 6 · GYM Kl. 5–6 (LS 6, Fundamente 6, Elemente 5) · keine P10-Aufgabe · nicht für alle: Schnittpunkt 7 EXTRA“ → Zeitmarke „ab Kl. 6 (am Gymnasium ab Kl. 5)“, Prüfungswort „keine P10-Aufgabe“
+KOPF Einheit 4: „Einheit 4 von 5 · Dezimalzahlen multiplizieren und dividieren“; Marken „OS Kl. 5–6 (Mathematik 2023 5, Schnittpunkt 6, Mathematik heute 6) · GYM Kl. 6 · keine P10-Aufgabe“ → Zeitmarke „ab Kl. 5, je nach Buch bis Kl. 6 (am Gymnasium ab Kl. 6)“, Prüfungswort „keine P10-Aufgabe“
+WARNUNG Nr. 24: 14 Teilaufgaben, 0 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 5: „Einheit 5 von 5 · Rechengesetze und Punkt vor Strich“; Marken „OS Kl. 6 · GYM Kl. 6 · keine P10-Aufgabe · nicht für alle: Mathematik 2023 6 Üben“ → Zeitmarke „ab Kl. 6“, Prüfungswort „keine P10-Aufgabe“
+WARNUNG Nr. 26: 13 Teilaufgaben, 0 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+TODO 143 Stellen in den Quelltexten:
+  abhaken.tex:2: TODO Ich-kann-Sätze: Platzhalter wie in den Aufgabendateien
+  blatt0_a.tex:4: TODO Grundvorstellungs-Aufgabe als erste Hauptnummer der Zone (2.8) fehlt in der Bank
+  blatt0_a.tex:6: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 1
+  blatt0_a.tex:7: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 1
+  blatt0_a.tex:13: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 2
+  blatt0_a.tex:14: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 2
+  blatt0_a.tex:16: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-zone-f2-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:18: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-zone-f2-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:22: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 3
+  blatt0_a.tex:23: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 3
+  blatt0_a.tex:25: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-zone-f3-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:27: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-zone-f3-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:31: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 4
+  blatt0_a.tex:32: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 4
+  blatt0_a.tex:34: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-zone-f4-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:36: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-zone-f4-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:40: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 5
+  blatt0_a.tex:41: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 5
+  blatt0_a.tex:43: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-zone-f5-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:45: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-zone-f5-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:49: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 6
+  blatt0_a.tex:50: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 6
+  blatt0_a.tex:52: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-zone-f6-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:54: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-zone-f6-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:58: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 7
+  blatt0_a.tex:59: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 7
+  blatt0_a.tex:64: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 8
+  blatt0_a.tex:65: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 8
+  blatt0_a.tex:67: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-zone-f2-v6; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 1
+  e1_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 9
+  e1_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 9
+  e1_a.tex:15: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 10
+  e1_a.tex:16: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 10
+  e1_a.tex:23: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 11
+  e1_a.tex:24: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 11
+  e1_a.tex:27: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e1-k3-s1-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:29: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e1-k3-s1-v2; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:31: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e1-k3-s1-v3; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:33: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e1-k3-s1-v4; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:35: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e1-k3-s1-v5; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:38: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e1-k3-s2-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:40: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e1-k3-s3-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:42: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e1-k3-s4-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:44: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e1-k3-s5-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:46: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e1-k3-s6-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:52: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 12
+  e1_a.tex:53: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 12
+  e1_a.tex:55: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e1-k4-s1-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:59: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 13
+  e1_a.tex:60: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 13
+  e1_l.tex:6: TODO Lösung der Erklärzeile 11g) fehlt in der Bank
+  e2_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 2
+  e2_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 14
+  e2_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 14
+  e2_a.tex:11: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e2-k1-s1-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:13: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e2-k1-s1-v2; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:15: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e2-k1-s1-v3; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:17: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e2-k1-s1-v4; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:19: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e2-k1-s1-v5; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:22: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e2-k1-s2-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:24: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e2-k1-s3-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:26: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e2-k1-s4-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:31: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 15
+  e2_a.tex:32: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 15
+  e2_a.tex:34: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e2-k2-s1-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:38: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 16
+  e2_a.tex:39: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 16
+  e2_a.tex:41: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e2-k3-s1-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:45: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 17
+  e2_a.tex:46: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 17
+  e2_l.tex:4: TODO Lösung der Erklärzeile 14g) fehlt in der Bank
+  e3_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 3
+  e3_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 18
+  e3_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 18
+  e3_a.tex:15: TODO \verfahren{…}: Verfahrensüberschrift in Sachsprache fehlt in der Bank (2.3 b)
+  e3_a.tex:16: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 19
+  e3_a.tex:17: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 19
+  e3_a.tex:22: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e3-k2-s1-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:24: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e3-k2-s1-v2; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:26: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e3-k2-s1-v3; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:28: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e3-k2-s1-v4; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:30: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e3-k2-s1-v5; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:33: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e3-k2-s2-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:35: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e3-k2-s3-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:37: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e3-k2-s4-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:43: TODO \verfahren{…}: Verfahrensüberschrift in Sachsprache fehlt in der Bank (2.3 b)
+  e3_a.tex:44: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 20
+  e3_a.tex:45: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 20
+  e3_a.tex:47: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e3-k3-s1-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:49: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e3-k3-s1-v2; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:51: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e3-k3-s1-v3; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:53: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e3-k3-s1-v4; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:55: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e3-k3-s1-v5; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:58: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e3-k3-s2-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:60: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e3-k3-s3-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:62: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e3-k3-s4-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:67: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 21
+  e3_a.tex:68: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 21
+  e3_a.tex:75: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 22
+  e3_a.tex:76: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 22
+  e3_l.tex:5: TODO Lösung der Erklärzeile 19g) fehlt in der Bank
+  e3_l.tex:7: TODO Lösung der Erklärzeile 20f) fehlt in der Bank
+  e4_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 4
+  e4_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 23
+  e4_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 23
+  e4_a.tex:15: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 24
+  e4_a.tex:16: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 24
+  e4_a.tex:18: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e4-k2-s1-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:20: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e4-k2-s1-v2; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:22: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e4-k2-s1-v3; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:24: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e4-k2-s1-v4; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:26: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e4-k2-s1-v5; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:29: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e4-k2-s2-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:31: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e4-k2-s3-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:33: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e4-k2-s4-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:35: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e4-k2-s5-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:37: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e4-k2-s6-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:39: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e4-k2-s7-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:45: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 25
+  e4_a.tex:46: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 25
+  e4_l.tex:5: TODO Lösung der Erklärzeile 24f) fehlt in der Bank
+  e5_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 5
+  e5_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 26
+  e5_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 26
+  e5_a.tex:13: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e5-k1-s1-v1; Abschnitt „Für schwache Schüler“)
+  e5_a.tex:15: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e5-k1-s1-v2; Abschnitt „Für schwache Schüler“)
+  e5_a.tex:17: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e5-k1-s1-v3; Abschnitt „Für schwache Schüler“)
+  e5_a.tex:19: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e5-k1-s1-v4; Abschnitt „Für schwache Schüler“)
+  e5_a.tex:21: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e5-k1-s1-v5; Abschnitt „Für schwache Schüler“)
+  e5_a.tex:24: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e5-k1-s2-v1; Abschnitt „Für schwache Schüler“)
+  e5_a.tex:26: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e5-k1-s3-v1; Abschnitt „Für schwache Schüler“)
+  e5_a.tex:28: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e5-k1-s4-v1; Abschnitt „Für schwache Schüler“)
+  e5_a.tex:30: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e5-k1-s5-v1; Abschnitt „Für schwache Schüler“)
+  e5_a.tex:41: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 27
+  e5_a.tex:42: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 27
+  e5_a.tex:44: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e5-k2-s1-v1; Abschnitt „Für schwache Schüler“)
+  e5_a.tex:48: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 28
+  e5_a.tex:49: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 28
+  e5_a.tex:51: TODO Darstellung für schwach fehlt in der Bank (bruchrechnung-e5-k3-s1-v1; Abschnitt „Für schwache Schüler“)
+  e5_a.tex:55: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 29
+  e5_a.tex:56: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 29
+  e5_l.tex:4: TODO Lösung der Erklärzeile 26g) fehlt in der Bank
+STRUKTUR 0 Fehler
