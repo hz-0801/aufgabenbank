@@ -10,13 +10,13 @@ Prüfskript: werkzeuge/bank-pruef.py v0.2, Endstand 0 Abweichungen,
 ## Dateien
 
     Datei       Zeilen  vorstufe grundfall sprosse pruefung pflicht
-    zone.jsonl      26         –         –      25        –       1
+    zone.jsonl      26         –        12      13        –       1
     e1.jsonl        59        12         5      18       12      12
     e2.jsonl        35         4         5      15        2       9
-    e3.jsonl        59         8        10      21        8      12
+    e3.jsonl        59         8        10      18       11      12
     e4.jsonl        42         4         5      18        6       9
-    e5.jsonl        46         8         5      18        6       9
-    gesamt         267
+    e5.jsonl        42         4         5      18        6       9
+    gesamt         263
 
 Pflicht je Einheit (fehler/begruenden/anwendung/darstellung):
 e1 3/3/3/3 · e2 3/3/3/– · e3 3/3/3/3 · e4 3/3/3/– · e5 3/3/3/–;
@@ -127,20 +127,20 @@ Korrektur fehlerfrei.
 
 ## Befunde
 
-1. bank.md, „Mengen je Kette“ und Gegenprobe im Auftrag: „je
+1. (erledigt v0.5) bank.md, „Mengen je Kette“ und Gegenprobe im Auftrag: „je
    Einheit genau der Grundfall der Kette 5 Zeilen“ setzt eine
    Verfahrenskette je Einheit voraus. Einheit 3 hat zwei; e3 hat
    daher 10 Grundfallzeilen. bank.md sollte „je Verfahrenskette“
    sagen und festlegen, wie zwei Ketten einer Einheit die
    Pflichtelemente teilen.
-2. Prüfskript: Eine gemischte Zahl `3\frac{3}{5}` wird als Bruch
+2. (erledigt v0.5) Prüfskript: Eine gemischte Zahl `3\frac{3}{5}` wird als Bruch
    33/5 gelesen (Ziffern verkettet). Eine Lösung, die nur die
    gemischte Zahl nennt, scheitert. Umgangen nach Entscheidung 16.
-3. Prüfskript, Sperre: Es verbindet den Nenner eines Bruchs mit
+3. (erledigt v0.5) Prüfskript, Sperre: Es verbindet den Nenner eines Bruchs mit
    dem folgenden Faktor (`\frac{1}{12} \cdot 3` → „3 · 12“,
    `\frac{3}{12} \cdot \frac{2}{11}` → „2 · 12“) und meldet ein
    Zahlenpaar aus 2015-OS-K2a. Zu breit.
-4. Prüfskript, Sperre: Jeder einzelne Bruch aus Kasten und
+4. (erledigt v0.5) Prüfskript, Sperre: Jeder einzelne Bruch aus Kasten und
    Originalen mit einer Zahl ab 10 gilt als Zahlenpaar (1/10,
    9/10, 1/36, 5/12 …). bank.md nennt „kleine Grundfallzahlen“
    frei; ob ein Bruch wie 1/10 dazugehört, regelt es nicht.
@@ -155,9 +155,17 @@ Korrektur fehlerfrei.
    „„von“ markieren“ (Z. 100), ebenso „Was rechne ich zuerst?“
    (Z. 42) und „Rechnung einkreisen“ (Z. 103), beschreiben
    denselben Schritt; die Bank führt beide (Entscheidung 15).
-8. bank.md regelt nicht die Prüfungshöhe ohne P10-Original
+   (erledigt v0.5 für „Was rechne ich zuerst?“, siehe
+   Nachbesserung; „Von heißt mal“ siehe Befund 9.)
+8. (erledigt v0.5) bank.md regelt nicht die Prüfungshöhe ohne P10-Original
    (Z. 101) und nicht die hoehe der Zonenzeilen (Entscheidungen 1
    und 7).
+9. Erkennungsschritt „Von heißt mal“ (Z. 40, e3 k1) bleibt stehen:
+   Er verlangt „von“ unterstreichen und die Malaufgabe
+   aufschreiben, die Vorstufe „„von“ markieren“ (Z. 100) nur das
+   Markieren. Der Handgriff überschneidet sich, ist aber nicht
+   derselbe; ob bank.md „denselben Handgriff“ so eng meint, ist
+   offen. Wird er gestrichen, rücken e3 k2–k5 auf k1–k4.
 
 ## Offene Punkte
 
@@ -168,3 +176,23 @@ Korrektur fehlerfrei.
 - Die Prüfungshöhen in e1 und e3 setzen Pfadwahrscheinlichkeiten
   voraus, die Klasse 6 nicht kennt; beim Blattbau als Zielmarke
   kennzeichnen oder auslassen.
+
+## Nachbesserung 2026-09-27
+
+Nach bank.md Stand 2026-09-27b und Prüfskript v0.5; vorher
+1 Abweichung, 12 Warnungen, danach 0 Abweichungen, 0 Warnungen in
+allen Dateien.
+
+- zone.jsonl: Die zwölf sehr leichten Zeilen (sprosse 1) tragen
+  hoehe grundfall statt sprosse (Entscheidung 1 überholt).
+- e1.jsonl: e1-k5-s1-v2 (Fehler finden) rechnet 1/3 + 1/9 statt
+  1/2 + 1/8, weil „1/8 + 1/8“ als Fehlerquelle von 2025-OS-K3d
+  gesperrt ist.
+- e3.jsonl: Die Prüfungshöhe Dividieren (e3-k3-s5, Z. 101, drei
+  Zeilen) trägt hoehe pruefung mit original null statt sprosse
+  (Entscheidung 7 überholt).
+- e5.jsonl: Der Erkennungsschritt „Was rechne ich zuerst?“ (vier
+  Zeilen) ist gestrichen, weil er denselben Handgriff verlangt wie
+  die Vorstufe „Rechnung einkreisen“; die Ketten k2–k5 rücken auf
+  k1–k4, ids mit (Entscheidung 15 für e5 überholt).
+- Tabelle „Dateien“ auf die neuen Zahlen gebracht.
