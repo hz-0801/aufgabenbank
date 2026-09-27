@@ -1,0 +1,269 @@
+# zusammenbau v0.1: zusammenbau.py prozentrechnung --klasse 7 --schwach
+VORLAGE mathblatt.sty: Version 2026-09-28a
+EINHEITEN [1, 2, 3, 4, 5]
+AUSWAHL prozentrechnung-zone-f1-v1 – Zone f1 „Bruch als Anteil lesen und kürzen (drei “, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL prozentrechnung-zone-f1-v3 – Zone f1 „Bruch als Anteil lesen und kürzen (drei “, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f1 „Bruch als Anteil lesen und kürzen (drei “ – Sprossen [3, 4] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL prozentrechnung-zone-f2-v1 – Zone f2 „Bruch ↔ Dezimalzahl (ein Viertel, drei F“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL prozentrechnung-zone-f2-v3 – Zone f2 „Bruch ↔ Dezimalzahl (ein Viertel, drei F“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f2 „Bruch ↔ Dezimalzahl (ein Viertel, drei F“ – Sprossen [3, 4] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL prozentrechnung-zone-f3-v1 – Zone f3 „Durch hundert teilen, mit Dezimalzahlen “, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL prozentrechnung-zone-f3-v3 – Zone f3 „Durch hundert teilen, mit Dezimalzahlen “, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f3 „Durch hundert teilen, mit Dezimalzahlen “ – Sprossen [3, 4] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL prozentrechnung-zone-f4-v1 – Zone f4 „Hoch- und Runterrechnen in einer Tabelle“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL prozentrechnung-zone-f4-v3 – Zone f4 „Hoch- und Runterrechnen in einer Tabelle“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f4 „Hoch- und Runterrechnen in einer Tabelle“ – Sprossen [3, 4] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL prozentrechnung-zone-f5-v1 – Zone f5 „Runden auf eine Dezimalstelle“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL prozentrechnung-zone-f5-v3 – Zone f5 „Runden auf eine Dezimalstelle“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f5 „Runden auf eine Dezimalstelle“ – Sprossen [3, 4] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL prozentrechnung-zone-f6-v1 – Zone f6 „Bruchteil einer Größe (zwei Drittel von “, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL prozentrechnung-zone-f6-v3 – Zone f6 „Bruchteil einer Größe (zwei Drittel von “, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f6 „Bruchteil einer Größe (zwei Drittel von “ – Sprossen [3, 4, 5, 6] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL prozentrechnung-zone-f6-v6 – Zone-Paar, Fehler finden
+AUSWAHL prozentrechnung-zone-f6-v7 – Zone-Paar, gleichartige Rechenaufgabe
+AUSWAHL prozentrechnung-e1-k1-s1-v1 – e1 k1 „Umwandeln“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL prozentrechnung-e1-k1-s1-v2 – e1 k1 „Umwandeln“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL prozentrechnung-e1-k1-s1-v3 – e1 k1 „Umwandeln“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL prozentrechnung-e1-k1-s1-v4 – e1 k1 „Umwandeln“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL prozentrechnung-e1-k1-s1-v5 – e1 k1 „Umwandeln“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL prozentrechnung-e1-k1-s2-v1 – e1 k1 „Umwandeln“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e1-k1-s3-v1 – e1 k1 „Umwandeln“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e1-k1-s4-v1 – e1 k1 „Umwandeln“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e1-k1-s5-v1 – e1 k1 „Umwandeln“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e1-k1-s6-v1 – e1 k1 „Umwandeln“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e1-k1-s7-v1 – e1 k1 „Umwandeln“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3, v4
+AUSWAHL prozentrechnung-e1-k1-s8-v1 – e1 k1 „Umwandeln“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3, v4, v5, v6
+AUSWAHL prozentrechnung-e1-k1-s9-v1 – e1 k1 „Umwandeln“ (verfahren), Sprosse 9: Variante 1; übergangen v2
+KETTE e1 k1 „Umwandeln“ (verfahren) → eine Hauptnummer
+AUSWAHL prozentrechnung-e1-k2-s1-v1 – e1 k2 „Prozentangaben ordnen“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e1 k2 „Prozentangaben ordnen“ (ohne) → eine Hauptnummer
+AUSWAHL prozentrechnung-e1-k3-s1-v1 – e1 k3 „Umwandeln“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e1-k3-s2-v1 – e1 k3 „Umwandeln“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e1-k3-s3-v1 – e1 k3 „Umwandeln“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e1-k3-s4-v1 – e1 k3 „Umwandeln“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e1 k3 „Umwandeln“ (pflicht) → eine Hauptnummer
+AUSWAHL prozentrechnung-e2-k1-s0-v1 – e2 k1 „Was ist das Ganze?“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e2 k1 „Was ist das Ganze?“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL prozentrechnung-e2-k2-s0-v1 – e2 k2 „Streifen einteilen“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e2 k2 „Streifen einteilen“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL prozentrechnung-e2-k3-s0-v1 – e2 k3 „Prozentsatz“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL prozentrechnung-e2-k3-s1-v1 – e2 k3 „Prozentsatz“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL prozentrechnung-e2-k3-s1-v2 – e2 k3 „Prozentsatz“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL prozentrechnung-e2-k3-s1-v3 – e2 k3 „Prozentsatz“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL prozentrechnung-e2-k3-s1-v4 – e2 k3 „Prozentsatz“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL prozentrechnung-e2-k3-s1-v5 – e2 k3 „Prozentsatz“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL prozentrechnung-e2-k3-s2-v1 – e2 k3 „Prozentsatz“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e2-k3-s3-v1 – e2 k3 „Prozentsatz“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e2-k3-s4-v1 – e2 k3 „Prozentsatz“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e2-k3-s5-v1 – e2 k3 „Prozentsatz“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e2-k3-s6-v1 – e2 k3 „Prozentsatz“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e2-k3-s7-v1 – e2 k3 „Prozentsatz“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3, v4, v5, v6
+AUSWAHL prozentrechnung-e2-k3-s8-v1 – e2 k3 „Prozentsatz“ (verfahren), Sprosse 8: Variante 1; übergangen v2
+AUSWAHL prozentrechnung-e2-k3-s9-v1 – e2 k3 „Prozentsatz“ (verfahren), Sprosse 9: Variante 1; übergangen v2
+KETTE e2 k3 „Prozentsatz“ (verfahren) → eine Hauptnummer
+AUSWAHL prozentrechnung-e2-k4-s1-v1 – e2 k4 „Umkehrung: zu einem Prozentsatz ein Zahlenpaar angeben“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e2 k4 „Umkehrung: zu einem Prozentsatz ein Zahlenpaar angeben“ (ohne) → eine Hauptnummer
+AUSWAHL prozentrechnung-e2-k5-s1-v1 – e2 k5 „Prozentsatz“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e2-k5-s2-v1 – e2 k5 „Prozentsatz“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e2-k5-s3-v1 – e2 k5 „Prozentsatz“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e2-k5-s4-v1 – e2 k5 „Prozentsatz“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e2 k5 „Prozentsatz“ (pflicht) → eine Hauptnummer
+AUSWAHL prozentrechnung-e3-k1-s1-v1 – e3 k1 „Prozentwert“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL prozentrechnung-e3-k1-s1-v2 – e3 k1 „Prozentwert“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL prozentrechnung-e3-k1-s1-v3 – e3 k1 „Prozentwert“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL prozentrechnung-e3-k1-s1-v4 – e3 k1 „Prozentwert“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL prozentrechnung-e3-k1-s1-v5 – e3 k1 „Prozentwert“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL prozentrechnung-e3-k1-s2-v1 – e3 k1 „Prozentwert“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e3-k1-s3-v1 – e3 k1 „Prozentwert“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e3-k1-s4-v1 – e3 k1 „Prozentwert“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e3-k1-s5-v1 – e3 k1 „Prozentwert“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e3-k1-s6-v1 – e3 k1 „Prozentwert“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e3-k1-s7-v1 – e3 k1 „Prozentwert“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e3-k1-s8-v1 – e3 k1 „Prozentwert“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3, v4
+AUSWAHL prozentrechnung-e3-k1-s9-v1 – e3 k1 „Prozentwert“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3, v4
+AUSWAHL prozentrechnung-e3-k1-s10-v1 – e3 k1 „Prozentwert“ (verfahren), Sprosse 10: Variante 1; übergangen v2
+KETTE e3 k1 „Prozentwert“ (verfahren) → eine Hauptnummer
+AUSWAHL prozentrechnung-e3-k2-s1-v1 – e3 k2 „Mehrwertsteuer in Euro“ (ohne), Sprosse 1: Variante 1; übergangen v2, v3
+KETTE e3 k2 „Mehrwertsteuer in Euro“ (ohne) → eine Hauptnummer
+AUSWAHL prozentrechnung-e3-k3-s1-v1 – e3 k3 „Prozentwert“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e3-k3-s2-v1 – e3 k3 „Prozentwert“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e3-k3-s3-v1 – e3 k3 „Prozentwert“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e3-k3-s4-v1 – e3 k3 „Prozentwert“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e3 k3 „Prozentwert“ (pflicht) → eine Hauptnummer
+AUSWAHL prozentrechnung-e4-k1-s0-v1 – e4 k1 „Was ist gegeben, was gesucht?“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e4 k1 „Was ist gegeben, was gesucht?“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL prozentrechnung-e4-k2-s0-v1 – e4 k2 „Grundwert“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL prozentrechnung-e4-k2-s1-v1 – e4 k2 „Grundwert“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL prozentrechnung-e4-k2-s1-v2 – e4 k2 „Grundwert“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL prozentrechnung-e4-k2-s1-v3 – e4 k2 „Grundwert“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL prozentrechnung-e4-k2-s1-v4 – e4 k2 „Grundwert“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL prozentrechnung-e4-k2-s1-v5 – e4 k2 „Grundwert“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL prozentrechnung-e4-k2-s2-v1 – e4 k2 „Grundwert“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e4-k2-s3-v1 – e4 k2 „Grundwert“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e4-k2-s4-v1 – e4 k2 „Grundwert“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e4-k2-s5-v1 – e4 k2 „Grundwert“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e4-k2-s6-v1 – e4 k2 „Grundwert“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3, v4
+KETTE e4 k2 „Grundwert“ (verfahren) → eine Hauptnummer
+AUSWAHL prozentrechnung-e4-k3-s1-v1 – e4 k3 „Grundwert“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e4-k3-s2-v1 – e4 k3 „Grundwert“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e4-k3-s3-v1 – e4 k3 „Grundwert“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e4-k3-s4-v1 – e4 k3 „Grundwert“ (pflicht), Sprosse 4: Variante 1; übergangen v2, v3
+KETTE e4 k3 „Grundwert“ (pflicht) → eine Hauptnummer
+AUSWAHL prozentrechnung-e5-k1-s0-v1 – e5 k1 „Welcher Wert ist der alte?“ (erkennung), Sprosse 0: Variante 1; übergangen v2, v3, v4
+KETTE e5 k1 „Welcher Wert ist der alte?“ (erkennung) → eine Hauptnummer (Erkennungsschritt: eigene Kette nach bank.md, zählt als Hauptnummer)
+AUSWAHL prozentrechnung-e5-k2-s0-v1 – e5 k2 „Veränderung“ (verfahren), Sprosse 0: Variante 1; übergangen v2, v3, v4
+AUSWAHL prozentrechnung-e5-k2-s1-v1 – e5 k2 „Veränderung“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL prozentrechnung-e5-k2-s1-v2 – e5 k2 „Veränderung“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL prozentrechnung-e5-k2-s1-v3 – e5 k2 „Veränderung“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL prozentrechnung-e5-k2-s1-v4 – e5 k2 „Veränderung“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL prozentrechnung-e5-k2-s1-v5 – e5 k2 „Veränderung“ (verfahren): schwach, Grundfall als Päckchen (alle Varianten, unterrichtsblatt 2.8)
+AUSWAHL prozentrechnung-e5-k2-s2-v1 – e5 k2 „Veränderung“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e5-k2-s3-v1 – e5 k2 „Veränderung“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e5-k2-s4-v1 – e5 k2 „Veränderung“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e5-k2-s5-v1 – e5 k2 „Veränderung“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e5-k2-s6-v1 – e5 k2 „Veränderung“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e5-k2-s7-v1 – e5 k2 „Veränderung“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e5-k2-s8-v1 – e5 k2 „Veränderung“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3, v4, v5, v6
+AUSWAHL prozentrechnung-e5-k2-s9-v1 – e5 k2 „Veränderung“ (verfahren), Sprosse 9: Variante 1; übergangen v2
+AUSWAHL prozentrechnung-e5-k2-s10-v1 – e5 k2 „Veränderung“ (verfahren), Sprosse 10: Variante 1; übergangen v2
+AUSWAHL prozentrechnung-e5-k2-s11-v1 – e5 k2 „Veränderung“ (verfahren), Sprosse 11: Variante 1; übergangen v2
+KETTE e5 k2 „Veränderung“ (verfahren) → eine Hauptnummer
+AUSWAHL prozentrechnung-e5-k3-s1-v1 – e5 k3 „Veränderung“ (pflicht), Sprosse 1: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e5-k3-s2-v1 – e5 k3 „Veränderung“ (pflicht), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL prozentrechnung-e5-k3-s3-v1 – e5 k3 „Veränderung“ (pflicht), Sprosse 3: Variante 1; übergangen v2, v3
+KETTE e5 k3 „Veränderung“ (pflicht) → eine Hauptnummer
+KOPF Einheit 1: „Einheit 1 von 5 · Prozente als Anteile“; Marken „OS Kl. 6 · GYM Kl. 5 · P10 oft · nicht für alle: Mathematik 2023 5 Vertiefen, Schnittpunkt 7 EXTRA“ → Zeitmarke „kennst du wahrscheinlich seit Klasse 6 (am Gymnasium schon seit Klasse 5)“, Prüfungswort „P10 oft“
+SCHWACH prozentrechnung-e1-k1-s1-v1 (Nr. 9): \streifenfeld → \streifen, Feld in den Text (rechte Spalte zu schmal für Streifen + Feld)
+SCHWACH prozentrechnung-e1-k1-s1-v2 (Nr. 9): \streifenfeld → \streifen, Feld in den Text (rechte Spalte zu schmal für Streifen + Feld)
+SCHWACH prozentrechnung-e1-k1-s1-v3 (Nr. 9): \streifenfeld → \streifen, Feld in den Text (rechte Spalte zu schmal für Streifen + Feld)
+SCHWACH prozentrechnung-e1-k1-s1-v4 (Nr. 9): \streifenfeld → \streifen, Feld in den Text (rechte Spalte zu schmal für Streifen + Feld)
+SCHWACH prozentrechnung-e1-k1-s1-v5 (Nr. 9): \streifenfeld → \streifen, Feld in den Text (rechte Spalte zu schmal für Streifen + Feld)
+WARNUNG Nr. 9: 14 Teilaufgaben, 7 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 2: „Einheit 2 von 5 · Prozentsatz berechnen“; Marken „OS Kl. 7 · GYM Kl. 7 · P10 oft“ → Zeitmarke „neu in diesem Jahr“, Prüfungswort „P10 oft“
+SCHWACH prozentrechnung-e2-k3-s0-v1 (Nr. 14): \streifenfeld → \streifen, Feld in den Text (rechte Spalte zu schmal für Streifen + Feld)
+WARNUNG Nr. 14: 15 Teilaufgaben, 1 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 3: „Einheit 3 von 5 · Prozentwert berechnen“; Marken „OS Kl. 7 · GYM Kl. 7 · P10“ → Zeitmarke „neu in diesem Jahr“, Prüfungswort „P10“
+WARNUNG Nr. 17: 15 Teilaufgaben, 5 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 4: „Einheit 4 von 5 · Grundwert berechnen“; Marken „OS Kl. 7 · GYM Kl. 7 · P10 oft“ → Zeitmarke „neu in diesem Jahr“, Prüfungswort „P10 oft“
+WARNUNG Nr. 21: 12 Teilaufgaben, 1 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+KOPF Einheit 5: „Einheit 5 von 5 · Prozentuale Veränderung“; Marken „OS Kl. 7–8 (Sekundo 7, Mathematik 2023 7, Schnittpunkt 8, Mathematik heute 7) · GYM Kl. 7 · P10 oft · nicht für alle: Sekundo 10 LVL, Mathematik 2023 7 Üben, Schnittpunkt 7 EXTRA“ → Zeitmarke „neu in diesem Jahr, je nach Buch bis Klasse 8“, Prüfungswort „P10 oft“
+WARNUNG Nr. 24: 17 Teilaufgaben, 0 mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt nur im Fokus
+TODO 117 Stellen in den Quelltexten:
+  abhaken.tex:2: TODO Ich-kann-Sätze: Platzhalter wie in den Aufgabendateien
+  blatt0_a.tex:4: TODO Grundvorstellungs-Aufgabe als erste Hauptnummer der Zone (2.8) fehlt in der Bank
+  blatt0_a.tex:6: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 1
+  blatt0_a.tex:7: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 1
+  blatt0_a.tex:9: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-zone-f1-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:11: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-zone-f1-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:15: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 2
+  blatt0_a.tex:16: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 2
+  blatt0_a.tex:18: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-zone-f2-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:20: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-zone-f2-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:24: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 3
+  blatt0_a.tex:25: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 3
+  blatt0_a.tex:27: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-zone-f3-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:29: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-zone-f3-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:33: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 4
+  blatt0_a.tex:34: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 4
+  blatt0_a.tex:40: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 5
+  blatt0_a.tex:41: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 5
+  blatt0_a.tex:43: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-zone-f5-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:45: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-zone-f5-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:49: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 6
+  blatt0_a.tex:50: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 6
+  blatt0_a.tex:52: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-zone-f6-v1; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:54: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-zone-f6-v3; Abschnitt „Für schwache Schüler“)
+  blatt0_a.tex:58: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 7
+  blatt0_a.tex:59: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 7
+  blatt0_a.tex:64: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 8
+  blatt0_a.tex:65: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 8
+  blatt0_a.tex:67: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-zone-f6-v7; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 1
+  e1_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 9
+  e1_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 9
+  e1_a.tex:16: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e1-k1-s2-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:18: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e1-k1-s3-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:20: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e1-k1-s4-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:22: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e1-k1-s5-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:24: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e1-k1-s6-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:33: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 10
+  e1_a.tex:34: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 10
+  e1_a.tex:36: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e1-k2-s1-v1; Abschnitt „Für schwache Schüler“)
+  e1_a.tex:40: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 11
+  e1_a.tex:41: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 11
+  e1_l.tex:4: TODO Lösung der Erklärzeile 9f) fehlt in der Bank
+  e2_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 2
+  e2_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 12
+  e2_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 12
+  e2_a.tex:15: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 13
+  e2_a.tex:16: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 13
+  e2_a.tex:21: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 14
+  e2_a.tex:22: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 14
+  e2_a.tex:25: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e2-k3-s1-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:27: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e2-k3-s1-v2; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:29: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e2-k3-s1-v3; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:31: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e2-k3-s1-v4; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:33: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e2-k3-s1-v5; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:36: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e2-k3-s2-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:38: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e2-k3-s3-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:40: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e2-k3-s4-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:42: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e2-k3-s5-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:44: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e2-k3-s6-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:51: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 15
+  e2_a.tex:52: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 15
+  e2_a.tex:54: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e2-k4-s1-v1; Abschnitt „Für schwache Schüler“)
+  e2_a.tex:58: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 16
+  e2_a.tex:59: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 16
+  e2_l.tex:6: TODO Lösung der Erklärzeile 14g) fehlt in der Bank
+  e3_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 3
+  e3_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 17
+  e3_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 17
+  e3_a.tex:16: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e3-k1-s2-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:18: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e3-k1-s3-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:20: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e3-k1-s4-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:22: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e3-k1-s5-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:24: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e3-k1-s6-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:26: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e3-k1-s7-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:35: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 18
+  e3_a.tex:36: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 18
+  e3_a.tex:38: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e3-k2-s1-v1; Abschnitt „Für schwache Schüler“)
+  e3_a.tex:42: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 19
+  e3_a.tex:43: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 19
+  e3_l.tex:4: TODO Lösung der Erklärzeile 17f) fehlt in der Bank
+  e4_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 4
+  e4_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 20
+  e4_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 20
+  e4_a.tex:15: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 21
+  e4_a.tex:16: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 21
+  e4_a.tex:19: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e4-k2-s1-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:21: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e4-k2-s1-v2; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:23: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e4-k2-s1-v3; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:25: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e4-k2-s1-v4; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:27: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e4-k2-s1-v5; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:30: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e4-k2-s2-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:32: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e4-k2-s3-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:34: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e4-k2-s4-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:36: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e4-k2-s5-v1; Abschnitt „Für schwache Schüler“)
+  e4_a.tex:41: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 22
+  e4_a.tex:42: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 22
+  e4_l.tex:5: TODO Lösung der Erklärzeile 21g) fehlt in der Bank
+  e5_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 5
+  e5_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 23
+  e5_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 23
+  e5_a.tex:15: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 24
+  e5_a.tex:16: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 24
+  e5_a.tex:21: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e5-k2-s1-v1; Abschnitt „Für schwache Schüler“)
+  e5_a.tex:23: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e5-k2-s1-v2; Abschnitt „Für schwache Schüler“)
+  e5_a.tex:25: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e5-k2-s1-v3; Abschnitt „Für schwache Schüler“)
+  e5_a.tex:27: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e5-k2-s1-v4; Abschnitt „Für schwache Schüler“)
+  e5_a.tex:29: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e5-k2-s1-v5; Abschnitt „Für schwache Schüler“)
+  e5_a.tex:32: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e5-k2-s2-v1; Abschnitt „Für schwache Schüler“)
+  e5_a.tex:34: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e5-k2-s3-v1; Abschnitt „Für schwache Schüler“)
+  e5_a.tex:36: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e5-k2-s4-v1; Abschnitt „Für schwache Schüler“)
+  e5_a.tex:38: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e5-k2-s5-v1; Abschnitt „Für schwache Schüler“)
+  e5_a.tex:40: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e5-k2-s6-v1; Abschnitt „Für schwache Schüler“)
+  e5_a.tex:42: TODO Darstellung für schwach fehlt in der Bank (prozentrechnung-e5-k2-s7-v1; Abschnitt „Für schwache Schüler“)
+  e5_a.tex:50: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 25
+  e5_a.tex:51: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 25
+  e5_l.tex:5: TODO Lösung der Erklärzeile 24g) fehlt in der Bank
+STRUKTUR 0 Fehler
