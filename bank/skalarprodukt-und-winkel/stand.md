@@ -6,14 +6,14 @@ Prüfskript: bank-pruef.py v0.5, 0 Abweichungen, 0 Warnungen
 
 ## Zeilen je Datei und hoehe
 
-| Datei | Zeilen | vorstufe | grundfall | sprosse | pruefung | pflicht |
-|-------|-------:|---------:|----------:|--------:|---------:|--------:|
-| zone  |     31 |        – |        12 |      18 |        – |       1 |
-| e1    |     26 |        4 |         5 |       9 |        2 |       6 |
-| e2    |     38 |        8 |         5 |      12 |        4 |       9 |
-| e3    |     31 |        4 |         5 |       9 |        4 |       9 |
-| e4    |     29 |        4 |         5 |       9 |        2 |       9 |
-| Summe |    155 |       20 |        32 |      57 |       12 |      34 |
+| Datei | Zeilen | vorst. | grundf. | sprosse | pruef. | pflicht |
+|-------|-------:|-------:|--------:|--------:|-------:|--------:|
+| zone  |     31 |      – |      12 |      18 |      – |       1 |
+| e1    |     26 |      4 |       5 |       9 |      2 |       6 |
+| e2    |     38 |      8 |       5 |      12 |      4 |       9 |
+| e3    |     31 |      4 |       5 |       9 |      4 |       9 |
+| e4    |     29 |      4 |       5 |       9 |      2 |       9 |
+| Summe |    155 |     20 |      32 |      57 |     12 |      34 |
 
 ## Originale je Einheit
 
@@ -33,13 +33,13 @@ Prüfskript: bank-pruef.py v0.5, 0 Abweichungen, 0 Warnungen
 
 ## Prüfskript vor der Korrektur
 
-| Datei | Abweichungen | Warnungen | häufigster Grund                   |
-|-------|-------------:|----------:|------------------------------------|
-| zone  |            9 |         0 | Tripel mit \mid in der Lösung      |
-| e1    |            4 |         0 | pruef fehlt bei Begründung (3)     |
-| e2    |            7 |         0 | Sperre Tripel aus Mappe (4)        |
-| e3    |            1 |         0 | Sperre Term 3x+4z                  |
-| e4    |            1 |         0 | Sperre Tripel (2|2|3)              |
+| Datei | Abw. | Warn. | häufigster Grund                     |
+|-------|-----:|------:|--------------------------------------|
+| zone  |    9 |     0 | Tripel mit \mid in der Lösung        |
+| e1    |    4 |     0 | pruef fehlt bei Begründung (3)       |
+| e2    |    7 |     0 | Sperre Tripel aus der Mappe (4)      |
+| e3    |    1 |     0 | Sperre Term 3x+4z                    |
+| e4    |    1 |     0 | Sperre Tripel aus der Mappe          |
 
 Keine Einheit scheiterte zweimal.
 
