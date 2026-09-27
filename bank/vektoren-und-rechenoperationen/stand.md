@@ -7,11 +7,11 @@ Erster Sek-II-Eintrag der Bank.
 ## Zeilen je Datei und hoehe
 
 | Datei | Zeilen | vorstufe | grundfall | sprosse | pruefung | pflicht |
-|-------|-------:|---------:|----------:|--------:|---------:|--------:|
-| zone  |     27 |        – |        12 |      14 |        – |       1 |
-| e1    |     41 |        8 |         5 |      12 |        4 |      12 |
-| e2    |     43 |        4 |         5 |      18 |        4 |      12 |
-| e3    |     23 |        4 |         5 |       3 |        2 |       9 |
+|---|--:|--:|--:|--:|--:|--:|
+| zone | 27 | – | 12 | 14 | – | 1 |
+| e1 | 41 | 8 | 5 | 12 | 4 | 12 |
+| e2 | 43 | 4 | 5 | 18 | 4 | 12 |
+| e3 | 23 | 4 | 5 | 3 | 2 | 9 |
 
 ## Originale je Einheit
 
