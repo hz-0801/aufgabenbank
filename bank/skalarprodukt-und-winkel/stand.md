@@ -41,7 +41,9 @@ Prüfskript: bank-pruef.py v0.5, 0 Abweichungen, 0 Warnungen
 | e3    |    1 |     0 | Sperre Term 3x+4z                    |
 | e4    |    1 |     0 | Sperre Tripel aus der Mappe          |
 
-Keine Einheit scheiterte zweimal.
+Keine Einheit scheiterte zweimal. Nachtrag: e4-k1-s4-v2 trug die
+Kastenzahl 26 (M(0 | 26)); nachträglich geändert, dabei eine
+Sperre (0|5) behoben; die Kastenzahl-Probe meldet jetzt 0.
 
 ## Entscheidungen
 
