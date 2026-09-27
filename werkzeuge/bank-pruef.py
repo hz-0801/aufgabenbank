@@ -1,7 +1,25 @@
 #!/usr/bin/env python3
 """Prüft die Bank eines Katalogeintrags (bank.md, Abschnitt „Prüfung").
 
-v0.2. Aufruf:
+v0.3, 2026-09-27 (nach acht Einträgen; bank.md dritte Fassung).
+Änderungen gegenüber v0.2:
+  a) hoehe pruefung mit original null erlaubt; original an jeder
+     hoehe, wenn vollständig; Menge Prüfungshöhe ohne Original 3.
+  b) Zone: s1 hoehe grundfall, ab s2 sprosse; merkmal ab s3 beginnt
+     mit „Fallstrick:“ (Zone-Paar ausgenommen); je Zeile Warnung.
+  c) Grafik nur bei form zeichnen oder Ablese-/Zeichenauftrag,
+     nicht mehr beim bloßen Wort „Graph“.
+  d) Ankreuzen: Zahloptionen wie bisher; sonst nennt loesung genau
+     eine Option wortgleich; dort ist pruef "" erlaubt.
+  e) Sperre: Zahlterme aus Kasten, Variablenterme ab einer Zahl,
+     gemischte Zahl, kein Paar aus Nenner und Faktor, einzelner
+     Bruch kein Zahlenpaar.
+  f) Ergebnisstelle: „-\\,6“ und „x^2 - 12x“ mit Vorzeichen;
+     Exponent nach ^ zählt nicht als Lösungsziffer.
+  g) Mengen: Grundfall je Kette (unverändert), keine Warnung je
+     Einheit.
+
+Aufruf:
     python3 werkzeuge/bank-pruef.py <eintrag> [--katalog DATEI]
     python3 werkzeuge/bank-pruef.py --selbsttest
 
@@ -44,6 +62,7 @@ FORMEN = ["teil", "gleichungsraster", "dreisatz", "streifenfeld",
 MENGE = {"vorstufe": 4, "grundfall": 5, "sprosse": 3}
 MENGE_PFLICHT = 3
 MENGE_ORIGINAL = 2
+MENGE_OHNE_ORIGINAL = 3      # Prüfungshöhe mit original null
 TOLERANZ = Decimal("0.005")
 
 # Zahl mit Dezimalkomma; Tausender sind vorher zusammengezogen.
@@ -78,7 +97,10 @@ def normiert(text):
     t = text.replace("{,}", ",")
     t = re.sub(r"(\d)\\,(?=\d{3}(?!\d))", r"\1", t)   # 1\,200
     t = re.sub(r"(\d)[  ](?=\d{3}(?!\d))", r"\1", t)  # 1 200 (schmal)
-    t = t.replace("\\,", " ").replace("\\%", "%")
+    t = gemischt(t)
+    for leer in ("\\,", "\\;", "\\:", "\\ "):
+        t = t.replace(leer, " ")
+    t = t.replace("\\!", "").replace("\\%", "%")
     t = t.replace("\\approx", "≈").replace("−", "-")
     t = re.sub(r"\\[dt]?frac\{([^{}]*)\}\{([^{}]*)\}", r"\1/\2", t)
     t = re.sub(r"\^\{[^}]*\}|\^-?\d", " ", t)          # x^2, 2^{10}
@@ -87,7 +109,23 @@ def normiert(text):
     t = t.replace("{", "").replace("}", "")
     # Buchstaben mit angehängter Ziffer (x1, a2) sind keine Zahlen.
     t = re.sub(r"[A-Za-z]\d+", " ", t)
-    return t
+    return vorzeichen(t)
+
+
+def gemischt(t):
+    """Gemischte Zahl 3\\frac{3}{5} -> \\frac{18}{5} (nicht 33/5)."""
+    def ein(m):
+        g, z, n = int(m.group(1)), int(m.group(2)), int(m.group(3))
+        return f"\\frac{{{g * n + z}}}{{{n}}}"
+    return re.sub(r"(?<![\d,.^_A-Za-z{])(\d+)\\[dt]?frac\{(\d+)\}\{(\d+)\}",
+                  ein, t)
+
+
+def vorzeichen(t):
+    """Minus mit Abstand vor einer Zahl gehört zur Zahl („$- 6$“,
+    „x - 12x“), außer nach einer Zahl, „)“ oder Einheitszeichen –
+    dort ist es Rechenzeichen („20 - 5“, „100 % - 90 %“)."""
+    return re.sub(r"(^|[^\d)%€°\s])(\s*)-\s+(?=\d)", r"\1\2-", t)
 
 
 def zahl(s):
@@ -291,12 +329,25 @@ def ksys_bereiche(grafik):
     return aus
 
 
+# Ablese- oder Zeichenauftrag: verlangt eine Grafik (das Wort
+# „Graph“ allein nicht, etwa „Liegt P auf dem Graphen von f?“).
+# Imperativ „lies“, „zeichne“; „liest“, „ohne zu zeichnen“ und ein
+# Bild als Gegenstand („ein quadratisches Bild“) sind kein Auftrag.
+AUFTRAG_GRAFIK = re.compile(
+    r"\b(?:[Ll]ies|[Zz]eichne)\b"
+    r"|\b(?:[Aa]blesen|abzulesen|abgelesen|eingezeichnet)\b"
+    r"|\bAbbildung|\b(?:im|am|siehe)\s+Bild\b"
+    r"|\bBild\s+(?:zeigt|unten|oben|rechts|links)\b"
+    r"|\bim\s+Koordinatensystem\b")
+
+
 def grafikprobe(a):
     b = []
     grafik = a.get("grafik", "")
     if (a["form"] == "zeichnen"
-            or re.search(r"\bGraph(en)?\b", a["aufgabe"])) and not grafik:
-        b.append("grafik leer (form zeichnen oder „Graph“ in aufgabe)")
+            or AUFTRAG_GRAFIK.search(a["aufgabe"])) and not grafik:
+        b.append("grafik leer (form zeichnen oder Ablese-/Zeichenauftrag "
+                 "in aufgabe)")
     bereiche = ksys_bereiche(grafik)
     if not bereiche:
         return b
@@ -328,31 +379,89 @@ def grafikprobe(a):
 
 # --- Ankreuzen -----------------------------------------------------------
 
+def optionen(aufgabe):
+    """Inhalte der \\kreuz{…} einer Aufgabe."""
+    aus = []
+    for m in re.finditer(r"\\kreuz(?=\{)", aufgabe):
+        e = klammer(aufgabe, m.end())
+        aus.append(aufgabe[m.end() + 1:e - 1])
+    return aus
+
+
+def reine_zahl(o):
+    """Option ist eine Zahl, höchstens mit Einheit dahinter
+    („$4$ cm“, „$12\\,\\%$“), nicht „4x“ oder „nur $5$“."""
+    t = normiert(o).replace("$", " ").strip()
+    return re.fullmatch(r"-?\d+(?:,\d+)?(?:\s+(?:%|€|[A-Za-zÄÖÜäöüß]+"
+                        r"[²³]?(?:/[A-Za-z]+)?))?", t) is not None
+
+
+def zahl_ankreuzen(a):
+    """Mindestens zwei Optionen sind reine Zahlen."""
+    return (a["form"] == "ankreuzen"
+            and sum(map(reine_zahl, optionen(a["aufgabe"]))) >= 2)
+
+
+def raumarm(text):
+    """mathnorm, ohne Raum um Rechenzeichen, Wörter durch ein
+    Leerzeichen getrennt (ohne_raum klebte „Berechne6²+8²“)."""
+    t = mathnorm(text)
+    t = re.sub(r"\s*([-+·:/=≈|²³^<>])\s*", r"\1", t)
+    t = re.sub(r"\(\s+", "(", re.sub(r"\s+\)", ")", t))
+    return re.sub(r"\s+", " ", t).strip()
+
+
+def wortform(text):
+    """Für den wortgleichen Vergleich: raumarm, ohne Satzzeichen am
+    Ende."""
+    return raumarm(text).rstrip(".,;!?").strip()
+
+
+# Grenzen einer Option in der Lösung: kein Wort, keine Ziffer,
+# kein Rechenzeichen daneben; ein Komma nur als Satzzeichen.
+ANFANG_OPTION = r"(?<![\w²³\-+·/^])(?<!\d,)"
+ENDE_OPTION = r"(?![\w²³^+\-·/])(?!,\d)"
+
+
 def ankreuzprobe(a):
     """Zahloptionen (eine Zahl, ggf. Einheit): die Lösungszahl steht
-    in genau einer."""
-    if a["form"] != "ankreuzen" or not a["pruef"]:
+    in genau einer. Sonst (Terme, Gleichungen, Wörter): loesung nennt
+    genau eine Option wortgleich. Wiederholen sich Optionen (wahr/
+    falsch je Aussage), ist die Aufgabe mehrteilig – keine Probe."""
+    if a["form"] != "ankreuzen":
         return []
-    optionen = []
-    for m in re.finditer(r"\\kreuz(?=\{)", a["aufgabe"]):
-        e = klammer(a["aufgabe"], m.end())
-        optionen.append(a["aufgabe"][m.end() + 1:e - 1])
-    zahlopt = []
-    for o in optionen:
-        z = zahlen_aus(o)
-        rest = re.sub(ZAHL, "", normiert(o))
-        if len(z) == 1 and not re.search(r"[=A-Za-z]{3,}|=", rest):
-            zahlopt.append(z)
-    if len(zahlopt) < 2:
+    opts = optionen(a["aufgabe"])
+    if zahl_ankreuzen(a):
+        if not a["pruef"]:
+            return []
+        zahlopt = [zahlen_aus(o) for o in opts if reine_zahl(o)]
+        try:
+            w = flach(werte_aus(a["pruef"]))[0]
+        except Exception:  # noqa: BLE001 – meldet vergleiche()
+            return []
+        n = sum(1 for z in zahlopt if passt(w, z))
+        if n != 1:
+            return [f"Lösungszahl {w:g} in {n} von {len(zahlopt)} "
+                    f"Ankreuzoptionen (soll 1)"]
         return []
-    try:
-        w = flach(werte_aus(a["pruef"]))[0]
-    except Exception:  # noqa: BLE001 – meldet vergleiche()
+    formen = [wortform(o) for o in opts]
+    if len(opts) < 2 or len(set(formen)) < len(formen):
         return []
-    n = sum(1 for z in zahlopt if passt(w, z))
+    loes = wortform(a["loesung"])
+    # Beginnt die Lösung mit einer Option, ist sie die genannte; was
+    # danach kommt, ist Begründung („zwei Lösungen – … eine …“).
+    for f in sorted(formen, key=len, reverse=True):
+        if f and re.match(re.escape(f) + ENDE_OPTION, loes):
+            return []
+    n = 0
+    for f in sorted(formen, key=len, reverse=True):
+        m = re.search(ANFANG_OPTION + re.escape(f) + ENDE_OPTION, loes)
+        if f and m:
+            n += 1
+            loes = loes[:m.start()] + " ¦ " + loes[m.end():]
     if n != 1:
-        return [f"Lösungszahl {w:g} in {n} von {len(zahlopt)} "
-                f"Ankreuzoptionen (soll 1)"]
+        return ["Ankreuzlösung nennt keine oder mehrere Optionen "
+                f"({n} von {len(opts)})"]
     return []
 
 
@@ -360,7 +469,7 @@ def ankreuzprobe(a):
 
 def mathnorm(text):
     """Text und LaTeX auf eine Schreibweise: 3/4, ·, ², -, ohne $."""
-    t = text.replace("{,}", ",").replace("\\%", "%")
+    t = gemischt(text.replace("{,}", ",")).replace("\\%", "%")
     t = re.sub(r"\\[dt]?frac\{([^{}]*)\}\{([^{}]*)\}", r"(\1)/(\2)", t)
     t = re.sub(r"\((\w+(?:,\d+)?)\)/\((\w+(?:,\d+)?)\)", r"\1/\2", t)
     t = re.sub(r"\^\{?2\}?", "²", t)
@@ -405,15 +514,21 @@ def gleichungen(text):
         seiten = re.split(r"[=≈]", s)
         seiten = [ausgeglichen(s) for s in seiten]
         for i, seite in enumerate(seiten):
-            if (re.search(r"[a-z]", seite)
-                    and len(re.findall(r"\d+(?:,\d+)?", seite)) >= 2
-                    and re.search(r"[\w)²][-+·:/][\w(]", seite)):
-                aus.add(seite)       # Term mit Variable und Zahlbelegung
+            zahlen = re.findall(r"\d+(?:,\d+)?", seite)
+            rechnen = re.search(r"[\w)²³][-+·:/][\w(]", seite)
+            if re.search(r"[a-z]", seite):
+                if zahlen and rechnen:
+                    aus.add(seite)   # Variablenterm ab einer Zahlbelegung
+            elif (len(zahlen) >= 2 and rechnen
+                  and not re.fullmatch(r"-?\d+(?:,\d+)?/\d+(?:,\d+)?",
+                                       seite)):
+                aus.add(seite)       # Zahlterm (6² + 8²), kein Einzelbruch
             if i + 1 < len(seiten):
                 g = seite + "=" + seiten[i + 1]
-                if (len(re.findall(r"\d+(?:,\d+)?", g)) >= 2
-                        and seite and seiten[i + 1]):
-                    aus.add(g)
+                n = len(re.findall(r"\d+(?:,\d+)?", g))
+                if (seite and seiten[i + 1]
+                        and (n >= 2 or (n and re.search(r"[a-z]", g)))):
+                    aus.add(g)       # Gleichung; mit Variable ab einer Zahl
     return {g for g in aus if len(g) >= 5}
 
 
@@ -432,7 +547,9 @@ def ausgeglichen(s):
 
 
 def zahlenpaare(text):
-    """Paare: Punkt (a|b), Anteil (a von b, a : b, a/b), Produkt."""
+    """Paare: Punkt (a|b), Anteil (a von b, a : b), Produkt. Ein
+    einzelner Bruch a/b ist kein Paar; Zähler oder Nenner eines Bruchs
+    bilden mit einem Faktor daneben kein Paar (1/12 · 3)."""
     t = mathnorm(text)
     n = r"(-?\d+(?:,\d+)?)"
     aus = set()
@@ -440,9 +557,9 @@ def zahlenpaare(text):
         aus.add(("Punkt", zahl(a)[0], zahl(b)[0]))
     for muster, art in ((n + r"\s*%?\s*von\s*" + n, "Anteil"),
                         (n + r"\s*:\s*" + n, "Anteil"),
-                        (n + r"\s*/\s*" + n, "Anteil"),
                         (n + r"\s*·\s*" + n, "Produkt")):
-        for a, b in re.findall(r"(?<![\d,|])" + muster + r"(?![\d,])", t):
+        for a, b in re.findall(r"(?<![\d,|/])" + muster
+                               + r"(?![\d,])(?!\s*/)", t):
             x, y = zahl(a)[0], zahl(b)[0]
             if abs(x) <= 9 and abs(y) <= 9 and x == int(x) and y == int(y):
                 continue                          # kleine Zahlen frei
@@ -454,7 +571,10 @@ def zahlenpaare(text):
 
 def lade_sperre(mappe):
     """{('gleichung'|'paar', muster): herkunft} aus der Mappe."""
-    text = mappe.read_text(encoding="utf-8")
+    return sperre_aus(mappe.read_text(encoding="utf-8"))
+
+
+def sperre_aus(text):
     sperre = {}
     teil1 = text.split("## 2 Originale")[0]
     abschnitt = None
@@ -501,7 +621,7 @@ def paar_text(p):
 
 def sperrprobe(a, sperre):
     b = []
-    aufgabe = ohne_raum(mathnorm(a["aufgabe"]))
+    aufgabe = raumarm(a["aufgabe"])
     frei = ohne_raum(mathnorm(a["sprosse_text"]))
     paare = zahlenpaare(a["aufgabe"])
     for (art, muster), herkunft in sperre.items():
@@ -520,8 +640,11 @@ def sperrprobe(a, sperre):
 # --- Zeile ---------------------------------------------------------------
 
 def pruef_leer_erlaubt(a):
+    """pruef "" bei Begründen, Zeichnen, Ankreuzen ohne Zahloptionen
+    und einer Lösung ohne Ziffer (Exponent und Index zählen nicht)."""
     return (a.get("pflicht") == "begruenden" or a["form"] == "zeichnen"
-            or not re.search(r"\d", a["loesung"]))
+            or (a["form"] == "ankreuzen" and not zahl_ankreuzen(a))
+            or not re.search(r"\d", normiert(a["loesung"])))
 
 
 def pruefe_zeile(a, eintrag, einheit, ctx=None):
@@ -562,13 +685,14 @@ def pruefe_zeile(a, eintrag, einheit, ctx=None):
     if (a["sprosse"] == 0) != (a["hoehe"] == "vorstufe"):
         b.append("sprosse 0 genau dann, wenn hoehe vorstufe")
     o = a["original"]
-    if a["hoehe"] == "pruefung":
-        if not (isinstance(o, dict) and set(o) == {"id", "jahr", "papier"}
-                and re.fullmatch(r"\d{4}-[A-Z]+-[A-Z]\d+[a-z]", o["id"])
-                and o["id"].startswith(str(o["jahr"]))):
-            b.append("original fehlt oder unvollständig")
-    elif o is not None:
-        b.append("original nur bei hoehe pruefung")
+    # original null auch bei pruefung (Zielmarke ohne P10-Original);
+    # ein original an jeder hoehe, wenn vollständig.
+    if o is not None and not (
+            isinstance(o, dict) and set(o) == {"id", "jahr", "papier"}
+            and isinstance(o["id"], str)
+            and re.fullmatch(r"\d{4}-[A-Z]+-[A-Z]\d+[a-z]", o["id"])
+            and o["id"].startswith(str(o["jahr"]))):
+        b.append("original unvollständig")
     for f in ("kette", "sprosse_text", "merkmal", "aufgabe", "loesung"):
         if not isinstance(a[f], str) or not a[f].strip():
             b.append(f"{f} leer")
@@ -650,9 +774,15 @@ def pruefe_ketten(zeilen, datei, einheit):
                 for a in gruppe:
                     oid = (a["original"] or {}).get("id")
                     zahl_o[oid] = zahl_o.get(oid, 0) + 1
-                    orig_gesamt[oid] = orig_gesamt.get(oid, 0) + 1
+                    if oid is not None:
+                        orig_gesamt[oid] = orig_gesamt.get(oid, 0) + 1
                 for oid, n in zahl_o.items():
-                    if n != MENGE_ORIGINAL:
+                    if oid is None:
+                        if n != MENGE_OHNE_ORIGINAL:
+                            w.append(f"{datei} k{k} s{s}: Prüfungshöhe "
+                                     f"ohne Original {n} Zeilen, Menge "
+                                     f"{MENGE_OHNE_ORIGINAL}")
+                    elif n != MENGE_ORIGINAL:
                         w.append(f"{datei} k{k} s{s}: Original {oid} "
                                  f"{n}×, Menge {MENGE_ORIGINAL}")
             if h == "pflicht":
@@ -685,6 +815,25 @@ def pruefe_zone_kette(datei, k, sprossen):
         w.append(f"{datei} f{k}: Varianten nicht 1..n: {v}")
     if [s for s, _ in sprossen][:2] != [1, 2]:
         w.append(f"{datei} f{k}: Zone braucht s1 (leicht) und s2 (mittel)")
+    # bank.md „Mengen je Kette“, Zone: s1 grundfall, ab s2 sprosse,
+    # merkmal ab s3 „Fallstrick:“; das Zone-Paar (pflicht fehler und
+    # die Zeile danach) folgt seiner eigenen Regel.
+    reihe = [a for _, g in sprossen for a in g]
+    paar = set()
+    for i, a in enumerate(reihe):
+        if a["hoehe"] == "pflicht":
+            paar.update(range(i, min(i + 2, len(reihe))))
+    for i, a in enumerate(reihe):
+        if i in paar:
+            continue
+        s = a["sprosse"]
+        soll = "grundfall" if s == 1 else "sprosse"
+        if a["hoehe"] != soll:
+            w.append(f"{datei} {a['id']}: hoehe {a['hoehe']}, Zone s{s} "
+                     f"hat hoehe {soll}")
+        if s >= 3 and not str(a["merkmal"]).startswith("Fallstrick:"):
+            w.append(f"{datei} {a['id']}: merkmal beginnt nicht mit "
+                     f"„Fallstrick:“ (Zone s{s})")
     return w
 
 
@@ -826,7 +975,9 @@ def pruefe_eintrag(eintrag, katalog=None, wurzel=Path(".")):
 
 
 def selbsttest():
-    """Sechs Beispielzeilen: drei richtige, drei falsche."""
+    """Sechs Beispielzeilen (drei richtige, drei falsche), dann je
+    Änderung a–g ein Fall, der in v0.2 falsch lief, und einer, der
+    richtig bleibt."""
     basis = {"eintrag": "test", "einheit": 2, "kette": "Prozentsatz",
              "kette_nr": 1, "merkmal": "Ganzes 100",
              "form": "teil", "antwort": "__ %", "original": None,
@@ -867,8 +1018,170 @@ def selbsttest():
         print(f"{zeichen} {zeile['id']}" + ("" if ist else ": "
                                            + "; ".join(befunde)))
         ok &= ist == soll
+    for punkt, text, ist, soll in faelle_v03(basis):
+        zeichen = "OK" if ist == soll else "FEHLER"
+        print(f"{zeichen} {punkt}) {text}")
+        ok &= ist == soll
     print("Selbsttest bestanden" if ok else "Selbsttest GESCHEITERT")
     return 0 if ok else 1
+
+
+def faelle_v03(basis):
+    """[(Punkt, Beschreibung, ist, soll)] für die Änderungen a–g.
+    ist/soll: True = ohne Befund (Abweichung bzw. Warnung)."""
+    def zeile(**k):
+        z = dict(basis, variante=1, aufgabe="$3$ von $4$?",
+                 loesung="$75\\,\\%$", pruef="75")
+        z.update(k)
+        if z["einheit"] == 0:
+            z["id"] = f"test-zone-f{z['kette_nr']}-v{z['variante']}"
+        else:
+            z["id"] = (f"test-e{z['einheit']}-k{z['kette_nr']}-"
+                       f"s{z['sprosse']}-v{z['variante']}")
+        return z
+
+    def ohne(z):
+        return not pruefe_zeile(z, "test", z["einheit"])[0]
+
+    def warnfrei(zeilen):
+        return not pruefe_ketten(zeilen, "t.jsonl",
+                                 zeilen[0]["einheit"])[1]
+
+    def reihe(teile, **k):
+        """Kette aus [(sprosse, hoehe, zahl, felder)]."""
+        aus = []
+        for s, h, n, extra in teile:
+            for v in range(1, n + 1):
+                aus.append(zeile(sprosse=s, hoehe=h, variante=v,
+                                 aufgabe=f"k{k.get('kette_nr', 1)} s{s} "
+                                         f"v{v}", **dict(k, **extra)))
+        return aus
+
+    def zone(s1="grundfall", merkmal3="Fallstrick: vertauscht"):
+        teile = [(1, s1, 2, {}), (2, "sprosse", 1, {}),
+                 (3, "sprosse", 1, {"merkmal": merkmal3}),
+                 (4, "pflicht", 1, {"pflicht": "fehler",
+                                    "merkmal": "Zone-Paar: Fehler finden"}),
+                 (5, "sprosse", 1, {"merkmal": "Zone-Paar: selbst"})]
+        z = []
+        for s, h, n, extra in teile:
+            for _ in range(n):
+                z.append(zeile(einheit=0, sprosse=s, hoehe=h,
+                               variante=len(z) + 1,
+                               aufgabe=f"Zone {len(z) + 1}", **extra))
+        return z
+
+    orig = {"id": "2018-OS-K7a", "jahr": 2018, "papier": "OS"}
+    pruef3 = (1, "grundfall", 5, {}), (2, "pruefung", 3, {})
+    optionen_terme = ("Welcher Term? \\\\ \\kreuz{$4x$} \\\\ "
+                      "\\kreuz{$x + 4$} \\\\ \\kreuz{$4 - x$}")
+    optionen_pyth = ("Welche Gleichung gilt? \\\\ "
+                     "\\kreuz{$c^2 = a^2 + b^2$} \\\\ "
+                     "\\kreuz{$a^2 = b^2 + c^2$} \\\\ \\kreuz{$c = a + b$}")
+    sperre = sperre_aus(
+        "## 1 Katalogeintrag\n"
+        " 40  ### Merkkasten\n"
+        " 41  Beispiel 6² + 8² = 100; (x + 3)² = 25; x² = 36; "
+        "Anteil \\frac{1}{10}; Punkt (12|5)\n"
+        "## 2 Originale (1)\n"
+        "### 2015-OS-K2a (test)\n"
+        "- verfahren: 3 · 12 Kinder\n")
+
+    def gesperrt(aufgabe, sprosse_text="Teil von 100"):
+        z = zeile(aufgabe=aufgabe, sprosse_text=sprosse_text)
+        return not sperrprobe(z, sperre)
+
+    return [
+        ("a", "pruefung mit original null ohne Abweichung",
+         ohne(zeile(sprosse=2, hoehe="pruefung", original=None)), True),
+        ("a", "vollständiges original an hoehe sprosse erlaubt",
+         ohne(zeile(sprosse=2, hoehe="sprosse", original=orig)), True),
+        ("a", "unvollständiges original bleibt Abweichung",
+         ohne(zeile(sprosse=2, hoehe="sprosse",
+                    original={"id": "2018-OS-K7a"})), False),
+        ("a", "Prüfungshöhe ohne Original mit 3 Zeilen ohne Warnung",
+         warnfrei(reihe(pruef3)), True),
+        ("a", "Prüfungshöhe ohne Original mit 2 Zeilen warnt",
+         warnfrei(reihe([pruef3[0], (2, "pruefung", 2, {})])), False),
+        ("b", "Zone s1 hoehe sprosse warnt (zwei Zeilen)",
+         len(pruefe_ketten(zone(s1="sprosse"), "zone.jsonl", 0)[1]) == 0,
+         False),
+        ("b", "Zone s3 ohne „Fallstrick:“ im merkmal warnt",
+         warnfrei(zone(merkmal3="vertauscht")), False),
+        ("b", "Zone nach Regel 4 samt Zone-Paar ohne Warnung",
+         warnfrei(zone()), True),
+        ("c", "„Liegt P auf dem Graphen von f?“ ohne grafik",
+         ohne(zeile(aufgabe="Liegt $P(2|5)$ auf dem Graphen von "
+                            "$f(x) = 2x + 1$?", loesung="ja, $f(2) = 5$",
+                    pruef="2*2+1", form="text")), True),
+        ("c", "„ohne zu zeichnen“ ist kein Zeichenauftrag",
+         ohne(zeile(aufgabe="Beschreibe den Verlauf, ohne zu zeichnen.",
+                    loesung="steigt", pruef="", form="text")), True),
+        ("c", "„Lies … ab“ ohne grafik bleibt Abweichung",
+         ohne(zeile(aufgabe="Lies den Schnittpunkt mit der y-Achse ab.",
+                    loesung="$(0|3)$", pruef="[0, 3]", form="text")),
+         False),
+        ("c", "form zeichnen ohne grafik bleibt Abweichung",
+         ohne(zeile(aufgabe="Zeichne die Gerade.", loesung="Gerade",
+                    pruef="", form="zeichnen")), False),
+        ("d", "Termoptionen 4x, x + 4, 4 − x: Lösung $4x$, pruef 4",
+         ohne(zeile(aufgabe=optionen_terme, form="ankreuzen",
+                    loesung="$4x$", pruef="4")), True),
+        ("d", "Termoptionen: pruef \"\" erlaubt",
+         ohne(zeile(aufgabe=optionen_terme, form="ankreuzen",
+                    loesung="$4x$", pruef="")), True),
+        ("d", "Formeln mit ²: Lösung nennt Option wortgleich",
+         ohne(zeile(aufgabe=optionen_pyth, form="ankreuzen",
+                    loesung="$c^2 = a^2 + b^2$ – c ist die Hypotenuse",
+                    pruef="")), True),
+        ("d", "Formeln mit ²: „Kreuz bei der ersten“ ist Abweichung",
+         ohne(zeile(aufgabe=optionen_pyth, form="ankreuzen",
+                    loesung="Kreuz bei der ersten Gleichung",
+                    pruef="")), False),
+        ("d", "Zahloptionen: Lösungszahl in zwei Optionen bleibt Abw.",
+         ohne(zeile(aufgabe="\\kreuz{$4$ cm} \\\\ \\kreuz{$4$ cm} \\\\ "
+                            "\\kreuz{$5$ cm}", form="ankreuzen",
+                    loesung="$4$ cm", pruef="4")), False),
+        ("e", "Zahlterm 6² + 8² aus dem Kasten gesperrt",
+         gesperrt("Berechne $6^2 + 8^2$."), False),
+        ("e", "(x + 3)² mit einer Zahl gesperrt",
+         gesperrt("Löse $(x + 3)^2 = 16$."), False),
+        ("e", "x² = 36 mit einer Zahl gesperrt",
+         gesperrt("Löse $x^2 = 36$."), False),
+        ("e", "(x + 3)² als Gegenstand der Kette frei",
+         gesperrt("Löse $(x + 3)^2 = 16$.", "Klammer (x + 3)² lösen"),
+         True),
+        ("e", "\\frac{1}{12} \\cdot 3 ist kein Paar 3 · 12",
+         gesperrt("Rechne $\\frac{1}{12} \\cdot 3$."), True),
+        ("e", "12 · 3 bleibt als Paar gesperrt",
+         gesperrt("Rechne $12 \\cdot 3$."), False),
+        ("e", "einzelner Bruch 1/10 ist kein Zahlenpaar",
+         gesperrt("$\\frac{1}{10}$ von $50$ € – wie viel?"), True),
+        ("e", "Punkt (12|5) bleibt gesperrt",
+         gesperrt("Liegt $(12|5)$ auf f?"), False),
+        ("e", "gemischte Zahl 3\\frac{3}{5} als 18/5 gelesen",
+         not vergleiche("[18, 5]", "$3\\frac{3}{5}$"), True),
+        ("f", "„$-\\,6$“ als −6 gelesen",
+         not vergleiche("-6", "$-\\,6$"), True),
+        ("f", "„$-\\;6$“ als −6 gelesen",
+         not vergleiche("-6", "$x = -\\;6$"), True),
+        ("f", "in „x^2 - 12x“ ist −12 die Zahl",
+         not vergleiche("-12", "$x^2 - 12x$"), True),
+        ("f", "pruef \"\": 2 in x^2 keine Lösungsziffer",
+         ohne(zeile(loesung="$z^2 = x^2 + y^2$", pruef="")), True),
+        ("f", "„20 - 5 = 15“: 15 bleibt Ergebnis",
+         not vergleiche("15", "$20 - 5 = 15$"), True),
+        ("f", "„100 % - 90 % = 10 %“: 10 bleibt Ergebnis",
+         not vergleiche("10", "$100\\,\\% - 90\\,\\% = 10\\,\\%$"), True),
+        ("f", "pruef \"\" bei „x = 5“ bleibt „pruef fehlt“",
+         ohne(zeile(loesung="$x = 5$", pruef="")), False),
+        ("g", "zwei Verfahrensketten mit je 5 Grundfällen ohne Warnung",
+         warnfrei(reihe([(1, "grundfall", 5, {})])
+                  + reihe([(1, "grundfall", 5, {"kette": "Zweite"})],
+                          kette_nr=2)), True),
+        ("g", "Grundfall mit 4 Zeilen warnt weiter",
+         warnfrei(reihe([(1, "grundfall", 4, {})])), False),
+    ]
 
 
 def main(argv):

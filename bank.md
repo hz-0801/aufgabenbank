@@ -199,7 +199,7 @@ nicht.
 
 ## Prüfung
 
-`werkzeuge/bank-pruef.py <eintrag>` (v0.2) liest alle jsonl des
+`werkzeuge/bank-pruef.py <eintrag>` (v0.3) liest alle jsonl des
 Eintrags, dazu mappen/<eintrag>.md und mappen/_bausteine.md.
 Ausgabe je Aufgabe eine Zeile OK/ABWEICHUNG, Warnungen als
 WARNUNG-Zeilen, zuletzt je Datei und gesamt die Zahl der
@@ -209,19 +209,27 @@ Abweichungen: Pflichtfelder, id-Muster, Kettenfolge lückenlos;
 jede pruef-Zahl steht an der Ergebnisstelle der Lösung – erste
 Zahl, nach „=" oder „≈", ein Punkt (x|y) oder Bruch dort, oder
 ein Glied einer Aufzählung von Ergebnissen –, nach Rundung auf die
-Stellen der Lösung, Toleranz 0,005; bei form ankreuzen steht die
-Lösungszahl in genau einer Zahloption; jeder Baustein in aufgabe,
+Stellen der Lösung, Toleranz 0,005; ein Minus mit Abstand gehört
+zur Zahl („$-\,6$", „x^2 - 12x"), außer nach Zahl, „)" oder
+Einheit; eine gemischte Zahl gilt als unechter Bruch; original,
+wo es steht, vollständig; bei form ankreuzen mit mindestens zwei
+Zahloptionen steht die Lösungszahl in genau einer, sonst nennt
+die Lösung genau eine Option wortgleich; jeder Baustein in aufgabe,
 loesung, grafik, loesungsgrafik steht in mappen/_bausteine.md mit
 passender Argumentzahl; bei ksys-Grafiken liegen die Punkte der
 Lösung, jeder Scheitel einer \parabel und jeder \punkt im
-Achsenbereich; form zeichnen oder „Graph" in aufgabe verlangt
-grafik; kein Zahlenpaar, keine Gleichung und kein belegter Term
-aus Merkkasten, Typische Fehler und den Originalen der Mappe in
-aufgabe (Sperre, Ausnahme nach „Regeln für den Inhalt"); keine
+Achsenbereich; form zeichnen oder ein Ablese- oder Zeichenauftrag
+in aufgabe verlangt grafik (das Wort „Graph" allein nicht); kein
+Zahlenpaar, keine Gleichung, kein Zahlterm und kein Term mit
+Variable und Zahl aus Merkkasten, Typische Fehler und den
+Originalen der Mappe in aufgabe (Sperre, Ausnahme nach „Regeln
+für den Inhalt"; ein einzelner Bruch ist kein Paar); keine
 Aufgabe doppelt (aufgabe und grafik zusammen).
 
-Warnungen: Mengen aus „Mengen je Kette", das Zone-Paar, ein
-fehlendes Feld loesungsgrafik, eine fehlende Mappe.
+Warnungen: Mengen aus „Mengen je Kette" (Grundfall je Kette,
+Prüfungshöhe ohne Original 3), das Zone-Paar, hoehe und merkmal
+der Zone je Zeile, ein fehlendes Feld loesungsgrafik, eine
+fehlende Mappe.
 
 Erst bei null Abweichungen wird committet. Weicht eine Lösung ab,
 wird die Aufgabe korrigiert, nicht das Skript – außer das Skript
