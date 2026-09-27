@@ -76,3 +76,16 @@ e2 brauchte zwei Korrekturrunden (zweite: Ergebnisstelle nach
 - Einheit 2 hat kein Original; 2015-OS-K3c bliebe verfremdbar,
   wenn Zehnerpotenzen von der Kastenzahlregel ausgenommen würden.
 - Venn-Diagramm-Baustein fehlt in der Vorlage.
+
+## Nachbesserung 2026-09-27
+
+Prüfskript v0.5, bank.md Stand 2026-09-27b. Vorher und nachher 0
+Abweichungen, 0 Warnungen in allen vier Dateien; keine Zeile
+geändert oder gestrichen.
+
+- Prüfungshöhe ohne Original: e1, e2, e3 stehen schon als hoehe
+  pruefung, original null, 3 Zeilen; nichts nachzuziehen.
+- Erkennungsschritte: alle fünf sind schon entfallen (Befund
+  Katalog); keine Kette zu streichen.
+- Befunde „Exponenten zählen nicht als Zahl“ und „\ell fehlt“ gegen
+  v0.5 geprüft: beide bestehen fort und bleiben offen.
