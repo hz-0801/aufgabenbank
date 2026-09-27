@@ -1,7 +1,6 @@
 # Aufgabenbank – Form und Regeln
 
-Stand 2026-09-26, zweite Fassung (nach den Prüfsteinen
-prozentrechnung und quadratische-funktionen).
+Stand 2026-09-27, dritte Fassung (nach acht Einträgen).
 
 ## Zweck
 
@@ -78,8 +77,13 @@ Leerzeilen. Reihenfolge der Zeilen = Reihenfolge der Kette.
                   und Nenner als Liste; "" nur bei Begründen,
                   Zeichnen oder einer Lösung ohne Ziffer
     original      null oder {"id": "2018-OS-K7a", "jahr": 2018,
-                  "papier": "OS"} – nur bei hoehe pruefung; papier
-                  aus der Spalte papier der Prüfungsdatei (CSV)
+                  "papier": "OS"}; papier aus der Spalte papier
+                  der Prüfungsdatei (CSV). Das Feld darf an jeder
+                  hoehe stehen, wenn die Sprosse ein Original des
+                  Katalogs verfremdet (P10-Form-Sprossen mitten in
+                  der Kette); hoehe pruefung bleibt der letzten
+                  Sprosse vorbehalten. Prüfungshöhe ohne
+                  P10-Original: null („Mengen je Kette")
     grafik        "" oder der Bausteinaufruf der Grafik, aus den
                   Aufgabenwerten berechnet
     loesungsgrafik "" oder der Bausteinaufruf der Lösungsgrafik –
@@ -99,14 +103,39 @@ Einheit: fehler 3, begruenden 3, anwendung 3, darstellung 3, wo
 die Typen der Einheit sie tragen. Zone: je Fertigkeit 2 sehr
 leichte, 1 mittlere, je Fallstrick 1.
 
+Der Grundfall (5 Zeilen) gilt je Verfahrenskette, nicht je
+Einheit. Hat eine Einheit zwei Verfahrensketten, hat sie zwei
+Grundfälle. Die Pflichtelemente stehen je Einheit einmal; ihre
+Kette heißt nach der ersten Verfahrenskette der Einheit.
+
+Eine Prüfungshöhe ohne P10-Original (Zielmarke aus
+Rahmenlehrplan oder Lehrwerk) trägt hoehe pruefung, original
+null, 3 Zeilen.
+
 Erkennungsschritt 4 Zeilen: eigene Kette, nur Sprosse 0; er
 steht einmal, in der ersten Einheit seines Bereichs
-(unterrichtsblatt 2.3 a). Typ ohne Kette 3 Zeilen: eine Sprosse,
-hoehe sprosse (nicht grundfall, damit je Einheit genau der
-Grundfall der Kette 5 Zeilen hat). Zone: einmal je Zone ein Paar
-aus Fehler finden und gleichartiger Rechenaufgabe zum häufigsten
-Fallstrick (unterrichtsblatt 2.2), 2 Zeilen – Fehler finden mit
-hoehe pflicht, pflicht fehler, danach die Rechenaufgabe mit hoehe
+(unterrichtsblatt 2.3 a).
+
+Verlangt ein Erkennungsschritt denselben Handgriff wie die
+Vorstufe einer Kette derselben Einheit, entfällt der
+Erkennungsschritt; die Vorstufe bleibt. stand.md nennt den Fall
+unter „Befunde" als Katalogbefund (der Katalog führt beide).
+
+Typ ohne Kette 3 Zeilen: eine Sprosse, hoehe sprosse (nicht
+grundfall; der Grundfall gehört der Verfahrenskette).
+
+Zone: Die zwei sehr leichten Zeilen (sprosse 1) tragen hoehe
+grundfall, die mittlere (sprosse 2) und jeder Fallstrick (ab
+sprosse 3, je Fallstrick eine) hoehe sprosse; merkmal jedes
+Fallstricks beginnt mit „Fallstrick:". kette und sprosse_text der
+Zone sind die Fertigkeit bis zum Doppelpunkt; variante zählt je
+Fertigkeit durch (das id-Muster der Zone trägt keine Sprosse).
+Das Zone-Paar (nächster Absatz) folgt seiner eigenen Regel.
+
+Zone-Paar: einmal je Zone ein Paar aus Fehler finden und
+gleichartiger Rechenaufgabe zum häufigsten Fallstrick
+(unterrichtsblatt 2.2), 2 Zeilen – Fehler finden mit hoehe
+pflicht, pflicht fehler, danach die Rechenaufgabe mit hoehe
 sprosse; beide als Sprossen in der Kette der Fertigkeit, zu der
 der Fallstrick gehört.
 
@@ -114,7 +143,7 @@ der Fallstrick gehört.
 
 Erkennungsschritte (eigene Ketten, nur Sprosse 0) →
 Verfahrenskette des Katalogs → Typen ohne Kette →
-Pflichtelemente als eigene Kette mit dem Namen der
+Pflichtelemente als eigene Kette mit dem Namen der (ersten)
 Verfahrenskette. kette_nr zählt in dieser Folge; die
 Verfahrenskette ist daher nicht immer k1.
 
@@ -125,8 +154,9 @@ Verfahrenskette ist daher nicht immer k1.
   derselben Sprosse unterscheiden sich in Zahlen und Kontext,
   nicht im Merkmal.
 - Keine ganze Gleichung, kein Term, kein Zahlenpaar und keine
-  Funktion aus Merkkasten, Beispiel oder Original des Eintrags;
-  einzelne Ziffern und kleine Grundfallzahlen sind frei.
+  Funktion aus Merkkasten, Beispiel oder Original des Eintrags.
+  Ein einzelner Bruch ist kein Zahlenpaar; frei sind einzelne
+  Ziffern und Zahlen unter 10.
   Ausnahme: Frei sind der Gegenstand der Kette und die Form, die
   der Sprossentext selbst nennt (x², 2x², (x − d)² + e als Form).
   Gesperrt bleiben konkrete Zahlbelegungen aus Kasten und
@@ -138,6 +168,9 @@ Verfahrenskette ist daher nicht immer k1.
   Kopf gehen; periodische Dezimalbrüche tragen einen Hinweis.
   Dreisatz-Zahlen der Zone im Kopf rechenbar.
 - Keine Aufgabe doppelt, auch nicht über Ketten hinweg.
+- Ankreuzen: Die loesung nennt die richtige Option wortgleich
+  (Zahl, Term oder Gleichung wie in der Option); pruef trägt die
+  Zahl, wenn die Optionen Zahlen sind, sonst "".
 - Buchstaben und Symbole nur, wenn im Text erklärt; ein
   Buchstabe je Einheit für eine Sache.
 - Fehler-finden-Aufgaben: das Muster aus „Typische Fehler" mit
