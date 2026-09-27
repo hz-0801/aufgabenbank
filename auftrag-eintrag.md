@@ -7,6 +7,7 @@ unter bank/<eintrag>/.
 
 Vorlage: `<eintrag>` ist der Dateiname des Katalogeintrags ohne
 `.md` (etwa lineare-funktionen); vor dem Einsatz überall ersetzen.
+Stand der Vorlage: 2026-09-27, nach acht Einträgen.
 
 ## Ausgangslage
 
@@ -40,7 +41,8 @@ Mappe, bricht die Sitzung ab und sagt es im Bericht.
    „Voraussetzungen (Blatt 0)" die Fertigkeiten und
    Erkennungsschritte. Die Merkkästen nur für die Sperre lesen.
 2. Zone: bank/<eintrag>/zone.jsonl nach bank.md (Mengen „Zone",
-   Zone-Paar), in einem Schreibvorgang. Prüfskript, Commit
+   Zone-Paar; s1 grundfall, ab s2 sprosse, Fallstrick im
+   merkmal), in einem Schreibvorgang. Prüfskript, Commit
    „<eintrag>: zone", push.
 3. Einheiten nacheinander, je Einheit: e<n>.jsonl mit allen
    Ketten in der Reihenfolge nach bank.md („Reihenfolge je
@@ -49,6 +51,11 @@ Mappe, bricht die Sitzung ab und sagt es im Bericht.
    Abweichungen; Commit „<eintrag>: e<n>", push. Fehlerregel:
    Scheitert eine Einheit zweimal am Prüfskript, bleibt sie mit
    dem Stand liegen, stand.md sagt es, die nächste Einheit folgt.
+   Dabei nach bank.md: Grundfall je Verfahrenskette; Prüfungshöhe
+   ohne Original als hoehe pruefung, original null, 3 Zeilen;
+   Original an einer Kettensprosse im Feld original; ein
+   Erkennungsschritt, der die Vorstufe einer Kette derselben
+   Einheit wiederholt, entfällt (Befund in stand.md).
 4. stand.md: Katalog-Commit (aus dem Kopf der Mappe), Datum aus
    `date`, je Datei Zahl der Zeilen und Zahl je hoehe, Originale
    je Einheit, Abweichungen und Warnungen des Prüfskripts vor der
@@ -57,13 +64,16 @@ Mappe, bricht die Sitzung ab und sagt es im Bericht.
 
 ## Gegenprobe
 
-Für jede Einheit: die Zahl der Zeilen mit hoehe grundfall ist 5
-(bank.md, „Mengen je Kette"), der sprosse_text des Grundfalls
-steht wortgleich in der Mappe in der Zeile quelle. Die
-Kastenzahlen des Eintrags (Merkkasten aller Einheiten) kommen in
-keiner aufgabe vor; die Sperrprobe des Prüfskripts meldet 0.
-Jede Zeile mit form zeichnen oder einer Ablesegrafik hat ein
-nichtleeres grafik.
+Für jede Verfahrenskette: die Zahl der Zeilen mit hoehe
+grundfall ist 5 (bank.md, „Mengen je Kette"), der sprosse_text
+des Grundfalls steht wortgleich in der Mappe in der Zeile quelle.
+Jede Einheit hat genau eine Sprosse mit hoehe pruefung, als
+letzte ihrer Verfahrenskette. Mehrstellige Kastenzahlen des
+Eintrags (Merkkasten aller Einheiten) kommen in keiner aufgabe
+vor; die Sperrprobe des Prüfskripts meldet 0. Jede Zeile mit form
+zeichnen oder einem Ablese- oder Zeichenauftrag hat ein
+nichtleeres grafik. Jede Ankreuzzeile nennt in loesung genau eine
+Option wortgleich.
 
 ## Regeln
 
