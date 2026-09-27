@@ -15,7 +15,7 @@ AUSWAHL prozentrechnung-zone-f5-v1 – Zone f5 „Runden auf eine Dezimalstelle�
 AUSWAHL prozentrechnung-zone-f5-v3 – Zone f5 „Runden auf eine Dezimalstelle“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
 WEG Zone f5 „Runden auf eine Dezimalstelle“ – Sprossen [3, 4] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
 WEG Zone f6 „Bruchteil einer Größe (zwei Drittel von “ – gebraucht in Einheit 3, nicht bestellt
-TODO Zone-Paar (Fehler finden + gleichartige Rechnung, unterrichtsblatt 2.2) fehlt in zone.jsonl
+WEG prozentrechnung-zone-f6-v6 – Zone-Paar: Fertigkeit „Bruchteil einer Größe (zwei Drittel von “ nicht bestellt
 WEG e2 k1 „Was ist das Ganze?“ (erkennung) – Fokus: andere Kette entfällt
 WEG e2 k2 „Streifen einteilen“ (erkennung) – Fokus: andere Kette entfällt
 AUSWAHL prozentrechnung-e2-k3-s0-v1 – e2 k3 „Prozentsatz“ (verfahren): Fokus, alle Varianten
@@ -68,7 +68,7 @@ AUSWAHL prozentrechnung-e2-k5-s4-v2 – e2 k5 „Prozentsatz“ (pflicht): Fokus
 AUSWAHL prozentrechnung-e2-k5-s4-v3 – e2 k5 „Prozentsatz“ (pflicht): Fokus, alle Varianten
 TEILUNG e2 k5 „Prozentsatz“ (pflicht): 12 Teilaufgaben in 2 Hauptnummern an Sprossengrenzen (unterrichtsblatt 2.3 g, 2.5)
 KOPF Einheit 2: „Einheit 2 · Prozentsatz berechnen“; Marken „OS Kl. 7 · GYM Kl. 7 · P10 oft“ → Zeitmarke „ab Kl. 7“, Prüfungswort „P10 oft“
-TODO 23 Stellen in den Quelltexten:
+TODO 22 Stellen in den Quelltexten:
   blatt0_a.tex:5: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 1
   blatt0_a.tex:6: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 1
   blatt0_a.tex:14: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 2
@@ -77,7 +77,6 @@ TODO 23 Stellen in den Quelltexten:
   blatt0_a.tex:24: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 3
   blatt0_a.tex:36: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 4
   blatt0_a.tex:37: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 4
-  blatt0_a.tex:45: TODO Zone-Paar (Fehler finden + gleichartige Rechenaufgabe, 2.2) fehlt in zone.jsonl
   e2_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 2
   e2_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 5
   e2_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 5

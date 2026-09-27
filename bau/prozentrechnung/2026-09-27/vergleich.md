@@ -77,9 +77,9 @@ Drei Unterschiede im Aufbau:
 ## Fokus Prozentsatz
 
     Blatt   Hauptnr.  Teilaufg.  Kästen  Grafiken  Zeilen
-    Zone     4 / 5      8 / 15   0 / 0    2 / 6     45 (35) / 71
+    Zone     4 / 5      8 / 15   0 / 0    2 / 6     43 (34) / 71
     Fokus    6 / 11    46 / 39   0 / 0    7 / 10   110 (95) / 116
-    Summe   10 / 16    54 / 54   0 / 0    9 / 16   155 (130) / 187
+    Summe   10 / 16    54 / 54   0 / 0    9 / 16   153 (129) / 187
 
 Drei Unterschiede im Aufbau:
 

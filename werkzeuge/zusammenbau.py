@@ -552,6 +552,8 @@ class Bau:
                 log("ZONE: zone.jsonl fehlt")
             return []
         aus, paar = [], []
+        paar_weg = [z for z in self.zone if z["hoehe"] == "pflicht"
+                    and z.get("pflicht") == "fehler"]
         einschraenken = bool(self.a.einheiten or self.fokus)
         for nr, name, art, zeilen in ketten_von(self.zone):
             wo = f"Zone f{nr} „{name[:40]}“"
@@ -590,6 +592,9 @@ class Bau:
                                            f["kette"], 0))
                     log(f"AUSWAHL {folgezeile[0]['id']} – Zone-Paar, "
                         "gleichartige Rechenaufgabe")
+            elif paar_weg:
+                log(f"WEG {paar_weg[0]['id']} – Zone-Paar: Fertigkeit "
+                    "„" + paar_weg[0]["kette"][:40] + "“ nicht bestellt")
             else:
                 log("TODO Zone-Paar (Fehler finden + gleichartige Rechnung, "
                     "unterrichtsblatt 2.2) fehlt in zone.jsonl")
