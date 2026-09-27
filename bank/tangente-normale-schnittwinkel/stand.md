@@ -6,15 +6,15 @@ Prüfskript: werkzeuge/bank-pruef.py v0.5
 
 ## Zeilen je Datei und hoehe
 
-| Datei  | Zeilen | vorstufe | grundfall | sprosse | pruefung | pflicht |
-|--------|-------:|---------:|----------:|--------:|---------:|--------:|
-| zone   |     26 |        0 |        12 |      13 |        0 |       1 |
-| e1     |     51 |        4 |         5 |      30 |        6 |       6 |
-| e2     |     51 |        4 |         5 |      30 |        6 |       6 |
-| e3     |     32 |        4 |         5 |      15 |        2 |       6 |
-| e4     |     48 |        4 |         5 |      27 |        6 |       6 |
-| e5     |     39 |        4 |         5 |      18 |        6 |       6 |
-| gesamt |    247 |       20 |        37 |     133 |       26 |      31 |
+| Datei| Zeilen | vorstufe | grundfall | sprosse | pruefung | pflicht |
+|-------|-------:|---------:|----------:|--------:|---------:|--------:|
+| zone |     26 |        0 |        12 |      13 |        0 |       1 |
+| e1   |     51 |        4 |         5 |      30 |        6 |       6 |
+| e2   |     51 |        4 |         5 |      30 |        6 |       6 |
+| e3   |     32 |        4 |         5 |      15 |        2 |       6 |
+| e4   |     48 |        4 |         5 |      27 |        6 |       6 |
+| e5   |     39 |        4 |         5 |      18 |        6 |       6 |
+| gesamt|    247 |       20 |        37 |     133 |       26 |      31 |
 
 ## Originale je Einheit
 
