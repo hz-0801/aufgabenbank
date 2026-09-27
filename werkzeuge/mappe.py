@@ -11,7 +11,10 @@ sind die Raw-URLs von hz-0801/mathe-nachhilfe und hz-0801/blattbau
 1. Kopf: Eintrag, Katalog-Commit (letzter Commit auf der Datei),
    Datum.
 2. Der Katalogeintrag mit Zeilennummern, ohne „Status", „Offene
-   Punkte" und „Prüfliste".
+   Punkte" und „Prüfliste". Zeilen über LANG Zeichen werden nach
+   KURZ Zeichen gekürzt, außer in den Abschnitten, die eine Sitzung
+   zum Schreiben braucht (SCHUTZ) und in Zielmarke-Zeilen; solche
+   Ausnahmen meldet der Lauf.
 3. Originale: je Kennung aus „Prüfungsform" und „Zielmarke" die
    Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren,
    fehlerquelle, format, antwort aus den Prüfungsdateien (CSV).
@@ -46,6 +49,11 @@ PRUEFDATEIEN = ["msa/msa-katalog-kontext.csv", "msa/msa-katalog-basis.csv",
 SPALTEN = ["id", "jahr", "papier", "punkte", "gegeben", "gesucht",
            "verfahren", "fehlerquelle", "format", "antwort"]
 ZAUN = "````"
+LANG, KURZ = 600, 200
+# Abschnitte des Katalogs, die eine Sitzung zum Schreiben braucht
+# (auftrag-eintrag.md, Schritt 1): nie gekürzt.
+SCHUTZ = ("Merkkasten", "Für schwache Schüler", "Typen je Lerneinheit",
+          "Typische Fehler", "Voraussetzungen", "Prüfungsform")
 
 _klone = {}
 
@@ -118,6 +126,26 @@ def katalog_zeilen(text):
     while aus and aus[-1][1] == "":
         aus.pop()
     return aus
+
+
+def gekuerzt(kz):
+    """[(nr, zeile)] mit gekürzten langen Quellenzeilen; dazu die Zahl
+    der gekürzten Zeilen und [(nr, abschnitt, länge)] der langen
+    Zeilen, die geschützt bleiben."""
+    aus, n, ausnahmen = [], 0, []
+    titel = ""
+    for nr, z in kz:
+        m = re.match(r"#{1,6} (.*)", z)
+        if m:
+            titel = m.group(1).strip()
+        elif len(z) > LANG:
+            if titel.startswith(SCHUTZ) or z.startswith("Zielmarke"):
+                ausnahmen.append((nr, titel, len(z)))
+            else:
+                z = f"{z[:KURZ]} … (gekürzt, {len(z)} Zeichen)"
+                n += 1
+        aus.append((nr, z))
+    return aus, n, ausnahmen
 
 
 def abschnitt(text, titel):
@@ -250,7 +278,7 @@ def baue_mappe(eintrag, tabelle, massstab_text, massstab_stand, ziel):
     pfad = f"katalog/{eintrag}.md"
     text = hole(KATALOG, pfad)
     stand = stand_zeile(KATALOG, pfad)
-    kz = katalog_zeilen(text)
+    kz, n_kurz, ausnahmen = gekuerzt(katalog_zeilen(text))
     breite = len(str(kz[-1][0]))
     orig, n_orig = originale(text, tabelle)
     aus = [f"# Mappe: {eintrag}", "",
@@ -259,7 +287,12 @@ def baue_mappe(eintrag, tabelle, massstab_text, massstab_stand, ziel):
            f"Maßstab: {VORLAGE}, unterrichtsblatt.md, Commit "
            f"{massstab_stand}",
            f"Datum: {jetzt()}",
-           "Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.", "",
+           "Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.",
+           f"Kürzung: Katalogzeilen über {LANG} Zeichen enden nach "
+           f"{KURZ} Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in "
+           "Merkkasten, Für schwache Schüler, Typen je Lerneinheit, "
+           "Typische Fehler, Voraussetzungen, Prüfungsform und "
+           "Zielmarke.", "",
            "Teile: 1 Katalogeintrag · 2 Originale · 3 Maßstab", "",
            "## 1 Katalogeintrag", "",
            "Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am "
@@ -272,7 +305,7 @@ def baue_mappe(eintrag, tabelle, massstab_text, massstab_stand, ziel):
     while aus[-1] == "":
         aus.pop()
     ziel.write_text("\n".join(aus) + "\n", encoding="utf-8")
-    return len(aus)
+    return len(aus), n_kurz, ausnahmen
 
 
 ABSATZ = [r"`\\anweisung", r"`\\rechenplatz", r"Die Umgebung `beispiel`",
@@ -353,9 +386,12 @@ def main(argv):
     massstab_stand = stand_zeile(VORLAGE, ub)
     for eintrag in argv[1:]:
         ziel = ordner / f"{eintrag}.md"
-        n = baue_mappe(eintrag, tabelle, massstab_text, massstab_stand,
-                       ziel)
-        print(f"mappen/{eintrag}.md: {n} Zeilen")
+        n, n_kurz, ausnahmen = baue_mappe(eintrag, tabelle, massstab_text,
+                                          massstab_stand, ziel)
+        print(f"mappen/{eintrag}.md: {n} Zeilen, {n_kurz} gekürzt, "
+              f"{len(ausnahmen)} lange Zeilen geschützt")
+        for nr, titel, laenge in ausnahmen:
+            print(f"  geschützt: Zeile {nr} ({titel}), {laenge} Zeichen")
     return 0
 
 
