@@ -47,8 +47,8 @@ Prüfskript: bank-pruef.py v0.5, am Ende 0 Abweichungen, 0 Warnungen
 | zone  |    2 |     0 | Sperre: Tripel aus der Mappe (2) |
 | e1    |    8 |     0 | Sperre: Tripel aus der Mappe (7) |
 | e2    |    5 |     0 | Sperre: Tripel aus der Mappe (4) |
-| e3    |    2 |     0 | Sperre: Tripel (1), Sperre-Artefakt „+r·(1“ (1) |
-| e4    |    3 |     0 | Sperre: Tripel (1), pruef fehlt, Ergebnisstelle |
+| e3    |    2 |     0 | Sperre: Tripel (1), Artefakt „+r·(1“ (1) |
+| e4    |    3 |     0 | Sperre Tripel, pruef fehlt, Ergebnisstelle |
 
 Keine Einheit scheiterte zweimal. Die Sperre greift bei diesem
 Eintrag auf viele Achsenpunkte ((6|0|0), (0|0|5), (0|4|0) …), weil
