@@ -13,8 +13,10 @@ sind die Raw-URLs von hz-0801/mathe-nachhilfe und hz-0801/blattbau
 2. Der Katalogeintrag mit Zeilennummern, ohne „Status", „Offene
    Punkte" und „Prüfliste". Zeilen über LANG Zeichen werden nach
    KURZ Zeichen gekürzt, außer in den Abschnitten, die eine Sitzung
-   zum Schreiben braucht (SCHUTZ) und in Zielmarke-Zeilen; solche
-   Ausnahmen meldet der Lauf.
+   zum Schreiben braucht (SCHUTZ), in Zielmarke-Zeilen und in
+   Zeilen mit „[RLP]" oder „LISUM" (auch außerhalb von SCHUTZ,
+   etwa in Verortung und Lerneinheiten); solche Ausnahmen meldet
+   der Lauf.
 3. Originale: je Kennung aus „Prüfungsform" und „Zielmarke" die
    Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren,
    fehlerquelle, format, antwort aus den Prüfungsdateien (CSV).
@@ -54,6 +56,10 @@ LANG, KURZ = 600, 200
 # (auftrag-eintrag.md, Schritt 1): nie gekürzt.
 SCHUTZ = ("Merkkasten", "Für schwache Schüler", "Typen je Lerneinheit",
           "Typische Fehler", "Voraussetzungen", "Prüfungsform")
+# Kennungen amtlicher Quellen: Zeilen damit nie gekürzt, unabhängig
+# vom Abschnitt (auch in Verortung und Lerneinheiten), weil Sitzungen
+# daraus die Sprossentexte der Pflichtelemente nehmen.
+SCHUTZ_KENNUNG = ("[RLP]", "LISUM")
 
 _klone = {}
 
@@ -139,7 +145,8 @@ def gekuerzt(kz):
         if m:
             titel = m.group(1).strip()
         elif len(z) > LANG:
-            if titel.startswith(SCHUTZ) or z.startswith("Zielmarke"):
+            if (titel.startswith(SCHUTZ) or z.startswith("Zielmarke")
+                    or any(k in z for k in SCHUTZ_KENNUNG)):
                 ausnahmen.append((nr, titel, len(z)))
             else:
                 z = f"{z[:KURZ]} … (gekürzt, {len(z)} Zeichen)"
@@ -291,8 +298,9 @@ def baue_mappe(eintrag, tabelle, massstab_text, massstab_stand, ziel):
            f"Kürzung: Katalogzeilen über {LANG} Zeichen enden nach "
            f"{KURZ} Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in "
            "Merkkasten, Für schwache Schüler, Typen je Lerneinheit, "
-           "Typische Fehler, Voraussetzungen, Prüfungsform und "
-           "Zielmarke.", "",
+           "Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke "
+           "und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb "
+           "dieser Abschnitte).", "",
            "Teile: 1 Katalogeintrag · 2 Originale · 3 Maßstab", "",
            "## 1 Katalogeintrag", "",
            "Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am "
