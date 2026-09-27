@@ -12,12 +12,12 @@ v0.3.
 
     Datei       Zeilen vorstufe grundfall sprosse pruefung pflicht
     zone.jsonl      42        0        20      21        0       1
-    e1.jsonl        50        8        10      24        2       6
+    e1.jsonl        50        8        10      21        5       6
     e2.jsonl        44        4         5      27        2       6
-    e3.jsonl        57        8        10      30        3       6
-    e4.jsonl        65        8        10      33        8       6
+    e3.jsonl        57        8        10      27        6       6
+    e4.jsonl        65        8        10      30       11       6
     e5.jsonl        36        4         5      18        3       6
-    gesamt         294       32        60     153       18      31
+    gesamt         294       32        60     144       27      31
 
 Pflicht je Einheit: fehler 3, begruenden 3. Zone: zehn
 Fertigkeiten, je s1 zwei leichte (grundfall), s2 eine mittlere,
@@ -34,8 +34,9 @@ s3 ein Fallstrick; Zone-Paar (fehler + Rechenaufgabe) an f5.
   2024MerhoehtAAGLAA122-b: pruefung, original null, 3 Zeilen)
 - Sek-II-Ketten e1, e3, e4: iqb 2023MgrundlegendAAGLAA111-a,
   2021MgrundlegendAAGLAA211-b, 2024MerhoehtAAGLAA122-a je als
-  höchste Sprosse (3 Zeilen, hoehe sprosse, original null),
-  Kennung nur im Aufgabentext (Entscheidung 3 und 4)
+  höchste Sprosse (3 Zeilen, hoehe pruefung seit der
+  Nachbesserung, original null), Kennung nur im Aufgabentext
+  (Entscheidung 3 und 4)
 
 ## Prüfskript vor der Korrektur
 
@@ -123,6 +124,21 @@ zweimal.
 14. Grundfall der Sek-II-Ketten mit 5 Zeilen (bank.md), obwohl
     der Katalog „viermal“ sagt.
 
+## Nachbesserung 2026-09-27
+
+- Prüfskript v0.5 vorher und nachher 0 Abweichungen, 0 Warnungen
+  in allen sechs Dateien; keine Zeile gestrichen.
+- Die Prüfungshöhe der Sek-II-Ketten (e1 k2 s2, e3 k2 s3, e4 k2
+  s3, je 3 Zeilen) trägt jetzt hoehe pruefung statt sprosse,
+  original bleibt null (bank.md „Mengen je Kette“: Prüfungshöhe
+  ohne P10-Original); Entscheidung 3 gilt insoweit nicht mehr.
+- Die Prüfkennung „(IQB Jahr grundlegend)“ heißt jetzt „(Abitur
+  Jahr GK)“, „(IQB Jahr erhöht)“ jetzt „(Abitur Jahr LK)“ (bank.md,
+  Prüfkennung), in e1 k2 s2, e3 k2 s3, e4 k2 s3 und e5 k1 s8 (12
+  Zeilen); Entscheidung 4 gilt insoweit nicht mehr.
+- Kein Erkennungsschritt zu streichen: alle acht waren schon nach
+  Entscheidung 1 entfallen.
+
 ## Befunde
 
 1. Katalog: Alle acht Erkennungsschritte (Z. 47–54) decken sich
@@ -131,11 +147,12 @@ zweimal.
 2. Katalog: e3 hat zwei Vorstufen mit demselben Handgriff
    („gleiche Vorzahl oder Gegenzahl ankreuzen“, Z. 127 und 130);
    beide umgesetzt, mit anderen Zahlen.
-3. Katalog/Auftrag: e1, e3, e4 haben je zwei Kettenzeilen mit
-   „Prüfungshöhe“ (Sek I und Sek II); der Auftrag erlaubt eine
-   Prüfungssprosse je Einheit, bank.md regelt den Fall nicht.
-4. bank.md/Prüfskript: iqb-Kennungen passen nicht ins Muster des
-   Felds original, bank.md nennt nur P10 (papier aus der CSV;
+3. (erledigt v0.5) Katalog/Auftrag: e1, e3, e4 haben je zwei
+   Kettenzeilen mit „Prüfungshöhe“ (Sek I und Sek II); der Auftrag
+   erlaubt eine Prüfungssprosse je Einheit, bank.md regelt den
+   Fall nicht.
+4. (erledigt v0.5, Skriptteil) bank.md/Prüfskript: iqb-Kennungen
+   passen nicht ins Muster des Felds original, bank.md nennt nur P10 (papier aus der CSV;
    die Mappe gibt „2021-iqb-ga“). Die Sek-II-Originale gehen dem
    Feld verloren.
 5. Prüfskript, Sperre: Das Präfix „I“ klebt an Kastengleichungen
@@ -152,6 +169,16 @@ zweimal.
 8. Katalog: „Prüfungsform (P10)“ nennt 2024-OS-K7b, 2021-OS-K7b
    und 2016-OS-K6d als Nebentyp „lösen“ (e2), die Kettenzeile
    Einsetzen nur 2022-OS-K7b; hier bei e4 und e1 umgesetzt.
+9. bank.md/Prüfskript: v0.5 nimmt iqb-Kennungen der Mappe im Feld
+   original an, bank.md setzt eine Prüfungshöhe ohne P10-Original
+   aber auf original null, 3 Zeilen. Die vier Prüfungshöhen nach
+   iqb (e1 k2 s2, e3 k2 s3, e4 k2 s3, e5 k1 s8) könnten die
+   Kennung im Feld tragen, dann mit 2 Zeilen je Original; bank.md
+   sagt nicht, ob iqb als Original im Sinn von „Mengen je Kette“
+   zählt. Belassen bei null.
+10. Prüfskript v0.5, Befunde 5 und 6 bestehen weiter: die Sperre
+    liest „Ix+y=7“ mit Präfix und „111-a“, „-K7a/b“ als Terme;
+    x + y + z = 1 bleibt gesperrt (Probe am 2026-09-27).
 
 ## Offene Punkte
 
@@ -163,7 +190,8 @@ zweimal.
 - e1-k1-s5-v3, e1-k3-s1-v1, e1-k3-s3-v1 erzählen ein Ablesen oder
   Zeichnen, ohne es zu verlangen, und haben kein grafik; bei
   k3-s1 würde eine Grafik den Fehler sichtbar machen.
-- Kennung „(IQB Jahr grundlegend/erhöht)“ mit Prompt und
-  Zusammenbau abgleichen.
+- (erledigt v0.5) Kennung „(IQB Jahr grundlegend/erhöht)“ mit
+  Prompt und Zusammenbau abgleichen: bank.md nennt jetzt „(Abitur
+  Jahr GK/LK)“.
 - Ob Blätter mit Ziel Abitur die Sek-II-Sprosse als Prüfungshöhe
   brauchen (Entscheidung 3).
