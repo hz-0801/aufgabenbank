@@ -125,6 +125,23 @@ Basis zehn). Alles ersetzt. Keine Einheit scheiterte zweimal.
 17. Prüfkennung „(P10 Jahr OS)“, papier aus der Mappe. Tausender
     ab vier Stellen mit `\,`.
 
+## Nachbesserung 2026-09-27
+
+- Prüfskript v0.5 vorher und nachher 0 Abweichungen, 0 Warnungen
+  in allen vier Dateien; keine Zeile geändert oder gestrichen.
+- Keine Prüfungshöhe ohne Original: alle drei Prüfungshöhen (e1
+  s15, e2 s17, e3 s13) tragen P10-Originale und stehen schon als
+  hoehe pruefung.
+- Kein Erkennungsschritt zu streichen: die sechs doppelten waren
+  schon nach Entscheidung 1 entfallen; die drei verbliebenen
+  („Plus oder minus?“, „Bruch oder minus?“, „Was zuerst?“)
+  verlangen einen anderen Handgriff als die Vorstufen ihrer
+  Einheit (hoch oder mal, Basis und Exponent; Quadratzahl,
+  Nachbarn).
+- Befund 2 als erledigt markiert: v0.5 sperrt 4^x = 256
+  (2024-OS-B1g) und 10^6 = 1 000 000 (Kasten Z. 55) in einer
+  aufgabe (Probe am 2026-09-27).
+
 ## Befunde
 
 1. Prüfskript: normiert streicht Exponenten. Eine Option wie
@@ -132,8 +149,8 @@ Basis zehn). Alles ersetzt. Keine Einheit scheiterte zweimal.
    als Ankreuzoptionen sind so nicht prüfbar, und ein Ergebnis
    „10⁷“ oder eine Hochzahl steht nie an der Ergebnisstelle.
    Umgangen mit Entscheidungen 12–14.
-2. Prüfskript, Sperre: „^“ ist kein Rechenzeichen der Tokenliste,
-   Terme mit Hochzahl zerfallen. 4^x = 256 (2024-OS-B1g) wird in
+2. (erledigt v0.5) Prüfskript, Sperre: „^“ ist kein Rechenzeichen
+   der Tokenliste, Terme mit Hochzahl zerfallen. 4^x = 256 (2024-OS-B1g) wird in
    einer aufgabe nicht gesperrt (Probe); Kastengleichungen mit
    Hochzahl ab 4 (3⁴ = …, 10⁶ = …) stehen in der Mappe als
    Unicode, in LaTeX als ^4 – kein Treffer. Die eigene Probe
@@ -166,7 +183,10 @@ Basis zehn). Alles ersetzt. Keine Einheit scheiterte zweimal.
   \left(…\right)^0, Anzeige „6.2E7“ als Text, \kreuz mit Formeln
   und mit „zwischen $7$ und $8$“.
 - Kastenzahl- und Beispielprobe von Hand (Entscheidungen 15, 16);
-  gehört ins Skript (Befund 2).
+  gehört ins Skript (Befund 2). Seit v0.5 sperrt das Skript
+  Kastengleichungen mit Hochzahl; einzelne mehrstellige
+  Kastenzahlen und Beispielpotenzen wie 3⁴ allein prüft es weiter
+  nicht (Probe: „Berechne $3^4$.“ ohne Befund).
 - Zone f6: ob die Zone die Tasten x², √ und EXP abfragen darf
   (Katalogzeile nennt sie, 2.2 verbietet Themenbegriffe), offen.
 - Prüfungshöhe e2 zu 2015-OS-K3a mit Speicherchip und Herzschlag
