@@ -112,6 +112,19 @@ Commit auf 23,1 geändert; alle übrigen Dateien 0.
 12. Entscheidungsaufgaben (e4 Prüfungshöhe, e5 „reicht die
     Platte?“) mit gemischten Antworten ja/nein.
 
+## Nachbesserung 2026-09-27
+
+Prüfskript v0.5, bank.md Stand 2026-09-27b; erster Lauf 0
+Abweichungen, 0 Warnungen, Endstand ebenso.
+
+- Keine Zeile geändert: die einzige Prüfungshöhe ohne Original
+  (e2-k1-s6) trägt schon hoehe pruefung mit original null, und der
+  einzige Erkennungsschritt (e1-k1 „Gegeben – gesucht“, Z. 43)
+  verlangt einen anderen Handgriff als die Vorstufe von e1-k2
+  („Fläche oder Umfang ankreuzen“).
+- Befunde 2, 4, 5 und 6 bestehen unter v0.5 und bank.md
+  2026-09-27b fort; keiner ist durch v0.5 erledigt.
+
 ## Befunde
 
 1. Katalog: Vier der fünf Erkennungsschritte verlangen denselben
