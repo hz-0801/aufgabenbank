@@ -3,17 +3,18 @@
 Katalog-Commit: de503c9cea3976774daeb6c514adb85829d8df2e
 (2026-09-25, aus dem Kopf von mappen/terme.md)
 Datum: 2026-09-27 (date, UTC)
-Prüfskript: werkzeuge/bank-pruef.py v0.2, Endstand 0 Abweichungen,
-0 Warnungen in allen Dateien.
+Prüfskript: werkzeuge/bank-pruef.py v0.5, 0 Abweichungen,
+0 Warnungen in allen Dateien (Nachbesserung 2026-09-27; vorher
+v0.2, ebenfalls 0/0).
 
 ## Zahlen je Datei
 
     Datei       Zeilen  vorstufe grundfall sprosse pruefung pflicht
     zone.jsonl      18         0         8       9        0       1
     e1.jsonl        39         0         5      21        4       9
-    e2.jsonl        81        12        10      45        2      12
-    e3.jsonl        36         4         5      18        0       9
-    e4.jsonl        29         0         5      21        0       3
+    e2.jsonl        81        12        10      42        5      12
+    e3.jsonl        36         4         5      15        3       9
+    e4.jsonl        29         0         5      18        3       3
 
 Pflicht je Einheit: e1 fehler 3, darstellung 3, anwendung 3 ·
 e2 fehler 3, begruenden 3, darstellung 3, anwendung 3 · e3 fehler 3,
@@ -53,7 +54,8 @@ Aufgaben vor dem ersten Skriptlauf geändert.
   Schlusspunkt. Erkennungsschritte: Zeile bis vor „Vor Einheit".
   Zone: Fertigkeitszeile bis vor dem Gedankenstrich; kette ist
   die Fertigkeit ohne Klammerbeispiel.
-- Prüfungssprosse ohne Original (Malnehmen e2, Klammern e3,
+- (überholt, siehe Nachbesserung) Prüfungssprosse ohne Original
+  (Malnehmen e2, Klammern e3,
   Ausklammern e4): hoehe sprosse, 3 Zeilen, merkmal „Zielmarke
   ohne Original". Grund: Das Skript verlangt bei hoehe pruefung
   ein Original; bank.md kennt nur „2 je Original".
@@ -102,7 +104,8 @@ Aufgaben vor dem ersten Skriptlauf geändert.
 
 ## Befunde
 
-- Prüfskript, Ankreuzprobe: „Lösungszahl in genau einer
+- (erledigt v0.5) Prüfskript, Ankreuzprobe: „Lösungszahl in
+  genau einer
   Zahloption" ist bei Termoptionen mit je einer Zahl (4x, x + 4,
   4 − x) nie erfüllbar; Optionen mit mehreren Zahlen werden
   offenbar übergangen. Ein Term-Ankreuzen prüft das Skript damit
@@ -112,11 +115,13 @@ Aufgaben vor dem ersten Skriptlauf geändert.
   Ergebnisstelle, nicht, ob der Lösungsterm zur Aufgabe
   gleichwertig ist. Vorschlag: optionales Feld mit Aufgabenterm
   und Lösungsterm, Vergleich durch Einsetzen.
-- Auftrag, Gegenprobe: „Zahl der Zeilen mit hoehe grundfall ist 5"
+- (erledigt v0.5) Auftrag, Gegenprobe: „Zahl der Zeilen mit
+  hoehe grundfall ist 5"
   je Einheit setzt eine Verfahrenskette je Einheit voraus; e2 hat
   zwei (Ist 10). bank.md „Pflichtelemente als eigene Kette mit dem
   Namen der Verfahrenskette" ist bei zwei Ketten nicht eindeutig.
-- bank.md: keine Regel für die Prüfungssprosse ohne Original
+- (erledigt v0.5) bank.md: keine Regel für die Prüfungssprosse
+  ohne Original
   (Zielmarke); Vorschlag: „hoehe sprosse, 3 Zeilen".
 - Katalog, Zuordnung: 2022-GYM-B2b steht bei Einheit 3, braucht
   aber die binomische Formel (Kl. 8, binomische-formeln.md); für
@@ -133,10 +138,25 @@ Aufgaben vor dem ersten Skriptlauf geändert.
 - Grundvorstellung (Zeile 70, „Was bedeutet eine Vorzahl vor
   x?", Blatt 0) steht nicht in der Bank: keine Fertigkeitszeile,
   kein Erkennungsschritt. Einordnung klären.
-- hoehe der Zonezeilen (grundfall/sprosse) mit den anderen
+- (erledigt v0.5) hoehe der Zonezeilen (grundfall/sprosse) mit
+  den anderen
   Einträgen abgleichen; bank.md legt sie nicht fest.
 - Grafiken nicht gerendert (kein LaTeX): \viereck mit Seitenlabels
   wie „x+2", \dreieck mit leeren Winkellabels, \sachtabelle mit
   $\cdot$ und \leerzelle im Kopf, \termbaum mit leeren Knoten.
 - Termbaum als Darstellung in e1: klären, ob die Lerngruppe ihn
   kennt; sonst Figur-Aufgaben mit Zeichnen.
+
+## Nachbesserung 2026-09-27
+
+- Prüfskript v0.5: 0 Abweichungen, 0 Warnungen vor und nach der
+  Nachbesserung.
+- e2 k5 s7 (Malnehmen), e3 k2 s7 (Klammern) und e4 k1 s8
+  (Ausklammern), je 3 Zeilen, tragen als Prüfungshöhe ohne
+  Original hoehe pruefung statt sprosse, original bleibt null
+  (bank.md, „Mengen je Kette“); die Entscheidung dazu ist überholt.
+- Tabelle „Zahlen je Datei“ und Kopfzeile Prüfskript auf den neuen
+  Stand gebracht.
+- Erkennungsschritte: Die Ketten des Katalogs haben keine
+  Vorstufe, kein Erkennungsschritt wiederholt eine; keine
+  Streichung.
