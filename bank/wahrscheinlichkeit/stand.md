@@ -88,3 +88,20 @@ Prüfskript: werkzeuge/bank-pruef.py v0.4 – 0 Abweichungen,
 - Die Grafiken (\baumzwei und \baumdrei mit Wort-Labels und leeren
   Feldern, zwei \kreisdiagramm in einem Feld, \kreisleer) sind
   ungerendert, weil LaTeX nicht verfügbar ist.
+
+## Nachbesserung 2026-09-27
+
+- Prüfskript v0.5: 0 Abweichungen, 0 Warnungen vor und nach der
+  Nachbesserung; keine jsonl-Zeile geändert oder gestrichen.
+- Prüfungshöhe: Alle vier Ketten enden auf einer Prüfungshöhe mit
+  P10-Original; keine Prüfungshöhe ohne Original steht als hoehe
+  sprosse, nichts umgestellt.
+- Erkennungsschritte: „Was ist möglich, was ist günstig?“ und „Mit
+  oder ohne Zurücklegen?“ waren schon entfallen (siehe Befunde);
+  „Wie viele Stufen?“, „Gleich groß?“ (e2 k1, k2), „Ein Pfad oder
+  mehrere?“ und „Nicht oder mindestens?“ (e3 k1, k2) verlangen
+  einen anderen Handgriff als die Vorstufe ihrer Einheit und
+  bleiben.
+- Befunde: Keiner ist mit v0.5 erledigt; ein Ergebnis nach „also“
+  gilt weiter nicht als Ergebnisstelle, pruef "" ist weiter nur
+  bei pflicht begruenden erlaubt, nicht an einer Kettensprosse.
