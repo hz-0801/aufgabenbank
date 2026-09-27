@@ -8,7 +8,7 @@ Datum: 2026-09-27 12:22 UTC
 | Datei | vorstufe | grundfall | sprosse | pruefung | pflicht | Summe |
 |-------|---------:|----------:|--------:|---------:|--------:|------:|
 | zone  |        0 |        16 |      18 |        0 |       1 |    35 |
-| e1    |        8 |        10 |      42 |        6 |       9 |    75 |
+| e1    |        8 |        10 |      39 |        9 |       9 |    75 |
 | e2    |        4 |         5 |      30 |        4 |      12 |    55 |
 
 ## Originale
@@ -29,9 +29,11 @@ Datum: 2026-09-27 12:22 UTC
   Vorstufen der drei Ketten (Befund).
 - Einheit 1 hat zwei Verfahrensketten; hoehe pruefung nur in
   „Zinsen berechnen" (drei Originale, 6 Zeilen), damit die Einheit
-  genau eine Prüfungssprosse hat.
+  genau eine Prüfungssprosse hat. (überholt, Nachbesserung
+  2026-09-27)
 - Die Zielmarke von „Monats- und Tageszinsen" steht als hoehe
   sprosse, original null, 3 Zeilen (unterrichtsblatt 2.4 c).
+  (überholt, Nachbesserung 2026-09-27)
 - Eine Prüfungssprosse mit mehreren Originalen trägt als
   sprosse_text den ganzen Prüfungshöhe-Text der Kettenzeile.
 - Typen ohne Kette: e1 Überschlag; e2 Tabelle mit jährlicher
@@ -47,13 +49,23 @@ Datum: 2026-09-27 12:22 UTC
 - Die Kastenzahlen 12, 30, 100 und 360 stehen in keiner aufgabe;
   Monate, Tage und Bankjahr werden in Worten genannt.
 
+## Nachbesserung 2026-09-27
+
+- Prüfskript v0.5 meldet vorher und nachher 0 Abweichungen und
+  0 Warnungen.
+- e1 „Monats- und Tageszinsen“ s5 (Zeilen 61–63): Die Zielmarke
+  ohne P10-Original steht jetzt als hoehe pruefung statt sprosse,
+  original null, 3 Zeilen; die Tabelle der Zeilen ist angepasst.
+- Die fünf Erkennungsschritte sind schon entfallen; kein weiterer
+  Erkennungsschritt doppelt eine Vorstufe.
+
 ## Befunde
 
 - Katalog: Alle fünf Erkennungsschritte verlangen denselben
   Handgriff wie die Vorstufen der Ketten; der Katalog führt beide.
 - bank.md: Die Regel „Prüfungshöhe ohne Original = hoehe pruefung"
   und „genau eine Prüfungssprosse je Einheit" widersprechen sich,
-  wenn eine Einheit zwei Ketten hat.
+  wenn eine Einheit zwei Ketten hat. (erledigt v0.5)
 - Prüfskript: Es prüft keine Zahlen in aufgabe (vorgegebene
   Fehlrechnung) und keine einzelnen Kastenzahlen; beides fiel erst
   bei der eigenen Probe auf.
