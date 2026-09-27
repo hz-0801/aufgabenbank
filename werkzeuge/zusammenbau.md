@@ -18,11 +18,11 @@ Fehler findet (die Dateien werden trotzdem geschrieben).
 
 | Schalter | Wirkung |
 | --- | --- |
-| `--einheiten 1,3` | nur diese Einheiten; Zone nur mit ihren Fertigkeiten |
+| `--einheiten 1,3` | nur diese Einheiten und ihre Fertigkeiten |
 | `--zone ja` | je Fertigkeit Sprosse 1 und 2, dazu das Zone-Paar |
 | `--zone kurz` | je Fertigkeit nur Sprosse 1 |
 | `--zone nein` | keine Zone |
-| `--fokus <kette>` | Name wortgleich aus dem Feld kette; alle Varianten |
+| `--fokus <kette>` | Name wie im Feld kette; alle Varianten |
 | `--schwach` | Form nach unterrichtsblatt 2.8 |
 | `--klasse n` | Zeitmarke relativ; bis Klasse 10 `\weit` |
 | `--kasten` | Merkkasten am Anfang jeder Einheit (3.1) |
