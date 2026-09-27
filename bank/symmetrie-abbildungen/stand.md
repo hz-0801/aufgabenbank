@@ -1,0 +1,80 @@
+# Stand: symmetrie-abbildungen
+
+Katalog-Commit: 761321330add6ed255669afc1c4e11b846250dd5
+Datum: 2026-09-27 12:18 UTC
+Prüfskript: bank-pruef.py v0.4, 0 Abweichungen, 2 Warnungen
+
+## Zeilen je Datei und hoehe
+
+| Datei | Zeilen | vorstufe | grundfall | sprosse | pruefung | pflicht |
+|-------|-------:|---------:|----------:|--------:|---------:|--------:|
+| zone  |     30 |        0 |        14 |      15 |        0 |       1 |
+| e1    |     54 |        8 |         5 |      27 |        2 |      12 |
+| e2    |     87 |       12 |        10 |      51 |        2 |      12 |
+| e3    |     54 |        4 |         5 |      30 |        3 |      12 |
+
+## Originale je Einheit
+
+- e1: 2020-OS-B1b
+- e2: 2022-OS-B1i, 2021-OS-B1j, 2025-OS-K2a, 2018-OS-B1h
+- e3: keins (Prüfungshöhe ohne Original, 3 Zeilen)
+
+## Prüfskript vor der Korrektur
+
+| Datei | Abw. | Warn. | häufigster Grund                          |
+|-------|-----:|------:|-------------------------------------------|
+| zone  |   23 |     0 | pruef als Zahl statt Ausdruck (16)        |
+| e1    |    4 |     0 | pruef nicht an der Ergebnisstelle (3)     |
+| e2    |    5 |     2 | Ergebnisstelle der Tabellenlösung (3)     |
+| e3    |    5 |     0 | Ergebnisstelle der Verschiebung (3)       |
+
+Die 2 Warnungen in e2 bleiben (siehe Entscheidungen, Punkt 4).
+
+## Entscheidungen
+
+1. Zone: kette und sprosse_text sind die Fertigkeit bis zum
+   Gedankenstrich; die Zeilen haben keinen Doppelpunkt.
+2. Zone-Paar in „Kästchen im Raster abzählen …“ (Fallstrick Linien
+   statt Kästchen), weil diese Fertigkeit alle Einheiten trägt.
+3. Einheit 2: hoehe pruefung an der letzten Kette (Spiegeln,
+   2018-OS-B1h); die Prüfungshöhe der Kette Symmetrieachsen steht
+   als s9 (2022-OS-B1i, 2021-OS-B1j) und s10 (2025-OS-K2a) mit
+   hoehe sprosse, 2 Zeilen je Original, Feld original gesetzt.
+4. Daraus die Mengenwarnungen s9 (4 statt 3) und s10 (2 statt 3).
+5. 2025-OS-K2a nur mit der ersten Teilleistung (Achsenzahl); die
+   Rechnung mit den Diagonalen gehört zu pythagoras.md.
+6. Senkrechte Spiegelachse im ksys als `\asymptote{x=…}{a}`,
+   waagerechte und schräge als `\gerade`; ksys hat keine
+   senkrechte Gerade.
+7. Verschiebungspfeil als Punktpaar P → Q im ksys, weil die
+   Vorlage keinen ebenen Pfeil hat.
+8. Typen ohne Kette: e1 drei, e2 zwei („[GYM 6]“ nicht im Text),
+   e3 zwei; „Abbildung benennen, die zwei gegebene Figuren
+   ineinander überführt“ steckt in der Prüfungshöhe von e3.
+9. Einheit 2 nennt die Spiegelachse durchgehend a, auch in der
+   Prüfungshöhe statt g des Originals.
+
+## Befunde
+
+- Katalog: „Welche Koordinate ist null?“, „Passt die Faltung?“,
+  „Senkrecht zur Achse?“, „Welche Abbildung?“ und „Gleich groß?“
+  wiederholen als Erkennungsschritt die Vorstufe derselben Einheit
+  (Ankreuzen); sie entfallen, die Vorstufen bleiben.
+- Katalog: „Erst rechts, dann hoch“ und „Wie viele Achsen?“ stehen
+  als Erkennungsschritt (zeichnen) und in der Vorstufe (ankreuzen);
+  beide bleiben, weil der Handgriff verschieden ist.
+- bank.md: Für die Prüfungssprosse einer Verfahrenskette, die nicht
+  die letzte ist, nennt „Mengen je Kette“ keine Menge; das Skript
+  erwartet 3.
+- Prüfskript: pruef als JSON-Zahl bricht mit einem eval-Fehler ab;
+  bank.md sagt nicht, dass pruef ein String sein muss.
+- Prüfskript: „$2$ nach rechts, dann $8$ nach oben“ gilt nicht als
+  Aufzählung von Ergebnissen; nur „$2$, $8$“ besteht.
+
+## Offene Punkte
+
+- Nicht kompiliert: `\asymptote` im Unterstufen-ksys und die
+  Optionen `achsen=…`/`diagonalen` von `\drachen`, `\raute`,
+  `\viereck` sind im Render ungeprüft.
+- Buchstaben und Verkehrszeichen (e2 s7) stehen ohne Grafik; die
+  Vorlage hat dafür keinen Baustein.
