@@ -1,6 +1,6 @@
 # Aufgabenbank – Form und Regeln
 
-Stand 2026-09-27, dritte Fassung (nach acht Einträgen).
+Stand 2026-09-27b, vierte Fassung (nach den Sek-II-Prüfsteinen).
 
 ## Zweck
 
@@ -77,13 +77,14 @@ Leerzeilen. Reihenfolge der Zeilen = Reihenfolge der Kette.
                   und Nenner als Liste; "" nur bei Begründen,
                   Zeichnen oder einer Lösung ohne Ziffer
     original      null oder {"id": "2018-OS-K7a", "jahr": 2018,
-                  "papier": "OS"}; papier aus der Spalte papier
-                  der Prüfungsdatei (CSV). Das Feld darf an jeder
-                  hoehe stehen, wenn die Sprosse ein Original des
-                  Katalogs verfremdet (P10-Form-Sprossen mitten in
-                  der Kette); hoehe pruefung bleibt der letzten
-                  Sprosse vorbehalten. Prüfungshöhe ohne
-                  P10-Original: null („Mengen je Kette")
+                  "papier": "OS"}; Kennung wortgleich aus der
+                  Mappe (Abschnitt 2 Originale); papier wie dort.
+                  Das Feld darf an jeder hoehe stehen, wenn die
+                  Sprosse ein Original des Katalogs verfremdet
+                  (P10-Form-Sprossen mitten in der Kette); hoehe
+                  pruefung bleibt der letzten Sprosse
+                  vorbehalten. Prüfungshöhe ohne P10-Original:
+                  null („Mengen je Kette")
     grafik        "" oder der Bausteinaufruf der Grafik, aus den
                   Aufgabenwerten berechnet
     loesungsgrafik "" oder der Bausteinaufruf der Lösungsgrafik –
@@ -92,7 +93,11 @@ Leerzeilen. Reihenfolge der Zeilen = Reihenfolge der Kette.
     quelle        Zeile des Katalogeintrags, aus der die Sprosse
                   stammt (Zeilennummer beim Stand-Commit)
 
-Prüfkennung „(P10 Jahr Papier)" am Ende des Fragesatzes
+Prüfkennung „(P10 Jahr Papier)"; FHR „(FHR Jahr)"; Abitur
+„(Abitur Jahr GK)" für grundlegendes und „(Abitur Jahr LK)" für
+erhöhtes Niveau – iqb grundlegend und be-gk sind GK, iqb erhöht,
+bebb-lk und bb-ea sind LK; CAS/MMS-Fassung und Teil A/B stehen
+nicht in der Prüfkennung. Sie steht am Ende des Fragesatzes
 (unterrichtsblatt 3.6), vor den Ankreuzoptionen.
 
 ## Mengen je Kette
@@ -184,6 +189,9 @@ Verfahrenskette ist daher nicht immer k1.
 - Streifen, Tabelle, Skizze nur, wenn an ihr gelesen, gefärbt
   oder eingeteilt wird.
 - Operatoren in KMK-Bedeutung; Formulierungen eindeutig.
+- Punkte und Vektoren als Zeilentupel mit senkrechtem Strich,
+  A(1 | 2 | 0).
+- sin, cos, ln als \mathrm{…}.
 
 ## Quellen je Sitzung
 
@@ -199,7 +207,7 @@ nicht.
 
 ## Prüfung
 
-`werkzeuge/bank-pruef.py <eintrag>` (v0.3) liest alle jsonl des
+`werkzeuge/bank-pruef.py <eintrag>` (v0.5) liest alle jsonl des
 Eintrags, dazu mappen/<eintrag>.md und mappen/_bausteine.md.
 Ausgabe je Aufgabe eine Zeile OK/ABWEICHUNG, Warnungen als
 WARNUNG-Zeilen, zuletzt je Datei und gesamt die Zahl der
@@ -207,29 +215,33 @@ Abweichungen und Warnungen.
 
 Abweichungen: Pflichtfelder, id-Muster, Kettenfolge lückenlos;
 jede pruef-Zahl steht an der Ergebnisstelle der Lösung – erste
-Zahl, nach „=" oder „≈", ein Punkt (x|y) oder Bruch dort, oder
-ein Glied einer Aufzählung von Ergebnissen –, nach Rundung auf die
-Stellen der Lösung, Toleranz 0,005; ein Minus mit Abstand gehört
-zur Zahl („$-\,6$", „x^2 - 12x"), außer nach Zahl, „)" oder
-Einheit; eine gemischte Zahl gilt als unechter Bruch; original,
-wo es steht, vollständig; bei form ankreuzen mit mindestens zwei
+Zahl, nach „=" oder „≈", ein Punkt (x|y), ein Tripel (x|y|z)
+oder Bruch dort, oder ein Glied einer Aufzählung von Ergebnissen
+–, nach Rundung auf die Stellen der Lösung, Toleranz 0,005; ein
+Minus mit Abstand gehört zur Zahl („$-\,6$", „x^2 - 12x"), außer
+nach Zahl, „)" oder Einheit; eine gemischte Zahl gilt als unechter
+Bruch; original, wo es steht, vollständig (id, jahr, papier
+gesetzt, id beginnt mit jahr und steht als „### <id>" in
+Abschnitt 2 der Mappe); bei form ankreuzen mit mindestens zwei
 Zahloptionen steht die Lösungszahl in genau einer, sonst nennt
 die Lösung genau eine Option wortgleich; jeder Baustein in aufgabe,
 loesung, grafik, loesungsgrafik steht in mappen/_bausteine.md mit
 passender Argumentzahl; bei ksys-Grafiken liegen die Punkte der
 Lösung, jeder Scheitel einer \parabel und jeder \punkt im
-Achsenbereich; form zeichnen oder ein Ablese- oder Zeichenauftrag
-in aufgabe verlangt grafik (das Wort „Graph" allein nicht); kein
-Zahlenpaar, keine Gleichung, kein Zahlterm und kein Term mit
-Variable und Zahl aus Merkkasten, Typische Fehler und den
-Originalen der Mappe in aufgabe (Sperre, Ausnahme nach „Regeln
-für den Inhalt"; ein einzelner Bruch ist kein Paar); keine
-Aufgabe doppelt (aufgabe und grafik zusammen).
+Achsenbereich, bei ksys3 die Tripel der Lösung; form zeichnen
+oder ein Ablese- oder Zeichenauftrag in aufgabe verlangt grafik
+(das Wort „Graph" allein nicht); kein Zahlenpaar, kein Tripel,
+keine Gleichung, kein Zahlterm und kein Term mit Variable und
+Zahl aus Merkkasten, Typische Fehler und den Originalen der Mappe
+in aufgabe (Sperre, Ausnahme nach „Regeln für den Inhalt"; ein
+einzelner Bruch ist kein Paar, der Ursprung kein Punkt; x⁴ der
+Mappe gilt wie x^4); keine Aufgabe doppelt (aufgabe und grafik
+zusammen).
 
 Warnungen: Mengen aus „Mengen je Kette" (Grundfall je Kette,
 Prüfungshöhe ohne Original 3), das Zone-Paar, hoehe und merkmal
 der Zone je Zeile, ein fehlendes Feld loesungsgrafik, eine
-fehlende Mappe.
+fehlende Mappe (dann entfallen Sperre und Kennungsprobe).
 
 Erst bei null Abweichungen wird committet. Weicht eine Lösung ab,
 wird die Aufgabe korrigiert, nicht das Skript – außer das Skript
