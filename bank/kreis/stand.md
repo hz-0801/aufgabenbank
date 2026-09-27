@@ -138,3 +138,22 @@ Commit durch 84° ersetzt. Endstand 0.
   Kontextwechsel zum Zylinder wäre möglich.
 - Merkmal der Vorstufe e1 steckt nur in der Grafik; der
   Aufgabentext der vier Zeilen ist gleich.
+
+## Nachbesserung 2026-09-27
+
+Prüfskript v0.5 vorher 0 Abweichungen, 0 Warnungen; nachher 0/0.
+Keine Zeile geändert oder gestrichen.
+
+- Prüfungshöhe: e1-k2-s8 trägt schon hoehe pruefung mit original
+  null (Entscheidung 2); nichts nachzuziehen.
+- Erkennungsschritte: Die drei, die den Handgriff einer Vorstufe
+  derselben Einheit verlangen, waren schon nicht angelegt
+  (Entscheidung 1, Befund 1); „Rand oder Fläche?" (e1-k1) bleibt,
+  weil es sich vom Handgriff der Vorstufe „Radius oder
+  Durchmesser benennen" unterscheidet.
+- Befunde 5 und 6 mit v0.5 nachgeprobt: „Rechne $\pi \cdot
+  2{,}14^2$." und „$d = 31{,}4$ cm" in aufgabe bleiben ohne
+  Abweichung, beide Befunde bleiben offen. Befunde 1 bis 4 sind
+  durch bank.md 2026-09-27b nicht erledigt (1 und 3 Katalog;
+  2 „bis zum Doppelpunkt" und 4 „Zielmarke aus Rahmenlehrplan oder
+  Lehrwerk" stehen unverändert).
