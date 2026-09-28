@@ -119,3 +119,8 @@ die 46 Originale fast alle einfachen Koordinaten belegen.
   prüfen, ob eine Skizze nötig ist.
 - Die Prüfungshöhe von E4 (Ähnlichkeitsargument) hat pruef „2“ als
   Verhältniszahl; das Prüfskript kann die Begründung nicht messen.
+
+## Nachbesserung Gegenlese 2026-09-28
+- Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
+- orthogonalitaet-e2-k2-s3-v3: mit $A(0|0|3)$, $B(6|0|3)$, $C(6|y|5)$ war das Skalarprodukt für jedes $y$ null, „Bestimme $y$“ unlösbar → $A(0|3|3)$, $C(8|y|5)$: $-12 + 3y = 0$, $y = 4$, $|BC| = \sqrt{24} \approx 4{,}9$ m (Regel a).
+- Prüfskript: Abweichungen 0.
