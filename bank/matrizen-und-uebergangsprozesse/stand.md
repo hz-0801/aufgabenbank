@@ -94,3 +94,9 @@ Datum: 2026-09-27 14:40 UTC
   steht in keiner Kettensprosse und hat noch keine Zeilen.
 - Der Zusammenbau muss ((a | b), (c | d)) in pmatrix übersetzen und
   für die Zeichenaufträge einen Diagramm-Baustein bekommen.
+
+## Nachbesserung Gegenlese 2026-09-28
+- Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
+- matrizen-und-uebergangsprozesse-e4-k1-s5-v2: Lösung ließ den Zugang als unbestimmtes z stehen, obwohl die Aufgabe 50 Tiere im ersten Gebiet vorgibt; pruef leer → $M \cdot (M \cdot v + (50 | 0))$, pruef [50, 0] (Regel a).
+- matrizen-und-uebergangsprozesse-zone-f1-v7: Lösung nannte für t = 3 nur y = 4, das Gerüst fragt x und y → „x = 3, y = 4“, pruef [10, 3, 4] (Regel b).
+- Prüfskript: Abweichungen 0.
