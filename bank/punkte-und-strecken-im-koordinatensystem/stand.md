@@ -136,3 +136,11 @@ Entscheidung 5).
   ksys3, leere Labels bei \rgerade, Netz-ksys bis 10.
 - Feld original in e4 k1 s10 v7–v8 und e5 k1 s3 nachtragen,
   sobald die Mappe die Kennungen führt.
+
+## Nachbesserung Gegenlese 2026-09-28
+- Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
+- punkte-und-strecken-im-koordinatensystem-e1-k1-s2-v1: vier Punkte nicht in einer Ebene (Determinante 4) → $P(4 | 0 | 2)$ statt $P(4 | 0 | 1)$, eben und konvex, Lösungsgrafik angepasst (Regel a).
+- punkte-und-strecken-im-koordinatensystem-e1-k1-s2-v2: nicht eben (Determinante 6) → $R(2 | 3 | 3)$ statt $R(1 | 3 | 3)$, Lösungsgrafik angepasst (Regel a).
+- punkte-und-strecken-im-koordinatensystem-e1-k1-s2-v3: nicht eben (Determinante −6) → $P(0 | 1 | 0)$ und $S(3 | 0 | 4)$ statt $P(0 | 3 | 0)$ und $S(1 | 0 | 4)$ (Ein-Punkt-Lösungen stoßen an die Sperre), Lösungsgrafik angepasst (Regel a).
+- punkte-und-strecken-im-koordinatensystem-e3-k1-s3-v3: „für jedes $p$ gleichschenklig“ falsch für $p = 2$ (entartet) → „für jedes $p \ne 2$“ in aufgabe und loesung (Regel a).
+- Prüfskript: Abweichungen 0.
