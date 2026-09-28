@@ -1,0 +1,1 @@
+# QGL-P1 (QGL-P1), Versuch 1: 0 Fehlerstellen (je Datei und Zeile die erste Meldung)

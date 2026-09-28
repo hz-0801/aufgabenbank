@@ -1,0 +1,20 @@
+# zusammenbau v0.6: zusammenbau.py lineare-gleichungen --fokus-pruefung Aufstellen --heft msa --einheiten 4
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG LGL-P1 – Kürzel LGL aus _kuerzel.csv (mathe-nachhilfe); Rezept P (Prüfungs-Fokus)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+EINHEIT e4 – Kette „Aufstellen“ mit 8 Prüfungshöhen im Profil msa (--einheiten)
+AUSWAHL lineare-gleichungen-e4-k1-s1-v1 – lineare-gleichungen e4 „Aufstellen“: Anlauf, Grundfall
+AUSWAHL lineare-gleichungen-e4-k1-s2-v1 – lineare-gleichungen e4 „Aufstellen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL lineare-gleichungen-e4-k1-s6-v1 – lineare-gleichungen e4 „Aufstellen“: Prüfungshöhe (2020-OS-K2e, Stern)
+AUSWAHL lineare-gleichungen-e4-k1-s6-v2 – lineare-gleichungen e4 „Aufstellen“: Prüfungshöhe (2020-OS-K2e, Stern)
+AUSWAHL lineare-gleichungen-e4-k1-s6-v3 – lineare-gleichungen e4 „Aufstellen“: Prüfungshöhe (2018-OS-K3b)
+AUSWAHL lineare-gleichungen-e4-k1-s6-v4 – lineare-gleichungen e4 „Aufstellen“: Prüfungshöhe (2018-OS-K3b)
+AUSWAHL lineare-gleichungen-e4-k1-s6-v5 – lineare-gleichungen e4 „Aufstellen“: Prüfungshöhe (2016-OS-B1b)
+AUSWAHL lineare-gleichungen-e4-k1-s6-v6 – lineare-gleichungen e4 „Aufstellen“: Prüfungshöhe (2016-OS-B1b)
+AUSWAHL lineare-gleichungen-e4-k1-s6-v7 – lineare-gleichungen e4 „Aufstellen“: Prüfungshöhe (2021-OS-B1e)
+AUSWAHL lineare-gleichungen-e4-k1-s6-v8 – lineare-gleichungen e4 „Aufstellen“: Prüfungshöhe (2021-OS-B1e)
+PRÜFWORT „P10“ → „P10 ×7“ (Kataloge, 2 Typen; 4 Originale)
+KOPF Einheit 4: „Gleichungen aufstellen“; Zeitmarke „ab Kl. 6, je nach Buch bis Kl. 8 (am Gymnasium ab Kl. 7)“, Prüfungswort „P10 ×7“
+WARNUNG Nr. 2: 8 Teilaufgaben, 2 mit Grafik – über dem Halbseitenmaß (2.3 g)
+KASTEN Einheit 4: 3 Zeilen
+STRUKTUR 0 Fehler

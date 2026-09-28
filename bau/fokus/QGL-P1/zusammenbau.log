@@ -1,0 +1,29 @@
+# zusammenbau v0.6: zusammenbau.py quadratische-gleichungen --fokus-pruefung p-q-Formel --heft msa --einheiten 3
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG QGL-P1 – Kürzel QGL aus _kuerzel.csv (mathe-nachhilfe); Rezept P (Prüfungs-Fokus)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+EINHEIT e3 – Kette „p-q-Formel“ mit 14 Prüfungshöhen im Profil msa (--einheiten)
+AUSWAHL quadratische-gleichungen-e3-k3-s0-v1 – quadratische-gleichungen e3 „p-q-Formel“: Anlauf, Vorstufe
+AUSWAHL quadratische-gleichungen-e3-k3-s1-v1 – quadratische-gleichungen e3 „p-q-Formel“: Anlauf, Grundfall
+AUSWAHL quadratische-gleichungen-e3-k3-s2-v1 – quadratische-gleichungen e3 „p-q-Formel“: Anlauf, Sprosse – Fallstrick im Merkmal („p oder q negativ: Vorzeichen in −p/2 und unter der“)
+AUSWAHL quadratische-gleichungen-e3-k3-s13-v1 – quadratische-gleichungen e3 „p-q-Formel“: Prüfungshöhe (2020-OS-K3e, Stern)
+AUSWAHL quadratische-gleichungen-e3-k3-s13-v2 – quadratische-gleichungen e3 „p-q-Formel“: Prüfungshöhe (2020-OS-K3e, Stern)
+AUSWAHL quadratische-gleichungen-e3-k3-s13-v3 – quadratische-gleichungen e3 „p-q-Formel“: Prüfungshöhe (2025-OS-K5c, Stern)
+AUSWAHL quadratische-gleichungen-e3-k3-s13-v4 – quadratische-gleichungen e3 „p-q-Formel“: Prüfungshöhe (2025-OS-K5c, Stern)
+AUSWAHL quadratische-gleichungen-e3-k3-s13-v5 – quadratische-gleichungen e3 „p-q-Formel“: Prüfungshöhe (2023-OS-K4c, Stern)
+AUSWAHL quadratische-gleichungen-e3-k3-s13-v6 – quadratische-gleichungen e3 „p-q-Formel“: Prüfungshöhe (2023-OS-K4c, Stern)
+AUSWAHL quadratische-gleichungen-e3-k3-s13-v7 – quadratische-gleichungen e3 „p-q-Formel“: Prüfungshöhe (2021-OS-K2c, Stern)
+AUSWAHL quadratische-gleichungen-e3-k3-s13-v8 – quadratische-gleichungen e3 „p-q-Formel“: Prüfungshöhe (2021-OS-K2c, Stern)
+AUSWAHL quadratische-gleichungen-e3-k3-s13-v9 – quadratische-gleichungen e3 „p-q-Formel“: Prüfungshöhe (2022-OS-K3c, Stern)
+AUSWAHL quadratische-gleichungen-e3-k3-s13-v10 – quadratische-gleichungen e3 „p-q-Formel“: Prüfungshöhe (2022-OS-K3c, Stern)
+AUSWAHL quadratische-gleichungen-e3-k3-s13-v11 – quadratische-gleichungen e3 „p-q-Formel“: Prüfungshöhe (2024-OS-K3d, Stern)
+AUSWAHL quadratische-gleichungen-e3-k3-s13-v12 – quadratische-gleichungen e3 „p-q-Formel“: Prüfungshöhe (2024-OS-K3d, Stern)
+AUSWAHL quadratische-gleichungen-e3-k3-s13-v13 – quadratische-gleichungen e3 „p-q-Formel“: Prüfungshöhe (2017-OS-K5d, Stern)
+AUSWAHL quadratische-gleichungen-e3-k3-s13-v14 – quadratische-gleichungen e3 „p-q-Formel“: Prüfungshöhe (2017-OS-K5d, Stern)
+PRÜFWORT „P10“ → „P10 ×7“ (Kataloge, 4 Typen; 7 Originale)
+KOPF Einheit 3: „Satz vom Nullprodukt“; Zeitmarke „ab Kl. 10 (am Gymnasium ab Kl. 8)“, Prüfungswort „P10 ×7“
+FORM quadratische-gleichungen-e3-k3-s1-v1 (Nr. 1): Gleichung ohne $ im Raster als Mathe gesetzt
+FORM quadratische-gleichungen-e3-k3-s2-v1 (Nr. 1): Gleichung ohne $ im Raster als Mathe gesetzt
+WARNUNG Nr. 2: 14 Teilaufgaben, 0 mit Grafik – über dem Halbseitenmaß (2.3 g)
+KASTEN Einheit 3: 4 Zeilen
+STRUKTUR 0 Fehler

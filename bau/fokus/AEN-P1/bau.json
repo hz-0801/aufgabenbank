@@ -1,0 +1,229 @@
+{
+ "kennung": "AEN-P1",
+ "datum": "2026-09-28",
+ "eintraege": [
+  "ableitung-und-aenderungsrate"
+ ],
+ "titel": "Ableitung und Änderungsrate · Die Rate als Funktion · Prüfungs-Fokus Abitur GK",
+ "kette": "Die Rate als Funktion",
+ "einheit": 4,
+ "profil": "abitur-gk",
+ "pruefwort": "Abi GK ×5",
+ "kasten": "8 Zeilen (über fünf)",
+ "anlauf": 3,
+ "pruefungshoehe": 13,
+ "originale": [
+  "2018-be-gk-B1.2f",
+  "2019-be-gk-B2.1b",
+  "2019MgrundlegendAAnalysis12-b",
+  "2022-bebb-gk-B2.1m",
+  "2022MgrundlegendBAnalysisWTR2-2d",
+  "2026-bb-gk-B2.2i",
+  "2026MgrundlegendBAnalysisMMS1-1c",
+  "2026MgrundlegendBAnalysisWTR2-2c"
+ ],
+ "jahrgaenge": [
+  "2018",
+  "2019",
+  "2022",
+  "2026"
+ ],
+ "rezept": "P",
+ "rezept_name": "Prüfungs-Fokus",
+ "bestellung": {
+  "fokus_pruefung": "Die Rate als Funktion",
+  "heft": "abitur-gk",
+  "einheiten": "4",
+  "aus": null,
+  "ohne_register": false
+ },
+ "bank_commit": "b78e6d9",
+ "zusammenbau": "v0.6",
+ "vorlage": "Version 2026-09-28a",
+ "pfad": "bau/fokus/AEN-P1",
+ "kuerzel_quelle": "_kuerzel.csv (mathe-nachhilfe)",
+ "strukturfehler": 0,
+ "ausgelassen": [],
+ "aufgaben": [
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "a",
+   "id": "ableitung-und-aenderungsrate-e4-k1-s0-v1",
+   "datei": "e4_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "b",
+   "id": "ableitung-und-aenderungsrate-e4-k1-s1-v1",
+   "datei": "e4_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "c",
+   "id": "ableitung-und-aenderungsrate-e4-k1-s4-v3",
+   "datei": "e4_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "a",
+   "id": "ableitung-und-aenderungsrate-e4-k1-s3-v1",
+   "datei": "e4_a.tex",
+   "lage": "pruefung",
+   "original": "2019MgrundlegendAAnalysis12-b",
+   "jahr": 2019,
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "b",
+   "id": "ableitung-und-aenderungsrate-e4-k1-s3-v2",
+   "datei": "e4_a.tex",
+   "lage": "pruefung",
+   "original": "2018-be-gk-B1.2f",
+   "jahr": 2018,
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "c",
+   "id": "ableitung-und-aenderungsrate-e4-k1-s4-v1",
+   "datei": "e4_a.tex",
+   "lage": "pruefung",
+   "original": "2019-be-gk-B2.1b",
+   "jahr": 2019,
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "d",
+   "id": "ableitung-und-aenderungsrate-e4-k1-s4-v2",
+   "datei": "e4_a.tex",
+   "lage": "pruefung",
+   "original": "2026MgrundlegendBAnalysisMMS1-1c",
+   "jahr": 2026,
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "e",
+   "id": "ableitung-und-aenderungsrate-e4-k1-s7-v1",
+   "datei": "e4_a.tex",
+   "lage": "pruefung",
+   "original": "2022-bebb-gk-B2.1m",
+   "jahr": 2022,
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "f",
+   "id": "ableitung-und-aenderungsrate-e4-k1-s7-v2",
+   "datei": "e4_a.tex",
+   "lage": "pruefung",
+   "original": "2022MgrundlegendBAnalysisWTR2-2d",
+   "jahr": 2022,
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "a",
+   "id": "ableitung-und-aenderungsrate-e4-k1-s9-v1",
+   "datei": "e4_a.tex",
+   "lage": "pruefung",
+   "original": null,
+   "jahr": null,
+   "punkte": null,
+   "stern": false
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "b",
+   "id": "ableitung-und-aenderungsrate-e4-k1-s9-v2",
+   "datei": "e4_a.tex",
+   "lage": "pruefung",
+   "original": null,
+   "jahr": null,
+   "punkte": null,
+   "stern": false
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "c",
+   "id": "ableitung-und-aenderungsrate-e4-k1-s9-v3",
+   "datei": "e4_a.tex",
+   "lage": "pruefung",
+   "original": null,
+   "jahr": null,
+   "punkte": null,
+   "stern": false
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "d",
+   "id": "ableitung-und-aenderungsrate-e4-k1-s9-v4",
+   "datei": "e4_a.tex",
+   "lage": "pruefung",
+   "original": "2026-bb-gk-B2.2i",
+   "jahr": 2026,
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "e",
+   "id": "ableitung-und-aenderungsrate-e4-k1-s9-v5",
+   "datei": "e4_a.tex",
+   "lage": "pruefung",
+   "original": "2026-bb-gk-B2.2i",
+   "jahr": 2026,
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "f",
+   "id": "ableitung-und-aenderungsrate-e4-k1-s9-v6",
+   "datei": "e4_a.tex",
+   "lage": "pruefung",
+   "original": "2026MgrundlegendBAnalysisWTR2-2c",
+   "jahr": 2026,
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "g",
+   "id": "ableitung-und-aenderungsrate-e4-k1-s9-v7",
+   "datei": "e4_a.tex",
+   "lage": "pruefung",
+   "original": "2026MgrundlegendBAnalysisWTR2-2c",
+   "jahr": 2026,
+   "punkte": "3",
+   "stern": false
+  }
+ ]
+}

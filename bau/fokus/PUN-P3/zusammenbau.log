@@ -1,0 +1,34 @@
+# zusammenbau v0.6: zusammenbau.py punkte-und-strecken-im-koordinatensystem --fokus-pruefung Körper und Drehungen --heft abitur-gk --einheiten 5
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG PUN-P3 – Kürzel PUN aus _kuerzel.csv (mathe-nachhilfe); Rezept P (Prüfungs-Fokus)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+EINHEIT e5 – Kette „Körper und Drehungen“ mit 23 Prüfungshöhen im Profil abitur-gk (--einheiten)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s0-v1 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Anlauf, Vorstufe
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s1-v1 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2026MgrundlegendAAGLAA213-a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s1-v3 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2024MgrundlegendAAGLAA211-a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s1-v4 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2024MgrundlegendAAGLAA211-a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s1-v5 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2026MgrundlegendAAGLAA213-a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s2-v1 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2020MgrundlegendAAGLAA212-b)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s2-v3 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2020-be-gk-B3.2a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s3-v1 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (Kennung im Text)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s3-v2 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (Kennung im Text)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s3-v3 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (Kennung im Text)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s4-v1 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2018MgrundlegendAAGLAA212-a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s4-v2 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2018MgrundlegendAAGLAA212-a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s4-v3 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2018MgrundlegendAAGLAA212-a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s6-v1 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2019MgrundlegendBAGLAA2WTR2-1f)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s6-v2 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2019MgrundlegendBAGLAA2WTR2-1f)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s6-v3 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2019MgrundlegendBAGLAA2WTR2-1f)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s8-v1 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2023-bebb-gk-B3i)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s8-v2 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2023-bebb-gk-B3i)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s8-v5 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2024-bebb-gk-B3f)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s8-v6 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2024-bebb-gk-B3f)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s8-v7 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2024MgrundlegendBAGLAA2WTR1-1e)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s8-v8 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2024MgrundlegendBAGLAA2WTR1-1e)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s8-v9 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2024MgrundlegendBAGLAA2WTR2-1e)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s8-v10 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2024MgrundlegendBAGLAA2WTR2-1e)
+TEILUNG punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: 23 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+PRÜFWORT „Abitur GK“ → „Abi GK ×7“ (Kataloge, 7 Typen; 10 Originale)
+KOPF Einheit 5: „Körper im Koordinatensystem und Drehungen“; Zeitmarke „None“, Prüfungswort „Abi GK ×7“
+KASTEN Einheit 5: 5 Zeilen
+STRUKTUR 0 Fehler

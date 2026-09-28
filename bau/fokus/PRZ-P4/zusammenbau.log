@@ -1,0 +1,21 @@
+# zusammenbau v0.6: zusammenbau.py prozentrechnung --fokus-pruefung Prozentwert --heft msa --einheiten 3
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG PRZ-P4 – Kürzel PRZ aus _kuerzel.csv (mathe-nachhilfe); Rezept P (Prüfungs-Fokus)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+EINHEIT e3 – Kette „Prozentwert“ mit 10 Prüfungshöhen im Profil msa (--einheiten)
+AUSWAHL prozentrechnung-e3-k1-s1-v1 – prozentrechnung e3 „Prozentwert“: Anlauf, Grundfall
+AUSWAHL prozentrechnung-e3-k1-s2-v1 – prozentrechnung e3 „Prozentwert“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL prozentrechnung-e3-k1-s8-v1 – prozentrechnung e3 „Prozentwert“: Prüfungshöhe (2021-OS-B1c)
+AUSWAHL prozentrechnung-e3-k1-s8-v2 – prozentrechnung e3 „Prozentwert“: Prüfungshöhe (2021-OS-B1c)
+AUSWAHL prozentrechnung-e3-k1-s8-v3 – prozentrechnung e3 „Prozentwert“: Prüfungshöhe (2017-OS-B1b)
+AUSWAHL prozentrechnung-e3-k1-s8-v4 – prozentrechnung e3 „Prozentwert“: Prüfungshöhe (2017-OS-B1b)
+AUSWAHL prozentrechnung-e3-k1-s9-v1 – prozentrechnung e3 „Prozentwert“: Prüfungshöhe (2014-OS-B1a)
+AUSWAHL prozentrechnung-e3-k1-s9-v2 – prozentrechnung e3 „Prozentwert“: Prüfungshöhe (2014-OS-B1a)
+AUSWAHL prozentrechnung-e3-k1-s9-v3 – prozentrechnung e3 „Prozentwert“: Prüfungshöhe (2026-FOR-B1a)
+AUSWAHL prozentrechnung-e3-k1-s9-v4 – prozentrechnung e3 „Prozentwert“: Prüfungshöhe (2026-FOR-B1a)
+AUSWAHL prozentrechnung-e3-k1-s10-v1 – prozentrechnung e3 „Prozentwert“: Prüfungshöhe (2019-OS-K5a)
+AUSWAHL prozentrechnung-e3-k1-s10-v2 – prozentrechnung e3 „Prozentwert“: Prüfungshöhe (2019-OS-K5a)
+PRÜFWORT „P10“ → „P10 ×7“ (Kataloge, 1 Typen; 5 Originale)
+KOPF Einheit 3: „Prozentwert berechnen“; Zeitmarke „ab Kl. 7“, Prüfungswort „P10 ×7“
+KASTEN Einheit 3: 2 Zeilen
+STRUKTUR 0 Fehler

@@ -1,0 +1,35 @@
+# zusammenbau v0.6: zusammenbau.py trigonometrie --fokus-pruefung Seite berechnen --heft msa --einheiten 1
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG TRI-P2 – Kürzel TRI aus _kuerzel.csv (mathe-nachhilfe); Rezept P (Prüfungs-Fokus)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+EINHEIT e1 – Kette „Seite berechnen“ mit 19 Prüfungshöhen im Profil msa (--einheiten)
+AUSWAHL trigonometrie-e1-k3-s0-v1 – trigonometrie e1 „Seite berechnen“: Anlauf, Vorstufe
+AUSWAHL trigonometrie-e1-k3-s1-v3 – trigonometrie e1 „Seite berechnen“: Anlauf, Grundfall
+AUSWAHL trigonometrie-e1-k3-s3-v1 – trigonometrie e1 „Seite berechnen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL trigonometrie-e1-k3-s1-v1 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2017-OS-B1j)
+AUSWAHL trigonometrie-e1-k3-s1-v2 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2019-OS-B1h)
+AUSWAHL trigonometrie-e1-k3-s2-v1 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2018-OS-B1g)
+AUSWAHL trigonometrie-e1-k3-s2-v2 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2018-OS-B1g)
+AUSWAHL trigonometrie-e1-k3-s2-v3 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2018-OS-B1g)
+AUSWAHL trigonometrie-e1-k3-s16-v1 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2021-OS-K3a)
+AUSWAHL trigonometrie-e1-k3-s16-v2 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2021-OS-K3a)
+AUSWAHL trigonometrie-e1-k3-s16-v3 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2021-OS-K3b)
+AUSWAHL trigonometrie-e1-k3-s16-v4 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2021-OS-K3b)
+AUSWAHL trigonometrie-e1-k3-s16-v5 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2017-OS-K4b)
+AUSWAHL trigonometrie-e1-k3-s16-v6 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2017-OS-K4b)
+AUSWAHL trigonometrie-e1-k3-s16-v7 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2022-OS-K5d)
+AUSWAHL trigonometrie-e1-k3-s16-v8 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2022-OS-K5d)
+AUSWAHL trigonometrie-e1-k3-s16-v9 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2020-OS-B1j)
+AUSWAHL trigonometrie-e1-k3-s16-v10 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2020-OS-B1j)
+AUSWAHL trigonometrie-e1-k3-s16-v11 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2025-OS-B1g)
+AUSWAHL trigonometrie-e1-k3-s16-v12 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2025-OS-B1g)
+AUSWAHL trigonometrie-e1-k3-s16-v13 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2020-OS-B1c)
+AUSWAHL trigonometrie-e1-k3-s16-v14 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2020-OS-B1c)
+TEILUNG trigonometrie e1 „Seite berechnen“: 19 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+PRÜFWORT „P10“ → „P10 ×11“ (Kataloge, 3 Typen; 10 Originale)
+KOPF Einheit 1: „Seite berechnen mit Sinus, Kosinus und Tangens“; Zeitmarke „ab Kl. 10 (am Gymnasium ab Kl. 9)“, Prüfungswort „P10 ×11“
+FORM trigonometrie-e1-k3-s16-v9 (Nr. 3): gleichungsraster mit Text → teile
+FORM trigonometrie-e1-k3-s16-v10 (Nr. 3): gleichungsraster mit Text → teile
+WARNUNG Nr. 3: 14 Teilaufgaben, 6 mit Grafik – über dem Halbseitenmaß (2.3 g)
+KASTEN Einheit 1: 5 Zeilen
+STRUKTUR 0 Fehler

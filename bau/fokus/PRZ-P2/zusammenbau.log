@@ -1,0 +1,24 @@
+# zusammenbau v0.6: zusammenbau.py prozentrechnung --fokus-pruefung Veränderung --heft msa --einheiten 5
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG PRZ-P2 – Kürzel PRZ aus _kuerzel.csv (mathe-nachhilfe); Rezept P (Prüfungs-Fokus)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+EINHEIT e5 – Kette „Veränderung“ mit 12 Prüfungshöhen im Profil msa (--einheiten)
+AUSWAHL prozentrechnung-e5-k2-s0-v1 – prozentrechnung e5 „Veränderung“: Anlauf, Vorstufe
+AUSWAHL prozentrechnung-e5-k2-s1-v1 – prozentrechnung e5 „Veränderung“: Anlauf, Grundfall
+AUSWAHL prozentrechnung-e5-k2-s2-v1 – prozentrechnung e5 „Veränderung“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL prozentrechnung-e5-k2-s8-v1 – prozentrechnung e5 „Veränderung“: Prüfungshöhe (2026-FOR-K3c)
+AUSWAHL prozentrechnung-e5-k2-s8-v2 – prozentrechnung e5 „Veränderung“: Prüfungshöhe (2026-FOR-K3c)
+AUSWAHL prozentrechnung-e5-k2-s8-v3 – prozentrechnung e5 „Veränderung“: Prüfungshöhe (2022-OS-K4b)
+AUSWAHL prozentrechnung-e5-k2-s8-v4 – prozentrechnung e5 „Veränderung“: Prüfungshöhe (2022-OS-K4b)
+AUSWAHL prozentrechnung-e5-k2-s8-v5 – prozentrechnung e5 „Veränderung“: Prüfungshöhe (2016-OS-K2c)
+AUSWAHL prozentrechnung-e5-k2-s8-v6 – prozentrechnung e5 „Veränderung“: Prüfungshöhe (2016-OS-K2c)
+AUSWAHL prozentrechnung-e5-k2-s9-v1 – prozentrechnung e5 „Veränderung“: Prüfungshöhe (2024-OS-B1e)
+AUSWAHL prozentrechnung-e5-k2-s9-v2 – prozentrechnung e5 „Veränderung“: Prüfungshöhe (2024-OS-B1e)
+AUSWAHL prozentrechnung-e5-k2-s10-v1 – prozentrechnung e5 „Veränderung“: Prüfungshöhe (2015-OS-K2b)
+AUSWAHL prozentrechnung-e5-k2-s10-v2 – prozentrechnung e5 „Veränderung“: Prüfungshöhe (2015-OS-K2b)
+AUSWAHL prozentrechnung-e5-k2-s11-v1 – prozentrechnung e5 „Veränderung“: Prüfungshöhe (2025-OS-K4b)
+AUSWAHL prozentrechnung-e5-k2-s11-v2 – prozentrechnung e5 „Veränderung“: Prüfungshöhe (2025-OS-K4b)
+PRÜFWORT „P10“ → „P10 ×7“ (Kataloge, 3 Typen; 6 Originale)
+KOPF Einheit 5: „Prozentuale Veränderung“; Zeitmarke „ab Kl. 7, je nach Buch bis Kl. 8“, Prüfungswort „P10 ×7“
+KASTEN Einheit 5: 5 Zeilen
+STRUKTUR 0 Fehler

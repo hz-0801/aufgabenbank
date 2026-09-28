@@ -1,0 +1,243 @@
+{
+ "kennung": "QGL-P1",
+ "datum": "2026-09-28",
+ "eintraege": [
+  "quadratische-gleichungen"
+ ],
+ "titel": "Quadratische Gleichungen · p-q-Formel · Prüfungs-Fokus MSA",
+ "kette": "p-q-Formel",
+ "einheit": 3,
+ "profil": "msa",
+ "pruefwort": "P10 ×7",
+ "kasten": "4 Zeilen",
+ "anlauf": 3,
+ "pruefungshoehe": 14,
+ "originale": [
+  "2017-OS-K5d",
+  "2020-OS-K3e",
+  "2021-OS-K2c",
+  "2022-OS-K3c",
+  "2023-OS-K4c",
+  "2024-OS-K3d",
+  "2025-OS-K5c"
+ ],
+ "jahrgaenge": [
+  "2017",
+  "2020",
+  "2021",
+  "2022",
+  "2023",
+  "2024",
+  "2025"
+ ],
+ "rezept": "P",
+ "rezept_name": "Prüfungs-Fokus",
+ "bestellung": {
+  "fokus_pruefung": "p-q-Formel",
+  "heft": "msa",
+  "einheiten": "3",
+  "aus": null,
+  "ohne_register": false
+ },
+ "bank_commit": "b78e6d9",
+ "zusammenbau": "v0.6",
+ "vorlage": "Version 2026-09-28a",
+ "pfad": "bau/fokus/QGL-P1",
+ "kuerzel_quelle": "_kuerzel.csv (mathe-nachhilfe)",
+ "strukturfehler": 0,
+ "ausgelassen": [],
+ "aufgaben": [
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "a",
+   "id": "quadratische-gleichungen-e3-k3-s0-v1",
+   "datei": "e3_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "b",
+   "id": "quadratische-gleichungen-e3-k3-s1-v1",
+   "datei": "e3_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "c",
+   "id": "quadratische-gleichungen-e3-k3-s2-v1",
+   "datei": "e3_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "a",
+   "id": "quadratische-gleichungen-e3-k3-s13-v1",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2020-OS-K3e",
+   "jahr": 2020,
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "b",
+   "id": "quadratische-gleichungen-e3-k3-s13-v2",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2020-OS-K3e",
+   "jahr": 2020,
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "c",
+   "id": "quadratische-gleichungen-e3-k3-s13-v3",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-K5c",
+   "jahr": 2025,
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "d",
+   "id": "quadratische-gleichungen-e3-k3-s13-v4",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-K5c",
+   "jahr": 2025,
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "e",
+   "id": "quadratische-gleichungen-e3-k3-s13-v5",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2023-OS-K4c",
+   "jahr": 2023,
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "f",
+   "id": "quadratische-gleichungen-e3-k3-s13-v6",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2023-OS-K4c",
+   "jahr": 2023,
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "g",
+   "id": "quadratische-gleichungen-e3-k3-s13-v7",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2021-OS-K2c",
+   "jahr": 2021,
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "h",
+   "id": "quadratische-gleichungen-e3-k3-s13-v8",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2021-OS-K2c",
+   "jahr": 2021,
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "i",
+   "id": "quadratische-gleichungen-e3-k3-s13-v9",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2022-OS-K3c",
+   "jahr": 2022,
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "j",
+   "id": "quadratische-gleichungen-e3-k3-s13-v10",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2022-OS-K3c",
+   "jahr": 2022,
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "k",
+   "id": "quadratische-gleichungen-e3-k3-s13-v11",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2024-OS-K3d",
+   "jahr": 2024,
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "l",
+   "id": "quadratische-gleichungen-e3-k3-s13-v12",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2024-OS-K3d",
+   "jahr": 2024,
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "m",
+   "id": "quadratische-gleichungen-e3-k3-s13-v13",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2017-OS-K5d",
+   "jahr": 2017,
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "n",
+   "id": "quadratische-gleichungen-e3-k3-s13-v14",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2017-OS-K5d",
+   "jahr": 2017,
+   "punkte": "4",
+   "stern": true
+  }
+ ]
+}

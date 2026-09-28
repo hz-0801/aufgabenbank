@@ -1,0 +1,36 @@
+# zusammenbau v0.6: zusammenbau.py punkte-und-strecken-im-koordinatensystem --fokus-pruefung Dreiecke nachweisen --heft abitur-gk --einheiten 3
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG PUN-P2 – Kürzel PUN aus _kuerzel.csv (mathe-nachhilfe); Rezept P (Prüfungs-Fokus)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+EINHEIT e3 – Kette „Dreiecke nachweisen“ mit 25 Prüfungshöhen im Profil abitur-gk (--einheiten)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s0-v1 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Anlauf, Vorstufe
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s1-v1 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2023-bebb-gk-A1.5a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s1-v2 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2023-bebb-gk-A1.5a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s1-v3 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2023-bebb-gk-A1.5a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s1-v4 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2023-bebb-gk-A1.5a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s1-v5 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2023-bebb-gk-A1.5a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s2-v1 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2023-bebb-gk-B3a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s2-v2 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2020-be-gk-B3.2a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s2-v3 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2023-bebb-gk-B3a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s3-v1 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2022-bebb-gk-A1.5a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s3-v2 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2022MgrundlegendAAGLAA212-a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s3-v3 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2022-bebb-gk-A1.5a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s4-v2 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2018MgrundlegendBAGLAA2WTR1-1a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s5-v1 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2023MgrundlegendBAGLAA2WTR2-1a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s5-v2 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2023MgrundlegendBAGLAA2WTR2-1a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s5-v3 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2023MgrundlegendBAGLAA2WTR2-1a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s6-v1 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2024MgrundlegendBAGLAA2WTR2-1b)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s6-v2 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2024MgrundlegendBAGLAA2WTR2-1b)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s6-v3 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2024MgrundlegendBAGLAA2WTR2-1b)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s7-v1 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2019MgrundlegendBAnalysisWTR2-1j)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s7-v2 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2019MgrundlegendBAnalysisWTR2-1j)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s7-v3 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2019MgrundlegendBAnalysisWTR2-1j)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s10-v1 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2023-bebb-gk-A1.5b)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s10-v2 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2023-bebb-gk-A1.5b)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s10-v3 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2024-bebb-gk-A1.8a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s10-v4 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2024-bebb-gk-A1.8a)
+TEILUNG punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: 25 Prüfungsaufgaben in 3 Hauptnummern an Sprossengrenzen (2.3 g)
+PRÜFWORT „Abitur GK“ → „Abi GK ×7“ (Kataloge, 9 Typen; 11 Originale)
+KOPF Einheit 3: „Dreiecke nachweisen“; Zeitmarke „None“, Prüfungswort „Abi GK ×7“
+KASTEN Einheit 3: 6 Zeilen (über fünf)
+STRUKTUR 0 Fehler

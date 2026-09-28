@@ -1,0 +1,191 @@
+{
+ "kennung": "PRZ-P3",
+ "datum": "2026-09-28",
+ "eintraege": [
+  "prozentrechnung"
+ ],
+ "titel": "Prozentrechnung · Prozentsatz · Prüfungs-Fokus MSA",
+ "kette": "Prozentsatz",
+ "einheit": 2,
+ "profil": "msa",
+ "pruefwort": "P10 ×5",
+ "kasten": "2 Zeilen",
+ "anlauf": 3,
+ "pruefungshoehe": 10,
+ "originale": [
+  "2014-OS-B1e",
+  "2015-OS-K7c",
+  "2018-OS-K7a",
+  "2023-OS-K6a",
+  "2025-OS-K6b"
+ ],
+ "jahrgaenge": [
+  "2014",
+  "2015",
+  "2018",
+  "2023",
+  "2025"
+ ],
+ "rezept": "P",
+ "rezept_name": "Prüfungs-Fokus",
+ "bestellung": {
+  "fokus_pruefung": "Prozentsatz",
+  "heft": "msa",
+  "einheiten": "2",
+  "aus": null,
+  "ohne_register": false
+ },
+ "bank_commit": "b78e6d9",
+ "zusammenbau": "v0.6",
+ "vorlage": "Version 2026-09-28a",
+ "pfad": "bau/fokus/PRZ-P3",
+ "kuerzel_quelle": "_kuerzel.csv (mathe-nachhilfe)",
+ "strukturfehler": 0,
+ "ausgelassen": [],
+ "aufgaben": [
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "a",
+   "id": "prozentrechnung-e2-k3-s0-v1",
+   "datei": "e2_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "b",
+   "id": "prozentrechnung-e2-k3-s1-v1",
+   "datei": "e2_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "c",
+   "id": "prozentrechnung-e2-k3-s2-v1",
+   "datei": "e2_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "a",
+   "id": "prozentrechnung-e2-k3-s7-v1",
+   "datei": "e2_a.tex",
+   "lage": "pruefung",
+   "original": "2018-OS-K7a",
+   "jahr": 2018,
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "b",
+   "id": "prozentrechnung-e2-k3-s7-v2",
+   "datei": "e2_a.tex",
+   "lage": "pruefung",
+   "original": "2018-OS-K7a",
+   "jahr": 2018,
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "c",
+   "id": "prozentrechnung-e2-k3-s7-v3",
+   "datei": "e2_a.tex",
+   "lage": "pruefung",
+   "original": "2023-OS-K6a",
+   "jahr": 2023,
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "d",
+   "id": "prozentrechnung-e2-k3-s7-v4",
+   "datei": "e2_a.tex",
+   "lage": "pruefung",
+   "original": "2023-OS-K6a",
+   "jahr": 2023,
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "e",
+   "id": "prozentrechnung-e2-k3-s7-v5",
+   "datei": "e2_a.tex",
+   "lage": "pruefung",
+   "original": "2015-OS-K7c",
+   "jahr": 2015,
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "f",
+   "id": "prozentrechnung-e2-k3-s7-v6",
+   "datei": "e2_a.tex",
+   "lage": "pruefung",
+   "original": "2015-OS-K7c",
+   "jahr": 2015,
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "g",
+   "id": "prozentrechnung-e2-k3-s8-v1",
+   "datei": "e2_a.tex",
+   "lage": "pruefung",
+   "original": "2014-OS-B1e",
+   "jahr": 2014,
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "h",
+   "id": "prozentrechnung-e2-k3-s8-v2",
+   "datei": "e2_a.tex",
+   "lage": "pruefung",
+   "original": "2014-OS-B1e",
+   "jahr": 2014,
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "i",
+   "id": "prozentrechnung-e2-k3-s9-v1",
+   "datei": "e2_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-K6b",
+   "jahr": 2025,
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "j",
+   "id": "prozentrechnung-e2-k3-s9-v2",
+   "datei": "e2_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-K6b",
+   "jahr": 2025,
+   "punkte": "3",
+   "stern": false
+  }
+ ]
+}

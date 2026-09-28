@@ -1,0 +1,28 @@
+# zusammenbau v0.6: zusammenbau.py potenzen-wurzeln --fokus-pruefung Quadratwurzeln --heft msa --einheiten 3
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG WUR-P1 – Kürzel WUR aus _kuerzel.csv (mathe-nachhilfe); Rezept P (Prüfungs-Fokus)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+EINHEIT e3 – Kette „Quadratwurzeln“ mit 15 Prüfungshöhen im Profil msa (--einheiten)
+AUSWAHL potenzen-wurzeln-e3-k2-s0-v1 – potenzen-wurzeln e3 „Quadratwurzeln“: Anlauf, Vorstufe
+AUSWAHL potenzen-wurzeln-e3-k2-s1-v1 – potenzen-wurzeln e3 „Quadratwurzeln“: Anlauf, Grundfall
+AUSWAHL potenzen-wurzeln-e3-k2-s7-v1 – potenzen-wurzeln e3 „Quadratwurzeln“: Anlauf, Sprosse – Fallstrick im Merkmal („negative Zahl im Quadrat unter der Wurzel: erst da“)
+AUSWAHL potenzen-wurzeln-e3-k2-s10-v1 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2020-OS-B1d)
+AUSWAHL potenzen-wurzeln-e3-k2-s10-v2 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2020-OS-B1d)
+AUSWAHL potenzen-wurzeln-e3-k2-s10-v3 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2020-OS-B1d)
+AUSWAHL potenzen-wurzeln-e3-k2-s13-v1 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2015-OS-B1j, Stern)
+AUSWAHL potenzen-wurzeln-e3-k2-s13-v2 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2015-OS-B1j, Stern)
+AUSWAHL potenzen-wurzeln-e3-k2-s13-v3 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2015-OS-B1c)
+AUSWAHL potenzen-wurzeln-e3-k2-s13-v4 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2015-OS-B1c)
+AUSWAHL potenzen-wurzeln-e3-k2-s13-v5 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2014-OS-B1h)
+AUSWAHL potenzen-wurzeln-e3-k2-s13-v6 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2014-OS-B1h)
+AUSWAHL potenzen-wurzeln-e3-k2-s13-v7 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2024-OS-K6a)
+AUSWAHL potenzen-wurzeln-e3-k2-s13-v8 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2024-OS-K6a)
+AUSWAHL potenzen-wurzeln-e3-k2-s13-v9 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2022-OS-K2d, Stern)
+AUSWAHL potenzen-wurzeln-e3-k2-s13-v10 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2022-OS-K2d, Stern)
+AUSWAHL potenzen-wurzeln-e3-k2-s13-v11 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2025-OS-K5c, Stern)
+AUSWAHL potenzen-wurzeln-e3-k2-s13-v12 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2025-OS-K5c, Stern)
+TEILUNG potenzen-wurzeln e3 „Quadratwurzeln“: 15 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+PRÜFWORT „P10“ → „P10 ×12“ (Kataloge, 6 Typen; 7 Originale)
+KOPF Einheit 3: „Quadratwurzeln“; Zeitmarke „ab Kl. 7, je nach Buch bis Kl. 9 (am Gymnasium ab Kl. 8)“, Prüfungswort „P10 ×12“
+KASTEN Einheit 3: 4 Zeilen
+STRUKTUR 0 Fehler

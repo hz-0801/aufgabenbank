@@ -1,0 +1,4 @@
+# DEZ-P2 (DEZ-P2), Versuch 1: 3 Fehlerstellen (je Datei und Zeile die erste Meldung)
+DEZ-P2.tex → e5_a.tex:23: Missing $ inserted.
+DEZ-P2.tex → e5_a.tex:24: LaTeX Error: Command \item invalid in math mode.
+DEZ-P2.tex → e5_a.tex:25: LaTeX Error: Command \item invalid in math mode.

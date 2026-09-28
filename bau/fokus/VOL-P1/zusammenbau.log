@@ -1,0 +1,25 @@
+# zusammenbau v0.6: zusammenbau.py flaecheninhalt-und-volumen-im-raum --fokus-pruefung Zusammengesetzt und Verhältnisse --heft abitur-gk --einheiten 4
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG VOL-P1 – Kürzel VOL aus _kuerzel.csv (mathe-nachhilfe); Rezept P (Prüfungs-Fokus)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+EINHEIT e4 – Kette „Zusammengesetzt und Verhältnisse“ mit 12 Prüfungshöhen im Profil abitur-gk (--einheiten)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s0-v1 – flaecheninhalt-und-volumen-im-raum e4 „Zusammengesetzt und Verhältnisse“: Anlauf, Vorstufe
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s1-v1 – flaecheninhalt-und-volumen-im-raum e4 „Zusammengesetzt und Verhältnisse“: Anlauf, Grundfall
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s2-v2 – flaecheninhalt-und-volumen-im-raum e4 „Zusammengesetzt und Verhältnisse“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s1-v5 – flaecheninhalt-und-volumen-im-raum e4 „Zusammengesetzt und Verhältnisse“: Prüfungshöhe (2018MgrundlegendBAGLAA2WTR1-1d)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s3-v1 – flaecheninhalt-und-volumen-im-raum e4 „Zusammengesetzt und Verhältnisse“: Prüfungshöhe (2022-bebb-gk-B3h)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s3-v2 – flaecheninhalt-und-volumen-im-raum e4 „Zusammengesetzt und Verhältnisse“: Prüfungshöhe (Kennung im Text)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s4-v1 – flaecheninhalt-und-volumen-im-raum e4 „Zusammengesetzt und Verhältnisse“: Prüfungshöhe (2021-be-gk-B3i)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s5-v1 – flaecheninhalt-und-volumen-im-raum e4 „Zusammengesetzt und Verhältnisse“: Prüfungshöhe (2018MgrundlegendBAnalysisWTR-1c)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s6-v1 – flaecheninhalt-und-volumen-im-raum e4 „Zusammengesetzt und Verhältnisse“: Prüfungshöhe (2022MgrundlegendBAnalysisWTR1-2b)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s7-v3 – flaecheninhalt-und-volumen-im-raum e4 „Zusammengesetzt und Verhältnisse“: Prüfungshöhe (2023MgrundlegendAAGLAA22-b)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s7-v4 – flaecheninhalt-und-volumen-im-raum e4 „Zusammengesetzt und Verhältnisse“: Prüfungshöhe (2023MgrundlegendAAGLAA22-b)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s7-v5 – flaecheninhalt-und-volumen-im-raum e4 „Zusammengesetzt und Verhältnisse“: Prüfungshöhe (2026MgrundlegendBAGLAA2MMS2-1e)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s7-v6 – flaecheninhalt-und-volumen-im-raum e4 „Zusammengesetzt und Verhältnisse“: Prüfungshöhe (2026MgrundlegendBAGLAA2MMS2-1e)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s7-v7 – flaecheninhalt-und-volumen-im-raum e4 „Zusammengesetzt und Verhältnisse“: Prüfungshöhe (2023MgrundlegendBAGLAA2WTR2-1f)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s7-v8 – flaecheninhalt-und-volumen-im-raum e4 „Zusammengesetzt und Verhältnisse“: Prüfungshöhe (2023MgrundlegendBAGLAA2WTR2-1f)
+TEILUNG flaecheninhalt-und-volumen-im-raum e4 „Zusammengesetzt und Verhältnisse“: 12 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+PRÜFWORT „Abitur GK“ → „Abi GK ×5“ (Kataloge, 8 Typen; 8 Originale)
+KOPF Einheit 4: „Einheit 4“; Zeitmarke „None“, Prüfungswort „Abi GK ×5“
+KASTEN Einheit 4: 6 Zeilen (über fünf)
+STRUKTUR 0 Fehler

@@ -1,0 +1,38 @@
+# zusammenbau v0.6: zusammenbau.py punkte-und-strecken-im-koordinatensystem --fokus-pruefung Vierecke nachweisen --heft abitur-gk --einheiten 4
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG PUN-P1 – Kürzel PUN aus _kuerzel.csv (mathe-nachhilfe); Rezept P (Prüfungs-Fokus)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+EINHEIT e4 – Kette „Vierecke nachweisen“ mit 27 Prüfungshöhen im Profil abitur-gk (--einheiten)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s0-v1 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Anlauf, Vorstufe
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s2-v1 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2023MgrundlegendBAGLAA1WTR-1a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s2-v3 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2025MgrundlegendBAGLAA1WTR-2a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s3-v1 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2022-bebb-gk-B3d)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s3-v2 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2022MgrundlegendBAGLAA2WTR2-1b)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s3-v3 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2022-bebb-gk-B3d)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s4-v1 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2022MgrundlegendBAGLAA2WTR1-1a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s4-v2 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2020MgrundlegendBAGLAA1WTR-2a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s4-v3 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2020MgrundlegendBAGLAA1WTR-2a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s5-v1 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2018-be-gk-B2.2b)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s5-v2 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2019-be-gk-B3.2b)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s6-v1 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2026-bb-gk-B3a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s6-v2 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2026MgrundlegendBAGLAA2WTR2-1a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s6-v3 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2026-bb-gk-B3a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s7-v1 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2023MgrundlegendBAGLAA2WTR1-1a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s7-v2 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2023MgrundlegendBAGLAA2WTR1-1a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s7-v3 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2023MgrundlegendBAGLAA2WTR1-1a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s8-v1 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2021MgrundlegendBAGLAA2WTR2-1a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s8-v2 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2021MgrundlegendBAGLAA2WTR2-1a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s8-v3 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2021MgrundlegendBAGLAA2WTR2-1a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s9-v1 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2022MgrundlegendAAGLAA22)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s9-v2 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2022MgrundlegendAAGLAA22)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s10-v3 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2025-bebb-gk-B3d)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s10-v4 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2025-bebb-gk-B3d)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s10-v5 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2020MgrundlegendBAGLAA1WTR-2c)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s10-v6 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2020MgrundlegendBAGLAA1WTR-2c)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s10-v7 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (Kennung im Text)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s10-v8 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (Kennung im Text)
+TEILUNG punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: 27 Prüfungsaufgaben in 3 Hauptnummern an Sprossengrenzen (2.3 g)
+PRÜFWORT „Abitur GK“ → „Abi GK ×9“ (Kataloge, 12 Typen; 15 Originale)
+KOPF Einheit 4: „Vierecke nachweisen“; Zeitmarke „None“, Prüfungswort „Abi GK ×9“
+KASTEN Einheit 4: 5 Zeilen
+STRUKTUR 0 Fehler

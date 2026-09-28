@@ -1,0 +1,26 @@
+# zusammenbau v0.6: zusammenbau.py ableitung-und-aenderungsrate --fokus-pruefung Die Rate als Funktion --heft abitur-gk --einheiten 4
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG AEN-P1 – Kürzel AEN aus _kuerzel.csv (mathe-nachhilfe); Rezept P (Prüfungs-Fokus)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+EINHEIT e4 – Kette „Die Rate als Funktion“ mit 13 Prüfungshöhen im Profil abitur-gk (--einheiten)
+AUSWAHL ableitung-und-aenderungsrate-e4-k1-s0-v1 – ableitung-und-aenderungsrate e4 „Die Rate als Funktion“: Anlauf, Vorstufe
+AUSWAHL ableitung-und-aenderungsrate-e4-k1-s1-v1 – ableitung-und-aenderungsrate e4 „Die Rate als Funktion“: Anlauf, Grundfall
+AUSWAHL ableitung-und-aenderungsrate-e4-k1-s4-v3 – ableitung-und-aenderungsrate e4 „Die Rate als Funktion“: Anlauf, Sprosse – Fallstrick im Merkmal („die gegebene Funktion ist der Bestand: f'' null se“)
+AUSWAHL ableitung-und-aenderungsrate-e4-k1-s3-v1 – ableitung-und-aenderungsrate e4 „Die Rate als Funktion“: Prüfungshöhe (2019MgrundlegendAAnalysis12-b)
+AUSWAHL ableitung-und-aenderungsrate-e4-k1-s3-v2 – ableitung-und-aenderungsrate e4 „Die Rate als Funktion“: Prüfungshöhe (2018-be-gk-B1.2f)
+AUSWAHL ableitung-und-aenderungsrate-e4-k1-s4-v1 – ableitung-und-aenderungsrate e4 „Die Rate als Funktion“: Prüfungshöhe (2019-be-gk-B2.1b)
+AUSWAHL ableitung-und-aenderungsrate-e4-k1-s4-v2 – ableitung-und-aenderungsrate e4 „Die Rate als Funktion“: Prüfungshöhe (2026MgrundlegendBAnalysisMMS1-1c)
+AUSWAHL ableitung-und-aenderungsrate-e4-k1-s7-v1 – ableitung-und-aenderungsrate e4 „Die Rate als Funktion“: Prüfungshöhe (2022-bebb-gk-B2.1m)
+AUSWAHL ableitung-und-aenderungsrate-e4-k1-s7-v2 – ableitung-und-aenderungsrate e4 „Die Rate als Funktion“: Prüfungshöhe (2022MgrundlegendBAnalysisWTR2-2d)
+AUSWAHL ableitung-und-aenderungsrate-e4-k1-s9-v1 – ableitung-und-aenderungsrate e4 „Die Rate als Funktion“: Prüfungshöhe (Kennung im Text)
+AUSWAHL ableitung-und-aenderungsrate-e4-k1-s9-v2 – ableitung-und-aenderungsrate e4 „Die Rate als Funktion“: Prüfungshöhe (Kennung im Text)
+AUSWAHL ableitung-und-aenderungsrate-e4-k1-s9-v3 – ableitung-und-aenderungsrate e4 „Die Rate als Funktion“: Prüfungshöhe (Kennung im Text)
+AUSWAHL ableitung-und-aenderungsrate-e4-k1-s9-v4 – ableitung-und-aenderungsrate e4 „Die Rate als Funktion“: Prüfungshöhe (2026-bb-gk-B2.2i)
+AUSWAHL ableitung-und-aenderungsrate-e4-k1-s9-v5 – ableitung-und-aenderungsrate e4 „Die Rate als Funktion“: Prüfungshöhe (2026-bb-gk-B2.2i)
+AUSWAHL ableitung-und-aenderungsrate-e4-k1-s9-v6 – ableitung-und-aenderungsrate e4 „Die Rate als Funktion“: Prüfungshöhe (2026MgrundlegendBAnalysisWTR2-2c)
+AUSWAHL ableitung-und-aenderungsrate-e4-k1-s9-v7 – ableitung-und-aenderungsrate e4 „Die Rate als Funktion“: Prüfungshöhe (2026MgrundlegendBAnalysisWTR2-2c)
+TEILUNG ableitung-und-aenderungsrate e4 „Die Rate als Funktion“: 13 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+PRÜFWORT „Abitur GK“ → „Abi GK ×5“ (Kataloge, 5 Typen; 8 Originale)
+KOPF Einheit 4: „Die Rate als Funktion“; Zeitmarke „None“, Prüfungswort „Abi GK ×5“
+KASTEN Einheit 4: 8 Zeilen (über fünf)
+STRUKTUR 0 Fehler

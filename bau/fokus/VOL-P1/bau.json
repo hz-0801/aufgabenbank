@@ -1,0 +1,218 @@
+{
+ "kennung": "VOL-P1",
+ "datum": "2026-09-28",
+ "eintraege": [
+  "flaecheninhalt-und-volumen-im-raum"
+ ],
+ "titel": "Flächeninhalt und Volumen im Raum · Zusammengesetzt und Verhältnisse · Prüfungs-Fokus Abitur GK",
+ "kette": "Zusammengesetzt und Verhältnisse",
+ "einheit": 4,
+ "profil": "abitur-gk",
+ "pruefwort": "Abi GK ×5",
+ "kasten": "6 Zeilen (über fünf)",
+ "anlauf": 3,
+ "pruefungshoehe": 12,
+ "originale": [
+  "2018MgrundlegendBAGLAA2WTR1-1d",
+  "2018MgrundlegendBAnalysisWTR-1c",
+  "2021-be-gk-B3i",
+  "2022-bebb-gk-B3h",
+  "2022MgrundlegendBAnalysisWTR1-2b",
+  "2023MgrundlegendAAGLAA22-b",
+  "2023MgrundlegendBAGLAA2WTR2-1f",
+  "2026MgrundlegendBAGLAA2MMS2-1e"
+ ],
+ "jahrgaenge": [
+  "2018",
+  "2021",
+  "2022",
+  "2023",
+  "2026"
+ ],
+ "rezept": "P",
+ "rezept_name": "Prüfungs-Fokus",
+ "bestellung": {
+  "fokus_pruefung": "Zusammengesetzt und Verhältnisse",
+  "heft": "abitur-gk",
+  "einheiten": "4",
+  "aus": null,
+  "ohne_register": false
+ },
+ "bank_commit": "b78e6d9",
+ "zusammenbau": "v0.6",
+ "vorlage": "Version 2026-09-28a",
+ "pfad": "bau/fokus/VOL-P1",
+ "kuerzel_quelle": "_kuerzel.csv (mathe-nachhilfe)",
+ "strukturfehler": 0,
+ "ausgelassen": [],
+ "aufgaben": [
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "a",
+   "id": "flaecheninhalt-und-volumen-im-raum-e4-k1-s0-v1",
+   "datei": "e4_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "b",
+   "id": "flaecheninhalt-und-volumen-im-raum-e4-k1-s1-v1",
+   "datei": "e4_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "c",
+   "id": "flaecheninhalt-und-volumen-im-raum-e4-k1-s2-v2",
+   "datei": "e4_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "a",
+   "id": "flaecheninhalt-und-volumen-im-raum-e4-k1-s1-v5",
+   "datei": "e4_a.tex",
+   "lage": "pruefung",
+   "original": "2018MgrundlegendBAGLAA2WTR1-1d",
+   "jahr": 2018,
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "b",
+   "id": "flaecheninhalt-und-volumen-im-raum-e4-k1-s3-v1",
+   "datei": "e4_a.tex",
+   "lage": "pruefung",
+   "original": "2022-bebb-gk-B3h",
+   "jahr": 2022,
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "c",
+   "id": "flaecheninhalt-und-volumen-im-raum-e4-k1-s3-v2",
+   "datei": "e4_a.tex",
+   "lage": "pruefung",
+   "original": null,
+   "jahr": null,
+   "punkte": null,
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "d",
+   "id": "flaecheninhalt-und-volumen-im-raum-e4-k1-s4-v1",
+   "datei": "e4_a.tex",
+   "lage": "pruefung",
+   "original": "2021-be-gk-B3i",
+   "jahr": 2021,
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "e",
+   "id": "flaecheninhalt-und-volumen-im-raum-e4-k1-s5-v1",
+   "datei": "e4_a.tex",
+   "lage": "pruefung",
+   "original": "2018MgrundlegendBAnalysisWTR-1c",
+   "jahr": 2018,
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "f",
+   "id": "flaecheninhalt-und-volumen-im-raum-e4-k1-s6-v1",
+   "datei": "e4_a.tex",
+   "lage": "pruefung",
+   "original": "2022MgrundlegendBAnalysisWTR1-2b",
+   "jahr": 2022,
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "a",
+   "id": "flaecheninhalt-und-volumen-im-raum-e4-k1-s7-v3",
+   "datei": "e4_a.tex",
+   "lage": "pruefung",
+   "original": "2023MgrundlegendAAGLAA22-b",
+   "jahr": 2023,
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "b",
+   "id": "flaecheninhalt-und-volumen-im-raum-e4-k1-s7-v4",
+   "datei": "e4_a.tex",
+   "lage": "pruefung",
+   "original": "2023MgrundlegendAAGLAA22-b",
+   "jahr": 2023,
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "c",
+   "id": "flaecheninhalt-und-volumen-im-raum-e4-k1-s7-v5",
+   "datei": "e4_a.tex",
+   "lage": "pruefung",
+   "original": "2026MgrundlegendBAGLAA2MMS2-1e",
+   "jahr": 2026,
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "d",
+   "id": "flaecheninhalt-und-volumen-im-raum-e4-k1-s7-v6",
+   "datei": "e4_a.tex",
+   "lage": "pruefung",
+   "original": "2026MgrundlegendBAGLAA2MMS2-1e",
+   "jahr": 2026,
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "e",
+   "id": "flaecheninhalt-und-volumen-im-raum-e4-k1-s7-v7",
+   "datei": "e4_a.tex",
+   "lage": "pruefung",
+   "original": "2023MgrundlegendBAGLAA2WTR2-1f",
+   "jahr": 2023,
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "f",
+   "id": "flaecheninhalt-und-volumen-im-raum-e4-k1-s7-v8",
+   "datei": "e4_a.tex",
+   "lage": "pruefung",
+   "original": "2023MgrundlegendBAGLAA2WTR2-1f",
+   "jahr": 2023,
+   "punkte": "4",
+   "stern": false
+  }
+ ]
+}

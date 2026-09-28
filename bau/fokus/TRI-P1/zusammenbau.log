@@ -1,0 +1,27 @@
+# zusammenbau v0.6: zusammenbau.py trigonometrie --fokus-pruefung Sinussatz --heft msa --einheiten 4
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG TRI-P1 – Kürzel TRI aus _kuerzel.csv (mathe-nachhilfe); Rezept P (Prüfungs-Fokus)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+EINHEIT e4 – Kette „Sinussatz“ mit 14 Prüfungshöhen im Profil msa (--einheiten)
+AUSWAHL trigonometrie-e4-k1-s0-v1 – trigonometrie e4 „Sinussatz“: Anlauf, Vorstufe
+AUSWAHL trigonometrie-e4-k1-s1-v1 – trigonometrie e4 „Sinussatz“: Anlauf, Grundfall
+AUSWAHL trigonometrie-e4-k1-s2-v1 – trigonometrie e4 „Sinussatz“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL trigonometrie-e4-k1-s4-v1 – trigonometrie e4 „Sinussatz“: Prüfungshöhe (2015-OS-K5c, Stern)
+AUSWAHL trigonometrie-e4-k1-s10-v1 – trigonometrie e4 „Sinussatz“: Prüfungshöhe (2014-OS-K2b, Stern)
+AUSWAHL trigonometrie-e4-k1-s16-v1 – trigonometrie e4 „Sinussatz“: Prüfungshöhe (2024-OS-K6d, Stern)
+AUSWAHL trigonometrie-e4-k1-s16-v2 – trigonometrie e4 „Sinussatz“: Prüfungshöhe (2024-OS-K6d, Stern)
+AUSWAHL trigonometrie-e4-k1-s16-v3 – trigonometrie e4 „Sinussatz“: Prüfungshöhe (2025-OS-K4c, Stern)
+AUSWAHL trigonometrie-e4-k1-s16-v4 – trigonometrie e4 „Sinussatz“: Prüfungshöhe (2025-OS-K4c, Stern)
+AUSWAHL trigonometrie-e4-k1-s16-v5 – trigonometrie e4 „Sinussatz“: Prüfungshöhe (2018-OS-K4c, Stern)
+AUSWAHL trigonometrie-e4-k1-s16-v6 – trigonometrie e4 „Sinussatz“: Prüfungshöhe (2018-OS-K4c, Stern)
+AUSWAHL trigonometrie-e4-k1-s16-v7 – trigonometrie e4 „Sinussatz“: Prüfungshöhe (2019-OS-K3c, Stern)
+AUSWAHL trigonometrie-e4-k1-s16-v8 – trigonometrie e4 „Sinussatz“: Prüfungshöhe (2019-OS-K3c, Stern)
+AUSWAHL trigonometrie-e4-k1-s16-v9 – trigonometrie e4 „Sinussatz“: Prüfungshöhe (2020-OS-K7c, Stern)
+AUSWAHL trigonometrie-e4-k1-s16-v10 – trigonometrie e4 „Sinussatz“: Prüfungshöhe (2020-OS-K7c, Stern)
+AUSWAHL trigonometrie-e4-k1-s16-v11 – trigonometrie e4 „Sinussatz“: Prüfungshöhe (2021-OS-K3c, Stern)
+AUSWAHL trigonometrie-e4-k1-s16-v12 – trigonometrie e4 „Sinussatz“: Prüfungshöhe (2021-OS-K3c, Stern)
+TEILUNG trigonometrie e4 „Sinussatz“: 14 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+PRÜFWORT „P10“ → „P10 ×9“ (Kataloge, 1 Typen; 8 Originale)
+KOPF Einheit 4: „Sinussatz“; Zeitmarke „ab Kl. 10 (am Gymnasium ab Kl. 9)“, Prüfungswort „P10 ×9“
+KASTEN Einheit 4: 4 Zeilen
+STRUKTUR 0 Fehler

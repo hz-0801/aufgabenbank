@@ -1,0 +1,25 @@
+# zusammenbau v0.6: zusammenbau.py extremalprobleme --fokus-pruefung Maximum bestimmen --heft abitur-gk --einheiten 3
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG EXT-P1 – Kürzel EXT aus _kuerzel.csv (mathe-nachhilfe); Rezept P (Prüfungs-Fokus)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+EINHEIT e3 – Kette „Maximum bestimmen“ mit 12 Prüfungshöhen im Profil abitur-gk (--einheiten)
+AUSWAHL extremalprobleme-e3-k1-s0-v1 – extremalprobleme e3 „Maximum bestimmen“: Anlauf, Vorstufe
+AUSWAHL extremalprobleme-e3-k1-s1-v1 – extremalprobleme e3 „Maximum bestimmen“: Anlauf, Grundfall
+AUSWAHL extremalprobleme-e3-k1-s2-v1 – extremalprobleme e3 „Maximum bestimmen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL extremalprobleme-e3-k1-s4-v1 – extremalprobleme e3 „Maximum bestimmen“: Prüfungshöhe (2022-bebb-gk-B2.1h)
+AUSWAHL extremalprobleme-e3-k1-s4-v2 – extremalprobleme e3 „Maximum bestimmen“: Prüfungshöhe (2022-bebb-gk-B2.1h)
+AUSWAHL extremalprobleme-e3-k1-s4-v3 – extremalprobleme e3 „Maximum bestimmen“: Prüfungshöhe (2022-bebb-gk-B2.1h)
+AUSWAHL extremalprobleme-e3-k1-s5-v1 – extremalprobleme e3 „Maximum bestimmen“: Prüfungshöhe (2018-be-gk-B1.1g)
+AUSWAHL extremalprobleme-e3-k1-s5-v2 – extremalprobleme e3 „Maximum bestimmen“: Prüfungshöhe (2021-be-gk-B2.2i)
+AUSWAHL extremalprobleme-e3-k1-s5-v3 – extremalprobleme e3 „Maximum bestimmen“: Prüfungshöhe (2024-bebb-gk-B2.2g)
+AUSWAHL extremalprobleme-e3-k1-s6-v1 – extremalprobleme e3 „Maximum bestimmen“: Prüfungshöhe (2019MgrundlegendBAnalysisWTR2-1i)
+AUSWAHL extremalprobleme-e3-k1-s6-v2 – extremalprobleme e3 „Maximum bestimmen“: Prüfungshöhe (2019MgrundlegendBAnalysisWTR2-1i)
+AUSWAHL extremalprobleme-e3-k1-s6-v3 – extremalprobleme e3 „Maximum bestimmen“: Prüfungshöhe (2019MgrundlegendBAnalysisWTR2-1i)
+AUSWAHL extremalprobleme-e3-k1-s7-v1 – extremalprobleme e3 „Maximum bestimmen“: Prüfungshöhe (2021-be-gk-A1.3b)
+AUSWAHL extremalprobleme-e3-k1-s7-v2 – extremalprobleme e3 „Maximum bestimmen“: Prüfungshöhe (2021-be-gk-A1.3b)
+AUSWAHL extremalprobleme-e3-k1-s7-v3 – extremalprobleme e3 „Maximum bestimmen“: Prüfungshöhe (2021-be-gk-A1.3b)
+PRÜFWORT „Abitur GK“ → „Abi GK ×7“ (Kataloge, 4 Typen; 6 Originale)
+KOPF Einheit 3: „Maximum bestimmen und deuten“; Zeitmarke „None“, Prüfungswort „Abi GK ×7“
+FORM extremalprobleme-e3-k1-s1-v1 (Nr. 1): gleichungsraster mit Text → teile
+KASTEN Einheit 3: 5 Zeilen
+STRUKTUR 0 Fehler

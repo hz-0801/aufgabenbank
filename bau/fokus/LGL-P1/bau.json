@@ -1,0 +1,157 @@
+{
+ "kennung": "LGL-P1",
+ "datum": "2026-09-28",
+ "eintraege": [
+  "lineare-gleichungen"
+ ],
+ "titel": "Lineare Gleichungen · Aufstellen · Prüfungs-Fokus MSA",
+ "kette": "Aufstellen",
+ "einheit": 4,
+ "profil": "msa",
+ "pruefwort": "P10 ×7",
+ "kasten": "3 Zeilen",
+ "anlauf": 2,
+ "pruefungshoehe": 8,
+ "originale": [
+  "2016-OS-B1b",
+  "2018-OS-K3b",
+  "2020-OS-K2e",
+  "2021-OS-B1e"
+ ],
+ "jahrgaenge": [
+  "2016",
+  "2018",
+  "2020",
+  "2021"
+ ],
+ "rezept": "P",
+ "rezept_name": "Prüfungs-Fokus",
+ "bestellung": {
+  "fokus_pruefung": "Aufstellen",
+  "heft": "msa",
+  "einheiten": "4",
+  "aus": null,
+  "ohne_register": false
+ },
+ "bank_commit": "b78e6d9",
+ "zusammenbau": "v0.6",
+ "vorlage": "Version 2026-09-28a",
+ "pfad": "bau/fokus/LGL-P1",
+ "kuerzel_quelle": "_kuerzel.csv (mathe-nachhilfe)",
+ "strukturfehler": 0,
+ "ausgelassen": [],
+ "aufgaben": [
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "a",
+   "id": "lineare-gleichungen-e4-k1-s1-v1",
+   "datei": "e4_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "b",
+   "id": "lineare-gleichungen-e4-k1-s2-v1",
+   "datei": "e4_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "a",
+   "id": "lineare-gleichungen-e4-k1-s6-v1",
+   "datei": "e4_a.tex",
+   "lage": "pruefung",
+   "original": "2020-OS-K2e",
+   "jahr": 2020,
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "b",
+   "id": "lineare-gleichungen-e4-k1-s6-v2",
+   "datei": "e4_a.tex",
+   "lage": "pruefung",
+   "original": "2020-OS-K2e",
+   "jahr": 2020,
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "c",
+   "id": "lineare-gleichungen-e4-k1-s6-v3",
+   "datei": "e4_a.tex",
+   "lage": "pruefung",
+   "original": "2018-OS-K3b",
+   "jahr": 2018,
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "d",
+   "id": "lineare-gleichungen-e4-k1-s6-v4",
+   "datei": "e4_a.tex",
+   "lage": "pruefung",
+   "original": "2018-OS-K3b",
+   "jahr": 2018,
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "e",
+   "id": "lineare-gleichungen-e4-k1-s6-v5",
+   "datei": "e4_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-B1b",
+   "jahr": 2016,
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "f",
+   "id": "lineare-gleichungen-e4-k1-s6-v6",
+   "datei": "e4_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-B1b",
+   "jahr": 2016,
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "g",
+   "id": "lineare-gleichungen-e4-k1-s6-v7",
+   "datei": "e4_a.tex",
+   "lage": "pruefung",
+   "original": "2021-OS-B1e",
+   "jahr": 2021,
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "h",
+   "id": "lineare-gleichungen-e4-k1-s6-v8",
+   "datei": "e4_a.tex",
+   "lage": "pruefung",
+   "original": "2021-OS-B1e",
+   "jahr": 2021,
+   "punkte": "1",
+   "stern": false
+  }
+ ]
+}

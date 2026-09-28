@@ -1,0 +1,612 @@
+{
+ "AEN-P1": {
+  "heft": "AEN-P1",
+  "kennung": "AEN-P1",
+  "versuche": 1,
+  "fehler_je_versuch": [
+   0
+  ],
+  "fehler": [],
+  "ausgelassen": [],
+  "seiten": 2,
+  "seiten_loesungen": 1,
+  "pdf_groesse": {
+   "AEN-P1.pdf": 39965,
+   "AEN-P1-loesungen.pdf": 32496
+  },
+  "fehlende_zeichen": 17,
+  "fehlende_zeichen_art": [
+   "⇔"
+  ]
+ },
+ "AEN-P2": {
+  "heft": "AEN-P2",
+  "kennung": "AEN-P2",
+  "versuche": 1,
+  "fehler_je_versuch": [
+   0
+  ],
+  "fehler": [],
+  "ausgelassen": [],
+  "seiten": 2,
+  "seiten_loesungen": 1,
+  "pdf_groesse": {
+   "AEN-P2.pdf": 42842,
+   "AEN-P2-loesungen.pdf": 32428
+  },
+  "fehlende_zeichen": 0,
+  "fehlende_zeichen_art": []
+ },
+ "BRU-P1": {
+  "heft": "BRU-P1",
+  "kennung": "BRU-P1",
+  "versuche": 1,
+  "fehler_je_versuch": [
+   0
+  ],
+  "fehler": [],
+  "ausgelassen": [],
+  "seiten": 2,
+  "seiten_loesungen": 1,
+  "pdf_groesse": {
+   "BRU-P1.pdf": 29030,
+   "BRU-P1-loesungen.pdf": 18469
+  },
+  "fehlende_zeichen": 0,
+  "fehlende_zeichen_art": []
+ },
+ "DEZ-P1": {
+  "heft": "DEZ-P1",
+  "kennung": "DEZ-P1",
+  "versuche": 1,
+  "fehler_je_versuch": [
+   0
+  ],
+  "fehler": [],
+  "ausgelassen": [],
+  "seiten": 3,
+  "seiten_loesungen": 2,
+  "pdf_groesse": {
+   "DEZ-P1.pdf": 42724,
+   "DEZ-P1-loesungen.pdf": 24928
+  },
+  "fehlende_zeichen": 0,
+  "fehlende_zeichen_art": []
+ },
+ "DEZ-P2": {
+  "heft": "DEZ-P2",
+  "kennung": "DEZ-P2",
+  "versuche": 2,
+  "fehler_je_versuch": [
+   3,
+   0
+  ],
+  "fehler": [],
+  "ausgelassen": [
+   {
+    "id": "brueche-dezimalzahlen-e5-k2-s9-v8",
+    "nr": "2h",
+    "datei": "e5_a.tex",
+    "grund": "LaTeX Error: Command \\item invalid in math mode.",
+    "versuch": 1
+   },
+   {
+    "id": "brueche-dezimalzahlen-e5-k2-s9-v7",
+    "nr": "2g",
+    "datei": "e5_a.tex",
+    "grund": "Missing $ inserted.",
+    "versuch": 1
+   }
+  ],
+  "seiten": 1,
+  "seiten_loesungen": 1,
+  "pdf_groesse": {
+   "DEZ-P2.pdf": 29823,
+   "DEZ-P2-loesungen.pdf": 21820
+  },
+  "fehlende_zeichen": 2,
+  "folgefehler_verschont": [
+   "e5_a.tex Nr. 2i"
+  ],
+  "fehlende_zeichen_art": [
+   "≈"
+  ]
+ },
+ "EXT-P1": {
+  "heft": "EXT-P1",
+  "kennung": "EXT-P1",
+  "versuche": 1,
+  "fehler_je_versuch": [
+   0
+  ],
+  "fehler": [],
+  "ausgelassen": [],
+  "seiten": 2,
+  "seiten_loesungen": 1,
+  "pdf_groesse": {
+   "EXT-P1.pdf": 36413,
+   "EXT-P1-loesungen.pdf": 29596
+  },
+  "fehlende_zeichen": 8,
+  "fehlende_zeichen_art": [
+   "ℓ",
+   "⇔"
+  ]
+ },
+ "GER-P1": {
+  "heft": "GER-P1",
+  "kennung": "GER-P1",
+  "versuche": 1,
+  "fehler_je_versuch": [
+   0
+  ],
+  "fehler": [],
+  "ausgelassen": [],
+  "seiten": 2,
+  "seiten_loesungen": 1,
+  "pdf_groesse": {
+   "GER-P1.pdf": 37265,
+   "GER-P1-loesungen.pdf": 31463
+  },
+  "fehlende_zeichen": 8,
+  "fehlende_zeichen_art": [
+   "✓"
+  ]
+ },
+ "GLE-P1": {
+  "heft": "GLE-P1",
+  "kennung": "GLE-P1",
+  "versuche": 1,
+  "fehler_je_versuch": [
+   0
+  ],
+  "fehler": [],
+  "ausgelassen": [],
+  "seiten": 2,
+  "seiten_loesungen": 1,
+  "pdf_groesse": {
+   "GLE-P1.pdf": 34268,
+   "GLE-P1-loesungen.pdf": 23216
+  },
+  "fehlende_zeichen": 12,
+  "fehlende_zeichen_art": [
+   "⁴",
+   "ⁿ",
+   "₁",
+   "⇔",
+   "≥"
+  ]
+ },
+ "GRE-P1": {
+  "heft": "GRE-P1",
+  "kennung": "GRE-P1",
+  "versuche": 1,
+  "fehler_je_versuch": [
+   0
+  ],
+  "fehler": [],
+  "ausgelassen": [],
+  "seiten": 2,
+  "seiten_loesungen": 1,
+  "pdf_groesse": {
+   "GRE-P1.pdf": 36170,
+   "GRE-P1-loesungen.pdf": 25641
+  },
+  "fehlende_zeichen": 0,
+  "fehlende_zeichen_art": []
+ },
+ "LGL-P1": {
+  "heft": "LGL-P1",
+  "kennung": "LGL-P1",
+  "versuche": 1,
+  "fehler_je_versuch": [
+   0
+  ],
+  "fehler": [],
+  "ausgelassen": [],
+  "seiten": 3,
+  "seiten_loesungen": 1,
+  "pdf_groesse": {
+   "LGL-P1.pdf": 29380,
+   "LGL-P1-loesungen.pdf": 18923
+  },
+  "fehlende_zeichen": 0,
+  "fehlende_zeichen_art": []
+ },
+ "LIN-P1": {
+  "heft": "LIN-P1",
+  "kennung": "LIN-P1",
+  "versuche": 1,
+  "fehler_je_versuch": [
+   0
+  ],
+  "fehler": [],
+  "ausgelassen": [],
+  "seiten": 3,
+  "seiten_loesungen": 1,
+  "pdf_groesse": {
+   "LIN-P1.pdf": 39899,
+   "LIN-P1-loesungen.pdf": 23412
+  },
+  "fehlende_zeichen": 0,
+  "fehlende_zeichen_art": []
+ },
+ "LIN-P2": {
+  "heft": "LIN-P2",
+  "kennung": "LIN-P2",
+  "versuche": 1,
+  "fehler_je_versuch": [
+   0
+  ],
+  "fehler": [],
+  "ausgelassen": [],
+  "seiten": 3,
+  "seiten_loesungen": 1,
+  "pdf_groesse": {
+   "LIN-P2.pdf": 46899,
+   "LIN-P2-loesungen.pdf": 24751
+  },
+  "fehlende_zeichen": 0,
+  "fehlende_zeichen_art": []
+ },
+ "LIN-P3": {
+  "heft": "LIN-P3",
+  "kennung": "LIN-P3",
+  "versuche": 1,
+  "fehler_je_versuch": [
+   0
+  ],
+  "fehler": [],
+  "ausgelassen": [],
+  "seiten": 3,
+  "seiten_loesungen": 1,
+  "pdf_groesse": {
+   "LIN-P3.pdf": 52345,
+   "LIN-P3-loesungen.pdf": 19937
+  },
+  "fehlende_zeichen": 0,
+  "fehlende_zeichen_art": []
+ },
+ "POT-P1": {
+  "heft": "POT-P1",
+  "kennung": "POT-P1",
+  "versuche": 1,
+  "fehler_je_versuch": [
+   0
+  ],
+  "fehler": [],
+  "ausgelassen": [],
+  "seiten": 1,
+  "seiten_loesungen": 1,
+  "pdf_groesse": {
+   "POT-P1.pdf": 32780,
+   "POT-P1-loesungen.pdf": 24092
+  },
+  "fehlende_zeichen": 11,
+  "fehlende_zeichen_art": [
+   "ᵗ",
+   "⁴",
+   "₀",
+   "≈"
+  ]
+ },
+ "PRZ-P1": {
+  "heft": "PRZ-P1",
+  "kennung": "PRZ-P1",
+  "versuche": 1,
+  "fehler_je_versuch": [
+   0
+  ],
+  "fehler": [],
+  "ausgelassen": [],
+  "seiten": 3,
+  "seiten_loesungen": 1,
+  "pdf_groesse": {
+   "PRZ-P1.pdf": 32376,
+   "PRZ-P1-loesungen.pdf": 24930
+  },
+  "fehlende_zeichen": 0,
+  "fehlende_zeichen_art": []
+ },
+ "PRZ-P2": {
+  "heft": "PRZ-P2",
+  "kennung": "PRZ-P2",
+  "versuche": 1,
+  "fehler_je_versuch": [
+   0
+  ],
+  "fehler": [],
+  "ausgelassen": [],
+  "seiten": 1,
+  "seiten_loesungen": 1,
+  "pdf_groesse": {
+   "PRZ-P2.pdf": 26258,
+   "PRZ-P2-loesungen.pdf": 21175
+  },
+  "fehlende_zeichen": 0,
+  "fehlende_zeichen_art": []
+ },
+ "PRZ-P3": {
+  "heft": "PRZ-P3",
+  "kennung": "PRZ-P3",
+  "versuche": 1,
+  "fehler_je_versuch": [
+   0
+  ],
+  "fehler": [],
+  "ausgelassen": [],
+  "seiten": 1,
+  "seiten_loesungen": 1,
+  "pdf_groesse": {
+   "PRZ-P3.pdf": 22791,
+   "PRZ-P3-loesungen.pdf": 20543
+  },
+  "fehlende_zeichen": 0,
+  "fehlende_zeichen_art": []
+ },
+ "PRZ-P4": {
+  "heft": "PRZ-P4",
+  "kennung": "PRZ-P4",
+  "versuche": 1,
+  "fehler_je_versuch": [
+   0
+  ],
+  "fehler": [],
+  "ausgelassen": [],
+  "seiten": 1,
+  "seiten_loesungen": 1,
+  "pdf_groesse": {
+   "PRZ-P4.pdf": 23197,
+   "PRZ-P4-loesungen.pdf": 18883
+  },
+  "fehlende_zeichen": 0,
+  "fehlende_zeichen_art": []
+ },
+ "PUN-P1": {
+  "heft": "PUN-P1",
+  "kennung": "PUN-P1",
+  "versuche": 1,
+  "fehler_je_versuch": [
+   0
+  ],
+  "fehler": [],
+  "ausgelassen": [],
+  "seiten": 2,
+  "seiten_loesungen": 1,
+  "pdf_groesse": {
+   "PUN-P1.pdf": 36851,
+   "PUN-P1-loesungen.pdf": 33440
+  },
+  "fehlende_zeichen": 3,
+  "fehlende_zeichen_art": [
+   "∘",
+   "≠"
+  ]
+ },
+ "PUN-P2": {
+  "heft": "PUN-P2",
+  "kennung": "PUN-P2",
+  "versuche": 1,
+  "fehler_je_versuch": [
+   0
+  ],
+  "fehler": [],
+  "ausgelassen": [],
+  "seiten": 2,
+  "seiten_loesungen": 1,
+  "pdf_groesse": {
+   "PUN-P2.pdf": 33855,
+   "PUN-P2-loesungen.pdf": 31475
+  },
+  "fehlende_zeichen": 0,
+  "fehlende_zeichen_art": []
+ },
+ "PUN-P3": {
+  "heft": "PUN-P3",
+  "kennung": "PUN-P3",
+  "versuche": 1,
+  "fehler_je_versuch": [
+   0
+  ],
+  "fehler": [],
+  "ausgelassen": [],
+  "seiten": 3,
+  "seiten_loesungen": 1,
+  "pdf_groesse": {
+   "PUN-P3.pdf": 39958,
+   "PUN-P3-loesungen.pdf": 36507
+  },
+  "fehlende_zeichen": 0,
+  "fehlende_zeichen_art": []
+ },
+ "PUN-P4": {
+  "heft": "PUN-P4",
+  "kennung": "PUN-P4",
+  "versuche": 1,
+  "fehler_je_versuch": [
+   0
+  ],
+  "fehler": [],
+  "ausgelassen": [],
+  "seiten": 6,
+  "seiten_loesungen": 8,
+  "pdf_groesse": {
+   "PUN-P4.pdf": 54006,
+   "PUN-P4-loesungen.pdf": 62717
+  },
+  "fehlende_zeichen": 1,
+  "fehlende_zeichen_art": [
+   "′"
+  ]
+ },
+ "PUN-P5": {
+  "heft": "PUN-P5",
+  "kennung": "PUN-P5",
+  "versuche": 1,
+  "fehler_je_versuch": [
+   0
+  ],
+  "fehler": [],
+  "ausgelassen": [],
+  "seiten": 2,
+  "seiten_loesungen": 1,
+  "pdf_groesse": {
+   "PUN-P5.pdf": 36067,
+   "PUN-P5-loesungen.pdf": 30245
+  },
+  "fehlende_zeichen": 7,
+  "fehlende_zeichen_art": [
+   "₁",
+   "₂",
+   "₃",
+   "≈"
+  ]
+ },
+ "QGL-P1": {
+  "heft": "QGL-P1",
+  "kennung": "QGL-P1",
+  "versuche": 1,
+  "fehler_je_versuch": [
+   0
+  ],
+  "fehler": [],
+  "ausgelassen": [],
+  "seiten": 2,
+  "seiten_loesungen": 1,
+  "pdf_groesse": {
+   "QGL-P1.pdf": 29521,
+   "QGL-P1-loesungen.pdf": 24582
+  },
+  "fehlende_zeichen": 8,
+  "fehlende_zeichen_art": [
+   "₁",
+   "₂",
+   "≈"
+  ]
+ },
+ "TRI-P1": {
+  "heft": "TRI-P1",
+  "kennung": "TRI-P1",
+  "versuche": 1,
+  "fehler_je_versuch": [
+   0
+  ],
+  "fehler": [],
+  "ausgelassen": [],
+  "seiten": 2,
+  "seiten_loesungen": 1,
+  "pdf_groesse": {
+   "TRI-P1.pdf": 33799,
+   "TRI-P1-loesungen.pdf": 28675
+  },
+  "fehlende_zeichen": 18,
+  "fehlende_zeichen_art": [
+   "α",
+   "β",
+   "γ",
+   "≈"
+  ]
+ },
+ "TRI-P2": {
+  "heft": "TRI-P2",
+  "kennung": "TRI-P2",
+  "versuche": 1,
+  "fehler_je_versuch": [
+   0
+  ],
+  "fehler": [],
+  "ausgelassen": [],
+  "seiten": 4,
+  "seiten_loesungen": 1,
+  "pdf_groesse": {
+   "TRI-P2.pdf": 41219,
+   "TRI-P2-loesungen.pdf": 27544
+  },
+  "fehlende_zeichen": 13,
+  "fehlende_zeichen_art": [
+   "α",
+   "≈"
+  ]
+ },
+ "TRI-P3": {
+  "heft": "TRI-P3",
+  "kennung": "TRI-P3",
+  "versuche": 1,
+  "fehler_je_versuch": [
+   0
+  ],
+  "fehler": [],
+  "ausgelassen": [],
+  "seiten": 3,
+  "seiten_loesungen": 1,
+  "pdf_groesse": {
+   "TRI-P3.pdf": 34371,
+   "TRI-P3-loesungen.pdf": 28513
+  },
+  "fehlende_zeichen": 10,
+  "fehlende_zeichen_art": [
+   "≈"
+  ]
+ },
+ "TRI-P4": {
+  "heft": "TRI-P4",
+  "kennung": "TRI-P4",
+  "versuche": 1,
+  "fehler_je_versuch": [
+   0
+  ],
+  "fehler": [],
+  "ausgelassen": [],
+  "seiten": 3,
+  "seiten_loesungen": 1,
+  "pdf_groesse": {
+   "TRI-P4.pdf": 34211,
+   "TRI-P4-loesungen.pdf": 25660
+  },
+  "fehlende_zeichen": 18,
+  "fehlende_zeichen_art": [
+   "α",
+   "β",
+   "⁻",
+   "≈"
+  ]
+ },
+ "VOL-P1": {
+  "heft": "VOL-P1",
+  "kennung": "VOL-P1",
+  "versuche": 1,
+  "fehler_je_versuch": [
+   0
+  ],
+  "fehler": [],
+  "ausgelassen": [],
+  "seiten": 3,
+  "seiten_loesungen": 1,
+  "pdf_groesse": {
+   "VOL-P1.pdf": 49672,
+   "VOL-P1-loesungen.pdf": 31273
+  },
+  "fehlende_zeichen": 0,
+  "fehlende_zeichen_art": []
+ },
+ "WUR-P1": {
+  "heft": "WUR-P1",
+  "kennung": "WUR-P1",
+  "versuche": 1,
+  "fehler_je_versuch": [
+   0
+  ],
+  "fehler": [],
+  "ausgelassen": [],
+  "seiten": 2,
+  "seiten_loesungen": 1,
+  "pdf_groesse": {
+   "WUR-P1.pdf": 34410,
+   "WUR-P1-loesungen.pdf": 26046
+  },
+  "fehlende_zeichen": 1,
+  "fehlende_zeichen_art": [
+   "≈"
+  ]
+ }
+}

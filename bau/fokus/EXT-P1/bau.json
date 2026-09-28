@@ -1,0 +1,216 @@
+{
+ "kennung": "EXT-P1",
+ "datum": "2026-09-28",
+ "eintraege": [
+  "extremalprobleme"
+ ],
+ "titel": "Extremalprobleme · Maximum bestimmen · Prüfungs-Fokus Abitur GK",
+ "kette": "Maximum bestimmen",
+ "einheit": 3,
+ "profil": "abitur-gk",
+ "pruefwort": "Abi GK ×7",
+ "kasten": "5 Zeilen",
+ "anlauf": 3,
+ "pruefungshoehe": 12,
+ "originale": [
+  "2018-be-gk-B1.1g",
+  "2019MgrundlegendBAnalysisWTR2-1i",
+  "2021-be-gk-A1.3b",
+  "2021-be-gk-B2.2i",
+  "2022-bebb-gk-B2.1h",
+  "2024-bebb-gk-B2.2g"
+ ],
+ "jahrgaenge": [
+  "2018",
+  "2019",
+  "2021",
+  "2022",
+  "2024"
+ ],
+ "rezept": "P",
+ "rezept_name": "Prüfungs-Fokus",
+ "bestellung": {
+  "fokus_pruefung": "Maximum bestimmen",
+  "heft": "abitur-gk",
+  "einheiten": "3",
+  "aus": null,
+  "ohne_register": false
+ },
+ "bank_commit": "b78e6d9",
+ "zusammenbau": "v0.6",
+ "vorlage": "Version 2026-09-28a",
+ "pfad": "bau/fokus/EXT-P1",
+ "kuerzel_quelle": "_kuerzel.csv (mathe-nachhilfe)",
+ "strukturfehler": 0,
+ "ausgelassen": [],
+ "aufgaben": [
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "a",
+   "id": "extremalprobleme-e3-k1-s0-v1",
+   "datei": "e3_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "b",
+   "id": "extremalprobleme-e3-k1-s1-v1",
+   "datei": "e3_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "c",
+   "id": "extremalprobleme-e3-k1-s2-v1",
+   "datei": "e3_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "a",
+   "id": "extremalprobleme-e3-k1-s4-v1",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2022-bebb-gk-B2.1h",
+   "jahr": 2022,
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "b",
+   "id": "extremalprobleme-e3-k1-s4-v2",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2022-bebb-gk-B2.1h",
+   "jahr": 2022,
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "c",
+   "id": "extremalprobleme-e3-k1-s4-v3",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2022-bebb-gk-B2.1h",
+   "jahr": 2022,
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "d",
+   "id": "extremalprobleme-e3-k1-s5-v1",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2018-be-gk-B1.1g",
+   "jahr": 2018,
+   "punkte": "6",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "e",
+   "id": "extremalprobleme-e3-k1-s5-v2",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2021-be-gk-B2.2i",
+   "jahr": 2021,
+   "punkte": "7",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "f",
+   "id": "extremalprobleme-e3-k1-s5-v3",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2024-bebb-gk-B2.2g",
+   "jahr": 2024,
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "g",
+   "id": "extremalprobleme-e3-k1-s6-v1",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2019MgrundlegendBAnalysisWTR2-1i",
+   "jahr": 2019,
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "h",
+   "id": "extremalprobleme-e3-k1-s6-v2",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2019MgrundlegendBAnalysisWTR2-1i",
+   "jahr": 2019,
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "i",
+   "id": "extremalprobleme-e3-k1-s6-v3",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2019MgrundlegendBAnalysisWTR2-1i",
+   "jahr": 2019,
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "j",
+   "id": "extremalprobleme-e3-k1-s7-v1",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2021-be-gk-A1.3b",
+   "jahr": 2021,
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "k",
+   "id": "extremalprobleme-e3-k1-s7-v2",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2021-be-gk-A1.3b",
+   "jahr": 2021,
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "l",
+   "id": "extremalprobleme-e3-k1-s7-v3",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2021-be-gk-A1.3b",
+   "jahr": 2021,
+   "punkte": "3",
+   "stern": false
+  }
+ ]
+}

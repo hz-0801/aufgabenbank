@@ -1,0 +1,24 @@
+# zusammenbau v0.6: zusammenbau.py prozentrechnung --fokus-pruefung Umwandeln --heft msa --einheiten 1
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG PRZ-P1 – Kürzel PRZ aus _kuerzel.csv (mathe-nachhilfe); Rezept P (Prüfungs-Fokus)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+EINHEIT e1 – Kette „Umwandeln“ mit 12 Prüfungshöhen im Profil msa (--einheiten)
+AUSWAHL prozentrechnung-e1-k1-s1-v1 – prozentrechnung e1 „Umwandeln“: Anlauf, Grundfall
+AUSWAHL prozentrechnung-e1-k1-s2-v1 – prozentrechnung e1 „Umwandeln“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL prozentrechnung-e1-k1-s7-v1 – prozentrechnung e1 „Umwandeln“: Prüfungshöhe (2020-OS-B1a)
+AUSWAHL prozentrechnung-e1-k1-s7-v2 – prozentrechnung e1 „Umwandeln“: Prüfungshöhe (2020-OS-B1a)
+AUSWAHL prozentrechnung-e1-k1-s7-v3 – prozentrechnung e1 „Umwandeln“: Prüfungshöhe (2022-OS-B1f)
+AUSWAHL prozentrechnung-e1-k1-s7-v4 – prozentrechnung e1 „Umwandeln“: Prüfungshöhe (2022-OS-B1f)
+AUSWAHL prozentrechnung-e1-k1-s8-v1 – prozentrechnung e1 „Umwandeln“: Prüfungshöhe (2023-OS-K6b)
+AUSWAHL prozentrechnung-e1-k1-s8-v2 – prozentrechnung e1 „Umwandeln“: Prüfungshöhe (2023-OS-K6b)
+AUSWAHL prozentrechnung-e1-k1-s8-v3 – prozentrechnung e1 „Umwandeln“: Prüfungshöhe (2019-OS-K5b)
+AUSWAHL prozentrechnung-e1-k1-s8-v4 – prozentrechnung e1 „Umwandeln“: Prüfungshöhe (2019-OS-K5b)
+AUSWAHL prozentrechnung-e1-k1-s8-v5 – prozentrechnung e1 „Umwandeln“: Prüfungshöhe (2017-OS-K2b, Stern)
+AUSWAHL prozentrechnung-e1-k1-s8-v6 – prozentrechnung e1 „Umwandeln“: Prüfungshöhe (2017-OS-K2b, Stern)
+AUSWAHL prozentrechnung-e1-k1-s9-v1 – prozentrechnung e1 „Umwandeln“: Prüfungshöhe (2021-OS-K5b)
+AUSWAHL prozentrechnung-e1-k1-s9-v2 – prozentrechnung e1 „Umwandeln“: Prüfungshöhe (2021-OS-K5b)
+TEILUNG prozentrechnung e1 „Umwandeln“: 12 Prüfungsaufgaben in 3 Hauptnummern an Sprossengrenzen (2.3 g)
+PRÜFWORT „P10“ → „P10 ×6“ (Kataloge, 3 Typen; 6 Originale)
+KOPF Einheit 1: „Prozente als Anteile“; Zeitmarke „ab Kl. 6 (am Gymnasium ab Kl. 5)“, Prüfungswort „P10 ×6“
+KASTEN Einheit 1: 4 Zeilen
+STRUKTUR 0 Fehler

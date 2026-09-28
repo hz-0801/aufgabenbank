@@ -1,0 +1,30 @@
+# zusammenbau v0.6: zusammenbau.py punkte-und-strecken-im-koordinatensystem --fokus-pruefung Darstellen und Lage lesen --heft abitur-gk --einheiten 1
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG PUN-P4 – Kürzel PUN aus _kuerzel.csv (mathe-nachhilfe); Rezept P (Prüfungs-Fokus)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+EINHEIT e1 – Kette „Darstellen und Lage lesen“ mit 17 Prüfungshöhen im Profil abitur-gk (--einheiten)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s0-v1 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Anlauf, Vorstufe
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s1-v1 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Anlauf, Grundfall
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s3-v3 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Anlauf, Sprosse – Fallstrick im Merkmal („negative Koordinaten eintragen“)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s2-v1 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Prüfungshöhe (2019-be-gk-B3.2a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s2-v2 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Prüfungshöhe (2019MgrundlegendBAGLAA2WTR1-1a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s2-v3 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Prüfungshöhe (2019-be-gk-B3.2a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s4-v1 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Prüfungshöhe (2026MgrundlegendAAGLAA213-b)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s4-v2 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Prüfungshöhe (2026MgrundlegendAAGLAA213-b)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s4-v3 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Prüfungshöhe (2026MgrundlegendAAGLAA213-b)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s5-v1 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Prüfungshöhe (2025MgrundlegendAAGLAA212-a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s5-v2 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Prüfungshöhe (2026MgrundlegendBAGLAA2WTR1-1a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s5-v3 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Prüfungshöhe (2025MgrundlegendAAGLAA212-a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s6-v1 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Prüfungshöhe (2025MgrundlegendBAGLAA2WTR1-1a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s6-v2 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Prüfungshöhe (2025MgrundlegendBAGLAA2WTR1-1a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s6-v3 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Prüfungshöhe (2025MgrundlegendBAGLAA2WTR1-1a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s7-v1 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Prüfungshöhe (2024-bebb-gk-B3c)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s7-v2 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Prüfungshöhe (2024-bebb-gk-B3c)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s7-v3 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Prüfungshöhe (2024-bebb-gk-B3c)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s8-v3 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Prüfungshöhe (2018MgrundlegendAAGLAA212-b)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s8-v4 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Prüfungshöhe (2018MgrundlegendAAGLAA212-b)
+TEILUNG punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: 17 Prüfungsaufgaben in 3 Hauptnummern an Sprossengrenzen (2.3 g)
+PRÜFWORT „Abitur GK“ → „Abi GK ×6“ (Kataloge, 7 Typen; 8 Originale)
+KOPF Einheit 1: „Punkte darstellen und Lage lesen“; Zeitmarke „None“, Prüfungswort „Abi GK ×6“
+KASTEN Einheit 1: 5 Zeilen
+STRUKTUR 0 Fehler

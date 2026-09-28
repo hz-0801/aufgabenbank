@@ -1,0 +1,24 @@
+# zusammenbau v0.6: zusammenbau.py bruchrechnung --fokus-pruefung Addieren/Subtrahieren --heft msa --einheiten 1
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG BRU-P1 – Kürzel BRU aus _kuerzel.csv (mathe-nachhilfe); Rezept P (Prüfungs-Fokus)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+EINHEIT e1 – Kette „Addieren/Subtrahieren“ mit 12 Prüfungshöhen im Profil msa (--einheiten)
+AUSWAHL bruchrechnung-e1-k3-s0-v1 – bruchrechnung e1 „Addieren/Subtrahieren“: Anlauf, Vorstufe
+AUSWAHL bruchrechnung-e1-k3-s1-v1 – bruchrechnung e1 „Addieren/Subtrahieren“: Anlauf, Grundfall
+AUSWAHL bruchrechnung-e1-k3-s2-v1 – bruchrechnung e1 „Addieren/Subtrahieren“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL bruchrechnung-e1-k3-s7-v1 – bruchrechnung e1 „Addieren/Subtrahieren“: Prüfungshöhe (2014-OS-K6c, Stern)
+AUSWAHL bruchrechnung-e1-k3-s7-v2 – bruchrechnung e1 „Addieren/Subtrahieren“: Prüfungshöhe (2014-OS-K6c, Stern)
+AUSWAHL bruchrechnung-e1-k3-s7-v3 – bruchrechnung e1 „Addieren/Subtrahieren“: Prüfungshöhe (2015-OS-K7d, Stern)
+AUSWAHL bruchrechnung-e1-k3-s7-v4 – bruchrechnung e1 „Addieren/Subtrahieren“: Prüfungshöhe (2015-OS-K7d, Stern)
+AUSWAHL bruchrechnung-e1-k3-s7-v5 – bruchrechnung e1 „Addieren/Subtrahieren“: Prüfungshöhe (2020-OS-K6c, Stern)
+AUSWAHL bruchrechnung-e1-k3-s7-v6 – bruchrechnung e1 „Addieren/Subtrahieren“: Prüfungshöhe (2020-OS-K6c, Stern)
+AUSWAHL bruchrechnung-e1-k3-s7-v7 – bruchrechnung e1 „Addieren/Subtrahieren“: Prüfungshöhe (2017-OS-K6b, Stern)
+AUSWAHL bruchrechnung-e1-k3-s7-v8 – bruchrechnung e1 „Addieren/Subtrahieren“: Prüfungshöhe (2017-OS-K6b, Stern)
+AUSWAHL bruchrechnung-e1-k3-s8-v1 – bruchrechnung e1 „Addieren/Subtrahieren“: Prüfungshöhe (2026-FOR-K6c)
+AUSWAHL bruchrechnung-e1-k3-s8-v2 – bruchrechnung e1 „Addieren/Subtrahieren“: Prüfungshöhe (2026-FOR-K6c)
+AUSWAHL bruchrechnung-e1-k3-s8-v3 – bruchrechnung e1 „Addieren/Subtrahieren“: Prüfungshöhe (2014-OS-B1d)
+AUSWAHL bruchrechnung-e1-k3-s8-v4 – bruchrechnung e1 „Addieren/Subtrahieren“: Prüfungshöhe (2014-OS-B1d)
+PRÜFWORT „P10“ → „P10 ×10“ (Kataloge, 5 Typen; 6 Originale)
+KOPF Einheit 1: „Brüche addieren und subtrahieren“; Zeitmarke „ab Kl. 5, je nach Buch bis Kl. 6 (am Gymnasium ab Kl. 6)“, Prüfungswort „P10 ×10“
+KASTEN Einheit 1: 3 Zeilen
+STRUKTUR 0 Fehler

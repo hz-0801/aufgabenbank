@@ -1,0 +1,35 @@
+# zusammenbau v0.6: zusammenbau.py lineare-funktionen --fokus-pruefung Anwendung --heft msa --einheiten 5
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG LIN-P2 – Kürzel LIN aus _kuerzel.csv (mathe-nachhilfe); Rezept P (Prüfungs-Fokus)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+EINHEIT e5 – Kette „Anwendung“ mit 18 Prüfungshöhen im Profil msa (--einheiten)
+AUSWAHL lineare-funktionen-e5-k1-s0-v1 – lineare-funktionen e5 „Anwendung“: Anlauf, Vorstufe
+AUSWAHL lineare-funktionen-e5-k1-s1-v1 – lineare-funktionen e5 „Anwendung“: Anlauf, Grundfall
+AUSWAHL lineare-funktionen-e5-k1-s2-v1 – lineare-funktionen e5 „Anwendung“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL lineare-funktionen-e5-k1-s5-v1 – lineare-funktionen e5 „Anwendung“: Prüfungshöhe (2023-OS-K3b, Stern)
+AUSWAHL lineare-funktionen-e5-k1-s5-v2 – lineare-funktionen e5 „Anwendung“: Prüfungshöhe (2023-OS-K3b, Stern)
+AUSWAHL lineare-funktionen-e5-k1-s5-v3 – lineare-funktionen e5 „Anwendung“: Prüfungshöhe (2016-OS-K6b)
+AUSWAHL lineare-funktionen-e5-k1-s5-v4 – lineare-funktionen e5 „Anwendung“: Prüfungshöhe (2016-OS-K6b)
+AUSWAHL lineare-funktionen-e5-k1-s5-v5 – lineare-funktionen e5 „Anwendung“: Prüfungshöhe (2021-OS-K7a)
+AUSWAHL lineare-funktionen-e5-k1-s5-v6 – lineare-funktionen e5 „Anwendung“: Prüfungshöhe (2021-OS-K7a)
+AUSWAHL lineare-funktionen-e5-k1-s5-v7 – lineare-funktionen e5 „Anwendung“: Prüfungshöhe (2022-OS-K6b, Stern)
+AUSWAHL lineare-funktionen-e5-k1-s5-v8 – lineare-funktionen e5 „Anwendung“: Prüfungshöhe (2022-OS-K6b, Stern)
+AUSWAHL lineare-funktionen-e5-k1-s5-v9 – lineare-funktionen e5 „Anwendung“: Prüfungshöhe (2016-OS-K6c, Stern)
+AUSWAHL lineare-funktionen-e5-k1-s5-v10 – lineare-funktionen e5 „Anwendung“: Prüfungshöhe (2016-OS-K6c, Stern)
+AUSWAHL lineare-funktionen-e5-k1-s5-v11 – lineare-funktionen e5 „Anwendung“: Prüfungshöhe (2022-OS-K6a)
+AUSWAHL lineare-funktionen-e5-k1-s5-v12 – lineare-funktionen e5 „Anwendung“: Prüfungshöhe (2022-OS-K6a)
+AUSWAHL lineare-funktionen-e5-k1-s5-v13 – lineare-funktionen e5 „Anwendung“: Prüfungshöhe (2021-OS-K6a)
+AUSWAHL lineare-funktionen-e5-k1-s5-v14 – lineare-funktionen e5 „Anwendung“: Prüfungshöhe (2021-OS-K6a)
+AUSWAHL lineare-funktionen-e5-k1-s5-v15 – lineare-funktionen e5 „Anwendung“: Prüfungshöhe (2016-OS-K6a)
+AUSWAHL lineare-funktionen-e5-k1-s5-v16 – lineare-funktionen e5 „Anwendung“: Prüfungshöhe (2016-OS-K6a)
+AUSWAHL lineare-funktionen-e5-k1-s5-v17 – lineare-funktionen e5 „Anwendung“: Prüfungshöhe (2023-OS-K3a)
+AUSWAHL lineare-funktionen-e5-k1-s5-v18 – lineare-funktionen e5 „Anwendung“: Prüfungshöhe (2023-OS-K3a)
+PRÜFWORT „P10“ → „P10 ×6“ (Kataloge, 5 Typen; 9 Originale)
+KOPF Einheit 5: „Anwendungen“; Zeitmarke „ab Kl. 8“, Prüfungswort „P10 ×6“
+FORM lineare-funktionen-e5-k1-s5-v1 (Nr. 2): gleichungsraster mit Text → teile
+FORM lineare-funktionen-e5-k1-s5-v2 (Nr. 2): gleichungsraster mit Text → teile
+FORM lineare-funktionen-e5-k1-s5-v7 (Nr. 2): gleichungsraster mit Text → teile
+FORM lineare-funktionen-e5-k1-s5-v8 (Nr. 2): gleichungsraster mit Text → teile
+WARNUNG Nr. 2: 18 Teilaufgaben, 6 mit Grafik – über dem Halbseitenmaß (2.3 g)
+KASTEN Einheit 5: 2 Zeilen
+STRUKTUR 0 Fehler

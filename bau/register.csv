@@ -25,3 +25,33 @@ BAS-Z7;2026-09-28;_basis;Z;zettel=basis, nummer=7;98f6b7d;v0.5;Version 2026-09-2
 BAS-Z8;2026-09-28;_basis;Z;zettel=basis, nummer=8;98f6b7d;v0.5;Version 2026-09-28a;bau/zettel/BAS-Z8
 BAS-Z9;2026-09-28;_basis;Z;zettel=basis, nummer=9;98f6b7d;v0.5;Version 2026-09-28a;bau/zettel/BAS-Z9
 BAS-Z10;2026-09-28;_basis;Z;zettel=basis, nummer=10;98f6b7d;v0.5;Version 2026-09-28a;bau/zettel/BAS-Z10
+DEZ-P1;2026-09-28;brueche-dezimalzahlen;P;fokus_pruefung=Anteil bestimmen, heft=msa, einheiten=1, aus=–;b78e6d9;v0.6;Version 2026-09-28a;bau/fokus/DEZ-P1
+QGL-P1;2026-09-28;quadratische-gleichungen;P;fokus_pruefung=p-q-Formel, heft=msa, einheiten=3, aus=–;b78e6d9;v0.6;Version 2026-09-28a;bau/fokus/QGL-P1
+PRZ-P1;2026-09-28;prozentrechnung;P;fokus_pruefung=Umwandeln, heft=msa, einheiten=1, aus=–;b78e6d9;v0.6;Version 2026-09-28a;bau/fokus/PRZ-P1
+TRI-P1;2026-09-28;trigonometrie;P;fokus_pruefung=Sinussatz, heft=msa, einheiten=4, aus=–;b78e6d9;v0.6;Version 2026-09-28a;bau/fokus/TRI-P1
+LIN-P1;2026-09-28;lineare-funktionen;P;fokus_pruefung=Funktionswert, heft=msa, einheiten=3, aus=–;b78e6d9;v0.6;Version 2026-09-28a;bau/fokus/LIN-P1
+TRI-P2;2026-09-28;trigonometrie;P;fokus_pruefung=Seite berechnen, heft=msa, einheiten=1, aus=–;b78e6d9;v0.6;Version 2026-09-28a;bau/fokus/TRI-P2
+WUR-P1;2026-09-28;potenzen-wurzeln;P;fokus_pruefung=Quadratwurzeln, heft=msa, einheiten=3, aus=–;b78e6d9;v0.6;Version 2026-09-28a;bau/fokus/WUR-P1
+POT-P1;2026-09-28;potenz-exponentialfunktionen;P;fokus_pruefung=Wert und Schwellenwert berechnen, heft=msa, einheiten=3, aus=–;b78e6d9;v0.6;Version 2026-09-28a;bau/fokus/POT-P1
+PRZ-P2;2026-09-28;prozentrechnung;P;fokus_pruefung=Veränderung, heft=msa, einheiten=5, aus=–;b78e6d9;v0.6;Version 2026-09-28a;bau/fokus/PRZ-P2
+PRZ-P3;2026-09-28;prozentrechnung;P;fokus_pruefung=Prozentsatz, heft=msa, einheiten=2, aus=–;b78e6d9;v0.6;Version 2026-09-28a;bau/fokus/PRZ-P3
+TRI-P3;2026-09-28;trigonometrie;P;fokus_pruefung=Teildreiecke und Vermessung, heft=msa, einheiten=3, aus=–;b78e6d9;v0.6;Version 2026-09-28a;bau/fokus/TRI-P3
+DEZ-P2;2026-09-28;brueche-dezimalzahlen;P;fokus_pruefung=Vergleichen und Ordnen, heft=msa, einheiten=5, aus=–;b78e6d9;v0.6;Version 2026-09-28a;bau/fokus/DEZ-P2
+LIN-P2;2026-09-28;lineare-funktionen;P;fokus_pruefung=Anwendung, heft=msa, einheiten=5, aus=–;b78e6d9;v0.6;Version 2026-09-28a;bau/fokus/LIN-P2
+LIN-P3;2026-09-28;lineare-funktionen;P;fokus_pruefung=Ablesen, heft=msa, einheiten=2, aus=–;b78e6d9;v0.6;Version 2026-09-28a;bau/fokus/LIN-P3
+BRU-P1;2026-09-28;bruchrechnung;P;fokus_pruefung=Addieren/Subtrahieren, heft=msa, einheiten=1, aus=–;b78e6d9;v0.6;Version 2026-09-28a;bau/fokus/BRU-P1
+TRI-P4;2026-09-28;trigonometrie;P;fokus_pruefung=Winkel berechnen, heft=msa, einheiten=2, aus=–;b78e6d9;v0.6;Version 2026-09-28a;bau/fokus/TRI-P4
+PRZ-P4;2026-09-28;prozentrechnung;P;fokus_pruefung=Prozentwert, heft=msa, einheiten=3, aus=–;b78e6d9;v0.6;Version 2026-09-28a;bau/fokus/PRZ-P4
+LGL-P1;2026-09-28;lineare-gleichungen;P;fokus_pruefung=Aufstellen, heft=msa, einheiten=4, aus=–;b78e6d9;v0.6;Version 2026-09-28a;bau/fokus/LGL-P1
+PUN-P1;2026-09-28;punkte-und-strecken-im-koordinatensystem;P;fokus_pruefung=Vierecke nachweisen, heft=abitur-gk, einheiten=4, aus=–;b78e6d9;v0.6;Version 2026-09-28a;bau/fokus/PUN-P1
+PUN-P2;2026-09-28;punkte-und-strecken-im-koordinatensystem;P;fokus_pruefung=Dreiecke nachweisen, heft=abitur-gk, einheiten=3, aus=–;b78e6d9;v0.6;Version 2026-09-28a;bau/fokus/PUN-P2
+PUN-P3;2026-09-28;punkte-und-strecken-im-koordinatensystem;P;fokus_pruefung=Körper und Drehungen, heft=abitur-gk, einheiten=5, aus=–;b78e6d9;v0.6;Version 2026-09-28a;bau/fokus/PUN-P3
+GER-P1;2026-09-28;geraden;P;fokus_pruefung=Punktprobe und Punkte auf der Geraden, heft=abitur-gk, einheiten=2, aus=–;b78e6d9;v0.6;Version 2026-09-28a;bau/fokus/GER-P1
+PUN-P4;2026-09-28;punkte-und-strecken-im-koordinatensystem;P;fokus_pruefung=Darstellen und Lage lesen, heft=abitur-gk, einheiten=1, aus=–;b78e6d9;v0.6;Version 2026-09-28a;bau/fokus/PUN-P4
+PUN-P5;2026-09-28;punkte-und-strecken-im-koordinatensystem;P;fokus_pruefung=Streckenlänge, Mittelpunkt, Teilpunkte, heft=abitur-gk, einheiten=2, aus=–;b78e6d9;v0.6;Version 2026-09-28a;bau/fokus/PUN-P5
+GRE-P1;2026-09-28;grenzwerte-und-verhalten-im-unendlichen;P;fokus_pruefung=Produkte aus Polynom und e-Funktion, heft=abitur-gk, einheiten=2, aus=–;b78e6d9;v0.6;Version 2026-09-28a;bau/fokus/GRE-P1
+GLE-P1;2026-09-28;gleichungen-loesen;P;fokus_pruefung=Schnittpunkte und Stellen, heft=abitur-gk, einheiten=1, aus=–;b78e6d9;v0.6;Version 2026-09-28a;bau/fokus/GLE-P1
+AEN-P1;2026-09-28;ableitung-und-aenderungsrate;P;fokus_pruefung=Die Rate als Funktion, heft=abitur-gk, einheiten=4, aus=–;b78e6d9;v0.6;Version 2026-09-28a;bau/fokus/AEN-P1
+AEN-P2;2026-09-28;ableitung-und-aenderungsrate;P;fokus_pruefung=Mittlere Änderungsrate, heft=abitur-gk, einheiten=1, aus=–;b78e6d9;v0.6;Version 2026-09-28a;bau/fokus/AEN-P2
+VOL-P1;2026-09-28;flaecheninhalt-und-volumen-im-raum;P;fokus_pruefung=Zusammengesetzt und Verhältnisse, heft=abitur-gk, einheiten=4, aus=–;b78e6d9;v0.6;Version 2026-09-28a;bau/fokus/VOL-P1
+EXT-P1;2026-09-28;extremalprobleme;P;fokus_pruefung=Maximum bestimmen, heft=abitur-gk, einheiten=3, aus=–;b78e6d9;v0.6;Version 2026-09-28a;bau/fokus/EXT-P1

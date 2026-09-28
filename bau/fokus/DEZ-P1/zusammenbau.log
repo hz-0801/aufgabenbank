@@ -1,0 +1,31 @@
+# zusammenbau v0.6: zusammenbau.py brueche-dezimalzahlen --fokus-pruefung Anteil bestimmen --heft msa --einheiten 1
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG DEZ-P1 – Kürzel DEZ aus _kuerzel.csv (mathe-nachhilfe); Rezept P (Prüfungs-Fokus)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+EINHEIT e1 – Kette „Anteil bestimmen“ mit 18 Prüfungshöhen im Profil msa (--einheiten)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s0-v1 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Anlauf, Vorstufe
+AUSWAHL brueche-dezimalzahlen-e1-k1-s1-v1 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Anlauf, Grundfall
+AUSWAHL brueche-dezimalzahlen-e1-k1-s2-v1 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v1 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2019-OS-B1c)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v2 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2019-OS-B1c)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v3 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2024-OS-B1b)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v4 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2024-OS-B1b)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v5 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2014-OS-B1i)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v6 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2014-OS-B1i)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v7 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2022-OS-B1a)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v8 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2022-OS-B1a)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v9 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2023-OS-B1d)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v10 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2023-OS-B1d)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v11 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2017-OS-B1a)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v12 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2017-OS-B1a)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v13 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2021-OS-B1b)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v14 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2021-OS-B1b)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v15 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2025-OS-B1c)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v16 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2025-OS-B1c)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v17 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2026-FOR-B1b)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v18 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2026-FOR-B1b)
+PRÜFWORT „P10“ → „P10 ×9“ (Kataloge, 1 Typen; 9 Originale)
+KOPF Einheit 1: „Bruch als Anteil“; Zeitmarke „ab Kl. 5“, Prüfungswort „P10 ×9“
+WARNUNG Nr. 2: 18 Teilaufgaben, 18 mit Grafik – über dem Halbseitenmaß (2.3 g)
+KASTEN Einheit 1: 5 Zeilen
+STRUKTUR 0 Fehler

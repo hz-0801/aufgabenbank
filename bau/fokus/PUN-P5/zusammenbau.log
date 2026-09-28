@@ -1,0 +1,30 @@
+# zusammenbau v0.6: zusammenbau.py punkte-und-strecken-im-koordinatensystem --fokus-pruefung Streckenlänge, Mittelpunkt, Teilpunkte --heft abitur-gk --einheiten 2
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG PUN-P5 – Kürzel PUN aus _kuerzel.csv (mathe-nachhilfe); Rezept P (Prüfungs-Fokus)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+EINHEIT e2 – Kette „Streckenlänge, Mittelpunkt, Teilpunkte“ mit 17 Prüfungshöhen im Profil abitur-gk (--einheiten)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s0-v1 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Anlauf, Vorstufe
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s1-v1 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Anlauf, Grundfall
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s2-v1 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s3-v1 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Prüfungshöhe (2020MgrundlegendBAGLAA2WTR-1c)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s3-v2 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Prüfungshöhe (2020MgrundlegendBAGLAA2WTR-1c)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s3-v3 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Prüfungshöhe (2020MgrundlegendBAGLAA2WTR-1c)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s4-v1 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Prüfungshöhe (2026-bb-gk-B3d)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s4-v2 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Prüfungshöhe (2026-bb-gk-B3d)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s4-v3 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Prüfungshöhe (2026-bb-gk-B3d)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s5-v1 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Prüfungshöhe (2024MgrundlegendBAGLAA2WTR1-1b)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s5-v2 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Prüfungshöhe (2023-bebb-gk-B3a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s5-v3 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Prüfungshöhe (2023-bebb-gk-B3a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s7-v1 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Prüfungshöhe (2020-be-gk-A1.3b)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s7-v2 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Prüfungshöhe (2020-be-gk-A1.3b)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s7-v3 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Prüfungshöhe (2020-be-gk-A1.3b)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s8-v1 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Prüfungshöhe (2018MgrundlegendAAGLAA211-a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s8-v2 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Prüfungshöhe (2018MgrundlegendAAGLAA211-a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s8-v3 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Prüfungshöhe (2018MgrundlegendAAGLAA211-a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s9-v3 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Prüfungshöhe (2019-be-gk-B3.1d)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s9-v4 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Prüfungshöhe (2019-be-gk-B3.1d)
+TEILUNG punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: 17 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+PRÜFWORT „Abitur GK“ → „Abi GK ×6“ (Kataloge, 7 Typen; 7 Originale)
+KOPF Einheit 2: „Streckenlängen, Mittelpunkt und Teilpunkte“; Zeitmarke „None“, Prüfungswort „Abi GK ×6“
+KASTEN Einheit 2: 6 Zeilen (über fünf)
+STRUKTUR 0 Fehler

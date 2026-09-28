@@ -1,0 +1,216 @@
+{
+ "kennung": "BRU-P1",
+ "datum": "2026-09-28",
+ "eintraege": [
+  "bruchrechnung"
+ ],
+ "titel": "Bruchrechnung · Addieren/Subtrahieren · Prüfungs-Fokus MSA",
+ "kette": "Addieren/Subtrahieren",
+ "einheit": 1,
+ "profil": "msa",
+ "pruefwort": "P10 ×10",
+ "kasten": "3 Zeilen",
+ "anlauf": 3,
+ "pruefungshoehe": 12,
+ "originale": [
+  "2014-OS-B1d",
+  "2014-OS-K6c",
+  "2015-OS-K7d",
+  "2017-OS-K6b",
+  "2020-OS-K6c",
+  "2026-FOR-K6c"
+ ],
+ "jahrgaenge": [
+  "2014",
+  "2015",
+  "2017",
+  "2020",
+  "2026"
+ ],
+ "rezept": "P",
+ "rezept_name": "Prüfungs-Fokus",
+ "bestellung": {
+  "fokus_pruefung": "Addieren/Subtrahieren",
+  "heft": "msa",
+  "einheiten": "1",
+  "aus": null,
+  "ohne_register": false
+ },
+ "bank_commit": "b78e6d9",
+ "zusammenbau": "v0.6",
+ "vorlage": "Version 2026-09-28a",
+ "pfad": "bau/fokus/BRU-P1",
+ "kuerzel_quelle": "_kuerzel.csv (mathe-nachhilfe)",
+ "strukturfehler": 0,
+ "ausgelassen": [],
+ "aufgaben": [
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "a",
+   "id": "bruchrechnung-e1-k3-s0-v1",
+   "datei": "e1_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "b",
+   "id": "bruchrechnung-e1-k3-s1-v1",
+   "datei": "e1_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "c",
+   "id": "bruchrechnung-e1-k3-s2-v1",
+   "datei": "e1_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "a",
+   "id": "bruchrechnung-e1-k3-s7-v1",
+   "datei": "e1_a.tex",
+   "lage": "pruefung",
+   "original": "2014-OS-K6c",
+   "jahr": 2014,
+   "punkte": "2",
+   "stern": true
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "b",
+   "id": "bruchrechnung-e1-k3-s7-v2",
+   "datei": "e1_a.tex",
+   "lage": "pruefung",
+   "original": "2014-OS-K6c",
+   "jahr": 2014,
+   "punkte": "2",
+   "stern": true
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "c",
+   "id": "bruchrechnung-e1-k3-s7-v3",
+   "datei": "e1_a.tex",
+   "lage": "pruefung",
+   "original": "2015-OS-K7d",
+   "jahr": 2015,
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "d",
+   "id": "bruchrechnung-e1-k3-s7-v4",
+   "datei": "e1_a.tex",
+   "lage": "pruefung",
+   "original": "2015-OS-K7d",
+   "jahr": 2015,
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "e",
+   "id": "bruchrechnung-e1-k3-s7-v5",
+   "datei": "e1_a.tex",
+   "lage": "pruefung",
+   "original": "2020-OS-K6c",
+   "jahr": 2020,
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "f",
+   "id": "bruchrechnung-e1-k3-s7-v6",
+   "datei": "e1_a.tex",
+   "lage": "pruefung",
+   "original": "2020-OS-K6c",
+   "jahr": 2020,
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "g",
+   "id": "bruchrechnung-e1-k3-s7-v7",
+   "datei": "e1_a.tex",
+   "lage": "pruefung",
+   "original": "2017-OS-K6b",
+   "jahr": 2017,
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "h",
+   "id": "bruchrechnung-e1-k3-s7-v8",
+   "datei": "e1_a.tex",
+   "lage": "pruefung",
+   "original": "2017-OS-K6b",
+   "jahr": 2017,
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "i",
+   "id": "bruchrechnung-e1-k3-s8-v1",
+   "datei": "e1_a.tex",
+   "lage": "pruefung",
+   "original": "2026-FOR-K6c",
+   "jahr": 2026,
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "j",
+   "id": "bruchrechnung-e1-k3-s8-v2",
+   "datei": "e1_a.tex",
+   "lage": "pruefung",
+   "original": "2026-FOR-K6c",
+   "jahr": 2026,
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "k",
+   "id": "bruchrechnung-e1-k3-s8-v3",
+   "datei": "e1_a.tex",
+   "lage": "pruefung",
+   "original": "2014-OS-B1d",
+   "jahr": 2014,
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "l",
+   "id": "bruchrechnung-e1-k3-s8-v4",
+   "datei": "e1_a.tex",
+   "lage": "pruefung",
+   "original": "2014-OS-B1d",
+   "jahr": 2014,
+   "punkte": "1",
+   "stern": false
+  }
+ ]
+}

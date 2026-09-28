@@ -1,0 +1,1 @@
+# TRI-P4 (TRI-P4), Versuch 1: 0 Fehlerstellen (je Datei und Zeile die erste Meldung)

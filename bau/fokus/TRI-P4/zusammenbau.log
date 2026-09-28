@@ -1,0 +1,25 @@
+# zusammenbau v0.6: zusammenbau.py trigonometrie --fokus-pruefung Winkel berechnen --heft msa --einheiten 2
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG TRI-P4 – Kürzel TRI aus _kuerzel.csv (mathe-nachhilfe); Rezept P (Prüfungs-Fokus)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+EINHEIT e2 – Kette „Winkel berechnen“ mit 12 Prüfungshöhen im Profil msa (--einheiten)
+AUSWAHL trigonometrie-e2-k1-s0-v1 – trigonometrie e2 „Winkel berechnen“: Anlauf, Vorstufe
+AUSWAHL trigonometrie-e2-k1-s1-v1 – trigonometrie e2 „Winkel berechnen“: Anlauf, Grundfall
+AUSWAHL trigonometrie-e2-k1-s2-v1 – trigonometrie e2 „Winkel berechnen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL trigonometrie-e2-k1-s11-v1 – trigonometrie e2 „Winkel berechnen“: Prüfungshöhe (2024-OS-K6b)
+AUSWAHL trigonometrie-e2-k1-s11-v2 – trigonometrie e2 „Winkel berechnen“: Prüfungshöhe (2024-OS-K6b)
+AUSWAHL trigonometrie-e2-k1-s11-v3 – trigonometrie e2 „Winkel berechnen“: Prüfungshöhe (2019-OS-K3b)
+AUSWAHL trigonometrie-e2-k1-s11-v4 – trigonometrie e2 „Winkel berechnen“: Prüfungshöhe (2019-OS-K3b)
+AUSWAHL trigonometrie-e2-k1-s11-v5 – trigonometrie e2 „Winkel berechnen“: Prüfungshöhe (2026-FOR-K4b)
+AUSWAHL trigonometrie-e2-k1-s11-v6 – trigonometrie e2 „Winkel berechnen“: Prüfungshöhe (2026-FOR-K4b)
+AUSWAHL trigonometrie-e2-k1-s11-v7 – trigonometrie e2 „Winkel berechnen“: Prüfungshöhe (2022-OS-K5b)
+AUSWAHL trigonometrie-e2-k1-s11-v8 – trigonometrie e2 „Winkel berechnen“: Prüfungshöhe (2022-OS-K5b)
+AUSWAHL trigonometrie-e2-k1-s11-v9 – trigonometrie e2 „Winkel berechnen“: Prüfungshöhe (2025-OS-K4a)
+AUSWAHL trigonometrie-e2-k1-s11-v10 – trigonometrie e2 „Winkel berechnen“: Prüfungshöhe (2025-OS-K4a)
+AUSWAHL trigonometrie-e2-k1-s11-v11 – trigonometrie e2 „Winkel berechnen“: Prüfungshöhe (2019-OS-K2d)
+AUSWAHL trigonometrie-e2-k1-s11-v12 – trigonometrie e2 „Winkel berechnen“: Prüfungshöhe (2019-OS-K2d)
+PRÜFWORT „P10“ → „P10 ×9“ (Kataloge, 3 Typen; 6 Originale)
+KOPF Einheit 2: „Winkel berechnen“; Zeitmarke „ab Kl. 10 (am Gymnasium ab Kl. 9)“, Prüfungswort „P10 ×9“
+WARNUNG Nr. 2: 12 Teilaufgaben, 2 mit Grafik – über dem Halbseitenmaß (2.3 g)
+KASTEN Einheit 2: 5 Zeilen
+STRUKTUR 0 Fehler

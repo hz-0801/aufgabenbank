@@ -1,0 +1,33 @@
+# zusammenbau v0.6: zusammenbau.py geraden --fokus-pruefung Punktprobe und Punkte auf der Geraden --heft abitur-gk --einheiten 2
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG GER-P1 – Kürzel GER aus _kuerzel.csv (mathe-nachhilfe); Rezept P (Prüfungs-Fokus)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+EINHEIT e2 – Kette „Punktprobe und Punkte auf der Geraden“ mit 21 Prüfungshöhen im Profil abitur-gk (--einheiten)
+AUSWAHL geraden-e2-k1-s0-v1 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Anlauf, Vorstufe
+AUSWAHL geraden-e2-k1-s1-v1 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Anlauf, Grundfall
+AUSWAHL geraden-e2-k1-s2-v1 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2023-bebb-gk-A1.4a)
+AUSWAHL geraden-e2-k1-s2-v2 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2023-bebb-gk-A1.4a)
+AUSWAHL geraden-e2-k1-s2-v3 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2023-bebb-gk-A1.4a)
+AUSWAHL geraden-e2-k1-s3-v1 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2019MgrundlegendAAGLAA211-a)
+AUSWAHL geraden-e2-k1-s3-v2 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2019MgrundlegendAAGLAA211-a)
+AUSWAHL geraden-e2-k1-s3-v3 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2019MgrundlegendAAGLAA211-a)
+AUSWAHL geraden-e2-k1-s4-v1 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2019MgrundlegendAAGLAA22-a)
+AUSWAHL geraden-e2-k1-s4-v2 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2019MgrundlegendAAGLAA22-a)
+AUSWAHL geraden-e2-k1-s4-v3 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2019MgrundlegendAAGLAA22-a)
+AUSWAHL geraden-e2-k1-s5-v1 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2018-be-gk-B2.2d)
+AUSWAHL geraden-e2-k1-s5-v2 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2018-be-gk-B2.2d)
+AUSWAHL geraden-e2-k1-s5-v3 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2018-be-gk-B2.2d)
+AUSWAHL geraden-e2-k1-s6-v1 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2020-be-gk-A1.3a)
+AUSWAHL geraden-e2-k1-s6-v2 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2020-be-gk-A1.3a)
+AUSWAHL geraden-e2-k1-s6-v3 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2020-be-gk-A1.3a)
+AUSWAHL geraden-e2-k1-s7-v1 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2023MgrundlegendAAGLAA213-b)
+AUSWAHL geraden-e2-k1-s7-v2 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2023MgrundlegendAAGLAA213-b)
+AUSWAHL geraden-e2-k1-s7-v3 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2023MgrundlegendAAGLAA213-b)
+AUSWAHL geraden-e2-k1-s8-v1 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2026MgrundlegendBAGLAA2MMS2-1d)
+AUSWAHL geraden-e2-k1-s8-v2 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2026MgrundlegendBAGLAA2MMS2-1d)
+AUSWAHL geraden-e2-k1-s8-v3 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2026MgrundlegendBAGLAA2MMS2-1d)
+TEILUNG geraden e2 „Punktprobe und Punkte auf der Geraden“: 21 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+PRÜFWORT „Abitur GK“ → „Abi GK ×7“ (Kataloge, 5 Typen; 7 Originale)
+KOPF Einheit 2: „Punktprobe und Punkte auf der Geraden“; Zeitmarke „None“, Prüfungswort „Abi GK ×7“
+KASTEN Einheit 2: 7 Zeilen (über fünf)
+STRUKTUR 0 Fehler

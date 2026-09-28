@@ -1,0 +1,242 @@
+{
+ "kennung": "GLE-P1",
+ "datum": "2026-09-28",
+ "eintraege": [
+  "gleichungen-loesen"
+ ],
+ "titel": "Gleichungen lösen · Schnittpunkte und Stellen · Prüfungs-Fokus Abitur GK",
+ "kette": "Schnittpunkte und Stellen",
+ "einheit": 1,
+ "profil": "abitur-gk",
+ "pruefwort": "Abi GK ×4",
+ "kasten": "8 Zeilen (über fünf)",
+ "anlauf": 2,
+ "pruefungshoehe": 15,
+ "originale": [
+  "2018-be-gk-B1.1f",
+  "2019-be-gk-A1.2a",
+  "2019MgrundlegendAAnalysis12-a",
+  "2019MgrundlegendBAnalysisWTR1-3b",
+  "2020-be-gk-B2.2b",
+  "2020MgrundlegendBAnalysisWTR1-1a"
+ ],
+ "jahrgaenge": [
+  "2018",
+  "2019",
+  "2020"
+ ],
+ "rezept": "P",
+ "rezept_name": "Prüfungs-Fokus",
+ "bestellung": {
+  "fokus_pruefung": "Schnittpunkte und Stellen",
+  "heft": "abitur-gk",
+  "einheiten": "1",
+  "aus": null,
+  "ohne_register": false
+ },
+ "bank_commit": "b78e6d9",
+ "zusammenbau": "v0.6",
+ "vorlage": "Version 2026-09-28a",
+ "pfad": "bau/fokus/GLE-P1",
+ "kuerzel_quelle": "_kuerzel.csv (mathe-nachhilfe)",
+ "strukturfehler": 0,
+ "ausgelassen": [],
+ "aufgaben": [
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "a",
+   "id": "gleichungen-loesen-e1-k1-s0-v1",
+   "datei": "e1_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "b",
+   "id": "gleichungen-loesen-e1-k1-s1-v1",
+   "datei": "e1_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "a",
+   "id": "gleichungen-loesen-e1-k1-s3-v2",
+   "datei": "e1_a.tex",
+   "lage": "pruefung",
+   "original": "2019MgrundlegendAAnalysis12-a",
+   "jahr": 2019,
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "b",
+   "id": "gleichungen-loesen-e1-k1-s3-v3",
+   "datei": "e1_a.tex",
+   "lage": "pruefung",
+   "original": "2019MgrundlegendAAnalysis12-a",
+   "jahr": 2019,
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "c",
+   "id": "gleichungen-loesen-e1-k1-s5-v2",
+   "datei": "e1_a.tex",
+   "lage": "pruefung",
+   "original": "2018-be-gk-B1.1f",
+   "jahr": 2018,
+   "punkte": "10",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "d",
+   "id": "gleichungen-loesen-e1-k1-s8-v1",
+   "datei": "e1_a.tex",
+   "lage": "pruefung",
+   "original": "2019-be-gk-A1.2a",
+   "jahr": 2019,
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "e",
+   "id": "gleichungen-loesen-e1-k1-s8-v2",
+   "datei": "e1_a.tex",
+   "lage": "pruefung",
+   "original": "2019-be-gk-A1.2a",
+   "jahr": 2019,
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "f",
+   "id": "gleichungen-loesen-e1-k1-s8-v3",
+   "datei": "e1_a.tex",
+   "lage": "pruefung",
+   "original": "2019-be-gk-A1.2a",
+   "jahr": 2019,
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "g",
+   "id": "gleichungen-loesen-e1-k1-s9-v1",
+   "datei": "e1_a.tex",
+   "lage": "pruefung",
+   "original": "2020MgrundlegendBAnalysisWTR1-1a",
+   "jahr": 2020,
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "h",
+   "id": "gleichungen-loesen-e1-k1-s9-v2",
+   "datei": "e1_a.tex",
+   "lage": "pruefung",
+   "original": "2020MgrundlegendBAnalysisWTR1-1a",
+   "jahr": 2020,
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "i",
+   "id": "gleichungen-loesen-e1-k1-s9-v3",
+   "datei": "e1_a.tex",
+   "lage": "pruefung",
+   "original": "2020MgrundlegendBAnalysisWTR1-1a",
+   "jahr": 2020,
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "j",
+   "id": "gleichungen-loesen-e1-k1-s10-v1",
+   "datei": "e1_a.tex",
+   "lage": "pruefung",
+   "original": "2019MgrundlegendBAnalysisWTR1-3b",
+   "jahr": 2019,
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "k",
+   "id": "gleichungen-loesen-e1-k1-s10-v2",
+   "datei": "e1_a.tex",
+   "lage": "pruefung",
+   "original": "2019MgrundlegendBAnalysisWTR1-3b",
+   "jahr": 2019,
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "l",
+   "id": "gleichungen-loesen-e1-k1-s10-v3",
+   "datei": "e1_a.tex",
+   "lage": "pruefung",
+   "original": "2019MgrundlegendBAnalysisWTR1-3b",
+   "jahr": 2019,
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "a",
+   "id": "gleichungen-loesen-e1-k1-s11-v1",
+   "datei": "e1_a.tex",
+   "lage": "pruefung",
+   "original": "2020-be-gk-B2.2b",
+   "jahr": 2020,
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "b",
+   "id": "gleichungen-loesen-e1-k1-s11-v2",
+   "datei": "e1_a.tex",
+   "lage": "pruefung",
+   "original": "2020-be-gk-B2.2b",
+   "jahr": 2020,
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "c",
+   "id": "gleichungen-loesen-e1-k1-s11-v3",
+   "datei": "e1_a.tex",
+   "lage": "pruefung",
+   "original": "2020-be-gk-B2.2b",
+   "jahr": 2020,
+   "punkte": "5",
+   "stern": false
+  }
+ ]
+}

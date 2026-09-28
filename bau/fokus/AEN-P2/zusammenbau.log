@@ -1,0 +1,25 @@
+# zusammenbau v0.6: zusammenbau.py ableitung-und-aenderungsrate --fokus-pruefung Mittlere Änderungsrate --heft abitur-gk --einheiten 1
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG AEN-P2 – Kürzel AEN aus _kuerzel.csv (mathe-nachhilfe); Rezept P (Prüfungs-Fokus)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+EINHEIT e1 – Kette „Mittlere Änderungsrate“ mit 12 Prüfungshöhen im Profil abitur-gk (--einheiten)
+AUSWAHL ableitung-und-aenderungsrate-e1-k1-s0-v1 – ableitung-und-aenderungsrate e1 „Mittlere Änderungsrate“: Anlauf, Vorstufe
+AUSWAHL ableitung-und-aenderungsrate-e1-k1-s1-v1 – ableitung-und-aenderungsrate e1 „Mittlere Änderungsrate“: Anlauf, Grundfall
+AUSWAHL ableitung-und-aenderungsrate-e1-k1-s6-v2 – ableitung-und-aenderungsrate e1 „Mittlere Änderungsrate“: Anlauf, Sprosse – Fallstrick im Merkmal („zwei Modelle über dasselbe Intervall: beide Differ“)
+AUSWAHL ableitung-und-aenderungsrate-e1-k1-s2-v2 – ableitung-und-aenderungsrate e1 „Mittlere Änderungsrate“: Prüfungshöhe (2025-bebb-gk-B2.2f)
+AUSWAHL ableitung-und-aenderungsrate-e1-k1-s3-v1 – ableitung-und-aenderungsrate e1 „Mittlere Änderungsrate“: Prüfungshöhe (2019-be-gk-B2.2d)
+AUSWAHL ableitung-und-aenderungsrate-e1-k1-s3-v3 – ableitung-und-aenderungsrate e1 „Mittlere Änderungsrate“: Prüfungshöhe (2019MgrundlegendBAnalysisWTR1-1d)
+AUSWAHL ableitung-und-aenderungsrate-e1-k1-s4-v2 – ableitung-und-aenderungsrate e1 „Mittlere Änderungsrate“: Prüfungshöhe (2026MgrundlegendBAnalysisWTR1-2c)
+AUSWAHL ableitung-und-aenderungsrate-e1-k1-s5-v1 – ableitung-und-aenderungsrate e1 „Mittlere Änderungsrate“: Prüfungshöhe (2018-be-gk-B1.2e)
+AUSWAHL ableitung-und-aenderungsrate-e1-k1-s6-v1 – ableitung-und-aenderungsrate e1 „Mittlere Änderungsrate“: Prüfungshöhe (2018-be-gk-B1.2g)
+AUSWAHL ableitung-und-aenderungsrate-e1-k1-s7-v1 – ableitung-und-aenderungsrate e1 „Mittlere Änderungsrate“: Prüfungshöhe (2026-bb-gk-B2.1i)
+AUSWAHL ableitung-und-aenderungsrate-e1-k1-s8-v1 – ableitung-und-aenderungsrate e1 „Mittlere Änderungsrate“: Prüfungshöhe (2026MgrundlegendBAnalysisMMS1-1b)
+AUSWAHL ableitung-und-aenderungsrate-e1-k1-s10-v1 – ableitung-und-aenderungsrate e1 „Mittlere Änderungsrate“: Prüfungshöhe (2018MgrundlegendBAnalysisWTR-2c)
+AUSWAHL ableitung-und-aenderungsrate-e1-k1-s10-v2 – ableitung-und-aenderungsrate e1 „Mittlere Änderungsrate“: Prüfungshöhe (2018MgrundlegendBAnalysisWTR-2c)
+AUSWAHL ableitung-und-aenderungsrate-e1-k1-s10-v3 – ableitung-und-aenderungsrate e1 „Mittlere Änderungsrate“: Prüfungshöhe (2019MgrundlegendBAnalysisWTR2-2d)
+AUSWAHL ableitung-und-aenderungsrate-e1-k1-s10-v4 – ableitung-und-aenderungsrate e1 „Mittlere Änderungsrate“: Prüfungshöhe (2019MgrundlegendBAnalysisWTR2-2d)
+TEILUNG ableitung-und-aenderungsrate e1 „Mittlere Änderungsrate“: 12 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+PRÜFWORT „Abitur GK“ → „Abi GK ×5“ (Kataloge, 10 Typen; 10 Originale)
+KOPF Einheit 1: „Mittlere Änderungsrate und Sekante“; Zeitmarke „None“, Prüfungswort „Abi GK ×5“
+KASTEN Einheit 1: 7 Zeilen (über fünf)
+STRUKTUR 0 Fehler

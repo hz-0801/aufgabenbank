@@ -1,0 +1,34 @@
+# zusammenbau v0.6: zusammenbau.py gleichungen-loesen --fokus-pruefung Schnittpunkte und Stellen --heft abitur-gk --einheiten 1
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG GLE-P1 – Kürzel GLE aus _kuerzel.csv (mathe-nachhilfe); Rezept P (Prüfungs-Fokus)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+EINHEIT e1 – Kette „Schnittpunkte und Stellen“ mit 15 Prüfungshöhen im Profil abitur-gk (--einheiten)
+AUSWAHL gleichungen-loesen-e1-k1-s0-v1 – gleichungen-loesen e1 „Schnittpunkte und Stellen“: Anlauf, Vorstufe
+AUSWAHL gleichungen-loesen-e1-k1-s1-v1 – gleichungen-loesen e1 „Schnittpunkte und Stellen“: Anlauf, Grundfall
+AUSWAHL gleichungen-loesen-e1-k1-s3-v2 – gleichungen-loesen e1 „Schnittpunkte und Stellen“: Prüfungshöhe (2019MgrundlegendAAnalysis12-a)
+AUSWAHL gleichungen-loesen-e1-k1-s3-v3 – gleichungen-loesen e1 „Schnittpunkte und Stellen“: Prüfungshöhe (2019MgrundlegendAAnalysis12-a)
+AUSWAHL gleichungen-loesen-e1-k1-s5-v2 – gleichungen-loesen e1 „Schnittpunkte und Stellen“: Prüfungshöhe (2018-be-gk-B1.1f)
+AUSWAHL gleichungen-loesen-e1-k1-s8-v1 – gleichungen-loesen e1 „Schnittpunkte und Stellen“: Prüfungshöhe (2019-be-gk-A1.2a)
+AUSWAHL gleichungen-loesen-e1-k1-s8-v2 – gleichungen-loesen e1 „Schnittpunkte und Stellen“: Prüfungshöhe (2019-be-gk-A1.2a)
+AUSWAHL gleichungen-loesen-e1-k1-s8-v3 – gleichungen-loesen e1 „Schnittpunkte und Stellen“: Prüfungshöhe (2019-be-gk-A1.2a)
+AUSWAHL gleichungen-loesen-e1-k1-s9-v1 – gleichungen-loesen e1 „Schnittpunkte und Stellen“: Prüfungshöhe (2020MgrundlegendBAnalysisWTR1-1a)
+AUSWAHL gleichungen-loesen-e1-k1-s9-v2 – gleichungen-loesen e1 „Schnittpunkte und Stellen“: Prüfungshöhe (2020MgrundlegendBAnalysisWTR1-1a)
+AUSWAHL gleichungen-loesen-e1-k1-s9-v3 – gleichungen-loesen e1 „Schnittpunkte und Stellen“: Prüfungshöhe (2020MgrundlegendBAnalysisWTR1-1a)
+AUSWAHL gleichungen-loesen-e1-k1-s10-v1 – gleichungen-loesen e1 „Schnittpunkte und Stellen“: Prüfungshöhe (2019MgrundlegendBAnalysisWTR1-3b)
+AUSWAHL gleichungen-loesen-e1-k1-s10-v2 – gleichungen-loesen e1 „Schnittpunkte und Stellen“: Prüfungshöhe (2019MgrundlegendBAnalysisWTR1-3b)
+AUSWAHL gleichungen-loesen-e1-k1-s10-v3 – gleichungen-loesen e1 „Schnittpunkte und Stellen“: Prüfungshöhe (2019MgrundlegendBAnalysisWTR1-3b)
+AUSWAHL gleichungen-loesen-e1-k1-s11-v1 – gleichungen-loesen e1 „Schnittpunkte und Stellen“: Prüfungshöhe (2020-be-gk-B2.2b)
+AUSWAHL gleichungen-loesen-e1-k1-s11-v2 – gleichungen-loesen e1 „Schnittpunkte und Stellen“: Prüfungshöhe (2020-be-gk-B2.2b)
+AUSWAHL gleichungen-loesen-e1-k1-s11-v3 – gleichungen-loesen e1 „Schnittpunkte und Stellen“: Prüfungshöhe (2020-be-gk-B2.2b)
+TEILUNG gleichungen-loesen e1 „Schnittpunkte und Stellen“: 15 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+PRÜFWORT „Abitur GK“ → „Abi GK ×4“ (Kataloge, 6 Typen; 6 Originale)
+KOPF Einheit 1: „Ganzrationale Gleichungen“; Zeitmarke „None“, Prüfungswort „Abi GK ×4“
+FORM gleichungen-loesen-e1-k1-s1-v1 (Nr. 1): gleichungsraster mit Text → teile
+FORM gleichungen-loesen-e1-k1-s3-v2 (Nr. 2): gleichungsraster mit Text → teile
+FORM gleichungen-loesen-e1-k1-s3-v3 (Nr. 2): gleichungsraster mit Text → teile
+FORM gleichungen-loesen-e1-k1-s5-v2 (Nr. 2): gleichungsraster mit Text → teile
+FORM gleichungen-loesen-e1-k1-s10-v1 (Nr. 2): gleichungsraster mit Text → teile
+FORM gleichungen-loesen-e1-k1-s10-v2 (Nr. 2): gleichungsraster mit Text → teile
+FORM gleichungen-loesen-e1-k1-s10-v3 (Nr. 2): gleichungsraster mit Text → teile
+KASTEN Einheit 1: 8 Zeilen (über fünf)
+STRUKTUR 0 Fehler

@@ -1,0 +1,217 @@
+{
+ "kennung": "TRI-P3",
+ "datum": "2026-09-28",
+ "eintraege": [
+  "trigonometrie"
+ ],
+ "titel": "Trigonometrie · Teildreiecke und Vermessung · Prüfungs-Fokus MSA",
+ "kette": "Teildreiecke und Vermessung",
+ "einheit": 3,
+ "profil": "msa",
+ "pruefwort": "P10 ×12",
+ "kasten": "5 Zeilen",
+ "anlauf": 3,
+ "pruefungshoehe": 12,
+ "originale": [
+  "2015-OS-K5d",
+  "2016-OS-K7c",
+  "2018-OS-K4d",
+  "2020-OS-K5b",
+  "2023-OS-K7b",
+  "2026-FOR-K4c"
+ ],
+ "jahrgaenge": [
+  "2015",
+  "2016",
+  "2018",
+  "2020",
+  "2023",
+  "2026"
+ ],
+ "rezept": "P",
+ "rezept_name": "Prüfungs-Fokus",
+ "bestellung": {
+  "fokus_pruefung": "Teildreiecke und Vermessung",
+  "heft": "msa",
+  "einheiten": "3",
+  "aus": null,
+  "ohne_register": false
+ },
+ "bank_commit": "b78e6d9",
+ "zusammenbau": "v0.6",
+ "vorlage": "Version 2026-09-28a",
+ "pfad": "bau/fokus/TRI-P3",
+ "kuerzel_quelle": "_kuerzel.csv (mathe-nachhilfe)",
+ "strukturfehler": 0,
+ "ausgelassen": [],
+ "aufgaben": [
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "a",
+   "id": "trigonometrie-e3-k1-s0-v1",
+   "datei": "e3_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "b",
+   "id": "trigonometrie-e3-k1-s1-v1",
+   "datei": "e3_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "c",
+   "id": "trigonometrie-e3-k1-s2-v1",
+   "datei": "e3_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "a",
+   "id": "trigonometrie-e3-k1-s17-v1",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2018-OS-K4d",
+   "jahr": 2018,
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "b",
+   "id": "trigonometrie-e3-k1-s17-v2",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2018-OS-K4d",
+   "jahr": 2018,
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "c",
+   "id": "trigonometrie-e3-k1-s17-v3",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2020-OS-K5b",
+   "jahr": 2020,
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "d",
+   "id": "trigonometrie-e3-k1-s17-v4",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2020-OS-K5b",
+   "jahr": 2020,
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "e",
+   "id": "trigonometrie-e3-k1-s17-v5",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2023-OS-K7b",
+   "jahr": 2023,
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "f",
+   "id": "trigonometrie-e3-k1-s17-v6",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2023-OS-K7b",
+   "jahr": 2023,
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "g",
+   "id": "trigonometrie-e3-k1-s17-v7",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2026-FOR-K4c",
+   "jahr": 2026,
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "h",
+   "id": "trigonometrie-e3-k1-s17-v8",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2026-FOR-K4c",
+   "jahr": 2026,
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "i",
+   "id": "trigonometrie-e3-k1-s17-v9",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-K7c",
+   "jahr": 2016,
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "j",
+   "id": "trigonometrie-e3-k1-s17-v10",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-K7c",
+   "jahr": 2016,
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "k",
+   "id": "trigonometrie-e3-k1-s17-v11",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2015-OS-K5d",
+   "jahr": 2015,
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "l",
+   "id": "trigonometrie-e3-k1-s17-v12",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2015-OS-K5d",
+   "jahr": 2015,
+   "punkte": "3",
+   "stern": false
+  }
+ ]
+}

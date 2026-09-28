@@ -1,0 +1,191 @@
+{
+ "kennung": "POT-P1",
+ "datum": "2026-09-28",
+ "eintraege": [
+  "potenz-exponentialfunktionen"
+ ],
+ "titel": "Potenz- und Exponentialfunktionen, Wachstum und Zerfall · Wert und Schwellenwert berechnen · Prüfungs-Fokus MSA",
+ "kette": "Wert und Schwellenwert berechnen",
+ "einheit": 3,
+ "profil": "msa",
+ "pruefwort": "P10 ×7",
+ "kasten": "4 Zeilen",
+ "anlauf": 3,
+ "pruefungshoehe": 10,
+ "originale": [
+  "2016-OS-K4e",
+  "2017-OS-K7d",
+  "2018-OS-K2c",
+  "2020-OS-K4c",
+  "2025-OS-K7b"
+ ],
+ "jahrgaenge": [
+  "2016",
+  "2017",
+  "2018",
+  "2020",
+  "2025"
+ ],
+ "rezept": "P",
+ "rezept_name": "Prüfungs-Fokus",
+ "bestellung": {
+  "fokus_pruefung": "Wert und Schwellenwert berechnen",
+  "heft": "msa",
+  "einheiten": "3",
+  "aus": null,
+  "ohne_register": false
+ },
+ "bank_commit": "b78e6d9",
+ "zusammenbau": "v0.6",
+ "vorlage": "Version 2026-09-28a",
+ "pfad": "bau/fokus/POT-P1",
+ "kuerzel_quelle": "_kuerzel.csv (mathe-nachhilfe)",
+ "strukturfehler": 0,
+ "ausgelassen": [],
+ "aufgaben": [
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "a",
+   "id": "potenz-exponentialfunktionen-e3-k2-s0-v1",
+   "datei": "e3_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "b",
+   "id": "potenz-exponentialfunktionen-e3-k2-s1-v1",
+   "datei": "e3_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "c",
+   "id": "potenz-exponentialfunktionen-e3-k2-s3-v1",
+   "datei": "e3_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "a",
+   "id": "potenz-exponentialfunktionen-e3-k2-s8-v1",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-K7b",
+   "jahr": 2025,
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "b",
+   "id": "potenz-exponentialfunktionen-e3-k2-s8-v2",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-K7b",
+   "jahr": 2025,
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "c",
+   "id": "potenz-exponentialfunktionen-e3-k2-s8-v3",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2020-OS-K4c",
+   "jahr": 2020,
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "d",
+   "id": "potenz-exponentialfunktionen-e3-k2-s8-v4",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2020-OS-K4c",
+   "jahr": 2020,
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "e",
+   "id": "potenz-exponentialfunktionen-e3-k2-s8-v5",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-K4e",
+   "jahr": 2016,
+   "punkte": "1",
+   "stern": true
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "f",
+   "id": "potenz-exponentialfunktionen-e3-k2-s8-v6",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-K4e",
+   "jahr": 2016,
+   "punkte": "1",
+   "stern": true
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "g",
+   "id": "potenz-exponentialfunktionen-e3-k2-s8-v7",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2017-OS-K7d",
+   "jahr": 2017,
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "h",
+   "id": "potenz-exponentialfunktionen-e3-k2-s8-v8",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2017-OS-K7d",
+   "jahr": 2017,
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "i",
+   "id": "potenz-exponentialfunktionen-e3-k2-s8-v9",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2018-OS-K2c",
+   "jahr": 2018,
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "j",
+   "id": "potenz-exponentialfunktionen-e3-k2-s8-v10",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "original": "2018-OS-K2c",
+   "jahr": 2018,
+   "punkte": "2",
+   "stern": false
+  }
+ ]
+}

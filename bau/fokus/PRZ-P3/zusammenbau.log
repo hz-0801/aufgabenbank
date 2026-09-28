@@ -1,0 +1,22 @@
+# zusammenbau v0.6: zusammenbau.py prozentrechnung --fokus-pruefung Prozentsatz --heft msa --einheiten 2
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG PRZ-P3 – Kürzel PRZ aus _kuerzel.csv (mathe-nachhilfe); Rezept P (Prüfungs-Fokus)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+EINHEIT e2 – Kette „Prozentsatz“ mit 10 Prüfungshöhen im Profil msa (--einheiten)
+AUSWAHL prozentrechnung-e2-k3-s0-v1 – prozentrechnung e2 „Prozentsatz“: Anlauf, Vorstufe
+AUSWAHL prozentrechnung-e2-k3-s1-v1 – prozentrechnung e2 „Prozentsatz“: Anlauf, Grundfall
+AUSWAHL prozentrechnung-e2-k3-s2-v1 – prozentrechnung e2 „Prozentsatz“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL prozentrechnung-e2-k3-s7-v1 – prozentrechnung e2 „Prozentsatz“: Prüfungshöhe (2018-OS-K7a)
+AUSWAHL prozentrechnung-e2-k3-s7-v2 – prozentrechnung e2 „Prozentsatz“: Prüfungshöhe (2018-OS-K7a)
+AUSWAHL prozentrechnung-e2-k3-s7-v3 – prozentrechnung e2 „Prozentsatz“: Prüfungshöhe (2023-OS-K6a)
+AUSWAHL prozentrechnung-e2-k3-s7-v4 – prozentrechnung e2 „Prozentsatz“: Prüfungshöhe (2023-OS-K6a)
+AUSWAHL prozentrechnung-e2-k3-s7-v5 – prozentrechnung e2 „Prozentsatz“: Prüfungshöhe (2015-OS-K7c)
+AUSWAHL prozentrechnung-e2-k3-s7-v6 – prozentrechnung e2 „Prozentsatz“: Prüfungshöhe (2015-OS-K7c)
+AUSWAHL prozentrechnung-e2-k3-s8-v1 – prozentrechnung e2 „Prozentsatz“: Prüfungshöhe (2014-OS-B1e)
+AUSWAHL prozentrechnung-e2-k3-s8-v2 – prozentrechnung e2 „Prozentsatz“: Prüfungshöhe (2014-OS-B1e)
+AUSWAHL prozentrechnung-e2-k3-s9-v1 – prozentrechnung e2 „Prozentsatz“: Prüfungshöhe (2025-OS-K6b)
+AUSWAHL prozentrechnung-e2-k3-s9-v2 – prozentrechnung e2 „Prozentsatz“: Prüfungshöhe (2025-OS-K6b)
+PRÜFWORT „P10“ → „P10 ×5“ (Kataloge, 1 Typen; 5 Originale)
+KOPF Einheit 2: „Prozentsatz berechnen“; Zeitmarke „ab Kl. 7“, Prüfungswort „P10 ×5“
+KASTEN Einheit 2: 2 Zeilen
+STRUKTUR 0 Fehler

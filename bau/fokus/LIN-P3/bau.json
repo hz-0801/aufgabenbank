@@ -1,0 +1,182 @@
+{
+ "kennung": "LIN-P3",
+ "datum": "2026-09-28",
+ "eintraege": [
+  "lineare-funktionen"
+ ],
+ "titel": "Lineare Funktionen · Ablesen · Prüfungs-Fokus MSA",
+ "kette": "Ablesen",
+ "einheit": 2,
+ "profil": "msa",
+ "pruefwort": "P10 ×4",
+ "kasten": "3 Zeilen",
+ "anlauf": 2,
+ "pruefungshoehe": 10,
+ "originale": [
+  "2016-OS-B1c",
+  "2019-OS-K2b",
+  "2019-OS-K2c",
+  "2024-OS-B1i",
+  "2025-OS-B1f"
+ ],
+ "jahrgaenge": [
+  "2016",
+  "2019",
+  "2024",
+  "2025"
+ ],
+ "rezept": "P",
+ "rezept_name": "Prüfungs-Fokus",
+ "bestellung": {
+  "fokus_pruefung": "Ablesen",
+  "heft": "msa",
+  "einheiten": "2",
+  "aus": null,
+  "ohne_register": false
+ },
+ "bank_commit": "b78e6d9",
+ "zusammenbau": "v0.6",
+ "vorlage": "Version 2026-09-28a",
+ "pfad": "bau/fokus/LIN-P3",
+ "kuerzel_quelle": "_kuerzel.csv (mathe-nachhilfe)",
+ "strukturfehler": 0,
+ "ausgelassen": [],
+ "aufgaben": [
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "a",
+   "id": "lineare-funktionen-e2-k5-s1-v1",
+   "datei": "e2_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "b",
+   "id": "lineare-funktionen-e2-k5-s3-v1",
+   "datei": "e2_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "a",
+   "id": "lineare-funktionen-e2-k5-s6-v1",
+   "datei": "e2_a.tex",
+   "lage": "pruefung",
+   "original": "2019-OS-K2c",
+   "jahr": 2019,
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "b",
+   "id": "lineare-funktionen-e2-k5-s6-v2",
+   "datei": "e2_a.tex",
+   "lage": "pruefung",
+   "original": "2019-OS-K2c",
+   "jahr": 2019,
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "c",
+   "id": "lineare-funktionen-e2-k5-s6-v3",
+   "datei": "e2_a.tex",
+   "lage": "pruefung",
+   "original": "2019-OS-K2b",
+   "jahr": 2019,
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "d",
+   "id": "lineare-funktionen-e2-k5-s6-v4",
+   "datei": "e2_a.tex",
+   "lage": "pruefung",
+   "original": "2019-OS-K2b",
+   "jahr": 2019,
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "e",
+   "id": "lineare-funktionen-e2-k5-s6-v5",
+   "datei": "e2_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-B1c",
+   "jahr": 2016,
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "f",
+   "id": "lineare-funktionen-e2-k5-s6-v6",
+   "datei": "e2_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-B1c",
+   "jahr": 2016,
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "g",
+   "id": "lineare-funktionen-e2-k5-s6-v7",
+   "datei": "e2_a.tex",
+   "lage": "pruefung",
+   "original": "2024-OS-B1i",
+   "jahr": 2024,
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "h",
+   "id": "lineare-funktionen-e2-k5-s6-v8",
+   "datei": "e2_a.tex",
+   "lage": "pruefung",
+   "original": "2024-OS-B1i",
+   "jahr": 2024,
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "i",
+   "id": "lineare-funktionen-e2-k5-s6-v9",
+   "datei": "e2_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-B1f",
+   "jahr": 2025,
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "j",
+   "id": "lineare-funktionen-e2-k5-s6-v10",
+   "datei": "e2_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-B1f",
+   "jahr": 2025,
+   "punkte": "1",
+   "stern": false
+  }
+ ]
+}

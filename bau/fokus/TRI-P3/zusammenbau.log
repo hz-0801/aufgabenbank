@@ -1,0 +1,24 @@
+# zusammenbau v0.6: zusammenbau.py trigonometrie --fokus-pruefung Teildreiecke und Vermessung --heft msa --einheiten 3
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG TRI-P3 – Kürzel TRI aus _kuerzel.csv (mathe-nachhilfe); Rezept P (Prüfungs-Fokus)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+EINHEIT e3 – Kette „Teildreiecke und Vermessung“ mit 12 Prüfungshöhen im Profil msa (--einheiten)
+AUSWAHL trigonometrie-e3-k1-s0-v1 – trigonometrie e3 „Teildreiecke und Vermessung“: Anlauf, Vorstufe
+AUSWAHL trigonometrie-e3-k1-s1-v1 – trigonometrie e3 „Teildreiecke und Vermessung“: Anlauf, Grundfall
+AUSWAHL trigonometrie-e3-k1-s2-v1 – trigonometrie e3 „Teildreiecke und Vermessung“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL trigonometrie-e3-k1-s17-v1 – trigonometrie e3 „Teildreiecke und Vermessung“: Prüfungshöhe (2018-OS-K4d)
+AUSWAHL trigonometrie-e3-k1-s17-v2 – trigonometrie e3 „Teildreiecke und Vermessung“: Prüfungshöhe (2018-OS-K4d)
+AUSWAHL trigonometrie-e3-k1-s17-v3 – trigonometrie e3 „Teildreiecke und Vermessung“: Prüfungshöhe (2020-OS-K5b)
+AUSWAHL trigonometrie-e3-k1-s17-v4 – trigonometrie e3 „Teildreiecke und Vermessung“: Prüfungshöhe (2020-OS-K5b)
+AUSWAHL trigonometrie-e3-k1-s17-v5 – trigonometrie e3 „Teildreiecke und Vermessung“: Prüfungshöhe (2023-OS-K7b)
+AUSWAHL trigonometrie-e3-k1-s17-v6 – trigonometrie e3 „Teildreiecke und Vermessung“: Prüfungshöhe (2023-OS-K7b)
+AUSWAHL trigonometrie-e3-k1-s17-v7 – trigonometrie e3 „Teildreiecke und Vermessung“: Prüfungshöhe (2026-FOR-K4c)
+AUSWAHL trigonometrie-e3-k1-s17-v8 – trigonometrie e3 „Teildreiecke und Vermessung“: Prüfungshöhe (2026-FOR-K4c)
+AUSWAHL trigonometrie-e3-k1-s17-v9 – trigonometrie e3 „Teildreiecke und Vermessung“: Prüfungshöhe (2016-OS-K7c, Stern)
+AUSWAHL trigonometrie-e3-k1-s17-v10 – trigonometrie e3 „Teildreiecke und Vermessung“: Prüfungshöhe (2016-OS-K7c, Stern)
+AUSWAHL trigonometrie-e3-k1-s17-v11 – trigonometrie e3 „Teildreiecke und Vermessung“: Prüfungshöhe (2015-OS-K5d)
+AUSWAHL trigonometrie-e3-k1-s17-v12 – trigonometrie e3 „Teildreiecke und Vermessung“: Prüfungshöhe (2015-OS-K5d)
+PRÜFWORT „P10“ → „P10 ×12“ (Kataloge, 3 Typen; 6 Originale)
+KOPF Einheit 3: „Rechtwinklige Teildreiecke in Figuren und Vermessung“; Zeitmarke „ab Kl. 10 (am Gymnasium ab Kl. 9)“, Prüfungswort „P10 ×12“
+KASTEN Einheit 3: 5 Zeilen
+STRUKTUR 0 Fehler

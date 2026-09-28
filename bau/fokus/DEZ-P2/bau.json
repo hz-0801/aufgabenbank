@@ -1,0 +1,194 @@
+{
+ "kennung": "DEZ-P2",
+ "datum": "2026-09-28",
+ "eintraege": [
+  "brueche-dezimalzahlen"
+ ],
+ "titel": "Brüche und Dezimalzahlen · Vergleichen und Ordnen · Prüfungs-Fokus MSA",
+ "kette": "Vergleichen und Ordnen",
+ "einheit": 5,
+ "profil": "msa",
+ "pruefwort": "P10 ×8",
+ "kasten": "4 Zeilen",
+ "anlauf": 3,
+ "pruefungshoehe": 10,
+ "originale": [
+  "2014-OS-B1h",
+  "2015-OS-B1c",
+  "2018-OS-B1d",
+  "2020-OS-B1f",
+  "2023-OS-B1f"
+ ],
+ "jahrgaenge": [
+  "2014",
+  "2015",
+  "2018",
+  "2020",
+  "2023"
+ ],
+ "rezept": "P",
+ "rezept_name": "Prüfungs-Fokus",
+ "bestellung": {
+  "fokus_pruefung": "Vergleichen und Ordnen",
+  "heft": "msa",
+  "einheiten": "5",
+  "aus": null,
+  "ohne_register": false
+ },
+ "bank_commit": "b78e6d9",
+ "zusammenbau": "v0.6",
+ "vorlage": "Version 2026-09-28a",
+ "pfad": "bau/fokus/DEZ-P2",
+ "kuerzel_quelle": "_kuerzel.csv (mathe-nachhilfe)",
+ "strukturfehler": 2,
+ "ausgelassen": [
+  "ausgelassen: brueche-dezimalzahlen-e5-k2-s9-v8, LaTeX Error: Command \\item invalid in math mode. (Nr. 2h, Versuch 1)",
+  "ausgelassen: brueche-dezimalzahlen-e5-k2-s9-v7, Missing $ inserted. (Nr. 2g, Versuch 1)"
+ ],
+ "aufgaben": [
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "a",
+   "id": "brueche-dezimalzahlen-e5-k2-s0-v1",
+   "datei": "e5_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "b",
+   "id": "brueche-dezimalzahlen-e5-k2-s1-v1",
+   "datei": "e5_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "c",
+   "id": "brueche-dezimalzahlen-e5-k2-s2-v1",
+   "datei": "e5_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "a",
+   "id": "brueche-dezimalzahlen-e5-k2-s9-v1",
+   "datei": "e5_a.tex",
+   "lage": "pruefung",
+   "original": "2023-OS-B1f",
+   "jahr": 2023,
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "b",
+   "id": "brueche-dezimalzahlen-e5-k2-s9-v2",
+   "datei": "e5_a.tex",
+   "lage": "pruefung",
+   "original": "2023-OS-B1f",
+   "jahr": 2023,
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "c",
+   "id": "brueche-dezimalzahlen-e5-k2-s9-v3",
+   "datei": "e5_a.tex",
+   "lage": "pruefung",
+   "original": "2014-OS-B1h",
+   "jahr": 2014,
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "d",
+   "id": "brueche-dezimalzahlen-e5-k2-s9-v4",
+   "datei": "e5_a.tex",
+   "lage": "pruefung",
+   "original": "2014-OS-B1h",
+   "jahr": 2014,
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "e",
+   "id": "brueche-dezimalzahlen-e5-k2-s9-v5",
+   "datei": "e5_a.tex",
+   "lage": "pruefung",
+   "original": "2015-OS-B1c",
+   "jahr": 2015,
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "f",
+   "id": "brueche-dezimalzahlen-e5-k2-s9-v6",
+   "datei": "e5_a.tex",
+   "lage": "pruefung",
+   "original": "2015-OS-B1c",
+   "jahr": 2015,
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "g",
+   "id": "brueche-dezimalzahlen-e5-k2-s9-v7",
+   "datei": "e5_a.tex",
+   "lage": "pruefung",
+   "original": "2018-OS-B1d",
+   "jahr": 2018,
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "h",
+   "id": "brueche-dezimalzahlen-e5-k2-s9-v8",
+   "datei": "e5_a.tex",
+   "lage": "pruefung",
+   "original": "2018-OS-B1d",
+   "jahr": 2018,
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "i",
+   "id": "brueche-dezimalzahlen-e5-k2-s9-v9",
+   "datei": "e5_a.tex",
+   "lage": "pruefung",
+   "original": "2020-OS-B1f",
+   "jahr": 2020,
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "j",
+   "id": "brueche-dezimalzahlen-e5-k2-s9-v10",
+   "datei": "e5_a.tex",
+   "lage": "pruefung",
+   "original": "2020-OS-B1f",
+   "jahr": 2020,
+   "punkte": "1",
+   "stern": false
+  }
+ ]
+}

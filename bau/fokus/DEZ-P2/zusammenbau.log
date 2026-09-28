@@ -1,0 +1,24 @@
+# zusammenbau v0.6: zusammenbau.py brueche-dezimalzahlen --fokus-pruefung Vergleichen und Ordnen --heft msa --einheiten 5
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG DEZ-P2 – Kürzel DEZ aus _kuerzel.csv (mathe-nachhilfe); Rezept P (Prüfungs-Fokus)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+EINHEIT e5 – Kette „Vergleichen und Ordnen“ mit 10 Prüfungshöhen im Profil msa (--einheiten)
+AUSWAHL brueche-dezimalzahlen-e5-k2-s0-v1 – brueche-dezimalzahlen e5 „Vergleichen und Ordnen“: Anlauf, Vorstufe
+AUSWAHL brueche-dezimalzahlen-e5-k2-s1-v1 – brueche-dezimalzahlen e5 „Vergleichen und Ordnen“: Anlauf, Grundfall
+AUSWAHL brueche-dezimalzahlen-e5-k2-s2-v1 – brueche-dezimalzahlen e5 „Vergleichen und Ordnen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL brueche-dezimalzahlen-e5-k2-s9-v1 – brueche-dezimalzahlen e5 „Vergleichen und Ordnen“: Prüfungshöhe (2023-OS-B1f)
+AUSWAHL brueche-dezimalzahlen-e5-k2-s9-v2 – brueche-dezimalzahlen e5 „Vergleichen und Ordnen“: Prüfungshöhe (2023-OS-B1f)
+AUSWAHL brueche-dezimalzahlen-e5-k2-s9-v3 – brueche-dezimalzahlen e5 „Vergleichen und Ordnen“: Prüfungshöhe (2014-OS-B1h)
+AUSWAHL brueche-dezimalzahlen-e5-k2-s9-v4 – brueche-dezimalzahlen e5 „Vergleichen und Ordnen“: Prüfungshöhe (2014-OS-B1h)
+AUSWAHL brueche-dezimalzahlen-e5-k2-s9-v5 – brueche-dezimalzahlen e5 „Vergleichen und Ordnen“: Prüfungshöhe (2015-OS-B1c)
+AUSWAHL brueche-dezimalzahlen-e5-k2-s9-v6 – brueche-dezimalzahlen e5 „Vergleichen und Ordnen“: Prüfungshöhe (2015-OS-B1c)
+AUSWAHL brueche-dezimalzahlen-e5-k2-s9-v7 – brueche-dezimalzahlen e5 „Vergleichen und Ordnen“: Prüfungshöhe (2018-OS-B1d)
+AUSWAHL brueche-dezimalzahlen-e5-k2-s9-v8 – brueche-dezimalzahlen e5 „Vergleichen und Ordnen“: Prüfungshöhe (2018-OS-B1d)
+AUSWAHL brueche-dezimalzahlen-e5-k2-s9-v9 – brueche-dezimalzahlen e5 „Vergleichen und Ordnen“: Prüfungshöhe (2020-OS-B1f)
+AUSWAHL brueche-dezimalzahlen-e5-k2-s9-v10 – brueche-dezimalzahlen e5 „Vergleichen und Ordnen“: Prüfungshöhe (2020-OS-B1f)
+PRÜFWORT „P10“ → „P10 ×8“ (Kataloge, 2 Typen; 5 Originale)
+KOPF Einheit 5: „Vergleichen, Ordnen, Runden“; Zeitmarke „ab Kl. 5, je nach Buch bis Kl. 6“, Prüfungswort „P10 ×8“
+KASTEN Einheit 5: 4 Zeilen
+STRUKTUR 2 Fehler
+  FEHLER e5_a.tex:23: _ außerhalb Mathe
+  FEHLER e5_a.tex:24: _ außerhalb Mathe

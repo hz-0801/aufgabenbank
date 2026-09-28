@@ -1,0 +1,27 @@
+# zusammenbau v0.6: zusammenbau.py grenzwerte-und-verhalten-im-unendlichen --fokus-pruefung Produkte aus Polynom und e-Funktion --heft abitur-gk --einheiten 2
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG GRE-P1 – Kürzel GRE aus _kuerzel.csv (mathe-nachhilfe); Rezept P (Prüfungs-Fokus)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+EINHEIT e2 – Kette „Produkte aus Polynom und e-Funktion“ mit 15 Prüfungshöhen im Profil abitur-gk (--einheiten)
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e2-k1-s0-v1 – grenzwerte-und-verhalten-im-unendlichen e2 „Produkte aus Polynom und e-Funktion“: Anlauf, Vorstufe
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e2-k1-s1-v1 – grenzwerte-und-verhalten-im-unendlichen e2 „Produkte aus Polynom und e-Funktion“: Anlauf, Grundfall
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e2-k1-s2-v1 – grenzwerte-und-verhalten-im-unendlichen e2 „Produkte aus Polynom und e-Funktion“: Prüfungshöhe (2025-bebb-gk-B2.2a)
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e2-k1-s2-v2 – grenzwerte-und-verhalten-im-unendlichen e2 „Produkte aus Polynom und e-Funktion“: Prüfungshöhe (2025MgrundlegendBAnalysisWTR2-1a)
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e2-k1-s2-v3 – grenzwerte-und-verhalten-im-unendlichen e2 „Produkte aus Polynom und e-Funktion“: Prüfungshöhe (2025-bebb-gk-B2.2a)
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e2-k1-s3-v1 – grenzwerte-und-verhalten-im-unendlichen e2 „Produkte aus Polynom und e-Funktion“: Prüfungshöhe (2022-bebb-gk-B2.1b)
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e2-k1-s3-v2 – grenzwerte-und-verhalten-im-unendlichen e2 „Produkte aus Polynom und e-Funktion“: Prüfungshöhe (2018-be-gk-B1.2a)
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e2-k1-s3-v3 – grenzwerte-und-verhalten-im-unendlichen e2 „Produkte aus Polynom und e-Funktion“: Prüfungshöhe (2022MgrundlegendBAnalysisWTR2-1b)
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e2-k1-s4-v1 – grenzwerte-und-verhalten-im-unendlichen e2 „Produkte aus Polynom und e-Funktion“: Prüfungshöhe (2023-bebb-gk-B2.1a)
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e2-k1-s4-v2 – grenzwerte-und-verhalten-im-unendlichen e2 „Produkte aus Polynom und e-Funktion“: Prüfungshöhe (2021-be-gk-B2.2b)
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e2-k1-s4-v3 – grenzwerte-und-verhalten-im-unendlichen e2 „Produkte aus Polynom und e-Funktion“: Prüfungshöhe (2020MgrundlegendBAnalysisWTR2-1b)
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e2-k1-s5-v1 – grenzwerte-und-verhalten-im-unendlichen e2 „Produkte aus Polynom und e-Funktion“: Prüfungshöhe (2019-be-gk-B2.2a)
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e2-k1-s5-v2 – grenzwerte-und-verhalten-im-unendlichen e2 „Produkte aus Polynom und e-Funktion“: Prüfungshöhe (2019-be-gk-B2.2a)
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e2-k1-s5-v3 – grenzwerte-und-verhalten-im-unendlichen e2 „Produkte aus Polynom und e-Funktion“: Prüfungshöhe (2019-be-gk-B2.2a)
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e2-k1-s6-v1 – grenzwerte-und-verhalten-im-unendlichen e2 „Produkte aus Polynom und e-Funktion“: Prüfungshöhe (2025-bebb-gk-B2.2a)
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e2-k1-s6-v2 – grenzwerte-und-verhalten-im-unendlichen e2 „Produkte aus Polynom und e-Funktion“: Prüfungshöhe (2025-bebb-gk-B2.2a)
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e2-k1-s6-v3 – grenzwerte-und-verhalten-im-unendlichen e2 „Produkte aus Polynom und e-Funktion“: Prüfungshöhe (2018-be-gk-B1.2a)
+TEILUNG grenzwerte-und-verhalten-im-unendlichen e2 „Produkte aus Polynom und e-Funktion“: 15 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+PRÜFWORT „Abitur GK“ → „Abi GK ×7“ (Kataloge, 3 Typen; 9 Originale)
+KOPF Einheit 2: „Produkte aus Polynom und e-Funktion“; Zeitmarke „None“, Prüfungswort „Abi GK ×7“
+KASTEN Einheit 2: 8 Zeilen (über fünf)
+STRUKTUR 0 Fehler

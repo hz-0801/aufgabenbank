@@ -1,0 +1,216 @@
+{
+ "kennung": "TRI-P4",
+ "datum": "2026-09-28",
+ "eintraege": [
+  "trigonometrie"
+ ],
+ "titel": "Trigonometrie · Winkel berechnen · Prüfungs-Fokus MSA",
+ "kette": "Winkel berechnen",
+ "einheit": 2,
+ "profil": "msa",
+ "pruefwort": "P10 ×9",
+ "kasten": "5 Zeilen",
+ "anlauf": 3,
+ "pruefungshoehe": 12,
+ "originale": [
+  "2019-OS-K2d",
+  "2019-OS-K3b",
+  "2022-OS-K5b",
+  "2024-OS-K6b",
+  "2025-OS-K4a",
+  "2026-FOR-K4b"
+ ],
+ "jahrgaenge": [
+  "2019",
+  "2022",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "rezept": "P",
+ "rezept_name": "Prüfungs-Fokus",
+ "bestellung": {
+  "fokus_pruefung": "Winkel berechnen",
+  "heft": "msa",
+  "einheiten": "2",
+  "aus": null,
+  "ohne_register": false
+ },
+ "bank_commit": "b78e6d9",
+ "zusammenbau": "v0.6",
+ "vorlage": "Version 2026-09-28a",
+ "pfad": "bau/fokus/TRI-P4",
+ "kuerzel_quelle": "_kuerzel.csv (mathe-nachhilfe)",
+ "strukturfehler": 0,
+ "ausgelassen": [],
+ "aufgaben": [
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "a",
+   "id": "trigonometrie-e2-k1-s0-v1",
+   "datei": "e2_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "b",
+   "id": "trigonometrie-e2-k1-s1-v1",
+   "datei": "e2_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "c",
+   "id": "trigonometrie-e2-k1-s2-v1",
+   "datei": "e2_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "a",
+   "id": "trigonometrie-e2-k1-s11-v1",
+   "datei": "e2_a.tex",
+   "lage": "pruefung",
+   "original": "2024-OS-K6b",
+   "jahr": 2024,
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "b",
+   "id": "trigonometrie-e2-k1-s11-v2",
+   "datei": "e2_a.tex",
+   "lage": "pruefung",
+   "original": "2024-OS-K6b",
+   "jahr": 2024,
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "c",
+   "id": "trigonometrie-e2-k1-s11-v3",
+   "datei": "e2_a.tex",
+   "lage": "pruefung",
+   "original": "2019-OS-K3b",
+   "jahr": 2019,
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "d",
+   "id": "trigonometrie-e2-k1-s11-v4",
+   "datei": "e2_a.tex",
+   "lage": "pruefung",
+   "original": "2019-OS-K3b",
+   "jahr": 2019,
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "e",
+   "id": "trigonometrie-e2-k1-s11-v5",
+   "datei": "e2_a.tex",
+   "lage": "pruefung",
+   "original": "2026-FOR-K4b",
+   "jahr": 2026,
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "f",
+   "id": "trigonometrie-e2-k1-s11-v6",
+   "datei": "e2_a.tex",
+   "lage": "pruefung",
+   "original": "2026-FOR-K4b",
+   "jahr": 2026,
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "g",
+   "id": "trigonometrie-e2-k1-s11-v7",
+   "datei": "e2_a.tex",
+   "lage": "pruefung",
+   "original": "2022-OS-K5b",
+   "jahr": 2022,
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "h",
+   "id": "trigonometrie-e2-k1-s11-v8",
+   "datei": "e2_a.tex",
+   "lage": "pruefung",
+   "original": "2022-OS-K5b",
+   "jahr": 2022,
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "i",
+   "id": "trigonometrie-e2-k1-s11-v9",
+   "datei": "e2_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-K4a",
+   "jahr": 2025,
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "j",
+   "id": "trigonometrie-e2-k1-s11-v10",
+   "datei": "e2_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-K4a",
+   "jahr": 2025,
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "k",
+   "id": "trigonometrie-e2-k1-s11-v11",
+   "datei": "e2_a.tex",
+   "lage": "pruefung",
+   "original": "2019-OS-K2d",
+   "jahr": 2019,
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "l",
+   "id": "trigonometrie-e2-k1-s11-v12",
+   "datei": "e2_a.tex",
+   "lage": "pruefung",
+   "original": "2019-OS-K2d",
+   "jahr": 2019,
+   "punkte": "4",
+   "stern": false
+  }
+ ]
+}

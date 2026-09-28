@@ -1,0 +1,22 @@
+# zusammenbau v0.6: zusammenbau.py potenz-exponentialfunktionen --fokus-pruefung Wert und Schwellenwert berechnen --heft msa --einheiten 3
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG POT-P1 – Kürzel POT aus _kuerzel.csv (mathe-nachhilfe); Rezept P (Prüfungs-Fokus)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+EINHEIT e3 – Kette „Wert und Schwellenwert berechnen“ mit 10 Prüfungshöhen im Profil msa (--einheiten)
+AUSWAHL potenz-exponentialfunktionen-e3-k2-s0-v1 – potenz-exponentialfunktionen e3 „Wert und Schwellenwert berechnen“: Anlauf, Vorstufe
+AUSWAHL potenz-exponentialfunktionen-e3-k2-s1-v1 – potenz-exponentialfunktionen e3 „Wert und Schwellenwert berechnen“: Anlauf, Grundfall
+AUSWAHL potenz-exponentialfunktionen-e3-k2-s3-v1 – potenz-exponentialfunktionen e3 „Wert und Schwellenwert berechnen“: Anlauf, Sprosse – Fallstrick im Merkmal („das Startjahr ist Schritt null; die Differenz der “)
+AUSWAHL potenz-exponentialfunktionen-e3-k2-s8-v1 – potenz-exponentialfunktionen e3 „Wert und Schwellenwert berechnen“: Prüfungshöhe (2025-OS-K7b, Stern)
+AUSWAHL potenz-exponentialfunktionen-e3-k2-s8-v2 – potenz-exponentialfunktionen e3 „Wert und Schwellenwert berechnen“: Prüfungshöhe (2025-OS-K7b, Stern)
+AUSWAHL potenz-exponentialfunktionen-e3-k2-s8-v3 – potenz-exponentialfunktionen e3 „Wert und Schwellenwert berechnen“: Prüfungshöhe (2020-OS-K4c, Stern)
+AUSWAHL potenz-exponentialfunktionen-e3-k2-s8-v4 – potenz-exponentialfunktionen e3 „Wert und Schwellenwert berechnen“: Prüfungshöhe (2020-OS-K4c, Stern)
+AUSWAHL potenz-exponentialfunktionen-e3-k2-s8-v5 – potenz-exponentialfunktionen e3 „Wert und Schwellenwert berechnen“: Prüfungshöhe (2016-OS-K4e, Stern)
+AUSWAHL potenz-exponentialfunktionen-e3-k2-s8-v6 – potenz-exponentialfunktionen e3 „Wert und Schwellenwert berechnen“: Prüfungshöhe (2016-OS-K4e, Stern)
+AUSWAHL potenz-exponentialfunktionen-e3-k2-s8-v7 – potenz-exponentialfunktionen e3 „Wert und Schwellenwert berechnen“: Prüfungshöhe (2017-OS-K7d)
+AUSWAHL potenz-exponentialfunktionen-e3-k2-s8-v8 – potenz-exponentialfunktionen e3 „Wert und Schwellenwert berechnen“: Prüfungshöhe (2017-OS-K7d)
+AUSWAHL potenz-exponentialfunktionen-e3-k2-s8-v9 – potenz-exponentialfunktionen e3 „Wert und Schwellenwert berechnen“: Prüfungshöhe (2018-OS-K2c)
+AUSWAHL potenz-exponentialfunktionen-e3-k2-s8-v10 – potenz-exponentialfunktionen e3 „Wert und Schwellenwert berechnen“: Prüfungshöhe (2018-OS-K2c)
+PRÜFWORT „P10“ → „P10 ×7“ (Kataloge, 3 Typen; 5 Originale)
+KOPF Einheit 3: „Exponentialfunktion aufstellen und auswerten“; Zeitmarke „ab Kl. 10“, Prüfungswort „P10 ×7“
+KASTEN Einheit 3: 4 Zeilen
+STRUKTUR 0 Fehler
