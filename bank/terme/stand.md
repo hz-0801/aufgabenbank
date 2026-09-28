@@ -160,3 +160,8 @@ Aufgaben vor dem ersten Skriptlauf geändert.
 - Erkennungsschritte: Die Ketten des Katalogs haben keine
   Vorstufe, kein Erkennungsschritt wiederholt eine; keine
   Streichung.
+
+## Nachbesserung Gegenlese 2026-09-28
+- Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
+- terme-e2-k6-s3-v2: Dreieck mit den Seiten a, 2a, 4a verletzt die Dreiecksungleichung, Zeichnung passte nicht zu den Labels → Seiten 3a, 2a, 4a, Grafik \dreieck{(0,0)}{(4.8,0)}{(1.65,1.74)}{3a}{2a}{4a}{}{}{} (Seiten 3,6 : 2,4 : 4,8), Lösung $4a + 3a + 2a = 9a$, pruef 9 (Regel a).
+- Prüfskript: Abweichungen 0.
