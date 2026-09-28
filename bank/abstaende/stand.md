@@ -105,3 +105,8 @@ Nach der Korrektur: 0 Abweichungen, 0 Warnungen in allen Dateien.
 - Die Prüfungshöhe e2 hat nur ein Original (2 Zeilen); die
   Zielmarken 2018-bb-ea-B3.1f und 2024MerhoehtAAGLAA221-b stehen
   in der Kette (s4, s3).
+
+## Nachbesserung Gegenlese 2026-09-28
+- Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
+- e1-k3-s3-v1: pruef ohne die gefragte Fahrzeit in Minuten, Lösung „etwa 6,4 min“ außerhalb der Ergebnisstelle → pruef um math.sqrt(3690000)/300 ergänzt, Lösung „also $\approx 6{,}4$ min“ (Regel a).
+- Prüfskript: Abweichungen 0.
