@@ -102,3 +102,11 @@ Keine Einheit scheiterte zweimal.
   sind nicht am Render geprüft (kein LaTeX).
 - Zone: „Säulendiagramm zeichnen“ hat keine eigene Zeile; e5 übt es
   in der Pflicht darstellung.
+
+## Nachbesserung Render 2026-09-28
+
+Quelle: bau/render-alle/bericht.md, bau/hefte/bericht.md, bau/fokus/bericht.md, bau/layout-befunde.md Punkt 31. Übersicht aller Einträge: bau/render-alle/behoben.md.
+
+- e5-k1-s1-v1, e5-k1-s1-v2, e5-k1-s1-v3, e5-k1-s1-v4, e5-k1-s1-v5, e5-k1-s5-v1, e5-k1-s5-v2, e5-k3-s4-v2 (8): Extra }, or forgotten $ – `=` im Optionswert `ylabel` ohne Klammern. Änderung: `ylabel={…}` geklammert (`=` im Optionswert).
+
+Nur diese 8 Zeilen geändert, alle übrigen byte-gleich. `bank-pruef.py binomialverteilung`: 0 Abweichungen. Probe: jede Zeile allein in einem Minimaldokument mit mathblatt.sty (hz-0801/blattbau) gesetzt wie werkzeuge/zusammenbau.py v0.7 (teile_normal, teil_schwach, Lösung in \erg), xelatex ohne Fehler.
