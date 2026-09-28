@@ -106,3 +106,12 @@ Zeile trägt jetzt 1 LE = 50 m und geht mit diesem Commit ein.
   sind nicht kompiliert; Achsenbereiche nur rechnerisch geprüft.
 - Einheit 4 steht ohne Planzeile (Katalog-Ermessen); die Zeilen
   taugen nur für Abitur Teil B.
+
+## Nachbesserung Gegenlese 2026-09-28
+
+- Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
+- gleichungen-loesen-e1-k1-s7-v2: unterer Bogen g lag zwischen x = 4 und x = 6 unter dem Boden (g(5) = −0,5) → f(x) = −0,5x² + 5x − 2, g(x) = 0,5x² − 5x + 14 (Minimum 1,5), S₁(2 | 6), S₂(8 | 6), Platte 6 m × 6 m, 36 m², 1 080 € (Regel a).
+- gleichungen-loesen-e1-k3-s3-v1: pruef [2, 8] prüfte die Antwortzahlen nicht → pruef [2, 8, 200, 800], Lösung „von 2 · 100 = 200 bis 8 · 100 = 800 Stück“ (Regel b).
+- gleichungen-loesen-e1-k3-s3-v3: pruef [4, 8] prüfte die Uhrzeiten nicht → pruef [4, 8, 10, 14], Lösung „um 6 + 4 = 10 Uhr und um 6 + 8 = 14 Uhr“ (Regel b).
+- gleichungen-loesen-e3-k3-s1-v1: pruef [0, 4] nahm die Zahlen der falschen Schülergleichung → pruef [4, 30], Lösung ergänzt „also p(x + 4) − p(x) = 30“ (Regel a).
+- Prüfskript: Abweichungen 0.
