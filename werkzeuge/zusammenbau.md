@@ -111,8 +111,8 @@ strukturfehler und aufgaben – die Bankzeilen in Blattreihenfolge
     {"aufgabe": "A16", "hauptnummer": 16, "teilaufgabe": "b",
      "id": "prozentrechnung-e2-k5-s2-v1", "datei": "e2_a.tex"}
 
-A16 ist Hauptnummer 16 (Zeile aus PRZ-L1). Die Erklärzeile im Päckchen (schwach) hat
-id null und einen hinweis. Prüfstein:
+A16 ist Hauptnummer 16 (Zeile aus PRZ-L1). Die Erklärzeile im
+Päckchen (schwach) hat id null und einen hinweis. Prüfstein:
 bau/prozentrechnung/kennung-probe.py <kennung> … prüft Register
 gegen bau.json, jede Aufgabennummer auf genau eine Bankzeile,
 Teilaufgaben je Hauptnummer im Quelltext gegen bau.json, Kennung in
