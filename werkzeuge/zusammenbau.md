@@ -1,8 +1,9 @@
 # zusammenbau.py – aus der Bank ein Blatt (Quelltext)
 
-Stand 2026-09-28, v0.4 (Rezept Heft: `--heft`, `--nur-basis`;
-v0.3 Kennung, Register, Bauzettel; eine v0.2 gab es im Repo nicht,
-v0.3 setzt auf v0.1 auf). Baut aus
+Stand 2026-09-28, v0.5 (Rezept Zettel: `--zettel basis`; Prüfkennung
+kurz in allen Rezepten; Zweigzeile „P10 ×n“; v0.4 Rezept Heft:
+`--heft`, `--nur-basis`; v0.3 Kennung, Register, Bauzettel; eine v0.2
+gab es im Repo nicht, v0.3 setzt auf v0.1 auf). Baut aus
 bank/<eintrag>/ LaTeX-Quelltexte für die Vorlage mathblatt.sty
 (hz-0801/blattbau). Kompiliert wird nicht; die Strukturprüfung im
 Skript ersetzt den Lauf bis zum ersten Render.
@@ -52,7 +53,8 @@ des Lehrers vom 28.09.), z. B. PRZ-L3:
   sagen, woher das Kürzel kam. Heft mit mehreren Einträgen: Kürzel
   des ersten.
 - R: Rezept – L Lernblatt, F Fokus (`--fokus`), S schwach
-  (`--schwach`), H Heft (`--heft`, ab v0.4).
+  (`--schwach`), H Heft (`--heft`, ab v0.4), Z Zettel (`--zettel`,
+  ab v0.5; Kürzel fest BAS).
 - n: laufende Nummer je Kürzel und Rezept ab 1, die nächste freie
   aus bau/register.csv (größte vergebene + 1). Zweimal derselbe
   Aufruf gibt zwei Kennungen (PRZ-L1, PRZ-L2).
@@ -157,10 +159,12 @@ Wurzel setzt `* text eol=lf`, das verfälscht PDFs).
 - antwort „__ <Einheit>“ wird `\leerfeld[<Einheit>]`, sonst
   `\leerfeld`; kein Feld, wenn die Grafik es schon trägt
   (`\streifenfeld`, `\dsleer`).
-- Prüfkennung wie im Muster 2026-09-22: `\hfill (P10 …)`, bei
-  folgendem Feld mit `\\`. Keine Sternchen (2.4 d).
+- Prüfkennung wie im Muster 2026-09-22: `\hfill (…)`, bei
+  folgendem Feld mit `\\`; seit v0.5 in Kurzform (Abschnitt
+  „Prüfkennung kurz“). Kein `\steil` außer im Heft (2.4 d).
 - Kopf aus der Mappe: Titel aus „Lerneinheiten“, Zeitmarke und
-  Prüfungswort aus der Marken-Zeile (1.5), Merkkasten aus
+  Prüfungswort aus der Marken-Zeile (1.5; seit v0.5 mit Zahl der
+  Jahrgänge, Abschnitt „Zweigzeile“), Merkkasten aus
   „Merkkasten“, Zuordnung der Zone aus „Voraussetzungen“.
 - Was Bank und Mappe nicht tragen, steht als `%% TODO` in der
   Zeile davor und in der log, nie als geratener Text.
@@ -212,11 +216,99 @@ bank/ entfallen (log FEHLT, bau.json fehlende_eintraege).
 
 Erster Lauf: bau/hefte/ (elf Hefte, bericht.md, render.py).
 
+## Prüfkennung kurz (v0.5)
+
+Beschluss des Lehrers vom 28.09.: Die Prüfkennung an einer Aufgabe ist
+kurz. Die Bank behält die lange Form (bank.md), das Skript setzt sie
+beim Bau in allen Rezepten um (`kurzkennung`):
+
+| Bank | Blatt |
+| --- | --- |
+| (P10 2024 OS) | (P24) |
+| (P10 2026 FOR) / EBR / GYM | (P26F) / (P25E) / (P22G) |
+| (Abitur 2023 GK) / LK | (A23) / (A23L) |
+| (FHR 2025) | (F25) |
+
+Sternchen wie im Original dahinter („(P25*)“), wenn das Original der
+Zeile (gleiches Jahr wie die Kennung) im Prüfungskatalog von
+mathe-nachhilfe stern = ja trägt; ohne Katalog kein Sternchen. Im Heft
+steht das Sternchen damit zweimal (`\steil` und Kennung); das
+Prüfungsheft-Rezept bleibt sonst unverändert. „(P10-Form)“ bleibt, wie
+es ist.
+
+## Zweigzeile (v0.5)
+
+Das Prüfungswort der Zweigzeile trägt die Zahl der Jahrgänge:
+„P10 ×5“ heißt, der Typ kam in fünf der dreizehn P10-Jahrgänge vor;
+ebenso „Abi GK ×8“, „Abi LK ×n“, „FHR ×n“ (`pruefwort_zahl`). Je
+Prüfungsmarke der Marken-Zeile (P10, Abitur GK, Abitur LK, FHR): die
+Originale der Bankzeilen dieser Einheit im Profil, deren Typen aus den
+Prüfungskatalogen (msa-/abi-/iqb-/fhr-katalog.csv), dann die
+verschiedenen Jahre, in denen einer dieser Typen im Profil vorkommt
+(alle Blöcke, alle Papiere des Profils). Ohne Katalog: die Jahre der
+Originale selbst; ohne Original die Marke ohne Zahl. „keine …“ bleibt
+wörtlich; mehrere Marken stehen mit „ · “ nebeneinander (bis v0.4 nur
+die erste). Die log zeigt je Einheit PRÜFWORT mit Quelle.
+
+## Rezept Zettel (v0.5)
+
+Beschluss des Lehrers vom 28.09.: Basisaufgaben (Teil A der P10, ohne
+Rechner) werden getrennt geübt, am Stundenanfang ein Zettel mit zehn
+kurzen Aufgaben, je Stunde ein neuer, ohne Wiederholung. Aufruf:
+
+    python3 werkzeuge/zusammenbau.py --zettel basis [--nummer n]
+        [--ohne-register] [--aus <ordner>] [--vorlage <sty>]
+
+- Vorrat: bank/_basis/*.jsonl (je Basis-Typ zehn Aufgaben, bank.md
+  „Basisvorrat“), Gewichte aus bank/_basis/typen.csv (Spalte
+  jahrgaenge).
+- Kennung BAS-Z<n>, n = nächste freie Nummer für BAS-Z in
+  bau/register.csv; `--nummer n` baut Zettel n (bricht ab, wenn die
+  Kennung schon im Register steht). `--ohne-register`: Ordner BAS-Z0,
+  Inhalt von Zettel n (Voreinstellung die nächste freie Nummer).
+- Inhalt von Zettel n hängt nur vom Vorrat und von n ab: der Plan wird
+  von Zettel 1 bis n durchgerechnet (`zettel_plan`). Je Zettel zehn
+  verschiedene Typen. Typen mit allen 13 Jahrgängen stehen auf jedem
+  Zettel (zurzeit keiner; der häufigste hat neun); die übrigen Plätze
+  nach Stride-Verfahren: Stand je Typ ab 0, gewählt die kleinsten
+  Stände (bei Gleichstand das größere Gewicht, dann die Folge in
+  typen.csv), danach Stand + 1/Gewicht. Ein Typ mit neun Jahrgängen
+  kommt so neunmal so oft wie einer mit einem, bis sein Vorrat leer
+  ist. Der k-te Einsatz eines Typs nimmt Variante k: keine Aufgabe auf
+  zwei Zetteln.
+- Höchstens zwei große Grafiken (Koordinatensystem, Wertetabellen) je
+  Zettel; ein dritter solcher Typ wartet auf den nächsten Zettel.
+- Reicht der Vorrat nicht mehr für zehn Typen, baut das Skript nicht
+  und meldet „Vorrat erschöpft ab Zettel n“ (log und bau.json
+  `vorrat_erschoepft_ab`). Beim Vorrat vom 28.09. (41 Typen, 410
+  Aufgaben): erschöpft ab Zettel 42, also 41 Zettel.
+- Satz: eine Seite Aufgaben, nummeriert 1–10 (je `aufgabe`, Titel =
+  Aufgabentext mit Feld und Kennung), danach `\begleitteil` mit
+  `\erg{1}{…}` bis `\erg{10}{…}` als zweite Seite (Rückseite).
+  Reihenfolge auf dem Zettel nach Bereich (ZETTEL_FOLGE im Skript:
+  Zahlen, Prozente, Größen, Terme und Gleichungen, Funktionen,
+  Geometrie, Wahrscheinlichkeit). Aufgabe mit einer Grafik: Text links
+  (0,6 der Breite), Grafik rechts (0,37) in `minipage`; Reihe von
+  Figuren (`\quad`) und Wertetabellen unter dem Text. Kurze
+  Ankreuzoptionen (zusammen höchstens 70 Zeichen Quelltext) in einer
+  Zeile statt je `\kreuz` eine Zeile – abweichend von der Anleitung,
+  damit zehn Aufgaben auf eine Seite passen. `ablesen`-Koordinatensysteme
+  in der Form `klein` (Karo 3,5 mm). Aufgabenteil in `\small`.
+- Dateien: bau/zettel/<K>/<K>.tex, mathblatt.sty (Kopie), bau.json
+  (je Aufgabe id, kette, jahrgaenge, variante, original),
+  zusammenbau.log (VORRAT, AUSWAHL, SATZ, Strukturprüfung);
+  Registerzeile mit eintraege `_basis`, bestellung
+  `zettel=basis, nummer=n`.
+- Kompilieren: `xelatex <K>.tex` einmal; soll zwei Seiten geben.
+
+Erster Lauf: bau/zettel/ (BAS-Z1 bis BAS-Z10, bericht.md).
+
 ## Strukturprüfung
 
 Je Quelltext: Klammern {} ausgeglichen; jeder Befehl Standard-
 LaTeX (STANDARD aus bank-pruef.py), Rahmenbefehl (RAHMEN im
-Skript) oder Baustein aus mappen/_bausteine.md mit passender
+Skript; seit v0.5 auch `\linewidth` und die Umgebung `minipage` für
+den Zettel) oder Baustein aus mappen/_bausteine.md mit passender
 Argumentzahl; kein nacktes %; Umgebungen paarig; Umlaute direkt;
 gerade Zahl von $; höchstens 26 Teilaufgaben je Hauptnummer.
 Zeilen ab Spalte 0 mit % sind Kommentar und werden übergangen.

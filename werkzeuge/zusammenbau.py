@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""zusammenbau.py v0.4 – aus bank/<eintrag>/ LaTeX-Quelltexte für mathblatt.sty.
+"""zusammenbau.py v0.5 – aus bank/<eintrag>/ LaTeX-Quelltexte für mathblatt.sty.
 
 Aufruf:
     python3 werkzeuge/zusammenbau.py <eintrag> [--einheiten 1,3]
@@ -8,6 +8,13 @@ Aufruf:
         [--ohne-register] [--kuerzel <_kuerzel.csv>]
     python3 werkzeuge/zusammenbau.py <eintrag> <eintrag> … --heft [msa|
         abitur-gk|abitur-lk|fhr] [--nur-basis] [--titel <text>] --aus <ordner>
+    python3 werkzeuge/zusammenbau.py --zettel basis [--nummer n]
+        [--ohne-register]
+
+v0.5 (2026-09-28): Rezept Zettel (--zettel basis, Kennung BAS-Z<n>,
+zehn Aufgaben aus bank/_basis/); Prüfkennung kurz in allen Rezepten
+(„(P24)“, „(P26F)“, „(A23L)“, „(F25)“, Sternchen wie im Original
+dahinter); Zweigzeile mit Zahl der Jahrgänge („P10 ×5“, „Abi GK ×8“).
 
 Ohne Schalter: Lernblatt mit Zone und allen Einheiten, je Sprosse
 Variante 1, ohne Klasse. Jeder Bau bekommt eine Kennung XXX-R<n>
@@ -39,14 +46,15 @@ from bisect import bisect_right
 from pathlib import Path
 
 WURZEL = Path(__file__).resolve().parent.parent
-VERSION = "v0.4"
+VERSION = "v0.5"
 
 # Befehle der Rahmendateien, die weder in STANDARD (bank-pruef.py) noch
 # in _bausteine.md stehen; jede Argumentzahl zulässig.
 RAHMEN = {"documentclass", "usepackage", "input", "clearpage", "setcounter",
           "hfill", "bigskip", "medskip", "smallskip", "def", "ifdefined",
-          "fi", "mitzone"}
-RAHMEN_UMGEBUNG = {"document"}
+          "fi", "mitzone", "linewidth"}
+# minipage: Zettel (v0.5), Text links, Grafik rechts in einer Hauptnummer
+RAHMEN_UMGEBUNG = {"document", "minipage"}
 
 PFLICHT_NAME = {"fehler": "Fehler finden", "begruenden": "Begründen",
                 "darstellung": "Darstellungswechsel",
@@ -67,8 +75,9 @@ GRAFIK = re.compile(r"\\(streifen\w*|sachtabelle|bruchrechteck|bruchkreis|"
 REGISTER = WURZEL / "bau" / "register.csv"
 REGISTER_KOPF = ["kennung", "datum", "eintraege", "rezept", "bestellung",
                  "bank_commit", "zusammenbau", "vorlage", "pfad"]
-REZEPT = {"L": "Lernblatt", "F": "Fokus", "S": "schwach", "H": "Heft"}
-KENNUNG_MUSTER = re.compile(r"^([A-Z]{3})-([LFSH])(\d+)$")
+REZEPT = {"L": "Lernblatt", "F": "Fokus", "S": "schwach", "H": "Heft",
+          "Z": "Zettel"}
+KENNUNG_MUSTER = re.compile(r"^([A-Z]{3})-([LFSHZ])(\d+)$")
 
 
 def finde_kuerzelliste(angabe):
@@ -354,6 +363,71 @@ def zeitmarke(os_, gym, klasse):
     return text
 
 
+PROFIL_WORT = {"msa": "P10", "abitur-gk": "Abi GK", "abitur-lk": "Abi LK",
+               "fhr": "FHR"}
+
+
+def profil_papier(papier, datei=""):
+    """Prüfungsprofil aus dem Papier eines Originals oder einer
+    Katalogzeile (wie profil_von)."""
+    if papier in MSA_PAPIER or datei.startswith("msa/"):
+        return "msa"
+    if papier in ("A", "B", "C") or datei.startswith("fhr/"):
+        return "fhr"
+    if re.search(r"-(ga|gk)(-|$)", papier or ""):
+        return "abitur-gk"
+    return "abitur-lk"
+
+
+def pruefwort_zahl(marken, zeilen, log=None):
+    """Prüfungswort der Zweigzeile mit Zahl der Jahrgänge (v0.5, Beschluss
+    des Lehrers vom 28.09.): „P10 ×5“ = der Typ kam in fünf Jahrgängen
+    vor. Je Prüfungsmarke der Marken-Zeile (P10, Abitur GK/LK, FHR) die
+    Typen der Originale dieser Einheit (Bankzeilen, Profil wie im Heft),
+    dazu aus den Prüfungskatalogen die verschiedenen Jahre, in denen einer
+    dieser Typen im Profil vorkommt. Ohne Katalog: die Jahre der Originale
+    selbst; ohne Original die Marke ohne Zahl („P10“). „keine …“ bleibt
+    wörtlich. None, wenn die Marken-Zeile keine Prüfungsmarke trägt."""
+    if not marken:
+        return None
+    kat = kataloge_still()
+    aus = []
+    for t in [t.strip() for t in marken.split(" · ")]:
+        if t.startswith("keine"):
+            aus.append(t)
+            continue
+        if re.match(r"^P10\b", t):
+            profil = "msa"
+        elif t.startswith("Abitur GK"):
+            profil = "abitur-gk"
+        elif t.startswith("Abitur LK"):
+            profil = "abitur-lk"
+        elif re.match(r"^FHR\b", t):
+            profil = "fhr"
+        else:
+            continue
+        origs = {}
+        for z in zeilen:
+            o = z.get("original") or {}
+            if o.get("id") and profil_papier(o.get("papier")) == profil:
+                origs[o["id"]] = o.get("jahr")
+        typen = {kat[i]["typ"] for i in origs if kat.get(i, {}).get("typ")}
+        if typen:
+            jahre = {k["jahr"] for k in kat.values() if k.get("typ") in typen
+                     and profil_papier(k.get("papier"), k.get("datei", ""))
+                     == profil and k.get("jahr")}
+            quelle = f"Kataloge, {len(typen)} Typen"
+        else:
+            jahre = {j for j in origs.values() if j}
+            quelle = "Jahre der Originale"
+        wort = PROFIL_WORT[profil]
+        aus.append(f"{wort} ×{len(jahre)}" if jahre else wort)
+        if log:
+            log(f"PRÜFWORT „{t}“ → „{aus[-1]}“ ({quelle}; "
+                f"{len(origs)} Originale)")
+    return " · ".join(aus) if aus else None
+
+
 # --- Auswahl -------------------------------------------------------------
 
 def kettenart(zeilen):
@@ -423,13 +497,54 @@ def antwortfeld(antwort):
     return " ".join(a for a in aus if a)
 
 
-def mit_kennung(aufgabe, hat_feld):
-    """Prüfkennung wie im Muster 2026-09-22: „\\hfill (P10 …)“."""
+PAPIER_KURZ = {"OS": "", "FOR": "F", "EBR": "E", "GYM": "G"}
+_KATALOG = None
+
+
+def kataloge_still():
+    """Prüfungskataloge (lies_kataloge) einmal je Lauf, ohne Log."""
+    global _KATALOG
+    if _KATALOG is None:
+        _KATALOG = lies_kataloge(lambda *_: None)
+    return _KATALOG
+
+
+def kurzkennung(k, z=None):
+    """Prüfkennung in Kurzform (Beschluss des Lehrers vom 28.09., v0.5):
+    „(P10 2024 OS)“ → „(P24)“, Papier nur, wenn nicht OS („(P26F)“,
+    „(P25E)“, „(P22G)“); „(Abitur 2023 GK)“ → „(A23)“, LK → „(A23L)“;
+    „(FHR 2025)“ → „(F25)“. Sternchen wie im Original dahinter („(P26F*)“),
+    wenn das Original der Zeile (gleiches Jahr) im Prüfungskatalog stern = ja
+    trägt. Andere Formen bleiben, wie sie sind."""
+    innen = k.strip()[1:-1].strip()
+    m = re.fullmatch(r"P10 (\d{4}) (OS|FOR|EBR|GYM)", innen)
+    if m:
+        jahr, kurz = m.group(1), f"P{m.group(1)[2:]}{PAPIER_KURZ[m.group(2)]}"
+    else:
+        m = re.fullmatch(r"Abitur (\d{4}) (GK|LK)", innen)
+        if m:
+            jahr = m.group(1)
+            kurz = f"A{jahr[2:]}" + ("L" if m.group(2) == "LK" else "")
+        else:
+            m = re.fullmatch(r"FHR (\d{4})", innen)
+            if not m:
+                return k.strip()
+            jahr, kurz = m.group(1), f"F{m.group(1)[2:]}"
+    o = (z or {}).get("original") or {}
+    if o.get("id") and str(o.get("jahr")) == jahr:
+        if kataloge_still().get(o["id"], {}).get("stern") == "ja":
+            kurz += "*"
+    return f"({kurz})"
+
+
+def mit_kennung(aufgabe, hat_feld, z=None):
+    """Prüfkennung wie im Muster 2026-09-22: „\\hfill (P24)“, seit v0.5 in
+    Kurzform (kurzkennung)."""
     m = KENNUNG.search(aufgabe)
     if not m:
         return aufgabe, False
     vor, nach = aufgabe[:m.start()], aufgabe[m.end():]
-    neu = vor + " \\hfill " + m.group(0).strip() + nach
+    neu = vor + " \\hfill " + kurzkennung(m.group(0), z) + nach
     am_ende = not nach.strip()
     if am_ende and hat_feld:
         neu += " \\\\"
@@ -444,7 +559,7 @@ def feld_im_grafik(z):
 def teil_normal(z, stern=False):
     """Zeilen für eine Teilaufgabe im teile-Block (stern: \\steil)."""
     feld = "" if feld_im_grafik(z) else antwortfeld(z.get("antwort", ""))
-    aufgabe, _ = mit_kennung(z["aufgabe"], bool(feld))
+    aufgabe, _ = mit_kennung(z["aufgabe"], bool(feld), z)
     grafik = z.get("grafik", "")
     t = "\\steil" if stern else "\\teil"
     if not grafik:
@@ -504,7 +619,7 @@ def teil_schwach(z, log, nr):
             f"Feld in den Text (rechte Spalte zu schmal für Streifen + Feld)")
     elif "\\streifenfeld" in grafik or "\\dsleer" in grafik:
         feld = ""
-    aufgabe, _ = mit_kennung(z["aufgabe"], False)
+    aufgabe, _ = mit_kennung(z["aufgabe"], False, z)
     text = aufgabe + (f" {feld}" if feld and form != "dreisatz" else "")
     if pflicht == "begruenden":
         return [f"\\swfrage{{{aufgabe}}}"], "frage"
@@ -807,6 +922,8 @@ class Bau:
             text = f"Einheit {pos} von {anzahl} · {titel}"
         aus.append(f"\\einheitenkopf[e{n}]{{{text}}}")
         os_, gym, wort = marke_zerlegen(info["marken"] if info else None)
+        wort = pruefwort_zahl(info["marken"] if info else None,
+                              self.e.get(n, []), self.log) or wort
         zm = zeitmarke(os_, gym, self.klasse)
         teile = []
         aus.insert(0, f"%% TODO Zweigzeile Teil 1: was hier gelernt wird "
@@ -1077,7 +1194,10 @@ def lies_kataloge(log):
                                             else ","):
                     kat[zeile["id"]] = {"punkte": zeile.get("punkte") or "",
                                         "stern": zeile.get("stern") or "",
-                                        "datei": rel}
+                                        "datei": rel,
+                                        "typ": zeile.get("typ") or "",
+                                        "jahr": zeile.get("jahr") or "",
+                                        "papier": zeile.get("papier") or ""}
         log(f"KATALOGE aus {w}: {len(kat)} Zeilen")
         return kat
     log("KATALOGE nicht gefunden (mathe-nachhilfe neben dem Repo klonen): "
@@ -1544,8 +1664,14 @@ def finde_vorlage(angabe):
 
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    p.add_argument("eintrag", nargs="+",
+    p.add_argument("eintrag", nargs="*",
                    help="Eintrag; mit --heft mehrere in Heftfolge")
+    p.add_argument("--zettel", choices=["basis"],
+                   help="Rezept Z: Zettel mit zehn Basisaufgaben aus "
+                        "bank/_basis/ (Kennung BAS-Z<n>)")
+    p.add_argument("--nummer", type=int,
+                   help="Zettel: Nummer n (sonst die nächste freie aus "
+                        "bau/register.csv)")
     p.add_argument("--heft", nargs="?", const="msa", choices=sorted(HEFT_PROFIL),
                    help="Rezept H: Prüfungsheft (Profil, Voreinstellung msa)")
     p.add_argument("--nur-basis", action="store_true",
@@ -1568,6 +1694,10 @@ def main(argv=None):
     p.add_argument("--kuerzel", metavar="CSV",
                    help="Pfad zu katalog/_kuerzel.csv (mathe-nachhilfe)")
     args = p.parse_args(argv)
+    if args.zettel:
+        return main_zettel(args)
+    if not args.eintrag:
+        p.error("Eintrag fehlt (ohne --zettel)")
     if args.nur_basis and not args.heft:
         args.heft = "msa"
     if args.heft:
@@ -1819,6 +1949,251 @@ def main_heft(args):
     print(f"KENNUNG {args.kennung}")
     print(f"{len(texte)} Quelltexte nach {ziel}; {len(aufgaben)} Teilaufgaben; "
           f"Strukturprüfung {len(fehler)} Fehler")
+    for name, zl, meldung in fehler:
+        print(f"FEHLER {name}:{zl}: {meldung}")
+    return 1 if fehler else 0
+
+
+# --- Rezept Zettel (v0.5) ----------------------------------------------------
+#
+# Beschluss des Lehrers vom 28.09.: Basisaufgaben (Teil A der P10, ohne
+# Rechner) werden getrennt geübt – am Stundenanfang ein Zettel mit zehn
+# kurzen Aufgaben, je Stunde ein neuer, ohne Wiederholung. Der Inhalt von
+# Zettel n hängt nur vom Vorrat (bank/_basis/) und von n ab: der Plan wird
+# von Zettel 1 bis n durchgerechnet.
+
+BASIS = WURZEL / "bank" / "_basis"
+ZETTEL_ZAHL = 10          # Aufgaben je Zettel
+JAHRGAENGE_ALLE = 13      # P10 2014–2026
+GROSS_HOECHSTENS = 2      # große Grafiken (ksys, Wertetabellen) je Zettel
+GROSS = re.compile(r"\\begin\{ksys\}|\\wertetabelle")
+# Reihenfolge auf dem Zettel: nach Bereich wie im Basisteil der P10
+ZETTEL_FOLGE = ["brueche-dezimalzahlen", "rationale-zahlen", "potenzen-wurzeln",
+                "prozentrechnung", "zinsrechnung", "einheiten", "zuordnungen",
+                "terme", "lineare-gleichungen", "quadratische-gleichungen",
+                "lineare-funktionen", "quadratische-funktionen",
+                "symmetrie-abbildungen", "winkel-dreiecke", "flaechen", "kreis",
+                "koerper", "trigonometrie", "bruchrechnung", "daten",
+                "wahrscheinlichkeit"]
+
+
+def lies_vorrat():
+    """(typen, vorrat): typen aus bank/_basis/typen.csv (Liste von dicts mit
+    jahrgaenge als int), vorrat {typ: [Zeilen nach Variante]}."""
+    with open(BASIS / "typen.csv", encoding="utf-8", newline="") as f:
+        typen = list(csv.DictReader(f, delimiter=";"))
+    for t in typen:
+        t["jahrgaenge"] = int(t["jahrgaenge"])
+    vorrat = {}
+    for p in sorted(BASIS.glob("*.jsonl")):
+        for z in lies_jsonl(p):
+            vorrat.setdefault(z["kette"], []).append(z)
+    for zz in vorrat.values():
+        zz.sort(key=lambda z: z["variante"])
+    typen = [t for t in typen if vorrat.get(t["typ"])]
+    return typen, vorrat
+
+
+def zettel_plan(typen, vorrat, bis):
+    """[[(typ, zeile)] je Zettel 1..bis] und die Nummer des ersten Zettels,
+    für den der Vorrat nicht mehr reicht (None, wenn er bis dahin reicht).
+
+    Gewicht eines Typs = Zahl der Jahrgänge (typen.csv). Typen, die in
+    allen 13 Jahrgängen vorkommen, stehen auf jedem Zettel; die übrigen
+    Plätze gehen nach Stride-Verfahren im Wechsel: jeder Typ hat einen
+    Stand (Start 0), gewählt werden die kleinsten Stände (bei Gleichstand
+    das größere Gewicht, dann die Folge in typen.csv), nach der Wahl steigt
+    der Stand um 1/Gewicht. So kommt ein Typ mit neun Jahrgängen neunmal so
+    oft wie einer mit einem. Je Typ höchstens eine Aufgabe je Zettel; der
+    k-te Einsatz eines Typs nimmt Variante k, keine Aufgabe zweimal.
+    Höchstens zwei große Grafiken (Koordinatensystem, Wertetabellen) je
+    Zettel, damit er auf eine Seite passt: ein dritter solcher Typ wartet
+    auf den nächsten Zettel (sein Stand bleibt, er kommt dann zuerst)."""
+    stand = {t["typ"]: 0.0 for t in typen}
+    genutzt = {t["typ"]: 0 for t in typen}
+    rang = {t["typ"]: i for i, t in enumerate(typen)}
+    gewicht = {t["typ"]: t["jahrgaenge"] for t in typen}
+    plan = []
+    for n in range(1, bis + 1):
+        frei = [t for t in stand if genutzt[t] < len(vorrat[t])]
+        if len(frei) < ZETTEL_ZAHL:
+            return plan, n
+        pflicht = [t for t in frei if gewicht[t] >= JAHRGAENGE_ALLE]
+        rest = sorted((t for t in frei if t not in pflicht),
+                      key=lambda t: (stand[t], -gewicht[t], rang[t]))
+        wahl, gross = [], 0
+        for t in pflicht + rest:
+            g = bool(GROSS.search(vorrat[t][genutzt[t]].get("grafik", "")))
+            if len(wahl) == ZETTEL_ZAHL or (g and gross >= GROSS_HOECHSTENS
+                                            and t not in pflicht):
+                continue
+            wahl.append(t)
+            gross += g
+        if len(wahl) < ZETTEL_ZAHL:
+            return plan, n
+        zettel = []
+        for t in wahl:
+            zettel.append((t, vorrat[t][genutzt[t]]))
+            genutzt[t] += 1
+            stand[t] += 1 / gewicht[t]
+        plan.append(zettel)
+    return plan, None
+
+
+def zettel_erschoepft(typen, vorrat):
+    """Nummer des ersten Zettels, für den der Vorrat nicht reicht."""
+    gesamt = sum(len(v) for v in vorrat.values())
+    _, ab = zettel_plan(typen, vorrat, gesamt // ZETTEL_ZAHL + 2)
+    return ab
+
+
+def zettel_satz(nr, typ, z, log):
+    """Eine Hauptnummer des Zettels: Text (mit Feld und Kennung) links,
+    Grafik rechts; eine Reihe von Figuren (Grafik mit \\quad) darunter."""
+    feld = "" if feld_im_grafik(z) else antwortfeld(z.get("antwort", ""))
+    aufgabe, _ = mit_kennung(z["aufgabe"], bool(feld), z)
+    # kurze Ankreuzoptionen in einer Zeile (Platz: ein Zettel ist eine Seite)
+    opt = re.findall(r"\\kreuz\{((?:[^{}]|\{[^{}]*\})*)\}", aufgabe)
+    if len(opt) > 1 and sum(len(o) for o in opt) <= 70:
+        teile = re.split(r"\s*\\\\\s*(?=\\kreuz\{)", aufgabe)
+        aufgabe = teile[0] + " \\\\ " + " ".join(t.strip() for t in teile[1:])
+        log(f"SATZ Nr. {nr}: {len(opt)} kurze Ankreuzoptionen in einer Zeile")
+    text = aufgabe + (f" {feld}" if feld else "")
+    grafik = z.get("grafik", "")
+    if ",ablesen]" in grafik:
+        # Ablesegrafik (Karo 6 mm, 6 cm hoch) in der kleinen Form (Karo
+        # 3,5 mm): zwei Koordinatensysteme passen sonst nicht auf eine Seite
+        grafik = grafik.replace(",ablesen]", ",klein]")
+        log(f"SATZ Nr. {nr}: ksys ablesen → klein (Karo 3,5 mm)")
+    kopf = [f"% {nr}: {typ} – {z['id']} (Original "
+            f"{(z.get('original') or {}).get('id')})"]
+    if not grafik:
+        return kopf + [f"\\begin{{aufgabe}}{{{text}}}", "\\end{aufgabe}"]
+    if "\\quad" in grafik or "\\wertetabelle" in grafik:
+        log(f"SATZ Nr. {nr}: Grafik unter dem Text (Reihe von Figuren)")
+        return kopf + [f"\\begin{{aufgabe}}{{{text}}}", "", grafik,
+                       "\\end{aufgabe}"]
+    return kopf + [
+        "\\begin{aufgabe}{\\begin{minipage}[t]{0.6\\linewidth}"
+        f"{text}\\end{{minipage}}\\hfill"
+        "\\begin{minipage}[t]{0.37\\linewidth}\\vspace{0pt}",
+        grafik,
+        "\\end{minipage}}", "\\end{aufgabe}"]
+
+
+def main_zettel(args):
+    """Rezept Z (v0.5): Zettel mit zehn Basisaufgaben, BAS-Z<n>."""
+    log = Log()
+    if args.eintrag or args.heft or args.fokus or args.schwach:
+        sys.exit("--zettel nimmt keinen Eintrag und kein anderes Rezept")
+    typen, vorrat = lies_vorrat()
+    if not typen:
+        sys.exit("bank/_basis/ ist leer – kein Vorrat")
+    kuerzel, rezept = "BAS", "Z"
+    register = lies_register()
+    nummer = args.nummer or naechste_nummer(kuerzel, rezept, register)
+    kennung = f"{kuerzel}-{rezept}{0 if args.ohne_register else nummer}"
+    aufruf = ["zusammenbau.py", "--zettel", args.zettel]
+    if args.nummer:
+        aufruf += ["--nummer", str(args.nummer)]
+    if args.ohne_register:
+        aufruf.append("--ohne-register")
+    log(f"# zusammenbau {VERSION}: " + " ".join(aufruf))
+    ab = zettel_erschoepft(typen, vorrat)
+    log(f"VORRAT {len(typen)} Typen, {sum(len(v) for v in vorrat.values())} "
+        f"Aufgaben; Vorrat erschöpft ab Zettel {ab}")
+    if ab is not None and nummer >= ab:
+        print(f"Vorrat erschöpft ab Zettel {ab} – Zettel {nummer} nicht gebaut")
+        return 1
+    if (not args.ohne_register and args.nummer
+            and any(z.get("kennung") == kennung for z in register)):
+        sys.exit(f"{kennung} steht schon in bau/register.csv – nichts gebaut")
+    vorlage = finde_vorlage(args.vorlage)
+    version = vorlage.read_text(encoding="utf-8").splitlines()[1].lstrip("% ")
+    version = version.split(" (", 1)[0]
+    log(f"VORLAGE mathblatt.sty: {version}")
+    log(f"KENNUNG {kennung} – Kürzel BAS (Basisvorrat, fest), Rezept Z "
+        f"(Zettel); Inhalt von Zettel {nummer}"
+        + (" (Probe ohne Register)" if args.ohne_register else
+           "" if args.nummer else " = nächste freie Nummer in bau/register.csv"))
+    plan, _ = zettel_plan(typen, vorrat, nummer)
+    zettel = plan[-1]
+    info = {t["typ"]: t for t in typen}
+
+    def folge(tz):
+        e = tz[1]["eintrag"]
+        return (ZETTEL_FOLGE.index(e) if e in ZETTEL_FOLGE else 99, e,
+                tz[1]["kette_nr"])
+    zettel = sorted(zettel, key=folge)
+    a = ["\\documentclass[11pt]{article}", "\\usepackage{mathblatt}",
+         "\\begin{document}",
+         f"\\blattkopf*{{Basisaufgaben}}{{{kennung}}}"
+         f"{{Basisaufgaben · Zettel · {kennung}}}",
+         f"\\einheitenkopf[][Zettel {nummer}]{{Basisaufgaben · Zettel "
+         f"{nummer}}}",
+         "\\zweigzeile{ohne Taschenrechner · je Aufgabe 1 Punkt · Lösungen "
+         "auf der Rückseite}",
+         "% \\small: zehn Aufgaben mit bis zu zwei Koordinatensystemen auf "
+         "einer Seite (Render 28.09.)", "\\small", ""]
+    l = ["\\begleitteil"]
+    aufgaben = []
+    for i, (typ, z) in enumerate(zettel, 1):
+        a += zettel_satz(i, typ, z, log) + [""]
+        l.append(f"\\erg{{{i}}}{{{z['loesung']}}}")
+        t = info[typ]
+        log(f"AUSWAHL Nr. {i}: {z['id']} – {typ} (Jahrgänge {t['jahrgaenge']}, "
+            f"Variante {z['variante']})")
+        aufgaben.append({"aufgabe": f"A{i}", "hauptnummer": i,
+                         "id": z["id"], "kette": typ,
+                         "jahrgaenge": t["jahrgaenge"],
+                         "variante": z["variante"],
+                         "original": (z.get("original") or {}).get("id")})
+    texte = {f"{kennung}.tex": "\n".join(a + l + ["\\end{document}"]) + "\n"}
+    sig = BP.lade_bausteine(WURZEL / "mappen" / "_bausteine.md")
+    fehler = pruefe_struktur(texte, sig)
+    ziel = Path(args.aus) if args.aus else WURZEL / "bau" / "zettel" / kennung
+    if not args.ohne_register and ziel.exists() and any(ziel.iterdir()):
+        sys.exit(f"{ziel} ist nicht leer – nichts gebaut")
+    ziel.mkdir(parents=True, exist_ok=True)
+    for name, text in texte.items():
+        (ziel / name).write_text(text, encoding="utf-8", newline="\n")
+    shutil.copyfile(vorlage, ziel / "mathblatt.sty")
+    log(f"STRUKTUR {len(fehler)} Fehler")
+    for name, zl, meldung in fehler:
+        log(f"  FEHLER {name}:{zl}: {meldung}")
+    (ziel / "zusammenbau.log").write_text("\n".join(log.zeilen) + "\n",
+                                          encoding="utf-8", newline="\n")
+    datum = heute()
+    commit = bank_commit()
+    try:
+        pfad = ziel.resolve().relative_to(WURZEL).as_posix()
+    except ValueError:
+        pfad = ziel.resolve().as_posix()
+    bestellung = {"zettel": args.zettel, "nummer": nummer,
+                  "ohne_register": args.ohne_register}
+    bauzettel = {
+        "kennung": kennung, "datum": datum, "eintraege": ["_basis"],
+        "rezept": rezept, "rezept_name": REZEPT[rezept],
+        "bestellung": bestellung, "bank_commit": commit,
+        "zusammenbau": VERSION, "vorlage": version, "pfad": pfad,
+        "kuerzel_quelle": "fest (Basisvorrat)", "strukturfehler": len(fehler),
+        "vorrat_erschoepft_ab": ab, "aufgaben": aufgaben}
+    (ziel / "bau.json").write_text(
+        json.dumps(bauzettel, ensure_ascii=False, indent=1) + "\n",
+        encoding="utf-8", newline="\n")
+    if not args.ohne_register:
+        haenge_an_register({
+            "kennung": kennung, "datum": datum, "eintraege": "_basis",
+            "rezept": rezept,
+            "bestellung": f"zettel={args.zettel}, nummer={nummer}",
+            "bank_commit": commit, "zusammenbau": VERSION,
+            "vorlage": version, "pfad": pfad})
+        print(f"REGISTER {kennung} an bau/register.csv angehängt")
+    print(f"KENNUNG {kennung}")
+    print(f"{len(texte)} Quelltext nach {ziel}; Typen: "
+          + "; ".join(t for t, _ in zettel))
+    print(f"Vorrat erschöpft ab Zettel {ab}")
+    print(f"Strukturprüfung {len(fehler)} Fehler")
     for name, zl, meldung in fehler:
         print(f"FEHLER {name}:{zl}: {meldung}")
     return 1 if fehler else 0
