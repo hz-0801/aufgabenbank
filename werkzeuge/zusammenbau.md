@@ -1,7 +1,8 @@
 # zusammenbau.py – aus der Bank ein Blatt (Quelltext)
 
-Stand 2026-09-28, v0.6 (Rezept Prüfungs-Fokus: `--fokus-pruefung`,
-Kennung XXX-P<n>; v0.5 Rezept Zettel: `--zettel basis`; Prüfkennung
+Stand 2026-09-28, v0.7 (Rezept Kompetenzblatt: `--kompetenz`,
+Kennung XXX-K<n>, Vorspann vorspann.tex; v0.6 Rezept Prüfungs-Fokus:
+`--fokus-pruefung`, Kennung XXX-P<n>; v0.5 Rezept Zettel: `--zettel basis`; Prüfkennung
 kurz in allen Rezepten; Zweigzeile „P10 ×n“; v0.4 Rezept Heft:
 `--heft`, `--nur-basis`; v0.3 Kennung, Register, Bauzettel; eine v0.2
 gab es im Repo nicht, v0.3 setzt auf v0.1 auf). Baut aus
@@ -56,7 +57,7 @@ des Lehrers vom 28.09.), z. B. PRZ-L3:
 - R: Rezept – L Lernblatt, F Fokus (`--fokus`), S schwach
   (`--schwach`), H Heft (`--heft`, ab v0.4), Z Zettel (`--zettel`,
   ab v0.5; Kürzel fest BAS), P Prüfungs-Fokus (`--fokus-pruefung`,
-  ab v0.6).
+  ab v0.6), K Kompetenzblatt (`--kompetenz`, ab v0.7).
 - n: laufende Nummer je Kürzel und Rezept ab 1, die nächste freie
   aus bau/register.csv (größte vergebene + 1). Zweimal derselbe
   Aufruf gibt zwei Kennungen (PRZ-L1, PRZ-L2).
@@ -356,6 +357,156 @@ einer Kette, Rezeptbuchstabe P, Kennung XXX-P<n>. Aufruf:
   nicht, die Seitenzahl steht nach dem Rendern im Bericht.
 
 Erster Lauf: bau/fokus/ (30 Prüfungs-Fokus, bericht.md, render.py).
+
+## Rezept Kompetenzblatt (v0.7)
+
+Beschluss des Lehrers vom 28.09.: Die Grundeinheit des Bauens ist das
+Kompetenzblatt – genau eine Kette, 2–4 Seiten, eigene Kennung
+XXX-K<n>, einmal gut gemacht. Hefte sind später Zusammenstellungen von
+Kompetenzblättern. Aufruf:
+
+    python3 werkzeuge/zusammenbau.py <eintrag> --kompetenz "<kette>"
+        --einheiten <n> [--niveau for|ebr] [--dicht] [--ohne <id,id>]
+        [--aus <ordner>] [--ohne-register] [--nummer n]
+
+Bauen und Rendern der Prüfsteinblätter: `python3 bau/kompetenz/bauen.py`
+(Probe ohne Register, bei Kompilierfehler `--ohne`, bei mehr als vier
+Seiten `--dicht`, dann Bau mit Registerzeile, xelatex zweimal, PNG je
+Seite, Messwerte in bau.json).
+
+### Aufbau
+
+1. Titel: Ich-kann-Satz der Kette (groß), darunter die Zweigzeile
+   (Zeitmarke aus der Marken-Zeile der Katalogeinheit, „P10 ×n“ über die
+   Typen der Originale dieser Kette). Keine Einheitenüberschrift, keine
+   Verzeichniszeile.
+2. „Das kennst du schon“: höchstens drei Fertigkeiten aus zone.jsonl, je
+   eine Aufgabe (Grundfall, kleinste Variante); nur Fertigkeiten, deren
+   Voraussetzungszeile in der Mappe die Katalogeinheit der Kette nennt
+   („Einheit 2“, „Einheit 1 bis 4“, „ab Einheit 2“), danach solche mit
+   „alle Einheiten“ oder ohne Angabe; innerhalb der Gruppe mehr gemeinsame
+   Wortstämme mit den Bankzeilen der Kette zuerst, dann die spezifischere
+   Angabe. Gibt es nur eine Fertigkeit, bekommt sie zwei Aufgaben
+   (`fertigkeit_einheiten`, `staemme`; log ZONE).
+3. „Schritt für Schritt“: die Leiter der Kette ohne Pflichtelemente, je
+   Sprosse eine Hauptnummer mit einer Teilaufgabe (Variante 1; hat sie ein
+   Original, die kleinste Variante ohne Original; nur Varianten mit
+   Original: Variante 1 ohne Prüfkennung). Titel: Ich-kann-Satz der
+   Sprosse.
+4. Prüfungshöhen (Beschluss d), eine Hauptnummer „Ich kann das auch in
+   Aufgaben aus der Prüfung.“: je Original höchstens eine Aufgabe (die
+   kleinste Sprosse/Variante); nur Originale aus den jüngsten fünf
+   Jahrgängen der Kette (ältere: log RESERVE); verschiedene
+   Formulierungen zuerst (erste sechs Wörter des Texts ohne Zahlen und
+   Mathe), bis fünf; weniger als vier: aufgefüllt mit weiteren Originalen
+   gleicher Formulierung; gibt es nur ein Original, eine Aufgabe. Jüngstes
+   Jahr zuerst. `--niveau ebr` lässt Originale mit Stern im
+   Prüfungskatalog weg; for nimmt sie ohne Kennzeichnung (Beschluss b).
+5. „Zum Merken“: Merkkasten der Katalogeinheit aus der Mappe.
+6. Lösungen: eigene Datei <K>-loesungen.tex, je Teilaufgabe eine Zeile,
+   Lösungsgrafik darunter.
+
+Keine Punkte (Beschluss c). Prüfkennung klein rechts in der Auftaktzeile:
+„P10 ’24“, anderes Papier dahinter („P10 ’26 F“), „Abi ’23“, „FHR ’25“
+(`kennung_kompetenz`).
+
+### Katalogeinheit der Kette
+
+Die Bank zählt Einheiten nach ihrem Katalog-Commit, die Mappe nach dem
+aktuellen (quadratische-gleichungen: p-q-Formel ist Bank e3, Katalog
+Einheit 2). Kopf, Merkkasten und Zone kommen deshalb aus der Katalog-
+einheit, gefunden über (`mappe_einheit`): die Zeile „- <Kette> (Einheit n“
+in „Sprossen je Verfahrenstyp“, sonst Titel der Lerneinheit, „Typen je
+Lerneinheit“, Wortüberdeckung, zuletzt die Nummer der Bank (log EINHEIT,
+bau.json einheit_katalog_quelle). Rezept P (v0.6) nahm die Banknummer:
+QGL-P1 trägt darum den Merkkasten „Nullprodukt“ – Befund.
+
+### Ich-kann-Titel
+
+bau/regal/ich-kann.csv (eintrag;einheit;kette;sprosse;ich_kann;
+anweisung;quelle), gemeinsam mit werkzeuge/regal.py. sprosse leer = Titel
+der Kette, `p` = Prüfungshöhen, Zahl = Sprosse; einheit 0 = Fertigkeit
+der Zone. Der Katalog trägt keine Ich-kann-Sätze; die Titel sind aus
+Kettenname, merkmal, sprosse_text und der Mappe umformuliert (Spalte
+quelle). Fehlt eine Zeile, setzt das Skript „Ich kann: <merkmal>.“ und
+schreibt ICH-KANN fehlt in die log. anweisung: Aufforderung über der
+Teilaufgabe (Befund 5); ohne Eintrag bei einer nackten Gleichung „Löse
+die Gleichung.“, bei „Rechne: …“ der Auftakt selbst.
+
+### Satz einer Teilaufgabe (layout-befunde.md)
+
+- Zerlegen (`zerlege`): Prüfkennung heraus; \wertetabelle und \kreuz
+  heraus; „Kontext – Frage?“ (Frage bis 90 Zeichen) → Kontext als
+  Auftakt, bei bis 70 Zeichen halbfett (Mathe mit \boldmath), Frage
+  darunter; sonst „Auftakt: Auftrag“ (Auftakt bis 45 Zeichen, ist er
+  ein Imperativ, wird er zur Aufforderung); sonst Sätze: Kontext bis
+  zur ersten Frage oder Aufforderung, dann je Satz eine Zeile (Befund
+  3, 4, 10). Frage beginnt groß; eine Kurzfrage bis drei Wörter
+  („p und q?“) entfällt, wenn die Anweisung dasselbe sagt.
+- Antwortfeld in eigener Zeile darunter, linksbündig, Felder 2,2 cm
+  (\kbfeld), in Punkten 1,2 cm (\kbfeldk); „x1“ → x₁; „;“ trennt
+  Zeilen (Befund 4, 8, 29). Ohne Antwortgerüst bei Ein-Zahl-Aufgaben
+  ein leeres Feld; bei nackter Gleichung „Lösung: __“.
+- Bearbeitungsraum nur bei Rechnen und Begründen (`rechenzeilen`,
+  Befund 9): Operatoren der Lösung und Gleichheitszeichen über die Zahl
+  der Antwortfelder hinaus; ab zwei Schritten zwei Schreibzeilen,
+  Prüfungshöhe mit langer Lösung drei; Gleichung (gleichungsraster)
+  immer zwei. Der Raum steht rechts neben Aufgabe und Antwort, bei
+  langem Text rechts neben der Antwort, ohne Antwortfeld über die
+  Breite.
+- Tabelle unter dem Text, linksbündig, Köpfe im Textmodus (\kbwerte-
+  tabelle; „Zeit in h“ als Text, x und f(x) als Mathe; Befund 26, 28).
+  Grafik oder Tabelle bis halbe Breite links, Antwort/Kreuze/Raum rechts;
+  Tabelle und Koordinatensystem nebeneinander; sonst untereinander
+  (Befund 27). Kreuze je eine Zeile (Befund 6, 7).
+- Zeichnen: Koordinatensystem höchstens 7,5 cm hoch (Karo kleiner, log
+  KSYS); zwei Zeichenaufgaben stehen als Paar nebeneinander (zwei
+  Hauptnummern oder zwei Teilaufgaben, Text über der Grafik).
+- `--dicht`: kurze Rechenaufgaben ohne Grafik und ohne Prüfkennung
+  paarweise nebeneinander – nur, wenn das Blatt sonst mehr als vier
+  Seiten hat (bauen.py entscheidet an der Probe).
+- Flattersatz überall (Befund 25); Hauptnummer als unteilbarer Block je
+  Teilaufgabe, der Titel hängt am ersten Block, ein Block, der nicht
+  mehr passt, rückt ganz auf die nächste Seite – keine Grafik über der
+  Fußzeile (Befund 21).
+- Kopfzeile „<Thema> · Kompetenzblatt“, Fußzeile nur Kennung links und
+  Seite rechts (Befund 1, 2). Keine Bank-Wörter: das Skript prüft den
+  Blatttext auf Anlauf, Prüfungsaufgaben, Sprosse, Vorstufe, Grundfall,
+  Fallstrick, Variante, Kette, Prüfungsform, ausgelassen (log BANKWORT).
+
+### Vorspann und fehlende Zeichen
+
+mathblatt.sty bleibt unverändert (Kopie im Ordner). Was fehlt, steht in
+vorspann.tex, das der Zusammenbau schreibt und beide Dokumente nach
+\usepackage{mathblatt} einlesen: Kopf/Fuß, Titel, Abschnitt,
+kbaufgabe/kbblock, kbteil, kbfrage, kbantwort, kbzweispaltig, kbpaar,
+kbwertetabelle, kbmerk, kbloesung. Zeichen, die Latin Modern Roman nicht
+hat (LM_FEHLT, gemessen mit fontTools über alle Zeichen in bank/ und
+mappen/: ≈ α β γ π ∫ ⇔ ✓ ₁ ⁻ ℝ ↔ …), bekommen je eine
+\newunicodechar-Zeile – nur die, die im Blatt vorkommen: im Text aus der
+ersten vorhandenen Ersatzschrift (FreeSerif, DejaVu Serif, Cambria
+Math, Segoe UI Symbol), in Mathe als Mathebefehl (\approx, \alpha);
+Hoch- und Tiefzeichen in Mathe als Glyphe der Ersatzschrift. Ohne
+Ersatzschrift setzt der Vorspann Mathe. In der Web-Sitzung:
+`apt-get install fonts-freefont-otf` (neben den TeX-Paketen aus
+render.md). Probe: bau.json schriften_im_pdf (pdffonts) und
+ersatzzeichen_im_text (pdftotext).
+
+### Dateien
+
+bau/kompetenz/<K>/: <K>.tex, <K>-loesungen.tex, vorspann.tex,
+mathblatt.sty (Kopie), <K>.pdf, <K>-loesungen.pdf, <K>-<n>.png und
+<K>-loesungen-<n>.png (pdftoppm -r 80), zusammenbau.log, bau.json
+(kennung, titel, kette, einheit, einheit_katalog, niveau, zweigzeile,
+klasse_os, klasse_gym, zone, kasten, hauptnummern, teilaufgaben,
+pruefungshoehe, originale, jahrgaenge, ersatzzeichen, aufgaben je
+Teilaufgabe mit lage zone/leiter/pruefung, original, jahr,
+stern_im_original; nach dem Rendern seiten, seiten_loesungen,
+fehlende_zeichen, overfull, schriften_im_pdf, ersatzzeichen_im_text,
+probe). Registerzeile mit bestellung `kompetenz=<kette>, einheiten=n,
+niveau=for, dicht=…, ohne=…`.
+
+Erster Lauf: bau/kompetenz/ (fünf Blätter, bericht.md).
 
 ## Strukturprüfung
 
