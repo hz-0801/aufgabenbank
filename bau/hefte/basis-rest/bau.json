@@ -1,5 +1,5 @@
 {
- "kennung": "LIN-H2",
+ "kennung": "LIN-H3",
  "datum": "2026-09-28",
  "eintraege": [
   "lineare-funktionen",
@@ -15,8 +15,7 @@
  "leere_eintraege": [
   "lineare-gleichungssysteme",
   "potenz-exponentialfunktionen",
-  "zuordnungen",
-  "daten"
+  "zuordnungen"
  ],
  "rezept": "H",
  "rezept_name": "Heft",
@@ -27,7 +26,7 @@
   "aus": "bau/hefte/basis-rest",
   "ohne_register": false
  },
- "bank_commit": "7238f60+geändert",
+ "bank_commit": "2345b8e",
  "zusammenbau": "v0.4",
  "vorlage": "Version 2026-09-28a",
  "pfad": "bau/hefte/basis-rest",
@@ -174,6 +173,83 @@
    "aufgabe": "A5",
    "hauptnummer": 5,
    "teilaufgabe": "a",
+   "id": "daten-e4-k1-s2-v1",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2019-OS-B1i",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "teilaufgabe": "b",
+   "id": "daten-e4-k1-s4-v2",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2015-OS-B1f",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "teilaufgabe": "c",
+   "id": "daten-e4-k1-s5-v2",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2024-OS-B1h",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "teilaufgabe": "d",
+   "id": "daten-e4-k1-s6-v1",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-B1a",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "teilaufgabe": "e",
+   "id": "daten-e4-k1-s7-v1",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2017-OS-B1h",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "teilaufgabe": "f",
+   "id": "daten-e4-k1-s7-v2",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2021-OS-B1f",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "teilaufgabe": "g",
+   "id": "daten-e4-k1-s11-v1",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2022-OS-B1d",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "a",
    "id": "wahrscheinlichkeit-e1-k1-s6-v1",
    "datei": "wahrscheinlichkeit_a.tex",
    "lage": "pruefung",
@@ -182,8 +258,8 @@
    "stern": false
   },
   {
-   "aufgabe": "A6",
-   "hauptnummer": 6,
+   "aufgabe": "A7",
+   "hauptnummer": 7,
    "teilaufgabe": "a",
    "id": "wahrscheinlichkeit-e2-k3-s6-v1",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -193,8 +269,8 @@
    "stern": false
   },
   {
-   "aufgabe": "A6",
-   "hauptnummer": 6,
+   "aufgabe": "A7",
+   "hauptnummer": 7,
    "teilaufgabe": "b",
    "id": "wahrscheinlichkeit-e2-k3-s6-v3",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -204,8 +280,8 @@
    "stern": false
   },
   {
-   "aufgabe": "A6",
-   "hauptnummer": 6,
+   "aufgabe": "A7",
+   "hauptnummer": 7,
    "teilaufgabe": "c",
    "id": "wahrscheinlichkeit-e2-k3-s7-v1",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -215,8 +291,8 @@
    "stern": false
   },
   {
-   "aufgabe": "A6",
-   "hauptnummer": 6,
+   "aufgabe": "A7",
+   "hauptnummer": 7,
    "teilaufgabe": "d",
    "id": "wahrscheinlichkeit-e2-k3-s8-v1",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -226,8 +302,8 @@
    "stern": false
   },
   {
-   "aufgabe": "A6",
-   "hauptnummer": 6,
+   "aufgabe": "A7",
+   "hauptnummer": 7,
    "teilaufgabe": "e",
    "id": "wahrscheinlichkeit-e2-k3-s9-v2",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -237,8 +313,8 @@
    "stern": false
   },
   {
-   "aufgabe": "A7",
-   "hauptnummer": 7,
+   "aufgabe": "A8",
+   "hauptnummer": 8,
    "teilaufgabe": "a",
    "id": "wahrscheinlichkeit-e2-k4-s1-v1",
    "datei": "wahrscheinlichkeit_a.tex",

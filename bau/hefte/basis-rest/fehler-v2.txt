@@ -1,1 +1,1 @@
-# basis-rest (LIN-H2), Versuch 2: 0 Fehlerstellen (je Datei und Zeile die erste Meldung)
+# basis-rest (LIN-H3), Versuch 2: 0 Fehlerstellen (je Datei und Zeile die erste Meldung)

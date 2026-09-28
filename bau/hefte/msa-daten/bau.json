@@ -1,5 +1,5 @@
 {
- "kennung": "DAT-H1",
+ "kennung": "DAT-H2",
  "datum": "2026-09-28",
  "eintraege": [
   "daten",
@@ -16,14 +16,17 @@
   "aus": "bau/hefte/msa-daten",
   "ohne_register": false
  },
- "bank_commit": "7238f60+geändert",
+ "bank_commit": "2345b8e",
  "zusammenbau": "v0.4",
  "vorlage": "Version 2026-09-28a",
  "pfad": "bau/hefte/msa-daten",
  "kuerzel_quelle": "_kuerzel.csv (mathe-nachhilfe)",
  "strukturfehler": 0,
  "ausgelassen": [
-  "ausgelassen: daten-e2-k2-s11-v2, Dimension too large. (Nr. 5b, Versuch 1)"
+  "ausgelassen: daten-e2-k2-s11-v2, Dimension too large. (Nr. 5b, Versuch 1)",
+  "ausgelassen: daten-e5-k1-s10-v2, Dimension too large. (Nr. 16b, Versuch 2)",
+  "ausgelassen: daten-e5-k1-s10-v1, Dimension too large. (Nr. 16a, Versuch 2)",
+  "ausgelassen: daten-e5-k1-s6-v1, Dimension too large. (Nr. 14c, Versuch 2)"
  ],
  "aufgaben": [
   {
@@ -199,29 +202,530 @@
    "aufgabe": "A6",
    "hauptnummer": 6,
    "teilaufgabe": "a",
-   "id": "wahrscheinlichkeit-e1-k1-s0-v1",
-   "datei": "wahrscheinlichkeit_a.tex",
+   "id": "daten-e3-k1-s0-v1",
+   "datei": "daten_a.tex",
    "lage": "anlauf"
   },
   {
    "aufgabe": "A6",
    "hauptnummer": 6,
    "teilaufgabe": "b",
-   "id": "wahrscheinlichkeit-e1-k1-s1-v1",
-   "datei": "wahrscheinlichkeit_a.tex",
+   "id": "daten-e3-k1-s1-v1",
+   "datei": "daten_a.tex",
    "lage": "anlauf"
   },
   {
    "aufgabe": "A6",
    "hauptnummer": 6,
    "teilaufgabe": "c",
-   "id": "wahrscheinlichkeit-e1-k1-s6-v3",
-   "datei": "wahrscheinlichkeit_a.tex",
+   "id": "daten-e3-k1-s2-v1",
+   "datei": "daten_a.tex",
    "lage": "anlauf"
   },
   {
    "aufgabe": "A7",
    "hauptnummer": 7,
+   "teilaufgabe": "a",
+   "id": "daten-e3-k1-s2-v2",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2018-OS-K3c",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A7",
+   "hauptnummer": 7,
+   "teilaufgabe": "b",
+   "id": "daten-e3-k1-s3-v2",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2021-OS-K5b",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A7",
+   "hauptnummer": 7,
+   "teilaufgabe": "c",
+   "id": "daten-e3-k1-s6-v2",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2015-OS-K7c",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A7",
+   "hauptnummer": 7,
+   "teilaufgabe": "d",
+   "id": "daten-e3-k1-s9-v2",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2022-OS-K4d",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "teilaufgabe": "a",
+   "id": "daten-e3-k1-s10-v1",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2024-OS-K2c",
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "teilaufgabe": "b",
+   "id": "daten-e3-k1-s10-v2",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2024-OS-K2c",
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "teilaufgabe": "c",
+   "id": "daten-e3-k1-s10-v3",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2017-OS-K2c",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "teilaufgabe": "d",
+   "id": "daten-e3-k1-s10-v4",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2017-OS-K2c",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "teilaufgabe": "e",
+   "id": "daten-e3-k1-s10-v5",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-K6b",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "teilaufgabe": "f",
+   "id": "daten-e3-k1-s10-v6",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-K6b",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "a",
+   "id": "daten-e4-k1-s0-v1",
+   "datei": "daten_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "b",
+   "id": "daten-e4-k1-s1-v1",
+   "datei": "daten_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "c",
+   "id": "daten-e4-k1-s13-v1",
+   "datei": "daten_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "a",
+   "id": "daten-e4-k1-s1-v4",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2014-OS-K4a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "b",
+   "id": "daten-e4-k1-s1-v5",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2023-OS-K6c",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "c",
+   "id": "daten-e4-k1-s2-v1",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2019-OS-B1i",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "d",
+   "id": "daten-e4-k1-s2-v2",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2014-OS-K4b",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "e",
+   "id": "daten-e4-k1-s2-v3",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2026-FOR-K3a",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "f",
+   "id": "daten-e4-k1-s4-v2",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2015-OS-B1f",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "a",
+   "id": "daten-e4-k1-s5-v2",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2024-OS-B1h",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "b",
+   "id": "daten-e4-k1-s6-v1",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-B1a",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "c",
+   "id": "daten-e4-k1-s7-v1",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2017-OS-B1h",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "d",
+   "id": "daten-e4-k1-s7-v2",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2021-OS-B1f",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "e",
+   "id": "daten-e4-k1-s7-v3",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2021-OS-K5a",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A12",
+   "hauptnummer": 12,
+   "teilaufgabe": "a",
+   "id": "daten-e4-k1-s8-v1",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2020-OS-K2c",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A12",
+   "hauptnummer": 12,
+   "teilaufgabe": "b",
+   "id": "daten-e4-k1-s8-v2",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2022-OS-K4a",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A12",
+   "hauptnummer": 12,
+   "teilaufgabe": "c",
+   "id": "daten-e4-k1-s8-v3",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2024-OS-K2a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A12",
+   "hauptnummer": 12,
+   "teilaufgabe": "d",
+   "id": "daten-e4-k1-s9-v1",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2015-OS-K7a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A12",
+   "hauptnummer": 12,
+   "teilaufgabe": "e",
+   "id": "daten-e4-k1-s10-v1",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2024-OS-K2b",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A12",
+   "hauptnummer": 12,
+   "teilaufgabe": "f",
+   "id": "daten-e4-k1-s11-v1",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2022-OS-B1d",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A13",
+   "hauptnummer": 13,
+   "teilaufgabe": "a",
+   "id": "daten-e4-k1-s12-v1",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-K6a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A13",
+   "hauptnummer": 13,
+   "teilaufgabe": "b",
+   "id": "daten-e4-k1-s12-v2",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2020-OS-K2d",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A13",
+   "hauptnummer": 13,
+   "teilaufgabe": "c",
+   "id": "daten-e4-k1-s12-v3",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2026-FOR-K3b",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A13",
+   "hauptnummer": 13,
+   "teilaufgabe": "d",
+   "id": "daten-e4-k1-s14-v1",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-K6c",
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A13",
+   "hauptnummer": 13,
+   "teilaufgabe": "e",
+   "id": "daten-e4-k1-s14-v2",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-K6c",
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "a",
+   "id": "daten-e5-k1-s0-v1",
+   "datei": "daten_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "b",
+   "id": "daten-e5-k1-s1-v1",
+   "datei": "daten_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "c",
+   "id": "daten-e5-k1-s6-v1",
+   "datei": "daten_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A15",
+   "hauptnummer": 15,
+   "teilaufgabe": "a",
+   "id": "daten-e5-k1-s5-v1",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2022-OS-K4c",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A16",
+   "hauptnummer": 16,
+   "teilaufgabe": "a",
+   "id": "daten-e5-k1-s10-v1",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2019-OS-K5c",
+   "punkte": "2",
+   "stern": true
+  },
+  {
+   "aufgabe": "A16",
+   "hauptnummer": 16,
+   "teilaufgabe": "b",
+   "id": "daten-e5-k1-s10-v2",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2019-OS-K5c",
+   "punkte": "2",
+   "stern": true
+  },
+  {
+   "aufgabe": "A16",
+   "hauptnummer": 16,
+   "teilaufgabe": "c",
+   "id": "daten-e5-k1-s10-v3",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2026-FOR-K3e",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A16",
+   "hauptnummer": 16,
+   "teilaufgabe": "d",
+   "id": "daten-e5-k1-s10-v4",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2026-FOR-K3e",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A16",
+   "hauptnummer": 16,
+   "teilaufgabe": "e",
+   "id": "daten-e5-k1-s10-v5",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2018-OS-K3d",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A16",
+   "hauptnummer": 16,
+   "teilaufgabe": "f",
+   "id": "daten-e5-k1-s10-v6",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2018-OS-K3d",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "a",
+   "id": "wahrscheinlichkeit-e1-k1-s0-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "b",
+   "id": "wahrscheinlichkeit-e1-k1-s1-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "c",
+   "id": "wahrscheinlichkeit-e1-k1-s6-v3",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A18",
+   "hauptnummer": 18,
    "teilaufgabe": "a",
    "id": "wahrscheinlichkeit-e1-k1-s3-v3",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -231,8 +735,8 @@
    "stern": false
   },
   {
-   "aufgabe": "A7",
-   "hauptnummer": 7,
+   "aufgabe": "A18",
+   "hauptnummer": 18,
    "teilaufgabe": "b",
    "id": "wahrscheinlichkeit-e1-k1-s5-v3",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -242,8 +746,8 @@
    "stern": false
   },
   {
-   "aufgabe": "A7",
-   "hauptnummer": 7,
+   "aufgabe": "A18",
+   "hauptnummer": 18,
    "teilaufgabe": "c",
    "id": "wahrscheinlichkeit-e1-k1-s6-v1",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -253,8 +757,8 @@
    "stern": false
   },
   {
-   "aufgabe": "A7",
-   "hauptnummer": 7,
+   "aufgabe": "A18",
+   "hauptnummer": 18,
    "teilaufgabe": "d",
    "id": "wahrscheinlichkeit-e1-k1-s6-v2",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -264,8 +768,8 @@
    "stern": false
   },
   {
-   "aufgabe": "A7",
-   "hauptnummer": 7,
+   "aufgabe": "A18",
+   "hauptnummer": 18,
    "teilaufgabe": "e",
    "id": "wahrscheinlichkeit-e1-k1-s7-v1",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -275,8 +779,8 @@
    "stern": false
   },
   {
-   "aufgabe": "A7",
-   "hauptnummer": 7,
+   "aufgabe": "A18",
+   "hauptnummer": 18,
    "teilaufgabe": "f",
    "id": "wahrscheinlichkeit-e1-k1-s8-v3",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -286,8 +790,8 @@
    "stern": false
   },
   {
-   "aufgabe": "A7",
-   "hauptnummer": 7,
+   "aufgabe": "A18",
+   "hauptnummer": 18,
    "teilaufgabe": "g",
    "id": "wahrscheinlichkeit-e1-k1-s9-v1",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -297,8 +801,8 @@
    "stern": true
   },
   {
-   "aufgabe": "A7",
-   "hauptnummer": 7,
+   "aufgabe": "A18",
+   "hauptnummer": 18,
    "teilaufgabe": "h",
    "id": "wahrscheinlichkeit-e1-k1-s9-v2",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -308,32 +812,32 @@
    "stern": true
   },
   {
-   "aufgabe": "A8",
-   "hauptnummer": 8,
+   "aufgabe": "A19",
+   "hauptnummer": 19,
    "teilaufgabe": "a",
    "id": "wahrscheinlichkeit-e2-k3-s0-v1",
    "datei": "wahrscheinlichkeit_a.tex",
    "lage": "anlauf"
   },
   {
-   "aufgabe": "A8",
-   "hauptnummer": 8,
+   "aufgabe": "A19",
+   "hauptnummer": 19,
    "teilaufgabe": "b",
    "id": "wahrscheinlichkeit-e2-k3-s1-v1",
    "datei": "wahrscheinlichkeit_a.tex",
    "lage": "anlauf"
   },
   {
-   "aufgabe": "A8",
-   "hauptnummer": 8,
+   "aufgabe": "A19",
+   "hauptnummer": 19,
    "teilaufgabe": "c",
    "id": "wahrscheinlichkeit-e2-k3-s2-v1",
    "datei": "wahrscheinlichkeit_a.tex",
    "lage": "anlauf"
   },
   {
-   "aufgabe": "A9",
-   "hauptnummer": 9,
+   "aufgabe": "A20",
+   "hauptnummer": 20,
    "teilaufgabe": "a",
    "id": "wahrscheinlichkeit-e2-k3-s5-v1",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -343,8 +847,8 @@
    "stern": false
   },
   {
-   "aufgabe": "A9",
-   "hauptnummer": 9,
+   "aufgabe": "A20",
+   "hauptnummer": 20,
    "teilaufgabe": "b",
    "id": "wahrscheinlichkeit-e2-k3-s5-v2",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -354,8 +858,8 @@
    "stern": false
   },
   {
-   "aufgabe": "A9",
-   "hauptnummer": 9,
+   "aufgabe": "A20",
+   "hauptnummer": 20,
    "teilaufgabe": "c",
    "id": "wahrscheinlichkeit-e2-k3-s5-v3",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -365,8 +869,8 @@
    "stern": false
   },
   {
-   "aufgabe": "A9",
-   "hauptnummer": 9,
+   "aufgabe": "A20",
+   "hauptnummer": 20,
    "teilaufgabe": "d",
    "id": "wahrscheinlichkeit-e2-k3-s6-v1",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -376,8 +880,8 @@
    "stern": false
   },
   {
-   "aufgabe": "A9",
-   "hauptnummer": 9,
+   "aufgabe": "A20",
+   "hauptnummer": 20,
    "teilaufgabe": "e",
    "id": "wahrscheinlichkeit-e2-k3-s6-v2",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -387,8 +891,8 @@
    "stern": false
   },
   {
-   "aufgabe": "A9",
-   "hauptnummer": 9,
+   "aufgabe": "A20",
+   "hauptnummer": 20,
    "teilaufgabe": "f",
    "id": "wahrscheinlichkeit-e2-k3-s6-v3",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -398,8 +902,8 @@
    "stern": false
   },
   {
-   "aufgabe": "A9",
-   "hauptnummer": 9,
+   "aufgabe": "A20",
+   "hauptnummer": 20,
    "teilaufgabe": "g",
    "id": "wahrscheinlichkeit-e2-k3-s7-v1",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -409,8 +913,8 @@
    "stern": false
   },
   {
-   "aufgabe": "A9",
-   "hauptnummer": 9,
+   "aufgabe": "A20",
+   "hauptnummer": 20,
    "teilaufgabe": "h",
    "id": "wahrscheinlichkeit-e2-k3-s8-v1",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -420,8 +924,8 @@
    "stern": false
   },
   {
-   "aufgabe": "A10",
-   "hauptnummer": 10,
+   "aufgabe": "A21",
+   "hauptnummer": 21,
    "teilaufgabe": "a",
    "id": "wahrscheinlichkeit-e2-k3-s9-v2",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -431,8 +935,8 @@
    "stern": false
   },
   {
-   "aufgabe": "A10",
-   "hauptnummer": 10,
+   "aufgabe": "A21",
+   "hauptnummer": 21,
    "teilaufgabe": "b",
    "id": "wahrscheinlichkeit-e2-k3-s10-v1",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -442,8 +946,8 @@
    "stern": false
   },
   {
-   "aufgabe": "A10",
-   "hauptnummer": 10,
+   "aufgabe": "A21",
+   "hauptnummer": 21,
    "teilaufgabe": "c",
    "id": "wahrscheinlichkeit-e2-k3-s13-v1",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -453,8 +957,8 @@
    "stern": true
   },
   {
-   "aufgabe": "A10",
-   "hauptnummer": 10,
+   "aufgabe": "A21",
+   "hauptnummer": 21,
    "teilaufgabe": "d",
    "id": "wahrscheinlichkeit-e2-k3-s13-v2",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -464,16 +968,16 @@
    "stern": true
   },
   {
-   "aufgabe": "A11",
-   "hauptnummer": 11,
+   "aufgabe": "A22",
+   "hauptnummer": 22,
    "teilaufgabe": "a",
    "id": "wahrscheinlichkeit-e2-k4-s1-v2",
    "datei": "wahrscheinlichkeit_a.tex",
    "lage": "anlauf"
   },
   {
-   "aufgabe": "A12",
-   "hauptnummer": 12,
+   "aufgabe": "A23",
+   "hauptnummer": 23,
    "teilaufgabe": "a",
    "id": "wahrscheinlichkeit-e2-k4-s1-v1",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -483,32 +987,32 @@
    "stern": false
   },
   {
-   "aufgabe": "A13",
-   "hauptnummer": 13,
+   "aufgabe": "A24",
+   "hauptnummer": 24,
    "teilaufgabe": "a",
    "id": "wahrscheinlichkeit-e3-k3-s0-v1",
    "datei": "wahrscheinlichkeit_a.tex",
    "lage": "anlauf"
   },
   {
-   "aufgabe": "A13",
-   "hauptnummer": 13,
+   "aufgabe": "A24",
+   "hauptnummer": 24,
    "teilaufgabe": "b",
    "id": "wahrscheinlichkeit-e3-k3-s1-v1",
    "datei": "wahrscheinlichkeit_a.tex",
    "lage": "anlauf"
   },
   {
-   "aufgabe": "A13",
-   "hauptnummer": 13,
+   "aufgabe": "A24",
+   "hauptnummer": 24,
    "teilaufgabe": "c",
    "id": "wahrscheinlichkeit-e3-k3-s2-v3",
    "datei": "wahrscheinlichkeit_a.tex",
    "lage": "anlauf"
   },
   {
-   "aufgabe": "A14",
-   "hauptnummer": 14,
+   "aufgabe": "A25",
+   "hauptnummer": 25,
    "teilaufgabe": "a",
    "id": "wahrscheinlichkeit-e3-k3-s2-v1",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -518,8 +1022,8 @@
    "stern": false
   },
   {
-   "aufgabe": "A14",
-   "hauptnummer": 14,
+   "aufgabe": "A25",
+   "hauptnummer": 25,
    "teilaufgabe": "b",
    "id": "wahrscheinlichkeit-e3-k3-s2-v2",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -529,8 +1033,8 @@
    "stern": false
   },
   {
-   "aufgabe": "A14",
-   "hauptnummer": 14,
+   "aufgabe": "A25",
+   "hauptnummer": 25,
    "teilaufgabe": "c",
    "id": "wahrscheinlichkeit-e3-k3-s3-v3",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -540,8 +1044,8 @@
    "stern": false
   },
   {
-   "aufgabe": "A14",
-   "hauptnummer": 14,
+   "aufgabe": "A25",
+   "hauptnummer": 25,
    "teilaufgabe": "d",
    "id": "wahrscheinlichkeit-e3-k3-s4-v1",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -551,8 +1055,8 @@
    "stern": true
   },
   {
-   "aufgabe": "A14",
-   "hauptnummer": 14,
+   "aufgabe": "A25",
+   "hauptnummer": 25,
    "teilaufgabe": "e",
    "id": "wahrscheinlichkeit-e3-k3-s5-v1",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -562,8 +1066,8 @@
    "stern": true
   },
   {
-   "aufgabe": "A14",
-   "hauptnummer": 14,
+   "aufgabe": "A25",
+   "hauptnummer": 25,
    "teilaufgabe": "f",
    "id": "wahrscheinlichkeit-e3-k3-s7-v1",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -573,8 +1077,8 @@
    "stern": false
   },
   {
-   "aufgabe": "A15",
-   "hauptnummer": 15,
+   "aufgabe": "A26",
+   "hauptnummer": 26,
    "teilaufgabe": "a",
    "id": "wahrscheinlichkeit-e3-k3-s9-v1",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -584,8 +1088,8 @@
    "stern": false
   },
   {
-   "aufgabe": "A15",
-   "hauptnummer": 15,
+   "aufgabe": "A26",
+   "hauptnummer": 26,
    "teilaufgabe": "b",
    "id": "wahrscheinlichkeit-e3-k3-s9-v2",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -595,8 +1099,8 @@
    "stern": false
   },
   {
-   "aufgabe": "A15",
-   "hauptnummer": 15,
+   "aufgabe": "A26",
+   "hauptnummer": 26,
    "teilaufgabe": "c",
    "id": "wahrscheinlichkeit-e3-k3-s10-v1",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -606,8 +1110,8 @@
    "stern": true
   },
   {
-   "aufgabe": "A15",
-   "hauptnummer": 15,
+   "aufgabe": "A26",
+   "hauptnummer": 26,
    "teilaufgabe": "d",
    "id": "wahrscheinlichkeit-e3-k3-s10-v2",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -617,8 +1121,8 @@
    "stern": false
   },
   {
-   "aufgabe": "A15",
-   "hauptnummer": 15,
+   "aufgabe": "A26",
+   "hauptnummer": 26,
    "teilaufgabe": "e",
    "id": "wahrscheinlichkeit-e3-k3-s11-v1",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -628,8 +1132,8 @@
    "stern": true
   },
   {
-   "aufgabe": "A15",
-   "hauptnummer": 15,
+   "aufgabe": "A26",
+   "hauptnummer": 26,
    "teilaufgabe": "f",
    "id": "wahrscheinlichkeit-e3-k3-s11-v2",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -639,32 +1143,32 @@
    "stern": true
   },
   {
-   "aufgabe": "A16",
-   "hauptnummer": 16,
+   "aufgabe": "A27",
+   "hauptnummer": 27,
    "teilaufgabe": "a",
    "id": "wahrscheinlichkeit-e4-k1-s0-v1",
    "datei": "wahrscheinlichkeit_a.tex",
    "lage": "anlauf"
   },
   {
-   "aufgabe": "A16",
-   "hauptnummer": 16,
+   "aufgabe": "A27",
+   "hauptnummer": 27,
    "teilaufgabe": "b",
    "id": "wahrscheinlichkeit-e4-k1-s1-v1",
    "datei": "wahrscheinlichkeit_a.tex",
    "lage": "anlauf"
   },
   {
-   "aufgabe": "A16",
-   "hauptnummer": 16,
+   "aufgabe": "A27",
+   "hauptnummer": 27,
    "teilaufgabe": "c",
    "id": "wahrscheinlichkeit-e4-k1-s2-v1",
    "datei": "wahrscheinlichkeit_a.tex",
    "lage": "anlauf"
   },
   {
-   "aufgabe": "A17",
-   "hauptnummer": 17,
+   "aufgabe": "A28",
+   "hauptnummer": 28,
    "teilaufgabe": "a",
    "id": "wahrscheinlichkeit-e4-k1-s4-v1",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -674,8 +1178,8 @@
    "stern": true
   },
   {
-   "aufgabe": "A17",
-   "hauptnummer": 17,
+   "aufgabe": "A28",
+   "hauptnummer": 28,
    "teilaufgabe": "b",
    "id": "wahrscheinlichkeit-e4-k1-s6-v1",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -685,8 +1189,8 @@
    "stern": true
   },
   {
-   "aufgabe": "A17",
-   "hauptnummer": 17,
+   "aufgabe": "A28",
+   "hauptnummer": 28,
    "teilaufgabe": "c",
    "id": "wahrscheinlichkeit-e4-k1-s7-v1",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -696,8 +1200,8 @@
    "stern": true
   },
   {
-   "aufgabe": "A17",
-   "hauptnummer": 17,
+   "aufgabe": "A28",
+   "hauptnummer": 28,
    "teilaufgabe": "d",
    "id": "wahrscheinlichkeit-e4-k1-s9-v1",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -707,8 +1211,8 @@
    "stern": true
   },
   {
-   "aufgabe": "A17",
-   "hauptnummer": 17,
+   "aufgabe": "A28",
+   "hauptnummer": 28,
    "teilaufgabe": "e",
    "id": "wahrscheinlichkeit-e4-k1-s10-v1",
    "datei": "wahrscheinlichkeit_a.tex",
@@ -718,8 +1222,8 @@
    "stern": true
   },
   {
-   "aufgabe": "A17",
-   "hauptnummer": 17,
+   "aufgabe": "A28",
+   "hauptnummer": 28,
    "teilaufgabe": "f",
    "id": "wahrscheinlichkeit-e4-k1-s10-v2",
    "datei": "wahrscheinlichkeit_a.tex",

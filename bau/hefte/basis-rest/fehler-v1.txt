@@ -1,3 +1,3 @@
-# basis-rest (LIN-H2), Versuch 1: 2 Fehlerstellen (je Datei und Zeile die erste Meldung)
-LIN-H2.tex → quadratische-funktionen_a.tex:7: LaTeX Error: There's no line here to end.
-LIN-H2.tex → quadratische-funktionen_a.tex:8: LaTeX Error: There's no line here to end.
+# basis-rest (LIN-H3), Versuch 1: 2 Fehlerstellen (je Datei und Zeile die erste Meldung)
+LIN-H3.tex → quadratische-funktionen_a.tex:7: LaTeX Error: There's no line here to end.
+LIN-H3.tex → quadratische-funktionen_a.tex:8: LaTeX Error: There's no line here to end.

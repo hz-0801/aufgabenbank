@@ -56,8 +56,11 @@ ENTSCHEIDUNGEN = """## Entscheidungen dieses Laufs
    Buchstaben da, die Lösung ebenso; der alte Quelltext bleibt als
    Kommentar mit Grund. Folgefehler werden durch ein Kleinstdokument je
    Teilaufgabe von der Ursache getrennt.
-10. daten liegt nur mit e1, e2 und zone in bank/ (eine andere Sitzung
-    baut den Eintrag); das Heft msa-daten nimmt den Stand beim Bau.
+10. daten lag beim ersten Bau nur mit e1, e2 und zone in bank/ (eine
+    andere Sitzung baute den Eintrag); nach deren Commits (e3–e7,
+    stand.md) sind msa-daten und basis-rest neu gebaut (DAT-H2,
+    LIN-H3). Die Registerzeilen DAT-H1 und LIN-H2 bleiben als
+    verbrauchte Nummern; ihr Ordner trägt jetzt den neuen Bau.
 """
 
 

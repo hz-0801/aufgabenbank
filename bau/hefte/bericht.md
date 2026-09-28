@@ -10,11 +10,11 @@ HN Hauptnummern; Anlauf und Prüfungshöhe in Teilaufgaben; Seiten des Hefts und
 | --- | --- | --: | --: | --: | --: | --: | --: | --: | --: | --: | --: |
 | msa-funktionen | LIN-H1 | 6 | 55 | 77 | 180 | 34 | 5 | 82 | 206 (82) | 76 | 3 |
 | msa-geometrie | FLA-H1 | 9 | 67 | 90 | 176 | 44 | 7 | 89 | 189 (89) | 35 | 0 |
-| msa-daten | DAT-H1 | 2 | 17 | 19 | 50 | 11 | 4 | 43 | 88 (43) | 15 | 1 |
+| msa-daten | DAT-H2 | 2 | 28 | 28 | 89 | 17 | 5 | 75 | 159 (75) | 23 | 4 |
 | msa-zahlen | BRU-H1 | 10 | 72 | 95 | 236 | 31 | 6 | 107 | 174 (107) | 30 | 4 |
 | basis-zahlen | BRU-H2 | 9 | 27 | 0 | 139 | 14 | 3 | 60 | 61 (60) | 2 | 4 |
 | basis-geometrie | FLA-H2 | 6 | 14 | 0 | 46 | 13 | 1 | 27 | 29 (27) | 0 | 0 |
-| basis-rest | LIN-H2 | 4 | 7 | 0 | 19 | 6 | 1 | 13 | 13 (13) | 0 | 2 |
+| basis-rest | LIN-H3 | 5 | 8 | 0 | 26 | 7 | 1 | 20 | 21 (20) | 0 | 2 |
 | abi-gk-analysis-1 | AEN-H1 | 7 | 65 | 72 | 153 | 29 | 9 | 108 | 414 (108) | 0 | 0 |
 | abi-gk-analysis-2 | STA-H1 | 5 | 39 | 42 | 104 | 17 | 5 | 62 | 257 (62) | 0 | 0 |
 | abi-gk-stochastik | ZUF-H1 | 7 | 58 | 71 | 95 | 23 | 6 | 61 | 192 (61) | 0 | 1 |
@@ -39,14 +39,17 @@ Aufruf: `zusammenbau.py flaechen koerper pyramide-kegel-kugel pythagoras trigono
 
 Versuche: 1, Fehlerstellen je Versuch [0]; fehlende Zeichen im PDF: 85 (α β γ δ ₁ ≈).
 
-### msa-daten (DAT-H1)
+### msa-daten (DAT-H2)
 
 Aufruf: `zusammenbau.py daten wahrscheinlichkeit --heft msa`
 
-Versuche: 2, Fehlerstellen je Versuch [1, 0]; fehlende Zeichen im PDF: 27 (ß ö ü).
+Versuche: 3, Fehlerstellen je Versuch [1, 3, 0]; fehlende Zeichen im PDF: 27 (ß ö ü).
 
 Ausgelassen:
 - Nr. 5b daten-e2-k2-s11-v2 – Dimension too large.
+- Nr. 16b daten-e5-k1-s10-v2 – Dimension too large.
+- Nr. 16a daten-e5-k1-s10-v1 – Dimension too large.
+- Nr. 14c daten-e5-k1-s6-v1 – Dimension too large.
 
 ### msa-zahlen (BRU-H1)
 
@@ -84,11 +87,11 @@ Aufruf: `zusammenbau.py flaechen koerper pyramide-kegel-kugel pythagoras trigono
 Ohne Prüfungshöhe im Profil, daher nicht im Heft: pyramide-kegel-kugel, pythagoras, strahlensaetze.
 Versuche: 1, Fehlerstellen je Versuch [0]; fehlende Zeichen im PDF: 22 (α β γ ≈).
 
-### basis-rest (LIN-H2)
+### basis-rest (LIN-H3)
 
 Aufruf: `zusammenbau.py lineare-funktionen quadratische-funktionen quadratische-gleichungen lineare-gleichungssysteme potenz-exponentialfunktionen zuordnungen daten wahrscheinlichkeit --heft msa --nur-basis`
 
-Ohne Prüfungshöhe im Profil, daher nicht im Heft: lineare-gleichungssysteme, potenz-exponentialfunktionen, zuordnungen, daten.
+Ohne Prüfungshöhe im Profil, daher nicht im Heft: lineare-gleichungssysteme, potenz-exponentialfunktionen, zuordnungen.
 Versuche: 2, Fehlerstellen je Versuch [2, 0]; fehlende Zeichen im PDF: 0.
 
 Ausgelassen:
@@ -132,8 +135,9 @@ Gezählt je ausgelassener Teilaufgabe und Heft (eine Bankzeile in zwei Heften z�
 
 1. Lückensatz: __ im Aufgabentext (Unterstrich außerhalb Mathe): 8× (4 Bankzeilen: brueche-dezimalzahlen-e4-k1-s8-v3, brueche-dezimalzahlen-e4-k1-s8-v4, brueche-dezimalzahlen-e5-k2-s9-v7, brueche-dezimalzahlen-e5-k2-s9-v8; Meldung: LaTeX Error: Command \item invalid in math m / Missing $ inserted)
 2. \wertetabelle (form ankreuzen): 5× (3 Bankzeilen: potenz-exponentialfunktionen-e2-k2-s0-v1, quadratische-funktionen-e1-k1-s10-v1, quadratische-funktionen-e1-k1-s10-v2; Meldung: LaTeX Error: There's no line here to / LaTeX Error: There's no line here to end)
-3. \saeulenab (form zeichnen): 1× (1 Bankzeilen: daten-e2-k2-s11-v2; Meldung: Dimension too large)
-4. \saeulenab (form teil): 1× (1 Bankzeilen: binomialverteilung-e5-k1-s1-v1; Meldung: Extra }, or forgotten $)
+3. \punkt (form text): 3× (3 Bankzeilen: daten-e5-k1-s10-v1, daten-e5-k1-s10-v2, daten-e5-k1-s6-v1; Meldung: Dimension too large)
+4. \saeulenab (form zeichnen): 1× (1 Bankzeilen: daten-e2-k2-s11-v2; Meldung: Dimension too large)
+5. \saeulenab (form teil): 1× (1 Bankzeilen: binomialverteilung-e5-k1-s1-v1; Meldung: Extra }, or forgotten $)
 
 ## Entscheidungen dieses Laufs
 
@@ -171,5 +175,8 @@ Gezählt je ausgelassener Teilaufgabe und Heft (eine Bankzeile in zwei Heften z�
    Buchstaben da, die Lösung ebenso; der alte Quelltext bleibt als
    Kommentar mit Grund. Folgefehler werden durch ein Kleinstdokument je
    Teilaufgabe von der Ursache getrennt.
-10. daten liegt nur mit e1, e2 und zone in bank/ (eine andere Sitzung
-    baut den Eintrag); das Heft msa-daten nimmt den Stand beim Bau.
+10. daten lag beim ersten Bau nur mit e1, e2 und zone in bank/ (eine
+    andere Sitzung baute den Eintrag); nach deren Commits (e3–e7,
+    stand.md) sind msa-daten und basis-rest neu gebaut (DAT-H2,
+    LIN-H3). Die Registerzeilen DAT-H1 und LIN-H2 bleiben als
+    verbrauchte Nummern; ihr Ordner trägt jetzt den neuen Bau.

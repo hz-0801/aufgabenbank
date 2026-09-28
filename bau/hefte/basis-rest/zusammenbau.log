@@ -1,6 +1,6 @@
 # zusammenbau v0.4: zusammenbau.py lineare-funktionen quadratische-funktionen quadratische-gleichungen lineare-gleichungssysteme potenz-exponentialfunktionen zuordnungen daten wahrscheinlichkeit --heft msa --nur-basis --titel Prüfungsheft Basis · Funktionen, Daten und Zufall
 VORLAGE mathblatt.sty: Version 2026-09-28a
-KENNUNG LIN-H2 – Kürzel LIN aus _kuerzel.csv (mathe-nachhilfe) (erster Eintrag lineare-funktionen); Rezept H (Heft)
+KENNUNG LIN-H3 – Kürzel LIN aus _kuerzel.csv (mathe-nachhilfe) (erster Eintrag lineare-funktionen); Rezept H (Heft)
 KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
 WEG lineare-funktionen e1 „Proportionale Funktion“ – keine Prüfungshöhe im Profil basis
 WEG lineare-funktionen e1 „Dreisatz als Kontrolle“ – keine Prüfungshöhe im Profil basis
@@ -93,7 +93,23 @@ WEG daten e1 „Aussage aus der Klassentabelle prüfen (in welcher Klasse liegen
 WEG daten e2 „Wo fängt die Achse an?“ – keine Prüfungshöhe im Profil basis
 WEG daten e2 „Diagramme lesen“ – keine Prüfungshöhe im Profil basis
 WEG daten e2 „Diagramm aus einer Tabelle zeichnen (Skala wählen)“ – keine Prüfungshöhe im Profil basis
-LEER daten: keine Kette mit Prüfungshöhe – Eintrag entfällt im Heft
+WEG daten e3 „Anteile darstellen“ – keine Prüfungshöhe im Profil basis
+WEG daten e3 „Anteil aus einem Sektor schätzen (Viertel, Drittel, Hälfte)“ – keine Prüfungshöhe im Profil basis
+AUSWAHL daten-e4-k1-s2-v1 – daten e4 „Kenngrößen“: Prüfungshöhe (2019-OS-B1i)
+AUSWAHL daten-e4-k1-s4-v2 – daten e4 „Kenngrößen“: Prüfungshöhe (2015-OS-B1f)
+AUSWAHL daten-e4-k1-s5-v2 – daten e4 „Kenngrößen“: Prüfungshöhe (2024-OS-B1h)
+AUSWAHL daten-e4-k1-s6-v1 – daten e4 „Kenngrößen“: Prüfungshöhe (2016-OS-B1a)
+AUSWAHL daten-e4-k1-s7-v1 – daten e4 „Kenngrößen“: Prüfungshöhe (2017-OS-B1h)
+AUSWAHL daten-e4-k1-s7-v2 – daten e4 „Kenngrößen“: Prüfungshöhe (2021-OS-B1f)
+AUSWAHL daten-e4-k1-s11-v1 – daten e4 „Kenngrößen“: Prüfungshöhe (2022-OS-B1d)
+WEG daten e4 „Kenngrößen aus Listen, Sek II“ – keine Prüfungshöhe im Profil basis
+WEG daten e4 „Mittelwert und Median vergleichen (Ausreißer)“ – keine Prüfungshöhe im Profil basis
+WEG daten e5 „Beurteilen“ – keine Prüfungshöhe im Profil basis
+WEG daten e5 „Boxplot“ – keine Prüfungshöhe im Profil basis
+WEG daten e5 „gedehnte Achse“ – keine Prüfungshöhe im Profil basis
+WEG daten e6 „Kenngrößen aus Tabellen und Klassen“ – keine Prüfungshöhe im Profil basis
+WEG daten e7 „Vierfeldertafel füllen“ – keine Prüfungshöhe im Profil basis
+WEG daten e7 „Anteile unterscheiden“ – keine Prüfungshöhe im Profil basis
 AUSWAHL wahrscheinlichkeit-e1-k1-s6-v1 – wahrscheinlichkeit e1 „Zählen“: Prüfungshöhe (2017-OS-B1f)
 WEG wahrscheinlichkeit e1 „Ergebnisse zu „mindestens einmal …“ aufzählen“ – keine Prüfungshöhe im Profil basis
 WEG wahrscheinlichkeit e2 „Wie viele Stufen?“ – keine Prüfungshöhe im Profil basis

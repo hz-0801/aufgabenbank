@@ -1,1 +1,4 @@
-# msa-daten (DAT-H1), Versuch 2: 0 Fehlerstellen (je Datei und Zeile die erste Meldung)
+# msa-daten (DAT-H2), Versuch 2: 3 Fehlerstellen (je Datei und Zeile die erste Meldung)
+DAT-H2.tex → daten_a.tex:205: Dimension too large.
+DAT-H2.tex → daten_a.tex:221: Dimension too large.
+DAT-H2.tex → daten_a.tex:224: Dimension too large.
