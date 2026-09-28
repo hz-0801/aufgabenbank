@@ -1,20 +1,23 @@
 # zusammenbau.py – aus der Bank ein Blatt (Quelltext)
 
-Stand 2026-09-27, v0.1. Baut aus bank/<eintrag>/ LaTeX-Quelltexte
-für die Vorlage mathblatt.sty (hz-0801/blattbau). Kompiliert wird
-nicht; die Strukturprüfung im Skript ersetzt den Lauf bis zum
-ersten Render.
+Stand 2026-09-28, v0.3 (Kennung, Register, Bauzettel; eine v0.2
+gab es im Repo nicht, v0.3 setzt auf v0.1 auf). Baut aus
+bank/<eintrag>/ LaTeX-Quelltexte für die Vorlage mathblatt.sty
+(hz-0801/blattbau). Kompiliert wird nicht; die Strukturprüfung im
+Skript ersetzt den Lauf bis zum ersten Render.
 
 ## Aufruf
 
     python3 werkzeuge/zusammenbau.py <eintrag> [--einheiten 1,3]
         [--zone ja|nein|kurz] [--fokus <kette>] [--schwach]
         [--klasse 7] [--kasten] [--aus <ordner>]
-        [--vorlage <pfad/mathblatt.sty>]
+        [--vorlage <pfad/mathblatt.sty>] [--ohne-register]
+        [--kuerzel <pfad/_kuerzel.csv>]
 
 Ohne Schalter: Lernblatt mit Zone und allen Einheiten, je Sprosse
-Variante 1, ohne Klasse. Rückgabe 1, wenn die Strukturprüfung
-Fehler findet (die Dateien werden trotzdem geschrieben).
+Variante 1, ohne Klasse, mit Registerzeile. Rückgabe 1, wenn die
+Strukturprüfung Fehler findet (die Dateien und die Registerzeile
+werden trotzdem geschrieben).
 
 | Schalter | Wirkung |
 | --- | --- |
@@ -26,24 +29,112 @@ Fehler findet (die Dateien werden trotzdem geschrieben).
 | `--schwach` | Form nach unterrichtsblatt 2.8 |
 | `--klasse n` | Zeitmarke relativ; bis Klasse 10 `\weit` |
 | `--kasten` | Merkkasten am Anfang jeder Einheit (3.1) |
-| `--aus <ordner>` | Ausgabeordner statt bau/<eintrag>/<datum>/ |
+| `--aus <ordner>` | Ausgabeordner statt bau/<eintrag>/<kennung>/ |
 | `--vorlage <sty>` | Pfad zu mathblatt.sty |
+| `--ohne-register` | Probe: Kennung XXX-R0, keine Registerzeile |
+| `--kuerzel <csv>` | Pfad zu katalog/_kuerzel.csv |
 
 mathblatt.sty sucht das Skript sonst unter $BLATTBAU,
-../hz-0801/blattbau/ und ../blattbau/ neben dem Repo.
+../hz-0801/blattbau/ und ../blattbau/ neben dem Repo;
+_kuerzel.csv unter $MATHE_NACHHILFE/katalog/,
+../mathe-nachhilfe/katalog/ und ../hz-0801/mathe-nachhilfe/katalog/.
+
+## Kennung
+
+Jedes Blatt aus der Bank trägt eine Kennung `XXX-R<n>` (Beschluss
+des Lehrers vom 28.09.), z. B. PRZ-L3:
+
+- XXX: Kürzel des Eintrags aus katalog/_kuerzel.csv in
+  hz-0801/mathe-nachhilfe (Spalten kuerzel;eintrag). Fehlt die
+  Datei oder der Eintrag darin, die ersten drei Buchstaben des
+  Eintrags groß; die log (KENNUNG) und bau.json (kuerzel_quelle)
+  sagen, woher das Kürzel kam. Heft mit mehreren Einträgen: Kürzel
+  des ersten.
+- R: Rezept – L Lernblatt, F Fokus (`--fokus`), S schwach
+  (`--schwach`), H Heft. H vergibt das Skript noch nicht, weil
+  v0.3 nur einen Eintrag je Bau kennt.
+- n: laufende Nummer je Kürzel und Rezept ab 1, die nächste freie
+  aus bau/register.csv (größte vergebene + 1). Zweimal derselbe
+  Aufruf gibt zwei Kennungen (PRZ-L1, PRZ-L2).
+- `--ohne-register`: n = 0 (PRZ-L0), keine Registerzeile; der
+  Ordner PRZ-L0 wird bei jeder Probe überschrieben.
+
+Die Kennung steht:
+
+- in der Fußzeile jeder Seite unten links, wo `\blattfuss` die
+  Bezeichnung trägt: „Prozentrechnung · Lernblatt · PRZ-L3“ (Thema ·
+  Bezeichnung des Dokuments · Kennung). Gesetzt über das dritte
+  Argument von `\blattkopf*`, weil `\blattfuss` und `\blattkopf`
+  beide `\fancyhf{}` rufen und sich gegenseitig löschen; die
+  Kopfzeile mit der Einheit bleibt so erhalten.
+- in den Dateinamen und im Ordner: bau/<eintrag>/<kennung>/ mit
+  <kennung>.tex (das Blatt), <kennung>-loesungen.tex; beim
+  Lernblatt dazu <kennung>-gesamt.tex, <kennung>-blatt0.tex,
+  <kennung>-e<n>.tex. Kompiliert heißen sie PRZ-L3.pdf,
+  PRZ-L3-loesungen.pdf. Die eingebundenen Teile (blatt0_a,
+  e<n>_a/_l, abhaken) behalten ihre Namen.
+
+Ist der Zielordner einer Registerkennung schon belegt, bricht das
+Skript ab, ohne etwas zu bauen (Register und Ordner passen dann
+nicht zusammen).
+
+## Register
+
+bau/register.csv, Semikolon, UTF-8, LF, eine Zeile je Bau:
+
+    kennung;datum;eintraege;rezept;bestellung;bank_commit;
+    zusammenbau;vorlage;pfad
+
+- datum: Uhr des Rechners (`date +%F`).
+- eintraege: Einträge, mit Komma getrennt.
+- bestellung: alle Schalter mit Wert, auch die Voreinstellungen
+  (`einheiten=alle, zone=ja, fokus=–, …`).
+- bank_commit: `git rev-parse --short HEAD`; „+geändert“, wenn
+  bank/, mappen/ oder werkzeuge/ ungesichert von HEAD abweichen.
+- zusammenbau: Version des Skripts; vorlage: Versionszeile aus
+  mathblatt.sty („Version 2026-09-28a“).
+- pfad: Ausgabeordner relativ zur Repo-Wurzel.
+
+Die Zeile wird angehängt, nachdem die Dateien geschrieben sind.
+Parallele Web-Sitzungen, die bauen, schreiben alle in diese eine
+Datei: vor dem Bau `git pull --rebase`, sonst können zwei Sitzungen
+dieselbe Nummer vergeben.
+
+## Bauzettel
+
+bau.json im Ausgabeordner: kennung, datum, eintraege (Liste),
+rezept, rezept_name, bestellung (alle Schalter als Objekt),
+bank_commit, zusammenbau, vorlage, pfad, kuerzel_quelle,
+strukturfehler und aufgaben – die Bankzeilen in Blattreihenfolge
+(Zone zuerst), je Teilaufgabe:
+
+    {"aufgabe": "A16", "hauptnummer": 16, "teilaufgabe": "b",
+     "id": "prozentrechnung-e2-k5-s2-v1", "datei": "e2_a.tex"}
+
+A16 ist Hauptnummer 16 (Zeile aus PRZ-L1). Die Erklärzeile im Päckchen (schwach) hat
+id null und einen hinweis. Prüfstein:
+bau/prozentrechnung/kennung-probe.py <kennung> … prüft Register
+gegen bau.json, jede Aufgabennummer auf genau eine Bankzeile,
+Teilaufgaben je Hauptnummer im Quelltext gegen bau.json, Kennung in
+Fußzeile und Dateinamen, und dass gleiche Bestellungen wortgleiche
+Aufgabendateien geben.
 
 ## Ausgabe
 
 Lernblatt und schwach: blatt0_a/_l (Zone), e<n>_a/_l je Einheit
-(n = Nummer im Katalog), Rahmen blatt0.tex, e<n>.tex,
-lernblatt.tex, gesamt.tex, loesungen.tex, abhaken.tex. Fokus:
-blatt0_a/_l, e<n>_a/_l, fokus.tex, fokus_loesungen.tex. Dazu
-mathblatt.sty als Kopie und zusammenbau.log: jede Auswahl
+(n = Nummer im Katalog), Rahmen <K>-blatt0.tex, <K>-e<n>.tex,
+<K>.tex (bis v0.1 lernblatt.tex), <K>-gesamt.tex,
+<K>-loesungen.tex, abhaken.tex (<K> = Kennung). Fokus:
+blatt0_a/_l, e<n>_a/_l, <K>.tex, <K>-loesungen.tex (bis v0.1
+fokus.tex, fokus_loesungen.tex). Dazu mathblatt.sty als Kopie,
+bau.json und zusammenbau.log: Kennung (KENNUNG), jede Auswahl
 (AUSWAHL, WEG), Köpfe, Teilungen, Warnungen, alle TODO mit Datei
 und Zeile, die Strukturprüfung.
 
-Kompilieren (im Code-Tab): `xelatex gesamt.tex` zweimal (Abhak-
-seite), ebenso lernblatt.tex, loesungen.tex, blatt0.tex.
+Kompilieren: `xelatex <K>-gesamt.tex` zweimal (Abhakseite),
+ebenso <K>.tex, <K>-loesungen.tex, <K>-blatt0.tex. PDFs im Repo
+brauchen `*.pdf binary` in einer .gitattributes des Ordners (die
+Wurzel setzt `* text eol=lf`, das verfälscht PDFs).
 
 ## Bauregeln
 
@@ -151,3 +242,20 @@ Entscheidungen, die der Auftrag vom 27.09. offenließ:
    als `\quad`; über fünf Zeilen nur TODO, nicht gekürzt.
 10. Lösung der Erklärzeile: `\ldots` mit TODO.
 11. Archivdatum nach `date` (2026-09-27), nicht 2026-09-28.
+
+Entscheidungen, die der Auftrag vom 28.09. (v0.3) offenließ:
+
+12. Fußzeile über `\blattkopf*` statt `\blattfuss` (siehe
+    Kennung); Bezeichnung im Fuß ist die des Dokuments (Lernblatt,
+    Gesamt, Lösungen, Einheit 2, Fokus Prozentsatz · Lösungen).
+13. Das Blatt heißt <K>.tex: beim Lernblatt das bisherige
+    lernblatt.tex (ohne Zone), beim Fokus fokus.tex; die übrigen
+    Dokumente tragen die Kennung mit Zusatz.
+14. Voreingestellter Ordner bau/<eintrag>/<kennung>/ statt
+    bau/<eintrag>/<datum>/; die Prüfsteine unter 2026-09-27/
+    bleiben.
+15. Registerzeile auch bei Strukturfehlern: Die Dateien liegen
+    unter der Kennung, die Nummer ist damit verbraucht;
+    bau.json trägt die Fehlerzahl.
+16. Rezept H: Buchstabe und Kürzelregel sind im Skript, einen
+    Heftbau mit mehreren Einträgen hat v0.3 nicht.
