@@ -148,3 +148,11 @@ Toleranz, aber falsch), 48 Zeilen der Gegenprobe Kastenzahlen
   2020-GYM-K3b (in der Mappe nur als Abgrenzung genannt).
 - Generatoren dieser Sitzung liegen nicht im Repo (Auftrag: nur
   unter bank/<eintrag>/ schreiben).
+
+## Nachbesserung Render 2026-09-28
+
+Quelle: bau/render-alle/bericht.md, bau/hefte/bericht.md, bau/fokus/bericht.md, bau/layout-befunde.md Punkt 31. Übersicht aller Einträge: bau/render-alle/behoben.md.
+
+- e1-k1-s3-v1, e1-k1-s3-v2, e1-k1-s3-v3, e1-k4-s3-v1, e2-k2-s0-v1, e2-k2-s0-v2, e2-k2-s0-v3, e2-k2-s0-v4, e3-k3-s3-v1, e5-k4-s3-v1 (10): There's no line here to end – `\\` nach `\wertetabelle` (Blockbaustein endet mit `\par`). Änderung: `\\` nach `\wertetabelle` gestrichen (1×).
+
+Nur diese 10 Zeilen geändert, alle übrigen byte-gleich. `bank-pruef.py potenz-exponentialfunktionen`: 0 Abweichungen. Probe: jede Zeile allein in einem Minimaldokument mit mathblatt.sty (hz-0801/blattbau) gesetzt wie werkzeuge/zusammenbau.py v0.7 (teile_normal, teil_schwach, Lösung in \erg), xelatex ohne Fehler.
