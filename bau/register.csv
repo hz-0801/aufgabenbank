@@ -1,0 +1,4 @@
+kennung;datum;eintraege;rezept;bestellung;bank_commit;zusammenbau;vorlage;pfad
+PRZ-L1;2026-09-28;prozentrechnung;L;einheiten=alle, zone=ja, fokus=–, schwach=nein, klasse=–, kasten=nein, aus=–;ce7632a;v0.3;Version 2026-09-28a;bau/prozentrechnung/PRZ-L1
+PRZ-L2;2026-09-28;prozentrechnung;L;einheiten=alle, zone=ja, fokus=–, schwach=nein, klasse=–, kasten=nein, aus=–;ce7632a;v0.3;Version 2026-09-28a;bau/prozentrechnung/PRZ-L2
+PRZ-F1;2026-09-28;prozentrechnung;F;einheiten=alle, zone=ja, fokus=Prozentsatz, schwach=nein, klasse=–, kasten=nein, aus=–;ce7632a;v0.3;Version 2026-09-28a;bau/prozentrechnung/PRZ-F1

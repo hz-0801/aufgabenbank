@@ -1,0 +1,643 @@
+{
+ "kennung": "PRZ-L1",
+ "datum": "2026-09-28",
+ "eintraege": [
+  "prozentrechnung"
+ ],
+ "rezept": "L",
+ "rezept_name": "Lernblatt",
+ "bestellung": {
+  "einheiten": "alle",
+  "zone": "ja",
+  "fokus": null,
+  "schwach": false,
+  "klasse": null,
+  "kasten": false,
+  "aus": null,
+  "ohne_register": false
+ },
+ "bank_commit": "ce7632a",
+ "zusammenbau": "v0.3",
+ "vorlage": "Version 2026-09-28a",
+ "pfad": "bau/prozentrechnung/PRZ-L1",
+ "kuerzel_quelle": "_kuerzel.csv (mathe-nachhilfe)",
+ "strukturfehler": 0,
+ "aufgaben": [
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "a",
+   "id": "prozentrechnung-zone-f1-v1",
+   "datei": "blatt0_a.tex"
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "b",
+   "id": "prozentrechnung-zone-f1-v3",
+   "datei": "blatt0_a.tex"
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "a",
+   "id": "prozentrechnung-zone-f2-v1",
+   "datei": "blatt0_a.tex"
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "b",
+   "id": "prozentrechnung-zone-f2-v3",
+   "datei": "blatt0_a.tex"
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "a",
+   "id": "prozentrechnung-zone-f3-v1",
+   "datei": "blatt0_a.tex"
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "b",
+   "id": "prozentrechnung-zone-f3-v3",
+   "datei": "blatt0_a.tex"
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "a",
+   "id": "prozentrechnung-zone-f4-v1",
+   "datei": "blatt0_a.tex"
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "b",
+   "id": "prozentrechnung-zone-f4-v3",
+   "datei": "blatt0_a.tex"
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "teilaufgabe": "a",
+   "id": "prozentrechnung-zone-f5-v1",
+   "datei": "blatt0_a.tex"
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "teilaufgabe": "b",
+   "id": "prozentrechnung-zone-f5-v3",
+   "datei": "blatt0_a.tex"
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "a",
+   "id": "prozentrechnung-zone-f6-v1",
+   "datei": "blatt0_a.tex"
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "b",
+   "id": "prozentrechnung-zone-f6-v3",
+   "datei": "blatt0_a.tex"
+  },
+  {
+   "aufgabe": "A7",
+   "hauptnummer": 7,
+   "teilaufgabe": "a",
+   "id": "prozentrechnung-zone-f6-v6",
+   "datei": "blatt0_a.tex"
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "teilaufgabe": "a",
+   "id": "prozentrechnung-zone-f6-v7",
+   "datei": "blatt0_a.tex"
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "a",
+   "id": "prozentrechnung-e1-k1-s1-v1",
+   "datei": "e1_a.tex"
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "b",
+   "id": "prozentrechnung-e1-k1-s2-v1",
+   "datei": "e1_a.tex"
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "c",
+   "id": "prozentrechnung-e1-k1-s3-v1",
+   "datei": "e1_a.tex"
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "d",
+   "id": "prozentrechnung-e1-k1-s4-v1",
+   "datei": "e1_a.tex"
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "e",
+   "id": "prozentrechnung-e1-k1-s5-v1",
+   "datei": "e1_a.tex"
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "f",
+   "id": "prozentrechnung-e1-k1-s6-v1",
+   "datei": "e1_a.tex"
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "g",
+   "id": "prozentrechnung-e1-k1-s7-v1",
+   "datei": "e1_a.tex"
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "h",
+   "id": "prozentrechnung-e1-k1-s8-v1",
+   "datei": "e1_a.tex"
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "i",
+   "id": "prozentrechnung-e1-k1-s9-v1",
+   "datei": "e1_a.tex"
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "a",
+   "id": "prozentrechnung-e1-k2-s1-v1",
+   "datei": "e1_a.tex"
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "a",
+   "id": "prozentrechnung-e1-k3-s1-v1",
+   "datei": "e1_a.tex"
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "b",
+   "id": "prozentrechnung-e1-k3-s2-v1",
+   "datei": "e1_a.tex"
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "c",
+   "id": "prozentrechnung-e1-k3-s3-v1",
+   "datei": "e1_a.tex"
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "d",
+   "id": "prozentrechnung-e1-k3-s4-v1",
+   "datei": "e1_a.tex"
+  },
+  {
+   "aufgabe": "A12",
+   "hauptnummer": 12,
+   "teilaufgabe": "a",
+   "id": "prozentrechnung-e2-k1-s0-v1",
+   "datei": "e2_a.tex"
+  },
+  {
+   "aufgabe": "A13",
+   "hauptnummer": 13,
+   "teilaufgabe": "a",
+   "id": "prozentrechnung-e2-k2-s0-v1",
+   "datei": "e2_a.tex"
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "a",
+   "id": "prozentrechnung-e2-k3-s0-v1",
+   "datei": "e2_a.tex"
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "b",
+   "id": "prozentrechnung-e2-k3-s1-v1",
+   "datei": "e2_a.tex"
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "c",
+   "id": "prozentrechnung-e2-k3-s2-v1",
+   "datei": "e2_a.tex"
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "d",
+   "id": "prozentrechnung-e2-k3-s3-v1",
+   "datei": "e2_a.tex"
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "e",
+   "id": "prozentrechnung-e2-k3-s4-v1",
+   "datei": "e2_a.tex"
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "f",
+   "id": "prozentrechnung-e2-k3-s5-v1",
+   "datei": "e2_a.tex"
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "g",
+   "id": "prozentrechnung-e2-k3-s6-v1",
+   "datei": "e2_a.tex"
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "h",
+   "id": "prozentrechnung-e2-k3-s7-v1",
+   "datei": "e2_a.tex"
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "i",
+   "id": "prozentrechnung-e2-k3-s8-v1",
+   "datei": "e2_a.tex"
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "j",
+   "id": "prozentrechnung-e2-k3-s9-v1",
+   "datei": "e2_a.tex"
+  },
+  {
+   "aufgabe": "A15",
+   "hauptnummer": 15,
+   "teilaufgabe": "a",
+   "id": "prozentrechnung-e2-k4-s1-v1",
+   "datei": "e2_a.tex"
+  },
+  {
+   "aufgabe": "A16",
+   "hauptnummer": 16,
+   "teilaufgabe": "a",
+   "id": "prozentrechnung-e2-k5-s1-v1",
+   "datei": "e2_a.tex"
+  },
+  {
+   "aufgabe": "A16",
+   "hauptnummer": 16,
+   "teilaufgabe": "b",
+   "id": "prozentrechnung-e2-k5-s2-v1",
+   "datei": "e2_a.tex"
+  },
+  {
+   "aufgabe": "A16",
+   "hauptnummer": 16,
+   "teilaufgabe": "c",
+   "id": "prozentrechnung-e2-k5-s3-v1",
+   "datei": "e2_a.tex"
+  },
+  {
+   "aufgabe": "A16",
+   "hauptnummer": 16,
+   "teilaufgabe": "d",
+   "id": "prozentrechnung-e2-k5-s4-v1",
+   "datei": "e2_a.tex"
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "a",
+   "id": "prozentrechnung-e3-k1-s1-v1",
+   "datei": "e3_a.tex"
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "b",
+   "id": "prozentrechnung-e3-k1-s2-v1",
+   "datei": "e3_a.tex"
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "c",
+   "id": "prozentrechnung-e3-k1-s3-v1",
+   "datei": "e3_a.tex"
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "d",
+   "id": "prozentrechnung-e3-k1-s4-v1",
+   "datei": "e3_a.tex"
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "e",
+   "id": "prozentrechnung-e3-k1-s5-v1",
+   "datei": "e3_a.tex"
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "f",
+   "id": "prozentrechnung-e3-k1-s6-v1",
+   "datei": "e3_a.tex"
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "g",
+   "id": "prozentrechnung-e3-k1-s7-v1",
+   "datei": "e3_a.tex"
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "h",
+   "id": "prozentrechnung-e3-k1-s8-v1",
+   "datei": "e3_a.tex"
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "i",
+   "id": "prozentrechnung-e3-k1-s9-v1",
+   "datei": "e3_a.tex"
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "j",
+   "id": "prozentrechnung-e3-k1-s10-v1",
+   "datei": "e3_a.tex"
+  },
+  {
+   "aufgabe": "A18",
+   "hauptnummer": 18,
+   "teilaufgabe": "a",
+   "id": "prozentrechnung-e3-k2-s1-v1",
+   "datei": "e3_a.tex"
+  },
+  {
+   "aufgabe": "A19",
+   "hauptnummer": 19,
+   "teilaufgabe": "a",
+   "id": "prozentrechnung-e3-k3-s1-v1",
+   "datei": "e3_a.tex"
+  },
+  {
+   "aufgabe": "A19",
+   "hauptnummer": 19,
+   "teilaufgabe": "b",
+   "id": "prozentrechnung-e3-k3-s2-v1",
+   "datei": "e3_a.tex"
+  },
+  {
+   "aufgabe": "A19",
+   "hauptnummer": 19,
+   "teilaufgabe": "c",
+   "id": "prozentrechnung-e3-k3-s3-v1",
+   "datei": "e3_a.tex"
+  },
+  {
+   "aufgabe": "A19",
+   "hauptnummer": 19,
+   "teilaufgabe": "d",
+   "id": "prozentrechnung-e3-k3-s4-v1",
+   "datei": "e3_a.tex"
+  },
+  {
+   "aufgabe": "A20",
+   "hauptnummer": 20,
+   "teilaufgabe": "a",
+   "id": "prozentrechnung-e4-k1-s0-v1",
+   "datei": "e4_a.tex"
+  },
+  {
+   "aufgabe": "A21",
+   "hauptnummer": 21,
+   "teilaufgabe": "a",
+   "id": "prozentrechnung-e4-k2-s0-v1",
+   "datei": "e4_a.tex"
+  },
+  {
+   "aufgabe": "A21",
+   "hauptnummer": 21,
+   "teilaufgabe": "b",
+   "id": "prozentrechnung-e4-k2-s1-v1",
+   "datei": "e4_a.tex"
+  },
+  {
+   "aufgabe": "A21",
+   "hauptnummer": 21,
+   "teilaufgabe": "c",
+   "id": "prozentrechnung-e4-k2-s2-v1",
+   "datei": "e4_a.tex"
+  },
+  {
+   "aufgabe": "A21",
+   "hauptnummer": 21,
+   "teilaufgabe": "d",
+   "id": "prozentrechnung-e4-k2-s3-v1",
+   "datei": "e4_a.tex"
+  },
+  {
+   "aufgabe": "A21",
+   "hauptnummer": 21,
+   "teilaufgabe": "e",
+   "id": "prozentrechnung-e4-k2-s4-v1",
+   "datei": "e4_a.tex"
+  },
+  {
+   "aufgabe": "A21",
+   "hauptnummer": 21,
+   "teilaufgabe": "f",
+   "id": "prozentrechnung-e4-k2-s5-v1",
+   "datei": "e4_a.tex"
+  },
+  {
+   "aufgabe": "A21",
+   "hauptnummer": 21,
+   "teilaufgabe": "g",
+   "id": "prozentrechnung-e4-k2-s6-v1",
+   "datei": "e4_a.tex"
+  },
+  {
+   "aufgabe": "A22",
+   "hauptnummer": 22,
+   "teilaufgabe": "a",
+   "id": "prozentrechnung-e4-k3-s1-v1",
+   "datei": "e4_a.tex"
+  },
+  {
+   "aufgabe": "A22",
+   "hauptnummer": 22,
+   "teilaufgabe": "b",
+   "id": "prozentrechnung-e4-k3-s2-v1",
+   "datei": "e4_a.tex"
+  },
+  {
+   "aufgabe": "A22",
+   "hauptnummer": 22,
+   "teilaufgabe": "c",
+   "id": "prozentrechnung-e4-k3-s3-v1",
+   "datei": "e4_a.tex"
+  },
+  {
+   "aufgabe": "A22",
+   "hauptnummer": 22,
+   "teilaufgabe": "d",
+   "id": "prozentrechnung-e4-k3-s4-v1",
+   "datei": "e4_a.tex"
+  },
+  {
+   "aufgabe": "A23",
+   "hauptnummer": 23,
+   "teilaufgabe": "a",
+   "id": "prozentrechnung-e5-k1-s0-v1",
+   "datei": "e5_a.tex"
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "a",
+   "id": "prozentrechnung-e5-k2-s0-v1",
+   "datei": "e5_a.tex"
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "b",
+   "id": "prozentrechnung-e5-k2-s1-v1",
+   "datei": "e5_a.tex"
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "c",
+   "id": "prozentrechnung-e5-k2-s2-v1",
+   "datei": "e5_a.tex"
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "d",
+   "id": "prozentrechnung-e5-k2-s3-v1",
+   "datei": "e5_a.tex"
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "e",
+   "id": "prozentrechnung-e5-k2-s4-v1",
+   "datei": "e5_a.tex"
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "f",
+   "id": "prozentrechnung-e5-k2-s5-v1",
+   "datei": "e5_a.tex"
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "g",
+   "id": "prozentrechnung-e5-k2-s6-v1",
+   "datei": "e5_a.tex"
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "h",
+   "id": "prozentrechnung-e5-k2-s7-v1",
+   "datei": "e5_a.tex"
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "i",
+   "id": "prozentrechnung-e5-k2-s8-v1",
+   "datei": "e5_a.tex"
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "j",
+   "id": "prozentrechnung-e5-k2-s9-v1",
+   "datei": "e5_a.tex"
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "k",
+   "id": "prozentrechnung-e5-k2-s10-v1",
+   "datei": "e5_a.tex"
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "l",
+   "id": "prozentrechnung-e5-k2-s11-v1",
+   "datei": "e5_a.tex"
+  },
+  {
+   "aufgabe": "A25",
+   "hauptnummer": 25,
+   "teilaufgabe": "a",
+   "id": "prozentrechnung-e5-k3-s1-v1",
+   "datei": "e5_a.tex"
+  },
+  {
+   "aufgabe": "A25",
+   "hauptnummer": 25,
+   "teilaufgabe": "b",
+   "id": "prozentrechnung-e5-k3-s2-v1",
+   "datei": "e5_a.tex"
+  },
+  {
+   "aufgabe": "A25",
+   "hauptnummer": 25,
+   "teilaufgabe": "c",
+   "id": "prozentrechnung-e5-k3-s3-v1",
+   "datei": "e5_a.tex"
+  }
+ ]
+}

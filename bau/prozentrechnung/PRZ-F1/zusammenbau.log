@@ -1,0 +1,95 @@
+# zusammenbau v0.3: zusammenbau.py prozentrechnung --fokus Prozentsatz
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG PRZ-F1 – Kürzel PRZ aus _kuerzel.csv (mathe-nachhilfe); Rezept F (Fokus); Nummer 1 = nächste freie in bau/register.csv
+EINHEITEN [2]
+AUSWAHL prozentrechnung-zone-f1-v1 – Zone f1 „Bruch als Anteil lesen und kürzen (drei “, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL prozentrechnung-zone-f1-v3 – Zone f1 „Bruch als Anteil lesen und kürzen (drei “, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f1 „Bruch als Anteil lesen und kürzen (drei “ – Sprossen [3, 4] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+WEG Zone f2 „Bruch ↔ Dezimalzahl (ein Viertel, drei F“ – gebraucht in Einheit 1, Einheit 3 (Operator), nicht bestellt
+AUSWAHL prozentrechnung-zone-f3-v1 – Zone f3 „Durch hundert teilen, mit Dezimalzahlen “, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL prozentrechnung-zone-f3-v3 – Zone f3 „Durch hundert teilen, mit Dezimalzahlen “, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f3 „Durch hundert teilen, mit Dezimalzahlen “ – Sprossen [3, 4] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL prozentrechnung-zone-f4-v1 – Zone f4 „Hoch- und Runterrechnen in einer Tabelle“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL prozentrechnung-zone-f4-v3 – Zone f4 „Hoch- und Runterrechnen in einer Tabelle“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f4 „Hoch- und Runterrechnen in einer Tabelle“ – Sprossen [3, 4] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+AUSWAHL prozentrechnung-zone-f5-v1 – Zone f5 „Runden auf eine Dezimalstelle“, Sprosse 1: Variante 1; übergangen v2
+AUSWAHL prozentrechnung-zone-f5-v3 – Zone f5 „Runden auf eine Dezimalstelle“, Sprosse 2: kleinste Variante (v3; v1 fehlt)
+WEG Zone f5 „Runden auf eine Dezimalstelle“ – Sprossen [3, 4] (Fallstricke) nicht bestellt (Zone ja: s1 und s2)
+WEG Zone f6 „Bruchteil einer Größe (zwei Drittel von “ – gebraucht in Einheit 3, nicht bestellt
+WEG prozentrechnung-zone-f6-v6 – Zone-Paar: Fertigkeit „Bruchteil einer Größe (zwei Drittel von “ nicht bestellt
+WEG e2 k1 „Was ist das Ganze?“ (erkennung) – Fokus: andere Kette entfällt
+WEG e2 k2 „Streifen einteilen“ (erkennung) – Fokus: andere Kette entfällt
+AUSWAHL prozentrechnung-e2-k3-s0-v1 – e2 k3 „Prozentsatz“ (verfahren): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k3-s0-v2 – e2 k3 „Prozentsatz“ (verfahren): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k3-s0-v3 – e2 k3 „Prozentsatz“ (verfahren): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k3-s0-v4 – e2 k3 „Prozentsatz“ (verfahren): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k3-s1-v1 – e2 k3 „Prozentsatz“ (verfahren): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k3-s1-v2 – e2 k3 „Prozentsatz“ (verfahren): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k3-s1-v3 – e2 k3 „Prozentsatz“ (verfahren): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k3-s1-v4 – e2 k3 „Prozentsatz“ (verfahren): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k3-s1-v5 – e2 k3 „Prozentsatz“ (verfahren): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k3-s2-v1 – e2 k3 „Prozentsatz“ (verfahren): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k3-s2-v2 – e2 k3 „Prozentsatz“ (verfahren): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k3-s2-v3 – e2 k3 „Prozentsatz“ (verfahren): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k3-s3-v1 – e2 k3 „Prozentsatz“ (verfahren): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k3-s3-v2 – e2 k3 „Prozentsatz“ (verfahren): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k3-s3-v3 – e2 k3 „Prozentsatz“ (verfahren): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k3-s4-v1 – e2 k3 „Prozentsatz“ (verfahren): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k3-s4-v2 – e2 k3 „Prozentsatz“ (verfahren): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k3-s4-v3 – e2 k3 „Prozentsatz“ (verfahren): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k3-s5-v1 – e2 k3 „Prozentsatz“ (verfahren): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k3-s5-v2 – e2 k3 „Prozentsatz“ (verfahren): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k3-s5-v3 – e2 k3 „Prozentsatz“ (verfahren): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k3-s6-v1 – e2 k3 „Prozentsatz“ (verfahren): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k3-s6-v2 – e2 k3 „Prozentsatz“ (verfahren): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k3-s6-v3 – e2 k3 „Prozentsatz“ (verfahren): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k3-s7-v1 – e2 k3 „Prozentsatz“ (verfahren): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k3-s7-v2 – e2 k3 „Prozentsatz“ (verfahren): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k3-s7-v3 – e2 k3 „Prozentsatz“ (verfahren): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k3-s7-v4 – e2 k3 „Prozentsatz“ (verfahren): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k3-s7-v5 – e2 k3 „Prozentsatz“ (verfahren): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k3-s7-v6 – e2 k3 „Prozentsatz“ (verfahren): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k3-s8-v1 – e2 k3 „Prozentsatz“ (verfahren): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k3-s8-v2 – e2 k3 „Prozentsatz“ (verfahren): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k3-s9-v1 – e2 k3 „Prozentsatz“ (verfahren): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k3-s9-v2 – e2 k3 „Prozentsatz“ (verfahren): Fokus, alle Varianten
+TEILUNG e2 k3 „Prozentsatz“ (verfahren): 34 Teilaufgaben in 4 Hauptnummern an Sprossengrenzen (unterrichtsblatt 2.3 g, 2.5)
+WEG e2 k4 „Umkehrung: zu einem Prozentsatz ein Zahlenpaar angeben“ (ohne) – Fokus: andere Kette entfällt
+AUSWAHL prozentrechnung-e2-k5-s1-v1 – e2 k5 „Prozentsatz“ (pflicht): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k5-s1-v2 – e2 k5 „Prozentsatz“ (pflicht): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k5-s1-v3 – e2 k5 „Prozentsatz“ (pflicht): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k5-s2-v1 – e2 k5 „Prozentsatz“ (pflicht): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k5-s2-v2 – e2 k5 „Prozentsatz“ (pflicht): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k5-s2-v3 – e2 k5 „Prozentsatz“ (pflicht): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k5-s3-v1 – e2 k5 „Prozentsatz“ (pflicht): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k5-s3-v2 – e2 k5 „Prozentsatz“ (pflicht): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k5-s3-v3 – e2 k5 „Prozentsatz“ (pflicht): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k5-s4-v1 – e2 k5 „Prozentsatz“ (pflicht): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k5-s4-v2 – e2 k5 „Prozentsatz“ (pflicht): Fokus, alle Varianten
+AUSWAHL prozentrechnung-e2-k5-s4-v3 – e2 k5 „Prozentsatz“ (pflicht): Fokus, alle Varianten
+TEILUNG e2 k5 „Prozentsatz“ (pflicht): 12 Teilaufgaben in 2 Hauptnummern an Sprossengrenzen (unterrichtsblatt 2.3 g, 2.5)
+KOPF Einheit 2: „Einheit 2 · Prozentsatz berechnen“; Marken „OS Kl. 7 · GYM Kl. 7 · P10 oft“ → Zeitmarke „ab Kl. 7“, Prüfungswort „P10 oft“
+TODO 22 Stellen in den Quelltexten:
+  blatt0_a.tex:5: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 1
+  blatt0_a.tex:6: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 1
+  blatt0_a.tex:14: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 2
+  blatt0_a.tex:15: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 2
+  blatt0_a.tex:23: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 3
+  blatt0_a.tex:24: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 3
+  blatt0_a.tex:36: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 4
+  blatt0_a.tex:37: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 4
+  e2_a.tex:2: TODO Zweigzeile Teil 1: was hier gelernt wird (Satz in Schülersprache aus dem Einheitstitel) – Einheit 2
+  e2_a.tex:7: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 5
+  e2_a.tex:8: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 5
+  e2_a.tex:10: TODO \rechenplatz{n}: Schrittzahl des Grundfalls fehlt in der Bank (nur bei fester Schreibform, 2.3 b)
+  e2_a.tex:27: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 6
+  e2_a.tex:28: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 6
+  e2_a.tex:45: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 7
+  e2_a.tex:46: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 7
+  e2_a.tex:61: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 8
+  e2_a.tex:62: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 8
+  e2_a.tex:78: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 9
+  e2_a.tex:79: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 9
+  e2_a.tex:91: TODO Titel: Ich-kann-Satz fehlt in der Bank (Platzhalter: Kettenname) – Nr. 10
+  e2_a.tex:92: TODO Anweisung: ein Satz über der ersten Teilaufgabe fehlt in der Bank – Nr. 10
+STRUKTUR 0 Fehler
