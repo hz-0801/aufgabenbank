@@ -185,3 +185,8 @@ Prüfskript v0.5 vorher 0 Abweichungen, 10 Warnungen; nachher 0/0.
 - Tabelle „Zahlen je Datei" auf den neuen Stand gebracht; Befunde
   1, 3, 4, 6 als erledigt, Befund 5 als teilweise erledigt
   markiert, Befund 7 neu.
+
+## Nachbesserung Gegenlese 2026-09-28
+- Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
+- e2-k4-s4-v3: loesung „die Gleichung verliert ihre Lösung“ (falsch: nach mal 0 gilt 0 = 0 für jede Zahl, die alte Lösung bleibt Lösung) → „Die neue Gleichung hat also andere Lösungen als die alte, die Umformung ändert die Lösung.“ (Regel b).
+- Prüfskript: Abweichungen 1 (weg.jsonl: Dateiname, bestand vorher, nicht von dieser Nachbesserung); in den Aufgabendateien zone, e1–e4 Abweichungen 0.
