@@ -99,3 +99,49 @@ nach Ende der Sammlung; danach alle Dokumente unter bau/ neu bauen.
     Kompetenz steht einmal im Regal, auch wenn zwei Einträge sie üben.
 34. Regal: Übersicht aller gebauten Blätter (aus bau/register.csv)
     zum Durchsehen und Drucken.
+
+## Nachtrag 28.09. mittags – Durchsicht LIN-K1 und QGL-K1
+
+Befunde des Lehrers an den ersten Kompetenzblättern (Prüfstein v0.7).
+
+35. Blattart unklar: Kopf nennt nicht, wofür das Blatt ist. Offen:
+    „Übungsblatt“ / „MSA-Vorbereitung“; Prüfungsteil mit eigener
+    Überschrift („So kommt es in der Prüfung“).
+36. Antwort neben einer Grafik mittig zur Grafik, nicht an der
+    Oberkante (LIN-K1 Nr. 2, A(…|…)).
+37. Abschnitt „Schritt für Schritt“ sagt dem Schüler nichts und
+    steht allein am Seitenende. Streichen; nie eine Überschrift
+    allein unten auf der Seite.
+38. Bearbeitungsraum berechnet: Zeilen = Rechenschritte der
+    Musterlösung + 1, höchstens 8; keiner bei Ablesen, Ankreuzen,
+    Eintragen, Zeichnen; Karo statt Linien. Kein Raum rechts
+    neben der Aufgabe (QGL-K1 Nr. 5): alles untereinander, dem
+    Verfahren folgend.
+39. Zwei Koordinatensysteme im Paar: gleiche Größe, gleicher
+    Bereich, gleiche Höhe (LIN-K1: Karo 0,56 und 0,61).
+40. Merkkasten wird als Text gesetzt, nicht als Mathe: Wurzel ohne
+    Strich, p/2 statt Bruch, falsche Schrift (LIN, QGL). In Mathe
+    setzen.
+41. Merkkasten-Aufbau: Voraussetzung → Formel → Entscheidung
+    (Diskriminante) → ein Beispiel → der typische Fehler („vor x²
+    darf nichts stehen – erst teilen“). Je Information eine Zeile.
+    Skizze, wo sie mehr sagt als Text (Steigungsdreieck), aus dem
+    Beispiel berechnet gezeichnet; Vorbild eine gute
+    Formelsammlung (beliebig, nicht die Prüfungs-Formelsammlung).
+42. Umformen ohne Gleichheitszeichen (QGL: „3x + x² + 2“ über der
+    Linie): Antwort als „… = ____“.
+43. Taschenrechner: √49 – mit oder ohne TR? Offen: Kennzeichnung
+    nur, wo TR verboten oder nötig; Zahlen ohne TR kopfrechenbar.
+44. „Zutatenzeile“: bei jeder Formel mit Größen zuerst die Größen
+    notieren lassen (p = … , q = … ; m, n ; a, b, c ; G, W, p % ;
+    Seiten/Winkel beim Sinussatz), dann die Formel.
+45. Endergebnis als Lösungsmenge L = {…}, auch L = { }; x₁/x₂ nur
+    in den Schritten der p-q-Leiter.
+46. Keine Frage nach Begriffen, die das Blatt nicht einführt
+    (QGL Nr. 16 „Nenne den Weg“): Wege in Worten zum Ankreuzen.
+47. Am Ende „Das kann ich jetzt“: Ich-kann-Liste mit Kästchen, je
+    Zeile ein Mini-Beispiel zum Erkennen (nicht rechnen), schlank.
+48. Grundsatz: Das Kompetenzblatt ist ein Durchgang (jeder Schritt
+    einmal) – gut als Überblick über Stolpersteine und Formen, nicht
+    zum Einüben. Einüben braucht Päckchen je Schritt (Fokus).
+    Blattfamilie neu klären.
