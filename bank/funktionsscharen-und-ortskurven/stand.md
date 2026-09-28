@@ -118,3 +118,10 @@ e1, e3, e4.
 - Die Prüfungshöhen-Teile ohne Mappenoriginal (e1 Eignung am Bild,
   e3 Tiefpunkt oder Sattelpunkt, e5 Schnittwinkel, Ursprungsabstand,
   Punktsymmetrie, Schnittstellen) sind nicht belegt.
+
+## Nachbesserung Gegenlese 2026-09-28
+- Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
+- funktionsscharen-und-ortskurven-e1-k1-s6-v1: pruef [3, 2] prüfte den y-Achsenabschnitt nicht → [3, 2, 3] (Regel b).
+- funktionsscharen-und-ortskurven-e2-k1-s5-v2: pruef ließ den gemeinsamen Punkt $(0 | 0)$ weg → [[-1, -1], [0, 0], [1, 1]] (Regel b).
+- funktionsscharen-und-ortskurven-e4-k2-s3-v3: pruef 0.5625 prüfte die Breite nicht → [0.5625, 8], Lösung „Breite am Boden $2r = 8$ m“ (Regel b).
+- Prüfskript: Abweichungen 0.
