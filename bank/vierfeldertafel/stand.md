@@ -81,3 +81,9 @@ für ein Ereignis gestrichen).
   \sachtabelle mit \leerzelle sind nur auf Bausteinname und
   Argumentzahl geprüft.
 - fhr hat keinen Bestand; der Katalog verweist auf unabhaengigkeit.md.
+
+## Nachbesserung Gegenlese 2026-09-28
+- Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
+- vierfeldertafel-e2-k1-s1-v3: Angabe fehlte (dass alle übrigen Bewerbungen online kamen) → „kamen 300 per Post, die übrigen online“; Lösung 170 unverändert (Regel b).
+- vierfeldertafel-e2-k1-s1-v4: Angabe fehlte (alle Lose verkauft, Rest am Nachmittag) → „Alle Lose wurden verkauft, 400 am Vormittag, der Rest am Nachmittag“; Lösung 520 unverändert (Regel a).
+- Prüfskript: Abweichungen 0.
