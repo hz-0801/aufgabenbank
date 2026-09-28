@@ -145,3 +145,23 @@ Befunde des Lehrers an den ersten Kompetenzblättern (Prüfstein v0.7).
     einmal) – gut als Überblick über Stolpersteine und Formen, nicht
     zum Einüben. Einüben braucht Päckchen je Schritt (Fokus).
     Blattfamilie neu klären.
+
+## Nachtrag 28.09. 13:00 – Durchsicht PRZ-K1 (abgebrochen nach Nr. 6)
+
+49. Trennlinie unter Abschnittsüberschriften kollidiert optisch mit
+    den Antwortlinien. Keine Linie; Abschnitt nur durch Abstand
+    und Überschrift.
+50. Aufgabentexte der Bank sind Stichwortsprache, nicht Schülersprache
+    („Streifen: 50 Kinder, grau: 10 Kinder – wie viel Prozent?“,
+    „19 von 50 Kindern – wie viel Prozent?“). Der Bezug fehlt
+    („wie viel Prozent wovon?“). Ursache liegt in der Bank (Feld
+    aufgabe), nicht im Zusammenbau. Musterzählung „Stichwort –
+    Frage“: 3 956 von 12 458 Zeilen (grobes Muster, untere Grenze).
+    Folge: Sprachlauf über die Bank vor dem Bau der Blätter.
+51. Doppelte Anweisung: Ich-kann-Satz + Auftakt + „Welcher Anteil?“
+    + „Kürze.“ – vier Zeilen für eine Handlung. Eine Aufgabe = ein
+    ganzer Satz mit Bezug + eine Aufforderung.
+52. Division als Bruch schreiben, nicht mit „:“ (600 : 100 →
+    600/100); „:“ nur, wo das Geteilt-Zeichen selbst Thema ist.
+53. „Schritt für Schritt“ wiederholt (vgl. 37): im Zusammenbau
+    streichen, nicht je Blatt.
