@@ -10,17 +10,17 @@ als Katalogdatei) ebenfalls 0.
 
 ## Zeilen je Datei und hoehe
 
-| Datei  | Zeilen | vorst. | grundf. | spr. | pruef. | pfl. | grafik |
-|--------|-------:|-------:|--------:|-----:|-------:|-----:|-------:|
-| zone   |     55 |      – |      24 |   30 |      – |    1 |      5 |
-| e1     |     88 |      8 |      10 |   54 |      4 |   12 |     37 |
-| e2     |     59 |      8 |       5 |   30 |      4 |   12 |     54 |
-| e3     |     54 |      4 |       5 |   27 |      6 |   12 |     30 |
-| e4     |     79 |      8 |      10 |   45 |      4 |   12 |      6 |
-| e5     |     87 |      8 |      10 |   48 |      9 |   12 |     48 |
-| e6     |     41 |      4 |       5 |   18 |      2 |   12 |     28 |
-| e7     |     75 |      8 |      10 |   39 |      6 |   12 |     65 |
-| gesamt |    538 |     48 |      79 |  291 |     35 |   85 |    273 |
+| Datei  | Zeilen | vorst. | grundf. | spr. | pruef. | pfl. | graf. |
+|--------|-------:|-------:|--------:|-----:|-------:|-----:|------:|
+| zone   |     55 |      – |      24 |   30 |      – |    1 |     5 |
+| e1     |     88 |      8 |      10 |   54 |      4 |   12 |    37 |
+| e2     |     59 |      8 |       5 |   30 |      4 |   12 |    54 |
+| e3     |     54 |      4 |       5 |   27 |      6 |   12 |    30 |
+| e4     |     79 |      8 |      10 |   45 |      4 |   12 |     6 |
+| e5     |     87 |      8 |      10 |   48 |      9 |   12 |    48 |
+| e6     |     41 |      4 |       5 |   18 |      2 |   12 |    28 |
+| e7     |     75 |      8 |      10 |   39 |      6 |   12 |    65 |
+| gesamt |    538 |     48 |      79 |  291 |     35 |   85 |   273 |
 
 loesungsgrafik: in keiner Zeile (keine Skizzieraufgabe, deren
 Lösung mehr als Zahlen braucht). Pflichtelemente: alle sieben
@@ -58,16 +58,16 @@ fehlt (2014-OS-K3d steht nicht in Abschnitt 2, s. Offene Punkte).
 
 ## Prüfskript vor der Korrektur
 
-| Datei | Abw. | häufigster Grund                                | Warn. |
-|-------|-----:|-------------------------------------------------|------:|
-| zone  |    1 | pruef nicht an der Ergebnisstelle               |     0 |
-| e1    |    0 | –                                               |     0 |
-| e2    |    3 | Ankreuzoption mit \leerfeld nicht wortgleich (2) |     0 |
-| e3    |    6 | Ergebnisstelle: Gradzeichen trennt Aufzählung (5)|     0 |
-| e4    |    3 | pruef nicht an der Ergebnisstelle (2)           |     0 |
-| e5    |    3 | pruef nicht an der Ergebnisstelle               |     0 |
-| e6    |    8 | pruef nicht an der Ergebnisstelle (7)           |     0 |
-| e7    |    6 | pruef nicht an der Ergebnisstelle (4)           |     0 |
+| Datei | Abw. | häufigster Grund                             | Warn. |
+|-------|-----:|----------------------------------------------|------:|
+| zone  |    1 | pruef nicht an der Ergebnisstelle            |     0 |
+| e1    |    0 | –                                            |     0 |
+| e2    |    3 | Ankreuzoption mit \leerfeld ungleich (2)     |     0 |
+| e3    |    6 | Ergebnisstelle: Gradzeichen in Aufzählung (5)|     0 |
+| e4    |    3 | pruef nicht an der Ergebnisstelle (2)        |     0 |
+| e5    |    3 | pruef nicht an der Ergebnisstelle            |     0 |
+| e6    |    8 | pruef nicht an der Ergebnisstelle (7)        |     0 |
+| e7    |    6 | pruef nicht an der Ergebnisstelle (4)        |     0 |
 
 e2 brauchte zwei Korrekturrunden (die Ankreuzoption „nein,
 Startwert: \leerfeld“ blieb nach der ersten ungleich); keine
@@ -204,9 +204,10 @@ lagen in der Rolle des Kastens 7).
   2,5); im Original ist die Achse ab 1,75 abgeschnitten.
 - Ohne Zeile: 2014-OS-K3d (nur sinngemäß), 2015-OS-K4a (Original
   bei lineare-funktionen.md); die fhr-Kennungen 2020-A-3a,
-  2026-B-3b, 2026-C-3c, 2023-A-3b, 2025-C-3a, 2026-C-3a, 2021-A-3a,
-  2020-C-3a, 2022-C-3b, 2025-A-3b, 2026-B-3a, 2024-C-3a, 2023-C-3a,
-  2022-B-3c stehen nicht in Abschnitt 2 und tragen kein Feld
+  2026-B-3b, 2026-C-3c, 2023-A-3b, 2025-C-3a, 2026-C-3a,
+  2021-A-3a, 2020-C-3a, 2022-C-3b, 2025-A-3b, 2026-B-3a,
+  2024-C-3a, 2023-C-3a, 2022-B-3c stehen nicht in Abschnitt 2 und
+  tragen kein Feld
   original, obwohl die Ketten sie nennen.
 - Generatoren dieser Sitzung liegen nicht im Repo (Auftrag: nur
   unter bank/<eintrag>/ schreiben).
