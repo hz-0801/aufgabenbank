@@ -283,7 +283,8 @@ class Mappe:
     def _einheiten(self, zeilen):
         aktuell = None
         for z in zeilen:
-            m = re.match(r"^(\d+)\. (.+?) – (.*)$", z)
+            m = (re.match(r"^(\d+)\. (.+?) – (.*)$", z)
+                 or re.match(r"^(\d+)\. ([^:(]+?)()(?:[:(].*)?$", z))
             if m:
                 aktuell = int(m.group(1))
                 self.einheiten[aktuell] = {"titel": m.group(2).strip(),

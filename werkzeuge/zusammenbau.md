@@ -508,6 +508,15 @@ niveau=for, dicht=…, ohne=…`.
 
 Erster Lauf: bau/kompetenz/ (fünf Blätter, bericht.md).
 
+### Regal
+
+werkzeuge/regal.py plant aus allen Ketten der Bank die Kompetenzblätter
+(bau/regal/regal.csv, regal.html; Anleitung im Kopf des Skripts): je
+Verfahrenskette eines, je Einheit eines für die Typen ohne Kette.
+Es nutzt Mappe, mappe_einheit, pruefwort_zahl und lies_ichkann dieses
+Skripts. Die Kennungen im Regal sind vorgesehen; beim Bau nach dem Regal
+`--nummer n` mitgeben.
+
 ## Strukturprüfung
 
 Je Quelltext: Klammern {} ausgeglichen; jeder Befehl Standard-
