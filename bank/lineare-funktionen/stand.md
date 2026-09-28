@@ -213,3 +213,10 @@ Prüfskript v0.5 vorher 1 Abweichung, 0 Warnungen; nachher 0/0.
   → k1–k4), sonst unverändert.
 - Tabelle „Zeilen je Datei und hoehe" auf den neuen Stand
   gebracht; Befunde 1, 2, 3, 6, 7 als erledigt markiert.
+
+## Nachbesserung Gegenlese 2026-09-28
+- Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
+- lineare-funktionen-e2-k5-s5-v1: pruef "3" bei Gleichungsoptionen → pruef "" (bank.md, Ankreuzen) (Regel a).
+- lineare-funktionen-e2-k5-s5-v2: pruef "-1" bei Gleichungsoptionen → pruef "" (Regel a).
+- lineare-funktionen-e2-k5-s5-v3: pruef "[1, 2]" bei Gleichungsoptionen → pruef "" (Regel a).
+- Prüfskript: Abweichungen 0.
