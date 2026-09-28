@@ -44,10 +44,24 @@ ohne Lehrer, wenn er sie einmal langsam liest.
      <Name> recht hat.“
    - Erklären: „Erkläre, warum …“
    - Ankreuzen: Lage, dann „Kreuze an, …“ in einem Satz.
+   - Prüfen einer fremden Rechnung (fehlerfreie Vorlage möglich):
+     „<Name> soll … Er rechnet so: <Rechnung> Prüfe, ob <Name>
+     richtig gerechnet hat. Wenn nicht, rechne richtig.“
+   - Aussagen beurteilen: „Entscheide bei jeder Aussage, ob sie wahr
+     oder falsch ist. Begründe.“ Darunter die Aussagen als a), b),
+     c).
+   - Ergebnisse prüfen: „<Lage>. Welche Ergebnisse können nicht
+     stimmen? Begründe, ohne genau zu rechnen.“
+   - Falschergebnis erklären: „<Name> rechnet … und erhält ….
+     Erkläre, warum das nicht stimmen kann.“
+   (Die vier Formen: Urteile vom 28.09., Pflichtformen P1, P2, P4
+   und quer Sek II.)
 7. Fachwörter nur, wenn die Sprosse sie übt (Prozentpunkte,
    Mehrwertsteuer, Faktor, Steigung) und dann mit Alltagswort daneben
    („ohne Mehrwertsteuer (netto)“). Sonst „das Ganze“, „der Teil“,
    „der alte Preis“ statt Grundwert, Prozentwert, Wert.
+   Quantoren in Alltagswörtern: immer, jede, nie, es gibt, sicher –
+   nicht stets, sämtliche, niemals, gewiss (Urteile vom 28.09.).
 8. Unverändert bleiben: alle Zahlen, loesung, pruef, antwort, form,
    grafik, merkmal, sprosse, sprosse_text, original. Nur das Feld
    aufgabe wird geändert. Die Prüfkennung („(P10 2023 OS)“) und die
@@ -59,7 +73,7 @@ ohne Lehrer, wenn er sie einmal langsam liest.
    ihn die Mappe (mappen/<eintrag>.md, Abschnitt 2) gibt, nur gekürzt,
    nie in Stichworte. Eine schon gute Zeile bleibt, wie sie ist.
 10. Gute Zeilen bleiben unverändert. Geändert wird nur, was gegen
-    Regel 1–7 verstößt.
+    Regel 1–7 und 13 verstößt.
 11. Gilt eine Aufforderung für ein ganzes Päckchen, steht sie
     einmal darüber und sagt in einem Satz, was an diesen Aufgaben
     neu ist: „Bei diesen Aufgaben kürzt du vor dem Malnehmen.“,
@@ -73,6 +87,15 @@ ohne Lehrer, wenn er sie einmal langsam liest.
     Musterbeispiel-Baustein); vorhandene Lösungen bekommen die
     Schrittnamen erst, wenn ihr Eintrag ohnehin angefasst wird
     (Beschluss 28.09. abends).
+    Sek II: dazu die Bedingung, unter der die Zeile steht –
+    „Nebenbedingung:“, „Bedingung f''(x) = 0:“, „Nullstelle:“; das
+    Urteil steht in derselben Zeile wie die Einsetzung (Urteile vom
+    28.09.).
+13. Sek II: Die Frage nennt genau, was gesucht ist – „die Stelle“,
+    „den Funktionswert“ oder „den Punkt“; „den Winkel gegen die
+    positive x-Achse“ oder „den Schnittwinkel“; „den Wert des
+    Integrals“ oder „den Inhalt der Fläche“. Maßstab für Sek II: ein
+    schwacher Schüler des Grundkurses (Urteile vom 28.09.).
 
 ## Beispiele vorher/nachher
 

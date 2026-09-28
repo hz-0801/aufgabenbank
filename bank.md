@@ -65,9 +65,17 @@ Leerzeilen. Reihenfolge der Zeilen = Reihenfolge der Kette.
                   eine Zeile
     loesung       die Lösung, wie sie in der Lösungsdatei steht
                   (Rechen- und Ablesetypen: Ergebnis; Sachaufgabe:
-                  mit Zwischenergebnis; Original: knapper Weg;
-                  Begründen: Kern in einem Satz; Fehler finden:
-                  Fehler benannt und richtige Rechnung);
+                  mit Zwischenergebnis und einem Antwortsatz, der
+                  das Gefragte mit Einheit nennt, nicht nur die
+                  Stelle; Original: knapper Weg; Begründen: Kern in
+                  einem Satz, der die Regel beim Namen nennt
+                  („gleiche Stufenwinkel“, „Division durch eine
+                  negative Zahl dreht das Zeichen um“); Fehler
+                  finden: Fehler benannt und richtige Rechnung;
+                  Urteilen (recht, wahr, möglich, reicht): Urteil
+                  als erstes Wort („Ja;“, „Nein;“, „falsch;“),
+                  dann der Grund als Halbsatz oder Rechnung –
+                  Urteile vom 28.09.);
                   verlangt die Sprosse Probe, Kontrolle oder
                   Überschlag, steht sie als eigene, beschriftete
                   Zeile: Gleichung „Probe: linke Seite … = …,
@@ -115,6 +123,15 @@ je Original des Katalogs (verfremdet); Pflichtelemente je
 Einheit: fehler 3, begruenden 3, anwendung 3, darstellung 3, wo
 die Typen der Einheit sie tragen. Zone: je Fertigkeit 2 sehr
 leichte, 1 mittlere, je Fallstrick 1.
+
+Die drei fehler-Zeilen einer Einheit tragen verschiedene Formen:
+Schülerrechnung mit Fehler; fehlerfreie Vorlage (P2); Serie
+„Welche Ergebnisse können nicht stimmen?“ (P1) oder, bei
+Gleichungen und Ungleichungen, Prüfzahl (P3). Die drei
+begruenden-Zeilen ebenso: „Begründe, warum …“; Aussagenserie
+wahr/falsch (P4); Personenaussage zum häufigsten Fallstrick (P6).
+Die Formen P1–P8 stehen unter „Regeln für den Inhalt“ (Urteile vom
+28.09., urteil-einbindung-2026-09-28.md im Repo mathe-nachhilfe).
 
 Der Grundfall (5 Zeilen) gilt je Verfahrenskette, nicht je
 Einheit. Hat eine Einheit zwei Verfahrensketten, hat sie zwei
@@ -169,9 +186,12 @@ Verfahrenskette ist daher nicht immer k1.
 - Die fünf Grundfall-Zeilen einer Kette sind ein Päckchen: ein
   Wert bleibt in allen fünf gleich (dasselbe Ganze, derselbe
   Nenner, derselbe Teiler), genau ein Wert wandert, der Kontext
-  bleibt. Gilt, wo der Grundfall Zahlen wandern lässt; was in
-  Sek II gleich bleibt, klärt der erste Sek-II-Bank-Auftrag
-  (Beschluss 28.09. abends, Quelle altlehrwerke-formen.md).
+  bleibt. Gilt, wo der Grundfall Zahlen wandern lässt (Beschluss
+  28.09. abends, Quelle altlehrwerke-formen.md).
+- Analytische Geometrie (Sek II): Die Sprossen einer Kette nutzen
+  denselben Körper mit festen Eckpunkten, je Variante ein Körper;
+  neu ist je Sprosse nur das Merkmal. Das ist die Sek-II-Form des
+  Päckchens (Urteile vom 28.09., altlehrwerke-formen-sek2.md).
 - Keine ganze Gleichung, kein Term, kein Zahlenpaar und keine
   Funktion aus Merkkasten, Beispiel oder Original des Eintrags.
   Ein einzelner Bruch ist kein Zahlenpaar; frei sind einzelne
@@ -195,6 +215,51 @@ Verfahrenskette ist daher nicht immer k1.
 - Fehler-finden-Aufgaben: das Muster aus „Typische Fehler" mit
   eigenen Zahlen, in der Schreibform des Verfahrens; nie die
   Zahlen des Katalogs.
+- P1 fehler: Trägt die Kette ein Kennzeichen (Endziffer,
+  Kommastelle, Vorzeichen, Überschlag), ist eine der drei eine
+  Serie mit 3–4 fertigen Ergebnissen: „Welche Ergebnisse können
+  nicht stimmen? Begründe, ohne genau zu rechnen.“; loesung je
+  falschem Ergebnis das Kennzeichen in einem Halbsatz; pruef "".
+- P2 fehler: Je Einheit ist eine der drei Vorlagen fehlerfrei
+  („Prüfe, ob <Name> richtig gerechnet hat.“); loesung „Richtig.“
+  und die Regel des entscheidenden Schritts in einem Satz.
+  Dieselbe Form in der Mehrzahl: eine der drei darf vier
+  Rechnungen untereinander zeigen, genau eine davon mit dem Muster
+  aus „Typische Fehler“; gefragt ist, welche falsch ist und wie sie
+  richtig heißt – so erkennt der Schüler auch die richtigen als
+  richtig.
+- P3 fehler bei Gleichungen und Ungleichungen: eine der drei nennt
+  eine Prüfzahl („Setze 0 ein. In welcher Zeile stimmt es nicht
+  mehr?“); loesung in zwei Sätzen: der Fehler mit der verletzten
+  Regel, dann die richtige Zeile. Nur Umformungsketten.
+- P4 begruenden: eine der drei ist eine Aussagenserie mit 3
+  Aussagen, mindestens eine wahr und eine falsch, mit
+  Alltagsquantoren (immer, jede, nie, es gibt); „Entscheide bei
+  jeder Aussage, ob sie wahr oder falsch ist. Begründe.“; form
+  text; loesung je Aussage „wahr, denn …“ bzw. „falsch, z. B. …“
+  mit Gegenbeispiel; pruef "".
+- P5 Begründen nennt die Regel beim Namen (Feld loesung).
+- P6 begruenden: eine der drei ist eine Personenaussage zum
+  häufigsten Fallstrick der Zone („<Name> sagt: „…“ Begründe, ob
+  <Name> recht hat.“); „Das kann man nicht entscheiden, weil …“ ist
+  eine zugelassene loesung.
+- P7 darstellung: der Operator nennt die Zieldarstellung („Schreibe
+  als Gleichung.“, „Beschreibe den Graphen in Worten, ohne ihn zu
+  zeichnen.“); die drei Aufgaben je Einheit decken mindestens zwei
+  Richtungen, davon eine rückwärts.
+- P8 anwendung: eine der drei endet mit einer Entscheidung an einem
+  Grenzwert („Reicht das Geld?“, „Darf der Wagen über die
+  Brücke?“); loesung: Urteil zuerst, dann die Rechnung.
+- Urteilsfragen (recht, wahr, stimmt, reicht) einer Einheit haben
+  etwa gleich viele Ja- und Nein-Lösungen; das Urteil ist das erste
+  Wort der Lösung (Feld loesung). Mindestens eine der drei
+  begruenden lässt sich ohne Rechnung entscheiden und sagt es
+  („Begründe, ohne genau zu rechnen.“).
+- rationale-zahlen: Das Antwortgerüst „Vorzeichen: __ Betrag: __
+  Ergebnis: __“ steht nur in den ersten zwei Varianten der Sprossen
+  „Zeichen zusammenfassen gemischt“ (e2) und „plus mal minus“ (e3);
+  die Bankzeilen selbst ändert der Bank-Auftrag des Eintrags
+  (Urteile vom 28.09.).
 - Anwendung: realistische Größen, eine im Kontext sinnvolle
   Frage; eine eingekleidete Rechnung ist keine Anwendung.
 - Fragewort je Aufgabe: was gefragt ist, in wenigen Wörtern,

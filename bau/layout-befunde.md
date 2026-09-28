@@ -177,3 +177,22 @@ Befunde des Lehrers an den ersten Kompetenzblättern (Prüfstein v0.7).
     eine Zeile, Gleichheitszeichen untereinander, der Schrittname
     klein links vor der Zeile (nicht rechts daneben, vgl. 38), das
     Ergebnis zuletzt und abgesetzt.
+
+56. Merkkasten mit Fällen (Urteile vom 28.09., Ergänzung zu 54):
+    Unterscheidet ein Kasten Fälle, steht eine Tafel statt Sätzen –
+    2×2-Fälle als Vierfeldertafel (Extrempunkt/Sattelpunkt, Lage
+    zweier Geraden), Parameterbereich → Strecke/Strahl/Gerade als
+    Zeile; Neues gegen Bekanntes in zwei Spalten (Zahl | Vektor,
+    Gerade in der Ebene | Ebene im Raum).
+57. Aussagenserie (Urteile vom 28.09.): je Aussage eine
+    Teilaufgabe a), b), c) mit einer Schreibzeile, kein Kästchen;
+    das Urteil schreibt der Schüler als erstes Wort.
+58. Denkaufgabe je Fertigkeit (Urteile vom 28.09., Offen 5): Jede
+    Fertigkeit endet mit mindestens einer Aufgabe aus fehler oder
+    begruenden zu ihren Sprossen, nicht gesammelt am Blattende.
+59. Formelgestalt beim Faktorisieren (Urteile vom 28.09.,
+    binomische-formeln): Die Lösung schreibt den Term vor der
+    Klammer als Zwischenzeile in Formelgestalt, etwa
+    (2x)² + 2·2x·3 + 3², noch nicht zusammengefasst – bei
+    „Mittelglied prüfen“ und „erste Formel rückwärts“; keine eigene
+    Aufgabe.

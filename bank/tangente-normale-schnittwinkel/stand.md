@@ -125,6 +125,11 @@ Grundfall-Lösungen nach eigener Durchsicht berichtigt (Befund 5).
   \tangentean*, \gerade, \punkt) sind nur auf Bausteinname und
   Bereich geprüft.
 - Typen ohne Original, die keine Sprosse deckt, haben keine Zeile.
+- e4, Kette Winkel, Grundfall (Urteile vom 28.09., quer Sek II):
+  die fünf Zeilen als Päckchen um einen festen Punkt, Winkel aus
+  allen Lagen (spitz, stumpf, 90°); die 90°-Variante begründet
+  „keine Steigung“. Umsetzung beim nächsten Bank-Auftrag des
+  Eintrags.
 
 ## Nachbesserung Gegenlese 2026-09-28
 - Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
