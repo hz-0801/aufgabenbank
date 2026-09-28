@@ -88,3 +88,8 @@ Keine Einheit scheiterte zweimal.
 
 - Die ksys-Grafiken (e1) sind nicht gesetzt worden; LaTeX ist in der
   Sitzung nicht verfügbar.
+
+## Nachbesserung Gegenlese 2026-09-28
+- Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
+- extremalprobleme-e3-k2-s1-v2: „x = 0 (dort ist d² maximal)“ falsch, d² = x⁴ − 7x² + 16 wächst für große |x| unbeschränkt → „dort hat d² ein lokales Maximum“; Ergebnis √3,75 ≈ 1,94 unverändert (Regel a).
+- Prüfskript: Abweichungen 0.
