@@ -111,3 +111,11 @@ Prüfskript: werkzeuge/bank-pruef.py, am Ende 0 Abweichungen,
    beschriftet, wie die Aufgaben es sagen, ist ungeprüft.
 2. Uhrzeiten in den Lösungen von Rate s6 und der Anwendung sind
    nur von Hand nachgerechnet.
+
+## Nachbesserung Render 2026-09-28
+
+Quelle: bau/render-alle/bericht.md, bau/hefte/bericht.md, bau/fokus/bericht.md, bau/layout-befunde.md Punkt 31. Übersicht aller Einträge: bau/render-alle/behoben.md.
+
+- e1-k1-s0-v1 (1): Tabelle mit einer Wertespalte statt drei (layout-befunde 31). Änderung: `\wertetabelleleer{…}{…}{3}` → `\wertetabelle{Zeit in h}{Weg in km}{~,~,~}` (drei leere Wertespalten; `\wertetabelleleer` fasst die Spalten per `\multicolumn` zu einer zusammen).
+
+Nur diese 1 Zeilen geändert, alle übrigen byte-gleich. `bank-pruef.py zuordnungen`: 0 Abweichungen. Probe: jede Zeile allein in einem Minimaldokument mit mathblatt.sty (hz-0801/blattbau) gesetzt wie werkzeuge/zusammenbau.py v0.7 (teile_normal, teil_schwach, Lösung in \erg), xelatex ohne Fehler.
