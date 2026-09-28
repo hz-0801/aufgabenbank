@@ -167,3 +167,11 @@ im ersten Lauf 3 Treffer (13 und 16 in vorgegebenen Fehlrechnungen,
   --katalog nicht gegen die Mappe geprüft (Probe mit
   „Hypotenuse (Einheit 1)" für die ganze Kette: 0/0), und bank.md
   2026-09-27b klärt die Menge je Original der Zielmarke nicht.
+
+## Nachbesserung Render 2026-09-28
+
+Quelle: bau/render-alle/bericht.md, bau/hefte/bericht.md, bau/fokus/bericht.md, bau/layout-befunde.md Punkt 31. Übersicht aller Einträge: bau/render-alle/behoben.md.
+
+- e1-k1-s0-v2, e1-k1-s0-v3, e1-k1-s0-v4, e1-k2-s0-v2, e1-k2-s0-v3, e1-k2-s0-v4, e1-k2-s2-v1, e1-k2-s2-v2, e1-k2-s2-v3, e3-k1-s0-v4, e3-k2-s1-v1, e3-k2-s1-v2, e3-k2-s1-v3, e3-k2-s1-v4, e3-k2-s1-v5, zone-f3-v2, zone-f3-v4 (17): Missing $ inserted – `$…$` in `\dreieck`-Beschriftung (Vorlage setzt selbst `$…$`). Änderung: Beschriftungen in `\dreieck` ohne `$` (Einheit in `\text{}`), Feld grafik.
+
+Nur diese 17 Zeilen geändert, alle übrigen byte-gleich. `bank-pruef.py pythagoras`: 0 Abweichungen. Probe: jede Zeile allein in einem Minimaldokument mit mathblatt.sty (hz-0801/blattbau) gesetzt wie werkzeuge/zusammenbau.py v0.7 (teile_normal, teil_schwach, Lösung in \erg), xelatex ohne Fehler.
