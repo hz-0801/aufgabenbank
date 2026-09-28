@@ -32,10 +32,11 @@ die erste geänderte Zeile, gleichmäßig über die Sprossen verteilt.
 - Fehler finden: „<Name> soll … Er/Sie rechnet so: … Finde den Fehler und
   rechne richtig.“; wo nur abgelesen oder hingeschrieben wird, „… und schreibe
   den Scheitel/die Gleichung/den Punkt richtig.“
-- Lösungsmenge: Die Gleichungen in zone-f5/f8 heißen „Löse die Gleichung.“;
-  eine Lösungsmenge wird nicht verlangt, weil loesung (unveränderlich) die
-  Form $x_1 = …$, $x_2 = …$ zeigt. Nullstellen bleiben „Berechne die
-  Nullstellen …“.
+- Lösungsmenge: Die quadratischen Gleichungen in zone-f8 heißen „Löse die
+  Gleichung … Gib die Lösungsmenge an.“ (Nachtrag, gleich wie in
+  quadratische-gleichungen); loesung zeigt weiter $x_1 = …$, $x_2 = …$. Die
+  linearen in zone-f5 heißen nur „Löse die Gleichung.“ Nullstellen bleiben
+  „Berechne die Nullstellen …“.
 - „Runde auf zwei Stellen.“ wird „Runde auf zwei Stellen nach dem Komma.“,
   auch in den Originalen e4-k1-s14.
 - Fachwörter Scheitel, Normalparabel, Normalform, Scheitelpunktform,
@@ -103,4 +104,4 @@ die erste geänderte Zeile, gleichmäßig über die Sprossen verteilt.
 
    vorher: $x^2 + 4x + 9 = 0$ – Lösungen?
 
-   nachher: Löse die Gleichung. $x^2 + 4x + 9 = 0$
+   nachher: Löse die Gleichung $x^2 + 4x + 9 = 0$. Gib die Lösungsmenge an.
