@@ -157,3 +157,8 @@ Aufgabenzeile geändert.
   schreiben) verlangt einen anderen Handgriff als die Vorstufe
   „Formel erkennen und a, b einkreisen“ und bleibt.
 - Befunde 2 bis 6 bleiben offen; v0.5 ändert an ihnen nichts.
+
+## Nachbesserung Gegenlese 2026-09-28
+- Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
+- binomische-formeln-e2-k2-s9-v3: pruef "-16" prüfte den Zwischenwert statt des Ergebnisses $x^2 - 10x + 64$ → pruef "-10", loesung „$x^2 - 10x + 64$, aus $x^2 - 16x + 64 + 6x$“ (Form wie e2-k2-s10) (Regel a).
+- Prüfskript: Abweichungen 0.
