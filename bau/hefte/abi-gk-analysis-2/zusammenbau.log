@@ -1,0 +1,203 @@
+# zusammenbau v0.4: zusammenbau.py stammfunktion-und-hauptsatz integrationsregeln flaecheninhalt-durch-integration rekonstruktion-von-funktionsgleichungen rekonstruktion-von-bestaenden gleichungen-loesen rotationsvolumen --heft abitur-gk --titel Prüfungsheft Abitur GK · Analysis 2
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG STA-H1 – Kürzel STA aus _kuerzel.csv (mathe-nachhilfe) (erster Eintrag stammfunktion-und-hauptsatz); Rezept H (Heft)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+AUSWAHL stammfunktion-und-hauptsatz-e1-k1-s0-v1 – stammfunktion-und-hauptsatz e1 „Stammfunktion“: Anlauf, Vorstufe
+AUSWAHL stammfunktion-und-hauptsatz-e1-k1-s1-v1 – stammfunktion-und-hauptsatz e1 „Stammfunktion“: Anlauf, Grundfall
+AUSWAHL stammfunktion-und-hauptsatz-e1-k1-s5-v1 – stammfunktion-und-hauptsatz e1 „Stammfunktion“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL stammfunktion-und-hauptsatz-e1-k1-s2-v1 – stammfunktion-und-hauptsatz e1 „Stammfunktion“: Prüfungshöhe (2020-be-gk-A1.1a)
+AUSWAHL stammfunktion-und-hauptsatz-e1-k1-s2-v2 – stammfunktion-und-hauptsatz e1 „Stammfunktion“: Prüfungshöhe (2020-be-gk-A1.1a)
+AUSWAHL stammfunktion-und-hauptsatz-e1-k1-s2-v3 – stammfunktion-und-hauptsatz e1 „Stammfunktion“: Prüfungshöhe (2020-be-gk-A1.1a)
+AUSWAHL stammfunktion-und-hauptsatz-e1-k1-s3-v1 – stammfunktion-und-hauptsatz e1 „Stammfunktion“: Prüfungshöhe (2018-be-gk-B1.2c)
+AUSWAHL stammfunktion-und-hauptsatz-e1-k1-s3-v2 – stammfunktion-und-hauptsatz e1 „Stammfunktion“: Prüfungshöhe (2020MgrundlegendBAnalysisWTR2-1e)
+AUSWAHL stammfunktion-und-hauptsatz-e1-k1-s4-v1 – stammfunktion-und-hauptsatz e1 „Stammfunktion“: Prüfungshöhe (2025MgrundlegendAAnalysis12-a)
+AUSWAHL stammfunktion-und-hauptsatz-e1-k1-s4-v2 – stammfunktion-und-hauptsatz e1 „Stammfunktion“: Prüfungshöhe (2026MgrundlegendBAnalysisWTR1-1d)
+AUSWAHL stammfunktion-und-hauptsatz-e1-k1-s4-v3 – stammfunktion-und-hauptsatz e1 „Stammfunktion“: Prüfungshöhe (2020-be-gk-B2.1h)
+AUSWAHL stammfunktion-und-hauptsatz-e1-k1-s5-v2 – stammfunktion-und-hauptsatz e1 „Stammfunktion“: Prüfungshöhe (2024MgrundlegendBAnalysisWTR1-1f)
+AUSWAHL stammfunktion-und-hauptsatz-e1-k1-s6-v4 – stammfunktion-und-hauptsatz e1 „Stammfunktion“: Prüfungshöhe (2023-bebb-gk-B2.1l)
+AUSWAHL stammfunktion-und-hauptsatz-e1-k1-s6-v5 – stammfunktion-und-hauptsatz e1 „Stammfunktion“: Prüfungshöhe (2023-bebb-gk-B2.1l)
+AUSWAHL stammfunktion-und-hauptsatz-e2-k1-s1-v1 – stammfunktion-und-hauptsatz e2 „Hauptsatz“: Anlauf, Grundfall
+AUSWAHL stammfunktion-und-hauptsatz-e2-k1-s2-v3 – stammfunktion-und-hauptsatz e2 „Hauptsatz“: Anlauf, Sprosse – Fallstrick im Merkmal („die Stammfunktion ist gegeben: nur die Grenzen ein“)
+AUSWAHL stammfunktion-und-hauptsatz-e2-k1-s1-v4 – stammfunktion-und-hauptsatz e2 „Hauptsatz“: Prüfungshöhe (2023MgrundlegendAAnalysis13-a)
+AUSWAHL stammfunktion-und-hauptsatz-e2-k1-s1-v5 – stammfunktion-und-hauptsatz e2 „Hauptsatz“: Prüfungshöhe (2018MgrundlegendBAnalysisWTR-1d)
+AUSWAHL stammfunktion-und-hauptsatz-e2-k1-s3-v1 – stammfunktion-und-hauptsatz e2 „Hauptsatz“: Prüfungshöhe (2021MgrundlegendAAnalysis13-a)
+AUSWAHL stammfunktion-und-hauptsatz-e2-k1-s3-v2 – stammfunktion-und-hauptsatz e2 „Hauptsatz“: Prüfungshöhe (2021MgrundlegendAAnalysis13-a)
+AUSWAHL stammfunktion-und-hauptsatz-e2-k1-s3-v3 – stammfunktion-und-hauptsatz e2 „Hauptsatz“: Prüfungshöhe (2021MgrundlegendAAnalysis13-a)
+AUSWAHL stammfunktion-und-hauptsatz-e2-k1-s5-v1 – stammfunktion-und-hauptsatz e2 „Hauptsatz“: Prüfungshöhe (2025-bebb-gk-B2.2d)
+AUSWAHL stammfunktion-und-hauptsatz-e2-k1-s5-v2 – stammfunktion-und-hauptsatz e2 „Hauptsatz“: Prüfungshöhe (2025-bebb-gk-B2.2d)
+AUSWAHL stammfunktion-und-hauptsatz-e2-k1-s5-v3 – stammfunktion-und-hauptsatz e2 „Hauptsatz“: Prüfungshöhe (2022MgrundlegendBAnalysisWTR1-1f)
+AUSWAHL stammfunktion-und-hauptsatz-e2-k1-s5-v4 – stammfunktion-und-hauptsatz e2 „Hauptsatz“: Prüfungshöhe (2022MgrundlegendBAnalysisWTR1-1f)
+WEG stammfunktion-und-hauptsatz e2 „Kurvenlänge über eine vorgegebene Integralformel berechnen“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL stammfunktion-und-hauptsatz-e3-k1-s0-v1 – stammfunktion-und-hauptsatz e3 „Der Graphenblick“: Anlauf, Vorstufe
+AUSWAHL stammfunktion-und-hauptsatz-e3-k1-s1-v1 – stammfunktion-und-hauptsatz e3 „Der Graphenblick“: Anlauf, Grundfall
+AUSWAHL stammfunktion-und-hauptsatz-e3-k1-s2-v3 – stammfunktion-und-hauptsatz e3 „Der Graphenblick“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL stammfunktion-und-hauptsatz-e3-k1-s1-v3 – stammfunktion-und-hauptsatz e3 „Der Graphenblick“: Prüfungshöhe (2023-bebb-gk-A1.2b)
+AUSWAHL stammfunktion-und-hauptsatz-e3-k1-s1-v4 – stammfunktion-und-hauptsatz e3 „Der Graphenblick“: Prüfungshöhe (2021MgrundlegendAAnalysis2-b)
+AUSWAHL stammfunktion-und-hauptsatz-e3-k1-s2-v2 – stammfunktion-und-hauptsatz e3 „Der Graphenblick“: Prüfungshöhe (2021MgrundlegendAAnalysis11-a)
+AUSWAHL stammfunktion-und-hauptsatz-e3-k1-s4-v1 – stammfunktion-und-hauptsatz e3 „Der Graphenblick“: Prüfungshöhe (2026-bb-gk-B2.1b)
+AUSWAHL stammfunktion-und-hauptsatz-e3-k1-s4-v3 – stammfunktion-und-hauptsatz e3 „Der Graphenblick“: Prüfungshöhe (2019MgrundlegendBAnalysisWTR2-1e)
+AUSWAHL stammfunktion-und-hauptsatz-e3-k1-s5-v2 – stammfunktion-und-hauptsatz e3 „Der Graphenblick“: Prüfungshöhe (2024-bebb-gk-B2.1f)
+AUSWAHL stammfunktion-und-hauptsatz-e3-k1-s6-v4 – stammfunktion-und-hauptsatz e3 „Der Graphenblick“: Prüfungshöhe (2020MgrundlegendBAnalysisWTR2-1h)
+AUSWAHL stammfunktion-und-hauptsatz-e3-k1-s6-v5 – stammfunktion-und-hauptsatz e3 „Der Graphenblick“: Prüfungshöhe (2020MgrundlegendBAnalysisWTR2-1h)
+TEILUNG stammfunktion-und-hauptsatz e3 „Der Graphenblick“: 8 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+WEG stammfunktion-und-hauptsatz e4 „Integralfunktion“ – keine Prüfungshöhe im Profil abitur-gk
+WEG stammfunktion-und-hauptsatz e4 „Integralfunktionen mit verschiedenen unteren Grenzen als Verschiebung in y-Richtung begründen“ – keine Prüfungshöhe im Profil abitur-gk
+WEG stammfunktion-und-hauptsatz e4 „Waagerechte Tangente und Wendepunkt einer Integralfunktion an einer doppelten Nullstelle des Integranden begründen“ – keine Prüfungshöhe im Profil abitur-gk
+WEG integrationsregeln e1 „Der Regelsatz“ – keine Prüfungshöhe im Profil abitur-gk
+WEG integrationsregeln e2 „Vorgegebene Regeln anwenden“ – keine Prüfungshöhe im Profil abitur-gk
+LEER integrationsregeln: keine Kette mit Prüfungshöhe – Eintrag entfällt im Heft
+WEG flaecheninhalt-durch-integration e1 „Fläche zwischen Graph und x-Achse“ – keine Prüfungshöhe im Profil abitur-gk
+WEG flaecheninhalt-durch-integration e2 „Fläche zwischen zwei Graphen“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL flaecheninhalt-durch-integration-e3-k1-s0-v1 – flaecheninhalt-durch-integration e3 „Zusammensetzen, Maßstab, Volumen“: Anlauf, Vorstufe
+AUSWAHL flaecheninhalt-durch-integration-e3-k1-s1-v1 – flaecheninhalt-durch-integration e3 „Zusammensetzen, Maßstab, Volumen“: Anlauf, Grundfall
+AUSWAHL flaecheninhalt-durch-integration-e3-k1-s2-v1 – flaecheninhalt-durch-integration e3 „Zusammensetzen, Maßstab, Volumen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL flaecheninhalt-durch-integration-e3-k1-s6-v1 – flaecheninhalt-durch-integration e3 „Zusammensetzen, Maßstab, Volumen“: Prüfungshöhe (2024-bebb-gk-B2.2e)
+AUSWAHL flaecheninhalt-durch-integration-e3-k1-s6-v2 – flaecheninhalt-durch-integration e3 „Zusammensetzen, Maßstab, Volumen“: Prüfungshöhe (2024-bebb-gk-B2.2e)
+AUSWAHL flaecheninhalt-durch-integration-e3-k1-s6-v3 – flaecheninhalt-durch-integration e3 „Zusammensetzen, Maßstab, Volumen“: Prüfungshöhe (2020-be-gk-B2.2g)
+AUSWAHL flaecheninhalt-durch-integration-e3-k1-s6-v4 – flaecheninhalt-durch-integration e3 „Zusammensetzen, Maßstab, Volumen“: Prüfungshöhe (2020-be-gk-B2.2g)
+AUSWAHL flaecheninhalt-durch-integration-e4-k1-s0-v1 – flaecheninhalt-durch-integration e4 „Flächenbedingungen“: Anlauf, Vorstufe
+AUSWAHL flaecheninhalt-durch-integration-e4-k1-s1-v1 – flaecheninhalt-durch-integration e4 „Flächenbedingungen“: Anlauf, Grundfall
+AUSWAHL flaecheninhalt-durch-integration-e4-k1-s3-v1 – flaecheninhalt-durch-integration e4 „Flächenbedingungen“: Anlauf, Sprosse – Fallstrick im Merkmal („Teilfläche gleich halbe Gesamtfläche oder Integral“)
+AUSWAHL flaecheninhalt-durch-integration-e4-k1-s6-v1 – flaecheninhalt-durch-integration e4 „Flächenbedingungen“: Prüfungshöhe (2025MgrundlegendBAnalysisWTR1-1d)
+AUSWAHL flaecheninhalt-durch-integration-e4-k1-s6-v2 – flaecheninhalt-durch-integration e4 „Flächenbedingungen“: Prüfungshöhe (2025MgrundlegendBAnalysisWTR1-1d)
+AUSWAHL flaecheninhalt-durch-integration-e5-k1-s0-v1 – flaecheninhalt-durch-integration e5 „Flächenbilanz“: Anlauf, Vorstufe
+AUSWAHL flaecheninhalt-durch-integration-e5-k1-s1-v1 – flaecheninhalt-durch-integration e5 „Flächenbilanz“: Anlauf, Grundfall
+AUSWAHL flaecheninhalt-durch-integration-e5-k1-s2-v1 – flaecheninhalt-durch-integration e5 „Flächenbilanz“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL flaecheninhalt-durch-integration-e5-k1-s7-v5 – flaecheninhalt-durch-integration e5 „Flächenbilanz“: Prüfungshöhe (2019MgrundlegendBAnalysisWTR1-2e)
+AUSWAHL flaecheninhalt-durch-integration-e5-k1-s7-v6 – flaecheninhalt-durch-integration e5 „Flächenbilanz“: Prüfungshöhe (2019MgrundlegendBAnalysisWTR1-2e)
+AUSWAHL rekonstruktion-von-funktionsgleichungen-e1-k1-s0-v1 – rekonstruktion-von-funktionsgleichungen e1 „Ansatz und Punktbedingungen“: Anlauf, Vorstufe
+AUSWAHL rekonstruktion-von-funktionsgleichungen-e1-k1-s1-v1 – rekonstruktion-von-funktionsgleichungen e1 „Ansatz und Punktbedingungen“: Anlauf, Grundfall
+AUSWAHL rekonstruktion-von-funktionsgleichungen-e1-k1-s4-v3 – rekonstruktion-von-funktionsgleichungen e1 „Ansatz und Punktbedingungen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL rekonstruktion-von-funktionsgleichungen-e1-k1-s2-v1 – rekonstruktion-von-funktionsgleichungen e1 „Ansatz und Punktbedingungen“: Prüfungshöhe (2022-bebb-gk-B2.2g)
+AUSWAHL rekonstruktion-von-funktionsgleichungen-e1-k1-s2-v2 – rekonstruktion-von-funktionsgleichungen e1 „Ansatz und Punktbedingungen“: Prüfungshöhe (2022-bebb-gk-B2.2g)
+AUSWAHL rekonstruktion-von-funktionsgleichungen-e1-k1-s2-v3 – rekonstruktion-von-funktionsgleichungen e1 „Ansatz und Punktbedingungen“: Prüfungshöhe (2022-bebb-gk-B2.2g)
+AUSWAHL rekonstruktion-von-funktionsgleichungen-e1-k1-s6-v1 – rekonstruktion-von-funktionsgleichungen e1 „Ansatz und Punktbedingungen“: Prüfungshöhe (2022MgrundlegendAAnalysis12-a)
+AUSWAHL rekonstruktion-von-funktionsgleichungen-e2-k1-s0-v1 – rekonstruktion-von-funktionsgleichungen e2 „Bedingungen mit Ableitung“: Anlauf, Vorstufe
+AUSWAHL rekonstruktion-von-funktionsgleichungen-e2-k1-s1-v1 – rekonstruktion-von-funktionsgleichungen e2 „Bedingungen mit Ableitung“: Anlauf, Grundfall
+AUSWAHL rekonstruktion-von-funktionsgleichungen-e2-k1-s3-v3 – rekonstruktion-von-funktionsgleichungen e2 „Bedingungen mit Ableitung“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL rekonstruktion-von-funktionsgleichungen-e2-k1-s1-v5 – rekonstruktion-von-funktionsgleichungen e2 „Bedingungen mit Ableitung“: Prüfungshöhe (2021-be-gk-B2.1k)
+AUSWAHL rekonstruktion-von-funktionsgleichungen-e2-k1-s2-v1 – rekonstruktion-von-funktionsgleichungen e2 „Bedingungen mit Ableitung“: Prüfungshöhe (2019-be-gk-B2.1c)
+AUSWAHL rekonstruktion-von-funktionsgleichungen-e2-k1-s2-v2 – rekonstruktion-von-funktionsgleichungen e2 „Bedingungen mit Ableitung“: Prüfungshöhe (2023-bebb-gk-B2.2k)
+AUSWAHL rekonstruktion-von-funktionsgleichungen-e2-k1-s3-v1 – rekonstruktion-von-funktionsgleichungen e2 „Bedingungen mit Ableitung“: Prüfungshöhe (2020-be-gk-A1.2a)
+AUSWAHL rekonstruktion-von-funktionsgleichungen-e2-k1-s3-v2 – rekonstruktion-von-funktionsgleichungen e2 „Bedingungen mit Ableitung“: Prüfungshöhe (2020MgrundlegendAAnalysis12)
+AUSWAHL rekonstruktion-von-funktionsgleichungen-e2-k1-s4-v1 – rekonstruktion-von-funktionsgleichungen e2 „Bedingungen mit Ableitung“: Prüfungshöhe (2018-be-gk-B1.1e)
+AUSWAHL rekonstruktion-von-funktionsgleichungen-e2-k1-s4-v2 – rekonstruktion-von-funktionsgleichungen e2 „Bedingungen mit Ableitung“: Prüfungshöhe (2022-bebb-gk-B2.2k)
+ANLAUF rekonstruktion-von-funktionsgleichungen e2 „Zwei Parameter einer Exponentialfunktion aus Funktionswert und Änderungsrate an einer Stelle bestimmen“: keine Zeile ohne Original – entfällt
+AUSWAHL rekonstruktion-von-funktionsgleichungen-e2-k2-s1-v1 – rekonstruktion-von-funktionsgleichungen e2 „Zwei Parameter einer Exponentialfunktion aus Funktionswert und Änderungsrate an einer Stelle bestimmen“: Prüfungshöhe (2017MgrundlegendBAnalysisCAS-1e)
+AUSWAHL rekonstruktion-von-funktionsgleichungen-e2-k2-s1-v2 – rekonstruktion-von-funktionsgleichungen e2 „Zwei Parameter einer Exponentialfunktion aus Funktionswert und Änderungsrate an einer Stelle bestimmen“: Prüfungshöhe (2017MgrundlegendBAnalysisCAS-1e)
+AUSWAHL rekonstruktion-von-funktionsgleichungen-e2-k2-s1-v3 – rekonstruktion-von-funktionsgleichungen e2 „Zwei Parameter einer Exponentialfunktion aus Funktionswert und Änderungsrate an einer Stelle bestimmen“: Prüfungshöhe (2017MgrundlegendBAnalysisCAS-1e)
+AUSWAHL rekonstruktion-von-funktionsgleichungen-e3-k1-s0-v1 – rekonstruktion-von-funktionsgleichungen e3 „Sonderansätze und Modellkritik“: Anlauf, Vorstufe
+AUSWAHL rekonstruktion-von-funktionsgleichungen-e3-k1-s1-v1 – rekonstruktion-von-funktionsgleichungen e3 „Sonderansätze und Modellkritik“: Anlauf, Grundfall
+AUSWAHL rekonstruktion-von-funktionsgleichungen-e3-k1-s2-v3 – rekonstruktion-von-funktionsgleichungen e3 „Sonderansätze und Modellkritik“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL rekonstruktion-von-funktionsgleichungen-e3-k1-s2-v1 – rekonstruktion-von-funktionsgleichungen e3 „Sonderansätze und Modellkritik“: Prüfungshöhe (2022MgrundlegendBAnalysisWTR1-1g)
+AUSWAHL rekonstruktion-von-funktionsgleichungen-e3-k1-s2-v2 – rekonstruktion-von-funktionsgleichungen e3 „Sonderansätze und Modellkritik“: Prüfungshöhe (2022MgrundlegendBAnalysisWTR1-1g)
+WEG rekonstruktion-von-funktionsgleichungen e3 „Zwei Parameter einer Funktion aus einer vorgegebenen Bogenlängenformel und einem Punkt bestimmen“ – keine Prüfungshöhe im Profil abitur-gk
+ANLAUF rekonstruktion-von-funktionsgleichungen e3 „Existenz einer quadratischen Funktion zu vier Wert- und Steigungsbedingungen über das überbestimmte Gleichungssystem untersuchen“: keine Zeile ohne Original – entfällt
+AUSWAHL rekonstruktion-von-funktionsgleichungen-e3-k3-s1-v1 – rekonstruktion-von-funktionsgleichungen e3 „Existenz einer quadratischen Funktion zu vier Wert- und Steigungsbedingungen über das überbestimmte Gleichungssystem untersuchen“: Prüfungshöhe (2017-be-gk-B1.2f)
+AUSWAHL rekonstruktion-von-funktionsgleichungen-e3-k3-s1-v2 – rekonstruktion-von-funktionsgleichungen e3 „Existenz einer quadratischen Funktion zu vier Wert- und Steigungsbedingungen über das überbestimmte Gleichungssystem untersuchen“: Prüfungshöhe (2017-be-gk-B1.2f)
+AUSWAHL rekonstruktion-von-funktionsgleichungen-e3-k3-s1-v3 – rekonstruktion-von-funktionsgleichungen e3 „Existenz einer quadratischen Funktion zu vier Wert- und Steigungsbedingungen über das überbestimmte Gleichungssystem untersuchen“: Prüfungshöhe (2017-be-gk-B1.2f)
+WEG rekonstruktion-von-funktionsgleichungen e3 „Unmöglichkeit waagerechter Tangenten an den Rändern über die Ableitung mit Parametern begründen“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL rekonstruktion-von-bestaenden-e1-k1-s0-v1 – rekonstruktion-von-bestaenden e1 „Bestand aus Rate“: Anlauf, Vorstufe
+AUSWAHL rekonstruktion-von-bestaenden-e1-k1-s1-v1 – rekonstruktion-von-bestaenden e1 „Bestand aus Rate“: Anlauf, Grundfall
+AUSWAHL rekonstruktion-von-bestaenden-e1-k1-s2-v1 – rekonstruktion-von-bestaenden e1 „Bestand aus Rate“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL rekonstruktion-von-bestaenden-e1-k1-s2-v2 – rekonstruktion-von-bestaenden e1 „Bestand aus Rate“: Prüfungshöhe (2024MgrundlegendBAnalysisWTR1-2d)
+AUSWAHL rekonstruktion-von-bestaenden-e1-k1-s3-v1 – rekonstruktion-von-bestaenden e1 „Bestand aus Rate“: Prüfungshöhe (2017MgrundlegendBAnalysisCAS-2e)
+WEG rekonstruktion-von-bestaenden e1 „Zeitpunkt mit gleichem Bestand wie zu Beginn über das Integral der Änderungsrate gleich null untersuchen“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL rekonstruktion-von-bestaenden-e2-k1-s0-v1 – rekonstruktion-von-bestaenden e2 „Rate und Bestand als Paar“: Anlauf, Vorstufe
+AUSWAHL rekonstruktion-von-bestaenden-e2-k1-s1-v1 – rekonstruktion-von-bestaenden e2 „Rate und Bestand als Paar“: Anlauf, Grundfall
+AUSWAHL rekonstruktion-von-bestaenden-e2-k1-s2-v3 – rekonstruktion-von-bestaenden e2 „Rate und Bestand als Paar“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL rekonstruktion-von-bestaenden-e2-k1-s1-v5 – rekonstruktion-von-bestaenden e2 „Rate und Bestand als Paar“: Prüfungshöhe (2018MgrundlegendAAnalysis2-a)
+AUSWAHL rekonstruktion-von-bestaenden-e2-k1-s2-v2 – rekonstruktion-von-bestaenden e2 „Rate und Bestand als Paar“: Prüfungshöhe (2021MgrundlegendBAnalysisWTR-2b)
+WEG rekonstruktion-von-bestaenden e2 „Zeitraum der Abnahme eines Bestands über Nullstellen und Vorzeichen der Änderungsrate berechnen“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL rekonstruktion-von-bestaenden-e3-k1-s1-v1 – rekonstruktion-von-bestaenden e3 „Am Ratengraphen“: Anlauf, Grundfall
+AUSWAHL rekonstruktion-von-bestaenden-e3-k1-s2-v2 – rekonstruktion-von-bestaenden e3 „Am Ratengraphen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL rekonstruktion-von-bestaenden-e3-k1-s2-v1 – rekonstruktion-von-bestaenden e3 „Am Ratengraphen“: Prüfungshöhe (2019-be-gk-B2.1g)
+AUSWAHL rekonstruktion-von-bestaenden-e3-k1-s4-v3 – rekonstruktion-von-bestaenden e3 „Am Ratengraphen“: Prüfungshöhe (2024MgrundlegendBAnalysisWTR2-2e)
+AUSWAHL rekonstruktion-von-bestaenden-e3-k1-s4-v4 – rekonstruktion-von-bestaenden e3 „Am Ratengraphen“: Prüfungshöhe (2024MgrundlegendBAnalysisWTR2-2e)
+AUSWAHL gleichungen-loesen-e1-k1-s0-v1 – gleichungen-loesen e1 „Schnittpunkte und Stellen“: Anlauf, Vorstufe
+AUSWAHL gleichungen-loesen-e1-k1-s1-v1 – gleichungen-loesen e1 „Schnittpunkte und Stellen“: Anlauf, Grundfall
+AUSWAHL gleichungen-loesen-e1-k1-s3-v2 – gleichungen-loesen e1 „Schnittpunkte und Stellen“: Prüfungshöhe (2019MgrundlegendAAnalysis12-a)
+AUSWAHL gleichungen-loesen-e1-k1-s3-v3 – gleichungen-loesen e1 „Schnittpunkte und Stellen“: Prüfungshöhe (2019MgrundlegendAAnalysis12-a)
+AUSWAHL gleichungen-loesen-e1-k1-s5-v2 – gleichungen-loesen e1 „Schnittpunkte und Stellen“: Prüfungshöhe (2018-be-gk-B1.1f)
+AUSWAHL gleichungen-loesen-e1-k1-s8-v1 – gleichungen-loesen e1 „Schnittpunkte und Stellen“: Prüfungshöhe (2019-be-gk-A1.2a)
+AUSWAHL gleichungen-loesen-e1-k1-s8-v2 – gleichungen-loesen e1 „Schnittpunkte und Stellen“: Prüfungshöhe (2019-be-gk-A1.2a)
+AUSWAHL gleichungen-loesen-e1-k1-s8-v3 – gleichungen-loesen e1 „Schnittpunkte und Stellen“: Prüfungshöhe (2019-be-gk-A1.2a)
+AUSWAHL gleichungen-loesen-e1-k1-s9-v1 – gleichungen-loesen e1 „Schnittpunkte und Stellen“: Prüfungshöhe (2020MgrundlegendBAnalysisWTR1-1a)
+AUSWAHL gleichungen-loesen-e1-k1-s9-v2 – gleichungen-loesen e1 „Schnittpunkte und Stellen“: Prüfungshöhe (2020MgrundlegendBAnalysisWTR1-1a)
+AUSWAHL gleichungen-loesen-e1-k1-s9-v3 – gleichungen-loesen e1 „Schnittpunkte und Stellen“: Prüfungshöhe (2020MgrundlegendBAnalysisWTR1-1a)
+AUSWAHL gleichungen-loesen-e1-k1-s10-v1 – gleichungen-loesen e1 „Schnittpunkte und Stellen“: Prüfungshöhe (2019MgrundlegendBAnalysisWTR1-3b)
+AUSWAHL gleichungen-loesen-e1-k1-s10-v2 – gleichungen-loesen e1 „Schnittpunkte und Stellen“: Prüfungshöhe (2019MgrundlegendBAnalysisWTR1-3b)
+AUSWAHL gleichungen-loesen-e1-k1-s10-v3 – gleichungen-loesen e1 „Schnittpunkte und Stellen“: Prüfungshöhe (2019MgrundlegendBAnalysisWTR1-3b)
+AUSWAHL gleichungen-loesen-e1-k1-s11-v1 – gleichungen-loesen e1 „Schnittpunkte und Stellen“: Prüfungshöhe (2020-be-gk-B2.2b)
+AUSWAHL gleichungen-loesen-e1-k1-s11-v2 – gleichungen-loesen e1 „Schnittpunkte und Stellen“: Prüfungshöhe (2020-be-gk-B2.2b)
+AUSWAHL gleichungen-loesen-e1-k1-s11-v3 – gleichungen-loesen e1 „Schnittpunkte und Stellen“: Prüfungshöhe (2020-be-gk-B2.2b)
+TEILUNG gleichungen-loesen e1 „Schnittpunkte und Stellen“: 15 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+WEG gleichungen-loesen e1 „Waagerechte Ausdehnung eines Profils in vorgegebener Höhe über die Stellen mit vorgegebenem Funktionswert berechnen“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL gleichungen-loesen-e2-k1-s0-v1 – gleichungen-loesen e2 „Gleichungen mit e-Funktion und Logarithmus“: Anlauf, Vorstufe
+AUSWAHL gleichungen-loesen-e2-k1-s1-v1 – gleichungen-loesen e2 „Gleichungen mit e-Funktion und Logarithmus“: Anlauf, Grundfall
+AUSWAHL gleichungen-loesen-e2-k1-s6-v1 – gleichungen-loesen e2 „Gleichungen mit e-Funktion und Logarithmus“: Prüfungshöhe (2021-be-gk-B2.2g)
+AUSWAHL gleichungen-loesen-e2-k1-s6-v2 – gleichungen-loesen e2 „Gleichungen mit e-Funktion und Logarithmus“: Prüfungshöhe (2022-bebb-gk-B2.1d)
+AUSWAHL gleichungen-loesen-e2-k1-s6-v3 – gleichungen-loesen e2 „Gleichungen mit e-Funktion und Logarithmus“: Prüfungshöhe (2021-be-gk-B2.2g)
+AUSWAHL gleichungen-loesen-e2-k1-s11-v1 – gleichungen-loesen e2 „Gleichungen mit e-Funktion und Logarithmus“: Prüfungshöhe (2023MgrundlegendAAnalysis2-b)
+AUSWAHL gleichungen-loesen-e2-k1-s11-v2 – gleichungen-loesen e2 „Gleichungen mit e-Funktion und Logarithmus“: Prüfungshöhe (2023MgrundlegendAAnalysis2-b)
+ANLAUF gleichungen-loesen e2 „Schnittpunkte zweier Graphen durch Ausklammern eines gemeinsamen Faktors berechnen“: keine Zeile ohne Original – entfällt
+AUSWAHL gleichungen-loesen-e2-k2-s1-v1 – gleichungen-loesen e2 „Schnittpunkte zweier Graphen durch Ausklammern eines gemeinsamen Faktors berechnen“: Prüfungshöhe (2018-be-gk-cas-B1.2b)
+AUSWAHL gleichungen-loesen-e2-k2-s1-v2 – gleichungen-loesen e2 „Schnittpunkte zweier Graphen durch Ausklammern eines gemeinsamen Faktors berechnen“: Prüfungshöhe (2018-be-gk-cas-B1.2b)
+AUSWAHL gleichungen-loesen-e2-k2-s1-v3 – gleichungen-loesen e2 „Schnittpunkte zweier Graphen durch Ausklammern eines gemeinsamen Faktors berechnen“: Prüfungshöhe (2018-be-gk-cas-B1.2b)
+AUSWAHL gleichungen-loesen-e3-k1-s0-v1 – gleichungen-loesen e3 „Gleichungen aufstellen und grafisch oder numerisch lösen“: Anlauf, Vorstufe
+AUSWAHL gleichungen-loesen-e3-k1-s1-v1 – gleichungen-loesen e3 „Gleichungen aufstellen und grafisch oder numerisch lösen“: Anlauf, Grundfall
+AUSWAHL gleichungen-loesen-e3-k1-s2-v1 – gleichungen-loesen e3 „Gleichungen aufstellen und grafisch oder numerisch lösen“: Prüfungshöhe (2019MgrundlegendBAnalysisWTR1-2d)
+AUSWAHL gleichungen-loesen-e3-k1-s2-v2 – gleichungen-loesen e3 „Gleichungen aufstellen und grafisch oder numerisch lösen“: Prüfungshöhe (2019MgrundlegendBAnalysisWTR1-2d)
+AUSWAHL gleichungen-loesen-e3-k1-s2-v3 – gleichungen-loesen e3 „Gleichungen aufstellen und grafisch oder numerisch lösen“: Prüfungshöhe (2019MgrundlegendBAnalysisWTR1-2d)
+AUSWAHL gleichungen-loesen-e3-k1-s4-v1 – gleichungen-loesen e3 „Gleichungen aufstellen und grafisch oder numerisch lösen“: Prüfungshöhe (2025-bebb-gk-B2.2g)
+AUSWAHL gleichungen-loesen-e3-k1-s4-v2 – gleichungen-loesen e3 „Gleichungen aufstellen und grafisch oder numerisch lösen“: Prüfungshöhe (2025MgrundlegendBAnalysisWTR2-2c)
+AUSWAHL gleichungen-loesen-e3-k1-s4-v3 – gleichungen-loesen e3 „Gleichungen aufstellen und grafisch oder numerisch lösen“: Prüfungshöhe (2025-bebb-gk-B2.2g)
+AUSWAHL gleichungen-loesen-e3-k1-s8-v1 – gleichungen-loesen e3 „Gleichungen aufstellen und grafisch oder numerisch lösen“: Prüfungshöhe (2025-bebb-gk-A1.7a)
+AUSWAHL gleichungen-loesen-e3-k1-s8-v2 – gleichungen-loesen e3 „Gleichungen aufstellen und grafisch oder numerisch lösen“: Prüfungshöhe (2025MgrundlegendAAnalysis22-a)
+AUSWAHL gleichungen-loesen-e3-k1-s8-v3 – gleichungen-loesen e3 „Gleichungen aufstellen und grafisch oder numerisch lösen“: Prüfungshöhe (2025-bebb-gk-A1.7a)
+TEILUNG gleichungen-loesen e3 „Gleichungen aufstellen und grafisch oder numerisch lösen“: 9 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+WEG gleichungen-loesen e3 „Schnittpunkte zweier Graphen mit dem Rechner ermitteln“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL gleichungen-loesen-e4-k1-s0-v1 – gleichungen-loesen e4 „Ungleichungen“: Anlauf, Vorstufe
+AUSWAHL gleichungen-loesen-e4-k1-s1-v1 – gleichungen-loesen e4 „Ungleichungen“: Anlauf, Grundfall
+AUSWAHL gleichungen-loesen-e4-k1-s2-v1 – gleichungen-loesen e4 „Ungleichungen“: Prüfungshöhe (2023-bebb-gk-B2.2g)
+AUSWAHL gleichungen-loesen-e4-k1-s2-v3 – gleichungen-loesen e4 „Ungleichungen“: Prüfungshöhe (2023-bebb-gk-B2.2g)
+AUSWAHL gleichungen-loesen-e4-k1-s3-v1 – gleichungen-loesen e4 „Ungleichungen“: Prüfungshöhe (2019-be-gk-B2.2g)
+AUSWAHL gleichungen-loesen-e4-k1-s3-v2 – gleichungen-loesen e4 „Ungleichungen“: Prüfungshöhe (2019-be-gk-B2.2g)
+AUSWAHL gleichungen-loesen-e4-k1-s3-v3 – gleichungen-loesen e4 „Ungleichungen“: Prüfungshöhe (2019-be-gk-B2.2g)
+AUSWAHL gleichungen-loesen-e4-k1-s4-v1 – gleichungen-loesen e4 „Ungleichungen“: Prüfungshöhe (2024-bebb-gk-B2.2h)
+AUSWAHL gleichungen-loesen-e4-k1-s4-v2 – gleichungen-loesen e4 „Ungleichungen“: Prüfungshöhe (2024-bebb-gk-B2.2h)
+ANLAUF gleichungen-loesen e4 „Intervall, in dem eine Modellfunktion mindestens einen vorgegebenen Wert annimmt, über eine Ungleichung bestimmen“: keine Zeile ohne Original – entfällt
+AUSWAHL gleichungen-loesen-e4-k2-s1-v1 – gleichungen-loesen e4 „Intervall, in dem eine Modellfunktion mindestens einen vorgegebenen Wert annimmt, über eine Ungleichung bestimmen“: Prüfungshöhe (2017MgrundlegendBAnalysisCAS-1d)
+AUSWAHL gleichungen-loesen-e4-k2-s1-v2 – gleichungen-loesen e4 „Intervall, in dem eine Modellfunktion mindestens einen vorgegebenen Wert annimmt, über eine Ungleichung bestimmen“: Prüfungshöhe (2018-be-gk-cas-B1.1g)
+AUSWAHL gleichungen-loesen-e4-k2-s1-v3 – gleichungen-loesen e4 „Intervall, in dem eine Modellfunktion mindestens einen vorgegebenen Wert annimmt, über eine Ungleichung bestimmen“: Prüfungshöhe (2017MgrundlegendBAnalysisCAS-1d)
+WEG rotationsvolumen e1 „Die Volumenformel“ – keine Prüfungshöhe im Profil abitur-gk
+WEG rotationsvolumen e2 „Um den Körper herum“ – keine Prüfungshöhe im Profil abitur-gk
+LEER rotationsvolumen: keine Kette mit Prüfungshöhe – Eintrag entfällt im Heft
+FORM gleichungen-loesen-e1-k1-s1-v1 (Nr. 28): gleichungsraster mit Text → teile
+FORM gleichungen-loesen-e1-k1-s3-v2 (Nr. 29): gleichungsraster mit Text → teile
+FORM gleichungen-loesen-e1-k1-s3-v3 (Nr. 29): gleichungsraster mit Text → teile
+FORM gleichungen-loesen-e1-k1-s5-v2 (Nr. 29): gleichungsraster mit Text → teile
+FORM gleichungen-loesen-e1-k1-s10-v1 (Nr. 29): gleichungsraster mit Text → teile
+FORM gleichungen-loesen-e1-k1-s10-v2 (Nr. 29): gleichungsraster mit Text → teile
+FORM gleichungen-loesen-e1-k1-s10-v3 (Nr. 29): gleichungsraster mit Text → teile
+FORM gleichungen-loesen-e2-k1-s1-v1 (Nr. 31): gleichungsraster mit Text → teile
+FORM gleichungen-loesen-e2-k1-s6-v1 (Nr. 32): gleichungsraster mit Text → teile
+FORM gleichungen-loesen-e2-k1-s6-v2 (Nr. 32): gleichungsraster mit Text → teile
+FORM gleichungen-loesen-e2-k1-s6-v3 (Nr. 32): gleichungsraster mit Text → teile
+FORM gleichungen-loesen-e2-k1-s11-v1 (Nr. 32): gleichungsraster mit Text → teile
+FORM gleichungen-loesen-e2-k1-s11-v2 (Nr. 32): gleichungsraster mit Text → teile
+FORM gleichungen-loesen-e2-k2-s1-v1 (Nr. 33): gleichungsraster mit Text → teile
+FORM gleichungen-loesen-e2-k2-s1-v2 (Nr. 33): gleichungsraster mit Text → teile
+FORM gleichungen-loesen-e2-k2-s1-v3 (Nr. 33): gleichungsraster mit Text → teile
+FORM gleichungen-loesen-e3-k1-s8-v1 (Nr. 36): gleichungsraster mit Text → teile
+FORM gleichungen-loesen-e3-k1-s8-v2 (Nr. 36): gleichungsraster mit Text → teile
+FORM gleichungen-loesen-e3-k1-s8-v3 (Nr. 36): gleichungsraster mit Text → teile
+FORM gleichungen-loesen-e4-k1-s2-v1 (Nr. 38): gleichungsraster mit Text → teile
+FORM gleichungen-loesen-e4-k1-s2-v3 (Nr. 38): gleichungsraster mit Text → teile
+FORM gleichungen-loesen-e4-k1-s3-v1 (Nr. 38): gleichungsraster mit Text → teile
+FORM gleichungen-loesen-e4-k1-s3-v2 (Nr. 38): gleichungsraster mit Text → teile
+FORM gleichungen-loesen-e4-k1-s3-v3 (Nr. 38): gleichungsraster mit Text → teile
+FORM gleichungen-loesen-e4-k2-s1-v1 (Nr. 39): gleichungsraster mit Text → teile
+FORM gleichungen-loesen-e4-k2-s1-v2 (Nr. 39): gleichungsraster mit Text → teile
+FORM gleichungen-loesen-e4-k2-s1-v3 (Nr. 39): gleichungsraster mit Text → teile
+STRUKTUR 0 Fehler

@@ -1,0 +1,7 @@
+# abi-gk-stochastik (ZUF-H1), Versuch 1: 6 Fehlerstellen (je Datei und Zeile die erste Meldung)
+ZUF-H1.tex → binomialverteilung_a.tex:136: Extra }, or forgotten $.
+ZUF-H1.tex → binomialverteilung_a.tex:138: LaTeX Error: Something's wrong--perhaps a missi
+ZUF-H1.tex → binomialverteilung_a.tex:139: LaTeX Error: Something's wrong--perhaps a missi
+ZUF-H1.tex → binomialverteilung_a.tex:140: Missing } inserted.
+ZUF-H1.tex → ZUF-H1.tex:19: LaTeX Error: \begin{minipage} on input line 131 ended by \end{
+ZUF-H1.tex → ?:0: Abbruch (Emergency stop / Fatal error)

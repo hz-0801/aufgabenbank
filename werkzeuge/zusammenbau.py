@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
-"""zusammenbau.py v0.3 – aus bank/<eintrag>/ LaTeX-Quelltexte für mathblatt.sty.
+"""zusammenbau.py v0.4 – aus bank/<eintrag>/ LaTeX-Quelltexte für mathblatt.sty.
 
 Aufruf:
     python3 werkzeuge/zusammenbau.py <eintrag> [--einheiten 1,3]
         [--zone ja|nein|kurz] [--fokus <kette>] [--schwach] [--klasse 7]
         [--kasten] [--aus <ordner>] [--vorlage <mathblatt.sty>]
         [--ohne-register] [--kuerzel <_kuerzel.csv>]
+    python3 werkzeuge/zusammenbau.py <eintrag> <eintrag> … --heft [msa|
+        abitur-gk|abitur-lk|fhr] [--nur-basis] [--titel <text>] --aus <ordner>
 
 Ohne Schalter: Lernblatt mit Zone und allen Einheiten, je Sprosse
 Variante 1, ohne Klasse. Jeder Bau bekommt eine Kennung XXX-R<n>
@@ -37,7 +39,7 @@ from bisect import bisect_right
 from pathlib import Path
 
 WURZEL = Path(__file__).resolve().parent.parent
-VERSION = "v0.3"
+VERSION = "v0.4"
 
 # Befehle der Rahmendateien, die weder in STANDARD (bank-pruef.py) noch
 # in _bausteine.md stehen; jede Argumentzahl zulässig.
@@ -439,14 +441,15 @@ def feld_im_grafik(z):
     return "\\streifenfeld" in g or "\\dsleer" in g
 
 
-def teil_normal(z):
-    """Zeilen für eine Teilaufgabe im teile-Block."""
+def teil_normal(z, stern=False):
+    """Zeilen für eine Teilaufgabe im teile-Block (stern: \\steil)."""
     feld = "" if feld_im_grafik(z) else antwortfeld(z.get("antwort", ""))
     aufgabe, _ = mit_kennung(z["aufgabe"], bool(feld))
     grafik = z.get("grafik", "")
+    t = "\\steil" if stern else "\\teil"
     if not grafik:
-        return [f"\\teil {aufgabe}" + (f" {feld}" if feld else "")]
-    zeilen = [f"\\teil {aufgabe}", "", grafik]
+        return [f"{t} {aufgabe}" + (f" {feld}" if feld else "")]
+    zeilen = [f"{t} {aufgabe}", "", grafik]
     if feld:
         zeilen.append(feld)
     return zeilen
@@ -459,8 +462,9 @@ def gl_inhalt(aufgabe):
     return "\\text{" + t + "}"
 
 
-def teile_normal(folge):
-    """Teilaufgaben in teile- und gleichungsraster-Blöcken."""
+def teile_normal(folge, stern=frozenset()):
+    """Teilaufgaben in teile- und gleichungsraster-Blöcken; ids in stern
+    bekommen \\steil bzw. \\sgl (Heft: Sternchen wie im Original)."""
     aus, block = [], None
     for z in folge:
         art = "raster" if z["form"] == "gleichungsraster" else "teile"
@@ -473,10 +477,11 @@ def teile_normal(folge):
                        else "\\begin{gleichungsraster}[2]")
             block, spalte = art, 0
         if art == "teile":
-            aus += teil_normal(z)
+            aus += teil_normal(z, z.get("id") in stern)
         else:
             trenner = " &" if spalte == 0 else " \\\\"
-            aus.append(f"\\gl{{{gl_inhalt(z['aufgabe'])}}}" + trenner)
+            g = "\\sgl" if z.get("id") in stern else "\\gl"
+            aus.append(f"{g}{{{gl_inhalt(z['aufgabe'])}}}" + trenner)
             spalte = 1 - spalte
     if block == "raster" and aus[-1].endswith(" &"):
         aus[-1] = aus[-1][:-2] + " & \\\\"
@@ -993,6 +998,340 @@ class Bau:
         return dateien
 
 
+# --- Rezept Heft (v0.4) ------------------------------------------------------
+#
+# Prüfungsheft nach Themen aus mehreren Einträgen (Beschluss des Lehrers vom
+# 28.09.): je Kette zwei Lagen – Anlauf (Vorstufe, ein Grundfall, eine
+# Sprosse mit dem häufigsten Fallstrick, ohne Prüfkennung) und danach alle
+# Prüfungshöhen der Kette im gewählten Prüfungsprofil (alle Varianten, mit
+# Prüfkennung, Sternchen wie im Original). --nur-basis: nur Originale aus
+# dem Basisteil (OS/FOR/EBR, id mit „-B“), ohne Anlauf.
+
+HEFT_PROFIL = {
+    "msa": "P10 (MSA: OS, FOR, EBR, GYM)",
+    "abitur-gk": "Abitur, grundlegendes Niveau (GK)",
+    "abitur-lk": "Abitur, erhöhtes Niveau (LK)",
+    "fhr": "FHR",
+}
+MSA_PAPIER = {"OS", "FOR", "EBR", "GYM"}
+BASIS_PAPIER = {"OS", "FOR", "EBR"}
+FALLSTRICK = re.compile(r"Fallstrick|Falle|Fehler|verwechs|vertausch|"
+                        r"Vorzeichen|Klammer|Sonderfall|negativ|Null\b",
+                        re.I)
+KATALOGE = ["msa/msa-katalog-basis.csv", "msa/msa-katalog-kontext.csv",
+            "msa/msa-katalog-gym.csv", "abitur/abi-katalog.csv",
+            "abitur/iqb-katalog.csv", "fhr/fhr-katalog.csv"]
+
+
+def profil_von(z):
+    """Prüfungsprofil einer Bankzeile: aus original.papier, sonst aus der
+    Prüfkennung im Aufgabentext; None, wenn die Zeile keins trägt."""
+    o = z.get("original") or {}
+    p = o.get("papier")
+    if p:
+        if p in MSA_PAPIER:
+            return "msa"
+        if p in ("A", "B", "C"):
+            return "fhr"
+        if re.search(r"-(ga|gk)(-|$)", p):
+            return "abitur-gk"
+        return "abitur-lk"
+    m = KENNUNG.search(z.get("aufgabe", ""))
+    if not m:
+        return None
+    k = m.group(0)
+    if "P10" in k:
+        return "msa"
+    if "FHR" in k:
+        return "fhr"
+    return "abitur-gk" if "GK" in k else "abitur-lk"
+
+
+def ist_basis(z):
+    o = z.get("original") or {}
+    return (o.get("papier") in BASIS_PAPIER
+            and re.search(r"-(OS|FOR|EBR)-B\d", o.get("id", "")) is not None)
+
+
+def lies_kataloge(log):
+    """{id: {punkte, stern, datei}} aus den Prüfungskatalogen von
+    mathe-nachhilfe (für Sternchen und Punkte der Originale)."""
+    wurzeln = []
+    if os.environ.get("MATHE_NACHHILFE"):
+        wurzeln.append(Path(os.environ["MATHE_NACHHILFE"]))
+    wurzeln += [WURZEL.parent / "mathe-nachhilfe",
+                WURZEL.parent / "hz-0801" / "mathe-nachhilfe"]
+    kat = {}
+    for w in wurzeln:
+        if not (w / "msa").is_dir():
+            continue
+        for rel in KATALOGE:
+            p = w / rel
+            if not p.is_file():
+                log(f"KATALOG fehlt: {rel}")
+                continue
+            with open(p, encoding="utf-8", newline="") as f:
+                kopf = f.readline()
+                f.seek(0)
+                for zeile in csv.DictReader(f, delimiter=";" if ";" in kopf
+                                            else ","):
+                    kat[zeile["id"]] = {"punkte": zeile.get("punkte") or "",
+                                        "stern": zeile.get("stern") or "",
+                                        "datei": rel}
+        log(f"KATALOGE aus {w}: {len(kat)} Zeilen")
+        return kat
+    log("KATALOGE nicht gefunden (mathe-nachhilfe neben dem Repo klonen): "
+        "keine Sternchen, keine Punkte")
+    return kat
+
+
+def ohne_kennung(z):
+    """Kopie der Zeile ohne Prüfkennung (Anlauf: ohne Kennzeichnung)."""
+    if not KENNUNG.search(z["aufgabe"]):
+        return z
+    neu = dict(z)
+    neu["aufgabe"] = KENNUNG.sub("", z["aufgabe"]).rstrip()
+    neu["kennung_entfernt"] = True
+    return neu
+
+
+class HeftBau:
+    """Rezept H: ein Heft aus mehreren Einträgen, je Kette Anlauf und
+    Prüfungslage. Die Hauptnummern laufen über das ganze Heft."""
+
+    def __init__(self, args, log):
+        self.a = args
+        self.log = log
+        self.profil = args.heft
+        self.basis = args.nur_basis
+        self.kennung = args.kennung
+        self.titel = args.titel
+        self.kat = lies_kataloge(log)
+        self.eintraege = []      # (eintrag, thema, {n: zeilen})
+        self.fehlend = []
+        for e in args.eintraege:
+            bank = WURZEL / "bank" / e
+            if not bank.is_dir():
+                log(f"FEHLT bank/{e}/ – Eintrag entfällt")
+                self.fehlend.append(e)
+                continue
+            mappe = Mappe(WURZEL / "mappen" / f"{e}.md", log)
+            einheiten = {}
+            for p in sorted(bank.glob("e*.jsonl"),
+                            key=lambda p: int(re.sub(r"\D", "", p.stem) or 0)):
+                if re.fullmatch(r"e\d+", p.stem):
+                    einheiten[int(p.stem[1:])] = lies_jsonl(p)
+            self.eintraege.append((e, mappe.thema or e, einheiten))
+        self.stern = set()
+        self.reihenfolge = []
+        self.info = {}           # id -> {lage, original, punkte, stern}
+
+    def ist_pruefung(self, z):
+        if self.basis:
+            return profil_von(z) == "msa" and ist_basis(z)
+        return profil_von(z) == self.profil
+
+    def anlauf(self, zeilen, pruef, wo):
+        """Vorstufe, Grundfall, Sprosse mit Fallstrick – je eine Zeile, ohne
+        Original, kleinste Variante."""
+        log = self.log
+        frei = [z for z in zeilen if not z.get("original")
+                and z["id"] not in pruef and z["hoehe"] != "pflicht"]
+        if not frei:
+            log(f"ANLAUF {wo}: keine Zeile ohne Original – entfällt")
+            return []
+
+        def erste(zz):
+            return sorted(zz, key=lambda z: (z["sprosse"], z["variante"]))[0]
+
+        aus = []
+        grund = [z for z in frei if z["hoehe"] == "grundfall"]
+        g_sprosse = min(z["sprosse"] for z in grund) if grund else None
+        vor = [z for z in frei if z["hoehe"] == "vorstufe"
+               and (g_sprosse is None or z["sprosse"] < g_sprosse)]
+        if vor:
+            w = erste(vor)
+            aus.append(w)
+            log(f"AUSWAHL {w['id']} – {wo}: Anlauf, Vorstufe")
+        if grund:
+            w = erste(grund)
+            aus.append(w)
+            log(f"AUSWAHL {w['id']} – {wo}: Anlauf, Grundfall")
+        rest = [z for z in frei if z["hoehe"] == "sprosse"
+                and (g_sprosse is None or z["sprosse"] > g_sprosse)]
+        if rest:
+            treffer = [z for z in rest if FALLSTRICK.search(z.get("merkmal", ""))]
+            if treffer:
+                w = erste(treffer)
+                grund_w = f"Fallstrick im Merkmal („{w['merkmal'][:50]}“)"
+            else:
+                w = erste(rest)
+                grund_w = ("kein Fallstrick im Merkmal; erste Sprosse nach "
+                           "dem Grundfall")
+            aus.append(w)
+            log(f"AUSWAHL {w['id']} – {wo}: Anlauf, Sprosse – {grund_w}")
+        if not aus:
+            w = erste(frei)
+            aus.append(w)
+            log(f"AUSWAHL {w['id']} – {wo}: Anlauf, einzige Sprosse "
+                "(Kette ohne Grundfall)")
+        return [ohne_kennung(z) for z in aus]
+
+    def hauptnummern(self, eintrag, einheiten):
+        log = self.log
+        aus = []
+        for n in sorted(einheiten):
+            gruppen = {}
+            for nr, name, art, zeilen in ketten_von(einheiten[n]):
+                gruppen.setdefault(name, []).append((nr, art, zeilen))
+            for name, teile in gruppen.items():
+                zeilen = [z for _, _, zz in teile for z in zz]
+                wo = f"{eintrag} e{n} „{name}“"
+                pruef = [z for z in zeilen if self.ist_pruefung(z)]
+                if not pruef:
+                    log(f"WEG {wo} – keine Prüfungshöhe im Profil "
+                        f"{'basis' if self.basis else self.profil}")
+                    continue
+                pruef_ids = {z["id"] for z in pruef}
+                if not self.basis:
+                    kette = [z for nr, art, zz in teile if art != "pflicht"
+                             for z in zz]
+                    anl = self.anlauf(kette, pruef_ids, wo)
+                    if anl:
+                        h = Hauptnummer(f"{name} – Anlauf", anl, "anlauf",
+                                        name, n)
+                        aus.append(h)
+                        for z in anl:
+                            self.info[z["id"]] = {"lage": "anlauf"}
+                folge = sorted(pruef, key=lambda z: (z["sprosse"], z["variante"],
+                                                     z["kette_nr"]))
+                for z in folge:
+                    o = z.get("original") or {}
+                    k = self.kat.get(o.get("id"), {})
+                    st = k.get("stern") == "ja"
+                    if st:
+                        self.stern.add(z["id"])
+                    self.info[z["id"]] = {"lage": "pruefung",
+                                          "original": o.get("id"),
+                                          "punkte": k.get("punkte") or None,
+                                          "stern": st}
+                    log(f"AUSWAHL {z['id']} – {wo}: Prüfungshöhe "
+                        f"({o.get('id') or 'Kennung im Text'}"
+                        + (", Stern" if st else "") + ")")
+                stuecke = teile_nach_mass(folge)
+                if len(stuecke) > 1:
+                    log(f"TEILUNG {wo}: {len(folge)} Prüfungsaufgaben in "
+                        f"{len(stuecke)} Hauptnummern an Sprossengrenzen (2.3 g)")
+                for i, t in enumerate(stuecke):
+                    titel = f"{name} – Prüfungsaufgaben" + (" – weiter" if i else "")
+                    aus.append(Hauptnummer(titel, t, "pruefung", name, n,
+                                           weiter=bool(i)))
+        return aus
+
+    def satz(self, h):
+        # gleichungsraster nur für reine Gleichungen; Text (Sachaufgabe im
+        # Raster) liefe als \\text{…} in einer Zeile über die Spalte hinaus
+        folge = []
+        for z in h.folge:
+            a = z["aufgabe"].strip()
+            if (z.get("form") == "gleichungsraster" and "$" not in a
+                    and not re.search(r"[A-Za-zÄÖÜäöüß]{3,}",
+                                      re.sub(r"\\[A-Za-z]+", "", a))):
+                # reine Gleichung ohne $ (x^2 = 81): als Mathe setzen
+                z = dict(z, aufgabe=f"${a}$")
+                self.log(f"FORM {z['id']} (Nr. {h.nr}): Gleichung ohne $ "
+                         "im Raster als Mathe gesetzt")
+            if (z.get("form") == "gleichungsraster"
+                    and gl_inhalt(z["aufgabe"]).startswith("\\text{")):
+                z = dict(z, form="teil")
+                self.log(f"FORM {z['id']} (Nr. {h.nr}): gleichungsraster mit "
+                         "Text → teile")
+            folge.append(z)
+        h.folge = folge
+        aus = [f"\\begin{{aufgabe}}{{{klar(h.titel)}}}"]
+        aus += teile_normal(h.folge, self.stern)
+        aus.append("\\end{aufgabe}")
+        h.buchstaben = [(buchstabe(i), z) for i, z in enumerate(h.folge)]
+        n_teil = len(h.buchstaben)
+        n_graf = sum(1 for z in h.folge if z.get("grafik"))
+        if n_teil > 26:
+            self.log(f"FEHLER Nr. {h.nr}: {n_teil} Teilaufgaben > 26 (\\alph)")
+        if (n_graf == 0 and n_teil > 12) or (n_graf > 0 and n_teil > 6):
+            self.log(f"WARNUNG Nr. {h.nr}: {n_teil} Teilaufgaben, {n_graf} "
+                     "mit Grafik – über dem Halbseitenmaß (2.3 g)")
+        return aus
+
+    satz_loesung = Bau.satz_loesung
+
+    def baue(self):
+        dateien = {}
+        teile = []
+        nr = 0
+        for i, (e, thema, einheiten) in enumerate(self.eintraege, 1):
+            hs = self.hauptnummern(e, einheiten)
+            if not hs:
+                self.log(f"LEER {e}: keine Kette mit Prüfungshöhe – Eintrag "
+                         "entfällt im Heft")
+                continue
+            for h in hs:
+                nr += 1
+                h.nr = nr
+            teile.append((i, e, thema, hs))
+        self.teile = teile
+        for i, e, thema, hs in teile:
+            a = [f"% {thema} – bank/{e}/ (zusammenbau {VERSION}, Heft)",
+                 f"\\einheitenkopf[t{i}]{{{klar(thema)}}}",
+                 f"\\setcounter{{aufgabe}}{{{hs[0].nr - 1}}}"]
+            for h in hs:
+                a.append("")
+                if h.art == "anlauf":
+                    a.append("% Anlauf (ohne Prüfkennung)")
+                a += self.satz(h)
+                self.reihenfolge.append((h, f"{e}_a.tex"))
+            dateien[f"{e}_a.tex"] = a
+            l = [f"% Lösungen {thema} (zusammenbau {VERSION}, Heft)",
+                 f"\\einheitenkopf{{{klar(thema)}}}", ""]
+            for h in hs:
+                l += self.satz_loesung(h)
+            dateien[f"{e}_l.tex"] = l
+        dateien.update(self.rahmen(teile))
+        return dateien
+
+    def rahmen(self, teile):
+        k = self.kennung
+        th = self.titel
+        weit = self.profil == "msa"
+        kopf = ["\\documentclass[11pt]{article}", "\\usepackage{mathblatt}"]
+
+        def dok(blatt, rumpf):
+            fuss = f"{th} · {blatt} · {k}"
+            if self.stern and not blatt.endswith("Lösungen"):
+                fuss += " · $\\star$ = Original mit Sternchen (nur FOR)"
+            z = kopf + ["\\begin{document}",
+                        f"\\blattkopf*{{{klar(th)}}}{{{blatt}}}{{{klar(fuss)}}}"]
+            if weit and not blatt.endswith("Lösungen"):
+                z.append("\\weit")
+            return z + rumpf + ["\\end{document}"]
+
+        verz = []
+        for i, e, thema, hs in teile:
+            a, b = hs[0].nr, hs[-1].nr
+            nrn = f"Nr.~{a}" if a == b else f"Nr.~{a}–{b}"
+            verz.append(f"\\verz{{t{i}}}{{{klar(thema)} ({nrn})}}")
+        a_in, l_in = [], []
+        for j, (i, e, thema, hs) in enumerate(teile):
+            if j:
+                a_in.append("\\clearpage")
+                l_in.append("\\bigskip")
+            a_in.append(f"\\input{{{e}_a}}")
+            l_in.append(f"\\input{{{e}_l}}")
+        name = "Prüfungsheft Basis" if self.basis else "Prüfungsheft"
+        rumpf = (["\\verzeichniszeile{" + " \\verztrenn ".join(verz) + "}"]
+                 if verz else []) + a_in
+        return {f"{k}.tex": dok(name, rumpf),
+                f"{k}-loesungen.tex": dok(f"{name} · Lösungen", l_in)}
+
+
 # --- Strukturprüfung ------------------------------------------------------
 
 UMLAUT_ALT = re.compile(r"\\\"[aouAOUs]|\\ss\b|\\glqq|\\grqq|\\euro\b")
@@ -1205,7 +1544,14 @@ def finde_vorlage(angabe):
 
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    p.add_argument("eintrag")
+    p.add_argument("eintrag", nargs="+",
+                   help="Eintrag; mit --heft mehrere in Heftfolge")
+    p.add_argument("--heft", nargs="?", const="msa", choices=sorted(HEFT_PROFIL),
+                   help="Rezept H: Prüfungsheft (Profil, Voreinstellung msa)")
+    p.add_argument("--nur-basis", action="store_true",
+                   help="Heft: nur Originale aus dem Basisteil (OS/FOR/EBR, "
+                        "id mit -B), ohne Anlauf")
+    p.add_argument("--titel", help="Heft: Titel in Kopf und Fußzeile")
     p.add_argument("--einheiten", help="Auswahl, z. B. 1,3")
     p.add_argument("--zone", choices=["ja", "nein", "kurz"], default="ja")
     p.add_argument("--fokus", metavar="KETTE",
@@ -1222,6 +1568,13 @@ def main(argv=None):
     p.add_argument("--kuerzel", metavar="CSV",
                    help="Pfad zu katalog/_kuerzel.csv (mathe-nachhilfe)")
     args = p.parse_args(argv)
+    if args.nur_basis and not args.heft:
+        args.heft = "msa"
+    if args.heft:
+        return main_heft(args)
+    if len(args.eintrag) > 1:
+        sys.exit("mehrere Einträge nur mit --heft")
+    args.eintrag = args.eintrag[0]
     if args.fokus and args.schwach:
         sys.exit("--fokus und --schwach zusammen kann v0.3 nicht")
 
@@ -1359,6 +1712,112 @@ def main(argv=None):
         print(f"REGISTER {args.kennung} an bau/register.csv angehängt")
     print(f"KENNUNG {args.kennung}")
     print(f"{len(texte)} Quelltexte nach {ziel}; {len(todo)} TODO; "
+          f"Strukturprüfung {len(fehler)} Fehler")
+    for name, zl, meldung in fehler:
+        print(f"FEHLER {name}:{zl}: {meldung}")
+    return 1 if fehler else 0
+
+
+def main_heft(args):
+    """Rezept H (v0.4): Prüfungsheft aus mehreren Einträgen."""
+    log = Log()
+    args.eintraege = list(args.eintrag)
+    for name in ("fokus", "klasse", "einheiten"):
+        if getattr(args, name) is not None:
+            sys.exit(f"--{name} gibt es im Heft nicht")
+    if args.schwach or args.kasten or args.zone != "ja":
+        sys.exit("--schwach, --kasten, --zone gibt es im Heft nicht")
+    if args.nur_basis and args.heft != "msa":
+        sys.exit("--nur-basis nur mit dem Profil msa")
+    aufruf = ["zusammenbau.py"] + args.eintraege + ["--heft", args.heft]
+    if args.nur_basis:
+        aufruf.append("--nur-basis")
+    if args.titel:
+        aufruf += ["--titel", args.titel]
+    if args.ohne_register:
+        aufruf.append("--ohne-register")
+    log(f"# zusammenbau {VERSION}: " + " ".join(aufruf))
+    vorlage = finde_vorlage(args.vorlage)
+    version = vorlage.read_text(encoding="utf-8").splitlines()[1].lstrip("% ")
+    version = version.split(" (", 1)[0]
+    log(f"VORLAGE mathblatt.sty: {version}")
+    vorhanden = [e for e in args.eintraege if (WURZEL / "bank" / e).is_dir()]
+    if not vorhanden:
+        sys.exit("kein Eintrag des Hefts liegt in bank/")
+    rezept = "H"
+    kuerzel, k_quelle = kuerzel_von(vorhanden[0],
+                                    finde_kuerzelliste(args.kuerzel))
+    nummer = 0 if args.ohne_register else naechste_nummer(kuerzel, rezept,
+                                                          lies_register())
+    args.kennung = f"{kuerzel}-{rezept}{nummer}"
+    log(f"KENNUNG {args.kennung} – Kürzel {kuerzel} aus {k_quelle} (erster "
+        f"Eintrag {vorhanden[0]}); Rezept H (Heft)")
+    if not args.titel:
+        args.titel = ("Prüfungsheft Basis" if args.nur_basis
+                      else f"Prüfungsheft {HEFT_PROFIL[args.heft]}")
+    ziel = (Path(args.aus) if args.aus
+            else WURZEL / "bau" / "hefte" / args.kennung)
+    if not args.ohne_register and ziel.exists() and any(
+            p.suffix == ".tex" for p in ziel.iterdir()):
+        sys.exit(f"{ziel} enthält schon Quelltexte – nichts gebaut")
+    bau = HeftBau(args, log)
+    dateien = bau.baue()
+    texte = {k: "\n".join(v) + "\n" for k, v in dateien.items()}
+    sig = BP.lade_bausteine(WURZEL / "mappen" / "_bausteine.md")
+    fehler = pruefe_struktur(texte, sig)
+    ziel.mkdir(parents=True, exist_ok=True)
+    for name, text in sorted(texte.items()):
+        (ziel / name).write_text(text, encoding="utf-8", newline="\n")
+    shutil.copyfile(vorlage, ziel / "mathblatt.sty")
+    log(f"STRUKTUR {len(fehler)} Fehler")
+    for name, zl, meldung in fehler:
+        log(f"  FEHLER {name}:{zl}: {meldung}")
+    (ziel / "zusammenbau.log").write_text("\n".join(log.zeilen) + "\n",
+                                          encoding="utf-8", newline="\n")
+    datum = heute()
+    commit = bank_commit()
+    try:
+        pfad = ziel.resolve().relative_to(WURZEL).as_posix()
+    except ValueError:
+        pfad = ziel.resolve().as_posix()
+    bestellung = {"heft": args.heft, "nur_basis": args.nur_basis,
+                  "titel": args.titel, "aus": args.aus,
+                  "ohne_register": args.ohne_register}
+    aufgaben = []
+    for h, datei in bau.reihenfolge:
+        for b, z in h.buchstaben:
+            info = bau.info.get(z["id"], {})
+            aufgaben.append({"aufgabe": f"A{h.nr}", "hauptnummer": h.nr,
+                             "teilaufgabe": b, "id": z["id"], "datei": datei,
+                             **info})
+    zettel = {
+        "kennung": args.kennung, "datum": datum,
+        "eintraege": [e for e, _, _ in bau.eintraege],
+        "fehlende_eintraege": bau.fehlend,
+        "leere_eintraege": [e for e, _, _ in bau.eintraege
+                            if e not in {t[1] for t in bau.teile}],
+        "rezept": rezept, "rezept_name": REZEPT[rezept],
+        "bestellung": bestellung, "bank_commit": commit,
+        "zusammenbau": VERSION, "vorlage": version, "pfad": pfad,
+        "kuerzel_quelle": k_quelle, "strukturfehler": len(fehler),
+        "ausgelassen": [], "aufgaben": aufgaben,
+    }
+    (ziel / "bau.json").write_text(
+        json.dumps(zettel, ensure_ascii=False, indent=1) + "\n",
+        encoding="utf-8", newline="\n")
+    if not args.ohne_register:
+        haenge_an_register({
+            "kennung": args.kennung, "datum": datum,
+            "eintraege": ",".join(e for e, _, _ in bau.eintraege),
+            "rezept": rezept,
+            "bestellung": ", ".join(
+                f"{k}={'ja' if v is True else 'nein' if v is False else '–' if v is None else v}"
+                for k, v in bestellung.items() if k != "ohne_register"),
+            "bank_commit": commit, "zusammenbau": VERSION,
+            "vorlage": version, "pfad": pfad})
+        print(f"REGISTER {args.kennung} an bau/register.csv angehängt")
+    print(f"KENNUNG {args.kennung}")
+    print(f"{len(texte)} Quelltexte nach {ziel}; {len(aufgaben)} Teilaufgaben; "
           f"Strukturprüfung {len(fehler)} Fehler")
     for name, zl, meldung in fehler:
         print(f"FEHLER {name}:{zl}: {meldung}")

@@ -1,0 +1,439 @@
+# zusammenbau v0.4: zusammenbau.py bruchrechnung brueche-dezimalzahlen prozentrechnung zinsrechnung rationale-zahlen potenzen-wurzeln einheiten terme lineare-gleichungen binomische-formeln --heft msa --titel Prüfungsheft MSA · Zahlen und Terme
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG BRU-H1 – Kürzel BRU aus _kuerzel.csv (mathe-nachhilfe) (erster Eintrag bruchrechnung); Rezept H (Heft)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+WEG bruchrechnung e1 „Gleicher Nenner – ja oder nein?“ – keine Prüfungshöhe im Profil msa
+WEG bruchrechnung e1 „Womit erweitere ich?“ – keine Prüfungshöhe im Profil msa
+AUSWAHL bruchrechnung-e1-k3-s0-v1 – bruchrechnung e1 „Addieren/Subtrahieren“: Anlauf, Vorstufe
+AUSWAHL bruchrechnung-e1-k3-s1-v1 – bruchrechnung e1 „Addieren/Subtrahieren“: Anlauf, Grundfall
+AUSWAHL bruchrechnung-e1-k3-s2-v1 – bruchrechnung e1 „Addieren/Subtrahieren“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL bruchrechnung-e1-k3-s7-v1 – bruchrechnung e1 „Addieren/Subtrahieren“: Prüfungshöhe (2014-OS-K6c, Stern)
+AUSWAHL bruchrechnung-e1-k3-s7-v2 – bruchrechnung e1 „Addieren/Subtrahieren“: Prüfungshöhe (2014-OS-K6c, Stern)
+AUSWAHL bruchrechnung-e1-k3-s7-v3 – bruchrechnung e1 „Addieren/Subtrahieren“: Prüfungshöhe (2015-OS-K7d, Stern)
+AUSWAHL bruchrechnung-e1-k3-s7-v4 – bruchrechnung e1 „Addieren/Subtrahieren“: Prüfungshöhe (2015-OS-K7d, Stern)
+AUSWAHL bruchrechnung-e1-k3-s7-v5 – bruchrechnung e1 „Addieren/Subtrahieren“: Prüfungshöhe (2020-OS-K6c, Stern)
+AUSWAHL bruchrechnung-e1-k3-s7-v6 – bruchrechnung e1 „Addieren/Subtrahieren“: Prüfungshöhe (2020-OS-K6c, Stern)
+AUSWAHL bruchrechnung-e1-k3-s7-v7 – bruchrechnung e1 „Addieren/Subtrahieren“: Prüfungshöhe (2017-OS-K6b, Stern)
+AUSWAHL bruchrechnung-e1-k3-s7-v8 – bruchrechnung e1 „Addieren/Subtrahieren“: Prüfungshöhe (2017-OS-K6b, Stern)
+AUSWAHL bruchrechnung-e1-k3-s8-v1 – bruchrechnung e1 „Addieren/Subtrahieren“: Prüfungshöhe (2026-FOR-K6c)
+AUSWAHL bruchrechnung-e1-k3-s8-v2 – bruchrechnung e1 „Addieren/Subtrahieren“: Prüfungshöhe (2026-FOR-K6c)
+AUSWAHL bruchrechnung-e1-k3-s8-v3 – bruchrechnung e1 „Addieren/Subtrahieren“: Prüfungshöhe (2014-OS-B1d)
+AUSWAHL bruchrechnung-e1-k3-s8-v4 – bruchrechnung e1 „Addieren/Subtrahieren“: Prüfungshöhe (2014-OS-B1d)
+WEG bruchrechnung e1 „ganze Zahl plus Bruch“ – keine Prüfungshöhe im Profil msa
+AUSWAHL bruchrechnung-e2-k1-s0-v1 – bruchrechnung e2 „Dezimal addieren/subtrahieren“: Anlauf, Vorstufe
+AUSWAHL bruchrechnung-e2-k1-s1-v1 – bruchrechnung e2 „Dezimal addieren/subtrahieren“: Anlauf, Grundfall
+AUSWAHL bruchrechnung-e2-k1-s2-v1 – bruchrechnung e2 „Dezimal addieren/subtrahieren“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL bruchrechnung-e2-k1-s5-v1 – bruchrechnung e2 „Dezimal addieren/subtrahieren“: Prüfungshöhe (2014-OS-K4d)
+AUSWAHL bruchrechnung-e2-k1-s5-v2 – bruchrechnung e2 „Dezimal addieren/subtrahieren“: Prüfungshöhe (2014-OS-K4d)
+WEG bruchrechnung e2 „ganze Zahl plus Dezimalzahl“ – keine Prüfungshöhe im Profil msa
+WEG bruchrechnung e2 „Überschlag vorab“ – keine Prüfungshöhe im Profil msa
+WEG bruchrechnung e3 „Von heißt mal“ – keine Prüfungshöhe im Profil msa
+AUSWAHL bruchrechnung-e3-k2-s0-v1 – bruchrechnung e3 „Multiplizieren“: Anlauf, Vorstufe
+AUSWAHL bruchrechnung-e3-k2-s1-v1 – bruchrechnung e3 „Multiplizieren“: Anlauf, Grundfall
+AUSWAHL bruchrechnung-e3-k2-s2-v1 – bruchrechnung e3 „Multiplizieren“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL bruchrechnung-e3-k2-s5-v1 – bruchrechnung e3 „Multiplizieren“: Prüfungshöhe (2019-OS-K6c, Stern)
+AUSWAHL bruchrechnung-e3-k2-s5-v2 – bruchrechnung e3 „Multiplizieren“: Prüfungshöhe (2019-OS-K6c, Stern)
+AUSWAHL bruchrechnung-e3-k2-s5-v3 – bruchrechnung e3 „Multiplizieren“: Prüfungshöhe (2018-OS-K7c, Stern)
+AUSWAHL bruchrechnung-e3-k2-s5-v4 – bruchrechnung e3 „Multiplizieren“: Prüfungshöhe (2018-OS-K7c, Stern)
+AUSWAHL bruchrechnung-e3-k2-s5-v5 – bruchrechnung e3 „Multiplizieren“: Prüfungshöhe (2019-OS-K6b, Stern)
+AUSWAHL bruchrechnung-e3-k2-s5-v6 – bruchrechnung e3 „Multiplizieren“: Prüfungshöhe (2019-OS-K6b, Stern)
+AUSWAHL bruchrechnung-e3-k2-s6-v1 – bruchrechnung e3 „Multiplizieren“: Prüfungshöhe (2024-OS-K5c, Stern)
+AUSWAHL bruchrechnung-e3-k2-s6-v2 – bruchrechnung e3 „Multiplizieren“: Prüfungshöhe (2024-OS-K5c, Stern)
+WEG bruchrechnung e3 „Dividieren“ – keine Prüfungshöhe im Profil msa
+WEG bruchrechnung e4 „Wie viele Kommastellen hat das Ergebnis?“ – keine Prüfungshöhe im Profil msa
+AUSWAHL bruchrechnung-e4-k2-s1-v1 – bruchrechnung e4 „Dezimal multiplizieren/dividieren“: Anlauf, Grundfall
+AUSWAHL bruchrechnung-e4-k2-s2-v1 – bruchrechnung e4 „Dezimal multiplizieren/dividieren“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL bruchrechnung-e4-k2-s8-v1 – bruchrechnung e4 „Dezimal multiplizieren/dividieren“: Prüfungshöhe (2014-OS-K4c)
+AUSWAHL bruchrechnung-e4-k2-s8-v2 – bruchrechnung e4 „Dezimal multiplizieren/dividieren“: Prüfungshöhe (2014-OS-K4c)
+AUSWAHL bruchrechnung-e4-k2-s8-v3 – bruchrechnung e4 „Dezimal multiplizieren/dividieren“: Prüfungshöhe (2024-OS-K2d)
+AUSWAHL bruchrechnung-e4-k2-s8-v4 – bruchrechnung e4 „Dezimal multiplizieren/dividieren“: Prüfungshöhe (2024-OS-K2d)
+AUSWAHL bruchrechnung-e4-k2-s9-v1 – bruchrechnung e4 „Dezimal multiplizieren/dividieren“: Prüfungshöhe (2023-OS-B1f)
+AUSWAHL bruchrechnung-e4-k2-s9-v2 – bruchrechnung e4 „Dezimal multiplizieren/dividieren“: Prüfungshöhe (2023-OS-B1f)
+AUSWAHL bruchrechnung-e5-k1-s0-v1 – bruchrechnung e5 „Punkt vor Strich“: Anlauf, Vorstufe
+AUSWAHL bruchrechnung-e5-k1-s1-v1 – bruchrechnung e5 „Punkt vor Strich“: Anlauf, Grundfall
+AUSWAHL bruchrechnung-e5-k1-s4-v1 – bruchrechnung e5 „Punkt vor Strich“: Anlauf, Sprosse – Fallstrick im Merkmal („Klammer zuerst“)
+AUSWAHL bruchrechnung-e5-k1-s6-v1 – bruchrechnung e5 „Punkt vor Strich“: Prüfungshöhe (2021-OS-B1g)
+AUSWAHL bruchrechnung-e5-k1-s6-v2 – bruchrechnung e5 „Punkt vor Strich“: Prüfungshöhe (2021-OS-B1g)
+AUSWAHL bruchrechnung-e5-k1-s6-v3 – bruchrechnung e5 „Punkt vor Strich“: Prüfungshöhe (2016-OS-B1i)
+AUSWAHL bruchrechnung-e5-k1-s6-v4 – bruchrechnung e5 „Punkt vor Strich“: Prüfungshöhe (2016-OS-B1i)
+AUSWAHL bruchrechnung-e5-k1-s7-v1 – bruchrechnung e5 „Punkt vor Strich“: Prüfungshöhe (2015-OS-K2a)
+AUSWAHL bruchrechnung-e5-k1-s7-v2 – bruchrechnung e5 „Punkt vor Strich“: Prüfungshöhe (2015-OS-K2a)
+WEG bruchrechnung e5 „Distributivgesetz (Ausklammern bei Dezimalzahlen)“ – keine Prüfungshöhe im Profil msa
+WEG bruchrechnung e5 „Überschlag und Prüfen“ – keine Prüfungshöhe im Profil msa
+AUSWAHL brueche-dezimalzahlen-e1-k1-s0-v1 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Anlauf, Vorstufe
+AUSWAHL brueche-dezimalzahlen-e1-k1-s1-v1 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Anlauf, Grundfall
+AUSWAHL brueche-dezimalzahlen-e1-k1-s2-v1 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v1 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2019-OS-B1c)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v2 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2019-OS-B1c)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v3 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2024-OS-B1b)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v4 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2024-OS-B1b)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v5 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2014-OS-B1i)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v6 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2014-OS-B1i)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v7 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2022-OS-B1a)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v8 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2022-OS-B1a)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v9 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2023-OS-B1d)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v10 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2023-OS-B1d)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v11 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2017-OS-B1a)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v12 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2017-OS-B1a)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v13 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2021-OS-B1b)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v14 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2021-OS-B1b)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v15 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2025-OS-B1c)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v16 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2025-OS-B1c)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v17 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2026-FOR-B1b)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v18 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2026-FOR-B1b)
+AUSWAHL brueche-dezimalzahlen-e1-k2-s0-v1 – brueche-dezimalzahlen e1 „Bruchteil einer Größe“: Anlauf, Vorstufe
+AUSWAHL brueche-dezimalzahlen-e1-k2-s1-v1 – brueche-dezimalzahlen e1 „Bruchteil einer Größe“: Anlauf, Grundfall
+AUSWAHL brueche-dezimalzahlen-e1-k2-s2-v1 – brueche-dezimalzahlen e1 „Bruchteil einer Größe“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL brueche-dezimalzahlen-e1-k2-s6-v1 – brueche-dezimalzahlen e1 „Bruchteil einer Größe“: Prüfungshöhe (2015-OS-B1h)
+AUSWAHL brueche-dezimalzahlen-e1-k2-s6-v2 – brueche-dezimalzahlen e1 „Bruchteil einer Größe“: Prüfungshöhe (2015-OS-B1h)
+AUSWAHL brueche-dezimalzahlen-e1-k2-s6-v3 – brueche-dezimalzahlen e1 „Bruchteil einer Größe“: Prüfungshöhe (2018-OS-B1a)
+AUSWAHL brueche-dezimalzahlen-e1-k2-s6-v4 – brueche-dezimalzahlen e1 „Bruchteil einer Größe“: Prüfungshöhe (2018-OS-B1a)
+WEG brueche-dezimalzahlen e1 „Ganzes aus Bruchteil“ – keine Prüfungshöhe im Profil msa
+AUSWAHL brueche-dezimalzahlen-e2-k1-s0-v1 – brueche-dezimalzahlen e2 „Kürzen und Erweitern“: Anlauf, Vorstufe
+AUSWAHL brueche-dezimalzahlen-e2-k1-s1-v1 – brueche-dezimalzahlen e2 „Kürzen und Erweitern“: Anlauf, Grundfall
+AUSWAHL brueche-dezimalzahlen-e2-k1-s2-v1 – brueche-dezimalzahlen e2 „Kürzen und Erweitern“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL brueche-dezimalzahlen-e2-k1-s8-v1 – brueche-dezimalzahlen e2 „Kürzen und Erweitern“: Prüfungshöhe (2014-OS-B1i)
+AUSWAHL brueche-dezimalzahlen-e2-k1-s8-v2 – brueche-dezimalzahlen e2 „Kürzen und Erweitern“: Prüfungshöhe (2014-OS-B1i)
+WEG brueche-dezimalzahlen e2 „gleichwertige Brüche am Streifen finden“ – keine Prüfungshöhe im Profil msa
+WEG brueche-dezimalzahlen e2 „Bruch als Geteilt-Aufgabe“ – keine Prüfungshöhe im Profil msa
+AUSWAHL brueche-dezimalzahlen-e3-k1-s0-v1 – brueche-dezimalzahlen e3 „Vergleichen“: Anlauf, Vorstufe
+AUSWAHL brueche-dezimalzahlen-e3-k1-s1-v1 – brueche-dezimalzahlen e3 „Vergleichen“: Anlauf, Grundfall
+AUSWAHL brueche-dezimalzahlen-e3-k1-s2-v1 – brueche-dezimalzahlen e3 „Vergleichen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL brueche-dezimalzahlen-e3-k1-s7-v1 – brueche-dezimalzahlen e3 „Vergleichen“: Prüfungshöhe (2014-OS-B1c)
+AUSWAHL brueche-dezimalzahlen-e3-k1-s7-v2 – brueche-dezimalzahlen e3 „Vergleichen“: Prüfungshöhe (2014-OS-B1c)
+WEG brueche-dezimalzahlen e3 „Zahl zwischen zwei Brüchen angeben“ – keine Prüfungshöhe im Profil msa
+AUSWAHL brueche-dezimalzahlen-e4-k1-s0-v1 – brueche-dezimalzahlen e4 „Umwandeln“: Anlauf, Vorstufe
+AUSWAHL brueche-dezimalzahlen-e4-k1-s1-v1 – brueche-dezimalzahlen e4 „Umwandeln“: Anlauf, Grundfall
+AUSWAHL brueche-dezimalzahlen-e4-k1-s2-v1 – brueche-dezimalzahlen e4 „Umwandeln“: Anlauf, Sprosse – Fallstrick im Merkmal („leere Stellen mit Null füllen: Hundertstel und Tau“)
+AUSWAHL brueche-dezimalzahlen-e4-k1-s8-v1 – brueche-dezimalzahlen e4 „Umwandeln“: Prüfungshöhe (2015-OS-B1c)
+AUSWAHL brueche-dezimalzahlen-e4-k1-s8-v2 – brueche-dezimalzahlen e4 „Umwandeln“: Prüfungshöhe (2015-OS-B1c)
+AUSWAHL brueche-dezimalzahlen-e4-k1-s8-v3 – brueche-dezimalzahlen e4 „Umwandeln“: Prüfungshöhe (2018-OS-B1d)
+AUSWAHL brueche-dezimalzahlen-e4-k1-s8-v4 – brueche-dezimalzahlen e4 „Umwandeln“: Prüfungshöhe (2018-OS-B1d)
+WEG brueche-dezimalzahlen e4 „Zahl in die Stellenwerttafel eintragen und ablesen (Zehntel, Hundertstel, Tausendstel)“ – keine Prüfungshöhe im Profil msa
+WEG brueche-dezimalzahlen e4 „Nachbarzahlen (Nachbar-Einer, -Zehntel, -Hundertstel) und Zählen in Schritten (0,2er-Schritte; über 2,9 hinaus)“ – keine Prüfungshöhe im Profil msa
+WEG brueche-dezimalzahlen e5 „Welche Form?“ – keine Prüfungshöhe im Profil msa
+AUSWAHL brueche-dezimalzahlen-e5-k2-s0-v1 – brueche-dezimalzahlen e5 „Vergleichen und Ordnen“: Anlauf, Vorstufe
+AUSWAHL brueche-dezimalzahlen-e5-k2-s1-v1 – brueche-dezimalzahlen e5 „Vergleichen und Ordnen“: Anlauf, Grundfall
+AUSWAHL brueche-dezimalzahlen-e5-k2-s2-v1 – brueche-dezimalzahlen e5 „Vergleichen und Ordnen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL brueche-dezimalzahlen-e5-k2-s9-v1 – brueche-dezimalzahlen e5 „Vergleichen und Ordnen“: Prüfungshöhe (2023-OS-B1f)
+AUSWAHL brueche-dezimalzahlen-e5-k2-s9-v2 – brueche-dezimalzahlen e5 „Vergleichen und Ordnen“: Prüfungshöhe (2023-OS-B1f)
+AUSWAHL brueche-dezimalzahlen-e5-k2-s9-v3 – brueche-dezimalzahlen e5 „Vergleichen und Ordnen“: Prüfungshöhe (2014-OS-B1h)
+AUSWAHL brueche-dezimalzahlen-e5-k2-s9-v4 – brueche-dezimalzahlen e5 „Vergleichen und Ordnen“: Prüfungshöhe (2014-OS-B1h)
+AUSWAHL brueche-dezimalzahlen-e5-k2-s9-v5 – brueche-dezimalzahlen e5 „Vergleichen und Ordnen“: Prüfungshöhe (2015-OS-B1c)
+AUSWAHL brueche-dezimalzahlen-e5-k2-s9-v6 – brueche-dezimalzahlen e5 „Vergleichen und Ordnen“: Prüfungshöhe (2015-OS-B1c)
+AUSWAHL brueche-dezimalzahlen-e5-k2-s9-v7 – brueche-dezimalzahlen e5 „Vergleichen und Ordnen“: Prüfungshöhe (2018-OS-B1d)
+AUSWAHL brueche-dezimalzahlen-e5-k2-s9-v8 – brueche-dezimalzahlen e5 „Vergleichen und Ordnen“: Prüfungshöhe (2018-OS-B1d)
+AUSWAHL brueche-dezimalzahlen-e5-k2-s9-v9 – brueche-dezimalzahlen e5 „Vergleichen und Ordnen“: Prüfungshöhe (2020-OS-B1f)
+AUSWAHL brueche-dezimalzahlen-e5-k2-s9-v10 – brueche-dezimalzahlen e5 „Vergleichen und Ordnen“: Prüfungshöhe (2020-OS-B1f)
+WEG brueche-dezimalzahlen e5 „Zahl zwischen zwei Zahlen angeben (auch zwischen zwei Brüchen über Dezimalzahlen)“ – keine Prüfungshöhe im Profil msa
+WEG brueche-dezimalzahlen e5 „gemischte Liste ordnen (Bruch, Dezimalzahl, Prozent, Potenz einer Dezimalzahl)“ – keine Prüfungshöhe im Profil msa
+WEG brueche-dezimalzahlen e5 „Aussagen prüfen und die wahre ankreuzen“ – keine Prüfungshöhe im Profil msa
+AUSWAHL prozentrechnung-e1-k1-s1-v1 – prozentrechnung e1 „Umwandeln“: Anlauf, Grundfall
+AUSWAHL prozentrechnung-e1-k1-s2-v1 – prozentrechnung e1 „Umwandeln“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL prozentrechnung-e1-k1-s7-v1 – prozentrechnung e1 „Umwandeln“: Prüfungshöhe (2020-OS-B1a)
+AUSWAHL prozentrechnung-e1-k1-s7-v2 – prozentrechnung e1 „Umwandeln“: Prüfungshöhe (2020-OS-B1a)
+AUSWAHL prozentrechnung-e1-k1-s7-v3 – prozentrechnung e1 „Umwandeln“: Prüfungshöhe (2022-OS-B1f)
+AUSWAHL prozentrechnung-e1-k1-s7-v4 – prozentrechnung e1 „Umwandeln“: Prüfungshöhe (2022-OS-B1f)
+AUSWAHL prozentrechnung-e1-k1-s8-v1 – prozentrechnung e1 „Umwandeln“: Prüfungshöhe (2023-OS-K6b)
+AUSWAHL prozentrechnung-e1-k1-s8-v2 – prozentrechnung e1 „Umwandeln“: Prüfungshöhe (2023-OS-K6b)
+AUSWAHL prozentrechnung-e1-k1-s8-v3 – prozentrechnung e1 „Umwandeln“: Prüfungshöhe (2019-OS-K5b)
+AUSWAHL prozentrechnung-e1-k1-s8-v4 – prozentrechnung e1 „Umwandeln“: Prüfungshöhe (2019-OS-K5b)
+AUSWAHL prozentrechnung-e1-k1-s8-v5 – prozentrechnung e1 „Umwandeln“: Prüfungshöhe (2017-OS-K2b, Stern)
+AUSWAHL prozentrechnung-e1-k1-s8-v6 – prozentrechnung e1 „Umwandeln“: Prüfungshöhe (2017-OS-K2b, Stern)
+AUSWAHL prozentrechnung-e1-k1-s9-v1 – prozentrechnung e1 „Umwandeln“: Prüfungshöhe (2021-OS-K5b)
+AUSWAHL prozentrechnung-e1-k1-s9-v2 – prozentrechnung e1 „Umwandeln“: Prüfungshöhe (2021-OS-K5b)
+TEILUNG prozentrechnung e1 „Umwandeln“: 12 Prüfungsaufgaben in 3 Hauptnummern an Sprossengrenzen (2.3 g)
+WEG prozentrechnung e1 „Prozentangaben ordnen“ – keine Prüfungshöhe im Profil msa
+WEG prozentrechnung e2 „Was ist das Ganze?“ – keine Prüfungshöhe im Profil msa
+WEG prozentrechnung e2 „Streifen einteilen“ – keine Prüfungshöhe im Profil msa
+AUSWAHL prozentrechnung-e2-k3-s0-v1 – prozentrechnung e2 „Prozentsatz“: Anlauf, Vorstufe
+AUSWAHL prozentrechnung-e2-k3-s1-v1 – prozentrechnung e2 „Prozentsatz“: Anlauf, Grundfall
+AUSWAHL prozentrechnung-e2-k3-s2-v1 – prozentrechnung e2 „Prozentsatz“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL prozentrechnung-e2-k3-s7-v1 – prozentrechnung e2 „Prozentsatz“: Prüfungshöhe (2018-OS-K7a)
+AUSWAHL prozentrechnung-e2-k3-s7-v2 – prozentrechnung e2 „Prozentsatz“: Prüfungshöhe (2018-OS-K7a)
+AUSWAHL prozentrechnung-e2-k3-s7-v3 – prozentrechnung e2 „Prozentsatz“: Prüfungshöhe (2023-OS-K6a)
+AUSWAHL prozentrechnung-e2-k3-s7-v4 – prozentrechnung e2 „Prozentsatz“: Prüfungshöhe (2023-OS-K6a)
+AUSWAHL prozentrechnung-e2-k3-s7-v5 – prozentrechnung e2 „Prozentsatz“: Prüfungshöhe (2015-OS-K7c)
+AUSWAHL prozentrechnung-e2-k3-s7-v6 – prozentrechnung e2 „Prozentsatz“: Prüfungshöhe (2015-OS-K7c)
+AUSWAHL prozentrechnung-e2-k3-s8-v1 – prozentrechnung e2 „Prozentsatz“: Prüfungshöhe (2014-OS-B1e)
+AUSWAHL prozentrechnung-e2-k3-s8-v2 – prozentrechnung e2 „Prozentsatz“: Prüfungshöhe (2014-OS-B1e)
+AUSWAHL prozentrechnung-e2-k3-s9-v1 – prozentrechnung e2 „Prozentsatz“: Prüfungshöhe (2025-OS-K6b)
+AUSWAHL prozentrechnung-e2-k3-s9-v2 – prozentrechnung e2 „Prozentsatz“: Prüfungshöhe (2025-OS-K6b)
+WEG prozentrechnung e2 „Umkehrung: zu einem Prozentsatz ein Zahlenpaar angeben“ – keine Prüfungshöhe im Profil msa
+AUSWAHL prozentrechnung-e3-k1-s1-v1 – prozentrechnung e3 „Prozentwert“: Anlauf, Grundfall
+AUSWAHL prozentrechnung-e3-k1-s2-v1 – prozentrechnung e3 „Prozentwert“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL prozentrechnung-e3-k1-s8-v1 – prozentrechnung e3 „Prozentwert“: Prüfungshöhe (2021-OS-B1c)
+AUSWAHL prozentrechnung-e3-k1-s8-v2 – prozentrechnung e3 „Prozentwert“: Prüfungshöhe (2021-OS-B1c)
+AUSWAHL prozentrechnung-e3-k1-s8-v3 – prozentrechnung e3 „Prozentwert“: Prüfungshöhe (2017-OS-B1b)
+AUSWAHL prozentrechnung-e3-k1-s8-v4 – prozentrechnung e3 „Prozentwert“: Prüfungshöhe (2017-OS-B1b)
+AUSWAHL prozentrechnung-e3-k1-s9-v1 – prozentrechnung e3 „Prozentwert“: Prüfungshöhe (2014-OS-B1a)
+AUSWAHL prozentrechnung-e3-k1-s9-v2 – prozentrechnung e3 „Prozentwert“: Prüfungshöhe (2014-OS-B1a)
+AUSWAHL prozentrechnung-e3-k1-s9-v3 – prozentrechnung e3 „Prozentwert“: Prüfungshöhe (2026-FOR-B1a)
+AUSWAHL prozentrechnung-e3-k1-s9-v4 – prozentrechnung e3 „Prozentwert“: Prüfungshöhe (2026-FOR-B1a)
+AUSWAHL prozentrechnung-e3-k1-s10-v1 – prozentrechnung e3 „Prozentwert“: Prüfungshöhe (2019-OS-K5a)
+AUSWAHL prozentrechnung-e3-k1-s10-v2 – prozentrechnung e3 „Prozentwert“: Prüfungshöhe (2019-OS-K5a)
+WEG prozentrechnung e3 „Mehrwertsteuer in Euro“ – keine Prüfungshöhe im Profil msa
+WEG prozentrechnung e4 „Was ist gegeben, was gesucht?“ – keine Prüfungshöhe im Profil msa
+AUSWAHL prozentrechnung-e4-k2-s0-v1 – prozentrechnung e4 „Grundwert“: Anlauf, Vorstufe
+AUSWAHL prozentrechnung-e4-k2-s1-v1 – prozentrechnung e4 „Grundwert“: Anlauf, Grundfall
+AUSWAHL prozentrechnung-e4-k2-s2-v1 – prozentrechnung e4 „Grundwert“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL prozentrechnung-e4-k2-s6-v1 – prozentrechnung e4 „Grundwert“: Prüfungshöhe (2025-OS-B1a)
+AUSWAHL prozentrechnung-e4-k2-s6-v2 – prozentrechnung e4 „Grundwert“: Prüfungshöhe (2025-OS-B1a)
+AUSWAHL prozentrechnung-e4-k2-s6-v3 – prozentrechnung e4 „Grundwert“: Prüfungshöhe (2023-OS-B1b)
+AUSWAHL prozentrechnung-e4-k2-s6-v4 – prozentrechnung e4 „Grundwert“: Prüfungshöhe (2023-OS-B1b)
+WEG prozentrechnung e5 „Welcher Wert ist der alte?“ – keine Prüfungshöhe im Profil msa
+AUSWAHL prozentrechnung-e5-k2-s0-v1 – prozentrechnung e5 „Veränderung“: Anlauf, Vorstufe
+AUSWAHL prozentrechnung-e5-k2-s1-v1 – prozentrechnung e5 „Veränderung“: Anlauf, Grundfall
+AUSWAHL prozentrechnung-e5-k2-s2-v1 – prozentrechnung e5 „Veränderung“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL prozentrechnung-e5-k2-s8-v1 – prozentrechnung e5 „Veränderung“: Prüfungshöhe (2026-FOR-K3c)
+AUSWAHL prozentrechnung-e5-k2-s8-v2 – prozentrechnung e5 „Veränderung“: Prüfungshöhe (2026-FOR-K3c)
+AUSWAHL prozentrechnung-e5-k2-s8-v3 – prozentrechnung e5 „Veränderung“: Prüfungshöhe (2022-OS-K4b)
+AUSWAHL prozentrechnung-e5-k2-s8-v4 – prozentrechnung e5 „Veränderung“: Prüfungshöhe (2022-OS-K4b)
+AUSWAHL prozentrechnung-e5-k2-s8-v5 – prozentrechnung e5 „Veränderung“: Prüfungshöhe (2016-OS-K2c)
+AUSWAHL prozentrechnung-e5-k2-s8-v6 – prozentrechnung e5 „Veränderung“: Prüfungshöhe (2016-OS-K2c)
+AUSWAHL prozentrechnung-e5-k2-s9-v1 – prozentrechnung e5 „Veränderung“: Prüfungshöhe (2024-OS-B1e)
+AUSWAHL prozentrechnung-e5-k2-s9-v2 – prozentrechnung e5 „Veränderung“: Prüfungshöhe (2024-OS-B1e)
+AUSWAHL prozentrechnung-e5-k2-s10-v1 – prozentrechnung e5 „Veränderung“: Prüfungshöhe (2015-OS-K2b)
+AUSWAHL prozentrechnung-e5-k2-s10-v2 – prozentrechnung e5 „Veränderung“: Prüfungshöhe (2015-OS-K2b)
+AUSWAHL prozentrechnung-e5-k2-s11-v1 – prozentrechnung e5 „Veränderung“: Prüfungshöhe (2025-OS-K4b)
+AUSWAHL prozentrechnung-e5-k2-s11-v2 – prozentrechnung e5 „Veränderung“: Prüfungshöhe (2025-OS-K4b)
+AUSWAHL zinsrechnung-e1-k1-s0-v1 – zinsrechnung e1 „Zinsen berechnen“: Anlauf, Vorstufe
+AUSWAHL zinsrechnung-e1-k1-s1-v1 – zinsrechnung e1 „Zinsen berechnen“: Anlauf, Grundfall
+AUSWAHL zinsrechnung-e1-k1-s2-v1 – zinsrechnung e1 „Zinsen berechnen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL zinsrechnung-e1-k1-s11-v1 – zinsrechnung e1 „Zinsen berechnen“: Prüfungshöhe (2015-OS-B1e)
+AUSWAHL zinsrechnung-e1-k1-s11-v2 – zinsrechnung e1 „Zinsen berechnen“: Prüfungshöhe (2015-OS-B1e)
+AUSWAHL zinsrechnung-e1-k1-s11-v3 – zinsrechnung e1 „Zinsen berechnen“: Prüfungshöhe (2014-OS-B1e)
+AUSWAHL zinsrechnung-e1-k1-s11-v4 – zinsrechnung e1 „Zinsen berechnen“: Prüfungshöhe (2014-OS-B1e)
+AUSWAHL zinsrechnung-e1-k1-s11-v5 – zinsrechnung e1 „Zinsen berechnen“: Prüfungshöhe (2014-OS-K3a)
+AUSWAHL zinsrechnung-e1-k1-s11-v6 – zinsrechnung e1 „Zinsen berechnen“: Prüfungshöhe (2014-OS-K3a)
+WEG zinsrechnung e1 „Monats- und Tageszinsen“ – keine Prüfungshöhe im Profil msa
+WEG zinsrechnung e1 „Überschlag: 1 % von … , dann grob mal p“ – keine Prüfungshöhe im Profil msa
+AUSWAHL zinsrechnung-e2-k1-s0-v1 – zinsrechnung e2 „Zinseszins“: Anlauf, Vorstufe
+AUSWAHL zinsrechnung-e2-k1-s1-v1 – zinsrechnung e2 „Zinseszins“: Anlauf, Grundfall
+AUSWAHL zinsrechnung-e2-k1-s2-v1 – zinsrechnung e2 „Zinseszins“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL zinsrechnung-e2-k1-s10-v1 – zinsrechnung e2 „Zinseszins“: Prüfungshöhe (2014-OS-K3b)
+AUSWAHL zinsrechnung-e2-k1-s10-v2 – zinsrechnung e2 „Zinseszins“: Prüfungshöhe (2014-OS-K3b)
+AUSWAHL zinsrechnung-e2-k1-s10-v3 – zinsrechnung e2 „Zinseszins“: Prüfungshöhe (2014-OS-K3c)
+AUSWAHL zinsrechnung-e2-k1-s10-v4 – zinsrechnung e2 „Zinseszins“: Prüfungshöhe (2014-OS-K3c)
+WEG zinsrechnung e2 „Guthaben nach n Jahren mit jährlicher Einzahlung (Tabelle statt Formel)“ – keine Prüfungshöhe im Profil msa
+WEG zinsrechnung e2 „Ratenkauf und Kredit mit Zinseszins (Vorrat, Verbrauchersicht)“ – keine Prüfungshöhe im Profil msa
+AUSWAHL rationale-zahlen-e1-k1-s0-v1 – rationale-zahlen e1 „Ordnen“: Anlauf, Vorstufe
+AUSWAHL rationale-zahlen-e1-k1-s1-v1 – rationale-zahlen e1 „Ordnen“: Anlauf, Grundfall
+AUSWAHL rationale-zahlen-e1-k1-s3-v1 – rationale-zahlen e1 „Ordnen“: Anlauf, Sprosse – Fallstrick im Merkmal („zwei negative Zahlen: die mit dem größeren Betrag “)
+AUSWAHL rationale-zahlen-e1-k1-s6-v1 – rationale-zahlen e1 „Ordnen“: Prüfungshöhe (2015-OS-B1b)
+AUSWAHL rationale-zahlen-e1-k1-s6-v2 – rationale-zahlen e1 „Ordnen“: Prüfungshöhe (2015-OS-B1b)
+AUSWAHL rationale-zahlen-e1-k1-s7-v1 – rationale-zahlen e1 „Ordnen“: Prüfungshöhe (2014-OS-B1h)
+AUSWAHL rationale-zahlen-e1-k1-s7-v2 – rationale-zahlen e1 „Ordnen“: Prüfungshöhe (2014-OS-B1h)
+WEG rationale-zahlen e1 „Mitte zweier Zahlen“ – keine Prüfungshöhe im Profil msa
+WEG rationale-zahlen e1 „runden“ – keine Prüfungshöhe im Profil msa
+WEG rationale-zahlen e1 „Punkte in vier Quadranten“ – keine Prüfungshöhe im Profil msa
+WEG rationale-zahlen e2 „Vorzeichen oder Rechenzeichen?“ – keine Prüfungshöhe im Profil msa
+WEG rationale-zahlen e2 „Zeichen zusammenfassen“ – keine Prüfungshöhe im Profil msa
+WEG rationale-zahlen e2 „Addieren/Subtrahieren“ – keine Prüfungshöhe im Profil msa
+WEG rationale-zahlen e2 „Beträge: gleiche Vorzeichen addieren, verschiedene subtrahieren“ – keine Prüfungshöhe im Profil msa
+WEG rationale-zahlen e2 „Dezimalzahlen und Brüche“ – keine Prüfungshöhe im Profil msa
+WEG rationale-zahlen e2 „Umkehrung: Rechnung zu Ergebnis finden“ – keine Prüfungshöhe im Profil msa
+AUSWAHL rationale-zahlen-e3-k1-s0-v1 – rationale-zahlen e3 „Multiplizieren/Dividieren“: Anlauf, Vorstufe
+AUSWAHL rationale-zahlen-e3-k1-s1-v1 – rationale-zahlen e3 „Multiplizieren/Dividieren“: Anlauf, Grundfall
+AUSWAHL rationale-zahlen-e3-k1-s2-v1 – rationale-zahlen e3 „Multiplizieren/Dividieren“: Anlauf, Sprosse – Fallstrick im Merkmal („beide negativ: Ergebnis positiv“)
+AUSWAHL rationale-zahlen-e3-k1-s7-v1 – rationale-zahlen e3 „Multiplizieren/Dividieren“: Prüfungshöhe (2021-OS-B1g)
+AUSWAHL rationale-zahlen-e3-k1-s7-v2 – rationale-zahlen e3 „Multiplizieren/Dividieren“: Prüfungshöhe (2021-OS-B1g)
+AUSWAHL rationale-zahlen-e3-k1-s8-v1 – rationale-zahlen e3 „Multiplizieren/Dividieren“: Prüfungshöhe (2016-OS-B1i)
+AUSWAHL rationale-zahlen-e3-k1-s8-v2 – rationale-zahlen e3 „Multiplizieren/Dividieren“: Prüfungshöhe (2016-OS-B1i)
+AUSWAHL rationale-zahlen-e3-k1-s9-v1 – rationale-zahlen e3 „Multiplizieren/Dividieren“: Prüfungshöhe (2026-FOR-B1g)
+AUSWAHL rationale-zahlen-e3-k1-s9-v2 – rationale-zahlen e3 „Multiplizieren/Dividieren“: Prüfungshöhe (2026-FOR-B1g)
+AUSWAHL rationale-zahlen-e3-k1-s10-v1 – rationale-zahlen e3 „Multiplizieren/Dividieren“: Prüfungshöhe (2015-OS-B1g)
+AUSWAHL rationale-zahlen-e3-k1-s10-v2 – rationale-zahlen e3 „Multiplizieren/Dividieren“: Prüfungshöhe (2015-OS-B1g)
+WEG rationale-zahlen e3 „Vorzeichenregel als Aussage prüfen“ – keine Prüfungshöhe im Profil msa
+AUSWAHL rationale-zahlen-e4-k1-s0-v1 – rationale-zahlen e4 „Terme und Sachaufgaben“: Anlauf, Vorstufe
+AUSWAHL rationale-zahlen-e4-k1-s1-v1 – rationale-zahlen e4 „Terme und Sachaufgaben“: Anlauf, Grundfall
+AUSWAHL rationale-zahlen-e4-k1-s4-v1 – rationale-zahlen e4 „Terme und Sachaufgaben“: Anlauf, Sprosse – Fallstrick im Merkmal („Minus vor der Klammer: alle Zeichen in der Klammer“)
+AUSWAHL rationale-zahlen-e4-k1-s6-v1 – rationale-zahlen e4 „Terme und Sachaufgaben“: Prüfungshöhe (2016-OS-K2d)
+AUSWAHL rationale-zahlen-e4-k1-s6-v2 – rationale-zahlen e4 „Terme und Sachaufgaben“: Prüfungshöhe (2016-OS-K2d)
+AUSWAHL rationale-zahlen-e4-k1-s7-v1 – rationale-zahlen e4 „Terme und Sachaufgaben“: Prüfungshöhe (2017-OS-K2a)
+AUSWAHL rationale-zahlen-e4-k1-s7-v2 – rationale-zahlen e4 „Terme und Sachaufgaben“: Prüfungshöhe (2017-OS-K2a)
+WEG rationale-zahlen e4 „Rechenvorteile (Tauschen, geschickt zusammenfassen)“ – keine Prüfungshöhe im Profil msa
+WEG potenzen-wurzeln e1 „Plus oder minus?“ – keine Prüfungshöhe im Profil msa
+WEG potenzen-wurzeln e1 „Bruch oder minus?“ – keine Prüfungshöhe im Profil msa
+AUSWAHL potenzen-wurzeln-e1-k3-s0-v1 – potenzen-wurzeln e1 „Potenzen“: Anlauf, Vorstufe
+AUSWAHL potenzen-wurzeln-e1-k3-s1-v1 – potenzen-wurzeln e1 „Potenzen“: Anlauf, Grundfall
+AUSWAHL potenzen-wurzeln-e1-k3-s5-v1 – potenzen-wurzeln e1 „Potenzen“: Anlauf, Sprosse – Fallstrick im Merkmal („negative Basis in Klammern: Vorzeichen aus der Hoc“)
+AUSWAHL potenzen-wurzeln-e1-k3-s15-v1 – potenzen-wurzeln e1 „Potenzen“: Prüfungshöhe (2020-OS-B1h)
+AUSWAHL potenzen-wurzeln-e1-k3-s15-v2 – potenzen-wurzeln e1 „Potenzen“: Prüfungshöhe (2020-OS-B1h)
+AUSWAHL potenzen-wurzeln-e1-k3-s15-v3 – potenzen-wurzeln e1 „Potenzen“: Prüfungshöhe (2024-OS-B1g)
+AUSWAHL potenzen-wurzeln-e1-k3-s15-v4 – potenzen-wurzeln e1 „Potenzen“: Prüfungshöhe (2024-OS-B1g)
+AUSWAHL potenzen-wurzeln-e1-k3-s15-v5 – potenzen-wurzeln e1 „Potenzen“: Prüfungshöhe (2019-OS-B1d)
+AUSWAHL potenzen-wurzeln-e1-k3-s15-v6 – potenzen-wurzeln e1 „Potenzen“: Prüfungshöhe (2019-OS-B1d)
+AUSWAHL potenzen-wurzeln-e1-k3-s15-v7 – potenzen-wurzeln e1 „Potenzen“: Prüfungshöhe (2022-OS-B1j)
+AUSWAHL potenzen-wurzeln-e1-k3-s15-v8 – potenzen-wurzeln e1 „Potenzen“: Prüfungshöhe (2022-OS-B1j)
+WEG potenzen-wurzeln e1 „Potenzen von Brüchen“ – keine Prüfungshöhe im Profil msa
+WEG potenzen-wurzeln e1 „Potenz gegen Dezimalzahl und Prozent vergleichen“ – keine Prüfungshöhe im Profil msa
+WEG potenzen-wurzeln e1 „hoch null“ – keine Prüfungshöhe im Profil msa
+AUSWAHL potenzen-wurzeln-e2-k1-s0-v1 – potenzen-wurzeln e2 „Zehnerpotenzen“: Anlauf, Vorstufe
+AUSWAHL potenzen-wurzeln-e2-k1-s1-v1 – potenzen-wurzeln e2 „Zehnerpotenzen“: Anlauf, Grundfall
+AUSWAHL potenzen-wurzeln-e2-k1-s10-v1 – potenzen-wurzeln e2 „Zehnerpotenzen“: Anlauf, Sprosse – Fallstrick im Merkmal („negative Hochzahl: Komma nach links, vorn Nullen“)
+AUSWAHL potenzen-wurzeln-e2-k1-s6-v1 – potenzen-wurzeln e2 „Zehnerpotenzen“: Prüfungshöhe (2016-OS-B1h)
+AUSWAHL potenzen-wurzeln-e2-k1-s6-v2 – potenzen-wurzeln e2 „Zehnerpotenzen“: Prüfungshöhe (2016-OS-B1h)
+AUSWAHL potenzen-wurzeln-e2-k1-s6-v3 – potenzen-wurzeln e2 „Zehnerpotenzen“: Prüfungshöhe (2016-OS-B1h)
+AUSWAHL potenzen-wurzeln-e2-k1-s9-v1 – potenzen-wurzeln e2 „Zehnerpotenzen“: Prüfungshöhe (2015-OS-K3b)
+AUSWAHL potenzen-wurzeln-e2-k1-s9-v2 – potenzen-wurzeln e2 „Zehnerpotenzen“: Prüfungshöhe (2015-OS-K3b)
+AUSWAHL potenzen-wurzeln-e2-k1-s9-v3 – potenzen-wurzeln e2 „Zehnerpotenzen“: Prüfungshöhe (2015-OS-K3b)
+AUSWAHL potenzen-wurzeln-e2-k1-s17-v1 – potenzen-wurzeln e2 „Zehnerpotenzen“: Prüfungshöhe (2025-OS-B1d)
+AUSWAHL potenzen-wurzeln-e2-k1-s17-v2 – potenzen-wurzeln e2 „Zehnerpotenzen“: Prüfungshöhe (2025-OS-B1d)
+AUSWAHL potenzen-wurzeln-e2-k1-s17-v3 – potenzen-wurzeln e2 „Zehnerpotenzen“: Prüfungshöhe (2019-OS-B1j)
+AUSWAHL potenzen-wurzeln-e2-k1-s17-v4 – potenzen-wurzeln e2 „Zehnerpotenzen“: Prüfungshöhe (2019-OS-B1j)
+AUSWAHL potenzen-wurzeln-e2-k1-s17-v5 – potenzen-wurzeln e2 „Zehnerpotenzen“: Prüfungshöhe (2015-OS-K3a)
+AUSWAHL potenzen-wurzeln-e2-k1-s17-v6 – potenzen-wurzeln e2 „Zehnerpotenzen“: Prüfungshöhe (2015-OS-K3a)
+AUSWAHL potenzen-wurzeln-e2-k1-s17-v7 – potenzen-wurzeln e2 „Zehnerpotenzen“: Prüfungshöhe (2017-OS-B1e)
+AUSWAHL potenzen-wurzeln-e2-k1-s17-v8 – potenzen-wurzeln e2 „Zehnerpotenzen“: Prüfungshöhe (2017-OS-B1e)
+TEILUNG potenzen-wurzeln e2 „Zehnerpotenzen“: 14 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+WEG potenzen-wurzeln e3 „Was zuerst?“ – keine Prüfungshöhe im Profil msa
+AUSWAHL potenzen-wurzeln-e3-k2-s0-v1 – potenzen-wurzeln e3 „Quadratwurzeln“: Anlauf, Vorstufe
+AUSWAHL potenzen-wurzeln-e3-k2-s1-v1 – potenzen-wurzeln e3 „Quadratwurzeln“: Anlauf, Grundfall
+AUSWAHL potenzen-wurzeln-e3-k2-s7-v1 – potenzen-wurzeln e3 „Quadratwurzeln“: Anlauf, Sprosse – Fallstrick im Merkmal („negative Zahl im Quadrat unter der Wurzel: erst da“)
+AUSWAHL potenzen-wurzeln-e3-k2-s10-v1 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2020-OS-B1d)
+AUSWAHL potenzen-wurzeln-e3-k2-s10-v2 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2020-OS-B1d)
+AUSWAHL potenzen-wurzeln-e3-k2-s10-v3 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2020-OS-B1d)
+AUSWAHL potenzen-wurzeln-e3-k2-s13-v1 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2015-OS-B1j, Stern)
+AUSWAHL potenzen-wurzeln-e3-k2-s13-v2 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2015-OS-B1j, Stern)
+AUSWAHL potenzen-wurzeln-e3-k2-s13-v3 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2015-OS-B1c)
+AUSWAHL potenzen-wurzeln-e3-k2-s13-v4 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2015-OS-B1c)
+AUSWAHL potenzen-wurzeln-e3-k2-s13-v5 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2014-OS-B1h)
+AUSWAHL potenzen-wurzeln-e3-k2-s13-v6 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2014-OS-B1h)
+AUSWAHL potenzen-wurzeln-e3-k2-s13-v7 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2024-OS-K6a)
+AUSWAHL potenzen-wurzeln-e3-k2-s13-v8 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2024-OS-K6a)
+AUSWAHL potenzen-wurzeln-e3-k2-s13-v9 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2022-OS-K2d, Stern)
+AUSWAHL potenzen-wurzeln-e3-k2-s13-v10 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2022-OS-K2d, Stern)
+AUSWAHL potenzen-wurzeln-e3-k2-s13-v11 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2025-OS-K5c, Stern)
+AUSWAHL potenzen-wurzeln-e3-k2-s13-v12 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2025-OS-K5c, Stern)
+TEILUNG potenzen-wurzeln e3 „Quadratwurzeln“: 15 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+WEG einheiten e1 „Passt die Angabe?“ – keine Prüfungshöhe im Profil msa
+AUSWAHL einheiten-e1-k2-s0-v1 – einheiten e1 „Länge, Masse und Geld umrechnen“: Anlauf, Vorstufe
+AUSWAHL einheiten-e1-k2-s1-v1 – einheiten e1 „Länge, Masse und Geld umrechnen“: Anlauf, Grundfall
+AUSWAHL einheiten-e1-k2-s2-v1 – einheiten e1 „Länge, Masse und Geld umrechnen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL einheiten-e1-k2-s9-v1 – einheiten e1 „Länge, Masse und Geld umrechnen“: Prüfungshöhe (2019-OS-B1b)
+AUSWAHL einheiten-e1-k2-s9-v2 – einheiten e1 „Länge, Masse und Geld umrechnen“: Prüfungshöhe (2026-FOR-B1d)
+AUSWAHL einheiten-e1-k2-s9-v3 – einheiten e1 „Länge, Masse und Geld umrechnen“: Prüfungshöhe (2019-OS-B1b)
+AUSWAHL einheiten-e1-k2-s10-v1 – einheiten e1 „Länge, Masse und Geld umrechnen“: Prüfungshöhe (2016-OS-K3a)
+AUSWAHL einheiten-e1-k2-s10-v2 – einheiten e1 „Länge, Masse und Geld umrechnen“: Prüfungshöhe (2016-OS-K3a)
+WEG einheiten e1 „Maßstab im Koordinatensystem, Sek II“ – keine Prüfungshöhe im Profil msa
+WEG einheiten e1 „Einheiten der Länge, der Masse und des Geldes der Größe nach ordnen“ – keine Prüfungshöhe im Profil msa
+WEG einheiten e1 „Repräsentanten zuordnen (welche Angabe passt zu welchem Gegenstand)“ – keine Prüfungshöhe im Profil msa
+WEG einheiten e1 „drei bis vier Größen ordnen“ – keine Prüfungshöhe im Profil msa
+WEG einheiten e1 „Umrechnen mit gegebenem Faktor bei nichtmetrischen Einheiten (Fuß, Meile, Zoll; P10-Form)“ – keine Prüfungshöhe im Profil msa
+WEG einheiten e1 „Größen mit gleicher Einheit addieren und subtrahieren“ – keine Prüfungshöhe im Profil msa
+AUSWAHL einheiten-e2-k1-s0-v1 – einheiten e2 „Zeit umrechnen und Zeitspannen berechnen“: Anlauf, Vorstufe
+AUSWAHL einheiten-e2-k1-s1-v1 – einheiten e2 „Zeit umrechnen und Zeitspannen berechnen“: Anlauf, Grundfall
+AUSWAHL einheiten-e2-k1-s2-v1 – einheiten e2 „Zeit umrechnen und Zeitspannen berechnen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL einheiten-e2-k1-s9-v1 – einheiten e2 „Zeit umrechnen und Zeitspannen berechnen“: Prüfungshöhe (2018-OS-B1e)
+AUSWAHL einheiten-e2-k1-s9-v2 – einheiten e2 „Zeit umrechnen und Zeitspannen berechnen“: Prüfungshöhe (2025-OS-B1b)
+AUSWAHL einheiten-e2-k1-s9-v3 – einheiten e2 „Zeit umrechnen und Zeitspannen berechnen“: Prüfungshöhe (2024-OS-B1a)
+AUSWAHL einheiten-e2-k1-s10-v1 – einheiten e2 „Zeit umrechnen und Zeitspannen berechnen“: Prüfungshöhe (2021-OS-B1a)
+AUSWAHL einheiten-e2-k1-s10-v2 – einheiten e2 „Zeit umrechnen und Zeitspannen berechnen“: Prüfungshöhe (2021-OS-B1a)
+WEG einheiten e2 „Zeiteinheiten nennen und ordnen“ – keine Prüfungshöhe im Profil msa
+WEG einheiten e2 „Startzeit aus Endzeit und Dauer“ – keine Prüfungshöhe im Profil msa
+WEG einheiten e2 „Fahrplan: nächste Abfahrt, Fahrzeit“ – keine Prüfungshöhe im Profil msa
+WEG einheiten e2 „Dauer in eine sinnvolle Einheit bringen (Sekunden in Minuten, Stunden in Tage)“ – keine Prüfungshöhe im Profil msa
+AUSWAHL einheiten-e3-k1-s0-v1 – einheiten e3 „Flächen- und Volumeneinheiten umrechnen“: Anlauf, Vorstufe
+AUSWAHL einheiten-e3-k1-s1-v1 – einheiten e3 „Flächen- und Volumeneinheiten umrechnen“: Anlauf, Grundfall
+AUSWAHL einheiten-e3-k1-s2-v1 – einheiten e3 „Flächen- und Volumeneinheiten umrechnen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL einheiten-e3-k1-s9-v1 – einheiten e3 „Flächen- und Volumeneinheiten umrechnen“: Prüfungshöhe (2022-OS-B1h)
+AUSWAHL einheiten-e3-k1-s9-v2 – einheiten e3 „Flächen- und Volumeneinheiten umrechnen“: Prüfungshöhe (2022-OS-B1h)
+AUSWAHL einheiten-e3-k1-s9-v3 – einheiten e3 „Flächen- und Volumeneinheiten umrechnen“: Prüfungshöhe (2022-OS-B1h)
+AUSWAHL einheiten-e3-k1-s10-v1 – einheiten e3 „Flächen- und Volumeneinheiten umrechnen“: Prüfungshöhe (2017-OS-K3d)
+AUSWAHL einheiten-e3-k1-s10-v2 – einheiten e3 „Flächen- und Volumeneinheiten umrechnen“: Prüfungshöhe (2017-OS-K3d)
+WEG einheiten e3 „Flächen- und Volumeneinheiten im Koordinatensystem, Sek II“ – keine Prüfungshöhe im Profil msa
+WEG einheiten e3 „Flächeneinheiten ordnen (mm² bis km², a und ha einordnen)“ – keine Prüfungshöhe im Profil msa
+WEG einheiten e3 „Repräsentanten zuordnen“ – keine Prüfungshöhe im Profil msa
+AUSWAHL einheiten-e4-k1-s0-v1 – einheiten e4 „Mit Größen rechnen im Sachzusammenhang“: Anlauf, Vorstufe
+AUSWAHL einheiten-e4-k1-s1-v1 – einheiten e4 „Mit Größen rechnen im Sachzusammenhang“: Anlauf, Grundfall
+AUSWAHL einheiten-e4-k1-s2-v1 – einheiten e4 „Mit Größen rechnen im Sachzusammenhang“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL einheiten-e4-k1-s10-v1 – einheiten e4 „Mit Größen rechnen im Sachzusammenhang“: Prüfungshöhe (2016-OS-K3d)
+AUSWAHL einheiten-e4-k1-s10-v2 – einheiten e4 „Mit Größen rechnen im Sachzusammenhang“: Prüfungshöhe (2016-OS-K3d)
+AUSWAHL einheiten-e4-k1-s10-v3 – einheiten e4 „Mit Größen rechnen im Sachzusammenhang“: Prüfungshöhe (2016-OS-K3d)
+AUSWAHL einheiten-e4-k1-s11-v1 – einheiten e4 „Mit Größen rechnen im Sachzusammenhang“: Prüfungshöhe (2015-OS-K6d)
+AUSWAHL einheiten-e4-k1-s11-v2 – einheiten e4 „Mit Größen rechnen im Sachzusammenhang“: Prüfungshöhe (2015-OS-K6d)
+AUSWAHL einheiten-e4-k1-s11-v3 – einheiten e4 „Mit Größen rechnen im Sachzusammenhang“: Prüfungshöhe (2015-OS-K6d)
+AUSWAHL einheiten-e4-k1-s12-v1 – einheiten e4 „Mit Größen rechnen im Sachzusammenhang“: Prüfungshöhe (2014-OS-K4e)
+AUSWAHL einheiten-e4-k1-s12-v2 – einheiten e4 „Mit Größen rechnen im Sachzusammenhang“: Prüfungshöhe (2014-OS-K4e)
+WEG einheiten e4 „Kosten und Einnahmen, Sek II“ – keine Prüfungshöhe im Profil msa
+WEG einheiten e4 „Dichte aus Masse und Volumen (Vorrat)“ – keine Prüfungshöhe im Profil msa
+WEG einheiten e4 „Euro und Cent in einer Rechnung“ – keine Prüfungshöhe im Profil msa
+AUSWAHL terme-e1-k1-s1-v1 – terme e1 „Term aufstellen“: Anlauf, Grundfall
+AUSWAHL terme-e1-k1-s6-v1 – terme e1 „Term aufstellen“: Anlauf, Sprosse – Fallstrick im Merkmal („drei Anweisungen, die Klammer wird nötig“)
+AUSWAHL terme-e1-k1-s7-v1 – terme e1 „Term aufstellen“: Prüfungshöhe (2023-OS-B1h)
+AUSWAHL terme-e1-k1-s7-v2 – terme e1 „Term aufstellen“: Prüfungshöhe (2023-OS-B1h)
+AUSWAHL terme-e1-k1-s7-v3 – terme e1 „Term aufstellen“: Prüfungshöhe (2017-OS-B1i)
+AUSWAHL terme-e1-k1-s7-v4 – terme e1 „Term aufstellen“: Prüfungshöhe (2017-OS-B1i)
+WEG terme e1 „Termwert berechnen“ – keine Prüfungshöhe im Profil msa
+WEG terme e1 „Situation zu Term angeben“ – keine Prüfungshöhe im Profil msa
+WEG terme e2 „Gleichartige Glieder erkennen“ – keine Prüfungshöhe im Profil msa
+WEG terme e2 „Vorzahl lesen“ – keine Prüfungshöhe im Profil msa
+WEG terme e2 „Vorzeichen als Teil des Gliedes“ – keine Prüfungshöhe im Profil msa
+AUSWAHL terme-e2-k4-s1-v1 – terme e2 „Zusammenfassen“: Anlauf, Grundfall
+AUSWAHL terme-e2-k4-s7-v1 – terme e2 „Zusammenfassen“: Anlauf, Sprosse – Fallstrick im Merkmal („Ergebnis mit negativer Vorzahl“)
+AUSWAHL terme-e2-k4-s11-v1 – terme e2 „Zusammenfassen“: Prüfungshöhe (2025-GYM-B2a)
+AUSWAHL terme-e2-k4-s11-v2 – terme e2 „Zusammenfassen“: Prüfungshöhe (2025-GYM-B2a)
+WEG terme e2 „Malnehmen“ – keine Prüfungshöhe im Profil msa
+WEG terme e3 „Zeichen vor der Klammer feststellen“ – keine Prüfungshöhe im Profil msa
+WEG terme e3 „Klammern“ – keine Prüfungshöhe im Profil msa
+WEG terme e4 „Ausklammern“ – keine Prüfungshöhe im Profil msa
+WEG lineare-gleichungen e1 „Umkehroperation benennen“ – keine Prüfungshöhe im Profil msa
+AUSWAHL lineare-gleichungen-e1-k2-s1-v1 – lineare-gleichungen e1 „Lösung prüfen“: Anlauf, Grundfall
+AUSWAHL lineare-gleichungen-e1-k2-s2-v1 – lineare-gleichungen e1 „Lösung prüfen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL lineare-gleichungen-e1-k2-s5-v1 – lineare-gleichungen e1 „Lösung prüfen“: Prüfungshöhe (2018-OS-B1c)
+AUSWAHL lineare-gleichungen-e1-k2-s5-v2 – lineare-gleichungen e1 „Lösung prüfen“: Prüfungshöhe (2018-OS-B1c)
+AUSWAHL lineare-gleichungen-e1-k2-s5-v3 – lineare-gleichungen e1 „Lösung prüfen“: Prüfungshöhe (2022-OS-B1c)
+AUSWAHL lineare-gleichungen-e1-k2-s5-v4 – lineare-gleichungen e1 „Lösung prüfen“: Prüfungshöhe (2022-OS-B1c)
+WEG lineare-gleichungen e1 „Durch Probieren lösen“ – keine Prüfungshöhe im Profil msa
+WEG lineare-gleichungen e2 „Vorzahl und Zeichen bei x lesen“ – keine Prüfungshöhe im Profil msa
+WEG lineare-gleichungen e2 „Reihenfolge bestimmen“ – keine Prüfungshöhe im Profil msa
+AUSWAHL lineare-gleichungen-e2-k3-s0-v1 – lineare-gleichungen e2 „Umformen“: Anlauf, Vorstufe
+AUSWAHL lineare-gleichungen-e2-k3-s1-v1 – lineare-gleichungen e2 „Umformen“: Anlauf, Grundfall
+AUSWAHL lineare-gleichungen-e2-k3-s3-v1 – lineare-gleichungen e2 „Umformen“: Anlauf, Sprosse – Fallstrick im Merkmal („die Lösung ist negativ“)
+AUSWAHL lineare-gleichungen-e2-k3-s8-v1 – lineare-gleichungen e2 „Umformen“: Prüfungshöhe (2020-OS-B1e)
+AUSWAHL lineare-gleichungen-e2-k3-s8-v2 – lineare-gleichungen e2 „Umformen“: Prüfungshöhe (2020-OS-B1e)
+AUSWAHL lineare-gleichungen-e2-k3-s8-v3 – lineare-gleichungen e2 „Umformen“: Prüfungshöhe (2023-OS-B1e)
+AUSWAHL lineare-gleichungen-e2-k3-s8-v4 – lineare-gleichungen e2 „Umformen“: Prüfungshöhe (2023-OS-B1e)
+AUSWAHL lineare-gleichungen-e2-k3-s8-v5 – lineare-gleichungen e2 „Umformen“: Prüfungshöhe (2024-OS-B1d)
+AUSWAHL lineare-gleichungen-e2-k3-s8-v6 – lineare-gleichungen e2 „Umformen“: Prüfungshöhe (2024-OS-B1d)
+WEG lineare-gleichungen e3 „x beidseitig“ – keine Prüfungshöhe im Profil msa
+WEG lineare-gleichungen e3 „Dezimalzahlen“ – keine Prüfungshöhe im Profil msa
+AUSWAHL lineare-gleichungen-e4-k1-s1-v1 – lineare-gleichungen e4 „Aufstellen“: Anlauf, Grundfall
+AUSWAHL lineare-gleichungen-e4-k1-s2-v1 – lineare-gleichungen e4 „Aufstellen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL lineare-gleichungen-e4-k1-s6-v1 – lineare-gleichungen e4 „Aufstellen“: Prüfungshöhe (2020-OS-K2e, Stern)
+AUSWAHL lineare-gleichungen-e4-k1-s6-v2 – lineare-gleichungen e4 „Aufstellen“: Prüfungshöhe (2020-OS-K2e, Stern)
+AUSWAHL lineare-gleichungen-e4-k1-s6-v3 – lineare-gleichungen e4 „Aufstellen“: Prüfungshöhe (2018-OS-K3b)
+AUSWAHL lineare-gleichungen-e4-k1-s6-v4 – lineare-gleichungen e4 „Aufstellen“: Prüfungshöhe (2018-OS-K3b)
+AUSWAHL lineare-gleichungen-e4-k1-s6-v5 – lineare-gleichungen e4 „Aufstellen“: Prüfungshöhe (2016-OS-B1b)
+AUSWAHL lineare-gleichungen-e4-k1-s6-v6 – lineare-gleichungen e4 „Aufstellen“: Prüfungshöhe (2016-OS-B1b)
+AUSWAHL lineare-gleichungen-e4-k1-s6-v7 – lineare-gleichungen e4 „Aufstellen“: Prüfungshöhe (2021-OS-B1e)
+AUSWAHL lineare-gleichungen-e4-k1-s6-v8 – lineare-gleichungen e4 „Aufstellen“: Prüfungshöhe (2021-OS-B1e)
+WEG lineare-gleichungen e4 „Formel umstellen“ – keine Prüfungshöhe im Profil msa
+WEG binomische-formeln e1 „Summe mal Summe“ – keine Prüfungshöhe im Profil msa
+WEG binomische-formeln e1 „Termwert mit zwei Variablen berechnen (auch negativ)“ – keine Prüfungshöhe im Profil msa
+WEG binomische-formeln e2 „Gleiche Klammer zweimal?“ – keine Prüfungshöhe im Profil msa
+AUSWAHL binomische-formeln-e2-k2-s0-v1 – binomische-formeln e2 „Binomische Formeln“: Anlauf, Vorstufe
+AUSWAHL binomische-formeln-e2-k2-s1-v1 – binomische-formeln e2 „Binomische Formeln“: Anlauf, Grundfall
+AUSWAHL binomische-formeln-e2-k2-s2-v1 – binomische-formeln e2 „Binomische Formeln“: Anlauf, Sprosse – Fallstrick im Merkmal („Minus in der Klammer, Mittelglied negativ, letztes“)
+AUSWAHL binomische-formeln-e2-k2-s10-v1 – binomische-formeln e2 „Binomische Formeln“: Prüfungshöhe (2017-OS-K5d, Stern)
+AUSWAHL binomische-formeln-e2-k2-s10-v2 – binomische-formeln e2 „Binomische Formeln“: Prüfungshöhe (2017-OS-K5d, Stern)
+AUSWAHL binomische-formeln-e2-k2-s10-v3 – binomische-formeln e2 „Binomische Formeln“: Prüfungshöhe (2022-OS-K3c, Stern)
+AUSWAHL binomische-formeln-e2-k2-s10-v4 – binomische-formeln e2 „Binomische Formeln“: Prüfungshöhe (2022-OS-K3c, Stern)
+WEG binomische-formeln e2 „Kopfrechnen mit der Formel (Vorrat)“ – keine Prüfungshöhe im Profil msa
+WEG binomische-formeln e3 „Faktorisieren“ – keine Prüfungshöhe im Profil msa
+WARNUNG Nr. 12: 18 Teilaufgaben, 18 mit Grafik – über dem Halbseitenmaß (2.3 g)
+FORM lineare-gleichungen-e2-k3-s8-v1 (Nr. 68): gleichungsraster mit Text → teile
+FORM lineare-gleichungen-e2-k3-s8-v2 (Nr. 68): gleichungsraster mit Text → teile
+FORM lineare-gleichungen-e2-k3-s8-v3 (Nr. 68): gleichungsraster mit Text → teile
+FORM lineare-gleichungen-e2-k3-s8-v4 (Nr. 68): gleichungsraster mit Text → teile
+FORM lineare-gleichungen-e2-k3-s8-v5 (Nr. 68): gleichungsraster mit Text → teile
+FORM lineare-gleichungen-e2-k3-s8-v6 (Nr. 68): gleichungsraster mit Text → teile
+WARNUNG Nr. 70: 8 Teilaufgaben, 2 mit Grafik – über dem Halbseitenmaß (2.3 g)
+FORM binomische-formeln-e2-k2-s1-v1 (Nr. 71): gleichungsraster mit Text → teile
+FORM binomische-formeln-e2-k2-s2-v1 (Nr. 71): gleichungsraster mit Text → teile
+STRUKTUR 4 Fehler
+  FEHLER brueche-dezimalzahlen_a.tex:153: _ außerhalb Mathe
+  FEHLER brueche-dezimalzahlen_a.tex:154: _ außerhalb Mathe
+  FEHLER brueche-dezimalzahlen_a.tex:175: _ außerhalb Mathe
+  FEHLER brueche-dezimalzahlen_a.tex:176: _ außerhalb Mathe

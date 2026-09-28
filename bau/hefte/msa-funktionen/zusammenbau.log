@@ -1,0 +1,343 @@
+# zusammenbau v0.4: zusammenbau.py lineare-funktionen quadratische-funktionen quadratische-gleichungen lineare-gleichungssysteme potenz-exponentialfunktionen zuordnungen --heft msa --titel Prüfungsheft MSA · Funktionen
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG LIN-H1 – Kürzel LIN aus _kuerzel.csv (mathe-nachhilfe) (erster Eintrag lineare-funktionen); Rezept H (Heft)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+WEG lineare-funktionen e1 „Proportionale Funktion“ – keine Prüfungshöhe im Profil msa
+WEG lineare-funktionen e1 „Dreisatz als Kontrolle“ – keine Prüfungshöhe im Profil msa
+WEG lineare-funktionen e2 „m und n in der Gleichung markieren“ – keine Prüfungshöhe im Profil msa
+WEG lineare-funktionen e2 „Steigungsrichtung ohne Zeichnen“ – keine Prüfungshöhe im Profil msa
+WEG lineare-funktionen e2 „Steigungsdreieck lesen“ – keine Prüfungshöhe im Profil msa
+AUSWAHL lineare-funktionen-e2-k4-s1-v1 – lineare-funktionen e2 „Graph zeichnen“: Anlauf, Grundfall
+AUSWAHL lineare-funktionen-e2-k4-s5-v1 – lineare-funktionen e2 „Graph zeichnen“: Anlauf, Sprosse – Fallstrick im Merkmal („m negativ: 1 nach rechts, nach unten“)
+AUSWAHL lineare-funktionen-e2-k4-s8-v1 – lineare-funktionen e2 „Graph zeichnen“: Prüfungshöhe (2026-FOR-K5a)
+AUSWAHL lineare-funktionen-e2-k4-s8-v2 – lineare-funktionen e2 „Graph zeichnen“: Prüfungshöhe (2026-FOR-K5a)
+AUSWAHL lineare-funktionen-e2-k4-s8-v3 – lineare-funktionen e2 „Graph zeichnen“: Prüfungshöhe (2024-OS-K3a)
+AUSWAHL lineare-funktionen-e2-k4-s8-v4 – lineare-funktionen e2 „Graph zeichnen“: Prüfungshöhe (2024-OS-K3a)
+AUSWAHL lineare-funktionen-e2-k4-s8-v5 – lineare-funktionen e2 „Graph zeichnen“: Prüfungshöhe (2022-OS-K3a)
+AUSWAHL lineare-funktionen-e2-k4-s8-v6 – lineare-funktionen e2 „Graph zeichnen“: Prüfungshöhe (2022-OS-K3a)
+AUSWAHL lineare-funktionen-e2-k4-s8-v7 – lineare-funktionen e2 „Graph zeichnen“: Prüfungshöhe (2021-OS-K2a)
+AUSWAHL lineare-funktionen-e2-k4-s8-v8 – lineare-funktionen e2 „Graph zeichnen“: Prüfungshöhe (2021-OS-K2a)
+AUSWAHL lineare-funktionen-e2-k5-s1-v1 – lineare-funktionen e2 „Ablesen“: Anlauf, Grundfall
+AUSWAHL lineare-funktionen-e2-k5-s3-v1 – lineare-funktionen e2 „Ablesen“: Anlauf, Sprosse – Fallstrick im Merkmal („m negativ ablesen“)
+AUSWAHL lineare-funktionen-e2-k5-s6-v1 – lineare-funktionen e2 „Ablesen“: Prüfungshöhe (2019-OS-K2c)
+AUSWAHL lineare-funktionen-e2-k5-s6-v2 – lineare-funktionen e2 „Ablesen“: Prüfungshöhe (2019-OS-K2c)
+AUSWAHL lineare-funktionen-e2-k5-s6-v3 – lineare-funktionen e2 „Ablesen“: Prüfungshöhe (2019-OS-K2b)
+AUSWAHL lineare-funktionen-e2-k5-s6-v4 – lineare-funktionen e2 „Ablesen“: Prüfungshöhe (2019-OS-K2b)
+AUSWAHL lineare-funktionen-e2-k5-s6-v5 – lineare-funktionen e2 „Ablesen“: Prüfungshöhe (2016-OS-B1c)
+AUSWAHL lineare-funktionen-e2-k5-s6-v6 – lineare-funktionen e2 „Ablesen“: Prüfungshöhe (2016-OS-B1c)
+AUSWAHL lineare-funktionen-e2-k5-s6-v7 – lineare-funktionen e2 „Ablesen“: Prüfungshöhe (2024-OS-B1i)
+AUSWAHL lineare-funktionen-e2-k5-s6-v8 – lineare-funktionen e2 „Ablesen“: Prüfungshöhe (2024-OS-B1i)
+AUSWAHL lineare-funktionen-e2-k5-s6-v9 – lineare-funktionen e2 „Ablesen“: Prüfungshöhe (2025-OS-B1f)
+AUSWAHL lineare-funktionen-e2-k5-s6-v10 – lineare-funktionen e2 „Ablesen“: Prüfungshöhe (2025-OS-B1f)
+WEG lineare-funktionen e2 „Parameter deuten (steigend, fallend, parallel, Sonderfall m = 0)“ – keine Prüfungshöhe im Profil msa
+WEG lineare-funktionen e3 „Punkt in Gleichung einsetzen“ – keine Prüfungshöhe im Profil msa
+AUSWAHL lineare-funktionen-e3-k2-s1-v1 – lineare-funktionen e3 „Funktionswert“: Anlauf, Grundfall
+AUSWAHL lineare-funktionen-e3-k2-s2-v1 – lineare-funktionen e3 „Funktionswert“: Anlauf, Sprosse – Fallstrick im Merkmal („x negativ: Klammer und Vorzeichenregel“)
+AUSWAHL lineare-funktionen-e3-k2-s7-v1 – lineare-funktionen e3 „Funktionswert“: Prüfungshöhe (2022-OS-K3a)
+AUSWAHL lineare-funktionen-e3-k2-s7-v2 – lineare-funktionen e3 „Funktionswert“: Prüfungshöhe (2022-OS-K3a)
+AUSWAHL lineare-funktionen-e3-k2-s7-v3 – lineare-funktionen e3 „Funktionswert“: Prüfungshöhe (2021-OS-K6d)
+AUSWAHL lineare-funktionen-e3-k2-s7-v4 – lineare-funktionen e3 „Funktionswert“: Prüfungshöhe (2021-OS-K6d)
+AUSWAHL lineare-funktionen-e3-k2-s7-v5 – lineare-funktionen e3 „Funktionswert“: Prüfungshöhe (2019-OS-K2a)
+AUSWAHL lineare-funktionen-e3-k2-s7-v6 – lineare-funktionen e3 „Funktionswert“: Prüfungshöhe (2019-OS-K2a)
+AUSWAHL lineare-funktionen-e3-k2-s7-v7 – lineare-funktionen e3 „Funktionswert“: Prüfungshöhe (2023-OS-K4a)
+AUSWAHL lineare-funktionen-e3-k2-s7-v8 – lineare-funktionen e3 „Funktionswert“: Prüfungshöhe (2023-OS-K4a)
+AUSWAHL lineare-funktionen-e3-k2-s7-v9 – lineare-funktionen e3 „Funktionswert“: Prüfungshöhe (2017-OS-K5b)
+AUSWAHL lineare-funktionen-e3-k2-s7-v10 – lineare-funktionen e3 „Funktionswert“: Prüfungshöhe (2017-OS-K5b)
+AUSWAHL lineare-funktionen-e3-k2-s7-v11 – lineare-funktionen e3 „Funktionswert“: Prüfungshöhe (2026-FOR-K5b)
+AUSWAHL lineare-funktionen-e3-k2-s7-v12 – lineare-funktionen e3 „Funktionswert“: Prüfungshöhe (2026-FOR-K5b)
+AUSWAHL lineare-funktionen-e3-k2-s7-v13 – lineare-funktionen e3 „Funktionswert“: Prüfungshöhe (2021-OS-K2b)
+AUSWAHL lineare-funktionen-e3-k2-s7-v14 – lineare-funktionen e3 „Funktionswert“: Prüfungshöhe (2021-OS-K2b)
+AUSWAHL lineare-funktionen-e3-k2-s7-v15 – lineare-funktionen e3 „Funktionswert“: Prüfungshöhe (2023-OS-B1i)
+AUSWAHL lineare-funktionen-e3-k2-s7-v16 – lineare-funktionen e3 „Funktionswert“: Prüfungshöhe (2023-OS-B1i)
+WEG lineare-funktionen e3 „Wertetabelle“ – keine Prüfungshöhe im Profil msa
+WEG lineare-funktionen e3 „Schnittpunkt mit y-Achse“ – keine Prüfungshöhe im Profil msa
+AUSWAHL lineare-funktionen-e4-k1-s1-v1 – lineare-funktionen e4 „Gleichung bestimmen“: Anlauf, Grundfall
+AUSWAHL lineare-funktionen-e4-k1-s5-v1 – lineare-funktionen e4 „Gleichung bestimmen“: Anlauf, Sprosse – Fallstrick im Merkmal („negative Steigung aus zwei Punkten“)
+AUSWAHL lineare-funktionen-e4-k1-s6-v1 – lineare-funktionen e4 „Gleichung bestimmen“: Prüfungshöhe (2025-OS-K5a)
+AUSWAHL lineare-funktionen-e4-k1-s6-v2 – lineare-funktionen e4 „Gleichung bestimmen“: Prüfungshöhe (2025-OS-K5a)
+AUSWAHL lineare-funktionen-e4-k1-s6-v3 – lineare-funktionen e4 „Gleichung bestimmen“: Prüfungshöhe (2015-OS-K4d, Stern)
+AUSWAHL lineare-funktionen-e4-k1-s6-v4 – lineare-funktionen e4 „Gleichung bestimmen“: Prüfungshöhe (2015-OS-K4d, Stern)
+AUSWAHL lineare-funktionen-e4-k1-s6-v5 – lineare-funktionen e4 „Gleichung bestimmen“: Prüfungshöhe (2017-OS-K5a)
+AUSWAHL lineare-funktionen-e4-k1-s6-v6 – lineare-funktionen e4 „Gleichung bestimmen“: Prüfungshöhe (2017-OS-K5a)
+WEG lineare-funktionen e4 „Gerade durch zwei Punkte zeichnen“ – keine Prüfungshöhe im Profil msa
+WEG lineare-funktionen e4 „Schnittpunkt zweier Geraden rechnerisch“ – keine Prüfungshöhe im Profil msa
+AUSWAHL lineare-funktionen-e5-k1-s0-v1 – lineare-funktionen e5 „Anwendung“: Anlauf, Vorstufe
+AUSWAHL lineare-funktionen-e5-k1-s1-v1 – lineare-funktionen e5 „Anwendung“: Anlauf, Grundfall
+AUSWAHL lineare-funktionen-e5-k1-s2-v1 – lineare-funktionen e5 „Anwendung“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL lineare-funktionen-e5-k1-s5-v1 – lineare-funktionen e5 „Anwendung“: Prüfungshöhe (2023-OS-K3b, Stern)
+AUSWAHL lineare-funktionen-e5-k1-s5-v2 – lineare-funktionen e5 „Anwendung“: Prüfungshöhe (2023-OS-K3b, Stern)
+AUSWAHL lineare-funktionen-e5-k1-s5-v3 – lineare-funktionen e5 „Anwendung“: Prüfungshöhe (2016-OS-K6b)
+AUSWAHL lineare-funktionen-e5-k1-s5-v4 – lineare-funktionen e5 „Anwendung“: Prüfungshöhe (2016-OS-K6b)
+AUSWAHL lineare-funktionen-e5-k1-s5-v5 – lineare-funktionen e5 „Anwendung“: Prüfungshöhe (2021-OS-K7a)
+AUSWAHL lineare-funktionen-e5-k1-s5-v6 – lineare-funktionen e5 „Anwendung“: Prüfungshöhe (2021-OS-K7a)
+AUSWAHL lineare-funktionen-e5-k1-s5-v7 – lineare-funktionen e5 „Anwendung“: Prüfungshöhe (2022-OS-K6b, Stern)
+AUSWAHL lineare-funktionen-e5-k1-s5-v8 – lineare-funktionen e5 „Anwendung“: Prüfungshöhe (2022-OS-K6b, Stern)
+AUSWAHL lineare-funktionen-e5-k1-s5-v9 – lineare-funktionen e5 „Anwendung“: Prüfungshöhe (2016-OS-K6c, Stern)
+AUSWAHL lineare-funktionen-e5-k1-s5-v10 – lineare-funktionen e5 „Anwendung“: Prüfungshöhe (2016-OS-K6c, Stern)
+AUSWAHL lineare-funktionen-e5-k1-s5-v11 – lineare-funktionen e5 „Anwendung“: Prüfungshöhe (2022-OS-K6a)
+AUSWAHL lineare-funktionen-e5-k1-s5-v12 – lineare-funktionen e5 „Anwendung“: Prüfungshöhe (2022-OS-K6a)
+AUSWAHL lineare-funktionen-e5-k1-s5-v13 – lineare-funktionen e5 „Anwendung“: Prüfungshöhe (2021-OS-K6a)
+AUSWAHL lineare-funktionen-e5-k1-s5-v14 – lineare-funktionen e5 „Anwendung“: Prüfungshöhe (2021-OS-K6a)
+AUSWAHL lineare-funktionen-e5-k1-s5-v15 – lineare-funktionen e5 „Anwendung“: Prüfungshöhe (2016-OS-K6a)
+AUSWAHL lineare-funktionen-e5-k1-s5-v16 – lineare-funktionen e5 „Anwendung“: Prüfungshöhe (2016-OS-K6a)
+AUSWAHL lineare-funktionen-e5-k1-s5-v17 – lineare-funktionen e5 „Anwendung“: Prüfungshöhe (2023-OS-K3a)
+AUSWAHL lineare-funktionen-e5-k1-s5-v18 – lineare-funktionen e5 „Anwendung“: Prüfungshöhe (2023-OS-K3a)
+WEG lineare-funktionen e5 „Graph zu Tarif zuordnen“ – keine Prüfungshöhe im Profil msa
+WEG lineare-funktionen e5 „Situation zu Gleichung beschreiben“ – keine Prüfungshöhe im Profil msa
+AUSWAHL quadratische-funktionen-e1-k1-s0-v1 – quadratische-funktionen e1 „Normalparabel und Streckfaktor“: Anlauf, Vorstufe
+AUSWAHL quadratische-funktionen-e1-k1-s1-v1 – quadratische-funktionen e1 „Normalparabel und Streckfaktor“: Anlauf, Grundfall
+AUSWAHL quadratische-funktionen-e1-k1-s4-v1 – quadratische-funktionen e1 „Normalparabel und Streckfaktor“: Anlauf, Sprosse – Fallstrick im Merkmal („negatives x einsetzen, auch als Punktprobe“)
+AUSWAHL quadratische-funktionen-e1-k1-s10-v1 – quadratische-funktionen e1 „Normalparabel und Streckfaktor“: Prüfungshöhe (2026-FOR-B1e)
+AUSWAHL quadratische-funktionen-e1-k1-s10-v2 – quadratische-funktionen e1 „Normalparabel und Streckfaktor“: Prüfungshöhe (2026-FOR-B1e)
+AUSWAHL quadratische-funktionen-e1-k1-s11-v1 – quadratische-funktionen e1 „Normalparabel und Streckfaktor“: Prüfungshöhe (2015-OS-K4b, Stern)
+AUSWAHL quadratische-funktionen-e1-k1-s11-v2 – quadratische-funktionen e1 „Normalparabel und Streckfaktor“: Prüfungshöhe (2015-OS-K4b, Stern)
+AUSWAHL quadratische-funktionen-e2-k1-s0-v1 – quadratische-funktionen e2 „Scheitelpunktform“: Anlauf, Vorstufe
+AUSWAHL quadratische-funktionen-e2-k1-s1-v1 – quadratische-funktionen e2 „Scheitelpunktform“: Anlauf, Grundfall
+AUSWAHL quadratische-funktionen-e2-k1-s2-v1 – quadratische-funktionen e2 „Scheitelpunktform“: Anlauf, Sprosse – Fallstrick im Merkmal („Vorzeichen: Plus in der Klammer oder Minus hinten“)
+AUSWAHL quadratische-funktionen-e2-k1-s13-v1 – quadratische-funktionen e2 „Scheitelpunktform“: Prüfungshöhe (2017-OS-K5e, Stern)
+AUSWAHL quadratische-funktionen-e2-k1-s13-v2 – quadratische-funktionen e2 „Scheitelpunktform“: Prüfungshöhe (2017-OS-K5e, Stern)
+AUSWAHL quadratische-funktionen-e2-k1-s14-v1 – quadratische-funktionen e2 „Scheitelpunktform“: Prüfungshöhe (2020-OS-K3d, Stern)
+AUSWAHL quadratische-funktionen-e2-k1-s14-v2 – quadratische-funktionen e2 „Scheitelpunktform“: Prüfungshöhe (2020-OS-K3d, Stern)
+AUSWAHL quadratische-funktionen-e2-k1-s15-v1 – quadratische-funktionen e2 „Scheitelpunktform“: Prüfungshöhe (2018-OS-K5d, Stern)
+AUSWAHL quadratische-funktionen-e2-k1-s15-v2 – quadratische-funktionen e2 „Scheitelpunktform“: Prüfungshöhe (2018-OS-K5d, Stern)
+AUSWAHL quadratische-funktionen-e3-k1-s0-v1 – quadratische-funktionen e3 „Normalform“: Anlauf, Vorstufe
+AUSWAHL quadratische-funktionen-e3-k1-s1-v1 – quadratische-funktionen e3 „Normalform“: Anlauf, Grundfall
+AUSWAHL quadratische-funktionen-e3-k1-s2-v1 – quadratische-funktionen e3 „Normalform“: Anlauf, Sprosse – Fallstrick im Merkmal („negatives x in die Normalform einsetzen, auch als “)
+AUSWAHL quadratische-funktionen-e3-k1-s9-v1 – quadratische-funktionen e3 „Normalform“: Prüfungshöhe (2025-OS-K5b)
+AUSWAHL quadratische-funktionen-e3-k1-s9-v2 – quadratische-funktionen e3 „Normalform“: Prüfungshöhe (2025-OS-K5b)
+AUSWAHL quadratische-funktionen-e3-k1-s9-v3 – quadratische-funktionen e3 „Normalform“: Prüfungshöhe (2018-OS-K5c, Stern)
+AUSWAHL quadratische-funktionen-e3-k1-s9-v4 – quadratische-funktionen e3 „Normalform“: Prüfungshöhe (2018-OS-K5c, Stern)
+AUSWAHL quadratische-funktionen-e3-k1-s10-v1 – quadratische-funktionen e3 „Normalform“: Prüfungshöhe (2017-OS-K5d, Stern)
+AUSWAHL quadratische-funktionen-e3-k1-s10-v2 – quadratische-funktionen e3 „Normalform“: Prüfungshöhe (2017-OS-K5d, Stern)
+AUSWAHL quadratische-funktionen-e4-k1-s0-v1 – quadratische-funktionen e4 „Nullstellen und Schnittpunkte“: Anlauf, Vorstufe
+AUSWAHL quadratische-funktionen-e4-k1-s1-v1 – quadratische-funktionen e4 „Nullstellen und Schnittpunkte“: Anlauf, Grundfall
+AUSWAHL quadratische-funktionen-e4-k1-s8-v1 – quadratische-funktionen e4 „Nullstellen und Schnittpunkte“: Anlauf, Sprosse – Fallstrick im Merkmal („Parabel in Scheitelpunktform: erst die Klammer auf“)
+AUSWAHL quadratische-funktionen-e4-k1-s13-v1 – quadratische-funktionen e4 „Nullstellen und Schnittpunkte“: Prüfungshöhe (2022-OS-K3c, Stern)
+AUSWAHL quadratische-funktionen-e4-k1-s13-v2 – quadratische-funktionen e4 „Nullstellen und Schnittpunkte“: Prüfungshöhe (2022-OS-K3c, Stern)
+AUSWAHL quadratische-funktionen-e4-k1-s14-v1 – quadratische-funktionen e4 „Nullstellen und Schnittpunkte“: Prüfungshöhe (2025-OS-K5c, Stern)
+AUSWAHL quadratische-funktionen-e4-k1-s14-v2 – quadratische-funktionen e4 „Nullstellen und Schnittpunkte“: Prüfungshöhe (2025-OS-K5c, Stern)
+AUSWAHL quadratische-funktionen-e4-k1-s15-v1 – quadratische-funktionen e4 „Nullstellen und Schnittpunkte“: Prüfungshöhe (2023-OS-K4c, Stern)
+AUSWAHL quadratische-funktionen-e4-k1-s15-v2 – quadratische-funktionen e4 „Nullstellen und Schnittpunkte“: Prüfungshöhe (2023-OS-K4c, Stern)
+WEG quadratische-gleichungen e1 „Quadratisch oder linear?“ – keine Prüfungshöhe im Profil msa
+AUSWAHL quadratische-gleichungen-e1-k2-s0-v1 – quadratische-gleichungen e1 „Wurzelziehen und Lösbarkeit“: Anlauf, Vorstufe
+AUSWAHL quadratische-gleichungen-e1-k2-s1-v1 – quadratische-gleichungen e1 „Wurzelziehen und Lösbarkeit“: Anlauf, Grundfall
+AUSWAHL quadratische-gleichungen-e1-k2-s4-v1 – quadratische-gleichungen e1 „Wurzelziehen und Lösbarkeit“: Anlauf, Sprosse – Fallstrick im Merkmal („negative Zahl rechts: keine Lösung, weil ein Quadr“)
+AUSWAHL quadratische-gleichungen-e1-k2-s14-v1 – quadratische-gleichungen e1 „Wurzelziehen und Lösbarkeit“: Prüfungshöhe (2021-OS-K7c, Stern)
+AUSWAHL quadratische-gleichungen-e1-k2-s14-v2 – quadratische-gleichungen e1 „Wurzelziehen und Lösbarkeit“: Prüfungshöhe (2021-OS-K7c, Stern)
+AUSWAHL quadratische-gleichungen-e2-k1-s0-v1 – quadratische-gleichungen e2 „Nullprodukt“: Anlauf, Vorstufe
+AUSWAHL quadratische-gleichungen-e2-k1-s1-v1 – quadratische-gleichungen e2 „Nullprodukt“: Anlauf, Grundfall
+AUSWAHL quadratische-gleichungen-e2-k1-s2-v1 – quadratische-gleichungen e2 „Nullprodukt“: Anlauf, Sprosse – Fallstrick im Merkmal („Plus in einer Klammer: Lösung negativ“)
+AUSWAHL quadratische-gleichungen-e2-k1-s10-v1 – quadratische-gleichungen e2 „Nullprodukt“: Prüfungshöhe (2025-OS-B1h)
+AUSWAHL quadratische-gleichungen-e2-k1-s10-v2 – quadratische-gleichungen e2 „Nullprodukt“: Prüfungshöhe (2025-OS-B1h)
+AUSWAHL quadratische-gleichungen-e2-k1-s10-v3 – quadratische-gleichungen e2 „Nullprodukt“: Prüfungshöhe (2020-OS-K3e, Stern)
+AUSWAHL quadratische-gleichungen-e2-k1-s10-v4 – quadratische-gleichungen e2 „Nullprodukt“: Prüfungshöhe (2020-OS-K3e, Stern)
+WEG quadratische-gleichungen e3 „Welche Form?“ – keine Prüfungshöhe im Profil msa
+WEG quadratische-gleichungen e3 „Ist die Vorzahl von x² eins?“ – keine Prüfungshöhe im Profil msa
+AUSWAHL quadratische-gleichungen-e3-k3-s0-v1 – quadratische-gleichungen e3 „p-q-Formel“: Anlauf, Vorstufe
+AUSWAHL quadratische-gleichungen-e3-k3-s1-v1 – quadratische-gleichungen e3 „p-q-Formel“: Anlauf, Grundfall
+AUSWAHL quadratische-gleichungen-e3-k3-s2-v1 – quadratische-gleichungen e3 „p-q-Formel“: Anlauf, Sprosse – Fallstrick im Merkmal („p oder q negativ: Vorzeichen in −p/2 und unter der“)
+AUSWAHL quadratische-gleichungen-e3-k3-s13-v1 – quadratische-gleichungen e3 „p-q-Formel“: Prüfungshöhe (2020-OS-K3e, Stern)
+AUSWAHL quadratische-gleichungen-e3-k3-s13-v2 – quadratische-gleichungen e3 „p-q-Formel“: Prüfungshöhe (2020-OS-K3e, Stern)
+AUSWAHL quadratische-gleichungen-e3-k3-s13-v3 – quadratische-gleichungen e3 „p-q-Formel“: Prüfungshöhe (2025-OS-K5c, Stern)
+AUSWAHL quadratische-gleichungen-e3-k3-s13-v4 – quadratische-gleichungen e3 „p-q-Formel“: Prüfungshöhe (2025-OS-K5c, Stern)
+AUSWAHL quadratische-gleichungen-e3-k3-s13-v5 – quadratische-gleichungen e3 „p-q-Formel“: Prüfungshöhe (2023-OS-K4c, Stern)
+AUSWAHL quadratische-gleichungen-e3-k3-s13-v6 – quadratische-gleichungen e3 „p-q-Formel“: Prüfungshöhe (2023-OS-K4c, Stern)
+AUSWAHL quadratische-gleichungen-e3-k3-s13-v7 – quadratische-gleichungen e3 „p-q-Formel“: Prüfungshöhe (2021-OS-K2c, Stern)
+AUSWAHL quadratische-gleichungen-e3-k3-s13-v8 – quadratische-gleichungen e3 „p-q-Formel“: Prüfungshöhe (2021-OS-K2c, Stern)
+AUSWAHL quadratische-gleichungen-e3-k3-s13-v9 – quadratische-gleichungen e3 „p-q-Formel“: Prüfungshöhe (2022-OS-K3c, Stern)
+AUSWAHL quadratische-gleichungen-e3-k3-s13-v10 – quadratische-gleichungen e3 „p-q-Formel“: Prüfungshöhe (2022-OS-K3c, Stern)
+AUSWAHL quadratische-gleichungen-e3-k3-s13-v11 – quadratische-gleichungen e3 „p-q-Formel“: Prüfungshöhe (2024-OS-K3d, Stern)
+AUSWAHL quadratische-gleichungen-e3-k3-s13-v12 – quadratische-gleichungen e3 „p-q-Formel“: Prüfungshöhe (2024-OS-K3d, Stern)
+AUSWAHL quadratische-gleichungen-e3-k3-s13-v13 – quadratische-gleichungen e3 „p-q-Formel“: Prüfungshöhe (2017-OS-K5d, Stern)
+AUSWAHL quadratische-gleichungen-e3-k3-s13-v14 – quadratische-gleichungen e3 „p-q-Formel“: Prüfungshöhe (2017-OS-K5d, Stern)
+WEG quadratische-gleichungen e3 „Gerade und Parabel gleichsetzen als Anwendung“ – keine Prüfungshöhe im Profil msa
+WEG quadratische-gleichungen e4 „Sachaufgaben“ – keine Prüfungshöhe im Profil msa
+WEG quadratische-gleichungen e4 „Quadrat mit Rand“ – keine Prüfungshöhe im Profil msa
+AUSWAHL lineare-gleichungssysteme-e1-k1-s0-v1 – lineare-gleichungssysteme e1 „Grafisch“: Anlauf, Vorstufe
+AUSWAHL lineare-gleichungssysteme-e1-k1-s1-v1 – lineare-gleichungssysteme e1 „Grafisch“: Anlauf, Grundfall
+AUSWAHL lineare-gleichungssysteme-e1-k1-s2-v1 – lineare-gleichungssysteme e1 „Grafisch“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL lineare-gleichungssysteme-e1-k1-s9-v1 – lineare-gleichungssysteme e1 „Grafisch“: Prüfungshöhe (2016-OS-K6d, Stern)
+AUSWAHL lineare-gleichungssysteme-e1-k1-s9-v2 – lineare-gleichungssysteme e1 „Grafisch“: Prüfungshöhe (2016-OS-K6d, Stern)
+WEG lineare-gleichungssysteme e1 „Grafisch, Sek II“ – keine Prüfungshöhe im Profil msa
+AUSWAHL lineare-gleichungssysteme-e2-k1-s0-v1 – lineare-gleichungssysteme e2 „Einsetzen“: Anlauf, Vorstufe
+AUSWAHL lineare-gleichungssysteme-e2-k1-s1-v1 – lineare-gleichungssysteme e2 „Einsetzen“: Anlauf, Grundfall
+AUSWAHL lineare-gleichungssysteme-e2-k1-s5-v1 – lineare-gleichungssysteme e2 „Einsetzen“: Anlauf, Sprosse – Fallstrick im Merkmal („Minus vor dem eingesetzten Term: beide Glieder wec“)
+AUSWAHL lineare-gleichungssysteme-e2-k1-s10-v1 – lineare-gleichungssysteme e2 „Einsetzen“: Prüfungshöhe (2022-OS-K7b, Stern)
+AUSWAHL lineare-gleichungssysteme-e2-k1-s10-v2 – lineare-gleichungssysteme e2 „Einsetzen“: Prüfungshöhe (2022-OS-K7b, Stern)
+WEG lineare-gleichungssysteme e2 „Bruch als Lösung (Vorrat)“ – keine Prüfungshöhe im Profil msa
+WEG lineare-gleichungssysteme e3 „Addition“ – keine Prüfungshöhe im Profil msa
+WEG lineare-gleichungssysteme e3 „Addition, Sek II“ – keine Prüfungshöhe im Profil msa
+WEG lineare-gleichungssysteme e3 „Dezimalzahlen und Brüche“ – keine Prüfungshöhe im Profil msa
+AUSWAHL lineare-gleichungssysteme-e4-k1-s0-v1 – lineare-gleichungssysteme e4 „Sachaufgaben“: Anlauf, Vorstufe
+AUSWAHL lineare-gleichungssysteme-e4-k1-s1-v1 – lineare-gleichungssysteme e4 „Sachaufgaben“: Anlauf, Grundfall
+AUSWAHL lineare-gleichungssysteme-e4-k1-s2-v1 – lineare-gleichungssysteme e4 „Sachaufgaben“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL lineare-gleichungssysteme-e4-k1-s8-v1 – lineare-gleichungssysteme e4 „Sachaufgaben“: Prüfungshöhe (2024-OS-K7a)
+AUSWAHL lineare-gleichungssysteme-e4-k1-s8-v2 – lineare-gleichungssysteme e4 „Sachaufgaben“: Prüfungshöhe (2024-OS-K7a)
+AUSWAHL lineare-gleichungssysteme-e4-k1-s8-v3 – lineare-gleichungssysteme e4 „Sachaufgaben“: Prüfungshöhe (2024-OS-K7b, Stern)
+AUSWAHL lineare-gleichungssysteme-e4-k1-s8-v4 – lineare-gleichungssysteme e4 „Sachaufgaben“: Prüfungshöhe (2024-OS-K7b, Stern)
+AUSWAHL lineare-gleichungssysteme-e4-k1-s8-v5 – lineare-gleichungssysteme e4 „Sachaufgaben“: Prüfungshöhe (2022-OS-K7a)
+AUSWAHL lineare-gleichungssysteme-e4-k1-s8-v6 – lineare-gleichungssysteme e4 „Sachaufgaben“: Prüfungshöhe (2022-OS-K7a)
+AUSWAHL lineare-gleichungssysteme-e4-k1-s8-v7 – lineare-gleichungssysteme e4 „Sachaufgaben“: Prüfungshöhe (2021-OS-K7b)
+AUSWAHL lineare-gleichungssysteme-e4-k1-s8-v8 – lineare-gleichungssysteme e4 „Sachaufgaben“: Prüfungshöhe (2021-OS-K7b)
+WEG lineare-gleichungssysteme e4 „Sachaufgaben, Sek II“ – keine Prüfungshöhe im Profil msa
+WEG lineare-gleichungssysteme e4 „Mischungen und Alter (Vorrat)“ – keine Prüfungshöhe im Profil msa
+WEG lineare-gleichungssysteme e4 „Probe im Text (Rechnung mit den Zahlen der Aufgabe)“ – keine Prüfungshöhe im Profil msa
+WEG lineare-gleichungssysteme e4 „Bestandteile einer Gleichung deuten“ – keine Prüfungshöhe im Profil msa
+WEG lineare-gleichungssysteme e5 „Drei Variablen und Lösungsvielfalt“ – keine Prüfungshöhe im Profil msa
+AUSWAHL potenz-exponentialfunktionen-e1-k1-s0-v1 – potenz-exponentialfunktionen e1 „Wachstumsart erkennen und begründen“: Anlauf, Vorstufe
+AUSWAHL potenz-exponentialfunktionen-e1-k1-s1-v1 – potenz-exponentialfunktionen e1 „Wachstumsart erkennen und begründen“: Anlauf, Grundfall
+AUSWAHL potenz-exponentialfunktionen-e1-k1-s5-v1 – potenz-exponentialfunktionen e1 „Wachstumsart erkennen und begründen“: Anlauf, Sprosse – Fallstrick im Merkmal („fallende Werte: lineare oder exponentielle Abnahme“)
+AUSWAHL potenz-exponentialfunktionen-e1-k1-s8-v1 – potenz-exponentialfunktionen e1 „Wachstumsart erkennen und begründen“: Prüfungshöhe (2018-OS-K2b, Stern)
+AUSWAHL potenz-exponentialfunktionen-e1-k1-s8-v2 – potenz-exponentialfunktionen e1 „Wachstumsart erkennen und begründen“: Prüfungshöhe (2018-OS-K2b, Stern)
+AUSWAHL potenz-exponentialfunktionen-e1-k1-s8-v3 – potenz-exponentialfunktionen e1 „Wachstumsart erkennen und begründen“: Prüfungshöhe (2016-OS-K4d, Stern)
+AUSWAHL potenz-exponentialfunktionen-e1-k1-s8-v4 – potenz-exponentialfunktionen e1 „Wachstumsart erkennen und begründen“: Prüfungshöhe (2016-OS-K4d, Stern)
+AUSWAHL potenz-exponentialfunktionen-e1-k2-s0-v1 – potenz-exponentialfunktionen e1 „Graph zu einem Wachstumsprozess auswählen“: Anlauf, Vorstufe
+AUSWAHL potenz-exponentialfunktionen-e1-k2-s1-v1 – potenz-exponentialfunktionen e1 „Graph zu einem Wachstumsprozess auswählen“: Anlauf, Grundfall
+AUSWAHL potenz-exponentialfunktionen-e1-k2-s6-v1 – potenz-exponentialfunktionen e1 „Graph zu einem Wachstumsprozess auswählen“: Anlauf, Sprosse – Fallstrick im Merkmal („Abnahme: fallende, flacher werdende Kurve gegen fa“)
+AUSWAHL potenz-exponentialfunktionen-e1-k2-s7-v1 – potenz-exponentialfunktionen e1 „Graph zu einem Wachstumsprozess auswählen“: Prüfungshöhe (2026-FOR-K7b)
+AUSWAHL potenz-exponentialfunktionen-e1-k2-s7-v2 – potenz-exponentialfunktionen e1 „Graph zu einem Wachstumsprozess auswählen“: Prüfungshöhe (2026-FOR-K7b)
+AUSWAHL potenz-exponentialfunktionen-e1-k2-s7-v3 – potenz-exponentialfunktionen e1 „Graph zu einem Wachstumsprozess auswählen“: Prüfungshöhe (2019-OS-K7c, Stern)
+AUSWAHL potenz-exponentialfunktionen-e1-k2-s7-v4 – potenz-exponentialfunktionen e1 „Graph zu einem Wachstumsprozess auswählen“: Prüfungshöhe (2019-OS-K7c, Stern)
+AUSWAHL potenz-exponentialfunktionen-e1-k3-s0-v1 – potenz-exponentialfunktionen e1 „Wertepaare darstellen“: Anlauf, Vorstufe
+AUSWAHL potenz-exponentialfunktionen-e1-k3-s1-v1 – potenz-exponentialfunktionen e1 „Wertepaare darstellen“: Anlauf, Grundfall
+AUSWAHL potenz-exponentialfunktionen-e1-k3-s2-v1 – potenz-exponentialfunktionen e1 „Wertepaare darstellen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL potenz-exponentialfunktionen-e1-k3-s5-v1 – potenz-exponentialfunktionen e1 „Wertepaare darstellen“: Prüfungshöhe (2025-OS-K7a)
+AUSWAHL potenz-exponentialfunktionen-e1-k3-s5-v2 – potenz-exponentialfunktionen e1 „Wertepaare darstellen“: Prüfungshöhe (2025-OS-K7a)
+AUSWAHL potenz-exponentialfunktionen-e1-k3-s5-v3 – potenz-exponentialfunktionen e1 „Wertepaare darstellen“: Prüfungshöhe (2017-OS-K7b)
+AUSWAHL potenz-exponentialfunktionen-e1-k3-s5-v4 – potenz-exponentialfunktionen e1 „Wertepaare darstellen“: Prüfungshöhe (2017-OS-K7b)
+AUSWAHL potenz-exponentialfunktionen-e1-k3-s5-v5 – potenz-exponentialfunktionen e1 „Wertepaare darstellen“: Prüfungshöhe (2016-OS-K4b, Stern)
+AUSWAHL potenz-exponentialfunktionen-e1-k3-s5-v6 – potenz-exponentialfunktionen e1 „Wertepaare darstellen“: Prüfungshöhe (2016-OS-K4b, Stern)
+AUSWAHL potenz-exponentialfunktionen-e2-k1-s0-v1 – potenz-exponentialfunktionen e2 „Wachstumsfaktor bestimmen“: Anlauf, Vorstufe
+AUSWAHL potenz-exponentialfunktionen-e2-k1-s1-v1 – potenz-exponentialfunktionen e2 „Wachstumsfaktor bestimmen“: Anlauf, Grundfall
+AUSWAHL potenz-exponentialfunktionen-e2-k1-s2-v1 – potenz-exponentialfunktionen e2 „Wachstumsfaktor bestimmen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL potenz-exponentialfunktionen-e2-k1-s7-v1 – potenz-exponentialfunktionen e2 „Wachstumsfaktor bestimmen“: Prüfungshöhe (2025-OS-K7b, Stern)
+AUSWAHL potenz-exponentialfunktionen-e2-k1-s7-v2 – potenz-exponentialfunktionen e2 „Wachstumsfaktor bestimmen“: Prüfungshöhe (2025-OS-K7b, Stern)
+AUSWAHL potenz-exponentialfunktionen-e2-k1-s7-v3 – potenz-exponentialfunktionen e2 „Wachstumsfaktor bestimmen“: Prüfungshöhe (2018-OS-K2a)
+AUSWAHL potenz-exponentialfunktionen-e2-k1-s7-v4 – potenz-exponentialfunktionen e2 „Wachstumsfaktor bestimmen“: Prüfungshöhe (2018-OS-K2a)
+AUSWAHL potenz-exponentialfunktionen-e2-k2-s0-v1 – potenz-exponentialfunktionen e2 „Wachstumstabelle fortschreiben“: Anlauf, Vorstufe
+AUSWAHL potenz-exponentialfunktionen-e2-k2-s1-v1 – potenz-exponentialfunktionen e2 „Wachstumstabelle fortschreiben“: Anlauf, Grundfall
+AUSWAHL potenz-exponentialfunktionen-e2-k2-s2-v1 – potenz-exponentialfunktionen e2 „Wachstumstabelle fortschreiben“: Anlauf, Sprosse – Fallstrick im Merkmal („der Startwert aus dem Text gehört in den Schritt n“)
+AUSWAHL potenz-exponentialfunktionen-e2-k2-s8-v1 – potenz-exponentialfunktionen e2 „Wachstumstabelle fortschreiben“: Prüfungshöhe (2026-FOR-K7a)
+AUSWAHL potenz-exponentialfunktionen-e2-k2-s8-v2 – potenz-exponentialfunktionen e2 „Wachstumstabelle fortschreiben“: Prüfungshöhe (2026-FOR-K7a)
+AUSWAHL potenz-exponentialfunktionen-e2-k2-s8-v3 – potenz-exponentialfunktionen e2 „Wachstumstabelle fortschreiben“: Prüfungshöhe (2020-OS-K4a)
+AUSWAHL potenz-exponentialfunktionen-e2-k2-s8-v4 – potenz-exponentialfunktionen e2 „Wachstumstabelle fortschreiben“: Prüfungshöhe (2020-OS-K4a)
+AUSWAHL potenz-exponentialfunktionen-e2-k2-s8-v5 – potenz-exponentialfunktionen e2 „Wachstumstabelle fortschreiben“: Prüfungshöhe (2016-OS-K4a)
+AUSWAHL potenz-exponentialfunktionen-e2-k2-s8-v6 – potenz-exponentialfunktionen e2 „Wachstumstabelle fortschreiben“: Prüfungshöhe (2016-OS-K4a)
+AUSWAHL potenz-exponentialfunktionen-e2-k2-s8-v7 – potenz-exponentialfunktionen e2 „Wachstumstabelle fortschreiben“: Prüfungshöhe (2019-OS-K7a)
+AUSWAHL potenz-exponentialfunktionen-e2-k2-s8-v8 – potenz-exponentialfunktionen e2 „Wachstumstabelle fortschreiben“: Prüfungshöhe (2019-OS-K7a)
+AUSWAHL potenz-exponentialfunktionen-e2-k2-s8-v9 – potenz-exponentialfunktionen e2 „Wachstumstabelle fortschreiben“: Prüfungshöhe (2017-OS-K7a)
+AUSWAHL potenz-exponentialfunktionen-e2-k2-s8-v10 – potenz-exponentialfunktionen e2 „Wachstumstabelle fortschreiben“: Prüfungshöhe (2017-OS-K7a)
+AUSWAHL potenz-exponentialfunktionen-e3-k1-s0-v1 – potenz-exponentialfunktionen e3 „Exponentialfunktion aufstellen und deuten“: Anlauf, Vorstufe
+AUSWAHL potenz-exponentialfunktionen-e3-k1-s1-v1 – potenz-exponentialfunktionen e3 „Exponentialfunktion aufstellen und deuten“: Anlauf, Grundfall
+AUSWAHL potenz-exponentialfunktionen-e3-k1-s2-v1 – potenz-exponentialfunktionen e3 „Exponentialfunktion aufstellen und deuten“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL potenz-exponentialfunktionen-e3-k1-s7-v1 – potenz-exponentialfunktionen e3 „Exponentialfunktion aufstellen und deuten“: Prüfungshöhe (2026-FOR-K7c)
+AUSWAHL potenz-exponentialfunktionen-e3-k1-s7-v2 – potenz-exponentialfunktionen e3 „Exponentialfunktion aufstellen und deuten“: Prüfungshöhe (2026-FOR-K7c)
+AUSWAHL potenz-exponentialfunktionen-e3-k1-s7-v3 – potenz-exponentialfunktionen e3 „Exponentialfunktion aufstellen und deuten“: Prüfungshöhe (2017-OS-K7c, Stern)
+AUSWAHL potenz-exponentialfunktionen-e3-k1-s7-v4 – potenz-exponentialfunktionen e3 „Exponentialfunktion aufstellen und deuten“: Prüfungshöhe (2017-OS-K7c, Stern)
+AUSWAHL potenz-exponentialfunktionen-e3-k1-s7-v5 – potenz-exponentialfunktionen e3 „Exponentialfunktion aufstellen und deuten“: Prüfungshöhe (2019-OS-K7b, Stern)
+AUSWAHL potenz-exponentialfunktionen-e3-k1-s7-v6 – potenz-exponentialfunktionen e3 „Exponentialfunktion aufstellen und deuten“: Prüfungshöhe (2019-OS-K7b, Stern)
+AUSWAHL potenz-exponentialfunktionen-e3-k2-s0-v1 – potenz-exponentialfunktionen e3 „Wert und Schwellenwert berechnen“: Anlauf, Vorstufe
+AUSWAHL potenz-exponentialfunktionen-e3-k2-s1-v1 – potenz-exponentialfunktionen e3 „Wert und Schwellenwert berechnen“: Anlauf, Grundfall
+AUSWAHL potenz-exponentialfunktionen-e3-k2-s3-v1 – potenz-exponentialfunktionen e3 „Wert und Schwellenwert berechnen“: Anlauf, Sprosse – Fallstrick im Merkmal („das Startjahr ist Schritt null; die Differenz der “)
+AUSWAHL potenz-exponentialfunktionen-e3-k2-s8-v1 – potenz-exponentialfunktionen e3 „Wert und Schwellenwert berechnen“: Prüfungshöhe (2025-OS-K7b, Stern)
+AUSWAHL potenz-exponentialfunktionen-e3-k2-s8-v2 – potenz-exponentialfunktionen e3 „Wert und Schwellenwert berechnen“: Prüfungshöhe (2025-OS-K7b, Stern)
+AUSWAHL potenz-exponentialfunktionen-e3-k2-s8-v3 – potenz-exponentialfunktionen e3 „Wert und Schwellenwert berechnen“: Prüfungshöhe (2020-OS-K4c, Stern)
+AUSWAHL potenz-exponentialfunktionen-e3-k2-s8-v4 – potenz-exponentialfunktionen e3 „Wert und Schwellenwert berechnen“: Prüfungshöhe (2020-OS-K4c, Stern)
+AUSWAHL potenz-exponentialfunktionen-e3-k2-s8-v5 – potenz-exponentialfunktionen e3 „Wert und Schwellenwert berechnen“: Prüfungshöhe (2016-OS-K4e, Stern)
+AUSWAHL potenz-exponentialfunktionen-e3-k2-s8-v6 – potenz-exponentialfunktionen e3 „Wert und Schwellenwert berechnen“: Prüfungshöhe (2016-OS-K4e, Stern)
+AUSWAHL potenz-exponentialfunktionen-e3-k2-s8-v7 – potenz-exponentialfunktionen e3 „Wert und Schwellenwert berechnen“: Prüfungshöhe (2017-OS-K7d)
+AUSWAHL potenz-exponentialfunktionen-e3-k2-s8-v8 – potenz-exponentialfunktionen e3 „Wert und Schwellenwert berechnen“: Prüfungshöhe (2017-OS-K7d)
+AUSWAHL potenz-exponentialfunktionen-e3-k2-s8-v9 – potenz-exponentialfunktionen e3 „Wert und Schwellenwert berechnen“: Prüfungshöhe (2018-OS-K2c)
+AUSWAHL potenz-exponentialfunktionen-e3-k2-s8-v10 – potenz-exponentialfunktionen e3 „Wert und Schwellenwert berechnen“: Prüfungshöhe (2018-OS-K2c)
+AUSWAHL potenz-exponentialfunktionen-e4-k1-s0-v1 – potenz-exponentialfunktionen e4 „Verdopplungs- und Halbwertszeit“: Anlauf, Vorstufe
+AUSWAHL potenz-exponentialfunktionen-e4-k1-s1-v1 – potenz-exponentialfunktionen e4 „Verdopplungs- und Halbwertszeit“: Anlauf, Grundfall
+AUSWAHL potenz-exponentialfunktionen-e4-k1-s2-v1 – potenz-exponentialfunktionen e4 „Verdopplungs- und Halbwertszeit“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL potenz-exponentialfunktionen-e4-k1-s9-v1 – potenz-exponentialfunktionen e4 „Verdopplungs- und Halbwertszeit“: Prüfungshöhe (2020-OS-K4b)
+AUSWAHL potenz-exponentialfunktionen-e4-k1-s9-v2 – potenz-exponentialfunktionen e4 „Verdopplungs- und Halbwertszeit“: Prüfungshöhe (2020-OS-K4b)
+AUSWAHL potenz-exponentialfunktionen-e4-k1-s9-v3 – potenz-exponentialfunktionen e4 „Verdopplungs- und Halbwertszeit“: Prüfungshöhe (2016-OS-K4c)
+AUSWAHL potenz-exponentialfunktionen-e4-k1-s9-v4 – potenz-exponentialfunktionen e4 „Verdopplungs- und Halbwertszeit“: Prüfungshöhe (2016-OS-K4c)
+WEG potenz-exponentialfunktionen e5 „Wertetabelle und Graph“ – keine Prüfungshöhe im Profil msa
+WEG potenz-exponentialfunktionen e5 „Funktionswert, Punktprobe und Argument“ – keine Prüfungshöhe im Profil msa
+WEG potenz-exponentialfunktionen e5 „Potenzfunktion vom exponentiellen Term unterscheiden“ – keine Prüfungshöhe im Profil msa
+AUSWAHL zuordnungen-e1-k1-s0-v1 – zuordnungen e1 „Darstellen“: Anlauf, Vorstufe
+AUSWAHL zuordnungen-e1-k1-s1-v1 – zuordnungen e1 „Darstellen“: Anlauf, Grundfall
+AUSWAHL zuordnungen-e1-k1-s6-v1 – zuordnungen e1 „Darstellen“: Anlauf, Sprosse – Fallstrick im Merkmal („fremde Punkte prüfen: Achsen vertauscht oder falsc“)
+AUSWAHL zuordnungen-e1-k1-s7-v1 – zuordnungen e1 „Darstellen“: Prüfungshöhe (2025-OS-K7a)
+AUSWAHL zuordnungen-e1-k1-s7-v2 – zuordnungen e1 „Darstellen“: Prüfungshöhe (2025-OS-K7a)
+AUSWAHL zuordnungen-e1-k2-s0-v1 – zuordnungen e1 „Achseneinteilung“: Anlauf, Vorstufe
+AUSWAHL zuordnungen-e1-k2-s1-v1 – zuordnungen e1 „Achseneinteilung“: Anlauf, Grundfall
+AUSWAHL zuordnungen-e1-k2-s2-v1 – zuordnungen e1 „Achseneinteilung“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL zuordnungen-e1-k2-s6-v1 – zuordnungen e1 „Achseneinteilung“: Prüfungshöhe (2021-OS-K6b)
+AUSWAHL zuordnungen-e1-k2-s6-v2 – zuordnungen e1 „Achseneinteilung“: Prüfungshöhe (2021-OS-K6b)
+WEG zuordnungen e1 „Formel aus Tabelle (y = 4 · x)“ – keine Prüfungshöhe im Profil msa
+WEG zuordnungen e2 „Was ist hier eine Portion?“ – keine Prüfungshöhe im Profil msa
+WEG zuordnungen e2 „Minitabelle anlegen“ – keine Prüfungshöhe im Profil msa
+WEG zuordnungen e2 „Pfeile beidseitig“ – keine Prüfungshöhe im Profil msa
+WEG zuordnungen e2 „Dreisatz proportional“ – keine Prüfungshöhe im Profil msa
+WEG zuordnungen e2 „fester Faktor angeben (Preis je Einheit), Gleichung y = k · x“ – keine Prüfungshöhe im Profil msa
+WEG zuordnungen e2 „Graph zeichnen (Ursprungsgerade) und Werte ablesen“ – keine Prüfungshöhe im Profil msa
+WEG zuordnungen e2 „Verhältnisgleichung aufstellen (Vorrat)“ – keine Prüfungshöhe im Profil msa
+AUSWAHL zuordnungen-e3-k1-s0-v1 – zuordnungen e3 „Antiproportional“: Anlauf, Vorstufe
+AUSWAHL zuordnungen-e3-k1-s1-v1 – zuordnungen e3 „Antiproportional“: Anlauf, Grundfall
+AUSWAHL zuordnungen-e3-k1-s2-v1 – zuordnungen e3 „Antiproportional“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL zuordnungen-e3-k1-s6-v1 – zuordnungen e3 „Antiproportional“: Prüfungshöhe (2014-GYM-B1c)
+AUSWAHL zuordnungen-e3-k1-s6-v2 – zuordnungen e3 „Antiproportional“: Prüfungshöhe (2014-GYM-B1c)
+WEG zuordnungen e3 „Graph als fallende Kurve, Werte ablesen“ – keine Prüfungshöhe im Profil msa
+WEG zuordnungen e4 „Nullwert prüfen“ – keine Prüfungshöhe im Profil msa
+WEG zuordnungen e4 „Erkennen“ – keine Prüfungshöhe im Profil msa
+AUSWAHL zuordnungen-e4-k3-s0-v1 – zuordnungen e4 „Rate“: Anlauf, Vorstufe
+AUSWAHL zuordnungen-e4-k3-s1-v1 – zuordnungen e4 „Rate“: Anlauf, Grundfall
+AUSWAHL zuordnungen-e4-k3-s2-v1 – zuordnungen e4 „Rate“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL zuordnungen-e4-k3-s5-v1 – zuordnungen e4 „Rate“: Prüfungshöhe (2014-OS-K4c)
+AUSWAHL zuordnungen-e4-k3-s5-v2 – zuordnungen e4 „Rate“: Prüfungshöhe (2014-OS-K4c)
+AUSWAHL zuordnungen-e4-k3-s5-v3 – zuordnungen e4 „Rate“: Prüfungshöhe (2014-OS-K4d)
+AUSWAHL zuordnungen-e4-k3-s5-v4 – zuordnungen e4 „Rate“: Prüfungshöhe (2014-OS-K4d)
+AUSWAHL zuordnungen-e4-k3-s5-v5 – zuordnungen e4 „Rate“: Prüfungshöhe (2024-OS-K2d)
+AUSWAHL zuordnungen-e4-k3-s5-v6 – zuordnungen e4 „Rate“: Prüfungshöhe (2024-OS-K2d)
+AUSWAHL zuordnungen-e4-k3-s5-v7 – zuordnungen e4 „Rate“: Prüfungshöhe (2015-OS-K4c, Stern)
+AUSWAHL zuordnungen-e4-k3-s5-v8 – zuordnungen e4 „Rate“: Prüfungshöhe (2015-OS-K4c, Stern)
+AUSWAHL zuordnungen-e4-k3-s6-v1 – zuordnungen e4 „Rate“: Prüfungshöhe (2014-OS-K2c, Stern)
+AUSWAHL zuordnungen-e4-k3-s6-v2 – zuordnungen e4 „Rate“: Prüfungshöhe (2014-OS-K2c, Stern)
+AUSWAHL zuordnungen-e4-k3-s6-v3 – zuordnungen e4 „Rate“: Prüfungshöhe (2015-OS-K3c, Stern)
+AUSWAHL zuordnungen-e4-k3-s6-v4 – zuordnungen e4 „Rate“: Prüfungshöhe (2015-OS-K3c, Stern)
+AUSWAHL zuordnungen-e4-k3-s6-v5 – zuordnungen e4 „Rate“: Prüfungshöhe (2024-OS-K6c)
+AUSWAHL zuordnungen-e4-k3-s6-v6 – zuordnungen e4 „Rate“: Prüfungshöhe (2024-OS-K6c)
+TEILUNG zuordnungen e4 „Rate“: 14 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+WEG zuordnungen e4 „Gegenbeispiele (Alter und Größe, Tarif mit Grundgebühr)“ – keine Prüfungshöhe im Profil msa
+WARNUNG Nr. 2: 8 Teilaufgaben, 8 mit Grafik – über dem Halbseitenmaß (2.3 g)
+WARNUNG Nr. 4: 10 Teilaufgaben, 10 mit Grafik – über dem Halbseitenmaß (2.3 g)
+FORM lineare-funktionen-e3-k2-s7-v3 (Nr. 6): gleichungsraster mit Text → teile
+FORM lineare-funktionen-e3-k2-s7-v4 (Nr. 6): gleichungsraster mit Text → teile
+WARNUNG Nr. 6: 16 Teilaufgaben, 6 mit Grafik – über dem Halbseitenmaß (2.3 g)
+FORM lineare-funktionen-e4-k1-s5-v1 (Nr. 7): gleichungsraster mit Text → teile
+FORM lineare-funktionen-e4-k1-s6-v3 (Nr. 8): gleichungsraster mit Text → teile
+FORM lineare-funktionen-e4-k1-s6-v4 (Nr. 8): gleichungsraster mit Text → teile
+FORM lineare-funktionen-e5-k1-s5-v1 (Nr. 10): gleichungsraster mit Text → teile
+FORM lineare-funktionen-e5-k1-s5-v2 (Nr. 10): gleichungsraster mit Text → teile
+FORM lineare-funktionen-e5-k1-s5-v7 (Nr. 10): gleichungsraster mit Text → teile
+FORM lineare-funktionen-e5-k1-s5-v8 (Nr. 10): gleichungsraster mit Text → teile
+WARNUNG Nr. 10: 18 Teilaufgaben, 6 mit Grafik – über dem Halbseitenmaß (2.3 g)
+FORM quadratische-funktionen-e3-k1-s10-v1 (Nr. 16): gleichungsraster mit Text → teile
+FORM quadratische-funktionen-e3-k1-s10-v2 (Nr. 16): gleichungsraster mit Text → teile
+FORM quadratische-funktionen-e4-k1-s1-v1 (Nr. 17): gleichungsraster mit Text → teile
+FORM quadratische-funktionen-e4-k1-s8-v1 (Nr. 17): gleichungsraster mit Text → teile
+FORM quadratische-funktionen-e4-k1-s13-v1 (Nr. 18): gleichungsraster mit Text → teile
+FORM quadratische-funktionen-e4-k1-s13-v2 (Nr. 18): gleichungsraster mit Text → teile
+FORM quadratische-funktionen-e4-k1-s14-v1 (Nr. 18): gleichungsraster mit Text → teile
+FORM quadratische-funktionen-e4-k1-s14-v2 (Nr. 18): gleichungsraster mit Text → teile
+FORM quadratische-funktionen-e4-k1-s15-v1 (Nr. 18): gleichungsraster mit Text → teile
+FORM quadratische-funktionen-e4-k1-s15-v2 (Nr. 18): gleichungsraster mit Text → teile
+FORM quadratische-gleichungen-e1-k2-s1-v1 (Nr. 19): Gleichung ohne $ im Raster als Mathe gesetzt
+FORM quadratische-gleichungen-e2-k1-s1-v1 (Nr. 21): Gleichung ohne $ im Raster als Mathe gesetzt
+FORM quadratische-gleichungen-e2-k1-s2-v1 (Nr. 21): Gleichung ohne $ im Raster als Mathe gesetzt
+FORM quadratische-gleichungen-e3-k3-s1-v1 (Nr. 23): Gleichung ohne $ im Raster als Mathe gesetzt
+FORM quadratische-gleichungen-e3-k3-s2-v1 (Nr. 23): Gleichung ohne $ im Raster als Mathe gesetzt
+WARNUNG Nr. 24: 14 Teilaufgaben, 0 mit Grafik – über dem Halbseitenmaß (2.3 g)
+FORM lineare-gleichungssysteme-e1-k1-s2-v1 (Nr. 25): gleichungsraster mit Text → teile
+FORM lineare-gleichungssysteme-e2-k1-s1-v1 (Nr. 27): gleichungsraster mit Text → teile
+FORM lineare-gleichungssysteme-e2-k1-s5-v1 (Nr. 27): gleichungsraster mit Text → teile
+FORM lineare-gleichungssysteme-e2-k1-s10-v1 (Nr. 28): gleichungsraster mit Text → teile
+FORM lineare-gleichungssysteme-e2-k1-s10-v2 (Nr. 28): gleichungsraster mit Text → teile
+FORM lineare-gleichungssysteme-e4-k1-s8-v7 (Nr. 30): gleichungsraster mit Text → teile
+FORM lineare-gleichungssysteme-e4-k1-s8-v8 (Nr. 30): gleichungsraster mit Text → teile
+STRUKTUR 0 Fehler

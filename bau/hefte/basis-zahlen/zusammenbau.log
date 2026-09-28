@@ -1,0 +1,249 @@
+# zusammenbau v0.4: zusammenbau.py bruchrechnung brueche-dezimalzahlen prozentrechnung zinsrechnung rationale-zahlen potenzen-wurzeln einheiten terme lineare-gleichungen binomische-formeln --heft msa --nur-basis --titel Prüfungsheft Basis · Zahlen und Terme
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG BRU-H2 – Kürzel BRU aus _kuerzel.csv (mathe-nachhilfe) (erster Eintrag bruchrechnung); Rezept H (Heft)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+WEG bruchrechnung e1 „Gleicher Nenner – ja oder nein?“ – keine Prüfungshöhe im Profil basis
+WEG bruchrechnung e1 „Womit erweitere ich?“ – keine Prüfungshöhe im Profil basis
+AUSWAHL bruchrechnung-e1-k3-s8-v3 – bruchrechnung e1 „Addieren/Subtrahieren“: Prüfungshöhe (2014-OS-B1d)
+AUSWAHL bruchrechnung-e1-k3-s8-v4 – bruchrechnung e1 „Addieren/Subtrahieren“: Prüfungshöhe (2014-OS-B1d)
+WEG bruchrechnung e1 „ganze Zahl plus Bruch“ – keine Prüfungshöhe im Profil basis
+WEG bruchrechnung e2 „Dezimal addieren/subtrahieren“ – keine Prüfungshöhe im Profil basis
+WEG bruchrechnung e2 „ganze Zahl plus Dezimalzahl“ – keine Prüfungshöhe im Profil basis
+WEG bruchrechnung e2 „Überschlag vorab“ – keine Prüfungshöhe im Profil basis
+WEG bruchrechnung e3 „Von heißt mal“ – keine Prüfungshöhe im Profil basis
+WEG bruchrechnung e3 „Multiplizieren“ – keine Prüfungshöhe im Profil basis
+WEG bruchrechnung e3 „Dividieren“ – keine Prüfungshöhe im Profil basis
+WEG bruchrechnung e4 „Wie viele Kommastellen hat das Ergebnis?“ – keine Prüfungshöhe im Profil basis
+AUSWAHL bruchrechnung-e4-k2-s9-v1 – bruchrechnung e4 „Dezimal multiplizieren/dividieren“: Prüfungshöhe (2023-OS-B1f)
+AUSWAHL bruchrechnung-e4-k2-s9-v2 – bruchrechnung e4 „Dezimal multiplizieren/dividieren“: Prüfungshöhe (2023-OS-B1f)
+AUSWAHL bruchrechnung-e5-k1-s6-v1 – bruchrechnung e5 „Punkt vor Strich“: Prüfungshöhe (2021-OS-B1g)
+AUSWAHL bruchrechnung-e5-k1-s6-v2 – bruchrechnung e5 „Punkt vor Strich“: Prüfungshöhe (2021-OS-B1g)
+AUSWAHL bruchrechnung-e5-k1-s6-v3 – bruchrechnung e5 „Punkt vor Strich“: Prüfungshöhe (2016-OS-B1i)
+AUSWAHL bruchrechnung-e5-k1-s6-v4 – bruchrechnung e5 „Punkt vor Strich“: Prüfungshöhe (2016-OS-B1i)
+WEG bruchrechnung e5 „Distributivgesetz (Ausklammern bei Dezimalzahlen)“ – keine Prüfungshöhe im Profil basis
+WEG bruchrechnung e5 „Überschlag und Prüfen“ – keine Prüfungshöhe im Profil basis
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v1 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2019-OS-B1c)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v2 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2019-OS-B1c)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v3 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2024-OS-B1b)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v4 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2024-OS-B1b)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v5 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2014-OS-B1i)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v6 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2014-OS-B1i)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v7 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2022-OS-B1a)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v8 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2022-OS-B1a)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v9 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2023-OS-B1d)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v10 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2023-OS-B1d)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v11 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2017-OS-B1a)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v12 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2017-OS-B1a)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v13 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2021-OS-B1b)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v14 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2021-OS-B1b)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v15 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2025-OS-B1c)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v16 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2025-OS-B1c)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v17 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2026-FOR-B1b)
+AUSWAHL brueche-dezimalzahlen-e1-k1-s6-v18 – brueche-dezimalzahlen e1 „Anteil bestimmen“: Prüfungshöhe (2026-FOR-B1b)
+AUSWAHL brueche-dezimalzahlen-e1-k2-s6-v1 – brueche-dezimalzahlen e1 „Bruchteil einer Größe“: Prüfungshöhe (2015-OS-B1h)
+AUSWAHL brueche-dezimalzahlen-e1-k2-s6-v2 – brueche-dezimalzahlen e1 „Bruchteil einer Größe“: Prüfungshöhe (2015-OS-B1h)
+AUSWAHL brueche-dezimalzahlen-e1-k2-s6-v3 – brueche-dezimalzahlen e1 „Bruchteil einer Größe“: Prüfungshöhe (2018-OS-B1a)
+AUSWAHL brueche-dezimalzahlen-e1-k2-s6-v4 – brueche-dezimalzahlen e1 „Bruchteil einer Größe“: Prüfungshöhe (2018-OS-B1a)
+WEG brueche-dezimalzahlen e1 „Ganzes aus Bruchteil“ – keine Prüfungshöhe im Profil basis
+AUSWAHL brueche-dezimalzahlen-e2-k1-s8-v1 – brueche-dezimalzahlen e2 „Kürzen und Erweitern“: Prüfungshöhe (2014-OS-B1i)
+AUSWAHL brueche-dezimalzahlen-e2-k1-s8-v2 – brueche-dezimalzahlen e2 „Kürzen und Erweitern“: Prüfungshöhe (2014-OS-B1i)
+WEG brueche-dezimalzahlen e2 „gleichwertige Brüche am Streifen finden“ – keine Prüfungshöhe im Profil basis
+WEG brueche-dezimalzahlen e2 „Bruch als Geteilt-Aufgabe“ – keine Prüfungshöhe im Profil basis
+AUSWAHL brueche-dezimalzahlen-e3-k1-s7-v1 – brueche-dezimalzahlen e3 „Vergleichen“: Prüfungshöhe (2014-OS-B1c)
+AUSWAHL brueche-dezimalzahlen-e3-k1-s7-v2 – brueche-dezimalzahlen e3 „Vergleichen“: Prüfungshöhe (2014-OS-B1c)
+WEG brueche-dezimalzahlen e3 „Zahl zwischen zwei Brüchen angeben“ – keine Prüfungshöhe im Profil basis
+AUSWAHL brueche-dezimalzahlen-e4-k1-s8-v1 – brueche-dezimalzahlen e4 „Umwandeln“: Prüfungshöhe (2015-OS-B1c)
+AUSWAHL brueche-dezimalzahlen-e4-k1-s8-v2 – brueche-dezimalzahlen e4 „Umwandeln“: Prüfungshöhe (2015-OS-B1c)
+AUSWAHL brueche-dezimalzahlen-e4-k1-s8-v3 – brueche-dezimalzahlen e4 „Umwandeln“: Prüfungshöhe (2018-OS-B1d)
+AUSWAHL brueche-dezimalzahlen-e4-k1-s8-v4 – brueche-dezimalzahlen e4 „Umwandeln“: Prüfungshöhe (2018-OS-B1d)
+WEG brueche-dezimalzahlen e4 „Zahl in die Stellenwerttafel eintragen und ablesen (Zehntel, Hundertstel, Tausendstel)“ – keine Prüfungshöhe im Profil basis
+WEG brueche-dezimalzahlen e4 „Nachbarzahlen (Nachbar-Einer, -Zehntel, -Hundertstel) und Zählen in Schritten (0,2er-Schritte; über 2,9 hinaus)“ – keine Prüfungshöhe im Profil basis
+WEG brueche-dezimalzahlen e5 „Welche Form?“ – keine Prüfungshöhe im Profil basis
+AUSWAHL brueche-dezimalzahlen-e5-k2-s9-v1 – brueche-dezimalzahlen e5 „Vergleichen und Ordnen“: Prüfungshöhe (2023-OS-B1f)
+AUSWAHL brueche-dezimalzahlen-e5-k2-s9-v2 – brueche-dezimalzahlen e5 „Vergleichen und Ordnen“: Prüfungshöhe (2023-OS-B1f)
+AUSWAHL brueche-dezimalzahlen-e5-k2-s9-v3 – brueche-dezimalzahlen e5 „Vergleichen und Ordnen“: Prüfungshöhe (2014-OS-B1h)
+AUSWAHL brueche-dezimalzahlen-e5-k2-s9-v4 – brueche-dezimalzahlen e5 „Vergleichen und Ordnen“: Prüfungshöhe (2014-OS-B1h)
+AUSWAHL brueche-dezimalzahlen-e5-k2-s9-v5 – brueche-dezimalzahlen e5 „Vergleichen und Ordnen“: Prüfungshöhe (2015-OS-B1c)
+AUSWAHL brueche-dezimalzahlen-e5-k2-s9-v6 – brueche-dezimalzahlen e5 „Vergleichen und Ordnen“: Prüfungshöhe (2015-OS-B1c)
+AUSWAHL brueche-dezimalzahlen-e5-k2-s9-v7 – brueche-dezimalzahlen e5 „Vergleichen und Ordnen“: Prüfungshöhe (2018-OS-B1d)
+AUSWAHL brueche-dezimalzahlen-e5-k2-s9-v8 – brueche-dezimalzahlen e5 „Vergleichen und Ordnen“: Prüfungshöhe (2018-OS-B1d)
+AUSWAHL brueche-dezimalzahlen-e5-k2-s9-v9 – brueche-dezimalzahlen e5 „Vergleichen und Ordnen“: Prüfungshöhe (2020-OS-B1f)
+AUSWAHL brueche-dezimalzahlen-e5-k2-s9-v10 – brueche-dezimalzahlen e5 „Vergleichen und Ordnen“: Prüfungshöhe (2020-OS-B1f)
+WEG brueche-dezimalzahlen e5 „Zahl zwischen zwei Zahlen angeben (auch zwischen zwei Brüchen über Dezimalzahlen)“ – keine Prüfungshöhe im Profil basis
+WEG brueche-dezimalzahlen e5 „gemischte Liste ordnen (Bruch, Dezimalzahl, Prozent, Potenz einer Dezimalzahl)“ – keine Prüfungshöhe im Profil basis
+WEG brueche-dezimalzahlen e5 „Aussagen prüfen und die wahre ankreuzen“ – keine Prüfungshöhe im Profil basis
+AUSWAHL prozentrechnung-e1-k1-s7-v1 – prozentrechnung e1 „Umwandeln“: Prüfungshöhe (2020-OS-B1a)
+AUSWAHL prozentrechnung-e1-k1-s7-v2 – prozentrechnung e1 „Umwandeln“: Prüfungshöhe (2020-OS-B1a)
+AUSWAHL prozentrechnung-e1-k1-s7-v3 – prozentrechnung e1 „Umwandeln“: Prüfungshöhe (2022-OS-B1f)
+AUSWAHL prozentrechnung-e1-k1-s7-v4 – prozentrechnung e1 „Umwandeln“: Prüfungshöhe (2022-OS-B1f)
+WEG prozentrechnung e1 „Prozentangaben ordnen“ – keine Prüfungshöhe im Profil basis
+WEG prozentrechnung e2 „Was ist das Ganze?“ – keine Prüfungshöhe im Profil basis
+WEG prozentrechnung e2 „Streifen einteilen“ – keine Prüfungshöhe im Profil basis
+AUSWAHL prozentrechnung-e2-k3-s8-v1 – prozentrechnung e2 „Prozentsatz“: Prüfungshöhe (2014-OS-B1e)
+AUSWAHL prozentrechnung-e2-k3-s8-v2 – prozentrechnung e2 „Prozentsatz“: Prüfungshöhe (2014-OS-B1e)
+WEG prozentrechnung e2 „Umkehrung: zu einem Prozentsatz ein Zahlenpaar angeben“ – keine Prüfungshöhe im Profil basis
+AUSWAHL prozentrechnung-e3-k1-s8-v1 – prozentrechnung e3 „Prozentwert“: Prüfungshöhe (2021-OS-B1c)
+AUSWAHL prozentrechnung-e3-k1-s8-v2 – prozentrechnung e3 „Prozentwert“: Prüfungshöhe (2021-OS-B1c)
+AUSWAHL prozentrechnung-e3-k1-s8-v3 – prozentrechnung e3 „Prozentwert“: Prüfungshöhe (2017-OS-B1b)
+AUSWAHL prozentrechnung-e3-k1-s8-v4 – prozentrechnung e3 „Prozentwert“: Prüfungshöhe (2017-OS-B1b)
+AUSWAHL prozentrechnung-e3-k1-s9-v1 – prozentrechnung e3 „Prozentwert“: Prüfungshöhe (2014-OS-B1a)
+AUSWAHL prozentrechnung-e3-k1-s9-v2 – prozentrechnung e3 „Prozentwert“: Prüfungshöhe (2014-OS-B1a)
+AUSWAHL prozentrechnung-e3-k1-s9-v3 – prozentrechnung e3 „Prozentwert“: Prüfungshöhe (2026-FOR-B1a)
+AUSWAHL prozentrechnung-e3-k1-s9-v4 – prozentrechnung e3 „Prozentwert“: Prüfungshöhe (2026-FOR-B1a)
+WEG prozentrechnung e3 „Mehrwertsteuer in Euro“ – keine Prüfungshöhe im Profil basis
+WEG prozentrechnung e4 „Was ist gegeben, was gesucht?“ – keine Prüfungshöhe im Profil basis
+AUSWAHL prozentrechnung-e4-k2-s6-v1 – prozentrechnung e4 „Grundwert“: Prüfungshöhe (2025-OS-B1a)
+AUSWAHL prozentrechnung-e4-k2-s6-v2 – prozentrechnung e4 „Grundwert“: Prüfungshöhe (2025-OS-B1a)
+AUSWAHL prozentrechnung-e4-k2-s6-v3 – prozentrechnung e4 „Grundwert“: Prüfungshöhe (2023-OS-B1b)
+AUSWAHL prozentrechnung-e4-k2-s6-v4 – prozentrechnung e4 „Grundwert“: Prüfungshöhe (2023-OS-B1b)
+WEG prozentrechnung e5 „Welcher Wert ist der alte?“ – keine Prüfungshöhe im Profil basis
+AUSWAHL prozentrechnung-e5-k2-s9-v1 – prozentrechnung e5 „Veränderung“: Prüfungshöhe (2024-OS-B1e)
+AUSWAHL prozentrechnung-e5-k2-s9-v2 – prozentrechnung e5 „Veränderung“: Prüfungshöhe (2024-OS-B1e)
+AUSWAHL zinsrechnung-e1-k1-s11-v1 – zinsrechnung e1 „Zinsen berechnen“: Prüfungshöhe (2015-OS-B1e)
+AUSWAHL zinsrechnung-e1-k1-s11-v2 – zinsrechnung e1 „Zinsen berechnen“: Prüfungshöhe (2015-OS-B1e)
+AUSWAHL zinsrechnung-e1-k1-s11-v3 – zinsrechnung e1 „Zinsen berechnen“: Prüfungshöhe (2014-OS-B1e)
+AUSWAHL zinsrechnung-e1-k1-s11-v4 – zinsrechnung e1 „Zinsen berechnen“: Prüfungshöhe (2014-OS-B1e)
+WEG zinsrechnung e1 „Monats- und Tageszinsen“ – keine Prüfungshöhe im Profil basis
+WEG zinsrechnung e1 „Überschlag: 1 % von … , dann grob mal p“ – keine Prüfungshöhe im Profil basis
+WEG zinsrechnung e2 „Zinseszins“ – keine Prüfungshöhe im Profil basis
+WEG zinsrechnung e2 „Guthaben nach n Jahren mit jährlicher Einzahlung (Tabelle statt Formel)“ – keine Prüfungshöhe im Profil basis
+WEG zinsrechnung e2 „Ratenkauf und Kredit mit Zinseszins (Vorrat, Verbrauchersicht)“ – keine Prüfungshöhe im Profil basis
+AUSWAHL rationale-zahlen-e1-k1-s6-v1 – rationale-zahlen e1 „Ordnen“: Prüfungshöhe (2015-OS-B1b)
+AUSWAHL rationale-zahlen-e1-k1-s6-v2 – rationale-zahlen e1 „Ordnen“: Prüfungshöhe (2015-OS-B1b)
+AUSWAHL rationale-zahlen-e1-k1-s7-v1 – rationale-zahlen e1 „Ordnen“: Prüfungshöhe (2014-OS-B1h)
+AUSWAHL rationale-zahlen-e1-k1-s7-v2 – rationale-zahlen e1 „Ordnen“: Prüfungshöhe (2014-OS-B1h)
+WEG rationale-zahlen e1 „Mitte zweier Zahlen“ – keine Prüfungshöhe im Profil basis
+WEG rationale-zahlen e1 „runden“ – keine Prüfungshöhe im Profil basis
+WEG rationale-zahlen e1 „Punkte in vier Quadranten“ – keine Prüfungshöhe im Profil basis
+WEG rationale-zahlen e2 „Vorzeichen oder Rechenzeichen?“ – keine Prüfungshöhe im Profil basis
+WEG rationale-zahlen e2 „Zeichen zusammenfassen“ – keine Prüfungshöhe im Profil basis
+WEG rationale-zahlen e2 „Addieren/Subtrahieren“ – keine Prüfungshöhe im Profil basis
+WEG rationale-zahlen e2 „Beträge: gleiche Vorzeichen addieren, verschiedene subtrahieren“ – keine Prüfungshöhe im Profil basis
+WEG rationale-zahlen e2 „Dezimalzahlen und Brüche“ – keine Prüfungshöhe im Profil basis
+WEG rationale-zahlen e2 „Umkehrung: Rechnung zu Ergebnis finden“ – keine Prüfungshöhe im Profil basis
+AUSWAHL rationale-zahlen-e3-k1-s7-v1 – rationale-zahlen e3 „Multiplizieren/Dividieren“: Prüfungshöhe (2021-OS-B1g)
+AUSWAHL rationale-zahlen-e3-k1-s7-v2 – rationale-zahlen e3 „Multiplizieren/Dividieren“: Prüfungshöhe (2021-OS-B1g)
+AUSWAHL rationale-zahlen-e3-k1-s8-v1 – rationale-zahlen e3 „Multiplizieren/Dividieren“: Prüfungshöhe (2016-OS-B1i)
+AUSWAHL rationale-zahlen-e3-k1-s8-v2 – rationale-zahlen e3 „Multiplizieren/Dividieren“: Prüfungshöhe (2016-OS-B1i)
+AUSWAHL rationale-zahlen-e3-k1-s9-v1 – rationale-zahlen e3 „Multiplizieren/Dividieren“: Prüfungshöhe (2026-FOR-B1g)
+AUSWAHL rationale-zahlen-e3-k1-s9-v2 – rationale-zahlen e3 „Multiplizieren/Dividieren“: Prüfungshöhe (2026-FOR-B1g)
+AUSWAHL rationale-zahlen-e3-k1-s10-v1 – rationale-zahlen e3 „Multiplizieren/Dividieren“: Prüfungshöhe (2015-OS-B1g)
+AUSWAHL rationale-zahlen-e3-k1-s10-v2 – rationale-zahlen e3 „Multiplizieren/Dividieren“: Prüfungshöhe (2015-OS-B1g)
+WEG rationale-zahlen e3 „Vorzeichenregel als Aussage prüfen“ – keine Prüfungshöhe im Profil basis
+WEG rationale-zahlen e4 „Terme und Sachaufgaben“ – keine Prüfungshöhe im Profil basis
+WEG rationale-zahlen e4 „Rechenvorteile (Tauschen, geschickt zusammenfassen)“ – keine Prüfungshöhe im Profil basis
+WEG potenzen-wurzeln e1 „Plus oder minus?“ – keine Prüfungshöhe im Profil basis
+WEG potenzen-wurzeln e1 „Bruch oder minus?“ – keine Prüfungshöhe im Profil basis
+AUSWAHL potenzen-wurzeln-e1-k3-s15-v1 – potenzen-wurzeln e1 „Potenzen“: Prüfungshöhe (2020-OS-B1h)
+AUSWAHL potenzen-wurzeln-e1-k3-s15-v2 – potenzen-wurzeln e1 „Potenzen“: Prüfungshöhe (2020-OS-B1h)
+AUSWAHL potenzen-wurzeln-e1-k3-s15-v3 – potenzen-wurzeln e1 „Potenzen“: Prüfungshöhe (2024-OS-B1g)
+AUSWAHL potenzen-wurzeln-e1-k3-s15-v4 – potenzen-wurzeln e1 „Potenzen“: Prüfungshöhe (2024-OS-B1g)
+AUSWAHL potenzen-wurzeln-e1-k3-s15-v5 – potenzen-wurzeln e1 „Potenzen“: Prüfungshöhe (2019-OS-B1d)
+AUSWAHL potenzen-wurzeln-e1-k3-s15-v6 – potenzen-wurzeln e1 „Potenzen“: Prüfungshöhe (2019-OS-B1d)
+AUSWAHL potenzen-wurzeln-e1-k3-s15-v7 – potenzen-wurzeln e1 „Potenzen“: Prüfungshöhe (2022-OS-B1j)
+AUSWAHL potenzen-wurzeln-e1-k3-s15-v8 – potenzen-wurzeln e1 „Potenzen“: Prüfungshöhe (2022-OS-B1j)
+WEG potenzen-wurzeln e1 „Potenzen von Brüchen“ – keine Prüfungshöhe im Profil basis
+WEG potenzen-wurzeln e1 „Potenz gegen Dezimalzahl und Prozent vergleichen“ – keine Prüfungshöhe im Profil basis
+WEG potenzen-wurzeln e1 „hoch null“ – keine Prüfungshöhe im Profil basis
+AUSWAHL potenzen-wurzeln-e2-k1-s6-v1 – potenzen-wurzeln e2 „Zehnerpotenzen“: Prüfungshöhe (2016-OS-B1h)
+AUSWAHL potenzen-wurzeln-e2-k1-s6-v2 – potenzen-wurzeln e2 „Zehnerpotenzen“: Prüfungshöhe (2016-OS-B1h)
+AUSWAHL potenzen-wurzeln-e2-k1-s6-v3 – potenzen-wurzeln e2 „Zehnerpotenzen“: Prüfungshöhe (2016-OS-B1h)
+AUSWAHL potenzen-wurzeln-e2-k1-s17-v1 – potenzen-wurzeln e2 „Zehnerpotenzen“: Prüfungshöhe (2025-OS-B1d)
+AUSWAHL potenzen-wurzeln-e2-k1-s17-v2 – potenzen-wurzeln e2 „Zehnerpotenzen“: Prüfungshöhe (2025-OS-B1d)
+AUSWAHL potenzen-wurzeln-e2-k1-s17-v3 – potenzen-wurzeln e2 „Zehnerpotenzen“: Prüfungshöhe (2019-OS-B1j)
+AUSWAHL potenzen-wurzeln-e2-k1-s17-v4 – potenzen-wurzeln e2 „Zehnerpotenzen“: Prüfungshöhe (2019-OS-B1j)
+AUSWAHL potenzen-wurzeln-e2-k1-s17-v7 – potenzen-wurzeln e2 „Zehnerpotenzen“: Prüfungshöhe (2017-OS-B1e)
+AUSWAHL potenzen-wurzeln-e2-k1-s17-v8 – potenzen-wurzeln e2 „Zehnerpotenzen“: Prüfungshöhe (2017-OS-B1e)
+WEG potenzen-wurzeln e3 „Was zuerst?“ – keine Prüfungshöhe im Profil basis
+AUSWAHL potenzen-wurzeln-e3-k2-s10-v1 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2020-OS-B1d)
+AUSWAHL potenzen-wurzeln-e3-k2-s10-v2 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2020-OS-B1d)
+AUSWAHL potenzen-wurzeln-e3-k2-s10-v3 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2020-OS-B1d)
+AUSWAHL potenzen-wurzeln-e3-k2-s13-v1 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2015-OS-B1j, Stern)
+AUSWAHL potenzen-wurzeln-e3-k2-s13-v2 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2015-OS-B1j, Stern)
+AUSWAHL potenzen-wurzeln-e3-k2-s13-v3 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2015-OS-B1c)
+AUSWAHL potenzen-wurzeln-e3-k2-s13-v4 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2015-OS-B1c)
+AUSWAHL potenzen-wurzeln-e3-k2-s13-v5 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2014-OS-B1h)
+AUSWAHL potenzen-wurzeln-e3-k2-s13-v6 – potenzen-wurzeln e3 „Quadratwurzeln“: Prüfungshöhe (2014-OS-B1h)
+WEG einheiten e1 „Passt die Angabe?“ – keine Prüfungshöhe im Profil basis
+AUSWAHL einheiten-e1-k2-s9-v1 – einheiten e1 „Länge, Masse und Geld umrechnen“: Prüfungshöhe (2019-OS-B1b)
+AUSWAHL einheiten-e1-k2-s9-v2 – einheiten e1 „Länge, Masse und Geld umrechnen“: Prüfungshöhe (2026-FOR-B1d)
+AUSWAHL einheiten-e1-k2-s9-v3 – einheiten e1 „Länge, Masse und Geld umrechnen“: Prüfungshöhe (2019-OS-B1b)
+WEG einheiten e1 „Maßstab im Koordinatensystem, Sek II“ – keine Prüfungshöhe im Profil basis
+WEG einheiten e1 „Einheiten der Länge, der Masse und des Geldes der Größe nach ordnen“ – keine Prüfungshöhe im Profil basis
+WEG einheiten e1 „Repräsentanten zuordnen (welche Angabe passt zu welchem Gegenstand)“ – keine Prüfungshöhe im Profil basis
+WEG einheiten e1 „drei bis vier Größen ordnen“ – keine Prüfungshöhe im Profil basis
+WEG einheiten e1 „Umrechnen mit gegebenem Faktor bei nichtmetrischen Einheiten (Fuß, Meile, Zoll; P10-Form)“ – keine Prüfungshöhe im Profil basis
+WEG einheiten e1 „Größen mit gleicher Einheit addieren und subtrahieren“ – keine Prüfungshöhe im Profil basis
+AUSWAHL einheiten-e2-k1-s9-v1 – einheiten e2 „Zeit umrechnen und Zeitspannen berechnen“: Prüfungshöhe (2018-OS-B1e)
+AUSWAHL einheiten-e2-k1-s9-v2 – einheiten e2 „Zeit umrechnen und Zeitspannen berechnen“: Prüfungshöhe (2025-OS-B1b)
+AUSWAHL einheiten-e2-k1-s9-v3 – einheiten e2 „Zeit umrechnen und Zeitspannen berechnen“: Prüfungshöhe (2024-OS-B1a)
+AUSWAHL einheiten-e2-k1-s10-v1 – einheiten e2 „Zeit umrechnen und Zeitspannen berechnen“: Prüfungshöhe (2021-OS-B1a)
+AUSWAHL einheiten-e2-k1-s10-v2 – einheiten e2 „Zeit umrechnen und Zeitspannen berechnen“: Prüfungshöhe (2021-OS-B1a)
+WEG einheiten e2 „Zeiteinheiten nennen und ordnen“ – keine Prüfungshöhe im Profil basis
+WEG einheiten e2 „Startzeit aus Endzeit und Dauer“ – keine Prüfungshöhe im Profil basis
+WEG einheiten e2 „Fahrplan: nächste Abfahrt, Fahrzeit“ – keine Prüfungshöhe im Profil basis
+WEG einheiten e2 „Dauer in eine sinnvolle Einheit bringen (Sekunden in Minuten, Stunden in Tage)“ – keine Prüfungshöhe im Profil basis
+AUSWAHL einheiten-e3-k1-s9-v1 – einheiten e3 „Flächen- und Volumeneinheiten umrechnen“: Prüfungshöhe (2022-OS-B1h)
+AUSWAHL einheiten-e3-k1-s9-v2 – einheiten e3 „Flächen- und Volumeneinheiten umrechnen“: Prüfungshöhe (2022-OS-B1h)
+AUSWAHL einheiten-e3-k1-s9-v3 – einheiten e3 „Flächen- und Volumeneinheiten umrechnen“: Prüfungshöhe (2022-OS-B1h)
+WEG einheiten e3 „Flächen- und Volumeneinheiten im Koordinatensystem, Sek II“ – keine Prüfungshöhe im Profil basis
+WEG einheiten e3 „Flächeneinheiten ordnen (mm² bis km², a und ha einordnen)“ – keine Prüfungshöhe im Profil basis
+WEG einheiten e3 „Repräsentanten zuordnen“ – keine Prüfungshöhe im Profil basis
+WEG einheiten e4 „Mit Größen rechnen im Sachzusammenhang“ – keine Prüfungshöhe im Profil basis
+WEG einheiten e4 „Kosten und Einnahmen, Sek II“ – keine Prüfungshöhe im Profil basis
+WEG einheiten e4 „Dichte aus Masse und Volumen (Vorrat)“ – keine Prüfungshöhe im Profil basis
+WEG einheiten e4 „Euro und Cent in einer Rechnung“ – keine Prüfungshöhe im Profil basis
+AUSWAHL terme-e1-k1-s7-v1 – terme e1 „Term aufstellen“: Prüfungshöhe (2023-OS-B1h)
+AUSWAHL terme-e1-k1-s7-v2 – terme e1 „Term aufstellen“: Prüfungshöhe (2023-OS-B1h)
+AUSWAHL terme-e1-k1-s7-v3 – terme e1 „Term aufstellen“: Prüfungshöhe (2017-OS-B1i)
+AUSWAHL terme-e1-k1-s7-v4 – terme e1 „Term aufstellen“: Prüfungshöhe (2017-OS-B1i)
+WEG terme e1 „Termwert berechnen“ – keine Prüfungshöhe im Profil basis
+WEG terme e1 „Situation zu Term angeben“ – keine Prüfungshöhe im Profil basis
+WEG terme e2 „Gleichartige Glieder erkennen“ – keine Prüfungshöhe im Profil basis
+WEG terme e2 „Vorzahl lesen“ – keine Prüfungshöhe im Profil basis
+WEG terme e2 „Vorzeichen als Teil des Gliedes“ – keine Prüfungshöhe im Profil basis
+WEG terme e2 „Zusammenfassen“ – keine Prüfungshöhe im Profil basis
+WEG terme e2 „Malnehmen“ – keine Prüfungshöhe im Profil basis
+WEG terme e3 „Zeichen vor der Klammer feststellen“ – keine Prüfungshöhe im Profil basis
+WEG terme e3 „Klammern“ – keine Prüfungshöhe im Profil basis
+WEG terme e4 „Ausklammern“ – keine Prüfungshöhe im Profil basis
+WEG lineare-gleichungen e1 „Umkehroperation benennen“ – keine Prüfungshöhe im Profil basis
+AUSWAHL lineare-gleichungen-e1-k2-s5-v1 – lineare-gleichungen e1 „Lösung prüfen“: Prüfungshöhe (2018-OS-B1c)
+AUSWAHL lineare-gleichungen-e1-k2-s5-v2 – lineare-gleichungen e1 „Lösung prüfen“: Prüfungshöhe (2018-OS-B1c)
+AUSWAHL lineare-gleichungen-e1-k2-s5-v3 – lineare-gleichungen e1 „Lösung prüfen“: Prüfungshöhe (2022-OS-B1c)
+AUSWAHL lineare-gleichungen-e1-k2-s5-v4 – lineare-gleichungen e1 „Lösung prüfen“: Prüfungshöhe (2022-OS-B1c)
+WEG lineare-gleichungen e1 „Durch Probieren lösen“ – keine Prüfungshöhe im Profil basis
+WEG lineare-gleichungen e2 „Vorzahl und Zeichen bei x lesen“ – keine Prüfungshöhe im Profil basis
+WEG lineare-gleichungen e2 „Reihenfolge bestimmen“ – keine Prüfungshöhe im Profil basis
+AUSWAHL lineare-gleichungen-e2-k3-s8-v1 – lineare-gleichungen e2 „Umformen“: Prüfungshöhe (2020-OS-B1e)
+AUSWAHL lineare-gleichungen-e2-k3-s8-v2 – lineare-gleichungen e2 „Umformen“: Prüfungshöhe (2020-OS-B1e)
+AUSWAHL lineare-gleichungen-e2-k3-s8-v3 – lineare-gleichungen e2 „Umformen“: Prüfungshöhe (2023-OS-B1e)
+AUSWAHL lineare-gleichungen-e2-k3-s8-v4 – lineare-gleichungen e2 „Umformen“: Prüfungshöhe (2023-OS-B1e)
+AUSWAHL lineare-gleichungen-e2-k3-s8-v5 – lineare-gleichungen e2 „Umformen“: Prüfungshöhe (2024-OS-B1d)
+AUSWAHL lineare-gleichungen-e2-k3-s8-v6 – lineare-gleichungen e2 „Umformen“: Prüfungshöhe (2024-OS-B1d)
+WEG lineare-gleichungen e3 „x beidseitig“ – keine Prüfungshöhe im Profil basis
+WEG lineare-gleichungen e3 „Dezimalzahlen“ – keine Prüfungshöhe im Profil basis
+AUSWAHL lineare-gleichungen-e4-k1-s6-v5 – lineare-gleichungen e4 „Aufstellen“: Prüfungshöhe (2016-OS-B1b)
+AUSWAHL lineare-gleichungen-e4-k1-s6-v6 – lineare-gleichungen e4 „Aufstellen“: Prüfungshöhe (2016-OS-B1b)
+AUSWAHL lineare-gleichungen-e4-k1-s6-v7 – lineare-gleichungen e4 „Aufstellen“: Prüfungshöhe (2021-OS-B1e)
+AUSWAHL lineare-gleichungen-e4-k1-s6-v8 – lineare-gleichungen e4 „Aufstellen“: Prüfungshöhe (2021-OS-B1e)
+WEG lineare-gleichungen e4 „Formel umstellen“ – keine Prüfungshöhe im Profil basis
+WEG binomische-formeln e1 „Summe mal Summe“ – keine Prüfungshöhe im Profil basis
+WEG binomische-formeln e1 „Termwert mit zwei Variablen berechnen (auch negativ)“ – keine Prüfungshöhe im Profil basis
+WEG binomische-formeln e2 „Gleiche Klammer zweimal?“ – keine Prüfungshöhe im Profil basis
+WEG binomische-formeln e2 „Binomische Formeln“ – keine Prüfungshöhe im Profil basis
+WEG binomische-formeln e2 „Kopfrechnen mit der Formel (Vorrat)“ – keine Prüfungshöhe im Profil basis
+WEG binomische-formeln e3 „Faktorisieren“ – keine Prüfungshöhe im Profil basis
+LEER binomische-formeln: keine Kette mit Prüfungshöhe – Eintrag entfällt im Heft
+WARNUNG Nr. 4: 18 Teilaufgaben, 18 mit Grafik – über dem Halbseitenmaß (2.3 g)
+FORM lineare-gleichungen-e2-k3-s8-v1 (Nr. 26): gleichungsraster mit Text → teile
+FORM lineare-gleichungen-e2-k3-s8-v2 (Nr. 26): gleichungsraster mit Text → teile
+FORM lineare-gleichungen-e2-k3-s8-v3 (Nr. 26): gleichungsraster mit Text → teile
+FORM lineare-gleichungen-e2-k3-s8-v4 (Nr. 26): gleichungsraster mit Text → teile
+FORM lineare-gleichungen-e2-k3-s8-v5 (Nr. 26): gleichungsraster mit Text → teile
+FORM lineare-gleichungen-e2-k3-s8-v6 (Nr. 26): gleichungsraster mit Text → teile
+STRUKTUR 4 Fehler
+  FEHLER brueche-dezimalzahlen_a.tex:101: _ außerhalb Mathe
+  FEHLER brueche-dezimalzahlen_a.tex:102: _ außerhalb Mathe
+  FEHLER brueche-dezimalzahlen_a.tex:114: _ außerhalb Mathe
+  FEHLER brueche-dezimalzahlen_a.tex:115: _ außerhalb Mathe

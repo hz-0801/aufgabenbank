@@ -1,0 +1,63 @@
+% Bedingte Wahrscheinlichkeit und Bayes – bank/bedingte-wahrscheinlichkeit-und-bayes/ (zusammenbau v0.4, Heft)
+\einheitenkopf[t2]{Bedingte Wahrscheinlichkeit und Bayes}
+\setcounter{aufgabe}{10}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Der Quotient – Anlauf}
+\begin{teile}
+\teil Gesucht ist der Anteil der Mädchen unter den Vereinsmitgliedern, die Fußball spielen. Durch wessen Anteil wird geteilt? \\ \kreuz{alle Mitglieder} \\ \kreuz{die Fußball spielenden Mitglieder} \\ \kreuz{die Mädchen}
+\teil In einem Jahrgang lernen 40\,\% der Schüler Spanisch; 16\,\% aller Schüler lernen Spanisch und spielen ein Instrument. Ein Schüler, der Spanisch lernt, wird zufällig ausgewählt. Mit welcher Wahrscheinlichkeit spielt er ein Instrument? \leerfeld
+\teil Befragt wurden 200 Personen. A: „trinkt morgens Kaffee“, B: „steht vor 6 Uhr auf“. Die Vierfeldertafel zeigt die Anzahlen. Eine Person, die vor 6 Uhr aufsteht, wird zufällig ausgewählt. Mit welcher Wahrscheinlichkeit trinkt sie morgens Kaffee?
+
+\vierfeldertafel{A}{B}{36,54,90,24,86,110,60,140,200}
+\leerfeld
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Der Quotient – Prüfungsaufgaben}
+\begin{teile}
+\teil Von den Beschäftigten eines Verkehrsbetriebs arbeiten 35\,\% im Fahrdienst; 14\,\% der Beschäftigten sind Frauen und arbeiten im Fahrdienst; insgesamt sind 40\,\% der Beschäftigten Frauen. Eine zufällig ausgewählte beschäftigte Person ist eine Frau. Mit welcher Wahrscheinlichkeit arbeitet sie im Fahrdienst? \hfill (Abitur 2023 GK) \\ \leerfeld
+\teil In einer Klinik sind 81\,\% der Patienten mit dem Essen zufrieden; 4\,\% aller Patienten liegen auf der Kinderstation und sind nicht zufrieden; 10\,\% aller Patienten liegen auf der Kinderstation. Untersuche, ob der Anteil der Unzufriedenen auf der Kinderstation größer ist als auf den übrigen Stationen. \hfill (Abitur 2021 GK)
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Bayes – Anlauf}
+\begin{teile}
+\teil Ein Baum hat als erste Stufe das Werk (1 oder 2), als zweite Stufe „defekt“ oder „nicht defekt“. Gefragt ist: Wie wahrscheinlich ist ein Gerät aus Werk 1 defekt? Geht das mit dem Baum oder gegen den Baum? \\ \kreuz{mit dem Baum} \\ \kreuz{gegen den Baum}
+\teil Das Baumdiagramm beschreibt eine Untersuchung mit einem Test. Eine Person hat ein positives Ergebnis. Mit welcher Wahrscheinlichkeit ist sie krank?
+
+\baumzwei{krank/0.1,gesund/0.9}{positiv/0.8,negativ/0.2}{positiv/0.1,negativ/0.9}
+\leerfeld
+\teil In einem Lager stammen 30\,\% der Geräte aus Werk 1, der Rest aus Werk 2; aus Werk 1 sind 4\,\% defekt, aus Werk 2 sind es 2\,\%. Gib an, welche Wahrscheinlichkeit der Term $\frac{0{,}3 \cdot 0{,}04}{0{,}3 \cdot 0{,}04 + 0{,}7 \cdot 0{,}02}$ beschreibt.
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Bayes – Prüfungsaufgaben}
+\begin{teile}
+\teil In einem Sportverein sind zwei Fünftel der Mitglieder Jugendliche. 6\,\% der Jugendlichen und 9\,\% der Erwachsenen sind mit den Trainingszeiten unzufrieden. Ein zufällig ausgewähltes Mitglied ist unzufrieden. Mit welcher Wahrscheinlichkeit ist es erwachsen? \hfill (Abitur 2020 GK) \\ \leerfeld
+\teil In einem Tierbestand liegt bei 2\,\% der Tiere eine Infektion vor. Ein Schnelltest ist bei infizierten Tieren mit 95\,\% positiv, bei nicht infizierten mit 3\,\%. Deute den Term $\frac{0{,}02 \cdot 0{,}95}{0{,}02 \cdot 0{,}95 + 0{,}98 \cdot 0{,}03}$ im Sachzusammenhang. \hfill (Abitur 2021 GK)
+\teil Eine Druckerei druckt 30\,\% ihrer Aufträge auf Maschine A. Bei 6\,\% aller Aufträge wird auf A gedruckt und es gibt eine Reklamation, bei 9\,\% aller Aufträge wird nicht auf A gedruckt und es gibt eine Reklamation. Ein Auftrag wird reklamiert. Untersuche, ob die Wahrscheinlichkeit, dass er nicht auf A gedruckt wurde, größer als 50\,\% ist. \hfill (Abitur 2026 GK)
+\teil Bei einer Befragung in einem Verein erhalten 90\,\% der Mitglieder verdeckt die Frage „Willst du den Verein verlassen?“, die übrigen die Frage „Willst du im Verein bleiben?“; jede Person antwortet ehrlich. 15\,\% aller Mitglieder wollen den Verein verlassen. Eine Person mit der Antwort Ja wird zufällig ausgewählt. Mit welcher Wahrscheinlichkeit will sie den Verein verlassen? \hfill (Abitur 2021 GK) \\ \leerfeld
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Mit Parameter – Anlauf}
+\begin{teile}
+\teil Wo steht der Parameter im Term $\frac{0{,}3}{0{,}3 + a}$? \\ \kreuz{nur im Zähler} \\ \kreuz{nur im Nenner} \\ \kreuz{in Zähler und Nenner}
+\teil Ein Anteil a der Kunden eines Geschäfts, $0 < a < 1$, sind Stammkunden. 60\,\% der Stammkunden und 10\,\% der übrigen Kunden kaufen ein Angebot. Ein Kunde kauft das Angebot. Stelle einen Term in a für die Wahrscheinlichkeit auf, dass er Stammkunde ist. \leerfeld
+\teil Ein Drittel der Kunden eines Versandhändlers sind Neukunden. 10\,\% der Neukunden und ein Anteil b der Stammkunden reklamieren. Durch bessere Beratung sinkt b. Begründe ohne Rechnung, dass dabei die Wahrscheinlichkeit wächst, dass ein reklamierender Kunde ein Neukunde ist.
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Mit Parameter – Prüfungsaufgaben}
+\begin{teile}
+\teil Ein Onlinehändler verschickt 70\,\% seiner Pakete mit dem Dienst D, davon kommen 90\,\% pünktlich an; von den übrigen Paketen kommt ein Anteil a nicht pünktlich an. Ein Paket kam nicht pünktlich an. Welcher der Graphen A, B, C zeigt die Wahrscheinlichkeit, dass es mit D verschickt wurde, in Abhängigkeit von a? Begründe ohne Rechnung. \hfill (Abitur 2020 GK)
+
+\begin{ksys}[xmin=0,xmax=1,ymin=0,ymax=1,xstep=0.2,ystep=0.2,ablesen] \funktion{1-\x}{A} \funktion{0.07/(0.07+0.3*\x)}{B} \funktion{0.07/(0.07+0.3*(1-\x))}{C} \end{ksys}
+\teil In einer Stadt nutzen 50\,\% der Haushalte Fernwärme; von ihnen haben 30\,\% einen hohen Energieverbrauch, von den übrigen 10\,\%. Durch Sanierungen sinkt der Anteil der Fernwärme-Haushalte mit hohem Verbrauch um x. Die Funktion $f(x) = \frac{0{,}5 \cdot (0{,}3 - x)}{0{,}5 \cdot (0{,}3 - x) + 0{,}05}$ mit $0 \le x \le 0{,}3$ gibt die Wahrscheinlichkeit an, dass ein Haushalt mit hohem Verbrauch Fernwärme nutzt. Bestimme am Graphen x mit $f(x) = 0{,}6$ und deute x und $f(x)$ im Sachzusammenhang. \hfill (Abitur 2025 GK)
+
+\begin{ksys}[xmin=0,xmax=0.3,ymin=0,ymax=1,xstep=0.05,ystep=0.1,ablesen] \funktion{0.5*(0.3-\x)/(0.5*(0.3-\x)+0.05)}{f} \end{ksys}
+\end{teile}
+\end{aufgabe}

@@ -1,0 +1,76 @@
+% Vektoren und Rechenoperationen – bank/vektoren-und-rechenoperationen/ (zusammenbau v0.4, Heft)
+\einheitenkopf[t2]{Vektoren und Rechenoperationen}
+\setcounter{aufgabe}{18}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Vektorbegriff und Betrag – Anlauf}
+\begin{teile}
+\teil Die Länge der Strecke von $A$ nach $B$: Zahl oder Vektor? \\ \kreuz{Zahl} \\ \kreuz{Vektor}
+\teil $A(1 | 2 | 0)$, $B(4 | 3 | 2)$: $\overrightarrow{AB}$, $\overrightarrow{BA}$ und $2 \cdot \overrightarrow{AB}$?
+\teil $\vec v = (1 | a | 2)$, $a < 0$, $|\vec v| = 3$: $a$? a = \leerfeld
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Vektorbegriff und Betrag – Prüfungsaufgaben}
+\begin{teile}
+\teil $A(1 | 2 | a)$ und $B(6 | 14 | 3)$ haben den Abstand 13: $a$? \hfill (Abitur 2021 GK) \\ a = \leerfeld
+\teil Ein Verleih verteilt 600 Leihräder auf drei Stationen; jede Verteilung wird als Vektor (Räder an Station 1 | 2 | 3) notiert. Können zwei solche Vektoren verschiedene Beträge haben? Begründe mit einem Beispiel. \hfill (Abitur 2024 GK)
+\teil Bei einer Abstimmung mit drei Listen werden 90 Stimmen verteilt; jedes Ergebnis wird als Vektor (Stimmen für Liste 1 | 2 | 3) notiert. Haben alle Ergebnisvektoren denselben Betrag? Begründe mit einem Beispiel. \hfill (Abitur 2024 GK)
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Vektorterme am Körper – Anlauf}
+\begin{teile}
+\teil Wohin führt $\overrightarrow{AP} = \overrightarrow{AB} + \overrightarrow{BF}$? \\ \kreuz{Ecke} \\ \kreuz{Kantenmitte} \\ \kreuz{Flächenmitte}
+
+\begin{ksys3}[x1max=7] \rquader{0,0,0}{6}{4}{3} \rpunkt*{0}{0}{0}{A} \rpunkt*{6}{0}{0}{B} \rpunkt*{6}{4}{0}{C} \rpunkt*{0}{4}{0}{D} \rpunkt*{0}{0}{3}{E} \rpunkt*{6}{0}{3}{F} \rpunkt*{6}{4}{3}{G} \rpunkt*{0}{4}{3}{H} \end{ksys3}
+\teil Trage $P$ mit $\overrightarrow{AP} = \overrightarrow{AD} + \frac{1}{2} \cdot \overrightarrow{DC}$ ein.
+
+\begin{ksys3}[x1max=7] \rquader{0,0,0}{6}{4}{3} \rpunkt*{0}{0}{0}{A} \rpunkt*{6}{0}{0}{B} \rpunkt*{6}{4}{0}{C} \rpunkt*{0}{4}{0}{D} \rpunkt*{0}{0}{3}{E} \rpunkt*{6}{0}{3}{F} \rpunkt*{6}{4}{3}{G} \rpunkt*{0}{4}{3}{H} \end{ksys3}
+\teil $M_1$ Mitte von $AB$, $M_2$ Mitte von $GH$: Zeichne $\overrightarrow{M_1M_2}$ ein. $r$, $s$, $t$ mit $\overrightarrow{M_1M_2} = r\vec u + s\vec v + t\vec w$?
+
+\begin{ksys3}[x1max=7] \rquader{0,0,0}{6}{4}{3} \rpunkt*{0}{0}{0}{A} \rpunkt*{6}{0}{0}{B} \rpunkt*{6}{4}{0}{C} \rpunkt*{0}{4}{0}{D} \rpunkt*{0}{0}{3}{E} \rpunkt*{6}{0}{3}{F} \rpunkt*{6}{4}{3}{G} \rpunkt*{0}{4}{3}{H} \rvektorab[below]{0,0,0}{6,0,0}{\vec u} \rvektorab[left]{0,0,0}{0,4,0}{\vec v} \rvektorab[left]{0,0,0}{0,0,3}{\vec w} \end{ksys3}
+r = \leerfeld , s = \leerfeld , t = \leerfeld
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Vektorterme am Körper – Prüfungsaufgaben}
+\begin{teile}
+\teil Trage $P$ mit $\overrightarrow{AP} = \frac{1}{2} \cdot \overrightarrow{AC} + \overrightarrow{AE}$ ein. \hfill (Abitur 2021 GK)
+
+\begin{ksys3}[x1max=7] \rquader{0,0,0}{6}{4}{3} \rpunkt*{0}{0}{0}{A} \rpunkt*{6}{0}{0}{B} \rpunkt*{6}{4}{0}{C} \rpunkt*{0}{4}{0}{D} \rpunkt*{0}{0}{3}{E} \rpunkt*{6}{0}{3}{F} \rpunkt*{6}{4}{3}{G} \rpunkt*{0}{4}{3}{H} \end{ksys3}
+\teil Trage $P$ mit $\overrightarrow{AP} = \overrightarrow{AB} + \frac{1}{2} \cdot \overrightarrow{BC} + \overrightarrow{CG}$ ein. \hfill (Abitur 2026 GK)
+
+\begin{ksys3}[x1max=7] \rquader{0,0,0}{6}{4}{3} \rpunkt*{0}{0}{0}{A} \rpunkt*{6}{0}{0}{B} \rpunkt*{6}{4}{0}{C} \rpunkt*{0}{4}{0}{D} \rpunkt*{0}{0}{3}{E} \rpunkt*{6}{0}{3}{F} \rpunkt*{6}{4}{3}{G} \rpunkt*{0}{4}{3}{H} \end{ksys3}
+\teil Beschreibe die Lage von $P$ mit $\overrightarrow{AP} = \frac{1}{2} \cdot (\overrightarrow{AG} - \overrightarrow{AB})$. \hfill (Abitur 2021 GK)
+
+\begin{ksys3}[x1max=7] \rquader{0,0,0}{6}{4}{3} \rpunkt*{0}{0}{0}{A} \rpunkt*{6}{0}{0}{B} \rpunkt*{6}{4}{0}{C} \rpunkt*{0}{4}{0}{D} \rpunkt*{0}{0}{3}{E} \rpunkt*{6}{0}{3}{F} \rpunkt*{6}{4}{3}{G} \rpunkt*{0}{4}{3}{H} \end{ksys3}
+\teil $A(2 | 1 | 0)$, $B(4 | 2 | 2)$, $C(3 | 4 | 2)$; das Dreieck $ABC$ hat bei $B$ einen rechten Winkel. $D$ so, dass $ABCD$ ein Rechteck ist? \hfill (Abitur 2017 GK) \\ D( \leerfeld | \leerfeld | \leerfeld )
+\teil Quader mit $A(2 | 0 | 1)$, $G(6 | 4 | 5)$, $H(2 | 4 | 5)$; er wird so verschoben, dass der Schnittpunkt seiner Raumdiagonalen im Ursprung liegt: $H'$? \hfill (Abitur 2024 GK) \\ H'( \leerfeld | \leerfeld | \leerfeld )
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Vektorterme am Körper – Prüfungsaufgaben – weiter}
+\begin{teile}
+\teil Ein Prisma steht mit der Kante $AB$ von $A(3 | 0 | 0)$ nach $B(0 | 4 | 0)$ auf der $x_1x_2$-Ebene; $F(0 | 4 | 2)$ liegt senkrecht über $B$. Es wird um $AB$ gedreht, bis $F$ in der $x_1x_2$-Ebene liegt und eine positive $x_1$-Koordinate hat: $F'$. Term für $\overrightarrow{OF'}$? \hfill (Abitur 2026 GK)
+\teil Eine Klappe steht senkrecht mit der Kante $AB$ von $A(4 | 1 | 0)$ nach $B(0 | 4 | 0)$ auf der $x_1x_2$-Ebene; $F(0 | 4 | 4)$ liegt senkrecht über $B$. Sie wird um $AB$ gedreht, bis $F$ in der $x_1x_2$-Ebene liegt und eine positive $x_1$-Koordinate hat: $F'$. Term für $\overrightarrow{OF'}$? \hfill (Abitur 2026 GK)
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Skalarprodukt im Sachzusammenhang – Anlauf}
+\begin{teile}
+\teil Die Liste der gekauften Mengen je Sorte (Äpfel, Birnen, Pflaumen): Zahl oder Vektor? \\ \kreuz{Zahl} \\ \kreuz{Vektor}
+\teil Ein Café verkauft an einem Tag 12 Espresso, 30 Cappuccino und 18 Tee. Absatzvektor (Espresso | Cappuccino | Tee)? Was zählt die zweite Komponente? ( \leerfeld | \leerfeld | \leerfeld )
+\teil Ein Imbiss kauft $\vec m = (3 | 2 | 5)$ Kisten, die Preise sind $\vec p = (14 | 18 | 6)$ Euro je Kiste. $\vec m \circ \vec p$ und Bedeutung?
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Skalarprodukt im Sachzusammenhang – Prüfungsaufgaben}
+\begin{teile}
+\teil Ein Imbiss kauft $\vec m = (k | s | w)$ Kisten Cola, Saft und Wasser; $\vec p = (14{,}50 | 18{,}00 | 6{,}40)$ sind die Preise in Euro je Kiste. Was gibt $\vec m \circ \vec p$ an? \hfill (Abitur 2019 GK)
+\teil Ein Maler mischt Weiß, Gelb und Rot im Verhältnis 5 : 2 : 1; $\vec m = (w | g | r)$ in Litern, $\vec p = (4 | 6 | 8)$ Euro je Liter, $\vec m \circ \vec p = 168$. Wie viel Liter jeder Farbe? \hfill (Abitur 2019 GK)
+\teil Ein Müsli besteht aus Haferflocken, Nüssen und Rosinen im Verhältnis 6 : 1 : 2; $\vec m = (h | n | c)$ in kg, $\vec p = (3 | 12 | 5)$ Euro je kg, $\vec m \circ \vec p = 280$. Wie viel kg jeder Zutat? \hfill (Abitur 2019 GK)
+\end{teile}
+\end{aufgabe}

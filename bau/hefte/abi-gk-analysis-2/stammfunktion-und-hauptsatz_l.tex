@@ -1,0 +1,25 @@
+% Lösungen Stammfunktion und Hauptsatz (zusammenbau v0.4, Heft)
+\einheitenkopf{Stammfunktion und Hauptsatz}
+
+\erg{1}{a) aufleiten – gesucht ist $F$, seine Ableitung ist bekannt. \quad b) $F(x) = \frac{1}{3}x^3 + 2x^2$ \quad c) $c = 3$ oder $c = -3$: $G(x) = x^2 - 2x + 3$ und $G(x) = x^2 - 2x - 3$.}
+\erg{2}{a) $f(x) = 12x^3 - 2$ \quad b) $f(x) = x^4 + 2x$ \quad c) $f(x) = 6e^{3x} + 1$ \quad d) $F'(x) = -e^{-x} + (-x - 3) \cdot (-1) \cdot e^{-x} = (x + 2) \cdot e^{-x} = f(x)$; da $e^{-x} > 0$ ist, gilt $f(x) = 0$ nur für $x + 2 = 0$, also $x = -2$. \quad e) $F'(x) = (2x - 4) \cdot e^{x} + (x^2 - 4x + 4) \cdot e^{x} = (x^2 - 2x) \cdot e^{x} = f(x)$ \quad f) $F(x) = 2x^3 - 2x^2 + c$ mit $F(2) = 8 + c = 5$, also $c = -3$ und $F(x) = 2x^3 - 2x^2 - 3$. \quad g) $F(x) = \frac{1}{8}x^4 - x + c$ mit $F(-2) = 4 + c = 3$, also $c = -1$ und $F(x) = \frac{1}{8}x^4 - x - 1$. \quad h) $H(x) = F(x) + c$ mit $H(0) = 3 + c = 8$, also $c = 5$ und $H(x) = (2x + 3) \cdot e^{-x} + 5$. \quad i) Berührung an den Nullstellen $x = \pm 1$ von $f$: $F(1) + c = 0$ gibt $c = 2$, $F(-1) + c = 0$ gibt $c = -2$; also $x^3 - 3x + 2$ und $x^3 - 3x - 2$. \quad j) $F(x) = (x^2 - 2x + 2) \cdot e^{x} - 3e^{x} = (x^2 - 2x - 1) \cdot e^{x}$ \quad k) $F(x) = -3 \cdot (x + 1) \cdot e^{-x} + e^{-x} = (-3x - 2) \cdot e^{-x}$}
+\erg{3}{a) $F(x) = x^3 - x^2$; $F(2) - F(0) = 4 - 0 = 4$ \quad b) $F(4) - F(0) = 3 - 1 = 2$}
+\erg{4}{a) $F(x) = \frac{1}{4}x^4 - x^3$; $F(2) - F(0) = 4 - 8 = -4$ \quad b) $F(x) = \frac{1}{4} \cdot (\frac{1}{4}x^4 - 2x^3 + 4x^2)$; $F(2) - F(0) = \frac{1}{4} \cdot 4 = 1$ \quad c) $4\pi \approx 12,57$ – der Kosinusanteil liefert über die volle Periode null, es bleibt $2 \cdot 2\pi$. \quad d) $6\pi \approx 18,85$ – der Sinusanteil liefert über die volle Periode null, es bleibt $3 \cdot 2\pi$. \quad e) $\pi \approx 3,14$ – $\mathrm{sin}(2x)$ hat die Periode $\pi$ und liefert null, es bleibt $1 \cdot \pi$. \quad f) exakt $F(1) - F(-2) = e - 4e^{-2} \approx 2,18$; Abweichung $\frac{2,177 - 2,1}{2,177} \approx 3,5\,\%$, der Näherungswert ist zu klein. \quad g) exakt $F(2) - F(0) = 0 - (-2) = 2$; Abweichung $\frac{e - 2}{2} \approx 35,9\,\%$, der Näherungswert ist zu groß. \quad h) exakt $F(2) - F(0) = 6 - 1 = 5$ mit $F(x) = \frac{3}{2}x^2 - \frac{1}{16}x^4$; Abweichung $\frac{5 - 4}{5} = 20\,\%$, der Näherungswert ist zu klein. \quad i) exakt $F(3) - F(0) = 18 - 9 = 9$ mit $F(x) = 2x^2 - \frac{1}{3}x^3$; Näherung $3 \cdot 3,75 = 11,25$; Abweichung $\frac{11,25 - 9}{9} = 25\,\%$, der Näherungswert ist zu groß.}
+\erg{5}{a) $u$ – denn $u' = v$. \quad b) fallend für $x < 1$, steigend für $x > 1$; Tiefpunkt bei $x = 1$ – eine Parabel durch $P(0 | 1)$ mit dem Tiefpunkt $(1 | 0,5)$. \quad c) $F(3) - F(-1) = 2 - 2 = 0$}
+
+5b)
+
+\begin{ksys}[xmin=-2,xmax=4,ymin=-3,ymax=4,klein] \gerade{1}{-1}{f} \funktion{0.5*\x^2-\x+1}{F} \end{ksys}
+
+\erg{6}{a) $F$ steigt überall ($f > 0$), am steilsten bei $x = 0$: Wendepunkt in $P(0 | 1)$, kein Hochpunkt; nach links und rechts flacht $F$ ab. \quad b) $F$ fällt für $x < 1$ und steigt danach: Tiefpunkt in $P(1 | -1)$, wo $f$ von minus nach plus wechselt; Wendepunkt bei $x = 0$, wo $f$ seinen Tiefpunkt hat; links flach, rechts steil. \quad c) $F(4) - F(0) = 0 - 4 = -4$ \quad d) Minimum bei $x = 2$: $g(x) \le 0$ für $x < 2$ und $g(x) > 0$ für $x > 2$, also fällt jede Stammfunktion bis $2$ und steigt danach; die Nullstelle $0$ hat keinen Vorzeichenwechsel und liefert keine Extremstelle. \quad e) $x = 6$: $h$ ist zwischen $0$ und $6$ positiv und rechts von $6$ negativ, also steigt jede Stammfunktion bis $6$ und fällt danach – nicht an der Scheitelstelle $3$ von $h$. \quad f) falsch – für eine Stammfunktion $F$ gilt $F'' = f'$; $f'$ wechselt bei $-1$ und bei $1$ das Vorzeichen, also ändert $F$ zweimal sein Krümmungsverhalten.}
+
+6a)
+
+\begin{ksys}[xmin=-4,xmax=4,ymin=-2,ymax=4,klein] \funktion{2/(1+\x^2)}{f} \funktion{2*atan(\x)*3.14159/180+1}{F} \end{ksys}
+
+
+6b)
+
+\begin{ksys}[xmin=-4,xmax=3,ymin=-2,ymax=4,klein] \funktionab{(\x-1)*exp(\x-1)}{f}{-4}{2.2} \funktionab{(\x-2)*exp(\x-1)}{F}{-4}{2.7} \end{ksys}
+
+\erg{7}{a) $f$ wechselt bei $0$ das Vorzeichen von minus nach plus ($x$ wechselt, $(x + 2) \cdot e^{-x}$ ist nahe $0$ positiv), also hat jede Stammfunktion dort einen Tiefpunkt; $H(0) = F(0) + c = -4 + c = 0$, also $c = 4$ und $H(x) = 4 - (x + 2)^2 \cdot e^{-x}$. \quad b) $f$ wechselt bei $0$ das Vorzeichen von minus nach plus ($x$ wechselt, $(4 - x) \cdot e^{x}$ ist nahe $0$ positiv), also hat jede Stammfunktion dort einen Tiefpunkt; $H(0) = F(0) + c = -3 + c = 0$, also $c = 3$ und $H(x) = F(x) + 3$.}

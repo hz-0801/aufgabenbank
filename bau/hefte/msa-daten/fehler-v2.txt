@@ -1,0 +1,1 @@
+# msa-daten (DAT-H1), Versuch 2: 0 Fehlerstellen (je Datei und Zeile die erste Meldung)

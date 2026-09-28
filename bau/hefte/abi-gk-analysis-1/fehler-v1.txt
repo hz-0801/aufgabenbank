@@ -1,0 +1,1 @@
+# abi-gk-analysis-1 (AEN-H1), Versuch 1: 0 Fehlerstellen (je Datei und Zeile die erste Meldung)

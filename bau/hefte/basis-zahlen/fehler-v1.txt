@@ -1,0 +1,7 @@
+# basis-zahlen (BRU-H2), Versuch 1: 6 Fehlerstellen (je Datei und Zeile die erste Meldung)
+BRU-H2.tex → brueche-dezimalzahlen_a.tex:101: Missing $ inserted.
+BRU-H2.tex → brueche-dezimalzahlen_a.tex:102: LaTeX Error: Command \item invalid in math m
+BRU-H2.tex → brueche-dezimalzahlen_a.tex:103: LaTeX Error: Command \end{list} invalid in m
+BRU-H2.tex → brueche-dezimalzahlen_a.tex:114: Missing $ inserted.
+BRU-H2.tex → brueche-dezimalzahlen_a.tex:115: LaTeX Error: Command \item invalid in math m
+BRU-H2.tex → brueche-dezimalzahlen_a.tex:116: LaTeX Error: Command \item invalid in math m

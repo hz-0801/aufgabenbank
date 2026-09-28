@@ -1,0 +1,152 @@
+# zusammenbau v0.4: zusammenbau.py flaechen koerper pyramide-kegel-kugel pythagoras trigonometrie kreis winkel-dreiecke strahlensaetze symmetrie-abbildungen --heft msa --nur-basis --titel Prüfungsheft Basis · Geometrie
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG FLA-H2 – Kürzel FLA aus _kuerzel.csv (mathe-nachhilfe) (erster Eintrag flaechen); Rezept H (Heft)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+WEG flaechen e1 „Gegeben – gesucht“ – keine Prüfungshöhe im Profil basis
+AUSWAHL flaechen-e1-k2-s9-v1 – flaechen e1 „Rechteck“: Prüfungshöhe (2018-OS-B1f)
+AUSWAHL flaechen-e1-k2-s9-v2 – flaechen e1 „Rechteck“: Prüfungshöhe (2018-OS-B1f)
+WEG flaechen e1 „aus Rechtecken zusammengesetzte Fläche (Summe)“ – keine Prüfungshöhe im Profil basis
+WEG flaechen e1 „Einheit wechseln vor dem Rechnen (cm und m gemischt)“ – keine Prüfungshöhe im Profil basis
+WEG flaechen e2 „Parallelogramm“ – keine Prüfungshöhe im Profil basis
+WEG flaechen e2 „Umfang aus den Seiten“ – keine Prüfungshöhe im Profil basis
+WEG flaechen e3 „Dreieck“ – keine Prüfungshöhe im Profil basis
+WEG flaechen e3 „Höhe zur passenden Grundseite wählen (drei Höhen)“ – keine Prüfungshöhe im Profil basis
+WEG flaechen e3 „Umfang“ – keine Prüfungshöhe im Profil basis
+WEG flaechen e4 „Trapez“ – keine Prüfungshöhe im Profil basis
+WEG flaechen e4 „Umfang mit Schenkel aus Pythagoras oder Sinus (Vorrat)“ – keine Prüfungshöhe im Profil basis
+WEG flaechen e4 „Diagonale aus A“ – keine Prüfungshöhe im Profil basis
+WEG flaechen e5 „Zusammengesetzte Figuren“ – keine Prüfungshöhe im Profil basis
+WEG flaechen e5 „Sachaufgabe mit Entscheidung (reicht die Platte?)“ – keine Prüfungshöhe im Profil basis
+WEG flaechen e5 „Verschnitt in Prozent (Vorrat, Niveau III)“ – keine Prüfungshöhe im Profil basis
+AUSWAHL koerper-e1-k1-s0-v1 – koerper e1 „Körper und Netze“: Prüfungshöhe (2017-OS-B1c)
+AUSWAHL koerper-e1-k1-s0-v2 – koerper e1 „Körper und Netze“: Prüfungshöhe (2017-OS-B1c)
+AUSWAHL koerper-e1-k5-s4-v1 – koerper e1 „Körper und Netze“: Prüfungshöhe (2018-OS-B1i)
+AUSWAHL koerper-e1-k1-s8-v1 – koerper e1 „Körper und Netze“: Prüfungshöhe (2016-OS-B1j)
+AUSWAHL koerper-e1-k1-s8-v2 – koerper e1 „Körper und Netze“: Prüfungshöhe (2016-OS-B1j)
+AUSWAHL koerper-e1-k1-s8-v3 – koerper e1 „Körper und Netze“: Prüfungshöhe (2019-OS-B1f)
+AUSWAHL koerper-e1-k1-s8-v4 – koerper e1 „Körper und Netze“: Prüfungshöhe (2019-OS-B1f)
+TEILUNG koerper e1 „Körper und Netze“: 7 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+WEG koerper e1 „Grund- und Deckfläche, Seitenflächen benennen (auch beim liegenden Prisma)“ – keine Prüfungshöhe im Profil basis
+WEG koerper e1 „Schrägbild lesen: verdeckte Kanten, Maße entnehmen“ – keine Prüfungshöhe im Profil basis
+WEG koerper e1 „Körper in ein Schrägbild einzeichnen (Kegel im Quader)“ – keine Prüfungshöhe im Profil basis
+AUSWAHL koerper-e2-k1-s8-v1 – koerper e2 „Quader“: Prüfungshöhe (2026-FOR-B1f)
+AUSWAHL koerper-e2-k1-s8-v2 – koerper e2 „Quader“: Prüfungshöhe (2026-FOR-B1f)
+WEG koerper e2 „Oberfläche ohne Deckel (Kiste, Aquarium)“ – keine Prüfungshöhe im Profil basis
+WEG koerper e2 „Würfelkante aus V (Kubikzahlen)“ – keine Prüfungshöhe im Profil basis
+WEG koerper e2 „Einheiten cm³, dm³ = l, m³ (1 l = 1000 cm³)“ – keine Prüfungshöhe im Profil basis
+WEG koerper e2 „Aquarium: Füllmenge in Litern, Füllhöhe“ – keine Prüfungshöhe im Profil basis
+WEG koerper e3 „Prisma“ – keine Prüfungshöhe im Profil basis
+WEG koerper e4 „Welche Einheit?“ – keine Prüfungshöhe im Profil basis
+WEG koerper e4 „Zylinder“ – keine Prüfungshöhe im Profil basis
+WEG koerper e5 „Zusammengesetzt“ – keine Prüfungshöhe im Profil basis
+WEG koerper e5 „Füllstand in Prozent“ – keine Prüfungshöhe im Profil basis
+WEG koerper e5 „Oberfläche eines zusammengesetzten Körpers“ – keine Prüfungshöhe im Profil basis
+WEG pyramide-kegel-kugel e1 „Säule, Spitze oder Kugel?“ – keine Prüfungshöhe im Profil basis
+WEG pyramide-kegel-kugel e1 „Stützdreieck einzeichnen“ – keine Prüfungshöhe im Profil basis
+WEG pyramide-kegel-kugel e1 „Volumen oder Oberfläche?“ – keine Prüfungshöhe im Profil basis
+WEG pyramide-kegel-kugel e1 „Welche Formel?“ – keine Prüfungshöhe im Profil basis
+WEG pyramide-kegel-kugel e1 „Pyramide“ – keine Prüfungshöhe im Profil basis
+WEG pyramide-kegel-kugel e2 „Radius oder Durchmesser?“ – keine Prüfungshöhe im Profil basis
+WEG pyramide-kegel-kugel e2 „Kegel“ – keine Prüfungshöhe im Profil basis
+WEG pyramide-kegel-kugel e3 „Kugel“ – keine Prüfungshöhe im Profil basis
+LEER pyramide-kegel-kugel: keine Kette mit Prüfungshöhe – Eintrag entfällt im Heft
+WEG pythagoras e1 „Gilt der Satz hier?“ – keine Prüfungshöhe im Profil basis
+WEG pythagoras e1 „Hypotenuse“ – keine Prüfungshöhe im Profil basis
+WEG pythagoras e1 „Quadrate über den Seiten zeichnen und Flächen vergleichen (Kästchen zählen)“ – keine Prüfungshöhe im Profil basis
+WEG pythagoras e1 „Ergebnis mit sinnvoller Genauigkeit angeben“ – keine Prüfungshöhe im Profil basis
+WEG pythagoras e2 „Welche Seite ist die längste?“ – keine Prüfungshöhe im Profil basis
+WEG pythagoras e2 „Kathete“ – keine Prüfungshöhe im Profil basis
+WEG pythagoras e2 „pythagoreische Tripel erkennen und vervielfachen“ – keine Prüfungshöhe im Profil basis
+WEG pythagoras e3 „Ganz oder halb?“ – keine Prüfungshöhe im Profil basis
+WEG pythagoras e3 „Figuren und Körper“ – keine Prüfungshöhe im Profil basis
+WEG pythagoras e3 „Rampe, Leiter, Seil an der Wand mit Skizze“ – keine Prüfungshöhe im Profil basis
+LEER pythagoras: keine Kette mit Prüfungshöhe – Eintrag entfällt im Heft
+WEG trigonometrie e1 „sin, cos oder tan?“ – keine Prüfungshöhe im Profil basis
+WEG trigonometrie e1 „Mal oder geteilt?“ – keine Prüfungshöhe im Profil basis
+AUSWAHL trigonometrie-e1-k3-s1-v1 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2017-OS-B1j)
+AUSWAHL trigonometrie-e1-k3-s1-v2 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2019-OS-B1h)
+AUSWAHL trigonometrie-e1-k3-s2-v1 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2018-OS-B1g)
+AUSWAHL trigonometrie-e1-k3-s2-v2 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2018-OS-B1g)
+AUSWAHL trigonometrie-e1-k3-s2-v3 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2018-OS-B1g)
+AUSWAHL trigonometrie-e1-k3-s16-v9 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2020-OS-B1j)
+AUSWAHL trigonometrie-e1-k3-s16-v10 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2020-OS-B1j)
+AUSWAHL trigonometrie-e1-k3-s16-v11 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2025-OS-B1g)
+AUSWAHL trigonometrie-e1-k3-s16-v12 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2025-OS-B1g)
+AUSWAHL trigonometrie-e1-k3-s16-v13 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2020-OS-B1c)
+AUSWAHL trigonometrie-e1-k3-s16-v14 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2020-OS-B1c)
+TEILUNG trigonometrie e1 „Seite berechnen“: 11 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+WEG trigonometrie e1 „Seiten vom zweiten spitzen Winkel aus neu benennen (Gegen- und Ankathete tauschen)“ – keine Prüfungshöhe im Profil basis
+WEG trigonometrie e1 „Seitenverhältnis aus gegebenen Längen als Dezimalzahl und Vergleich mit dem Taschenrechnerwert des Winkels“ – keine Prüfungshöhe im Profil basis
+WEG trigonometrie e1 „Ergebnis prüfen: Kathete kürzer als Hypotenuse“ – keine Prüfungshöhe im Profil basis
+WEG trigonometrie e2 „Winkel berechnen“ – keine Prüfungshöhe im Profil basis
+WEG trigonometrie e2 „Winkel prüfen: die längere Kathete liegt dem größeren Winkel gegenüber“ – keine Prüfungshöhe im Profil basis
+WEG trigonometrie e2 „Umkehrtaste am Taschenrechner (SHIFT sin, cos, tan; Anzeige sin⁻¹)“ – keine Prüfungshöhe im Profil basis
+WEG trigonometrie e3 „Teildreiecke und Vermessung“ – keine Prüfungshöhe im Profil basis
+WEG trigonometrie e3 „Strecke aus Teilstrecken nach der Trigonometrie“ – keine Prüfungshöhe im Profil basis
+WEG trigonometrie e4 „Sinussatz“ – keine Prüfungshöhe im Profil basis
+WEG kreis e1 „Rand oder Fläche?“ – keine Prüfungshöhe im Profil basis
+WEG kreis e1 „Umfang“ – keine Prüfungshöhe im Profil basis
+WEG kreis e1 „Radius, Durchmesser, Mittelpunkt in einer Figur benennen und einzeichnen“ – keine Prüfungshöhe im Profil basis
+WEG kreis e1 „Kreis mit gegebenem Radius oder Durchmesser zeichnen“ – keine Prüfungshöhe im Profil basis
+WEG kreis e1 „Umfang messen und u : d bilden (Entdeckung von π)“ – keine Prüfungshöhe im Profil basis
+WEG kreis e2 „Fläche“ – keine Prüfungshöhe im Profil basis
+WEG kreis e2 „Term zu Figur“ – keine Prüfungshöhe im Profil basis
+WEG kreis e2 „Sachaufgabe (Abwurfring, Pizza, Deckel, Grundfläche eines Kegels oder Zylinders)“ – keine Prüfungshöhe im Profil basis
+WEG kreis e2 „Fläche oder Umfang: die passende Formel wählen“ – keine Prüfungshöhe im Profil basis
+AUSWAHL kreis-e3-k1-s8-v1 – kreis e3 „Kreisteile“: Prüfungshöhe (2025-OS-B1e)
+AUSWAHL kreis-e3-k1-s8-v2 – kreis e3 „Kreisteile“: Prüfungshöhe (2025-OS-B1e)
+WEG kreis e3 „Sachaufgabe (Rasensprenger, Tortenstück, Sektor im Kreisdiagramm)“ – keine Prüfungshöhe im Profil basis
+WEG winkel-dreiecke e1 „Welche Skala?“ – keine Prüfungshöhe im Profil basis
+WEG winkel-dreiecke e1 „Winkel messen“ – keine Prüfungshöhe im Profil basis
+WEG winkel-dreiecke e1 „Winkel schätzen“ – keine Prüfungshöhe im Profil basis
+WEG winkel-dreiecke e2 „Sind die Geraden parallel?“ – keine Prüfungshöhe im Profil basis
+AUSWAHL winkel-dreiecke-e2-k2-s4-v1 – winkel-dreiecke e2 „Winkel an Geraden“: Prüfungshöhe (2014-OS-B1f)
+AUSWAHL winkel-dreiecke-e2-k2-s6-v1 – winkel-dreiecke e2 „Winkel an Geraden“: Prüfungshöhe (2020-OS-B1g)
+AUSWAHL winkel-dreiecke-e2-k2-s8-v1 – winkel-dreiecke e2 „Winkel an Geraden“: Prüfungshöhe (2019-OS-B1a)
+AUSWAHL winkel-dreiecke-e2-k2-s9-v2 – winkel-dreiecke e2 „Winkel an Geraden“: Prüfungshöhe (2021-OS-B1i)
+AUSWAHL winkel-dreiecke-e2-k2-s10-v1 – winkel-dreiecke e2 „Winkel an Geraden“: Prüfungshöhe (2015-OS-B1d)
+AUSWAHL winkel-dreiecke-e2-k2-s10-v2 – winkel-dreiecke e2 „Winkel an Geraden“: Prüfungshöhe (2015-OS-B1d)
+AUSWAHL winkel-dreiecke-e2-k2-s10-v3 – winkel-dreiecke e2 „Winkel an Geraden“: Prüfungshöhe (2026-FOR-B1i)
+AUSWAHL winkel-dreiecke-e2-k2-s10-v4 – winkel-dreiecke e2 „Winkel an Geraden“: Prüfungshöhe (2026-FOR-B1i)
+TEILUNG winkel-dreiecke e2 „Winkel an Geraden“: 8 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+WEG winkel-dreiecke e2 „Parallelität aus gleichen Stufenwinkeln prüfen“ – keine Prüfungshöhe im Profil basis
+WEG winkel-dreiecke e3 „Welches Teildreieck?“ – keine Prüfungshöhe im Profil basis
+AUSWAHL winkel-dreiecke-e3-k2-s10-v1 – winkel-dreiecke e3 „Winkelsumme“: Prüfungshöhe (2026-FOR-B1c)
+AUSWAHL winkel-dreiecke-e3-k2-s10-v2 – winkel-dreiecke e3 „Winkelsumme“: Prüfungshöhe (2016-OS-B1e)
+AUSWAHL winkel-dreiecke-e3-k2-s11-v1 – winkel-dreiecke e3 „Winkelsumme“: Prüfungshöhe (2023-OS-B1g)
+AUSWAHL winkel-dreiecke-e3-k2-s11-v2 – winkel-dreiecke e3 „Winkelsumme“: Prüfungshöhe (2023-OS-B1g)
+WEG winkel-dreiecke e3 „Innenwinkelsumme von Fünf- und Sechseck über Dreiecke“ – keine Prüfungshöhe im Profil basis
+AUSWAHL winkel-dreiecke-e4-k1-s10-v1 – winkel-dreiecke e4 „Konstruieren“: Prüfungshöhe (2020-OS-B1i)
+AUSWAHL winkel-dreiecke-e4-k1-s10-v2 – winkel-dreiecke e4 „Konstruieren“: Prüfungshöhe (2020-OS-B1i)
+WEG winkel-dreiecke e4 „Dreieck skizzieren und beschriften“ – keine Prüfungshöhe im Profil basis
+WEG winkel-dreiecke e5 „Besondere Linien“ – keine Prüfungshöhe im Profil basis
+WEG strahlensaetze e1 „Gleiche Einheit?“ – keine Prüfungshöhe im Profil basis
+WEG strahlensaetze e1 „Maßstab umrechnen“ – keine Prüfungshöhe im Profil basis
+WEG strahlensaetze e1 „Maßstabsgerecht zeichnen“ – keine Prüfungshöhe im Profil basis
+WEG strahlensaetze e2 „Zentrische Streckung und Ähnlichkeit“ – keine Prüfungshöhe im Profil basis
+WEG strahlensaetze e2 „Zentrum aus Original und Bild finden“ – keine Prüfungshöhe im Profil basis
+WEG strahlensaetze e3 „Strahlensätze“ – keine Prüfungshöhe im Profil basis
+WEG strahlensaetze e3 „Voraussetzung prüfen“ – keine Prüfungshöhe im Profil basis
+WEG strahlensaetze e3 „Strecke in n gleiche Teile teilen“ – keine Prüfungshöhe im Profil basis
+LEER strahlensaetze: keine Kette mit Prüfungshöhe – Eintrag entfällt im Heft
+WEG symmetrie-abbildungen e1 „„Erst rechts, dann hoch““ – keine Prüfungshöhe im Profil basis
+AUSWAHL symmetrie-abbildungen-e1-k2-s8-v1 – symmetrie-abbildungen e1 „Punkte und Figuren im Koordinatensystem“: Prüfungshöhe (2020-OS-B1b)
+AUSWAHL symmetrie-abbildungen-e1-k2-s8-v2 – symmetrie-abbildungen e1 „Punkte und Figuren im Koordinatensystem“: Prüfungshöhe (2020-OS-B1b)
+WEG symmetrie-abbildungen e1 „Achsen und Ursprung benennen, Einteilung ablesen“ – keine Prüfungshöhe im Profil basis
+WEG symmetrie-abbildungen e1 „Schreibweise P(x | y) lesen und schreiben (erste Zahl nach rechts, zweite nach oben)“ – keine Prüfungshöhe im Profil basis
+WEG symmetrie-abbildungen e1 „Streckenlänge parallel zu einer Achse abzählen“ – keine Prüfungshöhe im Profil basis
+WEG symmetrie-abbildungen e2 „„Wie viele Achsen?““ – keine Prüfungshöhe im Profil basis
+AUSWAHL symmetrie-abbildungen-e2-k2-s9-v1 – symmetrie-abbildungen e2 „Symmetrieachsen bestimmen“: Prüfungshöhe (2022-OS-B1i)
+AUSWAHL symmetrie-abbildungen-e2-k2-s9-v2 – symmetrie-abbildungen e2 „Symmetrieachsen bestimmen“: Prüfungshöhe (2022-OS-B1i)
+AUSWAHL symmetrie-abbildungen-e2-k2-s9-v3 – symmetrie-abbildungen e2 „Symmetrieachsen bestimmen“: Prüfungshöhe (2021-OS-B1j)
+AUSWAHL symmetrie-abbildungen-e2-k2-s9-v4 – symmetrie-abbildungen e2 „Symmetrieachsen bestimmen“: Prüfungshöhe (2021-OS-B1j)
+AUSWAHL symmetrie-abbildungen-e2-k3-s8-v1 – symmetrie-abbildungen e2 „Spiegeln und Spiegelbild benennen“: Prüfungshöhe (2018-OS-B1h)
+AUSWAHL symmetrie-abbildungen-e2-k3-s8-v2 – symmetrie-abbildungen e2 „Spiegeln und Spiegelbild benennen“: Prüfungshöhe (2018-OS-B1h)
+WEG symmetrie-abbildungen e2 „prüfen, ob eine eingezeichnete Gerade Symmetrieachse ist (falten oder messen)“ – keine Prüfungshöhe im Profil basis
+WEG symmetrie-abbildungen e2 „Symmetrie der Vierecksarten im Haus der Vierecke zuordnen“ – keine Prüfungshöhe im Profil basis
+WEG symmetrie-abbildungen e3 „Drehen, Verschieben, Punktsymmetrie“ – keine Prüfungshöhe im Profil basis
+WEG symmetrie-abbildungen e3 „drehsymmetrische Figuren erkennen und den Drehwinkel angeben (Vorrat)“ – keine Prüfungshöhe im Profil basis
+WEG symmetrie-abbildungen e3 „Original und Bild vergleichen: Längen und Winkel bleiben gleich, kongruente Figuren“ – keine Prüfungshöhe im Profil basis
+FORM trigonometrie-e1-k3-s16-v9 (Nr. 6): gleichungsraster mit Text → teile
+FORM trigonometrie-e1-k3-s16-v10 (Nr. 6): gleichungsraster mit Text → teile
+STRUKTUR 0 Fehler

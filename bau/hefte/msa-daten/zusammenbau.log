@@ -1,0 +1,90 @@
+# zusammenbau v0.4: zusammenbau.py daten wahrscheinlichkeit --heft msa --titel Prüfungsheft MSA · Daten und Zufall
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG DAT-H1 – Kürzel DAT aus _kuerzel.csv (mathe-nachhilfe) (erster Eintrag daten); Rezept H (Heft)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+AUSWAHL daten-e1-k1-s0-v1 – daten e1 „Häufigkeiten“: Anlauf, Vorstufe
+AUSWAHL daten-e1-k1-s1-v1 – daten e1 „Häufigkeiten“: Anlauf, Grundfall
+AUSWAHL daten-e1-k1-s2-v1 – daten e1 „Häufigkeiten“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL daten-e1-k1-s11-v1 – daten e1 „Häufigkeiten“: Prüfungshöhe (2015-OS-K7b)
+AUSWAHL daten-e1-k1-s11-v2 – daten e1 „Häufigkeiten“: Prüfungshöhe (2015-OS-K7b)
+WEG daten e1 „Häufigkeiten, Sek II“ – keine Prüfungshöhe im Profil msa
+WEG daten e1 „Klassen zu einer Urliste bilden (gleich breit, Randregel)“ – keine Prüfungshöhe im Profil msa
+WEG daten e1 „Häufigkeitstabelle mit Klassen auszählen“ – keine Prüfungshöhe im Profil msa
+WEG daten e1 „Säulendiagramm der Klassen zeichnen“ – keine Prüfungshöhe im Profil msa
+WEG daten e1 „Aussage aus der Klassentabelle prüfen (in welcher Klasse liegen die meisten)“ – keine Prüfungshöhe im Profil msa
+WEG daten e2 „Wo fängt die Achse an?“ – keine Prüfungshöhe im Profil msa
+AUSWAHL daten-e2-k2-s0-v1 – daten e2 „Diagramme lesen“: Anlauf, Vorstufe
+AUSWAHL daten-e2-k2-s1-v1 – daten e2 „Diagramme lesen“: Anlauf, Grundfall
+AUSWAHL daten-e2-k2-s2-v1 – daten e2 „Diagramme lesen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL daten-e2-k2-s3-v2 – daten e2 „Diagramme lesen“: Prüfungshöhe (2016-OS-K2b)
+AUSWAHL daten-e2-k2-s4-v2 – daten e2 „Diagramme lesen“: Prüfungshöhe (2020-OS-K2b)
+AUSWAHL daten-e2-k2-s4-v3 – daten e2 „Diagramme lesen“: Prüfungshöhe (2016-OS-K2a)
+AUSWAHL daten-e2-k2-s7-v2 – daten e2 „Diagramme lesen“: Prüfungshöhe (2020-OS-K2a)
+AUSWAHL daten-e2-k2-s7-v3 – daten e2 „Diagramme lesen“: Prüfungshöhe (2026-FOR-K3d)
+AUSWAHL daten-e2-k2-s11-v1 – daten e2 „Diagramme lesen“: Prüfungshöhe (2023-OS-K6d)
+AUSWAHL daten-e2-k2-s11-v2 – daten e2 „Diagramme lesen“: Prüfungshöhe (2023-OS-K6d)
+AUSWAHL daten-e2-k2-s11-v3 – daten e2 „Diagramme lesen“: Prüfungshöhe (2018-OS-K3a)
+AUSWAHL daten-e2-k2-s11-v4 – daten e2 „Diagramme lesen“: Prüfungshöhe (2018-OS-K3a)
+TEILUNG daten e2 „Diagramme lesen“: 9 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+WEG daten e2 „Diagramm aus einer Tabelle zeichnen (Skala wählen)“ – keine Prüfungshöhe im Profil msa
+AUSWAHL wahrscheinlichkeit-e1-k1-s0-v1 – wahrscheinlichkeit e1 „Zählen“: Anlauf, Vorstufe
+AUSWAHL wahrscheinlichkeit-e1-k1-s1-v1 – wahrscheinlichkeit e1 „Zählen“: Anlauf, Grundfall
+AUSWAHL wahrscheinlichkeit-e1-k1-s6-v3 – wahrscheinlichkeit e1 „Zählen“: Anlauf, Sprosse – Fallstrick im Merkmal („zwei Geräte, Ergebnisse als geordnete Paare, verta“)
+AUSWAHL wahrscheinlichkeit-e1-k1-s3-v3 – wahrscheinlichkeit e1 „Zählen“: Prüfungshöhe (2016-OS-K5b)
+AUSWAHL wahrscheinlichkeit-e1-k1-s5-v3 – wahrscheinlichkeit e1 „Zählen“: Prüfungshöhe (2016-OS-K5a)
+AUSWAHL wahrscheinlichkeit-e1-k1-s6-v1 – wahrscheinlichkeit e1 „Zählen“: Prüfungshöhe (2017-OS-B1f)
+AUSWAHL wahrscheinlichkeit-e1-k1-s6-v2 – wahrscheinlichkeit e1 „Zählen“: Prüfungshöhe (2025-OS-K3a)
+AUSWAHL wahrscheinlichkeit-e1-k1-s7-v1 – wahrscheinlichkeit e1 „Zählen“: Prüfungshöhe (2020-OS-K6a)
+AUSWAHL wahrscheinlichkeit-e1-k1-s8-v3 – wahrscheinlichkeit e1 „Zählen“: Prüfungshöhe (2015-OS-K5a)
+AUSWAHL wahrscheinlichkeit-e1-k1-s9-v1 – wahrscheinlichkeit e1 „Zählen“: Prüfungshöhe (2017-OS-K6b, Stern)
+AUSWAHL wahrscheinlichkeit-e1-k1-s9-v2 – wahrscheinlichkeit e1 „Zählen“: Prüfungshöhe (2017-OS-K6b, Stern)
+WEG wahrscheinlichkeit e1 „Ergebnisse zu „mindestens einmal …“ aufzählen“ – keine Prüfungshöhe im Profil msa
+WEG wahrscheinlichkeit e2 „Wie viele Stufen?“ – keine Prüfungshöhe im Profil msa
+WEG wahrscheinlichkeit e2 „Gleich groß?“ – keine Prüfungshöhe im Profil msa
+AUSWAHL wahrscheinlichkeit-e2-k3-s0-v1 – wahrscheinlichkeit e2 „Einstufig“: Anlauf, Vorstufe
+AUSWAHL wahrscheinlichkeit-e2-k3-s1-v1 – wahrscheinlichkeit e2 „Einstufig“: Anlauf, Grundfall
+AUSWAHL wahrscheinlichkeit-e2-k3-s2-v1 – wahrscheinlichkeit e2 „Einstufig“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL wahrscheinlichkeit-e2-k3-s5-v1 – wahrscheinlichkeit e2 „Einstufig“: Prüfungshöhe (2019-OS-K6a)
+AUSWAHL wahrscheinlichkeit-e2-k3-s5-v2 – wahrscheinlichkeit e2 „Einstufig“: Prüfungshöhe (2014-OS-K6a)
+AUSWAHL wahrscheinlichkeit-e2-k3-s5-v3 – wahrscheinlichkeit e2 „Einstufig“: Prüfungshöhe (2017-OS-K6a)
+AUSWAHL wahrscheinlichkeit-e2-k3-s6-v1 – wahrscheinlichkeit e2 „Einstufig“: Prüfungshöhe (2014-OS-B1b)
+AUSWAHL wahrscheinlichkeit-e2-k3-s6-v2 – wahrscheinlichkeit e2 „Einstufig“: Prüfungshöhe (2016-OS-K5c)
+AUSWAHL wahrscheinlichkeit-e2-k3-s6-v3 – wahrscheinlichkeit e2 „Einstufig“: Prüfungshöhe (2016-OS-B1f)
+AUSWAHL wahrscheinlichkeit-e2-k3-s7-v1 – wahrscheinlichkeit e2 „Einstufig“: Prüfungshöhe (2014-OS-B1d)
+AUSWAHL wahrscheinlichkeit-e2-k3-s8-v1 – wahrscheinlichkeit e2 „Einstufig“: Prüfungshöhe (2018-OS-B1j)
+AUSWAHL wahrscheinlichkeit-e2-k3-s9-v2 – wahrscheinlichkeit e2 „Einstufig“: Prüfungshöhe (2019-OS-B1g)
+AUSWAHL wahrscheinlichkeit-e2-k3-s10-v1 – wahrscheinlichkeit e2 „Einstufig“: Prüfungshöhe (2018-OS-K7b)
+AUSWAHL wahrscheinlichkeit-e2-k3-s13-v1 – wahrscheinlichkeit e2 „Einstufig“: Prüfungshöhe (2016-OS-K5d, Stern)
+AUSWAHL wahrscheinlichkeit-e2-k3-s13-v2 – wahrscheinlichkeit e2 „Einstufig“: Prüfungshöhe (2016-OS-K5d, Stern)
+TEILUNG wahrscheinlichkeit e2 „Einstufig“: 12 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+AUSWAHL wahrscheinlichkeit-e2-k4-s1-v2 – wahrscheinlichkeit e2 „Topf mit P = 50 % auswählen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL wahrscheinlichkeit-e2-k4-s1-v1 – wahrscheinlichkeit e2 „Topf mit P = 50 % auswählen“: Prüfungshöhe (2015-OS-B1a)
+WEG wahrscheinlichkeit e2 „erwartete Anzahl bei n Versuchen“ – keine Prüfungshöhe im Profil msa
+WEG wahrscheinlichkeit e3 „Ein Pfad oder mehrere?“ – keine Prüfungshöhe im Profil msa
+WEG wahrscheinlichkeit e3 „Nicht oder mindestens?“ – keine Prüfungshöhe im Profil msa
+AUSWAHL wahrscheinlichkeit-e3-k3-s0-v1 – wahrscheinlichkeit e3 „Mit Zurücklegen“: Anlauf, Vorstufe
+AUSWAHL wahrscheinlichkeit-e3-k3-s1-v1 – wahrscheinlichkeit e3 „Mit Zurücklegen“: Anlauf, Grundfall
+AUSWAHL wahrscheinlichkeit-e3-k3-s2-v3 – wahrscheinlichkeit e3 „Mit Zurücklegen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL wahrscheinlichkeit-e3-k3-s2-v1 – wahrscheinlichkeit e3 „Mit Zurücklegen“: Prüfungshöhe (2026-FOR-K6b)
+AUSWAHL wahrscheinlichkeit-e3-k3-s2-v2 – wahrscheinlichkeit e3 „Mit Zurücklegen“: Prüfungshöhe (2014-OS-K6b)
+AUSWAHL wahrscheinlichkeit-e3-k3-s3-v3 – wahrscheinlichkeit e3 „Mit Zurücklegen“: Prüfungshöhe (2024-OS-K5b)
+AUSWAHL wahrscheinlichkeit-e3-k3-s4-v1 – wahrscheinlichkeit e3 „Mit Zurücklegen“: Prüfungshöhe (2025-OS-K3c, Stern)
+AUSWAHL wahrscheinlichkeit-e3-k3-s5-v1 – wahrscheinlichkeit e3 „Mit Zurücklegen“: Prüfungshöhe (2014-OS-K6c, Stern)
+AUSWAHL wahrscheinlichkeit-e3-k3-s7-v1 – wahrscheinlichkeit e3 „Mit Zurücklegen“: Prüfungshöhe (2026-FOR-K6c)
+AUSWAHL wahrscheinlichkeit-e3-k3-s9-v1 – wahrscheinlichkeit e3 „Mit Zurücklegen“: Prüfungshöhe (2025-OS-K3b)
+AUSWAHL wahrscheinlichkeit-e3-k3-s9-v2 – wahrscheinlichkeit e3 „Mit Zurücklegen“: Prüfungshöhe (2020-OS-K6b)
+AUSWAHL wahrscheinlichkeit-e3-k3-s10-v1 – wahrscheinlichkeit e3 „Mit Zurücklegen“: Prüfungshöhe (2025-OS-K3d, Stern)
+AUSWAHL wahrscheinlichkeit-e3-k3-s10-v2 – wahrscheinlichkeit e3 „Mit Zurücklegen“: Prüfungshöhe (2026-FOR-K6d)
+AUSWAHL wahrscheinlichkeit-e3-k3-s11-v1 – wahrscheinlichkeit e3 „Mit Zurücklegen“: Prüfungshöhe (2020-OS-K6c, Stern)
+AUSWAHL wahrscheinlichkeit-e3-k3-s11-v2 – wahrscheinlichkeit e3 „Mit Zurücklegen“: Prüfungshöhe (2020-OS-K6c, Stern)
+TEILUNG wahrscheinlichkeit e3 „Mit Zurücklegen“: 12 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+AUSWAHL wahrscheinlichkeit-e4-k1-s0-v1 – wahrscheinlichkeit e4 „Ohne Zurücklegen“: Anlauf, Vorstufe
+AUSWAHL wahrscheinlichkeit-e4-k1-s1-v1 – wahrscheinlichkeit e4 „Ohne Zurücklegen“: Anlauf, Grundfall
+AUSWAHL wahrscheinlichkeit-e4-k1-s2-v1 – wahrscheinlichkeit e4 „Ohne Zurücklegen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL wahrscheinlichkeit-e4-k1-s4-v1 – wahrscheinlichkeit e4 „Ohne Zurücklegen“: Prüfungshöhe (2024-OS-K5c, Stern)
+AUSWAHL wahrscheinlichkeit-e4-k1-s6-v1 – wahrscheinlichkeit e4 „Ohne Zurücklegen“: Prüfungshöhe (2019-OS-K6b, Stern)
+AUSWAHL wahrscheinlichkeit-e4-k1-s7-v1 – wahrscheinlichkeit e4 „Ohne Zurücklegen“: Prüfungshöhe (2015-OS-K7d, Stern)
+AUSWAHL wahrscheinlichkeit-e4-k1-s9-v1 – wahrscheinlichkeit e4 „Ohne Zurücklegen“: Prüfungshöhe (2019-OS-K6c, Stern)
+AUSWAHL wahrscheinlichkeit-e4-k1-s10-v1 – wahrscheinlichkeit e4 „Ohne Zurücklegen“: Prüfungshöhe (2018-OS-K7c, Stern)
+AUSWAHL wahrscheinlichkeit-e4-k1-s10-v2 – wahrscheinlichkeit e4 „Ohne Zurücklegen“: Prüfungshöhe (2018-OS-K7c, Stern)
+STRUKTUR 0 Fehler

@@ -1,0 +1,1 @@
+# abi-gk-analysis-2 (STA-H1), Versuch 1: 0 Fehlerstellen (je Datei und Zeile die erste Meldung)

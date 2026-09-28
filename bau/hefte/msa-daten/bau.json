@@ -1,0 +1,732 @@
+{
+ "kennung": "DAT-H1",
+ "datum": "2026-09-28",
+ "eintraege": [
+  "daten",
+  "wahrscheinlichkeit"
+ ],
+ "fehlende_eintraege": [],
+ "leere_eintraege": [],
+ "rezept": "H",
+ "rezept_name": "Heft",
+ "bestellung": {
+  "heft": "msa",
+  "nur_basis": false,
+  "titel": "Prüfungsheft MSA · Daten und Zufall",
+  "aus": "bau/hefte/msa-daten",
+  "ohne_register": false
+ },
+ "bank_commit": "7238f60+geändert",
+ "zusammenbau": "v0.4",
+ "vorlage": "Version 2026-09-28a",
+ "pfad": "bau/hefte/msa-daten",
+ "kuerzel_quelle": "_kuerzel.csv (mathe-nachhilfe)",
+ "strukturfehler": 0,
+ "ausgelassen": [
+  "ausgelassen: daten-e2-k2-s11-v2, Dimension too large. (Nr. 5b, Versuch 1)"
+ ],
+ "aufgaben": [
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "a",
+   "id": "daten-e1-k1-s0-v1",
+   "datei": "daten_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "b",
+   "id": "daten-e1-k1-s1-v1",
+   "datei": "daten_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "c",
+   "id": "daten-e1-k1-s2-v1",
+   "datei": "daten_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "a",
+   "id": "daten-e1-k1-s11-v1",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2015-OS-K7b",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "b",
+   "id": "daten-e1-k1-s11-v2",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2015-OS-K7b",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "a",
+   "id": "daten-e2-k2-s0-v1",
+   "datei": "daten_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "b",
+   "id": "daten-e2-k2-s1-v1",
+   "datei": "daten_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "c",
+   "id": "daten-e2-k2-s2-v1",
+   "datei": "daten_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "a",
+   "id": "daten-e2-k2-s3-v2",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-K2b",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "b",
+   "id": "daten-e2-k2-s4-v2",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2020-OS-K2b",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "c",
+   "id": "daten-e2-k2-s4-v3",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-K2a",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "d",
+   "id": "daten-e2-k2-s7-v2",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2020-OS-K2a",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "e",
+   "id": "daten-e2-k2-s7-v3",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2026-FOR-K3d",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "teilaufgabe": "a",
+   "id": "daten-e2-k2-s11-v1",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2023-OS-K6d",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "teilaufgabe": "b",
+   "id": "daten-e2-k2-s11-v2",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2023-OS-K6d",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "teilaufgabe": "c",
+   "id": "daten-e2-k2-s11-v3",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2018-OS-K3a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "teilaufgabe": "d",
+   "id": "daten-e2-k2-s11-v4",
+   "datei": "daten_a.tex",
+   "lage": "pruefung",
+   "original": "2018-OS-K3a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "a",
+   "id": "wahrscheinlichkeit-e1-k1-s0-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "b",
+   "id": "wahrscheinlichkeit-e1-k1-s1-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "c",
+   "id": "wahrscheinlichkeit-e1-k1-s6-v3",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A7",
+   "hauptnummer": 7,
+   "teilaufgabe": "a",
+   "id": "wahrscheinlichkeit-e1-k1-s3-v3",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-K5b",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A7",
+   "hauptnummer": 7,
+   "teilaufgabe": "b",
+   "id": "wahrscheinlichkeit-e1-k1-s5-v3",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-K5a",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A7",
+   "hauptnummer": 7,
+   "teilaufgabe": "c",
+   "id": "wahrscheinlichkeit-e1-k1-s6-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2017-OS-B1f",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A7",
+   "hauptnummer": 7,
+   "teilaufgabe": "d",
+   "id": "wahrscheinlichkeit-e1-k1-s6-v2",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-K3a",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A7",
+   "hauptnummer": 7,
+   "teilaufgabe": "e",
+   "id": "wahrscheinlichkeit-e1-k1-s7-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2020-OS-K6a",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A7",
+   "hauptnummer": 7,
+   "teilaufgabe": "f",
+   "id": "wahrscheinlichkeit-e1-k1-s8-v3",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2015-OS-K5a",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A7",
+   "hauptnummer": 7,
+   "teilaufgabe": "g",
+   "id": "wahrscheinlichkeit-e1-k1-s9-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2017-OS-K6b",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A7",
+   "hauptnummer": 7,
+   "teilaufgabe": "h",
+   "id": "wahrscheinlichkeit-e1-k1-s9-v2",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2017-OS-K6b",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "teilaufgabe": "a",
+   "id": "wahrscheinlichkeit-e2-k3-s0-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "teilaufgabe": "b",
+   "id": "wahrscheinlichkeit-e2-k3-s1-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "teilaufgabe": "c",
+   "id": "wahrscheinlichkeit-e2-k3-s2-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "a",
+   "id": "wahrscheinlichkeit-e2-k3-s5-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2019-OS-K6a",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "b",
+   "id": "wahrscheinlichkeit-e2-k3-s5-v2",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2014-OS-K6a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "c",
+   "id": "wahrscheinlichkeit-e2-k3-s5-v3",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2017-OS-K6a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "d",
+   "id": "wahrscheinlichkeit-e2-k3-s6-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2014-OS-B1b",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "e",
+   "id": "wahrscheinlichkeit-e2-k3-s6-v2",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-K5c",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "f",
+   "id": "wahrscheinlichkeit-e2-k3-s6-v3",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-B1f",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "g",
+   "id": "wahrscheinlichkeit-e2-k3-s7-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2014-OS-B1d",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "h",
+   "id": "wahrscheinlichkeit-e2-k3-s8-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2018-OS-B1j",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "a",
+   "id": "wahrscheinlichkeit-e2-k3-s9-v2",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2019-OS-B1g",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "b",
+   "id": "wahrscheinlichkeit-e2-k3-s10-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2018-OS-K7b",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "c",
+   "id": "wahrscheinlichkeit-e2-k3-s13-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-K5d",
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "d",
+   "id": "wahrscheinlichkeit-e2-k3-s13-v2",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-K5d",
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "a",
+   "id": "wahrscheinlichkeit-e2-k4-s1-v2",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A12",
+   "hauptnummer": 12,
+   "teilaufgabe": "a",
+   "id": "wahrscheinlichkeit-e2-k4-s1-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2015-OS-B1a",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A13",
+   "hauptnummer": 13,
+   "teilaufgabe": "a",
+   "id": "wahrscheinlichkeit-e3-k3-s0-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A13",
+   "hauptnummer": 13,
+   "teilaufgabe": "b",
+   "id": "wahrscheinlichkeit-e3-k3-s1-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A13",
+   "hauptnummer": 13,
+   "teilaufgabe": "c",
+   "id": "wahrscheinlichkeit-e3-k3-s2-v3",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "a",
+   "id": "wahrscheinlichkeit-e3-k3-s2-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2026-FOR-K6b",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "b",
+   "id": "wahrscheinlichkeit-e3-k3-s2-v2",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2014-OS-K6b",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "c",
+   "id": "wahrscheinlichkeit-e3-k3-s3-v3",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2024-OS-K5b",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "d",
+   "id": "wahrscheinlichkeit-e3-k3-s4-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-K3c",
+   "punkte": "2",
+   "stern": true
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "e",
+   "id": "wahrscheinlichkeit-e3-k3-s5-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2014-OS-K6c",
+   "punkte": "2",
+   "stern": true
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "f",
+   "id": "wahrscheinlichkeit-e3-k3-s7-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2026-FOR-K6c",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A15",
+   "hauptnummer": 15,
+   "teilaufgabe": "a",
+   "id": "wahrscheinlichkeit-e3-k3-s9-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-K3b",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A15",
+   "hauptnummer": 15,
+   "teilaufgabe": "b",
+   "id": "wahrscheinlichkeit-e3-k3-s9-v2",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2020-OS-K6b",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A15",
+   "hauptnummer": 15,
+   "teilaufgabe": "c",
+   "id": "wahrscheinlichkeit-e3-k3-s10-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-K3d",
+   "punkte": "2",
+   "stern": true
+  },
+  {
+   "aufgabe": "A15",
+   "hauptnummer": 15,
+   "teilaufgabe": "d",
+   "id": "wahrscheinlichkeit-e3-k3-s10-v2",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2026-FOR-K6d",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A15",
+   "hauptnummer": 15,
+   "teilaufgabe": "e",
+   "id": "wahrscheinlichkeit-e3-k3-s11-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2020-OS-K6c",
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A15",
+   "hauptnummer": 15,
+   "teilaufgabe": "f",
+   "id": "wahrscheinlichkeit-e3-k3-s11-v2",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2020-OS-K6c",
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A16",
+   "hauptnummer": 16,
+   "teilaufgabe": "a",
+   "id": "wahrscheinlichkeit-e4-k1-s0-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A16",
+   "hauptnummer": 16,
+   "teilaufgabe": "b",
+   "id": "wahrscheinlichkeit-e4-k1-s1-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A16",
+   "hauptnummer": 16,
+   "teilaufgabe": "c",
+   "id": "wahrscheinlichkeit-e4-k1-s2-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "a",
+   "id": "wahrscheinlichkeit-e4-k1-s4-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2024-OS-K5c",
+   "punkte": "2",
+   "stern": true
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "b",
+   "id": "wahrscheinlichkeit-e4-k1-s6-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2019-OS-K6b",
+   "punkte": "5",
+   "stern": true
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "c",
+   "id": "wahrscheinlichkeit-e4-k1-s7-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2015-OS-K7d",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "d",
+   "id": "wahrscheinlichkeit-e4-k1-s9-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2019-OS-K6c",
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "e",
+   "id": "wahrscheinlichkeit-e4-k1-s10-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2018-OS-K7c",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "f",
+   "id": "wahrscheinlichkeit-e4-k1-s10-v2",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2018-OS-K7c",
+   "punkte": "4",
+   "stern": true
+  }
+ ]
+}

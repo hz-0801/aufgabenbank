@@ -1,0 +1,475 @@
+# zusammenbau v0.4: zusammenbau.py punkte-und-strecken-im-koordinatensystem vektoren-und-rechenoperationen geraden ebenen lagebeziehungen schnittmengen abstaende skalarprodukt-und-winkel orthogonalitaet flaecheninhalt-und-volumen-im-raum --heft abitur-gk --titel Prüfungsheft Abitur GK · Analytische Geometrie
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG PUN-H1 – Kürzel PUN aus _kuerzel.csv (mathe-nachhilfe) (erster Eintrag punkte-und-strecken-im-koordinatensystem); Rezept H (Heft)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s0-v1 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Anlauf, Vorstufe
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s1-v1 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Anlauf, Grundfall
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s3-v3 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Anlauf, Sprosse – Fallstrick im Merkmal („negative Koordinaten eintragen“)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s2-v1 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Prüfungshöhe (2019-be-gk-B3.2a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s2-v2 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Prüfungshöhe (2019MgrundlegendBAGLAA2WTR1-1a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s2-v3 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Prüfungshöhe (2019-be-gk-B3.2a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s4-v1 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Prüfungshöhe (2026MgrundlegendAAGLAA213-b)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s4-v2 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Prüfungshöhe (2026MgrundlegendAAGLAA213-b)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s4-v3 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Prüfungshöhe (2026MgrundlegendAAGLAA213-b)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s5-v1 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Prüfungshöhe (2025MgrundlegendAAGLAA212-a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s5-v2 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Prüfungshöhe (2026MgrundlegendBAGLAA2WTR1-1a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s5-v3 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Prüfungshöhe (2025MgrundlegendAAGLAA212-a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s6-v1 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Prüfungshöhe (2025MgrundlegendBAGLAA2WTR1-1a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s6-v2 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Prüfungshöhe (2025MgrundlegendBAGLAA2WTR1-1a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s6-v3 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Prüfungshöhe (2025MgrundlegendBAGLAA2WTR1-1a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s7-v1 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Prüfungshöhe (2024-bebb-gk-B3c)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s7-v2 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Prüfungshöhe (2024-bebb-gk-B3c)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s7-v3 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Prüfungshöhe (2024-bebb-gk-B3c)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s8-v3 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Prüfungshöhe (2018MgrundlegendAAGLAA212-b)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e1-k1-s8-v4 – punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: Prüfungshöhe (2018MgrundlegendAAGLAA212-b)
+TEILUNG punkte-und-strecken-im-koordinatensystem e1 „Darstellen und Lage lesen“: 17 Prüfungsaufgaben in 3 Hauptnummern an Sprossengrenzen (2.3 g)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s0-v1 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Anlauf, Vorstufe
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s1-v1 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Anlauf, Grundfall
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s2-v1 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s3-v1 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Prüfungshöhe (2020MgrundlegendBAGLAA2WTR-1c)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s3-v2 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Prüfungshöhe (2020MgrundlegendBAGLAA2WTR-1c)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s3-v3 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Prüfungshöhe (2020MgrundlegendBAGLAA2WTR-1c)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s4-v1 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Prüfungshöhe (2026-bb-gk-B3d)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s4-v2 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Prüfungshöhe (2026-bb-gk-B3d)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s4-v3 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Prüfungshöhe (2026-bb-gk-B3d)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s5-v1 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Prüfungshöhe (2024MgrundlegendBAGLAA2WTR1-1b)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s5-v2 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Prüfungshöhe (2023-bebb-gk-B3a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s5-v3 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Prüfungshöhe (2023-bebb-gk-B3a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s7-v1 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Prüfungshöhe (2020-be-gk-A1.3b)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s7-v2 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Prüfungshöhe (2020-be-gk-A1.3b)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s7-v3 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Prüfungshöhe (2020-be-gk-A1.3b)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s8-v1 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Prüfungshöhe (2018MgrundlegendAAGLAA211-a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s8-v2 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Prüfungshöhe (2018MgrundlegendAAGLAA211-a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s8-v3 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Prüfungshöhe (2018MgrundlegendAAGLAA211-a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s9-v3 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Prüfungshöhe (2019-be-gk-B3.1d)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e2-k1-s9-v4 – punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: Prüfungshöhe (2019-be-gk-B3.1d)
+TEILUNG punkte-und-strecken-im-koordinatensystem e2 „Streckenlänge, Mittelpunkt, Teilpunkte“: 17 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s0-v1 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Anlauf, Vorstufe
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s1-v1 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2023-bebb-gk-A1.5a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s1-v2 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2023-bebb-gk-A1.5a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s1-v3 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2023-bebb-gk-A1.5a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s1-v4 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2023-bebb-gk-A1.5a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s1-v5 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2023-bebb-gk-A1.5a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s2-v1 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2023-bebb-gk-B3a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s2-v2 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2020-be-gk-B3.2a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s2-v3 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2023-bebb-gk-B3a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s3-v1 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2022-bebb-gk-A1.5a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s3-v2 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2022MgrundlegendAAGLAA212-a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s3-v3 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2022-bebb-gk-A1.5a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s4-v2 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2018MgrundlegendBAGLAA2WTR1-1a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s5-v1 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2023MgrundlegendBAGLAA2WTR2-1a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s5-v2 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2023MgrundlegendBAGLAA2WTR2-1a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s5-v3 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2023MgrundlegendBAGLAA2WTR2-1a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s6-v1 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2024MgrundlegendBAGLAA2WTR2-1b)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s6-v2 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2024MgrundlegendBAGLAA2WTR2-1b)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s6-v3 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2024MgrundlegendBAGLAA2WTR2-1b)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s7-v1 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2019MgrundlegendBAnalysisWTR2-1j)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s7-v2 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2019MgrundlegendBAnalysisWTR2-1j)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s7-v3 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2019MgrundlegendBAnalysisWTR2-1j)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s10-v1 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2023-bebb-gk-A1.5b)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s10-v2 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2023-bebb-gk-A1.5b)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s10-v3 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2024-bebb-gk-A1.8a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e3-k1-s10-v4 – punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: Prüfungshöhe (2024-bebb-gk-A1.8a)
+TEILUNG punkte-und-strecken-im-koordinatensystem e3 „Dreiecke nachweisen“: 25 Prüfungsaufgaben in 3 Hauptnummern an Sprossengrenzen (2.3 g)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s0-v1 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Anlauf, Vorstufe
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s2-v1 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2023MgrundlegendBAGLAA1WTR-1a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s2-v3 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2025MgrundlegendBAGLAA1WTR-2a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s3-v1 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2022-bebb-gk-B3d)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s3-v2 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2022MgrundlegendBAGLAA2WTR2-1b)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s3-v3 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2022-bebb-gk-B3d)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s4-v1 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2022MgrundlegendBAGLAA2WTR1-1a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s4-v2 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2020MgrundlegendBAGLAA1WTR-2a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s4-v3 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2020MgrundlegendBAGLAA1WTR-2a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s5-v1 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2018-be-gk-B2.2b)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s5-v2 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2019-be-gk-B3.2b)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s6-v1 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2026-bb-gk-B3a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s6-v2 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2026MgrundlegendBAGLAA2WTR2-1a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s6-v3 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2026-bb-gk-B3a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s7-v1 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2023MgrundlegendBAGLAA2WTR1-1a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s7-v2 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2023MgrundlegendBAGLAA2WTR1-1a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s7-v3 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2023MgrundlegendBAGLAA2WTR1-1a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s8-v1 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2021MgrundlegendBAGLAA2WTR2-1a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s8-v2 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2021MgrundlegendBAGLAA2WTR2-1a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s8-v3 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2021MgrundlegendBAGLAA2WTR2-1a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s9-v1 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2022MgrundlegendAAGLAA22)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s9-v2 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2022MgrundlegendAAGLAA22)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s10-v3 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2025-bebb-gk-B3d)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s10-v4 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2025-bebb-gk-B3d)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s10-v5 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2020MgrundlegendBAGLAA1WTR-2c)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s10-v6 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (2020MgrundlegendBAGLAA1WTR-2c)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s10-v7 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (Kennung im Text)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e4-k1-s10-v8 – punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: Prüfungshöhe (Kennung im Text)
+TEILUNG punkte-und-strecken-im-koordinatensystem e4 „Vierecke nachweisen“: 27 Prüfungsaufgaben in 3 Hauptnummern an Sprossengrenzen (2.3 g)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s0-v1 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Anlauf, Vorstufe
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s1-v1 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2026MgrundlegendAAGLAA213-a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s1-v3 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2024MgrundlegendAAGLAA211-a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s1-v4 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2024MgrundlegendAAGLAA211-a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s1-v5 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2026MgrundlegendAAGLAA213-a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s2-v1 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2020MgrundlegendAAGLAA212-b)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s2-v3 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2020-be-gk-B3.2a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s3-v1 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (Kennung im Text)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s3-v2 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (Kennung im Text)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s3-v3 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (Kennung im Text)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s4-v1 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2018MgrundlegendAAGLAA212-a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s4-v2 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2018MgrundlegendAAGLAA212-a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s4-v3 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2018MgrundlegendAAGLAA212-a)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s6-v1 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2019MgrundlegendBAGLAA2WTR2-1f)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s6-v2 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2019MgrundlegendBAGLAA2WTR2-1f)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s6-v3 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2019MgrundlegendBAGLAA2WTR2-1f)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s8-v1 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2023-bebb-gk-B3i)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s8-v2 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2023-bebb-gk-B3i)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s8-v5 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2024-bebb-gk-B3f)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s8-v6 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2024-bebb-gk-B3f)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s8-v7 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2024MgrundlegendBAGLAA2WTR1-1e)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s8-v8 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2024MgrundlegendBAGLAA2WTR1-1e)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s8-v9 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2024MgrundlegendBAGLAA2WTR2-1e)
+AUSWAHL punkte-und-strecken-im-koordinatensystem-e5-k1-s8-v10 – punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: Prüfungshöhe (2024MgrundlegendBAGLAA2WTR2-1e)
+TEILUNG punkte-und-strecken-im-koordinatensystem e5 „Körper und Drehungen“: 23 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+WEG vektoren-und-rechenoperationen e1 „Faktor gesucht oder Richtung gesucht?“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL vektoren-und-rechenoperationen-e1-k2-s0-v1 – vektoren-und-rechenoperationen e1 „Vektorbegriff und Betrag“: Anlauf, Vorstufe
+AUSWAHL vektoren-und-rechenoperationen-e1-k2-s1-v1 – vektoren-und-rechenoperationen e1 „Vektorbegriff und Betrag“: Anlauf, Grundfall
+AUSWAHL vektoren-und-rechenoperationen-e1-k2-s3-v3 – vektoren-und-rechenoperationen e1 „Vektorbegriff und Betrag“: Anlauf, Sprosse – Fallstrick im Merkmal („unbekannte Koordinate, Betrag gegeben: quadrieren,“)
+AUSWAHL vektoren-und-rechenoperationen-e1-k2-s3-v2 – vektoren-und-rechenoperationen e1 „Vektorbegriff und Betrag“: Prüfungshöhe (2021MgrundlegendAAGLAA112-a)
+AUSWAHL vektoren-und-rechenoperationen-e1-k2-s6-v1 – vektoren-und-rechenoperationen e1 „Vektorbegriff und Betrag“: Prüfungshöhe (2024MgrundlegendBAGLAA1WTR-1e)
+AUSWAHL vektoren-und-rechenoperationen-e1-k2-s6-v2 – vektoren-und-rechenoperationen e1 „Vektorbegriff und Betrag“: Prüfungshöhe (2024MgrundlegendBAGLAA1WTR-1e)
+AUSWAHL vektoren-und-rechenoperationen-e2-k1-s0-v1 – vektoren-und-rechenoperationen e2 „Vektorterme am Körper“: Anlauf, Vorstufe
+AUSWAHL vektoren-und-rechenoperationen-e2-k1-s1-v3 – vektoren-und-rechenoperationen e2 „Vektorterme am Körper“: Anlauf, Grundfall
+AUSWAHL vektoren-und-rechenoperationen-e2-k1-s3-v2 – vektoren-und-rechenoperationen e2 „Vektorterme am Körper“: Anlauf, Sprosse – Fallstrick im Merkmal („Vektorkette über Ecken, Richtung jedes Glieds mit “)
+AUSWAHL vektoren-und-rechenoperationen-e2-k1-s1-v1 – vektoren-und-rechenoperationen e2 „Vektorterme am Körper“: Prüfungshöhe (2021MgrundlegendAAGLAA12-b)
+AUSWAHL vektoren-und-rechenoperationen-e2-k1-s1-v2 – vektoren-und-rechenoperationen e2 „Vektorterme am Körper“: Prüfungshöhe (2026MgrundlegendBAGLAA2MMS2-1a)
+AUSWAHL vektoren-und-rechenoperationen-e2-k1-s2-v1 – vektoren-und-rechenoperationen e2 „Vektorterme am Körper“: Prüfungshöhe (2021MgrundlegendAAGLAA12-a)
+AUSWAHL vektoren-und-rechenoperationen-e2-k1-s4-v2 – vektoren-und-rechenoperationen e2 „Vektorterme am Körper“: Prüfungshöhe (2017MgrundlegendBAGLAA2WTR2-1c)
+AUSWAHL vektoren-und-rechenoperationen-e2-k1-s5-v1 – vektoren-und-rechenoperationen e2 „Vektorterme am Körper“: Prüfungshöhe (2024MgrundlegendAAGLAA211-b)
+AUSWAHL vektoren-und-rechenoperationen-e2-k1-s8-v1 – vektoren-und-rechenoperationen e2 „Vektorterme am Körper“: Prüfungshöhe (2026MgrundlegendAAGLAA222-b)
+AUSWAHL vektoren-und-rechenoperationen-e2-k1-s8-v2 – vektoren-und-rechenoperationen e2 „Vektorterme am Körper“: Prüfungshöhe (2026MgrundlegendAAGLAA222-b)
+TEILUNG vektoren-und-rechenoperationen e2 „Vektorterme am Körper“: 7 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+AUSWAHL vektoren-und-rechenoperationen-e3-k1-s0-v1 – vektoren-und-rechenoperationen e3 „Skalarprodukt im Sachzusammenhang“: Anlauf, Vorstufe
+AUSWAHL vektoren-und-rechenoperationen-e3-k1-s1-v1 – vektoren-und-rechenoperationen e3 „Skalarprodukt im Sachzusammenhang“: Anlauf, Grundfall
+AUSWAHL vektoren-und-rechenoperationen-e3-k1-s2-v2 – vektoren-und-rechenoperationen e3 „Skalarprodukt im Sachzusammenhang“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL vektoren-und-rechenoperationen-e3-k1-s2-v1 – vektoren-und-rechenoperationen e3 „Skalarprodukt im Sachzusammenhang“: Prüfungshöhe (2019MgrundlegendBAGLAA2WTR2-1d)
+AUSWAHL vektoren-und-rechenoperationen-e3-k1-s3-v1 – vektoren-und-rechenoperationen e3 „Skalarprodukt im Sachzusammenhang“: Prüfungshöhe (2019MgrundlegendBAGLAA2WTR2-1e)
+AUSWAHL vektoren-und-rechenoperationen-e3-k1-s3-v2 – vektoren-und-rechenoperationen e3 „Skalarprodukt im Sachzusammenhang“: Prüfungshöhe (2019MgrundlegendBAGLAA2WTR2-1e)
+WEG geraden e1 „„Gerade oder Strecke?““ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL geraden-e1-k2-s0-v1 – geraden e1 „Geradengleichung aufstellen und lesen“: Anlauf, Vorstufe
+AUSWAHL geraden-e1-k2-s1-v1 – geraden e1 „Geradengleichung aufstellen und lesen“: Anlauf, Grundfall
+AUSWAHL geraden-e1-k2-s2-v1 – geraden e1 „Geradengleichung aufstellen und lesen“: Prüfungshöhe (2023MgrundlegendAAGLAA213-a)
+AUSWAHL geraden-e1-k2-s2-v2 – geraden e1 „Geradengleichung aufstellen und lesen“: Prüfungshöhe (2023MgrundlegendAAGLAA213-a)
+AUSWAHL geraden-e1-k2-s2-v3 – geraden e1 „Geradengleichung aufstellen und lesen“: Prüfungshöhe (2023MgrundlegendAAGLAA213-a)
+AUSWAHL geraden-e1-k2-s4-v1 – geraden e1 „Geradengleichung aufstellen und lesen“: Prüfungshöhe (2019-be-gk-A1.3a)
+AUSWAHL geraden-e1-k2-s4-v2 – geraden e1 „Geradengleichung aufstellen und lesen“: Prüfungshöhe (2019-be-gk-A1.3a)
+AUSWAHL geraden-e1-k2-s4-v3 – geraden e1 „Geradengleichung aufstellen und lesen“: Prüfungshöhe (2019-be-gk-A1.3a)
+AUSWAHL geraden-e1-k2-s5-v1 – geraden e1 „Geradengleichung aufstellen und lesen“: Prüfungshöhe (2022MgrundlegendAAGLAA213-b)
+AUSWAHL geraden-e1-k2-s5-v2 – geraden e1 „Geradengleichung aufstellen und lesen“: Prüfungshöhe (2022MgrundlegendAAGLAA213-b)
+AUSWAHL geraden-e1-k2-s5-v3 – geraden e1 „Geradengleichung aufstellen und lesen“: Prüfungshöhe (2022MgrundlegendAAGLAA213-b)
+AUSWAHL geraden-e1-k2-s6-v1 – geraden e1 „Geradengleichung aufstellen und lesen“: Prüfungshöhe (2021-be-gk-A1.5b)
+AUSWAHL geraden-e1-k2-s6-v2 – geraden e1 „Geradengleichung aufstellen und lesen“: Prüfungshöhe (2021-be-gk-A1.5b)
+AUSWAHL geraden-e2-k1-s0-v1 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Anlauf, Vorstufe
+AUSWAHL geraden-e2-k1-s1-v1 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Anlauf, Grundfall
+AUSWAHL geraden-e2-k1-s2-v1 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2023-bebb-gk-A1.4a)
+AUSWAHL geraden-e2-k1-s2-v2 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2023-bebb-gk-A1.4a)
+AUSWAHL geraden-e2-k1-s2-v3 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2023-bebb-gk-A1.4a)
+AUSWAHL geraden-e2-k1-s3-v1 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2019MgrundlegendAAGLAA211-a)
+AUSWAHL geraden-e2-k1-s3-v2 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2019MgrundlegendAAGLAA211-a)
+AUSWAHL geraden-e2-k1-s3-v3 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2019MgrundlegendAAGLAA211-a)
+AUSWAHL geraden-e2-k1-s4-v1 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2019MgrundlegendAAGLAA22-a)
+AUSWAHL geraden-e2-k1-s4-v2 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2019MgrundlegendAAGLAA22-a)
+AUSWAHL geraden-e2-k1-s4-v3 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2019MgrundlegendAAGLAA22-a)
+AUSWAHL geraden-e2-k1-s5-v1 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2018-be-gk-B2.2d)
+AUSWAHL geraden-e2-k1-s5-v2 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2018-be-gk-B2.2d)
+AUSWAHL geraden-e2-k1-s5-v3 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2018-be-gk-B2.2d)
+AUSWAHL geraden-e2-k1-s6-v1 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2020-be-gk-A1.3a)
+AUSWAHL geraden-e2-k1-s6-v2 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2020-be-gk-A1.3a)
+AUSWAHL geraden-e2-k1-s6-v3 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2020-be-gk-A1.3a)
+AUSWAHL geraden-e2-k1-s7-v1 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2023MgrundlegendAAGLAA213-b)
+AUSWAHL geraden-e2-k1-s7-v2 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2023MgrundlegendAAGLAA213-b)
+AUSWAHL geraden-e2-k1-s7-v3 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2023MgrundlegendAAGLAA213-b)
+AUSWAHL geraden-e2-k1-s8-v1 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2026MgrundlegendBAGLAA2MMS2-1d)
+AUSWAHL geraden-e2-k1-s8-v2 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2026MgrundlegendBAGLAA2MMS2-1d)
+AUSWAHL geraden-e2-k1-s8-v3 – geraden e2 „Punktprobe und Punkte auf der Geraden“: Prüfungshöhe (2026MgrundlegendBAGLAA2MMS2-1d)
+TEILUNG geraden e2 „Punktprobe und Punkte auf der Geraden“: 21 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+ANLAUF geraden e2 „Punkt auf einer Geraden mit vorgegebenem Abstand zu einem festen Punkt über eine quadratische Gleichung bestimmen“: keine Zeile ohne Original – entfällt
+AUSWAHL geraden-e2-k2-s1-v3 – geraden e2 „Punkt auf einer Geraden mit vorgegebenem Abstand zu einem festen Punkt über eine quadratische Gleichung bestimmen“: Prüfungshöhe (2017MgrundlegendBAGLAA2CAS1-1f)
+AUSWAHL geraden-e3-k1-s0-v1 – geraden e3 „Lage als Anhang“: Anlauf, Vorstufe
+AUSWAHL geraden-e3-k1-s1-v1 – geraden e3 „Lage als Anhang“: Anlauf, Grundfall
+AUSWAHL geraden-e3-k1-s3-v1 – geraden e3 „Lage als Anhang“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL geraden-e3-k1-s2-v1 – geraden e3 „Lage als Anhang“: Prüfungshöhe (2022MgrundlegendAAGLAA213-a)
+AUSWAHL geraden-e3-k1-s2-v2 – geraden e3 „Lage als Anhang“: Prüfungshöhe (2022MgrundlegendAAGLAA213-a)
+AUSWAHL geraden-e3-k1-s2-v3 – geraden e3 „Lage als Anhang“: Prüfungshöhe (2022MgrundlegendAAGLAA213-a)
+AUSWAHL geraden-e3-k1-s4-v1 – geraden e3 „Lage als Anhang“: Prüfungshöhe (2021-be-gk-B3b)
+AUSWAHL geraden-e3-k1-s4-v2 – geraden e3 „Lage als Anhang“: Prüfungshöhe (2021-be-gk-B3b)
+AUSWAHL geraden-e3-k1-s4-v3 – geraden e3 „Lage als Anhang“: Prüfungshöhe (2021-be-gk-B3b)
+AUSWAHL geraden-e3-k1-s5-v1 – geraden e3 „Lage als Anhang“: Prüfungshöhe (2018-be-gk-B2.1c)
+AUSWAHL geraden-e3-k1-s5-v2 – geraden e3 „Lage als Anhang“: Prüfungshöhe (2018-be-gk-B2.1c)
+AUSWAHL geraden-e3-k1-s5-v3 – geraden e3 „Lage als Anhang“: Prüfungshöhe (2018-be-gk-B2.1c)
+AUSWAHL geraden-e3-k1-s6-v1 – geraden e3 „Lage als Anhang“: Prüfungshöhe (2019-be-gk-A1.3b)
+AUSWAHL geraden-e3-k1-s6-v2 – geraden e3 „Lage als Anhang“: Prüfungshöhe (2019-be-gk-A1.3b)
+AUSWAHL geraden-e4-k1-s0-v1 – geraden e4 „Sachgeraden“: Anlauf, Vorstufe
+AUSWAHL geraden-e4-k1-s1-v1 – geraden e4 „Sachgeraden“: Anlauf, Grundfall
+AUSWAHL geraden-e4-k1-s2-v1 – geraden e4 „Sachgeraden“: Prüfungshöhe (2022MgrundlegendBAGLAA2WTR1-1f)
+AUSWAHL geraden-e4-k1-s2-v2 – geraden e4 „Sachgeraden“: Prüfungshöhe (2022MgrundlegendBAGLAA2WTR1-1f)
+AUSWAHL geraden-e4-k1-s2-v3 – geraden e4 „Sachgeraden“: Prüfungshöhe (2022MgrundlegendBAGLAA2WTR1-1f)
+AUSWAHL geraden-e4-k1-s3-v1 – geraden e4 „Sachgeraden“: Prüfungshöhe (2022MgrundlegendBAGLAA2WTR1-1e)
+AUSWAHL geraden-e4-k1-s3-v2 – geraden e4 „Sachgeraden“: Prüfungshöhe (2022MgrundlegendBAGLAA2WTR1-1e)
+AUSWAHL geraden-e4-k1-s3-v3 – geraden e4 „Sachgeraden“: Prüfungshöhe (2022MgrundlegendBAGLAA2WTR1-1e)
+AUSWAHL geraden-e4-k1-s4-v1 – geraden e4 „Sachgeraden“: Prüfungshöhe (2018-be-gk-B2.2e)
+AUSWAHL geraden-e4-k1-s4-v2 – geraden e4 „Sachgeraden“: Prüfungshöhe (2018-be-gk-B2.2e)
+AUSWAHL geraden-e4-k1-s4-v3 – geraden e4 „Sachgeraden“: Prüfungshöhe (2025MgrundlegendBAGLAA2WTR1-1e)
+AUSWAHL geraden-e4-k1-s4-v4 – geraden e4 „Sachgeraden“: Prüfungshöhe (2025MgrundlegendBAGLAA2WTR1-1e)
+ANLAUF geraden e4 „Horizontalabstand aus vorgegebener Neigung in Prozent und Höhendifferenz berechnen“: keine Zeile ohne Original – entfällt
+AUSWAHL geraden-e4-k2-s1-v1 – geraden e4 „Horizontalabstand aus vorgegebener Neigung in Prozent und Höhendifferenz berechnen“: Prüfungshöhe (2017MgrundlegendBAnalysisWTR-1g)
+AUSWAHL geraden-e4-k2-s1-v2 – geraden e4 „Horizontalabstand aus vorgegebener Neigung in Prozent und Höhendifferenz berechnen“: Prüfungshöhe (2017MgrundlegendBAnalysisWTR-1g)
+AUSWAHL geraden-e4-k2-s1-v3 – geraden e4 „Horizontalabstand aus vorgegebener Neigung in Prozent und Höhendifferenz berechnen“: Prüfungshöhe (2017MgrundlegendBAnalysisWTR-1g)
+AUSWAHL ebenen-e1-k1-s0-v1 – ebenen e1 „Parameterform“: Anlauf, Vorstufe
+AUSWAHL ebenen-e1-k1-s1-v1 – ebenen e1 „Parameterform“: Anlauf, Grundfall
+AUSWAHL ebenen-e1-k1-s2-v2 – ebenen e1 „Parameterform“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL ebenen-e1-k1-s4-v1 – ebenen e1 „Parameterform“: Prüfungshöhe (2022MgrundlegendBAGLAA2WTR2-1a)
+AUSWAHL ebenen-e1-k1-s6-v1 – ebenen e1 „Parameterform“: Prüfungshöhe (2018MgrundlegendAAGLAA211-b)
+AUSWAHL ebenen-e1-k1-s6-v2 – ebenen e1 „Parameterform“: Prüfungshöhe (2018MgrundlegendAAGLAA211-b)
+AUSWAHL ebenen-e1-k1-s6-v3 – ebenen e1 „Parameterform“: Prüfungshöhe (2022-bebb-gk-B3b)
+AUSWAHL ebenen-e1-k1-s6-v4 – ebenen e1 „Parameterform“: Prüfungshöhe (2022-bebb-gk-B3b)
+AUSWAHL ebenen-e2-k1-s0-v1 – ebenen e2 „Koordinatengleichung bestimmen“: Anlauf, Vorstufe
+AUSWAHL ebenen-e2-k1-s1-v1 – ebenen e2 „Koordinatengleichung bestimmen“: Anlauf, Grundfall
+AUSWAHL ebenen-e2-k1-s5-v2 – ebenen e2 „Koordinatengleichung bestimmen“: Anlauf, Sprosse – Fallstrick im Merkmal („Ansatz mit unbekannten Koeffizienten und gewählter“)
+AUSWAHL ebenen-e2-k1-s2-v1 – ebenen e2 „Koordinatengleichung bestimmen“: Prüfungshöhe (2020MgrundlegendBAGLAA2WTR-1a)
+AUSWAHL ebenen-e2-k1-s3-v1 – ebenen e2 „Koordinatengleichung bestimmen“: Prüfungshöhe (2024-bebb-gk-B3d)
+AUSWAHL ebenen-e2-k1-s3-v2 – ebenen e2 „Koordinatengleichung bestimmen“: Prüfungshöhe (2025-bebb-gk-B3b)
+AUSWAHL ebenen-e2-k1-s3-v3 – ebenen e2 „Koordinatengleichung bestimmen“: Prüfungshöhe (2021MgrundlegendBAGLAA2WTR1-1b)
+AUSWAHL ebenen-e2-k1-s4-v1 – ebenen e2 „Koordinatengleichung bestimmen“: Prüfungshöhe (2020-be-gk-B3.1a)
+AUSWAHL ebenen-e2-k1-s5-v1 – ebenen e2 „Koordinatengleichung bestimmen“: Prüfungshöhe (2024MgrundlegendBAGLAA2WTR2-1c)
+AUSWAHL ebenen-e2-k1-s6-v1 – ebenen e2 „Koordinatengleichung bestimmen“: Prüfungshöhe (2020-be-gk-B3.2b)
+AUSWAHL ebenen-e2-k1-s6-v2 – ebenen e2 „Koordinatengleichung bestimmen“: Prüfungshöhe (2018-be-gk-B2.1a)
+AUSWAHL ebenen-e2-k2-s0-v1 – ebenen e2 „Normalenvektor und Nachweise“: Anlauf, Vorstufe
+AUSWAHL ebenen-e2-k2-s1-v1 – ebenen e2 „Normalenvektor und Nachweise“: Anlauf, Grundfall
+AUSWAHL ebenen-e2-k2-s2-v2 – ebenen e2 „Normalenvektor und Nachweise“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL ebenen-e2-k2-s2-v1 – ebenen e2 „Normalenvektor und Nachweise“: Prüfungshöhe (2021-be-gk-A1.4a)
+AUSWAHL ebenen-e2-k2-s3-v1 – ebenen e2 „Normalenvektor und Nachweise“: Prüfungshöhe (2025MgrundlegendBAGLAA2WTR1-1c)
+AUSWAHL ebenen-e3-k1-s0-v1 – ebenen e3 „Besondere Lagen“: Anlauf, Vorstufe
+AUSWAHL ebenen-e3-k1-s1-v1 – ebenen e3 „Besondere Lagen“: Anlauf, Grundfall
+AUSWAHL ebenen-e3-k1-s2-v2 – ebenen e3 „Besondere Lagen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL ebenen-e3-k1-s3-v1 – ebenen e3 „Besondere Lagen“: Prüfungshöhe (2022-bebb-gk-A1.4b)
+AUSWAHL ebenen-e3-k1-s8-v1 – ebenen e3 „Besondere Lagen“: Prüfungshöhe (2022MgrundlegendBAGLAA2WTR1-1b)
+AUSWAHL ebenen-e4-k1-s0-v1 – ebenen e4 „Parallele Ebenen“: Anlauf, Vorstufe
+AUSWAHL ebenen-e4-k1-s1-v1 – ebenen e4 „Parallele Ebenen“: Anlauf, Grundfall
+AUSWAHL ebenen-e4-k1-s2-v2 – ebenen e4 „Parallele Ebenen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL ebenen-e4-k1-s2-v1 – ebenen e4 „Parallele Ebenen“: Prüfungshöhe (2019-be-gk-B3.2e)
+AUSWAHL ebenen-e4-k1-s3-v1 – ebenen e4 „Parallele Ebenen“: Prüfungshöhe (2023-bebb-gk-B3b)
+AUSWAHL ebenen-e4-k1-s4-v1 – ebenen e4 „Parallele Ebenen“: Prüfungshöhe (2020-be-gk-B3.2c)
+AUSWAHL ebenen-e4-k1-s5-v1 – ebenen e4 „Parallele Ebenen“: Prüfungshöhe (2020MgrundlegendAAGLAA211-b)
+AUSWAHL ebenen-e4-k1-s5-v2 – ebenen e4 „Parallele Ebenen“: Prüfungshöhe (2020MgrundlegendAAGLAA211-b)
+AUSWAHL ebenen-e4-k2-s1-v2 – ebenen e4 „Parallele Ebenen über die Normalenvektoren auswählen und über die Konstante der Koordinatengleichung der Höhe nach zuordnen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL ebenen-e4-k2-s1-v1 – ebenen e4 „Parallele Ebenen über die Normalenvektoren auswählen und über die Konstante der Koordinatengleichung der Höhe nach zuordnen“: Prüfungshöhe (2017MgrundlegendBAGLAA2WTR1-1f)
+WEG lagebeziehungen e1 „Wer und wogegen?“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL lagebeziehungen-e1-k2-s0-v1 – lagebeziehungen e1 „Punktprobe und Seitenlage“: Anlauf, Vorstufe
+AUSWAHL lagebeziehungen-e1-k2-s1-v1 – lagebeziehungen e1 „Punktprobe und Seitenlage“: Anlauf, Grundfall
+AUSWAHL lagebeziehungen-e1-k2-s6-v3 – lagebeziehungen e1 „Punktprobe und Seitenlage“: Anlauf, Sprosse – Fallstrick im Merkmal („die Seite über das Vorzeichen: zwischen zwei Ebene“)
+AUSWAHL lagebeziehungen-e1-k2-s3-v1 – lagebeziehungen e1 „Punktprobe und Seitenlage“: Prüfungshöhe (2021-be-gk-A1.5a)
+AUSWAHL lagebeziehungen-e1-k2-s3-v2 – lagebeziehungen e1 „Punktprobe und Seitenlage“: Prüfungshöhe (2021-be-gk-A1.5a)
+AUSWAHL lagebeziehungen-e1-k2-s4-v1 – lagebeziehungen e1 „Punktprobe und Seitenlage“: Prüfungshöhe (2018-be-gk-B2.1b)
+AUSWAHL lagebeziehungen-e1-k2-s4-v2 – lagebeziehungen e1 „Punktprobe und Seitenlage“: Prüfungshöhe (2025MgrundlegendAAGLAA213-b)
+AUSWAHL lagebeziehungen-e1-k2-s4-v3 – lagebeziehungen e1 „Punktprobe und Seitenlage“: Prüfungshöhe (2026MgrundlegendAAGLAA211-a)
+AUSWAHL lagebeziehungen-e1-k2-s5-v1 – lagebeziehungen e1 „Punktprobe und Seitenlage“: Prüfungshöhe (2024MgrundlegendBAGLAA2WTR2-1d)
+AUSWAHL lagebeziehungen-e1-k2-s5-v2 – lagebeziehungen e1 „Punktprobe und Seitenlage“: Prüfungshöhe (2024MgrundlegendBAGLAA2WTR2-1d)
+AUSWAHL lagebeziehungen-e1-k2-s5-v3 – lagebeziehungen e1 „Punktprobe und Seitenlage“: Prüfungshöhe (2024MgrundlegendBAGLAA2WTR2-1d)
+AUSWAHL lagebeziehungen-e1-k2-s6-v1 – lagebeziehungen e1 „Punktprobe und Seitenlage“: Prüfungshöhe (2023-bebb-gk-B3f)
+AUSWAHL lagebeziehungen-e1-k2-s6-v2 – lagebeziehungen e1 „Punktprobe und Seitenlage“: Prüfungshöhe (2019MgrundlegendBAGLAA2WTR2-1c)
+AUSWAHL lagebeziehungen-e2-k1-s0-v1 – lagebeziehungen e2 „Parameter aus der Lagebedingung“: Anlauf, Vorstufe
+AUSWAHL lagebeziehungen-e2-k1-s1-v1 – lagebeziehungen e2 „Parameter aus der Lagebedingung“: Anlauf, Grundfall
+AUSWAHL lagebeziehungen-e2-k1-s3-v3 – lagebeziehungen e2 „Parameter aus der Lagebedingung“: Anlauf, Sprosse – Fallstrick im Merkmal („zwei freie Werte: einen frei wählen, nicht null, d“)
+AUSWAHL lagebeziehungen-e2-k1-s2-v1 – lagebeziehungen e2 „Parameter aus der Lagebedingung“: Prüfungshöhe (2023MgrundlegendAAGLAA22-a)
+AUSWAHL lagebeziehungen-e2-k1-s3-v1 – lagebeziehungen e2 „Parameter aus der Lagebedingung“: Prüfungshöhe (2023MgrundlegendBAGLAA2WTR1-1b)
+AUSWAHL lagebeziehungen-e3-k1-s0-v1 – lagebeziehungen e3 „Gerade und Ebene“: Anlauf, Vorstufe
+AUSWAHL lagebeziehungen-e3-k1-s1-v1 – lagebeziehungen e3 „Gerade und Ebene“: Anlauf, Grundfall
+AUSWAHL lagebeziehungen-e3-k1-s2-v1 – lagebeziehungen e3 „Gerade und Ebene“: Anlauf, Sprosse – Fallstrick im Merkmal („Richtungsvektor mal Normalenvektor: null heißt par“)
+AUSWAHL lagebeziehungen-e3-k1-s1-v5 – lagebeziehungen e3 „Gerade und Ebene“: Prüfungshöhe (2021-be-gk-A1.4b)
+AUSWAHL lagebeziehungen-e3-k1-s2-v3 – lagebeziehungen e3 „Gerade und Ebene“: Prüfungshöhe (2017-be-gk-B2.1d)
+AUSWAHL lagebeziehungen-e3-k1-s3-v1 – lagebeziehungen e3 „Gerade und Ebene“: Prüfungshöhe (2024MgrundlegendAAGLAA213-a)
+AUSWAHL lagebeziehungen-e3-k1-s3-v2 – lagebeziehungen e3 „Gerade und Ebene“: Prüfungshöhe (2017MgrundlegendBAGLAA2WTR2-1a)
+AUSWAHL lagebeziehungen-e4-k1-s0-v1 – lagebeziehungen e4 „Lagebefunde im Sachzusammenhang“: Anlauf, Vorstufe
+AUSWAHL lagebeziehungen-e4-k1-s1-v1 – lagebeziehungen e4 „Lagebefunde im Sachzusammenhang“: Anlauf, Grundfall
+AUSWAHL lagebeziehungen-e4-k1-s2-v3 – lagebeziehungen e4 „Lagebefunde im Sachzusammenhang“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL lagebeziehungen-e4-k1-s2-v1 – lagebeziehungen e4 „Lagebefunde im Sachzusammenhang“: Prüfungshöhe (2024MgrundlegendBAGLAA2WTR1-1d)
+AUSWAHL lagebeziehungen-e4-k1-s2-v2 – lagebeziehungen e4 „Lagebefunde im Sachzusammenhang“: Prüfungshöhe (2023MgrundlegendBAGLAA2WTR1-1g)
+WEG lagebeziehungen e4 „Gerade und Ebene: Länge eines Schattens auf einer Dachfläche über Schnitt von Lichtgerade und Ebene beschreiben“ – keine Prüfungshöhe im Profil abitur-gk
+WEG schnittmengen e1 „Was wird geschnitten – und was kann herauskommen?“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL schnittmengen-e1-k2-s0-v1 – schnittmengen e1 „Schnittpunkt von Gerade und Ebene“: Anlauf, Vorstufe
+AUSWAHL schnittmengen-e1-k2-s1-v1 – schnittmengen e1 „Schnittpunkt von Gerade und Ebene“: Anlauf, Grundfall
+AUSWAHL schnittmengen-e1-k2-s2-v1 – schnittmengen e1 „Schnittpunkt von Gerade und Ebene“: Prüfungshöhe (2023-bebb-gk-B3d)
+AUSWAHL schnittmengen-e1-k2-s3-v3 – schnittmengen e1 „Schnittpunkt von Gerade und Ebene“: Prüfungshöhe (2019-be-gk-B3.1b)
+AUSWAHL schnittmengen-e1-k2-s4-v1 – schnittmengen e1 „Schnittpunkt von Gerade und Ebene“: Prüfungshöhe (2020MgrundlegendBAGLAA2WTR-1d)
+AUSWAHL schnittmengen-e1-k2-s4-v2 – schnittmengen e1 „Schnittpunkt von Gerade und Ebene“: Prüfungshöhe (2019MgrundlegendBAGLAA2WTR2-1g)
+AUSWAHL schnittmengen-e1-k2-s4-v3 – schnittmengen e1 „Schnittpunkt von Gerade und Ebene“: Prüfungshöhe (2020MgrundlegendBAGLAA2WTR-1d)
+AUSWAHL schnittmengen-e1-k2-s5-v1 – schnittmengen e1 „Schnittpunkt von Gerade und Ebene“: Prüfungshöhe (2018-be-gk-B2.1e)
+AUSWAHL schnittmengen-e1-k2-s5-v2 – schnittmengen e1 „Schnittpunkt von Gerade und Ebene“: Prüfungshöhe (2018-be-gk-B2.1e)
+AUSWAHL schnittmengen-e1-k2-s5-v3 – schnittmengen e1 „Schnittpunkt von Gerade und Ebene“: Prüfungshöhe (2018-be-gk-B2.1e)
+WEG schnittmengen e1 „Höhe einer Spitze aus dem Abstand ihres Schattenpunkts zu einem Punkt bestimmen“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL schnittmengen-e2-k1-s0-v1 – schnittmengen e2 „Schnittpunkt zweier Geraden“: Anlauf, Vorstufe
+AUSWAHL schnittmengen-e2-k1-s1-v1 – schnittmengen e2 „Schnittpunkt zweier Geraden“: Anlauf, Grundfall
+AUSWAHL schnittmengen-e2-k1-s1-v5 – schnittmengen e2 „Schnittpunkt zweier Geraden“: Prüfungshöhe (2021MgrundlegendBAGLAA2WTR2-1c)
+AUSWAHL schnittmengen-e2-k1-s2-v1 – schnittmengen e2 „Schnittpunkt zweier Geraden“: Prüfungshöhe (2023-bebb-gk-A1.4b)
+AUSWAHL schnittmengen-e2-k1-s2-v2 – schnittmengen e2 „Schnittpunkt zweier Geraden“: Prüfungshöhe (2023MgrundlegendAAGLAA212-b)
+AUSWAHL schnittmengen-e2-k1-s2-v3 – schnittmengen e2 „Schnittpunkt zweier Geraden“: Prüfungshöhe (2023-bebb-gk-A1.4b)
+AUSWAHL schnittmengen-e2-k1-s5-v1 – schnittmengen e2 „Schnittpunkt zweier Geraden“: Prüfungshöhe (2019-be-gk-B3.2f)
+AUSWAHL schnittmengen-e2-k1-s5-v2 – schnittmengen e2 „Schnittpunkt zweier Geraden“: Prüfungshöhe (2019-be-gk-B3.2f)
+AUSWAHL schnittmengen-e2-k1-s5-v3 – schnittmengen e2 „Schnittpunkt zweier Geraden“: Prüfungshöhe (2019MgrundlegendBAGLAA2WTR1-1f)
+AUSWAHL schnittmengen-e2-k1-s5-v4 – schnittmengen e2 „Schnittpunkt zweier Geraden“: Prüfungshöhe (2019MgrundlegendBAGLAA2WTR1-1f)
+ANLAUF schnittmengen e2 „Schattenpunkt auf einer Kante als Schnittpunkt von Lichtgerade und Kantengerade berechnen“: keine Zeile ohne Original – entfällt
+AUSWAHL schnittmengen-e2-k2-s1-v1 – schnittmengen e2 „Schattenpunkt auf einer Kante als Schnittpunkt von Lichtgerade und Kantengerade berechnen“: Prüfungshöhe (2017MgrundlegendBAGLAA2CAS1-1e)
+AUSWAHL schnittmengen-e2-k2-s1-v2 – schnittmengen e2 „Schattenpunkt auf einer Kante als Schnittpunkt von Lichtgerade und Kantengerade berechnen“: Prüfungshöhe (2017MgrundlegendBAGLAA2CAS1-1e)
+AUSWAHL schnittmengen-e2-k2-s1-v3 – schnittmengen e2 „Schattenpunkt auf einer Kante als Schnittpunkt von Lichtgerade und Kantengerade berechnen“: Prüfungshöhe (2017MgrundlegendBAGLAA2CAS1-1e)
+AUSWAHL schnittmengen-e3-k1-s0-v1 – schnittmengen e3 „Spuren, Schnittgeraden und Schnittfiguren“: Anlauf, Vorstufe
+AUSWAHL schnittmengen-e3-k1-s1-v1 – schnittmengen e3 „Spuren, Schnittgeraden und Schnittfiguren“: Anlauf, Grundfall
+AUSWAHL schnittmengen-e3-k1-s1-v5 – schnittmengen e3 „Spuren, Schnittgeraden und Schnittfiguren“: Prüfungshöhe (2020-be-gk-B3.1b)
+AUSWAHL schnittmengen-e3-k1-s2-v1 – schnittmengen e3 „Spuren, Schnittgeraden und Schnittfiguren“: Prüfungshöhe (2021-be-gk-B3h)
+AUSWAHL schnittmengen-e3-k1-s2-v2 – schnittmengen e3 „Spuren, Schnittgeraden und Schnittfiguren“: Prüfungshöhe (2021MgrundlegendBAGLAA2WTR1-1e)
+AUSWAHL schnittmengen-e3-k1-s5-v1 – schnittmengen e3 „Spuren, Schnittgeraden und Schnittfiguren“: Prüfungshöhe (2018MgrundlegendBAGLAA2WTR1-1c)
+AUSWAHL schnittmengen-e3-k1-s5-v3 – schnittmengen e3 „Spuren, Schnittgeraden und Schnittfiguren“: Prüfungshöhe (2018MgrundlegendBAGLAA2WTR1-1c)
+AUSWAHL schnittmengen-e3-k1-s6-v1 – schnittmengen e3 „Spuren, Schnittgeraden und Schnittfiguren“: Prüfungshöhe (2021-be-gk-B3e)
+AUSWAHL schnittmengen-e3-k1-s6-v2 – schnittmengen e3 „Spuren, Schnittgeraden und Schnittfiguren“: Prüfungshöhe (2021-be-gk-B3e)
+AUSWAHL schnittmengen-e3-k1-s6-v3 – schnittmengen e3 „Spuren, Schnittgeraden und Schnittfiguren“: Prüfungshöhe (2021-be-gk-B3e)
+AUSWAHL schnittmengen-e3-k1-s7-v1 – schnittmengen e3 „Spuren, Schnittgeraden und Schnittfiguren“: Prüfungshöhe (2020-be-gk-B3.1d)
+AUSWAHL schnittmengen-e3-k1-s7-v2 – schnittmengen e3 „Spuren, Schnittgeraden und Schnittfiguren“: Prüfungshöhe (2020-be-gk-B3.1d)
+TEILUNG schnittmengen e3 „Spuren, Schnittgeraden und Schnittfiguren“: 10 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+WEG abstaende e1 „Hin oder zurück?“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL abstaende-e1-k2-s0-v1 – abstaende e1 „Abstand zweier Punkte“: Anlauf, Vorstufe
+AUSWAHL abstaende-e1-k2-s1-v1 – abstaende e1 „Abstand zweier Punkte“: Anlauf, Grundfall
+AUSWAHL abstaende-e1-k2-s2-v3 – abstaende e1 „Abstand zweier Punkte“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL abstaende-e1-k2-s2-v1 – abstaende e1 „Abstand zweier Punkte“: Prüfungshöhe (2018-be-gk-B2.1d)
+AUSWAHL abstaende-e1-k2-s2-v2 – abstaende e1 „Abstand zweier Punkte“: Prüfungshöhe (2018-be-gk-B2.2a)
+AUSWAHL abstaende-e1-k2-s3-v2 – abstaende e1 „Abstand zweier Punkte“: Prüfungshöhe (2023MgrundlegendBAGLAA1WTR-1c)
+AUSWAHL abstaende-e1-k2-s4-v1 – abstaende e1 „Abstand zweier Punkte“: Prüfungshöhe (2026-bb-gk-A1.5b)
+AUSWAHL abstaende-e1-k2-s7-v3 – abstaende e1 „Abstand zweier Punkte“: Prüfungshöhe (2019MgrundlegendAAGLAA211-b)
+AUSWAHL abstaende-e1-k2-s7-v4 – abstaende e1 „Abstand zweier Punkte“: Prüfungshöhe (2019MgrundlegendAAGLAA211-b)
+AUSWAHL abstaende-e2-k1-s0-v1 – abstaende e2 „Abstand Punkt–Ebene“: Anlauf, Vorstufe
+AUSWAHL abstaende-e2-k1-s1-v1 – abstaende e2 „Abstand Punkt–Ebene“: Anlauf, Grundfall
+AUSWAHL abstaende-e2-k1-s2-v2 – abstaende e2 „Abstand Punkt–Ebene“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL abstaende-e2-k1-s3-v2 – abstaende e2 „Abstand Punkt–Ebene“: Prüfungshöhe (2025-bebb-gk-A1.8b)
+AUSWAHL abstaende-e3-k1-s0-v1 – abstaende e3 „Lotfußpunkt“: Anlauf, Vorstufe
+AUSWAHL abstaende-e3-k1-s1-v1 – abstaende e3 „Lotfußpunkt“: Anlauf, Grundfall
+AUSWAHL abstaende-e3-k1-s2-v2 – abstaende e3 „Lotfußpunkt“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL abstaende-e3-k1-s2-v1 – abstaende e3 „Lotfußpunkt“: Prüfungshöhe (2026-bb-gk-B3c)
+AUSWAHL abstaende-e3-k1-s3-v1 – abstaende e3 „Lotfußpunkt“: Prüfungshöhe (2022-bebb-gk-B3i)
+AUSWAHL abstaende-e3-k1-s3-v2 – abstaende e3 „Lotfußpunkt“: Prüfungshöhe (2023-bebb-gk-B3h)
+AUSWAHL abstaende-e3-k1-s4-v3 – abstaende e3 „Lotfußpunkt“: Prüfungshöhe (2021-be-gk-B3g)
+AUSWAHL abstaende-e3-k1-s6-v1 – abstaende e3 „Lotfußpunkt“: Prüfungshöhe (2021MgrundlegendBAGLAA2WTR2-1e)
+AUSWAHL abstaende-e4-k1-s0-v1 – abstaende e4 „Abstand als Argument“: Anlauf, Vorstufe
+AUSWAHL abstaende-e4-k1-s1-v4 – abstaende e4 „Abstand als Argument“: Anlauf, Grundfall
+AUSWAHL abstaende-e4-k1-s2-v2 – abstaende e4 „Abstand als Argument“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL abstaende-e4-k1-s1-v1 – abstaende e4 „Abstand als Argument“: Prüfungshöhe (2023-bebb-gk-B3c)
+AUSWAHL abstaende-e4-k1-s1-v2 – abstaende e4 „Abstand als Argument“: Prüfungshöhe (2023MgrundlegendBAGLAA2WTR2-1e)
+AUSWAHL abstaende-e4-k1-s1-v3 – abstaende e4 „Abstand als Argument“: Prüfungshöhe (2021-be-gk-B2.2h)
+AUSWAHL abstaende-e4-k1-s5-v2 – abstaende e4 „Abstand als Argument“: Prüfungshöhe (2019MgrundlegendAAGLAA22-b)
+AUSWAHL abstaende-e4-k1-s6-v3 – abstaende e4 „Abstand als Argument“: Prüfungshöhe (2022-bebb-gk-B3g)
+AUSWAHL abstaende-e4-k1-s6-v4 – abstaende e4 „Abstand als Argument“: Prüfungshöhe (2022-bebb-gk-B3g)
+AUSWAHL skalarprodukt-und-winkel-e1-k1-s0-v1 – skalarprodukt-und-winkel e1 „Das Skalarprodukt als Objekt“: Anlauf, Vorstufe
+AUSWAHL skalarprodukt-und-winkel-e1-k1-s1-v1 – skalarprodukt-und-winkel e1 „Das Skalarprodukt als Objekt“: Anlauf, Grundfall
+AUSWAHL skalarprodukt-und-winkel-e1-k1-s2-v1 – skalarprodukt-und-winkel e1 „Das Skalarprodukt als Objekt“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL skalarprodukt-und-winkel-e1-k1-s4-v3 – skalarprodukt-und-winkel e1 „Das Skalarprodukt als Objekt“: Prüfungshöhe (2024MgrundlegendBAGLAA1WTR-1f)
+AUSWAHL skalarprodukt-und-winkel-e1-k1-s5-v1 – skalarprodukt-und-winkel e1 „Das Skalarprodukt als Objekt“: Prüfungshöhe (2021MgrundlegendAAGLAA12-c)
+AUSWAHL skalarprodukt-und-winkel-e1-k1-s5-v2 – skalarprodukt-und-winkel e1 „Das Skalarprodukt als Objekt“: Prüfungshöhe (2021MgrundlegendAAGLAA12-c)
+WEG skalarprodukt-und-winkel e2 „Der Formelwinkel oder sein Nachbar?“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL skalarprodukt-und-winkel-e2-k2-s0-v1 – skalarprodukt-und-winkel e2 „Winkel zwischen Vektoren, Kanten und Geraden“: Anlauf, Vorstufe
+AUSWAHL skalarprodukt-und-winkel-e2-k2-s1-v1 – skalarprodukt-und-winkel e2 „Winkel zwischen Vektoren, Kanten und Geraden“: Anlauf, Grundfall
+AUSWAHL skalarprodukt-und-winkel-e2-k2-s4-v1 – skalarprodukt-und-winkel e2 „Winkel zwischen Vektoren, Kanten und Geraden“: Anlauf, Sprosse – Fallstrick im Merkmal („Nachweis: Skalarprodukt null, die Ecke selbst find“)
+AUSWAHL skalarprodukt-und-winkel-e2-k2-s1-v5 – skalarprodukt-und-winkel e2 „Winkel zwischen Vektoren, Kanten und Geraden“: Prüfungshöhe (2026-bb-gk-B3b)
+AUSWAHL skalarprodukt-und-winkel-e2-k2-s2-v3 – skalarprodukt-und-winkel e2 „Winkel zwischen Vektoren, Kanten und Geraden“: Prüfungshöhe (2019-be-gk-B3.2c)
+AUSWAHL skalarprodukt-und-winkel-e2-k2-s4-v3 – skalarprodukt-und-winkel e2 „Winkel zwischen Vektoren, Kanten und Geraden“: Prüfungshöhe (2024-bebb-gk-B3b)
+AUSWAHL skalarprodukt-und-winkel-e2-k2-s5-v3 – skalarprodukt-und-winkel e2 „Winkel zwischen Vektoren, Kanten und Geraden“: Prüfungshöhe (2021MgrundlegendBAGLAA2WTR2-1d)
+AUSWAHL skalarprodukt-und-winkel-e3-k1-s0-v1 – skalarprodukt-und-winkel e3 „Neigungswinkel von Ebenen“: Anlauf, Vorstufe
+AUSWAHL skalarprodukt-und-winkel-e3-k1-s1-v1 – skalarprodukt-und-winkel e3 „Neigungswinkel von Ebenen“: Anlauf, Grundfall
+AUSWAHL skalarprodukt-und-winkel-e3-k1-s2-v1 – skalarprodukt-und-winkel e3 „Neigungswinkel von Ebenen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL skalarprodukt-und-winkel-e3-k1-s1-v5 – skalarprodukt-und-winkel e3 „Neigungswinkel von Ebenen“: Prüfungshöhe (2025-bebb-gk-B3c)
+AUSWAHL skalarprodukt-und-winkel-e3-k1-s2-v3 – skalarprodukt-und-winkel e3 „Neigungswinkel von Ebenen“: Prüfungshöhe (2024-bebb-gk-B3e)
+AUSWAHL skalarprodukt-und-winkel-e3-k1-s3-v1 – skalarprodukt-und-winkel e3 „Neigungswinkel von Ebenen“: Prüfungshöhe (2018-be-gk-B2.2c)
+AUSWAHL skalarprodukt-und-winkel-e3-k1-s3-v2 – skalarprodukt-und-winkel e3 „Neigungswinkel von Ebenen“: Prüfungshöhe (2024MgrundlegendBAGLAA2WTR1-1c)
+AUSWAHL skalarprodukt-und-winkel-e3-k1-s4-v3 – skalarprodukt-und-winkel e3 „Neigungswinkel von Ebenen“: Prüfungshöhe (2020MgrundlegendBAGLAA2WTR-1b)
+AUSWAHL skalarprodukt-und-winkel-e3-k1-s5-v1 – skalarprodukt-und-winkel e3 „Neigungswinkel von Ebenen“: Prüfungshöhe (2026MgrundlegendBAGLAA2WTR1-1e)
+AUSWAHL skalarprodukt-und-winkel-e3-k1-s5-v2 – skalarprodukt-und-winkel e3 „Neigungswinkel von Ebenen“: Prüfungshöhe (2026MgrundlegendBAGLAA2WTR1-1e)
+AUSWAHL skalarprodukt-und-winkel-e4-k1-s0-v1 – skalarprodukt-und-winkel e4 „Winkel gegen Ebenen und Bogenmaße“: Anlauf, Vorstufe
+AUSWAHL skalarprodukt-und-winkel-e4-k1-s1-v1 – skalarprodukt-und-winkel e4 „Winkel gegen Ebenen und Bogenmaße“: Anlauf, Grundfall
+AUSWAHL skalarprodukt-und-winkel-e4-k1-s2-v1 – skalarprodukt-und-winkel e4 „Winkel gegen Ebenen und Bogenmaße“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL skalarprodukt-und-winkel-e4-k1-s1-v5 – skalarprodukt-und-winkel e4 „Winkel gegen Ebenen und Bogenmaße“: Prüfungshöhe (2023MgrundlegendBAGLAA2WTR1-1f)
+WEG orthogonalitaet e1 „„Welches Paar ist senkrecht – und welche Prüfregel gilt?““ – keine Prüfungshöhe im Profil abitur-gk
+WEG orthogonalitaet e1 „„Null zeigen oder null setzen?““ – keine Prüfungshöhe im Profil abitur-gk
+WEG orthogonalitaet e1 „„Für alle oder für eins?““ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL orthogonalitaet-e1-k4-s0-v1 – orthogonalitaet e1 „Rechte Winkel nachweisen“: Anlauf, Vorstufe
+AUSWAHL orthogonalitaet-e1-k4-s1-v1 – orthogonalitaet e1 „Rechte Winkel nachweisen“: Anlauf, Grundfall
+AUSWAHL orthogonalitaet-e1-k4-s4-v2 – orthogonalitaet e1 „Rechte Winkel nachweisen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL orthogonalitaet-e1-k4-s2-v1 – orthogonalitaet e1 „Rechte Winkel nachweisen“: Prüfungshöhe (2026MgrundlegendAAGLAA111-a)
+AUSWAHL orthogonalitaet-e1-k4-s2-v2 – orthogonalitaet e1 „Rechte Winkel nachweisen“: Prüfungshöhe (2021-be-gk-B3a)
+AUSWAHL orthogonalitaet-e1-k4-s2-v3 – orthogonalitaet e1 „Rechte Winkel nachweisen“: Prüfungshöhe (2021MgrundlegendBAGLAA2WTR1-1a)
+AUSWAHL orthogonalitaet-e1-k4-s3-v1 – orthogonalitaet e1 „Rechte Winkel nachweisen“: Prüfungshöhe (2026-bb-gk-A1.5a)
+AUSWAHL orthogonalitaet-e1-k4-s3-v3 – orthogonalitaet e1 „Rechte Winkel nachweisen“: Prüfungshöhe (2018MgrundlegendAAGLAA22-a)
+AUSWAHL orthogonalitaet-e1-k4-s5-v3 – orthogonalitaet e1 „Rechte Winkel nachweisen“: Prüfungshöhe (2019MgrundlegendAAGLAA212-a)
+AUSWAHL orthogonalitaet-e1-k4-s5-v4 – orthogonalitaet e1 „Rechte Winkel nachweisen“: Prüfungshöhe (2019MgrundlegendAAGLAA212-a)
+AUSWAHL orthogonalitaet-e2-k1-s0-v1 – orthogonalitaet e2 „Rechte Winkel rückwärts“: Anlauf, Vorstufe
+AUSWAHL orthogonalitaet-e2-k1-s1-v2 – orthogonalitaet e2 „Rechte Winkel rückwärts“: Anlauf, Grundfall
+AUSWAHL orthogonalitaet-e2-k1-s4-v3 – orthogonalitaet e2 „Rechte Winkel rückwärts“: Anlauf, Sprosse – Fallstrick im Merkmal („Quader mit unbekannter Höhe: Skalarprodukt der Rau“)
+AUSWAHL orthogonalitaet-e2-k1-s1-v1 – orthogonalitaet e2 „Rechte Winkel rückwärts“: Prüfungshöhe (2021MgrundlegendAAGLAA112-b)
+AUSWAHL orthogonalitaet-e2-k1-s2-v1 – orthogonalitaet e2 „Rechte Winkel rückwärts“: Prüfungshöhe (2024-bebb-gk-A1.2b)
+AUSWAHL orthogonalitaet-e2-k1-s2-v3 – orthogonalitaet e2 „Rechte Winkel rückwärts“: Prüfungshöhe (2024MgrundlegendBAGLAA2WTR2-1f)
+AUSWAHL orthogonalitaet-e2-k1-s5-v1 – orthogonalitaet e2 „Rechte Winkel rückwärts“: Prüfungshöhe (2026-bb-gk-A1.8a)
+AUSWAHL orthogonalitaet-e2-k1-s5-v2 – orthogonalitaet e2 „Rechte Winkel rückwärts“: Prüfungshöhe (2026MgrundlegendAAGLAA221)
+AUSWAHL orthogonalitaet-e3-k1-s0-v1 – orthogonalitaet e3 „Senkrecht zu Geraden und Ebenen“: Anlauf, Vorstufe
+AUSWAHL orthogonalitaet-e3-k1-s5-v3 – orthogonalitaet e3 „Senkrecht zu Geraden und Ebenen“: Anlauf, Sprosse – Fallstrick im Merkmal („Skalarprodukt der beiden Normalenvektoren null set“)
+AUSWAHL orthogonalitaet-e3-k1-s2-v1 – orthogonalitaet e3 „Senkrecht zu Geraden und Ebenen“: Prüfungshöhe (2020MgrundlegendAAGLAA211-a)
+AUSWAHL orthogonalitaet-e3-k1-s3-v1 – orthogonalitaet e3 „Senkrecht zu Geraden und Ebenen“: Prüfungshöhe (2025-bebb-gk-A1.8a)
+AUSWAHL orthogonalitaet-e3-k1-s3-v2 – orthogonalitaet e3 „Senkrecht zu Geraden und Ebenen“: Prüfungshöhe (2022-bebb-gk-B3c)
+AUSWAHL orthogonalitaet-e3-k1-s3-v3 – orthogonalitaet e3 „Senkrecht zu Geraden und Ebenen“: Prüfungshöhe (2025MgrundlegendAAGLAA221-a)
+AUSWAHL orthogonalitaet-e3-k1-s4-v1 – orthogonalitaet e3 „Senkrecht zu Geraden und Ebenen“: Prüfungshöhe (2025-bebb-gk-A1.2b)
+AUSWAHL orthogonalitaet-e3-k1-s4-v3 – orthogonalitaet e3 „Senkrecht zu Geraden und Ebenen“: Prüfungshöhe (2025MgrundlegendAAGLAA211-b)
+AUSWAHL orthogonalitaet-e3-k1-s5-v1 – orthogonalitaet e3 „Senkrecht zu Geraden und Ebenen“: Prüfungshöhe (2022-bebb-gk-A1.4c)
+AUSWAHL orthogonalitaet-e3-k1-s5-v2 – orthogonalitaet e3 „Senkrecht zu Geraden und Ebenen“: Prüfungshöhe (2022MgrundlegendAAGLAA211-c)
+AUSWAHL orthogonalitaet-e3-k1-s6-v1 – orthogonalitaet e3 „Senkrecht zu Geraden und Ebenen“: Prüfungshöhe (2021-be-gk-A1.4c)
+AUSWAHL orthogonalitaet-e3-k1-s6-v2 – orthogonalitaet e3 „Senkrecht zu Geraden und Ebenen“: Prüfungshöhe (2021-be-gk-A1.4c)
+WEG orthogonalitaet e4 „Lot und Extremum“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL orthogonalitaet-e4-k2-s1-v2 – orthogonalitaet e4 „Flächengleichung des flächenkleinsten Dreiecks begründen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL orthogonalitaet-e4-k2-s1-v1 – orthogonalitaet e4 „Flächengleichung des flächenkleinsten Dreiecks begründen“: Prüfungshöhe (2020MgrundlegendBAGLAA2WTR-2)
+WEG flaecheninhalt-und-volumen-im-raum e1 „Welche Figur, welche Formel?“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e1-k2-s0-v1 – flaecheninhalt-und-volumen-im-raum e1 „Dreiecksflächen“: Anlauf, Vorstufe
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e1-k2-s1-v1 – flaecheninhalt-und-volumen-im-raum e1 „Dreiecksflächen“: Anlauf, Grundfall
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e1-k2-s3-v1 – flaecheninhalt-und-volumen-im-raum e1 „Dreiecksflächen“: Anlauf, Sprosse – Fallstrick im Merkmal („Achsenabschnitte aus der Ebenengleichung als Kathe“)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e1-k2-s2-v2 – flaecheninhalt-und-volumen-im-raum e1 „Dreiecksflächen“: Prüfungshöhe (2025MgrundlegendAAGLAA212-b)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e1-k2-s5-v1 – flaecheninhalt-und-volumen-im-raum e1 „Dreiecksflächen“: Prüfungshöhe (2022-bebb-gk-A1.5b)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e1-k2-s6-v1 – flaecheninhalt-und-volumen-im-raum e1 „Dreiecksflächen“: Prüfungshöhe (2024-bebb-gk-A1.5a)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e2-k1-s0-v1 – flaecheninhalt-und-volumen-im-raum e2 „Vierecksflächen“: Anlauf, Vorstufe
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e2-k1-s1-v1 – flaecheninhalt-und-volumen-im-raum e2 „Vierecksflächen“: Anlauf, Grundfall
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e2-k1-s2-v1 – flaecheninhalt-und-volumen-im-raum e2 „Vierecksflächen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e2-k1-s1-v3 – flaecheninhalt-und-volumen-im-raum e2 „Vierecksflächen“: Prüfungshöhe (2017MgrundlegendAAGLAA212-a)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e2-k1-s2-v3 – flaecheninhalt-und-volumen-im-raum e2 „Vierecksflächen“: Prüfungshöhe (2022-bebb-gk-B3f)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e2-k1-s3-v1 – flaecheninhalt-und-volumen-im-raum e2 „Vierecksflächen“: Prüfungshöhe (2019-be-gk-B3.2d)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e2-k1-s4-v1 – flaecheninhalt-und-volumen-im-raum e2 „Vierecksflächen“: Prüfungshöhe (2024MgrundlegendAAGLAA221)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e2-k1-s6-v1 – flaecheninhalt-und-volumen-im-raum e2 „Vierecksflächen“: Prüfungshöhe (2021-be-gk-B3f)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e2-k1-s6-v2 – flaecheninhalt-und-volumen-im-raum e2 „Vierecksflächen“: Prüfungshöhe (2021-be-gk-B3f)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e2-k1-s6-v3 – flaecheninhalt-und-volumen-im-raum e2 „Vierecksflächen“: Prüfungshöhe (2022-bebb-gk-B3a)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e2-k1-s6-v4 – flaecheninhalt-und-volumen-im-raum e2 „Vierecksflächen“: Prüfungshöhe (2022-bebb-gk-B3a)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e2-k2-s1-v3 – flaecheninhalt-und-volumen-im-raum e2 „Ebene Figur: Flächeninhalt des Schattens eines geneigten Rechtecks bei senkrechtem Lichteinfall über eine Querschnittsskizze begründen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e2-k2-s1-v1 – flaecheninhalt-und-volumen-im-raum e2 „Ebene Figur: Flächeninhalt des Schattens eines geneigten Rechtecks bei senkrechtem Lichteinfall über eine Querschnittsskizze begründen“: Prüfungshöhe (2017MgrundlegendBAGLAA2WTR2-1g)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e3-k1-s0-v1 – flaecheninhalt-und-volumen-im-raum e3 „Volumen und Oberfläche“: Anlauf, Vorstufe
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e3-k1-s1-v1 – flaecheninhalt-und-volumen-im-raum e3 „Volumen und Oberfläche“: Anlauf, Grundfall
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e3-k1-s2-v3 – flaecheninhalt-und-volumen-im-raum e3 „Volumen und Oberfläche“: Anlauf, Sprosse – Fallstrick im Merkmal („rückwärts: Höhe aus dem Volumen; eine Kante ist Hö“)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e3-k1-s2-v1 – flaecheninhalt-und-volumen-im-raum e3 „Volumen und Oberfläche“: Prüfungshöhe (2026MgrundlegendAAGLAA111-b)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e3-k1-s2-v2 – flaecheninhalt-und-volumen-im-raum e3 „Volumen und Oberfläche“: Prüfungshöhe (2017MgrundlegendAAGLAA212-b)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e3-k1-s3-v1 – flaecheninhalt-und-volumen-im-raum e3 „Volumen und Oberfläche“: Prüfungshöhe (2025-bebb-gk-B3a)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e3-k1-s3-v3 – flaecheninhalt-und-volumen-im-raum e3 „Volumen und Oberfläche“: Prüfungshöhe (2026MgrundlegendAAGLAA222-a)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e3-k1-s5-v3 – flaecheninhalt-und-volumen-im-raum e3 „Volumen und Oberfläche“: Prüfungshöhe (2019MgrundlegendAAGLAA212-b)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e3-k1-s6-v4 – flaecheninhalt-und-volumen-im-raum e3 „Volumen und Oberfläche“: Prüfungshöhe (2020MgrundlegendAAGLAA212-a)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e3-k1-s6-v5 – flaecheninhalt-und-volumen-im-raum e3 „Volumen und Oberfläche“: Prüfungshöhe (2020MgrundlegendAAGLAA212-a)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s0-v1 – flaecheninhalt-und-volumen-im-raum e4 „Zusammengesetzt und Verhältnisse“: Anlauf, Vorstufe
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s1-v1 – flaecheninhalt-und-volumen-im-raum e4 „Zusammengesetzt und Verhältnisse“: Anlauf, Grundfall
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s2-v2 – flaecheninhalt-und-volumen-im-raum e4 „Zusammengesetzt und Verhältnisse“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s1-v5 – flaecheninhalt-und-volumen-im-raum e4 „Zusammengesetzt und Verhältnisse“: Prüfungshöhe (2018MgrundlegendBAGLAA2WTR1-1d)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s3-v1 – flaecheninhalt-und-volumen-im-raum e4 „Zusammengesetzt und Verhältnisse“: Prüfungshöhe (2022-bebb-gk-B3h)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s3-v2 – flaecheninhalt-und-volumen-im-raum e4 „Zusammengesetzt und Verhältnisse“: Prüfungshöhe (Kennung im Text)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s4-v1 – flaecheninhalt-und-volumen-im-raum e4 „Zusammengesetzt und Verhältnisse“: Prüfungshöhe (2021-be-gk-B3i)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s5-v1 – flaecheninhalt-und-volumen-im-raum e4 „Zusammengesetzt und Verhältnisse“: Prüfungshöhe (2018MgrundlegendBAnalysisWTR-1c)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s6-v1 – flaecheninhalt-und-volumen-im-raum e4 „Zusammengesetzt und Verhältnisse“: Prüfungshöhe (2022MgrundlegendBAnalysisWTR1-2b)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s7-v3 – flaecheninhalt-und-volumen-im-raum e4 „Zusammengesetzt und Verhältnisse“: Prüfungshöhe (2023MgrundlegendAAGLAA22-b)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s7-v4 – flaecheninhalt-und-volumen-im-raum e4 „Zusammengesetzt und Verhältnisse“: Prüfungshöhe (2023MgrundlegendAAGLAA22-b)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s7-v5 – flaecheninhalt-und-volumen-im-raum e4 „Zusammengesetzt und Verhältnisse“: Prüfungshöhe (2026MgrundlegendBAGLAA2MMS2-1e)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s7-v6 – flaecheninhalt-und-volumen-im-raum e4 „Zusammengesetzt und Verhältnisse“: Prüfungshöhe (2026MgrundlegendBAGLAA2MMS2-1e)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s7-v7 – flaecheninhalt-und-volumen-im-raum e4 „Zusammengesetzt und Verhältnisse“: Prüfungshöhe (2023MgrundlegendBAGLAA2WTR2-1f)
+AUSWAHL flaecheninhalt-und-volumen-im-raum-e4-k1-s7-v8 – flaecheninhalt-und-volumen-im-raum e4 „Zusammengesetzt und Verhältnisse“: Prüfungshöhe (2023MgrundlegendBAGLAA2WTR2-1f)
+TEILUNG flaecheninhalt-und-volumen-im-raum e4 „Zusammengesetzt und Verhältnisse“: 12 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+FORM abstaende-e1-k2-s4-v1 (Nr. 66): gleichungsraster mit Text → teile
+FORM flaecheninhalt-und-volumen-im-raum-e1-k2-s5-v1 (Nr. 90): gleichungsraster mit Text → teile
+STRUKTUR 0 Fehler

@@ -1,0 +1,122 @@
+% Quadratische Funktionen – bank/quadratische-funktionen/ (zusammenbau v0.4, Heft)
+\einheitenkopf[t2]{Quadratische Funktionen}
+\setcounter{aufgabe}{10}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Normalparabel und Streckfaktor – Anlauf}
+\begin{teile}
+\teil $f(x) = 4x - 1$ – Gerade oder Parabel? \kreuz{Gerade} \kreuz{Parabel}
+\teil Wertetabelle zu $f(x) = x^2$ – fülle aus.
+\wertetabelle{x}{f(x)}{-2,-1,0,1,2}
+\teil $f(x) = x^2$ – $f(-6)$? f(-6) = \leerfeld
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Normalparabel und Streckfaktor – Prüfungsaufgaben}
+\begin{teile}
+% AUSGELASSEN quadratische-funktionen-e1-k1-s10-v1: LaTeX Error: There's no line here to end.
+% \teil Welche Wertetabelle gehört zu $y = 4x^2$? \\ A: \wertetabelle[-8,-4,0,4,8]{x}{y}{-2,-1,0,1,2} \\ B: \wertetabelle[16,4,0,4,16]{x}{y}{-2,-1,0,1,2} \\ C: \wertetabelle[64,16,0,16,64]{x}{y}{-2,-1,0,1,2} \\ \kreuz{A} \kreuz{B} \kreuz{C} \hfill (P10 2026 FOR)
+\teil \textit{(ausgelassen)}
+% AUSGELASSEN quadratische-funktionen-e1-k1-s10-v2: LaTeX Error: There's no line here to end.
+% \teil Welche Wertetabelle gehört zu $y = 6x^2$? \\ A: \wertetabelle[144,36,0,36,144]{x}{y}{-2,-1,0,1,2} \\ B: \wertetabelle[-12,-6,0,6,12]{x}{y}{-2,-1,0,1,2} \\ C: \wertetabelle[24,6,0,6,24]{x}{y}{-2,-1,0,1,2} \\ \kreuz{A} \kreuz{B} \kreuz{C} \hfill (P10 2026 FOR)
+\teil \textit{(ausgelassen)}
+\steil Ein Stein fällt von einer $45\,$m hohen Brücke. Der Graph zeigt seine Höhe $h$ (in m) nach $t$ Sekunden. Welche Gleichung passt? Kreuze an und begründe. \\ \kreuz{$h(t) = 5t^2 + 45$} \\ \kreuz{$h(t) = 5t^2 - 45$} \\ \kreuz{$h(t) = -5t^2 + 45$} \\ \kreuz{$h(t) = -5t^2 - 45$} \hfill (P10 2015 OS)
+
+\begin{ksys}[xmin=0,xmax=4,ymin=0,ymax=50,xstep=0.5,ystep=5,xlabel=$t$ in s,ylabel=$h$ in m,ablesen]
+\funktionab{-5*\x^2+45}{h}{0}{3}
+\end{ksys}
+\steil Ein Schlüssel fällt aus einem Fenster in $20\,$m Höhe. Der Graph zeigt seine Höhe $h$ (in m) nach $t$ Sekunden. Welche Gleichung passt? Kreuze an und begründe. \\ \kreuz{$h(t) = 5t^2 - 20$} \\ \kreuz{$h(t) = -5t^2 + 20$} \\ \kreuz{$h(t) = -5t^2 - 20$} \\ \kreuz{$h(t) = 5t^2 + 20$} \hfill (P10 2015 OS)
+
+\begin{ksys}[xmin=0,xmax=3,ymin=0,ymax=25,xstep=0.5,ystep=5,xlabel=$t$ in s,ylabel=$h$ in m,ablesen]
+\funktionab{-5*\x^2+20}{h}{0}{2}
+\end{ksys}
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Scheitelpunktform – Anlauf}
+\begin{teile}
+\teil $f(x) = (x - 4)^2 + 2$ – kreise die Zahl in der Klammer ein. Bei welchem $x$ liegt der Scheitel? x = \leerfeld
+\teil $f(x) = (x - 2)^2 + 5$ – Scheitel? S( \leerfeld | \leerfeld )
+\teil $f(x) = (x + 4)^2 + 2$ – Scheitel? S( \leerfeld | \leerfeld )
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Scheitelpunktform – Prüfungsaufgaben}
+\begin{teile}
+\steil $f(x) = (x - 4)^2 - 5$ wird erst um $5$ nach oben verschoben und dann an der $x$-Achse gespiegelt. Gleichung der neuen Parabel $g$? \hfill (P10 2017 OS) \\ g(x) = \leerfeld
+\steil $f(x) = (x + 1)^2 - 3$ wird erst um $3$ nach oben verschoben und dann an der $x$-Achse gespiegelt. Gleichung der neuen Parabel $g$? \hfill (P10 2017 OS) \\ g(x) = \leerfeld
+\steil Die Parabel $f(x) = (x + 4)^2 - 2$ wird an der $y$-Achse gespiegelt. Skizziere das Spiegelbild $g$ und gib seine Gleichung an. \hfill (P10 2020 OS) \\
+
+\begin{ksys}[xmin=-7,xmax=7,ymin=-3,ymax=7]
+\parabel{1}{-4}{-2}{f}
+\end{ksys}
+g(x) = \leerfeld
+\steil Die Parabel $f(x) = (x - 2)^2 - 5$ wird an der $y$-Achse gespiegelt. Skizziere das Spiegelbild $g$ und gib seine Gleichung an. \hfill (P10 2020 OS) \\
+
+\begin{ksys}[xmin=-5,xmax=5,ymin=-6,ymax=4]
+\parabel{1}{2}{-5}{f}
+\end{ksys}
+g(x) = \leerfeld
+\steil Skizziere eine nach unten geöffnete Normalparabel $f$ mit Scheitel auf der $y$-Achse, die keine Nullstelle hat. Gib ihre Gleichung und die Gleichung ihres Spiegelbilds $g$ an der $x$-Achse an. \hfill (P10 2018 OS) \\
+
+\begin{ksys}[xmin=-4,xmax=4,ymin=-10,ymax=10,ystep=2]
+\end{ksys}
+f(x) = \leerfeld , g(x) = \leerfeld
+\steil Skizziere eine nach oben geöffnete Normalparabel $f$ mit Scheitel auf der $y$-Achse, die zwei Nullstellen hat. Gib ihre Gleichung und die Gleichung ihres Spiegelbilds $g$ an der $x$-Achse an. \hfill (P10 2018 OS) \\
+
+\begin{ksys}[xmin=-4,xmax=4,ymin=-10,ymax=10,ystep=2]
+\end{ksys}
+f(x) = \leerfeld , g(x) = \leerfeld
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Normalform – Anlauf}
+\begin{teile}
+\teil $f(x) = x^2 + 4x - 1$ – welche Form? \kreuz{Scheitelpunktform} \kreuz{Normalform}
+\teil $f(x) = x^2 + 3x + 5$ – Schnittpunkt mit der $y$-Achse? ( \leerfeld | \leerfeld )
+\teil $f(x) = x^2 + 4x - 2$ – $f(-3)$? f(-3) = \leerfeld
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Normalform – Prüfungsaufgaben}
+\begin{teile}
+\teil Die Abbildung zeigt die Parabel $f(x) = x^2 - 8x + 13$. Gib den Scheitel an und notiere die Scheitelpunktform. \hfill (P10 2025 OS) \\
+
+\begin{ksys}[xmin=-1,xmax=7,ymin=-4,ymax=2,ablesen]
+\parabel{1}{4}{-3}{f}
+\end{ksys}
+S( \leerfeld | \leerfeld ), f(x) = \leerfeld
+\teil Die Abbildung zeigt die Parabel $f(x) = x^2 + 10x + 23$. Gib den Scheitel an und notiere die Scheitelpunktform. \hfill (P10 2025 OS) \\
+
+\begin{ksys}[xmin=-8,xmax=1,ymin=-3,ymax=3,ablesen]
+\parabel{1}{-5}{-2}{f}
+\end{ksys}
+S( \leerfeld | \leerfeld ), f(x) = \leerfeld
+\steil Die Parabel $f(x) = x^2 + 4x + 1$ hat den Scheitel $S(-2|{-3})$. Gib die Scheitelpunktform an. \hfill (P10 2018 OS) \\ f(x) = \leerfeld
+\steil Die Parabel $f(x) = x^2 - 12x + 34$ hat den Scheitel $S(6|{-2})$. Gib die Scheitelpunktform an. \hfill (P10 2018 OS) \\ f(x) = \leerfeld
+\steil Weise nach: $(x + 4)^2 - 3 = x^2 + 8x + 13$. \hfill (P10 2017 OS)
+\steil Weise nach: $(x + 6)^2 - 5 = x^2 + 12x + 31$. \hfill (P10 2017 OS)
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Nullstellen und Schnittpunkte – Anlauf}
+\begin{teile}
+\teil Parabel $f(x) = x^2 - 2x$ und Gerade $g(x) = x + 4$ – welche Gleichung setzt du an? Nur hinschreiben. \leerfeld = \leerfeld
+\teil $f(x) = (x - 1)^2 - 4$ – Nullstellen? $x_1$ = \leerfeld , $x_2$ = \leerfeld
+\teil $f(x) = (x - 2)^2 - 1$ und $g(x) = x - 3$ – an welchen Stellen $x$ schneiden sich Parabel und Gerade? $x_1$ = \leerfeld , $x_2$ = \leerfeld
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Nullstellen und Schnittpunkte – Prüfungsaufgaben}
+\begin{teile}
+\steil Die Parabel $f(x) = (x - 4)^2 - 6$ und die Gerade $g(x) = -2x + 5$ schneiden sich in zwei Punkten. Berechne ihre Koordinaten. \hfill (P10 2022 OS) \\ $S_1($ \leerfeld | \leerfeld ), $S_2($ \leerfeld | \leerfeld )
+\steil Die Parabel $f(x) = (x + 1)^2 - 4$ und die Gerade $g(x) = -3x - 9$ schneiden sich in zwei Punkten. Berechne ihre Koordinaten. \hfill (P10 2022 OS) \\ $S_1($ \leerfeld | \leerfeld ), $S_2($ \leerfeld | \leerfeld )
+\steil Berechne die Schnittpunkte der Parabel $f(x) = x^2 - 10x + 22$ mit der $x$-Achse. Runde auf zwei Stellen. \hfill (P10 2025 OS) \\ $N_1($ \leerfeld |0), $N_2($ \leerfeld |0)
+\steil Berechne die Schnittpunkte der Parabel $f(x) = x^2 + 4x - 1$ mit der $x$-Achse. Runde auf zwei Stellen. \hfill (P10 2025 OS) \\ $N_1($ \leerfeld |0), $N_2($ \leerfeld |0)
+\steil Die Parabel $f(x) = -x^2 + 4x + 2$ ist nach unten geöffnet. Für welche $x$ ist $f(x) = -10$? \hfill (P10 2023 OS) \\ $x_1$ = \leerfeld , $x_2$ = \leerfeld
+\steil Die Parabel $f(x) = -x^2 - 6x + 2$ ist nach unten geöffnet. Für welche $x$ ist $f(x) = -14$? \hfill (P10 2023 OS) \\ $x_1$ = \leerfeld , $x_2$ = \leerfeld
+\end{teile}
+\end{aufgabe}

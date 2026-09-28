@@ -1,0 +1,124 @@
+% Ableitung und Änderungsrate – bank/ableitung-und-aenderungsrate/ (zusammenbau v0.4, Heft)
+\einheitenkopf[t1]{Ableitung und Änderungsrate}
+\setcounter{aufgabe}{0}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Mittlere Änderungsrate – Anlauf}
+\begin{teile}
+\teil „Wie stark hat der Wasserstand in den ersten fünf Stunden durchschnittlich je Stunde zugenommen?“ \\ \kreuz{Zeitraum – Differenzenquotient, Sekante} \\ \kreuz{Zeitpunkt – Ableitung, Tangente}
+\teil Um 8 Uhr sind 120 Besucher im Zoo, um 11 Uhr 300. Wie groß ist die mittlere Änderungsrate der Besucherzahl in diesem Zeitraum? \leerfeld Besucher je Stunde
+\teil Zwei Modelle beschreiben die Abkühlung eines Getränks: $A(t) = 70 \cdot \mathrm{e}^{-0{,}1t} + 20$ und $B(t) = 90 - 3t$ ($t$ in Minuten, Temperatur in °C). Vergleiche die Beträge der mittleren Änderungsraten beider Modelle im Intervall $[0; 10]$.
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Mittlere Änderungsrate – Prüfungsaufgaben}
+\begin{teile}
+\teil Der Graph zeigt die Anzahl $a$ der bis zum Zeitpunkt $t$ (Stunden nach 12:00 Uhr) abgegebenen Bewertungen. Lies die Werte für 13:00 Uhr und 15:00 Uhr ab und berechne, wie viele Bewertungen in diesem Zeitraum durchschnittlich je Stunde abgegeben wurden \hfill (Abitur 2025 GK).
+
+\begin{ksys}[xmin=0,xmax=4,ymin=0,ymax=1800,xstep=1,ystep=200,xlabel=t in h,ylabel=a,ablesen]\funktion{100*\x^2}{a}\end{ksys}
+\leerfeld je Stunde
+\teil Der Hormonspiegel eines Patienten wird durch $h(t) = 6t \cdot \mathrm{e}^{-0{,}05t} + 40$ beschrieben ($t$ in Tagen seit Behandlungsbeginn, $h(t)$ in Prozent des Sollwerts). Berechne die mittlere Änderungsrate des Hormonspiegels in den ersten fünf Tagen \hfill (Abitur 2019 GK). \leerfeld Prozentpunkte je Tag
+\teil Bei einem Laktattest beschreibt $k(x) = \frac{1}{20} \cdot (x^3 - 24x^2 + 200x - 500)$ für $10 \le x \le 16$ die Laktatkonzentration in mmol/l in Abhängigkeit von der Laufgeschwindigkeit $x$ in km/h. Berechne die mittlere Änderungsrate der Laktatkonzentration zwischen 10 und 16 km/h \hfill (Abitur 2019 GK). \leerfeld mmol/l je km/h
+\teil Das Luftvolumen in der Lunge beim Einatmen wird durch $h(t) = 0{,}4t^2 - 1{,}2t + 2$ beschrieben ($t$ in Sekunden, $h(t)$ in Litern; Minimum bei $t = 1{,}5$). Gib die Bedeutung der Terme I: $h(3) - h(1{,}5)$ und II: $\frac{h(3) - h(1{,}5)}{1{,}5}$ im Sachzusammenhang an und berechne beide \hfill (Abitur 2026 GK).
+\teil Ein Höhenprofil wird für $0 \le x \le 6$ durch $f(x) = (x + 2) \cdot \mathrm{e}^{-0{,}4x}$ beschrieben (1 LE = 1 km). Im Intervall $[1; 5]$ soll das Profil näherungsweise durch die Gerade durch die Punkte $(1 | f(1))$ und $(5 | f(5))$ ersetzt werden. Gib eine Gleichung dieser Geraden an \hfill (Abitur 2018 GK).
+\teil Ein Höhenprofil wird durch $f(x) = (x + 2) \cdot \mathrm{e}^{-0{,}4x}$ beschrieben (1 LE = 1 km). Von einem zweiten Profil $h$ ist bekannt: $h(0) = 1{,}8$ und $h(5) = 0{,}6$. Vergleiche die Beträge der mittleren Steigungen von $f$ und $h$ im Intervall $[0; 5]$ \hfill (Abitur 2018 GK).
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Mittlere Änderungsrate – Prüfungsaufgaben – weiter}
+\begin{teile}
+\teil Der Schienenverlauf einer Modelleisenbahn besteht aus vier gleichen Bögen von je $3{,}2$ m Länge und zwei Halbkreisen mit dem Radius $0{,}5$ m, die die Bögen verbinden. Ein Zug fährt im Durchschnitt $4$ m je Minute. Wie lange braucht er für eine volle Runde? \hfill (Abitur 2026 GK) \\ \leerfeld[min]
+\teil Der Bestand eines Rohstoffs wird durch $k(t) = 0{,}1t^3 - 1{,}5t^2 + 100$ beschrieben ($t$ in Jahren, $k(t)$ in Mio. Tonnen). Die Gleichung $\frac{k(c) - k(0)}{c} = -5$ hat genau zwei Lösungen. Bestimme die kleinere Lösung und deute Gleichung und Lösung im Sachzusammenhang \hfill (Abitur 2026 GK).
+\teil Die Kosten für die Produktion von $x$ Kubikmetern einer Flüssigkeit werden für $0 \le x \le 8$ durch $K(x) = x^3 - 9x^2 + 30x + 10$ beschrieben ($K(x)$ in 1\,000 Euro). Aussage: „Je größer die Produktionsmenge, desto höher sind die Kosten für einen zusätzlichen Kubikmeter.“ Beurteile die Aussage \hfill (Abitur 2018 GK).
+\teil Die Kosten für die Produktion von $x$ Kubikmetern einer Flüssigkeit werden für $0 \le x \le 8$ durch $K(x) = 0{,}5x^3 - 6x^2 + 30x + 15$ beschrieben ($K(x)$ in 1\,000 Euro). Aussage: „Je größer die Produktionsmenge, desto höher sind die Kosten für einen zusätzlichen Kubikmeter.“ Beurteile die Aussage \hfill (Abitur 2018 GK).
+\teil Die CO$_2$-Konzentration in einem Raum wird durch $g(x) = -500 \cdot \mathrm{e}^{-0{,}4x} + 900$ beschrieben ($x$ in Stunden, $g(x)$ in ppm). Weise nach, dass die mittlere Änderungsrate über jede Stunde $[x; x + 1]$ durch $500 \cdot (1 - \mathrm{e}^{-0{,}4}) \cdot \mathrm{e}^{-0{,}4x}$ gegeben ist, und berechne auf eine Minute genau, ab wann sie erstmals $80$ ppm je Stunde unterschreitet \hfill (Abitur 2019 GK).
+\teil Die CO$_2$-Konzentration in einem Raum wird durch $g(x) = -400 \cdot \mathrm{e}^{-0{,}3x} + 800$ beschrieben ($x$ in Stunden, $g(x)$ in ppm). Weise nach, dass die mittlere Änderungsrate über jede Stunde $[x; x + 1]$ durch $400 \cdot (1 - \mathrm{e}^{-0{,}3}) \cdot \mathrm{e}^{-0{,}3x}$ gegeben ist, und berechne auf eine Minute genau, ab wann sie erstmals $60$ ppm je Stunde unterschreitet \hfill (Abitur 2019 GK).
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Ableitung an einer Stelle – Anlauf}
+\begin{teile}
+\teil $h(t)$ ist die Höhe eines Baums in cm nach $t$ Jahren. Was ist $h'(4) = 35$? \\ \kreuz{Funktionswert – Höhe oder Bestand} \\ \kreuz{Ableitungswert – Steigung oder Rate}
+\teil Die Höhe eines Balls wird durch $h(t) = -5t^2 + 20t$ beschrieben ($t$ in s, $h(t)$ in m). Berechne $h'(1)$ und gib an, was die Zahl bedeutet. h'(1) = \leerfeld[m] je s
+\teil $w'$ beschreibt die momentane Änderungsrate des Wasserstands einer Talsperre in cm je Stunde; $t$ ist die Zeit in Stunden nach 0:00 Uhr. Es gilt $w'(14{,}5) > 0$ und $w'(20) < 0$. Deute beide Aussagen mit Uhrzeit.
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Ableitung an einer Stelle – Prüfungsaufgaben}
+\begin{teile}
+\teil Die Abbildung zeigt den Graphen der linearen Funktion $g$ durch $(1 | -1)$ und $(3 | 5)$. Begründe, dass $g'(3) = 3$ gilt \hfill (Abitur 2026 GK).
+
+\begin{ksys}[xmin=-1,xmax=4,ymin=-3,ymax=7,ablesen]\gerade{3}{-4}{g}\punkt{1}{-1}{}\punkt{3}{5}{}\end{ksys}
+\teil Gegeben ist $g(x) = 3\mathrm{e}^x - 3$; die Abbildung zeigt den Graphen. Berechne $g'(0)$ und veranschauliche in der Abbildung, wie man diesen Wert grafisch ermittelt \hfill (Abitur 2024 GK).
+
+\begin{ksys}[xmin=-3,xmax=2,ymin=-4,ymax=8,ablesen]\funktion{3*exp(\x)-3}{g}\end{ksys}
+\teil Gegeben ist $g(x) = 0{,}5\mathrm{e}^x + 1$; die Abbildung zeigt den Graphen. Berechne $g'(0)$ und zeichne die Tangente im Punkt $(0 | 1{,}5)$ mit einem Steigungsdreieck ein \hfill (Abitur 2024 GK).
+
+\begin{ksys}[xmin=-3,xmax=2,ymin=-1,ymax=5,ablesen]\funktion{0.5*exp(\x)+1}{g}\end{ksys}
+\teil $f$ beschreibt für $0 \le x \le 20$ die momentane Änderungsrate des Inhalts eines Tanks in kg je Stunde ($x$ Zeit in Stunden seit Beobachtungsbeginn); der Punkt $(3 | 180)$ liegt auf dem Graphen von $f$. Gib die Bedeutung der Koordinaten im Sachzusammenhang an \hfill (Abitur 2021 GK).
+\teil Die Schaufel eines Wasserrads wird durch die Graphen von $f(x) = 0{,}1x^3 - x^2 + 2x$ und $p(x) = -x^2 + 3x - 0{,}5$ begrenzt. Weise nach, dass $p'(0{,}5) = f'(0)$ gilt, und erläutere die anschauliche Bedeutung im Sachzusammenhang \hfill (Abitur 2021 GK).
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Ableitung an einer Stelle – Prüfungsaufgaben – weiter}
+\begin{teile}
+\teil Ein Logo wird durch die Graphen von $u(x) = 0{,}2x^3$ (untere Linie) und $v(x) = x^2 - 0{,}1x^3$ (obere Linie) begrenzt. Aussage: „Für jedes $x$ aus $]0; 3[$ ist die Steigung des Graphen von $v$ größer als die des Graphen von $u$.“ Beurteile die Aussage \hfill (Abitur 2020 GK).
+\teil Zwei Rampen werden durch $u(x) = 0{,}5x^2$ und $v(x) = 3x - 0{,}25x^2$ beschrieben. Aussage: „Für jedes $x$ aus $]0; 4[$ ist die Rampe $v$ steiler als die Rampe $u$.“ Beurteile die Aussage \hfill (Abitur 2020 GK).
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Von der Sekante zur Tangente – Anlauf}
+\begin{teile}
+\teil Für eine Funktion $f$ ist der Term $\frac{f(5) - f(2)}{5 - 2}$ gegeben. Was gibt er an? \\ \kreuz{Sekantensteigung – mittlere Änderungsrate} \\ \kreuz{Tangentensteigung – momentane Änderungsrate}
+\teil Gegeben ist $f(x) = x^2$ und der Punkt $P(2 | 4)$ auf dem Graphen. Berechne die Steigung $m$ der Sekante durch $P$ und $Q(2 + h | f(2 + h))$ für $h = 1$; $0{,}5$; $0{,}1$; $0{,}01$ und trage sie in die Tabelle ein. Welchem Wert nähern sich die Steigungen? Das ist die Tangentensteigung $f'(2)$.
+
+\wertetabelle{h}{m}{1,0{,}5,0{,}1,0{,}01}
+f'(2) = \leerfeld
+\teil Die Abbildung zeigt den Graphen von $g(x) = -0{,}5x^3 + 1{,}5x + 3$ mit dem Wendepunkt $W(0 | 3)$. Berechne die mittlere Steigung des Graphen im Bereich $-2 \le x \le 2$. Bestimme grafisch die Steigung des Graphen im Wendepunkt.
+
+\begin{ksys}[xmin=-3,xmax=3,ymin=-1,ymax=7,ablesen]\funktionab{-0.5*\x^3+1.5*\x+3}{g}{-2.4}{2.4}\end{ksys}
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Von der Sekante zur Tangente – Prüfungsaufgaben}
+\begin{teile}
+\teil Die Temperatur eines Kaffees wird durch $T(x) = 55 \cdot \mathrm{e}^{-x/200} + 21$ beschrieben ($x$ in Minuten seit dem Einschenken, $T(x)$ in °C); $T'(x) = -0{,}275 \cdot \mathrm{e}^{-x/200}$. Prüfe, ob die mittlere Änderungsrate der Temperatur in den ersten 40 Minuten um mehr als $10\,\%$ von der momentanen Änderungsrate nach 40 Minuten abweicht \hfill (Abitur 2026 GK).
+\teil Die Anzahl der Bakterien in einer Kultur wird durch $B(t) = 200 \cdot \mathrm{e}^{0{,}3t}$ beschrieben ($t$ in Stunden, $B(t)$ in Tausend); $B'(t) = 60 \cdot \mathrm{e}^{0{,}3t}$. Prüfe, ob die mittlere Änderungsrate der ersten zwei Stunden um mehr als $25\,\%$ von der momentanen Änderungsrate nach zwei Stunden abweicht \hfill (Abitur 2026 GK).
+\teil Gegeben ist $f(x) = x^3 - 3x$. Weise nach, dass mindestens eine Stelle $x_0$ die Gleichung $f'(x_0) = \frac{f(3) - f(0)}{3 - 0}$ erfüllt, und gib die geometrische Bedeutung von $x_0$ an \hfill (Abitur 2022 GK).
+\teil Gegeben sind $f(x) = \sqrt{x}$ für $x \ge 0$ und die Gerade $g$: $y = 0{,}5x$. Der Graph von $f$ und $g$ schneiden sich in zwei Punkten. Im Intervall zwischen den x-Koordinaten der Schnittpunkte gibt es eine Stelle, an der die lokale Änderungsrate von $f$ mit der mittleren Änderungsrate von $f$ in diesem Intervall übereinstimmt. Bestimme diese Stelle \hfill (Abitur 2024 GK). x = \leerfeld
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Die Rate als Funktion – Anlauf}
+\begin{teile}
+\teil $f(t)$ ist die Wassermenge in einem Becken in Litern nach $t$ Minuten. Was beschreibt $f$, und wo ist die größte Zuflussrate zu suchen? \\ \kreuz{Bestand (Höhe, Anzahl, Menge) – größte Rate bei den Nullstellen der zweiten Ableitung} \\ \kreuz{Rate (je Zeiteinheit) – größte Rate bei den Nullstellen der ersten Ableitung}
+\teil Die Zuflussrate in ein Becken wird durch $r$ beschrieben ($t$ in Stunden, $r(t)$ in Litern je Stunde); es gilt $r'(t) = (6 - t) \cdot \mathrm{e}^{-0{,}5t}$. Gib die Nullstelle von $r'$ an und nenne den Zeitpunkt der größten Zuflussrate an. t = \leerfeld
+\teil Die Temperatur in einem Gewächshaus wird durch $T(t) = -0{,}1t^3 + 1{,}8t^2 + 5$ beschrieben ($t$ in Stunden nach Sonnenaufgang, $T(t)$ in °C, $0 \le t \le 12$). Wann steigt die Temperatur am schnellsten, und wie groß ist die Änderungsrate dann? t = \leerfeld , \leerfeld °C je h
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Die Rate als Funktion – Prüfungsaufgaben}
+\begin{teile}
+\teil Gegeben ist $f(x) = 0{,}5x^3 - 3x + 2$. Unter den Tangenten an den Graphen von $f$ hat eine die kleinste Steigung. Berechne diese Steigung \hfill (Abitur 2019 GK). m = \leerfeld
+\teil Ein Höhenprofil wird für $0 \le x \le 8$ durch $p(x) = (2x + 1) \cdot \mathrm{e}^{-0{,}4x}$ beschrieben (1 LE = 1 km); $p'(x) = (1{,}6 - 0{,}8x) \cdot \mathrm{e}^{-0{,}4x}$. Weise nach, dass es im Intervall $[2; 8]$ eine Stelle gibt, an der die Steigung des Profils kleiner als $-0{,}33$ ist \hfill (Abitur 2018 GK).
+\teil Die Höhe eines Bambus wird durch $w(t) = -t^3 + 12t^2$ beschrieben ($t$ in Wochen, $w(t)$ in cm, $0 \le t \le 8$); $w'(t) = -3t^2 + 24t$. Berechne die höchste Wachstumsgeschwindigkeit in cm je Woche; die notwendige Bedingung genügt \hfill (Abitur 2019 GK). \leerfeld[cm] je Woche
+\teil Die momentane Förderrate einer Mine wird durch $k'(x) = 0{,}3x \cdot \mathrm{e}^{-0{,}1x}$ beschrieben ($x$ in Jahren seit Beginn der Förderung, $k'(x)$ in Mio. t je Jahr). Berechne den Zeitpunkt der größten Förderrate und ihren Wert \hfill (Abitur 2026 GK). x = \leerfeld , \leerfeld Mio. t je Jahr
+\teil Die Höhe einer Drohne wird für $0 \le t \le 15$ durch $h(t) = 0{,}2t^3 - 6t^2 + 45t$ beschrieben ($t$ in Minuten, $h(t)$ in m); die Phase des Aufstiegs dauert von 0 bis 5 Minuten, $h'(t) = 0{,}6t^2 - 12t + 45$. Bestimme den Zeitraum in dieser Phase, in dem die Steiggeschwindigkeit mindestens $23{,}4$ m je min beträgt \hfill (Abitur 2022 GK).
+\teil Der Füllstand eines Tanks wird für $0 \le t \le 10$ durch $f(t) = -0{,}25t^3 + 3t^2 + 5$ beschrieben ($t$ in Minuten, $f(t)$ in Litern); die Zuflussphase dauert von 0 bis 8 Minuten, $f'(t) = -0{,}75t^2 + 6t$. Bestimme den Zeitraum in dieser Phase, in dem die Zuflussrate mindestens $9$ L je min beträgt \hfill (Abitur 2022 GK).
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Die Rate als Funktion – Prüfungsaufgaben – weiter}
+\begin{teile}
+\teil Zwei Bäume wachsen nach $a(t) = 18t^2 - t^3$ und $b(t) = 3t^2$ ($t$ in Jahren, Höhe in cm, $0 \le t \le 12$). Berechne den Zeitpunkt, zu dem der Unterschied der Wachstumsgeschwindigkeiten am größten ist, und diesen Unterschied \hfill (Abitur 2019 GK).
+\teil Zwei Fahrzeuge starten gleichzeitig; ihre Wege sind $s(t) = 0{,}05t^3 + 2t$ und $u(t) = 1{,}5t^2$ ($t$ in Sekunden, Weg in m, $0 \le t \le 15$). Berechne den Zeitpunkt, zu dem der Unterschied ihrer Geschwindigkeiten am größten ist, und diesen Unterschied \hfill (Abitur 2019 GK).
+\teil Die Verkaufszahlen zweier Produkte werden durch $a(t) = t^3 - 9t^2 + 30t$ und $b(t) = 15t$ beschrieben ($t$ in Monaten, verkaufte Stück in Tausend, $0 \le t \le 6$). Bestimme die Zeitpunkte, zu denen der Unterschied der Verkaufsraten am größten ist \hfill (Abitur 2019 GK).
+\teil Die Temperatur eines Getränks im Kühlschrank wird durch $T(x) = 50 \cdot \mathrm{e}^{-0{,}02x} + 6$ beschrieben ($x$ in Minuten, $T(x)$ in °C); $T(x) - 6$ ist die Differenz zur Kühlschranktemperatur, $T'(x) = -\mathrm{e}^{-0{,}02x}$. Aussage: Es gibt eine Zahl $c$, sodass für alle $x$ gilt $T(x) - 6 = c \cdot T'(x)$. Begründe, dass die Aussage im Modell wahr ist \hfill (Abitur 2026 GK).
+\teil Die Menge eines Medikaments im Blut wird durch $m(t) = 80 \cdot \mathrm{e}^{-0{,}25t}$ beschrieben ($t$ in Stunden, $m(t)$ in mg); $m'(t) = -20 \cdot \mathrm{e}^{-0{,}25t}$. Aussage: Zu jedem Zeitpunkt ist die Menge proportional zur momentanen Abbaurate, $m(t) = c \cdot m'(t)$ für alle $t$. Begründe, dass die Aussage im Modell wahr ist \hfill (Abitur 2026 GK).
+\teil Der Ladestand eines Akkus wird durch $L(t) = 100 - 60 \cdot \mathrm{e}^{-0{,}05t}$ beschrieben ($t$ in Minuten, $L(t)$ in Prozent); $L'(t) = 3 \cdot \mathrm{e}^{-0{,}05t}$. Aussage: Es gibt eine Zahl $c$, sodass für alle $t$ gilt $L(t) - 100 = c \cdot L'(t)$. Begründe, dass die Aussage im Modell wahr ist \hfill (Abitur 2026 GK).
+\teil Die Einwohnerzahl einer Stadt wird durch $B(t) = 500 \cdot \mathrm{e}^{0{,}04t} + 200$ beschrieben ($t$ in Jahren, $B(t)$ in Tausend); $B'(t) = 20 \cdot \mathrm{e}^{0{,}04t}$. Aussage: Es gibt eine Zahl $c$, sodass für alle $t$ gilt $B(t) - 200 = c \cdot B'(t)$. Begründe, dass die Aussage im Modell wahr ist, und gib $c$ an \hfill (Abitur 2026 GK). c = \leerfeld
+\end{teile}
+\end{aufgabe}

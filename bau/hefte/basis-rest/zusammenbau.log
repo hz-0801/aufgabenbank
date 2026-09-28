@@ -1,0 +1,112 @@
+# zusammenbau v0.4: zusammenbau.py lineare-funktionen quadratische-funktionen quadratische-gleichungen lineare-gleichungssysteme potenz-exponentialfunktionen zuordnungen daten wahrscheinlichkeit --heft msa --nur-basis --titel Prüfungsheft Basis · Funktionen, Daten und Zufall
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG LIN-H2 – Kürzel LIN aus _kuerzel.csv (mathe-nachhilfe) (erster Eintrag lineare-funktionen); Rezept H (Heft)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+WEG lineare-funktionen e1 „Proportionale Funktion“ – keine Prüfungshöhe im Profil basis
+WEG lineare-funktionen e1 „Dreisatz als Kontrolle“ – keine Prüfungshöhe im Profil basis
+WEG lineare-funktionen e2 „m und n in der Gleichung markieren“ – keine Prüfungshöhe im Profil basis
+WEG lineare-funktionen e2 „Steigungsrichtung ohne Zeichnen“ – keine Prüfungshöhe im Profil basis
+WEG lineare-funktionen e2 „Steigungsdreieck lesen“ – keine Prüfungshöhe im Profil basis
+WEG lineare-funktionen e2 „Graph zeichnen“ – keine Prüfungshöhe im Profil basis
+AUSWAHL lineare-funktionen-e2-k5-s6-v5 – lineare-funktionen e2 „Ablesen“: Prüfungshöhe (2016-OS-B1c)
+AUSWAHL lineare-funktionen-e2-k5-s6-v6 – lineare-funktionen e2 „Ablesen“: Prüfungshöhe (2016-OS-B1c)
+AUSWAHL lineare-funktionen-e2-k5-s6-v7 – lineare-funktionen e2 „Ablesen“: Prüfungshöhe (2024-OS-B1i)
+AUSWAHL lineare-funktionen-e2-k5-s6-v8 – lineare-funktionen e2 „Ablesen“: Prüfungshöhe (2024-OS-B1i)
+AUSWAHL lineare-funktionen-e2-k5-s6-v9 – lineare-funktionen e2 „Ablesen“: Prüfungshöhe (2025-OS-B1f)
+AUSWAHL lineare-funktionen-e2-k5-s6-v10 – lineare-funktionen e2 „Ablesen“: Prüfungshöhe (2025-OS-B1f)
+WEG lineare-funktionen e2 „Parameter deuten (steigend, fallend, parallel, Sonderfall m = 0)“ – keine Prüfungshöhe im Profil basis
+WEG lineare-funktionen e3 „Punkt in Gleichung einsetzen“ – keine Prüfungshöhe im Profil basis
+AUSWAHL lineare-funktionen-e3-k2-s7-v15 – lineare-funktionen e3 „Funktionswert“: Prüfungshöhe (2023-OS-B1i)
+AUSWAHL lineare-funktionen-e3-k2-s7-v16 – lineare-funktionen e3 „Funktionswert“: Prüfungshöhe (2023-OS-B1i)
+WEG lineare-funktionen e3 „Wertetabelle“ – keine Prüfungshöhe im Profil basis
+WEG lineare-funktionen e3 „Schnittpunkt mit y-Achse“ – keine Prüfungshöhe im Profil basis
+WEG lineare-funktionen e4 „Gleichung bestimmen“ – keine Prüfungshöhe im Profil basis
+WEG lineare-funktionen e4 „Gerade durch zwei Punkte zeichnen“ – keine Prüfungshöhe im Profil basis
+WEG lineare-funktionen e4 „Schnittpunkt zweier Geraden rechnerisch“ – keine Prüfungshöhe im Profil basis
+WEG lineare-funktionen e5 „Anwendung“ – keine Prüfungshöhe im Profil basis
+WEG lineare-funktionen e5 „Graph zu Tarif zuordnen“ – keine Prüfungshöhe im Profil basis
+WEG lineare-funktionen e5 „Situation zu Gleichung beschreiben“ – keine Prüfungshöhe im Profil basis
+AUSWAHL quadratische-funktionen-e1-k1-s10-v1 – quadratische-funktionen e1 „Normalparabel und Streckfaktor“: Prüfungshöhe (2026-FOR-B1e)
+AUSWAHL quadratische-funktionen-e1-k1-s10-v2 – quadratische-funktionen e1 „Normalparabel und Streckfaktor“: Prüfungshöhe (2026-FOR-B1e)
+WEG quadratische-funktionen e2 „Scheitelpunktform“ – keine Prüfungshöhe im Profil basis
+WEG quadratische-funktionen e3 „Normalform“ – keine Prüfungshöhe im Profil basis
+WEG quadratische-funktionen e4 „Nullstellen und Schnittpunkte“ – keine Prüfungshöhe im Profil basis
+WEG quadratische-gleichungen e1 „Quadratisch oder linear?“ – keine Prüfungshöhe im Profil basis
+WEG quadratische-gleichungen e1 „Wurzelziehen und Lösbarkeit“ – keine Prüfungshöhe im Profil basis
+AUSWAHL quadratische-gleichungen-e2-k1-s10-v1 – quadratische-gleichungen e2 „Nullprodukt“: Prüfungshöhe (2025-OS-B1h)
+AUSWAHL quadratische-gleichungen-e2-k1-s10-v2 – quadratische-gleichungen e2 „Nullprodukt“: Prüfungshöhe (2025-OS-B1h)
+WEG quadratische-gleichungen e3 „Welche Form?“ – keine Prüfungshöhe im Profil basis
+WEG quadratische-gleichungen e3 „Ist die Vorzahl von x² eins?“ – keine Prüfungshöhe im Profil basis
+WEG quadratische-gleichungen e3 „p-q-Formel“ – keine Prüfungshöhe im Profil basis
+WEG quadratische-gleichungen e3 „Gerade und Parabel gleichsetzen als Anwendung“ – keine Prüfungshöhe im Profil basis
+WEG quadratische-gleichungen e4 „Sachaufgaben“ – keine Prüfungshöhe im Profil basis
+WEG quadratische-gleichungen e4 „Quadrat mit Rand“ – keine Prüfungshöhe im Profil basis
+WEG lineare-gleichungssysteme e1 „Grafisch“ – keine Prüfungshöhe im Profil basis
+WEG lineare-gleichungssysteme e1 „Grafisch, Sek II“ – keine Prüfungshöhe im Profil basis
+WEG lineare-gleichungssysteme e2 „Einsetzen“ – keine Prüfungshöhe im Profil basis
+WEG lineare-gleichungssysteme e2 „Bruch als Lösung (Vorrat)“ – keine Prüfungshöhe im Profil basis
+WEG lineare-gleichungssysteme e3 „Addition“ – keine Prüfungshöhe im Profil basis
+WEG lineare-gleichungssysteme e3 „Addition, Sek II“ – keine Prüfungshöhe im Profil basis
+WEG lineare-gleichungssysteme e3 „Dezimalzahlen und Brüche“ – keine Prüfungshöhe im Profil basis
+WEG lineare-gleichungssysteme e4 „Sachaufgaben“ – keine Prüfungshöhe im Profil basis
+WEG lineare-gleichungssysteme e4 „Sachaufgaben, Sek II“ – keine Prüfungshöhe im Profil basis
+WEG lineare-gleichungssysteme e4 „Mischungen und Alter (Vorrat)“ – keine Prüfungshöhe im Profil basis
+WEG lineare-gleichungssysteme e4 „Probe im Text (Rechnung mit den Zahlen der Aufgabe)“ – keine Prüfungshöhe im Profil basis
+WEG lineare-gleichungssysteme e4 „Bestandteile einer Gleichung deuten“ – keine Prüfungshöhe im Profil basis
+WEG lineare-gleichungssysteme e5 „Drei Variablen und Lösungsvielfalt“ – keine Prüfungshöhe im Profil basis
+LEER lineare-gleichungssysteme: keine Kette mit Prüfungshöhe – Eintrag entfällt im Heft
+WEG potenz-exponentialfunktionen e1 „Wachstumsart erkennen und begründen“ – keine Prüfungshöhe im Profil basis
+WEG potenz-exponentialfunktionen e1 „Graph zu einem Wachstumsprozess auswählen“ – keine Prüfungshöhe im Profil basis
+WEG potenz-exponentialfunktionen e1 „Wertepaare darstellen“ – keine Prüfungshöhe im Profil basis
+WEG potenz-exponentialfunktionen e2 „Wachstumsfaktor bestimmen“ – keine Prüfungshöhe im Profil basis
+WEG potenz-exponentialfunktionen e2 „Wachstumstabelle fortschreiben“ – keine Prüfungshöhe im Profil basis
+WEG potenz-exponentialfunktionen e3 „Exponentialfunktion aufstellen und deuten“ – keine Prüfungshöhe im Profil basis
+WEG potenz-exponentialfunktionen e3 „Wert und Schwellenwert berechnen“ – keine Prüfungshöhe im Profil basis
+WEG potenz-exponentialfunktionen e4 „Verdopplungs- und Halbwertszeit“ – keine Prüfungshöhe im Profil basis
+WEG potenz-exponentialfunktionen e5 „Wertetabelle und Graph“ – keine Prüfungshöhe im Profil basis
+WEG potenz-exponentialfunktionen e5 „Funktionswert, Punktprobe und Argument“ – keine Prüfungshöhe im Profil basis
+WEG potenz-exponentialfunktionen e5 „Potenzfunktion vom exponentiellen Term unterscheiden“ – keine Prüfungshöhe im Profil basis
+LEER potenz-exponentialfunktionen: keine Kette mit Prüfungshöhe – Eintrag entfällt im Heft
+WEG zuordnungen e1 „Darstellen“ – keine Prüfungshöhe im Profil basis
+WEG zuordnungen e1 „Achseneinteilung“ – keine Prüfungshöhe im Profil basis
+WEG zuordnungen e1 „Formel aus Tabelle (y = 4 · x)“ – keine Prüfungshöhe im Profil basis
+WEG zuordnungen e2 „Was ist hier eine Portion?“ – keine Prüfungshöhe im Profil basis
+WEG zuordnungen e2 „Minitabelle anlegen“ – keine Prüfungshöhe im Profil basis
+WEG zuordnungen e2 „Pfeile beidseitig“ – keine Prüfungshöhe im Profil basis
+WEG zuordnungen e2 „Dreisatz proportional“ – keine Prüfungshöhe im Profil basis
+WEG zuordnungen e2 „fester Faktor angeben (Preis je Einheit), Gleichung y = k · x“ – keine Prüfungshöhe im Profil basis
+WEG zuordnungen e2 „Graph zeichnen (Ursprungsgerade) und Werte ablesen“ – keine Prüfungshöhe im Profil basis
+WEG zuordnungen e2 „Verhältnisgleichung aufstellen (Vorrat)“ – keine Prüfungshöhe im Profil basis
+WEG zuordnungen e3 „Antiproportional“ – keine Prüfungshöhe im Profil basis
+WEG zuordnungen e3 „Graph als fallende Kurve, Werte ablesen“ – keine Prüfungshöhe im Profil basis
+WEG zuordnungen e4 „Nullwert prüfen“ – keine Prüfungshöhe im Profil basis
+WEG zuordnungen e4 „Erkennen“ – keine Prüfungshöhe im Profil basis
+WEG zuordnungen e4 „Rate“ – keine Prüfungshöhe im Profil basis
+WEG zuordnungen e4 „Gegenbeispiele (Alter und Größe, Tarif mit Grundgebühr)“ – keine Prüfungshöhe im Profil basis
+LEER zuordnungen: keine Kette mit Prüfungshöhe – Eintrag entfällt im Heft
+WEG daten e1 „Häufigkeiten“ – keine Prüfungshöhe im Profil basis
+WEG daten e1 „Häufigkeiten, Sek II“ – keine Prüfungshöhe im Profil basis
+WEG daten e1 „Klassen zu einer Urliste bilden (gleich breit, Randregel)“ – keine Prüfungshöhe im Profil basis
+WEG daten e1 „Häufigkeitstabelle mit Klassen auszählen“ – keine Prüfungshöhe im Profil basis
+WEG daten e1 „Säulendiagramm der Klassen zeichnen“ – keine Prüfungshöhe im Profil basis
+WEG daten e1 „Aussage aus der Klassentabelle prüfen (in welcher Klasse liegen die meisten)“ – keine Prüfungshöhe im Profil basis
+WEG daten e2 „Wo fängt die Achse an?“ – keine Prüfungshöhe im Profil basis
+WEG daten e2 „Diagramme lesen“ – keine Prüfungshöhe im Profil basis
+WEG daten e2 „Diagramm aus einer Tabelle zeichnen (Skala wählen)“ – keine Prüfungshöhe im Profil basis
+LEER daten: keine Kette mit Prüfungshöhe – Eintrag entfällt im Heft
+AUSWAHL wahrscheinlichkeit-e1-k1-s6-v1 – wahrscheinlichkeit e1 „Zählen“: Prüfungshöhe (2017-OS-B1f)
+WEG wahrscheinlichkeit e1 „Ergebnisse zu „mindestens einmal …“ aufzählen“ – keine Prüfungshöhe im Profil basis
+WEG wahrscheinlichkeit e2 „Wie viele Stufen?“ – keine Prüfungshöhe im Profil basis
+WEG wahrscheinlichkeit e2 „Gleich groß?“ – keine Prüfungshöhe im Profil basis
+AUSWAHL wahrscheinlichkeit-e2-k3-s6-v1 – wahrscheinlichkeit e2 „Einstufig“: Prüfungshöhe (2014-OS-B1b)
+AUSWAHL wahrscheinlichkeit-e2-k3-s6-v3 – wahrscheinlichkeit e2 „Einstufig“: Prüfungshöhe (2016-OS-B1f)
+AUSWAHL wahrscheinlichkeit-e2-k3-s7-v1 – wahrscheinlichkeit e2 „Einstufig“: Prüfungshöhe (2014-OS-B1d)
+AUSWAHL wahrscheinlichkeit-e2-k3-s8-v1 – wahrscheinlichkeit e2 „Einstufig“: Prüfungshöhe (2018-OS-B1j)
+AUSWAHL wahrscheinlichkeit-e2-k3-s9-v2 – wahrscheinlichkeit e2 „Einstufig“: Prüfungshöhe (2019-OS-B1g)
+AUSWAHL wahrscheinlichkeit-e2-k4-s1-v1 – wahrscheinlichkeit e2 „Topf mit P = 50 % auswählen“: Prüfungshöhe (2015-OS-B1a)
+WEG wahrscheinlichkeit e2 „erwartete Anzahl bei n Versuchen“ – keine Prüfungshöhe im Profil basis
+WEG wahrscheinlichkeit e3 „Ein Pfad oder mehrere?“ – keine Prüfungshöhe im Profil basis
+WEG wahrscheinlichkeit e3 „Nicht oder mindestens?“ – keine Prüfungshöhe im Profil basis
+WEG wahrscheinlichkeit e3 „Mit Zurücklegen“ – keine Prüfungshöhe im Profil basis
+WEG wahrscheinlichkeit e4 „Ohne Zurücklegen“ – keine Prüfungshöhe im Profil basis
+STRUKTUR 0 Fehler

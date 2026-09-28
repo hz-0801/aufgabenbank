@@ -1,0 +1,251 @@
+{
+ "kennung": "LIN-H2",
+ "datum": "2026-09-28",
+ "eintraege": [
+  "lineare-funktionen",
+  "quadratische-funktionen",
+  "quadratische-gleichungen",
+  "lineare-gleichungssysteme",
+  "potenz-exponentialfunktionen",
+  "zuordnungen",
+  "daten",
+  "wahrscheinlichkeit"
+ ],
+ "fehlende_eintraege": [],
+ "leere_eintraege": [
+  "lineare-gleichungssysteme",
+  "potenz-exponentialfunktionen",
+  "zuordnungen",
+  "daten"
+ ],
+ "rezept": "H",
+ "rezept_name": "Heft",
+ "bestellung": {
+  "heft": "msa",
+  "nur_basis": true,
+  "titel": "Prüfungsheft Basis · Funktionen, Daten und Zufall",
+  "aus": "bau/hefte/basis-rest",
+  "ohne_register": false
+ },
+ "bank_commit": "7238f60+geändert",
+ "zusammenbau": "v0.4",
+ "vorlage": "Version 2026-09-28a",
+ "pfad": "bau/hefte/basis-rest",
+ "kuerzel_quelle": "_kuerzel.csv (mathe-nachhilfe)",
+ "strukturfehler": 0,
+ "ausgelassen": [
+  "ausgelassen: quadratische-funktionen-e1-k1-s10-v2, LaTeX Error: There's no line here to end. (Nr. 3b, Versuch 1)",
+  "ausgelassen: quadratische-funktionen-e1-k1-s10-v1, LaTeX Error: There's no line here to end. (Nr. 3a, Versuch 1)"
+ ],
+ "aufgaben": [
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "a",
+   "id": "lineare-funktionen-e2-k5-s6-v5",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-B1c",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "b",
+   "id": "lineare-funktionen-e2-k5-s6-v6",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-B1c",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "c",
+   "id": "lineare-funktionen-e2-k5-s6-v7",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2024-OS-B1i",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "d",
+   "id": "lineare-funktionen-e2-k5-s6-v8",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2024-OS-B1i",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "e",
+   "id": "lineare-funktionen-e2-k5-s6-v9",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-B1f",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "f",
+   "id": "lineare-funktionen-e2-k5-s6-v10",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-B1f",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "a",
+   "id": "lineare-funktionen-e3-k2-s7-v15",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2023-OS-B1i",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "b",
+   "id": "lineare-funktionen-e3-k2-s7-v16",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2023-OS-B1i",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "a",
+   "id": "quadratische-funktionen-e1-k1-s10-v1",
+   "datei": "quadratische-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2026-FOR-B1e",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "b",
+   "id": "quadratische-funktionen-e1-k1-s10-v2",
+   "datei": "quadratische-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2026-FOR-B1e",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "a",
+   "id": "quadratische-gleichungen-e2-k1-s10-v1",
+   "datei": "quadratische-gleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-B1h",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "b",
+   "id": "quadratische-gleichungen-e2-k1-s10-v2",
+   "datei": "quadratische-gleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-B1h",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "teilaufgabe": "a",
+   "id": "wahrscheinlichkeit-e1-k1-s6-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2017-OS-B1f",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "a",
+   "id": "wahrscheinlichkeit-e2-k3-s6-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2014-OS-B1b",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "b",
+   "id": "wahrscheinlichkeit-e2-k3-s6-v3",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-B1f",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "c",
+   "id": "wahrscheinlichkeit-e2-k3-s7-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2014-OS-B1d",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "d",
+   "id": "wahrscheinlichkeit-e2-k3-s8-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2018-OS-B1j",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "e",
+   "id": "wahrscheinlichkeit-e2-k3-s9-v2",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2019-OS-B1g",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A7",
+   "hauptnummer": 7,
+   "teilaufgabe": "a",
+   "id": "wahrscheinlichkeit-e2-k4-s1-v1",
+   "datei": "wahrscheinlichkeit_a.tex",
+   "lage": "pruefung",
+   "original": "2015-OS-B1a",
+   "punkte": "1",
+   "stern": false
+  }
+ ]
+}

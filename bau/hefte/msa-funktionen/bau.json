@@ -1,0 +1,2632 @@
+{
+ "kennung": "LIN-H1",
+ "datum": "2026-09-28",
+ "eintraege": [
+  "lineare-funktionen",
+  "quadratische-funktionen",
+  "quadratische-gleichungen",
+  "lineare-gleichungssysteme",
+  "potenz-exponentialfunktionen",
+  "zuordnungen"
+ ],
+ "fehlende_eintraege": [],
+ "leere_eintraege": [],
+ "rezept": "H",
+ "rezept_name": "Heft",
+ "bestellung": {
+  "heft": "msa",
+  "nur_basis": false,
+  "titel": "Prüfungsheft MSA · Funktionen",
+  "aus": "bau/hefte/msa-funktionen",
+  "ohne_register": false
+ },
+ "bank_commit": "7238f60+geändert",
+ "zusammenbau": "v0.4",
+ "vorlage": "Version 2026-09-28a",
+ "pfad": "bau/hefte/msa-funktionen",
+ "kuerzel_quelle": "_kuerzel.csv (mathe-nachhilfe)",
+ "strukturfehler": 0,
+ "ausgelassen": [
+  "ausgelassen: potenz-exponentialfunktionen-e2-k2-s0-v1, LaTeX Error: There's no line here to (Nr. 39a, Versuch 1)",
+  "ausgelassen: quadratische-funktionen-e1-k1-s10-v2, LaTeX Error: There's no line here to end. (Nr. 12b, Versuch 1)",
+  "ausgelassen: quadratische-funktionen-e1-k1-s10-v1, LaTeX Error: There's no line here to end. (Nr. 12a, Versuch 1)"
+ ],
+ "aufgaben": [
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "a",
+   "id": "lineare-funktionen-e2-k4-s1-v1",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "b",
+   "id": "lineare-funktionen-e2-k4-s5-v1",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "a",
+   "id": "lineare-funktionen-e2-k4-s8-v1",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2026-FOR-K5a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "b",
+   "id": "lineare-funktionen-e2-k4-s8-v2",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2026-FOR-K5a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "c",
+   "id": "lineare-funktionen-e2-k4-s8-v3",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2024-OS-K3a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "d",
+   "id": "lineare-funktionen-e2-k4-s8-v4",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2024-OS-K3a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "e",
+   "id": "lineare-funktionen-e2-k4-s8-v5",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2022-OS-K3a",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "f",
+   "id": "lineare-funktionen-e2-k4-s8-v6",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2022-OS-K3a",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "g",
+   "id": "lineare-funktionen-e2-k4-s8-v7",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2021-OS-K2a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "h",
+   "id": "lineare-funktionen-e2-k4-s8-v8",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2021-OS-K2a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "a",
+   "id": "lineare-funktionen-e2-k5-s1-v1",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "b",
+   "id": "lineare-funktionen-e2-k5-s3-v1",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "a",
+   "id": "lineare-funktionen-e2-k5-s6-v1",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2019-OS-K2c",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "b",
+   "id": "lineare-funktionen-e2-k5-s6-v2",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2019-OS-K2c",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "c",
+   "id": "lineare-funktionen-e2-k5-s6-v3",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2019-OS-K2b",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "d",
+   "id": "lineare-funktionen-e2-k5-s6-v4",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2019-OS-K2b",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "e",
+   "id": "lineare-funktionen-e2-k5-s6-v5",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-B1c",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "f",
+   "id": "lineare-funktionen-e2-k5-s6-v6",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-B1c",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "g",
+   "id": "lineare-funktionen-e2-k5-s6-v7",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2024-OS-B1i",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "h",
+   "id": "lineare-funktionen-e2-k5-s6-v8",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2024-OS-B1i",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "i",
+   "id": "lineare-funktionen-e2-k5-s6-v9",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-B1f",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "j",
+   "id": "lineare-funktionen-e2-k5-s6-v10",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-B1f",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "teilaufgabe": "a",
+   "id": "lineare-funktionen-e3-k2-s1-v1",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "teilaufgabe": "b",
+   "id": "lineare-funktionen-e3-k2-s2-v1",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "a",
+   "id": "lineare-funktionen-e3-k2-s7-v1",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2022-OS-K3a",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "b",
+   "id": "lineare-funktionen-e3-k2-s7-v2",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2022-OS-K3a",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "c",
+   "id": "lineare-funktionen-e3-k2-s7-v3",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2021-OS-K6d",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "d",
+   "id": "lineare-funktionen-e3-k2-s7-v4",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2021-OS-K6d",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "e",
+   "id": "lineare-funktionen-e3-k2-s7-v5",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2019-OS-K2a",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "f",
+   "id": "lineare-funktionen-e3-k2-s7-v6",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2019-OS-K2a",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "g",
+   "id": "lineare-funktionen-e3-k2-s7-v7",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2023-OS-K4a",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "h",
+   "id": "lineare-funktionen-e3-k2-s7-v8",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2023-OS-K4a",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "i",
+   "id": "lineare-funktionen-e3-k2-s7-v9",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2017-OS-K5b",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "j",
+   "id": "lineare-funktionen-e3-k2-s7-v10",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2017-OS-K5b",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "k",
+   "id": "lineare-funktionen-e3-k2-s7-v11",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2026-FOR-K5b",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "l",
+   "id": "lineare-funktionen-e3-k2-s7-v12",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2026-FOR-K5b",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "m",
+   "id": "lineare-funktionen-e3-k2-s7-v13",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2021-OS-K2b",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "n",
+   "id": "lineare-funktionen-e3-k2-s7-v14",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2021-OS-K2b",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "o",
+   "id": "lineare-funktionen-e3-k2-s7-v15",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2023-OS-B1i",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "p",
+   "id": "lineare-funktionen-e3-k2-s7-v16",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2023-OS-B1i",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A7",
+   "hauptnummer": 7,
+   "teilaufgabe": "a",
+   "id": "lineare-funktionen-e4-k1-s1-v1",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A7",
+   "hauptnummer": 7,
+   "teilaufgabe": "b",
+   "id": "lineare-funktionen-e4-k1-s5-v1",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "teilaufgabe": "a",
+   "id": "lineare-funktionen-e4-k1-s6-v1",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-K5a",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "teilaufgabe": "b",
+   "id": "lineare-funktionen-e4-k1-s6-v2",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-K5a",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "teilaufgabe": "c",
+   "id": "lineare-funktionen-e4-k1-s6-v3",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2015-OS-K4d",
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "teilaufgabe": "d",
+   "id": "lineare-funktionen-e4-k1-s6-v4",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2015-OS-K4d",
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "teilaufgabe": "e",
+   "id": "lineare-funktionen-e4-k1-s6-v5",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2017-OS-K5a",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "teilaufgabe": "f",
+   "id": "lineare-funktionen-e4-k1-s6-v6",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2017-OS-K5a",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "a",
+   "id": "lineare-funktionen-e5-k1-s0-v1",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "b",
+   "id": "lineare-funktionen-e5-k1-s1-v1",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "c",
+   "id": "lineare-funktionen-e5-k1-s2-v1",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "a",
+   "id": "lineare-funktionen-e5-k1-s5-v1",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2023-OS-K3b",
+   "punkte": "5",
+   "stern": true
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "b",
+   "id": "lineare-funktionen-e5-k1-s5-v2",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2023-OS-K3b",
+   "punkte": "5",
+   "stern": true
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "c",
+   "id": "lineare-funktionen-e5-k1-s5-v3",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-K6b",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "d",
+   "id": "lineare-funktionen-e5-k1-s5-v4",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-K6b",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "e",
+   "id": "lineare-funktionen-e5-k1-s5-v5",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2021-OS-K7a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "f",
+   "id": "lineare-funktionen-e5-k1-s5-v6",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2021-OS-K7a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "g",
+   "id": "lineare-funktionen-e5-k1-s5-v7",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2022-OS-K6b",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "h",
+   "id": "lineare-funktionen-e5-k1-s5-v8",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2022-OS-K6b",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "i",
+   "id": "lineare-funktionen-e5-k1-s5-v9",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-K6c",
+   "punkte": "2",
+   "stern": true
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "j",
+   "id": "lineare-funktionen-e5-k1-s5-v10",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-K6c",
+   "punkte": "2",
+   "stern": true
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "k",
+   "id": "lineare-funktionen-e5-k1-s5-v11",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2022-OS-K6a",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "l",
+   "id": "lineare-funktionen-e5-k1-s5-v12",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2022-OS-K6a",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "m",
+   "id": "lineare-funktionen-e5-k1-s5-v13",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2021-OS-K6a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "n",
+   "id": "lineare-funktionen-e5-k1-s5-v14",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2021-OS-K6a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "o",
+   "id": "lineare-funktionen-e5-k1-s5-v15",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-K6a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "p",
+   "id": "lineare-funktionen-e5-k1-s5-v16",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-K6a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "q",
+   "id": "lineare-funktionen-e5-k1-s5-v17",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2023-OS-K3a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "r",
+   "id": "lineare-funktionen-e5-k1-s5-v18",
+   "datei": "lineare-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2023-OS-K3a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "a",
+   "id": "quadratische-funktionen-e1-k1-s0-v1",
+   "datei": "quadratische-funktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "b",
+   "id": "quadratische-funktionen-e1-k1-s1-v1",
+   "datei": "quadratische-funktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "c",
+   "id": "quadratische-funktionen-e1-k1-s4-v1",
+   "datei": "quadratische-funktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A12",
+   "hauptnummer": 12,
+   "teilaufgabe": "a",
+   "id": "quadratische-funktionen-e1-k1-s10-v1",
+   "datei": "quadratische-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2026-FOR-B1e",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A12",
+   "hauptnummer": 12,
+   "teilaufgabe": "b",
+   "id": "quadratische-funktionen-e1-k1-s10-v2",
+   "datei": "quadratische-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2026-FOR-B1e",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A12",
+   "hauptnummer": 12,
+   "teilaufgabe": "c",
+   "id": "quadratische-funktionen-e1-k1-s11-v1",
+   "datei": "quadratische-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2015-OS-K4b",
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A12",
+   "hauptnummer": 12,
+   "teilaufgabe": "d",
+   "id": "quadratische-funktionen-e1-k1-s11-v2",
+   "datei": "quadratische-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2015-OS-K4b",
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A13",
+   "hauptnummer": 13,
+   "teilaufgabe": "a",
+   "id": "quadratische-funktionen-e2-k1-s0-v1",
+   "datei": "quadratische-funktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A13",
+   "hauptnummer": 13,
+   "teilaufgabe": "b",
+   "id": "quadratische-funktionen-e2-k1-s1-v1",
+   "datei": "quadratische-funktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A13",
+   "hauptnummer": 13,
+   "teilaufgabe": "c",
+   "id": "quadratische-funktionen-e2-k1-s2-v1",
+   "datei": "quadratische-funktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "a",
+   "id": "quadratische-funktionen-e2-k1-s13-v1",
+   "datei": "quadratische-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2017-OS-K5e",
+   "punkte": "2",
+   "stern": true
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "b",
+   "id": "quadratische-funktionen-e2-k1-s13-v2",
+   "datei": "quadratische-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2017-OS-K5e",
+   "punkte": "2",
+   "stern": true
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "c",
+   "id": "quadratische-funktionen-e2-k1-s14-v1",
+   "datei": "quadratische-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2020-OS-K3d",
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "d",
+   "id": "quadratische-funktionen-e2-k1-s14-v2",
+   "datei": "quadratische-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2020-OS-K3d",
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "e",
+   "id": "quadratische-funktionen-e2-k1-s15-v1",
+   "datei": "quadratische-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2018-OS-K5d",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "f",
+   "id": "quadratische-funktionen-e2-k1-s15-v2",
+   "datei": "quadratische-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2018-OS-K5d",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A15",
+   "hauptnummer": 15,
+   "teilaufgabe": "a",
+   "id": "quadratische-funktionen-e3-k1-s0-v1",
+   "datei": "quadratische-funktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A15",
+   "hauptnummer": 15,
+   "teilaufgabe": "b",
+   "id": "quadratische-funktionen-e3-k1-s1-v1",
+   "datei": "quadratische-funktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A15",
+   "hauptnummer": 15,
+   "teilaufgabe": "c",
+   "id": "quadratische-funktionen-e3-k1-s2-v1",
+   "datei": "quadratische-funktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A16",
+   "hauptnummer": 16,
+   "teilaufgabe": "a",
+   "id": "quadratische-funktionen-e3-k1-s9-v1",
+   "datei": "quadratische-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-K5b",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A16",
+   "hauptnummer": 16,
+   "teilaufgabe": "b",
+   "id": "quadratische-funktionen-e3-k1-s9-v2",
+   "datei": "quadratische-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-K5b",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A16",
+   "hauptnummer": 16,
+   "teilaufgabe": "c",
+   "id": "quadratische-funktionen-e3-k1-s9-v3",
+   "datei": "quadratische-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2018-OS-K5c",
+   "punkte": "2",
+   "stern": true
+  },
+  {
+   "aufgabe": "A16",
+   "hauptnummer": 16,
+   "teilaufgabe": "d",
+   "id": "quadratische-funktionen-e3-k1-s9-v4",
+   "datei": "quadratische-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2018-OS-K5c",
+   "punkte": "2",
+   "stern": true
+  },
+  {
+   "aufgabe": "A16",
+   "hauptnummer": 16,
+   "teilaufgabe": "e",
+   "id": "quadratische-funktionen-e3-k1-s10-v1",
+   "datei": "quadratische-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2017-OS-K5d",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A16",
+   "hauptnummer": 16,
+   "teilaufgabe": "f",
+   "id": "quadratische-funktionen-e3-k1-s10-v2",
+   "datei": "quadratische-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2017-OS-K5d",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "a",
+   "id": "quadratische-funktionen-e4-k1-s0-v1",
+   "datei": "quadratische-funktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "b",
+   "id": "quadratische-funktionen-e4-k1-s1-v1",
+   "datei": "quadratische-funktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "c",
+   "id": "quadratische-funktionen-e4-k1-s8-v1",
+   "datei": "quadratische-funktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A18",
+   "hauptnummer": 18,
+   "teilaufgabe": "a",
+   "id": "quadratische-funktionen-e4-k1-s13-v1",
+   "datei": "quadratische-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2022-OS-K3c",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A18",
+   "hauptnummer": 18,
+   "teilaufgabe": "b",
+   "id": "quadratische-funktionen-e4-k1-s13-v2",
+   "datei": "quadratische-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2022-OS-K3c",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A18",
+   "hauptnummer": 18,
+   "teilaufgabe": "c",
+   "id": "quadratische-funktionen-e4-k1-s14-v1",
+   "datei": "quadratische-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-K5c",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A18",
+   "hauptnummer": 18,
+   "teilaufgabe": "d",
+   "id": "quadratische-funktionen-e4-k1-s14-v2",
+   "datei": "quadratische-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-K5c",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A18",
+   "hauptnummer": 18,
+   "teilaufgabe": "e",
+   "id": "quadratische-funktionen-e4-k1-s15-v1",
+   "datei": "quadratische-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2023-OS-K4c",
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A18",
+   "hauptnummer": 18,
+   "teilaufgabe": "f",
+   "id": "quadratische-funktionen-e4-k1-s15-v2",
+   "datei": "quadratische-funktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2023-OS-K4c",
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A19",
+   "hauptnummer": 19,
+   "teilaufgabe": "a",
+   "id": "quadratische-gleichungen-e1-k2-s0-v1",
+   "datei": "quadratische-gleichungen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A19",
+   "hauptnummer": 19,
+   "teilaufgabe": "b",
+   "id": "quadratische-gleichungen-e1-k2-s1-v1",
+   "datei": "quadratische-gleichungen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A19",
+   "hauptnummer": 19,
+   "teilaufgabe": "c",
+   "id": "quadratische-gleichungen-e1-k2-s4-v1",
+   "datei": "quadratische-gleichungen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A20",
+   "hauptnummer": 20,
+   "teilaufgabe": "a",
+   "id": "quadratische-gleichungen-e1-k2-s14-v1",
+   "datei": "quadratische-gleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2021-OS-K7c",
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A20",
+   "hauptnummer": 20,
+   "teilaufgabe": "b",
+   "id": "quadratische-gleichungen-e1-k2-s14-v2",
+   "datei": "quadratische-gleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2021-OS-K7c",
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A21",
+   "hauptnummer": 21,
+   "teilaufgabe": "a",
+   "id": "quadratische-gleichungen-e2-k1-s0-v1",
+   "datei": "quadratische-gleichungen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A21",
+   "hauptnummer": 21,
+   "teilaufgabe": "b",
+   "id": "quadratische-gleichungen-e2-k1-s1-v1",
+   "datei": "quadratische-gleichungen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A21",
+   "hauptnummer": 21,
+   "teilaufgabe": "c",
+   "id": "quadratische-gleichungen-e2-k1-s2-v1",
+   "datei": "quadratische-gleichungen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A22",
+   "hauptnummer": 22,
+   "teilaufgabe": "a",
+   "id": "quadratische-gleichungen-e2-k1-s10-v1",
+   "datei": "quadratische-gleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-B1h",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A22",
+   "hauptnummer": 22,
+   "teilaufgabe": "b",
+   "id": "quadratische-gleichungen-e2-k1-s10-v2",
+   "datei": "quadratische-gleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-B1h",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A22",
+   "hauptnummer": 22,
+   "teilaufgabe": "c",
+   "id": "quadratische-gleichungen-e2-k1-s10-v3",
+   "datei": "quadratische-gleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2020-OS-K3e",
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A22",
+   "hauptnummer": 22,
+   "teilaufgabe": "d",
+   "id": "quadratische-gleichungen-e2-k1-s10-v4",
+   "datei": "quadratische-gleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2020-OS-K3e",
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A23",
+   "hauptnummer": 23,
+   "teilaufgabe": "a",
+   "id": "quadratische-gleichungen-e3-k3-s0-v1",
+   "datei": "quadratische-gleichungen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A23",
+   "hauptnummer": 23,
+   "teilaufgabe": "b",
+   "id": "quadratische-gleichungen-e3-k3-s1-v1",
+   "datei": "quadratische-gleichungen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A23",
+   "hauptnummer": 23,
+   "teilaufgabe": "c",
+   "id": "quadratische-gleichungen-e3-k3-s2-v1",
+   "datei": "quadratische-gleichungen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "a",
+   "id": "quadratische-gleichungen-e3-k3-s13-v1",
+   "datei": "quadratische-gleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2020-OS-K3e",
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "b",
+   "id": "quadratische-gleichungen-e3-k3-s13-v2",
+   "datei": "quadratische-gleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2020-OS-K3e",
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "c",
+   "id": "quadratische-gleichungen-e3-k3-s13-v3",
+   "datei": "quadratische-gleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-K5c",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "d",
+   "id": "quadratische-gleichungen-e3-k3-s13-v4",
+   "datei": "quadratische-gleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-K5c",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "e",
+   "id": "quadratische-gleichungen-e3-k3-s13-v5",
+   "datei": "quadratische-gleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2023-OS-K4c",
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "f",
+   "id": "quadratische-gleichungen-e3-k3-s13-v6",
+   "datei": "quadratische-gleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2023-OS-K4c",
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "g",
+   "id": "quadratische-gleichungen-e3-k3-s13-v7",
+   "datei": "quadratische-gleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2021-OS-K2c",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "h",
+   "id": "quadratische-gleichungen-e3-k3-s13-v8",
+   "datei": "quadratische-gleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2021-OS-K2c",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "i",
+   "id": "quadratische-gleichungen-e3-k3-s13-v9",
+   "datei": "quadratische-gleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2022-OS-K3c",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "j",
+   "id": "quadratische-gleichungen-e3-k3-s13-v10",
+   "datei": "quadratische-gleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2022-OS-K3c",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "k",
+   "id": "quadratische-gleichungen-e3-k3-s13-v11",
+   "datei": "quadratische-gleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2024-OS-K3d",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "l",
+   "id": "quadratische-gleichungen-e3-k3-s13-v12",
+   "datei": "quadratische-gleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2024-OS-K3d",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "m",
+   "id": "quadratische-gleichungen-e3-k3-s13-v13",
+   "datei": "quadratische-gleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2017-OS-K5d",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "n",
+   "id": "quadratische-gleichungen-e3-k3-s13-v14",
+   "datei": "quadratische-gleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2017-OS-K5d",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A25",
+   "hauptnummer": 25,
+   "teilaufgabe": "a",
+   "id": "lineare-gleichungssysteme-e1-k1-s0-v1",
+   "datei": "lineare-gleichungssysteme_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A25",
+   "hauptnummer": 25,
+   "teilaufgabe": "b",
+   "id": "lineare-gleichungssysteme-e1-k1-s1-v1",
+   "datei": "lineare-gleichungssysteme_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A25",
+   "hauptnummer": 25,
+   "teilaufgabe": "c",
+   "id": "lineare-gleichungssysteme-e1-k1-s2-v1",
+   "datei": "lineare-gleichungssysteme_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A26",
+   "hauptnummer": 26,
+   "teilaufgabe": "a",
+   "id": "lineare-gleichungssysteme-e1-k1-s9-v1",
+   "datei": "lineare-gleichungssysteme_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-K6d",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A26",
+   "hauptnummer": 26,
+   "teilaufgabe": "b",
+   "id": "lineare-gleichungssysteme-e1-k1-s9-v2",
+   "datei": "lineare-gleichungssysteme_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-K6d",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A27",
+   "hauptnummer": 27,
+   "teilaufgabe": "a",
+   "id": "lineare-gleichungssysteme-e2-k1-s0-v1",
+   "datei": "lineare-gleichungssysteme_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A27",
+   "hauptnummer": 27,
+   "teilaufgabe": "b",
+   "id": "lineare-gleichungssysteme-e2-k1-s1-v1",
+   "datei": "lineare-gleichungssysteme_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A27",
+   "hauptnummer": 27,
+   "teilaufgabe": "c",
+   "id": "lineare-gleichungssysteme-e2-k1-s5-v1",
+   "datei": "lineare-gleichungssysteme_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A28",
+   "hauptnummer": 28,
+   "teilaufgabe": "a",
+   "id": "lineare-gleichungssysteme-e2-k1-s10-v1",
+   "datei": "lineare-gleichungssysteme_a.tex",
+   "lage": "pruefung",
+   "original": "2022-OS-K7b",
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A28",
+   "hauptnummer": 28,
+   "teilaufgabe": "b",
+   "id": "lineare-gleichungssysteme-e2-k1-s10-v2",
+   "datei": "lineare-gleichungssysteme_a.tex",
+   "lage": "pruefung",
+   "original": "2022-OS-K7b",
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A29",
+   "hauptnummer": 29,
+   "teilaufgabe": "a",
+   "id": "lineare-gleichungssysteme-e4-k1-s0-v1",
+   "datei": "lineare-gleichungssysteme_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A29",
+   "hauptnummer": 29,
+   "teilaufgabe": "b",
+   "id": "lineare-gleichungssysteme-e4-k1-s1-v1",
+   "datei": "lineare-gleichungssysteme_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A29",
+   "hauptnummer": 29,
+   "teilaufgabe": "c",
+   "id": "lineare-gleichungssysteme-e4-k1-s2-v1",
+   "datei": "lineare-gleichungssysteme_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A30",
+   "hauptnummer": 30,
+   "teilaufgabe": "a",
+   "id": "lineare-gleichungssysteme-e4-k1-s8-v1",
+   "datei": "lineare-gleichungssysteme_a.tex",
+   "lage": "pruefung",
+   "original": "2024-OS-K7a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A30",
+   "hauptnummer": 30,
+   "teilaufgabe": "b",
+   "id": "lineare-gleichungssysteme-e4-k1-s8-v2",
+   "datei": "lineare-gleichungssysteme_a.tex",
+   "lage": "pruefung",
+   "original": "2024-OS-K7a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A30",
+   "hauptnummer": 30,
+   "teilaufgabe": "c",
+   "id": "lineare-gleichungssysteme-e4-k1-s8-v3",
+   "datei": "lineare-gleichungssysteme_a.tex",
+   "lage": "pruefung",
+   "original": "2024-OS-K7b",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A30",
+   "hauptnummer": 30,
+   "teilaufgabe": "d",
+   "id": "lineare-gleichungssysteme-e4-k1-s8-v4",
+   "datei": "lineare-gleichungssysteme_a.tex",
+   "lage": "pruefung",
+   "original": "2024-OS-K7b",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A30",
+   "hauptnummer": 30,
+   "teilaufgabe": "e",
+   "id": "lineare-gleichungssysteme-e4-k1-s8-v5",
+   "datei": "lineare-gleichungssysteme_a.tex",
+   "lage": "pruefung",
+   "original": "2022-OS-K7a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A30",
+   "hauptnummer": 30,
+   "teilaufgabe": "f",
+   "id": "lineare-gleichungssysteme-e4-k1-s8-v6",
+   "datei": "lineare-gleichungssysteme_a.tex",
+   "lage": "pruefung",
+   "original": "2022-OS-K7a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A30",
+   "hauptnummer": 30,
+   "teilaufgabe": "g",
+   "id": "lineare-gleichungssysteme-e4-k1-s8-v7",
+   "datei": "lineare-gleichungssysteme_a.tex",
+   "lage": "pruefung",
+   "original": "2021-OS-K7b",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A30",
+   "hauptnummer": 30,
+   "teilaufgabe": "h",
+   "id": "lineare-gleichungssysteme-e4-k1-s8-v8",
+   "datei": "lineare-gleichungssysteme_a.tex",
+   "lage": "pruefung",
+   "original": "2021-OS-K7b",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A31",
+   "hauptnummer": 31,
+   "teilaufgabe": "a",
+   "id": "potenz-exponentialfunktionen-e1-k1-s0-v1",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A31",
+   "hauptnummer": 31,
+   "teilaufgabe": "b",
+   "id": "potenz-exponentialfunktionen-e1-k1-s1-v1",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A31",
+   "hauptnummer": 31,
+   "teilaufgabe": "c",
+   "id": "potenz-exponentialfunktionen-e1-k1-s5-v1",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A32",
+   "hauptnummer": 32,
+   "teilaufgabe": "a",
+   "id": "potenz-exponentialfunktionen-e1-k1-s8-v1",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2018-OS-K2b",
+   "punkte": "2",
+   "stern": true
+  },
+  {
+   "aufgabe": "A32",
+   "hauptnummer": 32,
+   "teilaufgabe": "b",
+   "id": "potenz-exponentialfunktionen-e1-k1-s8-v2",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2018-OS-K2b",
+   "punkte": "2",
+   "stern": true
+  },
+  {
+   "aufgabe": "A32",
+   "hauptnummer": 32,
+   "teilaufgabe": "c",
+   "id": "potenz-exponentialfunktionen-e1-k1-s8-v3",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-K4d",
+   "punkte": "2",
+   "stern": true
+  },
+  {
+   "aufgabe": "A32",
+   "hauptnummer": 32,
+   "teilaufgabe": "d",
+   "id": "potenz-exponentialfunktionen-e1-k1-s8-v4",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-K4d",
+   "punkte": "2",
+   "stern": true
+  },
+  {
+   "aufgabe": "A33",
+   "hauptnummer": 33,
+   "teilaufgabe": "a",
+   "id": "potenz-exponentialfunktionen-e1-k2-s0-v1",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A33",
+   "hauptnummer": 33,
+   "teilaufgabe": "b",
+   "id": "potenz-exponentialfunktionen-e1-k2-s1-v1",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A33",
+   "hauptnummer": 33,
+   "teilaufgabe": "c",
+   "id": "potenz-exponentialfunktionen-e1-k2-s6-v1",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A34",
+   "hauptnummer": 34,
+   "teilaufgabe": "a",
+   "id": "potenz-exponentialfunktionen-e1-k2-s7-v1",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2026-FOR-K7b",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A34",
+   "hauptnummer": 34,
+   "teilaufgabe": "b",
+   "id": "potenz-exponentialfunktionen-e1-k2-s7-v2",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2026-FOR-K7b",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A34",
+   "hauptnummer": 34,
+   "teilaufgabe": "c",
+   "id": "potenz-exponentialfunktionen-e1-k2-s7-v3",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2019-OS-K7c",
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A34",
+   "hauptnummer": 34,
+   "teilaufgabe": "d",
+   "id": "potenz-exponentialfunktionen-e1-k2-s7-v4",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2019-OS-K7c",
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A35",
+   "hauptnummer": 35,
+   "teilaufgabe": "a",
+   "id": "potenz-exponentialfunktionen-e1-k3-s0-v1",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A35",
+   "hauptnummer": 35,
+   "teilaufgabe": "b",
+   "id": "potenz-exponentialfunktionen-e1-k3-s1-v1",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A35",
+   "hauptnummer": 35,
+   "teilaufgabe": "c",
+   "id": "potenz-exponentialfunktionen-e1-k3-s2-v1",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A36",
+   "hauptnummer": 36,
+   "teilaufgabe": "a",
+   "id": "potenz-exponentialfunktionen-e1-k3-s5-v1",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-K7a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A36",
+   "hauptnummer": 36,
+   "teilaufgabe": "b",
+   "id": "potenz-exponentialfunktionen-e1-k3-s5-v2",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-K7a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A36",
+   "hauptnummer": 36,
+   "teilaufgabe": "c",
+   "id": "potenz-exponentialfunktionen-e1-k3-s5-v3",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2017-OS-K7b",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A36",
+   "hauptnummer": 36,
+   "teilaufgabe": "d",
+   "id": "potenz-exponentialfunktionen-e1-k3-s5-v4",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2017-OS-K7b",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A36",
+   "hauptnummer": 36,
+   "teilaufgabe": "e",
+   "id": "potenz-exponentialfunktionen-e1-k3-s5-v5",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-K4b",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A36",
+   "hauptnummer": 36,
+   "teilaufgabe": "f",
+   "id": "potenz-exponentialfunktionen-e1-k3-s5-v6",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-K4b",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A37",
+   "hauptnummer": 37,
+   "teilaufgabe": "a",
+   "id": "potenz-exponentialfunktionen-e2-k1-s0-v1",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A37",
+   "hauptnummer": 37,
+   "teilaufgabe": "b",
+   "id": "potenz-exponentialfunktionen-e2-k1-s1-v1",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A37",
+   "hauptnummer": 37,
+   "teilaufgabe": "c",
+   "id": "potenz-exponentialfunktionen-e2-k1-s2-v1",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A38",
+   "hauptnummer": 38,
+   "teilaufgabe": "a",
+   "id": "potenz-exponentialfunktionen-e2-k1-s7-v1",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-K7b",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A38",
+   "hauptnummer": 38,
+   "teilaufgabe": "b",
+   "id": "potenz-exponentialfunktionen-e2-k1-s7-v2",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-K7b",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A38",
+   "hauptnummer": 38,
+   "teilaufgabe": "c",
+   "id": "potenz-exponentialfunktionen-e2-k1-s7-v3",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2018-OS-K2a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A38",
+   "hauptnummer": 38,
+   "teilaufgabe": "d",
+   "id": "potenz-exponentialfunktionen-e2-k1-s7-v4",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2018-OS-K2a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A39",
+   "hauptnummer": 39,
+   "teilaufgabe": "a",
+   "id": "potenz-exponentialfunktionen-e2-k2-s0-v1",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A39",
+   "hauptnummer": 39,
+   "teilaufgabe": "b",
+   "id": "potenz-exponentialfunktionen-e2-k2-s1-v1",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A39",
+   "hauptnummer": 39,
+   "teilaufgabe": "c",
+   "id": "potenz-exponentialfunktionen-e2-k2-s2-v1",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A40",
+   "hauptnummer": 40,
+   "teilaufgabe": "a",
+   "id": "potenz-exponentialfunktionen-e2-k2-s8-v1",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2026-FOR-K7a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A40",
+   "hauptnummer": 40,
+   "teilaufgabe": "b",
+   "id": "potenz-exponentialfunktionen-e2-k2-s8-v2",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2026-FOR-K7a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A40",
+   "hauptnummer": 40,
+   "teilaufgabe": "c",
+   "id": "potenz-exponentialfunktionen-e2-k2-s8-v3",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2020-OS-K4a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A40",
+   "hauptnummer": 40,
+   "teilaufgabe": "d",
+   "id": "potenz-exponentialfunktionen-e2-k2-s8-v4",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2020-OS-K4a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A40",
+   "hauptnummer": 40,
+   "teilaufgabe": "e",
+   "id": "potenz-exponentialfunktionen-e2-k2-s8-v5",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-K4a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A40",
+   "hauptnummer": 40,
+   "teilaufgabe": "f",
+   "id": "potenz-exponentialfunktionen-e2-k2-s8-v6",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-K4a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A40",
+   "hauptnummer": 40,
+   "teilaufgabe": "g",
+   "id": "potenz-exponentialfunktionen-e2-k2-s8-v7",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2019-OS-K7a",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A40",
+   "hauptnummer": 40,
+   "teilaufgabe": "h",
+   "id": "potenz-exponentialfunktionen-e2-k2-s8-v8",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2019-OS-K7a",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A40",
+   "hauptnummer": 40,
+   "teilaufgabe": "i",
+   "id": "potenz-exponentialfunktionen-e2-k2-s8-v9",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2017-OS-K7a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A40",
+   "hauptnummer": 40,
+   "teilaufgabe": "j",
+   "id": "potenz-exponentialfunktionen-e2-k2-s8-v10",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2017-OS-K7a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A41",
+   "hauptnummer": 41,
+   "teilaufgabe": "a",
+   "id": "potenz-exponentialfunktionen-e3-k1-s0-v1",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A41",
+   "hauptnummer": 41,
+   "teilaufgabe": "b",
+   "id": "potenz-exponentialfunktionen-e3-k1-s1-v1",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A41",
+   "hauptnummer": 41,
+   "teilaufgabe": "c",
+   "id": "potenz-exponentialfunktionen-e3-k1-s2-v1",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A42",
+   "hauptnummer": 42,
+   "teilaufgabe": "a",
+   "id": "potenz-exponentialfunktionen-e3-k1-s7-v1",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2026-FOR-K7c",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A42",
+   "hauptnummer": 42,
+   "teilaufgabe": "b",
+   "id": "potenz-exponentialfunktionen-e3-k1-s7-v2",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2026-FOR-K7c",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A42",
+   "hauptnummer": 42,
+   "teilaufgabe": "c",
+   "id": "potenz-exponentialfunktionen-e3-k1-s7-v3",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2017-OS-K7c",
+   "punkte": "1",
+   "stern": true
+  },
+  {
+   "aufgabe": "A42",
+   "hauptnummer": 42,
+   "teilaufgabe": "d",
+   "id": "potenz-exponentialfunktionen-e3-k1-s7-v4",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2017-OS-K7c",
+   "punkte": "1",
+   "stern": true
+  },
+  {
+   "aufgabe": "A42",
+   "hauptnummer": 42,
+   "teilaufgabe": "e",
+   "id": "potenz-exponentialfunktionen-e3-k1-s7-v5",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2019-OS-K7b",
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A42",
+   "hauptnummer": 42,
+   "teilaufgabe": "f",
+   "id": "potenz-exponentialfunktionen-e3-k1-s7-v6",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2019-OS-K7b",
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A43",
+   "hauptnummer": 43,
+   "teilaufgabe": "a",
+   "id": "potenz-exponentialfunktionen-e3-k2-s0-v1",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A43",
+   "hauptnummer": 43,
+   "teilaufgabe": "b",
+   "id": "potenz-exponentialfunktionen-e3-k2-s1-v1",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A43",
+   "hauptnummer": 43,
+   "teilaufgabe": "c",
+   "id": "potenz-exponentialfunktionen-e3-k2-s3-v1",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A44",
+   "hauptnummer": 44,
+   "teilaufgabe": "a",
+   "id": "potenz-exponentialfunktionen-e3-k2-s8-v1",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-K7b",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A44",
+   "hauptnummer": 44,
+   "teilaufgabe": "b",
+   "id": "potenz-exponentialfunktionen-e3-k2-s8-v2",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-K7b",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A44",
+   "hauptnummer": 44,
+   "teilaufgabe": "c",
+   "id": "potenz-exponentialfunktionen-e3-k2-s8-v3",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2020-OS-K4c",
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A44",
+   "hauptnummer": 44,
+   "teilaufgabe": "d",
+   "id": "potenz-exponentialfunktionen-e3-k2-s8-v4",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2020-OS-K4c",
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A44",
+   "hauptnummer": 44,
+   "teilaufgabe": "e",
+   "id": "potenz-exponentialfunktionen-e3-k2-s8-v5",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-K4e",
+   "punkte": "1",
+   "stern": true
+  },
+  {
+   "aufgabe": "A44",
+   "hauptnummer": 44,
+   "teilaufgabe": "f",
+   "id": "potenz-exponentialfunktionen-e3-k2-s8-v6",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-K4e",
+   "punkte": "1",
+   "stern": true
+  },
+  {
+   "aufgabe": "A44",
+   "hauptnummer": 44,
+   "teilaufgabe": "g",
+   "id": "potenz-exponentialfunktionen-e3-k2-s8-v7",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2017-OS-K7d",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A44",
+   "hauptnummer": 44,
+   "teilaufgabe": "h",
+   "id": "potenz-exponentialfunktionen-e3-k2-s8-v8",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2017-OS-K7d",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A44",
+   "hauptnummer": 44,
+   "teilaufgabe": "i",
+   "id": "potenz-exponentialfunktionen-e3-k2-s8-v9",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2018-OS-K2c",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A44",
+   "hauptnummer": 44,
+   "teilaufgabe": "j",
+   "id": "potenz-exponentialfunktionen-e3-k2-s8-v10",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2018-OS-K2c",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A45",
+   "hauptnummer": 45,
+   "teilaufgabe": "a",
+   "id": "potenz-exponentialfunktionen-e4-k1-s0-v1",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A45",
+   "hauptnummer": 45,
+   "teilaufgabe": "b",
+   "id": "potenz-exponentialfunktionen-e4-k1-s1-v1",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A45",
+   "hauptnummer": 45,
+   "teilaufgabe": "c",
+   "id": "potenz-exponentialfunktionen-e4-k1-s2-v1",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A46",
+   "hauptnummer": 46,
+   "teilaufgabe": "a",
+   "id": "potenz-exponentialfunktionen-e4-k1-s9-v1",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2020-OS-K4b",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A46",
+   "hauptnummer": 46,
+   "teilaufgabe": "b",
+   "id": "potenz-exponentialfunktionen-e4-k1-s9-v2",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2020-OS-K4b",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A46",
+   "hauptnummer": 46,
+   "teilaufgabe": "c",
+   "id": "potenz-exponentialfunktionen-e4-k1-s9-v3",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-K4c",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A46",
+   "hauptnummer": 46,
+   "teilaufgabe": "d",
+   "id": "potenz-exponentialfunktionen-e4-k1-s9-v4",
+   "datei": "potenz-exponentialfunktionen_a.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-K4c",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A47",
+   "hauptnummer": 47,
+   "teilaufgabe": "a",
+   "id": "zuordnungen-e1-k1-s0-v1",
+   "datei": "zuordnungen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A47",
+   "hauptnummer": 47,
+   "teilaufgabe": "b",
+   "id": "zuordnungen-e1-k1-s1-v1",
+   "datei": "zuordnungen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A47",
+   "hauptnummer": 47,
+   "teilaufgabe": "c",
+   "id": "zuordnungen-e1-k1-s6-v1",
+   "datei": "zuordnungen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A48",
+   "hauptnummer": 48,
+   "teilaufgabe": "a",
+   "id": "zuordnungen-e1-k1-s7-v1",
+   "datei": "zuordnungen_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-K7a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A48",
+   "hauptnummer": 48,
+   "teilaufgabe": "b",
+   "id": "zuordnungen-e1-k1-s7-v2",
+   "datei": "zuordnungen_a.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-K7a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A49",
+   "hauptnummer": 49,
+   "teilaufgabe": "a",
+   "id": "zuordnungen-e1-k2-s0-v1",
+   "datei": "zuordnungen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A49",
+   "hauptnummer": 49,
+   "teilaufgabe": "b",
+   "id": "zuordnungen-e1-k2-s1-v1",
+   "datei": "zuordnungen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A49",
+   "hauptnummer": 49,
+   "teilaufgabe": "c",
+   "id": "zuordnungen-e1-k2-s2-v1",
+   "datei": "zuordnungen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A50",
+   "hauptnummer": 50,
+   "teilaufgabe": "a",
+   "id": "zuordnungen-e1-k2-s6-v1",
+   "datei": "zuordnungen_a.tex",
+   "lage": "pruefung",
+   "original": "2021-OS-K6b",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A50",
+   "hauptnummer": 50,
+   "teilaufgabe": "b",
+   "id": "zuordnungen-e1-k2-s6-v2",
+   "datei": "zuordnungen_a.tex",
+   "lage": "pruefung",
+   "original": "2021-OS-K6b",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A51",
+   "hauptnummer": 51,
+   "teilaufgabe": "a",
+   "id": "zuordnungen-e3-k1-s0-v1",
+   "datei": "zuordnungen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A51",
+   "hauptnummer": 51,
+   "teilaufgabe": "b",
+   "id": "zuordnungen-e3-k1-s1-v1",
+   "datei": "zuordnungen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A51",
+   "hauptnummer": 51,
+   "teilaufgabe": "c",
+   "id": "zuordnungen-e3-k1-s2-v1",
+   "datei": "zuordnungen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A52",
+   "hauptnummer": 52,
+   "teilaufgabe": "a",
+   "id": "zuordnungen-e3-k1-s6-v1",
+   "datei": "zuordnungen_a.tex",
+   "lage": "pruefung",
+   "original": "2014-GYM-B1c",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A52",
+   "hauptnummer": 52,
+   "teilaufgabe": "b",
+   "id": "zuordnungen-e3-k1-s6-v2",
+   "datei": "zuordnungen_a.tex",
+   "lage": "pruefung",
+   "original": "2014-GYM-B1c",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A53",
+   "hauptnummer": 53,
+   "teilaufgabe": "a",
+   "id": "zuordnungen-e4-k3-s0-v1",
+   "datei": "zuordnungen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A53",
+   "hauptnummer": 53,
+   "teilaufgabe": "b",
+   "id": "zuordnungen-e4-k3-s1-v1",
+   "datei": "zuordnungen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A53",
+   "hauptnummer": 53,
+   "teilaufgabe": "c",
+   "id": "zuordnungen-e4-k3-s2-v1",
+   "datei": "zuordnungen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A54",
+   "hauptnummer": 54,
+   "teilaufgabe": "a",
+   "id": "zuordnungen-e4-k3-s5-v1",
+   "datei": "zuordnungen_a.tex",
+   "lage": "pruefung",
+   "original": "2014-OS-K4c",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A54",
+   "hauptnummer": 54,
+   "teilaufgabe": "b",
+   "id": "zuordnungen-e4-k3-s5-v2",
+   "datei": "zuordnungen_a.tex",
+   "lage": "pruefung",
+   "original": "2014-OS-K4c",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A54",
+   "hauptnummer": 54,
+   "teilaufgabe": "c",
+   "id": "zuordnungen-e4-k3-s5-v3",
+   "datei": "zuordnungen_a.tex",
+   "lage": "pruefung",
+   "original": "2014-OS-K4d",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A54",
+   "hauptnummer": 54,
+   "teilaufgabe": "d",
+   "id": "zuordnungen-e4-k3-s5-v4",
+   "datei": "zuordnungen_a.tex",
+   "lage": "pruefung",
+   "original": "2014-OS-K4d",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A54",
+   "hauptnummer": 54,
+   "teilaufgabe": "e",
+   "id": "zuordnungen-e4-k3-s5-v5",
+   "datei": "zuordnungen_a.tex",
+   "lage": "pruefung",
+   "original": "2024-OS-K2d",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A54",
+   "hauptnummer": 54,
+   "teilaufgabe": "f",
+   "id": "zuordnungen-e4-k3-s5-v6",
+   "datei": "zuordnungen_a.tex",
+   "lage": "pruefung",
+   "original": "2024-OS-K2d",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A54",
+   "hauptnummer": 54,
+   "teilaufgabe": "g",
+   "id": "zuordnungen-e4-k3-s5-v7",
+   "datei": "zuordnungen_a.tex",
+   "lage": "pruefung",
+   "original": "2015-OS-K4c",
+   "punkte": "2",
+   "stern": true
+  },
+  {
+   "aufgabe": "A54",
+   "hauptnummer": 54,
+   "teilaufgabe": "h",
+   "id": "zuordnungen-e4-k3-s5-v8",
+   "datei": "zuordnungen_a.tex",
+   "lage": "pruefung",
+   "original": "2015-OS-K4c",
+   "punkte": "2",
+   "stern": true
+  },
+  {
+   "aufgabe": "A55",
+   "hauptnummer": 55,
+   "teilaufgabe": "a",
+   "id": "zuordnungen-e4-k3-s6-v1",
+   "datei": "zuordnungen_a.tex",
+   "lage": "pruefung",
+   "original": "2014-OS-K2c",
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A55",
+   "hauptnummer": 55,
+   "teilaufgabe": "b",
+   "id": "zuordnungen-e4-k3-s6-v2",
+   "datei": "zuordnungen_a.tex",
+   "lage": "pruefung",
+   "original": "2014-OS-K2c",
+   "punkte": "3",
+   "stern": true
+  },
+  {
+   "aufgabe": "A55",
+   "hauptnummer": 55,
+   "teilaufgabe": "c",
+   "id": "zuordnungen-e4-k3-s6-v3",
+   "datei": "zuordnungen_a.tex",
+   "lage": "pruefung",
+   "original": "2015-OS-K3c",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A55",
+   "hauptnummer": 55,
+   "teilaufgabe": "d",
+   "id": "zuordnungen-e4-k3-s6-v4",
+   "datei": "zuordnungen_a.tex",
+   "lage": "pruefung",
+   "original": "2015-OS-K3c",
+   "punkte": "4",
+   "stern": true
+  },
+  {
+   "aufgabe": "A55",
+   "hauptnummer": 55,
+   "teilaufgabe": "e",
+   "id": "zuordnungen-e4-k3-s6-v5",
+   "datei": "zuordnungen_a.tex",
+   "lage": "pruefung",
+   "original": "2024-OS-K6c",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A55",
+   "hauptnummer": 55,
+   "teilaufgabe": "f",
+   "id": "zuordnungen-e4-k3-s6-v6",
+   "datei": "zuordnungen_a.tex",
+   "lage": "pruefung",
+   "original": "2024-OS-K6c",
+   "punkte": "2",
+   "stern": false
+  }
+ ]
+}

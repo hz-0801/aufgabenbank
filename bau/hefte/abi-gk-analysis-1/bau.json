@@ -1,0 +1,2292 @@
+{
+ "kennung": "AEN-H1",
+ "datum": "2026-09-28",
+ "eintraege": [
+  "ableitung-und-aenderungsrate",
+  "ableitungsregeln",
+  "kurvenuntersuchung",
+  "tangente-normale-schnittwinkel",
+  "funktionsklassen-und-eigenschaften",
+  "grenzwerte-und-verhalten-im-unendlichen",
+  "extremalprobleme"
+ ],
+ "fehlende_eintraege": [],
+ "leere_eintraege": [],
+ "rezept": "H",
+ "rezept_name": "Heft",
+ "bestellung": {
+  "heft": "abitur-gk",
+  "nur_basis": false,
+  "titel": "Prüfungsheft Abitur GK · Analysis 1",
+  "aus": "bau/hefte/abi-gk-analysis-1",
+  "ohne_register": false
+ },
+ "bank_commit": "7238f60+geändert",
+ "zusammenbau": "v0.4",
+ "vorlage": "Version 2026-09-28a",
+ "pfad": "bau/hefte/abi-gk-analysis-1",
+ "kuerzel_quelle": "_kuerzel.csv (mathe-nachhilfe)",
+ "strukturfehler": 0,
+ "ausgelassen": [],
+ "aufgaben": [
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "a",
+   "id": "ableitung-und-aenderungsrate-e1-k1-s0-v1",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "b",
+   "id": "ableitung-und-aenderungsrate-e1-k1-s1-v1",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "c",
+   "id": "ableitung-und-aenderungsrate-e1-k1-s6-v2",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "a",
+   "id": "ableitung-und-aenderungsrate-e1-k1-s2-v2",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "pruefung",
+   "original": "2025-bebb-gk-B2.2f",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "b",
+   "id": "ableitung-und-aenderungsrate-e1-k1-s3-v1",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "pruefung",
+   "original": "2019-be-gk-B2.2d",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "c",
+   "id": "ableitung-und-aenderungsrate-e1-k1-s3-v3",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "pruefung",
+   "original": "2019MgrundlegendBAnalysisWTR1-1d",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "d",
+   "id": "ableitung-und-aenderungsrate-e1-k1-s4-v2",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "pruefung",
+   "original": "2026MgrundlegendBAnalysisWTR1-2c",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "e",
+   "id": "ableitung-und-aenderungsrate-e1-k1-s5-v1",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "pruefung",
+   "original": "2018-be-gk-B1.2e",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "f",
+   "id": "ableitung-und-aenderungsrate-e1-k1-s6-v1",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "pruefung",
+   "original": "2018-be-gk-B1.2g",
+   "punkte": "9",
+   "stern": false
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "a",
+   "id": "ableitung-und-aenderungsrate-e1-k1-s7-v1",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "pruefung",
+   "original": "2026-bb-gk-B2.1i",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "b",
+   "id": "ableitung-und-aenderungsrate-e1-k1-s8-v1",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "pruefung",
+   "original": "2026MgrundlegendBAnalysisMMS1-1b",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "c",
+   "id": "ableitung-und-aenderungsrate-e1-k1-s10-v1",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "pruefung",
+   "original": "2018MgrundlegendBAnalysisWTR-2c",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "d",
+   "id": "ableitung-und-aenderungsrate-e1-k1-s10-v2",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "pruefung",
+   "original": "2018MgrundlegendBAnalysisWTR-2c",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "e",
+   "id": "ableitung-und-aenderungsrate-e1-k1-s10-v3",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "pruefung",
+   "original": "2019MgrundlegendBAnalysisWTR2-2d",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "f",
+   "id": "ableitung-und-aenderungsrate-e1-k1-s10-v4",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "pruefung",
+   "original": "2019MgrundlegendBAnalysisWTR2-2d",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "a",
+   "id": "ableitung-und-aenderungsrate-e2-k1-s0-v1",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "b",
+   "id": "ableitung-und-aenderungsrate-e2-k1-s1-v1",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "c",
+   "id": "ableitung-und-aenderungsrate-e2-k1-s5-v3",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "teilaufgabe": "a",
+   "id": "ableitung-und-aenderungsrate-e2-k1-s2-v1",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "pruefung",
+   "original": "2026MgrundlegendAAnalysis21-a",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "teilaufgabe": "b",
+   "id": "ableitung-und-aenderungsrate-e2-k1-s3-v1",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "pruefung",
+   "original": "2024-bebb-gk-A1.4a",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "teilaufgabe": "c",
+   "id": "ableitung-und-aenderungsrate-e2-k1-s3-v2",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "pruefung",
+   "original": "2024MgrundlegendAAnalysis13-a",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "teilaufgabe": "d",
+   "id": "ableitung-und-aenderungsrate-e2-k1-s6-v1",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "pruefung",
+   "original": "2021MgrundlegendBAnalysisWTR-2a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "teilaufgabe": "e",
+   "id": "ableitung-und-aenderungsrate-e2-k1-s7-v1",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "pruefung",
+   "original": "2021-be-gk-B2.1i",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "a",
+   "id": "ableitung-und-aenderungsrate-e2-k1-s8-v3",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "pruefung",
+   "original": "2020MgrundlegendBAnalysisWTR1-1c",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "b",
+   "id": "ableitung-und-aenderungsrate-e2-k1-s8-v4",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "pruefung",
+   "original": "2020MgrundlegendBAnalysisWTR1-1c",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A7",
+   "hauptnummer": 7,
+   "teilaufgabe": "a",
+   "id": "ableitung-und-aenderungsrate-e3-k1-s0-v1",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A7",
+   "hauptnummer": 7,
+   "teilaufgabe": "b",
+   "id": "ableitung-und-aenderungsrate-e3-k1-s1-v1",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A7",
+   "hauptnummer": 7,
+   "teilaufgabe": "c",
+   "id": "ableitung-und-aenderungsrate-e3-k1-s2-v2",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "teilaufgabe": "a",
+   "id": "ableitung-und-aenderungsrate-e3-k1-s3-v1",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "pruefung",
+   "original": "2026-bb-gk-B2.2h",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "teilaufgabe": "b",
+   "id": "ableitung-und-aenderungsrate-e3-k1-s3-v2",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "pruefung",
+   "original": "2026MgrundlegendBAnalysisWTR2-2b",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "teilaufgabe": "c",
+   "id": "ableitung-und-aenderungsrate-e3-k1-s4-v1",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "pruefung",
+   "original": "2022-bebb-gk-B2.2c",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "teilaufgabe": "d",
+   "id": "ableitung-und-aenderungsrate-e3-k1-s5-v1",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "pruefung",
+   "original": "2024MgrundlegendAAnalysis22",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "a",
+   "id": "ableitung-und-aenderungsrate-e4-k1-s0-v1",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "b",
+   "id": "ableitung-und-aenderungsrate-e4-k1-s1-v1",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "c",
+   "id": "ableitung-und-aenderungsrate-e4-k1-s4-v3",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "a",
+   "id": "ableitung-und-aenderungsrate-e4-k1-s3-v1",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "pruefung",
+   "original": "2019MgrundlegendAAnalysis12-b",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "b",
+   "id": "ableitung-und-aenderungsrate-e4-k1-s3-v2",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "pruefung",
+   "original": "2018-be-gk-B1.2f",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "c",
+   "id": "ableitung-und-aenderungsrate-e4-k1-s4-v1",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "pruefung",
+   "original": "2019-be-gk-B2.1b",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "d",
+   "id": "ableitung-und-aenderungsrate-e4-k1-s4-v2",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "pruefung",
+   "original": "2026MgrundlegendBAnalysisMMS1-1c",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "e",
+   "id": "ableitung-und-aenderungsrate-e4-k1-s7-v1",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "pruefung",
+   "original": "2022-bebb-gk-B2.1m",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "f",
+   "id": "ableitung-und-aenderungsrate-e4-k1-s7-v2",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "pruefung",
+   "original": "2022MgrundlegendBAnalysisWTR2-2d",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "a",
+   "id": "ableitung-und-aenderungsrate-e4-k1-s9-v1",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "pruefung",
+   "original": null,
+   "punkte": null,
+   "stern": false
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "b",
+   "id": "ableitung-und-aenderungsrate-e4-k1-s9-v2",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "pruefung",
+   "original": null,
+   "punkte": null,
+   "stern": false
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "c",
+   "id": "ableitung-und-aenderungsrate-e4-k1-s9-v3",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "pruefung",
+   "original": null,
+   "punkte": null,
+   "stern": false
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "d",
+   "id": "ableitung-und-aenderungsrate-e4-k1-s9-v4",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "pruefung",
+   "original": "2026-bb-gk-B2.2i",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "e",
+   "id": "ableitung-und-aenderungsrate-e4-k1-s9-v5",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "pruefung",
+   "original": "2026-bb-gk-B2.2i",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "f",
+   "id": "ableitung-und-aenderungsrate-e4-k1-s9-v6",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "pruefung",
+   "original": "2026MgrundlegendBAnalysisWTR2-2c",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "g",
+   "id": "ableitung-und-aenderungsrate-e4-k1-s9-v7",
+   "datei": "ableitung-und-aenderungsrate_a.tex",
+   "lage": "pruefung",
+   "original": "2026MgrundlegendBAnalysisWTR2-2c",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A12",
+   "hauptnummer": 12,
+   "teilaufgabe": "a",
+   "id": "ableitungsregeln-e1-k2-s0-v1",
+   "datei": "ableitungsregeln_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A12",
+   "hauptnummer": 12,
+   "teilaufgabe": "b",
+   "id": "ableitungsregeln-e1-k2-s1-v1",
+   "datei": "ableitungsregeln_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A12",
+   "hauptnummer": 12,
+   "teilaufgabe": "c",
+   "id": "ableitungsregeln-e1-k2-s2-v1",
+   "datei": "ableitungsregeln_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A13",
+   "hauptnummer": 13,
+   "teilaufgabe": "a",
+   "id": "ableitungsregeln-e1-k2-s4-v1",
+   "datei": "ableitungsregeln_a.tex",
+   "lage": "pruefung",
+   "original": "2019-be-gk-A1.1a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A13",
+   "hauptnummer": 13,
+   "teilaufgabe": "b",
+   "id": "ableitungsregeln-e1-k2-s4-v2",
+   "datei": "ableitungsregeln_a.tex",
+   "lage": "pruefung",
+   "original": "2019-be-gk-A1.1a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A13",
+   "hauptnummer": 13,
+   "teilaufgabe": "c",
+   "id": "ableitungsregeln-e1-k2-s4-v3",
+   "datei": "ableitungsregeln_a.tex",
+   "lage": "pruefung",
+   "original": "2019-be-gk-A1.1a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A13",
+   "hauptnummer": 13,
+   "teilaufgabe": "d",
+   "id": "ableitungsregeln-e1-k2-s8-v1",
+   "datei": "ableitungsregeln_a.tex",
+   "lage": "pruefung",
+   "original": "2022MgrundlegendBAnalysisWTR1-1c",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A13",
+   "hauptnummer": 13,
+   "teilaufgabe": "e",
+   "id": "ableitungsregeln-e1-k2-s8-v2",
+   "datei": "ableitungsregeln_a.tex",
+   "lage": "pruefung",
+   "original": "2022MgrundlegendBAnalysisWTR1-1c",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A13",
+   "hauptnummer": 13,
+   "teilaufgabe": "f",
+   "id": "ableitungsregeln-e1-k2-s8-v3",
+   "datei": "ableitungsregeln_a.tex",
+   "lage": "pruefung",
+   "original": "2022MgrundlegendBAnalysisWTR1-1c",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "a",
+   "id": "ableitungsregeln-e3-k1-s0-v1",
+   "datei": "ableitungsregeln_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "b",
+   "id": "ableitungsregeln-e3-k1-s1-v1",
+   "datei": "ableitungsregeln_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A15",
+   "hauptnummer": 15,
+   "teilaufgabe": "a",
+   "id": "ableitungsregeln-e3-k1-s3-v1",
+   "datei": "ableitungsregeln_a.tex",
+   "lage": "pruefung",
+   "original": "2024MgrundlegendBAnalysisWTR1-1a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A15",
+   "hauptnummer": 15,
+   "teilaufgabe": "b",
+   "id": "ableitungsregeln-e3-k1-s3-v3",
+   "datei": "ableitungsregeln_a.tex",
+   "lage": "pruefung",
+   "original": "2020-be-gk-B2.1c",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A15",
+   "hauptnummer": 15,
+   "teilaufgabe": "c",
+   "id": "ableitungsregeln-e3-k1-s6-v1",
+   "datei": "ableitungsregeln_a.tex",
+   "lage": "pruefung",
+   "original": "2026MgrundlegendAAnalysis21-b",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A15",
+   "hauptnummer": 15,
+   "teilaufgabe": "d",
+   "id": "ableitungsregeln-e3-k1-s6-v2",
+   "datei": "ableitungsregeln_a.tex",
+   "lage": "pruefung",
+   "original": "2026MgrundlegendAAnalysis21-b",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A15",
+   "hauptnummer": 15,
+   "teilaufgabe": "e",
+   "id": "ableitungsregeln-e3-k1-s6-v3",
+   "datei": "ableitungsregeln_a.tex",
+   "lage": "pruefung",
+   "original": "2026MgrundlegendAAnalysis21-b",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A16",
+   "hauptnummer": 16,
+   "teilaufgabe": "a",
+   "id": "kurvenuntersuchung-e1-k1-s0-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A16",
+   "hauptnummer": 16,
+   "teilaufgabe": "b",
+   "id": "kurvenuntersuchung-e1-k1-s1-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A16",
+   "hauptnummer": 16,
+   "teilaufgabe": "c",
+   "id": "kurvenuntersuchung-e1-k1-s3-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "a",
+   "id": "kurvenuntersuchung-e1-k1-s5-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "pruefung",
+   "original": "2026MgrundlegendBAnalysisWTR1-1a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "b",
+   "id": "kurvenuntersuchung-e1-k1-s5-v2",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "pruefung",
+   "original": "2024-bebb-gk-A1.7a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "c",
+   "id": "kurvenuntersuchung-e1-k1-s7-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "pruefung",
+   "original": "2021-be-gk-B2.1g",
+   "punkte": "6",
+   "stern": false
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "d",
+   "id": "kurvenuntersuchung-e1-k1-s7-v2",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "pruefung",
+   "original": "2021-be-gk-B2.1g",
+   "punkte": "6",
+   "stern": false
+  },
+  {
+   "aufgabe": "A18",
+   "hauptnummer": 18,
+   "teilaufgabe": "a",
+   "id": "kurvenuntersuchung-e2-k1-s0-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A18",
+   "hauptnummer": 18,
+   "teilaufgabe": "b",
+   "id": "kurvenuntersuchung-e2-k1-s1-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A18",
+   "hauptnummer": 18,
+   "teilaufgabe": "c",
+   "id": "kurvenuntersuchung-e2-k1-s3-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A19",
+   "hauptnummer": 19,
+   "teilaufgabe": "a",
+   "id": "kurvenuntersuchung-e2-k12-s3-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "pruefung",
+   "original": "2023MgrundlegendBAnalysisWTR1-1b",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A19",
+   "hauptnummer": 19,
+   "teilaufgabe": "b",
+   "id": "kurvenuntersuchung-e2-k1-s6-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "pruefung",
+   "original": "2025-bebb-gk-B2.2b",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A19",
+   "hauptnummer": 19,
+   "teilaufgabe": "c",
+   "id": "kurvenuntersuchung-e2-k1-s6-v2",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "pruefung",
+   "original": "2019-be-gk-B2.2b",
+   "punkte": "7",
+   "stern": false
+  },
+  {
+   "aufgabe": "A19",
+   "hauptnummer": 19,
+   "teilaufgabe": "d",
+   "id": "kurvenuntersuchung-e2-k1-s10-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "pruefung",
+   "original": "2021-be-gk-B2.2d",
+   "punkte": "6",
+   "stern": false
+  },
+  {
+   "aufgabe": "A19",
+   "hauptnummer": 19,
+   "teilaufgabe": "e",
+   "id": "kurvenuntersuchung-e2-k1-s10-v2",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "pruefung",
+   "original": "2021-be-gk-B2.2d",
+   "punkte": "6",
+   "stern": false
+  },
+  {
+   "aufgabe": "A20",
+   "hauptnummer": 20,
+   "teilaufgabe": "a",
+   "id": "kurvenuntersuchung-e2-k2-s0-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A20",
+   "hauptnummer": 20,
+   "teilaufgabe": "b",
+   "id": "kurvenuntersuchung-e2-k2-s1-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A20",
+   "hauptnummer": 20,
+   "teilaufgabe": "c",
+   "id": "kurvenuntersuchung-e2-k2-s4-v3",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A21",
+   "hauptnummer": 21,
+   "teilaufgabe": "a",
+   "id": "kurvenuntersuchung-e2-k2-s2-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "pruefung",
+   "original": "2026MgrundlegendAAnalysis11-a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A21",
+   "hauptnummer": 21,
+   "teilaufgabe": "b",
+   "id": "kurvenuntersuchung-e2-k2-s4-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "pruefung",
+   "original": "2020MgrundlegendAAnalysis11-a",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A21",
+   "hauptnummer": 21,
+   "teilaufgabe": "c",
+   "id": "kurvenuntersuchung-e2-k2-s4-v2",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "pruefung",
+   "original": "2022-bebb-gk-B2.1a",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A22",
+   "hauptnummer": 22,
+   "teilaufgabe": "a",
+   "id": "kurvenuntersuchung-e2-k3-s1-v2",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A23",
+   "hauptnummer": 23,
+   "teilaufgabe": "a",
+   "id": "kurvenuntersuchung-e2-k3-s1-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "pruefung",
+   "original": "2021-be-gk-B2.1f",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "a",
+   "id": "kurvenuntersuchung-e2-k4-s1-v2",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A25",
+   "hauptnummer": 25,
+   "teilaufgabe": "a",
+   "id": "kurvenuntersuchung-e2-k4-s1-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "pruefung",
+   "original": "2026MgrundlegendAAnalysis11-b",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A26",
+   "hauptnummer": 26,
+   "teilaufgabe": "a",
+   "id": "kurvenuntersuchung-e2-k5-s1-v2",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A27",
+   "hauptnummer": 27,
+   "teilaufgabe": "a",
+   "id": "kurvenuntersuchung-e2-k5-s1-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "pruefung",
+   "original": "2025-bebb-gk-B2.1b",
+   "punkte": "7",
+   "stern": false
+  },
+  {
+   "aufgabe": "A28",
+   "hauptnummer": 28,
+   "teilaufgabe": "a",
+   "id": "kurvenuntersuchung-e2-k6-s1-v2",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A29",
+   "hauptnummer": 29,
+   "teilaufgabe": "a",
+   "id": "kurvenuntersuchung-e2-k6-s1-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "pruefung",
+   "original": "2023MgrundlegendBAnalysisWTR1-1a",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A30",
+   "hauptnummer": 30,
+   "teilaufgabe": "a",
+   "id": "kurvenuntersuchung-e2-k10-s1-v2",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A31",
+   "hauptnummer": 31,
+   "teilaufgabe": "a",
+   "id": "kurvenuntersuchung-e2-k10-s1-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "pruefung",
+   "original": "2017-be-gk-cas-B1.1e",
+   "punkte": "10",
+   "stern": false
+  },
+  {
+   "aufgabe": "A32",
+   "hauptnummer": 32,
+   "teilaufgabe": "a",
+   "id": "kurvenuntersuchung-e3-k1-s0-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A32",
+   "hauptnummer": 32,
+   "teilaufgabe": "b",
+   "id": "kurvenuntersuchung-e3-k1-s1-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A32",
+   "hauptnummer": 32,
+   "teilaufgabe": "c",
+   "id": "kurvenuntersuchung-e3-k1-s8-v2",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A33",
+   "hauptnummer": 33,
+   "teilaufgabe": "a",
+   "id": "kurvenuntersuchung-e3-k1-s5-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "pruefung",
+   "original": "2018MgrundlegendBAnalysisWTR-1a",
+   "punkte": "6",
+   "stern": false
+  },
+  {
+   "aufgabe": "A33",
+   "hauptnummer": 33,
+   "teilaufgabe": "b",
+   "id": "kurvenuntersuchung-e3-k1-s8-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "pruefung",
+   "original": "2023-bebb-gk-B2.1f",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A33",
+   "hauptnummer": 33,
+   "teilaufgabe": "c",
+   "id": "kurvenuntersuchung-e3-k1-s10-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "pruefung",
+   "original": "2021-be-gk-B2.2e",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A33",
+   "hauptnummer": 33,
+   "teilaufgabe": "d",
+   "id": "kurvenuntersuchung-e3-k1-s10-v2",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "pruefung",
+   "original": "2021-be-gk-B2.2e",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A34",
+   "hauptnummer": 34,
+   "teilaufgabe": "a",
+   "id": "kurvenuntersuchung-e3-k2-s1-v2",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A35",
+   "hauptnummer": 35,
+   "teilaufgabe": "a",
+   "id": "kurvenuntersuchung-e3-k2-s1-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "pruefung",
+   "original": "2021MgrundlegendBAnalysisWTR-1b",
+   "punkte": "7",
+   "stern": false
+  },
+  {
+   "aufgabe": "A36",
+   "hauptnummer": 36,
+   "teilaufgabe": "a",
+   "id": "kurvenuntersuchung-e3-k4-s1-v2",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A37",
+   "hauptnummer": 37,
+   "teilaufgabe": "a",
+   "id": "kurvenuntersuchung-e3-k4-s1-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "pruefung",
+   "original": "2026MgrundlegendBAnalysisMMS2-1c",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A38",
+   "hauptnummer": 38,
+   "teilaufgabe": "a",
+   "id": "kurvenuntersuchung-e4-k1-s0-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A38",
+   "hauptnummer": 38,
+   "teilaufgabe": "b",
+   "id": "kurvenuntersuchung-e4-k1-s1-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A38",
+   "hauptnummer": 38,
+   "teilaufgabe": "c",
+   "id": "kurvenuntersuchung-e4-k1-s2-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A39",
+   "hauptnummer": 39,
+   "teilaufgabe": "a",
+   "id": "kurvenuntersuchung-e4-k1-s4-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "pruefung",
+   "original": "2020-be-gk-B2.2d",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A39",
+   "hauptnummer": 39,
+   "teilaufgabe": "b",
+   "id": "kurvenuntersuchung-e4-k1-s8-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "pruefung",
+   "original": "2024-bebb-gk-B2.1d",
+   "punkte": "6",
+   "stern": false
+  },
+  {
+   "aufgabe": "A39",
+   "hauptnummer": 39,
+   "teilaufgabe": "c",
+   "id": "kurvenuntersuchung-e4-k1-s8-v2",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "pruefung",
+   "original": "2024-bebb-gk-B2.1d",
+   "punkte": "6",
+   "stern": false
+  },
+  {
+   "aufgabe": "A39",
+   "hauptnummer": 39,
+   "teilaufgabe": "d",
+   "id": "kurvenuntersuchung-e4-k1-s8-v3",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "pruefung",
+   "original": "2023-bebb-gk-B2.2e",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A39",
+   "hauptnummer": 39,
+   "teilaufgabe": "e",
+   "id": "kurvenuntersuchung-e4-k1-s8-v4",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "pruefung",
+   "original": "2023-bebb-gk-B2.2e",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A40",
+   "hauptnummer": 40,
+   "teilaufgabe": "a",
+   "id": "kurvenuntersuchung-e5-k1-s0-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A40",
+   "hauptnummer": 40,
+   "teilaufgabe": "b",
+   "id": "kurvenuntersuchung-e5-k1-s1-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A40",
+   "hauptnummer": 40,
+   "teilaufgabe": "c",
+   "id": "kurvenuntersuchung-e5-k1-s3-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A41",
+   "hauptnummer": 41,
+   "teilaufgabe": "a",
+   "id": "kurvenuntersuchung-e5-k1-s2-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "pruefung",
+   "original": "2022MgrundlegendBAnalysisWTR2-2c",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A41",
+   "hauptnummer": 41,
+   "teilaufgabe": "b",
+   "id": "kurvenuntersuchung-e5-k4-s3-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "pruefung",
+   "original": "2017-be-gk-B1.1c",
+   "punkte": "6",
+   "stern": false
+  },
+  {
+   "aufgabe": "A41",
+   "hauptnummer": 41,
+   "teilaufgabe": "c",
+   "id": "kurvenuntersuchung-e5-k4-s4-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "pruefung",
+   "original": "2018MgrundlegendBAnalysisWTR-2e",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A41",
+   "hauptnummer": 41,
+   "teilaufgabe": "d",
+   "id": "kurvenuntersuchung-e5-k1-s6-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "pruefung",
+   "original": "2019-be-gk-B2.2c",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A41",
+   "hauptnummer": 41,
+   "teilaufgabe": "e",
+   "id": "kurvenuntersuchung-e5-k1-s6-v2",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "pruefung",
+   "original": "2018-be-gk-B1.1d",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A41",
+   "hauptnummer": 41,
+   "teilaufgabe": "f",
+   "id": "kurvenuntersuchung-e5-k1-s8-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "pruefung",
+   "original": "2026-bb-gk-B2.1f",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A42",
+   "hauptnummer": 42,
+   "teilaufgabe": "a",
+   "id": "kurvenuntersuchung-e5-k1-s9-v1",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "pruefung",
+   "original": "2024MgrundlegendBAnalysisWTR2-2c",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A42",
+   "hauptnummer": 42,
+   "teilaufgabe": "b",
+   "id": "kurvenuntersuchung-e5-k1-s9-v2",
+   "datei": "kurvenuntersuchung_a.tex",
+   "lage": "pruefung",
+   "original": "2024MgrundlegendBAnalysisWTR2-2c",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A43",
+   "hauptnummer": 43,
+   "teilaufgabe": "a",
+   "id": "tangente-normale-schnittwinkel-e1-k1-s0-v1",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A43",
+   "hauptnummer": 43,
+   "teilaufgabe": "b",
+   "id": "tangente-normale-schnittwinkel-e1-k1-s1-v1",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A43",
+   "hauptnummer": 43,
+   "teilaufgabe": "c",
+   "id": "tangente-normale-schnittwinkel-e1-k1-s2-v3",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A44",
+   "hauptnummer": 44,
+   "teilaufgabe": "a",
+   "id": "tangente-normale-schnittwinkel-e1-k1-s1-v5",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "pruefung",
+   "original": "2025-bebb-gk-A1.1a",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A44",
+   "hauptnummer": 44,
+   "teilaufgabe": "b",
+   "id": "tangente-normale-schnittwinkel-e1-k1-s4-v1",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "pruefung",
+   "original": "2026-bb-gk-B2.2b",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A44",
+   "hauptnummer": 44,
+   "teilaufgabe": "c",
+   "id": "tangente-normale-schnittwinkel-e1-k1-s4-v2",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "pruefung",
+   "original": "2019-be-gk-B2.2f",
+   "punkte": "6",
+   "stern": false
+  },
+  {
+   "aufgabe": "A44",
+   "hauptnummer": 44,
+   "teilaufgabe": "d",
+   "id": "tangente-normale-schnittwinkel-e1-k1-s4-v3",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "pruefung",
+   "original": "2018MgrundlegendAAnalysis12-a",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A44",
+   "hauptnummer": 44,
+   "teilaufgabe": "e",
+   "id": "tangente-normale-schnittwinkel-e1-k1-s6-v1",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "pruefung",
+   "original": "2023-bebb-gk-B2.1c",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A44",
+   "hauptnummer": 44,
+   "teilaufgabe": "f",
+   "id": "tangente-normale-schnittwinkel-e1-k1-s8-v3",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "pruefung",
+   "original": "2023-bebb-gk-A1.1a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A45",
+   "hauptnummer": 45,
+   "teilaufgabe": "a",
+   "id": "tangente-normale-schnittwinkel-e2-k1-s0-v1",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A45",
+   "hauptnummer": 45,
+   "teilaufgabe": "b",
+   "id": "tangente-normale-schnittwinkel-e2-k1-s1-v1",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A45",
+   "hauptnummer": 45,
+   "teilaufgabe": "c",
+   "id": "tangente-normale-schnittwinkel-e2-k1-s2-v1",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A46",
+   "hauptnummer": 46,
+   "teilaufgabe": "a",
+   "id": "tangente-normale-schnittwinkel-e2-k1-s3-v2",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "pruefung",
+   "original": "2018-be-gk-cas-B1.1e",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A46",
+   "hauptnummer": 46,
+   "teilaufgabe": "b",
+   "id": "tangente-normale-schnittwinkel-e2-k1-s4-v1",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "pruefung",
+   "original": "2023-bebb-gk-B2.2d",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A46",
+   "hauptnummer": 46,
+   "teilaufgabe": "c",
+   "id": "tangente-normale-schnittwinkel-e2-k1-s5-v1",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "pruefung",
+   "original": "2020MgrundlegendBAnalysisWTR2-1c",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A46",
+   "hauptnummer": 46,
+   "teilaufgabe": "d",
+   "id": "tangente-normale-schnittwinkel-e2-k1-s9-v3",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "pruefung",
+   "original": "2019MgrundlegendBAnalysisWTR1-2a",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A46",
+   "hauptnummer": 46,
+   "teilaufgabe": "e",
+   "id": "tangente-normale-schnittwinkel-e2-k1-s9-v4",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "pruefung",
+   "original": "2019MgrundlegendBAnalysisWTR1-2a",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A47",
+   "hauptnummer": 47,
+   "teilaufgabe": "a",
+   "id": "tangente-normale-schnittwinkel-e4-k1-s0-v1",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A47",
+   "hauptnummer": 47,
+   "teilaufgabe": "b",
+   "id": "tangente-normale-schnittwinkel-e4-k1-s1-v1",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A47",
+   "hauptnummer": 47,
+   "teilaufgabe": "c",
+   "id": "tangente-normale-schnittwinkel-e4-k1-s2-v1",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A48",
+   "hauptnummer": 48,
+   "teilaufgabe": "a",
+   "id": "tangente-normale-schnittwinkel-e4-k1-s3-v1",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "pruefung",
+   "original": "2020-be-gk-B2.1f",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A48",
+   "hauptnummer": 48,
+   "teilaufgabe": "b",
+   "id": "tangente-normale-schnittwinkel-e4-k1-s3-v2",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "pruefung",
+   "original": "2026MgrundlegendBAnalysisWTR1-1c",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A48",
+   "hauptnummer": 48,
+   "teilaufgabe": "c",
+   "id": "tangente-normale-schnittwinkel-e4-k1-s3-v3",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "pruefung",
+   "original": "2023MgrundlegendBAnalysisWTR1-1c",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A48",
+   "hauptnummer": 48,
+   "teilaufgabe": "d",
+   "id": "tangente-normale-schnittwinkel-e4-k1-s6-v1",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "pruefung",
+   "original": "2018-be-gk-B1.2b",
+   "punkte": "7",
+   "stern": false
+  },
+  {
+   "aufgabe": "A48",
+   "hauptnummer": 48,
+   "teilaufgabe": "e",
+   "id": "tangente-normale-schnittwinkel-e4-k1-s6-v2",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "pruefung",
+   "original": "2022-bebb-gk-B2.1e",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A48",
+   "hauptnummer": 48,
+   "teilaufgabe": "f",
+   "id": "tangente-normale-schnittwinkel-e4-k1-s6-v3",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "pruefung",
+   "original": "2017-be-gk-B1.1e",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A48",
+   "hauptnummer": 48,
+   "teilaufgabe": "g",
+   "id": "tangente-normale-schnittwinkel-e4-k1-s9-v3",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "pruefung",
+   "original": "2017-be-gk-cas-B1.2f",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A48",
+   "hauptnummer": 48,
+   "teilaufgabe": "h",
+   "id": "tangente-normale-schnittwinkel-e4-k1-s10-v3",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "pruefung",
+   "original": "2024-bebb-gk-B2.1i",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A48",
+   "hauptnummer": 48,
+   "teilaufgabe": "i",
+   "id": "tangente-normale-schnittwinkel-e4-k1-s10-v4",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "pruefung",
+   "original": "2024-bebb-gk-B2.1i",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A48",
+   "hauptnummer": 48,
+   "teilaufgabe": "j",
+   "id": "tangente-normale-schnittwinkel-e4-k1-s10-v5",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "pruefung",
+   "original": "2025-bebb-gk-B2.1d",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A48",
+   "hauptnummer": 48,
+   "teilaufgabe": "k",
+   "id": "tangente-normale-schnittwinkel-e4-k1-s10-v6",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "pruefung",
+   "original": "2025-bebb-gk-B2.1d",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A49",
+   "hauptnummer": 49,
+   "teilaufgabe": "a",
+   "id": "tangente-normale-schnittwinkel-e5-k1-s0-v1",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A49",
+   "hauptnummer": 49,
+   "teilaufgabe": "b",
+   "id": "tangente-normale-schnittwinkel-e5-k1-s1-v1",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A49",
+   "hauptnummer": 49,
+   "teilaufgabe": "c",
+   "id": "tangente-normale-schnittwinkel-e5-k1-s2-v3",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A50",
+   "hauptnummer": 50,
+   "teilaufgabe": "a",
+   "id": "tangente-normale-schnittwinkel-e5-k1-s2-v2",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "pruefung",
+   "original": "2017-be-gk-B1.2e",
+   "punkte": "9",
+   "stern": false
+  },
+  {
+   "aufgabe": "A50",
+   "hauptnummer": 50,
+   "teilaufgabe": "b",
+   "id": "tangente-normale-schnittwinkel-e5-k1-s3-v1",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "pruefung",
+   "original": "2022-bebb-gk-B2.1g",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A50",
+   "hauptnummer": 50,
+   "teilaufgabe": "c",
+   "id": "tangente-normale-schnittwinkel-e5-k1-s6-v3",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "pruefung",
+   "original": "2019MgrundlegendAAnalysis2-b",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A50",
+   "hauptnummer": 50,
+   "teilaufgabe": "d",
+   "id": "tangente-normale-schnittwinkel-e5-k1-s7-v1",
+   "datei": "tangente-normale-schnittwinkel_a.tex",
+   "lage": "pruefung",
+   "original": "2021-be-gk-B2.2f",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A51",
+   "hauptnummer": 51,
+   "teilaufgabe": "a",
+   "id": "funktionsklassen-und-eigenschaften-e2-k1-s0-v1",
+   "datei": "funktionsklassen-und-eigenschaften_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A51",
+   "hauptnummer": 51,
+   "teilaufgabe": "b",
+   "id": "funktionsklassen-und-eigenschaften-e2-k1-s1-v1",
+   "datei": "funktionsklassen-und-eigenschaften_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A51",
+   "hauptnummer": 51,
+   "teilaufgabe": "c",
+   "id": "funktionsklassen-und-eigenschaften-e2-k1-s2-v1",
+   "datei": "funktionsklassen-und-eigenschaften_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A52",
+   "hauptnummer": 52,
+   "teilaufgabe": "a",
+   "id": "funktionsklassen-und-eigenschaften-e2-k1-s9-v3",
+   "datei": "funktionsklassen-und-eigenschaften_a.tex",
+   "lage": "pruefung",
+   "original": "2023-bebb-gk-B2.2a",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A52",
+   "hauptnummer": 52,
+   "teilaufgabe": "b",
+   "id": "funktionsklassen-und-eigenschaften-e2-k1-s9-v4",
+   "datei": "funktionsklassen-und-eigenschaften_a.tex",
+   "lage": "pruefung",
+   "original": "2023-bebb-gk-B2.2a",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A53",
+   "hauptnummer": 53,
+   "teilaufgabe": "a",
+   "id": "funktionsklassen-und-eigenschaften-e6-k1-s0-v1",
+   "datei": "funktionsklassen-und-eigenschaften_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A53",
+   "hauptnummer": 53,
+   "teilaufgabe": "b",
+   "id": "funktionsklassen-und-eigenschaften-e6-k1-s1-v1",
+   "datei": "funktionsklassen-und-eigenschaften_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A53",
+   "hauptnummer": 53,
+   "teilaufgabe": "c",
+   "id": "funktionsklassen-und-eigenschaften-e6-k1-s7-v1",
+   "datei": "funktionsklassen-und-eigenschaften_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A54",
+   "hauptnummer": 54,
+   "teilaufgabe": "a",
+   "id": "funktionsklassen-und-eigenschaften-e6-k1-s10-v3",
+   "datei": "funktionsklassen-und-eigenschaften_a.tex",
+   "lage": "pruefung",
+   "original": "2026MgrundlegendAAnalysis12-a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A54",
+   "hauptnummer": 54,
+   "teilaufgabe": "b",
+   "id": "funktionsklassen-und-eigenschaften-e6-k1-s10-v4",
+   "datei": "funktionsklassen-und-eigenschaften_a.tex",
+   "lage": "pruefung",
+   "original": "2026MgrundlegendAAnalysis12-a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A54",
+   "hauptnummer": 54,
+   "teilaufgabe": "c",
+   "id": "funktionsklassen-und-eigenschaften-e6-k1-s10-v5",
+   "datei": "funktionsklassen-und-eigenschaften_a.tex",
+   "lage": "pruefung",
+   "original": "2023MgrundlegendAAnalysis13-b",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A54",
+   "hauptnummer": 54,
+   "teilaufgabe": "d",
+   "id": "funktionsklassen-und-eigenschaften-e6-k1-s10-v6",
+   "datei": "funktionsklassen-und-eigenschaften_a.tex",
+   "lage": "pruefung",
+   "original": "2023MgrundlegendAAnalysis13-b",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A55",
+   "hauptnummer": 55,
+   "teilaufgabe": "a",
+   "id": "grenzwerte-und-verhalten-im-unendlichen-e1-k2-s0-v1",
+   "datei": "grenzwerte-und-verhalten-im-unendlichen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A55",
+   "hauptnummer": 55,
+   "teilaufgabe": "b",
+   "id": "grenzwerte-und-verhalten-im-unendlichen-e1-k2-s1-v1",
+   "datei": "grenzwerte-und-verhalten-im-unendlichen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A56",
+   "hauptnummer": 56,
+   "teilaufgabe": "a",
+   "id": "grenzwerte-und-verhalten-im-unendlichen-e1-k2-s2-v3",
+   "datei": "grenzwerte-und-verhalten-im-unendlichen_a.tex",
+   "lage": "pruefung",
+   "original": "2022-bebb-gk-B2.2a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A56",
+   "hauptnummer": 56,
+   "teilaufgabe": "b",
+   "id": "grenzwerte-und-verhalten-im-unendlichen-e1-k2-s4-v1",
+   "datei": "grenzwerte-und-verhalten-im-unendlichen_a.tex",
+   "lage": "pruefung",
+   "original": "2026-bb-gk-B2.1a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A56",
+   "hauptnummer": 56,
+   "teilaufgabe": "c",
+   "id": "grenzwerte-und-verhalten-im-unendlichen-e1-k2-s4-v2",
+   "datei": "grenzwerte-und-verhalten-im-unendlichen_a.tex",
+   "lage": "pruefung",
+   "original": "2026-bb-gk-B2.1a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A56",
+   "hauptnummer": 56,
+   "teilaufgabe": "d",
+   "id": "grenzwerte-und-verhalten-im-unendlichen-e1-k2-s4-v3",
+   "datei": "grenzwerte-und-verhalten-im-unendlichen_a.tex",
+   "lage": "pruefung",
+   "original": "2026-bb-gk-B2.1a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A57",
+   "hauptnummer": 57,
+   "teilaufgabe": "a",
+   "id": "grenzwerte-und-verhalten-im-unendlichen-e2-k1-s0-v1",
+   "datei": "grenzwerte-und-verhalten-im-unendlichen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A57",
+   "hauptnummer": 57,
+   "teilaufgabe": "b",
+   "id": "grenzwerte-und-verhalten-im-unendlichen-e2-k1-s1-v1",
+   "datei": "grenzwerte-und-verhalten-im-unendlichen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A58",
+   "hauptnummer": 58,
+   "teilaufgabe": "a",
+   "id": "grenzwerte-und-verhalten-im-unendlichen-e2-k1-s2-v1",
+   "datei": "grenzwerte-und-verhalten-im-unendlichen_a.tex",
+   "lage": "pruefung",
+   "original": "2025-bebb-gk-B2.2a",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A58",
+   "hauptnummer": 58,
+   "teilaufgabe": "b",
+   "id": "grenzwerte-und-verhalten-im-unendlichen-e2-k1-s2-v2",
+   "datei": "grenzwerte-und-verhalten-im-unendlichen_a.tex",
+   "lage": "pruefung",
+   "original": "2025MgrundlegendBAnalysisWTR2-1a",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A58",
+   "hauptnummer": 58,
+   "teilaufgabe": "c",
+   "id": "grenzwerte-und-verhalten-im-unendlichen-e2-k1-s2-v3",
+   "datei": "grenzwerte-und-verhalten-im-unendlichen_a.tex",
+   "lage": "pruefung",
+   "original": "2025-bebb-gk-B2.2a",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A58",
+   "hauptnummer": 58,
+   "teilaufgabe": "d",
+   "id": "grenzwerte-und-verhalten-im-unendlichen-e2-k1-s3-v1",
+   "datei": "grenzwerte-und-verhalten-im-unendlichen_a.tex",
+   "lage": "pruefung",
+   "original": "2022-bebb-gk-B2.1b",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A58",
+   "hauptnummer": 58,
+   "teilaufgabe": "e",
+   "id": "grenzwerte-und-verhalten-im-unendlichen-e2-k1-s3-v2",
+   "datei": "grenzwerte-und-verhalten-im-unendlichen_a.tex",
+   "lage": "pruefung",
+   "original": "2018-be-gk-B1.2a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A58",
+   "hauptnummer": 58,
+   "teilaufgabe": "f",
+   "id": "grenzwerte-und-verhalten-im-unendlichen-e2-k1-s3-v3",
+   "datei": "grenzwerte-und-verhalten-im-unendlichen_a.tex",
+   "lage": "pruefung",
+   "original": "2022MgrundlegendBAnalysisWTR2-1b",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A58",
+   "hauptnummer": 58,
+   "teilaufgabe": "g",
+   "id": "grenzwerte-und-verhalten-im-unendlichen-e2-k1-s4-v1",
+   "datei": "grenzwerte-und-verhalten-im-unendlichen_a.tex",
+   "lage": "pruefung",
+   "original": "2023-bebb-gk-B2.1a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A58",
+   "hauptnummer": 58,
+   "teilaufgabe": "h",
+   "id": "grenzwerte-und-verhalten-im-unendlichen-e2-k1-s4-v2",
+   "datei": "grenzwerte-und-verhalten-im-unendlichen_a.tex",
+   "lage": "pruefung",
+   "original": "2021-be-gk-B2.2b",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A58",
+   "hauptnummer": 58,
+   "teilaufgabe": "i",
+   "id": "grenzwerte-und-verhalten-im-unendlichen-e2-k1-s4-v3",
+   "datei": "grenzwerte-und-verhalten-im-unendlichen_a.tex",
+   "lage": "pruefung",
+   "original": "2020MgrundlegendBAnalysisWTR2-1b",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A58",
+   "hauptnummer": 58,
+   "teilaufgabe": "j",
+   "id": "grenzwerte-und-verhalten-im-unendlichen-e2-k1-s5-v1",
+   "datei": "grenzwerte-und-verhalten-im-unendlichen_a.tex",
+   "lage": "pruefung",
+   "original": "2019-be-gk-B2.2a",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A58",
+   "hauptnummer": 58,
+   "teilaufgabe": "k",
+   "id": "grenzwerte-und-verhalten-im-unendlichen-e2-k1-s5-v2",
+   "datei": "grenzwerte-und-verhalten-im-unendlichen_a.tex",
+   "lage": "pruefung",
+   "original": "2019-be-gk-B2.2a",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A58",
+   "hauptnummer": 58,
+   "teilaufgabe": "l",
+   "id": "grenzwerte-und-verhalten-im-unendlichen-e2-k1-s5-v3",
+   "datei": "grenzwerte-und-verhalten-im-unendlichen_a.tex",
+   "lage": "pruefung",
+   "original": "2019-be-gk-B2.2a",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A59",
+   "hauptnummer": 59,
+   "teilaufgabe": "a",
+   "id": "grenzwerte-und-verhalten-im-unendlichen-e2-k1-s6-v1",
+   "datei": "grenzwerte-und-verhalten-im-unendlichen_a.tex",
+   "lage": "pruefung",
+   "original": "2025-bebb-gk-B2.2a",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A59",
+   "hauptnummer": 59,
+   "teilaufgabe": "b",
+   "id": "grenzwerte-und-verhalten-im-unendlichen-e2-k1-s6-v2",
+   "datei": "grenzwerte-und-verhalten-im-unendlichen_a.tex",
+   "lage": "pruefung",
+   "original": "2025-bebb-gk-B2.2a",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A59",
+   "hauptnummer": 59,
+   "teilaufgabe": "c",
+   "id": "grenzwerte-und-verhalten-im-unendlichen-e2-k1-s6-v3",
+   "datei": "grenzwerte-und-verhalten-im-unendlichen_a.tex",
+   "lage": "pruefung",
+   "original": "2018-be-gk-B1.2a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A60",
+   "hauptnummer": 60,
+   "teilaufgabe": "a",
+   "id": "extremalprobleme-e1-k1-s0-v1",
+   "datei": "extremalprobleme_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A60",
+   "hauptnummer": 60,
+   "teilaufgabe": "b",
+   "id": "extremalprobleme-e1-k1-s1-v1",
+   "datei": "extremalprobleme_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A61",
+   "hauptnummer": 61,
+   "teilaufgabe": "a",
+   "id": "extremalprobleme-e1-k1-s2-v3",
+   "datei": "extremalprobleme_a.tex",
+   "lage": "pruefung",
+   "original": "2019MgrundlegendBAnalysisWTR2-1f",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A61",
+   "hauptnummer": 61,
+   "teilaufgabe": "b",
+   "id": "extremalprobleme-e1-k1-s4-v1",
+   "datei": "extremalprobleme_a.tex",
+   "lage": "pruefung",
+   "original": "2019MgrundlegendBAnalysisWTR2-1h",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A61",
+   "hauptnummer": 61,
+   "teilaufgabe": "c",
+   "id": "extremalprobleme-e1-k1-s4-v2",
+   "datei": "extremalprobleme_a.tex",
+   "lage": "pruefung",
+   "original": "2019MgrundlegendBAnalysisWTR2-1h",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A61",
+   "hauptnummer": 61,
+   "teilaufgabe": "d",
+   "id": "extremalprobleme-e1-k1-s4-v3",
+   "datei": "extremalprobleme_a.tex",
+   "lage": "pruefung",
+   "original": "2019MgrundlegendBAnalysisWTR2-1h",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A62",
+   "hauptnummer": 62,
+   "teilaufgabe": "a",
+   "id": "extremalprobleme-e2-k1-s0-v1",
+   "datei": "extremalprobleme_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A62",
+   "hauptnummer": 62,
+   "teilaufgabe": "b",
+   "id": "extremalprobleme-e2-k1-s1-v1",
+   "datei": "extremalprobleme_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A62",
+   "hauptnummer": 62,
+   "teilaufgabe": "c",
+   "id": "extremalprobleme-e2-k1-s4-v1",
+   "datei": "extremalprobleme_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A63",
+   "hauptnummer": 63,
+   "teilaufgabe": "a",
+   "id": "extremalprobleme-e2-k1-s5-v1",
+   "datei": "extremalprobleme_a.tex",
+   "lage": "pruefung",
+   "original": "2022-bebb-gk-B2.1h",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A63",
+   "hauptnummer": 63,
+   "teilaufgabe": "b",
+   "id": "extremalprobleme-e2-k1-s5-v2",
+   "datei": "extremalprobleme_a.tex",
+   "lage": "pruefung",
+   "original": "2022-bebb-gk-B2.1h",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A63",
+   "hauptnummer": 63,
+   "teilaufgabe": "c",
+   "id": "extremalprobleme-e2-k1-s5-v3",
+   "datei": "extremalprobleme_a.tex",
+   "lage": "pruefung",
+   "original": "2022-bebb-gk-B2.1h",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A64",
+   "hauptnummer": 64,
+   "teilaufgabe": "a",
+   "id": "extremalprobleme-e3-k1-s0-v1",
+   "datei": "extremalprobleme_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A64",
+   "hauptnummer": 64,
+   "teilaufgabe": "b",
+   "id": "extremalprobleme-e3-k1-s1-v1",
+   "datei": "extremalprobleme_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A64",
+   "hauptnummer": 64,
+   "teilaufgabe": "c",
+   "id": "extremalprobleme-e3-k1-s2-v1",
+   "datei": "extremalprobleme_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A65",
+   "hauptnummer": 65,
+   "teilaufgabe": "a",
+   "id": "extremalprobleme-e3-k1-s4-v1",
+   "datei": "extremalprobleme_a.tex",
+   "lage": "pruefung",
+   "original": "2022-bebb-gk-B2.1h",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A65",
+   "hauptnummer": 65,
+   "teilaufgabe": "b",
+   "id": "extremalprobleme-e3-k1-s4-v2",
+   "datei": "extremalprobleme_a.tex",
+   "lage": "pruefung",
+   "original": "2022-bebb-gk-B2.1h",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A65",
+   "hauptnummer": 65,
+   "teilaufgabe": "c",
+   "id": "extremalprobleme-e3-k1-s4-v3",
+   "datei": "extremalprobleme_a.tex",
+   "lage": "pruefung",
+   "original": "2022-bebb-gk-B2.1h",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A65",
+   "hauptnummer": 65,
+   "teilaufgabe": "d",
+   "id": "extremalprobleme-e3-k1-s5-v1",
+   "datei": "extremalprobleme_a.tex",
+   "lage": "pruefung",
+   "original": "2018-be-gk-B1.1g",
+   "punkte": "6",
+   "stern": false
+  },
+  {
+   "aufgabe": "A65",
+   "hauptnummer": 65,
+   "teilaufgabe": "e",
+   "id": "extremalprobleme-e3-k1-s5-v2",
+   "datei": "extremalprobleme_a.tex",
+   "lage": "pruefung",
+   "original": "2021-be-gk-B2.2i",
+   "punkte": "7",
+   "stern": false
+  },
+  {
+   "aufgabe": "A65",
+   "hauptnummer": 65,
+   "teilaufgabe": "f",
+   "id": "extremalprobleme-e3-k1-s5-v3",
+   "datei": "extremalprobleme_a.tex",
+   "lage": "pruefung",
+   "original": "2024-bebb-gk-B2.2g",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A65",
+   "hauptnummer": 65,
+   "teilaufgabe": "g",
+   "id": "extremalprobleme-e3-k1-s6-v1",
+   "datei": "extremalprobleme_a.tex",
+   "lage": "pruefung",
+   "original": "2019MgrundlegendBAnalysisWTR2-1i",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A65",
+   "hauptnummer": 65,
+   "teilaufgabe": "h",
+   "id": "extremalprobleme-e3-k1-s6-v2",
+   "datei": "extremalprobleme_a.tex",
+   "lage": "pruefung",
+   "original": "2019MgrundlegendBAnalysisWTR2-1i",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A65",
+   "hauptnummer": 65,
+   "teilaufgabe": "i",
+   "id": "extremalprobleme-e3-k1-s6-v3",
+   "datei": "extremalprobleme_a.tex",
+   "lage": "pruefung",
+   "original": "2019MgrundlegendBAnalysisWTR2-1i",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A65",
+   "hauptnummer": 65,
+   "teilaufgabe": "j",
+   "id": "extremalprobleme-e3-k1-s7-v1",
+   "datei": "extremalprobleme_a.tex",
+   "lage": "pruefung",
+   "original": "2021-be-gk-A1.3b",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A65",
+   "hauptnummer": 65,
+   "teilaufgabe": "k",
+   "id": "extremalprobleme-e3-k1-s7-v2",
+   "datei": "extremalprobleme_a.tex",
+   "lage": "pruefung",
+   "original": "2021-be-gk-A1.3b",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A65",
+   "hauptnummer": 65,
+   "teilaufgabe": "l",
+   "id": "extremalprobleme-e3-k1-s7-v3",
+   "datei": "extremalprobleme_a.tex",
+   "lage": "pruefung",
+   "original": "2021-be-gk-A1.3b",
+   "punkte": "3",
+   "stern": false
+  }
+ ]
+}

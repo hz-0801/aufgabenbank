@@ -1,0 +1,170 @@
+% Binomialverteilung – bank/binomialverteilung/ (zusammenbau v0.4, Heft)
+\einheitenkopf[t7]{Binomialverteilung}
+\setcounter{aufgabe}{42}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Modell erkennen – Anlauf}
+\begin{teile}
+\teil Eine Münze wird 20-mal geworfen; gezählt wird, wie oft Wappen fällt. Bernoulli-Kette oder nicht? Nenne bei „nein“ die verletzte Bedingung. \kreuz{Bernoulli-Kette} \\ \kreuz{keine Bernoulli-Kette}
+\teil Eine Münze wird einmal geworfen; Treffer ist „Wappen“. Mit welcher Wahrscheinlichkeit tritt der Treffer ein? p = \leerfeld
+\teil Ein Glücksrad hat 5 gleich große Felder, 2 davon sind blau. Es wird 12-mal gedreht; X ist die Anzahl der Drehungen mit Blau. Gib die Anzahl der Versuche n und die Trefferwahrscheinlichkeit p an und schreibe die Verteilung von X kurz. X ~ B( \leerfeld ; \leerfeld )
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Modell erkennen – Prüfungsaufgaben}
+\begin{teile}
+\teil In einem Briefzentrum kommen 4\,\% der Briefe beschädigt an. 150 Briefe aus der Tagespost werden zufällig ausgewählt; untersucht wird die Anzahl der beschädigten. Begründe, dass die Binomialverteilung verwendet werden kann \hfill (Abitur 2022 GK).
+\teil In einer Stadt nutzen 35\,\% der Pendler das Fahrrad. Für eine Umfrage werden 80 Pendler zufällig ausgewählt; gezählt wird, wie viele mit dem Fahrrad fahren. Begründe, dass die Binomialverteilung verwendet werden kann \hfill (Abitur 2022 GK).
+\teil Von 30 geprüften Laptops sind 5 defekt. Nacheinander werden 8 Laptops zufällig ausgewählt, ohne sie zurückzulegen. Beurteile, ob die Anzahl der defekten Laptops unter den ausgewählten binomialverteilt ist \hfill (Abitur 2018 GK).
+\teil Ein Verein hat 25 Mitglieder, 10 davon spielen Schach. Für einen Ausflug werden 6 Mitglieder ausgelost. Beurteile, ob die Anzahl der Schachspieler unter den Ausgelosten binomialverteilt ist \hfill (Abitur 2018 GK).
+\teil Ein Glücksrad hat zehn gleich große Felder, sieben mit „A“ und drei mit „B“. Je Spiel wird zweimal gedreht: „BB“ bringt den Hauptpreis, „AA“ einen Trostpreis. Beurteile die Aussagen (1) „Eine Drehung, bei der nur der Buchstabe betrachtet wird, ist ein Bernoulli-Experiment.“ und (2) „Werden mehrere Spiele gespielt und jeweils festgehalten, ob Trost- oder Hauptpreis vergeben wird, liegt eine Bernoulli-Kette vor.“ \hfill (Abitur 2018 GK).
+\teil Lea wirft je Runde zweimal auf einen Korb und trifft jeden Wurf mit derselben Wahrscheinlichkeit. Zwei Körbe bringen einen Gutschein, kein Korb einen Trostpreis. Beurteile die Aussagen (1) „Ein einzelner Wurf, bei dem nur Korb oder kein Korb zählt, ist ein Bernoulli-Experiment.“ und (2) „Werden mehrere Runden gespielt und jeweils festgehalten, ob Gutschein oder Trostpreis vergeben wird, liegt eine Bernoulli-Kette vor.“ \hfill (Abitur 2018 GK).
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Bernoulli-Formel – Anlauf}
+\begin{teile}
+\teil Ein Glücksrad wird 10-mal gedreht; X ist die Anzahl der Drehungen mit Rot. „Genau viermal Rot“ – welcher Ansatz passt? \kreuz{$P(X = 4)$} \\ \kreuz{$P(X \le 4)$} \\ \kreuz{$1 - P(X \le 3)$}
+\teil Ein Glücksrad bleibt mit der Wahrscheinlichkeit $0{,}35$ auf Gold stehen und wird 6-mal gedreht; X ist die Anzahl der Drehungen mit Gold. Gib den Term für $P(X = 2)$ an und berechne ihn.
+\teil Ein Würfel wird 4-mal geworfen. Mit welcher Wahrscheinlichkeit fällt keine Sechs? Runde auf vier Stellen. \leerfeld
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Bernoulli-Formel – Prüfungsaufgaben}
+\begin{teile}
+\teil Ein Versandhändler weiß, dass 8\,\% seiner Pakete zu spät ankommen. 30 Pakete werden zufällig ausgewählt. Mit welcher Wahrscheinlichkeit kommt keines davon zu spät an? Runde auf vier Stellen \hfill (Abitur 2017 GK). \leerfeld
+\teil Ein Saatgut keimt mit der Wahrscheinlichkeit $0{,}9$. 12 Körner werden gesät. Mit welcher Wahrscheinlichkeit keimen alle? Runde auf vier Stellen \hfill (Abitur 2017 GK). \leerfeld
+\teil Ein Würfel wird viermal geworfen. Gib einen Term an, mit dem man die Wahrscheinlichkeit für „höchstens eine Sechs“ berechnen kann \hfill (Abitur 2026 GK).
+\teil Eine Münze wird sechsmal geworfen. Gib einen Term an, mit dem man die Wahrscheinlichkeit für „höchstens einmal Zahl“ berechnen kann \hfill (Abitur 2026 GK).
+\teil X ist binomialverteilt mit der Trefferwahrscheinlichkeit $\frac{2}{5}$. Vervollständige: $P(X = \square) = (\square \text{ über } 4) \cdot (\square)^3 \cdot \left(\frac{2}{5}\right)^4$ \hfill (Abitur 2021 GK).
+\teil X ist binomialverteilt mit der Trefferwahrscheinlichkeit $0{,}15$. Vervollständige: $P(X = \square) = (\square \text{ über } 2) \cdot 0{,}85^6 \cdot (\square)^2$ \hfill (Abitur 2021 GK).
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Bernoulli-Formel – Prüfungsaufgaben – weiter}
+\begin{teile}
+\teil 12\,\% der Autos auf einem Parkplatz sind Elektroautos. 50 Autos werden zufällig ausgewählt; X ist die Anzahl der Elektroautos. Die Tabelle zeigt Werte der summierten Binomialverteilung. Lies ab und berechne die Wahrscheinlichkeiten für genau 6 Elektroautos und für weniger als 6 Elektroautos \hfill (Abitur 2022 GK).
+
+\sachtabelle{lcccc}{$k$ & 4 & 5 & 6 & 7}{$P(X \le k)$ & 0{,}2680 & 0{,}4353 & 0{,}6065 & 0{,}7533}
+\teil 15\,\% der Briefe eines Postamts sind Einschreiben. 80 Briefe werden zufällig ausgewählt; X ist die Anzahl der Einschreiben. Die Tabelle zeigt Werte der summierten Binomialverteilung. Lies ab und berechne die Wahrscheinlichkeiten für genau 11 Einschreiben und für weniger als 11 Einschreiben \hfill (Abitur 2022 GK).
+
+\sachtabelle{lcccc}{$k$ & 9 & 10 & 11 & 12}{$P(X \le k)$ & 0{,}2211 & 0{,}3300 & 0{,}4522 & 0{,}5762}
+\teil 85\,\% der Haushalte einer Region haben einen Internetanschluss. 60 Haushalte werden zufällig ausgewählt; X ist die Anzahl mit Anschluss, Y die Anzahl ohne Anschluss. Berechne die Wahrscheinlichkeit, dass genau 51 einen Anschluss haben, mit der Bernoulli-Formel. Die Tabelle zeigt die summierte Binomialverteilung für Y (Trefferwahrscheinlichkeit $0{,}15$); bestimme damit die Wahrscheinlichkeit für höchstens 48 Haushalte mit Anschluss \hfill (Abitur 2019 GK).
+
+\sachtabelle{lcccc}{$k$ & 10 & 11 & 12 & 13}{$P(Y \le k)$ & 0{,}7163 & 0{,}8194 & 0{,}8938 & 0{,}9422}
+\teil 90\,\% der Teilnehmer eines Kurses bestehen die Abschlussprüfung. 40 Teilnehmer werden zufällig ausgewählt; X ist die Anzahl der Bestehenden, Y die Anzahl der Nicht-Bestehenden. Berechne die Wahrscheinlichkeit, dass genau 36 bestehen, mit der Bernoulli-Formel. Die Tabelle zeigt die summierte Binomialverteilung für Y (Trefferwahrscheinlichkeit $0{,}1$); bestimme damit die Wahrscheinlichkeit für höchstens 33 Bestehende \hfill (Abitur 2019 GK).
+
+\sachtabelle{lcccc}{$k$ & 5 & 6 & 7 & 8}{$P(Y \le k)$ & 0{,}7937 & 0{,}9005 & 0{,}9581 & 0{,}9845}
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Kumulierte Wahrscheinlichkeiten – Anlauf}
+\begin{teile}
+\teil Ein Würfel wird 20-mal geworfen; X ist die Anzahl der Sechsen. „Weniger als fünf Sechsen“ – welcher Ansatz passt? \kreuz{$P(X \le 4)$} \\ \kreuz{$P(X \le 5)$} \\ \kreuz{$1 - P(X \le 4)$}
+\teil 30 Würfe; X ist die Anzahl der Treffer. Übersetze „höchstens 6 Treffer“ in einen Ansatz mit $P(X \le \ldots)$.
+\teil 35\,\% der Schüler einer Schule kommen mit dem Bus. 25 Schüler werden zufällig ausgewählt. Höchstens 7 Busfahrer – mit welcher Wahrscheinlichkeit? Runde auf vier Stellen. \leerfeld
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Kumulierte Wahrscheinlichkeiten – Prüfungsaufgaben}
+\begin{teile}
+\teil Im Mittel ist eine von acht Glühbirnen einer Sorte defekt; die Anzahl X der defekten unter zufällig ausgewählten gilt als binomialverteilt. 60 Birnen werden ausgewählt. A: höchstens 6 sind defekt. B: mehr als 8 und weniger als 12 sind defekt. Berechne P(A) und P(B) \hfill (Abitur 2018 GK).
+\teil Etwa jeder sechste Besucher eines Theaters kauft ein Programmheft; die Anzahl X der Käufer gilt als binomialverteilt. 90 Besucher kommen. A: höchstens 12 kaufen ein Heft. B: mehr als 14 und weniger als 20 kaufen ein Heft. Berechne P(A) und P(B) \hfill (Abitur 2018 GK).
+\teil 35\,\% der Mitarbeiter einer Firma arbeiten im Homeoffice, die übrigen im Büro. 60 Mitarbeiter werden zufällig ausgewählt; H ist die Anzahl im Homeoffice. Mit welcher Wahrscheinlichkeit ist die Anzahl im Büro mindestens doppelt so groß wie die im Homeoffice? \hfill (Abitur 2023 GK) \\ \leerfeld
+\teil 45\,\% der Gäste einer Kantine trinken Kaffee, die übrigen Tee. 40 Gäste werden zufällig ausgewählt; X ist die Anzahl der Kaffeetrinker. Mit welcher Wahrscheinlichkeit gibt es mindestens anderthalbmal so viele Kaffee- wie Teetrinker? \hfill (Abitur 2023 GK) \\ \leerfeld
+\teil 92\,\% der Werkstücke einer Fertigung sind in Ordnung. Ein Prüfgerät stuft ein einwandfreies Werkstück mit der Wahrscheinlichkeit $0{,}97$ als in Ordnung ein, ein fehlerhaftes mit $0{,}1$. Formuliere eine Aussage im Sachzusammenhang, die sich aus der Gleichung $0{,}92 \cdot 0{,}97 + 0{,}08 \cdot 0{,}1 = 0{,}9004$ und der Ungleichung $\Sigma_{k=45}^{50}\, (50 \text{ über } k) \cdot 0{,}9004^k \cdot 0{,}0996^{50-k} > 0{,}6$ ergibt \hfill (Abitur 2024 GK).
+\teil 95\,\% der Pakete eines Lagers sind richtig etikettiert. Ein Scanner erkennt ein richtig etikettiertes Paket mit der Wahrscheinlichkeit $0{,}98$ als lesbar, ein falsch etikettiertes mit $0{,}2$. Formuliere eine Aussage im Sachzusammenhang, die sich aus der Gleichung $0{,}95 \cdot 0{,}98 + 0{,}05 \cdot 0{,}2 = 0{,}941$ und der Ungleichung $\Sigma_{k=28}^{30}\, (30 \text{ über } k) \cdot 0{,}941^k \cdot 0{,}059^{30-k} > 0{,}7$ ergibt \hfill (Abitur 2024 GK).
+\teil Ein Glücksrad bleibt mit der Wahrscheinlichkeit $0{,}15$ auf Gold stehen. Formuliere eine Aufgabenstellung, die sich mit dem Ansatz $1 - 0{,}85^n < 0{,}5$ lösen lässt \hfill (Abitur 2020 GK).
+\teil 12\,\% der Lose einer Tombola gewinnen. Formuliere eine Aufgabenstellung, die sich mit dem Ansatz $1 - 0{,}88^n \ge 0{,}9$ lösen lässt \hfill (Abitur 2020 GK).
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Bedingte Restwahrscheinlichkeit nach bekannten Ergebnissen über die Binomialverteilung berechnen – Anlauf}
+\begin{teile}
+\teil Ein Basketballer trifft 70\,\% seiner Würfe und wirft im Training 50-mal. Nach 20 Würfen hat er 12 Treffer. Mit welcher Wahrscheinlichkeit kommt er insgesamt auf mindestens 35 Treffer? Runde auf vier Stellen. \leerfeld
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Bedingte Restwahrscheinlichkeit nach bekannten Ergebnissen über die Binomialverteilung berechnen – Prüfungsaufgaben}
+\begin{teile}
+\teil Eine Münze wird 400-mal geworfen. Nach den ersten 100 Würfen ist 58-mal Zahl gefallen. Mit welcher Wahrscheinlichkeit fällt bei höchstens 52\,\% aller 400 Würfe Zahl? \hfill (Abitur 2023 GK) \\ \leerfeld
+\teil Ein Würfel wird 1\,200-mal geworfen. Nach den ersten 300 Würfen gab es 45 Sechsen. Mit welcher Wahrscheinlichkeit ist bei höchstens 16\,\% aller 1\,200 Würfe eine Sechs gefallen? \hfill (Abitur 2023 GK) \\ \leerfeld
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Umkehraufgaben – Anlauf}
+\begin{teile}
+\teil 15\,\% der Lose gewinnen. Wie viele Lose muss man mindestens kaufen, damit mit mindestens 90\,\% Wahrscheinlichkeit mindestens ein Gewinn dabei ist? Was ist gesucht, welcher Weg passt? \kreuz{eine Wahrscheinlichkeit} \\ \kreuz{n über den Logarithmus} \\ \kreuz{p über die Wurzel} \\ \kreuz{Probieren mit Nachbarwerten}
+\teil 15\,\% der Lose einer Tombola gewinnen. Stelle den Ansatz auf: Wie viele Lose muss man kaufen, damit mit mindestens 90\,\% Wahrscheinlichkeit mindestens ein Gewinn dabei ist?
+\teil 8\,\% der Gläser einer Lieferung haben einen Fehler. Wie viele Gläser muss man mindestens entnehmen, damit mit mindestens 95\,\% Wahrscheinlichkeit mindestens drei fehlerfreie dabei sind? n = \leerfeld
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Umkehraufgaben – Prüfungsaufgaben}
+\begin{teile}
+\teil Die Wahrscheinlichkeit, dass unter 30 zufällig ausgewählten Flaschen einer Abfüllanlage keine undicht ist, soll mindestens 20\,\% betragen. Wie groß darf der Anteil undichter Flaschen höchstens sein? \hfill (Abitur 2018 GK) \\ \leerfeld
+\teil Die Wahrscheinlichkeit, dass unter 40 zufällig ausgewählten Paketen keines beschädigt ankommt, soll mindestens 50\,\% betragen. Wie groß darf der Anteil beschädigter Pakete höchstens sein? \hfill (Abitur 2018 GK) \\ \leerfeld
+\teil 75\,\% der Erwachsenen einer Stadt besitzen ein Fahrrad. Wie viele Erwachsene muss man mindestens auswählen, damit mit mindestens 90\,\% Wahrscheinlichkeit mehr als 120 davon ein Fahrrad besitzen? \hfill (Abitur 2019 GK) \\ n = \leerfeld
+\teil 40\,\% der Gäste eines Festivals reisen mit dem Zug an. Wie viele Gäste muss man mindestens befragen, damit mit mindestens 95\,\% Wahrscheinlichkeit mehr als 30 davon mit dem Zug gekommen sind? \hfill (Abitur 2019 GK) \\ n = \leerfeld
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Trefferzahlen mit einer Einzelwahrscheinlichkeit über einer Schranke mit dem Rechner ermitteln – Anlauf}
+\begin{teile}
+\teil X ist binomialverteilt mit 60 Versuchen und der Trefferwahrscheinlichkeit $0{,}45$. Für welche Trefferzahlen ist die Einzelwahrscheinlichkeit größer als 10\,\%?
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Trefferzahlen mit einer Einzelwahrscheinlichkeit über einer Schranke mit dem Rechner ermitteln – Prüfungsaufgaben}
+\begin{teile}
+\teil Ein Glücksrad bringt bei jeder Runde mit der Wahrscheinlichkeit $\frac{1}{3}$ einen Gewinn. Es werden 40 Runden gespielt; Y ist die Anzahl der Gewinnrunden. Jemand behauptet, für genau fünf Werte i sei $P(Y = i)$ größer als 10\,\%. Prüfe die Behauptung \hfill (Abitur 2017 GK).
+\teil 20\,\% der Gäste eines Kinos kaufen Popcorn. 25 Gäste werden betrachtet; Y ist die Anzahl der Popcornkäufer. Jemand behauptet, für genau vier Werte i sei $P(Y = i)$ größer als 15\,\%. Prüfe die Behauptung \hfill (Abitur 2017 GK).
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Verteilung im Diagramm – Anlauf}
+\begin{teile}
+\teil Ein Elfmeterschütze trifft mit 80\,\%. Zu 10 Schüssen gehört der Term $(10 \text{ über } 3) \cdot 0{,}2^3 \cdot 0{,}8^7$. Was wird mit der 3 gezählt? \kreuz{Tore} \\ \kreuz{Fehlschüsse}
+% AUSGELASSEN binomialverteilung-e5-k1-s1-v1: Extra }, or forgotten $.
+% \teil Das Säulendiagramm zeigt die Verteilung der Anzahl X der Treffer (Werte gerundet). Lies $P(X = 2)$ ab.
+% 
+% \saeulenab[ymax=35,ystep=5,yfein=1,ylabel=$P(X = k)$ in \%]{0/8,1/24,2/33,3/24,4/10,5/2,6/0}
+% \leerfeld
+\teil \textit{(ausgelassen)}
+\teil Ein Säulendiagramm der Binomialverteilung mit 16 Versuchen und der Trefferwahrscheinlichkeit $0{,}25$ hat noch keine Achsenwerte. Gib für die höchste Säule die Stelle auf der Rechtsachse und die Höhe auf der Hochachse an.
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Verteilung im Diagramm – Prüfungsaufgaben}
+\begin{teile}
+\teil 15\,\% der Äpfel einer Plantage haben Druckstellen. 90 Äpfel werden zufällig ausgewählt; X ist die Anzahl mit Druckstellen. Welche Anzahl tritt mit der größten Wahrscheinlichkeit auf? \hfill (Abitur 2017 GK) \\ \leerfeld
+\teil 35\,\% der Kunden eines Baumarkts zahlen mit Karte. 70 Kunden werden zufällig ausgewählt; X ist die Anzahl der Kartenzahler. Welche Anzahl tritt mit der größten Wahrscheinlichkeit auf? \hfill (Abitur 2017 GK) \\ \leerfeld
+\teil X ist binomialverteilt mit 10 Versuchen und der Trefferwahrscheinlichkeit $0{,}3$. Genau eine der drei Abbildungen zeigt die Verteilung von X (Werte in Prozent). Entscheide begründet, welche \hfill (Abitur 2023 GK).
+
+\textbf{Abb. 1} \saeulenab[ymax=50,ystep=10,yfein=2,ylabel=\%]{0/0,1/1,2/4,3/12,4/21,5/25,6/21,7/12,8/4,9/1,10/0} \quad \textbf{Abb. 2} \saeulenab[ymax=50,ystep=10,yfein=2,ylabel=\%]{0/3,1/12,2/23,3/27,4/20,5/10,6/4,7/1,8/0,9/0,10/0} \quad \textbf{Abb. 3} \saeulenab[ymax=50,ystep=10,yfein=2,ylabel=\%]{0/5,1/22,2/41,3/49,4/36,5/18,6/7,7/2,8/0,9/0,10/0}
+\teil X ist binomialverteilt mit 12 Versuchen und der Trefferwahrscheinlichkeit $0{,}75$. Genau eine der drei Abbildungen zeigt die Verteilung von X (Werte in Prozent). Entscheide begründet, welche \hfill (Abitur 2023 GK).
+
+\textbf{Abb. 1} \saeulenab[ymax=50,ystep=10,yfein=2,ylabel=\%]{0/0,1/0,2/0,3/0,4/0,5/2,6/7,7/17,8/32,9/44,10/39,11/22,12/5} \quad \textbf{Abb. 2} \saeulenab[ymax=50,ystep=10,yfein=2,ylabel=\%]{0/0,1/0,2/2,3/5,4/12,5/19,6/23,7/19,8/12,9/5,10/2,11/0,12/0} \quad \textbf{Abb. 3} \saeulenab[ymax=50,ystep=10,yfein=2,ylabel=\%]{0/0,1/0,2/0,3/0,4/0,5/1,6/4,7/10,8/19,9/26,10/23,11/13,12/3}
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Verteilung im Diagramm – Prüfungsaufgaben – weiter}
+\begin{teile}
+\teil X ist binomialverteilt mit 15 Versuchen und der Trefferwahrscheinlichkeit $0{,}5$; die Verteilung ist symmetrisch. Es gilt $P(X \ge 6) \approx 0{,}85$ und $P(X = 9) \approx 0{,}15$. Bestimme damit einen Näherungswert für $P(X = 7)$ \hfill (Abitur 2025 GK). \leerfeld
+\teil X ist binomialverteilt mit 19 Versuchen und der Trefferwahrscheinlichkeit $0{,}5$; die Verteilung ist symmetrisch. Es gilt $P(X \ge 8) \approx 0{,}82$ und $P(X = 11) \approx 0{,}14$. Bestimme damit einen Näherungswert für $P(X = 9)$ \hfill (Abitur 2025 GK). \leerfeld
+\teil Y hat die Werte 0 bis 17 und eine symmetrische Verteilung. Es gilt $P(Y \le 10) \approx 0{,}83$ und $P(Y = 7) \approx 0{,}15$. Bestimme damit $P(Y = 9)$ \hfill (Abitur 2021 GK). \leerfeld
+\teil Y hat die Werte 0 bis 23 und eine symmetrische Verteilung. Es gilt $P(Y \le 13) \approx 0{,}80$ und $P(Y = 10) \approx 0{,}14$. Bestimme damit $P(Y = 12)$ \hfill (Abitur 2021 GK). \leerfeld
+\teil Die Abbildungen zeigen für drei Altersgruppen A, B und C die Verteilung der Anzahl der Personen mit Allergie unter je 200 Befragten. Beurteile die Aussagen (I) „Für B und C ist die Wahrscheinlichkeit für genau 35 Allergiker etwa gleich.“ und (II) „Die Allergiewahrscheinlichkeit ist in Gruppe C kleiner als in A, weil die Säulen von C niedriger sind.“ \hfill (Abitur 2022 GK)
+
+\textbf{A} \binomialverteilung[von=5,bis=60]{200}{0.1} \quad \textbf{B} \binomialverteilung[von=5,bis=60]{200}{0.15} \quad \textbf{C} \binomialverteilung[von=5,bis=60]{200}{0.2}
+\teil Die Abbildungen zeigen für drei Filialen A, B und C die Verteilung der Anzahl der Kunden mit Kundenkarte unter je 300 Kunden. Beurteile die Aussagen (I) „Für B und C ist die Wahrscheinlichkeit für genau 82 Kartenkunden etwa gleich.“ und (II) „Der Anteil der Kartenkunden ist in C kleiner als in A, weil die höchste Säule von C niedriger ist.“ \hfill (Abitur 2022 GK)
+
+\textbf{A} \binomialverteilung[von=30,bis=120]{300}{0.2} \quad \textbf{B} \binomialverteilung[von=30,bis=120]{300}{0.25} \quad \textbf{C} \binomialverteilung[von=30,bis=120]{300}{0.3}
+\end{teile}
+\end{aufgabe}

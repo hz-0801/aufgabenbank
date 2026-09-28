@@ -1,0 +1,1516 @@
+{
+ "kennung": "STA-H1",
+ "datum": "2026-09-28",
+ "eintraege": [
+  "stammfunktion-und-hauptsatz",
+  "integrationsregeln",
+  "flaecheninhalt-durch-integration",
+  "rekonstruktion-von-funktionsgleichungen",
+  "rekonstruktion-von-bestaenden",
+  "gleichungen-loesen",
+  "rotationsvolumen"
+ ],
+ "fehlende_eintraege": [],
+ "leere_eintraege": [
+  "integrationsregeln",
+  "rotationsvolumen"
+ ],
+ "rezept": "H",
+ "rezept_name": "Heft",
+ "bestellung": {
+  "heft": "abitur-gk",
+  "nur_basis": false,
+  "titel": "Prüfungsheft Abitur GK · Analysis 2",
+  "aus": "bau/hefte/abi-gk-analysis-2",
+  "ohne_register": false
+ },
+ "bank_commit": "7238f60+geändert",
+ "zusammenbau": "v0.4",
+ "vorlage": "Version 2026-09-28a",
+ "pfad": "bau/hefte/abi-gk-analysis-2",
+ "kuerzel_quelle": "_kuerzel.csv (mathe-nachhilfe)",
+ "strukturfehler": 0,
+ "ausgelassen": [],
+ "aufgaben": [
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "a",
+   "id": "stammfunktion-und-hauptsatz-e1-k1-s0-v1",
+   "datei": "stammfunktion-und-hauptsatz_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "b",
+   "id": "stammfunktion-und-hauptsatz-e1-k1-s1-v1",
+   "datei": "stammfunktion-und-hauptsatz_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "c",
+   "id": "stammfunktion-und-hauptsatz-e1-k1-s5-v1",
+   "datei": "stammfunktion-und-hauptsatz_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "a",
+   "id": "stammfunktion-und-hauptsatz-e1-k1-s2-v1",
+   "datei": "stammfunktion-und-hauptsatz_a.tex",
+   "lage": "pruefung",
+   "original": "2020-be-gk-A1.1a",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "b",
+   "id": "stammfunktion-und-hauptsatz-e1-k1-s2-v2",
+   "datei": "stammfunktion-und-hauptsatz_a.tex",
+   "lage": "pruefung",
+   "original": "2020-be-gk-A1.1a",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "c",
+   "id": "stammfunktion-und-hauptsatz-e1-k1-s2-v3",
+   "datei": "stammfunktion-und-hauptsatz_a.tex",
+   "lage": "pruefung",
+   "original": "2020-be-gk-A1.1a",
+   "punkte": "1",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "d",
+   "id": "stammfunktion-und-hauptsatz-e1-k1-s3-v1",
+   "datei": "stammfunktion-und-hauptsatz_a.tex",
+   "lage": "pruefung",
+   "original": "2018-be-gk-B1.2c",
+   "punkte": "9",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "e",
+   "id": "stammfunktion-und-hauptsatz-e1-k1-s3-v2",
+   "datei": "stammfunktion-und-hauptsatz_a.tex",
+   "lage": "pruefung",
+   "original": "2020MgrundlegendBAnalysisWTR2-1e",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "f",
+   "id": "stammfunktion-und-hauptsatz-e1-k1-s4-v1",
+   "datei": "stammfunktion-und-hauptsatz_a.tex",
+   "lage": "pruefung",
+   "original": "2025MgrundlegendAAnalysis12-a",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "g",
+   "id": "stammfunktion-und-hauptsatz-e1-k1-s4-v2",
+   "datei": "stammfunktion-und-hauptsatz_a.tex",
+   "lage": "pruefung",
+   "original": "2026MgrundlegendBAnalysisWTR1-1d",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "h",
+   "id": "stammfunktion-und-hauptsatz-e1-k1-s4-v3",
+   "datei": "stammfunktion-und-hauptsatz_a.tex",
+   "lage": "pruefung",
+   "original": "2020-be-gk-B2.1h",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "i",
+   "id": "stammfunktion-und-hauptsatz-e1-k1-s5-v2",
+   "datei": "stammfunktion-und-hauptsatz_a.tex",
+   "lage": "pruefung",
+   "original": "2024MgrundlegendBAnalysisWTR1-1f",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "j",
+   "id": "stammfunktion-und-hauptsatz-e1-k1-s6-v4",
+   "datei": "stammfunktion-und-hauptsatz_a.tex",
+   "lage": "pruefung",
+   "original": "2023-bebb-gk-B2.1l",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "k",
+   "id": "stammfunktion-und-hauptsatz-e1-k1-s6-v5",
+   "datei": "stammfunktion-und-hauptsatz_a.tex",
+   "lage": "pruefung",
+   "original": "2023-bebb-gk-B2.1l",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "a",
+   "id": "stammfunktion-und-hauptsatz-e2-k1-s1-v1",
+   "datei": "stammfunktion-und-hauptsatz_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "b",
+   "id": "stammfunktion-und-hauptsatz-e2-k1-s2-v3",
+   "datei": "stammfunktion-und-hauptsatz_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "a",
+   "id": "stammfunktion-und-hauptsatz-e2-k1-s1-v4",
+   "datei": "stammfunktion-und-hauptsatz_a.tex",
+   "lage": "pruefung",
+   "original": "2023MgrundlegendAAnalysis13-a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "b",
+   "id": "stammfunktion-und-hauptsatz-e2-k1-s1-v5",
+   "datei": "stammfunktion-und-hauptsatz_a.tex",
+   "lage": "pruefung",
+   "original": "2018MgrundlegendBAnalysisWTR-1d",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "c",
+   "id": "stammfunktion-und-hauptsatz-e2-k1-s3-v1",
+   "datei": "stammfunktion-und-hauptsatz_a.tex",
+   "lage": "pruefung",
+   "original": "2021MgrundlegendAAnalysis13-a",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "d",
+   "id": "stammfunktion-und-hauptsatz-e2-k1-s3-v2",
+   "datei": "stammfunktion-und-hauptsatz_a.tex",
+   "lage": "pruefung",
+   "original": "2021MgrundlegendAAnalysis13-a",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "e",
+   "id": "stammfunktion-und-hauptsatz-e2-k1-s3-v3",
+   "datei": "stammfunktion-und-hauptsatz_a.tex",
+   "lage": "pruefung",
+   "original": "2021MgrundlegendAAnalysis13-a",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "f",
+   "id": "stammfunktion-und-hauptsatz-e2-k1-s5-v1",
+   "datei": "stammfunktion-und-hauptsatz_a.tex",
+   "lage": "pruefung",
+   "original": "2025-bebb-gk-B2.2d",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "g",
+   "id": "stammfunktion-und-hauptsatz-e2-k1-s5-v2",
+   "datei": "stammfunktion-und-hauptsatz_a.tex",
+   "lage": "pruefung",
+   "original": "2025-bebb-gk-B2.2d",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "h",
+   "id": "stammfunktion-und-hauptsatz-e2-k1-s5-v3",
+   "datei": "stammfunktion-und-hauptsatz_a.tex",
+   "lage": "pruefung",
+   "original": "2022MgrundlegendBAnalysisWTR1-1f",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "i",
+   "id": "stammfunktion-und-hauptsatz-e2-k1-s5-v4",
+   "datei": "stammfunktion-und-hauptsatz_a.tex",
+   "lage": "pruefung",
+   "original": "2022MgrundlegendBAnalysisWTR1-1f",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "teilaufgabe": "a",
+   "id": "stammfunktion-und-hauptsatz-e3-k1-s0-v1",
+   "datei": "stammfunktion-und-hauptsatz_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "teilaufgabe": "b",
+   "id": "stammfunktion-und-hauptsatz-e3-k1-s1-v1",
+   "datei": "stammfunktion-und-hauptsatz_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "teilaufgabe": "c",
+   "id": "stammfunktion-und-hauptsatz-e3-k1-s2-v3",
+   "datei": "stammfunktion-und-hauptsatz_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "a",
+   "id": "stammfunktion-und-hauptsatz-e3-k1-s1-v3",
+   "datei": "stammfunktion-und-hauptsatz_a.tex",
+   "lage": "pruefung",
+   "original": "2023-bebb-gk-A1.2b",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "b",
+   "id": "stammfunktion-und-hauptsatz-e3-k1-s1-v4",
+   "datei": "stammfunktion-und-hauptsatz_a.tex",
+   "lage": "pruefung",
+   "original": "2021MgrundlegendAAnalysis2-b",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "c",
+   "id": "stammfunktion-und-hauptsatz-e3-k1-s2-v2",
+   "datei": "stammfunktion-und-hauptsatz_a.tex",
+   "lage": "pruefung",
+   "original": "2021MgrundlegendAAnalysis11-a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "d",
+   "id": "stammfunktion-und-hauptsatz-e3-k1-s4-v1",
+   "datei": "stammfunktion-und-hauptsatz_a.tex",
+   "lage": "pruefung",
+   "original": "2026-bb-gk-B2.1b",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "e",
+   "id": "stammfunktion-und-hauptsatz-e3-k1-s4-v3",
+   "datei": "stammfunktion-und-hauptsatz_a.tex",
+   "lage": "pruefung",
+   "original": "2019MgrundlegendBAnalysisWTR2-1e",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "f",
+   "id": "stammfunktion-und-hauptsatz-e3-k1-s5-v2",
+   "datei": "stammfunktion-und-hauptsatz_a.tex",
+   "lage": "pruefung",
+   "original": "2024-bebb-gk-B2.1f",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A7",
+   "hauptnummer": 7,
+   "teilaufgabe": "a",
+   "id": "stammfunktion-und-hauptsatz-e3-k1-s6-v4",
+   "datei": "stammfunktion-und-hauptsatz_a.tex",
+   "lage": "pruefung",
+   "original": "2020MgrundlegendBAnalysisWTR2-1h",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A7",
+   "hauptnummer": 7,
+   "teilaufgabe": "b",
+   "id": "stammfunktion-und-hauptsatz-e3-k1-s6-v5",
+   "datei": "stammfunktion-und-hauptsatz_a.tex",
+   "lage": "pruefung",
+   "original": "2020MgrundlegendBAnalysisWTR2-1h",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "teilaufgabe": "a",
+   "id": "flaecheninhalt-durch-integration-e3-k1-s0-v1",
+   "datei": "flaecheninhalt-durch-integration_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "teilaufgabe": "b",
+   "id": "flaecheninhalt-durch-integration-e3-k1-s1-v1",
+   "datei": "flaecheninhalt-durch-integration_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "teilaufgabe": "c",
+   "id": "flaecheninhalt-durch-integration-e3-k1-s2-v1",
+   "datei": "flaecheninhalt-durch-integration_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "a",
+   "id": "flaecheninhalt-durch-integration-e3-k1-s6-v1",
+   "datei": "flaecheninhalt-durch-integration_a.tex",
+   "lage": "pruefung",
+   "original": "2024-bebb-gk-B2.2e",
+   "punkte": "6",
+   "stern": false
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "b",
+   "id": "flaecheninhalt-durch-integration-e3-k1-s6-v2",
+   "datei": "flaecheninhalt-durch-integration_a.tex",
+   "lage": "pruefung",
+   "original": "2024-bebb-gk-B2.2e",
+   "punkte": "6",
+   "stern": false
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "c",
+   "id": "flaecheninhalt-durch-integration-e3-k1-s6-v3",
+   "datei": "flaecheninhalt-durch-integration_a.tex",
+   "lage": "pruefung",
+   "original": "2020-be-gk-B2.2g",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "d",
+   "id": "flaecheninhalt-durch-integration-e3-k1-s6-v4",
+   "datei": "flaecheninhalt-durch-integration_a.tex",
+   "lage": "pruefung",
+   "original": "2020-be-gk-B2.2g",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "a",
+   "id": "flaecheninhalt-durch-integration-e4-k1-s0-v1",
+   "datei": "flaecheninhalt-durch-integration_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "b",
+   "id": "flaecheninhalt-durch-integration-e4-k1-s1-v1",
+   "datei": "flaecheninhalt-durch-integration_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "c",
+   "id": "flaecheninhalt-durch-integration-e4-k1-s3-v1",
+   "datei": "flaecheninhalt-durch-integration_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "a",
+   "id": "flaecheninhalt-durch-integration-e4-k1-s6-v1",
+   "datei": "flaecheninhalt-durch-integration_a.tex",
+   "lage": "pruefung",
+   "original": "2025MgrundlegendBAnalysisWTR1-1d",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "b",
+   "id": "flaecheninhalt-durch-integration-e4-k1-s6-v2",
+   "datei": "flaecheninhalt-durch-integration_a.tex",
+   "lage": "pruefung",
+   "original": "2025MgrundlegendBAnalysisWTR1-1d",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A12",
+   "hauptnummer": 12,
+   "teilaufgabe": "a",
+   "id": "flaecheninhalt-durch-integration-e5-k1-s0-v1",
+   "datei": "flaecheninhalt-durch-integration_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A12",
+   "hauptnummer": 12,
+   "teilaufgabe": "b",
+   "id": "flaecheninhalt-durch-integration-e5-k1-s1-v1",
+   "datei": "flaecheninhalt-durch-integration_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A12",
+   "hauptnummer": 12,
+   "teilaufgabe": "c",
+   "id": "flaecheninhalt-durch-integration-e5-k1-s2-v1",
+   "datei": "flaecheninhalt-durch-integration_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A13",
+   "hauptnummer": 13,
+   "teilaufgabe": "a",
+   "id": "flaecheninhalt-durch-integration-e5-k1-s7-v5",
+   "datei": "flaecheninhalt-durch-integration_a.tex",
+   "lage": "pruefung",
+   "original": "2019MgrundlegendBAnalysisWTR1-2e",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A13",
+   "hauptnummer": 13,
+   "teilaufgabe": "b",
+   "id": "flaecheninhalt-durch-integration-e5-k1-s7-v6",
+   "datei": "flaecheninhalt-durch-integration_a.tex",
+   "lage": "pruefung",
+   "original": "2019MgrundlegendBAnalysisWTR1-2e",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "a",
+   "id": "rekonstruktion-von-funktionsgleichungen-e1-k1-s0-v1",
+   "datei": "rekonstruktion-von-funktionsgleichungen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "b",
+   "id": "rekonstruktion-von-funktionsgleichungen-e1-k1-s1-v1",
+   "datei": "rekonstruktion-von-funktionsgleichungen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "c",
+   "id": "rekonstruktion-von-funktionsgleichungen-e1-k1-s4-v3",
+   "datei": "rekonstruktion-von-funktionsgleichungen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A15",
+   "hauptnummer": 15,
+   "teilaufgabe": "a",
+   "id": "rekonstruktion-von-funktionsgleichungen-e1-k1-s2-v1",
+   "datei": "rekonstruktion-von-funktionsgleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2022-bebb-gk-B2.2g",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A15",
+   "hauptnummer": 15,
+   "teilaufgabe": "b",
+   "id": "rekonstruktion-von-funktionsgleichungen-e1-k1-s2-v2",
+   "datei": "rekonstruktion-von-funktionsgleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2022-bebb-gk-B2.2g",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A15",
+   "hauptnummer": 15,
+   "teilaufgabe": "c",
+   "id": "rekonstruktion-von-funktionsgleichungen-e1-k1-s2-v3",
+   "datei": "rekonstruktion-von-funktionsgleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2022-bebb-gk-B2.2g",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A15",
+   "hauptnummer": 15,
+   "teilaufgabe": "d",
+   "id": "rekonstruktion-von-funktionsgleichungen-e1-k1-s6-v1",
+   "datei": "rekonstruktion-von-funktionsgleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2022MgrundlegendAAnalysis12-a",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A16",
+   "hauptnummer": 16,
+   "teilaufgabe": "a",
+   "id": "rekonstruktion-von-funktionsgleichungen-e2-k1-s0-v1",
+   "datei": "rekonstruktion-von-funktionsgleichungen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A16",
+   "hauptnummer": 16,
+   "teilaufgabe": "b",
+   "id": "rekonstruktion-von-funktionsgleichungen-e2-k1-s1-v1",
+   "datei": "rekonstruktion-von-funktionsgleichungen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A16",
+   "hauptnummer": 16,
+   "teilaufgabe": "c",
+   "id": "rekonstruktion-von-funktionsgleichungen-e2-k1-s3-v3",
+   "datei": "rekonstruktion-von-funktionsgleichungen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "a",
+   "id": "rekonstruktion-von-funktionsgleichungen-e2-k1-s1-v5",
+   "datei": "rekonstruktion-von-funktionsgleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2021-be-gk-B2.1k",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "b",
+   "id": "rekonstruktion-von-funktionsgleichungen-e2-k1-s2-v1",
+   "datei": "rekonstruktion-von-funktionsgleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2019-be-gk-B2.1c",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "c",
+   "id": "rekonstruktion-von-funktionsgleichungen-e2-k1-s2-v2",
+   "datei": "rekonstruktion-von-funktionsgleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2023-bebb-gk-B2.2k",
+   "punkte": "6",
+   "stern": false
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "d",
+   "id": "rekonstruktion-von-funktionsgleichungen-e2-k1-s3-v1",
+   "datei": "rekonstruktion-von-funktionsgleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2020-be-gk-A1.2a",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "e",
+   "id": "rekonstruktion-von-funktionsgleichungen-e2-k1-s3-v2",
+   "datei": "rekonstruktion-von-funktionsgleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2020MgrundlegendAAnalysis12",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "f",
+   "id": "rekonstruktion-von-funktionsgleichungen-e2-k1-s4-v1",
+   "datei": "rekonstruktion-von-funktionsgleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2018-be-gk-B1.1e",
+   "punkte": "6",
+   "stern": false
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "g",
+   "id": "rekonstruktion-von-funktionsgleichungen-e2-k1-s4-v2",
+   "datei": "rekonstruktion-von-funktionsgleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2022-bebb-gk-B2.2k",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A18",
+   "hauptnummer": 18,
+   "teilaufgabe": "a",
+   "id": "rekonstruktion-von-funktionsgleichungen-e2-k2-s1-v1",
+   "datei": "rekonstruktion-von-funktionsgleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2017MgrundlegendBAnalysisCAS-1e",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A18",
+   "hauptnummer": 18,
+   "teilaufgabe": "b",
+   "id": "rekonstruktion-von-funktionsgleichungen-e2-k2-s1-v2",
+   "datei": "rekonstruktion-von-funktionsgleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2017MgrundlegendBAnalysisCAS-1e",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A18",
+   "hauptnummer": 18,
+   "teilaufgabe": "c",
+   "id": "rekonstruktion-von-funktionsgleichungen-e2-k2-s1-v3",
+   "datei": "rekonstruktion-von-funktionsgleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2017MgrundlegendBAnalysisCAS-1e",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A19",
+   "hauptnummer": 19,
+   "teilaufgabe": "a",
+   "id": "rekonstruktion-von-funktionsgleichungen-e3-k1-s0-v1",
+   "datei": "rekonstruktion-von-funktionsgleichungen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A19",
+   "hauptnummer": 19,
+   "teilaufgabe": "b",
+   "id": "rekonstruktion-von-funktionsgleichungen-e3-k1-s1-v1",
+   "datei": "rekonstruktion-von-funktionsgleichungen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A19",
+   "hauptnummer": 19,
+   "teilaufgabe": "c",
+   "id": "rekonstruktion-von-funktionsgleichungen-e3-k1-s2-v3",
+   "datei": "rekonstruktion-von-funktionsgleichungen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A20",
+   "hauptnummer": 20,
+   "teilaufgabe": "a",
+   "id": "rekonstruktion-von-funktionsgleichungen-e3-k1-s2-v1",
+   "datei": "rekonstruktion-von-funktionsgleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2022MgrundlegendBAnalysisWTR1-1g",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A20",
+   "hauptnummer": 20,
+   "teilaufgabe": "b",
+   "id": "rekonstruktion-von-funktionsgleichungen-e3-k1-s2-v2",
+   "datei": "rekonstruktion-von-funktionsgleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2022MgrundlegendBAnalysisWTR1-1g",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A21",
+   "hauptnummer": 21,
+   "teilaufgabe": "a",
+   "id": "rekonstruktion-von-funktionsgleichungen-e3-k3-s1-v1",
+   "datei": "rekonstruktion-von-funktionsgleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2017-be-gk-B1.2f",
+   "punkte": "7",
+   "stern": false
+  },
+  {
+   "aufgabe": "A21",
+   "hauptnummer": 21,
+   "teilaufgabe": "b",
+   "id": "rekonstruktion-von-funktionsgleichungen-e3-k3-s1-v2",
+   "datei": "rekonstruktion-von-funktionsgleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2017-be-gk-B1.2f",
+   "punkte": "7",
+   "stern": false
+  },
+  {
+   "aufgabe": "A21",
+   "hauptnummer": 21,
+   "teilaufgabe": "c",
+   "id": "rekonstruktion-von-funktionsgleichungen-e3-k3-s1-v3",
+   "datei": "rekonstruktion-von-funktionsgleichungen_a.tex",
+   "lage": "pruefung",
+   "original": "2017-be-gk-B1.2f",
+   "punkte": "7",
+   "stern": false
+  },
+  {
+   "aufgabe": "A22",
+   "hauptnummer": 22,
+   "teilaufgabe": "a",
+   "id": "rekonstruktion-von-bestaenden-e1-k1-s0-v1",
+   "datei": "rekonstruktion-von-bestaenden_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A22",
+   "hauptnummer": 22,
+   "teilaufgabe": "b",
+   "id": "rekonstruktion-von-bestaenden-e1-k1-s1-v1",
+   "datei": "rekonstruktion-von-bestaenden_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A22",
+   "hauptnummer": 22,
+   "teilaufgabe": "c",
+   "id": "rekonstruktion-von-bestaenden-e1-k1-s2-v1",
+   "datei": "rekonstruktion-von-bestaenden_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A23",
+   "hauptnummer": 23,
+   "teilaufgabe": "a",
+   "id": "rekonstruktion-von-bestaenden-e1-k1-s2-v2",
+   "datei": "rekonstruktion-von-bestaenden_a.tex",
+   "lage": "pruefung",
+   "original": "2024MgrundlegendBAnalysisWTR1-2d",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A23",
+   "hauptnummer": 23,
+   "teilaufgabe": "b",
+   "id": "rekonstruktion-von-bestaenden-e1-k1-s3-v1",
+   "datei": "rekonstruktion-von-bestaenden_a.tex",
+   "lage": "pruefung",
+   "original": "2017MgrundlegendBAnalysisCAS-2e",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "a",
+   "id": "rekonstruktion-von-bestaenden-e2-k1-s0-v1",
+   "datei": "rekonstruktion-von-bestaenden_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "b",
+   "id": "rekonstruktion-von-bestaenden-e2-k1-s1-v1",
+   "datei": "rekonstruktion-von-bestaenden_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "c",
+   "id": "rekonstruktion-von-bestaenden-e2-k1-s2-v3",
+   "datei": "rekonstruktion-von-bestaenden_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A25",
+   "hauptnummer": 25,
+   "teilaufgabe": "a",
+   "id": "rekonstruktion-von-bestaenden-e2-k1-s1-v5",
+   "datei": "rekonstruktion-von-bestaenden_a.tex",
+   "lage": "pruefung",
+   "original": "2018MgrundlegendAAnalysis2-a",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A25",
+   "hauptnummer": 25,
+   "teilaufgabe": "b",
+   "id": "rekonstruktion-von-bestaenden-e2-k1-s2-v2",
+   "datei": "rekonstruktion-von-bestaenden_a.tex",
+   "lage": "pruefung",
+   "original": "2021MgrundlegendBAnalysisWTR-2b",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A26",
+   "hauptnummer": 26,
+   "teilaufgabe": "a",
+   "id": "rekonstruktion-von-bestaenden-e3-k1-s1-v1",
+   "datei": "rekonstruktion-von-bestaenden_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A26",
+   "hauptnummer": 26,
+   "teilaufgabe": "b",
+   "id": "rekonstruktion-von-bestaenden-e3-k1-s2-v2",
+   "datei": "rekonstruktion-von-bestaenden_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A27",
+   "hauptnummer": 27,
+   "teilaufgabe": "a",
+   "id": "rekonstruktion-von-bestaenden-e3-k1-s2-v1",
+   "datei": "rekonstruktion-von-bestaenden_a.tex",
+   "lage": "pruefung",
+   "original": "2019-be-gk-B2.1g",
+   "punkte": "6",
+   "stern": false
+  },
+  {
+   "aufgabe": "A27",
+   "hauptnummer": 27,
+   "teilaufgabe": "b",
+   "id": "rekonstruktion-von-bestaenden-e3-k1-s4-v3",
+   "datei": "rekonstruktion-von-bestaenden_a.tex",
+   "lage": "pruefung",
+   "original": "2024MgrundlegendBAnalysisWTR2-2e",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A27",
+   "hauptnummer": 27,
+   "teilaufgabe": "c",
+   "id": "rekonstruktion-von-bestaenden-e3-k1-s4-v4",
+   "datei": "rekonstruktion-von-bestaenden_a.tex",
+   "lage": "pruefung",
+   "original": "2024MgrundlegendBAnalysisWTR2-2e",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A28",
+   "hauptnummer": 28,
+   "teilaufgabe": "a",
+   "id": "gleichungen-loesen-e1-k1-s0-v1",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A28",
+   "hauptnummer": 28,
+   "teilaufgabe": "b",
+   "id": "gleichungen-loesen-e1-k1-s1-v1",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A29",
+   "hauptnummer": 29,
+   "teilaufgabe": "a",
+   "id": "gleichungen-loesen-e1-k1-s3-v2",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2019MgrundlegendAAnalysis12-a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A29",
+   "hauptnummer": 29,
+   "teilaufgabe": "b",
+   "id": "gleichungen-loesen-e1-k1-s3-v3",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2019MgrundlegendAAnalysis12-a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A29",
+   "hauptnummer": 29,
+   "teilaufgabe": "c",
+   "id": "gleichungen-loesen-e1-k1-s5-v2",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2018-be-gk-B1.1f",
+   "punkte": "10",
+   "stern": false
+  },
+  {
+   "aufgabe": "A29",
+   "hauptnummer": 29,
+   "teilaufgabe": "d",
+   "id": "gleichungen-loesen-e1-k1-s8-v1",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2019-be-gk-A1.2a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A29",
+   "hauptnummer": 29,
+   "teilaufgabe": "e",
+   "id": "gleichungen-loesen-e1-k1-s8-v2",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2019-be-gk-A1.2a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A29",
+   "hauptnummer": 29,
+   "teilaufgabe": "f",
+   "id": "gleichungen-loesen-e1-k1-s8-v3",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2019-be-gk-A1.2a",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A29",
+   "hauptnummer": 29,
+   "teilaufgabe": "g",
+   "id": "gleichungen-loesen-e1-k1-s9-v1",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2020MgrundlegendBAnalysisWTR1-1a",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A29",
+   "hauptnummer": 29,
+   "teilaufgabe": "h",
+   "id": "gleichungen-loesen-e1-k1-s9-v2",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2020MgrundlegendBAnalysisWTR1-1a",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A29",
+   "hauptnummer": 29,
+   "teilaufgabe": "i",
+   "id": "gleichungen-loesen-e1-k1-s9-v3",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2020MgrundlegendBAnalysisWTR1-1a",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A29",
+   "hauptnummer": 29,
+   "teilaufgabe": "j",
+   "id": "gleichungen-loesen-e1-k1-s10-v1",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2019MgrundlegendBAnalysisWTR1-3b",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A29",
+   "hauptnummer": 29,
+   "teilaufgabe": "k",
+   "id": "gleichungen-loesen-e1-k1-s10-v2",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2019MgrundlegendBAnalysisWTR1-3b",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A29",
+   "hauptnummer": 29,
+   "teilaufgabe": "l",
+   "id": "gleichungen-loesen-e1-k1-s10-v3",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2019MgrundlegendBAnalysisWTR1-3b",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A30",
+   "hauptnummer": 30,
+   "teilaufgabe": "a",
+   "id": "gleichungen-loesen-e1-k1-s11-v1",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2020-be-gk-B2.2b",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A30",
+   "hauptnummer": 30,
+   "teilaufgabe": "b",
+   "id": "gleichungen-loesen-e1-k1-s11-v2",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2020-be-gk-B2.2b",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A30",
+   "hauptnummer": 30,
+   "teilaufgabe": "c",
+   "id": "gleichungen-loesen-e1-k1-s11-v3",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2020-be-gk-B2.2b",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A31",
+   "hauptnummer": 31,
+   "teilaufgabe": "a",
+   "id": "gleichungen-loesen-e2-k1-s0-v1",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A31",
+   "hauptnummer": 31,
+   "teilaufgabe": "b",
+   "id": "gleichungen-loesen-e2-k1-s1-v1",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A32",
+   "hauptnummer": 32,
+   "teilaufgabe": "a",
+   "id": "gleichungen-loesen-e2-k1-s6-v1",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2021-be-gk-B2.2g",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A32",
+   "hauptnummer": 32,
+   "teilaufgabe": "b",
+   "id": "gleichungen-loesen-e2-k1-s6-v2",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2022-bebb-gk-B2.1d",
+   "punkte": "2",
+   "stern": false
+  },
+  {
+   "aufgabe": "A32",
+   "hauptnummer": 32,
+   "teilaufgabe": "c",
+   "id": "gleichungen-loesen-e2-k1-s6-v3",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2021-be-gk-B2.2g",
+   "punkte": "4",
+   "stern": false
+  },
+  {
+   "aufgabe": "A32",
+   "hauptnummer": 32,
+   "teilaufgabe": "d",
+   "id": "gleichungen-loesen-e2-k1-s11-v1",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2023MgrundlegendAAnalysis2-b",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A32",
+   "hauptnummer": 32,
+   "teilaufgabe": "e",
+   "id": "gleichungen-loesen-e2-k1-s11-v2",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2023MgrundlegendAAnalysis2-b",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A33",
+   "hauptnummer": 33,
+   "teilaufgabe": "a",
+   "id": "gleichungen-loesen-e2-k2-s1-v1",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2018-be-gk-cas-B1.2b",
+   "punkte": "6",
+   "stern": false
+  },
+  {
+   "aufgabe": "A33",
+   "hauptnummer": 33,
+   "teilaufgabe": "b",
+   "id": "gleichungen-loesen-e2-k2-s1-v2",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2018-be-gk-cas-B1.2b",
+   "punkte": "6",
+   "stern": false
+  },
+  {
+   "aufgabe": "A33",
+   "hauptnummer": 33,
+   "teilaufgabe": "c",
+   "id": "gleichungen-loesen-e2-k2-s1-v3",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2018-be-gk-cas-B1.2b",
+   "punkte": "6",
+   "stern": false
+  },
+  {
+   "aufgabe": "A34",
+   "hauptnummer": 34,
+   "teilaufgabe": "a",
+   "id": "gleichungen-loesen-e3-k1-s0-v1",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A34",
+   "hauptnummer": 34,
+   "teilaufgabe": "b",
+   "id": "gleichungen-loesen-e3-k1-s1-v1",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A35",
+   "hauptnummer": 35,
+   "teilaufgabe": "a",
+   "id": "gleichungen-loesen-e3-k1-s2-v1",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2019MgrundlegendBAnalysisWTR1-2d",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A35",
+   "hauptnummer": 35,
+   "teilaufgabe": "b",
+   "id": "gleichungen-loesen-e3-k1-s2-v2",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2019MgrundlegendBAnalysisWTR1-2d",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A35",
+   "hauptnummer": 35,
+   "teilaufgabe": "c",
+   "id": "gleichungen-loesen-e3-k1-s2-v3",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2019MgrundlegendBAnalysisWTR1-2d",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A35",
+   "hauptnummer": 35,
+   "teilaufgabe": "d",
+   "id": "gleichungen-loesen-e3-k1-s4-v1",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2025-bebb-gk-B2.2g",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A35",
+   "hauptnummer": 35,
+   "teilaufgabe": "e",
+   "id": "gleichungen-loesen-e3-k1-s4-v2",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2025MgrundlegendBAnalysisWTR2-2c",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A35",
+   "hauptnummer": 35,
+   "teilaufgabe": "f",
+   "id": "gleichungen-loesen-e3-k1-s4-v3",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2025-bebb-gk-B2.2g",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A36",
+   "hauptnummer": 36,
+   "teilaufgabe": "a",
+   "id": "gleichungen-loesen-e3-k1-s8-v1",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2025-bebb-gk-A1.7a",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A36",
+   "hauptnummer": 36,
+   "teilaufgabe": "b",
+   "id": "gleichungen-loesen-e3-k1-s8-v2",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2025MgrundlegendAAnalysis22-a",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A36",
+   "hauptnummer": 36,
+   "teilaufgabe": "c",
+   "id": "gleichungen-loesen-e3-k1-s8-v3",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2025-bebb-gk-A1.7a",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A37",
+   "hauptnummer": 37,
+   "teilaufgabe": "a",
+   "id": "gleichungen-loesen-e4-k1-s0-v1",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A37",
+   "hauptnummer": 37,
+   "teilaufgabe": "b",
+   "id": "gleichungen-loesen-e4-k1-s1-v1",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "anlauf"
+  },
+  {
+   "aufgabe": "A38",
+   "hauptnummer": 38,
+   "teilaufgabe": "a",
+   "id": "gleichungen-loesen-e4-k1-s2-v1",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2023-bebb-gk-B2.2g",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A38",
+   "hauptnummer": 38,
+   "teilaufgabe": "b",
+   "id": "gleichungen-loesen-e4-k1-s2-v3",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2023-bebb-gk-B2.2g",
+   "punkte": "5",
+   "stern": false
+  },
+  {
+   "aufgabe": "A38",
+   "hauptnummer": 38,
+   "teilaufgabe": "c",
+   "id": "gleichungen-loesen-e4-k1-s3-v1",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2019-be-gk-B2.2g",
+   "punkte": "6",
+   "stern": false
+  },
+  {
+   "aufgabe": "A38",
+   "hauptnummer": 38,
+   "teilaufgabe": "d",
+   "id": "gleichungen-loesen-e4-k1-s3-v2",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2019-be-gk-B2.2g",
+   "punkte": "6",
+   "stern": false
+  },
+  {
+   "aufgabe": "A38",
+   "hauptnummer": 38,
+   "teilaufgabe": "e",
+   "id": "gleichungen-loesen-e4-k1-s3-v3",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2019-be-gk-B2.2g",
+   "punkte": "6",
+   "stern": false
+  },
+  {
+   "aufgabe": "A38",
+   "hauptnummer": 38,
+   "teilaufgabe": "f",
+   "id": "gleichungen-loesen-e4-k1-s4-v1",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2024-bebb-gk-B2.2h",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A38",
+   "hauptnummer": 38,
+   "teilaufgabe": "g",
+   "id": "gleichungen-loesen-e4-k1-s4-v2",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2024-bebb-gk-B2.2h",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A39",
+   "hauptnummer": 39,
+   "teilaufgabe": "a",
+   "id": "gleichungen-loesen-e4-k2-s1-v1",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2017MgrundlegendBAnalysisCAS-1d",
+   "punkte": "3",
+   "stern": false
+  },
+  {
+   "aufgabe": "A39",
+   "hauptnummer": 39,
+   "teilaufgabe": "b",
+   "id": "gleichungen-loesen-e4-k2-s1-v2",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2018-be-gk-cas-B1.1g",
+   "punkte": "8",
+   "stern": false
+  },
+  {
+   "aufgabe": "A39",
+   "hauptnummer": 39,
+   "teilaufgabe": "c",
+   "id": "gleichungen-loesen-e4-k2-s1-v3",
+   "datei": "gleichungen-loesen_a.tex",
+   "lage": "pruefung",
+   "original": "2017MgrundlegendBAnalysisCAS-1d",
+   "punkte": "3",
+   "stern": false
+  }
+ ]
+}

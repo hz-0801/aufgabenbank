@@ -1,0 +1,205 @@
+% Potenz- und Exponentialfunktionen, Wachstum und Zerfall – bank/potenz-exponentialfunktionen/ (zusammenbau v0.4, Heft)
+\einheitenkopf[t5]{Potenz- und Exponentialfunktionen, Wachstum und Zerfall}
+\setcounter{aufgabe}{30}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Wachstumsart erkennen und begründen – Anlauf}
+\begin{teile}
+\teil „Jedes Jahr kommen $50\,€$ auf das Sparbuch.“ Was bleibt jedes Jahr gleich? \\ \kreuz{der Betrag} \\ \kreuz{der Prozentsatz}
+\teil Bilde die Differenzen benachbarter Werte. Bleiben sie gleich? \wertetabelle[120,150,180,210]{Jahr}{Guthaben in €}{0,1,2,3} Differenzen: \leerfeld , \leerfeld , \leerfeld
+\teil Ein Vorrat schrumpft: \wertetabelle[600,480,384,307{,}2]{Tag}{Menge in kg}{0,1,2,3} Wie nimmt er ab? \\ \kreuz{linear} \\ \kreuz{exponentiell}
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Wachstumsart erkennen und begründen – Prüfungsaufgaben}
+\begin{teile}
+\steil Die Besucherzahl eines Freibads steigt jedes Jahr um $6\,\%$. \wertetabelle[25\,000,26\,500,28\,090]{Jahr}{Besucher}{2022,2023,2024} Um welche Art von Wachstum handelt es sich? Begründe. \hfill (P10 2018 OS)
+\steil Der Umsatz eines Online-Shops steigt jedes Jahr um $12\,\%$. \wertetabelle[150\,000,168\,000,188\,160]{Jahr}{Umsatz in €}{2021,2022,2023} Liegt lineares oder exponentielles Wachstum vor? Begründe. \hfill (P10 2018 OS)
+\steil Ein Medikament wird im Blut stündlich um $15\,\%$ abgebaut. \wertetabelle[40,34,28{,}9,24{,}57]{Zeit in h}{Menge in mg}{0,1,2,3} Kreuze die richtige Aussage an und begründe. \hfill (P10 2016 OS) \\ \kreuz{Die Menge nimmt jede Stunde um denselben Betrag ab.} \\ \kreuz{Die Menge nimmt jede Stunde um denselben Anteil ab.}
+\steil Der Luftdruck in einem Reifen sinkt jeden Tag um $10\,\%$. \wertetabelle[2{,}5,2{,}25,2{,}025,1{,}8225]{Tag}{Druck in bar}{0,1,2,3} Kreuze die richtige Aussage an und begründe. \hfill (P10 2016 OS) \\ \kreuz{Der Druck sinkt jeden Tag um denselben Betrag.} \\ \kreuz{Der Druck sinkt jeden Tag um denselben Prozentsatz.}
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Graph zu einem Wachstumsprozess auswählen – Anlauf}
+\begin{teile}
+\teil Drei Graphen $f$, $g$ und $h$. Welcher beginnt im Ursprung? \\ \kreuz{$f$} \\ \kreuz{$g$} \\ \kreuz{$h$}
+
+\begin{ksys}[xmin=0,xmax=10,ymin=0,ymax=1000,xstep=1,ystep=100,xlabel=t in Jahren,ylabel=Wert,ablesen] \funktionab{240*1.15^\x}{f}{0}{10} \gerade{48}{240}{g} \parabel{8}{0}{0}{h} \end{ksys}
+\teil Drei Graphen $f$, $g$ und $h$. Notiere zu jedem: Gerade oder Kurve?
+
+\begin{ksys}[xmin=0,xmax=10,ymin=0,ymax=1000,xstep=1,ystep=100,xlabel=t in Jahren,ylabel=Wert,ablesen] \funktionab{240*1.15^\x}{f}{0}{10} \gerade{48}{240}{g} \parabel{8}{0}{0}{h} \end{ksys}
+f: \leerfeld , g: \leerfeld , h: \leerfeld
+\teil Ein Auto verliert jedes Jahr $20\,\%$ seines Werts. Welcher Graph passt? \\ \kreuz{$f$} \\ \kreuz{$g$} \\ \kreuz{$h$}
+
+\begin{ksys}[xmin=0,xmax=10,ymin=0,ymax=600,xstep=1,ystep=50,xlabel=t in Jahren,ylabel=Wert,ablesen] \funktionab{500*0.8^\x}{f}{0}{10} \gerade{-40}{500}{g} \funktionab{500*1.2^\x}{h}{0}{10} \end{ksys}
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Graph zu einem Wachstumsprozess auswählen – Prüfungsaufgaben}
+\begin{teile}
+\teil Ein Stromtarif kostet im ersten Jahr $80\,€$ im Monat und steigt jedes Jahr um $2{,}5\,\%$. Kreuze den passenden Graphen an und begründe für die beiden anderen, warum sie nicht passen. \hfill (P10 2026 FOR) \\ \kreuz{$f$} \\ \kreuz{$g$} \\ \kreuz{$h$}
+
+\begin{ksys}[xmin=0,xmax=10,ymin=0,ymax=120,xstep=1,ystep=10,xlabel=t in Jahren,ylabel=Euro,ablesen] \funktionab{80*1.025^\x}{f}{0}{10} \gerade{1.6}{80}{g} \parabel{1}{0}{0}{h} \end{ksys}
+\teil Eine Stadt hat $40$ Tausend Einwohner und wächst jährlich um $3\,\%$. Kreuze den passenden Graphen an und begründe für die beiden anderen, warum sie nicht passen. \hfill (P10 2026 FOR) \\ \kreuz{$u$} \\ \kreuz{$v$} \\ \kreuz{$w$}
+
+\begin{ksys}[xmin=0,xmax=10,ymin=0,ymax=60,xstep=1,ystep=5,xlabel=t in Jahren,ylabel=Tausend,ablesen] \funktionab{40*1.03^\x}{u}{0}{10} \gerade{1.2}{40}{v} \parabel{0.5}{0}{0}{w} \end{ksys}
+\steil Ein Kalb wiegt $45\,\mathrm{kg}$ und nimmt jede Woche um $5\,\%$ zu. Entscheide für jeden der drei Graphen, ob er passt, und begründe jede Entscheidung. \hfill (P10 2019 OS)
+
+\begin{ksys}[xmin=0,xmax=10,ymin=0,ymax=80,xstep=1,ystep=10,xlabel=t in Wochen,ylabel=kg,ablesen] \funktionab{45*1.05^\x}{f}{0}{10} \gerade{2}{45}{g} \parabel{0.7}{0}{0}{h} \end{ksys}
+\steil Ein Sparvertrag beginnt mit $600\,€$ und wächst jedes Jahr um $4\,\%$. Passt Graph $u$, $v$ oder $w$? Begründe jede der drei Entscheidungen. \hfill (P10 2019 OS)
+
+\begin{ksys}[xmin=0,xmax=10,ymin=0,ymax=1000,xstep=1,ystep=100,xlabel=t in Jahren,ylabel=Euro,ablesen] \funktionab{600*1.04^\x}{u}{0}{10} \gerade{24}{600}{v} \parabel{9}{0}{0}{w} \end{ksys}
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Wertepaare darstellen – Anlauf}
+\begin{teile}
+\teil Die Skala zählt in Hunderterschritten. Welchen Wert zeigt $A$?
+
+\zahlenstrahl[xmin=0,xmax=600,xstep=100,karo=1]{350/A}
+\leerfeld
+\teil Trage die Wertepaare der Tabelle als Punkte ein. \wertetabelle[100,120,144,173,207]{t}{Anzahl}{0,1,2,3,4}
+
+\begin{ksys}[xmin=0,xmax=5,ymin=0,ymax=250,xstep=1,ystep=25,xlabel=t,ylabel=Anzahl]  \end{ksys}
+\teil Die senkrechte Achse ist in Fünfzigerschritten eingeteilt. Trage die Punkte genau ein: \wertetabelle[125,150,180,216]{t}{Wert}{0,1,2,3}
+
+\begin{ksys}[xmin=0,xmax=4,ymin=0,ymax=250,xstep=1,ystep=50,xlabel=t,ylabel=Wert]  \end{ksys}
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Wertepaare darstellen – Prüfungsaufgaben}
+\begin{teile}
+\teil Die Tabelle zeigt die Anzahl der Hefezellen in einer Probe. Stelle die Wertepaare im Koordinatensystem dar. \hfill (P10 2025 OS) \wertetabelle[56,84,126,189,284]{Zeit in h}{Zellen}{0,1,2,3,4}
+
+\begin{ksys}[xmin=0,xmax=5,ymin=0,ymax=350,xstep=1,ystep=50,xlabel=Zeit in h,ylabel=Zellen]  \end{ksys}
+\teil Die Tabelle zeigt den Wert einer Sammlung. Stelle die Wertepaare im Koordinatensystem dar. \hfill (P10 2025 OS) \wertetabelle[500,550,605,666,732]{Jahr}{Wert in €}{0,1,2,3,4}
+
+\begin{ksys}[xmin=0,xmax=5,ymin=0,ymax=800,xstep=1,ystep=100,xlabel=Jahr,ylabel=Euro]  \end{ksys}
+\teil Der Wasserdruck in einer Leitung sinkt je Kilometer um $12\,\%$. Teile die Achsen passend ein (je $10$ Kästchen), beschrifte sie, trage die vier Punkte ein und verbinde sie zu einer Kurve. \hfill (P10 2017 OS) \wertetabelle[800,704,545,371]{Weg in km}{Druck in hPa}{0,1,3,6}
+
+\begin{ksys}[xmin=0,xmax=10,ymin=0,ymax=10]  \end{ksys}
+\teil Die Helligkeit einer Lampe nimmt je Meter Wassertiefe um $15\,\%$ ab. Teile die Achsen passend ein (je $10$ Kästchen), beschrifte sie, trage die vier Punkte ein und verbinde sie zu einer Kurve. \hfill (P10 2017 OS) \wertetabelle[1\,000,723,522,272]{Tiefe in m}{Helligkeit in lx}{0,2,4,8}
+
+\begin{ksys}[xmin=0,xmax=10,ymin=0,ymax=10]  \end{ksys}
+\steil In einem Patienten nimmt ein Kontrastmittel je Stunde um $20\,\%$ ab. Zeichne ein Koordinatensystem mit passender Einteilung (je Achse $10$ Kästchen), trage die vier Wertepaare ein und verbinde sie zu einer Kurve. \hfill (P10 2016 OS) \wertetabelle[8{,}00,6{,}40,4{,}10,2{,}10]{Zeit in h}{Menge in mg}{0,1,3,6}
+
+\begin{ksys}[xmin=0,xmax=10,ymin=0,ymax=10]  \end{ksys}
+\steil Die Restmenge eines Farbstoffs in einer Lösung sinkt je Tag um $30\,\%$. Zeichne ein Koordinatensystem mit passender Einteilung (je Achse $10$ Kästchen), trage die vier Wertepaare ein und verbinde sie zu einer Kurve. \hfill (P10 2016 OS) \wertetabelle[80,56,39{,}2,19{,}2]{Tag}{Menge in g}{0,1,2,4}
+
+\begin{ksys}[xmin=0,xmax=10,ymin=0,ymax=10]  \end{ksys}
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Wachstumsfaktor bestimmen – Anlauf}
+\begin{teile}
+\teil Ein Wert wird jedes Jahr mit $1{,}35$ multipliziert. Wird er mehr oder weniger? \\ \kreuz{mehr} \\ \kreuz{weniger}
+\teil Ein Wert steigt jedes Jahr um $6\,\%$. Mit welchem Faktor wird er jedes Jahr multipliziert? Faktor \leerfeld
+\teil Ein Autowert sinkt jedes Jahr um $6\,\%$ ab. Mit welchem Faktor rechnest du den nächsten Wert aus? Faktor \leerfeld
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Wachstumsfaktor bestimmen – Prüfungsaufgaben}
+\begin{teile}
+\steil Die Tabelle zeigt die Anzahl der Hefezellen in einer Probe; das Wachstum ist exponentiell. Weise nach, dass die Anzahl jede Stunde mit dem Faktor $1{,}25$ wächst. \hfill (P10 2025 OS) \wertetabelle[64,80,100,125]{Zeit in h}{Zellen}{0,1,2,3}
+\steil Die Tabelle zeigt die Zahl der Nutzer einer App; das Wachstum ist exponentiell. Weise nach, dass sich die Nutzerzahl jeden Monat verdoppelt, der Faktor also $2$ ist. \hfill (P10 2025 OS) \wertetabelle[120,240,480,960]{Monat}{Nutzer}{0,1,2,3}
+\teil Der Umsatz einer Bäckerei betrug $2022$ $250\,000\,€$ und $2023$ $262\,500\,€$. Der Inhaber sagt, der Umsatz sei um $5\,\%$ gestiegen. Weise das rechnerisch nach. \hfill (P10 2018 OS)
+\teil Eine Gemeinde hatte $2022$ $8\,000$ Einwohner und $2023$ $8\,240$. Die Zeitung schreibt von einem Zuwachs um $3\,\%$. Weise nach, dass das stimmt. \hfill (P10 2018 OS)
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Wachstumstabelle fortschreiben – Anlauf}
+\begin{teile}
+% AUSGELASSEN potenz-exponentialfunktionen-e2-k2-s0-v1: LaTeX Error: There's no line here to
+% \teil Was bleibt in der Tabelle von Wert zu Wert gleich? \wertetabelle[100,110,121]{t}{Wert}{0,1,2} \\ \kreuz{die Differenz} \\ \kreuz{der Quotient}
+\teil \textit{(ausgelassen)}
+\teil Die Anzahl der Mitglieder ist jetzt $250$ und wird jeden Schritt mit $1{,}15$ multipliziert. Berechne den nächsten Wert. \leerfeld
+\teil Eine Miete beträgt zu Beginn $300\,€$ und steigt jedes Jahr um $10\,\%$. Ergänze das fehlende Feld. \wertetabelle[,330,363]{Jahr}{Miete in €}{0,1,2}
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Wachstumstabelle fortschreiben – Prüfungsaufgaben}
+\begin{teile}
+\teil Ein Stromtarif kostet im ersten Jahr ($2026$) $80\,€$ im Monat und steigt jedes Jahr um $2{,}5\,\%$. Ergänze die beiden fehlenden Felder. \hfill (P10 2026 FOR) \wertetabelle[,82{,}00,84{,}05,]{Jahr}{Euro}{2026,2027,2028,2029}
+\teil Die Kita-Gebühr beträgt im ersten Jahr ($2025$) $240\,€$ monatlich und steigt jährlich um $3\,\%$. Ergänze die beiden fehlenden Felder. \hfill (P10 2026 FOR) \wertetabelle[,247{,}20,254{,}62,]{Jahr}{Euro}{2025,2026,2027,2028}
+\teil Der Stromverbrauch einer Firma lag $2015$ bei $36$ Tausend Kilowattstunden und steigt jährlich um $4\,\%$. Ergänze die Tabelle. \hfill (P10 2020 OS) \wertetabelle[,37{,}4,38{,}9,]{Jahr}{Tausend kWh}{2015,2016,2017,2018}
+\teil Ein Ort verbraucht $2023$ $120$ Tausend Kubikmeter Wasser; der Verbrauch steigt jährlich um $2\,\%$. Ergänze die Tabelle. \hfill (P10 2020 OS) \wertetabelle[,122{,}4,124{,}8,]{Jahr}{Tausend m³}{2023,2024,2025,2026}
+\teil Ein Kontrastmittel wird stündlich um $20\,\%$ abgebaut; zu Beginn sind es $8{,}00\,\mathrm{mg}$. Ergänze den fehlenden Wert und die fehlende Zeitangabe. \hfill (P10 2016 OS) \wertetabelle[8{,}00,,5{,}12,3{,}28,2{,}62]{Zeit in h}{Menge in mg}{0,1,2,?,5}
+\teil Die Konzentration eines Farbstoffs sinkt je Tag um $25\,\%$; zu Beginn sind es $80\,\mathrm{mg}$. Ergänze den fehlenden Wert und die fehlende Zeitangabe. \hfill (P10 2016 OS) \wertetabelle[80,,33{,}75,25{,}31,14{,}24]{Tag}{Menge in mg}{0,1,?,4,6}
+\teil Ein Lamm wiegt bei der Geburt $4\,\mathrm{kg}$ und nimmt wöchentlich um $12\,\%$ zu. Ergänze die drei fehlenden Werte (drei Nachkommastellen). \hfill (P10 2019 OS) \wertetabelle[,4{,}480,,]{Woche}{Masse in kg}{0,1,2,5}
+\teil Ein Welpe wiegt $6\,\mathrm{kg}$ und nimmt wöchentlich um $8\,\%$ zu. Ergänze die drei fehlenden Werte (drei Nachkommastellen). \hfill (P10 2019 OS) \wertetabelle[,6{,}480,,]{Woche}{Masse in kg}{0,1,2,6}
+\teil Der Wasserdruck in einer Leitung beträgt $800\,\mathrm{hPa}$ und sinkt je Kilometer um $12\,\%$. Ergänze die beiden fehlenden Werte (ganze Zahlen). \hfill (P10 2017 OS) \wertetabelle[800,704,,545,]{Weg in km}{Druck in hPa}{0,1,2,3,6}
+\teil Die Helligkeit unter Wasser beträgt an der Oberfläche $1\,000$ Lux und nimmt je Meter Tiefe um $15\,\%$ ab. Ergänze die beiden fehlenden Werte (ganze Zahlen). \hfill (P10 2017 OS) \wertetabelle[1\,000,850,,522,]{Tiefe in m}{Helligkeit in lx}{0,1,2,4,7}
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Exponentialfunktion aufstellen und deuten – Anlauf}
+\begin{teile}
+\teil Ein Bestand wird ab $2016$ jedes Jahr größer. Welcher Schritt $t$ gehört zum Jahr $2021$? \\ \kreuz{$t = 2021$} \\ \kreuz{$t = 5$} \\ \kreuz{$t = 6$}
+\teil „Eine Gemeinde hat $3\,000$ Einwohner; jedes Jahr kommen $4\,\%$ dazu.“ Unterstreiche Anfangswert und Prozentsatz. Nenne Anfangswert und Faktor. Anfangswert \leerfeld , Faktor \leerfeld
+\teil Eine Gemeinde hat $3\,000$ Einwohner; jedes Jahr kommen $4\,\%$ dazu. Stelle die Gleichung für die Einwohnerzahl $E$ nach $t$ Jahren auf. E(t) = \leerfeld
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Exponentialfunktion aufstellen und deuten – Prüfungsaufgaben}
+\begin{teile}
+\teil Ein Stromtarif kostet im ersten Jahr ($2026$) $80\,€$ im Monat und steigt jedes Jahr um $2{,}5\,\%$. Stelle eine Funktionsgleichung $S(t)$ für die Monatskosten $t$ Jahre nach $2026$ auf und berechne die Kosten im Jahr $2038$. \hfill (P10 2026 FOR) \\ S(t) = \leerfeld , S(12) ≈ \leerfeld[€]
+\teil Die Kita-Gebühr beträgt im ersten Jahr ($2025$) $240\,€$ im Monat und steigt jährlich um $3\,\%$. Stelle eine Funktionsgleichung $G(t)$ für die Gebühr $t$ Jahre nach $2025$ auf und berechne die Gebühr im Jahr $2035$. \hfill (P10 2026 FOR) \\ G(t) = \leerfeld , G(10) ≈ \leerfeld[€]
+\steil Der Wasserdruck in einer Leitung beträgt am Anfang $800\,\mathrm{hPa}$ und nimmt je Kilometer um $12\,\%$ ab. Welche Gleichung beschreibt den Druck $y$ nach $x$ Kilometern? \hfill (P10 2017 OS) \\ \kreuz{$y = 0{,}88 \cdot x$} \\ \kreuz{$y = 800 \cdot 0{,}88^x$} \\ \kreuz{$y = x^{0{,}88}$} \\ \kreuz{$y = 800 \cdot 1{,}12^x$}
+\steil Die Helligkeit unter Wasser beträgt an der Oberfläche $1\,000$ Lux und nimmt je Meter Tiefe um $15\,\%$ ab. Welche Gleichung beschreibt die Helligkeit $y$ in $x$ Metern Tiefe? \hfill (P10 2017 OS) \\ \kreuz{$y = 1\,000 \cdot 1{,}15^x$} \\ \kreuz{$y = 1\,000 - 15x$} \\ \kreuz{$y = 1\,000 \cdot 0{,}85^x$} \\ \kreuz{$y = 0{,}85 \cdot x$}
+\steil Die Masse eines Lamms in Kilogramm nach $x$ Wochen wird durch $f(x) = 4 \cdot 1{,}12^x$ beschrieben. Gib die Bedeutung von $4$, $1{,}12$ und $x$ im Sachzusammenhang an. \hfill (P10 2019 OS)
+\steil Die Zahl der Besucher eines Online-Kurses nach $x$ Monaten wird durch $g(x) = 350 \cdot 1{,}25^x$ beschrieben. Gib die Bedeutung von $350$, $1{,}25$ und $x$ im Sachzusammenhang an. \hfill (P10 2019 OS)
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Wert und Schwellenwert berechnen – Anlauf}
+\begin{teile}
+\teil Berechne $1{,}04^5$ und runde auf vier Stellen. ≈ \leerfeld
+\teil Ein Bestand von $400$ wächst jedes Jahr mit dem Faktor $1{,}1$. Berechne die Werte nach $1$, $2$ und $3$ Jahren Schritt für Schritt. \leerfeld , \leerfeld , \leerfeld
+\teil Eine Gemeinde hatte $2019$ $2\,500$ Einwohner; die Zahl wächst jährlich um $6\,\%$. Wie viele Einwohner sind es $2025$? Runde auf ganze Personen. t = \leerfeld , ≈ \leerfeld
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Wert und Schwellenwert berechnen – Prüfungsaufgaben}
+\begin{teile}
+\steil Die Zahl der Hefezellen in einer Probe wächst exponentiell mit $N(t) = 64 \cdot 1{,}25^t$ ($t$ in Stunden). Aussage: „Nach $30$ Stunden sind es mehr als $50\,000$ Zellen.“ Prüfe die Aussage rechnerisch. \hfill (P10 2025 OS)
+\steil Die Nutzerzahl einer App verdoppelt sich jeden Monat: $N(t) = 120 \cdot 2^t$ ($t$ in Monaten). Aussage: „Nach $20$ Monaten hat die App mehr als hundert Millionen Nutzer.“ Prüfe die Aussage rechnerisch. \hfill (P10 2025 OS)
+\steil Studie 1 beschreibt den Stromverbrauch einer Firma mit $y = 36 \cdot 1{,}04^x$ ($x$ Jahre ab $2021$, $y$ in Tausend Kilowattstunden). Studie 2 sagt von $2021$ bis $2033$ insgesamt etwa $50\,\%$ Steigerung voraus. Vergleiche beide Vorhersagen für $2033$. \hfill (P10 2020 OS)
+\steil Studie 1 beschreibt den Wasserverbrauch eines Ortes mit $y = 120 \cdot 1{,}02^x$ ($x$ Jahre ab $2023$, $y$ in Tausend Kubikmetern). Studie 2 erwartet bis $2043$ insgesamt etwa $40\,\%$ mehr. Vergleiche beide Vorhersagen für $2043$. \hfill (P10 2020 OS)
+\steil Von einem Kontrastmittel sind zu Beginn $8{,}00\,\mathrm{mg}$ im Körper; jede Stunde werden $20\,\%$ abgebaut. Wie viel ist nach $24$ Stunden noch vorhanden? \hfill (P10 2016 OS) \\ ≈ \leerfeld[mg]
+\steil Von einem Farbstoff sind zu Beginn $80\,\mathrm{mg}$ in einer Lösung; jeden Tag zerfallen $25\,\%$. Wie viel ist nach $24$ Tagen noch vorhanden? \hfill (P10 2016 OS) \\ ≈ \leerfeld[mg]
+\teil Der Wasserdruck in einer Leitung sinkt je Kilometer um $12\,\%$; am Anfang sind es $800\,\mathrm{hPa}$. An einer Stelle werden $480\,\mathrm{hPa}$ gemessen. Behauptung: „Die Stelle liegt etwa $4\,\mathrm{km}$ vom Anfang entfernt.“ Entscheide mit Rechnung. \hfill (P10 2017 OS)
+\teil Die Helligkeit unter Wasser nimmt je Meter Tiefe um $15\,\%$ ab; an der Oberfläche sind es $1\,000$ Lux. Ein Taucher misst $444$ Lux. Behauptung: „Er ist etwa $5\,\mathrm{m}$ tief.“ Entscheide mit Rechnung. \hfill (P10 2017 OS)
+\teil Der Umsatz einer Bäckerei betrug $2023$ $612\,000\,€$ und wächst jährlich um $7\,\%$. In welchem Jahr liegt der Umsatz erstmals über $800\,000\,€$, und wie hoch ist er dann? \hfill (P10 2018 OS) \\ Jahr \leerfeld , ≈ \leerfeld[€]
+\teil Eine Gemeinde hatte $2022$ $8\,240$ Einwohner; die Zahl wächst jährlich um $3\,\%$. In welchem Jahr sind es erstmals mehr als $9\,500$, und wie viele sind es dann? \hfill (P10 2018 OS) \\ Jahr \leerfeld , ≈ \leerfeld
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Verdopplungs- und Halbwertszeit – Anlauf}
+\begin{teile}
+\teil „Nach wie vielen Jahren hat sich das Guthaben verdoppelt?“ Was wird hier verdoppelt? \\ \kreuz{das Guthaben} \\ \kreuz{die Zeit}
+\teil Ein Bestand startet bei $150$. Welchen Wert hat er, wenn er sich verdoppelt hat? \leerfeld
+\teil Bestimme aus der Tabelle die Verdopplungszeit. \wertetabelle[50,63,79,100,126]{Jahr}{Anzahl}{0,1,2,3,4} \leerfeld[Jahre]
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Verdopplungs- und Halbwertszeit – Prüfungsaufgaben}
+\begin{teile}
+\teil Der Stromverbrauch einer Firma beträgt $2021$ (Jahr $0$) $36$ Tausend Kilowattstunden und steigt jährlich um $4\,\%$; der Graph zeigt den Verbrauch für $30$ Jahre. Nach wie vielen Jahren hat sich der Verbrauch verdoppelt? Lies ab und beschreibe dein Vorgehen. \hfill (P10 2020 OS) \\
+
+\begin{ksys}[xmin=0,xmax=30,ymin=0,ymax=130,xstep=2,ystep=10,xlabel=t in Jahren,ylabel=Tausend kWh,ablesen] \funktionab{36*1.04^\x}{V}{0}{30} \end{ksys}
+nach etwa \leerfeld Jahren
+\teil Der Wasserverbrauch eines Ortes beträgt $2023$ (Jahr $0$) $120$ Tausend Kubikmeter und steigt jährlich um $2{,}5\,\%$; der Graph zeigt den Verbrauch für $40$ Jahre. Nach wie vielen Jahren hat er sich verdoppelt? Lies ab und beschreibe dein Vorgehen. \hfill (P10 2020 OS) \\
+
+\begin{ksys}[xmin=0,xmax=40,ymin=0,ymax=350,xstep=4,ystep=50,xlabel=t in Jahren,ylabel=Tausend m³,ablesen] \funktionab{120*1.025^\x}{W}{0}{40} \end{ksys}
+nach etwa \leerfeld Jahren
+\teil Ein Kontrastmittel wird stündlich um $20\,\%$ abgebaut; zu Beginn sind es $8{,}00\,\mathrm{mg}$. Nach wie vielen Stunden ist etwa noch die Hälfte vorhanden? \hfill (P10 2016 OS) \wertetabelle[8{,}00,6{,}40,5{,}12,4{,}10,3{,}28,2{,}62,2{,}10]{Zeit in h}{Menge in mg}{0,1,2,3,4,5,6} nach etwa \leerfeld Stunden
+\teil Ein Farbstoff zerfällt täglich um $25\,\%$; zu Beginn sind es $80\,\mathrm{mg}$. Nach wie vielen Tagen ist etwa noch die Hälfte vorhanden? \hfill (P10 2016 OS) \wertetabelle[80,60,45,33{,}75,25{,}31,18{,}98,14{,}24]{Tag}{Menge in mg}{0,1,2,3,4,5,6} nach etwa \leerfeld Tagen
+\end{teile}
+\end{aufgabe}

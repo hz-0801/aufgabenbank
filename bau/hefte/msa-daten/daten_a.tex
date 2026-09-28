@@ -1,0 +1,81 @@
+% Daten – bank/daten/ (zusammenbau v0.4, Heft)
+\einheitenkopf[t1]{Daten}
+\setcounter{aufgabe}{0}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Häufigkeiten – Anlauf}
+\begin{teile}
+\teil Von $26$ Kindern fahren $8$ mit dem Bus. – Was ist das Ganze? Unterstreiche es.
+\teil Zähle die Strichliste aus: Wie oft wurde Rot genannt, wie oft Blau?
+
+\sachtabelle{lc}{Farbe & Strichliste}{Rot & \strichliste{11} \\ Blau & \strichliste{7}}
+\teil Würfe: $3$, $5$, $2$, $5$, $1$, $5$, $3$, $2$, $5$, $3$. Trage die Anzahl je Augenzahl in die Tabelle ein.
+
+\sachtabelle{lcccc}{Augenzahl & 1 & 2 & 3 & 5}{Anzahl & \leerzelle & \leerzelle & \leerzelle & \leerzelle}
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Häufigkeiten – Prüfungsaufgaben}
+\begin{teile}
+\teil Eine Handballmannschaft spielte in einer Saison $26$ Spiele: $17$ gewonnen, $6$ unentschieden, $3$ verloren. Gib die relative Häufigkeit eines Siegs als Bruch und in Prozent an (auf eine Stelle gerundet). \hfill (P10 2015 OS)
+\teil Eine Volleyballmannschaft spielte $28$ Spiele: $16$ gewonnen, $7$ unentschieden, $5$ verloren. Gib die relative Häufigkeit eines Siegs als Bruch und in Prozent an (auf eine Stelle gerundet). \hfill (P10 2015 OS)
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Diagramme lesen – Anlauf}
+\begin{teile}
+\teil Zwischen zwei beschrifteten Werten der Achse liegen mehrere Hilfslinien. Was ist eine Hilfslinie wert? Gib nur den Schritt an.
+
+\saeulenab[ymax=600,ystep=100,yfein=20,ylabel=Anzahl]{A/280,B/460,C/140}
+\leerfeld je Linie
+\teil Lies ab: Wie viele Besucher kamen am Dienstag?
+
+\saeulenab[ymax=80,ystep=10,yfein=10,ylabel=Besucher]{Mo/30,Di/40,Mi/70,Do/50}
+\leerfeld Besucher
+\teil Lies ab: Wie viele Punkte hat Team B?
+
+\saeulenab[ymax=100,ystep=20,yfein=5,ylabel=Punkte]{A/40,B/65,C/90}
+\leerfeld Punkte
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Diagramme lesen – Prüfungsaufgaben}
+\begin{teile}
+\teil Lies ab: Wie viele Besucher hatte das Museum im Jahr 2014? Gib die Zahl vollständig an. \hfill (P10 2016 OS) \\
+
+\saeulenab[ymax=400,ystep=100,yfein=10,ylabel=Besucher in Tausend]{2012/310,2013/240,2014/270,2015/330}
+\leerfeld Besucher
+\teil Lies ab: An welchen Tagen kamen mehr als $220$ Gäste ins Freibad? \hfill (P10 2020 OS)
+
+\balkenab[xmax=320,xstep=40,xfein=10,xlabel=Gäste]{Mo/160,Di/240,Mi/110,Do/190,Fr/260,Sa/220,So/300}
+\teil Lies ab: In welchen Jahren hatte der Zoo weniger als $400\,000$ Besucher? \hfill (P10 2016 OS)
+
+\saeulenab[ymax=600,ystep=100,yfein=20,ylabel=Besucher in Tausend]{2018/440,2019/380,2020/520,2021/360,2022/400,2023/480}
+\teil Zeichne den Balken für Mittwoch: $230$ Gäste. \hfill (P10 2020 OS)
+
+\balkenab[xmax=300,xstep=50,xfein=10,xlabel=Gäste]{Mo/160,Di/260,Mi/,Do/220,Fr/110}
+\teil Zeichne die Säule für Sonntag: $1{,}45$ mm Regen. \hfill (P10 2026 FOR)
+
+\saeulenab[ymax=2.5,ystep=0.5,yfein=0.05,ylabel=Regen in mm]{Mo/1.2,Di/1.7,Mi/0.9,Do/2.3,Fr/1.6,Sa/1.1,So/}
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Diagramme lesen – Prüfungsaufgaben – weiter}
+\begin{teile}
+\teil Einwohner in Millionen: Polen $38$, Spanien $47$, Italien $59$, Frankreich $68$, Deutschland $84$. Die y-Achse trägt keine Zahlen; die Säule für Polen ist $3{,}8$ Kästchen hoch. a) Wie viel Mio. ist ein Kästchen wert? Beschrifte die Achse. b) Welches Land zeigt die Säule mit dem Fragezeichen ($5{,}9$ Kästchen)? c) Zeichne die Säule für Frankreich. \hfill (P10 2023 OS)
+
+\saeulenab[ymax=90,ystep=10,yfein=10,ylabel=Einwohner in Mio.,ohnezahlen]{Polen/38,?/59,Frankreich/,Deutschland/84}
+% AUSGELASSEN daten-e2-k2-s11-v2: Dimension too large.
+% \teil Sitzplätze in Stadien: A $81\,000$, B $75\,000$, C $60\,000$, D $54\,000$, E $42\,000$. Die y-Achse trägt keine Zahlen; die Säule für D ist $5{,}4$ Kästchen hoch. a) Wie viele Plätze ist ein Kästchen wert? Beschrifte die Achse. b) Welches Stadion zeigt die Säule mit dem Fragezeichen ($7{,}5$ Kästchen)? c) Zeichne die Säule für E. \hfill (P10 2023 OS)
+% 
+% \saeulenab[ymax=90000,ystep=10000,yfein=10000,ylabel=Sitzplätze,ohnezahlen]{A/81000,?/75000,D/54000,E/}
+\teil \textit{(ausgelassen)}
+\teil Tabelle der verkauften Früchte: Apfel $84$, Banane $48$, Kirsche $72$, Birne $84$, Traube $36$. Das Diagramm zeigt fünf Säulen A bis E ohne Namen, die Achse trägt nur Gitterlinien; die längsten Säulen B und E sind $7$ Linien hoch. a) Wie viel ist eine Gitterlinie wert? b) Ordne die Säulen den Früchten zu. \hfill (P10 2018 OS)
+
+\saeulenab[ymax=96,ystep=12,yfein=12,ylabel=Anzahl,ohnezahlen]{A/72,B/84,C/48,D/36,E/84}
+\teil Tabelle der Haustiere in einer Schule: Hund $150$, Katze $180$, Hamster $60$, Fisch $90$, Vogel $60$. Das Diagramm zeigt fünf Säulen A bis E ohne Namen, die Achse trägt nur Gitterlinien; die längste Säule C ist $6$ Linien hoch. a) Wie viel ist eine Gitterlinie wert? b) Ordne die Säulen den Tieren zu. \hfill (P10 2018 OS)
+
+\saeulenab[ymax=210,ystep=30,yfein=30,ylabel=Anzahl,ohnezahlen]{A/90,B/60,C/180,D/60,E/150}
+\end{teile}
+\end{aufgabe}

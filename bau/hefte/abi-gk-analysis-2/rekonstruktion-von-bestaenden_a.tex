@@ -1,0 +1,61 @@
+% Rekonstruktion von Beständen – bank/rekonstruktion-von-bestaenden/ (zusammenbau v0.4, Heft)
+\einheitenkopf[t5]{Rekonstruktion von Beständen}
+\setcounter{aufgabe}{21}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Bestand aus Rate – Anlauf}
+\begin{teile}
+\teil „35 Liter je Minute“ beschreibt … \\ \kreuz{einen Bestand} \\ \kreuz{eine Rate}
+\teil Die Zuflussrate in einen Tank ist $r(t) = 3t^2 - 12t + 15$ (Liter je Stunde, $t$ in Stunden). Berechne $∫_0^4 r(t)\,\mathrm{d}t$ und deute den Wert. \leerfeld
+\teil In einem Behälter sind zu Beginn 50 Liter, die Zuflussrate ist $r(t) = 4t + 2$ (Liter je Minute). Wie viel ist nach 3 Minuten im Behälter? \leerfeld[l]
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Bestand aus Rate – Prüfungsaufgaben}
+\begin{teile}
+\teil Nach 8 Stunden beträgt die Konzentration eines Stoffes 90\,mg/l. Die Abbildung zeigt die Änderungsrate $c'$ in mg/l je Stunde; ihr Graph ist auf $[0; 8]$ eine Strecke von $(0 | 5)$ bis $(8 | 0)$. Wie hoch war die Konzentration zu Beginn? Veranschauliche die Rechnung in der Abbildung. \hfill (Abitur 2024 GK) \\
+
+\begin{ksys}[xmin=0,xmax=9,ymin=-1,ymax=6,xlabel=t,ylabel=c',ablesen] \funktionab{5-0.625*\x}{c'}{0}{8} \end{ksys}
+\leerfeld mg/l
+\teil Die Abbildung zeigt die Änderungsrate $r$ der Temperatur eines Bauteils in °C je Minute. Bestimme mithilfe der Kästchen näherungsweise die Temperaturänderung in den ersten vier Minuten und gib an, ob die Temperatur zu- oder abnimmt. \hfill (Abitur 2017 GK) \\
+
+\begin{ksys}[xmin=0,xmax=6,ymin=-2,ymax=2,xlabel=t,ylabel=r,ablesen] \funktionab{1.5*\x-0.375*\x^2}{r}{0}{5} \end{ksys}
+\leerfeld °C
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Rate und Bestand als Paar – Anlauf}
+\begin{teile}
+\teil Die Abbildung zeigt eine Zuflussrate $r$. Wann ist der Bestand am größten? \\ \kreuz{$t = 2{,}5$} \\ \kreuz{$t = 5$}
+
+\begin{ksys}[xmin=0,xmax=8,ymin=-3,ymax=2,xlabel=t,ylabel=r,ablesen] \funktionab{0.2*\x*(5-\x)}{r}{0}{7} \end{ksys}
+\teil Die Zuflussrate in einen Behälter ist $r(t) = 0{,}5t \cdot (8 - t)$ (m³ je Stunde, $0 \le t \le 10$). Begründe, dass der Inhalt für $0 < t < 8$ durchgehend zunimmt.
+\teil Die Änderungsrate des Wassers in einem Becken ist $r(t) = 12 - 3t$ (m³ je Stunde, $0 \le t \le 6$). Wann ist am meisten Wasser im Becken? Begründe. t = \leerfeld
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Rate und Bestand als Paar – Prüfungsaufgaben}
+\begin{teile}
+\teil Ein Behälter enthält zu Beginn 3 Liter. Die Zuflussrate ist $r(t) = t \cdot (6 - t)$ (Liter je Stunde, $0 \le t \le 7$). Begründe, dass das Volumen in den ersten sechs Stunden durchgehend zunimmt. \hfill (Abitur 2018 GK)
+\teil Die Änderungsrate des Inhalts eines Getreidesilos ist $r(t) = -0{,}25t^3 + 3t^2$ (Tonnen je Stunde, $0 \le t \le 14$). Beurteile die Aussage: „Nach acht Stunden ist am meisten Getreide im Silo.“ \hfill (Abitur 2021 GK)
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Am Ratengraphen – Anlauf}
+\begin{teile}
+\teil Die Abbildung zeigt die Zuflussrate $r$ eines Behälters in Litern je Minute. Lies $r(1)$ ab und deute den Wert. Um wie viel ändert sich der Inhalt von $t = 0$ bis $t = 4$?
+
+\begin{ksys}[xmin=0,xmax=7,ymin=-3,ymax=5,xlabel=t,ylabel=r,ablesen] \funktionab{4-\x}{r}{0}{6} \end{ksys}
+\teil Zwei Autos fahren zur selben Zeit am selben Ort los, mit $p(t) = 20 + 2t$ und $q(t) = 3t$ (m/s, $t$ in Sekunden). Berechne $∫_0^{10} (p(t) - q(t))\,\mathrm{d}t$ und deute den Wert.
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Am Ratengraphen – Prüfungsaufgaben}
+\begin{teile}
+\teil Zwei Pflanzen wachsen mit $p(t) = 6t - t^2$ und $q(t) = 0{,}5t^2$ (cm je Woche, $t$ in Wochen), beide starten mit der Höhe 0. Berechne $∫_0^4 (p(t) - q(t))\,\mathrm{d}t$ und deute den Wert. \hfill (Abitur 2019 GK)
+\teil Zwei Läuferinnen starten gleichzeitig am selben Ort mit den Geschwindigkeiten $p(t)$ und $q(t)$ (m/s). Bis zum Schnittpunkt $t_s$ der Graphen ist $p$ größer, danach $q$. Für $z > 0$ gilt $∫_0^z (p(t) - q(t))\,\mathrm{d}t = 0$. Deute $z$ und begründe, dass $z > t_s$ ist. \hfill (Abitur 2024 GK)
+\teil Zwei Radfahrer starten gleichzeitig am selben Ort, einer mit konstant $p(t) = 6$, der andere mit $q(t) = 0{,}5t$ (m/s, $t$ in Sekunden). Berechne $z > 0$ mit $∫_0^z (p(t) - q(t))\,\mathrm{d}t = 0$, deute $z$ und vergleiche mit dem Schnittpunkt der Geschwindigkeitsgraphen. \hfill (Abitur 2024 GK) \\ z = \leerfeld
+\end{teile}
+\end{aufgabe}

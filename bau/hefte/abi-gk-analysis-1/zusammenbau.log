@@ -1,0 +1,272 @@
+# zusammenbau v0.4: zusammenbau.py ableitung-und-aenderungsrate ableitungsregeln kurvenuntersuchung tangente-normale-schnittwinkel funktionsklassen-und-eigenschaften grenzwerte-und-verhalten-im-unendlichen extremalprobleme --heft abitur-gk --titel Prüfungsheft Abitur GK · Analysis 1
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG AEN-H1 – Kürzel AEN aus _kuerzel.csv (mathe-nachhilfe) (erster Eintrag ableitung-und-aenderungsrate); Rezept H (Heft)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+AUSWAHL ableitung-und-aenderungsrate-e1-k1-s0-v1 – ableitung-und-aenderungsrate e1 „Mittlere Änderungsrate“: Anlauf, Vorstufe
+AUSWAHL ableitung-und-aenderungsrate-e1-k1-s1-v1 – ableitung-und-aenderungsrate e1 „Mittlere Änderungsrate“: Anlauf, Grundfall
+AUSWAHL ableitung-und-aenderungsrate-e1-k1-s6-v2 – ableitung-und-aenderungsrate e1 „Mittlere Änderungsrate“: Anlauf, Sprosse – Fallstrick im Merkmal („zwei Modelle über dasselbe Intervall: beide Differ“)
+AUSWAHL ableitung-und-aenderungsrate-e1-k1-s2-v2 – ableitung-und-aenderungsrate e1 „Mittlere Änderungsrate“: Prüfungshöhe (2025-bebb-gk-B2.2f)
+AUSWAHL ableitung-und-aenderungsrate-e1-k1-s3-v1 – ableitung-und-aenderungsrate e1 „Mittlere Änderungsrate“: Prüfungshöhe (2019-be-gk-B2.2d)
+AUSWAHL ableitung-und-aenderungsrate-e1-k1-s3-v3 – ableitung-und-aenderungsrate e1 „Mittlere Änderungsrate“: Prüfungshöhe (2019MgrundlegendBAnalysisWTR1-1d)
+AUSWAHL ableitung-und-aenderungsrate-e1-k1-s4-v2 – ableitung-und-aenderungsrate e1 „Mittlere Änderungsrate“: Prüfungshöhe (2026MgrundlegendBAnalysisWTR1-2c)
+AUSWAHL ableitung-und-aenderungsrate-e1-k1-s5-v1 – ableitung-und-aenderungsrate e1 „Mittlere Änderungsrate“: Prüfungshöhe (2018-be-gk-B1.2e)
+AUSWAHL ableitung-und-aenderungsrate-e1-k1-s6-v1 – ableitung-und-aenderungsrate e1 „Mittlere Änderungsrate“: Prüfungshöhe (2018-be-gk-B1.2g)
+AUSWAHL ableitung-und-aenderungsrate-e1-k1-s7-v1 – ableitung-und-aenderungsrate e1 „Mittlere Änderungsrate“: Prüfungshöhe (2026-bb-gk-B2.1i)
+AUSWAHL ableitung-und-aenderungsrate-e1-k1-s8-v1 – ableitung-und-aenderungsrate e1 „Mittlere Änderungsrate“: Prüfungshöhe (2026MgrundlegendBAnalysisMMS1-1b)
+AUSWAHL ableitung-und-aenderungsrate-e1-k1-s10-v1 – ableitung-und-aenderungsrate e1 „Mittlere Änderungsrate“: Prüfungshöhe (2018MgrundlegendBAnalysisWTR-2c)
+AUSWAHL ableitung-und-aenderungsrate-e1-k1-s10-v2 – ableitung-und-aenderungsrate e1 „Mittlere Änderungsrate“: Prüfungshöhe (2018MgrundlegendBAnalysisWTR-2c)
+AUSWAHL ableitung-und-aenderungsrate-e1-k1-s10-v3 – ableitung-und-aenderungsrate e1 „Mittlere Änderungsrate“: Prüfungshöhe (2019MgrundlegendBAnalysisWTR2-2d)
+AUSWAHL ableitung-und-aenderungsrate-e1-k1-s10-v4 – ableitung-und-aenderungsrate e1 „Mittlere Änderungsrate“: Prüfungshöhe (2019MgrundlegendBAnalysisWTR2-2d)
+TEILUNG ableitung-und-aenderungsrate e1 „Mittlere Änderungsrate“: 12 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+AUSWAHL ableitung-und-aenderungsrate-e2-k1-s0-v1 – ableitung-und-aenderungsrate e2 „Ableitung an einer Stelle“: Anlauf, Vorstufe
+AUSWAHL ableitung-und-aenderungsrate-e2-k1-s1-v1 – ableitung-und-aenderungsrate e2 „Ableitung an einer Stelle“: Anlauf, Grundfall
+AUSWAHL ableitung-und-aenderungsrate-e2-k1-s5-v3 – ableitung-und-aenderungsrate e2 „Ableitung an einer Stelle“: Anlauf, Sprosse – Fallstrick im Merkmal („eine Ratenfunktion: negativer Wert heißt Abnahme d“)
+AUSWAHL ableitung-und-aenderungsrate-e2-k1-s2-v1 – ableitung-und-aenderungsrate e2 „Ableitung an einer Stelle“: Prüfungshöhe (2026MgrundlegendAAnalysis21-a)
+AUSWAHL ableitung-und-aenderungsrate-e2-k1-s3-v1 – ableitung-und-aenderungsrate e2 „Ableitung an einer Stelle“: Prüfungshöhe (2024-bebb-gk-A1.4a)
+AUSWAHL ableitung-und-aenderungsrate-e2-k1-s3-v2 – ableitung-und-aenderungsrate e2 „Ableitung an einer Stelle“: Prüfungshöhe (2024MgrundlegendAAnalysis13-a)
+AUSWAHL ableitung-und-aenderungsrate-e2-k1-s6-v1 – ableitung-und-aenderungsrate e2 „Ableitung an einer Stelle“: Prüfungshöhe (2021MgrundlegendBAnalysisWTR-2a)
+AUSWAHL ableitung-und-aenderungsrate-e2-k1-s7-v1 – ableitung-und-aenderungsrate e2 „Ableitung an einer Stelle“: Prüfungshöhe (2021-be-gk-B2.1i)
+AUSWAHL ableitung-und-aenderungsrate-e2-k1-s8-v3 – ableitung-und-aenderungsrate e2 „Ableitung an einer Stelle“: Prüfungshöhe (2020MgrundlegendBAnalysisWTR1-1c)
+AUSWAHL ableitung-und-aenderungsrate-e2-k1-s8-v4 – ableitung-und-aenderungsrate e2 „Ableitung an einer Stelle“: Prüfungshöhe (2020MgrundlegendBAnalysisWTR1-1c)
+TEILUNG ableitung-und-aenderungsrate e2 „Ableitung an einer Stelle“: 7 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+WEG ableitung-und-aenderungsrate e2 „Momentane Änderungsrate am Graphen über eine eingezeichnete Tangente bestimmen“ – keine Prüfungshöhe im Profil abitur-gk
+WEG ableitung-und-aenderungsrate e2 „Graph der Füllhöhe in Abhängigkeit von der Zeit über die Gefäßform auswählen und begründen“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL ableitung-und-aenderungsrate-e3-k1-s0-v1 – ableitung-und-aenderungsrate e3 „Von der Sekante zur Tangente“: Anlauf, Vorstufe
+AUSWAHL ableitung-und-aenderungsrate-e3-k1-s1-v1 – ableitung-und-aenderungsrate e3 „Von der Sekante zur Tangente“: Anlauf, Grundfall
+AUSWAHL ableitung-und-aenderungsrate-e3-k1-s2-v2 – ableitung-und-aenderungsrate e3 „Von der Sekante zur Tangente“: Anlauf, Sprosse – Fallstrick im Merkmal („zwei Aufträge am selben Graphen: Differenzenquotie“)
+AUSWAHL ableitung-und-aenderungsrate-e3-k1-s3-v1 – ableitung-und-aenderungsrate e3 „Von der Sekante zur Tangente“: Prüfungshöhe (2026-bb-gk-B2.2h)
+AUSWAHL ableitung-und-aenderungsrate-e3-k1-s3-v2 – ableitung-und-aenderungsrate e3 „Von der Sekante zur Tangente“: Prüfungshöhe (2026MgrundlegendBAnalysisWTR2-2b)
+AUSWAHL ableitung-und-aenderungsrate-e3-k1-s4-v1 – ableitung-und-aenderungsrate e3 „Von der Sekante zur Tangente“: Prüfungshöhe (2022-bebb-gk-B2.2c)
+AUSWAHL ableitung-und-aenderungsrate-e3-k1-s5-v1 – ableitung-und-aenderungsrate e3 „Von der Sekante zur Tangente“: Prüfungshöhe (2024MgrundlegendAAnalysis22)
+WEG ableitung-und-aenderungsrate e3 „Differenzen- und Differentialquotient durch Sekante und Tangente veranschaulichen und im Sachzusammenhang deuten“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL ableitung-und-aenderungsrate-e4-k1-s0-v1 – ableitung-und-aenderungsrate e4 „Die Rate als Funktion“: Anlauf, Vorstufe
+AUSWAHL ableitung-und-aenderungsrate-e4-k1-s1-v1 – ableitung-und-aenderungsrate e4 „Die Rate als Funktion“: Anlauf, Grundfall
+AUSWAHL ableitung-und-aenderungsrate-e4-k1-s4-v3 – ableitung-und-aenderungsrate e4 „Die Rate als Funktion“: Anlauf, Sprosse – Fallstrick im Merkmal („die gegebene Funktion ist der Bestand: f'' null se“)
+AUSWAHL ableitung-und-aenderungsrate-e4-k1-s3-v1 – ableitung-und-aenderungsrate e4 „Die Rate als Funktion“: Prüfungshöhe (2019MgrundlegendAAnalysis12-b)
+AUSWAHL ableitung-und-aenderungsrate-e4-k1-s3-v2 – ableitung-und-aenderungsrate e4 „Die Rate als Funktion“: Prüfungshöhe (2018-be-gk-B1.2f)
+AUSWAHL ableitung-und-aenderungsrate-e4-k1-s4-v1 – ableitung-und-aenderungsrate e4 „Die Rate als Funktion“: Prüfungshöhe (2019-be-gk-B2.1b)
+AUSWAHL ableitung-und-aenderungsrate-e4-k1-s4-v2 – ableitung-und-aenderungsrate e4 „Die Rate als Funktion“: Prüfungshöhe (2026MgrundlegendBAnalysisMMS1-1c)
+AUSWAHL ableitung-und-aenderungsrate-e4-k1-s7-v1 – ableitung-und-aenderungsrate e4 „Die Rate als Funktion“: Prüfungshöhe (2022-bebb-gk-B2.1m)
+AUSWAHL ableitung-und-aenderungsrate-e4-k1-s7-v2 – ableitung-und-aenderungsrate e4 „Die Rate als Funktion“: Prüfungshöhe (2022MgrundlegendBAnalysisWTR2-2d)
+AUSWAHL ableitung-und-aenderungsrate-e4-k1-s9-v1 – ableitung-und-aenderungsrate e4 „Die Rate als Funktion“: Prüfungshöhe (Kennung im Text)
+AUSWAHL ableitung-und-aenderungsrate-e4-k1-s9-v2 – ableitung-und-aenderungsrate e4 „Die Rate als Funktion“: Prüfungshöhe (Kennung im Text)
+AUSWAHL ableitung-und-aenderungsrate-e4-k1-s9-v3 – ableitung-und-aenderungsrate e4 „Die Rate als Funktion“: Prüfungshöhe (Kennung im Text)
+AUSWAHL ableitung-und-aenderungsrate-e4-k1-s9-v4 – ableitung-und-aenderungsrate e4 „Die Rate als Funktion“: Prüfungshöhe (2026-bb-gk-B2.2i)
+AUSWAHL ableitung-und-aenderungsrate-e4-k1-s9-v5 – ableitung-und-aenderungsrate e4 „Die Rate als Funktion“: Prüfungshöhe (2026-bb-gk-B2.2i)
+AUSWAHL ableitung-und-aenderungsrate-e4-k1-s9-v6 – ableitung-und-aenderungsrate e4 „Die Rate als Funktion“: Prüfungshöhe (2026MgrundlegendBAnalysisWTR2-2c)
+AUSWAHL ableitung-und-aenderungsrate-e4-k1-s9-v7 – ableitung-und-aenderungsrate e4 „Die Rate als Funktion“: Prüfungshöhe (2026MgrundlegendBAnalysisWTR2-2c)
+TEILUNG ableitung-und-aenderungsrate e4 „Die Rate als Funktion“: 13 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+WEG ableitungsregeln e1 „Zahl oder Variable?“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL ableitungsregeln-e1-k2-s0-v1 – ableitungsregeln e1 „Potenz-, Faktor- und Summenregel“: Anlauf, Vorstufe
+AUSWAHL ableitungsregeln-e1-k2-s1-v1 – ableitungsregeln e1 „Potenz-, Faktor- und Summenregel“: Anlauf, Grundfall
+AUSWAHL ableitungsregeln-e1-k2-s2-v1 – ableitungsregeln e1 „Potenz-, Faktor- und Summenregel“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL ableitungsregeln-e1-k2-s4-v1 – ableitungsregeln e1 „Potenz-, Faktor- und Summenregel“: Prüfungshöhe (2019-be-gk-A1.1a)
+AUSWAHL ableitungsregeln-e1-k2-s4-v2 – ableitungsregeln e1 „Potenz-, Faktor- und Summenregel“: Prüfungshöhe (2019-be-gk-A1.1a)
+AUSWAHL ableitungsregeln-e1-k2-s4-v3 – ableitungsregeln e1 „Potenz-, Faktor- und Summenregel“: Prüfungshöhe (2019-be-gk-A1.1a)
+AUSWAHL ableitungsregeln-e1-k2-s8-v1 – ableitungsregeln e1 „Potenz-, Faktor- und Summenregel“: Prüfungshöhe (2022MgrundlegendBAnalysisWTR1-1c)
+AUSWAHL ableitungsregeln-e1-k2-s8-v2 – ableitungsregeln e1 „Potenz-, Faktor- und Summenregel“: Prüfungshöhe (2022MgrundlegendBAnalysisWTR1-1c)
+AUSWAHL ableitungsregeln-e1-k2-s8-v3 – ableitungsregeln e1 „Potenz-, Faktor- und Summenregel“: Prüfungshöhe (2022MgrundlegendBAnalysisWTR1-1c)
+WEG ableitungsregeln e1 „Verhalten im Unendlichen bestimmen“ – keine Prüfungshöhe im Profil abitur-gk
+WEG ableitungsregeln e2 „Kettenregel“ – keine Prüfungshöhe im Profil abitur-gk
+WEG ableitungsregeln e2 „Term einer höheren Ableitung einer Sinusfunktion über die Periodizität der Ableitungen angeben“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL ableitungsregeln-e3-k1-s0-v1 – ableitungsregeln e3 „Produktregel“: Anlauf, Vorstufe
+AUSWAHL ableitungsregeln-e3-k1-s1-v1 – ableitungsregeln e3 „Produktregel“: Anlauf, Grundfall
+AUSWAHL ableitungsregeln-e3-k1-s3-v1 – ableitungsregeln e3 „Produktregel“: Prüfungshöhe (2024MgrundlegendBAnalysisWTR1-1a)
+AUSWAHL ableitungsregeln-e3-k1-s3-v3 – ableitungsregeln e3 „Produktregel“: Prüfungshöhe (2020-be-gk-B2.1c)
+AUSWAHL ableitungsregeln-e3-k1-s6-v1 – ableitungsregeln e3 „Produktregel“: Prüfungshöhe (2026MgrundlegendAAnalysis21-b)
+AUSWAHL ableitungsregeln-e3-k1-s6-v2 – ableitungsregeln e3 „Produktregel“: Prüfungshöhe (2026MgrundlegendAAnalysis21-b)
+AUSWAHL ableitungsregeln-e3-k1-s6-v3 – ableitungsregeln e3 „Produktregel“: Prüfungshöhe (2026MgrundlegendAAnalysis21-b)
+AUSWAHL kurvenuntersuchung-e1-k1-s0-v1 – kurvenuntersuchung e1 „Monotonie“: Anlauf, Vorstufe
+AUSWAHL kurvenuntersuchung-e1-k1-s1-v1 – kurvenuntersuchung e1 „Monotonie“: Anlauf, Grundfall
+AUSWAHL kurvenuntersuchung-e1-k1-s3-v1 – kurvenuntersuchung e1 „Monotonie“: Anlauf, Sprosse – Fallstrick im Merkmal („negativer Leitkoeffizient, Vorzeichen je Intervall“)
+AUSWAHL kurvenuntersuchung-e1-k1-s5-v1 – kurvenuntersuchung e1 „Monotonie“: Prüfungshöhe (2026MgrundlegendBAnalysisWTR1-1a)
+AUSWAHL kurvenuntersuchung-e1-k1-s5-v2 – kurvenuntersuchung e1 „Monotonie“: Prüfungshöhe (2024-bebb-gk-A1.7a)
+AUSWAHL kurvenuntersuchung-e1-k1-s7-v1 – kurvenuntersuchung e1 „Monotonie“: Prüfungshöhe (2021-be-gk-B2.1g)
+AUSWAHL kurvenuntersuchung-e1-k1-s7-v2 – kurvenuntersuchung e1 „Monotonie“: Prüfungshöhe (2021-be-gk-B2.1g)
+AUSWAHL kurvenuntersuchung-e2-k1-s0-v1 – kurvenuntersuchung e2 „Extrempunkte berechnen“: Anlauf, Vorstufe
+AUSWAHL kurvenuntersuchung-e2-k1-s1-v1 – kurvenuntersuchung e2 „Extrempunkte berechnen“: Anlauf, Grundfall
+AUSWAHL kurvenuntersuchung-e2-k1-s3-v1 – kurvenuntersuchung e2 „Extrempunkte berechnen“: Anlauf, Sprosse – Fallstrick im Merkmal („vierter Grad: x ausklammern, Lösung x = 0 behalten“)
+AUSWAHL kurvenuntersuchung-e2-k12-s3-v1 – kurvenuntersuchung e2 „Extrempunkte berechnen“: Prüfungshöhe (2023MgrundlegendBAnalysisWTR1-1b)
+AUSWAHL kurvenuntersuchung-e2-k1-s6-v1 – kurvenuntersuchung e2 „Extrempunkte berechnen“: Prüfungshöhe (2025-bebb-gk-B2.2b)
+AUSWAHL kurvenuntersuchung-e2-k1-s6-v2 – kurvenuntersuchung e2 „Extrempunkte berechnen“: Prüfungshöhe (2019-be-gk-B2.2b)
+AUSWAHL kurvenuntersuchung-e2-k1-s10-v1 – kurvenuntersuchung e2 „Extrempunkte berechnen“: Prüfungshöhe (2021-be-gk-B2.2d)
+AUSWAHL kurvenuntersuchung-e2-k1-s10-v2 – kurvenuntersuchung e2 „Extrempunkte berechnen“: Prüfungshöhe (2021-be-gk-B2.2d)
+AUSWAHL kurvenuntersuchung-e2-k2-s0-v1 – kurvenuntersuchung e2 „Extrempunkte nachweisen“: Anlauf, Vorstufe
+AUSWAHL kurvenuntersuchung-e2-k2-s1-v1 – kurvenuntersuchung e2 „Extrempunkte nachweisen“: Anlauf, Grundfall
+AUSWAHL kurvenuntersuchung-e2-k2-s4-v3 – kurvenuntersuchung e2 „Extrempunkte nachweisen“: Anlauf, Sprosse – Fallstrick im Merkmal („Art über den Vorzeichenwechsel von f' an Probestel“)
+AUSWAHL kurvenuntersuchung-e2-k2-s2-v1 – kurvenuntersuchung e2 „Extrempunkte nachweisen“: Prüfungshöhe (2026MgrundlegendAAnalysis11-a)
+AUSWAHL kurvenuntersuchung-e2-k2-s4-v1 – kurvenuntersuchung e2 „Extrempunkte nachweisen“: Prüfungshöhe (2020MgrundlegendAAnalysis11-a)
+AUSWAHL kurvenuntersuchung-e2-k2-s4-v2 – kurvenuntersuchung e2 „Extrempunkte nachweisen“: Prüfungshöhe (2022-bebb-gk-B2.1a)
+AUSWAHL kurvenuntersuchung-e2-k3-s1-v2 – kurvenuntersuchung e2 „Abstand zweier Extrempunkte verschiedener Graphen mit einer Schranke vergleichen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL kurvenuntersuchung-e2-k3-s1-v1 – kurvenuntersuchung e2 „Abstand zweier Extrempunkte verschiedener Graphen mit einer Schranke vergleichen“: Prüfungshöhe (2021-be-gk-B2.1f)
+AUSWAHL kurvenuntersuchung-e2-k4-s1-v2 – kurvenuntersuchung e2 „Abstand zweier Extrempunkte über die Punktsymmetrie berechnen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL kurvenuntersuchung-e2-k4-s1-v1 – kurvenuntersuchung e2 „Abstand zweier Extrempunkte über die Punktsymmetrie berechnen“: Prüfungshöhe (2026MgrundlegendAAnalysis11-b)
+AUSWAHL kurvenuntersuchung-e2-k5-s1-v2 – kurvenuntersuchung e2 „Extrempunkte berechnen und ihre Verbindungsgerade als Winkelhalbierende nachweisen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL kurvenuntersuchung-e2-k5-s1-v1 – kurvenuntersuchung e2 „Extrempunkte berechnen und ihre Verbindungsgerade als Winkelhalbierende nachweisen“: Prüfungshöhe (2025-bebb-gk-B2.1b)
+AUSWAHL kurvenuntersuchung-e2-k6-s1-v2 – kurvenuntersuchung e2 „Nullstellen und Extremstelle einer Parabel berechnen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL kurvenuntersuchung-e2-k6-s1-v1 – kurvenuntersuchung e2 „Nullstellen und Extremstelle einer Parabel berechnen“: Prüfungshöhe (2023MgrundlegendBAnalysisWTR1-1a)
+WEG kurvenuntersuchung e2 „Berührung des Graphen mit der x-Achse über die Extrempunkte begründen“ – keine Prüfungshöhe im Profil abitur-gk
+WEG kurvenuntersuchung e2 „Größten Funktionswert über Monotonie, Grenzverhalten und Symmetrie begründen und Wertemenge angeben“ – keine Prüfungshöhe im Profil abitur-gk
+WEG kurvenuntersuchung e2 „Extremstelle zwischen zwei Stellen mit gleichem Funktionswert ohne Rechnung begründen“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL kurvenuntersuchung-e2-k10-s1-v2 – kurvenuntersuchung e2 „Lage eines Graphen zwischen zwei Geraden auf einem Intervall über die Differenzfunktionen nachweisen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL kurvenuntersuchung-e2-k10-s1-v1 – kurvenuntersuchung e2 „Lage eines Graphen zwischen zwei Geraden auf einem Intervall über die Differenzfunktionen nachweisen“: Prüfungshöhe (2017-be-gk-cas-B1.1e)
+WEG kurvenuntersuchung e2 „Aussagen über Funktions- und Ableitungswert nahe dem Tiefpunkt ohne Rechnung beurteilen“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL kurvenuntersuchung-e3-k1-s0-v1 – kurvenuntersuchung e3 „Wendepunkte und Krümmung“: Anlauf, Vorstufe
+AUSWAHL kurvenuntersuchung-e3-k1-s1-v1 – kurvenuntersuchung e3 „Wendepunkte und Krümmung“: Anlauf, Grundfall
+AUSWAHL kurvenuntersuchung-e3-k1-s8-v2 – kurvenuntersuchung e3 „Wendepunkte und Krümmung“: Anlauf, Sprosse – Fallstrick im Merkmal („f'' eines Produkts mit e-Funktion, nur den Polynom“)
+AUSWAHL kurvenuntersuchung-e3-k1-s5-v1 – kurvenuntersuchung e3 „Wendepunkte und Krümmung“: Prüfungshöhe (2018MgrundlegendBAnalysisWTR-1a)
+AUSWAHL kurvenuntersuchung-e3-k1-s8-v1 – kurvenuntersuchung e3 „Wendepunkte und Krümmung“: Prüfungshöhe (2023-bebb-gk-B2.1f)
+AUSWAHL kurvenuntersuchung-e3-k1-s10-v1 – kurvenuntersuchung e3 „Wendepunkte und Krümmung“: Prüfungshöhe (2021-be-gk-B2.2e)
+AUSWAHL kurvenuntersuchung-e3-k1-s10-v2 – kurvenuntersuchung e3 „Wendepunkte und Krümmung“: Prüfungshöhe (2021-be-gk-B2.2e)
+AUSWAHL kurvenuntersuchung-e3-k2-s1-v2 – kurvenuntersuchung e3 „Gerade durch die beiden Wendepunkte aufstellen und parallele Gerade mit genau einem gemeinsamen Punkt einzeichnen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL kurvenuntersuchung-e3-k2-s1-v1 – kurvenuntersuchung e3 „Gerade durch die beiden Wendepunkte aufstellen und parallele Gerade mit genau einem gemeinsamen Punkt einzeichnen“: Prüfungshöhe (2021MgrundlegendBAnalysisWTR-1b)
+WEG kurvenuntersuchung e3 „Punktprobe am Graphen“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL kurvenuntersuchung-e3-k4-s1-v2 – kurvenuntersuchung e3 „Wendestelle nachweisen und Winkel der Wendetangente mit der x-Achse über die Steigung −1 zeigen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL kurvenuntersuchung-e3-k4-s1-v1 – kurvenuntersuchung e3 „Wendestelle nachweisen und Winkel der Wendetangente mit der x-Achse über die Steigung −1 zeigen“: Prüfungshöhe (2026MgrundlegendBAnalysisMMS2-1c)
+WEG kurvenuntersuchung e3 „Wendestellen einer Sinusfunktion als ganzzahlig nachweisen und die beiden Wendetangentensteigungen zeigen“ – keine Prüfungshöhe im Profil abitur-gk
+WEG kurvenuntersuchung e3 „Anzahl der Schnittpunkte von Geraden durch den Wendepunkt mit dem Graphen nach der Steigung unterscheiden“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL kurvenuntersuchung-e4-k1-s0-v1 – kurvenuntersuchung e4 „Graph und Ableitungsgraph“: Anlauf, Vorstufe
+AUSWAHL kurvenuntersuchung-e4-k1-s1-v1 – kurvenuntersuchung e4 „Graph und Ableitungsgraph“: Anlauf, Grundfall
+AUSWAHL kurvenuntersuchung-e4-k1-s2-v1 – kurvenuntersuchung e4 „Graph und Ableitungsgraph“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL kurvenuntersuchung-e4-k1-s4-v1 – kurvenuntersuchung e4 „Graph und Ableitungsgraph“: Prüfungshöhe (2020-be-gk-B2.2d)
+AUSWAHL kurvenuntersuchung-e4-k1-s8-v1 – kurvenuntersuchung e4 „Graph und Ableitungsgraph“: Prüfungshöhe (2024-bebb-gk-B2.1d)
+AUSWAHL kurvenuntersuchung-e4-k1-s8-v2 – kurvenuntersuchung e4 „Graph und Ableitungsgraph“: Prüfungshöhe (2024-bebb-gk-B2.1d)
+AUSWAHL kurvenuntersuchung-e4-k1-s8-v3 – kurvenuntersuchung e4 „Graph und Ableitungsgraph“: Prüfungshöhe (2023-bebb-gk-B2.2e)
+AUSWAHL kurvenuntersuchung-e4-k1-s8-v4 – kurvenuntersuchung e4 „Graph und Ableitungsgraph“: Prüfungshöhe (2023-bebb-gk-B2.2e)
+WEG kurvenuntersuchung e4 „Gemeinsamen Punkt zweier Graphen über gleiche Flächeninhalte indirekt begründen“ – keine Prüfungshöhe im Profil abitur-gk
+WEG kurvenuntersuchung e4 „Logarithmus einer Exponentialfunktion als lineare Funktion nachweisen und Steigung und Achsenabschnitt angeben“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL kurvenuntersuchung-e5-k1-s0-v1 – kurvenuntersuchung e5 „Sachzusammenhang“: Anlauf, Vorstufe
+AUSWAHL kurvenuntersuchung-e5-k1-s1-v1 – kurvenuntersuchung e5 „Sachzusammenhang“: Anlauf, Grundfall
+AUSWAHL kurvenuntersuchung-e5-k1-s3-v1 – kurvenuntersuchung e5 „Sachzusammenhang“: Anlauf, Sprosse – Fallstrick im Merkmal („Funktionswert an der steilsten fallenden Stelle ab“)
+AUSWAHL kurvenuntersuchung-e5-k1-s2-v1 – kurvenuntersuchung e5 „Sachzusammenhang“: Prüfungshöhe (2022MgrundlegendBAnalysisWTR2-2c)
+AUSWAHL kurvenuntersuchung-e5-k4-s3-v1 – kurvenuntersuchung e5 „Sachzusammenhang“: Prüfungshöhe (2017-be-gk-B1.1c)
+AUSWAHL kurvenuntersuchung-e5-k4-s4-v1 – kurvenuntersuchung e5 „Sachzusammenhang“: Prüfungshöhe (2018MgrundlegendBAnalysisWTR-2e)
+AUSWAHL kurvenuntersuchung-e5-k1-s6-v1 – kurvenuntersuchung e5 „Sachzusammenhang“: Prüfungshöhe (2019-be-gk-B2.2c)
+AUSWAHL kurvenuntersuchung-e5-k1-s6-v2 – kurvenuntersuchung e5 „Sachzusammenhang“: Prüfungshöhe (2018-be-gk-B1.1d)
+AUSWAHL kurvenuntersuchung-e5-k1-s8-v1 – kurvenuntersuchung e5 „Sachzusammenhang“: Prüfungshöhe (2026-bb-gk-B2.1f)
+AUSWAHL kurvenuntersuchung-e5-k1-s9-v1 – kurvenuntersuchung e5 „Sachzusammenhang“: Prüfungshöhe (2024MgrundlegendBAnalysisWTR2-2c)
+AUSWAHL kurvenuntersuchung-e5-k1-s9-v2 – kurvenuntersuchung e5 „Sachzusammenhang“: Prüfungshöhe (2024MgrundlegendBAnalysisWTR2-2c)
+TEILUNG kurvenuntersuchung e5 „Sachzusammenhang“: 8 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+WEG kurvenuntersuchung e5 „Funktionswert im Sachzusammenhang deuten“ – keine Prüfungshöhe im Profil abitur-gk
+WEG kurvenuntersuchung e5 „Mittleren Wert einer periodisch schwankenden Größe am Graphen ablesen“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL tangente-normale-schnittwinkel-e1-k1-s0-v1 – tangente-normale-schnittwinkel e1 „Tangentengleichung“: Anlauf, Vorstufe
+AUSWAHL tangente-normale-schnittwinkel-e1-k1-s1-v1 – tangente-normale-schnittwinkel e1 „Tangentengleichung“: Anlauf, Grundfall
+AUSWAHL tangente-normale-schnittwinkel-e1-k1-s2-v3 – tangente-normale-schnittwinkel e1 „Tangentengleichung“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL tangente-normale-schnittwinkel-e1-k1-s1-v5 – tangente-normale-schnittwinkel e1 „Tangentengleichung“: Prüfungshöhe (2025-bebb-gk-A1.1a)
+AUSWAHL tangente-normale-schnittwinkel-e1-k1-s4-v1 – tangente-normale-schnittwinkel e1 „Tangentengleichung“: Prüfungshöhe (2026-bb-gk-B2.2b)
+AUSWAHL tangente-normale-schnittwinkel-e1-k1-s4-v2 – tangente-normale-schnittwinkel e1 „Tangentengleichung“: Prüfungshöhe (2019-be-gk-B2.2f)
+AUSWAHL tangente-normale-schnittwinkel-e1-k1-s4-v3 – tangente-normale-schnittwinkel e1 „Tangentengleichung“: Prüfungshöhe (2018MgrundlegendAAnalysis12-a)
+AUSWAHL tangente-normale-schnittwinkel-e1-k1-s6-v1 – tangente-normale-schnittwinkel e1 „Tangentengleichung“: Prüfungshöhe (2023-bebb-gk-B2.1c)
+AUSWAHL tangente-normale-schnittwinkel-e1-k1-s8-v3 – tangente-normale-schnittwinkel e1 „Tangentengleichung“: Prüfungshöhe (2023-bebb-gk-A1.1a)
+WEG tangente-normale-schnittwinkel e1 „Stellen, deren Tangente die y-Achse oberhalb einer Schranke schneidet, über eine Ungleichung bestimmen“ – keine Prüfungshöhe im Profil abitur-gk
+WEG tangente-normale-schnittwinkel e1 „Parallelität der Wendetangenten einer Schar über eine parameterunabhängige Steigung nachweisen“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL tangente-normale-schnittwinkel-e2-k1-s0-v1 – tangente-normale-schnittwinkel e2 „Berührung nachweisen“: Anlauf, Vorstufe
+AUSWAHL tangente-normale-schnittwinkel-e2-k1-s1-v1 – tangente-normale-schnittwinkel e2 „Berührung nachweisen“: Anlauf, Grundfall
+AUSWAHL tangente-normale-schnittwinkel-e2-k1-s2-v1 – tangente-normale-schnittwinkel e2 „Berührung nachweisen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL tangente-normale-schnittwinkel-e2-k1-s3-v2 – tangente-normale-schnittwinkel e2 „Berührung nachweisen“: Prüfungshöhe (2018-be-gk-cas-B1.1e)
+AUSWAHL tangente-normale-schnittwinkel-e2-k1-s4-v1 – tangente-normale-schnittwinkel e2 „Berührung nachweisen“: Prüfungshöhe (2023-bebb-gk-B2.2d)
+AUSWAHL tangente-normale-schnittwinkel-e2-k1-s5-v1 – tangente-normale-schnittwinkel e2 „Berührung nachweisen“: Prüfungshöhe (2020MgrundlegendBAnalysisWTR2-1c)
+AUSWAHL tangente-normale-schnittwinkel-e2-k1-s9-v3 – tangente-normale-schnittwinkel e2 „Berührung nachweisen“: Prüfungshöhe (2019MgrundlegendBAnalysisWTR1-2a)
+AUSWAHL tangente-normale-schnittwinkel-e2-k1-s9-v4 – tangente-normale-schnittwinkel e2 „Berührung nachweisen“: Prüfungshöhe (2019MgrundlegendBAnalysisWTR1-2a)
+WEG tangente-normale-schnittwinkel e2 „Berührpunkt einer Tangente durch einen vorgegebenen Punkt berechnen“ – keine Prüfungshöhe im Profil abitur-gk
+WEG tangente-normale-schnittwinkel e2 „Zeitpunkt bei gleichbleibender Änderungsrate über den Schnitt der Tangente mit der Zeitachse grafisch bestimmen“ – keine Prüfungshöhe im Profil abitur-gk
+WEG tangente-normale-schnittwinkel e2 „Lage zweier Graphen mit gemeinsamen Endpunkten über die Steigungen in den Endpunkten begründen“ – keine Prüfungshöhe im Profil abitur-gk
+WEG tangente-normale-schnittwinkel e3 „Normale“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL tangente-normale-schnittwinkel-e4-k1-s0-v1 – tangente-normale-schnittwinkel e4 „Winkel“: Anlauf, Vorstufe
+AUSWAHL tangente-normale-schnittwinkel-e4-k1-s1-v1 – tangente-normale-schnittwinkel e4 „Winkel“: Anlauf, Grundfall
+AUSWAHL tangente-normale-schnittwinkel-e4-k1-s2-v1 – tangente-normale-schnittwinkel e4 „Winkel“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL tangente-normale-schnittwinkel-e4-k1-s3-v1 – tangente-normale-schnittwinkel e4 „Winkel“: Prüfungshöhe (2020-be-gk-B2.1f)
+AUSWAHL tangente-normale-schnittwinkel-e4-k1-s3-v2 – tangente-normale-schnittwinkel e4 „Winkel“: Prüfungshöhe (2026MgrundlegendBAnalysisWTR1-1c)
+AUSWAHL tangente-normale-schnittwinkel-e4-k1-s3-v3 – tangente-normale-schnittwinkel e4 „Winkel“: Prüfungshöhe (2023MgrundlegendBAnalysisWTR1-1c)
+AUSWAHL tangente-normale-schnittwinkel-e4-k1-s6-v1 – tangente-normale-schnittwinkel e4 „Winkel“: Prüfungshöhe (2018-be-gk-B1.2b)
+AUSWAHL tangente-normale-schnittwinkel-e4-k1-s6-v2 – tangente-normale-schnittwinkel e4 „Winkel“: Prüfungshöhe (2022-bebb-gk-B2.1e)
+AUSWAHL tangente-normale-schnittwinkel-e4-k1-s6-v3 – tangente-normale-schnittwinkel e4 „Winkel“: Prüfungshöhe (2017-be-gk-B1.1e)
+AUSWAHL tangente-normale-schnittwinkel-e4-k1-s9-v3 – tangente-normale-schnittwinkel e4 „Winkel“: Prüfungshöhe (2017-be-gk-cas-B1.2f)
+AUSWAHL tangente-normale-schnittwinkel-e4-k1-s10-v3 – tangente-normale-schnittwinkel e4 „Winkel“: Prüfungshöhe (2024-bebb-gk-B2.1i)
+AUSWAHL tangente-normale-schnittwinkel-e4-k1-s10-v4 – tangente-normale-schnittwinkel e4 „Winkel“: Prüfungshöhe (2024-bebb-gk-B2.1i)
+AUSWAHL tangente-normale-schnittwinkel-e4-k1-s10-v5 – tangente-normale-schnittwinkel e4 „Winkel“: Prüfungshöhe (2025-bebb-gk-B2.1d)
+AUSWAHL tangente-normale-schnittwinkel-e4-k1-s10-v6 – tangente-normale-schnittwinkel e4 „Winkel“: Prüfungshöhe (2025-bebb-gk-B2.1d)
+WEG tangente-normale-schnittwinkel e4 „Steigungswinkel einer Tangente als größten Kippwinkel im Sachzusammenhang deuten“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL tangente-normale-schnittwinkel-e5-k1-s0-v1 – tangente-normale-schnittwinkel e5 „Dreiecke und Figuren“: Anlauf, Vorstufe
+AUSWAHL tangente-normale-schnittwinkel-e5-k1-s1-v1 – tangente-normale-schnittwinkel e5 „Dreiecke und Figuren“: Anlauf, Grundfall
+AUSWAHL tangente-normale-schnittwinkel-e5-k1-s2-v3 – tangente-normale-schnittwinkel e5 „Dreiecke und Figuren“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL tangente-normale-schnittwinkel-e5-k1-s2-v2 – tangente-normale-schnittwinkel e5 „Dreiecke und Figuren“: Prüfungshöhe (2017-be-gk-B1.2e)
+AUSWAHL tangente-normale-schnittwinkel-e5-k1-s3-v1 – tangente-normale-schnittwinkel e5 „Dreiecke und Figuren“: Prüfungshöhe (2022-bebb-gk-B2.1g)
+AUSWAHL tangente-normale-schnittwinkel-e5-k1-s6-v3 – tangente-normale-schnittwinkel e5 „Dreiecke und Figuren“: Prüfungshöhe (2019MgrundlegendAAnalysis2-b)
+AUSWAHL tangente-normale-schnittwinkel-e5-k1-s7-v1 – tangente-normale-schnittwinkel e5 „Dreiecke und Figuren“: Prüfungshöhe (2021-be-gk-B2.2f)
+WEG funktionsklassen-und-eigenschaften e1 „Funktionswert und Punkt“ – keine Prüfungshöhe im Profil abitur-gk
+WEG funktionsklassen-und-eigenschaften e1 „Nullstellen und Werte: Werte a mit vorgegebener Lösungsanzahl von f(x) = a über die lokalen Extremwerte am Graphen angeben“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL funktionsklassen-und-eigenschaften-e2-k1-s0-v1 – funktionsklassen-und-eigenschaften e2 „Nullstellen“: Anlauf, Vorstufe
+AUSWAHL funktionsklassen-und-eigenschaften-e2-k1-s1-v1 – funktionsklassen-und-eigenschaften e2 „Nullstellen“: Anlauf, Grundfall
+AUSWAHL funktionsklassen-und-eigenschaften-e2-k1-s2-v1 – funktionsklassen-und-eigenschaften e2 „Nullstellen“: Anlauf, Sprosse – Fallstrick im Merkmal („kein Absolutglied: eine Potenz von x ausklammern, “)
+AUSWAHL funktionsklassen-und-eigenschaften-e2-k1-s9-v3 – funktionsklassen-und-eigenschaften e2 „Nullstellen“: Prüfungshöhe (2023-bebb-gk-B2.2a)
+AUSWAHL funktionsklassen-und-eigenschaften-e2-k1-s9-v4 – funktionsklassen-und-eigenschaften e2 „Nullstellen“: Prüfungshöhe (2023-bebb-gk-B2.2a)
+WEG funktionsklassen-und-eigenschaften e2 „Nullstellen und Werte: y-Achsenschnittpunkt angeben und Anzahl der Nullstellen aus Grenzverhalten und Tiefpunkt ohne Rechnung begründen“ – keine Prüfungshöhe im Profil abitur-gk
+WEG funktionsklassen-und-eigenschaften e3 „Definitionsbereich, Wertemenge und Schranken“ – keine Prüfungshöhe im Profil abitur-gk
+WEG funktionsklassen-und-eigenschaften e4 „Symmetrie“ – keine Prüfungshöhe im Profil abitur-gk
+WEG funktionsklassen-und-eigenschaften e5 „Transformationen“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL funktionsklassen-und-eigenschaften-e6-k1-s0-v1 – funktionsklassen-und-eigenschaften e6 „Graph und Term“: Anlauf, Vorstufe
+AUSWAHL funktionsklassen-und-eigenschaften-e6-k1-s1-v1 – funktionsklassen-und-eigenschaften e6 „Graph und Term“: Anlauf, Grundfall
+AUSWAHL funktionsklassen-und-eigenschaften-e6-k1-s7-v1 – funktionsklassen-und-eigenschaften e6 „Graph und Term“: Anlauf, Sprosse – Fallstrick im Merkmal („zwei Größen an einer Stelle: Wert aus der Höhe, Ab“)
+AUSWAHL funktionsklassen-und-eigenschaften-e6-k1-s10-v3 – funktionsklassen-und-eigenschaften e6 „Graph und Term“: Prüfungshöhe (2026MgrundlegendAAnalysis12-a)
+AUSWAHL funktionsklassen-und-eigenschaften-e6-k1-s10-v4 – funktionsklassen-und-eigenschaften e6 „Graph und Term“: Prüfungshöhe (2026MgrundlegendAAnalysis12-a)
+AUSWAHL funktionsklassen-und-eigenschaften-e6-k1-s10-v5 – funktionsklassen-und-eigenschaften e6 „Graph und Term“: Prüfungshöhe (2023MgrundlegendAAnalysis13-b)
+AUSWAHL funktionsklassen-und-eigenschaften-e6-k1-s10-v6 – funktionsklassen-und-eigenschaften e6 „Graph und Term“: Prüfungshöhe (2023MgrundlegendAAnalysis13-b)
+WEG grenzwerte-und-verhalten-im-unendlichen e1 „„Wer gewinnt?““ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e1-k2-s0-v1 – grenzwerte-und-verhalten-im-unendlichen e1 „Ganzrationale Funktionen“: Anlauf, Vorstufe
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e1-k2-s1-v1 – grenzwerte-und-verhalten-im-unendlichen e1 „Ganzrationale Funktionen“: Anlauf, Grundfall
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e1-k2-s2-v3 – grenzwerte-und-verhalten-im-unendlichen e1 „Ganzrationale Funktionen“: Prüfungshöhe (2022-bebb-gk-B2.2a)
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e1-k2-s4-v1 – grenzwerte-und-verhalten-im-unendlichen e1 „Ganzrationale Funktionen“: Prüfungshöhe (2026-bb-gk-B2.1a)
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e1-k2-s4-v2 – grenzwerte-und-verhalten-im-unendlichen e1 „Ganzrationale Funktionen“: Prüfungshöhe (2026-bb-gk-B2.1a)
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e1-k2-s4-v3 – grenzwerte-und-verhalten-im-unendlichen e1 „Ganzrationale Funktionen“: Prüfungshöhe (2026-bb-gk-B2.1a)
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e2-k1-s0-v1 – grenzwerte-und-verhalten-im-unendlichen e2 „Produkte aus Polynom und e-Funktion“: Anlauf, Vorstufe
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e2-k1-s1-v1 – grenzwerte-und-verhalten-im-unendlichen e2 „Produkte aus Polynom und e-Funktion“: Anlauf, Grundfall
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e2-k1-s2-v1 – grenzwerte-und-verhalten-im-unendlichen e2 „Produkte aus Polynom und e-Funktion“: Prüfungshöhe (2025-bebb-gk-B2.2a)
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e2-k1-s2-v2 – grenzwerte-und-verhalten-im-unendlichen e2 „Produkte aus Polynom und e-Funktion“: Prüfungshöhe (2025MgrundlegendBAnalysisWTR2-1a)
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e2-k1-s2-v3 – grenzwerte-und-verhalten-im-unendlichen e2 „Produkte aus Polynom und e-Funktion“: Prüfungshöhe (2025-bebb-gk-B2.2a)
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e2-k1-s3-v1 – grenzwerte-und-verhalten-im-unendlichen e2 „Produkte aus Polynom und e-Funktion“: Prüfungshöhe (2022-bebb-gk-B2.1b)
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e2-k1-s3-v2 – grenzwerte-und-verhalten-im-unendlichen e2 „Produkte aus Polynom und e-Funktion“: Prüfungshöhe (2018-be-gk-B1.2a)
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e2-k1-s3-v3 – grenzwerte-und-verhalten-im-unendlichen e2 „Produkte aus Polynom und e-Funktion“: Prüfungshöhe (2022MgrundlegendBAnalysisWTR2-1b)
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e2-k1-s4-v1 – grenzwerte-und-verhalten-im-unendlichen e2 „Produkte aus Polynom und e-Funktion“: Prüfungshöhe (2023-bebb-gk-B2.1a)
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e2-k1-s4-v2 – grenzwerte-und-verhalten-im-unendlichen e2 „Produkte aus Polynom und e-Funktion“: Prüfungshöhe (2021-be-gk-B2.2b)
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e2-k1-s4-v3 – grenzwerte-und-verhalten-im-unendlichen e2 „Produkte aus Polynom und e-Funktion“: Prüfungshöhe (2020MgrundlegendBAnalysisWTR2-1b)
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e2-k1-s5-v1 – grenzwerte-und-verhalten-im-unendlichen e2 „Produkte aus Polynom und e-Funktion“: Prüfungshöhe (2019-be-gk-B2.2a)
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e2-k1-s5-v2 – grenzwerte-und-verhalten-im-unendlichen e2 „Produkte aus Polynom und e-Funktion“: Prüfungshöhe (2019-be-gk-B2.2a)
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e2-k1-s5-v3 – grenzwerte-und-verhalten-im-unendlichen e2 „Produkte aus Polynom und e-Funktion“: Prüfungshöhe (2019-be-gk-B2.2a)
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e2-k1-s6-v1 – grenzwerte-und-verhalten-im-unendlichen e2 „Produkte aus Polynom und e-Funktion“: Prüfungshöhe (2025-bebb-gk-B2.2a)
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e2-k1-s6-v2 – grenzwerte-und-verhalten-im-unendlichen e2 „Produkte aus Polynom und e-Funktion“: Prüfungshöhe (2025-bebb-gk-B2.2a)
+AUSWAHL grenzwerte-und-verhalten-im-unendlichen-e2-k1-s6-v3 – grenzwerte-und-verhalten-im-unendlichen e2 „Produkte aus Polynom und e-Funktion“: Prüfungshöhe (2018-be-gk-B1.2a)
+TEILUNG grenzwerte-und-verhalten-im-unendlichen e2 „Produkte aus Polynom und e-Funktion“: 15 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+WEG grenzwerte-und-verhalten-im-unendlichen e3 „Waagerechte Asymptoten“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL extremalprobleme-e1-k1-s0-v1 – extremalprobleme e1 „Figur und Term“: Anlauf, Vorstufe
+AUSWAHL extremalprobleme-e1-k1-s1-v1 – extremalprobleme e1 „Figur und Term“: Anlauf, Grundfall
+AUSWAHL extremalprobleme-e1-k1-s2-v3 – extremalprobleme e1 „Figur und Term“: Prüfungshöhe (2019MgrundlegendBAnalysisWTR2-1f)
+AUSWAHL extremalprobleme-e1-k1-s4-v1 – extremalprobleme e1 „Figur und Term“: Prüfungshöhe (2019MgrundlegendBAnalysisWTR2-1h)
+AUSWAHL extremalprobleme-e1-k1-s4-v2 – extremalprobleme e1 „Figur und Term“: Prüfungshöhe (2019MgrundlegendBAnalysisWTR2-1h)
+AUSWAHL extremalprobleme-e1-k1-s4-v3 – extremalprobleme e1 „Figur und Term“: Prüfungshöhe (2019MgrundlegendBAnalysisWTR2-1h)
+AUSWAHL extremalprobleme-e2-k1-s0-v1 – extremalprobleme e2 „Zielfunktion aufstellen“: Anlauf, Vorstufe
+AUSWAHL extremalprobleme-e2-k1-s1-v1 – extremalprobleme e2 „Zielfunktion aufstellen“: Anlauf, Grundfall
+AUSWAHL extremalprobleme-e2-k1-s4-v1 – extremalprobleme e2 „Zielfunktion aufstellen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL extremalprobleme-e2-k1-s5-v1 – extremalprobleme e2 „Zielfunktion aufstellen“: Prüfungshöhe (2022-bebb-gk-B2.1h)
+AUSWAHL extremalprobleme-e2-k1-s5-v2 – extremalprobleme e2 „Zielfunktion aufstellen“: Prüfungshöhe (2022-bebb-gk-B2.1h)
+AUSWAHL extremalprobleme-e2-k1-s5-v3 – extremalprobleme e2 „Zielfunktion aufstellen“: Prüfungshöhe (2022-bebb-gk-B2.1h)
+AUSWAHL extremalprobleme-e3-k1-s0-v1 – extremalprobleme e3 „Maximum bestimmen“: Anlauf, Vorstufe
+AUSWAHL extremalprobleme-e3-k1-s1-v1 – extremalprobleme e3 „Maximum bestimmen“: Anlauf, Grundfall
+AUSWAHL extremalprobleme-e3-k1-s2-v1 – extremalprobleme e3 „Maximum bestimmen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL extremalprobleme-e3-k1-s4-v1 – extremalprobleme e3 „Maximum bestimmen“: Prüfungshöhe (2022-bebb-gk-B2.1h)
+AUSWAHL extremalprobleme-e3-k1-s4-v2 – extremalprobleme e3 „Maximum bestimmen“: Prüfungshöhe (2022-bebb-gk-B2.1h)
+AUSWAHL extremalprobleme-e3-k1-s4-v3 – extremalprobleme e3 „Maximum bestimmen“: Prüfungshöhe (2022-bebb-gk-B2.1h)
+AUSWAHL extremalprobleme-e3-k1-s5-v1 – extremalprobleme e3 „Maximum bestimmen“: Prüfungshöhe (2018-be-gk-B1.1g)
+AUSWAHL extremalprobleme-e3-k1-s5-v2 – extremalprobleme e3 „Maximum bestimmen“: Prüfungshöhe (2021-be-gk-B2.2i)
+AUSWAHL extremalprobleme-e3-k1-s5-v3 – extremalprobleme e3 „Maximum bestimmen“: Prüfungshöhe (2024-bebb-gk-B2.2g)
+AUSWAHL extremalprobleme-e3-k1-s6-v1 – extremalprobleme e3 „Maximum bestimmen“: Prüfungshöhe (2019MgrundlegendBAnalysisWTR2-1i)
+AUSWAHL extremalprobleme-e3-k1-s6-v2 – extremalprobleme e3 „Maximum bestimmen“: Prüfungshöhe (2019MgrundlegendBAnalysisWTR2-1i)
+AUSWAHL extremalprobleme-e3-k1-s6-v3 – extremalprobleme e3 „Maximum bestimmen“: Prüfungshöhe (2019MgrundlegendBAnalysisWTR2-1i)
+AUSWAHL extremalprobleme-e3-k1-s7-v1 – extremalprobleme e3 „Maximum bestimmen“: Prüfungshöhe (2021-be-gk-A1.3b)
+AUSWAHL extremalprobleme-e3-k1-s7-v2 – extremalprobleme e3 „Maximum bestimmen“: Prüfungshöhe (2021-be-gk-A1.3b)
+AUSWAHL extremalprobleme-e3-k1-s7-v3 – extremalprobleme e3 „Maximum bestimmen“: Prüfungshöhe (2021-be-gk-A1.3b)
+WEG extremalprobleme e3 „Kleinsten Abstand eines Punktes zu einem Graphen über die Abstandsfunktion bestimmen“ – keine Prüfungshöhe im Profil abitur-gk
+FORM kurvenuntersuchung-e2-k1-s1-v1 (Nr. 18): gleichungsraster mit Text → teile
+FORM funktionsklassen-und-eigenschaften-e2-k1-s2-v1 (Nr. 51): gleichungsraster mit Text → teile
+FORM extremalprobleme-e3-k1-s1-v1 (Nr. 64): gleichungsraster mit Text → teile
+STRUKTUR 0 Fehler

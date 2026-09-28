@@ -1,0 +1,65 @@
+% Extremalprobleme – bank/extremalprobleme/ (zusammenbau v0.4, Heft)
+\einheitenkopf[t7]{Extremalprobleme}
+\setcounter{aufgabe}{59}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Figur und Term – Anlauf}
+\begin{teile}
+\teil Ein Rechteck hat eine Ecke im Ursprung, eine auf der x-Achse an der Stelle $u$ und eine auf dem Graphen von $f$ genau darüber. Wie hoch ist das Rechteck? \kreuz{$u$} \\ \kreuz{$f(u)$} \\ \kreuz{$u \cdot f(u)$}
+\teil Der Punkt $P(2 | f(2))$ auf dem Graphen von $f(x) = 9 - x^2$ ist eine Ecke eines Rechtecks; die gegenüberliegende Ecke liegt im Ursprung, die Seiten liegen auf den Achsen. Gib Breite und Höhe des Rechtecks an. Breite \leerfeld , Höhe \leerfeld
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Figur und Term – Prüfungsaufgaben}
+\begin{teile}
+\teil Gegeben ist $f(x) = -0{,}5x \cdot (x - 6)$. Die Trapeze mit den Ecken $A(0 | 0)$, $B(6 | 0)$, $C_u(6 - u | f(u))$ und $D_u(u | f(u))$, $0 < u < 3$, liegen unter dem Graphen. Zeichne das Trapez für $u = 1$ ein. \hfill (Abitur 2019 GK)
+
+\begin{ksys}[xmin=-1,xmax=7,ymin=-1,ymax=5] \funktion{-0.5*\x*(\x-6)}{f} \end{ksys}
+\teil Gegeben ist $f(x) = -x^2 + 10x$. Die Trapeze mit den Ecken $A(0 | 0)$, $B(10 | 0)$, $C_u(10 - u | f(u))$ und $D_u(u | f(u))$, $0 < u < 5$, haben den Flächeninhalt $(10 - u) \cdot f(u)$. Begründe den Term geometrisch und gib einen Term für die Länge des Schenkels $AD_u$ an. \hfill (Abitur 2019 GK)
+\teil Gegeben ist $f(x) = 3 - \tfrac{1}{3}x^2$. Die Trapeze mit den Ecken $A(-3 | 0)$, $B(3 | 0)$, $C_u(u | f(u))$ und $D_u(-u | f(u))$, $0 < u < 3$, haben den Flächeninhalt $(3 + u) \cdot f(u)$. Begründe den Term geometrisch und gib einen Term für die Länge des Schenkels $BC_u$ an. \hfill (Abitur 2019 GK)
+\teil Gegeben ist $f(x) = 4 - x^2$. Die Trapeze mit den Ecken $A(-2 | 0)$, $B(2 | 0)$, $C_u(u | f(u))$ und $D_u(-u | f(u))$, $0 < u < 2$, haben den Flächeninhalt $(2 + u) \cdot f(u)$. Begründe den Term geometrisch und gib einen Term für die Länge des Schenkels $BC_u$ an. \hfill (Abitur 2019 GK)
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Zielfunktion aufstellen – Anlauf}
+\begin{teile}
+\teil Mit 60 m Zaun soll an einer Mauer ein rechteckiges Beet eingezäunt werden; der Zaun bildet drei Seiten, $a$ steht senkrecht zur Mauer, $b$ parallel. Die Fläche soll möglichst groß werden. Welche Gleichung ist die Nebenbedingung? \kreuz{$A = a \cdot b$} \\ \kreuz{$2a + b = 60$} \\ \kreuz{$2a + 2b = 60$}
+\teil Ein rechteckiges Gehege wird mit 40 m Zaun vollständig umzäunt; seine Fläche soll möglichst groß werden. Notiere Haupt- und Nebenbedingung und stelle die Nebenbedingung nach $b$ um.
+\teil Die Graphen von $f(x) = 5 - 0{,}2x^2$ und $-f$ begrenzen ein Gehäuse. Darin liegt ein Rechteck mit den Ecken $(-x | -f(x))$, $(x | -f(x))$, $(x | f(x))$ und $(-x | f(x))$, $0 < x < 5$. Weise nach, dass sein Flächeninhalt $A(x) = 20x - 0{,}8x^3$ beträgt.
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Zielfunktion aufstellen – Prüfungsaufgaben}
+\begin{teile}
+\teil Der Ursprung und der Punkt $P(u | f(u))$ mit $u > 0$ auf dem Graphen von $f(x) = (x + 3) \cdot e^{-0{,}5x}$ sind gegenüberliegende Ecken eines achsenparallelen Rechtecks. Stelle die Zielfunktion für den Flächeninhalt in Abhängigkeit von $u$ auf. \hfill (Abitur 2022 GK) \\ A(u) = \leerfeld
+\teil Der Ursprung und der Punkt $P(u | f(u))$ mit $0 < u < \sqrt{6}$ auf dem Graphen von $f(x) = 6 - x^2$ sind gegenüberliegende Ecken eines achsenparallelen Rechtecks. Stelle die Zielfunktion für den Flächeninhalt in Abhängigkeit von $u$ auf. \hfill (Abitur 2022 GK) \\ A(u) = \leerfeld
+\teil Der Ursprung und der Punkt $P(u | f(u))$ mit $u > 0$ auf dem Graphen von $f(x) = 4 \cdot e^{-0{,}25x}$ sind gegenüberliegende Ecken eines achsenparallelen Rechtecks. Stelle die Zielfunktion für den Flächeninhalt in Abhängigkeit von $u$ auf. \hfill (Abitur 2022 GK) \\ A(u) = \leerfeld
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Maximum bestimmen – Anlauf}
+\begin{teile}
+\teil Frage: „Wie groß ist der größtmögliche Flächeninhalt?“ Was ist verlangt? \kreuz{die Stelle $x$} \\ \kreuz{die Seitenlängen} \\ \kreuz{der Flächeninhalt}
+\teil Die Zielfunktion $A(a) = 30a - 2a^2$, $0 < a < 15$, beschreibt einen Flächeninhalt. Bestimme die Stelle mit $A'(a) = 0$ im Definitionsbereich. a = \leerfeld
+\teil Für ein Beet an einer Mauer mit 24 m Zaun für drei Seiten gilt $A(a) = 24a - 2a^2$ ($a$ senkrecht zur Mauer, in m). Bestimme Maße und Flächeninhalt des größten Beets und weise nach, dass es ein Maximum ist.
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Maximum bestimmen – Prüfungsaufgaben}
+\begin{teile}
+\teil Der Ursprung und $P(u | f(u))$ mit $u > 0$ auf dem Graphen von $f(x) = (x + 3) \cdot e^{-0{,}5x}$ sind gegenüberliegende Ecken eines achsenparallelen Rechtecks; genau ein $u$ liefert den größten Flächeninhalt. Bestimme die Koordinaten von $P$ für diesen Fall (Kontrolle: $A'(u) = (-0{,}5u^2 + 0{,}5u + 3) \cdot e^{-0{,}5u}$). \hfill (Abitur 2022 GK)
+\teil Der Ursprung und $P(u | f(u))$ mit $u > 0$ auf dem Graphen von $f(x) = (x + 4) \cdot e^{-x}$ sind gegenüberliegende Ecken eines achsenparallelen Rechtecks; genau ein $u$ liefert den größten Flächeninhalt. Bestimme die Koordinaten von $P$ für diesen Fall (Kontrolle: $A'(u) = (-u^2 - 2u + 4) \cdot e^{-u}$). \hfill (Abitur 2022 GK)
+\teil Der Ursprung und $P(u | f(u))$ mit $0 < u < 3$ auf dem Graphen von $f(x) = 9 - x^2$ sind gegenüberliegende Ecken eines achsenparallelen Rechtecks. Bestimme die Koordinaten von $P$, für die der Flächeninhalt am größten ist. \hfill (Abitur 2022 GK)
+\teil Ein Skispringer fliegt entlang $f(x) = -0{,}01x^2 + 40$, der Hang verläuft entlang $g(x) = -0{,}5x + 40$ (1 LE = 1 m); der Sprung endet bei $x = 50$. Weise nach, dass der größte vertikale Abstand zwischen Springer und Hang $6{,}25$ m beträgt. Auf die hinreichende Bedingung darf verzichtet werden. \hfill (Abitur 2018 GK)
+\teil Die Dicke eines Bauteils wird auf $[0; 4{,}5]$ durch $d(x) = f(x) - h(x)$ mit $f(x) = -0{,}1x^3 + 0{,}3x^2 + 0{,}9x + 1$ und $h(x) = 1$ beschrieben ($x$ und $d$ in dm). Sie darf $2{,}8$ dm nicht überschreiten. Prüfe, ob die Vorgabe eingehalten ist. \hfill (Abitur 2021 GK)
+\teil Die Funktion $f(x) = x^4 - 5x^2 + 4$ wird für $-1 \le x \le 1$ durch $p(x) = -4x^2 + 4$ angenähert; $p$ liegt dort nicht unter $f$. Weise nach, dass die größte Abweichung $\tfrac{1}{4}$ beträgt. \hfill (Abitur 2024 GK)
+\teil Unter dem Graphen von $f(x) = -x^2 + 10x$ liegen die Trapeze mit den Ecken $(0 | 0)$, $(10 | 0)$, $(10 - u | f(u))$ und $(u | f(u))$, $0 < u < 5$; ihr Flächeninhalt ist $T(u) = (10 - u) \cdot f(u)$. Eines hat den größten Inhalt. Bestimme den zugehörigen Wert von $u$. \hfill (Abitur 2019 GK) \\ u = \leerfeld
+\teil Unter dem Graphen von $f(x) = -0{,}5x^2 + 3x$ liegen die Trapeze mit den Ecken $(0 | 0)$, $(6 | 0)$, $(6 - u | f(u))$ und $(u | f(u))$, $0 < u < 3$; ihr Flächeninhalt ist $T(u) = (6 - u) \cdot f(u)$. Eines hat den größten Inhalt. Bestimme den zugehörigen Wert von $u$ und den Inhalt. \hfill (Abitur 2019 GK) \\ u = \leerfeld
+\teil Unter dem Graphen von $f(x) = -2x^2 + 8x$ liegen die Trapeze mit den Ecken $(0 | 0)$, $(4 | 0)$, $(4 - u | f(u))$ und $(u | f(u))$, $0 < u < 2$; ihr Flächeninhalt ist $T(u) = (4 - u) \cdot f(u)$. Eines hat den größten Inhalt. Bestimme den zugehörigen Wert von $u$. \hfill (Abitur 2019 GK) \\ u = \leerfeld
+\teil Für $0 < x < 2$ legt der Punkt $P(x | f(x))$ auf dem Graphen von $f(x) = 4 - x^2$ mit dem Ursprung ein achsenparalleles Rechteck fest, dessen Flächeninhalt für genau ein $x$ maximal ist. Weise nach, dass diese Stelle nicht $x = 1$ ist. \hfill (Abitur 2021 GK)
+\teil Für $0 < x < 3$ legt der Punkt $P(x | f(x))$ auf dem Graphen von $f(x) = 6 - 2x$ mit dem Ursprung ein achsenparalleles Rechteck fest, dessen Flächeninhalt für genau ein $x$ maximal ist. Weise nach, dass diese Stelle nicht $x = 2$ ist. \hfill (Abitur 2021 GK)
+\teil Für $0 < x < 2$ legt der Punkt $P(x | f(x))$ auf dem Graphen von $f(x) = x^3 - 5x^2 + 6x + 1$ mit dem Ursprung ein achsenparalleles Rechteck fest, dessen Flächeninhalt für genau ein $x$ maximal ist. Weise nach, dass diese Stelle nicht $x = 1$ ist. \hfill (Abitur 2021 GK)
+\end{teile}
+\end{aufgabe}

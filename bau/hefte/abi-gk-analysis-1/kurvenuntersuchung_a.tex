@@ -1,0 +1,242 @@
+% Kurvenuntersuchung – bank/kurvenuntersuchung/ (zusammenbau v0.4, Heft)
+\einheitenkopf[t3]{Kurvenuntersuchung}
+\setcounter{aufgabe}{15}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Monotonie – Anlauf}
+\begin{teile}
+\teil Die Abbildung zeigt den Graphen von $f$. Lege ein Lineal als Tangente an den Punkt $P$: Steigt der Graph dort, fällt er oder ist er waagerecht? \\ \kreuz{steigt} \kreuz{fällt} \kreuz{waagerecht}
+
+\begin{ksys}[xmin=-3,xmax=3,ymin=-3,ymax=3,ablesen] \funktion{0.5*\x^3-1.5*\x}{f} \punkt{2}{1}{P} \end{ksys}
+\teil Gegeben ist die Ableitung $f'(x) = 2x - 6$. Welches Vorzeichen hat $f'(x)$ auf dem Intervall $[4; 6]$? Kreuze an. \\ \kreuz{$f$ steigt auf diesem Intervall} \\ \kreuz{$f$ fällt auf diesem Intervall}
+\teil Bestimme die Monotonieintervalle von $f(x) = -x^3 + 3x^2 + 9x$. Prüfe das Vorzeichen von $f'$ in jedem Intervall an einer Probestelle.
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Monotonie – Prüfungsaufgaben}
+\begin{teile}
+\teil Zeige, dass der Graph von $f(x) = \frac{1}{3}x^3 + 2$ monoton steigend ist. \hfill (Abitur 2026 GK)
+\teil Zeige, dass der Graph von $f(x) = \mathrm{e}^{2x} + 3$ streng monoton steigend ist. \hfill (Abitur 2024 GK)
+\teil Gegeben sind $f(x) = \frac{1}{4}x^3 - x^2 + 2x + 1$ und $p(x) = -x^2 + 5x - 4$. Für $0 \le x \le 4$ liegt der Graph von $f$ oberhalb des Graphen von $p$; $d(x) = f(x) - p(x)$ ist ihr senkrechter Abstand. Ermittle, wo $d$ steigt und wo $d$ fällt, und gib den Wertebereich von $d$ an. \hfill (Abitur 2021 GK)
+\teil Gegeben sind $f(x) = \frac{1}{2}x^3 + x^2 - 3x + 6$ und $p(x) = x^2 + 3x - 4$. Für $0 \le x \le 3$ liegt der Graph von $f$ oberhalb des Graphen von $p$; $d(x) = f(x) - p(x)$ ist ihr senkrechter Abstand. Ermittle, wo $d$ steigt und wo $d$ fällt, und gib den Wertebereich von $d$ an. \hfill (Abitur 2021 GK)
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Extrempunkte berechnen – Anlauf}
+\begin{teile}
+\teil Kreuze an, ohne zu rechnen: „Zeigen Sie, dass der Graph bei $x = 2$ einen Hochpunkt hat.“ \\ \kreuz{Stelle gegeben – nachweisen} \\ \kreuz{Stelle gesucht – berechnen}
+\teil Berechne die Stellen, an denen der Graph von $f(x) = x^3 - 1{,}5x^2 - 6x + 2$ eine waagerechte Tangente hat.
+\teil Bestimme Lage und Art aller Extrempunkte des Graphen von $f(x) = x^4 - 8x^2$.
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Extrempunkte berechnen – Prüfungsaufgaben}
+\begin{teile}
+\teil Die Decke eines Tunnels wird im Querschnitt durch $p(x) = -0{,}25x^2 + 2x + 1$ beschrieben ($x$ und $p(x)$ in m). Ein Lkw ist $4$ m hoch. Beschreibe, wie man den Abstand zwischen Lkw-Dach und Tunneldecke an der höchsten Stelle ermittelt, und berechne ihn. \hfill (Abitur 2023 GK)
+\teil Bestimme die Koordinaten des Hochpunkts des Graphen von $f(x) = (3 - x) \cdot \mathrm{e}^{x}$. \hfill (Abitur 2025 GK)
+\teil Die Konzentration eines Medikaments im Blut wird durch $c(t) = 6t \cdot \mathrm{e}^{-0{,}2t}$ beschrieben ($t$ in Stunden nach der Einnahme, $c(t)$ in mg pro Liter). Berechne den Zeitpunkt der höchsten Konzentration und ihren Wert; die notwendige Bedingung genügt. \hfill (Abitur 2019 GK)
+\teil Gegeben ist $f(x) = (x - 2)^2 \cdot \mathrm{e}^{-0{,}5x}$; ohne Nachweis gilt $f''(x) = (0{,}25x^2 - 3x + 7) \cdot \mathrm{e}^{-0{,}5x}$. Bestimme Koordinaten und Art der lokalen Extrempunkte des Graphen. \hfill (Abitur 2021 GK)
+\teil Gegeben ist $f(x) = (-10x^2 + 30x - 10) \cdot \mathrm{e}^{-x}$; ohne Nachweis gilt $f''(x) = (-10x^2 + 70x - 90) \cdot \mathrm{e}^{-x}$. Bestimme Koordinaten und Art der lokalen Extrempunkte des Graphen. \hfill (Abitur 2021 GK)
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Extrempunkte nachweisen – Anlauf}
+\begin{teile}
+\teil Kreuze an, ohne zu rechnen: „Weisen Sie nach, dass der Graph bei $x = -1$ einen Tiefpunkt hat.“ \\ \kreuz{Stelle gegeben – nachweisen} \\ \kreuz{Stelle gesucht – berechnen}
+\teil Zeige, dass $f'(2) = 0$ gilt, der Graph von $f(x) = 2x^3 - 6x^2$ also bei $x = 2$ eine waagerechte Tangente hat.
+\teil Zeige mit dem Vorzeichenwechsel von $f'$, dass der Graph von $f(x) = x^4 - 32x$ bei $x = 2$ einen Tiefpunkt hat, und gib ihn an.
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Extrempunkte nachweisen – Prüfungsaufgaben}
+\begin{teile}
+\teil Zeige, dass der Graph von $f(x) = x^3 - 27x + 1$ einen Hochpunkt mit der $x$-Koordinate $-3$ hat. \hfill (Abitur 2026 GK)
+\teil Weise nach, dass $0$ und $2$ die Extremstellen von $f(x) = x^3 - 3x^2 + 2$ sind. Nutze den Vorzeichenwechsel von $f'$. \hfill (Abitur 2020 GK)
+\teil Gegeben ist $f(x) = (x + 3) \cdot \mathrm{e}^{-x}$ mit $f'(x) = -(x + 2) \cdot \mathrm{e}^{-x}$. Gib die Schnittpunkte des Graphen mit den Koordinatenachsen an, begründe, dass der Graph einen Hochpunkt hat, und gib dessen Koordinaten an. \hfill (Abitur 2022 GK)
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Abstand zweier Extrempunkte verschiedener Graphen mit einer Schranke vergleichen – Anlauf}
+\begin{teile}
+\teil Gegeben sind $f(x) = 0{,}5x^3 - 1{,}5x + 3$ mit dem Hochpunkt $H(-1 | 4)$ und die Parabel $p(x) = -x^2 - 4x + 1$, deren Scheitel ein Hochpunkt ist. Zeige, dass der Abstand der beiden Hochpunkte größer als $1$ ist.
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Abstand zweier Extrempunkte verschiedener Graphen mit einer Schranke vergleichen – Prüfungsaufgaben}
+\begin{teile}
+\teil Gegeben sind $f(x) = -x^3 + 3x^2 + 2$ mit dem Hochpunkt $H(2 | 6)$ und die Parabel $p(x) = -x^2 + 6x - 3{,}5$, deren Scheitel ein Hochpunkt ist. Zeige, dass der Abstand der beiden Hochpunkte größer als $0{,}5$ ist. \hfill (Abitur 2021 GK)
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Abstand zweier Extrempunkte über die Punktsymmetrie berechnen – Anlauf}
+\begin{teile}
+\teil Der Graph von $f(x) = 0{,}5x^3 - 6x$ ist symmetrisch zum Ursprung und hat einen Hochpunkt mit der $x$-Koordinate $-2$. Berechne den Abstand zwischen Hoch- und Tiefpunkt.
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Abstand zweier Extrempunkte über die Punktsymmetrie berechnen – Prüfungsaufgaben}
+\begin{teile}
+\teil Der Graph von $f(x) = 2x^3 - 6x$ ist symmetrisch zum Ursprung und hat einen Hochpunkt mit der $x$-Koordinate $-1$. Berechne den Abstand zwischen Hoch- und Tiefpunkt. \hfill (Abitur 2026 GK)
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Extrempunkte berechnen und ihre Verbindungsgerade als Winkelhalbierende nachweisen – Anlauf}
+\begin{teile}
+\teil Der Graph von $f(x) = -\frac{1}{8}x^3 + 1{,}5x$ hat genau zwei Extrempunkte. Berechne ihre Koordinaten und weise nach, dass die Gerade durch sie die Winkelhalbierende des I. und III. Quadranten ist.
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Extrempunkte berechnen und ihre Verbindungsgerade als Winkelhalbierende nachweisen – Prüfungsaufgaben}
+\begin{teile}
+\teil Der Graph von $f(x) = \frac{1}{8}x^3 - 1{,}5x$ hat genau zwei Extrempunkte. Berechne ihre Koordinaten und weise nach, dass die Gerade durch sie die Winkelhalbierende des II. und IV. Quadranten ist. \hfill (Abitur 2025 GK)
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Nullstellen und Extremstelle einer Parabel berechnen – Anlauf}
+\begin{teile}
+\teil Gegeben ist $f(x) = -(x^2 + 4x - 5)$. Berechne die Nullstellen und die Extremstelle von $f$.
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Nullstellen und Extremstelle einer Parabel berechnen – Prüfungsaufgaben}
+\begin{teile}
+\teil Gegeben ist $r(x) = -(x^2 - 2x - 3)$. Berechne die Nullstellen und die Extremstelle von $r$. \hfill (Abitur 2023 GK)
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Lage eines Graphen zwischen zwei Geraden auf einem Intervall über die Differenzfunktionen nachweisen – Anlauf}
+\begin{teile}
+\teil Gegeben sind $f(x) = -\frac{1}{16}x^3 + 0{,}75x^2 - 2x + 3$ und die Geraden $g_o(x) = 0{,}25x + 3$ und $g_u(x) = 0{,}25x - 1$. Weise nach, dass der Graph von $f$ für $0 \le x \le 8$ zwischen den beiden Geraden liegt, und bestimme die Stelle im Inneren mit dem kleinsten senkrechten Abstand zu $g_u$ und diesen Abstand.
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Lage eines Graphen zwischen zwei Geraden auf einem Intervall über die Differenzfunktionen nachweisen – Prüfungsaufgaben}
+\begin{teile}
+\teil Gegeben sind $f(x) = -0{,}25x^3 + 1{,}5x^2 - 1{,}75x + 1$ und die Geraden $g_o(x) = 0{,}5x + 1$ und $g_u(x) = 0{,}5x - 2$. Weise nach, dass der Graph von $f$ für $0 \le x \le 4$ zwischen den beiden Geraden liegt, und bestimme die Stelle im Inneren mit dem kleinsten senkrechten Abstand zu $g_u$ und diesen Abstand. \hfill (Abitur 2017 GK)
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Wendepunkte und Krümmung – Anlauf}
+\begin{teile}
+\teil Kreuze an, welcher Nachweis für den Wendepunkt verlangt oder möglich ist, ohne zu rechnen: „Zeigen Sie, dass $W(1 | 4)$ ein Wendepunkt ist; es gilt $f'''(1) = 6$.“ \\ \kreuz{$f'''(x_0) \ne 0$} \\ \kreuz{Vorzeichenwechsel von $f''$} \\ \kreuz{kein Nachweis nötig}
+\teil Bilde die erste, zweite und dritte Ableitung von $f(x) = x^3 - 6x^2 + 4x$.
+\teil Gegeben ist $f(x) = x^2 \cdot \mathrm{e}^{-x}$; der Graph besitzt zwei Wendepunkte. Berechne ihre Koordinaten auf zwei Nachkommastellen gerundet.
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Wendepunkte und Krümmung – Prüfungsaufgaben}
+\begin{teile}
+\teil Gegeben ist $f(x) = \frac{1}{4}(x^3 - 9x^2 + 18x)$. Zeige, dass $W(3 | 0)$ ein Wendepunkt ist, und bestimme die Gleichung der Tangente in $W$. \hfill (Abitur 2018 GK)
+\teil Gegeben ist $f(x) = (x^2 - 1) \cdot \mathrm{e}^{x}$ mit $f'(x) = (x^2 + 2x - 1) \cdot \mathrm{e}^{x}$; der Graph besitzt zwei Wendepunkte. Berechne ihre Koordinaten auf zwei Nachkommastellen gerundet. \hfill (Abitur 2023 GK)
+\teil Gegeben ist $g(x) = -2x \cdot \mathrm{e}^{-0{,}5x}$ mit $g(x) \to 0$ für $x \to +\infty$ und $g'(x) = (x - 2) \cdot \mathrm{e}^{-0{,}5x}$. Begründe mithilfe einer Skizze in das Koordinatensystem, dass der Graph von $g$ einen Wendepunkt besitzt. \hfill (Abitur 2021 GK)
+
+\begin{ksys}[xmin=-1,xmax=10,ymin=-2,ymax=1] \end{ksys}
+\teil Gegeben ist $g(x) = -4x \cdot \mathrm{e}^{-0{,}25x}$ mit $g(x) \to 0$ für $x \to +\infty$ und $g'(x) = (x - 4) \cdot \mathrm{e}^{-0{,}25x}$. Begründe mithilfe einer Skizze in das Koordinatensystem, dass der Graph von $g$ einen Wendepunkt besitzt. \hfill (Abitur 2021 GK)
+
+\begin{ksys}[xmin=-1,xmax=16,ymin=-7,ymax=1,xstep=2] \end{ksys}
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Gerade durch die beiden Wendepunkte aufstellen und parallele Gerade mit genau einem gemeinsamen Punkt einzeichnen – Anlauf}
+\begin{teile}
+\teil Gegeben ist $f(x) = x^4 - 6x^2$ für $-1 \le x \le 1$; die Abbildung zeigt den Graphen. Bestimme die Gleichung der Geraden $g$ durch die beiden Wendepunkte und zeichne eine zu $g$ parallele Gerade ein, die für $-1 \le x \le 1$ mit dem Graphen genau einen Punkt gemeinsam hat.
+
+\begin{ksys}[xmin=-2,xmax=2,ymin=-6,ymax=2] \funktionab{\x^4-6*\x^2}{f}{-1}{1} \end{ksys}
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Gerade durch die beiden Wendepunkte aufstellen und parallele Gerade mit genau einem gemeinsamen Punkt einzeichnen – Prüfungsaufgaben}
+\begin{teile}
+\teil Gegeben ist $f(x) = -0{,}5x^4 + 2x^3$ für $0 \le x \le 2$; die Abbildung zeigt den Graphen. Bestimme die Gleichung der Geraden $g$ durch die beiden Wendepunkte und zeichne eine zu $g$ parallele Gerade ein, die für $0 \le x \le 2$ mit dem Graphen genau einen Punkt gemeinsam hat. \hfill (Abitur 2021 GK)
+
+\begin{ksys}[xmin=-1,xmax=3,ymin=-3,ymax=9,ystep=2] \funktionab{-0.5*\x^4+2*\x^3}{f}{0}{2} \end{ksys}
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Wendestelle nachweisen und Winkel der Wendetangente mit der x-Achse über die Steigung −1 zeigen – Anlauf}
+\begin{teile}
+\teil Der Graph von $f(x) = -x^3 + 3x^2 - 4x$ hat genau einen Wendepunkt. Weise nach, dass seine Wendestelle $1$ ist und die Wendetangente mit der $x$-Achse einen Winkel von $45°$ einschließt.
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Wendestelle nachweisen und Winkel der Wendetangente mit der x-Achse über die Steigung −1 zeigen – Prüfungsaufgaben}
+\begin{teile}
+\teil Der Graph von $f(x) = x^3 + 3x^2 + 2x$ hat genau einen Wendepunkt. Weise nach, dass seine Wendestelle $-1$ ist und die Wendetangente mit der $x$-Achse einen Winkel von $45°$ einschließt. \hfill (Abitur 2026 GK)
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Graph und Ableitungsgraph – Anlauf}
+\begin{teile}
+\teil Die Abbildung zeigt den Graphen von $f$ mit den Punkten $A$, $B$ und $C$. Trage für jeden Punkt nur ein Zeichen für die Steigung ein: plus, minus oder null.
+
+\begin{ksys}[xmin=-3,xmax=3,ymin=-3,ymax=3,ablesen] \funktionab{0.5*\x^3-1.5*\x}{f}{-2.3}{2.3} \punkt{-2}{-1}{A} \punkt{-1}{1}{B} \punkt{0}{0}{C} \end{ksys}
+\teil Die Abbildung zeigt den Graphen von $f$. Gib die Nullstellen von $f'$ an und trage das Vorzeichen von $f'$ in jedem Abschnitt dazwischen ein.
+
+\begin{ksys}[xmin=-3,xmax=3,ymin=-3,ymax=3,ablesen] \funktionab{0.5*\x^3-1.5*\x}{f}{-2.3}{2.3} \end{ksys}
+\teil Die Abbildung zeigt den Graphen von $f$ mit der Tangente an der Stelle $1$. Lies $f'(1)$ ab und gib die Wendestelle von $f$ an.
+
+\begin{ksys}[xmin=-1,xmax=5,ymin=-1,ymax=5,ablesen] \funktionab{-\x^3/6+\x^2}{f}{-1}{4.8} \tangentean{-\x^3/6+\x^2}{1}{t} \end{ksys}
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Graph und Ableitungsgraph – Prüfungsaufgaben}
+\begin{teile}
+\teil Gegeben ist $f(x) = -0{,}25x^3 + 1{,}5x^2 - 2$ mit $f'(x) = -0{,}75x^2 + 3x$. Zeichne die Graphen von $f$ und $f'$ für $-1 \le x \le 5$ in das Koordinatensystem. \hfill (Abitur 2020 GK)
+
+\begin{ksys}[xmin=-1,xmax=5,ymin=-4,ymax=7]  \end{ksys}
+\teil Gegeben ist $f(x) = (x - 3) \cdot \mathrm{e}^{-x + 5}$ mit $f'(x) = (4 - x) \cdot \mathrm{e}^{-x + 5}$; der Graph hat den Wendepunkt $W(5 | 2)$. Beurteile die Aussagen. I: Die Gerade durch $A(3 | 0)$ und $W$ ist senkrecht zur am stärksten fallenden Tangente des Graphen. II: Jede Parallele zur $x$-Achse $y = k$ mit $k \le -1$ hat mit dem Graphen von $f'$ keinen gemeinsamen Punkt. \hfill (Abitur 2024 GK)
+\teil Gegeben ist $f(x) = (x + 2) \cdot \mathrm{e}^{-0{,}5x + 1}$ mit $f'(x) = -0{,}5x \cdot \mathrm{e}^{-0{,}5x + 1}$; der Graph hat den Wendepunkt $W(2 | 4)$. Beurteile die Aussagen. I: Die Gerade durch $A(-2 | 0)$ und $W$ ist senkrecht zur am stärksten fallenden Tangente des Graphen. II: Jede Parallele zur $x$-Achse $y = k$ mit $k < -1$ hat mit dem Graphen von $f'$ keinen gemeinsamen Punkt. \hfill (Abitur 2024 GK)
+\teil Gegeben ist $f(x) = x^3 - 6x^2 + 9x + 1$ mit $H(1 | 5)$, $T(3 | 1)$ und $W(2 | 3)$. Skizziere den Graphen für $0 \le x \le 4$ und beurteile mithilfe der Skizze die Aussage: „Jede Tangente an den Graphen hat genau zwei gemeinsame Punkte mit dem Graphen.“ \hfill (Abitur 2023 GK)
+
+\begin{ksys}[xmin=-1,xmax=5,ymin=-1,ymax=6]  \end{ksys}
+\teil Gegeben ist $f(x) = -x^3 - 3x^2 + 5$ mit $H(0 | 5)$, $T(-2 | 1)$ und $W(-1 | 3)$. Skizziere den Graphen für $-3 \le x \le 1$ und beurteile mithilfe der Skizze die Aussage: „Die Tangente im Hochpunkt hat mit dem Graphen genau einen gemeinsamen Punkt.“ \hfill (Abitur 2023 GK)
+
+\begin{ksys}[xmin=-4,xmax=2,ymin=-1,ymax=6]  \end{ksys}
+\end{teile}
+\end{aufgabe}
+
+% Anlauf (ohne Prüfkennung)
+\begin{aufgabe}{Sachzusammenhang – Anlauf}
+\begin{teile}
+\teil Kreuze an, was die Frage mathematisch bedeutet, ohne zu rechnen: „Wann wächst die Pflanze am schnellsten?“ \\ \kreuz{größter Wert: Hochpunkt, Ränder vergleichen} \\ \kreuz{stärkste Änderung: Extremum von $f'$, Wendepunkt} \\ \kreuz{keine Änderung: $f'(t) = 0$}
+\teil Die Abbildung zeigt die Temperatur $T$ (in °C) eines Tees $t$ Minuten nach dem Aufgießen. Beschreibe den Verlauf im Sachzusammenhang.
+
+\begin{ksys}[xmin=0,xmax=40,ymin=0,ymax=100,xstep=10,ystep=20,xlabel=t in min,ylabel=T in °C,ablesen] \funktionab{20+70*exp(-0.1*\x)}{T}{0}{40} \end{ksys}
+\teil Die Abbildung zeigt die Höhe $h$ (in cm) einer Schneedecke $t$ Stunden nach Beginn des Tauwetters. Lies ab, wie hoch der Schnee zu dem Zeitpunkt ist, an dem er am schnellsten taut.
+
+\begin{ksys}[xmin=0,xmax=20,ymin=0,ymax=50,xstep=5,ystep=5,xlabel=t in h,ylabel=h in cm,ablesen] \funktionab{0.01*\x^3-0.3*\x^2+45}{h}{0}{20} \end{ksys}
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Sachzusammenhang – Prüfungsaufgaben}
+\begin{teile}
+\teil Die Abbildung zeigt die Höhe $h$ (in m) eines Heißluftballons $t$ Minuten nach dem Start mit dem Wendepunkt $W$. Gib die Bedeutung des Wendepunkts für die Fahrt an. \hfill (Abitur 2022 GK)
+
+\begin{ksys}[xmin=0,xmax=20,ymin=0,ymax=90,xstep=5,ystep=10,xlabel=t in min,ylabel=h in m,ablesen] \funktionab{-0.02*\x^3+0.6*\x^2}{h}{0}{20} \wendepunkt{10}{40}{W} \end{ksys}
+\teil Die Oberkante einer Rampe für Spielzeugautos wird für $0 \le x \le 15$ durch $f(x) = -\frac{1}{250}x^3 + 0{,}09x^2 + 2$ beschrieben (1 LE = 1 cm); an den Enden ist sie waagerecht. Der Anstiegswinkel darf nirgends größer als $30°$ sein. Bestimme den Punkt mit dem größten Anstieg und prüfe die Bedingung; die hinreichende Bedingung ist nicht verlangt. \hfill (Abitur 2017 GK)
+\teil Die Kosten für die Herstellung von $x$ m³ einer Farbe werden durch $K(x) = x^3 - 9x^2 + 30x + 16$ beschrieben ($0 \le x \le 9$, $K(x)$ in Tausend Euro); die Abbildung zeigt den Graphen von $K$. Der Erlös ist $E(x) = 24x$. Zeichne den Graphen von $E$ ein und bestimme aus der Darstellung, bei welchen Verkaufsmengen Gewinn erzielt wird. \hfill (Abitur 2018 GK)
+
+\begin{ksys}[xmin=0,xmax=9,ymin=0,ymax=300,xstep=1,ystep=50,xlabel=x in m³,ylabel=K,ablesen] \funktionab{\x^3-9*\x^2+30*\x+16}{K}{0}{9} \end{ksys}
+\teil Die Konzentration eines Medikaments im Blut wird durch $c(t) = 6t \cdot \mathrm{e}^{-0{,}2t}$ beschrieben ($t$ in Stunden, $c(t)$ in mg pro Liter); ohne Nachweis gilt $c''(t) = (0{,}24t - 2{,}4) \cdot \mathrm{e}^{-0{,}2t}$. Bestimme den Zeitpunkt, zu dem die Konzentration am stärksten abnimmt – die notwendige Bedingung genügt –, und gib Konzentration und Änderungsrate zu diesem Zeitpunkt an. \hfill (Abitur 2019 GK)
+\teil Ein Rodelhang wird für $0 \le x \le 17$ durch $h(x) = 0{,}0002x^4 - 0{,}12x^2 + 20$ beschrieben (1 LE = 1 m). $K$ ist die Stelle des Hangs mit dem stärksten Gefälle; für die $x$-Koordinate genügt die notwendige Bedingung. Bestimme die Koordinaten von $K$. \hfill (Abitur 2018 GK)
+\teil Eine Rennbahn für Spielzeugautos ist in der Draufsicht symmetrisch zur $x$- und zur $y$-Achse. Ihr oberer Verlauf wird auf $[-3; 0]$ durch $g(x) = \frac{1}{9}x^3 + 0{,}5x^2$ beschrieben, mit waagerechter Tangente bei $x = -3$; oberer und unterer Verlauf sind links und rechts durch je einen Halbkreis verbunden (1 LE = 1 m). Zeige, dass die Bahn auf eine Platte von $3{,}2$ m $\times$ $9{,}2$ m passt. \hfill (Abitur 2026 GK)
+\end{teile}
+\end{aufgabe}
+
+\begin{aufgabe}{Sachzusammenhang – Prüfungsaufgaben – weiter}
+\begin{teile}
+\teil Die Höhen zweier Pflanzen $A$ und $B$ werden durch $f(t)$ und $h(t)$ beschrieben ($t$ in Wochen, Höhe in cm); bis $t_s$ ist $A$ höher als $B$. Gegeben ist ein Lösungsweg: $d(t) = f(t) - h(t)$; $d'(t) = 0$ hat für $0 < t < t_s$ nur die Lösung $t_1 \approx 4{,}2$; $d''(t_1) < 0$; $d(t_1) \approx 2{,}6$. Beschreibe die Bedeutung von $d(t)$ und deute die Zahlen $4{,}2$ und $2{,}6$ im Sachzusammenhang. \hfill (Abitur 2024 GK)
+\teil Zwei Züge fahren gleichzeitig los; $f(t)$ und $g(t)$ sind ihre zurückgelegten Wege ($t$ in min, Wege in km), bis $t_s$ liegt Zug $A$ vorn. Gegeben ist ein Lösungsweg: $d(t) = f(t) - g(t)$; $d'(t) = 0$ hat für $0 < t < t_s$ nur die Lösung $t_1 \approx 12{,}5$; $d''(t_1) < 0$; $d(t_1) \approx 1{,}8$. Beschreibe die Bedeutung von $d(t)$ und deute die Zahlen $12{,}5$ und $1{,}8$ im Sachzusammenhang. \hfill (Abitur 2024 GK)
+\end{teile}
+\end{aufgabe}

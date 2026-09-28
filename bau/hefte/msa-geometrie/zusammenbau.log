@@ -1,0 +1,355 @@
+# zusammenbau v0.4: zusammenbau.py flaechen koerper pyramide-kegel-kugel pythagoras trigonometrie kreis winkel-dreiecke strahlensaetze symmetrie-abbildungen --heft msa --titel Prüfungsheft MSA · Geometrie
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG FLA-H1 – Kürzel FLA aus _kuerzel.csv (mathe-nachhilfe) (erster Eintrag flaechen); Rezept H (Heft)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+WEG flaechen e1 „Gegeben – gesucht“ – keine Prüfungshöhe im Profil msa
+AUSWAHL flaechen-e1-k2-s0-v1 – flaechen e1 „Rechteck“: Anlauf, Vorstufe
+AUSWAHL flaechen-e1-k2-s1-v1 – flaechen e1 „Rechteck“: Anlauf, Grundfall
+AUSWAHL flaechen-e1-k2-s2-v1 – flaechen e1 „Rechteck“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL flaechen-e1-k2-s9-v1 – flaechen e1 „Rechteck“: Prüfungshöhe (2018-OS-B1f)
+AUSWAHL flaechen-e1-k2-s9-v2 – flaechen e1 „Rechteck“: Prüfungshöhe (2018-OS-B1f)
+WEG flaechen e1 „aus Rechtecken zusammengesetzte Fläche (Summe)“ – keine Prüfungshöhe im Profil msa
+WEG flaechen e1 „Einheit wechseln vor dem Rechnen (cm und m gemischt)“ – keine Prüfungshöhe im Profil msa
+WEG flaechen e2 „Parallelogramm“ – keine Prüfungshöhe im Profil msa
+WEG flaechen e2 „Umfang aus den Seiten“ – keine Prüfungshöhe im Profil msa
+AUSWAHL flaechen-e3-k1-s0-v1 – flaechen e3 „Dreieck“: Anlauf, Vorstufe
+AUSWAHL flaechen-e3-k1-s1-v1 – flaechen e3 „Dreieck“: Anlauf, Grundfall
+AUSWAHL flaechen-e3-k1-s2-v1 – flaechen e3 „Dreieck“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL flaechen-e3-k1-s7-v1 – flaechen e3 „Dreieck“: Prüfungshöhe (2020-OS-K7b)
+AUSWAHL flaechen-e3-k1-s7-v2 – flaechen e3 „Dreieck“: Prüfungshöhe (2020-OS-K7b)
+WEG flaechen e3 „Höhe zur passenden Grundseite wählen (drei Höhen)“ – keine Prüfungshöhe im Profil msa
+WEG flaechen e3 „Umfang“ – keine Prüfungshöhe im Profil msa
+AUSWAHL flaechen-e4-k1-s0-v1 – flaechen e4 „Trapez“: Anlauf, Vorstufe
+AUSWAHL flaechen-e4-k1-s1-v1 – flaechen e4 „Trapez“: Anlauf, Grundfall
+AUSWAHL flaechen-e4-k1-s2-v1 – flaechen e4 „Trapez“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL flaechen-e4-k1-s6-v1 – flaechen e4 „Trapez“: Prüfungshöhe (2014-OS-K5c, Stern)
+AUSWAHL flaechen-e4-k1-s6-v2 – flaechen e4 „Trapez“: Prüfungshöhe (2014-OS-K5c, Stern)
+WEG flaechen e4 „Umfang mit Schenkel aus Pythagoras oder Sinus (Vorrat)“ – keine Prüfungshöhe im Profil msa
+WEG flaechen e4 „Diagonale aus A“ – keine Prüfungshöhe im Profil msa
+AUSWAHL flaechen-e5-k1-s0-v1 – flaechen e5 „Zusammengesetzte Figuren“: Anlauf, Vorstufe
+AUSWAHL flaechen-e5-k1-s1-v1 – flaechen e5 „Zusammengesetzte Figuren“: Anlauf, Grundfall
+AUSWAHL flaechen-e5-k1-s2-v1 – flaechen e5 „Zusammengesetzte Figuren“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL flaechen-e5-k1-s7-v1 – flaechen e5 „Zusammengesetzte Figuren“: Prüfungshöhe (2017-OS-K3b)
+AUSWAHL flaechen-e5-k1-s7-v2 – flaechen e5 „Zusammengesetzte Figuren“: Prüfungshöhe (2017-OS-K3b)
+WEG flaechen e5 „Sachaufgabe mit Entscheidung (reicht die Platte?)“ – keine Prüfungshöhe im Profil msa
+WEG flaechen e5 „Verschnitt in Prozent (Vorrat, Niveau III)“ – keine Prüfungshöhe im Profil msa
+AUSWAHL koerper-e1-k1-s0-v3 – koerper e1 „Körper und Netze“: Anlauf, Vorstufe
+AUSWAHL koerper-e1-k1-s1-v1 – koerper e1 „Körper und Netze“: Anlauf, Grundfall
+AUSWAHL koerper-e1-k1-s2-v1 – koerper e1 „Körper und Netze“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL koerper-e1-k1-s0-v1 – koerper e1 „Körper und Netze“: Prüfungshöhe (2017-OS-B1c)
+AUSWAHL koerper-e1-k1-s0-v2 – koerper e1 „Körper und Netze“: Prüfungshöhe (2017-OS-B1c)
+AUSWAHL koerper-e1-k5-s4-v1 – koerper e1 „Körper und Netze“: Prüfungshöhe (2018-OS-B1i)
+AUSWAHL koerper-e1-k1-s7-v1 – koerper e1 „Körper und Netze“: Prüfungshöhe (2015-OS-K6b)
+AUSWAHL koerper-e1-k1-s7-v2 – koerper e1 „Körper und Netze“: Prüfungshöhe (2015-OS-K6b)
+AUSWAHL koerper-e1-k1-s7-v3 – koerper e1 „Körper und Netze“: Prüfungshöhe (2015-OS-K6b)
+AUSWAHL koerper-e1-k1-s8-v1 – koerper e1 „Körper und Netze“: Prüfungshöhe (2016-OS-B1j)
+AUSWAHL koerper-e1-k1-s8-v2 – koerper e1 „Körper und Netze“: Prüfungshöhe (2016-OS-B1j)
+AUSWAHL koerper-e1-k1-s8-v3 – koerper e1 „Körper und Netze“: Prüfungshöhe (2019-OS-B1f)
+AUSWAHL koerper-e1-k1-s8-v4 – koerper e1 „Körper und Netze“: Prüfungshöhe (2019-OS-B1f)
+TEILUNG koerper e1 „Körper und Netze“: 10 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+WEG koerper e1 „Grund- und Deckfläche, Seitenflächen benennen (auch beim liegenden Prisma)“ – keine Prüfungshöhe im Profil msa
+WEG koerper e1 „Schrägbild lesen: verdeckte Kanten, Maße entnehmen“ – keine Prüfungshöhe im Profil msa
+ANLAUF koerper e1 „Körper in ein Schrägbild einzeichnen (Kegel im Quader)“: keine Zeile ohne Original – entfällt
+AUSWAHL koerper-e1-k4-s1-v1 – koerper e1 „Körper in ein Schrägbild einzeichnen (Kegel im Quader)“: Prüfungshöhe (2024-OS-K4b)
+AUSWAHL koerper-e1-k4-s1-v2 – koerper e1 „Körper in ein Schrägbild einzeichnen (Kegel im Quader)“: Prüfungshöhe (2024-OS-K4b)
+AUSWAHL koerper-e1-k4-s1-v3 – koerper e1 „Körper in ein Schrägbild einzeichnen (Kegel im Quader)“: Prüfungshöhe (2024-OS-K4b)
+AUSWAHL koerper-e2-k1-s0-v1 – koerper e2 „Quader“: Anlauf, Vorstufe
+AUSWAHL koerper-e2-k1-s1-v1 – koerper e2 „Quader“: Anlauf, Grundfall
+AUSWAHL koerper-e2-k1-s2-v1 – koerper e2 „Quader“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL koerper-e2-k1-s8-v1 – koerper e2 „Quader“: Prüfungshöhe (2026-FOR-B1f)
+AUSWAHL koerper-e2-k1-s8-v2 – koerper e2 „Quader“: Prüfungshöhe (2026-FOR-B1f)
+WEG koerper e2 „Oberfläche ohne Deckel (Kiste, Aquarium)“ – keine Prüfungshöhe im Profil msa
+WEG koerper e2 „Würfelkante aus V (Kubikzahlen)“ – keine Prüfungshöhe im Profil msa
+WEG koerper e2 „Einheiten cm³, dm³ = l, m³ (1 l = 1000 cm³)“ – keine Prüfungshöhe im Profil msa
+WEG koerper e2 „Aquarium: Füllmenge in Litern, Füllhöhe“ – keine Prüfungshöhe im Profil msa
+AUSWAHL koerper-e3-k1-s0-v1 – koerper e3 „Prisma“: Anlauf, Vorstufe
+AUSWAHL koerper-e3-k1-s1-v1 – koerper e3 „Prisma“: Anlauf, Grundfall
+AUSWAHL koerper-e3-k1-s2-v1 – koerper e3 „Prisma“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL koerper-e3-k1-s1-v4 – koerper e3 „Prisma“: Prüfungshöhe (2014-OS-K5a)
+AUSWAHL koerper-e3-k1-s1-v5 – koerper e3 „Prisma“: Prüfungshöhe (2014-OS-K5a)
+AUSWAHL koerper-e3-k1-s10-v1 – koerper e3 „Prisma“: Prüfungshöhe (2019-OS-K4c)
+AUSWAHL koerper-e3-k1-s10-v2 – koerper e3 „Prisma“: Prüfungshöhe (2019-OS-K4c)
+WEG koerper e4 „Welche Einheit?“ – keine Prüfungshöhe im Profil msa
+AUSWAHL koerper-e4-k2-s0-v1 – koerper e4 „Zylinder“: Anlauf, Vorstufe
+AUSWAHL koerper-e4-k2-s1-v1 – koerper e4 „Zylinder“: Anlauf, Grundfall
+AUSWAHL koerper-e4-k2-s2-v1 – koerper e4 „Zylinder“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL koerper-e4-k2-s9-v1 – koerper e4 „Zylinder“: Prüfungshöhe (2022-OS-K2d, Stern)
+AUSWAHL koerper-e4-k2-s9-v2 – koerper e4 „Zylinder“: Prüfungshöhe (2022-OS-K2d, Stern)
+AUSWAHL koerper-e4-k2-s9-v3 – koerper e4 „Zylinder“: Prüfungshöhe (2022-OS-K2d, Stern)
+AUSWAHL koerper-e4-k2-s10-v1 – koerper e4 „Zylinder“: Prüfungshöhe (2023-OS-K5b)
+AUSWAHL koerper-e4-k2-s10-v2 – koerper e4 „Zylinder“: Prüfungshöhe (2022-OS-K2b)
+AUSWAHL koerper-e4-k2-s10-v3 – koerper e4 „Zylinder“: Prüfungshöhe (2023-OS-K5b)
+AUSWAHL koerper-e4-k2-s12-v1 – koerper e4 „Zylinder“: Prüfungshöhe (2023-OS-K5d, Stern)
+AUSWAHL koerper-e4-k2-s12-v2 – koerper e4 „Zylinder“: Prüfungshöhe (2023-OS-K5d, Stern)
+AUSWAHL koerper-e5-k1-s0-v1 – koerper e5 „Zusammengesetzt“: Anlauf, Vorstufe
+AUSWAHL koerper-e5-k1-s1-v1 – koerper e5 „Zusammengesetzt“: Anlauf, Grundfall
+AUSWAHL koerper-e5-k1-s4-v1 – koerper e5 „Zusammengesetzt“: Anlauf, Sprosse – Fallstrick im Merkmal („vorgegebene Terme am Körper prüfen, auf die Klamme“)
+AUSWAHL koerper-e5-k1-s6-v1 – koerper e5 „Zusammengesetzt“: Prüfungshöhe (2024-OS-K4b)
+AUSWAHL koerper-e5-k1-s6-v2 – koerper e5 „Zusammengesetzt“: Prüfungshöhe (2024-OS-K4b)
+AUSWAHL koerper-e5-k1-s6-v3 – koerper e5 „Zusammengesetzt“: Prüfungshöhe (2024-OS-K4b)
+AUSWAHL koerper-e5-k1-s9-v1 – koerper e5 „Zusammengesetzt“: Prüfungshöhe (2024-OS-K4c, Stern)
+AUSWAHL koerper-e5-k1-s9-v2 – koerper e5 „Zusammengesetzt“: Prüfungshöhe (2024-OS-K4c, Stern)
+WEG koerper e5 „Füllstand in Prozent“ – keine Prüfungshöhe im Profil msa
+WEG koerper e5 „Oberfläche eines zusammengesetzten Körpers“ – keine Prüfungshöhe im Profil msa
+WEG pyramide-kegel-kugel e1 „Säule, Spitze oder Kugel?“ – keine Prüfungshöhe im Profil msa
+WEG pyramide-kegel-kugel e1 „Stützdreieck einzeichnen“ – keine Prüfungshöhe im Profil msa
+WEG pyramide-kegel-kugel e1 „Volumen oder Oberfläche?“ – keine Prüfungshöhe im Profil msa
+WEG pyramide-kegel-kugel e1 „Welche Formel?“ – keine Prüfungshöhe im Profil msa
+AUSWAHL pyramide-kegel-kugel-e1-k5-s0-v1 – pyramide-kegel-kugel e1 „Pyramide“: Anlauf, Vorstufe
+AUSWAHL pyramide-kegel-kugel-e1-k5-s1-v1 – pyramide-kegel-kugel e1 „Pyramide“: Anlauf, Grundfall
+AUSWAHL pyramide-kegel-kugel-e1-k5-s2-v1 – pyramide-kegel-kugel e1 „Pyramide“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL pyramide-kegel-kugel-e1-k5-s14-v1 – pyramide-kegel-kugel e1 „Pyramide“: Prüfungshöhe (2015-OS-K6b)
+AUSWAHL pyramide-kegel-kugel-e1-k5-s14-v2 – pyramide-kegel-kugel e1 „Pyramide“: Prüfungshöhe (2015-OS-K6b)
+AUSWAHL pyramide-kegel-kugel-e1-k5-s14-v3 – pyramide-kegel-kugel e1 „Pyramide“: Prüfungshöhe (2015-OS-K6c)
+AUSWAHL pyramide-kegel-kugel-e1-k5-s14-v4 – pyramide-kegel-kugel e1 „Pyramide“: Prüfungshöhe (2015-OS-K6c)
+WEG pyramide-kegel-kugel e2 „Radius oder Durchmesser?“ – keine Prüfungshöhe im Profil msa
+AUSWAHL pyramide-kegel-kugel-e2-k2-s0-v1 – pyramide-kegel-kugel e2 „Kegel“: Anlauf, Vorstufe
+AUSWAHL pyramide-kegel-kugel-e2-k2-s1-v1 – pyramide-kegel-kugel e2 „Kegel“: Anlauf, Grundfall
+AUSWAHL pyramide-kegel-kugel-e2-k2-s2-v1 – pyramide-kegel-kugel e2 „Kegel“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL pyramide-kegel-kugel-e2-k2-s12-v1 – pyramide-kegel-kugel e2 „Kegel“: Prüfungshöhe (2026-FOR-K2b)
+AUSWAHL pyramide-kegel-kugel-e2-k2-s12-v2 – pyramide-kegel-kugel e2 „Kegel“: Prüfungshöhe (2026-FOR-K2b)
+AUSWAHL pyramide-kegel-kugel-e2-k2-s12-v3 – pyramide-kegel-kugel e2 „Kegel“: Prüfungshöhe (2026-FOR-K2b)
+AUSWAHL pyramide-kegel-kugel-e2-k2-s14-v1 – pyramide-kegel-kugel e2 „Kegel“: Prüfungshöhe (2026-FOR-K2d)
+AUSWAHL pyramide-kegel-kugel-e2-k2-s14-v2 – pyramide-kegel-kugel e2 „Kegel“: Prüfungshöhe (2026-FOR-K2d)
+AUSWAHL pyramide-kegel-kugel-e3-k1-s0-v1 – pyramide-kegel-kugel e3 „Kugel“: Anlauf, Vorstufe
+AUSWAHL pyramide-kegel-kugel-e3-k1-s1-v1 – pyramide-kegel-kugel e3 „Kugel“: Anlauf, Grundfall
+AUSWAHL pyramide-kegel-kugel-e3-k1-s2-v1 – pyramide-kegel-kugel e3 „Kugel“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL pyramide-kegel-kugel-e3-k1-s13-v1 – pyramide-kegel-kugel e3 „Kugel“: Prüfungshöhe (2016-OS-K3c)
+AUSWAHL pyramide-kegel-kugel-e3-k1-s13-v2 – pyramide-kegel-kugel e3 „Kugel“: Prüfungshöhe (2016-OS-K3c)
+AUSWAHL pyramide-kegel-kugel-e3-k1-s13-v3 – pyramide-kegel-kugel e3 „Kugel“: Prüfungshöhe (2016-OS-K3d)
+AUSWAHL pyramide-kegel-kugel-e3-k1-s13-v4 – pyramide-kegel-kugel e3 „Kugel“: Prüfungshöhe (2016-OS-K3d)
+WEG pythagoras e1 „Gilt der Satz hier?“ – keine Prüfungshöhe im Profil msa
+AUSWAHL pythagoras-e1-k2-s0-v1 – pythagoras e1 „Hypotenuse“: Anlauf, Vorstufe
+AUSWAHL pythagoras-e1-k2-s1-v1 – pythagoras e1 „Hypotenuse“: Anlauf, Grundfall
+AUSWAHL pythagoras-e1-k2-s8-v1 – pythagoras e1 „Hypotenuse“: Anlauf, Sprosse – Fallstrick im Merkmal („Formel mit fremden Buchstaben unter Fallen auswähl“)
+AUSWAHL pythagoras-e1-k2-s12-v1 – pythagoras e1 „Hypotenuse“: Prüfungshöhe (2020-OS-K7a)
+AUSWAHL pythagoras-e1-k2-s12-v2 – pythagoras e1 „Hypotenuse“: Prüfungshöhe (2020-OS-K7a)
+AUSWAHL pythagoras-e1-k2-s13-v1 – pythagoras e1 „Hypotenuse“: Prüfungshöhe (2025-OS-K4a)
+AUSWAHL pythagoras-e1-k2-s13-v2 – pythagoras e1 „Hypotenuse“: Prüfungshöhe (2025-OS-K4a)
+WEG pythagoras e1 „Quadrate über den Seiten zeichnen und Flächen vergleichen (Kästchen zählen)“ – keine Prüfungshöhe im Profil msa
+WEG pythagoras e1 „Ergebnis mit sinnvoller Genauigkeit angeben“ – keine Prüfungshöhe im Profil msa
+WEG pythagoras e2 „Welche Seite ist die längste?“ – keine Prüfungshöhe im Profil msa
+AUSWAHL pythagoras-e2-k2-s0-v1 – pythagoras e2 „Kathete“: Anlauf, Vorstufe
+AUSWAHL pythagoras-e2-k2-s1-v1 – pythagoras e2 „Kathete“: Anlauf, Grundfall
+AUSWAHL pythagoras-e2-k2-s5-v1 – pythagoras e2 „Kathete“: Anlauf, Sprosse – Fallstrick im Merkmal („Kathetenformel mit fremden Buchstaben unter Fallen“)
+AUSWAHL pythagoras-e2-k2-s10-v1 – pythagoras e2 „Kathete“: Prüfungshöhe (2024-OS-K6a)
+AUSWAHL pythagoras-e2-k2-s10-v2 – pythagoras e2 „Kathete“: Prüfungshöhe (2024-OS-K6a)
+AUSWAHL pythagoras-e2-k2-s11-v1 – pythagoras e2 „Kathete“: Prüfungshöhe (2022-OS-K5a)
+AUSWAHL pythagoras-e2-k2-s11-v2 – pythagoras e2 „Kathete“: Prüfungshöhe (2022-OS-K5a)
+AUSWAHL pythagoras-e2-k2-s12-v1 – pythagoras e2 „Kathete“: Prüfungshöhe (2025-OS-K2c, Stern)
+AUSWAHL pythagoras-e2-k2-s12-v2 – pythagoras e2 „Kathete“: Prüfungshöhe (2025-OS-K2c, Stern)
+WEG pythagoras e2 „pythagoreische Tripel erkennen und vervielfachen“ – keine Prüfungshöhe im Profil msa
+WEG pythagoras e3 „Ganz oder halb?“ – keine Prüfungshöhe im Profil msa
+AUSWAHL pythagoras-e3-k2-s0-v1 – pythagoras e3 „Figuren und Körper“: Anlauf, Vorstufe
+AUSWAHL pythagoras-e3-k2-s1-v1 – pythagoras e3 „Figuren und Körper“: Anlauf, Grundfall
+AUSWAHL pythagoras-e3-k2-s8-v1 – pythagoras e3 „Figuren und Körper“: Anlauf, Sprosse – Fallstrick im Merkmal („negative Koordinaten, Unterschied über die Achse h“)
+AUSWAHL pythagoras-e3-k2-s15-v1 – pythagoras e3 „Figuren und Körper“: Prüfungshöhe (2018-OS-K6d, Stern)
+AUSWAHL pythagoras-e3-k2-s15-v2 – pythagoras e3 „Figuren und Körper“: Prüfungshöhe (2018-OS-K6d, Stern)
+AUSWAHL pythagoras-e3-k2-s16-v1 – pythagoras e3 „Figuren und Körper“: Prüfungshöhe (2026-FOR-K2c)
+AUSWAHL pythagoras-e3-k2-s16-v2 – pythagoras e3 „Figuren und Körper“: Prüfungshöhe (2026-FOR-K2c)
+AUSWAHL pythagoras-e3-k2-s17-v1 – pythagoras e3 „Figuren und Körper“: Prüfungshöhe (2022-OS-K2c, Stern)
+AUSWAHL pythagoras-e3-k2-s17-v2 – pythagoras e3 „Figuren und Körper“: Prüfungshöhe (2022-OS-K2c, Stern)
+AUSWAHL pythagoras-e3-k2-s18-v1 – pythagoras e3 „Figuren und Körper“: Prüfungshöhe (2019-OS-K2d)
+AUSWAHL pythagoras-e3-k2-s18-v2 – pythagoras e3 „Figuren und Körper“: Prüfungshöhe (2019-OS-K2d)
+TEILUNG pythagoras e3 „Figuren und Körper“: 8 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+WEG pythagoras e3 „Rampe, Leiter, Seil an der Wand mit Skizze“ – keine Prüfungshöhe im Profil msa
+WEG trigonometrie e1 „sin, cos oder tan?“ – keine Prüfungshöhe im Profil msa
+WEG trigonometrie e1 „Mal oder geteilt?“ – keine Prüfungshöhe im Profil msa
+AUSWAHL trigonometrie-e1-k3-s0-v1 – trigonometrie e1 „Seite berechnen“: Anlauf, Vorstufe
+AUSWAHL trigonometrie-e1-k3-s1-v3 – trigonometrie e1 „Seite berechnen“: Anlauf, Grundfall
+AUSWAHL trigonometrie-e1-k3-s3-v1 – trigonometrie e1 „Seite berechnen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL trigonometrie-e1-k3-s1-v1 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2017-OS-B1j)
+AUSWAHL trigonometrie-e1-k3-s1-v2 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2019-OS-B1h)
+AUSWAHL trigonometrie-e1-k3-s2-v1 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2018-OS-B1g)
+AUSWAHL trigonometrie-e1-k3-s2-v2 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2018-OS-B1g)
+AUSWAHL trigonometrie-e1-k3-s2-v3 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2018-OS-B1g)
+AUSWAHL trigonometrie-e1-k3-s16-v1 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2021-OS-K3a)
+AUSWAHL trigonometrie-e1-k3-s16-v2 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2021-OS-K3a)
+AUSWAHL trigonometrie-e1-k3-s16-v3 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2021-OS-K3b)
+AUSWAHL trigonometrie-e1-k3-s16-v4 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2021-OS-K3b)
+AUSWAHL trigonometrie-e1-k3-s16-v5 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2017-OS-K4b)
+AUSWAHL trigonometrie-e1-k3-s16-v6 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2017-OS-K4b)
+AUSWAHL trigonometrie-e1-k3-s16-v7 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2022-OS-K5d)
+AUSWAHL trigonometrie-e1-k3-s16-v8 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2022-OS-K5d)
+AUSWAHL trigonometrie-e1-k3-s16-v9 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2020-OS-B1j)
+AUSWAHL trigonometrie-e1-k3-s16-v10 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2020-OS-B1j)
+AUSWAHL trigonometrie-e1-k3-s16-v11 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2025-OS-B1g)
+AUSWAHL trigonometrie-e1-k3-s16-v12 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2025-OS-B1g)
+AUSWAHL trigonometrie-e1-k3-s16-v13 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2020-OS-B1c)
+AUSWAHL trigonometrie-e1-k3-s16-v14 – trigonometrie e1 „Seite berechnen“: Prüfungshöhe (2020-OS-B1c)
+TEILUNG trigonometrie e1 „Seite berechnen“: 19 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+WEG trigonometrie e1 „Seiten vom zweiten spitzen Winkel aus neu benennen (Gegen- und Ankathete tauschen)“ – keine Prüfungshöhe im Profil msa
+WEG trigonometrie e1 „Seitenverhältnis aus gegebenen Längen als Dezimalzahl und Vergleich mit dem Taschenrechnerwert des Winkels“ – keine Prüfungshöhe im Profil msa
+WEG trigonometrie e1 „Ergebnis prüfen: Kathete kürzer als Hypotenuse“ – keine Prüfungshöhe im Profil msa
+AUSWAHL trigonometrie-e2-k1-s0-v1 – trigonometrie e2 „Winkel berechnen“: Anlauf, Vorstufe
+AUSWAHL trigonometrie-e2-k1-s1-v1 – trigonometrie e2 „Winkel berechnen“: Anlauf, Grundfall
+AUSWAHL trigonometrie-e2-k1-s2-v1 – trigonometrie e2 „Winkel berechnen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL trigonometrie-e2-k1-s11-v1 – trigonometrie e2 „Winkel berechnen“: Prüfungshöhe (2024-OS-K6b)
+AUSWAHL trigonometrie-e2-k1-s11-v2 – trigonometrie e2 „Winkel berechnen“: Prüfungshöhe (2024-OS-K6b)
+AUSWAHL trigonometrie-e2-k1-s11-v3 – trigonometrie e2 „Winkel berechnen“: Prüfungshöhe (2019-OS-K3b)
+AUSWAHL trigonometrie-e2-k1-s11-v4 – trigonometrie e2 „Winkel berechnen“: Prüfungshöhe (2019-OS-K3b)
+AUSWAHL trigonometrie-e2-k1-s11-v5 – trigonometrie e2 „Winkel berechnen“: Prüfungshöhe (2026-FOR-K4b)
+AUSWAHL trigonometrie-e2-k1-s11-v6 – trigonometrie e2 „Winkel berechnen“: Prüfungshöhe (2026-FOR-K4b)
+AUSWAHL trigonometrie-e2-k1-s11-v7 – trigonometrie e2 „Winkel berechnen“: Prüfungshöhe (2022-OS-K5b)
+AUSWAHL trigonometrie-e2-k1-s11-v8 – trigonometrie e2 „Winkel berechnen“: Prüfungshöhe (2022-OS-K5b)
+AUSWAHL trigonometrie-e2-k1-s11-v9 – trigonometrie e2 „Winkel berechnen“: Prüfungshöhe (2025-OS-K4a)
+AUSWAHL trigonometrie-e2-k1-s11-v10 – trigonometrie e2 „Winkel berechnen“: Prüfungshöhe (2025-OS-K4a)
+AUSWAHL trigonometrie-e2-k1-s11-v11 – trigonometrie e2 „Winkel berechnen“: Prüfungshöhe (2019-OS-K2d)
+AUSWAHL trigonometrie-e2-k1-s11-v12 – trigonometrie e2 „Winkel berechnen“: Prüfungshöhe (2019-OS-K2d)
+WEG trigonometrie e2 „Winkel prüfen: die längere Kathete liegt dem größeren Winkel gegenüber“ – keine Prüfungshöhe im Profil msa
+WEG trigonometrie e2 „Umkehrtaste am Taschenrechner (SHIFT sin, cos, tan; Anzeige sin⁻¹)“ – keine Prüfungshöhe im Profil msa
+AUSWAHL trigonometrie-e3-k1-s0-v1 – trigonometrie e3 „Teildreiecke und Vermessung“: Anlauf, Vorstufe
+AUSWAHL trigonometrie-e3-k1-s1-v1 – trigonometrie e3 „Teildreiecke und Vermessung“: Anlauf, Grundfall
+AUSWAHL trigonometrie-e3-k1-s2-v1 – trigonometrie e3 „Teildreiecke und Vermessung“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL trigonometrie-e3-k1-s17-v1 – trigonometrie e3 „Teildreiecke und Vermessung“: Prüfungshöhe (2018-OS-K4d)
+AUSWAHL trigonometrie-e3-k1-s17-v2 – trigonometrie e3 „Teildreiecke und Vermessung“: Prüfungshöhe (2018-OS-K4d)
+AUSWAHL trigonometrie-e3-k1-s17-v3 – trigonometrie e3 „Teildreiecke und Vermessung“: Prüfungshöhe (2020-OS-K5b)
+AUSWAHL trigonometrie-e3-k1-s17-v4 – trigonometrie e3 „Teildreiecke und Vermessung“: Prüfungshöhe (2020-OS-K5b)
+AUSWAHL trigonometrie-e3-k1-s17-v5 – trigonometrie e3 „Teildreiecke und Vermessung“: Prüfungshöhe (2023-OS-K7b)
+AUSWAHL trigonometrie-e3-k1-s17-v6 – trigonometrie e3 „Teildreiecke und Vermessung“: Prüfungshöhe (2023-OS-K7b)
+AUSWAHL trigonometrie-e3-k1-s17-v7 – trigonometrie e3 „Teildreiecke und Vermessung“: Prüfungshöhe (2026-FOR-K4c)
+AUSWAHL trigonometrie-e3-k1-s17-v8 – trigonometrie e3 „Teildreiecke und Vermessung“: Prüfungshöhe (2026-FOR-K4c)
+AUSWAHL trigonometrie-e3-k1-s17-v9 – trigonometrie e3 „Teildreiecke und Vermessung“: Prüfungshöhe (2016-OS-K7c, Stern)
+AUSWAHL trigonometrie-e3-k1-s17-v10 – trigonometrie e3 „Teildreiecke und Vermessung“: Prüfungshöhe (2016-OS-K7c, Stern)
+AUSWAHL trigonometrie-e3-k1-s17-v11 – trigonometrie e3 „Teildreiecke und Vermessung“: Prüfungshöhe (2015-OS-K5d)
+AUSWAHL trigonometrie-e3-k1-s17-v12 – trigonometrie e3 „Teildreiecke und Vermessung“: Prüfungshöhe (2015-OS-K5d)
+WEG trigonometrie e3 „Strecke aus Teilstrecken nach der Trigonometrie“ – keine Prüfungshöhe im Profil msa
+AUSWAHL trigonometrie-e4-k1-s0-v1 – trigonometrie e4 „Sinussatz“: Anlauf, Vorstufe
+AUSWAHL trigonometrie-e4-k1-s1-v1 – trigonometrie e4 „Sinussatz“: Anlauf, Grundfall
+AUSWAHL trigonometrie-e4-k1-s2-v1 – trigonometrie e4 „Sinussatz“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL trigonometrie-e4-k1-s4-v1 – trigonometrie e4 „Sinussatz“: Prüfungshöhe (2015-OS-K5c, Stern)
+AUSWAHL trigonometrie-e4-k1-s10-v1 – trigonometrie e4 „Sinussatz“: Prüfungshöhe (2014-OS-K2b, Stern)
+AUSWAHL trigonometrie-e4-k1-s16-v1 – trigonometrie e4 „Sinussatz“: Prüfungshöhe (2024-OS-K6d, Stern)
+AUSWAHL trigonometrie-e4-k1-s16-v2 – trigonometrie e4 „Sinussatz“: Prüfungshöhe (2024-OS-K6d, Stern)
+AUSWAHL trigonometrie-e4-k1-s16-v3 – trigonometrie e4 „Sinussatz“: Prüfungshöhe (2025-OS-K4c, Stern)
+AUSWAHL trigonometrie-e4-k1-s16-v4 – trigonometrie e4 „Sinussatz“: Prüfungshöhe (2025-OS-K4c, Stern)
+AUSWAHL trigonometrie-e4-k1-s16-v5 – trigonometrie e4 „Sinussatz“: Prüfungshöhe (2018-OS-K4c, Stern)
+AUSWAHL trigonometrie-e4-k1-s16-v6 – trigonometrie e4 „Sinussatz“: Prüfungshöhe (2018-OS-K4c, Stern)
+AUSWAHL trigonometrie-e4-k1-s16-v7 – trigonometrie e4 „Sinussatz“: Prüfungshöhe (2019-OS-K3c, Stern)
+AUSWAHL trigonometrie-e4-k1-s16-v8 – trigonometrie e4 „Sinussatz“: Prüfungshöhe (2019-OS-K3c, Stern)
+AUSWAHL trigonometrie-e4-k1-s16-v9 – trigonometrie e4 „Sinussatz“: Prüfungshöhe (2020-OS-K7c, Stern)
+AUSWAHL trigonometrie-e4-k1-s16-v10 – trigonometrie e4 „Sinussatz“: Prüfungshöhe (2020-OS-K7c, Stern)
+AUSWAHL trigonometrie-e4-k1-s16-v11 – trigonometrie e4 „Sinussatz“: Prüfungshöhe (2021-OS-K3c, Stern)
+AUSWAHL trigonometrie-e4-k1-s16-v12 – trigonometrie e4 „Sinussatz“: Prüfungshöhe (2021-OS-K3c, Stern)
+TEILUNG trigonometrie e4 „Sinussatz“: 14 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+WEG kreis e1 „Rand oder Fläche?“ – keine Prüfungshöhe im Profil msa
+WEG kreis e1 „Umfang“ – keine Prüfungshöhe im Profil msa
+WEG kreis e1 „Radius, Durchmesser, Mittelpunkt in einer Figur benennen und einzeichnen“ – keine Prüfungshöhe im Profil msa
+WEG kreis e1 „Kreis mit gegebenem Radius oder Durchmesser zeichnen“ – keine Prüfungshöhe im Profil msa
+WEG kreis e1 „Umfang messen und u : d bilden (Entdeckung von π)“ – keine Prüfungshöhe im Profil msa
+AUSWAHL kreis-e2-k1-s0-v1 – kreis e2 „Fläche“: Anlauf, Vorstufe
+AUSWAHL kreis-e2-k1-s1-v1 – kreis e2 „Fläche“: Anlauf, Grundfall
+AUSWAHL kreis-e2-k1-s2-v1 – kreis e2 „Fläche“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL kreis-e2-k1-s7-v1 – kreis e2 „Fläche“: Prüfungshöhe (2016-OS-K3b)
+AUSWAHL kreis-e2-k1-s7-v2 – kreis e2 „Fläche“: Prüfungshöhe (2016-OS-K3b)
+AUSWAHL kreis-e2-k1-s7-v3 – kreis e2 „Fläche“: Prüfungshöhe (2024-OS-K4a)
+AUSWAHL kreis-e2-k1-s7-v4 – kreis e2 „Fläche“: Prüfungshöhe (2024-OS-K4a)
+WEG kreis e2 „Term zu Figur“ – keine Prüfungshöhe im Profil msa
+WEG kreis e2 „Sachaufgabe (Abwurfring, Pizza, Deckel, Grundfläche eines Kegels oder Zylinders)“ – keine Prüfungshöhe im Profil msa
+WEG kreis e2 „Fläche oder Umfang: die passende Formel wählen“ – keine Prüfungshöhe im Profil msa
+AUSWAHL kreis-e3-k1-s0-v1 – kreis e3 „Kreisteile“: Anlauf, Vorstufe
+AUSWAHL kreis-e3-k1-s1-v1 – kreis e3 „Kreisteile“: Anlauf, Grundfall
+AUSWAHL kreis-e3-k1-s2-v1 – kreis e3 „Kreisteile“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL kreis-e3-k1-s8-v1 – kreis e3 „Kreisteile“: Prüfungshöhe (2025-OS-B1e)
+AUSWAHL kreis-e3-k1-s8-v2 – kreis e3 „Kreisteile“: Prüfungshöhe (2025-OS-B1e)
+WEG kreis e3 „Sachaufgabe (Rasensprenger, Tortenstück, Sektor im Kreisdiagramm)“ – keine Prüfungshöhe im Profil msa
+WEG winkel-dreiecke e1 „Welche Skala?“ – keine Prüfungshöhe im Profil msa
+AUSWAHL winkel-dreiecke-e1-k2-s0-v1 – winkel-dreiecke e1 „Winkel messen“: Anlauf, Vorstufe
+AUSWAHL winkel-dreiecke-e1-k2-s1-v1 – winkel-dreiecke e1 „Winkel messen“: Anlauf, Grundfall
+AUSWAHL winkel-dreiecke-e1-k2-s2-v1 – winkel-dreiecke e1 „Winkel messen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL winkel-dreiecke-e1-k2-s9-v1 – winkel-dreiecke e1 „Winkel messen“: Prüfungshöhe (2018-OS-K4a)
+AUSWAHL winkel-dreiecke-e1-k2-s9-v2 – winkel-dreiecke e1 „Winkel messen“: Prüfungshöhe (2018-OS-K4a)
+AUSWAHL winkel-dreiecke-e1-k2-s9-v3 – winkel-dreiecke e1 „Winkel messen“: Prüfungshöhe (2016-OS-K7a)
+AUSWAHL winkel-dreiecke-e1-k2-s9-v4 – winkel-dreiecke e1 „Winkel messen“: Prüfungshöhe (2016-OS-K7a)
+WEG winkel-dreiecke e1 „Winkel schätzen“ – keine Prüfungshöhe im Profil msa
+WEG winkel-dreiecke e2 „Sind die Geraden parallel?“ – keine Prüfungshöhe im Profil msa
+AUSWAHL winkel-dreiecke-e2-k2-s0-v1 – winkel-dreiecke e2 „Winkel an Geraden“: Anlauf, Vorstufe
+AUSWAHL winkel-dreiecke-e2-k2-s1-v1 – winkel-dreiecke e2 „Winkel an Geraden“: Anlauf, Grundfall
+AUSWAHL winkel-dreiecke-e2-k2-s2-v1 – winkel-dreiecke e2 „Winkel an Geraden“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL winkel-dreiecke-e2-k2-s4-v1 – winkel-dreiecke e2 „Winkel an Geraden“: Prüfungshöhe (2014-OS-B1f)
+AUSWAHL winkel-dreiecke-e2-k2-s6-v1 – winkel-dreiecke e2 „Winkel an Geraden“: Prüfungshöhe (2020-OS-B1g)
+AUSWAHL winkel-dreiecke-e2-k2-s8-v1 – winkel-dreiecke e2 „Winkel an Geraden“: Prüfungshöhe (2019-OS-B1a)
+AUSWAHL winkel-dreiecke-e2-k2-s9-v2 – winkel-dreiecke e2 „Winkel an Geraden“: Prüfungshöhe (2021-OS-B1i)
+AUSWAHL winkel-dreiecke-e2-k2-s9-v3 – winkel-dreiecke e2 „Winkel an Geraden“: Prüfungshöhe (2023-OS-K2a)
+AUSWAHL winkel-dreiecke-e2-k2-s10-v1 – winkel-dreiecke e2 „Winkel an Geraden“: Prüfungshöhe (2015-OS-B1d)
+AUSWAHL winkel-dreiecke-e2-k2-s10-v2 – winkel-dreiecke e2 „Winkel an Geraden“: Prüfungshöhe (2015-OS-B1d)
+AUSWAHL winkel-dreiecke-e2-k2-s10-v3 – winkel-dreiecke e2 „Winkel an Geraden“: Prüfungshöhe (2026-FOR-B1i)
+AUSWAHL winkel-dreiecke-e2-k2-s10-v4 – winkel-dreiecke e2 „Winkel an Geraden“: Prüfungshöhe (2026-FOR-B1i)
+TEILUNG winkel-dreiecke e2 „Winkel an Geraden“: 9 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+WEG winkel-dreiecke e2 „Parallelität aus gleichen Stufenwinkeln prüfen“ – keine Prüfungshöhe im Profil msa
+WEG winkel-dreiecke e3 „Welches Teildreieck?“ – keine Prüfungshöhe im Profil msa
+AUSWAHL winkel-dreiecke-e3-k2-s0-v1 – winkel-dreiecke e3 „Winkelsumme“: Anlauf, Vorstufe
+AUSWAHL winkel-dreiecke-e3-k2-s1-v1 – winkel-dreiecke e3 „Winkelsumme“: Anlauf, Grundfall
+AUSWAHL winkel-dreiecke-e3-k2-s2-v2 – winkel-dreiecke e3 „Winkelsumme“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL winkel-dreiecke-e3-k2-s2-v1 – winkel-dreiecke e3 „Winkelsumme“: Prüfungshöhe (2017-OS-K4a)
+AUSWAHL winkel-dreiecke-e3-k2-s7-v1 – winkel-dreiecke e3 „Winkelsumme“: Prüfungshöhe (2022-OS-K5c)
+AUSWAHL winkel-dreiecke-e3-k2-s7-v2 – winkel-dreiecke e3 „Winkelsumme“: Prüfungshöhe (2018-OS-K4b)
+AUSWAHL winkel-dreiecke-e3-k2-s7-v3 – winkel-dreiecke e3 „Winkelsumme“: Prüfungshöhe (2015-OS-K5b)
+AUSWAHL winkel-dreiecke-e3-k2-s8-v3 – winkel-dreiecke e3 „Winkelsumme“: Prüfungshöhe (2023-OS-K7a)
+AUSWAHL winkel-dreiecke-e3-k2-s10-v1 – winkel-dreiecke e3 „Winkelsumme“: Prüfungshöhe (2026-FOR-B1c)
+AUSWAHL winkel-dreiecke-e3-k2-s10-v2 – winkel-dreiecke e3 „Winkelsumme“: Prüfungshöhe (2016-OS-B1e)
+AUSWAHL winkel-dreiecke-e3-k2-s11-v1 – winkel-dreiecke e3 „Winkelsumme“: Prüfungshöhe (2023-OS-B1g)
+AUSWAHL winkel-dreiecke-e3-k2-s11-v2 – winkel-dreiecke e3 „Winkelsumme“: Prüfungshöhe (2023-OS-B1g)
+AUSWAHL winkel-dreiecke-e3-k2-s11-v3 – winkel-dreiecke e3 „Winkelsumme“: Prüfungshöhe (2025-OS-K2c, Stern)
+AUSWAHL winkel-dreiecke-e3-k2-s11-v4 – winkel-dreiecke e3 „Winkelsumme“: Prüfungshöhe (2025-OS-K2c, Stern)
+TEILUNG winkel-dreiecke e3 „Winkelsumme“: 11 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+WEG winkel-dreiecke e3 „Innenwinkelsumme von Fünf- und Sechseck über Dreiecke“ – keine Prüfungshöhe im Profil msa
+AUSWAHL winkel-dreiecke-e4-k1-s0-v1 – winkel-dreiecke e4 „Konstruieren“: Anlauf, Vorstufe
+AUSWAHL winkel-dreiecke-e4-k1-s1-v1 – winkel-dreiecke e4 „Konstruieren“: Anlauf, Grundfall
+AUSWAHL winkel-dreiecke-e4-k1-s2-v1 – winkel-dreiecke e4 „Konstruieren“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL winkel-dreiecke-e4-k1-s10-v1 – winkel-dreiecke e4 „Konstruieren“: Prüfungshöhe (2020-OS-B1i)
+AUSWAHL winkel-dreiecke-e4-k1-s10-v2 – winkel-dreiecke e4 „Konstruieren“: Prüfungshöhe (2020-OS-B1i)
+WEG winkel-dreiecke e4 „Dreieck skizzieren und beschriften“ – keine Prüfungshöhe im Profil msa
+WEG winkel-dreiecke e5 „Besondere Linien“ – keine Prüfungshöhe im Profil msa
+WEG strahlensaetze e1 „Gleiche Einheit?“ – keine Prüfungshöhe im Profil msa
+AUSWAHL strahlensaetze-e1-k2-s0-v1 – strahlensaetze e1 „Maßstab umrechnen“: Anlauf, Vorstufe
+AUSWAHL strahlensaetze-e1-k2-s1-v1 – strahlensaetze e1 „Maßstab umrechnen“: Anlauf, Grundfall
+AUSWAHL strahlensaetze-e1-k2-s2-v1 – strahlensaetze e1 „Maßstab umrechnen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL strahlensaetze-e1-k2-s9-v1 – strahlensaetze e1 „Maßstab umrechnen“: Prüfungshöhe (2018-OS-K6c)
+AUSWAHL strahlensaetze-e1-k2-s9-v2 – strahlensaetze e1 „Maßstab umrechnen“: Prüfungshöhe (2018-OS-K6c)
+AUSWAHL strahlensaetze-e1-k2-s9-v3 – strahlensaetze e1 „Maßstab umrechnen“: Prüfungshöhe (2015-OS-K6a)
+AUSWAHL strahlensaetze-e1-k2-s9-v4 – strahlensaetze e1 „Maßstab umrechnen“: Prüfungshöhe (2015-OS-K6a)
+AUSWAHL strahlensaetze-e1-k3-s0-v1 – strahlensaetze e1 „Maßstabsgerecht zeichnen“: Anlauf, Vorstufe
+AUSWAHL strahlensaetze-e1-k3-s1-v1 – strahlensaetze e1 „Maßstabsgerecht zeichnen“: Anlauf, Grundfall
+AUSWAHL strahlensaetze-e1-k3-s2-v1 – strahlensaetze e1 „Maßstabsgerecht zeichnen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL strahlensaetze-e1-k3-s9-v1 – strahlensaetze e1 „Maßstabsgerecht zeichnen“: Prüfungshöhe (2021-OS-K4c, Stern)
+AUSWAHL strahlensaetze-e1-k3-s9-v2 – strahlensaetze e1 „Maßstabsgerecht zeichnen“: Prüfungshöhe (2021-OS-K4c, Stern)
+WEG strahlensaetze e2 „Zentrische Streckung und Ähnlichkeit“ – keine Prüfungshöhe im Profil msa
+WEG strahlensaetze e2 „Zentrum aus Original und Bild finden“ – keine Prüfungshöhe im Profil msa
+WEG strahlensaetze e3 „Strahlensätze“ – keine Prüfungshöhe im Profil msa
+WEG strahlensaetze e3 „Voraussetzung prüfen“ – keine Prüfungshöhe im Profil msa
+WEG strahlensaetze e3 „Strecke in n gleiche Teile teilen“ – keine Prüfungshöhe im Profil msa
+WEG symmetrie-abbildungen e1 „„Erst rechts, dann hoch““ – keine Prüfungshöhe im Profil msa
+AUSWAHL symmetrie-abbildungen-e1-k2-s0-v1 – symmetrie-abbildungen e1 „Punkte und Figuren im Koordinatensystem“: Anlauf, Vorstufe
+AUSWAHL symmetrie-abbildungen-e1-k2-s1-v1 – symmetrie-abbildungen e1 „Punkte und Figuren im Koordinatensystem“: Anlauf, Grundfall
+AUSWAHL symmetrie-abbildungen-e1-k2-s3-v1 – symmetrie-abbildungen e1 „Punkte und Figuren im Koordinatensystem“: Anlauf, Sprosse – Fallstrick im Merkmal („negative Koordinaten: nach links oder nach unten“)
+AUSWAHL symmetrie-abbildungen-e1-k2-s8-v1 – symmetrie-abbildungen e1 „Punkte und Figuren im Koordinatensystem“: Prüfungshöhe (2020-OS-B1b)
+AUSWAHL symmetrie-abbildungen-e1-k2-s8-v2 – symmetrie-abbildungen e1 „Punkte und Figuren im Koordinatensystem“: Prüfungshöhe (2020-OS-B1b)
+WEG symmetrie-abbildungen e1 „Achsen und Ursprung benennen, Einteilung ablesen“ – keine Prüfungshöhe im Profil msa
+WEG symmetrie-abbildungen e1 „Schreibweise P(x | y) lesen und schreiben (erste Zahl nach rechts, zweite nach oben)“ – keine Prüfungshöhe im Profil msa
+WEG symmetrie-abbildungen e1 „Streckenlänge parallel zu einer Achse abzählen“ – keine Prüfungshöhe im Profil msa
+WEG symmetrie-abbildungen e2 „„Wie viele Achsen?““ – keine Prüfungshöhe im Profil msa
+AUSWAHL symmetrie-abbildungen-e2-k2-s0-v1 – symmetrie-abbildungen e2 „Symmetrieachsen bestimmen“: Anlauf, Vorstufe
+AUSWAHL symmetrie-abbildungen-e2-k2-s1-v1 – symmetrie-abbildungen e2 „Symmetrieachsen bestimmen“: Anlauf, Grundfall
+AUSWAHL symmetrie-abbildungen-e2-k2-s4-v1 – symmetrie-abbildungen e2 „Symmetrieachsen bestimmen“: Anlauf, Sprosse – Fallstrick im Merkmal („Sonderfall: keine Achse“)
+AUSWAHL symmetrie-abbildungen-e2-k2-s9-v1 – symmetrie-abbildungen e2 „Symmetrieachsen bestimmen“: Prüfungshöhe (2022-OS-B1i)
+AUSWAHL symmetrie-abbildungen-e2-k2-s9-v2 – symmetrie-abbildungen e2 „Symmetrieachsen bestimmen“: Prüfungshöhe (2022-OS-B1i)
+AUSWAHL symmetrie-abbildungen-e2-k2-s9-v3 – symmetrie-abbildungen e2 „Symmetrieachsen bestimmen“: Prüfungshöhe (2021-OS-B1j)
+AUSWAHL symmetrie-abbildungen-e2-k2-s9-v4 – symmetrie-abbildungen e2 „Symmetrieachsen bestimmen“: Prüfungshöhe (2021-OS-B1j)
+AUSWAHL symmetrie-abbildungen-e2-k2-s10-v1 – symmetrie-abbildungen e2 „Symmetrieachsen bestimmen“: Prüfungshöhe (2025-OS-K2a)
+AUSWAHL symmetrie-abbildungen-e2-k2-s10-v2 – symmetrie-abbildungen e2 „Symmetrieachsen bestimmen“: Prüfungshöhe (2025-OS-K2a)
+AUSWAHL symmetrie-abbildungen-e2-k3-s0-v1 – symmetrie-abbildungen e2 „Spiegeln und Spiegelbild benennen“: Anlauf, Vorstufe
+AUSWAHL symmetrie-abbildungen-e2-k3-s1-v1 – symmetrie-abbildungen e2 „Spiegeln und Spiegelbild benennen“: Anlauf, Grundfall
+AUSWAHL symmetrie-abbildungen-e2-k3-s2-v1 – symmetrie-abbildungen e2 „Spiegeln und Spiegelbild benennen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL symmetrie-abbildungen-e2-k3-s8-v1 – symmetrie-abbildungen e2 „Spiegeln und Spiegelbild benennen“: Prüfungshöhe (2018-OS-B1h)
+AUSWAHL symmetrie-abbildungen-e2-k3-s8-v2 – symmetrie-abbildungen e2 „Spiegeln und Spiegelbild benennen“: Prüfungshöhe (2018-OS-B1h)
+WEG symmetrie-abbildungen e2 „prüfen, ob eine eingezeichnete Gerade Symmetrieachse ist (falten oder messen)“ – keine Prüfungshöhe im Profil msa
+WEG symmetrie-abbildungen e2 „Symmetrie der Vierecksarten im Haus der Vierecke zuordnen“ – keine Prüfungshöhe im Profil msa
+WEG symmetrie-abbildungen e3 „Drehen, Verschieben, Punktsymmetrie“ – keine Prüfungshöhe im Profil msa
+WEG symmetrie-abbildungen e3 „drehsymmetrische Figuren erkennen und den Drehwinkel angeben (Vorrat)“ – keine Prüfungshöhe im Profil msa
+WEG symmetrie-abbildungen e3 „Original und Bild vergleichen: Längen und Winkel bleiben gleich, kongruente Figuren“ – keine Prüfungshöhe im Profil msa
+FORM trigonometrie-e1-k3-s16-v9 (Nr. 36): gleichungsraster mit Text → teile
+FORM trigonometrie-e1-k3-s16-v10 (Nr. 36): gleichungsraster mit Text → teile
+WARNUNG Nr. 36: 14 Teilaufgaben, 6 mit Grafik – über dem Halbseitenmaß (2.3 g)
+WARNUNG Nr. 38: 12 Teilaufgaben, 2 mit Grafik – über dem Halbseitenmaß (2.3 g)
+STRUKTUR 0 Fehler

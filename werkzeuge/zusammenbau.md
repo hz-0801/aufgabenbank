@@ -1,7 +1,8 @@
 # zusammenbau.py – aus der Bank ein Blatt (Quelltext)
 
-Stand 2026-09-28, v0.3 (Kennung, Register, Bauzettel; eine v0.2
-gab es im Repo nicht, v0.3 setzt auf v0.1 auf). Baut aus
+Stand 2026-09-28, v0.4 (Rezept Heft: `--heft`, `--nur-basis`;
+v0.3 Kennung, Register, Bauzettel; eine v0.2 gab es im Repo nicht,
+v0.3 setzt auf v0.1 auf). Baut aus
 bank/<eintrag>/ LaTeX-Quelltexte für die Vorlage mathblatt.sty
 (hz-0801/blattbau). Kompiliert wird nicht; die Strukturprüfung im
 Skript ersetzt den Lauf bis zum ersten Render.
@@ -51,8 +52,7 @@ des Lehrers vom 28.09.), z. B. PRZ-L3:
   sagen, woher das Kürzel kam. Heft mit mehreren Einträgen: Kürzel
   des ersten.
 - R: Rezept – L Lernblatt, F Fokus (`--fokus`), S schwach
-  (`--schwach`), H Heft. H vergibt das Skript noch nicht, weil
-  v0.3 nur einen Eintrag je Bau kennt.
+  (`--schwach`), H Heft (`--heft`, ab v0.4).
 - n: laufende Nummer je Kürzel und Rezept ab 1, die nächste freie
   aus bau/register.csv (größte vergebene + 1). Zweimal derselbe
   Aufruf gibt zwei Kennungen (PRZ-L1, PRZ-L2).
@@ -164,6 +164,53 @@ Wurzel setzt `* text eol=lf`, das verfälscht PDFs).
   „Merkkasten“, Zuordnung der Zone aus „Voraussetzungen“.
 - Was Bank und Mappe nicht tragen, steht als `%% TODO` in der
   Zeile davor und in der log, nie als geratener Text.
+
+## Rezept Heft (v0.4)
+
+Beschluss des Lehrers vom 28.09.: Prüfungshefte nach Themen, aus der
+Bank. Aufruf:
+
+    python3 werkzeuge/zusammenbau.py <eintrag> <eintrag> …
+        --heft [msa|abitur-gk|abitur-lk|fhr] [--nur-basis]
+        [--titel <text>] --aus bau/hefte/<name>
+
+`--heft` ohne Wert heißt msa; `--nur-basis` setzt msa. Ohne `--aus`
+landet das Heft unter bau/hefte/<kennung>/. Einträge ohne Ordner in
+bank/ entfallen (log FEHLT, bau.json fehlende_eintraege).
+
+- Je Kette (gleichnamige Pflichtkette eingeschlossen) zwei Lagen:
+  Anlauf (eine Hauptnummer: Vorstufe, Grundfall, eine Sprosse mit
+  Fallstrick – je kleinste Variante ohne Original, Prüfkennung
+  entfernt) und Prüfungsaufgaben (alle Varianten aller Zeilen, deren
+  Original zum Profil gehört, nach Sprosse und Variante; geteilt nach
+  2.3 g, „– weiter“).
+- Profil einer Zeile: original.papier (OS/FOR/EBR/GYM → msa; A/B/C →
+  fhr; -ga/-gk → abitur-gk; sonst abitur-lk), ohne Original die
+  Prüfkennung im Text. Zeilen hoehe pruefung ohne beides sind keine
+  Prüfungsaufgaben des Hefts.
+- Fallstrick-Sprosse: erste Sprosse nach dem Grundfall, deren Merkmal
+  einen Fallstrick nennt (Muster FALLSTRICK im Skript), sonst die
+  erste nach dem Grundfall. Die Bank zählt Fallstricke nicht nach
+  Häufigkeit; die Wahl steht in der log.
+- Ketten ohne Prüfungsaufgabe im Profil entfallen samt Anlauf.
+- `--nur-basis`: nur Originale mit Papier OS/FOR/EBR und id
+  -<Papier>-B<n> (Basisteil), kein Anlauf.
+- Sternchen: `\steil`/`\sgl`, wenn das Original im Prüfungskatalog
+  von mathe-nachhilfe (msa-/abi-/iqb-/fhr-katalog.csv, gesucht wie
+  _kuerzel.csv) stern = ja trägt; Legende „⋆ = Original mit Sternchen
+  (nur FOR)“ in der Fußzeile.
+- Satz im Heft: Gleichung ohne $ im gleichungsraster als Mathe, Text
+  im gleichungsraster als `\teil`.
+- Dateien: <eintrag>_a.tex, <eintrag>_l.tex je Eintrag (Kopf
+  `\einheitenkopf[t<i>]`), <K>.tex mit Verzeichniszeile,
+  <K>-loesungen.tex;
+  bau.json trägt je Teilaufgabe lage (anlauf/pruefung), original,
+  punkte, stern, dazu fehlende_eintraege, leere_eintraege und
+  ausgelassen (vom Render-Skript gefüllt).
+- Nummern laufen über das ganze Heft; Einträge beginnen je auf neuer
+  Seite.
+
+Erster Lauf: bau/hefte/ (elf Hefte, bericht.md, render.py).
 
 ## Strukturprüfung
 

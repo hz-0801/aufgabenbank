@@ -1,0 +1,217 @@
+# zusammenbau v0.4: zusammenbau.py zufallsexperimente-und-pfadregeln bedingte-wahrscheinlichkeit-und-bayes vierfeldertafel unabhaengigkeit zufallsgroessen-und-verteilungen kenngroessen-von-verteilungen binomialverteilung hypothesentests --heft abitur-gk --titel Prüfungsheft Abitur GK · Stochastik
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG ZUF-H1 – Kürzel ZUF aus _kuerzel.csv (mathe-nachhilfe) (erster Eintrag zufallsexperimente-und-pfadregeln); Rezept H (Heft)
+KATALOGE aus /home/claude/mathe-nachhilfe: 3568 Zeilen
+AUSWAHL zufallsexperimente-und-pfadregeln-e1-k1-s0-v1 – zufallsexperimente-und-pfadregeln e1 „Ereignisse als Mengen“: Anlauf, Vorstufe
+AUSWAHL zufallsexperimente-und-pfadregeln-e1-k1-s1-v1 – zufallsexperimente-und-pfadregeln e1 „Ereignisse als Mengen“: Anlauf, Grundfall
+AUSWAHL zufallsexperimente-und-pfadregeln-e1-k1-s2-v1 – zufallsexperimente-und-pfadregeln e1 „Ereignisse als Mengen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL zufallsexperimente-und-pfadregeln-e1-k1-s7-v3 – zufallsexperimente-und-pfadregeln e1 „Ereignisse als Mengen“: Prüfungshöhe (Kennung im Text)
+AUSWAHL zufallsexperimente-und-pfadregeln-e1-k1-s7-v4 – zufallsexperimente-und-pfadregeln e1 „Ereignisse als Mengen“: Prüfungshöhe (Kennung im Text)
+AUSWAHL zufallsexperimente-und-pfadregeln-e2-k1-s0-v1 – zufallsexperimente-und-pfadregeln e2 „Laplace-Experimente“: Anlauf, Vorstufe
+AUSWAHL zufallsexperimente-und-pfadregeln-e2-k1-s1-v1 – zufallsexperimente-und-pfadregeln e2 „Laplace-Experimente“: Anlauf, Grundfall
+AUSWAHL zufallsexperimente-und-pfadregeln-e2-k1-s2-v1 – zufallsexperimente-und-pfadregeln e2 „Laplace-Experimente“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL zufallsexperimente-und-pfadregeln-e2-k1-s8-v1 – zufallsexperimente-und-pfadregeln e2 „Laplace-Experimente“: Prüfungshöhe (2019MgrundlegendBStochastikWTR2-3b)
+AUSWAHL zufallsexperimente-und-pfadregeln-e2-k1-s8-v2 – zufallsexperimente-und-pfadregeln e2 „Laplace-Experimente“: Prüfungshöhe (2019MgrundlegendBStochastikWTR2-3b)
+AUSWAHL zufallsexperimente-und-pfadregeln-e2-k1-s8-v3 – zufallsexperimente-und-pfadregeln e2 „Laplace-Experimente“: Prüfungshöhe (Kennung im Text)
+AUSWAHL zufallsexperimente-und-pfadregeln-e2-k1-s8-v4 – zufallsexperimente-und-pfadregeln e2 „Laplace-Experimente“: Prüfungshöhe (Kennung im Text)
+WEG zufallsexperimente-und-pfadregeln e2 „Laplace-Experiment: Aussage über Wahrscheinlichkeiten aus absoluten Anzahlen ohne Grundgesamtheit beurteilen“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL zufallsexperimente-und-pfadregeln-e3-k1-s0-v1 – zufallsexperimente-und-pfadregeln e3 „Pfadregeln bei unabhängigen Stufen“: Anlauf, Vorstufe
+AUSWAHL zufallsexperimente-und-pfadregeln-e3-k1-s1-v1 – zufallsexperimente-und-pfadregeln e3 „Pfadregeln bei unabhängigen Stufen“: Anlauf, Grundfall
+AUSWAHL zufallsexperimente-und-pfadregeln-e3-k1-s2-v1 – zufallsexperimente-und-pfadregeln e3 „Pfadregeln bei unabhängigen Stufen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL zufallsexperimente-und-pfadregeln-e3-k1-s9-v3 – zufallsexperimente-und-pfadregeln e3 „Pfadregeln bei unabhängigen Stufen“: Prüfungshöhe (2022-bebb-gk-B4f)
+AUSWAHL zufallsexperimente-und-pfadregeln-e3-k1-s9-v4 – zufallsexperimente-und-pfadregeln e3 „Pfadregeln bei unabhängigen Stufen“: Prüfungshöhe (2022-bebb-gk-B4f)
+AUSWAHL zufallsexperimente-und-pfadregeln-e3-k1-s9-v5 – zufallsexperimente-und-pfadregeln e3 „Pfadregeln bei unabhängigen Stufen“: Prüfungshöhe (2020-be-gk-B4.1f)
+AUSWAHL zufallsexperimente-und-pfadregeln-e3-k1-s9-v6 – zufallsexperimente-und-pfadregeln e3 „Pfadregeln bei unabhängigen Stufen“: Prüfungshöhe (2020-be-gk-B4.1f)
+WEG zufallsexperimente-und-pfadregeln e3 „Gleich wahrscheinliche Ergebnisse eines zweistufigen Experiments über die Pfadwahrscheinlichkeiten ermitteln“ – keine Prüfungshöhe im Profil abitur-gk
+WEG zufallsexperimente-und-pfadregeln e3 „Kosten je Erfolg zweier Varianten über Pfadwahrscheinlichkeiten vergleichen“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL zufallsexperimente-und-pfadregeln-e4-k1-s0-v1 – zufallsexperimente-und-pfadregeln e4 „Ohne Zurücklegen und Umlegen“: Anlauf, Vorstufe
+AUSWAHL zufallsexperimente-und-pfadregeln-e4-k1-s1-v1 – zufallsexperimente-und-pfadregeln e4 „Ohne Zurücklegen und Umlegen“: Anlauf, Grundfall
+AUSWAHL zufallsexperimente-und-pfadregeln-e4-k1-s3-v1 – zufallsexperimente-und-pfadregeln e4 „Ohne Zurücklegen und Umlegen“: Anlauf, Sprosse – Fallstrick im Merkmal („viele Züge als ein Pfad fallender Brüche, Gegenere“)
+AUSWAHL zufallsexperimente-und-pfadregeln-e4-k1-s5-v1 – zufallsexperimente-und-pfadregeln e4 „Ohne Zurücklegen und Umlegen“: Prüfungshöhe (2021-be-gk-A1.7b)
+AUSWAHL zufallsexperimente-und-pfadregeln-e4-k1-s5-v2 – zufallsexperimente-und-pfadregeln e4 „Ohne Zurücklegen und Umlegen“: Prüfungshöhe (2021-be-gk-A1.7b)
+WEG zufallsexperimente-und-pfadregeln e5 „Mammutbäume“ – keine Prüfungshöhe im Profil abitur-gk
+WEG zufallsexperimente-und-pfadregeln e6 „Situationsbäume“ – keine Prüfungshöhe im Profil abitur-gk
+WEG zufallsexperimente-und-pfadregeln e7 „Term und Ereignis“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL zufallsexperimente-und-pfadregeln-e8-k1-s0-v1 – zufallsexperimente-und-pfadregeln e8 „Rückwärts“: Anlauf, Vorstufe
+AUSWAHL zufallsexperimente-und-pfadregeln-e8-k1-s1-v1 – zufallsexperimente-und-pfadregeln e8 „Rückwärts“: Anlauf, Grundfall
+AUSWAHL zufallsexperimente-und-pfadregeln-e8-k1-s2-v1 – zufallsexperimente-und-pfadregeln e8 „Rückwärts“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL zufallsexperimente-und-pfadregeln-e8-k1-s7-v1 – zufallsexperimente-und-pfadregeln e8 „Rückwärts“: Prüfungshöhe (2022MgrundlegendAStochastik2)
+AUSWAHL zufallsexperimente-und-pfadregeln-e8-k1-s7-v2 – zufallsexperimente-und-pfadregeln e8 „Rückwärts“: Prüfungshöhe (2022MgrundlegendAStochastik2)
+AUSWAHL bedingte-wahrscheinlichkeit-und-bayes-e1-k1-s0-v1 – bedingte-wahrscheinlichkeit-und-bayes e1 „Der Quotient“: Anlauf, Vorstufe
+AUSWAHL bedingte-wahrscheinlichkeit-und-bayes-e1-k1-s1-v1 – bedingte-wahrscheinlichkeit-und-bayes e1 „Der Quotient“: Anlauf, Grundfall
+AUSWAHL bedingte-wahrscheinlichkeit-und-bayes-e1-k1-s2-v1 – bedingte-wahrscheinlichkeit-und-bayes e1 „Der Quotient“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL bedingte-wahrscheinlichkeit-und-bayes-e1-k1-s1-v5 – bedingte-wahrscheinlichkeit-und-bayes e1 „Der Quotient“: Prüfungshöhe (2023-bebb-gk-B4.1c)
+AUSWAHL bedingte-wahrscheinlichkeit-und-bayes-e1-k1-s3-v3 – bedingte-wahrscheinlichkeit-und-bayes e1 „Der Quotient“: Prüfungshöhe (2021MgrundlegendBStochastikWTR3-1b)
+AUSWAHL bedingte-wahrscheinlichkeit-und-bayes-e2-k1-s0-v1 – bedingte-wahrscheinlichkeit-und-bayes e2 „Bayes“: Anlauf, Vorstufe
+AUSWAHL bedingte-wahrscheinlichkeit-und-bayes-e2-k1-s1-v1 – bedingte-wahrscheinlichkeit-und-bayes e2 „Bayes“: Anlauf, Grundfall
+AUSWAHL bedingte-wahrscheinlichkeit-und-bayes-e2-k1-s2-v1 – bedingte-wahrscheinlichkeit-und-bayes e2 „Bayes“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL bedingte-wahrscheinlichkeit-und-bayes-e2-k1-s1-v5 – bedingte-wahrscheinlichkeit-und-bayes e2 „Bayes“: Prüfungshöhe (2020-be-gk-B4.2f)
+AUSWAHL bedingte-wahrscheinlichkeit-und-bayes-e2-k1-s2-v3 – bedingte-wahrscheinlichkeit-und-bayes e2 „Bayes“: Prüfungshöhe (2021MgrundlegendAStochastik11-b)
+AUSWAHL bedingte-wahrscheinlichkeit-und-bayes-e2-k1-s3-v3 – bedingte-wahrscheinlichkeit-und-bayes e2 „Bayes“: Prüfungshöhe (2026MgrundlegendAStochastik13-b)
+AUSWAHL bedingte-wahrscheinlichkeit-und-bayes-e2-k1-s4-v3 – bedingte-wahrscheinlichkeit-und-bayes e2 „Bayes“: Prüfungshöhe (2021MgrundlegendBStochastikWTR3-1g)
+AUSWAHL bedingte-wahrscheinlichkeit-und-bayes-e3-k1-s0-v1 – bedingte-wahrscheinlichkeit-und-bayes e3 „Mit Parameter“: Anlauf, Vorstufe
+AUSWAHL bedingte-wahrscheinlichkeit-und-bayes-e3-k1-s1-v1 – bedingte-wahrscheinlichkeit-und-bayes e3 „Mit Parameter“: Anlauf, Grundfall
+AUSWAHL bedingte-wahrscheinlichkeit-und-bayes-e3-k1-s2-v1 – bedingte-wahrscheinlichkeit-und-bayes e3 „Mit Parameter“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL bedingte-wahrscheinlichkeit-und-bayes-e3-k1-s3-v3 – bedingte-wahrscheinlichkeit-und-bayes e3 „Mit Parameter“: Prüfungshöhe (2020MgrundlegendBStochastikWTR2-2c)
+AUSWAHL bedingte-wahrscheinlichkeit-und-bayes-e3-k1-s4-v3 – bedingte-wahrscheinlichkeit-und-bayes e3 „Mit Parameter“: Prüfungshöhe (2025MgrundlegendBStochastikWTR1-1e)
+WEG vierfeldertafel e1 „Weder–noch, entweder–oder, oder?“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL vierfeldertafel-e1-k2-s0-v1 – vierfeldertafel e1 „Die Tafel füllen“: Anlauf, Vorstufe
+AUSWAHL vierfeldertafel-e1-k2-s1-v1 – vierfeldertafel e1 „Die Tafel füllen“: Anlauf, Grundfall
+AUSWAHL vierfeldertafel-e1-k2-s2-v3 – vierfeldertafel e1 „Die Tafel füllen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL vierfeldertafel-e1-k2-s1-v4 – vierfeldertafel e1 „Die Tafel füllen“: Prüfungshöhe (2023-bebb-gk-B4.1a)
+AUSWAHL vierfeldertafel-e1-k2-s1-v5 – vierfeldertafel e1 „Die Tafel füllen“: Prüfungshöhe (2024-bebb-gk-B4.1b)
+AUSWAHL vierfeldertafel-e1-k2-s2-v2 – vierfeldertafel e1 „Die Tafel füllen“: Prüfungshöhe (2022-bebb-gk-B4h)
+AUSWAHL vierfeldertafel-e1-k2-s3-v1 – vierfeldertafel e1 „Die Tafel füllen“: Prüfungshöhe (2018-be-gk-B3.2e)
+AUSWAHL vierfeldertafel-e2-k1-s0-v1 – vierfeldertafel e2 „Aus der Tafel rechnen“: Anlauf, Vorstufe
+AUSWAHL vierfeldertafel-e2-k1-s1-v1 – vierfeldertafel e2 „Aus der Tafel rechnen“: Anlauf, Grundfall
+AUSWAHL vierfeldertafel-e2-k1-s2-v2 – vierfeldertafel e2 „Aus der Tafel rechnen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL vierfeldertafel-e2-k1-s1-v5 – vierfeldertafel e2 „Aus der Tafel rechnen“: Prüfungshöhe (2019-be-gk-B4.1c)
+AUSWAHL vierfeldertafel-e2-k1-s2-v1 – vierfeldertafel e2 „Aus der Tafel rechnen“: Prüfungshöhe (2023-bebb-gk-B4.1b)
+AUSWAHL vierfeldertafel-e2-k1-s3-v1 – vierfeldertafel e2 „Aus der Tafel rechnen“: Prüfungshöhe (2020MgrundlegendAStochastik12-a)
+WEG unabhaengigkeit e1 „„Prüfen oder nutzen?““ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL unabhaengigkeit-e1-k2-s0-v1 – unabhaengigkeit e1 „Unabhängigkeit prüfen“: Anlauf, Vorstufe
+AUSWAHL unabhaengigkeit-e1-k2-s1-v1 – unabhaengigkeit e1 „Unabhängigkeit prüfen“: Anlauf, Grundfall
+AUSWAHL unabhaengigkeit-e1-k2-s2-v1 – unabhaengigkeit e1 „Unabhängigkeit prüfen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL unabhaengigkeit-e1-k2-s1-v5 – unabhaengigkeit e1 „Unabhängigkeit prüfen“: Prüfungshöhe (2024-bebb-gk-B4.1d)
+AUSWAHL unabhaengigkeit-e1-k2-s3-v1 – unabhaengigkeit e1 „Unabhängigkeit prüfen“: Prüfungshöhe (2019-be-gk-B4.1d)
+AUSWAHL unabhaengigkeit-e1-k2-s4-v1 – unabhaengigkeit e1 „Unabhängigkeit prüfen“: Prüfungshöhe (2022-bebb-gk-B4i)
+WEG unabhaengigkeit e2 „Rückwärts“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL unabhaengigkeit-e3-k1-s0-v1 – unabhaengigkeit e3 „Als Argument“: Anlauf, Vorstufe
+AUSWAHL unabhaengigkeit-e3-k1-s1-v2 – unabhaengigkeit e3 „Als Argument“: Anlauf, Grundfall
+AUSWAHL unabhaengigkeit-e3-k1-s2-v1 – unabhaengigkeit e3 „Als Argument“: Prüfungshöhe (2021-be-gk-B4c)
+AUSWAHL unabhaengigkeit-e3-k1-s2-v2 – unabhaengigkeit e3 „Als Argument“: Prüfungshöhe (2021-be-gk-B4c)
+WEG zufallsgroessen-und-verteilungen e1 „„Was muss eins ergeben?““ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL zufallsgroessen-und-verteilungen-e1-k2-s0-v1 – zufallsgroessen-und-verteilungen e1 „Verteilung aufstellen“: Anlauf, Vorstufe
+AUSWAHL zufallsgroessen-und-verteilungen-e1-k2-s1-v1 – zufallsgroessen-und-verteilungen e1 „Verteilung aufstellen“: Anlauf, Grundfall
+AUSWAHL zufallsgroessen-und-verteilungen-e1-k2-s2-v1 – zufallsgroessen-und-verteilungen e1 „Verteilung aufstellen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL zufallsgroessen-und-verteilungen-e1-k2-s4-v1 – zufallsgroessen-und-verteilungen e1 „Verteilung aufstellen“: Prüfungshöhe (2022MgrundlegendAStochastik13-b)
+AUSWAHL zufallsgroessen-und-verteilungen-e1-k2-s4-v2 – zufallsgroessen-und-verteilungen e1 „Verteilung aufstellen“: Prüfungshöhe (2022MgrundlegendAStochastik13-b)
+WEG zufallsgroessen-und-verteilungen e2 „Verteilung lesen“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL kenngroessen-von-verteilungen-e1-k1-s0-v1 – kenngroessen-von-verteilungen e1 „Erwartungswert berechnen und deuten“: Anlauf, Vorstufe
+AUSWAHL kenngroessen-von-verteilungen-e1-k1-s1-v1 – kenngroessen-von-verteilungen e1 „Erwartungswert berechnen und deuten“: Anlauf, Grundfall
+AUSWAHL kenngroessen-von-verteilungen-e1-k1-s2-v1 – kenngroessen-von-verteilungen e1 „Erwartungswert berechnen und deuten“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL kenngroessen-von-verteilungen-e1-k1-s3-v1 – kenngroessen-von-verteilungen e1 „Erwartungswert berechnen und deuten“: Prüfungshöhe (2018-be-gk-B3.1d)
+AUSWAHL kenngroessen-von-verteilungen-e1-k1-s3-v2 – kenngroessen-von-verteilungen e1 „Erwartungswert berechnen und deuten“: Prüfungshöhe (2023-bebb-gk-B4.2b)
+AUSWAHL kenngroessen-von-verteilungen-e1-k1-s5-v1 – kenngroessen-von-verteilungen e1 „Erwartungswert berechnen und deuten“: Prüfungshöhe (2023-bebb-gk-B4.2a)
+AUSWAHL kenngroessen-von-verteilungen-e1-k1-s5-v2 – kenngroessen-von-verteilungen e1 „Erwartungswert berechnen und deuten“: Prüfungshöhe (2023-bebb-gk-B4.2a)
+AUSWAHL kenngroessen-von-verteilungen-e1-k2-s1-v2 – kenngroessen-von-verteilungen e1 „Prozentuale Abweichung einer Anzahl vom Erwartungswert berechnen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL kenngroessen-von-verteilungen-e1-k2-s1-v1 – kenngroessen-von-verteilungen e1 „Prozentuale Abweichung einer Anzahl vom Erwartungswert berechnen“: Prüfungshöhe (2022-bebb-gk-B4c)
+WEG kenngroessen-von-verteilungen e1 „Erwartungswert der Augensumme aus dem Erwartungswert der Trefferzahl berechnen“ – keine Prüfungshöhe im Profil abitur-gk
+WEG kenngroessen-von-verteilungen e1 „Gesamtzahl der Gruppen aus der Personenzahl und der mittleren Gruppengröße unter einer vereinfachenden Annahme schätzen“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL kenngroessen-von-verteilungen-e2-k1-s0-v1 – kenngroessen-von-verteilungen e2 „Rückwärts“: Anlauf, Vorstufe
+AUSWAHL kenngroessen-von-verteilungen-e2-k1-s1-v1 – kenngroessen-von-verteilungen e2 „Rückwärts“: Anlauf, Grundfall
+AUSWAHL kenngroessen-von-verteilungen-e2-k1-s2-v1 – kenngroessen-von-verteilungen e2 „Rückwärts“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL kenngroessen-von-verteilungen-e2-k1-s3-v1 – kenngroessen-von-verteilungen e2 „Rückwärts“: Prüfungshöhe (2018-be-gk-B3.1e)
+AUSWAHL kenngroessen-von-verteilungen-e2-k1-s3-v2 – kenngroessen-von-verteilungen e2 „Rückwärts“: Prüfungshöhe (2023-bebb-gk-B4.2c)
+AUSWAHL kenngroessen-von-verteilungen-e2-k2-s1-v2 – kenngroessen-von-verteilungen e2 „Erwartungswertgleichung für einen Glücksradparameter aus den Spielregeln herleiten“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL kenngroessen-von-verteilungen-e2-k2-s1-v1 – kenngroessen-von-verteilungen e2 „Erwartungswertgleichung für einen Glücksradparameter aus den Spielregeln herleiten“: Prüfungshöhe (2024-bebb-gk-B4.2c)
+AUSWAHL kenngroessen-von-verteilungen-e2-k3-s1-v2 – kenngroessen-von-verteilungen e2 „Zwei Wahrscheinlichkeiten einer Verteilung aus dem Erwartungswert und der Summe 1 bestimmen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL kenngroessen-von-verteilungen-e2-k3-s1-v1 – kenngroessen-von-verteilungen e2 „Zwei Wahrscheinlichkeiten einer Verteilung aus dem Erwartungswert und der Summe 1 bestimmen“: Prüfungshöhe (2021-be-gk-B4i)
+WEG kenngroessen-von-verteilungen e2 „Restwahrscheinlichkeit und Erwartungswert eines Teilgewinns aus dem Gesamterwartungswert bestimmen“ – keine Prüfungshöhe im Profil abitur-gk
+WEG kenngroessen-von-verteilungen e2 „Verhältnis zweier Auszahlungen aus dem Ausgleich der Erwartungswerte berechnen“ – keine Prüfungshöhe im Profil abitur-gk
+WEG kenngroessen-von-verteilungen e2 „Kugelzahl für den größten Erwartungswert der Auszahlung ermitteln“ – keine Prüfungshöhe im Profil abitur-gk
+WEG kenngroessen-von-verteilungen e2 „Untere Schranke für eine Kugelbeschriftung aus dem Erwartungswert der Summe ohne Rechnung begründen“ – keine Prüfungshöhe im Profil abitur-gk
+WEG kenngroessen-von-verteilungen e2 „Aussage über gleiche Erwartungswerte aufeinanderfolgender Parameterwerte über eine Gleichung beurteilen“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL kenngroessen-von-verteilungen-e3-k1-s0-v1 – kenngroessen-von-verteilungen e3 „Streuung“: Anlauf, Vorstufe
+AUSWAHL kenngroessen-von-verteilungen-e3-k1-s1-v1 – kenngroessen-von-verteilungen e3 „Streuung“: Anlauf, Grundfall
+AUSWAHL kenngroessen-von-verteilungen-e3-k1-s2-v3 – kenngroessen-von-verteilungen e3 „Streuung“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL kenngroessen-von-verteilungen-e3-k1-s2-v1 – kenngroessen-von-verteilungen e3 „Streuung“: Prüfungshöhe (2017MgrundlegendAStochastik11-b)
+AUSWAHL kenngroessen-von-verteilungen-e3-k1-s2-v2 – kenngroessen-von-verteilungen e3 „Streuung“: Prüfungshöhe (2026-bb-gk-A1.9a)
+AUSWAHL kenngroessen-von-verteilungen-e3-k1-s4-v3 – kenngroessen-von-verteilungen e3 „Streuung“: Prüfungshöhe (2017MgrundlegendBStochastikWTR2-2b)
+AUSWAHL kenngroessen-von-verteilungen-e3-k1-s5-v1 – kenngroessen-von-verteilungen e3 „Streuung“: Prüfungshöhe (2024MgrundlegendBStochastikWTR2-3)
+AUSWAHL kenngroessen-von-verteilungen-e3-k1-s5-v2 – kenngroessen-von-verteilungen e3 „Streuung“: Prüfungshöhe (2024MgrundlegendBStochastikWTR2-3)
+AUSWAHL kenngroessen-von-verteilungen-e3-k2-s1-v2 – kenngroessen-von-verteilungen e3 „Stichprobenumfang aus einer vorgegebenen Standardabweichung der Binomialverteilung berechnen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL kenngroessen-von-verteilungen-e3-k2-s1-v1 – kenngroessen-von-verteilungen e3 „Stichprobenumfang aus einer vorgegebenen Standardabweichung der Binomialverteilung berechnen“: Prüfungshöhe (2017MgrundlegendBStochastikWTR2-2a)
+WEG kenngroessen-von-verteilungen e3 „Verhältnis der Varianzen zweier Binomialverteilungen aus dem Erwartungswert im Diagramm bestimmen“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL kenngroessen-von-verteilungen-e4-k1-s0-v1 – kenngroessen-von-verteilungen e4 „Diagramm“: Anlauf, Vorstufe
+AUSWAHL kenngroessen-von-verteilungen-e4-k1-s1-v1 – kenngroessen-von-verteilungen e4 „Diagramm“: Anlauf, Grundfall
+AUSWAHL kenngroessen-von-verteilungen-e4-k1-s2-v1 – kenngroessen-von-verteilungen e4 „Diagramm“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL kenngroessen-von-verteilungen-e4-k1-s1-v4 – kenngroessen-von-verteilungen e4 „Diagramm“: Prüfungshöhe (2026-bb-gk-A1.6a)
+AUSWAHL kenngroessen-von-verteilungen-e4-k1-s3-v1 – kenngroessen-von-verteilungen e4 „Diagramm“: Prüfungshöhe (2025-bebb-gk-A1.9a)
+AUSWAHL binomialverteilung-e1-k1-s0-v1 – binomialverteilung e1 „Modell erkennen“: Anlauf, Vorstufe
+AUSWAHL binomialverteilung-e1-k1-s1-v1 – binomialverteilung e1 „Modell erkennen“: Anlauf, Grundfall
+AUSWAHL binomialverteilung-e1-k1-s2-v1 – binomialverteilung e1 „Modell erkennen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL binomialverteilung-e1-k1-s5-v1 – binomialverteilung e1 „Modell erkennen“: Prüfungshöhe (2022-bebb-gk-B4a)
+AUSWAHL binomialverteilung-e1-k1-s5-v2 – binomialverteilung e1 „Modell erkennen“: Prüfungshöhe (2022-bebb-gk-B4a)
+AUSWAHL binomialverteilung-e1-k1-s6-v1 – binomialverteilung e1 „Modell erkennen“: Prüfungshöhe (2018-be-gk-B3.2g)
+AUSWAHL binomialverteilung-e1-k1-s6-v2 – binomialverteilung e1 „Modell erkennen“: Prüfungshöhe (2018-be-gk-B3.2g)
+AUSWAHL binomialverteilung-e1-k1-s7-v1 – binomialverteilung e1 „Modell erkennen“: Prüfungshöhe (2018MgrundlegendBStochastikWTR3-2d)
+AUSWAHL binomialverteilung-e1-k1-s7-v2 – binomialverteilung e1 „Modell erkennen“: Prüfungshöhe (2018MgrundlegendBStochastikWTR3-2d)
+AUSWAHL binomialverteilung-e2-k1-s0-v1 – binomialverteilung e2 „Bernoulli-Formel“: Anlauf, Vorstufe
+AUSWAHL binomialverteilung-e2-k1-s1-v1 – binomialverteilung e2 „Bernoulli-Formel“: Anlauf, Grundfall
+AUSWAHL binomialverteilung-e2-k1-s3-v3 – binomialverteilung e2 „Bernoulli-Formel“: Anlauf, Sprosse – Fallstrick im Merkmal („Sonderfall k = 0 oder k = n: eine Potenz, kein Bin“)
+AUSWAHL binomialverteilung-e2-k1-s3-v1 – binomialverteilung e2 „Bernoulli-Formel“: Prüfungshöhe (2017-be-gk-B3.1e)
+AUSWAHL binomialverteilung-e2-k1-s3-v2 – binomialverteilung e2 „Bernoulli-Formel“: Prüfungshöhe (2017-be-gk-B3.1e)
+AUSWAHL binomialverteilung-e2-k1-s5-v1 – binomialverteilung e2 „Bernoulli-Formel“: Prüfungshöhe (2026MgrundlegendAStochastik12-a)
+AUSWAHL binomialverteilung-e2-k1-s5-v2 – binomialverteilung e2 „Bernoulli-Formel“: Prüfungshöhe (2026MgrundlegendAStochastik12-a)
+AUSWAHL binomialverteilung-e2-k1-s6-v1 – binomialverteilung e2 „Bernoulli-Formel“: Prüfungshöhe (2021MgrundlegendAStochastik2-a)
+AUSWAHL binomialverteilung-e2-k1-s6-v2 – binomialverteilung e2 „Bernoulli-Formel“: Prüfungshöhe (2021MgrundlegendAStochastik2-a)
+AUSWAHL binomialverteilung-e2-k1-s9-v1 – binomialverteilung e2 „Bernoulli-Formel“: Prüfungshöhe (2022-bebb-gk-B4b)
+AUSWAHL binomialverteilung-e2-k1-s9-v2 – binomialverteilung e2 „Bernoulli-Formel“: Prüfungshöhe (2022-bebb-gk-B4b)
+AUSWAHL binomialverteilung-e2-k1-s9-v3 – binomialverteilung e2 „Bernoulli-Formel“: Prüfungshöhe (2019-be-gk-B4.1a)
+AUSWAHL binomialverteilung-e2-k1-s9-v4 – binomialverteilung e2 „Bernoulli-Formel“: Prüfungshöhe (2019-be-gk-B4.1a)
+TEILUNG binomialverteilung e2 „Bernoulli-Formel“: 10 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+AUSWAHL binomialverteilung-e3-k1-s0-v1 – binomialverteilung e3 „Kumulierte Wahrscheinlichkeiten“: Anlauf, Vorstufe
+AUSWAHL binomialverteilung-e3-k1-s1-v1 – binomialverteilung e3 „Kumulierte Wahrscheinlichkeiten“: Anlauf, Grundfall
+AUSWAHL binomialverteilung-e3-k1-s2-v1 – binomialverteilung e3 „Kumulierte Wahrscheinlichkeiten“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL binomialverteilung-e3-k1-s4-v1 – binomialverteilung e3 „Kumulierte Wahrscheinlichkeiten“: Prüfungshöhe (2018-be-gk-B3.2a)
+AUSWAHL binomialverteilung-e3-k1-s4-v2 – binomialverteilung e3 „Kumulierte Wahrscheinlichkeiten“: Prüfungshöhe (2018-be-gk-B3.2a)
+AUSWAHL binomialverteilung-e3-k1-s6-v1 – binomialverteilung e3 „Kumulierte Wahrscheinlichkeiten“: Prüfungshöhe (2023-bebb-gk-B4.1d)
+AUSWAHL binomialverteilung-e3-k1-s6-v2 – binomialverteilung e3 „Kumulierte Wahrscheinlichkeiten“: Prüfungshöhe (2023-bebb-gk-B4.1d)
+AUSWAHL binomialverteilung-e3-k1-s9-v5 – binomialverteilung e3 „Kumulierte Wahrscheinlichkeiten“: Prüfungshöhe (2024MgrundlegendAStochastik21-b)
+AUSWAHL binomialverteilung-e3-k1-s9-v6 – binomialverteilung e3 „Kumulierte Wahrscheinlichkeiten“: Prüfungshöhe (2024MgrundlegendAStochastik21-b)
+AUSWAHL binomialverteilung-e3-k1-s9-v7 – binomialverteilung e3 „Kumulierte Wahrscheinlichkeiten“: Prüfungshöhe (2020MgrundlegendAStochastik2-b)
+AUSWAHL binomialverteilung-e3-k1-s9-v8 – binomialverteilung e3 „Kumulierte Wahrscheinlichkeiten“: Prüfungshöhe (2020MgrundlegendAStochastik2-b)
+AUSWAHL binomialverteilung-e3-k2-s1-v3 – binomialverteilung e3 „Bedingte Restwahrscheinlichkeit nach bekannten Ergebnissen über die Binomialverteilung berechnen“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL binomialverteilung-e3-k2-s1-v1 – binomialverteilung e3 „Bedingte Restwahrscheinlichkeit nach bekannten Ergebnissen über die Binomialverteilung berechnen“: Prüfungshöhe (2023MgrundlegendBStochastikWTR2-2b)
+AUSWAHL binomialverteilung-e3-k2-s1-v2 – binomialverteilung e3 „Bedingte Restwahrscheinlichkeit nach bekannten Ergebnissen über die Binomialverteilung berechnen“: Prüfungshöhe (2023MgrundlegendBStochastikWTR2-2b)
+WEG binomialverteilung e3 „Wahrscheinlichkeit für zwei unabhängige Spieler als Produkt binomialer Wahrscheinlichkeiten berechnen“ – keine Prüfungshöhe im Profil abitur-gk
+AUSWAHL binomialverteilung-e4-k1-s0-v1 – binomialverteilung e4 „Umkehraufgaben“: Anlauf, Vorstufe
+AUSWAHL binomialverteilung-e4-k1-s1-v1 – binomialverteilung e4 „Umkehraufgaben“: Anlauf, Grundfall
+AUSWAHL binomialverteilung-e4-k1-s6-v3 – binomialverteilung e4 „Umkehraufgaben“: Anlauf, Sprosse – Fallstrick im Merkmal („Umfang n durch Probieren, weil k größer als null i“)
+AUSWAHL binomialverteilung-e4-k1-s3-v1 – binomialverteilung e4 „Umkehraufgaben“: Prüfungshöhe (2018-be-gk-B3.2d)
+AUSWAHL binomialverteilung-e4-k1-s3-v2 – binomialverteilung e4 „Umkehraufgaben“: Prüfungshöhe (2018-be-gk-B3.2d)
+AUSWAHL binomialverteilung-e4-k1-s6-v1 – binomialverteilung e4 „Umkehraufgaben“: Prüfungshöhe (2019MgrundlegendBStochastikWTR1-1b)
+AUSWAHL binomialverteilung-e4-k1-s6-v2 – binomialverteilung e4 „Umkehraufgaben“: Prüfungshöhe (2019MgrundlegendBStochastikWTR1-1b)
+AUSWAHL binomialverteilung-e4-k2-s1-v3 – binomialverteilung e4 „Trefferzahlen mit einer Einzelwahrscheinlichkeit über einer Schranke mit dem Rechner ermitteln“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL binomialverteilung-e4-k2-s1-v1 – binomialverteilung e4 „Trefferzahlen mit einer Einzelwahrscheinlichkeit über einer Schranke mit dem Rechner ermitteln“: Prüfungshöhe (2017-be-gk-cas-B3.2d)
+AUSWAHL binomialverteilung-e4-k2-s1-v2 – binomialverteilung e4 „Trefferzahlen mit einer Einzelwahrscheinlichkeit über einer Schranke mit dem Rechner ermitteln“: Prüfungshöhe (2017-be-gk-cas-B3.2d)
+AUSWAHL binomialverteilung-e5-k1-s0-v1 – binomialverteilung e5 „Verteilung im Diagramm“: Anlauf, Vorstufe
+AUSWAHL binomialverteilung-e5-k1-s1-v1 – binomialverteilung e5 „Verteilung im Diagramm“: Anlauf, Grundfall
+AUSWAHL binomialverteilung-e5-k1-s2-v3 – binomialverteilung e5 „Verteilung im Diagramm“: Anlauf, Sprosse – kein Fallstrick im Merkmal; erste Sprosse nach dem Grundfall
+AUSWAHL binomialverteilung-e5-k1-s2-v1 – binomialverteilung e5 „Verteilung im Diagramm“: Prüfungshöhe (2017-be-gk-cas-B3.1e)
+AUSWAHL binomialverteilung-e5-k1-s2-v2 – binomialverteilung e5 „Verteilung im Diagramm“: Prüfungshöhe (2017-be-gk-cas-B3.1e)
+AUSWAHL binomialverteilung-e5-k1-s4-v1 – binomialverteilung e5 „Verteilung im Diagramm“: Prüfungshöhe (2023-bebb-gk-A1.7b)
+AUSWAHL binomialverteilung-e5-k1-s4-v2 – binomialverteilung e5 „Verteilung im Diagramm“: Prüfungshöhe (2023-bebb-gk-A1.7b)
+AUSWAHL binomialverteilung-e5-k1-s8-v1 – binomialverteilung e5 „Verteilung im Diagramm“: Prüfungshöhe (2025-bebb-gk-A1.9b)
+AUSWAHL binomialverteilung-e5-k1-s8-v2 – binomialverteilung e5 „Verteilung im Diagramm“: Prüfungshöhe (2025-bebb-gk-A1.9b)
+AUSWAHL binomialverteilung-e5-k1-s8-v3 – binomialverteilung e5 „Verteilung im Diagramm“: Prüfungshöhe (2021MgrundlegendAStochastik2-b)
+AUSWAHL binomialverteilung-e5-k1-s8-v4 – binomialverteilung e5 „Verteilung im Diagramm“: Prüfungshöhe (2021MgrundlegendAStochastik2-b)
+AUSWAHL binomialverteilung-e5-k1-s8-v5 – binomialverteilung e5 „Verteilung im Diagramm“: Prüfungshöhe (2022MgrundlegendBStochastikWTR2-3a)
+AUSWAHL binomialverteilung-e5-k1-s8-v6 – binomialverteilung e5 „Verteilung im Diagramm“: Prüfungshöhe (2022MgrundlegendBStochastikWTR2-3a)
+TEILUNG binomialverteilung e5 „Verteilung im Diagramm“: 10 Prüfungsaufgaben in 2 Hauptnummern an Sprossengrenzen (2.3 g)
+WEG binomialverteilung e5 „Obere Grenze einer im Diagramm markierten kumulierten Wahrscheinlichkeit über den Erwartungswert ermitteln“ – keine Prüfungshöhe im Profil abitur-gk
+WEG hypothesentests e1 „Entscheidungsregel“ – keine Prüfungshöhe im Profil abitur-gk
+WEG hypothesentests e1 „Ablehnungsgrenze bei größerem Stichprobenumfang ohne höheren Fehler erster Art bestimmen“ – keine Prüfungshöhe im Profil abitur-gk
+WEG hypothesentests e2 „Wahl der Nullhypothese“ – keine Prüfungshöhe im Profil abitur-gk
+WEG hypothesentests e3 „Fehlerarten und Güte“ – keine Prüfungshöhe im Profil abitur-gk
+WEG hypothesentests e3 „Fehlentscheidungen eines Tests im Sachzusammenhang beschreiben“ – keine Prüfungshöhe im Profil abitur-gk
+LEER hypothesentests: keine Kette mit Prüfungshöhe – Eintrag entfällt im Heft
+FORM zufallsexperimente-und-pfadregeln-e8-k1-s1-v1 (Nr. 9): gleichungsraster mit Text → teile
+FORM zufallsexperimente-und-pfadregeln-e8-k1-s2-v1 (Nr. 9): gleichungsraster mit Text → teile
+FORM zufallsexperimente-und-pfadregeln-e8-k1-s7-v1 (Nr. 10): gleichungsraster mit Text → teile
+FORM zufallsexperimente-und-pfadregeln-e8-k1-s7-v2 (Nr. 10): gleichungsraster mit Text → teile
+FORM kenngroessen-von-verteilungen-e2-k1-s1-v1 (Nr. 31): gleichungsraster mit Text → teile
+FORM kenngroessen-von-verteilungen-e2-k1-s2-v1 (Nr. 31): gleichungsraster mit Text → teile
+FORM kenngroessen-von-verteilungen-e2-k1-s3-v1 (Nr. 32): gleichungsraster mit Text → teile
+FORM kenngroessen-von-verteilungen-e2-k1-s3-v2 (Nr. 32): gleichungsraster mit Text → teile
+FORM kenngroessen-von-verteilungen-e2-k2-s1-v2 (Nr. 33): gleichungsraster mit Text → teile
+FORM kenngroessen-von-verteilungen-e2-k2-s1-v1 (Nr. 34): gleichungsraster mit Text → teile
+FORM kenngroessen-von-verteilungen-e2-k3-s1-v2 (Nr. 35): gleichungsraster mit Text → teile
+FORM kenngroessen-von-verteilungen-e2-k3-s1-v1 (Nr. 36): gleichungsraster mit Text → teile
+FORM kenngroessen-von-verteilungen-e3-k1-s2-v3 (Nr. 37): gleichungsraster mit Text → teile
+FORM kenngroessen-von-verteilungen-e3-k1-s2-v1 (Nr. 38): gleichungsraster mit Text → teile
+FORM kenngroessen-von-verteilungen-e3-k1-s2-v2 (Nr. 38): gleichungsraster mit Text → teile
+FORM kenngroessen-von-verteilungen-e3-k2-s1-v2 (Nr. 39): gleichungsraster mit Text → teile
+FORM kenngroessen-von-verteilungen-e3-k2-s1-v1 (Nr. 40): gleichungsraster mit Text → teile
+STRUKTUR 0 Fehler

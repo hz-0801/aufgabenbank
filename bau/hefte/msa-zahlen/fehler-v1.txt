@@ -1,0 +1,7 @@
+# msa-zahlen (BRU-H1), Versuch 1: 6 Fehlerstellen (je Datei und Zeile die erste Meldung)
+BRU-H1.tex → brueche-dezimalzahlen_a.tex:153: Missing $ inserted.
+BRU-H1.tex → brueche-dezimalzahlen_a.tex:154: LaTeX Error: Command \item invalid in math m
+BRU-H1.tex → brueche-dezimalzahlen_a.tex:155: LaTeX Error: Command \end{list} invalid in m
+BRU-H1.tex → brueche-dezimalzahlen_a.tex:175: Missing $ inserted.
+BRU-H1.tex → brueche-dezimalzahlen_a.tex:176: LaTeX Error: Command \item invalid in math m
+BRU-H1.tex → brueche-dezimalzahlen_a.tex:177: LaTeX Error: Command \item invalid in math m
