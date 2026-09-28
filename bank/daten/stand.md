@@ -211,3 +211,13 @@ lagen in der Rolle des Kastens 7).
   original, obwohl die Ketten sie nennen.
 - Generatoren dieser Sitzung liegen nicht im Repo (Auftrag: nur
   unter bank/<eintrag>/ schreiben).
+
+## Nachbesserung Render 2026-09-28
+
+Quelle: bau/render-alle/bericht.md, bau/hefte/bericht.md, bau/fokus/bericht.md, bau/layout-befunde.md Punkt 31. Übersicht aller Einträge: bau/render-alle/behoben.md.
+
+- e2-k2-s11-v2 (1): Dimension too large – `\saeulenab` mit Werten bis 90\,000. Änderung: `\saeulenab` mit Werten bis 90\,000 (pgfmath rechnet nur bis 16\,383) → Werte in Tausend (90/10/10, 81/75/54); die Achse ist ohne Zahlen, das Bild bleibt gleich (5,4 Kästchen für D) – wie die Schwesterzeile s11-v1.
+- e5-k1-s6-v1 (1): Dimension too large – ksys-x-Achse mit Jahreszahlen. Änderung: `ksys` mit Jahreszahlen auf der x-Achse (x bis 2025 → Maß über 16\,384 pt) → `\saeulenab` mit denselben Werten, Jahren als Kategorien und abgeschnittener y-Achse (ymin bleibt); loesung „jeder Punkt“ → „jede Säule“.
+- e5-k1-s10-v1, e5-k1-s10-v2 (2): Dimension too large – ksys-x-Achse mit Jahreszahlen. Änderung: `ksys` mit Jahreszahlen auf der x-Achse (x bis 2025 → Maß über 16\,384 pt) → `\saeulenab` mit denselben Werten, Jahren als Kategorien und abgeschnittener y-Achse (ymin bleibt).
+
+Nur diese 4 Zeilen geändert, alle übrigen byte-gleich. `bank-pruef.py daten`: 0 Abweichungen. Probe: jede Zeile allein in einem Minimaldokument mit mathblatt.sty (hz-0801/blattbau) gesetzt wie werkzeuge/zusammenbau.py v0.7 (teile_normal, teil_schwach, Lösung in \erg), xelatex ohne Fehler.
