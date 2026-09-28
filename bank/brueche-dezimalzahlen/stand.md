@@ -223,3 +223,11 @@ allen Dateien.
 - Erkennungsschritte: „Welche Form?“ (e5 k1, Formen ankreuzen)
   verlangt einen anderen Handgriff als die Vorstufe „Nullen
   anhängen“ und bleibt; die übrigen sechs fehlen schon (Befund 1).
+
+## Nachbesserung Render 2026-09-28
+
+Quelle: bau/render-alle/bericht.md, bau/hefte/bericht.md, bau/fokus/bericht.md, bau/layout-befunde.md Punkt 31. Übersicht aller Einträge: bau/render-alle/behoben.md.
+
+- e4-k1-s8-v3, e4-k1-s8-v4, e5-k2-s6-v1, e5-k2-s6-v2, e5-k2-s6-v3, e5-k2-s7-v1, e5-k2-s7-v2, e5-k2-s7-v3, e5-k2-s8-v1, e5-k2-s8-v2, e5-k2-s8-v3, e5-k2-s9-v7, e5-k2-s9-v8 (13): Missing $ inserted – `__` als Lücke im Textmodus. Änderung: `__` → `\leerfeld` in aufgabe (Lückensatz), antwort `__` → leer.
+
+Nur diese 13 Zeilen geändert, alle übrigen byte-gleich. `bank-pruef.py brueche-dezimalzahlen`: 0 Abweichungen. Probe: jede Zeile allein in einem Minimaldokument mit mathblatt.sty (hz-0801/blattbau) gesetzt wie werkzeuge/zusammenbau.py v0.7 (teile_normal, teil_schwach, Lösung in \erg), xelatex ohne Fehler.
