@@ -112,3 +112,9 @@ Kastenzahlen ersetzt, die die Sperre nicht meldet (siehe Befunde).
   abgleichen.
 - e3 k2 s4 v2 (Spurpunkte am \rebene ablesen) setzt bezifferte
   Achsen im Schrägbild voraus.
+
+## Nachbesserung Gegenlese 2026-09-28
+- Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
+- ebenen-e1-k2-s2-v3: „beide zeigen in dieselbe Richtung“ falsch beim Faktor −2 → „beide sind parallel (Gegenrichtung)“ (Regel a).
+- ebenen-e1-k2-s3-v2: „der Halter endet 1 dm über der Scheibenebene“ falsch, 1 dm ist nur der z-Unterschied, der Abstand zur Ebene ist 0,6 dm → „1 dm in z-Richtung vom Scheibenpunkt (3 | 2,5 | 4) entfernt“ (Regel b).
+- Prüfskript: Abweichungen 0 (Warnung e2 k1 s8 bestand vorher, in stand.md begründet).
