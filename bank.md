@@ -215,6 +215,28 @@ Kennung BAS-Z<n>) zieht je Zettel zehn verschiedene Typen, nach
 Jahrgängen gewichtet, ohne eine Aufgabe zweimal zu nehmen, bis der
 Vorrat erschöpft ist (werkzeuge/zusammenbau.md, „Rezept Zettel“).
 
+## Punkte
+
+bank/_punkte.csv (seit 28.09., Semikolon, UTF-8, LF) hat je
+Bankzeile mit original genau eine Zeile:
+id;original;punkte;stern;umfang;grund. punkte und stern sind die
+des Originals aus den Prüfungskatalogen in mathe-nachhilfe (msa/,
+fhr/, abitur/). umfang sagt, ob die Bankzeile die ganze
+Original-Teilaufgabe abbildet: ganz (gleiche Zahl verlangter
+Ergebnisse wie gesucht, gleiche Handlung wie format/verfahren,
+Verfremdung erlaubt), teil (das Original hat mehrere Leistungen,
+die Bankzeile übt nur einen Teil) oder unklar (alles andere);
+grund nennt den Anlass in einem Halbsatz. Das Urteil trifft ein
+Modell, das jede Zeile liest; `werkzeuge/punkte.py` liefert den
+Lesestoff (--lesestoff DIR --nur-neu), führt die Urteile mit den
+Katalogpunkten zusammen (--urteile) und prüft ohne Argument, dass
+jede Bankzeile mit original genau eine Zeile hat und jedes
+original im Katalog steht. Regel (Beschluss 28.09.): Punkte
+stehen nur im Prüfungsheft und im Prüfungs-Fokus, und dort immer,
+als Punkte des Originals; ins Heft kommen nur Zeilen mit umfang
+ganz. Zeilen mit teil oder unklar bleiben auf Lernblättern und
+stehen dort ohne Punkte.
+
 ## Quellen je Sitzung
 
 Eine Sitzung liest nur mappen/<eintrag>.md, mappen/_bausteine.md
