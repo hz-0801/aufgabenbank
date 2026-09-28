@@ -81,3 +81,9 @@ Prüfskript: werkzeuge/bank-pruef.py v0.5, 0 Abweichungen, 0 Warnungen
 
 - Schnittfiguren (e3) und die Winkelhalbierende (e2) haben keine
   loesungsgrafik; die Vorlage kennt keinen Vieleck-Baustein für ksys3.
+
+## Nachbesserung Gegenlese 2026-09-28
+- Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
+- spiegelung-e3-k1-s6-v2: für t = 1,5 ist die Grundfläche ein Quadrat 6 × 6, die Pyramide hat vier Symmetrieebenen statt „der beiden“ → Bedingung „Für t > 2“ (Grundfläche nie quadratisch), Lösung unverändert (Regel b).
+- spiegelung-e3-k2-s1-v3: für t = 3/4 ist die Grundfläche ein Quadrat 4 × 4, „die zweite Symmetrieebene“ nicht eindeutig → Bedingung „Für t > 1“, Lösung unverändert (Regel b).
+- Prüfskript: Abweichungen 0.
