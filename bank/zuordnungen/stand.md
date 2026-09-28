@@ -119,3 +119,9 @@ Quelle: bau/render-alle/bericht.md, bau/hefte/bericht.md, bau/fokus/bericht.md, 
 - e1-k1-s0-v1 (1): Tabelle mit einer Wertespalte statt drei (layout-befunde 31). Änderung: `\wertetabelleleer{…}{…}{3}` → `\wertetabelle{Zeit in h}{Weg in km}{~,~,~}` (drei leere Wertespalten; `\wertetabelleleer` fasst die Spalten per `\multicolumn` zu einer zusammen).
 
 Nur diese 1 Zeilen geändert, alle übrigen byte-gleich. `bank-pruef.py zuordnungen`: 0 Abweichungen. Probe: jede Zeile allein in einem Minimaldokument mit mathblatt.sty (hz-0801/blattbau) gesetzt wie werkzeuge/zusammenbau.py v0.7 (teile_normal, teil_schwach, Lösung in \erg), xelatex ohne Fehler.
+
+## Nachbesserung Gegenlese 2026-09-28
+- Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
+- zuordnungen-e2-k8-s2-v3: Lösung „jede Rechnung, die links und rechts gleich ist, führt zum Ziel“ (falsch bei „+ 3“) → „jedes Malnehmen oder Teilen mit derselben Zahl links und rechts führt zum Ziel“ (Regel a).
+- zuordnungen-e4-k3-s5-v7: Angaben widersprüchlich (10 s nach dem Start in 150 m bei gleichmäßiger Fahrt mit 4 m/s) → 10 s nach dem Start in 40 m, nach weiteren 40 s in 200 m; Lösung 200 − 40 = 160 m, 4 m/s, 14,4 km/h (Regel a).
+- Prüfskript: Abweichungen 0.
