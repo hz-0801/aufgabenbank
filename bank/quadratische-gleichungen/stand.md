@@ -196,3 +196,11 @@ Dateien.
   folgenden Ketten rücken um eins auf.
 - Tabelle „Dateien“ auf die neuen Zahlen gebracht; Entscheidungen
   1, 2, 4 und 10 als überholt vermerkt.
+
+## Nachbesserung Render 2026-09-28
+
+Quelle: bau/render-alle/bericht.md, bau/hefte/bericht.md, bau/fokus/bericht.md, bau/layout-befunde.md Punkt 31. Übersicht aller Einträge: bau/render-alle/behoben.md.
+
+- e1-k2-s1-v1, e1-k2-s1-v2, e1-k2-s1-v3, e1-k2-s1-v4, e1-k2-s1-v5, e1-k2-s3-v1, e1-k2-s3-v2, e1-k2-s3-v3, e1-k2-s5-v1, e1-k2-s5-v2, e1-k2-s5-v3, e1-k2-s7-v1, e1-k2-s7-v2, e1-k2-s7-v3, e1-k2-s8-v1, e1-k2-s8-v2, e1-k2-s8-v3, e1-k2-s9-v1, e1-k2-s9-v2, e1-k2-s9-v3, e1-k2-s10-v1, e1-k2-s10-v2, e1-k2-s10-v3, e2-k1-s1-v1, e2-k1-s1-v2, e2-k1-s1-v3, e2-k1-s1-v4, e2-k1-s1-v5, e2-k1-s2-v1, e2-k1-s2-v2, e2-k1-s2-v3, e2-k1-s3-v1, e2-k1-s3-v2, e2-k1-s3-v3, e2-k1-s4-v1, e2-k1-s4-v2, e2-k1-s4-v3, e2-k1-s6-v1, e2-k1-s6-v2, e2-k1-s6-v3, e2-k1-s7-v1, e2-k1-s7-v2, e2-k1-s7-v3, e2-k1-s8-v1, e2-k1-s8-v2, e2-k1-s8-v3, e3-k3-s1-v1, e3-k3-s1-v2, e3-k3-s1-v3, e3-k3-s1-v4, e3-k3-s1-v5, e3-k3-s2-v1, e3-k3-s2-v2, e3-k3-s2-v3, e3-k3-s3-v1, e3-k3-s3-v2, e3-k3-s3-v3, e3-k3-s4-v1, e3-k3-s4-v2, e3-k3-s4-v3, e3-k3-s5-v1, e3-k3-s5-v2, e3-k3-s5-v3, e3-k3-s6-v1, e3-k3-s6-v2, e3-k3-s6-v3, e3-k3-s7-v1, e3-k3-s7-v2, e3-k3-s7-v3, e3-k3-s9-v1, e3-k3-s9-v2, e3-k3-s9-v3, e3-k3-s11-v1, e3-k3-s11-v2, e3-k3-s11-v3 (75): Missing $ inserted – Gleichung ohne `$` im Feld aufgabe (gleichungsraster, `\gl{\text{…}}`). Änderung: aufgabe in $…$ gesetzt.
+
+Nur diese 75 Zeilen geändert, alle übrigen byte-gleich. `bank-pruef.py quadratische-gleichungen`: 0 Abweichungen. Probe: jede Zeile allein in einem Minimaldokument mit mathblatt.sty (hz-0801/blattbau) gesetzt wie werkzeuge/zusammenbau.py v0.7 (teile_normal, teil_schwach, Lösung in \erg), xelatex ohne Fehler.
