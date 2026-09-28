@@ -85,3 +85,11 @@ e2-k1-s4-v3 (Aufteilung wie im Original, dann Kastenzahl 80).
    Komma setzen (kein LaTeX in der Sitzung).
 2. Ungeprüft, ob ksys mit xmax=0.3 und xstep=0.05 sauber
    beschriftet (e3-k1-s4-v3).
+
+## Nachbesserung Gegenlese 2026-09-28
+- Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
+- bedingte-wahrscheinlichkeit-und-bayes-e1-k2-s2-v3: „gleich nur, wenn A und B gleich wahrscheinlich“ falsch bei P(A ∩ B) = 0 → Zusatz „(bei P(A ∩ B) > 0)“ (Regel b).
+- bedingte-wahrscheinlichkeit-und-bayes-e2-k2-s3-v1: Lösung ohne Ränder der Tafel → Ränder 0,14; 0,86; 0,05; 0,95; 1 ergänzt, pruef unverändert (Regel b).
+- bedingte-wahrscheinlichkeit-und-bayes-e3-k2-s3-v1: obere Schranke aufgerundet (w ≤ 0,0096 gibt 0,4999 < 0,5) → w ≤ 0,0095/0,99 ≈ 0,009596, abgerundet w ≤ 0,0095 (Regel b; Leser 2 stimmt im Abgleich zu).
+- bedingte-wahrscheinlichkeit-und-bayes-e3-k2-s3-v2: obere Schranke aufgerundet (k ≤ 0,0066 gibt 1,0001 % > 1 %) → k ≤ 0,00392/0,594 ≈ 0,006599, abgerundet k ≤ 0,0065 (Regel b; Leser 2 stimmt im Abgleich zu).
+- Prüfskript: Abweichungen 0.
