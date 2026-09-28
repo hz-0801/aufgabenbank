@@ -80,3 +80,8 @@ in der Fehler-finden-Rechnung von Mila), ohne Meldung des Skripts.
   der Sitzung); sonst ∫ beim Zusammenbau durch \int ersetzen.
 - loesungsgrafik ist nur bei den zwei Skizzieraufgaben ohne feste
   Punktlösung gefüllt.
+
+## Nachbesserung Gegenlese 2026-09-28
+- Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
+- rekonstruktion-von-bestaenden-e1-k3-s4-v3: Modellbereich $0 \le t \le 5$ ergab Ladestand 115 % (über 100 % ab t ≈ 3,06) → $0 \le t \le 3$ (höchstens 99 %); Lösung 64 und 79 % unverändert (Regel a).
+- Prüfskript: Abweichungen 0.
