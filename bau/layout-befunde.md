@@ -165,3 +165,9 @@ Befunde des Lehrers an den ersten Kompetenzblättern (Prüfstein v0.7).
     600/100); „:“ nur, wo das Geteilt-Zeichen selbst Thema ist.
 53. „Schritt für Schritt“ wiederholt (vgl. 37): im Zusammenbau
     streichen, nicht je Blatt.
+
+54. Merkkasten (Beschluss Lehrer 28.09. 13:13, ersetzt 41 wo
+    abweichend; Umsetzung zurückgestellt): Form wie eine
+    Formelsammlung – nur das Wichtigste (Formel, Voraussetzung),
+    dazu ein bis zwei der häufigsten Fehler als Kurzhinweis. Keine
+    erklärenden Sätze, nichts Überflüssiges.
