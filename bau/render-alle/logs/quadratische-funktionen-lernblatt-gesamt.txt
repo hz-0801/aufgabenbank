@@ -1,0 +1,52 @@
+=== Versuch 1: xelatex gesamt.tex (8 Fehlerzeilen in der .log) ===
+e1_a.tex:30: LaTeX Error: There's no line here to end.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:30: LaTeX Error: There's no line here to end.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:30: LaTeX Error: There's no line here to end.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:40: LaTeX Error: There's no line here to end.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:40: LaTeX Error: There's no line here to end.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:40: LaTeX Error: There's no line here to end.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:53: LaTeX Error: There's no line here to end.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:55: LaTeX Error: There's no line here to end.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+
+=== Versuch 2: xelatex gesamt.tex (8 Fehlerzeilen in der .log) ===
+e1_a.tex:30: LaTeX Error: There's no line here to end.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:30: LaTeX Error: There's no line here to end.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:30: LaTeX Error: There's no line here to end.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:40: LaTeX Error: There's no line here to end.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:40: LaTeX Error: There's no line here to end.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:40: LaTeX Error: There's no line here to end.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:53: LaTeX Error: There's no line here to end.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:55: LaTeX Error: There's no line here to end.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+

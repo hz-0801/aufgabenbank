@@ -1,0 +1,468 @@
+=== Versuch 1: xelatex gesamt.tex (1575 Fehlerzeilen in der .log) ===
+e1_a.tex:22: Missing $ inserted.
+    <inserted text>
+                    $
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Extra }, or forgotten $.
+    \textdef@ ...th {#1}\let \f@size #2\selectfont #3}
+                                                      }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Extra }, or forgotten $.
+    \textdef@ ...h {#1}\let \f@size #2\selectfont #3}}
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Extra }, or forgotten $.
+    \text@ ...e {\textdef@ \displaystyle \f@size {#1}}
+                                                      {\textdef@ \textstyle \f@s...
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing $ inserted.
+    <inserted text>
+                    $
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Extra }, or forgotten $.
+    \textdef@ ...th {#1}\let \f@size #2\selectfont #3}
+                                                      }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Extra }, or forgotten $.
+    \textdef@ ...h {#1}\let \f@size #2\selectfont #3}}
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Extra }, or forgotten $.
+    \text@ ...xtstyle \f@size {\firstchoice@false #1}}
+                                                      {\textdef@ \textstyle \sf@...
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing $ inserted.
+    <inserted text>
+                    $
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Extra }, or forgotten $.
+    \textdef@ ...th {#1}\let \f@size #2\selectfont #3}
+                                                      }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Extra }, or forgotten $.
+    \textdef@ ...h {#1}\let \f@size #2\selectfont #3}}
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Extra }, or forgotten $.
+    \text@ ...tstyle \sf@size {\firstchoice@false #1}}
+                                                      {\textdef@ \textstyle \ssf...
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing $ inserted.
+    <inserted text>
+                    $
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Extra }, or forgotten $.
+    \textdef@ ...th {#1}\let \f@size #2\selectfont #3}
+                                                      }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Extra }, or forgotten $.
+    \textdef@ ...h {#1}\let \f@size #2\selectfont #3}}
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Extra }, or forgotten $.
+    \text@ ...style \ssf@size {\firstchoice@false #1}}
+                                                      \check@mathfonts }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Extra }, or forgotten $.
+    \text@ ...firstchoice@false #1}}\check@mathfonts }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: You can't use `\prevdepth' in restricted horizontal mode.
+    \nointerlineskip ->\prevdepth
+                                  -\@m \p@
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing $ inserted.
+    <inserted text>
+                    $
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing number, treated as zero.
+    <to be read again>
+                       \vskip
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Illegal unit of measure (pt inserted).
+    <to be read again>
+                       \vskip
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing $ inserted.
+    <inserted text>
+                    $
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing } inserted.
+    <inserted text>
+                    }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing } inserted.
+    <inserted text>
+                    }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing $ inserted.
+    <inserted text>
+                    $
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing } inserted.
+    <inserted text>
+                    }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing } inserted.
+    <inserted text>
+                    }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing } inserted.
+    <inserted text>
+                    }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing $ inserted.
+    <inserted text>
+                    $
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing } inserted.
+    <inserted text>
+                    }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing } inserted.
+    <inserted text>
+                    }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing } inserted.
+    <inserted text>
+                    }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing $ inserted.
+    <inserted text>
+                    $
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing } inserted.
+    <inserted text>
+                    }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing } inserted.
+    <inserted text>
+                    }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing } inserted.
+    <inserted text>
+                    }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing $ inserted.
+    <inserted text>
+                    $
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing } inserted.
+    <inserted text>
+                    }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing { inserted.
+    <to be read again>
+                       $
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing } inserted.
+    <inserted text>
+                    }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing { inserted.
+    <to be read again>
+                       $
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing } inserted.
+    <inserted text>
+                    }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing { inserted.
+    <to be read again>
+                       $
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing } inserted.
+    <inserted text>
+                    }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing } inserted.
+    <inserted text>
+                    }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:24: Missing $ inserted.
+    <inserted text>
+                    $
+    l.24 \swz{$\text{x^2 = 25}$}{}
+e1_a.tex:24: Extra }, or forgotten $.
+    \textdef@ ...th {#1}\let \f@size #2\selectfont #3}
+                                                      }
+    l.24 \swz{$\text{x^2 = 25}$}{}
+e1_a.tex:24: Extra }, or forgotten $.
+    \textdef@ ...h {#1}\let \f@size #2\selectfont #3}}
+    l.24 \swz{$\text{x^2 = 25}$}{}
+e1_a.tex:24: Extra }, or forgotten $.
+    \text@ ...e {\textdef@ \displaystyle \f@size {#1}}
+                                                      {\textdef@ \textstyle \f@s...
+    l.24 \swz{$\text{x^2 = 25}$}{}
+e1_a.tex:24: Missing $ inserted.
+    <inserted text>
+                    $
+    l.24 \swz{$\text{x^2 = 25}$}{}
+e1_a.tex:24: Extra }, or forgotten $.
+    \textdef@ ...th {#1}\let \f@size #2\selectfont #3}
+                                                      }
+    l.24 \swz{$\text{x^2 = 25}$}{}
+e1_a.tex:24: Extra }, or forgotten $.
+    \textdef@ ...h {#1}\let \f@size #2\selectfont #3}}
+    l.24 \swz{$\text{x^2 = 25}$}{}
+e1_a.tex:24: Extra }, or forgotten $.
+    \text@ ...xtstyle \f@size {\firstchoice@false #1}}
+                                                      {\textdef@ \textstyle \sf@...
+    l.24 \swz{$\text{x^2 = 25}$}{}
+e1_a.tex:24: Missing $ inserted.
+    <inserted text>
+                    $
+    l.24 \swz{$\text{x^2 = 25}$}{}
+e1_a.tex:24: Extra }, or forgotten $.
+    \textdef@ ...th {#1}\let \f@size #2\selectfont #3}
+                                                      }
+    l.24 \swz{$\text{x^2 = 25}$}{}
+e1_a.tex:24: Extra }, or forgotten $.
+    \textdef@ ...h {#1}\let \f@size #2\selectfont #3}}
+    l.24 \swz{$\text{x^2 = 25}$}{}
+e1_a.tex:24: Extra }, or forgotten $.
+    \text@ ...tstyle \sf@size {\firstchoice@false #1}}
+                                                      {\textdef@ \textstyle \ssf...
+    l.24 \swz{$\text{x^2 = 25}$}{}
+e1_a.tex:24: Missing $ inserted.
+    <inserted text>
+                    $
+    l.24 \swz{$\text{x^2 = 25}$}{}
+e1_a.tex:24: Extra }, or forgotten $.
+    \textdef@ ...th {#1}\let \f@size #2\selectfont #3}
+                                                      }
+    l.24 \swz{$\text{x^2 = 25}$}{}
+e1_a.tex:24: Extra }, or forgotten $.
+    \textdef@ ...h {#1}\let \f@size #2\selectfont #3}}
+    l.24 \swz{$\text{x^2 = 25}$}{}
+... weitere 1515 Fehlerzeilen nicht gesichert
+
+=== Versuch 2: xelatex gesamt.tex (1575 Fehlerzeilen in der .log) ===
+e1_a.tex:22: Missing $ inserted.
+    <inserted text>
+                    $
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Extra }, or forgotten $.
+    \textdef@ ...th {#1}\let \f@size #2\selectfont #3}
+                                                      }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Extra }, or forgotten $.
+    \textdef@ ...h {#1}\let \f@size #2\selectfont #3}}
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Extra }, or forgotten $.
+    \text@ ...e {\textdef@ \displaystyle \f@size {#1}}
+                                                      {\textdef@ \textstyle \f@s...
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing $ inserted.
+    <inserted text>
+                    $
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Extra }, or forgotten $.
+    \textdef@ ...th {#1}\let \f@size #2\selectfont #3}
+                                                      }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Extra }, or forgotten $.
+    \textdef@ ...h {#1}\let \f@size #2\selectfont #3}}
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Extra }, or forgotten $.
+    \text@ ...xtstyle \f@size {\firstchoice@false #1}}
+                                                      {\textdef@ \textstyle \sf@...
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing $ inserted.
+    <inserted text>
+                    $
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Extra }, or forgotten $.
+    \textdef@ ...th {#1}\let \f@size #2\selectfont #3}
+                                                      }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Extra }, or forgotten $.
+    \textdef@ ...h {#1}\let \f@size #2\selectfont #3}}
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Extra }, or forgotten $.
+    \text@ ...tstyle \sf@size {\firstchoice@false #1}}
+                                                      {\textdef@ \textstyle \ssf...
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing $ inserted.
+    <inserted text>
+                    $
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Extra }, or forgotten $.
+    \textdef@ ...th {#1}\let \f@size #2\selectfont #3}
+                                                      }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Extra }, or forgotten $.
+    \textdef@ ...h {#1}\let \f@size #2\selectfont #3}}
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Extra }, or forgotten $.
+    \text@ ...style \ssf@size {\firstchoice@false #1}}
+                                                      \check@mathfonts }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Extra }, or forgotten $.
+    \text@ ...firstchoice@false #1}}\check@mathfonts }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: You can't use `\prevdepth' in restricted horizontal mode.
+    \nointerlineskip ->\prevdepth
+                                  -\@m \p@
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing $ inserted.
+    <inserted text>
+                    $
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing number, treated as zero.
+    <to be read again>
+                       \vskip
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Illegal unit of measure (pt inserted).
+    <to be read again>
+                       \vskip
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing $ inserted.
+    <inserted text>
+                    $
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing } inserted.
+    <inserted text>
+                    }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing } inserted.
+    <inserted text>
+                    }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing $ inserted.
+    <inserted text>
+                    $
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing } inserted.
+    <inserted text>
+                    }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing } inserted.
+    <inserted text>
+                    }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing } inserted.
+    <inserted text>
+                    }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing $ inserted.
+    <inserted text>
+                    $
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing } inserted.
+    <inserted text>
+                    }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing } inserted.
+    <inserted text>
+                    }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing } inserted.
+    <inserted text>
+                    }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing $ inserted.
+    <inserted text>
+                    $
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing } inserted.
+    <inserted text>
+                    }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing } inserted.
+    <inserted text>
+                    }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing } inserted.
+    <inserted text>
+                    }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing $ inserted.
+    <inserted text>
+                    $
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing } inserted.
+    <inserted text>
+                    }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing { inserted.
+    <to be read again>
+                       $
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing } inserted.
+    <inserted text>
+                    }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing { inserted.
+    <to be read again>
+                       $
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing } inserted.
+    <inserted text>
+                    }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing { inserted.
+    <to be read again>
+                       $
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing } inserted.
+    <inserted text>
+                    }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:22: Missing } inserted.
+    <inserted text>
+                    }
+    l.22 \swz{$\text{x^2 = 81}$}{}
+e1_a.tex:24: Missing $ inserted.
+    <inserted text>
+                    $
+    l.24 \swz{$\text{x^2 = 25}$}{}
+e1_a.tex:24: Extra }, or forgotten $.
+    \textdef@ ...th {#1}\let \f@size #2\selectfont #3}
+                                                      }
+    l.24 \swz{$\text{x^2 = 25}$}{}
+e1_a.tex:24: Extra }, or forgotten $.
+    \textdef@ ...h {#1}\let \f@size #2\selectfont #3}}
+    l.24 \swz{$\text{x^2 = 25}$}{}
+e1_a.tex:24: Extra }, or forgotten $.
+    \text@ ...e {\textdef@ \displaystyle \f@size {#1}}
+                                                      {\textdef@ \textstyle \f@s...
+    l.24 \swz{$\text{x^2 = 25}$}{}
+e1_a.tex:24: Missing $ inserted.
+    <inserted text>
+                    $
+    l.24 \swz{$\text{x^2 = 25}$}{}
+e1_a.tex:24: Extra }, or forgotten $.
+    \textdef@ ...th {#1}\let \f@size #2\selectfont #3}
+                                                      }
+    l.24 \swz{$\text{x^2 = 25}$}{}
+e1_a.tex:24: Extra }, or forgotten $.
+    \textdef@ ...h {#1}\let \f@size #2\selectfont #3}}
+    l.24 \swz{$\text{x^2 = 25}$}{}
+e1_a.tex:24: Extra }, or forgotten $.
+    \text@ ...xtstyle \f@size {\firstchoice@false #1}}
+                                                      {\textdef@ \textstyle \sf@...
+    l.24 \swz{$\text{x^2 = 25}$}{}
+e1_a.tex:24: Missing $ inserted.
+    <inserted text>
+                    $
+    l.24 \swz{$\text{x^2 = 25}$}{}
+e1_a.tex:24: Extra }, or forgotten $.
+    \textdef@ ...th {#1}\let \f@size #2\selectfont #3}
+                                                      }
+    l.24 \swz{$\text{x^2 = 25}$}{}
+e1_a.tex:24: Extra }, or forgotten $.
+    \textdef@ ...h {#1}\let \f@size #2\selectfont #3}}
+    l.24 \swz{$\text{x^2 = 25}$}{}
+e1_a.tex:24: Extra }, or forgotten $.
+    \text@ ...tstyle \sf@size {\firstchoice@false #1}}
+                                                      {\textdef@ \textstyle \ssf...
+    l.24 \swz{$\text{x^2 = 25}$}{}
+e1_a.tex:24: Missing $ inserted.
+    <inserted text>
+                    $
+    l.24 \swz{$\text{x^2 = 25}$}{}
+e1_a.tex:24: Extra }, or forgotten $.
+    \textdef@ ...th {#1}\let \f@size #2\selectfont #3}
+                                                      }
+    l.24 \swz{$\text{x^2 = 25}$}{}
+e1_a.tex:24: Extra }, or forgotten $.
+    \textdef@ ...h {#1}\let \f@size #2\selectfont #3}}
+    l.24 \swz{$\text{x^2 = 25}$}{}
+... weitere 1515 Fehlerzeilen nicht gesichert
+

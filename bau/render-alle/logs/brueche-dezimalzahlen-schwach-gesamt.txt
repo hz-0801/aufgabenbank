@@ -1,0 +1,148 @@
+=== Versuch 1: xelatex gesamt.tex (18 Fehlerzeilen in der .log) ===
+e5_a.tex:41: Missing $ inserted.
+    <inserted text>
+                    $
+    l.41 ...oder $>$ ein: $\frac{3}{5}$ __ $0{,}65$}{}
+e5_a.tex:41: Missing { inserted.
+    <to be read again>
+                       _
+    l.41 ...oder $>$ ein: $\frac{3}{5}$ __ $0{,}65$}{}
+e5_a.tex:41: Missing { inserted.
+    <to be read again>
+                       $
+    l.41 ...oder $>$ ein: $\frac{3}{5}$ __ $0{,}65$}{}
+e5_a.tex:41: Missing } inserted.
+    <inserted text>
+                    }
+    l.41 ...oder $>$ ein: $\frac{3}{5}$ __ $0{,}65$}{}
+e5_a.tex:41: Missing } inserted.
+    <inserted text>
+                    }
+    l.41 ...oder $>$ ein: $\frac{3}{5}$ __ $0{,}65$}{}
+e5_a.tex:41: Missing $ inserted.
+    <inserted text>
+                    $
+    l.41 ...oder $>$ ein: $\frac{3}{5}$ __ $0{,}65$}{}
+e5_a.tex:43: Missing $ inserted.
+    <inserted text>
+                    $
+    l.43 ..., $=$ oder $>$ ein: $0{,}4$ __ $38\,\%$}{}
+e5_a.tex:43: Missing { inserted.
+    <to be read again>
+                       _
+    l.43 ..., $=$ oder $>$ ein: $0{,}4$ __ $38\,\%$}{}
+e5_a.tex:43: Missing { inserted.
+    <to be read again>
+                       $
+    l.43 ..., $=$ oder $>$ ein: $0{,}4$ __ $38\,\%$}{}
+e5_a.tex:43: Missing } inserted.
+    <inserted text>
+                    }
+    l.43 ..., $=$ oder $>$ ein: $0{,}4$ __ $38\,\%$}{}
+e5_a.tex:43: Missing } inserted.
+    <inserted text>
+                    }
+    l.43 ..., $=$ oder $>$ ein: $0{,}4$ __ $38\,\%$}{}
+e5_a.tex:43: Missing $ inserted.
+    <inserted text>
+                    $
+    l.43 ..., $=$ oder $>$ ein: $0{,}4$ __ $38\,\%$}{}
+e5_a.tex:45: Missing $ inserted.
+    <inserted text>
+                    $
+    l.45 ... $=$ oder $>$ ein: $0{,}5^2$ __ $0{,}5$}{}
+e5_a.tex:45: Missing { inserted.
+    <to be read again>
+                       _
+    l.45 ... $=$ oder $>$ ein: $0{,}5^2$ __ $0{,}5$}{}
+e5_a.tex:45: Missing { inserted.
+    <to be read again>
+                       $
+    l.45 ... $=$ oder $>$ ein: $0{,}5^2$ __ $0{,}5$}{}
+e5_a.tex:45: Missing } inserted.
+    <inserted text>
+                    }
+    l.45 ... $=$ oder $>$ ein: $0{,}5^2$ __ $0{,}5$}{}
+e5_a.tex:45: Missing } inserted.
+    <inserted text>
+                    }
+    l.45 ... $=$ oder $>$ ein: $0{,}5^2$ __ $0{,}5$}{}
+e5_a.tex:45: Missing $ inserted.
+    <inserted text>
+                    $
+    l.45 ... $=$ oder $>$ ein: $0{,}5^2$ __ $0{,}5$}{}
+
+=== Versuch 2: xelatex gesamt.tex (18 Fehlerzeilen in der .log) ===
+e5_a.tex:41: Missing $ inserted.
+    <inserted text>
+                    $
+    l.41 ...oder $>$ ein: $\frac{3}{5}$ __ $0{,}65$}{}
+e5_a.tex:41: Missing { inserted.
+    <to be read again>
+                       _
+    l.41 ...oder $>$ ein: $\frac{3}{5}$ __ $0{,}65$}{}
+e5_a.tex:41: Missing { inserted.
+    <to be read again>
+                       $
+    l.41 ...oder $>$ ein: $\frac{3}{5}$ __ $0{,}65$}{}
+e5_a.tex:41: Missing } inserted.
+    <inserted text>
+                    }
+    l.41 ...oder $>$ ein: $\frac{3}{5}$ __ $0{,}65$}{}
+e5_a.tex:41: Missing } inserted.
+    <inserted text>
+                    }
+    l.41 ...oder $>$ ein: $\frac{3}{5}$ __ $0{,}65$}{}
+e5_a.tex:41: Missing $ inserted.
+    <inserted text>
+                    $
+    l.41 ...oder $>$ ein: $\frac{3}{5}$ __ $0{,}65$}{}
+e5_a.tex:43: Missing $ inserted.
+    <inserted text>
+                    $
+    l.43 ..., $=$ oder $>$ ein: $0{,}4$ __ $38\,\%$}{}
+e5_a.tex:43: Missing { inserted.
+    <to be read again>
+                       _
+    l.43 ..., $=$ oder $>$ ein: $0{,}4$ __ $38\,\%$}{}
+e5_a.tex:43: Missing { inserted.
+    <to be read again>
+                       $
+    l.43 ..., $=$ oder $>$ ein: $0{,}4$ __ $38\,\%$}{}
+e5_a.tex:43: Missing } inserted.
+    <inserted text>
+                    }
+    l.43 ..., $=$ oder $>$ ein: $0{,}4$ __ $38\,\%$}{}
+e5_a.tex:43: Missing } inserted.
+    <inserted text>
+                    }
+    l.43 ..., $=$ oder $>$ ein: $0{,}4$ __ $38\,\%$}{}
+e5_a.tex:43: Missing $ inserted.
+    <inserted text>
+                    $
+    l.43 ..., $=$ oder $>$ ein: $0{,}4$ __ $38\,\%$}{}
+e5_a.tex:45: Missing $ inserted.
+    <inserted text>
+                    $
+    l.45 ... $=$ oder $>$ ein: $0{,}5^2$ __ $0{,}5$}{}
+e5_a.tex:45: Missing { inserted.
+    <to be read again>
+                       _
+    l.45 ... $=$ oder $>$ ein: $0{,}5^2$ __ $0{,}5$}{}
+e5_a.tex:45: Missing { inserted.
+    <to be read again>
+                       $
+    l.45 ... $=$ oder $>$ ein: $0{,}5^2$ __ $0{,}5$}{}
+e5_a.tex:45: Missing } inserted.
+    <inserted text>
+                    }
+    l.45 ... $=$ oder $>$ ein: $0{,}5^2$ __ $0{,}5$}{}
+e5_a.tex:45: Missing } inserted.
+    <inserted text>
+                    }
+    l.45 ... $=$ oder $>$ ein: $0{,}5^2$ __ $0{,}5$}{}
+e5_a.tex:45: Missing $ inserted.
+    <inserted text>
+                    $
+    l.45 ... $=$ oder $>$ ein: $0{,}5^2$ __ $0{,}5$}{}
+

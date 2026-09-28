@@ -15,6 +15,15 @@ Je Sitzung einmal, etwa 3–5 Minuten:
         texlive-latex-extra lmodern fonts-lmodern
 
 Danach wie in werkzeuge/zusammenbau.md: `xelatex gesamt.tex` zweimal.
+Bestätigt im Render-Lauf über alle Einträge (2026-09-28,
+bau/render-alle/): dieselben Befehle, etwa 3 Minuten, danach 388
+Kompilierläufe ohne Einrichtungsbefund; je Lauf 1–2 Sekunden.
+Für Fehlerlisten `xelatex -interaction=nonstopmode -file-line-error`:
+die .log nennt dann `./e1_a.tex:23: Missing $ inserted.` mit Datei und
+Zeile; nach dem ersten Fehler folgen Folgefehler bis zum Dateiende, je
+(Datei, Zeile) zählt die erste Meldung. „Missing character: There is no
+≈“ in der .log ist kein Fehler, aber ein leeres Zeichen im PDF
+(bau/render-alle/bericht.md, Abschnitt „Fehlende Zeichen“).
 Für Textkontrolle am PDF zusätzlich `poppler-utils` (pdftotext,
 pdffonts); geht ebenso über apt.
 `texlive-xetex` allein reicht nicht: hyperref braucht unter XeTeX die

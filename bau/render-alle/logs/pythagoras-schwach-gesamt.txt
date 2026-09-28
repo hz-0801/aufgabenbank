@@ -1,0 +1,278 @@
+=== Versuch 1: xelatex gesamt.tex (40 Fehlerzeilen in der .log) ===
+e1_a.tex:30: Missing $ inserted.
+    <inserted text>
+                    $
+    l.30 ...24)}{$45$ cm}{$28$ cm}{?}{}{}{$90^\circ$}}
+e1_a.tex:30: Extra }, or forgotten $.
+    <recently read> }
+    l.30 ...24)}{$45$ cm}{$28$ cm}{?}{}{}{$90^\circ$}}
+e1_a.tex:30: Undefined control sequence.
+    \endtikzpicture ...r@layerlist@globally \endscope
+                                                      \let \pgf@baseline =\pgf@s...
+    l.30 ...24)}{$45$ cm}{$28$ cm}{?}{}{}{$90^\circ$}}
+e1_a.tex:30: Missing $ inserted.
+    <inserted text>
+                    $
+    l.30 ...24)}{$45$ cm}{$28$ cm}{?}{}{}{$90^\circ$}}
+e1_a.tex:30: Missing } inserted.
+    <inserted text>
+                    }
+    l.30 ...24)}{$45$ cm}{$28$ cm}{?}{}{}{$90^\circ$}}
+e1_a.tex:30: Package tikz Error: Giving up on this path. Did you forget a sem
+    icolon?.
+    See the tikz package documentation for explanation.
+e1_a.tex:30: Extra }, or forgotten \endgroup.
+    \endpgfpicture ...globally \endgroup \hss \egroup
+                                                      \pgf@restore@layerlist@fro...
+    l.30 ...24)}{$45$ cm}{$28$ cm}{?}{}{}{$90^\circ$}}
+e1_a.tex:30: Extra }, or forgotten \endgroup.
+    \endpgfpicture ...dpicture \endgroup \hss \egroup
+                                                      \pgfsys@typesetpicturebox ...
+    l.30 ...24)}{$45$ cm}{$28$ cm}{?}{}{}{$90^\circ$}}
+e1_a.tex:30: Missing } inserted.
+    <inserted text>
+                    }
+    l.30 ...24)}{$45$ cm}{$28$ cm}{?}{}{}{$90^\circ$}}
+e1_a.tex:30: Extra }, or forgotten \endgroup.
+    \endminipage ...pagefalse \color@endgroup \egroup
+                                                      \expandafter \@iiiparbox \...
+    l.30 ...24)}{$45$ cm}{$28$ cm}{?}{}{}{$90^\circ$}}
+e1_a.tex:30: LaTeX Error: \begin{tikzpicture} on input line 30 ended by \end{
+    minipage}.
+    See the LaTeX manual or LaTeX Companion for explanation.
+e1_a.tex:30: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:32: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:34: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:36: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:37: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:39: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:39: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:39: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:40: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:40: Missing \endgroup inserted.
+    <inserted text>
+                    \endgroup
+    l.40 \end{teile}
+e1_a.tex:40: Missing \endgroup inserted.
+    <inserted text>
+                    \endgroup
+    l.40 \end{teile}
+e1_a.tex:40: Missing } inserted.
+    <inserted text>
+                    }
+    l.40 \end{teile}
+e1_a.tex:40: LaTeX Error: \begin{tikzpicture} on input line 30 ended by \end{
+    list}.
+    See the LaTeX manual or LaTeX Companion for explanation.
+e1_a.tex:40: LaTeX Error: \begin{tikzpicture} on input line 30 ended by \end{
+    teile}.
+    See the LaTeX manual or LaTeX Companion for explanation.
+e1_a.tex:50: Extra }, or forgotten \endgroup.
+    \endminipage ...pagefalse \color@endgroup \egroup
+                                                      \expandafter \@iiiparbox \...
+    l.50 \end{aufgabe}
+e1_a.tex:50: Missing } inserted.
+    <inserted text>
+                    }
+    l.50 \end{aufgabe}
+e1_a.tex:50: LaTeX Error: \begin{minipage} on input line 17 ended by \end{lrb
+    ox}.
+    See the LaTeX manual or LaTeX Companion for explanation.
+e1_a.tex:50: LaTeX Error: \begin{minipage} on input line 17 ended by \end{auf
+    gabe}.
+    See the LaTeX manual or LaTeX Companion for explanation.
+e1_a.tex:50: Missing } inserted.
+    <inserted text>
+                    }
+    l.50 \end{aufgabe}
+e1_a.tex:56: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:56: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:63: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:63: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:72: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:72: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+gesamt.tex:11: Improper \prevdepth.
+    \newpage ...everypar {}\fi \par \ifdim \prevdepth
+                                                      >\z@ \vskip -\ifdim \prevd...
+    l.11 \clearpage
+gesamt.tex:11: Missing \endgroup inserted.
+    <inserted text>
+                    \endgroup
+    l.11 \clearpage
+gesamt.tex:11: Missing \endgroup inserted.
+    <inserted text>
+                    \endgroup
+    l.11 \clearpage
+gesamt.tex:16: LaTeX Error: \begin{aufgabe} on input line 17 ended by \end{do
+    cument}.
+    See the LaTeX manual or LaTeX Companion for explanation.
+
+=== Versuch 2: xelatex gesamt.tex (40 Fehlerzeilen in der .log) ===
+e1_a.tex:30: Missing $ inserted.
+    <inserted text>
+                    $
+    l.30 ...24)}{$45$ cm}{$28$ cm}{?}{}{}{$90^\circ$}}
+e1_a.tex:30: Extra }, or forgotten $.
+    <recently read> }
+    l.30 ...24)}{$45$ cm}{$28$ cm}{?}{}{}{$90^\circ$}}
+e1_a.tex:30: Undefined control sequence.
+    \endtikzpicture ...r@layerlist@globally \endscope
+                                                      \let \pgf@baseline =\pgf@s...
+    l.30 ...24)}{$45$ cm}{$28$ cm}{?}{}{}{$90^\circ$}}
+e1_a.tex:30: Missing $ inserted.
+    <inserted text>
+                    $
+    l.30 ...24)}{$45$ cm}{$28$ cm}{?}{}{}{$90^\circ$}}
+e1_a.tex:30: Missing } inserted.
+    <inserted text>
+                    }
+    l.30 ...24)}{$45$ cm}{$28$ cm}{?}{}{}{$90^\circ$}}
+e1_a.tex:30: Package tikz Error: Giving up on this path. Did you forget a sem
+    icolon?.
+    See the tikz package documentation for explanation.
+e1_a.tex:30: Extra }, or forgotten \endgroup.
+    \endpgfpicture ...globally \endgroup \hss \egroup
+                                                      \pgf@restore@layerlist@fro...
+    l.30 ...24)}{$45$ cm}{$28$ cm}{?}{}{}{$90^\circ$}}
+e1_a.tex:30: Extra }, or forgotten \endgroup.
+    \endpgfpicture ...dpicture \endgroup \hss \egroup
+                                                      \pgfsys@typesetpicturebox ...
+    l.30 ...24)}{$45$ cm}{$28$ cm}{?}{}{}{$90^\circ$}}
+e1_a.tex:30: Missing } inserted.
+    <inserted text>
+                    }
+    l.30 ...24)}{$45$ cm}{$28$ cm}{?}{}{}{$90^\circ$}}
+e1_a.tex:30: Extra }, or forgotten \endgroup.
+    \endminipage ...pagefalse \color@endgroup \egroup
+                                                      \expandafter \@iiiparbox \...
+    l.30 ...24)}{$45$ cm}{$28$ cm}{?}{}{}{$90^\circ$}}
+e1_a.tex:30: LaTeX Error: \begin{tikzpicture} on input line 30 ended by \end{
+    minipage}.
+    See the LaTeX manual or LaTeX Companion for explanation.
+e1_a.tex:30: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:32: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:34: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:36: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:37: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:39: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:39: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:39: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:40: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:40: Missing \endgroup inserted.
+    <inserted text>
+                    \endgroup
+    l.40 \end{teile}
+e1_a.tex:40: Missing \endgroup inserted.
+    <inserted text>
+                    \endgroup
+    l.40 \end{teile}
+e1_a.tex:40: Missing } inserted.
+    <inserted text>
+                    }
+    l.40 \end{teile}
+e1_a.tex:40: LaTeX Error: \begin{tikzpicture} on input line 30 ended by \end{
+    list}.
+    See the LaTeX manual or LaTeX Companion for explanation.
+e1_a.tex:40: LaTeX Error: \begin{tikzpicture} on input line 30 ended by \end{
+    teile}.
+    See the LaTeX manual or LaTeX Companion for explanation.
+e1_a.tex:50: Extra }, or forgotten \endgroup.
+    \endminipage ...pagefalse \color@endgroup \egroup
+                                                      \expandafter \@iiiparbox \...
+    l.50 \end{aufgabe}
+e1_a.tex:50: Missing } inserted.
+    <inserted text>
+                    }
+    l.50 \end{aufgabe}
+e1_a.tex:50: LaTeX Error: \begin{minipage} on input line 17 ended by \end{lrb
+    ox}.
+    See the LaTeX manual or LaTeX Companion for explanation.
+e1_a.tex:50: LaTeX Error: \begin{minipage} on input line 17 ended by \end{auf
+    gabe}.
+    See the LaTeX manual or LaTeX Companion for explanation.
+e1_a.tex:50: Missing } inserted.
+    <inserted text>
+                    }
+    l.50 \end{aufgabe}
+e1_a.tex:56: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:56: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:63: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:63: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:72: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:72: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+gesamt.tex:11: Improper \prevdepth.
+    \newpage ...everypar {}\fi \par \ifdim \prevdepth
+                                                      >\z@ \vskip -\ifdim \prevd...
+    l.11 \clearpage
+gesamt.tex:11: Missing \endgroup inserted.
+    <inserted text>
+                    \endgroup
+    l.11 \clearpage
+gesamt.tex:11: Missing \endgroup inserted.
+    <inserted text>
+                    \endgroup
+    l.11 \clearpage
+gesamt.tex:16: LaTeX Error: \begin{aufgabe} on input line 17 ended by \end{do
+    cument}.
+    See the LaTeX manual or LaTeX Companion for explanation.
+

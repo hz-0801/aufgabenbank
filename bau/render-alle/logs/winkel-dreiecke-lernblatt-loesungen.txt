@@ -1,0 +1,6 @@
+=== Versuch 1: xelatex loesungen.tex (0 Fehlerzeilen in der .log) ===
+keine Fehlerzeilen
+
+=== Versuch 2: xelatex loesungen.tex (0 Fehlerzeilen in der .log) ===
+keine Fehlerzeilen
+

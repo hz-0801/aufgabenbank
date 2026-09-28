@@ -1,0 +1,48 @@
+=== Versuch 1: xelatex gesamt.tex (6 Fehlerzeilen in der .log) ===
+e1_a.tex:35: LaTeX Error: Command \end{list} invalid in math mode.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:35: Missing $ inserted.
+    <inserted text>
+                    $
+    l.35 ...nstrahl[xmin=2,xmax=3,xstep=0.1,karo=1]{}}
+e1_a.tex:35: Display math should end with $$.
+    <to be read again>
+                       \vskip
+    l.35 ...nstrahl[xmin=2,xmax=3,xstep=0.1,karo=1]{}}
+e1_a.tex:42: LaTeX Error: Command \end{list} invalid in math mode.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:42: Missing $ inserted.
+    <inserted text>
+                    $
+    l.42 ...cc}{$x$ & $x^2$}{$1{,}4$ & \\ $1{,}5$ & }}
+e1_a.tex:42: Display math should end with $$.
+    <to be read again>
+                       \vskip
+    l.42 ...cc}{$x$ & $x^2$}{$1{,}4$ & \\ $1{,}5$ & }}
+
+=== Versuch 2: xelatex gesamt.tex (6 Fehlerzeilen in der .log) ===
+e1_a.tex:35: LaTeX Error: Command \end{list} invalid in math mode.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:35: Missing $ inserted.
+    <inserted text>
+                    $
+    l.35 ...nstrahl[xmin=2,xmax=3,xstep=0.1,karo=1]{}}
+e1_a.tex:35: Display math should end with $$.
+    <to be read again>
+                       \vskip
+    l.35 ...nstrahl[xmin=2,xmax=3,xstep=0.1,karo=1]{}}
+e1_a.tex:42: LaTeX Error: Command \end{list} invalid in math mode.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:42: Missing $ inserted.
+    <inserted text>
+                    $
+    l.42 ...cc}{$x$ & $x^2$}{$1{,}4$ & \\ $1{,}5$ & }}
+e1_a.tex:42: Display math should end with $$.
+    <to be read again>
+                       \vskip
+    l.42 ...cc}{$x$ & $x^2$}{$1{,}4$ & \\ $1{,}5$ & }}
+

@@ -1,0 +1,190 @@
+=== Versuch 1: xelatex gesamt.tex (25 Fehlerzeilen in der .log) ===
+e5_a.tex:26: Missing $ inserted.
+    <inserted text>
+                    $
+    l.26 ...tze $<$, $=$ oder $>$ ein: $\frac{3}{5}$ _
+e5_a.tex:26: Missing { inserted.
+    <to be read again>
+                       _
+    l.26 ...ze $<$, $=$ oder $>$ ein: $\frac{3}{5}$ __
+e5_a.tex:26: Missing { inserted.
+    <to be read again>
+                       $
+    l.26 ... $<$, $=$ oder $>$ ein: $\frac{3}{5}$ __ $
+e5_a.tex:26: Missing } inserted.
+    <inserted text>
+                    }
+    l.26 ... $<$, $=$ oder $>$ ein: $\frac{3}{5}$ __ $
+e5_a.tex:26: Missing } inserted.
+    <inserted text>
+                    }
+    l.26 ... $<$, $=$ oder $>$ ein: $\frac{3}{5}$ __ $
+e5_a.tex:27: LaTeX Error: Command \item invalid in math mode.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:27: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:27: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:27: Missing { inserted.
+    <to be read again>
+                       _
+    l.27 \teil Setze $<$, $=$ oder $>$ ein: $0{,}4$ __
+e5_a.tex:27: Missing { inserted.
+    <to be read again>
+                       $
+    l.27 ... Setze $<$, $=$ oder $>$ ein: $0{,}4$ __ $
+e5_a.tex:27: Missing } inserted.
+    <inserted text>
+                    }
+    l.27 ... Setze $<$, $=$ oder $>$ ein: $0{,}4$ __ $
+e5_a.tex:27: Missing } inserted.
+    <inserted text>
+                    }
+    l.27 ... Setze $<$, $=$ oder $>$ ein: $0{,}4$ __ $
+e5_a.tex:28: LaTeX Error: Command \item invalid in math mode.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:28: Missing $ inserted.
+    <inserted text>
+                    $
+    l.28 \teil
+e5_a.tex:28: Missing } inserted.
+    <inserted text>
+                    }
+    l.28 \teil
+e5_a.tex:28: Extra }, or forgotten \endgroup.
+    \par ...m \@noitemerr {\@@par }\fi \else {\@@par }
+                                                      \fi
+    l.28 \teil
+e5_a.tex:28: Missing $ inserted.
+    <inserted text>
+                    $
+    l.28 ...l Setze $<$, $=$ oder $>$ ein: $0{,}5^2$ _
+e5_a.tex:28: Missing { inserted.
+    <to be read again>
+                       _
+    l.28 ... Setze $<$, $=$ oder $>$ ein: $0{,}5^2$ __
+e5_a.tex:28: Missing { inserted.
+    <to be read again>
+                       $
+    l.28 ...etze $<$, $=$ oder $>$ ein: $0{,}5^2$ __ $
+e5_a.tex:28: Missing } inserted.
+    <inserted text>
+                    }
+    l.28 ...etze $<$, $=$ oder $>$ ein: $0{,}5^2$ __ $
+e5_a.tex:28: Missing } inserted.
+    <inserted text>
+                    }
+    l.28 ...etze $<$, $=$ oder $>$ ein: $0{,}5^2$ __ $
+e5_a.tex:29: LaTeX Error: Command \item invalid in math mode.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:29: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:29: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:29: Missing $ inserted.
+    <inserted text>
+                    $
+    l.29 ...t der kleinste: $5{,}5$; $0{,}55$; $0{,}5^
+
+=== Versuch 2: xelatex gesamt.tex (25 Fehlerzeilen in der .log) ===
+e5_a.tex:26: Missing $ inserted.
+    <inserted text>
+                    $
+    l.26 ...tze $<$, $=$ oder $>$ ein: $\frac{3}{5}$ _
+e5_a.tex:26: Missing { inserted.
+    <to be read again>
+                       _
+    l.26 ...ze $<$, $=$ oder $>$ ein: $\frac{3}{5}$ __
+e5_a.tex:26: Missing { inserted.
+    <to be read again>
+                       $
+    l.26 ... $<$, $=$ oder $>$ ein: $\frac{3}{5}$ __ $
+e5_a.tex:26: Missing } inserted.
+    <inserted text>
+                    }
+    l.26 ... $<$, $=$ oder $>$ ein: $\frac{3}{5}$ __ $
+e5_a.tex:26: Missing } inserted.
+    <inserted text>
+                    }
+    l.26 ... $<$, $=$ oder $>$ ein: $\frac{3}{5}$ __ $
+e5_a.tex:27: LaTeX Error: Command \item invalid in math mode.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:27: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:27: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:27: Missing { inserted.
+    <to be read again>
+                       _
+    l.27 \teil Setze $<$, $=$ oder $>$ ein: $0{,}4$ __
+e5_a.tex:27: Missing { inserted.
+    <to be read again>
+                       $
+    l.27 ... Setze $<$, $=$ oder $>$ ein: $0{,}4$ __ $
+e5_a.tex:27: Missing } inserted.
+    <inserted text>
+                    }
+    l.27 ... Setze $<$, $=$ oder $>$ ein: $0{,}4$ __ $
+e5_a.tex:27: Missing } inserted.
+    <inserted text>
+                    }
+    l.27 ... Setze $<$, $=$ oder $>$ ein: $0{,}4$ __ $
+e5_a.tex:28: LaTeX Error: Command \item invalid in math mode.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:28: Missing $ inserted.
+    <inserted text>
+                    $
+    l.28 \teil
+e5_a.tex:28: Missing } inserted.
+    <inserted text>
+                    }
+    l.28 \teil
+e5_a.tex:28: Extra }, or forgotten \endgroup.
+    \par ...m \@noitemerr {\@@par }\fi \else {\@@par }
+                                                      \fi
+    l.28 \teil
+e5_a.tex:28: Missing $ inserted.
+    <inserted text>
+                    $
+    l.28 ...l Setze $<$, $=$ oder $>$ ein: $0{,}5^2$ _
+e5_a.tex:28: Missing { inserted.
+    <to be read again>
+                       _
+    l.28 ... Setze $<$, $=$ oder $>$ ein: $0{,}5^2$ __
+e5_a.tex:28: Missing { inserted.
+    <to be read again>
+                       $
+    l.28 ...etze $<$, $=$ oder $>$ ein: $0{,}5^2$ __ $
+e5_a.tex:28: Missing } inserted.
+    <inserted text>
+                    }
+    l.28 ...etze $<$, $=$ oder $>$ ein: $0{,}5^2$ __ $
+e5_a.tex:28: Missing } inserted.
+    <inserted text>
+                    }
+    l.28 ...etze $<$, $=$ oder $>$ ein: $0{,}5^2$ __ $
+e5_a.tex:29: LaTeX Error: Command \item invalid in math mode.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:29: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:29: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:29: Missing $ inserted.
+    <inserted text>
+                    $
+    l.29 ...t der kleinste: $5{,}5$; $0{,}55$; $0{,}5^
+

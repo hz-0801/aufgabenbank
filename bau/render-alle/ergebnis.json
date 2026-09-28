@@ -1,0 +1,7456 @@
+{
+ "xelatex": "XeTeX 3.141592653-2.6-0.999995 (TeX Live 2023/Debian)",
+ "eintraege": {
+  "ableitung-und-aenderungsrate": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 13,
+     "zeichen": 17213,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "⇔ (U+21D4)": 2
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 1
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 4,
+     "zeichen": 8621,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "⇔ (U+21D4)": 15
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "ableitungsregeln": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 6,
+     "zeichen": 7157,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 3365,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "abstaende": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 8,
+     "zeichen": 10186,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "≈ (U+2248)": 1
+     },
+     "ueberbreit": 1,
+     "mathblatt_warnungen": 0
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 5203,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "bedingte-wahrscheinlichkeit-und-bayes": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 8,
+     "zeichen": 8753,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 3232,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "binomialverteilung": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 1,
+       "zeit": false,
+       "fehlerzeilen": 55,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 1,
+       "zeit": false,
+       "fehlerzeilen": 55,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": false,
+     "pdf": true,
+     "seiten": 8,
+     "zeichen": 14499,
+     "fehlerstellen": 17,
+     "fehlerzeilen_log": 55,
+     "fehler": [
+      {
+       "datei": "e5_a.tex",
+       "zeile": 16,
+       "meldung": "Extra }, or forgotten $.",
+       "baustein": "\\saeulenab",
+       "zeilentext": "\\saeulenab[ymax=35,ystep=5,yfein=1,ylabel=$P(X = k)$ in \\%]{0/8,1/24,2/33,3/24,4/10,5/2,6/0}",
+       "id": "binomialverteilung-e5-k1-s1-v1",
+       "bankdatei": "bank/binomialverteilung/e5.jsonl:5",
+       "zuordnung": "ähnlich (0.97)"
+      },
+      {
+       "datei": "e5_a.tex",
+       "zeile": 18,
+       "meldung": "LaTeX Error: Something's wrong--perhaps a missing \\item.",
+       "baustein": "\\teil",
+       "zeilentext": "\\teil 15\\,\\% der Äpfel einer Plantage haben Druckstellen. 90 Äpfel werden zufällig ausgewählt; X ist die Anzahl mit Druckstellen. Welche Anzahl tritt mit der gr",
+       "id": "binomialverteilung-e5-k1-s2-v1",
+       "bankdatei": "bank/binomialverteilung/e5.jsonl:10",
+       "zuordnung": "ähnlich (1.00)"
+      },
+      {
+       "datei": "e5_a.tex",
+       "zeile": 19,
+       "meldung": "LaTeX Error: Something's wrong--perhaps a missing \\item.",
+       "baustein": "\\teil",
+       "zeilentext": "\\teil Ein Würfelspiel gelingt mit der Wahrscheinlichkeit $0{,}3$ und wird 40-mal gespielt. Ben sagt: „Am wahrscheinlichsten gelingt es 20-mal, das ist die Hälft",
+       "id": "binomialverteilung-e5-k1-s3-v1",
+       "bankdatei": "bank/binomialverteilung/e5.jsonl:13",
+       "zuordnung": "ähnlich (1.00)"
+      },
+      {
+       "datei": "e5_a.tex",
+       "zeile": 20,
+       "meldung": "LaTeX Error: Something's wrong--perhaps a missing \\item.",
+       "baustein": "\\teil",
+       "zeilentext": "\\teil X ist binomialverteilt mit 10 Versuchen und der Trefferwahrscheinlichkeit $0{,}3$. Genau eine der drei Abbildungen zeigt die Verteilung von X (Werte in Pr",
+       "id": "binomialverteilung-e5-k1-s4-v1",
+       "bankdatei": "bank/binomialverteilung/e5.jsonl:16",
+       "zuordnung": "ähnlich (1.00)"
+      },
+      {
+       "datei": "e5_a.tex",
+       "zeile": 23,
+       "meldung": "LaTeX Error: Something's wrong--perhaps a missing \\item.",
+       "baustein": "\\teil",
+       "zeilentext": "\\teil Das Säulendiagramm zeigt die Verteilung der Anzahl X der Treffer bei 8 Versuchen (Werte gerundet). Y = 8 − X zählt die Nieten. Lies $P(Y = 6)$ ab.",
+       "id": "binomialverteilung-e5-k1-s5-v1",
+       "bankdatei": "bank/binomialverteilung/e5.jsonl:19",
+       "zuordnung": "ähnlich (0.99)"
+      },
+      {
+       "datei": "e5_a.tex",
+       "zeile": 25,
+       "meldung": "Extra }, or forgotten $.",
+       "baustein": "\\saeulenab",
+       "zeilentext": "\\saeulenab[ymax=30,ystep=5,yfein=1,ylabel=$P(X = k)$ in \\%]{0/3,1/14,2/26,3/28,4/19,5/8,6/2,7/0,8/0}",
+       "id": "binomialverteilung-e5-k1-s5-v1",
+       "bankdatei": "bank/binomialverteilung/e5.jsonl:19",
+       "zuordnung": "wörtlich"
+      },
+      {
+       "datei": "e5_a.tex",
+       "zeile": 27,
+       "meldung": "LaTeX Error: Something's wrong--perhaps a missing \\item.",
+       "baustein": "\\teil",
+       "zeilentext": "\\teil Das Diagramm zeigt die kumulierten Wahrscheinlichkeiten $P(X \\le k)$ einer Binomialverteilung mit 6 Versuchen (Werte gerundet). Lies $P(X \\le 3)$ ab.",
+       "id": "binomialverteilung-e5-k1-s6-v1",
+       "bankdatei": "bank/binomialverteilung/e5.jsonl:22",
+       "zuordnung": "ähnlich (0.98)"
+      },
+      {
+       "datei": "e5_a.tex",
+       "zeile": 31,
+       "meldung": "LaTeX Error: Something's wrong--perhaps a missing \\item.",
+       "baustein": "\\teil",
+       "zeilentext": "\\teil X ist binomialverteilt mit 12 Versuchen und der Trefferwahrscheinlichkeit $0{,}5$; es gilt $P(X \\le 4) \\approx 0{,}1938$. Bestimme ohne Rechner $P(5 \\le X",
+       "id": "binomialverteilung-e5-k1-s7-v1",
+       "bankdatei": "bank/binomialverteilung/e5.jsonl:25",
+       "zuordnung": "ähnlich (0.98)"
+      },
+      {
+       "datei": "e5_a.tex",
+       "zeile": 32,
+       "meldung": "LaTeX Error: Something's wrong--perhaps a missing \\item.",
+       "baustein": "\\ge",
+       "zeilentext": "\\teil X ist binomialverteilt mit 15 Versuchen und der Trefferwahrscheinlichkeit $0{,}5$; die Verteilung ist symmetrisch. Es gilt $P(X \\ge 6) \\approx 0{,}85$ und",
+       "id": "binomialverteilung-e5-k1-s8-v1",
+       "bankdatei": "bank/binomialverteilung/e5.jsonl:28",
+       "zuordnung": "ähnlich (1.00)"
+      },
+      {
+       "datei": "e5_a.tex",
+       "zeile": 33,
+       "meldung": "LaTeX Error: Something's wrong--perhaps a missing \\item.",
+       "baustein": "\\ge",
+       "zeilentext": "\\end{teile}",
+       "id": "binomialverteilung-e5-k1-s8-v1",
+       "bankdatei": "bank/binomialverteilung/e5.jsonl:28",
+       "zuordnung": "ähnlich (1.00)"
+      },
+      {
+       "datei": "e5_a.tex",
+       "zeile": 34,
+       "meldung": "Missing } inserted.",
+       "baustein": "\\ge",
+       "zeilentext": "\\end{aufgabe}",
+       "id": "binomialverteilung-e5-k1-s8-v1",
+       "bankdatei": "bank/binomialverteilung/e5.jsonl:28",
+       "zuordnung": "ähnlich (1.00)"
+      },
+      {
+       "datei": "e5_a.tex",
+       "zeile": 42,
+       "meldung": "LaTeX Error: Something's wrong--perhaps a missing \\item.",
+       "baustein": "\\teil",
+       "zeilentext": "\\end{aufgabe}",
+       "id": "binomialverteilung-e5-k2-s1-v1",
+       "bankdatei": "bank/binomialverteilung/e5.jsonl:36",
+       "zuordnung": "ähnlich (1.00)"
+      },
+      {
+       "datei": "e5_a.tex",
+       "zeile": 55,
+       "meldung": "LaTeX Error: Something's wrong--perhaps a missing \\item.",
+       "baustein": "\\saeulen",
+       "zeilentext": "\\end{aufgabe}",
+       "id": "binomialverteilung-e5-k3-s4-v1",
+       "bankdatei": "bank/binomialverteilung/e5.jsonl:48",
+       "zuordnung": "ähnlich (0.99)"
+      },
+      {
+       "datei": "abhaken.tex",
+       "zeile": 4,
+       "meldung": "Improper \\prevdepth.",
+       "baustein": "\\begin{abhakseite}",
+       "zeilentext": "\\ifdefined\\mitzone",
+       "id": null,
+       "bankdatei": null,
+       "zuordnung": "leer"
+      },
+      {
+       "datei": "abhaken.tex",
+       "zeile": 36,
+       "meldung": "LaTeX Error: \\begin{tikzpicture} on input line 16 ended by \\e",
+       "baustein": "\\begin{abhakseite}",
+       "zeilentext": "\\end{abhakseite}",
+       "id": null,
+       "bankdatei": null,
+       "zuordnung": "unsicher (0.33)"
+      },
+      {
+       "datei": "gesamt.tex",
+       "zeile": 19,
+       "meldung": "LaTeX Error: \\begin{tikzpicture} on input line 16 ended by \\en",
+       "baustein": "(Rahmen)",
+       "zeilentext": "\\end{document}",
+       "id": null,
+       "bankdatei": null,
+       "zuordnung": "unsicher (0.32)"
+      },
+      {
+       "datei": "(ohne Datei)",
+       "zeile": 0,
+       "meldung": "Emergency stop.",
+       "baustein": "",
+       "zeilentext": "",
+       "id": null,
+       "bankdatei": null,
+       "zuordnung": "ohne Zeile"
+      }
+     ],
+     "fehlende_zeichen": {
+      "≈ (U+2248)": 2,
+      "μ (U+03BC)": 2
+     },
+     "ueberbreit": 2,
+     "mathblatt_warnungen": 0
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 3,
+     "zeichen": 6456,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "binomische-formeln": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 5,
+     "zeichen": 4606,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 6,
+     "mathblatt_warnungen": 0
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 1,
+     "zeichen": 1880,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   },
+   "schwach": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 13,
+     "zeichen": 5604,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 13,
+     "mathblatt_warnungen": 3
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 1,
+     "zeichen": 2015,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "bruchrechnung": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 7,
+     "zeichen": 7807,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "↔ (U+2194)": 2
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 2785,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   },
+   "schwach": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 19,
+     "zeichen": 8445,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "↔ (U+2194)": 2
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 6
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 2942,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "brueche-dezimalzahlen": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 1,
+       "zeit": false,
+       "fehlerzeilen": 25,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 1,
+       "zeit": false,
+       "fehlerzeilen": 25,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": false,
+     "pdf": true,
+     "seiten": 9,
+     "zeichen": 8517,
+     "fehlerstellen": 4,
+     "fehlerzeilen_log": 25,
+     "fehler": [
+      {
+       "datei": "e5_a.tex",
+       "zeile": 26,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\teil",
+       "zeilentext": "\\teil Setze $<$, $=$ oder $>$ ein: $\\frac{3}{5}$ __ $0{,}65$ \\leerfeld",
+       "id": "brueche-dezimalzahlen-e5-k2-s6-v1",
+       "bankdatei": "bank/brueche-dezimalzahlen/e5.jsonl:26",
+       "zuordnung": "ähnlich (0.96)"
+      },
+      {
+       "datei": "e5_a.tex",
+       "zeile": 27,
+       "meldung": "LaTeX Error: Command \\item invalid in math mode.",
+       "baustein": "\\teil",
+       "zeilentext": "\\teil Setze $<$, $=$ oder $>$ ein: $0{,}4$ __ $38\\,\\%$ \\leerfeld",
+       "id": "brueche-dezimalzahlen-e5-k2-s7-v1",
+       "bankdatei": "bank/brueche-dezimalzahlen/e5.jsonl:29",
+       "zuordnung": "ähnlich (0.96)"
+      },
+      {
+       "datei": "e5_a.tex",
+       "zeile": 28,
+       "meldung": "LaTeX Error: Command \\item invalid in math mode.",
+       "baustein": "\\teil",
+       "zeilentext": "\\teil Setze $<$, $=$ oder $>$ ein: $0{,}5^2$ __ $0{,}5$ \\leerfeld",
+       "id": "brueche-dezimalzahlen-e5-k2-s8-v1",
+       "bankdatei": "bank/brueche-dezimalzahlen/e5.jsonl:32",
+       "zuordnung": "ähnlich (0.96)"
+      },
+      {
+       "datei": "e5_a.tex",
+       "zeile": 29,
+       "meldung": "LaTeX Error: Command \\item invalid in math mode.",
+       "baustein": "\\teil",
+       "zeilentext": "\\teil Welcher Wert ist der kleinste: $5{,}5$; $0{,}55$; $0{,}5^2$; $55\\,\\%$? \\hfill (P10 2023 OS) \\\\ \\leerfeld",
+       "id": "brueche-dezimalzahlen-e5-k2-s9-v1",
+       "bankdatei": "bank/brueche-dezimalzahlen/e5.jsonl:35",
+       "zuordnung": "ähnlich (0.97)"
+      }
+     ],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 1
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 2767,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   },
+   "schwach": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 1,
+       "zeit": false,
+       "fehlerzeilen": 18,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 1,
+       "zeit": false,
+       "fehlerzeilen": 18,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": false,
+     "pdf": true,
+     "seiten": 23,
+     "zeichen": 10722,
+     "fehlerstellen": 3,
+     "fehlerzeilen_log": 18,
+     "fehler": [
+      {
+       "datei": "e5_a.tex",
+       "zeile": 41,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{Setze $<$, $=$ oder $>$ ein: $\\frac{3}{5}$ __ $0{,}65$}{}",
+       "id": "brueche-dezimalzahlen-e5-k2-s6-v1",
+       "bankdatei": "bank/brueche-dezimalzahlen/e5.jsonl:26",
+       "zuordnung": "ähnlich (0.96)"
+      },
+      {
+       "datei": "e5_a.tex",
+       "zeile": 43,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{Setze $<$, $=$ oder $>$ ein: $0{,}4$ __ $38\\,\\%$}{}",
+       "id": "brueche-dezimalzahlen-e5-k2-s7-v1",
+       "bankdatei": "bank/brueche-dezimalzahlen/e5.jsonl:29",
+       "zuordnung": "ähnlich (0.96)"
+      },
+      {
+       "datei": "e5_a.tex",
+       "zeile": 45,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{Setze $<$, $=$ oder $>$ ein: $0{,}5^2$ __ $0{,}5$}{}",
+       "id": "brueche-dezimalzahlen-e5-k2-s8-v1",
+       "bankdatei": "bank/brueche-dezimalzahlen/e5.jsonl:32",
+       "zuordnung": "ähnlich (0.96)"
+      }
+     ],
+     "fehlende_zeichen": {
+      "≈ (U+2248)": 2
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 6
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 2906,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "ebenen": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 9,
+     "zeichen": 12066,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 3,
+     "zeichen": 5520,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "✓ (U+2713)": 8
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "einheiten": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 11,
+     "zeichen": 14356,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 3,
+     "zeichen": 4746,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   },
+   "schwach": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 27,
+     "zeichen": 15495,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "ϱ (U+03F1)": 1,
+      "≈ (U+2248)": 1
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 7
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 3,
+     "zeichen": 5195,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "extremalprobleme": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 7,
+     "zeichen": 9357,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 1,
+     "mathblatt_warnungen": 1
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 3935,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "flaechen": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 10,
+     "zeichen": 9136,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "π (U+03C0)": 2
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 3266,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   },
+   "schwach": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 23,
+     "zeichen": 9629,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "π (U+03C0)": 2
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 5
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 3,
+     "zeichen": 3732,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "flaecheninhalt-durch-integration": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 9,
+     "zeichen": 9853,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 1,
+     "mathblatt_warnungen": 1
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 4803,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "flaecheninhalt-und-volumen-im-raum": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 10,
+     "zeichen": 11248,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 2,
+     "mathblatt_warnungen": 0
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 4897,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "funktionsklassen-und-eigenschaften": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 12,
+     "zeichen": 10083,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 2,
+     "mathblatt_warnungen": 1
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 4,
+     "zeichen": 5703,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "funktionsscharen-und-ortskurven": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 11,
+     "zeichen": 11135,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 3,
+     "zeichen": 5456,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "geraden": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 8,
+     "zeichen": 10851,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "✓ (U+2713)": 1
+     },
+     "ueberbreit": 1,
+     "mathblatt_warnungen": 0
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 3,
+     "zeichen": 5863,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "✓ (U+2713)": 3
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "gleichungen-loesen": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 11,
+     "zeichen": 9189,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 28,
+     "mathblatt_warnungen": 1
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 4621,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "grenzwerte-und-verhalten-im-unendlichen": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 5,
+     "zeichen": 6721,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "ˣ (U+02E3)": 2
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 2997,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "hypergeometrische-verteilung": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 4,
+     "zeichen": 5625,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 1,
+     "zeichen": 2431,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "hypothesentests": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 7,
+     "zeichen": 11631,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 1
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 5051,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "integrationsregeln": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 4,
+     "zeichen": 2022,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 1,
+     "zeichen": 860,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "kenngroessen-von-verteilungen": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 12,
+     "zeichen": 15585,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 9,
+     "mathblatt_warnungen": 1
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 3,
+     "zeichen": 5386,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "koerper": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 15,
+     "zeichen": 12094,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "π (U+03C0)": 2
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 2
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 4,
+     "zeichen": 5177,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   },
+   "schwach": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 24,
+     "zeichen": 12052,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "π (U+03C0)": 7,
+      "≈ (U+2248)": 4
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 5
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 4,
+     "zeichen": 5655,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "kombinatorik": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 5,
+     "zeichen": 8965,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 3249,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "konfidenzintervalle": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 8,
+     "zeichen": 7192,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "σ (U+03C3)": 2
+     },
+     "ueberbreit": 3,
+     "mathblatt_warnungen": 1
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 2893,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "kreis": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 8,
+     "zeichen": 8494,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "π (U+03C0)": 8,
+      "≈ (U+2248)": 27,
+      "α (U+03B1)": 2
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 2220,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   },
+   "schwach": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 16,
+     "zeichen": 8119,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "π (U+03C0)": 22,
+      "≈ (U+2248)": 9,
+      "α (U+03B1)": 2
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 3
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 2371,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "kurvenuntersuchung": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 14,
+     "zeichen": 17991,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 2,
+     "mathblatt_warnungen": 2
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 5,
+     "zeichen": 12012,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "lagebeziehungen": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 6,
+     "zeichen": 8009,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 4113,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "lineare-funktionen": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 18,
+     "zeichen": 10144,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 11,
+     "mathblatt_warnungen": 4
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 3565,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   },
+   "schwach": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 23,
+     "zeichen": 11149,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "₂ (U+2082)": 2,
+      "₁ (U+2081)": 2
+     },
+     "ueberbreit": 11,
+     "mathblatt_warnungen": 6
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 4014,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "lineare-gleichungen": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 8,
+     "zeichen": 5173,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 2,
+     "mathblatt_warnungen": 0
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 2374,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   },
+   "schwach": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 18,
+     "zeichen": 6737,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "↔ (U+2194)": 2
+     },
+     "ueberbreit": 2,
+     "mathblatt_warnungen": 4
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 2639,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "lineare-gleichungssysteme": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 15,
+     "zeichen": 14200,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 29,
+     "mathblatt_warnungen": 1
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 3,
+     "zeichen": 6516,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   },
+   "schwach": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 32,
+     "zeichen": 17976,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "₂ (U+2082)": 3,
+      "₃ (U+2083)": 3,
+      "₁ (U+2081)": 2,
+      "≠ (U+2260)": 1,
+      "∈ (U+2208)": 1,
+      "ℝ (U+211D)": 1
+     },
+     "ueberbreit": 42,
+     "mathblatt_warnungen": 9
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 3,
+     "zeichen": 7641,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "linearkombination-und-lineare-abhaengigkeit": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 4,
+     "zeichen": 3144,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 1,
+     "zeichen": 1376,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "matrizen-und-uebergangsprozesse": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 9,
+     "zeichen": 11508,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 13,
+     "mathblatt_warnungen": 0
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 4644,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "normalverteilung-und-sigma-regeln": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 5,
+     "zeichen": 6344,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "μ (U+03BC)": 5,
+      "σ (U+03C3)": 6
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 3553,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "μ (U+03BC)": 2,
+      "σ (U+03C3)": 2
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "orthogonalitaet": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 6,
+     "zeichen": 9974,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 1,
+     "mathblatt_warnungen": 0
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 5334,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "potenzen-wurzeln": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 5,
+     "zeichen": 6181,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "≈ (U+2248)": 2
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 2467,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   },
+   "schwach": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 14,
+     "zeichen": 7472,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "≈ (U+2248)": 3,
+      "⁴ (U+2074)": 5,
+      "⁻ (U+207B)": 3,
+      "ⁿ (U+207F)": 3,
+      "⁶ (U+2076)": 2
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 3
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 2655,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "prozentrechnung": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 8,
+     "zeichen": 8703,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "↔ (U+2194)": 2
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 3149,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   },
+   "schwach": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 19,
+     "zeichen": 8604,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "↔ (U+2194)": 2,
+      "≙ (U+2259)": 2
+     },
+     "ueberbreit": 1,
+     "mathblatt_warnungen": 5
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 3358,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "punkte-und-strecken-im-koordinatensystem": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 11,
+     "zeichen": 11742,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 1
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 6,
+     "zeichen": 7619,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "pyramide-kegel-kugel": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 11,
+     "zeichen": 8999,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "π (U+03C0)": 2,
+      "≈ (U+2248)": 16
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 1
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 4,
+     "zeichen": 4201,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   },
+   "schwach": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 15,
+     "zeichen": 8208,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "π (U+03C0)": 18,
+      "≈ (U+2248)": 9
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 3
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 4,
+     "zeichen": 4443,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "pythagoras": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 1,
+       "zeit": false,
+       "fehlerzeilen": 51,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 1,
+       "zeit": false,
+       "fehlerzeilen": 51,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": false,
+     "pdf": true,
+     "seiten": 10,
+     "zeichen": 7903,
+     "fehlerstellen": 19,
+     "fehlerzeilen_log": 51,
+     "fehler": [
+      {
+       "datei": "e1_a.tex",
+       "zeile": 29,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\dreieck",
+       "zeilentext": "\\dreieck{(0,0)}{(5,0)}{(1.4,2.24)}{$45$ cm}{$28$ cm}{?}{}{}{$90^\\circ$}",
+       "id": "pythagoras-e1-k2-s2-v1",
+       "bankdatei": "bank/pythagoras/e1.jsonl:14",
+       "zuordnung": "wörtlich"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 31,
+       "meldung": "LaTeX Error: Something's wrong--perhaps a missing \\item.",
+       "baustein": "\\teil",
+       "zeilentext": "\\teil Katheten $a = 4$ cm, $b = 9$ cm – Hypotenuse $c$ auf eine Dezimale? c² = \\leerfeld , c ≈ \\leerfeld[cm]",
+       "id": "pythagoras-e1-k2-s3-v1",
+       "bankdatei": "bank/pythagoras/e1.jsonl:17",
+       "zuordnung": "ähnlich (0.97)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 32,
+       "meldung": "LaTeX Error: Something's wrong--perhaps a missing \\item.",
+       "baustein": "\\teil",
+       "zeilentext": "\\teil Katheten $a = 2{,}5$ m, $b = 6$ m – Hypotenuse $c$? c² = \\leerfeld , c = \\leerfeld[m]",
+       "id": "pythagoras-e1-k2-s4-v1",
+       "bankdatei": "bank/pythagoras/e1.jsonl:20",
+       "zuordnung": "ähnlich (0.96)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 33,
+       "meldung": "LaTeX Error: Something's wrong--perhaps a missing \\item.",
+       "baustein": "\\teil",
+       "zeilentext": "\\teil Katheten $a = 1{,}2$ m, $b = 50$ cm – Hypotenuse $c$ in cm? c = \\leerfeld[cm]",
+       "id": "pythagoras-e1-k2-s5-v1",
+       "bankdatei": "bank/pythagoras/e1.jsonl:23",
+       "zuordnung": "ähnlich (0.96)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 34,
+       "meldung": "LaTeX Error: Something's wrong--perhaps a missing \\item.",
+       "baustein": "\\teil",
+       "zeilentext": "\\teil Gleichung nach dem Satz des Pythagoras?",
+       "id": "pythagoras-e1-k2-s6-v1",
+       "bankdatei": "bank/pythagoras/e1.jsonl:26",
+       "zuordnung": "ähnlich (0.96)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 37,
+       "meldung": "LaTeX Error: Something's wrong--perhaps a missing \\item.",
+       "baustein": "\\teil",
+       "zeilentext": "\\teil Welche Aussage gilt im rechtwinkligen Dreieck? \\\\ \\kreuz{Die Hypotenuse ist die kürzeste Seite.} \\\\ \\kreuz{Das Quadrat über der Hypotenuse ist so groß wie",
+       "id": "pythagoras-e1-k2-s7-v1",
+       "bankdatei": "bank/pythagoras/e1.jsonl:29",
+       "zuordnung": "ähnlich (1.00)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 38,
+       "meldung": "LaTeX Error: Something's wrong--perhaps a missing \\item.",
+       "baustein": "\\teil",
+       "zeilentext": "\\teil Welche Gleichung gilt für $g$? \\\\ \\kreuz{$g = \\sqrt{e^2 + f^2}$} \\\\ \\kreuz{$g = e^2 + f^2$} \\\\ \\kreuz{$g = \\sqrt{e^2 - f^2}$} \\\\ \\kreuz{$g = e + f$}",
+       "id": "pythagoras-e1-k2-s8-v1",
+       "bankdatei": "bank/pythagoras/e1.jsonl:32",
+       "zuordnung": "ähnlich (0.97)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 41,
+       "meldung": "LaTeX Error: Something's wrong--perhaps a missing \\item.",
+       "baustein": "\\teil",
+       "zeilentext": "\\teil Rechteck $45$ cm mal $24$ cm – Diagonale? \\leerfeld[cm]",
+       "id": "pythagoras-e1-k2-s9-v1",
+       "bankdatei": "bank/pythagoras/e1.jsonl:35",
+       "zuordnung": "ähnlich (0.96)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 42,
+       "meldung": "LaTeX Error: Something's wrong--perhaps a missing \\item.",
+       "baustein": "\\teil",
+       "zeilentext": "\\teil Eine rechteckige Wiese ist $60$ m lang und $11$ m breit. Wie lang ist der Weg quer über die Wiese von Ecke zu Ecke?",
+       "id": "pythagoras-e1-k2-s10-v1",
+       "bankdatei": "bank/pythagoras/e1.jsonl:38",
+       "zuordnung": "ähnlich (0.98)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 46,
+       "meldung": "LaTeX Error: Something's wrong--perhaps a missing \\item.",
+       "baustein": "\\teil",
+       "zeilentext": "\\teil Eine Leiter steht $0{,}9$ m von einer Mauer entfernt und reicht genau bis zur Mauerkante in $4$ m Höhe. Oben ragt sie noch $1$ m über die Kante hinaus. Wi",
+       "id": "pythagoras-e1-k2-s11-v1",
+       "bankdatei": "bank/pythagoras/e1.jsonl:41",
+       "zuordnung": "ähnlich (0.99)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 50,
+       "meldung": "LaTeX Error: Something's wrong--perhaps a missing \\item.",
+       "baustein": "\\teil",
+       "zeilentext": "\\teil Ein dreieckiges Grundstück ABC hat bei C einen rechten Winkel. Der Zaun von B nach C ist $14$ m lang, der von A nach C $39$ m. Berechne die Länge der Seit",
+       "id": "pythagoras-e1-k2-s12-v1",
+       "bankdatei": "bank/pythagoras/e1.jsonl:44",
+       "zuordnung": "ähnlich (1.00)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 54,
+       "meldung": "LaTeX Error: Something's wrong--perhaps a missing \\item.",
+       "baustein": "\\teil",
+       "zeilentext": "\\teil Eine Laderampe führt auf einer waagerechten Länge von $240$ cm um $18$ cm nach oben. Berechne die Länge der Rampe auf eine Dezimale \\hfill (P10 2025 OS).",
+       "id": "pythagoras-e1-k2-s13-v1",
+       "bankdatei": "bank/pythagoras/e1.jsonl:46",
+       "zuordnung": "ähnlich (0.99)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 58,
+       "meldung": "Missing \\endgroup inserted.",
+       "baustein": "\\dreieckrw",
+       "zeilentext": "\\end{teile}",
+       "id": "pythagoras-e1-k2-s13-v1",
+       "bankdatei": "bank/pythagoras/e1.jsonl:46",
+       "zuordnung": "ähnlich (0.99)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 59,
+       "meldung": "Extra }, or forgotten \\endgroup.",
+       "baustein": "\\dreieckrw",
+       "zeilentext": "\\end{aufgabe}",
+       "id": "pythagoras-e1-k2-s13-v1",
+       "bankdatei": "bank/pythagoras/e1.jsonl:46",
+       "zuordnung": "ähnlich (0.99)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 70,
+       "meldung": "LaTeX Error: Something's wrong--perhaps a missing \\item.",
+       "baustein": "\\begin{ksys}",
+       "zeilentext": "\\end{aufgabe}",
+       "id": "pythagoras-e1-k3-s1-v1",
+       "bankdatei": "bank/pythagoras/e1.jsonl:48",
+       "zuordnung": "ähnlich (0.98)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 78,
+       "meldung": "LaTeX Error: Something's wrong--perhaps a missing \\item.",
+       "baustein": "\\teil",
+       "zeilentext": "\\end{aufgabe}",
+       "id": "pythagoras-e1-k4-s1-v1",
+       "bankdatei": "bank/pythagoras/e1.jsonl:51",
+       "zuordnung": "ähnlich (0.97)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 91,
+       "meldung": "LaTeX Error: Something's wrong--perhaps a missing \\item.",
+       "baustein": "\\teil",
+       "zeilentext": "\\end{aufgabe}",
+       "id": "pythagoras-e1-k5-s4-v1",
+       "bankdatei": "bank/pythagoras/e1.jsonl:63",
+       "zuordnung": "ähnlich (0.99)"
+      },
+      {
+       "datei": "gesamt.tex",
+       "zeile": 11,
+       "meldung": "Improper \\prevdepth.",
+       "baustein": "(Rahmen)",
+       "zeilentext": "\\clearpage",
+       "id": null,
+       "bankdatei": null,
+       "zuordnung": "leer"
+      },
+      {
+       "datei": "gesamt.tex",
+       "zeile": 16,
+       "meldung": "LaTeX Error: \\begin{aufgabe} on input line 19 ended by \\end{do",
+       "baustein": "(Rahmen)",
+       "zeilentext": "\\end{document}",
+       "id": null,
+       "bankdatei": null,
+       "zuordnung": "unsicher (0.33)"
+      }
+     ],
+     "fehlende_zeichen": {
+      "≈ (U+2248)": 4
+     },
+     "ueberbreit": 1,
+     "mathblatt_warnungen": 2
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 3,
+     "zeichen": 4044,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   },
+   "schwach": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 1,
+       "zeit": false,
+       "fehlerzeilen": 40,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 1,
+       "zeit": false,
+       "fehlerzeilen": 40,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": false,
+     "pdf": true,
+     "seiten": 16,
+     "zeichen": 8233,
+     "fehlerstellen": 13,
+     "fehlerzeilen_log": 40,
+     "fehler": [
+      {
+       "datei": "e1_a.tex",
+       "zeile": 30,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\dreieck",
+       "zeilentext": "\\swz{Wie lang ist die mit ? markierte Seite?}{\\dreieck{(0,0)}{(5,0)}{(1.4,2.24)}{$45$ cm}{$28$ cm}{?}{}{}{$90^\\circ$}}",
+       "id": "pythagoras-e1-k2-s2-v1",
+       "bankdatei": "bank/pythagoras/e1.jsonl:14",
+       "zuordnung": "ähnlich (0.96)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 32,
+       "meldung": "LaTeX Error: Something's wrong--perhaps a missing \\item.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{Katheten $a = 4$ cm, $b = 9$ cm – Hypotenuse $c$ auf eine Dezimale?}{}",
+       "id": "pythagoras-e1-k2-s3-v1",
+       "bankdatei": "bank/pythagoras/e1.jsonl:17",
+       "zuordnung": "ähnlich (0.97)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 34,
+       "meldung": "LaTeX Error: Something's wrong--perhaps a missing \\item.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{Katheten $a = 2{,}5$ m, $b = 6$ m – Hypotenuse $c$?}{}",
+       "id": "pythagoras-e1-k2-s4-v1",
+       "bankdatei": "bank/pythagoras/e1.jsonl:20",
+       "zuordnung": "ähnlich (0.96)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 36,
+       "meldung": "LaTeX Error: Something's wrong--perhaps a missing \\item.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{Katheten $a = 1{,}2$ m, $b = 50$ cm – Hypotenuse $c$ in cm?}{}",
+       "id": "pythagoras-e1-k2-s5-v1",
+       "bankdatei": "bank/pythagoras/e1.jsonl:23",
+       "zuordnung": "ähnlich (0.96)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 37,
+       "meldung": "LaTeX Error: Something's wrong--perhaps a missing \\item.",
+       "baustein": "\\dreieckrw",
+       "zeilentext": "\\swz{Gleichung nach dem Satz des Pythagoras?}{\\dreieckrw{5}{3.57}{$m$}{$n$}{$k$}}",
+       "id": "pythagoras-e1-k2-s6-v1",
+       "bankdatei": "bank/pythagoras/e1.jsonl:26",
+       "zuordnung": "ähnlich (0.96)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 39,
+       "meldung": "LaTeX Error: Something's wrong--perhaps a missing \\item.",
+       "baustein": "\\teil",
+       "zeilentext": "\\teil Welche Aussage gilt im rechtwinkligen Dreieck? \\\\ \\kreuz{Die Hypotenuse ist die kürzeste Seite.} \\\\ \\kreuz{Das Quadrat über der Hypotenuse ist so groß wie",
+       "id": "pythagoras-e1-k2-s7-v1",
+       "bankdatei": "bank/pythagoras/e1.jsonl:29",
+       "zuordnung": "ähnlich (1.00)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 40,
+       "meldung": "LaTeX Error: Something's wrong--perhaps a missing \\item.",
+       "baustein": "\\teil",
+       "zeilentext": "\\end{teile}",
+       "id": "pythagoras-e1-k2-s7-v1",
+       "bankdatei": "bank/pythagoras/e1.jsonl:29",
+       "zuordnung": "ähnlich (1.00)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 50,
+       "meldung": "Extra }, or forgotten \\endgroup.",
+       "baustein": "\\dreieckrw",
+       "zeilentext": "\\end{aufgabe}",
+       "id": "pythagoras-e1-k2-s13-v1",
+       "bankdatei": "bank/pythagoras/e1.jsonl:46",
+       "zuordnung": "ähnlich (0.99)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 56,
+       "meldung": "LaTeX Error: Something's wrong--perhaps a missing \\item.",
+       "baustein": "\\begin{ksys}",
+       "zeilentext": "\\end{aufgabe}",
+       "id": "pythagoras-e1-k3-s1-v1",
+       "bankdatei": "bank/pythagoras/e1.jsonl:48",
+       "zuordnung": "ähnlich (0.98)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 63,
+       "meldung": "LaTeX Error: Something's wrong--perhaps a missing \\item.",
+       "baustein": "\\swz",
+       "zeilentext": "\\end{aufgabe}",
+       "id": "pythagoras-e1-k4-s1-v1",
+       "bankdatei": "bank/pythagoras/e1.jsonl:51",
+       "zuordnung": "ähnlich (0.97)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 72,
+       "meldung": "LaTeX Error: Something's wrong--perhaps a missing \\item.",
+       "baustein": "\\swa",
+       "zeilentext": "\\end{aufgabe}",
+       "id": "pythagoras-e1-k5-s4-v1",
+       "bankdatei": "bank/pythagoras/e1.jsonl:63",
+       "zuordnung": "ähnlich (0.99)"
+      },
+      {
+       "datei": "gesamt.tex",
+       "zeile": 11,
+       "meldung": "Improper \\prevdepth.",
+       "baustein": "(Rahmen)",
+       "zeilentext": "\\clearpage",
+       "id": null,
+       "bankdatei": null,
+       "zuordnung": "leer"
+      },
+      {
+       "datei": "gesamt.tex",
+       "zeile": 16,
+       "meldung": "LaTeX Error: \\begin{aufgabe} on input line 17 ended by \\end{do",
+       "baustein": "(Rahmen)",
+       "zeilentext": "\\end{document}",
+       "id": null,
+       "bankdatei": null,
+       "zuordnung": "unsicher (0.33)"
+      }
+     ],
+     "fehlende_zeichen": {
+      "≈ (U+2248)": 1,
+      "≠ (U+2260)": 1
+     },
+     "ueberbreit": 2,
+     "mathblatt_warnungen": 2
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 3,
+     "zeichen": 4447,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "quadratische-funktionen": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 1,
+       "zeit": false,
+       "fehlerzeilen": 8,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 1,
+       "zeit": false,
+       "fehlerzeilen": 8,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": false,
+     "pdf": true,
+     "seiten": 15,
+     "zeichen": 7865,
+     "fehlerstellen": 4,
+     "fehlerzeilen_log": 8,
+     "fehler": [
+      {
+       "datei": "e1_a.tex",
+       "zeile": 30,
+       "meldung": "LaTeX Error: There's no line here to end.",
+       "baustein": "\\wertetabelle",
+       "zeilentext": "\\teil Welche Tabelle gehört zu $f(x) = 0{,}5x^2$? \\\\ A: \\wertetabelle[2,0{,}5,0,0{,}5,2]{x}{y}{-2,-1,0,1,2} \\\\ B: \\wertetabelle[1,0{,}25,0,0{,}25,1]{x}{y}{-2,-1",
+       "id": "quadratische-funktionen-e1-k1-s7-v1",
+       "bankdatei": "bank/quadratische-funktionen/e1.jsonl:25",
+       "zuordnung": "ähnlich (0.99)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 40,
+       "meldung": "LaTeX Error: There's no line here to end.",
+       "baustein": "\\wertetabelle",
+       "zeilentext": "\\teil Welche Wertetabelle gehört zu $y = 4x^2$? \\\\ A: \\wertetabelle[-8,-4,0,4,8]{x}{y}{-2,-1,0,1,2} \\\\ B: \\wertetabelle[16,4,0,4,16]{x}{y}{-2,-1,0,1,2} \\\\ C: \\w",
+       "id": "quadratische-funktionen-e1-k1-s10-v1",
+       "bankdatei": "bank/quadratische-funktionen/e1.jsonl:34",
+       "zuordnung": "ähnlich (0.99)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 53,
+       "meldung": "LaTeX Error: There's no line here to end.",
+       "baustein": "\\wertetabelle",
+       "zeilentext": "\\teil Mia füllt die Tabelle zu $f(x) = x^2$ so aus: \\\\ \\wertetabelle[-16,-4,0,4,16]{x}{f(x)}{-4,-2,0,2,4} \\\\ Finde den Fehler und korrigiere.",
+       "id": "quadratische-funktionen-e1-k2-s1-v1",
+       "bankdatei": "bank/quadratische-funktionen/e1.jsonl:38",
+       "zuordnung": "ähnlich (0.98)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 55,
+       "meldung": "LaTeX Error: There's no line here to end.",
+       "baustein": "\\wertetabelle",
+       "zeilentext": "\\teil Die Tabelle gehört zu $f(x) = a \\cdot x^2$. \\\\ \\wertetabelle[7,28,63]{x}{f(x)}{1,2,3} \\\\ Wie heißt $a$? a = \\leerfeld",
+       "id": "quadratische-funktionen-e1-k2-s3-v1",
+       "bankdatei": "bank/quadratische-funktionen/e1.jsonl:44",
+       "zuordnung": "ähnlich (0.97)"
+      }
+     ],
+     "fehlende_zeichen": {},
+     "ueberbreit": 16,
+     "mathblatt_warnungen": 4
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 4011,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   },
+   "schwach": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 1,
+       "zeit": false,
+       "fehlerzeilen": 8,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 1,
+       "zeit": false,
+       "fehlerzeilen": 8,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": false,
+     "pdf": true,
+     "seiten": 17,
+     "zeichen": 8950,
+     "fehlerstellen": 4,
+     "fehlerzeilen_log": 8,
+     "fehler": [
+      {
+       "datei": "e1_a.tex",
+       "zeile": 44,
+       "meldung": "LaTeX Error: There's no line here to end.",
+       "baustein": "\\wertetabelle",
+       "zeilentext": "\\teil Welche Tabelle gehört zu $f(x) = 0{,}5x^2$? \\\\ A: \\wertetabelle[2,0{,}5,0,0{,}5,2]{x}{y}{-2,-1,0,1,2} \\\\ B: \\wertetabelle[1,0{,}25,0,0{,}25,1]{x}{y}{-2,-1",
+       "id": "quadratische-funktionen-e1-k1-s7-v1",
+       "bankdatei": "bank/quadratische-funktionen/e1.jsonl:25",
+       "zuordnung": "ähnlich (0.99)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 52,
+       "meldung": "LaTeX Error: There's no line here to end.",
+       "baustein": "\\wertetabelle",
+       "zeilentext": "\\teil Welche Wertetabelle gehört zu $y = 4x^2$? \\\\ A: \\wertetabelle[-8,-4,0,4,8]{x}{y}{-2,-1,0,1,2} \\\\ B: \\wertetabelle[16,4,0,4,16]{x}{y}{-2,-1,0,1,2} \\\\ C: \\w",
+       "id": "quadratische-funktionen-e1-k1-s10-v1",
+       "bankdatei": "bank/quadratische-funktionen/e1.jsonl:34",
+       "zuordnung": "ähnlich (0.99)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 62,
+       "meldung": "LaTeX Error: There's no line here to end.",
+       "baustein": "\\wertetabelle",
+       "zeilentext": "\\swz[3]{Mia füllt die Tabelle zu $f(x) = x^2$ so aus: \\\\ \\wertetabelle[-16,-4,0,4,16]{x}{f(x)}{-4,-2,0,2,4} \\\\ Finde den Fehler und korrigiere.}{}",
+       "id": "quadratische-funktionen-e1-k2-s1-v1",
+       "bankdatei": "bank/quadratische-funktionen/e1.jsonl:38",
+       "zuordnung": "ähnlich (0.98)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 64,
+       "meldung": "LaTeX Error: There's no line here to end.",
+       "baustein": "\\wertetabelle",
+       "zeilentext": "\\swz{Die Tabelle gehört zu $f(x) = a \\cdot x^2$. \\\\ \\wertetabelle[7,28,63]{x}{f(x)}{1,2,3} \\\\ Wie heißt $a$?}{}",
+       "id": "quadratische-funktionen-e1-k2-s3-v1",
+       "bankdatei": "bank/quadratische-funktionen/e1.jsonl:44",
+       "zuordnung": "ähnlich (0.97)"
+      }
+     ],
+     "fehlende_zeichen": {
+      "₁ (U+2081)": 4,
+      "₂ (U+2082)": 4
+     },
+     "ueberbreit": 34,
+     "mathblatt_warnungen": 4
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 4383,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "quadratische-gleichungen": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 1,
+       "zeit": false,
+       "fehlerzeilen": 1035,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 1,
+       "zeit": false,
+       "fehlerzeilen": 1035,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": false,
+     "pdf": true,
+     "seiten": 10,
+     "zeichen": 6915,
+     "fehlerstellen": 23,
+     "fehlerzeilen_log": 1035,
+     "fehler": [
+      {
+       "datei": "e1_a.tex",
+       "zeile": 23,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\gl",
+       "zeilentext": "\\gl{\\text{x^2 = 81}} &",
+       "id": "quadratische-gleichungen-e1-k2-s1-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e1.jsonl:9",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 29,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\gl",
+       "zeilentext": "\\gl{\\text{x^2 = 13}} &",
+       "id": "quadratische-gleichungen-e1-k2-s3-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e1.jsonl:17",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 35,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\gl",
+       "zeilentext": "\\gl{\\text{3x^2 = 75}} &",
+       "id": "quadratische-gleichungen-e1-k2-s5-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e1.jsonl:23",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 41,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\gl",
+       "zeilentext": "\\gl{\\text{2x^2 + 5 = 37}} &",
+       "id": "quadratische-gleichungen-e1-k2-s7-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e1.jsonl:29",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 42,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\gl",
+       "zeilentext": "\\gl{\\text{(x - 6)^2 = 16}} \\\\",
+       "id": "quadratische-gleichungen-e1-k2-s8-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e1.jsonl:32",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 43,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\gl",
+       "zeilentext": "\\gl{\\text{(x + 10)^2 = 25}} &",
+       "id": "quadratische-gleichungen-e1-k2-s9-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e1.jsonl:35",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 44,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\gl",
+       "zeilentext": "\\gl{\\text{(x - 9)^2 = 0}} \\\\",
+       "id": "quadratische-gleichungen-e1-k2-s10-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e1.jsonl:38",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e2_a.tex",
+       "zeile": 15,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\gl",
+       "zeilentext": "\\gl{\\text{(x - 2) \\cdot (x - 5) = 0}} &",
+       "id": "quadratische-gleichungen-e2-k1-s1-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e2.jsonl:5",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e2_a.tex",
+       "zeile": 16,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\gl",
+       "zeilentext": "\\gl{\\text{(x + 4) \\cdot (x - 1) = 0}} \\\\",
+       "id": "quadratische-gleichungen-e2-k1-s2-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e2.jsonl:10",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e2_a.tex",
+       "zeile": 17,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\gl",
+       "zeilentext": "\\gl{\\text{x \\cdot (x + 6) = 0}} &",
+       "id": "quadratische-gleichungen-e2-k1-s3-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e2.jsonl:13",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e2_a.tex",
+       "zeile": 18,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\gl",
+       "zeilentext": "\\gl{\\text{(x - 7) \\cdot (x - 7) = 0}} \\\\",
+       "id": "quadratische-gleichungen-e2-k1-s4-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e2.jsonl:16",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e2_a.tex",
+       "zeile": 24,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\gl",
+       "zeilentext": "\\gl{\\text{x^2 + 9x = 0}} &",
+       "id": "quadratische-gleichungen-e2-k1-s6-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e2.jsonl:22",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e2_a.tex",
+       "zeile": 25,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\gl",
+       "zeilentext": "\\gl{\\text{x^2 - 3x = 0}} \\\\",
+       "id": "quadratische-gleichungen-e2-k1-s7-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e2.jsonl:25",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e2_a.tex",
+       "zeile": 26,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\gl",
+       "zeilentext": "\\gl{\\text{2x^2 - 6x = 0}} &",
+       "id": "quadratische-gleichungen-e2-k1-s8-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e2.jsonl:28",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e3_a.tex",
+       "zeile": 31,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\gl",
+       "zeilentext": "\\gl{\\text{x^2 + 6x + 8 = 0}} &",
+       "id": "quadratische-gleichungen-e3-k3-s1-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e3.jsonl:13",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e3_a.tex",
+       "zeile": 32,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\gl",
+       "zeilentext": "\\gl{\\text{x^2 - 4x - 12 = 0}} \\\\",
+       "id": "quadratische-gleichungen-e3-k3-s2-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e3.jsonl:18",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e3_a.tex",
+       "zeile": 33,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\gl",
+       "zeilentext": "\\gl{\\text{x^2 + 5 = 6x}} &",
+       "id": "quadratische-gleichungen-e3-k3-s3-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e3.jsonl:21",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e3_a.tex",
+       "zeile": 34,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\gl",
+       "zeilentext": "\\gl{\\text{5x^2 - 20x + 15 = 0}} \\\\",
+       "id": "quadratische-gleichungen-e3-k3-s4-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e3.jsonl:24",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e3_a.tex",
+       "zeile": 35,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\gl",
+       "zeilentext": "\\gl{\\text{x^2 - 3x + 2 = 0}} &",
+       "id": "quadratische-gleichungen-e3-k3-s5-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e3.jsonl:27",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e3_a.tex",
+       "zeile": 36,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\gl",
+       "zeilentext": "\\gl{\\text{x^2 - 10x + 25 = 0}} \\\\",
+       "id": "quadratische-gleichungen-e3-k3-s6-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e3.jsonl:30",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e3_a.tex",
+       "zeile": 37,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\gl",
+       "zeilentext": "\\gl{\\text{x^2 + 2x + 5 = 0}} &",
+       "id": "quadratische-gleichungen-e3-k3-s7-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e3.jsonl:33",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e3_a.tex",
+       "zeile": 43,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\gl",
+       "zeilentext": "\\gl{\\text{x^2 - 6x + 4 = 0}} &",
+       "id": "quadratische-gleichungen-e3-k3-s9-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e3.jsonl:39",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e3_a.tex",
+       "zeile": 49,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\gl",
+       "zeilentext": "\\gl{\\text{(x + 2)^2 = 5x + 10}} &",
+       "id": "quadratische-gleichungen-e3-k3-s11-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e3.jsonl:45",
+       "zuordnung": "ähnlich (0.95)"
+      }
+     ],
+     "fehlende_zeichen": {
+      "≈ (U+2248)": 2
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 1
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 3523,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   },
+   "schwach": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 1,
+       "zeit": false,
+       "fehlerzeilen": 1575,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 1,
+       "zeit": false,
+       "fehlerzeilen": 1575,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": false,
+     "pdf": true,
+     "seiten": 17,
+     "zeichen": 7533,
+     "fehlerstellen": 35,
+     "fehlerzeilen_log": 1575,
+     "fehler": [
+      {
+       "datei": "e1_a.tex",
+       "zeile": 22,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{$\\text{x^2 = 81}$}{}",
+       "id": "quadratische-gleichungen-e1-k2-s1-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e1.jsonl:9",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 24,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{$\\text{x^2 = 25}$}{}",
+       "id": "quadratische-gleichungen-e1-k2-s1-v2",
+       "bankdatei": "bank/quadratische-gleichungen/e1.jsonl:10",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 26,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{$\\text{x^2 = 100}$}{}",
+       "id": "quadratische-gleichungen-e1-k2-s1-v3",
+       "bankdatei": "bank/quadratische-gleichungen/e1.jsonl:11",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 28,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{$\\text{x^2 = 169}$}{}",
+       "id": "quadratische-gleichungen-e1-k2-s1-v4",
+       "bankdatei": "bank/quadratische-gleichungen/e1.jsonl:12",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 30,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{$\\text{x^2 = 196}$}{}",
+       "id": "quadratische-gleichungen-e1-k2-s1-v5",
+       "bankdatei": "bank/quadratische-gleichungen/e1.jsonl:13",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 35,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{$\\text{x^2 = 13}$}{}",
+       "id": "quadratische-gleichungen-e1-k2-s3-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e1.jsonl:17",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 39,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{$\\text{3x^2 = 75}$}{}",
+       "id": "quadratische-gleichungen-e1-k2-s5-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e1.jsonl:23",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 43,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{$\\text{2x^2 + 5 = 37}$}{}",
+       "id": "quadratische-gleichungen-e1-k2-s7-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e1.jsonl:29",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 45,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{$\\text{(x - 6)^2 = 16}$}{}",
+       "id": "quadratische-gleichungen-e1-k2-s8-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e1.jsonl:32",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 47,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{$\\text{(x + 10)^2 = 25}$}{}",
+       "id": "quadratische-gleichungen-e1-k2-s9-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e1.jsonl:35",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 49,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{$\\text{(x - 9)^2 = 0}$}{}",
+       "id": "quadratische-gleichungen-e1-k2-s10-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e1.jsonl:38",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e2_a.tex",
+       "zeile": 14,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{$\\text{(x - 2) \\cdot (x - 5) = 0}$}{}",
+       "id": "quadratische-gleichungen-e2-k1-s1-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e2.jsonl:5",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e2_a.tex",
+       "zeile": 16,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{$\\text{(x - 1) \\cdot (x - 7) = 0}$}{}",
+       "id": "quadratische-gleichungen-e2-k1-s1-v2",
+       "bankdatei": "bank/quadratische-gleichungen/e2.jsonl:6",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e2_a.tex",
+       "zeile": 18,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{$\\text{(x - 3) \\cdot (x - 10) = 0}$}{}",
+       "id": "quadratische-gleichungen-e2-k1-s1-v3",
+       "bankdatei": "bank/quadratische-gleichungen/e2.jsonl:7",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e2_a.tex",
+       "zeile": 20,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{$\\text{(x - 6) \\cdot (x - 4) = 0}$}{}",
+       "id": "quadratische-gleichungen-e2-k1-s1-v4",
+       "bankdatei": "bank/quadratische-gleichungen/e2.jsonl:8",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e2_a.tex",
+       "zeile": 22,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{$\\text{(x - 8) \\cdot (x - 3) = 0}$}{}",
+       "id": "quadratische-gleichungen-e2-k1-s1-v5",
+       "bankdatei": "bank/quadratische-gleichungen/e2.jsonl:9",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e2_a.tex",
+       "zeile": 25,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{$\\text{(x + 4) \\cdot (x - 1) = 0}$}{}",
+       "id": "quadratische-gleichungen-e2-k1-s2-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e2.jsonl:10",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e2_a.tex",
+       "zeile": 27,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{$\\text{x \\cdot (x + 6) = 0}$}{}",
+       "id": "quadratische-gleichungen-e2-k1-s3-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e2.jsonl:13",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e2_a.tex",
+       "zeile": 29,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{$\\text{(x - 7) \\cdot (x - 7) = 0}$}{}",
+       "id": "quadratische-gleichungen-e2-k1-s4-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e2.jsonl:16",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e2_a.tex",
+       "zeile": 33,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{$\\text{x^2 + 9x = 0}$}{}",
+       "id": "quadratische-gleichungen-e2-k1-s6-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e2.jsonl:22",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e2_a.tex",
+       "zeile": 35,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{$\\text{x^2 - 3x = 0}$}{}",
+       "id": "quadratische-gleichungen-e2-k1-s7-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e2.jsonl:25",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e2_a.tex",
+       "zeile": 37,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{$\\text{2x^2 - 6x = 0}$}{}",
+       "id": "quadratische-gleichungen-e2-k1-s8-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e2.jsonl:28",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e3_a.tex",
+       "zeile": 30,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{$\\text{x^2 + 6x + 8 = 0}$}{}",
+       "id": "quadratische-gleichungen-e3-k3-s1-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e3.jsonl:13",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e3_a.tex",
+       "zeile": 32,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{$\\text{x^2 + 10x + 16 = 0}$}{}",
+       "id": "quadratische-gleichungen-e3-k3-s1-v2",
+       "bankdatei": "bank/quadratische-gleichungen/e3.jsonl:14",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e3_a.tex",
+       "zeile": 34,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{$\\text{x^2 + 12x + 20 = 0}$}{}",
+       "id": "quadratische-gleichungen-e3-k3-s1-v3",
+       "bankdatei": "bank/quadratische-gleichungen/e3.jsonl:15",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e3_a.tex",
+       "zeile": 36,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{$\\text{x^2 + 14x + 24 = 0}$}{}",
+       "id": "quadratische-gleichungen-e3-k3-s1-v4",
+       "bankdatei": "bank/quadratische-gleichungen/e3.jsonl:16",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e3_a.tex",
+       "zeile": 38,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{$\\text{x^2 + 10x + 21 = 0}$}{}",
+       "id": "quadratische-gleichungen-e3-k3-s1-v5",
+       "bankdatei": "bank/quadratische-gleichungen/e3.jsonl:17",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e3_a.tex",
+       "zeile": 41,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{$\\text{x^2 - 4x - 12 = 0}$}{}",
+       "id": "quadratische-gleichungen-e3-k3-s2-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e3.jsonl:18",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e3_a.tex",
+       "zeile": 43,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{$\\text{x^2 + 5 = 6x}$}{}",
+       "id": "quadratische-gleichungen-e3-k3-s3-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e3.jsonl:21",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e3_a.tex",
+       "zeile": 45,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{$\\text{5x^2 - 20x + 15 = 0}$}{}",
+       "id": "quadratische-gleichungen-e3-k3-s4-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e3.jsonl:24",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e3_a.tex",
+       "zeile": 47,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{$\\text{x^2 - 3x + 2 = 0}$}{}",
+       "id": "quadratische-gleichungen-e3-k3-s5-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e3.jsonl:27",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e3_a.tex",
+       "zeile": 49,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{$\\text{x^2 - 10x + 25 = 0}$}{}",
+       "id": "quadratische-gleichungen-e3-k3-s6-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e3.jsonl:30",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e3_a.tex",
+       "zeile": 51,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{$\\text{x^2 + 2x + 5 = 0}$}{}",
+       "id": "quadratische-gleichungen-e3-k3-s7-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e3.jsonl:33",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e3_a.tex",
+       "zeile": 55,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{$\\text{x^2 - 6x + 4 = 0}$}{}",
+       "id": "quadratische-gleichungen-e3-k3-s9-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e3.jsonl:39",
+       "zuordnung": "ähnlich (0.95)"
+      },
+      {
+       "datei": "e3_a.tex",
+       "zeile": 59,
+       "meldung": "Missing $ inserted.",
+       "baustein": "\\swz",
+       "zeilentext": "\\swz{$\\text{(x + 2)^2 = 5x + 10}$}{}",
+       "id": "quadratische-gleichungen-e3-k3-s11-v1",
+       "bankdatei": "bank/quadratische-gleichungen/e3.jsonl:45",
+       "zuordnung": "ähnlich (0.95)"
+      }
+     ],
+     "fehlende_zeichen": {
+      "≈ (U+2248)": 2,
+      "₁ (U+2081)": 9,
+      "₂ (U+2082)": 9
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 4
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 3957,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "rationale-zahlen": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 7,
+     "zeichen": 6869,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 2262,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   },
+   "schwach": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 17,
+     "zeichen": 7881,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 4
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 2446,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "reelle-zahlen": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 1,
+       "zeit": false,
+       "fehlerzeilen": 10,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 1,
+       "zeit": false,
+       "fehlerzeilen": 10,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": false,
+     "pdf": true,
+     "seiten": 6,
+     "zeichen": 6920,
+     "fehlerstellen": 2,
+     "fehlerzeilen_log": 10,
+     "fehler": [
+      {
+       "datei": "e1_a.tex",
+       "zeile": 23,
+       "meldung": "LaTeX Error: Command \\item invalid in math mode.",
+       "baustein": "\\teil",
+       "zeilentext": "\\teil $\\sqrt{8}$; $2{,}8$; $2\\frac{5}{6}$ – aufsteigend geordnet? \\leerfeld $<$ \\leerfeld $<$ \\leerfeld",
+       "id": "reelle-zahlen-e1-k1-s6-v1",
+       "bankdatei": "bank/reelle-zahlen/e1.jsonl:22",
+       "zuordnung": "ähnlich (0.96)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 30,
+       "meldung": "LaTeX Error: Command \\item invalid in math mode.",
+       "baustein": "\\teil",
+       "zeilentext": "\\teil $\\sqrt{40}$: Ist die Zahl rational oder irrational? Begründe. Gib einen Näherungswert auf zwei Stellen an. Zu welchen Zahlbereichen gehört sie?",
+       "id": "reelle-zahlen-e1-k1-s10-v1",
+       "bankdatei": "bank/reelle-zahlen/e1.jsonl:34",
+       "zuordnung": "ähnlich (0.98)"
+      }
+     ],
+     "fehlende_zeichen": {
+      "ℕ (U+2115)": 3,
+      "ℤ (U+2124)": 3,
+      "ℚ (U+211A)": 3,
+      "ℝ (U+211D)": 3,
+      "⊂ (U+2282)": 6
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 1954,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "ℤ (U+2124)": 1,
+      "ℚ (U+211A)": 1,
+      "ℝ (U+211D)": 2
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   },
+   "schwach": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 1,
+       "zeit": false,
+       "fehlerzeilen": 6,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 1,
+       "zeit": false,
+       "fehlerzeilen": 6,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": false,
+     "pdf": true,
+     "seiten": 14,
+     "zeichen": 8974,
+     "fehlerstellen": 2,
+     "fehlerzeilen_log": 6,
+     "fehler": [
+      {
+       "datei": "e1_a.tex",
+       "zeile": 35,
+       "meldung": "LaTeX Error: Command \\end{list} invalid in math mode.",
+       "baustein": "\\zahlenstrahl",
+       "zeilentext": "\\swa{$\\sqrt{6}$ – markiere die Zahl auf dem Zahlenstrahl. Zwischen welchen Zehnteln liegt sie? \\leerfeld $< \\sqrt{6} $<$$ \\leerfeld}{\\zahlenstrahl[xmin=2,xmax=3",
+       "id": "reelle-zahlen-e1-k1-s5-v1",
+       "bankdatei": "bank/reelle-zahlen/e1.jsonl:19",
+       "zuordnung": "ähnlich (0.97)"
+      },
+      {
+       "datei": "e1_a.tex",
+       "zeile": 42,
+       "meldung": "LaTeX Error: Command \\end{list} invalid in math mode.",
+       "baustein": "\\sachtabelle",
+       "zeilentext": "\\swa{Einschachtelung von $\\sqrt{2}$: Fülle die Tabelle aus. Zwischen welchen Zehnteln liegt $\\sqrt{2}$? \\leerfeld $< \\sqrt{2} $<$$ \\leerfeld}{\\sachtabelle{cc}{$",
+       "id": "reelle-zahlen-e1-k1-s9-v1",
+       "bankdatei": "bank/reelle-zahlen/e1.jsonl:31",
+       "zuordnung": "ähnlich (0.97)"
+      }
+     ],
+     "fehlende_zeichen": {
+      "ℕ (U+2115)": 4,
+      "ℤ (U+2124)": 4,
+      "ℚ (U+211A)": 4,
+      "ℝ (U+211D)": 4,
+      "⊂ (U+2282)": 9,
+      "π (U+03C0)": 1,
+      "≈ (U+2248)": 1,
+      "⁴ (U+2074)": 7,
+      "⁷ (U+2077)": 2,
+      "⁶ (U+2076)": 2,
+      "⁸ (U+2078)": 1,
+      "⁵ (U+2075)": 6
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 3
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 2282,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "ℤ (U+2124)": 1,
+      "ℚ (U+211A)": 1,
+      "ℝ (U+211D)": 2
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "rekonstruktion-von-bestaenden": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 8,
+     "zeichen": 7417,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "∫ (U+222B)": 6
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 3574,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "∫ (U+222B)": 10
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "rekonstruktion-von-funktionsgleichungen": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 9,
+     "zeichen": 10153,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "≈ (U+2248)": 5
+     },
+     "ueberbreit": 1,
+     "mathblatt_warnungen": 1
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 4534,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "rotationsvolumen": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 4,
+     "zeichen": 5061,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "≈ (U+2248)": 1
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 1,
+     "zeichen": 2659,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "scharen-von-geraden-und-ebenen": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 9,
+     "zeichen": 7492,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 1,
+     "mathblatt_warnungen": 1
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 4181,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "schnittmengen": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 8,
+     "zeichen": 8776,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "☐ (U+2610)": 4
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 1
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 4,
+     "zeichen": 5566,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "skalarprodukt-und-winkel": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 6,
+     "zeichen": 8886,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 3398,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "spiegelung": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 5,
+     "zeichen": 6301,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 3126,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "stammfunktion-und-hauptsatz": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 11,
+     "zeichen": 6768,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 2
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 3256,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "strahlensaetze": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 13,
+     "zeichen": 9059,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "≙ (U+2259)": 1
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 3
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 3,
+     "zeichen": 2941,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   },
+   "schwach": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 17,
+     "zeichen": 11138,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "≙ (U+2259)": 2,
+      "′ (U+2032)": 10
+     },
+     "ueberbreit": 2,
+     "mathblatt_warnungen": 4
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 3,
+     "zeichen": 3168,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "symmetrie-abbildungen": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 14,
+     "zeichen": 9142,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 4
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 3021,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   },
+   "schwach": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 19,
+     "zeichen": 10837,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 5,
+     "mathblatt_warnungen": 4
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 3,
+     "zeichen": 3646,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "tangente-normale-schnittwinkel": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 11,
+     "zeichen": 12973,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "⁻ (U+207B)": 2
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 1
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 3,
+     "zeichen": 7650,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "terme": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 8,
+     "zeichen": 5021,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 1,
+     "mathblatt_warnungen": 0
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 1779,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   },
+   "schwach": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 16,
+     "zeichen": 6004,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 10,
+     "mathblatt_warnungen": 5
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 1929,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "trigonometrie": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 12,
+     "zeichen": 12744,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "α (U+03B1)": 2,
+      "β (U+03B2)": 6,
+      "γ (U+03B3)": 2,
+      "ε (U+03B5)": 2,
+      "≈ (U+2248)": 30,
+      "⁻ (U+207B)": 2
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 1
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 4707,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   },
+   "schwach": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 20,
+     "zeichen": 11888,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "α (U+03B1)": 15,
+      "β (U+03B2)": 11,
+      "γ (U+03B3)": 4,
+      "ε (U+03B5)": 2,
+      "≈ (U+2248)": 11,
+      "⁻ (U+207B)": 7
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 4
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 5285,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "trigonometrische-funktionen": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 17,
+     "zeichen": 9225,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "≈ (U+2248)": 2
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 4
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 3,
+     "zeichen": 4755,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "≈ (U+2248)": 20
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   },
+   "schwach": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 18,
+     "zeichen": 11384,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "≈ (U+2248)": 4,
+      "π (U+03C0)": 6,
+      "≙ (U+2259)": 2
+     },
+     "ueberbreit": 10,
+     "mathblatt_warnungen": 4
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 3,
+     "zeichen": 5518,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "≈ (U+2248)": 24
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "umkehrfunktion": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 4,
+     "zeichen": 6131,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "ℝ (U+211D)": 4
+     },
+     "ueberbreit": 1,
+     "mathblatt_warnungen": 0
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 1,
+     "zeichen": 2522,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "ℝ (U+211D)": 1
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "unabhaengigkeit": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 7,
+     "zeichen": 9558,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "∩ (U+2229)": 5
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 3,
+     "zeichen": 4687,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "∩ (U+2229)": 1
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "uneigentliche-integrale": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 4,
+     "zeichen": 2695,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "∫ (U+222B)": 8
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 1,
+     "zeichen": 1758,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "vektoren-und-rechenoperationen": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 11,
+     "zeichen": 5771,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 1
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 3,
+     "zeichen": 2942,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "vierfeldertafel": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 6,
+     "zeichen": 5736,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 1
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 2417,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "wahrscheinlichkeit": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 12,
+     "zeichen": 13164,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "↔ (U+2194)": 4
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 2
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 3,
+     "zeichen": 4017,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   },
+   "schwach": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 18,
+     "zeichen": 12063,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "↔ (U+2194)": 4,
+      "≈ (U+2248)": 4
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 4
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 4,
+     "zeichen": 4504,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "winkel-dreiecke": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 17,
+     "zeichen": 10374,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "α (U+03B1)": 25,
+      "γ (U+03B3)": 19,
+      "β (U+03B2)": 12,
+      "δ (U+03B4)": 5,
+      "₁ (U+2081)": 1
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 4
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 4,
+     "zeichen": 5125,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "α (U+03B1)": 6,
+      "γ (U+03B3)": 4,
+      "β (U+03B2)": 3,
+      "≈ (U+2248)": 5,
+      "↔ (U+2194)": 3
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   },
+   "schwach": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 20,
+     "zeichen": 12866,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "α (U+03B1)": 34,
+      "γ (U+03B3)": 20,
+      "β (U+03B2)": 12,
+      "δ (U+03B4)": 3
+     },
+     "ueberbreit": 1,
+     "mathblatt_warnungen": 5
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 6,
+     "zeichen": 6441,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "α (U+03B1)": 6,
+      "γ (U+03B3)": 4,
+      "β (U+03B2)": 3,
+      "≈ (U+2248)": 5,
+      "↔ (U+2194)": 3
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "zinsrechnung": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 7,
+     "zeichen": 6894,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "≈ (U+2248)": 3
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 1,
+     "zeichen": 2022,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "≈ (U+2248)": 10
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   },
+   "schwach": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 12,
+     "zeichen": 6915,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "≈ (U+2248)": 3,
+      "ⁿ (U+207F)": 1,
+      "⁶ (U+2076)": 1
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 3
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 2361,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "≈ (U+2248)": 10
+     },
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "zufallsexperimente-und-pfadregeln": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 13,
+     "zeichen": 18906,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "↔ (U+2194)": 4,
+      "∩ (U+2229)": 2,
+      "∪ (U+222A)": 2
+     },
+     "ueberbreit": 9,
+     "mathblatt_warnungen": 0
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 4,
+     "zeichen": 6704,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "zufallsgroessen-und-verteilungen": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 8,
+     "zeichen": 5625,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 1
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 1990,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  },
+  "zuordnungen": {
+   "lernblatt": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 16,
+     "zeichen": 10874,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "↔ (U+2194)": 6
+     },
+     "ueberbreit": 1,
+     "mathblatt_warnungen": 1
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 3256,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   },
+   "schwach": {
+    "gesamt.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 24,
+     "zeichen": 12578,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {
+      "↔ (U+2194)": 6
+     },
+     "ueberbreit": 3,
+     "mathblatt_warnungen": 6
+    },
+    "loesungen.tex": {
+     "vorhanden": true,
+     "versuche": [
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": true
+      },
+      {
+       "rc": 0,
+       "zeit": false,
+       "fehlerzeilen": 0,
+       "fatal": false,
+       "rerun": false
+      }
+     ],
+     "kompiliert": true,
+     "pdf": true,
+     "seiten": 2,
+     "zeichen": 3821,
+     "fehlerstellen": 0,
+     "fehlerzeilen_log": 0,
+     "fehler": [],
+     "fehlende_zeichen": {},
+     "ueberbreit": 0,
+     "mathblatt_warnungen": 0
+    }
+   }
+  }
+ }
+}

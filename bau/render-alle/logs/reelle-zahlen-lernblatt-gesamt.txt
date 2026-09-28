@@ -1,0 +1,72 @@
+=== Versuch 1: xelatex gesamt.tex (10 Fehlerzeilen in der .log) ===
+e1_a.tex:23: LaTeX Error: Command \item invalid in math mode.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:23: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:23: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:23: Display math should end with $$.
+    <to be read again>
+                       \protect
+    l.23 \teil $\sqrt
+e1_a.tex:23: Missing $ inserted.
+    <inserted text>
+                    $
+    l.23 \teil $\sqrt{
+e1_a.tex:30: LaTeX Error: Command \item invalid in math mode.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:30: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:30: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:30: Display math should end with $$.
+    <to be read again>
+                       \protect
+    l.30 \teil $\sqrt
+e1_a.tex:30: Missing $ inserted.
+    <inserted text>
+                    $
+    l.30 \teil $\sqrt{
+
+=== Versuch 2: xelatex gesamt.tex (10 Fehlerzeilen in der .log) ===
+e1_a.tex:23: LaTeX Error: Command \item invalid in math mode.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:23: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:23: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:23: Display math should end with $$.
+    <to be read again>
+                       \protect
+    l.23 \teil $\sqrt
+e1_a.tex:23: Missing $ inserted.
+    <inserted text>
+                    $
+    l.23 \teil $\sqrt{
+e1_a.tex:30: LaTeX Error: Command \item invalid in math mode.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:30: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:30: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e1_a.tex:30: Display math should end with $$.
+    <to be read again>
+                       \protect
+    l.30 \teil $\sqrt
+e1_a.tex:30: Missing $ inserted.
+    <inserted text>
+                    $
+    l.30 \teil $\sqrt{
+

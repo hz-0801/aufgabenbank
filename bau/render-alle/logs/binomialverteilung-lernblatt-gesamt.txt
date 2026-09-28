@@ -1,0 +1,376 @@
+=== Versuch 1: xelatex gesamt.tex (55 Fehlerzeilen in der .log) ===
+e5_a.tex:16: Extra }, or forgotten $.
+    \saeulenab code ...l ,inner sep=2pt] {\sabylabel }
+                                                      ; \draw [-{Stealth[length=...
+    l.16 ...)$ in \%]{0/8,1/24,2/33,3/24,4/10,5/2,6/0}
+e5_a.tex:16: Undefined control sequence.
+    \saeulenab code ... sep=2pt] {\sabylabel }; \draw
+                                                      [-{Stealth[length=2mm]}] (...
+    l.16 ...)$ in \%]{0/8,1/24,2/33,3/24,4/10,5/2,6/0}
+e5_a.tex:16: Undefined control sequence.
+    \endtikzpicture ...r@layerlist@globally \endscope
+                                                      \let \pgf@baseline =\pgf@s...
+    l.16 ...)$ in \%]{0/8,1/24,2/33,3/24,4/10,5/2,6/0}
+e5_a.tex:16: Missing $ inserted.
+    <inserted text>
+                    $
+    l.16 ...)$ in \%]{0/8,1/24,2/33,3/24,4/10,5/2,6/0}
+e5_a.tex:16: Missing } inserted.
+    <inserted text>
+                    }
+    l.16 ...)$ in \%]{0/8,1/24,2/33,3/24,4/10,5/2,6/0}
+e5_a.tex:16: Package tikz Error: Giving up on this path. Did you forget a sem
+    icolon?.
+    See the tikz package documentation for explanation.
+e5_a.tex:16: Extra }, or forgotten \endgroup.
+    \endpgfpicture ...globally \endgroup \hss \egroup
+                                                      \pgf@restore@layerlist@fro...
+    l.16 ...)$ in \%]{0/8,1/24,2/33,3/24,4/10,5/2,6/0}
+e5_a.tex:16: Extra }, or forgotten \endgroup.
+    \endpgfpicture ...dpicture \endgroup \hss \egroup
+                                                      \pgfsys@typesetpicturebox ...
+    l.16 ...)$ in \%]{0/8,1/24,2/33,3/24,4/10,5/2,6/0}
+e5_a.tex:16: Missing } inserted.
+    <inserted text>
+                    }
+    l.16 ...)$ in \%]{0/8,1/24,2/33,3/24,4/10,5/2,6/0}
+e5_a.tex:18: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:18: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:19: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:19: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:20: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:20: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:23: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:23: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:25: Extra }, or forgotten $.
+    \saeulenab code ...l ,inner sep=2pt] {\sabylabel }
+                                                      ; \draw [-{Stealth[length=...
+    l.25 ...]{0/3,1/14,2/26,3/28,4/19,5/8,6/2,7/0,8/0}
+e5_a.tex:25: Undefined control sequence.
+    \saeulenab code ... sep=2pt] {\sabylabel }; \draw
+                                                      [-{Stealth[length=2mm]}] (...
+    l.25 ...]{0/3,1/14,2/26,3/28,4/19,5/8,6/2,7/0,8/0}
+e5_a.tex:25: Undefined control sequence.
+    \endtikzpicture ...r@layerlist@globally \endscope
+                                                      \let \pgf@baseline =\pgf@s...
+    l.25 ...]{0/3,1/14,2/26,3/28,4/19,5/8,6/2,7/0,8/0}
+e5_a.tex:25: Missing $ inserted.
+    <inserted text>
+                    $
+    l.25 ...]{0/3,1/14,2/26,3/28,4/19,5/8,6/2,7/0,8/0}
+e5_a.tex:25: Missing } inserted.
+    <inserted text>
+                    }
+    l.25 ...]{0/3,1/14,2/26,3/28,4/19,5/8,6/2,7/0,8/0}
+e5_a.tex:25: Package tikz Error: Giving up on this path. Did you forget a sem
+    icolon?.
+    See the tikz package documentation for explanation.
+e5_a.tex:25: Extra }, or forgotten \endgroup.
+    \endpgfpicture ...globally \endgroup \hss \egroup
+                                                      \pgf@restore@layerlist@fro...
+    l.25 ...]{0/3,1/14,2/26,3/28,4/19,5/8,6/2,7/0,8/0}
+e5_a.tex:25: Extra }, or forgotten \endgroup.
+    \endpgfpicture ...dpicture \endgroup \hss \egroup
+                                                      \pgfsys@typesetpicturebox ...
+    l.25 ...]{0/3,1/14,2/26,3/28,4/19,5/8,6/2,7/0,8/0}
+e5_a.tex:25: Missing } inserted.
+    <inserted text>
+                    }
+    l.25 ...]{0/3,1/14,2/26,3/28,4/19,5/8,6/2,7/0,8/0}
+e5_a.tex:27: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:27: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:31: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:31: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:32: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:32: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:33: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:33: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:33: LaTeX Error: \begin{tikzpicture} on input line 25 ended by \end{
+    list}.
+    See the LaTeX manual or LaTeX Companion for explanation.
+e5_a.tex:33: LaTeX Error: \begin{tikzpicture} on input line 25 ended by \end{
+    teile}.
+    See the LaTeX manual or LaTeX Companion for explanation.
+e5_a.tex:34: Missing } inserted.
+    <inserted text>
+                    }
+    l.34 \end{aufgabe}
+e5_a.tex:34: Extra }, or forgotten \endgroup.
+    \endminipage ...pagefalse \color@endgroup \egroup
+                                                      \expandafter \@iiiparbox \...
+    l.34 \end{aufgabe}
+e5_a.tex:34: LaTeX Error: \begin{tikzpicture} on input line 25 ended by \end{
+    minipage}.
+    See the LaTeX manual or LaTeX Companion for explanation.
+e5_a.tex:34: LaTeX Error: \begin{tikzpicture} on input line 16 ended by \end{
+    lrbox}.
+    See the LaTeX manual or LaTeX Companion for explanation.
+e5_a.tex:34: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:34: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:34: LaTeX Error: \begin{tikzpicture} on input line 16 ended by \end{
+    aufgabe}.
+    See the LaTeX manual or LaTeX Companion for explanation.
+e5_a.tex:42: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:42: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:55: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:55: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+abhaken.tex:4: Improper \prevdepth.
+    \newpage ...everypar {}\fi \par \ifdim \prevdepth
+                                                      >\z@ \vskip -\ifdim \prevd...
+    l.4 \ifdefined
+abhaken.tex:4: Missing \endgroup inserted.
+    <inserted text>
+                    \endgroup
+    l.4 \ifdefined
+abhaken.tex:4: Missing } inserted.
+    <inserted text>
+                    }
+    l.4 \ifdefined
+abhaken.tex:36: LaTeX Error: \begin{tikzpicture} on input line 16 ended by \e
+    nd{abhakseite}.
+    See the LaTeX manual or LaTeX Companion for explanation.
+gesamt.tex:19: LaTeX Error: \begin{tikzpicture} on input line 16 ended by \en
+    d{document}.
+    See the LaTeX manual or LaTeX Companion for explanation.
+gesamt.tex:19: You can't use `\end' in internal vertical mode.
+    \enddocument ...cument/end}\deadcycles \z@ \@@end
+    l.19 \end{document}
+gesamt.tex:19: LaTeX Error: \begin{tikzpicture} on input line 16 ended by \en
+    d{document}.
+    See the LaTeX manual or LaTeX Companion for explanation.
+(ohne Datei):0: Emergency stop.
+    <*> gesamt.tex
+    *** (job aborted, no legal \end found)
+
+=== Versuch 2: xelatex gesamt.tex (55 Fehlerzeilen in der .log) ===
+e5_a.tex:16: Extra }, or forgotten $.
+    \saeulenab code ...l ,inner sep=2pt] {\sabylabel }
+                                                      ; \draw [-{Stealth[length=...
+    l.16 ...)$ in \%]{0/8,1/24,2/33,3/24,4/10,5/2,6/0}
+e5_a.tex:16: Undefined control sequence.
+    \saeulenab code ... sep=2pt] {\sabylabel }; \draw
+                                                      [-{Stealth[length=2mm]}] (...
+    l.16 ...)$ in \%]{0/8,1/24,2/33,3/24,4/10,5/2,6/0}
+e5_a.tex:16: Undefined control sequence.
+    \endtikzpicture ...r@layerlist@globally \endscope
+                                                      \let \pgf@baseline =\pgf@s...
+    l.16 ...)$ in \%]{0/8,1/24,2/33,3/24,4/10,5/2,6/0}
+e5_a.tex:16: Missing $ inserted.
+    <inserted text>
+                    $
+    l.16 ...)$ in \%]{0/8,1/24,2/33,3/24,4/10,5/2,6/0}
+e5_a.tex:16: Missing } inserted.
+    <inserted text>
+                    }
+    l.16 ...)$ in \%]{0/8,1/24,2/33,3/24,4/10,5/2,6/0}
+e5_a.tex:16: Package tikz Error: Giving up on this path. Did you forget a sem
+    icolon?.
+    See the tikz package documentation for explanation.
+e5_a.tex:16: Extra }, or forgotten \endgroup.
+    \endpgfpicture ...globally \endgroup \hss \egroup
+                                                      \pgf@restore@layerlist@fro...
+    l.16 ...)$ in \%]{0/8,1/24,2/33,3/24,4/10,5/2,6/0}
+e5_a.tex:16: Extra }, or forgotten \endgroup.
+    \endpgfpicture ...dpicture \endgroup \hss \egroup
+                                                      \pgfsys@typesetpicturebox ...
+    l.16 ...)$ in \%]{0/8,1/24,2/33,3/24,4/10,5/2,6/0}
+e5_a.tex:16: Missing } inserted.
+    <inserted text>
+                    }
+    l.16 ...)$ in \%]{0/8,1/24,2/33,3/24,4/10,5/2,6/0}
+e5_a.tex:18: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:18: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:19: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:19: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:20: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:20: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:23: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:23: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:25: Extra }, or forgotten $.
+    \saeulenab code ...l ,inner sep=2pt] {\sabylabel }
+                                                      ; \draw [-{Stealth[length=...
+    l.25 ...]{0/3,1/14,2/26,3/28,4/19,5/8,6/2,7/0,8/0}
+e5_a.tex:25: Undefined control sequence.
+    \saeulenab code ... sep=2pt] {\sabylabel }; \draw
+                                                      [-{Stealth[length=2mm]}] (...
+    l.25 ...]{0/3,1/14,2/26,3/28,4/19,5/8,6/2,7/0,8/0}
+e5_a.tex:25: Undefined control sequence.
+    \endtikzpicture ...r@layerlist@globally \endscope
+                                                      \let \pgf@baseline =\pgf@s...
+    l.25 ...]{0/3,1/14,2/26,3/28,4/19,5/8,6/2,7/0,8/0}
+e5_a.tex:25: Missing $ inserted.
+    <inserted text>
+                    $
+    l.25 ...]{0/3,1/14,2/26,3/28,4/19,5/8,6/2,7/0,8/0}
+e5_a.tex:25: Missing } inserted.
+    <inserted text>
+                    }
+    l.25 ...]{0/3,1/14,2/26,3/28,4/19,5/8,6/2,7/0,8/0}
+e5_a.tex:25: Package tikz Error: Giving up on this path. Did you forget a sem
+    icolon?.
+    See the tikz package documentation for explanation.
+e5_a.tex:25: Extra }, or forgotten \endgroup.
+    \endpgfpicture ...globally \endgroup \hss \egroup
+                                                      \pgf@restore@layerlist@fro...
+    l.25 ...]{0/3,1/14,2/26,3/28,4/19,5/8,6/2,7/0,8/0}
+e5_a.tex:25: Extra }, or forgotten \endgroup.
+    \endpgfpicture ...dpicture \endgroup \hss \egroup
+                                                      \pgfsys@typesetpicturebox ...
+    l.25 ...]{0/3,1/14,2/26,3/28,4/19,5/8,6/2,7/0,8/0}
+e5_a.tex:25: Missing } inserted.
+    <inserted text>
+                    }
+    l.25 ...]{0/3,1/14,2/26,3/28,4/19,5/8,6/2,7/0,8/0}
+e5_a.tex:27: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:27: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:31: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:31: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:32: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:32: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:33: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:33: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:33: LaTeX Error: \begin{tikzpicture} on input line 25 ended by \end{
+    list}.
+    See the LaTeX manual or LaTeX Companion for explanation.
+e5_a.tex:33: LaTeX Error: \begin{tikzpicture} on input line 25 ended by \end{
+    teile}.
+    See the LaTeX manual or LaTeX Companion for explanation.
+e5_a.tex:34: Missing } inserted.
+    <inserted text>
+                    }
+    l.34 \end{aufgabe}
+e5_a.tex:34: Extra }, or forgotten \endgroup.
+    \endminipage ...pagefalse \color@endgroup \egroup
+                                                      \expandafter \@iiiparbox \...
+    l.34 \end{aufgabe}
+e5_a.tex:34: LaTeX Error: \begin{tikzpicture} on input line 25 ended by \end{
+    minipage}.
+    See the LaTeX manual or LaTeX Companion for explanation.
+e5_a.tex:34: LaTeX Error: \begin{tikzpicture} on input line 16 ended by \end{
+    lrbox}.
+    See the LaTeX manual or LaTeX Companion for explanation.
+e5_a.tex:34: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:34: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:34: LaTeX Error: \begin{tikzpicture} on input line 16 ended by \end{
+    aufgabe}.
+    See the LaTeX manual or LaTeX Companion for explanation.
+e5_a.tex:42: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:42: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:55: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+e5_a.tex:55: LaTeX Error: Something's wrong--perhaps a missing \item.
+    See the LaTeX manual or LaTeX Companion for explanation.
+    Type  H <return>  for immediate help.
+abhaken.tex:4: Improper \prevdepth.
+    \newpage ...everypar {}\fi \par \ifdim \prevdepth
+                                                      >\z@ \vskip -\ifdim \prevd...
+    l.4 \ifdefined
+abhaken.tex:4: Missing \endgroup inserted.
+    <inserted text>
+                    \endgroup
+    l.4 \ifdefined
+abhaken.tex:4: Missing } inserted.
+    <inserted text>
+                    }
+    l.4 \ifdefined
+abhaken.tex:36: LaTeX Error: \begin{tikzpicture} on input line 16 ended by \e
+    nd{abhakseite}.
+    See the LaTeX manual or LaTeX Companion for explanation.
+gesamt.tex:19: LaTeX Error: \begin{tikzpicture} on input line 16 ended by \en
+    d{document}.
+    See the LaTeX manual or LaTeX Companion for explanation.
+gesamt.tex:19: You can't use `\end' in internal vertical mode.
+    \enddocument ...cument/end}\deadcycles \z@ \@@end
+    l.19 \end{document}
+gesamt.tex:19: LaTeX Error: \begin{tikzpicture} on input line 16 ended by \en
+    d{document}.
+    See the LaTeX manual or LaTeX Companion for explanation.
+(ohne Datei):0: Emergency stop.
+    <*> gesamt.tex
+    *** (job aborted, no legal \end found)
+
