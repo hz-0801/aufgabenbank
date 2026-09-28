@@ -113,3 +113,11 @@ drei Läufe: die erste Korrektur erzeugte 2 neue Sperrtreffer.
   Zusammenbau prüfen.
 - LK-Aufgaben (Sinus, ln, Punktsymmetrie, Mindestgrad) tragen keine
   Niveaumarke; die Auswahl fürs Blatt muss sie aussortieren.
+
+## Nachbesserung Gegenlese 2026-09-28
+- Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
+- e3-k5-s1-v1: pruef gerundet [4.71] → ungerundet [3*math.pi/2] (Regel a).
+- e3-k5-s1-v2: pruef gerundet [2.09] → ungerundet [2*math.pi/3] (Regel a).
+- e3-k5-s1-v3: pruef gerundet [1.57] → ungerundet [math.pi/2] (Regel a).
+- e4-k4-s1-v2: loesung behauptete „ist dort am steilsten“ (aus W und f'(1) = 3 folgt nur ein Extremum von f', möglich auch ein Minimum) → „Der Graph steigt durch $W$ und wechselt dort die Krümmung.“ (Regel a).
+- Prüfskript: Abweichungen 0.
