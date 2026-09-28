@@ -171,3 +171,9 @@ Befunde des Lehrers an den ersten Kompetenzblättern (Prüfstein v0.7).
     Formelsammlung – nur das Wichtigste (Formel, Voraussetzung),
     dazu ein bis zwei der häufigsten Fehler als Kurzhinweis. Keine
     erklärenden Sätze, nichts Überflüssiges.
+
+55. Vorgerechnetes Beispiel und Lösungsblatt (Beschluss Lehrer
+    28.09. abends, Form des Musterbeispiel-Bausteins): je Umformung
+    eine Zeile, Gleichheitszeichen untereinander, der Schrittname
+    klein links vor der Zeile (nicht rechts daneben, vgl. 38), das
+    Ergebnis zuletzt und abgesetzt.

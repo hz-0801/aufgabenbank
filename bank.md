@@ -68,6 +68,14 @@ Leerzeilen. Reihenfolge der Zeilen = Reihenfolge der Kette.
                   mit Zwischenergebnis; Original: knapper Weg;
                   Begründen: Kern in einem Satz; Fehler finden:
                   Fehler benannt und richtige Rechnung);
+                  verlangt die Sprosse Probe, Kontrolle oder
+                  Überschlag, steht sie als eigene, beschriftete
+                  Zeile: Gleichung „Probe: linke Seite … = …,
+                  rechte Seite …, beide gleich“; Teilen
+                  „Kontrolle: Ergebnis mal Teiler = …“;
+                  Ausklammern „Probe: ausmultipliziert …“;
+                  Prozentsatz „Überschlag: … ≈ …“ vor der
+                  Rechnung (Beschluss 28.09. abends);
                   LaTeX-fähig wie aufgabe (für \erg), Tausender
                   mit `\,`, das Prüfskript zieht sie zusammen
     pruef         Python-Ausdruck, der die Lösungszahl ergibt
@@ -158,6 +166,12 @@ Verfahrenskette ist daher nicht immer k1.
   ändert genau das Merkmal der Sprosse, sonst nichts. Varianten
   derselben Sprosse unterscheiden sich in Zahlen und Kontext,
   nicht im Merkmal.
+- Die fünf Grundfall-Zeilen einer Kette sind ein Päckchen: ein
+  Wert bleibt in allen fünf gleich (dasselbe Ganze, derselbe
+  Nenner, derselbe Teiler), genau ein Wert wandert, der Kontext
+  bleibt. Gilt, wo der Grundfall Zahlen wandern lässt; was in
+  Sek II gleich bleibt, klärt der erste Sek-II-Bank-Auftrag
+  (Beschluss 28.09. abends, Quelle altlehrwerke-formen.md).
 - Keine ganze Gleichung, kein Term, kein Zahlenpaar und keine
   Funktion aus Merkkasten, Beispiel oder Original des Eintrags.
   Ein einzelner Bruch ist kein Zahlenpaar; frei sind einzelne

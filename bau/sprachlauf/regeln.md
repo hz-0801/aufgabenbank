@@ -60,6 +60,19 @@ ohne Lehrer, wenn er sie einmal langsam liest.
    nie in Stichworte. Eine schon gute Zeile bleibt, wie sie ist.
 10. Gute Zeilen bleiben unverändert. Geändert wird nur, was gegen
     Regel 1–7 verstößt.
+11. Gilt eine Aufforderung für ein ganzes Päckchen, steht sie
+    einmal darüber und sagt in einem Satz, was an diesen Aufgaben
+    neu ist: „Bei diesen Aufgaben kürzt du vor dem Malnehmen.“,
+    „Hier steht x hinter dem Minus.“ Der Satz kommt aus dem Feld
+    merkmal der Sprosse, in Schülerworten (Beschluss 28.09. abends).
+12. Die Lösung (Feld loesung) und das Beispiel im Merkkasten tragen
+    je Rechenzeile den Schritt in Schülerworten: „Klammer
+    auflösen“, „ordnen“, „zusammenfassen“, „x allein stellen“,
+    „Überschlag“, „Probe“ – dieselben Wörter wie in den Anweisungen
+    der Kette. Gilt für alles, was neu entsteht (neue Sprossen,
+    Musterbeispiel-Baustein); vorhandene Lösungen bekommen die
+    Schrittnamen erst, wenn ihr Eintrag ohnehin angefasst wird
+    (Beschluss 28.09. abends).
 
 ## Beispiele vorher/nachher
 
