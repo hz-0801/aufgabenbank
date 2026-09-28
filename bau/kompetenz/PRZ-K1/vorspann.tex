@@ -25,7 +25,7 @@
   \ifblank{#2}{}{\par\smallskip\noindent{\small #2}\par}\medskip}
 % Abschnitt: „Das kennst du schon“, „Zum Merken“
 \newcommand{\kbabschnitt}[1]{\par\addvspace{12pt}\Needspace*{5\baselineskip}%
-  \noindent{\bfseries #1}\par\nobreak\vspace{1pt}\noindent{\color{mbgrau}\rule{\linewidth}{0.4pt}}\par\nobreak}
+  \noindent{\bfseries #1}\par\nobreak\vspace{3pt}}
 % Hauptnummer: Titel hängt am ersten Block; jeder Block (Teilaufgabe) bricht
 % nicht, passt er nicht mehr, rückt er ganz auf die nächste Seite (Befund 21).
 \newif\ifkbtitel
@@ -102,7 +102,7 @@
   \end{tabular}\endgroup}
 % Merkkasten am Ende (Aufbau des Kompetenzblatts)
 \newcommand{\kbmerk}[2]{\par\addvspace{14pt}\begin{lrbox}{\kbbox}\begin{minipage}[t]{\linewidth}%
-  \noindent{\bfseries #1}\par\vspace{1pt}\noindent{\color{mbgrau}\rule{\linewidth}{0.4pt}}\par\vspace{4pt}%
+  \noindent{\bfseries #1}\par\vspace{4pt}%
   \uebersichtskasten{\raggedright #2}\end{minipage}\end{lrbox}%
   \setlength{\kbhoehe}{\dimexpr\ht\kbbox+\dp\kbbox\relax}\Needspace*{\kbhoehe}\noindent\usebox{\kbbox}\par}
 % Lösungsblatt: Nummer und Buchstabe halbfett, Lösung daneben

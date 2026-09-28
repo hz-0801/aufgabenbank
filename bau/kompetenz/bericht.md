@@ -133,3 +133,12 @@ zusammenbau.log. Übersicht maschinenlesbar: ergebnis.json.
   TRI-K1 ohne `--dicht` vier Seiten.
 - Zone-Aufgaben der Bank sind knapp („ordnen?“, „wie viel?“); die
   Anweisung aus ich-kann.csv ersetzt die Kurzfrage.
+
+## Nachtrag 2026-09-28 – PRZ-K1 neu nach Sprachlauf (zusammenbau v0.8)
+
+PRZ-K1 ist nach dem Sprachlauf (bau/sprachlauf/) unter derselben
+Kennung neu gebaut: `python3 bau/kompetenz/bauen.py --neu PRZ-K1
+prozentrechnung Prozentsatz 2`. Registerzeile fortgeschrieben (Bank
+84f741f, v0.8). Die alte Fassung liegt als PRZ-K1-vorher.pdf daneben.
+3 + 1 Seiten, 0 fehlende Zeichen, 0 Overfull, 0 Kompilierfehler. Die
+übrigen vier Blätter sind nicht neu gebaut (Stand v0.7).

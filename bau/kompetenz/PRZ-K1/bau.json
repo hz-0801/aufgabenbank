@@ -54,10 +54,11 @@
   "dicht": false,
   "ohne": null,
   "aus": null,
-  "ohne_register": false
+  "ohne_register": false,
+  "neu_gebaut": true
  },
- "bank_commit": "d7ccb59",
- "zusammenbau": "v0.7",
+ "bank_commit": "84f741f",
+ "zusammenbau": "v0.8",
  "vorlage": "Version 2026-09-28a",
  "pfad": "bau/kompetenz/PRZ-K1",
  "kuerzel_quelle": "_kuerzel.csv (mathe-nachhilfe)",
@@ -214,8 +215,9 @@
  "kompilierfehler": [],
  "schriften_im_pdf": [
   "CMBX10",
-  "CMMIB10",
+  "CMMI10",
   "CMR10",
+  "CMR8",
   "LMRoman10",
   "LMRoman12",
   "LMRoman9"

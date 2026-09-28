@@ -1,4 +1,4 @@
-# zusammenbau v0.7: zusammenbau.py prozentrechnung --kompetenz „Prozentsatz“ --niveau for --einheiten 2
+# zusammenbau v0.8: zusammenbau.py prozentrechnung --kompetenz „Prozentsatz“ --niveau for --einheiten 2 --ohne-register
 VORLAGE mathblatt.sty: Version 2026-09-28a (unverändert; Ergänzungen im Vorspann)
 KENNUNG PRZ-K1 – Kürzel PRZ aus _kuerzel.csv (mathe-nachhilfe); Rezept K (Kompetenzblatt)
 EINHEIT Bank e2, Katalog Einheit 2 (Sprossen je Verfahrenstyp)
@@ -22,7 +22,8 @@ AUSWAHL prozentrechnung-e2-k3-s7-v1 – Prüfungshöhe (2018-OS-K7a, 2018)
 AUSWAHL prozentrechnung-e2-k3-s7-v5 – Prüfungshöhe (2015-OS-K7c, 2015)
 AUSWAHL prozentrechnung-e2-k3-s8-v1 – Prüfungshöhe (2014-OS-B1e, 2014)
 PRÜFWORT „P10“ → „P10 ×5“ (Kataloge, 1 Typen; 5 Originale)
-FRAGE prozentrechnung-zone-f5-v1: Kurzfrage „Auf eine Dezimalstelle?“ entfällt – die Anweisung „Runde.“ sagt es (Befund 5)
+ANWEISUNG prozentrechnung-zone-f3-v1: „Berechne.“ entfällt – die Aufgabe fordert selbst auf (Sprachregeln)
+ANWEISUNG prozentrechnung-zone-f5-v1: „Runde.“ entfällt – die Aufgabe fordert selbst auf (Sprachregeln)
 KASTEN Katalogeinheit 2: 2 Zeilen
 ZEICHEN Ersatz im Vorspann: –
 STRUKTUR 0 Fehler
