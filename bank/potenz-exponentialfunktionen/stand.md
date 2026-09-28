@@ -10,15 +10,15 @@ als Katalogdatei) ebenfalls 0.
 
 ## Zeilen je Datei und hoehe
 
-| Datei  | Zeilen | vorst. | grundf. | sprosse | pruef. | pflicht | grafik |
-|--------|-------:|-------:|--------:|--------:|-------:|--------:|-------:|
-| zone   |     62 |      – |      30 |      31 |      – |       1 |      3 |
-| e1     |     95 |     12 |      15 |      42 |     14 |      12 |     55 |
-| e2     |     74 |      8 |      10 |      33 |     14 |       9 |      0 |
-| e3     |     79 |      8 |      10 |      33 |     16 |      12 |      0 |
-| e4     |     43 |      4 |       5 |      21 |      4 |       9 |      9 |
-| e5     |    111 |     12 |      15 |      63 |      9 |      12 |     19 |
-| gesamt |    464 |     44 |      85 |     223 |     57 |      55 |     86 |
+| Datei  | Zeilen | vorst. | grundf. | spr. | pruef. | pfl. | grafik |
+|--------|-------:|-------:|--------:|-----:|-------:|-----:|-------:|
+| zone   |     62 |      – |      30 |   31 |      – |    1 |      3 |
+| e1     |     95 |     12 |      15 |   42 |     14 |   12 |     55 |
+| e2     |     74 |      8 |      10 |   33 |     14 |    9 |      0 |
+| e3     |     79 |      8 |      10 |   33 |     16 |   12 |      0 |
+| e4     |     43 |      4 |       5 |   21 |      4 |    9 |      9 |
+| e5     |    111 |     12 |      15 |   63 |      9 |   12 |     19 |
+| gesamt |    464 |     44 |      85 |  223 |     57 |   55 |     86 |
 
 loesungsgrafik: 12 Zeilen in e5 (Skizzieraufgaben), sonst "".
 Pflichtelemente: e1, e3, e5 fehler, begruenden, darstellung,
@@ -38,14 +38,14 @@ anwendung; e2 und e4 fehler, begruenden, anwendung (Entscheidung 5).
 
 ## Prüfskript vor der Korrektur
 
-| Datei | Abw. | häufigster Grund                                   | Warn. |
-|-------|-----:|----------------------------------------------------|------:|
-| zone  |   16 | merkmal uneinheitlich (15, Generatorfehler)        |     0 |
-| e1    |    1 | pruef nicht an der Ergebnisstelle                  |     0 |
-| e2    |    4 | pruef nicht an der Ergebnisstelle (3)              |     0 |
-| e3    |    7 | Lösungszahl falsch gerundet (6, Kopfrechnung)      |     0 |
-| e4    |    7 | Baustein \log (3), pruef-Liste zu lang (3)         |     0 |
-| e5    |    3 | Sperre y=x^4, Punkt außerhalb ksys, Ergebnisstelle |     0 |
+| Datei | Abw. | häufigster Grund                            | Warn. |
+|-------|-----:|---------------------------------------------|------:|
+| zone  |   16 | merkmal uneinheitlich (15, Generator)       |     0 |
+| e1    |    1 | pruef nicht an der Ergebnisstelle           |     0 |
+| e2    |    4 | pruef nicht an der Ergebnisstelle (3)       |     0 |
+| e3    |    7 | Lösungszahl falsch gerundet (6)             |     0 |
+| e4    |    7 | Baustein \log (3), pruef-Liste zu lang (3)  |     0 |
+| e5    |    3 | Sperre y=x^4, Punkt außerhalb, Ergebnisst.  |     0 |
 
 e3 brauchte zwei Korrekturrunden (nach der ersten blieb eine
 falsch gerundete Zahl); keine Einheit ist liegen geblieben.
@@ -69,7 +69,7 @@ Toleranz, aber falsch), 48 Zeilen der Gegenprobe Kastenzahlen
   Prozentsätze (50 Zeilen), 1,5 als x-Wert, 200 als Zielwert
   oder Betrag, 2020 als Prüfkennung (Entscheidung 8). Sperrprobe
   des Skripts: 0.
-- form zeichnen: 34 Zeilen, alle mit grafik; jede Zeile mit
+- form zeichnen: 37 Zeilen, alle mit grafik; jede Zeile mit
   Lies/Zeichne/Koordinatensystem im Text hat grafik (Skript).
 - Ankreuzzeilen: Lösung nennt genau eine Option wortgleich oder
   die Lösungszahl steht in genau einer Zahloption (Skript, 0).
