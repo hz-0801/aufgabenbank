@@ -140,3 +140,12 @@ dieser Sitzung ohne Abweichung und wurden nicht verändert.
   Achsenbereiche; die Bereiche sind von Hand gesetzt.
 - zone, e1, e2 stammen aus einer Sitzung ohne Bericht; ihre
   Abweichungen vor der Korrektur sind nicht bekannt.
+
+## Nachbesserung Gegenlese 2026-09-28
+- Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
+- ableitung-und-aenderungsrate-zone-f1-v3: \steigungsdreieck{1}{1}{1} zeichnete Steigung 1 an die Gerade mit m = 2 → \steigungsdreieck{1}{1}{2} (Regel a).
+- ableitung-und-aenderungsrate-e2-k1-s7-v1: Deutung „Schaufel läuft ohne Knick weiter“ falsch, (0 | 0) und (0,5 | 0,75) sind verschiedene Punkte → Deutung nur noch parallele Tangenten, gleiche Richtung (Regel a).
+- ableitung-und-aenderungsrate-e2-k1-s7-v2: f(5) = −3,75 ≠ g(5) = −2,5, „knickfreier Übergang“ falsch → Aufgabe: f für x ≤ 5, g(x) = −0,5x − 1,25 für x ≥ 5; Lösung mit f(5) = g(5) = −3,75 (Regel a).
+- ableitung-und-aenderungsrate-e2-k2-s1-v1: Grafik 5t² ergab (2 | 20), Lösung nannte (2 | 40) → Grafik \funktion{5*\x^2+20}{f}, f(2) = 40, f'(2) = 20, Lösung unverändert (Regel a).
+- ableitung-und-aenderungsrate-e2-k4-s4-v3: pruef ohne die zweite Stelle x = −1 → pruef [9, -3, 9, 1, -1] (Regel b).
+- Prüfskript: Abweichungen 0.
