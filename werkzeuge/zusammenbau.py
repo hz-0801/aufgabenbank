@@ -1967,6 +1967,41 @@ ZETTEL_ZAHL = 10          # Aufgaben je Zettel
 JAHRGAENGE_ALLE = 13      # P10 2014–2026
 GROSS_HOECHSTENS = 2      # große Grafiken (ksys, Wertetabellen) je Zettel
 GROSS = re.compile(r"\\begin\{ksys\}|\\wertetabelle")
+SEITE_CM = 25.0           # geschätzte Höhe aller zehn Aufgaben höchstens
+ZEILE_CM = 1.45           # kleinste geschätzte Höhe einer Aufgabe
+
+
+def zettel_hoehe(z):
+    """Geschätzte Höhe einer Aufgabe auf dem Zettel in cm (geeicht an 41
+    Probezetteln vom 28.09.: bis 25 cm blieb jeder auf einer Seite).
+    Text: Zeichen ohne Formeln und Befehle, 92 je volle Zeile, 52 neben
+    einer Grafik; Grafik nach Baustein; Text und Grafik nebeneinander
+    zählen einmal (das Höhere)."""
+    g = z.get("grafik", "")
+    t = re.sub(r"\\kreuz\{[^{}]*\}", "X" * 8, z["aufgabe"])
+    t = re.sub(r"\$[^$]*\$", "XXXX", t)
+    t = re.sub(r"\\[A-Za-z]+", "", t)
+    unter = not g or "\\quad" in g or "\\wertetabelle" in g
+    zeilen = len(t) // (92 if unter else 52) + 1
+    text = (zeilen * 0.5 + (0.6 if z.get("antwort") else 0)
+            + (0.5 if "\\kreuz" in z["aufgabe"] else 0))
+    if not g:
+        bild = 0
+    elif "ksys" in g:
+        bild = 4.1
+    elif "\\wertetabelle" in g:
+        bild = 3.9
+    elif "parallelenpaar" in g:
+        bild = 3.9
+    elif "\\quad" in g:
+        bild = 2.0
+    elif "kreissektor" in g:
+        bild = 2.8
+    elif "array" in g:
+        bild = 0.5 * (g.count("\\\\") + 1)
+    else:
+        bild = 2.9
+    return (text + bild if unter else max(text, bild)) + 0.45
 # Reihenfolge auf dem Zettel: nach Bereich wie im Basisteil der P10
 ZETTEL_FOLGE = ["brueche-dezimalzahlen", "rationale-zahlen", "potenzen-wurzeln",
                 "prozentrechnung", "zinsrechnung", "einheiten", "zuordnungen",
@@ -2001,15 +2036,28 @@ def zettel_plan(typen, vorrat, bis):
     Gewicht eines Typs = Zahl der Jahrgänge (typen.csv). Typen, die in
     allen 13 Jahrgängen vorkommen, stehen auf jedem Zettel; die übrigen
     Plätze gehen nach Stride-Verfahren im Wechsel: jeder Typ hat einen
-    Stand (Start 0), gewählt werden die kleinsten Stände (bei Gleichstand
-    das größere Gewicht, dann die Folge in typen.csv), nach der Wahl steigt
-    der Stand um 1/Gewicht. So kommt ein Typ mit neun Jahrgängen neunmal so
-    oft wie einer mit einem. Je Typ höchstens eine Aufgabe je Zettel; der
+    Stand, gewählt werden die kleinsten Stände (bei Gleichstand das größere
+    Gewicht, dann die Folge in typen.csv), nach der Wahl steigt der Stand
+    um 1/Gewicht. So kommt ein Typ mit neun Jahrgängen neunmal so oft wie
+    einer mit einem. Startstand: die Typen gleichen Gewichts w (Anzahl m,
+    i-ter in typen.csv) beginnen gestaffelt bei (i + 0,5) / (m · w); so
+    mischen sich häufige und seltene Typen von Zettel 1 an, statt dass die
+    seltenen alle vorn oder alle hinten stehen. Je Typ höchstens eine Aufgabe je Zettel; der
     k-te Einsatz eines Typs nimmt Variante k, keine Aufgabe zweimal.
     Höchstens zwei große Grafiken (Koordinatensystem, Wertetabellen) je
-    Zettel, damit er auf eine Seite passt: ein dritter solcher Typ wartet
-    auf den nächsten Zettel (sein Stand bleibt, er kommt dann zuerst)."""
-    stand = {t["typ"]: 0.0 for t in typen}
+    Zettel und geschätzte Höhe höchstens SEITE_CM, damit er auf eine Seite
+    passt: ein Typ, der nicht mehr passt, wartet auf den nächsten Zettel
+    (sein Stand bleibt, er kommt dann zuerst). Geht das gegen Ende des
+    Vorrats nicht mehr auf, wird ohne Maß gewählt (die log nennt die
+    geschätzte Höhe); erschöpft ist der Vorrat erst, wenn weniger als zehn
+    Typen übrig sind."""
+    gleich = {}
+    for t in typen:
+        gleich.setdefault(t["jahrgaenge"], []).append(t["typ"])
+    stand = {}
+    for w, reihe in gleich.items():
+        for i, t in enumerate(reihe):
+            stand[t] = (i + 0.5) / (len(reihe) * w)
     genutzt = {t["typ"]: 0 for t in typen}
     rang = {t["typ"]: i for i, t in enumerate(typen)}
     gewicht = {t["typ"]: t["jahrgaenge"] for t in typen}
@@ -2021,16 +2069,25 @@ def zettel_plan(typen, vorrat, bis):
         pflicht = [t for t in frei if gewicht[t] >= JAHRGAENGE_ALLE]
         rest = sorted((t for t in frei if t not in pflicht),
                       key=lambda t: (stand[t], -gewicht[t], rang[t]))
-        wahl, gross = [], 0
-        for t in pflicht + rest:
-            g = bool(GROSS.search(vorrat[t][genutzt[t]].get("grafik", "")))
-            if len(wahl) == ZETTEL_ZAHL or (g and gross >= GROSS_HOECHSTENS
-                                            and t not in pflicht):
-                continue
-            wahl.append(t)
-            gross += g
-        if len(wahl) < ZETTEL_ZAHL:
-            return plan, n
+        for streng in (True, False):
+            wahl, gross, hoehe = [], 0, 0.0
+            for t in pflicht + rest:
+                z = vorrat[t][genutzt[t]]
+                g = bool(GROSS.search(z.get("grafik", "")))
+                h = zettel_hoehe(z)
+                # Platz für die noch offenen Plätze freihalten (je ZEILE_CM)
+                offen = ZETTEL_ZAHL - len(wahl) - 1
+                if len(wahl) == ZETTEL_ZAHL or (streng and t not in pflicht
+                        and ((g and gross >= GROSS_HOECHSTENS)
+                             or hoehe + h + offen * ZEILE_CM > SEITE_CM)):
+                    continue
+                wahl.append(t)
+                gross += g
+                hoehe += h
+            if len(wahl) == ZETTEL_ZAHL:
+                break
+        # ohne Maß (streng False) nur, wenn der Rest des Vorrats nicht anders
+        # passt; die log des Zettels nennt dann die geschätzte Höhe
         zettel = []
         for t in wahl:
             zettel.append((t, vorrat[t][genutzt[t]]))
@@ -2125,6 +2182,9 @@ def main_zettel(args):
         return (ZETTEL_FOLGE.index(e) if e in ZETTEL_FOLGE else 99, e,
                 tz[1]["kette_nr"])
     zettel = sorted(zettel, key=folge)
+    geschaetzt = sum(zettel_hoehe(z) for _, z in zettel)
+    log(f"HÖHE geschätzt {geschaetzt:.1f} cm (Maß {SEITE_CM} cm)"
+        + (" – ÜBER DEM MASS, Render prüfen" if geschaetzt > SEITE_CM else ""))
     a = ["\\documentclass[11pt]{article}", "\\usepackage{mathblatt}",
          "\\begin{document}",
          f"\\blattkopf*{{Basisaufgaben}}{{{kennung}}}"

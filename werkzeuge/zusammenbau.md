@@ -270,14 +270,23 @@ kurzen Aufgaben, je Stunde ein neuer, ohne Wiederholung. Aufruf:
   von Zettel 1 bis n durchgerechnet (`zettel_plan`). Je Zettel zehn
   verschiedene Typen. Typen mit allen 13 Jahrgängen stehen auf jedem
   Zettel (zurzeit keiner; der häufigste hat neun); die übrigen Plätze
-  nach Stride-Verfahren: Stand je Typ ab 0, gewählt die kleinsten
-  Stände (bei Gleichstand das größere Gewicht, dann die Folge in
-  typen.csv), danach Stand + 1/Gewicht. Ein Typ mit neun Jahrgängen
-  kommt so neunmal so oft wie einer mit einem, bis sein Vorrat leer
-  ist. Der k-te Einsatz eines Typs nimmt Variante k: keine Aufgabe auf
-  zwei Zetteln.
-- Höchstens zwei große Grafiken (Koordinatensystem, Wertetabellen) je
-  Zettel; ein dritter solcher Typ wartet auf den nächsten Zettel.
+  nach Stride-Verfahren: gewählt die kleinsten Stände (bei Gleichstand
+  das größere Gewicht, dann die Folge in typen.csv), danach Stand +
+  1/Gewicht. Ein Typ mit neun Jahrgängen kommt so neunmal so oft wie
+  einer mit einem, bis sein Vorrat leer ist. Startstand gestaffelt:
+  der i-te von m Typen mit Gewicht w beginnt bei (i + 0,5) / (m · w);
+  so mischen sich häufige und seltene Typen von Zettel 1 an (mit Start
+  0 standen alle 41 Typen auf Zettel 1–4 und danach fast nur noch die
+  häufigen). Der k-te Einsatz eines Typs nimmt Variante k: keine
+  Aufgabe auf zwei Zetteln.
+- Seitenmaß: höchstens zwei große Grafiken (Koordinatensystem,
+  Wertetabellen) je Zettel und geschätzte Höhe der zehn Aufgaben
+  höchstens 25 cm (`zettel_hoehe`, geeicht an 41 Probezetteln: Text
+  nach Zeichen, Grafik nach Baustein; bei der Wahl bleibt für jeden
+  noch offenen Platz 1,45 cm frei). Ein Typ, der nicht passt, wartet
+  auf den nächsten Zettel. Geht das gegen Ende des Vorrats nicht mehr
+  auf, wird ohne Maß gewählt; die log nennt dann „ÜBER DEM MASS“.
+  Probe 28.09.: alle 41 Zettel des Vorrats zwei Seiten.
 - Reicht der Vorrat nicht mehr für zehn Typen, baut das Skript nicht
   und meldet „Vorrat erschöpft ab Zettel n“ (log und bau.json
   `vorrat_erschoepft_ab`). Beim Vorrat vom 28.09. (41 Typen, 410
