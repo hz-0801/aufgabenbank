@@ -1,6 +1,7 @@
 # zusammenbau.py – aus der Bank ein Blatt (Quelltext)
 
-Stand 2026-09-28, v0.5 (Rezept Zettel: `--zettel basis`; Prüfkennung
+Stand 2026-09-28, v0.6 (Rezept Prüfungs-Fokus: `--fokus-pruefung`,
+Kennung XXX-P<n>; v0.5 Rezept Zettel: `--zettel basis`; Prüfkennung
 kurz in allen Rezepten; Zweigzeile „P10 ×n“; v0.4 Rezept Heft:
 `--heft`, `--nur-basis`; v0.3 Kennung, Register, Bauzettel; eine v0.2
 gab es im Repo nicht, v0.3 setzt auf v0.1 auf). Baut aus
@@ -54,7 +55,8 @@ des Lehrers vom 28.09.), z. B. PRZ-L3:
   des ersten.
 - R: Rezept – L Lernblatt, F Fokus (`--fokus`), S schwach
   (`--schwach`), H Heft (`--heft`, ab v0.4), Z Zettel (`--zettel`,
-  ab v0.5; Kürzel fest BAS).
+  ab v0.5; Kürzel fest BAS), P Prüfungs-Fokus (`--fokus-pruefung`,
+  ab v0.6).
 - n: laufende Nummer je Kürzel und Rezept ab 1, die nächste freie
   aus bau/register.csv (größte vergebene + 1). Zweimal derselbe
   Aufruf gibt zwei Kennungen (PRZ-L1, PRZ-L2).
@@ -311,6 +313,49 @@ kurzen Aufgaben, je Stunde ein neuer, ohne Wiederholung. Aufruf:
 - Kompilieren: `xelatex <K>.tex` einmal; soll zwei Seiten geben.
 
 Erster Lauf: bau/zettel/ (BAS-Z1 bis BAS-Z10, bericht.md).
+
+## Rezept Prüfungs-Fokus (v0.6)
+
+Beschluss des Lehrers vom 28.09.: ein kleines Prüfungsheft zu genau
+einer Kette, Rezeptbuchstabe P, Kennung XXX-P<n>. Aufruf:
+
+    python3 werkzeuge/zusammenbau.py <eintrag> --fokus-pruefung "<kette>"
+        [--heft msa|abitur-gk|abitur-lk|fhr] [--einheiten n]
+        [--aus <ordner>] [--ohne-register]
+
+- Kette wortgleich wie im Feld kette (ohne Rücksicht auf Groß- und
+  Kleinschreibung), gleichnamige Pflichtkette eingeschlossen. Profil
+  über `--heft` (ohne Angabe msa). Einheit über `--einheiten n` (genau
+  eine), sonst die erste Einheit, in der die Kette Prüfungshöhen im
+  Profil hat. Keine Prüfungshöhe: Abbruch mit den vorhandenen
+  Kettennamen.
+- Prüfungshöhe wie im Heft: jede Zeile der Kette, deren Original
+  (sonst die Prüfkennung im Text) zum Profil gehört, gleich welche
+  hoehe (`profil_von`).
+- Inhalt: Nr. 1 Anlauf (Vorstufe, Grundfall, Sprosse mit Fallstrick,
+  je kleinste Variante ohne Original, Prüfkennung entfernt; Regel wie
+  im Heft, `HeftBau.anlauf`); danach die Prüfungsaufgaben (alle
+  Varianten aller Originale, nach Sprosse und Variante, Prüfkennung
+  kurz mit Sternchen, `\steil`/`\sgl` bei stern = ja; geteilt nach
+  2.3 g, „– weiter“); am Ende der Merkkasten der Einheit aus der Mappe
+  (`\uebersichtskasten`, wie `--kasten`; fehlt er, entfällt er, log
+  KASTEN und bau.json `kasten`).
+- Kopf: `\blattkopf*{<Thema>}{<Kette> · Prüfungs-Fokus MSA}{<Fuß>}`,
+  Fußzeile „<Thema> · <Kette> · Prüfungs-Fokus MSA · <K>“ (Abitur:
+  „Abitur GK“); `\einheitenkopf[e<n>]{Einheit n · <Titel>}`;
+  Zweigzeile Zeitmarke (nur msa) und Prüfungswort nur für das Profil
+  („P10 ×n“, „Abi GK ×n“), gezählt über die Typen der Originale
+  dieser Kette, nicht der ganzen Einheit. `\weit` nur bei msa.
+- Dateien: bau/fokus/<K>/ mit <K>.tex, <K>-loesungen.tex, e<n>_a.tex,
+  e<n>_l.tex, mathblatt.sty, zusammenbau.log, bau.json (wie im Heft
+  je Teilaufgabe lage, original, jahr, punkte, stern; dazu titel,
+  kette, einheit, profil, pruefwort, kasten, anlauf, pruefungshoehe,
+  originale, jahrgaenge, ausgelassen). Registerzeile mit bestellung
+  `fokus_pruefung=<kette>, heft=<profil>, einheiten=<n>, aus=…`.
+- Umfang: gedacht sind 2–4 Seiten plus Lösungen; das Skript misst
+  nicht, die Seitenzahl steht nach dem Rendern im Bericht.
+
+Erster Lauf: bau/fokus/ (30 Prüfungs-Fokus, bericht.md, render.py).
 
 ## Strukturprüfung
 

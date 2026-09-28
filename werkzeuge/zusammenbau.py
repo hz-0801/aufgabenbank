@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""zusammenbau.py v0.5 – aus bank/<eintrag>/ LaTeX-Quelltexte für mathblatt.sty.
+"""zusammenbau.py v0.6 – aus bank/<eintrag>/ LaTeX-Quelltexte für mathblatt.sty.
 
 Aufruf:
     python3 werkzeuge/zusammenbau.py <eintrag> [--einheiten 1,3]
@@ -10,6 +10,12 @@ Aufruf:
         abitur-gk|abitur-lk|fhr] [--nur-basis] [--titel <text>] --aus <ordner>
     python3 werkzeuge/zusammenbau.py --zettel basis [--nummer n]
         [--ohne-register]
+    python3 werkzeuge/zusammenbau.py <eintrag> --fokus-pruefung <kette>
+        [--heft msa|abitur-gk|abitur-lk|fhr] [--einheiten n] [--aus <ordner>]
+
+v0.6 (2026-09-28): Rezept P, Prüfungs-Fokus (--fokus-pruefung <kette>,
+Kennung XXX-P<n>): Anlauf der Kette, alle Prüfungshöhen im Profil,
+Merkkasten der Einheit am Ende.
 
 v0.5 (2026-09-28): Rezept Zettel (--zettel basis, Kennung BAS-Z<n>,
 zehn Aufgaben aus bank/_basis/); Prüfkennung kurz in allen Rezepten
@@ -46,7 +52,7 @@ from bisect import bisect_right
 from pathlib import Path
 
 WURZEL = Path(__file__).resolve().parent.parent
-VERSION = "v0.5"
+VERSION = "v0.6"
 
 # Befehle der Rahmendateien, die weder in STANDARD (bank-pruef.py) noch
 # in _bausteine.md stehen; jede Argumentzahl zulässig.
@@ -76,8 +82,8 @@ REGISTER = WURZEL / "bau" / "register.csv"
 REGISTER_KOPF = ["kennung", "datum", "eintraege", "rezept", "bestellung",
                  "bank_commit", "zusammenbau", "vorlage", "pfad"]
 REZEPT = {"L": "Lernblatt", "F": "Fokus", "S": "schwach", "H": "Heft",
-          "Z": "Zettel"}
-KENNUNG_MUSTER = re.compile(r"^([A-Z]{3})-([LFSHZ])(\d+)$")
+          "Z": "Zettel", "P": "Prüfungs-Fokus"}
+KENNUNG_MUSTER = re.compile(r"^([A-Z]{3})-([LFSHZP])(\d+)$")
 
 
 def finde_kuerzelliste(angabe):
@@ -1452,6 +1458,193 @@ class HeftBau:
                 f"{k}-loesungen.tex": dok(f"{name} · Lösungen", l_in)}
 
 
+# --- Rezept Prüfungs-Fokus (v0.6) -------------------------------------------
+#
+# Beschluss des Lehrers vom 28.09.: ein kleines Prüfungsheft zu genau einer
+# Kette. Anlauf (Vorstufe, ein Grundfall, eine Sprosse mit Fallstrick, ohne
+# Prüfkennung) wie im Heft, danach alle Prüfungshöhen der Kette im Profil
+# (alle Varianten, alle Originale, Prüfkennung kurz, Sternchen), am Ende der
+# Merkkasten der Einheit aus der Mappe (wie --kasten).
+
+FOKUS_PROFIL_WORT = {"msa": "MSA", "abitur-gk": "Abitur GK",
+                     "abitur-lk": "Abitur LK", "fhr": "FHR"}
+FOKUS_MARKE = {"msa": "P10", "abitur-gk": "Abitur GK",
+               "abitur-lk": "Abitur LK", "fhr": "FHR"}
+
+
+class FokusPruefBau(HeftBau):
+    """Rezept P: eine Kette einer Einheit, Anlauf und Prüfungslage."""
+
+    def __init__(self, args, log):
+        self.a = args
+        self.log = log
+        self.profil = args.heft
+        self.basis = False
+        self.kennung = args.kennung
+        self.kat = lies_kataloge(log)
+        self.eintrag = args.eintrag
+        bank = WURZEL / "bank" / self.eintrag
+        if not bank.is_dir():
+            sys.exit(f"bank/{self.eintrag}/ fehlt")
+        self.mappe = Mappe(WURZEL / "mappen" / f"{self.eintrag}.md", log)
+        self.thema = self.mappe.thema or self.eintrag
+        self.e = {}
+        for p in sorted(bank.glob("e*.jsonl"),
+                        key=lambda p: int(re.sub(r"\D", "", p.stem) or 0)):
+            if re.fullmatch(r"e\d+", p.stem):
+                self.e[int(p.stem[1:])] = lies_jsonl(p)
+        self.stern = set()
+        self.reihenfolge = []
+        self.info = {}
+        self.kette_wunsch = args.fokus_pruefung
+        self.einheit, self.kette = self.waehle()
+        self.titel = (f"{self.thema} · {self.kette} · Prüfungs-Fokus "
+                      f"{FOKUS_PROFIL_WORT[self.profil]}")
+        self.kasten_status = None
+        self.pruefwort = None
+
+    def zeilen_der_kette(self, n, name):
+        return [z for z in self.e[n] if z["kette"].casefold() == name.casefold()]
+
+    def waehle(self):
+        """(Einheit, Kettenname wie in der Bank): --einheiten n, sonst die
+        erste Einheit, in der die Kette Prüfungshöhen im Profil hat."""
+        log, k = self.log, self.kette_wunsch
+        if self.a.einheiten:
+            wahl = [int(x) for x in self.a.einheiten.split(",") if x.strip()]
+            if len(wahl) != 1 or wahl[0] not in self.e:
+                sys.exit(f"--einheiten: genau eine Einheit aus bank/"
+                         f"{self.eintrag}/ ({sorted(self.e)})")
+            kandidaten = wahl
+        else:
+            kandidaten = sorted(self.e)
+        for n in kandidaten:
+            zz = self.zeilen_der_kette(n, k)
+            if zz and any(self.ist_pruefung(z) for z in zz):
+                log(f"EINHEIT e{n} – Kette „{zz[0]['kette']}“ mit "
+                    f"{sum(self.ist_pruefung(z) for z in zz)} Prüfungshöhen "
+                    f"im Profil {self.profil}"
+                    + (" (--einheiten)" if self.a.einheiten else
+                       " (erste Einheit mit Prüfungshöhen)"))
+                return n, zz[0]["kette"]
+        namen = sorted({z["kette"] for n in kandidaten for z in self.e[n]})
+        sys.exit(f"Kette „{k}“ ohne Prüfungshöhe im Profil {self.profil} in "
+                 f"Einheit(en) {kandidaten}; vorhanden: " + "; ".join(namen))
+
+    def kopf(self):
+        n = self.einheit
+        info = self.mappe.einheiten.get(n)
+        titel = info["titel"] if info else f"Einheit {n}"
+        aus = [f"\\einheitenkopf[e{n}]{{{klar(f'Einheit {n} · {titel}')}}}"]
+        os_, gym, _ = marke_zerlegen(info["marken"] if info else None)
+        zm = zeitmarke(os_, gym, None) if self.profil == "msa" else None
+        # Prüfungswort nur für das Profil des Fokus, gezählt über die Typen
+        # der Originale dieser Kette (nicht der ganzen Einheit)
+        self.pruefwort = pruefwort_zahl(FOKUS_MARKE[self.profil],
+                                        self.zeilen_der_kette(n, self.kette),
+                                        self.log)
+        teile = [t for t in (zm, self.pruefwort) if t]
+        if teile:
+            aus.append("\\zweigzeile{" + " · ".join(teile) + "}")
+        self.log(f"KOPF Einheit {n}: „{titel}“; Zeitmarke „{zm}“, "
+                 f"Prüfungswort „{self.pruefwort}“")
+        return aus, titel
+
+    def kasten(self):
+        n = self.einheit
+        zeilen = self.mappe.kasten.get(n)
+        if not zeilen:
+            self.kasten_status = "fehlt in der Mappe"
+            self.log(f"KASTEN Einheit {n}: nicht in der Mappe lesbar – entfällt")
+            return []
+        self.kasten_status = f"{len(zeilen)} Zeilen"
+        aus = ["", "\\medskip"]
+        if len(zeilen) > 5:
+            aus.append(f"%% Merkkasten Einheit {n}: {len(zeilen)} Zeilen, "
+                       "Vorgabe höchstens fünf (3.1) – ungekürzt")
+            self.kasten_status += " (über fünf)"
+        inhalt = [re.sub(r"\s{3,}", r" \\quad ", klar(z.replace("&", "und")))
+                  for z in zeilen]
+        aus.append("\\uebersichtskasten{" + " \\\\ ".join(inhalt) + "}")
+        self.log(f"KASTEN Einheit {n}: {self.kasten_status}")
+        return aus
+
+    def baue(self):
+        n, name = self.einheit, self.kette
+        zeilen = self.zeilen_der_kette(n, name)
+        wo = f"{self.eintrag} e{n} „{name}“"
+        pruef = [z for z in zeilen if self.ist_pruefung(z)]
+        pruef_ids = {z["id"] for z in pruef}
+        hs = []
+        kette = [z for z in zeilen if z["hoehe"] != "pflicht"]
+        anl = self.anlauf(kette, pruef_ids, wo)
+        if anl:
+            hs.append(Hauptnummer(f"{name} – Anlauf", anl, "anlauf", name, n))
+            for z in anl:
+                self.info[z["id"]] = {"lage": "anlauf"}
+        folge = sorted(pruef, key=lambda z: (z["sprosse"], z["variante"],
+                                             z["kette_nr"]))
+        for z in folge:
+            o = z.get("original") or {}
+            k = self.kat.get(o.get("id"), {})
+            st = k.get("stern") == "ja"
+            if st:
+                self.stern.add(z["id"])
+            self.info[z["id"]] = {"lage": "pruefung", "original": o.get("id"),
+                                  "jahr": o.get("jahr"),
+                                  "punkte": k.get("punkte") or None,
+                                  "stern": st}
+            self.log(f"AUSWAHL {z['id']} – {wo}: Prüfungshöhe "
+                     f"({o.get('id') or 'Kennung im Text'}"
+                     + (", Stern" if st else "") + ")")
+        stuecke = teile_nach_mass(folge)
+        if len(stuecke) > 1:
+            self.log(f"TEILUNG {wo}: {len(folge)} Prüfungsaufgaben in "
+                     f"{len(stuecke)} Hauptnummern an Sprossengrenzen (2.3 g)")
+        for i, t in enumerate(stuecke):
+            hs.append(Hauptnummer(f"{name} – Prüfungsaufgaben"
+                                  + (" – weiter" if i else ""), t, "pruefung",
+                                  name, n, weiter=bool(i)))
+        for i, h in enumerate(hs, 1):
+            h.nr = i
+        self.hs = hs
+        kopf, titel = self.kopf()
+        a = [f"% {self.titel} – bank/{self.eintrag}/e{n}.jsonl "
+             f"(zusammenbau {VERSION}, Prüfungs-Fokus)"] + kopf
+        a.append("\\setcounter{aufgabe}{0}")
+        for h in hs:
+            a.append("")
+            if h.art == "anlauf":
+                a.append("% Anlauf (ohne Prüfkennung)")
+            a += self.satz(h)
+            self.reihenfolge.append((h, f"e{n}_a.tex"))
+        a += self.kasten()
+        l = [f"% Lösungen {self.titel} (zusammenbau {VERSION})",
+             f"\\einheitenkopf{{{klar(f'Einheit {n} · {titel}')}}}", ""]
+        for h in hs:
+            l += self.satz_loesung(h)
+        dateien = {f"e{n}_a.tex": a, f"e{n}_l.tex": l}
+        k = self.kennung
+        kopf_d = ["\\documentclass[11pt]{article}", "\\usepackage{mathblatt}"]
+        blatt = f"{name} · Prüfungs-Fokus {FOKUS_PROFIL_WORT[self.profil]}"
+
+        def dok(bez, rumpf, loesung=False):
+            fuss = f"{self.titel}" + (" · Lösungen" if loesung else "") + f" · {k}"
+            if self.stern and not loesung:
+                fuss += " · $\\star$ = Original mit Sternchen (nur FOR)"
+            z = kopf_d + ["\\begin{document}",
+                          f"\\blattkopf*{{{klar(self.thema)}}}{{{klar(bez)}}}"
+                          f"{{{klar(fuss)}}}"]
+            if self.profil == "msa" and not loesung:
+                z.append("\\weit")
+            return z + rumpf + ["\\end{document}"]
+
+        dateien[f"{k}.tex"] = dok(blatt, [f"\\input{{e{n}_a}}"])
+        dateien[f"{k}-loesungen.tex"] = dok(f"{blatt} · Lösungen",
+                                            [f"\\input{{e{n}_l}}"], True)
+        return dateien
+
+
 # --- Strukturprüfung ------------------------------------------------------
 
 UMLAUT_ALT = re.compile(r"\\\"[aouAOUs]|\\ss\b|\\glqq|\\grqq|\\euro\b")
@@ -1680,6 +1873,10 @@ def main(argv=None):
     p.add_argument("--titel", help="Heft: Titel in Kopf und Fußzeile")
     p.add_argument("--einheiten", help="Auswahl, z. B. 1,3")
     p.add_argument("--zone", choices=["ja", "nein", "kurz"], default="ja")
+    p.add_argument("--fokus-pruefung", metavar="KETTE",
+                   help="Rezept P: Prüfungs-Fokus zu dieser Kette (Profil "
+                        "über --heft, Einheit über --einheiten oder die erste "
+                        "mit Prüfungshöhen)")
     p.add_argument("--fokus", metavar="KETTE",
                    help="Kettenname wortgleich aus der Bank (Feld kette)")
     p.add_argument("--schwach", action="store_true")
@@ -1698,6 +1895,8 @@ def main(argv=None):
         return main_zettel(args)
     if not args.eintrag:
         p.error("Eintrag fehlt (ohne --zettel)")
+    if args.fokus_pruefung:
+        return main_fokus_pruefung(args)
     if args.nur_basis and not args.heft:
         args.heft = "msa"
     if args.heft:
@@ -1948,6 +2147,110 @@ def main_heft(args):
         print(f"REGISTER {args.kennung} an bau/register.csv angehängt")
     print(f"KENNUNG {args.kennung}")
     print(f"{len(texte)} Quelltexte nach {ziel}; {len(aufgaben)} Teilaufgaben; "
+          f"Strukturprüfung {len(fehler)} Fehler")
+    for name, zl, meldung in fehler:
+        print(f"FEHLER {name}:{zl}: {meldung}")
+    return 1 if fehler else 0
+
+
+def main_fokus_pruefung(args):
+    """Rezept P (v0.6): Prüfungs-Fokus zu einer Kette."""
+    log = Log()
+    if len(args.eintrag) != 1:
+        sys.exit("--fokus-pruefung: genau ein Eintrag")
+    args.eintrag = args.eintrag[0]
+    args.heft = args.heft or "msa"
+    if args.fokus or args.schwach or args.nur_basis or args.klasse is not None \
+            or args.zone != "ja" or args.titel:
+        sys.exit("--fokus-pruefung verträgt nur --heft, --einheiten, --aus, "
+                 "--vorlage, --kuerzel, --ohne-register")
+    aufruf = ["zusammenbau.py", args.eintrag, "--fokus-pruefung",
+              args.fokus_pruefung, "--heft", args.heft]
+    if args.einheiten:
+        aufruf += ["--einheiten", args.einheiten]
+    if args.ohne_register:
+        aufruf.append("--ohne-register")
+    log(f"# zusammenbau {VERSION}: " + " ".join(aufruf))
+    vorlage = finde_vorlage(args.vorlage)
+    version = vorlage.read_text(encoding="utf-8").splitlines()[1].lstrip("% ")
+    version = version.split(" (", 1)[0]
+    log(f"VORLAGE mathblatt.sty: {version}")
+    if not (WURZEL / "bank" / args.eintrag).is_dir():
+        sys.exit(f"bank/{args.eintrag}/ fehlt")
+    rezept = "P"
+    kuerzel, k_quelle = kuerzel_von(args.eintrag,
+                                    finde_kuerzelliste(args.kuerzel))
+    nummer = 0 if args.ohne_register else naechste_nummer(kuerzel, rezept,
+                                                          lies_register())
+    args.kennung = f"{kuerzel}-{rezept}{nummer}"
+    log(f"KENNUNG {args.kennung} – Kürzel {kuerzel} aus {k_quelle}; Rezept P "
+        "(Prüfungs-Fokus)")
+    bau = FokusPruefBau(args, log)
+    ziel = (Path(args.aus) if args.aus
+            else WURZEL / "bau" / "fokus" / args.kennung)
+    if not args.ohne_register and ziel.exists() and any(
+            p.suffix == ".tex" for p in ziel.iterdir()):
+        sys.exit(f"{ziel} enthält schon Quelltexte – nichts gebaut")
+    dateien = bau.baue()
+    texte = {k: "\n".join(v) + "\n" for k, v in dateien.items()}
+    sig = BP.lade_bausteine(WURZEL / "mappen" / "_bausteine.md")
+    fehler = pruefe_struktur(texte, sig)
+    ziel.mkdir(parents=True, exist_ok=True)
+    for name, text in sorted(texte.items()):
+        (ziel / name).write_text(text, encoding="utf-8", newline="\n")
+    shutil.copyfile(vorlage, ziel / "mathblatt.sty")
+    log(f"STRUKTUR {len(fehler)} Fehler")
+    for name, zl, meldung in fehler:
+        log(f"  FEHLER {name}:{zl}: {meldung}")
+    (ziel / "zusammenbau.log").write_text("\n".join(log.zeilen) + "\n",
+                                          encoding="utf-8", newline="\n")
+    datum = heute()
+    commit = bank_commit()
+    try:
+        pfad = ziel.resolve().relative_to(WURZEL).as_posix()
+    except ValueError:
+        pfad = ziel.resolve().as_posix()
+    bestellung = {"fokus_pruefung": bau.kette, "heft": args.heft,
+                  "einheiten": str(bau.einheit), "aus": args.aus,
+                  "ohne_register": args.ohne_register}
+    aufgaben = []
+    for h, datei in bau.reihenfolge:
+        for b, z in h.buchstaben:
+            aufgaben.append({"aufgabe": f"A{h.nr}", "hauptnummer": h.nr,
+                             "teilaufgabe": b, "id": z["id"], "datei": datei,
+                             **bau.info.get(z["id"], {})})
+    pr = [a for a in aufgaben if a.get("lage") == "pruefung"]
+    zettel = {
+        "kennung": args.kennung, "datum": datum, "eintraege": [args.eintrag],
+        "titel": bau.titel, "kette": bau.kette, "einheit": bau.einheit,
+        "profil": args.heft, "pruefwort": bau.pruefwort,
+        "kasten": bau.kasten_status or "fehlt in der Mappe",
+        "anlauf": sum(1 for a in aufgaben if a.get("lage") == "anlauf"),
+        "pruefungshoehe": len(pr),
+        "originale": sorted({a["original"] for a in pr if a.get("original")}),
+        "jahrgaenge": sorted({str(a["jahr"]) for a in pr if a.get("jahr")}),
+        "rezept": rezept, "rezept_name": REZEPT[rezept],
+        "bestellung": bestellung, "bank_commit": commit,
+        "zusammenbau": VERSION, "vorlage": version, "pfad": pfad,
+        "kuerzel_quelle": k_quelle, "strukturfehler": len(fehler),
+        "ausgelassen": [], "aufgaben": aufgaben,
+    }
+    (ziel / "bau.json").write_text(
+        json.dumps(zettel, ensure_ascii=False, indent=1) + "\n",
+        encoding="utf-8", newline="\n")
+    if not args.ohne_register:
+        haenge_an_register({
+            "kennung": args.kennung, "datum": datum,
+            "eintraege": args.eintrag, "rezept": rezept,
+            "bestellung": ", ".join(
+                f"{k}={'ja' if v is True else 'nein' if v is False else '–' if v is None else v}"
+                for k, v in bestellung.items() if k != "ohne_register"),
+            "bank_commit": commit, "zusammenbau": VERSION,
+            "vorlage": version, "pfad": pfad})
+        print(f"REGISTER {args.kennung} an bau/register.csv angehängt")
+    print(f"KENNUNG {args.kennung} – {bau.titel}")
+    print(f"{len(texte)} Quelltexte nach {ziel}; Anlauf {zettel['anlauf']}, "
+          f"Prüfungshöhe {len(pr)}, Originale {len(zettel['originale'])}; "
           f"Strukturprüfung {len(fehler)} Fehler")
     for name, zl, meldung in fehler:
         print(f"FEHLER {name}:{zl}: {meldung}")
