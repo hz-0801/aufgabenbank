@@ -104,3 +104,11 @@ ersetzt.
   2018MerhoehtBStochastikCAS2-3a.
 - e3 Prüfungshöhe bekommt eine Grafik, sobald die Vorlage ein
   Koordinatensystem ohne Achsenzahlen kennt.
+
+## Nachbesserung Render 2026-09-28
+
+Quelle: bau/render-alle/bericht.md, bau/hefte/bericht.md, bau/fokus/bericht.md, bau/layout-befunde.md Punkt 31. Übersicht aller Einträge: bau/render-alle/behoben.md.
+
+- e1-k5-s3-v2 (1): Extra }, or forgotten $ – `=` im Optionswert `ylabel` ohne Klammern. Änderung: `ylabel={…}` geklammert (`=` im Optionswert).
+
+Nur diese 1 Zeilen geändert, alle übrigen byte-gleich. `bank-pruef.py kenngroessen-von-verteilungen`: 0 Abweichungen. Probe: jede Zeile allein in einem Minimaldokument mit mathblatt.sty (hz-0801/blattbau) gesetzt wie werkzeuge/zusammenbau.py v0.7 (teile_normal, teil_schwach, Lösung in \erg), xelatex ohne Fehler.
