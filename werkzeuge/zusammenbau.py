@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""zusammenbau.py v0.7 – aus bank/<eintrag>/ LaTeX-Quelltexte für mathblatt.sty.
+"""zusammenbau.py v0.8 – aus bank/<eintrag>/ LaTeX-Quelltexte für mathblatt.sty.
 
 Aufruf:
     python3 werkzeuge/zusammenbau.py <eintrag> [--einheiten 1,3]
@@ -14,6 +14,17 @@ Aufruf:
         [--heft msa|abitur-gk|abitur-lk|fhr] [--einheiten n] [--aus <ordner>]
     python3 werkzeuge/zusammenbau.py <eintrag> --kompetenz <kette>
         --einheiten n [--niveau for|ebr] [--dicht] [--ohne <ids>]
+
+v0.8 (2026-09-28): Rezept K nach dem Sprachlauf (bau/sprachlauf/regeln.md):
+- Aufgabe in ganzen Sätzen: ein normaler Absatz, kein halbfetter Auftakt mit
+  Kurzfrage; „Verb. Term“: Verb als Anweisung, Term halbfett (satzform).
+- Keine Anweisung aus ich-kann.csv, wenn die Aufgabe selbst auffordert.
+- Befund 49: keine Linie unter Abschnittsüberschrift und Merkkastentitel.
+- Befund 37/53: Abschnitt „Schritt für Schritt“ entfällt.
+- Befund 40/52: Merkkasten als Mathe ($…$, \\frac, \\sqrt; Division als
+  Bruch), kasten_mathe.
+- Zone-Auswahl ohne den Aufgabentext (merkmal, sprosse_text, loesung), damit
+  eine Umformulierung die Auswahl nicht verschiebt.
 
 v0.7 (2026-09-28): Rezept K, Kompetenzblatt (--kompetenz <kette>, Kennung
 XXX-K<n>): Zone „Das kennst du schon“, Leiter der Kette (je Sprosse eine
@@ -59,7 +70,7 @@ from bisect import bisect_right
 from pathlib import Path
 
 WURZEL = Path(__file__).resolve().parent.parent
-VERSION = "v0.7"
+VERSION = "v0.8"
 
 # Befehle der Rahmendateien, die weder in STANDARD (bank-pruef.py) noch
 # in _bausteine.md stehen; jede Argumentzahl zulässig.
@@ -234,7 +245,225 @@ def klar(text):
     return pct("".join(teile))
 
 
-# --- Mappe ---------------------------------------------------------------
+# --- Merkkasten als Mathe (v0.8, Befund 40 und 52) --------------------------
+
+KM_FUNK = ("sin", "cos", "tan", "ln")
+KM_HOCH = dict(zip("⁰¹²³⁴⁵⁶⁷⁸⁹⁻ⁿˣᵗ", "0123456789-nxt"))
+KM_TIEF = dict(zip("₀₁₂₃₄₅₆₇₈₉", "0123456789"))
+KM_OP = {"=": "=", "+": "+", "−": "-", "-": "-", "·": r"\cdot", "±": r"\pm",
+         "→": r"\rightarrow", "≈": r"\approx", "<": "<", ">": ">",
+         "≤": r"\le", "≥": r"\ge", "|": r"\,|\,", "≠": r"\ne",
+         "≙": r"\widehat{=}"}
+KM_GRIECH = {"α": r"\alpha", "β": r"\beta", "γ": r"\gamma", "δ": r"\delta"}
+KM_WORT = re.compile(r"[A-Za-zÄÖÜäöüß]{2,}")
+KM_FUNK_RE = re.compile(r"(sin|cos|tan|ln)(?![A-Za-zäöüß])")
+KM_EINHEIT = {"m", "l", "g", "h", "s"}
+KM_BRUCHWORT = re.compile(r"[\w()−\-,~ÄÖÜäöüß]+/[\w()−\-,~ÄÖÜäöüß]+")
+KM_ZEICHEN = set("0123456789,.()/:%°√") | set(KM_OP) | set(KM_HOCH) \
+    | set(KM_TIEF) | set(KM_GRIECH)
+
+
+def km_token_mathe(t):
+    """Ist ein Wort des Merkkastens Mathe? Zahlen, einzelne Buchstaben
+    (Variablen, auch f(x), P(3), x₁), Operatoren, sin/cos/tan, Wort/Wort."""
+    if KM_BRUCHWORT.fullmatch(t):
+        return True
+    if KM_WORT.search(KM_FUNK_RE.sub("", t)):
+        return False
+    return all(c in KM_ZEICHEN or c.isalpha() for c in t) and \
+        any(c not in "()" for c in t)
+
+
+class _KmLeser:
+    """Kleiner Leser für eine Formelstrecke: Atome (Zahl, Variable, Klammer,
+    Wurzel, Funktion) mit Hoch-/Tiefzahlen; a/b und a : b werden \\frac."""
+
+    def __init__(self, s):
+        self.s, self.i = s, 0
+
+    def spitze(self):
+        while self.i < len(self.s) and self.s[self.i] == " ":
+            self.i += 1
+        return self.s[self.i] if self.i < len(self.s) else ""
+
+    def ausdruck(self, ende=""):
+        teile = []          # Liste von (art, latex); art: "a" Atom, "o" Operator
+        while True:
+            c = self.spitze()
+            if not c or c in ende:
+                break
+            if c in "/:" and teile and teile[-1][0] == "a":
+                self.i += 1
+                if self.spitze() in ("", ")") or self.spitze() in KM_OP:
+                    teile.append(("o", ":" if c == ":" else "/"))
+                    continue
+                nenner = self.atom()
+                zaehler = teile.pop()[1]
+                teile.append(("a", r"\frac{" + ohne_klammer(zaehler) + "}{"
+                              + ohne_klammer(nenner) + "}"))
+            elif c in KM_OP or c in "/:":
+                self.i += 1
+                teile.append(("o", KM_OP.get(c, c)))
+            else:
+                a = self.atom()
+                if a is None:
+                    self.i += 1
+                    teile.append(("o", c))
+                else:
+                    teile.append(("a", a))
+        return " ".join(t for _, t in teile)
+
+    def nachsatz(self, a):
+        """Hoch-, Tiefzahlen, Grad und Prozent an ein Atom hängen."""
+        while self.i < len(self.s):
+            c = self.s[self.i]
+            if c in KM_HOCH:
+                j = self.i
+                while j < len(self.s) and self.s[j] in KM_HOCH:
+                    j += 1
+                a += "^{" + "".join(KM_HOCH[x] for x in self.s[self.i:j]) + "}"
+                self.i = j
+            elif c in KM_TIEF:
+                j = self.i
+                while j < len(self.s) and (self.s[j] in KM_TIEF or (
+                        self.s[j] == "," and j + 1 < len(self.s)
+                        and self.s[j + 1] in KM_TIEF)):
+                    j += 1
+                a += "_{" + "".join(KM_TIEF.get(x, x) for x in
+                                    self.s[self.i:j]) + "}"
+                self.i = j
+            elif c == "°":
+                a += r"^{\circ}"
+                self.i += 1
+            elif c == "%":
+                a += r"\,\%"
+                self.i += 1
+            elif c == "‹":
+                j = self.s.index("›", self.i)
+                e = self.s[self.i + 1:j]
+                a += r"\,\text{" + e.rstrip("²³") + "}" + "".join(
+                    "^{" + KM_HOCH[x] + "}" for x in e if x in "²³")
+                self.i = j + 1
+            elif c == " " and self.s[self.i:].lstrip()[:1] in ("%", "‹"):
+                self.spitze()
+            else:
+                break
+        return a
+
+    def atom(self):
+        c = self.spitze()
+        s = self.s
+        m = re.match(r"\d+(?:,\d+)?", s[self.i:])
+        if m:
+            self.i += m.end()
+            return self.nachsatz(m.group(0).replace(",", "{,}"))
+        m = KM_FUNK_RE.match(s, self.i)
+        if m:
+            self.i = m.end()
+            kopf = self.nachsatz(r"\mathrm{" + m.group(1) + "}")
+            arg = self.atom() if self.spitze() not in ("", "=") else ""
+            return kopf + (r"\," + arg if arg else "")
+        m = re.match(r"[A-Za-zÄÖÜäöüß~]{2,}", s[self.i:])
+        if m:
+            self.i += m.end()
+            w = m.group(0)
+            if re.fullmatch(r"[a-z]{2}", w):        # „px“: zwei Variablen
+                return self.nachsatz(w)
+            return self.nachsatz(r"\text{" + w + "}")
+        if c == "(":
+            self.i += 1
+            innen = self.ausdruck(")")
+            if self.spitze() == ")":
+                self.i += 1
+            return self.nachsatz("(" + innen + ")")
+        if c == "√":
+            self.i += 1
+            return self.nachsatz(r"\sqrt{" + ohne_klammer(self.atom() or "")
+                                 + "}")
+        if c in KM_GRIECH:
+            self.i += 1
+            return self.nachsatz(KM_GRIECH[c])
+        if c.isalpha():
+            self.i += 1
+            return self.nachsatz(c)
+        return None
+
+
+def ohne_klammer(t):
+    """Äußere Klammer weg, wenn sie den ganzen Ausdruck umschließt."""
+    if t.startswith("(") and t.endswith(")"):
+        tiefe = 0
+        for i, c in enumerate(t):
+            tiefe += c == "("
+            tiefe -= c == ")"
+            if tiefe == 0 and i < len(t) - 1:
+                return t
+        return t[1:-1].strip()
+    return t
+
+
+def km_strecke(worte):
+    """Formelstrecke (Liste von Wörtern) → (vor, $…$, nach): Klammern am
+    Rand ohne Partner bleiben Text."""
+    s = " ".join(worte)
+    vor = nach = ""
+    while s.startswith("(") and s.count("(") > s.count(")"):
+        vor, s = vor + "(", s[1:]
+    while s.endswith(")") and s.count(")") > s.count("("):
+        nach, s = ")" + nach, s[:-1]
+    if not s:
+        return vor + nach
+    return vor + "$" + _KmLeser(s).ausdruck() + "$" + nach
+
+
+def kasten_mathe(zeile):
+    """Eine Merkkastenzeile der Mappe (Klartext) in LaTeX: Formeln in $…$,
+    Bruch und Division als \\frac, Wurzel als \\sqrt; drei Leerzeichen
+    trennen Beispiele (\\quad)."""
+    aus = []
+    for stueck in re.split(r"\s{3,}", zeile.replace("&", "und").strip()):
+        # Division mit Wörtern als Bruch (Befund 52): „(neu − alt) : alt“,
+        # „Ganzes : 100“, „Höhe : waagerechte Strecke“
+        stueck = re.sub(r"\(([A-Za-zÄÖÜäöüß]+) [−-] ([A-Za-zÄÖÜäöüß]+)\) : "
+                        r"([A-Za-zÄÖÜäöüß]+)", r"(\1−\2)/\3", stueck)
+        stueck = re.sub(
+            r"(?<![\w)|])([A-Za-zÄÖÜäöüß]+|\d+(?:,\d+)?) : "
+            r"([a-zäöüß]+ [A-ZÄÖÜ][a-zäöüß]+|[A-Za-zÄÖÜäöüß]+|\d+(?:,\d+)?)"
+            r"(?![\w(])",
+            lambda m: m.group(1) + "/" + m.group(2).replace(" ", "~"), stueck)
+        worte, strecke = [], []
+        for w in stueck.split(" "):
+            kern, satz = w, ""
+            m = re.match(r"^(.*?)([.,;:!?“”„]+)$", w)
+            if m and m.group(1):      # Satzzeichen am Wortende bleibt Text
+                kern, satz = m.group(1), m.group(2)
+            if kern.rstrip("²³") in KM_EINHEIT and strecke and \
+                    re.fullmatch(r"[−-]?\d+(?:,\d+)?", strecke[-1]):
+                kern = "‹" + kern + "›"          # Einheit nach einer Zahl
+            elif kern and km_token_mathe(kern) and strecke and \
+                    re.fullmatch(r"\d+(?:,\d+)?", kern) and \
+                    re.fullmatch(r"[A-Za-zα-ω]", strecke[-1]):
+                worte.append(km_strecke(strecke))   # „α 7 cm“: zwei Strecken
+                strecke = []
+            if kern and (kern.startswith("‹") or km_token_mathe(kern)
+                         or re.fullmatch(r"[a-z]{2}", kern) and strecke
+                         and strecke[-1] in KM_OP):
+                strecke.append(kern)
+                if satz:
+                    worte.append(km_strecke(strecke) + satz)
+                    strecke = []
+                continue
+            if strecke:
+                worte.append(km_strecke(strecke))
+                strecke = []
+            worte.append(klar(w))
+        if strecke:
+            worte.append(km_strecke(strecke))
+        aus.append(" ".join(worte))
+    return r" \quad ".join(aus)
+
+
+# --- Mappe---------------------------------------------------------------
 
 class Mappe:
     """Abschnitt 1 der Mappe: Thema, Lerneinheiten mit Marken,
@@ -1858,6 +2087,42 @@ def gross_anfang(s):
     return s
 
 
+def satzform(z):
+    """v0.8 (bau/sprachlauf/regeln.md): Ist die Aufgabe in ganzen Sätzen
+    geschrieben (kein „ – “ als Satzersatz, kein Stichwort mit Doppelpunkt,
+    Satzende am Schluss)? Dann {"kopf", "fett", "vor", "auffordernd"}:
+    „Verb. Term“ → vor = Verb-Satz, kopf = Term (halbfett); sonst kopf =
+    ganzer Text als normaler Absatz. Sonst None (alte Zerlegung)."""
+    t = KENNUNG.sub("", z["aufgabe"])
+    t, _ = befehle_heraus(t, "wertetabelle")
+    t, _ = befehle_heraus(t, "kreuz")
+    t = t.replace("\\janein", "")
+    t = re.sub(r"(\\\\\s*)+", " ", t)
+    t = re.sub(r"\s+", " ", t).strip()
+    s, st = schuetze(t)
+    if not s or " – " in s:
+        return None
+    m = re.match(r"^([^:\x00]{2,45}): ", s)
+    if m and not re.search(r"[.?!]", m.group(1)):
+        w = m.group(1).split()
+        if len(w) <= 2 and not re.search(
+                r"(sagt|schreibt|behauptet|rechnet|steht|gilt|fragt)$",
+                m.group(1)):
+            return None
+    teile = saetze(s)
+    if len(teile) == 2 and IMPERATIV.match(teile[0]) and \
+            re.fullmatch(r"(\x00\d+\x01[;,]?\s*)+", teile[1]):
+        term = re.sub(r"\$([^$]+)\$", r"$\\displaystyle \1$",
+                      zurueck(teile[1], st))
+        return {"kopf": term, "fett": True,
+                "vor": zurueck(teile[0], st), "auffordernd": True}
+    if not re.search(r"[.?!“]$", s):
+        return None
+    auff = any(x.endswith("?") or IMPERATIV.match(x) for x in teile)
+    return {"kopf": zurueck(s, st), "fett": False, "vor": "",
+            "auffordernd": auff}
+
+
 def zerlege(z):
     """Aufgabentext einer Bankzeile in Teile nach layout-befunde 3–8, 28:
     kopf (Auftakt oder Kontext, erste Zeile), fett (Auftakt halbfett?),
@@ -2087,7 +2352,7 @@ VORSPANN = r"""% vorspann.tex – Kompetenzblatt, zusammenbau v0.7 (2026-09-28).
   \ifblank{#2}{}{\par\smallskip\noindent{\small #2}\par}\medskip}
 % Abschnitt: „Das kennst du schon“, „Zum Merken“
 \newcommand{\kbabschnitt}[1]{\par\addvspace{12pt}\Needspace*{5\baselineskip}%
-  \noindent{\bfseries #1}\par\nobreak\vspace{1pt}\noindent{\color{mbgrau}\rule{\linewidth}{0.4pt}}\par\nobreak}
+  \noindent{\bfseries #1}\par\nobreak\vspace{3pt}}
 % Hauptnummer: Titel hängt am ersten Block; jeder Block (Teilaufgabe) bricht
 % nicht, passt er nicht mehr, rückt er ganz auf die nächste Seite (Befund 21).
 \newif\ifkbtitel
@@ -2164,7 +2429,7 @@ VORSPANN = r"""% vorspann.tex – Kompetenzblatt, zusammenbau v0.7 (2026-09-28).
   \end{tabular}\endgroup}
 % Merkkasten am Ende (Aufbau des Kompetenzblatts)
 \newcommand{\kbmerk}[2]{\par\addvspace{14pt}\begin{lrbox}{\kbbox}\begin{minipage}[t]{\linewidth}%
-  \noindent{\bfseries #1}\par\vspace{1pt}\noindent{\color{mbgrau}\rule{\linewidth}{0.4pt}}\par\vspace{4pt}%
+  \noindent{\bfseries #1}\par\vspace{4pt}%
   \uebersichtskasten{\raggedright #2}\end{minipage}\end{lrbox}%
   \setlength{\kbhoehe}{\dimexpr\ht\kbbox+\dp\kbbox\relax}\Needspace*{\kbhoehe}\noindent\usebox{\kbbox}\par}
 % Lösungsblatt: Nummer und Buchstabe halbfett, Lösung daneben
@@ -2353,7 +2618,7 @@ class KompetenzBau:
         self.kettenwoerter = set()
         for z in self.zeilen:
             self.kettenwoerter |= staemme(" ".join(
-                [z.get("aufgabe", ""), z.get("merkmal", ""),
+                [z.get("merkmal", ""),
                  z.get("sprosse_text", ""), z.get("loesung", "")]))
         kand = []
         for i, k in enumerate(ketten):
@@ -2420,6 +2685,15 @@ class KompetenzBau:
         kopf = t["kopf"]
         frage = list(t["frage"])
         fett = t["fett"]
+        sf = satzform(z)
+        if sf:
+            # v0.8: ganze Sätze als ein Absatz; eine Anweisung aus
+            # ich-kann.csv entfällt, wenn der Text selbst auffordert
+            kopf, fett, frage, t["vor"] = sf["kopf"], sf["fett"], [], sf["vor"]
+            if anweisung and (sf["auffordernd"] or sf["vor"]):
+                self.log(f"ANWEISUNG {wo}: „{anweisung}“ entfällt – die "
+                         "Aufgabe fordert selbst auf (Sprachregeln)")
+                anweisung = ""
         if z["form"] == "gleichungsraster":
             a = z["aufgabe"].strip()
             if "$" not in a:
@@ -2530,6 +2804,12 @@ class KompetenzBau:
         """Rechenaufgabe in einer halben Spalte: Text, Antwort, Raum darunter."""
         t = zerlege(z)
         kopf, frage = t["kopf"], list(t["frage"])
+        sf = satzform(z)
+        if sf:
+            kopf, frage, t["fett"], t["vor"] = sf["kopf"], [], sf["fett"], \
+                sf["vor"]
+            if sf["auffordernd"] or sf["vor"]:
+                anweisung = ""
         if not kopf and len(frage) > 1:
             kopf, frage = frage[0], frage[1:]
         if not anweisung and t["vor"]:
@@ -2555,6 +2835,13 @@ class KompetenzBau:
         t = zerlege(z)
         g = ksys_verkleinern(z.get("grafik") or "", self.log, z["id"])
         kopf, frage = t["kopf"], list(t["frage"])
+        sf = satzform(z)
+        if sf:
+            kopf, frage, t["fett"] = sf["kopf"], [], sf["fett"]
+            if sf["auffordernd"]:
+                anweisung = ""
+            if sf["vor"]:
+                anweisung = sf["vor"]
         if not kopf and len(frage) > 1:
             kopf, frage = frage[0], frage[1:]
         kopf_satz = (f"{{\\bfseries\\boldmath {kopf}}}" if t["fett"] and kopf
@@ -2578,8 +2865,6 @@ class KompetenzBau:
             titel, anw, zeilen, lage = hs[i]
             if lage == "zone" and (i == 0 or hs[i - 1][3] != "zone"):
                 a += ["", "\\kbabschnitt{Das kennst du schon}"]
-            if lage != "zone" and i > 0 and hs[i - 1][3] == "zone":
-                a += ["", "\\kbabschnitt{Schritt für Schritt}"]
             # Paar: zwei Hauptnummern mit je einer Zeichenaufgabe nebeneinander
             if (lage != "zone" and len(zeilen) == 1 and i + 1 < len(hs)
                     and hs[i + 1][3] == lage and len(hs[i + 1][2]) == 1
@@ -2661,8 +2946,7 @@ class KompetenzBau:
             self.log(f"KASTEN Katalogeinheit {self.m}: nicht lesbar – entfällt")
             return []
         self.kasten_status = f"{len(zeilen)} Zeilen"
-        inhalt = [re.sub(r"\s{3,}", r" \\quad ", klar(z.replace("&", "und")))
-                  for z in zeilen]
+        inhalt = [kasten_mathe(z) for z in zeilen]     # v0.8: Befund 40, 52
         self.log(f"KASTEN Katalogeinheit {self.m}: {len(zeilen)} Zeilen")
         return ["", "\\kbmerk{Zum Merken}{" + " \\\\ ".join(inhalt) + "}"]
 

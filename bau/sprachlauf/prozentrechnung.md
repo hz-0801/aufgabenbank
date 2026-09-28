@@ -94,7 +94,7 @@ verteilt (Zone zuerst, dann e1–e5).
 
    vorher: $27$ von $60$ Minuten Training sind Laufen – wie viel Prozent?
 
-   nachher: Ein Training dauert $60$ Minuten. $27$ Minuten davon wird gelaufen. Wie viel Prozent der Zeit wird gelaufen?
+   nachher: Ein Training dauert $60$ Minuten. Davon läuft Mia $27$ Minuten. Wie viel Prozent der Trainingszeit läuft Mia?
 
 13. `prozentrechnung-e2-k3-s7-v2` – Prüfungshöhe: Anteil aus zwei Zahlen eines Sachtextes, das G
 

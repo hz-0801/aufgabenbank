@@ -4,6 +4,13 @@
 Aufruf (aus der Repo-Wurzel):
     python3 bau/kompetenz/bauen.py            # die fünf Blätter des Prüfsteins
     python3 bau/kompetenz/bauen.py <eintrag> "<kette>" <einheit> [...]
+    python3 bau/kompetenz/bauen.py --neu <K> <eintrag> "<kette>" <einheit>
+
+--neu <K> (2026-09-28, Sprachlauf): baut ein vorhandenes Blatt unter
+derselben Kennung neu (zusammenbau --ohne-register --nummer n --aus
+bau/kompetenz/<K>), setzt in bau.json die Bestellung wie beim Registerbau
+und schreibt die Registerzeile von <K> fort (datum, bank_commit,
+zusammenbau); eine Datei <K>-vorher.pdf im Ordner bleibt liegen.
 
 Je Bestellung:
 1. Probe mit --ohne-register in einen Scratch-Ordner, rendern (xelatex
@@ -116,8 +123,29 @@ def probe(eintrag, kette, einheit):
     return extra, ohne, notiz, n
 
 
+def register_fortschreiben(k, bj):
+    """Registerzeile von k: datum, bank_commit, zusammenbau aus bau.json."""
+    pfad = WURZEL / "bau" / "register.csv"
+    zeilen = pfad.read_text(encoding="utf-8").splitlines()
+    kopf = zeilen[0].split(";")
+    for i, z in enumerate(zeilen[1:], 1):
+        w = z.split(";")
+        if w[0] == k:
+            d = dict(zip(kopf, w))
+            d.update({"datum": bj["datum"], "bank_commit": bj["bank_commit"],
+                      "zusammenbau": bj["zusammenbau"]})
+            zeilen[i] = ";".join(d[x] for x in kopf)
+            pfad.write_text("\n".join(zeilen) + "\n", encoding="utf-8",
+                            newline="\n")
+            return
+    sys.exit(f"{k} steht nicht in bau/register.csv")
+
+
 def main():
     argv = sys.argv[1:]
+    neu = None
+    if argv[:1] == ["--neu"]:
+        neu, argv = argv[1], argv[2:]
     bestellung = BESTELLUNG
     if argv:
         bestellung = [(argv[i], argv[i + 1], int(argv[i + 2]))
@@ -126,8 +154,19 @@ def main():
     for eintrag, kette, einheit in bestellung:
         extra, ohne, notiz, n_probe = probe(eintrag, kette, einheit)
         args = extra + (["--ohne", ",".join(sorted(ohne))] if ohne else [])
-        k = zb(eintrag, kette, einheit, args)
-        ordner = HIER / k
+        if neu:
+            nummer = re.search(r"(\d+)$", neu).group(1)
+            ordner = HIER / neu
+            for p in list(ordner.glob(f"{neu}*")):
+                if p.name != f"{neu}-vorher.pdf":
+                    p.unlink()
+            k = zb(eintrag, kette, einheit, args + [
+                "--ohne-register", "--nummer", nummer, "--aus", str(ordner)])
+            if k != neu:
+                sys.exit(f"Kennung {k} statt {neu}")
+        else:
+            k = zb(eintrag, kette, einheit, args)
+            ordner = HIER / k
         la, ll = rendern(ordner, k)
         for p in ordner.glob("*.png"):
             p.unlink()
@@ -158,6 +197,10 @@ def main():
                    "schriften_im_pdf": schrift,
                    "ersatzzeichen_im_text": im_text,
                    "probe": notiz})
+        if neu:
+            bj["bestellung"].update({"aus": None, "ohne_register": False,
+                                     "neu_gebaut": True})
+            register_fortschreiben(k, bj)
         (ordner / "bau.json").write_text(
             json.dumps(bj, ensure_ascii=False, indent=1) + "\n",
             encoding="utf-8", newline="\n")
@@ -176,6 +219,8 @@ def main():
                          "ohne": sorted(ohne)})
         print(f"{k}: {bj['seiten']} + {bj['seiten_loesungen']} Seiten, "
               f"fehlende Zeichen {fehlend or 0}, Overfull {overfull}")
+    if neu:
+        return
     (HIER / "ergebnis.json").write_text(
         json.dumps(ergebnis, ensure_ascii=False, indent=1) + "\n",
         encoding="utf-8", newline="\n")

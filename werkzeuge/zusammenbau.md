@@ -1,6 +1,8 @@
 # zusammenbau.py – aus der Bank ein Blatt (Quelltext)
 
-Stand 2026-09-28, v0.7 (Rezept Kompetenzblatt: `--kompetenz`,
+Stand 2026-09-28, v0.8 (Rezept Kompetenzblatt nach dem Sprachlauf:
+Aufgabe in Sätzen als Absatz, Merkkasten als Mathe, siehe „Rezept
+Kompetenzblatt“; v0.7 Rezept Kompetenzblatt: `--kompetenz`,
 Kennung XXX-K<n>, Vorspann vorspann.tex; v0.6 Rezept Prüfungs-Fokus:
 `--fokus-pruefung`, Kennung XXX-P<n>; v0.5 Rezept Zettel: `--zettel basis`; Prüfkennung
 kurz in allen Rezepten; Zweigzeile „P10 ×n“; v0.4 Rezept Heft:
@@ -385,10 +387,12 @@ Seite, Messwerte in bau.json).
    Voraussetzungszeile in der Mappe die Katalogeinheit der Kette nennt
    („Einheit 2“, „Einheit 1 bis 4“, „ab Einheit 2“), danach solche mit
    „alle Einheiten“ oder ohne Angabe; innerhalb der Gruppe mehr gemeinsame
-   Wortstämme mit den Bankzeilen der Kette zuerst, dann die spezifischere
+   Wortstämme mit den Bankzeilen der Kette (merkmal, sprosse_text,
+   loesung; seit v0.8 ohne aufgabe) zuerst, dann die spezifischere
    Angabe. Gibt es nur eine Fertigkeit, bekommt sie zwei Aufgaben
    (`fertigkeit_einheiten`, `staemme`; log ZONE).
-3. „Schritt für Schritt“: die Leiter der Kette ohne Pflichtelemente, je
+3. Leiter (seit v0.8 ohne Überschrift „Schritt für Schritt“, Befund 37,
+   53): die Leiter der Kette ohne Pflichtelemente, je
    Sprosse eine Hauptnummer mit einer Teilaufgabe (Variante 1; hat sie ein
    Original, die kleinste Variante ohne Original; nur Varianten mit
    Original: Variante 1 ohne Prüfkennung). Titel: Ich-kann-Satz der
@@ -402,7 +406,10 @@ Seite, Messwerte in bau.json).
    gleicher Formulierung; gibt es nur ein Original, eine Aufgabe. Jüngstes
    Jahr zuerst. `--niveau ebr` lässt Originale mit Stern im
    Prüfungskatalog weg; for nimmt sie ohne Kennzeichnung (Beschluss b).
-5. „Zum Merken“: Merkkasten der Katalogeinheit aus der Mappe.
+5. „Zum Merken“: Merkkasten der Katalogeinheit aus der Mappe, seit v0.8
+   als Mathe gesetzt (`kasten_mathe`: Formeln in $…$, a/b und a : b als
+   \frac, √ als \sqrt, Einheit nach Zahl als Text; Befund 40, 52).
+   Abschnittsüberschriften ohne Linie (Befund 49).
 6. Lösungen: eigene Datei <K>-loesungen.tex, je Teilaufgabe eine Zeile,
    Lösungsgrafik darunter.
 
@@ -434,6 +441,15 @@ Teilaufgabe (Befund 5); ohne Eintrag bei einer nackten Gleichung „Löse
 die Gleichung.“, bei „Rechne: …“ der Auftakt selbst.
 
 ### Satz einer Teilaufgabe (layout-befunde.md)
+
+- v0.8 zuerst (`satzform`, bau/sprachlauf/regeln.md): Ist die Aufgabe in
+  ganzen Sätzen geschrieben (kein „ – “, kein Stichwort mit Doppelpunkt,
+  Satzende am Schluss), steht sie als ein normaler Absatz – kein
+  halbfetter Auftakt, keine Kurzfrage. „Verb. Term“ („Berechne.
+  $\frac{600}{100}$“): der Verb-Satz als Anweisung, der Term halbfett in
+  \displaystyle. Fordert die Aufgabe selbst auf (Frage oder Imperativ),
+  entfällt die Anweisung aus ich-kann.csv (log ANWEISUNG). Sonst gilt
+  die Zerlegung darunter.
 
 - Zerlegen (`zerlege`): Prüfkennung heraus; \wertetabelle und \kreuz
   heraus; „Kontext – Frage?“ (Frage bis 90 Zeichen) → Kontext als

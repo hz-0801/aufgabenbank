@@ -178,8 +178,8 @@ NEU = {
                    r"Prozent der Fragen hat sie richtig?",
     "e2-k3-s2-v3": r"Im Bus sind $13$ von $20$ Plätzen belegt. Wie viel Prozent "
                    r"der Plätze sind belegt?",
-    "e2-k3-s3-v1": r"Ein Training dauert $60$ Minuten. $27$ Minuten davon wird "
-                   r"gelaufen. Wie viel Prozent der Zeit wird gelaufen?",
+    "e2-k3-s3-v1": r"Ein Training dauert $60$ Minuten. Davon läuft Mia $27$ "
+                   r"Minuten. Wie viel Prozent der Trainingszeit läuft Mia?",
     "e2-k3-s3-v2": r"$153$ von $360$ Schülern kommen mit dem Bus. Wie viel "
                    r"Prozent der Schüler kommen mit dem Bus?",
     "e2-k3-s3-v3": r"$91$ von $140$ Zuschauern sind Kinder. Wie viel Prozent der "
@@ -223,7 +223,7 @@ NEU = {
                    + " (P10 2015 OS)",
     "e2-k3-s8-v1": r"Eine Stadt hat $40\,000$ Einwohner. In diesem Jahr sind "
                    r"$1\,080$ Menschen zugezogen. Wie viel Prozent der "
-                   r"Einwohnerzahl sind das? (P10 2014 OS)",
+                   r"Einwohner sind in diesem Jahr zugezogen? (P10 2014 OS)",
     "e2-k3-s8-v2": r"Von $12\,500$ verkauften Konzertkarten wurden $175$ "
                    r"zurückgegeben. Wie viel Prozent der Karten wurden "
                    r"zurückgegeben? (P10 2014 OS)",
