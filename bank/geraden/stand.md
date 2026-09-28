@@ -95,3 +95,9 @@ Keine Einheit scheiterte zweimal.
 - e4 s4 v4: der vorgelegte Ansatz hat keine Lösung mit t zwischen
   null und eins; gefragt ist nur die Deutung, ein Blatt mit
   Rechenauftrag müsste das aufnehmen.
+
+## Nachbesserung Gegenlese 2026-09-28
+- Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
+- geraden-e2-k2-s1-v1: pruef [0.6, 3] prüfte das Verhältnis 3 : 2 nur halb → pruef [0.6, 3, 2] (t = 0,6 mit sympy bestätigt) (Regel a).
+- geraden-e4-k1-s4-v1: Lösungszusatz „eine Höhendifferenz, kein Lotabstand zu einer Ebene“ war falsch (beim waagerechten Dach in 4 m Höhe ist die Höhendifferenz genau der Lotabstand zur Ebene $x_3 = 4$) → Zusatz ersetzt durch „(beim waagerechten Dach ist diese Höhendifferenz zugleich der Lotabstand zur Dachebene)“ (Regel a).
+- Prüfskript: Abweichungen 0.
