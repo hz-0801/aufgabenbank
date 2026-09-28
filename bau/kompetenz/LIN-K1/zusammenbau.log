@@ -1,0 +1,44 @@
+# zusammenbau v0.7: zusammenbau.py lineare-funktionen --kompetenz „Graph zeichnen“ --niveau for --einheiten 2
+VORLAGE mathblatt.sty: Version 2026-09-28a (unverändert; Ergänzungen im Vorspann)
+KENNUNG LIN-K1 – Kürzel LIN aus _kuerzel.csv (mathe-nachhilfe); Rezept K (Kompetenzblatt)
+EINHEIT Bank e2, Katalog Einheit 2 (Sprossen je Verfahrenstyp)
+ZONE „Proportionale Zuordnung erkennen und hochrechnen (Dreisatz)“ (Einheit 1, 5): nicht für Katalogeinheit 2
+ZONE „Lineare Gleichung zweischrittig lösen (null gleich einem zweischrittigen Term)“ (Einheit 3, 4): nicht für Katalogeinheit 2
+ZONE „Terme zusammenfassen“ (Einheit 4): nicht für Katalogeinheit 2
+ZONE „Brüche als Steigung (½, −¾), Bruch mal ganze Zahl“ (Einheit 2, 3, 4, 5, 6, 7, 2 gemeinsame Wörter) → lineare-funktionen-zone-f4-v1
+ZONE „Koordinaten lesen und eintragen, 4 Quadranten, (x|y)-Reihenfolge“ (ohne Angabe, 2 gemeinsame Wörter) → lineare-funktionen-zone-f1-v1
+ZONE „Negative Zahlen multiplizieren und dividieren“ (ohne Angabe, 1 gemeinsame Wörter) → lineare-funktionen-zone-f3-v1
+AUSWAHL lineare-funktionen-e2-k4-s1-v1 – lineare-funktionen e2 „Graph zeichnen“, Sprosse 1 (grundfall): Variante 1
+AUSWAHL lineare-funktionen-e2-k4-s2-v1 – lineare-funktionen e2 „Graph zeichnen“, Sprosse 2 (sprosse): Variante 1
+AUSWAHL lineare-funktionen-e2-k4-s3-v1 – lineare-funktionen e2 „Graph zeichnen“, Sprosse 3 (sprosse): Variante 1
+AUSWAHL lineare-funktionen-e2-k4-s4-v1 – lineare-funktionen e2 „Graph zeichnen“, Sprosse 4 (sprosse): Variante 1
+AUSWAHL lineare-funktionen-e2-k4-s5-v1 – lineare-funktionen e2 „Graph zeichnen“, Sprosse 5 (sprosse): Variante 1
+AUSWAHL lineare-funktionen-e2-k4-s6-v1 – lineare-funktionen e2 „Graph zeichnen“, Sprosse 6 (sprosse): Variante 1
+AUSWAHL lineare-funktionen-e2-k4-s7-v1 – lineare-funktionen e2 „Graph zeichnen“, Sprosse 7 (sprosse): Variante 1
+PRÜFUNG 4 Originale, Jahrgänge [2021, 2022, 2024, 2026]; Fenster (jüngste fünf): [2021, 2022, 2024, 2026]
+FORMULIERUNG lineare-funktionen-e2-k4-s8-v3: gleiche Formulierung wie eine schon gewählte – aufgefüllt auf vier
+FORMULIERUNG lineare-funktionen-e2-k4-s8-v5: gleiche Formulierung wie eine schon gewählte – aufgefüllt auf vier
+FORMULIERUNG lineare-funktionen-e2-k4-s8-v7: gleiche Formulierung wie eine schon gewählte – aufgefüllt auf vier
+AUSWAHL lineare-funktionen-e2-k4-s8-v1 – Prüfungshöhe (2026-FOR-K5a, 2026)
+AUSWAHL lineare-funktionen-e2-k4-s8-v3 – Prüfungshöhe (2024-OS-K3a, 2024)
+AUSWAHL lineare-funktionen-e2-k4-s8-v5 – Prüfungshöhe (2022-OS-K3a, 2022)
+AUSWAHL lineare-funktionen-e2-k4-s8-v7 – Prüfungshöhe (2021-OS-K2a, 2021)
+PRÜFWORT „P10“ → „P10 ×5“ (Kataloge, 1 Typen; 4 Originale)
+ANTWORT lineare-funktionen-zone-f4-v1: Bank ohne Antwortgerüst – leeres Feld
+ANTWORT lineare-funktionen-zone-f3-v1: Bank ohne Antwortgerüst – leeres Feld
+KSYS lineare-funktionen-e2-k4-s2-v1: Karo 0.8 → 0.56 cm (Höhe 10.4 → 7.5 cm)
+KSYS lineare-funktionen-e2-k4-s3-v1: Karo 0.8 → 0.61 cm (Höhe 9.6 → 7.5 cm)
+PAAR Nr. 5 und 6: zwei Zeichenaufgaben nebeneinander
+KSYS lineare-funktionen-e2-k4-s4-v1: Karo 0.8 → 0.52 cm (Höhe 11.2 → 7.6 cm)
+KSYS lineare-funktionen-e2-k4-s5-v1: Karo 0.8 → 0.74 cm (Höhe 8.0 → 7.5 cm)
+PAAR Nr. 7 und 8: zwei Zeichenaufgaben nebeneinander
+KSYS lineare-funktionen-e2-k4-s6-v1: Karo 0.8 → 0.74 cm (Höhe 8.0 → 7.5 cm)
+KSYS lineare-funktionen-e2-k4-s7-v1: Karo 0.8 → 0.74 cm (Höhe 8.0 → 7.5 cm)
+PAAR Nr. 9 und 10: zwei Zeichenaufgaben nebeneinander
+PAAR Nr. 11a/b: nebeneinander
+KSYS lineare-funktionen-e2-k4-s8-v5: Karo 0.8 → 0.67 cm (Höhe 8.8 → 7.5 cm)
+KSYS lineare-funktionen-e2-k4-s8-v7: Karo 0.8 → 0.56 cm (Höhe 10.4 → 7.5 cm)
+PAAR Nr. 11c/d: nebeneinander
+KASTEN Katalogeinheit 2: 3 Zeilen
+ZEICHEN Ersatz im Vorspann: –
+STRUKTUR 0 Fehler

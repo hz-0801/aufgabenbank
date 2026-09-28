@@ -55,3 +55,8 @@ AEN-P1;2026-09-28;ableitung-und-aenderungsrate;P;fokus_pruefung=Die Rate als Fun
 AEN-P2;2026-09-28;ableitung-und-aenderungsrate;P;fokus_pruefung=Mittlere Änderungsrate, heft=abitur-gk, einheiten=1, aus=–;b78e6d9;v0.6;Version 2026-09-28a;bau/fokus/AEN-P2
 VOL-P1;2026-09-28;flaecheninhalt-und-volumen-im-raum;P;fokus_pruefung=Zusammengesetzt und Verhältnisse, heft=abitur-gk, einheiten=4, aus=–;b78e6d9;v0.6;Version 2026-09-28a;bau/fokus/VOL-P1
 EXT-P1;2026-09-28;extremalprobleme;P;fokus_pruefung=Maximum bestimmen, heft=abitur-gk, einheiten=3, aus=–;b78e6d9;v0.6;Version 2026-09-28a;bau/fokus/EXT-P1
+QGL-K1;2026-09-28;quadratische-gleichungen;K;kompetenz=p-q-Formel, einheiten=3, niveau=for, dicht=nein, ohne=–, aus=–;d7ccb59;v0.7;Version 2026-09-28a;bau/kompetenz/QGL-K1
+POT-K1;2026-09-28;potenz-exponentialfunktionen;K;kompetenz=Wachstumstabelle fortschreiben, einheiten=2, niveau=for, dicht=nein, ohne=–, aus=–;d7ccb59;v0.7;Version 2026-09-28a;bau/kompetenz/POT-K1
+LIN-K1;2026-09-28;lineare-funktionen;K;kompetenz=Graph zeichnen, einheiten=2, niveau=for, dicht=nein, ohne=–, aus=–;d7ccb59;v0.7;Version 2026-09-28a;bau/kompetenz/LIN-K1
+PRZ-K1;2026-09-28;prozentrechnung;K;kompetenz=Prozentsatz, einheiten=2, niveau=for, dicht=nein, ohne=–, aus=–;d7ccb59;v0.7;Version 2026-09-28a;bau/kompetenz/PRZ-K1
+TRI-K1;2026-09-28;trigonometrie;K;kompetenz=Sinussatz, einheiten=4, niveau=for, dicht=ja, ohne=–, aus=–;d7ccb59;v0.7;Version 2026-09-28a;bau/kompetenz/TRI-K1

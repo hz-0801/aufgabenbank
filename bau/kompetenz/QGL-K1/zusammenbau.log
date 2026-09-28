@@ -1,0 +1,43 @@
+# zusammenbau v0.7: zusammenbau.py quadratische-gleichungen --kompetenz „p-q-Formel“ --niveau for --einheiten 3
+VORLAGE mathblatt.sty: Version 2026-09-28a (unverändert; Ergänzungen im Vorspann)
+KENNUNG QGL-K1 – Kürzel QGL aus _kuerzel.csv (mathe-nachhilfe); Rezept K (Kompetenzblatt)
+EINHEIT Bank e3, Katalog Einheit 2 (Sprossen je Verfahrenstyp)
+ZONE „Klammer zuerst und Punkt vor Strich mit negativen Zahlen“ (Einheit 1, 3): nicht für Katalogeinheit 2
+ZONE „Scheitelpunktform lesen“ (Einheit 1): nicht für Katalogeinheit 2
+ZONE „Terme ordnen und zusammenfassen, x² zuerst, dann x-Glieder, dann Zahlen“ (Einheit 2, 2 gemeinsame Wörter) → quadratische-gleichungen-zone-f8-v1
+ZONE „Ausklammern, Ausmultiplizieren und binomische Formeln“ (Einheit 2, 3, 2 gemeinsame Wörter) → quadratische-gleichungen-zone-f7-v1
+ZONE „Quadratwurzel ziehen“ (Einheit 1, 2, 1 gemeinsame Wörter) → quadratische-gleichungen-zone-f2-v1
+ZONE „Quadrieren auch negativer Zahlen und Dezimalzahlen, Quadrat vor Punkt vor Strich“ (alle, 5 gemeinsame Wörter): passt, aber über 3 Fertigkeiten – entfällt
+ZONE „Lineare Gleichung mit Äquivalenzumformungen und Strich lösen, auch negative Vorzahl und x auf beiden Seiten“ (alle, 4 gemeinsame Wörter): passt, aber über 3 Fertigkeiten – entfällt
+ZONE „Lösung durch Einsetzen prüfen mit (wA)/(fA), auch mit negativer Zahl“ (alle, 4 gemeinsame Wörter): passt, aber über 3 Fertigkeiten – entfällt
+AUSWAHL quadratische-gleichungen-e3-k3-s0-v1 – quadratische-gleichungen e3 „p-q-Formel“, Sprosse 0 (vorstufe): Variante 1
+AUSWAHL quadratische-gleichungen-e3-k3-s1-v1 – quadratische-gleichungen e3 „p-q-Formel“, Sprosse 1 (grundfall): Variante 1
+AUSWAHL quadratische-gleichungen-e3-k3-s2-v1 – quadratische-gleichungen e3 „p-q-Formel“, Sprosse 2 (sprosse): Variante 1
+AUSWAHL quadratische-gleichungen-e3-k3-s3-v1 – quadratische-gleichungen e3 „p-q-Formel“, Sprosse 3 (sprosse): Variante 1
+AUSWAHL quadratische-gleichungen-e3-k3-s4-v1 – quadratische-gleichungen e3 „p-q-Formel“, Sprosse 4 (sprosse): Variante 1
+AUSWAHL quadratische-gleichungen-e3-k3-s5-v1 – quadratische-gleichungen e3 „p-q-Formel“, Sprosse 5 (sprosse): Variante 1
+AUSWAHL quadratische-gleichungen-e3-k3-s6-v1 – quadratische-gleichungen e3 „p-q-Formel“, Sprosse 6 (sprosse): Variante 1
+AUSWAHL quadratische-gleichungen-e3-k3-s7-v1 – quadratische-gleichungen e3 „p-q-Formel“, Sprosse 7 (sprosse): Variante 1
+AUSWAHL quadratische-gleichungen-e3-k3-s8-v1 – quadratische-gleichungen e3 „p-q-Formel“, Sprosse 8 (sprosse): Variante 1
+AUSWAHL quadratische-gleichungen-e3-k3-s9-v1 – quadratische-gleichungen e3 „p-q-Formel“, Sprosse 9 (sprosse): Variante 1
+AUSWAHL quadratische-gleichungen-e3-k3-s10-v1 – quadratische-gleichungen e3 „p-q-Formel“, Sprosse 10 (sprosse): Variante 1
+AUSWAHL quadratische-gleichungen-e3-k3-s11-v1 – quadratische-gleichungen e3 „p-q-Formel“, Sprosse 11 (sprosse): Variante 1
+AUSWAHL quadratische-gleichungen-e3-k3-s12-v1 – quadratische-gleichungen e3 „p-q-Formel“, Sprosse 12 (sprosse): Variante 1
+PRÜFUNG 7 Originale, Jahrgänge [2017, 2020, 2021, 2022, 2023, 2024, 2025]; Fenster (jüngste fünf): [2021, 2022, 2023, 2024, 2025]
+RESERVE quadratische-gleichungen-e3-k3-s13-v1 (2020-OS-K3e) – älter als die jüngsten fünf Jahrgänge
+RESERVE quadratische-gleichungen-e3-k3-s13-v13 (2017-OS-K5d) – älter als die jüngsten fünf Jahrgänge
+FORMULIERUNG quadratische-gleichungen-e3-k3-s13-v9: gleiche Formulierung wie eine schon gewählte – aufgefüllt auf vier
+RESERVE quadratische-gleichungen-e3-k3-s13-v7 (2021-OS-K2c) – Formulierung schon vertreten oder mehr als fünf
+AUSWAHL quadratische-gleichungen-e3-k3-s13-v3 – Prüfungshöhe (2025-OS-K5c, 2025)
+AUSWAHL quadratische-gleichungen-e3-k3-s13-v11 – Prüfungshöhe (2024-OS-K3d, 2024)
+AUSWAHL quadratische-gleichungen-e3-k3-s13-v5 – Prüfungshöhe (2023-OS-K4c, 2023)
+AUSWAHL quadratische-gleichungen-e3-k3-s13-v9 – Prüfungshöhe (2022-OS-K3c, 2022)
+PRÜFWORT „P10“ → „P10 ×7“ (Kataloge, 4 Typen; 7 Originale)
+FRAGE quadratische-gleichungen-zone-f8-v1: Kurzfrage „Ordnen?“ entfällt – die Anweisung „Ordne den Term.“ sagt es (Befund 5)
+FRAGE quadratische-gleichungen-zone-f7-v1: Kurzfrage „Ausmultiplizieren?“ entfällt – die Anweisung „Multipliziere aus.“ sagt es (Befund 5)
+FRAGE quadratische-gleichungen-zone-f2-v1: Kurzfrage „Wie viel?“ entfällt – die Anweisung „Berechne die Wurzel.“ sagt es (Befund 5)
+FRAGE quadratische-gleichungen-e3-k3-s0-v1: Kurzfrage „p und q?“ entfällt – die Anweisung „Lies p und q mit Vorzeichen ab.“ sagt es (Befund 5)
+ANTWORT quadratische-gleichungen-e3-k3-s7-v1: Bank ohne Antwortgerüst – „Lösung: __“
+KASTEN Katalogeinheit 2: 6 Zeilen
+ZEICHEN Ersatz im Vorspann: ₁₂≈
+STRUKTUR 0 Fehler

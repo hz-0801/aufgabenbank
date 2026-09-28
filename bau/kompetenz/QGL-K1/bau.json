@@ -1,0 +1,279 @@
+{
+ "kennung": "QGL-K1",
+ "datum": "2026-09-28",
+ "eintraege": [
+  "quadratische-gleichungen"
+ ],
+ "titel": "Ich kann quadratische Gleichungen mit der p-q-Formel lösen.",
+ "thema": "Quadratische Gleichungen",
+ "kette": "p-q-Formel",
+ "einheit": 3,
+ "einheit_katalog": 2,
+ "einheit_katalog_quelle": "Sprossen je Verfahrenstyp",
+ "niveau": "for",
+ "zweigzeile": "ab Kl. 9, je nach Buch bis Kl. 10 · P10 ×7",
+ "pruefwort": "P10 ×7",
+ "klasse_os": [
+  9,
+  10
+ ],
+ "klasse_gym": [
+  9,
+  9
+ ],
+ "zone": [
+  "Terme ordnen und zusammenfassen, x² zuerst, dann x-Glieder, dann Zahlen",
+  "Ausklammern, Ausmultiplizieren und binomische Formeln",
+  "Quadratwurzel ziehen"
+ ],
+ "kasten": "6 Zeilen",
+ "hauptnummern": 17,
+ "teilaufgaben": 20,
+ "pruefungshoehe": 4,
+ "originale": [
+  "2025-OS-K5c",
+  "2024-OS-K3d",
+  "2023-OS-K4c",
+  "2022-OS-K3c"
+ ],
+ "jahrgaenge": [
+  "2022",
+  "2023",
+  "2024",
+  "2025"
+ ],
+ "ersatzzeichen": "₁₂≈",
+ "rezept": "K",
+ "rezept_name": "Kompetenzblatt",
+ "bestellung": {
+  "kompetenz": "p-q-Formel",
+  "einheiten": "3",
+  "niveau": "for",
+  "dicht": false,
+  "ohne": null,
+  "aus": null,
+  "ohne_register": false
+ },
+ "bank_commit": "d7ccb59",
+ "zusammenbau": "v0.7",
+ "vorlage": "Version 2026-09-28a",
+ "pfad": "bau/kompetenz/QGL-K1",
+ "kuerzel_quelle": "_kuerzel.csv (mathe-nachhilfe)",
+ "strukturfehler": 0,
+ "ausgelassen": [],
+ "aufgaben": [
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "",
+   "id": "quadratische-gleichungen-zone-f8-v1",
+   "datei": "QGL-K1.tex",
+   "lage": "zone"
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "",
+   "id": "quadratische-gleichungen-zone-f7-v1",
+   "datei": "QGL-K1.tex",
+   "lage": "zone"
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "",
+   "id": "quadratische-gleichungen-zone-f2-v1",
+   "datei": "QGL-K1.tex",
+   "lage": "zone"
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "",
+   "id": "quadratische-gleichungen-e3-k3-s0-v1",
+   "datei": "QGL-K1.tex",
+   "lage": "leiter",
+   "sprosse": 0
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "teilaufgabe": "",
+   "id": "quadratische-gleichungen-e3-k3-s1-v1",
+   "datei": "QGL-K1.tex",
+   "lage": "leiter",
+   "sprosse": 1
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "",
+   "id": "quadratische-gleichungen-e3-k3-s2-v1",
+   "datei": "QGL-K1.tex",
+   "lage": "leiter",
+   "sprosse": 2
+  },
+  {
+   "aufgabe": "A7",
+   "hauptnummer": 7,
+   "teilaufgabe": "",
+   "id": "quadratische-gleichungen-e3-k3-s3-v1",
+   "datei": "QGL-K1.tex",
+   "lage": "leiter",
+   "sprosse": 3
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "teilaufgabe": "",
+   "id": "quadratische-gleichungen-e3-k3-s4-v1",
+   "datei": "QGL-K1.tex",
+   "lage": "leiter",
+   "sprosse": 4
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "",
+   "id": "quadratische-gleichungen-e3-k3-s5-v1",
+   "datei": "QGL-K1.tex",
+   "lage": "leiter",
+   "sprosse": 5
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "",
+   "id": "quadratische-gleichungen-e3-k3-s6-v1",
+   "datei": "QGL-K1.tex",
+   "lage": "leiter",
+   "sprosse": 6
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "",
+   "id": "quadratische-gleichungen-e3-k3-s7-v1",
+   "datei": "QGL-K1.tex",
+   "lage": "leiter",
+   "sprosse": 7
+  },
+  {
+   "aufgabe": "A12",
+   "hauptnummer": 12,
+   "teilaufgabe": "",
+   "id": "quadratische-gleichungen-e3-k3-s8-v1",
+   "datei": "QGL-K1.tex",
+   "lage": "leiter",
+   "sprosse": 8
+  },
+  {
+   "aufgabe": "A13",
+   "hauptnummer": 13,
+   "teilaufgabe": "",
+   "id": "quadratische-gleichungen-e3-k3-s9-v1",
+   "datei": "QGL-K1.tex",
+   "lage": "leiter",
+   "sprosse": 9
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "",
+   "id": "quadratische-gleichungen-e3-k3-s10-v1",
+   "datei": "QGL-K1.tex",
+   "lage": "leiter",
+   "sprosse": 10
+  },
+  {
+   "aufgabe": "A15",
+   "hauptnummer": 15,
+   "teilaufgabe": "",
+   "id": "quadratische-gleichungen-e3-k3-s11-v1",
+   "datei": "QGL-K1.tex",
+   "lage": "leiter",
+   "sprosse": 11
+  },
+  {
+   "aufgabe": "A16",
+   "hauptnummer": 16,
+   "teilaufgabe": "",
+   "id": "quadratische-gleichungen-e3-k3-s12-v1",
+   "datei": "QGL-K1.tex",
+   "lage": "leiter",
+   "sprosse": 12
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "a",
+   "id": "quadratische-gleichungen-e3-k3-s13-v3",
+   "datei": "QGL-K1.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-K5c",
+   "jahr": 2025,
+   "stern_im_original": true
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "b",
+   "id": "quadratische-gleichungen-e3-k3-s13-v11",
+   "datei": "QGL-K1.tex",
+   "lage": "pruefung",
+   "original": "2024-OS-K3d",
+   "jahr": 2024,
+   "stern_im_original": true
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "c",
+   "id": "quadratische-gleichungen-e3-k3-s13-v5",
+   "datei": "QGL-K1.tex",
+   "lage": "pruefung",
+   "original": "2023-OS-K4c",
+   "jahr": 2023,
+   "stern_im_original": true
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "d",
+   "id": "quadratische-gleichungen-e3-k3-s13-v9",
+   "datei": "QGL-K1.tex",
+   "lage": "pruefung",
+   "original": "2022-OS-K3c",
+   "jahr": 2022,
+   "stern_im_original": true
+  }
+ ],
+ "seiten": 4,
+ "seiten_loesungen": 1,
+ "fehlende_zeichen": [],
+ "overfull": 0,
+ "kompilierfehler": [],
+ "schriften_im_pdf": [
+  "CMBSY10",
+  "CMBX10",
+  "CMBX8",
+  "CMEX10",
+  "CMMI10",
+  "CMMI8",
+  "CMMIB10",
+  "CMR10",
+  "CMR8",
+  "CMSY10",
+  "FreeSerif",
+  "LMRoman10",
+  "LMRoman12",
+  "LMRoman9",
+  "MSAM10"
+ ],
+ "ersatzzeichen_im_text": {
+  "₁": true,
+  "₂": true,
+  "≈": true
+ },
+ "probe": []
+}

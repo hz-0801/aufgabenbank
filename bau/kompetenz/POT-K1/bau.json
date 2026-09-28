@@ -1,0 +1,234 @@
+{
+ "kennung": "POT-K1",
+ "datum": "2026-09-28",
+ "eintraege": [
+  "potenz-exponentialfunktionen"
+ ],
+ "titel": "Ich kann eine Wachstumstabelle mit dem Faktor fortschreiben.",
+ "thema": "Potenz- und Exponentialfunktionen, Wachstum und Zerfall",
+ "kette": "Wachstumstabelle fortschreiben",
+ "einheit": 2,
+ "einheit_katalog": 2,
+ "einheit_katalog_quelle": "Sprossen je Verfahrenstyp",
+ "niveau": "for",
+ "zweigzeile": "ab Kl. 10 · P10 ×5",
+ "pruefwort": "P10 ×5",
+ "klasse_os": [
+  10,
+  10
+ ],
+ "klasse_gym": [
+  10,
+  10
+ ],
+ "zone": [
+  "Division zweier Tabellenwerte als Quotient schreiben und deuten",
+  "Prozentwert und Prozentsatz berechnen",
+  "Erhöhung und Senkung um p Prozent als Faktor"
+ ],
+ "kasten": "3 Zeilen",
+ "hauptnummern": 12,
+ "teilaufgaben": 16,
+ "pruefungshoehe": 5,
+ "originale": [
+  "2026-FOR-K7a",
+  "2020-OS-K4a",
+  "2019-OS-K7a",
+  "2017-OS-K7a",
+  "2016-OS-K4a"
+ ],
+ "jahrgaenge": [
+  "2016",
+  "2017",
+  "2019",
+  "2020",
+  "2026"
+ ],
+ "ersatzzeichen": "",
+ "rezept": "K",
+ "rezept_name": "Kompetenzblatt",
+ "bestellung": {
+  "kompetenz": "Wachstumstabelle fortschreiben",
+  "einheiten": "2",
+  "niveau": "for",
+  "dicht": false,
+  "ohne": null,
+  "aus": null,
+  "ohne_register": false
+ },
+ "bank_commit": "d7ccb59",
+ "zusammenbau": "v0.7",
+ "vorlage": "Version 2026-09-28a",
+ "pfad": "bau/kompetenz/POT-K1",
+ "kuerzel_quelle": "_kuerzel.csv (mathe-nachhilfe)",
+ "strukturfehler": 0,
+ "ausgelassen": [],
+ "aufgaben": [
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "",
+   "id": "potenz-exponentialfunktionen-zone-f7-v1",
+   "datei": "POT-K1.tex",
+   "lage": "zone"
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "",
+   "id": "potenz-exponentialfunktionen-zone-f5-v1",
+   "datei": "POT-K1.tex",
+   "lage": "zone"
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "",
+   "id": "potenz-exponentialfunktionen-zone-f1-v1",
+   "datei": "POT-K1.tex",
+   "lage": "zone"
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "",
+   "id": "potenz-exponentialfunktionen-e2-k2-s0-v1",
+   "datei": "POT-K1.tex",
+   "lage": "leiter",
+   "sprosse": 0
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "teilaufgabe": "",
+   "id": "potenz-exponentialfunktionen-e2-k2-s1-v1",
+   "datei": "POT-K1.tex",
+   "lage": "leiter",
+   "sprosse": 1
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "",
+   "id": "potenz-exponentialfunktionen-e2-k2-s2-v1",
+   "datei": "POT-K1.tex",
+   "lage": "leiter",
+   "sprosse": 2
+  },
+  {
+   "aufgabe": "A7",
+   "hauptnummer": 7,
+   "teilaufgabe": "",
+   "id": "potenz-exponentialfunktionen-e2-k2-s3-v1",
+   "datei": "POT-K1.tex",
+   "lage": "leiter",
+   "sprosse": 3
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "teilaufgabe": "",
+   "id": "potenz-exponentialfunktionen-e2-k2-s4-v1",
+   "datei": "POT-K1.tex",
+   "lage": "leiter",
+   "sprosse": 4
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "",
+   "id": "potenz-exponentialfunktionen-e2-k2-s5-v1",
+   "datei": "POT-K1.tex",
+   "lage": "leiter",
+   "sprosse": 5
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "",
+   "id": "potenz-exponentialfunktionen-e2-k2-s6-v1",
+   "datei": "POT-K1.tex",
+   "lage": "leiter",
+   "sprosse": 6
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "",
+   "id": "potenz-exponentialfunktionen-e2-k2-s7-v1",
+   "datei": "POT-K1.tex",
+   "lage": "leiter",
+   "sprosse": 7
+  },
+  {
+   "aufgabe": "A12",
+   "hauptnummer": 12,
+   "teilaufgabe": "a",
+   "id": "potenz-exponentialfunktionen-e2-k2-s8-v1",
+   "datei": "POT-K1.tex",
+   "lage": "pruefung",
+   "original": "2026-FOR-K7a",
+   "jahr": 2026,
+   "stern_im_original": false
+  },
+  {
+   "aufgabe": "A12",
+   "hauptnummer": 12,
+   "teilaufgabe": "b",
+   "id": "potenz-exponentialfunktionen-e2-k2-s8-v3",
+   "datei": "POT-K1.tex",
+   "lage": "pruefung",
+   "original": "2020-OS-K4a",
+   "jahr": 2020,
+   "stern_im_original": false
+  },
+  {
+   "aufgabe": "A12",
+   "hauptnummer": 12,
+   "teilaufgabe": "c",
+   "id": "potenz-exponentialfunktionen-e2-k2-s8-v7",
+   "datei": "POT-K1.tex",
+   "lage": "pruefung",
+   "original": "2019-OS-K7a",
+   "jahr": 2019,
+   "stern_im_original": false
+  },
+  {
+   "aufgabe": "A12",
+   "hauptnummer": 12,
+   "teilaufgabe": "d",
+   "id": "potenz-exponentialfunktionen-e2-k2-s8-v9",
+   "datei": "POT-K1.tex",
+   "lage": "pruefung",
+   "original": "2017-OS-K7a",
+   "jahr": 2017,
+   "stern_im_original": false
+  },
+  {
+   "aufgabe": "A12",
+   "hauptnummer": 12,
+   "teilaufgabe": "e",
+   "id": "potenz-exponentialfunktionen-e2-k2-s8-v5",
+   "datei": "POT-K1.tex",
+   "lage": "pruefung",
+   "original": "2016-OS-K4a",
+   "jahr": 2016,
+   "stern_im_original": false
+  }
+ ],
+ "seiten": 3,
+ "seiten_loesungen": 1,
+ "fehlende_zeichen": [],
+ "overfull": 0,
+ "kompilierfehler": [],
+ "schriften_im_pdf": [
+  "CMMI10",
+  "CMR10",
+  "LMRoman10",
+  "LMRoman12",
+  "LMRoman9",
+  "MSAM10"
+ ],
+ "ersatzzeichen_im_text": {},
+ "probe": []
+}

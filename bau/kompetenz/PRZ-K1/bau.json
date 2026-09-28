@@ -1,0 +1,225 @@
+{
+ "kennung": "PRZ-K1",
+ "datum": "2026-09-28",
+ "eintraege": [
+  "prozentrechnung"
+ ],
+ "titel": "Ich kann berechnen, wie viel Prozent ein Teil vom Ganzen ist.",
+ "thema": "Prozentrechnung",
+ "kette": "Prozentsatz",
+ "einheit": 2,
+ "einheit_katalog": 2,
+ "einheit_katalog_quelle": "Sprossen je Verfahrenstyp",
+ "niveau": "for",
+ "zweigzeile": "ab Kl. 7 · P10 ×5",
+ "pruefwort": "P10 ×5",
+ "klasse_os": [
+  7,
+  7
+ ],
+ "klasse_gym": [
+  7,
+  7
+ ],
+ "zone": [
+  "Bruch als Anteil lesen und kürzen (drei von zwölf, gekürzt ein Viertel), auf den Nenner hundert erweitern",
+  "Durch hundert teilen, mit Dezimalzahlen multiplizieren (Kommaverschiebung)",
+  "Runden auf eine Dezimalstelle"
+ ],
+ "kasten": "2 Zeilen",
+ "hauptnummern": 11,
+ "teilaufgaben": 15,
+ "pruefungshoehe": 5,
+ "originale": [
+  "2025-OS-K6b",
+  "2023-OS-K6a",
+  "2018-OS-K7a",
+  "2015-OS-K7c",
+  "2014-OS-B1e"
+ ],
+ "jahrgaenge": [
+  "2014",
+  "2015",
+  "2018",
+  "2023",
+  "2025"
+ ],
+ "ersatzzeichen": "",
+ "rezept": "K",
+ "rezept_name": "Kompetenzblatt",
+ "bestellung": {
+  "kompetenz": "Prozentsatz",
+  "einheiten": "2",
+  "niveau": "for",
+  "dicht": false,
+  "ohne": null,
+  "aus": null,
+  "ohne_register": false
+ },
+ "bank_commit": "d7ccb59",
+ "zusammenbau": "v0.7",
+ "vorlage": "Version 2026-09-28a",
+ "pfad": "bau/kompetenz/PRZ-K1",
+ "kuerzel_quelle": "_kuerzel.csv (mathe-nachhilfe)",
+ "strukturfehler": 0,
+ "ausgelassen": [],
+ "aufgaben": [
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "",
+   "id": "prozentrechnung-zone-f1-v1",
+   "datei": "PRZ-K1.tex",
+   "lage": "zone"
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "",
+   "id": "prozentrechnung-zone-f3-v1",
+   "datei": "PRZ-K1.tex",
+   "lage": "zone"
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "",
+   "id": "prozentrechnung-zone-f5-v1",
+   "datei": "PRZ-K1.tex",
+   "lage": "zone"
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "",
+   "id": "prozentrechnung-e2-k3-s0-v1",
+   "datei": "PRZ-K1.tex",
+   "lage": "leiter",
+   "sprosse": 0
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "teilaufgabe": "",
+   "id": "prozentrechnung-e2-k3-s1-v1",
+   "datei": "PRZ-K1.tex",
+   "lage": "leiter",
+   "sprosse": 1
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "",
+   "id": "prozentrechnung-e2-k3-s2-v1",
+   "datei": "PRZ-K1.tex",
+   "lage": "leiter",
+   "sprosse": 2
+  },
+  {
+   "aufgabe": "A7",
+   "hauptnummer": 7,
+   "teilaufgabe": "",
+   "id": "prozentrechnung-e2-k3-s3-v1",
+   "datei": "PRZ-K1.tex",
+   "lage": "leiter",
+   "sprosse": 3
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "teilaufgabe": "",
+   "id": "prozentrechnung-e2-k3-s4-v1",
+   "datei": "PRZ-K1.tex",
+   "lage": "leiter",
+   "sprosse": 4
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "",
+   "id": "prozentrechnung-e2-k3-s5-v1",
+   "datei": "PRZ-K1.tex",
+   "lage": "leiter",
+   "sprosse": 5
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "",
+   "id": "prozentrechnung-e2-k3-s6-v1",
+   "datei": "PRZ-K1.tex",
+   "lage": "leiter",
+   "sprosse": 6
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "a",
+   "id": "prozentrechnung-e2-k3-s9-v1",
+   "datei": "PRZ-K1.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-K6b",
+   "jahr": 2025,
+   "stern_im_original": false
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "b",
+   "id": "prozentrechnung-e2-k3-s7-v3",
+   "datei": "PRZ-K1.tex",
+   "lage": "pruefung",
+   "original": "2023-OS-K6a",
+   "jahr": 2023,
+   "stern_im_original": false
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "c",
+   "id": "prozentrechnung-e2-k3-s7-v1",
+   "datei": "PRZ-K1.tex",
+   "lage": "pruefung",
+   "original": "2018-OS-K7a",
+   "jahr": 2018,
+   "stern_im_original": false
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "d",
+   "id": "prozentrechnung-e2-k3-s7-v5",
+   "datei": "PRZ-K1.tex",
+   "lage": "pruefung",
+   "original": "2015-OS-K7c",
+   "jahr": 2015,
+   "stern_im_original": false
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "e",
+   "id": "prozentrechnung-e2-k3-s8-v1",
+   "datei": "PRZ-K1.tex",
+   "lage": "pruefung",
+   "original": "2014-OS-B1e",
+   "jahr": 2014,
+   "stern_im_original": false
+  }
+ ],
+ "seiten": 3,
+ "seiten_loesungen": 1,
+ "fehlende_zeichen": [],
+ "overfull": 0,
+ "kompilierfehler": [],
+ "schriften_im_pdf": [
+  "CMBX10",
+  "CMMIB10",
+  "CMR10",
+  "LMRoman10",
+  "LMRoman12",
+  "LMRoman9"
+ ],
+ "ersatzzeichen_im_text": {},
+ "probe": []
+}

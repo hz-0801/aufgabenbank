@@ -1,0 +1,321 @@
+{
+ "kennung": "TRI-K1",
+ "datum": "2026-09-28",
+ "eintraege": [
+  "trigonometrie"
+ ],
+ "titel": "Ich kann Seiten und Winkel mit dem Sinussatz berechnen.",
+ "thema": "Trigonometrie",
+ "kette": "Sinussatz",
+ "einheit": 4,
+ "einheit_katalog": 4,
+ "einheit_katalog_quelle": "Sprossen je Verfahrenstyp",
+ "niveau": "for",
+ "zweigzeile": "ab Kl. 10 (am Gymnasium ab Kl. 9) · P10 ×9",
+ "pruefwort": "P10 ×9",
+ "klasse_os": [
+  10,
+  10
+ ],
+ "klasse_gym": [
+  9,
+  10
+ ],
+ "zone": [
+  "Winkelsumme im Dreieck, die beiden spitzen Winkel des rechtwinkligen Dreiecks als Ergänzung, Winkel aus Teilwinkeln (Differenz), Strecke aus Teilstrecken",
+  "Gleichung mit einem Bruch nach einer Größe umstellen, Größe im Zähler (mal) oder im Nenner (geteilt), mit Strich",
+  "Längeneinheiten vor dem Rechnen angleichen (m und km, cm und m), Ergebnis mit Einheit, Runden auf eine Dezimale"
+ ],
+ "kasten": "4 Zeilen",
+ "hauptnummern": 20,
+ "teilaufgaben": 24,
+ "pruefungshoehe": 5,
+ "originale": [
+  "2025-OS-K4c",
+  "2024-OS-K6d",
+  "2021-OS-K3c",
+  "2020-OS-K7c",
+  "2019-OS-K3c"
+ ],
+ "jahrgaenge": [
+  "2019",
+  "2020",
+  "2021",
+  "2024",
+  "2025"
+ ],
+ "ersatzzeichen": "αβγ≈",
+ "rezept": "K",
+ "rezept_name": "Kompetenzblatt",
+ "bestellung": {
+  "kompetenz": "Sinussatz",
+  "einheiten": "4",
+  "niveau": "for",
+  "dicht": true,
+  "ohne": null,
+  "aus": null,
+  "ohne_register": false
+ },
+ "bank_commit": "d7ccb59",
+ "zusammenbau": "v0.7",
+ "vorlage": "Version 2026-09-28a",
+ "pfad": "bau/kompetenz/TRI-K1",
+ "kuerzel_quelle": "_kuerzel.csv (mathe-nachhilfe)",
+ "strukturfehler": 0,
+ "ausgelassen": [],
+ "aufgaben": [
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "",
+   "id": "trigonometrie-zone-f7-v1",
+   "datei": "TRI-K1.tex",
+   "lage": "zone"
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "",
+   "id": "trigonometrie-zone-f4-v1",
+   "datei": "TRI-K1.tex",
+   "lage": "zone"
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "",
+   "id": "trigonometrie-zone-f8-v1",
+   "datei": "TRI-K1.tex",
+   "lage": "zone"
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "",
+   "id": "trigonometrie-e4-k1-s0-v1",
+   "datei": "TRI-K1.tex",
+   "lage": "leiter",
+   "sprosse": 0
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "teilaufgabe": "",
+   "id": "trigonometrie-e4-k1-s1-v1",
+   "datei": "TRI-K1.tex",
+   "lage": "leiter",
+   "sprosse": 1
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "",
+   "id": "trigonometrie-e4-k1-s2-v1",
+   "datei": "TRI-K1.tex",
+   "lage": "leiter",
+   "sprosse": 2
+  },
+  {
+   "aufgabe": "A7",
+   "hauptnummer": 7,
+   "teilaufgabe": "",
+   "id": "trigonometrie-e4-k1-s3-v1",
+   "datei": "TRI-K1.tex",
+   "lage": "leiter",
+   "sprosse": 3
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "teilaufgabe": "",
+   "id": "trigonometrie-e4-k1-s4-v2",
+   "datei": "TRI-K1.tex",
+   "lage": "leiter",
+   "sprosse": 4
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "",
+   "id": "trigonometrie-e4-k1-s5-v1",
+   "datei": "TRI-K1.tex",
+   "lage": "leiter",
+   "sprosse": 5
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "",
+   "id": "trigonometrie-e4-k1-s6-v1",
+   "datei": "TRI-K1.tex",
+   "lage": "leiter",
+   "sprosse": 6
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "",
+   "id": "trigonometrie-e4-k1-s7-v1",
+   "datei": "TRI-K1.tex",
+   "lage": "leiter",
+   "sprosse": 7
+  },
+  {
+   "aufgabe": "A12",
+   "hauptnummer": 12,
+   "teilaufgabe": "",
+   "id": "trigonometrie-e4-k1-s8-v1",
+   "datei": "TRI-K1.tex",
+   "lage": "leiter",
+   "sprosse": 8
+  },
+  {
+   "aufgabe": "A13",
+   "hauptnummer": 13,
+   "teilaufgabe": "",
+   "id": "trigonometrie-e4-k1-s9-v1",
+   "datei": "TRI-K1.tex",
+   "lage": "leiter",
+   "sprosse": 9
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "",
+   "id": "trigonometrie-e4-k1-s10-v2",
+   "datei": "TRI-K1.tex",
+   "lage": "leiter",
+   "sprosse": 10
+  },
+  {
+   "aufgabe": "A15",
+   "hauptnummer": 15,
+   "teilaufgabe": "",
+   "id": "trigonometrie-e4-k1-s11-v1",
+   "datei": "TRI-K1.tex",
+   "lage": "leiter",
+   "sprosse": 11
+  },
+  {
+   "aufgabe": "A16",
+   "hauptnummer": 16,
+   "teilaufgabe": "",
+   "id": "trigonometrie-e4-k1-s12-v1",
+   "datei": "TRI-K1.tex",
+   "lage": "leiter",
+   "sprosse": 12
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "",
+   "id": "trigonometrie-e4-k1-s13-v1",
+   "datei": "TRI-K1.tex",
+   "lage": "leiter",
+   "sprosse": 13
+  },
+  {
+   "aufgabe": "A18",
+   "hauptnummer": 18,
+   "teilaufgabe": "",
+   "id": "trigonometrie-e4-k1-s14-v1",
+   "datei": "TRI-K1.tex",
+   "lage": "leiter",
+   "sprosse": 14
+  },
+  {
+   "aufgabe": "A19",
+   "hauptnummer": 19,
+   "teilaufgabe": "",
+   "id": "trigonometrie-e4-k1-s15-v1",
+   "datei": "TRI-K1.tex",
+   "lage": "leiter",
+   "sprosse": 15
+  },
+  {
+   "aufgabe": "A20",
+   "hauptnummer": 20,
+   "teilaufgabe": "a",
+   "id": "trigonometrie-e4-k1-s16-v3",
+   "datei": "TRI-K1.tex",
+   "lage": "pruefung",
+   "original": "2025-OS-K4c",
+   "jahr": 2025,
+   "stern_im_original": true
+  },
+  {
+   "aufgabe": "A20",
+   "hauptnummer": 20,
+   "teilaufgabe": "b",
+   "id": "trigonometrie-e4-k1-s16-v1",
+   "datei": "TRI-K1.tex",
+   "lage": "pruefung",
+   "original": "2024-OS-K6d",
+   "jahr": 2024,
+   "stern_im_original": true
+  },
+  {
+   "aufgabe": "A20",
+   "hauptnummer": 20,
+   "teilaufgabe": "c",
+   "id": "trigonometrie-e4-k1-s16-v11",
+   "datei": "TRI-K1.tex",
+   "lage": "pruefung",
+   "original": "2021-OS-K3c",
+   "jahr": 2021,
+   "stern_im_original": true
+  },
+  {
+   "aufgabe": "A20",
+   "hauptnummer": 20,
+   "teilaufgabe": "d",
+   "id": "trigonometrie-e4-k1-s16-v9",
+   "datei": "TRI-K1.tex",
+   "lage": "pruefung",
+   "original": "2020-OS-K7c",
+   "jahr": 2020,
+   "stern_im_original": true
+  },
+  {
+   "aufgabe": "A20",
+   "hauptnummer": 20,
+   "teilaufgabe": "e",
+   "id": "trigonometrie-e4-k1-s16-v7",
+   "datei": "TRI-K1.tex",
+   "lage": "pruefung",
+   "original": "2019-OS-K3c",
+   "jahr": 2019,
+   "stern_im_original": true
+  }
+ ],
+ "seiten": 4,
+ "seiten_loesungen": 1,
+ "fehlende_zeichen": [],
+ "overfull": 0,
+ "kompilierfehler": [],
+ "schriften_im_pdf": [
+  "CMBX10",
+  "CMBX8",
+  "CMMI10",
+  "CMMI8",
+  "CMMIB8",
+  "CMR10",
+  "CMSY10",
+  "CMSY8",
+  "FreeSerif",
+  "LMRoman10",
+  "LMRoman12",
+  "LMRoman8",
+  "LMRoman9",
+  "MSAM10"
+ ],
+ "ersatzzeichen_im_text": {
+  "α": true,
+  "β": true,
+  "γ": true,
+  "≈": true
+ },
+ "probe": [
+  "5 Seiten – zweite Probe mit --dicht"
+ ]
+}

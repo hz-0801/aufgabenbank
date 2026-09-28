@@ -1,0 +1,110 @@
+% vorspann.tex – Kompetenzblatt, zusammenbau v0.7 (2026-09-28).
+% Ergänzt mathblatt.sty für Kompetenzblätter, ohne sie zu ändern
+% (layout-befunde.md 1–34 vom 28.09.). Wird nach \usepackage{mathblatt}
+% eingelesen.
+\makeatletter
+\RequirePackage{newunicodechar}
+% Zeichen, die Latin Modern nicht hat (Befund 20): Text aus einer
+% Ersatzschrift, Mathe als Befehl; ohne Ersatzschrift auch Text als Mathe.
+\newif\ifkbersatz
+\IfFontExistsTF{FreeSerif}{\newfontfamily\kbersatzschrift{FreeSerif}\kbersatztrue}{%
+ \IfFontExistsTF{DejaVu Serif}{\newfontfamily\kbersatzschrift{DejaVu Serif}\kbersatztrue}{%
+  \IfFontExistsTF{Cambria Math}{\newfontfamily\kbersatzschrift{Cambria Math}\kbersatztrue}{%
+   \IfFontExistsTF{Segoe UI Symbol}{\newfontfamily\kbersatzschrift{Segoe UI Symbol}\kbersatztrue}{}}}}
+\newcommand{\kbzeichen}[2]{\ifmmode #2\else\ifkbersatz{\kbersatzschrift #1}\else\ensuremath{#2}\fi\fi}
+\newcommand{\kbzeichenhoch}[1]{\ifkbersatz\ifmmode\text{\kbersatzschrift #1}\else{\kbersatzschrift #1}\fi\else ?\fi}
+% Kopf- und Fußzeile (Befund 1, 2): Kopf Thema · Blattart, Fuß Kennung und Seite
+\newcommand{\kbkopfzeile}[2]{\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}%
+  \fancyhead[L]{\footnotesize\color{mbgrau}#1}%
+  \fancyfoot[L]{\footnotesize\color{mbgrau}#2}%
+  \fancyfoot[R]{\footnotesize\color{mbgrau}Seite \thepage}}
+% Flattersatz überall (Befund 25)
+\raggedright
+% Titel des Blatts: Ich-kann-Satz, darunter Zweigzeile
+\newcommand{\kbtitel}[2]{\par\noindent{\Large\bfseries\raggedright #1\par}%
+  \ifblank{#2}{}{\par\smallskip\noindent{\small #2}\par}\medskip}
+% Abschnitt: „Das kennst du schon“, „Zum Merken“
+\newcommand{\kbabschnitt}[1]{\par\addvspace{12pt}\Needspace*{5\baselineskip}%
+  \noindent{\bfseries #1}\par\nobreak\vspace{1pt}\noindent{\color{mbgrau}\rule{\linewidth}{0.4pt}}\par\nobreak}
+% Hauptnummer: Titel hängt am ersten Block; jeder Block (Teilaufgabe) bricht
+% nicht, passt er nicht mehr, rückt er ganz auf die nächste Seite (Befund 21).
+\newif\ifkbtitel
+\newsavebox{\kbbox}
+\newlength{\kbhoehe}
+\newlength{\kbnummerabstand}\setlength{\kbnummerabstand}{10pt}
+\newlength{\kbteilabstand}\setlength{\kbteilabstand}{6pt}
+\newenvironment{kbaufgabe}[1]{\stepcounter{aufgabe}\setcounter{teil}{0}%
+  \gdef\kbtiteltext{\noindent\hangindent1.6em\hangafter1\makebox[1.6em][l]{\textbf{\theaufgabe.}}#1\par}%
+  \global\kbtiteltrue\par\addvspace{\kbnummerabstand}}{\par}
+\newenvironment{kbblock}{\par\addvspace{\kbteilabstand}\begin{lrbox}{\kbbox}%
+  \begin{minipage}[t]{\linewidth}\raggedright\parskip\z@
+  \ifkbtitel\kbtiteltext\vspace{2pt}\global\kbtitelfalse\fi
+  \list{}{\leftmargin1.6em\labelwidth1.4em\labelsep0.2em\topsep\z@\partopsep\z@
+    \parsep\z@\itemsep\z@\rightmargin\z@}\raggedright}%
+  {\endlist\end{minipage}\end{lrbox}%
+  \setlength{\kbhoehe}{\dimexpr\ht\kbbox+\dp\kbbox\relax}%
+  \Needspace*{\kbhoehe}\noindent\usebox{\kbbox}\par}
+% Paarsatz (Platz nutzen, Befund 27): zwei Hauptnummern oder zwei
+% Teilaufgaben mit Zeichenaufgabe nebeneinander, als ein Block
+\newcommand{\kbnummer}[1]{\stepcounter{aufgabe}\setcounter{teil}{0}%
+  \noindent\hangindent1.6em\hangafter1\makebox[1.6em][l]{\textbf{\theaufgabe.}}#1\par\vspace{2pt}}
+\newcommand{\kbhalb}[1]{\list{}{\leftmargin1.6em\labelwidth1.4em\labelsep0.2em\topsep\z@
+  \partopsep\z@\parsep\z@\itemsep\z@}\raggedright #1\endlist}
+\newcommand{\kbpaar}[2]{\par\addvspace{\kbnummerabstand}\begin{lrbox}{\kbbox}%
+  \begin{minipage}[t]{0.485\linewidth}\raggedright\parskip\z@ #1\end{minipage}\hfill
+  \begin{minipage}[t]{0.485\linewidth}\raggedright\parskip\z@ #2\end{minipage}\end{lrbox}%
+  \setlength{\kbhoehe}{\dimexpr\ht\kbbox+\dp\kbbox\relax}\Needspace*{\kbhoehe}\noindent\usebox{\kbbox}\par}
+\newcommand{\kbteilpaar}[2]{\item[]\noindent
+  \begin{minipage}[t]{0.485\linewidth}\kbhalb{#1}\end{minipage}\hfill
+  \begin{minipage}[t]{0.485\linewidth}\kbhalb{#2}\end{minipage}\par}
+% Anweisung der Hauptnummer, eigene Zeile über der Teilaufgabe (Befund 5)
+\newcommand{\kbanweisung}[1]{\item[]#1\par\vspace{2pt}}
+% Kopfzeile einer Teilaufgabe: Buchstabe, Auftakt (halbfett oder Kontext),
+% Prüfkennung klein rechts (Befund 3, 12, Beschluss c)
+\newlength{\kbkennbreite}\setlength{\kbkennbreite}{1.9cm}
+\newcommand{\kbkennung}[1]{{\footnotesize #1}}
+\newcommand{\kbteil}[3]{\item[#1]\ifblank{#3}%
+  {\parbox[t]{\linewidth}{\raggedright #2}}%
+  {\parbox[t]{\dimexpr\linewidth-\kbkennbreite\relax}{\raggedright #2}\hfill
+   \parbox[t]{\kbkennbreite}{\raggedleft\kbkennung{#3}}}\par}
+% Frage in eigener Zeile (Befund 4), ein Satz je Zeile (Befund 10)
+\newcommand{\kbfrage}[1]{\par\vspace{2pt}#1\par}
+% Antwortfeld in eigener Zeile darunter, linksbündig (Befund 4, 8)
+\newcommand{\kbantwort}[1]{\par\vspace{4pt}\noindent#1\par}
+% Zwei Spalten: links Grafik/Tabelle/Aufgabe, rechts Antwort oder Rechenraum
+% (Befund 27); oben bündig. Beginnt einen eigenen Listenpunkt ohne Marke.
+\newcommand{\kbzweispaltig}[3][0.48]{\item[]\noindent
+  \begin{minipage}[t]{#1\linewidth}\raggedright #2\end{minipage}\hfill
+  \begin{minipage}[t]{\dimexpr0.98\linewidth-#1\linewidth\relax}\raggedright #3\end{minipage}\par}
+% Linke Spalte mit Teilaufgabe (Buchstabe hängt links heraus wie in der Liste)
+\newcommand{\kbspalte}[1]{\list{}{\leftmargin\z@\labelwidth1.4em\labelsep0.2em\topsep\z@
+  \partopsep\z@\parsep\z@\itemsep\z@}\raggedright #1\endlist}
+% Antwortfelder: 2,2 cm, in Punkten 1,2 cm; ohne Umbruch davor
+\newcommand{\kbfeld}[1][]{\mbox{\underline{\hspace{2.2cm}}\ifblank{#1}{}{\,#1}}}
+\newcommand{\kbfeldk}[1][]{\mbox{\underline{\hspace{1.2cm}}\ifblank{#1}{}{\,#1}}}
+% Grafik oder Tabelle unter dem Text, linksbündig (Befund 8, 28)
+\newcommand{\kbdarunter}[1]{\par\vspace{4pt}\noindent#1\par}
+% Ankreuzen: je Option eine Zeile, linksbündig (Befund 6, 7)
+\newcommand{\kbkreuz}[1]{\par\vspace{2pt}\noindent$\square$\ #1\par}
+% Bearbeitungsraum (Befund 9): Schreibzeilen wie mathblatt (9 mm)
+\newcommand{\kbraum}[1]{\schreibzeilen{#1}}
+% Wertetabelle mit Köpfen im Textmodus (Befund 26): wie \wertetabelle der
+% Vorlage, aber die Köpfe setzt der Aufruf selbst ($x$, „Zeit in h“).
+\NewDocumentCommand{\kbwertetabelle}{o m m m}{%
+  \def\mbkopf{}\def\mbwerte{}\def\mbleer{}\setcounter{mbn}{0}%
+  \foreach \v in {#4}{\xappto\mbkopf{& $\v$}\xappto\mbleer{& }\stepcounter{mbn}\xdef\mbnn{\arabic{mbn}}}%
+  \IfNoValueTF{#1}{}{\foreach \v in {#1}{\ifdefempty{\v}{\xappto\mbwerte{& }}{\xappto\mbwerte{& $\v$}}}}%
+  \begingroup\renewcommand{\arraystretch}{1.3}%
+  \edef\mbpre{|>{\noexpand\columncolor{mbkasten}}l|*{\mbnn}{>{\noexpand\centering\noexpand\arraybackslash}p{\noexpand\mbzell}|}}%
+  \expandafter\mbtabstart\expandafter{\mbpre}\hline
+  #2 \mbkopf \\ \hline
+  \IfNoValueTF{#1}{\rule{0pt}{\mbzeile}#3 \mbleer \\ \hline}{#3 \mbwerte \\ \hline}
+  \end{tabular}\endgroup}
+% Merkkasten am Ende (Aufbau des Kompetenzblatts)
+\newcommand{\kbmerk}[2]{\par\addvspace{14pt}\begin{lrbox}{\kbbox}\begin{minipage}[t]{\linewidth}%
+  \noindent{\bfseries #1}\par\vspace{1pt}\noindent{\color{mbgrau}\rule{\linewidth}{0.4pt}}\par\vspace{4pt}%
+  \uebersichtskasten{\raggedright #2}\end{minipage}\end{lrbox}%
+  \setlength{\kbhoehe}{\dimexpr\ht\kbbox+\dp\kbbox\relax}\Needspace*{\kbhoehe}\noindent\usebox{\kbbox}\par}
+% Lösungsblatt: Nummer und Buchstabe halbfett, Lösung daneben
+\newcommand{\kbloesung}[2]{\par\addvspace{3pt}\noindent\hangindent2.8em\hangafter1\makebox[2.8em][l]{\textbf{#1}}#2\par}
+\makeatother

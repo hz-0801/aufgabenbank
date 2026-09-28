@@ -161,9 +161,9 @@ def main():
         (ordner / "bau.json").write_text(
             json.dumps(bj, ensure_ascii=False, indent=1) + "\n",
             encoding="utf-8", newline="\n")
-        for p in ordner.iterdir():
-            if p.suffix in AUFRAEUMEN:
-                p.unlink()
+        for d in (k, f"{k}-loesungen"):
+            for suffix in AUFRAEUMEN:
+                (ordner / (d + suffix)).unlink(missing_ok=True)
         ergebnis.append({"kennung": k, "eintrag": eintrag, "kette": kette,
                          "seiten": bj["seiten"],
                          "seiten_loesungen": bj["seiten_loesungen"],

@@ -1,0 +1,219 @@
+{
+ "kennung": "LIN-K1",
+ "datum": "2026-09-28",
+ "eintraege": [
+  "lineare-funktionen"
+ ],
+ "titel": "Ich kann den Graphen einer linearen Funktion zeichnen.",
+ "thema": "Lineare Funktionen",
+ "kette": "Graph zeichnen",
+ "einheit": 2,
+ "einheit_katalog": 2,
+ "einheit_katalog_quelle": "Sprossen je Verfahrenstyp",
+ "niveau": "for",
+ "zweigzeile": "ab Kl. 8 · P10 ×5",
+ "pruefwort": "P10 ×5",
+ "klasse_os": [
+  8,
+  8
+ ],
+ "klasse_gym": [
+  8,
+  8
+ ],
+ "zone": [
+  "Brüche als Steigung (½, −¾), Bruch mal ganze Zahl",
+  "Koordinaten lesen und eintragen, 4 Quadranten, (x|y)-Reihenfolge",
+  "Negative Zahlen multiplizieren und dividieren"
+ ],
+ "kasten": "3 Zeilen",
+ "hauptnummern": 11,
+ "teilaufgaben": 14,
+ "pruefungshoehe": 4,
+ "originale": [
+  "2026-FOR-K5a",
+  "2024-OS-K3a",
+  "2022-OS-K3a",
+  "2021-OS-K2a"
+ ],
+ "jahrgaenge": [
+  "2021",
+  "2022",
+  "2024",
+  "2026"
+ ],
+ "ersatzzeichen": "",
+ "rezept": "K",
+ "rezept_name": "Kompetenzblatt",
+ "bestellung": {
+  "kompetenz": "Graph zeichnen",
+  "einheiten": "2",
+  "niveau": "for",
+  "dicht": false,
+  "ohne": null,
+  "aus": null,
+  "ohne_register": false
+ },
+ "bank_commit": "d7ccb59",
+ "zusammenbau": "v0.7",
+ "vorlage": "Version 2026-09-28a",
+ "pfad": "bau/kompetenz/LIN-K1",
+ "kuerzel_quelle": "_kuerzel.csv (mathe-nachhilfe)",
+ "strukturfehler": 0,
+ "ausgelassen": [],
+ "aufgaben": [
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "",
+   "id": "lineare-funktionen-zone-f4-v1",
+   "datei": "LIN-K1.tex",
+   "lage": "zone"
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "",
+   "id": "lineare-funktionen-zone-f1-v1",
+   "datei": "LIN-K1.tex",
+   "lage": "zone"
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "",
+   "id": "lineare-funktionen-zone-f3-v1",
+   "datei": "LIN-K1.tex",
+   "lage": "zone"
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "",
+   "id": "lineare-funktionen-e2-k4-s1-v1",
+   "datei": "LIN-K1.tex",
+   "lage": "leiter",
+   "sprosse": 1
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "teilaufgabe": "",
+   "id": "lineare-funktionen-e2-k4-s2-v1",
+   "datei": "LIN-K1.tex",
+   "lage": "leiter",
+   "sprosse": 2
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "",
+   "id": "lineare-funktionen-e2-k4-s3-v1",
+   "datei": "LIN-K1.tex",
+   "lage": "leiter",
+   "sprosse": 3
+  },
+  {
+   "aufgabe": "A7",
+   "hauptnummer": 7,
+   "teilaufgabe": "",
+   "id": "lineare-funktionen-e2-k4-s4-v1",
+   "datei": "LIN-K1.tex",
+   "lage": "leiter",
+   "sprosse": 4
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "teilaufgabe": "",
+   "id": "lineare-funktionen-e2-k4-s5-v1",
+   "datei": "LIN-K1.tex",
+   "lage": "leiter",
+   "sprosse": 5
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "",
+   "id": "lineare-funktionen-e2-k4-s6-v1",
+   "datei": "LIN-K1.tex",
+   "lage": "leiter",
+   "sprosse": 6
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "",
+   "id": "lineare-funktionen-e2-k4-s7-v1",
+   "datei": "LIN-K1.tex",
+   "lage": "leiter",
+   "sprosse": 7
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "a",
+   "id": "lineare-funktionen-e2-k4-s8-v1",
+   "datei": "LIN-K1.tex",
+   "lage": "pruefung",
+   "original": "2026-FOR-K5a",
+   "jahr": 2026,
+   "stern_im_original": false
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "b",
+   "id": "lineare-funktionen-e2-k4-s8-v3",
+   "datei": "LIN-K1.tex",
+   "lage": "pruefung",
+   "original": "2024-OS-K3a",
+   "jahr": 2024,
+   "stern_im_original": false
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "c",
+   "id": "lineare-funktionen-e2-k4-s8-v5",
+   "datei": "LIN-K1.tex",
+   "lage": "pruefung",
+   "original": "2022-OS-K3a",
+   "jahr": 2022,
+   "stern_im_original": false
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "d",
+   "id": "lineare-funktionen-e2-k4-s8-v7",
+   "datei": "LIN-K1.tex",
+   "lage": "pruefung",
+   "original": "2021-OS-K2a",
+   "jahr": 2021,
+   "stern_im_original": false
+  }
+ ],
+ "seiten": 4,
+ "seiten_loesungen": 1,
+ "fehlende_zeichen": [],
+ "overfull": 0,
+ "kompilierfehler": [],
+ "schriften_im_pdf": [
+  "CMBSY10",
+  "CMBX10",
+  "CMBX8",
+  "CMMI10",
+  "CMR10",
+  "CMR6",
+  "CMR8",
+  "CMSY10",
+  "CMSY6",
+  "CMSY8",
+  "LMRoman10",
+  "LMRoman12",
+  "LMRoman9"
+ ],
+ "ersatzzeichen_im_text": {},
+ "probe": []
+}

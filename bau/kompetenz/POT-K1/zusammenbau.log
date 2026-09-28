@@ -1,0 +1,37 @@
+# zusammenbau v0.7: zusammenbau.py potenz-exponentialfunktionen --kompetenz „Wachstumstabelle fortschreiben“ --niveau for --einheiten 2
+VORLAGE mathblatt.sty: Version 2026-09-28a (unverändert; Ergänzungen im Vorspann)
+KENNUNG POT-K1 – Kürzel POT aus _kuerzel.csv (mathe-nachhilfe); Rezept K (Kompetenzblatt)
+EINHEIT Bank e2, Katalog Einheit 2 (Sprossen je Verfahrenstyp)
+ZONE „Wertetabelle lesen und Punkte ins Koordinatensystem eintragen, Achseneinteilung wählen, Werte an einer Skala mit größeren Schritten ablesen“ (Einheit 1, 4): nicht für Katalogeinheit 2
+ZONE „Lineare Zunahme“ (Einheit 1): nicht für Katalogeinheit 2
+ZONE „Potenz mit dem Taschenrechner“ (Einheit 3, 4): nicht für Katalogeinheit 2
+ZONE „Potenzen mit natürlichem Exponenten als wiederholte Multiplikation, auch mit negativer Basis“ (Einheit 5): nicht für Katalogeinheit 2
+ZONE „Normalparabel“ (Einheit 5): nicht für Katalogeinheit 2
+ZONE „Proportionale Funktion“ (Einheit 5): nicht für Katalogeinheit 2
+ZONE „Koordinatensystem mit vier Quadranten, Achseneinteilung wählen, wenn die Werte schnell groß werden“ (Einheit 5): nicht für Katalogeinheit 2
+ZONE „Achsensymmetrie und Punktsymmetrie an einer Figur erkennen (Faltkante, halbe Drehung um einen Punkt)“ (Einheit 5): nicht für Katalogeinheit 2
+ZONE „Quadratwurzel und Kubikwurzel als Umkehrung des Potenzierens, Kubikwurzel mit dem Taschenrechner, aus einer negativen Zahl keine Quadratwurzel“ (Einheit 5): nicht für Katalogeinheit 2
+ZONE „Würfelvolumen als Kante hoch drei, Kante aus dem Volumen über Kubikzahlen“ (Einheit 5): nicht für Katalogeinheit 2
+ZONE „Division zweier Tabellenwerte als Quotient schreiben und deuten“ (Einheit 2, 3 gemeinsame Wörter) → potenz-exponentialfunktionen-zone-f7-v1
+ZONE „Prozentwert und Prozentsatz berechnen“ (Einheit 2, 1 gemeinsame Wörter) → potenz-exponentialfunktionen-zone-f5-v1
+ZONE „Erhöhung und Senkung um p Prozent als Faktor“ (Einheit 1, 2, 3, 4, 1 gemeinsame Wörter) → potenz-exponentialfunktionen-zone-f1-v1
+ZONE „Dezimalzahlen multiplizieren und runden, Ergebnis mit ≈ und Einheit angeben“ (Einheit 1, 2, 3, 4, 1 gemeinsame Wörter): passt, aber über 3 Fertigkeiten – entfällt
+ZONE „Zinseszins“ (Einheit 2, 3, 0 gemeinsame Wörter): passt, aber über 3 Fertigkeiten – entfällt
+AUSWAHL potenz-exponentialfunktionen-e2-k2-s0-v1 – potenz-exponentialfunktionen e2 „Wachstumstabelle fortschreiben“, Sprosse 0 (vorstufe): Variante 1
+AUSWAHL potenz-exponentialfunktionen-e2-k2-s1-v1 – potenz-exponentialfunktionen e2 „Wachstumstabelle fortschreiben“, Sprosse 1 (grundfall): Variante 1
+AUSWAHL potenz-exponentialfunktionen-e2-k2-s2-v1 – potenz-exponentialfunktionen e2 „Wachstumstabelle fortschreiben“, Sprosse 2 (sprosse): Variante 1
+AUSWAHL potenz-exponentialfunktionen-e2-k2-s3-v1 – potenz-exponentialfunktionen e2 „Wachstumstabelle fortschreiben“, Sprosse 3 (sprosse): Variante 1
+AUSWAHL potenz-exponentialfunktionen-e2-k2-s4-v1 – potenz-exponentialfunktionen e2 „Wachstumstabelle fortschreiben“, Sprosse 4 (sprosse): Variante 1
+AUSWAHL potenz-exponentialfunktionen-e2-k2-s5-v1 – potenz-exponentialfunktionen e2 „Wachstumstabelle fortschreiben“, Sprosse 5 (sprosse): Variante 1
+AUSWAHL potenz-exponentialfunktionen-e2-k2-s6-v1 – potenz-exponentialfunktionen e2 „Wachstumstabelle fortschreiben“, Sprosse 6 (sprosse): Variante 1
+AUSWAHL potenz-exponentialfunktionen-e2-k2-s7-v1 – potenz-exponentialfunktionen e2 „Wachstumstabelle fortschreiben“, Sprosse 7 (sprosse): Variante 1
+PRÜFUNG 5 Originale, Jahrgänge [2016, 2017, 2019, 2020, 2026]; Fenster (jüngste fünf): [2016, 2017, 2019, 2020, 2026]
+AUSWAHL potenz-exponentialfunktionen-e2-k2-s8-v1 – Prüfungshöhe (2026-FOR-K7a, 2026)
+AUSWAHL potenz-exponentialfunktionen-e2-k2-s8-v3 – Prüfungshöhe (2020-OS-K4a, 2020)
+AUSWAHL potenz-exponentialfunktionen-e2-k2-s8-v7 – Prüfungshöhe (2019-OS-K7a, 2019)
+AUSWAHL potenz-exponentialfunktionen-e2-k2-s8-v9 – Prüfungshöhe (2017-OS-K7a, 2017)
+AUSWAHL potenz-exponentialfunktionen-e2-k2-s8-v5 – Prüfungshöhe (2016-OS-K4a, 2016)
+PRÜFWORT „P10“ → „P10 ×5“ (Kataloge, 1 Typen; 5 Originale)
+KASTEN Katalogeinheit 2: 3 Zeilen
+ZEICHEN Ersatz im Vorspann: –
+STRUKTUR 0 Fehler

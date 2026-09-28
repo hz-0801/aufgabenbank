@@ -1,0 +1,48 @@
+# zusammenbau v0.7: zusammenbau.py trigonometrie --kompetenz „Sinussatz“ --niveau for --einheiten 4 --dicht
+VORLAGE mathblatt.sty: Version 2026-09-28a (unverändert; Ergänzungen im Vorspann)
+KENNUNG TRI-K1 – Kürzel TRI aus _kuerzel.csv (mathe-nachhilfe); Rezept K (Kompetenzblatt)
+EINHEIT Bank e4, Katalog Einheit 4 (Sprossen je Verfahrenstyp)
+ZONE „Bruch als Verhältnis lesen und in eine Dezimalzahl umwandeln“ (Einheit 1, 2): nicht für Katalogeinheit 4
+ZONE „Satz des Pythagoras als zweiter Weg zur dritten Seite, Vergleich der Ergebnisse“ (Einheit 1, 3): nicht für Katalogeinheit 4
+ZONE „Höhe, Diagonale, Überstand am Trapez, Fußpunkt auf der Verlängerung beim Parallelogramm, halbe Diagonale im Drachen“ (Einheit 3): nicht für Katalogeinheit 4
+ZONE „Winkelsumme im Dreieck, die beiden spitzen Winkel des rechtwinkligen Dreiecks als Ergänzung, Winkel aus Teilwinkeln (Differenz), Strecke aus Teilstrecken“ (Einheit 2, 3, 4, 9 gemeinsame Wörter) → trigonometrie-zone-f7-v1
+ZONE „Gleichung mit einem Bruch nach einer Größe umstellen, Größe im Zähler (mal) oder im Nenner (geteilt), mit Strich“ (Einheit 1, 4, 4 gemeinsame Wörter) → trigonometrie-zone-f4-v1
+ZONE „Längeneinheiten vor dem Rechnen angleichen (m und km, cm und m), Ergebnis mit Einheit, Runden auf eine Dezimale“ (Einheit 3, 4, 4 gemeinsame Wörter) → trigonometrie-zone-f8-v1
+ZONE „Rechtwinkliges Dreieck erkennen, Rechtwinkelmarke (Bogen mit Punkt), Hypotenuse gegenüber dem rechten Winkel, Katheten am rechten Winkel“ (alle, 8 gemeinsame Wörter): passt, aber über 3 Fertigkeiten – entfällt
+ZONE „Winkel benennen (α, β, γ, auch β1, β2, ε), Winkel messen und schätzen, spitz oder stumpf“ (alle, 2 gemeinsame Wörter): passt, aber über 3 Fertigkeiten – entfällt
+ZONE „Taschenrechner“ (alle, 1 gemeinsame Wörter): passt, aber über 3 Fertigkeiten – entfällt
+AUSWAHL trigonometrie-e4-k1-s0-v1 – trigonometrie e4 „Sinussatz“, Sprosse 0 (vorstufe): Variante 1
+AUSWAHL trigonometrie-e4-k1-s1-v1 – trigonometrie e4 „Sinussatz“, Sprosse 1 (grundfall): Variante 1
+AUSWAHL trigonometrie-e4-k1-s2-v1 – trigonometrie e4 „Sinussatz“, Sprosse 2 (sprosse): Variante 1
+AUSWAHL trigonometrie-e4-k1-s3-v1 – trigonometrie e4 „Sinussatz“, Sprosse 3 (sprosse): Variante 1
+AUSWAHL trigonometrie-e4-k1-s4-v2 – trigonometrie e4 „Sinussatz“, Sprosse 4 (sprosse): kleinste Variante ohne Original (v2)
+AUSWAHL trigonometrie-e4-k1-s5-v1 – trigonometrie e4 „Sinussatz“, Sprosse 5 (sprosse): Variante 1
+AUSWAHL trigonometrie-e4-k1-s6-v1 – trigonometrie e4 „Sinussatz“, Sprosse 6 (sprosse): Variante 1
+AUSWAHL trigonometrie-e4-k1-s7-v1 – trigonometrie e4 „Sinussatz“, Sprosse 7 (sprosse): Variante 1
+AUSWAHL trigonometrie-e4-k1-s8-v1 – trigonometrie e4 „Sinussatz“, Sprosse 8 (sprosse): Variante 1
+AUSWAHL trigonometrie-e4-k1-s9-v1 – trigonometrie e4 „Sinussatz“, Sprosse 9 (sprosse): Variante 1
+AUSWAHL trigonometrie-e4-k1-s10-v2 – trigonometrie e4 „Sinussatz“, Sprosse 10 (sprosse): kleinste Variante ohne Original (v2)
+AUSWAHL trigonometrie-e4-k1-s11-v1 – trigonometrie e4 „Sinussatz“, Sprosse 11 (sprosse): Variante 1
+AUSWAHL trigonometrie-e4-k1-s12-v1 – trigonometrie e4 „Sinussatz“, Sprosse 12 (sprosse): Variante 1
+AUSWAHL trigonometrie-e4-k1-s13-v1 – trigonometrie e4 „Sinussatz“, Sprosse 13 (sprosse): Variante 1
+AUSWAHL trigonometrie-e4-k1-s14-v1 – trigonometrie e4 „Sinussatz“, Sprosse 14 (sprosse): Variante 1
+AUSWAHL trigonometrie-e4-k1-s15-v1 – trigonometrie e4 „Sinussatz“, Sprosse 15 (sprosse): Variante 1
+PRÜFUNG 6 Originale, Jahrgänge [2018, 2019, 2020, 2021, 2024, 2025]; Fenster (jüngste fünf): [2019, 2020, 2021, 2024, 2025]
+RESERVE trigonometrie-e4-k1-s16-v5 (2018-OS-K4c) – älter als die jüngsten fünf Jahrgänge
+AUSWAHL trigonometrie-e4-k1-s16-v3 – Prüfungshöhe (2025-OS-K4c, 2025)
+AUSWAHL trigonometrie-e4-k1-s16-v1 – Prüfungshöhe (2024-OS-K6d, 2024)
+AUSWAHL trigonometrie-e4-k1-s16-v11 – Prüfungshöhe (2021-OS-K3c, 2021)
+AUSWAHL trigonometrie-e4-k1-s16-v9 – Prüfungshöhe (2020-OS-K7c, 2020)
+AUSWAHL trigonometrie-e4-k1-s16-v7 – Prüfungshöhe (2019-OS-K3c, 2019)
+PRÜFWORT „P10“ → „P10 ×9“ (Kataloge, 1 Typen; 8 Originale)
+FRAGE trigonometrie-zone-f8-v1: Kurzfrage „Wie viel Meter?“ entfällt – die Anweisung „Rechne um.“ sagt es (Befund 5)
+PAAR Nr. 5 und 6: dicht (Rechenaufgaben nebeneinander)
+PAAR Nr. 7 und 8: dicht (Rechenaufgaben nebeneinander)
+PAAR Nr. 9 und 10: dicht (Rechenaufgaben nebeneinander)
+PAAR Nr. 11 und 12: dicht (Rechenaufgaben nebeneinander)
+PAAR Nr. 13 und 14: dicht (Rechenaufgaben nebeneinander)
+PAAR Nr. 15 und 16: dicht (Rechenaufgaben nebeneinander)
+PAAR Nr. 17 und 18: dicht (Rechenaufgaben nebeneinander)
+KASTEN Katalogeinheit 4: 4 Zeilen
+ZEICHEN Ersatz im Vorspann: αβγ≈
+STRUKTUR 0 Fehler
