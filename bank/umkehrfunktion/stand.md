@@ -64,3 +64,9 @@ Keine Einheit scheiterte zweimal.
 
 - ksys-Grafiken mit \funktionab (ln, Wurzel, Potenz mit
   Bruchexponent) sind nicht am Render geprüft (kein LaTeX).
+
+## Nachbesserung Gegenlese 2026-09-28
+- Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
+- umkehrfunktion-e2-k1-s3-v1: Lösung nannte den verlangten Berührpunkt nicht („Spiegelpunkt von Q“), pruef leer → $Q(2\,\mathrm{ln}\,3 | 0)$ und Berührpunkt mit g $(0 | 2\,\mathrm{ln}\,3) \approx (0 | 2{,}20)$ ergänzt, pruef `[0, 2*math.log(3)]` (Regel a).
+- umkehrfunktion-e2-k1-s4-v2: Lösung ohne die verlangte Begründung des Trapezes → Satz „AA' und BB' stehen senkrecht auf y = x, sind also parallel“ ergänzt, Fläche 30 bestätigt (Regel a).
+- Prüfskript: Abweichungen 0.
