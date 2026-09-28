@@ -106,3 +106,9 @@ e4, zeilenweise ersetzt.
 - Befunde: Keiner ist mit v0.5 erledigt; `\sin` fehlt weiter in
   STANDARD, ein pruef mit zwei Zahlen gilt bei ksys weiter als
   Punkt.
+
+## Nachbesserung Gegenlese 2026-09-28
+- Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
+- trigonometrie-e2-k1-s1-v2: „$\mathrm{sin}^{-1}(0{,}5556) \approx 33{,}7^\circ$“ falsch ($33{,}752^\circ$) → Umkehrtaste auf $\frac{5}{9}$ ($33{,}749^\circ \approx 33{,}7^\circ$), „$= 0{,}5556$“ → „$\approx 0{,}5556$“; pruef unverändert (Regel b).
+- trigonometrie-e2-k1-s11-v5: $69{,}7^\circ$ folgte scheinbar aus $0{,}346$ (ergibt $69{,}757^\circ$) → „$\varepsilon = \mathrm{cos}^{-1}\left(\frac{9}{26}\right) \approx 69{,}7^\circ$“; pruef unverändert (Regel b).
+- Prüfskript: Abweichungen 0.
