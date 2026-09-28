@@ -1,6 +1,15 @@
 #!/usr/bin/env python3
 """Prüft die Bank eines Katalogeintrags (bank.md, Abschnitt „Prüfung").
 
+v0.6, 2026-09-28 (Basisvorrat, bank.md „Basisvorrat“).
+Änderung gegenüber v0.5 (kleinste Änderung, sonst nichts):
+  a) `bank-pruef.py _basis` prüft den Ordner bank/_basis/: je Datei
+     <eintrag>.jsonl, Sperre und Kennungsprobe aus mappen/<eintrag>.md;
+     hoehe "basis" (nur dort), id "<eintrag>-basis-k<k>-v<v>",
+     sprosse 1, original Pflicht, einheit aus der Zeile; Warnung,
+     wenn eine Kette nicht zehn Varianten hat. Doppel über den ganzen
+     Ordner. Die Prüfung je Zeile ist die von v0.5.
+
 v0.5, 2026-09-27 (nach den Sek-II-Prüfsteinen; bank.md vierte Fassung).
 Änderungen gegenüber v0.4:
   a) original: Kennung gilt, wenn sie als „### <id>“ in Abschnitt
@@ -43,6 +52,7 @@ es gesetzt ist).
 
 Aufruf:
     python3 werkzeuge/bank-pruef.py <eintrag> [--katalog DATEI] [--alle]
+    python3 werkzeuge/bank-pruef.py _basis [--alle]
     python3 werkzeuge/bank-pruef.py --selbsttest
 
 Liest bank/<eintrag>/zone.jsonl und e<n>.jsonl, dazu
@@ -735,8 +745,9 @@ def pruef_leer_erlaubt(a):
             or not re.search(r"\d", normiert(a["loesung"])))
 
 
-def pruefe_zeile(a, eintrag, einheit, ctx=None):
-    """Feld- und Rechenprüfung einer Zeile -> (Abweichungen, Warnungen)."""
+def pruefe_zeile(a, eintrag, einheit, ctx=None, basis=False):
+    """Feld- und Rechenprüfung einer Zeile -> (Abweichungen, Warnungen).
+    basis: Zeile aus bank/_basis/ (v0.6)."""
     ctx = ctx or {}
     b, w = [], []
     fehlt = [f for f in FELDER if f not in a]
@@ -754,14 +765,23 @@ def pruefe_zeile(a, eintrag, einheit, ctx=None):
             b.append(f"{f} keine ganze Zahl")
     if b:
         return b, w
-    if einheit == 0:
+    if basis:
+        soll = f"{eintrag}-basis-k{a['kette_nr']}-v{a['variante']}"
+    elif einheit == 0:
         soll = f"{eintrag}-zone-f{a['kette_nr']}-v{a['variante']}"
     else:
         soll = (f"{eintrag}-e{einheit}-k{a['kette_nr']}-s{a['sprosse']}"
                 f"-v{a['variante']}")
     if a["id"] != soll:
         b.append(f"id {a['id']!r} statt {soll!r}")
-    if a["hoehe"] not in HOEHEN:
+    if basis:
+        if a["hoehe"] != "basis":
+            b.append(f"hoehe {a['hoehe']!r} statt 'basis'")
+        if a["sprosse"] != 1:
+            b.append("sprosse im Basisvorrat 1")
+        if a["original"] is None:
+            b.append("original fehlt (Pflicht im Basisvorrat)")
+    elif a["hoehe"] not in HOEHEN:
         b.append(f"hoehe {a['hoehe']!r} unbekannt")
     if a["hoehe"] == "pflicht":
         if a.get("pflicht") not in PFLICHT:
@@ -770,7 +790,7 @@ def pruefe_zeile(a, eintrag, einheit, ctx=None):
         b.append("pflicht nur bei hoehe pflicht")
     if a["form"] not in FORMEN:
         b.append(f"form {a['form']!r} unbekannt")
-    if (a["sprosse"] == 0) != (a["hoehe"] == "vorstufe"):
+    if not basis and (a["sprosse"] == 0) != (a["hoehe"] == "vorstufe"):
         b.append("sprosse 0 genau dann, wenn hoehe vorstufe")
     o = a["original"]
     # original null auch bei pruefung (Zielmarke ohne P10-Original);
@@ -1063,6 +1083,84 @@ def pruefe_eintrag(eintrag, katalog=None, wurzel=Path("."), alle=False):
             for x in kw:
                 dw += 1
                 print(f"WARNUNG {x}")
+        abw += da
+        warn += dw
+        summe.append((datei.name, da, dw))
+    for name, da, dw in summe:
+        print(f"{name}: Abweichungen {da}, Warnungen {dw}")
+    print(f"Abweichungen: {abw}, Warnungen: {warn}")
+    return abw
+
+
+MENGE_BASIS = 10
+
+
+def pruefe_basis(wurzel=Path("."), alle=False):
+    """bank/_basis/<eintrag>.jsonl (v0.6): Zeilenprüfung wie v0.5 mit
+    basis=True; Ketten lückenlos, Varianten 1..n, Menge 10 je Kette."""
+    ordner = wurzel / "bank" / "_basis"
+    dateien = sorted(ordner.glob("*.jsonl"))
+    if not dateien:
+        raise SystemExit(f"keine jsonl in {ordner}")
+    abw, warn, summe, ids, texte = 0, 0, [], {}, {}
+    for datei in dateien:
+        eintrag = datei.stem
+        ctx, wg = kontext(eintrag, wurzel)
+        da, dw = 0, 0
+        for x in wg:
+            dw += 1
+            print(f"WARNUNG {x}")
+        roh = datei.read_text(encoding="utf-8")
+        if roh.startswith("\ufeff") or "\r" in roh or "\n\n" in roh:
+            print(f"ABWEICHUNG {datei.name}: BOM, CR oder Leerzeile")
+            da += 1
+        zeilen = lade(datei)
+        for a in zeilen:
+            einheit = a.get("einheit")
+            if not isinstance(einheit, int) or isinstance(einheit, bool) \
+                    or einheit < 1:
+                befunde = ["einheit keine Zahl ab 1"]
+            else:
+                befunde, _ = pruefe_zeile(a, eintrag, einheit, ctx, True)
+            aid = a.get("id", "?")
+            if aid in ids:
+                befunde.append(f"id doppelt (auch {ids[aid]})")
+            ids[aid] = datei.name
+            t = re.sub(r"\s+", " ", a.get("aufgabe", "") + " | "
+                       + a.get("grafik", "")).strip()
+            if t and t in texte:
+                befunde.append(f"aufgabe doppelt (wie {texte[t]})")
+            texte[t] = aid
+            if befunde:
+                da += 1
+                print(f"ABWEICHUNG {aid}: " + "; ".join(befunde))
+            elif alle:
+                print(f"OK {aid}")
+        ketten = {}
+        for a in zeilen:
+            ketten.setdefault(a.get("kette_nr"), []).append(a)
+        nr = [a.get("kette_nr") for a in zeilen]
+        folge = [k for i, k in enumerate(nr) if i == 0 or nr[i - 1] != k]
+        if folge != list(range(1, len(ketten) + 1)):
+            da += 1
+            print(f"ABWEICHUNG {datei.name}: kette_nr nicht lückenlos "
+                  f"und zusammenhängend ab 1: {folge}")
+        for k, reihe in sorted(ketten.items(), key=lambda x: str(x[0])):
+            if len({a.get("kette") for a in reihe}) > 1:
+                da += 1
+                print(f"ABWEICHUNG {datei.name} k{k}: kette-Name wechselt")
+            if len({(a.get("original") or {}).get("id") for a in reihe}) > 1:
+                da += 1
+                print(f"ABWEICHUNG {datei.name} k{k}: original wechselt")
+            v = [a.get("variante") for a in reihe]
+            if v != list(range(1, len(v) + 1)):
+                da += 1
+                print(f"ABWEICHUNG {datei.name} k{k}: Varianten nicht "
+                      f"1..n: {v}")
+            if len(reihe) != MENGE_BASIS:
+                dw += 1
+                print(f"WARNUNG {datei.name} k{k}: {len(reihe)} Zeilen, "
+                      f"Menge basis = {MENGE_BASIS}")
         abw += da
         warn += dw
         summe.append((datei.name, da, dw))
@@ -1467,6 +1565,8 @@ def main(argv):
     if len(args) == 3:
         katalog = Path(args[2]).read_text(encoding="utf-8").split("\n")
     wurzel = Path(__file__).resolve().parent.parent
+    if args[0] == "_basis" and katalog is None:
+        return 1 if pruefe_basis(wurzel, alle) else 0
     return 1 if pruefe_eintrag(args[0], katalog, wurzel, alle) else 0
 
 
