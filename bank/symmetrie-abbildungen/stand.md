@@ -104,3 +104,8 @@ Entscheidungen, Punkt 4).
 - Befund JSON-Zahl in pruef: v0.5 bricht nicht mehr ab, sondern
   meldet eine Abweichung; bank.md sagt weiter nicht, dass pruef
   ein String ist, der Befund bleibt.
+
+## Nachbesserung Gegenlese 2026-09-28
+- Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
+- symmetrie-abbildungen-e2-k2-s4-v3: Grafik \dreieck{(0,0)}{(5,0)}{(1,3)} war gleichschenklig (AB = BC = 5) gegen Text „drei verschieden lange Seiten“ und Lösung 0 → dritte Ecke (1.5,3), Seiten 5; 4,61; 3,35, Lösung 0 bleibt (Regel a).
+- Prüfskript: Abweichungen 0.
