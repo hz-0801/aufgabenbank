@@ -112,3 +112,10 @@ Quelle: bau/render-alle/bericht.md, bau/hefte/bericht.md, bau/fokus/bericht.md, 
 - e1-k5-s3-v2 (1): Extra }, or forgotten $ – `=` im Optionswert `ylabel` ohne Klammern. Änderung: `ylabel={…}` geklammert (`=` im Optionswert).
 
 Nur diese 1 Zeilen geändert, alle übrigen byte-gleich. `bank-pruef.py kenngroessen-von-verteilungen`: 0 Abweichungen. Probe: jede Zeile allein in einem Minimaldokument mit mathblatt.sty (hz-0801/blattbau) gesetzt wie werkzeuge/zusammenbau.py v0.7 (teile_normal, teil_schwach, Lösung in \erg), xelatex ohne Fehler.
+
+## Nachbesserung Gegenlese 2026-09-28
+- Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
+- kenngroessen-von-verteilungen-e4-k2-s2-v2: Lösung „Maximum genau zwischen ihnen, dort liegt auch der Erwartungswert“ (nur bei p = 0,5 richtig) → „np = k + 1 − p; Erwartungswert zwischen den Säulen, genau in der Mitte nur bei p = 0,5“ (Regel a).
+- kenngroessen-von-verteilungen-e3-k3-s1-v1, kenngroessen-von-verteilungen-e3-k3-s1-v2: Zuordnung der Diagramme zu X und Y fehlte, Verhältnis kippte (0,64 gegen 1,5625; 0,75 gegen 1,33) → „Das linke Diagramm gehört zu X, das rechte zu Y.“ ergänzt; Lösung unverändert (Regel b).
+- kenngroessen-von-verteilungen-e4-k1-s2-v1, kenngroessen-von-verteilungen-e4-k1-s2-v2: Zuordnung der Diagramme fehlte, p_X und p_Y vertauschbar → Zuordnung links X, rechts Y ergänzt; Lösung unverändert (Regel b).
+- Prüfskript: Abweichungen 0.
