@@ -1,15 +1,19 @@
 #!/usr/bin/env python3
-"""zusammenbau.py v0.1 – aus bank/<eintrag>/ LaTeX-Quelltexte für mathblatt.sty.
+"""zusammenbau.py v0.3 – aus bank/<eintrag>/ LaTeX-Quelltexte für mathblatt.sty.
 
 Aufruf:
     python3 werkzeuge/zusammenbau.py <eintrag> [--einheiten 1,3]
         [--zone ja|nein|kurz] [--fokus <kette>] [--schwach] [--klasse 7]
-        [--kasten] [--aus bau/<eintrag>/<datum>/] [--vorlage <mathblatt.sty>]
+        [--kasten] [--aus <ordner>] [--vorlage <mathblatt.sty>]
+        [--ohne-register] [--kuerzel <_kuerzel.csv>]
 
 Ohne Schalter: Lernblatt mit Zone und allen Einheiten, je Sprosse
-Variante 1, ohne Klasse. Ausgabe unter bau/<eintrag>/<datum>/ (Datum
-des Rechners), mit --aus in den genannten Ordner. Die Quelltexte
-hängen nur von Bank, Mappe und Schaltern ab (kein Datum darin).
+Variante 1, ohne Klasse. Jeder Bau bekommt eine Kennung XXX-R<n>
+(Kürzel des Eintrags, Rezept L/F/S/H, laufende Nummer aus
+bau/register.csv) und landet unter bau/<eintrag>/<kennung>/, mit --aus
+im genannten Ordner. Die Registerzeile wird angehängt, daneben
+bau.json (Bauzettel). --ohne-register: Kennung XXX-R0, keine Zeile.
+Die Quelltexte hängen nur von Bank, Mappe, Schaltern und Kennung ab.
 
 Liest bank/<eintrag>/*.jsonl, mappen/<eintrag>.md (Abschnitt 1),
 mappen/_bausteine.md und aus werkzeuge/bank-pruef.py die Liste
@@ -20,18 +24,20 @@ werkzeuge/zusammenbau.md.
 """
 
 import argparse
+import csv
 import datetime
 import importlib.util
 import json
 import os
 import re
 import shutil
+import subprocess
 import sys
 from bisect import bisect_right
 from pathlib import Path
 
 WURZEL = Path(__file__).resolve().parent.parent
-VERSION = "v0.1"
+VERSION = "v0.3"
 
 # Befehle der Rahmendateien, die weder in STANDARD (bank-pruef.py) noch
 # in _bausteine.md stehen; jede Argumentzahl zulässig.
@@ -52,6 +58,100 @@ GRAFIK = re.compile(r"\\(streifen\w*|sachtabelle|bruchrechteck|bruchkreis|"
                     r"saeulen\w*|balkenab|liniendia|baum\w+|wertetabelle\w*|"
                     r"vierfeldertafel|histogramm|strichliste)\b|"
                     r"\\begin\{(ksys3?|dreisatz|kreis|zahlengerade|boxplots)\}")
+
+
+# --- Kennung und Register --------------------------------------------------
+
+REGISTER = WURZEL / "bau" / "register.csv"
+REGISTER_KOPF = ["kennung", "datum", "eintraege", "rezept", "bestellung",
+                 "bank_commit", "zusammenbau", "vorlage", "pfad"]
+REZEPT = {"L": "Lernblatt", "F": "Fokus", "S": "schwach", "H": "Heft"}
+KENNUNG_MUSTER = re.compile(r"^([A-Z]{3})-([LFSH])(\d+)$")
+
+
+def finde_kuerzelliste(angabe):
+    kandidaten = []
+    if angabe:
+        kandidaten.append(Path(angabe))
+    if os.environ.get("MATHE_NACHHILFE"):
+        kandidaten.append(Path(os.environ["MATHE_NACHHILFE"]) / "katalog"
+                          / "_kuerzel.csv")
+    kandidaten += [WURZEL.parent / "mathe-nachhilfe" / "katalog" / "_kuerzel.csv",
+                   WURZEL.parent / "hz-0801" / "mathe-nachhilfe" / "katalog"
+                   / "_kuerzel.csv"]
+    for k in kandidaten:
+        if k.is_file():
+            return k
+    return None
+
+
+def kuerzel_von(eintrag, liste):
+    """(Kürzel, Quelle): aus katalog/_kuerzel.csv (Spalten kuerzel;eintrag),
+    sonst die ersten drei Buchstaben des Eintrags groß."""
+    if liste:
+        with open(liste, encoding="utf-8", newline="") as f:
+            zeilen = [z for z in f if z.strip() and not z.startswith("#")]
+        for z in csv.DictReader(zeilen, delimiter=";"):
+            if (z.get("eintrag") or "").strip() == eintrag:
+                k = (z.get("kuerzel") or "").strip()
+                if re.fullmatch(r"[A-Z]{3}", k):
+                    return k, f"{liste.name} ({liste.parent.parent.name})"
+        grund = f"{eintrag} fehlt in {liste}"
+    else:
+        grund = "katalog/_kuerzel.csv nicht gefunden"
+    buchst = re.sub(r"[^a-z]", "", eintrag.lower())[:3].upper()
+    return buchst, f"Ersatz: erste drei Buchstaben ({grund})"
+
+
+def lies_register():
+    if not REGISTER.exists():
+        return []
+    with open(REGISTER, encoding="utf-8", newline="") as f:
+        return list(csv.DictReader(f, delimiter=";"))
+
+
+def naechste_nummer(kuerzel, rezept, register):
+    hoechste = 0
+    for z in register:
+        m = KENNUNG_MUSTER.match(z.get("kennung", ""))
+        if m and m.group(1) == kuerzel and m.group(2) == rezept:
+            hoechste = max(hoechste, int(m.group(3)))
+    return hoechste + 1
+
+
+def haenge_an_register(zeile):
+    neu = not REGISTER.exists()
+    REGISTER.parent.mkdir(parents=True, exist_ok=True)
+    with open(REGISTER, "a", encoding="utf-8", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=REGISTER_KOPF, delimiter=";",
+                           lineterminator="\n")
+        if neu:
+            w.writeheader()
+        w.writerow(zeile)
+
+
+def bank_commit():
+    """Kurzhash von HEAD; „+geändert“, wenn bank/, mappen/ oder
+    werkzeuge/ im Arbeitsbaum vom Commit abweichen."""
+    try:
+        h = subprocess.run(["git", "-C", str(WURZEL), "rev-parse", "--short",
+                            "HEAD"], capture_output=True, text=True,
+                           check=True).stdout.strip()
+        st = subprocess.run(["git", "-C", str(WURZEL), "status", "--porcelain",
+                             "--", "bank", "mappen", "werkzeuge"],
+                            capture_output=True, text=True).stdout.strip()
+        return h + ("+geändert" if st else "")
+    except (OSError, subprocess.CalledProcessError):
+        return "?"
+
+
+def heute():
+    """Datum wie `date +%F` (Uhr des Rechners)."""
+    try:
+        return subprocess.run(["date", "+%F"], capture_output=True, text=True,
+                              check=True).stdout.strip()
+    except (OSError, subprocess.CalledProcessError):
+        return datetime.date.today().isoformat()
 
 
 # --- Hilfen --------------------------------------------------------------
@@ -490,7 +590,9 @@ class Bau:
         self.fokus = args.fokus
         self.schwach = args.schwach
         self.klasse = args.klasse
+        self.kennung = args.kennung
         self.todo_frei = []
+        self.reihenfolge = []   # (Hauptnummer, Aufgabendatei) in Blattfolge
 
     # Auswahl je Einheit
     def einheiten(self):
@@ -747,6 +849,7 @@ class Bau:
             for h in zone:
                 a.append("")
                 a += self.satz_hauptnummer(h)
+                self.reihenfolge.append((h, "blatt0_a.tex"))
             if "zonepaar" in self.todo_frei:
                 a += ["", "%% TODO Zone-Paar (Fehler finden + gleichartige "
                       "Rechenaufgabe, 2.2) fehlt in zone.jsonl"]
@@ -785,6 +888,7 @@ class Bau:
                     a.append("%% TODO \\verfahren{…}: Verfahrensüberschrift in "
                              "Sachsprache fehlt in der Bank (2.3 b)")
                 a += self.satz_hauptnummer(h)
+                self.reihenfolge.append((h, f"e{n}_a.tex"))
             if self.schwach:
                 a.append("")
                 a += self.kasten(n)
@@ -811,9 +915,15 @@ class Bau:
         kopf = ["\\documentclass[11pt]{article}", "\\usepackage{mathblatt}"]
         dateien = {}
 
+        k = self.kennung
+
         def dok(blatt, rumpf, vorspann=()):
+            # Kennung in der Fußzeile links, wo \blattfuss die Bezeichnung
+            # trägt: \blattkopf* setzt dort sein drittes Argument
+            # (\blattfuss selbst löscht die Kopfzeile von \blattkopf).
+            fuss = f"{th} · {blatt} · {k}"
             z = kopf + list(vorspann) + ["\\begin{document}",
-                                         f"\\blattkopf{{{th}}}{{{blatt}}}"]
+                                         f"\\blattkopf*{{{th}}}{{{blatt}}}{{{fuss}}}"]
             if weit and blatt != "Lösungen" and not blatt.endswith("Lösungen"):
                 z.append("\\weit")
             return z + rumpf + ["\\end{document}"]
@@ -840,16 +950,17 @@ class Bau:
             if zone:
                 rumpf += ["\\input{blatt0_a}", "\\clearpage"]
             rumpf += e_inputs
-            dateien["fokus.tex"] = dok(f"Fokus {self.fokus}", rumpf)
-            dateien["fokus_loesungen.tex"] = dok(f"Fokus {self.fokus} · Lösungen",
-                                                 l_inputs)
+            dateien[f"{k}.tex"] = dok(f"Fokus {self.fokus}", rumpf)
+            dateien[f"{k}-loesungen.tex"] = dok(f"Fokus {self.fokus} · Lösungen",
+                                                l_inputs)
             return dateien
         if zone:
-            dateien["blatt0.tex"] = dok("Kennst du schon", ["\\input{blatt0_a}"])
+            dateien[f"{k}-blatt0.tex"] = dok("Kennst du schon",
+                                             ["\\input{blatt0_a}"])
         for pos, (n, _) in enumerate(einheiten, 1):
-            dateien[f"e{n}.tex"] = dok(f"Einheit {pos}", [f"\\input{{e{n}_a}}"])
+            dateien[f"{k}-e{n}.tex"] = dok(f"Einheit {pos}", [f"\\input{{e{n}_a}}"])
         verz_l = verz_e + ["\\verz{abhaken}{Das kann ich}"]
-        dateien["lernblatt.tex"] = dok(
+        dateien[f"{k}.tex"] = dok(
             "Lernblatt",
             ["\\verzeichniszeile{" + " \\verztrenn ".join(verz_l) + "}"]
             + e_inputs + ["\\input{abhaken}"])
@@ -859,12 +970,12 @@ class Bau:
             verz_g.insert(0, f"\\verz{{zone}}{{Kennst du schon "
                              f"({nummern(zone[0].nr, zone[-1].nr)})}}")
             g_rumpf = ["\\input{blatt0_a}", "\\clearpage"]
-        dateien["gesamt.tex"] = dok(
+        dateien[f"{k}-gesamt.tex"] = dok(
             "Gesamt",
             ["\\verzeichniszeile{" + " \\verztrenn ".join(verz_g) + "}"]
             + g_rumpf + e_inputs + ["\\input{abhaken}"],
             vorspann=["\\def\\mitzone{1}"] if zone else [])
-        dateien["loesungen.tex"] = dok("Lösungen", l_inputs)
+        dateien[f"{k}-loesungen.tex"] = dok("Lösungen", l_inputs)
         # Abhakseite
         ab = ["% Abhakseite „Das kann ich“ – Zone nur im Gesamt (\\mitzone)",
               "%% TODO Ich-kann-Sätze: Platzhalter wie in den Aufgabendateien",
@@ -1106,9 +1217,13 @@ def main(argv=None):
     p.add_argument("--aus", metavar="ORDNER",
                    help="Ausgabeordner statt bau/<eintrag>/<datum>/")
     p.add_argument("--vorlage", metavar="STY", help="Pfad zu mathblatt.sty")
+    p.add_argument("--ohne-register", action="store_true",
+                   help="Probe: keine Registerzeile, Kennung XXX-R0")
+    p.add_argument("--kuerzel", metavar="CSV",
+                   help="Pfad zu katalog/_kuerzel.csv (mathe-nachhilfe)")
     args = p.parse_args(argv)
     if args.fokus and args.schwach:
-        sys.exit("--fokus und --schwach zusammen kann v0.1 nicht")
+        sys.exit("--fokus und --schwach zusammen kann v0.3 nicht")
 
     log = Log()
     aufruf = ["zusammenbau.py", args.eintrag]
@@ -1119,12 +1234,40 @@ def main(argv=None):
     for name in ("schwach", "kasten"):
         if getattr(args, name):
             aufruf.append(f"--{name}")
+    if args.ohne_register:
+        aufruf.append("--ohne-register")
     log(f"# zusammenbau {VERSION}: " + " ".join(aufruf))
 
     vorlage = finde_vorlage(args.vorlage)
     version = vorlage.read_text(encoding="utf-8").splitlines()[1].lstrip("% ")
     version = version.split(" (", 1)[0]
     log(f"VORLAGE mathblatt.sty: {version}")
+
+    # Kennung: Kürzel des (ersten) Eintrags, Rezept, laufende Nummer
+    if not (WURZEL / "bank" / args.eintrag).is_dir():
+        sys.exit(f"bank/{args.eintrag}/ fehlt")
+    eintraege = [args.eintrag]
+    rezept = "F" if args.fokus else "S" if args.schwach else "L"
+    kuerzel, k_quelle = kuerzel_von(eintraege[0],
+                                    finde_kuerzelliste(args.kuerzel))
+    register = lies_register()
+    nummer = 0 if args.ohne_register else naechste_nummer(kuerzel, rezept,
+                                                          register)
+    args.kennung = f"{kuerzel}-{rezept}{nummer}"
+    log(f"KENNUNG {args.kennung} – Kürzel {kuerzel} aus {k_quelle}; Rezept "
+        f"{rezept} ({REZEPT[rezept]}); "
+        + ("ohne Register (Probe)" if args.ohne_register else
+           f"Nummer {nummer} = nächste freie in bau/register.csv"))
+    if k_quelle.startswith("Ersatz"):
+        print(f"HINWEIS Kürzel {kuerzel}: {k_quelle}")
+
+    if args.aus:
+        ziel = Path(args.aus)
+    else:
+        ziel = WURZEL / "bau" / args.eintrag / args.kennung
+    if not args.ohne_register and ziel.exists() and any(ziel.iterdir()):
+        sys.exit(f"{ziel} ist nicht leer – Register und Ordner passen nicht "
+                 "zusammen; nichts gebaut")
 
     bau = Bau(args, log)
     dateien = bau.baue()
@@ -1133,10 +1276,6 @@ def main(argv=None):
     sig = BP.lade_bausteine(WURZEL / "mappen" / "_bausteine.md")
     fehler = pruefe_struktur(texte, sig)
 
-    if args.aus:
-        ziel = Path(args.aus)
-    else:
-        ziel = WURZEL / "bau" / args.eintrag / datetime.date.today().isoformat()
     ziel.mkdir(parents=True, exist_ok=True)
     for name, text in sorted(texte.items()):
         (ziel / name).write_text(text, encoding="utf-8", newline="\n")
@@ -1155,6 +1294,70 @@ def main(argv=None):
         log(f"  FEHLER {name}:{zl}: {meldung}")
     (ziel / "zusammenbau.log").write_text("\n".join(log.zeilen) + "\n",
                                           encoding="utf-8", newline="\n")
+
+    # Bauzettel und Registerzeile
+    datum = heute()
+    commit = bank_commit()
+    try:
+        pfad = ziel.resolve().relative_to(WURZEL).as_posix()
+    except ValueError:
+        pfad = ziel.resolve().as_posix()
+    bestellung = {
+        "einheiten": args.einheiten or "alle",
+        "zone": args.zone,
+        "fokus": args.fokus,
+        "schwach": args.schwach,
+        "klasse": args.klasse,
+        "kasten": args.kasten,
+        "aus": args.aus,
+        "ohne_register": args.ohne_register,
+    }
+    aufgaben = []
+    for h, datei in bau.reihenfolge:
+        for b, z in h.buchstaben:
+            aufgaben.append({
+                "aufgabe": f"A{h.nr}",
+                "hauptnummer": h.nr,
+                "teilaufgabe": b,
+                "id": z["id"] if z else None,
+                "datei": datei,
+                **({} if z else {"hinweis": "Erklärzeile (schwach), "
+                                            "keine Bankzeile"}),
+            })
+    zettel = {
+        "kennung": args.kennung,
+        "datum": datum,
+        "eintraege": eintraege,
+        "rezept": rezept,
+        "rezept_name": REZEPT[rezept],
+        "bestellung": bestellung,
+        "bank_commit": commit,
+        "zusammenbau": VERSION,
+        "vorlage": version,
+        "pfad": pfad,
+        "kuerzel_quelle": k_quelle,
+        "strukturfehler": len(fehler),
+        "aufgaben": aufgaben,
+    }
+    (ziel / "bau.json").write_text(
+        json.dumps(zettel, ensure_ascii=False, indent=1) + "\n",
+        encoding="utf-8", newline="\n")
+    if not args.ohne_register:
+        haenge_an_register({
+            "kennung": args.kennung,
+            "datum": datum,
+            "eintraege": ",".join(eintraege),
+            "rezept": rezept,
+            "bestellung": ", ".join(
+                f"{k}={'ja' if v is True else 'nein' if v is False else '–' if v is None else v}"
+                for k, v in bestellung.items() if k != "ohne_register"),
+            "bank_commit": commit,
+            "zusammenbau": VERSION,
+            "vorlage": version,
+            "pfad": pfad,
+        })
+        print(f"REGISTER {args.kennung} an bau/register.csv angehängt")
+    print(f"KENNUNG {args.kennung}")
     print(f"{len(texte)} Quelltexte nach {ziel}; {len(todo)} TODO; "
           f"Strukturprüfung {len(fehler)} Fehler")
     for name, zl, meldung in fehler:
