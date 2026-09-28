@@ -70,3 +70,8 @@ Prüfskript: bank-pruef.py v0.5, am Ende 0 Abweichungen, 0 Warnungen
   Blattstoff; die Auswahl beim Blattbau muss das beachten.
 - Die Schreibweise „(n über k)“ beim Zusammenbau prüfen oder durch
   \binom ersetzen, sobald das Prüfskript es zulässt.
+
+## Nachbesserung Gegenlese 2026-09-28
+- Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
+- hypergeometrische-verteilung-e2-k2-s2-v2: loesung „damit größer als $P(X = k)$ allein“ (falsch für k = 0, dort gleich) → „damit mindestens so groß wie $P(X = k)$ allein“ (Regel a).
+- Prüfskript: Abweichungen 0.
