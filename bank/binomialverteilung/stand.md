@@ -110,3 +110,9 @@ Quelle: bau/render-alle/bericht.md, bau/hefte/bericht.md, bau/fokus/bericht.md, 
 - e5-k1-s1-v1, e5-k1-s1-v2, e5-k1-s1-v3, e5-k1-s1-v4, e5-k1-s1-v5, e5-k1-s5-v1, e5-k1-s5-v2, e5-k3-s4-v2 (8): Extra }, or forgotten $ – `=` im Optionswert `ylabel` ohne Klammern. Änderung: `ylabel={…}` geklammert (`=` im Optionswert).
 
 Nur diese 8 Zeilen geändert, alle übrigen byte-gleich. `bank-pruef.py binomialverteilung`: 0 Abweichungen. Probe: jede Zeile allein in einem Minimaldokument mit mathblatt.sty (hz-0801/blattbau) gesetzt wie werkzeuge/zusammenbau.py v0.7 (teile_normal, teil_schwach, Lösung in \erg), xelatex ohne Fehler.
+
+## Nachbesserung Gegenlese 2026-09-28
+- Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
+- binomialverteilung-e2-k2-s1-v1: Zwischenschritt „10 · 0,0161 ≈ 0,1608“ passte nicht zusammen (10 · 0,0161 = 0,161) → „10 · 125/7776 ≈ 0,1608“ (Regel a).
+- binomialverteilung-e5-k1-s7-v3: Begründung „8 liegt näher am Maximum als 2“ trägt nicht (p = 0,51: Maximum bei 5, beide Abstand 3) → Begründung über gleiche Binomialkoeffizienten, Verhältnis (p/(1 − p))⁶ > 1 ⇔ p > 0,5; Ergebnis p > 0,5 unverändert (Regel a).
+- Prüfskript: Abweichungen 0.
