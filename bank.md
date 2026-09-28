@@ -290,3 +290,11 @@ fehlende Mappe (dann entfallen Sperre und Kennungsprobe).
 Erst bei null Abweichungen wird committet. Weicht eine Lösung ab,
 wird die Aufgabe korrigiert, nicht das Skript – außer das Skript
 hat erkennbar falsch modelliert; das steht dann unter „Befunde".
+
+## Sprache der Aufgaben (vorläufig, 28.09.2026)
+
+Aufgabentexte folgen bau/sprachlauf/regeln.md: ganze, kurze Sätze;
+erst die Lage, dann genau eine Aufforderung; die Frage nennt ihren
+Bezug; keine Stichwörter mit Doppelpunkt; Division als Bruch.
+Gilt für neue und geänderte Zeilen. Abnahme durch den Lehrer
+offen (mathe-nachhilfe uebergabe.md § 5, K2).
