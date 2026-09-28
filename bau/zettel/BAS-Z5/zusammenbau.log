@@ -1,0 +1,20 @@
+# zusammenbau v0.5: zusammenbau.py --zettel basis
+VORRAT 41 Typen, 410 Aufgaben; Vorrat erschöpft ab Zettel 42
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG BAS-Z5 – Kürzel BAS (Basisvorrat, fest), Rezept Z (Zettel); Inhalt von Zettel 5 = nächste freie Nummer in bau/register.csv
+HÖHE geschätzt 19.2 cm (Maß 25.0 cm)
+SATZ Nr. 1: 4 kurze Ankreuzoptionen in einer Zeile
+SATZ Nr. 1: Grafik unter dem Text (Reihe von Figuren)
+AUSWAHL Nr. 1: brueche-dezimalzahlen-basis-k1-v4 – Bruchteil einer Fläche bestimmen (Jahrgänge 9, Variante 4)
+AUSWAHL Nr. 2: brueche-dezimalzahlen-basis-k2-v2 – Bruchteil einer Größe berechnen (Jahrgänge 2, Variante 2)
+AUSWAHL Nr. 3: brueche-dezimalzahlen-basis-k4-v4 – Zahlen in verschiedenen Darstellungen vergleichen (Jahrgänge 7, Variante 4)
+AUSWAHL Nr. 4: rationale-zahlen-basis-k1-v3 – Termwert berechnen (Jahrgänge 5, Variante 3)
+AUSWAHL Nr. 5: rationale-zahlen-basis-k3-v1 – Zahl zu Bedingung angeben (Jahrgänge 2, Variante 1)
+AUSWAHL Nr. 6: potenzen-wurzeln-basis-k3-v2 – Zehnerpotenzschreibweise umwandeln (Jahrgänge 4, Variante 2)
+AUSWAHL Nr. 7: prozentrechnung-basis-k3-v1 – Prozentsatz berechnen (Jahrgänge 1, Variante 1)
+AUSWAHL Nr. 8: lineare-gleichungen-basis-k1-v3 – Lineare Gleichung lösen (Jahrgänge 4, Variante 3)
+SATZ Nr. 9: 3 kurze Ankreuzoptionen in einer Zeile
+AUSWAHL Nr. 9: lineare-funktionen-basis-k3-v1 – Punktprobe durchführen (Jahrgänge 1, Variante 1)
+SATZ Nr. 10: 4 kurze Ankreuzoptionen in einer Zeile
+AUSWAHL Nr. 10: symmetrie-abbildungen-basis-k2-v1 – Lage eines Punktes zu den Achsen erkennen (Jahrgänge 1, Variante 1)
+STRUKTUR 0 Fehler

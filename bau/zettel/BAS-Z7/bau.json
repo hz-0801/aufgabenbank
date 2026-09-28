@@ -1,0 +1,113 @@
+{
+ "kennung": "BAS-Z7",
+ "datum": "2026-09-28",
+ "eintraege": [
+  "_basis"
+ ],
+ "rezept": "Z",
+ "rezept_name": "Zettel",
+ "bestellung": {
+  "zettel": "basis",
+  "nummer": 7,
+  "ohne_register": false
+ },
+ "bank_commit": "98f6b7d",
+ "zusammenbau": "v0.5",
+ "vorlage": "Version 2026-09-28a",
+ "pfad": "bau/zettel/BAS-Z7",
+ "kuerzel_quelle": "fest (Basisvorrat)",
+ "strukturfehler": 0,
+ "vorrat_erschoepft_ab": 42,
+ "aufgaben": [
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "id": "brueche-dezimalzahlen-basis-k1-v6",
+   "kette": "Bruchteil einer Fläche bestimmen",
+   "jahrgaenge": 9,
+   "variante": 6,
+   "original": "2026-FOR-B1b"
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "id": "brueche-dezimalzahlen-basis-k4-v6",
+   "kette": "Zahlen in verschiedenen Darstellungen vergleichen",
+   "jahrgaenge": 7,
+   "variante": 6,
+   "original": "2023-OS-B1f"
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "id": "potenzen-wurzeln-basis-k3-v3",
+   "kette": "Zehnerpotenzschreibweise umwandeln",
+   "jahrgaenge": 4,
+   "variante": 3,
+   "original": "2025-OS-B1d"
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "id": "prozentrechnung-basis-k2-v2",
+   "kette": "Prozent und Anteil umwandeln",
+   "jahrgaenge": 2,
+   "variante": 2,
+   "original": "2022-OS-B1f"
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "id": "einheiten-basis-k1-v1",
+   "kette": "Uhrzeit aus Startzeit und Dauer berechnen",
+   "jahrgaenge": 1,
+   "variante": 1,
+   "original": "2021-OS-B1a"
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "id": "lineare-gleichungen-basis-k1-v4",
+   "kette": "Lineare Gleichung lösen",
+   "jahrgaenge": 4,
+   "variante": 4,
+   "original": "2024-OS-B1d"
+  },
+  {
+   "aufgabe": "A7",
+   "hauptnummer": 7,
+   "id": "quadratische-gleichungen-basis-k1-v3",
+   "kette": "Lösung durch Einsetzen prüfen",
+   "jahrgaenge": 3,
+   "variante": 3,
+   "original": "2025-OS-B1h"
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "id": "symmetrie-abbildungen-basis-k3-v2",
+   "kette": "Symmetrieachsen bestimmen",
+   "jahrgaenge": 2,
+   "variante": 2,
+   "original": "2022-OS-B1i"
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "id": "koerper-basis-k3-v1",
+   "kette": "Volumen Würfel berechnen",
+   "jahrgaenge": 1,
+   "variante": 1,
+   "original": "2026-FOR-B1f"
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "id": "trigonometrie-basis-k2-v4",
+   "kette": "Winkelfunktion Seitenverhältnis angeben",
+   "jahrgaenge": 5,
+   "variante": 4,
+   "original": "2025-OS-B1g"
+  }
+ ]
+}

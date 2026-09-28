@@ -1,0 +1,113 @@
+{
+ "kennung": "BAS-Z4",
+ "datum": "2026-09-28",
+ "eintraege": [
+  "_basis"
+ ],
+ "rezept": "Z",
+ "rezept_name": "Zettel",
+ "bestellung": {
+  "zettel": "basis",
+  "nummer": 4,
+  "ohne_register": false
+ },
+ "bank_commit": "98f6b7d",
+ "zusammenbau": "v0.5",
+ "vorlage": "Version 2026-09-28a",
+ "pfad": "bau/zettel/BAS-Z4",
+ "kuerzel_quelle": "fest (Basisvorrat)",
+ "strukturfehler": 0,
+ "vorrat_erschoepft_ab": 42,
+ "aufgaben": [
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "id": "brueche-dezimalzahlen-basis-k3-v1",
+   "kette": "Mitte zweier Zahlen bestimmen",
+   "jahrgaenge": 1,
+   "variante": 1,
+   "original": "2020-OS-B1f"
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "id": "prozentrechnung-basis-k4-v3",
+   "kette": "Prozentwert berechnen",
+   "jahrgaenge": 5,
+   "variante": 3,
+   "original": "2026-FOR-B1a"
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "id": "terme-basis-k1-v1",
+   "kette": "Term durch Zusammenfassen gleichartiger Glieder vereinfachen",
+   "jahrgaenge": 1,
+   "variante": 1,
+   "original": "2025-GYM-B2a"
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "id": "terme-basis-k2-v2",
+   "kette": "Term zu Sachtext angeben",
+   "jahrgaenge": 4,
+   "variante": 2,
+   "original": "2023-OS-B1h"
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "id": "quadratische-gleichungen-basis-k1-v2",
+   "kette": "Lösung durch Einsetzen prüfen",
+   "jahrgaenge": 3,
+   "variante": 2,
+   "original": "2025-OS-B1h"
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "id": "lineare-funktionen-basis-k2-v1",
+   "kette": "Graph nach Eigenschaft auswählen",
+   "jahrgaenge": 1,
+   "variante": 1,
+   "original": "2016-OS-B1c"
+  },
+  {
+   "aufgabe": "A7",
+   "hauptnummer": 7,
+   "id": "winkel-dreiecke-basis-k3-v1",
+   "kette": "Winkel an geschnittenen Parallelen bestimmen",
+   "jahrgaenge": 2,
+   "variante": 1,
+   "original": "2015-OS-B1d"
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "id": "winkel-dreiecke-basis-k4-v1",
+   "kette": "Winkel im Viereck berechnen",
+   "jahrgaenge": 2,
+   "variante": 1,
+   "original": "2026-FOR-B1i"
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "id": "trigonometrie-basis-k1-v1",
+   "kette": "Trigonometrische Gleichung nach Seite umstellen",
+   "jahrgaenge": 1,
+   "variante": 1,
+   "original": "2020-OS-B1j"
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "id": "trigonometrie-basis-k2-v2",
+   "kette": "Winkelfunktion Seitenverhältnis angeben",
+   "jahrgaenge": 5,
+   "variante": 2,
+   "original": "2025-OS-B1g"
+  }
+ ]
+}

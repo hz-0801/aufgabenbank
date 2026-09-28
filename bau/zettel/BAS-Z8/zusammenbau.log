@@ -1,0 +1,20 @@
+# zusammenbau v0.5: zusammenbau.py --zettel basis
+VORRAT 41 Typen, 410 Aufgaben; Vorrat erschöpft ab Zettel 42
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG BAS-Z8 – Kürzel BAS (Basisvorrat, fest), Rezept Z (Zettel); Inhalt von Zettel 8 = nächste freie Nummer in bau/register.csv
+HÖHE geschätzt 24.3 cm (Maß 25.0 cm)
+SATZ Nr. 1: 4 kurze Ankreuzoptionen in einer Zeile
+SATZ Nr. 1: Grafik unter dem Text (Reihe von Figuren)
+AUSWAHL Nr. 1: brueche-dezimalzahlen-basis-k1-v7 – Bruchteil einer Fläche bestimmen (Jahrgänge 9, Variante 7)
+AUSWAHL Nr. 2: brueche-dezimalzahlen-basis-k4-v7 – Zahlen in verschiedenen Darstellungen vergleichen (Jahrgänge 7, Variante 7)
+AUSWAHL Nr. 3: rationale-zahlen-basis-k1-v5 – Termwert berechnen (Jahrgänge 5, Variante 5)
+SATZ Nr. 4: 3 kurze Ankreuzoptionen in einer Zeile
+AUSWAHL Nr. 4: rationale-zahlen-basis-k2-v1 – Vorzeichenregel anwenden (Jahrgänge 1, Variante 1)
+AUSWAHL Nr. 5: prozentrechnung-basis-k4-v5 – Prozentwert berechnen (Jahrgänge 5, Variante 5)
+AUSWAHL Nr. 6: prozentrechnung-basis-k5-v1 – Wert nach prozentualer Erhöhung berechnen (Jahrgänge 1, Variante 1)
+SATZ Nr. 7: 4 kurze Ankreuzoptionen in einer Zeile
+AUSWAHL Nr. 7: terme-basis-k2-v4 – Term zu Sachtext angeben (Jahrgänge 4, Variante 4)
+AUSWAHL Nr. 8: winkel-dreiecke-basis-k3-v2 – Winkel an geschnittenen Parallelen bestimmen (Jahrgänge 2, Variante 2)
+AUSWAHL Nr. 9: winkel-dreiecke-basis-k4-v2 – Winkel im Viereck berechnen (Jahrgänge 2, Variante 2)
+AUSWAHL Nr. 10: bruchrechnung-basis-k1-v3 – Wahrscheinlichkeit einstufig (Jahrgänge 3, Variante 3)
+STRUKTUR 0 Fehler

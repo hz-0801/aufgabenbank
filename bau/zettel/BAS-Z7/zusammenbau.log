@@ -1,0 +1,21 @@
+# zusammenbau v0.5: zusammenbau.py --zettel basis
+VORRAT 41 Typen, 410 Aufgaben; Vorrat erschöpft ab Zettel 42
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG BAS-Z7 – Kürzel BAS (Basisvorrat, fest), Rezept Z (Zettel); Inhalt von Zettel 7 = nächste freie Nummer in bau/register.csv
+HÖHE geschätzt 22.3 cm (Maß 25.0 cm)
+SATZ Nr. 1: 4 kurze Ankreuzoptionen in einer Zeile
+SATZ Nr. 1: Grafik unter dem Text (Reihe von Figuren)
+AUSWAHL Nr. 1: brueche-dezimalzahlen-basis-k1-v6 – Bruchteil einer Fläche bestimmen (Jahrgänge 9, Variante 6)
+AUSWAHL Nr. 2: brueche-dezimalzahlen-basis-k4-v6 – Zahlen in verschiedenen Darstellungen vergleichen (Jahrgänge 7, Variante 6)
+AUSWAHL Nr. 3: potenzen-wurzeln-basis-k3-v3 – Zehnerpotenzschreibweise umwandeln (Jahrgänge 4, Variante 3)
+SATZ Nr. 4: 4 kurze Ankreuzoptionen in einer Zeile
+AUSWAHL Nr. 4: prozentrechnung-basis-k2-v2 – Prozent und Anteil umwandeln (Jahrgänge 2, Variante 2)
+AUSWAHL Nr. 5: einheiten-basis-k1-v1 – Uhrzeit aus Startzeit und Dauer berechnen (Jahrgänge 1, Variante 1)
+AUSWAHL Nr. 6: lineare-gleichungen-basis-k1-v4 – Lineare Gleichung lösen (Jahrgänge 4, Variante 4)
+SATZ Nr. 7: 4 kurze Ankreuzoptionen in einer Zeile
+AUSWAHL Nr. 7: quadratische-gleichungen-basis-k1-v3 – Lösung durch Einsetzen prüfen (Jahrgänge 3, Variante 3)
+SATZ Nr. 8: 6 kurze Ankreuzoptionen in einer Zeile
+AUSWAHL Nr. 8: symmetrie-abbildungen-basis-k3-v2 – Symmetrieachsen bestimmen (Jahrgänge 2, Variante 2)
+AUSWAHL Nr. 9: koerper-basis-k3-v1 – Volumen Würfel berechnen (Jahrgänge 1, Variante 1)
+AUSWAHL Nr. 10: trigonometrie-basis-k2-v4 – Winkelfunktion Seitenverhältnis angeben (Jahrgänge 5, Variante 4)
+STRUKTUR 0 Fehler

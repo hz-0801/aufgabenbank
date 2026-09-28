@@ -193,6 +193,28 @@ Verfahrenskette ist daher nicht immer k1.
   A(1 | 2 | 0).
 - sin, cos, ln als \mathrm{…}.
 
+## Basisvorrat
+
+bank/_basis/ (seit 28.09.) hält den Vorrat für die Basiszettel:
+Basisaufgaben (Teil A der P10, ohne Rechner) werden getrennt geübt,
+am Stundenanfang ein Zettel mit zehn kurzen Aufgaben. Ein Basis-Typ
+ist der Typ (Prüfungskatalog, Spalte typ) eines Basisteil-Originals
+(Kennung JJJJ-PAPIER-B…), das in der Bank als Prüfungshöhe steht;
+bank/_basis/typen.md listet sie mit Zahl der Jahrgänge (Stand 28.09.:
+41 Typen). Je Typ zehn Aufgaben in Prüfungsform in
+bank/_basis/<eintrag>.jsonl – Felder wie oben, hoehe "basis" (nur
+hier), id "<eintrag>-basis-k<k>-v<v>", kette = sprosse_text =
+Typname, sprosse 1, variante 1–10, original = das jüngste Original
+des Typs (Pflicht), Form wie im Original, im Kopf rechenbar; die
+Regeln für den Inhalt gelten (Sperre gegen die Mappe des Eintrags,
+Verfremdung, keine Aufgabe doppelt). Die Aufgaben stehen in
+bank/_basis/vorrat.py, das die jsonl schreibt; geprüft mit
+`werkzeuge/bank-pruef.py _basis` (v0.6, Menge 10 je Kette als
+Warnung). Das Zettel-Rezept (`zusammenbau.py --zettel basis`,
+Kennung BAS-Z<n>) zieht je Zettel zehn verschiedene Typen, nach
+Jahrgängen gewichtet, ohne eine Aufgabe zweimal zu nehmen, bis der
+Vorrat erschöpft ist (werkzeuge/zusammenbau.md, „Rezept Zettel“).
+
 ## Quellen je Sitzung
 
 Eine Sitzung liest nur mappen/<eintrag>.md, mappen/_bausteine.md

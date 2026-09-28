@@ -1,0 +1,113 @@
+{
+ "kennung": "BAS-Z2",
+ "datum": "2026-09-28",
+ "eintraege": [
+  "_basis"
+ ],
+ "rezept": "Z",
+ "rezept_name": "Zettel",
+ "bestellung": {
+  "zettel": "basis",
+  "nummer": 2,
+  "ohne_register": false
+ },
+ "bank_commit": "98f6b7d",
+ "zusammenbau": "v0.5",
+ "vorlage": "Version 2026-09-28a",
+ "pfad": "bau/zettel/BAS-Z2",
+ "kuerzel_quelle": "fest (Basisvorrat)",
+ "strukturfehler": 0,
+ "vorrat_erschoepft_ab": 42,
+ "aufgaben": [
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "id": "brueche-dezimalzahlen-basis-k1-v2",
+   "kette": "Bruchteil einer Fläche bestimmen",
+   "jahrgaenge": 9,
+   "variante": 2,
+   "original": "2026-FOR-B1b"
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "id": "brueche-dezimalzahlen-basis-k4-v2",
+   "kette": "Zahlen in verschiedenen Darstellungen vergleichen",
+   "jahrgaenge": 7,
+   "variante": 2,
+   "original": "2023-OS-B1f"
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "id": "potenzen-wurzeln-basis-k3-v1",
+   "kette": "Zehnerpotenzschreibweise umwandeln",
+   "jahrgaenge": 4,
+   "variante": 1,
+   "original": "2025-OS-B1d"
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "id": "prozentrechnung-basis-k1-v1",
+   "kette": "Grundwert berechnen",
+   "jahrgaenge": 2,
+   "variante": 1,
+   "original": "2025-OS-B1a"
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "id": "prozentrechnung-basis-k2-v1",
+   "kette": "Prozent und Anteil umwandeln",
+   "jahrgaenge": 2,
+   "variante": 1,
+   "original": "2022-OS-B1f"
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "id": "terme-basis-k2-v1",
+   "kette": "Term zu Sachtext angeben",
+   "jahrgaenge": 4,
+   "variante": 1,
+   "original": "2023-OS-B1h"
+  },
+  {
+   "aufgabe": "A7",
+   "hauptnummer": 7,
+   "id": "symmetrie-abbildungen-basis-k1-v1",
+   "kette": "Figur nach Spiegelung benennen",
+   "jahrgaenge": 1,
+   "variante": 1,
+   "original": "2018-OS-B1h"
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "id": "winkel-dreiecke-basis-k2-v1",
+   "kette": "Gleichschenkliges Dreieck erkennen",
+   "jahrgaenge": 1,
+   "variante": 1,
+   "original": "2023-OS-B1g"
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "id": "koerper-basis-k1-v1",
+   "kette": "Gegenfläche im Würfelnetz bestimmen",
+   "jahrgaenge": 1,
+   "variante": 1,
+   "original": "2016-OS-B1j"
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "id": "trigonometrie-basis-k2-v1",
+   "kette": "Winkelfunktion Seitenverhältnis angeben",
+   "jahrgaenge": 5,
+   "variante": 1,
+   "original": "2025-OS-B1g"
+  }
+ ]
+}

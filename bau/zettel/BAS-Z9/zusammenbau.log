@@ -1,0 +1,20 @@
+# zusammenbau v0.5: zusammenbau.py --zettel basis
+VORRAT 41 Typen, 410 Aufgaben; Vorrat erschöpft ab Zettel 42
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG BAS-Z9 – Kürzel BAS (Basisvorrat, fest), Rezept Z (Zettel); Inhalt von Zettel 9 = nächste freie Nummer in bau/register.csv
+HÖHE geschätzt 23.9 cm (Maß 25.0 cm)
+SATZ Nr. 1: 4 kurze Ankreuzoptionen in einer Zeile
+SATZ Nr. 1: Grafik unter dem Text (Reihe von Figuren)
+AUSWAHL Nr. 1: brueche-dezimalzahlen-basis-k1-v8 – Bruchteil einer Fläche bestimmen (Jahrgänge 9, Variante 8)
+AUSWAHL Nr. 2: brueche-dezimalzahlen-basis-k2-v3 – Bruchteil einer Größe berechnen (Jahrgänge 2, Variante 3)
+AUSWAHL Nr. 3: rationale-zahlen-basis-k3-v2 – Zahl zu Bedingung angeben (Jahrgänge 2, Variante 2)
+AUSWAHL Nr. 4: potenzen-wurzeln-basis-k2-v1 – Wurzel eines Quadrats berechnen (Jahrgänge 1, Variante 1)
+AUSWAHL Nr. 5: potenzen-wurzeln-basis-k3-v4 – Zehnerpotenzschreibweise umwandeln (Jahrgänge 4, Variante 4)
+AUSWAHL Nr. 6: prozentrechnung-basis-k4-v6 – Prozentwert berechnen (Jahrgänge 5, Variante 6)
+AUSWAHL Nr. 7: zuordnungen-basis-k1-v2 – Antiproportionale Zuordnung Dreisatz (Jahrgänge 1, Variante 2)
+AUSWAHL Nr. 8: lineare-gleichungen-basis-k1-v5 – Lineare Gleichung lösen (Jahrgänge 4, Variante 5)
+SATZ Nr. 9: 3 kurze Ankreuzoptionen in einer Zeile
+SATZ Nr. 9: Grafik unter dem Text (Reihe von Figuren)
+AUSWAHL Nr. 9: quadratische-funktionen-basis-k1-v1 – Wertetabelle einer Funktion zuordnen (Jahrgänge 1, Variante 1)
+AUSWAHL Nr. 10: trigonometrie-basis-k2-v5 – Winkelfunktion Seitenverhältnis angeben (Jahrgänge 5, Variante 5)
+STRUKTUR 0 Fehler

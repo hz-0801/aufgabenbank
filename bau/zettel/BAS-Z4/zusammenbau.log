@@ -1,0 +1,20 @@
+# zusammenbau v0.5: zusammenbau.py --zettel basis
+VORRAT 41 Typen, 410 Aufgaben; Vorrat erschöpft ab Zettel 42
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG BAS-Z4 – Kürzel BAS (Basisvorrat, fest), Rezept Z (Zettel); Inhalt von Zettel 4 = nächste freie Nummer in bau/register.csv
+HÖHE geschätzt 24.6 cm (Maß 25.0 cm)
+AUSWAHL Nr. 1: brueche-dezimalzahlen-basis-k3-v1 – Mitte zweier Zahlen bestimmen (Jahrgänge 1, Variante 1)
+AUSWAHL Nr. 2: prozentrechnung-basis-k4-v3 – Prozentwert berechnen (Jahrgänge 5, Variante 3)
+AUSWAHL Nr. 3: terme-basis-k1-v1 – Term durch Zusammenfassen gleichartiger Glieder vereinfachen (Jahrgänge 1, Variante 1)
+SATZ Nr. 4: 4 kurze Ankreuzoptionen in einer Zeile
+AUSWAHL Nr. 4: terme-basis-k2-v2 – Term zu Sachtext angeben (Jahrgänge 4, Variante 2)
+SATZ Nr. 5: 4 kurze Ankreuzoptionen in einer Zeile
+AUSWAHL Nr. 5: quadratische-gleichungen-basis-k1-v2 – Lösung durch Einsetzen prüfen (Jahrgänge 3, Variante 2)
+SATZ Nr. 6: 2 kurze Ankreuzoptionen in einer Zeile
+SATZ Nr. 6: ksys ablesen → klein (Karo 3,5 mm)
+AUSWAHL Nr. 6: lineare-funktionen-basis-k2-v1 – Graph nach Eigenschaft auswählen (Jahrgänge 1, Variante 1)
+AUSWAHL Nr. 7: winkel-dreiecke-basis-k3-v1 – Winkel an geschnittenen Parallelen bestimmen (Jahrgänge 2, Variante 1)
+AUSWAHL Nr. 8: winkel-dreiecke-basis-k4-v1 – Winkel im Viereck berechnen (Jahrgänge 2, Variante 1)
+AUSWAHL Nr. 9: trigonometrie-basis-k1-v1 – Trigonometrische Gleichung nach Seite umstellen (Jahrgänge 1, Variante 1)
+AUSWAHL Nr. 10: trigonometrie-basis-k2-v2 – Winkelfunktion Seitenverhältnis angeben (Jahrgänge 5, Variante 2)
+STRUKTUR 0 Fehler

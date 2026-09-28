@@ -15,3 +15,13 @@ ZUF-H1;2026-09-28;zufallsexperimente-und-pfadregeln,bedingte-wahrscheinlichkeit-
 PUN-H1;2026-09-28;punkte-und-strecken-im-koordinatensystem,vektoren-und-rechenoperationen,geraden,ebenen,lagebeziehungen,schnittmengen,abstaende,skalarprodukt-und-winkel,orthogonalitaet,flaecheninhalt-und-volumen-im-raum;H;heft=abitur-gk, nur_basis=nein, titel=Prüfungsheft Abitur GK · Analytische Geometrie, aus=bau/hefte/abi-gk-geometrie;7238f60+geändert;v0.4;Version 2026-09-28a;bau/hefte/abi-gk-geometrie
 DAT-H2;2026-09-28;daten,wahrscheinlichkeit;H;heft=msa, nur_basis=nein, titel=Prüfungsheft MSA · Daten und Zufall, aus=bau/hefte/msa-daten;2345b8e;v0.4;Version 2026-09-28a;bau/hefte/msa-daten
 LIN-H3;2026-09-28;lineare-funktionen,quadratische-funktionen,quadratische-gleichungen,lineare-gleichungssysteme,potenz-exponentialfunktionen,zuordnungen,daten,wahrscheinlichkeit;H;heft=msa, nur_basis=ja, titel=Prüfungsheft Basis · Funktionen, Daten und Zufall, aus=bau/hefte/basis-rest;2345b8e;v0.4;Version 2026-09-28a;bau/hefte/basis-rest
+BAS-Z1;2026-09-28;_basis;Z;zettel=basis, nummer=1;98f6b7d;v0.5;Version 2026-09-28a;bau/zettel/BAS-Z1
+BAS-Z2;2026-09-28;_basis;Z;zettel=basis, nummer=2;98f6b7d;v0.5;Version 2026-09-28a;bau/zettel/BAS-Z2
+BAS-Z3;2026-09-28;_basis;Z;zettel=basis, nummer=3;98f6b7d;v0.5;Version 2026-09-28a;bau/zettel/BAS-Z3
+BAS-Z4;2026-09-28;_basis;Z;zettel=basis, nummer=4;98f6b7d;v0.5;Version 2026-09-28a;bau/zettel/BAS-Z4
+BAS-Z5;2026-09-28;_basis;Z;zettel=basis, nummer=5;98f6b7d;v0.5;Version 2026-09-28a;bau/zettel/BAS-Z5
+BAS-Z6;2026-09-28;_basis;Z;zettel=basis, nummer=6;98f6b7d;v0.5;Version 2026-09-28a;bau/zettel/BAS-Z6
+BAS-Z7;2026-09-28;_basis;Z;zettel=basis, nummer=7;98f6b7d;v0.5;Version 2026-09-28a;bau/zettel/BAS-Z7
+BAS-Z8;2026-09-28;_basis;Z;zettel=basis, nummer=8;98f6b7d;v0.5;Version 2026-09-28a;bau/zettel/BAS-Z8
+BAS-Z9;2026-09-28;_basis;Z;zettel=basis, nummer=9;98f6b7d;v0.5;Version 2026-09-28a;bau/zettel/BAS-Z9
+BAS-Z10;2026-09-28;_basis;Z;zettel=basis, nummer=10;98f6b7d;v0.5;Version 2026-09-28a;bau/zettel/BAS-Z10

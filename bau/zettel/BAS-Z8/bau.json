@@ -1,0 +1,113 @@
+{
+ "kennung": "BAS-Z8",
+ "datum": "2026-09-28",
+ "eintraege": [
+  "_basis"
+ ],
+ "rezept": "Z",
+ "rezept_name": "Zettel",
+ "bestellung": {
+  "zettel": "basis",
+  "nummer": 8,
+  "ohne_register": false
+ },
+ "bank_commit": "98f6b7d",
+ "zusammenbau": "v0.5",
+ "vorlage": "Version 2026-09-28a",
+ "pfad": "bau/zettel/BAS-Z8",
+ "kuerzel_quelle": "fest (Basisvorrat)",
+ "strukturfehler": 0,
+ "vorrat_erschoepft_ab": 42,
+ "aufgaben": [
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "id": "brueche-dezimalzahlen-basis-k1-v7",
+   "kette": "Bruchteil einer Fläche bestimmen",
+   "jahrgaenge": 9,
+   "variante": 7,
+   "original": "2026-FOR-B1b"
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "id": "brueche-dezimalzahlen-basis-k4-v7",
+   "kette": "Zahlen in verschiedenen Darstellungen vergleichen",
+   "jahrgaenge": 7,
+   "variante": 7,
+   "original": "2023-OS-B1f"
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "id": "rationale-zahlen-basis-k1-v5",
+   "kette": "Termwert berechnen",
+   "jahrgaenge": 5,
+   "variante": 5,
+   "original": "2026-FOR-B1g"
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "id": "rationale-zahlen-basis-k2-v1",
+   "kette": "Vorzeichenregel anwenden",
+   "jahrgaenge": 1,
+   "variante": 1,
+   "original": "2015-OS-B1g"
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "id": "prozentrechnung-basis-k4-v5",
+   "kette": "Prozentwert berechnen",
+   "jahrgaenge": 5,
+   "variante": 5,
+   "original": "2026-FOR-B1a"
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "id": "prozentrechnung-basis-k5-v1",
+   "kette": "Wert nach prozentualer Erhöhung berechnen",
+   "jahrgaenge": 1,
+   "variante": 1,
+   "original": "2024-OS-B1e"
+  },
+  {
+   "aufgabe": "A7",
+   "hauptnummer": 7,
+   "id": "terme-basis-k2-v4",
+   "kette": "Term zu Sachtext angeben",
+   "jahrgaenge": 4,
+   "variante": 4,
+   "original": "2023-OS-B1h"
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "id": "winkel-dreiecke-basis-k3-v2",
+   "kette": "Winkel an geschnittenen Parallelen bestimmen",
+   "jahrgaenge": 2,
+   "variante": 2,
+   "original": "2015-OS-B1d"
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "id": "winkel-dreiecke-basis-k4-v2",
+   "kette": "Winkel im Viereck berechnen",
+   "jahrgaenge": 2,
+   "variante": 2,
+   "original": "2026-FOR-B1i"
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "id": "bruchrechnung-basis-k1-v3",
+   "kette": "Wahrscheinlichkeit einstufig",
+   "jahrgaenge": 3,
+   "variante": 3,
+   "original": "2014-OS-B1d"
+  }
+ ]
+}
