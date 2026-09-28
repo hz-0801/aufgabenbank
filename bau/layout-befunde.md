@@ -66,3 +66,36 @@ nach Ende der Sammlung; danach alle Dokumente unter bau/ neu bauen.
 21. Grafik (ksys) läuft über die Fußzeile: Umbruch vor einer Grafik,
     die nicht mehr passt.
 22. Prüfkennung noch lang in den Heften (mit v0.4 gebaut) – Neubau.
+
+## Nachtrag 10:40 (LIN-H1, Wachstum)
+23. Stern entfällt überall. Niveau beim Bestellen: Heft EBR ohne
+    Sternaufgaben, Heft FOR mit ihnen, ohne Kennzeichnung.
+24. Punkte: in Prüfungsheft und Prüfungs-Fokus immer, sonst nie. Ins
+    Heft nur Bankzeilen, die eine ganze Original-Teilaufgabe abbilden.
+25. Aufgabentext flattersatz (\raggedright), nie Blocksatz – neben
+    Tabellen entstehen sonst riesige Wortlücken.
+26. Tabellenkopf im Textmodus: „Zeit in h“, nicht kursiv „Zeitinh“
+    (Leerzeichen gehen im Mathemodus verloren). Betrifft alle
+    Tabellen mit Einheit im Kopf.
+27. Anordnung: Grafik oder Tabelle links, Antwort rechts daneben
+    (Kästchen, Antwortzeilen untereinander), wenn die Grafik höchstens
+    halbe Breite hat; Tabelle und leeres Koordinatensystem
+    nebeneinander. Sonst untereinander. Platz nutzen, ohne zu füllen.
+28. Text über der Tabelle, Tabelle darunter linksbündig – kein Text,
+    der um eine Tabelle herumfließt.
+29. Wortwahl: „Gerade oder Kurve?“ ist unscharf (auch eine Gerade
+    ist eine Kurve) – „Gerade oder gekrümmt?“; Antwortzeilen f:, g:, h:
+    je eine Zeile.
+30. Gliederung im Eintrag: Überschrift je Einheit statt Eintragstitel;
+    Wachstum und Zerfall als Zwischenzeile getrennt (\verfahren).
+31. Bankfehler: potenz-exponentialfunktionen, Anlauf „Radfahrer“ –
+    Tabelle mit nur einer Wertespalte statt drei.
+32. Ein Original höchstens einmal je Heft (Punkt 15 bestätigt): die
+    zweite Verfremdung geht auf Nachschub-Blätter; gibt es kein
+    zweites Original, steht die Kette mit einer Aufgabe.
+33. Zuschnitt: Einheit des Bauens ist das Kompetenzblatt (eine Kette,
+    2–4 Seiten, eigene Kennung). Hefte sind Zusammenstellungen von
+    Kompetenzblättern (PDF zusammengeheftet, Verzeichnis vorn); eine
+    Kompetenz steht einmal im Regal, auch wenn zwei Einträge sie üben.
+34. Regal: Übersicht aller gebauten Blätter (aus bau/register.csv)
+    zum Durchsehen und Drucken.
