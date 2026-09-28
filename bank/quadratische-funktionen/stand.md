@@ -238,3 +238,12 @@ längere Zahl an, Skript geschärft). Nichts ist zweimal gescheitert.
 - N6 Prüfskript: Bei Termlösungen und Nachweisen prüft pruef nur
   eine Zahl (erste Zahl der Lösung); das absolute Glied einer
   Normalform liegt nie an der Ergebnisstelle.
+
+## Nachbesserung Render 2026-09-28
+
+Quelle: bau/render-alle/bericht.md, bau/hefte/bericht.md, bau/fokus/bericht.md, bau/layout-befunde.md Punkt 31. Übersicht aller Einträge: bau/render-alle/behoben.md.
+
+- e1-k1-s7-v1, e1-k1-s7-v2, e1-k1-s7-v3, e1-k1-s10-v1, e1-k1-s10-v2 (5): There's no line here to end – `\\` nach `\wertetabelle` (Blockbaustein endet mit `\par`). Änderung: `\\` nach `\wertetabelle` gestrichen (3×).
+- e1-k2-s1-v1, e1-k2-s3-v1 (2): There's no line here to end – `\\` nach `\wertetabelle` (Blockbaustein endet mit `\par`). Änderung: `\\` nach `\wertetabelle` gestrichen (1×).
+
+Nur diese 7 Zeilen geändert, alle übrigen byte-gleich. `bank-pruef.py quadratische-funktionen`: 0 Abweichungen in e1–e5 und zone; 1 Abweichung „Dateiname weg.jsonl“ bestand schon vorher (Datei, keine Zeile). Probe: jede Zeile allein in einem Minimaldokument mit mathblatt.sty (hz-0801/blattbau) gesetzt wie werkzeuge/zusammenbau.py v0.7 (teile_normal, teil_schwach, Lösung in \erg), xelatex ohne Fehler.
