@@ -175,3 +175,12 @@ Abweichungen, 0 Warnungen, Endstand ebenso.
   (Entscheidung 10).
 - e4 „Umfang mit Schenkel aus Pythagoras …“ setzt Pythagoras
   voraus (Vorrat); nur mit Pythagoras gerechnet, nicht mit Sinus.
+
+## Nachbesserung Render 2026-09-28
+
+Quelle: bau/render-alle/bericht.md, bau/hefte/bericht.md, bau/fokus/bericht.md, bau/layout-befunde.md Punkt 31. Übersicht aller Einträge: bau/render-alle/behoben.md.
+
+- e3-k1-s0-v1, e3-k1-s0-v2, e3-k1-s0-v3, e3-k1-s0-v4, e3-k1-s3-v1, e3-k1-s3-v2, e3-k1-s3-v3 (7): Missing $ inserted – `$…$` in `\dreieck`-Beschriftung (Vorlage setzt selbst `$…$`). Änderung: Beschriftungen in `\dreieck` ohne `$` (Einheit in `\text{}`), Feld grafik.
+- e3-k4-s4-v1 (1): Missing $ inserted – `$…$` in `\dreieck`-Beschriftung (Vorlage setzt selbst `$…$`). Änderung: Beschriftungen in `\dreieck` ohne `$` (Einheit in `\text{}`), Feld loesungsgrafik.
+
+Nur diese 8 Zeilen geändert, alle übrigen byte-gleich. `bank-pruef.py flaechen`: 0 Abweichungen. Probe: jede Zeile allein in einem Minimaldokument mit mathblatt.sty (hz-0801/blattbau) gesetzt wie werkzeuge/zusammenbau.py v0.7 (teile_normal, teil_schwach, Lösung in \erg), xelatex ohne Fehler.
