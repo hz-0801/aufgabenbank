@@ -125,3 +125,8 @@ Grundfall-Lösungen nach eigener Durchsicht berichtigt (Befund 5).
   \tangentean*, \gerade, \punkt) sind nur auf Bausteinname und
   Bereich geprüft.
 - Typen ohne Original, die keine Sprosse deckt, haben keine Zeile.
+
+## Nachbesserung Gegenlese 2026-09-28
+- Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
+- tangente-normale-schnittwinkel-e2-k2-s1-v3: Lösung nannte nur die Berührpunkte, gefragt sind die Tangenten → Tangenten $y = 6x - 4$ und $y = -2x - 4$ ergänzt, pruef um 6, −4, −2, −4 erweitert (Regel a).
+- Prüfskript: Abweichungen 0.
