@@ -83,3 +83,12 @@ Keine Korrektur nötig; keine Einheit ist gescheitert.
 - Die Integral-Schreibweise („Integral von … bis … über …“) ist
   bankweit nicht einheitlich (andere Einträge nutzen ∫); zu
   entscheiden, sobald das Prüfskript `\int` kennt.
+
+## Nachbesserung Gegenlese 2026-09-28
+
+- Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
+- rotationsvolumen-e1-k1-s4-v2: Rundungskette „54,98 · 2,5 ≈ 137,4“ (= 137,45) → „17,5π · 2,5 = 43,75π ≈ 137,4 kg“ (Regel b).
+- rotationsvolumen-e1-k1-s5-v2: 150 cm³ ergaben t ≈ 2,94 < 4 (Kugel nicht unter Wasser) → 220 cm³, t ≈ 8,51; Gleichung und pruef 220 (Regel a).
+- rotationsvolumen-e1-k1-s5-v3: Rundungskette „0,0775 · 0,9 ≈ 0,0697 t“ (= 0,06975) → „74/3·π · 0,9 = 22,2π ≈ 69,7 kg“ (Regel a).
+- rotationsvolumen-e2-k1-s4-v2: Rundungskette „A ≈ 4,99, V = A · 4 ≈ 19,95“ (= 19,96) → „A = 2,88√3 ≈ 4,988 dm², V = 11,52√3 ≈ 19,95 dm³“ (Regel b).
+- Prüfskript: Abweichungen 0.
