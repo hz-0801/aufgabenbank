@@ -175,3 +175,9 @@ Quelle: bau/render-alle/bericht.md, bau/hefte/bericht.md, bau/fokus/bericht.md, 
 - e1-k1-s0-v2, e1-k1-s0-v3, e1-k1-s0-v4, e1-k2-s0-v2, e1-k2-s0-v3, e1-k2-s0-v4, e1-k2-s2-v1, e1-k2-s2-v2, e1-k2-s2-v3, e3-k1-s0-v4, e3-k2-s1-v1, e3-k2-s1-v2, e3-k2-s1-v3, e3-k2-s1-v4, e3-k2-s1-v5, zone-f3-v2, zone-f3-v4 (17): Missing $ inserted – `$…$` in `\dreieck`-Beschriftung (Vorlage setzt selbst `$…$`). Änderung: Beschriftungen in `\dreieck` ohne `$` (Einheit in `\text{}`), Feld grafik.
 
 Nur diese 17 Zeilen geändert, alle übrigen byte-gleich. `bank-pruef.py pythagoras`: 0 Abweichungen. Probe: jede Zeile allein in einem Minimaldokument mit mathblatt.sty (hz-0801/blattbau) gesetzt wie werkzeuge/zusammenbau.py v0.7 (teile_normal, teil_schwach, Lösung in \erg), xelatex ohne Fehler.
+
+## Nachbesserung Gegenlese 2026-09-28
+- Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
+- pythagoras-e1-k2-s12-v1: Skizze widersprach dem Text (\dreieckrw beschriftete $CB$ mit 39 m, $CA$ mit 14 m; Text $BC = 14$ m, $AC = 39$ m) → grafik `\dreieckrw{1.79}{5}{$14$ m}{$39$ m}{?}`; loesung und pruef unverändert (Regel a).
+- pythagoras-e1-k2-s12-v2: ebenso ($CB$ 47 m, $CA$ 22 m statt $CB = 22$ m, $AC = 47$ m) → `\dreieckrw{2.34}{5}{$22$ m}{$47$ m}{?}` (Regel a).
+- Prüfskript: Abweichungen 0.
