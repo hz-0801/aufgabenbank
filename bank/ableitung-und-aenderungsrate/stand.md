@@ -1,151 +1,137 @@
 # Stand: ableitung-und-aenderungsrate
 
-Katalog-Commit: 95b0f8b09856c14466ca030dd604451b8d259cfa (2026-09-26,
-aus dem Kopf der Mappe)
-Datum: 2026-09-27 18:11 UTC
-Prüfskript: bank-pruef.py v0.5, am Ende 0 Abweichungen, 0 Warnungen
-Sitzungen: zone, e1, e2 aus einer früheren Sitzung (Commits e7419dc,
-a285d73, 1e9c247, ohne stand.md); e3, e4 und dieser Stand vom
-Nachtwächter 2026-09-27.
+Katalog-Commit: 2a296e54827b16f81fd664c4430c6fcd84dd5719
+(2026-09-28, aus dem Kopf von mappen/ableitung-und-aenderungsrate.md)
+Datum: 2026-09-29 19:06 (date, UTC)
+Grundlage: bank.md fünfte Fassung (29b), werkzeuge/bank-pruef.py
+v0.10, Vorlage auftrag-eintrag.md 2026-09-29e; Nachzug des Bestands
+vom 27./28.09. (Katalog 95b0f8b, Gegenlese 28.09.). Umbauskript:
+werkzeuge/einmalig/nachzug-ableitung-und-aenderungsrate-2026-09-29.py.
+Endstand: 0 Abweichungen, 0 Warnungen, mit `--katalog`.
 
-## Zeilen je Datei und hoehe
+## Zahlen je Datei
 
-| Datei | Zeilen | vorstufe | grundfall | sprosse | pruefung | pflicht |
-|-------|-------:|---------:|----------:|--------:|---------:|--------:|
-| zone  |     30 |        – |        14 |      15 |        – |       1 |
-| e1    |     49 |        4 |         5 |      24 |        4 |      12 |
-| e2    |     49 |        4 |         5 |      24 |        4 |      12 |
-| e3    |     43 |        4 |         5 |      18 |        4 |      12 |
-| e4    |     49 |        4 |         5 |      21 |        7 |      12 |
-| Summe |    220 |       16 |        34 |     102 |       19 |      49 |
+    Datei       Zeilen  vorstufe grundfall sprosse pruefung pflicht
+    zone.jsonl      30         0        14      15        0       1
+    e1.jsonl        49         4         5      24        4      12
+    e2.jsonl        49         4         5      24        4      12
+    e3.jsonl        44         4         5      21        2      12
+    e4.jsonl        47         4         5      21        5      12
+    gesamt         219        16        34     105       15      49
+
+## Nachzug je Einheit
+
+    Datei  übernommen  neu  umgeschrieben  entfallen
+    zone         30      0              0          0
+    e1           35      0             14          0
+    e2           35      0             14          0
+    e3           27      3             14          2
+    e4           33      0             14          2
+
+Übernommen heißt: aufgabe, loesung, merkmal wortgleich; nachgezogen
+nur sprosse_text (e1 s10, e2 s8, e4 s9: Prüfungssprossen mit dem
+ganzen Katalogtext), sprosse, id und variante (e3 ab s2 eine Sprosse
+höher, e4 s9), quelle (e3 k2: 112 → 25).
+Umgeschrieben: je Verfahrenskette die fünf Grundfallzeilen
+(Päckchen, Lösung mit Schrittnamen), je Einheit alle drei fehler- und
+begruenden-Zeilen (merkmal; v2, v3 in neuer Form), eine bis zwei
+anwendung-Zeilen (P8), e4 eine darstellung-Zeile (rückwärts), dazu
+sechs Zeilen nur im Feld original (Dubletten, unten).
+Neu: e3 s2 „Tangente mit dem Lineal anlegen …“ (3, mit grafik).
+Entfallen: je zwei Prüfungszeilen in e3 s8 und e4 s9 (Dubletten).
+ids von Zeilen mit original: 9 geändert (e3 s2–s7 → s3–s8 sieben,
+e3 s7 v4 → s8 v2, e4 s9 v7 → v5), 4 Zeilen mit original entfallen,
+6 Zeilen tragen eine andere Kennung; bank/_punkte.csv nicht
+angefasst (punkte-nachziehen.py).
 
 ## Originale je Einheit
 
-- E1: 2024-bebb-lk-B2.2f, 2025-bebb-gk-B2.2f,
-  2024MerhoehtBAnalysisWTR2-2a (s2); 2019-be-gk-B2.2d,
-  2017MerhoehtAAnalysis12-a, 2019MgrundlegendBAnalysisWTR1-1d (s3);
-  2025-bebb-lk-B2.2h, 2026MgrundlegendBAnalysisWTR1-2c (s4);
-  2018-be-gk-B1.2e, 2024-bebb-lk-B2.1e (s5); 2018-be-gk-B1.2g (s6);
-  2026-bb-gk-B2.1i (s7); 2026MgrundlegendBAnalysisMMS1-1b (s8);
-  2024MerhoehtBAnalysisWTR3-1b (s9); 2018MgrundlegendBAnalysisWTR-2c
-  und 2019MgrundlegendBAnalysisWTR2-2d (Prüfung, je 2)
-- E2: 2026MgrundlegendAAnalysis21-a (s2); 2024-bebb-gk-A1.4a,
-  2024MgrundlegendAAnalysis13-a (s3); 2023-bebb-lk-B2.2b,
-  2023MerhoehtBAnalysisWTR1-1b (s5); 2021MgrundlegendBAnalysisWTR-2a
-  (s6); 2021-be-gk-B2.1i (s7); 2023MerhoehtAAnalysis13-a und
-  2020MgrundlegendBAnalysisWTR1-1c (Prüfung, je 2);
-  2017MerhoehtBAnalysisWTR1-1b, 2017MerhoehtBAnalysisWTR2-2b (Typen
-  ohne Kette)
-- E3: 2024MerhoehtBAnalysisWTR1-1b (s2); 2026-bb-gk-B2.2h,
-  2026MgrundlegendBAnalysisWTR2-2b (s3); 2022-bebb-gk-B2.2c (s4);
-  2024MgrundlegendAAnalysis22 (s5); 2022-bebb-lk-B2.2e (s6);
-  2025-bebb-lk-A1.6b und 2025MerhoehtAAnalysis23-b (Prüfung, je 2);
-  2018MerhoehtBAnalysisCAS2-2c (Typ ohne Kette)
-- E4: 2021MerhoehtAAnalysis13-b (s2); 2019MgrundlegendAAnalysis12-b,
+- e1: 2024-bebb-lk-B2.2f, 2025-bebb-gk-B2.2f (s2);
+  2019-be-gk-B2.2d, 2017MerhoehtAAnalysis12-a,
+  2019MgrundlegendBAnalysisWTR1-1d (s3); 2025-bebb-lk-B2.2h,
+  2026MgrundlegendBAnalysisWTR1-2c (s4); 2018-be-gk-B1.2e,
+  2024-bebb-lk-B2.1e (s5); 2018-be-gk-B1.2g (s6); 2026-bb-gk-B2.1i
+  (s7); 2026MgrundlegendBAnalysisMMS1-1b (s8);
+  2024MerhoehtBAnalysisWTR3-1b (s9); Prüfung:
+  2018MgrundlegendBAnalysisWTR-2c, 2019MgrundlegendBAnalysisWTR2-2d
+- e2: 2026MgrundlegendAAnalysis21-a (s2); 2024-bebb-gk-A1.4a (s3);
+  2023-bebb-lk-B2.2b (s5); 2021MgrundlegendBAnalysisWTR-2a (s6);
+  2021-be-gk-B2.1i (s7); Prüfung: 2023MerhoehtAAnalysis13-a,
+  2020MgrundlegendBAnalysisWTR1-1c; Typen ohne Kette:
+  2017MerhoehtBAnalysisWTR1-1b, 2017MerhoehtBAnalysisWTR2-2b
+- e3: 2024MerhoehtBAnalysisWTR1-1b (s3); 2026-bb-gk-B2.2h (s4);
+  2022-bebb-gk-B2.2c (s5); 2024MgrundlegendAAnalysis22 (s6);
+  2022-bebb-lk-B2.2e (s7); Prüfung: 2025-bebb-lk-A1.6b; Typ ohne
+  Kette: 2018MerhoehtBAnalysisCAS2-2c
+- e4: 2021MerhoehtAAnalysis13-b (s2); 2019MgrundlegendAAnalysis12-b,
   2018-be-gk-B1.2f (s3); 2019-be-gk-B2.1b,
   2026MgrundlegendBAnalysisMMS1-1c (s4); 2026MerhoehtBAnalysisMMS1-1f,
   2026MerhoehtBAnalysisMMS2-1c, 2025-bebb-lk-B2.1f (s5);
   2025MerhoehtBAnalysisMMS1-2a (s6); 2022-bebb-gk-B2.1m,
-  2022MgrundlegendBAnalysisWTR2-2d (s7); 2026-bb-gk-B2.2i und
-  2026MgrundlegendBAnalysisWTR2-2c (Prüfung, je 2), dazu 3 Zeilen
-  ohne original zu 2019-be-gk-B2.1e (siehe Entscheidung 5)
+  2022MgrundlegendBAnalysisWTR2-2d (s7); Prüfung: 2026-bb-gk-B2.2i,
+  dazu 3 Zeilen ohne original zu 2019-be-gk-B2.1e
 
 ## Prüfskript vor der Korrektur
 
-| Datei | Abw. | Warn. | häufigster Grund |
-|-------|-----:|------:|------------------|
-| zone  |    ? |     ? | frühere Sitzung, nicht überliefert |
-| e1    |    ? |     ? | frühere Sitzung, nicht überliefert |
-| e2    |    ? |     ? | frühere Sitzung, nicht überliefert |
-| e3    |    0 |     0 | – |
-| e4    |    7 |     0 | „Lies … ab“ ohne Grafik (5), Ergebnis (2) |
-
-Keine Einheit scheiterte zweimal. zone, e1, e2 bestanden beim Start
-dieser Sitzung ohne Abweichung und wurden nicht verändert.
+- Bestand gegen die neue Mappe mit `--katalog`: 18 Abweichungen
+  (e1 4, e2 4, e3 3, e4 7), alle „sprosse_text nicht wortgleich in
+  Zeile quelle“ (Prüfungssprossen mit zwei Originalen, e3 k2 mit
+  quelle 112).
+- Erster Wurf des Umbaus: e3 3 Abweichungen (dieselbe e3-k2-Ursache,
+  quelle), e1, e2, e4 0; keine Warnung. Keine Einheit ist zweimal
+  gescheitert.
 
 ## Entscheidungen
 
-1. E3 Vorstufe: „Mittel oder Moment?“ ist schon die Vorstufe von E1
-   (an Sachtexten). In E3 steht sie erneut, aber an Termen und
-   Geraden (Differenzenquotient, f'(x₀), Grenzwert, Gerade durch
-   zwei Graphenpunkte), damit keine Aufgabe doppelt ist.
-2. E3 Prüfungshöhe: 2025-bebb-lk-A1.6b und 2025MerhoehtAAnalysis23-b
-   sind wortgleiche Pooldubletten; je 2 Zeilen, alle vier mit
-   verschiedenen Funktionen (drei Wurzelgraphen rechtsgekrümmt, eine
-   Parabel linksgekrümmt mit unbeschränkten Steigungen).
-3. E3 Typ ohne Kette: „Differenzen- und Differentialquotient durch
-   Sekante und Tangente veranschaulichen …“ (k2, 3 Zeilen, Grenzwert
-   in Worten, weil \lim kein Baustein ist). Derselbe Typname trägt
-   die Pflicht darstellung (k3 s4), weil er der einzige
-   Darstellungstyp der Einheit ist; die Aufgaben sind verschieden.
-4. E3 s6 (Aufgabenstellung formulieren): die Lösung ist ein Text;
-   pruef trägt die Lösungszahlen der vorgelegten Rechnung.
-5. E4 Prüfungshöhe: 2019-be-gk-B2.1e (Differenz zweier Raten) steht
-   nicht in Abschnitt 2 der Mappe; die Sprosse trägt dafür 3 Zeilen
-   mit original null und der Kennung „(Abitur 2019 GK)“ im Text,
-   dazu 2026-bb-gk-B2.2i und 2026MgrundlegendBAnalysisWTR2-2c je 2 –
-   zusammen 7 Zeilen in s9.
-6. E4 s2: 2023-bebb-lk-B2.2c und 2023MerhoehtBAnalysisWTR1-1c fehlen
-   in Abschnitt 2; die Sprosse trägt nur 2021MerhoehtAAnalysis13-b,
-   die beiden anderen Zeilen (quadratische Gleichung, Auswahl an der
-   Abbildung) ohne original.
-7. E4 s8: 2024-bebb-lk-B2.2h und 2024MerhoehtBAnalysisWTR2-2c fehlen
-   in Abschnitt 2; alle drei Zeilen ohne original. v3 ist der
-   Gegenfall (negative Rate eines Wasserstands ist sinnvoll, das
-   Modell bleibt brauchbar), damit der Entscheidungstyp nicht nur
-   „ungeeignet“ kennt.
-8. E4 hat keinen Typ ohne Kette: alle neun Haupttypen der Einheit
-   stehen in einer Sprosse der Kette.
-9. E4 Grundfall: „Lies die Nullstelle ab“ wurde zu „Gib die
-   Nullstelle an“, weil das Prüfskript bei „Lies“ eine Grafik
-   verlangt; abgelesen wird am faktorisierten Term.
-10. Uhrzeiten so gewählt, dass keine Sperrzeit der Originale (8:30,
-    9:30, 10:00, 14:00, 16:00, 11:20) in einer aufgabe steht.
+1. Zone bleibt: Fertigkeiten Z. 31–37 unverändert.
+2. Päckchen, fester Wert im merkmal: e1 Anfang 120 Liter und
+   4 Stunden (Endmenge wandert, einmal fallend), e2 w(t) = t³ − 6t² +
+   c·t + 40 an der Stelle 3 (c wandert, Rate positiv, null, negativ),
+   e3 x² + c·x an der Stelle 2 (c wandert), e4 r'(t) = (a − t) ·
+   e^(−0,5t) (a wandert).
+3. e3 Grundfall mit den Schrittnamen aufstellen, umformen, Grenzwert
+   (Hinweis des Auftrags); e3 s2 nutzt x² + c·x wie der Grundfall
+   (Körperregel), an der Stelle 1.
+4. Pooldubletten (bank.md 29.09.): an den Prüfungssprossen e3 s8 und
+   e4 s9 ein Original mit zwei Zeilen statt zwei mit je zwei; an
+   e1 s2, e2 s3, e2 s5, e3 s4 trägt die Poolzeile die Kennung, die
+   in der Mappe zuerst steht.
+5. e3 k2 (Typ ohne Kette) trägt quelle 25, weil der Typname nur in
+   „Typen je Lerneinheit“ steht (vorher 112).
+6. Pflichtformen: fehler v1 Schülerrechnung (Bestand), v2 P2, v3 P1
+   (e3: v1 P1, v2 P2, v3 Schülerrechnung); begruenden v1 „Begründe,
+   warum“ (Bestand), v2 P4, v3 P6 (e3 und e4: v2 P6, v3 P4). P3
+   entfällt: keine Einheit übt eine Umformungskette.
+7. Urteile P6: e1 Ja, e2 Nein, e3 Ja, e4 Nein; P8 anwendung: e1 v1,
+   v2 Nein, e2 v1 Ja, e3 v1 Nein, e4 v3 Ja.
+8. e4 darstellung v1 jetzt rückwärts (Term → Graph); v2, v3 bleiben
+   Graph → Punkt und Bestand → Rate.
+9. Übernommene Zeilen bleiben ohne Schrittnamen (Auftrag); e1 s1 bis
+   e4 s1 und e3 s2 tragen sie.
 
 ## Befunde
 
-- Katalog: Die Sprossen von E4 (Z. 113) und E2 nennen Originale, die
-  weder in „Prüfungsform“ noch in „Zielmarke“ stehen und darum in
-  Abschnitt 2 der Mappe fehlen: 2019-be-gk-B2.1e, 2023-bebb-lk-B2.2c,
+- Katalog: Die Sprossen von E2 und E4 nennen weiter Originale, die in
+  Abschnitt 2 der Mappe fehlen (2019-be-gk-B2.1e, 2023-bebb-lk-B2.2c,
   2023MerhoehtBAnalysisWTR1-1c, 2024-bebb-lk-B2.2h,
   2024MerhoehtBAnalysisWTR2-2c, 2026MgrundlegendBAnalysisMMS1-1d,
-  2017MerhoehtAAnalysis12-b. Ihre Zeilen tragen original null.
-- Katalog: Der Erkennungsschritt „Mittel oder Moment?“ (Z. 39: „Vor
-  Einheit 1 und 2“) ist Vorstufe der Ketten E1 und E3 (Z. 110, 112),
-  nicht E2; E2 hat „Wie hoch, wie steil?“.
-- Prüfskript: „Lies … ab“ in aufgabe erzwingt eine Grafik auch dann,
-  wenn an einem Term abgelesen wird (E4 Grundfall); umformuliert.
-- Prüfskript: \lim steht nicht in der Liste der Standardbefehle und
-  gilt als fehlender Baustein; der Grenzwert steht in Worten.
-- Prüfskript: Die Sperre liest Uhrzeiten der Originale (10:00,
-  14:00, 16:00, 08:00) als Gleichungen; sie sind in aufgabe gesperrt.
-- Gegenprobe Kastenzahlen (mehrstellig: 15, 18, 27, 33, 200, 1200,
-  1500): 27, 33, 1200, 1500 in keiner aufgabe (Ist 0); 15 in 10
-  Zeilen, 18 in 3, 200 in 6 – jeweils in anderer Rolle
-  (Intervallgrenze, Koeffizient, Nenner im Exponenten), nie als
-  Kastenergebnis oder -paar; Sperrprobe des Skripts meldet 0.
-- Gegenprobe Ketten: Grundfall je Verfahrenskette 5 (e3 k1, e4 k1),
-  Grundfalltext wortgleich in Z. 112 bzw. 113; je Einheit genau eine
-  Sprosse mit hoehe pruefung als letzte der Kette; jede zeichnen-Zeile
-  mit grafik; jede Ankreuzzeile nennt genau eine Option.
+  2017MerhoehtAAnalysis12-b); ihre Zeilen tragen original null.
+- Katalog: „Mittel oder Moment?“ (Z. 39: „Vor Einheit 1 und 2“) ist
+  Vorstufe von E1 und E3 (Z. 110, 112), nicht von E2.
+- Katalog: Die Prüfungssprossen von E1, E2, E4 fassen zwei
+  Originale in einem Satz; der sprosse_text ist dadurch über 250
+  Zeichen lang.
+- Prüfskript: Die Dublettenregel (bank.md 29.09.) prüft es nicht;
+  eine Pooldublette mit beiden Kennungen gäbe weiter keine Warnung.
+- Prüfskript: Ein Typ ohne Kette mit quelle der Kettenzeile fiel erst
+  mit `--katalog` auf (e3 k2); ohne den Schalter bleibt es still.
 
 ## Offene Punkte
 
-- E3 s3 und E4 s4–s7 verlangen den Rechner (e-Funktionen,
-  Näherungswerte); der Text sagt es nicht. Beim Zusammenbau als
-  Teil-B-Aufgaben kennzeichnen.
-- E4 s9 hat 7 Zeilen (3 + 2 + 2); beim Auswählen je Blatt genau
-  eine.
-- Die \ableitungspaar-Grafik (E4 k2 s4 v3) prüft das Skript nicht auf
-  Achsenbereiche; die Bereiche sind von Hand gesetzt.
-- zone, e1, e2 stammen aus einer Sitzung ohne Bericht; ihre
-  Abweichungen vor der Korrektur sind nicht bekannt.
-
-## Nachbesserung Gegenlese 2026-09-28
-- Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
-- ableitung-und-aenderungsrate-zone-f1-v3: \steigungsdreieck{1}{1}{1} zeichnete Steigung 1 an die Gerade mit m = 2 → \steigungsdreieck{1}{1}{2} (Regel a).
-- ableitung-und-aenderungsrate-e2-k1-s7-v1: Deutung „Schaufel läuft ohne Knick weiter“ falsch, (0 | 0) und (0,5 | 0,75) sind verschiedene Punkte → Deutung nur noch parallele Tangenten, gleiche Richtung (Regel a).
-- ableitung-und-aenderungsrate-e2-k1-s7-v2: f(5) = −3,75 ≠ g(5) = −2,5, „knickfreier Übergang“ falsch → Aufgabe: f für x ≤ 5, g(x) = −0,5x − 1,25 für x ≥ 5; Lösung mit f(5) = g(5) = −3,75 (Regel a).
-- ableitung-und-aenderungsrate-e2-k2-s1-v1: Grafik 5t² ergab (2 | 20), Lösung nannte (2 | 40) → Grafik \funktion{5*\x^2+20}{f}, f(2) = 40, f'(2) = 20, Lösung unverändert (Regel a).
-- ableitung-und-aenderungsrate-e2-k4-s4-v3: pruef ohne die zweite Stelle x = −1 → pruef [9, -3, 9, 1, -1] (Regel b).
-- Prüfskript: Abweichungen 0.
+- bank/_punkte.csv: ids nachziehen (9 umbenannt, 4 entfallen,
+  6 mit neuer Kennung) mit werkzeuge/punkte-nachziehen.py.
+- Kein LaTeX-Lauf; Grafiken nur auf Bausteinname und Bereich
+  geprüft.
+- Die Gegenlese vom 28.09. galt dem alten Bestand; die neuen und
+  umgeschriebenen Zeilen (59) sind ungelesen.
+- E3 s4 und E4 s4–s7 verlangen den Rechner; der Text sagt es nicht.

@@ -558,7 +558,7 @@ def e3():
                  "in $P$. \\\\ (3) Es gibt Graphen, bei denen alle Sekanten "
                  "durch $P$ dieselbe Steigung haben."),
         loesung=("(1) falsch, z. B. berührt die Tangente $y = 2x - 2$ den "
-                 "Graphen von $h(x) = 0{,}5x^2$ nur im Punkt $(2 | 2)$; eine "
+                 "Graphen von $p(x) = 0{,}5x^2$ nur im Punkt $(2 | 2)$; eine "
                  "Sekante braucht zwei gemeinsame Punkte. (2) wahr, denn "
                  "der rechtsgekrümmte Graph liegt unter seiner Tangente, "
                  "die Gerade von einem Punkt links darunter nach $P$ steigt "
