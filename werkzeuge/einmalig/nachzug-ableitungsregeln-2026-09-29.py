@@ -271,7 +271,7 @@ def e3():
                      f"$v(x) = e^x$, $v'(x) = e^x$; Produktregel: "
                      f"$f'(x) = {ein}$; $e^x$ ausklammern: "
                      f"$f'(x) = {erg}$; Ergebnis: $f'(x) = {erg}$"),
-            pruef=str(a)))
+            pruef=str(a) if abs(a) != 1 else str(d)))
     rows = ersetze(rows, 1, 1, gf)
     f = reihe(rows, 2, 1)
     fe = [setze(f[0], merkmal=M_FEHLER),
