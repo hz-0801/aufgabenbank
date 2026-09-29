@@ -7,7 +7,7 @@ eigener Branch. Geschrieben wird nur unter bank/<eintrag>/.
 
 Vorlage: `<eintrag>` ist der Dateiname des Katalogeintrags ohne
 `.md` (etwa lineare-funktionen); vor dem Einsatz überall ersetzen.
-Stand der Vorlage: 2026-09-29c, nach bank.md fünfte Fassung,
+Stand der Vorlage: 2026-09-29d, nach bank.md fünfte Fassung,
 dem Prüfstein terme und Schub 1 (Sperre = Prüfskript, Übernahme
 bei längerem Sprossentext, --katalog aus der Mappe). Vorherige
 Fassung 2026-09-27b in archiv/.
@@ -79,7 +79,10 @@ sagt es im Bericht.
    (fünf Zeilen, ein Wert bleibt, genau einer wandert; Sek II:
    derselbe Körper mit festen Eckpunkten je Variante);
    Prüfungshöhe ohne Original als hoehe pruefung, original null,
-   3 Zeilen; Original an einer Kettensprosse im Feld original;
+   3 Zeilen; je Verfahrenskette genau eine Prüfungssprosse, die
+   letzte, mit allen Originalen der Katalogzeile (je Original
+   zwei Zeilen); ein Original mitten in der Kette im Feld
+   original der Sprosse, die es verfremdet;
    ein Erkennungsschritt, der die Vorstufe einer Kette derselben
    Einheit wiederholt, entfällt (Befund in stand.md).
    Pflichtformen je Einheit nach bank.md P1–P8: die drei
@@ -101,7 +104,10 @@ sagt es im Bericht.
    Gerüste wie „m = __" oder „Vorzeichen: __ Betrag: __
    Ergebnis: __" (rationale-zahlen nur in den ersten zwei
    Varianten der genannten Sprossen, bank.md).
-   Besteht die Einheit schon: Zeilen, deren Sprosse in der Mappe
+   Besteht die Einheit schon (Nachzug): die Übernahme geht vor
+   der Sek-II-Körperregel – der feste Körper oder Term trägt
+   Vorstufen und Grundfall, übernommene Sprossen behalten ihre
+   Zahlen. Zeilen, deren Sprosse in der Mappe
    noch steht, bleiben wortgleich – auch wenn der Sprossentext
    länger wurde oder eine Frage dazukam, solange die Aufgabe
    dieselbe bleibt; nachgezogen werden nur id, sprosse, kette_nr,

@@ -1,6 +1,7 @@
 # Aufgabenbank – Form und Regeln
 
-Stand 2026-09-29, fünfte Fassung (Vorstufen-Nummerierung; Pflichtformen
+Stand 2026-09-29b, fünfte Fassung (Vorstufen-Nummerierung, eine
+Prüfungssprosse je Kette, Körperregel beim Nachzug; Pflichtformen
 und Päckchen seit 28.09.).
 
 ## Zweck
@@ -148,6 +149,14 @@ Eine Prüfungshöhe ohne P10-Original (Zielmarke aus
 Rahmenlehrplan oder Lehrwerk) trägt hoehe pruefung, original
 null, 3 Zeilen.
 
+Je Verfahrenskette gibt es genau eine Prüfungssprosse, die letzte
+der Kette; nennt die Katalogzeile mehrere Originale („dazu …“,
+„daneben …“, „höhere Marke“), stehen sie alle an dieser einen
+Sprosse, je Original zwei Zeilen (Beschluss 29.09., Schub 1 und
+2: fünf Einträge haben so zusammengelegt, bis zwölf Zeilen an
+einer Sprosse). Grund: das Blatt zieht an der Prüfungshöhe „was
+die Prüfung fragt“, nicht ein bestimmtes Original.
+
 Erkennungsschritt 4 Zeilen: eigene Kette, nur Sprosse 0; er
 steht einmal, in der ersten Einheit seines Bereichs
 (unterrichtsblatt 2.3 a).
@@ -198,6 +207,11 @@ Verfahrenskette ist daher nicht immer k1.
   denselben Körper mit festen Eckpunkten, je Variante ein Körper;
   neu ist je Sprosse nur das Merkmal. Das ist die Sek-II-Form des
   Päckchens (Urteile vom 28.09., altlehrwerke-formen-sek2.md).
+  Analysis: derselbe Funktionsterm je Variante durch die Kette, es
+  wandert ein Koeffizient (ableitungsregeln 29.09.). Beim Nachzug
+  eines bestehenden Ordners gilt die Übernahme vor der Körperregel:
+  der Körper trägt Vorstufen und Grundfall, übernommene Sprossen
+  behalten ihre Zahlen (geraden 29.09.).
 - Keine ganze Gleichung, kein Term, kein Zahlenpaar und keine
   Funktion aus Merkkasten, Beispiel oder Original des Eintrags.
   Ein einzelner Bruch ist kein Zahlenpaar; frei sind einzelne
