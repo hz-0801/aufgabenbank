@@ -318,7 +318,7 @@ def e3():
                       pruef=f"[{2 * k}, 13]"))
     st = ("Stammbruch von einem Bruch: ein Fünftel von drei Viertel heißt "
           "drei Viertel in fünf gleiche Teile, Nenner mal fünf (Vorrat)")
-    assert st in ZEILEN[102]
+    assert st in ZEILEN[101]
     for n, (z, d) in [(3, (2, 7)), (2, (3, 7)), (4, (5, 9))]:
         aus.append(neu(v, kette_nr=1, sprosse=2, sprosse_text=st, hoehe="sprosse",
                        form="teil",
@@ -329,11 +329,11 @@ def e3():
                                 f"${fr(z, mal(d, n))} = {fr(z, d * n)}$; "
                                 f"Ergebnis: ${fr(z, d * n)}$"),
                        pruef=f"[{z}, {d * n}]", grafik="", loesungsgrafik="",
-                       original=None, quelle=102, _q=True))
+                       original=None, quelle=101, _q=True))
     for s_alt, s_neu in [(2, 3), (3, 4), (4, 5)]:
         for r in rows(alt, 2, s_alt):
             aus.append(ueber(r, kette_nr=1, sprosse=s_neu))
-    pt = pruefungstext(102)
+    pt = pruefungstext(101)
     pm = "Prüfungshöhe: Brüche nach der Pfadregel multiplizieren, Ergebnis gekürzt"
     for r in rows(alt, 2, 5) + rows(alt, 2, 6):
         aus.append(ueber(r, kette_nr=1, sprosse=6, sprosse_text=pt, merkmal=pm))
@@ -348,7 +348,7 @@ def e3():
                                f"Ergebnis: ${fr(3, 5)} : {k} = {fr(3, 5 * k)}$"),
                       pruef=f"[3, {5 * k}]"))
     st = "Kontrolle: Ergebnis mal Teiler gibt wieder die Ausgangszahl"
-    assert st in ZEILEN[103]
+    assert st in ZEILEN[102]
     for (z, d), k in [((4, 9), 3), ((5, 8), 2), ((7, 10), 3)]:
         aus.append(neu(v, kette_nr=2, sprosse=2, sprosse_text=st, hoehe="sprosse",
                        form="teil",
@@ -360,7 +360,7 @@ def e3():
                                 f"Kontrolle: Ergebnis mal Teiler $= {fr(z, d * k)} \\cdot {k} = "
                                 f"{fr(z * k, d * k)} = {fr(z, d)}$, das ist die Ausgangszahl."),
                        pruef=f"[{z}, {d * k}]", grafik="", loesungsgrafik="",
-                       original=None, quelle=103, _q=True))
+                       original=None, quelle=102, _q=True))
     for s_alt, s_neu in [(2, 3), (3, 4), (4, 5), (5, 6)]:
         for r in rows(alt, 3, s_alt):
             aus.append(ueber(r, kette_nr=2, sprosse=s_neu))
@@ -375,7 +375,7 @@ def e3():
               loesung=("Richtig. Sie hat Zähler mal Zähler und Nenner mal Nenner gerechnet "
                        "und danach mit $2$ gekürzt."),
               pruef="")
-    f[2] = um(f[2], kette_nr=3, sprosse=1, sprosse_text=st_f, merkmal=MERK_FEHLER,
+    f[2] = um(f[2], kette_nr=3, kette="Multiplizieren", sprosse=1, sprosse_text=st_f, merkmal=MERK_FEHLER,
               aufgabe=serie("Nora hat geteilt.",
                             [f"{fr(5, 8)} : 4 = {fr(5, 2)}", f"3 : {fr(1, 4)} = 12",
                              f"{fr(2, 3)} : 2 = {fr(1, 3)}", f"4 : {fr(1, 5)} = {fr(4, 5)}"]),
@@ -386,15 +386,15 @@ def e3():
               pruef="")
     aus += f
     b = rows(alt, 5, 2)
-    b[0] = ueber(b[0], kette_nr=3, merkmal=MERK_BEGR)
-    b[1] = um(b[1], kette_nr=3, merkmal=MERK_BEGR,
+    b[0] = ueber(b[0], kette_nr=3, kette="Multiplizieren", merkmal=MERK_BEGR)
+    b[1] = um(b[1], kette_nr=3, kette="Multiplizieren", merkmal=MERK_BEGR,
               aufgabe=(f"Mila sagt: „$6 : {fr(1, 3)}$ ist kleiner als $6$, denn Teilen macht "
                        "immer kleiner.“ Begründe, ohne genau zu rechnen, ob Mila recht hat."),
               loesung=(f"Nein; ${fr(1, 3)}$ passt in jedes Ganze dreimal, in $6$ also öfter "
                        "als sechsmal. Teilen durch einen Bruch kleiner als $1$ macht das "
                        "Ergebnis größer."),
               pruef="")
-    b[2] = um(b[2], kette_nr=3, merkmal=MERK_BEGR,
+    b[2] = um(b[2], kette_nr=3, kette="Multiplizieren", merkmal=MERK_BEGR,
               aufgabe=aussagen([
                   "Teilt man eine Zahl durch einen Bruch, wird das Ergebnis immer größer.",
                   f"Teilen durch ${fr(1, 4)}$ ist dasselbe wie malnehmen mit $4$.",
