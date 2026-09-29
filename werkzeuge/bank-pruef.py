@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 """Prüft die Bank eines Katalogeintrags (bank.md, Abschnitt „Prüfung").
 
+v0.7, 2026-09-29 (Vorstufen-Nummerierung, bank.md fünfte Fassung).
+Änderung gegenüber v0.6 (kleinste Änderung, sonst nichts):
+  – sprosse ≤ 0 genau dann, wenn hoehe vorstufe (statt = 0);
+    eine Kette darf bei −1, −2 … beginnen, die Folge bleibt lückenlos.
+
 v0.6, 2026-09-28 (Basisvorrat, bank.md „Basisvorrat“).
 Änderung gegenüber v0.5 (kleinste Änderung, sonst nichts):
   a) `bank-pruef.py _basis` prüft den Ordner bank/_basis/: je Datei
@@ -790,8 +795,8 @@ def pruefe_zeile(a, eintrag, einheit, ctx=None, basis=False):
         b.append("pflicht nur bei hoehe pflicht")
     if a["form"] not in FORMEN:
         b.append(f"form {a['form']!r} unbekannt")
-    if not basis and (a["sprosse"] == 0) != (a["hoehe"] == "vorstufe"):
-        b.append("sprosse 0 genau dann, wenn hoehe vorstufe")
+    if not basis and (a["sprosse"] <= 0) != (a["hoehe"] == "vorstufe"):
+        b.append("sprosse 0 oder kleiner genau dann, wenn hoehe vorstufe")
     o = a["original"]
     # original null auch bei pruefung (Zielmarke ohne P10-Original);
     # ein original an jeder hoehe, wenn vollständig: id, jahr, papier
@@ -866,7 +871,7 @@ def pruefe_ketten(zeilen, datei, einheit):
             sprossen[-1][1].append(a)
         snr = [s for s, _ in sprossen]
         start = snr[0] if snr else 0
-        if start not in (0, 1) or snr != list(range(start,
+        if start > 1 or snr != list(range(start,
                                                     start + len(snr))):
             b.append(f"{datei} k{k}: Sprossen nicht lückenlos: {snr}")
         grund = [s for s, g in sprossen if g[0]["hoehe"] == "grundfall"]

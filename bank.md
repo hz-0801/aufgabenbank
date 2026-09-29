@@ -1,6 +1,7 @@
 # Aufgabenbank – Form und Regeln
 
-Stand 2026-09-27b, vierte Fassung (nach den Sek-II-Prüfsteinen).
+Stand 2026-09-29, fünfte Fassung (Vorstufen-Nummerierung; Pflichtformen
+und Päckchen seit 28.09.).
 
 ## Zweck
 
@@ -17,6 +18,7 @@ Struktur.
     bank/<eintrag>/e<n>.jsonl     eine Datei je Lerneinheit
     bank/<eintrag>/zone.jsonl     die Voraussetzungen (Blatt 0)
     bank/<eintrag>/stand.md       Katalog-Commit, Datum, Zahlen
+    bank/<eintrag>/muster.md      Musterbeispiel je Verfahrenskette
     werkzeuge/bank-pruef.py       rechnet jede Lösung nach
     werkzeuge/mappe.py            baut die Mappe eines Eintrags
     mappen/<eintrag>.md           Quellen eines Eintrags in einer Datei
@@ -36,7 +38,10 @@ Leerzeilen. Reihenfolge der Zeilen = Reihenfolge der Kette.
                   „Sprossen je Verfahrenstyp" (Zone: Fertigkeit
                   wortgleich aus „Voraussetzungen (Blatt 0)")
     kette_nr      laufende Nummer der Kette in der Einheit
-    sprosse       Nummer in der Kette; 0 = Vorstufe
+    sprosse       Nummer in der Kette; 0 = die Vorstufe vor dem
+                  Grundfall; hat die Kette weitere Vorstufen davor,
+                  zählen sie rückwärts: −1, −2 (id s-1, s-2). Der
+                  Grundfall ist immer Sprosse 1 (Beschluss 29.09.)
     sprosse_text  die Sprosse wortgleich aus dem Katalog
     merkmal       was diese Sprosse gegenüber der vorigen ändert,
                   ein Halbsatz
@@ -118,7 +123,8 @@ nicht in der Prüfkennung. Sie steht am Ende des Fragesatzes
 
 ## Mengen je Kette
 
-Vorstufe 4; Grundfall 5; jede weitere Sprosse 3; Prüfungshöhe 2
+Vorstufe 4, jede Vorstufe der Kette (0, −1, −2 …) für sich;
+Grundfall 5; jede weitere Sprosse 3; Prüfungshöhe 2
 je Original des Katalogs (verfremdet); Pflichtelemente je
 Einheit: fehler 3, begruenden 3, anwendung 3, darstellung 3, wo
 die Typen der Einheit sie tragen. Zone: je Fertigkeit 2 sehr
@@ -271,6 +277,21 @@ Verfahrenskette ist daher nicht immer k1.
 - Punkte und Vektoren als Zeilentupel mit senkrechtem Strich,
   A(1 | 2 | 0).
 - sin, cos, ln als \mathrm{…}.
+
+## Musterbeispiel
+
+bank/<eintrag>/muster.md (seit 29.09.) hält je Verfahrenskette ein
+vorgerechnetes Beispiel für die Option „schwach“ (ziel.md: vorn am
+Grundfall ein Musterbeispiel): Abschnitt „## e<n> k<k> <kette>“, die
+Aufgabe des Grundfalls mit eigenen Zahlen (nicht aus dem Päckchen),
+darunter eine Tabelle Schritt | Zeile, eine Zeile je Umformung, das
+Ergebnis als letzte Zeile. Reine Daten ohne Bausteine; die Form auf
+dem Blatt (Schrittname links, Gleichheitszeichen untereinander,
+Ergebnis abgesetzt) setzt der Zusammenbau nach layout-befunde 55.
+Liefert der Lehrer ein Beispiel, gilt seins (ziel.md). Annahme
+29.09.: je Verfahrenskette statt „einmal je Eintrag“ (ziel.md), weil
+jedes Blatt am Grundfall seiner Einheit beginnt; Prüfstein terme
+(TER-S1, TER-S2 des Lehrers).
 
 ## Basisvorrat
 
