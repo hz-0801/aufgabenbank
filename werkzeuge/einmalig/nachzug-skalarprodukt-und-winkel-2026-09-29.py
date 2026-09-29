@@ -550,7 +550,7 @@ def e4(alt):
             orig = None
         else:
             u = (3, -1, -4)
-            auf = (kopf + " Ein fünftes Seil verläuft von S aus "
+            auf = (kopf + " Ein weiteres Seil verläuft von S aus "
                    "geradlinig in Richtung $(3 \\mid -1 \\mid -4)$. "
                    "Berechne den Winkel, unter dem es auf den Boden "
                    "trifft. (Abitur 2023 GK)")
