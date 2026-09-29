@@ -1,8 +1,12 @@
 # Stand: ebenen
 
-Katalog-Commit: 95b0f8b09856c14466ca030dd604451b8d259cfa
-Datum: 2026-09-27
-Prüfskript: werkzeuge/bank-pruef.py v0.5, 0 Abweichungen
+Katalog-Commit: 2a296e54827b16f81fd664c4430c6fcd84dd5719 (Mappe vom
+29.09., 17:59 UTC)
+Datum: 2026-09-30 00:49 CEST
+Vorlage auftrag-eintrag.md 2026-09-29e; Nachzug des Bestands vom
+27./28.09. (samt Gegenlese-Korrekturen). Prüfskript v0.10 mit
+`--katalog`: alle Dateien 0 Abweichungen, 0 Warnungen.
+Umbauskript: werkzeuge/einmalig/nachzug-ebenen-2026-09-29.py.
 
 ## Zeilen je Datei und hoehe
 
@@ -10,111 +14,120 @@ Prüfskript: werkzeuge/bank-pruef.py v0.5, 0 Abweichungen
 |-------|-------:|---------:|----------:|--------:|---------:|--------:|
 | zone  |     30 |        – |        14 |      15 |        – |       1 |
 | e1    |     37 |        4 |         5 |      12 |        4 |      12 |
-| e2    |     63 |        8 |        10 |      31 |        2 |      12 |
+| e2    |     66 |        8 |        10 |      30 |        6 |      12 |
 | e3    |     46 |        4 |         5 |      21 |        4 |      12 |
 | e4    |     32 |        4 |         5 |      12 |        2 |       9 |
-| Summe |    208 |       20 |        39 |      91 |       12 |      46 |
+
+Vorstufen: je Kette eine (s0); keine Kette hat −1 oder −2.
+
+## Nachzug je Einheit
+
+| Datei | übernommen | neu | umgeschrieben | entfallen |
+|-------|-----------:|----:|--------------:|----------:|
+| zone  |         30 |   0 |             0 |         0 |
+| e1    |         27 |   0 |            10 |         0 |
+| e2    |         48 |   3 |            15 |         0 |
+| e3    |         36 |   0 |            10 |         0 |
+| e4    |         22 |   0 |            10 |         0 |
+
+Übernommen: Aufgabe und Lösung wortgleich, nachgezogen quelle
+(117–121 → 114–118), sprosse_text (Vorstufen länger), in e2 k2 die
+Sprossen ab 2 um eins nach hinten (s2–s5 → s3–s6), bei e2 k1 s8
+hoehe sprosse → pruefung, bei anwendung und darstellung quelle und
+sprosse_text aus dem Katalog. Neu: e2 k2 s2 (Punkt der Ebene durch
+Nullsetzen). Umgeschrieben: die fünf Päckchen (je 5) und je
+Einheit die Pflichtzeilen, die eine fehlende Form herstellen.
 
 ## Originale je Einheit
 
-- e1: 2018-bb-ea-B3.2a, 2022MgrundlegendBAGLAA2WTR2-1a,
-  2018MgrundlegendAAGLAA211-b, 2022-bebb-gk-B3b
+- e1: 2018-bb-ea-B3.2a, 2022MgrundlegendBAGLAA2WTR2-1a;
+  Prüfungshöhe 2018MgrundlegendAAGLAA211-b, 2022-bebb-gk-B3b
 - e2: 2020MgrundlegendBAGLAA2WTR-1a, 2024-bebb-gk-B3d,
-  2025-bebb-gk-B3b, 2021MgrundlegendBAGLAA2WTR1-1b, 2020-be-gk-B3.1a,
-  2023MerhoehtBAGLAA2WTR2-1a, 2024MgrundlegendBAGLAA2WTR2-1c,
-  2020-be-gk-B3.2b, 2018-be-gk-B2.1a, 2018MerhoehtAAGLAA212-b,
-  2022-bebb-lk-B3c, 2017-bb-ea-A1.2b, 2021-be-gk-A1.4a,
-  2025MgrundlegendBAGLAA2WTR1-1c, 2017-bb-ea-B3.2c, 2025-bebb-lk-B3b
+  2025-bebb-gk-B3b, 2021MgrundlegendBAGLAA2WTR1-1b,
+  2020-be-gk-B3.1a, 2023MerhoehtBAGLAA2WTR2-1a,
+  2024MgrundlegendBAGLAA2WTR2-1c, 2020-be-gk-B3.2b,
+  2018-be-gk-B2.1a, 2018MerhoehtAAGLAA212-b, 2021-be-gk-A1.4a,
+  2025MgrundlegendBAGLAA2WTR1-1c, 2017-bb-ea-B3.2c; Prüfungshöhe
+  2022-bebb-lk-B3c, 2017-bb-ea-A1.2b (k1), 2025-bebb-lk-B3b (k2)
 - e3: 2020MerhoehtAAGLAA22-a, 2022-bebb-gk-A1.4b,
   2023MerhoehtBAGLAA2WTR1-1f, 2018MerhoehtBAGLAA2WTR3-1f,
   2026MerhoehtBAGLAA2WTR1-1f, 2018-bb-ea-A1.2a,
-  2022MgrundlegendBAGLAA2WTR1-1b, 2026MerhoehtBAGLAA2WTR1-1c,
-  2022MerhoehtAAGLAA222-b
+  2022MgrundlegendBAGLAA2WTR1-1b; Prüfungshöhe
+  2026MerhoehtBAGLAA2WTR1-1c, 2022MerhoehtAAGLAA222-b
 - e4: 2019-be-gk-B3.2e, 2023-bebb-gk-B3b, 2020-be-gk-B3.2c,
-  2020MgrundlegendAAGLAA211-b, 2017MgrundlegendBAGLAA2WTR1-1f
+  2017MgrundlegendBAGLAA2WTR1-1f; Prüfungshöhe
+  2020MgrundlegendAAGLAA211-b
 
 ## Prüfskript vor der Korrektur
 
-| Datei | Abweichungen | Warnungen | häufigster Grund              |
-|-------|-------------:|----------:|-------------------------------|
-| zone  |           34 |         0 | pruef als Zahl statt Ausdruck |
-| e1    |           10 |         0 | Sperre: Tripel                |
-| e2    |           12 |         5 | Sperre: Tripel                |
-| e3    |            4 |         0 | Sperre: Tripel                |
-| e4    |            1 |         0 | Sperre: Tripel                |
+| Datei | Abweichungen | Warnungen | häufigster Grund               |
+|-------|-------------:|----------:|--------------------------------|
+| zone  |            0 |         0 | –                              |
+| e1    |           31 |         0 | sprosse_text nicht wortgleich  |
+| e2    |           57 |         1 | sprosse_text nicht wortgleich  |
+| e3    |           40 |         0 | sprosse_text nicht wortgleich  |
+| e4    |           23 |         0 | sprosse_text nicht wortgleich  |
 
-Sperre: Tripel heißt ein Tripel aus Merkkasten oder Original.
-
-Nach der Korrektur bleibt eine Warnung: e2 k1 s8, 4 Zeilen statt 3
-(siehe Entscheidungen). Keine Einheit scheiterte zweimal. Nach der
-Gegenprobe wurden in 22 Zeilen (e2, e3, e4) mehrstellige
-Kastenzahlen ersetzt, die die Sperre nicht meldet (siehe Befunde).
+Das ist der alte Bestand gegen die neue Mappe (Zeilen verschoben,
+Vorstufentexte länger); die Warnung war e2 k1 s8 mit 4 Zeilen als
+hoehe sprosse. Nach dem Umbau zeigte jede Einheit im ersten Lauf 0
+Abweichungen; keine Einheit ist gescheitert.
 
 ## Entscheidungen
 
-- Einheit 2 hat zwei Verfahrensketten mit derselben Vorstufe; jede
-  Kette trägt ihre eigene Vorstufe mit vier verschiedenen Zeilen.
-- In Einheit 2 trägt nur die letzte Kette hoehe pruefung; die
-  Prüfungshöhe der ersten Kette steht als hoehe sprosse mit Original,
-  4 Zeilen (2 je Original), daher die Warnung „Menge sprosse = 3“.
-- Wortgleiche Dubletten aus Landesheft und Pool zählen als ein
-  Original: 2 Zeilen je Paar, Kennung der Landesfassung.
-- An Kettensprossen (hoehe sprosse) trägt je verfremdetes Original
-  eine Variante das Feld original, die übrigen Varianten null.
-- Zone: kette und sprosse_text sind die Fertigkeit bis zum „ – “
-  (die Sek-II-Zeilen haben keinen Doppelpunkt), bei Fertigkeit 7
-  bis zum Doppelpunkt.
-- Variablen x, y, z wie im Merkkasten; Schrägbilder mit
-  \begin{ksys3}[xyz].
-- Anwendung und Darstellung: sprosse_text selbst formuliert (der
-  Katalog nennt nur Fehler finden und Begründen), quelle ist die
-  Kettenzeile; Pflicht-Sprossen fehler 1, begruenden 2, anwendung 3,
-  darstellung 4.
-- Einheit 4 ohne Darstellung, weil kein Typ der Einheit einen
-  Darstellungswechsel trägt.
-- Typ ohne Kette in Einheit 4: kette und sprosse_text sind der
-  Typname ohne Klammerzusatz, quelle Zeile 26.
-- Schrägbild-Sonderfall (e3 Prüfungshöhe): die Verkürzung der
-  x-Achse steht im Aufgabentext, weil keine Abbildung vorliegt.
+1. Der Hinweis „Einheit 1 hat zwei Vorstufen (−1, 0)“ trifft auf
+   die Mappe vom 29.09. nicht zu: jede Kette nennt genau eine
+   Vorstufe; die neue Sprosse „Punkt der Ebene durch Nullsetzen“
+   steht in e2 k2 nach dem Grundfall (s2), nicht als Vorstufe.
+2. Sek-II-Päckchen: e1 Quader mit $A(1 | 1 | 1)$ und festen
+   Kanten, AB bleibt, der zweite Spannvektor wandert; e2 k1
+   Pyramide $A(1 | 1 | 0)$ … $S(3 | 3 | 2)$, AS bleibt; e2 k2 feste
+   Ebene $2x - 3y + 6z = 12$, die vorgegebene Komponente wandert;
+   e3 Quader mit Ecke im Ursprung, die Fläche wandert; e4 feste
+   Ebene $2x - y + 4z = 3$, der Punkt wandert.
+3. Übernahme vor Körperregel: die späteren Sprossen behalten ihre
+   Zahlen und nutzen die Körper der Päckchen nicht.
+4. Beide Ketten in e2 tragen ihre Prüfungshöhe als hoehe pruefung
+   (bank.md fünfte Fassung); die Warnung e2 k1 s8 entfällt.
+5. anwendung und darstellung: sprosse_text wortgleich aus einer
+   Katalogzeile (Typen, Lerneinheiten, Verortung), quelle dort;
+   vorher selbst formuliert.
+6. Pflicht-Kette heißt wie die erste Verfahrenskette; merkmal je
+   Pflichtsprosse einheitlich, die Form steht in aufgabe und
+   loesung.
+7. Urteilsfragen je Einheit: P6 mit „Nein“, P8 mit „Ja“, P2
+   „Richtig.“; die P4-Serien mischen wahr und falsch.
+8. e4 ohne darstellung (wie im Bestand; kein Typ der Einheit trägt
+   einen Darstellungswechsel).
+9. muster.md: je Verfahrenskette eigene Zahlen außerhalb der
+   Päckchen und der Sperre (fünf Abschnitte).
 
 ## Befunde
 
-- Katalogbefund: Alle vier Erkennungsschritte verlangen denselben
-  Handgriff wie die Vorstufe der Kette ihrer Einheit („Was legt die
-  Ebene fest?“ E1, „Welche Form, welcher Weg?“ E2, „Welche
-  Koordinate fehlt?“ E3, „Parallel, identisch oder schneidend?“ E4);
-  sie entfallen, die Vorstufen bleiben.
-- Katalogbefund: „Was legt die Ebene fest?“ steht „vor Einheit 1
-  und 4“; nach bank.md steht ein Erkennungsschritt nur einmal.
-- Katalogbefund: Einheit 2 hat in beiden Ketten eine Prüfungshöhe,
-  bank.md erlaubt eine Sprosse mit hoehe pruefung je Einheit.
-- Katalogbefund: 2024MerhoehtBAGLAA2WTR1-1c,
-  2026MgrundlegendBAGLAA2WTR1-1c und 2026MerhoehtBAGLAA2MMS2-1b
-  stehen in Sprossen, fehlen aber in Abschnitt 2 der Mappe und sind
-  daher nicht als original nutzbar.
-- bank.md: „Prüfungshöhe 2 je Original“ klärt nicht, ob wortgleiche
-  Dubletten eins oder zwei Originale sind; das Prüfskript zählt je
-  Kennung.
-- bank.md: „Fertigkeit bis zum Doppelpunkt“ passt nicht zu den
-  Sek-II-Fertigkeitszeilen (Form „was – wofür“).
-- Prüfskript: „im Koordinatensystem“ im Wortlaut des Originals
-  2022-bebb-gk-A1.4b („Beschreibe die Lage … im Koordinatensystem“)
-  gilt als Zeichenauftrag und verlangt eine Grafik.
-- Prüfskript: Die Sperre meldet einzelne mehrstellige Kastenzahlen
-  (10, 11, 12, 15, 20, 24) in aufgabe nicht; die Gegenprobe des
-  Auftrags verlangt sie. Die Jahreszahl 2021 des Kastens steht nur
-  in Prüfkennungen „(Abitur 2021 GK)“ und bleibt.
+- Katalog: „Was legt die Ebene fest?“ steht als Erkennungsschritt
+  vor Einheit 1 und 4 und wiederholt die Vorstufe von e1; er
+  entfällt (e1) und steht auch vor e4 nicht (dort eigene Vorstufe).
+- Katalog: Sprossen nennen 2024MerhoehtBAGLAA2WTR1-1c,
+  2026MgrundlegendBAGLAA2WTR1-1c und 2026MerhoehtBAGLAA2MMS2-1b;
+  die Mappe führt sie nicht in Abschnitt 2 – kein original möglich.
+- bank.md: e1 k1 s4 v1 trägt 2022MgrundlegendBAGLAA2WTR2-1a, e2 k1
+  s4 v2 2023MerhoehtBAGLAA2WTR2-1a; beide sind Pooldubletten, nach
+  „Dublette = ein Original“ gälte die Landeskennung – als Übernahme
+  wortgleich belassen, _punkte.csv hängt daran.
+- Prüfskript: die Sperre zählt jede Ecke eines Körpers einzeln;
+  eine Pyramide mit fünf verschiedenen Normalenvektoren und
+  kleinen Zahlen fand sich erst mit Grundkante 9.
+- Prüfskript: `--katalog` meldet 151 Abweichungen, wenn nur
+  Zeilennummern wandern; ein Hinweis „quelle verschoben um n“
+  würde den Nachzug kürzer machen.
 
 ## Offene Punkte
 
-- Die Schrägbild-Konvention von ksys3 (Verkürzung der x-Achse) ist
-  in _bausteine.md nicht belegt; e3 k1 s9 v3/v4 mit der Vorlage
-  abgleichen.
-- e3 k2 s4 v2 (Spurpunkte am \rebene ablesen) setzt bezifferte
+- Die ksys3-Grafiken (e1 darstellung, e3 Schrägbilder) sind nicht
+  gerendert; LaTeX ist in der Sitzung nicht verfügbar.
+- e3 k1 s4 v2 (Spurpunkte am \rebene ablesen) setzt bezifferte
   Achsen im Schrägbild voraus.
-
-## Nachbesserung Gegenlese 2026-09-28
-- Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
-- ebenen-e1-k2-s2-v3: „beide zeigen in dieselbe Richtung“ falsch beim Faktor −2 → „beide sind parallel (Gegenrichtung)“ (Regel a).
-- ebenen-e1-k2-s3-v2: „der Halter endet 1 dm über der Scheibenebene“ falsch, 1 dm ist nur der z-Unterschied, der Abstand zur Ebene ist 0,6 dm → „1 dm in z-Richtung vom Scheibenpunkt (3 | 2,5 | 4) entfernt“ (Regel b).
-- Prüfskript: Abweichungen 0 (Warnung e2 k1 s8 bestand vorher, in stand.md begründet).
+- bank/_punkte.csv: fünf ids mit original in e2 k2 haben sich
+  verschoben (s2–s5 → s3–s6); punkte-nachziehen.py steht aus.
+- gegenlese.md und gegenlese2.md beziehen sich auf den Stand vom
+  27.09.; die umgeschriebenen Zeilen sind ungelesen.
