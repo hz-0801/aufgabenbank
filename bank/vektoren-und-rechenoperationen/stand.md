@@ -1,125 +1,111 @@
 # Stand: vektoren-und-rechenoperationen
 
-Katalog-Commit: 95b0f8b09856c14466ca030dd604451b8d259cfa
-Datum: 2026-09-27
-Prüfskript: werkzeuge/bank-pruef.py v0.5
-Erster Sek-II-Eintrag der Bank.
+Katalog-Commit: 2a296e54827b16f81fd664c4430c6fcd84dd5719 (Mappe vom
+29.09., 17:58 UTC)
+Datum: 2026-09-29 21:54 CEST
+Vorlage auftrag-eintrag.md 2026-09-29e; Nachzug des Bestands vom
+27./28.09. Prüfskript v0.10 mit `--katalog`: alle Dateien
+0 Abweichungen, 0 Warnungen.
+Umbauskript: werkzeuge/einmalig/
+nachzug-vektoren-und-rechenoperationen-2026-09-29.py.
 
 ## Zeilen je Datei und hoehe
 
 | Datei | Zeilen | vorstufe | grundfall | sprosse | pruefung | pflicht |
-|---|--:|--:|--:|--:|--:|--:|
-| zone | 27 | – | 12 | 14 | – | 1 |
-| e1 | 41 | 8 | 5 | 12 | 4 | 12 |
-| e2 | 43 | 4 | 5 | 18 | 4 | 12 |
-| e3 | 23 | 4 | 5 | 3 | 2 | 9 |
+|-------|-------:|---------:|----------:|--------:|---------:|--------:|
+| zone  |     27 |        – |        12 |      14 |        – |       1 |
+| e1    |     41 |        8 |         5 |      12 |        4 |      12 |
+| e2    |     46 |        4 |         5 |      21 |        4 |      12 |
+| e3    |     23 |        4 |         5 |       3 |        2 |       9 |
+
+Vorstufen: e1 k1 Erkennungsschritt (4) und k2 s0 (4); e2 k1 s0;
+e3 k1 s0. Keine Kette hat Vorstufen −1 oder −2.
+
+## Nachzug je Einheit
+
+| Datei | übernommen | neu | umgeschrieben | entfallen |
+|-------|-----------:|----:|--------------:|----------:|
+| zone  |         27 |   0 |             0 |         0 |
+| e1    |         31 |   0 |            10 |         0 |
+| e2    |         37 |   3 |             6 |         0 |
+| e3    |         13 |   0 |            10 |         0 |
+
+Übernommen: Aufgabe und Lösung wortgleich, nachgezogen quelle
+(37 → 35, 80 → 78, 83–85 → 81–83), bei den Vorstufen der längere
+sprosse_text, in e2 sprosse und id ab s3 (+1). Neu: e2 k1 s3
+(zwei Kantenwege, ein Vektor). Umgeschrieben: die Päckchen e1 und
+e3 (je 5) und die Pflichtzeilen, die eine fehlende Form herstellen.
+ids mit original: 11 von 25 geändert (e2 k1 s3–s8 → s4–s9);
+bank/_punkte.csv ist nicht angefasst.
 
 ## Originale je Einheit
 
-Im Feld original:
-- e1: 2025MerhoehtAAGLAA11-a, 2021MgrundlegendAAGLAA112-a
-- e2: 2021MgrundlegendAAGLAA12-b, 2021MgrundlegendAAGLAA12-a,
-  2024MgrundlegendAAGLAA211-b, 2019MerhoehtAAGLAA21-b,
-  2022MerhoehtAAGLAA221-b, 2026MgrundlegendAAGLAA222-b,
-  2025MerhoehtAAGLAA223-b
-- e3: keines
-
-Seit v0.5 ebenfalls im Feld original (bis dahin null, nur
-Prüfkennung im Text):
-- e1: 2025MerhoehtBAGLAA1WTR-2b (k2 s4 v1),
-  2022MerhoehtBAGLAA2WTR2-1f (k2 s5 v1),
-  2024MgrundlegendBAGLAA1WTR-1e (k2 s6 v1–v2),
-  2025MerhoehtBAGLAA1MMS-1a (k2 s6 v3–v4)
-- e2: 2026MgrundlegendBAGLAA2MMS2-1a (k1 s1 v2),
-  2026MerhoehtBAGLAA1WTR-1a (k1 s3 v1),
-  2022MerhoehtBAGLAA1WTR-1b (k1 s4 v1),
-  2017MgrundlegendBAGLAA2WTR2-1c (k1 s4 v2),
-  2017MerhoehtBAGLAA2WTR1-1b (k1 s4 v3)
-- e3: 2019MgrundlegendBAGLAA2WTR2-1d (k1 s2 v1),
-  2019MgrundlegendBAGLAA2WTR2-1e (k1 s3 v1–v2)
+- e1: 2025MerhoehtAAGLAA11-a, 2021MgrundlegendAAGLAA112-a,
+  2025MerhoehtBAGLAA1WTR-2b, 2022MerhoehtBAGLAA2WTR2-1f;
+  Prüfungshöhe 2024MgrundlegendBAGLAA1WTR-1e,
+  2025MerhoehtBAGLAA1MMS-1a
+- e2: 2021MgrundlegendAAGLAA12-b, 2026MgrundlegendBAGLAA2MMS2-1a,
+  2021MgrundlegendAAGLAA12-a, 2026MerhoehtBAGLAA1WTR-1a,
+  2022MerhoehtBAGLAA1WTR-1b, 2017MgrundlegendBAGLAA2WTR2-1c,
+  2017MerhoehtBAGLAA2WTR1-1b, 2024MgrundlegendAAGLAA211-b,
+  2019MerhoehtAAGLAA21-b, 2022MerhoehtAAGLAA221-b;
+  Prüfungshöhe 2026MgrundlegendAAGLAA222-b, 2025MerhoehtAAGLAA223-b
+- e3: 2019MgrundlegendBAGLAA2WTR2-1d; Prüfungshöhe
+  2019MgrundlegendBAGLAA2WTR2-1e
 
 ## Prüfskript vor der Korrektur
 
-- zone: 4 Abweichungen, alle „merkmal uneinheitlich“ (s1)
-- e1: 6 Abweichungen, alle „original unvollständig“
-  (Teil-B-Kennung); danach 1 Warnung (Prüfungshöhe ohne Original)
-- e2: 0
-- e3: 0; 1 Warnung (Prüfungshöhe ohne Original)
+| Datei | Abweichungen | Warnungen | häufigster Grund                |
+|-------|-------------:|----------:|---------------------------------|
+| zone  |            0 |         0 | –                               |
+| e1    |            0 |         0 | –                               |
+| e2    |            1 |         0 | pruef fehlt (Bruch in s3 v3)    |
+| e3    |            0 |         0 | –                               |
 
-Stand nach der Korrektur: 0 Abweichungen, 2 Warnungen – beide
-Folge der Nullsetzung von original (Befund Kennung).
-
-v0.5: vor dem Nachtrag 10 Abweichungen, alle Sperre für Tripel aus
-Kasten und Originalen; nach der Ausnahme für den Ursprung
-(0 | 0 | 0) im Skript 7. Geändert: e1 k2 s5 v1–v2 (Stäbe ohne
-(4 | 0 | 0), Blickrichtungen getauscht), e1 k3 s1 v3 ((2 | 2 | 1)
-statt (1 | 2 | 2)), e2 k1 s4 v1–v2 (Punkte um 1 in x₁ verschoben),
-e2 k1 s8 v2 (A(4 | 1 | 0), B(0 | 4 | 0)), e2 k1 s8 v4 (Grundfläche
-6 × 2). Danach die 14 Originale nachgetragen: 0 Abweichungen,
-0 Warnungen.
+Der alte Bestand gegen die neue Mappe: 86 Abweichungen, alle
+„sprosse_text nicht wortgleich in Zeile quelle“ (Zeilen um zwei
+verschoben). Keine Einheit ist zweimal gescheitert.
 
 ## Entscheidungen
 
-1. Prüfkennung ohne P10: „(Abitur <Jahr> GK)“ für grundlegendes,
-   „(Abitur <Jahr> LK)“ für erhöhtes Niveau nach unterrichtsblatt
-   3.6; MMS-/CAS-Fassung und Teil A/B stehen nicht darin.
-2. Punkte und Vektoren als Zeilentupel mit senkrechtem Strich wie
-   im Merkkasten, A(1 | 2 | 0) und (3 | −1 | 2); Spaltenvektoren
-   gehen nicht, weil aufgabe keine Umgebung (pmatrix) tragen darf.
-3. pruef trägt bei Tripeln nur die Zahlen, die das Skript an der
-   Ergebnisstelle liest (meist die erste Koordinate); alle
-   Koordinaten sind bei der Erzeugung aus den Aufgabenwerten
-   gerechnet.
-4. Originale, deren Kennung das Skript ablehnt: original null,
-   Prüfkennung im Text, Menge weiter 2 je Original; daher die
-   Warnungen in e1 k2 s6 (4 Zeilen) und e3 k1 s3 (2 Zeilen).
-   Mit v0.5 aufgehoben: alle 14 Zeilen tragen original.
-5. Schrägbilder mit ksys3, \rquader und \rpunkt*-Beschriftung;
-   Stäbe als \rgerade[0:1], Draufsicht in leerem ksys, ihre
-   Lösungsgrafik mit \funktionab.
-6. Zone nach erster Verwendung: Verschiebung, Pythagoras (E1),
-   Raum, Terme (E2), Verhältnisse, Skalarprodukt (E3); kette der
-   Zone bis zum Gedankenstrich, die Zeilen haben keinen
-   Doppelpunkt.
-7. Zone-Paar in der Pythagoras-Kette zum Fallstrick „beide
-   Vorzeichen“, weil die Betragsgleichung in E1 daran hängt.
-8. Vorstufen „Zahl oder Pfeil?“ mit den Optionen Zahl/Vektor,
-   weil Sachvektoren in E3 keine Pfeile sind; der Kettenname
-   bleibt wortgleich.
-9. Pflicht: E1 und E2 alle vier Arten, E3 ohne darstellung (der
-   Grundfall ist selbst der Wechsel Liste → Vektor); sprosse_text
-   von darstellung und anwendung aus den Kern-Zitaten der
-   Zeilen 80 und 15.
-10. Erkennungsschritt „Faktor gesucht oder Richtung gesucht?“
-    einmal in E1 als k1; kette ist die Frage ohne Anführungszeichen.
+1. Päckchen e1 am festen Quader A(2 | 1 | 0) … H(2 | 4 | 3): A
+   bleibt Fuß, die Zielecke wandert (C, F, G, H, B).
+2. Päckchen e2 unverändert: der Bestand nutzt schon einen festen
+   Quader (6 × 4 × 3), der Termweg wandert; übernommen.
+3. Päckchen e3: dasselbe Eiscafé, Vanille 24 und Erdbeere 18
+   bleiben, Schoko wandert je Wochentag.
+4. Die neue Sprosse e2 s3 steht in der Kettenfolge der Mappe nach
+   der Lagebeschreibung; die späteren Sprossen rücken um eins.
+5. Der Erkennungsschritt „Faktor gesucht oder Richtung gesucht?“
+   bleibt in e1 (fragt, was fehlt; die Vorstufe „Zahl oder Pfeil?“
+   fragt, was eine Größe ist – kein gleicher Handgriff).
+6. Umgeschrieben statt ergänzt: je Einheit die fehler- und
+   begruenden-Zeilen, deren Form doppelt war; in e2 die erste
+   anwendung zur P8-Entscheidung (Lampe über Kopfhöhe).
+7. Urteile: P6 e1–e3 je „Ja“, P8 e1 und e2 „Nein“, e3 „Nein“ und
+   „Ja“; P2 je „Richtig.“ – zusammen mit den Serien etwa halbe-halbe.
+8. muster.md mit eigenen Punkten außerhalb der Päckchen und der
+   Sperre (e2: Kante AB = 5, weil (4 | 0 | 0) gesperrt ist).
 
 ## Befunde
 
-- Katalog: „Zahl oder Pfeil?“ (Z. 35) wiederholt die Vorstufen
-  von E1 und E3 (Z. 83, 85), „Wohin führt der Term?“ (Z. 36) die
-  von E2 (Z. 84); beide Erkennungsschritte entfallen nach bank.md.
-- Prüfskript, KENNUNG: Teil-B-Kennungen mit Ziffer vor dem
-  Buchstaben (…WTR-1e) und Landeskennungen (2018-bb-ea-B3.2c)
-  gelten als „original unvollständig“; 14 Zeilen tragen deshalb
-  null. (v0.5)
-- Prüfskript, Ergebnisstelle: ein Tripel (a | b | c) wird nicht
-  gelesen, nur die erste Zahl der Lösung zählt; PUNKT sollte
-  n-Tupel kennen. (v0.5)
-- Prüfskript, Sperre: zahlenpaare kennt nur (a|b); Tripel aus
-  Kasten und Originalen werden nicht gesperrt (von Hand gemieden).
-  (v0.5; von Hand gemieden war nicht vollständig, siehe
-  „Prüfskript vor der Korrektur“)
-- bank.md: Feld original und Prüfkennung sind in P10-Sprache
-  beschrieben; für Sek II fehlen Abitur-Kennung, GK/LK und Teil.
-  (bank.md vierte Fassung)
-- Vorlage: kein Baustein für Spaltenvektoren und keiner für einen
-  Vektorpfeil im ebenen ksys.
-- Katalog: die Landeszeile 2018-bb-ea-B3.2c (Z. 90) trägt keine
-  eigene Sprosse; ihre Lagebeschreibung deckt E2 k1 s2 mit dem
-  iqb-Zwilling 2021MgrundlegendAAGLAA12-a.
+- Katalog: „Faktor gesucht oder Richtung gesucht?“ (Z. 35) und die
+  Vorstufe „Zahl oder Pfeil?“ (Z. 81) liegen nah beieinander; ein
+  Schüler übt zweimal das Ankreuzen Zahl gegen Richtung.
+- Katalog: die Landeszeile 2018-bb-ea-B3.2c trägt keine eigene
+  Sprosse; ihre Lage deckt e2 s2 über den iqb-Zwilling.
+- Auftrag: die Schrittnamenpflicht gilt für neue und umgeschriebene
+  Lösungen; Urteils- und Begründungslösungen haben keine
+  Rechenzeilen, dort steht nur das Urteil vorn.
+- Prüfskript: bei Tripeln aus Termwegen (Kantenfaktoren) prüft
+  pruef nur Brüche; die Richtigkeit von u, v, w-Termen prüft kein
+  Skript.
 
 ## Offene Punkte
 
-- Rendern ungeprüft (kein LaTeX): ksys3-Optionen x1max=7 und
-  x3min=-3, leere Labels bei \rgerade und \rvektorab, Lage der
-  Eckenlabels am Quader.
+- Die Gegenlese-Befunde vom 27./28.09. zu übernommenen Zeilen sind
+  nicht eingearbeitet (e1 k3 s3 v2 „Pfeil zu“, e3 k2 s3 sprosse_text,
+  e1 k3 s4 v2 Rundung, e3 k1 s3 v1 Kontext wie das Original).
+- ksys3-Grafiken ungerendert (kein LaTeX in der Sitzung).
+- bank/_punkte.csv braucht `werkzeuge/punkte-nachziehen.py` für die
+  11 geänderten ids.
