@@ -46,18 +46,6 @@ TEXT = {
 
 ALT = "8362b2d"   # Bestand vor dem Nachzug (27./28.09.)
 
-# Pooldubletten: die Kennung, die in der Mappe zuerst steht (bank.md 29.09.)
-DUBL = {
-    "2022MerhoehtBAGLAA2WTR1-1e": ("2022-bebb-lk-B3h", 2022, "2022-bebb-lk"),
-    "2024MgrundlegendAAGLAA213-a": ("2024-bebb-gk-A1.2a", 2024,
-                                    "2024-bebb-gk"),
-    "2025MgrundlegendAAGLAA213-b": ("2025-bebb-gk-A1.5b", 2025,
-                                    "2025-bebb-gk"),
-    "2026MgrundlegendAAGLAA211-a": ("2026-bb-gk-A1.2a", 2026, "2026-bb-gk"),
-    "2026MerhoehtAAGLAA221-a": ("2026-bb-ea-A1.8a", 2026, "2026-bb-ea"),
-    "2026MerhoehtBAGLAA2WTR2-1d": ("2026-bb-ea-B3d", 2026, "2026-bb-ea"),
-}
-
 
 def lade(f):
     import subprocess
@@ -65,14 +53,6 @@ def lade(f):
         ["git", "-C", str(B), "show", f"{ALT}:bank/{E}/{f}.jsonl"],
         capture_output=True, text=True, check=True).stdout
     return [json.loads(l) for l in txt.split("\n") if l]
-
-
-def dublette(r):
-    o = r.get("original")
-    if o and o["id"] in DUBL:
-        i, j, p = DUBL[o["id"]]
-        r["original"] = {"id": i, "jahr": j, "papier": p}
-        r["_dubl"] = True
 
 
 def schreibe(f, rows):
@@ -683,10 +663,9 @@ def e4():
 
 
 def zahlen(out, alt):
-    z = {"uebernommen": 0, "neu": 0, "umgeschrieben": 0, "dublette": 0}
+    z = {"uebernommen": 0, "neu": 0, "umgeschrieben": 0}
     for r in out:
         z[r["_art"]] += 1
-        z["dublette"] += 1 if r.get("_dubl") else 0
     z["entfallen"] = alt - z["uebernommen"] - z["umgeschrieben"]
     return z
 
