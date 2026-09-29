@@ -129,23 +129,23 @@ def einheit1():
     for r in rows:
         if r["kette_nr"] == 2 and r["sprosse"] == 0:
             r["sprosse_text"] = VORSTUFE[1]
-    # Grundfall als Päckchen: Kathete a = 24 cm bleibt, b wandert
+    # Grundfall als Päckchen: Kathete a = 36 cm bleibt, b wandert
     v = reihe(rows, 2, 1)[0]
-    m = ("Hypotenuse gesucht, Wurzel geht auf; die Kathete a = 24 cm "
+    m = ("Hypotenuse gesucht, Wurzel geht auf; die Kathete a = 36 cm "
          "bleibt, die Kathete b wandert")
     neu = []
-    for i, b in enumerate([7, 10, 18, 32, 45], 1):
-        c2 = 24 ** 2 + b ** 2
+    for i, b in enumerate([15, 27, 48, 77, 105], 1):
+        c2 = 36 ** 2 + b ** 2
         c = math.isqrt(c2)
         assert c * c == c2
         neu.append(setze(
             v, variante=i, merkmal=m,
             aufgabe=(f"In einem rechtwinkligen Dreieck sind die Katheten "
-                     f"$a = 24$ cm und $b = {b}$ cm lang. Berechne die "
+                     f"$a = 36$ cm und $b = {b}$ cm lang. Berechne die "
                      f"Länge der Hypotenuse $c$."),
             antwort="c² = __, c = __ cm",
-            loesung=(f"Gleichung: $c^2 = 24^2 + {b}^2$; Zwischenergebnis: "
-                     f"$c^2 = 576 + {tsd(b*b)} = {tsd(c2)}$; Wurzel: "
+            loesung=(f"Gleichung: $c^2 = 36^2 + {b}^2$; Zwischenergebnis: "
+                     f"$c^2 = 1\\,296 + {tsd(b*b)} = {tsd(c2)}$; Wurzel: "
                      f"$c = \\sqrt{{{tsd(c2)}}} = {c}$ cm; Ergebnis: "
                      f"$c = {c}$ cm"),
             pruef=f"[{c2}, {c}]", grafik="", loesungsgrafik=""))
@@ -158,8 +158,8 @@ def einheit1():
                  "ist falsch. Finde sie und rechne sie richtig. \\\\ "
                  "(1) Katheten $16$ cm und $30$ cm: $c = \\sqrt{256 + 900} = "
                  "\\sqrt{1\\,156} = 34$ cm \\\\ "
-                 "(2) Katheten $15$ cm und $36$ cm: $c = \\sqrt{225 + "
-                 "1\\,296} = \\sqrt{1\\,521} = 39$ cm \\\\ "
+                 "(2) Katheten $16$ cm und $63$ cm: $c = \\sqrt{256 + "
+                 "3\\,969} = \\sqrt{4\\,225} = 65$ cm \\\\ "
                  "(3) Katheten $21$ cm und $28$ cm: $c = \\sqrt{21^2 + 28^2} "
                  "= 21 + 28 = 49$ cm \\\\ "
                  "(4) Katheten $28$ cm und $45$ cm: $c = \\sqrt{784 + "
@@ -174,10 +174,10 @@ def einheit1():
         f3,
         aufgabe=("Tim hat vier Hypotenusen berechnet. Welche Ergebnisse "
                  "können nicht stimmen? Begründe, ohne genau zu rechnen. "
-                 "\\\\ (1) Katheten $20$ m und $48$ m: $c = 52$ m \\\\ "
+                 "\\\\ (1) Katheten $12$ m und $35$ m: $c = 37$ m \\\\ "
                  "(2) Katheten $11$ cm und $60$ cm: $c = 49$ cm \\\\ "
                  "(3) Katheten $18$ m und $80$ m: $c = 98$ m \\\\ "
-                 "(4) Katheten $33$ cm und $56$ cm: $c = 65$ cm"),
+                 "(4) Katheten $13$ cm und $84$ cm: $c = 85$ cm"),
         loesung=("Ergebnis 2 kann nicht stimmen: $49$ cm ist kürzer als die "
                  "Kathete $60$ cm, die Hypotenuse muss die längste Seite "
                  "sein. Ergebnis 3 kann nicht stimmen: $98$ m ist genau die "
@@ -198,8 +198,8 @@ def einheit1():
                  "kürzer ist als eine Kathete."),
         loesung=("a) wahr, denn so ist die Hypotenuse festgelegt: die Seite "
                  "gegenüber dem rechten Winkel. b) falsch, z. B. Katheten "
-                 "$8$ und $15$: Hypotenuse $17$; mit $16$ und $15$: "
-                 "Hypotenuse $\\sqrt{481} \\approx 21{,}9$, nicht $34$. "
+                 "$7$ und $24$: Hypotenuse $25$; mit $14$ und $24$: "
+                 "Hypotenuse $\\sqrt{772} \\approx 27{,}8$, nicht $50$. "
                  "c) falsch, denn das Hypotenusenquadrat ist die Summe "
                  "beider Kathetenquadrate und damit größer als jedes "
                  "einzelne."),
@@ -508,7 +508,7 @@ def einheit3():
                  "die Diagonale einer Seitenfläche."),
         loesung=("a) wahr, denn im Stützdreieck ist die Seitenhöhe die "
                  "Hypotenuse und die Körperhöhe eine Kathete. b) falsch, "
-                 "z. B. Radius $3$ cm und Höhe $4$ cm: Mantellinie $5$ cm, "
+                 "z. B. Radius $9$ cm und Höhe $40$ cm: Mantellinie $41$ cm, "
                  "länger als die Höhe. c) wahr, denn die Raumdiagonale ist "
                  "die Hypotenuse eines Dreiecks, in dem die "
                  "Flächendiagonale eine Kathete ist."),
