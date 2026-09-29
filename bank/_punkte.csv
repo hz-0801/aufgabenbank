@@ -11,8 +11,8 @@ zuordnungen-basis-k1-v8;2014-GYM-B1c;1;;ganz;gleiche Größe mit gleichem Lösun
 zuordnungen-basis-k1-v9;2014-GYM-B1c;1;;ganz;gleiche Größe mit gleichem Lösungsweg
 zuordnungen-e3-k1-s6-v1;2014-GYM-B1c;1;;ganz;gleiche Größe mit gleichem Lösungsweg
 zuordnungen-e3-k1-s6-v2;2014-GYM-B1c;1;;ganz;gleiche Größe mit gleichem Lösungsweg
-prozentrechnung-e3-k1-s9-v1;2014-OS-B1a;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
-prozentrechnung-e3-k1-s9-v2;2014-OS-B1a;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
+prozentrechnung-e3-k1-s9-v5;2014-OS-B1a;1;nein;ganz;Prozentwert aus Prozentsatz und Grundwert wie im Original, ein Ergebnis
+prozentrechnung-e3-k1-s9-v6;2014-OS-B1a;1;nein;ganz;Prozentwert aus Prozentsatz und Grundwert wie im Original, ein Ergebnis
 wahrscheinlichkeit-e2-k3-s6-v1;2014-OS-B1b;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
 brueche-dezimalzahlen-e3-k1-s7-v1;2014-OS-B1c;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
 brueche-dezimalzahlen-e3-k1-s7-v2;2014-OS-B1c;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
@@ -26,8 +26,8 @@ bruchrechnung-basis-k1-v6;2014-OS-B1d;1;nein;ganz;gleiche Größe mit gleichem L
 bruchrechnung-basis-k1-v7;2014-OS-B1d;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
 bruchrechnung-basis-k1-v8;2014-OS-B1d;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
 bruchrechnung-basis-k1-v9;2014-OS-B1d;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
-bruchrechnung-e1-k3-s8-v3;2014-OS-B1d;1;nein;unklar;Gegenwahrscheinlichkeit vorgegeben, nur der Restschritt
-bruchrechnung-e1-k3-s8-v4;2014-OS-B1d;1;nein;unklar;Gegenwahrscheinlichkeit vorgegeben, nur der Restschritt
+bruchrechnung-e1-k3-s8-v11;2014-OS-B1d;1;nein;teil;das Original verlangt die günstigen Fälle zu zählen und den Bruch zu bilden, die Bankzeile gibt die Wahrscheinlichkeit vor und übt nur eins minus Bruch
+bruchrechnung-e1-k3-s8-v12;2014-OS-B1d;1;nein;teil;das Original verlangt die günstigen Fälle zu zählen und den Bruch zu bilden, die Bankzeile gibt die Wahrscheinlichkeit vor und übt nur eins minus Bruch
 wahrscheinlichkeit-e2-k3-s7-v1;2014-OS-B1d;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
 prozentrechnung-basis-k3-v1;2014-OS-B1e;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
 prozentrechnung-basis-k3-v10;2014-OS-B1e;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
@@ -39,17 +39,17 @@ prozentrechnung-basis-k3-v6;2014-OS-B1e;1;nein;ganz;gleiche Größe mit gleichem
 prozentrechnung-basis-k3-v7;2014-OS-B1e;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
 prozentrechnung-basis-k3-v8;2014-OS-B1e;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
 prozentrechnung-basis-k3-v9;2014-OS-B1e;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
-prozentrechnung-e2-k3-s8-v1;2014-OS-B1e;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
-prozentrechnung-e2-k3-s8-v2;2014-OS-B1e;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
+prozentrechnung-e2-k3-s8-v7;2014-OS-B1e;1;nein;ganz;Anteil aus Teil und Ganzem in Prozent wie der Zinssatz aus Zinsen und Kapital, gleiche Handlung
+prozentrechnung-e2-k3-s8-v8;2014-OS-B1e;1;nein;ganz;Anteil aus Teil und Ganzem in Prozent wie der Zinssatz aus Zinsen und Kapital, gleiche Handlung
 zinsrechnung-e1-k1-s11-v3;2014-OS-B1e;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
 zinsrechnung-e1-k1-s11-v4;2014-OS-B1e;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
 winkel-dreiecke-e2-k2-s4-v1;2014-OS-B1f;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
-brueche-dezimalzahlen-e5-k2-s9-v3;2014-OS-B1h;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
-brueche-dezimalzahlen-e5-k2-s9-v4;2014-OS-B1h;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
+brueche-dezimalzahlen-e5-k2-s10-v3;2014-OS-B1h;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
+brueche-dezimalzahlen-e5-k2-s10-v4;2014-OS-B1h;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
 potenzen-wurzeln-e3-k2-s13-v5;2014-OS-B1h;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
 potenzen-wurzeln-e3-k2-s13-v6;2014-OS-B1h;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
-rationale-zahlen-e1-k1-s7-v1;2014-OS-B1h;1;nein;ganz;gleiche Handlung Ordnen, ohne Wurzel
-rationale-zahlen-e1-k1-s7-v2;2014-OS-B1h;1;nein;ganz;gleiche Handlung Ordnen, ohne Wurzel
+rationale-zahlen-e1-k1-s6-v3;2014-OS-B1h;1;nein;ganz;gleiche Handlung Ordnen, ohne Wurzel
+rationale-zahlen-e1-k1-s6-v4;2014-OS-B1h;1;nein;ganz;gleiche Handlung Ordnen, ohne Wurzel
 reelle-zahlen-e1-k1-s6-v3;2014-OS-B1h;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
 brueche-dezimalzahlen-e1-k1-s6-v5;2014-OS-B1i;2;nein;ganz;beide Leistungen, Bruch und Prozent
 brueche-dezimalzahlen-e1-k1-s6-v6;2014-OS-B1i;2;nein;ganz;beide Leistungen, Bruch und Prozent
@@ -82,8 +82,8 @@ flaechen-e4-k1-s6-v1;2014-OS-K5c;3;ja;ganz;Höhe aus Fläche und Vergleich als N
 flaechen-e4-k1-s6-v2;2014-OS-K5c;3;ja;ganz;Höhe aus Fläche und Vergleich als Nachweis
 wahrscheinlichkeit-e2-k3-s5-v2;2014-OS-K6a;2;nein;ganz;beide Leistungen, Bruch und Prozent
 wahrscheinlichkeit-e3-k3-s2-v2;2014-OS-K6b;2;nein;ganz;alle Astwahrscheinlichkeiten ergänzen
-bruchrechnung-e1-k3-s7-v1;2014-OS-K6c;2;ja;unklar;Pfadwahrscheinlichkeiten vorgegeben, nur die Addition
-bruchrechnung-e1-k3-s7-v2;2014-OS-K6c;2;ja;unklar;Pfadwahrscheinlichkeiten vorgegeben, nur die Addition
+bruchrechnung-e1-k3-s8-v1;2014-OS-K6c;2;ja;unklar;nur letzter Schritt 1 minus gegebener Wahrscheinlichkeit
+bruchrechnung-e1-k3-s8-v2;2014-OS-K6c;2;ja;unklar;nur letzter Schritt 1 minus gegebener Wahrscheinlichkeit
 wahrscheinlichkeit-e3-k3-s5-v1;2014-OS-K6c;2;ja;ganz;gleiche Größe mit gleichem Lösungsweg
 wahrscheinlichkeit-e2-k4-s1-v1;2015-OS-B1a;1;nein;ganz;Ankreuzen wie im Original
 rationale-zahlen-basis-k3-v1;2015-OS-B1b;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
@@ -98,10 +98,10 @@ rationale-zahlen-basis-k3-v8;2015-OS-B1b;1;nein;ganz;gleiche Größe mit gleiche
 rationale-zahlen-basis-k3-v9;2015-OS-B1b;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
 rationale-zahlen-e1-k1-s6-v1;2015-OS-B1b;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
 rationale-zahlen-e1-k1-s6-v2;2015-OS-B1b;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
-brueche-dezimalzahlen-e4-k1-s8-v1;2015-OS-B1c;1;nein;ganz;Ankreuzen wie im Original
-brueche-dezimalzahlen-e4-k1-s8-v2;2015-OS-B1c;1;nein;ganz;Ankreuzen wie im Original
-brueche-dezimalzahlen-e5-k2-s9-v5;2015-OS-B1c;1;nein;ganz;Ankreuzen wie im Original
-brueche-dezimalzahlen-e5-k2-s9-v6;2015-OS-B1c;1;nein;ganz;Ankreuzen wie im Original
+brueche-dezimalzahlen-e4-k1-s9-v1;2015-OS-B1c;1;nein;ganz;Ankreuzen wie im Original
+brueche-dezimalzahlen-e4-k1-s9-v2;2015-OS-B1c;1;nein;ganz;Ankreuzen wie im Original
+brueche-dezimalzahlen-e5-k2-s10-v5;2015-OS-B1c;1;nein;ganz;Ankreuzen wie im Original
+brueche-dezimalzahlen-e5-k2-s10-v6;2015-OS-B1c;1;nein;ganz;Ankreuzen wie im Original
 potenzen-wurzeln-e3-k2-s13-v3;2015-OS-B1c;1;nein;ganz;Ankreuzen wie im Original
 potenzen-wurzeln-e3-k2-s13-v4;2015-OS-B1c;1;nein;ganz;Ankreuzen wie im Original
 winkel-dreiecke-basis-k3-v1;2015-OS-B1d;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
@@ -129,8 +129,8 @@ rationale-zahlen-basis-k2-v6;2015-OS-B1g;1;nein;ganz;Vorzeichenregel ankreuzen w
 rationale-zahlen-basis-k2-v7;2015-OS-B1g;1;nein;ganz;Vorzeichenregel ankreuzen wie im Original
 rationale-zahlen-basis-k2-v8;2015-OS-B1g;1;nein;ganz;Vorzeichenregel ankreuzen wie im Original
 rationale-zahlen-basis-k2-v9;2015-OS-B1g;1;nein;ganz;Vorzeichenregel ankreuzen wie im Original
-rationale-zahlen-e3-k1-s10-v1;2015-OS-B1g;1;nein;ganz;Vorzeichenregel ankreuzen wie im Original
-rationale-zahlen-e3-k1-s10-v2;2015-OS-B1g;1;nein;ganz;Vorzeichenregel ankreuzen wie im Original
+rationale-zahlen-e3-k1-s7-v7;2015-OS-B1g;1;nein;ganz;Vorzeichenregel ankreuzen wie im Original
+rationale-zahlen-e3-k1-s7-v8;2015-OS-B1g;1;nein;ganz;Vorzeichenregel ankreuzen wie im Original
 brueche-dezimalzahlen-e1-k2-s6-v1;2015-OS-B1h;1;nein;ganz;Rest zum Ganzen mit gleichem Weg
 brueche-dezimalzahlen-e1-k2-s6-v2;2015-OS-B1h;1;nein;ganz;Rest zum Ganzen mit gleichem Weg
 potenzen-wurzeln-basis-k2-v1;2015-OS-B1j;1;ja;ganz;Wurzel eines Quadrats ankreuzen wie im Original
@@ -145,10 +145,10 @@ potenzen-wurzeln-basis-k2-v8;2015-OS-B1j;1;ja;ganz;Wurzel eines Quadrats ankreuz
 potenzen-wurzeln-basis-k2-v9;2015-OS-B1j;1;ja;ganz;Wurzel eines Quadrats ankreuzen wie im Original
 potenzen-wurzeln-e3-k2-s13-v1;2015-OS-B1j;1;ja;ganz;Wurzel eines Quadrats ankreuzen wie im Original
 potenzen-wurzeln-e3-k2-s13-v2;2015-OS-B1j;1;ja;ganz;Wurzel eines Quadrats ankreuzen wie im Original
-bruchrechnung-e5-k1-s7-v1;2015-OS-K2a;3;nein;ganz;drei Terme zum Rabatt beurteilen wie im Original
-bruchrechnung-e5-k1-s7-v2;2015-OS-K2a;3;nein;ganz;drei Terme zum Rabatt beurteilen wie im Original
-prozentrechnung-e5-k2-s10-v1;2015-OS-K2b;2;nein;ganz;Preis nach Rabatt mit gleichem Weg
-prozentrechnung-e5-k2-s10-v2;2015-OS-K2b;2;nein;ganz;Preis nach Rabatt mit gleichem Weg
+bruchrechnung-e5-k1-s6-v5;2015-OS-K2a;3;nein;ganz;drei Terme zum Rabatt beurteilen wie im Original
+bruchrechnung-e5-k1-s6-v6;2015-OS-K2a;3;nein;ganz;drei Terme zum Rabatt beurteilen wie im Original
+prozentrechnung-e5-k2-s8-v10;2015-OS-K2b;2;nein;ganz;Preis nach Rabatt mit gleichem Weg
+prozentrechnung-e5-k2-s8-v9;2015-OS-K2b;2;nein;ganz;Preis nach Rabatt mit gleichem Weg
 potenzen-wurzeln-e2-k1-s17-v5;2015-OS-K3a;1;nein;ganz;große Zahl mal hundert ausgeschrieben angeben
 potenzen-wurzeln-e2-k1-s17-v6;2015-OS-K3a;1;nein;ganz;große Zahl mal hundert ausgeschrieben angeben
 potenzen-wurzeln-e2-k1-s9-v1;2015-OS-K3b;1;nein;ganz;passende ausgeschriebene Zahl ankreuzen
@@ -184,10 +184,10 @@ daten-e4-k1-s9-v1;2015-OS-K7a;2;nein;ganz;Mittelwert berechnen und sinnvoll rund
 daten-e1-k1-s11-v1;2015-OS-K7b;1;nein;ganz;relative Häufigkeit eines Siegs angeben
 daten-e1-k1-s11-v2;2015-OS-K7b;1;nein;ganz;relative Häufigkeit eines Siegs angeben
 daten-e3-k1-s6-v2;2015-OS-K7c;4;nein;teil;nur Mittelpunktswinkel, ohne Prozentsatz und Sektor
-prozentrechnung-e2-k3-s7-v5;2015-OS-K7c;4;nein;teil;nur Prozentsatz, ohne Sektor und Winkel
-prozentrechnung-e2-k3-s7-v6;2015-OS-K7c;4;nein;teil;nur Prozentsatz, ohne Sektor und Winkel
-bruchrechnung-e1-k3-s7-v3;2015-OS-K7d;4;ja;teil;nur Pfadwahrscheinlichkeiten addieren, ohne Baum
-bruchrechnung-e1-k3-s7-v4;2015-OS-K7d;4;ja;teil;nur Pfadwahrscheinlichkeiten addieren, ohne Baum
+prozentrechnung-e2-k3-s8-v5;2015-OS-K7c;4;nein;teil;nur Prozentsatz, ohne Sektor und Winkel
+prozentrechnung-e2-k3-s8-v6;2015-OS-K7c;4;nein;teil;nur Prozentsatz, ohne Sektor und Winkel
+bruchrechnung-e1-k3-s8-v3;2015-OS-K7d;4;ja;unklar;Gegenwahrscheinlichkeit vorgegeben, nur der Restschritt
+bruchrechnung-e1-k3-s8-v4;2015-OS-K7d;4;ja;unklar;Gegenwahrscheinlichkeit vorgegeben, nur der Restschritt
 wahrscheinlichkeit-e4-k1-s7-v1;2015-OS-K7d;4;ja;teil;nur Wahrscheinlichkeit, Baum wird nicht ergänzt
 daten-e4-k1-s6-v1;2016-OS-B1a;1;nein;ganz;Mittelwert aus drei Werten
 lineare-gleichungen-e4-k1-s6-v5;2016-OS-B1b;1;nein;ganz;Gleichung zum Zahlenrätsel angeben
@@ -211,8 +211,8 @@ potenzen-wurzeln-e2-k1-s6-v2;2016-OS-B1h;1;nein;ganz;Zehnerpotenzschreibweise au
 potenzen-wurzeln-e2-k1-s6-v3;2016-OS-B1h;1;nein;ganz;Zehnerpotenzschreibweise ausschreiben
 bruchrechnung-e5-k1-s6-v3;2016-OS-B1i;1;nein;ganz;Termwert mit Klammer und Division
 bruchrechnung-e5-k1-s6-v4;2016-OS-B1i;1;nein;ganz;Termwert mit Klammer und Division
-rationale-zahlen-e3-k1-s8-v1;2016-OS-B1i;1;nein;ganz;Termwert mit Klammer und Division
-rationale-zahlen-e3-k1-s8-v2;2016-OS-B1i;1;nein;ganz;Termwert mit Klammer und Division
+rationale-zahlen-e3-k1-s7-v3;2016-OS-B1i;1;nein;ganz;Termwert mit Klammer und Division
+rationale-zahlen-e3-k1-s7-v4;2016-OS-B1i;1;nein;ganz;Termwert mit Klammer und Division
 koerper-basis-k1-v1;2016-OS-B1j;1;nein;ganz;Gegenfläche im Würfelnetz angeben statt markieren
 koerper-basis-k1-v10;2016-OS-B1j;1;nein;ganz;Gegenfläche im Würfelnetz angeben statt markieren
 koerper-basis-k1-v2;2016-OS-B1j;1;nein;ganz;Gegenfläche im Würfelnetz angeben statt markieren
@@ -271,8 +271,8 @@ trigonometrie-e3-k1-s17-v10;2016-OS-K7c;4;ja;ganz;Teilwinkel und Seite mit Tange
 trigonometrie-e3-k1-s17-v9;2016-OS-K7c;4;ja;ganz;Teilwinkel und Seite mit Tangens wie im Original
 brueche-dezimalzahlen-e1-k1-s6-v11;2017-OS-B1a;1;nein;ganz;Bruchteil einer Kästchenfläche schraffieren
 brueche-dezimalzahlen-e1-k1-s6-v12;2017-OS-B1a;1;nein;ganz;Bruchteil einer Kästchenfläche schraffieren
-prozentrechnung-e3-k1-s8-v3;2017-OS-B1b;1;nein;ganz;Rabatt in Euro berechnen wie im Original
-prozentrechnung-e3-k1-s8-v4;2017-OS-B1b;1;nein;ganz;Rabatt in Euro berechnen wie im Original
+prozentrechnung-e3-k1-s9-v3;2017-OS-B1b;1;nein;ganz;Prozentwert mit gleichem Weg
+prozentrechnung-e3-k1-s9-v4;2017-OS-B1b;1;nein;ganz;Prozentwert mit gleichem Weg
 koerper-e1-k1-s0-v1;2017-OS-B1c;1;nein;ganz;Prisma unter drei Körpern ankreuzen
 koerper-e1-k1-s0-v2;2017-OS-B1c;1;nein;ganz;Prisma unter drei Körpern ankreuzen
 potenzen-wurzeln-e2-k1-s17-v7;2017-OS-B1e;1;nein;ganz;kleinste Zahl mit Zehnerpotenzen ankreuzen
@@ -282,10 +282,10 @@ daten-e4-k1-s7-v1;2017-OS-B1h;1;nein;ganz;arithmetisches Mittel von vier Dezimal
 terme-e1-k1-s7-v3;2017-OS-B1i;1;nein;ganz;passenden Term zum Sachtext ankreuzen
 terme-e1-k1-s7-v4;2017-OS-B1i;1;nein;ganz;passenden Term zum Sachtext ankreuzen
 trigonometrie-e1-k3-s1-v1;2017-OS-B1j;1;nein;ganz;Seitenverhältnis für den Sinus angeben
-rationale-zahlen-e4-k1-s7-v1;2017-OS-K2a;1;nein;ganz;Ausgangswert aus Differenz zurückrechnen
-rationale-zahlen-e4-k1-s7-v2;2017-OS-K2a;1;nein;ganz;Ausgangswert aus Differenz zurückrechnen
-prozentrechnung-e1-k1-s8-v5;2017-OS-K2b;2;ja;ganz;Anteilsaussage mit Tabellenwerten begründen
-prozentrechnung-e1-k1-s8-v6;2017-OS-K2b;2;ja;ganz;Anteilsaussage mit Tabellenwerten begründen
+rationale-zahlen-e4-k1-s6-v3;2017-OS-K2a;1;nein;ganz;Ausgangswert aus Differenz zurückrechnen
+rationale-zahlen-e4-k1-s6-v4;2017-OS-K2a;1;nein;ganz;Ausgangswert aus Differenz zurückrechnen
+prozentrechnung-e1-k1-s7-v10;2017-OS-K2b;2;ja;ganz;Anteilsaussage mit Tabellenwerten begründen
+prozentrechnung-e1-k1-s7-v9;2017-OS-K2b;2;ja;ganz;Anteilsaussage mit Tabellenwerten begründen
 daten-e3-k1-s10-v3;2017-OS-K2c;3;nein;ganz;Sektor zuordnen, Winkel berechnen, Sektor zeichnen
 daten-e3-k1-s10-v4;2017-OS-K2c;3;nein;ganz;Sektor zuordnen, Winkel berechnen, Sektor zeichnen
 flaechen-e5-k1-s7-v1;2017-OS-K3b;3;nein;ganz;Rechteck mit zwei Halbkreisen wie im Original
@@ -308,8 +308,8 @@ quadratische-gleichungen-e3-k3-s13-v14;2017-OS-K5d;4;ja;ganz;Normalform nachweis
 quadratische-funktionen-e2-k1-s13-v1;2017-OS-K5e;2;ja;ganz;verschieben und spiegeln, Gleichung angeben
 quadratische-funktionen-e2-k1-s13-v2;2017-OS-K5e;2;ja;ganz;verschieben und spiegeln, Gleichung angeben
 wahrscheinlichkeit-e2-k3-s5-v3;2017-OS-K6a;2;nein;ganz;Wahrscheinlichkeit als Bruch und in Prozent
-bruchrechnung-e1-k3-s7-v7;2017-OS-K6b;4;ja;teil;nur Addition der Pfade, Anzahl und Einzelwahrscheinlichkeit fehlen
-bruchrechnung-e1-k3-s7-v8;2017-OS-K6b;4;ja;teil;nur Addition der Pfade, Anzahl und Einzelwahrscheinlichkeit fehlen
+bruchrechnung-e1-k3-s8-v7;2017-OS-K6b;4;ja;teil;nur Addition der Pfade, Anzahl und Einzelwahrscheinlichkeit fehlen
+bruchrechnung-e1-k3-s8-v8;2017-OS-K6b;4;ja;teil;nur Addition der Pfade, Anzahl und Einzelwahrscheinlichkeit fehlen
 wahrscheinlichkeit-e1-k1-s9-v1;2017-OS-K6b;4;ja;teil;nur Anzahl der Codes, Wahrscheinlichkeiten fehlen
 wahrscheinlichkeit-e1-k1-s9-v2;2017-OS-K6b;4;ja;teil;nur Anzahl der Codes, Wahrscheinlichkeiten fehlen
 potenz-exponentialfunktionen-e2-k2-s8-v10;2017-OS-K7a;2;nein;ganz;zwei Tabellenwerte über mehrere Schritte ergänzen
@@ -479,10 +479,10 @@ brueche-dezimalzahlen-e1-k2-s6-v3;2018-OS-B1a;1;nein;ganz;Bruchteil einer Masse 
 brueche-dezimalzahlen-e1-k2-s6-v4;2018-OS-B1a;1;nein;ganz;Bruchteil einer Masse in Gramm
 lineare-gleichungen-e1-k2-s5-v1;2018-OS-B1c;1;nein;ganz;Gleichung mit negativer Lösung ankreuzen wie im Original
 lineare-gleichungen-e1-k2-s5-v2;2018-OS-B1c;1;nein;ganz;Gleichung mit negativer Lösung ankreuzen wie im Original
-brueche-dezimalzahlen-e4-k1-s8-v3;2018-OS-B1d;1;nein;ganz;Vergleichszeichen zwischen Prozent und Dezimalzahl
-brueche-dezimalzahlen-e4-k1-s8-v4;2018-OS-B1d;1;nein;ganz;Vergleichszeichen zwischen Prozent und Dezimalzahl
-brueche-dezimalzahlen-e5-k2-s9-v7;2018-OS-B1d;1;nein;ganz;Vergleichszeichen zwischen Prozent und Dezimalzahl
-brueche-dezimalzahlen-e5-k2-s9-v8;2018-OS-B1d;1;nein;ganz;Vergleichszeichen zwischen Prozent und Dezimalzahl
+brueche-dezimalzahlen-e4-k1-s9-v3;2018-OS-B1d;1;nein;ganz;Vergleichszeichen zwischen Prozent und Dezimalzahl
+brueche-dezimalzahlen-e4-k1-s9-v4;2018-OS-B1d;1;nein;ganz;Vergleichszeichen zwischen Prozent und Dezimalzahl
+brueche-dezimalzahlen-e5-k2-s10-v7;2018-OS-B1d;1;nein;ganz;Vergleichszeichen zwischen Prozent und Dezimalzahl
+brueche-dezimalzahlen-e5-k2-s10-v8;2018-OS-B1d;1;nein;ganz;Vergleichszeichen zwischen Prozent und Dezimalzahl
 einheiten-e2-k1-s9-v1;2018-OS-B1e;1;nein;ganz;Dezimalstunden in Minuten wie im Original
 flaechen-basis-k1-v1;2018-OS-B1f;1;nein;ganz;Rechteckseite aus Umfang mit gleichem Weg
 flaechen-basis-k1-v10;2018-OS-B1f;1;nein;ganz;Rechteckseite aus Umfang mit gleichem Weg
@@ -541,11 +541,11 @@ strahlensaetze-e1-k2-s9-v1;2018-OS-K6c;2;nein;ganz;beide Modellmaße im Maßstab
 strahlensaetze-e1-k2-s9-v2;2018-OS-K6c;2;nein;ganz;beide Modellmaße im Maßstab in Zentimetern
 pythagoras-e3-k2-s15-v1;2018-OS-K6d;2;ja;ganz;Rechenweg für die Mantellinie beschreiben
 pythagoras-e3-k2-s15-v2;2018-OS-K6d;2;ja;ganz;Rechenweg für die Mantellinie beschreiben
-prozentrechnung-e2-k3-s7-v1;2018-OS-K7a;1;nein;ganz;Prozentsatz nach Bilden des Ganzen
-prozentrechnung-e2-k3-s7-v2;2018-OS-K7a;1;nein;ganz;Prozentsatz nach Bilden des Ganzen
+prozentrechnung-e2-k3-s8-v1;2018-OS-K7a;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
+prozentrechnung-e2-k3-s8-v2;2018-OS-K7a;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
 wahrscheinlichkeit-e2-k3-s10-v1;2018-OS-K7b;2;nein;ganz;Behauptung zur veränderten Grundmenge entscheiden und begründen
-bruchrechnung-e3-k2-s5-v3;2018-OS-K7c;4;ja;teil;nur P(beide gleich), ohne Aufzählen und Deuten
-bruchrechnung-e3-k2-s5-v4;2018-OS-K7c;4;ja;teil;nur P(beide gleich), ohne Aufzählen und Deuten
+bruchrechnung-e3-k1-s6-v3;2018-OS-K7c;4;ja;teil;nur P(beide gleich), ohne Aufzählen und Deuten
+bruchrechnung-e3-k1-s6-v4;2018-OS-K7c;4;ja;teil;nur P(beide gleich), ohne Aufzählen und Deuten
 wahrscheinlichkeit-e4-k1-s10-v1;2018-OS-K7c;4;ja;ganz;alle drei Leistungen wie im Original
 wahrscheinlichkeit-e4-k1-s10-v2;2018-OS-K7c;4;ja;ganz;alle drei Leistungen, anderes Ereignis zu deuten
 tangente-normale-schnittwinkel-e5-k1-s6-v2;2018-bb-ea-A1.1b;3;;ganz;Berührpunkt über Steigung minus eins
@@ -773,8 +773,8 @@ lineare-funktionen-e2-k5-s6-v3;2019-OS-K2b;2;nein;ganz;beide Eigenschaften Graph
 lineare-funktionen-e2-k5-s6-v4;2019-OS-K2b;2;nein;ganz;beide Eigenschaften Graphen zuordnen
 lineare-funktionen-e2-k5-s6-v1;2019-OS-K2c;3;nein;ganz;drei Gleichungen den Graphen zuordnen
 lineare-funktionen-e2-k5-s6-v2;2019-OS-K2c;3;nein;ganz;drei Gleichungen den Graphen zuordnen
-pythagoras-e3-k2-s18-v1;2019-OS-K2d;4;nein;teil;nur die Streckenlänge, Original verlangt auch den Winkel
-pythagoras-e3-k2-s18-v2;2019-OS-K2d;4;nein;teil;nur die Streckenlänge, Original verlangt auch den Winkel
+pythagoras-e3-k2-s15-v7;2019-OS-K2d;4;nein;teil;nur die Streckenlänge, Original verlangt auch den Winkel
+pythagoras-e3-k2-s15-v8;2019-OS-K2d;4;nein;teil;nur die Streckenlänge, Original verlangt auch den Winkel
 trigonometrie-e2-k1-s11-v11;2019-OS-K2d;4;nein;ganz;Länge und Winkel wie im Original
 trigonometrie-e2-k1-s11-v12;2019-OS-K2d;4;nein;ganz;Länge und Winkel wie im Original
 trigonometrie-e2-k1-s11-v3;2019-OS-K3b;2;nein;ganz;Winkel mit cos⁻¹ rechnerisch nachweisen
@@ -783,18 +783,18 @@ trigonometrie-e4-k1-s16-v7;2019-OS-K3c;4;ja;ganz;Winkelschritte und Sinussatz wi
 trigonometrie-e4-k1-s16-v8;2019-OS-K3c;4;ja;ganz;Winkelschritte und Sinussatz wie im Original
 koerper-e3-k1-s10-v1;2019-OS-K4c;4;nein;teil;Fläche und Volumen, Original verlangt auch die Masse
 koerper-e3-k1-s10-v2;2019-OS-K4c;4;nein;teil;Fläche und Volumen, Original verlangt auch die Masse
-prozentrechnung-e3-k1-s10-v1;2019-OS-K5a;2;nein;ganz;Zunahme als Prozentwert der Grundmenge
-prozentrechnung-e3-k1-s10-v2;2019-OS-K5a;2;nein;ganz;Abnahme als Prozentwert der Grundmenge
-prozentrechnung-e1-k1-s8-v3;2019-OS-K5b;2;nein;ganz;falsche Aussage ankreuzen und berichtigen
-prozentrechnung-e1-k1-s8-v4;2019-OS-K5b;2;nein;ganz;falsche Aussage ankreuzen und berichtigen
+prozentrechnung-e3-k1-s9-v10;2019-OS-K5a;2;nein;ganz;Abnahme als Prozentwert der Grundmenge
+prozentrechnung-e3-k1-s9-v9;2019-OS-K5a;2;nein;ganz;Zunahme als Prozentwert der Grundmenge
+prozentrechnung-e1-k1-s7-v7;2019-OS-K5b;2;nein;ganz;falsche Aussage ankreuzen und berichtigen
+prozentrechnung-e1-k1-s7-v8;2019-OS-K5b;2;nein;ganz;falsche Aussage ankreuzen und berichtigen
 daten-e5-k1-s10-v1;2019-OS-K5c;2;ja;ganz;unzutreffende Aussage nennen und berichtigen
 daten-e5-k1-s10-v2;2019-OS-K5c;2;ja;ganz;unzutreffende Aussage nennen und berichtigen
 wahrscheinlichkeit-e2-k3-s5-v1;2019-OS-K6a;1;nein;ganz;einstufige Wahrscheinlichkeit, zusätzlich andere Schreibweisen
-bruchrechnung-e3-k2-s5-v5;2019-OS-K6b;5;ja;teil;nur Pfadwahrscheinlichkeit, ohne Baum ergänzen und Aussagen
-bruchrechnung-e3-k2-s5-v6;2019-OS-K6b;5;ja;teil;nur Pfadwahrscheinlichkeit, ohne Baum ergänzen und Aussagen
+bruchrechnung-e3-k1-s6-v5;2019-OS-K6b;5;ja;teil;nur Pfadwahrscheinlichkeit, ohne Baum ergänzen und Aussagen
+bruchrechnung-e3-k1-s6-v6;2019-OS-K6b;5;ja;teil;nur Pfadwahrscheinlichkeit, ohne Baum ergänzen und Aussagen
 wahrscheinlichkeit-e4-k1-s6-v1;2019-OS-K6b;5;ja;teil;nur Baum ergänzen, ohne Beurteilung der Aussagen
-bruchrechnung-e3-k2-s5-v1;2019-OS-K6c;3;ja;ganz;Behauptung mit zwei Pfadwahrscheinlichkeiten widerlegen
-bruchrechnung-e3-k2-s5-v2;2019-OS-K6c;3;ja;ganz;Behauptung mit zwei Pfadwahrscheinlichkeiten widerlegen
+bruchrechnung-e3-k1-s6-v1;2019-OS-K6c;3;ja;ganz;Behauptung mit zwei Pfadwahrscheinlichkeiten widerlegen
+bruchrechnung-e3-k1-s6-v2;2019-OS-K6c;3;ja;ganz;Behauptung mit zwei Pfadwahrscheinlichkeiten widerlegen
 wahrscheinlichkeit-e4-k1-s9-v1;2019-OS-K6c;3;ja;ganz;Behauptung mit zwei Pfadwahrscheinlichkeiten widerlegen
 potenz-exponentialfunktionen-e2-k2-s8-v7;2019-OS-K7a;3;nein;ganz;drei Tabellenwerte des Wachstums ergänzen
 potenz-exponentialfunktionen-e2-k2-s8-v8;2019-OS-K7a;3;nein;ganz;drei Tabellenwerte des Wachstums ergänzen
@@ -941,8 +941,8 @@ trigonometrie-e1-k3-s16-v14;2020-OS-B1c;1;nein;ganz;Tangens als Seitenverhältni
 potenzen-wurzeln-e3-k2-s10-v1;2020-OS-B1d;1;nein;ganz;Quadratseite aus Fläche wie im Original
 potenzen-wurzeln-e3-k2-s10-v2;2020-OS-B1d;1;nein;ganz;Quadratseite aus Fläche wie im Original
 potenzen-wurzeln-e3-k2-s10-v3;2020-OS-B1d;1;nein;ganz;Quadratseite aus Fläche wie im Original
-lineare-gleichungen-e2-k3-s8-v1;2020-OS-B1e;1;nein;ganz;gleiche Klammergleichung lösen, Probe als kleiner Zusatz
-lineare-gleichungen-e2-k3-s8-v2;2020-OS-B1e;1;nein;ganz;gleiche Klammergleichung lösen, Probe als kleiner Zusatz
+lineare-gleichungen-e2-k3-s9-v1;2020-OS-B1e;1;nein;ganz;Klammergleichung mit einer Lösung wie im Original, dazu die Probe
+lineare-gleichungen-e2-k3-s9-v2;2020-OS-B1e;1;nein;ganz;gleiche Klammergleichung lösen, Probe als kleiner Zusatz
 brueche-dezimalzahlen-basis-k3-v1;2020-OS-B1f;1;nein;ganz;Mitte zweier Zahlen wie im Original
 brueche-dezimalzahlen-basis-k3-v10;2020-OS-B1f;1;nein;ganz;Mitte zweier Zahlen wie im Original
 brueche-dezimalzahlen-basis-k3-v2;2020-OS-B1f;1;nein;ganz;Mitte zweier Zahlen wie im Original
@@ -953,8 +953,8 @@ brueche-dezimalzahlen-basis-k3-v6;2020-OS-B1f;1;nein;ganz;Mitte zweier Zahlen wi
 brueche-dezimalzahlen-basis-k3-v7;2020-OS-B1f;1;nein;ganz;Mitte zweier Zahlen wie im Original
 brueche-dezimalzahlen-basis-k3-v8;2020-OS-B1f;1;nein;ganz;Mitte zweier Zahlen wie im Original
 brueche-dezimalzahlen-basis-k3-v9;2020-OS-B1f;1;nein;ganz;Mitte zweier Zahlen wie im Original
-brueche-dezimalzahlen-e5-k2-s9-v10;2020-OS-B1f;1;nein;ganz;Mitte zweier negativer Dezimalzahlen wie im Original
-brueche-dezimalzahlen-e5-k2-s9-v9;2020-OS-B1f;1;nein;ganz;Mitte zweier negativer Dezimalzahlen wie im Original
+brueche-dezimalzahlen-e5-k2-s10-v10;2020-OS-B1f;1;nein;ganz;Mitte zweier negativer Dezimalzahlen wie im Original
+brueche-dezimalzahlen-e5-k2-s10-v9;2020-OS-B1f;1;nein;ganz;Mitte zweier negativer Dezimalzahlen wie im Original
 winkel-dreiecke-e2-k2-s6-v1;2020-OS-B1g;1;nein;ganz;Winkel an Parallelen angeben, gleiche Fertigkeit
 potenzen-wurzeln-e1-k3-s15-v1;2020-OS-B1h;1;nein;ganz;Exponent einer Zweierpotenz angeben
 potenzen-wurzeln-e1-k3-s15-v2;2020-OS-B1h;1;nein;ganz;Exponent einer Zweierpotenz angeben
@@ -1004,8 +1004,8 @@ trigonometrie-e3-k1-s17-v3;2020-OS-K5b;3;nein;ganz;Winkel im Trapez über Hilfsd
 trigonometrie-e3-k1-s17-v4;2020-OS-K5b;3;nein;ganz;Winkel im Trapez über Hilfsdreieck
 wahrscheinlichkeit-e1-k1-s7-v1;2020-OS-K6a;3;nein;teil;nur Paare aufzählen, Original verlangt auch Wahrscheinlichkeit
 wahrscheinlichkeit-e3-k3-s9-v2;2020-OS-K6b;3;nein;ganz;Entscheidung mit Begründung über Wahrscheinlichkeiten
-bruchrechnung-e1-k3-s7-v5;2020-OS-K6c;3;ja;teil;nur Pfadwahrscheinlichkeiten addieren, ohne Baum
-bruchrechnung-e1-k3-s7-v6;2020-OS-K6c;3;ja;teil;nur Pfadwahrscheinlichkeiten addieren, ohne Baum
+bruchrechnung-e1-k3-s8-v5;2020-OS-K6c;3;ja;teil;nur Pfadwahrscheinlichkeiten addieren, ohne Baum
+bruchrechnung-e1-k3-s8-v6;2020-OS-K6c;3;ja;teil;nur Pfadwahrscheinlichkeiten addieren, ohne Baum
 wahrscheinlichkeit-e3-k3-s11-v1;2020-OS-K6c;3;ja;ganz;Baum beschriften und mindestens zwei Treffer berechnen
 wahrscheinlichkeit-e3-k3-s11-v2;2020-OS-K6c;3;ja;ganz;Baum beschriften und mindestens zwei Treffer berechnen
 pythagoras-e1-k2-s12-v1;2020-OS-K7a;2;nein;ganz;Hypotenuse aus zwei Katheten wie im Original
@@ -1031,7 +1031,7 @@ stammfunktion-und-hauptsatz-e1-k1-s4-v3;2020-be-gk-B2.1h;3;;teil;nur H bestimmen
 gleichungen-loesen-e1-k1-s11-v1;2020-be-gk-B2.2b;5;;teil;nur Termgleichheit, Grenzverhalten fehlt
 gleichungen-loesen-e1-k1-s11-v2;2020-be-gk-B2.2b;5;;teil;nur Termgleichheit, Grenzverhalten fehlt
 gleichungen-loesen-e1-k1-s11-v3;2020-be-gk-B2.2b;5;;teil;nur Termgleichheit, Grenzverhalten fehlt
-kurvenuntersuchung-e4-k1-s4-v1;2020-be-gk-B2.2d;4;;ganz;Graphen von f und f' einzeichnen
+kurvenuntersuchung-e4-k1-s5-v1;2020-be-gk-B2.2d;4;;ganz;dieselben Ergebnisse mit gleicher Handlung
 flaecheninhalt-durch-integration-e3-k1-s6-v3;2020-be-gk-B2.2g;5;;ganz;Dreieck minus Integral mal Breite, Tangente als Zusatz
 flaecheninhalt-durch-integration-e3-k1-s6-v4;2020-be-gk-B2.2g;5;;ganz;Dreieck minus Integral mal Breite, Tangente als Zusatz
 ebenen-e2-k1-s4-v1;2020-be-gk-B3.1a;3;;ganz;Koordinatenform aus Parameterform
@@ -1135,8 +1135,8 @@ einheiten-e2-k1-s10-v1;2021-OS-B1a;1;nein;ganz;Ankunftszeit aus Start und Dauer
 einheiten-e2-k1-s10-v2;2021-OS-B1a;1;nein;ganz;Ankunftszeit aus Start und Dauer
 brueche-dezimalzahlen-e1-k1-s6-v13;2021-OS-B1b;1;nein;ganz;Bruchteil einer Kästchenfläche markieren
 brueche-dezimalzahlen-e1-k1-s6-v14;2021-OS-B1b;1;nein;ganz;Bruchteil einer Kästchenfläche markieren
-prozentrechnung-e3-k1-s8-v1;2021-OS-B1c;1;nein;ganz;Rabatt in Euro ankreuzen
-prozentrechnung-e3-k1-s8-v2;2021-OS-B1c;1;nein;ganz;Rabatt in Euro ankreuzen
+prozentrechnung-e3-k1-s9-v1;2021-OS-B1c;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
+prozentrechnung-e3-k1-s9-v2;2021-OS-B1c;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
 lineare-gleichungen-e4-k1-s6-v7;2021-OS-B1e;1;nein;ganz;passende Gleichung zum Text ankreuzen
 lineare-gleichungen-e4-k1-s6-v8;2021-OS-B1e;1;nein;ganz;passende Gleichung zum Text ankreuzen
 daten-e4-k1-s7-v2;2021-OS-B1f;1;nein;ganz;Durchschnitt von vier Weiten
@@ -1163,8 +1163,8 @@ strahlensaetze-e1-k3-s9-v1;2021-OS-K4c;5;ja;ganz;Draufsicht mit Maßstab und Ent
 strahlensaetze-e1-k3-s9-v2;2021-OS-K4c;5;ja;ganz;Draufsicht mit Maßstab und Entscheidung
 daten-e4-k1-s7-v3;2021-OS-K5a;5;nein;teil;Spannweite und Mittel ohne prozentuale Erhöhung
 daten-e3-k1-s3-v2;2021-OS-K5b;2;nein;teil;nur fehlender Anteil, Original auch Sektoren beschriften
-prozentrechnung-e1-k1-s9-v1;2021-OS-K5b;2;nein;teil;nur fehlender Anteil, Original auch Sektoren beschriften
-prozentrechnung-e1-k1-s9-v2;2021-OS-K5b;2;nein;teil;nur fehlender Anteil, Original auch Sektoren beschriften
+prozentrechnung-e1-k1-s7-v11;2021-OS-K5b;2;nein;teil;nur fehlender Anteil, Original auch Sektoren beschriften
+prozentrechnung-e1-k1-s7-v12;2021-OS-K5b;2;nein;teil;nur fehlender Anteil, Original auch Sektoren beschriften
 lineare-funktionen-e5-k1-s5-v13;2021-OS-K6a;2;nein;ganz;beide Tabellenwerte linearer Abnahme bzw. Zunahme
 lineare-funktionen-e5-k1-s5-v14;2021-OS-K6a;2;nein;ganz;beide Tabellenwerte linearer Abnahme bzw. Zunahme
 zuordnungen-e1-k2-s6-v1;2021-OS-K6b;3;nein;ganz;Tabelle ergänzen, Achsen einteilen und Punkte eintragen wie im Original
@@ -1325,8 +1325,8 @@ symmetrie-abbildungen-e2-k2-s9-v2;2022-OS-B1i;1;nein;ganz;Zahl der Symmetrieachs
 potenzen-wurzeln-e1-k3-s15-v7;2022-OS-B1j;1;nein;ganz;Vergleichszeichen zwischen Potenz und Dezimalzahl
 potenzen-wurzeln-e1-k3-s15-v8;2022-OS-B1j;1;nein;ganz;Vergleichszeichen zwischen Potenz und Dezimalzahl
 koerper-e4-k2-s10-v2;2022-OS-K2b;2;nein;ganz;Zylindervolumen berechnen und Behauptung prüfen
-pythagoras-e3-k2-s17-v1;2022-OS-K2c;3;ja;ganz;Stablänge mit Überstand wie im Original
-pythagoras-e3-k2-s17-v2;2022-OS-K2c;3;ja;ganz;Stablänge mit Überstand wie im Original
+pythagoras-e3-k2-s15-v5;2022-OS-K2c;3;ja;ganz;Stablänge mit Überstand wie im Original
+pythagoras-e3-k2-s15-v6;2022-OS-K2c;3;ja;ganz;Stablänge mit Überstand wie im Original
 koerper-e4-k2-s9-v1;2022-OS-K2d;3;ja;ganz;Zylinderradius aus Volumen und Höhe
 koerper-e4-k2-s9-v2;2022-OS-K2d;3;ja;ganz;Zylinderradius aus Volumen und Höhe
 koerper-e4-k2-s9-v3;2022-OS-K2d;3;ja;ganz;Zylinderradius aus Volumen und Höhe
@@ -1348,8 +1348,8 @@ prozentrechnung-e5-k2-s8-v3;2022-OS-K4b;2;nein;ganz;prozentuale Abnahme mit glei
 prozentrechnung-e5-k2-s8-v4;2022-OS-K4b;2;nein;ganz;prozentuale Abnahme mit gleichem Weg
 daten-e5-k1-s5-v1;2022-OS-K4c;2;nein;ganz;beide Teilbehauptungen prüfen und begründen
 daten-e3-k1-s9-v2;2022-OS-K4d;3;nein;ganz;Sektoren beschriften und Mittelpunktswinkel berechnen
-pythagoras-e2-k2-s11-v1;2022-OS-K5a;2;nein;ganz;Nachweis der Teilstrecke mit Pythagoras
-pythagoras-e2-k2-s11-v2;2022-OS-K5a;2;nein;ganz;Nachweis der Teilstrecke mit Pythagoras
+pythagoras-e2-k3-s10-v3;2022-OS-K5a;2;nein;ganz;Nachweis der Teilstrecke mit Pythagoras
+pythagoras-e2-k3-s10-v4;2022-OS-K5a;2;nein;ganz;Nachweis der Teilstrecke mit Pythagoras
 trigonometrie-e2-k1-s11-v7;2022-OS-K5b;2;nein;ganz;Winkel im Teildreieck über den Sinus
 trigonometrie-e2-k1-s11-v8;2022-OS-K5b;2;nein;ganz;Winkel im Teildreieck über den Sinus
 winkel-dreiecke-e3-k2-s7-v1;2022-OS-K5c;2;nein;ganz;Winkel im Teildreieck über die Winkelsumme
@@ -1585,14 +1585,14 @@ gleichungen-loesen-e1-k1-s7-v2;2023-C-2c;6;;ganz;Schnittpunkte, Plattenmaße und
 gleichungen-loesen-e1-k1-s7-v3;2023-C-2c;6;;ganz;Schnittpunkte, Plattenmaße und Preis alle verlangt
 flaecheninhalt-durch-integration-e2-k1-s7-v3;2023-C-2d;4;;ganz;Fläche zwischen zwei Bögen, Schnittstellen zusätzlich
 flaecheninhalt-durch-integration-e2-k1-s7-v4;2023-C-2d;4;;ganz;Fläche zwischen zwei Bögen, Schnittstellen zusätzlich
-prozentrechnung-e4-k2-s6-v3;2023-OS-B1b;1;nein;ganz;Grundwert aus Prozentwert und Prozentsatz
-prozentrechnung-e4-k2-s6-v4;2023-OS-B1b;1;nein;ganz;Grundwert aus Prozentwert und Prozentsatz
+prozentrechnung-e4-k2-s8-v3;2023-OS-B1b;1;nein;ganz;Grundwert aus Prozentwert und Prozentsatz
+prozentrechnung-e4-k2-s8-v4;2023-OS-B1b;1;nein;ganz;Grundwert aus Prozentwert und Prozentsatz
 brueche-dezimalzahlen-e1-k1-s6-v10;2023-OS-B1d;1;nein;ganz;Prozentanteil einer Kästchenfigur markieren
 brueche-dezimalzahlen-e1-k1-s6-v9;2023-OS-B1d;1;nein;ganz;Prozentanteil einer Kästchenfigur markieren
-lineare-gleichungen-e2-k3-s8-v3;2023-OS-B1e;1;nein;ganz;gleiche Gleichungsform lösen, Probe zusätzlich
-lineare-gleichungen-e2-k3-s8-v4;2023-OS-B1e;1;nein;ganz;gleiche Gleichungsform lösen, Probe zusätzlich
-bruchrechnung-e4-k2-s9-v1;2023-OS-B1f;1;nein;ganz;kleinsten von vier Darstellungen bestimmen
-bruchrechnung-e4-k2-s9-v2;2023-OS-B1f;1;nein;ganz;kleinsten von vier Darstellungen bestimmen
+lineare-gleichungen-e2-k3-s9-v3;2023-OS-B1e;1;nein;ganz;gleiche Gleichungsform lösen, Probe zusätzlich
+lineare-gleichungen-e2-k3-s9-v4;2023-OS-B1e;1;nein;ganz;gleiche Gleichungsform lösen, Probe zusätzlich
+bruchrechnung-e4-k2-s8-v5;2023-OS-B1f;1;nein;ganz;kleinsten von vier Darstellungen bestimmen
+bruchrechnung-e4-k2-s8-v6;2023-OS-B1f;1;nein;ganz;kleinsten von vier Darstellungen bestimmen
 brueche-dezimalzahlen-basis-k4-v1;2023-OS-B1f;1;nein;ganz;kleinsten von vier Darstellungen bestimmen
 brueche-dezimalzahlen-basis-k4-v10;2023-OS-B1f;1;nein;ganz;kleinsten von vier Darstellungen bestimmen
 brueche-dezimalzahlen-basis-k4-v2;2023-OS-B1f;1;nein;ganz;kleinsten von vier Darstellungen bestimmen
@@ -1603,8 +1603,8 @@ brueche-dezimalzahlen-basis-k4-v6;2023-OS-B1f;1;nein;ganz;kleinsten von vier Dar
 brueche-dezimalzahlen-basis-k4-v7;2023-OS-B1f;1;nein;ganz;größten statt kleinsten Wert, gleicher Vergleich
 brueche-dezimalzahlen-basis-k4-v8;2023-OS-B1f;1;nein;ganz;kleinsten von vier Darstellungen bestimmen
 brueche-dezimalzahlen-basis-k4-v9;2023-OS-B1f;1;nein;ganz;größten statt kleinsten Wert, gleicher Vergleich
-brueche-dezimalzahlen-e5-k2-s9-v1;2023-OS-B1f;1;nein;ganz;kleinsten von vier Darstellungen bestimmen
-brueche-dezimalzahlen-e5-k2-s9-v2;2023-OS-B1f;1;nein;ganz;kleinsten von vier Darstellungen bestimmen
+brueche-dezimalzahlen-e5-k2-s10-v1;2023-OS-B1f;1;nein;ganz;kleinsten von vier Darstellungen bestimmen
+brueche-dezimalzahlen-e5-k2-s10-v2;2023-OS-B1f;1;nein;ganz;kleinsten von vier Darstellungen bestimmen
 winkel-dreiecke-basis-k2-v1;2023-OS-B1g;2;nein;ganz;Seitenlänge und dritter Winkel beide verlangt
 winkel-dreiecke-basis-k2-v10;2023-OS-B1g;2;nein;ganz;Seitenlänge und dritter Winkel beide verlangt
 winkel-dreiecke-basis-k2-v2;2023-OS-B1g;2;nein;ganz;Seitenlänge und dritter Winkel beide verlangt
@@ -1656,10 +1656,10 @@ koerper-e4-k2-s10-v1;2023-OS-K5b;2;nein;ganz;dieselben Ergebnisse mit gleicher H
 koerper-e4-k2-s10-v3;2023-OS-K5b;2;nein;ganz;dieselben Ergebnisse mit gleicher Handlung
 koerper-e4-k2-s12-v1;2023-OS-K5d;3;ja;ganz;dieselben Ergebnisse mit gleicher Handlung
 koerper-e4-k2-s12-v2;2023-OS-K5d;3;ja;ganz;dieselben Ergebnisse mit gleicher Handlung
-prozentrechnung-e2-k3-s7-v3;2023-OS-K6a;2;nein;ganz;dieselben Ergebnisse mit gleicher Handlung
-prozentrechnung-e2-k3-s7-v4;2023-OS-K6a;2;nein;ganz;dieselben Ergebnisse mit gleicher Handlung
-prozentrechnung-e1-k1-s8-v1;2023-OS-K6b;2;nein;ganz;dieselben Ergebnisse mit gleicher Handlung
-prozentrechnung-e1-k1-s8-v2;2023-OS-K6b;2;nein;ganz;dieselben Ergebnisse mit gleicher Handlung
+prozentrechnung-e2-k3-s8-v3;2023-OS-K6a;2;nein;ganz;dieselben Ergebnisse mit gleicher Handlung
+prozentrechnung-e2-k3-s8-v4;2023-OS-K6a;2;nein;ganz;dieselben Ergebnisse mit gleicher Handlung
+prozentrechnung-e1-k1-s7-v5;2023-OS-K6b;2;nein;ganz;dieselben Ergebnisse mit gleicher Handlung
+prozentrechnung-e1-k1-s7-v6;2023-OS-K6b;2;nein;ganz;dieselben Ergebnisse mit gleicher Handlung
 daten-e4-k1-s1-v5;2023-OS-K6c;3;nein;ganz;dieselben Ergebnisse mit gleicher Handlung
 daten-e2-k2-s11-v1;2023-OS-K6d;3;nein;ganz;dieselben Ergebnisse mit gleicher Handlung
 daten-e2-k2-s11-v2;2023-OS-K6d;3;nein;ganz;dieselben Ergebnisse mit gleicher Handlung
@@ -1690,8 +1690,8 @@ stammfunktion-und-hauptsatz-e1-k1-s6-v5;2023-bebb-gk-B2.1l;5;;teil;nur die Stamm
 funktionsklassen-und-eigenschaften-e2-k1-s9-v3;2023-bebb-gk-B2.2a;4;;ganz;dieselben Ergebnisse mit gleicher Handlung
 funktionsklassen-und-eigenschaften-e2-k1-s9-v4;2023-bebb-gk-B2.2a;4;;ganz;dieselben Ergebnisse mit gleicher Handlung
 tangente-normale-schnittwinkel-e2-k1-s4-v1;2023-bebb-gk-B2.2d;5;;ganz;dieselben Ergebnisse mit gleicher Handlung
-kurvenuntersuchung-e4-k1-s8-v3;2023-bebb-gk-B2.2e;4;;ganz;dieselben Ergebnisse mit gleicher Handlung
-kurvenuntersuchung-e4-k1-s8-v4;2023-bebb-gk-B2.2e;4;;ganz;dieselben Ergebnisse mit gleicher Handlung
+kurvenuntersuchung-e4-k1-s9-v3;2023-bebb-gk-B2.2e;4;;ganz;dieselben Ergebnisse mit gleicher Handlung
+kurvenuntersuchung-e4-k1-s9-v4;2023-bebb-gk-B2.2e;4;;ganz;dieselben Ergebnisse mit gleicher Handlung
 gleichungen-loesen-e4-k1-s2-v1;2023-bebb-gk-B2.2g;5;;ganz;dieselben Ergebnisse mit gleicher Handlung
 gleichungen-loesen-e4-k1-s2-v3;2023-bebb-gk-B2.2g;5;;ganz;dieselben Ergebnisse mit gleicher Handlung
 rekonstruktion-von-funktionsgleichungen-e2-k1-s2-v2;2023-bebb-gk-B2.2k;6;;ganz;dieselben Ergebnisse mit gleicher Handlung
@@ -1715,8 +1715,8 @@ kenngroessen-von-verteilungen-e1-k1-s5-v1;2023-bebb-gk-B4.2a;3;;ganz;dieselben E
 kenngroessen-von-verteilungen-e1-k1-s5-v2;2023-bebb-gk-B4.2a;3;;ganz;dieselben Ergebnisse mit gleicher Handlung
 kenngroessen-von-verteilungen-e1-k1-s3-v2;2023-bebb-gk-B4.2b;2;;ganz;dieselben Ergebnisse mit gleicher Handlung
 kenngroessen-von-verteilungen-e2-k1-s3-v2;2023-bebb-gk-B4.2c;5;;ganz;dieselben Ergebnisse mit gleicher Handlung
-kurvenuntersuchung-e4-k1-s6-v1;2023-bebb-lk-A1.1a;2;;ganz;dieselben Ergebnisse mit gleicher Handlung
-kurvenuntersuchung-e4-k1-s5-v1;2023-bebb-lk-A1.1b;3;;ganz;dieselben Ergebnisse mit gleicher Handlung
+kurvenuntersuchung-e4-k1-s7-v1;2023-bebb-lk-A1.1a;2;;ganz;dieselbe Begründung des Mindestgrads aus dem Extremum der Ableitung, gleiche Angaben
+kurvenuntersuchung-e4-k1-s6-v1;2023-bebb-lk-A1.1b;3;;ganz;dieselben Ergebnisse mit gleicher Handlung
 rekonstruktion-von-funktionsgleichungen-e2-k1-s6-v1;2023-bebb-lk-A1.4b;3;;ganz;dieselben Ergebnisse mit gleicher Handlung
 rekonstruktion-von-funktionsgleichungen-e2-k1-s6-v2;2023-bebb-lk-A1.4b;3;;ganz;dieselben Ergebnisse mit gleicher Handlung
 rekonstruktion-von-funktionsgleichungen-e2-k1-s6-v3;2023-bebb-lk-A1.4b;3;;ganz;dieselben Ergebnisse mit gleicher Handlung
@@ -1764,7 +1764,7 @@ matrizen-und-uebergangsprozesse-e5-k1-s7-v4;2023MerhoehtAAGLAA12-b;3;;ganz;Entwi
 punkte-und-strecken-im-koordinatensystem-e4-k1-s9-v3;2023MerhoehtAAGLAA212-b;4;;ganz;beide Rautenecken C und D mit gleichem Weg
 orthogonalitaet-e2-k1-s7-v1;2023MerhoehtAAGLAA221;5;;ganz;Eckpunkt über Orthogonalität, Ebene und Länge
 orthogonalitaet-e2-k1-s7-v2;2023MerhoehtAAGLAA221;5;;ganz;Eckpunkt über Orthogonalität, Ebene und Länge
-kurvenuntersuchung-e4-k1-s6-v2;2023MerhoehtAAnalysis11-a;2;;ganz;Mindestgrad aus Ableitungseigenschaft begründen
+kurvenuntersuchung-e4-k1-s7-v2;2023MerhoehtAAnalysis11-a;2;;ganz;Mindestgrad aus Ableitungseigenschaft begründen
 ableitung-und-aenderungsrate-e2-k1-s8-v1;2023MerhoehtAAnalysis13-a;2;;ganz;Steigungsaussage am Graphen beurteilen
 ableitung-und-aenderungsrate-e2-k1-s8-v2;2023MerhoehtAAnalysis13-a;2;;ganz;Steigungsaussage am Graphen beurteilen
 rotationsvolumen-e2-k1-s3-v1;2023MerhoehtAAnalysis13-b;3;;ganz;Volumen über einbeschriebene Zylinder abschätzen
@@ -1889,8 +1889,8 @@ lineare-gleichungen-basis-k1-v6;2024-OS-B1d;1;nein;ganz;lineare Gleichung mit Kl
 lineare-gleichungen-basis-k1-v7;2024-OS-B1d;1;nein;ganz;lineare Gleichung mit Klammer lösen, andere Zahlen
 lineare-gleichungen-basis-k1-v8;2024-OS-B1d;1;nein;ganz;lineare Gleichung mit Klammer lösen, andere Zahlen
 lineare-gleichungen-basis-k1-v9;2024-OS-B1d;1;nein;ganz;Produkt gleich null, gleiche Handlung
-lineare-gleichungen-e2-k3-s8-v5;2024-OS-B1d;1;nein;ganz;Gleichung lösen, Probe als kleiner Zusatz
-lineare-gleichungen-e2-k3-s8-v6;2024-OS-B1d;1;nein;ganz;Gleichung lösen, Probe als kleiner Zusatz
+lineare-gleichungen-e2-k3-s9-v5;2024-OS-B1d;1;nein;ganz;Gleichung lösen, Probe als kleiner Zusatz
+lineare-gleichungen-e2-k3-s9-v6;2024-OS-B1d;1;nein;ganz;Gleichung lösen, Probe als kleiner Zusatz
 prozentrechnung-basis-k5-v1;2024-OS-B1e;1;nein;ganz;neuer Preis nach prozentualer Erhöhung
 prozentrechnung-basis-k5-v10;2024-OS-B1e;1;nein;ganz;neuer Preis nach prozentualer Erhöhung
 prozentrechnung-basis-k5-v2;2024-OS-B1e;1;nein;ganz;neuer Preis nach prozentualer Erhöhung
@@ -1901,8 +1901,8 @@ prozentrechnung-basis-k5-v6;2024-OS-B1e;1;nein;ganz;neuer Preis nach prozentuale
 prozentrechnung-basis-k5-v7;2024-OS-B1e;1;nein;ganz;neuer Preis nach prozentualer Erhöhung
 prozentrechnung-basis-k5-v8;2024-OS-B1e;1;nein;ganz;neuer Preis nach prozentualer Erhöhung
 prozentrechnung-basis-k5-v9;2024-OS-B1e;1;nein;ganz;neuer Preis nach prozentualer Erhöhung
-prozentrechnung-e5-k2-s9-v1;2024-OS-B1e;1;nein;ganz;neuer Preis nach prozentualer Erhöhung
-prozentrechnung-e5-k2-s9-v2;2024-OS-B1e;1;nein;ganz;neuer Preis nach prozentualer Erhöhung
+prozentrechnung-e5-k2-s8-v7;2024-OS-B1e;1;nein;ganz;neuer Preis nach prozentualer Erhöhung
+prozentrechnung-e5-k2-s8-v8;2024-OS-B1e;1;nein;ganz;neuer Preis nach prozentualer Erhöhung
 potenzen-wurzeln-basis-k1-v1;2024-OS-B1g;1;nein;ganz;Exponent einer Potenz bestimmen
 potenzen-wurzeln-basis-k1-v10;2024-OS-B1g;1;nein;ganz;Exponent einer Potenz bestimmen
 potenzen-wurzeln-basis-k1-v2;2024-OS-B1g;1;nein;ganz;Exponent einer Potenz bestimmen
@@ -1951,13 +1951,13 @@ koerper-e5-k1-s6-v3;2024-OS-K4b;4;nein;teil;Auswahl mit Begründung, Skizze fehl
 koerper-e5-k1-s9-v1;2024-OS-K4c;3;ja;ganz;Restvolumen Zylinder minus Kegel
 koerper-e5-k1-s9-v2;2024-OS-K4c;3;ja;ganz;Restvolumen Zylinder minus Kegel
 wahrscheinlichkeit-e3-k3-s3-v3;2024-OS-K5b;3;nein;teil;nur Nachweis, Baumdiagramm ergänzen fehlt
-bruchrechnung-e3-k2-s6-v1;2024-OS-K5c;2;ja;unklar;Wahrscheinlichkeiten vorgegeben, nur noch Produkt
-bruchrechnung-e3-k2-s6-v2;2024-OS-K5c;2;ja;unklar;Wahrscheinlichkeiten vorgegeben, nur noch Produkt
+bruchrechnung-e3-k1-s6-v7;2024-OS-K5c;2;ja;unklar;Wahrscheinlichkeiten vorgegeben, nur noch Produkt
+bruchrechnung-e3-k1-s6-v8;2024-OS-K5c;2;ja;unklar;Wahrscheinlichkeiten vorgegeben, nur noch Produkt
 wahrscheinlichkeit-e4-k1-s4-v1;2024-OS-K5c;2;ja;ganz;zweite Person zieht, erste Stufe mitrechnen
 potenzen-wurzeln-e3-k2-s13-v7;2024-OS-K6a;2;nein;ganz;Kathete über Pythagoras im Sachkontext
 potenzen-wurzeln-e3-k2-s13-v8;2024-OS-K6a;2;nein;ganz;Kathete über Pythagoras im Sachkontext
-pythagoras-e2-k2-s10-v1;2024-OS-K6a;2;nein;ganz;Höhenunterschied als Kathete berechnen
-pythagoras-e2-k2-s10-v2;2024-OS-K6a;2;nein;ganz;Höhenunterschied als Kathete berechnen
+pythagoras-e2-k3-s10-v1;2024-OS-K6a;2;nein;ganz;Höhenunterschied als Kathete berechnen
+pythagoras-e2-k3-s10-v2;2024-OS-K6a;2;nein;ganz;Höhenunterschied als Kathete berechnen
 trigonometrie-e2-k1-s11-v1;2024-OS-K6b;2;nein;ganz;Winkel über Kosinus aus Kathete und Hypotenuse
 trigonometrie-e2-k1-s11-v2;2024-OS-K6b;2;nein;ganz;Winkel über Kosinus aus Kathete und Hypotenuse
 zuordnungen-e4-k3-s6-v5;2024-OS-K6c;2;nein;ganz;Dauer aus Strecke und Geschwindigkeit in Minuten
@@ -1976,8 +1976,8 @@ flaecheninhalt-und-volumen-im-raum-e1-k2-s6-v1;2024-bebb-gk-A1.5a;5;;unklar;Koor
 kurvenuntersuchung-e1-k1-s5-v2;2024-bebb-gk-A1.7a;2;;ganz;Monotonie über Vorzeichen der Ableitung nachweisen
 punkte-und-strecken-im-koordinatensystem-e3-k1-s10-v3;2024-bebb-gk-A1.8a;5;;ganz;zwei Ecken mit gleichem Abstand konstruieren
 punkte-und-strecken-im-koordinatensystem-e3-k1-s10-v4;2024-bebb-gk-A1.8a;5;;ganz;zwei Ecken mit gleichem Abstand konstruieren
-kurvenuntersuchung-e4-k1-s8-v1;2024-bebb-gk-B2.1d;6;;ganz;beide Aussagen mit gleicher Begründung
-kurvenuntersuchung-e4-k1-s8-v2;2024-bebb-gk-B2.1d;6;;ganz;beide Aussagen mit gleicher Begründung
+kurvenuntersuchung-e4-k1-s9-v1;2024-bebb-gk-B2.1d;6;;ganz;beide Aussagen mit gleicher Begründung
+kurvenuntersuchung-e4-k1-s9-v2;2024-bebb-gk-B2.1d;6;;ganz;beide Aussagen mit gleicher Begründung
 stammfunktion-und-hauptsatz-e3-k1-s5-v2;2024-bebb-gk-B2.1f;3;;unklar;Original Begründung, Bank nur Ankreuzen
 tangente-normale-schnittwinkel-e4-k1-s10-v3;2024-bebb-gk-B2.1i;3;;ganz;Öffnungswinkel als doppelter Steigungswinkel geprüft
 tangente-normale-schnittwinkel-e4-k1-s10-v4;2024-bebb-gk-B2.1i;3;;ganz;Öffnungswinkel als doppelter Steigungswinkel geprüft
@@ -2182,8 +2182,8 @@ prozentrechnung-basis-k1-v6;2025-OS-B1a;1;nein;ganz;Grundwert aus Rabatt wie im 
 prozentrechnung-basis-k1-v7;2025-OS-B1a;1;nein;ganz;Grundwert aus Rabatt wie im Original
 prozentrechnung-basis-k1-v8;2025-OS-B1a;1;nein;ganz;Grundwert aus Rabatt wie im Original
 prozentrechnung-basis-k1-v9;2025-OS-B1a;1;nein;ganz;Grundwert aus Rabatt wie im Original
-prozentrechnung-e4-k2-s6-v1;2025-OS-B1a;1;nein;ganz;Grundwert aus Rabatt wie im Original
-prozentrechnung-e4-k2-s6-v2;2025-OS-B1a;1;nein;ganz;Grundwert aus Rabatt wie im Original
+prozentrechnung-e4-k2-s8-v1;2025-OS-B1a;1;nein;ganz;Grundwert aus Rabatt wie im Original
+prozentrechnung-e4-k2-s8-v2;2025-OS-B1a;1;nein;ganz;Grundwert aus Rabatt wie im Original
 einheiten-e2-k1-s9-v2;2025-OS-B1b;1;nein;ganz;Dezimalstunden in Minuten wie im Original
 brueche-dezimalzahlen-e1-k1-s6-v15;2025-OS-B1c;1;nein;ganz;Bruchteil einer Fläche kennzeichnen, anderer Bruch
 brueche-dezimalzahlen-e1-k1-s6-v16;2025-OS-B1c;1;nein;ganz;Bruchteil einer Fläche kennzeichnen, Kreis statt Quadrat
@@ -2249,20 +2249,20 @@ quadratische-gleichungen-e2-k1-s10-v1;2025-OS-B1h;1;nein;ganz;Lösung durch Eins
 quadratische-gleichungen-e2-k1-s10-v2;2025-OS-B1h;1;nein;ganz;Lösung durch Einsetzen ankreuzen wie im Original
 symmetrie-abbildungen-e2-k2-s10-v1;2025-OS-K2a;4;nein;teil;nur Symmetrieachsen, Original auch BF-Nachweis und AB
 symmetrie-abbildungen-e2-k2-s10-v2;2025-OS-K2a;4;nein;teil;nur Symmetrieachsen, Original auch BF-Nachweis und AB
-pythagoras-e2-k2-s12-v1;2025-OS-K2c;2;ja;ganz;rechten Winkel begründen über Pythagoras-Umkehrung, im Original zugelassen
-pythagoras-e2-k2-s12-v2;2025-OS-K2c;2;ja;ganz;rechten Winkel begründen über Pythagoras-Umkehrung, andere Figur
+pythagoras-e2-k3-s10-v5;2025-OS-K2c;2;ja;ganz;rechten Winkel begründen über Pythagoras-Umkehrung, im Original zugelassen
+pythagoras-e2-k3-s10-v6;2025-OS-K2c;2;ja;ganz;rechten Winkel begründen über Pythagoras-Umkehrung, andere Figur
 winkel-dreiecke-e3-k2-s11-v3;2025-OS-K2c;2;ja;ganz;rechten Winkel im Drachenviereck gleich begründet
 winkel-dreiecke-e3-k2-s11-v4;2025-OS-K2c;2;ja;ganz;rechten Winkel im Drachenviereck gleich begründet
 wahrscheinlichkeit-e1-k1-s6-v2;2025-OS-K3a;1;nein;ganz;alle zweistelligen Zahlen aufzählen wie im Original
 wahrscheinlichkeit-e3-k3-s9-v1;2025-OS-K3b;3;nein;ganz;Behauptung prüfen mit beiden Pfadwahrscheinlichkeiten
 wahrscheinlichkeit-e3-k3-s4-v1;2025-OS-K3c;2;ja;ganz;Summe zweier Pfadwahrscheinlichkeiten wie im Original
 wahrscheinlichkeit-e3-k3-s10-v1;2025-OS-K3d;2;ja;ganz;Scheiben belegen und durch Rechnung zeigen
-pythagoras-e1-k2-s13-v1;2025-OS-K4a;4;nein;teil;nur Rampenlänge, Original auch Anstiegswinkel
-pythagoras-e1-k2-s13-v2;2025-OS-K4a;4;nein;teil;nur Steglänge, Original auch Anstiegswinkel
+pythagoras-e1-k2-s12-v3;2025-OS-K4a;4;nein;teil;nur Rampenlänge, Original auch Anstiegswinkel
+pythagoras-e1-k2-s12-v4;2025-OS-K4a;4;nein;teil;nur Steglänge, Original auch Anstiegswinkel
 trigonometrie-e2-k1-s11-v10;2025-OS-K4a;4;nein;ganz;Rampenlänge und Anstiegswinkel mit gleichem Weg
 trigonometrie-e2-k1-s11-v9;2025-OS-K4a;4;nein;ganz;Rampenlänge und Anstiegswinkel mit gleichem Weg
-prozentrechnung-e5-k2-s11-v1;2025-OS-K4b;3;nein;ganz;Lückensatz und Steigungsprüfung wie im Original
-prozentrechnung-e5-k2-s11-v2;2025-OS-K4b;3;nein;ganz;Lückensatz und Steigungsprüfung, eine Lücke vorgegeben
+prozentrechnung-e5-k2-s8-v11;2025-OS-K4b;3;nein;ganz;Lückensatz und Steigungsprüfung wie im Original
+prozentrechnung-e5-k2-s8-v12;2025-OS-K4b;3;nein;ganz;Lückensatz und Steigungsprüfung, eine Lücke vorgegeben
 trigonometrie-e4-k1-s16-v3;2025-OS-K4c;3;ja;ganz;dritter Winkel und Sinussatz wie im Original
 trigonometrie-e4-k1-s16-v4;2025-OS-K4c;3;ja;ganz;dritter Winkel und Sinussatz wie im Original
 trigonometrische-funktionen-e1-k1-s13-v3;2025-OS-K4c;3;ja;unklar;nur letzter Rechenschritt, dazu Einheitskreis-Erklärung
@@ -2280,8 +2280,8 @@ reelle-zahlen-e1-k1-s7-v3;2025-OS-K5c;4;ja;unklar;Nullstellen vorgegeben, nur Ru
 daten-e4-k1-s12-v1;2025-OS-K6a;2;nein;ganz;falsche Aussage ankreuzen und berichtigen
 daten-e3-k1-s10-v5;2025-OS-K6b;3;nein;ganz;Prozentanteil und Sektor zeichnen wie im Original
 daten-e3-k1-s10-v6;2025-OS-K6b;3;nein;ganz;Prozentanteil und Sektor zeichnen wie im Original
-prozentrechnung-e2-k3-s9-v1;2025-OS-K6b;3;nein;teil;nur Prozentanteil, Original auch Kreisdiagramm
-prozentrechnung-e2-k3-s9-v2;2025-OS-K6b;3;nein;teil;nur Prozentanteil, Original auch Kreisdiagramm
+prozentrechnung-e2-k3-s8-v10;2025-OS-K6b;3;nein;teil;nur Prozentanteil, Original auch Kreisdiagramm
+prozentrechnung-e2-k3-s8-v9;2025-OS-K6b;3;nein;teil;nur Prozentanteil, Original auch Kreisdiagramm
 daten-e4-k1-s14-v1;2025-OS-K6c;3;ja;ganz;Mittelwert und Begründung der Auswirkung beide verlangt
 daten-e4-k1-s14-v2;2025-OS-K6c;3;ja;ganz;Mittelwert und Begründung der Auswirkung beide verlangt
 potenz-exponentialfunktionen-e1-k3-s5-v1;2025-OS-K7a;2;nein;ganz;Wertetabelle als Punkte darstellen wie im Original
@@ -2477,8 +2477,8 @@ prozentrechnung-basis-k4-v6;2026-FOR-B1a;1;;ganz;Prozentwert mit gleichem Weg
 prozentrechnung-basis-k4-v7;2026-FOR-B1a;1;;ganz;Prozentwert mit gleichem Weg
 prozentrechnung-basis-k4-v8;2026-FOR-B1a;1;;ganz;Prozentwert mit gleichem Weg
 prozentrechnung-basis-k4-v9;2026-FOR-B1a;1;;ganz;Prozentwert mit gleichem Weg
-prozentrechnung-e3-k1-s9-v3;2026-FOR-B1a;1;;ganz;Prozentwert mit gleichem Weg
-prozentrechnung-e3-k1-s9-v4;2026-FOR-B1a;1;;ganz;Prozentwert mit gleichem Weg
+prozentrechnung-e3-k1-s9-v7;2026-FOR-B1a;1;;ganz;Prozentwert aus Prozentsatz und Grundwert wie im Original, ein Ergebnis
+prozentrechnung-e3-k1-s9-v8;2026-FOR-B1a;1;;ganz;Prozentwert aus Prozentsatz und Grundwert wie im Original, ein Ergebnis
 brueche-dezimalzahlen-basis-k1-v1;2026-FOR-B1b;1;;ganz;Figur mit gegebenem Anteil ankreuzen
 brueche-dezimalzahlen-basis-k1-v10;2026-FOR-B1b;1;;ganz;Figur mit gegebenem Anteil ankreuzen
 brueche-dezimalzahlen-basis-k1-v2;2026-FOR-B1b;1;;ganz;Figur mit gegebenem Anteil ankreuzen
@@ -2527,8 +2527,8 @@ rationale-zahlen-basis-k1-v6;2026-FOR-B1g;1;;ganz;Termwert mit Klammer und negat
 rationale-zahlen-basis-k1-v7;2026-FOR-B1g;1;;ganz;Termwert mit Klammer und negativer Zahl
 rationale-zahlen-basis-k1-v8;2026-FOR-B1g;1;;ganz;Termwert mit Klammer und negativer Zahl
 rationale-zahlen-basis-k1-v9;2026-FOR-B1g;1;;ganz;Termwert mit Klammer und negativer Zahl
-rationale-zahlen-e3-k1-s9-v1;2026-FOR-B1g;1;;ganz;Termwert mit Klammer und negativer Zahl
-rationale-zahlen-e3-k1-s9-v2;2026-FOR-B1g;1;;ganz;Termwert mit Klammer und negativer Zahl
+rationale-zahlen-e3-k1-s7-v5;2026-FOR-B1g;1;;ganz;Termwert mit Klammer und negativer Zahl
+rationale-zahlen-e3-k1-s7-v6;2026-FOR-B1g;1;;ganz;Termwert mit Klammer und negativer Zahl
 winkel-dreiecke-basis-k4-v1;2026-FOR-B1i;1;;ganz;Nachbarwinkel im Parallelogramm über 180°
 winkel-dreiecke-basis-k4-v10;2026-FOR-B1i;1;;unklar;Gegenwinkel statt Nachbarwinkel, anderer Lösungsweg
 winkel-dreiecke-basis-k4-v2;2026-FOR-B1i;1;;ganz;Nachbarwinkel im Parallelogramm über 180°
@@ -2544,8 +2544,8 @@ winkel-dreiecke-e2-k2-s10-v4;2026-FOR-B1i;1;;ganz;Nachbarwinkel im Parallelogram
 pyramide-kegel-kugel-e2-k2-s12-v1;2026-FOR-K2b;3;;unklar;verlangt zusätzlich die Gesamthöhe aus der Folgeteilaufgabe
 pyramide-kegel-kugel-e2-k2-s12-v2;2026-FOR-K2b;3;;unklar;verlangt zusätzlich die Gesamthöhe aus der Folgeteilaufgabe
 pyramide-kegel-kugel-e2-k2-s12-v3;2026-FOR-K2b;3;;unklar;verlangt zusätzlich die Gesamthöhe aus der Folgeteilaufgabe
-pythagoras-e3-k2-s16-v1;2026-FOR-K2c;3;;ganz;Kegelhöhe über Pythagoras plus Zylinderhöhe
-pythagoras-e3-k2-s16-v2;2026-FOR-K2c;3;;ganz;Kegelhöhe über Pythagoras plus Zylinderhöhe
+pythagoras-e3-k2-s15-v3;2026-FOR-K2c;3;;ganz;Kegelhöhe über Pythagoras plus Zylinderhöhe
+pythagoras-e3-k2-s15-v4;2026-FOR-K2c;3;;ganz;Kegelhöhe über Pythagoras plus Zylinderhöhe
 pyramide-kegel-kugel-e2-k2-s14-v1;2026-FOR-K2d;3;;ganz;Volumenaussage Kegel gegen Zylinder rechnerisch prüfen
 pyramide-kegel-kugel-e2-k2-s14-v2;2026-FOR-K2d;3;;ganz;Volumenaussage Kegel gegen Zylinder rechnerisch prüfen
 daten-e4-k1-s2-v3;2026-FOR-K3a;1;;ganz;Spannweite mit gleichem Weg
@@ -2565,8 +2565,8 @@ lineare-funktionen-e2-k4-s8-v2;2026-FOR-K5a;2;;ganz;Gerade aus Gleichung zeichne
 lineare-funktionen-e3-k2-s7-v11;2026-FOR-K5b;2;;ganz;rechnerische Punktprobe mit Entscheidung
 lineare-funktionen-e3-k2-s7-v12;2026-FOR-K5b;2;;ganz;rechnerische Punktprobe mit Entscheidung
 wahrscheinlichkeit-e3-k3-s2-v1;2026-FOR-K6b;4;;teil;nur Baum ergänzen, Original verlangt auch P(beide ungerade)
-bruchrechnung-e1-k3-s8-v1;2026-FOR-K6c;2;;unklar;nur letzter Schritt 1 minus gegebener Wahrscheinlichkeit
-bruchrechnung-e1-k3-s8-v2;2026-FOR-K6c;2;;unklar;nur letzter Schritt 1 minus gegebener Wahrscheinlichkeit
+bruchrechnung-e1-k3-s8-v10;2026-FOR-K6c;2;;teil;das Original verlangt den zweistufigen Pfad des Gegenereignisses selbst, die Bankzeile gibt ihn vor und übt nur eins minus Bruch und Kürzen
+bruchrechnung-e1-k3-s8-v9;2026-FOR-K6c;2;;teil;das Original verlangt den zweistufigen Pfad des Gegenereignisses selbst, die Bankzeile gibt ihn vor und übt nur eins minus Bruch und Kürzen
 wahrscheinlichkeit-e3-k3-s7-v1;2026-FOR-K6c;2;;ganz;Gegenereignis mit Pfadregel an zwei Würfeln
 wahrscheinlichkeit-e3-k3-s10-v2;2026-FOR-K6d;2;;ganz;eine Zahl ändern und mit Rechnung belegen
 potenz-exponentialfunktionen-e2-k2-s8-v1;2026-FOR-K7a;2;;ganz;Anfangswert und Folgewert in der Tabelle ergänzen
