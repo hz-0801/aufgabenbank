@@ -292,10 +292,10 @@ def e1(alt):
 
 
 # ---------------------------------------------------------------- e2
-# Zeltpyramide Z2 (fest): A(2|0|0), B(6|2|0), C(4|6|0), D(0|4|0),
-# S(2|2|4); Kante AS bleibt, die zweite Kante wandert.
-Z2 = {"A": (2, 0, 0), "B": (6, 2, 0), "C": (4, 6, 0), "D": (0, 4, 0),
-      "S": (2, 2, 4)}
+# Zeltpyramide Z2 (fest): A(5|3|0), B(3|7|0), C(-2|5|0), D(-3|1|0),
+# S(1|2|6); die Kante SA bleibt, die zweite Kante wandert.
+Z2 = {"A": (5, 3, 0), "B": (3, 7, 0), "C": (-2, 5, 0), "D": (-3, 1, 0),
+      "S": (1, 2, 6)}
 
 
 def z2_text():
