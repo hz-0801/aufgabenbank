@@ -1,9 +1,9 @@
 # Mappe: binomische-formeln
 
 Eintrag: hz-0801/mathe-nachhilfe, katalog/binomische-formeln.md
-Katalog-Commit: 99da6894e7ec588195ab9928aa32d68f2b09c9fa (2026-09-25T16:12:52+02:00, „katalog: Vorrat-Verweise auf die Sek-II-Einträge“; ermittelt über git log (GitHub-API gesperrt))
+Katalog-Commit: cebfd509ea71ae238b589537bd00b7fc306df06f (2026-09-28T21:59:03Z, „Katalog-Nachzug Teil 1: Sek I aus den Urteilen vom 28.09.“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-27 12:32 UTC
+Datum: 2026-09-29 10:17 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -33,7 +33,7 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 18  ### Typen je Lerneinheit
 19  Einheit 1: Termwert mit zwei Variablen berechnen (auch negativ) · zusammenfassen mit zwei Variablen (gleichartige Glieder sortieren) [GYM 8] · zusammenfassen mit Potenzen und Produkten (x², xy, x getrennt) · Zahl mal Klammer mit zwei Variablen · Klammer mal Klammer mit lauter Plus: vier Produkte hinschreiben · zusammenfassen zum dreigliedrigen Term · ein Minus in einer Klammer · Minus in beiden Klammern · mit Vorzahl vor x · Klammer mal Klammer mit zwei Variablen (a + b)·(c + d) · Fehler finden (nur Erstes mal Erstes und Letztes mal Letztes; Vorzeichen des Produkts; ungleichartig zusammengefasst) · Begründen (warum vier Produkte entstehen – Flächenbild eines Rechtecks).
 20  Einheit 2: gleiche Klammer zweimal erkennen ((a + b)² ist (a + b)·(a + b)) · erste binomische Formel mit x und Zahl [OS 8] · zweite Formel (Minus im Mittelglied) [OS 8] · dritte Formel (Mittelglied fällt weg) [OS 8] · Formel zuordnen (welche der drei, oder keine) · mit Vorzahl vor x (a ist die ganze Vorzahl mit x) · mit zwei Variablen · Vorfaktor vor der Klammer · Minus vor der Klammer · Klammer mit Formel auflösen und mit dem Rest zusammenfassen (Scheitelpunktform → Normalform) · Nachweis „Normalform stimmt“ (P10-Form) · Kopfrechnen mit der Formel (Vorrat) · Fehler finden (Mittelglied fehlt; Vorzeichen des Mittelglieds; Vorzahl nicht quadriert; Minus vor der Klammer nur aufs erste Glied) · Begründen (warum (a + b)² nicht a² + b² ist – Zahlenprobe, Flächenbild).
-21  Einheit 3: Quadrat erkennen (welche Terme sind Quadrate) · dritte Formel rückwärts (Differenz zweier Quadrate) · erste Formel rückwärts mit Prüfung des Mittelglieds (doppeltes Produkt der Wurzeln) · zweite Formel rückwärts (Minus im Mittelglied) · mit Vorzahl (Quadrat von 2x) · erst gemeinsamen Faktor ausklammern, dann Formel · kein Binom erkennen (Mittelglied passt nicht; Summe zweier Quadrate) · Probe durch Ausmultiplizieren · Anwendung: Produktform gleich null (Verfahren in quadratische-gleichungen.md Einheit 2) · quadratische Ergänzung (Vorrat, H; → quadratische-funktionen.md Einheit 3) [OS 10] · Fehler finden (Summe zweier Quadrate „faktorisiert“; Mittelglied nicht geprüft; Vorzeichen in der Klammer) · Begründen (warum eine Summe zweier Quadrate keine binomische Formel ist).
+21  Einheit 3: Quadrat erkennen (welche Terme sind Quadrate) · dritte Formel rückwärts (Differenz zweier Quadrate) · erste Formel rückwärts mit Prüfung des Mittelglieds (doppeltes Produkt der Wurzeln) · zweite Formel rückwärts (Minus im Mittelglied) · mit Vorzahl (Quadrat von 2x) · erst gemeinsamen Faktor ausklammern, dann Formel · kein Binom erkennen (Mittelglied passt nicht; Summe zweier Quadrate) · Probe durch Ausmultiplizieren · Anwendung: Produktform gleich null (Verfahren in quadratische-gleichungen.md Einheit 3) · quadratische Ergänzung (Vorrat, H; → quadratische-funktionen.md Einheit 3) [OS 10] · Fehler finden (Summe zweier Quadrate „faktorisiert“; Mittelglied nicht geprüft; Vorzeichen in der Klammer) · Begründen (warum eine Summe zweier Quadrate keine binomische Formel ist).
 22
 23  ### Voraussetzungen (Blatt 0)
 24  Fertigkeiten:
@@ -45,68 +45,65 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 30  - Termwert berechnen, auch mit negativer Zahl, als Probe einer Umformung: für x = −6 ist x² − 7 = 29 – alle Einheiten. Thema Terme (terme.md), Einheit 1. [P10 Typ „Termwert berechnen“]
 31  - Scheitelpunktform lesen: (x − 7)² + 11 hat den Scheitel S(7 | 11) – Einheit 2 (Anwendung Normalform). Thema Quadratische Funktionen (quadratische-funktionen.md), Einheit 2. [RLP G]
 32  Erkennungsschritte (Vorstufe der Einheit, vor der sie stehen, nicht auf Blatt 0; eine Hauptnummer je Schritt):
-33  - „Was mal was?“ – bei Klammer mal Klammer Pfeile zeichnen: jedes Glied der ersten Klammer zu jedem Glied der zweiten (vier Pfeile); nichts ausrechnen. Vor Einheit 1. [LS-AA Kl. 8 II 3; FD]
-34  - „Gleiche Klammer zweimal?“ – ankreuzen, ob ein Term das Quadrat einer Klammer ist ((x + 7)² ja, (x + 7)·(x − 11) nein), und das Quadrat als Klammer mal Klammer hinschreiben; nichts ausmultiplizieren. Vor Einheit 2. [FD; P10 2017-OS-K5d, 2022-OS-K3c Fehlerquelle „Mittelglied fehlt“]
-35  - „Welche Formel?“ – zu Termen ankreuzen: Plus in der Klammer und Quadrat → erste, Minus und Quadrat → zweite, Plus-Klammer mal Minus-Klammer → dritte, sonst keine; nichts rechnen. Vor Einheit 2 und 3. [Serlo 1499 Entscheidungsbaum]
-36  - „Was ist a, was ist b?“ – in (7x + 11)² die Teile a = 7x und b = 11 einkreisen und aufschreiben; nichts ausmultiplizieren. Vor Einheit 2. [FD; Serlo 18631 Fehlerquellen]
-37  - „Ist das ein Quadrat?“ – zu Termen ankreuzen, ob sie Quadrate sind (x², 16, 49x², 6x, 10), und die Wurzel daneben schreiben; nichts faktorisieren. Vor Einheit 3. [Serlo 1499]
-38  - „Passt das Mittelglied?“ – zu x² + 14x + 49 die Wurzeln x und 7 notieren, das doppelte Produkt bilden und ankreuzen, ob es das Mittelglied ist; nichts faktorisieren. Vor Einheit 3. [Serlo 1499]
-39
-40  ### Merkkasten
-41  Einheit 1 (Summe mal Summe):
-42      Klammer mal Klammer: jedes Glied der ersten Klammer mal jedes Glied der zweiten (vier Produkte), dann zusammenfassen.
-43        (x + 3)·(x + 5) = x² + 5x + 3x + 15 = x² + 8x + 15
-44      Vorzeichen gehören zum Glied: (x − 4)·(x + 2) = x² + 2x − 4x − 8 = x² − 2x − 8
-45      Zwei Variablen: nur gleiche Variablen mit gleicher Hochzahl zusammenfassen; xy und yx sind dasselbe.      (a + b)·(c + d) = ac + ad + bc + bd
-46      Formelsammlung: Terme – Distributivgesetz [FS]
-47  Quelle: [RLP F] Distributivgesetz; [Serlo 135805] Klammerregeln, sinngemäß; [LS-AA Kl. 8 II 2–3]; eigene Formulierung.
-48
-49  Einheit 2 (Binomische Formeln):
-50      Erste binomische Formel: (a + b)² = a² + 2ab + b²      (x + 3)² = x² + 6x + 9
-51      Zweite binomische Formel: (a − b)² = a² − 2ab + b²      (x − 3)² = x² − 6x + 9
-52      Dritte binomische Formel: (a + b)·(a − b) = a² − b²      (x + 3)·(x − 3) = x² − 9
-53      Das Mittelglied 2ab nie vergessen – (a + b)² ist nicht a² + b². Zahlenprobe: (2 + 3)² = 25, aber 2² + 3² = 13.
-54      Mit Vorzahl ist a die ganze Vorzahl mit x.      (2x + 3)² = 4x² + 12x + 9
-55      Formelsammlung: Terme – binomische Formeln [FS]
-56  Quelle: [Serlo 1499, 18631] „binomische Formeln vorwärts zum Ausmultiplizieren, Fehlerquellen beachten“, sinngemäß; [P10 2017-OS-K5d, 2022-OS-K3c Fehlerquelle „Mittelglied fehlt“; 2020-OS-K3c „(2 + 2)² = 8“]; [LS-AA Kl. 8 II 4]. Buchstabenform a, b wie in der Formelsammlung, jede Zeile mit Zahlenbeispiel (Präzedenz terme.md Kasten 3).
-57
-58  Einheit 3 (Faktorisieren):
-59      Faktorisieren: eine Summe in ein Produkt verwandeln – erst gemeinsamen Faktor ausklammern, dann nach einer binomischen Formel suchen.
-60        Drei Glieder, zwei Quadrate, Mittelglied ist das doppelte Produkt der Wurzeln: x² + 10x + 25 = (x + 5)²      Minus im Mittelglied: x² − 10x + 25 = (x − 5)²
-61        Zwei Quadrate mit Minus dazwischen: x² − 25 = (x + 5)·(x − 5)
-62        Erst ausklammern: 3x² − 75 = 3·(x² − 25) = 3·(x + 5)·(x − 5)
-63      Probe: ausmultiplizieren. Passt das Mittelglied nicht (x² + 7x + 25), gibt es keine binomische Formel.
-64      Formelsammlung: Terme – binomische Formeln, Distributivgesetz [FS]
-65  Quelle: [Serlo 1499 „Anwendung: Faktorisieren“] Entscheidung nach Zahl der Glieder, Quadraten und Mittelglied, vorher Ausklammern, sinngemäß; [Serlo Faktorisieren-Artikel] „Summe in ein Produkt verwandeln“, sinngemäß; [LS-AA Kl. 8 II 4].
-66
-67  ### Typische Fehler
-68  - Mittelglied fehlt: (x + 3)² = x² + 9; (x − 2)² = x² − 4. [P10 2017-OS-K5d, 2022-OS-K3c – die häufigste Fehlerquelle des Themas in der P10]
-69  - Quadrat auf die Summanden verteilt: (2 + 2)² = 8; (a + b)² = a² + b² wie beim Distributivgesetz. [P10 2020-OS-K3c; FD Malle „Linearisierung“]
-70  - Vorzahl nicht quadriert: (2x + 3)² = 2x² + 12x + 9; (3x)² = 3x². [FD; P10 2026-FOR-B1e Fehlerquelle in umgekehrter Richtung]
-71  - Vorzeichen des Mittelglieds: (x − 3)² = x² + 6x + 9; oder Minus vor dem letzten Glied (x² − 6x − 9). [FD]
-72  - Dritte Formel mit Mittelglied oder mit Plus: (x + 3)·(x − 3) = x² + 6x − 9 oder x² + 9. [FD]
-73  - Klammer mal Klammer nur Erstes mal Erstes und Letztes mal Letztes: (x + 3)·(x + 5) = x² + 15. [FD; Serlo 18631 Fehlerquellen]
-74  - Vorzeichen bei Minus in beiden Klammern: (x − 4)·(x − 2) = x² − 6x − 8 statt x² − 6x + 8. [FD]
-75  - Nach dem Ausmultiplizieren ungleichartige Glieder zusammengefasst: x² + 8x = 9x³; x² + 2x + 2x² = 5x². [FD Malle; terme.md]
-76  - Minus vor der Klammer nur aufs erste Glied: −(x − 1)² = −x² − 2x + 1 statt −x² + 2x − 1; Vorfaktor in die Klammer gezogen: 3·(x + 2)² = (3x + 6)². [FD; P10 2023-OS-K4b „Minus vor der Klammer vergessen“ als Nachbarfehler]
-77  - Beim Faktorisieren das Mittelglied nicht geprüft: x² + 5x + 9 = (x + 3)². [Serlo 1499; FD]
-78  - Summe zweier Quadrate „faktorisiert“: x² + 9 = (x + 3)² oder (x + 3)·(x − 3). [FD]
-79  - Gemeinsamer Faktor übersehen oder nur aus einem Glied gezogen: 2x² − 18 = 2·(x² − 18). [FD; terme.md]
-80  - Quadratische Ergänzung mit b statt b halbe: x² + 6x + 7 = (x + 6)² + … (Vorrat). [FD]
-81
-82  ### Für schwache Schüler
-83  Mindeststoff (D/E) [RLP]: keiner – das Thema beginnt auf F (Distributivgesetz, Gymnasium Kl. 8; Oberschule 9–10) und G (binomische Formeln, Gymnasium Kl. 9; Oberschule „in Teilen G“, für den MSA nötig). Mindeststoff der Prüfungsvorbereitung (P10, FOR) [P10]: Einheit 2 erste und zweite Formel mit x und Zahl, Minus vor der Klammer, Klammer auflösen und mit dem Rest zusammenfassen (Voraussetzung für 2017-OS-K5d Nachweis der Normalform und 2022-OS-K3c Gleichsetzen mit Scheitelpunktform, beide Stern, je 4 Punkte); Einheit 1 Klammer mal Klammer als tragender Weg – amtlich der einzige Teil des Themas, den die Planungshilfen für alle Bildungsgänge führen (Jg. 8, Niveaustufe F); wer die Formel nicht sicher hat, kommt hierüber zum selben Ergebnis, denn jede binomische Formel ist Klammer mal Klammer; Einheit 3 Vorrat (Faktorisieren in der P10 nur als Alternative 2020-OS-K3e, quadratische Ergänzung nie verlangt). Vorrat außerdem: dritte Formel (kein P10-Original), zwei Variablen, Kopfrechnen mit der Formel, quadratische Ergänzung (H), Terme mit drei Variablen, Potenzen im Binom.
-84  Grundvorstellung (Blatt 0) [RLP F/G, MO]: Quadrieren verteilt sich nicht auf Summanden – „Rechne (drei plus vier)² auf zwei Wegen: erst die Klammer ausrechnen und dann quadrieren; dann drei² plus vier². Kommt dasselbe heraus? Zeichne ein Quadrat mit der Seite drei plus vier und zerlege es mit zwei Strichen in vier Teile: zwei Quadrate und zwei Rechtecke.“ Wer beide Wege für gleich hält (das Quadrat wie eine Zahl vor der Klammer „auf jedes Glied verteilt“), braucht das vor der Formel: die beiden Rechtecke in der Mitte sind das Mittelglied, und eine Formel ist nur eine Abkürzung für Klammer mal Klammer. [P10 2020-OS-K3c Fehlerquelle Quadrat einer Zahlensumme; Fehlerquelle „Mittelglied fehlt“ 2017-OS-K5d, 2022-OS-K3c]
-85  Sprossen je Verfahrenstyp (Reihenfolge = Kette des Hauptblatts) [LS-AA, FD, P10]:
-86  - Summe mal Summe (Einheit 1): Pfeile „jedes mit jedem“ zeichnen (Vorstufe) → zwei Variablen zusammenfassen, lauter Plus (4×) → mit Minus und Vorzahl eins → Potenzen und Produkte getrennt halten (x², xy, x) → Zahl mal Klammer mit zwei Variablen → Klammer mal Klammer mit lauter Plus, vier Produkte hinschreiben → zusammenfassen zum dreigliedrigen Term → ein Minus in einer Klammer → Minus in beiden Klammern → Vorzahl vor x → zwei Variablen in beiden Klammern → Prüfungshöhe: Klammer mal Klammer mit Minus und Vorzahl, Ergebnis zusammengefasst (kein P10-Original; RLP F Distributivgesetz, LS-AA Kl. 8 II 3, LISUM-PH Jahrgangsstufe acht, „Ausführen der Multiplikation zweier Summen, mit Variablen, vorwiegend Binome“ – die einzige Sprossenkette dieses Eintrags mit amtlicher Stütze für alle Bildungsgänge).
-87  - Binomische Formeln (Einheit 2): Formel erkennen und a, b einkreisen (Vorstufe) → erste Formel mit x und Zahl (4×) → zweite Formel, Minus im Mittelglied → dritte Formel, Mittelglied fällt weg (Vorrat: kein P10-Original) → gemischt: Formel wählen, auch „keine“ → Vorzahl vor x (Vorzahl mit quadrieren) → zwei Variablen (Vorrat) → Vorfaktor vor der Klammer (erst Formel, dann Vorfaktor auf alle drei Glieder) → Minus vor der Klammer (alle drei Vorzeichen drehen) → Klammer auflösen und mit dem Rest zusammenfassen → Prüfungshöhe: Scheitelpunktform einer verschobenen Normalparabel als vorgegebene Normalform nachweisen (P10-Form 2017-OS-K5d, Stern); Scheitelpunktform vor dem Gleichsetzen mit einer Geraden ausmultiplizieren (2022-OS-K3c, Stern; Verfahren quadratische-gleichungen.md Einheit 3).
-88  - Faktorisieren (Einheit 3): „Ist das ein Quadrat?“ und „Passt das Mittelglied?“ ankreuzen (Vorstufe) → dritte Formel rückwärts, x² minus Quadratzahl (4×) → erste Formel rückwärts mit geprüftem Mittelglied → zweite Formel rückwärts, Minus im Mittelglied → Vorzahl vor x², Quadrat von zwei x → erst gemeinsamen Faktor ausklammern, dann Formel → kein Binom erkennen und begründen (Mittelglied passt nicht, Summe zweier Quadrate) → Probe durch Ausmultiplizieren → Anwendung: Produktform gleich null lösen (quadratische-gleichungen.md Einheit 2) → quadratische Ergänzung (Vorrat) → Prüfungshöhe: Term mit gemeinsamem Faktor und binomischer Formel vollständig faktorisieren und die Probe führen (kein P10-Original; RLP G, LS-AA Kl. 8 II 4).
-89
-90  ### Prüfungsform (P10)
-91  Kein typen.csv-Thema; das Thema „Terme umformen“ in typen.csv hat nur „Term zu Sachtext angeben“ (terme.md). Binomische Formeln kommen in der P10 als Voraussetzung vor: 2017-OS-K5d (p: y = (x + 3)² − 2, Behauptung y = x² + 6x + 7 nachweisen, dann Nullstellen; 4 Punkte, Stern, Niveau III; Fehlerquelle „(x + 3)² = x² + 9, Mittelglied fehlt“), 2022-OS-K3c (p(x) = (x − 2)² − 4 mit f(x) = −2x + 3 gleichsetzen; 4 Punkte, Stern, Niveau II; Fehlerquelle „(x − 2)² = x² − 4 setzen“); quadratische Ergänzung nur als Alternative im Lösungsweg (2018-OS-K5c, 2025-OS-K5b: „aus Scheitel oder durch quadratische Ergänzung“; 2023-OS-K4c „p-q-Formel oder quadratische Ergänzung“); Quadrat einer Zahlensumme 2020-OS-K3c ((2 + 2)² − 4, Fehlerquelle 8); Faktorisieren als Alternative zur Formel 2020-OS-K3e ((x + 1)(x + 3)). Kein Original verlangt die dritte Formel, das Faktorisieren oder Terme mit zwei Variablen.
-92  Muster: erste und zweite Formel mit x und einer ganzen Zahl (3, 2), Rest als Zahl dahinter, Ergebnis wird weiterverarbeitet (Nullstellen, Schnittpunkte); Hilfsmittel ja (Formelsammlung enthält die Formeln).
-93  Zuordnung: kein Typ; Einheit 2 – Verfahren für „Scheitelpunktform in Normalform umformen“ (Typ und Original 2017-OS-K5d in quadratische-funktionen.md Einheit 3) und Voraussetzung für „Schnittpunkte Gerade und Parabel berechnen“ bei Scheitelpunktform (2022-OS-K3c, quadratische-funktionen.md Einheit 4); Einheit 1 – Ersatzweg ohne Typ; Einheit 3 – kein Typ, Alternative in 2020-OS-K3e.
-94  Zielmarke (am 10f in der Gegenlese geschärft): Einheit 2 (x + 3)² − 2 = x² + 6x + 9 − 2 = x² + 6x + 7 (2017-OS-K5d); (x − 2)² − 4 = x² − 4x + 4 − 4 = x² − 4x als Zwischenschritt (2022-OS-K3c) – beschränkt auf die erste und zweite Formel mit x und einer ganzen Zahl, dazu Minus vor der Klammer und Zusammenfassen mit dem Rest; dritte Formel, zwei Variablen und Kopfrechnen sind Vorrat und in der Kette so markiert. Einheit 1 – Klammer mal Klammer mit Minus und Vorzahl, Ergebnis zusammengefasst: kein Original, Marke nach RLP F und LISUM-PH Jg. 8. Einheit 3 – einen Term mit gemeinsamem Faktor und binomischer Formel vollständig faktorisieren und die Probe führen: kein Original, Marke nach RLP G und Lehrwerk; LISUM stützt sie nicht. Die frühere Angabe „Einheit 1 und 3 keine“ stand im Widerspruch zu den Prüfungshöhen der beiden Ketten und ist damit aufgelöst.
+33  - „Gleiche Klammer zweimal?“ – ankreuzen, ob ein Term das Quadrat einer Klammer ist ((x + 7)² ja, (x + 7)·(x − 11) nein), und das Quadrat als Klammer mal Klammer hinschreiben; nichts ausmultiplizieren. Vor Einheit 2. [FD; P10 2017-OS-K5d, 2022-OS-K3c Fehlerquelle „Mittelglied fehlt“]
+34  - „Welche Formel?“ – zu Termen ankreuzen: Plus in der Klammer und Quadrat → erste, Minus und Quadrat → zweite, Plus-Klammer mal Minus-Klammer → dritte, sonst keine; nichts rechnen. Vor Einheit 2 und 3. [Serlo 1499 Entscheidungsbaum]
+35  - „Was ist a, was ist b?“ – in (7x + 11)² die Teile a = 7x und b = 11 einkreisen und aufschreiben; nichts ausmultiplizieren. Vor Einheit 2. [FD; Serlo 18631 Fehlerquellen]
+36
+37  ### Merkkasten
+38  Einheit 1 (Summe mal Summe):
+39      Klammer mal Klammer: jedes Glied der ersten Klammer mal jedes Glied der zweiten (vier Produkte), dann zusammenfassen.
+40        (x + 3)·(x + 5) = x² + 5x + 3x + 15 = x² + 8x + 15
+41      Vorzeichen gehören zum Glied: (x − 4)·(x + 2) = x² + 2x − 4x − 8 = x² − 2x − 8
+42      Zwei Variablen: nur gleiche Variablen mit gleicher Hochzahl zusammenfassen; xy und yx sind dasselbe.      (a + b)·(c + d) = ac + ad + bc + bd
+43      Formelsammlung: Terme – Distributivgesetz [FS]
+44  Quelle: [RLP F] Distributivgesetz; [Serlo 135805] Klammerregeln, sinngemäß; [LS-AA Kl. 8 II 2–3]; eigene Formulierung.
+45
+46  Einheit 2 (Binomische Formeln):
+47      Erste binomische Formel: (a + b)² = a² + 2ab + b²      (x + 3)² = x² + 6x + 9
+48      Zweite binomische Formel: (a − b)² = a² − 2ab + b²      (x − 3)² = x² − 6x + 9
+49      Dritte binomische Formel: (a + b)·(a − b) = a² − b²      (x + 3)·(x − 3) = x² − 9
+50      Das Mittelglied 2ab nie vergessen – (a + b)² ist nicht a² + b². Zahlenprobe: (2 + 3)² = 25, aber 2² + 3² = 13.
+51      Mit Vorzahl ist a die ganze Vorzahl mit x.      (2x + 3)² = 4x² + 12x + 9
+52      Formelsammlung: Terme – binomische Formeln [FS]
+53  Quelle: [Serlo 1499, 18631] „binomische Formeln vorwärts zum Ausmultiplizieren, Fehlerquellen beachten“, sinngemäß; [P10 2017-OS-K5d, 2022-OS-K3c Fehlerquelle „Mittelglied fehlt“; 2020-OS-K3c „(2 + 2)² = 8“]; [LS-AA Kl. 8 II 4]. Buchstabenform a, b wie in der Formelsammlung, jede Zeile mit Zahlenbeispiel (Präzedenz terme.md Kasten 3).
+54
+55  Einheit 3 (Faktorisieren):
+56      Faktorisieren: eine Summe in ein Produkt verwandeln – erst gemeinsamen Faktor ausklammern, dann nach einer binomischen Formel suchen.
+57        Drei Glieder, zwei Quadrate, Mittelglied ist das doppelte Produkt der Wurzeln: x² + 10x + 25 = (x + 5)²      Minus im Mittelglied: x² − 10x + 25 = (x − 5)²
+58        Zwei Quadrate mit Minus dazwischen: x² − 25 = (x + 5)·(x − 5)
+59        Erst ausklammern: 3x² − 75 = 3·(x² − 25) = 3·(x + 5)·(x − 5)
+60      Probe: ausmultiplizieren. Passt das Mittelglied nicht (x² + 7x + 25), gibt es keine binomische Formel.
+61      Formelsammlung: Terme – binomische Formeln, Distributivgesetz [FS]
+62  Quelle: [Serlo 1499 „Anwendung: Faktorisieren“] Entscheidung nach Zahl der Glieder, Quadraten und Mittelglied, vorher Ausklammern, sinngemäß; [Serlo Faktorisieren-Artikel] „Summe in ein Produkt verwandeln“, sinngemäß; [LS-AA Kl. 8 II 4].
+63
+64  ### Typische Fehler
+65  - Mittelglied fehlt: (x + 3)² = x² + 9; (x − 2)² = x² − 4. [P10 2017-OS-K5d, 2022-OS-K3c – die häufigste Fehlerquelle des Themas in der P10]
+66  - Quadrat auf die Summanden verteilt: (2 + 2)² = 8; (a + b)² = a² + b² wie beim Distributivgesetz. [P10 2020-OS-K3c; FD Malle „Linearisierung“]
+67  - Vorzahl nicht quadriert: (2x + 3)² = 2x² + 12x + 9; (3x)² = 3x². [FD; P10 2026-FOR-B1e Fehlerquelle in umgekehrter Richtung]
+68  - Vorzeichen des Mittelglieds: (x − 3)² = x² + 6x + 9; oder Minus vor dem letzten Glied (x² − 6x − 9). [FD]
+69  - Dritte Formel mit Mittelglied oder mit Plus: (x + 3)·(x − 3) = x² + 6x − 9 oder x² + 9. [FD]
+70  - Klammer mal Klammer nur Erstes mal Erstes und Letztes mal Letztes: (x + 3)·(x + 5) = x² + 15. [FD; Serlo 18631 Fehlerquellen]
+71  - Vorzeichen bei Minus in beiden Klammern: (x − 4)·(x − 2) = x² − 6x − 8 statt x² − 6x + 8. [FD]
+72  - Nach dem Ausmultiplizieren ungleichartige Glieder zusammengefasst: x² + 8x = 9x³; x² + 2x + 2x² = 5x². [FD Malle; terme.md]
+73  - Minus vor der Klammer nur aufs erste Glied: −(x − 1)² = −x² − 2x + 1 statt −x² + 2x − 1; Vorfaktor in die Klammer gezogen: 3·(x + 2)² = (3x + 6)². [FD; P10 2023-OS-K4b „Minus vor der Klammer vergessen“ als Nachbarfehler]
+74  - Beim Faktorisieren das Mittelglied nicht geprüft: x² + 5x + 9 = (x + 3)². [Serlo 1499; FD]
+75  - Summe zweier Quadrate „faktorisiert“: x² + 9 = (x + 3)² oder (x + 3)·(x − 3). [FD]
+76  - Gemeinsamer Faktor übersehen oder nur aus einem Glied gezogen: 2x² − 18 = 2·(x² − 18). [FD; terme.md]
+77  - Quadratische Ergänzung mit b statt b halbe: x² + 6x + 7 = (x + 6)² + … (Vorrat). [FD]
+78
+79  ### Für schwache Schüler
+80  Mindeststoff (D/E) [RLP]: keiner – das Thema beginnt auf F (Distributivgesetz, Gymnasium Kl. 8; Oberschule 9–10) und G (binomische Formeln, Gymnasium Kl. 9; Oberschule „in Teilen G“, für den MSA nötig). Mindeststoff der Prüfungsvorbereitung (P10, FOR) [P10]: Einheit 2 erste und zweite Formel mit x und Zahl, Minus vor der Klammer, Klammer auflösen und mit dem Rest zusammenfassen (Voraussetzung für 2017-OS-K5d Nachweis der Normalform und 2022-OS-K3c Gleichsetzen mit Scheitelpunktform, beide Stern, je 4 Punkte); Einheit 1 Klammer mal Klammer als tragender Weg – amtlich der einzige Teil des Themas, den die Planungshilfen für alle Bildungsgänge führen (Jg. 8, Niveaustufe F); wer die Formel nicht sicher hat, kommt hierüber zum selben Ergebnis, denn jede binomische Formel ist Klammer mal Klammer; Einheit 3 Vorrat (Faktorisieren in der P10 nur als Alternative 2020-OS-K3e, quadratische Ergänzung nie verlangt). Vorrat außerdem: dritte Formel (kein P10-Original), zwei Variablen, Kopfrechnen mit der Formel, quadratische Ergänzung (H), Terme mit drei Variablen, Potenzen im Binom.
+81  Grundvorstellung (Blatt 0) [RLP F/G, MO]: Quadrieren verteilt sich nicht auf Summanden – „Rechne (drei plus vier)² auf zwei Wegen: erst die Klammer ausrechnen und dann quadrieren; dann drei² plus vier². Kommt dasselbe heraus? Zeichne ein Quadrat mit der Seite drei plus vier und zerlege es mit zwei Strichen in vier Teile: zwei Quadrate und zwei Rechtecke.“ Wer beide Wege für gleich hält (das Quadrat wie eine Zahl vor der Klammer „auf jedes Glied verteilt“), braucht das vor der Formel: die beiden Rechtecke in der Mitte sind das Mittelglied, und eine Formel ist nur eine Abkürzung für Klammer mal Klammer. [P10 2020-OS-K3c Fehlerquelle Quadrat einer Zahlensumme; Fehlerquelle „Mittelglied fehlt“ 2017-OS-K5d, 2022-OS-K3c]
+82  Sprossen je Verfahrenstyp (Reihenfolge = Kette des Hauptblatts) [LS-AA, FD, P10]:
+83  - Summe mal Summe (Einheit 1): „Was mal was?“ – bei Klammer mal Klammer Pfeile „jedes mit jedem“ zeichnen, von jedem Glied der ersten Klammer zu jedem Glied der zweiten; nichts ausrechnen (Vorstufe) → zwei Variablen zusammenfassen, lauter Plus (4×) → mit Minus und Vorzahl eins → Potenzen und Produkte getrennt halten (x², xy, x) → Zahl mal Klammer mit zwei Variablen → Klammer mal Klammer mit lauter Plus, vier Produkte hinschreiben → zusammenfassen zum dreigliedrigen Term → ein Minus in einer Klammer → Minus in beiden Klammern → Vorzahl vor x → zwei Variablen in beiden Klammern → Prüfungshöhe: Klammer mal Klammer mit Minus und Vorzahl, Ergebnis zusammengefasst (kein P10-Original; RLP F Distributivgesetz, LS-AA Kl. 8 II 3, LISUM-PH Jahrgangsstufe acht, „Ausführen der Multiplikation zweier Summen, mit Variablen, vorwiegend Binome“ – die einzige Sprossenkette dieses Eintrags mit amtlicher Stütze für alle Bildungsgänge).
+84  - Binomische Formeln (Einheit 2): Formel erkennen und a, b einkreisen (Vorstufe) → erste Formel mit x und Zahl (4×) → zweite Formel, Minus im Mittelglied → dritte Formel, Mittelglied fällt weg (Vorrat: kein P10-Original) → gemischt: Formel wählen, auch „keine“ → Vorzahl vor x (Vorzahl mit quadrieren) → zwei Variablen (Vorrat) → Vorfaktor vor der Klammer (erst Formel, dann Vorfaktor auf alle drei Glieder) → Minus vor der Klammer (alle drei Vorzeichen drehen) → Klammer auflösen und mit dem Rest zusammenfassen → Prüfungshöhe: Scheitelpunktform einer verschobenen Normalparabel als vorgegebene Normalform nachweisen (P10-Form 2017-OS-K5d, Stern); Scheitelpunktform vor dem Gleichsetzen mit einer Geraden ausmultiplizieren (2022-OS-K3c, Stern; Verfahren quadratische-gleichungen.md Einheit 2).
+85  - Faktorisieren (Einheit 3): „Ist das ein Quadrat?“ – zu Termen ankreuzen, ob sie Quadrate sind; „Welche Glieder könnten Quadrate sein?“ – im dreigliedrigen Term die beiden Glieder einkreisen, die Quadrate sein könnten, und das Mittelglied unterstreichen; „Welche davon können gar kein Binom sein?“ – aus einer Liste die Terme streichen, bei denen zwei Quadrate ohne Mittelglied addiert sind oder ein äußeres Glied kein Quadrat ist; keine Wurzel hinschreiben, nichts ausrechnen, nichts faktorisieren [Serlo 1499; Schnittpunkt Kl. 8, S. 16; Elemente Kl. 8, S. 58] (Vorstufe) → dritte Formel rückwärts, x² minus Quadratzahl (4×) → Mittelglied prüfen: die Wurzeln der beiden Quadrate aufschreiben, ihr doppeltes Produkt bilden und mit dem Mittelglied vergleichen, noch nicht faktorisieren → erste Formel rückwärts mit geprüftem Mittelglied → zweite Formel rückwärts, Minus im Mittelglied → Vorzahl vor x², Quadrat von zwei x → erst gemeinsamen Faktor ausklammern, dann Formel → kein Binom begründen (Mittelglied passt nicht, Summe zweier Quadrate) → Probe durch Ausmultiplizieren → Anwendung: Produktform gleich null lösen (quadratische-gleichungen.md Einheit 3) → quadratische Ergänzung (Vorrat) → Prüfungshöhe: Term mit gemeinsamem Faktor und binomischer Formel vollständig faktorisieren und die Probe führen (kein P10-Original; RLP G, LS-AA Kl. 8 II 4).
+86
+87  ### Prüfungsform (P10)
+88  Kein typen.csv-Thema; das Thema „Terme umformen“ in typen.csv hat nur „Term zu Sachtext angeben“ (terme.md). Binomische Formeln kommen in der P10 als Voraussetzung vor: 2017-OS-K5d (p: y = (x + 3)² − 2, Behauptung y = x² + 6x + 7 nachweisen, dann Nullstellen; 4 Punkte, Stern, Niveau III; Fehlerquelle „(x + 3)² = x² + 9, Mittelglied fehlt“), 2022-OS-K3c (p(x) = (x − 2)² − 4 mit f(x) = −2x + 3 gleichsetzen; 4 Punkte, Stern, Niveau II; Fehlerquelle „(x − 2)² = x² − 4 setzen“); quadratische Ergänzung nur als Alternative im Lösungsweg (2018-OS-K5c, 2025-OS-K5b: „aus Scheitel oder durch quadratische Ergänzung“; 2023-OS-K4c „p-q-Formel oder quadratische Ergänzung“); Quadrat einer Zahlensumme 2020-OS-K3c ((2 + 2)² − 4, Fehlerquelle 8); Faktorisieren als Alternative zur Formel 2020-OS-K3e ((x + 1)(x + 3)). Kein Original verlangt die dritte Formel, das Faktorisieren oder Terme mit zwei Variablen.
+89  Muster: erste und zweite Formel mit x und einer ganzen Zahl (3, 2), Rest als Zahl dahinter, Ergebnis wird weiterverarbeitet (Nullstellen, Schnittpunkte); Hilfsmittel ja (Formelsammlung enthält die Formeln).
+90  Zuordnung: kein Typ; Einheit 2 – Verfahren für „Scheitelpunktform in Normalform umformen“ (Typ und Original 2017-OS-K5d in quadratische-funktionen.md Einheit 3) und Voraussetzung für „Schnittpunkte Gerade und Parabel berechnen“ bei Scheitelpunktform (2022-OS-K3c, quadratische-funktionen.md Einheit 4); Einheit 1 – Ersatzweg ohne Typ; Einheit 3 – kein Typ, Alternative in 2020-OS-K3e.
+91  Zielmarke (am 10f in der Gegenlese geschärft): Einheit 2 (x + 3)² − 2 = x² + 6x + 9 − 2 = x² + 6x + 7 (2017-OS-K5d); (x − 2)² − 4 = x² − 4x + 4 − 4 = x² − 4x als Zwischenschritt (2022-OS-K3c) – beschränkt auf die erste und zweite Formel mit x und einer ganzen Zahl, dazu Minus vor der Klammer und Zusammenfassen mit dem Rest; dritte Formel, zwei Variablen und Kopfrechnen sind Vorrat und in der Kette so markiert. Einheit 1 – Klammer mal Klammer mit Minus und Vorzahl, Ergebnis zusammengefasst: kein Original, Marke nach RLP F und LISUM-PH Jg. 8. Einheit 3 – einen Term mit gemeinsamem Faktor und binomischer Formel vollständig faktorisieren und die Probe führen: kein Original, Marke nach RLP G und Lehrwerk; LISUM stützt sie nicht. Die frühere Angabe „Einheit 1 und 3 keine“ stand im Widerspruch zu den Prüfungshöhen der beiden Ketten und ist damit aufgelöst.
 ````
 
 ## 2 Originale (7)

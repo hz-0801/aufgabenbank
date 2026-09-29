@@ -1,9 +1,9 @@
 # Mappe: bruchrechnung
 
 Eintrag: hz-0801/mathe-nachhilfe, katalog/bruchrechnung.md
-Katalog-Commit: 761321330add6ed255669afc1c4e11b846250dd5 (2026-09-25T11:16:56+02:00, „katalog: Marken-Zeilen je Lerneinheit, drei Einheiten ergänzt, marken-bau.py“; ermittelt über git log (GitHub-API gesperrt))
+Katalog-Commit: d78032a884b6073d9e4c92cc8407e909e3c4ea2a (2026-09-29T07:07:16Z, „Katalog 29.09. aus dem Chat: terme E4 Vorstufe Zerlegen, prozentrechnung E4 Sprosse „nur ein Prozent bestimmen“, bruchrechnung E3 Sprosse Stammbruch von Bruch (Vorrat) und Kastenzeile a = a/1; K5-Beleg in faellig.md“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-27 12:32 UTC
+Datum: 2026-09-29 10:18 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -54,76 +54,77 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
  39  - „Womit erweitere ich?“ – nur den Faktor angeben (ein Drittel → Sechstel: mal zwei). Vor Einheit 1. [MSK B4A 2.1]
  40  - „Von heißt mal“ – im Text das „von“ unterstreichen und die Malaufgabe aufschreiben, nicht rechnen. Vor Einheit 3. [RLP D „Operator“; FD]
  41  - „Wie viele Kommastellen hat das Ergebnis?“ – nur die Anzahl angeben (2,5 · 0,03: drei). Vor Einheit 4. [LS-AA Kl. 6 V 5]
- 42  - „Was rechne ich zuerst?“ – die Rechnung einkreisen, nicht rechnen. Vor Einheit 5. [RLP D]
- 43
- 44  ### Merkkasten
- 45  Einheit 1 (Addieren, Subtrahieren):
- 46      Gleicher Nenner: Zähler plus (oder minus), Nenner bleibt.      3/7 + 2/7 = 5/7
- 47      Verschiedene Nenner: erst gleichnamig machen (erweitern), dann Zähler rechnen.      1/2 + 1/6 = 3/6 + 1/6 = 4/6 = 2/3
- 48      Ergebnis kürzen; über ein Ganzes: 9/5 = 1 4/5.
- 49      Formelsammlung: Bruchrechnung – Addition [FS]
- 50  Quelle: [Serlo 50493] Überblick, sinngemäß; [MSK B4A] Streifen verfeinern.
- 51
- 52  Einheit 2 (Dezimalzahlen addieren, subtrahieren):
- 53      Komma unter Komma schreiben, fehlende Stellen mit Nullen auffüllen, dann wie mit ganzen Zahlen rechnen.
- 54        4,7 + 0,85 = 4,70 + 0,85 = 5,55      6,2 − 1,35 = 6,20 − 1,35 = 4,85
- 55      Formelsammlung: Dezimalzahlen [FS]
- 56  Quelle: [LS-AA Kl. 6 III 2]; [MSK D3A] Titel; eigene Formulierung.
- 57
- 58  Einheit 3 (Brüche multiplizieren, dividieren):
- 59      Mal: Zähler mal Zähler, Nenner mal Nenner – vorher kürzen, wenn es geht. „von“ heißt mal.
- 60        2/3 · 5/8 = 10/24 = 5/12      3/4 von 20 = 3/4 · 20 = 15
- 61      Geteilt: mit dem Kehrbruch malnehmen (Zähler und Nenner tauschen).
- 62        5/6 : 2/3 = 5/6 · 3/2 = 15/12 = 1 1/4      4 : 1/2 = 4 · 2 = 8
- 63      Formelsammlung: Bruchrechnung – Multiplikation, Division [FS]
- 64  Quelle: [Serlo 50493, 20314] sinngemäß; [Serlo 24083] Kehrwert.
- 65
- 66  Einheit 4 (Dezimalzahlen multiplizieren, dividieren):
- 67      Mal 10, 100, 1000: Komma nach rechts; geteilt durch 10, 100: Komma nach links.      0,46 · 100 = 46      3,8 : 10 = 0,38
- 68      Mal: ohne Komma rechnen, dann Kommastellen beider Zahlen zählen.      1,5 · 0,04 = 0,06 (15 · 4 = 60, drei Kommastellen)
- 69      Geteilt: beim Teiler das Komma wegschieben, beim anderen genauso weit.      7,2 : 0,9 = 72 : 9 = 8
- 70      Formelsammlung: Dezimalzahlen [FS]
- 71  Quelle: [LS-AA Kl. 6 V 4–6]; [MSK D4A, D4B] Titel; eigene Formulierung.
- 72
- 73  Einheit 5 (Punkt vor Strich, Rechengesetze):
- 74      Reihenfolge: Klammer zuerst, dann Punkt (mal, geteilt), dann Strich (plus, minus).
- 75        1/2 + 1/4 · 2 = 1/2 + 1/2 = 1      (0,8 + 1,2) · 3 = 2 · 3 = 6
- 76      Vorteile: Tauschen und Zusammenfassen erlaubt bei plus und mal.      0,25 · 13 · 4 = 0,25 · 4 · 13 = 13
- 77      Formelsammlung: Rechengesetze [FS]
- 78  Quelle: [RLP D] Punkt-vor-Strich, Klammerregeln; [LS-AA Kl. 6 III 3, V 7]; eigene Formulierung.
- 79
- 80  ### Typische Fehler
- 81  - Zähler und Nenner getrennt addiert: 1/4 + 1/4 = 2/8. [MSK B4A 3.3; FD Padberg]
- 82  - Anteile verschiedener Ganzer addiert („ein Viertel Kuchen plus ein Drittel Pizza“). [MSK B4A 3.2–3.3]
- 83  - Beim Erweitern nur den Nenner geändert: 1/3 = 1/6; oder nur einen Bruch erweitert. [FD Padberg; MSK B2B]
- 84  - Gemischte Zahl als Produkt gelesen: 2 1/2 = 2 · 1/2 = 1. [FD]
- 85  - Beim Multiplizieren gleichnamig gemacht oder den Kehrbruch genommen; beim Dividieren den falschen Bruch umgedreht oder beide. [Serlo 82385 Hinweis; FD]
- 86  - Bruch geteilt durch Zahl: Zähler geteilt statt Nenner mal (3/4 : 2 = 3/2). [FD]
- 87  - Bruchteil einer Größe mit umgedrehtem Bruch: 3/4 von 1,2 kg als 1,2 : 3 · 4 = 1,6 kg. [P10 2018-OS-B1a]
- 88  - „Multiplizieren macht größer, Dividieren kleiner“: 8 : 1/2 = 4 erwartet. [FD Padberg/Wartha]
- 89  - Dezimalzahlen: Komma nicht untereinander (2,5 + 0,25 = 0,50); Kommastellen beim Multiplizieren nicht gezählt (0,3 · 0,3 = 0,9); 0,4² als 0,8 oder 1,6. [P10 2023-OS-B1f; LS-AA Kl. 6 V 5]
- 90  - Division durch Dezimalzahl: Komma nur beim Teiler verschoben (4,8 : 0,2 = 4,8 : 2). [FD]
- 91  - Cent und Euro vermischt: 0,14 ct als 0,14 € gerechnet; Cent nicht in Euro umgerechnet. [P10 2024-OS-K2d, 2014-OS-K4c]
- 92  - Punkt vor Strich ignoriert, von links nach rechts gerechnet. [RLP D]
- 93
- 94  ### Für schwache Schüler
- 95  Mindeststoff (D/E) [RLP]: alle fünf Einheiten sind D; innerhalb der Einheiten Mindeststoff: Einheit 1 gleichnamig und ein Nenner Vielfaches des anderen; Einheit 2 ganz; Einheit 3 Bruch mal Zahl, Bruch geteilt durch Zahl, „von“; Einheit 4 Kommaverschiebung, Dezimalzahl mal und geteilt durch natürliche Zahl; Einheit 5 Punkt vor Strich mit Dezimalzahlen. Vorrat: Hauptnenner mit beidseitigem Erweitern, gemischte Zahlen, Bruch durch Bruch, Dezimalzahl durch Dezimalzahl, Distributivgesetz mit Dezimalzahlen.
- 96  Grundvorstellung (Blatt 0) [MSK B4A, D1A; MO]: Bruch: „Färbe zwei Fünftel und dann ein weiteres Fünftel im selben Streifen – wie viel ist gefärbt?“ (Zusammenfügen am Streifen, nicht rechnen). Dezimalzahl: „Trage sieben Zehntel und sieben Hundertstel als Dezimalzahlen in die Stellenwerttafel ein – welche ist größer?“. Wer ein Viertel plus ein Viertel zu zwei Achteln addiert oder sieben Hundertstel für größer als sieben Zehntel hält, braucht das vor dem Verfahren.
- 97  Sprossen je Verfahrenstyp (Reihenfolge = Kette des Hauptblatts) [MSK, LS-AA, FD]:
- 98  - Addieren/Subtrahieren (Einheit 1): am Streifen zusammenfügen (Vorstufe) → gleichnamig (4×) → Ergebnis kürzen → über ein Ganzes (gemischte Zahl) → ein Nenner Vielfaches des anderen (4×) → beide erweitern (Hauptnenner) → gemischte Zahlen → Prüfungshöhe: drei Pfadwahrscheinlichkeiten mit verschiedenen Nennern addieren und das Ergebnis kürzen, als Nebenleistung einer mehrstufigen Aufgabe (P10-Nebenleistung 2014-OS-K6c und 2015-OS-K7d, Niveau II; ebenso 2020-OS-K6c und 2017-OS-K6b, Niveau III); daneben das Gegenereignis als Eins minus einem Bruch (2026-FOR-K6c, Niveau II; 2014-OS-B1d, Niveau I). Der Typ liegt jeweils in wahrscheinlichkeit.md.
- 99  - Dezimal addieren/subtrahieren (Einheit 2): Stellenwerttafel (Vorstufe) → gleich viele Stellen (4×) → Nullen anhängen → Übertrag → Größen mit Komma → Prüfungshöhe: die Differenz zweier Geldbeträge mit Komma bilden, als Nebenleistung einer Kostenaufgabe (P10-Nebenleistung 2014-OS-K4d, Niveau II – Typ und Original zuordnungen.md); im Lehrwerksmaßstab die Kassenzettel-Aufgabe mit Rückgeld.
-100  - Multiplizieren (Einheit 3): „von“ markieren (Vorstufe) → Bruch mal Zahl (4×) → Bruch mal Bruch → vorher kürzen → gemischte Zahl → Prüfungshöhe: drei Brüche mit absteigenden Zählern und Nennern nach der Pfadregel multiplizieren und das Ergebnis kürzen (P10-Nebenleistung 2019-OS-K6c, Niveau III; ebenso 2018-OS-K7c, Niveau III, und 2019-OS-K6b, Niveau II – Typ jeweils wahrscheinlichkeit.md); daneben zwei Brüche als Produkt (2024-OS-K5c, Niveau II) und im Lehrwerksmaßstab Bruch von Bruch in einer Sachaufgabe. Der Bruchteil einer Größe mit Komma (P10-Form) liegt in brueche-dezimalzahlen.md Einheit 1.
-101  - Dividieren (Einheit 3): Bruch geteilt durch Zahl (4×) → Zahl geteilt durch Stammbruch („wie oft passt ein Drittel in fünf?“) → Bruch geteilt durch Bruch mit Kehrbruch (Vorrat) → kürzen → Prüfungshöhe: Sachaufgabe „wie viele Flaschen zu zwei Fünftel Liter aus sechs Liter“ im Lehrwerksmaßstab – kein P10-Original teilt durch einen Bruch, „Kehrbruch“ und „Kehrwert“ kommen in den Originalen als Verfahren nicht vor.
-102  - Dezimal multiplizieren/dividieren (Einheit 4): Kommaverschiebung mal zehn, mal hundert (4×) → geteilt durch zehn, durch hundert → Dezimalzahl mal natürliche Zahl → Kommastellen zählen (mal Dezimalzahl) → Ergebnis mit führenden Nullen → geteilt durch natürliche Zahl → geteilt durch Dezimalzahl → Prüfungshöhe: Menge mal Literpreis mit Wechsel zwischen Cent und Euro, Ergebnis in der verlangten Einheit (P10-Nebenleistung 2014-OS-K4c, Niveau II, und 2024-OS-K2d, Niveau I – Typ und Originale zuordnungen.md); daneben das Quadrat einer Dezimalzahl (2023-OS-B1f, Niveau I – brueche-dezimalzahlen.md).
-103  - Punkt vor Strich (Einheit 5): Rechnung einkreisen (Vorstufe) → Punkt vor Strich mit natürlichen Zahlen (4×) → mit Dezimalzahlen → mit Brüchen → Klammer → Rechenvorteil → Prüfungshöhe: einen Bruchterm mit Klammer auswerten, erst die Klammer, dann die Division (P10-Nebenleistung 2021-OS-B1g und 2016-OS-B1i, Niveau I – Typ „Termwert berechnen“, rationale-zahlen.md); daneben drei Terme zu einem Rabattsachtext auf ihre Richtigkeit prüfen, darunter einer mit Bruch mal Klammersumme (2015-OS-K2a, Niveau II – prozentrechnung.md).
-104
-105  ### Prüfungsform (P10)
-106  Kein typen.csv-Thema und kein Original mit Hauptleistung aus diesem Eintrag [P10]. Die Prüfung verlangt das Rechnen mit Brüchen und Dezimalzahlen durchgehend als Nebenleistung, und zwar in weit mehr Aufgaben, als der Entwurf bis 11a nannte. Vier Stellen standen schon da: Dezimalzahlen multiplizieren in „Kosten aus Menge und Preis berechnen“ (Menge mal Literpreis mit Cent-Euro-Wechsel – 2024-OS-K2d, Niveau I; 2014-OS-K4c, Niveau II; die Differenz zweier Kraftstoffkosten in 2014-OS-K4d, Niveau II – alle drei zuordnungen.md), Bruch als Operator in „Bruchteil einer Größe berechnen“ (2018-OS-B1a und 2015-OS-B1h – brueche-dezimalzahlen.md), Brüche und Klammer in „Termwert berechnen“ (2021-OS-B1g, 2016-OS-B1i, 2026-FOR-B1g – rationale-zahlen.md) und das Quadrat einer Dezimalzahl in „Zahlen in verschiedenen Darstellungen vergleichen“ (2023-OS-B1f – brueche-dezimalzahlen.md).
-107  Der größte Bestand liegt jedoch bei den Wahrscheinlichkeiten, und er fehlte. **Brüche multiplizieren** (Pfadregel) verlangen dreizehn Originale: 2015-OS-K7d, 2017-OS-K6b, 2018-OS-K7c, 2019-OS-K6b, 2019-OS-K6c, 2024-OS-K5b, 2024-OS-K5c, 2025-OS-K3b, 2025-OS-K3c, 2025-OS-K3d, 2026-FOR-K6b, 2026-FOR-K6c, 2026-FOR-K6d – die Spitze sind drei Faktoren mit absteigenden Zählern und Nennern beim Ziehen ohne Zurücklegen (6/20 · 5/19 · 4/18 in 2019-OS-K6c; 14/16 · 13/15 in 2018-OS-K7c, beide Niveau III). **Brüche addieren** (Summenregel, auch ungleichnamig) verlangen vier: 2014-OS-K6c ((1/2)² + (3/8)² + (1/8)² = 26/64), 2015-OS-K7d (1/11 + 10/11 · 1/10 + 10/11 · 9/10 · 1/9), 2017-OS-K6b (1/6 + 5/6 · 1/5) und 2020-OS-K6c (15/216 + 1/216). **Eins minus einem Bruch** (Gegenereignis) verlangen drei: 2014-OS-B1d, 2015-OS-K7d, 2026-FOR-K6c. **Einen Bruch auf einen anderen Nenner bringen** verlangen neunzehn Originale, siebzehnmal Kürzen und zweimal Erweitern: 2014-OS-B1b, 2014-OS-B1d, 2014-OS-B1i, 2014-OS-K6b, 2014-OS-K6c, 2015-OS-K2a, 2015-OS-K7b, 2016-OS-B1f, 2016-OS-K5b, 2018-OS-K7b, 2018-OS-K7c, 2019-OS-K6c, 2020-OS-K6a, 2020-OS-K6b, 2020-OS-K6c, 2022-OS-B1f, 2026-FOR-K6a, 2026-FOR-K6b, 2026-FOR-K6c – von 4/6 = 2/3 bis 182/240 = 91/120 und 120/6840 = 1/57. Die Typen und Originale liegen in wahrscheinlichkeit.md, daten.md, prozentrechnung.md und brueche-dezimalzahlen.md; hier steht das Verfahren.
-108  Nicht verlangt wird: durch einen Bruch teilen, mit dem Kehrbruch rechnen, gleichnamig machen über einen Hauptnenner mit beidseitigem Erweitern, gemischte Zahlen. Suche in allen Feldern beider CSV-Dateien 2014–2026 nach „Kehrbruch“, „Kehrwert“, „gleichnamig“, „Hauptnenner“, „Bruchstrich“, „erweitern“, „gemischte Zahl“ und „vervielfach“: nur „Kehrwert“ trifft einmal (2020-OS-B1c, dort als Begriff einer anderen Aufgabe), alle übrigen null. Der Prüfweg ist vorher mit „Bruch“, „kürzen“, „Komma“ und „Prozent“ probiert worden und liefert dort zwanzig, zwei, fünf und einundfünfzig Treffer.
-109  Muster: Brüche stehen in der P10 fast nie als Rechenaufgabe, sondern als Wahrscheinlichkeit oder Anteil, den man am Ende kürzt und oft zusätzlich als Prozentsatz angibt; Dezimalzahlen fast immer als Geldbetrag oder Größe mit Einheit. Ein Ergebnis gilt in beiden Fällen erst als fertig, wenn es vollständig gekürzt oder in die verlangte Einheit gebracht ist.
-110  Zuordnung: keine eigenen Typen; Einheit 1 – kein Typ, liefert das Addieren und Subtrahieren von Brüchen für die Summenregel und das Gegenereignis (wahrscheinlichkeit.md); Einheit 2 – kein Typ, liefert die Differenz von Geldbeträgen (zuordnungen.md); Einheit 3 – kein Typ, liefert die Pfadregel und das Kürzen (wahrscheinlichkeit.md, daten.md) sowie Bruch mal Bruch als Vorrat, während die Kette für „Bruchteil einer Größe berechnen“ seit 2026-09-08e in brueche-dezimalzahlen.md Einheit 1 steht; Einheit 4 – kein Typ, liefert das Multiplizieren von Dezimalzahlen für die Kostenaufgaben (zuordnungen.md); Einheit 5 – kein Typ, liefert Punkt vor Strich und Klammer für „Termwert berechnen“ (rationale-zahlen.md) und für die Termprüfung 2015-OS-K2a (prozentrechnung.md).
-111  Zielmarke: keine aus einem eigenen P10-Typ; die Marken kommen aus den Nebenleistungen. Einheit 1 – drei Pfadwahrscheinlichkeiten mit verschiedenen Nennern addieren und kürzen, (1/2)² + (3/8)² + (1/8)² = 26/64 = 13/32 (2014-OS-K6c, Niveau II); daneben die dreigliedrige Summe 1/11 + 10/11 · 1/10 + 10/11 · 9/10 · 1/9 = 3/11 (2015-OS-K7d, Niveau II) und das Gegenereignis 1 − 3/36 = 33/36 = 11/12 (2026-FOR-K6c, Niveau II). Einheit 2 – die Differenz zweier Geldbeträge mit Komma, 13 680 € − 13 095 € = 585 € (2014-OS-K4d, Niveau II); sonst Maßstab der Lehrwerksaufgaben (Kl. 6 III 2, 4). Einheit 3 – drei Brüche nach der Pfadregel multiplizieren und das Ergebnis kürzen, 6/20 · 5/19 · 4/18 = 120/6840 = 1/57 (2019-OS-K6c, Niveau III); daneben 14/16 · 13/15 = 182/240 = 91/120 (2018-OS-K7c, Niveau III) und zwei Faktoren 4/5 · 1/4 = 1/5 (2024-OS-K5c, Niveau II). Einheit 4 – Menge mal Literpreis mit Wechsel zwischen Cent und Euro, 9 000 · 1,455 € = 13 095 € (2014-OS-K4c, Niveau II); daneben 16 · 0,14 ct = 2,24 ct, wobei die Einheit Cent bleiben muss (2024-OS-K2d, Niveau I) und 0,4² = 0,16 (2023-OS-B1f, Niveau I). Einheit 5 – Bruchterm mit Klammer auswerten, erst die Klammer, dann die Division: (8 + (−1))/(−2) = −3,5 (2021-OS-B1g, Niveau I); daneben die Prüfung dreier Terme zu einem Rabattsachtext, darunter 1/5 · (36 € + 7,50 €) (2015-OS-K2a, Niveau II).
+ 42
+ 43  ### Merkkasten
+ 44  Einheit 1 (Addieren, Subtrahieren):
+ 45      Gleicher Nenner: Zähler plus (oder minus), Nenner bleibt.      3/7 + 2/7 = 5/7
+ 46      Verschiedene Nenner: erst gleichnamig machen (erweitern), dann Zähler rechnen.      1/2 + 1/6 = 3/6 + 1/6 = 4/6 = 2/3
+ 47      Ergebnis kürzen; über ein Ganzes: 9/5 = 1 4/5.
+ 48      Formelsammlung: Bruchrechnung – Addition [FS]
+ 49  Quelle: [Serlo 50493] Überblick, sinngemäß; [MSK B4A] Streifen verfeinern.
+ 50
+ 51  Einheit 2 (Dezimalzahlen addieren, subtrahieren):
+ 52      Komma unter Komma schreiben, fehlende Stellen mit Nullen auffüllen, dann wie mit ganzen Zahlen rechnen.
+ 53        4,7 + 0,85 = 4,70 + 0,85 = 5,55      6,2 − 1,35 = 6,20 − 1,35 = 4,85
+ 54      Formelsammlung: Dezimalzahlen [FS]
+ 55  Quelle: [LS-AA Kl. 6 III 2]; [MSK D3A] Titel; eigene Formulierung.
+ 56
+ 57  Einheit 3 (Brüche multiplizieren, dividieren):
+ 58      Mal: Zähler mal Zähler, Nenner mal Nenner – vorher kürzen, wenn es geht. „von“ heißt mal.
+ 59        2/3 · 5/8 = 10/24 = 5/12      3/4 von 20 = 3/4 · 20 = 15
+ 60      Ganze Zahl als Bruch mit Nenner eins, dann wie Bruch mal Bruch.
+ 61        3 · 2/5 = 3/1 · 2/5 = 6/5
+ 62      Geteilt: mit dem Kehrbruch malnehmen (Zähler und Nenner tauschen).
+ 63        5/6 : 2/3 = 5/6 · 3/2 = 15/12 = 1 1/4      4 : 1/2 = 4 · 2 = 8
+ 64      Formelsammlung: Bruchrechnung – Multiplikation, Division [FS]
+ 65  Quelle: [Serlo 50493, 20314] sinngemäß; [Serlo 24083] Kehrwert.
+ 66
+ 67  Einheit 4 (Dezimalzahlen multiplizieren, dividieren):
+ 68      Mal 10, 100, 1000: Komma nach rechts; geteilt durch 10, 100: Komma nach links.      0,46 · 100 = 46      3,8 : 10 = 0,38
+ 69      Mal: ohne Komma rechnen, dann Kommastellen beider Zahlen zählen.      1,5 · 0,04 = 0,06 (15 · 4 = 60, drei Kommastellen)
+ 70      Geteilt: beim Teiler das Komma wegschieben, beim anderen genauso weit.      7,2 : 0,9 = 72 : 9 = 8
+ 71      Formelsammlung: Dezimalzahlen [FS]
+ 72  Quelle: [LS-AA Kl. 6 V 4–6]; [MSK D4A, D4B] Titel; eigene Formulierung.
+ 73
+ 74  Einheit 5 (Punkt vor Strich, Rechengesetze):
+ 75      Reihenfolge: Klammer zuerst, dann Punkt (mal, geteilt), dann Strich (plus, minus).
+ 76        1/2 + 1/4 · 2 = 1/2 + 1/2 = 1      (0,8 + 1,2) · 3 = 2 · 3 = 6
+ 77      Vorteile: Tauschen und Zusammenfassen erlaubt bei plus und mal.      0,25 · 13 · 4 = 0,25 · 4 · 13 = 13
+ 78      Formelsammlung: Rechengesetze [FS]
+ 79  Quelle: [RLP D] Punkt-vor-Strich, Klammerregeln; [LS-AA Kl. 6 III 3, V 7]; eigene Formulierung.
+ 80
+ 81  ### Typische Fehler
+ 82  - Zähler und Nenner getrennt addiert: 1/4 + 1/4 = 2/8. [MSK B4A 3.3; FD Padberg]
+ 83  - Anteile verschiedener Ganzer addiert („ein Viertel Kuchen plus ein Drittel Pizza“). [MSK B4A 3.2–3.3]
+ 84  - Beim Erweitern nur den Nenner geändert: 1/3 = 1/6; oder nur einen Bruch erweitert. [FD Padberg; MSK B2B]
+ 85  - Gemischte Zahl als Produkt gelesen: 2 1/2 = 2 · 1/2 = 1. [FD]
+ 86  - Beim Multiplizieren gleichnamig gemacht oder den Kehrbruch genommen; beim Dividieren den falschen Bruch umgedreht oder beide. [Serlo 82385 Hinweis; FD]
+ 87  - Bruch geteilt durch Zahl: Zähler geteilt statt Nenner mal (3/4 : 2 = 3/2). [FD]
+ 88  - Bruchteil einer Größe mit umgedrehtem Bruch: 3/4 von 1,2 kg als 1,2 : 3 · 4 = 1,6 kg. [P10 2018-OS-B1a]
+ 89  - „Multiplizieren macht größer, Dividieren kleiner“: 8 : 1/2 = 4 erwartet. [FD Padberg/Wartha]
+ 90  - Dezimalzahlen: Komma nicht untereinander (2,5 + 0,25 = 0,50); Kommastellen beim Multiplizieren nicht gezählt (0,3 · 0,3 = 0,9); 0,4² als 0,8 oder 1,6. [P10 2023-OS-B1f; LS-AA Kl. 6 V 5]
+ 91  - Division durch Dezimalzahl: Komma nur beim Teiler verschoben (4,8 : 0,2 = 4,8 : 2). [FD]
+ 92  - Cent und Euro vermischt: 0,14 ct als 0,14 € gerechnet; Cent nicht in Euro umgerechnet. [P10 2024-OS-K2d, 2014-OS-K4c]
+ 93  - Punkt vor Strich ignoriert, von links nach rechts gerechnet. [RLP D]
+ 94
+ 95  ### Für schwache Schüler
+ 96  Mindeststoff (D/E) [RLP]: alle fünf Einheiten sind D; innerhalb der Einheiten Mindeststoff: Einheit 1 gleichnamig und ein Nenner Vielfaches des anderen; Einheit 2 ganz; Einheit 3 Bruch mal Zahl, Bruch geteilt durch Zahl, „von“; Einheit 4 Kommaverschiebung, Dezimalzahl mal und geteilt durch natürliche Zahl; Einheit 5 Punkt vor Strich mit Dezimalzahlen. Vorrat: Hauptnenner mit beidseitigem Erweitern, gemischte Zahlen, Bruch durch Bruch, Dezimalzahl durch Dezimalzahl, Distributivgesetz mit Dezimalzahlen.
+ 97  Grundvorstellung (Blatt 0) [MSK B4A, D1A; MO]: Bruch: „Färbe zwei Fünftel und dann ein weiteres Fünftel im selben Streifen – wie viel ist gefärbt?“ (Zusammenfügen am Streifen, nicht rechnen). Dezimalzahl: „Trage sieben Zehntel und sieben Hundertstel als Dezimalzahlen in die Stellenwerttafel ein – welche ist größer?“. Wer ein Viertel plus ein Viertel zu zwei Achteln addiert oder sieben Hundertstel für größer als sieben Zehntel hält, braucht das vor dem Verfahren.
+ 98  Sprossen je Verfahrenstyp (Reihenfolge = Kette des Hauptblatts) [MSK, LS-AA, FD]:
+ 99  - Addieren/Subtrahieren (Einheit 1): am Streifen zusammenfügen (Vorstufe) → gleichnamig (4×) → Ergebnis kürzen → über ein Ganzes (gemischte Zahl) → ein Nenner Vielfaches des anderen (4×) → Hauptnenner und beide Erweiterungszahlen anschreiben: zu zwei Nennern nur den Hauptnenner und die beiden Faktoren angeben, nichts addieren → beide erweitern (Hauptnenner) → gemischte Zahlen → Prüfungshöhe: drei Pfadwahrscheinlichkeiten mit verschiedenen Nennern addieren und das Ergebnis kürzen, als Nebenleistung einer mehrstufigen Aufgabe (P10-Nebenleistung 2014-OS-K6c und 2015-OS-K7d, Niveau II; ebenso 2020-OS-K6c und 2017-OS-K6b, Niveau III); daneben das Gegenereignis als Eins minus einem Bruch (2026-FOR-K6c, Niveau II; 2014-OS-B1d, Niveau I). Der Typ liegt jeweils in wahrscheinlichkeit.md.
+100  - Dezimal addieren/subtrahieren (Einheit 2): Stellenwerttafel (Vorstufe) → gleich viele Stellen (4×) → Nullen anhängen → Übertrag → Größen mit Komma → Prüfungshöhe: die Differenz zweier Geldbeträge mit Komma bilden, als Nebenleistung einer Kostenaufgabe (P10-Nebenleistung 2014-OS-K4d, Niveau II – Typ und Original zuordnungen.md); im Lehrwerksmaßstab die Kassenzettel-Aufgabe mit Rückgeld.
+101  - Multiplizieren (Einheit 3): „von“ markieren (Vorstufe) → Bruch mal Zahl (4×) → Stammbruch von einem Bruch: ein Fünftel von drei Viertel heißt drei Viertel in fünf gleiche Teile, Nenner mal fünf (Vorrat) → Bruch mal Bruch → vorher kürzen → gemischte Zahl → Prüfungshöhe: drei Brüche mit absteigenden Zählern und Nennern nach der Pfadregel multiplizieren und das Ergebnis kürzen (P10-Nebenleistung 2019-OS-K6c, Niveau III; ebenso 2018-OS-K7c, Niveau III, und 2019-OS-K6b, Niveau II – Typ jeweils wahrscheinlichkeit.md); daneben zwei Brüche als Produkt (2024-OS-K5c, Niveau II) und im Lehrwerksmaßstab Bruch von Bruch in einer Sachaufgabe. Der Bruchteil einer Größe mit Komma (P10-Form) liegt in brueche-dezimalzahlen.md Einheit 1.
+102  - Dividieren (Einheit 3): Bruch geteilt durch Zahl (4×) → Kontrolle: Ergebnis mal Teiler gibt wieder die Ausgangszahl → Zahl geteilt durch Stammbruch („wie oft passt ein Drittel in fünf?“) → Bruch geteilt durch Bruch mit Kehrbruch (Vorrat) → kürzen → Prüfungshöhe: Sachaufgabe „wie viele Flaschen zu zwei Fünftel Liter aus sechs Liter“ im Lehrwerksmaßstab – kein P10-Original teilt durch einen Bruch, „Kehrbruch“ und „Kehrwert“ kommen in den Originalen als Verfahren nicht vor.
+103  - Dezimal multiplizieren/dividieren (Einheit 4): Kommaverschiebung mal zehn, mal hundert (4×) → geteilt durch zehn, durch hundert → Dezimalzahl mal natürliche Zahl → Kommastellen zählen (mal Dezimalzahl) → Ergebnis mit führenden Nullen → geteilt durch natürliche Zahl → geteilt durch Dezimalzahl → Prüfungshöhe: Menge mal Literpreis mit Wechsel zwischen Cent und Euro, Ergebnis in der verlangten Einheit (P10-Nebenleistung 2014-OS-K4c, Niveau II, und 2024-OS-K2d, Niveau I – Typ und Originale zuordnungen.md); daneben das Quadrat einer Dezimalzahl (2023-OS-B1f, Niveau I – brueche-dezimalzahlen.md).
+104  - Punkt vor Strich (Einheit 5): „Was rechne ich zuerst?“ – die Rechnung einkreisen, die zuerst dran ist; nichts rechnen [RLP D] (Vorstufe) → Punkt vor Strich mit natürlichen Zahlen (4×) → mit Dezimalzahlen → mit Brüchen → Klammer → Rechenvorteil → Prüfungshöhe: einen Bruchterm mit Klammer auswerten, erst die Klammer, dann die Division (P10-Nebenleistung 2021-OS-B1g und 2016-OS-B1i, Niveau I – Typ „Termwert berechnen“, rationale-zahlen.md); daneben drei Terme zu einem Rabattsachtext auf ihre Richtigkeit prüfen, darunter einer mit Bruch mal Klammersumme (2015-OS-K2a, Niveau II – prozentrechnung.md).
+105
+106  ### Prüfungsform (P10)
+107  Kein typen.csv-Thema und kein Original mit Hauptleistung aus diesem Eintrag [P10]. Die Prüfung verlangt das Rechnen mit Brüchen und Dezimalzahlen durchgehend als Nebenleistung, und zwar in weit mehr Aufgaben, als der Entwurf bis 11a nannte. Vier Stellen standen schon da: Dezimalzahlen multiplizieren in „Kosten aus Menge und Preis berechnen“ (Menge mal Literpreis mit Cent-Euro-Wechsel – 2024-OS-K2d, Niveau I; 2014-OS-K4c, Niveau II; die Differenz zweier Kraftstoffkosten in 2014-OS-K4d, Niveau II – alle drei zuordnungen.md), Bruch als Operator in „Bruchteil einer Größe berechnen“ (2018-OS-B1a und 2015-OS-B1h – brueche-dezimalzahlen.md), Brüche und Klammer in „Termwert berechnen“ (2021-OS-B1g, 2016-OS-B1i, 2026-FOR-B1g – rationale-zahlen.md) und das Quadrat einer Dezimalzahl in „Zahlen in verschiedenen Darstellungen vergleichen“ (2023-OS-B1f – brueche-dezimalzahlen.md).
+108  Der größte Bestand liegt jedoch bei den Wahrscheinlichkeiten, und er fehlte. **Brüche multiplizieren** (Pfadregel) verlangen dreizehn Originale: 2015-OS-K7d, 2017-OS-K6b, 2018-OS-K7c, 2019-OS-K6b, 2019-OS-K6c, 2024-OS-K5b, 2024-OS-K5c, 2025-OS-K3b, 2025-OS-K3c, 2025-OS-K3d, 2026-FOR-K6b, 2026-FOR-K6c, 2026-FOR-K6d – die Spitze sind drei Faktoren mit absteigenden Zählern und Nennern beim Ziehen ohne Zurücklegen (6/20 · 5/19 · 4/18 in 2019-OS-K6c; 14/16 · 13/15 in 2018-OS-K7c, beide Niveau III). **Brüche addieren** (Summenregel, auch ungleichnamig) verlangen vier: 2014-OS-K6c ((1/2)² + (3/8)² + (1/8)² = 26/64), 2015-OS-K7d (1/11 + 10/11 · 1/10 + 10/11 · 9/10 · 1/9), 2017-OS-K6b (1/6 + 5/6 · 1/5) und 2020-OS-K6c (15/216 + 1/216). **Eins minus einem Bruch** (Gegenereignis) verlangen drei: 2014-OS-B1d, 2015-OS-K7d, 2026-FOR-K6c. **Einen Bruch auf einen anderen Nenner bringen** verlangen neunzehn Originale, siebzehnmal Kürzen und zweimal Erweitern: 2014-OS-B1b, 2014-OS-B1d, 2014-OS-B1i, 2014-OS-K6b, 2014-OS-K6c, 2015-OS-K2a, 2015-OS-K7b, 2016-OS-B1f, 2016-OS-K5b, 2018-OS-K7b, 2018-OS-K7c, 2019-OS-K6c, 2020-OS-K6a, 2020-OS-K6b, 2020-OS-K6c, 2022-OS-B1f, 2026-FOR-K6a, 2026-FOR-K6b, 2026-FOR-K6c – von 4/6 = 2/3 bis 182/240 = 91/120 und 120/6840 = 1/57. Die Typen und Originale liegen in wahrscheinlichkeit.md, daten.md, prozentrechnung.md und brueche-dezimalzahlen.md; hier steht das Verfahren.
+109  Nicht verlangt wird: durch einen Bruch teilen, mit dem Kehrbruch rechnen, gleichnamig machen über einen Hauptnenner mit beidseitigem Erweitern, gemischte Zahlen. Suche in allen Feldern beider CSV-Dateien 2014–2026 nach „Kehrbruch“, „Kehrwert“, „gleichnamig“, „Hauptnenner“, „Bruchstrich“, „erweitern“, „gemischte Zahl“ und „vervielfach“: nur „Kehrwert“ trifft einmal (2020-OS-B1c, dort als Begriff einer anderen Aufgabe), alle übrigen null. Der Prüfweg ist vorher mit „Bruch“, „kürzen“, „Komma“ und „Prozent“ probiert worden und liefert dort zwanzig, zwei, fünf und einundfünfzig Treffer.
+110  Muster: Brüche stehen in der P10 fast nie als Rechenaufgabe, sondern als Wahrscheinlichkeit oder Anteil, den man am Ende kürzt und oft zusätzlich als Prozentsatz angibt; Dezimalzahlen fast immer als Geldbetrag oder Größe mit Einheit. Ein Ergebnis gilt in beiden Fällen erst als fertig, wenn es vollständig gekürzt oder in die verlangte Einheit gebracht ist.
+111  Zuordnung: keine eigenen Typen; Einheit 1 – kein Typ, liefert das Addieren und Subtrahieren von Brüchen für die Summenregel und das Gegenereignis (wahrscheinlichkeit.md); Einheit 2 – kein Typ, liefert die Differenz von Geldbeträgen (zuordnungen.md); Einheit 3 – kein Typ, liefert die Pfadregel und das Kürzen (wahrscheinlichkeit.md, daten.md) sowie Bruch mal Bruch als Vorrat, während die Kette für „Bruchteil einer Größe berechnen“ seit 2026-09-08e in brueche-dezimalzahlen.md Einheit 1 steht; Einheit 4 – kein Typ, liefert das Multiplizieren von Dezimalzahlen für die Kostenaufgaben (zuordnungen.md); Einheit 5 – kein Typ, liefert Punkt vor Strich und Klammer für „Termwert berechnen“ (rationale-zahlen.md) und für die Termprüfung 2015-OS-K2a (prozentrechnung.md).
+112  Zielmarke: keine aus einem eigenen P10-Typ; die Marken kommen aus den Nebenleistungen. Einheit 1 – drei Pfadwahrscheinlichkeiten mit verschiedenen Nennern addieren und kürzen, (1/2)² + (3/8)² + (1/8)² = 26/64 = 13/32 (2014-OS-K6c, Niveau II); daneben die dreigliedrige Summe 1/11 + 10/11 · 1/10 + 10/11 · 9/10 · 1/9 = 3/11 (2015-OS-K7d, Niveau II) und das Gegenereignis 1 − 3/36 = 33/36 = 11/12 (2026-FOR-K6c, Niveau II). Einheit 2 – die Differenz zweier Geldbeträge mit Komma, 13 680 € − 13 095 € = 585 € (2014-OS-K4d, Niveau II); sonst Maßstab der Lehrwerksaufgaben (Kl. 6 III 2, 4). Einheit 3 – drei Brüche nach der Pfadregel multiplizieren und das Ergebnis kürzen, 6/20 · 5/19 · 4/18 = 120/6840 = 1/57 (2019-OS-K6c, Niveau III); daneben 14/16 · 13/15 = 182/240 = 91/120 (2018-OS-K7c, Niveau III) und zwei Faktoren 4/5 · 1/4 = 1/5 (2024-OS-K5c, Niveau II). Einheit 4 – Menge mal Literpreis mit Wechsel zwischen Cent und Euro, 9 000 · 1,455 € = 13 095 € (2014-OS-K4c, Niveau II); daneben 16 · 0,14 ct = 2,24 ct, wobei die Einheit Cent bleiben muss (2024-OS-K2d, Niveau I) und 0,4² = 0,16 (2023-OS-B1f, Niveau I). Einheit 5 – Bruchterm mit Klammer auswerten, erst die Klammer, dann die Division: (8 + (−1))/(−2) = −3,5 (2021-OS-B1g, Niveau I); daneben die Prüfung dreier Terme zu einem Rabattsachtext, darunter 1/5 · (36 € + 7,50 €) (2015-OS-K2a, Niveau II).
 ````
 
 ## 2 Originale (38)

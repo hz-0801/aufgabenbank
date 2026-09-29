@@ -1,9 +1,9 @@
 # Mappe: rationale-zahlen
 
 Eintrag: hz-0801/mathe-nachhilfe, katalog/rationale-zahlen.md
-Katalog-Commit: 761321330add6ed255669afc1c4e11b846250dd5 (2026-09-25T11:16:56+02:00, „katalog: Marken-Zeilen je Lerneinheit, drei Einheiten ergänzt, marken-bau.py“; ermittelt über git log (GitHub-API gesperrt))
+Katalog-Commit: cebfd509ea71ae238b589537bd00b7fc306df06f (2026-09-28T21:59:03Z, „Katalog-Nachzug Teil 1: Sek I aus den Urteilen vom 28.09.“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-27 12:33 UTC
+Datum: 2026-09-29 10:18 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -47,68 +47,65 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 32  - Wert eines Terms mit Platzhalter berechnen (Vorzahl mal x plus Zahl, für einen gegebenen Einsetzwert) – Einheit 3 und 4. Thema Terme (terme.md). [RLP D]
 33  Erkennungsschritte (Vorstufe der Einheit, vor der sie stehen, nicht auf Blatt 0; eine Hauptnummer je Schritt):
 34  - „Vorzeichen oder Rechenzeichen?“ – jedes Minus in der Aufgabe markieren: V oder R. Vor Einheit 2. [RLP E; LS-AA Kl. 7 I 3]
-35  - Pfeil an der Zahlengeraden: „Zeichne den Pfeil von −1 um 7 nach rechts“ – nicht rechnen. Vor Einheit 2. [RLP E „Änderung eines Zustandes“]
-36  - Zeichen zusammenfassen: „Schreibe nur die Aufgabe ohne Klammern auf“ (8 − (−3) → 8 + 3). Vor Einheit 2. [Serlo 62045]
-37  - „Wie viele Minuszeichen?“ – Anzahl der negativen Faktoren zählen, Vorzeichen des Ergebnisses ankreuzen. Vor Einheit 3. [Serlo 62045]
-38  - „Was ist der Startwert, was die Änderung?“ – im Text markieren (Kontostand, Buchung). Vor Einheit 4. [RLP E]
-39
-40  ### Merkkasten
-41  Einheit 1 (Ordnen):
-42      Zahlengerade: links wird es kleiner. Jede negative Zahl ist kleiner als jede positive; von zwei negativen ist die mit dem größeren Betrag die kleinere.
-43        −7 < −2 < 0 < 1,5      Gegenzahl von −2 ist 2; Betrag |−7| = 7
-44      Formelsammlung: Zahlenmengen, Betrag [FS]
-45  Quelle: [RLP E] Betrag und Gegenzahl; eigene Formulierung.
-46
-47  Einheit 2 (Addieren, Subtrahieren):
-48      Zeichen zusammenfassen: gleiche Zeichen werden plus, verschiedene werden minus.
-49        9 − (−4) = 9 + 4 = 13      9 + (−4) = 9 − 4 = 5
-50      Dann an der Zahlengeraden: plus nach rechts, minus nach links.
-51        −6 + 10 = 4      −6 − 10 = −16
-52      Formelsammlung: Rechnen mit rationalen Zahlen [FS]
-53  Quelle: [Serlo 62045] Vorzeichen und Rechenzeichen, sinngemäß; [RLP E] Subtraktion als Addition der Gegenzahl.
-54
-55  Einheit 3 (Multiplizieren, Dividieren):
-56      Vorzeichenregel: gleiche Vorzeichen → plus, verschiedene → minus. Gilt für mal und geteilt.
-57        (−3) · 8 = −24      (−3) · (−8) = 24      24 : (−8) = −3
-58      Mehrere Faktoren: gerade Anzahl Minus → plus, ungerade → minus.      (−1) · (−1) · (−1) = −1
-59      Potenz: (−5)² = 25, aber −5² = −25 (das Minus gehört nicht zur Basis).
-60      Formelsammlung: Rechnen mit rationalen Zahlen [FS]
-61  Quelle: [Serlo 62045] Multiplikation über Permanenzreihe, sinngemäß; [P10 2015-OS-B1g] Regelform.
-62
-63  Einheit 4 (Terme, Sachaufgaben):
-64      Minusklammer: alle Zeichen in der Klammer drehen.      12 − (7 − 20) = 12 − 7 + 20 = 25
-65      Termwert: Zahl mit Klammer einsetzen, dann Punkt vor Strich.      4 · (y − 6) für y = −2: 4 · (−2 − 6) = 4 · (−8) = −32
-66      Sachaufgabe: Startwert plus Änderungen; Unterschied = größerer Wert minus kleinerer.      von −11 °C auf 3 °C: 3 − (−11) = 14 °C
-67      Formelsammlung: Rechengesetze, Klammerregeln [FS]
-68  Quelle: [RLP E] Zustand und Änderung, Unterschied; [P10 2026-FOR-B1g] Verfahren; eigene Formulierung.
-69
-70  ### Typische Fehler
-71  - Beträge statt Werte verglichen: −200 als größer als −150; −1/2 vor −0,512 geordnet; Mitte von −0,6 und −0,5 als −0,65. In Worten sagen die Schüler dazu „kleiner heißt näher an Null“ und halten −3 für kleiner als −7; die Regel ordnet nach dem Betrag und trifft beide Fälle. [P10 2015-OS-B1b, 2014-OS-B1h, 2020-OS-B1f; LISUM-PH Jg. 7, Reihe Rationale Zahlen, Block Vergleichen und Ordnen: „<“ bedeutet nicht mehr „näher an Null“]
-72  - Beim Addieren negativer Zahlen die Beträge subtrahiert: −2 − 3 = −1. [P10 2026-FOR-B1g]
-73  - Minus vor der Klammer oder in der Klammer übersehen: 8 + (−1) = 9; 2 + (−4) = 6. [P10 2021-OS-B1g, 2016-OS-B1i]
-74  - Vorzeichen des Ergebnisses beim Dividieren weggelassen: 7 : (−2) = 3,5; oder minus durch minus als minus: (−2) : (−2) = −1. [P10 2021-OS-B1g, 2016-OS-B1i]
-75  - Vorzeichenregel nicht als Regel erkannt: „kann man nicht entscheiden, weil die Zahlen fehlen“. [P10 2015-OS-B1g]
-76  - „Mehr als“ im Text → addiert statt zurückgerechnet. [P10 2017-OS-K2a]
-77  - Negative Zahl subtrahieren als Beträge subtrahieren: 5 − (−3) = 2. [FD; Serlo 62045]
-78  - Minusklammer nur beim ersten Glied gedreht: −(3 − 5) = −3 − 5. [FD; Thema Terme]
-79  - −2² als 4 gerechnet. [FD]
-80  - Vorzeichen und Rechenzeichen verwechselt: −3 − 5 als (−3) · (−5) gelesen; Zeichen „−−“ als Fehler gestrichen. [RLP E; FD]
-81  - An der Zahlengeraden −5 rechts von −3 eingetragen (Abstand als Größe gelesen). [FD Malle]
-82
-83  ### Für schwache Schüler
-84  Mindeststoff (D/E) [RLP]: alle vier Einheiten sind E; innerhalb: Einheit 1 ganze Zahlen ordnen, Gegenzahl, Betrag; Einheit 2 Zahlengerade und Zeichen zusammenfassen mit ganzen Zahlen; Einheit 3 Vorzeichenregel bei zwei Faktoren, Termwert mit ganzen Zahlen; Einheit 4 Kontostand und Unterschied. Vorrat: Brüche und Dezimalzahlen mit Vorzeichen, mehrere Faktoren, Potenzen mit negativer Basis, Minusklammer mit Termen, günstigste Preiskombination.
-85  Grundvorstellung (Blatt 0) [RLP E, MO]: Zahlengerade als Bild – „Trage eine negative und eine positive Zahl ein und kreise die kleinere ein“; Änderung als Pfeil – „Starte bei einer negativen Zahl und gehe nach rechts, wo landest du?“. Wer eine kleinere negative Zahl rechts von einer größeren setzt oder beim Addieren einer positiven Zahl den Pfeil nach links zeichnet, braucht das vor den Regeln.
-86  Sprossen je Verfahrenstyp (Reihenfolge = Kette des Hauptblatts) [LS-AA, FD]:
-87  - Ordnen (Einheit 1): Zahlengerade beschriften (Vorstufe) → ganze Zahlen eintragen (4×) → Gegenzahl und Betrag → zwei negative vergleichen → Dezimalzahlen und Brüche eintragen → gemischt ordnen → Prüfungshöhe: eine Zahl angeben, die eine Bedingung mit negativer Grenze erfüllt, offene Antwort mit vielen richtigen Lösungen (P10-Form 2015-OS-B1b, Niveau I); daneben die aufsteigende Reihe aus negativem Bruch, negativer Dezimalzahl, Dezimalzahl und Wurzel (2014-OS-B1h, Niveau I – Typ und Original brueche-dezimalzahlen.md, hier nur der negative Teil).
-88  - Addieren/Subtrahieren (Einheit 2): Pfeil an der Zahlengeraden (Vorstufe) → positive Zahl dazu oder weg, Start negativ (4×) → negative Zahl addieren mit Klammer → negative Zahl subtrahieren → Zeichen zusammenfassen gemischt (4×) → Unterschied zweier Zahlen → Dezimalzahlen → mehrere Summanden → Prüfungshöhe: die Rechnung in der Klammer eines Termwert-Originals – Summe zweier Zahlen mit verschiedenen Vorzeichen, Differenz mit negativem Ergebnis (erster Schritt von 2016-OS-B1i, 2021-OS-B1g und 2026-FOR-B1g, alle Niveau I). Einheit 2 trägt keinen eigenen P10-Typ; die Vorzeichenrechnung dahinter liegt in Einheit 3.
-89  - Multiplizieren/Dividieren (Einheit 3): Vorzeichen ankreuzen ohne Rechnung (Vorstufe) → plus mal minus (4×) → minus mal minus → dividieren → drei Faktoren → Potenz mit Klammer und ohne → Punkt vor Strich → Prüfungshöhe: Termwert eines Bruchterms mit zwei negativen Einsetzungen ohne Taschenrechner, Ergebnis mit Vorzeichen und Komma (P10-Form 2021-OS-B1g, Niveau I); daneben derselbe Term mit ganzzahligem Ergebnis (2016-OS-B1i, Niveau I), das Produkt einer Vorzahl mit einer Klammerdifferenz (2026-FOR-B1g, Niveau I) und die Vorzeichenregel als Ankreuzaufgabe (2015-OS-B1g, Niveau I).
-90  - Terme und Sachaufgaben (Einheit 4): Startwert und Änderung markieren (Vorstufe) → Kontostand nach einer Buchung (4×) → mehrere Buchungen → Unterschied zweier Zustände (Temperatur, Höhe) → Minusklammer → Termwert mit Klammer → Prüfungshöhe: aus einer Preisliste mit Familienkarte, Gruppenticket und Altersgrenzen die günstigste Kombination für eine gegebene Gruppe ermitteln und gegen die Alternativen abwägen (P10-Form 2016-OS-K2d, Niveau III, Vorrat); daneben als Basismarke den Ausgangswert aus einer Angabe „so viel mehr als“ zurückrechnen (2017-OS-K2a, Niveau I).
-91
-92  ### Prüfungsform (P10)
-93  Thema „Rationale Zahlen rechnen“ mit fünf Typen [P10]; sieben Originale mit diesem CSV-Thema, seit 11a jedes mit id genannt, alle mit Hilfsmitteln, kein Stern. „Termwert berechnen“ (drei Hauptoriginale, Basisaufgaben Niveau I: 5 · (x − 3) für x = −2, Ergebnis −25 – 2026-FOR-B1g; (a + b)/c für a = 8, b = −1, c = −2, Ergebnis −3,5 – 2021-OS-B1g; (a + b) : c für a = 2, b = −4, c = −2, Ergebnis 1 – 2016-OS-B1i). Alle drei verlangen zwei Schritte: die Rechnung in der Klammer, die zu Einheit 2 gehört, und die Vorzeichenrechnung dahinter, die zu Einheit 3 gehört; zugeordnet ist der Typ Einheit 3, weil dort die Prüfungshöhe liegt. „Vorzeichenregel anwenden“ (ein Hauptoriginal, Ankreuzen, Niveau I: „positive Zahl mal negative Zahl“ ist immer negativ, Distraktor „das kann man nicht entscheiden“ – 2015-OS-B1g). „Zahl zu Bedingung angeben“ (zwei Hauptoriginale, offene Antwort, Niveau I: eine Zahl größer als −150 – 2015-OS-B1b; eine Zahl zwischen 1/2 und 4/5 – 2014-OS-B1c). „Ausgangswert aus Differenz berechnen“ (ein Hauptoriginal, Kontext Niveau I, natürliche Zahlen: Geburten des Vorjahres, 682 069 − 8 512 = 673 557, Fehlerquelle addieren, weil „mehr“ im Text steht – 2017-OS-K2a). „Günstigste Preiskombination bestimmen“ (ein Hauptoriginal, Kontext Niveau III, vier Schritte: Eintrittspreise mit Familienkarte und Großeltern-Enkel-Ticket, Bedingungen nach Alter und Wochentag prüfen, vier Kombinationen vergleichen – 2016-OS-K2d; am 11a nachgetragen, bis dahin nur beschrieben und ohne id). Jeder der fünf Typen hat wenigstens ein Hauptoriginal.
-94  2014-OS-B1c trägt das CSV-Thema „Brüche und Dezimalzahlen“ und wird deshalb von brueche-dezimalzahlen.md geführt, während sein Typ hier bleibt: zwölfter Fall der Gliederungsregel „Typ in einer Datei, Original bei seinem CSV-Thema“, vollständige Fallliste in index.md. Beide Einträge nennen einander; die Aufgabe selbst gehört sachlich zu beiden, weil die Grenzen als Brüche gegeben sind und in Dezimalzahlen umgewandelt werden müssen. Angrenzend, mit Typ und Original in anderen Dateien: „Mitte zweier Zahlen bestimmen“ (2020-OS-B1f, Mitte von −0,6 und −0,5) und „Zahlen in verschiedenen Darstellungen vergleichen“ (2014-OS-B1h, aufsteigend mit −1/2 und −0,512) tragen das Thema „Brüche und Dezimalzahlen“ – brueche-dezimalzahlen.md Einheit 5; ihre negativen Zahlen sind hier Einheit 1 und stehen in deren Prüfungshöhe. Dazu „Lineare Gleichung lösen“ mit negativer Lösung (lineare-gleichungen.md) und Punkte in vier Quadranten (symmetrie-abbildungen.md, lineare-funktionen.md).
-95  Zuordnung: Einheit 1 – Zahl zu Bedingung angeben; Einheit 2 – kein Typ (die Rechnung in der Klammer ist erster Schritt der drei Termwert-Originale, der Typ selbst liegt in Einheit 3); Einheit 3 – Vorzeichenregel anwenden, Termwert berechnen; Einheit 4 – Ausgangswert aus Differenz berechnen, Günstigste Preiskombination bestimmen (Vorrat).
-96  Zielmarke: Einheit 1 – eine Zahl angeben, die eine Bedingung mit negativer Grenze erfüllt, offene Antwort (2015-OS-B1b, Basis, Niveau I); daneben als Ordnungsleistung die aufsteigende Reihe aus −1/2; 1,4; −0,512; √2 (2014-OS-B1h, Basis, Niveau I – Original bei brueche-dezimalzahlen.md) und eine Zahl zwischen 1/2 und 4/5 (2014-OS-B1c, Basis, Niveau I – Original ebenda). Einheit 2 – kein eigener P10-Typ; die Prüfung verlangt die Rechnung in der Klammer nur als ersten Schritt der Termwert-Originale (2 + (−4) = −2 in 2016-OS-B1i; 8 + (−1) = 7 in 2021-OS-B1g; −2 − 3 = −5 in 2026-FOR-B1g, alle Niveau I). Marke daher nach RLP E („Addition und Subtraktion als Änderung eines Zustandes“, „Subtraktion als Addition der Gegenzahl“) und LISUM-PH Jg. 7, Reihe Rationale Zahlen, Block „Addition und Subtraktion rationaler Zahlen“ (Pfeilbilder an der Zahlengeraden, Zahlenterme zu Pfeilbildern, Konto mit Eingängen und Abzügen). Einheit 3 – Termwert eines Bruchterms mit zwei negativen Einsetzungen ohne Taschenrechner, Ergebnis −3,5 mit Vorzeichen und Komma (2021-OS-B1g, Basis, Niveau I); daneben derselbe Term mit ganzzahligem Ergebnis 1 (2016-OS-B1i), das Produkt 5 · (x − 3) für x = −2 (2026-FOR-B1g) und die Vorzeichenregel als Ankreuzaufgabe (2015-OS-B1g), alle Basis, Niveau I. Einheit 4 – aus einer Preisliste mit Familienkarte, Großeltern-Enkel-Ticket und Altersgrenzen die günstigste Kombination für sechs Personen ermitteln und gegen die Alternativen 94 €, 102 € und 112 € abwägen, Ergebnis 76 € (2016-OS-K2d, Niveau III, vier Schritte); daneben als Basismarke der Ausgangswert aus „8 512 mehr als“ (2017-OS-K2a, Niveau I).
+35  - Zeichen zusammenfassen: „Schreibe nur die Aufgabe ohne Klammern auf“ (8 − (−3) → 8 + 3). Vor Einheit 2. [Serlo 62045]
+36
+37  ### Merkkasten
+38  Einheit 1 (Ordnen):
+39      Zahlengerade: links wird es kleiner. Jede negative Zahl ist kleiner als jede positive; von zwei negativen ist die mit dem größeren Betrag die kleinere.
+40        −7 < −2 < 0 < 1,5      Gegenzahl von −2 ist 2; Betrag |−7| = 7
+41      Formelsammlung: Zahlenmengen, Betrag [FS]
+42  Quelle: [RLP E] Betrag und Gegenzahl; eigene Formulierung.
+43
+44  Einheit 2 (Addieren, Subtrahieren):
+45      Zeichen zusammenfassen: gleiche Zeichen werden plus, verschiedene werden minus.
+46        9 − (−4) = 9 + 4 = 13      9 + (−4) = 9 − 4 = 5
+47      Dann an der Zahlengeraden: plus nach rechts, minus nach links.
+48        −6 + 10 = 4      −6 − 10 = −16
+49      Formelsammlung: Rechnen mit rationalen Zahlen [FS]
+50  Quelle: [Serlo 62045] Vorzeichen und Rechenzeichen, sinngemäß; [RLP E] Subtraktion als Addition der Gegenzahl.
+51
+52  Einheit 3 (Multiplizieren, Dividieren):
+53      Vorzeichenregel: gleiche Vorzeichen → plus, verschiedene → minus. Gilt für mal und geteilt.
+54        (−3) · 8 = −24      (−3) · (−8) = 24      24 : (−8) = −3
+55      Mehrere Faktoren: gerade Anzahl Minus → plus, ungerade → minus.      (−1) · (−1) · (−1) = −1
+56      Potenz: (−5)² = 25, aber −5² = −25 (das Minus gehört nicht zur Basis).
+57      Formelsammlung: Rechnen mit rationalen Zahlen [FS]
+58  Quelle: [Serlo 62045] Multiplikation über Permanenzreihe, sinngemäß; [P10 2015-OS-B1g] Regelform.
+59
+60  Einheit 4 (Terme, Sachaufgaben):
+61      Minusklammer: alle Zeichen in der Klammer drehen.      12 − (7 − 20) = 12 − 7 + 20 = 25
+62      Termwert: Zahl mit Klammer einsetzen, dann Punkt vor Strich.      4 · (y − 6) für y = −2: 4 · (−2 − 6) = 4 · (−8) = −32
+63      Sachaufgabe: Startwert plus Änderungen; Unterschied = größerer Wert minus kleinerer.      von −11 °C auf 3 °C: 3 − (−11) = 14 °C
+64      Formelsammlung: Rechengesetze, Klammerregeln [FS]
+65  Quelle: [RLP E] Zustand und Änderung, Unterschied; [P10 2026-FOR-B1g] Verfahren; eigene Formulierung.
+66
+67  ### Typische Fehler
+68  - Beträge statt Werte verglichen: −200 als größer als −150; −1/2 vor −0,512 geordnet; Mitte von −0,6 und −0,5 als −0,65. In Worten sagen die Schüler dazu „kleiner heißt näher an Null“ und halten −3 für kleiner als −7; die Regel ordnet nach dem Betrag und trifft beide Fälle. [P10 2015-OS-B1b, 2014-OS-B1h, 2020-OS-B1f; LISUM-PH Jg. 7, Reihe Rationale Zahlen, Block Vergleichen und Ordnen: „<“ bedeutet nicht mehr „näher an Null“]
+69  - Beim Addieren negativer Zahlen die Beträge subtrahiert: −2 − 3 = −1. [P10 2026-FOR-B1g]
+70  - Minus vor der Klammer oder in der Klammer übersehen: 8 + (−1) = 9; 2 + (−4) = 6. [P10 2021-OS-B1g, 2016-OS-B1i]
+71  - Vorzeichen des Ergebnisses beim Dividieren weggelassen: 7 : (−2) = 3,5; oder minus durch minus als minus: (−2) : (−2) = −1. [P10 2021-OS-B1g, 2016-OS-B1i]
+72  - Vorzeichenregel nicht als Regel erkannt: „kann man nicht entscheiden, weil die Zahlen fehlen“. [P10 2015-OS-B1g]
+73  - „Mehr als“ im Text → addiert statt zurückgerechnet. [P10 2017-OS-K2a]
+74  - Negative Zahl subtrahieren als Beträge subtrahieren: 5 − (−3) = 2. [FD; Serlo 62045]
+75  - Minusklammer nur beim ersten Glied gedreht: −(3 − 5) = −3 − 5. [FD; Thema Terme]
+76  - −2² als 4 gerechnet. [FD]
+77  - Vorzeichen und Rechenzeichen verwechselt: −3 − 5 als (−3) · (−5) gelesen; Zeichen „−−“ als Fehler gestrichen. [RLP E; FD]
+78  - An der Zahlengeraden −5 rechts von −3 eingetragen (Abstand als Größe gelesen). [FD Malle]
+79
+80  ### Für schwache Schüler
+81  Mindeststoff (D/E) [RLP]: alle vier Einheiten sind E; innerhalb: Einheit 1 ganze Zahlen ordnen, Gegenzahl, Betrag; Einheit 2 Zahlengerade und Zeichen zusammenfassen mit ganzen Zahlen; Einheit 3 Vorzeichenregel bei zwei Faktoren, Termwert mit ganzen Zahlen; Einheit 4 Kontostand und Unterschied. Vorrat: Brüche und Dezimalzahlen mit Vorzeichen, mehrere Faktoren, Potenzen mit negativer Basis, Minusklammer mit Termen, günstigste Preiskombination.
+82  Grundvorstellung (Blatt 0) [RLP E, MO]: Zahlengerade als Bild – „Trage eine negative und eine positive Zahl ein und kreise die kleinere ein“; Änderung als Pfeil – „Starte bei einer negativen Zahl und gehe nach rechts, wo landest du?“. Wer eine kleinere negative Zahl rechts von einer größeren setzt oder beim Addieren einer positiven Zahl den Pfeil nach links zeichnet, braucht das vor den Regeln.
+83  Sprossen je Verfahrenstyp (Reihenfolge = Kette des Hauptblatts) [LS-AA, FD]:
+84  - Ordnen (Einheit 1): Zahlengerade beschriften (Vorstufe) → ganze Zahlen eintragen (4×) → Gegenzahl und Betrag → zwei negative vergleichen → Dezimalzahlen und Brüche eintragen → gemischt ordnen → Prüfungshöhe: eine Zahl angeben, die eine Bedingung mit negativer Grenze erfüllt, offene Antwort mit vielen richtigen Lösungen (P10-Form 2015-OS-B1b, Niveau I); daneben die aufsteigende Reihe aus negativem Bruch, negativer Dezimalzahl, Dezimalzahl und Wurzel (2014-OS-B1h, Niveau I – Typ und Original brueche-dezimalzahlen.md, hier nur der negative Teil).
+85  - Addieren/Subtrahieren (Einheit 2): Pfeil an der Zahlengeraden – nur den Pfeil vom Startwert aus zeichnen („Zeichne den Pfeil von minus eins um sieben nach rechts“); nicht rechnen [RLP E „Änderung eines Zustandes“] (Vorstufe) → positive Zahl dazu oder weg, Start negativ (4×) → nur das Vorzeichen: ist die Summe größer oder kleiner als null? ankreuzen und mit den Beträgen begründen, nicht ausrechnen → negative Zahl addieren mit Klammer → negative Zahl subtrahieren → Zeichen zusammenfassen gemischt (4×) → Unterschied zweier Zahlen → Dezimalzahlen → mehrere Summanden → Prüfungshöhe: die Rechnung in der Klammer eines Termwert-Originals – Summe zweier Zahlen mit verschiedenen Vorzeichen, Differenz mit negativem Ergebnis (erster Schritt von 2016-OS-B1i, 2021-OS-B1g und 2026-FOR-B1g, alle Niveau I). Einheit 2 trägt keinen eigenen P10-Typ; die Vorzeichenrechnung dahinter liegt in Einheit 3.
+86  - Multiplizieren/Dividieren (Einheit 3): „Wie viele Minuszeichen?“ – die negativen Faktoren zählen und das Vorzeichen des Ergebnisses ankreuzen; nichts rechnen [Serlo 62045] (Vorstufe) → plus mal minus (4×) → minus mal minus → dividieren → drei Faktoren → Potenz mit Klammer und ohne → Punkt vor Strich → Prüfungshöhe: Termwert eines Bruchterms mit zwei negativen Einsetzungen ohne Taschenrechner, Ergebnis mit Vorzeichen und Komma (P10-Form 2021-OS-B1g, Niveau I); daneben derselbe Term mit ganzzahligem Ergebnis (2016-OS-B1i, Niveau I), das Produkt einer Vorzahl mit einer Klammerdifferenz (2026-FOR-B1g, Niveau I) und die Vorzeichenregel als Ankreuzaufgabe (2015-OS-B1g, Niveau I).
+87  - Terme und Sachaufgaben (Einheit 4): „Was ist der Startwert, was die Änderung?“ – im Text Startwert und Änderung markieren (Kontostand, Buchung); nichts rechnen [RLP E] (Vorstufe) → Kontostand nach einer Buchung (4×) → mehrere Buchungen → Unterschied zweier Zustände (Temperatur, Höhe) → Minusklammer → Termwert mit Klammer → Prüfungshöhe: aus einer Preisliste mit Familienkarte, Gruppenticket und Altersgrenzen die günstigste Kombination für eine gegebene Gruppe ermitteln und gegen die Alternativen abwägen (P10-Form 2016-OS-K2d, Niveau III, Vorrat); daneben als Basismarke den Ausgangswert aus einer Angabe „so viel mehr als“ zurückrechnen (2017-OS-K2a, Niveau I).
+88
+89  ### Prüfungsform (P10)
+90  Thema „Rationale Zahlen rechnen“ mit fünf Typen [P10]; sieben Originale mit diesem CSV-Thema, seit 11a jedes mit id genannt, alle mit Hilfsmitteln, kein Stern. „Termwert berechnen“ (drei Hauptoriginale, Basisaufgaben Niveau I: 5 · (x − 3) für x = −2, Ergebnis −25 – 2026-FOR-B1g; (a + b)/c für a = 8, b = −1, c = −2, Ergebnis −3,5 – 2021-OS-B1g; (a + b) : c für a = 2, b = −4, c = −2, Ergebnis 1 – 2016-OS-B1i). Alle drei verlangen zwei Schritte: die Rechnung in der Klammer, die zu Einheit 2 gehört, und die Vorzeichenrechnung dahinter, die zu Einheit 3 gehört; zugeordnet ist der Typ Einheit 3, weil dort die Prüfungshöhe liegt. „Vorzeichenregel anwenden“ (ein Hauptoriginal, Ankreuzen, Niveau I: „positive Zahl mal negative Zahl“ ist immer negativ, Distraktor „das kann man nicht entscheiden“ – 2015-OS-B1g). „Zahl zu Bedingung angeben“ (zwei Hauptoriginale, offene Antwort, Niveau I: eine Zahl größer als −150 – 2015-OS-B1b; eine Zahl zwischen 1/2 und 4/5 – 2014-OS-B1c). „Ausgangswert aus Differenz berechnen“ (ein Hauptoriginal, Kontext Niveau I, natürliche Zahlen: Geburten des Vorjahres, 682 069 − 8 512 = 673 557, Fehlerquelle addieren, weil „mehr“ im Text steht – 2017-OS-K2a). „Günstigste Preiskombination bestimmen“ (ein Hauptoriginal, Kontext Niveau III, vier Schritte: Eintrittspreise mit Familienkarte und Großeltern-Enkel-Ticket, Bedingungen nach Alter und Wochentag prüfen, vier Kombinationen vergleichen – 2016-OS-K2d; am 11a nachgetragen, bis dahin nur beschrieben und ohne id). Jeder der fünf Typen hat wenigstens ein Hauptoriginal.
+91  2014-OS-B1c trägt das CSV-Thema „Brüche und Dezimalzahlen“ und wird deshalb von brueche-dezimalzahlen.md geführt, während sein Typ hier bleibt: zwölfter Fall der Gliederungsregel „Typ in einer Datei, Original bei seinem CSV-Thema“, vollständige Fallliste in index.md. Beide Einträge nennen einander; die Aufgabe selbst gehört sachlich zu beiden, weil die Grenzen als Brüche gegeben sind und in Dezimalzahlen umgewandelt werden müssen. Angrenzend, mit Typ und Original in anderen Dateien: „Mitte zweier Zahlen bestimmen“ (2020-OS-B1f, Mitte von −0,6 und −0,5) und „Zahlen in verschiedenen Darstellungen vergleichen“ (2014-OS-B1h, aufsteigend mit −1/2 und −0,512) tragen das Thema „Brüche und Dezimalzahlen“ – brueche-dezimalzahlen.md Einheit 5; ihre negativen Zahlen sind hier Einheit 1 und stehen in deren Prüfungshöhe. Dazu „Lineare Gleichung lösen“ mit negativer Lösung (lineare-gleichungen.md) und Punkte in vier Quadranten (symmetrie-abbildungen.md, lineare-funktionen.md).
+92  Zuordnung: Einheit 1 – Zahl zu Bedingung angeben; Einheit 2 – kein Typ (die Rechnung in der Klammer ist erster Schritt der drei Termwert-Originale, der Typ selbst liegt in Einheit 3); Einheit 3 – Vorzeichenregel anwenden, Termwert berechnen; Einheit 4 – Ausgangswert aus Differenz berechnen, Günstigste Preiskombination bestimmen (Vorrat).
+93  Zielmarke: Einheit 1 – eine Zahl angeben, die eine Bedingung mit negativer Grenze erfüllt, offene Antwort (2015-OS-B1b, Basis, Niveau I); daneben als Ordnungsleistung die aufsteigende Reihe aus −1/2; 1,4; −0,512; √2 (2014-OS-B1h, Basis, Niveau I – Original bei brueche-dezimalzahlen.md) und eine Zahl zwischen 1/2 und 4/5 (2014-OS-B1c, Basis, Niveau I – Original ebenda). Einheit 2 – kein eigener P10-Typ; die Prüfung verlangt die Rechnung in der Klammer nur als ersten Schritt der Termwert-Originale (2 + (−4) = −2 in 2016-OS-B1i; 8 + (−1) = 7 in 2021-OS-B1g; −2 − 3 = −5 in 2026-FOR-B1g, alle Niveau I). Marke daher nach RLP E („Addition und Subtraktion als Änderung eines Zustandes“, „Subtraktion als Addition der Gegenzahl“) und LISUM-PH Jg. 7, Reihe Rationale Zahlen, Block „Addition und Subtraktion rationaler Zahlen“ (Pfeilbilder an der Zahlengeraden, Zahlenterme zu Pfeilbildern, Konto mit Eingängen und Abzügen). Einheit 3 – Termwert eines Bruchterms mit zwei negativen Einsetzungen ohne Taschenrechner, Ergebnis −3,5 mit Vorzeichen und Komma (2021-OS-B1g, Basis, Niveau I); daneben derselbe Term mit ganzzahligem Ergebnis 1 (2016-OS-B1i), das Produkt 5 · (x − 3) für x = −2 (2026-FOR-B1g) und die Vorzeichenregel als Ankreuzaufgabe (2015-OS-B1g), alle Basis, Niveau I. Einheit 4 – aus einer Preisliste mit Familienkarte, Großeltern-Enkel-Ticket und Altersgrenzen die günstigste Kombination für sechs Personen ermitteln und gegen die Alternativen 94 €, 102 € und 112 € abwägen, Ergebnis 76 € (2016-OS-K2d, Niveau III, vier Schritte); daneben als Basismarke der Ausgangswert aus „8 512 mehr als“ (2017-OS-K2a, Niveau I).
 ````
 
 ## 2 Originale (10)

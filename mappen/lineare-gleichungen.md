@@ -1,9 +1,9 @@
 # Mappe: lineare-gleichungen
 
 Eintrag: hz-0801/mathe-nachhilfe, katalog/lineare-gleichungen.md
-Katalog-Commit: 761321330add6ed255669afc1c4e11b846250dd5 (2026-09-25T11:16:56+02:00, „katalog: Marken-Zeilen je Lerneinheit, drei Einheiten ergänzt, marken-bau.py“; ermittelt über git log (GitHub-API gesperrt))
+Katalog-Commit: cebfd509ea71ae238b589537bd00b7fc306df06f (2026-09-28T21:59:03Z, „Katalog-Nachzug Teil 1: Sek I aus den Urteilen vom 28.09.“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-27 12:32 UTC
+Datum: 2026-09-29 10:17 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -46,59 +46,58 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 31  Erkennungsschritte (Vorstufe der Einheit, vor der sie stehen, nicht auf Blatt 0; eine Hauptnummer je Schritt):
 32  - Umkehroperation benennen: „Welche Rechnung macht eine Addition rückgängig?" (plus ↔ minus, mal ↔ geteilt). Vor Einheit 1 und 2.
 33  - „Was steht bei x?" – Vorzahl und Zeichen bei x lesen (negative Vorzahl, x durch eine Zahl geteilt). Vor Einheit 2.
-34  - Nur die Umformung anschreiben: „Schreibe hinter den Strich, was x allein stellt" (einschrittige Gleichung mit leerem Strich). Vor Einheit 2.
-35  - Reihenfolge bestimmen: „Erst Strich, dann Punkt – welche Umformung zuerst?" Vor Einheit 2 (zweischrittig).
-36  - Seite mit weniger x finden: „Auf welcher Seite steht weniger x?" Vor Einheit 3.
-37
-38  ### Merkkasten
-39  Einheit 2 (Äquivalenzumformungen):
-40      Umformen: Beide Seiten gleich behandeln – dann bleibt die Lösung gleich.
-41        +7 ↔ −7      ·4 ↔ :4      x + 7 = 12 | −7 → x = 5
-42      Reihenfolge: erst Plus und Minus wegbringen, dann Mal und Geteilt.
-43        2x + 5 = 13 | −5 → 2x = 8 | :2 → x = 4
-44      Probe: Lösung einsetzen, beide Seiten ausrechnen – gleich? (wA)
-45      Formelsammlung: Gleichungen – Äquivalenzumformungen [FS]
-46  Quelle: [Serlo 82834] „Strich- vor Punktäquivalenz", sinngemäß. Der Kasten hat drei Zeilen Regeltext mit Verb – das ist bei diesem Thema die Lehrbuchform (Merkkasten), nicht die Formelform; die Zahlenbeispiele daneben sind Pflicht.
-47
-48  Einheit 3 (Klammern, Brüche, Sonderfälle):
-49      x auf beiden Seiten: erst alle x auf eine Seite (die mit mehr x), dann Zahlen auf die andere.
-50        5x + 2 = 3x + 10 | −3x → 2x + 2 = 10
-51      Klammern zuerst auflösen, dann zusammenfassen, dann umformen.
-52      Brüche: mit dem Hauptnenner malnehmen.      x/3 + 2 = 4 | ·3 → x + 6 = 12
-53      Sonderfälle: 0 = 5 → keine Lösung   0 = 0 → jede Zahl ist Lösung
-54      Formelsammlung: Gleichungen [FS]
-55
-56  Einheit 4 (Aufstellen):
-57      Gleichung aus Text: Unbekannte festlegen (x = …), Text in Term übersetzen, Gleichung lösen, Antwort mit Einheit.
-58        „Das Dreifache einer Zahl, vermindert um 4, ist 11": 3x − 4 = 11
-59      Formeln umstellen: wie eine Gleichung – nach der gesuchten Größe auflösen.      U = 2 · (a + b) → a = U : 2 − b
-60      Formelsammlung: die jeweilige Formel (Umfang, Fläche) [FS]
-61
-62  ### Typische Fehler
-63  - Seite wechseln ohne Umkehr: x + 5 = 9 → x = 9 + 5. [FD Malle „Transposing"]
-64  - Nur ein Glied dividiert: 2x + 6 = 10 | :2 → x + 6 = 5. [FD]
-65  - Umkehroperation vertauscht: 2x = 12 | −2 → x = 10. [FD; Glg-Lauf 2026-09-08, Aufgabe 6a]
-66  - Negative Vorzahl ignoriert: −x = 5 → x = 5. [FD]
-67  - Probe weggelassen oder mit falscher Seite gerechnet. [RLP E „Prüfen einer Lösung"]
-68  - Beim Zusammenfassen vor dem Umformen Zahlen und x-Glieder vermischt: 3x + 4 + 2x = 9x. [Thema Terme]
-69  - Minusklammer in der Gleichung falsch aufgelöst: 10 − (x − 2) = 10 − x − 2. [Thema Terme]
-70  - Sonderfall als „x = 0" gedeutet: aus 0 = 0 folgt nicht x = 0. [FD]
-71  - Beim Aufstellen: „um 4 vermindert" als 4 − x; „das Dreifache von x + 2" ohne Klammer. [P10 Typ „Term zu Sachtext angeben", Distraktoren]
-72
-73  ### Für schwache Schüler
-74  Mindeststoff (D/E) [RLP]: Einheit 1 ganz; Einheit 2 ganz (Äquivalenzumformungen sind E, Probe ist E); Einheit 3 nur x beidseitig und Zusammenfassen; Klammern, Brüche, Sonderfälle sind F; Einheit 4 einfache Zahlenrätsel und Formel umstellen (E).
-75  Grundvorstellung (Blatt 0) [MO, INKL]: Gleichung als Waage – „Zeichne die Waage zu einer zweischrittigen Gleichung" und „Welche Gleichung gehört zur Waage?"; Lösung als Zahl, die die Aussage wahr macht: Tabelle x / linke Seite / rechte Seite / wahr-falsch für drei kleine Einsetzwerte. Wer die Gleichung als Rechenauftrag liest („links steht eine Rechnung, rechts ihr Ergebnis"), braucht das vor dem Umformen.
-76  Sprossen je Verfahrenstyp [INKL, LS, FD]:
-77  - Lösung prüfen (Einheit 1): Zahl einsetzen, eine Rechenoperation (4×) → zweischrittig → wA/fA entscheiden gemischt → x beidseitig → Prüfungshöhe: mit negativer Zahl.
-78  - Durch Probieren lösen (Einheit 1): Tabelle mit vorgegebenen Kandidaten (3×) → eigene Kandidaten wählen und eingrenzen → Umkehroperation ohne Strich („welche Zahl plus fünf ergibt neun?“) → die Lösung als die Zahl benennen, die die Aussage wahr macht → Prüfungshöhe: kein P10-Original; Zielmarke nach RLP E („Lösen linearer Gleichungen durch systematisches Probieren“) und LISUM-PH Jahrgangsstufe sieben, Block „Mit Gleichungen umgehen“ („Lösen durch systematisches Probieren, auch mit Tabellenkalkulation“): zu einer einschrittigen Gleichung eigene Kandidaten in eine Tabelle eintragen, die Lösung nennen und mit der Probe bestätigen. Das grafische Lösen ist amtlich der Jahrgangsstufe acht und den linearen Funktionen zugewiesen und deshalb hier keine Zielmarke.
-79  - Umformen (Einheit 2): Umformung nur anschreiben (Vorstufe, Blatt 0) → einschrittig plus/minus (4×) → einschrittig mal/geteilt → negative Lösung → zweischrittig erst Strich dann Punkt (4×, mit Probe [INKL]) → negative Vorzahl → Vorzahl als Bruch → Umkehrung: Gleichung zu gegebener Lösung → Prüfungshöhe: zweischrittig mit negativer Lösung und Probe.
-80  - x beidseitig (Einheit 3): erst Seite mit weniger x finden (Vorstufe) → x nur rechts wegnehmen (4×) → x beidseitig mit Zahlen beidseitig → vorher zusammenfassen → Klammer → Bruch → Sonderfälle → Prüfungshöhe: Klammer und x beidseitig.
-81  - Aufstellen (Einheit 4): passende Gleichung ankreuzen (3×) [INKL] → Zahlenrätsel einschrittig → zweischrittig → Alter/Geld → Geometrie mit Formel (geg./ges./F./R. [INKL]) → Prüfungshöhe: Sachverhalt mit Klammer (P10-Form).
-82
-83  ### Prüfungsform (P10)
-84  Thema „Lineare Gleichungen" mit drei Typen: „Lineare Gleichung lösen" (Aufgabe 1, einfache Umformung), „Lösung durch Einsetzen prüfen", „Lineare Gleichung aus Sachverhalt aufstellen" (Kontextaufgabe, auch mit Klammer: Preis · (Anzahl + x)). Originale: „Lineare Gleichung lösen" dreimal als Basisaufgabe, jedes Mal mit Klammer – 2020-OS-B1e (2(x − 4) = 6), 2023-OS-B1e (3 · (x − 8) + 2 = 2) und 2024-OS-B1d (2 · (x − 6,5) = 0, Lösung gleich der Zahl in der Klammer). „Lineare Gleichung aus Sachverhalt aufstellen" zweimal als Kontextaufgabe – 2018-OS-K3b (Umfrage mit bekannten Anzahlen, Pasta gleich dem Dreifachen von Salat) und 2020-OS-K2e (Stern, Niveau II: 12 · (520 + x) = 7920, die Klammer trägt die Aufgabe). „Lösung durch Einsetzen prüfen" hat in diesem Thema die Originale 2018-OS-B1c und 2022-OS-B1c; das quadratische 2025-OS-B1h führt quadratische-gleichungen.md (Typ hier, Original dort, Befund 08i). Umgekehrt seit 10h: 2016-OS-B1b und 2021-OS-B1e tragen das CSV-Thema „Lineare Gleichungen" und werden deshalb hier geführt, während ihr Typ „Term zu Sachtext angeben" zum Thema „Terme umformen" gehört und bei terme.md Einheit 1 bleibt – beide lassen zu einem Satz („das Achtfache einer Zahl, vermindert um zwölf") die passende Gleichung angeben und gehören damit sachlich zu Einheit 4. Angrenzend: „Lineares Gleichungssystem aufstellen/lösen", „Gleichung im Sachzusammenhang deuten". [P10] Zielmarke Einheit 2: eine zweischrittige Gleichung in Prüfungsform mit Probe; Einheit 4: Gleichung aus Sachverhalt mit Klammer.
-85  Zielmarke: Einheit 1 – zu einer gegebenen Gleichung entscheiden, ob eine Zahl Lösung ist, Ergebnis mit (wA)/(fA) (P10-Typ „Lösung durch Einsetzen prüfen“); das Probieren daneben nach RLP E und LISUM-PH ohne Original. Einheit 2 – eine zweischrittige Gleichung mit Klammer in Prüfungsform lösen und die Probe führen (2020-OS-B1e, 2023-OS-B1e, 2024-OS-B1d, alle Basis, Niveau I). Einheit 3 – eine Gleichung mit Klammer und x auf beiden Seiten lösen und die Probe führen; kein Original, Marke nach RLP F und LISUM-PH Jg. 8 („Lösen von Gleichungen mit Klammern“, „Variablen auf beiden Seiten“). Einheit 4 – Gleichung aus einem Sachverhalt mit Klammer aufstellen und lösen (2020-OS-K2e, Stern, Niveau II, drei Punkte: aus „so viele Besucher mehr“ die Gleichung 12 · (520 + x) = 7920 bilden); daneben eine Gleichung aus einer Tabelle mit einer Vielfachenbedingung (2018-OS-K3b) und – in den Fällen, deren Typ bei terme.md liegt – die Gleichung zu einem Satz ankreuzen statt aufstellen (2016-OS-B1b, 2021-OS-B1e).
-86  Zuordnung: Einheit 1 – Lösung durch Einsetzen prüfen (2018-OS-B1c, 2022-OS-B1c; das quadratische Original 2025-OS-B1h bei quadratische-gleichungen.md); Einheit 2 – Lineare Gleichung lösen (2020-OS-B1e, 2023-OS-B1e, 2024-OS-B1d); Einheit 3 – kein Typ (Verfahren der Einheit 2 in schwererer Form); Einheit 4 – Lineare Gleichung aus Sachverhalt aufstellen (2018-OS-K3b, 2020-OS-K2e), dazu die Originale 2016-OS-B1b und 2021-OS-B1e, deren Typ „Term zu Sachtext angeben“ bei terme.md liegt.
+34  - Reihenfolge bestimmen: „Erst Strich, dann Punkt – welche Umformung zuerst?" Vor Einheit 2 (zweischrittig).
+35  - „Was ist als Nächstes dran?“ – zu einer Gleichung ankreuzen: Klammer auflösen, zusammenfassen, x auf eine Seite bringen, x allein stellen; nichts rechnen. Vor Einheit 3.
+36
+37  ### Merkkasten
+38  Einheit 2 (Äquivalenzumformungen):
+39      Umformen: Beide Seiten gleich behandeln – dann bleibt die Lösung gleich.
+40        +7 ↔ −7      ·4 ↔ :4      x + 7 = 12 | −7 → x = 5
+41      Reihenfolge: erst Plus und Minus wegbringen, dann Mal und Geteilt.
+42        2x + 5 = 13 | −5 → 2x = 8 | :2 → x = 4
+43      Probe: Lösung einsetzen, beide Seiten ausrechnen – gleich? (wA)
+44      Formelsammlung: Gleichungen – Äquivalenzumformungen [FS]
+45  Quelle: [Serlo 82834] „Strich- vor Punktäquivalenz", sinngemäß. Der Kasten hat drei Zeilen Regeltext mit Verb – das ist bei diesem Thema die Lehrbuchform (Merkkasten), nicht die Formelform; die Zahlenbeispiele daneben sind Pflicht.
+46
+47  Einheit 3 (Klammern, Brüche, Sonderfälle):
+48      x auf beiden Seiten: erst alle x auf eine Seite (die mit mehr x), dann Zahlen auf die andere.
+49        5x + 2 = 3x + 10 | −3x → 2x + 2 = 10
+50      Klammern zuerst auflösen, dann zusammenfassen, dann umformen.
+51      Brüche: mit dem Hauptnenner malnehmen.      x/3 + 2 = 4 | ·3 → x + 6 = 12
+52      Sonderfälle: 0 = 5 → keine Lösung   0 = 0 → jede Zahl ist Lösung
+53      Formelsammlung: Gleichungen [FS]
+54
+55  Einheit 4 (Aufstellen):
+56      Gleichung aus Text: Unbekannte festlegen (x = …), Text in Term übersetzen, Gleichung lösen, Antwort mit Einheit.
+57        „Das Dreifache einer Zahl, vermindert um 4, ist 11": 3x − 4 = 11
+58      Formeln umstellen: wie eine Gleichung – nach der gesuchten Größe auflösen.      U = 2 · (a + b) → a = U : 2 − b
+59      Formelsammlung: die jeweilige Formel (Umfang, Fläche) [FS]
+60
+61  ### Typische Fehler
+62  - Seite wechseln ohne Umkehr: x + 5 = 9 → x = 9 + 5. [FD Malle „Transposing"]
+63  - Nur ein Glied dividiert: 2x + 6 = 10 | :2 → x + 6 = 5. [FD]
+64  - Umkehroperation vertauscht: 2x = 12 | −2 → x = 10. [FD; Glg-Lauf 2026-09-08, Aufgabe 6a]
+65  - Negative Vorzahl ignoriert: −x = 5 → x = 5. [FD]
+66  - Probe weggelassen oder mit falscher Seite gerechnet. [RLP E „Prüfen einer Lösung"]
+67  - Beim Zusammenfassen vor dem Umformen Zahlen und x-Glieder vermischt: 3x + 4 + 2x = 9x. [Thema Terme]
+68  - Minusklammer in der Gleichung falsch aufgelöst: 10 − (x − 2) = 10 − x − 2. [Thema Terme]
+69  - Sonderfall als „x = 0" gedeutet: aus 0 = 0 folgt nicht x = 0. [FD]
+70  - Beim Aufstellen: „um 4 vermindert" als 4 − x; „das Dreifache von x + 2" ohne Klammer. [P10 Typ „Term zu Sachtext angeben", Distraktoren]
+71
+72  ### Für schwache Schüler
+73  Mindeststoff (D/E) [RLP]: Einheit 1 ganz; Einheit 2 ganz (Äquivalenzumformungen sind E, Probe ist E); Einheit 3 nur x beidseitig und Zusammenfassen; Klammern, Brüche, Sonderfälle sind F; Einheit 4 einfache Zahlenrätsel und Formel umstellen (E).
+74  Grundvorstellung (Blatt 0) [MO, INKL]: Gleichung als Waage – „Zeichne die Waage zu einer zweischrittigen Gleichung" und „Welche Gleichung gehört zur Waage?"; Lösung als Zahl, die die Aussage wahr macht: Tabelle x / linke Seite / rechte Seite / wahr-falsch für drei kleine Einsetzwerte. Wer die Gleichung als Rechenauftrag liest („links steht eine Rechnung, rechts ihr Ergebnis"), braucht das vor dem Umformen.
+75  Sprossen je Verfahrenstyp [INKL, LS, FD]:
+76  - Lösung prüfen (Einheit 1): Zahl einsetzen, eine Rechenoperation (4×) → zweischrittig → wA/fA entscheiden gemischt → x beidseitig → Prüfungshöhe: mit negativer Zahl.
+77  - Durch Probieren lösen (Einheit 1): Tabelle mit vorgegebenen Kandidaten (3×) → eigene Kandidaten wählen und eingrenzen → Umkehroperation ohne Strich („welche Zahl plus fünf ergibt neun?“) → die Lösung als die Zahl benennen, die die Aussage wahr macht → Prüfungshöhe: kein P10-Original; Zielmarke nach RLP E („Lösen linearer Gleichungen durch systematisches Probieren“) und LISUM-PH Jahrgangsstufe sieben, Block „Mit Gleichungen umgehen“ („Lösen durch systematisches Probieren, auch mit Tabellenkalkulation“): zu einer einschrittigen Gleichung eigene Kandidaten in eine Tabelle eintragen, die Lösung nennen und mit der Probe bestätigen. Das grafische Lösen ist amtlich der Jahrgangsstufe acht und den linearen Funktionen zugewiesen und deshalb hier keine Zielmarke.
+78  - Umformen (Einheit 2): Umformung nur anschreiben: „Schreibe hinter den Strich, was x allein stellt“, einschrittige Gleichung mit leerem Strich (Vorstufe, Blatt 0) → einschrittig plus/minus (4×) → einschrittig mal/geteilt → negative Lösung → zweischrittig erst Strich dann Punkt (4×, mit Probe [INKL]) → x steht hinter dem Minus (zwanzig minus x gleich dreizehn) → negative Vorzahl → Vorzahl als Bruch → Umkehrung: Gleichung zu gegebener Lösung → Prüfungshöhe: zweischrittig mit negativer Lösung und Probe.
+79  - x beidseitig (Einheit 3): erst Seite mit weniger x finden: „Auf welcher Seite steht weniger x?“ (Vorstufe) → x nur rechts wegnehmen (4×) → x beidseitig mit Zahlen beidseitig → vorher zusammenfassen → Klammer → Bruch → Sonderfälle → Prüfungshöhe: Klammer und x beidseitig.
+80  - Aufstellen (Einheit 4): passende Gleichung ankreuzen (3×) [INKL] → Zahlenrätsel einschrittig → zweischrittig → Alter/Geld → Geometrie mit Formel (geg./ges./F./R. [INKL]) → Prüfungshöhe: Sachverhalt mit Klammer (P10-Form).
+81
+82  ### Prüfungsform (P10)
+83  Thema „Lineare Gleichungen" mit drei Typen: „Lineare Gleichung lösen" (Aufgabe 1, einfache Umformung), „Lösung durch Einsetzen prüfen", „Lineare Gleichung aus Sachverhalt aufstellen" (Kontextaufgabe, auch mit Klammer: Preis · (Anzahl + x)). Originale: „Lineare Gleichung lösen" dreimal als Basisaufgabe, jedes Mal mit Klammer – 2020-OS-B1e (2(x − 4) = 6), 2023-OS-B1e (3 · (x − 8) + 2 = 2) und 2024-OS-B1d (2 · (x − 6,5) = 0, Lösung gleich der Zahl in der Klammer). „Lineare Gleichung aus Sachverhalt aufstellen" zweimal als Kontextaufgabe – 2018-OS-K3b (Umfrage mit bekannten Anzahlen, Pasta gleich dem Dreifachen von Salat) und 2020-OS-K2e (Stern, Niveau II: 12 · (520 + x) = 7920, die Klammer trägt die Aufgabe). „Lösung durch Einsetzen prüfen" hat in diesem Thema die Originale 2018-OS-B1c und 2022-OS-B1c; das quadratische 2025-OS-B1h führt quadratische-gleichungen.md (Typ hier, Original dort, Befund 08i). Umgekehrt seit 10h: 2016-OS-B1b und 2021-OS-B1e tragen das CSV-Thema „Lineare Gleichungen" und werden deshalb hier geführt, während ihr Typ „Term zu Sachtext angeben" zum Thema „Terme umformen" gehört und bei terme.md Einheit 1 bleibt – beide lassen zu einem Satz („das Achtfache einer Zahl, vermindert um zwölf") die passende Gleichung angeben und gehören damit sachlich zu Einheit 4. Angrenzend: „Lineares Gleichungssystem aufstellen/lösen", „Gleichung im Sachzusammenhang deuten". [P10] Zielmarke Einheit 2: eine zweischrittige Gleichung in Prüfungsform mit Probe; Einheit 4: Gleichung aus Sachverhalt mit Klammer.
+84  Zielmarke: Einheit 1 – zu einer gegebenen Gleichung entscheiden, ob eine Zahl Lösung ist, Ergebnis mit (wA)/(fA) (P10-Typ „Lösung durch Einsetzen prüfen“); das Probieren daneben nach RLP E und LISUM-PH ohne Original. Einheit 2 – eine zweischrittige Gleichung mit Klammer in Prüfungsform lösen und die Probe führen (2020-OS-B1e, 2023-OS-B1e, 2024-OS-B1d, alle Basis, Niveau I). Einheit 3 – eine Gleichung mit Klammer und x auf beiden Seiten lösen und die Probe führen; kein Original, Marke nach RLP F und LISUM-PH Jg. 8 („Lösen von Gleichungen mit Klammern“, „Variablen auf beiden Seiten“). Einheit 4 – Gleichung aus einem Sachverhalt mit Klammer aufstellen und lösen (2020-OS-K2e, Stern, Niveau II, drei Punkte: aus „so viele Besucher mehr“ die Gleichung 12 · (520 + x) = 7920 bilden); daneben eine Gleichung aus einer Tabelle mit einer Vielfachenbedingung (2018-OS-K3b) und – in den Fällen, deren Typ bei terme.md liegt – die Gleichung zu einem Satz ankreuzen statt aufstellen (2016-OS-B1b, 2021-OS-B1e).
+85  Zuordnung: Einheit 1 – Lösung durch Einsetzen prüfen (2018-OS-B1c, 2022-OS-B1c; das quadratische Original 2025-OS-B1h bei quadratische-gleichungen.md); Einheit 2 – Lineare Gleichung lösen (2020-OS-B1e, 2023-OS-B1e, 2024-OS-B1d); Einheit 3 – kein Typ (Verfahren der Einheit 2 in schwererer Form); Einheit 4 – Lineare Gleichung aus Sachverhalt aufstellen (2018-OS-K3b, 2020-OS-K2e), dazu die Originale 2016-OS-B1b und 2021-OS-B1e, deren Typ „Term zu Sachtext angeben“ bei terme.md liegt.
 ````
 
 ## 2 Originale (10)
