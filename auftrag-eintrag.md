@@ -7,9 +7,9 @@ eigener Branch. Geschrieben wird nur unter bank/<eintrag>/.
 
 Vorlage: `<eintrag>` ist der Dateiname des Katalogeintrags ohne
 `.md` (etwa lineare-funktionen); vor dem Einsatz überall ersetzen.
-Stand der Vorlage: 2026-09-29, nach bank.md fünfte Fassung
-(Vorstufen-Nummerierung, Pflichtformen P1–P8, Päckchen,
-Schrittnamen, Musterbeispiel). Vorherige Fassung 2026-09-27b in
+Stand der Vorlage: 2026-09-29b, nach bank.md fünfte Fassung und
+dem Prüfstein terme (Prüfungshöhe je Verfahrenskette, Schrittnamen
+mit Beispiel, pruef bei P1). Vorherige Fassung 2026-09-27b in
 archiv/.
 
 ## Ausgangslage
@@ -66,6 +66,14 @@ sagt es im Bericht.
    zurückgelesen – das Skript sagt, was falsch ist. Fehlerregel:
    Scheitert eine Einheit zweimal am Prüfskript, bleibt sie mit
    dem Stand liegen, stand.md sagt es, die nächste Einheit folgt.
+   Jede Lösung, die neu entsteht oder umgeschrieben wird, trägt in
+   jeder Rechenzeile vorn den Schrittnamen in Schülerworten, mit
+   Doppelpunkt (regeln.md 12; dieselben Wörter wie in den
+   Anweisungen der Kette). Beispiel für loesung: „Klammer
+   auflösen: 3x + 6 − 2x; ordnen: 3x − 2x + 6; zusammenfassen:
+   x + 6; Ergebnis: x + 6“. Eine Lösung, die nur das Ergebnis
+   nennt (Ablesen, Ankreuzen, einschrittige Rechnung), braucht
+   keinen Schrittnamen. Der übernommene Bestand bleibt ohne.
    Dabei nach bank.md: Grundfall je Verfahrenskette als Päckchen
    (fünf Zeilen, ein Wert bleibt, genau einer wandert; Sek II:
    derselbe Körper mit festen Eckpunkten je Variante);
@@ -82,11 +90,11 @@ sagt es im Bericht.
    Richtungen (P7), anwendung mit einer Entscheidung am
    Grenzwert (P8); Urteilsfragen etwa halb Ja, halb Nein, das
    Urteil als erstes Wort der Lösung.
-   Lösungen neuer Zeilen tragen je Rechenzeile den Schrittnamen
-   in Schülerworten (bank.md „Sprache", regeln.md 12: „Klammer
-   auflösen", „ordnen", „Probe"; Sek II dazu die Bedingung als
-   Zeilenkopf). Verlangt die Sprosse Probe, Kontrolle oder
-   Überschlag, steht sie als eigene beschriftete Zeile.
+   Sek II: dazu die Bedingung als Zeilenkopf („Bedingung f''(x) =
+   0:“, „Nebenbedingung:“). Verlangt die Sprosse Probe, Kontrolle
+   oder Überschlag, steht sie als eigene beschriftete Zeile.
+   Serie P1 und Aussagenserie P4 tragen pruef "" (bank.md); das
+   Prüfskript (v0.8) lässt das bei hoehe pflicht zu.
    Antwortgerüste ins Feld antwort, nicht als \leerfeld in
    aufgabe – auch Lückenterme („P = 1 − (__)^__") und
    Gerüste wie „m = __" oder „Vorzeichen: __ Betrag: __
@@ -98,8 +106,7 @@ sagt es im Bericht.
    geschrieben, Zeilen zu gestrichenen Sprossen entfallen; die
    Pflichtformen werden hergestellt, indem vorhandene fehler- und
    begruenden-Zeilen umgeschrieben werden, nicht ergänzt (die
-   Menge bleibt drei). Schrittnamen bekommen nur neue und
-   umgeschriebene Zeilen.
+   Menge bleibt drei).
 4. Musterbeispiel: bank/<eintrag>/muster.md, je Verfahrenskette
    ein Abschnitt „## e<n> k<k> <kette>": die Aufgabe des
    Grundfalls mit eigenen Zahlen (nicht aus den fünf
@@ -128,11 +135,11 @@ grundfall ist 5 (bank.md, „Mengen je Kette"), in allen fünf steht
 derselbe feste Wert, der sprosse_text des Grundfalls steht
 wortgleich in der Mappe in der Zeile quelle. Jede Vorstufe hat 4
 Zeilen; bei mehreren Vorstufen einer Kette sind die Sprossen 0,
-−1, −2 lückenlos und der Grundfall ist 1. Jede Einheit hat genau
-eine Sprosse mit hoehe pruefung, als letzte ihrer
-Verfahrenskette. Je Einheit tragen die drei fehler-Zeilen drei
-verschiedene Formen und die drei begruenden-Zeilen drei
-verschiedene Formen (P1–P6). Mehrstellige Kastenzahlen des
+−1, −2 lückenlos und der Grundfall ist 1. Jede Verfahrenskette hat
+genau eine Sprosse mit hoehe pruefung, als letzte; eine Einheit
+mit zwei Verfahrensketten hat also zwei. Je Einheit tragen die
+drei fehler-Zeilen drei verschiedene Formen und die drei
+begruenden-Zeilen drei verschiedene Formen (P1–P6). Mehrstellige Kastenzahlen des
 Eintrags (Merkkasten aller Einheiten) kommen in keiner aufgabe
 vor; die Sperrprobe des Prüfskripts meldet 0. Jede Zeile mit form
 zeichnen oder einem Ablese- oder Zeichenauftrag hat ein

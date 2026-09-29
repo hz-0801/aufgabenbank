@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 """Prüft die Bank eines Katalogeintrags (bank.md, Abschnitt „Prüfung").
 
+v0.8, 2026-09-29 (Befund Prüfstein terme): pruef "" auch bei hoehe
+pflicht fehler erlaubt – die Serie P1 („Welche Ergebnisse können
+nicht stimmen?“) hat nach bank.md pruef "", ihre Lösung trägt aber
+Ziffern; vorher erzwang das Skript eine Scheinprobe.
+
 v0.7, 2026-09-29 (Vorstufen-Nummerierung, bank.md fünfte Fassung).
 Änderung gegenüber v0.6 (kleinste Änderung, sonst nichts):
   – sprosse ≤ 0 genau dann, wenn hoehe vorstufe (statt = 0);
@@ -745,7 +750,8 @@ def sperrprobe(a, sperre):
 def pruef_leer_erlaubt(a):
     """pruef "" bei Begründen, Zeichnen, Ankreuzen ohne Zahloptionen
     und einer Lösung ohne Ziffer (Exponent und Index zählen nicht)."""
-    return (a.get("pflicht") == "begruenden" or a["form"] == "zeichnen"
+    return (a.get("pflicht") in ("begruenden", "fehler")
+            or a["form"] == "zeichnen"
             or (a["form"] == "ankreuzen" and not zahl_ankreuzen(a))
             or not re.search(r"\d", normiert(a["loesung"])))
 
