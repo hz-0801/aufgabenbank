@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """Prüft die Bank eines Katalogeintrags (bank.md, Abschnitt „Prüfung").
 
+v0.10, 2026-09-29 (Befunde Schub 3): „Zeichne nichts“ und „nichts zu
+zeichnen“ sind kein Zeichenauftrag; \int, \sum, \lim, \ln, \log,
+\exp, \sin, \cos, \tan, \mathbb in der Liste der Standardbefehle.
+
 v0.9, 2026-09-29 (Befunde Schub 1: lineare-gleichungen, binomische-
 formeln, brueche-dezimalzahlen, prozentrechnung):
   a) `--katalog` ohne Datei liest Teil 1 der Mappe (Zeilen
@@ -134,6 +138,7 @@ Leftrightarrow Leftarrow rightarrow leftarrow to mapsto infty circ
 degree cdotp colon sim equiv parallel perp angle triangle square
 alpha beta gamma delta epsilon varepsilon pi rho sigma tau phi varphi
 omega lambda mu Delta Omega Sigma displaystyle textstyle newline
+int iint sum prod lim log ln exp sin cos tan mathbb
 linebreak par noindent small footnotesize large Large mathbb in notin
 cup cap setminus emptyset subset subseteq wedge vee neg forall exists
 overrightarrow widehat lvert rvert lceil rceil lfloor rfloor
@@ -420,8 +425,10 @@ AUFTRAG_GRAFIK = re.compile(
 def grafikprobe(a):
     b = []
     grafik = a.get("grafik", "")
+    text = re.sub(r"[Zz]eichne nichts\b|nichts (?:zu )?zeichnen", "",
+                  a["aufgabe"])
     if (a["form"] == "zeichnen"
-            or AUFTRAG_GRAFIK.search(a["aufgabe"])) and not grafik:
+            or AUFTRAG_GRAFIK.search(text)) and not grafik:
         b.append("grafik leer (form zeichnen oder Ablese-/Zeichenauftrag "
                  "in aufgabe)")
     bereiche = ksys_bereiche(grafik)

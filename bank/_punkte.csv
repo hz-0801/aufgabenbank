@@ -592,7 +592,6 @@ extremalprobleme-e3-k2-s1-v3;2018-bb-ea-cas-B2.2i;5;;ganz;kleinster Abstand übe
 kurvenuntersuchung-e5-k1-s6-v2;2018-be-gk-B1.1d;4;;ganz;Punkt stärksten Gefälles über f'' gleich null
 rekonstruktion-von-funktionsgleichungen-e2-k1-s4-v1;2018-be-gk-B1.1e;6;;ganz;Flugbahn aus knickfreiem Übergang und Höhenbedingung
 gleichungen-loesen-e1-k1-s5-v2;2018-be-gk-B1.1f;10;;teil;nur Landepunkt, Original verlangt auch Skizze der Flugbahn
-extremalprobleme-e3-k1-s6-v1;2018-be-gk-B1.1g;6;;ganz;maximalen vertikalen Abstand über die Differenzfunktion nachgewiesen
 grenzwerte-und-verhalten-im-unendlichen-e2-k1-s3-v2;2018-be-gk-B1.2a;2;;ganz;Grenzverhalten für x gegen unendlich mit Begründung
 grenzwerte-und-verhalten-im-unendlichen-e2-k1-s6-v3;2018-be-gk-B1.2a;2;;unklar;Bank verlangt zusätzlich Nullstelle und Verhalten gegen minus unendlich
 tangente-normale-schnittwinkel-e4-k1-s6-v1;2018-be-gk-B1.2b;7;;ganz;Schnittwinkel Tangente und Gerade über Anstiege
@@ -893,9 +892,6 @@ extremalprobleme-e1-k1-s2-v3;2019MgrundlegendBAnalysisWTR2-1f;2;;ganz;alle gesuc
 extremalprobleme-e1-k1-s4-v1;2019MgrundlegendBAnalysisWTR2-1h;4;;unklar;Bank verlangt zusätzlich die Schenkellänge
 extremalprobleme-e1-k1-s4-v2;2019MgrundlegendBAnalysisWTR2-1h;4;;unklar;Bank verlangt zusätzlich die Schenkellänge
 extremalprobleme-e1-k1-s4-v3;2019MgrundlegendBAnalysisWTR2-1h;4;;unklar;Bank verlangt zusätzlich die Schenkellänge
-extremalprobleme-e3-k1-s7-v1;2019MgrundlegendBAnalysisWTR2-1i;5;;ganz;Parameter für den größten Trapezinhalt bei gegebenem Flächenterm
-extremalprobleme-e3-k1-s7-v2;2019MgrundlegendBAnalysisWTR2-1i;5;;unklar;Bank verlangt zusätzlich den größten Inhalt
-extremalprobleme-e3-k1-s7-v3;2019MgrundlegendBAnalysisWTR2-1i;5;;ganz;Parameter für den größten Trapezinhalt bei gegebenem Flächenterm
 punkte-und-strecken-im-koordinatensystem-e3-k1-s7-v1;2019MgrundlegendBAnalysisWTR2-1j;4;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
 punkte-und-strecken-im-koordinatensystem-e3-k1-s7-v2;2019MgrundlegendBAnalysisWTR2-1j;4;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
 punkte-und-strecken-im-koordinatensystem-e3-k1-s7-v3;2019MgrundlegendBAnalysisWTR2-1j;4;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
@@ -1177,9 +1173,6 @@ lineare-gleichungssysteme-e4-k1-s8-v7;2021-OS-K7b;4;nein;ganz;System aufstellen 
 lineare-gleichungssysteme-e4-k1-s8-v8;2021-OS-K7b;4;nein;ganz;System aufstellen und beide Preise berechnen
 quadratische-gleichungen-e1-k2-s14-v1;2021-OS-K7c;3;ja;ganz;zwei Aussagen ankreuzen und Gleichung ohne Lösung angeben
 quadratische-gleichungen-e1-k2-s14-v2;2021-OS-K7c;3;ja;ganz;zwei Aussagen ankreuzen und Gleichung ohne Lösung angeben
-extremalprobleme-e3-k1-s8-v1;2021-be-gk-A1.3b;3;;ganz;Stelle über A' ungleich null als Maximalstelle ausgeschlossen
-extremalprobleme-e3-k1-s8-v2;2021-be-gk-A1.3b;3;;ganz;Stelle über A' ungleich null als Maximalstelle ausgeschlossen
-extremalprobleme-e3-k1-s8-v3;2021-be-gk-A1.3b;3;;ganz;Stelle über A' ungleich null als Maximalstelle ausgeschlossen
 ebenen-e2-k2-s2-v1;2021-be-gk-A1.4a;1;;ganz;Normalenform ausmultiplizieren zur Koordinatenform
 lagebeziehungen-e3-k1-s1-v5;2021-be-gk-A1.4b;2;;ganz;Gerade in Ebene durch Einsetzen nachweisen
 orthogonalitaet-e3-k1-s6-v1;2021-be-gk-A1.4c;2;;ganz;Ebene senkrecht zu zwei Ebenen über Schnittgeradenrichtung
@@ -1203,8 +1196,6 @@ kurvenuntersuchung-e3-k1-s10-v2;2021-be-gk-B2.2e;3;;ganz;Wendepunkt mit Skizze a
 tangente-normale-schnittwinkel-e5-k1-s7-v1;2021-be-gk-B2.2f;5;;ganz;Tangente im Ursprung und b aus Dreiecksfläche
 gleichungen-loesen-e2-k1-s6-v1;2021-be-gk-B2.2g;4;;ganz;Schnittstellen über Kürzen des e-Faktors, Abstand als Ergebnis
 gleichungen-loesen-e2-k1-s6-v3;2021-be-gk-B2.2g;4;;ganz;Schnittstellen über Kürzen des e-Faktors, Abstand als Ergebnis
-abstaende-e4-k1-s1-v3;2021-be-gk-B2.2h;2;;ganz;horizontale Entfernung als Kathete kürzer als die Verbindungsstrecke begründet
-extremalprobleme-e3-k1-s6-v2;2021-be-gk-B2.2i;7;;ganz;größten Abstand über die Differenzfunktion bestimmt und mit Vorgabe verglichen
 orthogonalitaet-e1-k4-s2-v2;2021-be-gk-B3a;5;;ganz;rechten Winkel nachweisen und Gesamtoberfläche berechnen
 geraden-e3-k1-s4-v1;2021-be-gk-B3b;3;;ganz;Geradengleichung aufstellen und Windschiefe begründen
 geraden-e3-k1-s4-v2;2021-be-gk-B3b;3;;ganz;Geradengleichung aufstellen und Windschiefe begründen
@@ -1376,12 +1367,6 @@ grenzwerte-und-verhalten-im-unendlichen-e2-k1-s3-v1;2022-bebb-gk-B2.1b;2;;ganz;G
 gleichungen-loesen-e2-k1-s6-v2;2022-bebb-gk-B2.1d;2;;ganz;Schnittstelle von f und f' nachweisen
 tangente-normale-schnittwinkel-e4-k1-s6-v2;2022-bebb-gk-B2.1e;4;;ganz;Schnittwinkel über beide Tangentensteigungen
 tangente-normale-schnittwinkel-e5-k1-s3-v1;2022-bebb-gk-B2.1g;5;;ganz;Umfang des Achsendreiecks und Umkreismittelpunkt
-extremalprobleme-e2-k1-s6-v1;2022-bebb-gk-B2.1h;5;;unklar;nur der Ansatz, Vorschritt der einzigen Leistung Koordinaten von P
-extremalprobleme-e2-k1-s6-v2;2022-bebb-gk-B2.1h;5;;unklar;nur der Ansatz, Vorschritt der einzigen Leistung Koordinaten von P
-extremalprobleme-e2-k1-s6-v3;2022-bebb-gk-B2.1h;5;;unklar;nur der Ansatz, Vorschritt der einzigen Leistung Koordinaten von P
-extremalprobleme-e3-k1-s5-v1;2022-bebb-gk-B2.1h;5;;ganz;Koordinaten von P für das Rechteck maximaler Fläche mit Kontrollableitung
-extremalprobleme-e3-k1-s5-v2;2022-bebb-gk-B2.1h;5;;ganz;Koordinaten von P für das Rechteck maximaler Fläche mit Kontrollableitung
-extremalprobleme-e3-k1-s5-v3;2022-bebb-gk-B2.1h;5;;ganz;Koordinaten von P für das Rechteck maximaler Fläche
 ableitung-und-aenderungsrate-e4-k1-s7-v1;2022-bebb-gk-B2.1m;5;;ganz;Zeitraum mit Mindestrate über f'(x) = c
 grenzwerte-und-verhalten-im-unendlichen-e1-k2-s2-v3;2022-bebb-gk-B2.2a;2;;ganz;Grenzverhalten in beide Richtungen angeben
 ableitung-und-aenderungsrate-e3-k1-s4-v1;2022-bebb-gk-B2.2c;5;;ganz;Nachweis der Stelle und geometrische Bedeutung
@@ -1704,7 +1689,6 @@ punkte-und-strecken-im-koordinatensystem-e2-k1-s5-v3;2023-bebb-gk-B3a;4;;teil;nu
 punkte-und-strecken-im-koordinatensystem-e3-k1-s2-v1;2023-bebb-gk-B3a;4;;teil;nur Gleichseitigkeit, Original verlangt auch den Teilpunkt
 punkte-und-strecken-im-koordinatensystem-e3-k1-s2-v3;2023-bebb-gk-B3a;4;;teil;nur Gleichseitigkeit, Original verlangt auch den Teilpunkt
 ebenen-e4-k1-s3-v1;2023-bebb-gk-B3b;2;;ganz;dieselben Ergebnisse mit gleicher Handlung
-abstaende-e4-k1-s1-v1;2023-bebb-gk-B3c;3;;ganz;Schrägstrecke gegen Ebenenabstand entschieden und begründet
 schnittmengen-e1-k2-s2-v1;2023-bebb-gk-B3d;3;;ganz;dieselben Ergebnisse mit gleicher Handlung
 lagebeziehungen-e1-k2-s6-v1;2023-bebb-gk-B3f;3;;ganz;dieselben Ergebnisse mit gleicher Handlung
 abstaende-e3-k1-s3-v2;2023-bebb-gk-B3h;4;;ganz;dieselben Ergebnisse mit gleicher Handlung
@@ -1851,7 +1835,6 @@ lagebeziehungen-e4-k1-s2-v2;2023MgrundlegendBAGLAA2WTR1-1g;5;;teil;nur Deutung d
 punkte-und-strecken-im-koordinatensystem-e3-k1-s5-v1;2023MgrundlegendBAGLAA2WTR2-1a;3;;ganz;Gleichschenkligkeit und Parallelität wie im Original
 punkte-und-strecken-im-koordinatensystem-e3-k1-s5-v2;2023MgrundlegendBAGLAA2WTR2-1a;3;;ganz;Gleichschenkligkeit und Parallelität wie im Original
 punkte-und-strecken-im-koordinatensystem-e3-k1-s5-v3;2023MgrundlegendBAGLAA2WTR2-1a;3;;ganz;Gleichschenkligkeit und Parallelität wie im Original
-abstaende-e4-k1-s1-v2;2023MgrundlegendBAGLAA2WTR2-1e;3;;teil;nur die Begründung, Original verlangt auch das Lot einzuzeichnen
 flaecheninhalt-und-volumen-im-raum-e4-k1-s7-v7;2023MgrundlegendBAGLAA2WTR2-1f;4;;ganz;Graph zuordnen und Linearität begründen
 flaecheninhalt-und-volumen-im-raum-e4-k1-s7-v8;2023MgrundlegendBAGLAA2WTR2-1f;4;;ganz;Graph zuordnen und Linearität begründen
 kurvenuntersuchung-e2-k6-s1-v1;2023MgrundlegendBAnalysisWTR1-1a;3;;ganz;Nullstellen und Extremstelle einer Parabel
@@ -1987,7 +1970,6 @@ tangente-normale-schnittwinkel-e4-k1-s10-v3;2024-bebb-gk-B2.1i;3;;ganz;Öffnungs
 tangente-normale-schnittwinkel-e4-k1-s10-v4;2024-bebb-gk-B2.1i;3;;ganz;Öffnungswinkel als doppelter Steigungswinkel geprüft
 flaecheninhalt-durch-integration-e3-k1-s6-v1;2024-bebb-gk-B2.2e;6;;teil;nur Schritte deuten, Einzeichnen der Flächen fehlt
 flaecheninhalt-durch-integration-e3-k1-s6-v2;2024-bebb-gk-B2.2e;6;;teil;nur Schritte deuten, Einzeichnen der Flächen fehlt
-extremalprobleme-e3-k1-s6-v3;2024-bebb-gk-B2.2g;4;;ganz;größte Abweichung über die Differenzfunktion nachgewiesen
 gleichungen-loesen-e4-k1-s4-v1;2024-bebb-gk-B2.2h;3;;ganz;Lösungsweg über Betragsungleichung beschrieben
 gleichungen-loesen-e4-k1-s4-v2;2024-bebb-gk-B2.2h;3;;ganz;Lösungsweg über Betragsungleichung beschrieben
 skalarprodukt-und-winkel-e2-k2-s4-v3;2024-bebb-gk-B3b;2;;ganz;rechter Winkel über Skalarprodukt nachgewiesen
@@ -2152,9 +2134,6 @@ rekonstruktion-von-funktionsgleichungen-e2-k1-s8-v5;2025-A-2a;6;;ganz;quadratisc
 rekonstruktion-von-funktionsgleichungen-e2-k1-s8-v6;2025-A-2a;6;;ganz;quadratische Funktion mit Extremalbedingung über LGS
 gleichungen-loesen-e1-k1-s2-v1;2025-A-2c;3;;ganz;Stelle zum Funktionswert mit Auswahl im Sinkflug
 gleichungen-loesen-e1-k1-s2-v3;2025-A-2c;3;;ganz;Stelle zum Funktionswert mit Auswahl im Sinkflug
-extremalprobleme-e2-k1-s3-v1;2025-A-2d;3;;ganz;zwei Flächeninhalte aus der Nebenbedingung berechnet
-extremalprobleme-e2-k1-s3-v2;2025-A-2d;3;;ganz;zwei Flächeninhalte aus der Nebenbedingung berechnet
-extremalprobleme-e2-k1-s3-v3;2025-A-2d;3;;ganz;zwei Flächeninhalte aus der Nebenbedingung berechnet
 extremalprobleme-e2-k1-s4-v1;2025-A-2e;3;;unklar;Bank verlangt zusätzlich den Definitionsbereich
 extremalprobleme-e2-k1-s4-v2;2025-A-2e;3;;unklar;Bank verlangt zusätzlich den Definitionsbereich
 extremalprobleme-e2-k1-s4-v3;2025-A-2e;3;;unklar;Bank verlangt zusätzlich den Definitionsbereich

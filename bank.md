@@ -115,6 +115,10 @@ Leerzeilen. Reihenfolge der Zeilen = Reihenfolge der Kette.
     quelle        Zeile des Katalogeintrags, aus der die Sprosse
                   stammt (Zeilennummer beim Stand-Commit)
 
+Eine Pooldublette (derselbe Text in zwei Heften, im Katalog als
+„Dublette von“ vermerkt) zählt als ein Original; die Bankzeile trägt
+die Kennung des Katalogs, die in der Mappe zuerst steht (29.09.).
+
 Prüfkennung „(P10 Jahr Papier)"; FHR „(FHR Jahr)"; Abitur
 „(Abitur Jahr GK)" für grundlegendes und „(Abitur Jahr LK)" für
 erhöhtes Niveau – iqb grundlegend und be-gk sind GK, iqb erhöht,
@@ -349,7 +353,11 @@ original im Katalog steht. Regel (Beschluss 28.09.): Punkte
 stehen nur im Prüfungsheft und im Prüfungs-Fokus, und dort immer,
 als Punkte des Originals; ins Heft kommen nur Zeilen mit umfang
 ganz. Zeilen mit teil oder unklar bleiben auf Lernblättern und
-stehen dort ohne Punkte.
+stehen dort ohne Punkte. Verlangt die Bankzeile mehr als das
+Original (eine Frage dazu), ist sie ganz (29.09.). Nach einem
+Nachzug der Bank zieht `werkzeuge/punkte-nachziehen.py <commit>
+<eintrag> …` die ids nach; Zeilen ohne Entsprechung bekommen ein
+neues Urteil.
 
 ## Quellen je Sitzung
 

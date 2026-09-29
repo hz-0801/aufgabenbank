@@ -7,7 +7,7 @@ eigener Branch. Geschrieben wird nur unter bank/<eintrag>/.
 
 Vorlage: `<eintrag>` ist der Dateiname des Katalogeintrags ohne
 `.md` (etwa lineare-funktionen); vor dem Einsatz überall ersetzen.
-Stand der Vorlage: 2026-09-29d, nach bank.md fünfte Fassung,
+Stand der Vorlage: 2026-09-29e, nach bank.md fünfte Fassung,
 dem Prüfstein terme und Schub 1 (Sperre = Prüfskript, Übernahme
 bei längerem Sprossentext, --katalog aus der Mappe). Vorherige
 Fassung 2026-09-27b in archiv/.
@@ -165,7 +165,11 @@ Abschnitt.
 - Kein LaTeX kompilieren (nicht verfügbar); Bausteine nur aus
   mappen/_bausteine.md, das Prüfskript prüft Name und
   Argumentzahl.
-- Shell ist Linux: Datum aus `date`, kein PowerShell.
+- Shell ist Linux: Datum aus `date`, kein PowerShell. Zwischen-
+  dateien nur im eigenen Klon (etwa unter bank/<eintrag>/_tmp/,
+  vor dem Commit löschen), nie im Scratchpad – der ist mit
+  anderen Agenten geteilt.
+- Eine Pooldublette zählt als ein Original (bank.md).
 - Was der Auftrag und bank.md nicht regeln, entscheidest du und
   schreibst es in stand.md unter „Entscheidungen".
 - Was du an Katalog, bank.md oder Prüfskript für falsch hältst,
