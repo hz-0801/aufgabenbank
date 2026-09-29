@@ -20,17 +20,17 @@ $2 \cdot \overrightarrow{AB}$ an.
 ## e2 k1 Vektorterme am Körper
 
 Aufgabe: Der Quader $ABCDEFGH$ hat die Ecken $A(0 | 0 | 0)$,
-$B(4 | 0 | 0)$, $D(0 | 6 | 0)$ und $E(0 | 0 | 2)$. Trage $P$ mit
+$B(5 | 0 | 0)$, $D(0 | 6 | 0)$ und $E(0 | 0 | 2)$. Trage $P$ mit
 $\overrightarrow{AP} = \overrightarrow{AB} + \frac{1}{2} \cdot
 \overrightarrow{AD} + \overrightarrow{AE}$ ein.
 
 | Schritt | Zeile |
 |---|---|
 | bei A starten | $A(0 \| 0 \| 0)$ |
-| ganze Kante AB | $(0 \| 0 \| 0) + (4 \| 0 \| 0) = (4 \| 0 \| 0)$, das ist $B$ |
-| halbe Kante AD | $(4 \| 0 \| 0) + \frac{1}{2} \cdot (0 \| 6 \| 0) = (4 \| 3 \| 0)$, Mitte von $BC$ |
-| ganze Kante AE | $(4 \| 3 \| 0) + (0 \| 0 \| 2) = (4 \| 3 \| 2)$ |
-| Ergebnis | $P(4 \| 3 \| 2)$, Mitte der Kante $FG$ |
+| ganze Kante AB | $(0 \| 0 \| 0) + (5 \| 0 \| 0) = (5 \| 0 \| 0)$, das ist $B$ |
+| halbe Kante AD | $(5 \| 0 \| 0) + \frac{1}{2} \cdot (0 \| 6 \| 0) = (5 \| 3 \| 0)$, Mitte von $BC$ |
+| ganze Kante AE | $(5 \| 3 \| 0) + (0 \| 0 \| 2) = (5 \| 3 \| 2)$ |
+| Ergebnis | $P(5 \| 3 \| 2)$, Mitte der Kante $FG$ |
 
 ## e3 k1 Skalarprodukt im Sachzusammenhang
 
