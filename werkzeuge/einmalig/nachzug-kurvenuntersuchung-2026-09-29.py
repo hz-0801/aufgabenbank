@@ -570,17 +570,17 @@ def e4():
 
     s4 = []
     for tab, fkt, ks, ber, pkt, los in [
-            ("Nullstellen & $-1$ und $2$ \\\\ Tiefpunkt & $T(0 | -1)$ \\\\ "
-             "Hochpunkt & $H(2 | 0)$ \\\\ Monotonie & fällt bis $0$, steigt "
-             "von $0$ bis $2$, fällt ab $2$ \\\\ für $x \\to \\infty$ & "
+            ("Nullstellen & $-2$ und $4$ \\\\ Tiefpunkt & $T(-2 | 0)$ \\\\ "
+             "Hochpunkt & $H(2 | 8)$ \\\\ Monotonie & fällt bis $-2$, steigt "
+             "von $-2$ bis $2$, fällt ab $2$ \\\\ für $x \\to \\infty$ & "
              "$f(x) \\to -\\infty$ \\\\ Schnittpunkt mit der $y$-Achse & "
-             "$(0 | -1)$",
-             "-0.25*(\\x+1)*(\\x-2)^2", "xmin=-2,xmax=4,ymin=-5,ymax=5",
-             "{-2}{4}", "\\tiefpunkt{0}{-1}{T} \\hochpunkt{2}{0}{H}",
-             "Der Graph kommt von links oben, schneidet die $x$-Achse bei "
-             "$-1$, fällt bis zum Tiefpunkt $T(0 | -1)$, steigt bis zum "
-             "Hochpunkt $H(2 | 0)$ auf der $x$-Achse und fällt dann nach "
-             "rechts unten."),
+             "$(0 | 4)$",
+             "-0.25*(\\x+2)^2*(\\x-4)", "xmin=-3,xmax=5,ymin=-3,ymax=9",
+             "{-3}{4.8}", "\\tiefpunkt{-2}{0}{T} \\hochpunkt{2}{8}{H}",
+             "Der Graph kommt von links oben, fällt bis zum Tiefpunkt "
+             "$T(-2 | 0)$ auf der $x$-Achse, steigt durch $(0 | 4)$ bis zum "
+             "Hochpunkt $H(2 | 8)$, fällt dann nach rechts unten und "
+             "schneidet die $x$-Achse bei $4$."),
             ("Nullstellen & $0$ und $3$ \\\\ Hochpunkt & $H(0 | 0)$ \\\\ "
              "Tiefpunkt & $T(2 | -2)$ \\\\ Monotonie & steigt bis $0$, fällt "
              "von $0$ bis $2$, steigt ab $2$ \\\\ für $x \\to \\infty$ & "
@@ -592,17 +592,17 @@ def e4():
              "$H(0 | 0)$ im Ursprung, fällt bis zum Tiefpunkt $T(2 | -2)$, "
              "steigt dann nach rechts oben und schneidet die $x$-Achse bei "
              "$3$."),
-            ("Nullstellen & $-1$ und $2$ \\\\ Tiefpunkt & $T(-1 | 0)$ \\\\ "
-             "Hochpunkt & $H(1 | 2)$ \\\\ Monotonie & fällt bis $-1$, steigt "
-             "von $-1$ bis $1$, fällt ab $1$ \\\\ für $x \\to \\infty$ & "
-             "$f(x) \\to -\\infty$ \\\\ Schnittpunkt mit der $y$-Achse & "
-             "$(0 | 1)$",
-             "-0.5*\\x^3+1.5*\\x+1", "xmin=-3,xmax=3,ymin=-4,ymax=3",
-             "{-2}{2.5}", "\\tiefpunkt{-1}{0}{T} \\hochpunkt{1}{2}{H}",
+            ("Nullstellen & $-3$ und $0$ \\\\ Tiefpunkt & $T(-3 | 0)$ \\\\ "
+             "Hochpunkt & $H(-1 | 1)$ \\\\ Monotonie & fällt bis $-3$, "
+             "steigt von $-3$ bis $-1$, fällt ab $-1$ \\\\ für $x \\to "
+             "\\infty$ & $f(x) \\to -\\infty$ \\\\ Schnittpunkt mit der "
+             "$y$-Achse & der Ursprung",
+             "-0.25*\\x*(\\x+3)^2", "xmin=-5,xmax=2,ymin=-3,ymax=3",
+             "{-4.5}{1.2}", "\\tiefpunkt{-3}{0}{T} \\hochpunkt{-1}{1}{H}",
              "Der Graph kommt von links oben, fällt bis zum Tiefpunkt "
-             "$T(-1 | 0)$ auf der $x$-Achse, steigt durch $(0 | 1)$ bis zum "
-             "Hochpunkt $H(1 | 2)$ und fällt dann nach rechts unten; er "
-             "schneidet die $x$-Achse bei $2$.")]:
+             "$T(-3 | 0)$ auf der $x$-Achse, steigt bis zum Hochpunkt "
+             "$H(-1 | 1)$, fällt dann durch den Ursprung nach rechts "
+             "unten.")]:
         s4.append(neu_zeile(
             g, sprosse=4, hoehe="sprosse", sprosse_text=T_E4_S4,
             merkmal="Graph aus einer ausgefüllten Übersicht skizzieren, ohne "
