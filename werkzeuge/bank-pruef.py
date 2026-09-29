@@ -1,6 +1,16 @@
 #!/usr/bin/env python3
 """Prüft die Bank eines Katalogeintrags (bank.md, Abschnitt „Prüfung").
 
+v0.9, 2026-09-29 (Befunde Schub 1: lineare-gleichungen, binomische-
+formeln, brueche-dezimalzahlen, prozentrechnung):
+  a) `--katalog` ohne Datei liest Teil 1 der Mappe (Zeilen
+     „<nr>  <text>“), damit eine Sitzung den Katalog nicht selbst
+     lesen muss; `--katalog DATEI` bleibt.
+  b) \janein in aufgabe: loesung beginnt mit „ja“ oder „nein“
+     (Groß-/Kleinschreibung frei), sonst Abweichung.
+  c) Zeichenauftrag „Verbinde … mit Pfeilen“ zählt als Auftrag,
+     der eine Grafik verlangt (AUFTRAG_GRAFIK: „Verbinde“).
+
 v0.8, 2026-09-29 (Befund Prüfstein terme): pruef "" auch bei hoehe
 pflicht fehler erlaubt – die Serie P1 („Welche Ergebnisse können
 nicht stimmen?“) hat nach bank.md pruef "", ihre Lösung trägt aber
@@ -400,7 +410,7 @@ def ksys3_bereiche(grafik):
 # Imperativ „lies“, „zeichne“; „liest“, „ohne zu zeichnen“ und ein
 # Bild als Gegenstand („ein quadratisches Bild“) sind kein Auftrag.
 AUFTRAG_GRAFIK = re.compile(
-    r"\b(?:[Ll]ies|[Zz]eichne)\b"
+    r"\b(?:[Ll]ies|[Zz]eichne|[Vv]erbinde)\b"
     r"|\b(?:[Aa]blesen|abzulesen|abgelesen|eingezeichnet)\b"
     r"|\bAbbildung|\b(?:im|am|siehe)\s+Bild\b"
     r"|\bBild\s+(?:zeigt|unten|oben|rechts|links)\b"
@@ -508,6 +518,10 @@ def ankreuzprobe(a):
     genau eine Option wortgleich. Wiederholen sich Optionen (wahr/
     falsch je Aussage), ist die Aufgabe mehrteilig – keine Probe."""
     if a["form"] != "ankreuzen":
+        return []
+    if "\\janein" in a["aufgabe"]:
+        if not re.match(r"\s*(ja|nein)\b", a["loesung"], re.I):
+            return ["\\janein: loesung beginnt nicht mit ja oder nein"]
         return []
     opts = optionen(a["aufgabe"])
     if zahl_ankreuzen(a):
@@ -984,6 +998,20 @@ def pruefe_zone_paar(zeilen, datei):
 
 def paares(n):
     return "kein Zone-Paar" if n == 0 else f"{n} Zone-Paare"
+
+
+def katalog_aus_mappe(mappe):
+    """Teil 1 der Mappe („<nr>: <text>“, Zeilennummern des Katalogs)
+    als Katalogzeilen; fehlende Nummern bleiben leer (v0.9)."""
+    zeilen = {}
+    text = mappe.read_text(encoding="utf-8")
+    teil = text.split("## 1 Katalogeintrag", 1)[-1].split("\n## 2 ", 1)[0]
+    for z in teil.split("\n"):
+        m = re.match(r"\s*(\d+)  (.*)$", z)
+        if m:
+            zeilen[int(m.group(1))] = m.group(2)
+    n = max(zeilen) if zeilen else 0
+    return [zeilen.get(i, "") for i in range(1, n + 1)]
 
 
 def pruefe_katalog(a, katalog):
@@ -1568,14 +1596,16 @@ def main(argv):
     args = argv[1:]
     alle = "--alle" in args
     args = [x for x in args if x != "--alle"]
-    if len(args) not in (1, 3) or (len(args) == 3
-                                   and args[1] != "--katalog"):
+    if len(args) not in (1, 2, 3) or (len(args) >= 2
+                                      and args[1] != "--katalog"):
         print(__doc__)
         return 2
     katalog = None
+    wurzel = Path(__file__).resolve().parent.parent
     if len(args) == 3:
         katalog = Path(args[2]).read_text(encoding="utf-8").split("\n")
-    wurzel = Path(__file__).resolve().parent.parent
+    elif len(args) == 2:
+        katalog = katalog_aus_mappe(wurzel / "mappen" / f"{args[0]}.md")
     if args[0] == "_basis" and katalog is None:
         return 1 if pruefe_basis(wurzel, alle) else 0
     return 1 if pruefe_eintrag(args[0], katalog, wurzel, alle) else 0

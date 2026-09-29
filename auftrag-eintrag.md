@@ -7,10 +7,10 @@ eigener Branch. Geschrieben wird nur unter bank/<eintrag>/.
 
 Vorlage: `<eintrag>` ist der Dateiname des Katalogeintrags ohne
 `.md` (etwa lineare-funktionen); vor dem Einsatz überall ersetzen.
-Stand der Vorlage: 2026-09-29b, nach bank.md fünfte Fassung und
-dem Prüfstein terme (Prüfungshöhe je Verfahrenskette, Schrittnamen
-mit Beispiel, pruef bei P1). Vorherige Fassung 2026-09-27b in
-archiv/.
+Stand der Vorlage: 2026-09-29c, nach bank.md fünfte Fassung,
+dem Prüfstein terme und Schub 1 (Sperre = Prüfskript, Übernahme
+bei längerem Sprossentext, --katalog aus der Mappe). Vorherige
+Fassung 2026-09-27b in archiv/.
 
 ## Ausgangslage
 
@@ -59,8 +59,9 @@ sagt es im Bericht.
 3. Einheiten nacheinander, je Einheit: e<n>.jsonl mit allen
    Ketten in der Reihenfolge nach bank.md („Reihenfolge je
    Datei"), der erste Wurf als ganze Datei in einem
-   Schreibvorgang; `python3 werkzeuge/bank-pruef.py <eintrag>`
-   bis null Abweichungen; Commit „<eintrag>: e<n>", push.
+   Schreibvorgang; `python3 werkzeuge/bank-pruef.py <eintrag>
+   --katalog` (liest Teil 1 der Mappe, v0.9) bis null
+   Abweichungen; Commit „<eintrag>: e<n>", push.
    Korrekturen ändern nur die gemeldete Zeile (Edit), nie die
    ganze Datei; die Datei wird nach dem Schreiben nicht
    zurückgelesen – das Skript sagt, was falsch ist. Fehlerregel:
@@ -100,9 +101,11 @@ sagt es im Bericht.
    Gerüste wie „m = __" oder „Vorzeichen: __ Betrag: __
    Ergebnis: __" (rationale-zahlen nur in den ersten zwei
    Varianten der genannten Sprossen, bank.md).
-   Besteht die Einheit schon: Zeilen, deren sprosse_text in der
-   Mappe unverändert steht, bleiben wortgleich, nur id, sprosse,
-   kette_nr und quelle werden nachgezogen; neue Sprossen werden
+   Besteht die Einheit schon: Zeilen, deren Sprosse in der Mappe
+   noch steht, bleiben wortgleich – auch wenn der Sprossentext
+   länger wurde oder eine Frage dazukam, solange die Aufgabe
+   dieselbe bleibt; nachgezogen werden nur id, sprosse, kette_nr,
+   quelle und sprosse_text; neue Sprossen werden
    geschrieben, Zeilen zu gestrichenen Sprossen entfallen; die
    Pflichtformen werden hergestellt, indem vorhandene fehler- und
    begruenden-Zeilen umgeschrieben werden, nicht ergänzt (die
@@ -139,9 +142,11 @@ Zeilen; bei mehreren Vorstufen einer Kette sind die Sprossen 0,
 genau eine Sprosse mit hoehe pruefung, als letzte; eine Einheit
 mit zwei Verfahrensketten hat also zwei. Je Einheit tragen die
 drei fehler-Zeilen drei verschiedene Formen und die drei
-begruenden-Zeilen drei verschiedene Formen (P1–P6). Mehrstellige
-Kastenzahlen des Eintrags (Merkkasten aller Einheiten) kommen in keiner aufgabe
-vor; die Sperrprobe des Prüfskripts meldet 0. Jede Zeile mit form
+begruenden-Zeilen drei verschiedene Formen (P1–P6). Die Sperrprobe
+des Prüfskripts meldet 0 (Terme, Zahlenpaare, Gleichungen aus
+Merkkasten, Typische Fehler und Originalen); einzelne Zahlen des
+Kastens sind frei, sie sind der Stoff des Themas (Beschluss
+29.09.). Jede Zeile mit form
 zeichnen oder einem Ablese- oder Zeichenauftrag hat ein
 nichtleeres grafik. Jede Ankreuzzeile nennt in loesung genau eine
 Option wortgleich. muster.md hat je Verfahrenskette einen
