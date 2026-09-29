@@ -1,118 +1,116 @@
 # Stand: binomialverteilung
 
-Katalog-Commit: 95b0f8b09856c14466ca030dd604451b8d259cfa
-(2026-09-26, „katalog: Sek-II-Einträge auf den CAS-Nachtrag“)
-Datum: 2026-09-27
+Katalog-Commit: f56cacecc590f51abf34cf81948a0d2b751d7d33
+(2026-09-28, aus dem Kopf von mappen/binomialverteilung.md)
+Datum: 2026-09-29 23:09 CEST (date)
+Grundlage: bank.md fünfte Fassung, werkzeuge/bank-pruef.py v0.10
+(--katalog aus der Mappe); Nachzug des Bestands vom 27./28.09.
+(Katalog 95b0f8b). Umbauskript:
+werkzeuge/einmalig/nachzug-binomialverteilung-2026-09-29.py.
 
 ## Zeilen je Datei und hoehe
 
-| Datei | Zeilen | vorstufe | grundfall | sprosse | pruefung | pflicht |
-|-------|-------:|---------:|----------:|--------:|---------:|--------:|
-| zone  |     37 |        – |        16 |      20 |        – |       1 |
-| e1    |     40 |        4 |         5 |      15 |        4 |      12 |
-| e2    |     48 |        4 |         5 |      21 |        6 |      12 |
-| e3    |     56 |        4 |         5 |      27 |        8 |      12 |
-| e4    |     51 |        4 |         5 |      24 |        9 |       9 |
-| e5    |     50 |        4 |         5 |      21 |        8 |      12 |
+    Datei  Zeilen  vorstufe grundfall sprosse pruefung pflicht
+    zone       37         0        16      20        0       1
+    e1         40         4         5      15        4      12
+    e2         51         4         5      24        6      12
+    e3         60         8         5      27        8      12
+    e4         51         4         5      24        9       9
+    e5         50         4         5      21        8      12
+
+## Nachzug je Einheit
+
+    Datei  übernommen  neu  umgeschrieben  entfallen
+    zone         37      0              0          0
+    e1           35      0              5          0
+    e2           38      3             10          0
+    e3           46      4             10          0
+    e4           41      0             10          0
+    e5           40      0             10          0
+
+Umgeschrieben: die fünf Grundfallzeilen (e2–e5, Päckchen) und die
+fehler- und begruenden-Zeilen v2, v3 sowie eine anwendung je Einheit
+(Pflichtformen). Nachgezogen in allen übernommenen Zeilen: quelle
+(125 → 122, 127–131 → 124–128), sprosse_text der Vorstufen (längerer
+Sprossentext bis „nichts rechnen“), in e2 sprosse (ab 2 um eins
+verschoben), in e3 kette_nr (um eins verschoben), dazu die id.
+Zeilen mit original und neuer id: 32 (e2 12, e3 20); bank/_punkte.csv
+nicht angefasst.
 
 ## Originale je Einheit
 
-- e1: 2023-bebb-lk-A1.8a, 2022-bebb-gk-B4a, 2018-be-gk-B3.2g,
-  2018MgrundlegendBStochastikWTR3-2d, 2024MerhoehtAStochastik23-b
+- e1: 2023-bebb-lk-A1.8a, 2022-bebb-gk-B4a, 2018-be-gk-B3.2g;
+  Prüfungshöhe 2018MgrundlegendBStochastikWTR3-2d,
+  2024MerhoehtAStochastik23-b.
 - e2: 2017-be-gk-B3.1e, 2026MgrundlegendAStochastik12-a,
-  2021MgrundlegendAStochastik2-a, 2022-bebb-gk-B4b,
-  2019-be-gk-B4.1a, 2018-bb-ea-B4.2c
+  2021MgrundlegendAStochastik2-a; Prüfungshöhe 2022-bebb-gk-B4b,
+  2019-be-gk-B4.1a, 2018-bb-ea-B4.2c.
 - e3: 2018-be-gk-B3.2a, 2018MerhoehtBStochastikWTR1-1a,
   2023-bebb-gk-B4.1d, 2017MerhoehtBStochastikCAS2-2,
-  2017MerhoehtBStochastikCAS1-1b, 2022-bebb-lk-B4m,
-  2023MerhoehtBStochastikWTR3-1c, 2024MgrundlegendAStochastik21-b,
-  2020MgrundlegendAStochastik2-b, 2023MgrundlegendBStochastikWTR2-2b
+  2017MerhoehtBStochastikCAS1-1b, 2023MgrundlegendBStochastikWTR2-2b;
+  Prüfungshöhe 2022-bebb-lk-B4m, 2023MerhoehtBStochastikWTR3-1c,
+  2024MgrundlegendAStochastik21-b, 2020MgrundlegendAStochastik2-b.
 - e4: 2017-bb-ea-B4.2b, 2018-be-gk-B3.2d,
-  2019MgrundlegendBStochastikWTR1-1b, 2025MerhoehtAStochastik21,
-  2022-bebb-lk-B4f, 2022MerhoehtBStochastikWTR1-1f,
-  2017-be-gk-cas-B3.2d
-- e5: 2017-be-gk-cas-B3.1e, 2023-bebb-gk-A1.7b,
+  2019MgrundlegendBStochastikWTR1-1b, 2017-be-gk-cas-B3.2d;
+  Prüfungshöhe 2025MerhoehtAStochastik21, 2022-bebb-lk-B4f,
+  2022MerhoehtBStochastikWTR1-1f.
+- e5: 2017-be-gk-cas-B3.1e, 2023-bebb-gk-A1.7b; Prüfungshöhe
   2025-bebb-gk-A1.9b, 2021MgrundlegendAStochastik2-b,
-  2022MgrundlegendBStochastikWTR2-3a, 2022-bebb-lk-A1.8b
+  2022MgrundlegendBStochastikWTR2-3a, 2022-bebb-lk-A1.8b.
 
 ## Prüfskript vor der Korrektur
 
-| Datei | Abweichungen | Warnungen | häufigster Grund                |
-|-------|-------------:|----------:|---------------------------------|
-| zone  |            5 |         0 | merkmal je Sprosse uneinheitlich |
-| e1    |            0 |         0 | –                               |
-| e2    |            1 |         0 | pruef mit sum() nicht auswertbar |
-| e3    |            0 |         0 | –                               |
-| e4    |            3 |         0 | Ergebnis nach „≤“ nicht erkannt |
-| e5    |            2 |         0 | Wert in Klammern ohne „≈“       |
-
-Keine Einheit scheiterte zweimal.
+- Bestand vor dem Nachzug (v0.10 --katalog): 179 Abweichungen, alle
+  „sprosse_text nicht wortgleich in Zeile“ (Zeilen verschoben).
+- zone 0 / 0 (unverändert); e1 0 / 0; e2 0 / 0; e3 0 / 0; e4 0 / 0.
+- e5 1 / 0: grafik leer bei einem Ableseauftrag („liest … ab“ in
+  einer Fehler-Vorlage ohne Diagramm); Aufgabe umformuliert.
+- Keine Einheit scheiterte zweimal.
 
 ## Entscheidungen
 
-- Zone: Fertigkeiten ohne Doppelpunkt (Zeilen 36, 38–41) tragen als
-  kette den Text bis zum ersten „ – “.
-- Zone: Folge nach erster Einheit, bei gleicher Einheit nach dem
-  Eintrag; die Rechnerfertigkeit übt eine Tabelle kumulierter Anteile
-  ohne Begriff des Themas.
-- Binomialkoeffizient als „(n über k)“ mit \text, Summen als \Sigma
-  mit Grenzen; \binom und \sum kennt das Prüfskript nicht.
-- Prüfungshöhe mit zwei Teilen: sprosse_text reicht bis zur ersten
-  Belegklammer (e1, e2, e5 damit nur der erste Teil).
-- original nur mit Kennungen aus Abschnitt 2 der Mappe; passt ein
-  Original der Zielmarke zu einer Sprosse, trägt es die Sprosse
-  (e2 s3, e4 s3, e5 s2).
-- e4 Prüfungshöhe: der erste Teil (p aus zwei Einzelwerten) hat kein
-  Original in der Mappe und steht als 3 Zeilen mit original null.
-- Typen ohne Kette: e3 Restwahrscheinlichkeit und zwei Spieler, e4
-  Trefferzahlen über einer Schranke, e5 obere Grenze über den
-  Erwartungswert.
-- e4 ohne Pflicht darstellung: die Typen der Einheit tragen keinen
-  Darstellungswechsel.
-- Säulendiagramme mit gerundeten Prozentwerten über \saeulenab,
-  Ablesewerte in ganzen Prozent; Stabdiagramme über
-  \binomialverteilung.
-- Pflichtketten: sprosse_text aus „Dazu:“ oder dem Typnamen, e1
-  darstellung aus der Grundvorstellung (Zeile 125).
+- Zone bleibt: Fertigkeiten (Zeilen 34–41) unverändert.
+- Päckchen: e2 n = 6, p = 0,4 fest, k wandert; e3 n = 40 und die
+  Zahl 12 fest, das Wort wandert; e4 p = 0,08 fest, die Schranke
+  wandert; e5 dasselbe Diagramm (B(8; 0,35) gerundet), das Ereignis
+  wandert.
+- e1 Grundfall bleibt übernommen: die Katalogzeile verlangt vier
+  Kontexte (Münze, Würfel, Glücksrad, Bevölkerung), ein festes p über
+  fünf Kontexte trüge nicht.
+- Erkennungsschritt „Treffer oder Niete gezählt?“ (Zeile 43) steht
+  als eigene Kette e3 k1 (erste Einheit seines Bereichs, bank.md);
+  in e5 bleibt die gleichnamige Vorstufe der Kette.
+- Neue Sprosse e2 s2 „die ganze Verteilung für kleines n“ mit
+  „k = 0:“ … als Zeilenkopf und „Kontrolle:“ als eigener Zeile.
+- Schrittnamen (regeln.md 12) nur in neuen und umgeschriebenen
+  Rechenzeilen; Anordnungsfaktor vorn mit Begründung (n über k).
+- Pflichtformen: fehler v1 Schülerrechnung/-aussage, v2 fehlerfreie
+  Vorlage (P2), v3 Serie (P1), in e4 Prüfzahl (P3); begruenden v1
+  Warum-Frage, v2 Aussagenserie (P4), v3 Personenaussage (P6).
+- Urteile: P6 zweimal Ja (e1, e5), dreimal Nein; P8 zweimal Ja
+  (e3, e4), dreimal Nein.
 
 ## Befunde
 
-- Katalog: alle vier Erkennungsschritte (Zeilen 43–46) wiederholen
-  die Vorstufen der Ketten (Zeilen 127–131); nach bank.md entfallen
-  sie, der Katalog führt beide.
-- Katalog: „Genau, höchstens oder mindestens?“ ist Vorstufe von zwei
-  Ketten (Einheit 2 und 3).
-- Katalog und Mappe: Sprossen nennen Kennungen, die nicht in
-  Abschnitt 2 stehen (etwa 2024-bebb-lk-A1.9a, 2021-be-gk-B4d,
-  2019MerhoehtAStochastik11-b); sie bleiben original null.
-- Prüfskript: \binom und \sum fehlen in STANDARD, beide braucht die
-  Stochastik der Oberstufe.
-- Prüfskript: ein Ergebnis nach „≤“ oder „≥“ (p ≤ 0,05) gilt nicht
-  als Ergebnisstelle.
-- Prüfskript: pruef ohne sum() und range() macht kumulierte Werte zu
-  sehr langen Ausdrücken.
-- Sperre: „P(X = 1)“ ist aus Kasten und Original gesperrt, obwohl es
-  die Schreibweise des Gegenstands ist.
+- Katalog: die drei gestrichenen Erkennungsschritte (alt Zeilen
+  43–45) stehen jetzt wortgleich als Vorstufen der Ketten; der vierte
+  (Zeile 43) wiederholt die Vorstufe von e5 und steht vor e3 ohne
+  Vorstufe – er bleibt dort als eigene Kette.
+- Katalog: „Genau, höchstens oder mindestens?“ ist weiter Vorstufe
+  von zwei Ketten (e2 und e3).
+- Mappe: 2024-bebb-lk-A1.9a, 2021-be-gk-B4d,
+  2023MgrundlegendBStochastikWTR1-2a und weitere Kennungen der
+  Sprossen stehen nicht in Abschnitt 2; sie bleiben original null.
+- Prüfskript: prüft die Pflichtformen P1–P8 nicht; die Formen sind
+  nur durch Durchsicht gesichert.
+- Prüfskript: „liest … ab“ in einer Fehler-Vorlage verlangt eine
+  Grafik, auch wenn nur das Vorgehen einer Person geschildert wird.
 
 ## Offene Punkte
 
 - e3: der zweistufige Prüfplan (Original nicht in der Mappe) hat
   keine eigene Zeile.
-- \saeulenab mit Prozent-Achse und \binomialverteilung mit Ausschnitt
-  sind nicht am Render geprüft (kein LaTeX).
-- Zone: „Säulendiagramm zeichnen“ hat keine eigene Zeile; e5 übt es
-  in der Pflicht darstellung.
-
-## Nachbesserung Render 2026-09-28
-
-Quelle: bau/render-alle/bericht.md, bau/hefte/bericht.md, bau/fokus/bericht.md, bau/layout-befunde.md Punkt 31. Übersicht aller Einträge: bau/render-alle/behoben.md.
-
-- e5-k1-s1-v1, e5-k1-s1-v2, e5-k1-s1-v3, e5-k1-s1-v4, e5-k1-s1-v5, e5-k1-s5-v1, e5-k1-s5-v2, e5-k3-s4-v2 (8): Extra }, or forgotten $ – `=` im Optionswert `ylabel` ohne Klammern. Änderung: `ylabel={…}` geklammert (`=` im Optionswert).
-
-Nur diese 8 Zeilen geändert, alle übrigen byte-gleich. `bank-pruef.py binomialverteilung`: 0 Abweichungen. Probe: jede Zeile allein in einem Minimaldokument mit mathblatt.sty (hz-0801/blattbau) gesetzt wie werkzeuge/zusammenbau.py v0.7 (teile_normal, teil_schwach, Lösung in \erg), xelatex ohne Fehler.
-
-## Nachbesserung Gegenlese 2026-09-28
-- Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
-- binomialverteilung-e2-k2-s1-v1: Zwischenschritt „10 · 0,0161 ≈ 0,1608“ passte nicht zusammen (10 · 0,0161 = 0,161) → „10 · 125/7776 ≈ 0,1608“ (Regel a).
-- binomialverteilung-e5-k1-s7-v3: Begründung „8 liegt näher am Maximum als 2“ trägt nicht (p = 0,51: Maximum bei 5, beide Abstand 3) → Begründung über gleiche Binomialkoeffizienten, Verhältnis (p/(1 − p))⁶ > 1 ⇔ p > 0,5; Ergebnis p > 0,5 unverändert (Regel a).
-- Prüfskript: Abweichungen 0.
+- Grundvorstellung (Zeile 122) steht nur als darstellung-Pflicht e1.
+- gegenlese.md und gegenlese2.md beziehen sich auf den Stand vom
+  27./28.09. und sind nicht nachgezogen.
+- bank/_punkte.csv braucht punkte-nachziehen.py für 32 ids.
