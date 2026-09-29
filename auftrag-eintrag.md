@@ -139,8 +139,8 @@ Zeilen; bei mehreren Vorstufen einer Kette sind die Sprossen 0,
 genau eine Sprosse mit hoehe pruefung, als letzte; eine Einheit
 mit zwei Verfahrensketten hat also zwei. Je Einheit tragen die
 drei fehler-Zeilen drei verschiedene Formen und die drei
-begruenden-Zeilen drei verschiedene Formen (P1–P6). Mehrstellige Kastenzahlen des
-Eintrags (Merkkasten aller Einheiten) kommen in keiner aufgabe
+begruenden-Zeilen drei verschiedene Formen (P1–P6). Mehrstellige
+Kastenzahlen des Eintrags (Merkkasten aller Einheiten) kommen in keiner aufgabe
 vor; die Sperrprobe des Prüfskripts meldet 0. Jede Zeile mit form
 zeichnen oder einem Ablese- oder Zeichenauftrag hat ein
 nichtleeres grafik. Jede Ankreuzzeile nennt in loesung genau eine
