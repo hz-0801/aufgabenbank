@@ -184,7 +184,7 @@ def e2():
     m = ("e hoch k mal x, k ganz, auch negativ; f(x) = e^(kx) bleibt, "
          "k wandert")
     gf = []
-    for i, k in enumerate([5, -2, 4, -6, 9], 1):
+    for i, k in enumerate([5, -2, 8, -5, 9], 1):
         gf.append(setze(v, variante=i, merkmal=m,
             aufgabe=f"$f(x) = e^{{{k}x}}$ – $f'(x)$?",
             antwort="$f'(x) =$ __",
