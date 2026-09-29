@@ -1,11 +1,11 @@
 # Stand: terme
 
-Katalog-Commit: de503c9cea3976774daeb6c514adb85829d8df2e
-(2026-09-25, aus dem Kopf von mappen/terme.md)
-Datum: 2026-09-27 (date, UTC)
-Prüfskript: werkzeuge/bank-pruef.py v0.5, 0 Abweichungen,
-0 Warnungen in allen Dateien (Nachbesserung 2026-09-27; vorher
-v0.2, ebenfalls 0/0).
+Katalog-Commit: d78032a884b6073d9e4c92cc8407e909e3c4ea2a
+(2026-09-29, aus dem Kopf von mappen/terme.md)
+Datum: 2026-09-29 09:31 (date, UTC)
+Grundlage: bank.md fünfte Fassung, werkzeuge/bank-pruef.py v0.7;
+Nachzug des Bestands vom 27./28.09. (Commits „terme: e1" bis
+„terme: e4", „terme: muster").
 
 ## Zahlen je Datei
 
@@ -14,154 +14,84 @@ v0.2, ebenfalls 0/0).
     e1.jsonl        39         0         5      21        4       9
     e2.jsonl        81        12        10      42        5      12
     e3.jsonl        36         4         5      15        3       9
-    e4.jsonl        29         0         5      18        3       3
+    e4.jsonl        52         8         5      24        3      12
 
-Pflicht je Einheit: e1 fehler 3, darstellung 3, anwendung 3 ·
-e2 fehler 3, begruenden 3, darstellung 3, anwendung 3 · e3 fehler 3,
-begruenden 3, darstellung 3 · e4 fehler 3 · Zone fehler 1 (Paar).
+Pflicht je Einheit: e1 fehler, darstellung, anwendung · e2 fehler,
+begruenden, darstellung, anwendung · e3 fehler, begruenden,
+darstellung · e4 fehler, begruenden, darstellung, anwendung
+(je 3) · Zone fehler 1 (Paar).
+
+## Nachzug je Einheit
+
+    Datei  übernommen  neu  umgeschrieben  entfallen
+    zone         18      0              0          0
+    e1           28      0             11          0
+    e2           60      0             21          0
+    e3           25      0             11          0
+    e4           18     23             11          0
+
+Umgeschrieben heißt auch: nur merkmal angeglichen (je Pflicht-
+sprosse ein merkmal für drei Formen; 5 Zeilen in e1–e3).
 
 ## Originale je Einheit
 
-- e1: 2023-OS-B1h (2 Zeilen), 2017-OS-B1i (2 Zeilen), beide an der
-  Prüfungssprosse der Kette Term aufstellen.
-- e2: 2025-GYM-B2a (2 Zeilen), an der Kette Zusammenfassen.
-- e3: keins (siehe Entscheidungen); Decke ist die Zielmarke.
-- e4: keins (Katalog: kein P10-Original); Decke ist die Zielmarke.
+- e1: 2023-OS-B1h, 2017-OS-B1i (je 2 Zeilen, k1 s7).
+- e2: 2025-GYM-B2a (2 Zeilen, k4 s11).
+- e3: keins; Prüfungshöhe als Zielmarke, original null.
+- e4: keins; Prüfungshöhe als Zielmarke, original null.
 
 ## Prüfskript vor der Korrektur
 
-- zone.jsonl: 4 Abweichungen, 0 Warnungen – merkmal je Sprosse
-  uneinheitlich (k1–k4 s1). Eine Korrekturrunde.
-- e1.jsonl: 8 Abweichungen, 0 Warnungen – 5× „Lösungszahl in 3 von
-  3 Ankreuzoptionen" (k1 s1), 3× „pruef fehlt" (k3, Situation zu
-  Term). Eine Korrekturrunde.
-- e2.jsonl: 2 Abweichungen, 0 Warnungen – „original fehlt" bei
-  hoehe pruefung ohne Original (k5 s7). Eine Korrekturrunde.
-  Danach ein Nachtrag (Buchstabe, siehe Entscheidungen), 0/0.
-- e3.jsonl: 0 Abweichungen, 0 Warnungen.
-- e4.jsonl: 0 Abweichungen, 0 Warnungen.
-
-Keine Einheit ist zweimal gescheitert. Vor jedem Schreiben lief
-eine eigene Sperrprobe (Teilzeichenketten aus Kasten, Fehlern,
-Originalen, Kettenbeispielen); sie fand in e2 „3x + 4" in
-„2x + 3x + 4x" und in e4 „6x + 9" in „3x² + 6x + 9"; beide
-Aufgaben vor dem ersten Skriptlauf geändert.
+- zone.jsonl: 0 Abweichungen, 0 Warnungen (unverändert).
+- e1.jsonl: 0 / 0.
+- e2.jsonl: 2 / 0 – „pruef fehlt" (P1-Serie) und „merkmal
+  uneinheitlich" (Darstellung); je eine Zeile korrigiert.
+- e3.jsonl: 1 / 0 – Nummer der Rechnung „(2)" stand an der
+  Ergebnisstelle; Lösungssatz umformuliert.
+- e4.jsonl: 1 / 0 – „pruef fehlt" (P2 fehlerfrei, Lösung mit
+  Ziffer). Keine Einheit ist zweimal gescheitert.
 
 ## Entscheidungen
 
-- sprosse_text ist das ganze Segment zwischen zwei Pfeilen der
-  Kettenzeile, wortgleich samt Mengenangabe („(4×)"), ohne
-  Schlusspunkt. Erkennungsschritte: Zeile bis vor „Vor Einheit".
-  Zone: Fertigkeitszeile bis vor dem Gedankenstrich; kette ist
-  die Fertigkeit ohne Klammerbeispiel.
-- (überholt, siehe Nachbesserung) Prüfungssprosse ohne Original
-  (Malnehmen e2, Klammern e3,
-  Ausklammern e4): hoehe sprosse, 3 Zeilen, merkmal „Zielmarke
-  ohne Original". Grund: Das Skript verlangt bei hoehe pruefung
-  ein Original; bank.md kennt nur „2 je Original".
-- e2 hat zwei Verfahrensketten (Zusammenfassen k4, Malnehmen k5),
-  daher 10 Grundfallzeilen. Das Original 2025-GYM-B2a hängt an
-  Zusammenfassen, weil es inhaltlich dorthin gehört, nicht an die
-  letzte Kette (2.4 c). Die Pflichtkette heißt Zusammenfassen.
-- 2022-GYM-B2b (Zuordnung e3) nicht verfremdet: Verfahren und
-  Falle sind die binomische Formel, die dieser Eintrag nicht lehrt
-  (→ binomische-formeln.md); eine Verfremdung ohne sie wäre ein
-  anderes Verfahren. 2019-GYM-B1f ist keiner Einheit zugeordnet
-  und fehlt ebenso.
-- e1, Grundfall „passenden Term ankreuzen": Wortterme aus zwei
-  Anweisungen mit drei Optionen. Ein Grundfall mit einer Anweisung
-  (4x, x + 4, 4 − x) scheitert an der Ankreuzprobe (siehe Befunde).
-- e1, Situation zu Term: Aufgabe fragt zusätzlich nach der
-  Bedeutung eines Termwerts, damit pruef rechenbar ist.
-- Pflichtelemente nach den Typen: e1 ohne begruenden (Typenzeile
-  nennt es nicht), Fehler finden mit dem Muster „Punkt vor Strich
-  in Termen missachtet" (Zeile 65) am Termwert; darstellung am
-  Termbaum (Zeile 6, LISUM „Rechen- und Termbäume"). e3 ohne
-  anwendung, darstellung am Flächenbild (Zeile 74, Tabelle als
-  Bild). e4 nur fehler, Muster „Vorzeichen verloren" beim
-  Ausklammern; die Kettensprosse „Fehler finden: Faktor nur aus
-  einem Glied gezogen" bleibt hoehe sprosse in der Kette.
-- quelle der Pflichtzeilen: die Typenzeile der Einheit (22–24),
-  sonst die Zeile, aus der der sprosse_text stammt.
-- pruef bei Termergebnissen: erste Vorzahl oder Zahl nach „=".
-  Die Gleichwertigkeit von Aufgabe und Lösungsterm habe ich
-  zusätzlich mit einem eigenen Skript geprüft (Einsetzen
-  zufälliger Werte, nicht im Repo).
-- Zone: sprosse 1 = zwei sehr leichte (hoehe grundfall), 2 =
-  mittlere, 3 = Fallstrick (hoehe sprosse); Paar in f1 (sprosse 4
-  pflicht fehler, sprosse 5 Rechnung), Fallstrick „minus minus"
-  bei negativen Zahlen als häufigster. f3 (Dezimalzahlen, Brüche)
-  aufgenommen, weil Zusammenfassen s10 Dezimal-Vorzahlen braucht.
-- Buchstaben: reine Terme mit x, y, z, a, b, c (Erkennung auch
-  m, k, w, d); Sachaufgaben mit eigenen, im Text erklärten
-  Buchstaben, je Einheit einmal belegt (e1 a, b, e, k, p, q, m, n,
-  d, t; e2 p, s, n). In e2 stand n zuerst auch in einer
-  Vorzahlaufgabe; auf w geändert (Commit „e2 (Buchstabe …)").
-- e4 Zielmarke „dreigliedrig mit Zahl- und Variablenfaktor" mit
-  zwei Variablen umgesetzt (aus e2 bekannt), nicht mit x³.
-- „Scheitert zweimal" gelesen als: zwei Korrekturrunden ohne
-  null Abweichungen. Trat nicht ein.
+- Zone bleibt: Fertigkeiten (Zeilen 28–31) unverändert.
+- Päckchen: fester Wert e1 „das Vierfache", e2 k4 „7x", e2 k5
+  Faktor 5, e3 „5a + (2b − …)", e4 „5x"; es wandert die Zahl.
+- P1-Serie in e1 am Termwert (Kennzeichen gerade/ungerade und
+  Vorzeichen), weil e1 keine Umformungskette hat.
+- Vorstufe s-1 (Zerlegen) mit Gerüst „4 · __ + 4 · __" in antwort;
+  pruef als Liste der Lückenwerte.
+- Neue Sprossen e4 s7 (Figur) und s8 (Rabatt) als Text ohne
+  Grafik: zwei Rechtecke nebeneinander hat kein Baustein; das
+  Bild beschreibt die Aufgabe in Worten.
+- e4 Pflichtelemente neu (begruenden, darstellung, anwendung),
+  weil die Typenzeile 24 sie jetzt trägt; quelle 24.
+- Kastenzahl 12 (Zeile 43, 50) aus allen Aufgaben genommen:
+  e1 k3 v1, e1 k4 s3 v1, e2 k4 s2 v3, e3 k3 s1 v1/v3 (umgeschrieben),
+  e4 s1 v5, s3 v2, s9 v2, s10 v3, k2 v1.
+- In P1-Serien stehen die Rechnungen als (1)…(4); die Lösung
+  nennt sie „Rechnungen 2 und 3" (Prüfskript liest „(2)" sonst als
+  Ergebnis).
 
 ## Befunde
 
-- (erledigt v0.5) Prüfskript, Ankreuzprobe: „Lösungszahl in
-  genau einer
-  Zahloption" ist bei Termoptionen mit je einer Zahl (4x, x + 4,
-  4 − x) nie erfüllbar; Optionen mit mehreren Zahlen werden
-  offenbar übergangen. Ein Term-Ankreuzen prüft das Skript damit
-  entweder falsch oder gar nicht. Vorschlag: Ankreuzprobe nur für
-  reine Zahloptionen, für Termoptionen Gleichwertigkeit prüfen.
-- Prüfskript: Bei Termlösungen prüft pruef nur eine Zahl an der
-  Ergebnisstelle, nicht, ob der Lösungsterm zur Aufgabe
-  gleichwertig ist. Vorschlag: optionales Feld mit Aufgabenterm
-  und Lösungsterm, Vergleich durch Einsetzen.
-- (erledigt v0.5) Auftrag, Gegenprobe: „Zahl der Zeilen mit
-  hoehe grundfall ist 5"
-  je Einheit setzt eine Verfahrenskette je Einheit voraus; e2 hat
-  zwei (Ist 10). bank.md „Pflichtelemente als eigene Kette mit dem
-  Namen der Verfahrenskette" ist bei zwei Ketten nicht eindeutig.
-- (erledigt v0.5) bank.md: keine Regel für die Prüfungssprosse
-  ohne Original
-  (Zielmarke); Vorschlag: „hoehe sprosse, 3 Zeilen".
-- Katalog, Zuordnung: 2022-GYM-B2b steht bei Einheit 3, braucht
-  aber die binomische Formel (Kl. 8, binomische-formeln.md); für
-  diesen Eintrag ist es kein verfremdbares Original.
-- Katalog, Kette Ausklammern: Die Zielmarke verlangt einen
-  dreigliedrigen Term mit Zahl- und Variablenfaktor; keine Sprosse
-  führt den dafür nötigen zweiten Buchstaben oder x³ ein
-  (Zwischensprosse fehlt, 2.4 b).
-- Katalog, Typen e1: kein Typ Fehler finden, obwohl der
-  LISUM-Befund (Zeile 6) Fehlerzeilen ausdrücklich belegt.
+- Gegenprobe „je Einheit genau eine Sprosse mit hoehe pruefung"
+  passt nicht zu e2 mit zwei Verfahrensketten (je Kette eine
+  Prüfungshöhe nach 2.4 c; Ist 2).
+- Katalog: e1 trägt weiter keinen Typ Begründen, e3 keine
+  Anwendung; die Pflichtmengen fehlen dort nach den Typen.
+- Katalog, Erkennungsschritte: keiner wiederholt eine Vorstufe
+  derselben Einheit; e4 hat keinen Erkennungsschritt.
+- 2022-GYM-B2b (e3) bleibt unverfremdet: Kern ist die binomische
+  Formel (binomische-formeln.md).
+- Vorlage: kein Baustein für zwei Rechtecke mit gemeinsamer Seite
+  (e4 s7, Typenzeile 24).
+- Prüfskript: P1-Serien ohne Zahlenergebnis verlangen ein pruef,
+  sobald die Lösung eine Ziffer trägt; die Nummern der Rechnungen
+  zählen dann als Ergebnis.
 
 ## Offene Punkte
 
-- Grundvorstellung (Zeile 70, „Was bedeutet eine Vorzahl vor
-  x?", Blatt 0) steht nicht in der Bank: keine Fertigkeitszeile,
-  kein Erkennungsschritt. Einordnung klären.
-- (erledigt v0.5) hoehe der Zonezeilen (grundfall/sprosse) mit
-  den anderen
-  Einträgen abgleichen; bank.md legt sie nicht fest.
-- Grafiken nicht gerendert (kein LaTeX): \viereck mit Seitenlabels
-  wie „x+2", \dreieck mit leeren Winkellabels, \sachtabelle mit
-  $\cdot$ und \leerzelle im Kopf, \termbaum mit leeren Knoten.
-- Termbaum als Darstellung in e1: klären, ob die Lerngruppe ihn
-  kennt; sonst Figur-Aufgaben mit Zeichnen.
-
-## Nachbesserung 2026-09-27
-
-- Prüfskript v0.5: 0 Abweichungen, 0 Warnungen vor und nach der
-  Nachbesserung.
-- e2 k5 s7 (Malnehmen), e3 k2 s7 (Klammern) und e4 k1 s8
-  (Ausklammern), je 3 Zeilen, tragen als Prüfungshöhe ohne
-  Original hoehe pruefung statt sprosse, original bleibt null
-  (bank.md, „Mengen je Kette“); die Entscheidung dazu ist überholt.
-- Tabelle „Zahlen je Datei“ und Kopfzeile Prüfskript auf den neuen
-  Stand gebracht.
-- Erkennungsschritte: Die Ketten des Katalogs haben keine
-  Vorstufe, kein Erkennungsschritt wiederholt eine; keine
-  Streichung.
-
-## Nachbesserung Gegenlese 2026-09-28
-- Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
-- terme-e2-k6-s3-v2: Dreieck mit den Seiten a, 2a, 4a verletzt die Dreiecksungleichung, Zeichnung passte nicht zu den Labels → Seiten 3a, 2a, 4a, Grafik \dreieck{(0,0)}{(4.8,0)}{(1.65,1.74)}{3a}{2a}{4a}{}{}{} (Seiten 3,6 : 2,4 : 4,8), Lösung $4a + 3a + 2a = 9a$, pruef 9 (Regel a).
-- Prüfskript: Abweichungen 0.
+- Grundvorstellung (Zeile 70) steht weiter nicht in der Bank.
+- Schrittnamen nur in neuen und umgeschriebenen Zeilen; der
+  übernommene Bestand zeigt reine Ergebnisse.
+- Termbaum (e1) und \viereck mit Termlabels nicht gerendert.
