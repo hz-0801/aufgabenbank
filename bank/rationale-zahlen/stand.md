@@ -1,203 +1,101 @@
 # Stand: rationale-zahlen
 
-Katalog-Commit: 761321330add6ed255669afc1c4e11b846250dd5
-(hz-0801/mathe-nachhilfe, katalog/rationale-zahlen.md, laut Kopf der
-Mappe mappen/rationale-zahlen.md vom 2026-09-27 06:15 UTC)
-Datum: 2026-09-27 07:14 UTC
-Prüfskript: werkzeuge/bank-pruef.py v0.3, Endstand 0 Abweichungen,
-0 Warnungen in allen Dateien.
+Katalog-Commit: cebfd509ea71ae238b589537bd00b7fc306df06f
+(2026-09-28, aus dem Kopf von mappen/rationale-zahlen.md)
+Datum: 2026-09-29 13:33 (date, UTC)
+Grundlage: bank.md fünfte Fassung, werkzeuge/bank-pruef.py v0.9,
+Vorlage auftrag-eintrag.md 2026-09-29c; Nachzug des Bestands vom
+27.09. (Stand davor in der Git-Geschichte dieser Datei). Umbau mit
+werkzeuge/einmalig/nachzug-rationale-zahlen-2026-09-29.py.
+Endstand: 0 Abweichungen, 0 Warnungen, auch mit `--katalog`.
 
-## Dateien
+## Zahlen je Datei
 
     Datei       Zeilen  vorstufe grundfall sprosse pruefung pflicht
-    zone.jsonl      23         –        10      12        –       1
+    zone.jsonl      23         0        10      12        0       1
     e1.jsonl        46         4         5      21        4      12
-    e2.jsonl        59        12         5      27        3      12
+    e2.jsonl        62        12         5      30        3      12
     e3.jsonl        44         4         5      18        8       9
     e4.jsonl        37         4         5      15        4       9
-    gesamt         209
+    gesamt         212        24        30      96       19      43
 
-Pflicht je Einheit (fehler/begruenden/anwendung/darstellung):
-e1 3/3/3/3 · e2 3/3/3/3 · e3 3/3/3/– · e4 3/3/3/–;
-Zone: 1 fehler (Zone-Paar). e2 vorstufe: 8 Zeilen aus zwei
-Erkennungsschritten, 4 Zeilen Vorstufe der Kette.
+Pflicht je Einheit (fehler/begruenden/darstellung/anwendung):
+e1 3/3/3/3 · e2 3/3/3/3 · e3 3/3/–/3 · e4 3/3/–/3; Zone fehler 1.
 
-Ketten je Datei (kette_nr: Name):
-- zone: f1 Natürliche Zahlen … im Kopf (Einmaleins) · f2
-  Zahlenstrahl · f3 Dezimalzahlen und Brüche … · f4 Punkt vor
-  Strich und Klammern mit natürlichen Zahlen · f5 Wert eines Terms
-  mit Platzhalter berechnen …
-- e1: k1 Ordnen · k2 Mitte zweier Zahlen · k3 runden · k4 Punkte in
-  vier Quadranten · k5 Ordnen (Pflicht)
-- e2: k1 Vorzeichen oder Rechenzeichen? · k2 Zeichen
-  zusammenfassen · k3 Addieren/Subtrahieren · k4 Beträge … · k5
-  Dezimalzahlen und Brüche · k6 Umkehrung … · k7
-  Addieren/Subtrahieren (Pflicht)
-- e3: k1 Multiplizieren/Dividieren · k2 Vorzeichenregel als Aussage
-  prüfen · k3 Multiplizieren/Dividieren (Pflicht)
-- e4: k1 Terme und Sachaufgaben · k2 Rechenvorteile … · k3 Terme
-  und Sachaufgaben (Pflicht)
+## Nachzug je Einheit
 
-## Originale je Einheit (je 2 Zeilen, verfremdet)
+    Datei  übernommen  neu  umgeschrieben  entfallen
+    zone         23      0              0          0
+    e1           36      0             10          0
+    e2           49      3             10          0
+    e3           32      0             12          0
+    e4           28      0              9          0
+
+Übernommen: aufgabe, antwort, loesung, pruef wortgleich; nachgezogen
+quelle (87–90 → 84–87, 36 → 35), sprosse, id, bei e3 s0 der längere
+Vorstufentext, bei der Prüfungshöhe sprosse_text und merkmal.
+Umgeschrieben: Päckchen (je Kette 5), Pflichtformen, e2 s5 v1–v2
+(Gerüst), e3 s4 (Teilprodukt-Zeile). Neu: e2 s2 „nur das
+Vorzeichen“ (3 Zeilen), die Sprossen danach rücken um eins.
+
+## Originale je Einheit
 
 - e1: 2015-OS-B1b, 2014-OS-B1h
-- e2: keines; Prüfungshöhe ohne P10-Original, original null,
-  3 Zeilen
+- e2: keins; Prüfungshöhe ohne Original, original null (k3 s9)
 - e3: 2021-OS-B1g, 2016-OS-B1i, 2026-FOR-B1g, 2015-OS-B1g
 - e4: 2016-OS-K2d, 2017-OS-K2a
 
-## Prüfskript vor der Korrektur (erster Lauf je Datei)
+## Prüfskript vor der Korrektur
 
-- zone.jsonl: 0 Abweichungen, 0 Warnungen.
-- e1.jsonl: 0 Abweichungen, 0 Warnungen.
-- e2.jsonl: 0 Abweichungen, 0 Warnungen.
-- e3.jsonl: 0 Abweichungen, 0 Warnungen.
-- e4.jsonl: 0 Abweichungen, 0 Warnungen.
-
-Keine Einheit ist am Prüfskript gescheitert.
-
-Eigene Probe „Kastenzahlen“ (Entscheidung 11), erster Lauf nach
-e4: 54 Zeilen mit einer mehrstelligen Zahl aus dem Merkkasten in
-aufgabe (zone 5, e1 8, e2 12, e3 6, e4 23). zone und e1–e3 waren
-da schon committet; korrigiert in einem eigenen Commit
-(„rationale-zahlen: zone, e1–e3 ohne Kastenzahlen“), e4 vor seinem
-Commit. Ein Treffer entstand bei der Korrektur neu und wurde vor
-dem Commit ersetzt. Endstand 0.
-
-Unabhängig nachgerechnet: 53 reine Rechenaufgaben aus dem
-Aufgabentext gegen pruef, 0 Differenzen; Sachaufgaben,
-Zeichenaufgaben und die zwei Preisaufgaben von Hand.
+- Bestand gegen die neue Mappe mit `--katalog`: 116 Abweichungen
+  (e1 25, e2 34, e3 32, e4 25), alle „sprosse_text nicht wortgleich
+  in Zeile quelle“ (Katalogzeilen verschoben); zone 0.
+- Erster Wurf je Einheit: e1–e4 je 0 Abweichungen, 0 Warnungen.
+  Vor dem Commit von e1 eine Urteilszeile getauscht (e1 k5 s4 v3
+  von Ja auf Nein, Ausgleich der Urteile). Keine Einheit scheiterte.
 
 ## Entscheidungen
 
-1. Zone, kette und sprosse_text: Fertigkeit bis zum Doppelpunkt
-   (nur Z. 29 hat einen: „Zahlenstrahl“); ohne Doppelpunkt bis vor
-   „ – Einheit“ bzw. „ – alle Einheiten“. Reihenfolge wie im
-   Eintrag (Einheit 1, 1, 2, 3, 3).
-2. Zone, Fallstricke rückwärts geplant: f1 Subtrahieren über den
-   Zehner (e2, Beträge subtrahieren); f2 Schrittweite 0,25 statt
-   0,1 (e1, Brüche eintragen); f3 Komma unter Komma (e2
-   Dezimalzahlen) und Bruch mal ganze Zahl (Z. 30, Einheit 3); f4 von
-   links nach rechts gerechnet (e3 Punkt vor Strich, alle drei
-   Termwert-Originale); f5 „4x“ als Ziffernfolge (e3, e4
-   Termwert). Die mittlere Aufgabe hat Dezimalzahl statt negativer
-   Zahl, weil die Zone keinen Begriff des Themas nennt.
-3. Zone-Paar bei f4 (Punkt vor Strich): Einheit 3 und 4 und die
-   drei Termwert-Originale hängen daran.
-4. Von fünf Erkennungsschritten stehen zwei (Z. 34 und 36, beide
-   in e2). Drei entfallen nach bank.md, weil sie denselben Handgriff
-   verlangen wie die Vorstufe ihrer Kette (Befund 1).
-5. Erkennungsschritt „Zeichen zusammenfassen“: Die Lösung ist ein
-   Term ohne Klammern ($6 + 5$), keine Ergebniszahl. pruef ist die
-   erste Zahl der Lösung, weil das Skript pruef verlangt, sobald
-   die Lösung Ziffern hat (Befund 4). „Vorzeichen oder
-   Rechenzeichen?“ antwortet mit V/R, pruef leer.
-6. „(4×)“ im Katalog (Z. 87–90, auch an „Zeichen zusammenfassen
-   gemischt“) ist Blattmenge; in der Bank gilt Grundfall 5, jede
-   weitere Sprosse 3. sprosse_text ohne „(4×)“ und ohne
-   „(Vorstufe)“.
-7. Prüfungshöhe mit „daneben …“: eine eigene Sprosse je Original,
-   alle mit hoehe pruefung, je 2 Zeilen; sprosse_text ist der
-   Satzteil des Originals.
-8. e1: 2014-OS-B1c (Zielmarke, Original bei brueche-dezimalzahlen)
-   nicht aufgenommen; die Sprossenzeile Z. 87 nennt es nicht, und
-   es hat keine negative Zahl. 2014-OS-B1h ohne Wurzel verfremdet
-   („hier nur der negative Teil“, Z. 87); Falle bleibt: negativer
-   Bruch gegen nahe negative Dezimalzahl.
-9. e2: Prüfungshöhe ohne P10-Original (Z. 88, 96): hoehe pruefung,
-   original null, 3 Zeilen, wie bank.md es verlangt; Aufgabe ist
-   die Klammer eines Terms mit eingesetzter negativer Zahl.
-10. Typen ohne Kette: e1 Mitte zweier Zahlen, runden, Punkte in
-    vier Quadranten (nur ganze Koordinaten, Kette in
-    symmetrie-abbildungen); e2 Beträge, Dezimalzahlen und Brüche
-    (nur Brüche, die Kette trägt die Dezimalzahlen), Umkehrung;
-    e3 Vorzeichenregel als Aussage prüfen; e4 Rechenvorteile.
-    Durch Kette oder Prüfungshöhe gedeckt: Zahl zu Bedingung (e1
-    Prüfungshöhe), Termwert mit Klammer (e3 2026-FOR-B1g, e4
-    Sprosse), Kontostand, Temperatur- und Höhenunterschied,
-    Ausgangswert aus Differenz, Preiskombination (e4). Die
-    Plusklammer (e4) steht nicht eigens; die Kette hat nur die
-    Minusklammer.
-11. Gegenprobe „Kastenzahlen“ streng gelesen wie in pythagoras und
-    binomische-formeln: keine mehrstellige Zahl aus dem Merkkasten
-    (1,5; 10; 11; 12; 13; 14; 16; 20; 24; 25; 32) in einer
-    aufgabe, auch nicht mit anderem Vorzeichen; einzelne Ziffern
-    frei (bank.md). „P10“ der Prüfkennung ausgenommen. Eigene
-    Probe, weil die Sperrprobe nur Terme und Paare fängt.
-12. Pflicht darstellung: e1 der Typ „Situation ↔ Zahl“ (Z. 21) in
-    beide Richtungen; e2 Pfeilbild ↔ Term (LISUM, Z. 8). e3 und e4
-    ohne darstellung, ihre Typen tragen keinen Wechsel.
-13. Pflicht anwendung mit sprosse_text aus den amtlichen Zeilen:
-    e1 und e4 RLP Z. 6 („Vergleichen und Ordnen …“, „Addition als
-    Zusammenfassung …“), e2 RLP Z. 6 („… Änderung eines
-    Zustandes“), e3 LISUM Z. 8 („Einfluss der Vorzeichen an
-    Geldfluss …“). Fünf Anwendungen enden mit einer Entscheidung
-    im Kontext (Pfütze, Kühlkammer, Buch, Tauchgrenze, Kühllaster).
-14. Fehler finden: e4 (Minusklammer) senkrecht mit `\rechnung`,
-    weil es eine Umformung ist; e1–e3 als Zeile.
-15. Runden negativer Zahlen am Betrag (−12,85 → −13); pruef
-    ungerundet, das Skript rundet vom Betrag weg, das stimmt
-    überein.
-16. Zahlengerade als `\zahlenstrahl` mit negativem xmin;
-    Beschriften mit `{0/0}` (nur die Null markiert),
-    Pfeilbild-Aufgaben mit den Labels „Start“ und „Ende“.
-17. Zeichenaufgaben ohne pruef (erlaubt), außer Zone f2 v2, deren
-    Lösung eine Zahl ist.
-18. Preisaufgaben (2016-OS-K2d) mit eigenen Preislisten: Tierpark
-    mit Großeltern-Enkel-Karte Mo–Fr (64 € gegen 76, 80, 84 €) und
-    Freizeitbad mit Gruppenkarte am Wochenende (38 € gegen 43,
-    51 €). Fallen wie im Original: Familienkarte reflexhaft, freies
-    Kleinkind mitgezählt, Tagesbedingung.
+1. Prüfungshöhe mit „daneben …“: alle Originale einer Kette in einer
+   Sprosse (die letzte), je Original 2 Zeilen; sprosse_text ist der
+   ganze Prüfungsabschnitt der Kettenzeile bis zum Satzende (e2 ohne
+   den Zusatzsatz). Bisher je Original eine Sprosse.
+2. Päckchen, fester Wert im merkmal: e1 die Zahl $-5$, e2 der Start
+   $-7$, e3 der Faktor $-6$, e4 der Startwert $-60$ €.
+3. Gerüst „Vorzeichen: __ Betrag: __ Ergebnis: __“ in e3 s1 v1–v2
+   (Päckchen) und e2 s5 v1–v2; die Lösung trägt dieselben Wörter.
+4. e2 s2 „nur das Vorzeichen“: Ankreuzen mit zwei Optionen, Lösung
+   nennt die Option zuerst, dann den Betragsvergleich; pruef "".
+5. P6 steht, wo der Bestand eine Personenaussage hatte (e1, e2);
+   e3 und e4 bekamen eine neue (Vorzeichenregel „nicht
+   entscheidbar“, Temperaturunterschied); dort wich die
+   Begründungszeile ohne Form.
+6. P1-Kennzeichen: e1 Lage zwischen den Zahlen, e2 Richtung auf der
+   Zahlengeraden, e3 Vorzeichen, e4 Vorzeichen der Klammer.
+7. Urteile der Pflichtzeilen: e1 1 Ja / 2 Nein, e2 2 Ja / 1 Nein, e3 2 Ja /
+   1 Nein, e4 3 Ja / 2 Nein (P2 „Richtig“ als Ja gezählt).
+8. Musterbeispiele je Kette mit eigenen Zahlen außerhalb von
+   Päckchen und Bestand.
 
 ## Befunde
 
-1. Katalog, Erkennungsschritte gegen Vorstufen derselben Einheit
-   (Katalogbefund nach bank.md): „Pfeil an der Zahlengeraden“
-   (Z. 35) = Vorstufe „Pfeil an der Zahlengeraden“ (Z. 88); „Wie
-   viele Minuszeichen?“ (Z. 37) = Vorstufe „Vorzeichen ankreuzen
-   ohne Rechnung“ (Z. 89); „Was ist der Startwert, was die
-   Änderung?“ (Z. 38) = Vorstufe „Startwert und Änderung
-   markieren“ (Z. 90). Die Bank führt nur die Vorstufen.
-2. Auftrag, Gegenprobe: „Die Kastenzahlen … kommen in keiner
-   aufgabe vor“ ist wörtlich strenger als bank.md und die
-   Sperrprobe (Terme, Paare). Die Einträge lesen es verschieden
-   (streng: pythagoras, binomische-formeln, dieser; als
-   Kastenterme: quadratische-funktionen). bank.md sollte es
-   festlegen, das Prüfskript es dann prüfen.
-3. Katalog Z. 22 nennt den Typ „Dezimalzahlen und Brüche“, die
-   Kette Z. 88 nur „Dezimalzahlen“; die Brüche mit Vorzeichen
-   stehen deshalb als Typ ohne Kette (Entscheidung 10).
-4. Prüfskript: Eine Lösung, die ein Term ist (Erkennungsschritt
-   „ohne Klammern aufschreiben“), braucht pruef, obwohl es keine
-   Ergebniszahl gibt. Wie bei Ankreuzen sollte pruef "" erlaubt
-   sein, wenn die Lösung ein Term ist.
-5. Katalog Z. 87 führt 2014-OS-B1h als Prüfungshöhe von Einheit 1,
-   das Original liegt bei brueche-dezimalzahlen. Beide Bänke
-   verfremden es; beim Blattbau auf Beinahe-Doppel achten.
+1. Katalog Z. 33–35 und Vorstufen: „Pfeil an der Zahlengeraden“,
+   „Wie viele Minuszeichen?“, „Startwert und Änderung“ stehen als
+   Vorstufe; die Erkennungsschritte davon sind entfallen (wie 27.09.).
+2. Katalog Z. 85: Die Sprosse „nur das Vorzeichen“ steht vor
+   „negative Zahl addieren mit Klammer“, verlangt aber schon das
+   Betragsdenken der Typ-Zeile „Beträge“ (k4, Typ ohne Kette).
+3. Prüfskript: Serie P1 und Aussagenserie P4 werden nur über
+   pflicht erkannt; eine P2-Vorlage mit „Richtig.“ braucht pruef ""
+   ohne eigene Regel (geht über pflicht fehler).
+4. bank.md, Gerüst rationale-zahlen: „die ersten zwei Varianten“ ist
+   beim Päckchen (fünf Zeilen) knapp; offen, ob v3–v5 es ohne Gerüst
+   üben sollen oder ob das Blatt das Gerüst mitzieht.
 
 ## Offene Punkte
 
-- Kein LaTeX-Lauf: `\zahlenstrahl` mit negativem Bereich, `{0/0}`
-  und Textlabels („Start“, „Ende“) ist ungerendert. Beschriftet die
-  Vorlage die Striche selbst, sind die Beschriften-Aufgaben (e1 k1
-  s0) auf dem Blatt schon gelöst; dann braucht es einen Strahl ohne
-  Zahlen.
-- `\kreuz{plus} \kreuz{minus}` nebeneinander (e3 Vorstufe) und die
-  `\rechnung` im Fließtext (e4 Fehler finden) ungerendert.
-- e4 Prüfungshöhe 2016-OS-K2d ist Niveau III (Vorrat, Z. 90); beim
-  Blattbau als Zielmarke setzen.
-
-## Nachbesserung 2026-09-27
-
-Prüfskript v0.5, bank.md Stand 2026-09-27b. Vorher und nachher 0
-Abweichungen, 0 Warnungen in allen fünf Dateien; keine Zeile
-geändert oder gestrichen.
-
-- Prüfungshöhe ohne Original: e2 s8 steht schon als hoehe pruefung,
-  original null, 3 Zeilen (Entscheidung 9); nichts nachzuziehen.
-- Erkennungsschritte: die zwei verbliebenen in e2 („Vorzeichen oder
-  Rechenzeichen?“, „Zeichen zusammenfassen“) verlangen einen
-  anderen Handgriff als die Vorstufe „Pfeil an der Zahlengeraden“;
-  sie bleiben. Die drei doppelten sind schon gestrichen (Befund 1).
-- Befund 4 gegen v0.5 geprüft: pruef "" ist weiter nur bei einer
-  Lösung ohne Ziffer erlaubt; der Befund bleibt offen.
+- Kein LaTeX-Lauf: `\kreuz` mit längeren Optionen in e2 s2 und die
+  Serien mit `\\` ungerendert.
+- Schrittnamen nur in neuen und umgeschriebenen Lösungen; der
+  übernommene Bestand zeigt reine Ergebnisse.
+- e4 Prüfungshöhe 2016-OS-K2d ist Niveau III (Vorrat, Z. 87).
