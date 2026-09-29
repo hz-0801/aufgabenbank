@@ -1,23 +1,46 @@
 # Stand: flaecheninhalt-durch-integration
 
-Katalog-Commit: 95b0f8b09856c14466ca030dd604451b8d259cfa
-(2026-09-26T16:47:30+02:00)
-Datum: 2026-09-27 (14:39 UTC)
-Prüfskript: bank-pruef.py v0.5, bank.md Stand 2026-09-27b
+Katalog-Commit: 2a296e54827b16f81fd664c4430c6fcd84dd5719
+(2026-09-28, aus dem Kopf der Mappe
+mappen/flaecheninhalt-durch-integration.md)
+Datum: 2026-09-29 17:11 CEST (date)
+Grundlage: bank.md fünfte Fassung (29b), werkzeuge/bank-pruef.py
+v0.9 (--katalog aus der Mappe), Vorlage auftrag-eintrag.md 29d;
+Nachzug des Bestands vom 27.09. (Katalog 95b0f8b). Umbauskript
+in werkzeuge/einmalig/:
+nachzug-flaecheninhalt-durch-integration-2026-09-29.py.
+Endstand: 0 Abweichungen, 0 Warnungen, mit `--katalog`.
 
-## Zeilen je Datei und hoehe
+## Zahlen je Datei
 
-| Datei | vorstufe | grundfall | sprosse | pruefung | pflicht | Summe |
-|-------|---------:|----------:|--------:|---------:|--------:|------:|
-| zone  |        – |        12 |      13 |        – |       1 |    26 |
-| e1    |        4 |         5 |      12 |        6 |       9 |    36 |
-| e2    |        4 |         5 |      15 |        4 |       9 |    37 |
-| e3    |        4 |         5 |      12 |        6 |      12 |    39 |
-| e4    |        4 |         5 |      12 |        4 |       9 |    34 |
-| e5    |        4 |         5 |      15 |        8 |      12 |    44 |
+    Datei       Zeilen  vorstufe grundfall sprosse pruefung pflicht
+    zone.jsonl      26         0        12      13        0       1
+    e1.jsonl        36         4         5      12        6       9
+    e2.jsonl        37         4         5      15        4       9
+    e3.jsonl        39         4         5      12        6      12
+    e4.jsonl        34         4         5      12        4       9
+    e5.jsonl        51         4         5      18       12      12
+    gesamt         223        20        37      82       32      52
 
-Pflicht je Einheit: fehler 3, begruenden 3, anwendung 3; darstellung
-3 nur in e3 und e5.
+## Nachzug je Einheit
+
+    Datei  übernommen  neu  umgeschrieben  entfallen
+    zone         26      0              0          0
+    e1           24      0             12          0
+    e2           25      0             12          0
+    e3           24      0             15          0
+    e4           22      0             12          0
+    e5           29      7             15          0
+
+Übernommen heißt: aufgabe, loesung, merkmal wortgleich; nachgezogen
+quelle (106–110 → 102–106), id, sprosse (e5 ab s3 um eins nach
+hinten) und sprosse_text (Vorstufen bis „nichts rechnen“,
+Prüfungssprossen mit dem Wortlaut der Mappe). Umgeschrieben: je
+Verfahrenskette die fünf Päckchenzeilen, die Pflichtformen (P1, P2,
+P4, P6, P8, in e3 und e5 die Rückrichtung P7) und die merkmal der
+Pflichtzeilen. Neu: e5 s3 „Wert und Fläche nebeneinander“ (3) und
+an der e5-Prüfungssprosse die Originale 2025MerhoehtBAnalysisMMS1-1c
+und 2024MerhoehtBAnalysisWTR1-1f (je 2).
 
 ## Originale je Einheit
 
@@ -25,68 +48,72 @@ Pflicht je Einheit: fehler 3, begruenden 3, anwendung 3; darstellung
 - e2: 2025MerhoehtBAnalysisMMS1-1d, 2023-C-2d
 - e3: 2024-bebb-gk-B2.2e, 2020-be-gk-B2.2g, 2025-C-2c
 - e4: 2025MgrundlegendBAnalysisWTR1-1d, 2026MerhoehtBAnalysisMMS2-2e
-- e5: 2025-bebb-lk-B2.1d, 2025MerhoehtBAnalysisWTR2-1d,
-  2019MgrundlegendBAnalysisWTR1-2e, 2024-bebb-lk-B2.1j
+- e5: 2025-bebb-lk-B2.1d, 2025MerhoehtBAnalysisMMS1-1c,
+  2025MerhoehtBAnalysisWTR2-1d, 2019MgrundlegendBAnalysisWTR1-2e,
+  2024-bebb-lk-B2.1j, 2024MerhoehtBAnalysisWTR1-1f
+
+Alle an der letzten Sprosse der Kette (hoehe pruefung), je 2 Zeilen.
 
 ## Prüfskript vor der Korrektur
 
-| Datei | Abweichungen | Warnungen | häufigster Grund             |
-|-------|-------------:|----------:|------------------------------|
-| zone  |            0 |         0 | –                            |
-| e1    |            0 |         0 | –                            |
-| e2    |            2 |         0 | Sperre (Term aus Kasten/Orig.) |
-| e3    |            3 |         0 | Sperre (Zahlenpaar, Term)    |
-| e4    |            1 |         0 | Sperre (Zahlenpaar)          |
-| e5    |            0 |         0 | –                            |
-
-e3 und e4 brauchten je zwei Korrekturläufe: Der Ersatzpunkt traf
-erneut die Paarsperre.
+- Bestand gegen die neue Mappe mit `--katalog`: 139 Abweichungen
+  (e1 27, e2 28, e3 27, e4 25, e5 32), alle „sprosse_text nicht
+  wortgleich in Zeile“ (Katalogzeilen um vier verschoben,
+  Vorstufen- und Prüfungstexte länger).
+- Erster Wurf je Einheit: zone, e1–e5 je 0 Abweichungen, 0
+  Warnungen. Keine Einheit ist gescheitert.
 
 ## Entscheidungen
 
-- Integrale stehen als „Integral von a bis b über f(x)“, weil das
-  Prüfskript `\int` nicht kennt.
-- Prüfungshöhe: je Teil der Prüfungshöhe die erste Kennung, die in
-  Abschnitt 2 der Mappe steht; Pooldubletten nur einmal.
-- Teile der Prüfungshöhe ohne Kennung in der Mappe entfallen, statt
-  sie mit original null zu führen (siehe Befunde).
-- sprosse_text der Prüfungshöhe ist der Katalogtext ohne die
-  Belegklammern, weil der Katalog Sprosse und Belege verschränkt.
-- Zone: kette bis Doppelpunkt oder Gedankenstrich (Zeile 34 hat
-  keinen Doppelpunkt), je Fertigkeit ein Fallstrick.
-- Zone-Paar bei Fertigkeit 1: Vorzeichen an der unteren Grenze,
-  nach „Typische Fehler“ Zeile 93 der häufigste Rechenfehler.
-- darstellung nur in e3 und e5, wo Typen das Markieren oder
-  Einzeichnen tragen; in e4 steckt es schon in Sprosse 4.
-- Pflicht-sprosse_text: „Fehler finden“ und „Begründen“ aus der
-  Typenzeile, anwendung und darstellung je ein Typname der Einheit.
-- Kästchenzählen (e5): Grafik mit xstep=1, ystep=1; die Lösung nennt
-  den genauen Wert, weil das Karo der Vorlage hier nicht bekannt ist.
-- Fehlerregel „scheitert zweimal“ gelesen als zwei erfolglose
-  Korrekturläufe; der erste Lauf mit Abweichungen zählt nicht.
+1. Zone bleibt: Fertigkeiten Z. 34–39 unverändert.
+2. Päckchen, fester Wert im merkmal: e1 der Faktor 3 vor x² (die
+   Zahl dahinter wandert, Nullstellen ±1 … ±5), e2 f = 3x² + 2 und
+   g = −2x (obere Grenze wandert), e3 Graph x² + 1 und Höhe 10
+   (Breite des Rechtecks wandert), e4 Parabel 0,5x² (Inhalt
+   wandert), e5 Graph x − 2 (obere Grenze wandert).
+3. Die Kennungen der Prüfungssprossen, die nicht in Abschnitt 2 der
+   Mappe stehen (neun, siehe Befunde), bekommen keine Zeile; die
+   Sprosse trägt nur die Originale mit Kennung, keine Zeilen mit
+   original null daneben.
+4. P1 (Serie) in allen fünf Einheiten statt P3: keine Einheit übt
+   eine Umformungskette von Gleichungen.
+5. P7 nur in e3 und e5 (wie 27.09.): dort steht je eine
+   Zeile Term → Bild und eine Bild → Term; e1, e2, e4 haben keine
+   darstellung-Zeilen.
+6. Urteile je Einheit: P2 „Richtig“, P6 und P8 je einmal Ja, einmal
+   Nein (e1 Nein/Ja, e2 Ja/Nein, e3 Ja/Nein, e4 Ja/Nein, e5
+   Nein/Ja); die bestehende P5-Zeile v1 bleibt ohne Urteil.
+7. Schrittnamen nur in neuen und umgeschriebenen Zeilen; Integrale
+   weiter in Worten („Integral von a bis b über …“), weil `\int`
+   nicht in STANDARD steht.
+8. e5 s3 trägt das Antwortgerüst „Wert: __ Fläche: __“, weil die
+   Sprosse beide Ergebnisse nebeneinander verlangt.
 
 ## Befunde
 
-- Katalog: Die Erkennungsschritte (Zeilen 41–44) wiederholen die
-  Vorstufen von e1, e2, e3 und e5; sie entfallen, die Vorstufen
-  bleiben.
-- Prüfskript: `\int` und `\ln` fehlen in der Liste STANDARD;
-  Sek-II-Integrale müssen in Worten stehen.
-- Mappe: Kennungen aus den Prüfungshöhen fehlen in Abschnitt 2:
-  2026-bb-gk-B2.2d, 2026MgrundlegendBAnalysisWTR2-1d,
+- Mappe: Neun Kennungen der Prüfungssprossen fehlen in Abschnitt 2
+  (2026-bb-gk-B2.2d, 2026MgrundlegendBAnalysisWTR2-1d,
   2025-bebb-lk-B2.1e, 2026MgrundlegendBAnalysisMMS2-1f,
   2020MgrundlegendBAnalysisWTR1-1f, 2022-bebb-gk-B2.2i,
   2025MerhoehtBAnalysisWTR2-1e, 2026MerhoehtBAnalysisWTR3-1c,
-  2019MgrundlegendBAnalysisWTR1-3d.
-- Prüfskript: Die Paarsperre trifft Allerweltspunkte wie (0|1) und
-  (0|2), die im Original nur Nebenangaben sind.
-- Katalog: Zeile 30 nennt Nachträge vom 28. und 29.09.2026, der
-  Katalog-Commit ist vom 26.09.2026.
+  2019MgrundlegendBAnalysisWTR1-3d) – wie am 27.09.
+- Katalog: Z. 105 nennt die Vorstufe von e4 in der Klammer
+  („Vorstufe: ist der Inhalt gegeben oder gesucht?“), die übrigen
+  Vorstufen enden auf „nichts rechnen“; der Sprossentext bleibt dort
+  unverändert.
+- bank/_punkte.csv: 8 ids mit original ändern sich (e5 k1 s7 → s8);
+  4 neue Zeilen mit original (e5 k1 s8 v9–v12) fehlen dort.
+- Prüfskript: \int fehlt weiter in STANDARD; die Form der
+  Pflichtzeilen (P1–P8) prüft es nicht.
+- Katalog: Die Erkennungsschritte sind seit 27.09. gestrichen (Z. 40);
+  nichts entfällt.
 
 ## Offene Punkte
 
-- Kästcheninhalt der e5-Grafiken beim Zusammenbau am Karo prüfen.
-- Die entfallenen Prüfungshöhe-Teile nachziehen, sobald die Mappe
-  ihre Kennungen führt.
-- Wenn das Prüfskript `\int` kennt, die Integrale auf die
-  Formelschreibweise umstellen.
+- Keine Grafik ist kompiliert; \flaeche und \flaechezwischen in der
+  Aufgabengrafik (e3 k2 s4 v3, e5 k2 s4 v3) beim Zusammenbau prüfen.
+- Die neun Kennungen ohne Zeile nachziehen, sobald die Mappe sie
+  führt.
+- gegenlese.md und gegenlese2.md beziehen sich auf den Stand vom
+  27./28.09. und sind nicht nachgezogen.
+- Übernommene Zeilen tragen keine Schrittnamen (Auftrag).
