@@ -83,7 +83,50 @@ def setze(r, **kw):
     return r
 
 
+PRUEF_TEXT = {
+    87: "Prüfungshöhe: Hypotenuse aus zwei Katheten in Meter mit "
+        "Näherungswert (P10-Form 2020-OS-K7a, Niveau I); Rampenlänge aus "
+        "waagerechter Länge und Stufenhöhe (2025-OS-K4a, Niveau II; der "
+        "Anstiegswinkel dazu in trigonometrie.md)",
+    88: "Prüfungshöhe: Höhenunterschied der Seilbahn aus Seillänge und "
+        "waagerechtem Abstand (P10-Form 2024-OS-K6a, Niveau I); Nachweis "
+        "einer Teilstrecke im stumpfwinkligen Dreieck mit Höhe (2022-OS-K5a, "
+        "Niveau I); Begründung eines rechten Winkels über AD² + DC² = AC² "
+        "als dritter Weg (2025-OS-K2c, Stern; Typ in winkel-dreiecke.md "
+        "Einheit 3)",
+    89: "Prüfungshöhe: Rechenweg für die Mantellinie des Kegeldachs "
+        "beschreiben, Radius aus dem Durchmesser, ohne Zahlenergebnis "
+        "(P10-Form 2018-OS-K6d, Stern, Niveau II); Gesamthöhe des Turms aus "
+        "Zylinderhöhe und Kegelhöhe (2026-FOR-K2c, Niveau II); Stablänge im "
+        "Becher aus Höhe und Durchmesser mit Überstand (2022-OS-K2c, Stern, "
+        "Niveau II); Strecke zwischen zwei Punkten aus abgelesenen "
+        "Koordinaten (2019-OS-K2d, Niveau II; der Winkel dazu in "
+        "trigonometrie.md)",
+}
+PRUEF_MERKMAL = ("Prüfungshöhe: die Originale der Kettenzeile verfremdet, "
+                 "je Original zwei Aufgaben")
+
+
+def eine_pruefsprosse(rows):
+    """Alle Prüfungssprossen einer Kette zu einer (der ersten)
+    zusammenlegen; Varianten laufen durch (Gegenprobe der Vorlage 29c:
+    genau eine Sprosse mit hoehe pruefung je Verfahrenskette)."""
+    ketten = {r["kette_nr"] for r in rows if r["hoehe"] == "pruefung"}
+    for k in ketten:
+        pr = [r for r in rows if r["kette_nr"] == k
+              and r["hoehe"] == "pruefung"]
+        s0 = min(r["sprosse"] for r in pr)
+        for i, r in enumerate(pr, 1):
+            r["sprosse"] = s0
+            r["variante"] = i
+            r["sprosse_text"] = PRUEF_TEXT[QMAP.get(r["quelle"],
+                                                    r["quelle"])]
+            r["merkmal"] = PRUEF_MERKMAL
+    return rows
+
+
 def fertig(rows):
+    rows = eine_pruefsprosse(rows)
     out = []
     for r in rows:
         r = copy.deepcopy(r)
