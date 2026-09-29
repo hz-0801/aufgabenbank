@@ -1,183 +1,101 @@
 # Stand: pythagoras
 
-Katalog-Commit: 761321330add6ed255669afc1c4e11b846250dd5
-(2026-09-25, aus dem Kopf von mappen/pythagoras.md)
-Datum: 2026-09-27 05:28 UTC
-Prüfskript: werkzeuge/bank-pruef.py v0.2, Endstand 248 Zeilen OK,
-0 Abweichungen, 0 Warnungen.
+Katalog: hz-0801/mathe-nachhilfe, katalog/pythagoras.md,
+Commit cebfd509ea71ae238b589537bd00b7fc306df06f (Kopf der Mappe).
+quelle = Zeilennummern dieses Stands.
+Datum: 2026-09-29 15:30 CEST (date).
+Vorlage auftrag-eintrag.md 2026-09-29c; Nachzug des Bestands vom
+27./28.09. (Vorgeschichte im git-Log dieses Ordners).
+Prüfung: `python3 werkzeuge/bank-pruef.py pythagoras --katalog`
+(v0.9): 240 Zeilen, 0 Abweichungen, 0 Warnungen.
+Umbauskript: werkzeuge/einmalig/nachzug-pythagoras-2026-09-29.py
+(erzeugt e1–e3 aus dem Stand 1e236dd byte-gleich).
 
-## Dateien
+## Zahlen
 
-| Datei | Zeilen | vorstufe | grundfall | sprosse | pruefung | pflicht |
-|-------|-------:|---------:|----------:|--------:|---------:|--------:|
-| zone  |     38 |        0 |         0 |      37 |        0 |       1 |
-| e1    |     69 |       12 |         5 |      36 |        4 |      12 |
-| e2    |     62 |       12 |         5 |      27 |        6 |      12 |
-| e3    |     79 |       12 |         5 |      42 |        8 |      12 |
+    Datei       Zeilen  vorstufe  grundfall  sprosse  pruefung  pflicht
+    zone.jsonl      38         0         18       19         0        1
+    e1.jsonl        65         8          5       36         4       12
+    e2.jsonl        62        12          5       27         6       12
+    e3.jsonl        75         8          5       42         8       12
+    gesamt         240        28         33      124        18       37
 
-Pflicht je Einheit: fehler 3, begruenden 3, anwendung 3,
-darstellung 3. Zone: pflicht fehler 1 (Zone-Paar).
+Nachzug je Einheit (übernommen / neu / umgeschrieben / entfallen):
 
-## Originale je Einheit (je 2 Zeilen, hoehe pruefung)
+    e1   55 / 0 / 10 / 0
+    e2   47 / 4 / 11 / 0
+    e3   58 / 0 / 17 / 0
 
-- e1: 2020-OS-K7a, 2025-OS-K4a
-- e2: 2024-OS-K6a, 2022-OS-K5a, 2025-OS-K2c
-- e3: 2018-OS-K6d, 2026-FOR-K2c, 2022-OS-K2c, 2019-OS-K2d
+„übernommen“ heißt: Aufgabe, Lösung und pruef wortgleich;
+nachgezogen wurden id, kette_nr, sprosse, variante, quelle,
+sprosse_text (Vorstufen, Prüfungssprosse) und das merkmal der
+Prüfungssprosse. Zone unverändert (Fertigkeiten Z. 25–33 gleich).
 
-## Prüfskript vor der Korrektur
+Prüfskript vor der Korrektur (mit `--katalog`, Stand 1e236dd):
+e1 44, e2 43, e3 60 Abweichungen, zone 0; Grund in allen 147
+„sprosse_text nicht wortgleich in Zeile quelle“ (Zeilennummern und
+Vorstufentexte der neuen Mappe). Nach dem Umbau je Einheit im
+ersten Lauf 0. Keine Einheit scheiterte.
 
-- zone: 1. Lauf 27 Abweichungen, 0 Warnungen (18 × „sprosse 0
-  genau dann, wenn hoehe vorstufe“, 9 × „merkmal uneinheitlich“;
-  in einer dieser Zeilen zusätzlich die Punkt-Lösung mit `\mid`
-  nicht erkannt). 2. Lauf nach
-  Umnummerieren 0 Abweichungen, 27 Warnungen (Zone verlangt s1
-  leicht, s2 mittel). 3. Lauf 0/0.
-- e1: 0 Abweichungen, 0 Warnungen im ersten Lauf.
-- e2: 0 Abweichungen, 0 Warnungen im ersten Lauf.
-- e3: 0 Abweichungen, 0 Warnungen im ersten Lauf.
-- Zweimal gescheitert: keine Einheit.
+## Originale
 
-Eigene Zusatzprobe (Kastenzahlen, Zahlenpaare der Originale): e3
-im ersten Lauf 3 Treffer (13 und 16 in vorgegebenen Fehlrechnungen,
-109 und 60 zufällig wie in 2021-OS-K3b), vor dem Commit ersetzt.
+- e1 (k2 s12): 2020-OS-K7a, 2025-OS-K4a
+- e2 (k3 s10): 2024-OS-K6a, 2022-OS-K5a, 2025-OS-K2c
+- e3 (k2 s15): 2018-OS-K6d, 2026-FOR-K2c, 2022-OS-K2c, 2019-OS-K2d
 
 ## Entscheidungen
 
-1. Prüfungshöhe: je Original der Kettenzeile („Prüfungshöhe: …“)
-   eine eigene Sprosse mit 2 Varianten; sprosse_text ist der
-   Abschnitt der Kettenzeile zu diesem Original. Nur die Originale
-   der Kettenzeile tragen hoehe pruefung. Die übrigen Originale
-   der Zielmarke (Ankreuzformen 2017-OS-B1d, 2021-OS-B1h,
-   2026-FOR-B1j, 2022-OS-B1g, 2024-OS-B1f; Kathete 2016-OS-K7b,
-   2019-OS-K3a, 2026-FOR-K4a) stecken als P10-Form in den
-   Sprossen der Kette, ohne Feld original.
-2. sprosse_text wortgleicher Teilstring der Kettenzeile, ohne die
-   Zusätze „(4×)“ und „(Vorstufe)“; Raumdiagonale ohne die
-   Begründungsklammer „(seit 11e Mindeststoff …)“.
-3. kette: „Hypotenuse“, „Kathete“, „Figuren und Körper“ (Name vor
-   „(Einheit n)“). Typen ohne Kette: kette = Typtext aus „Typen je
-   Lerneinheit“. Pflichtkette: Name der Verfahrenskette,
-   Sprossen 1 fehler, 2 begruenden, 3 anwendung, 4 darstellung;
-   sprosse_text aus „Typen je Lerneinheit“ (Zeile 19, 20, 21).
-4. Zone: kette = Fertigkeit bis „ – “, sprosse_text ebenso,
-   quelle = Zeile der Fertigkeit. s1 zwei leichte, s2 mittel,
-   s3 Fallstrick, alle hoehe sprosse (Prüfskript: sprosse 0 nur
-   mit vorstufe, Zone verlangt s1/s2). Je Fertigkeit ein
-   Fallstrick. Reihenfolge nach erster Verwendung: „alle
-   Einheiten“ zuerst, sonst Folge des Eintrags; daher
-   Längeneinheiten (Zeile 29) vor Umstellen (Zeile 28).
-5. Zone-Paar: „Wurzel aus jedem Summanden einzeln“ in der
-   Fertigkeit Wurzel (f2, s4 Fehler finden, s5 Rechenaufgabe). Der
-   häufigste Fehler des Eintrags (Quadrate addiert) ist Themenstoff
-   und gehört nicht in die Zone (2.2: kein Begriff des Themas).
-6. Erkennungsschritt und gleichartige Vorstufe der Kette sind in
-   allen drei Einheiten beide angelegt und inhaltlich getrennt:
-   Erkennungsschritt an der Skizze ohne Maße, Vorstufe mit Maßen
-   (e1), aus einem Text (e2) oder mit Benennen der Seiten (e3).
-7. „Gilt der Satz hier?“ steht nur in e1 (erste Einheit seines
-   Bereichs, bank.md), nicht noch einmal vor e3.
-8. Typen ohne Kette: e1 „Quadrate über den Seiten zeichnen …“ und
-   „Ergebnis mit sinnvoller Genauigkeit angeben“; e2
-   „pythagoreische Tripel …“ trotz Vorrat-Vermerk, weil unter den
-   Typen geführt; e3 „Rampe, Leiter, Seil an der Wand mit Skizze“.
-9. Lösungen, die nur eine Formel sind, stehen in Textform mit
-   Unicode-² („m² + n² = k²“); Ankreuzlösungen nennen die
-   Position („Kreuz bei der dritten Gleichung“). Grund: siehe
-   Befund 1.
-10. Rechter Winkel in `\dreieck`-Skizzen über die Winkelbeschriftung
-    „90°“; `\dreieckrw` nur in Standardlage (rechter Winkel bei C
-    angenommen).
-11. Skizze aus Text (darstellung): grafik `\rechenplatz[halb]{4}`
-    als Zeichenfläche, die Lösung in loesungsgrafik.
-12. Kastenzahlen streng gelesen: keine mehrstellige Zahl aus dem
-    Merkkasten (10, 12, 13, 15, 16, 17, 20, 21, 25, 29, 36, 49, 64,
-    74, 81, 100, 144, 169, 225, 256, 289, 400, 441, 841, 8,6) in
-    einer aufgabe; einzelne Ziffern frei (bank.md). Eigene Probe,
-    weil die Sperrprobe Terme nicht fängt (Befund 2).
-13. Koordinatenstrecken ohne Längeneinheit; Operatoren in Du-Form
-    („Weise nach“, „Begründe“).
+1. Prüfungshöhe: je Verfahrenskette eine Sprosse (die letzte), alle
+   Originale der Kettenzeile darin, je 2 Zeilen; sprosse_text ist
+   der Prüfungsabschnitt der Kettenzeile nach „→“ (wie
+   prozentrechnung). Vorher eine Sprosse je Original.
+2. Päckchen: e1 Kathete a = 36 cm fest, b wandert; e2 Hypotenuse
+   85 cm fest, Kathete wandert; e3 Schenkel 65 cm fest, Grundseite
+   wandert. Lösungen mit Schrittnamen (regeln.md 12).
+3. Vorstufen e1 und e2 übernommen: die Aufgaben decken den längeren
+   Sprossentext schon; e3 umgeschrieben, weil der Katalog jetzt
+   Figuren mit Höhe und Pyramide/Kegel nennt (Bestand: Raute,
+   Rechteck, Quader, Drachen).
+4. „Satz oder Umkehrung?“ als k2 in e2 (nach „Welche Seite ist die
+   längste?“, Folge des Katalogs); zwei Alltagssätze, ein Satz aus
+   der Geometrie, der Satz des Pythagoras selbst; 2 ja, 2 nein.
+5. P1 fehler als Serie in allen drei Einheiten (Kennzeichen: die
+   Hypotenuse ist die längste Seite, kürzer als a + b); P3 entfällt,
+   weil keine Kette eine Umformungskette ist.
+6. P2 in e1 und e3 in der Mehrzahl (vier Rechnungen, eine falsch),
+   in e2 als fehlerfreie Vorlage zur Umkehrung.
+7. anwendung: in allen Urteilszeilen steht das Urteil als erstes
+   Wort; die Grenzwertentscheidung (P8) trugen schon v1/v2.
+8. e3 darstellung v2 rückwärts (Rechnung → Skizze) statt Kegel
+   „in Originalgröße zeichnen“, damit P7 zwei Richtungen hat.
+9. Neue Zeilen meiden Seitenpaare, die der Bestand schon trägt
+   (33/56/65, 3/4/5 der Knotenschnur), und die Tripel der
+   Päckchen (eigene Paarprobe); der Bestand bleibt.
 
 ## Befunde
 
-1. (erledigt v0.5) Prüfskript: Der Exponent in `$x^2$` gilt als
-   Lösungsziffer. Eine Lösung, die nur eine Formel ist, verlangt darum
-   ein pruef; bei form ankreuzen steht die „2“ dann in allen Optionen.
-   Probe: Ankreuzlösung „$z^2 = x^2 + y^2$“ mit pruef "" → „pruef
-   fehlt“.
-2. (teilweise erledigt v0.5: „$6^2 + 8^2$“ und „$6² + 8²$“ werden
-   gefangen; „$x² + y² = z²$“ und „√74“ gehen in einer Probezeile weiter
-   ohne Abweichung durch) Prüfskript: Die Sperrprobe fängt Zahlenpaare
-   (Probe „(2|1)“ erkannt), aber keine belegten Terme und Gleichungen
-   aus dem Merkkasten: „$6^2 + 8^2$“, „$6² + 8²$“, „$x² + y² = z²$“,
-   „√74“ gingen in einer Probezeile ohne Abweichung durch.
-3. Prüfskript: Der Kettenname wird nicht gegen die Mappe geprüft (Probe
-   „Hypotenuse (Einheit 1)“ ohne Abweichung).
-4. (erledigt v0.5; bank.md regelt den Fall, die drei Erkennungsschritte
-   sind gestrichen) Katalog: Drei Erkennungsschritte decken sich mit der
-   Vorstufe der Kette derselben Einheit („Wo ist der rechte Winkel?“ /
-   Rechtwinkelmarke einkreisen; „Lange oder kurze Seite gesucht?“;
-   „Teildreieck nachfahren“). bank.md verlangt beide (4 + 4 Zeilen); zu
-   klären, ob die Vorstufe dann entfällt.
-5. bank.md: „Prüfungshöhe 2 je Original des Katalogs“ lässt offen, ob
-   nur die Originale der Kettenzeile gemeint sind oder alle der
-   Zielmarke. Das Prüfskript warnt in keinem Fall.
-6. (erledigt v0.5; bank.md: frei sind einzelne Ziffern und Zahlen unter
-   10) Auftrag, Gegenprobe: „Die Kastenzahlen … kommen in keiner aufgabe
-   vor“ widerspricht wörtlich bank.md („einzelne Ziffern … sind frei“);
-   hier als mehrstellige Zahlen gelesen.
+1. Katalog: Die drei alten Erkennungsschritte stehen jetzt als
+   Vorstufe in der Kettenzeile; „Ganz oder halb?“ (Z. 38) und die
+   e3-Vorstufe „Teildreieck nachfahren“ sind getrennte Handgriffe
+   (Länge wählen / Dreieck finden), beide bleiben. Kein
+   Erkennungsschritt wiederholt eine Vorstufe derselben Einheit.
+2. Vorlage: Gegenprobe „genau eine Sprosse mit hoehe pruefung je
+   Kette“ und bank.md „Prüfungshöhe 2 je Original“ passen nur
+   zusammen, wenn eine Sprosse mehrere Originale trägt; das
+   Prüfskript prüft die Zahl der Prüfungssprossen nicht.
+3. bank/_punkte.csv (außerhalb des Schreibbereichs) trägt noch die
+   alten ids (e1-k2-s13, e2-k2-s10…s12, e3-k2-s15…s18); die 18
+   Zeilen brauchen einen Lauf von werkzeuge/punkte.py.
+4. Prüfskript: Die Doppelprobe vergleicht ganze Aufgaben; gleiche
+   Seitenpaare in verschiedenen Aufgaben (etwa 11/60/61 viermal im
+   Bestand) meldet sie nicht. Hier mit einer eigenen Paarprobe
+   geprüft; der Commit „e1, e3 (Zahlen der neuen Zeilen)“ nennt
+   33/56/65 irrtümlich als Mappenpaar, es war ein Bestandspaar.
 
 ## Offene Punkte
 
-- LaTeX nicht kompiliert. Ungeprüft: Eckenbeschriftung A, B, C von
-  `\dreieck` und `\dreieckrw`, `\rechenplatz` im Feld grafik,
-  `\viereck[diagonalen]` ohne Seitenbeschriftung, Label-Argumente
-  von `\kegel`, `\pyramide` und `\zylinder` mit Maßen.
-- Originale der Zielmarke ohne eigene Prüfungszeilen (Entscheidung
-  1); bei Bedarf als weitere Sprossen nachtragen.
-- 2025-OS-K2c, Variante 1: Drachenviereck wie im Original, nur
-  Zahlen und Kontext (Fenster) geändert; Variante 2 wechselt die
-  Figur.
-- Einige pythagoreische Tripel kommen in mehreren Einheiten vor
-  (etwa 9, 40, 41), jeweils mit anderer gesuchter Seite oder Figur;
-  keine Aufgabe ist doppelt.
-
-## Nachbesserung 2026-09-27
-
-- Prüfskript v0.5 vorher 6 Abweichungen, 18 Warnungen, nachher
-  0/0.
-- Zone: die 18 Zeilen mit sprosse 1 (je Fertigkeit zwei sehr
-  leichte) tragen jetzt hoehe grundfall statt sprosse
-  (Entscheidung 4 insoweit überholt).
-- e1 „Gleichung unter vier Optionen ankreuzen" und e2
-  „Kathetengleichung unter vier Optionen ankreuzen": die sechs
-  Lösungen nennen die richtige Option wortgleich statt ihrer
-  Position (Entscheidung 9 insoweit überholt).
-- Erkennungsschritte gestrichen, weil sie denselben Handgriff wie
-  die Vorstufe derselben Einheit verlangen (Befund 4): e1 „Wo ist
-  der rechte Winkel?", e2 „Lange oder kurze Seite gesucht?", e3
-  „Teildreieck nachfahren", je 4 Zeilen; kette_nr und id der
-  folgenden Ketten je um eins aufgerückt (Entscheidung 6
-  überholt).
-- Zeilen jetzt: zone 38 (grundfall 18, sprosse 19, pflicht 1),
-  e1 65, e2 58, e3 75 (vorstufe je 8); die Tabelle oben zeigt den
-  Stand vor der Nachbesserung.
-- Prüfungshöhen: alle neun tragen ein Original der Kettenzeile;
-  keine Prüfungshöhe ohne Original steht als hoehe sprosse.
-- Befunde 3 und 5 bleiben offen: der Kettenname wird ohne
-  --katalog nicht gegen die Mappe geprüft (Probe mit
-  „Hypotenuse (Einheit 1)" für die ganze Kette: 0/0), und bank.md
-  2026-09-27b klärt die Menge je Original der Zielmarke nicht.
-
-## Nachbesserung Render 2026-09-28
-
-Quelle: bau/render-alle/bericht.md, bau/hefte/bericht.md, bau/fokus/bericht.md, bau/layout-befunde.md Punkt 31. Übersicht aller Einträge: bau/render-alle/behoben.md.
-
-- e1-k1-s0-v2, e1-k1-s0-v3, e1-k1-s0-v4, e1-k2-s0-v2, e1-k2-s0-v3, e1-k2-s0-v4, e1-k2-s2-v1, e1-k2-s2-v2, e1-k2-s2-v3, e3-k1-s0-v4, e3-k2-s1-v1, e3-k2-s1-v2, e3-k2-s1-v3, e3-k2-s1-v4, e3-k2-s1-v5, zone-f3-v2, zone-f3-v4 (17): Missing $ inserted – `$…$` in `\dreieck`-Beschriftung (Vorlage setzt selbst `$…$`). Änderung: Beschriftungen in `\dreieck` ohne `$` (Einheit in `\text{}`), Feld grafik.
-
-Nur diese 17 Zeilen geändert, alle übrigen byte-gleich. `bank-pruef.py pythagoras`: 0 Abweichungen. Probe: jede Zeile allein in einem Minimaldokument mit mathblatt.sty (hz-0801/blattbau) gesetzt wie werkzeuge/zusammenbau.py v0.7 (teile_normal, teil_schwach, Lösung in \erg), xelatex ohne Fehler.
-
-## Nachbesserung Gegenlese 2026-09-28
-- Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
-- pythagoras-e1-k2-s12-v1: Skizze widersprach dem Text (\dreieckrw beschriftete $CB$ mit 39 m, $CA$ mit 14 m; Text $BC = 14$ m, $AC = 39$ m) → grafik `\dreieckrw{1.79}{5}{$14$ m}{$39$ m}{?}`; loesung und pruef unverändert (Regel a).
-- pythagoras-e1-k2-s12-v2: ebenso ($CB$ 47 m, $CA$ 22 m statt $CB = 22$ m, $AC = 47$ m) → `\dreieckrw{2.34}{5}{$22$ m}{$47$ m}{?}` (Regel a).
-- Prüfskript: Abweichungen 0.
+- Kein LaTeX kompiliert; neu und ungeprüft: `\trapez[hoehe=h]`,
+  `\parallelogramm[hoehe]`, `\pyramide` mit leeren Labels (e3 s0),
+  `\dreieck` als loesungsgrafik (e3 darstellung v2).
+- Übernommene Lösungen tragen keine Schrittnamen (Auftrag).
+- duplikate.md und bau/sprachlauf/pythagoras.md nennen alte ids.
