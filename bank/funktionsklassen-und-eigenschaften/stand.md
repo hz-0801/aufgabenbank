@@ -63,8 +63,8 @@ Neu: e2 s6 „rückwärts“ (3), e2 Prüfungshöhe 2023-A-2d (2), e5 s0
   nicht wortgleich in Zeile quelle“ (Katalogzeilen um vier
   verschoben).
 - Erster Wurf: e1 2 (Sperre: „8 − 4 = 4“ aus dem Merkkasten,
-  „e⁰ = 0“ aus Typische Fehler), e5 5 (grafik verlangt: „Zeichne nichts“ als
-  Zeichenauftrag gelesen, 4×; pruef fehlt, 1×), e6 1 (Sperre:
+  „e⁰ = 0“ aus Typische Fehler), e5 5 (grafik verlangt: „Zeichne
+  nichts“ als Zeichenauftrag gelesen, 4×; pruef fehlt, 1×), e6 1 (Sperre:
   x³ − 4x aus 2024-bebb-gk-A1.1a); e2, e3, e4 je 0. Zweiter Wurf: 0.
   Warnungen durchweg 0. Keine Einheit ist zweimal gescheitert.
 
@@ -78,10 +78,11 @@ Neu: e2 s6 „rückwärts“ (3), e2 Prüfungshöhe 2023-A-2d (2), e5 s0
 3. Vorstufen-sprosse_text: Katalogtext bis „nichts rechnen“, ohne
    die Klammer „(Vorstufe …)“ (wie ableitungsregeln).
 4. e5: die alte Vorstufe „Innen oder außen?“ ist jetzt Sprosse
-   −1, die neue Katalogvorstufe „im Argument ausklammern“ Sprosse 0.
+   −1, die neue Katalogvorstufe „im Argument ausklammern“
+   Sprosse 0.
 5. e2: neue Sprosse 6 „rückwärts“, die alten Sprossen 6–9
-   rücken auf 7–10; 2023-A-2d (Katalog nennt es an der Prüfungshöhe, bisher
-   ohne Zeile) mit zwei Zeilen an der Prüfungssprosse.
+   rücken auf 7–10; 2023-A-2d (Katalog nennt es an der
+   Prüfungshöhe, bisher ohne Zeile) mit zwei Zeilen an der Prüfungssprosse.
 6. P1-Serie statt P3 in allen Einheiten: keine Kette übt eine
    Umformungskette; die Ungleichung in e3 ist ein Schritt.
 7. e5 anwendung: alle drei neu mit Periode, Stelle stärkster
