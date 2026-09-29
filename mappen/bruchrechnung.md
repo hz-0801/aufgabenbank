@@ -3,7 +3,7 @@
 Eintrag: hz-0801/mathe-nachhilfe, katalog/bruchrechnung.md
 Katalog-Commit: d78032a884b6073d9e4c92cc8407e909e3c4ea2a (2026-09-29T07:07:16Z, „Katalog 29.09. aus dem Chat: terme E4 Vorstufe Zerlegen, prozentrechnung E4 Sprosse „nur ein Prozent bestimmen“, bruchrechnung E3 Sprosse Stammbruch von Bruch (Vorrat) und Kastenzeile a = a/1; K5-Beleg in faellig.md“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-29 10:18 UTC
+Datum: 2026-09-29 12:26 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
