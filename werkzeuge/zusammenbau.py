@@ -1555,6 +1555,7 @@ class Bau(KbSatz):
         self.ichkann_fehlt = []
         self.lernblatt = not (self.fokus or self.schwach)   # Rezept L
         self.auftrag_doppelt = []   # Prüfung AUFTRAG (v0.9)
+        self.satz_doppelt = []      # Hinweis AUFTRAG-SATZ (v0.9)
 
     # Titel ---------------------------------------------------------------
     def ich_kann(self, einheit, kette, sprosse, ersatz):
@@ -2158,6 +2159,25 @@ class Bau(KbSatz):
                 self.auftrag_doppelt.append(f"Nr. {h.nr}: {x}")
                 self.log(f"AUFTRAG Nr. {h.nr}: „{x}“ steht "
                          f"{saetze_.count(x)}-mal")
+        # Satzebene (Hinweis): gleicher Aufforderungs- oder Fragesatz, Mathe
+        # als „…“, in Anweisung und ganzen Teilaufgaben – meist verschieden
+        # formulierte Bankzeilen oder Ankreuz- und Kontextaufgaben
+        orte = [m.group(1) for x in aus for m in
+                [re.match(r"^\\kbanweisung\{(.*)\}$", x)] if m]
+        orte += [KENNUNG.sub("", z["aufgabe"]).split("\\\\")[0] for z in voll]
+        zaehl = {}
+        for text in orte:
+            t, _ = schuetze(text)
+            t = re.sub(r"\x00\d+\x01", "…", t)
+            for satz in set(saetze(t)):
+                if IMPERATIV.match(satz) or LB_VERB.match(satz) or \
+                        satz.endswith("?"):
+                    zaehl[satz] = zaehl.get(satz, 0) + 1
+        for satz, n in sorted(zaehl.items()):
+            if n > 1:
+                self.satz_doppelt.append(f"Nr. {h.nr}: {satz}")
+                self.log(f"AUFTRAG-SATZ Nr. {h.nr}: „{satz}“ steht {n}-mal "
+                         "(Hinweis: Satz wiederholt, kein gemeinsamer Auftrag erkannt)")
 
     def satz_schwach(self, h):
         """Rezept S: Form 2.8 wie bis v0.8, Titel aus ich-kann.csv."""
@@ -2360,7 +2380,8 @@ class Bau(KbSatz):
         dateien["vorspann.tex"] = vorspann
         log(f"ZEICHEN Ersatz im Vorspann: {''.join(self.zeichen) or '–'}")
         log(f"AUFTRAG {len(self.auftrag_doppelt)} Hauptnummern mit einem "
-            "Auftragssatz in mehr als einer Teilaufgabe")
+            "Auftragssatz in mehr als einer Teilaufgabe; Hinweis AUFTRAG-SATZ "
+            f"{len(self.satz_doppelt)} Sätze")
         for name, zeilen in sorted(dateien.items()):
             if not name.endswith("_a.tex"):
                 continue
@@ -4636,6 +4657,7 @@ def main(argv=None):
         "ersatzzeichen": "".join(bau.zeichen),
         "ichkann_fehlt": bau.ichkann_fehlt,
         "auftrag_doppelt": bau.auftrag_doppelt,
+        "auftrag_satz_doppelt": bau.satz_doppelt,
         "je_datei": {e: {"hauptnummern": len(d["hauptnummern"]),
                          "teilaufgaben": d["teilaufgaben"]}
                      for e, d in je_einheit.items()},
