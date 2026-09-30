@@ -14,15 +14,16 @@ werkzeuge/einmalig/nachzug-zufallsexperimente-und-pfadregeln-
 
     Datei       Zeilen  vorstufe grundfall sprosse pruefung pflicht
     zone.jsonl      41         0        18      22        0       1
-    e1.jsonl        41         4         5      15        5      12
-    e2.jsonl        47         4         5      21        5      12
+    e1.jsonl        40         4         5      15        4      12
+    e2.jsonl        46         4         5      21        4      12
     e3.jsonl        57         4         5      30        6      12
     e4.jsonl        32         4         5       9        2      12
     e5.jsonl        38         4         5      15        2      12
     e6.jsonl        38         4         5      15        2      12
     e7.jsonl        41         4         5      18        2      12
-    e8.jsonl        38         4         5      15        2      12
-    gesamt         373        32        58     160       26      97
+    e8.jsonl        42         8         5      15        2      12
+    gesamt         375        36        58     160       24      97
+    (Stand nach dem Nachzug 30.09.b, unten)
 
 ## Nachzug je Einheit
 
@@ -102,13 +103,17 @@ Prüfungshöhe von e1 und e2 (dritte Zeile, Menge 3).
 ## Befunde
 
 - Katalog: Der Erkennungsschritt „Anteil aller oder Anteil
-  unter …?“ (Zeile 54) wiederholt die Vorstufe von e6; er entfällt.
+  unter …?“ (Zeile 54, Bereich vor Einheit 6 und 8) hat in e6 die
+  Vorstufe desselben Handgriffs (Zeile 160), in e8 nicht („Vorwärts
+  oder rückwärts?“, Zeile 162); nach bank.md 30.09.b steht er
+  einmal, in e8 als k1 (Nachzug 30.09.; bis dahin entfallen).
 - Katalog: Die Typen-Zeilen 32–39 nennen keinen Anwendungs- und
   keinen Darstellungstyp.
-- Mappe: Kennungen an den Prüfungshöhen fehlen in Abschnitt 2
+- Mappe: Kennungen an den Prüfungshöhen fehlten in Abschnitt 2
   (2023MgrundlegendBStochastikWTR1-2d,
   2019MgrundlegendBStochastikWTR2-3a, 2026MerhoehtAStochastik21-a
-  und -b).
+  und -b) – seit der Mappe vom 30.09. (262 Originale) vorhanden,
+  nachgezogen (unten).
 - Bausteine: kein Baustein für den Binomialkoeffizienten, kein Baum
   mit drei Ästen je Knoten.
 - Prüfskript: prüft die Pflichtformen P1–P8 nicht.
@@ -135,3 +140,53 @@ Prüfungshöhe von e1 und e2 (dritte Zeile, Menge 3).
   (4; 6)/(6; 4) statt (2; 5)/(5; 2) – das alte Paar stand wörtlich im
   Merkkasten; (4; 6) steht weder in der Mappe noch sonst in der Bank
   des Eintrags. Lösung „zwei Ergebnisse“ bleibt.
+
+## Nachzug 2026-09-30b (Erkennungsschritte, Originale)
+
+Datum: 2026-09-30 09:07 UTC (date). Grundlage: bank.md 30.09.b
+(Erkennungsschritt einmal je Bereich; Sek-II-Deutungstypen tragen
+darstellung und anwendung), Mappe vom 30.09. 08:15 UTC mit 262
+Originalen (Abschnitt 2), Katalog unverändert (Commit 2a296e5, in
+der Mappe; Auftrag nennt db8d2a3). Prüfskript vorher 0/0, nachher
+0/0 (v0.12, --katalog); Formprobe unverändert 1 Hinweis (e5
+darstellung eine Richtung – Bestand vom 29.09.).
+
+    Datei  übernommen  neu  umgeschrieben  entfallen
+    e1           37      0              2          1
+    e2           43      0              2          1
+    e8           38      4              0          0
+
+- e1 s7: Die drei Zeilen ohne Original (Nachweis eines Schnitts aus
+  Randanteil und „keiner der beiden Mängel“) verfremden
+  2023MgrundlegendBStochastikWTR1-2d; zwei tragen jetzt das Original
+  (v4, v5 → v3, v4, mit Schrittnamen), v3 (Fahrradcheck) entfällt
+  (Menge 2 je Original). Zeilen mit Original: 4 statt 5.
+- e2 s8: Die drei Zeilen ohne Original (Term in n als Anteil
+  begründen) verfremden 2019MgrundlegendBStochastikWTR2-3a; v3, v4
+  tragen es jetzt, v5 (Knöpfe) entfällt; sprosse_text der vier
+  Zeilen auf das ganze Glied der Zeile 156 verlängert.
+- e8: Erkennungsschritt „Anteil aller oder Anteil unter …?“ (Zeile
+  54) als eigene Kette k1, vier Zeilen Sprosse 0, Ankreuzen wie in
+  e6 s0, Situationstexte aus dem Rückwärtsstoff (Kundenkarte,
+  Neukunden, Zufallsfrage, Pendler); Verfahrenskette „Rückwärts“
+  jetzt k2, Pflichtkette k3 – ids aller 38 Bestandszeilen umbenannt.
+- Pooldubletten an den Prüfungssprossen (2026-bb-ea-A1.10a =
+  2026MerhoehtAStochastik21-a, 2025-bebb-lk-A1.9b =
+  2025MerhoehtAStochastik22-b, 2023-bebb-lk-A1.8b =
+  2023MerhoehtAStochastik22-b, 2026-bb-ea-A1.10b =
+  2026MerhoehtAStochastik21-b; in der Mappe wortgleich) zählen als
+  ein Original; die Bankzeilen behalten die abi-Kennung, keine
+  weiteren Zeilen (bank.md, Pooldublette).
+- Sek-II-Deutungstypen tragen darstellung und anwendung: die
+  Pflichtzeilen bestehen bereits (Entscheidung 3); die Feststellung
+  in den Befunden (Typen-Zeilen nennen keinen Anwendungs- und
+  Darstellungstyp) ist damit erledigt, Zeilen unverändert.
+- Zone, e3–e7 und muster.md unverändert (Sprossen und Fertigkeiten
+  der Mappe unverändert; muster.md hält je Verfahrenskette einen
+  Abschnitt, der Erkennungsschritt hat keinen Grundfall).
+- bank/_punkte.csv nicht angefasst: neues Urteil brauchen e1-k1-s7-v3,
+  e1-k1-s7-v4 (2023MgrundlegendBStochastikWTR1-2d), e2-k1-s8-v3,
+  e2-k1-s8-v4 (2019MgrundlegendBStochastikWTR2-3a); umbenannt
+  e8-k1-s7-v1, e8-k1-s7-v2 → e8-k2-s7-v1, e8-k2-s7-v2
+  (2022MgrundlegendAStochastik2, Urteil bleibt);
+  punkte-nachziehen.py steht aus.
