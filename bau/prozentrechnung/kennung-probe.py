@@ -10,7 +10,8 @@ Prüft je Kennung:
 2. bau.json: jede Aufgabennummer (A<n> + Teilaufgabe) kommt genau einmal
    vor und zeigt auf genau eine Bankzeile; jede id steht in bank/.
 3. Die Quelltexte tragen dieselben Nummern: je Hauptnummer so viele
-   Teilaufgaben (\\teil, \\gl, \\swz, \\swa, \\swfrage) wie bau.json.
+   Teilaufgaben (\\teil, \\gl, \\swz, \\swa, \\swfrage; ab zusammenbau v0.9
+   \\kbteil in kbaufgabe) wie bau.json.
 4. Die Kennung steht in der Fußzeile jedes Dokuments und in den
    Dateinamen (<kennung>.tex, <kennung>-loesungen.tex).
 Dazu: zwei Kennungen mit gleicher Bestellung haben wortgleiche
@@ -25,7 +26,7 @@ import sys
 from pathlib import Path
 
 WURZEL = Path(__file__).resolve().parents[2]
-TEIL = re.compile(r"\\(teil|steil|gl|sgl|tz|stz|swz|swa|swfrage)\b")
+TEIL = re.compile(r"\\(teil|steil|gl|sgl|tz|stz|swz|swa|swfrage|kbteil)\b")
 
 
 def bankzeilen(eintrag):
@@ -78,9 +79,10 @@ def pruefe(kennung, register, fehler):
         text = "\n".join(z for z in text.splitlines() if not z.startswith("%"))
         m = re.search(r"\\setcounter\{aufgabe\}\{(\d+)\}", text)
         nr = int(m.group(1)) if m else 0
-        for block in text.split("\\begin{aufgabe}")[1:]:
+        # zusammenbau bis v0.8: aufgabe; ab v0.9 (Lernblatt): kbaufgabe
+        for block in re.split(r"\\begin\{(?:kb)?aufgabe\}", text)[1:]:
             nr += 1
-            rumpf = block.split("\\end{aufgabe}")[0]
+            rumpf = re.split(r"\\end\{(?:kb)?aufgabe\}", block)[0]
             ist[(datei, nr)] = len(TEIL.findall(rumpf))
     if ist != soll:
         for k in sorted(set(ist) | set(soll)):
@@ -95,7 +97,9 @@ def pruefe(kennung, register, fehler):
     for d in doks:
         kopf = [z for z in d.read_text(encoding="utf-8").splitlines()
                 if z.startswith("\\blattkopf")]
-        if len(kopf) != 1 or not kopf[0].endswith(f" · {kennung}}}"):
+        # bis v0.8 „Thema · Blatt · Kennung“, ab v0.9 nur die Kennung (Befund 2)
+        if len(kopf) != 1 or not (kopf[0].endswith(f" · {kennung}}}")
+                                  or kopf[0].endswith(f"{{{kennung}}}")):
             fehler.append(f"{kennung}: {d.name} ohne Kennung in der Fußzeile")
     haupt = len({a["hauptnummer"] for a in zettel["aufgaben"]})
     print(f"{kennung}: Register 1 Zeile; bau.json {len(zettel['aufgaben'])} "

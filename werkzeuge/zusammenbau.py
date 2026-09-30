@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""zusammenbau.py v0.8 – aus bank/<eintrag>/ LaTeX-Quelltexte für mathblatt.sty.
+"""zusammenbau.py v0.9 – aus bank/<eintrag>/ LaTeX-Quelltexte für mathblatt.sty.
 
 Aufruf:
     python3 werkzeuge/zusammenbau.py <eintrag> [--einheiten 1,3]
         [--zone ja|nein|kurz] [--fokus <kette>] [--schwach] [--klasse 7]
         [--kasten] [--aus <ordner>] [--vorlage <mathblatt.sty>]
-        [--ohne-register] [--kuerzel <_kuerzel.csv>]
+        [--ohne-register] [--kuerzel <_kuerzel.csv>] [--nummer n]
     python3 werkzeuge/zusammenbau.py <eintrag> <eintrag> … --heft [msa|
         abitur-gk|abitur-lk|fhr] [--nur-basis] [--titel <text>] --aus <ordner>
     python3 werkzeuge/zusammenbau.py --zettel basis [--nummer n]
@@ -14,6 +14,24 @@ Aufruf:
         [--heft msa|abitur-gk|abitur-lk|fhr] [--einheiten n] [--aus <ordner>]
     python3 werkzeuge/zusammenbau.py <eintrag> --kompetenz <kette>
         --einheiten n [--niveau for|ebr] [--dicht] [--ohne <ids>]
+
+v0.9 (2026-09-30): Lernblatt (Rezept L, dazu F und S, wo sie denselben Code
+nutzen) im Satz des Kompetenzblatts (KbSatz, vorspann.tex):
+- Auftrag einmal über der Nummer: „Verb …: Term“, „Verb. Term“, gleicher
+  Satzanfang mit Lücke, gleicher Schlusssatz, gleiche Aufgabe mit anderen
+  Zahlen an höchstens zwei Stellen (laeufe_von); ein Auftrag steht nie zweimal
+  in einer Hauptnummer (zerteile teilt dort, „– weiter“).
+- Kurze Terme (bis 30 Zeichen) und kurze Ankreuzaufgaben zwei nebeneinander
+  (\\lbpaar), „= ____“ hinter dem Term, kein Raum; Vorstufen paarweise.
+- Titel: Ich-kann-Satz aus bau/regal/ich-kann.csv je Hauptnummer (Kette,
+  Sprosse, p, Pflichtelement, Zone, Zone-Paar); Ersatz „Ich kann: <merkmal>.“
+- Zweigzeile „Hier lernst du, …“ · Zeitmarke · Prüfungswort · „baut auf: …“.
+- Mengen nach bank.md: Vorstufe alle, Grundfall vier von fünf, jede weitere
+  Sprosse eine, Prüfungshöhe je Original eine, Typ ohne Kette alle, Pflicht
+  je Zeile; Zone je Fertigkeit zwei sehr leichte, eine mittlere, je Fallstrick
+  eine, Zone-Paar; Teilung 2.3 g ausgewogen.
+- Zone: „Hängst du hier? → Nr. n“ auf die erste Nummer, die die Fertigkeit
+  braucht. Fußzeile nur Kennung und Seite (Befund 2). --nummer auch für L/F/S.
 
 v0.8 (2026-09-28): Rezept K nach dem Sprachlauf (bau/sprachlauf/regeln.md):
 - Aufgabe in ganzen Sätzen: ein normaler Absatz, kein halbfetter Auftakt mit
@@ -40,8 +58,8 @@ zehn Aufgaben aus bank/_basis/); Prüfkennung kurz in allen Rezepten
 („(P24)“, „(P26F)“, „(A23L)“, „(F25)“, Sternchen wie im Original
 dahinter); Zweigzeile mit Zahl der Jahrgänge („P10 ×5“, „Abi GK ×8“).
 
-Ohne Schalter: Lernblatt mit Zone und allen Einheiten, je Sprosse
-Variante 1, ohne Klasse. Jeder Bau bekommt eine Kennung XXX-R<n>
+Ohne Schalter: Lernblatt mit Zone und allen Einheiten, Mengen nach bank.md
+(seit v0.9), ohne Klasse. Jeder Bau bekommt eine Kennung XXX-R<n>
 (Kürzel des Eintrags, Rezept L/F/S/H, laufende Nummer aus
 bau/register.csv) und landet unter bau/<eintrag>/<kennung>/, mit --aus
 im genannten Ordner. Die Registerzeile wird angehängt, daneben
@@ -70,7 +88,7 @@ from bisect import bisect_right
 from pathlib import Path
 
 WURZEL = Path(__file__).resolve().parent.parent
-VERSION = "v0.8"
+VERSION = "v0.9"
 
 # Befehle der Rahmendateien, die weder in STANDARD (bank-pruef.py) noch
 # in _bausteine.md stehen; jede Argumentzahl zulässig.
@@ -86,6 +104,8 @@ KB_BEFEHLE = {"kbnummer", "kbhalb", "kbpaar", "kbteilpaar", "kbkopfzeile", "kbti
               "noindent", "textbf", "vspace", "hspace"}
 RAHMEN |= KB_BEFEHLE
 RAHMEN_UMGEBUNG |= {"kbaufgabe", "kbblock"}
+# Lernblatt (v0.9): Befehle aus VORSPANN_LERN
+RAHMEN |= {"lbfeld", "lbverweis", "lbpaar"}
 
 PFLICHT_NAME = {"fehler": "Fehler finden", "begruenden": "Begründen",
                 "darstellung": "Darstellungswechsel",
@@ -905,6 +925,189 @@ def teil_schwach(z, log, nr):
     return aus, "swz"
 
 
+# --- Satz einer Teilaufgabe im Stil des Kompetenzblatts ------------------
+
+class KbSatz:
+    """Satz einer Teilaufgabe im Stil des Kompetenzblatts (v0.7/v0.8), gemeinsam
+    für Rezept K und seit v0.9 für das Lernblatt (Rezept L, F): braucht
+    self.log."""
+
+    def satz_teil(self, z, buchst, anweisung):
+        """LaTeX-Zeilen einer Teilaufgabe (Inhalt eines kbblock); die
+        Anweisung der Hauptnummer steht über der ersten Teilaufgabe."""
+        wo = z["id"]
+        t = zerlege(z)
+        grafik = z.get("grafik", "") or ""
+        if z["form"] == "zeichnen" and grafik:
+            grafik = ksys_verkleinern(grafik, self.log, wo)
+        tabellen = [tabelle_text(x) for x in t["tabellen"]]
+        feld = [] if feld_im_grafik(z) else antwort_zeilen(z.get("antwort", ""))
+        n_raum = rechenzeilen(z)
+        if z["form"] == "gleichungsraster" and not feld:
+            feld = [antwortfeld("Lösung: __").replace("\\leerfeld", "\\kbfeld")]
+            self.log(f"ANTWORT {wo}: Bank ohne Antwortgerüst – „Lösung: __“")
+        kopf = t["kopf"]
+        frage = list(t["frage"])
+        fett = t["fett"]
+        sf = satzform(z)
+        if sf:
+            # v0.8: ganze Sätze als ein Absatz; eine Anweisung aus
+            # ich-kann.csv entfällt, wenn der Text selbst auffordert
+            kopf, fett, frage, t["vor"] = sf["kopf"], sf["fett"], [], sf["vor"]
+            if anweisung and (sf["auffordernd"] or sf["vor"]):
+                self.log(f"ANWEISUNG {wo}: „{anweisung}“ entfällt – die "
+                         "Aufgabe fordert selbst auf (Sprachregeln)")
+                anweisung = ""
+        if z["form"] == "gleichungsraster":
+            a = z["aufgabe"].strip()
+            if "$" not in a:
+                kopf, fett, frage = f"${a}$", True, []
+        if not kopf and frage and len(schlicht(frage[0])) <= 70 \
+                and len(frage) > 1:
+            kopf, frage = frage[0], frage[1:]
+        if anweisung and len(frage) == 1 and frage[0].endswith("?") \
+                and len(schlicht(frage[0]).split()) <= 3:
+            self.log(f"FRAGE {wo}: Kurzfrage „{frage[0]}“ entfällt – die "
+                     f"Anweisung „{anweisung}“ sagt es (Befund 5)")
+            frage = []
+        if not kopf and len(frage) == 1 and not t["kennung"]:
+            kopf, frage = frage[0], []
+        kopf_satz = (f"{{\\bfseries\\boldmath {kopf}}}" if fett and kopf
+                     else kopf)
+        if not anweisung and t["vor"]:
+            anweisung = t["vor"]
+        if (not feld and not t["kreuze"] and not t["tabellen"] and not grafik
+                and z["form"] in ("teil", "text") and n_raum == 0
+                and not z.get("pflicht") and "\\janein" not in z["aufgabe"]):
+            feld = ["\\kbfeld"]
+            self.log(f"ANTWORT {wo}: Bank ohne Antwortgerüst – leeres Feld")
+        anw = f"\\kbanweisung{{{klar(anweisung)}}}" if anweisung else ""
+        kopfzeile = f"\\kbteil{{{buchst}}}{{{kopf_satz}}}{{{t['kennung']}}}"
+        frage_satz = ("\\kbfrage{" + " \\\\ ".join(frage) + "}") if frage else ""
+        kreuze = []
+        for k in t["kreuze"]:
+            m = re.match(r"\\kreuz\{(.*)\}$", k, re.S)
+            kreuze.append(f"\\kbkreuz{{{m.group(1) if m else k}}}")
+        antw = "".join(f"\\kbantwort{{{f}}}" for f in feld)
+        raum = f"\\kbraum{{{n_raum}}}" if n_raum else ""
+        bilder = tabellen + ([grafik] if grafik else [])
+        halb = TEXTBREITE_CM * 0.5
+        aus = [x for x in (anw, kopfzeile, frage_satz) if x]
+        if bilder:
+            masse = [grafik_mass(b if not b.startswith("\\kbwertetabelle")
+                                 else "\\wertetabelle" + b[len("\\kbwertetabelle"):])
+                     for b in bilder]
+            rechts = "".join(kreuze) + antw + raum
+            if len(bilder) == 2 and sum(m[0] for m in masse) <= TEXTBREITE_CM - 0.5:
+                # Tabelle und Koordinatensystem nebeneinander (Befund 27)
+                anteil = min(0.6, max(0.3, masse[0][0] / TEXTBREITE_CM + 0.02))
+                aus.append(f"\\kbzweispaltig[{anteil:.2f}]{{{bilder[0]}}}"
+                           f"{{{bilder[1]}}}")
+                if rechts:
+                    aus.append(rechts)
+            elif len(bilder) == 1 and masse[0][0] <= halb and rechts:
+                anteil = min(0.58, max(0.3, masse[0][0] / TEXTBREITE_CM + 0.07))
+                aus.append(f"\\kbzweispaltig[{anteil:.2f}]{{{bilder[0]}}}"
+                           f"{{{rechts}}}")
+            elif (len(bilder) == 1 and masse[0][0] <= halb and not rechts
+                  and z["form"] == "zeichnen" and frage):
+                # Zeichnen: Koordinatensystem links, Auftrag rechts daneben
+                aus = [x for x in (anw, kopfzeile) if x]
+                anteil = min(0.55, max(0.3, masse[0][0] / TEXTBREITE_CM + 0.03))
+                aus.append(f"\\kbzweispaltig[{anteil:.2f}]{{{bilder[0]}}}"
+                           "{" + " \\\\ ".join(frage) + "}")
+            else:
+                for b in bilder:
+                    aus.append(f"\\kbdarunter{{{b}}}")
+                if rechts:
+                    aus.append(rechts)
+        elif kreuze:
+            aus += kreuze
+            if antw:
+                aus.append(antw)
+        elif raum and not antw:
+            aus.append(f"\\item[]{raum}")
+        elif raum:
+            # Rechenraum rechts neben der Aufgabe (Befund 9, 27)
+            grenze = 32 if fett else 52
+            if not t["kennung"] and len(schlicht(kopf)) <= grenze and \
+                    len(schlicht(" ".join(frage))) <= 70:
+                links = "".join(x for x in (anw, kopfzeile, frage_satz) if x)
+                aus = [f"\\kbzweispaltig[0.46]{{\\kbspalte{{{links}{antw}}}}}"
+                       f"{{{raum}}}"]
+            else:
+                aus.append(f"\\kbzweispaltig[0.46]{{{antw}}}{{{raum}}}")
+        else:
+            if antw:
+                aus.append(antw)
+        return aus
+
+    def halb_tauglich(self, z):
+        """Zeichenaufgabe, deren Koordinatensystem in eine halbe Spalte passt
+        (Paarsatz: zwei nebeneinander, Befund 27 „Platz nutzen“)."""
+        g = z.get("grafik") or ""
+        if z["form"] != "zeichnen" or "\\begin{ksys}" not in g:
+            return False
+        g = ksys_verkleinern(g, lambda *_: None, "")
+        return grafik_mass(g)[0] <= TEXTBREITE_CM * 0.485 - 0.7
+
+    def satz_halb_text(self, z, anweisung):
+        """Rechenaufgabe in einer halben Spalte: Text, Antwort, Raum darunter."""
+        t = zerlege(z)
+        kopf, frage = t["kopf"], list(t["frage"])
+        sf = satzform(z)
+        if sf:
+            kopf, frage, t["fett"], t["vor"] = sf["kopf"], [], sf["fett"], \
+                sf["vor"]
+            if sf["auffordernd"] or sf["vor"]:
+                anweisung = ""
+        if not kopf and len(frage) > 1:
+            kopf, frage = frage[0], frage[1:]
+        if not anweisung and t["vor"]:
+            anweisung = t["vor"]
+        kopf_satz = (f"{{\\bfseries\\boldmath {kopf}}}" if t["fett"] and kopf
+                     else kopf)
+        n = rechenzeilen(z)
+        feld = antwort_zeilen(z.get("antwort", "")) or ([] if n else
+                                                        ["\\kbfeld"])
+        aus = []
+        if anweisung:
+            aus.append(f"\\kbanweisung{{{klar(anweisung)}}}")
+        aus.append(f"\\kbteil{{}}{{{kopf_satz}}}{{}}")
+        if frage:
+            aus.append("\\kbfrage{" + " \\\\ ".join(frage) + "}")
+        aus += [f"\\kbantwort{{{f}}}" for f in feld]
+        if n:
+            aus.append(f"\\item[]\\kbraum{{{n}}}")
+        return aus
+
+    def satz_halb(self, z, buchst, anweisung):
+        """Zeichenaufgabe in einer halben Spalte: Text oben, Grafik darunter."""
+        t = zerlege(z)
+        g = ksys_verkleinern(z.get("grafik") or "", self.log, z["id"])
+        kopf, frage = t["kopf"], list(t["frage"])
+        sf = satzform(z)
+        if sf:
+            kopf, frage, t["fett"] = sf["kopf"], [], sf["fett"]
+            if sf["auffordernd"]:
+                anweisung = ""
+            if sf["vor"]:
+                anweisung = sf["vor"]
+        if not kopf and len(frage) > 1:
+            kopf, frage = frage[0], frage[1:]
+        kopf_satz = (f"{{\\bfseries\\boldmath {kopf}}}" if t["fett"] and kopf
+                     else kopf)
+        aus = []
+        if anweisung:
+            aus.append(f"\\kbanweisung{{{klar(anweisung)}}}")
+        aus.append(f"\\kbteil{{{buchst}}}{{{kopf_satz}}}{{{t['kennung']}}}")
+        if frage:
+            aus.append("\\kbfrage{" + " \\\\ ".join(frage) + "}")
+        aus.append(f"\\kbdarunter{{{g}}}")
+        return aus
+
+
+
 # --- Bau -----------------------------------------------------------------
 
 class Hauptnummer:
@@ -917,6 +1120,12 @@ class Hauptnummer:
         self.weiter = weiter
         self.nr = None
         self.buchstaben = []   # (Buchstabe, Zeile oder None für Erklärzeile)
+        # Lernblatt v0.9
+        self.lage = art        # zone, zonepaar, erkennung, vorstufe, leiter, pruefung, ohne, pflicht
+        self.anweisung = ""    # Spalte anweisung aus ich-kann.csv
+        self.laeufe = []       # [(Auftrag oder "", [Zeilen], [Rest oder None])]
+        self.verweis = None    # Zone: Nummer der ersten Hauptnummer, die die Fertigkeit braucht
+        self.erster = None     # „– weiter“: Hauptnummer, deren Fortsetzung sie ist
 
 
 def platzhalter_titel(kette, art, folge):
@@ -957,7 +1166,278 @@ def buchstabe(i):
     return "abcdefghijklmnopqrstuvwxyz"[i] if i < 26 else f"?{i + 1}"
 
 
-class Bau:
+# --- Lernblatt v0.9: Auftrag über der Nummer, Terme nebeneinander ----------
+
+# Verben, mit denen ein Auftrag beginnt, der nicht in IMPERATIV steht
+LB_VERB = re.compile(r"^(Klammere|Fasse|Multipliziere|Vereinfache|Unterstreiche|"
+                     r"Kreise|Addiere|Subtrahiere|Dividiere|Wandle|Schreibe|"
+                     r"Setze|Löse|Rechne|Berechne|Bestimme|Gib)\b")
+# Aufträge, hinter deren Term „= ____“ steht (Rechnen, Umformen)
+LB_RECHNEN = re.compile(r"^(Fasse|Multipliziere|Berechne|Rechne|Löse die Klammer|"
+                        r"Klammere|Vereinfache|Addiere|Subtrahiere|Dividiere)\b")
+# Aufträge ohne Antwortfeld (die Antwort steht im Term selbst)
+LB_OHNE_FELD = re.compile(r"\b(Unterstreiche|Kreise|Markiere|Zeichne|Fülle|"
+                          r"Verbinde)\b")
+LB_KURZ = 30            # Term bis etwa 30 Zeichen: zwei nebeneinander
+LB_TEIL_MAX = 12        # 2.3 g: höchstens 12 Teilaufgaben je Hauptnummer,
+LB_TEIL_MAX_GRAFIK = 6  # mit Grafik 6
+LB_GRUNDFALL = 4        # bank.md „Mengen je Kette“: vier von fünf auf dem Blatt
+PFLICHT_FOLGE = ["fehler", "begruenden", "darstellung", "anwendung"]
+PFLICHT_ICHKANN = {"fehler": "Ich finde den Fehler und rechne richtig.",
+                   "begruenden": "Ich kann begründen.",
+                   "darstellung": "Ich kann zwischen Term, Bild und Worten "
+                                  "wechseln.",
+                   "anwendung": "Ich kann damit Aufgaben aus dem Alltag lösen."}
+# Trennbare Vorsilben für den zu-Infinitiv der Zweigzeile („aufzulösen“)
+TRENNBAR = ("zusammen", "heraus", "herunter", "dar", "auf", "aus", "ab", "an",
+            "ein", "mit", "vor", "nach", "um", "her", "hin", "weg", "fest",
+            "zu", "los", "durch")
+VORSPANN_LERN = r"""% Lernblatt (zusammenbau v0.9): Antwortfeld hinter kurzen Termen,
+% Verweis der Zone auf die Nummer im Lernblatt
+\newcommand{\lbfeld}{\mbox{\underline{\hspace{2.6cm}}}}
+\newcommand{\lbverweis}[1]{\hfill{\footnotesize\color{mbgrau}\ Hängst du hier? $\rightarrow$ Nr.~#1}}
+% Zwei Teilaufgaben nebeneinander; Buchstaben in derselben Flucht wie
+% untereinander (links hängend)
+\newlength{\lbhalbbreite}
+\newcommand{\lbpaar}[2]{\item[]\hspace*{-\leftmargin}%
+  \setlength{\lbhalbbreite}{\dimexpr0.5\linewidth+0.5\leftmargin-0.6em\relax}%
+  \begin{minipage}[t]{\lbhalbbreite}\kbhalb{#1}\end{minipage}\hfill
+  \begin{minipage}[t]{\lbhalbbreite}\kbhalb{#2}\end{minipage}\par}"""
+
+
+def auftrag_zerlegen(z):
+    """Auftrag einer Teilaufgabe und der Term dahinter (v0.9): „Verb …: Term“
+    → („Verb ….“, Term, "doppelpunkt"); „Satzanfang Term.“ → („Satzanfang.“,
+    Term, "satz"); „Satzanfang Term Satzrest“ → („Satzanfang … Satzrest“,
+    Term, "luecke"). None, wenn die Aufgabe eine Prüfkennung, einen Befehl,
+    mehrere Sätze vor dem Term oder mehr als drei Wörter zwischen den Termen
+    trägt."""
+    t = z["aufgabe"].strip()
+    if KENNUNG.search(t) or "\\\\" in t:
+        return None
+    s, st = schuetze(t)
+    phs = list(re.finditer(r"\x00(\d+)\x01", s))
+    if not phs or any(not st[int(m.group(1))].startswith("$") for m in phs):
+        return None
+    vor, nach = s[:phs[0].start()], s[phs[-1].end():]
+    mitte = s[phs[0].start():phs[-1].end()]
+    zwischen = re.sub(r"\x00\d+\x01", " ", mitte)
+    if re.search(r"[.?!:]", zwischen) or len(re.sub(r"[,;]", " ", zwischen)
+                                                  .split()) > 3:
+        return None
+    p, n = vor.strip(), nach.strip()
+    if n in ("", ".") and re.fullmatch(r"[^.?!:]+\.", p) and \
+            (IMPERATIV.match(p) or LB_VERB.match(p)):
+        return p, zurueck(mitte, st), "doppelpunkt"     # „Berechne. Term“
+    if not p or re.search(r"[.?!]", p) or not (IMPERATIV.match(p)
+                                                 or LB_VERB.match(p)):
+        return None
+    term = zurueck(mitte, st)
+    if n in ("", ".") and p.endswith(":"):
+        return p[:-1].rstrip() + ".", term, "doppelpunkt"
+    if p.endswith(":"):
+        return None
+    if n in ("", "."):
+        return p + ".", term, "satz"
+    if re.search(r"\x00", n):
+        return None
+    rest = zurueck(n, st)
+    return (p + " …" + rest if re.match(r"^[?.,!]", rest)
+            else p + " … " + rest), term, "luecke"
+
+
+def schluss_auftrag(z):
+    """Gleicher Auftragssatz am Ende (v0.9): „Das Vierfache … vermindert.
+    Kreuze den Term an, der dazu passt. \\\\ \\kreuz{…}“ → („Kreuze den Term
+    an, der dazu passt.“, Rest ohne den Satz, "schluss"). Nur, wenn vor dem
+    Satz noch ein Satz steht; eine Prüfkennung bleibt am Rest."""
+    t = z["aufgabe"].strip()
+    kennung = ""
+    m = KENNUNG.search(t)
+    if m:        # Prüfkennung bleibt am Rest (klein rechts in der Auftaktzeile)
+        kennung, t = m.group(0).strip(), (t[:m.start()] + t[m.end():]).strip()
+    kopf, schwanz = t, ""
+    m = re.search(r"\s*\\\\", t)
+    if m:
+        kopf, schwanz = t[:m.start()], t[m.start():]
+    s, st = schuetze(kopf)
+    teile = saetze(s)
+    if len(teile) < 2:
+        return None
+    letzt = teile[-1]
+    if not (IMPERATIV.match(letzt) or LB_VERB.match(letzt)) or \
+            not re.search(r"[.!]$", letzt) or letzt.startswith(("Wie", "Was",
+                                                                 "Welche")):
+        return None
+    rest = zurueck(" ".join(teile[:-1]), st) + (" " + kennung if kennung
+                                                  else "") + schwanz
+    return zurueck(letzt, st), rest, "schluss"
+
+
+def zerlege_auftrag(z):
+    return auftrag_zerlegen(z) or schluss_auftrag(z)
+
+
+def geruest_von(z):
+    """(Gerüst, [Mathe-Stücke]) einer Aufgabe ohne Prüfkennung und ohne
+    Befehle: jedes $…$ als \\x00#\\x01; None sonst."""
+    t = z["aufgabe"].strip()
+    if KENNUNG.search(t) or "\\\\" in t or z.get("grafik"):
+        return None
+    s, st = schuetze(t)
+    if any(not x.startswith("$") for x in st):
+        return None
+    return re.sub(r"\x00\d+\x01", "\x00#\x01", s), st
+
+
+def vorlage_mehrfach(zeilen):
+    """Gleiche Aufgabe mit anderen Zahlen an höchstens zwei Stellen (v0.9):
+    („Erfinde … zu der der Term … passt. … für … und erkläre …“,
+    ["$15 + 3x$, $x = 2$", …]) oder None."""
+    g = [geruest_von(z) for z in zeilen]
+    if any(x is None for x in g) or len({x[0] for x in g}) != 1:
+        return None
+    n = len(g[0][1])
+    anders = [k for k in range(n) if len({x[1][k] for x in g}) > 1]
+    if not 1 <= len(anders) <= 2:
+        return None
+    stuecke = g[0][0].split("\x00#\x01")
+    auftrag = stuecke[0]
+    for k in range(n):
+        auftrag += ("…" if k in anders else g[0][1][k]) + stuecke[k + 1]
+    if not (IMPERATIV.match(auftrag) or LB_VERB.match(auftrag)
+            or re.search(r"[.?!] (Berechne|Schreibe|Gib|Bestimme)", auftrag)):
+        return None
+    return auftrag.strip(), [", ".join(x[1][k] for k in anders) for x in g]
+
+
+def laeufe_von(folge):
+    """Folge in Läufe mit gleichem Auftrag: [(Auftrag, [Zeilen], [Terme])];
+    ohne gemeinsamen Auftrag je Zeile ein Lauf ("", [z], [None]). Ein
+    einzelner „Verb …: Term“ gilt als Lauf, Satzanfang und Lücke erst ab zwei
+    Teilaufgaben."""
+    zer = [zerlege_auftrag(z) for z in folge]
+    aus, i = [], 0
+    while i < len(folge):
+        a = zer[i]
+        j = i + 1
+        if a:
+            while j < len(folge) and zer[j] and zer[j][0] == a[0]:
+                j += 1
+        if a and (j - i >= 2 or a[2] == "doppelpunkt"):
+            aus.append((a[0], folge[i:j], [zer[k][1] for k in range(i, j)]))
+            i = j
+            continue
+        # gleiche Aufgabe mit anderen Zahlen (zwei Stellen): längste Folge ab i
+        m = len(folge)
+        while m - i >= 2 and not vorlage_mehrfach(folge[i:m]):
+            m -= 1
+        if m - i >= 2:
+            auftrag, terme = vorlage_mehrfach(folge[i:m])
+            aus.append((auftrag, folge[i:m], terme))
+            i = m
+            continue
+        aus.append(("", [folge[i]], [None]))
+        i += 1
+    return aus
+
+
+def teile_ausgewogen(folge):
+    """2.3 g: höchstens 12 Teilaufgaben je Hauptnummer, 6 mit Grafik; Teilung
+    an Sprossengrenzen in möglichst gleich große Stücke (13 → 7 + 6, nicht
+    12 + 1)."""
+    def grenze(t):
+        return LB_TEIL_MAX_GRAFIK if any(z.get("grafik") for z in t) \
+            else LB_TEIL_MAX
+    if len(folge) <= grenze(folge):
+        return [folge]
+    gruppen = []
+    for z in folge:
+        if gruppen and gruppen[-1][0]["sprosse"] == z["sprosse"]:
+            gruppen[-1].append(z)
+        else:
+            gruppen.append([z])
+    k = -(-len(folge) // grenze(folge))
+    while True:
+        ziel = -(-len(folge) // k)
+        teile, akt = [], []
+        for g in gruppen:
+            if akt and len(akt) + len(g) > ziel:
+                teile.append(akt)
+                akt = []
+            akt = akt + g
+        teile.append(akt)
+        if all(len(t) <= grenze(t) for t in teile) or k >= len(gruppen):
+            return teile
+        k += 1
+
+
+def zerteile(folge):
+    """Hauptnummer in Stücke: an einem Auftrag, der in derselben Nummer schon
+    einmal stand (kein Auftrag zweimal in einer Nummer), dann nach 2.3 g."""
+    stuecke, akt, gesehen = [], [], set()
+    for auftrag, zz, _ in laeufe_von(folge):
+        if auftrag and auftrag in gesehen:
+            stuecke.append(akt)
+            akt, gesehen = [], set()
+        akt += zz
+        if auftrag:
+            gesehen.add(auftrag)
+    if akt:
+        stuecke.append(akt)
+    aus = []
+    for s in stuecke:
+        aus += teile_ausgewogen(s)
+    return aus
+
+
+def zu_infinitiv(titel):
+    """„Terme aufstellen und berechnen“ → „Terme aufzustellen und zu
+    berechnen“; „Ausklammern“ → „auszuklammern“. None ohne Verb."""
+    w = titel.split()
+    verben = [i for i, x in enumerate(w)
+              if re.fullmatch(r"[a-zäöüß]+(en|ern|eln)", x) and i > 0]
+    if not verben and len(w) == 1 and re.fullmatch(
+            r"[A-ZÄÖÜ][a-zäöüß]+(en|ern|eln)", w[0]):
+        w[0], verben = w[0].lower(), [0]
+    if not verben:
+        return None
+    for i in verben:
+        v = w[i]
+        for p in TRENNBAR:
+            if v.startswith(p) and len(v) > len(p) + 3:
+                w[i] = p + "zu" + v[len(p):]
+                break
+        else:
+            w[i] = "zu " + v
+    return " ".join(w)
+
+
+def hier_lernst_du(info):
+    """Teil 1 der Zweigzeile (v0.9): ein Satz „Hier lernst du, …“ aus der
+    Beschreibung der Lerneinheit, wenn sie einer ist, sonst aus dem Titel."""
+    if not info:
+        return None, "keine Lerneinheit in der Mappe"
+    b = (info.get("beschreibung") or "").split(" ← ", 1)[0].strip()
+    if re.match(r"^(Hier lernst du|Du lernst)\b", b):
+        return b.rstrip("."), "Beschreibung der Lerneinheit"
+    inf = zu_infinitiv(info["titel"])
+    if inf:
+        return f"Hier lernst du, {inf}", "aus dem Titel (Beschreibung ist " \
+            "kein Satz)"
+    return None, "Titel ohne Verb"
+
+
+def fertigkeit_name(zeile):
+    """Kurzname einer Voraussetzungszeile: Text vor „ (“ und „ – “."""
+    return re.split(r" \(| – ", zeile, 1)[0].strip()
+
+
+class Bau(KbSatz):
+    """Rezept L (Lernblatt), F (Fokus), S (schwach). Seit v0.9 setzen L und F
+    im Satz des Kompetenzblatts (KbSatz, vorspann.tex); S behält die Form
+    2.8 (\\swz, \\swa)."""
+
     def __init__(self, args, log):
         self.a = args
         self.log = log
@@ -977,8 +1457,62 @@ class Bau:
         self.schwach = args.schwach
         self.klasse = args.klasse
         self.kennung = args.kennung
+        self.ik = lies_ichkann()
         self.todo_frei = []
         self.reihenfolge = []   # (Hauptnummer, Aufgabendatei) in Blattfolge
+        self.lage = {}          # id -> lage (bau.json)
+        self.zeichen = []
+        self.ichkann_fehlt = []
+
+    # Titel ---------------------------------------------------------------
+    def ich_kann(self, einheit, kette, sprosse, ersatz):
+        """(Titel, Anweisung) aus bau/regal/ich-kann.csv; fehlt die Zeile,
+        der Ersatz und ICH-KANN fehlt in der log."""
+        k = (self.eintrag, einheit, kette.casefold(), sprosse)
+        if k in self.ik and self.ik[k][0]:
+            return self.ik[k]
+        self.log(f"ICH-KANN fehlt in bau/regal/ich-kann.csv: e{einheit} "
+                 f"„{kette}“ Sprosse „{sprosse}“ – Ersatz „{ersatz}“")
+        self.ichkann_fehlt.append(f"e{einheit} {kette} {sprosse}".strip())
+        return ersatz, ""
+
+    @staticmethod
+    def merkmal_titel(z, kette):
+        """Ersatztitel „Ich kann: <merkmal>.“ ohne Bank-Wort am Anfang
+        („Vorstufe: …“); trägt er dann noch eines, „Ich kann: <Kette>.“"""
+        m = re.sub(r"^(Vorstufe|Grundfall|Fallstrick|Sprosse|Prüfungshöhe)"
+                   r"\s*\d*\s*[:–-]\s*", "", z.get("merkmal") or kette)
+        t = "Ich kann: " + re.split(r"[:;,(]", m)[0].strip() + "."
+        return t if not BANKWORT.search(t) else f"Ich kann: {kette}."
+
+    def hn(self, titel_anw, folge, art, kette, n, weiter_titel=None):
+        """Hauptnummer(n) aus einer Folge: geteilt nach zerteile; Stücke nach
+        dem ersten tragen den Ich-kann-Satz ihrer ersten Sprosse, wenn es ihn
+        gibt, sonst „<Titel> – weiter“."""
+        titel, anw = titel_anw
+        aus = []
+        stuecke = zerteile(folge) if not self.schwach else [folge]
+        for i, t in enumerate(stuecke):
+            if i == 0:
+                h = Hauptnummer(titel, t, art, kette, n)
+                h.anweisung = anw
+            else:
+                k = (self.eintrag, n, kette.casefold(), str(t[0]["sprosse"]))
+                eigen = weiter_titel and k in self.ik and self.ik[k][0]
+                h = Hauptnummer(self.ik[k][0] if eigen else f"{titel} – weiter",
+                                t, art, kette, n, weiter=not eigen)
+                h.erster = aus[0]
+                self.log(f"TEILUNG „{titel[:50]}“: Stück {i + 1} ab "
+                         f"{t[0]['id']} ({len(t)} Teilaufgaben)"
+                         + (" – eigener Ich-kann-Satz der Sprosse" if eigen
+                            else " – „weiter“"))
+            h.lage = art
+            h.laeufe = laeufe_von(t) if not self.schwach else []
+            for z in t:
+                if z.get("id"):
+                    self.lage[z["id"]] = art
+            aus.append(h)
+        return aus
 
     # Auswahl je Einheit
     def einheiten(self):
@@ -1000,6 +1534,26 @@ class Bau:
             alle = treffer
         return alle
 
+    def pflicht_hn(self, zeilen, name, n, wo, alle=True):
+        aus = []
+        je = {}
+        for z in zeilen:
+            je.setdefault(z.get("pflicht"), []).append(z)
+        for p in PFLICHT_FOLGE + sorted(set(je) - set(PFLICHT_FOLGE),
+                                        key=str):
+            if p not in je:
+                continue
+            folge = sorted(je[p], key=lambda z: (z["sprosse"], z["variante"]))
+            if not alle:
+                folge = folge[:1]
+            for z in folge:
+                self.log(f"AUSWAHL {z['id']} – {wo}, Pflicht {p}: je Zeile "
+                         "eine Teilaufgabe")
+            tk = self.ich_kann(n, name, p or "", PFLICHT_ICHKANN.get(
+                p, self.merkmal_titel(folge[0], name)))
+            aus += self.hn(tk, folge, "pflicht", name, n)
+        return aus
+
     def hauptnummern_einheit(self, n):
         log = self.log
         aus = []
@@ -1009,53 +1563,118 @@ class Bau:
                 if name.casefold() != self.fokus.casefold():
                     log(f"WEG {wo} – Fokus: andere Kette entfällt")
                     continue
+                if art == "pflicht":
+                    aus += self.pflicht_hn(zeilen, name, n, wo)
+                    continue
                 folge = sorted(zeilen, key=lambda z: (z["sprosse"], z["variante"]))
                 for z in folge:
                     log(f"AUSWAHL {z['id']} – {wo}: Fokus, alle Varianten")
-                teile = teile_nach_mass(folge)
-                if len(teile) > 1:
-                    log(f"TEILUNG {wo}: {len(folge)} Teilaufgaben in "
-                        f"{len(teile)} Hauptnummern an Sprossengrenzen "
-                        "(unterrichtsblatt 2.3 g, 2.5)")
-                for i, t in enumerate(teile):
-                    if art == "pflicht":
-                        titel = platzhalter_titel(name, art, t)
-                    else:
-                        titel = platzhalter_titel(name, art, folge) \
-                            + (" – weiter" if i else "")
-                    aus.append(Hauptnummer(titel, t, art, name, n,
-                                           weiter=bool(i)))
+                tk = self.ich_kann(n, name, "", self.merkmal_titel(folge[0],
+                                                                    name))
+                aus += self.hn(tk, folge, "leiter", name, n, weiter_titel=True)
                 continue
-            if self.schwach and art == "verfahren":
-                grund = [z for z in zeilen if z["hoehe"] == "grundfall"]
-                rest = [z for z in zeilen if z["hoehe"] != "grundfall"]
-                vor = [z for z in rest if z["sprosse"] < grund[0]["sprosse"]]
-                nach = [z for z in rest if z["sprosse"] > grund[0]["sprosse"]]
-                folge = je_sprosse_erste(vor, log, wo)
-                for z in sorted(grund, key=lambda z: z["variante"]):
-                    log(f"AUSWAHL {z['id']} – {wo}: schwach, Grundfall als "
-                        "Päckchen (alle Varianten, unterrichtsblatt 2.8)")
-                folge += sorted(grund, key=lambda z: z["variante"])
-                folge.append({"paeckchen": True})
-                folge += je_sprosse_erste(nach, log, wo)
+            if self.schwach:
+                if art == "verfahren":
+                    grund = [z for z in zeilen if z["hoehe"] == "grundfall"]
+                    rest = [z for z in zeilen if z["hoehe"] != "grundfall"]
+                    vor = [z for z in rest if z["sprosse"] < grund[0]["sprosse"]]
+                    nach = [z for z in rest if z["sprosse"] > grund[0]["sprosse"]]
+                    folge = je_sprosse_erste(vor, log, wo)
+                    for z in sorted(grund, key=lambda z: z["variante"]):
+                        log(f"AUSWAHL {z['id']} – {wo}: schwach, Grundfall als "
+                            "Päckchen (alle Varianten, unterrichtsblatt 2.8)")
+                    folge += sorted(grund, key=lambda z: z["variante"])
+                    folge.append({"paeckchen": True})
+                    folge += je_sprosse_erste(nach, log, wo)
+                else:
+                    folge = je_sprosse_erste(zeilen, log, wo)
+                erste = next(z for z in folge if not z.get("paeckchen"))
+                sp = "" if art != "pflicht" else (erste.get("pflicht") or "")
+                ersatz = (PFLICHT_ICHKANN.get(sp) if art == "pflicht" else None) \
+                    or self.merkmal_titel(erste, name)
+                aus += self.hn(self.ich_kann(n, name, sp, ersatz), folge, art,
+                               name, n)
+                log(f"KETTE {wo} → eine Hauptnummer (schwach)")
+                continue
+            # Rezept L: Mengen nach bank.md „Mengen je Kette“
+            if art == "erkennung":
+                folge = sorted(zeilen, key=lambda z: (z["sprosse"], z["variante"]))
+                for z in folge:
+                    log(f"AUSWAHL {z['id']} – {wo}: Erkennungsschritt, alle "
+                        "Zeilen")
+                aus += self.hn(self.ich_kann(n, name, "", self.merkmal_titel(
+                    folge[0], name)), folge, "erkennung", name, n)
+            elif art == "pflicht":
+                aus += self.pflicht_hn(zeilen, name, n, wo)
+            elif art == "ohne":
+                folge = sorted(zeilen, key=lambda z: (z["sprosse"], z["variante"]))
+                for z in folge:
+                    log(f"AUSWAHL {z['id']} – {wo}: Typ ohne Kette, alle Zeilen")
+                aus += self.hn(self.ich_kann(n, name, "", self.merkmal_titel(
+                    folge[0], name)), folge, "ohne", name, n)
             else:
-                folge = je_sprosse_erste(zeilen, log, wo)
-            aus.append(Hauptnummer(platzhalter_titel(name, art, folge),
-                                   folge, art, name, n))
-            log(f"KETTE {wo} → eine Hauptnummer"
-                + (" (Erkennungsschritt: eigene Kette nach bank.md, zählt "
-                   "als Hauptnummer)" if art == "erkennung" else ""))
+                aus += self.verfahren_hn(zeilen, name, n, wo)
+        return aus
+
+    def verfahren_hn(self, zeilen, name, n, wo):
+        log = self.log
+        aus = []
+        vor = {}
+        for z in zeilen:
+            if z["hoehe"] == "vorstufe":
+                vor.setdefault(z["sprosse"], []).append(z)
+        for s in sorted(vor):
+            folge = sorted(vor[s], key=lambda z: z["variante"])
+            for z in folge:
+                log(f"AUSWAHL {z['id']} – {wo}, Vorstufe {s}: alle Zeilen")
+            aus += self.hn(self.ich_kann(n, name, str(s), self.merkmal_titel(
+                folge[0], name)), folge, "vorstufe", name, n)
+        grund = sorted([z for z in zeilen if z["hoehe"] == "grundfall"],
+                       key=lambda z: (z["sprosse"], z["variante"]))
+        for z in grund[:LB_GRUNDFALL]:
+            log(f"AUSWAHL {z['id']} – {wo}: Grundfall (vier von fünf)")
+        for z in grund[LB_GRUNDFALL:]:
+            log(f"RESERVE {z['id']} – {wo}: Grundfall über vier (Päckchen "
+                "wechselt)")
+        weitere = je_sprosse_erste([z for z in zeilen if z["hoehe"]
+                                    not in ("vorstufe", "grundfall", "pruefung",
+                                            "pflicht")], log, wo)
+        leiter = grund[:LB_GRUNDFALL] + weitere
+        if leiter:
+            aus += self.hn(self.ich_kann(n, name, "", self.merkmal_titel(
+                leiter[0], name)), leiter, "leiter", name, n,
+                weiter_titel=True)
+        pr = sorted([z for z in zeilen if z["hoehe"] == "pruefung"],
+                    key=lambda z: (z["sprosse"], z["variante"]))
+        je = {}
+        for z in pr:
+            o = (z.get("original") or {}).get("id") or "ohne Original"
+            je.setdefault(o, []).append(z)
+        wahl = []
+        for o, zz in je.items():
+            wahl.append(zz[0])
+            log(f"AUSWAHL {zz[0]['id']} – {wo}: Prüfungshöhe ({o}), kleinste "
+                "Variante")
+            for z in zz[1:]:
+                log(f"RESERVE {z['id']} – {wo}: Prüfungshöhe ({o}), weitere "
+                    "Variante")
+        if wahl:
+            aus += self.hn(self.ich_kann(n, name, "p", "Ich kann das auch in "
+                                         "Aufgaben aus der Prüfung."),
+                           wahl, "pruefung", name, n)
         return aus
 
     def hauptnummern_zone(self, gewaehlt):
+        """Zone (v0.9, bank.md): je Fertigkeit die zwei sehr leichten, die
+        mittlere und je Fallstrick eine; das Zone-Paar (Fehler finden und
+        gleichartige Rechnung) als eigene Nummer hinter seiner Fertigkeit.
+        --zone kurz: eine leichte und ein Fallstrick."""
         log = self.log
         if self.a.zone == "nein" or not self.zone:
             if not self.zone:
                 log("ZONE: zone.jsonl fehlt")
             return []
-        aus, paar = [], []
-        paar_weg = [z for z in self.zone if z["hoehe"] == "pflicht"
-                    and z.get("pflicht") == "fehler"]
+        aus = []
         einschraenken = bool(self.a.einheiten or self.fokus)
         for nr, name, art, zeilen in ketten_von(self.zone):
             wo = f"Zone f{nr} „{name[:40]}“"
@@ -1066,85 +1685,303 @@ class Bau:
                     continue
                 if not nummern:
                     log(f"ZONE {wo}: Einheitenangabe nicht lesbar, bleibt")
-            paar += [z for z in zeilen if z["hoehe"] == "pflicht"
-                     and z.get("pflicht") == "fehler"]
-            s1 = [z for z in zeilen if z["sprosse"] == 1 and z["hoehe"] != "pflicht"]
-            s2 = [z for z in zeilen if z["sprosse"] == 2 and z["hoehe"] != "pflicht"]
-            folge = je_sprosse_erste(s1, log, wo)
-            if self.a.zone == "ja":
-                folge += je_sprosse_erste(s2, log, wo)
+            zz = sorted(zeilen, key=lambda z: (z["sprosse"], z["variante"]))
+            fehler = [z for z in zz if z["hoehe"] == "pflicht"
+                      and z.get("pflicht") == "fehler"]
+            folgezeilen = [z for f in fehler for z in zz
+                           if z["sprosse"] == f["sprosse"] + 1
+                           and z["hoehe"] != "pflicht"]
+            leicht = [z for z in zz if z["hoehe"] == "grundfall"]
+            falle = [z for z in zz if z["hoehe"] == "sprosse"
+                     and re.match(r"^Fallstrick", z.get("merkmal") or "")
+                     and z not in folgezeilen]
+            mittel = [z for z in zz if z["hoehe"] == "sprosse"
+                      and z not in falle and z not in folgezeilen]
+            if self.a.zone == "kurz":
+                folge = leicht[:1] + falle[:1]
             else:
-                log(f"ZONE {wo}: kurz – nur Sprosse 1")
-            ueber = sorted({z["sprosse"] for z in zeilen} - {1, 2})
-            if ueber:
-                log(f"WEG {wo} – Sprossen {ueber} (Fallstricke) nicht bestellt "
-                    f"(Zone {self.a.zone}: s1" + (" und s2)" if self.a.zone == "ja" else ")"))
-            aus.append(Hauptnummer(name, folge, "zone", name, 0))
-        if self.a.zone == "ja":
-            if paar:
-                f = paar[0]
-                folgezeile = [z for z in self.zone if z["kette_nr"] == f["kette_nr"]
-                              and z["sprosse"] == f["sprosse"] + 1]
-                aus.append(Hauptnummer(f"{f['kette']} – Fehler finden", [f],
-                                       "zonepaar", f["kette"], 0))
-                log(f"AUSWAHL {f['id']} – Zone-Paar, Fehler finden")
-                if folgezeile:
-                    aus.append(Hauptnummer(f"{f['kette']} – selbst rechnen",
-                                           [folgezeile[0]], "zonepaar",
-                                           f["kette"], 0))
-                    log(f"AUSWAHL {folgezeile[0]['id']} – Zone-Paar, "
-                        "gleichartige Rechenaufgabe")
-            elif paar_weg:
-                log(f"WEG {paar_weg[0]['id']} – Zone-Paar: Fertigkeit "
-                    "„" + paar_weg[0]["kette"][:40] + "“ nicht bestellt")
-            else:
-                log("TODO Zone-Paar (Fehler finden + gleichartige Rechnung, "
-                    "unterrichtsblatt 2.2) fehlt in zone.jsonl")
-                self.todo_frei.append("zonepaar")
+                folge = leicht[:2] + mittel[:1] + falle
+            folge.sort(key=lambda z: (z["sprosse"], z["variante"]))
+            for z in folge:
+                log(f"AUSWAHL {z['id']} – {wo}: "
+                    + ("sehr leicht" if z in leicht else "Fallstrick"
+                       if z in falle else "mittel"))
+            for z in zz:
+                if z not in folge and z not in fehler and z not in folgezeilen:
+                    log(f"WEG {z['id']} – {wo}: über der Menge (zwei sehr "
+                        "leichte, eine mittlere, je Fallstrick eine)")
+            tk = self.ich_kann(0, name, "", "Ich kann " + name.split(",")[0]
+                               .split(" (")[0] + ".")
+            if folge:
+                aus += self.hn(tk, folge, "zone", name, 0)
+            if self.a.zone == "ja" and fehler:
+                paar = fehler[:1] + folgezeilen[:1]
+                for z in paar:
+                    log(f"AUSWAHL {z['id']} – Zone-Paar {wo}")
+                aus += self.hn(self.ich_kann(0, name, "paar", PFLICHT_ICHKANN[
+                    "fehler"]), paar, "zonepaar", name, 0)
         return aus
 
-    # Satz
-    def satz_hauptnummer(self, h):
-        aus = []
-        titel = klar(h.titel)
-        aus.append(f"%% TODO Titel: Ich-kann-Satz fehlt in der Bank "
-                   f"(Platzhalter: Kettenname) – Nr. {h.nr}")
-        aus.append(f"%% TODO Anweisung: ein Satz über der ersten Teilaufgabe "
-                   f"fehlt in der Bank – Nr. {h.nr}")
-        aus.append(f"\\begin{{aufgabe}}{{{titel}}}")
-        if h.art == "verfahren" and not h.weiter and not self.schwach:
-            aus.append("%% TODO \\rechenplatz{n}: Schrittzahl des Grundfalls "
-                       "fehlt in der Bank (nur bei fester Schreibform, 2.3 b)")
-        folge = h.folge
-        h.buchstaben = []
-        i = 0
-        if self.schwach:
-            for z in folge:
-                if z.get("paeckchen"):
-                    aus.append("\\swfrage{Was bleibt gleich, was ändert sich?}")
-                    h.buchstaben.append((buchstabe(i), None))
-                    i += 1
+    # Zone → Lernblatt ------------------------------------------------------
+    def fertigkeit_ziel(self, zeile, einheiten_hn):
+        """(Einheit, Hauptnummer, Grund): wo das Lernblatt die Fertigkeit
+        zuerst braucht. Genannte Einheit der Voraussetzungszeile; sonst ein
+        Kettenname der Einheit im Text der Zeile (gleicher Wortstamm); bei
+        Dezimalzahlen und Brüchen die erste Nummer mit Komma oder Bruch;
+        sonst die erste Nummer des Lernblatts."""
+        nummern, art = fertigkeit_einheiten(zeile)
+        alle = [(n, h) for n, hs in einheiten_hn for h in hs]
+        if not alle:
+            return None, None, "kein Lernblatt"
+        if art == "genannt":
+            for n, h in alle:
+                if n in nummern:
+                    return n, h, "Einheit genannt"
+        rest = zeile.split(" – ", 1)[-1].split("Thema ", 1)[0]
+        if art != "alle" and not re.search(r"jede[rn]? Einheit", rest):
+            woerter = staemme(rest)
+            for n, h in alle:
+                if h.lage in ("pflicht",):
                     continue
-                zeilen, _ = teil_schwach(z, self.log, h.nr)
-                aus += zeilen
-                h.buchstaben.append((buchstabe(i), z))
-                i += 1
+                if staemme(h.kette) & woerter:
+                    return n, h, f"Kette „{h.kette}“ im Text"
+            if re.search(r"Dezimal|Br(u|ü)ch", zeile):
+                for n, h in alle:
+                    if any("{,}" in z.get("aufgabe", "") or "\\frac" in
+                           z.get("aufgabe", "") for z in h.folge):
+                        return n, h, "erste Nummer mit Komma oder Bruch"
+        return alle[0][0], alle[0][1], ("alle Einheiten" if art == "alle"
+                                         or "Einheit" in rest
+                                         else "ohne Angabe: erste Nummer")
+
+    def zone_zeile(self, kette):
+        return next((x for x in self.mappe.fertigkeit_zeilen
+                     if x == kette or x.startswith(kette)), None)
+
+    # Satz ------------------------------------------------------------------
+    def kurz_tauglich(self, z, term):
+        if term is None or z.get("grafik") or z.get("pflicht"):
+            return False
+        if z["form"] not in ("teil", "gleichungsraster"):
+            return False
+        if re.search(r"\\(rechnung|kreuz|wertetabelle)", z["aufgabe"]):
+            return False
+        if (z.get("antwort") or "").count("__") > 2 or ";" in (z.get("antwort")
+                                                             or ""):
+            return False        # breites Antwortgerüst passt nicht in eine Hälfte
+        return len(schlicht(term)) <= LB_KURZ
+
+    def kurz_text(self, z, term, auftrag):
+        """Kurzer Term mit Feld dahinter: „7x + 2x = ____“ (Befund 42)."""
+        if LB_OHNE_FELD.search(auftrag):
+            feld = []
         else:
-            aus += teile_normal(folge)
-            for z in folge:
-                h.buchstaben.append((buchstabe(i), z))
-                i += 1
-        aus.append("\\end{aufgabe}")
-        # Maß 2.3 g
+            feld = antwort_zeilen(z.get("antwort") or "") or ["\\lbfeld"]
+            feld = ["\\lbfeld" if f.strip() == "\\kbfeld" else f for f in feld]
+        text_ohne = re.sub(r"\$[^$]*\$", "", term)
+        rechnen = LB_RECHNEN.match(auftrag) and "=" not in term and \
+            not re.search(r"[A-Za-zÄÖÜäöüß]{2,}", text_ohne)
+        if not feld:
+            return term
+        if rechnen and term.count("$") == 2 and term.startswith("$") \
+                and term.endswith("$"):
+            return term[:-1] + " =$ " + " \\quad ".join(feld)
+        if rechnen:
+            return term + " $=$ " + " \\quad ".join(feld)
+        return term + " \\quad " + " \\quad ".join(feld)
+
+    def kreuz_tauglich(self, z, rest):
+        """Ankreuzaufgabe, die in eine halbe Spalte passt: kurzer Text, kurze
+        Optionen, keine Grafik, keine Prüfkennung."""
+        if rest is None or z["form"] != "ankreuzen" or z.get("grafik") or \
+                KENNUNG.search(z["aufgabe"]):
+            return False
+        text, kreuze = befehle_heraus(rest, "kreuz")
+        return bool(kreuze) and len(schlicht(text.replace("\\\\", ""))) <= 110 \
+            and all(len(schlicht(k[7:-1])) <= 24 for k in kreuze)
+
+    def vorstufe_paar(self, z):
+        """Vorstufe, die als ganze Aufgabe in eine halbe Spalte passt."""
+        return (z["hoehe"] == "vorstufe" and z["form"] == "teil"
+                and not z.get("grafik") and not KENNUNG.search(z["aufgabe"])
+                and not re.search(r"\\(rechnung|kreuz|wertetabelle)|\\\\",
+                                  z["aufgabe"])
+                and len(schlicht(z["aufgabe"])) <= 75)
+
+    def teil_lern(self, z, rest, b, anw):
+        """Eine Teilaufgabe über satz_teil (Kompetenzblatt); Lernblatt-Regeln
+        davor und danach: Term ohne Gleichheitszeichen mit „= ____“ (Befund
+        42), Gleichung mit Text als Textaufgabe, Aufzählungen (1), (2) je eine
+        Zeile, Textaufgabe ohne Antwortgerüst mit Schreibzeilen."""
+        z2 = dict(z) if rest is None else dict(z, aufgabe=rest)
+        if z["hoehe"] == "vorstufe":
+            z2["loesung"] = ""      # Befund 38: kein Raum bei Erkennen, Eintragen
+        rein = re.fullmatch(r"\s*(\$[^$]*\$[\s,;]*)+", z2["aufgabe"]) is not None
+        if z["form"] == "gleichungsraster":
+            if rein and "=" not in z2["aufgabe"]:
+                z2["antwort"] = "= __"
+            elif not rein:
+                z2["form"], z2["antwort"] = "text", ""
+        elif rein and "=" not in z2["aufgabe"] and anw and \
+                LB_RECHNEN.match(anw) and (z2.get("antwort") or "").strip() == "__":
+            z2["antwort"] = "= __"
+        liste = []
+        if "\\\\" in z2["aufgabe"] and "\\kreuz" not in z2["aufgabe"]:
+            geschuetzt, st = schuetze(z2["aufgabe"])   # \\\\ in \\rechnung bleibt
+            stuecke = [zurueck(x, st).strip()
+                       for x in re.split(r"\\\\", geschuetzt)]
+            if len(stuecke) > 1 and all(stuecke):
+                z2["aufgabe"], liste = stuecke[0], stuecke[1:]
+        zeilen = self.satz_teil(z2, b, anw)
+        if liste:
+            k = 0
+            while k < len(zeilen) and zeilen[k].startswith(
+                    ("\\kbanweisung", "\\kbteil", "\\kbfrage")):
+                k += 1
+            if k:
+                zeilen.insert(k, "\\kbfrage{" + " \\\\ ".join(liste) + "}")
+            else:
+                zeilen = self.satz_teil(dict(z2, aufgabe=" ".join(
+                    [z2["aufgabe"]] + liste)), b, anw)
+        # Schreibraum für Text-, Fehler- und Anwendungsaufgaben ohne
+        # Antwortgerüst (Befund 9: Rechnen und Begründen), statt eines
+        # einzelnen Felds oder gar nichts
+        n_raum = 3 if z.get("pflicht") == "anwendung" else 2
+        if LB_OHNE_FELD.search(" ".join([anw, z["aufgabe"]])) and \
+                not z2.get("antwort"):
+            zeilen = [x for x in zeilen if x != "\\kbantwort{\\kbfeld}"]
+        if z2["form"] == "text" and not z2.get("antwort") and \
+                "\\kbantwort{\\kbfeld}" in zeilen:
+            zeilen[zeilen.index("\\kbantwort{\\kbfeld}")] = \
+                f"\\item[]\\kbraum{{{n_raum}}}"
+        elif z2["form"] in ("text", "teil") and not z2.get("antwort") and \
+                not z2.get("grafik") and "\\kreuz" not in z2["aufgabe"] and \
+                not any(("\\kbraum" in x or "\\kbantwort" in x) for x in zeilen) \
+                and (z.get("pflicht") or z2["form"] == "text"):
+            zeilen.append(f"\\item[]\\kbraum{{{n_raum}}}")
+            self.log(f"RAUM {z['id']}: {n_raum} Schreibzeilen (Text ohne "
+                     "Antwortgerüst)")
+        return zeilen
+
+    def satz_lern(self, h):
+        """Hauptnummer im Satz des Kompetenzblatts (v0.9): Titel = Ich-kann-
+        Satz, Auftrag eines Laufs einmal darüber, kurze Terme und kurze
+        Ankreuzaufgaben paarweise nebeneinander."""
+        titel = klar(h.titel)
+        if h.verweis:
+            titel += f"\\lbverweis{{{h.verweis}}}"
+        aus = ["", f"% {h.lage}: " + ", ".join(z["id"] for z in h.folge),
+               f"\\begin{{kbaufgabe}}{{{titel}}}"]
+        mehr = len(h.folge) > 1
+        h.buchstaben = []
+        # Einheiten des Satzes: ("gruppe", Auftrag, [(z, Term)], Art) für
+        # Läufe nebeneinander, ("einzel", Auftrag, z, Term) sonst
+        teile = []
+        for auftrag, zz, terme in h.laeufe:
+            art = None
+            if auftrag and len(zz) >= 2:
+                if all(self.kurz_tauglich(z, t) for z, t in zip(zz, terme)):
+                    art = "kurz"
+                elif all(self.kreuz_tauglich(z, t) for z, t in zip(zz, terme)):
+                    art = "kreuz"
+            if art:
+                teile.append(("gruppe", auftrag, list(zip(zz, terme)), art))
+                continue
+            for j, (z, t) in enumerate(zip(zz, terme)):
+                teile.append(("einzel", auftrag if t is not None and j == 0
+                              else "", z, t))
+        # Vorstufen ohne gemeinsamen Auftrag (Faktor 3, Faktor 2 …): kurze
+        # ganze Aufgaben paarweise, ohne Schreibraum
+        k, neu = 0, []
+        while k < len(teile):
+            m = k
+            while m < len(teile) and teile[m][0] == "einzel" and \
+                    self.vorstufe_paar(teile[m][2]):
+                m += 1
+            if m - k >= 2:
+                neu.append(("gruppe", "", [(u[2], None) for u in teile[k:m]],
+                            "vorstufe"))
+                k = m
+            else:
+                neu.append(teile[k])
+                k += 1
+        teile = neu
+        i = 0
+        erste = True
+        for u in teile:
+            if u[0] == "gruppe":
+                _, auftrag, paare, art = u
+                self.log(f"NEBENEINANDER Nr. {h.nr}: {len(paare)} Teilaufgaben "
+                         f"({art})" + (f", Auftrag „{auftrag}“" if auftrag
+                                       else ""))
+                for k in range(0, len(paare), 2):
+                    halb = []
+                    for z, t in paare[k:k + 2]:
+                        b = buchstabe(i) + ")"
+                        if art == "kurz":
+                            halb.append(f"\\kbteil{{{b}}}{{"
+                                        f"{self.kurz_text(z, t, auftrag)}}}{{}}")
+                        elif art == "vorstufe" and re.search(
+                                r"^[^:$]+: \$[^$]*\$$", z["aufgabe"].strip()):
+                            # „Klammere den Faktor 3 aus: $9x + 21$“ als ein
+                            # Satz, nicht als halbfetter Auftakt
+                            halb.append("\n".join(self.teil_lern(
+                                z, z["aufgabe"].strip() + ".", b, "")))
+                        else:
+                            halb.append("\n".join(self.teil_lern(z, t, b, "")))
+                        h.buchstaben.append((buchstabe(i), z))
+                        i += 1
+                    if len(halb) == 1:
+                        halb.append("\\item[]")
+                    aus.append("\\begin{kbblock}")
+                    if k == 0 and (auftrag or (erste and h.anweisung)):
+                        aus.append(f"\\kbanweisung{{{klar(auftrag or h.anweisung)}}}")
+                    aus += ["\\lbpaar{" + halb[0], "}{" + halb[1] + "}"]
+                    aus.append("\\end{kbblock}")
+                erste = False
+                continue
+            _, anw, z, t = u
+            b = buchstabe(i) + ")" if mehr else ""
+            if t is None:
+                anw = h.anweisung if erste else ""
+                if not anw and z["form"] == "gleichungsraster" and \
+                        "=" in z["aufgabe"] and "$" not in z["aufgabe"]:
+                    anw = "Löse die Gleichung."
+            aus.append("\\begin{kbblock}")
+            aus += self.teil_lern(z, t, b, anw)
+            aus.append("\\end{kbblock}")
+            h.buchstaben.append((buchstabe(i) if mehr else "", z))
+            i += 1
+            erste = False
+        aus.append("\\end{kbaufgabe}")
         n_teil = len(h.buchstaben)
         n_graf = sum(1 for _, z in h.buchstaben if z and z.get("grafik"))
-        if n_teil > 26:
-            self.log(f"FEHLER Nr. {h.nr}: {n_teil} Teilaufgaben > 26 (\\alph)")
-        if (n_graf == 0 and n_teil > 12) or (n_graf > 0 and n_teil > 6):
+        if (n_graf == 0 and n_teil > LB_TEIL_MAX) or \
+                (n_graf > 0 and n_teil > LB_TEIL_MAX_GRAFIK):
             self.log(f"WARNUNG Nr. {h.nr}: {n_teil} Teilaufgaben, {n_graf} "
-                     "mit Grafik – über dem Halbseitenmaß (2.3 g); v0.1 teilt "
-                     "nur im Fokus")
+                     "mit Grafik – über dem Halbseitenmaß (2.3 g)")
         return aus
+
+    def satz_schwach(self, h):
+        """Rezept S: Form 2.8 wie bis v0.8, Titel aus ich-kann.csv."""
+        aus = [f"\\begin{{aufgabe}}{{{klar(h.titel)}}}"]
+        h.buchstaben = []
+        i = 0
+        for z in h.folge:
+            if z.get("paeckchen"):
+                aus.append("\\swfrage{Was bleibt gleich, was ändert sich?}")
+                h.buchstaben.append((buchstabe(i), None))
+                i += 1
+                continue
+            zeilen, _ = teil_schwach(z, self.log, h.nr)
+            aus += zeilen
+            h.buchstaben.append((buchstabe(i), z))
+            i += 1
+        aus.append("\\end{aufgabe}")
+        return aus
+
+    def satz_hauptnummer(self, h):
+        return self.satz_schwach(h) if self.schwach else self.satz_lern(h)
 
     def satz_loesung(self, h):
         teile = []
@@ -1155,7 +1992,7 @@ class Bau:
                 vor.append(f"%% TODO Lösung der Erklärzeile {h.nr}{b}) "
                            "fehlt in der Bank")
                 continue
-            teile.append(f"{b}) {z['loesung']}")
+            teile.append(f"{b}) {z['loesung']}" if b else z["loesung"])
         aus = vor + [f"\\erg{{{h.nr}}}{{" + " \\quad ".join(teile) + "}"]
         for b, z in h.buchstaben:
             if z and z.get("loesungsgrafik"):
@@ -1166,16 +2003,10 @@ class Bau:
         zeilen = self.mappe.kasten.get(n)
         if not zeilen:
             return [f"%% TODO Merkkasten Einheit {n} nicht in der Mappe lesbar"]
-        aus = []
-        if len(zeilen) > 5:
-            aus.append(f"%% TODO Merkkasten Einheit {n}: {len(zeilen)} Zeilen, "
-                       "Vorgabe höchstens fünf (3.1)")
-        inhalt = [re.sub(r"\s{3,}", r" \\quad ", klar(z.replace("&", "und")))
-                  for z in zeilen]
-        aus.append("\\uebersichtskasten{" + " \\\\ ".join(inhalt) + "}")
-        return aus
+        return ["\\kbmerk{Zum Merken}{" + " \\\\ ".join(
+            kasten_mathe(z) for z in zeilen) + "}"]
 
-    def kopf(self, n, pos, anzahl):
+    def kopf(self, n, pos, anzahl, baut_auf):
         info = self.mappe.einheiten.get(n)
         titel = info["titel"] if info else None
         aus = []
@@ -1186,26 +2017,21 @@ class Bau:
             text = f"Einheit {n} · {titel}"
         else:
             text = f"Einheit {pos} von {anzahl} · {titel}"
-        aus.append(f"\\einheitenkopf[e{n}]{{{text}}}")
+        aus.append(f"\\einheitenkopf[e{n}]{{{klar(text)}}}")
         os_, gym, wort = marke_zerlegen(info["marken"] if info else None)
         wort = pruefwort_zahl(info["marken"] if info else None,
                               self.e.get(n, []), self.log) or wort
         zm = zeitmarke(os_, gym, self.klasse)
-        teile = []
-        aus.insert(0, f"%% TODO Zweigzeile Teil 1: was hier gelernt wird "
-                      f"(Satz in Schülersprache aus dem Einheitstitel) – Einheit {n}")
-        if zm:
-            teile.append(zm)
-        else:
-            aus.insert(0, f"%% TODO Zeitmarke Einheit {n}: Marken-Zeile nicht lesbar")
-        if wort:
-            teile.append(wort)
-        else:
-            aus.insert(0, f"%% TODO Prüfungswort Einheit {n}: nicht in der Marken-Zeile")
+        satz, quelle = hier_lernst_du(info)
+        teile = [t for t in (satz, zm, wort) if t]
+        if baut_auf:
+            teile.append("baut auf: " + ", ".join(baut_auf))
+        if not satz:
+            aus.insert(0, f"%% TODO Zweigzeile Teil 1 Einheit {n}: {quelle}")
         if teile:
-            aus.append("\\zweigzeile{" + " · ".join(teile) + "}")
-        self.log(f"KOPF Einheit {n}: „{text}“; Marken „{info['marken'] if info else None}“"
-                 f" → Zeitmarke „{zm}“, Prüfungswort „{wort}“")
+            aus.append("\\zweigzeile{" + klar(" · ".join(teile)) + "}")
+        self.log(f"KOPF Einheit {n}: „{text}“; Zweigzeile „{' · '.join(teile)}“ "
+                 f"(Satz: {quelle}; Marken „{info['marken'] if info else None}“)")
         return aus, titel
 
     def baue(self):
@@ -1222,6 +2048,31 @@ class Bau:
             for h in hs:
                 nr += 1
                 h.nr = nr
+        # Zone → erste Nummer, die die Fertigkeit braucht; „baut auf“ je Einheit
+        baut_auf = {n: [] for n, _ in einheiten}
+        for zeile in self.mappe.fertigkeit_zeilen:
+            n_ziel, h_ziel, grund = self.fertigkeit_ziel(zeile, einheiten)
+            if h_ziel is None:
+                continue
+            nummern, art = fertigkeit_einheiten(zeile)
+            rest = zeile.split(" – ", 1)[-1].split("Thema ", 1)[0]
+            for n, _ in einheiten:
+                if (art == "genannt" and n in nummern) or art == "alle" or \
+                        re.search(r"jede[rn]? Einheit", rest) or n == n_ziel:
+                    if fertigkeit_name(zeile) not in baut_auf[n]:
+                        baut_auf[n].append(fertigkeit_name(zeile))
+            for h in zone:
+                if self.zone_zeile(h.kette) == zeile:
+                    h.verweis = h_ziel.nr
+                    log(f"ZONE-VERWEIS Nr. {h.nr} → Nr. {h_ziel.nr} "
+                        f"(Einheit {n_ziel}; {grund})")
+        for h in zone:
+            if h.verweis is None and not self.schwach:
+                log(f"ZONE-VERWEIS Nr. {h.nr}: Fertigkeit nicht in den "
+                    "Voraussetzungen der Mappe – kein Verweis")
+        if self.schwach:
+            for h in zone:
+                h.verweis = None
         dateien = {}
         # Zone
         if zone:
@@ -1232,28 +2083,13 @@ class Bau:
             if self.schwach:
                 a.append("%% TODO Grundvorstellungs-Aufgabe als erste Hauptnummer "
                          "der Zone (2.8) fehlt in der Bank")
-            if "zonepaar" in self.todo_frei:
-                pass
             for h in zone:
                 a.append("")
                 a += self.satz_hauptnummer(h)
                 self.reihenfolge.append((h, "blatt0_a.tex"))
-            if "zonepaar" in self.todo_frei:
-                a += ["", "%% TODO Zone-Paar (Fehler finden + gleichartige "
-                      "Rechenaufgabe, 2.2) fehlt in zone.jsonl"]
             dateien["blatt0_a.tex"] = a
             l = ["% Lösungen Zone (zusammenbau " + VERSION + ")",
-                 "\\einheitenkopf[][Kennst du schon]{Das kennst du schon}"]
-            zuordnung = []
-            for h in zone:
-                angabe, _ = self.mappe.fertigkeit(h.kette)
-                if angabe:
-                    zuordnung.append(f"{h.nr} → {angabe}")
-                else:
-                    zuordnung.append(f"{h.nr} → ?")
-                    l.append(f"%% TODO Zuordnung Nr. {h.nr}: Fertigkeit nicht "
-                             "in den Voraussetzungen der Mappe gefunden")
-            l += ["", "Zuordnung: " + " · ".join(zuordnung), ""]
+                 "\\einheitenkopf[][Kennst du schon]{Das kennst du schon}", ""]
             for h in zone:
                 l += self.satz_loesung(h)
             dateien["blatt0_l.tex"] = l
@@ -1261,7 +2097,7 @@ class Bau:
         anzahl = len(einheiten)
         bereiche = []
         for pos, (n, hs) in enumerate(einheiten, 1):
-            kopf, titel = self.kopf(n, pos, anzahl)
+            kopf, titel = self.kopf(n, pos, anzahl, baut_auf.get(n))
             start = hs[0].nr if hs else nr + 1
             wer = f"Einheit {n}" if self.fokus else f"Einheit {pos} von {anzahl}"
             a = [f"% {wer} – {titel} (bank/{self.eintrag}/"
@@ -1269,12 +2105,8 @@ class Bau:
             if self.a.kasten and not self.schwach:
                 a += self.kasten(n)
             a.append(f"\\setcounter{{aufgabe}}{{{start - 1}}}")
-            verfahren = [h for h in hs if h.art == "verfahren" and not h.weiter]
             for h in hs:
                 a.append("")
-                if len(verfahren) >= 2 and h in verfahren:
-                    a.append("%% TODO \\verfahren{…}: Verfahrensüberschrift in "
-                             "Sachsprache fehlt in der Bank (2.3 b)")
                 a += self.satz_hauptnummer(h)
                 self.reihenfolge.append((h, f"e{n}_a.tex"))
             if self.schwach:
@@ -1284,35 +2116,44 @@ class Bau:
             kopf_l = (f"Einheit {n} · {titel}" if self.fokus
                       else f"Einheit {pos} von {anzahl} · {titel}")
             l = [f"% Lösungen {wer} – {titel} (zusammenbau {VERSION})",
-                 f"\\einheitenkopf{{{kopf_l}}}", ""]
+                 f"\\einheitenkopf{{{klar(kopf_l)}}}", ""]
             for h in hs:
                 l += self.satz_loesung(h)
             dateien[f"e{n}_l.tex"] = l
             if hs:
                 bereiche.append((n, pos, titel, hs[0].nr, hs[-1].nr))
         dateien.update(self.rahmen(zone, einheiten, bereiche))
+        # Vorspann: Satz des Kompetenzblatts, Lernblatt-Ergänzung, Zeichen
+        texte = [z for v in dateien.values() for z in v]
+        zeichen, self.zeichen = zeichen_vorspann(texte)
+        vorspann = VORSPANN.rstrip("\n").split("\n")
+        vorspann = vorspann[:-1] + VORSPANN_LERN.split("\n") + (
+            ["% Zeichen dieses Blatts, die Latin Modern nicht hat"] + zeichen
+            if zeichen else []) + vorspann[-1:]
+        dateien["vorspann.tex"] = vorspann
+        log(f"ZEICHEN Ersatz im Vorspann: {''.join(self.zeichen) or '–'}")
+        for name, zeilen in sorted(dateien.items()):
+            if not name.endswith("_a.tex"):
+                continue
+            for zeile in zeilen:
+                if not zeile.startswith("%") and BANKWORT.search(zeile):
+                    log(f"BANKWORT „{BANKWORT.search(zeile).group(0)}“ in "
+                        f"{name}: {zeile[:80]}")
         return dateien
 
     def rahmen(self, zone, einheiten, bereiche):
-        th = self.thema
-        weit = self.klasse is None or self.klasse <= 10
-        if self.klasse is None:
-            sek1 = any("OS Kl." in (e.get("marken") or "")
-                       for e in self.mappe.einheiten.values())
-            weit = sek1
-        kopf = ["\\documentclass[11pt]{article}", "\\usepackage{mathblatt}"]
+        th = klar(self.thema)
+        kopf = ["\\documentclass[11pt]{article}", "\\usepackage{mathblatt}",
+                "\\input{vorspann}"]
         dateien = {}
-
         k = self.kennung
 
         def dok(blatt, rumpf, vorspann=()):
-            # Kennung in der Fußzeile links, wo \blattfuss die Bezeichnung
-            # trägt: \blattkopf* setzt dort sein drittes Argument
-            # (\blattfuss selbst löscht die Kopfzeile von \blattkopf).
-            fuss = f"{th} · {blatt} · {k}"
+            # Befund 2: Fußzeile nur Kennung (links) und Seite; Thema,
+            # Blattart und Einheit stehen in der Kopfzeile
             z = kopf + list(vorspann) + ["\\begin{document}",
-                                         f"\\blattkopf*{{{th}}}{{{blatt}}}{{{fuss}}}"]
-            if weit and blatt != "Lösungen" and not blatt.endswith("Lösungen"):
+                                         f"\\blattkopf*{{{th}}}{{{blatt}}}{{{k}}}"]
+            if self.schwach and not blatt.endswith("Lösungen"):
                 z.append("\\weit")
             return z + rumpf + ["\\end{document}"]
 
@@ -1338,9 +2179,9 @@ class Bau:
             if zone:
                 rumpf += ["\\input{blatt0_a}", "\\clearpage"]
             rumpf += e_inputs
-            dateien[f"{k}.tex"] = dok(f"Fokus {self.fokus}", rumpf)
-            dateien[f"{k}-loesungen.tex"] = dok(f"Fokus {self.fokus} · Lösungen",
-                                                l_inputs)
+            dateien[f"{k}.tex"] = dok(f"Fokus {klar(self.fokus)}", rumpf)
+            dateien[f"{k}-loesungen.tex"] = dok(
+                f"Fokus {klar(self.fokus)} · Lösungen", l_inputs)
             return dateien
         if zone:
             dateien[f"{k}-blatt0.tex"] = dok("Kennst du schon",
@@ -1364,18 +2205,28 @@ class Bau:
             + g_rumpf + e_inputs + ["\\input{abhaken}"],
             vorspann=["\\def\\mitzone{1}"] if zone else [])
         dateien[f"{k}-loesungen.tex"] = dok("Lösungen", l_inputs)
-        # Abhakseite
+        # Abhakseite: je Ich-kann-Satz eine Zeile; „– weiter“ zählt zur
+        # Nummer, deren Fortsetzung sie ist (14–15)
+
+        def abhak(hs):
+            aus = []
+            for h in hs:
+                if h.weiter:
+                    continue
+                folgen = [x for x in hs if x.erster is h and x.weiter]
+                nrn = str(h.nr) + (f"–{folgen[-1].nr}" if folgen else "")
+                aus.append(f"\\abhak{{{nrn}}}{{{klar(h.titel)}}}")
+            return aus
         ab = ["% Abhakseite „Das kann ich“ – Zone nur im Gesamt (\\mitzone)",
-              "%% TODO Ich-kann-Sätze: Platzhalter wie in den Aufgabendateien",
               "\\begin{abhakseite}"]
         if zone:
             ab += ["\\ifdefined\\mitzone", "\\abhakgruppe{Kennst du schon}"]
-            ab += [f"\\abhak{{{h.nr}}}{{{klar(h.titel)}}}" for h in zone]
+            ab += abhak(zone)
             ab.append("\\fi")
         for (n, hs), (_, pos, titel, _, _) in zip(
                 [e for e in einheiten if e[1]], bereiche):
             ab.append(f"\\abhakgruppe{{Einheit {pos} · {klar(titel)}}}")
-            ab += [f"\\abhak{{{h.nr}}}{{{klar(h.titel)}}}" for h in hs]
+            ab += abhak(hs)
         ab.append("\\end{abhakseite}")
         dateien["abhaken.tex"] = ab
         return dateien
@@ -2438,7 +3289,7 @@ VORSPANN = r"""% vorspann.tex – Kompetenzblatt, zusammenbau v0.7 (2026-09-28).
 """
 
 
-class KompetenzBau:
+class KompetenzBau(KbSatz):
     """Rezept K: Kompetenzblatt zu genau einer Kette."""
 
     def __init__(self, args, log):
@@ -2667,126 +3518,6 @@ class KompetenzBau:
                 log(f"ZONE nur eine Fertigkeit – zweite Aufgabe {w['id']}")
         return aus
 
-    # -- Satz --------------------------------------------------------------
-    def satz_teil(self, z, buchst, anweisung):
-        """LaTeX-Zeilen einer Teilaufgabe (Inhalt eines kbblock); die
-        Anweisung der Hauptnummer steht über der ersten Teilaufgabe."""
-        wo = z["id"]
-        t = zerlege(z)
-        grafik = z.get("grafik", "") or ""
-        if z["form"] == "zeichnen" and grafik:
-            grafik = ksys_verkleinern(grafik, self.log, wo)
-        tabellen = [tabelle_text(x) for x in t["tabellen"]]
-        feld = [] if feld_im_grafik(z) else antwort_zeilen(z.get("antwort", ""))
-        n_raum = rechenzeilen(z)
-        if z["form"] == "gleichungsraster" and not feld:
-            feld = [antwortfeld("Lösung: __").replace("\\leerfeld", "\\kbfeld")]
-            self.log(f"ANTWORT {wo}: Bank ohne Antwortgerüst – „Lösung: __“")
-        kopf = t["kopf"]
-        frage = list(t["frage"])
-        fett = t["fett"]
-        sf = satzform(z)
-        if sf:
-            # v0.8: ganze Sätze als ein Absatz; eine Anweisung aus
-            # ich-kann.csv entfällt, wenn der Text selbst auffordert
-            kopf, fett, frage, t["vor"] = sf["kopf"], sf["fett"], [], sf["vor"]
-            if anweisung and (sf["auffordernd"] or sf["vor"]):
-                self.log(f"ANWEISUNG {wo}: „{anweisung}“ entfällt – die "
-                         "Aufgabe fordert selbst auf (Sprachregeln)")
-                anweisung = ""
-        if z["form"] == "gleichungsraster":
-            a = z["aufgabe"].strip()
-            if "$" not in a:
-                kopf, fett, frage = f"${a}$", True, []
-        if not kopf and frage and len(schlicht(frage[0])) <= 70 \
-                and len(frage) > 1:
-            kopf, frage = frage[0], frage[1:]
-        if anweisung and len(frage) == 1 and frage[0].endswith("?") \
-                and len(schlicht(frage[0]).split()) <= 3:
-            self.log(f"FRAGE {wo}: Kurzfrage „{frage[0]}“ entfällt – die "
-                     f"Anweisung „{anweisung}“ sagt es (Befund 5)")
-            frage = []
-        if not kopf and len(frage) == 1 and not t["kennung"]:
-            kopf, frage = frage[0], []
-        kopf_satz = (f"{{\\bfseries\\boldmath {kopf}}}" if fett and kopf
-                     else kopf)
-        if not anweisung and t["vor"]:
-            anweisung = t["vor"]
-        if (not feld and not t["kreuze"] and not t["tabellen"] and not grafik
-                and z["form"] in ("teil", "text") and n_raum == 0
-                and not z.get("pflicht") and "\\janein" not in z["aufgabe"]):
-            feld = ["\\kbfeld"]
-            self.log(f"ANTWORT {wo}: Bank ohne Antwortgerüst – leeres Feld")
-        anw = f"\\kbanweisung{{{klar(anweisung)}}}" if anweisung else ""
-        kopfzeile = f"\\kbteil{{{buchst}}}{{{kopf_satz}}}{{{t['kennung']}}}"
-        frage_satz = ("\\kbfrage{" + " \\\\ ".join(frage) + "}") if frage else ""
-        kreuze = []
-        for k in t["kreuze"]:
-            m = re.match(r"\\kreuz\{(.*)\}$", k, re.S)
-            kreuze.append(f"\\kbkreuz{{{m.group(1) if m else k}}}")
-        antw = "".join(f"\\kbantwort{{{f}}}" for f in feld)
-        raum = f"\\kbraum{{{n_raum}}}" if n_raum else ""
-        bilder = tabellen + ([grafik] if grafik else [])
-        halb = TEXTBREITE_CM * 0.5
-        aus = [x for x in (anw, kopfzeile, frage_satz) if x]
-        if bilder:
-            masse = [grafik_mass(b if not b.startswith("\\kbwertetabelle")
-                                 else "\\wertetabelle" + b[len("\\kbwertetabelle"):])
-                     for b in bilder]
-            rechts = "".join(kreuze) + antw + raum
-            if len(bilder) == 2 and sum(m[0] for m in masse) <= TEXTBREITE_CM - 0.5:
-                # Tabelle und Koordinatensystem nebeneinander (Befund 27)
-                anteil = min(0.6, max(0.3, masse[0][0] / TEXTBREITE_CM + 0.02))
-                aus.append(f"\\kbzweispaltig[{anteil:.2f}]{{{bilder[0]}}}"
-                           f"{{{bilder[1]}}}")
-                if rechts:
-                    aus.append(rechts)
-            elif len(bilder) == 1 and masse[0][0] <= halb and rechts:
-                anteil = min(0.58, max(0.3, masse[0][0] / TEXTBREITE_CM + 0.07))
-                aus.append(f"\\kbzweispaltig[{anteil:.2f}]{{{bilder[0]}}}"
-                           f"{{{rechts}}}")
-            elif (len(bilder) == 1 and masse[0][0] <= halb and not rechts
-                  and z["form"] == "zeichnen" and frage):
-                # Zeichnen: Koordinatensystem links, Auftrag rechts daneben
-                aus = [x for x in (anw, kopfzeile) if x]
-                anteil = min(0.55, max(0.3, masse[0][0] / TEXTBREITE_CM + 0.03))
-                aus.append(f"\\kbzweispaltig[{anteil:.2f}]{{{bilder[0]}}}"
-                           "{" + " \\\\ ".join(frage) + "}")
-            else:
-                for b in bilder:
-                    aus.append(f"\\kbdarunter{{{b}}}")
-                if rechts:
-                    aus.append(rechts)
-        elif kreuze:
-            aus += kreuze
-            if antw:
-                aus.append(antw)
-        elif raum and not antw:
-            aus.append(f"\\item[]{raum}")
-        elif raum:
-            # Rechenraum rechts neben der Aufgabe (Befund 9, 27)
-            grenze = 32 if fett else 52
-            if not t["kennung"] and len(schlicht(kopf)) <= grenze and \
-                    len(schlicht(" ".join(frage))) <= 70:
-                links = "".join(x for x in (anw, kopfzeile, frage_satz) if x)
-                aus = [f"\\kbzweispaltig[0.46]{{\\kbspalte{{{links}{antw}}}}}"
-                       f"{{{raum}}}"]
-            else:
-                aus.append(f"\\kbzweispaltig[0.46]{{{antw}}}{{{raum}}}")
-        else:
-            if antw:
-                aus.append(antw)
-        return aus
-
-    def halb_tauglich(self, z):
-        """Zeichenaufgabe, deren Koordinatensystem in eine halbe Spalte passt
-        (Paarsatz: zwei nebeneinander, Befund 27 „Platz nutzen“)."""
-        g = z.get("grafik") or ""
-        if z["form"] != "zeichnen" or "\\begin{ksys}" not in g:
-            return False
-        g = ksys_verkleinern(g, lambda *_: None, "")
-        return grafik_mass(g)[0] <= TEXTBREITE_CM * 0.485 - 0.7
-
     def dicht_tauglich(self, h):
         """--dicht: Hauptnummer mit einer Rechenaufgabe ohne Grafik, Tabelle,
         Kreuze und Prüfkennung, kurzer Text – darf neben eine zweite."""
@@ -2799,61 +3530,6 @@ class KompetenzBau:
                 or KENNUNG.search(z["aufgabe"]) or "\\rechnung" in z["aufgabe"]:
             return False
         return len(schlicht(z["aufgabe"])) <= 150
-
-    def satz_halb_text(self, z, anweisung):
-        """Rechenaufgabe in einer halben Spalte: Text, Antwort, Raum darunter."""
-        t = zerlege(z)
-        kopf, frage = t["kopf"], list(t["frage"])
-        sf = satzform(z)
-        if sf:
-            kopf, frage, t["fett"], t["vor"] = sf["kopf"], [], sf["fett"], \
-                sf["vor"]
-            if sf["auffordernd"] or sf["vor"]:
-                anweisung = ""
-        if not kopf and len(frage) > 1:
-            kopf, frage = frage[0], frage[1:]
-        if not anweisung and t["vor"]:
-            anweisung = t["vor"]
-        kopf_satz = (f"{{\\bfseries\\boldmath {kopf}}}" if t["fett"] and kopf
-                     else kopf)
-        n = rechenzeilen(z)
-        feld = antwort_zeilen(z.get("antwort", "")) or ([] if n else
-                                                        ["\\kbfeld"])
-        aus = []
-        if anweisung:
-            aus.append(f"\\kbanweisung{{{klar(anweisung)}}}")
-        aus.append(f"\\kbteil{{}}{{{kopf_satz}}}{{}}")
-        if frage:
-            aus.append("\\kbfrage{" + " \\\\ ".join(frage) + "}")
-        aus += [f"\\kbantwort{{{f}}}" for f in feld]
-        if n:
-            aus.append(f"\\item[]\\kbraum{{{n}}}")
-        return aus
-
-    def satz_halb(self, z, buchst, anweisung):
-        """Zeichenaufgabe in einer halben Spalte: Text oben, Grafik darunter."""
-        t = zerlege(z)
-        g = ksys_verkleinern(z.get("grafik") or "", self.log, z["id"])
-        kopf, frage = t["kopf"], list(t["frage"])
-        sf = satzform(z)
-        if sf:
-            kopf, frage, t["fett"] = sf["kopf"], [], sf["fett"]
-            if sf["auffordernd"]:
-                anweisung = ""
-            if sf["vor"]:
-                anweisung = sf["vor"]
-        if not kopf and len(frage) > 1:
-            kopf, frage = frage[0], frage[1:]
-        kopf_satz = (f"{{\\bfseries\\boldmath {kopf}}}" if t["fett"] and kopf
-                     else kopf)
-        aus = []
-        if anweisung:
-            aus.append(f"\\kbanweisung{{{klar(anweisung)}}}")
-        aus.append(f"\\kbteil{{{buchst}}}{{{kopf_satz}}}{{{t['kennung']}}}")
-        if frage:
-            aus.append("\\kbfrage{" + " \\\\ ".join(frage) + "}")
-        aus.append(f"\\kbdarunter{{{g}}}")
-        return aus
 
     def satz(self):
         a = []
@@ -3229,7 +3905,7 @@ TEXT_ARG = {"teil", "steil", "tz", "stz", "swz", "swa", "swfrage", "erg",
             "kbtitel", "kbabschnitt", "kbanweisung", "kbteil", "kbfrage",
             "kbantwort", "kbzweispaltig", "kbdarunter", "kbkreuz", "kbmerk",
             "kbloesung", "kbkopfzeile", "kbspalte", "kbnummer", "kbhalb",
-            "kbpaar", "kbteilpaar"}
+            "kbpaar", "kbteilpaar", "lbpaar"}
 MATHE_ARG = {"gl", "sgl", "rechnung"}
 TEXT_IN_MATHE = {"text", "textbf", "textit", "mbox", "emph"}
 AUSRICHTUNG = {"tabular", "array", "aligned", "matrix", "pmatrix", "cases",
@@ -3497,7 +4173,7 @@ def main(argv=None):
 
     log = Log()
     aufruf = ["zusammenbau.py", args.eintrag]
-    for name in ("einheiten", "zone", "fokus", "klasse"):
+    for name in ("einheiten", "zone", "fokus", "klasse", "nummer"):
         wert = getattr(args, name)
         if wert is not None and not (name == "zone" and wert == "ja"):
             aufruf += [f"--{name}", str(wert)]
@@ -3521,12 +4197,20 @@ def main(argv=None):
     kuerzel, k_quelle = kuerzel_von(eintraege[0],
                                     finde_kuerzelliste(args.kuerzel))
     register = lies_register()
-    nummer = 0 if args.ohne_register else naechste_nummer(kuerzel, rezept,
-                                                          register)
+    if args.nummer and not args.ohne_register:
+        # v0.9: --nummer n wie im Kompetenzblatt (Kennung vorgegeben)
+        nummer = args.nummer
+    else:
+        nummer = 0 if args.ohne_register else naechste_nummer(kuerzel, rezept,
+                                                              register)
     args.kennung = f"{kuerzel}-{rezept}{nummer}"
+    if not args.ohne_register and any(z.get("kennung") == args.kennung
+                                      for z in register):
+        sys.exit(f"{args.kennung} steht schon in bau/register.csv")
     log(f"KENNUNG {args.kennung} – Kürzel {kuerzel} aus {k_quelle}; Rezept "
         f"{rezept} ({REZEPT[rezept]}); "
         + ("ohne Register (Probe)" if args.ohne_register else
+           f"Nummer {nummer} = vorgegeben (--nummer)" if args.nummer else
            f"Nummer {nummer} = nächste freie in bau/register.csv"))
     if k_quelle.startswith("Ersatz"):
         print(f"HINWEIS Kürzel {kuerzel}: {k_quelle}")
@@ -3544,7 +4228,8 @@ def main(argv=None):
     texte = {k: "\n".join(v) + "\n" for k, v in dateien.items()}
 
     sig = BP.lade_bausteine(WURZEL / "mappen" / "_bausteine.md")
-    fehler = pruefe_struktur(texte, sig)
+    fehler = pruefe_struktur({k: v for k, v in texte.items()
+                              if k != "vorspann.tex"}, sig)
 
     ziel.mkdir(parents=True, exist_ok=True)
     for name, text in sorted(texte.items()):
@@ -3579,6 +4264,7 @@ def main(argv=None):
         "schwach": args.schwach,
         "klasse": args.klasse,
         "kasten": args.kasten,
+        "nummer": args.nummer,
         "aus": args.aus,
         "ohne_register": args.ohne_register,
     }
@@ -3591,8 +4277,8 @@ def main(argv=None):
                 "teilaufgabe": b,
                 "id": z["id"] if z else None,
                 "datei": datei,
-                **({} if z else {"hinweis": "Erklärzeile (schwach), "
-                                            "keine Bankzeile"}),
+                **({"lage": bau.lage.get(z["id"], h.lage)} if z else
+                   {"hinweis": "Erklärzeile (schwach), keine Bankzeile"}),
             })
     zettel = {
         "kennung": args.kennung,
@@ -3607,6 +4293,10 @@ def main(argv=None):
         "pfad": pfad,
         "kuerzel_quelle": k_quelle,
         "strukturfehler": len(fehler),
+        "hauptnummern": len({a["hauptnummer"] for a in aufgaben}),
+        "teilaufgaben": len(aufgaben),
+        "ersatzzeichen": "".join(bau.zeichen),
+        "ichkann_fehlt": bau.ichkann_fehlt,
         "aufgaben": aufgaben,
     }
     (ziel / "bau.json").write_text(

@@ -1,0 +1,1304 @@
+{
+ "kennung": "TER-L3",
+ "datum": "2026-09-30",
+ "eintraege": [
+  "terme"
+ ],
+ "rezept": "L",
+ "rezept_name": "Lernblatt",
+ "bestellung": {
+  "einheiten": "alle",
+  "zone": "ja",
+  "fokus": null,
+  "schwach": false,
+  "klasse": null,
+  "kasten": false,
+  "nummer": 3,
+  "aus": "bau/terme/TER-L3",
+  "ohne_register": false
+ },
+ "bank_commit": "546d722+geändert",
+ "zusammenbau": "v0.9",
+ "vorlage": "Version 2026-09-28a",
+ "pfad": "bau/terme/TER-L3",
+ "kuerzel_quelle": "_kuerzel.csv (mathe-nachhilfe)",
+ "strukturfehler": 0,
+ "hauptnummern": 43,
+ "teilaufgaben": 159,
+ "ersatzzeichen": "",
+ "ichkann_fehlt": [],
+ "aufgaben": [
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "a",
+   "id": "terme-zone-f1-v1",
+   "datei": "blatt0_a.tex",
+   "lage": "zone"
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "b",
+   "id": "terme-zone-f1-v2",
+   "datei": "blatt0_a.tex",
+   "lage": "zone"
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "c",
+   "id": "terme-zone-f1-v3",
+   "datei": "blatt0_a.tex",
+   "lage": "zone"
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "d",
+   "id": "terme-zone-f1-v4",
+   "datei": "blatt0_a.tex",
+   "lage": "zone"
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "a",
+   "id": "terme-zone-f1-v5",
+   "datei": "blatt0_a.tex",
+   "lage": "zonepaar"
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "b",
+   "id": "terme-zone-f1-v6",
+   "datei": "blatt0_a.tex",
+   "lage": "zonepaar"
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "a",
+   "id": "terme-zone-f2-v1",
+   "datei": "blatt0_a.tex",
+   "lage": "zone"
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "b",
+   "id": "terme-zone-f2-v2",
+   "datei": "blatt0_a.tex",
+   "lage": "zone"
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "c",
+   "id": "terme-zone-f2-v3",
+   "datei": "blatt0_a.tex",
+   "lage": "zone"
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "d",
+   "id": "terme-zone-f2-v4",
+   "datei": "blatt0_a.tex",
+   "lage": "zone"
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "a",
+   "id": "terme-zone-f3-v1",
+   "datei": "blatt0_a.tex",
+   "lage": "zone"
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "b",
+   "id": "terme-zone-f3-v2",
+   "datei": "blatt0_a.tex",
+   "lage": "zone"
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "c",
+   "id": "terme-zone-f3-v3",
+   "datei": "blatt0_a.tex",
+   "lage": "zone"
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "d",
+   "id": "terme-zone-f3-v4",
+   "datei": "blatt0_a.tex",
+   "lage": "zone"
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "teilaufgabe": "a",
+   "id": "terme-zone-f4-v1",
+   "datei": "blatt0_a.tex",
+   "lage": "zone"
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "teilaufgabe": "b",
+   "id": "terme-zone-f4-v2",
+   "datei": "blatt0_a.tex",
+   "lage": "zone"
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "teilaufgabe": "c",
+   "id": "terme-zone-f4-v3",
+   "datei": "blatt0_a.tex",
+   "lage": "zone"
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "teilaufgabe": "d",
+   "id": "terme-zone-f4-v4",
+   "datei": "blatt0_a.tex",
+   "lage": "zone"
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "a",
+   "id": "terme-e1-k1-s1-v1",
+   "datei": "e1_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "b",
+   "id": "terme-e1-k1-s1-v2",
+   "datei": "e1_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "c",
+   "id": "terme-e1-k1-s1-v3",
+   "datei": "e1_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "d",
+   "id": "terme-e1-k1-s1-v4",
+   "datei": "e1_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "e",
+   "id": "terme-e1-k1-s2-v1",
+   "datei": "e1_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A7",
+   "hauptnummer": 7,
+   "teilaufgabe": "a",
+   "id": "terme-e1-k1-s3-v1",
+   "datei": "e1_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A7",
+   "hauptnummer": 7,
+   "teilaufgabe": "b",
+   "id": "terme-e1-k1-s4-v1",
+   "datei": "e1_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A7",
+   "hauptnummer": 7,
+   "teilaufgabe": "c",
+   "id": "terme-e1-k1-s5-v1",
+   "datei": "e1_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A7",
+   "hauptnummer": 7,
+   "teilaufgabe": "d",
+   "id": "terme-e1-k1-s6-v1",
+   "datei": "e1_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "teilaufgabe": "a",
+   "id": "terme-e1-k1-s7-v1",
+   "datei": "e1_a.tex",
+   "lage": "pruefung"
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "teilaufgabe": "b",
+   "id": "terme-e1-k1-s7-v3",
+   "datei": "e1_a.tex",
+   "lage": "pruefung"
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "a",
+   "id": "terme-e1-k2-s1-v1",
+   "datei": "e1_a.tex",
+   "lage": "ohne"
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "b",
+   "id": "terme-e1-k2-s1-v2",
+   "datei": "e1_a.tex",
+   "lage": "ohne"
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "c",
+   "id": "terme-e1-k2-s1-v3",
+   "datei": "e1_a.tex",
+   "lage": "ohne"
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "a",
+   "id": "terme-e1-k3-s1-v1",
+   "datei": "e1_a.tex",
+   "lage": "ohne"
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "b",
+   "id": "terme-e1-k3-s1-v2",
+   "datei": "e1_a.tex",
+   "lage": "ohne"
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "c",
+   "id": "terme-e1-k3-s1-v3",
+   "datei": "e1_a.tex",
+   "lage": "ohne"
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "a",
+   "id": "terme-e1-k4-s1-v1",
+   "datei": "e1_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "b",
+   "id": "terme-e1-k4-s1-v2",
+   "datei": "e1_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "c",
+   "id": "terme-e1-k4-s1-v3",
+   "datei": "e1_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A12",
+   "hauptnummer": 12,
+   "teilaufgabe": "a",
+   "id": "terme-e1-k4-s2-v1",
+   "datei": "e1_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A12",
+   "hauptnummer": 12,
+   "teilaufgabe": "b",
+   "id": "terme-e1-k4-s2-v2",
+   "datei": "e1_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A12",
+   "hauptnummer": 12,
+   "teilaufgabe": "c",
+   "id": "terme-e1-k4-s2-v3",
+   "datei": "e1_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A13",
+   "hauptnummer": 13,
+   "teilaufgabe": "a",
+   "id": "terme-e1-k4-s3-v1",
+   "datei": "e1_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A13",
+   "hauptnummer": 13,
+   "teilaufgabe": "b",
+   "id": "terme-e1-k4-s3-v2",
+   "datei": "e1_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A13",
+   "hauptnummer": 13,
+   "teilaufgabe": "c",
+   "id": "terme-e1-k4-s3-v3",
+   "datei": "e1_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "a",
+   "id": "terme-e1-k4-s4-v1",
+   "datei": "e1_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "b",
+   "id": "terme-e1-k4-s4-v2",
+   "datei": "e1_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "c",
+   "id": "terme-e1-k4-s4-v3",
+   "datei": "e1_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A15",
+   "hauptnummer": 15,
+   "teilaufgabe": "a",
+   "id": "terme-e2-k1-s0-v1",
+   "datei": "e2_a.tex",
+   "lage": "erkennung"
+  },
+  {
+   "aufgabe": "A15",
+   "hauptnummer": 15,
+   "teilaufgabe": "b",
+   "id": "terme-e2-k1-s0-v2",
+   "datei": "e2_a.tex",
+   "lage": "erkennung"
+  },
+  {
+   "aufgabe": "A15",
+   "hauptnummer": 15,
+   "teilaufgabe": "c",
+   "id": "terme-e2-k1-s0-v3",
+   "datei": "e2_a.tex",
+   "lage": "erkennung"
+  },
+  {
+   "aufgabe": "A15",
+   "hauptnummer": 15,
+   "teilaufgabe": "d",
+   "id": "terme-e2-k1-s0-v4",
+   "datei": "e2_a.tex",
+   "lage": "erkennung"
+  },
+  {
+   "aufgabe": "A16",
+   "hauptnummer": 16,
+   "teilaufgabe": "a",
+   "id": "terme-e2-k2-s0-v1",
+   "datei": "e2_a.tex",
+   "lage": "erkennung"
+  },
+  {
+   "aufgabe": "A16",
+   "hauptnummer": 16,
+   "teilaufgabe": "b",
+   "id": "terme-e2-k2-s0-v2",
+   "datei": "e2_a.tex",
+   "lage": "erkennung"
+  },
+  {
+   "aufgabe": "A16",
+   "hauptnummer": 16,
+   "teilaufgabe": "c",
+   "id": "terme-e2-k2-s0-v3",
+   "datei": "e2_a.tex",
+   "lage": "erkennung"
+  },
+  {
+   "aufgabe": "A16",
+   "hauptnummer": 16,
+   "teilaufgabe": "d",
+   "id": "terme-e2-k2-s0-v4",
+   "datei": "e2_a.tex",
+   "lage": "erkennung"
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "a",
+   "id": "terme-e2-k3-s0-v1",
+   "datei": "e2_a.tex",
+   "lage": "erkennung"
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "b",
+   "id": "terme-e2-k3-s0-v2",
+   "datei": "e2_a.tex",
+   "lage": "erkennung"
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "c",
+   "id": "terme-e2-k3-s0-v3",
+   "datei": "e2_a.tex",
+   "lage": "erkennung"
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "d",
+   "id": "terme-e2-k3-s0-v4",
+   "datei": "e2_a.tex",
+   "lage": "erkennung"
+  },
+  {
+   "aufgabe": "A18",
+   "hauptnummer": 18,
+   "teilaufgabe": "a",
+   "id": "terme-e2-k4-s1-v1",
+   "datei": "e2_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A18",
+   "hauptnummer": 18,
+   "teilaufgabe": "b",
+   "id": "terme-e2-k4-s1-v2",
+   "datei": "e2_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A18",
+   "hauptnummer": 18,
+   "teilaufgabe": "c",
+   "id": "terme-e2-k4-s1-v3",
+   "datei": "e2_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A18",
+   "hauptnummer": 18,
+   "teilaufgabe": "d",
+   "id": "terme-e2-k4-s1-v4",
+   "datei": "e2_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A18",
+   "hauptnummer": 18,
+   "teilaufgabe": "e",
+   "id": "terme-e2-k4-s2-v1",
+   "datei": "e2_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A18",
+   "hauptnummer": 18,
+   "teilaufgabe": "f",
+   "id": "terme-e2-k4-s3-v1",
+   "datei": "e2_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A18",
+   "hauptnummer": 18,
+   "teilaufgabe": "g",
+   "id": "terme-e2-k4-s4-v1",
+   "datei": "e2_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A19",
+   "hauptnummer": 19,
+   "teilaufgabe": "a",
+   "id": "terme-e2-k4-s5-v1",
+   "datei": "e2_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A19",
+   "hauptnummer": 19,
+   "teilaufgabe": "b",
+   "id": "terme-e2-k4-s6-v1",
+   "datei": "e2_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A19",
+   "hauptnummer": 19,
+   "teilaufgabe": "c",
+   "id": "terme-e2-k4-s7-v1",
+   "datei": "e2_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A19",
+   "hauptnummer": 19,
+   "teilaufgabe": "d",
+   "id": "terme-e2-k4-s8-v1",
+   "datei": "e2_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A19",
+   "hauptnummer": 19,
+   "teilaufgabe": "e",
+   "id": "terme-e2-k4-s9-v1",
+   "datei": "e2_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A19",
+   "hauptnummer": 19,
+   "teilaufgabe": "f",
+   "id": "terme-e2-k4-s10-v1",
+   "datei": "e2_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A20",
+   "hauptnummer": 20,
+   "teilaufgabe": "",
+   "id": "terme-e2-k4-s11-v1",
+   "datei": "e2_a.tex",
+   "lage": "pruefung"
+  },
+  {
+   "aufgabe": "A21",
+   "hauptnummer": 21,
+   "teilaufgabe": "a",
+   "id": "terme-e2-k5-s1-v1",
+   "datei": "e2_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A21",
+   "hauptnummer": 21,
+   "teilaufgabe": "b",
+   "id": "terme-e2-k5-s1-v2",
+   "datei": "e2_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A21",
+   "hauptnummer": 21,
+   "teilaufgabe": "c",
+   "id": "terme-e2-k5-s1-v3",
+   "datei": "e2_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A21",
+   "hauptnummer": 21,
+   "teilaufgabe": "d",
+   "id": "terme-e2-k5-s1-v4",
+   "datei": "e2_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A21",
+   "hauptnummer": 21,
+   "teilaufgabe": "e",
+   "id": "terme-e2-k5-s2-v1",
+   "datei": "e2_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A21",
+   "hauptnummer": 21,
+   "teilaufgabe": "f",
+   "id": "terme-e2-k5-s3-v1",
+   "datei": "e2_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A21",
+   "hauptnummer": 21,
+   "teilaufgabe": "g",
+   "id": "terme-e2-k5-s4-v1",
+   "datei": "e2_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A21",
+   "hauptnummer": 21,
+   "teilaufgabe": "h",
+   "id": "terme-e2-k5-s5-v1",
+   "datei": "e2_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A21",
+   "hauptnummer": 21,
+   "teilaufgabe": "i",
+   "id": "terme-e2-k5-s6-v1",
+   "datei": "e2_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A22",
+   "hauptnummer": 22,
+   "teilaufgabe": "",
+   "id": "terme-e2-k5-s7-v1",
+   "datei": "e2_a.tex",
+   "lage": "pruefung"
+  },
+  {
+   "aufgabe": "A23",
+   "hauptnummer": 23,
+   "teilaufgabe": "a",
+   "id": "terme-e2-k6-s1-v1",
+   "datei": "e2_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A23",
+   "hauptnummer": 23,
+   "teilaufgabe": "b",
+   "id": "terme-e2-k6-s1-v2",
+   "datei": "e2_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A23",
+   "hauptnummer": 23,
+   "teilaufgabe": "c",
+   "id": "terme-e2-k6-s1-v3",
+   "datei": "e2_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "a",
+   "id": "terme-e2-k6-s2-v1",
+   "datei": "e2_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "b",
+   "id": "terme-e2-k6-s2-v2",
+   "datei": "e2_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "c",
+   "id": "terme-e2-k6-s2-v3",
+   "datei": "e2_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A25",
+   "hauptnummer": 25,
+   "teilaufgabe": "a",
+   "id": "terme-e2-k6-s3-v1",
+   "datei": "e2_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A25",
+   "hauptnummer": 25,
+   "teilaufgabe": "b",
+   "id": "terme-e2-k6-s3-v2",
+   "datei": "e2_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A25",
+   "hauptnummer": 25,
+   "teilaufgabe": "c",
+   "id": "terme-e2-k6-s3-v3",
+   "datei": "e2_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A26",
+   "hauptnummer": 26,
+   "teilaufgabe": "a",
+   "id": "terme-e2-k6-s4-v1",
+   "datei": "e2_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A26",
+   "hauptnummer": 26,
+   "teilaufgabe": "b",
+   "id": "terme-e2-k6-s4-v2",
+   "datei": "e2_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A26",
+   "hauptnummer": 26,
+   "teilaufgabe": "c",
+   "id": "terme-e2-k6-s4-v3",
+   "datei": "e2_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A27",
+   "hauptnummer": 27,
+   "teilaufgabe": "a",
+   "id": "terme-e3-k1-s0-v1",
+   "datei": "e3_a.tex",
+   "lage": "erkennung"
+  },
+  {
+   "aufgabe": "A27",
+   "hauptnummer": 27,
+   "teilaufgabe": "b",
+   "id": "terme-e3-k1-s0-v2",
+   "datei": "e3_a.tex",
+   "lage": "erkennung"
+  },
+  {
+   "aufgabe": "A27",
+   "hauptnummer": 27,
+   "teilaufgabe": "c",
+   "id": "terme-e3-k1-s0-v3",
+   "datei": "e3_a.tex",
+   "lage": "erkennung"
+  },
+  {
+   "aufgabe": "A27",
+   "hauptnummer": 27,
+   "teilaufgabe": "d",
+   "id": "terme-e3-k1-s0-v4",
+   "datei": "e3_a.tex",
+   "lage": "erkennung"
+  },
+  {
+   "aufgabe": "A28",
+   "hauptnummer": 28,
+   "teilaufgabe": "a",
+   "id": "terme-e3-k2-s1-v1",
+   "datei": "e3_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A28",
+   "hauptnummer": 28,
+   "teilaufgabe": "b",
+   "id": "terme-e3-k2-s1-v2",
+   "datei": "e3_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A28",
+   "hauptnummer": 28,
+   "teilaufgabe": "c",
+   "id": "terme-e3-k2-s1-v3",
+   "datei": "e3_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A28",
+   "hauptnummer": 28,
+   "teilaufgabe": "d",
+   "id": "terme-e3-k2-s1-v4",
+   "datei": "e3_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A28",
+   "hauptnummer": 28,
+   "teilaufgabe": "e",
+   "id": "terme-e3-k2-s2-v1",
+   "datei": "e3_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A28",
+   "hauptnummer": 28,
+   "teilaufgabe": "f",
+   "id": "terme-e3-k2-s3-v1",
+   "datei": "e3_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A29",
+   "hauptnummer": 29,
+   "teilaufgabe": "a",
+   "id": "terme-e3-k2-s4-v1",
+   "datei": "e3_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A29",
+   "hauptnummer": 29,
+   "teilaufgabe": "b",
+   "id": "terme-e3-k2-s5-v1",
+   "datei": "e3_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A29",
+   "hauptnummer": 29,
+   "teilaufgabe": "c",
+   "id": "terme-e3-k2-s6-v1",
+   "datei": "e3_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A29",
+   "hauptnummer": 29,
+   "teilaufgabe": "d",
+   "id": "terme-e3-k2-s7-v1",
+   "datei": "e3_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A30",
+   "hauptnummer": 30,
+   "teilaufgabe": "",
+   "id": "terme-e3-k2-s8-v1",
+   "datei": "e3_a.tex",
+   "lage": "pruefung"
+  },
+  {
+   "aufgabe": "A31",
+   "hauptnummer": 31,
+   "teilaufgabe": "a",
+   "id": "terme-e3-k3-s1-v1",
+   "datei": "e3_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A31",
+   "hauptnummer": 31,
+   "teilaufgabe": "b",
+   "id": "terme-e3-k3-s1-v2",
+   "datei": "e3_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A31",
+   "hauptnummer": 31,
+   "teilaufgabe": "c",
+   "id": "terme-e3-k3-s1-v3",
+   "datei": "e3_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A32",
+   "hauptnummer": 32,
+   "teilaufgabe": "a",
+   "id": "terme-e3-k3-s2-v1",
+   "datei": "e3_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A32",
+   "hauptnummer": 32,
+   "teilaufgabe": "b",
+   "id": "terme-e3-k3-s2-v2",
+   "datei": "e3_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A32",
+   "hauptnummer": 32,
+   "teilaufgabe": "c",
+   "id": "terme-e3-k3-s2-v3",
+   "datei": "e3_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A33",
+   "hauptnummer": 33,
+   "teilaufgabe": "a",
+   "id": "terme-e3-k3-s3-v1",
+   "datei": "e3_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A33",
+   "hauptnummer": 33,
+   "teilaufgabe": "b",
+   "id": "terme-e3-k3-s3-v2",
+   "datei": "e3_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A33",
+   "hauptnummer": 33,
+   "teilaufgabe": "c",
+   "id": "terme-e3-k3-s3-v3",
+   "datei": "e3_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A34",
+   "hauptnummer": 34,
+   "teilaufgabe": "a",
+   "id": "terme-e3-k3-s4-v1",
+   "datei": "e3_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A34",
+   "hauptnummer": 34,
+   "teilaufgabe": "b",
+   "id": "terme-e3-k3-s4-v2",
+   "datei": "e3_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A34",
+   "hauptnummer": 34,
+   "teilaufgabe": "c",
+   "id": "terme-e3-k3-s4-v3",
+   "datei": "e3_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A35",
+   "hauptnummer": 35,
+   "teilaufgabe": "a",
+   "id": "terme-e4-k1-s0-v1",
+   "datei": "e4_a.tex",
+   "lage": "erkennung"
+  },
+  {
+   "aufgabe": "A35",
+   "hauptnummer": 35,
+   "teilaufgabe": "b",
+   "id": "terme-e4-k1-s0-v2",
+   "datei": "e4_a.tex",
+   "lage": "erkennung"
+  },
+  {
+   "aufgabe": "A35",
+   "hauptnummer": 35,
+   "teilaufgabe": "c",
+   "id": "terme-e4-k1-s0-v3",
+   "datei": "e4_a.tex",
+   "lage": "erkennung"
+  },
+  {
+   "aufgabe": "A35",
+   "hauptnummer": 35,
+   "teilaufgabe": "d",
+   "id": "terme-e4-k1-s0-v4",
+   "datei": "e4_a.tex",
+   "lage": "erkennung"
+  },
+  {
+   "aufgabe": "A36",
+   "hauptnummer": 36,
+   "teilaufgabe": "a",
+   "id": "terme-e4-k2-s-1-v1",
+   "datei": "e4_a.tex",
+   "lage": "vorstufe"
+  },
+  {
+   "aufgabe": "A36",
+   "hauptnummer": 36,
+   "teilaufgabe": "b",
+   "id": "terme-e4-k2-s-1-v2",
+   "datei": "e4_a.tex",
+   "lage": "vorstufe"
+  },
+  {
+   "aufgabe": "A36",
+   "hauptnummer": 36,
+   "teilaufgabe": "c",
+   "id": "terme-e4-k2-s-1-v3",
+   "datei": "e4_a.tex",
+   "lage": "vorstufe"
+  },
+  {
+   "aufgabe": "A36",
+   "hauptnummer": 36,
+   "teilaufgabe": "d",
+   "id": "terme-e4-k2-s-1-v4",
+   "datei": "e4_a.tex",
+   "lage": "vorstufe"
+  },
+  {
+   "aufgabe": "A37",
+   "hauptnummer": 37,
+   "teilaufgabe": "a",
+   "id": "terme-e4-k2-s0-v1",
+   "datei": "e4_a.tex",
+   "lage": "vorstufe"
+  },
+  {
+   "aufgabe": "A37",
+   "hauptnummer": 37,
+   "teilaufgabe": "b",
+   "id": "terme-e4-k2-s0-v2",
+   "datei": "e4_a.tex",
+   "lage": "vorstufe"
+  },
+  {
+   "aufgabe": "A37",
+   "hauptnummer": 37,
+   "teilaufgabe": "c",
+   "id": "terme-e4-k2-s0-v3",
+   "datei": "e4_a.tex",
+   "lage": "vorstufe"
+  },
+  {
+   "aufgabe": "A37",
+   "hauptnummer": 37,
+   "teilaufgabe": "d",
+   "id": "terme-e4-k2-s0-v4",
+   "datei": "e4_a.tex",
+   "lage": "vorstufe"
+  },
+  {
+   "aufgabe": "A38",
+   "hauptnummer": 38,
+   "teilaufgabe": "a",
+   "id": "terme-e4-k2-s1-v1",
+   "datei": "e4_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A38",
+   "hauptnummer": 38,
+   "teilaufgabe": "b",
+   "id": "terme-e4-k2-s1-v2",
+   "datei": "e4_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A38",
+   "hauptnummer": 38,
+   "teilaufgabe": "c",
+   "id": "terme-e4-k2-s1-v3",
+   "datei": "e4_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A38",
+   "hauptnummer": 38,
+   "teilaufgabe": "d",
+   "id": "terme-e4-k2-s1-v4",
+   "datei": "e4_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A38",
+   "hauptnummer": 38,
+   "teilaufgabe": "e",
+   "id": "terme-e4-k2-s2-v1",
+   "datei": "e4_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A38",
+   "hauptnummer": 38,
+   "teilaufgabe": "f",
+   "id": "terme-e4-k2-s3-v1",
+   "datei": "e4_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A38",
+   "hauptnummer": 38,
+   "teilaufgabe": "g",
+   "id": "terme-e4-k2-s4-v1",
+   "datei": "e4_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A38",
+   "hauptnummer": 38,
+   "teilaufgabe": "h",
+   "id": "terme-e4-k2-s5-v1",
+   "datei": "e4_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A38",
+   "hauptnummer": 38,
+   "teilaufgabe": "i",
+   "id": "terme-e4-k2-s6-v1",
+   "datei": "e4_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A38",
+   "hauptnummer": 38,
+   "teilaufgabe": "j",
+   "id": "terme-e4-k2-s7-v1",
+   "datei": "e4_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A38",
+   "hauptnummer": 38,
+   "teilaufgabe": "k",
+   "id": "terme-e4-k2-s8-v1",
+   "datei": "e4_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A38",
+   "hauptnummer": 38,
+   "teilaufgabe": "l",
+   "id": "terme-e4-k2-s9-v1",
+   "datei": "e4_a.tex",
+   "lage": "leiter"
+  },
+  {
+   "aufgabe": "A39",
+   "hauptnummer": 39,
+   "teilaufgabe": "",
+   "id": "terme-e4-k2-s10-v1",
+   "datei": "e4_a.tex",
+   "lage": "pruefung"
+  },
+  {
+   "aufgabe": "A40",
+   "hauptnummer": 40,
+   "teilaufgabe": "a",
+   "id": "terme-e4-k3-s1-v1",
+   "datei": "e4_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A40",
+   "hauptnummer": 40,
+   "teilaufgabe": "b",
+   "id": "terme-e4-k3-s1-v2",
+   "datei": "e4_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A40",
+   "hauptnummer": 40,
+   "teilaufgabe": "c",
+   "id": "terme-e4-k3-s1-v3",
+   "datei": "e4_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A41",
+   "hauptnummer": 41,
+   "teilaufgabe": "a",
+   "id": "terme-e4-k3-s2-v1",
+   "datei": "e4_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A41",
+   "hauptnummer": 41,
+   "teilaufgabe": "b",
+   "id": "terme-e4-k3-s2-v2",
+   "datei": "e4_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A41",
+   "hauptnummer": 41,
+   "teilaufgabe": "c",
+   "id": "terme-e4-k3-s2-v3",
+   "datei": "e4_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A42",
+   "hauptnummer": 42,
+   "teilaufgabe": "a",
+   "id": "terme-e4-k3-s3-v1",
+   "datei": "e4_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A42",
+   "hauptnummer": 42,
+   "teilaufgabe": "b",
+   "id": "terme-e4-k3-s3-v2",
+   "datei": "e4_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A42",
+   "hauptnummer": 42,
+   "teilaufgabe": "c",
+   "id": "terme-e4-k3-s3-v3",
+   "datei": "e4_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A43",
+   "hauptnummer": 43,
+   "teilaufgabe": "a",
+   "id": "terme-e4-k3-s4-v1",
+   "datei": "e4_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A43",
+   "hauptnummer": 43,
+   "teilaufgabe": "b",
+   "id": "terme-e4-k3-s4-v2",
+   "datei": "e4_a.tex",
+   "lage": "pflicht"
+  },
+  {
+   "aufgabe": "A43",
+   "hauptnummer": 43,
+   "teilaufgabe": "c",
+   "id": "terme-e4-k3-s4-v3",
+   "datei": "e4_a.tex",
+   "lage": "pflicht"
+  }
+ ]
+}
