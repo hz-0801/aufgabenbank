@@ -117,3 +117,12 @@ zweimal gescheitert.
   null und eins; gefragt ist nur die Deutung.
 - gegenlese.md und gegenlese2.md beziehen sich auf den Stand vom
   27.09. (alte ids); die umgeschriebenen Zeilen sind ungelesen.
+
+## Nachbesserung 2026-09-30
+
+- Teil 2, geraden-e3-k1-s4-v1: Würfel mit Kantenlänge 3 statt 5
+  (A(3|0|0), B(3|3|0), C(0|3|0), G(0|3|3)), Geradengleichung,
+  Richtungen und pruef nachgerechnet – die Ecken fielen mit dem Boden
+  des Originals 2017MgrundlegendBAGLAA2CAS2-1f zusammen (Sperre).
+  Kantenlänge 4 und 6 gingen nicht: 4 trifft A, B, C eines Quaders im
+  Original, 6 trifft E(6|0|0), F(0|6|0) der Kletteranlage.

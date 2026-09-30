@@ -131,3 +131,7 @@ Prüfungshöhe von e1 und e2 (dritte Zeile, Menge 3).
   Zeilen dieser Dateien mit `\leerfeld` in antwort, ids über
   `git show` des Commits oder das Skript
   werkzeuge/einmalig/leerfeld-antwort-2026-09-30.py.
+- Teil 2, zufallsexperimente-und-pfadregeln-e2-k1-s0-v4: Würfelpaar
+  (4; 6)/(6; 4) statt (2; 5)/(5; 2) – das alte Paar stand wörtlich im
+  Merkkasten; (4; 6) steht weder in der Mappe noch sonst in der Bank
+  des Eintrags. Lösung „zwei Ergebnisse“ bleibt.

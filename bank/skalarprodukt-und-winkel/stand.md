@@ -122,3 +122,6 @@ Einheit ist zweimal gescheitert.
   Zeilen dieser Dateien mit `\leerfeld` in antwort, ids über
   `git show` des Commits oder das Skript
   werkzeuge/einmalig/leerfeld-antwort-2026-09-30.py.
+- Teil 2, skalarprodukt-und-winkel-e1-k1-s1-v5: antwort um das Feld
+  „kleiner als $90^\circ$: __“ erweitert, Lösung mit Urteil „Nein“ als
+  erstes Wort des Urteilsteils – die Aufgabe fragt auch das Urteil.
