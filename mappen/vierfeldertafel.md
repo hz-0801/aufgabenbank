@@ -1,9 +1,9 @@
 # Mappe: vierfeldertafel
 
 Eintrag: hz-0801/mathe-nachhilfe, katalog/vierfeldertafel.md
-Katalog-Commit: 761321330add6ed255669afc1c4e11b846250dd5 (2026-09-25T11:16:56+02:00, „katalog: Marken-Zeilen je Lerneinheit, drei Einheiten ergänzt, marken-bau.py“; ermittelt über git log (GitHub-API gesperrt))
+Katalog-Commit: c651dc47624a28a96eb6724ed3e4864024a7bab4 (2026-09-27T22:25:43Z, „katalog: Erkennungsschritte“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-27 12:44 UTC
+Datum: 2026-09-30 08:14 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -43,57 +43,55 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 28  - Tabellen lesen und ausfüllen (Zeilen- und Spaltensummen) – die Tafelarbeit selbst. Sek-I-Thema daten.md. [GOST Eingangsvoraussetzung L5 sinngemäß]
 29  - Lineare Gleichungen und Ungleichungen mit einem Parameter lösen (negative Werte ausschließen) – die Parametertafel in Einheit 1. Sek-I-Thema lineare-gleichungen.md. [GOST-OHiMi 2.1]
 30  Erkennungsschritte (Vorstufe der Einheit, vor der sie stehen, nicht auf Blatt 0; eine Hauptnummer je Schritt):
-31  - „Rand, Feld oder bedingt?“ – zu jeder Prozentangabe eines Aufgabentexts ankreuzen, ob sie ein Rand (Anteil an allen), ein Feld (Anteil an allen mit beiden Merkmalen) oder ein bedingter Anteil (Anteil innerhalb einer Gruppe) ist; nichts rechnen. Vor Einheit 1. [GOST Q2 L5 „Vierfeldertafel“, „bedingte Wahrscheinlichkeit“; Rohdatei: das Kernfehlmuster; abi 2018-bb-ea-B4.2a, iqb 2018MgrundlegendBStochastikWTR1-1a]
-32  - „Weder–noch, entweder–oder, oder?“ – zu Formulierungen ankreuzen, welches Feld oder welche Feldsumme gemeint ist: „weder A noch B“ (ein Feld), „entweder A oder B“ (zwei Felder), „A oder B“ (drei Felder, Gegenfeld nutzen); nichts rechnen. Vor Einheit 1 und 2. [GOST-OHiMi 2.4 „Additionssatz“; abi 2023-bebb-gk-B4.1b, iqb 2018MerhoehtBStochastikWTR2-1b, 2025MgrundlegendBStochastikWTR3-1b]
-33  - „Anteil oder Anzahl?“ – ankreuzen, ob die Tafel mit Wahrscheinlichkeiten (Summe eins) oder absoluten Häufigkeiten (Summe gleich Gesamtzahl) zu füllen ist; nichts rechnen. Vor Einheit 1. [Rohdatei: die Häufigkeitstafeln; abi 2019-be-gk-B4.1c, iqb 2019MgrundlegendBStochastikWTR3-1a]
-34
-35  ### Merkkasten
-36  Einheit 1 (Die Tafel füllen):
-37      Aufbau: zwei Merkmale mit ihren Gegenereignissen – vier Innenfelder, vier Ränder, rechts unten die Summe eins (oder die Gesamtzahl). Jede Zeile und jede Spalte summiert sich zu ihrem Rand.
-38      Füllregeln: erst die Ränder eintragen (Gegenanteile als Rest zu eins), dann die Felder als Differenzen – ein bekanntes Feld genügt, der Rest folgt.
-39      Bedingt heißt multiplizieren: „ein Anteil innerhalb einer Gruppe“ ist eine bedingte Angabe – das Feld ist Rand mal bedingter Anteil, nie der bedingte Anteil selbst.
-40        In einer Gemeinde sind 52,1 % Frauen, 64,8 % der Frauen tragen eine Brille: das Feld Frau-und-Brille ist 0,521 · 0,648 ≈ 0,338 – nicht 0,648.
-41      Sonderangaben: „weder A noch B“ ist das Feld ¬A ∩ ¬B (kein Rand!); „entweder A oder B“ ist die Summe der beiden gemischten Felder.
-42        Display defekt 10,7 %, weder Display noch Netzteil defekt 87,3 %: aus dem Rand 89,3 % für „Display heil“ folgt das Feld heil-und-Netzteil-defekt als 89,3 − 87,3 = 2,0 %.
-43      Mit Zahlen und mit Parameter: absolute Häufigkeiten füllen die Tafel genauso (Gruppengröße mal Anteil, Randsummen); bei Parametertafeln schließt eine negative Wahrscheinlichkeit Werte aus.
-44      Auswendig (Teil A): der ganze Kasten – [GOST-OHiMi 2.4] „Vierfeldertafel“ (Teil-A-Beleg 2021MerhoehtAStochastik11-a; die Tafel selbst prüft der Pool sonst in Teil B, aber ohne Formelsammlungsstütze).
-45      Formelsammlung: keine – [FS-IQB 1.4] führt die bedingte Wahrscheinlichkeit und die Unabhängigkeit, keine Tafelregeln – [FS] Wortlaut am PDF geprüft: nein, nur Textfassung
-46  Quelle: eigene Formulierung nach [GOST Q2 L5] „Vierfeldertafel“ und [GOST-OHiMi 2.4]; Zahlenbeispiele aus abi 2018-bb-ea-B4.2a und 2018-be-gk-B3.2e (wörtlich); [LS-AA QP VIII 3].
-47
-48  Einheit 2 (Aus der Tafel rechnen):
-49      A oder B: über das Gegenfeld – P(A ∪ B) = 1 − P(¬A ∩ ¬B); gleichwertig der Additionssatz P(A ∪ B) = P(A) + P(B) − P(A ∩ B) – die Ränder addieren und den Schnitt einmal abziehen.
-50      Entweder A oder B (ausschließend): die Summe der beiden gemischten Felder P(A ∩ ¬B) + P(¬A ∩ B) – der Schnitt zählt hier gar nicht.
-51      Anzahlen: fehlende absolute Häufigkeiten entstehen durch Subtraktion von Gesamtzahl und Randsummen – die Tafel muss dafür nicht vollständig sein.
-52      Kombinieren: ein Gesamtanteil setzt sich aus Feldern zusammen, die einzeln als Rand mal bedingter Anteil entstehen können.
-53      Auswendig (Teil A): „A oder B“ und „Entweder A oder B“ – [GOST-OHiMi 2.4] „Additionssatz“; das Übersetzen der Oder-Formen ist das Prüfmuster beider Profile.
-54      Formelsammlung: keine – der Additionssatz steht in der Anlage, nicht in [FS-IQB 1.4] – [FS] Wortlaut am PDF geprüft: nein, nur Textfassung
-55  Quelle: eigene Formulierung nach [GOST-OHiMi 2.4] „Additionssatz“ und [GOST Q2 L5]; Zahlenbeispiele keine (die Regeln sind zahlenfrei formuliert; Ermessen); [LS-AA QP VIII 3].
-56
-57  ### Typische Fehler
-58  Verdichtet aus den Spalten `verfahren` und `fehlerquelle` der 29 Zeilen des Themas in abitur/abi-katalog.csv und abitur/iqb-katalog.csv (Zuordnung über profil, leitidee und thema aus themen.csv, wie rohdatei-bau.py); Beleg ist die Original-id. [FD] nicht verwendet: das Quellenregister führt keine Stochastikdidaktik, die Muster sind allein aus den Katalogzeilen belegt.
-59  - Bedingten Anteil als Feld eingetragen – das Kernfehlmuster: den Anteil innerhalb einer Gruppe ohne Multiplikation mit dem Rand in die Tafel geschrieben oder als Feld gelesen; „die Hälfte der M-Kunden“ auf alle Kunden bezogen; einen Anteil auf die falsche Gesamtheit bezogen. [abi 2018-bb-ea-B4.2a, 2023-bebb-gk-B4.1a, 2022-bebb-gk-B4h, 2017-bb-ea-B4.1a; iqb 2023MgrundlegendBStochastikWTR3-1a, 2022MgrundlegendBStochastikWTR1-1e, 2022MerhoehtBStochastikWTR2-1a, 2018MgrundlegendBStochastikWTR1-1a, 2021MgrundlegendBStochastikWTR3-1a, 2020MgrundlegendAStochastik12-a]
-60  - Sonderangaben falsch gelesen: „weder–noch“ als Randwert oder als „genau eines defekt“; „entweder–oder“ als Vereinigung; ein Feld als Rand oder ein Rand als Feld; einen Schnitt als Produkt der Ränder angesetzt und damit Unabhängigkeit unterstellt. [abi 2018-be-gk-B3.2e, 2024-bebb-gk-B4.1b; iqb 2018MgrundlegendBStochastikWTR2-1e, 2018MerhoehtBStochastikWTR2-1b, 2026MerhoehtBStochastikWTR2-1b, 2025MgrundlegendBStochastikWTR3-1a, 2025MerhoehtBStochastikWTR1-1a, 2024MgrundlegendBStochastikWTR1-1b, 2024MgrundlegendBStochastikWTR2-1b, 2024MerhoehtBStochastikWTR2-1a, 2026MgrundlegendBStochastikWTR2-1a]
-61  - Beim Rechnen aus der Tafel: die Ränder addiert, ohne den Schnitt abzuziehen; das einschließende statt des ausschließenden Oder; die falsche Teilgruppe subtrahiert; Prozentangaben unbesehen als Feldwerte eingetragen. [abi 2023-bebb-gk-B4.1b, 2019-be-gk-B4.1c; iqb 2023MgrundlegendBStochastikWTR3-1b, 2025MgrundlegendBStochastikWTR3-1b, 2025MerhoehtBStochastikWTR1-1b, 2019MgrundlegendBStochastikWTR1-1c, 2019MgrundlegendBStochastikWTR3-1a]
-62  - Mit Parameter: die Differenz zweier Parameterterme falsch gebildet; den Ausschluss über das Vorzeichen nicht geprüft. [iqb 2021MerhoehtAStochastik11-a]
-63
-64  ### Für schwache Schüler
-65  Mindeststoff (GK-Kern Q2 / Niveaustufe H / RLP FOS) [GOST, GOST-OHiMi, FOS]: GK-Kern Q2 Brandenburg und Berlin: die L5-Zeile „Sachverhalte mithilfe von Baumdiagrammen oder Vierfeldertafeln untersuchen“ trägt beide Einheiten; kein LK-Zusatz. Ohne Hilfsmittel (Anlage OHiMi 2.4, Prüfungsteil A): „Vierfeldertafel“ und „Additionssatz“ – beide Kästen vollständig. Vorrat (Ermessen nach dem Niveau der Rohdatei): die Parametertafel und die Entweder-oder-Deutungen. Niveaustufe H der E-Phase [RLP]: die Vierfeldertafel ist Sek-I-Bestand (RLP G, wahrscheinlichkeit.md) – die Sek-II-Neuerung ist der systematische Umgang mit bedingten Angaben. RLP FOS (fhr): „Vierfeldertafel/Doppelbaum“ ist Pflichtstoff; die fhr-Zeilen liegen bei unabhaengigkeit.md. COSH [COSH, nachrangig, aus dem Gedächtnis, nicht am Text geprüft]: der Mindestanforderungskatalog führt nach Erinnerung bedingte Wahrscheinlichkeiten mit Vierfeldertafel – deckt sich mit dem GK-Kern, kein zusätzlicher Posten.
-66  Grundvorstellung (Blatt 0) [GOST Eingangsvoraussetzung L5, MO]: Ein Feld der Tafel ist ein Anteil an allen – ein Anteil „innerhalb einer Gruppe“ ist etwas anderes. „Hier sind zwanzig Spielkarten in zwei Farben, einige davon markiert, kein Term. Sortiere sie in vier Häufchen: rote markierte, rote unmarkierte, schwarze markierte, schwarze unmarkierte. Welcher Anteil aller Karten ist rot und markiert? Und welcher Anteil der roten Karten ist markiert – zähle beide aus: warum sind die Zahlen verschieden, obwohl beide ‚markierte rote Karten‘ zählen? Durch welche Gesamtheit hast du jeweils geteilt?“ Wer beide Anteile für dieselbe Zahl hält, braucht das vor jeder Tafel: Ein Feld teilt durch alle, ein bedingter Anteil nur durch die Gruppe – deshalb wird aus dem bedingten Anteil erst durch Multiplizieren mit dem Gruppenanteil ein Feld. Verständnis, nicht Verfahren; die Vorstellung ist amtlich (Q2-Kern „Vierfeldertafel“, „bedingte Wahrscheinlichkeit“), die Aufgabenform ist Ermessen. [GOST Q2 L5; GOST Eingangsvoraussetzung L5; MO-Logik: Vorstellung vor Verfahren; Rohdatei-Fehlerquelle „die 64,8 % unmittelbar als Feld der Tafel eintragen“, abi 2018-bb-ea-B4.2a; BASICS nur als Strukturvorbild Diagnose → Förderung → Nachtest, keine Inhalte]
-67  Sprossen je Verfahrenstyp (Reihenfolge = Kette des Hauptblatts) [LS-AA, Rohdatei; Sprossenfolge Ermessen, wo Lehrwerk und Rohdatei keine Reihenfolge vorgeben]:
-68  - Die Tafel füllen (Einheit 1): „Rand, Feld oder bedingt?“ und „Anteil oder Anzahl?“ ankreuzen (Vorstufe, Grundvorstellung) → die Tafel aus zwei Rändern und einem Feld füllen: Ränder ergänzen, Felder als Differenzen (Grundfall, viermal; iqb 2018MgrundlegendBStochastikWTR1-1a, 2023MgrundlegendBStochastikWTR3-1a; abi 2023-bebb-gk-B4.1a, 2024-bebb-gk-B4.1b) → eine bedingte Angabe erst zum Feld machen: Rand mal bedingter Anteil (abi 2018-bb-ea-B4.2a, 2022-bebb-gk-B4h; iqb 2022MgrundlegendBStochastikWTR1-1e, 2024MerhoehtBStochastikWTR2-1a) → Sonderangaben übersetzen: „weder–noch“ als Feld, „entweder–oder“ als Feldsumme (abi 2018-be-gk-B3.2e; iqb 2018MgrundlegendBStochastikWTR2-1e, 2018MerhoehtBStochastikWTR2-1b, 2026MerhoehtBStochastikWTR2-1b, 2026MgrundlegendBStochastikWTR2-1a, 2025MgrundlegendBStochastikWTR3-1a, 2025MerhoehtBStochastikWTR1-1a, 2024MgrundlegendBStochastikWTR1-1b, 2024MgrundlegendBStochastikWTR2-1b) → mit absoluten Häufigkeiten füllen: Gruppengrößen mal Anteile, Randsummen (iqb 2019MgrundlegendBStochastikWTR3-1a; abi 2017-bb-ea-B4.1a) → die Tafel mit drei Spalten (iqb 2022MerhoehtBStochastikWTR2-1a) → Prüfungshöhe: die Parametertafel füllen und einen Wert über die negative Wahrscheinlichkeit ausschließen (iqb 2021MerhoehtAStochastik11-a, Teil A, Niveau II).
-69  - Aus der Tafel rechnen (Einheit 2): „Weder–noch, entweder–oder, oder?“ ankreuzen (Vorstufe) → die fehlende Anzahl durch Subtraktion (Grundfall, viermal; abi 2019-be-gk-B4.1c, iqb 2019MgrundlegendBStochastikWTR1-1c) → „A oder B“ über das Gegenfeld oder den Additionssatz (abi 2023-bebb-gk-B4.1b, iqb 2023MgrundlegendBStochastikWTR3-1b) → Anteile aus Anteilen und bedingten Anteilen zusammensetzen (iqb 2020MgrundlegendAStochastik12-a, Teil A) → Prüfungshöhe: die Entweder-oder-Aussage beurteilen (iqb 2025MgrundlegendBStochastikWTR3-1b, 2025MerhoehtBStochastikWTR1-1b, Niveau II).
-70
-71  ### Prüfungsform (fhr / abi / iqb)
-72  Geltung [konzept.md § 4 Entscheidung 35]: Der IQB-Pool ist für das Profil abi voll maßgeblich – Brandenburg entnimmt seit 2017 Poolaufgaben, seit der KMK-Ländervereinbarung 2020 unverändert, und der Pool wirkt normierend auf Landesaufgaben und Oberstufenklausuren; die Auswahl-Einschränkung steht allein in den Geltungsdateien abi-*-geltung.md, die das Thema für alle vier Zielprüfungen mit „ja“ führen. Für fhr ist der Pool keine Vorgabe; die FOS-Vierfeldertafeln liegen beim Thema Unabhängigkeit von Ereignissen, themen.csv führt hier keine fhr-Zeile. Die Rohdatei zählt 29 Zeilen mit 8 Haupttypen (abi 8 Zeilen, 3 Typen; iqb 21 Zeilen, 8 Typen; 3 Typen in beiden Profilen), Jahre 2017–2026. Der Eintrag setzt keine Decke; Häufigkeit ist Auskunft, ein einziges Vorkommen ein vollwertiger Typ. Typnamen wörtlich aus abitur/abitur-typen.csv (gemeinsame Liste abi/iqb; Thema ohne Gegenstandsklassen, daher ohne Präfix).
-73  fhr: kein eigener Bestand – die Vierfeldertafeln der FHR-Prüfungen (Pflichtthema 4) laufen als Bausteine der Unabhängigkeitsaufgaben und liegen mit ihren Zeilen bei unabhaengigkeit.md.
-74  abi (8 Zeilen, 3 Typen; Landeshefte bb-ea, be-gk, bebb-gk 2017–2024) [abi-Katalog]: Vierfeldertafel aus Anteilen vervollständigen (6, E1) · je 1: Fehlende absolute Häufigkeit über die Vierfeldertafel berechnen (E2) · Wahrscheinlichkeit einer Vereinigung aus der Vierfeldertafel über das Gegenereignis berechnen (E2). Muster: Alle 8 Zeilen liegen in Teil B (zwei bis fünf Punkte) – die Tafel eröffnet die Stochastik-Kontextaufgabe als Darstellungsauftrag („Stellen Sie den Sachverhalt in einer Vierfeldertafel dar“) und füttert die folgenden Teilaufgaben (bedingte Wahrscheinlichkeit, Unabhängigkeit – die Zeilen dort); 6 der 8 Zeilen sind wortgleiche Pooldubletten (2018-be-gk-B3.2e, 2019-be-gk-B4.1c, 2022-bebb-gk-B4h, 2023-bebb-gk-B4.1a, 2023-bebb-gk-B4.1b, 2024-bebb-gk-B4.1b), Landeszusätze die beiden 2017/2018er Häufigkeitsaufgaben (2017-bb-ea-B4.1a, 2018-bb-ea-B4.2a). Niveau I 5, II 3.
-75  iqb (21 Zeilen, 8 Typen; Pool 2018–2026, grundlegend 14 und erhöht 7 Zeilen, Teil A 2 und Teil B 19 Zeilen) [iqb-Katalog]: Vierfeldertafel aus Anteilen vervollständigen (13, E1) · Aussage über ein Entweder-oder-Ereignis aus der Vierfeldertafel beurteilen (2, E2) · je 1: Anteil aus Anteilen und bedingten Anteilen über die Vierfeldertafel berechnen (E2) · Fehlende absolute Häufigkeit über die Vierfeldertafel berechnen (E2) · Tabelle mit drei Spalten analog zur Vierfeldertafel aus Anteilen vervollständigen (E1) · Vierfeldertafel mit Parameter vervollständigen und einen Parameterwert ausschließen (E1) · Vierfeldertafel mit absoluten Häufigkeiten aus Gruppengrößen und bedingten Anteilen vervollständigen (E1) · Wahrscheinlichkeit einer Vereinigung aus der Vierfeldertafel über das Gegenereignis berechnen (E2). Muster: In Teil B eröffnet die Tafel fast jede zweite Stochastik-Kontextaufgabe des Pools (zwei bis vier Punkte, Anforderungsbereich I bis II) – Bildschirme 2018, Glücksspiel und Fahrprüfung 2019, Werbeabteilung 2021, Tarife 2022, Lehrkräfte 2023, Lastenräder und Geräte 2024, Großstadt 2025, Fahrzeuge und Musik 2026; Teil A stellt die Parametertafel (2021MerhoehtAStochastik11-a) und die Anteilskombination (2020MgrundlegendAStochastik12-a). Amtlicher Anforderungsbereich in allen 21 Zeilen (höchster Bereich: I 13, II 8); Niveau I 14, II 7. Kontexte: Bildschirme, Fahrprüfungen, Glücksspiel, Tarife, Lehrkräfte, Lastenräder, Haushalte, Musiktitel. 6 Poolzeilen kehren wortgleich in Landesheften wieder (Dubletten der abi-Liste), keine abgewandelt.
-76  Zielmarke: Einheit 1 – abi: die Tafel mit bedingter Angabe (2018-bb-ea-B4.2a, Niveau II) und die Standard-Tafel (2023-bebb-gk-B4.1a, Niveau I); iqb: die Parametertafel mit Ausschluss (2021MerhoehtAStochastik11-a, Teil A, Niveau II) und die Dreispaltentabelle (2022MerhoehtBStochastikWTR2-1a, Niveau II). Einheit 2 – abi: die Vereinigung über das Gegenfeld (2023-bebb-gk-B4.1b, Niveau I); iqb: die Entweder-oder-Beurteilung (2025MerhoehtBStochastikWTR1-1b, Niveau II) und die Anteilskombination in Teil A (2020MgrundlegendAStochastik12-a, Niveau II).
+31  - „Weder–noch, entweder–oder, oder?“ – zu Formulierungen ankreuzen, welches Feld oder welche Feldsumme gemeint ist: „weder A noch B“ (ein Feld), „entweder A oder B“ (zwei Felder), „A oder B“ (drei Felder, Gegenfeld nutzen); nichts rechnen. Vor Einheit 1 und 2. [GOST-OHiMi 2.4 „Additionssatz“; abi 2023-bebb-gk-B4.1b, iqb 2018MerhoehtBStochastikWTR2-1b, 2025MgrundlegendBStochastikWTR3-1b]
+32
+33  ### Merkkasten
+34  Einheit 1 (Die Tafel füllen):
+35      Aufbau: zwei Merkmale mit ihren Gegenereignissen – vier Innenfelder, vier Ränder, rechts unten die Summe eins (oder die Gesamtzahl). Jede Zeile und jede Spalte summiert sich zu ihrem Rand.
+36      Füllregeln: erst die Ränder eintragen (Gegenanteile als Rest zu eins), dann die Felder als Differenzen – ein bekanntes Feld genügt, der Rest folgt.
+37      Bedingt heißt multiplizieren: „ein Anteil innerhalb einer Gruppe“ ist eine bedingte Angabe – das Feld ist Rand mal bedingter Anteil, nie der bedingte Anteil selbst.
+38        In einer Gemeinde sind 52,1 % Frauen, 64,8 % der Frauen tragen eine Brille: das Feld Frau-und-Brille ist 0,521 · 0,648 ≈ 0,338 – nicht 0,648.
+39      Sonderangaben: „weder A noch B“ ist das Feld ¬A ∩ ¬B (kein Rand!); „entweder A oder B“ ist die Summe der beiden gemischten Felder.
+40        Display defekt 10,7 %, weder Display noch Netzteil defekt 87,3 %: aus dem Rand 89,3 % für „Display heil“ folgt das Feld heil-und-Netzteil-defekt als 89,3 − 87,3 = 2,0 %.
+41      Mit Zahlen und mit Parameter: absolute Häufigkeiten füllen die Tafel genauso (Gruppengröße mal Anteil, Randsummen); bei Parametertafeln schließt eine negative Wahrscheinlichkeit Werte aus.
+42      Auswendig (Teil A): der ganze Kasten – [GOST-OHiMi 2.4] „Vierfeldertafel“ (Teil-A-Beleg 2021MerhoehtAStochastik11-a; die Tafel selbst prüft der Pool sonst in Teil B, aber ohne Formelsammlungsstütze).
+43      Formelsammlung: keine – [FS-IQB 1.4] führt die bedingte Wahrscheinlichkeit und die Unabhängigkeit, keine Tafelregeln – [FS] Wortlaut am PDF geprüft: nein, nur Textfassung
+44  Quelle: eigene Formulierung nach [GOST Q2 L5] „Vierfeldertafel“ und [GOST-OHiMi 2.4]; Zahlenbeispiele aus abi 2018-bb-ea-B4.2a und 2018-be-gk-B3.2e (wörtlich); [LS-AA QP VIII 3].
+45
+46  Einheit 2 (Aus der Tafel rechnen):
+47      A oder B: über das Gegenfeld – P(A ∪ B) = 1 − P(¬A ∩ ¬B); gleichwertig der Additionssatz P(A ∪ B) = P(A) + P(B) − P(A ∩ B) – die Ränder addieren und den Schnitt einmal abziehen.
+48      Entweder A oder B (ausschließend): die Summe der beiden gemischten Felder P(A ∩ ¬B) + P(¬A ∩ B) – der Schnitt zählt hier gar nicht.
+49      Anzahlen: fehlende absolute Häufigkeiten entstehen durch Subtraktion von Gesamtzahl und Randsummen – die Tafel muss dafür nicht vollständig sein.
+50      Kombinieren: ein Gesamtanteil setzt sich aus Feldern zusammen, die einzeln als Rand mal bedingter Anteil entstehen können.
+51      Auswendig (Teil A): „A oder B“ und „Entweder A oder B“ – [GOST-OHiMi 2.4] „Additionssatz“; das Übersetzen der Oder-Formen ist das Prüfmuster beider Profile.
+52      Formelsammlung: keine – der Additionssatz steht in der Anlage, nicht in [FS-IQB 1.4] – [FS] Wortlaut am PDF geprüft: nein, nur Textfassung
+53  Quelle: eigene Formulierung nach [GOST-OHiMi 2.4] „Additionssatz“ und [GOST Q2 L5]; Zahlenbeispiele keine (die Regeln sind zahlenfrei formuliert; Ermessen); [LS-AA QP VIII 3].
+54
+55  ### Typische Fehler
+56  Verdichtet aus den Spalten `verfahren` und `fehlerquelle` der 29 Zeilen des Themas in abitur/abi-katalog.csv und abitur/iqb-katalog.csv (Zuordnung über profil, leitidee und thema aus themen.csv, wie rohdatei-bau.py); Beleg ist die Original-id. [FD] nicht verwendet: das Quellenregister führt keine Stochastikdidaktik, die Muster sind allein aus den Katalogzeilen belegt.
+57  - Bedingten Anteil als Feld eingetragen – das Kernfehlmuster: den Anteil innerhalb einer Gruppe ohne Multiplikation mit dem Rand in die Tafel geschrieben oder als Feld gelesen; „die Hälfte der M-Kunden“ auf alle Kunden bezogen; einen Anteil auf die falsche Gesamtheit bezogen. [abi 2018-bb-ea-B4.2a, 2023-bebb-gk-B4.1a, 2022-bebb-gk-B4h, 2017-bb-ea-B4.1a; iqb 2023MgrundlegendBStochastikWTR3-1a, 2022MgrundlegendBStochastikWTR1-1e, 2022MerhoehtBStochastikWTR2-1a, 2018MgrundlegendBStochastikWTR1-1a, 2021MgrundlegendBStochastikWTR3-1a, 2020MgrundlegendAStochastik12-a]
+58  - Sonderangaben falsch gelesen: „weder–noch“ als Randwert oder als „genau eines defekt“; „entweder–oder“ als Vereinigung; ein Feld als Rand oder ein Rand als Feld; einen Schnitt als Produkt der Ränder angesetzt und damit Unabhängigkeit unterstellt. [abi 2018-be-gk-B3.2e, 2024-bebb-gk-B4.1b; iqb 2018MgrundlegendBStochastikWTR2-1e, 2018MerhoehtBStochastikWTR2-1b, 2026MerhoehtBStochastikWTR2-1b, 2025MgrundlegendBStochastikWTR3-1a, 2025MerhoehtBStochastikWTR1-1a, 2024MgrundlegendBStochastikWTR1-1b, 2024MgrundlegendBStochastikWTR2-1b, 2024MerhoehtBStochastikWTR2-1a, 2026MgrundlegendBStochastikWTR2-1a]
+59  - Beim Rechnen aus der Tafel: die Ränder addiert, ohne den Schnitt abzuziehen; das einschließende statt des ausschließenden Oder; die falsche Teilgruppe subtrahiert; Prozentangaben unbesehen als Feldwerte eingetragen. [abi 2023-bebb-gk-B4.1b, 2019-be-gk-B4.1c; iqb 2023MgrundlegendBStochastikWTR3-1b, 2025MgrundlegendBStochastikWTR3-1b, 2025MerhoehtBStochastikWTR1-1b, 2019MgrundlegendBStochastikWTR1-1c, 2019MgrundlegendBStochastikWTR3-1a]
+60  - Mit Parameter: die Differenz zweier Parameterterme falsch gebildet; den Ausschluss über das Vorzeichen nicht geprüft. [iqb 2021MerhoehtAStochastik11-a]
+61
+62  ### Für schwache Schüler
+63  Mindeststoff (GK-Kern Q2 / Niveaustufe H / RLP FOS) [GOST, GOST-OHiMi, FOS]: GK-Kern Q2 Brandenburg und Berlin: die L5-Zeile „Sachverhalte mithilfe von Baumdiagrammen oder Vierfeldertafeln untersuchen“ trägt beide Einheiten; kein LK-Zusatz. Ohne Hilfsmittel (Anlage OHiMi 2.4, Prüfungsteil A): „Vierfeldertafel“ und „Additionssatz“ – beide Kästen vollständig. Vorrat (Ermessen nach dem Niveau der Rohdatei): die Parametertafel und die Entweder-oder-Deutungen. Niveaustufe H der E-Phase [RLP]: die Vierfeldertafel ist Sek-I-Bestand (RLP G, wahrscheinlichkeit.md) – die Sek-II-Neuerung ist der systematische Umgang mit bedingten Angaben. RLP FOS (fhr): „Vierfeldertafel/Doppelbaum“ ist Pflichtstoff; die fhr-Zeilen liegen bei unabhaengigkeit.md. COSH [COSH, nachrangig, aus dem Gedächtnis, nicht am Text geprüft]: der Mindestanforderungskatalog führt nach Erinnerung bedingte Wahrscheinlichkeiten mit Vierfeldertafel – deckt sich mit dem GK-Kern, kein zusätzlicher Posten.
+64  Grundvorstellung (Blatt 0) [GOST Eingangsvoraussetzung L5, MO]: Ein Feld der Tafel ist ein Anteil an allen – ein Anteil „innerhalb einer Gruppe“ ist etwas anderes. „Hier sind zwanzig Spielkarten in zwei Farben, einige davon markiert, kein Term. Sortiere sie in vier Häufchen: rote markierte, rote unmarkierte, schwarze markierte, schwarze unmarkierte. Welcher Anteil aller Karten ist rot und markiert? Und welcher Anteil der roten Karten ist markiert – zähle beide aus: warum sind die Zahlen verschieden, obwohl beide ‚markierte rote Karten‘ zählen? Durch welche Gesamtheit hast du jeweils geteilt?“ Wer beide Anteile für dieselbe Zahl hält, braucht das vor jeder Tafel: Ein Feld teilt durch alle, ein bedingter Anteil nur durch die Gruppe – deshalb wird aus dem bedingten Anteil erst durch Multiplizieren mit dem Gruppenanteil ein Feld. Verständnis, nicht Verfahren; die Vorstellung ist amtlich (Q2-Kern „Vierfeldertafel“, „bedingte Wahrscheinlichkeit“), die Aufgabenform ist Ermessen. [GOST Q2 L5; GOST Eingangsvoraussetzung L5; MO-Logik: Vorstellung vor Verfahren; Rohdatei-Fehlerquelle „die 64,8 % unmittelbar als Feld der Tafel eintragen“, abi 2018-bb-ea-B4.2a; BASICS nur als Strukturvorbild Diagnose → Förderung → Nachtest, keine Inhalte]
+65  Sprossen je Verfahrenstyp (Reihenfolge = Kette des Hauptblatts) [LS-AA, Rohdatei; Sprossenfolge Ermessen, wo Lehrwerk und Rohdatei keine Reihenfolge vorgeben]:
+66  - Die Tafel füllen (Einheit 1): „Rand, Feld oder bedingt?“ – zu jeder Prozentangabe eines Aufgabentexts ankreuzen, ob sie ein Rand (Anteil an allen), ein Feld (Anteil an allen mit beiden Merkmalen) oder ein bedingter Anteil (Anteil innerhalb einer Gruppe) ist; „Anteil oder Anzahl?“ – ankreuzen, ob die Tafel mit Wahrscheinlichkeiten (Summe eins) oder absoluten Häufigkeiten (Summe gleich Gesamtzahl) zu füllen ist; nichts rechnen (Vorstufe, Grundvorstellung) → die Tafel aus zwei Rändern und einem Feld füllen: Ränder ergänzen, Felder als Differenzen (Grundfall, viermal; iqb 2018MgrundlegendBStochastikWTR1-1a, 2023MgrundlegendBStochastikWTR3-1a; abi 2023-bebb-gk-B4.1a, 2024-bebb-gk-B4.1b) → eine bedingte Angabe erst zum Feld machen: Rand mal bedingter Anteil (abi 2018-bb-ea-B4.2a, 2022-bebb-gk-B4h; iqb 2022MgrundlegendBStochastikWTR1-1e, 2024MerhoehtBStochastikWTR2-1a) → Sonderangaben übersetzen: „weder–noch“ als Feld, „entweder–oder“ als Feldsumme (abi 2018-be-gk-B3.2e; iqb 2018MgrundlegendBStochastikWTR2-1e, 2018MerhoehtBStochastikWTR2-1b, 2026MerhoehtBStochastikWTR2-1b, 2026MgrundlegendBStochastikWTR2-1a, 2025MgrundlegendBStochastikWTR3-1a, 2025MerhoehtBStochastikWTR1-1a, 2024MgrundlegendBStochastikWTR1-1b, 2024MgrundlegendBStochastikWTR2-1b) → mit absoluten Häufigkeiten füllen: Gruppengrößen mal Anteile, Randsummen (iqb 2019MgrundlegendBStochastikWTR3-1a; abi 2017-bb-ea-B4.1a) → die Tafel mit drei Spalten (iqb 2022MerhoehtBStochastikWTR2-1a) → Prüfungshöhe: die Parametertafel füllen und einen Wert über die negative Wahrscheinlichkeit ausschließen (iqb 2021MerhoehtAStochastik11-a, Teil A, Niveau II).
+67  - Aus der Tafel rechnen (Einheit 2): „Weder–noch, entweder–oder, oder?“ ankreuzen (Vorstufe) → die fehlende Anzahl durch Subtraktion (Grundfall, viermal; abi 2019-be-gk-B4.1c, iqb 2019MgrundlegendBStochastikWTR1-1c) → „A oder B“ über das Gegenfeld oder den Additionssatz (abi 2023-bebb-gk-B4.1b, iqb 2023MgrundlegendBStochastikWTR3-1b) → Anteile aus Anteilen und bedingten Anteilen zusammensetzen (iqb 2020MgrundlegendAStochastik12-a, Teil A) → Prüfungshöhe: die Entweder-oder-Aussage beurteilen (iqb 2025MgrundlegendBStochastikWTR3-1b, 2025MerhoehtBStochastikWTR1-1b, Niveau II).
+68
+69  ### Prüfungsform (fhr / abi / iqb)
+70  Geltung [konzept.md § 4 Entscheidung 35]: Der IQB-Pool ist für das Profil abi voll maßgeblich – Brandenburg entnimmt seit 2017 Poolaufgaben, seit der KMK-Ländervereinbarung 2020 unverändert, und der Pool wirkt normierend auf Landesaufgaben und Oberstufenklausuren; die Auswahl-Einschränkung steht allein in den Geltungsdateien abi-*-geltung.md, die das Thema für alle vier Zielprüfungen mit „ja“ führen. Für fhr ist der Pool keine Vorgabe; die FOS-Vierfeldertafeln liegen beim Thema Unabhängigkeit von Ereignissen, themen.csv führt hier keine fhr-Zeile. Die Rohdatei zählt 29 Zeilen mit 8 Haupttypen (abi 8 Zeilen, 3 Typen; iqb 21 Zeilen, 8 Typen; 3 Typen in beiden Profilen), Jahre 2017–2026. Der Eintrag setzt keine Decke; Häufigkeit ist Auskunft, ein einziges Vorkommen ein vollwertiger Typ. Typnamen wörtlich aus abitur/abitur-typen.csv (gemeinsame Liste abi/iqb; Thema ohne Gegenstandsklassen, daher ohne Präfix).
+71  fhr: kein eigener Bestand – die Vierfeldertafeln der FHR-Prüfungen (Pflichtthema 4) laufen als Bausteine der Unabhängigkeitsaufgaben und liegen mit ihren Zeilen bei unabhaengigkeit.md.
+72  abi (8 Zeilen, 3 Typen; Landeshefte bb-ea, be-gk, bebb-gk 2017–2024) [abi-Katalog]: Vierfeldertafel aus Anteilen vervollständigen (6, E1) · je 1: Fehlende absolute Häufigkeit über die Vierfeldertafel berechnen (E2) · Wahrscheinlichkeit einer Vereinigung aus der Vierfeldertafel über das Gegenereignis berechnen (E2). Muster: Alle 8 Zeilen liegen in Teil B (zwei bis fünf Punkte) – die Tafel eröffnet die Stochastik-Kontextaufgabe als Darstellungsauftrag („Stellen Sie den Sachverhalt in einer Vierfeldertafel dar“) und füttert die folgenden Teilaufgaben (bedingte Wahrscheinlichkeit, Unabhängigkeit – die Zeilen dort); 6 der 8 Zeilen sind wortgleiche Pooldubletten (2018-be-gk-B3.2e, 2019-be-gk-B4.1c, 2022-bebb-gk-B4h, 2023-bebb-gk-B4.1a, 2023-bebb-gk-B4.1b, 2024-bebb-gk-B4.1b), Landeszusätze die beiden 2017/2018er Häufigkeitsaufgaben (2017-bb-ea-B4.1a, 2018-bb-ea-B4.2a). Niveau I 5, II 3.
+73  iqb (21 Zeilen, 8 Typen; Pool 2018–2026, grundlegend 14 und erhöht 7 Zeilen, Teil A 2 und Teil B 19 Zeilen) [iqb-Katalog]: Vierfeldertafel aus Anteilen vervollständigen (13, E1) · Aussage über ein Entweder-oder-Ereignis aus der Vierfeldertafel beurteilen (2, E2) · je 1: Anteil aus Anteilen und bedingten Anteilen über die Vierfeldertafel berechnen (E2) · Fehlende absolute Häufigkeit über die Vierfeldertafel berechnen (E2) · Tabelle mit drei Spalten analog zur Vierfeldertafel aus Anteilen vervollständigen (E1) · Vierfeldertafel mit Parameter vervollständigen und einen Parameterwert ausschließen (E1) · Vierfeldertafel mit absoluten Häufigkeiten aus Gruppengrößen und bedingten Anteilen vervollständigen (E1) · Wahrscheinlichkeit einer Vereinigung aus der Vierfeldertafel über das Gegenereignis berechnen (E2). Muster: In Teil B eröffnet die Tafel fast jede zweite Stochastik-Kontextaufgabe des Pools (zwei bis vier Punkte, Anforderungsbereich I bis II) – Bildschirme 2018, Glücksspiel und Fahrprüfung 2019, Werbeabteilung 2021, Tarife 2022, Lehrkräfte 2023, Lastenräder und Geräte 2024, Großstadt 2025, Fahrzeuge und Musik 2026; Teil A stellt die Parametertafel (2021MerhoehtAStochastik11-a) und die Anteilskombination (2020MgrundlegendAStochastik12-a). Amtlicher Anforderungsbereich in allen 21 Zeilen (höchster Bereich: I 13, II 8); Niveau I 14, II 7. Kontexte: Bildschirme, Fahrprüfungen, Glücksspiel, Tarife, Lehrkräfte, Lastenräder, Haushalte, Musiktitel. 6 Poolzeilen kehren wortgleich in Landesheften wieder (Dubletten der abi-Liste), keine abgewandelt.
+74  Zielmarke: Einheit 1 – abi: die Tafel mit bedingter Angabe (2018-bb-ea-B4.2a, Niveau II) und die Standard-Tafel (2023-bebb-gk-B4.1a, Niveau I); iqb: die Parametertafel mit Ausschluss (2021MerhoehtAStochastik11-a, Teil A, Niveau II) und die Dreispaltentabelle (2022MerhoehtBStochastikWTR2-1a, Niveau II). Einheit 2 – abi: die Vereinigung über das Gegenfeld (2023-bebb-gk-B4.1b, Niveau I); iqb: die Entweder-oder-Beurteilung (2025MerhoehtBStochastikWTR1-1b, Niveau II) und die Anteilskombination in Teil A (2020MgrundlegendAStochastik12-a, Niveau II).
 ````
 
-## 2 Originale (12)
+## 2 Originale (28)
 
-Kennungen aus „Prüfungsform“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
+Kennungen aus „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
 
 ### 2018-be-gk-B3.2e (abi-katalog.csv)
 
@@ -191,7 +189,135 @@ jahr 2025 · papier 2025-iqb-ea · punkte 4 · format Begründung · antwort Tex
 - verfahren: beide Wahrscheinlichkeiten aus der Tafel, Verhältnis
 - fehlerquelle: einschließendes Oder (0,82) rechnen
 
-Nur außerhalb von „Prüfungsform“ genannt, nicht aufgenommen: 2018MgrundlegendBStochastikWTR1-1a, 2018MerhoehtBStochastikWTR2-1b, 2025MgrundlegendBStochastikWTR3-1b, 2019MgrundlegendBStochastikWTR3-1a, 2023MgrundlegendBStochastikWTR3-1a, 2022MgrundlegendBStochastikWTR1-1e, 2021MgrundlegendBStochastikWTR3-1a, 2018MgrundlegendBStochastikWTR2-1e, 2026MerhoehtBStochastikWTR2-1b, 2025MgrundlegendBStochastikWTR3-1a, 2025MerhoehtBStochastikWTR1-1a, 2024MgrundlegendBStochastikWTR1-1b, 2024MgrundlegendBStochastikWTR2-1b, 2024MerhoehtBStochastikWTR2-1a, 2026MgrundlegendBStochastikWTR2-1a, 2023MgrundlegendBStochastikWTR3-1b, 2019MgrundlegendBStochastikWTR1-1c
+### 2018MgrundlegendBStochastikWTR1-1a (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ga · punkte 3 · format Tabelle · antwort Tabelle
+- gegeben: Jugendliche eines Landes: 49,20 % weiblich (W), 47,10 % erledigen Finanzangelegenheiten regelmäßig mit Smartphone oder Tablet (S), 19,68 % sind weiblich und tun das
+- gesucht: vollständig ausgefüllte Vierfeldertafel
+- verfahren: Differenzen der Ränder
+- fehlerquelle: 19,68 % als bedingten Anteil lesen
+
+### 2023MgrundlegendBStochastikWTR3-1a (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ga · punkte 3 · format Tabelle · antwort Tabelle
+- gegeben: 25 % der Lehrkräfte am Gymnasium; 15 % weiblich und am Gymnasium; 72 % weiblich
+- gesucht: vollständige Vierfeldertafel
+- verfahren: Fehlende Felder als Differenzen
+- fehlerquelle: 15 % als bedingte Wahrscheinlichkeit lesen
+
+### 2022MgrundlegendBStochastikWTR1-1e (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ga · punkte 3 · format Tabelle · antwort Tabelle
+- gegeben: P(S) = 5 %, P(Z) = 10 %, P_Z(S) = 8 %
+- gesucht: vollständige Vierfeldertafel
+- verfahren: S∩Z = 0,008, Rest aus den Rändern
+- fehlerquelle: 8 % direkt als Feld S∩Z eintragen
+
+### 2024MerhoehtBStochastikWTR2-1a (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ea · punkte 4 · format Tabelle · antwort Tabelle
+- gegeben: 60 % mit Pkw, 8 % mit Lastenrad, 14 % der Haushalte ohne Pkw mit Lastenrad
+- gesucht: vollständige Vierfeldertafel
+- verfahren: 0,4 · 0,14 als Schnitt, Rest über Differenzen
+- fehlerquelle: 0,14 direkt als Feld eintragen
+
+### 2018MgrundlegendBStochastikWTR2-1e (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ga · punkte 3 · format Tabelle · antwort Tabelle
+- gegeben: Für einen zufällig ausgewählten Bildschirm: Display defekt 10,7 %, weder Display noch Netzteil defekt 87,3 %, Netzteil defekt 3,0 %
+- gesucht: vollständig ausgefüllte Vierfeldertafel
+- verfahren: ¬D∩¬N = 87,3 %, Ränder 10,7/89,3 und 3,0/97,0, Rest als Differenzen
+- fehlerquelle: 87,3 % als Feld „genau eines defekt“ lesen
+
+### 2018MerhoehtBStochastikWTR2-1b (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ea · punkte 4 · format Tabelle · antwort Tabelle
+- gegeben: Für einen zufällig ausgewählten Bildschirm: Display defekt 10,7 %, weder Display noch Netzteil defekt 87,3 %, entweder Display oder Netzteil defekt 11,7 %
+- gesucht: vollständig ausgefüllte Vierfeldertafel
+- verfahren: D∩N aus 100 − 87,3 − 11,7; Rest als Differenzen
+- fehlerquelle: 11,7 % als P(D ∪ N) lesen
+
+### 2026MerhoehtBStochastikWTR2-1b (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ea · punkte 2 · format Tabelle · antwort Tabelle
+- gegeben: A: mindestens fünf Jahre alt (70,8 %); B: Pkw (80 %); P(nicht A und nicht B) = 0,044
+- gesucht: alle Felder der Vierfeldertafel
+- verfahren: Ränder eintragen, Felder als Differenzen
+- fehlerquelle: 0,044 als P(nicht A) lesen
+
+### 2026MgrundlegendBStochastikWTR2-1a (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ga · punkte 2 · format Tabelle · antwort Tabelle
+- gegeben: 32 % Hip-Hop-Songs (H), 40 % mindestens 4 Minuten lang (L), P(H und L) = 0,14
+- gesucht: fehlende Wahrscheinlichkeiten der Vierfeldertafel
+- verfahren: Ränder eintragen, Innenfelder als Differenzen
+- fehlerquelle: 0,32 · 0,4 als Schnitt ansetzen (Unabhängigkeit unterstellt)
+
+### 2025MgrundlegendBStochastikWTR3-1a (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ga · punkte 3 · format Tabelle · antwort Tabelle
+- gegeben: 72 % jünger als 50 Jahre; 18 % jünger als 50 und nicht in einer Großstadt; 75 % in einer Großstadt
+- gesucht: vollständige Vierfeldertafel
+- verfahren: Ränder eintragen, Felder als Differenzen
+- fehlerquelle: 0,18 als P(nicht G) lesen
+
+### 2025MerhoehtBStochastikWTR1-1a (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ea · punkte 3 · format Tabelle · antwort Tabelle
+- gegeben: 72 % jünger als 50 Jahre; 18 % jünger als 50 und nicht in einer Großstadt; 75 % in einer Großstadt
+- gesucht: vollständige Vierfeldertafel
+- verfahren: Ränder eintragen, Felder als Differenzen
+- fehlerquelle: 0,18 als P(nicht G) lesen
+
+### 2024MgrundlegendBStochastikWTR1-1b (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ga · punkte 3 · format Tabelle · antwort Tabelle
+- gegeben: 60 % Treuekunden, 20 % Morgenkunden, P(nicht T ∩ M) = 0,05
+- gesucht: vollständige Vierfeldertafel
+- verfahren: Ränder eintragen, Felder als Differenzen
+- fehlerquelle: 0,05 als P(T ∩ M) eintragen
+
+### 2024MgrundlegendBStochastikWTR2-1b (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ga · punkte 4 · format Tabelle|Kurzantwort · antwort Tabelle
+- gegeben: P(L) = 0,56, P(D) = 0,33, P(nicht L ∩ nicht D) = 0,28
+- gesucht: vollständige Vierfeldertafel und P(Laptop, aber kein Desktop-PC)
+- verfahren: Felder aus Rändern und 0,28, Feld ablesen
+- fehlerquelle: 0,28 als P(nicht L) eintragen
+
+### 2019MgrundlegendBStochastikWTR3-1a (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ga · punkte 3 · format Tabelle · antwort Tabelle
+- gegeben: Befragung von 2 360 Männern und 2 200 Frauen (Glücksspielteilnahme): 2,5 % der Männer und 0,5 % der Frauen mit Anzeichen spielsüchtigen Verhaltens; M: Person ist ein Mann, S: Anzeichen spielsüchtigen Verhaltens
+- gesucht: vollständig ausgefüllte Vierfeldertafel
+- verfahren: Anzahlen je Feld berechnen, Randsummen bilden
+- fehlerquelle: Prozentangaben direkt als Feldwerte eintragen
+
+### 2019MgrundlegendBStochastikWTR1-1c (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ga · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: Fahrprüfungen einer Region: 13 879 Prüflinge, 2 482 davon mindestens 30 Jahre alt; 11 104 haben bestanden, davon 8 870 jünger als 30; A: Prüfling mindestens 30, B: Prüfung bestanden
+- gesucht: Anzahl der Prüflinge unter 30, die nicht bestanden haben
+- verfahren: Randsumme der Jüngeren minus Bestandene der Jüngeren
+- fehlerquelle: 11 104 − 8 870 (die älteren Bestandenen) angeben
+
+### 2023MgrundlegendBStochastikWTR3-1b (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ga · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: Vierfeldertafel aus a
+- gesucht: Wahrscheinlichkeit, dass eine Lehrkraft weiblich ist oder am Gymnasium arbeitet
+- verfahren: Eins minus Feld ¬W∩¬G
+- fehlerquelle: 72 % + 25 % ohne Abzug des Schnitts
+
+### 2025MgrundlegendBStochastikWTR3-1b (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ga · punkte 3 · format Begründung · antwort Text
+- gegeben: Vierfeldertafel aus a; Aussage: P(entweder in Großstadt oder nicht jünger als 50) < 60 %
+- gesucht: Beurteilung
+- verfahren: die beiden passenden Felder addieren
+- fehlerquelle: einschließendes Oder rechnen (0,75 + 0,28 − 0,21 = 0,82)
+
+Nur außerhalb von „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ genannt, nicht aufgenommen: 2021MgrundlegendBStochastikWTR3-1a
 
 ## 3 Maßstab (unterrichtsblatt.md, wortgleich)
 

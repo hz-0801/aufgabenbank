@@ -1,9 +1,9 @@
 # Mappe: zufallsgroessen-und-verteilungen
 
 Eintrag: hz-0801/mathe-nachhilfe, katalog/zufallsgroessen-und-verteilungen.md
-Katalog-Commit: 761321330add6ed255669afc1c4e11b846250dd5 (2026-09-25T11:16:56+02:00, „katalog: Marken-Zeilen je Lerneinheit, drei Einheiten ergänzt, marken-bau.py“; ermittelt über git log (GitHub-API gesperrt))
+Katalog-Commit: 761321330add6ed255669afc1c4e11b846250dd5 (2026-09-25T09:16:56Z, „katalog: Marken-Zeilen je Lerneinheit, drei Einheiten ergänzt, marken-bau.py“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-27 12:44 UTC
+Datum: 2026-09-30 08:15 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -80,9 +80,9 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 65  Zielmarke: Einheit 1 – iqb: die Verteilung über den unmöglichen Wert (2022MgrundlegendAStochastik13-b, Teil A, Niveau III) und der Parameternachweis (2021MerhoehtAStochastik13-a, Teil A, Niveau I). Einheit 2 – abi: die Symmetrieaufgabe (2022-bebb-lk-A1.8a, Teil A, Niveau II); iqb: die Diagrammzuordnung (2022MerhoehtAStochastik11-b, Teil A, Niveau II).
 ````
 
-## 2 Originale (4)
+## 2 Originale (6)
 
-Kennungen aus „Prüfungsform“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
+Kennungen aus „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
 
 ### 2022MgrundlegendAStochastik13-b (iqb-katalog.csv)
 
@@ -116,7 +116,21 @@ jahr 2022 · papier 2022-iqb-ea · punkte 3 · format Begründung · antwort Tex
 - verfahren: Asymmetrie für Y, Verhältnis P(X = 3) : P(X = 2) = 2 für X
 - fehlerquelle: X dem Diagramm I zuordnen (Säulen bei 2 und 3 nicht prüfen)
 
-Nur außerhalb von „Prüfungsform“ genannt, nicht aufgenommen: 2018MgrundlegendAStochastik12-a, 2018MerhoehtAStochastik12-a
+### 2018MerhoehtAStochastik12-a (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ea · punkte 2 · format Tabelle · antwort Tabelle
+- gegeben: Glücksrad mit drei gleichen Sektoren 1, 2, 3, zweimal gedreht; X Summe der Zahlen; Tabelle mit P(X = 2) = 1/9 und P(X = 4) = 1/3
+- gesucht: fehlende Werte P(X = 3), P(X = 5), P(X = 6)
+- verfahren: günstige Paare je Summe zählen, durch 9 teilen
+- fehlerquelle: Paare (1; 2) und (2; 1) nur einmal zählen
+
+### 2018MgrundlegendAStochastik12-a (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ga · punkte 2 · format Begründung · antwort Text
+- gegeben: Einsatz 4 Euro, zweimal drehen; A halbiert, B verdoppelt den Betrag; der Betrag nach dem zweiten Drehen wird ausgezahlt
+- gesucht: Nachweis, dass nur 1, 4 und 16 Euro ausgezahlt werden können
+- verfahren: alle vier Ergebnisfolgen durchrechnen
+- fehlerquelle: AB und BA als verschiedene Beträge erwarten
 
 ## 3 Maßstab (unterrichtsblatt.md, wortgleich)
 

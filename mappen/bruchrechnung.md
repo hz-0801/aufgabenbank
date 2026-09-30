@@ -1,9 +1,9 @@
 # Mappe: bruchrechnung
 
 Eintrag: hz-0801/mathe-nachhilfe, katalog/bruchrechnung.md
-Katalog-Commit: d78032a884b6073d9e4c92cc8407e909e3c4ea2a (2026-09-29T07:07:16Z, „Katalog 29.09. aus dem Chat: terme E4 Vorstufe Zerlegen, prozentrechnung E4 Sprosse „nur ein Prozent bestimmen“, bruchrechnung E3 Sprosse Stammbruch von Bruch (Vorrat) und Kastenzeile a = a/1; K5-Beleg in faellig.md“; ermittelt über GitHub-API)
+Katalog-Commit: db8d2a3f9f6ed0e6490a4087e3eaff2cbc8a9b19 (2026-09-30T08:03:34Z, „Katalog: Vorschläge vom 30.09. eingesetzt (24 Zeilen in 17 Einträgen, Marke „kein P10-Stoff“ in _vorlage.md)“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-29 12:26 UTC
+Datum: 2026-09-30 08:05 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -37,7 +37,7 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
  22  ### Typen je Lerneinheit
  23  Einheit 1: gleichnamig addieren und subtrahieren [OS 5–6, GYM 6] · Ergebnis kürzen · über ein Ganzes hinaus (unechter Bruch, gemischte Zahl) · gleichnamig machen mit einem Nenner als Vielfachem des anderen · beide erweitern (Hauptnenner) · ganze Zahl plus Bruch · gemischte Zahlen addieren und subtrahieren · Sachaufgabe (Zeit, Liter, Pizza) [OS 6] · Fehler finden (Zähler und Nenner addiert) · Begründen (warum erst gleichnamig).
  24  Einheit 2: gleich viele Stellen · verschieden viele Stellen (Nullen anhängen) · mit Übertrag · ganze Zahl plus Dezimalzahl · Größen mit Komma (2,50 € + 0,75 €; 1,2 m − 0,45 m) · Überschlag vorab · Fehler finden (Komma nicht untereinander) · Begründen.
- 25  Einheit 3: Bruch mal natürliche Zahl (vervielfachen) [OS 6, GYM 6] · Bruch geteilt durch natürliche Zahl (teilen) [OS 6, GYM 6] · Bruch von Bruch (Zähler mal Zähler, Nenner mal Nenner; Bruchteil einer Zahl oder Größe → brueche-dezimalzahlen.md Einheit 1) · vor dem Rechnen kürzen · gemischte Zahl mal Bruch (erst in unechten Bruch) · Zahl geteilt durch Bruch, Bruch geteilt durch Bruch (Kehrbruch) [OS 6, GYM 6] · Sachaufgabe (Rezept, Flaschen füllen) · Fehler finden (Kehrbruch beim Multiplizieren; beim Teilen den Zähler geteilt) · Begründen (warum durch ein Halb mal zwei).
+ 25  Einheit 3: Bruch mal natürliche Zahl (vervielfachen) [OS 6, GYM 6] · Bruch geteilt durch natürliche Zahl (teilen) [OS 6, GYM 6] · Bruch von Bruch (Zähler mal Zähler, Nenner mal Nenner; Bruchteil einer Zahl oder Größe → brueche-dezimalzahlen.md Einheit 1) · vor dem Rechnen kürzen · gemischte Zahl mal Bruch (erst in unechten Bruch) · Zahl geteilt durch Bruch, Bruch geteilt durch Bruch (Kehrbruch) [OS 6, GYM 6] · Sachaufgabe (Rezept, Flaschen füllen) · Fehler finden (Kehrbruch beim Multiplizieren; beim Teilen durch eine Zahl den Nenner geteilt statt malgenommen) · Begründen (warum durch ein Halb mal zwei).
  26  Einheit 4: Komma verschieben (mal 10, 100, 1000; geteilt durch 10, 100) [OS 5–6, GYM 6] · Dezimalzahl mal natürliche Zahl · Dezimalzahl mal Dezimalzahl (Kommastellen zählen) · Dezimalzahl geteilt durch natürliche Zahl · geteilt durch Dezimalzahl (beide Kommas verschieben) [OS 7] · Ergebnis mit Nullen (0,3 · 0,2) · Größen (Preis mal Anzahl, Cent und Euro) · Fehler finden (Kommastellen nicht gezählt) · Begründen (warum das Komma wandert).
  27  Einheit 5: Punkt vor Strich mit Brüchen [OS 6] · mit Dezimalzahlen · Klammern · Kommutativ- und Assoziativgesetz für Vorteile (0,25 · 7 · 4) · Distributivgesetz (Ausklammern bei Dezimalzahlen) [GYM 6] · Überschlag und Prüfen [OS 6] · Fehler finden (von links nach rechts gerechnet) · Begründen (welche Rechnung zuerst).
  28
@@ -47,7 +47,7 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
  32  - Kürzen und Erweitern; gleichwertige Brüche (zwei Drittel gleich vier Sechstel) – Einheit 1 und 3. Thema Brüche und Dezimalzahlen (brueche-dezimalzahlen.md), Einheit 2. [RLP D, MSK B2B]
  33  - Vielfache und Teiler (kgV von vier und sechs, ggT von zwölf und achtzehn) – Einheit 1 (Hauptnenner) und Einheit 3 (Kürzen). [RLP D, LS-AA Kl. 5 III 5]
  34  - Stellenwerte der Dezimalzahlen (Zehntel, Hundertstel; 0,7 = 0,70) – Einheit 2 und 4. Thema Brüche und Dezimalzahlen (brueche-dezimalzahlen.md), Einheit 4. [MSK D1A, RLP D]
- 35  - Schriftliches Rechnen mit natürlichen Zahlen, Einmaleins – Einheit 2 und 4. [RLP D]
+ 35  - Einmaleins und Kopfrechnen mit natürlichen Zahlen (Vervielfachen, Teilen ohne Rest) – Einheit 2 und 4; die schriftlichen Verfahren sind kein Blatt-0-Stoff, sondern ein eigenes Thema (Unterrichtsblatt-Prompt, Abschnitt 2.2), die Zahlen der Sprossen bleiben im Kopf rechenbar. [RLP D]
  36  - Bruch ↔ Dezimalzahl bei einfachen Brüchen (ein Halb, drei Viertel) – Einheit 5 (gemischte Terme). Thema Brüche und Dezimalzahlen (brueche-dezimalzahlen.md). [RLP D]
  37  Erkennungsschritte (Vorstufe der Einheit, vor der sie stehen, nicht auf Blatt 0; eine Hauptnummer je Schritt):
  38  - „Gleicher Nenner – ja oder nein?“ – ankreuzen, ob man sofort rechnen darf. Vor Einheit 1. [MSK B4A 1.5]
@@ -99,7 +99,7 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
  84  - Beim Erweitern nur den Nenner geändert: 1/3 = 1/6; oder nur einen Bruch erweitert. [FD Padberg; MSK B2B]
  85  - Gemischte Zahl als Produkt gelesen: 2 1/2 = 2 · 1/2 = 1. [FD]
  86  - Beim Multiplizieren gleichnamig gemacht oder den Kehrbruch genommen; beim Dividieren den falschen Bruch umgedreht oder beide. [Serlo 82385 Hinweis; FD]
- 87  - Bruch geteilt durch Zahl: Zähler geteilt statt Nenner mal (3/4 : 2 = 3/2). [FD]
+ 87  - Bruch geteilt durch Zahl: Nenner geteilt statt Nenner mal (3/4 : 2 = 3/2). [FD]
  88  - Bruchteil einer Größe mit umgedrehtem Bruch: 3/4 von 1,2 kg als 1,2 : 3 · 4 = 1,6 kg. [P10 2018-OS-B1a]
  89  - „Multiplizieren macht größer, Dividieren kleiner“: 8 : 1/2 = 4 erwartet. [FD Padberg/Wartha]
  90  - Dezimalzahlen: Komma nicht untereinander (2,5 + 0,25 = 0,50); Kommastellen beim Multiplizieren nicht gezählt (0,3 · 0,3 = 0,9); 0,4² als 0,8 oder 1,6. [P10 2023-OS-B1f; LS-AA Kl. 6 V 5]
@@ -129,7 +129,7 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 
 ## 2 Originale (38)
 
-Kennungen aus „Prüfungsform“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
+Kennungen aus „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
 
 ### 2024-OS-K2d (msa-katalog-kontext.csv)
 

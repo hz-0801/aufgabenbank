@@ -1,9 +1,9 @@
 # Mappe: lineare-funktionen
 
 Eintrag: hz-0801/mathe-nachhilfe, katalog/lineare-funktionen.md
-Katalog-Commit: 761321330add6ed255669afc1c4e11b846250dd5 (2026-09-25T11:16:56+02:00, „katalog: Marken-Zeilen je Lerneinheit, drei Einheiten ergänzt, marken-bau.py“; ermittelt über git log (GitHub-API gesperrt))
+Katalog-Commit: c651dc47624a28a96eb6724ed3e4864024a7bab4 (2026-09-27T22:25:43Z, „katalog: Erkennungsschritte“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-27 12:32 UTC
+Datum: 2026-09-30 08:09 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -52,64 +52,67 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 37  - Steigungsrichtung ohne Zeichnen: „Steigt oder fällt die Gerade?" Vor Einheit 2.
 38  - Steigungsdreieck lesen: „einen Schritt nach rechts, wie viel nach oben oder unten?" an gezeichneten Dreiecken. Vor Einheit 2.
 39  - Punkt in Gleichung einsetzen: „Setze für x eine ganze Zahl ein und rechne aus" (ohne Deutung). Vor Einheit 3.
-40  - Anfangswert und Änderung im Text finden: „Was ist am Anfang da, was kommt je Einheit dazu?" Vor Einheit 5.
-41
-42  ### Merkkasten
-43  Einheit 2 (Graph und Parameter) – mit Leitgrafik (Gerade, n markiert, Steigungsdreieck):
-44      Lineare Funktion: f(x) = m · x + n
-45      m = Steigung: 1 nach rechts, m nach oben (m < 0: nach unten).    f(x) = 2x + 1: 1 nach rechts, 2 nach oben
-46      n = y-Achsenabschnitt: die Gerade schneidet die y-Achse bei (0 | n).    f(x) = 2x + 1: bei (0 | 1)
-47      Formelsammlung: Lineare Funktionen [FS]
-48  Quelle: [Serlo 87089, Serlo „Lineare Funktion"], Notation P10.
-49
-50  Einheit 3 (Punkte und Werte):
-51      Funktionswert: x einsetzen.               f(x) = 2x + 1, x = 3: f(3) = 2 · 3 + 1 = 7
-52      Punktprobe: x einsetzen, mit y vergleichen.    P(3 | 7) liegt auf f, weil f(3) = 7 (wA)
-53      Nullstelle: f(x) = 0 setzen, nach x auflösen.  0 = 2x + 1 → x = −0,5
-54      Formelsammlung: Lineare Funktionen – Nullstelle [FS]
-55
-56  Einheit 4 (Gleichung bestimmen):
-57      Steigung aus zwei Punkten: m = (y₂ − y₁) : (x₂ − x₁)      A(1 | 3), B(3 | 7): m = (7 − 3) : (3 − 1) = 2
-58      Dann n: m und einen Punkt in y = m · x + n einsetzen, nach n auflösen.
-59      Schnittpunkt zweier Geraden: Terme gleichsetzen, x ausrechnen, y aus einer Gleichung.
-60      Formelsammlung: Lineare Funktionen – Zweipunkteform [FS]
-61
-62  Einheit 5 (Anwendung):
-63      Sachverhalt → Gleichung: n = Anfangswert (Grundgebühr), m = Änderung je Einheit (Preis je km).
-64        3,50 € Grundgebühr, 2 € je km: K(x) = 2x + 3,5
-65      Formelsammlung: Lineare Funktionen [FS]
-66
-67  ### Typische Fehler
-68  - m und n vertauscht (f(x) = 3x + 2 mit n = 3). [FD, P10 Typ „Geradengleichung zu Graph zuordnen", Distraktoren]
-69  - Steigungsdreieck verkehrt gelesen: Δx : Δy statt Δy : Δx; oder bei fallender Gerade positives m. [Serlo 31912 Hinweise]
-70  - y-Achsenabschnitt mit Nullstelle verwechselt. [FD]
-71  - Punkt (x | y) vertauscht eingetragen. [MSK S4]
-72  - Bei m als Bruch (½) „1 nach rechts, ½ nach oben" nicht gezeichnet, sondern 2 nach rechts, 1 nach oben vergessen oder umgekehrt. [FD]
-73  - Steigung aus zwei Punkten mit vertauschter Reihenfolge oben/unten: (3 − 7) : (3 − 1). [Unterrichtsblatt-Prompt-Muster 9; FD]
-74  - Sonderfall m = 0 oder f(x) = x nicht als linear erkannt; senkrechte Gerade als Funktion angenommen. [RLP F Parametereinfluss]
-75  - Bei Tarifen Cent und Euro gemischt. [P10 Typ „Gleichung zu Tarif zuordnen" nennt Einheitenwechsel ausdrücklich]
-76  - Anfangswert und Änderung vertauscht (K(x) = 3,5x + 2). [P10 „Lineare Funktion aus Sachverhalt aufstellen"]
-77
-78  ### Für schwache Schüler
-79  Mindeststoff (D/E) [RLP]: Einheit 1 ganz (proportional ist D/E); Einheit 2 Graph zeichnen und m, n ablesen bei ganzzahligem m; Einheit 3 Funktionswert und Wertetabelle; Einheit 5 Tarif mit Anfangswert und Preis je Einheit. Steigung als Bruch, Nullstelle berechnen, Gleichung aus zwei Punkten, Schnittpunkt rechnerisch sind F.
-80  Grundvorstellung (Blatt 0) [MO, INKL]: Zuordnung als „jedem x gehört genau ein y" – Tabelle ausfüllen aus einer Wortvorschrift („jeder Zahl ihr Doppeltes plus eins") und Punkte eintragen [INKL „Funktionen zeichnen"]; „Was passiert mit y, wenn x um eins größer wird?" an der Tabelle ablesen (Vorbereitung der Steigung als Änderung, nicht als Formel).
-81  Sprossen je Verfahrenstyp [INKL, LS, FD]:
-82  - Proportionale Funktion (Einheit 1): aus einer Wertetabelle den festen Faktor bestimmen (Vorstufe, Blatt 0: Dreisatz aus zuordnungen.md Einheit zwei) → Wertepaare zu einer gegebenen Gleichung y = m · x berechnen und die Ursprungsgerade zeichnen (4×, Faktor eine ganze Zahl) → Wert am Graphen ablesen und mit der Rechnung vergleichen → Faktor als Dezimalzahl → Faktor als Bruch → Faktor negativ, Gerade fällt → aus einer Tabelle über die Quotientengleichheit entscheiden, ob eine proportionale Funktion vorliegt, und die Gleichung angeben → Fehler finden: für den Faktor die Differenz statt des Quotienten genommen → Prüfungshöhe: kein P10-Original – die beiden Darstellungstypen der proportionalen Zuordnung liegen bei zuordnungen.md Einheit eins; Zielmarke nach RLP F und LISUM-PH Jahrgangsstufe acht, Block „Lineare Funktionen mit der Funktionsgleichung y = m · x“ („Deuten von m als Proportionalitätsfaktor“, „Beschreiben der Ursprungsgeraden“): zu einem Sachverhalt die Gleichung aufstellen, den Graphen zeichnen und den Faktor als Änderung je Einheit deuten.
-83  - Graph zeichnen (Einheit 2): Wertetabelle aus Gleichung (3×) → Punkte eintragen → Gerade durch Punkte → n markieren und Steigungsdreieck einen Schritt nach rechts, m nach oben (4×, m ganzzahlig positiv) → m negativ → m als Bruch (zwei nach rechts, einen nach oben) → n negativ → Prüfungshöhe: m Bruch und n negativ (P10 „Gerade aus Gleichung zeichnen").
-84  - Ablesen (Einheit 2): n ablesen (3×) → m ablesen ganzzahlig → m negativ → m Bruch → Gleichung zu Graph zuordnen (Ankreuzen, P10) → Prüfungshöhe: unter vier Geraden die richtige.
-85  - Funktionswert (Einheit 3): x positiv ganz (4×) → x negativ → x Dezimal → Argument zum Wert (Gleichung lösen) → Punktprobe ja/nein gemischt → Nullstelle (Funktionswert null) → Prüfungshöhe: Punktprobe mit Bruch-m.
-86  - Gleichung bestimmen (Einheit 4): aus Graph mit n und ganzzahligem m (3×) → aus m und einem Punkt → aus zwei Punkten, einer auf der y-Achse [INKL Zweipunkteform Niveau 1] → zwei beliebige Punkte → negative Steigung → Prüfungshöhe: zwei Punkte mit Bruch-m (P10 „Geradengleichung aus zwei Punkten").
-87  - Anwendung (Einheit 5): Anfangswert und Änderung im Text markieren (Vorstufe) → Gleichung ankreuzen (3×, P10 „Gleichung zu Tarif zuordnen") → Gleichung aufstellen → Endwert berechnen → zwei Tarife für eine Nutzung vergleichen → Prüfungshöhe: ab wann günstiger (Schnittpunkt im Kontext).
-88
-89  ### Prüfungsform (P10)
-90  Thema „Lineare Funktionen" ist mit 14 Typen eines der größten P10-Themen [P10]: Gerade aus Gleichung zeichnen · Gerade durch zwei Punkte zeichnen · Geradengleichung aus zwei Punkten · Geradengleichung zu Graph zuordnen · Graph einer linearen Funktion erkennen · Graph nach Eigenschaft auswählen · y-Achsenabschnitt ablesen · Nullstelle am Graphen ablesen · Nullstelle berechnen · Schnittpunkt am Graphen ablesen · Lineare Funktion aus Sachverhalt aufstellen · Gleichung zu Tarif zuordnen · Endwert linearer Veränderung berechnen · Tarife vergleichen. Dazu aus „Funktionen allgemein": Funktionswert berechnen, Punktprobe durchführen, Wertetabelle einer Funktion zuordnen, Graph zu Tarif zuordnen, Eigenschaften eines Graphen beurteilen. „Wertetabelle als Punkte darstellen“ und „Achseneinteilung wählen“ liegen dagegen bei zuordnungen.md Einheit 1 und werden hier nicht geführt – die frühere Sammelform „Wertetabelle zuordnen/als Punkte darstellen“ hat beide Typen in einem Namen zusammengezogen und ist am 10g aufgelöst. Ab 09d: die drei Originale des Typs „Funktionswert berechnen“ mit CSV-Thema Exponentialfunktionen und Wachstum (2016-OS-K4e, 2017-OS-K7d, 2020-OS-K4c) führt potenz-exponentialfunktionen.md in seiner Prüfungsform, der Typ bleibt hier. Ab 10g in umgekehrter Richtung: 2021-OS-K6b (Kerze; Haupttyp „Wertetabelle als Punkte darstellen“, Nebentyp „Achseneinteilung wählen“) hat das CSV-Thema „Lineare Funktionen“ und wird deshalb hier geführt, während beide Typen bei zuordnungen.md Einheit 1 bleiben; die Aufgabe gehört zum Kerzenstamm 2021-OS-K6, dessen Teilaufgaben a (2021-OS-K6a, Endwert aus der Tabelle) und d (2021-OS-K6d, Nullstelle) hier ohnehin liegen; c (2021-OS-K6c, Gleichung im Sachzusammenhang deuten) führt lineare-gleichungssysteme.md. Ebenfalls hier geführt, weil ihr CSV-Thema „Funktionen allgemein“ keine eigene Datei hat: 2023-OS-B1i (Punktprobe, den nicht passenden von drei Punkten finden) und 2023-OS-K3a (Graph zu Tarif zuordnen); 2015-OS-K4a hat den Haupttyp „Wert aus Diagramm ablesen“ (daten.md) und trägt „Nullstelle am Graphen ablesen“ nur als Nebenleistung – das Original bleibt bei daten.md, der Typ hier.
-91  Zielmarke: Einheit 1 – kein P10-Original; Marke nach RLP F und LISUM-PH Jg. 8 (Block „Lineare Funktionen mit der Funktionsgleichung y = m · x“): Gleichung zu einem Sachverhalt aufstellen, Ursprungsgerade zeichnen, Faktor als Änderung je Einheit deuten. Einheit 2 – Gerade aus der Gleichung mit y-Achsenabschnitt und Steigungsdreieck zeichnen, auch bei negativer Steigung (2026-FOR-K5a: f(x) = −2x + 2; 2024-OS-K3a: f(x) = 4x + 1; 2022-OS-K3a); drei gezeichneten Geraden aus sechs angebotenen Gleichungen die passende zuordnen, darunter der Sonderfall y = −2 (2019-OS-K2c, Niveau II); Gerade aus der Gleichung y = 3x + 1 mit ganzzahliger Steigung zeichnen (2021-OS-K2a, Niveau I); Graph nach genannter Eigenschaft auswählen (2019-OS-K2b: Anstieg −2, parallel zur x-Achse; 2016-OS-B1c als Basisform: unter zwei Geraden die fallende ankreuzen); y-Achsenabschnitt von y = 0,5x − 1 markieren (2024-OS-B1i); unter vier Graphen die Gerade erkennen (2025-OS-B1f). Einheit 3 – Nullstelle aus der Gleichung berechnen, auch im Sachkontext mit Dezimalsteigung (2022-OS-K3a: x = 1,5; 2021-OS-K6d: y = −0,2x + 40 → 200 min); Nullstelle und Schnittpunkt am Graphen ablesen (2019-OS-K2a; 2023-OS-K4a: S(1|2)); Funktionswert zu einem negativen Argument mit Bruchsteigung berechnen (2017-OS-K5b: y = ½x + 1 an der Stelle −10); Punktprobe rechnerisch mit negativem Argument (2026-FOR-K5b: f(−4) = 10, P liegt auf dem Graphen); vier Aussagen zu einer Geraden als wahr oder falsch beurteilen (2021-OS-K2b). Einheit 4 – Gerade durch A(−2|6) und B(3|−1,5) zeichnen, m = −1,5 und n = 3 bestimmen und f(x) = −1,5x + 3 angeben (2025-OS-K5a, Niveau II, vier Punkte, drei Leistungen in einer Einheit); Gleichung aus zwei Punkten im Sachkontext (2015-OS-K4d: h(t) = −5t + 1300); Behauptung y = ½x + 1 zu zwei Punkten nachweisen (2017-OS-K5a). Einheit 5 – Gesamtkosten zweier Tarife mit Grundgebühr, Freimenge und Preis je Einheit berechnen und den günstigeren mit Begründung wählen (2023-OS-K3b, Niveau II, fünf Punkte: 178,20 € gegen 162,30 €; 2016-OS-K6b mit der Zusatzfrage, ob es bei größerer Strecke günstig bleibt); Gleichung zu einem Tarif ankreuzen, Cent und Euro gemischt (2021-OS-K7a: y = 0,20x + 5); Gleichung aus dem Sachverhalt aufstellen und daraus eine Mindestzahl bestimmen (2022-OS-K6b: y = 55x + 990, 19 Monate); Gleichung zu einem Tarif aus Grundpreis und Preis je Kilometer aufstellen (2016-OS-K6c, Stern: y = 1,5x + 200); Endwert linearer Veränderung (2022-OS-K6a: 1736 €; 2021-OS-K6a als Basisform, Kerzenhöhe am Anfang und nach der letzten Tabellenzeile); Graph zu einem Tarif zuordnen und die Wahl begründen (2016-OS-K6a, 2023-OS-K3a).
-92  Zuordnung: Einheit 1 – kein Typ (proportionale Funktion als Vorstufe, Typen bei zuordnungen.md); Einheit 2 – Gerade aus Gleichung zeichnen, Geradengleichung zu Graph zuordnen, Graph einer linearen Funktion erkennen, Graph nach Eigenschaft auswählen, y-Achsenabschnitt ablesen; Einheit 3 – Nullstelle lineare Funktion berechnen, Nullstelle am Graphen ablesen, Schnittpunkt am Graphen ablesen, dazu aus „Funktionen allgemein“ Funktionswert berechnen, Punktprobe durchführen, Wertetabelle einer Funktion zuordnen; Einheit 4 – Gerade durch zwei Punkte zeichnen, Geradengleichung aus zwei Punkten; Einheit 5 – Lineare Funktion aus Sachverhalt aufstellen, Gleichung zu Tarif zuordnen, Endwert linearer Veränderung berechnen, Tarife vergleichen, dazu aus „Funktionen allgemein“ Graph zu Tarif zuordnen und Eigenschaften eines Graphen beurteilen.
+40
+41  ### Merkkasten
+42  Einheit 2 (Graph und Parameter) – mit Leitgrafik (Gerade, n markiert, Steigungsdreieck):
+43      Lineare Funktion: f(x) = m · x + n
+44      m = Steigung: 1 nach rechts, m nach oben (m < 0: nach unten).    f(x) = 2x + 1: 1 nach rechts, 2 nach oben
+45      n = y-Achsenabschnitt: die Gerade schneidet die y-Achse bei (0 | n).    f(x) = 2x + 1: bei (0 | 1)
+46      Formelsammlung: Lineare Funktionen [FS]
+47  Quelle: [Serlo 87089, Serlo „Lineare Funktion"], Notation P10.
+48
+49  Einheit 3 (Punkte und Werte):
+50      Funktionswert: x einsetzen.               f(x) = 2x + 1, x = 3: f(3) = 2 · 3 + 1 = 7
+51      Punktprobe: x einsetzen, mit y vergleichen.    P(3 | 7) liegt auf f, weil f(3) = 7 (wA)
+52      Nullstelle: f(x) = 0 setzen, nach x auflösen.  0 = 2x + 1 → x = −0,5
+53      Formelsammlung: Lineare Funktionen – Nullstelle [FS]
+54
+55  Einheit 4 (Gleichung bestimmen):
+56      Steigung aus zwei Punkten: m = (y₂ − y₁) : (x₂ − x₁)      A(1 | 3), B(3 | 7): m = (7 − 3) : (3 − 1) = 2
+57      Dann n: m und einen Punkt in y = m · x + n einsetzen, nach n auflösen.
+58      Schnittpunkt zweier Geraden: Terme gleichsetzen, x ausrechnen, y aus einer Gleichung.
+59      Formelsammlung: Lineare Funktionen – Zweipunkteform [FS]
+60
+61  Einheit 5 (Anwendung):
+62      Sachverhalt → Gleichung: n = Anfangswert (Grundgebühr), m = Änderung je Einheit (Preis je km).
+63        3,50 € Grundgebühr, 2 € je km: K(x) = 2x + 3,5
+64      Formelsammlung: Lineare Funktionen [FS]
+65
+66  ### Typische Fehler
+67  - m und n vertauscht (f(x) = 3x + 2 mit n = 3). [FD, P10 Typ „Geradengleichung zu Graph zuordnen", Distraktoren]
+68  - Steigungsdreieck verkehrt gelesen: Δx : Δy statt Δy : Δx; oder bei fallender Gerade positives m. [Serlo 31912 Hinweise]
+69  - y-Achsenabschnitt mit Nullstelle verwechselt. [FD]
+70  - Punkt (x | y) vertauscht eingetragen. [MSK S4]
+71  - Bei m als Bruch (½) „1 nach rechts, ½ nach oben" nicht gezeichnet, sondern 2 nach rechts, 1 nach oben vergessen oder umgekehrt. [FD]
+72  - Steigung aus zwei Punkten mit vertauschter Reihenfolge oben/unten: (3 − 7) : (3 − 1). [Unterrichtsblatt-Prompt-Muster 9; FD]
+73  - Sonderfall m = 0 oder f(x) = x nicht als linear erkannt; senkrechte Gerade als Funktion angenommen. [RLP F Parametereinfluss]
+74  - Bei Tarifen Cent und Euro gemischt. [P10 Typ „Gleichung zu Tarif zuordnen" nennt Einheitenwechsel ausdrücklich]
+75  - Anfangswert und Änderung vertauscht (K(x) = 3,5x + 2). [P10 „Lineare Funktion aus Sachverhalt aufstellen"]
+76
+77  ### Für schwache Schüler
+78  Mindeststoff (D/E) [RLP]: Einheit 1 ganz (proportional ist D/E); Einheit 2 Graph zeichnen und m, n ablesen bei ganzzahligem m; Einheit 3 Funktionswert und Wertetabelle; Einheit 5 Tarif mit Anfangswert und Preis je Einheit. Steigung als Bruch, Nullstelle berechnen, Gleichung aus zwei Punkten, Schnittpunkt rechnerisch sind F.
+79  Grundvorstellung (Blatt 0) [MO, INKL]: Zuordnung als „jedem x gehört genau ein y" – Tabelle ausfüllen aus einer Wortvorschrift („jeder Zahl ihr Doppeltes plus eins") und Punkte eintragen [INKL „Funktionen zeichnen"]; „Was passiert mit y, wenn x um eins größer wird?" an der Tabelle ablesen (Vorbereitung der Steigung als Änderung, nicht als Formel).
+80  Sprossen je Verfahrenstyp [INKL, LS, FD]:
+81  - Proportionale Funktion (Einheit 1): aus einer Wertetabelle den festen Faktor bestimmen (Vorstufe, Blatt 0: Dreisatz aus zuordnungen.md Einheit zwei) → Wertepaare zu einer gegebenen Gleichung y = m · x berechnen und die Ursprungsgerade zeichnen (4×, Faktor eine ganze Zahl) → Wert am Graphen ablesen und mit der Rechnung vergleichen → Faktor als Dezimalzahl → Faktor als Bruch → Faktor negativ, Gerade fällt → aus einer Tabelle über die Quotientengleichheit entscheiden, ob eine proportionale Funktion vorliegt, und die Gleichung angeben → Fehler finden: für den Faktor die Differenz statt des Quotienten genommen → Prüfungshöhe: kein P10-Original – die beiden Darstellungstypen der proportionalen Zuordnung liegen bei zuordnungen.md Einheit eins; Zielmarke nach RLP F und LISUM-PH Jahrgangsstufe acht, Block „Lineare Funktionen mit der Funktionsgleichung y = m · x“ („Deuten von m als Proportionalitätsfaktor“, „Beschreiben der Ursprungsgeraden“): zu einem Sachverhalt die Gleichung aufstellen, den Graphen zeichnen und den Faktor als Änderung je Einheit deuten.
+82  - Graph zeichnen (Einheit 2): Wertetabelle aus Gleichung (3×) → Punkte eintragen → Gerade durch Punkte → n markieren und Steigungsdreieck einen Schritt nach rechts, m nach oben (4×, m ganzzahlig positiv) → m negativ → m als Bruch (zwei nach rechts, einen nach oben) → n negativ → Prüfungshöhe: m Bruch und n negativ (P10 „Gerade aus Gleichung zeichnen").
+83  - Ablesen (Einheit 2): n ablesen (3×) → m ablesen ganzzahlig → m negativ → m Bruch → Gleichung zu Graph zuordnen (Ankreuzen, P10) → Prüfungshöhe: unter vier Geraden die richtige.
+84  - Parameter deuten (Einheit 2): „Steigt oder fällt die Gerade?“ ankreuzen (Vorstufe) → am Vorzeichen von m entscheiden, ob die Gerade steigt oder fällt (4×) → von zwei Geraden die steilere am Betrag von m erkennen → gleiches m: parallele Geraden erkennen und zu einer Geraden eine Parallele angeben → m gleich null: waagerechte Gerade, Gleichung ohne x → n als Schnittpunkt mit der y-Achse deuten, gleiches n: gemeinsamer Punkt auf der y-Achse → n gleich null: Gerade durch den Ursprung → zu einer Gleichung Aussagen über Steigen, Schnittpunkt mit der y-Achse und Ursprung als wahr oder falsch beurteilen → zu einer genannten Eigenschaft den passenden Graphen wählen → m und n im Sachzusammenhang deuten (Änderung je Einheit, Anfangswert) → Prüfungshöhe: zu einer Gleichung unter vier Aussagen die beiden richtigen über Monotonie, Schnittpunkt mit der y-Achse und Ursprung ankreuzen (P10-Form 2021-OS-K2b, Niveau I); zu den Eigenschaften „Anstieg“ und „parallel zur x-Achse“ je den passenden Graphen wählen (2019-OS-K2b, Niveau I); die Bedeutung von x, y und dem Achsenabschnitt einer Kerzengleichung angeben (2021-OS-K6c, Stern; Typ bei lineare-gleichungssysteme.md); im Gymnasialpapier die Lage zweier Geraden mit gleicher Steigung bestimmen (2014-GYM-B1i, Niveau II).
+85  - Funktionswert (Einheit 3): x positiv ganz (4×) → x negativ → x Dezimal → Punktprobe ja/nein gemischt → Prüfungshöhe: Punktprobe mit Bruch-m.
+86  - Argument zum Funktionswert (Einheit 3): zu einem ganzzahligen Funktionswert das Argument bestimmen, Wert gleich Funktionsterm setzen und lösen, m positiv und ganzzahlig (4×) → Funktionswert negativ → m negativ (durch eine negative Zahl teilen) → m als Dezimalzahl oder Bruch → Probe durch Einsetzen → Funktionswert null: die Nullstelle → Argument am Graphen ablesen und mit der Rechnung vergleichen → im Sachzusammenhang: nach wie vielen Einheiten ein Wert erreicht ist, Ergebnis passend runden → Prüfungshöhe: eine Gleichung zu einem Sparplan aufstellen und daraus die kleinste Zahl von Monaten bestimmen, nach der ein Zielbetrag erreicht ist, aufgerundet (P10-Form 2022-OS-K6b, Niveau II); die Zeit bis zum Abbrennen einer Kerze als Nullstelle (2021-OS-K6d, Niveau I); die Nullstelle einer fallenden Geraden aus der Gleichung (2022-OS-K3a, Niveau I).
+87  - Gleichung bestimmen (Einheit 4): aus Graph mit n und ganzzahligem m (3×) → aus m und einem Punkt → aus zwei Punkten, einer auf der y-Achse [INKL Zweipunkteform Niveau 1] → zwei beliebige Punkte → negative Steigung → Prüfungshöhe: zwei Punkte mit Bruch-m (P10 „Geradengleichung aus zwei Punkten").
+88  - Gerade durch zwei Punkte zeichnen (Einheit 4): zwei Punkte mit ganzzahligen Koordinaten im ersten Quadranten eintragen und die Gerade ziehen (4×) → Punkte mit negativen Koordinaten, alle vier Quadranten → ein Punkt liegt auf einer Achse → eine Koordinate mit einer Hälfte auf dem Kästchenraster → die Gerade über beide Punkte hinaus bis zum Rand des Koordinatensystems ziehen → am gezeichneten Graphen y-Achsenabschnitt und Steigung mit dem Steigungsdreieck ablesen und die Gleichung angeben → die Achsen selbst anlegen und einteilen, dann die Gerade durch zwei Punkte zeichnen → Prüfungshöhe: die Gerade durch zwei Punkte mit negativen und halben Koordinaten zeichnen, zwei Aussagen zu Monotonie und Schnittpunkt mit der y-Achse beurteilen und eine Gleichung angeben (P10-Form 2025-OS-K5a, Niveau II, vier Punkte); das Koordinatensystem anlegen, die Gerade zeichnen und eine vorgegebene Gleichung nachweisen (2017-OS-K5a, Niveau II).
+89  - Schnittpunkt zweier Geraden rechnerisch (Einheit 4): zwei Funktionsterme mit verschiedenen ganzzahligen Steigungen gleichsetzen, x ganzzahlig (4×) → x negativ → x als Dezimalzahl → den y-Wert mit einer Gleichung berechnen und mit der anderen prüfen, den Schnittpunkt als Punkt schreiben → gleiche Steigung: kein Schnittpunkt (parallel) oder alle Punkte gemeinsam (identisch) → den Schnittpunkt am Graphen ablesen und mit der Rechnung vergleichen → Prüfungshöhe: kein Original im Oberschulpapier als Haupttyp; im Gymnasialpapier die Koordinaten des Schnittpunkts zweier Geraden durch Gleichsetzen (2023-GYM-B1b, Niveau II, drei Punkte) und die Aussage, dass sich zwei Geraden mit verschiedenen Anstiegen in genau einem Punkt schneiden, mit Kontrolle durch Gleichsetzen (2021-GYM-B2b, Niveau II); im Sachzusammenhang die Strecke, ab der ein Tarif günstiger wird (2015-GYM-K3a; im Oberschulpapier 2016-OS-K6b im Lösungsweg – dort Prüfungshöhe der Kette „Anwendung (Einheit 5)“).
+90  - Anwendung (Einheit 5): Anfangswert und Änderung im Text markieren: „Was ist am Anfang da, was kommt je Einheit dazu?“ (Vorstufe) → Gleichung ankreuzen (3×, P10 „Gleichung zu Tarif zuordnen") → Gleichung aufstellen → Endwert berechnen → zwei Tarife für eine Nutzung vergleichen → Prüfungshöhe: ab wann günstiger (Schnittpunkt im Kontext).
+91
+92  ### Prüfungsform (P10)
+93  Thema „Lineare Funktionen" ist mit 14 Typen eines der größten P10-Themen [P10]: Gerade aus Gleichung zeichnen · Gerade durch zwei Punkte zeichnen · Geradengleichung aus zwei Punkten · Geradengleichung zu Graph zuordnen · Graph einer linearen Funktion erkennen · Graph nach Eigenschaft auswählen · y-Achsenabschnitt ablesen · Nullstelle am Graphen ablesen · Nullstelle berechnen · Schnittpunkt am Graphen ablesen · Lineare Funktion aus Sachverhalt aufstellen · Gleichung zu Tarif zuordnen · Endwert linearer Veränderung berechnen · Tarife vergleichen. Dazu aus „Funktionen allgemein": Funktionswert berechnen, Punktprobe durchführen, Wertetabelle einer Funktion zuordnen, Graph zu Tarif zuordnen, Eigenschaften eines Graphen beurteilen. „Wertetabelle als Punkte darstellen“ und „Achseneinteilung wählen“ liegen dagegen bei zuordnungen.md Einheit 1 und werden hier nicht geführt – die frühere Sammelform „Wertetabelle zuordnen/als Punkte darstellen“ hat beide Typen in einem Namen zusammengezogen und ist am 10g aufgelöst. Ab 09d: die drei Originale des Typs „Funktionswert berechnen“ mit CSV-Thema Exponentialfunktionen und Wachstum (2016-OS-K4e, 2017-OS-K7d, 2020-OS-K4c) führt potenz-exponentialfunktionen.md in seiner Prüfungsform, der Typ bleibt hier. Ab 10g in umgekehrter Richtung: 2021-OS-K6b (Kerze; Haupttyp „Wertetabelle als Punkte darstellen“, Nebentyp „Achseneinteilung wählen“) hat das CSV-Thema „Lineare Funktionen“ und wird deshalb hier geführt, während beide Typen bei zuordnungen.md Einheit 1 bleiben; die Aufgabe gehört zum Kerzenstamm 2021-OS-K6, dessen Teilaufgaben a (2021-OS-K6a, Endwert aus der Tabelle) und d (2021-OS-K6d, Nullstelle) hier ohnehin liegen; c (2021-OS-K6c, Gleichung im Sachzusammenhang deuten) führt lineare-gleichungssysteme.md. Ebenfalls hier geführt, weil ihr CSV-Thema „Funktionen allgemein“ keine eigene Datei hat: 2023-OS-B1i (Punktprobe, den nicht passenden von drei Punkten finden) und 2023-OS-K3a (Graph zu Tarif zuordnen); 2015-OS-K4a hat den Haupttyp „Wert aus Diagramm ablesen“ (daten.md) und trägt „Nullstelle am Graphen ablesen“ nur als Nebenleistung – das Original bleibt bei daten.md, der Typ hier.
+94  Zielmarke: Einheit 1 – kein P10-Original; Marke nach RLP F und LISUM-PH Jg. 8 (Block „Lineare Funktionen mit der Funktionsgleichung y = m · x“): Gleichung zu einem Sachverhalt aufstellen, Ursprungsgerade zeichnen, Faktor als Änderung je Einheit deuten. Einheit 2 – Gerade aus der Gleichung mit y-Achsenabschnitt und Steigungsdreieck zeichnen, auch bei negativer Steigung (2026-FOR-K5a: f(x) = −2x + 2; 2024-OS-K3a: f(x) = 4x + 1; 2022-OS-K3a); drei gezeichneten Geraden aus sechs angebotenen Gleichungen die passende zuordnen, darunter der Sonderfall y = −2 (2019-OS-K2c, Niveau II); Gerade aus der Gleichung y = 3x + 1 mit ganzzahliger Steigung zeichnen (2021-OS-K2a, Niveau I); Graph nach genannter Eigenschaft auswählen (2019-OS-K2b: Anstieg −2, parallel zur x-Achse; 2016-OS-B1c als Basisform: unter zwei Geraden die fallende ankreuzen); y-Achsenabschnitt von y = 0,5x − 1 markieren (2024-OS-B1i); unter vier Graphen die Gerade erkennen (2025-OS-B1f). Einheit 3 – Nullstelle aus der Gleichung berechnen, auch im Sachkontext mit Dezimalsteigung (2022-OS-K3a: x = 1,5; 2021-OS-K6d: y = −0,2x + 40 → 200 min); Nullstelle und Schnittpunkt am Graphen ablesen (2019-OS-K2a; 2023-OS-K4a: S(1|2)); Funktionswert zu einem negativen Argument mit Bruchsteigung berechnen (2017-OS-K5b: y = ½x + 1 an der Stelle −10); Punktprobe rechnerisch mit negativem Argument (2026-FOR-K5b: f(−4) = 10, P liegt auf dem Graphen); vier Aussagen zu einer Geraden als wahr oder falsch beurteilen (2021-OS-K2b). Einheit 4 – Gerade durch A(−2|6) und B(3|−1,5) zeichnen, m = −1,5 und n = 3 bestimmen und f(x) = −1,5x + 3 angeben (2025-OS-K5a, Niveau II, vier Punkte, drei Leistungen in einer Einheit); Gleichung aus zwei Punkten im Sachkontext (2015-OS-K4d: h(t) = −5t + 1300); Behauptung y = ½x + 1 zu zwei Punkten nachweisen (2017-OS-K5a). Einheit 5 – Gesamtkosten zweier Tarife mit Grundgebühr, Freimenge und Preis je Einheit berechnen und den günstigeren mit Begründung wählen (2023-OS-K3b, Niveau II, fünf Punkte: 178,20 € gegen 162,30 €; 2016-OS-K6b mit der Zusatzfrage, ob es bei größerer Strecke günstig bleibt); Gleichung zu einem Tarif ankreuzen, Cent und Euro gemischt (2021-OS-K7a: y = 0,20x + 5); Gleichung aus dem Sachverhalt aufstellen und daraus eine Mindestzahl bestimmen (2022-OS-K6b: y = 55x + 990, 19 Monate); Gleichung zu einem Tarif aus Grundpreis und Preis je Kilometer aufstellen (2016-OS-K6c, Stern: y = 1,5x + 200); Endwert linearer Veränderung (2022-OS-K6a: 1736 €; 2021-OS-K6a als Basisform, Kerzenhöhe am Anfang und nach der letzten Tabellenzeile); Graph zu einem Tarif zuordnen und die Wahl begründen (2016-OS-K6a, 2023-OS-K3a).
+95  Zuordnung: Einheit 1 – kein Typ (proportionale Funktion als Vorstufe, Typen bei zuordnungen.md); Einheit 2 – Gerade aus Gleichung zeichnen, Geradengleichung zu Graph zuordnen, Graph einer linearen Funktion erkennen, Graph nach Eigenschaft auswählen, y-Achsenabschnitt ablesen; Einheit 3 – Nullstelle lineare Funktion berechnen, Nullstelle am Graphen ablesen, Schnittpunkt am Graphen ablesen, dazu aus „Funktionen allgemein“ Funktionswert berechnen, Punktprobe durchführen, Wertetabelle einer Funktion zuordnen; Einheit 4 – Gerade durch zwei Punkte zeichnen, Geradengleichung aus zwei Punkten; Einheit 5 – Lineare Funktion aus Sachverhalt aufstellen, Gleichung zu Tarif zuordnen, Endwert linearer Veränderung berechnen, Tarife vergleichen, dazu aus „Funktionen allgemein“ Graph zu Tarif zuordnen und Eigenschaften eines Graphen beurteilen.
 ````
 
-## 2 Originale (34)
+## 2 Originale (38)
 
-Kennungen aus „Prüfungsform“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
+Kennungen aus „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
 
 ### 2016-OS-K4e (msa-katalog-kontext.csv)
 
@@ -382,6 +385,38 @@ jahr 2016 · papier OS · punkte 2 · format Eintragen|Begründung · antwort Te
 - gesucht: Zuordnung je Graph|Begründung für Sonnenschein
 - verfahren: Grundpreis 200 € = y-Achsenabschnitt → II; ohne Grundpreis durch den Ursprung → I
 - fehlerquelle: nach Steilheit allein zuordnen und I als Sonnenschein wählen
+
+### 2014-GYM-B1i (msa-katalog-gym.csv)
+
+jahr 2014 · papier GYM · punkte 1 · format Ankreuzen · antwort Kreuz
+- gegeben: g(x) = 3x + 7, f(x) = 3x − 7
+- gesucht: Lagebeziehung der Geraden
+- verfahren: gleiche Steigung (3), unterschiedlicher y-Achsenabschnitt (7 ≠ −7) → parallel, nicht identisch
+- fehlerquelle: gleiche Steigung sofort als „identisch“ werten, ohne den y-Achsenabschnitt zu vergleichen
+
+### 2023-GYM-B1b (msa-katalog-gym.csv)
+
+jahr 2023 · papier GYM · punkte 3 · format Rechnung · antwort Term
+- gegeben: f(x) = −0,5x + 2 und g(x) = 0,5x
+- gesucht: Koordinaten des Schnittpunktes S von f und g
+- verfahren: −0,5x + 2 = 0,5x nach x auflösen, dann y berechnen
+- fehlerquelle: nach dem Bestimmen von x vergessen, den y-Wert durch Einsetzen zu berechnen
+
+### 2021-GYM-B2b (msa-katalog-gym.csv)
+
+jahr 2021 · papier GYM · punkte 3 · format Begründung · antwort Text
+- gegeben: Gerade g(x) = −2x + 2 (aus Teilaufgabe a); Gerade h mit h(x) = 5x − 12; Aussage: h schneidet g in genau einem Punkt
+- gesucht: Wahrheitsgehalt der Aussage
+- verfahren: g und h haben unterschiedliche Anstiege (−2 ≠ 5), also sind sie weder parallel noch identisch und schneiden sich in genau einem Punkt; Kontrolle durch Gleichsetzen: −2x + 2 = 5x − 12 liefert x = 2, y = −2
+- fehlerquelle: ohne Vergleich der Anstiege direkt und unbegründet zustimmen oder widersprechen
+
+### 2015-GYM-K3a (msa-katalog-gym.csv)
+
+jahr 2015 · papier GYM · punkte 4 · format Kurzantwort|Begründung|Rechnung · antwort Text|Text|Zahl
+- gegeben: Eurobus: 200 € Buchungsgebühr + 1,50 €/km; Travelbus: 2,00 €/km ohne Grundgebühr; Hin- und Rückfahrt 2 · 175 km = 350 km
+- gesucht: Graph von Eurobus; günstigeres Angebot für 350 km; ob das gewählte Angebot bei zusätzlichen 100 km (450 km) weiterhin günstiger ist
+- verfahren: Eurobus (höherer Achsenabschnitt 200, flachere Steigung 1,5) = Graph II; bei 350 km: Eurobus 200+1,5·350=725 €, Travelbus 2·350=700 € → Travelbus günstiger; Schnittpunkt 200+1,5x=2x → x=400 km; bei 450 km: Eurobus 875 €, Travelbus 900 € → Eurobus jetzt günstiger
+- fehlerquelle: das für 350 km günstigere Angebot ohne erneute Rechnung auch für 450 km annehmen
 
 Als Stamm ohne Teilaufgabe genannt (aufgenommen sind nur einzeln genannte Teilaufgaben): 2021-OS-K6
 

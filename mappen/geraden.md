@@ -3,7 +3,7 @@
 Eintrag: hz-0801/mathe-nachhilfe, katalog/geraden.md
 Katalog-Commit: 2a296e54827b16f81fd664c4430c6fcd84dd5719 (2026-09-28T22:05:53Z, „Katalog-Nachzug Teil 2: Sek II aus den Urteilen vom 28.09.“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-29 12:26 UTC
+Datum: 2026-09-30 08:07 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -129,9 +129,9 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 114  Zielmarke: Einheit 1 – abi: die verlangten Geraden in Teil A (2019-be-gk-A1.3a, Niveau II) und die Gerade in der Ebene ohne Ebenenschnitt (2021-be-gk-A1.5b, Niveau III, Teil A); iqb: die parallele Gerade durch den Teilpunkt (2022MgrundlegendAAGLAA213-b, Niveau II, Teil A) und die Streckendeutung der Standseilbahn (2023MgrundlegendAAGLAA213-a, Niveau I, Teil A). Einheit 2 – abi: die Punktprobe mit Zusatzpunkt (2025-bebb-gk-A1.2a, Niveau II, Teil A) und die Kollinearität dreier Punkte (2020-be-gk-A1.3a, Niveau I, Teil A); iqb: die Schar-Punktprobe (2025MerhoehtAAGLAA221-a, Niveau II, Teil A) und die Höhe aus der Entfernung (2023MgrundlegendAAGLAA213-b, Niveau II, Teil A). Einheit 3 – abi: die Windschiefe am Holzkörper (2021-be-gk-B3b, Niveau II) und das räumliche Gegenbeispiel (2019-be-gk-A1.3b, Niveau II, Teil A); iqb: die Windschiefe am Quader (2018MgrundlegendBAGLAA2WTR1-1b, 2018MerhoehtBAGLAA2WTR1-1b, Niveau I). Einheit 4 – abi: die Verfahrensbeschreibung am Drahtseil (2018-be-gk-B2.2e, Niveau III); iqb: der vertikale Abstand der Seilgeraden (2022MgrundlegendBAGLAA2WTR1-1f, Niveau III) und der erläuterte Strahler-Ansatz (2025MgrundlegendBAGLAA2WTR1-1e, Niveau III).
 ````
 
-## 2 Originale (45)
+## 2 Originale (47)
 
-Kennungen aus „Prüfungsform“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
+Kennungen aus „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
 
 ### 2017MgrundlegendBAnalysisWTR-1g (iqb-katalog.csv)
 
@@ -493,7 +493,21 @@ jahr 2022 · papier 2022-iqb-ga · punkte 5 · format Rechnung · antwort Zahl
 - verfahren: Untere Seilgerade aufstellen, Punkt mit x₂ = 3 bestimmen, Höhendifferenz
 - fehlerquelle: Abstand der Geraden (windschief) berechnen statt des vertikalen Abstands
 
-Nur außerhalb von „Prüfungsform“ genannt, nicht aufgenommen: 2019-be-gk-B3.1c, 2018MgrundlegendBAGLAA2WTR2-1e
+### 2019-be-gk-B3.1c (abi-katalog.csv)
+
+jahr 2019 · papier 2019-be-gk · punkte 5 · format Rechnung · antwort Text|Zahl
+- gegeben: Autotunnel als Teil einer Geraden von S(0 | 40 | 6) nach N(30 | 65 | 7); x-y-Ebene auf Meeresspiegelhöhe, 1 LE = 100 m; Bahntunnel als Gerade durch A(20 | 60 | 6,5) und B(60 | 65 | 6)
+- gesucht: ob der Bahntunnel parallel zum Autotunnel verläuft; Punkt P des Bahntunnels in 640 m Höhe
+- verfahren: Richtungsvektoren (40 | 5 | −0,5) und (30 | 25 | 1) auf Vielfache prüfen; z-Koordinate 6,4 in die Gerade AB einsetzen
+- fehlerquelle: 640 m nicht in 6,4 LE umrechnen
+
+### 2018MgrundlegendBAGLAA2WTR2-1e (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ga · punkte 5 · format Begründung · antwort Text
+- gegeben: Kletteranlage im Koordinatensystem (x1x2-Ebene ist der Untergrund, 1 LE = 1 m): Pfähle durch P1(0 | 0 | 0) und P2(5 | 10 | 0); Kletterwand mit den Eckpunkten A(3 | 0 | 2), B(0 | 3 | 2), E(6 | 0 | 0), F(0 | 6 | 0); Plattform 2 mit den Eckpunkten R(5 | 7 | 3), S(8 | 13 | 3), T(2 | 10 | 3); ein geradliniges Drahtseil von Pfahl 1 (Höhe der Plattform 1, Punkt (0 | 0 | 2)) zu Pfahl 2 oberhalb der Plattform 2 berührt die Plattform 2 an der Seite RT
+- gesucht: Beschreibung, wie der Abstand des oberen Seilendes von der Plattform 2 berechnet werden kann, wenn das Teilverhältnis des Berührpunkts auf RT bekannt wäre
+- verfahren: Teilpunkt U auf RT, Gerade durch (0 | 0 | 2) und U, Schnittpunkt V mit der Pfahlgeraden durch P2 (senkrecht zur x1x2-Ebene), Differenz der x3-Koordinaten von V und R
+- fehlerquelle: den Abstand des Seils von der Plattform statt des Endpunkts beschreiben
 
 ## 3 Maßstab (unterrichtsblatt.md, wortgleich)
 

@@ -1,9 +1,9 @@
 # Mappe: integrationsregeln
 
 Eintrag: hz-0801/mathe-nachhilfe, katalog/integrationsregeln.md
-Katalog-Commit: 761321330add6ed255669afc1c4e11b846250dd5 (2026-09-25T11:16:56+02:00, „katalog: Marken-Zeilen je Lerneinheit, drei Einheiten ergänzt, marken-bau.py“; ermittelt über git log (GitHub-API gesperrt))
+Katalog-Commit: c651dc47624a28a96eb6724ed3e4864024a7bab4 (2026-09-27T22:25:43Z, „katalog: Erkennungsschritte“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-27 12:42 UTC
+Datum: 2026-09-30 08:08 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -41,51 +41,50 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 26  - Potenzen mit Brüchen: Exponenten erhöhen, durch Brüche teilen – die Potenzregel rückwärts in Einheit eins. Sek-I-Themen potenzen-wurzeln.md, rationale-zahlen.md. [GOST-OHiMi 2.1 Algebra]
 27  - Terme umformen: ausklammern, Vorzeichen ziehen – das Passendmachen in Einheit zwei. Sek-I-Thema terme.md. [Rohdatei-Fehlerquelle „Vorzeichen: g' ist minus x, nicht x“, abi 2022-bebb-lk-B2.2g]
 28  Erkennungsschritte (Vorstufe der Einheit, vor der sie stehen, nicht auf Blatt 0; eine Hauptnummer je Schritt):
-29  - „Welche Regel passt?“ – zu Integranden ankreuzen, ob Potenz-, Faktor-, Summen- oder Konstantenregel greift oder eine lineare innere Funktion vorliegt; nichts rechnen. Vor Einheit eins. [GOST-OHiMi „Integrationsregeln“]
-30  - „Was ist hier g?“ – zu Termen der Form Faktor mal e-Term den Exponenten als g markieren und g' daneben schreiben; nichts rechnen. Vor Einheit zwei. [Rohdatei-Fehlerquelle „Vorzeichen der inneren Ableitung“, iqb 2022MerhoehtBAnalysisWTR2-1d]
-31
-32  ### Merkkasten
-33  Einheit 1 (Der Regelsatz):
-34      Potenzregel rückwärts: Exponent um eins erhöhen, durch den neuen Exponenten teilen.
-35        Aus x² wird x³/3.
-36      Faktor bleibt stehen, Summen gliedweise, eine Konstante wird zum linearen Glied.
-37      Lineare Substitution: innere Funktion beibehalten, durch die innere Ableitung teilen.
-38        Aus e^(5x) wird e^(5x)/5.
-39      Grenzen: Vertauschen wechselt das Vorzeichen; Additivität zerlegt das Intervall.
-40      Auswendig (Teil A): der ganze Kasten – [GOST-OHiMi] „Integrationsregeln: Faktorregel, Potenzregel, Konstantenregel, Summenregel, Integration durch Substitution (lineare innere Funktion)“.
-41      Formelsammlung: [FS-IQB 1.2] führt die Stammfunktionspaare tabelliert, nicht die Regeln – [FS] offen
-42  Quelle: eigene Formulierung nach [GOST Q2 L4] „Integrationsregeln“ und [GOST-OHiMi]; Zahlenbeispiele eigen (Ermessen); [LS-AA QP III 4].
-43
-44  Einheit 2 (Vorgegebene Regeln anwenden):
-45      Erst die Struktur, dann die Regel: prüfen, ob der Integrand die Form g' · e^g hat – g aus dem Exponenten ablesen, g' ableiten und mit dem Vorfaktor vergleichen.
-46      Passend machen: fehlt ein Vorzeichen oder ein Faktor, wird er ausgeklammert und vor das Integral gezogen; erst dann die Regel [e^g] an den Grenzen auswerten.
-47        f(x) = x · e^(−x²/2 + 1/2): mit g(x) = −x²/2 + 1/2 ist g'(x) = −x, also f = −g' · e^g.
-48      Auswendig (Teil A): keine – die Regel wird in der Aufgabe vorgegeben (Teil B mit Rechner); sitzen muss das Ableiten von g (Kasten der ableitungsregeln.md).
-49      Formelsammlung: keine – die vorgegebene Regel steht in der Aufgabe, nicht in der Formelsammlung – [FS] offen
-50  Quelle: eigene Formulierung nach den beiden Originalen (Regelwortlaut aus der Aufgabe); Zahlenbeispiel wörtlich aus iqb 2022MerhoehtBAnalysisWTR2-1d; kein Lehrwerks- und kein Anlagenbeleg (Prüfungsform, siehe Offene Punkte).
-51
-52  ### Typische Fehler
-53  Verdichtet aus den Spalten `verfahren` und `fehlerquelle` der 2 Zeilen des Themas in abitur/abi-katalog.csv und abitur/iqb-katalog.csv (Zuordnung über profil, leitidee und thema aus themen.csv, wie rohdatei-bau.py); Beleg ist die Original-id. [FD] nicht verwendet: die Muster sind allein aus den Katalogzeilen belegt.
-54  - Das Vorzeichen der inneren Ableitung übersehen: g' als x statt −x angesetzt und die Regel ohne den Ausgleichsfaktor angewendet. [abi 2022-bebb-lk-B2.2g; iqb 2022MerhoehtBAnalysisWTR2-1d]
-55
-56  ### Für schwache Schüler
-57  Mindeststoff (GK-Kern Q2 / Niveaustufe H / RLP FOS) [GOST, GOST-OHiMi, FOS]: GK-Kern: der ganze Regelsatz der Einheit 1 – Potenz-, Faktor-, Summen-, Konstantenregel und die lineare Substitution stehen im GK-Kern der Q2 und vollständig in der Anlage ohne Hilfsmittel (Prüfungsteil A). RLP FOS (fhr): dieselben vier Regeln ohne Substitution (Pflichtthema 3), angewendet in den Flächenaufgaben. Niveaustufe H der E-Phase [RLP H]: kein Posten – die Sek-I-Pläne kennen das Integral nicht. Vorrat: Einheit 2 (beide Originale erhöht, amtlicher Anforderungsbereich III) – für GK-Schüler nur als Ausblick. COSH [COSH, nachrangig, aus dem Gedächtnis, nicht am Text geprüft]: der Mindestanforderungskatalog verlangt die Grundregeln des Integrierens – deckt sich mit dem GK-Kern, kein zusätzlicher Posten.
-58  Grundvorstellung (Blatt 0) [GOST Q2 L4, MO]: Jede Integrationsregel ist eine Ableitungsregel rückwärts. „Hier sind Kärtchen mit den Ableitungsregeln, die du kennst – Potenzregel, Faktorregel, Summenregel, Kettenregel mit linearer innerer Funktion. Drehe jedes Kärtchen um: was sagt die Regel, wenn man sie von rechts nach links liest? Welche Zahl wird beim Rückwärtslesen aus dem Herunterziehen des Exponenten?“ Wer die Potenzregel in beide Richtungen gleich anwendet oder beim Rückwärtslesen das Teilen vergisst, braucht das vor jeder Rechnung: erst die Richtung, dann die Regel. Verständnis, nicht Verfahren; amtlich in der Vorstellung („Integrieren als Umkehrung des Differenzierens“, Q2 GK-Kern), Ermessen in der Aufgabenform. [MO-Logik: Vorstellung vor Verfahren; BASICS nur als Strukturvorbild Diagnose → Förderung → Nachtest, keine Inhalte]
-59  Sprossen je Verfahrenstyp (Reihenfolge = Kette des Hauptblatts) [Rohdatei; Sprossenfolge Ermessen – Lehrwerk und Rohdatei geben keine Reihenfolge vor]:
-60  - Der Regelsatz (Einheit 1): „Welche Regel passt?“ ankreuzen (Vorstufe, Grundvorstellung) → Potenzen gliedweise aufleiten (Grundfall, viermal) → Faktoren und Konstanten mitführen → die lineare Substitution an e-Termen und Sinus-Termen → Prüfungshöhe: einen gemischten Term mit allen vier Regeln und einer linearen inneren Funktion aufleiten (kein Original – Vermerk; die Anwendung wird bei stammfunktion-und-hauptsatz.md geprüft, dort Einheit eins und zwei); fhr-Zielmarke: die Regeln innerhalb einer Flächenaufgabe (→ flaecheninhalt-durch-integration.md).
-61  - Vorgegebene Regeln anwenden (Einheit 2): „Was ist hier g?“ ankreuzen (Vorstufe) → g und g' zu einem e-Term aufschreiben (Grundfall, viermal) → den Integranden durch Ausklammern eines Vorzeichens passend machen → die Regel an den Grenzen auswerten → Prüfungshöhe: das Integral über die vorgegebene Regel vollständig führen (abi 2022-bebb-lk-B2.2g; iqb 2022MerhoehtBAnalysisWTR2-1d, Niveau II, amtlich III); fhr-Zielmarke: keine – kein Stoff.
-62
-63  ### Prüfungsform (fhr / abi / iqb)
-64  Geltung [konzept.md § 4 Entscheidung 35]: Der IQB-Pool ist für das Profil abi voll maßgeblich – Brandenburg entnimmt seit 2017 Poolaufgaben, seit der KMK-Ländervereinbarung 2020 unverändert, und der Pool wirkt normierend auf Landesaufgaben und Oberstufenklausuren; die Auswahl-Einschränkung steht allein in den Geltungsdateien abi-*-geltung.md. Für fhr ist der Pool keine Vorgabe; ein eigenes fhr-Thema existiert nicht. Die Rohdatei zählt 2 Zeilen mit 1 Haupttyp (abi 1 Zeile, 1 Typ; iqb 1 Zeile, 1 Typ), Jahr 2022. Der Eintrag setzt keine Decke; Häufigkeit ist Auskunft, ein einziges Vorkommen ein vollwertiger Typ. Typname wörtlich aus abitur/abitur-typen.csv (gemeinsame Liste abi/iqb; Thema ohne Gegenstandsklassen, daher ohne Präfix).
-65  fhr: kein eigenes Thema, keine Zeile – die Integrationsregeln laufen in den fhr-Flächenaufgaben mit (→ flaecheninhalt-durch-integration.md).
-66  abi (1 Zeile, 1 Typ; Landesheft bebb-lk 2022) [abi-Katalog]: je 1: Integral über eine vorgegebene Regel für g' · e^g berechnen (E2). Muster: eine einzige Zeile, wortgleiche Pooldublette (2022-bebb-lk-B2.2g aus 2022MerhoehtBAnalysisWTR2-1d) in Teil B des Leistungskurshefts, drei Punkte, Niveau II (amtlicher Anforderungsbereich III) – die Regel steht im Aufgabentext, geprüft wird das Strukturieren.
-67  iqb (1 Zeile, 1 Typ; Pool 2022, erhöht, Teil B) [iqb-Katalog]: je 1: Integral über eine vorgegebene Regel für g' · e^g berechnen (E2). Muster: eine Teil-B-Zeile innerhalb der Analysis-Aufgabe zur Exponentialschar (2022MerhoehtBAnalysisWTR2-1d, drei Punkte, amtlicher Anforderungsbereich III): die Regel ∫ g'(x) · e^(g(x)) dx = [e^(g(x))] wird vorgegeben, der Integrand muss mit einem Vorzeichen passend gemacht werden. 1 Poolzeile kehrt wortgleich im Landesheft wieder (Dublette der abi-Liste).
-68  Zielmarke: Einheit 1 – kein Original (der Regelsatz wird bei stammfunktion-und-hauptsatz.md mitgeprüft); Einheit 2 – abi/iqb: das Integral über die vorgegebene Regel (2022-bebb-lk-B2.2g, 2022MerhoehtBAnalysisWTR2-1d, Niveau II, amtlich III); fhr: keine.
+29  - „Was ist hier g?“ – zu Termen der Form Faktor mal e-Term den Exponenten als g markieren und g' daneben schreiben; nichts rechnen. Vor Einheit zwei. [Rohdatei-Fehlerquelle „Vorzeichen der inneren Ableitung“, iqb 2022MerhoehtBAnalysisWTR2-1d]
+30
+31  ### Merkkasten
+32  Einheit 1 (Der Regelsatz):
+33      Potenzregel rückwärts: Exponent um eins erhöhen, durch den neuen Exponenten teilen.
+34        Aus x² wird x³/3.
+35      Faktor bleibt stehen, Summen gliedweise, eine Konstante wird zum linearen Glied.
+36      Lineare Substitution: innere Funktion beibehalten, durch die innere Ableitung teilen.
+37        Aus e^(5x) wird e^(5x)/5.
+38      Grenzen: Vertauschen wechselt das Vorzeichen; Additivität zerlegt das Intervall.
+39      Auswendig (Teil A): der ganze Kasten – [GOST-OHiMi] „Integrationsregeln: Faktorregel, Potenzregel, Konstantenregel, Summenregel, Integration durch Substitution (lineare innere Funktion)“.
+40      Formelsammlung: [FS-IQB 1.2] führt die Stammfunktionspaare tabelliert, nicht die Regeln – [FS] offen
+41  Quelle: eigene Formulierung nach [GOST Q2 L4] „Integrationsregeln“ und [GOST-OHiMi]; Zahlenbeispiele eigen (Ermessen); [LS-AA QP III 4].
+42
+43  Einheit 2 (Vorgegebene Regeln anwenden):
+44      Erst die Struktur, dann die Regel: prüfen, ob der Integrand die Form g' · e^g hat – g aus dem Exponenten ablesen, g' ableiten und mit dem Vorfaktor vergleichen.
+45      Passend machen: fehlt ein Vorzeichen oder ein Faktor, wird er ausgeklammert und vor das Integral gezogen; erst dann die Regel [e^g] an den Grenzen auswerten.
+46        f(x) = x · e^(−x²/2 + 1/2): mit g(x) = −x²/2 + 1/2 ist g'(x) = −x, also f = −g' · e^g.
+47      Auswendig (Teil A): keine – die Regel wird in der Aufgabe vorgegeben (Teil B mit Rechner); sitzen muss das Ableiten von g (Kasten der ableitungsregeln.md).
+48      Formelsammlung: keine – die vorgegebene Regel steht in der Aufgabe, nicht in der Formelsammlung – [FS] offen
+49  Quelle: eigene Formulierung nach den beiden Originalen (Regelwortlaut aus der Aufgabe); Zahlenbeispiel wörtlich aus iqb 2022MerhoehtBAnalysisWTR2-1d; kein Lehrwerks- und kein Anlagenbeleg (Prüfungsform, siehe Offene Punkte).
+50
+51  ### Typische Fehler
+52  Verdichtet aus den Spalten `verfahren` und `fehlerquelle` der 2 Zeilen des Themas in abitur/abi-katalog.csv und abitur/iqb-katalog.csv (Zuordnung über profil, leitidee und thema aus themen.csv, wie rohdatei-bau.py); Beleg ist die Original-id. [FD] nicht verwendet: die Muster sind allein aus den Katalogzeilen belegt.
+53  - Das Vorzeichen der inneren Ableitung übersehen: g' als x statt −x angesetzt und die Regel ohne den Ausgleichsfaktor angewendet. [abi 2022-bebb-lk-B2.2g; iqb 2022MerhoehtBAnalysisWTR2-1d]
+54
+55  ### Für schwache Schüler
+56  Mindeststoff (GK-Kern Q2 / Niveaustufe H / RLP FOS) [GOST, GOST-OHiMi, FOS]: GK-Kern: der ganze Regelsatz der Einheit 1 – Potenz-, Faktor-, Summen-, Konstantenregel und die lineare Substitution stehen im GK-Kern der Q2 und vollständig in der Anlage ohne Hilfsmittel (Prüfungsteil A). RLP FOS (fhr): dieselben vier Regeln ohne Substitution (Pflichtthema 3), angewendet in den Flächenaufgaben. Niveaustufe H der E-Phase [RLP H]: kein Posten – die Sek-I-Pläne kennen das Integral nicht. Vorrat: Einheit 2 (beide Originale erhöht, amtlicher Anforderungsbereich III) – für GK-Schüler nur als Ausblick. COSH [COSH, nachrangig, aus dem Gedächtnis, nicht am Text geprüft]: der Mindestanforderungskatalog verlangt die Grundregeln des Integrierens – deckt sich mit dem GK-Kern, kein zusätzlicher Posten.
+57  Grundvorstellung (Blatt 0) [GOST Q2 L4, MO]: Jede Integrationsregel ist eine Ableitungsregel rückwärts. „Hier sind Kärtchen mit den Ableitungsregeln, die du kennst – Potenzregel, Faktorregel, Summenregel, Kettenregel mit linearer innerer Funktion. Drehe jedes Kärtchen um: was sagt die Regel, wenn man sie von rechts nach links liest? Welche Zahl wird beim Rückwärtslesen aus dem Herunterziehen des Exponenten?“ Wer die Potenzregel in beide Richtungen gleich anwendet oder beim Rückwärtslesen das Teilen vergisst, braucht das vor jeder Rechnung: erst die Richtung, dann die Regel. Verständnis, nicht Verfahren; amtlich in der Vorstellung („Integrieren als Umkehrung des Differenzierens“, Q2 GK-Kern), Ermessen in der Aufgabenform. [MO-Logik: Vorstellung vor Verfahren; BASICS nur als Strukturvorbild Diagnose → Förderung → Nachtest, keine Inhalte]
+58  Sprossen je Verfahrenstyp (Reihenfolge = Kette des Hauptblatts) [Rohdatei; Sprossenfolge Ermessen – Lehrwerk und Rohdatei geben keine Reihenfolge vor]:
+59  - Der Regelsatz (Einheit 1): „Welche Regel passt?“ – zu Integranden ankreuzen, ob Potenz-, Faktor-, Summen- oder Konstantenregel greift oder eine lineare innere Funktion vorliegt; nichts rechnen (Vorstufe, Grundvorstellung) → Potenzen gliedweise aufleiten (Grundfall, viermal) → Faktoren und Konstanten mitführen → die lineare Substitution an e-Termen und Sinus-Termen → Prüfungshöhe: einen gemischten Term mit allen vier Regeln und einer linearen inneren Funktion aufleiten (kein Original – Vermerk; die Anwendung wird bei stammfunktion-und-hauptsatz.md geprüft, dort Einheit eins und zwei); fhr-Zielmarke: die Regeln innerhalb einer Flächenaufgabe (→ flaecheninhalt-durch-integration.md).
+60  - Vorgegebene Regeln anwenden (Einheit 2): „Was ist hier g?“ ankreuzen (Vorstufe) → g und g' zu einem e-Term aufschreiben (Grundfall, viermal) → den Integranden durch Ausklammern eines Vorzeichens passend machen → die Regel an den Grenzen auswerten → Prüfungshöhe: das Integral über die vorgegebene Regel vollständig führen (abi 2022-bebb-lk-B2.2g; iqb 2022MerhoehtBAnalysisWTR2-1d, Niveau II, amtlich III); fhr-Zielmarke: keine – kein Stoff.
+61
+62  ### Prüfungsform (fhr / abi / iqb)
+63  Geltung [konzept.md § 4 Entscheidung 35]: Der IQB-Pool ist für das Profil abi voll maßgeblich – Brandenburg entnimmt seit 2017 Poolaufgaben, seit der KMK-Ländervereinbarung 2020 unverändert, und der Pool wirkt normierend auf Landesaufgaben und Oberstufenklausuren; die Auswahl-Einschränkung steht allein in den Geltungsdateien abi-*-geltung.md. Für fhr ist der Pool keine Vorgabe; ein eigenes fhr-Thema existiert nicht. Die Rohdatei zählt 2 Zeilen mit 1 Haupttyp (abi 1 Zeile, 1 Typ; iqb 1 Zeile, 1 Typ), Jahr 2022. Der Eintrag setzt keine Decke; Häufigkeit ist Auskunft, ein einziges Vorkommen ein vollwertiger Typ. Typname wörtlich aus abitur/abitur-typen.csv (gemeinsame Liste abi/iqb; Thema ohne Gegenstandsklassen, daher ohne Präfix).
+64  fhr: kein eigenes Thema, keine Zeile – die Integrationsregeln laufen in den fhr-Flächenaufgaben mit (→ flaecheninhalt-durch-integration.md).
+65  abi (1 Zeile, 1 Typ; Landesheft bebb-lk 2022) [abi-Katalog]: je 1: Integral über eine vorgegebene Regel für g' · e^g berechnen (E2). Muster: eine einzige Zeile, wortgleiche Pooldublette (2022-bebb-lk-B2.2g aus 2022MerhoehtBAnalysisWTR2-1d) in Teil B des Leistungskurshefts, drei Punkte, Niveau II (amtlicher Anforderungsbereich III) – die Regel steht im Aufgabentext, geprüft wird das Strukturieren.
+66  iqb (1 Zeile, 1 Typ; Pool 2022, erhöht, Teil B) [iqb-Katalog]: je 1: Integral über eine vorgegebene Regel für g' · e^g berechnen (E2). Muster: eine Teil-B-Zeile innerhalb der Analysis-Aufgabe zur Exponentialschar (2022MerhoehtBAnalysisWTR2-1d, drei Punkte, amtlicher Anforderungsbereich III): die Regel ∫ g'(x) · e^(g(x)) dx = [e^(g(x))] wird vorgegeben, der Integrand muss mit einem Vorzeichen passend gemacht werden. 1 Poolzeile kehrt wortgleich im Landesheft wieder (Dublette der abi-Liste).
+67  Zielmarke: Einheit 1 – kein Original (der Regelsatz wird bei stammfunktion-und-hauptsatz.md mitgeprüft); Einheit 2 – abi/iqb: das Integral über die vorgegebene Regel (2022-bebb-lk-B2.2g, 2022MerhoehtBAnalysisWTR2-1d, Niveau II, amtlich III); fhr: keine.
 ````
 
 ## 2 Originale (2)
 
-Kennungen aus „Prüfungsform“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
+Kennungen aus „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
 
 ### 2022-bebb-lk-B2.2g (abi-katalog.csv)
 

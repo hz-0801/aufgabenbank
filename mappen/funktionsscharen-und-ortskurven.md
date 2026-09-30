@@ -1,9 +1,9 @@
 # Mappe: funktionsscharen-und-ortskurven
 
 Eintrag: hz-0801/mathe-nachhilfe, katalog/funktionsscharen-und-ortskurven.md
-Katalog-Commit: 95b0f8b09856c14466ca030dd604451b8d259cfa (2026-09-26T16:47:30+02:00, „katalog: Sek-II-Einträge auf den CAS-Nachtrag“; ermittelt über git log (GitHub-API gesperrt))
+Katalog-Commit: c651dc47624a28a96eb6724ed3e4864024a7bab4 (2026-09-27T22:25:43Z, „katalog: Erkennungsschritte“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-27 12:41 UTC
+Datum: 2026-09-30 08:07 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -53,99 +53,95 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
  38  - Ableitungsregeln sicher anwenden, auch mit Vorfaktoren – der Kalkül in Einheit drei. Sek-II-Nachbarthema ableitungsregeln.md. [Klarstellung Geometrie sinngemäß: Blatt-0-Fertigkeit aus dem Sek-II-Nachbarthema derselben Stufe]
  39  - Extrem- und Wendepunktkriterien an fester Funktion führen – die Nachweise in Einheit drei und vier. Sek-II-Nachbarthema kurvenuntersuchung.md. [GOST Q1 GK-Kern; Rohdatei-Fehlerquelle „nur f'' gleich null geprüft“, abi 2026-bb-ea-B2.2a]
  40  - Stammfunktion bilden und bestimmtes Integral auswerten – die Flächenbedingungen in Einheit vier und fünf. Sek-II-Nachbarthema stammfunktion-und-hauptsatz.md (Bündel 5). [GOST LK Integralrechnung; iqb 2023MerhoehtAAnalysis12-a]
- 41  Erkennungsschritte (Vorstufe der Einheit, vor der sie stehen, nicht auf Blatt 0; eine Hauptnummer je Schritt):
- 42  - „Wer ist hier unbekannt – die Stelle oder der Parameter?“ – zu Aufgabentexten ankreuzen, wonach aufgelöst wird; nichts rechnen. Vor Einheit eins. [Rohdatei-Fehlerquelle „beim Eliminieren a statt x einsetzen“, abi 2022-bebb-lk-A1.3b]
- 43  - „Fällt der Parameter heraus?“ – zu Termpaaren ankreuzen, ob eine Differenz oder Gleichsetzung den Parameter behält oder verliert; nichts rechnen. Vor Einheit zwei. [abi 2026-bb-ea-B2.2b; iqb 2020MerhoehtAAnalysis13-b]
- 44  - „Vorwärts oder rückwärts?“ – zu Aufgabentexten ankreuzen: Eigenschaft aus gegebenem Parameter (vorwärts) oder Parameter aus gegebener Bedingung (rückwärts); nichts rechnen. Vor Einheit vier. [iqb 2019MgrundlegendBAnalysisWTR2-1d]
- 45  - „Wovon hängt dieser Punkt ab?“ – zu markanten Punkten ankreuzen, ob ihre Koordinaten den Parameter tragen; nichts rechnen. Vor Einheit fünf. [abi 2022-bebb-lk-A1.3b; iqb 2022MerhoehtBAnalysisWTR2-2f]
- 46
- 47  ### Merkkasten
- 48  Einheit 1 (Scharbegriff und Parameterwert):
- 49      Eine Schar ist eine Familie: jeder Parameterwert liefert eine eigene Funktion mit eigenem Graphen; der Parameter ist eine feste Zahl, nicht die Variable.
- 50      Parameter aus einem Punkt: beide Koordinaten einsetzen, nach dem Parameter auflösen.
- 51        f_a(x) = a · x³ + a · x², Punkt (1 | 6): a + a = 6, also a = 3.
- 52      Parameter am Bild zuordnen: ein parameterabhängiges Merkmal wählen – y-Achsenabschnitt, Extremstelle, Grenzverhalten, Spiegelbild – und die Kurven danach ordnen; die Form allein trägt nicht.
- 53      Sonderfälle mitdenken: der Parameterwert, der die Schar linear macht oder die Ausgangsfunktion liefert.
- 54      Auswendig (Teil A): „Parameter aus einem Punkt“ und der Familiengedanke – begründetes Ermessen: die Anlage ohne Hilfsmittel nennt Scharen nicht, die Teil-A-Zeilen 2024-bebb-lk-A1.1a und 2024MerhoehtAAnalysis12-a verlangen das Einsetzen ohne Rechner.
- 55      Formelsammlung: keine – Scharen stehen nicht in der Formelsammlung – [FS] offen
- 56  Quelle: eigene Formulierung nach [GOST Q1 LK] „Funktionsscharen mit einem Parameter“; Zahlenbeispiel aus dem Pool (2024MerhoehtAAnalysis12-a, wörtlich); [LS-AA QP IV 7].
- 57
- 58  Einheit 2 (Eigenschaften aller Graphen):
- 59      Nullstellen mit Parameter: faktorisieren und jeden Faktor einzeln ansehen; der e-Faktor ist nie null; trägt ein Faktor den Parameter, wird unterschieden, für welche Parameterwerte er null werden kann.
- 60        f_k(x) = −kx · (x − 8), k > 0: Nullstellen 0 und 8 – für jedes k dieselben.
- 61      Gemeinsame Punkte aller Graphen: zwei Scharfunktionen gleichsetzen – an den Lösungen fällt der Parameter heraus; oder gleich die Stellen suchen, an denen der Parameterterm verschwindet.
- 62      Symmetrie und Vorzeichen: f_k(−x) bilden und den Parameter festhalten; Vorzeichen über die Faktoren begründen, und zwar für jeden Parameterwert.
- 63      Grenzverhalten: nach Vorzeichen oder Parität des Parameters unterscheiden; der Sonderfall gehört in die Antwort.
- 64      Auswendig (Teil A): „Gemeinsame Punkte“ und „Symmetrie und Vorzeichen“ – begründetes Ermessen: die Anlage nennt Scharen nicht, die Teil-A-Zeilen 2025MerhoehtAAnalysis11-a und 2025MerhoehtAAnalysis11-b verlangen beides ohne Rechner.
- 65      Formelsammlung: keine – [FS] offen
- 66  Quelle: eigene Formulierung nach [GOST Q1 LK] und der Eigenschaftenliste des GK-Kerns (je Parameterwert gelesen); Zahlenbeispiel aus dem Pool (2019MgrundlegendBAnalysisWTR2-1a, wörtlich der Scharterm); [LS-AA QP IV 7].
- 67
- 68  Einheit 3 (Extrem- und Wendepunkte mit Parameter):
- 69      Ableiten mit Parameter: der Parameter läuft als Zahl mit; steht er im Exponenten oder als innerer Faktor, gehört er zur inneren Ableitung.
- 70      Extrem- und Wendestellen sind Terme im Parameter: Ableitung null setzen, die Lösungen hängen vom Parameter ab; hinreichende Bedingung wie bei der festen Funktion – Kriterien in kurvenuntersuchung.md.
- 71      Anzahl über die Lösbarkeit: die Extremstellengleichung nach der Zahl ihrer Lösungen befragen – Fallunterscheidung nach dem Parametervorzeichen oder Diskriminante.
- 72        a · x² = 1: für a > 0 zwei Lösungen, sonst keine – zwei Extrempunkte oder keiner.
- 73      Gemeinsames erkennen: eine Nullstelle der Ableitung, aus der der Parameter herausfällt, gehört allen Graphen.
- 74      Auswendig (Teil A): „Anzahl über die Lösbarkeit“ – begründetes Ermessen: die Anlage nennt Scharen nicht, die Teil-A-Zeilen 2022-bebb-lk-A1.4b und 2024MerhoehtAAnalysis13-a verlangen die Fallunterscheidung ohne Rechner.
- 75      Formelsammlung: [FS-IQB 1.1] „Quadratische Gleichung“ (Lösungsformel, Diskriminante); die Kriterien selbst stehen nicht in der Formelsammlung – [FS] offen
- 76  Quelle: eigene Formulierung nach [GOST Q1 LK] „Funktionsscharen mit einem Parameter“ und den Kästen von kurvenuntersuchung.md; Zahlenbeispiel aus dem Landesheft (2022-bebb-lk-B2.2m, wörtlich die Extremstellengleichung); [LS-AA QP IV 7].
- 77
- 78  Einheit 4 (Parameter aus Bedingungen):
- 79      Rückwärts denken: die Bedingung – ein Flächeninhalt, eine Wendestelle, eine Punktlage, ein Abstand – als Gleichung im Parameter ansetzen und exakt lösen; Vorzeichenbedingungen an den Parameter sieben die Lösungen.
- 80      Flächen mit Parameter: Nullstellen als Terme im Parameter bestimmen, das Integral zwischen ihnen auswerten; liegt das Flächenstück unter der Achse, trägt das Integral ein Minuszeichen.
- 81        f(x) = −x² + 2ax, a > 1: das Integral von 0 bis 2a liefert 4/3 a³.
- 82      Lagen markanter Punkte: den Extrem- oder Wendepunkt in Parameterkoordinaten aufschreiben und die geforderte Lage – auf einer Geraden, auf der x-Achse, als Quadratecke – als Gleichung übersetzen.
- 83      Übergänge: sprungfrei heißt gleiche Funktionswerte an der Nahtstelle, knickfrei zusätzlich gleiche Ableitung.
- 84      Auswendig (Teil A): „Rückwärts denken“ und „Flächen mit Parameter“ – begründetes Ermessen: die Anlage nennt Scharen nicht, die Teil-A-Zeilen 2023-bebb-lk-A1.3a und 2023MerhoehtAAnalysis12-a verlangen die Parameterfläche ohne Rechner.
- 85      Formelsammlung: keine – die Stammfunktionen liegen bei stammfunktion-und-hauptsatz.md – [FS] offen
- 86  Quelle: eigene Formulierung nach [GOST LK Integralrechnung] „Bestimmung von Scharparametern bzw. Integrationsgrenzen bei gegebenem Volumen oder Flächeninhalt“; Zahlenbeispiel aus dem Pool (2023MerhoehtAAnalysis12-a, wörtlich); [LS-AA QP IV 7].
- 87
- 88  Einheit 5 (Ortskurve und Kurvenvergleich):
- 89      Ortskurve in drei Schritten: den markanten Punkt in Parameterkoordinaten bestimmen; den Parameter über die x-Koordinate ausdrücken; in die y-Koordinate einsetzen – das Ergebnis ist die Gleichung, auf der alle diese Punkte liegen.
- 90        Extrempunkt (−3/a | −27/a²): aus der x-Koordinate folgt a = −3/x, Einsetzen liefert y = −3x².
- 91      Probe rückwärts: ein konkreter Parameterwert, sein Extrempunkt, die Punktprobe an der Ortskurve.
- 92      Nachbarkurven vergleichen: Differenzen an fester Stelle – y-Achsenabschnitte, Hochpunkte – als Term im Parameter; fällt der Parameter heraus, gilt das Ergebnis für alle Nachbarpaare.
- 93      Spiegel- und Streckbilder: das Bild als Term bilden und mit der Scharvorschrift vergleichen – liefert der Vergleich einen neuen Parameterwert, gehört das Bild zur Schar.
- 94      Auswendig (Teil A): „Ortskurve in drei Schritten“ – begründetes Ermessen: die Anlage nennt Ortskurven nicht, die Teil-A-Zeile 2022-bebb-lk-A1.3b verlangt die Elimination ohne Rechner.
- 95      Formelsammlung: keine – Ortskurven stehen nicht in der Formelsammlung – [FS] offen
- 96  Quelle: eigene Formulierung nach [GOST Q1 LK] „Ortskurven von Extrem- und Wendepunkten“; Zahlenbeispiel aus dem Landesheft (2022-bebb-lk-A1.3b, wörtlich der Extrempunkt); [LS-AA QP IV 7 sinngemäß – der Fahrplan nennt Ortskurven nicht].
- 97
- 98  ### Typische Fehler
- 99  Verdichtet aus den Spalten `verfahren` und `fehlerquelle` der 142 Zeilen des Themas in abitur/abi-katalog.csv und abitur/iqb-katalog.csv (Zuordnung über profil, leitidee und thema aus themen.csv, wie rohdatei-bau.py); Beleg ist die Original-id. [FD] nur, wo die Kataloge das Muster stützen.
-100  - Parameter und Variable vertauscht: nach x statt nach dem Parameter aufgelöst, beim Eliminieren den Parameter statt der Variablen eingesetzt, aus der Exponentialgleichung die falsche Größe gezogen, den Parameter abgegeben statt der Stelle. [abi 2022-bebb-lk-A1.3b, 2023-bebb-lk-B2.1h, 2017-bb-ea-B2.2b; iqb 2020MerhoehtAAnalysis13-b, 2026MerhoehtAAnalysis22]
-101  - Fallunterscheidung fehlt oder verkürzt: den Sonderfall Parameter null vergessen oder unzulässig mitgeführt, die Fälle auf zwei Vorzeichen verkürzt, Randwerte des Parameterbereichs nicht ausgeschlossen, den ausgeschlossenen Parameterwert nicht genannt. [abi 2022-bebb-lk-A1.3a, 2022-bebb-lk-A1.4b, 2024-bebb-lk-B2.1a, 2024-bebb-lk-B2.1b, 2018-bb-ea-B2.1a, 2018-bb-ea-B2.2e; iqb 2022MerhoehtBAnalysisWTR2-2e, 2026MerhoehtBAnalysisMMS1-1c, 2021MerhoehtAAnalysis12-b, 2023MgrundlegendBAnalysisWTR1-3c, 2022MerhoehtBAnalysisWTR1-1g]
-102  - Den e-Faktor oder den Nenner als Nullstellenquelle behandelt. [abi 2017-bb-ea-B2.1b, 2023-bebb-lk-B2.1a; iqb 2020MgrundlegendBAnalysisWTR2-2b]
-103  - Allgemeinheit durch Beispiele ersetzt: den Nachweis für alle Parameterwerte an einem oder zwei Werten geführt, den Parameterwert aus der Abbildung geraten, die Eindeutigkeit nicht aus der Äquivalenzkette geholt. [abi 2018-bb-ea-B2.1d, 2026-bb-ea-B2.2b, 2024-bebb-lk-B2.2d, 2022-bebb-lk-B2.1c, 2022-bebb-lk-B2.2i; iqb 2026MerhoehtBAnalysisWTR1-1b, 2024MerhoehtBAnalysisWTR2-1e, 2020MgrundlegendBAnalysisWTR2-2a, 2025MerhoehtBAnalysisWTR1-1a, 2022MerhoehtBAnalysisWTR2-2a; FD Vollrath/Weigand zum Beweisbedürfnis am Beispiel]
-104  - Vorzeichen und Exponenten mit Parameter verrechnet: Minuszeichen an Potenzen und im Exponenten verloren, Parameterexponenten falsch vereinfacht, die Kettenregel am Parameterterm ausgelassen, Wurzeln und Logarithmen mit Parameter falsch gezogen. [abi 2023-bebb-lk-B2.1d, 2023-bebb-lk-B2.1f, 2026-bb-ea-B2.1a, 2022-bebb-lk-B2.1l, 2025-bebb-lk-B2.2e, 2025-bebb-lk-B2.1c; iqb 2025MerhoehtBAnalysisWTR3-1a, 2021MgrundlegendBAnalysisWTR-1d, 2026MerhoehtBAnalysisWTR2-1c, 2018MerhoehtBAnalysisWTR2-1e, 2025MerhoehtAAnalysis11-a, 2025MerhoehtAAnalysis11-b, 2019MgrundlegendBAnalysisWTR2-1d, 2022MerhoehtAAnalysis12-b]
-105  - Hinreichendes weggelassen: nur die zweite Ableitung null gesetzt, die Art nicht begründet, das globale Minimum nicht vom lokalen unterschieden, den Vorzeichenwechsel nicht genannt, die Parameterbedingung der hinreichenden Bedingung unterschlagen. [abi 2026-bb-ea-B2.2a, 2023-bebb-lk-B2.1e, 2022-bebb-lk-B2.1f, 2024-bebb-lk-B2.1i, 2025-bebb-lk-B2.2f; iqb 2026MerhoehtBAnalysisWTR1-1a, 2025MerhoehtBAnalysisWTR1-1b, 2018MerhoehtBAnalysisWTR2-1g, 2019MgrundlegendBAnalysisWTR2-1b, 2020MgrundlegendBAnalysisWTR1-1g, 2024MerhoehtBAnalysisWTR3-2b, 2025MerhoehtBAnalysisWTR3-1c, 2025MerhoehtBAnalysisMMS1-1a]
-106  - Integral und Fläche mit Parameter: das Flächenstück unter der Achse positiv angesetzt, Parameterpotenzen beim Einsetzen der Grenzen falsch, den Parameterfaktor beim Integrieren vergessen, das Vorzeichen an der unteren Grenze verloren. [abi 2023-bebb-lk-A1.3a, 2024-bebb-lk-A1.1b, 2024-bebb-lk-B2.2e, 2017-bb-ea-B2.1e; iqb 2023MerhoehtAAnalysis12-a, 2024MerhoehtAAnalysis12-b, 2024MerhoehtBAnalysisWTR2-1c, 2024MgrundlegendBAnalysisWTR1-1e, 2025MerhoehtBAnalysisWTR1-1c, 2026MerhoehtBAnalysisMMS1-1b, 2020MerhoehtAAnalysis21-b]
-107  - Zuordnen ohne tragfähiges Merkmal: an der Steilheit oder der Form statt am Grenzverhalten, y-Achsenabschnitt oder Extremstellenvergleich festgemacht, die Zuordnung aus dem ersten Anschein der Abbildung. [abi 2024-bebb-lk-B2.1c, 2024-bebb-lk-A1.2b, 2024-bebb-lk-A1.2a; iqb 2024MerhoehtAAnalysis13-a, 2024MerhoehtAAnalysis13-b, 2026MerhoehtBAnalysisWTR2-1b, 2025MerhoehtBAnalysisWTR2-2a, 2024MerhoehtBAnalysisWTR1-2a, 2022MerhoehtAAnalysis13-b, 2022MerhoehtBAnalysisWTR1-1f]
-108  - Ortskurve und Nachbarkurven: die Ortskurve über die allgemeine Extremstelle ausgerechnet, wo Sonderfall und Streckung genügen, den Punkt auf der Ortskurve nicht als Funktionswert erkannt, Abstände nur in einer Koordinatenrichtung genommen, die Steigung als Quotient der Koordinaten eines einzelnen Punkts. [abi 2022-bebb-lk-B2.2n, 2022-bebb-lk-B2.2o, 2023-bebb-lk-B2.1g; iqb 2022MerhoehtBAnalysisWTR2-2f, 2022MerhoehtBAnalysisWTR2-2g, 2018MerhoehtBAnalysisWTR2-1h, 2024MerhoehtBAnalysisWTR3-2c, 2019MgrundlegendBAnalysisWTR2-1c, 2025MerhoehtBAnalysisMMS1-1b, 2025MerhoehtBAnalysisMMS2-1b]
-109  - Spiegel- und Streckbilder falsch gebildet: die Streckung in x-Richtung mit dem Faktor statt dem Kehrwert, an der falschen Achse gespiegelt, Achsen- mit Punktsymmetrie verwechselt, das Vorzeichen der Verschiebung verdreht. [abi 2022-bebb-lk-B2.2l; iqb 2022MerhoehtBAnalysisWTR2-2d, 2024MerhoehtBAnalysisWTR3-2d, 2025MerhoehtBAnalysisWTR2-2b, 2026MerhoehtBAnalysisWTR2-1d]
-110  - Sachzusammenhang und Maßstab: den Maßstab der Achsen vergessen, die Bedingung an der falschen Stelle angesetzt, Knickfreiheit als gleiche Funktionswerte gedeutet, gleiche Winkel als gleiche statt entgegengesetzt gleiche Steigungen, die Bezugslinie der Ausdehnung verwechselt. [abi 2019-be-gk-B2.2h, 2017-bb-ea-B2.1e; iqb 2022MgrundlegendBAnalysisWTR1-2c, 2020MgrundlegendBAnalysisWTR1-1h, 2020MgrundlegendBAnalysisWTR1-1i, 2018MerhoehtBAnalysisWTR2-1i, 2018MerhoehtBAnalysisWTR2-1j, 2018MerhoehtBAnalysisWTR2-1d, 2022MerhoehtBAnalysisWTR1-1e]
-111  - Parameterrechnungen an Geraden und Potenzen verkürzt: benachbarte Parameterwerte falsch subtrahiert, Potenzdifferenzen wie Vielfache behandelt, den Ausnahmewert des Parameters nicht ausgeschlossen, im Nachweis die falsche Stelle betrachtet. [abi 2023-bebb-lk-B2.2l, 2023-bebb-lk-B2.2i, 2023-bebb-lk-B2.2j, 2022-bebb-lk-B2.1d, 2022-bebb-lk-B2.2j, 2022-bebb-lk-B2.2k, 2022-bebb-lk-B2.2m, 2025-bebb-lk-B2.1a; iqb 2023MerhoehtBAnalysisWTR1-2a, 2023MerhoehtBAnalysisWTR1-2b, 2023MerhoehtBAnalysisWTR1-2c, 2023MerhoehtBAnalysisWTR1-2d, 2018MerhoehtBAnalysisWTR1-2f, 2026MerhoehtBAnalysisMMS2-2a, 2026MerhoehtBAnalysisWTR2-1a, 2021MgrundlegendBAnalysisWTR-1e, 2022MerhoehtAAnalysis13-a, 2026-bb-ea-B2.1b als Landeszwilling]
-112  - Deutungen im Modell verfehlt: Grenzwert- und Anfangswertgleichungen falsch gedeutet, die Quadratbedingung als Punktgleichheit statt Kantengleichheit, den Abstand markanter Punkte falsch angesetzt. [iqb 2024MerhoehtBAnalysisWTR1-2d, 2024MerhoehtBAnalysisWTR1-2e, 2026MerhoehtBAnalysisMMS2-2d, 2025MerhoehtBAnalysisWTR3-1d, 2025MerhoehtBAnalysisWTR3-1b, 2019MgrundlegendBAnalysisWTR2-1a, 2023MgrundlegendBAnalysisWTR1-3a, 2023MgrundlegendBAnalysisWTR1-3b]
-113
-114  ### Für schwache Schüler
-115  Mindeststoff (GK-Kern Q1 / Niveaustufe H / RLP FOS) [GOST, GOST-OHiMi, FOS]: Nach dem Brandenburger Plan ist das ganze Thema Leistungskursstoff – der GK-Kern der Q1 nennt weder Scharen noch Ortskurven, die Anlage ohne Hilfsmittel auch nicht; einen fhr-Anteil gibt es nicht (RLP FOS ohne Scharen, kein fhr-Bestand). Der Pool prüft Scharen gleichwohl auf grundlegendem Niveau in Teil B (sechzehn Zeilen, Jahre ab dem ersten Pooljahrgang); wer grundlegend zur Prüfung geht, braucht deshalb als Arbeits-Mindeststoff: den Familiengedanken und die Parameterbestimmung aus einem Punkt (Einheit 1), die Nullstellen- und Vorzeichenfragen am faktorisierten Scharterm (Einheit 2) und die Parameterbestimmung aus einer Flächen- oder Wertebedingung in der Grundform (Einheit 4) – alles an ganzrationalen Termen und einfachen e-Produkten. LK (voller Umfang): dazu die Anzahl- und Existenzfragen mit Fallunterscheidung (Einheit 3), die allgemeinen Nachweise für alle Parameterwerte (Einheit 2 und 3) und die Ortskurven samt Kurvenvergleich (Einheit 5). Niveaustufe H der E-Phase [RLP H]: kein eigener Posten – die Sek-I-Pläne kennen die Schar nicht; der nächste Anker ist der Einfluss der Parameter auf die Parabel (quadratische-funktionen.md), Blatt-0-Stoff. Vorrat für GK: alles aus Einheit 3 und 5, die Trapez- und Identitätsnachweise und die MMS-Zeilen nach dem Niveau der Rohdatei. COSH [COSH, nachrangig, aus dem Gedächtnis, nicht am Text geprüft]: der Mindestanforderungskatalog führt Parameterdiskussionen nicht als eigenen Posten – kein zusätzlicher Mindeststoff.
-116  Grundvorstellung (Blatt 0) [GOST Q1 LK, MO]: Die Schar ist eine Familie von Graphen – ein Parameterwert, ein Graph; der Parameter wählt aus, die Variable läuft. „Hier ist eine Abbildung mit mehreren beschrifteten Kurven derselben Schar, kein fester Term. Lege den Finger auf eine Kurve: welcher Parameterwert gehört ihr? Woran erkennst du das – am Schnitt mit der Hochachse, an der Lage des höchsten Punkts, am Verlauf nach rechts? Und umgekehrt: der Parameterwert wird um eins größer – wandert deine Kurve nach oben, wird sie steiler, spiegelt sie sich? Zeige mit dem Finger, wohin ihr höchster Punkt wandert.“ Wer den Parameter mit der Variablen verwechselt oder alle Kurven für denselben Graphen hält, braucht das vor jeder Rechnung: erst die Rollen (wer ist fest, wer läuft), dann das Verfahren. Verständnis, nicht Verfahren; Ermessen in Vorstellung und Aufgabenform – die Eingangsvoraussetzungen der Leitidee L4 kennen keine Scharen, der nächste amtliche Anker ist der Parametereinfluss bei der Parabel (Sek I). [MO-Logik: Vorstellung vor Verfahren; Rohdatei-Fehlerquelle „beim Eliminieren a statt x einsetzen“, abi 2022-bebb-lk-A1.3b; BASICS nur als Strukturvorbild Diagnose → Förderung → Nachtest, keine Inhalte]
-117  Sprossen je Verfahrenstyp (Reihenfolge = Kette des Hauptblatts) [LS-AA, Rohdatei; Sprossenfolge Ermessen, wo Lehrwerk und Rohdatei keine Reihenfolge vorgeben]:
-118  - Scharbegriff und Parameterwert (Einheit 1): „Wer ist hier unbekannt?“ ankreuzen (Vorstufe, Grundvorstellung) → ein Scharmitglied zu festem Parameterwert hinschreiben und einen Funktionswert berechnen (Grundfall, viermal, ganzrationale Schar) → den Parameter aus einem Punkt bestimmen: einsetzen, lineare Gleichung lösen (abi 2024-bebb-lk-A1.1a, 2022-bebb-lk-A1.3a, 2022-bebb-lk-B2.1l; iqb 2024MerhoehtAAnalysis12-a, 2021MgrundlegendBAnalysisWTR-1d, 2025MerhoehtBAnalysisWTR1-1a) → Parameter im Exponenten oder als Potenz: durch Vergleich exakt lösen (iqb 2025MerhoehtBAnalysisWTR3-1a; abi 2022-bebb-lk-B2.2i, 2023-bebb-lk-B2.2l) → den Parameter aus einer Sachvorgabe gewinnen: Ausdehnung, Anfangswert und Grenzwert, Punktdurchgang der Flugkurve (iqb 2020MgrundlegendBAnalysisWTR1-1h, 2018MerhoehtBAnalysisWTR2-1e, 2024MerhoehtBAnalysisWTR1-2e) → abgebildete Kurven den Parameterwerten zuordnen: y-Achsenabschnitt, Extremstelle, Spiegelbild, Grenzverhalten (iqb 2026MerhoehtBAnalysisWTR2-1b, 2025MerhoehtBAnalysisWTR2-2a, 2024MerhoehtAAnalysis13-b; abi 2024-bebb-lk-B2.1c, 2024-bebb-lk-A1.2b) → Sonderfälle und Einfluss beschreiben: linearer Sonderfall, additiver und multiplikativer Parameter (abi 2022-bebb-lk-B2.2j, 2019-be-gk-B2.2h; iqb 2022MerhoehtBAnalysisWTR2-2b, 2023MgrundlegendBAnalysisWTR1-3a) → ein Scharmitglied in die Abbildung skizzieren (iqb 2022MerhoehtAAnalysis13-a) → Prüfungshöhe: Bestimmungsgleichungen im Sachzusammenhang deuten und auswerten (iqb 2024MerhoehtBAnalysisWTR1-2d, 2024MerhoehtBAnalysisWTR1-2a, Niveau II) und die Eignung von Scharmitgliedern am Bild beurteilen (iqb 2022MerhoehtBAnalysisWTR1-1f, 2022MerhoehtBAnalysisWTR1-1g, Niveau III).
-119  - Eigenschaften aller Graphen (Einheit 2): „Fällt der Parameter heraus?“ ankreuzen (Vorstufe) → Nullstellen einer faktorisierten Schar ablesen, Parameterfaktoren einzeln ansehen (Grundfall, viermal; iqb 2019MgrundlegendBAnalysisWTR2-1a, 2025MerhoehtBAnalysisMMS1-1a, 2026MerhoehtBAnalysisMMS2-2a; abi 2025-bebb-lk-B2.1a) → Vorzeichen und Positivität am Term begründen (iqb 2024MerhoehtAAnalysis13-a, 2025MerhoehtBAnalysisWTR3-1b, 2026MerhoehtBAnalysisWTR2-1a; abi 2024-bebb-lk-A1.2a) → Nullstellen mit Fallunterscheidung nach dem Parameter (abi 2018-bb-ea-B2.1a, 2024-bebb-lk-B2.1b; iqb 2018MerhoehtBAnalysisWTR2-1i) → Grenzverhalten nach Vorzeichen oder Parität (abi 2024-bebb-lk-B2.1a, 2023-bebb-lk-B2.2h; iqb 2023MerhoehtBAnalysisWTR1-2a, 2025MerhoehtBAnalysisMMS2-1a) → gemeinsame Punkte aller Graphen bestimmen (abi 2026-bb-ea-B2.2b; iqb 2026MerhoehtBAnalysisWTR1-1b, 2023MerhoehtBAnalysisWTR1-2b) → Symmetrie für alle Parameterwerte nachweisen, auch nach Verschiebung (abi 2026-bb-ea-B2.1a; iqb 2025MerhoehtAAnalysis11-b, 2026MerhoehtBAnalysisWTR2-1c, 2026MerhoehtBAnalysisWTR2-1d) → parameterunabhängige Werte, Steigungen und die gemeinsame Tangente (iqb 2025MerhoehtAAnalysis11-a; abi 2022-bebb-lk-B2.1c, 2026-bb-ea-B2.1a) → Prüfungshöhe: Folgerungen aus gemeinsamen Eigenschaften in Lageaussagen übersetzen (abi 2022-bebb-lk-B2.2k; iqb 2022MerhoehtBAnalysisWTR2-2c, Niveau II) und Nullstellen samt Tangentensteigungen am faktorisierten Term nachweisen (iqb 2026MerhoehtBAnalysisMMS1-1a, Niveau I bis II).
-120  - Extrem- und Wendepunkte mit Parameter (Einheit 3): die Ableitung mit Parameter bilden und an fester Stelle auswerten (Grundfall, viermal; abi 2025-bebb-lk-B2.2e, 2023-bebb-lk-B2.1c) → Extrempunkte als Terme im Parameter berechnen und nachweisen (abi 2023-bebb-lk-B2.1d; iqb 2020MerhoehtAAnalysis13-a, 2024MerhoehtBAnalysisWTR3-2b, 2018MerhoehtBAnalysisWTR2-1g, 2019MgrundlegendBAnalysisWTR2-1b) → Wendepunkte mit Parameter, gemeinsame und parameterabhängige (abi 2022-bebb-lk-B2.1f, 2026-bb-ea-B2.2a; iqb 2025MerhoehtBAnalysisWTR1-1b, 2026MerhoehtBAnalysisWTR1-1a, 2020MgrundlegendBAnalysisWTR1-1g) → gemeinsamen Extrempunkt nachweisen und die Art ohne zweite Ableitung begründen (abi 2017-bb-ea-B2.1b, 2017-bb-ea-B2.2b; iqb 2025MerhoehtBAnalysisWTR3-1c) → die Anzahl über die Lösbarkeit begründen: Fallunterscheidung, Diskriminante (abi 2022-bebb-lk-B2.2m, 2022-bebb-lk-A1.4b, 2018-bb-ea-B2.1d; iqb 2022MerhoehtBAnalysisWTR2-2e, 2026-bb-ea-B2.1b als Landeszwilling) → Monotonie mit Parameter (abi 2023-bebb-lk-B2.1c; iqb 2018MerhoehtBAnalysisWTR1-2f) → Abstände markanter Punkte als Terme im Parameter (abi 2025-bebb-lk-B2.1c, 2023-bebb-lk-B2.1e; iqb 2025MerhoehtBAnalysisMMS1-1b, 2025MerhoehtBAnalysisMMS2-1b) → Prüfungshöhe: Tiefpunkt oder Sattelpunkt nach der Parität unterscheiden (abi 2023-bebb-lk-B2.2j, Niveau II), genau eine waagerechte Tangente über die Diskriminante (abi 2018-bb-ea-B2.2e, Niveau III) und am Graphen (iqb 2026MerhoehtAAnalysis22, Niveau III), die Eignung über die Lage der dritten Extremstelle (iqb 2022MerhoehtBAnalysisWTR1-1g, Niveau III) und die Extrempunkte aller Kurven aus dem Ableitungsgraphen eines Mitglieds (abi 2025-bebb-lk-B2.2f, Niveau II).
-121  - Parameter aus Bedingungen (Einheit 4): „Vorwärts oder rückwärts?“ ankreuzen (Vorstufe) → den Flächeninhalt als Term im Parameter berechnen (Grundfall, viermal; abi 2023-bebb-lk-A1.3a, 2024-bebb-lk-A1.1b; iqb 2023MerhoehtAAnalysis12-a, 2024MerhoehtAAnalysis12-b) → den Parameter aus einem vorgegebenen Flächeninhalt bestimmen (iqb 2019MgrundlegendBAnalysisWTR2-1d, 2026MerhoehtBAnalysisMMS1-1b, 2024MgrundlegendBAnalysisWTR1-1e, 2024MerhoehtBAnalysisWTR2-1c; abi 2024-bebb-lk-B2.2e) → aus einer Integralbedingung oder einer Flächengleichheit (iqb 2025MerhoehtBAnalysisWTR1-1c, 2023MerhoehtAAnalysis12-b; abi 2023-bebb-lk-A1.3b, 2017-bb-ea-B2.1e) → aus Lagen markanter Punkte: y-Koordinate der Tiefpunkte, Wendepunkt auf einer Geraden, Quadratecken, Mittelpunkt auf der x-Achse (iqb 2021MerhoehtAAnalysis12-b, 2026MerhoehtBAnalysisMMS1-1c, 2025MerhoehtBAnalysisWTR3-1d, 2026MerhoehtBAnalysisMMS2-2d, 2023MgrundlegendBAnalysisWTR1-3b) → aus Tangenten- und Schnittbedingungen: vorgegebene Tangente, genau zwei gemeinsame Punkte (abi 2022-bebb-lk-B2.1d; iqb 2021MgrundlegendBAnalysisWTR-1e) → aus Übergängen: sprungfrei, knickfrei (iqb 2022MerhoehtBAnalysisWTR1-1e, 2018MerhoehtBAnalysisWTR2-1d) → Sachbedingungen: Radienverhältnis, Winkelgleichheit, Weite (iqb 2022MgrundlegendBAnalysisWTR1-2c, 2020MgrundlegendBAnalysisWTR1-1i, 2018MerhoehtBAnalysisWTR2-1i) → Prüfungshöhe: den Vierecksinhalt aus Hochpunkt und Achsenpunkten ansetzen (abi 2022-bebb-lk-B2.2o; iqb 2022MerhoehtBAnalysisWTR2-2g, Niveau III), den Achsendreiecksinhalt als Term nachweisen (abi 2023-bebb-lk-B2.1a, Niveau II) und die Stammfunktionen einer Schar nach Vorzeichen untersuchen (iqb 2020MerhoehtAAnalysis21-b, Niveau III).
-122  - Ortskurve und Kurvenvergleich (Einheit 5): „Wovon hängt dieser Punkt ab?“ ankreuzen (Vorstufe) → die Ortskurve in drei Schritten bestimmen (Grundfall, viermal; abi 2022-bebb-lk-A1.3b) → die Probe rückwärts: Punktprobe eines konkreten Extrempunkts an der Ortskurve (abi 2023-bebb-lk-B2.1f) → die Ortsgerade aus zwei Hochpunkten oder über die Elimination (iqb 2018MerhoehtBAnalysisWTR2-1h) → Punkte einer Bildkurve allgemein nachweisen: Mittelpunkte der Strecken zum Ursprung (abi 2024-bebb-lk-B2.2d; iqb 2024MerhoehtBAnalysisWTR2-1e) → Nachbarkurven vergleichen: Abstände der Hochpunkte und y-Achsenabschnitte, parameterfreie Flächen (iqb 2019MgrundlegendBAnalysisWTR2-1c, 2024MerhoehtBAnalysisWTR3-2c, 2020MerhoehtAAnalysis13-b) → Spiegel- und Streckbilder als Scharmitglieder nachweisen (iqb 2024MerhoehtBAnalysisWTR3-2d, 2020MgrundlegendBAnalysisWTR2-2a, 2022MerhoehtBAnalysisWTR2-2d; abi 2022-bebb-lk-B2.2l) → die Scharkurve neben ihrem Ableitungsgraphen: gemeinsamer Punkt, Tangentenfrage (iqb 2020MgrundlegendBAnalysisWTR2-2b; abi 2023-bebb-lk-B2.2m, 2023-bebb-lk-B2.2i) → Prüfungshöhe: die Ortsgerade y = x über Sonderfall und Streckungseigenschaft begründen (abi 2022-bebb-lk-B2.2n; iqb 2022MerhoehtBAnalysisWTR2-2f, Niveau II bis III), den Schnittwinkel als nur von der Ortskurve abhängig erkennen (abi 2023-bebb-lk-B2.1g, Niveau III), den Parameter mit kleinstem Ursprungsabstand am Bild erläutern (abi 2023-bebb-lk-B2.1h, Niveau III), die Punktsymmetrie zweier Scharkurven aus einer Identität (iqb 2025MerhoehtBAnalysisWTR2-2b, Niveau III), die Trapezflächen für aufeinanderfolgende Parameterwerte (abi 2023-bebb-lk-B2.2n; iqb 2023MerhoehtBAnalysisWTR1-2d, Niveau III) und die beliebig vielen Schnittstellen für kleine Parameter (iqb 2022MerhoehtAAnalysis13-b, Niveau III).
-123
-124  ### Prüfungsform (fhr / abi / iqb)
-125  Geltung [konzept.md § 4 Entscheidung 35]: Der IQB-Pool ist für das Profil abi voll maßgeblich – Brandenburg entnimmt seit 2017 Poolaufgaben, seit der KMK-Ländervereinbarung 2020 unverändert, und der Pool wirkt normierend auf Landesaufgaben und Oberstufenklausuren; die Auswahl-Einschränkung steht allein in den Geltungsdateien abi-*-geltung.md. Ein fhr-Bestand existiert nicht (RLP FOS 2019 ohne Scharen). Die Rohdatei zählt 179 Zeilen mit 111 Haupttypen (abi 62 Zeilen, 47 Typen; iqb 117 Zeilen, 88 Typen), Jahre 2017–2026. Der Eintrag setzt keine Decke; Häufigkeit ist Auskunft, ein einziges Vorkommen ein vollwertiger Typ. Typnamen wörtlich aus abitur/abitur-typen.csv (gemeinsame Liste abi/iqb; das Thema ist selbst der Gegenstand und führt keine Gegenstandsklassen, die Typnamen stehen ohne Präfix).
-126  abi (62 Zeilen, 47 Typen; Landeshefte bb-ea, be-gk, bebb-lk 2017–2026, davon 6 aus den CAS-Fassungen 2017 und 2018) [abi-Katalog]: Gemeinsamen Extrempunkt einer Funktionenschar nachweisen (4, E3) · Parameterwerte nach der Anzahl der Extrempunkte über die Lösbarkeit der Extremstellengleichung begründen (4, E3) · Scharparameter aus einem Punkt des Graphen angeben (4, E1) · Scharparameter aus einer Nullstelle und einem Flächeninhalt bestimmen (3, E4) · Fläche zwischen Graph und x-Achse in Abhängigkeit vom Scharparameter berechnen (2, E4) · Graph der Schar zum Parametervorzeichen über das Grenzverhalten zuordnen (2, E1) · Ortskurve der Extrempunkte einer Schar durch Elimination des Parameters bestimmen (2, E5) · Parameterwert für genau eine waagerechte Tangente bestimmen (2, E3) · je 1: Ableitung einer Schar als Vielfaches der Ableitung eines Scharmitglieds nachweisen (E3) · Ableitung einer Schar nachweisen und zusammenhängenden Monotoniebereich ohne Rechnung begründen (E3) · Abstand des Hochpunkts zu den Tiefpunkten einer Schar in Abhängigkeit vom Parameter berechnen (E3) · Achsenschnittpunkte einer Schar bestimmen und Flächeninhalt des Achsendreiecks als Term im Parameter nachweisen (E4) · Anzahl der Nullstellen einer Schar in Abhängigkeit vom Parameter über die Diskriminante ermitteln (E2) · Aussage über den Ableitungsgraphen einer Schar als Tangente an den Scharfgraphen beurteilen (E5) · Einfluss eines multiplikativen Parameters auf den Graphen im Vergleich mit dem Ausgangsgraphen beschreiben (E1) · Einzigen Extrempunkt einer Schar mit vorgegebener x-Koordinate nachweisen und y-Koordinate berechnen (E3) · Extrempunkte aller Scharkurven aus dem Ableitungsgraphen eines Scharmitglieds ohne Rechnung begründen (E3) · Folgerungen aus gemeinsamen Eigenschaften einer Schar für den Verlauf der Graphen angeben (E2) · Gemeinsame Punkte aller Graphen einer Schar bestimmen (E2) · Gemeinsamen und parameterabhängigen Wendepunkt einer Schar nachweisen (E3) · Genau zwei Nullstellen einer Schar aus der faktorisierten Form begründen und angeben (E2) · Gleichmäßige Streckung eines Scharfgraphen als Graph einer anderen Scharfunktion nachweisen (E5) · Grenzverhalten einer Potenzschar nach der Parität des Exponenten begründen (E2) · Grenzverhalten einer Schar für x → +∞ nach dem Parametervorzeichen angeben (E2) · Identische Graphen einer Schar zu entgegengesetzten Parameterwerten begründen (E2) · Konstanten Abstand von Extrem- und Wendestelle einer Schar nachweisen (E3) · Mittelpunkte der Strecken zum Ursprung auf einem gegebenen Graphen allgemein nachweisen (E5) · Nullstellen einer Funktionenschar mit Fallunterscheidung ermitteln (E2) · Nullstellenfreiheit aller Scharkurven aus dem gemeinsamen Tiefpunktwert beurteilen (E3) · Ortskurve der Extrempunkte einer Schar als Gerade über Sonderfall und Streckungseigenschaft begründen (E5) · Parameter des Extrempunkts mit kleinstem Abstand zum Ursprung an der Ortskurve näherungsweise erläutern und angeben (E5) · Parameterwerte mit waagerechter Tangente über die Lösbarkeit der Ableitungsgleichung untersuchen (E3) · Punktsymmetrie aller Scharkurven und gemeinsame Tangente im Ursprung nachweisen (E2) · Scharparameter aus der Differenz zweier Scharfunktionswerte über eine Potenzgleichung bestimmen (E1) · Scharparameter aus der Flächengleichheit von Quadrat und Flächenstück bestimmen (E4) · Scharparameter aus einem Punkt bestimmen und Wendepunkt nachweisen (E3) · Scharparameter für eine vorgegebene Tangente in einem Punkt untersuchen (E4) · Scharparameter für eine vorgegebene Wendestelle berechnen (E4) · Scharparameter für einen vorgegebenen Flächeninhalt eines Vierecks aus Hochpunkt und Achsenpunkten bestimmen (E4) · Schnittwinkel von Scharkurve und Ortskurve als nur von der Ortskurve abhängig begründen (E5) · Steigung und Achsenschnittpunkt des linearen Sonderfalls einer Schar angeben (E1) · Tangente im y-Achsenschnittpunkt aufstellen und als gemeinsame Tangente aller Scharkurven begründen (E2) · Tiefpunkt einer Schar mit zwei Parametern nachweisen und Hochpunkt über die Punktsymmetrie begründen (E3) · Tiefpunkt oder Sattelpunkt nach der Parität des Exponenten unterscheiden (E3) · Trapez aus Funktions- und Ableitungswerten einer Schar begründen und Flächengleichheit für k und k + 1 nachweisen (E5) · Vorzeichen der Funktionswerte einer Schar begründen (E2) · Waagerechte Tangente aller Scharkurven in einem gemeinsamen Punkt nachweisen (E3). Muster: Die Schar trägt die zweite Analysis-Aufgabe in Teil B der Leistungskurshefte – je Heft eine Polynom- oder e-Funktions-Schar mit sechs bis acht Teilaufgaben vom Parameter aus einem Punkt bis zur Ortskurve (2022: die Viertgradschar mit Tangente t_0 und der Streckungsnachweis, 2022-bebb-lk-B2.1c/d/f/l und B2.2i–o; 2023: die e-Schar mit Achsendreieck, Extrempunkt, Ortskurve h und Schnittwinkel, 2023-bebb-lk-B2.1a/c/d/e/f/g/h, daneben die Potenzschar h_k, 2023-bebb-lk-B2.2h–n; 2024: die e-Schar mit Nullstellenanzahl und Tiefpunktnachweis samt Steckbrief-Nachbaraufgabe, 2024-bebb-lk-B2.1a/b/c/i und B2.2b/d/e; 2025: die faktorisierte Viertgradschar und die Exponentenschar, 2025-bebb-lk-B2.1a/c und B2.2e/f), im bb-ea die ln- und e-Scharen 2017/2018 (2017-bb-ea-B2.1b/e, 2017-bb-ea-B2.2b, 2018-bb-ea-B2.1a/d, 2018-bb-ea-B2.2e) samt ihren CAS-Fassungen (2017-bb-ea-cas-B2.1b, 2017-bb-ea-cas-B2.1f, 2017-bb-ea-cas-B2.2b, 2018-bb-ea-cas-B2.1d, 2018-bb-ea-cas-B2.2e) und der nur in der CAS-Fassung gestellten Frage nach identischen Graphen zu a und −a (2017-bb-ea-cas-B2.2d) und 2026 die Ursprungsschar x · e^(−ax²) (2026-bb-ea-B2.1a/b, 2026-bb-ea-B2.2a/b); der Berliner Grundkurs trägt eine einzige Zeile (Modellvergleich 2019-be-gk-B2.2h). Teil A der bebb-lk-Hefte prüft Parameterfläche, Ortskurve, waagerechte Tangenten und Zuordnung ohne Rechner (2022-bebb-lk-A1.2b, A1.3a/b, A1.4b; 2023-bebb-lk-A1.3a/b; 2024-bebb-lk-A1.1a/b, A1.2a/b). 21 der 62 Zeilen sind wortgleiche Pooldubletten (2022-bebb-lk-A1.2b, B2.2i–o, 2023-bebb-lk-A1.3a/b, B2.2h/m/n, 2024-bebb-lk-A1.1a/b, A1.2a/b, B2.2d, 2025-bebb-lk-B2.1a, 2026-bb-ea-B2.2a/b), drei abgewandelt (2024-bebb-lk-B2.2b/e aus der Zwei-Parameter-Schar, 2025-bebb-lk-B2.1c). Niveau I 12, II 37, III 13.
-127  iqb (117 Zeilen, 88 Typen; Pool 2017–2026, grundlegend 21 und erhöht 96 Zeilen, Teil A 17 und Teil B 100 Zeilen, davon 9 MMS und 21 CAS) [iqb-Katalog]: Scharparameter aus einem Punkt des Graphen angeben (9, E1) · Scharparameter für einen vorgegebenen Flächeninhalt zwischen Graph und x-Achse bestimmen (4, E4) · Extrempunkt einer Schar mit Art nach dem Parametervorzeichen bestimmen (3, E3) · Extrempunkte einer Schar mit Art in Abhängigkeit vom Parameter bestimmen (3, E3) · Fläche zwischen Graph und x-Achse in Abhängigkeit vom Scharparameter berechnen (3, E4) · Gemeinsame Punkte aller Graphen einer Schar bestimmen (3, E2) · Scharparameter den Graphen über die Lage der Hochpunkte zuordnen (3, E1) · Einzigen Wendepunkt einer Schar nachweisen und angeben (2, E3) · Graph der Schar zu einem Parameterwert in die Abbildung skizzieren (2, E1) · Graph der Schar zum Parametervorzeichen über das Grenzverhalten zuordnen (2, E1) · Hochpunkt einer Parabelschar mit Parameterkoordinaten nachweisen (2, E3) · Lage der Extrempunkte einer Schar auf einer gegebenen Kurve durch Einsetzen nachweisen (2, E5) · Scharparameter den Graphen über den y-Achsenabschnitt zuordnen (2, E1) · Spiegelung an der x-Achse als Scharmitglied nachweisen (2, E5) · Vorzeichen aller Funktionswerte einer Schar am Term begründen (2, E2) · je 1: Abstand der Hochpunkte zweier benachbarter Scharparabeln berechnen (E5) · Abstand der y-Achsenabschnitte zweier benachbarter Scharkurven berechnen (E5) · Abstand des Hochpunkts zu den Tiefpunkten einer Schar in Abhängigkeit vom Parameter berechnen (E3) · Ansätze für einen rechten Winkel in einem Dreieck aus Scharpunkten über Skalarprodukt und Steigungsprodukt erläutern (E4) · Anzahl der Nullstellen einer Schar in Abhängigkeit vom Parameter über die Diskriminante ermitteln (E2) · Anzahl gemeinsamer Punkte einer Schar mit einer waagerechten Geraden über die Höhe der Hochpunkte nach Parameterbereichen angeben (E3) · Aussage über den Ableitungsgraphen einer Schar als Tangente an den Scharfgraphen beurteilen (E5) · Bedingungen für den sprungfreien Übergang von Funktionswert und Ableitung angeben (E4) · Eignung der Scharfunktionen über die Lage einer dritten Extremstelle beurteilen (E3) · Einfluss eines additiven Scharparameters auf den Graphen beschreiben (E1) · Existenz von Scharparametern mit beliebig vielen Schnittstellen begründen (E5) · Extrempunkt einer trigonometrischen Schar ohne Ableitung über benachbarte Nullstellen bestimmen (E3) · Folgerungen aus gemeinsamen Eigenschaften einer Schar für den Verlauf der Graphen angeben (E2) · Gemeinsamen Punkt von Scharkurve und ihrem Ableitungsgraphen in Abhängigkeit vom Parameter berechnen (E5) · Genau zwei Nullstellen einer Schar aus der faktorisierten Form begründen und angeben (E2) · Gleiche Steigung aller Graphen einer Schar im Ursprung nachweisen (E2) · Gleichmäßige Streckung eines Scharfgraphen als Graph einer anderen Scharfunktion nachweisen (E5) · Gleichung zwischen Scharparameter und Nullstelle aus der Nullstellenbedingung herleiten (E2) · Gleichungen eines Bestimmungssystems für Scharparameter im Sachzusammenhang deuten (E1) · Graph über eine gemeinsame Eigenschaft aller Scharfunktionen als nicht zur Schar gehörend begründen (E2) · Graphen einer Scharfunktion und ihrer in y-Richtung verschobenen Fassung zuordnen und Parameter und Verschiebung bestimmen (E1) · Grenzverhalten einer Potenzschar nach der Parität des Exponenten begründen (E2) · Grenzverhalten einer Schar angeben und parameterunabhängigen Funktionswert nachweisen (E2) · Hochpunkt einer Schar mit Parameterfaktor bestimmen (E3) · Hochpunkt im Ursprung über das Vorzeichen begründen und Tiefstelle einer Schar berechnen (E3) · Lage und Art der Extrempunkte einer Schar bestimmen und Parameter für einen vorgegebenen Abstand der Extrempunkte berechnen (E3) · Mittelpunkte der Strecken zum Ursprung auf einem gegebenen Graphen allgemein nachweisen (E5) · Nullstellen einer Funktionenschar mit Fallunterscheidung ermitteln (E2) · Nullstellen einer Schar am faktorisierten Term angeben (E2) · Nullstellen einer Schar am Term begründen und Tangentensteigungen dort nachweisen (E2) · Nullstellen einer Schar angeben und Vorzeichen des y-Achsenabschnitts begründen (E2) · Ortskurve der Extrempunkte einer Schar als Gerade über Sonderfall und Streckungseigenschaft begründen (E5) · Parameter einer Parabelschar aus dem knickfreien Übergang zu einem Graphen bestimmen (E4) · Parameter einer Schar aus einer vorgegebenen Ausdehnung einer Figur bestimmen (E1) · Parameter einer Schar aus gleichen Winkeln zweier Graphen mit einer Strecke bestimmen und Lage eines Punktes prüfen (E4) · Parameter für genau zwei gemeinsame Punkte von Graph und Scharparabel über die Diskriminante bestimmen (E4) · Parameterunabhängigkeit der Fläche zwischen zwei Scharkurven nachweisen (E5) · Parameterwerte für mehr als einen gemeinsamen Punkt zweier Graphen über die Lösbarkeit der Schnittgleichung bestimmen (E4) · Parameterwerte nach der Anzahl der Extrempunkte über die Lösbarkeit der Extremstellengleichung begründen (E3) · Positivität, y-Achsenabschnitt und Steigung einer Schar begründen und berechnen (E2) · Punktsymmetrie aller Graphen einer Schar zum Ursprung nachweisen (E2) · Punktsymmetrie zweier Scharkurven zueinander aus einer Identität nachweisen und deuten (E5) · Rechten Winkel in einem Dreieck aus Scharpunkten für bestimmte Ecken und Parameterbereiche ausschließen (E4) · Scharparameter aus Anfangswert und Grenzwert über das Vorzeichen des Exponenten bestimmen (E1) · Scharparameter aus dem Abstand der Extremstellen berechnen (E3) · Scharparameter aus der Flächengleichheit von Quadrat und Flächenstück bestimmen (E4) · Scharparameter aus der Weite berechnen und Höhe des Hochpunkts angeben (E1) · Scharparameter aus der y-Koordinate der Tiefpunkte ermitteln (E4) · Scharparameter aus einem Punkt bestimmen und Wendepunkt nachweisen (E3) · Scharparameter aus einer Integralbedingung bestimmen (E4) · Scharparameter aus einer Nullstelle und einem Flächeninhalt bestimmen (E4) · Scharparameter den Graphen über Spiegelung und Extremstelle zuordnen (E1) · Scharparameter der Ausgangsfunktion angeben und Eignung zweier Scharfunktionen am Graphen beurteilen (E1) · Scharparameter für den Mittelpunkt der Extrempunkte auf der x-Achse bestimmen (E4) · Scharparameter für ein vorgegebenes Verhältnis zweier Radien einer Profilkurve berechnen (E4) · Scharparameter für eine vorgegebene Höhe des Hochpunkts berechnen (E4) · Scharparameter für eine vorgegebene Wendestelle berechnen (E4) · Scharparameter für einen Extrempunkt als Quadratecke bestimmen und Flächeninhalt berechnen (E4) · Scharparameter für einen vorgegebenen Flächeninhalt eines Vierecks aus Hochpunkt und Achsenpunkten bestimmen (E4) · Scharparameter für einen Wendepunkt auf einer Geraden berechnen (E4) · Scharparameter für genau eine Nullstelle über die Lage der Extrempunkte angeben (E3) · Scharparameter für genau eine waagerechte Tangente aus dem Graphen bestimmen (E3) · Scharparameter für Hoch- und Tiefpunkt als Gegenecken eines achsenparallelen Quadrats bestimmen (E4) · Steigung der Ortsgeraden der Hochpunkte einer Schar aus zwei Hochpunkten berechnen (E5) · Steigung und Achsenschnittpunkt des linearen Sonderfalls einer Schar angeben (E1) · Strenge Monotonie einer Schar über die Diskriminante der Ableitung für einen Parameterbereich nachweisen (E3) · Symmetrieachse einer Scharkurve aus der Verschiebung einer geraden Funktion begründen (E2) · Tiefpunkt einer Schar mit zwei Parametern nachweisen und Hochpunkt über die Punktsymmetrie begründen (E3) · Trapez aus Funktions- und Ableitungswerten einer Schar begründen und Flächengleichheit für k und k + 1 nachweisen (E5) · Verschobene Scharfunktion als gerade Funktion nachweisen (E2) · Vorzeichen der Funktionswerte einer Schar begründen (E2) · Vorzeichen der Stammfunktionen einer Schar durch Fallunterscheidung untersuchen (E4) · Wendepunkt einer Schar im Ursprung mit der x-Achse als Wendetangente nachweisen (E3). Muster: In Teil B ist die Schar die zweite Hälfte der großen Analysis-Sachaufgabe oder eine eigene innermathematische Aufgabe – im Jahrgang 2017 die Sinusschar c · sin(cx) mit Skizze, Fläche und Tiefpunkt ohne Ableitung (2017MerhoehtBAnalysisWTR1-3a, 2017MerhoehtBAnalysisWTR1-3b, 2017MerhoehtBAnalysisWTR1-3c), die Schar k²x³ − 6kx² + 9x mit Extremstellenabstand und verschobenem Graphen (2017MerhoehtBAnalysisWTR2-1e, 2017MerhoehtBAnalysisWTR2-1g), die Viertgradschar −x⁴ + 6kx² mit Nullstellenanzahl, Hochpunkten, Geradenschnitt und Zuordnung (2017MerhoehtBAnalysisWTR3-1a, 2017MerhoehtBAnalysisWTR3-1c, 2017MerhoehtBAnalysisWTR3-1d, 2017MerhoehtBAnalysisWTR3-1e), die Schar x² · e^(−ax) der CAS-Fassung mit Punkt, Extrempunkten und Kurve durch die Extrempunkte (2017MerhoehtBAnalysisCAS1-1a, 2017MerhoehtBAnalysisCAS1-1b, 2017MerhoehtBAnalysisCAS1-1c) und die Glasschar (2017MerhoehtBAnalysisCAS2-1a, 2017MerhoehtBAnalysisCAS2-1b, 2017MerhoehtBAnalysisCAS2-1d, 2017MerhoehtBAnalysisCAS2-1e); Kugelstoßen mit Flugkurvenschar 2018 (2018MerhoehtBAnalysisWTR2-1d/e/g/h/i/j), die Parabelschar zum Trapez 2019 (2019MgrundlegendBAnalysisWTR2-1a/b/c/d), Angler-Logo und g_b-Schar 2020 (2020MgrundlegendBAnalysisWTR1-1g/h/i, 2020MgrundlegendBAnalysisWTR2-2a/b), die h_a-Schar zur Viertgradfunktion 2021 (2021MgrundlegendBAnalysisWTR-1d/e), ICE-Fahrt und Übertopf 2022 (2022MerhoehtBAnalysisWTR1-1e/f/g, 2022MgrundlegendBAnalysisWTR1-2c), die w_a-Schar 2023 (2023MgrundlegendBAnalysisWTR1-3a/b/c), Steckbrief-Nachbarschar und w-Schar 2024 (2024MerhoehtBAnalysisWTR2-1b/c/e, 2024MerhoehtBAnalysisWTR1-2a/d/e, 2024MerhoehtBAnalysisWTR3-2b/c/d, 2024MgrundlegendBAnalysisWTR1-1e), die Exponenten- und g_k-Scharen 2025 (2025MerhoehtBAnalysisWTR1-1a/b/c, 2025MerhoehtBAnalysisWTR2-2a/b, 2025MerhoehtBAnalysisWTR3-1a/b/c/d) und die MMS-Scharen 2025/2026 (2025MerhoehtBAnalysisMMS1-1a/b, 2025MerhoehtBAnalysisMMS2-1a/b, 2026MerhoehtBAnalysisMMS1-1a/b/c, 2026MerhoehtBAnalysisMMS2-2a/d) samt g_a und h_a 2026 (2026MerhoehtBAnalysisWTR1-1a/b, 2026MerhoehtBAnalysisWTR2-1a/b/c/d, 2023MerhoehtBAnalysisWTR1-2a/b/c/d, 2018MerhoehtBAnalysisWTR1-2f); aus den CAS-Stapeln des Nachzugs 2026-09-29 die Parabelschar f_r 2018 mit Extremum nach dem Vorzeichen von r, gemeinsamen Punkten, Nullstellenanzahl über die Diskriminante und dem rechtwinkligen Dreieck aus Scharpunkten – Ausschluss für zwei Ecken und Erläuterung der Ansätze über Skalarprodukt und Steigungsprodukt (2018MerhoehtBAnalysisCAS1-1c, 2018MerhoehtBAnalysisCAS1-1d, 2018MerhoehtBAnalysisCAS1-1e, 2018MerhoehtBAnalysisCAS1-1f, 2018MerhoehtBAnalysisCAS1-1g; die letzten drei Niveau III), die Wurzelschar √(k · x² + 400) mit Nullstellenfreiheit, Tiefpunkt und mehr als einem gemeinsamen Punkt mit einer Parabel (2018MerhoehtBAnalysisCAS3-1b, 2018MerhoehtBAnalysisCAS3-1c, 2018MerhoehtBAnalysisCAS3-1f, dieser Niveau III), die Hängebrücke mit Parabel- und Kettenlinienschar – Parameter aus den Befestigungspunkten und Ordnung der Graphen über den y-Achsenabschnitt (2018MerhoehtBAnalysisCAS3-2a, 2018MerhoehtBAnalysisCAS3-2c) – und grundlegend 2017 die Temperaturschar f_k mit Zuordnung über die Hochpunkte, einem Graphen, der wegen f_k ≥ 23 nicht zur Schar gehört, dem Parameter zu einer Höchsttemperatur und dem einzigen Wendepunkt als Zeitpunkt stärkster Abkühlung (2017MgrundlegendBAnalysisCAS-2a, 2017MgrundlegendBAnalysisCAS-2b, 2017MgrundlegendBAnalysisCAS-2c, 2017MgrundlegendBAnalysisCAS-2d). Teil A stellt die Schar fast nur auf erhöhtem Niveau (16 der 17 Zeilen erhöht; grundlegend einzig der Streckfaktor einer Sinusschar aus einem Flächeninhalt 2017MgrundlegendAAnalysis2-b; erhöht: 2018MerhoehtAAnalysis2-a, 2020MerhoehtAAnalysis13-a/b, 2020MerhoehtAAnalysis21-b, 2021MerhoehtAAnalysis12-b, 2022MerhoehtAAnalysis12-b, 2022MerhoehtAAnalysis13-a/b, 2023MerhoehtAAnalysis12-a/b, 2024MerhoehtAAnalysis12-a/b, 2024MerhoehtAAnalysis13-a/b, 2025MerhoehtAAnalysis11-a/b, 2026MerhoehtAAnalysis22); grundlegend erscheint die Schar sonst nur in Teil B (20 Zeilen, davon vier aus dem CAS-Stapel 2017 seit dem Nachzug 2026-09-29). 21 Poolzeilen kehren wortgleich in Landesheften wieder (Dubletten der abi-Liste), drei abgewandelt (2024MerhoehtBAnalysisWTR2-1b/c → 2024-bebb-lk-B2.2b/e, 2025MerhoehtBAnalysisMMS1-1b → 2025-bebb-lk-B2.1c). Niveau I 31, II 60, III 26.
-128  Zielmarke: fhr: keine (kein Bestand). Einheit 1 – abi: Parameter aus dem Punkt der Viertgradschar (2022-bebb-lk-A1.3a, Niveau I); iqb: Bestimmungsgleichungen im Sachzusammenhang deuten und auswerten (2024MerhoehtBAnalysisWTR1-2d/e, Niveau II bis III). Einheit 2 – abi: Folgerungen aus gemeinsamen Eigenschaften übersetzen (2022-bebb-lk-B2.2k, Niveau II); iqb: Nullstellen und Tangentensteigungen am faktorisierten Term (2026MerhoehtBAnalysisMMS1-1a, Niveau I bis II) und die Nullstellenanzahl in Abhängigkeit vom Parameter über die Diskriminante mit drei Fällen (2018MerhoehtBAnalysisCAS1-1e, Niveau III). Einheit 3 – abi: genau eine waagerechte Tangente über die Diskriminante samt Sattelpunkt-Erläuterung (2018-bb-ea-B2.2e, Niveau III); iqb: der ganzzahlige Parameter mit genau einer waagerechten Tangente am Bild (2026MerhoehtAAnalysis22, Niveau III). Einheit 4 – abi: Viereck aus Hochpunkt und Achsenpunkten mit vorgegebenem Inhalt (2022-bebb-lk-B2.2o, Niveau III); iqb: Stammfunktionen einer Schar nach Vorzeichen untersuchen (2020MerhoehtAAnalysis21-b, Niveau III). Einheit 5 – abi: die Ortsgerade y = x über Sonderfall und Streckungseigenschaft (2022-bebb-lk-B2.2n, Niveau II); iqb: Trapezflächen für aufeinanderfolgende Parameterwerte (2023MerhoehtBAnalysisWTR1-2d, Niveau III).
+ 41  Erkennungsschritte (Vorstufe der Einheit, vor der sie stehen, nicht auf Blatt 0; eine Hauptnummer je Schritt): keine eigenen – seit 27.09.2026 gestrichen, weil die Vorstufen der Ketten denselben Handgriff verlangen.
+ 42
+ 43  ### Merkkasten
+ 44  Einheit 1 (Scharbegriff und Parameterwert):
+ 45      Eine Schar ist eine Familie: jeder Parameterwert liefert eine eigene Funktion mit eigenem Graphen; der Parameter ist eine feste Zahl, nicht die Variable.
+ 46      Parameter aus einem Punkt: beide Koordinaten einsetzen, nach dem Parameter auflösen.
+ 47        f_a(x) = a · x³ + a · x², Punkt (1 | 6): a + a = 6, also a = 3.
+ 48      Parameter am Bild zuordnen: ein parameterabhängiges Merkmal wählen – y-Achsenabschnitt, Extremstelle, Grenzverhalten, Spiegelbild – und die Kurven danach ordnen; die Form allein trägt nicht.
+ 49      Sonderfälle mitdenken: der Parameterwert, der die Schar linear macht oder die Ausgangsfunktion liefert.
+ 50      Auswendig (Teil A): „Parameter aus einem Punkt“ und der Familiengedanke – begründetes Ermessen: die Anlage ohne Hilfsmittel nennt Scharen nicht, die Teil-A-Zeilen 2024-bebb-lk-A1.1a und 2024MerhoehtAAnalysis12-a verlangen das Einsetzen ohne Rechner.
+ 51      Formelsammlung: keine – Scharen stehen nicht in der Formelsammlung – [FS] offen
+ 52  Quelle: eigene Formulierung nach [GOST Q1 LK] „Funktionsscharen mit einem Parameter“; Zahlenbeispiel aus dem Pool (2024MerhoehtAAnalysis12-a, wörtlich); [LS-AA QP IV 7].
+ 53
+ 54  Einheit 2 (Eigenschaften aller Graphen):
+ 55      Nullstellen mit Parameter: faktorisieren und jeden Faktor einzeln ansehen; der e-Faktor ist nie null; trägt ein Faktor den Parameter, wird unterschieden, für welche Parameterwerte er null werden kann.
+ 56        f_k(x) = −kx · (x − 8), k > 0: Nullstellen 0 und 8 – für jedes k dieselben.
+ 57      Gemeinsame Punkte aller Graphen: zwei Scharfunktionen gleichsetzen – an den Lösungen fällt der Parameter heraus; oder gleich die Stellen suchen, an denen der Parameterterm verschwindet.
+ 58      Symmetrie und Vorzeichen: f_k(−x) bilden und den Parameter festhalten; Vorzeichen über die Faktoren begründen, und zwar für jeden Parameterwert.
+ 59      Grenzverhalten: nach Vorzeichen oder Parität des Parameters unterscheiden; der Sonderfall gehört in die Antwort.
+ 60      Auswendig (Teil A): „Gemeinsame Punkte“ und „Symmetrie und Vorzeichen“ – begründetes Ermessen: die Anlage nennt Scharen nicht, die Teil-A-Zeilen 2025MerhoehtAAnalysis11-a und 2025MerhoehtAAnalysis11-b verlangen beides ohne Rechner.
+ 61      Formelsammlung: keine – [FS] offen
+ 62  Quelle: eigene Formulierung nach [GOST Q1 LK] und der Eigenschaftenliste des GK-Kerns (je Parameterwert gelesen); Zahlenbeispiel aus dem Pool (2019MgrundlegendBAnalysisWTR2-1a, wörtlich der Scharterm); [LS-AA QP IV 7].
+ 63
+ 64  Einheit 3 (Extrem- und Wendepunkte mit Parameter):
+ 65      Ableiten mit Parameter: der Parameter läuft als Zahl mit; steht er im Exponenten oder als innerer Faktor, gehört er zur inneren Ableitung.
+ 66      Extrem- und Wendestellen sind Terme im Parameter: Ableitung null setzen, die Lösungen hängen vom Parameter ab; hinreichende Bedingung wie bei der festen Funktion – Kriterien in kurvenuntersuchung.md.
+ 67      Anzahl über die Lösbarkeit: die Extremstellengleichung nach der Zahl ihrer Lösungen befragen – Fallunterscheidung nach dem Parametervorzeichen oder Diskriminante.
+ 68        a · x² = 1: für a > 0 zwei Lösungen, sonst keine – zwei Extrempunkte oder keiner.
+ 69      Gemeinsames erkennen: eine Nullstelle der Ableitung, aus der der Parameter herausfällt, gehört allen Graphen.
+ 70      Auswendig (Teil A): „Anzahl über die Lösbarkeit“ – begründetes Ermessen: die Anlage nennt Scharen nicht, die Teil-A-Zeilen 2022-bebb-lk-A1.4b und 2024MerhoehtAAnalysis13-a verlangen die Fallunterscheidung ohne Rechner.
+ 71      Formelsammlung: [FS-IQB 1.1] „Quadratische Gleichung“ (Lösungsformel, Diskriminante); die Kriterien selbst stehen nicht in der Formelsammlung – [FS] offen
+ 72  Quelle: eigene Formulierung nach [GOST Q1 LK] „Funktionsscharen mit einem Parameter“ und den Kästen von kurvenuntersuchung.md; Zahlenbeispiel aus dem Landesheft (2022-bebb-lk-B2.2m, wörtlich die Extremstellengleichung); [LS-AA QP IV 7].
+ 73
+ 74  Einheit 4 (Parameter aus Bedingungen):
+ 75      Rückwärts denken: die Bedingung – ein Flächeninhalt, eine Wendestelle, eine Punktlage, ein Abstand – als Gleichung im Parameter ansetzen und exakt lösen; Vorzeichenbedingungen an den Parameter sieben die Lösungen.
+ 76      Flächen mit Parameter: Nullstellen als Terme im Parameter bestimmen, das Integral zwischen ihnen auswerten; liegt das Flächenstück unter der Achse, trägt das Integral ein Minuszeichen.
+ 77        f(x) = −x² + 2ax, a > 1: das Integral von 0 bis 2a liefert 4/3 a³.
+ 78      Lagen markanter Punkte: den Extrem- oder Wendepunkt in Parameterkoordinaten aufschreiben und die geforderte Lage – auf einer Geraden, auf der x-Achse, als Quadratecke – als Gleichung übersetzen.
+ 79      Übergänge: sprungfrei heißt gleiche Funktionswerte an der Nahtstelle, knickfrei zusätzlich gleiche Ableitung.
+ 80      Auswendig (Teil A): „Rückwärts denken“ und „Flächen mit Parameter“ – begründetes Ermessen: die Anlage nennt Scharen nicht, die Teil-A-Zeilen 2023-bebb-lk-A1.3a und 2023MerhoehtAAnalysis12-a verlangen die Parameterfläche ohne Rechner.
+ 81      Formelsammlung: keine – die Stammfunktionen liegen bei stammfunktion-und-hauptsatz.md – [FS] offen
+ 82  Quelle: eigene Formulierung nach [GOST LK Integralrechnung] „Bestimmung von Scharparametern bzw. Integrationsgrenzen bei gegebenem Volumen oder Flächeninhalt“; Zahlenbeispiel aus dem Pool (2023MerhoehtAAnalysis12-a, wörtlich); [LS-AA QP IV 7].
+ 83
+ 84  Einheit 5 (Ortskurve und Kurvenvergleich):
+ 85      Ortskurve in drei Schritten: den markanten Punkt in Parameterkoordinaten bestimmen; den Parameter über die x-Koordinate ausdrücken; in die y-Koordinate einsetzen – das Ergebnis ist die Gleichung, auf der alle diese Punkte liegen.
+ 86        Extrempunkt (−3/a | −27/a²): aus der x-Koordinate folgt a = −3/x, Einsetzen liefert y = −3x².
+ 87      Probe rückwärts: ein konkreter Parameterwert, sein Extrempunkt, die Punktprobe an der Ortskurve.
+ 88      Nachbarkurven vergleichen: Differenzen an fester Stelle – y-Achsenabschnitte, Hochpunkte – als Term im Parameter; fällt der Parameter heraus, gilt das Ergebnis für alle Nachbarpaare.
+ 89      Spiegel- und Streckbilder: das Bild als Term bilden und mit der Scharvorschrift vergleichen – liefert der Vergleich einen neuen Parameterwert, gehört das Bild zur Schar.
+ 90      Auswendig (Teil A): „Ortskurve in drei Schritten“ – begründetes Ermessen: die Anlage nennt Ortskurven nicht, die Teil-A-Zeile 2022-bebb-lk-A1.3b verlangt die Elimination ohne Rechner.
+ 91      Formelsammlung: keine – Ortskurven stehen nicht in der Formelsammlung – [FS] offen
+ 92  Quelle: eigene Formulierung nach [GOST Q1 LK] „Ortskurven von Extrem- und Wendepunkten“; Zahlenbeispiel aus dem Landesheft (2022-bebb-lk-A1.3b, wörtlich der Extrempunkt); [LS-AA QP IV 7 sinngemäß – der Fahrplan nennt Ortskurven nicht].
+ 93
+ 94  ### Typische Fehler
+ 95  Verdichtet aus den Spalten `verfahren` und `fehlerquelle` der 142 Zeilen des Themas in abitur/abi-katalog.csv und abitur/iqb-katalog.csv (Zuordnung über profil, leitidee und thema aus themen.csv, wie rohdatei-bau.py); Beleg ist die Original-id. [FD] nur, wo die Kataloge das Muster stützen.
+ 96  - Parameter und Variable vertauscht: nach x statt nach dem Parameter aufgelöst, beim Eliminieren den Parameter statt der Variablen eingesetzt, aus der Exponentialgleichung die falsche Größe gezogen, den Parameter abgegeben statt der Stelle. [abi 2022-bebb-lk-A1.3b, 2023-bebb-lk-B2.1h, 2017-bb-ea-B2.2b; iqb 2020MerhoehtAAnalysis13-b, 2026MerhoehtAAnalysis22]
+ 97  - Fallunterscheidung fehlt oder verkürzt: den Sonderfall Parameter null vergessen oder unzulässig mitgeführt, die Fälle auf zwei Vorzeichen verkürzt, Randwerte des Parameterbereichs nicht ausgeschlossen, den ausgeschlossenen Parameterwert nicht genannt. [abi 2022-bebb-lk-A1.3a, 2022-bebb-lk-A1.4b, 2024-bebb-lk-B2.1a, 2024-bebb-lk-B2.1b, 2018-bb-ea-B2.1a, 2018-bb-ea-B2.2e; iqb 2022MerhoehtBAnalysisWTR2-2e, 2026MerhoehtBAnalysisMMS1-1c, 2021MerhoehtAAnalysis12-b, 2023MgrundlegendBAnalysisWTR1-3c, 2022MerhoehtBAnalysisWTR1-1g]
+ 98  - Den e-Faktor oder den Nenner als Nullstellenquelle behandelt. [abi 2017-bb-ea-B2.1b, 2023-bebb-lk-B2.1a; iqb 2020MgrundlegendBAnalysisWTR2-2b]
+ 99  - Allgemeinheit durch Beispiele ersetzt: den Nachweis für alle Parameterwerte an einem oder zwei Werten geführt, den Parameterwert aus der Abbildung geraten, die Eindeutigkeit nicht aus der Äquivalenzkette geholt. [abi 2018-bb-ea-B2.1d, 2026-bb-ea-B2.2b, 2024-bebb-lk-B2.2d, 2022-bebb-lk-B2.1c, 2022-bebb-lk-B2.2i; iqb 2026MerhoehtBAnalysisWTR1-1b, 2024MerhoehtBAnalysisWTR2-1e, 2020MgrundlegendBAnalysisWTR2-2a, 2025MerhoehtBAnalysisWTR1-1a, 2022MerhoehtBAnalysisWTR2-2a; FD Vollrath/Weigand zum Beweisbedürfnis am Beispiel]
+100  - Vorzeichen und Exponenten mit Parameter verrechnet: Minuszeichen an Potenzen und im Exponenten verloren, Parameterexponenten falsch vereinfacht, die Kettenregel am Parameterterm ausgelassen, Wurzeln und Logarithmen mit Parameter falsch gezogen. [abi 2023-bebb-lk-B2.1d, 2023-bebb-lk-B2.1f, 2026-bb-ea-B2.1a, 2022-bebb-lk-B2.1l, 2025-bebb-lk-B2.2e, 2025-bebb-lk-B2.1c; iqb 2025MerhoehtBAnalysisWTR3-1a, 2021MgrundlegendBAnalysisWTR-1d, 2026MerhoehtBAnalysisWTR2-1c, 2018MerhoehtBAnalysisWTR2-1e, 2025MerhoehtAAnalysis11-a, 2025MerhoehtAAnalysis11-b, 2019MgrundlegendBAnalysisWTR2-1d, 2022MerhoehtAAnalysis12-b]
+101  - Hinreichendes weggelassen: nur die zweite Ableitung null gesetzt, die Art nicht begründet, das globale Minimum nicht vom lokalen unterschieden, den Vorzeichenwechsel nicht genannt, die Parameterbedingung der hinreichenden Bedingung unterschlagen. [abi 2026-bb-ea-B2.2a, 2023-bebb-lk-B2.1e, 2022-bebb-lk-B2.1f, 2024-bebb-lk-B2.1i, 2025-bebb-lk-B2.2f; iqb 2026MerhoehtBAnalysisWTR1-1a, 2025MerhoehtBAnalysisWTR1-1b, 2018MerhoehtBAnalysisWTR2-1g, 2019MgrundlegendBAnalysisWTR2-1b, 2020MgrundlegendBAnalysisWTR1-1g, 2024MerhoehtBAnalysisWTR3-2b, 2025MerhoehtBAnalysisWTR3-1c, 2025MerhoehtBAnalysisMMS1-1a]
+102  - Integral und Fläche mit Parameter: das Flächenstück unter der Achse positiv angesetzt, Parameterpotenzen beim Einsetzen der Grenzen falsch, den Parameterfaktor beim Integrieren vergessen, das Vorzeichen an der unteren Grenze verloren. [abi 2023-bebb-lk-A1.3a, 2024-bebb-lk-A1.1b, 2024-bebb-lk-B2.2e, 2017-bb-ea-B2.1e; iqb 2023MerhoehtAAnalysis12-a, 2024MerhoehtAAnalysis12-b, 2024MerhoehtBAnalysisWTR2-1c, 2024MgrundlegendBAnalysisWTR1-1e, 2025MerhoehtBAnalysisWTR1-1c, 2026MerhoehtBAnalysisMMS1-1b, 2020MerhoehtAAnalysis21-b]
+103  - Zuordnen ohne tragfähiges Merkmal: an der Steilheit oder der Form statt am Grenzverhalten, y-Achsenabschnitt oder Extremstellenvergleich festgemacht, die Zuordnung aus dem ersten Anschein der Abbildung. [abi 2024-bebb-lk-B2.1c, 2024-bebb-lk-A1.2b, 2024-bebb-lk-A1.2a; iqb 2024MerhoehtAAnalysis13-a, 2024MerhoehtAAnalysis13-b, 2026MerhoehtBAnalysisWTR2-1b, 2025MerhoehtBAnalysisWTR2-2a, 2024MerhoehtBAnalysisWTR1-2a, 2022MerhoehtAAnalysis13-b, 2022MerhoehtBAnalysisWTR1-1f]
+104  - Ortskurve und Nachbarkurven: die Ortskurve über die allgemeine Extremstelle ausgerechnet, wo Sonderfall und Streckung genügen, den Punkt auf der Ortskurve nicht als Funktionswert erkannt, Abstände nur in einer Koordinatenrichtung genommen, die Steigung als Quotient der Koordinaten eines einzelnen Punkts. [abi 2022-bebb-lk-B2.2n, 2022-bebb-lk-B2.2o, 2023-bebb-lk-B2.1g; iqb 2022MerhoehtBAnalysisWTR2-2f, 2022MerhoehtBAnalysisWTR2-2g, 2018MerhoehtBAnalysisWTR2-1h, 2024MerhoehtBAnalysisWTR3-2c, 2019MgrundlegendBAnalysisWTR2-1c, 2025MerhoehtBAnalysisMMS1-1b, 2025MerhoehtBAnalysisMMS2-1b]
+105  - Spiegel- und Streckbilder falsch gebildet: die Streckung in x-Richtung mit dem Faktor statt dem Kehrwert, an der falschen Achse gespiegelt, Achsen- mit Punktsymmetrie verwechselt, das Vorzeichen der Verschiebung verdreht. [abi 2022-bebb-lk-B2.2l; iqb 2022MerhoehtBAnalysisWTR2-2d, 2024MerhoehtBAnalysisWTR3-2d, 2025MerhoehtBAnalysisWTR2-2b, 2026MerhoehtBAnalysisWTR2-1d]
+106  - Sachzusammenhang und Maßstab: den Maßstab der Achsen vergessen, die Bedingung an der falschen Stelle angesetzt, Knickfreiheit als gleiche Funktionswerte gedeutet, gleiche Winkel als gleiche statt entgegengesetzt gleiche Steigungen, die Bezugslinie der Ausdehnung verwechselt. [abi 2019-be-gk-B2.2h, 2017-bb-ea-B2.1e; iqb 2022MgrundlegendBAnalysisWTR1-2c, 2020MgrundlegendBAnalysisWTR1-1h, 2020MgrundlegendBAnalysisWTR1-1i, 2018MerhoehtBAnalysisWTR2-1i, 2018MerhoehtBAnalysisWTR2-1j, 2018MerhoehtBAnalysisWTR2-1d, 2022MerhoehtBAnalysisWTR1-1e]
+107  - Parameterrechnungen an Geraden und Potenzen verkürzt: benachbarte Parameterwerte falsch subtrahiert, Potenzdifferenzen wie Vielfache behandelt, den Ausnahmewert des Parameters nicht ausgeschlossen, im Nachweis die falsche Stelle betrachtet. [abi 2023-bebb-lk-B2.2l, 2023-bebb-lk-B2.2i, 2023-bebb-lk-B2.2j, 2022-bebb-lk-B2.1d, 2022-bebb-lk-B2.2j, 2022-bebb-lk-B2.2k, 2022-bebb-lk-B2.2m, 2025-bebb-lk-B2.1a; iqb 2023MerhoehtBAnalysisWTR1-2a, 2023MerhoehtBAnalysisWTR1-2b, 2023MerhoehtBAnalysisWTR1-2c, 2023MerhoehtBAnalysisWTR1-2d, 2018MerhoehtBAnalysisWTR1-2f, 2026MerhoehtBAnalysisMMS2-2a, 2026MerhoehtBAnalysisWTR2-1a, 2021MgrundlegendBAnalysisWTR-1e, 2022MerhoehtAAnalysis13-a, 2026-bb-ea-B2.1b als Landeszwilling]
+108  - Deutungen im Modell verfehlt: Grenzwert- und Anfangswertgleichungen falsch gedeutet, die Quadratbedingung als Punktgleichheit statt Kantengleichheit, den Abstand markanter Punkte falsch angesetzt. [iqb 2024MerhoehtBAnalysisWTR1-2d, 2024MerhoehtBAnalysisWTR1-2e, 2026MerhoehtBAnalysisMMS2-2d, 2025MerhoehtBAnalysisWTR3-1d, 2025MerhoehtBAnalysisWTR3-1b, 2019MgrundlegendBAnalysisWTR2-1a, 2023MgrundlegendBAnalysisWTR1-3a, 2023MgrundlegendBAnalysisWTR1-3b]
+109
+110  ### Für schwache Schüler
+111  Mindeststoff (GK-Kern Q1 / Niveaustufe H / RLP FOS) [GOST, GOST-OHiMi, FOS]: Nach dem Brandenburger Plan ist das ganze Thema Leistungskursstoff – der GK-Kern der Q1 nennt weder Scharen noch Ortskurven, die Anlage ohne Hilfsmittel auch nicht; einen fhr-Anteil gibt es nicht (RLP FOS ohne Scharen, kein fhr-Bestand). Der Pool prüft Scharen gleichwohl auf grundlegendem Niveau in Teil B (sechzehn Zeilen, Jahre ab dem ersten Pooljahrgang); wer grundlegend zur Prüfung geht, braucht deshalb als Arbeits-Mindeststoff: den Familiengedanken und die Parameterbestimmung aus einem Punkt (Einheit 1), die Nullstellen- und Vorzeichenfragen am faktorisierten Scharterm (Einheit 2) und die Parameterbestimmung aus einer Flächen- oder Wertebedingung in der Grundform (Einheit 4) – alles an ganzrationalen Termen und einfachen e-Produkten. LK (voller Umfang): dazu die Anzahl- und Existenzfragen mit Fallunterscheidung (Einheit 3), die allgemeinen Nachweise für alle Parameterwerte (Einheit 2 und 3) und die Ortskurven samt Kurvenvergleich (Einheit 5). Niveaustufe H der E-Phase [RLP H]: kein eigener Posten – die Sek-I-Pläne kennen die Schar nicht; der nächste Anker ist der Einfluss der Parameter auf die Parabel (quadratische-funktionen.md), Blatt-0-Stoff. Vorrat für GK: alles aus Einheit 3 und 5, die Trapez- und Identitätsnachweise und die MMS-Zeilen nach dem Niveau der Rohdatei. COSH [COSH, nachrangig, aus dem Gedächtnis, nicht am Text geprüft]: der Mindestanforderungskatalog führt Parameterdiskussionen nicht als eigenen Posten – kein zusätzlicher Mindeststoff.
+112  Grundvorstellung (Blatt 0) [GOST Q1 LK, MO]: Die Schar ist eine Familie von Graphen – ein Parameterwert, ein Graph; der Parameter wählt aus, die Variable läuft. „Hier ist eine Abbildung mit mehreren beschrifteten Kurven derselben Schar, kein fester Term. Lege den Finger auf eine Kurve: welcher Parameterwert gehört ihr? Woran erkennst du das – am Schnitt mit der Hochachse, an der Lage des höchsten Punkts, am Verlauf nach rechts? Und umgekehrt: der Parameterwert wird um eins größer – wandert deine Kurve nach oben, wird sie steiler, spiegelt sie sich? Zeige mit dem Finger, wohin ihr höchster Punkt wandert.“ Wer den Parameter mit der Variablen verwechselt oder alle Kurven für denselben Graphen hält, braucht das vor jeder Rechnung: erst die Rollen (wer ist fest, wer läuft), dann das Verfahren. Verständnis, nicht Verfahren; Ermessen in Vorstellung und Aufgabenform – die Eingangsvoraussetzungen der Leitidee L4 kennen keine Scharen, der nächste amtliche Anker ist der Parametereinfluss bei der Parabel (Sek I). [MO-Logik: Vorstellung vor Verfahren; Rohdatei-Fehlerquelle „beim Eliminieren a statt x einsetzen“, abi 2022-bebb-lk-A1.3b; BASICS nur als Strukturvorbild Diagnose → Förderung → Nachtest, keine Inhalte]
+113  Sprossen je Verfahrenstyp (Reihenfolge = Kette des Hauptblatts) [LS-AA, Rohdatei; Sprossenfolge Ermessen, wo Lehrwerk und Rohdatei keine Reihenfolge vorgeben]:
+114  - Scharbegriff und Parameterwert (Einheit 1): „Wer ist hier unbekannt?“ – zu Aufgabentexten ankreuzen, ob nach der Stelle oder nach dem Parameter aufgelöst wird; nichts rechnen (Vorstufe, Grundvorstellung) → ein Scharmitglied zu festem Parameterwert hinschreiben und einen Funktionswert berechnen (Grundfall, viermal, ganzrationale Schar) → den Parameter aus einem Punkt bestimmen: einsetzen, lineare Gleichung lösen (abi 2024-bebb-lk-A1.1a, 2022-bebb-lk-A1.3a, 2022-bebb-lk-B2.1l; iqb 2024MerhoehtAAnalysis12-a, 2021MgrundlegendBAnalysisWTR-1d, 2025MerhoehtBAnalysisWTR1-1a) → Parameter im Exponenten oder als Potenz: durch Vergleich exakt lösen (iqb 2025MerhoehtBAnalysisWTR3-1a; abi 2022-bebb-lk-B2.2i, 2023-bebb-lk-B2.2l) → den Parameter aus einer Sachvorgabe gewinnen: Ausdehnung, Anfangswert und Grenzwert, Punktdurchgang der Flugkurve (iqb 2020MgrundlegendBAnalysisWTR1-1h, 2018MerhoehtBAnalysisWTR2-1e, 2024MerhoehtBAnalysisWTR1-2e) → abgebildete Kurven den Parameterwerten zuordnen: y-Achsenabschnitt, Extremstelle, Spiegelbild, Grenzverhalten (iqb 2026MerhoehtBAnalysisWTR2-1b, 2025MerhoehtBAnalysisWTR2-2a, 2024MerhoehtAAnalysis13-b; abi 2024-bebb-lk-B2.1c, 2024-bebb-lk-A1.2b) → Sonderfälle und Einfluss beschreiben: linearer Sonderfall, additiver und multiplikativer Parameter (abi 2022-bebb-lk-B2.2j, 2019-be-gk-B2.2h; iqb 2022MerhoehtBAnalysisWTR2-2b, 2023MgrundlegendBAnalysisWTR1-3a) → ein Scharmitglied in die Abbildung skizzieren (iqb 2022MerhoehtAAnalysis13-a) → Prüfungshöhe: Bestimmungsgleichungen im Sachzusammenhang deuten und auswerten (iqb 2024MerhoehtBAnalysisWTR1-2d, 2024MerhoehtBAnalysisWTR1-2a, Niveau II) und die Eignung von Scharmitgliedern am Bild beurteilen (iqb 2022MerhoehtBAnalysisWTR1-1f, 2022MerhoehtBAnalysisWTR1-1g, Niveau III).
+115  - Eigenschaften aller Graphen (Einheit 2): „Fällt der Parameter heraus?“ – zu Termpaaren ankreuzen, ob eine Differenz oder Gleichsetzung den Parameter behält oder verliert; nichts rechnen (Vorstufe) → Nullstellen einer faktorisierten Schar ablesen, Parameterfaktoren einzeln ansehen (Grundfall, viermal; iqb 2019MgrundlegendBAnalysisWTR2-1a, 2025MerhoehtBAnalysisMMS1-1a, 2026MerhoehtBAnalysisMMS2-2a; abi 2025-bebb-lk-B2.1a) → Vorzeichen und Positivität am Term begründen (iqb 2024MerhoehtAAnalysis13-a, 2025MerhoehtBAnalysisWTR3-1b, 2026MerhoehtBAnalysisWTR2-1a; abi 2024-bebb-lk-A1.2a) → Nullstellen mit Fallunterscheidung nach dem Parameter (abi 2018-bb-ea-B2.1a, 2024-bebb-lk-B2.1b; iqb 2018MerhoehtBAnalysisWTR2-1i) → Grenzverhalten nach Vorzeichen oder Parität (abi 2024-bebb-lk-B2.1a, 2023-bebb-lk-B2.2h; iqb 2023MerhoehtBAnalysisWTR1-2a, 2025MerhoehtBAnalysisMMS2-1a) → gemeinsame Punkte aller Graphen bestimmen (abi 2026-bb-ea-B2.2b; iqb 2026MerhoehtBAnalysisWTR1-1b, 2023MerhoehtBAnalysisWTR1-2b) → Symmetrie für alle Parameterwerte nachweisen, auch nach Verschiebung (abi 2026-bb-ea-B2.1a; iqb 2025MerhoehtAAnalysis11-b, 2026MerhoehtBAnalysisWTR2-1c, 2026MerhoehtBAnalysisWTR2-1d) → parameterunabhängige Werte, Steigungen und die gemeinsame Tangente (iqb 2025MerhoehtAAnalysis11-a; abi 2022-bebb-lk-B2.1c, 2026-bb-ea-B2.1a) → Prüfungshöhe: Folgerungen aus gemeinsamen Eigenschaften in Lageaussagen übersetzen (abi 2022-bebb-lk-B2.2k; iqb 2022MerhoehtBAnalysisWTR2-2c, Niveau II) und Nullstellen samt Tangentensteigungen am faktorisierten Term nachweisen (iqb 2026MerhoehtBAnalysisMMS1-1a, Niveau I bis II).
+116  - Extrem- und Wendepunkte mit Parameter (Einheit 3): die Ableitung mit Parameter bilden und an fester Stelle auswerten (Grundfall, viermal; abi 2025-bebb-lk-B2.2e, 2023-bebb-lk-B2.1c) → Extrempunkte als Terme im Parameter berechnen und nachweisen (abi 2023-bebb-lk-B2.1d; iqb 2020MerhoehtAAnalysis13-a, 2024MerhoehtBAnalysisWTR3-2b, 2018MerhoehtBAnalysisWTR2-1g, 2019MgrundlegendBAnalysisWTR2-1b) → Wendepunkte mit Parameter, gemeinsame und parameterabhängige (abi 2022-bebb-lk-B2.1f, 2026-bb-ea-B2.2a; iqb 2025MerhoehtBAnalysisWTR1-1b, 2026MerhoehtBAnalysisWTR1-1a, 2020MgrundlegendBAnalysisWTR1-1g) → gemeinsamen Extrempunkt nachweisen und die Art ohne zweite Ableitung begründen (abi 2017-bb-ea-B2.1b, 2017-bb-ea-B2.2b; iqb 2025MerhoehtBAnalysisWTR3-1c) → die Anzahl über die Lösbarkeit begründen: Fallunterscheidung, Diskriminante (abi 2022-bebb-lk-B2.2m, 2022-bebb-lk-A1.4b, 2018-bb-ea-B2.1d; iqb 2022MerhoehtBAnalysisWTR2-2e, 2026-bb-ea-B2.1b als Landeszwilling) → Monotonie mit Parameter (abi 2023-bebb-lk-B2.1c; iqb 2018MerhoehtBAnalysisWTR1-2f) → Abstände markanter Punkte als Terme im Parameter (abi 2025-bebb-lk-B2.1c, 2023-bebb-lk-B2.1e; iqb 2025MerhoehtBAnalysisMMS1-1b, 2025MerhoehtBAnalysisMMS2-1b) → Prüfungshöhe: Tiefpunkt oder Sattelpunkt nach der Parität unterscheiden (abi 2023-bebb-lk-B2.2j, Niveau II), genau eine waagerechte Tangente über die Diskriminante (abi 2018-bb-ea-B2.2e, Niveau III) und am Graphen (iqb 2026MerhoehtAAnalysis22, Niveau III), die Eignung über die Lage der dritten Extremstelle (iqb 2022MerhoehtBAnalysisWTR1-1g, Niveau III) und die Extrempunkte aller Kurven aus dem Ableitungsgraphen eines Mitglieds (abi 2025-bebb-lk-B2.2f, Niveau II).
+117  - Parameter aus Bedingungen (Einheit 4): „Vorwärts oder rückwärts?“ – zu Aufgabentexten ankreuzen: Eigenschaft aus gegebenem Parameter (vorwärts) oder Parameter aus gegebener Bedingung (rückwärts); nichts rechnen (Vorstufe) → den Flächeninhalt als Term im Parameter berechnen (Grundfall, viermal; abi 2023-bebb-lk-A1.3a, 2024-bebb-lk-A1.1b; iqb 2023MerhoehtAAnalysis12-a, 2024MerhoehtAAnalysis12-b) → den Parameter aus einem vorgegebenen Flächeninhalt bestimmen (iqb 2019MgrundlegendBAnalysisWTR2-1d, 2026MerhoehtBAnalysisMMS1-1b, 2024MgrundlegendBAnalysisWTR1-1e, 2024MerhoehtBAnalysisWTR2-1c; abi 2024-bebb-lk-B2.2e) → aus einer Integralbedingung oder einer Flächengleichheit (iqb 2025MerhoehtBAnalysisWTR1-1c, 2023MerhoehtAAnalysis12-b; abi 2023-bebb-lk-A1.3b, 2017-bb-ea-B2.1e) → aus Lagen markanter Punkte: y-Koordinate der Tiefpunkte, Wendepunkt auf einer Geraden, Quadratecken, Mittelpunkt auf der x-Achse (iqb 2021MerhoehtAAnalysis12-b, 2026MerhoehtBAnalysisMMS1-1c, 2025MerhoehtBAnalysisWTR3-1d, 2026MerhoehtBAnalysisMMS2-2d, 2023MgrundlegendBAnalysisWTR1-3b) → aus Tangenten- und Schnittbedingungen: vorgegebene Tangente, genau zwei gemeinsame Punkte (abi 2022-bebb-lk-B2.1d; iqb 2021MgrundlegendBAnalysisWTR-1e) → aus Übergängen: sprungfrei, knickfrei (iqb 2022MerhoehtBAnalysisWTR1-1e, 2018MerhoehtBAnalysisWTR2-1d) → Sachbedingungen: Radienverhältnis, Winkelgleichheit, Weite (iqb 2022MgrundlegendBAnalysisWTR1-2c, 2020MgrundlegendBAnalysisWTR1-1i, 2018MerhoehtBAnalysisWTR2-1i) → Prüfungshöhe: den Vierecksinhalt aus Hochpunkt und Achsenpunkten ansetzen (abi 2022-bebb-lk-B2.2o; iqb 2022MerhoehtBAnalysisWTR2-2g, Niveau III), den Achsendreiecksinhalt als Term nachweisen (abi 2023-bebb-lk-B2.1a, Niveau II) und die Stammfunktionen einer Schar nach Vorzeichen untersuchen (iqb 2020MerhoehtAAnalysis21-b, Niveau III).
+118  - Ortskurve und Kurvenvergleich (Einheit 5): „Wovon hängt dieser Punkt ab?“ – zu markanten Punkten ankreuzen, ob ihre Koordinaten den Parameter tragen; nichts rechnen (Vorstufe) → die Ortskurve in drei Schritten bestimmen (Grundfall, viermal; abi 2022-bebb-lk-A1.3b) → die Probe rückwärts: Punktprobe eines konkreten Extrempunkts an der Ortskurve (abi 2023-bebb-lk-B2.1f) → die Ortsgerade aus zwei Hochpunkten oder über die Elimination (iqb 2018MerhoehtBAnalysisWTR2-1h) → Punkte einer Bildkurve allgemein nachweisen: Mittelpunkte der Strecken zum Ursprung (abi 2024-bebb-lk-B2.2d; iqb 2024MerhoehtBAnalysisWTR2-1e) → Nachbarkurven vergleichen: Abstände der Hochpunkte und y-Achsenabschnitte, parameterfreie Flächen (iqb 2019MgrundlegendBAnalysisWTR2-1c, 2024MerhoehtBAnalysisWTR3-2c, 2020MerhoehtAAnalysis13-b) → Spiegel- und Streckbilder als Scharmitglieder nachweisen (iqb 2024MerhoehtBAnalysisWTR3-2d, 2020MgrundlegendBAnalysisWTR2-2a, 2022MerhoehtBAnalysisWTR2-2d; abi 2022-bebb-lk-B2.2l) → die Scharkurve neben ihrem Ableitungsgraphen: gemeinsamer Punkt, Tangentenfrage (iqb 2020MgrundlegendBAnalysisWTR2-2b; abi 2023-bebb-lk-B2.2m, 2023-bebb-lk-B2.2i) → Prüfungshöhe: die Ortsgerade y = x über Sonderfall und Streckungseigenschaft begründen (abi 2022-bebb-lk-B2.2n; iqb 2022MerhoehtBAnalysisWTR2-2f, Niveau II bis III), den Schnittwinkel als nur von der Ortskurve abhängig erkennen (abi 2023-bebb-lk-B2.1g, Niveau III), den Parameter mit kleinstem Ursprungsabstand am Bild erläutern (abi 2023-bebb-lk-B2.1h, Niveau III), die Punktsymmetrie zweier Scharkurven aus einer Identität (iqb 2025MerhoehtBAnalysisWTR2-2b, Niveau III), die Trapezflächen für aufeinanderfolgende Parameterwerte (abi 2023-bebb-lk-B2.2n; iqb 2023MerhoehtBAnalysisWTR1-2d, Niveau III) und die beliebig vielen Schnittstellen für kleine Parameter (iqb 2022MerhoehtAAnalysis13-b, Niveau III).
+119
+120  ### Prüfungsform (fhr / abi / iqb)
+121  Geltung [konzept.md § 4 Entscheidung 35]: Der IQB-Pool ist für das Profil abi voll maßgeblich – Brandenburg entnimmt seit 2017 Poolaufgaben, seit der KMK-Ländervereinbarung 2020 unverändert, und der Pool wirkt normierend auf Landesaufgaben und Oberstufenklausuren; die Auswahl-Einschränkung steht allein in den Geltungsdateien abi-*-geltung.md. Ein fhr-Bestand existiert nicht (RLP FOS 2019 ohne Scharen). Die Rohdatei zählt 179 Zeilen mit 111 Haupttypen (abi 62 Zeilen, 47 Typen; iqb 117 Zeilen, 88 Typen), Jahre 2017–2026. Der Eintrag setzt keine Decke; Häufigkeit ist Auskunft, ein einziges Vorkommen ein vollwertiger Typ. Typnamen wörtlich aus abitur/abitur-typen.csv (gemeinsame Liste abi/iqb; das Thema ist selbst der Gegenstand und führt keine Gegenstandsklassen, die Typnamen stehen ohne Präfix).
+122  abi (62 Zeilen, 47 Typen; Landeshefte bb-ea, be-gk, bebb-lk 2017–2026, davon 6 aus den CAS-Fassungen 2017 und 2018) [abi-Katalog]: Gemeinsamen Extrempunkt einer Funktionenschar nachweisen (4, E3) · Parameterwerte nach der Anzahl der Extrempunkte über die Lösbarkeit der Extremstellengleichung begründen (4, E3) · Scharparameter aus einem Punkt des Graphen angeben (4, E1) · Scharparameter aus einer Nullstelle und einem Flächeninhalt bestimmen (3, E4) · Fläche zwischen Graph und x-Achse in Abhängigkeit vom Scharparameter berechnen (2, E4) · Graph der Schar zum Parametervorzeichen über das Grenzverhalten zuordnen (2, E1) · Ortskurve der Extrempunkte einer Schar durch Elimination des Parameters bestimmen (2, E5) · Parameterwert für genau eine waagerechte Tangente bestimmen (2, E3) · je 1: Ableitung einer Schar als Vielfaches der Ableitung eines Scharmitglieds nachweisen (E3) · Ableitung einer Schar nachweisen und zusammenhängenden Monotoniebereich ohne Rechnung begründen (E3) · Abstand des Hochpunkts zu den Tiefpunkten einer Schar in Abhängigkeit vom Parameter berechnen (E3) · Achsenschnittpunkte einer Schar bestimmen und Flächeninhalt des Achsendreiecks als Term im Parameter nachweisen (E4) · Anzahl der Nullstellen einer Schar in Abhängigkeit vom Parameter über die Diskriminante ermitteln (E2) · Aussage über den Ableitungsgraphen einer Schar als Tangente an den Scharfgraphen beurteilen (E5) · Einfluss eines multiplikativen Parameters auf den Graphen im Vergleich mit dem Ausgangsgraphen beschreiben (E1) · Einzigen Extrempunkt einer Schar mit vorgegebener x-Koordinate nachweisen und y-Koordinate berechnen (E3) · Extrempunkte aller Scharkurven aus dem Ableitungsgraphen eines Scharmitglieds ohne Rechnung begründen (E3) · Folgerungen aus gemeinsamen Eigenschaften einer Schar für den Verlauf der Graphen angeben (E2) · Gemeinsame Punkte aller Graphen einer Schar bestimmen (E2) · Gemeinsamen und parameterabhängigen Wendepunkt einer Schar nachweisen (E3) · Genau zwei Nullstellen einer Schar aus der faktorisierten Form begründen und angeben (E2) · Gleichmäßige Streckung eines Scharfgraphen als Graph einer anderen Scharfunktion nachweisen (E5) · Grenzverhalten einer Potenzschar nach der Parität des Exponenten begründen (E2) · Grenzverhalten einer Schar für x → +∞ nach dem Parametervorzeichen angeben (E2) · Identische Graphen einer Schar zu entgegengesetzten Parameterwerten begründen (E2) · Konstanten Abstand von Extrem- und Wendestelle einer Schar nachweisen (E3) · Mittelpunkte der Strecken zum Ursprung auf einem gegebenen Graphen allgemein nachweisen (E5) · Nullstellen einer Funktionenschar mit Fallunterscheidung ermitteln (E2) · Nullstellenfreiheit aller Scharkurven aus dem gemeinsamen Tiefpunktwert beurteilen (E3) · Ortskurve der Extrempunkte einer Schar als Gerade über Sonderfall und Streckungseigenschaft begründen (E5) · Parameter des Extrempunkts mit kleinstem Abstand zum Ursprung an der Ortskurve näherungsweise erläutern und angeben (E5) · Parameterwerte mit waagerechter Tangente über die Lösbarkeit der Ableitungsgleichung untersuchen (E3) · Punktsymmetrie aller Scharkurven und gemeinsame Tangente im Ursprung nachweisen (E2) · Scharparameter aus der Differenz zweier Scharfunktionswerte über eine Potenzgleichung bestimmen (E1) · Scharparameter aus der Flächengleichheit von Quadrat und Flächenstück bestimmen (E4) · Scharparameter aus einem Punkt bestimmen und Wendepunkt nachweisen (E3) · Scharparameter für eine vorgegebene Tangente in einem Punkt untersuchen (E4) · Scharparameter für eine vorgegebene Wendestelle berechnen (E4) · Scharparameter für einen vorgegebenen Flächeninhalt eines Vierecks aus Hochpunkt und Achsenpunkten bestimmen (E4) · Schnittwinkel von Scharkurve und Ortskurve als nur von der Ortskurve abhängig begründen (E5) · Steigung und Achsenschnittpunkt des linearen Sonderfalls einer Schar angeben (E1) · Tangente im y-Achsenschnittpunkt aufstellen und als gemeinsame Tangente aller Scharkurven begründen (E2) · Tiefpunkt einer Schar mit zwei Parametern nachweisen und Hochpunkt über die Punktsymmetrie begründen (E3) · Tiefpunkt oder Sattelpunkt nach der Parität des Exponenten unterscheiden (E3) · Trapez aus Funktions- und Ableitungswerten einer Schar begründen und Flächengleichheit für k und k + 1 nachweisen (E5) · Vorzeichen der Funktionswerte einer Schar begründen (E2) · Waagerechte Tangente aller Scharkurven in einem gemeinsamen Punkt nachweisen (E3). Muster: Die Schar trägt die zweite Analysis-Aufgabe in Teil B der Leistungskurshefte – je Heft eine Polynom- oder e-Funktions-Schar mit sechs bis acht Teilaufgaben vom Parameter aus einem Punkt bis zur Ortskurve (2022: die Viertgradschar mit Tangente t_0 und der Streckungsnachweis, 2022-bebb-lk-B2.1c/d/f/l und B2.2i–o; 2023: die e-Schar mit Achsendreieck, Extrempunkt, Ortskurve h und Schnittwinkel, 2023-bebb-lk-B2.1a/c/d/e/f/g/h, daneben die Potenzschar h_k, 2023-bebb-lk-B2.2h–n; 2024: die e-Schar mit Nullstellenanzahl und Tiefpunktnachweis samt Steckbrief-Nachbaraufgabe, 2024-bebb-lk-B2.1a/b/c/i und B2.2b/d/e; 2025: die faktorisierte Viertgradschar und die Exponentenschar, 2025-bebb-lk-B2.1a/c und B2.2e/f), im bb-ea die ln- und e-Scharen 2017/2018 (2017-bb-ea-B2.1b/e, 2017-bb-ea-B2.2b, 2018-bb-ea-B2.1a/d, 2018-bb-ea-B2.2e) samt ihren CAS-Fassungen (2017-bb-ea-cas-B2.1b, 2017-bb-ea-cas-B2.1f, 2017-bb-ea-cas-B2.2b, 2018-bb-ea-cas-B2.1d, 2018-bb-ea-cas-B2.2e) und der nur in der CAS-Fassung gestellten Frage nach identischen Graphen zu a und −a (2017-bb-ea-cas-B2.2d) und 2026 die Ursprungsschar x · e^(−ax²) (2026-bb-ea-B2.1a/b, 2026-bb-ea-B2.2a/b); der Berliner Grundkurs trägt eine einzige Zeile (Modellvergleich 2019-be-gk-B2.2h). Teil A der bebb-lk-Hefte prüft Parameterfläche, Ortskurve, waagerechte Tangenten und Zuordnung ohne Rechner (2022-bebb-lk-A1.2b, A1.3a/b, A1.4b; 2023-bebb-lk-A1.3a/b; 2024-bebb-lk-A1.1a/b, A1.2a/b). 21 der 62 Zeilen sind wortgleiche Pooldubletten (2022-bebb-lk-A1.2b, B2.2i–o, 2023-bebb-lk-A1.3a/b, B2.2h/m/n, 2024-bebb-lk-A1.1a/b, A1.2a/b, B2.2d, 2025-bebb-lk-B2.1a, 2026-bb-ea-B2.2a/b), drei abgewandelt (2024-bebb-lk-B2.2b/e aus der Zwei-Parameter-Schar, 2025-bebb-lk-B2.1c). Niveau I 12, II 37, III 13.
+123  iqb (117 Zeilen, 88 Typen; Pool 2017–2026, grundlegend 21 und erhöht 96 Zeilen, Teil A 17 und Teil B 100 Zeilen, davon 9 MMS und 21 CAS) [iqb-Katalog]: Scharparameter aus einem Punkt des Graphen angeben (9, E1) · Scharparameter für einen vorgegebenen Flächeninhalt zwischen Graph und x-Achse bestimmen (4, E4) · Extrempunkt einer Schar mit Art nach dem Parametervorzeichen bestimmen (3, E3) · Extrempunkte einer Schar mit Art in Abhängigkeit vom Parameter bestimmen (3, E3) · Fläche zwischen Graph und x-Achse in Abhängigkeit vom Scharparameter berechnen (3, E4) · Gemeinsame Punkte aller Graphen einer Schar bestimmen (3, E2) · Scharparameter den Graphen über die Lage der Hochpunkte zuordnen (3, E1) · Einzigen Wendepunkt einer Schar nachweisen und angeben (2, E3) · Graph der Schar zu einem Parameterwert in die Abbildung skizzieren (2, E1) · Graph der Schar zum Parametervorzeichen über das Grenzverhalten zuordnen (2, E1) · Hochpunkt einer Parabelschar mit Parameterkoordinaten nachweisen (2, E3) · Lage der Extrempunkte einer Schar auf einer gegebenen Kurve durch Einsetzen nachweisen (2, E5) · Scharparameter den Graphen über den y-Achsenabschnitt zuordnen (2, E1) · Spiegelung an der x-Achse als Scharmitglied nachweisen (2, E5) · Vorzeichen aller Funktionswerte einer Schar am Term begründen (2, E2) · je 1: Abstand der Hochpunkte zweier benachbarter Scharparabeln berechnen (E5) · Abstand der y-Achsenabschnitte zweier benachbarter Scharkurven berechnen (E5) · Abstand des Hochpunkts zu den Tiefpunkten einer Schar in Abhängigkeit vom Parameter berechnen (E3) · Ansätze für einen rechten Winkel in einem Dreieck aus Scharpunkten über Skalarprodukt und Steigungsprodukt erläutern (E4) · Anzahl der Nullstellen einer Schar in Abhängigkeit vom Parameter über die Diskriminante ermitteln (E2) · Anzahl gemeinsamer Punkte einer Schar mit einer waagerechten Geraden über die Höhe der Hochpunkte nach Parameterbereichen angeben (E3) · Aussage über den Ableitungsgraphen einer Schar als Tangente an den Scharfgraphen beurteilen (E5) · Bedingungen für den sprungfreien Übergang von Funktionswert und Ableitung angeben (E4) · Eignung der Scharfunktionen über die Lage einer dritten Extremstelle beurteilen (E3) · Einfluss eines additiven Scharparameters auf den Graphen beschreiben (E1) · Existenz von Scharparametern mit beliebig vielen Schnittstellen begründen (E5) · Extrempunkt einer trigonometrischen Schar ohne Ableitung über benachbarte Nullstellen bestimmen (E3) · Folgerungen aus gemeinsamen Eigenschaften einer Schar für den Verlauf der Graphen angeben (E2) · Gemeinsamen Punkt von Scharkurve und ihrem Ableitungsgraphen in Abhängigkeit vom Parameter berechnen (E5) · Genau zwei Nullstellen einer Schar aus der faktorisierten Form begründen und angeben (E2) · Gleiche Steigung aller Graphen einer Schar im Ursprung nachweisen (E2) · Gleichmäßige Streckung eines Scharfgraphen als Graph einer anderen Scharfunktion nachweisen (E5) · Gleichung zwischen Scharparameter und Nullstelle aus der Nullstellenbedingung herleiten (E2) · Gleichungen eines Bestimmungssystems für Scharparameter im Sachzusammenhang deuten (E1) · Graph über eine gemeinsame Eigenschaft aller Scharfunktionen als nicht zur Schar gehörend begründen (E2) · Graphen einer Scharfunktion und ihrer in y-Richtung verschobenen Fassung zuordnen und Parameter und Verschiebung bestimmen (E1) · Grenzverhalten einer Potenzschar nach der Parität des Exponenten begründen (E2) · Grenzverhalten einer Schar angeben und parameterunabhängigen Funktionswert nachweisen (E2) · Hochpunkt einer Schar mit Parameterfaktor bestimmen (E3) · Hochpunkt im Ursprung über das Vorzeichen begründen und Tiefstelle einer Schar berechnen (E3) · Lage und Art der Extrempunkte einer Schar bestimmen und Parameter für einen vorgegebenen Abstand der Extrempunkte berechnen (E3) · Mittelpunkte der Strecken zum Ursprung auf einem gegebenen Graphen allgemein nachweisen (E5) · Nullstellen einer Funktionenschar mit Fallunterscheidung ermitteln (E2) · Nullstellen einer Schar am faktorisierten Term angeben (E2) · Nullstellen einer Schar am Term begründen und Tangentensteigungen dort nachweisen (E2) · Nullstellen einer Schar angeben und Vorzeichen des y-Achsenabschnitts begründen (E2) · Ortskurve der Extrempunkte einer Schar als Gerade über Sonderfall und Streckungseigenschaft begründen (E5) · Parameter einer Parabelschar aus dem knickfreien Übergang zu einem Graphen bestimmen (E4) · Parameter einer Schar aus einer vorgegebenen Ausdehnung einer Figur bestimmen (E1) · Parameter einer Schar aus gleichen Winkeln zweier Graphen mit einer Strecke bestimmen und Lage eines Punktes prüfen (E4) · Parameter für genau zwei gemeinsame Punkte von Graph und Scharparabel über die Diskriminante bestimmen (E4) · Parameterunabhängigkeit der Fläche zwischen zwei Scharkurven nachweisen (E5) · Parameterwerte für mehr als einen gemeinsamen Punkt zweier Graphen über die Lösbarkeit der Schnittgleichung bestimmen (E4) · Parameterwerte nach der Anzahl der Extrempunkte über die Lösbarkeit der Extremstellengleichung begründen (E3) · Positivität, y-Achsenabschnitt und Steigung einer Schar begründen und berechnen (E2) · Punktsymmetrie aller Graphen einer Schar zum Ursprung nachweisen (E2) · Punktsymmetrie zweier Scharkurven zueinander aus einer Identität nachweisen und deuten (E5) · Rechten Winkel in einem Dreieck aus Scharpunkten für bestimmte Ecken und Parameterbereiche ausschließen (E4) · Scharparameter aus Anfangswert und Grenzwert über das Vorzeichen des Exponenten bestimmen (E1) · Scharparameter aus dem Abstand der Extremstellen berechnen (E3) · Scharparameter aus der Flächengleichheit von Quadrat und Flächenstück bestimmen (E4) · Scharparameter aus der Weite berechnen und Höhe des Hochpunkts angeben (E1) · Scharparameter aus der y-Koordinate der Tiefpunkte ermitteln (E4) · Scharparameter aus einem Punkt bestimmen und Wendepunkt nachweisen (E3) · Scharparameter aus einer Integralbedingung bestimmen (E4) · Scharparameter aus einer Nullstelle und einem Flächeninhalt bestimmen (E4) · Scharparameter den Graphen über Spiegelung und Extremstelle zuordnen (E1) · Scharparameter der Ausgangsfunktion angeben und Eignung zweier Scharfunktionen am Graphen beurteilen (E1) · Scharparameter für den Mittelpunkt der Extrempunkte auf der x-Achse bestimmen (E4) · Scharparameter für ein vorgegebenes Verhältnis zweier Radien einer Profilkurve berechnen (E4) · Scharparameter für eine vorgegebene Höhe des Hochpunkts berechnen (E4) · Scharparameter für eine vorgegebene Wendestelle berechnen (E4) · Scharparameter für einen Extrempunkt als Quadratecke bestimmen und Flächeninhalt berechnen (E4) · Scharparameter für einen vorgegebenen Flächeninhalt eines Vierecks aus Hochpunkt und Achsenpunkten bestimmen (E4) · Scharparameter für einen Wendepunkt auf einer Geraden berechnen (E4) · Scharparameter für genau eine Nullstelle über die Lage der Extrempunkte angeben (E3) · Scharparameter für genau eine waagerechte Tangente aus dem Graphen bestimmen (E3) · Scharparameter für Hoch- und Tiefpunkt als Gegenecken eines achsenparallelen Quadrats bestimmen (E4) · Steigung der Ortsgeraden der Hochpunkte einer Schar aus zwei Hochpunkten berechnen (E5) · Steigung und Achsenschnittpunkt des linearen Sonderfalls einer Schar angeben (E1) · Strenge Monotonie einer Schar über die Diskriminante der Ableitung für einen Parameterbereich nachweisen (E3) · Symmetrieachse einer Scharkurve aus der Verschiebung einer geraden Funktion begründen (E2) · Tiefpunkt einer Schar mit zwei Parametern nachweisen und Hochpunkt über die Punktsymmetrie begründen (E3) · Trapez aus Funktions- und Ableitungswerten einer Schar begründen und Flächengleichheit für k und k + 1 nachweisen (E5) · Verschobene Scharfunktion als gerade Funktion nachweisen (E2) · Vorzeichen der Funktionswerte einer Schar begründen (E2) · Vorzeichen der Stammfunktionen einer Schar durch Fallunterscheidung untersuchen (E4) · Wendepunkt einer Schar im Ursprung mit der x-Achse als Wendetangente nachweisen (E3). Muster: In Teil B ist die Schar die zweite Hälfte der großen Analysis-Sachaufgabe oder eine eigene innermathematische Aufgabe – im Jahrgang 2017 die Sinusschar c · sin(cx) mit Skizze, Fläche und Tiefpunkt ohne Ableitung (2017MerhoehtBAnalysisWTR1-3a, 2017MerhoehtBAnalysisWTR1-3b, 2017MerhoehtBAnalysisWTR1-3c), die Schar k²x³ − 6kx² + 9x mit Extremstellenabstand und verschobenem Graphen (2017MerhoehtBAnalysisWTR2-1e, 2017MerhoehtBAnalysisWTR2-1g), die Viertgradschar −x⁴ + 6kx² mit Nullstellenanzahl, Hochpunkten, Geradenschnitt und Zuordnung (2017MerhoehtBAnalysisWTR3-1a, 2017MerhoehtBAnalysisWTR3-1c, 2017MerhoehtBAnalysisWTR3-1d, 2017MerhoehtBAnalysisWTR3-1e), die Schar x² · e^(−ax) der CAS-Fassung mit Punkt, Extrempunkten und Kurve durch die Extrempunkte (2017MerhoehtBAnalysisCAS1-1a, 2017MerhoehtBAnalysisCAS1-1b, 2017MerhoehtBAnalysisCAS1-1c) und die Glasschar (2017MerhoehtBAnalysisCAS2-1a, 2017MerhoehtBAnalysisCAS2-1b, 2017MerhoehtBAnalysisCAS2-1d, 2017MerhoehtBAnalysisCAS2-1e); Kugelstoßen mit Flugkurvenschar 2018 (2018MerhoehtBAnalysisWTR2-1d/e/g/h/i/j), die Parabelschar zum Trapez 2019 (2019MgrundlegendBAnalysisWTR2-1a/b/c/d), Angler-Logo und g_b-Schar 2020 (2020MgrundlegendBAnalysisWTR1-1g/h/i, 2020MgrundlegendBAnalysisWTR2-2a/b), die h_a-Schar zur Viertgradfunktion 2021 (2021MgrundlegendBAnalysisWTR-1d/e), ICE-Fahrt und Übertopf 2022 (2022MerhoehtBAnalysisWTR1-1e/f/g, 2022MgrundlegendBAnalysisWTR1-2c), die w_a-Schar 2023 (2023MgrundlegendBAnalysisWTR1-3a/b/c), Steckbrief-Nachbarschar und w-Schar 2024 (2024MerhoehtBAnalysisWTR2-1b/c/e, 2024MerhoehtBAnalysisWTR1-2a/d/e, 2024MerhoehtBAnalysisWTR3-2b/c/d, 2024MgrundlegendBAnalysisWTR1-1e), die Exponenten- und g_k-Scharen 2025 (2025MerhoehtBAnalysisWTR1-1a/b/c, 2025MerhoehtBAnalysisWTR2-2a/b, 2025MerhoehtBAnalysisWTR3-1a/b/c/d) und die MMS-Scharen 2025/2026 (2025MerhoehtBAnalysisMMS1-1a/b, 2025MerhoehtBAnalysisMMS2-1a/b, 2026MerhoehtBAnalysisMMS1-1a/b/c, 2026MerhoehtBAnalysisMMS2-2a/d) samt g_a und h_a 2026 (2026MerhoehtBAnalysisWTR1-1a/b, 2026MerhoehtBAnalysisWTR2-1a/b/c/d, 2023MerhoehtBAnalysisWTR1-2a/b/c/d, 2018MerhoehtBAnalysisWTR1-2f); aus den CAS-Stapeln des Nachzugs 2026-09-29 die Parabelschar f_r 2018 mit Extremum nach dem Vorzeichen von r, gemeinsamen Punkten, Nullstellenanzahl über die Diskriminante und dem rechtwinkligen Dreieck aus Scharpunkten – Ausschluss für zwei Ecken und Erläuterung der Ansätze über Skalarprodukt und Steigungsprodukt (2018MerhoehtBAnalysisCAS1-1c, 2018MerhoehtBAnalysisCAS1-1d, 2018MerhoehtBAnalysisCAS1-1e, 2018MerhoehtBAnalysisCAS1-1f, 2018MerhoehtBAnalysisCAS1-1g; die letzten drei Niveau III), die Wurzelschar √(k · x² + 400) mit Nullstellenfreiheit, Tiefpunkt und mehr als einem gemeinsamen Punkt mit einer Parabel (2018MerhoehtBAnalysisCAS3-1b, 2018MerhoehtBAnalysisCAS3-1c, 2018MerhoehtBAnalysisCAS3-1f, dieser Niveau III), die Hängebrücke mit Parabel- und Kettenlinienschar – Parameter aus den Befestigungspunkten und Ordnung der Graphen über den y-Achsenabschnitt (2018MerhoehtBAnalysisCAS3-2a, 2018MerhoehtBAnalysisCAS3-2c) – und grundlegend 2017 die Temperaturschar f_k mit Zuordnung über die Hochpunkte, einem Graphen, der wegen f_k ≥ 23 nicht zur Schar gehört, dem Parameter zu einer Höchsttemperatur und dem einzigen Wendepunkt als Zeitpunkt stärkster Abkühlung (2017MgrundlegendBAnalysisCAS-2a, 2017MgrundlegendBAnalysisCAS-2b, 2017MgrundlegendBAnalysisCAS-2c, 2017MgrundlegendBAnalysisCAS-2d). Teil A stellt die Schar fast nur auf erhöhtem Niveau (16 der 17 Zeilen erhöht; grundlegend einzig der Streckfaktor einer Sinusschar aus einem Flächeninhalt 2017MgrundlegendAAnalysis2-b; erhöht: 2018MerhoehtAAnalysis2-a, 2020MerhoehtAAnalysis13-a/b, 2020MerhoehtAAnalysis21-b, 2021MerhoehtAAnalysis12-b, 2022MerhoehtAAnalysis12-b, 2022MerhoehtAAnalysis13-a/b, 2023MerhoehtAAnalysis12-a/b, 2024MerhoehtAAnalysis12-a/b, 2024MerhoehtAAnalysis13-a/b, 2025MerhoehtAAnalysis11-a/b, 2026MerhoehtAAnalysis22); grundlegend erscheint die Schar sonst nur in Teil B (20 Zeilen, davon vier aus dem CAS-Stapel 2017 seit dem Nachzug 2026-09-29). 21 Poolzeilen kehren wortgleich in Landesheften wieder (Dubletten der abi-Liste), drei abgewandelt (2024MerhoehtBAnalysisWTR2-1b/c → 2024-bebb-lk-B2.2b/e, 2025MerhoehtBAnalysisMMS1-1b → 2025-bebb-lk-B2.1c). Niveau I 31, II 60, III 26.
+124  Zielmarke: fhr: keine (kein Bestand). Einheit 1 – abi: Parameter aus dem Punkt der Viertgradschar (2022-bebb-lk-A1.3a, Niveau I); iqb: Bestimmungsgleichungen im Sachzusammenhang deuten und auswerten (2024MerhoehtBAnalysisWTR1-2d/e, Niveau II bis III). Einheit 2 – abi: Folgerungen aus gemeinsamen Eigenschaften übersetzen (2022-bebb-lk-B2.2k, Niveau II); iqb: Nullstellen und Tangentensteigungen am faktorisierten Term (2026MerhoehtBAnalysisMMS1-1a, Niveau I bis II) und die Nullstellenanzahl in Abhängigkeit vom Parameter über die Diskriminante mit drei Fällen (2018MerhoehtBAnalysisCAS1-1e, Niveau III). Einheit 3 – abi: genau eine waagerechte Tangente über die Diskriminante samt Sattelpunkt-Erläuterung (2018-bb-ea-B2.2e, Niveau III); iqb: der ganzzahlige Parameter mit genau einer waagerechten Tangente am Bild (2026MerhoehtAAnalysis22, Niveau III). Einheit 4 – abi: Viereck aus Hochpunkt und Achsenpunkten mit vorgegebenem Inhalt (2022-bebb-lk-B2.2o, Niveau III); iqb: Stammfunktionen einer Schar nach Vorzeichen untersuchen (2020MerhoehtAAnalysis21-b, Niveau III). Einheit 5 – abi: die Ortsgerade y = x über Sonderfall und Streckungseigenschaft (2022-bebb-lk-B2.2n, Niveau II); iqb: Trapezflächen für aufeinanderfolgende Parameterwerte (2023MerhoehtBAnalysisWTR1-2d, Niveau III).
 ````
 
-## 2 Originale (95)
+## 2 Originale (175)
 
-Kennungen aus „Prüfungsform“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
+Kennungen aus „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
 
 ### 2022-bebb-lk-B2.1c (abi-katalog.csv)
 
@@ -907,7 +903,647 @@ jahr 2023 · papier 2023-iqb-ea · punkte 7 · format Begründung|Rechnung · an
 - verfahren: Parallelität von PQ und RS über die x-Koordinaten; Trapezfläche allgemein in k mit (−1)^k aufstellen und für gerades k sowie k + 1 auswerten
 - fehlerquelle: Betrag bei h_k'(2) − h_k(2) vergessen, Vorzeichen von (−1)^k
 
-Nur außerhalb von „Prüfungsform“ genannt, nicht aufgenommen: 2017-bb-ea-B2.2c, 2017-bb-ea-B2.1a, 2023-bebb-lk-B2.1d, 2022-bebb-lk-A1.3b, 2026-bb-ea-B2.2b, 2020MerhoehtAAnalysis13-b, 2019MgrundlegendBAnalysisWTR2-1d, 2022MerhoehtBAnalysisWTR2-2f, 2025MerhoehtAAnalysis11-b, 2022-bebb-lk-A1.4b, 2022-bebb-lk-B2.2m, 2023-bebb-lk-B2.1h, 2024-bebb-lk-B2.1b, 2022MerhoehtBAnalysisWTR2-2e, 2026MerhoehtBAnalysisMMS1-1c, 2023MgrundlegendBAnalysisWTR1-3c, 2022MerhoehtBAnalysisWTR1-1g, 2020MgrundlegendBAnalysisWTR2-2b, 2018-bb-ea-B2.1d, 2024-bebb-lk-B2.2d, 2022-bebb-lk-B2.2i, 2026MerhoehtBAnalysisWTR1-1b, 2024MerhoehtBAnalysisWTR2-1e, 2022MerhoehtBAnalysisWTR2-2a, 2023-bebb-lk-B2.1f, 2022-bebb-lk-B2.1l, 2025-bebb-lk-B2.2e, 2026MerhoehtBAnalysisWTR2-1c, 2018MerhoehtBAnalysisWTR2-1e, 2023-bebb-lk-B2.1e, 2022-bebb-lk-B2.1f, 2024-bebb-lk-B2.1i, 2025-bebb-lk-B2.2f, 2025MerhoehtBAnalysisWTR1-1b, 2018MerhoehtBAnalysisWTR2-1g, 2019MgrundlegendBAnalysisWTR2-1b, 2025MerhoehtBAnalysisWTR3-1c, 2024-bebb-lk-A1.1b, 2024-bebb-lk-B2.2e, 2017-bb-ea-B2.1e, 2024MerhoehtAAnalysis12-b, 2024MerhoehtBAnalysisWTR2-1c, 2025MerhoehtBAnalysisWTR1-1c, 2026MerhoehtBAnalysisMMS1-1b, 2024-bebb-lk-B2.1c, 2024-bebb-lk-A1.2b, 2024-bebb-lk-A1.2a, 2024MerhoehtAAnalysis13-b, 2026MerhoehtBAnalysisWTR2-1b, 2022MerhoehtAAnalysis13-b, 2022MerhoehtBAnalysisWTR1-1f, 2023-bebb-lk-B2.1g, 2022MerhoehtBAnalysisWTR2-2g, 2018MerhoehtBAnalysisWTR2-1h, 2024MerhoehtBAnalysisWTR3-2c, 2019MgrundlegendBAnalysisWTR2-1c, 2025MerhoehtBAnalysisMMS2-1b, 2022-bebb-lk-B2.2l, 2022MerhoehtBAnalysisWTR2-2d, 2024MerhoehtBAnalysisWTR3-2d, 2025MerhoehtBAnalysisWTR2-2b, 2026MerhoehtBAnalysisWTR2-1d, 2020MgrundlegendBAnalysisWTR1-1h, 2020MgrundlegendBAnalysisWTR1-1i, 2018MerhoehtBAnalysisWTR2-1i, 2018MerhoehtBAnalysisWTR2-1j, 2023-bebb-lk-B2.2l, 2023-bebb-lk-B2.2i, 2023-bebb-lk-B2.2j, 2022-bebb-lk-B2.1d, 2022-bebb-lk-B2.2j, 2023MerhoehtBAnalysisWTR1-2b, 2023MerhoehtBAnalysisWTR1-2c, 2021MgrundlegendBAnalysisWTR-1e, 2026-bb-ea-B2.1b, 2024MerhoehtBAnalysisWTR1-2e, 2026MerhoehtBAnalysisMMS2-2d, 2025MerhoehtBAnalysisWTR3-1d, 2025MerhoehtBAnalysisWTR3-1b, 2023MgrundlegendBAnalysisWTR1-3b, 2022MerhoehtBAnalysisWTR2-2b, 2022MerhoehtBAnalysisWTR2-2c, 2023-bebb-lk-B2.1c, 2023MerhoehtAAnalysis12-b, 2023-bebb-lk-A1.3b, 2023-bebb-lk-B2.2m, 2023-bebb-lk-B2.2n
+### 2022-bebb-lk-A1.3b (abi-katalog.csv)
+
+jahr 2022 · papier 2022-bebb-lk · punkte 4 · format Rechnung · antwort Term
+- gegeben: f_a(x) = a²x⁴ + 4ax³, a > 0; alle Graphen haben einen von a abhängigen Extrempunkt, alle Extrempunkte liegen auf der Ortskurve h
+- gesucht: eine Gleichung der Ortskurve h
+- verfahren: Extremstelle −3/a aus f_a' = 0 (x = 0 ist Sattelstelle), Extrempunkt (−3/a | −27/a²), a = −3/x einsetzen
+- fehlerquelle: x = 0 als Extremstelle nehmen; beim Eliminieren a statt x einsetzen
+
+### 2022-bebb-lk-B2.1l (abi-katalog.csv)
+
+jahr 2022 · papier 2022-bebb-lk · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: f_a(x) = 1/8 x⁴ − a/12 x³ + 2x, definiert in IR, a ∈ IR, Graph G_a; f_a'(x) = 1/2 x³ − a/4 x² + 2; g(x) = −3/4 x³ − 1/2 x² + 2x; Punkt (2 | f_a(2)) liegt auf dem Graphen von g; Kontrolle a = 15
+- gesucht: dieser Wert von a
+- verfahren: f_a(2) = g(2) nach a lösen
+- fehlerquelle: Rechenfehler bei 16/8 − 8a/12
+
+### 2022-bebb-lk-B2.2i (abi-katalog.csv)
+
+jahr 2022 · papier 2022-bebb-lk · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: f_a(x) = x · e^(−a · x²/2 + 1/2), a ∈ IR
+- gesucht: Nachweis, dass genau ein Graph (1 | 1) enthält; zugehöriges a
+- verfahren: Punkt einsetzen, Gleichung eindeutig nach a lösen
+- fehlerquelle: Eindeutigkeit nicht aus der Äquivalenzkette ableiten
+
+### 2023-bebb-lk-B2.2l (abi-katalog.csv)
+
+jahr 2023 · papier 2023-bebb-lk · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: h_k(x) = (x − 3)^k + 1, definiert in IR, k ∈ IN ohne 0; Differenz der Funktionswerte von h_{k+1} und h_k an der Stelle 5 beträgt 4
+- gesucht: dieser Wert von k
+- verfahren: Werte einsetzen, Differenz zu 2^k vereinfachen, nach k auflösen
+- fehlerquelle: 2^(k+1) − 2^k = 2 setzen
+
+### 2020MgrundlegendBAnalysisWTR1-1h (iqb-katalog.csv)
+
+jahr 2020 · papier 2020-iqb-ga · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: Logo eines Geschäfts für Anglerbedarf: untere Begrenzungslinie des Fischs u(x) = 1/8 x³, obere Begrenzungslinie v(x) = 1/4 x² · (4 − x) (beide in IR definiert), Wasseroberfläche y = 5/4; die obere Spitze der Schwanzflosse liegt auf der Wasseroberfläche, die Strecke zwischen oberer und unterer Spitze der Schwanzflosse steht senkrecht dazu; verändertes Logo: obere Begrenzungslinie weiter v, untere Begrenzungslinie u_k(x) = k · 1/8 x³ mit k > 0; die Kopfspitze ist der gemeinsame Punkt der Graphen von u_k und v mit der x-Koordinate 8/(k + 2); die Ausdehnung der Schwanzflosse in y-Richtung soll 3/2 betragen
+- gesucht: Wert von k
+- verfahren: y-Koordinate der unteren Spitze 5/4 − 3/2 = −1/4 mit u_k(−1) gleichsetzen
+- fehlerquelle: die Ausdehnung vom Hochpunkt statt von der Wasseroberfläche aus ansetzen
+
+### 2018MerhoehtBAnalysisWTR2-1e (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ea · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: Kugelstoßen im Koordinatensystem (1 LE = 1 m, x-Achse ist der Boden): Bahn von der Ruhelage R bis zum Abstoßpunkt A durch f(x) = 0,4 + 1,6 · e^(0,5x), x ∈ [−2; 0]; Flugkurven p_a(x) = −ax² + bx + 2, a > 0, ohne Knick in A; b = 0,8
+- gesucht: Wert von a, für den der Graph von p_a durch (3 | 3,5) verläuft
+- verfahren: Einsetzen und nach a auflösen
+- fehlerquelle: Vorzeichen von −ax² übersehen
+
+### 2024MerhoehtBAnalysisWTR1-2e (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ea · punkte 5 · format Rechnung · antwort Zahl
+- gegeben: Gleichungen (1) bis (3) aus d
+- gesucht: Werte von a und b
+- verfahren: aus (2) und (1) das Vorzeichen von c schließen, a/b = 45, in (1) einsetzen
+- fehlerquelle: Grenzwert für c > 0 (Wert 0) nehmen und Widerspruch übersehen
+
+### 2026MerhoehtBAnalysisWTR2-1b (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ea · punkte 3 · format Kurzantwort|Begründung · antwort Text
+- gegeben: Abbildung mit Graphen von g_a zu a = 1/k, k, k² für ein k > 1
+- gesucht: Zuordnung mit Begründung
+- verfahren: Schnittpunkte mit der y-Achse vergleichen
+- fehlerquelle: Zuordnung über das Minimum ohne Begründung
+
+### 2024MerhoehtAAnalysis13-b (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ea · punkte 3 · format Begründung · antwort Text
+- gegeben: Schar f_a(x) = x · e^(a · x), a ≠ 0, genau eine Extremstelle je Funktion; Abbildungen 1 und 2 zeigen je einen Graphen der Schar, einer davon für positives a
+- gesucht: Entscheidung, welche Abbildung den Graphen zu positivem a zeigt, mit Begründung
+- verfahren: für a > 0 wächst f_a für x → +∞ unbeschränkt; Abbildung 1 fällt rechts gegen die Achse und müsste dazu einen weiteren Extrempunkt haben, was ausgeschlossen ist
+- fehlerquelle: Abbildung 1 wählen, weil der Graph dort für x > 0 zunächst steigt
+
+### 2024-bebb-lk-B2.1c (abi-katalog.csv)
+
+jahr 2024 · papier 2024-bebb-lk · punkte 3 · format Begründung|Rechnung · antwort Text
+- gegeben: Abbildung mit den Graphen G_{−0,2} und G_{0,4} (Graphen I und II)
+- gesucht: Zuordnung der Parameter zu I und II mit Begründung; gemeinsamer Schnittpunkt aller G_a mit der y-Achse
+- verfahren: Grenzverhalten aus a (Teilaufgabe a) mit dem Bild vergleichen; f_a(0) berechnen
+- fehlerquelle: über die Steilheit statt über das Grenzverhalten zuordnen; Schnittpunkt aus dem Bild ablesen statt berechnen
+
+### 2024-bebb-lk-A1.2b (abi-katalog.csv)
+
+jahr 2024 · papier 2024-bebb-lk · punkte 3 · format Begründung · antwort Text
+- gegeben: Schar f_a(x) = x · e^(a · x), a ≠ 0, genau eine Extremstelle je Funktion; Abbildungen 1 und 2 zeigen je einen Graphen der Schar, einer davon für positives a
+- gesucht: Entscheidung, welche Abbildung den Graphen zu positivem a zeigt, mit Begründung
+- verfahren: für a > 0 wächst f_a für x → +∞ unbeschränkt; Abbildung 1 fällt rechts gegen die Achse und müsste dazu einen weiteren Extrempunkt haben, was ausgeschlossen ist
+- fehlerquelle: Abbildung 1 wählen, weil der Graph dort für x > 0 zunächst steigt
+
+### 2022-bebb-lk-B2.2j (abi-katalog.csv)
+
+jahr 2022 · papier 2022-bebb-lk · punkte 2 · format Kurzantwort · antwort Zahl
+- gegeben: Graph von f₀ ist eine Gerade
+- gesucht: Steigung und Schnittpunkt mit der y-Achse
+- verfahren: a = 0 einsetzen
+- fehlerquelle: Steigung e statt e^(1/2)
+
+### 2022MerhoehtBAnalysisWTR2-2b (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ea · punkte 2 · format Kurzantwort · antwort Zahl
+- gegeben: Graph von f₀ ist eine Gerade
+- gesucht: Steigung und Schnittpunkt mit der y-Achse
+- verfahren: a = 0 einsetzen
+- fehlerquelle: Steigung e statt e^(1/2)
+
+### 2022MerhoehtBAnalysisWTR1-1f (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ea · punkte 3 · format Kurzantwort|Begründung · antwort Text
+- gegeben: f_p wie in e; Abbildung 2 mit G₋₈₀ und G₂₅₀
+- gesucht: p mit f_p = f; Eignung von f₋₈₀ und f₂₅₀ anhand der Graphen
+- verfahren: p = 0 ablesen; Graphen auf Extrempunkte im Intervall prüfen (Geschwindigkeit muss abnehmen)
+- fehlerquelle: f₂₅₀ wegen des Anschlusses an 120 bei x = 2 für passend halten
+
+### 2022MerhoehtBAnalysisWTR1-1g (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ea · punkte 4 · format Begründung · antwort Text
+- gegeben: Für p ≠ 0: f_p'(x) = 0 hat neben 0 und 2 die Lösung x₃ = 1 − 90/p; x₃ ≤ 0 ⇔ 0 < p ≤ 90, x₃ ≥ 2 ⇔ −90 ≤ p < 0
+- gesucht: Beurteilung der Eignung von f_p mit p ≠ 0
+- verfahren: Eignung heißt kein Extremum in ]0; 2[, also x₃ außerhalb; Bedingungen an p übernehmen
+- fehlerquelle: Randwerte p = ±90 (x₃ = 0 bzw. 2 ohne Extremum im offenen Intervall) ausschließen
+
+### 2025MerhoehtBAnalysisWTR3-1b (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ea · punkte 2 · format Begründung · antwort Text
+- gegeben: f_a(x) = −3x² · e^{ax}
+- gesucht: Begründung, dass f_a für jedes a keine positiven Werte hat
+- verfahren: Faktoren einzeln betrachten
+- fehlerquelle: Vorzeichen von a für relevant halten
+
+### 2024-bebb-lk-A1.2a (abi-katalog.csv)
+
+jahr 2024 · papier 2024-bebb-lk · punkte 2 · format Begründung · antwort Text
+- gegeben: Schar f_a(x) = x · e^(a · x), definiert in IR, a ≠ 0; jede f_a hat genau eine Extremstelle
+- gesucht: Begründung, dass der Graph von f_a für x < 0 unterhalb der x-Achse verläuft
+- verfahren: Vorzeichen der beiden Faktoren betrachten
+- fehlerquelle: das Vorzeichen von a für ausschlaggebend halten
+
+### 2024-bebb-lk-B2.1b (abi-katalog.csv)
+
+jahr 2024 · papier 2024-bebb-lk · punkte 5 · format Rechnung · antwort Text
+- gegeben: Schar f_a wie in a
+- gesucht: Anzahl der Nullstellen von f_a in Abhängigkeit von a
+- verfahren: Nullstellen auf den quadratischen Faktor zurückführen, Diskriminante nach a auswerten
+- fehlerquelle: Fall a = 0 in die Diskriminante einbeziehen (dort ist der Term linear); e^(ax) = 0 als Nullstelle ansetzen
+
+### 2018MerhoehtBAnalysisWTR2-1i (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ea · punkte 3 · format Rechnung · antwort Term
+- gegeben: Kugelstoßen im Koordinatensystem (1 LE = 1 m, x-Achse ist der Boden): Bahn von der Ruhelage R bis zum Abstoßpunkt A durch f(x) = 0,4 + 1,6 · e^(0,5x), x ∈ [−2; 0]; Flugkurven p_a(x) = −ax² + bx + 2, a > 0, ohne Knick in A; b = 0,8; Zusammenhang a = 0,8/s + 2/s² zwischen a und Stoßweite s > 0
+- gesucht: Herleitung dieser Gleichung
+- verfahren: Nullstellenbedingung p_a(s) = 0 nach a auflösen
+- fehlerquelle: Stoßweite mit der Hochpunktstelle verwechseln
+
+### 2026-bb-ea-B2.2b (abi-katalog.csv)
+
+jahr 2026 · papier 2026-bb-ea · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: Schar f_a wie in a
+- gesucht: Nachweis, dass genau zwei Punkte auf allen Graphen liegen, und ihre Koordinaten
+- verfahren: f_0 = f_1 lösen, Werte prüfen
+- fehlerquelle: nur zwei konkrete Parameterwerte vergleichen, ohne die Allgemeinheit zu zeigen
+
+### 2026MerhoehtBAnalysisWTR1-1b (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ea · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: Schar f_a wie in a
+- gesucht: Nachweis, dass genau zwei Punkte auf allen Graphen liegen, und ihre Koordinaten
+- verfahren: f_0 = f_1 lösen, Werte prüfen
+- fehlerquelle: nur zwei konkrete Parameterwerte vergleichen, ohne die Allgemeinheit zu zeigen
+
+### 2023MerhoehtBAnalysisWTR1-2b (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ea · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: h_k wie in a; alle Graphen haben zwei Punkte gemeinsam
+- gesucht: Koordinaten der beiden gemeinsamen Punkte
+- verfahren: Stellen finden, an denen (x − 3)^k nicht von k abhängt
+- fehlerquelle: nur (3 | 1) finden
+
+### 2025MerhoehtAAnalysis11-b (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ea · punkte 2 · format Rechnung · antwort Text
+- gegeben: Schar f_a(x) = x · e^(−a · x²), a > 0
+- gesucht: Nachweis, dass alle Graphen der Schar punktsymmetrisch zum Ursprung sind
+- verfahren: f_a(−x) bilden und mit −f_a(x) vergleichen
+- fehlerquelle: das Vorzeichen im Exponenten mit umdrehen und Achsensymmetrie folgern
+
+### 2026MerhoehtBAnalysisWTR2-1c (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ea · punkte 5 · format Begründung · antwort Text
+- gegeben: h_a(x) = g_a(x + 1/2 ln a), a > 0
+- gesucht: rechnerischer Nachweis h_a(x) = √a (e^x + e^−x) und der Achsensymmetrie
+- verfahren: Exponenten aufspalten, e^{½ ln a} = √a, dann h_a(−x) bilden
+- fehlerquelle: e^{½ ln a} = ½ a rechnen
+
+### 2026MerhoehtBAnalysisWTR2-1d (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ea · punkte 3 · format Begründung|Kurzantwort · antwort Term
+- gegeben: h_a gerade (aus c), h_a(x) = g_a(x + ½ ln a)
+- gesucht: Begründung, dass G_a achsensymmetrisch ist, und Gleichung der Achse in a
+- verfahren: G_a als verschobenen Graphen von h_a deuten
+- fehlerquelle: Vorzeichen der Verschiebung (x = −½ ln a)
+
+### 2022MerhoehtBAnalysisWTR2-2c (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ea · punkte 3 · format Kurzantwort · antwort Text
+- gegeben: Für alle a, a₁, a₂: f_a(0) = 0; f_a'(0) = f₀'(0); f_a1(x) = f_a2(x) ⇔ a₁ = a₂ ∨ x = 0
+- gesucht: Folgerungen für den Verlauf der Graphen
+- verfahren: Jede Aussage in eine Lageeigenschaft übersetzen
+- fehlerquelle: dritte Aussage als Berührung deuten
+
+### 2025-bebb-lk-B2.2e (abi-katalog.csv)
+
+jahr 2025 · papier 2025-bebb-lk · punkte 3 · format Rechnung · antwort Term
+- gegeben: Schar f_a(x) = (x − 2)² · e^(x + a); Behauptung f_a'(x) = f_0'(x) · e^a
+- gesucht: Nachweis der Beziehung
+- verfahren: e^a als konstanten Faktor abspalten oder Produktregel mit Vergleich
+- fehlerquelle: Kettenregel für e^(x + a) mit innerer Ableitung ungleich 1; Produktregel ohne Zusammenfassen
+
+### 2023-bebb-lk-B2.1c (abi-katalog.csv)
+
+jahr 2023 · papier 2023-bebb-lk · punkte 4 · format Rechnung|Begründung · antwort Term|Text
+- gegeben: f_a(x) = (4a − x) · e^(x/2), definiert in IR, a ≠ 0, Graph G_a; Behauptung f_a'(x) = e^(x/2) · (−x/2 + 2a − 1)
+- gesucht: Nachweis der Ableitung; Begründung ohne Rechnung, dass die Stellen, an denen f_a monoton fallend ist, ein zusammenhängendes Intervall bilden
+- verfahren: Ableiten und ausklammern; Vorzeichen von f_a' am linearen Faktor ablesen
+- fehlerquelle: Monotoniebereich doch berechnen; Vorzeichen der e-Funktion diskutieren
+
+### 2023-bebb-lk-B2.1d (abi-katalog.csv)
+
+jahr 2023 · papier 2023-bebb-lk · punkte 3 · format Rechnung · antwort Text|Term
+- gegeben: f_a(x) = (4a − x) · e^(x/2), definiert in IR, a ≠ 0, Graph G_a; f_a'(x) = e^(x/2) · (−x/2 + 2a − 1); jeder Graph hat genau einen Extrempunkt E_a
+- gesucht: Nachweis der x-Koordinate 4a − 2; zugehörige y-Koordinate
+- verfahren: f_a' = 0 lösen, einsetzen
+- fehlerquelle: Exponent (4a − 2)/2 falsch vereinfachen
+
+### 2018MerhoehtBAnalysisWTR2-1g (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ea · punkte 4 · format Rechnung · antwort Text
+- gegeben: Kugelstoßen im Koordinatensystem (1 LE = 1 m, x-Achse ist der Boden): Bahn von der Ruhelage R bis zum Abstoßpunkt A durch f(x) = 0,4 + 1,6 · e^(0,5x), x ∈ [−2; 0]; Flugkurven p_a(x) = −ax² + bx + 2, a > 0, ohne Knick in A; b = 0,8
+- gesucht: Nachweis, dass (0,4/a | 2 + 0,16/a) Hochpunkt des Graphen von p_a ist
+- verfahren: Parabel nach unten geöffnet, p_a'(0,4/a) = 0, Funktionswert einsetzen
+- fehlerquelle: Art des Extremums nicht begründen
+
+### 2019MgrundlegendBAnalysisWTR2-1b (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ga · punkte 3 · format Begründung · antwort Text
+- gegeben: Schar f_k(x) = −kx · (x − 8), k > 0, in IR definiert; Graph G_k; Nullstellen 0 und 8
+- gesucht: Begründung, dass (4 | 16k) der Hochpunkt von G_k ist
+- verfahren: Öffnung und Symmetrie der Parabel nutzen, f_k(4) berechnen
+- fehlerquelle: mit f'' rechnen und k > 0 nicht nennen
+
+### 2022-bebb-lk-B2.1f (abi-katalog.csv)
+
+jahr 2022 · papier 2022-bebb-lk · punkte 7 · format Rechnung|Begründung · antwort Text
+- gegeben: f_a(x) = 1/8 x⁴ − a/12 x³ + 2x, definiert in IR, a ∈ IR, Graph G_a; f_a'(x) = 1/2 x³ − a/4 x² + 2; a ≠ 0
+- gesucht: Nachweis, dass alle G_a einen gemeinsamen und einen weiteren, nicht gemeinsamen Wendepunkt haben
+- verfahren: Wendestellen 0 und a/3 aus f_a'' = 0 mit f_a''' ≠ 0; Wendepunkt (0 | 0) ist parameterfrei, der zweite hat die x-Koordinate a/3
+- fehlerquelle: hinreichende Bedingung für a ≠ 0 nicht führen; a/3 als „gemeinsam“ ansehen
+
+### 2025MerhoehtBAnalysisWTR1-1b (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ea · punkte 5 · format Rechnung|Kurzantwort · antwort Term
+- gegeben: Schar f_a wie in a
+- gesucht: Nachweis genau eines Wendepunkts je Graph und dessen Koordinaten
+- verfahren: f'' = 0 lösen, f''' prüfen, f_a(0)
+- fehlerquelle: Eindeutigkeit (nur eine Nullstelle von f'') nicht benennen
+
+### 2025MerhoehtBAnalysisWTR3-1c (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ea · punkte 5 · format Begründung|Rechnung · antwort Term
+- gegeben: G_a hat genau zwei Extrempunkte, einer im Ursprung; Kontrolle x_T = −2/a
+- gesucht: Begründung Hochpunkt im Ursprung und x-Koordinate des Tiefpunkts
+- verfahren: Wertebeschränkung aus b nutzen, f_a' faktorisieren
+- fehlerquelle: Hochpunkt über f'' nachweisen wollen statt über das Vorzeichen
+
+### 2022-bebb-lk-B2.2m (abi-katalog.csv)
+
+jahr 2022 · papier 2022-bebb-lk · punkte 3 · format Kurzantwort|Begründung · antwort Text
+- gegeben: Gruppe I: genau zwei Extrempunkte (Abbildung 2), Gruppe II: keine (Abbildung 3); Extremstellen sind die Lösungen von a · x² = 1
+- gesucht: alle a je Gruppe mit Begründung
+- verfahren: Lösungsanzahl von a · x² = 1 nach a unterscheiden
+- fehlerquelle: a = 0 der Gruppe I zuordnen
+
+### 2022-bebb-lk-A1.4b (abi-katalog.csv)
+
+jahr 2022 · papier 2022-bebb-lk · punkte 3 · format Rechnung|Begründung · antwort Text
+- gegeben: f_a(x) = eˣ · (1 − ax), f_a'(x) = eˣ · (1 − ax − a) aus a
+- gesucht: alle Werte von a, für die der Graph von f_a eine waagerechte Tangente besitzt
+- verfahren: f_a' = 0 auf den linearen Faktor zurückführen; für a ≠ 0 lösbar, für a = 0 nicht
+- fehlerquelle: Fall a = 0 übersehen und „für alle a“ antworten
+
+### 2018-bb-ea-B2.1d (abi-katalog.csv)
+
+jahr 2018 · papier 2018-bb-ea · punkte 5 · format Rechnung|Begründung · antwort Text
+- gegeben: Funktionenschar f_a mit f_a(x) = (x² + a) · e^(0,5 − x), a ∈ IR; die Graphen der Schar sind G_a. Betrachtet wird der Fall a > 1. Zur Kontrolle ist angegeben: f_a′(x) = (−x² + 2x − a) · e^(0,5 − x).
+- gesucht: Nachweis, dass die Graphen G_a für a > 1 keine Extrempunkte besitzen
+- verfahren: f_a′(x) = 0 setzen; wegen e^(0,5 − x) > 0 bleibt x² − 2x + a = 0 mit x = 1 ± √(1 − a). Für a > 1 ist der Radikand negativ, es gibt keine reelle Lösung, also keine Stelle mit waagerechter Tangente und damit keinen Extrempunkt.
+- fehlerquelle: die Existenz der Nullstellen der Ableitung nicht über das Vorzeichen des Radikanden begründen, sondern nur Beispiele einsetzen
+
+### 2022MerhoehtBAnalysisWTR2-2e (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ea · punkte 3 · format Kurzantwort|Begründung · antwort Text
+- gegeben: Gruppe I: genau zwei Extrempunkte (Abbildung 2), Gruppe II: keine (Abbildung 3); Extremstellen sind die Lösungen von a · x² = 1
+- gesucht: alle a je Gruppe mit Begründung
+- verfahren: Lösungsanzahl von a · x² = 1 nach a unterscheiden
+- fehlerquelle: a = 0 der Gruppe I zuordnen
+
+### 2026-bb-ea-B2.1b (abi-katalog.csv)
+
+jahr 2026 · papier 2026-bb-ea · punkte 4 · format Rechnung|Kurzantwort · antwort Zahl|Term
+- gegeben: f_a(x) = x · e^(−ax²), definiert in IR, a ≠ 0, mit f_a'(x) = (1 − 2ax²) · e^(−ax²); Graph G_a; Kontrolle: eine x-Koordinate hat den Wert √(1/(2a))
+- gesucht: Anzahl der Punkte mit waagerechter Tangente in Abhängigkeit von a; ihre x-Koordinaten
+- verfahren: f_a' = 0 auf x² = 1/(2a) zurückführen, nach dem Vorzeichen von a unterscheiden
+- fehlerquelle: negative Lösung vergessen; Fall a < 0 auslassen
+
+### 2023-bebb-lk-B2.1e (abi-katalog.csv)
+
+jahr 2023 · papier 2023-bebb-lk · punkte 6 · format Rechnung · antwort Text
+- gegeben: f_a(x) = (4a − x) · e^(x/2), definiert in IR, a ≠ 0, Graph G_a; E_a bei x = 4a − 2; jeder Graph hat genau einen Wendepunkt W_a
+- gesucht: Nachweis, dass der Abstand der x-Koordinaten von E_a und W_a stets gleich ist
+- verfahren: Wendestelle aus f_a'' = 0 (mit f_a''' ≠ 0), Differenz bilden
+- fehlerquelle: f_a'' falsch ausklammern; hinreichende Bedingung weglassen
+
+### 2025MerhoehtBAnalysisMMS2-1b (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ea-mms · punkte 6 · format Rechnung · antwort Zahl
+- gegeben: Schar f_b(x) = 1/16 · x² · e^(−b · x + 4b), b > 0, in IR definiert; Graph G_b
+- gesucht: Lage und Art der beiden Extrempunkte von G_b; ein Wert von b, für den die Extrempunkte den Abstand 6 haben, auf Hundertstel
+- verfahren: f_b' und f_b'' mit dem Rechner, Nullstellen und Vorzeichen; Abstandsgleichung numerisch lösen
+- fehlerquelle: Abstand nur in x-Richtung ansetzen (2/b = 6)
+
+### 2023-bebb-lk-B2.2j (abi-katalog.csv)
+
+jahr 2023 · papier 2023-bebb-lk · punkte 3 · format Begründung|Kurzantwort · antwort Text
+- gegeben: h_k(x) = (x − 3)^k + 1, definiert in IR, k ∈ IN ohne 0; A(3 | 1) mit waagerechter Tangente für k ≥ 2
+- gesucht: Nachweis, dass A Tiefpunkt oder Sattelpunkt ist; Bedingung an k für einen Tiefpunkt
+- verfahren: Parität von k: gerade Potenz nicht negativ (Tiefpunkt), ungerade Potenz mit Vorzeichenwechsel des Terms, aber nicht der Ableitung (Sattelpunkt)
+- fehlerquelle: Fallunterscheidung über h_k'' führen und bei h_k''(3) = 0 für k ≥ 3 stecken bleiben
+
+### 2025-bebb-lk-B2.2f (abi-katalog.csv)
+
+jahr 2025 · papier 2025-bebb-lk · punkte 5 · format Begründung · antwort Text
+- gegeben: Beziehung aus e und Abb. 1; Aussage: alle Graphen von f_a haben genau einen Tiefpunkt T(2 | f_a(2)) und genau einen Hochpunkt H(0 | f_a(0)); ohne Rechnung
+- gesucht: Begründung, dass die Aussage wahr ist
+- verfahren: Vorzeichenverlauf von f_0' aus der Abbildung auf f_a' übertragen, Vorzeichenwechsel an den Nullstellen 0 und 2
+- fehlerquelle: Koordinaten der Punkte nicht als Funktionswerte von f_a angeben; die Ausschließlichkeit („genau einen“) nicht über das Fehlen weiterer Nullstellen begründen
+
+### 2024-bebb-lk-A1.1b (abi-katalog.csv)
+
+jahr 2024 · papier 2024-bebb-lk · punkte 4 · format Rechnung · antwort Term
+- gegeben: f_a(x) = a · x³ + a · x² mit a > 0; der Graph schließt mit der x-Achse eine Fläche ein
+- gesucht: Inhalt dieser Fläche in Abhängigkeit von a
+- verfahren: Nullstellen −1 und 0 bestimmen, das Integral über [−1; 0] mit der Stammfunktion auswerten (dort ist f_a ≥ 0)
+- fehlerquelle: das Vorzeichen bei der Auswertung an der unteren Grenze verlieren (−a/12 als Inhalt)
+
+### 2024MerhoehtAAnalysis12-b (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ea · punkte 4 · format Rechnung · antwort Term
+- gegeben: f_a(x) = a · x³ + a · x² mit a > 0; der Graph schließt mit der x-Achse eine Fläche ein
+- gesucht: Inhalt dieser Fläche in Abhängigkeit von a
+- verfahren: Nullstellen −1 und 0 bestimmen, das Integral über [−1; 0] mit der Stammfunktion auswerten (dort ist f_a ≥ 0)
+- fehlerquelle: das Vorzeichen bei der Auswertung an der unteren Grenze verlieren (−a/12 als Inhalt)
+
+### 2019MgrundlegendBAnalysisWTR2-1d (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ga · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: Schar f_k(x) = −kx · (x − 8), k > 0, in IR definiert; Graph G_k; die Fläche zwischen G_k und der x-Achse hat den Inhalt 64/3
+- gesucht: dieser Wert von k
+- verfahren: Integral von 0 bis 8 als Term in k, gleich 64/3 setzen
+- fehlerquelle: Vorzeichen beim Ausmultiplizieren von −kx(x − 8)
+
+### 2026MerhoehtBAnalysisMMS1-1b (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ea-mms · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: f_a(x) = 60/a · x · (x − a)², a > 0; G_a schließt mit der x-Achse eine Fläche ein (zwischen 0 und a)
+- gesucht: a mit Flächeninhalt 10
+- verfahren: Integral von 0 bis a als Term in a berechnen (Rechner), gleich 10 setzen, auflösen
+- fehlerquelle: Grenzen 0 und a nicht als Nullstellen aus a erkennen; a = ³√2 ≈ 1,26 auf 2 runden
+
+### 2024MerhoehtBAnalysisWTR2-1c (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ea · punkte 7 · format Rechnung · antwort Zahl
+- gegeben: Funktion der Schar mit Nullstelle 3, deren Graph im vierten Quadranten mit der x-Achse ein Flächenstück vom Inhalt 40,5 einschließt
+- gesucht: a und b
+- verfahren: b = 9a aus der Nullstelle, Integral von 0 bis 3 gleich −40,5
+- fehlerquelle: Integral positiv ansetzen (Vorzeichen des Flächenstücks unter der Achse)
+
+### 2024-bebb-lk-B2.2e (abi-katalog.csv)
+
+jahr 2024 · papier 2024-bebb-lk · punkte 7 · format Rechnung · antwort Zahl
+- gegeben: h: x ↦ bx³ − cx mit b, c ∈ IR; für einen Wert von b und einen Wert von c gilt: h hat bei x = 3 eine Nullstelle, und der Graph von h schließt im vierten Quadranten mit der x-Achse ein Flächenstück mit dem Inhalt 40,5 ein
+- gesucht: die zugehörigen Werte von b und c
+- verfahren: c = 9b aus der Nullstelle; Integral von 0 bis 3 gleich −40,5 (Flächenstück unter der Achse) nach b auflösen
+- fehlerquelle: Integral positiv ansetzen; b < 0 nicht ausschließen (dann liegt das Flächenstück im vierten Quadranten nicht zwischen 0 und 3)
+
+### 2025MerhoehtBAnalysisWTR1-1c (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ea · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: Bedingung ∫_0^2 f_a(x) dx = 0
+- gesucht: Wert von a
+- verfahren: Integral in a berechnen, null setzen
+- fehlerquelle: 2a beim Integrieren als Konstante vergessen
+
+### 2023MerhoehtAAnalysis12-b (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ea · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: f(x) = −x² + 2ax mit a > 1; Flächenstück mit Inhalt 4/3 a³; Quadrat mit zwei Seiten auf den Koordinatenachsen, der Hochpunkt liegt auf einer Seite; Quadrat und Flächenstück sind inhaltsgleich
+- gesucht: Wert von a
+- verfahren: Hochpunkt (a; a²) bestimmen, Seitenlänge a², Gleichung (a²)² = 4/3 a³ lösen
+- fehlerquelle: die Seitenlänge des Quadrats als a (x-Koordinate) nehmen
+
+### 2023-bebb-lk-A1.3b (abi-katalog.csv)
+
+jahr 2023 · papier 2023-bebb-lk · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: f(x) = −x² + 2ax mit a > 1; Flächenstück mit Inhalt 4/3 a³; Quadrat mit zwei Seiten auf den Koordinatenachsen, der Hochpunkt liegt auf einer Seite; Quadrat und Flächenstück sind inhaltsgleich
+- gesucht: Wert von a
+- verfahren: Hochpunkt (a; a²) bestimmen, Seitenlänge a², Gleichung (a²)² = 4/3 a³ lösen
+- fehlerquelle: die Seitenlänge des Quadrats als a (x-Koordinate) nehmen
+
+### 2017-bb-ea-B2.1e (abi-katalog.csv)
+
+jahr 2017 · papier 2017-bb-ea · punkte 9 · format Rechnung · antwort Term
+- gegeben: Der Fuß des Eisbechers, dessen oberer Rand im Querschnitt durch die zur y-Achse symmetrische quadratische Parabel p modelliert wird, hat am Boden einen Durchmesser von 8 cm und eine Querschnittsfläche von 64/15 cm². Es gilt 1 LE = 4 cm. [Kontrollergebnis: p(x) = −0,2x² + 0,2]
+- gesucht: Gleichung der Parabel p
+- verfahren: Symmetrie zur y-Achse liefert den Ansatz p(x) = a · x² + c. Der Durchmesser 8 cm entspricht 2 LE, also ist p(1) = 0 und damit a = −c, das heißt p(x) = c · (1 − x²). Die Querschnittsfläche 64/15 cm² entspricht wegen 1 FE = 16 cm² genau 4/15 FE. Aus dem Integral von −1 bis 1 über c · (1 − x²) folgt 4c/3 = 4/15.
+- fehlerquelle: die Querschnittsfläche ohne die Umrechnung 1 FE = 16 cm² einsetzen oder nur die halbe Fläche von 0 bis 1 ansetzen
+
+### 2026MerhoehtBAnalysisMMS1-1c (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ea-mms · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: f_a(x) = 60/a · x · (x − a)², a > 0; Gerade y = x
+- gesucht: a, für das der Wendepunkt von G_a auf y = x liegt
+- verfahren: Wendestelle aus f_a'' = 0 als Term in a, Funktionswert dort, Bedingung f_a(x_W) = x_W nach a lösen
+- fehlerquelle: die Lösung a = 0 der Gleichung mitführen (a > 0 vorausgesetzt)
+
+### 2025MerhoehtBAnalysisWTR3-1d (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ea · punkte 5 · format Rechnung · antwort Zahl
+- gegeben: positiver Wert von a, für den der Tiefpunkt Eckpunkt eines Quadrats mit zwei Seiten auf den Koordinatenachsen ist
+- gesucht: dieser Wert von a und der Flächeninhalt des Quadrats
+- verfahren: Tiefpunkt mit gleichen Koordinaten ansetzen, a bestimmen, Seitenlänge quadrieren
+- fehlerquelle: Quadratbedingung als |x_T| = |y_T| mit falschem Vorzeichen
+
+### 2026MerhoehtBAnalysisMMS2-2d (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ea-mms · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: f_a(x) = 3/4 · (x² − a²) · e^(1 − x/a), a > 0; jeder Graph hat einen Tiefpunkt T_a und einen Hochpunkt H_a; für einen Wert von a sind T_a und H_a gegenüberliegende Ecken eines achsenparallelen Quadrats
+- gesucht: dieser Wert von a auf Hundertstel gerundet
+- verfahren: Extremstellen als Terme in a berechnen; Bedingung: waagerechter Abstand der Extremstellen gleich Differenz der Funktionswerte; Gleichung in a mit dem Rechner lösen
+- fehlerquelle: Quadratbedingung als gleiche Koordinaten eines Punktes statt als gleiche Kantenlängen ansetzen
+
+### 2023MgrundlegendBAnalysisWTR1-3b (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ga · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: w_a wie in a; Extremstellen 0 und 3
+- gesucht: a, für das der Mittelpunkt der Strecke zwischen den Extrempunkten auf der x-Achse liegt
+- verfahren: Bedingung in 1/2(w_a(0) + w_a(3)) = 0 übersetzen und nach a auflösen
+- fehlerquelle: Mittelpunkt über die x-Koordinaten statt die y-Koordinaten
+
+### 2022-bebb-lk-B2.1d (abi-katalog.csv)
+
+jahr 2022 · papier 2022-bebb-lk · punkte 4 · format Rechnung · antwort Text|Zahl
+- gegeben: f_a(x) = 1/8 x⁴ − a/12 x³ + 2x, definiert in IR, a ∈ IR, Graph G_a; f_a'(x) = 1/2 x³ − a/4 x² + 2; Gerade y = 2x − 54; Punkt (6 | f_a(6))
+- gesucht: ob es ein a gibt, für das die Gerade Tangente an G_a im Punkt (6 | f_a(6)) ist
+- verfahren: Steigungsbedingung nach a lösen, Berührbedingung prüfen
+- fehlerquelle: nur die Steigung prüfen und den Berührpunkt nicht kontrollieren
+
+### 2021MgrundlegendBAnalysisWTR-1e (iqb-katalog.csv)
+
+jahr 2021 · papier 2021-iqb-ga · punkte 5 · format Rechnung · antwort Zahl
+- gegeben: f(x) = −5/16 x⁴ + 5x³, in IR definiert; die Abbildung zeigt den Graphen von f; Schar h_a(x) = 5a x², a ∈ IR, in IR definiert; es gibt genau einen positiven Wert von a, für den die Graphen von f und h_a genau zwei gemeinsame Punkte haben
+- gesucht: dieser Wert von a
+- verfahren: Schnittgleichung faktorisieren, quadratischen Faktor mit Diskriminante null ansetzen
+- fehlerquelle: die Lösung x = 0 vergessen und drei Lösungen des quadratischen Faktors suchen
+
+### 2020MgrundlegendBAnalysisWTR1-1i (iqb-katalog.csv)
+
+jahr 2020 · papier 2020-iqb-ga · punkte 4 · format Rechnung · antwort Text
+- gegeben: Logo eines Geschäfts für Anglerbedarf: untere Begrenzungslinie des Fischs u(x) = 1/8 x³, obere Begrenzungslinie v(x) = 1/4 x² · (4 − x) (beide in IR definiert), Wasseroberfläche y = 5/4; die obere Spitze der Schwanzflosse liegt auf der Wasseroberfläche, die Strecke zwischen oberer und unterer Spitze der Schwanzflosse steht senkrecht dazu; verändertes Logo: obere Begrenzungslinie weiter v, untere Begrenzungslinie u_k(x) = k · 1/8 x³ mit k > 0; die Kopfspitze ist der gemeinsame Punkt der Graphen von u_k und v mit der x-Koordinate 8/(k + 2); die Graphen von u_k und v schließen mit der Strecke zwischen oberer und unterer Spitze der Schwanzflosse je einen Winkel ein; für einen Wert von k sind beide Winkel gleich groß
+- gesucht: Prüfung, ob die Kopfspitze für diesen Wert von k oberhalb der Wasseroberfläche liegt
+- verfahren: k aus u_k'(−1) = −v'(−1) bestimmen, Kopfspitze über 8/(k + 2) und u_k vergleichen mit 5/4
+- fehlerquelle: gleiche Winkel als gleiche Steigungen statt entgegengesetzt gleiche Steigungen ansetzen
+
+### 2022MerhoehtBAnalysisWTR2-2g (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ea · punkte 6 · format Zeichnen|Rechnung · antwort Zahl
+- gegeben: für a > 0: Hochpunkt (v | f_a(v)), Punkt (0 | 2/v), Ursprung und (v | 0) bilden ein Viereck; Flächeninhalt 49
+- gesucht: zugehöriger Wert von a, ausgehend von einer Skizze
+- verfahren: Viereck als Trapez skizzieren, Flächeninhalt in v ausdrücken, v² bestimmen, a aus a · v² = 1
+- fehlerquelle: f_a(v) nicht als v erkennen (Ortskurve y = x)
+
+### 2023-bebb-lk-B2.1f (abi-katalog.csv)
+
+jahr 2023 · papier 2023-bebb-lk · punkte 2 · format Rechnung · antwort Term
+- gegeben: E_a(4a − 2 | 2 · e^(2a − 1)) liegen auf dem Graphen von h (Abbildung 1); Behauptung h(x) = 2 · e^(x/2)
+- gesucht: Nachweis der Gleichung von h
+- verfahren: a durch x ausdrücken und in die y-Koordinate einsetzen
+- fehlerquelle: Exponenten (x + 2)/2 − 1 falsch vereinfachen
+
+### 2018MerhoehtBAnalysisWTR2-1h (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ea · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: Kugelstoßen im Koordinatensystem (1 LE = 1 m, x-Achse ist der Boden): Bahn von der Ruhelage R bis zum Abstoßpunkt A durch f(x) = 0,4 + 1,6 · e^(0,5x), x ∈ [−2; 0]; Flugkurven p_a(x) = −ax² + bx + 2, a > 0, ohne Knick in A; Hochpunkt (0,4/a | 2 + 0,16/a); alle Hochpunkte liegen auf einer Geraden
+- gesucht: Steigung dieser Geraden
+- verfahren: Zwei Hochpunkte berechnen und die Steigung bilden (oder y = 2 + 0,4x eliminieren)
+- fehlerquelle: Steigung als Quotient der Koordinaten eines Hochpunkts
+
+### 2024-bebb-lk-B2.2d (abi-katalog.csv)
+
+jahr 2024 · papier 2024-bebb-lk · punkte 4 · format Begründung · antwort Text
+- gegeben: f(x) = x³ − 4x; h(x) = 4x³ − 4x; Aussage: der Mittelpunkt von P und O liegt für jeden Graphenpunkt P auf dem Graphen von h
+- gesucht: Begründung der Aussage
+- verfahren: Mittelpunkt allgemein ansetzen, in h einsetzen
+- fehlerquelle: nur einen konkreten Punkt prüfen
+
+### 2024MerhoehtBAnalysisWTR2-1e (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ea · punkte 4 · format Begründung · antwort Text
+- gegeben: f(x) = x³ − 4x; h(x) = 4x³ − 4x; Aussage: der Mittelpunkt von P und O liegt für jeden Graphenpunkt P auf dem Graphen von h
+- gesucht: Begründung der Aussage
+- verfahren: Mittelpunkt allgemein ansetzen, in h einsetzen
+- fehlerquelle: nur einen konkreten Punkt prüfen
+
+### 2019MgrundlegendBAnalysisWTR2-1c (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ga · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: Schar f_k(x) = −kx · (x − 8), k > 0, in IR definiert; Graph G_k; Hochpunkt von G_k ist (4 | 16k)
+- gesucht: Abstand der Hochpunkte von G_k und G_(k+1)
+- verfahren: y-Koordinaten der Hochpunkte subtrahieren
+- fehlerquelle: den Abstand als 16k angeben
+
+### 2024MerhoehtBAnalysisWTR3-2c (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ea · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: G_k und G_{k+1} für k ≠ −1
+- gesucht: Abstand der Schnittpunkte mit der y-Achse
+- verfahren: Differenz der Werte bei 0
+- fehlerquelle: Abstand als 10(k + 1) angeben
+
+### 2020MerhoehtAAnalysis13-b (iqb-katalog.csv)
+
+jahr 2020 · papier 2020-iqb-ea · punkte 3 · format Begründung · antwort Text
+- gegeben: f_k und f_{k+1} mit gemeinsamen Nullstellen 0 und 4
+- gesucht: Nachweis, dass das von beiden Graphen eingeschlossene Flächenstück für alle k denselben Inhalt hat
+- verfahren: Differenz bilden, k fällt heraus
+- fehlerquelle: das Integral mit k ausrechnen wollen
+
+### 2024MerhoehtBAnalysisWTR3-2d (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ea · punkte 3 · format Begründung · antwort Text
+- gegeben: Aussage: Spiegelt man einen beliebigen Graphen der Schar an der x-Achse, so entsteht ein anderer Graph der Schar
+- gesucht: Beurteilung
+- verfahren: −f_k als f_{−k} erkennen
+- fehlerquelle: Spiegelung an der y-Achse prüfen
+
+### 2022MerhoehtBAnalysisWTR2-2d (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ea · punkte 3 · format Rechnung · antwort Term
+- gegeben: Aussage: wird der Graph von f_a mit demselben Faktor k > 0 in x- und y-Richtung gestreckt, entsteht wieder ein Graph der Schar
+- gesucht: Nachweis für jedes a
+- verfahren: Gestreckten Term k · f_a(x/k) bilden und als f_b mit b = a/k² erkennen
+- fehlerquelle: Streckung in x-Richtung als k · x statt x/k
+
+### 2022-bebb-lk-B2.2l (abi-katalog.csv)
+
+jahr 2022 · papier 2022-bebb-lk · punkte 3 · format Rechnung · antwort Term
+- gegeben: Aussage: wird der Graph von f_a mit demselben Faktor k > 0 in x- und y-Richtung gestreckt, entsteht wieder ein Graph der Schar
+- gesucht: Nachweis für jedes a
+- verfahren: Gestreckten Term k · f_a(x/k) bilden und als f_b mit b = a/k² erkennen
+- fehlerquelle: Streckung in x-Richtung als k · x statt x/k
+
+### 2020MgrundlegendBAnalysisWTR2-2b (iqb-katalog.csv)
+
+jahr 2020 · papier 2020-iqb-ga · punkte 3 · format Rechnung · antwort Term
+- gegeben: Schar g_b(x) = 1/10 · x · (x − b) · eˣ, b ∈ IR₀⁺, x ∈ IR; g_b'(x) = 1/10 · (x² + (2 − b) · x − b) · eˣ; Abbildung 2 zeigt die Graphen von g₂ und g₃; f(x) = 1/10 · x · (3 − x) · eˣ aus Aufgabe 1; für jeden Wert von b haben die Graphen von g_b und g_b' einen gemeinsamen Punkt
+- gesucht: x-Koordinate dieses Punkts in Abhängigkeit von b
+- verfahren: g_b = g_b' setzen, gemeinsamen Faktor kürzen, nach x auflösen
+- fehlerquelle: den Faktor eˣ nicht kürzen und eine Exponentialgleichung ansetzen
+
+### 2023-bebb-lk-B2.2m (abi-katalog.csv)
+
+jahr 2023 · papier 2023-bebb-lk · punkte 6 · format Begründung|Rechnung · antwort Text
+- gegeben: Aussage: es gibt genau einen Wert von k, für den der Graph von h_k' Tangente an den Graphen von h_k ist
+- gesucht: Beurteilung der Aussage
+- verfahren: Nur k = 1 und k = 2 liefern Geraden als Ableitungsgraphen; k = 1 ausschließen (parallele Gerade), für k = 2 Berührpunkt bei x = 4 nachweisen
+- fehlerquelle: k ≥ 3 nicht ausschließen (Ableitungsgraph ist keine Gerade)
+
+### 2023-bebb-lk-B2.2i (abi-katalog.csv)
+
+jahr 2023 · papier 2023-bebb-lk · punkte 2 · format Rechnung · antwort Text
+- gegeben: h_k(x) = (x − 3)^k + 1, definiert in IR, k ∈ IN ohne 0; A(3 | 1) auf jedem Graphen
+- gesucht: Nachweis, dass jeder Graph für k ≥ 2 in A eine waagerechte Tangente hat
+- verfahren: Ableitung mit Parameter, an der Stelle 3 auswerten
+- fehlerquelle: k = 1 mitbehandeln (dort h_1' = 1)
+
+### 2022MerhoehtBAnalysisWTR2-2f (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ea · punkte 3 · format Begründung · antwort Text
+- gegeben: Alle Extrempunkte der Schar liegen auf einer Geraden
+- gesucht: Begründung, dass es die Gerade y = x ist
+- verfahren: Sonderfall f₁ = f mit Hochpunkt (1 | 1) und Symmetrie; Streckung mit gleichem Faktor führt die Extrempunkte entlang y = x
+- fehlerquelle: Ortskurve über die allgemeine Extremstelle ausrechnen, obwohl Sonderfall und Streckung genügen
+
+### 2023-bebb-lk-B2.1g (abi-katalog.csv)
+
+jahr 2023 · papier 2023-bebb-lk · punkte 3 · format Begründung · antwort Text
+- gegeben: f_a(x) = (4a − x) · e^(x/2), definiert in IR, a ≠ 0, Graph G_a; h(x) = 2 · e^(x/2); G_a und G_h schneiden sich für jedes a in einem Punkt
+- gesucht: Begründung, dass der Schnittwinkel nur von der Steigung von h im Schnittpunkt abhängt
+- verfahren: Schnittpunkt als Extrempunkt erkennen, dort Tangentensteigung 0
+- fehlerquelle: Schnittwinkelformel mit beiden Steigungen allgemein ansetzen
+
+### 2023-bebb-lk-B2.1h (abi-katalog.csv)
+
+jahr 2023 · papier 2023-bebb-lk · punkte 5 · format Begründung|Kurzantwort · antwort Text|Zahl
+- gegeben: E_a(4a − 2 | 2 · e^(2a − 1)) auf G_h (Abbildung 1)
+- gesucht: Erläuterung, wie mit Abbildung 1 der Parameterwert mit kleinstem Abstand von E_a zum Ursprung näherungsweise bestimmt wird; ein Näherungswert
+- verfahren: Punkt auf G_h mit kleinstem Abstand zu O ablesen (Kreisberührung), x in a = (x + 2)/4 umrechnen
+- fehlerquelle: Abstand entlang der y-Achse statt zum Ursprung nehmen; x abgeben statt a
+
+### 2025MerhoehtBAnalysisWTR2-2b (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ea · punkte 4 · format Rechnung|Kurzantwort · antwort Text
+- gegeben: Schar g_k wie in a; Gleichung g_k(−x) = −g_{−k}(x)
+- gesucht: Nachweis für alle x und Deutung für die Graphen
+- verfahren: rechte Seite umformen, Symmetrie deuten
+- fehlerquelle: Achsensymmetrie statt Punktsymmetrie
+
+### 2023-bebb-lk-B2.2n (abi-katalog.csv)
+
+jahr 2023 · papier 2023-bebb-lk · punkte 7 · format Begründung|Rechnung · antwort Term
+- gegeben: Für k ≥ 4: P(4 | h_k(4)), Q(4 | h_k'(4)), R(2 | h_k(2)), S(2 | h_k'(2)) bilden ein Viereck; Abbildungen 3 (k = 4) und 4 (k = 5); Aussage: für jedes gerade k ≥ 4 stimmen die Trapezflächen für k und k + 1 überein
+- gesucht: Begründung, dass jedes Viereck ein Trapez ist; Nachweis der Aussage
+- verfahren: Parallelität von PQ und RS über die x-Koordinaten; Trapezfläche allgemein in k mit (−1)^k aufstellen und für gerades k sowie k + 1 auswerten
+- fehlerquelle: Betrag bei h_k'(2) − h_k(2) vergessen, Vorzeichen von (−1)^k
+
+### 2022MerhoehtAAnalysis13-b (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ea · punkte 3 · format Begründung · antwort Text
+- gegeben: f(x) = cos x, g_k(x) = k · x² mit k > 0
+- gesucht: Entscheidung mit Begründung, ob es k gibt, für die f(x) = g_k(x) mehr als 2022 Lösungen hat
+- verfahren: für beliebig kleine k ist die Parabel beliebig stark gestaucht und schneidet den Kosinusgraphen beliebig oft
+- fehlerquelle: mit der Abbildung (k = 1/50, wenige Schnittpunkte) auf „nein“ schließen
+
+Nur außerhalb von „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ genannt, nicht aufgenommen: 2017-bb-ea-B2.2c, 2017-bb-ea-B2.1a, 2023MgrundlegendBAnalysisWTR1-3c, 2022MerhoehtBAnalysisWTR2-2a, 2024-bebb-lk-B2.1i, 2018MerhoehtBAnalysisWTR2-1j, 2023MerhoehtBAnalysisWTR1-2c
 
 ## 3 Maßstab (unterrichtsblatt.md, wortgleich)
 

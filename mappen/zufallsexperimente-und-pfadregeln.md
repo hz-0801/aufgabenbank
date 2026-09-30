@@ -3,7 +3,7 @@
 Eintrag: hz-0801/mathe-nachhilfe, katalog/zufallsexperimente-und-pfadregeln.md
 Katalog-Commit: 2a296e54827b16f81fd664c4430c6fcd84dd5719 (2026-09-28T22:05:53Z, „Katalog-Nachzug Teil 2: Sek II aus den Urteilen vom 28.09.“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-29 17:58 UTC
+Datum: 2026-09-30 08:15 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -184,9 +184,9 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 169  Zielmarke: Einheit 1 – fhr: die Ergebnismenge mit Laplace-Bedingung und Vergleich zweier Wahrscheinlichkeiten (2023-C-3b, vier Punkte, Niveau II); abi: „genau eines von beiden“ aus Anteilen und Schnitt in Teil A (2022-bebb-gk-A1.7b, Niveau II) und die Termdeutung mit doppelt abgezogenem Schnitt (2023-bebb-lk-B4b); iqb: „weder A noch B“ bei fünf Münzwürfen (2026MgrundlegendAStochastik12-b, Teil A, Niveau II) und das Gegenereignis der Vereinigung (2018MgrundlegendBStochastikWTR3-1d). Einheit 2 – fhr: Laplace-Bedingung mit Beispielen (2019-C-3a, Niveau I) und die Gewinnkategorien (2019-C-3b); abi: die Ergebnistabelle zweier Würfel (2019-be-gk-B4.2b, fünf Punkte, Niveau II) und die Produktvergleiche (2025-bebb-lk-A1.9a); iqb: die Termdifferenz nach dem Hinzufügen von Kugeln (2019MgrundlegendBStochastikWTR2-3b, Niveau III). Einheit 3 – fhr: der zweistufige Baum mit drei Ereignissen und Gegenereignis in Worten (2026-B-3c, neun Punkte, Niveau III) und der dreistufige Menübaum (2021-B-3d); abi: der Vergleich zweier Würfel über zwei Runden (2026-bb-ea-A1.10a, Teil A, Niveau III) und der Abbruchbaum (2020-be-gk-B4.1b); iqb: das Wechselspiel am Glücksrad (2026MerhoehtAStochastik12-b, vier Punkte) und der Spielausgang mit Abbruch (2023MgrundlegendBStochastikWTR2-1f, Niveau III). Einheit 4 – fhr: der dreistufige Baum ohne Zurücklegen mit Gegenereignis (2025-A-3c, acht Punkte; 2021-A-3d, acht Punkte, Niveau III); abi: die Ziehungsposition (2021-be-gk-A1.7b, Niveau III) und das Umlegen (2017-bb-ea-A1.3a); iqb: das Umlegen (2017MerhoehtAStochastik2-a, Niveau II) und die Anzahlen nach dem Umlegen (2019MerhoehtAStochastik2-a). Einheit 5 – fhr: drei Größen in sechs Reihenfolgen (2024-C-3c, sieben Punkte, Niveau III); abi: der Term in n (2025-bebb-lk-A1.9b, Niveau III) und der Lotto-Bruch mit großen Zahlen (2023-bebb-gk-B4.1h); iqb: der Term in n (2025MerhoehtAStochastik22-b, Niveau III) und der Block von vier Treffern (2024MgrundlegendBStochastikWTR1-2b). Einheit 6 – abi: die zufällige Urnenzusammensetzung (2023-bebb-lk-A1.8b, Niveau III) und der Befragungsbaum (2024-bebb-gk-A1.9a); iqb: dieselbe Urnenzusammensetzung (2023MerhoehtAStochastik22-b, Niveau III) und der Situationsbaum mit erschlossenem Ast in Teil A (2025MgrundlegendAStochastik11-a). Einheit 7 – abi: die Platzhalter mit vierundzwanzig Reihenfolgen (2026-bb-ea-A1.10b, Niveau III) und der Bernoulli-Term als Gegenereignis (2018-bb-ea-B4.1c, Niveau III); iqb: der Term mit Vorfaktor drei und Zielfeld (2022MerhoehtAStochastik12-b, vier Punkte, Niveau III) und die Platzhalter über zwei Paletten (2021MgrundlegendBStochastikWTR1-1d). Einheit 8 – abi: die quadratische Gleichung des zweistufigen Bestehens (2019-be-gk-B4.1e, fünf Punkte) und die Kugelzahlen aus zwei Ästen (2022-bebb-lk-A1.7b, vier Punkte); iqb: die Maximierung des Sektorwinkels (2022MgrundlegendAStochastik2, fünf Punkte, Niveau III) und die Kugelzahl mit und ohne Zurücklegen (2020MerhoehtAStochastik21-b, Niveau III).
 ````
 
-## 2 Originale (140)
+## 2 Originale (262)
 
-Kennungen aus „Prüfungsform“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
+Kennungen aus „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
 
 ### 2021-A-3e (fhr-katalog.csv)
 
@@ -1308,9 +1308,983 @@ jahr 2020 · papier 2020-iqb-ea · punkte 4 · format Rechnung · antwort Zahl
 - verfahren: beide Wahrscheinlichkeiten in w aufstellen, Gleichung mit Faktor 1,02 lösen
 - fehlerquelle: „2 % größer“ als + 0,02 statt Faktor 1,02 ansetzen
 
-Nicht in den Prüfungsdateien gefunden: 2017-bb-ea, 2017-be-gk, 2018-bb-ea, 2018-be-gk, 2019-be-gk, 2020-be-gk, 2021-be-gk, 2026-bb-ea, 2026-bb-gk
+### 2018MgrundlegendBStochastikWTR3-1a (iqb-katalog.csv)
 
-Nur außerhalb von „Prüfungsform“ genannt, nicht aufgenommen: 2018MgrundlegendBStochastikWTR3-1a, 2022MgrundlegendBStochastikWTR2-1a, 2022MgrundlegendAStochastik12-b, 2019MgrundlegendAStochastik11-b, 2022MerhoehtAStochastik22-a, 2025MerhoehtAStochastik22-a, 2019MgrundlegendBStochastikWTR2-3a, 2021MerhoehtAStochastik13-c, 2019MerhoehtAStochastik12-a, 2025MerhoehtAStochastik11-a, 2017MerhoehtAStochastik12-a, 2025MgrundlegendAStochastik13-a, 2020MgrundlegendAStochastik11-a, 2018MerhoehtBStochastikWTR1-2a, 2018MgrundlegendBStochastikWTR1-1f, 2026MgrundlegendAStochastik13-a, 2018MgrundlegendBStochastikWTR3-2c, 2019MgrundlegendAStochastik2-b, 2025-C-3c, 2024-C-3d, 2024-B-3d, 2019-C-3c, 2022MgrundlegendAStochastik13-a, 2018MgrundlegendAStochastik11-a, 2020MgrundlegendAStochastik11-b, 2021MerhoehtAStochastik21-a, 2019MgrundlegendBStochastikWTR3-2a, 2023-C-3c, 2023-A-3d, 2022-C-3c, 2020-A-3c, 2020-C-3d, 2019-C-3e, 2022-B-3e, 2025MgrundlegendAStochastik12-b, 2020MerhoehtAStochastik13-a, 2019MerhoehtAStochastik12-b, 2021MgrundlegendBStochastikWTR2-1f, 2026MerhoehtAStochastik21-a, 2026MerhoehtAStochastik21-b, 2025MgrundlegendBStochastikWTR1-1b, 2018MgrundlegendBStochastikWTR3-1b, 2022MgrundlegendBStochastikWTR2-1b, 2020MgrundlegendBStochastikWTR2-2a, 2026MgrundlegendBStochastikWTR1-2b, 2026MerhoehtBStochastikWTR1-2b, 2018MgrundlegendAStochastik11-b, 2024MgrundlegendAStochastik11-a, 2021MgrundlegendAStochastik12-a, 2021MgrundlegendAStochastik11-a, 2024MgrundlegendAStochastik21-a, 2021MgrundlegendBStochastikWTR1-1a, 2021MgrundlegendBStochastikWTR2-1e, 2022MerhoehtAStochastik12-a, 2026MerhoehtAStochastik12-a, 2023MerhoehtBStochastikWTR1-3a, 2019MgrundlegendBStochastikWTR2-2a, 2019MgrundlegendBStochastikWTR2-2b, 2022-B-3b, 2026-C-3d, 2019MgrundlegendAStochastik12-a, 2020MerhoehtAStochastik12-a, 2023MerhoehtAStochastik21-a, 2017MerhoehtAStochastik11-a, 2025MgrundlegendBStochastikWTR2-1b, 2023MgrundlegendBStochastikWTR2-1e, 2026MerhoehtAStochastik23-a, 2025MgrundlegendAStochastik11-b, 2024MgrundlegendBStochastikWTR2-1a, 2025MgrundlegendBStochastikWTR1-1a, 2025MerhoehtBStochastikWTR2-2a, 2025MerhoehtBStochastikWTR3-2a, 2024MerhoehtBStochastikWTR1-1a, 2024MgrundlegendBStochastikWTR1-2a, 2022MerhoehtBStochastikWTR1-1a, 2023MerhoehtBStochastikWTR2-1a, 2024MgrundlegendAStochastik22-a, 2024MgrundlegendAStochastik22-b, 2021MgrundlegendBStochastikWTR3-1e, 2021MgrundlegendBStochastikWTR3-1f, 2021MgrundlegendBStochastikWTR1-1f, 2026MerhoehtBStochastikWTR1-2a, 2023MerhoehtBStochastikWTR2-1b, 2026MgrundlegendBStochastikWTR1-2a, 2025MerhoehtBStochastikWTR2-2b, 2025MerhoehtBStochastikWTR3-2b, 2019MgrundlegendBStochastikWTR1-1e, 2020MgrundlegendBStochastikWTR1-2c, 2019MgrundlegendBStochastikWTR3-1b, 2024MgrundlegendBStochastikWTR1-1a, 2023MgrundlegendBStochastikWTR1-2c, 2022-B-3a, 2021-B-3c, 2022-B-3d, 2019-A-3c, 2019MgrundlegendAStochastik11-a, 2022MerhoehtAStochastik11-a, 2025MgrundlegendBStochastikWTR2-1a, 2022MgrundlegendAStochastik11-a, 2022MgrundlegendAStochastik11-b, 2025MgrundlegendAStochastik22-a, 2018MgrundlegendBStochastikWTR3-2a, 2019MgrundlegendBStochastikWTR2-1b, 2023MgrundlegendAStochastik12-a, 2024MgrundlegendBStochastikWTR1-1c, 2022MerhoehtBStochastikWTR2-1c, 2018MgrundlegendBStochastikWTR1-1b, 2023MgrundlegendBStochastikWTR1-2d, 2025MgrundlegendAStochastik12-a, 2025MgrundlegendAStochastik13-b, 2024MgrundlegendAStochastik11-b, 2023MerhoehtAStochastik11-a, 2020MerhoehtAStochastik21-a, 2019MgrundlegendAStochastik2-a, 2018MgrundlegendAStochastik2-b, 2023MgrundlegendBStochastikWTR2-1c, 2021MgrundlegendBStochastikWTR1-1b, 2022MerhoehtBStochastikWTR1-1e, 2026MgrundlegendBStochastikWTR1-1a, 2022MgrundlegendBStochastikWTR1-1d, 2021MerhoehtAStochastik21-b, 2018MgrundlegendAStochastik2-a
+jahr 2018 · papier 2018-iqb-ga · punkte 3 · format Zeichnen · antwort Grafik
+- gegeben: Hundefutter: 2/3 der Kunden kaufen Trockenfutter (T), davon 40 % die Light-Variante (L); von den Nassfutterkäufern wählen 25 % Light; eine Person wird zufällig ausgewählt
+- gesucht: beschriftetes Baumdiagramm
+- verfahren: Zwei Stufen T/¬T und L/¬L mit den Anteilen
+- fehlerquelle: 40 % als Anteil aller Kunden statt der Trockenfutterkäufer eintragen
+
+### 2025MgrundlegendBStochastikWTR1-1b (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ga · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: Baumdiagramm aus a
+- gesucht: Nachweis, dass etwa 9,18 % aller Haushalte überbelegt sind
+- verfahren: beide Pfade zu B addieren
+- fehlerquelle: nur den Pfad über K nehmen
+
+### 2021-B-3c (fhr-katalog.csv)
+
+jahr 2021 · papier B · punkte 3 · format Kurzantwort|Begründung · antwort Text
+- gegeben: das Mittagsmenü besteht aus Vorspeise, Hauptspeise und Nachspeise; zur Wahl stehen zwei Vorspeisen, zwei Hauptgänge und drei Nachspeisen; 70 % der Gäste wählen einen Salat, Hauptgänge und Nachspeisen werden zu gleichen Anteilen gewählt
+- gesucht: Ergebnismenge aller möglichen Menüfolgen|begründete Entscheidung, ob ein Laplace-Experiment vorliegt
+- verfahren: alle Tripel aus je einer Vorspeise, einem Hauptgang und einer Nachspeise bilden und anschließend prüfen, ob alle zwölf Ergebnisse gleich wahrscheinlich sind
+- fehlerquelle: aus der gleichen Anzahl von Menüfolgen auf gleiche Wahrscheinlichkeiten schließen und die 70 zu 30 bei der Vorspeise übersehen
+
+### 2022-B-3a (fhr-katalog.csv)
+
+jahr 2022 · papier B · punkte 3 · format Kurzantwort|Begründung · antwort Text
+- gegeben: Glücksrad 1 hat drei gleich große Sektoren mit den Zahlen 2, 3 und 5; es wird pro Spiel zweimal gedreht
+- gesucht: geeignete Ergebnismenge für diesen Zufallsversuch|begründete Entscheidung, ob ein Laplace-Experiment vorliegt
+- verfahren: alle geordneten Paare aus den drei Zahlen bilden und begründen, dass alle neun Ergebnisse gleich wahrscheinlich sind, weil die Sektoren gleich groß sind
+- fehlerquelle: die Reihenfolge vernachlässigen und nur sechs statt neun Paare angeben
+
+### 2023MgrundlegendAStochastik12-a (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ga · punkte 1 · format Kurzantwort · antwort Text
+- gegeben: Würfel (1 bis 6) und Münze (Zahl, Wappen) je einmal geworfen; A: gerade Zahl und Wappen; B: Zahl größer als 3
+- gesucht: Ergebnisse, die zu A ∩ B gehören
+- verfahren: gerade Zahlen größer als 3 mit Wappen kombinieren
+- fehlerquelle: (4; Z) und (6; Z) mit aufzählen
+
+### 2022MgrundlegendAStochastik11-a (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ga · punkte 2 · format Kurzantwort · antwort Text
+- gegeben: Münze mit + und −, blaues und grünes Tetraeder mit 1 bis 4; bei + Summe, bei − blau minus grün; Beispiel (−; 2; 3) liefert −1
+- gesucht: alle Ergebnisse mit Zahlenwert 3
+- verfahren: Summe 3 aus zwei Augenzahlen, Differenz 3 aus zwei Augenzahlen
+- fehlerquelle: (−; 1; 4) mitzählen (ergibt −3)
+
+### 2024MgrundlegendBStochastikWTR1-1a (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ga · punkte 2 · format Kurzantwort · antwort Text
+- gegeben: T Treuekunde (60 %), M Morgenkunde (20 %); P(nicht T ∩ M) = 0,05
+- gesucht: Bedeutung der Gleichung
+- verfahren: Ereignis in Worte übersetzen
+- fehlerquelle: Schnitt als bedingte Wahrscheinlichkeit lesen
+
+### 2023MgrundlegendBStochastikWTR1-2c (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ga · punkte 2 · format Kurzantwort · antwort Text
+- gegeben: M₁: zu viele Verunreinigungen; M₂: weniger als 60 kg; Mängel unabhängig; P(M₁) = 1 %
+- gesucht: Ereignis M₁ ∩ ¬M₂ in Worten
+- verfahren: Schnitt mit Gegenereignis in den Sachzusammenhang übersetzen
+- fehlerquelle: Gegenereignis als „genau 60 kg“
+
+### 2019MgrundlegendBStochastikWTR3-1b (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ga · punkte 2 · format Kurzantwort · antwort Text
+- gegeben: Befragung von 2 360 Männern und 2 200 Frauen (Glücksspielteilnahme): 2,5 % der Männer und 0,5 % der Frauen mit Anzeichen spielsüchtigen Verhaltens; M: Person ist ein Mann, S: Anzeichen spielsüchtigen Verhaltens; Terme P_M(S) und P(M ∩ S)
+- gesucht: Bedeutung beider Terme im Sachzusammenhang
+- verfahren: Bedingung und Schnitt in Worte fassen
+- fehlerquelle: beide Terme gleich deuten
+
+### 2024MgrundlegendBStochastikWTR2-1a (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ga · punkte 3 · format Rechnung|Kurzantwort · antwort Text
+- gegeben: P(L) = 0,56, P(D) = 0,33, P(mindestens eines) = 0,72
+- gesucht: Nachweis P(nicht L ∩ nicht D) = 0,28 und das Ereignis in Worten
+- verfahren: Gegenereignis der Vereinigung
+- fehlerquelle: 1 − 0,56 − 0,33 rechnen
+
+### 2022MgrundlegendAStochastik12-b (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ga · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: P(A) = 60 %, P(B) = 30 %, P(A ∩ B) = 20 %
+- gesucht: Anteil der Kunden, die entweder in A oder in B gerne reisen
+- verfahren: Anteile addieren, Schnitt zweimal abziehen
+- fehlerquelle: Vereinigung 70 % angeben (den Schnitt nur einmal abziehen)
+
+### 2024MgrundlegendBStochastikWTR1-1c (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ga · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: Vierfeldertafel aus b
+- gesucht: P(entweder Treuekunde oder Morgenkunde)
+- verfahren: zwei Felder addieren
+- fehlerquelle: einschließendes Oder (0,65)
+
+### 2018MgrundlegendBStochastikWTR1-1b (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ga · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: Jugendliche eines Landes: 49,20 % weiblich (W), 47,10 % erledigen Finanzangelegenheiten regelmäßig mit Smartphone oder Tablet (S), 19,68 % sind weiblich und tun das; Vierfeldertafel aus a
+- gesucht: Wahrscheinlichkeit, dass eine zufällig ausgewählte Person entweder männlich ist oder ihre Finanzangelegenheiten regelmäßig mit Smartphone oder Tablet erledigt
+- verfahren: Die beiden Felder addieren, in denen genau eine der Eigenschaften zutrifft
+- fehlerquelle: das einschließende Oder rechnen (¬W ∪ S = 76,62 %)
+
+### 2022MerhoehtBStochastikWTR2-1c (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ea · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: Tabelle aus a
+- gesucht: Anteil der Kunden mit entweder Tarif L oder nicht angerufen
+- verfahren: Felder L∩angerufen und (S, M)∩nicht angerufen addieren
+- fehlerquelle: Vereinigung (63,5 %) statt ausschließendem Oder
+
+### 2023MgrundlegendBStochastikWTR1-2d (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ga · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: 96 % der Säcke ohne Mangel; P(M₁) = 1 %; jeder mangelhafte Sack hat M₁ oder M₂
+- gesucht: Nachweis P(¬M₁ ∩ M₂) = 3 %
+- verfahren: Anteil ohne Verunreinigung minus Anteil ohne beide Mängel
+- fehlerquelle: 96 % als P(¬M₂) statt als P(¬M₁ ∩ ¬M₂) lesen
+
+### 2019MgrundlegendAStochastik11-a (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ga · punkte 1 · format Kurzantwort · antwort Zahl
+- gegeben: Chor aus 12 Frauen und 9 Männern, eine Frau leitet; die Leiterin nimmt teil, das zweite Mitglied wird zufällig aus den übrigen gewählt
+- gesucht: Wahrscheinlichkeit, dass das zweite Mitglied eine Frau ist
+- verfahren: Anteil der Frauen unter den 20 übrigen
+- fehlerquelle: 12/21 (Leiterin nicht abziehen)
+
+### 2025MgrundlegendAStochastik22-a (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ga · punkte 1 · format Kurzantwort · antwort Zahl
+- gegeben: Behälter mit einer schwarzen und w weißen Kugeln, w >= 2; zweimal Ziehen ohne Zurücklegen; Annahme w = 3
+- gesucht: Wahrscheinlichkeit, dass die schwarze Kugel bereits im ersten Zug entnommen wird
+- verfahren: eine von vier Kugeln ist schwarz
+- fehlerquelle: 1/3 angeben, weil w = 3 ist
+
+### 2022-B-3b (fhr-katalog.csv)
+
+jahr 2022 · papier B · punkte 3 · format Rechnung|Kurzantwort · antwort Zahl|Text
+- gegeben: Glücksrad 1 mit den Zahlen 2, 3 und 5 wird pro Spiel zweimal gedreht; Ereignis A die Zahl 2 erscheint mindestens einmal; Ereignis B es werden nur ungerade Zahlen erzielt
+- gesucht: Wahrscheinlichkeit von A|Wahrscheinlichkeit von B|Gegenereignis von B in Worten
+- verfahren: in der neunelementigen Ergebnismenge die günstigen Paare abzählen und durch neun teilen, dann das Gegenereignis zu nur ungeraden Zahlen sprachlich formulieren
+- fehlerquelle: das Gegenereignis von B als keine ungerade Zahl statt als höchstens eine ungerade Zahl formulieren
+
+### 2019-C-3c (fhr-katalog.csv)
+
+jahr 2019 · papier C · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: 1000 Enten, davon 109 mit Gewinn nach dem Gewinnplan; jede geangelte Ente wird sofort zurückgesetzt; Ereignis A eine Ente mit Gewinn wird gezogen, Ereignis B mit einer gezogenen Ente wird kein Gewinn erzielt, Ereignis C viermal direkt nacheinander wird eine Ente mit einer Nummer von 1 bis 500 geangelt
+- gesucht: Wahrscheinlichkeiten der Ereignisse A, B und C
+- verfahren: für A die Anzahlen aller Gewinnkategorien addieren und durch 1000 teilen, für B das Gegenereignis nutzen und für C die gleichbleibende Wahrscheinlichkeit 1/2 viermal multiplizieren
+- fehlerquelle: bei Ereignis C mit sinkenden Nennern rechnen, obwohl die Ente zurückgesetzt wird
+
+### 2022MgrundlegendAStochastik11-b (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ga · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: Zufallsexperiment aus a mit 2 · 4 · 4 gleich wahrscheinlichen Ergebnissen
+- gesucht: Wahrscheinlichkeit für einen negativen Zahlenwert
+- verfahren: günstige Ergebnisse (− und blau kleiner als grün) zählen, durch 32 teilen
+- fehlerquelle: 6/16 = 3/8 rechnen (die Münze im Nenner vergessen)
+
+### 2025MgrundlegendBStochastikWTR2-1a (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ga · punkte 3 · format Begründung · antwort Text
+- gegeben: zwei Würfel mit 1 bis 6; Ereigniskarte bei Augensumme 8 oder 9
+- gesucht: Begründung, dass P(Ereigniskarte) = 1/4
+- verfahren: günstige Ergebnisse zählen, durch 36
+- fehlerquelle: (2; 6) und (6; 2) nur einmal zählen
+
+### 2019MgrundlegendAStochastik11-b (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ga · punkte 1 · format Begründung · antwort Text
+- gegeben: die Leiterin kann nicht teilnehmen; zwei der anderen 20 Mitglieder (11 Frauen, 9 Männer) werden zufällig ausgewählt
+- gesucht: Begründung ohne Rechnung, dass P(zwei Frauen) > P(zwei Männer)
+- verfahren: Anzahl der Frauen mit der der Männer vergleichen
+- fehlerquelle: doch rechnen (55/190 gegen 36/190) statt zu begründen
+
+### 2022MerhoehtAStochastik11-a (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ea · punkte 2 · format Begründung · antwort Text
+- gegeben: X Augensumme bei zwei Würfen eines Würfels mit 1 bis 6
+- gesucht: Begründung, dass P(X = 4) = P(X = 10)
+- verfahren: günstige Ergebnisse beider Ereignisse zählen
+- fehlerquelle: (2; 2) doppelt zählen
+
+### 2022MerhoehtAStochastik22-a (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ea · punkte 2 · format Begründung · antwort Text
+- gegeben: Würfel mit den Zahlen 1, 2, 3 je zweimal; dreimal geworfen
+- gesucht: Begründung, dass P(dreimal dieselbe Zahl) halb so groß ist wie P(drei verschiedene Zahlen)
+- verfahren: Anzahl der Ergebnisse beider Ereignisse vergleichen
+- fehlerquelle: für „drei verschiedene“ nur ein Ergebnis {1, 2, 3} zählen
+
+### 2025MerhoehtAStochastik22-a (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ea · punkte 2 · format Begründung · antwort Text
+- gegeben: Würfel mit den Zahlen 1 bis 6, zweimal geworfen; X ist das Produkt der beiden Zahlen
+- gesucht: Begründung, dass P(X = 10) = P(X = 15)
+- verfahren: alle Faktorzerlegungen von 10 und 15 mit Faktoren von 1 bis 6 aufzählen; beide Male genau zwei Ergebnisse von 36
+- fehlerquelle: 1 · 10 als Zerlegung mitzählen
+
+### 2018MgrundlegendBStochastikWTR3-2a (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ga · punkte 2 · format Begründung · antwort Text
+- gegeben: Zwölfseitiger Spielwürfel, alle Seiten gleich wahrscheinlich, nach dem abgebildeten Netz neun Seiten mit 1 und drei Seiten mit 2 beschriftet; je Spiel wird viermal geworfen
+- gesucht: Begründung, dass die Summe 4 wahrscheinlicher ist als die Summe 8
+- verfahren: Summe 4 heißt viermal 1, Summe 8 viermal 2; die Mehrzahl der Seiten trägt die 1
+- fehlerquelle: nur die Anzahl der Seiten vergleichen, ohne die Summen auf die Ergebnisfolgen zurückzuführen
+
+### 2021MerhoehtAStochastik13-c (iqb-katalog.csv)
+
+jahr 2021 · papier 2021-iqb-ea · punkte 2 · format Kurzantwort · antwort Text
+- gegeben: Verteilung P(A = 0) = 1/6, P(A = 2) = 3/6, P(A = 6) = 2/6; Behälter mit roten, grünen und blauen Kugeln
+- gesucht: Beschreibung einer Durchführung des Spiels mit dem Behälter
+- verfahren: Kugelzahlen im Verhältnis 1 : 3 : 2, eine Kugel ziehen, Farbe als Auszahlung
+- fehlerquelle: die Zuordnung der Farben zu den Auszahlungen weglassen
+
+### 2019MgrundlegendBStochastikWTR2-1b (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ga · punkte 2 · format Begründung · antwort Text
+- gegeben: Urne: 35 % der Kugeln mit „+1“, 25 % mit „+2“, die übrigen 40 % mit „−3“ beschriftet
+- gesucht: Nachweis, dass die Gesamtzahl der Kugeln kleiner als 100 sein kann
+- verfahren: Anteile mit dem Nenner 20 schreiben
+- fehlerquelle: nur die 35 % kürzen und den dritten Anteil vergessen
+
+### 2019MgrundlegendBStochastikWTR2-3a (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ga · punkte 2 · format Begründung · antwort Text
+- gegeben: Urne: 35 % der Kugeln mit „+1“, 25 % mit „+2“, die übrigen 40 % mit „−3“ beschriftet; die Urne enthält n Kugeln; zwei Kugeln (+1 und +2) werden hinzugelegt, dann eine Kugel gezogen; Term (0,35n + 1)/(n + 2)
+- gesucht: Begründung, dass der Term die Wahrscheinlichkeit für eine Kugel mit +1 angibt
+- verfahren: Zähler und Nenner als Anzahlen deuten
+- fehlerquelle: den Nenner n + 1 setzen
+
+### 2026-C-3d (fhr-katalog.csv)
+
+jahr 2026 · papier C · punkte 6 · format Zeichnen|Rechnung · antwort Grafik|Zahl
+- gegeben: ein verkauftes T-Shirt stammt mit 60 % aus PG 1 und mit 15 % aus PG 3; einige Kunden kauften zwei T-Shirts; Ereignis A beide aus PG 2, Ereignis B beide aus verschiedenen Preisgruppen
+- gesucht: Baumdiagramm für den Verkauf von zwei T-Shirts|P(A)|P(B)
+- verfahren: P(PG 2) als Rest zu 1 bestimmen; zweistufiges Baumdiagramm mit gleichen Wahrscheinlichkeiten auf beiden Stufen zeichnen; P(A) mit der Pfadregel; P(B) über das Gegenereignis gleicher Preisgruppen
+- fehlerquelle: P(B) als Summe von drei Pfaden statt über das Gegenereignis bestimmen und Paare doppelt zählen
+
+### 2022-B-3d (fhr-katalog.csv)
+
+jahr 2022 · papier B · punkte 5 · format Zeichnen|Rechnung|Begründung · antwort Grafik|Zahl|Text
+- gegeben: Glücksrad 1 hat drei gleich große Sektoren mit 2, 3 und 5; Glücksrad 2 hat drei Sektoren mit 5, 7 und 10, wobei die Sektoren mit 7 und 10 je 25 % einnehmen und der Sektor mit 5 die Hälfte; beide Räder werden nacheinander je einmal gedreht, begonnen wird mit Glücksrad 1
+- gesucht: Baumdiagramm für diesen Zufallsversuch|Wahrscheinlichkeit, dass beide Glücksräder die Zahl fünf zeigen|begründete Entscheidung, ob sich diese Wahrscheinlichkeit ändert, wenn mit Glücksrad 2 begonnen wird
+- verfahren: den zweistufigen Baum mit den Wahrscheinlichkeiten 1/3 in der ersten und 1/2 beziehungsweise 1/4 in der zweiten Stufe zeichnen, den Pfad 5 und 5 multiplizieren und begründen, dass die Vertauschung der Stufen nur die Reihenfolge der Faktoren ändert
+- fehlerquelle: für Glücksrad 2 alle drei Sektoren mit 1/3 ansetzen und die unterschiedlichen Sektorgrößen übersehen
+
+### 2021MgrundlegendAStochastik11-a (iqb-katalog.csv)
+
+jahr 2021 · papier 2021-iqb-ga · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: P(Heuschnupfen) = 15 %; Test positiv bei Heuschnupfen mit 90 %; Test positiv ohne Heuschnupfen mit 2 %
+- gesucht: Wahrscheinlichkeit, dass eine Person keinen Heuschnupfen hat und der Test positiv ist
+- verfahren: Produkt der Pfadwahrscheinlichkeiten
+- fehlerquelle: 0,15 · 0,02 rechnen
+
+### 2024MgrundlegendAStochastik21-a (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ga · punkte 2 · format Rechnung · antwort Text
+- gegeben: Geräte sind zu 90 % fehlerfrei; die Endkontrolle stuft ein fehlerfreies Gerät zu 99 % als fehlerfrei ein, ein fehlerhaftes zu 5 % ebenfalls als fehlerfrei
+- gesucht: Nachweis, dass die Wahrscheinlichkeit für „fehlerfrei und als fehlerfrei eingestuft“ 89,1 % beträgt
+- verfahren: Pfad fehlerfrei → als fehlerfrei eingestuft multiplizieren
+- fehlerquelle: 0,9 + 0,99 oder 0,9 · 0,95 rechnen
+
+### 2019MerhoehtAStochastik12-a (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ea · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: Glücksrad mit fünf gleich großen Sektoren 0, 1, 2, 9, 9; viermal gedreht
+- gesucht: Wahrscheinlichkeit für die Folge 2, 0, 1, 9 in dieser Reihenfolge
+- verfahren: Produkt der vier Sektorwahrscheinlichkeiten
+- fehlerquelle: P(9) = 1/5 statt 2/5
+
+### 2017MerhoehtAStochastik12-a (iqb-katalog.csv)
+
+jahr 2017 · papier 2017-iqb-ea · punkte 2 · format Kurzantwort · antwort Term
+- gegeben: Anteil der Überraschungseier mit Figur 25 %; zehn Eier werden nacheinander zufällig ausgewählt
+- gesucht: Term für die Wahrscheinlichkeit, dass nur in den letzten beiden Eiern eine Figur ist
+- verfahren: acht Misserfolge, dann zwei Erfolge in fester Reihenfolge multiplizieren
+- fehlerquelle: Binomialkoeffizient C(10; 2) ergänzen, obwohl die Reihenfolge festliegt
+
+### 2021MgrundlegendBStochastikWTR1-1a (iqb-katalog.csv)
+
+jahr 2021 · papier 2021-iqb-ga · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: Joghurtbecher auf Paletten zu je 20 Bechern; unter jedem Deckel genau eines von sechs Motiven; gegenwärtig wird jedes Motiv zufällig (je 1/6) ausgewählt; drei Becher werden nacheinander geöffnet
+- gesucht: Wahrscheinlichkeit, dass sich nur im ersten und dritten Becher das Motiv 1 befindet
+- verfahren: Produkt der drei Einzelwahrscheinlichkeiten
+- fehlerquelle: „nur“ überlesen und (1/6)² rechnen
+
+### 2021MgrundlegendBStochastikWTR2-1e (iqb-katalog.csv)
+
+jahr 2021 · papier 2021-iqb-ga · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: Bonuspunkte beim täglichen Start des Spiels: 10 Punkte mit 50 %, 20 mit 40 %, 50 mit 10 %; ein Spieler startet an drei aufeinanderfolgenden Tagen
+- gesucht: Wahrscheinlichkeit, dass er von Tag zu Tag weniger Bonuspunkte erhält
+- verfahren: Folge 50, 20, 10 als einzigen Pfad, Produkt bilden
+- fehlerquelle: Reihenfolgen mit gleichen Punktzahlen mitzählen
+
+### 2024MgrundlegendAStochastik11-a (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ga · punkte 2 · format Rechnung · antwort Text
+- gegeben: jedes Kind erhält einen verpackten Ball, Wahrscheinlichkeit für Glitzerfärbung 40 %; Gruppe von drei Kindern
+- gesucht: Nachweis, dass die Wahrscheinlichkeit, dass jedes der drei Kinder einen Glitzerball erhält, kleiner als 10 % ist
+- verfahren: 0,4 dreimal multiplizieren und mit 0,1 vergleichen
+- fehlerquelle: 3 · 0,4 rechnen
+
+### 2025MerhoehtAStochastik11-a (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ea · punkte 2 · format Begründung · antwort Text
+- gegeben: Spiel: ein Würfel mit den Zahlen 1 bis 6 wird zweimal geworfen
+- gesucht: Begründung, dass die Wahrscheinlichkeit für keine 3 bei beiden Würfen 25/36 beträgt
+- verfahren: Wahrscheinlichkeit 5/6 für keine 3 bei einem Wurf, Pfadregel für beide Würfe
+- fehlerquelle: 5/6 + 5/6 oder 1 − 1/36 rechnen
+
+### 2021MgrundlegendAStochastik12-a (iqb-katalog.csv)
+
+jahr 2021 · papier 2021-iqb-ga · punkte 2 · format Begründung · antwort Text
+- gegeben: zwei Würfel mit 1 bis 6, einmal gemeinsam geworfen
+- gesucht: Begründung, dass P(keine 6) = 25/36
+- verfahren: Produkt der Einzelwahrscheinlichkeiten
+- fehlerquelle: 1 − 2/6 = 4/6 rechnen
+
+### 2021MerhoehtAStochastik21-a (iqb-katalog.csv)
+
+jahr 2021 · papier 2021-iqb-ea · punkte 1 · format Rechnung · antwort Zahl
+- gegeben: Behälter, jede dritte Kugel gelb; zweimal Ziehen mit Zurücklegen
+- gesucht: Wahrscheinlichkeit, dass beide Kugeln gelb sind
+- verfahren: Quadrat der Einzelwahrscheinlichkeit
+- fehlerquelle: ohne Zurücklegen rechnen (Kugelzahl unbekannt)
+
+### 2023MerhoehtBStochastikWTR1-3a (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ea · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: Spiel: beliebig oft drehen, Auszahlung Summe der Zahlen in Euro, bei „0“ Ende ohne Auszahlung; erster Spieler dreht viermal, sofern keine „0“
+- gesucht: Wahrscheinlichkeit für eine Auszahlung
+- verfahren: Viermal keine „0“
+- fehlerquelle: 1 − (1/10)⁴
+
+### 2020MerhoehtAStochastik13-a (iqb-katalog.csv)
+
+jahr 2020 · papier 2020-iqb-ea · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: Würfelnetz mit den Zahlen 1, 2, 2, 2, 2, 3; zweimal geworfen
+- gesucht: P(Summe 4)
+- verfahren: Pfade summieren
+- fehlerquelle: Pfad (2; 2) vergessen
+
+### 2019MerhoehtAStochastik12-b (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ea · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: Glücksrad 0, 1, 2, 9, 9; zweimal gedreht
+- gesucht: Wahrscheinlichkeit, dass die Summe mindestens 11 beträgt
+- verfahren: Paare mit Summe ≥ 11 aufzählen, Pfadwahrscheinlichkeiten addieren
+- fehlerquelle: Paar (9; 2) nur einmal zählen (6/25)
+
+### 2025MgrundlegendAStochastik12-b (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ga · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: Glücksrad mit viermal 7, dreimal 6 und einmal 5 auf acht gleichen Sektoren; zweimaliges Drehen
+- gesucht: Wahrscheinlichkeit, dass die Summe der beiden Zahlen ungerade ist
+- verfahren: die Summe ist ungerade, wenn genau einmal die 6 fällt: 3/8 · 5/8 + 5/8 · 3/8
+- fehlerquelle: nur einen Pfad rechnen (15/64)
+
+### 2019MgrundlegendBStochastikWTR2-2b (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ga · punkte 3 · format Rechnung · antwort Text
+- gegeben: Urne: 35 % der Kugeln mit „+1“, 25 % mit „+2“, die übrigen 40 % mit „−3“ beschriftet; Spiel: zweimal Ziehen mit Zurücklegen, Summe der Zahlen; positive Summe = Gewinn in Euro, negative Summe = Verlust
+- gesucht: Nachweis, dass die Gewinnwahrscheinlichkeit 36 % beträgt
+- verfahren: Die vier Folgen ohne −3 zusammenzählen
+- fehlerquelle: (+2, −3) mit Summe −1 als Gewinn zählen
+
+### 2022-B-3e (fhr-katalog.csv)
+
+jahr 2022 · papier B · punkte 3 · format Tabelle|Rechnung · antwort Tabelle|Zahl
+- gegeben: Glücksrad 1 mit 2, 3 und 5 zu je 1/3 und Glücksrad 2 mit 5 zu 1/2 sowie 7 und 10 zu je 1/4; beide Räder werden einmal gleichzeitig gedreht
+- gesucht: alle möglichen Augensummen und deren Wahrscheinlichkeiten|Wahrscheinlichkeit dafür, dass die Augensumme einstellig ist
+- verfahren: alle neun Paare bilden und ihre Summen berechnen, gleiche Summen durch Addition der Pfadwahrscheinlichkeiten zusammenfassen und anschließend die Wahrscheinlichkeiten der einstelligen Summen addieren
+- fehlerquelle: Summen, die auf zwei Wegen entstehen, nur einmal zählen und die Wahrscheinlichkeiten nicht addieren
+
+### 2019-A-3c (fhr-katalog.csv)
+
+jahr 2019 · papier A · punkte 6 · format Zeichnen|Rechnung · antwort Grafik|Zahl
+- gegeben: beide Maschinen arbeiten gleichzeitig, Maschine B füllt doppelt so schnell ab wie Maschine A; von den Packungen der Maschine B sind 5 % fehlerhaft, von denen der Maschine A nur 2 %; insgesamt werden 1000 Packungen abgefüllt
+- gesucht: Baumdiagramm für Durchlauf und Fehlerprüfung|Wahrscheinlichkeit, dass eine beliebig ausgewählte Packung von Maschine A stammt und fehlerhaft ist|Anzahl der fehlerfreien Packungen von 1000
+- verfahren: das zweistufige Baumdiagramm mit den Maschinenanteilen und den Fehlerquoten zeichnen; für das erste Ereignis den zugehörigen Pfad multiplizieren; für die fehlerfreien Packungen die beiden Pfade ohne Fehler addieren und den Anteil auf 1000 hochrechnen
+- fehlerquelle: beide Maschinen mit je 1/2 ansetzen und die doppelte Geschwindigkeit von B übersehen
+
+### 2019MgrundlegendAStochastik12-a (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ga · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: Urne mit 3 roten und 7 weißen Kugeln; zweimal Ziehen mit Zurücklegen
+- gesucht: Wahrscheinlichkeit, dass höchstens eine der entnommenen Kugeln weiß ist
+- verfahren: 1 minus Wahrscheinlichkeit für zwei weiße
+- fehlerquelle: „höchstens eine“ als „genau eine“ lesen (0,42)
+
+### 2020MerhoehtAStochastik12-a (iqb-katalog.csv)
+
+jahr 2020 · papier 2020-iqb-ea · punkte 2 · format Rechnung · antwort Text
+- gegeben: Tetraeder 1 bis 4, Würfel 1 bis 6; Tetraeder einmal werfen; bei 3 nochmals Tetraeder, sonst Würfel
+- gesucht: Nachweis, dass P(mindestens einmal 3) = 3/8
+- verfahren: Gegenereignis über den einzigen Pfad ohne 3
+- fehlerquelle: beide Zweige mit 1/4 ansetzen
+
+### 2022MerhoehtAStochastik12-a (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ea · punkte 1 · format Rechnung · antwort Zahl
+- gegeben: Spielfeld A–E × 1–5, Start (A|1); Würfel mit 2 Seiten „rechts“, 3 Seiten „oben“, 1 Seite „rechts oben“
+- gesucht: Wahrscheinlichkeit, dass die Figur im Laufe eines Spiels (A|4) erreicht
+- verfahren: nur der Pfad oben, oben, oben führt dorthin
+- fehlerquelle: (3/6)³ mit 3/6 als 3 rechnen oder Pfade mit „rechts“ mitzählen
+
+### 2020MgrundlegendAStochastik11-b (iqb-katalog.csv)
+
+jahr 2020 · papier 2020-iqb-ga · punkte 3 · format Rechnung · antwort Text
+- gegeben: Behälter wieder mit drei blauen und zwei roten Kugeln; zwei Spielerinnen ziehen abwechselnd ohne Zurücklegen; wer zuerst rot zieht, gewinnt
+- gesucht: Nachweis, dass die zuerst ziehende Spielerin im Vorteil ist
+- verfahren: Gewinnwahrscheinlichkeit der ersten Spielerin über die Pfade 1. Zug rot und 3. Zug rot
+- fehlerquelle: mit Zurücklegen rechnen oder den Pfad blau, blau, rot vergessen
+
+### 2026MerhoehtAStochastik21-a (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ea · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: Würfel A mit den Zahlen 3, 3, 3, 5, 5, 5 und Würfel B mit 4, 4, 4, 4, 1, 1 (aus den abgebildeten Netzen); pro Runde wird jeder Würfel einmal geworfen; es werden zwei Runden gespielt
+- gesucht: Wahrscheinlichkeit, dass in beiden Runden mit A eine größere Zahl erzielt wird als mit B
+- verfahren: in einer Runde ist A größer bei A = 5 (Wahrscheinlichkeit 1/2) oder bei A = 3 und B = 1 (1/2 · 1/3), zusammen 2/3; für zwei Runden quadrieren
+- fehlerquelle: den Fall A = 3 und B = 1 vergessen und mit (1/2)^2 rechnen
+
+### 2025MgrundlegendAStochastik13-a (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ga · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: Schwimmgruppe mit 20 Kindern, 9 haben das Schwimmabzeichen Bronze; zwei Kinder werden zufällig ausgewählt
+- gesucht: Wahrscheinlichkeit, dass beide das Abzeichen Bronze haben
+- verfahren: Pfadregel ohne Zurücklegen: 9/20 · 8/19
+- fehlerquelle: mit Zurücklegen rechnen (9/20)^2
+
+### 2018MgrundlegendAStochastik11-a (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ga · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: acht Karten, je zwei mit 1, 2, 3, 4; gemischt und nacheinander abgelegt
+- gesucht: Wahrscheinlichkeit, dass die beiden ersten Karten mit 1 beschriftet sind
+- verfahren: Produkt der beiden Zugwahrscheinlichkeiten
+- fehlerquelle: mit Zurücklegen rechnen (1/16)
+
+### 2020MgrundlegendAStochastik11-a (iqb-katalog.csv)
+
+jahr 2020 · papier 2020-iqb-ga · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: Behälter mit drei blauen und zwei roten Kugeln; zwei Kugeln werden entnommen
+- gesucht: Wahrscheinlichkeit für zwei verschiedene Farben
+- verfahren: zwei Pfade addieren
+- fehlerquelle: nur einen Pfad rechnen (3/10)
+
+### 2022MgrundlegendAStochastik13-a (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ga · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: drei rote und drei gelbe Kugeln werden zufällig auf drei Kisten zu je zwei Kugeln verteilt
+- gesucht: Wahrscheinlichkeit, dass in die erste Kiste eine rote und eine gelbe Kugel kommen
+- verfahren: Pfadregel für zwei Züge ohne Zurücklegen, beide Reihenfolgen
+- fehlerquelle: mit Zurücklegen rechnen (2 · 1/2 · 1/2 = 1/2)
+
+### 2025-C-3c (fhr-katalog.csv)
+
+jahr 2025 · papier C · punkte 7 · format Zeichnen|Rechnung · antwort Grafik|Zahl
+- gegeben: aus allen Personen aus Altstadt mit Note 1 oder 2, also 4 Personen mit Note 1 und 10 mit Note 2, werden drei zum Probearbeiten am nächsten Tag zufällig ausgewählt; Ereignis E1 alle drei Personen haben die Note 1, Ereignis E2 die drei Personen haben nicht alle die gleiche Note
+- gesucht: vollständig beschriftetes Baumdiagramm des Auswahlprozesses|P(E1)|P(E2)
+- verfahren: das dreistufige Baumdiagramm ohne Zurücklegen mit sinkenden Nennern zeichnen, für E1 den Pfad mit drei Einsen multiplizieren und für E2 die beiden Pfade mit gleichen Noten vom Ganzen abziehen
+- fehlerquelle: mit gleichbleibenden Nennern rechnen wie beim Ziehen mit Zurücklegen
+
+### 2024-C-3d (fhr-katalog.csv)
+
+jahr 2024 · papier C · punkte 6 · format Zeichnen|Rechnung · antwort Grafik|Zahl
+- gegeben: ein Radverleih im Havelland bietet Fahrräder in den drei Rahmengrößen S, M und L an, die nach der Körpergröße zugewiesen werden; zu Saisonbeginn wurden 80 neue Fahrräder geliefert, davon waren sechs beschädigt; aus der Lieferung wurden nacheinander drei verschiedene Testräder überprüft; Ereignis E3 keins der Testräder war beschädigt, Ereignis E4 genau zwei der drei Testräder waren beschädigt
+- gesucht: vollständig beschriftetes dreistufiges Baumdiagramm|Wahrscheinlichkeit von E3|Wahrscheinlichkeit von E4
+- verfahren: das dreistufige Ziehen ohne Zurücklegen als Baum mit sinkenden Nennern zeichnen; P(E3) als Produkt der drei Pfadwahrscheinlichkeiten berechnen; für P(E4) die drei Pfade mit genau zwei beschädigten Rädern summieren
+- fehlerquelle: bei E4 nur einen Pfad rechnen oder in jeder Stufe mit dem Nenner 80 weiterrechnen
+
+### 2024-B-3d (fhr-katalog.csv)
+
+jahr 2024 · papier B · punkte 6 · format Rechnung|Zeichnen · antwort Zahl|Grafik
+- gegeben: FOS-Klasse mit 24 Personen, ein Viertel davon mit kurzem Schulweg von unter 20 min, alle anderen mit langem Schulweg; drei Personen werden zufällig als Vortragende ausgewählt
+- gesucht: Wahrscheinlichkeit, dass mindestens eine der drei ausgewählten Personen einen kurzen Schulweg von weniger als 20 min hat|geeignetes vollständiges Baumdiagramm
+- verfahren: aus einem Viertel von 24 die 6 Personen mit kurzem und 18 mit langem Schulweg bestimmen, das dreistufige Ziehen ohne Zurücklegen als Baumdiagramm zeichnen und über das Gegenereignis 1 minus dem Produkt 18/24 · 17/23 · 16/22 rechnen
+- fehlerquelle: mit Zurücklegen rechnen und in allen drei Stufen den Nenner 24 stehen lassen
+
+### 2023-C-3c (fhr-katalog.csv)
+
+jahr 2023 · papier C · punkte 7 · format Zeichnen|Rechnung · antwort Grafik|Zahl
+- gegeben: Poolbillard mit 16 Kugeln: dem weißen Spielball und 15 durchnummerierten Objektbällen; die Bälle 1 bis 8 sind vollständig gefärbt und heißen die Vollen, dazu gehört auch die schwarze Kugel; die Halben mit den Nummern 9 bis 15 tragen nur einen farbigen Ring; alle Kugeln sind gleich groß und gleich schwer; im Zufallsexperiment II werden nacheinander zwei Kugeln ohne Zurücklegen mit verschlossenen Augen entnommen und jeweils notiert, ob es eine Halbe, eine Volle oder die weiße Kugel ist; Ereignis E1: nur Halbe werden gezogen; Ereignis E2: die weiße Kugel befindet sich unter den Gezogenen
+- gesucht: vollständig beschriftetes Baumdiagramm zum Zufallsexperiment|Wahrscheinlichkeit von E1|Wahrscheinlichkeit von E2
+- verfahren: das zweistufige Ziehen ohne Zurücklegen mit den drei Ausgängen zeichnen; für E1 den Pfad H–H als Produkt berechnen; für E2 die Pfade mit der weißen Kugel in der ersten oder zweiten Stufe summieren
+- fehlerquelle: bei E2 nur den Pfad mit der weißen Kugel im ersten Zug zählen
+
+### 2023-A-3d (fhr-katalog.csv)
+
+jahr 2023 · papier A · punkte 7 · format Zeichnen|Rechnung · antwort Grafik|Zahl
+- gegeben: unter den 80 Happy-Hour-Gästen sind 30 Erwachsene und 50 Kinder; drei Personen werden für ein kostenloses Mittagessen zufällig verlost, eine Person kann nur einmal gewinnen; Ereignis A drei Erwachsene erhalten ein kostenloses Mittagessen, Ereignis B mindestens zwei Kinder erhalten ein kostenloses Mittagessen
+- gesucht: geeignetes vollständiges Baumdiagramm|P(A)|P(B)
+- verfahren: das dreistufige Baumdiagramm ohne Zurücklegen mit in jeder Stufe sinkenden Nennern zeichnen, für A den Pfad mit drei Erwachsenen multiplizieren und für B die vier Pfade mit mindestens zwei Kindern addieren
+- fehlerquelle: bei B nur den Pfad mit drei Kindern oder nur genau zwei Kinder berücksichtigen
+
+### 2022-C-3c (fhr-katalog.csv)
+
+jahr 2022 · papier C · punkte 5 · format Zeichnen|Rechnung · antwort Grafik|Zahl
+- gegeben: unter den fünf zu beschenkenden Personen sind drei Frauen und zwei Männer; die Adresse jeder Person steht auf je einem von fünf Zetteln; für jedes Geschenk wird nacheinander ein Zettel gezogen und nicht zurückgelegt; betrachtet werden die ersten drei Geschenke
+- gesucht: vollständig beschriftetes Baumdiagramm für die ersten drei Ziehungen|Wahrscheinlichkeit dafür, dass die beiden Männer schon unter den ersten drei Gewinnern sind
+- verfahren: das dreistufige Baumdiagramm ohne Zurücklegen mit den passenden Nennern anlegen, die drei Pfade mit zwei Männern und einer Frau bestimmen, ihre Wahrscheinlichkeiten über die Pfadmultiplikation berechnen und addieren
+- fehlerquelle: nur einen der drei Pfade berücksichtigen und 1/10 angeben
+
+### 2020-A-3c (fhr-katalog.csv)
+
+jahr 2020 · papier A · punkte 7 · format Zeichnen|Rechnung · antwort Grafik|Zahl
+- gegeben: in einer Kiste liegen die Restbestände von 100 grünen und 50 pinken Ketten; ein Kunde greift mit verdeckten Augen drei Ketten nacheinander heraus; Ereignis A alle drei Ketten sind pink, Ereignis B mindestens eine grüne Kette, Ereignis C genau zwei der drei Ketten sind gleichfarbig
+- gesucht: vollständiges Baumdiagramm des Zufallsexperiments|Wahrscheinlichkeiten der Ereignisse A, B und C
+- verfahren: das dreistufige Baumdiagramm mit sinkenden Nennern zeichnen; P(A) als Produkt eines Pfades berechnen, P(B) als Gegenwahrscheinlichkeit von A, P(C) als Summe der Pfade mit zwei gleichen Farben unter Beachtung der drei Reihenfolgen
+- fehlerquelle: bei Ereignis C nur eine Reihenfolge ansetzen und den Faktor 3 vergessen
+
+### 2020-C-3d (fhr-katalog.csv)
+
+jahr 2020 · papier C · punkte 6 · format Zeichnen|Rechnung · antwort Grafik|Zahl
+- gegeben: von 100 Befragten des 12. Jahrgangs fühlen sich die 31 Personen überlastet, die wöchentlich mindestens drei Stunden für Hausaufgaben aufwenden, die übrigen 69 nicht; die Schulleitung wählt zufällig drei Personen aus; Ereignis A alle drei fühlen sich nicht überlastet, Ereignis B mindestens zwei fühlen sich überlastet
+- gesucht: Baumdiagramm des Zufallsversuchs|Wahrscheinlichkeit der Ereignisse A und B
+- verfahren: das dreistufige Baumdiagramm mit sinkenden Nennern zeichnen; P(A) als Produkt eines Pfades berechnen und P(B) als Summe der drei Pfade mit genau zwei überlasteten Personen und des Pfades mit drei überlasteten Personen
+- fehlerquelle: bei Ereignis B nur den Pfad mit drei überlasteten Personen oder nur eine Reihenfolge der zwei überlasteten Personen ansetzen
+
+### 2019-C-3e (fhr-katalog.csv)
+
+jahr 2019 · papier C · punkte 7 · format Zeichnen|Rechnung · antwort Grafik|Zahl
+- gegeben: bei einer Variante gibt es 20 Enten, von denen 8 eine versteckte Markierung tragen; je Spiel werden 3 Enten entnommen und nicht zurückgelegt; bei mindestens zwei markierten Enten gewinnt der Spieler 10 €; der Betreiber will nach 100 Spielen durchschnittlich 150 € Überschuss erzielen
+- gesucht: Baumdiagramm des Spiels|Gewinnwahrscheinlichkeit|Mindesthöhe des Spieleinsatzes
+- verfahren: das dreistufige Baumdiagramm ohne Zurücklegen zeichnen; die Pfade mit drei markierten und die drei Pfade mit genau zwei markierten Enten addieren; aus der erwarteten Auszahlung bei 100 Spielen und dem Zielüberschuss die nötige Einnahme je Spiel bestimmen
+- fehlerquelle: bei genau zwei markierten Enten nur eine Reihenfolge ansetzen und den Faktor 3 vergessen
+
+### 2018MgrundlegendAStochastik11-b (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ga · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: acht Karten (vier gerade, vier ungerade), nacheinander aufgedeckt
+- gesucht: Wahrscheinlichkeit, dass spätestens die dritte Karte eine gerade Zahl trägt
+- verfahren: 1 minus Wahrscheinlichkeit für drei ungerade Karten
+- fehlerquelle: alle Pfade mit einer geraden Karte einzeln addieren und einen vergessen
+
+### 2018MgrundlegendBStochastikWTR1-1f (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ga · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: Zehn Jugendliche, vier nur Smartphone, sechs nur Tablet; drei werden zufällig ausgewählt
+- gesucht: Wahrscheinlichkeit, dass genau zwei der drei nur Smartphones nutzen
+- verfahren: Pfad SST mit 4/10 · 3/9 · 6/8, mal drei Reihenfolgen
+- fehlerquelle: Reihenfolgen vergessen (10 %)
+
+### 2018MerhoehtBStochastikWTR1-2a (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ea · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: Glücksrad mit den Sektoren Blau 180°, Rot 120°, Grün 60°; Einsatz 5 Euro für drei Drehungen; dreimal die gleiche Farbe: 10 Euro Auszahlung; drei verschiedene Farben: anderer Betrag; sonst nichts; P(dreimal gleiche Farbe) = 1/6
+- gesucht: Nachweis, dass P(drei verschiedene Farben) = 1/6
+- verfahren: Pfadprodukt mal 3! Reihenfolgen
+- fehlerquelle: Reihenfolgen vergessen (1/36)
+
+### 2021MgrundlegendBStochastikWTR2-1f (iqb-katalog.csv)
+
+jahr 2021 · papier 2021-iqb-ga · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: Bonuspunkte beim täglichen Start des Spiels: 10 Punkte mit 50 %, 20 mit 40 %, 50 mit 10 %; ein Spieler startet an vier Tagen
+- gesucht: Wahrscheinlichkeit für insgesamt 80 Bonuspunkte
+- verfahren: Beide Zerlegungen von 80 mit ihren Reihenfolgen zusammenzählen
+- fehlerquelle: die Zerlegung 20 + 20 + 20 + 20 oder die vier Reihenfolgen übersehen
+
+### 2019MgrundlegendBStochastikWTR2-2a (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ga · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: Urne: 35 % der Kugeln mit „+1“, 25 % mit „+2“, die übrigen 40 % mit „−3“ beschriftet; Spiel: zweimal Ziehen mit Zurücklegen, Summe der Zahlen; positive Summe = Gewinn in Euro, negative Summe = Verlust
+- gesucht: Wahrscheinlichkeit, mehr als 3 Euro zu gewinnen
+- verfahren: Einzige Folge (+2, +2) erkennen, Pfadwahrscheinlichkeit
+- fehlerquelle: Summe 3 (Folgen +1/+2) mitzählen
+
+### 2025MgrundlegendBStochastikWTR1-1a (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ga · punkte 3 · format Zeichnen · antwort Grafik
+- gegeben: 28,5 % der Haushalte mit mindestens einem Kind, davon 15,9 % überbelegt; ohne Kind 6,5 % überbelegt
+- gesucht: beschriftetes Baumdiagramm
+- verfahren: erste Stufe Kind, zweite Stufe überbelegt
+- fehlerquelle: Stufen vertauschen (überbelegt zuerst)
+
+### 2025MerhoehtBStochastikWTR2-2a (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ea · punkte 3 · format Zeichnen · antwort Grafik
+- gegeben: 80 % der Fahrkarten spätestens am Vortag gebucht, davon 90 % genutzt; von den am Tag gebuchten 95 % genutzt
+- gesucht: beschriftetes Baumdiagramm
+- verfahren: erste Stufe Buchungszeitpunkt, zweite Stufe Nutzung
+- fehlerquelle: Stufen vertauschen
+
+### 2025MerhoehtBStochastikWTR3-2a (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ea · punkte 3 · format Zeichnen · antwort Grafik
+- gegeben: 80 % der Fahrkarten spätestens am Vortag gebucht, davon 90 % genutzt; von den am Tag gebuchten 95 % genutzt
+- gesucht: beschriftetes Baumdiagramm
+- verfahren: erste Stufe Buchungszeitpunkt, zweite Stufe Nutzung
+- fehlerquelle: Stufen vertauschen
+
+### 2024MerhoehtBStochastikWTR1-1a (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ea · punkte 3 · format Zeichnen · antwort Grafik
+- gegeben: 70 % höchstens 40 Jahre, davon 80 % Komplettpaket; von den Älteren 50 % Komplettpaket
+- gesucht: beschriftetes Baumdiagramm
+- verfahren: erste Stufe Alter, zweite Stufe Paket
+- fehlerquelle: Stufen vertauschen
+
+### 2022MgrundlegendBStochastikWTR2-1a (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ga · punkte 3 · format Zeichnen · antwort Grafik
+- gegeben: Krankheit durch Bakterien: ein Drittel aller Menschen infiziert sich im Laufe des Lebens, bei 8 % der Infizierten bricht die Krankheit aus
+- gesucht: beschriftetes Baumdiagramm
+- verfahren: Zwei Stufen I/¬I und K/¬K mit den Anteilen
+- fehlerquelle: 8 % auf alle Menschen statt auf die Infizierten beziehen
+
+### 2026MgrundlegendAStochastik13-a (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ga · punkte 3 · format Rechnung|Begründung · antwort Zahl|Text
+- gegeben: Sendungen werden zu 40 % mit Versandunternehmen A verschickt; 8 % aller Sendungen werden mit A verschickt und verspätet zugestellt; 30 % der nicht mit A verschickten Sendungen werden verspätet zugestellt; Baumdiagramm mit den Anteilen x (Ast A nach V) und y (Ende des Pfads A quer, V)
+- gesucht: Anteil x|Nachweis, dass y = 18 % gilt
+- verfahren: x als bedingter Anteil 0,08/0,4; y als Pfadprodukt (1 − 0,4) · 0,3
+- fehlerquelle: x = 0,08 direkt an den Ast schreiben, ohne durch 0,4 zu teilen
+
+### 2024MgrundlegendBStochastikWTR1-2a (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ga · punkte 3 · format Zeichnen · antwort Grafik
+- gegeben: Glücksrad mit Sektoren 5 und 2, zweimal gedreht; P(beide 5) = 1/36, P(kleinster Rabatt) = 25/36
+- gesucht: beschriftetes Baumdiagramm
+- verfahren: p aus p² = 1/36, Diagramm
+- fehlerquelle: 1/36 als Einzelwahrscheinlichkeit für 5 eintragen
+
+### 2022MerhoehtBStochastikWTR1-1a (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ea · punkte 3 · format Zeichnen · antwort Grafik
+- gegeben: 59 % mit Datenschutzbedenken; davon 23 % mit Fitnessarmband; 19 % aller Kunden ohne Bedenken und mit Armband
+- gesucht: beschriftetes Baumdiagramm
+- verfahren: Anteil im Ast ¬D → F aus 0,41 · x = 0,19
+- fehlerquelle: 19 % direkt als Astwahrscheinlichkeit eintragen
+
+### 2018MgrundlegendBStochastikWTR3-1b (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ga · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: Hundefutter: 2/3 der Kunden kaufen Trockenfutter (T), davon 40 % die Light-Variante (L); von den Nassfutterkäufern wählen 25 % Light; eine Person wird zufällig ausgewählt
+- gesucht: Nachweis, dass P(L) = 35 %
+- verfahren: Beide Pfade zu L addieren
+- fehlerquelle: Anteile ohne Gewichtung addieren
+
+### 2022MgrundlegendBStochastikWTR2-1b (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ga · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: Krankheit durch Bakterien: ein Drittel aller Menschen infiziert sich im Laufe des Lebens, bei 8 % der Infizierten bricht die Krankheit aus
+- gesucht: Anteil der Menschen, bei denen die Krankheit nicht ausbricht
+- verfahren: Beide Pfade zu ¬K addieren
+- fehlerquelle: nur 1/3 · 0,92 rechnen
+
+### 2020MgrundlegendBStochastikWTR2-2a (iqb-katalog.csv)
+
+jahr 2020 · papier 2020-iqb-ga · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: Große Firma versendet einen Teil ihrer Briefe mit Q (95 % am ersten Werktag zugestellt), den anderen Teil mit einem anderen Unternehmen; Baumdiagramm (Abb. 1): Q mit 0,6, dann E (zugestellt) 0,95 und Ē 0,05; nicht Q mit 0,4, dann E und Ē mit a; ein Brief wird zufällig ausgewählt; a = 0,25
+- gesucht: Wahrscheinlichkeit, dass der ausgewählte Brief nicht am ersten Werktag zugestellt wird
+- verfahren: Beide Pfade zu Ē multiplizieren und addieren
+- fehlerquelle: nur den Pfad über Q rechnen
+
+### 2023MerhoehtBStochastikWTR2-1b (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ea · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: a = 0,7
+- gesucht: Nachweis, dass weniger weibliche als nicht weibliche Personen zufrieden waren
+- verfahren: Beide Schnittanteile berechnen und vergleichen
+- fehlerquelle: nur 0,8 mit 0,7 vergleichen
+
+### 2026MgrundlegendBStochastikWTR1-2a (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ga · punkte 3 · format Begründung · antwort Text
+- gegeben: 75 % sammeln (T); unter den Sammlern 80 % weiblich; unter den Nichtsammlern Anteil a weiblich; a = 0,6
+- gesucht: ob P(weiblich und T) sechsmal so groß ist wie P(nicht weiblich und nicht T)
+- verfahren: beide Pfade berechnen und vergleichen
+- fehlerquelle: 1 − a = 0,4 nicht bilden und mit a = 0,6 rechnen
+
+### 2025MerhoehtBStochastikWTR2-2b (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ea · punkte 3 · format Begründung · antwort Text
+- gegeben: Baumdiagramm aus a; nicht genutzte Fahrkarte; Aussage: P(Vortag | nicht genutzt) ist achtmal so groß wie P(am Tag | nicht genutzt)
+- gesucht: Beurteilung
+- verfahren: beide bedingten Wahrscheinlichkeiten als Brüche mit gleichem Nenner
+- fehlerquelle: unbedingte Pfade 0,08 und 0,01 vergleichen und die Bedingung übersehen (Ergebnis gleich, Begründung unvollständig)
+
+### 2025MerhoehtBStochastikWTR3-2b (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ea · punkte 3 · format Begründung · antwort Text
+- gegeben: Baumdiagramm aus a; nicht genutzte Fahrkarte; Aussage: P(Vortag | nicht genutzt) ist achtmal so groß wie P(am Tag | nicht genutzt)
+- gesucht: Beurteilung
+- verfahren: beide bedingten Wahrscheinlichkeiten als Brüche mit gleichem Nenner
+- fehlerquelle: unbedingte Pfade vergleichen und die Bedingung übersehen
+
+### 2026MerhoehtBStochastikWTR1-2a (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ea · punkte 3 · format Begründung · antwort Text
+- gegeben: Kundenkreis 500000 Personen; 75 % sammeln, davon 80 % weiblich
+- gesucht: ob die Anzahl der weiblichen Sammler kleiner als 400000 ist
+- verfahren: Pfad berechnen und mit 0,8 vergleichen
+- fehlerquelle: 0,8 · 500000 = 400000 als Anzahl der Sammlerinnen nehmen
+
+### 2024MgrundlegendAStochastik22-a (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ga · punkte 2 · format Eintragen · antwort Grafik
+- gegeben: Befragung: 60 % erhalten F1 (ob sie schon einmal unentschuldigt gefehlt haben), 40 % F2 (ob sie noch nie unentschuldigt gefehlt haben), wahrheitsgemäße Antwort Ja/Nein; Anteil p der Gefehlt-Habenden unter den F1-Befragten wie unter allen; Baumdiagramm mit 0,6 und p vorgegeben
+- gesucht: vervollständigtes Baumdiagramm
+- verfahren: F2 mit 0,4; unter F1 Nein mit 1 − p; unter F2 Ja mit 1 − p und Nein mit p, weil F2 die Verneinung von F1 ist
+- fehlerquelle: unter F2 ebenfalls Ja mit p beschriften
+
+### 2021MgrundlegendBStochastikWTR3-1e (iqb-katalog.csv)
+
+jahr 2021 · papier 2021-iqb-ga · punkte 2 · format Kurzantwort · antwort Text
+- gegeben: Befragung zur Absicht, das Unternehmen in zwölf Monaten zu verlassen: 70 % erhalten Frage A (Absicht, das Unternehmen zu verlassen), 30 % Frage B (Absicht zu bleiben); nur die Person kennt ihre Frage und antwortet wahrheitsgemäß; Baumdiagramm mit A (Ja mit x, Nein mit y) und B
+- gesucht: Bedeutung von y im Sachzusammenhang
+- verfahren: y als bedingten Anteil auf der Stufe Frage A lesen
+- fehlerquelle: y als Anteil aller Nein-Antworten deuten
+
+### 2025MgrundlegendAStochastik12-a (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ga · punkte 2 · format Kurzantwort · antwort Text
+- gegeben: Glücksrad mit acht gleich großen Sektoren, beschriftet mit viermal 7, dreimal 6 und einmal 5; zweimaliges Drehen; Term (3/8)^2
+- gesucht: Bedeutung des Terms im Sachzusammenhang
+- verfahren: 3/8 als Wahrscheinlichkeit für die 6 erkennen, Quadrat als zweimal hintereinander
+- fehlerquelle: 3/8 der 7 zuordnen, weil sie im Bild am häufigsten auffällt
+
+### 2020MerhoehtAStochastik21-a (iqb-katalog.csv)
+
+jahr 2020 · papier 2020-iqb-ea · punkte 1 · format Kurzantwort · antwort Text
+- gegeben: Urne mit 100 Kugeln, 20 weiß; zwei Kugeln nacheinander ohne Zurücklegen; Term 20/100 · 19/99
+- gesucht: ein Ereignis mit dieser Wahrscheinlichkeit
+- verfahren: Faktoren als zwei Züge deuten
+- fehlerquelle: „genau eine weiße“ angeben
+
+### 2017MerhoehtAStochastik11-a (iqb-katalog.csv)
+
+jahr 2017 · papier 2017-iqb-ea · punkte 2 · format Kurzantwort · antwort Text
+- gegeben: Glücksrad mit blauem, gelbem und rotem Sektor; P(blau) = p beim einmaligen Drehen; Term (1 − p)^7
+- gesucht: Bedeutung des Terms im Sachzusammenhang
+- verfahren: 1 − p als Wahrscheinlichkeit für nicht blau, Potenz 7 als sieben Drehungen
+- fehlerquelle: „genau einmal nicht blau“ statt „nie blau“
+
+### 2023MerhoehtAStochastik21-a (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ea · punkte 2 · format Kurzantwort|Begründung · antwort Text
+- gegeben: Tetraeder mit 1 bis 4, fünfmal geworfen; Term (3/4)⁵
+- gesucht: ein Ereignis mit dieser Wahrscheinlichkeit, mit Begründung
+- verfahren: 3/4 als Wahrscheinlichkeit für „nicht die 1“ deuten, fünfmal hintereinander
+- fehlerquelle: „fünfmal nicht die 1“ als „mindestens einmal“ formulieren
+
+### 2026MerhoehtAStochastik12-a (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ea · punkte 1 · format Kurzantwort · antwort Term
+- gegeben: Glücksrad mit drei gleich großen Sektoren, einer grün; A und B drehen abwechselnd, wer zuerst Grün erzielt, gewinnt; nach je zwei Drehungen ohne Grün endet das Spiel unentschieden; A beginnt
+- gesucht: Term für die Wahrscheinlichkeit, dass das Spiel unentschieden endet
+- verfahren: unentschieden heißt viermal nacheinander kein Grün, also (2/3)^4
+- fehlerquelle: (1/3)^4 als Wahrscheinlichkeit für vier Fehlversuche ansetzen
+
+### 2023MerhoehtAStochastik11-a (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ea · punkte 1 · format Kurzantwort · antwort Text
+- gegeben: Behälter mit fünf Kugeln, drei mit der Zahl 2, zwei mit der negativen Zahl a; zweimal Ziehen mit Zurücklegen; Term 2 · 3/5 · 2/5
+- gesucht: Ereignis, dessen Wahrscheinlichkeit der Term liefert
+- verfahren: 3/5 · 2/5 ist ein Pfad mit einer 2 und einem a, der Faktor 2 beide Reihenfolgen
+- fehlerquelle: „erst 2, dann a“ angeben und den Faktor 2 übersehen
+
+### 2024MgrundlegendAStochastik11-b (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ga · punkte 3 · format Kurzantwort · antwort Text
+- gegeben: Wahrscheinlichkeit für Glitzerfärbung 40 %; Term (3/5)⁴ + 4 · (3/5)³ · 2/5
+- gesucht: ein Zufallsexperiment im Sachzusammenhang und ein Ereignis, dessen Wahrscheinlichkeit der Term liefert
+- verfahren: 3/5 ist die Wahrscheinlichkeit für keine Glitzerfärbung; vier Faktoren heißt vier Bälle; erster Summand alle vier ohne Glitzer, zweiter genau drei ohne (vier Anordnungen)
+- fehlerquelle: 3/5 der Glitzerfärbung zuordnen und „mindestens drei mit Glitzer“ formulieren
+
+### 2021MgrundlegendBStochastikWTR1-1b (iqb-katalog.csv)
+
+jahr 2021 · papier 2021-iqb-ga · punkte 2 · format Kurzantwort · antwort Text
+- gegeben: Joghurtbecher auf Paletten zu je 20 Bechern; unter jedem Deckel genau eines von sechs Motiven; gegenwärtig wird jedes Motiv zufällig (je 1/6) ausgewählt; drei Becher werden nacheinander geöffnet; Term (6 · 5 · 4)/6³
+- gesucht: ein Ereignis im Sachzusammenhang mit dieser Wahrscheinlichkeit
+- verfahren: Zähler als Anzahl der Folgen mit lauter verschiedenen Motiven deuten
+- fehlerquelle: den Term als „Motive 1, 2, 3 in dieser Reihenfolge“ deuten
+
+### 2025MgrundlegendBStochastikWTR2-1b (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ga · punkte 2 · format Kurzantwort · antwort Text
+- gegeben: erste fünf Spielzüge; Term (1/4)⁵ + (3/4)⁵
+- gesucht: Ereignis im Sachzusammenhang
+- verfahren: beide Summanden als Pfade deuten
+- fehlerquelle: (3/4)⁵ als „mindestens eine“ deuten
+
+### 2026MerhoehtAStochastik23-a (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ea · punkte 1 · format Kurzantwort · antwort Text
+- gegeben: fünf Kugeln, drei mit der Zahl a, zwei mit der Zahl b; a + b = 17; zwei Kugeln werden gleichzeitig zufällig entnommen; Term 1 − 2/5 · 1/4
+- gesucht: ein Ereignis im Sachzusammenhang, dessen Wahrscheinlichkeit der Term liefert
+- verfahren: 2/5 · 1/4 ist die Wahrscheinlichkeit für zwei Kugeln mit b (ohne Zurücklegen); 1 minus das ist das Gegenereignis
+- fehlerquelle: das Ereignis als genau eine Kugel mit b beschreiben
+
+### 2025MgrundlegendAStochastik11-b (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ga · punkte 2 · format Kurzantwort · antwort Text
+- gegeben: Baumdiagramm mit P(A) = 0,4, P(C|A) = 0,8, P(B und C) = 0,42; Term 1 − (0,4 · 0,8 + 0,42)
+- gesucht: ein Ereignis im Sachzusammenhang, dessen Wahrscheinlichkeit der Term liefert
+- verfahren: die Klammer ist P(C) als Summe beider Pfade zu C; 1 minus das ist das Gegenereignis
+- fehlerquelle: das Ereignis auf Startpunkt B einschränken
+
+### 2019MgrundlegendBStochastikWTR3-2a (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ga · punkte 2 · format Kurzantwort · antwort Text
+- gegeben: Urne mit fünf Kugeln: drei mit der Zahl 4, zwei mit der natürlichen Zahl x ≠ 4; Term 1 − 0,6³
+- gesucht: ein Zufallsexperiment und ein Ereignis mit dieser Wahrscheinlichkeit
+- verfahren: 0,6³ als dreimal 4 mit Zurücklegen, 1 − … als Gegenereignis
+- fehlerquelle: Ziehen ohne Zurücklegen beschreiben (dann keine Potenz)
+
+### 2023MgrundlegendBStochastikWTR2-1e (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ga · punkte 2 · format Begründung · antwort Text
+- gegeben: Zwei Personen würfeln abwechselnd, bis eine Person eine andere Zahl erzielt als die andere beim unmittelbar vorhergehenden Wurf; die größere Zahl gewinnt; Term 1 − (1/3)³ − (2/3)³
+- gesucht: Begründung, dass der Term die Wahrscheinlichkeit für eine Entscheidung spätestens im dritten Wurf angibt
+- verfahren: Nicht entschieden nach drei Würfen heißt dreimal dieselbe Zahl; Gegenereignis
+- fehlerquelle: Term als Wahrscheinlichkeit für „genau im dritten Wurf“ deuten
+
+### 2018MgrundlegendBStochastikWTR3-2c (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ga · punkte 2 · format Kurzantwort|Begründung · antwort Text
+- gegeben: Zwölfseitiger Spielwürfel, alle Seiten gleich wahrscheinlich, nach dem abgebildeten Netz neun Seiten mit 1 und drei Seiten mit 2 beschriftet; je Spiel wird viermal geworfen; Trostpreis für einen Spielausgang mit Wahrscheinlichkeit 81/256
+- gesucht: ein passender Spielausgang mit Begründung
+- verfahren: 81/256 = (3/4)^4 als Wahrscheinlichkeit für viermal die 1
+- fehlerquelle: 81/256 nicht als Potenz erkennen
+
+### 2025MgrundlegendAStochastik13-b (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ga · punkte 3 · format Kurzantwort · antwort Text
+- gegeben: 20 Kinder, 9 mit Bronze, 11 ohne; Term (9 über 2) · (11 über 4) / (20 über 6)
+- gesucht: Bedeutung des Terms im Sachzusammenhang
+- verfahren: Nenner: alle Auswahlen von 6 aus 20; Zähler: 2 aus den 9 mit Bronze und 4 aus den 11 ohne
+- fehlerquelle: „mindestens zwei“ statt „genau zwei“ formulieren
+
+### 2019MgrundlegendAStochastik2-a (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ga · punkte 1 · format Kurzantwort · antwort Text
+- gegeben: Spiel mit P(Zitronenbonbon) = 30 %, P(Orangenbonbon) = 50 %, P(kein Gewinn) = 20 %; zehnmalige Teilnahme; Term (10 über 7) · 0,8⁷ · 0,2³
+- gesucht: ein Ereignis, dessen Wahrscheinlichkeit der Term angibt
+- verfahren: 0,8 als Gewinnwahrscheinlichkeit deuten, Bernoulli-Term lesen
+- fehlerquelle: 0,8 als Wahrscheinlichkeit für „kein Zitronenbonbon“ deuten (0,7 wäre richtig)
+
+### 2018MgrundlegendAStochastik2-b (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ga · punkte 3 · format Kurzantwort · antwort Text
+- gegeben: Glücksrad mit P(Rot) = 1/3, Spiel mit zwei Drehungen; Term Summe i = 0 bis 3 von (10 über i) · (1/9)^i · (8/9)^(10 − i)
+- gesucht: ein Zufallsexperiment im Sachzusammenhang und das Ereignis, dessen Wahrscheinlichkeit der Term angibt
+- verfahren: 1/9 als zweimal Rot in einem Spiel deuten, Binomialsumme als höchstens drei von zehn Spielen
+- fehlerquelle: 1/9 als Sektorwahrscheinlichkeit einer Farbe deuten
+
+### 2023MgrundlegendBStochastikWTR2-1c (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ga · punkte 2 · format Kurzantwort · antwort Text
+- gegeben: Term C(29; 8) · (1/3)⁸ · (2/3)²¹ · 1/3
+- gesucht: Ereignis im Sachzusammenhang
+- verfahren: Term in Bernoulli-Anteil für 29 Würfe und Einzelfaktor für den letzten Wurf zerlegen
+- fehlerquelle: letzten Faktor 1/3 übersehen und „genau acht Vieren“ antworten
+
+### 2022MgrundlegendBStochastikWTR1-1d (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ga · punkte 2 · format Kurzantwort · antwort Text
+- gegeben: Paketzentrum: 10 % der Pakete haben das Ziel A; 20 Pakete zufällig ausgewählt; Term 0,9¹⁴ · Σ_{i=0}^{3} (6 über i) · 0,1ⁱ · 0,9⁶⁻ⁱ
+- gesucht: ein passendes Ereignis
+- verfahren: Faktoren als Abschnitte der 20 Pakete deuten
+- fehlerquelle: Summe als „höchstens 3 mit Ziel A unter allen 20“ deuten
+
+### 2026MgrundlegendBStochastikWTR1-1a (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ga · punkte 2 · format Kurzantwort · antwort Text
+- gegeben: 75 % des Kundenkreises sammeln Treuepunkte; X Anzahl der Sammler unter 10 zufällig Ausgewählten, binomialverteilt; Term P(X = a) = (b über 3) · c³ · 0,25⁷
+- gesucht: Werte a, b, c und Beschreibung des Ereignisses
+- verfahren: Platzhalter aus n, p und k lesen
+- fehlerquelle: a = 7 (Exponent von 0,25 als Trefferzahl)
+
+### 2022MerhoehtBStochastikWTR1-1e (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ea · punkte 3 · format Kurzantwort · antwort Text
+- gegeben: Term 1 − Σ_{k=51}^{100} C(100; k) · 0,59^k · a^b mit Platzhaltern a, b
+- gesucht: Ersetzung der Platzhalter; zugehöriges Ereignis
+- verfahren: Bernoulli-Formel vervollständigen, Summe als P(X ≥ 51), Gegenereignis beschreiben
+- fehlerquelle: Ereignis „mehr als die Hälfte“ (die Summe selbst) statt des Gegenereignisses
+
+### 2026MerhoehtAStochastik21-b (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ea · punkte 2 · format Kurzantwort · antwort Zahl
+- gegeben: Würfel A mit 3, 3, 3, 5, 5, 5 und B mit 4, 4, 4, 4, 1, 1; vier Runden, je Runde die Summe beider Zahlen; Ereignis: alle vier Summen sind verschieden; Term v · (1/2)^w · (1/3)^2 · (2/3)^2
+- gesucht: natürliche Zahlen v und w, mit denen der Term die Wahrscheinlichkeit des Ereignisses liefert
+- verfahren: mögliche Summen 4, 6, 7, 9 mit den Wahrscheinlichkeiten 1/6, 1/6, 1/3, 1/3; vier verschiedene Summen in vier Runden in 4! = 24 Reihenfolgen; Produkt (1/6)^2 · (1/3)^2 = (1/2)^4 · (1/3)^2 · (2/3)^2 · … umschreiben
+- fehlerquelle: die Reihenfolgen nicht zählen und v = 1 setzen
+
+### 2023MerhoehtBStochastikWTR2-1a (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ea · punkte 4 · format Zeichnen|Rechnung · antwort Zahl
+- gegeben: 45 % weiblich; unter den weiblichen 80 % zufrieden, unter den nicht weiblichen Anteil a; P(Z) = 77,8 %
+- gesucht: Baumdiagramm; Wert von a
+- verfahren: Beide Pfade zu Z addieren und gleich 0,778 setzen
+- fehlerquelle: a als P(Z ∩ ¬W) statt als bedingten Anteil
+
+### 2026MgrundlegendBStochastikWTR1-2b (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ga · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: Baumdiagramm wie in a; Anteil der nicht weiblichen Personen im Kundenkreis 30 %
+- gesucht: Anteil a
+- verfahren: Summe der Pfade zu „nicht weiblich“ gleich 0,3 setzen
+- fehlerquelle: Pfad 0,75 · 0,2 vergessen
+
+### 2026MerhoehtBStochastikWTR1-2b (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ea · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: Baumdiagramm mit a; 30 % nicht weiblich
+- gesucht: a
+- verfahren: Pfadsumme gleich 0,3
+- fehlerquelle: Pfad über T vergessen
+
+### 2024MgrundlegendAStochastik22-b (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ga · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: Baumdiagramm aus a (F1 0,6 mit Ja p, F2 0,4 mit Ja 1 − p); 1000 Jugendliche befragt, 420 antworten mit Ja
+- gesucht: Anteil p auf Grundlage dieses Ergebnisses
+- verfahren: Wahrscheinlichkeit für Ja über beide Pfade mit der relativen Häufigkeit 0,42 gleichsetzen und nach p auflösen
+- fehlerquelle: 0,42 direkt als p deuten oder nur den F1-Pfad ansetzen (0,6p = 0,42)
+
+### 2021MgrundlegendBStochastikWTR3-1f (iqb-katalog.csv)
+
+jahr 2021 · papier 2021-iqb-ga · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: Befragung zur Absicht, das Unternehmen in zwölf Monaten zu verlassen: 70 % erhalten Frage A (Absicht, das Unternehmen zu verlassen), 30 % Frage B (Absicht zu bleiben); nur die Person kennt ihre Frage und antwortet wahrheitsgemäß; Baumdiagramm mit A (Ja mit x, Nein mit y) und B; von 2700 Beschäftigten antworten 1024 mit Ja; der Anteil der Gehwilligen ist in beiden Fragegruppen gleich
+- gesucht: Nachweis, dass etwa 20 % der Beschäftigten das Unternehmen verlassen wollen
+- verfahren: Ja-Anteil als 0,7 · x + 0,3 · (1 − x) ansetzen und nach x lösen
+- fehlerquelle: Ja bei Frage B ebenfalls als Gehwillige zählen
+
+### 2020MgrundlegendBStochastikWTR1-2c (iqb-katalog.csv)
+
+jahr 2020 · papier 2020-iqb-ga · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: Abteilung des Unternehmens: 4 % der weiblichen und 10 % der anderen Beschäftigten sind unzufrieden; der Anteil der unzufriedenen nicht weiblichen Beschäftigten ist fünfmal so groß wie der Anteil der unzufriedenen weiblichen
+- gesucht: Anteil der weiblichen Beschäftigten in der Abteilung
+- verfahren: Anteil a ansetzen, Pfadprodukte ins Verhältnis setzen und die lineare Gleichung lösen
+- fehlerquelle: das Verhältnis der bedingten Anteile (10 % zu 4 %) statt der Pfadwahrscheinlichkeiten ansetzen
+
+### 2021MgrundlegendBStochastikWTR1-1f (iqb-katalog.csv)
+
+jahr 2021 · papier 2021-iqb-ga · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: nach der Änderung: Motiv 6 mit Wahrscheinlichkeit 1/36, die anderen fünf Motive gleich wahrscheinlich (je 7/36); Paletten zu 20 Bechern; 1/5 der Becher farbig, die übrigen schwarz-weiß; unter den schwarz-weißen Bechern hat Motiv 6 die Wahrscheinlichkeit 1/48
+- gesucht: Wahrscheinlichkeit, dass ein zufällig gewählter farbiger Becher das Motiv 6 enthält
+- verfahren: Totale Wahrscheinlichkeit 1/36 als gewichtete Summe ansetzen und nach dem unbekannten Zweig auflösen
+- fehlerquelle: 1/36 als Wahrscheinlichkeit unter den farbigen Bechern ansetzen
+
+### 2019MgrundlegendBStochastikWTR1-1e (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ga · punkte 5 · format Rechnung · antwort Zahl
+- gegeben: Nicht bestandene Prüflinge nehmen ein zweites Mal teil; Anteil q beim ersten Mal bestanden, beim zweiten Mal nur halb so großer Anteil; spätestens beim zweiten Mal bestehen 90 %
+- gesucht: Wert von q
+- verfahren: Gleichung q + (1 − q) · q/2 = 0,9 aufstellen und lösen
+- fehlerquelle: beim zweiten Mal q/2 ohne den Faktor (1 − q) ansetzen
+
+### 2018MgrundlegendAStochastik2-a (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ga · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: Glücksrad mit blauem, gelbem, rotem Sektor; P(Rot) = 1/3; P(zweimal Gelb bei zwei Drehungen) = 1/4
+- gesucht: Mittelpunktswinkel des gelben Sektors
+- verfahren: p² = 1/4 lösen, Winkel als Anteil von 360°
+- fehlerquelle: 1/4 direkt als Anteil nehmen (90°)
+
+### 2019MgrundlegendAStochastik2-b (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ga · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: Person mit sechs gewonnenen Bonbons (Zitrone oder Orange); zwei zufällig ausgewählt und verschenkt; P(ein Zitronen- und ein Orangenbonbon) = 3/5
+- gesucht: Anzahl der gewonnenen Orangenbonbons
+- verfahren: Wahrscheinlichkeit in k aufstellen, Gleichung lösen
+- fehlerquelle: nur einen Pfad ansetzen (dann keine ganzzahlige Lösung)
+
+### 2021MerhoehtAStochastik21-b (iqb-katalog.csv)
+
+jahr 2021 · papier 2021-iqb-ea · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: jede dritte Kugel gelb; zwei gelbe durch zwei blaue ersetzt; danach P(beide gelb) = 1/16 bei zweimaligem Ziehen mit Zurücklegen
+- gesucht: Anzahl der gelben Kugeln nach dem Austausch
+- verfahren: aus 1/16 den Anteil 1/4 folgern, Gesamtzahl 4x, Anteil vor dem Austausch (x + 2)/(4x) = 1/3
+- fehlerquelle: Gesamtzahl bei 3x belassen (vor dem Austausch war sie 3 · 8 = 24 = 4x)
+
+Nicht in den Prüfungsdateien gefunden: 2017-bb-ea, 2017-be-gk, 2018-bb-ea, 2018-be-gk, 2019-be-gk, 2020-be-gk, 2021-be-gk, 2026-bb-ea, 2026-bb-gk
 
 ## 3 Maßstab (unterrichtsblatt.md, wortgleich)
 

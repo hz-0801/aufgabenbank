@@ -1,9 +1,9 @@
 # Mappe: uneigentliche-integrale
 
 Eintrag: hz-0801/mathe-nachhilfe, katalog/uneigentliche-integrale.md
-Katalog-Commit: 3e956a51fa1ee14a19c2abebef1852436e3d9d08 (2026-09-26T13:40:25+02:00, „katalog: Sek-II-Einträge auf die Katalogzeilen vom 27.09.“; ermittelt über git log (GitHub-API gesperrt))
+Katalog-Commit: c651dc47624a28a96eb6724ed3e4864024a7bab4 (2026-09-27T22:25:43Z, „katalog: Erkennungsschritte“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-27 12:44 UTC
+Datum: 2026-09-30 08:14 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -41,46 +41,45 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 26  - Grenzverhalten erkennen: e-Funktionen laufen gegen null, waagerechte Asymptoten – der Grund der Näherung in beiden Einheiten. Sek-II-Nachbarthema grenzwerte-und-verhalten-im-unendlichen.md. [GOST Q1 GK-Kern „Verhalten im Unendlichen“]
 27  - Flächen unter Graphen als Integrale deuten – der Bilanzblick in Einheit zwei. Sek-II-Nachbarthema flaecheninhalt-durch-integration.md Einheit fünf. [GOST-OHiMi „Ermittlung von Flächeninhalten“]
 28  Erkennungsschritte (Vorstufe der Einheit, vor der sie stehen, nicht auf Blatt 0; eine Hauptnummer je Schritt):
-29  - „Endet die Fläche?“ – zu Graphen ankreuzen, ob die Fläche an einer Grenze endet oder ausläuft, und ob sie trotzdem endlich sein kann; nichts rechnen. Vor Einheit eins. [GOST Q2 LK „Inhalte unbegrenzter Flächen“]
-30  - „Wie groß ist der Rest?“ – an Graphen, die gegen null laufen, die Fläche jenseits einer Marke schraffieren und ankreuzen, ob sie ins Gewicht fällt; nichts rechnen. Vor Einheit zwei. [Rohdatei-Fehlerquelle „Restfläche für null erklärt“, iqb 2022MerhoehtBAnalysisWTR2-1e]
-31
-32  ### Merkkasten
-33  Einheit 1 (Der Begriff):
-34      Uneigentlich heißt: eine Grenze ist keine Zahl – die obere Grenze wächst über alle Schranken (oder der Integrand hat eine Polstelle). Der Wert ist der Grenzwert der bestimmten Integrale.
-35        Integral ab null über e^(−x): F(w) − F(0) = 1 − e^(−w), Grenzwert 1 – die unbegrenzte Fläche hat den Inhalt eins.
-36      Existenz: der Grenzwert muss existieren – der Graph muss schnell genug gegen null fallen.
-37      Auswendig (Teil A): keine – uneigentliche Integrale stehen weder im GK-Kern noch in der Anlage; der Begriff ist LK-Stoff für Teil B.
-38      Formelsammlung: keine – uneigentliche Integrale stehen nicht in der Formelsammlung – [FS] offen
-39  Quelle: eigene Formulierung nach [GOST Q2 LK] „Integral über einen unbeschränkten Intervall, Integral einer unbeschränkten Funktion“; Zahlenbeispiel eigen (Ermessen); [LS-AA QP III 8].
-40  Einheit 2 (Die Näherungsdeutung):
-41      F(w) − F(0) ist die Fläche unter dem Graphen bis w. Läuft der Graph gegen null, ändert sich diese Fläche ab einer festen Grenze kaum noch – jedes große w liefert näherungsweise denselben Wert wie das feste Integral.
-42      Deuten heißt: Differenz als Fläche benennen, Restfläche zeigen, ihre Kleinheit mit dem Abfallen des Graphen begründen – „vernachlässigbar“, nicht „null“.
-43      Auswendig (Teil A): keine – die einzige Prüfungszeile liegt in Teil B mit Rechner; sitzen muss der Hauptsatzblick (Kasten zwei von stammfunktion-und-hauptsatz.md).
-44      Formelsammlung: keine – [FS] offen
-45  Quelle: eigene Formulierung nach den beiden Originalen (2022-bebb-lk-B2.2h, 2022MerhoehtBAnalysisWTR2-1e); ohne weiteres Zahlenbeispiel (Bildarbeit); [LS-AA QP III 8 sinngemäß].
-46
-47  ### Typische Fehler
-48  Verdichtet aus den Spalten `verfahren` und `fehlerquelle` der 2 Zeilen des Themas in abitur/abi-katalog.csv und abitur/iqb-katalog.csv (Zuordnung über profil, leitidee und thema aus themen.csv, wie rohdatei-bau.py); Beleg ist die Original-id. [FD] nicht verwendet: die Muster sind allein aus den Katalogzeilen belegt.
-49  - Die Aussage als Gleichheit von Stammfunktionen gedeutet statt als Flächennäherung: die Differenz F(w) − F(0) nicht als Fläche erkannt, die Restfläche für exakt null erklärt. [abi 2022-bebb-lk-B2.2h; iqb 2022MerhoehtBAnalysisWTR2-1e]
-50
-51  ### Für schwache Schüler
-52  Mindeststoff (GK-Kern Q2 / Niveaustufe H / RLP FOS) [GOST, GOST-OHiMi, FOS]: Kein GK-Kern, kein FOS-Stoff, keine Anlagenzeile – das Thema ist vollständig Leistungskursstoff („Inhalte unbegrenzter Flächen mittels uneigentlicher Integrale“); für GK-Schüler ist es Vorrat, für fhr-Schüler kein Stoff. LK-Mindeststoff: der Grenzwertbegriff der Einheit 1 am e-Funktions-Beispiel und die Näherungsdeutung der Einheit 2. Niveaustufe H der E-Phase [RLP H]: kein Posten. COSH [COSH, nachrangig, aus dem Gedächtnis, nicht am Text geprüft]: der Mindestanforderungskatalog nennt uneigentliche Integrale nicht – kein zusätzlicher Posten.
-53  Grundvorstellung (Blatt 0) [GOST Q2 LK, MO]: Eine Fläche ohne Ende kann trotzdem einen endlichen Inhalt haben – wenn der Graph schnell genug fällt. „Hier ist ein Graph, der nach rechts gegen null läuft, auf Kästchenpapier. Schraffiere die Fläche bis zu einer Marke und zähle grob die Kästchen. Schiebe die Marke ein Stück nach rechts: wie viele Kästchen kommen dazu? Und noch ein Stück? Werden die Zuwächse größer oder kleiner? Worauf läuft die Gesamtfläche zu – und warum wird sie nicht unendlich, obwohl die Fläche nie endet?“ Wer glaubt, unbegrenzt heiße unendlich groß, oder wer die Restfläche für exakt null hält, braucht das vor jeder Rechnung: erst die schrumpfenden Zuwächse sehen, dann der Grenzwert. Verständnis, nicht Verfahren; Ermessen in der Aufgabenform, amtlich im Begriff (LK-Planzeile). [MO-Logik: Vorstellung vor Verfahren; Rohdatei-Fehlerquelle „Restfläche für null erklärt“, iqb 2022MerhoehtBAnalysisWTR2-1e; BASICS nur als Strukturvorbild Diagnose → Förderung → Nachtest, keine Inhalte]
-54  Sprossen je Verfahrenstyp (Reihenfolge = Kette des Hauptblatts) [LS-AA, Rohdatei; Sprossenfolge Ermessen – Lehrwerk und Rohdatei geben keine Reihenfolge vor]:
-55  - Der Begriff (Einheit 1): „Endet die Fläche?“ ankreuzen (Vorstufe, Grundvorstellung) → das bestimmte Integral mit wandernder oberer Grenze als Term aufschreiben (Grundfall, viermal) → den Grenzwert an e-Funktionen bilden und als Inhalt der unbegrenzten Fläche deuten → Prüfungshöhe: die Existenzfrage an einem schnell und einem langsam fallenden Graphen vergleichen (kein Original – Vermerk; der Bestand prüft den Begriff nicht direkt); fhr-Zielmarke: keine – kein Stoff.
-56  - Die Näherungsdeutung (Einheit 2): „Wie groß ist der Rest?“ ankreuzen (Vorstufe, Grundvorstellung) → die Differenz zweier Stammfunktionswerte als Fläche bis zur wandernden Grenze benennen (Grundfall, viermal) → die Restfläche markieren und ihre Kleinheit über das Abfallen des Graphen begründen → Prüfungshöhe: die vollständige Deutung der Näherungsaussage im Sachzusammenhang (abi 2022-bebb-lk-B2.2h; iqb 2022MerhoehtBAnalysisWTR2-1e, Niveau II); fhr-Zielmarke: keine.
-57
-58  ### Prüfungsform (fhr / abi / iqb)
-59  Geltung [konzept.md § 4 Entscheidung 35]: Der IQB-Pool ist für das Profil abi voll maßgeblich – Brandenburg entnimmt seit 2017 Poolaufgaben, seit der KMK-Ländervereinbarung 2020 unverändert, und der Pool wirkt normierend auf Landesaufgaben und Oberstufenklausuren; die Auswahl-Einschränkung steht allein in den Geltungsdateien abi-*-geltung.md. Für fhr ist der Pool keine Vorgabe; das Thema ist dort kein Stoff, themen.csv führt keine fhr-Zeile. Die Rohdatei zählt 3 Zeilen mit 2 Haupttypen (abi 1 Zeile, 1 Typ; iqb 2 Zeilen, 2 Typen), Jahre 2017–2022. Der Eintrag setzt keine Decke; Häufigkeit ist Auskunft, ein einziges Vorkommen ein vollwertiger Typ. Typname wörtlich aus abitur/abitur-typen.csv (gemeinsame Liste abi/iqb; Thema ohne Gegenstandsklassen, daher ohne Präfix).
-60  fhr: kein Stoff, keine Zeile – der RLP FOS 2019 kennt uneigentliche Integrale nicht.
-61  abi (1 Zeile, 1 Typ; Landesheft bebb-lk 2022) [abi-Katalog]: je 1: Näherung eines Integrals mit großer oberer Grenze durch ein festes Integral geometrisch deuten (E2). Muster: eine einzige Zeile, wortgleiche Pooldublette (2022-bebb-lk-B2.2h aus 2022MerhoehtBAnalysisWTR2-1e) in Teil B des Leistungskurshefts, drei Punkte, Niveau II – die Landeshefte stellen das Thema sonst nicht.
-62  iqb (2 Zeilen, 2 Typen; Pool 2017–2022, erhöht, Teil B, davon 1 CAS) [iqb-Katalog]: je 1: Beschränktheit eines Flächeninhalts mit variabler Grenze über den Integralterm nachweisen (E1) · Näherung eines Integrals mit großer oberer Grenze durch ein festes Integral geometrisch deuten (E2). Muster: eine Teil-B-Zeile innerhalb der Analysis-Aufgabe zur Exponentialschar (2022MerhoehtBAnalysisWTR2-1e, drei Punkte, amtlicher Anforderungsbereich II): die Näherungsaussage F(w) − F(0) ≈ festes Integral ist geometrisch zu deuten; dazu seit dem Nachzug die CAS-Fassung 2017 mit der Schar x² · e^(−a · x): die Fläche bis zur wandernden Grenze als Term und der Nachweis, dass sie unter einer festen Schranke bleibt (2017MerhoehtBAnalysisCAS1-1e, vier Punkte, amtlicher Anforderungsbereich II und III) – der Begriff der Einheit 1 ohne das Wort „uneigentlich“. 1 Poolzeile kehrt wortgleich im Landesheft wieder (Dublette der abi-Liste). Niveau II 1, III 1.
-63  Zielmarke: Einheit 1 – iqb: die Beschränktheit der Fläche mit wandernder Grenze (2017MerhoehtBAnalysisCAS1-1e, Niveau III); abi: kein Original; Einheit 2 – abi/iqb: die vollständige Näherungsdeutung (2022-bebb-lk-B2.2h, 2022MerhoehtBAnalysisWTR2-1e, Niveau II); fhr: keine.
+29  - „Wie groß ist der Rest?“ – an Graphen, die gegen null laufen, die Fläche jenseits einer Marke schraffieren und ankreuzen, ob sie ins Gewicht fällt; nichts rechnen. Vor Einheit zwei. [Rohdatei-Fehlerquelle „Restfläche für null erklärt“, iqb 2022MerhoehtBAnalysisWTR2-1e]
+30
+31  ### Merkkasten
+32  Einheit 1 (Der Begriff):
+33      Uneigentlich heißt: eine Grenze ist keine Zahl – die obere Grenze wächst über alle Schranken (oder der Integrand hat eine Polstelle). Der Wert ist der Grenzwert der bestimmten Integrale.
+34        Integral ab null über e^(−x): F(w) − F(0) = 1 − e^(−w), Grenzwert 1 – die unbegrenzte Fläche hat den Inhalt eins.
+35      Existenz: der Grenzwert muss existieren – der Graph muss schnell genug gegen null fallen.
+36      Auswendig (Teil A): keine – uneigentliche Integrale stehen weder im GK-Kern noch in der Anlage; der Begriff ist LK-Stoff für Teil B.
+37      Formelsammlung: keine – uneigentliche Integrale stehen nicht in der Formelsammlung – [FS] offen
+38  Quelle: eigene Formulierung nach [GOST Q2 LK] „Integral über einen unbeschränkten Intervall, Integral einer unbeschränkten Funktion“; Zahlenbeispiel eigen (Ermessen); [LS-AA QP III 8].
+39  Einheit 2 (Die Näherungsdeutung):
+40      F(w) − F(0) ist die Fläche unter dem Graphen bis w. Läuft der Graph gegen null, ändert sich diese Fläche ab einer festen Grenze kaum noch – jedes große w liefert näherungsweise denselben Wert wie das feste Integral.
+41      Deuten heißt: Differenz als Fläche benennen, Restfläche zeigen, ihre Kleinheit mit dem Abfallen des Graphen begründen – „vernachlässigbar“, nicht „null“.
+42      Auswendig (Teil A): keine – die einzige Prüfungszeile liegt in Teil B mit Rechner; sitzen muss der Hauptsatzblick (Kasten zwei von stammfunktion-und-hauptsatz.md).
+43      Formelsammlung: keine – [FS] offen
+44  Quelle: eigene Formulierung nach den beiden Originalen (2022-bebb-lk-B2.2h, 2022MerhoehtBAnalysisWTR2-1e); ohne weiteres Zahlenbeispiel (Bildarbeit); [LS-AA QP III 8 sinngemäß].
+45
+46  ### Typische Fehler
+47  Verdichtet aus den Spalten `verfahren` und `fehlerquelle` der 2 Zeilen des Themas in abitur/abi-katalog.csv und abitur/iqb-katalog.csv (Zuordnung über profil, leitidee und thema aus themen.csv, wie rohdatei-bau.py); Beleg ist die Original-id. [FD] nicht verwendet: die Muster sind allein aus den Katalogzeilen belegt.
+48  - Die Aussage als Gleichheit von Stammfunktionen gedeutet statt als Flächennäherung: die Differenz F(w) − F(0) nicht als Fläche erkannt, die Restfläche für exakt null erklärt. [abi 2022-bebb-lk-B2.2h; iqb 2022MerhoehtBAnalysisWTR2-1e]
+49
+50  ### Für schwache Schüler
+51  Mindeststoff (GK-Kern Q2 / Niveaustufe H / RLP FOS) [GOST, GOST-OHiMi, FOS]: Kein GK-Kern, kein FOS-Stoff, keine Anlagenzeile – das Thema ist vollständig Leistungskursstoff („Inhalte unbegrenzter Flächen mittels uneigentlicher Integrale“); für GK-Schüler ist es Vorrat, für fhr-Schüler kein Stoff. LK-Mindeststoff: der Grenzwertbegriff der Einheit 1 am e-Funktions-Beispiel und die Näherungsdeutung der Einheit 2. Niveaustufe H der E-Phase [RLP H]: kein Posten. COSH [COSH, nachrangig, aus dem Gedächtnis, nicht am Text geprüft]: der Mindestanforderungskatalog nennt uneigentliche Integrale nicht – kein zusätzlicher Posten.
+52  Grundvorstellung (Blatt 0) [GOST Q2 LK, MO]: Eine Fläche ohne Ende kann trotzdem einen endlichen Inhalt haben – wenn der Graph schnell genug fällt. „Hier ist ein Graph, der nach rechts gegen null läuft, auf Kästchenpapier. Schraffiere die Fläche bis zu einer Marke und zähle grob die Kästchen. Schiebe die Marke ein Stück nach rechts: wie viele Kästchen kommen dazu? Und noch ein Stück? Werden die Zuwächse größer oder kleiner? Worauf läuft die Gesamtfläche zu – und warum wird sie nicht unendlich, obwohl die Fläche nie endet?“ Wer glaubt, unbegrenzt heiße unendlich groß, oder wer die Restfläche für exakt null hält, braucht das vor jeder Rechnung: erst die schrumpfenden Zuwächse sehen, dann der Grenzwert. Verständnis, nicht Verfahren; Ermessen in der Aufgabenform, amtlich im Begriff (LK-Planzeile). [MO-Logik: Vorstellung vor Verfahren; Rohdatei-Fehlerquelle „Restfläche für null erklärt“, iqb 2022MerhoehtBAnalysisWTR2-1e; BASICS nur als Strukturvorbild Diagnose → Förderung → Nachtest, keine Inhalte]
+53  Sprossen je Verfahrenstyp (Reihenfolge = Kette des Hauptblatts) [LS-AA, Rohdatei; Sprossenfolge Ermessen – Lehrwerk und Rohdatei geben keine Reihenfolge vor]:
+54  - Der Begriff (Einheit 1): „Endet die Fläche?“ – zu Graphen ankreuzen, ob die Fläche an einer Grenze endet oder ausläuft und ob sie trotzdem endlich sein kann; nichts rechnen (Vorstufe, Grundvorstellung) → das bestimmte Integral mit wandernder oberer Grenze als Term aufschreiben (Grundfall, viermal) → den Grenzwert an e-Funktionen bilden und als Inhalt der unbegrenzten Fläche deuten → Prüfungshöhe: die Existenzfrage an einem schnell und einem langsam fallenden Graphen vergleichen (kein Original – Vermerk; der Bestand prüft den Begriff nicht direkt); fhr-Zielmarke: keine – kein Stoff.
+55  - Die Näherungsdeutung (Einheit 2): „Wie groß ist der Rest?“ ankreuzen (Vorstufe, Grundvorstellung) → die Differenz zweier Stammfunktionswerte als Fläche bis zur wandernden Grenze benennen (Grundfall, viermal) → die Restfläche markieren und ihre Kleinheit über das Abfallen des Graphen begründen → Prüfungshöhe: die vollständige Deutung der Näherungsaussage im Sachzusammenhang (abi 2022-bebb-lk-B2.2h; iqb 2022MerhoehtBAnalysisWTR2-1e, Niveau II); fhr-Zielmarke: keine.
+56
+57  ### Prüfungsform (fhr / abi / iqb)
+58  Geltung [konzept.md § 4 Entscheidung 35]: Der IQB-Pool ist für das Profil abi voll maßgeblich – Brandenburg entnimmt seit 2017 Poolaufgaben, seit der KMK-Ländervereinbarung 2020 unverändert, und der Pool wirkt normierend auf Landesaufgaben und Oberstufenklausuren; die Auswahl-Einschränkung steht allein in den Geltungsdateien abi-*-geltung.md. Für fhr ist der Pool keine Vorgabe; das Thema ist dort kein Stoff, themen.csv führt keine fhr-Zeile. Die Rohdatei zählt 3 Zeilen mit 2 Haupttypen (abi 1 Zeile, 1 Typ; iqb 2 Zeilen, 2 Typen), Jahre 2017–2022. Der Eintrag setzt keine Decke; Häufigkeit ist Auskunft, ein einziges Vorkommen ein vollwertiger Typ. Typname wörtlich aus abitur/abitur-typen.csv (gemeinsame Liste abi/iqb; Thema ohne Gegenstandsklassen, daher ohne Präfix).
+59  fhr: kein Stoff, keine Zeile – der RLP FOS 2019 kennt uneigentliche Integrale nicht.
+60  abi (1 Zeile, 1 Typ; Landesheft bebb-lk 2022) [abi-Katalog]: je 1: Näherung eines Integrals mit großer oberer Grenze durch ein festes Integral geometrisch deuten (E2). Muster: eine einzige Zeile, wortgleiche Pooldublette (2022-bebb-lk-B2.2h aus 2022MerhoehtBAnalysisWTR2-1e) in Teil B des Leistungskurshefts, drei Punkte, Niveau II – die Landeshefte stellen das Thema sonst nicht.
+61  iqb (2 Zeilen, 2 Typen; Pool 2017–2022, erhöht, Teil B, davon 1 CAS) [iqb-Katalog]: je 1: Beschränktheit eines Flächeninhalts mit variabler Grenze über den Integralterm nachweisen (E1) · Näherung eines Integrals mit großer oberer Grenze durch ein festes Integral geometrisch deuten (E2). Muster: eine Teil-B-Zeile innerhalb der Analysis-Aufgabe zur Exponentialschar (2022MerhoehtBAnalysisWTR2-1e, drei Punkte, amtlicher Anforderungsbereich II): die Näherungsaussage F(w) − F(0) ≈ festes Integral ist geometrisch zu deuten; dazu seit dem Nachzug die CAS-Fassung 2017 mit der Schar x² · e^(−a · x): die Fläche bis zur wandernden Grenze als Term und der Nachweis, dass sie unter einer festen Schranke bleibt (2017MerhoehtBAnalysisCAS1-1e, vier Punkte, amtlicher Anforderungsbereich II und III) – der Begriff der Einheit 1 ohne das Wort „uneigentlich“. 1 Poolzeile kehrt wortgleich im Landesheft wieder (Dublette der abi-Liste). Niveau II 1, III 1.
+62  Zielmarke: Einheit 1 – iqb: die Beschränktheit der Fläche mit wandernder Grenze (2017MerhoehtBAnalysisCAS1-1e, Niveau III); abi: kein Original; Einheit 2 – abi/iqb: die vollständige Näherungsdeutung (2022-bebb-lk-B2.2h, 2022MerhoehtBAnalysisWTR2-1e, Niveau II); fhr: keine.
 ````
 
 ## 2 Originale (3)
 
-Kennungen aus „Prüfungsform“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
+Kennungen aus „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
 
 ### 2022-bebb-lk-B2.2h (abi-katalog.csv)
 

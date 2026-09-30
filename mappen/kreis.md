@@ -1,9 +1,9 @@
 # Mappe: kreis
 
 Eintrag: hz-0801/mathe-nachhilfe, katalog/kreis.md
-Katalog-Commit: 761321330add6ed255669afc1c4e11b846250dd5 (2026-09-25T11:16:56+02:00, „katalog: Marken-Zeilen je Lerneinheit, drei Einheiten ergänzt, marken-bau.py“; ermittelt über git log (GitHub-API gesperrt))
+Katalog-Commit: c651dc47624a28a96eb6724ed3e4864024a7bab4 (2026-09-27T22:25:43Z, „katalog: Erkennungsschritte“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-27 12:32 UTC
+Datum: 2026-09-30 08:08 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -46,62 +46,61 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 31  Erkennungsschritte (Vorstufe der Einheit, vor der sie stehen, nicht auf Blatt 0; eine Hauptnummer je Schritt):
 32  - „Radius oder Durchmesser?“ – in der Skizze die gegebene Strecke benennen und die andere angeben (d = 6,4 → r = 3,2), nicht weiterrechnen. Vor Einheit 1 und 2. [P10 2016-OS-K3b, 2018-OS-K6a]
 33  - „Rand oder Fläche?“ – zu jeder Frage ankreuzen: Umfang (Reifen, Borte, Zaun, Abrollen) oder Fläche (Rasen, Pizza, Deckel, Blech). Vor Einheit 1 und 2. [RLP D „Unterscheiden zwischen Fläche und Umfang“; P10 2024-OS-K4a]
-34  - „Welche Formel?“ – aus der Formelsammlung u = π · d oder A = π · r² ankreuzen, nicht rechnen. Vor Einheit 2. [RLP E „auch mithilfe von Formelsammlungen“]
-35  - „Welcher Teil vom Kreis?“ – zum Ausschnitt den Anteil als Bruch schreiben (rechter Winkel → ein Viertel, gestreckter Winkel → ein Halb), ohne Rechnung. Vor Einheit 3. [P10 2026-FOR-B1b, 2019-OS-B1c]
-36
-37  ### Merkkasten
-38  Einheit 1 (Kreisumfang):
-39      Umfang: Durchmesser mal π (π ≈ 3,14) – der Umfang ist gut dreimal so lang wie der Durchmesser.
-40        d = 5 cm: u = π · 5 ≈ 15,7 cm      r = 2 cm: d = 4 cm, u = π · 4 ≈ 12,6 cm
-41      Rückwärts: d = u : π.      u = 31,4 cm: d = 31,4 : π ≈ 10 cm
-42      Formelsammlung: Kreis, u = π · d = 2 · π · r [FS]
-43  Quelle: [Serlo 276459] „Kreisumfang und Kreisfläche“ (Umfang durch Abrollen), sinngemäß; [RLP E].
-44
-45  Einheit 2 (Kreisfläche):
-46      Fläche: π mal Radius mal Radius. Ist der Durchmesser gegeben, erst halbieren.
-47        r = 3 cm: A = π · 3 · 3 ≈ 28,3 cm²      d = 8 m: r = 4 m, A = π · 4² ≈ 50,3 m²
-48      Rückwärts: r = √(A : π).      A = 78,5 cm²: r = √(78,5 : π) ≈ 5 cm
-49      Halbkreis: die Hälfte davon.
-50      Formelsammlung: Kreis, A = π · r² [FS]
-51  Quelle: [Serlo 276459] sinngemäß; [RLP E] Zerlegungen; [P10 2022-OS-K2d] Umstellung mit Wurzel.
-52
-53  Einheit 3 (Kreisteile):
-54      Kreisausschnitt: Der Mittelpunktswinkel sagt, welcher Anteil vom ganzen Kreis gemeint ist – Winkel geteilt durch 360°.
-55        α = 72°: 72 : 360 = 1/5 = 20 %      Bogen: 1/5 vom Umfang      Fläche: 1/5 von π · r²
-56        r = 10 cm, α = 72°: b = 0,2 · 2 · π · 10 ≈ 12,6 cm      A = 0,2 · π · 10² ≈ 62,8 cm²
-57      Umfang des Ausschnitts: Bogen plus zwei Radien.      12,6 + 2 · 10 = 32,6 cm
-58      Formelsammlung: Kreisausschnitt, b = α/360° · 2 · π · r, A = α/360° · π · r² [FS]
-59  Quelle: [Serlo 30560, 78864] Aufgaben zu Kreisen und Kreisteilen (Umfang eines Ausschnitts mit Radien), sinngemäß; [P10 2025-OS-B1e] Verfahren; eigene Formulierung.
-60
-61  ### Typische Fehler
-62  - Durchmesser als Radius in die Formel: π · 2,14² statt π · 1,07²; π · 6,4² statt π · 3,2²; π · 5² bei d = 5 m. [P10 2016-OS-K3b, 2018-OS-K6a, 2017-OS-K3b]
-63  - Umfang und Fläche vertauscht: 2 · π · r statt π · r² für die Grundfläche; Länge des Zylindermantels als π · r² statt 2 · π · r. [P10 2024-OS-K4a, 2023-OS-K5a, 2022-OS-K2a]
-64  - r² als 2 · r gerechnet; Wurzel beim Rückrechnen vergessen (r = 19,3 statt 4,4). [P10 2026-FOR-K2a, 2022-OS-K2d]
-65  - Zwei Halbkreise nur einmal gezählt; Kreisfläche addiert statt abgezogen. [P10 2017-OS-K3b, 2018-OS-K6a]
-66  - Ausschnitt mit dem falschen Winkel: mit dem Restwinkel α gerechnet; 145 : 180 statt 145 : 360. [P10 2025-OS-B1e]
-67  - Sektoren gezählt, ohne auf die Größe zu achten: 3 von 7 statt 3/12. [P10 2019-OS-B1c]
-68  - Radius verdoppelt, Fläche verdoppelt: r steht im Quadrat, die Fläche vervierfacht sich. [P10 2021-OS-K4b (Zylinder); FD]
-69  - π als 3 oder als 3,14 gerundet und dann noch einmal gerundet – das Ergebnis weicht von der Lösung ab; Taschenrechner-π, erst am Ende runden. [RLP E „sinnvolle Genauigkeit“; FD]
-70  - Umfang des Ausschnitts ohne die beiden Radien. [Serlo 78864]
-71  - Einheiten: cm und cm² vertauscht; Umfang in cm² angegeben. [FD; MSK S1B]
-72
-73  ### Für schwache Schüler
-74  Mindeststoff (E) [RLP]: Einheit 1 u aus d oder r, d aus u; Einheit 2 A aus r oder d, Halbkreis; Einheit 3 Anteil aus dem Mittelpunktswinkel als Bruch und Prozent (P10 Basis). Vorrat: r aus A (Wurzel), Bogenlänge und Ausschnittsfläche mit Formel, Kreisring, Kreisteile in zusammengesetzten Figuren (F, flaechen.md), Bogenmaß (H).
-75  Grundvorstellung (Blatt 0) [RLP D, MO]: Umfang als Abrollen – „Ein Rad mit einem Meter Durchmesser rollt einmal herum. Ist der Weg kürzer oder länger als drei Meter? Schätze, dann prüfe mit einem Faden an einem Becher“ – und Fläche als Auslegen – „Wie viele Kästchen passen ungefähr in den Kreis? Zähle die ganzen, schätze die halben.“ Wer den Umfang gleich dem Durchmesser setzt oder für die Fläche den Rand misst, braucht das vor den Formeln.
-76  Sprossen je Verfahrenstyp (Reihenfolge = Kette des Hauptblatts) [LS-AA, FD]:
-77  - Umfang (Einheit 1): Radius oder Durchmesser benennen (Vorstufe) → u aus d mit ganzen Zahlen (4×) → u aus r → Dezimalzahlen mit Runden → d aus u → r aus u → Halbkreisbogen → Sachaufgabe (Rad, Umdrehungen) → Prüfungshöhe: kein eigenes P10-Original – der Kreisumfang kommt in der Prüfung nur als Nebenleistung vor; Marke nach der Länge des Mantelrechtecks eines Zylinders, aus dem Radius berechnet und auf eine Stelle gerundet (P10-Form 2022-OS-K2a, 2023-OS-K5a; Originale bei koerper.md), dazu RLP E („Berechnen des Umfangs von beliebigen geradlinig begrenzten Figuren, Kreisen und Kreisteilen“) und LISUM-PH Jahrgangsstufe sieben („Bestimmen des Umfangs von Kreisen durch Abrollen“).
-78  - Fläche (Einheit 2): Formel ankreuzen (Vorstufe) → A aus r mit ganzen Zahlen (4×) → A aus d → Dezimalzahlen mit Runden → Halbkreis, Viertelkreis → Tabelle r, d, u, A → r aus A → Prüfungshöhe: Kreisfläche aus dem Durchmesser mit Dezimalzahl, erst halbieren, dann quadrieren (P10-Form 2016-OS-K3b, 2024-OS-K4a); Restfläche Rechteck minus Kreis in flaechen.md.
-79  - Kreisteile (Einheit 3): Anteil zum Ausschnitt ankreuzen (Vorstufe) → Anteil aus dem rechten Winkel, dem gestreckten Winkel und dem Winkel des Sechstelkreises als Bruch (4×) → beliebiger Winkel als Prozent mit Runden → Winkel aus Anteil → Bogenlänge → Ausschnittsfläche → Umfang des Ausschnitts → Kreisring → Prüfungshöhe: Anteil eines gegebenen Ausschnitts in Prozent, mit dem Restwinkel als Falle (P10-Form 2025-OS-B1e).
-80
-81  ### Prüfungsform (P10)
-82  Kein eigenes P10-Thema „Kreis“ [P10]. Die zwei Kreis-Typen stehen in typen.csv unter „Flächeninhalt und Umfang“ und sind deshalb in flaechen.md mitgelistet; ihre Lerneinheit, ihre Sprossenkette, ihre Zielmarke und ihre Originale liegen dagegen hier. Seit 10h führt flaechen.md sie ausdrücklich als „keiner Einheit dieses Eintrags zugeordnet“, damit nicht beide Dateien denselben Typ zu beanspruchen scheinen: „Kreisfläche berechnen“ (zwei Originale: 2016-OS-K3b Abwurfring beim Kugelstoßen, d = 2,14 m; 2024-OS-K4a Grundfläche eines Kegels, r = 30 cm) und „Kreissektor Anteil berechnen“ (ein Original: 2025-OS-B1e, grauer Sektor mit 145°, Anteil in Prozent). Kreisumfang kommt nur als Nebenleistung vor: Länge der Zylindermantelfläche (2022-OS-K2a, 2023-OS-K5a), Mantelfläche π · d · h (2018-OS-K6b), Draufsicht mit Kreis d = 2 · r (2021-OS-K4c, Maßstab). Kreisfläche als Nebenleistung in „Flächeninhalt zusammengesetzter Figur berechnen“ (Rechteck mit zwei Halbkreisen, 2017-OS-K3b), „Restfläche berechnen“ (Rechteck minus Kreis, 2018-OS-K6a), „Verschnitt in Prozent berechnen“ (Deckel aus dem Blechstreifen, 2023-OS-K5c) – flaechen.md Einheit 5; in Volumen und Mantel von Zylinder und Kegel – koerper.md, pyramide-kegel-kugel.md. Sektoren als Bruchteil einer Fläche (2019-OS-B1c, 2026-FOR-B1b) – brueche-dezimalzahlen.md Einheit 1. Kein Original zu Bogenlänge, Ausschnittsfläche oder Kreisring.
-83  Zuordnung: Einheit 1 – kein Typ (der Kreisumfang kommt in der P10 nur als Nebenleistung vor, Länge des Zylindermantels); Einheit 2 – Kreisfläche berechnen; Einheit 3 – Kreissektor Anteil berechnen. Beide Typen stehen in typen.csv unter „Flächeninhalt und Umfang“ und sind in flaechen.md mitgelistet; Lerneinheit, Kette und Originale liegen hier.
-84  Zielmarke: Einheit 1 – kein eigenes P10-Original; Marke nach der Nebenleistung „Länge des Mantelrechtecks“ (2022-OS-K2a, 2023-OS-K5a; Originale bei koerper.md): Umfang aus r = 3,2 cm berechnen und auf eine Stelle runden, dazu RLP E und LISUM-PH Jg. 7 („Bestimmen des Umfangs von Kreisen durch Abrollen“, „Entdecken der Proportionalität zwischen Durchmesser/Radius und Umfang“). Einheit 2 – Kreisfläche aus d = 2,14 m, erst halbieren, dann quadrieren, Ergebnis auf zwei Stellen (2016-OS-K3b, Niveau I); daneben die Kreisfläche als Grundfläche eines Körpers aus r = 30 cm (2024-OS-K4a). Einheit 3 – Anteil eines Ausschnitts von 145° in Prozent auf eine Stelle, mit dem Restwinkel als Falle (2025-OS-B1e, Basis, Niveau I).
+34  - „Welcher Teil vom Kreis?“ – zum Ausschnitt den Anteil als Bruch schreiben (rechter Winkel → ein Viertel, gestreckter Winkel → ein Halb), ohne Rechnung. Vor Einheit 3. [P10 2026-FOR-B1b, 2019-OS-B1c]
+35
+36  ### Merkkasten
+37  Einheit 1 (Kreisumfang):
+38      Umfang: Durchmesser mal π (π ≈ 3,14) – der Umfang ist gut dreimal so lang wie der Durchmesser.
+39        d = 5 cm: u = π · 5 ≈ 15,7 cm      r = 2 cm: d = 4 cm, u = π · 4 ≈ 12,6 cm
+40      Rückwärts: d = u : π.      u = 31,4 cm: d = 31,4 : π ≈ 10 cm
+41      Formelsammlung: Kreis, u = π · d = 2 · π · r [FS]
+42  Quelle: [Serlo 276459] „Kreisumfang und Kreisfläche“ (Umfang durch Abrollen), sinngemäß; [RLP E].
+43
+44  Einheit 2 (Kreisfläche):
+45      Fläche: π mal Radius mal Radius. Ist der Durchmesser gegeben, erst halbieren.
+46        r = 3 cm: A = π · 3 · 3 ≈ 28,3 cm²      d = 8 m: r = 4 m, A = π · 4² ≈ 50,3 m²
+47      Rückwärts: r = √(A : π).      A = 78,5 cm²: r = √(78,5 : π) ≈ 5 cm
+48      Halbkreis: die Hälfte davon.
+49      Formelsammlung: Kreis, A = π · r² [FS]
+50  Quelle: [Serlo 276459] sinngemäß; [RLP E] Zerlegungen; [P10 2022-OS-K2d] Umstellung mit Wurzel.
+51
+52  Einheit 3 (Kreisteile):
+53      Kreisausschnitt: Der Mittelpunktswinkel sagt, welcher Anteil vom ganzen Kreis gemeint ist – Winkel geteilt durch 360°.
+54        α = 72°: 72 : 360 = 1/5 = 20 %      Bogen: 1/5 vom Umfang      Fläche: 1/5 von π · r²
+55        r = 10 cm, α = 72°: b = 0,2 · 2 · π · 10 ≈ 12,6 cm      A = 0,2 · π · 10² ≈ 62,8 cm²
+56      Umfang des Ausschnitts: Bogen plus zwei Radien.      12,6 + 2 · 10 = 32,6 cm
+57      Formelsammlung: Kreisausschnitt, b = α/360° · 2 · π · r, A = α/360° · π · r² [FS]
+58  Quelle: [Serlo 30560, 78864] Aufgaben zu Kreisen und Kreisteilen (Umfang eines Ausschnitts mit Radien), sinngemäß; [P10 2025-OS-B1e] Verfahren; eigene Formulierung.
+59
+60  ### Typische Fehler
+61  - Durchmesser als Radius in die Formel: π · 2,14² statt π · 1,07²; π · 6,4² statt π · 3,2²; π · 5² bei d = 5 m. [P10 2016-OS-K3b, 2018-OS-K6a, 2017-OS-K3b]
+62  - Umfang und Fläche vertauscht: 2 · π · r statt π · r² für die Grundfläche; Länge des Zylindermantels als π · r² statt 2 · π · r. [P10 2024-OS-K4a, 2023-OS-K5a, 2022-OS-K2a]
+63  - r² als 2 · r gerechnet; Wurzel beim Rückrechnen vergessen (r = 19,3 statt 4,4). [P10 2026-FOR-K2a, 2022-OS-K2d]
+64  - Zwei Halbkreise nur einmal gezählt; Kreisfläche addiert statt abgezogen. [P10 2017-OS-K3b, 2018-OS-K6a]
+65  - Ausschnitt mit dem falschen Winkel: mit dem Restwinkel α gerechnet; 145 : 180 statt 145 : 360. [P10 2025-OS-B1e]
+66  - Sektoren gezählt, ohne auf die Größe zu achten: 3 von 7 statt 3/12. [P10 2019-OS-B1c]
+67  - Radius verdoppelt, Fläche verdoppelt: r steht im Quadrat, die Fläche vervierfacht sich. [P10 2021-OS-K4b (Zylinder); FD]
+68  - π als 3 oder als 3,14 gerundet und dann noch einmal gerundet – das Ergebnis weicht von der Lösung ab; Taschenrechner-π, erst am Ende runden. [RLP E „sinnvolle Genauigkeit“; FD]
+69  - Umfang des Ausschnitts ohne die beiden Radien. [Serlo 78864]
+70  - Einheiten: cm und cm² vertauscht; Umfang in cm² angegeben. [FD; MSK S1B]
+71
+72  ### Für schwache Schüler
+73  Mindeststoff (E) [RLP]: Einheit 1 u aus d oder r, d aus u; Einheit 2 A aus r oder d, Halbkreis; Einheit 3 Anteil aus dem Mittelpunktswinkel als Bruch und Prozent (P10 Basis). Vorrat: r aus A (Wurzel), Bogenlänge und Ausschnittsfläche mit Formel, Kreisring, Kreisteile in zusammengesetzten Figuren (F, flaechen.md), Bogenmaß (H).
+74  Grundvorstellung (Blatt 0) [RLP D, MO]: Umfang als Abrollen – „Ein Rad mit einem Meter Durchmesser rollt einmal herum. Ist der Weg kürzer oder länger als drei Meter? Schätze, dann prüfe mit einem Faden an einem Becher“ – und Fläche als Auslegen – „Wie viele Kästchen passen ungefähr in den Kreis? Zähle die ganzen, schätze die halben.“ Wer den Umfang gleich dem Durchmesser setzt oder für die Fläche den Rand misst, braucht das vor den Formeln.
+75  Sprossen je Verfahrenstyp (Reihenfolge = Kette des Hauptblatts) [LS-AA, FD]:
+76  - Umfang (Einheit 1): Radius oder Durchmesser benennen (Vorstufe) → u aus d mit ganzen Zahlen (4×) → u aus r → Dezimalzahlen mit Runden → d aus u → r aus u → Halbkreisbogen → Sachaufgabe (Rad, Umdrehungen) → Prüfungshöhe: kein eigenes P10-Original – der Kreisumfang kommt in der Prüfung nur als Nebenleistung vor; Marke nach der Länge des Mantelrechtecks eines Zylinders, aus dem Radius berechnet und auf eine Stelle gerundet (P10-Form 2022-OS-K2a, 2023-OS-K5a; Originale bei koerper.md), dazu RLP E („Berechnen des Umfangs von beliebigen geradlinig begrenzten Figuren, Kreisen und Kreisteilen“) und LISUM-PH Jahrgangsstufe sieben („Bestimmen des Umfangs von Kreisen durch Abrollen“).
+77  - Fläche (Einheit 2): „Welche Formel?“ – aus der Formelsammlung ankreuzen: u = π · d oder A = π · r²; nichts rechnen (Vorstufe) → A aus r mit ganzen Zahlen (4×) → A aus d → Dezimalzahlen mit Runden → Halbkreis, Viertelkreis → Tabelle r, d, u, A → r aus A → Prüfungshöhe: Kreisfläche aus dem Durchmesser mit Dezimalzahl, erst halbieren, dann quadrieren (P10-Form 2016-OS-K3b, 2024-OS-K4a); Restfläche Rechteck minus Kreis in flaechen.md.
+78  - Kreisteile (Einheit 3): Anteil zum Ausschnitt ankreuzen (Vorstufe) → Anteil aus dem rechten Winkel, dem gestreckten Winkel und dem Winkel des Sechstelkreises als Bruch (4×) → beliebiger Winkel als Prozent mit Runden → Winkel aus Anteil → Bogenlänge → Ausschnittsfläche → Umfang des Ausschnitts → Kreisring → Prüfungshöhe: Anteil eines gegebenen Ausschnitts in Prozent, mit dem Restwinkel als Falle (P10-Form 2025-OS-B1e).
+79
+80  ### Prüfungsform (P10)
+81  Kein eigenes P10-Thema „Kreis“ [P10]. Die zwei Kreis-Typen stehen in typen.csv unter „Flächeninhalt und Umfang“ und sind deshalb in flaechen.md mitgelistet; ihre Lerneinheit, ihre Sprossenkette, ihre Zielmarke und ihre Originale liegen dagegen hier. Seit 10h führt flaechen.md sie ausdrücklich als „keiner Einheit dieses Eintrags zugeordnet“, damit nicht beide Dateien denselben Typ zu beanspruchen scheinen: „Kreisfläche berechnen“ (zwei Originale: 2016-OS-K3b Abwurfring beim Kugelstoßen, d = 2,14 m; 2024-OS-K4a Grundfläche eines Kegels, r = 30 cm) und „Kreissektor Anteil berechnen“ (ein Original: 2025-OS-B1e, grauer Sektor mit 145°, Anteil in Prozent). Kreisumfang kommt nur als Nebenleistung vor: Länge der Zylindermantelfläche (2022-OS-K2a, 2023-OS-K5a), Mantelfläche π · d · h (2018-OS-K6b), Draufsicht mit Kreis d = 2 · r (2021-OS-K4c, Maßstab). Kreisfläche als Nebenleistung in „Flächeninhalt zusammengesetzter Figur berechnen“ (Rechteck mit zwei Halbkreisen, 2017-OS-K3b), „Restfläche berechnen“ (Rechteck minus Kreis, 2018-OS-K6a), „Verschnitt in Prozent berechnen“ (Deckel aus dem Blechstreifen, 2023-OS-K5c) – flaechen.md Einheit 5; in Volumen und Mantel von Zylinder und Kegel – koerper.md, pyramide-kegel-kugel.md. Sektoren als Bruchteil einer Fläche (2019-OS-B1c, 2026-FOR-B1b) – brueche-dezimalzahlen.md Einheit 1. Kein Original zu Bogenlänge, Ausschnittsfläche oder Kreisring.
+82  Zuordnung: Einheit 1 – kein Typ (der Kreisumfang kommt in der P10 nur als Nebenleistung vor, Länge des Zylindermantels); Einheit 2 – Kreisfläche berechnen; Einheit 3 – Kreissektor Anteil berechnen. Beide Typen stehen in typen.csv unter „Flächeninhalt und Umfang“ und sind in flaechen.md mitgelistet; Lerneinheit, Kette und Originale liegen hier.
+83  Zielmarke: Einheit 1 – kein eigenes P10-Original; Marke nach der Nebenleistung „Länge des Mantelrechtecks“ (2022-OS-K2a, 2023-OS-K5a; Originale bei koerper.md): Umfang aus r = 3,2 cm berechnen und auf eine Stelle runden, dazu RLP E und LISUM-PH Jg. 7 („Bestimmen des Umfangs von Kreisen durch Abrollen“, „Entdecken der Proportionalität zwischen Durchmesser/Radius und Umfang“). Einheit 2 – Kreisfläche aus d = 2,14 m, erst halbieren, dann quadrieren, Ergebnis auf zwei Stellen (2016-OS-K3b, Niveau I); daneben die Kreisfläche als Grundfläche eines Körpers aus r = 30 cm (2024-OS-K4a). Einheit 3 – Anteil eines Ausschnitts von 145° in Prozent auf eine Stelle, mit dem Restwinkel als Falle (2025-OS-B1e, Basis, Niveau I).
 ````
 
 ## 2 Originale (12)
 
-Kennungen aus „Prüfungsform“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
+Kennungen aus „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
 
 ### 2016-OS-K3b (msa-katalog-kontext.csv)
 
@@ -199,7 +198,7 @@ jahr 2026 · papier FOR · punkte 1 · format Ankreuzen · antwort Kreuz
 - verfahren: 120° von 360° sind ein Drittel; die anderen Anteile sind 1/6, 1/4, 1/2
 - fehlerquelle: grauen Streifen des Rechtecks nach Augenmaß als Drittel schätzen
 
-Nur außerhalb von „Prüfungsform“ genannt, nicht aufgenommen: 2022-OS-K2d, 2026-FOR-K2a, 2021-OS-K4b
+Nur außerhalb von „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ genannt, nicht aufgenommen: 2022-OS-K2d, 2026-FOR-K2a, 2021-OS-K4b
 
 ## 3 Maßstab (unterrichtsblatt.md, wortgleich)
 

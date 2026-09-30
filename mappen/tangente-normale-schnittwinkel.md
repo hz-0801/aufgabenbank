@@ -1,9 +1,9 @@
 # Mappe: tangente-normale-schnittwinkel
 
 Eintrag: hz-0801/mathe-nachhilfe, katalog/tangente-normale-schnittwinkel.md
-Katalog-Commit: f038ccb61160c64df73f067abd6bee324e86bee1 (2026-09-29T08:32:13Z, „Katalog 29.09. aus dem Chat, Sek II: tangente E1 Vorstufe „nur den Anstieg“, stammfunktion E2 „nur einsetzen“ als Vorstufe vor den Grundfall“; ermittelt über GitHub-API)
+Katalog-Commit: db8d2a3f9f6ed0e6490a4087e3eaff2cbc8a9b19 (2026-09-30T08:03:34Z, „Katalog: Vorschläge vom 30.09. eingesetzt (24 Zeilen in 17 Einträgen, Marke „kein P10-Stoff“ in _vorlage.md)“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-29 13:56 UTC
+Datum: 2026-09-30 08:13 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -131,8 +131,8 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 116  Sprossen je Verfahrenstyp (Reihenfolge = Kette des Hauptblatts) [LS-AA, Rohdatei; Sprossenfolge Ermessen, wo Lehrwerk und Rohdatei keine Reihenfolge vorgeben]:
 117  - Tangentengleichung (Einheit 1): „Was ist gegeben?“ ankreuzen: Punkt gegeben (ableiten und einsetzen), Steigung gegeben (f'(x) = m lösen) oder Winkel gegeben oder gesucht (erst über den Tangens in eine Steigung übersetzen); nichts rechnen (Vorstufe, Grundvorstellung) → nur den Anstieg: zu Funktion und Stelle f'(x₀) ausrechnen, Antwortgerüst m = (Lücke), keine Gerade aufstellen (Vorstufe) → Tangente in einem gegebenen Punkt aufstellen: ableiten, Stelle einsetzen, Achsenabschnitt aus dem Punkt (Grundfall, viermal, ganzrational) → Punktprobe zuerst, wenn der Punkt erst zu bestätigen ist (fhr 2020-A-1d, 2026-C-1d) → den Anstieg einer geradlinigen Strecke aus Höhen- und Querunterschied ablesen und die Länge mit dem Satz des Pythagoras berechnen (fhr 2021-B-2a) → Tangente an e-Funktion oder mit vorgegebener Ableitung (abi 2026-bb-gk-B2.2b, 2019-be-gk-B2.2f; iqb 2026MgrundlegendBAnalysisWTR2-1b, 2023MgrundlegendBAnalysisWTR2-1c, 2024MgrundlegendBAnalysisWTR2-1b, 2025MgrundlegendBAnalysisWTR1-1b) → die Stelle zu gegebenem Anstieg über f' gleich m, auch mit Substitution oder Logarithmus (fhr 2019-A-1g; abi 2020-be-gk-B2.2h; iqb 2026MerhoehtBAnalysisWTR3-1f, 2026MgrundlegendBAnalysisMMS2-1d) → die waagerechte Tangente nachweisen oder aus der faktorisierten Ableitung ablesen (abi 2023-bebb-gk-B2.1c, 2023-bebb-lk-A1.4a; iqb 2025MerhoehtAAnalysis21-b) → die parallele Tangente finden und einzeichnen, auch als Deutung eines Lösungswegs (abi 2025-bebb-gk-A1.1b; iqb 2025MgrundlegendAAnalysis11-b, 2026MgrundlegendBAnalysisMMS1-2b, 2020MerhoehtAAnalysis12-b) → die Tangente ablesen, einzeichnen oder am gespiegelten Punkt angeben (abi 2024-bebb-lk-A1.5a, 2025-bebb-lk-A1.6a, 2023-bebb-gk-A1.1a; iqb 2024MgrundlegendAAnalysis21-a, 2024MerhoehtAAnalysis21-a, 2025MerhoehtAAnalysis23-a, 2023MgrundlegendAAnalysis12-a) → die Tangentensteigung an vorgegebener Stelle nachweisen, auch im Ursprung als Gerade durch zwei Punkte (iqb 2018MerhoehtAAnalysis12-a, 2021MerhoehtAAnalysis11-a, 2024MerhoehtAAnalysis11-b; abi 2020-be-gk-B2.1j mit f' = f'') → Prüfungshöhe: y-Achsenabschnitt oder Nullstelle der Tangente an allgemeiner Stelle nachweisen (abi 2024-bebb-lk-A1.5b; iqb 2024MgrundlegendAAnalysis21-b, 2024MerhoehtAAnalysis21-b, 2021MerhoehtAAnalysis22-b, Niveau III), die Schranke für den Anstieg einer Tangentenschar begründen (abi 2017-bb-ea-B2.1c, Niveau III) und den größten y-Achsenabschnitt beurteilen (abi 2022-bebb-lk-B2.2f, Niveau III); fhr-Zielmarke: Tangentengleichung nach Punktprobe und Anstieg (fhr 2019-C-1f, 2026-C-1d, Niveau II).
 118  - Berührung nachweisen (Einheit 2): „Berühren oder schneiden?“ – zu Gerade und Graph ankreuzen, ob die Gerade den Graphen berührt (Funktionswert und Steigung stimmen überein) oder nur schneidet (nur der Funktionswert), und welche der beiden Bedingungen im Text schon belegt ist; nichts rechnen (Vorstufe, Grundvorstellung) → für eine gegebene Gerade Funktionswert und Anstieg an der Stelle vergleichen (Grundfall, viermal; fhr 2026-B-1g, 2022-C-1e; abi 2026-bb-gk-B2.1d) → die gemeinsame Tangente zweier Graphen im Schnittpunkt nachweisen und angeben (abi 2023-bebb-gk-A1.3b; iqb 2023MgrundlegendBAnalysisWTR1-1d) → die tangentiale Einmündung im Sachzusammenhang (abi 2017-bb-ea-B2.2d, 2020-be-gk-B2.2f) → weitere gemeinsame Punkte über die Differenz mit doppelter Nullstelle, Faktorisierung nachweisen oder nutzen (abi 2023-bebb-gk-B2.2d; iqb 2025MerhoehtBAnalysisWTR1-1d, 2025MgrundlegendBAnalysisWTR1-1c; fhr 2025-C-1f) → die Tangente durch einen Punkt außerhalb zeichnerisch anlegen oder skizzieren (iqb 2020MgrundlegendBAnalysisWTR2-1c, 2024MgrundlegendBAnalysisWTR2-1c) → die Berührbedingung als Gleichung deuten oder den Rechenweg erläutern und die Aufgabe formulieren (abi 2025-bebb-gk-A1.7b, 2024-bebb-lk-B2.1g; iqb 2025MgrundlegendAAnalysis22-b) → die lineare Näherung mit dem Funktionswert vergleichen und die relative Abweichung deuten (abi 2018-bb-ea-B2.1f; iqb 2024MerhoehtBAnalysisWTR1-2c, 2023MgrundlegendBAnalysisWTR1-2c) → zwei Tangenten aufstellen und ihren Schnittpunkt nachweisen (iqb 2022MgrundlegendBAnalysisWTR1-1d) → Prüfungshöhe: die Einsehbarkeit über die Tangente von einem festen Punkt untersuchen (iqb 2025MerhoehtBAnalysisMMS2-2d, Niveau III), die Geraden durch den Wendepunkt über die Wendetangente eingrenzen (iqb 2019MgrundlegendBAnalysisWTR1-2a, Niveau III), eine Tangente über Vorzeichen oder Rationalität der Steigungen ausschließen (iqb 2019MgrundlegendBAnalysisWTR1-3c, 2022MerhoehtBAnalysisWTR1-2d, Niveau III) und den Parameter aus einer gemeinsamen Tangente berechnen (iqb 2026MerhoehtBAnalysisMMS2-2b); fhr-Zielmarke: Tangenteneigenschaft nachweisen und einzeichnen (fhr 2026-B-1g, Niveau II).
-119  - Normale (Einheit 3): „Tangente oder Normale?“ – ankreuzen, welche Gerade gebraucht wird und welche Steigung sie hat: die Tangente den Ableitungswert, die Normale den negativen Kehrwert; nichts rechnen (Vorstufe) → aus einer Tangentensteigung den negativen Kehrwert bilden und die Gerade durch den Punkt aufstellen (Grundfall, viermal) → die Normalengleichung nach Funktionswert und Anstieg (fhr 2025-A-1h, 2023-A-1c, 2022-B-1f) → die Gerade senkrecht zu einer gegebenen Tangente durch einen Punkt (iqb 2025MerhoehtBAnalysisWTR2-1b) → die Länge der Normalen bis zur x-Achse (iqb 2024MerhoehtBAnalysisWTR3-1d) → Lotgerade, Lotfußpunkt und Abstand (iqb 2023MgrundlegendAAnalysis11-b) → den Mittelpunkt eines berührenden Kreises auf der Normalen (abi 2026-bb-ea-B2.2e; iqb 2026MerhoehtBAnalysisWTR1-1e, 2026MgrundlegendBAnalysisWTR1-1f) → Prüfungshöhe: eine vorgelegte Abstandsrechnung über die Normalenbedingung deuten (iqb 2023MerhoehtBAnalysisWTR2-2d, 2026MerhoehtBAnalysisWTR2-2d, Niveau II bis III) und den Lösungsweg für eine gemeinsame Normale zweier Kurven erläutern (abi 2022-bebb-gk-B2.2j, Niveau III); fhr-Zielmarke: Normalengleichung mit Funktionswert und Anstieg (fhr 2022-B-1f, 2025-A-1h, Niveau II).
-120  - Winkel (Einheit 4): „Was ist gegeben?“ ankreuzen: Punkt gegeben (ableiten und einsetzen), Steigung gegeben (f'(x) = m lösen) oder Winkel gegeben oder gesucht (erst über den Tangens in eine Steigung übersetzen); nichts rechnen (Vorstufe) → „Welcher Winkel?“ – ankreuzen, ob der Steigungswinkel gegen die positive x-Richtung (null bis hundertachtzig Grad) oder der Schnittwinkel (höchstens neunzig Grad) gefragt ist; nichts rechnen (Vorstufe) → aus einer Steigung den Winkel über den Arkustangens, aus einem Winkel die Steigung über den Tangens (Grundfall, viermal) → den Steigungswinkel des Graphen in einem Punkt und den Auftreffwinkel an der Nullstelle (iqb 2020MgrundlegendBAnalysisWTR2-1d, 2018MerhoehtBAnalysisWTR2-1f) → Tangentengleichung und Schnittwinkel mit der x-Achse nebeneinander (abi 2020-be-gk-B2.1f; iqb 2026MgrundlegendBAnalysisWTR1-1c) → den Winkel gegen eine senkrechte Kante als Ergänzung (iqb 2026MerhoehtBAnalysisWTR2-2c, 2023MerhoehtBAnalysisWTR2-1d) → Steigungswinkel und Nebenwinkel einzeichnen und deuten (iqb 2025MerhoehtBAnalysisMMS2-2b) → den Schnittwinkel zweier Graphen über beide Tangentensteigungen (abi 2018-be-gk-B1.2b, 2022-bebb-gk-B2.1e, 2023-bebb-gk-B2.1j) → den senkrechten Schnitt über das Produkt der Steigungen (abi 2026-bb-ea-A1.2b; iqb 2026MerhoehtAAnalysis11-b, Teil A) → die Wendetangente mit Steigungswinkel und y-Achsenabschnitt (abi 2022-bebb-gk-B2.2e) → den Bereich mit Mindeststeigungswinkel über die Ungleichung (abi 2022-bebb-gk-B2.2f) → Prüfungshöhe: die Winkelhalbierende über den halben Steigungswinkel (abi 2026-bb-ea-B2.1d, Niveau III), den Öffnungswinkel als doppelten Steigungswinkel (abi 2024-bebb-gk-B2.1i, Niveau III), Scharparameter aus Winkelbedingungen (abi 2024-bebb-lk-B2.1h, 2025-bebb-gk-B2.1d) und vorgelegte Rechenschritte berichtigen (abi 2021-be-gk-B2.2k, Niveau III); fhr-Zielmarke: keine – der RLP FOS kennt keine Winkel an Tangenten.
+119  - Normale (Einheit 3): „Tangente oder Normale?“ – ankreuzen, welche Gerade gebraucht wird und welche Steigung sie hat: die Tangente den Ableitungswert, die Normale den negativen Kehrwert; nichts rechnen (Vorstufe) → nur die Normalensteigung: zu einer gegebenen Tangentensteigung den negativen Kehrwert bilden, Antwortgerüst m gleich (Lücke), keine Gerade aufstellen (Vorstufe) → aus einer Tangentensteigung den negativen Kehrwert bilden und die Gerade durch den Punkt aufstellen (Grundfall, viermal) → die Normalengleichung nach Funktionswert und Anstieg (fhr 2025-A-1h, 2023-A-1c, 2022-B-1f) → die Gerade senkrecht zu einer gegebenen Tangente durch einen Punkt (iqb 2025MerhoehtBAnalysisWTR2-1b) → die Länge der Normalen bis zur x-Achse (iqb 2024MerhoehtBAnalysisWTR3-1d) → Lotgerade, Lotfußpunkt und Abstand (iqb 2023MgrundlegendAAnalysis11-b) → den Mittelpunkt eines berührenden Kreises auf der Normalen (abi 2026-bb-ea-B2.2e; iqb 2026MerhoehtBAnalysisWTR1-1e, 2026MgrundlegendBAnalysisWTR1-1f) → Prüfungshöhe: eine vorgelegte Abstandsrechnung über die Normalenbedingung deuten (iqb 2023MerhoehtBAnalysisWTR2-2d, 2026MerhoehtBAnalysisWTR2-2d, Niveau II bis III) und den Lösungsweg für eine gemeinsame Normale zweier Kurven erläutern (abi 2022-bebb-gk-B2.2j, Niveau III); fhr-Zielmarke: Normalengleichung mit Funktionswert und Anstieg (fhr 2022-B-1f, 2025-A-1h, Niveau II).
+120  - Winkel (Einheit 4): „Welcher Winkel?“ – ankreuzen, ob der Steigungswinkel gegen die positive x-Richtung (null bis hundertachtzig Grad) oder der Schnittwinkel (höchstens neunzig Grad) gefragt ist; nichts rechnen (Vorstufe) → aus einer Steigung den Winkel über den Arkustangens, aus einem Winkel die Steigung über den Tangens (Grundfall, viermal) → den Steigungswinkel des Graphen in einem Punkt und den Auftreffwinkel an der Nullstelle (iqb 2020MgrundlegendBAnalysisWTR2-1d, 2018MerhoehtBAnalysisWTR2-1f) → Tangentengleichung und Schnittwinkel mit der x-Achse nebeneinander (abi 2020-be-gk-B2.1f; iqb 2026MgrundlegendBAnalysisWTR1-1c) → den Winkel gegen eine senkrechte Kante als Ergänzung (iqb 2026MerhoehtBAnalysisWTR2-2c, 2023MerhoehtBAnalysisWTR2-1d) → Steigungswinkel und Nebenwinkel einzeichnen und deuten (iqb 2025MerhoehtBAnalysisMMS2-2b) → den Schnittwinkel zweier Graphen über beide Tangentensteigungen (abi 2018-be-gk-B1.2b, 2022-bebb-gk-B2.1e, 2023-bebb-gk-B2.1j) → den senkrechten Schnitt über das Produkt der Steigungen (abi 2026-bb-ea-A1.2b; iqb 2026MerhoehtAAnalysis11-b, Teil A) → die Wendetangente mit Steigungswinkel und y-Achsenabschnitt (abi 2022-bebb-gk-B2.2e) → den Bereich mit Mindeststeigungswinkel über die Ungleichung (abi 2022-bebb-gk-B2.2f) → Prüfungshöhe: die Winkelhalbierende über den halben Steigungswinkel (abi 2026-bb-ea-B2.1d, Niveau III), den Öffnungswinkel als doppelten Steigungswinkel (abi 2024-bebb-gk-B2.1i, Niveau III), Scharparameter aus Winkelbedingungen (abi 2024-bebb-lk-B2.1h, 2025-bebb-gk-B2.1d) und vorgelegte Rechenschritte berichtigen (abi 2021-be-gk-B2.2k, Niveau III); fhr-Zielmarke: keine – der RLP FOS kennt keine Winkel an Tangenten.
 121  - Dreiecke und Figuren (Einheit 5): „Welches Dreieck?“ ankreuzen (Vorstufe) → die Achsenabschnitte einer Geraden bestimmen und die Dreiecksfläche als halbes Produkt (Grundfall, viermal; fhr 2026-B-1h) → Fläche und Umfang des Achsendreiecks einer Tangente, Umfang mit dem Satz des Pythagoras (fhr 2024-C-1g; abi 2018-bb-ea-B2.2b, 2026-bb-gk-B2.2c; iqb 2026MgrundlegendBAnalysisWTR2-1c) → den Umkreismittelpunkt als Mitte der Hypotenuse angeben (abi 2022-bebb-gk-B2.1g; iqb 2022MgrundlegendBAnalysisWTR2-1d) → das Dreieck aus Tangente, zweiter Geraden und x-Achse bzw. aus Tangente, Normale und y-Achse (abi 2024-bebb-lk-B2.2c, 2024-bebb-gk-B2.2d, 2017-bb-ea-B2.1c; iqb 2024MerhoehtBAnalysisWTR2-1d) → das Dreieck aus zwei Tangenten und der x-Achse (abi 2023-bebb-gk-A1.1b; iqb 2023MgrundlegendAAnalysis12-b) → die Gleichschenkligkeit allgemein begründen oder den Berührpunkt aus der Steigung minus eins berechnen (abi 2017-bb-ea-A1.1b, 2018-bb-ea-A1.1b; iqb 2017MerhoehtAAnalysis11-b, 2019MgrundlegendAAnalysis2-b, 2018MerhoehtAAnalysis2-b) → die Fläche unter der Tangente mit vorgegebenem Inhalt oder als Bremsweg-Dreieck mit Einheiten (abi 2021-be-gk-B2.2f; iqb 2022MerhoehtBAnalysisWTR1-1d) → Prüfungshöhe: parameterunabhängige Flächen nachweisen (abi 2024-bebb-lk-A1.6a; iqb 2024MerhoehtAAnalysis22, Niveau III), das gleichseitige Dreieck der Schar (abi 2024-bebb-lk-B2.1f, Niveau III), den Tangentenabschnitt als Quotient am Steigungsdreieck begründen (abi 2026-bb-ea-B2.2d; iqb 2026MerhoehtBAnalysisWTR1-1d, Niveau III) und die Ähnlichkeit der Dreiecke aus Wendetangente und Normale (abi 2023-bebb-gk-B2.1g, Niveau III); fhr-Zielmarke: Tangente mit Achsendreieck, Skizze und Fläche (fhr 2024-C-1g, Niveau III).
 122
 123  ### Prüfungsform (fhr / abi / iqb)
@@ -143,9 +143,9 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 128  Zielmarke: Einheit 1 – fhr: Tangentengleichung nach Punktprobe (2026-C-1d, 2019-C-1f, Niveau II); abi/iqb: Tangente an e-Funktion mit Kontrollergebnis (2026-bb-gk-B2.2b, 2026MgrundlegendBAnalysisWTR2-1b, Niveau I) und der allgemeine Nachweis des y-Achsenabschnitts in Teil A (2024-bebb-lk-A1.5b, 2024MerhoehtAAnalysis21-b, Niveau III). Einheit 2 – fhr: Tangenteneigenschaft nachweisen (2026-B-1g); abi: weiterer gemeinsamer Punkt über die Faktorisierung (2023-bebb-gk-B2.2d); iqb: Einsehbarkeit über die Berührbedingung (2025MerhoehtBAnalysisMMS2-2d, Niveau III). Einheit 3 – fhr: Normalengleichung (2025-A-1h, 2022-B-1f); abi: Kreismittelpunkt über die Normale (2026-bb-ea-B2.2e, Niveau III); iqb: Abstandsrechnung über die Normalenbedingung deuten (2023MerhoehtBAnalysisWTR2-2d, Niveau III). Einheit 4 – fhr: keine; abi: Schnittwinkel zweier Graphen (2022-bebb-gk-B2.1e, 2023-bebb-gk-B2.1j) und Winkelhalbierende (2026-bb-ea-B2.1d, Niveau III); iqb: Winkel gegen die senkrechte Kante (2023MerhoehtBAnalysisWTR2-1d, 2026MerhoehtBAnalysisWTR2-2c, Niveau II). Einheit 5 – fhr: Achsendreieck mit Skizze (2024-C-1g, Niveau III); abi: gleichseitiges Dreieck der Schar (2024-bebb-lk-B2.1f, Niveau III); iqb: parameterunabhängiges Rechteck (2024MerhoehtAAnalysis22, Niveau III) und Bremsweg-Dreieck (2022MerhoehtBAnalysisWTR1-1d, Niveau III).
 ````
 
-## 2 Originale (78)
+## 2 Originale (146)
 
-Kennungen aus „Prüfungsform“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
+Kennungen aus „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
 
 ### 2019-A-2b (fhr-katalog.csv)
 
@@ -771,7 +771,551 @@ jahr 2024 · papier 2024-iqb-ea · punkte 5 · format Zeichnen|Begründung · an
 - verfahren: f'(0) = a² liefert die Steigung −1/a² von h; das Rechteck hat die Ecken (0; 0), (a; 0) und die Höhe |h(a)| = 1/a unterhalb der Achse; Fläche a · 1/a
 - fehlerquelle: h als Tangente statt als Normale ansetzen (Steigung a²)
 
-Nur außerhalb von „Prüfungsform“ genannt, nicht aufgenommen: 2022-bebb-lk-B2.2f, 2026-bb-gk-B2.2c, 2023-bebb-gk-A1.1b, 2022-bebb-gk-A1.1b, 2025MgrundlegendAAnalysis11-a, 2019-A-1g, 2018MerhoehtAAnalysis12-a, 2021MerhoehtAAnalysis11-a, 2024MerhoehtAAnalysis11-b, 2021MerhoehtAAnalysis22-b, 2024MgrundlegendBAnalysisWTR2-1b, 2023MgrundlegendBAnalysisWTR2-1c, 2022-C-1e, 2026-bb-gk-B2.1d, 2023-bebb-gk-A1.3b, 2017-bb-ea-B2.2d, 2020-be-gk-B2.2f, 2023MgrundlegendBAnalysisWTR1-1d, 2025-A-1a, 2025-bebb-gk-A1.1b, 2025MgrundlegendAAnalysis11-b, 2024MgrundlegendBAnalysisWTR2-1c, 2025MerhoehtAAnalysis23-a, 2025MgrundlegendBAnalysisWTR1-1c, 2024-bebb-gk-B2.2d, 2024-bebb-lk-A1.6a, 2025MerhoehtBAnalysisWTR2-1b, 2026MgrundlegendBAnalysisWTR1-1f, 2026MerhoehtBAnalysisWTR1-1e, 2026MerhoehtBAnalysisWTR2-2d, 2023MgrundlegendAAnalysis11-b, 2022-bebb-gk-B2.2e, 2022-bebb-gk-B2.2f, 2020MgrundlegendBAnalysisWTR2-1d, 2024-bebb-lk-B2.2c, 2026MgrundlegendBAnalysisWTR2-1c, 2023MgrundlegendAAnalysis12-b, 2024MerhoehtBAnalysisWTR2-1d, 2022MgrundlegendBAnalysisWTR2-1d, 2024MgrundlegendAAnalysis21-b, 2022MerhoehtBAnalysisWTR1-2d, 2017MerhoehtAAnalysis11-b, 2018-bb-ea-B2.2d, 2020-be-gk-B2.2h, 2020-be-gk-B2.1j, 2024-bebb-lk-B2.1h, 2018MerhoehtAAnalysis2-b, 2026MgrundlegendBAnalysisMMS2-1d, 2020MerhoehtAAnalysis12-b, 2026MerhoehtBAnalysisMMS2-2b, 2025-bebb-gk-A1.7b, 2018-bb-ea-B2.1f, 2024-bebb-lk-B2.1g, 2026-bb-ea-B2.2d, 2021-be-gk-B2.2k, 2025MgrundlegendAAnalysis22-b, 2026MgrundlegendBAnalysisMMS1-2b, 2023MgrundlegendBAnalysisWTR1-2c, 2024MerhoehtBAnalysisWTR1-2c, 2026MerhoehtBAnalysisWTR1-1d, 2026MerhoehtBAnalysisWTR3-1f, 2025MerhoehtBAnalysisWTR1-1d, 2019MgrundlegendBAnalysisWTR1-3c, 2022MgrundlegendBAnalysisWTR1-1d, 2023-bebb-lk-A1.4a, 2025MerhoehtAAnalysis21-b, 2024MgrundlegendAAnalysis21-a, 2024MerhoehtAAnalysis21-a, 2023MgrundlegendAAnalysis12-a, 2022-bebb-gk-B2.2j, 2023-bebb-gk-B2.1g
+### 2025-A-1a (fhr-katalog.csv)
+
+jahr 2025 · papier A · punkte 2 · format Zeichnen · antwort Grafik
+- gegeben: Abbildung mit dem Graphen Gg einer ganzrationalen Funktion g vierten Grades; Gg hat Wendestellen bei x1 = −1 und x2 = 2
+- gesucht: Tangente an Gg an der Stelle x = 3|Fläche, die Gg im I. Quadranten mit beiden Koordinatenachsen begrenzt
+- verfahren: im Punkt (3; −3,2) eine Gerade mit dem dortigen Anstieg anlegen; die Fläche zwischen y-Achse, x-Achse und dem Bogen von Gg von x = 0 bis zur Nullstelle bei x ≈ 1,75 schraffieren
+- fehlerquelle: die Tangente als Sekante durch zwei Kurvenpunkte zeichnen oder die Fläche über die Nullstelle hinaus ausdehnen
+
+### 2025MgrundlegendAAnalysis11-b (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ga · punkte 2 · format Zeichnen · antwort Grafik
+- gegeben: f(x) = 1/8 x^3 − 3/8 x^2 − 1, Graph G in der Abbildung; die Tangente t in P(4; 1) hat die Steigung 3; es gibt genau eine weitere Tangente an G, die parallel zu t verläuft
+- gesucht: Skizze dieser weiteren Tangente in der Abbildung
+- verfahren: f'(x) = 3 lösen: 3/8 x^2 − 3/4 x − 3 = 0, also x^2 − 2x − 8 = 0 mit den Stellen 4 und −2; Berührpunkt (−2; f(−2)) = (−2; −3,5), dort eine Gerade mit Steigung 3 einzeichnen
+- fehlerquelle: die Tangente nach Augenmaß am Hochpunkt (0; −1) ansetzen statt die Berührstelle zu berechnen
+
+### 2023MgrundlegendBAnalysisWTR2-1c (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ga · punkte 3 · format Rechnung · antwort Term
+- gegeben: f wie in a; Punkt P(6 | f(6)); Kontrolle t: y = 8/3x − 16
+- gesucht: Gleichung der Tangente t in P
+- verfahren: Steigung aus f'(6), Achsenabschnitt aus f(6) = 0
+- fehlerquelle: f(6) ≠ 0 angenommen
+
+### 2024MgrundlegendBAnalysisWTR2-1b (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ga · punkte 4 · format Rechnung · antwort Term
+- gegeben: Tangente t im Punkt (5 | f(5))
+- gesucht: Gleichung von t
+- verfahren: Steigung f'(5), Achsenabschnitt aus dem Punkt
+- fehlerquelle: f(5) mit Bruchrechnung falsch (55/8 = 6,875)
+
+### 2019-A-1g (fhr-katalog.csv)
+
+jahr 2019 · papier A · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: f(x) = −(1/10)x^5 + (2/3)x^3; x aus IR; gesucht sind die Stellen mit dem Anstieg m = 2
+- gesucht: alle Stellen, an denen Gf den Anstieg 2 hat
+- verfahren: f' gleich 2 setzen, die biquadratische Gleichung mit t = x^2 auf eine quadratische zurückführen, lösen und rücksubstituieren
+- fehlerquelle: die Funktionsgleichung statt der Ableitung gleich 2 setzen
+
+### 2020-be-gk-B2.2h (abi-katalog.csv)
+
+jahr 2020 · papier 2020-be-gk · punkte 5 · format Rechnung · antwort Zahl
+- gegeben: f(x) = −1/100 x³ + 3/50 x² + 3/20 x + 2/25 (ausmultiplizierte Form aus b); f'(x) = −3/100 x² + 3/25 x + 3/20; die Profillinie hat bei x = 2 den größten Steigungswinkel (f'(2) = 0,27); gesucht eine Tangente mit x > 5, deren Gefälle ebenso groß ist
+- gesucht: Stelle x > 5, an der die Tangente die Steigung −0,27 hat
+- verfahren: f'(x) = −0,27 lösen, Lösung x > 5 wählen
+- fehlerquelle: f'(x) = 0,27 (Steigung statt Gefälle) lösen
+
+### 2026MerhoehtBAnalysisWTR3-1f (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ea · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: Tangente t an G_f mit Steigung −1 berührt in Q; Kontrolle x_Q = 5/3 ln 3
+- gesucht: Koordinaten von Q
+- verfahren: f'(x) = −1 lösen, f(x_Q)
+- fehlerquelle: ln(1/3) = −ln 3 falsch aufgelöst
+
+### 2026MgrundlegendBAnalysisMMS2-1d (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ga-mms · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: f wie in a; neben dem Wendepunkt zwei weitere Punkte mit Tangentenwinkel 45°
+- gesucht: x-Koordinaten dieser beiden Punkte
+- verfahren: f'(x) = 1 lösen
+- fehlerquelle: nur f'(x) = 1, nicht auch −1 bedenken (hier liefert −1 nur die Wendestelle)
+
+### 2023-bebb-lk-A1.4a (abi-katalog.csv)
+
+jahr 2023 · papier 2023-bebb-lk · punkte 2 · format Kurzantwort · antwort Zahl
+- gegeben: f in IR mit f'(x) = 3x · (4 − x)
+- gesucht: die beiden Stellen mit waagerechter Tangente
+- verfahren: Faktoren null setzen
+- fehlerquelle: f' ableiten statt f' = 0 setzen
+
+### 2025MerhoehtAAnalysis21-b (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ea · punkte 2 · format Begründung · antwort Text
+- gegeben: g(x) = f(x) · e^x; Graph von f in der Abbildung; nach Teilaufgabe a folgt aus einer waagerechten Tangente von g an der Stelle a die Gleichung f'(a) = −f(a)
+- gesucht: Nachweis mithilfe der Abbildung, dass der Graph von g im Punkt (1; g(1)) keine waagerechte Tangente hat
+- verfahren: am Graphen: f(1) < 0 und f'(1) < 0, also −f(1) > 0 > f'(1); die Bedingung aus a ist verletzt
+- fehlerquelle: nur f'(1) ≠ 0 ablesen und daraus auf g'(1) ≠ 0 schließen
+
+### 2025-bebb-gk-A1.1b (abi-katalog.csv)
+
+jahr 2025 · papier 2025-bebb-gk · punkte 2 · format Zeichnen · antwort Grafik
+- gegeben: f(x) = 1/8 x^3 − 3/8 x^2 − 1, Graph G in der Abbildung; die Tangente t in P(4; 1) hat die Steigung 3; es gibt genau eine weitere Tangente an G, die parallel zu t verläuft
+- gesucht: Skizze dieser weiteren Tangente in der Abbildung
+- verfahren: f'(x) = 3 lösen: 3/8 x^2 − 3/4 x − 3 = 0, also x^2 − 2x − 8 = 0 mit den Stellen 4 und −2; Berührpunkt (−2; f(−2)) = (−2; −3,5), dort eine Gerade mit Steigung 3 einzeichnen
+- fehlerquelle: die Tangente nach Augenmaß am Hochpunkt (0; −1) ansetzen statt die Berührstelle zu berechnen
+
+### 2026MgrundlegendBAnalysisMMS1-2b (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ga-mms · punkte 3 · format Begründung · antwort Text
+- gegeben: Lösungsschritte: f'(x) = h'(x) ⇔ x = 2 − ln 2; mit y = −2x + n und f(2 − ln 2) = 1 ergibt sich n = 5 − 2 · ln 2
+- gesucht: geometrische Bedeutung von n = 5 − 2 ln 2
+- verfahren: Schritte als Aufstellen der zu G_h parallelen Tangente erkennen, n als y-Achsenabschnitt deuten
+- fehlerquelle: n als Schnittpunkt von G_f und G_h deuten
+
+### 2020MerhoehtAAnalysis12-b (iqb-katalog.csv)
+
+jahr 2020 · papier 2020-iqb-ea · punkte 2 · format Kurzantwort · antwort Term
+- gegeben: f(x) = sin x, g(x) = x; gesuchte Tangente parallel zu g und nicht durch O
+- gesucht: Gleichung einer solchen Tangente
+- verfahren: Berührstelle mit cos x = 1 außer 0, z. B. 2π
+- fehlerquelle: Tangente bei π (Steigung −1) wählen
+
+### 2024MgrundlegendAAnalysis21-a (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ga · punkte 1 · format Kurzantwort · antwort Term
+- gegeben: f(x) = 1/2 x², definiert in IR; Graph und Tangente t im Punkt (4; f(4)) in der Abbildung
+- gesucht: Gleichung von t anhand der Abbildung
+- verfahren: zwei Gitterpunkte der Tangente ablesen, etwa (2; 0) und (4; 8), Steigung und Achsenabschnitt bestimmen
+- fehlerquelle: die Steigung aus dem Achsenabschnitt −8 und dem Berührpunkt falsch als 2 ablesen
+
+### 2024MerhoehtAAnalysis21-a (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ea · punkte 1 · format Kurzantwort · antwort Term
+- gegeben: Schar f_a(x) = a · x² für positives a; Graph von f_1/2 und Tangente t im Punkt (4; f_1/2(4)) in der Abbildung
+- gesucht: Gleichung von t anhand der Abbildung
+- verfahren: zwei Gitterpunkte der Tangente ablesen, etwa (2; 0) und (4; 8)
+- fehlerquelle: die Steigung als 2 ablesen
+
+### 2025MerhoehtAAnalysis23-a (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ea · punkte 1 · format Zeichnen · antwort Grafik
+- gegeben: f(x) = √(x − 2) für x ≥ 2, Graph G und Punkt P(3; 1) in der Abbildung; die Gerade y = 1/2 x − 1/2 ist die Tangente an G in P und hat mit G nur P gemeinsam
+- gesucht: die Tangente in der Abbildung
+- verfahren: zwei Punkte der Geraden bestimmen, etwa (1; 0) und (3; 1), und die Gerade durchziehen
+- fehlerquelle: die Gerade durch den Ursprung zeichnen
+
+### 2023MgrundlegendAAnalysis12-a (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ga · punkte 2 · format Kurzantwort|Begründung · antwort Term|Text
+- gegeben: Funktion f mit zur y-Achse symmetrischem Graphen; Tangente t1 im Punkt (1; f(1)) hat die Gleichung y = 4/3 x + 4
+- gesucht: Gleichung der Tangente t2 im Punkt (−1; f(−1)) mit Begründung
+- verfahren: t2 ist das Spiegelbild von t1 an der y-Achse: Steigung wechselt das Vorzeichen, Achsenabschnitt bleibt
+- fehlerquelle: auch den Achsenabschnitt spiegeln (y = −4/3 x − 4)
+
+### 2018MerhoehtAAnalysis12-a (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ea · punkte 2 · format Begründung · antwort Text
+- gegeben: f(x) = −x³ + 3x² − 2x in IR; Wendepunkt W bei x = 1
+- gesucht: Nachweis, dass die Tangente in W die Steigung 1 hat
+- verfahren: f'(1) berechnen
+- fehlerquelle: Vorzeichen beim Ableiten von −x³
+
+### 2021MerhoehtAAnalysis11-a (iqb-katalog.csv)
+
+jahr 2021 · papier 2021-iqb-ea · punkte 1 · format Rechnung · antwort Text
+- gegeben: f(x) = sin x in IR; Abbildung mit G_f und den Tangenten in den dargestellten Nullstellen
+- gesucht: Nachweis, dass die Tangente durch den Ursprung die Steigung 1 hat
+- verfahren: f'(0) berechnen
+- fehlerquelle: f'(x) = −cos x ansetzen
+
+### 2024MerhoehtAAnalysis11-b (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ea · punkte 3 · format Rechnung · antwort Text
+- gegeben: f(x) = 2 · sin(1/2 x); Aussage: die Tangente an G_f im Koordinatenursprung ist die Gerade durch (−1; −1) und (1; 1)
+- gesucht: rechnerischer Nachweis der Aussage
+- verfahren: f' bilden, Steigung f'(0) und Punkt (0; 0) liefern y = x; die Gerade durch die beiden Punkte hat dieselbe Gleichung
+- fehlerquelle: die innere Ableitung 1/2 vergessen und f'(0) = 2 erhalten
+
+### 2020-be-gk-B2.1j (abi-katalog.csv)
+
+jahr 2020 · papier 2020-be-gk · punkte 5 · format Rechnung · antwort Zahl
+- gegeben: f(x) = (6x − 3) · e^(−x), x ∈ IR; f'(x) = (−6x + 9) · e^(−x)
+- gesucht: ob es eine Stelle x_T gibt, an der die Tangente an den Graphen von f parallel zur Tangente an den Graphen von f' ist
+- verfahren: f'' bilden, f'(x) = f''(x) lösen (e-Faktor kürzen)
+- fehlerquelle: Parallelität als f(x) = f'(x) ansetzen
+
+### 2024MgrundlegendAAnalysis21-b (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ga · punkte 4 · format Begründung · antwort Text
+- gegeben: f(x) = 1/2 x²; für jedes reelle u die Tangente an den Graphen im Punkt (u; f(u))
+- gesucht: Nachweis, dass diese Tangente die y-Achse im Punkt (0; −f(u)) schneidet
+- verfahren: Ansatz y = mx + n mit m = f'(u) = u; Berührpunkt einsetzen und n bestimmen
+- fehlerquelle: nur den Fall u = 4 aus a nachrechnen
+
+### 2021MerhoehtAAnalysis22-b (iqb-katalog.csv)
+
+jahr 2021 · papier 2021-iqb-ea · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: Schar g_c mit c > 0, Graph von g_c aus G_f durch Streckung mit Faktor c in y-Richtung; f(0) = 2 und f'(0) = 1 aus der Abbildung
+- gesucht: x-Koordinate des Schnittpunkts der Tangente an den Graphen von g_c in (0; g_c(0)) mit der x-Achse, rechnerisch
+- verfahren: Tangentengleichung mit c aufstellen und null setzen
+- fehlerquelle: g_c'(0) = f'(0) setzen (Streckung nicht ableiten)
+
+### 2022-bebb-lk-B2.2f (abi-katalog.csv)
+
+jahr 2022 · papier 2022-bebb-lk · punkte 4 · format Rechnung|Begründung · antwort Text
+- gegeben: f(x) = x · e^(−x²/2 + 1/2), definiert in IR; f'(x) = (1 − x²) · e^(−x²/2 + 1/2); f''(x) = (x³ − 3x) · e^(−x²/2 + 1/2) (Hinweis, ohne Nachweis); Tangenten im I. Quadranten schneiden die y-Achse in (0 | y_S); Aussage: Es gibt eine Tangente mit y_S > 1,9
+- gesucht: Beurteilung der Aussage
+- verfahren: y_S als Funktion der Berührstelle aufstellen, Maximum bei √3 berechnen, mit 1,9 vergleichen
+- fehlerquelle: nur eine Tangente ausprobieren; Maximum mit dem Hochpunkt von f verwechseln
+
+### 2022-C-1e (fhr-katalog.csv)
+
+jahr 2022 · papier C · punkte 3 · format Rechnung|Begründung · antwort Text|Term
+- gegeben: f(x) = −0,25x^4 + 1,75x^2 + 2,5; x aus IR; die Wendepunkte W1/2(±1,08; 4,20); die Gerade t mit t(x) = 2,52x + 1,48; die Genauigkeit beträgt zwei Nachkommastellen
+- gesucht: Nachweis, dass t eine Wendetangente an Gf ist|Gleichung der zweiten Wendetangente
+- verfahren: den Wendepunkt in t einsetzen und die Übereinstimmung des Funktionswerts zeigen, dann den Anstieg von Gf an der Wendestelle berechnen und mit dem Anstieg von t vergleichen; die zweite Tangente über die Achsensymmetrie spiegeln oder als Tangentengleichung im zweiten Wendepunkt aufstellen
+- fehlerquelle: nur die Punktprobe führen und den Vergleich der Anstiege weglassen
+
+### 2026-bb-gk-B2.1d (abi-katalog.csv)
+
+jahr 2026 · papier 2026-bb-gk · punkte 2 · format Rechnung · antwort Text
+- gegeben: f'(x) = x² · (1/3 x + 1) = 1/3 x³ + x², Ableitung der in IR definierten Funktion f mit f(x) = 1/12 (x⁴ + 4x³ + 24); Abbildung 1 zeigt den Graphen von f'; Gerade t(x) = 4/3 x + 10/3; Punkt (−2 | 2/3)
+- gesucht: Nachweis, dass t Tangente an G_f in (−2 | 2/3) ist
+- verfahren: Funktionswert und Ableitung bei −2 mit t vergleichen
+- fehlerquelle: nur die Steigung prüfen
+
+### 2023-bebb-gk-A1.3b (abi-katalog.csv)
+
+jahr 2023 · papier 2023-bebb-gk · punkte 3 · format Begründung · antwort Text
+- gegeben: f(x) = x³ − 3x² und die in IR definierte Funktion g mit g(x) = 9x + 5; der Punkt P(−1 | −4).
+- gesucht: Begründung, dass sich die Graphen von f und g in P berühren
+- verfahren: P liegt auf beiden Graphen: f(−1) = −1 − 3 = −4 und g(−1) = −9 + 5 = −4; die Steigungen stimmen überein: f'(−1) = 3 + 6 = 9 = g'(x) für alle x. Damit ist g die Tangente an den Graphen von f in P.
+- fehlerquelle: nur den gemeinsamen Punkt prüfen und die gleiche Steigung vergessen
+
+### 2023MgrundlegendBAnalysisWTR1-1d (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ga · punkte 4 · format Rechnung|Kurzantwort · antwort Term
+- gegeben: r(x) = −(x² − x − 1), s(x) = e^x; gemeinsamer Punkt auf der y-Achse
+- gesucht: Nachweis gleicher Steigung im gemeinsamen Punkt; Tangentengleichung
+- verfahren: Beide Ableitungen an der Stelle 0 vergleichen, Tangente durch (0 | 1) mit Steigung 1
+- fehlerquelle: nur gleichen Funktionswert, nicht gleiche Steigung nachweisen
+
+### 2017-bb-ea-B2.2d (abi-katalog.csv)
+
+jahr 2017 · papier 2017-bb-ea · punkte 6 · format Rechnung|Begründung · antwort Text|Zahl
+- gegeben: Für diese Teilaufgabe gilt 1 LE = 150 m. Eine langgezogene Kurve auf einer Landstraße wird im Intervall [−2; 4] näherungsweise durch den Graphen G_0,15 von f_0,15(x) = e^(0,3x) + e^(−0,3x) modelliert. Im Punkt P(4 | f_0,15(4)) mündet sie tangential, also ohne Knick, in eine zunächst geradlinig verlaufende Schnellstraße.
+- gesucht: Nachweis, dass ein Teil der Schnellstraße für x ≥ 4 näherungsweise durch einen Teil der Geraden g mit y = 0,9x modelliert werden kann
+- verfahren: Funktionswert und Anstieg an der Stelle 4 mit den Werten der Geraden vergleichen: f_0,15(4) = e^(1,2) + e^(−1,2) gegen g(4) = 3,6 sowie f_0,15'(4) = 0,3 · (e^(1,2) − e^(−1,2)) gegen den Anstieg 0,9.
+- fehlerquelle: nur den Funktionswert vergleichen und die Übereinstimmung der Anstiege nicht prüfen
+
+### 2020-be-gk-B2.2f (abi-katalog.csv)
+
+jahr 2020 · papier 2020-be-gk · punkte 3 · format Rechnung|Zeichnen · antwort Term|Grafik
+- gegeben: f(x) = −1/100 x³ + 3/50 x² + 3/20 x + 2/25 (ausmultiplizierte Form aus b); Profillinie der Teststrecke für −1 ≤ x ≤ 8, 1 LE = 1 m, Fahrbahn 5 m breit; Tangente t im Punkt P(6 | f(6)) soll den Knick bei x = 8 vermeiden
+- gesucht: Nachweis von t(x) = −0,21x + 2,24; Tangente in die Anlage einzeichnen
+- verfahren: f'(6) und f(6) berechnen, n aus P; Gerade durch P und die Nullstelle 10,67 zeichnen
+- fehlerquelle: f(6) falsch aus der faktorisierten Form berechnen
+
+### 2025MerhoehtBAnalysisWTR1-1d (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ea · punkte 6 · format Rechnung|Begründung · antwort Text
+- gegeben: f(x) = 1/3 x³ − 2x + 4 (= f_2); Tangente t in P(3 | f(3)) mit y = 7x − 14; Behauptung f(x) − (7x − 14) = 1/3 (x − 3)² (x + 6)
+- gesucht: rechnerischer Nachweis der Identität und Begründung genau eines weiteren gemeinsamen Punkts
+- verfahren: beide Seiten ausmultiplizieren, dann Nullprodukt
+- fehlerquelle: Ausmultiplizieren des Binoms mit Vorzeichenfehler
+
+### 2025MgrundlegendBAnalysisWTR1-1c (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ga · punkte 3 · format Begründung · antwort Text
+- gegeben: f(x) − (7x − 14) = 1/3 (x − 3)² (x + 6) für alle x; t: y = 7x − 14 berührt in P(3 | 7)
+- gesucht: Begründung, dass t und Gf neben P genau einen weiteren gemeinsamen Punkt haben
+- verfahren: Differenz null setzen, Faktoren auswerten
+- fehlerquelle: x = 3 als zweiten Schnittpunkt zählen
+
+### 2024MgrundlegendBAnalysisWTR2-1c (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ga · punkte 3 · format Zeichnen · antwort Grafik
+- gegeben: P(0 | −5/8); t aus b geht durch P
+- gesucht: zwei weitere Tangenten durch P mit Steigungen verschiedenen Vorzeichens in Abbildung 1
+- verfahren: Geraden durch P an den Graphen anlegen
+- fehlerquelle: Sekanten statt Tangenten zeichnen
+
+### 2025-bebb-gk-A1.7b (abi-katalog.csv)
+
+jahr 2025 · papier 2025-bebb-gk · punkte 2 · format Kurzantwort · antwort Text
+- gegeben: f(x) = −x^2 + 4x − 1; Gleichung (f(x) − 0)/(x − 0) = f'(x) mit den Lösungen x = −1 und x = 1
+- gesucht: geometrische Bedeutung der Gleichung für ihre Lösungen
+- verfahren: die linke Seite ist die Steigung der Geraden durch den Ursprung und (x; f(x)), die rechte die Tangentensteigung; Gleichheit heißt, die Tangente in (x; f(x)) geht durch den Ursprung
+- fehlerquelle: die Gleichung als Schnitt von f und f' deuten
+
+### 2024-bebb-lk-B2.1g (abi-katalog.csv)
+
+jahr 2024 · papier 2024-bebb-lk · punkte 5 · format Begründung · antwort Text
+- gegeben: h_a(x) = e^(a − x) + x − a mit h_a'(x) = −e^(a − x) + 1; vorgelegte Rechnung zu h_{−0,2}: t(x) = mx − 1,65; m = h'_{−0,2}(x_Q) = −e^(−0,2 − x_Q) + 1; h_{−0,2}(x_Q) = t(x_Q) ⇒ x_Q ≈ −1,503, y_Q ≈ 2,38 ⇒ Q(−1,5 | 2,38)
+- gesucht: Erläuterung der Schritte; passende Aufgabenstellung
+- verfahren: Schritte als Geradenansatz durch S, Tangentensteigung und Berührbedingung deuten
+- fehlerquelle: die Gleichungskette nur nachrechnen statt deuten; Aufgabe ohne den Bezug zu S formulieren
+
+### 2025MgrundlegendAAnalysis22-b (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ga · punkte 2 · format Kurzantwort · antwort Text
+- gegeben: f(x) = −x^2 + 4x − 1; Gleichung (f(x) − 0)/(x − 0) = f'(x) mit den Lösungen x = −1 und x = 1
+- gesucht: geometrische Bedeutung der Gleichung für ihre Lösungen
+- verfahren: die linke Seite ist die Steigung der Geraden durch den Ursprung und (x; f(x)), die rechte die Tangentensteigung; Gleichheit heißt, die Tangente in (x; f(x)) geht durch den Ursprung
+- fehlerquelle: die Gleichung als Schnitt von f und f' deuten
+
+### 2018-bb-ea-B2.1f (abi-katalog.csv)
+
+jahr 2018 · papier 2018-bb-ea · punkte 6 · format Rechnung · antwort Term|Zahl
+- gegeben: Die Funktion f_2 mit f_2(x) = (x² + 2) · e^(0,5 − x); G_2 verläuft im Intervall [1; 3] annähernd geradlinig und wird vereinfacht durch die Tangente t in x = 2 dargestellt. Zur Kontrolle ist angegeben: t(x) = −2 · e^(−1,5) · x + 10 · e^(−1,5).
+- gesucht: Gleichung der Tangente t; Nachweis, dass t(1) um weniger als 2 % von f_2(1) abweicht
+- verfahren: f_2(2) und f_2′(2) berechnen und in die Punkt-Steigungs-Form einsetzen. Dann t(1) und f_2(1) bestimmen und die Differenz auf f_2(1) beziehen.
+- fehlerquelle: die Abweichung auf den Tangentenwert statt auf den Funktionswert beziehen oder absolut statt relativ vergleichen
+
+### 2024MerhoehtBAnalysisWTR1-2c (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ea · punkte 3 · format Rechnung · antwort Text
+- gegeben: Tangente an den Graphen von w in (0 | w(0)) mit Steigung 2
+- gesucht: ob die Tangente nach vier Jahren dieselbe Anzahl liefert wie w
+- verfahren: beide Werte bei x = 4 berechnen und vergleichen
+- fehlerquelle: Tangente mit Steigung w'(4) ansetzen
+
+### 2023MgrundlegendBAnalysisWTR1-2c (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ga · punkte 3 · format Begründung · antwort Text
+- gegeben: Tangente y = t(x) an den Graphen von w im Punkt (1 | w(1)); Aussage: für alle x ∈ [0,7; 1,4] gilt |(t(x) − w(x)) / w(x)| < 0,05
+- gesucht: Bedeutung der Aussage im Sachzusammenhang
+- verfahren: Quotient als relative Abweichung erkennen, Zeitraum und Schranke in Worte fassen
+- fehlerquelle: absolute statt relative Abweichung
+
+### 2022MgrundlegendBAnalysisWTR1-1d (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ga · punkte 5 · format Rechnung|Zeichnen · antwort Text|Grafik
+- gegeben: f(x) = 1/80 x⁵ − 1/6 x³ + x, definiert in IR; Abbildung 1 zeigt G_f; W(2 | f(2)) ist Wendepunkt; f'(x) = 1/16 (x − 2)² (x + 2)²; Tangente in O und Tangente in W
+- gesucht: Nachweis, dass sich die Tangenten in (16/15 | 16/15) schneiden; beide Tangenten in Abbildung 1
+- verfahren: Beide Tangentengleichungen aufstellen, Punkt einsetzen; zeichnen
+- fehlerquelle: f'(2) ≠ 0 rechnen; Tangente in W nicht als waagerecht erkennen
+
+### 2019MgrundlegendBAnalysisWTR1-3c (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ga · punkte 2 · format Begründung · antwort Text
+- gegeben: h(x) = 40/13 · 1/(x − 5), x ≠ 5; Abbildung 2 zeigt den Graphen von h; g(x) = 13/40 · (x − 5) aus Aufgabe 2
+- gesucht: Begründung, dass es keine Gerade gibt, die Tangente an beide Graphen ist
+- verfahren: Vorzeichen der Steigungen vergleichen
+- fehlerquelle: mit den Schnittpunkten aus b argumentieren
+
+### 2022MerhoehtBAnalysisWTR1-2d (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ea · punkte 3 · format Begründung|Rechnung · antwort Text
+- gegeben: Geraden durch je einen Wendepunkt und P(2022 | 2022)
+- gesucht: ob eine dieser Geraden im Wendepunkt Tangente ist
+- verfahren: Steigung der Geraden allgemein in k, mit ±π/2 vergleichen
+- fehlerquelle: einzelne k durchprobieren statt allgemein argumentieren
+
+### 2026MerhoehtBAnalysisMMS2-2b (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ea-mms · punkte 3 · format Rechnung|Kurzantwort · antwort Zahl|Term
+- gegeben: f_1(x) = 3/4 · (x² − 1) · e^(1 − x); h(x) = k · ln x auf IR⁺ mit k > 0; die Graphen von f_1 und h haben im Punkt (1; 0) eine gemeinsame Tangente
+- gesucht: k und eine Gleichung der gemeinsamen Tangente
+- verfahren: f_1'(1) berechnen (Rechner), mit h'(1) = k gleichsetzen; Tangente durch (1; 0) mit Steigung 3/2
+- fehlerquelle: k aus h(1) = f_1(1) bestimmen wollen (liefert 0 = 0)
+
+### 2025MerhoehtBAnalysisWTR2-1b (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ea · punkte 3 · format Rechnung · antwort Term
+- gegeben: Tangente im Wendepunkt t: y = −5/e² · x + 20/e²; Extrempunkt (1 | 5/e)
+- gesucht: Gleichung der Geraden durch den Extrempunkt senkrecht zu t
+- verfahren: Steigung e²/5, Punkt einsetzen
+- fehlerquelle: Steigung 5/e² (Vorzeichen) statt e²/5
+
+### 2023MgrundlegendAAnalysis11-b (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ga · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: f(x) = 1/2 x + 5, Graph in der Abbildung
+- gesucht: Abstand des Koordinatenursprungs zum Graphen
+- verfahren: Lotgerade durch den Ursprung mit Steigung −2 aufstellen, mit dem Graphen schneiden, Abstand des Lotfußpunkts zum Ursprung
+- fehlerquelle: den Abstand zum y-Achsenabschnitt (5) oder zur Nullstelle (10) nehmen
+
+### 2026MerhoehtBAnalysisWTR1-1e (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ea · punkte 5 · format Rechnung · antwort Zahl
+- gegeben: f_0'(x) = 3/4 x²; Kreis mit Mittelpunkt auf der y-Achse berührt den Graphen von f_0' in genau zwei Punkten, A(1 | 3/4) ist Berührpunkt
+- gesucht: y-Koordinate des Mittelpunkts, rechnerisch
+- verfahren: Normale an den Graphen von f_0' in A, Schnitt mit der y-Achse
+- fehlerquelle: f_0' statt f_0'' als Steigung
+
+### 2026MgrundlegendBAnalysisWTR1-1f (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ga · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: f'(x) = 3/4 x²; Kreis mit Mittelpunkt auf der y-Achse berührt den Graphen von f' in genau zwei Punkten, einer davon A(1 | 3/4)
+- gesucht: y-Koordinate des Mittelpunkts, rechnerisch
+- verfahren: Normale an den Graphen von f' in A aufstellen, Schnitt mit der y-Achse
+- fehlerquelle: f' statt f'' als Steigung nehmen oder Tangente statt Normale ansetzen
+
+### 2026MerhoehtBAnalysisWTR2-2d (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ea · punkte 4 · format Kurzantwort · antwort Text
+- gegeben: r(x) = 0,75 − 10 (x − 0,5)⁴ oberer Rand der rechten Einfahrt, Signalleuchte P(0,8 | 0,6); vorgelegte Rechnung mit x_Q ≈ 0,835 und Ergebnis 0,85
+- gesucht: Bedeutung von 0,85 und Erläuterung des Ansatzes für x_Q
+- verfahren: Gleichung als Orthogonalität von PQ und Tangente deuten, Ergebnis als Abstand
+- fehlerquelle: 0,85 als Höhe der Leuchte deuten
+
+### 2022-bebb-gk-B2.2j (abi-katalog.csv)
+
+jahr 2022 · papier 2022-bebb-gk · punkte 4 · format Begründung · antwort Text
+- gegeben: Betonteil mit oberem Rand h und unterem Rand g (Steigung 1); geradlinige Bohrungen sollen h und g im rechten Winkel schneiden
+- gesucht: Erläuterung, wie die Lage der Bohrungen ermittelt werden kann
+- verfahren: Senkrecht zu g heißt Steigung −1; senkrecht zu h heißt Tangentensteigung 1, also h'(x0) = 1 lösen; Bohrung als Gerade mit Steigung −1 durch (x0 | h(x0))
+- fehlerquelle: nur die Orthogonalität zu g beachten
+
+### 2020MgrundlegendBAnalysisWTR2-1d (iqb-katalog.csv)
+
+jahr 2020 · papier 2020-iqb-ga · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: f(x) = 1/10 · x · (3 − x) · eˣ, x ∈ IR; Abbildung 1 zeigt den Graphen von f; f'(x) = −1/10 · (x² − x − 3) · eˣ
+- gesucht: Größe des Steigungswinkels des Graphen im Koordinatenursprung
+- verfahren: f'(0) berechnen und den Arkustangens bilden
+- fehlerquelle: Rechner im Bogenmaß
+
+### 2022-bebb-gk-B2.2e (abi-katalog.csv)
+
+jahr 2022 · papier 2022-bebb-gk · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: f(x) = −1/6 x³ + 1/2 x², x ∈ IR; Wendepunkt W(1 | 1/3); Tangente t in W
+- gesucht: Winkel, in dem t die x-Achse schneidet; y-Wert, bei dem t die y-Achse schneidet
+- verfahren: f'(1), Arkustangens, Tangentengleichung
+- fehlerquelle: Winkel als Steigung angeben
+
+### 2022-bebb-gk-B2.2f (abi-katalog.csv)
+
+jahr 2022 · papier 2022-bebb-gk · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: f(x) = −1/6 x³ + 1/2 x², x ∈ IR; Tangente an der Stelle x_T steigt in einem Winkel ≥ 21,8° genau für a ≤ x_T ≤ b
+- gesucht: a und b (gerundet)
+- verfahren: f'(x) ≥ tan 21,8° lösen
+- fehlerquelle: Winkel statt Tangens des Winkels mit f' vergleichen
+
+### 2024-bebb-lk-B2.1h (abi-katalog.csv)
+
+jahr 2024 · papier 2024-bebb-lk · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: h_a und h_a' wie in g
+- gesucht: Wert von a, für den der Graph von h_a die y-Achse im Winkel von 45° schneidet
+- verfahren: h_a'(0) = ±1 ansetzen, Exponentialgleichung lösen
+- fehlerquelle: Winkel zur y-Achse mit Steigung tan 45° = 1 gleichsetzen, ohne −1 zu prüfen (nur −1 führt zu einer Lösung)
+
+### 2021-be-gk-B2.2k (abi-katalog.csv)
+
+jahr 2021 · papier 2021-be-gk · punkte 3 · format Begründung · antwort Text
+- gegeben: Vorgelegte Schritte: (1) f(27,5) ≈ 1,32; (2) sin α = 1,32 / √(27,5² − 1,32²) ⇔ α ≈ 2,75°; gesucht ist der Neigungswinkel der Verbindungslinie S₁S₂ gegen die Horizontale
+- gesucht: Beurteilung jedes Teilschritts und Berichtigung fehlerhafter Schritte
+- verfahren: Schritt 1: f(27,5) ist negativ, gemeint ist der Betrag; Schritt 2: Hypotenuse √(27,5² + 1,32²), oder einfacher tan α = 1,32/27,5
+- fehlerquelle: das Ergebnis 2,75° als Bestätigung der Schritte nehmen
+
+### 2026-bb-gk-B2.2c (abi-katalog.csv)
+
+jahr 2026 · papier 2026-bb-gk · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: Tangente t: y = 3x + 4 (aus b)
+- gesucht: Umfang des Dreiecks aus t und den Koordinatenachsen
+- verfahren: Achsenabschnitte, Hypotenuse, Summe
+- fehlerquelle: Flächeninhalt statt Umfang berechnen
+
+### 2026MgrundlegendBAnalysisWTR2-1c (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ga · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: Tangente t: y = 3x + 4 (aus b)
+- gesucht: Umfang des Dreiecks aus t und den Koordinatenachsen
+- verfahren: Achsenabschnitte, Hypotenuse, Summe
+- fehlerquelle: Flächeninhalt statt Umfang berechnen
+
+### 2022MgrundlegendBAnalysisWTR2-1d (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ga · punkte 5 · format Rechnung|Kurzantwort · antwort Zahl
+- gegeben: f(x) = (x + 2) · e^(−x), definiert in IR, mit f'(x) = −(x + 1) · e^(−x); Tangente im Punkt (0 | f(0)) bildet mit den Achsen ein Dreieck
+- gesucht: Umfang dieses Dreiecks; Punkt mit gleichem Abstand zu allen Eckpunkten
+- verfahren: Tangente aufstellen, Achsenschnitte, Umfang; Thales: Hypotenusenmitte
+- fehlerquelle: Schwerpunkt statt Umkreismittelpunkt angeben
+
+### 2024-bebb-lk-B2.2c (abi-katalog.csv)
+
+jahr 2024 · papier 2024-bebb-lk · punkte 7 · format Rechnung · antwort Zahl
+- gegeben: f(x) = x³ − 4x; Tangente in A(2 | 0); Gerade g: y = −x − 2
+- gesucht: Flächeninhalt des von t, x-Achse und g eingeschlossenen Dreiecks
+- verfahren: t aufstellen, Schnittpunkt mit g, Grundseite auf der x-Achse, Höhe
+- fehlerquelle: Grundseite 2 statt 4 (Nullstelle von g bei −2 übersehen)
+
+### 2024-bebb-gk-B2.2d (abi-katalog.csv)
+
+jahr 2024 · papier 2024-bebb-gk · punkte 5 · format Rechnung · antwort Zahl
+- gegeben: f(x) = 0,5x⁴ − 4x² + 3,5, x ∈ IR, Graph G_f; Gerade g durch A(−1 | f(−1)) senkrecht zur Tangente t in A; g, t und die y-Achse schließen ein Dreieck ein
+- gesucht: Flächeninhalt dieses Dreiecks
+- verfahren: t und g aufstellen, y-Achsenabschnitte als Grundseite, Höhe 1 (Abstand von A zur y-Achse)
+- fehlerquelle: Normalensteigung als −6 statt −1/6
+
+### 2024MerhoehtBAnalysisWTR2-1d (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ea · punkte 7 · format Rechnung · antwort Zahl
+- gegeben: f(x) = x³ − 4x; Tangente in A(2 | 0); Gerade g: y = −x − 2
+- gesucht: Flächeninhalt des von t, x-Achse und g eingeschlossenen Dreiecks
+- verfahren: t aufstellen, Schnittpunkt mit g, Grundseite auf der x-Achse, Höhe
+- fehlerquelle: Grundseite 2 statt 4 (Nullstelle von g bei −2 übersehen)
+
+### 2023-bebb-gk-A1.1b (abi-katalog.csv)
+
+jahr 2023 · papier 2023-bebb-gk · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: Die Tangenten t1: y = 4/3 x + 4 und t2: y = −4/3 x + 4 (aus a) schließen mit der x-Achse ein Dreieck ein.
+- gesucht: Umfang des Dreiecks
+- verfahren: Schnittpunkte von t1 mit den Achsen bestimmen, Schenkellänge mit Pythagoras √(3² + 4²) = 5, Grundseite von −3 bis 3 hat die Länge 6.
+- fehlerquelle: die Höhe 4 als Schenkel nehmen (Umfang 14)
+
+### 2023MgrundlegendAAnalysis12-b (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ga · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: t1: y = 4/3 x + 4 und t2: y = −4/3 x + 4 schließen mit der x-Achse ein Dreieck ein
+- gesucht: Umfang des Dreiecks
+- verfahren: Schnittpunkte von t1 mit den Achsen, Schenkellänge mit Pythagoras, Grundseite 6
+- fehlerquelle: die Höhe 4 als Schenkel nehmen (Umfang 14)
+
+### 2017MerhoehtAAnalysis11-b (iqb-katalog.csv)
+
+jahr 2017 · papier 2017-iqb-ea · punkte 3 · format Begründung · antwort Text
+- gegeben: f(x) = 2 · e^(1/2 · x) − 1; die Tangente an den Graphen in S(0 | 1) begrenzt mit den Koordinatenachsen ein Dreieck
+- gesucht: Nachweis, dass dieses Dreieck gleichschenklig ist
+- verfahren: f'(0) = 1, also schließt die Tangente mit der x-Achse 45° ein; wegen des rechten Winkels im Ursprung ist auch der dritte Winkel 45°
+- fehlerquelle: die Gleichschenkligkeit ohne Steigung oder Achsenabschnitte behaupten
+
+### 2018MerhoehtAAnalysis2-b (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ea · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: f(x) = 4/x²; Tangente in Q(u | f(u)) mit u > 0 schließt mit den Koordinatenachsen ein gleichschenkliges Dreieck ein
+- gesucht: Koordinaten von Q
+- verfahren: Bedingung in f'(u) = −1 übersetzen und lösen
+- fehlerquelle: Steigung +1 ansetzen (keine Lösung für u > 0)
+
+### 2024-bebb-lk-A1.6a (abi-katalog.csv)
+
+jahr 2024 · papier 2024-bebb-lk · punkte 5 · format Zeichnen|Begründung · antwort Grafik|Text
+- gegeben: a > 0; f(x) = x³ − 2a x² + a² x mit Graph G, Gerade h durch den Ursprung senkrecht zur Tangente an G im Ursprung; G berührt die x-Achse in (a; 0); Rechteck mit den gemeinsamen Punkten von G und x-Achse als benachbarten Ecken und einer Diagonale auf h
+- gesucht: Skizze des Rechtecks in der Abbildung|Nachweis, dass sein Flächeninhalt nicht von a abhängt
+- verfahren: f'(0) = a² liefert die Steigung −1/a² von h; das Rechteck hat die Ecken (0; 0), (a; 0) und die Höhe |h(a)| = 1/a unterhalb der Achse; Fläche a · 1/a
+- fehlerquelle: h als Tangente statt als Normale ansetzen (Steigung a²)
+
+### 2026-bb-ea-B2.2d (abi-katalog.csv)
+
+jahr 2026 · papier 2026-bb-ea · punkte 4 · format Begründung · antwort Text
+- gegeben: G_0; für u > 0 Tangente t_u in P_u(u | f_0(u)), Punkt Q_u(u | 0), T_u Schnittpunkt von t_u mit der x-Achse
+- gesucht: Begründung mit Eintragungen in der Abbildung, dass |T_uQ_u| = f_0(u)/f_0'(u)
+- verfahren: Steigungsdreieck P_u, Q_u, T_u einzeichnen und die Steigung als Quotient lesen
+- fehlerquelle: die Tangentengleichung aufstellen und rechnen statt am Steigungsdreieck zu argumentieren
+
+### 2026MerhoehtBAnalysisWTR1-1d (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ea · punkte 4 · format Begründung · antwort Text
+- gegeben: G_0; für u > 0 Tangente t_u in P_u(u | f_0(u)), Punkt Q_u(u | 0), T_u Schnittpunkt von t_u mit der x-Achse
+- gesucht: Begründung mit Eintragungen in der Abbildung, dass |T_uQ_u| = f_0(u)/f_0'(u)
+- verfahren: Steigungsdreieck P_u, Q_u, T_u einzeichnen und die Steigung als Quotient lesen
+- fehlerquelle: die Tangentengleichung aufstellen und rechnen statt am Steigungsdreieck zu argumentieren
+
+### 2023-bebb-gk-B2.1g (abi-katalog.csv)
+
+jahr 2023 · papier 2023-bebb-gk · punkte 5 · format Zeichnen|Begründung · antwort Grafik|Text
+- gegeben: Die in IR definierte Funktion f mit f(x) = 0,5 · (x² − 4) · e^x, ihr Graph G; die erste Ableitung ist f'(x) = (0,5x² + x − 2) · e^x. Abbildung 1 zeigt einen Teil von G mit dem Wendepunkt W ≈ (0,45 | −2,98). Die Tangente an G in W begrenzt mit den Koordinatenachsen ein Dreieck; die zu dieser Tangente senkrechte Gerade durch W begrenzt mit den Achsen ein weiteres Dreieck.
+- gesucht: beide Dreiecke in der Abbildung; Begründung mithilfe der Zeichnung, dass das eine Dreieck eine maßstäbliche Vergrößerung des anderen ist
+- verfahren: Tangente durch W mit Steigung ≈ −2,3 und Normale mit Steigung ≈ 0,44 einzeichnen, Schnittpunkte mit den Achsen markieren. Beide Dreiecke haben im Ursprung einen rechten Winkel; der Winkel der Tangente gegen die x-Achse ist so groß wie der Winkel der Normalen gegen die y-Achse (die Normale steht senkrecht auf der Tangente), also stimmen zwei Winkel überein und die Dreiecke sind ähnlich.
+- fehlerquelle: die Normale als Gerade durch W und den Ursprung zeichnen; Ähnlichkeit nur mit „beide sind rechtwinklig“ begründen
+
+Nur außerhalb von „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ genannt, nicht aufgenommen: 2022-bebb-gk-A1.1b, 2025MgrundlegendAAnalysis11-a, 2018-bb-ea-B2.2d
 
 ## 3 Maßstab (unterrichtsblatt.md, wortgleich)
 

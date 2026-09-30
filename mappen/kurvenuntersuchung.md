@@ -1,9 +1,9 @@
 # Mappe: kurvenuntersuchung
 
 Eintrag: hz-0801/mathe-nachhilfe, katalog/kurvenuntersuchung.md
-Katalog-Commit: 2a296e54827b16f81fd664c4430c6fcd84dd5719 (2026-09-28T22:05:53Z, „Katalog-Nachzug Teil 2: Sek II aus den Urteilen vom 28.09.“; ermittelt über GitHub-API)
+Katalog-Commit: db8d2a3f9f6ed0e6490a4087e3eaff2cbc8a9b19 (2026-09-30T08:03:34Z, „Katalog: Vorschläge vom 30.09. eingesetzt (24 Zeilen in 17 Einträgen, Marke „kein P10-Stoff“ in _vorlage.md)“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-29 12:26 UTC
+Datum: 2026-09-30 08:09 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -138,7 +138,7 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 123  Sprossen je Verfahrenstyp (Reihenfolge = Kette des Hauptblatts) [LS-AA, Rohdatei, FD; Sprossenfolge Ermessen, wo Lehrwerk und Rohdatei keine Reihenfolge vorgeben]:
 124  - Monotonie (Einheit 1): „steigt, fällt, waagerecht“ am Graphen ankreuzen (Vorstufe, Grundvorstellung) → zu einer gegebenen Ableitung das Vorzeichen in einem Intervall angeben und daraus steigt oder fällt ablesen (Grundfall, viermal, Ableitung als Gerade oder Parabel gegeben) → Ableitung selbst bilden, Nullstellen berechnen und die Monotonieintervalle mit abgeschlossenen Grenzen angeben (ganzrational dritten Grades, zwei Nullstellen) → drei Intervalle bei zwei Extremstellen, Vorzeichen je Intervall an einer Probestelle prüfen → Monotonie aus einem bekannten Extrempunkt angeben, ohne zu rechnen (abi 2023-bebb-gk-B2.1e) → Nachweis am Term: die Ableitung als Quadrat oder e-Term erkennen und „für alle x größer null“ begründen (GK; iqb 2026MgrundlegendBAnalysisWTR1-1a, abi 2024-bebb-gk-A1.7a) → daraus folgern, dass es keinen Extrempunkt gibt (abi 2018-bb-ea-B2.2c, iqb 2019MerhoehtAAnalysis2-a) → Prüfungshöhe: Monotonieintervalle und Wertebereich einer Differenzfunktion auf einem Intervall über die Ableitung ermitteln und die Länge der Monotoniebereiche zweier Modellfunktionen vergleichen (abi 2021-be-gk-B2.1g, iqb 2023MgrundlegendBAnalysisWTR2-2d, Niveau II bis III); fhr-Zielmarke: Monotonieintervalle im Anschluss an die Extrempunktberechnung angeben (fhr 2021-A-1c, 2024-C-1d, 2025-C-1d).
 125  - Extrempunkte berechnen (Einheit 2): „gegeben oder gesucht“ und „welcher Nachweis“ ankreuzen, bei „welcher Nachweis“ die Art: Vorzeichen von f'', Vorzeichenwechsel von f', Begründung aus Abbildung oder Sachzusammenhang oder gar keiner; nichts rechnen (Vorstufe) → „Stelle, Wert oder Punkt?“ – zu Fragen und Antworten ankreuzen, ob die Stelle x₀, der Wert f(x₀) oder der Punkt (x₀ | f(x₀)) verlangt oder gegeben ist; nichts rechnen (Vorstufe) → Ableitung null setzen und die Stellen einer quadratischen Ableitung mit der Lösungsformel berechnen (Grundfall, viermal, ganzrational dritten Grades) → Art über das Vorzeichen von f'' entscheiden und den Funktionswert berechnen, den Punkt mit beiden Koordinaten schreiben → Ableitung durch Ausklammern von x lösen und die Stelle null nicht verlieren (ganzrational vierten Grades; fhr 2023-A-1b, 2022-C-1c, abi 2024-bebb-gk-B2.2c) → Ausklammern von x² und die Sattelstelle über f''' erkennen (fhr 2025-C-1d) → eine gegebene Extremstelle zum Abspalten nutzen, Polynomdivision (fhr 2023-C-1c) → Produkt aus Polynom und e-Funktion: Produktregel, e-Faktor als nullstellenfrei erkennen, nur den Polynomfaktor null setzen (GK; abi 2025-bebb-gk-B2.2b, 2019-be-gk-B2.2b) → Art aus Abbildung oder Sachzusammenhang begründen, wenn die hinreichende Bedingung erlassen ist (abi 2018-be-gk-B1.2d, iqb 2020MgrundlegendBAnalysisWTR2-1a) → größten Wert auf einem Intervall mit den Randwerten vergleichen (abi 2018-bb-ea-B2.1g, 2025-bebb-lk-B2.2g) → Wertebereich aus dem globalen Tiefpunkt und dem Grenzverhalten (abi 2022-bebb-lk-B2.1h) → Prüfungshöhe: Lage und Art aller lokalen Extrempunkte eines Produkts aus Polynom und e-Funktion bestimmen (abi 2021-be-gk-B2.2d, Niveau II, sechs Punkte); fhr-Zielmarke: Art und Koordinaten aller Extrempunkte einer Funktion fünften Grades mit Sattelpunkt und Monotonieverhalten (fhr 2025-C-1d, 2026-C-1e, Niveau II bis III).
-126  - Extrempunkte nachweisen (Einheit 2): „gegeben oder gesucht“ ankreuzen (Vorstufe) → für eine genannte Stelle f' bilden und f' an der Stelle gleich null zeigen (Grundfall, viermal) → f'' an der Stelle auswerten und die Art benennen → den Funktionswert des vorgegebenen Punktes bestätigen (abi 2021-be-gk-B2.1c) → den Vorzeichenwechsel von f' statt f'' als Nachweis führen (iqb 2020MgrundlegendAAnalysis11-a, abi 2022-bebb-gk-B2.1a) → mit der gegebenen Angabe „f'' ungleich null“ die hinreichende Bedingung schließen (abi 2025-bebb-lk-A1.1a, iqb 2025MerhoehtAAnalysis12-a) → „Ändert sich die Monotonie, ändert sich die Krümmung?“ – an Graphen ankreuzen: Monotonie ändert sich → Extrempunkt; Monotonie bleibt und Krümmung ändert sich → Sattelpunkt; nichts rechnen → Sattelstelle ausschließen oder nachweisen: doppelte Nullstelle von f' ohne Vorzeichenwechsel, f''' ungleich null (abi 2022-bebb-lk-B2.1g, fhr 2021-B-2c) → „genau einen“ Tiefpunkt über die streng monotone Ableitung begründen (LK; abi 2022-bebb-lk-B2.1b) → Extremstelle ohne Rechnung in ein Intervall einschließen über die Vorzeichen von f' an den Intervallenden (abi 2019-be-gk-A1.1b) → Prüfungshöhe: Extremstelle einer Logarithmusfunktion über die Ableitung oder die Symmetrie begründen (LK; abi 2023-bebb-lk-A1.2b) und Aussagen zu Stellen mit waagerechter Tangente allgemein beurteilen (fhr 2020-C-1c, 2019-A-1c, Niveau III).
+126  - Extrempunkte nachweisen (Einheit 2): „gegeben oder gesucht“ ankreuzen (Vorstufe) → für eine genannte Stelle f' bilden und f' an der Stelle gleich null zeigen (Grundfall, viermal) → f'' an der Stelle auswerten und die Art benennen → den Funktionswert des vorgegebenen Punktes bestätigen (abi 2021-be-gk-B2.1c) → den Vorzeichenwechsel von f' statt f'' als Nachweis führen (iqb 2020MgrundlegendAAnalysis11-a, abi 2022-bebb-gk-B2.1a) → mit der gegebenen Angabe „f'' ungleich null“ die hinreichende Bedingung schließen (abi 2025-bebb-lk-A1.1a, iqb 2025MerhoehtAAnalysis12-a) → „Ändert sich die Monotonie, ändert sich die Krümmung?“ – an Graphen ankreuzen: Monotonie ändert sich: Extrempunkt; Monotonie bleibt und Krümmung ändert sich: Sattelpunkt; nichts rechnen → Sattelstelle ausschließen oder nachweisen: doppelte Nullstelle von f' ohne Vorzeichenwechsel, f''' ungleich null (abi 2022-bebb-lk-B2.1g, fhr 2021-B-2c) → „genau einen“ Tiefpunkt über die streng monotone Ableitung begründen (LK; abi 2022-bebb-lk-B2.1b) → Extremstelle ohne Rechnung in ein Intervall einschließen über die Vorzeichen von f' an den Intervallenden (abi 2019-be-gk-A1.1b) → Prüfungshöhe: Extremstelle einer Logarithmusfunktion über die Ableitung oder die Symmetrie begründen (LK; abi 2023-bebb-lk-A1.2b) und Aussagen zu Stellen mit waagerechter Tangente allgemein beurteilen (fhr 2020-C-1c, 2019-A-1c, Niveau III).
 127  - Wendepunkte und Krümmung (Einheit 3): „welcher Nachweis“ – ankreuzen, welcher Art-Nachweis verlangt oder möglich ist: rechnerisch über eine höhere Ableitung oder einen Vorzeichenwechsel, Begründung aus Abbildung oder Sachzusammenhang oder gar keiner; nichts rechnen (Vorstufe) → zweite und dritte Ableitung einer ganzrationalen Funktion bilden (Grundfall, viermal) → f'' null setzen, die Wendestelle berechnen, f''' ungleich null zeigen, den Funktionswert berechnen (kubisch, eine Wendestelle; fhr 2023-A-2e, 2024-C-1e) → zwei Wendestellen durch Wurzelziehen oder Ausklammern (Grad vier; fhr 2019-C-1d, 2026-B-1e) → Krümmungsintervalle: Wendestellen als Grenzen, Vorzeichen von f'' an Probestellen, links- und rechtsgekrümmt zuordnen, unbeschränkte Intervalle nicht vergessen (fhr 2019-A-1e, 2024-B-1f, 2025-A-1c) → Wendetangente mit der Steigung f' an der Wendestelle aufstellen (fhr 2021-B-1d, iqb 2018MgrundlegendBAnalysisWTR-1a) → Wendepunkt an vorgegebener Stelle nachweisen und den Funktionswert bestätigen (fhr 2023-C-1d, abi 2024-bebb-gk-B2.1c) → Wendepunkt, der zugleich Sattelpunkt ist: zusätzlich f' gleich null zeigen (fhr 2024-B-1e, 2026-C-1f) → Produkt aus Polynom und e-Funktion: f'' mit Produkt- und Kettenregel, Nullstellen des Polynomfaktors (GK; abi 2023-bebb-gk-B2.1f) → zweiten Wendepunkt über die Punktsymmetrie angeben (LK; abi 2022-bebb-lk-B2.2d) → Prüfungshöhe: Existenz eines Wendepunkts ohne Rechnung aus Tiefpunkt und Grenzverhalten mit einer Skizze begründen (abi 2021-be-gk-B2.2e, Niveau III) und einen Wendepunkt über den Vorzeichenwechsel von f'' aus der Kettenregel am Graphen nachweisen (LK; iqb 2019MerhoehtAAnalysis2-b, Niveau III); fhr-Zielmarke: Wendepunkte einer Funktion fünften Grades mit Polynomdivision und die Krümmungsintervalle mit Begründung (fhr 2026-C-1f, 2020-C-1d, Niveau II bis III).
 128  - Graph und Ableitungsgraph (Einheit 4): „steigt, fällt, waagerecht“ und die Vorzeichenleiste (Vorstufe, Grundvorstellung) → zu einem gezeichneten Graphen von f die Nullstellen von f' markieren und das Vorzeichen von f' je Abschnitt eintragen (Grundfall, viermal) → Werte für einen Ableitungswert und eine Wendestelle am Graphen ablesen (abi 2022-bebb-gk-A1.2a) → einen Punkt mit vorgegebenen Bedingungen an f' und f'' auf dem Graphen markieren und begründen (abi 2022-bebb-gk-A1.2b) → aus einer ausgefüllten Übersichtstabelle (Nullstellen, Extrempunkte, Monotonie, Verhalten im Unendlichen, Schnittpunkt mit der y-Achse) den Graphen skizzieren, nichts rechnen (GK) → Graphen von f und f' aus berechneten Punkten in ein vorgegebenes Koordinatensystem einzeichnen, Extremstellen von f als Nullstellen von f' (abi 2020-be-gk-B2.2d, 2019-be-gk-B2.1f) → einen möglichen Graphen zu vorgegebenen Nullstellen, Extrem- und Wendestellen skizzieren, die Wendestelle als Extremstelle von f' lesen (LK; abi 2023-bebb-lk-A1.1b, iqb 2023MerhoehtAAnalysis11-b) → den Mindestgrad aus den Eigenschaften der Ableitung begründen (LK; abi 2023-bebb-lk-A1.1a, iqb 2023MerhoehtAAnalysis11-a) → die Lage zweier Graphen aus dem Graphen ihrer Differenz beschreiben (iqb 2018MgrundlegendBAnalysisWTR-1f) → Prüfungshöhe: Aussagen über die Normale an der Wendestelle und den Wertebereich der Ableitung beurteilen (abi 2024-bebb-gk-B2.1d, Niveau III) und eine Aussage über gemeinsame Punkte von Tangente und Graph an der eigenen Skizze beurteilen (abi 2023-bebb-gk-B2.2e, Niveau III); fhr-Zielmarke: keine – der RLP FOS führt nur „grafische Darstellung“ und „graphisches Differenzieren“, die Rohdatei kein fhr-Original in dieser Einheit.
 129  - Sachzusammenhang (Einheit 5): „was heißt das mathematisch“ – Sachfragen übersetzen und ankreuzen: stärkste Zunahme oder Abnahme als Wendepunkt bzw. Extremum der Ableitung, größter oder kleinster Wert als globales Maximum oder Minimum einschließlich Rand, ändert sich gerade nicht als Ableitung null; nichts rechnen (Vorstufe) → den Verlauf eines abgebildeten Graphen abschnittweise in Worten des Sachzusammenhangs beschreiben: steigt, fällt, flach, Sättigung (Grundfall, viermal; iqb 2018MgrundlegendBAnalysisWTR-2b, 2025MgrundlegendBAnalysisWTR2-2a) → den Wendepunkt am Graphen als Zeitpunkt stärkster Zunahme oder Abnahme deuten (iqb 2022MgrundlegendBAnalysisWTR2-2c, 2024MgrundlegendBAnalysisWTR1-2b) → den Funktionswert an der Stelle stärkster Abnahme ablesen (iqb 2023MgrundlegendBAnalysisWTR1-2b) → den größten Wert berechnen: f' null, Funktionswert, Antwort mit Einheit (fhr 2023-C-2a, 2024-C-2d) → das Maximum an vorgegebener Stelle nachweisen und den Wert berechnen (abi 2022-bebb-gk-B2.1j) → die stärkste Abnahme rechnen: f'' null setzen, Lösung im Sachbereich wählen, Wert von f und f' mit Einheit (abi 2019-be-gk-B2.2c, iqb 2019MgrundlegendBAnalysisWTR1-1c) → Randwerte und Bereichsgrenzen beachten, Lösungen außerhalb verwerfen (fhr 2026-B-2c, iqb 2018MgrundlegendBAnalysisWTR-2f) → Maßstab: Koordinaten in Längen umrechnen, Breite aus den Nullstellen, Höhe aus dem Hochpunkt (fhr 2020-A-2b, abi 2026-bb-gk-B2.1f, iqb 2026MgrundlegendBAnalysisMMS2-1e) → Prüfungshöhe: einen fremden Lösungsweg (Differenzfunktion, Extremwertschritte) im Sachzusammenhang deuten oder dazu die Aufgabenstellung formulieren (iqb 2024MgrundlegendBAnalysisWTR2-2c, 2023MgrundlegendBAnalysisWTR2-2b, Niveau II) und den Ableitungswert an der Wendestelle als stärksten Anstieg einer Rate deuten (iqb 2025MerhoehtBAnalysisMMS1-2b); fhr-Zielmarke: steilster Anstieg eines Dachs über den Wendepunkt (fhr 2021-B-2d, Niveau III).
@@ -151,9 +151,9 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 136  Zielmarke: Einheit 1 – fhr: Monotonieintervalle als Anhang der Extrempunktaufgabe (2021-A-1c, 2024-C-1d, 2025-C-1d, Niveau II); abi/iqb: Monotonienachweis am Term in Teil A (2024-bebb-gk-A1.7a, 2026MgrundlegendBAnalysisWTR1-1a, Niveau I) und Monotonieintervalle einer Differenzfunktion (2021-be-gk-B2.1g, Niveau II). Einheit 2 – fhr: Art und Koordinaten aller Extrempunkte einer Funktion vierten oder fünften Grades mit Sattelpunkt (2025-C-1d, 2026-C-1e, 2023-C-1c, Niveau II bis III); abi: Lage und Art aller lokalen Extrempunkte eines e-Funktions-Produkts (2021-be-gk-B2.2d) und Hochpunkt mit Produktregel (2019-be-gk-B2.2b, 2025-bebb-gk-B2.2b); iqb: Extrempunkt an vorgegebener Stelle in Teil A (2020MgrundlegendAAnalysis11-a, 2026MgrundlegendAAnalysis11-a, Niveau I) und die Extremstelle zwischen zwei Stellen gleichen Werts ohne Rechnung (2018MerhoehtBAnalysisCAS2-1d, Niveau III). Einheit 3 – fhr: Wendepunkte mit f''' und Krümmungsintervalle (2026-C-1f, 2020-C-1d, 2024-B-1e); abi: Wendepunkte eines e-Funktions-Produkts (2023-bebb-gk-B2.1f) und Existenzbegründung mit Skizze (2021-be-gk-B2.2e, Niveau III); iqb: Wendepunkt an vorgegebener Stelle mit Wendetangente (2018MgrundlegendBAnalysisWTR-1a, 2018MerhoehtBAnalysisWTR1-1b). Einheit 4 – fhr: kein Original; abi: Skizze und Aussage beurteilen (2023-bebb-gk-B2.2e), Skizze aus vorgegebenen Stellen nur im LK (2023-bebb-lk-A1.1b), Graphen von f und f' einzeichnen (2020-be-gk-B2.2d); iqb: Skizze und Mindestgrad in Teil A, nur erhöht (2023MerhoehtAAnalysis11-a/b). Einheit 5 – fhr: maximale Höhe und steilster Anstieg (2023-C-2a, 2024-C-2d, 2021-B-2d); abi: stärkste Abnahme über f'' (2018-be-gk-B1.1d, 2019-be-gk-B2.2c); iqb: Wendepunkt deuten (2022MgrundlegendBAnalysisWTR2-2c, 2023MgrundlegendBAnalysisWTR2-2a) und Lösungsweg im Sachzusammenhang deuten (2024MgrundlegendBAnalysisWTR2-2c).
 ````
 
-## 2 Originale (84)
+## 2 Originale (133)
 
-Kennungen aus „Prüfungsform“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
+Kennungen aus „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
 
 ### 2021-B-1c (fhr-katalog.csv)
 
@@ -827,9 +827,401 @@ jahr 2024 · papier 2024-iqb-ga · punkte 4 · format Kurzantwort · antwort Tex
 - verfahren: d als Vorsprung, Extremwertschritte als Maximum deuten
 - fehlerquelle: 0,37 als Vorsprung in Metern deuten
 
+### 2022-bebb-gk-A1.2a (abi-katalog.csv)
+
+jahr 2022 · papier 2022-bebb-gk · punkte 2 · format Kurzantwort · antwort Zahl
+- gegeben: Abbildung: Graph einer Funktion f (Tiefpunkt bei etwa 0,2, Wendestellen zwischen den Extrempunkten)
+- gesucht: je ein Wert a und b mit f'(0,2) = a und f''(b) = 0
+- verfahren: a = 0 am Tiefpunkt; b als x-Koordinate eines Wendepunkts am Graphen
+- fehlerquelle: f'(0,2) als Funktionswert −0,11 ablesen
+
+### 2023-bebb-gk-B2.1e (abi-katalog.csv)
+
+jahr 2023 · papier 2023-bebb-gk · punkte 2 · format Kurzantwort · antwort Text
+- gegeben: Die in IR definierte Funktion f mit f(x) = 0,5 · (x² − 4) · e^x, ihr Graph G; die erste Ableitung ist f'(x) = (0,5x² + x − 2) · e^x. Tiefpunkt bei x = −1 + √5 (aus c und d), kein weiterer Extrempunkt für x ≥ 0.
+- gesucht: Monotonieverhalten von f für x ≥ 0
+- verfahren: Der einzige Extrempunkt für x ≥ 0 ist der Tiefpunkt; links davon fällt f, rechts steigt f.
+- fehlerquelle: die Grenze bei 0 statt bei der Tiefstelle setzen
+
+### 2018-bb-ea-B2.2c (abi-katalog.csv)
+
+jahr 2018 · papier 2018-bb-ea · punkte 2 · format Begründung · antwort Text
+- gegeben: Funktionenschar f_a mit f_a(x) = (1/a)·x³ + 3x² + 5x + 2a; x ∈ IR, a ∈ IR, a ≠ 0, und die Funktion h mit h(x) = −(1/2)·x^(−3); x ∈ IR, x ≠ 0. Die zugehörigen Graphen sind G_a und K.
+- gesucht: Begründung, dass der Graph K keine lokalen Extrempunkte besitzt
+- verfahren: h′(x) = (3/2)·x^(−4) bilden. Wegen des geraden Exponenten ist x^(−4) für jedes x ≠ 0 positiv, also h′(x) > 0. Die notwendige Bedingung h′(x) = 0 ist damit nirgends erfüllt.
+- fehlerquelle: aus h′(x) ≠ 0 auf globale Monotonie über die Definitionslücke hinweg schließen
+
+### 2019MerhoehtAAnalysis2-a (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ea · punkte 2 · format Begründung · antwort Text
+- gegeben: Graph Gg einer differenzierbaren Funktion g; f in IR mit f'(x) = e^{g(x)}
+- gesucht: ob der Graph von f einen Extrempunkt hat
+- verfahren: Vorzeichen von f' aus der e-Funktion ablesen
+- fehlerquelle: Hochpunkt von g als Extrempunkt von f deuten
+
+### 2023MgrundlegendBAnalysisWTR2-2d (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ga · punkte 4 · format Begründung · antwort Text
+- gegeben: g und h wie oben; Aussage: Im Modell mit h ist der Zeitraum steigender Tagesdurchschnittstemperatur etwa einen Monat kürzer als mit g
+- gesucht: Beurteilung der Aussage
+- verfahren: Monotoniebereiche beider Funktionen bestimmen (h: Minimum bei 3, Maximum bei 9; g: Extremstellen 6 ± √12) und Längen vergleichen
+- fehlerquelle: Extremstellen von h ohne Beachtung der Spiegelung
+
+### 2023-A-1b (fhr-katalog.csv)
+
+jahr 2023 · papier A · punkte 8 · format Rechnung · antwort Zahl
+- gegeben: f(x) = −(1/8)x^4 + 4x^2 + 8; x aus IR
+- gesucht: Art und Koordinaten aller Extrempunkte von Gf
+- verfahren: erste und zweite Ableitung bilden, f'(x) = 0 durch Ausklammern von x lösen, die drei Stellen in f'' einsetzen und die Art bestimmen, dann die Funktionswerte berechnen
+- fehlerquelle: beim Ausklammern die Lösung x = 0 verlieren und nur die beiden Hochpunkte angeben
+
+### 2022-C-1c (fhr-katalog.csv)
+
+jahr 2022 · papier C · punkte 8 · format Rechnung · antwort Zahl
+- gegeben: f(x) = −0,25x^4 + 1,75x^2 + 2,5; x aus IR
+- gesucht: Koordinaten und Art aller Extrempunkte von Gf
+- verfahren: erste und zweite Ableitung bilden, die erste Ableitung durch Ausklammern von x null setzen, die drei Stellen in die zweite Ableitung einsetzen und über das Vorzeichen die Art bestimmen, dann die Funktionswerte berechnen
+- fehlerquelle: beim Ausklammern die Lösung x = 0 verlieren und nur die beiden Hochpunkte angeben
+
+### 2024-bebb-gk-B2.2c (abi-katalog.csv)
+
+jahr 2024 · papier 2024-bebb-gk · punkte 6 · format Rechnung · antwort Zahl
+- gegeben: f(x) = 0,5x⁴ − 4x² + 3,5, x ∈ IR, Graph G_f
+- gesucht: Lage und Art der Extrempunkte von G_f
+- verfahren: f' faktorisieren, f'' an den Stellen auswerten, Funktionswerte
+- fehlerquelle: x = 0 als Nullstelle von f' übersehen
+
+### 2018-be-gk-B1.2d (abi-katalog.csv)
+
+jahr 2018 · papier 2018-be-gk · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: Das Höhenprofil eines Wanderwegs wird durch f mit f(x) = (x + 1) · e^(−0,5x) für 0 ≤ x ≤ 6 beschrieben, 1 LE = 1 km; f'(x) = (0,5 − 0,5x) · e^(−0,5x). Die hinreichende Bedingung muss nicht untersucht werden.
+- gesucht: Koordinaten des höchsten Punktes des Höhenprofils
+- verfahren: f'(x) = 0 setzen; da e^(−0,5x) stets positiv ist, bleibt 0,5 − 0,5x = 0, also x = 1. Den Funktionswert f(1) = 2 · e^(−0,5) berechnen.
+- fehlerquelle: den Exponentialfaktor als möglichen Nullfaktor behandeln und eine zweite Lösung angeben
+
+### 2020MgrundlegendBAnalysisWTR2-1a (iqb-katalog.csv)
+
+jahr 2020 · papier 2020-iqb-ga · punkte 4 · format Kurzantwort|Rechnung · antwort Zahl
+- gegeben: f(x) = 1/10 · x · (3 − x) · eˣ, x ∈ IR; Abbildung 1 zeigt den Graphen von f; f'(x) = −1/10 · (x² − x − 3) · eˣ
+- gesucht: Nullstellen von f; Koordinaten des Hochpunkts
+- verfahren: Nullstellen am Produkt ablesen; f' = 0 lösen, Hochstelle aus der Abbildung wählen, Funktionswert berechnen
+- fehlerquelle: die negative Lösung (1 − √13)/2 als Hochstelle nehmen
+
+### 2025-bebb-lk-B2.2g (abi-katalog.csv)
+
+jahr 2025 · papier 2025-bebb-lk · punkte 7 · format Rechnung · antwort Zahl
+- gegeben: h(t) = 40t² · e^(1 − t) + 90 für 0 ≤ t ≤ 4 (Blutzuckerwert in mg/dl, t Stunden nach der Nahrungsaufnahme); Hinweis: h''(t) = (40t² − 160t + 80) · e^(1 − t) ohne Nachweis verwendbar
+- gesucht: maximaler Blutzuckerwert des Patienten
+- verfahren: h' aufstellen und null setzen, Art über h'', Wert berechnen und mit den Randwerten vergleichen
+- fehlerquelle: innere Ableitung −1 bei e^(1 − t) vergessen; Randwerte nicht prüfen
+
+### 2022-bebb-lk-B2.1h (abi-katalog.csv)
+
+jahr 2022 · papier 2022-bebb-lk · punkte 4 · format Rechnung · antwort Term
+- gegeben: f_6(x) = 1/8 x⁴ − 1/2 x³ + 2x; f_6'(x) = 1/2 (x − 2)² · (x + 1) aus g
+- gesucht: Wertebereich von f_6
+- verfahren: einzige Extremstelle −1 (Tiefpunkt), Funktionswert, Grad 4 mit positivem Leitkoeffizienten
+- fehlerquelle: Stelle 2 als Extremstelle mitnehmen; Wertebereich nach oben beschränken
+
+### 2021-be-gk-B2.1c (abi-katalog.csv)
+
+jahr 2021 · papier 2021-be-gk · punkte 4 · format Rechnung · antwort Text
+- gegeben: f(x) = 1/12 x³ − x² + 3x und p(x) = −x² + 3,8x − 1,36, beide in IR; Graphen G_f und G_p (Parabel)
+- gesucht: Nachweis, dass H(2 | 8/3) Hochpunkt von G_f ist
+- verfahren: f'(2) = 0, f''(2) < 0, f(2) = 8/3
+- fehlerquelle: den Funktionswert nicht prüfen
+
+### 2025MerhoehtAAnalysis12-a (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ea · punkte 2 · format Rechnung · antwort Text
+- gegeben: f(x) = 1/4 x³ − 3x, definiert in IR; es gilt f''(2) ≠ 0
+- gesucht: Nachweis, dass 2 eine Extremstelle von f ist
+- verfahren: f' bilden und f'(2) = 0 zeigen; zusammen mit f''(2) ≠ 0 folgt die Extremstelle
+- fehlerquelle: f(2) = −4 berechnen und als Nachweis ansehen
+
+### 2022-bebb-lk-B2.1g (abi-katalog.csv)
+
+jahr 2022 · papier 2022-bebb-lk · punkte 5 · format Rechnung|Begründung · antwort Text
+- gegeben: f_6'(x) = 1/2 (x − 2)² · (x + 1)
+- gesucht: Nachweis f_6'(2) = 0; Begründung ohne Rechnung, dass f_6 bei 2 keine Extremstelle hat
+- verfahren: Faktor (x − 2)² wird null; Vorzeichen von f_6' um 2 bleibt positiv
+- fehlerquelle: mit f_6''(2) = 0 argumentieren und daraus nichts schließen
+
+### 2021-B-2c (fhr-katalog.csv)
+
+jahr 2021 · papier B · punkte 8 · format Rechnung · antwort Text|Zahl
+- gegeben: beim Spielhaus Pauli wird die rechte Dachschräge im ersten Quadranten durch einen Teil des Graphen Gf ersetzt; dieser Teil startet im Extrempunkt A(0; 1) und endet im Sattelpunkt B(1; 0); die linke Dachseite entsteht durch Spiegelung; f(x) = −3x^4 + 8x^3 − 6x^2 + 1
+- gesucht: rechnerischer Nachweis, dass die Vorgaben der Punkte A und B durch f erfüllt werden
+- verfahren: die ersten drei Ableitungen bilden, für A den Funktionswert und die erste Ableitung prüfen und über das Vorzeichen der zweiten Ableitung den Extrempunkt bestätigen, für B zusätzlich zeigen, dass die zweite Ableitung null und die dritte ungleich null ist
+- fehlerquelle: beim Sattelpunkt nur die erste Ableitung prüfen und die dritte Ableitung als Abgrenzung zum Extrempunkt weglassen
+
+### 2022-bebb-lk-B2.1b (abi-katalog.csv)
+
+jahr 2022 · papier 2022-bebb-lk · punkte 4 · format Rechnung|Begründung · antwort Text|Zahl
+- gegeben: f_0(x) = 1/8 x⁴ + 2x, f_0'(x) = 1/2 x³ + 2
+- gesucht: Nachweis, dass G_0 genau einen lokalen Tiefpunkt besitzt; seine Koordinaten
+- verfahren: f_0' = 0 hat genau eine Lösung; Vorzeichenwechsel oder f_0'' > 0; Funktionswert
+- fehlerquelle: x = −∛4 als −4^(1/3) auf dem Rechner ohne Vorzeichen; „genau einen“ nicht begründen
+
+### 2019-be-gk-A1.1b (abi-katalog.csv)
+
+jahr 2019 · papier 2019-be-gk · punkte 3 · format Kurzantwort|Begründung · antwort Zahl|Text
+- gegeben: f(x) = −5x⁴ − 3x² + x, definiert in IR; der Graph von f hat ein Maximum an der Stelle x_Max; Ableitung f'(x) = −20x³ − 6x + 1 aus a
+- gesucht: Intervall der Länge 1, in dem x_Max liegen muss, mit Begründung
+- verfahren: Werte der Ableitung an ganzzahligen Stellen prüfen: f'(0) = 1 > 0 und f'(1) = −25 < 0, also Vorzeichenwechsel von + nach − in [0; 1] und dort eine Maximumstelle; die Nullstelle wird nicht berechnet
+- fehlerquelle: die Nullstelle von f' exakt berechnen wollen (kubische Gleichung) statt das Intervall zu begründen
+
+### 2023-bebb-lk-A1.2b (abi-katalog.csv)
+
+jahr 2023 · papier 2023-bebb-lk · punkte 3 · format Begründung · antwort Text
+- gegeben: f(x) = ln(−4x² + 4) auf ]−1; 1[
+- gesucht: Begründung, dass bei x_E = 0 ein Extremum liegt
+- verfahren: f' = 0 bei 0 mit Vorzeichenwechsel, oder Maximum des Arguments mit monotonem ln
+- fehlerquelle: nur f'(0) = 0 zeigen ohne hinreichende Bedingung
+
+### 2020-C-1c (fhr-katalog.csv)
+
+jahr 2020 · papier C · punkte 9 · format Begründung|Rechnung · antwort Text|Zahl
+- gegeben: f(x) = x^4 − (82/9)x^2 + 1; x aus IR; von einer beliebigen ganzrationalen Funktion vierten Grades sind zwei Stellen x1 und x2 bekannt, an denen der Anstieg des Graphen null beträgt; zu beurteilen sind die Aussagen (I) die Tangenten an diesen beiden Stellen verlaufen parallel, (II) beide Stellen müssen Extremstellen sein, (III) liegen bei x1 und x2 Hochpunkte, so muss der Graph einen weiteren Extrempunkt besitzen
+- gesucht: Begründung für jede der drei Aussagen, ob sie wahr oder falsch ist|Koordinaten aller Punkte von Gf, in denen der Anstieg null beträgt
+- verfahren: jede Aussage an der Bedingung erste Ableitung gleich null prüfen und mit Sattelstelle beziehungsweise dem notwendigen Tiefpunkt zwischen zwei Hochpunkten begründen; danach f' aufstellen, x ausklammern, die drei Stellen berechnen und die zugehörigen Funktionswerte bestimmen
+- fehlerquelle: bei Aussage II von der Bedingung erste Ableitung gleich null unbesehen auf eine Extremstelle schließen
+
+### 2019-A-1c (fhr-katalog.csv)
+
+jahr 2019 · papier A · punkte 7 · format Rechnung|Begründung · antwort Text
+- gegeben: f(x) = −(1/10)x^5 + (2/3)x^3; x aus IR; für die Stelle x1 = 0 sind drei Aussagen zu prüfen: (1) die Tangente an Gf an dieser Stelle hat den Anstieg m = 5, (2) die Stelle ist eine Wendestelle, (3) an der Stelle liegt eine Sattelstelle von f vor
+- gesucht: Prüfung jeder der drei Aussagen mit Begründung
+- verfahren: die ersten drei Ableitungen bilden und an der Stelle null auswerten; den Anstieg mit 5 vergleichen, die Wendestelle über f'' gleich null und f''' ungleich null nachweisen und die Sattelstelle zusätzlich über f' gleich null begründen
+- fehlerquelle: die Sattelstelle allein aus f''(0) = 0 folgern, ohne f'(0) = 0 zu prüfen
+
+### 2023-A-2e (fhr-katalog.csv)
+
+jahr 2023 · papier A · punkte 6 · format Rechnung · antwort Zahl
+- gegeben: f(x) = (1/2)x^3 − 2x^2 − 8x + 32; x aus IR
+- gesucht: Koordinaten aller Wendepunkte des Graphen von f
+- verfahren: erste bis dritte Ableitung bilden, f''(x) = 0 lösen, mit f'''(x) ungleich Null die Wendestelle bestätigen und den Funktionswert berechnen
+- fehlerquelle: die Wendestelle 4/3 als Ergebnis angeben und den Funktionswert nicht berechnen
+
+### 2024-C-1e (fhr-katalog.csv)
+
+jahr 2024 · papier C · punkte 3 · format Rechnung|Begründung · antwort Zahl|Text
+- gegeben: f(x) = (1/4)x^3 − (23/4)x + 7; x aus IR
+- gesucht: Nachweis, dass Gf einen Wendepunkt besitzt|Koordinaten des Wendepunkts
+- verfahren: f''(x) = 0 setzen, die Stelle in f''' einsetzen und den Funktionswert berechnen
+- fehlerquelle: den Nachweis über f''' vergessen oder die Wendestelle ohne Funktionswert angeben
+
+### 2019-C-1d (fhr-katalog.csv)
+
+jahr 2019 · papier C · punkte 5 · format Rechnung · antwort Zahl
+- gegeben: f(x) = −(1/2)x^4 + 4x^2 − 2; x aus IR
+- gesucht: Koordinaten aller Wendepunkte von Gf
+- verfahren: f'' gleich null setzen, beide Wendestellen bestimmen, mit f''' ungleich null bestätigen und die Funktionswerte berechnen
+- fehlerquelle: die Bestätigung über die dritte Ableitung weglassen
+
+### 2026-B-1e (fhr-katalog.csv)
+
+jahr 2026 · papier B · punkte 6 · format Rechnung|Kurzantwort · antwort Zahl|Text
+- gegeben: f(x) = 0,4x^4 − 3,5x^2 + 5; x aus IR
+- gesucht: Nachweis, dass Gf zwei Wendepunkte hat|vollständige Koordinaten der Wendepunkte|Krümmungsverhalten von Gf in geeigneten Intervallen
+- verfahren: f''(x) = 0 lösen, die Stellen mit f''' ungleich null bestätigen, die Funktionswerte berechnen und das Vorzeichen von f'' in den drei Intervallen deuten
+- fehlerquelle: die Krümmungsintervalle vertauschen, weil das Vorzeichen von f'' nicht geprüft wird
+
+### 2019-A-1e (fhr-katalog.csv)
+
+jahr 2019 · papier A · punkte 7 · format Rechnung|Begründung · antwort Text
+- gegeben: f(x) = −(1/10)x^5 + (2/3)x^3; x aus IR
+- gesucht: Krümmungsintervalle von Gf anhand der Wendestellen|Art der Krümmung in jedem Intervall mit Begründung
+- verfahren: f'' gleich null setzen und die drei Wendestellen bestimmen, die vier Intervalle bilden und in jedem das Vorzeichen von f'' an einer Probestelle prüfen
+- fehlerquelle: die Wendestelle x = 0 übersehen und nur zwei statt vier Intervalle bilden
+
+### 2024-B-1f (fhr-katalog.csv)
+
+jahr 2024 · papier B · punkte 2 · format Kurzantwort · antwort Text
+- gegeben: f(x) = 1/5 x^5 − 1/5 x^4 − 2x^3; x aus IR; die Wendestellen x = −1,46, x = 0 und x = 2,06 aus Teilaufgabe e
+- gesucht: alle Intervalle, in denen Gf linksgekrümmt verläuft
+- verfahren: das Vorzeichen von f'' in den Abschnitten zwischen den Wendestellen prüfen und die Intervalle mit f'' > 0 angeben
+- fehlerquelle: Links- und Rechtskrümmung verwechseln oder das unbeschränkte Intervall oberhalb von 2,06 vergessen
+
+### 2025-A-1c (fhr-katalog.csv)
+
+jahr 2025 · papier A · punkte 3 · format Kurzantwort|Zeichnen · antwort Text|Grafik
+- gegeben: Abbildung mit dem Graphen Gg einer ganzrationalen Funktion g vierten Grades; Gg hat Wendestellen bei x1 = −1 und x2 = 2
+- gesucht: Krümmungsverhalten von Gg in geeigneten Intervallen|Markierung der linksgekrümmten Bereiche in der Abbildung
+- verfahren: die beiden Wendestellen als Intervallgrenzen nehmen und je Intervall die Krümmungsrichtung aus dem Verlauf des Graphen angeben, dann die linksgekrümmten Abschnitte kennzeichnen
+- fehlerquelle: Links- und Rechtskrümmung vertauschen oder nur zwei Intervalle angeben
+
+### 2021-B-1d (fhr-katalog.csv)
+
+jahr 2021 · papier B · punkte 7 · format Rechnung · antwort Zahl|Term
+- gegeben: f(x) = 0,2x^4 − 4,45x^2 + 20; x aus IR
+- gesucht: Koordinaten der Wendepunkte von Gf|Gleichung der Wendetangente t zum Wendepunkt im ersten Quadranten
+- verfahren: die zweite Ableitung null setzen, über die dritte Ableitung den Wendepunkt nachweisen und die Funktionswerte berechnen, dann für den Wendepunkt mit positiver x-Koordinate den Anstieg bestimmen und die Tangentengleichung aufstellen
+- fehlerquelle: die Wendetangente am Wendepunkt mit negativer x-Koordinate aufstellen und den ersten Quadranten übersehen
+
+### 2023-C-1d (fhr-katalog.csv)
+
+jahr 2023 · papier C · punkte 2 · format Rechnung|Begründung · antwort Zahl|Text
+- gegeben: f(x) = x^5 − 3x^4 − 9x^3 + 27x^2; x aus IR; f''(x) = 20x^3 − 36x^2 − 54x + 54 aus Teilaufgabe b; Punkt P(2; 20)
+- gesucht: Prüfung, ob P zu Gf gehört|Prüfung, ob P ein Wendepunkt ist
+- verfahren: f(2) berechnen und mit der y-Koordinate von P vergleichen; f''(2) berechnen und mit null vergleichen
+- fehlerquelle: die erste statt der zweiten Ableitung einsetzen
+
+### 2024-bebb-gk-B2.1c (abi-katalog.csv)
+
+jahr 2024 · papier 2024-bebb-gk · punkte 4 · format Rechnung · antwort Term|Text
+- gegeben: f(x) = (x − 2) · e^(−x/2 + 3), definiert in IR, mit f'(x) = (−x/2 + 2) · e^(−x/2 + 3); Abbildung 1 zeigt G_f und G_f'; Behauptung f''(x) = (x/4 − 3/2) · e^(−x/2 + 3); G_f hat genau einen Wendepunkt
+- gesucht: Nachweis der zweiten Ableitung; Nachweis, dass (6 | 4) Wendepunkt ist
+- verfahren: f' mit Produktregel ableiten und zusammenfassen; f''(6) = 0 mit Vorzeichenwechsel, f(6) = 4
+- fehlerquelle: beim Ableiten des e-Faktors die innere Ableitung −1/2 vergessen
+
+### 2022-bebb-lk-B2.2d (abi-katalog.csv)
+
+jahr 2022 · papier 2022-bebb-lk · punkte 3 · format Rechnung|Kurzantwort · antwort Text|Zahl
+- gegeben: f(x) = x · e^(−x²/2 + 1/2), definiert in IR; f'(x) = (1 − x²) · e^(−x²/2 + 1/2); f''(x) = (x³ − 3x) · e^(−x²/2 + 1/2) (Hinweis, ohne Nachweis); Wendepunkt im I. Quadranten
+- gesucht: Nachweis, dass der Wendepunkt im I. Quadranten die Koordinaten (√3 | √3/e) hat; Koordinaten des Wendepunkts im III. Quadranten
+- verfahren: f'' = 0 lösen, hinreichende Bedingung, Funktionswert; zweiten Wendepunkt über die Punktsymmetrie
+- fehlerquelle: x = 0 als Wendepunkt im I. Quadranten nehmen; hinreichende Bedingung vergessen
+
+### 2019MerhoehtAAnalysis2-b (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ea · punkte 3 · format Begründung · antwort Text
+- gegeben: Graph Gg mit einem Hochpunkt; f'(x) = e^{g(x)}
+- gesucht: ob der Graph von f einen Wendepunkt hat
+- verfahren: f'' mit der Kettenregel bilden, Vorzeichenwechsel von g' am Graphen ablesen
+- fehlerquelle: Wendepunkt von g statt von f untersuchen
+
+### 2022-bebb-gk-A1.2b (abi-katalog.csv)
+
+jahr 2022 · papier 2022-bebb-gk · punkte 3 · format Zeichnen|Begründung · antwort Grafik|Text
+- gegeben: Abbildung: Graph von f mit Hochpunkt bei etwa 1,6 und Tiefpunkt bei etwa 2
+- gesucht: ein Punkt P auf dem Graphen mit f''(x_P) = 0 und f'(x_P) < 0, markiert, mit Begründung
+- verfahren: Wendepunkt im fallenden Abschnitt zwischen Hoch- und Tiefpunkt wählen; dort wechselt die Krümmung und der Graph fällt
+- fehlerquelle: einen Wendepunkt im steigenden Bereich wählen
+
+### 2019-be-gk-B2.1f (abi-katalog.csv)
+
+jahr 2019 · papier 2019-be-gk · punkte 4 · format Tabelle|Zeichnen · antwort Tabelle|Grafik
+- gegeben: g'(t) = −6t² + 60t (aus c); Anlage mit dem Graphen von h' und einer teilweise gefüllten Wertetabelle
+- gesucht: Wertetabelle ergänzen (g'(0), g'(4), g'(6), g'(10)); Graph von g' für 0 ≤ t ≤ 10 in die Anlage einzeichnen
+- verfahren: Werte einsetzen und die Parabel durch die sieben Punkte zeichnen
+- fehlerquelle: Werte von g statt g' berechnen
+
+### 2023MerhoehtAAnalysis11-b (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ea · punkte 3 · format Zeichnen · antwort Grafik
+- gegeben: Eigenschaften aus a: Nullstelle x1, f'(x2) = 0 mit f''(x2) ≠ 0, Minimum von f' bei x3; Abbildung mit x1, x2, x3
+- gesucht: Skizze eines möglichen Graphen von f in der Abbildung
+- verfahren: Graph durch (x1; 0) steigend, Hochpunkt (oder Tiefpunkt) über x2, Wendepunkt über x3 mit dort minimaler Steigung, danach wieder steigend
+- fehlerquelle: bei x3 einen Extrempunkt statt eines Wendepunkts zeichnen
+
+### 2018MgrundlegendBAnalysisWTR-1f (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ga · punkte 4 · format Begründung · antwort Text
+- gegeben: f(x) = 1/8 · (x³ − 15x² + 50x), x ∈ IR; Abbildung 1 zeigt den Graphen G_f; eine in IR definierte Funktion h; Abbildung 2 zeigt h(x) − f(x) mit Nullstellen bei 0, etwa 2,2 und 5 und Tiefpunkt bei etwa x = 1
+- gesucht: Beschreibung der gegenseitigen Lage der Graphen von f und h für x ∈ [0; 5] mit Bedeutung der Nullstellen und der Tiefpunktstelle
+- verfahren: Nullstellen der Differenz = gemeinsame Punkte; negative Differenz = f oberhalb h; Tiefpunkt = größter Abstand der Punkte gleicher x-Koordinate
+- fehlerquelle: das Vorzeichen von h − f als Lage von h unter f statt über f lesen
+
+### 2018MgrundlegendBAnalysisWTR-2b (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ga · punkte 2 · format Kurzantwort · antwort Text
+- gegeben: Kostenfunktion K(x) = x³ − 12x² + 50x + 20, 0 ≤ x ≤ 9, K(x) in 1000 Euro für die Produktion von x Kubikmetern einer Flüssigkeit; Abbildung 3 zeigt den Graphen von K
+- gesucht: Monotonieverhalten von K mit Deutung im Sachzusammenhang
+- verfahren: Am Graphen ablesen
+- fehlerquelle: den flachen Bereich um x = 4 als Abnahme deuten
+
+### 2025MgrundlegendBAnalysisWTR2-2a (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ga · punkte 2 · format Kurzantwort · antwort Text
+- gegeben: a(x) Anzahl der seit 12:00 Uhr abgegebenen Likes, x Stunden seit 12:00 Uhr; Graph in Abbildung 2
+- gesucht: Verlauf des Graphen im Sachzusammenhang
+- verfahren: Graphen abschnittweise beschreiben
+- fehlerquelle: Abnahme der Likes behaupten (Graph fällt nirgends)
+
+### 2024MgrundlegendBAnalysisWTR1-2b (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ga · punkte 2 · format Kurzantwort · antwort Text
+- gegeben: Graph von p hat für t ≥ 10 einen Wendepunkt
+- gesucht: Bedeutung des Wendepunkts für die Phosphorkonzentration
+- verfahren: Wendepunkt als stärkste Abnahme deuten
+- fehlerquelle: Wendepunkt als Beginn der Abnahme deuten
+
+### 2023MgrundlegendBAnalysisWTR1-2b (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ga · punkte 3 · format Kurzantwort · antwort Zahl
+- gegeben: Graph von w in Abbildung 2; erste elf Sekunden
+- gesucht: momentane Durchflussrate zum Zeitpunkt der stärksten Abnahme
+- verfahren: Wendepunkt im fallenden Bereich am Graphen aufsuchen und y-Koordinate ablesen
+- fehlerquelle: Wendepunkt im steigenden Bereich oder Tiefpunkt gewählt
+
+### 2022-bebb-gk-B2.1j (abi-katalog.csv)
+
+jahr 2022 · papier 2022-bebb-gk · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: Tauchroboter, vertikale Bewegung für 0 ≤ t ≤ 30 mit h(t) = 9/40 t³ − 27/2 t² + 405/2 t, t Zeit in Minuten, h(t) Abstand von der Wasseroberfläche in Metern; Abbildung des Graphen
+- gesucht: Nachweis, dass der Roboter nach 10 Minuten den größten Abstand hat und dieser 900 m beträgt
+- verfahren: h'(10) = 0, Maximum über h'' oder die Abbildung, h(10)
+- fehlerquelle: nur h(10) = 900 zeigen, ohne das Maximum zu begründen
+
+### 2019MgrundlegendBAnalysisWTR1-1c (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ga · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: k(x) = 1/40 · (x³ − 30x² + 288x − 815), in IR definiert; Abbildung 1 zeigt den Graphen; Laktattest: für 8,5 ≤ x ≤ 17,5 beschreibt k die Laktatkonzentration in mmol/l in Abhängigkeit von der Geschwindigkeit x in km/h
+- gesucht: Geschwindigkeit, bei der die Laktatkonzentration im Modell am stärksten abnimmt
+- verfahren: k'' = 0 lösen und mit dem Graphen als Stelle stärkster Abnahme bestätigen
+- fehlerquelle: Nullstelle von k' statt von k'' suchen
+
+### 2026-B-2c (fhr-katalog.csv)
+
+jahr 2026 · papier B · punkte 5 · format Rechnung · antwort Zahl
+- gegeben: f(x) = 0,05x^3 − 1,2x; Gf beschreibt die obere Begrenzung der Seitenwand im zweiten Quadranten; eine Einheit im Koordinatensystem entspricht 0,5 m in der Wirklichkeit
+- gesucht: Koordinaten des Hochpunktes von Gf|maximale Höhe der Seitenwand in m
+- verfahren: f'(x) = 0 lösen, die positive Lösung nach der Aufgabenstellung verwerfen, den Funktionswert berechnen und die Höhe mit 0,5 m je Längeneinheit umrechnen
+- fehlerquelle: die Lösung +2,83 nicht verwerfen und den Punkt im vierten Quadranten angeben
+
+### 2018MgrundlegendBAnalysisWTR-2f (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ga · punkte 5 · format Rechnung · antwort Zahl
+- gegeben: Kostenfunktion K(x) = x³ − 12x² + 50x + 20, 0 ≤ x ≤ 9, K(x) in 1000 Euro für die Produktion von x Kubikmetern einer Flüssigkeit; Abbildung 3 zeigt den Graphen von K; E(x) = 23x, G = E − K, Gewinnbereich 4 < x < x_S ≈ 8,6
+- gesucht: verkaufte Menge mit dem größten Gewinn
+- verfahren: G aufstellen, G' = 0 lösen, die Lösung im Gewinnbereich nehmen
+- fehlerquelle: die Lösung 4 − √7 nicht ausschließen; Art des Extremums nicht prüfen
+
+### 2020-A-2b (fhr-katalog.csv)
+
+jahr 2020 · papier A · punkte 7 · format Rechnung · antwort Zahl
+- gegeben: f(x) = −0,2x^2 + 8,2 und g(x) = 0,01x^4 − 0,2x^2 + 5,64; x aus IR; die blaue Glasscheibe liegt zwischen Gf und Gg im Bereich −4 <= x <= 4; eine Längeneinheit entspricht 25 cm
+- gesucht: Höhenunterschied zwischen dem höchsten und dem tiefsten Punkt der blauen Glasscheibe in m
+- verfahren: den höchsten Punkt als Scheitelpunkt von Gf mit dem Wert 8,2 angeben, den tiefsten über g' gleich null berechnen und die passende Stelle auswählen, die Differenz der beiden Werte bilden und über den Maßstab in Meter umrechnen
+- fehlerquelle: die Stelle x = 0 als Tiefpunkt nehmen, obwohl dort ein lokales Maximum von Gg liegt
+
+### 2026MgrundlegendBAnalysisMMS2-1e (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ga-mms · punkte 3 · format Rechnung · antwort Text
+- gegeben: Dachrinne 3 m lang, Blech 0,7 mm; Profillinie der Innenseite für −2 ≤ x ≤ 2 durch G, 1 LE = 5 cm; Karton innen 21 cm × 9,5 cm
+- gesucht: ob der Karton als Verpackung geeignet ist
+- verfahren: Breite und Tiefe der Rinne in cm berechnen und mit den Kartonmaßen vergleichen
+- fehlerquelle: Maßstab vergessen oder Tiefe an der Stelle 0 statt am Tiefpunkt
+
+### 2023MgrundlegendBAnalysisWTR2-2b (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ga · punkte 4 · format Kurzantwort|Begründung · antwort Text
+- gegeben: Rechnungen: g'(x) = 0 ⇔ x = 6 − √12 ∨ x = 6 + √12; g(6 + √12) − g(6 − √12) ≈ 6,2; Abbildung
+- gesucht: passende Aufgabenstellung; Erläuterung des Lösungswegs
+- verfahren: Erste Zeile als Extremstellen, zweite als Differenz der Extremwerte erkennen
+- fehlerquelle: Differenz der Extremstellen statt der Funktionswerte
+
+### 2025MerhoehtBAnalysisMMS1-2b (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ea-mms · punkte 3 · format Begründung · antwort Text
+- gegeben: Regenwasser-Auffangbecken: momentane Zuflussrate r(x) = eˣ · f_(2,5)(x) für 0 ≤ x ≤ 5 (f_(2,5) aus der Schar mit k = 2,5), x Zeit in Stunden seit Beginn des Zuflusses, r(x) in m³/h; auf [0; 5] hat r genau zwei Wendestellen x₀ und x₁ mit r'(x₀) ≈ 100,5 und r'(x₁) ≈ −240,2; r'(0) = 0 und r'(5) = 0
+- gesucht: Bedeutung des Wertes r'(x₀) im Sachzusammenhang, wie sie aus diesen Angaben folgt
+- verfahren: r'(x₀) als Maximum von r' erkennen und als stärksten Anstieg der Zuflussrate deuten
+- fehlerquelle: r'(x₀) als Zuflussrate statt als Änderung der Zuflussrate deuten
+
 Nicht in den Prüfungsdateien gefunden: 2017-be-gk
 
-Nur außerhalb von „Prüfungsform“ genannt, nicht aufgenommen: 2023-C-1d, 2023MerhoehtAAnalysis11-b, 2021-be-gk-A1.3a, 2024-bebb-gk-B2.1b, 2023-bebb-lk-A1.2b, 2020MgrundlegendBAnalysisWTR1-1b, 2022MgrundlegendBAnalysisWTR2-1a, 2022MgrundlegendBAnalysisWTR2-2a, 2021-be-gk-B2.1d, 2022-bebb-lk-B2.2d, 2019-C-1d, 2024-C-1e, 2025MerhoehtAAnalysis12-a, 2023-A-1b, 2022-C-1c, 2019-C-1c, 2024-B-2b, 2023-bebb-gk-A1.3a, 2024-bebb-gk-B2.2c, 2022-bebb-gk-B2.2b, 2026-B-1d, 2022-B-1c, 2022-B-1d, 2025-A-1c, 2024-B-1f, 2022-C-1d, 2026-B-1e, 2025-A-1e, 2020-A-1c, 2026-bb-gk-B2.1c, 2019-A-1c, 2021-B-2c, 2020-C-1c, 2019-A-1d, 2022-bebb-lk-B2.1g, 2022-bebb-lk-B2.1h, 2024MgrundlegendBAnalysisWTR2-1a, 2021MgrundlegendBAnalysisWTR-1a, 2023-A-2e, 2023-bebb-gk-B2.2c, 2023MgrundlegendBAnalysisWTR2-2b, 2018-be-gk-B1.2d, 2024-bebb-gk-B2.1c, 2025-bebb-lk-B2.2g, 2021MgrundlegendAAnalysis2-a, 2025MerhoehtBAnalysisWTR2-1a, 2025MgrundlegendBAnalysisWTR2-1b, 2022-bebb-gk-B2.1l, 2022MerhoehtBAnalysisWTR1-1b, 2019MgrundlegendBAnalysisWTR1-1c, 2024MgrundlegendBAnalysisWTR1-2b, 2023MgrundlegendBAnalysisWTR1-2b, 2025MerhoehtBAnalysisMMS1-2b, 2026-B-2c, 2019-C-2b, 2018MgrundlegendBAnalysisWTR-2f, 2018MerhoehtBAnalysisWTR1-2e, 2020MgrundlegendBAnalysisWTR2-1a, 2024MgrundlegendBAnalysisWTR1-1b, 2019-be-gk-B2.1f, 2020-be-gk-B2.1e, 2022-bebb-gk-A1.2a, 2023-bebb-gk-B2.1d, 2019MerhoehtAAnalysis2-a, 2019MerhoehtAAnalysis2-b, 2018MgrundlegendBAnalysisWTR-2b, 2018MerhoehtBAnalysisWTR1-2b, 2025MgrundlegendBAnalysisWTR2-2a, 2025-bebb-gk-B2.2e, 2026-bb-ea-B2.1c, 2023-bebb-gk-B2.1k, 2024-bebb-gk-B2.1h, 2026MgrundlegendBAnalysisMMS2-1e, 2020-A-2b, 2019-A-1e, 2025MgrundlegendBAnalysisWTR1-1a, 2023-bebb-gk-B2.1e, 2022-bebb-lk-B2.1b, 2018-bb-ea-B2.2c, 2019-be-gk-A1.1b, 2020MgrundlegendAAnalysis11-b, 2023MgrundlegendBAnalysisWTR2-2d, 2021-be-gk-B2.1c, 2021-B-1d, 2022-bebb-gk-A1.2b, 2018MgrundlegendBAnalysisWTR-1f, 2022-bebb-gk-B2.1j, 2022MerhoehtBAnalysisWTR3-1c, 2018MerhoehtBAnalysisWTR1-1h, 2023-bebb-gk-B2.2h
+Nur außerhalb von „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ genannt, nicht aufgenommen: 2021-be-gk-A1.3a, 2024-bebb-gk-B2.1b, 2020MgrundlegendBAnalysisWTR1-1b, 2022MgrundlegendBAnalysisWTR2-1a, 2022MgrundlegendBAnalysisWTR2-2a, 2021-be-gk-B2.1d, 2019-C-1c, 2024-B-2b, 2023-bebb-gk-A1.3a, 2022-bebb-gk-B2.2b, 2026-B-1d, 2022-B-1c, 2022-B-1d, 2022-C-1d, 2025-A-1e, 2020-A-1c, 2026-bb-gk-B2.1c, 2019-A-1d, 2024MgrundlegendBAnalysisWTR2-1a, 2021MgrundlegendBAnalysisWTR-1a, 2023-bebb-gk-B2.2c, 2021MgrundlegendAAnalysis2-a, 2025MerhoehtBAnalysisWTR2-1a, 2025MgrundlegendBAnalysisWTR2-1b, 2022-bebb-gk-B2.1l, 2022MerhoehtBAnalysisWTR1-1b, 2019-C-2b, 2018MerhoehtBAnalysisWTR1-2e, 2024MgrundlegendBAnalysisWTR1-1b, 2020-be-gk-B2.1e, 2023-bebb-gk-B2.1d, 2018MerhoehtBAnalysisWTR1-2b, 2025-bebb-gk-B2.2e, 2026-bb-ea-B2.1c, 2023-bebb-gk-B2.1k, 2024-bebb-gk-B2.1h, 2025MgrundlegendBAnalysisWTR1-1a, 2020MgrundlegendAAnalysis11-b, 2022MerhoehtBAnalysisWTR3-1c, 2018MerhoehtBAnalysisWTR1-1h, 2023-bebb-gk-B2.2h
 
 ## 3 Maßstab (unterrichtsblatt.md, wortgleich)
 

@@ -1,9 +1,9 @@
 # Mappe: prozentrechnung
 
 Eintrag: hz-0801/mathe-nachhilfe, katalog/prozentrechnung.md
-Katalog-Commit: d78032a884b6073d9e4c92cc8407e909e3c4ea2a (2026-09-29T07:07:16Z, „Katalog 29.09. aus dem Chat: terme E4 Vorstufe Zerlegen, prozentrechnung E4 Sprosse „nur ein Prozent bestimmen“, bruchrechnung E3 Sprosse Stammbruch von Bruch (Vorrat) und Kastenzeile a = a/1; K5-Beleg in faellig.md“; ermittelt über GitHub-API)
+Katalog-Commit: db8d2a3f9f6ed0e6490a4087e3eaff2cbc8a9b19 (2026-09-30T08:03:34Z, „Katalog: Vorschläge vom 30.09. eingesetzt (24 Zeilen in 17 Einträgen, Marke „kein P10-Stoff“ in _vorlage.md)“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-29 10:18 UTC
+Datum: 2026-09-30 08:10 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -39,7 +39,7 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
  24  Einheit 2: Teil von 100 · Teil von 50, 25, 20, 10 (erweitern) · beliebiges Ganzes: W : G mit Taschenrechner, runden · Anteil aus Sachtext (Ganzes zuerst finden) · Rabatt in Prozent aus altem und neuem Preis (erst Rabatt in Euro) · Fehler finden (G und W vertauscht; Teil zu Rest statt Teil zu Ganzem) · Begründen (warum durch das Ganze teilen) · Umkehrung: zu einem Prozentsatz ein Zahlenpaar angeben.
  25  Einheit 3: 50 %, 25 %, 10 % vom Ganzen · 10 %-Schritte (30 %, 15 %, 5 %) · 1 %-Weg (G : 100, mal p) · Dezimalzahl mal Grundwert (0,3 · G) · Grundwert mit Komma (3,50 €) · Ersparnis und neuer Preis unterscheiden · Prozentsatz über 100 % [OS 7–8, GYM 7] · Mehrwertsteuer in Euro · Fehler finden (30 % als 0,03; Restpreis statt Ersparnis) · Begründen (warum erst 1 %).
  26  Einheit 4: glatte Sätze (50 %, 25 %, 20 %, 10 %: mal 2, 4, 5, 10) · 1 %-Weg (W : p, mal 100) · beliebiger Satz mit Taschenrechner · Sachtext („das sind 60 % der Klasse“) · gemischte Aufgaben: erst zuordnen (Prozentwert, Prozentsatz oder Grundwert gesucht), dann rechnen · Fehler finden (p % von W gerechnet) · Begründen (warum mal 100).
- 27  Einheit 5: „um“ und „auf“ unterscheiden · neuer Wert über Prozentwert (dazu, weg) · neuer Wert über Faktor (1,2; 0,8) [OS 9] · Veränderung in Prozent aus zwei Werten (Differenz : Ausgangswert) · alter Wert aus neuem Wert und Prozentsatz · Brutto/Netto (19 %, 7 %) [OS 7] · Prozentpunkte gegen Prozent [GYM 7] · Steigung in Prozent deuten und berechnen [OS 10] · Fehler finden (Differenz auf den neuen Wert bezogen) · Begründen (welcher Wert ist 100 %).
+ 27  Einheit 5: „um“ und „auf“ unterscheiden · neuer Wert über Prozentwert (dazu, weg) · neuer Wert über Faktor (1,2; 0,8) [OS 9] · Veränderung in Prozent aus zwei Werten (Differenz : Ausgangswert) · alter Wert aus neuem Wert und Prozentsatz · Brutto/Netto (19 %, 7 %) [OS 7] · Prozentpunkte gegen Prozent [GYM 7] · Steigung in Prozent deuten und berechnen [OS 10] · Veränderung am Prozentstreifen darstellen und ablesen (der alte Wert ist hundert Prozent, der Streifen wird über hundert Prozent verlängert oder verkürzt) · Fehler finden (Differenz auf den neuen Wert bezogen) · Begründen (welcher Wert ist 100 %).
  28
  29  ### Voraussetzungen (Blatt 0)
  30  Fertigkeiten:
@@ -140,7 +140,7 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 
 ## 2 Originale (40)
 
-Kennungen aus „Prüfungsform“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
+Kennungen aus „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
 
 ### 2017-OS-K2b (msa-katalog-kontext.csv)
 

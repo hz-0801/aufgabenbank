@@ -1,9 +1,9 @@
 # Mappe: stammfunktion-und-hauptsatz
 
 Eintrag: hz-0801/mathe-nachhilfe, katalog/stammfunktion-und-hauptsatz.md
-Katalog-Commit: f038ccb61160c64df73f067abd6bee324e86bee1 (2026-09-29T08:32:13Z, „Katalog 29.09. aus dem Chat, Sek II: tangente E1 Vorstufe „nur den Anstieg“, stammfunktion E2 „nur einsetzen“ als Vorstufe vor den Grundfall“; ermittelt über GitHub-API)
+Katalog-Commit: db8d2a3f9f6ed0e6490a4087e3eaff2cbc8a9b19 (2026-09-30T08:03:34Z, „Katalog: Vorschläge vom 30.09. eingesetzt (24 Zeilen in 17 Einträgen, Marke „kein P10-Stoff“ in _vorlage.md)“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-29 13:57 UTC
+Datum: 2026-09-30 08:13 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -107,7 +107,7 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
  92  Grundvorstellung (Blatt 0) [GOST Q2 L4, MO]: Aufleiten ist Rückwärtsgehen: die Stammfunktion ist die Funktion, deren Ableitung man schon kennt. „Hier sind Kärtchen mit einfachen Termen, je zwei gehören zusammen – einer ist die Ableitung des anderen. Lege die Paare. Jetzt sage bei jedem Paar: wer ist F, wer ist f? Woran erkennst du die Richtung – wird der Exponent größer oder kleiner? Und: zu einem f passen viele F – was unterscheidet sie? Verschiebe den Graphen von F mit der Hand nach oben: ändert sich die Steigung irgendwo?“ Wer Ableiten und Aufleiten verwechselt oder die Konstante für überflüssig hält, braucht das vor jeder Rechnung: erst die Richtung, dann der Kalkül. Verständnis, nicht Verfahren; amtlich in der Vorstellung („Integrieren als Umkehrung des Differenzierens“, „geometrisch anschaulich den Hauptsatz begründen“), Ermessen in der Aufgabenform. [MO-Logik: Vorstellung vor Verfahren; Rohdatei-Fehlerquelle „aufgeleitet statt abgeleitet“, abi 2020-be-gk-A1.1a; BASICS nur als Strukturvorbild Diagnose → Förderung → Nachtest, keine Inhalte]
  93  Sprossen je Verfahrenstyp (Reihenfolge = Kette des Hauptblatts) [LS-AA, Rohdatei; Sprossenfolge Ermessen, wo Lehrwerk und Rohdatei keine Reihenfolge vorgeben]:
  94  - Stammfunktion (Einheit 1): „Ableiten oder aufleiten?“ – zu Aufgabentexten ankreuzen, in welche Richtung gerechnet wird (F gesucht oder f gesucht); nichts rechnen (Vorstufe, Grundvorstellung) → ganzrationale Terme gliedweise aufleiten, Klammern vorher ausmultiplizieren (Grundfall, viermal; iqb 2022MerhoehtBAnalysisWTR3-2a) → die Funktion aus einer gegebenen Stammfunktion durch Ableiten (abi 2020-be-gk-A1.1a) → eine vorgegebene Stammfunktion durch Ableiten nachweisen, mit Produkt- und Kettenregel und Zusammenfassen (abi 2024-bebb-gk-B2.1e, 2020-be-gk-B2.1h, 2018-be-gk-B1.2c, 2023-bebb-lk-B2.1k, 2022-bebb-gk-B2.2d; iqb 2020MgrundlegendBAnalysisWTR2-1e, 2020MerhoehtAAnalysis21-a, 2024MerhoehtBAnalysisWTR1-1d) → drei verschiedene Stammfunktionen angeben und in ein Koordinatensystem zeichnen; sagen, wie sie auseinander hervorgehen → die Konstante aus einer Wertebedingung bestimmen (iqb 2025MgrundlegendAAnalysis12-a, 2026MgrundlegendBAnalysisWTR1-1d; abi 2020-be-gk-B2.1h) → alle Stammfunktionen angeben und nach einer Zusatzbedingung sieben: vertikaler Abstand, Berührung der x-Achse (abi 2020-be-gk-A1.1b; iqb 2024MgrundlegendBAnalysisWTR1-1f) → Prüfungshöhe: den Faktor eines Stammfunktionsansatzes bestimmen (abi 2026-bb-ea-B2.1f, Niveau II) und aus einer vorgegebenen Integralgleichung eine Stammfunktion zusammensetzen (abi 2023-bebb-gk-B2.1l, Niveau II).
- 95  - Hauptsatz (Einheit 2): mit vorgegebener Stammfunktion nur einsetzen: F(b) − F(a), auch mit negativem F(a) (Vorstufe; abi 2025-bebb-lk-B2.2b; iqb 2026MerhoehtBAnalysisWTR3-1b, 2025MerhoehtBAnalysisWTR3-2c) → das bestimmte Integral einer ganzrationalen Funktion mit selbst gebildeter Stammfunktion (Grundfall, viermal; iqb 2018MgrundlegendBAnalysisWTR-1d, 2023MgrundlegendAAnalysis13-a, 2026MgrundlegendAAnalysis13-a; abi 2026-bb-gk-A1.1a) → über eine volle Periode: der trigonometrische Anteil liefert null (iqb 2021MgrundlegendAAnalysis13-a) → das Integral über die Ableitung als Differenz von Funktionswerten (abi 2025-bebb-lk-B2.2b als Gegenstück, 2025-bebb-lk-B2.2c als Vorbereitung) → Prüfungshöhe: exakter Wert und prozentuale Abweichung eines Näherungswerts (abi 2025-bebb-gk-B2.2d; iqb 2025MgrundlegendBAnalysisWTR2-1d, 2022MgrundlegendBAnalysisWTR1-1f, Niveau II).
+ 95  - Hauptsatz (Einheit 2): mit vorgegebener Stammfunktion nur einsetzen: F(b) − F(a), auch mit negativem F(a) (Vorstufe; abi 2025-bebb-lk-B2.2b; iqb 2026MerhoehtBAnalysisWTR3-1b, 2025MerhoehtBAnalysisWTR3-2c) → das bestimmte Integral einer ganzrationalen Funktion mit selbst gebildeter Stammfunktion (Grundfall, viermal; iqb 2018MgrundlegendBAnalysisWTR-1d, 2023MgrundlegendAAnalysis13-a, 2026MgrundlegendAAnalysis13-a; abi 2026-bb-gk-A1.1a) → über eine volle Periode: der trigonometrische Anteil liefert null (iqb 2021MgrundlegendAAnalysis13-a) → das Integral über die Ableitung als Differenz von Funktionswerten (abi 2025-bebb-lk-B2.2c als Vorbereitung; das Gegenstück 2025-bebb-lk-B2.2b trägt die Vorstufe) → Prüfungshöhe: exakter Wert und prozentuale Abweichung eines Näherungswerts (abi 2025-bebb-gk-B2.2d; iqb 2025MgrundlegendBAnalysisWTR2-1d, 2022MgrundlegendBAnalysisWTR1-1f, Niveau II).
  96  - Der Graphenblick (Einheit 3): „Wer ist hier F, wer ist f?“ – zu Bildpaaren und Termpaaren die Rollen ankreuzen; nichts rechnen (Vorstufe) → den Stammfunktionsgraphen durch einen Punkt skizzieren: Monotonie aus dem Vorzeichen, Extrem- aus Nullstellen, Wende- aus Extremstellen (Grundfall, viermal; abi 2023-bebb-gk-A1.2b; iqb 2021MgrundlegendAAnalysis2-b, 2023MerhoehtAAnalysis21-b) → Integrale aus abgelesenen F-Werten über den Hauptsatz (abi 2022-bebb-lk-A1.1a; iqb 2022MerhoehtAAnalysis11-a, 2021MgrundlegendAAnalysis11-a) → den f-Wert als Tangentensteigung an G_F ablesen und einzeichnen (abi 2022-bebb-lk-A1.1b; iqb 2022MerhoehtAAnalysis11-b) → Extremstellen aller Stammfunktionen über den Vorzeichenwechsel begründen (abi 2026-bb-gk-B2.1b, 2026-bb-ea-B2.1e; iqb 2019MgrundlegendBAnalysisWTR2-1e, 2020MgrundlegendBAnalysisWTR2-1h) → Aussagen beurteilen: Extrempunkte, Krümmungswechsel, Monotonie und Nullstellen aller Stammfunktionen (abi 2022-bebb-lk-B2.1k, 2024-bebb-gk-B2.1f, 2026-bb-gk-A1.7b; iqb 2026MgrundlegendAAnalysis22-b, 2025MerhoehtBAnalysisMMS2-1c, 2026MerhoehtAAnalysis12-b) → Prüfungshöhe: Integrationsgrenzen mit Integral null am Graphen der Ableitung finden (abi 2025-bebb-lk-B2.2c, Niveau II) und der Tiefpunkt aller Stammfunktionen auf der y-Achse samt Konstantenwahl (iqb 2020MgrundlegendBAnalysisWTR2-1h, Niveau III).
  97  - Integralfunktion (Einheit 4): „Wo ist das Integral null?“ – an Graphen ankreuzen, ob gleiche Grenzen oder ausgeglichene Flächenstücke vorliegen; nichts rechnen (Vorstufe) → die untere Grenze als Nullstelle und J' = f nennen (Grundfall, viermal) → weitere Nullstellen über die Flächenbilanz und die Symmetrie des Integranden begründen (iqb 2018MerhoehtBAnalysisWTR1-1d, 2018MerhoehtBAnalysisWTR1-1e) → die Höchstzahl der Nullstellen über den Grad (iqb 2018MerhoehtBAnalysisWTR1-1f) → Wendestelle und Funktionswert einer Integralfunktion über den Integranden (iqb 2022MerhoehtBAnalysisWTR3-2c) → Prüfungshöhe: die Nullstellenanzahl einer Integralfunktion am Bild beurteilen (iqb 2026MerhoehtAAnalysis23, Niveau III) und das Maximum an der Schnittstelle zweier Raten im Sachzusammenhang (iqb 2026MerhoehtBAnalysisMMS1-1h, Niveau III).
  98
@@ -118,9 +118,9 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 103  Zielmarke: fhr: keine (kein Bestand). Einheit 1 – abi: der Nachweis mit Produkt- und Kettenregel samt Nullstellenargument (2018-be-gk-B1.2c, Niveau II); iqb: die Stammfunktionen mit der x-Achse als Tangente (2024MgrundlegendBAnalysisWTR1-1f, Niveau III). Einheit 2 – abi: exakter Wert und prozentuale Abweichung (2025-bebb-gk-B2.2d, Niveau II); iqb: das Integral über eine volle Periode (2021MgrundlegendAAnalysis13-a, Niveau II). Einheit 3 – abi: die Krümmungswechsel-Aussage am Bildpaar (2024-bebb-gk-B2.1f, Niveau III); iqb: der Tiefpunkt aller Stammfunktionen auf der y-Achse samt Konstantenwahl (2020MgrundlegendBAnalysisWTR2-1h, Niveau III). Einheit 4 – abi: keine (die Integralfunktion stellen nur Poolzeilen); iqb: die Nullstellenanzahl der Integralfunktion am Bild (2026MerhoehtAAnalysis23, Niveau III).
 ````
 
-## 2 Originale (50)
+## 2 Originale (58)
 
-Kennungen aus „Prüfungsform“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
+Kennungen aus „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
 
 ### 2017-be-gk-B1.2d (abi-katalog.csv)
 
@@ -522,7 +522,71 @@ jahr 2020 · papier 2020-iqb-ga · punkte 5 · format Begründung|Rechnung · an
 - verfahren: Vorzeichenwechsel von f bei 0 aus Term oder Abbildung; H(0) = F(0) + c = 0 nach c lösen
 - fehlerquelle: mit F'' argumentieren statt mit dem Vorzeichenwechsel von f
 
-Nur außerhalb von „Prüfungsform“ genannt, nicht aufgenommen: 2020MerhoehtAAnalysis21-b, 2022-bebb-lk-A1.1b, 2026-bb-ea-B2.1f, 2020-be-gk-A1.1b, 2022MerhoehtAAnalysis11-b, 2025-bebb-lk-B2.2c, 2022MerhoehtBAnalysisWTR3-2c, 2018MerhoehtBAnalysisWTR1-1e, 2018MerhoehtBAnalysisWTR1-1f
+### 2020-be-gk-A1.1b (abi-katalog.csv)
+
+jahr 2020 · papier 2020-be-gk · punkte 4 · format Kurzantwort · antwort Term
+- gegeben: F(x) = 2x⁴ − x + 1 ist eine Stammfunktion von f; f(x) = 8x³ − 1 (aus a)
+- gesucht: Gleichung aller Stammfunktionen von f; die zwei Stammfunktionen, deren Graphen von dem von F den Abstand 3 LE in Richtung der y-Achse haben
+- verfahren: F + C; C so wählen, dass der Graph um 3 nach oben bzw. unten verschoben ist
+- fehlerquelle: nur eine der beiden Stammfunktionen nennen oder den Abstand auf x beziehen
+
+### 2026-bb-ea-B2.1f (abi-katalog.csv)
+
+jahr 2026 · papier 2026-bb-ea · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: f_0,02(x) = x · e^(−0,02x²); Term r/x · f_0,02(x)
+- gesucht: r, sodass der Term eine Stammfunktion von f_0,02 ist
+- verfahren: Term vereinfachen, ableiten, mit f_0,02 vergleichen
+- fehlerquelle: Vorzeichen der inneren Ableitung; r = 25
+
+### 2025-bebb-lk-B2.2c (abi-katalog.csv)
+
+jahr 2025 · papier 2025-bebb-lk · punkte 3 · format Kurzantwort|Begründung · antwort Zahl
+- gegeben: Abb. 1 (Graph von f_0'); gesucht c ≠ d mit ∫_c^d f_0''(x) dx = 0
+- gesucht: näherungsweise Werte für c und d mit Begründung
+- verfahren: Integral über f_0'' als Differenz zweier Werte von f_0' deuten und zwei Stellen mit gleichem Wert ablesen
+- fehlerquelle: f_0'' aufstellen und integrieren wollen; Flächenbilanz von f_0' statt Werte von f_0' betrachten
+
+### 2022-bebb-lk-A1.1b (abi-katalog.csv)
+
+jahr 2022 · papier 2022-bebb-lk · punkte 3 · format Rechnung|Zeichnen · antwort Zahl|Grafik
+- gegeben: Graph G_F; F Stammfunktion von f
+- gesucht: f(1) mit Veranschaulichung des Vorgehens in der Abbildung
+- verfahren: Tangente in (1; 1) an G_F zeichnen und ihre Steigung als Steigungsdreieck ablesen
+- fehlerquelle: f(1) als F(1) = 1 ablesen
+
+### 2022MerhoehtAAnalysis11-b (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ea · punkte 3 · format Rechnung|Zeichnen · antwort Zahl|Grafik
+- gegeben: Graph G_F; F Stammfunktion von f
+- gesucht: f(1) mit Veranschaulichung des Vorgehens in der Abbildung
+- verfahren: Tangente in (1; 1) an G_F zeichnen und ihre Steigung als Steigungsdreieck ablesen
+- fehlerquelle: f(1) als F(1) = 1 ablesen
+
+### 2018MerhoehtBAnalysisWTR1-1e (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ea · punkte 2 · format Begründung · antwort Text
+- gegeben: f(x) = 1/18 · (x³ − 15x² + 50x), ganzrational dritten Grades, G_f schneidet die x-Achse bei 0, 5 und 10 und geht durch (1 | 2); Abbildung 1 zeigt G_f; F1(x) = ∫ von 1 bis x f(t) dt (Integralfunktion zu f mit unterer Grenze 1)
+- gesucht: Begründung mithilfe der Abbildung, dass F1 mindestens eine weitere positive Nullstelle hat
+- verfahren: Für ein x > 10 sind die Inhalte der Flächenstücke oberhalb der x-Achse zusammen so groß wie das Flächenstück unterhalb
+- fehlerquelle: mit dem Grad von F1 statt mit dem Graphen von f argumentieren
+
+### 2018MerhoehtBAnalysisWTR1-1f (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ea · punkte 2 · format Begründung · antwort Text
+- gegeben: f(x) = 1/18 · (x³ − 15x² + 50x), ganzrational dritten Grades, G_f schneidet die x-Achse bei 0, 5 und 10 und geht durch (1 | 2); Abbildung 1 zeigt G_f; F1(x) = ∫ von 1 bis x f(t) dt (Integralfunktion zu f mit unterer Grenze 1)
+- gesucht: Begründung, dass F1 höchstens vier Nullstellen hat
+- verfahren: Grad von F1 ist 4
+- fehlerquelle: Grad 3 annehmen
+
+### 2022MerhoehtBAnalysisWTR3-2c (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ea · punkte 5 · format Begründung|Rechnung · antwort Zahl
+- gegeben: Graph von h ↦ V(h) in Abbildung 3
+- gesucht: Begründung der Wendestelle 50; zugehöriges Füllvolumen
+- verfahren: Zweite Ableitung von V über den Integranden, Nullstelle; V(50) als halbe Kugel oder über die Stammfunktion
+- fehlerquelle: V'' aus der Stammfunktion falsch ableiten
+
+Nur außerhalb von „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ genannt, nicht aufgenommen: 2020MerhoehtAAnalysis21-b
 
 ## 3 Maßstab (unterrichtsblatt.md, wortgleich)
 

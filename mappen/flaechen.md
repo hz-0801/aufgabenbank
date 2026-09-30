@@ -1,9 +1,9 @@
 # Mappe: flaechen
 
 Eintrag: hz-0801/mathe-nachhilfe, katalog/flaechen.md
-Katalog-Commit: de503c9cea3976774daeb6c514adb85829d8df2e (2026-09-25T16:06:01+02:00, „katalog: flaechen-ids, GYM-Typen zuordnungen und terme, Maßstab, klassen-ermessen, index Zeile 232“; ermittelt über git log (GitHub-API gesperrt))
+Katalog-Commit: c651dc47624a28a96eb6724ed3e4864024a7bab4 (2026-09-27T22:25:43Z, „katalog: Erkennungsschritte“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-27 12:32 UTC
+Datum: 2026-09-30 08:06 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -51,84 +51,81 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
  36  - Wurzel ziehen bei Quadratzahlen (√49) – Einheit 1 (Quadratseite). Thema Potenzen und Wurzeln (potenzen-wurzeln.md). [P10 Typ „Quadratseite aus Fläche“]
  37  - Kreisfläche (π · r²) – nur Einheit 5 mit Kreisteilen. Thema Kreis (kreis.md). [P10]
  38  Erkennungsschritte (Vorstufe der Einheit, vor der sie stehen, nicht auf Blatt 0; eine Hauptnummer je Schritt):
- 39  - „Fläche oder Umfang?“ – zu jeder Frage ankreuzen: Rand (Zaun, Rahmen) oder Innen (Rasen, Farbe). Vor Einheit 1. [RLP D „Unterscheiden zwischen Fläche und Umfang“; P10 Fehlerquellen]
- 40  - „Wo ist die Höhe?“ – in der Figur die Höhe zur markierten Grundseite einzeichnen (rechter Winkel). Vor Einheit 2, 3 und 4. [P10 2022-OS-B1e, 2023-OS-K2c]
- 41  - „Welche Formel?“ – Figur benennen und die Formel aus der Formelsammlung ankreuzen, nicht rechnen. Vor Einheit 4. [RLP E „auch mithilfe von Formelsammlungen“]
- 42  - „Zerlege und benenne“ – Teilfiguren einzeichnen und benennen, nichts rechnen. Vor Einheit 5. [P10 Typ „Figur in Teilflächen zerlegen“]
- 43  - „Gegeben – gesucht“ bei Umkehrungen: die gesuchte Größe in der Formel einkreisen. Vor Einheit 1 und 3. [RLP E „Umstellen von Formeln“]
- 44
- 45  ### Merkkasten
- 46  Einheit 1 (Rechteck, Quadrat, Umfang):
- 47      Fläche: Länge mal Breite. Umfang: einmal außen herum, alle Seiten addieren.
- 48        Rechteck a = 7 cm, b = 4 cm: A = 7 · 4 = 28 cm²      u = 2 · (7 + 4) = 22 cm
- 49        Quadrat a = 9 cm: A = 9 · 9 = 81 cm²      u = 4 · 9 = 36 cm
- 50      Rückwärts: Seite = A : andere Seite; Quadratseite = √A.
- 51      Formelsammlung: Ebene Figuren – Rechteck, Quadrat [FS]
- 52  Quelle: [Serlo 36520] Flächenformeln, sinngemäß; [RLP D].
- 53
- 54  Einheit 2 (Parallelogramm):
- 55      Fläche: Grundseite mal Höhe – die Höhe steht senkrecht auf der Grundseite, nicht die schräge Seite.
- 56        g = 8 cm, h = 5 cm: A = 8 · 5 = 40 cm²
- 57      Warum: Dreieck links abschneiden, rechts anlegen – es entsteht ein Rechteck.
- 58      Formelsammlung: Ebene Figuren – Parallelogramm, A = g · h [FS]
- 59  Quelle: [Serlo 36520] sinngemäß; [RLP E] „Grundseite mal Höhe“ durch Zerlegen.
- 60
- 61  Einheit 3 (Dreieck):
- 62      Fläche: Grundseite mal Höhe, davon die Hälfte. Rechtwinklig: die Katheten sind Grundseite und Höhe.
- 63        g = 10 cm, h = 6 cm: A = 10 · 6 : 2 = 30 cm²      Katheten 3 cm und 4 cm: A = 3 · 4 : 2 = 6 cm²
- 64      Rückwärts: g = 2 · A : h.      A = 30 cm², h = 6 cm: g = 60 : 6 = 10 cm
- 65      Formelsammlung: Ebene Figuren – Dreieck, A = ½ · g · h [FS]
- 66  Quelle: [Serlo 36520] sinngemäß; [P10 2020-OS-K7b] Umstellung.
- 67
- 68  Einheit 4 (Trapez, Drachen, Raute):
- 69      Trapez: Mittelwert der parallelen Seiten mal Höhe.      a = 12 cm, c = 8 cm, h = 5 cm: A = (12 + 8) : 2 · 5 = 50 cm²
- 70      Rückwärts: h = 2 · A : (a + c).
- 71      Drachen und Raute: Diagonale mal Diagonale, davon die Hälfte.      e = 9 cm, f = 4 cm: A = 9 · 4 : 2 = 18 cm²
- 72      Formelsammlung: Ebene Figuren – Trapez, Drachenviereck, Raute [FS]
- 73  Quelle: [Serlo 1709, 36520] sinngemäß.
- 74
- 75  Einheit 5 (Zusammengesetzte Figuren):
- 76      Zerlegen: Figur in Rechtecke, Dreiecke, Kreisteile schneiden, jede Teilfläche berechnen, addieren.
- 77      Ergänzen: zur großen Figur auffüllen, dann das Ergänzte abziehen.
- 78        Rechteck 12 m · 7 m mit ausgeschnittenem Quadrat 3 m · 3 m: 84 − 9 = 75 m²
- 79      Umfang: nur der äußere Rand zählt – bei Aussparungen innen auch deren Rand, wenn er Rand ist.
- 80      Formelsammlung: Ebene Figuren [FS]
- 81  Quelle: [RLP E, F] Zerlegungen und Ergänzungen; [P10 2017-OS-K3a] Teilflächen benennen; eigene Formulierung.
- 82
- 83  ### Typische Fehler
- 84  - Fläche und Umfang vertauscht: 5,25 cm² statt 10 cm; 36 : 4 statt √36; Flächenterm 7a² statt Umfang; Umfangsterm 2 · (…) für die Fläche gewählt. [P10 2026-FOR-B1h, 2020-OS-B1d, 2014-OS-B1g, 2025-OS-B1i]
- 85  - Beim Umfang nur eine Seite abgezogen, nicht halbiert: b = 26 − 8 = 18 cm. [P10 2018-OS-B1f]
- 86  - Faktor ½ vergessen: Drachen e · f statt e · f : 2; Grundseite aus A ohne mal 2. [P10 2025-OS-K2b, 2020-OS-K7b]
- 87  - Falsche Seite als Höhe: schräge Seite, Hypotenuse, Schenkel des Trapezes, Pyramidenhöhe statt Höhe der Seitenfläche. [P10 2022-OS-B1e, 2023-OS-K2c, 2015-OS-K6c; FD]
- 88  - Trapez als Grundseite mal Höhe ohne Mittelung; Höhe aus A : (a + c) ohne Faktor 2. [P10 2023-OS-K2b, 2014-OS-K5c]
- 89  - Nur ein Teildreieck oder eine Teilfläche berechnet; Teilfläche doppelt; Halbkreis nur einmal. [P10 2022-OS-K5e, 2019-OS-K4b, 2017-OS-K3b]
- 90  - Bei Restflächen die Kreisfläche addiert statt abgezogen; Durchmesser als Radius. [P10 2018-OS-K6a, 2016-OS-K3b]
- 91  - Term mit drei Faktoren für die Fläche (a · b · c) oder nur eine Teilfläche (a · c). [P10 2019-OS-B1e]
- 92  - Zusammengesetzte Figur als Ganzes benannt („Oval“) statt zerlegt. [P10 2017-OS-K3a]
- 93  - Stellenfehler beim Dividieren großer Zahlen (42 000 : 400); Einheiten cm und m gemischt; Flächeneinheit mit 10 statt 100 umgerechnet. [P10 2023-OS-B1c, 2014-OS-K5d; MSK S1B]
- 94  - „Gleicher Umfang, gleiche Fläche“ und „doppelte Seite, doppelte Fläche“ als Vorstellung. [FD]
- 95
- 96  ### Für schwache Schüler
- 97  Mindeststoff (D/E) [RLP]: Einheit 1 ganz (D; Quadratseite als Wurzel nur mit Quadratzahlen); Einheit 2 und 3 Grundfall aus g und h (E); Einheit 4 Trapez aus a, c, h (E); Einheit 5 Zerlegen in Rechtecke und Dreiecke (D/E). Vorrat: Umkehrungen mit Dezimalzahlen, Umfang mit Pythagoras oder Sinus, Kreisteile in zusammengesetzten Figuren, Verschnitt in Prozent, berufsorientierte Entscheidungsaufgaben (F).
- 98  Grundvorstellung (Blatt 0) [RLP D, MO]: Fläche als Auslegen mit Einheitsquadraten – „Wie viele Kästchen passen in das Rechteck? Zähle, dann rechne“ – und Umfang als Weg am Rand – „Fahre den Rand mit dem Finger nach, wie lang ist er?“ an derselben Figur. Wer für den Umfang die Kästchen zählt oder für die Fläche die Seiten addiert, braucht das vor den Formeln.
- 99  Sprossen je Verfahrenstyp (Reihenfolge = Kette des Hauptblatts) [LS-AA, FD]:
-100  - Rechteck (Einheit 1): Fläche oder Umfang ankreuzen (Vorstufe) → A und u aus ganzen Zahlen (4×) → Dezimalzahlen → Quadrat → Umfang Vieleck → Seite aus A → Seite aus u → Quadratseite als Wurzel → Term zu Figur → Prüfungshöhe: Seite aus Umfang mit Halbieren (P10-Form).
-101  - Parallelogramm (Einheit 2): Höhe einzeichnen (Vorstufe) → A aus g und h (4×) → schräge Seite als Falle → Dezimalzahlen → andere Grundseite, gleiche Fläche → h aus A → Prüfungshöhe: kein P10-Original – das Parallelogramm hat im Prüfungskatalog keinen Typ; Zielmarke nach RLP E („Begründen der Flächeninhaltsformeln für Parallelogramme und Dreiecke nach dem Prinzip ‚Grundseite mal Höhe‘ auf der Basis von Zerlegungen und Ergänzungen“) und LISUM-PH Jahrgangsstufe sieben, Blöcke „Ebene Figuren“ („Einzeichnen von Höhen in Parallelogrammen“) und „Berechnungen an ebenen Figuren“ („Zurückführen der Flächeninhaltsformel für Parallelogramme auf Rechtecke“): die Höhe zur genannten Grundseite einzeichnen, die Fläche mit Dezimalzahlen berechnen und die Formel am zerlegten Rechteck begründen.
-102  - Dreieck (Einheit 3): Höhe zur markierten Grundseite einzeichnen (Vorstufe) → A aus g und h (4×) → rechtwinklig mit Katheten → stumpfwinklig → Dezimalzahlen → g aus A → Term zu Figur → Prüfungshöhe: Grundseite aus Fläche und Höhe mit dem Faktor zwei (P10-Form).
-103  - Trapez (Einheit 4): Formel ankreuzen (Vorstufe) → A aus a, c, h (4×) → Dezimalzahlen → h aus A → Drachen aus e und f → Umfang mit gegebenen Schenkeln → Prüfungshöhe: Höhe aus Fläche und Nachweis „reicht die Tiefe“ (P10-Form).
-104  - Zusammengesetzte Figuren (Einheit 5): Teilflächen benennen (Vorstufe) → zwei Rechtecke (4×) → Rechteck und Dreieck → Ergänzen statt Zerlegen → Restfläche mit Quadrat → Restfläche mit Kreis → Umfang der Figur → Prüfungshöhe: Rechteck mit zwei Halbkreisen (P10-Form).
-105
-106  ### Prüfungsform (P10)
-107  Thema „Flächeninhalt und Umfang“ mit achtzehn Typen [P10]. Basisaufgaben (Niveau I): „Umfang Rechteck berechnen“ (2026-FOR-B1h), „Rechteckseite aus Fläche berechnen“ (2023-OS-B1c, 2014-OS-K5d), „Rechteckseite aus Umfang berechnen“ (2018-OS-B1f), „Quadratseite aus Fläche berechnen“ (2020-OS-B1d), „Term zu Figur angeben“ (fünf Originale: 2019-OS-B1e und 2025-OS-B1i geteilte Rechtecke, 2014-OS-B1g Kreuz aus Quadraten, 2024-OS-B1c gleichseitiges Dreieck – Umfang als 3 · a –, 2022-OS-B1e rechtwinkliges Dreieck), „Kreissektor Anteil berechnen“ (2025-OS-B1e). Kontextaufgaben (Niveau I–III, Rechnung): „Flächeninhalt Rechteck berechnen“ – der einzige Typ dieses Themas ohne eigenes Hauptoriginal, er kommt nur als Nebenleistung vor (2017-OS-K3b und 2018-OS-K6a hier, 2017-OS-K4c bei trigonometrie.md) –, „Flächeninhalt Dreieck berechnen“ (2015-OS-K6c und 2022-OS-K5e hier, dazu 2015-OS-K5d als Beschreibung des Rechenwegs statt als Rechnung und 2019-OS-K4c, dessen Original koerper.md führt; oft mit Trigonometrie oder Pythagoras davor), „Grundseite aus Dreiecksfläche berechnen“ (2020-OS-K7b), „Flächeninhalt Trapez berechnen“ (2023-OS-K2b), „Trapezhöhe aus Fläche berechnen“ (2014-OS-K5c), „Umfang Trapez berechnen“ (2023-OS-K2c, Schenkel über Sinus oder Pythagoras), „Flächeninhalt Drachenviereck berechnen“ (2025-OS-K2b), „Figur in Teilflächen zerlegen“ (2017-OS-K3a), „Flächeninhalt zusammengesetzter Figur berechnen“ (2017-OS-K3b), „Restfläche berechnen“ (2018-OS-K6a), „Kreisfläche berechnen“ (2016-OS-K3b, 2024-OS-K4a), „Verschnitt in Prozent berechnen“ (2023-OS-K5c, Niveau III, Stern: Deckel aus einem Blechstreifen, Stückzahl abrunden, Abfallanteil gegen die Vorgabe prüfen). Kein P10-Typ zum Parallelogramm.
-108  Die zwei Kreis-Typen werden hier gelistet, weil typen.csv sie diesem Thema zuweist, sind aber keiner Lerneinheit dieses Eintrags zugeordnet: Lerneinheit, Sprossenkette und Zielmarke stehen in kreis.md Einheit 2 und 3, und dort sind auch ihre drei Originale (2016-OS-K3b, 2024-OS-K4a, 2025-OS-B1e) geführt. Ein Kreis-Blatt braucht diesen Eintrag nicht. Die Kreisfläche kommt hier nur als Nebenleistung vor – in „Flächeninhalt zusammengesetzter Figur berechnen“ (Rechteck mit zwei Halbkreisen, 2017-OS-K3b), „Restfläche berechnen“ (Rechteck minus Kreis, 2018-OS-K6a) und „Verschnitt in Prozent berechnen“ (2023-OS-K5c).
-109  Zwei Originale des Werbeflächen-Stamms kreuzen mit koerper.md zwischen Fläche und Volumen; beide folgen der Gliederungsregel „Typ nach typen.csv, Original nach seinem CSV-Thema“. 2019-OS-K4b (drei gleiche Seitenflächen eines Werbeprismas addieren) hat das CSV-Thema „Flächeninhalt und Umfang“ und wird deshalb seit 10h hier geführt, bei Einheit 1 als aus Rechtecken zusammengesetzte Fläche; sein Typ „Mantelfläche Prisma berechnen“ gehört zum Thema „Volumen und Oberfläche“ und bleibt bei koerper.md Einheit 3, wo auch die Sprossenkette steht. Umgekehrt 2019-OS-K4c aus demselben Stamm (Deckfläche des Prismas, dann Volumennachweis und Masse): sein Haupttyp „Flächeninhalt Dreieck berechnen“ bleibt hier in Einheit 3, das Original führt koerper.md, weil sein CSV-Thema „Volumen und Oberfläche“ ist.
-110  Zuordnung: Einheit 1 – Umfang Rechteck berechnen, Rechteckseite aus Fläche berechnen, Rechteckseite aus Umfang berechnen, Quadratseite aus Fläche berechnen, Flächeninhalt Rechteck berechnen (ohne Hauptoriginal, nur Nebenleistung), Term zu Figur angeben (Rechtecke und Kreuz aus Quadraten), dazu das Original 2019-OS-K4b (CSV-Thema Flächeninhalt und Umfang; Typ „Mantelfläche Prisma berechnen“ bei koerper.md); Einheit 2 – kein Typ (das Parallelogramm hat im Prüfungskatalog keinen Typ); Einheit 3 – Flächeninhalt Dreieck berechnen (Original 2019-OS-K4c bei koerper.md), Grundseite aus Dreiecksfläche berechnen, Term zu Figur angeben (Dreiecke); Einheit 4 – Flächeninhalt Trapez berechnen, Trapezhöhe aus Fläche berechnen, Umfang Trapez berechnen, Flächeninhalt Drachenviereck berechnen; Einheit 5 – Figur in Teilflächen zerlegen, Flächeninhalt zusammengesetzter Figur berechnen, Restfläche berechnen, Verschnitt in Prozent berechnen; keiner Einheit dieses Eintrags zugeordnet – Kreisfläche berechnen, Kreissektor Anteil berechnen (Lerneinheit, Kette und Originale in kreis.md).
-111  Zielmarke: Einheit 1 – Rechteckseite aus dem Umfang ohne Taschenrechner, erst den halben Umfang bilden, dann die bekannte Seite abziehen (2018-OS-B1f, Basis, Niveau I); daneben Quadratseite als Wurzel aus einer Quadratzahl (2020-OS-B1d) und ein Term mit Variablen zu einer beschrifteten Figur, Fläche wie Umfang (Fläche 2025-OS-B1i, Umfang 2014-OS-B1g). Einheit 2 – kein P10-Original; Marke nach RLP E („Begründen der Flächeninhaltsformeln für Parallelogramme und Dreiecke nach dem Prinzip ‚Grundseite mal Höhe‘“) und LISUM-PH Jg. 7, Blöcke „Ebene Figuren“ („Einzeichnen von Höhen in Parallelogrammen“) und „Berechnungen an ebenen Figuren“ („Zurückführen der Flächeninhaltsformel für Parallelogramme auf Rechtecke“): Höhe zur genannten Grundseite einzeichnen, Fläche mit Dezimalzahlen berechnen, Formel am zerlegten Rechteck begründen. Einheit 3 – Grundseite aus Fläche und Höhe mit dem Faktor 2 (2020-OS-K7b, Niveau II); daneben den Rechenweg zur Dreiecksfläche beschreiben, statt ihn zu rechnen, und die dafür nötigen Angaben benennen (2015-OS-K5d, Niveau III). Einheit 4 – Trapezhöhe aus der gegebenen Fläche als Nachweis (2014-OS-K5c) und Trapezumfang mit einem Schenkel aus Sinus oder Pythagoras (2023-OS-K2c, Niveau II). Einheit 5 – Fläche einer aus Rechteck und zwei Halbkreisen zusammengesetzten Figur als Summe (2017-OS-K3b) und Restfläche Rechteck minus Kreis (2018-OS-K6a); als Vorrat der Verschnitt in Prozent mit Abrunden der Stückzahl und Prüfung der Abfallvorgabe (2023-OS-K5c, Niveau III, Stern).
+ 39  - „Wo ist die Höhe?“ – in der Figur die Höhe zur markierten Grundseite einzeichnen (rechter Winkel). Vor Einheit 2, 3 und 4. [P10 2022-OS-B1e, 2023-OS-K2c]
+ 40  - „Gegeben – gesucht“ bei Umkehrungen: die gesuchte Größe in der Formel einkreisen. Vor Einheit 1 und 3. [RLP E „Umstellen von Formeln“]
+ 41
+ 42  ### Merkkasten
+ 43  Einheit 1 (Rechteck, Quadrat, Umfang):
+ 44      Fläche: Länge mal Breite. Umfang: einmal außen herum, alle Seiten addieren.
+ 45        Rechteck a = 7 cm, b = 4 cm: A = 7 · 4 = 28 cm²      u = 2 · (7 + 4) = 22 cm
+ 46        Quadrat a = 9 cm: A = 9 · 9 = 81 cm²      u = 4 · 9 = 36 cm
+ 47      Rückwärts: Seite = A : andere Seite; Quadratseite = √A.
+ 48      Formelsammlung: Ebene Figuren – Rechteck, Quadrat [FS]
+ 49  Quelle: [Serlo 36520] Flächenformeln, sinngemäß; [RLP D].
+ 50
+ 51  Einheit 2 (Parallelogramm):
+ 52      Fläche: Grundseite mal Höhe – die Höhe steht senkrecht auf der Grundseite, nicht die schräge Seite.
+ 53        g = 8 cm, h = 5 cm: A = 8 · 5 = 40 cm²
+ 54      Warum: Dreieck links abschneiden, rechts anlegen – es entsteht ein Rechteck.
+ 55      Formelsammlung: Ebene Figuren – Parallelogramm, A = g · h [FS]
+ 56  Quelle: [Serlo 36520] sinngemäß; [RLP E] „Grundseite mal Höhe“ durch Zerlegen.
+ 57
+ 58  Einheit 3 (Dreieck):
+ 59      Fläche: Grundseite mal Höhe, davon die Hälfte. Rechtwinklig: die Katheten sind Grundseite und Höhe.
+ 60        g = 10 cm, h = 6 cm: A = 10 · 6 : 2 = 30 cm²      Katheten 3 cm und 4 cm: A = 3 · 4 : 2 = 6 cm²
+ 61      Rückwärts: g = 2 · A : h.      A = 30 cm², h = 6 cm: g = 60 : 6 = 10 cm
+ 62      Formelsammlung: Ebene Figuren – Dreieck, A = ½ · g · h [FS]
+ 63  Quelle: [Serlo 36520] sinngemäß; [P10 2020-OS-K7b] Umstellung.
+ 64
+ 65  Einheit 4 (Trapez, Drachen, Raute):
+ 66      Trapez: Mittelwert der parallelen Seiten mal Höhe.      a = 12 cm, c = 8 cm, h = 5 cm: A = (12 + 8) : 2 · 5 = 50 cm²
+ 67      Rückwärts: h = 2 · A : (a + c).
+ 68      Drachen und Raute: Diagonale mal Diagonale, davon die Hälfte.      e = 9 cm, f = 4 cm: A = 9 · 4 : 2 = 18 cm²
+ 69      Formelsammlung: Ebene Figuren – Trapez, Drachenviereck, Raute [FS]
+ 70  Quelle: [Serlo 1709, 36520] sinngemäß.
+ 71
+ 72  Einheit 5 (Zusammengesetzte Figuren):
+ 73      Zerlegen: Figur in Rechtecke, Dreiecke, Kreisteile schneiden, jede Teilfläche berechnen, addieren.
+ 74      Ergänzen: zur großen Figur auffüllen, dann das Ergänzte abziehen.
+ 75        Rechteck 12 m · 7 m mit ausgeschnittenem Quadrat 3 m · 3 m: 84 − 9 = 75 m²
+ 76      Umfang: nur der äußere Rand zählt – bei Aussparungen innen auch deren Rand, wenn er Rand ist.
+ 77      Formelsammlung: Ebene Figuren [FS]
+ 78  Quelle: [RLP E, F] Zerlegungen und Ergänzungen; [P10 2017-OS-K3a] Teilflächen benennen; eigene Formulierung.
+ 79
+ 80  ### Typische Fehler
+ 81  - Fläche und Umfang vertauscht: 5,25 cm² statt 10 cm; 36 : 4 statt √36; Flächenterm 7a² statt Umfang; Umfangsterm 2 · (…) für die Fläche gewählt. [P10 2026-FOR-B1h, 2020-OS-B1d, 2014-OS-B1g, 2025-OS-B1i]
+ 82  - Beim Umfang nur eine Seite abgezogen, nicht halbiert: b = 26 − 8 = 18 cm. [P10 2018-OS-B1f]
+ 83  - Faktor ½ vergessen: Drachen e · f statt e · f : 2; Grundseite aus A ohne mal 2. [P10 2025-OS-K2b, 2020-OS-K7b]
+ 84  - Falsche Seite als Höhe: schräge Seite, Hypotenuse, Schenkel des Trapezes, Pyramidenhöhe statt Höhe der Seitenfläche. [P10 2022-OS-B1e, 2023-OS-K2c, 2015-OS-K6c; FD]
+ 85  - Trapez als Grundseite mal Höhe ohne Mittelung; Höhe aus A : (a + c) ohne Faktor 2. [P10 2023-OS-K2b, 2014-OS-K5c]
+ 86  - Nur ein Teildreieck oder eine Teilfläche berechnet; Teilfläche doppelt; Halbkreis nur einmal. [P10 2022-OS-K5e, 2019-OS-K4b, 2017-OS-K3b]
+ 87  - Bei Restflächen die Kreisfläche addiert statt abgezogen; Durchmesser als Radius. [P10 2018-OS-K6a, 2016-OS-K3b]
+ 88  - Term mit drei Faktoren für die Fläche (a · b · c) oder nur eine Teilfläche (a · c). [P10 2019-OS-B1e]
+ 89  - Zusammengesetzte Figur als Ganzes benannt („Oval“) statt zerlegt. [P10 2017-OS-K3a]
+ 90  - Stellenfehler beim Dividieren großer Zahlen (42 000 : 400); Einheiten cm und m gemischt; Flächeneinheit mit 10 statt 100 umgerechnet. [P10 2023-OS-B1c, 2014-OS-K5d; MSK S1B]
+ 91  - „Gleicher Umfang, gleiche Fläche“ und „doppelte Seite, doppelte Fläche“ als Vorstellung. [FD]
+ 92
+ 93  ### Für schwache Schüler
+ 94  Mindeststoff (D/E) [RLP]: Einheit 1 ganz (D; Quadratseite als Wurzel nur mit Quadratzahlen); Einheit 2 und 3 Grundfall aus g und h (E); Einheit 4 Trapez aus a, c, h (E); Einheit 5 Zerlegen in Rechtecke und Dreiecke (D/E). Vorrat: Umkehrungen mit Dezimalzahlen, Umfang mit Pythagoras oder Sinus, Kreisteile in zusammengesetzten Figuren, Verschnitt in Prozent, berufsorientierte Entscheidungsaufgaben (F).
+ 95  Grundvorstellung (Blatt 0) [RLP D, MO]: Fläche als Auslegen mit Einheitsquadraten – „Wie viele Kästchen passen in das Rechteck? Zähle, dann rechne“ – und Umfang als Weg am Rand – „Fahre den Rand mit dem Finger nach, wie lang ist er?“ an derselben Figur. Wer für den Umfang die Kästchen zählt oder für die Fläche die Seiten addiert, braucht das vor den Formeln.
+ 96  Sprossen je Verfahrenstyp (Reihenfolge = Kette des Hauptblatts) [LS-AA, FD]:
+ 97  - Rechteck (Einheit 1): „Fläche oder Umfang?“ – zu jeder Frage ankreuzen: Rand (Zaun, Rahmen) oder Innen (Rasen, Farbe) (Vorstufe) → A und u aus ganzen Zahlen (4×) → Dezimalzahlen → Quadrat → Umfang Vieleck → Seite aus A → Seite aus u → Quadratseite als Wurzel → Term zu Figur → Prüfungshöhe: Seite aus Umfang mit Halbieren (P10-Form).
+ 98  - Parallelogramm (Einheit 2): Höhe einzeichnen (Vorstufe) → A aus g und h (4×) → schräge Seite als Falle → Dezimalzahlen → andere Grundseite, gleiche Fläche → h aus A → Prüfungshöhe: kein P10-Original – das Parallelogramm hat im Prüfungskatalog keinen Typ; Zielmarke nach RLP E („Begründen der Flächeninhaltsformeln für Parallelogramme und Dreiecke nach dem Prinzip ‚Grundseite mal Höhe‘ auf der Basis von Zerlegungen und Ergänzungen“) und LISUM-PH Jahrgangsstufe sieben, Blöcke „Ebene Figuren“ („Einzeichnen von Höhen in Parallelogrammen“) und „Berechnungen an ebenen Figuren“ („Zurückführen der Flächeninhaltsformel für Parallelogramme auf Rechtecke“): die Höhe zur genannten Grundseite einzeichnen, die Fläche mit Dezimalzahlen berechnen und die Formel am zerlegten Rechteck begründen.
+ 99  - Dreieck (Einheit 3): Höhe zur markierten Grundseite einzeichnen (Vorstufe) → A aus g und h (4×) → rechtwinklig mit Katheten → stumpfwinklig → Dezimalzahlen → g aus A → Term zu Figur → Prüfungshöhe: Grundseite aus Fläche und Höhe mit dem Faktor zwei (P10-Form).
+100  - Trapez (Einheit 4): „Welche Formel?“ – Figur benennen und die Formel aus der Formelsammlung ankreuzen; nichts rechnen (Vorstufe) → A aus a, c, h (4×) → Dezimalzahlen → h aus A → Drachen aus e und f → Umfang mit gegebenen Schenkeln → Prüfungshöhe: Höhe aus Fläche und Nachweis „reicht die Tiefe“ (P10-Form).
+101  - Zusammengesetzte Figuren (Einheit 5): „Zerlege und benenne“ – Teilfiguren einzeichnen und benennen; nichts rechnen (Vorstufe) → zwei Rechtecke (4×) → Rechteck und Dreieck → Ergänzen statt Zerlegen → Restfläche mit Quadrat → Restfläche mit Kreis → Umfang der Figur → Prüfungshöhe: Rechteck mit zwei Halbkreisen (P10-Form).
+102
+103  ### Prüfungsform (P10)
+104  Thema „Flächeninhalt und Umfang“ mit achtzehn Typen [P10]. Basisaufgaben (Niveau I): „Umfang Rechteck berechnen“ (2026-FOR-B1h), „Rechteckseite aus Fläche berechnen“ (2023-OS-B1c, 2014-OS-K5d), „Rechteckseite aus Umfang berechnen“ (2018-OS-B1f), „Quadratseite aus Fläche berechnen“ (2020-OS-B1d), „Term zu Figur angeben“ (fünf Originale: 2019-OS-B1e und 2025-OS-B1i geteilte Rechtecke, 2014-OS-B1g Kreuz aus Quadraten, 2024-OS-B1c gleichseitiges Dreieck – Umfang als 3 · a –, 2022-OS-B1e rechtwinkliges Dreieck), „Kreissektor Anteil berechnen“ (2025-OS-B1e). Kontextaufgaben (Niveau I–III, Rechnung): „Flächeninhalt Rechteck berechnen“ – der einzige Typ dieses Themas ohne eigenes Hauptoriginal, er kommt nur als Nebenleistung vor (2017-OS-K3b und 2018-OS-K6a hier, 2017-OS-K4c bei trigonometrie.md) –, „Flächeninhalt Dreieck berechnen“ (2015-OS-K6c und 2022-OS-K5e hier, dazu 2015-OS-K5d als Beschreibung des Rechenwegs statt als Rechnung und 2019-OS-K4c, dessen Original koerper.md führt; oft mit Trigonometrie oder Pythagoras davor), „Grundseite aus Dreiecksfläche berechnen“ (2020-OS-K7b), „Flächeninhalt Trapez berechnen“ (2023-OS-K2b), „Trapezhöhe aus Fläche berechnen“ (2014-OS-K5c), „Umfang Trapez berechnen“ (2023-OS-K2c, Schenkel über Sinus oder Pythagoras), „Flächeninhalt Drachenviereck berechnen“ (2025-OS-K2b), „Figur in Teilflächen zerlegen“ (2017-OS-K3a), „Flächeninhalt zusammengesetzter Figur berechnen“ (2017-OS-K3b), „Restfläche berechnen“ (2018-OS-K6a), „Kreisfläche berechnen“ (2016-OS-K3b, 2024-OS-K4a), „Verschnitt in Prozent berechnen“ (2023-OS-K5c, Niveau III, Stern: Deckel aus einem Blechstreifen, Stückzahl abrunden, Abfallanteil gegen die Vorgabe prüfen). Kein P10-Typ zum Parallelogramm.
+105  Die zwei Kreis-Typen werden hier gelistet, weil typen.csv sie diesem Thema zuweist, sind aber keiner Lerneinheit dieses Eintrags zugeordnet: Lerneinheit, Sprossenkette und Zielmarke stehen in kreis.md Einheit 2 und 3, und dort sind auch ihre drei Originale (2016-OS-K3b, 2024-OS-K4a, 2025-OS-B1e) geführt. Ein Kreis-Blatt braucht diesen Eintrag nicht. Die Kreisfläche kommt hier nur als Nebenleistung vor – in „Flächeninhalt zusammengesetzter Figur berechnen“ (Rechteck mit zwei Halbkreisen, 2017-OS-K3b), „Restfläche berechnen“ (Rechteck minus Kreis, 2018-OS-K6a) und „Verschnitt in Prozent berechnen“ (2023-OS-K5c).
+106  Zwei Originale des Werbeflächen-Stamms kreuzen mit koerper.md zwischen Fläche und Volumen; beide folgen der Gliederungsregel „Typ nach typen.csv, Original nach seinem CSV-Thema“. 2019-OS-K4b (drei gleiche Seitenflächen eines Werbeprismas addieren) hat das CSV-Thema „Flächeninhalt und Umfang“ und wird deshalb seit 10h hier geführt, bei Einheit 1 als aus Rechtecken zusammengesetzte Fläche; sein Typ „Mantelfläche Prisma berechnen“ gehört zum Thema „Volumen und Oberfläche“ und bleibt bei koerper.md Einheit 3, wo auch die Sprossenkette steht. Umgekehrt 2019-OS-K4c aus demselben Stamm (Deckfläche des Prismas, dann Volumennachweis und Masse): sein Haupttyp „Flächeninhalt Dreieck berechnen“ bleibt hier in Einheit 3, das Original führt koerper.md, weil sein CSV-Thema „Volumen und Oberfläche“ ist.
+107  Zuordnung: Einheit 1 – Umfang Rechteck berechnen, Rechteckseite aus Fläche berechnen, Rechteckseite aus Umfang berechnen, Quadratseite aus Fläche berechnen, Flächeninhalt Rechteck berechnen (ohne Hauptoriginal, nur Nebenleistung), Term zu Figur angeben (Rechtecke und Kreuz aus Quadraten), dazu das Original 2019-OS-K4b (CSV-Thema Flächeninhalt und Umfang; Typ „Mantelfläche Prisma berechnen“ bei koerper.md); Einheit 2 – kein Typ (das Parallelogramm hat im Prüfungskatalog keinen Typ); Einheit 3 – Flächeninhalt Dreieck berechnen (Original 2019-OS-K4c bei koerper.md), Grundseite aus Dreiecksfläche berechnen, Term zu Figur angeben (Dreiecke); Einheit 4 – Flächeninhalt Trapez berechnen, Trapezhöhe aus Fläche berechnen, Umfang Trapez berechnen, Flächeninhalt Drachenviereck berechnen; Einheit 5 – Figur in Teilflächen zerlegen, Flächeninhalt zusammengesetzter Figur berechnen, Restfläche berechnen, Verschnitt in Prozent berechnen; keiner Einheit dieses Eintrags zugeordnet – Kreisfläche berechnen, Kreissektor Anteil berechnen (Lerneinheit, Kette und Originale in kreis.md).
+108  Zielmarke: Einheit 1 – Rechteckseite aus dem Umfang ohne Taschenrechner, erst den halben Umfang bilden, dann die bekannte Seite abziehen (2018-OS-B1f, Basis, Niveau I); daneben Quadratseite als Wurzel aus einer Quadratzahl (2020-OS-B1d) und ein Term mit Variablen zu einer beschrifteten Figur, Fläche wie Umfang (Fläche 2025-OS-B1i, Umfang 2014-OS-B1g). Einheit 2 – kein P10-Original; Marke nach RLP E („Begründen der Flächeninhaltsformeln für Parallelogramme und Dreiecke nach dem Prinzip ‚Grundseite mal Höhe‘“) und LISUM-PH Jg. 7, Blöcke „Ebene Figuren“ („Einzeichnen von Höhen in Parallelogrammen“) und „Berechnungen an ebenen Figuren“ („Zurückführen der Flächeninhaltsformel für Parallelogramme auf Rechtecke“): Höhe zur genannten Grundseite einzeichnen, Fläche mit Dezimalzahlen berechnen, Formel am zerlegten Rechteck begründen. Einheit 3 – Grundseite aus Fläche und Höhe mit dem Faktor 2 (2020-OS-K7b, Niveau II); daneben den Rechenweg zur Dreiecksfläche beschreiben, statt ihn zu rechnen, und die dafür nötigen Angaben benennen (2015-OS-K5d, Niveau III). Einheit 4 – Trapezhöhe aus der gegebenen Fläche als Nachweis (2014-OS-K5c) und Trapezumfang mit einem Schenkel aus Sinus oder Pythagoras (2023-OS-K2c, Niveau II). Einheit 5 – Fläche einer aus Rechteck und zwei Halbkreisen zusammengesetzten Figur als Summe (2017-OS-K3b) und Restfläche Rechteck minus Kreis (2018-OS-K6a); als Vorrat der Verschnitt in Prozent mit Abrunden der Stückzahl und Prüfung der Abfallvorgabe (2023-OS-K5c, Niveau III, Stern).
 ````
 
 ## 2 Originale (28)
 
-Kennungen aus „Prüfungsform“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
+Kennungen aus „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
 
 ### 2026-FOR-B1h (msa-katalog-basis.csv)
 

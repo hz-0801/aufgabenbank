@@ -1,9 +1,9 @@
 # Mappe: lineare-gleichungen
 
 Eintrag: hz-0801/mathe-nachhilfe, katalog/lineare-gleichungen.md
-Katalog-Commit: cebfd509ea71ae238b589537bd00b7fc306df06f (2026-09-28T21:59:03Z, „Katalog-Nachzug Teil 1: Sek I aus den Urteilen vom 28.09.“; ermittelt über GitHub-API)
+Katalog-Commit: db8d2a3f9f6ed0e6490a4087e3eaff2cbc8a9b19 (2026-09-30T08:03:34Z, „Katalog: Vorschläge vom 30.09. eingesetzt (24 Zeilen in 17 Einträgen, Marke „kein P10-Stoff“ in _vorlage.md)“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-29 10:17 UTC
+Datum: 2026-09-30 08:09 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -90,7 +90,7 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 75  Sprossen je Verfahrenstyp [INKL, LS, FD]:
 76  - Lösung prüfen (Einheit 1): Zahl einsetzen, eine Rechenoperation (4×) → zweischrittig → wA/fA entscheiden gemischt → x beidseitig → Prüfungshöhe: mit negativer Zahl.
 77  - Durch Probieren lösen (Einheit 1): Tabelle mit vorgegebenen Kandidaten (3×) → eigene Kandidaten wählen und eingrenzen → Umkehroperation ohne Strich („welche Zahl plus fünf ergibt neun?“) → die Lösung als die Zahl benennen, die die Aussage wahr macht → Prüfungshöhe: kein P10-Original; Zielmarke nach RLP E („Lösen linearer Gleichungen durch systematisches Probieren“) und LISUM-PH Jahrgangsstufe sieben, Block „Mit Gleichungen umgehen“ („Lösen durch systematisches Probieren, auch mit Tabellenkalkulation“): zu einer einschrittigen Gleichung eigene Kandidaten in eine Tabelle eintragen, die Lösung nennen und mit der Probe bestätigen. Das grafische Lösen ist amtlich der Jahrgangsstufe acht und den linearen Funktionen zugewiesen und deshalb hier keine Zielmarke.
-78  - Umformen (Einheit 2): Umformung nur anschreiben: „Schreibe hinter den Strich, was x allein stellt“, einschrittige Gleichung mit leerem Strich (Vorstufe, Blatt 0) → einschrittig plus/minus (4×) → einschrittig mal/geteilt → negative Lösung → zweischrittig erst Strich dann Punkt (4×, mit Probe [INKL]) → x steht hinter dem Minus (zwanzig minus x gleich dreizehn) → negative Vorzahl → Vorzahl als Bruch → Umkehrung: Gleichung zu gegebener Lösung → Prüfungshöhe: zweischrittig mit negativer Lösung und Probe.
+78  - Umformen (Einheit 2): Umformung nur anschreiben: „Schreibe hinter den Strich, was x allein stellt“, einschrittige Gleichung mit leerem Strich (Vorstufe) → einschrittig plus/minus (4×) → einschrittig mal/geteilt → negative Lösung → zweischrittig erst Strich dann Punkt (4×, mit Probe [INKL]) → x steht hinter dem Minus (zwanzig minus x gleich dreizehn) → negative Vorzahl → Vorzahl als Bruch → Klammer als Block: Zahl mal Klammer gleich Zahl, erst durch die Zahl teilen, dann die Klammer weglassen, nicht auflösen (P10-Form 2020-OS-B1e, 2024-OS-B1d) → Umkehrung: Gleichung zu gegebener Lösung → Prüfungshöhe: zweischrittig mit negativer Lösung und Probe; in P10-Form mit der Klammer als Block und einer Zahl außerhalb der Klammer (2023-OS-B1e, Niveau I).
 79  - x beidseitig (Einheit 3): erst Seite mit weniger x finden: „Auf welcher Seite steht weniger x?“ (Vorstufe) → x nur rechts wegnehmen (4×) → x beidseitig mit Zahlen beidseitig → vorher zusammenfassen → Klammer → Bruch → Sonderfälle → Prüfungshöhe: Klammer und x beidseitig.
 80  - Aufstellen (Einheit 4): passende Gleichung ankreuzen (3×) [INKL] → Zahlenrätsel einschrittig → zweischrittig → Alter/Geld → Geometrie mit Formel (geg./ges./F./R. [INKL]) → Prüfungshöhe: Sachverhalt mit Klammer (P10-Form).
 81
@@ -102,7 +102,7 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 
 ## 2 Originale (10)
 
-Kennungen aus „Prüfungsform“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
+Kennungen aus „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
 
 ### 2020-OS-B1e (msa-katalog-basis.csv)
 

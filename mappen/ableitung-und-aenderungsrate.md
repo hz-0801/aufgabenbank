@@ -1,9 +1,9 @@
 # Mappe: ableitung-und-aenderungsrate
 
 Eintrag: hz-0801/mathe-nachhilfe, katalog/ableitung-und-aenderungsrate.md
-Katalog-Commit: 2a296e54827b16f81fd664c4430c6fcd84dd5719 (2026-09-28T22:05:53Z, „Katalog-Nachzug Teil 2: Sek II aus den Urteilen vom 28.09.“; ermittelt über GitHub-API)
+Katalog-Commit: db8d2a3f9f6ed0e6490a4087e3eaff2cbc8a9b19 (2026-09-30T08:03:34Z, „Katalog: Vorschläge vom 30.09. eingesetzt (24 Zeilen in 17 Einträgen, Marke „kein P10-Stoff“ in _vorlage.md)“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-29 17:59 UTC
+Datum: 2026-09-30 08:04 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -51,7 +51,7 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
  36  - Einheiten und Zeiten: Uhrzeiten in Stunden seit einem Bezugspunkt und Dezimalstunden in Stunden und Minuten umrechnen, Einheiten von f und x zur Einheit „je“ zusammensetzen (Stück je Tag, Meter je Minute), prozentuale Abweichung als Quotient – jede Sachzeile in Einheit 1, 2 und 4. Sek-I-Themen einheiten.md (Zeit, Dezimalstunden), prozentrechnung.md (Abweichung in Prozent), zuordnungen.md (Rate je Zeiteinheit). [GOST Eingangsvoraussetzung L4 „verwenden Prozentdarstellungen“; RLP E–F Größen, Prozentrechnung; GOST Q1 L2 „Änderungsrate im Sachzusammenhang“]
  37  - Verlauf eines Graphen qualitativ lesen: steigt, fällt, wird steiler oder flacher, Wendestelle als steilste Stelle, Krümmung – für das Anlegen der Tangente in Einheit 2 und 3 und für die Beurteilung von Aussagen am Graphen. Thema kurvenuntersuchung.md Einheit 4 und ableitungsgraph-und-funktionsgraph.md; Sek-I-Vorläufer quadratische-funktionen.md. **Ermessen:** die Eingangsvoraussetzung L2 nennt die zeichnerische Bestimmung von Steigungen, nicht das Wort Krümmung; gesetzt, weil die Teil-A-Zeilen 2025-bebb-lk-A1.6b und 2023MerhoehtAAnalysis13-a die Steigungsfolge aus der Krümmung lesen. [Ermessen; GOST Eingangsvoraussetzung L2 „bestimmen Steigungen von beliebigen Funktionsgraphen zeichnerisch“, L4 „beschreiben qualitativ das Änderungsverhalten“]
  38  Erkennungsschritte (Vorstufe der Einheit, vor der sie stehen, nicht auf Blatt 0; eine Hauptnummer je Schritt):
- 39  - „Mittel oder Moment?“ – zu Aufgabentexten ankreuzen, ob ein Zeitraum genannt ist („in den ersten sieben Tagen“, „von acht bis zehn Uhr“, „durchschnittlich pro Stunde“ → Differenzenquotient, Sekante) oder ein Zeitpunkt („zum Zeitpunkt“, „nach genau“, „momentan“, „Geschwindigkeit bei“ → Ableitung, Tangente); nichts rechnen. Vor Einheit 1 und 2. [GOST Q1 L2 „mittlere und lokale Änderungsrate“; Rohdatei-Fehlerquellen „h'(7) statt des Differenzenquotienten“ (2019-be-gk-B2.2d), „Term als momentane Änderungsrate deuten“ (2025-bebb-lk-B2.2h); iqb 2026MgrundlegendBAnalysisWTR1-2c]
+ 39  - „Mittel oder Moment?“ – zu Aufgabentexten ankreuzen, ob ein Zeitraum genannt ist („in den ersten sieben Tagen“, „von acht bis zehn Uhr“, „durchschnittlich pro Stunde“ → Differenzenquotient, Sekante) oder ein Zeitpunkt („zum Zeitpunkt“, „nach genau“, „momentan“, „Geschwindigkeit bei“ → Ableitung, Tangente); nichts rechnen. Vor Einheit 1 und 3. [GOST Q1 L2 „mittlere und lokale Änderungsrate“; Rohdatei-Fehlerquellen „h'(7) statt des Differenzenquotienten“ (2019-be-gk-B2.2d), „Term als momentane Änderungsrate deuten“ (2025-bebb-lk-B2.2h); iqb 2026MgrundlegendBAnalysisWTR1-2c]
  40  - „Wie hoch, wie steil?“ – zu Punkten und Werten an einem Graphen ankreuzen, ob eine Zahl ein Funktionswert (Höhe, Bestand) oder ein Ableitungswert (Steigung, Rate) ist, und in welcher Einheit sie steht; nichts rechnen. Vor Einheit 2. [GOST Q1 L4 „Ableitung einer Funktion an einer Stelle“; Rohdatei-Fehlerquellen „g'(0) als g(0) lesen“ (2024-bebb-gk-A1.4a), „g(3) = 4 als Ableitungswert nehmen“ (2026MgrundlegendAAnalysis21-a), „240 als Tankinhalt deuten“ (2021MgrundlegendBAnalysisWTR-2a)]
  41  - „Bestand oder Rate?“ – zu Sachtexten ankreuzen, ob die gegebene Funktion den Bestand (Höhe, Anzahl, Menge) oder die Rate (Geschwindigkeit, Zufluss je Stunde, Abbau je Jahr) beschreibt, und daraus, wo die größte Rate zu suchen ist: beim Bestand über die Nullstellen der zweiten Ableitung, bei der Rate über die Nullstellen der ersten; nichts rechnen. Vor Einheit 4. [GOST Q1 L4 „Ableitungsfunktion auch in Sachzusammenhängen“; Rohdatei-Fehlerquellen „das Maximum von h statt von h' suchen“ (2019-be-gk-B2.1b), „k'(x) = 0 statt k''(x) = 0“ (2026MgrundlegendBAnalysisMMS1-1c), „r''(t) = 0 lösen (Wendestelle der Rate statt Maximum der Rate)“ (2026MerhoehtBAnalysisMMS2-1c)]
  42
@@ -135,9 +135,9 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 120  Zielmarke: Einheit 1 – abi: mittlere Änderungsrate aus Graph oder Tabelle mit Zeitumrechnung (2025-bebb-gk-B2.2f, 2024-bebb-lk-B2.2f, Niveau I bis II) und Sekantengleichung (2024-bebb-lk-B2.1e); iqb: Differenz und Differenzenquotient deuten (2026MgrundlegendBAnalysisWTR1-2c) und Term über Einheitsintervalle (2019MgrundlegendBAnalysisWTR2-2d, Niveau III). Einheit 2 – abi/iqb: Ableitungswert mit Steigungsdreieck in Teil A (2024-bebb-gk-A1.4a, 2024MgrundlegendAAnalysis13-a, Niveau II); iqb: Steigung einer Geraden begründen (2026MgrundlegendAAnalysis21-a, Niveau I) und Allaussage widerlegen (2020MgrundlegendBAnalysisWTR1-1c). Einheit 3 – abi: Stelle mit lokaler gleich mittlerer Rate und Deutung (2022-bebb-gk-B2.2c, Niveau III); iqb: Sekantensteigungen durch einen Punkt in Teil A (2025MerhoehtAAnalysis23-b, Niveau III) und dieselbe Stelle an der Wurzelfunktion (2024MgrundlegendAAnalysis22, Niveau III). Einheit 4 – abi: größte Wachstumsgeschwindigkeit über h'' = 0 (2019-be-gk-B2.1b) und Zeitraum mit Mindestgeschwindigkeit (2022-bebb-gk-B2.1m); iqb: Zeitpunkt und Größe der maximalen Rate mit dem Rechner (2026MerhoehtBAnalysisMMS1-1f, 2026MgrundlegendBAnalysisMMS1-1c) und Proportionalität Bestand–Rate (2026MgrundlegendBAnalysisWTR2-2c, Niveau III). fhr: keine Zielmarke (keine Zeile).
 ````
 
-## 2 Originale (61)
+## 2 Originale (68)
 
-Kennungen aus „Prüfungsform“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
+Kennungen aus „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
 
 ### 2024-C-1c (fhr-katalog.csv)
 
@@ -627,9 +627,63 @@ jahr 2026 · papier 2026-iqb-ga · punkte 3 · format Begründung · antwort Tex
 - verfahren: k − 20 als Vielfaches von k' schreiben
 - fehlerquelle: c positiv erwarten und die Aussage verwerfen
 
-Nicht in den Prüfungsdateien gefunden: 2017-be-gk
+### 2017MerhoehtAAnalysis12-b (iqb-katalog.csv)
 
-Nur außerhalb von „Prüfungsform“ genannt, nicht aufgenommen: 2019-be-gk-B2.1e, 2023-bebb-lk-B2.2c, 2023MerhoehtBAnalysisWTR1-1c, 2024-bebb-lk-B2.2h, 2026MgrundlegendBAnalysisMMS1-1d, 2017MerhoehtAAnalysis12-b, 2024MerhoehtBAnalysisWTR2-2c
+jahr 2017 · papier 2017-iqb-ea · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: n(t) = 3t² − 60t + 500, 0 ≤ t ≤ 10
+- gesucht: Zeitpunkt, zu dem die momentane Änderungsrate −30 Pollen pro Kubikmeter und Stunde beträgt
+- verfahren: n'(t) = 6t − 60 gleich −30 setzen
+- fehlerquelle: Vorzeichen der Änderungsrate verwechseln (n'(t) = 30 liefert t = 15, außerhalb des Bereichs)
+
+### 2023-bebb-lk-B2.2c (abi-katalog.csv)
+
+jahr 2023 · papier 2023-bebb-lk · punkte 5 · format Rechnung · antwort Zahl
+- gegeben: f und f' wie in a; Graph in Abbildung 1
+- gesucht: Zeitpunkt der stärksten Zunahme der Staulänge, rechnerisch
+- verfahren: Nullstellen von f' berechnen und mit der Abbildung das Maximum von f auswählen
+- fehlerquelle: x₂ (Minimum von f, stärkste Abnahme) als Antwort
+
+### 2023MerhoehtBAnalysisWTR1-1c (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ea · punkte 5 · format Rechnung · antwort Zahl
+- gegeben: f und f' wie in a; Graph in Abbildung 1
+- gesucht: Zeitpunkt der stärksten Zunahme der Staulänge, rechnerisch
+- verfahren: Nullstellen von f' berechnen und mit der Abbildung das Maximum von f auswählen
+- fehlerquelle: x₂ (Minimum von f, stärkste Abnahme) als Antwort
+
+### 2026MgrundlegendBAnalysisMMS1-1d (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ga-mms · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: k' wie in c; Schranke fünf Millionen Tonnen pro Jahr
+- gesucht: Länge des Zeitraums mit k'(x) ≥ 5, rechnerisch
+- verfahren: Gleichung k'(x) = 5 mit dem Rechner lösen, Differenz der beiden Lösungen
+- fehlerquelle: nur die erste Lösung, Zeitraum bis 20 Jahre aus der Abbildung
+
+### 2024-bebb-lk-B2.2h (abi-katalog.csv)
+
+jahr 2024 · papier 2024-bebb-lk · punkte 3 · format Begründung · antwort Text
+- gegeben: v(x) = 20 · (x − 18) · (x − 8)
+- gesucht: Begründung, dass v nach 15:00 Uhr (x > 8) ungeeignet ist
+- verfahren: Vorzeichen von v für x etwas größer als 8
+- fehlerquelle: mit der Nullstelle 18 argumentieren
+
+### 2024MerhoehtBAnalysisWTR2-2c (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ea · punkte 3 · format Begründung · antwort Text
+- gegeben: v(x) = 20 · (x − 18) · (x − 8)
+- gesucht: Begründung, dass v nach 15:00 Uhr (x > 8) ungeeignet ist
+- verfahren: Vorzeichen von v für x etwas größer als 8
+- fehlerquelle: mit der Nullstelle 18 argumentieren
+
+### 2019-be-gk-B2.1e (abi-katalog.csv)
+
+jahr 2019 · papier 2019-be-gk · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: h'(t) = −0,4t³ + 40t und g'(t) = −6t² + 60t (Wachstumsgeschwindigkeiten der Bäume A und B aus a und c), 0 ≤ t ≤ 10
+- gesucht: Zeiten, zu denen die Wachstumsgeschwindigkeiten am stärksten voneinander abweichen (ohne hinreichende Bedingung)
+- verfahren: Differenz d = g' − h' bilden, d' = 0 lösen: t² − 10t + 50/3 = 0, t = 5 ∓ 5/√3
+- fehlerquelle: die Differenz der Höhen statt der Geschwindigkeiten untersuchen oder den Betrag bilden und nur ein Maximum finden
+
+Nicht in den Prüfungsdateien gefunden: 2017-be-gk
 
 ## 3 Maßstab (unterrichtsblatt.md, wortgleich)
 

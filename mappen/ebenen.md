@@ -3,7 +3,7 @@
 Eintrag: hz-0801/mathe-nachhilfe, katalog/ebenen.md
 Katalog-Commit: 2a296e54827b16f81fd664c4430c6fcd84dd5719 (2026-09-28T22:05:53Z, „Katalog-Nachzug Teil 2: Sek II aus den Urteilen vom 28.09.“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-29 17:59 UTC
+Datum: 2026-09-30 08:05 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -140,9 +140,9 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 125  Zielmarke: Einheit 1 – abi: Parametergleichung mit Punktprobe am Dach (2022-bebb-gk-B3b, Niveau I) und am Quadrat (2018-bb-ea-B3.2a); iqb: Eindeutigkeit über Kollinearität in Teil A (2018MgrundlegendAAGLAA211-b, Niveau II). Einheit 2 – abi: Koordinatengleichung einer Seitenfläche mit Kontrollergebnis (2025-bebb-gk-B3b, 2024-bebb-gk-B3d, Niveau II) und mit Achsenabschnittsansatz und Parameter (2022-bebb-lk-B3c, LK); Teil A: Normalenvektor als Ortsvektor (2017-bb-ea-A1.2b, Niveau III); iqb: Koordinatengleichung über Parameter eliminieren (2023MerhoehtBAGLAA2WTR2-1a) und über den Ansatz mit Einsetzen (2024MgrundlegendBAGLAA2WTR2-1c), Begründung des Normalenvektors ohne Rechnung (2025MerhoehtBAGLAA2WTR-1b), Teil A: Ebene durch zwei Geraden (2018MerhoehtAAGLAA212-b). Einheit 3 – abi: Lage zu einer Achse und Figur in der Koordinatenebene in Teil A (2022-bebb-gk-A1.4b, 2018-bb-ea-A1.2a, Niveau II); iqb: Komponente null aus der Symmetrieebene begründen (2026MerhoehtBAGLAA2WTR1-1c), Vertikalität nachweisen (2022MgrundlegendBAGLAA2WTR1-1b), Schrägbild-Sonderfall (2022MerhoehtAAGLAA222-b, Niveau III). Einheit 4 – abi: parallele Ebene mit Punktprobe (2019-be-gk-B3.2e) und Parallelität über Normalenvektoren begründen (2023-bebb-gk-B3b); iqb: parallele Ebene mit Volumenverhältnis in Teil A (2020MgrundlegendAAGLAA211-b, Niveau III).
 ````
 
-## 2 Originale (51)
+## 2 Originale (54)
 
-Kennungen aus „Prüfungsform“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
+Kennungen aus „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
 
 ### 2018-be-gk-B2.1a (abi-katalog.csv)
 
@@ -552,7 +552,31 @@ jahr 2020 · papier 2020-iqb-ga · punkte 3 · format Rechnung · antwort Term
 - verfahren: Volumenverhältnis 1 : 2 in Höhenverhältnis übersetzen, Punkt in 1/3 der Kante BE, in x + 6y + 2z = b einsetzen
 - fehlerquelle: M in halber Höhe ansetzen oder in 2/3 der Höhe (Teilkörper mit E wäre dann der kleinere)
 
-Nur außerhalb von „Prüfungsform“ genannt, nicht aufgenommen: 2025MgrundlegendBAGLAA2WTR2-1b, 2024MerhoehtBAGLAA2WTR1-1c, 2026MgrundlegendBAGLAA2WTR1-1c, 2026MerhoehtBAGLAA2MMS2-1b
+### 2024MerhoehtBAGLAA2WTR1-1c (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ea · punkte 3 · format Rechnung · antwort Term
+- gegeben: Ebene E durch C, D, S; Kontrolle 4y + 3z = 12
+- gesucht: Koordinatengleichung von E
+- verfahren: Skalarprodukte mit CD und CS, d aus C
+- fehlerquelle: d aus S: 12 (gleich, aber Kontrolle nötig)
+
+### 2026MgrundlegendBAGLAA2WTR1-1c (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ga · punkte 3 · format Rechnung · antwort Term
+- gegeben: A(10 | 0 | 0), B(10 | 5 | 20), D(0 | 0 | 0); Kontrolle 4y − z = 0
+- gesucht: Koordinatengleichung der Ebene ABD
+- verfahren: Normalenvektor aus zwei Richtungsvektoren, Konstante über einen Punkt
+- fehlerquelle: Normalenvektor (0; 1; 4) (Komponenten vertauscht)
+
+### 2026MerhoehtBAGLAA2MMS2-1b (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ea-mms · punkte 3 · format Rechnung · antwort Term
+- gegeben: A(12; 0; 0), B(0; 12; 0), C(0; 0; 6) in E; Kontrolle x1 + x2 + 2x3 = 12
+- gesucht: Koordinatengleichung von E
+- verfahren: Normalenvektor aus AB · n = 0 und AC · n = 0 (oder Achsenabschnittsform x1/12 + x2/12 + x3/6 = 1), d aus A
+- fehlerquelle: Normalenvektor (1; 1; 1) aus den Achsenabschnitten raten
+
+Nur außerhalb von „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ genannt, nicht aufgenommen: 2025MgrundlegendBAGLAA2WTR2-1b
 
 ## 3 Maßstab (unterrichtsblatt.md, wortgleich)
 

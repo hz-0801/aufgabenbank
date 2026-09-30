@@ -1,9 +1,9 @@
 # Mappe: flaecheninhalt-durch-integration
 
 Eintrag: hz-0801/mathe-nachhilfe, katalog/flaecheninhalt-durch-integration.md
-Katalog-Commit: 2a296e54827b16f81fd664c4430c6fcd84dd5719 (2026-09-28T22:05:53Z, „Katalog-Nachzug Teil 2: Sek II aus den Urteilen vom 28.09.“; ermittelt über GitHub-API)
+Katalog-Commit: db8d2a3f9f6ed0e6490a4087e3eaff2cbc8a9b19 (2026-09-30T08:03:34Z, „Katalog: Vorschläge vom 30.09. eingesetzt (24 Zeilen in 17 Einträgen, Marke „kein P10-Stoff“ in _vorlage.md)“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-29 13:56 UTC
+Datum: 2026-09-30 08:06 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -117,7 +117,7 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 102  - Fläche zwischen Graph und x-Achse (Einheit 1): „Wo liegt die Fläche?“ – an Graphen ankreuzen, ob die Fläche ganz oberhalb, ganz unterhalb oder auf beiden Seiten der x-Achse liegt und ob ein Integral genügt; nichts rechnen (Vorstufe, Grundvorstellung) → Nullstellen bestimmen, Integral bilden, Betrag nehmen (Grundfall, viermal; fhr 2023-A-2b, 2025-A-1f; abi 2026-bb-gk-A1.1a; iqb 2026MgrundlegendAAnalysis13-a als Wertzeile bei stammfunktion-und-hauptsatz.md) → ganzzahlige Nullstellen durch Probieren finden und als Grenzen nutzen (fhr 2022-C-2c) → Flächen bis zu den Koordinatenachsen und senkrechten Geraden, auch mit vorgegebener Stammfunktion (fhr 2021-A-1g; abi 2025-bebb-gk-A1.4b, 2020-be-gk-B2.1i; iqb 2025MgrundlegendAAnalysis13-b, 2017MerhoehtAAnalysis2-a) → Teilflächen einzeln, Beträge addieren, Symmetrie nutzen (fhr 2023-C-1f, 2021-B-1f, 2026-C-2b; abi 2021-be-gk-A1.1b, 2024-bebb-gk-A1.1b; iqb 2024MgrundlegendAAnalysis12-b, 2021MgrundlegendAAnalysis12-b) → mit Maßstab und Abzugsflächen in Realgrößen (fhr 2024-C-2b; iqb 2023MerhoehtBAnalysisWTR2-1e, 2026MerhoehtBAnalysisWTR2-2b) → Prüfungshöhe: den berechneten Wert am Bild kontrollieren (abi 2024-bebb-lk-B2.1k, Niveau II) und den vorgegebenen Inhalt über das Integral nachweisen (iqb 2017MerhoehtAAnalysis2-a, Niveau I); fhr-Zielmarke: die Gesamtfläche aus Teilflächen (fhr 2021-B-1f, Niveau III).
 103  - Fläche zwischen zwei Graphen (Einheit 2): „Wer liegt oben?“ – zu Graphenpaaren ankreuzen, welche Funktion auf welchem Abschnitt oben verläuft; nichts rechnen (Vorstufe) → Differenzfunktion bilden und über gegebenem Intervall integrieren (Grundfall, viermal; fhr 2022-C-2e, 2024-B-2d; abi 2019-be-gk-A1.2b; iqb 2019MgrundlegendAAnalysis11-b, 2018MgrundlegendAAnalysis11-b) → Schnittstellen als Grenzen berechnen oder nachweisen (fhr 2023-C-2d, 2020-A-2c, 2021-A-2d, 2026-C-2d; abi 2023-bebb-lk-B2.2k, 2021-be-gk-B2.1e; iqb 2020MerhoehtAAnalysis12-a, 2023MgrundlegendBAnalysisWTR1-1e) → gegen waagerechte Geraden und Hochpunktgeraden, auch über eine Periode (abi 2018-be-gk-B1.1b, 2026-bb-gk-B2.2d; iqb 2022MgrundlegendAAnalysis11-b, 2018MgrundlegendAAnalysis11-b) → mit vorgegebener Stammfunktion an e-Produkten (abi 2026-bb-ea-A1.1b, 2021-be-gk-B2.2j, 2018-bb-ea-B2.1c; iqb 2026MerhoehtAAnalysis14-b, 2023MgrundlegendBAnalysisWTR2-1d) → verschieden weite Ränder als Differenz zweier Integrale (abi 2021-be-gk-B2.1h; iqb 2020MgrundlegendBAnalysisWTR1-1e) → zwischen zwei Tangenten (iqb 2021MerhoehtAAnalysis11-b) → Prüfungshöhe: den Flächenterm in der variablen Grenze nachweisen (abi 2026-bb-gk-B2.2d; iqb 2026MgrundlegendBAnalysisWTR2-1d, Niveau II) und die Scharkurvenfläche mit Parameterungleichung (abi 2025-bebb-lk-B2.1e; iqb 2025MerhoehtBAnalysisMMS1-1d, Niveau III); fhr-Zielmarke: die Torfläche zwischen zwei Parabelbögen (fhr 2023-C-2d, Niveau II).
 104  - Zusammensetzen, Maßstab, Volumen (Einheit 3): „Integral oder Figur?“ – zusammengesetzte Flächen in Stücke zerlegen und je Stück ankreuzen, ob es ein Integral oder eine Formelfläche wird; nichts rechnen (Vorstufe) → eine Fläche in Integral und Rechteck oder Dreieck zerlegen (Grundfall, viermal; iqb 2019MerhoehtAAnalysis11-b als Rechteckzeile, 2018MerhoehtBAnalysisWTR2-1l; abi 2022-bebb-gk-B2.2h) → abschnittsweise Ränder in Teilintegrale trennen (abi 2017-bb-ea-B2.2f; fhr 2019-A-2c) → mit dem quadratischen Maßstab in Realgrößen umrechnen (fhr 2020-A-2c; abi 2024-bebb-gk-B2.1j; iqb 2023MerhoehtBAnalysisWTR2-1e) → das Volumen als Fläche mal Länge und zurück, weiter zu Masse und Anteil (fhr 2025-C-2c, 2025-C-2e, 2026-B-2d, 2026-C-2e, 2020-A-2d; iqb 2025MerhoehtBAnalysisMMS2-2c, 2026MgrundlegendBAnalysisMMS2-1f) → Halbkreise, Kreisflächen und gespiegelte Randlinien einbauen (abi 2026-bb-gk-B2.1g, 2025-bebb-gk-B2.1e, 2023-bebb-gk-B2.1m; iqb 2026MgrundlegendBAnalysisMMS2-1g) → Prüfungshöhe: die Aufgabenstellung zu einem vorgelegten Flächen- oder Volumenterm formulieren und die Schritte deuten (iqb 2026MgrundlegendBAnalysisMMS2-1f, 2020MgrundlegendBAnalysisWTR1-1f; abi 2024-bebb-gk-B2.2e, Niveau III), die Tangentenfläche mit Breite zum Volumen (abi 2020-be-gk-B2.2g, Niveau III) und die Sehnenfrage größer/kleiner/gleich (abi 2022-bebb-gk-B2.2i, Niveau III); fhr-Zielmarke: Tunnelquerschnitt, Volumen und Masse in einer Kette (fhr 2025-C-2c, Niveau II), der vorgegebene Term mit Stammfunktion (iqb 2025MerhoehtBAnalysisWTR2-1e als Anschluss).
-105  - Flächenbedingungen (Einheit 4): „Vorwärts oder rückwärts?“ als Startfrage (Vorstufe: ist der Inhalt gegeben oder gesucht?) → den Parameter einer Geraden aus dem Flächeninhalt bestimmen (Grundfall, viermal; abi 2022-bebb-gk-A1.3a; iqb 2022MgrundlegendAAnalysis2, 2018MerhoehtAAnalysis11-b) → den Achsenschnittpunkt über Rechteck und Dreieck (iqb 2017MerhoehtAAnalysis2-b) → Flächen halbieren: senkrechte Gerade über den Flächenterm, parallele Gerade und Nullstellengerade über das Achsendreieck, Verschiebung über das Integral null (abi 2026-bb-gk-B2.2e; iqb 2026MgrundlegendBAnalysisWTR2-1e, 2024MerhoehtBAnalysisWTR3-2e, 2026MgrundlegendBAnalysisMMS1-2c, 2025MgrundlegendAAnalysis21-b) → die Parametergleichung aus einem markierten Scharflächenstück ansetzen (iqb 2020MgrundlegendBAnalysisWTR2-2c) → Existenz und Eindeutigkeit begründen: monoton wachsender Flächenterm, Flächenausgleich, Stetigkeit (abi 2022-bebb-gk-B2.1i; iqb 2024MgrundlegendBAnalysisWTR1-1c, 2020MgrundlegendBAnalysisWTR2-1g, 2019MgrundlegendBAnalysisWTR1-2f, 2026MerhoehtBAnalysisWTR3-1c, 2025MerhoehtBAnalysisWTR1-1e) → Prüfungshöhe: die Lösung über Punktsymmetrie und Rechteck ohne Rechnung (iqb 2025MgrundlegendBAnalysisWTR1-1d, Niveau II bis III), die Dreiecksnäherung als parameterunabhängig (iqb 2026MerhoehtBAnalysisMMS2-2e, Niveau III) und die eindeutige Lösung über die Monotonie (iqb 2026MerhoehtBAnalysisWTR3-1c, Niveau II); fhr-Zielmarke: keine – der fhr-Katalog stellt keine Flächenbedingungen.
+105  - Flächenbedingungen (Einheit 4): „Vorwärts oder rückwärts?“ – zu Aufgaben ankreuzen, ob der Flächeninhalt gegeben ist und ein Parameter oder eine Grenze gesucht wird, oder ob der Inhalt gesucht ist; nichts rechnen (Vorstufe) → den Parameter einer Geraden aus dem Flächeninhalt bestimmen (Grundfall, viermal; abi 2022-bebb-gk-A1.3a; iqb 2022MgrundlegendAAnalysis2, 2018MerhoehtAAnalysis11-b) → den Achsenschnittpunkt über Rechteck und Dreieck (iqb 2017MerhoehtAAnalysis2-b) → Flächen halbieren: senkrechte Gerade über den Flächenterm, parallele Gerade und Nullstellengerade über das Achsendreieck, Verschiebung über das Integral null (abi 2026-bb-gk-B2.2e; iqb 2026MgrundlegendBAnalysisWTR2-1e, 2024MerhoehtBAnalysisWTR3-2e, 2026MgrundlegendBAnalysisMMS1-2c, 2025MgrundlegendAAnalysis21-b) → die Parametergleichung aus einem markierten Scharflächenstück ansetzen (iqb 2020MgrundlegendBAnalysisWTR2-2c) → Existenz und Eindeutigkeit begründen: monoton wachsender Flächenterm, Flächenausgleich, Stetigkeit (abi 2022-bebb-gk-B2.1i; iqb 2024MgrundlegendBAnalysisWTR1-1c, 2020MgrundlegendBAnalysisWTR2-1g, 2019MgrundlegendBAnalysisWTR1-2f, 2026MerhoehtBAnalysisWTR3-1c, 2025MerhoehtBAnalysisWTR1-1e) → Prüfungshöhe: die Lösung über Punktsymmetrie und Rechteck ohne Rechnung (iqb 2025MgrundlegendBAnalysisWTR1-1d, Niveau II bis III), die Dreiecksnäherung als parameterunabhängig (iqb 2026MerhoehtBAnalysisMMS2-2e, Niveau III) und die eindeutige Lösung über die Monotonie (iqb 2026MerhoehtBAnalysisWTR3-1c, Niveau II); fhr-Zielmarke: keine – der fhr-Katalog stellt keine Flächenbedingungen.
 106  - Flächenbilanz (Einheit 5): „Wert oder Fläche?“ – zu Integralen mit Bild ankreuzen, ob der Wert positiv, negativ oder null ist und ob er der Fläche entspricht; nichts rechnen (Vorstufe, Grundvorstellung) → Integralwerte durch Kästchenzählen bestimmen und das Vorgehen beschreiben (Grundfall, viermal; iqb 2024MgrundlegendAAnalysis11-a, 2023MgrundlegendBAnalysisWTR1-2a, 2021MgrundlegendAAnalysis11-b; abi 2023-bebb-gk-A1.2a) → Vorzeichen und Wert null am Graphen begründen (abi 2025-bebb-lk-A1.2a; iqb 2025MerhoehtAAnalysis13-a, 2024MerhoehtAAnalysis11-a, 2026MerhoehtAAnalysis12-a, 2021MgrundlegendBAnalysisWTR-1f) → zu denselben Grenzen a) den Wert des Integrals, b) den Inhalt der Fläche rechnen und beide Ergebnisse nebeneinander nennen → Symmetrieargumente: ungerader Anteil und Rechteck, Punktsymmetrie zum Wendepunkt, Quadrat (abi 2026-bb-ea-A1.6b; iqb 2026MgrundlegendBAnalysisWTR1-1e, 2025MgrundlegendAAnalysis12-b, 2019MgrundlegendBAnalysisWTR1-2e, 2022MerhoehtBAnalysisWTR1-2b, 2018MerhoehtBAnalysisWTR1-1d als Partnerzeile) → Integrale vergleichen und Aussagen beurteilen (abi 2021-be-gk-A1.2b, 2022-bebb-gk-B2.1f, 2022-bebb-lk-B2.1j, 2026-bb-gk-A1.1b; iqb 2018MgrundlegendBAnalysisWTR-1e, 2026MgrundlegendAAnalysis13-b, 2025MerhoehtBAnalysisWTR3-2d, 2019MgrundlegendBAnalysisWTR1-3d) → Näherungen über Vielecke, Rechtecke, Über- und Fehlflächen (abi 2025-bebb-gk-B2.2c, 2025-bebb-lk-B2.1g; iqb 2025MgrundlegendBAnalysisWTR2-1c, 2022MgrundlegendBAnalysisWTR1-1e, 2026MgrundlegendAAnalysis14-b, 2025MerhoehtBAnalysisMMS1-2c, 2023MgrundlegendAAnalysis13-a als Wertpartner) → den Mittelwert berechnen und deuten (abi 2023-bebb-gk-B2.2i, 2019-be-gk-B2.2e, 2026-bb-ea-B2.1h) → Prüfungshöhe: die Scharflächen-Aussage über das Vorzeichen des Terms (abi 2025-bebb-lk-B2.1d; iqb 2025MerhoehtBAnalysisMMS1-1c, Niveau II bis III), der Flächenterm der gespiegelten Figur (iqb 2025MerhoehtBAnalysisWTR2-1d, Niveau III), die Hyperbel-Grenzenwahl (iqb 2019MgrundlegendBAnalysisWTR1-3d, Niveau III), der Dreiecksvergleich über die Wendepunktsymmetrie (iqb 2019MgrundlegendBAnalysisWTR1-2e, Niveau II) und die Schranken-Ungleichung mit Stammfunktion (abi 2024-bebb-lk-B2.1j; iqb 2024MerhoehtBAnalysisWTR1-1f, Niveau II bis III); fhr-Zielmarke: keine – die Bilanzdeutung stellt der fhr-Katalog nur eingebettet (Betrag und Orientierung in Einheit 1).
 107
 108  ### Prüfungsform (fhr / abi / iqb)
@@ -128,9 +128,9 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 113  Zielmarke: Einheit 1 – fhr: die Gesamtfläche aus Teilflächen (2021-B-1f, Niveau III); abi: die Achsenfläche mit e-Funktion in Teil A (2025-bebb-gk-A1.4b, Niveau II); iqb: die Vorderansicht mit Maßstab und Abzug (2026MerhoehtBAnalysisWTR2-2b, Niveau II). Einheit 2 – fhr: das Hoftor zwischen zwei Parabelbögen (2023-C-2d, Niveau II); abi: die Sekantenschritte des Flächenverhältnisses (2024-bebb-gk-B2.2e, Niveau III); iqb: die Scharkurvenfläche mit Parameterungleichung (2025MerhoehtBAnalysisMMS1-1d, Niveau III). Einheit 3 – fhr: Tunnelquerschnitt, Volumen und Masse (2025-C-2c, Niveau II); abi: die Tangentenfläche mit Breite zum Volumen (2020-be-gk-B2.2g, Niveau III); iqb: der flächengleiche Halbkreisring mit Masse (2026MgrundlegendBAnalysisMMS2-1g, Niveau III). Einheit 4 – fhr: keine; abi: die Geradensteigung aus dem Flächeninhalt (2022-bebb-gk-A1.3a, Niveau II); iqb: die Lösung über Punktsymmetrie und Rechteck (2025MgrundlegendBAnalysisWTR1-1d, Niveau II bis III). Einheit 5 – fhr: keine; abi: der Mittelwert mit Sachdeutung (2023-bebb-gk-B2.2i, Niveau II); iqb: der Flächenterm der gespiegelten Figur (2025MerhoehtBAnalysisWTR2-1d, Niveau III).
 ````
 
-## 2 Originale (104)
+## 2 Originale (148)
 
-Kennungen aus „Prüfungsform“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
+Kennungen aus „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
 
 ### 2019-A-2c (fhr-katalog.csv)
 
@@ -964,7 +964,359 @@ jahr 2025 · papier 2025-iqb-ea · punkte 5 · format Begründung · antwort Tex
 - verfahren: Rechteck und Integral am Graphen von f deuten, Differenz als halbe Figur über die Spiegelung erkennen
 - fehlerquelle: ln 5 als Nullstelle statt als f-Wert 5 an der Spiegelstelle deuten (f(ln 5) = 5 ln 5/5 = ln 5)
 
-Nur außerhalb von „Prüfungsform“ genannt, nicht aufgenommen: 2025-bebb-lk-B2.1g, 2024MgrundlegendAAnalysis12-b, 2026-bb-ea-A1.6b, 2022-C-2e, 2026-C-2d, 2025MgrundlegendAAnalysis13-b, 2021MgrundlegendAAnalysis12-b, 2026-bb-gk-B2.2d, 2021-be-gk-B2.1h, 2018-bb-ea-B2.2g, 2020-be-gk-B2.1i, 2021-be-gk-B2.2j, 2026MerhoehtAAnalysis14-b, 2025MerhoehtBAnalysisWTR2-1e, 2026-C-2e, 2025-C-2e, 2025MerhoehtBAnalysisMMS2-2c, 2026MgrundlegendBAnalysisMMS2-1f, 2020MgrundlegendBAnalysisWTR1-1f, 2017MerhoehtAAnalysis2-b, 2026-bb-gk-B2.2e, 2022-bebb-gk-B2.1i, 2026MgrundlegendBAnalysisWTR2-1e, 2025MgrundlegendAAnalysis21-b, 2020MgrundlegendBAnalysisWTR2-2c, 2022-bebb-gk-B2.2i, 2019MgrundlegendBAnalysisWTR1-2f, 2026MerhoehtBAnalysisWTR3-1c, 2020MgrundlegendBAnalysisWTR2-1g, 2022-bebb-gk-B2.1f, 2021-be-gk-A1.2b, 2023MgrundlegendBAnalysisWTR1-2a, 2025MerhoehtBAnalysisMMS1-2c, 2022MerhoehtBAnalysisWTR1-2b, 2026MgrundlegendAAnalysis14-b, 2025MerhoehtBAnalysisWTR3-2d, 2019MgrundlegendBAnalysisWTR1-3d, 2020-A-2d, 2025-bebb-lk-B2.1e, 2025-bebb-gk-B2.2c, 2025MgrundlegendBAnalysisWTR2-1c, 2026MgrundlegendAAnalysis13-a, 2026MgrundlegendBAnalysisWTR2-1d, 2018MerhoehtBAnalysisWTR1-1d, 2023MgrundlegendAAnalysis13-a
+### 2026MgrundlegendAAnalysis13-a (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ga · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: f(x) = x^3 + x^2 − 2x, definiert in IR; Nullstellen −2, 0 und 1; Graph in der Abbildung
+- gesucht: Wert des Integrals von −1 bis 0 über f(x) dx
+- verfahren: Stammfunktion F(x) = 1/4 x^4 + 1/3 x^3 − x^2 bilden und F(0) − F(−1) berechnen
+- fehlerquelle: beim Einsetzen von −1 die Vorzeichen der ungeraden Potenz verfehlen
+
+### 2020-be-gk-B2.1i (abi-katalog.csv)
+
+jahr 2020 · papier 2020-be-gk · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: f(x) = (6x − 3) · e^(−x), x ∈ IR; Stammfunktion F(x) = (−6x − 3) · e^(−x) (aus h); Fläche zwischen Graph, x-Achse, x = 1 und x = 5
+- gesucht: Flächeninhalt
+- verfahren: Bestimmtes Integral mit F, da f auf [1; 5] positiv ist
+- fehlerquelle: Vorzeichen von F(1) = −9/e falsch behandeln
+
+### 2025MgrundlegendAAnalysis13-b (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ga · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: f(x) = 2e^x − 2e mit der Nullstelle 1; der Graph schließt mit den Koordinatenachsen eine Fläche ein (zwischen x = 0 und x = 1 unter der x-Achse)
+- gesucht: Inhalt dieser Fläche
+- verfahren: Integral von 0 bis 1 über f mit der Stammfunktion 2e^x − 2ex auswerten, Betrag nehmen
+- fehlerquelle: −2 als Flächeninhalt angeben oder 2e als 2e^x integrieren
+
+### 2024MgrundlegendAAnalysis12-b (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ga · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: f(x) = x³ − 4x, punktsymmetrisch zum Ursprung; der Graph und die x-Achse schließen eine Fläche aus zwei Flächenstücken ein
+- gesucht: Inhalt dieser Fläche
+- verfahren: Nullstellen bestimmen, Integral über [−2; 0] mit der Stammfunktion auswerten und wegen der Symmetrie verdoppeln (oder beide Stücke mit Betrag addieren)
+- fehlerquelle: von −2 bis 2 in einem Zug integrieren und 0 erhalten
+
+### 2021MgrundlegendAAnalysis12-b (iqb-katalog.csv)
+
+jahr 2021 · papier 2021-iqb-ga · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: f(x) = x³ − x
+- gesucht: Inhalt der Fläche, die Graph und x-Achse einschließen
+- verfahren: zwei Flächenstücke, über Symmetrie eines verdoppeln
+- fehlerquelle: Integral von −1 bis 1 bilden (ergibt 0)
+
+### 2022-C-2e (fhr-katalog.csv)
+
+jahr 2022 · papier C · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: f(x) = x^3 − 12x^2 + 39x − 28 und g(x) = −5x + 20; betrachtet wird das Intervall von 2 bis 4
+- gesucht: Maßzahl des Inhalts der zwischen Gf und Gg eingeschlossenen Fläche im Intervall von 2 bis 4
+- verfahren: die Differenz der beiden Terme bilden, davon die Stammfunktion aufstellen und an den Grenzen 4 und 2 auswerten
+- fehlerquelle: die Differenz in der falschen Reihenfolge bilden und ein negatives Ergebnis stehen lassen
+
+### 2026-C-2d (fhr-katalog.csv)
+
+jahr 2026 · papier C · punkte 7 · format Zeichnen|Rechnung · antwort Grafik|Zahl
+- gegeben: f(x) = x^3 − 12,25x; x aus IR; Gf punktsymmetrisch zum Koordinatenursprung; g(x) = −4x^2 + 20x − 10 mit den Punkten P(0; −10), Q(1; 6), R(4; 6); Gf und Gg schneiden sich im Intervall 1 <= x <= 3 nicht; Kontrollwert: rund 54,33 FE
+- gesucht: Eintragen der drei Punkte und Skizze von Gg|Markierung der eingeschlossenen Fläche|Nachweis des Flächeninhalts von rund 54,33 FE
+- verfahren: Differenzfunktion h = f − g bilden und von 1 bis 3 integrieren, den Betrag als Flächeninhalt deuten
+- fehlerquelle: die Differenz in der falschen Reihenfolge bilden und das negative Vorzeichen als Fläche angeben
+
+### 2026-bb-gk-B2.2d (abi-katalog.csv)
+
+jahr 2026 · papier 2026-bb-gk · punkte 3 · format Begründung · antwort Term
+- gegeben: f(x) = 3e^x + 1; Fläche zwischen Gf, der y-Achse, y = 1 und x = u mit u < 0
+- gesucht: Nachweis, dass der Inhalt 3 − 3e^u beträgt
+- verfahren: Integral über f(x) − 1 von u bis 0
+- fehlerquelle: Grenzen vertauschen (Vorzeichen)
+
+### 2021-be-gk-B2.2j (abi-katalog.csv)
+
+jahr 2021 · papier 2021-be-gk · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: d(x) = f(x) − h(x) auf [0; 27,5]; ohne Nachweis: D(x) = (x² − 15/2 x − 75) · e^(−0,1x) ist eine Stammfunktion von d
+- gesucht: Querschnittsfläche des Flügels
+- verfahren: Integral von 0 bis 27,5 über d mit D
+- fehlerquelle: D(0) = −75 als 0 behandeln (dann ≈ 30,4)
+
+### 2026MerhoehtAAnalysis14-b (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ea · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: f(x) = 4e^(1/2 x + 1) und g(x) = x^2 · e^(1/2 x + 1); die Graphen schneiden sich nur bei x = −2 und x = 2; G(x) = (2x^2 − 8x + 16) · e^(1/2 x + 1) ist eine Stammfunktion von g
+- gesucht: Inhalt der Fläche, die die Graphen von f und g einschließen
+- verfahren: Integral von −2 bis 2 über f(x) − g(x) mit der Stammfunktion 8e^(1/2 x + 1) − G(x) auswerten; die Terme mit e^2 heben sich auf
+- fehlerquelle: die Stammfunktion von f mit 2e^(1/2 x + 1) ansetzen (Faktor 1/2 im Exponenten vergessen)
+
+### 2021-be-gk-B2.1h (abi-katalog.csv)
+
+jahr 2021 · papier 2021-be-gk · punkte 6 · format Rechnung · antwort Zahl
+- gegeben: f(x) = 1/12 x³ − x² + 3x und p(x) = −x² + 3,8x − 1,36, beide in IR; Graphen G_f und G_p (Parabel); Querschnittsfläche eingeschlossen von G_f, G_p, der x-Achse und x = 4,5 (Abbildung 1); 1 LE = 10 cm
+- gesucht: Flächeninhalt der Querschnittsfläche
+- verfahren: Fläche unter G_f von 0 bis 4,5 minus Fläche unter G_p zwischen den Nullstellen 0,4 und 3,4
+- fehlerquelle: beide Integrale über dieselben Grenzen bilden
+
+### 2026MgrundlegendBAnalysisWTR2-1d (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ga · punkte 3 · format Begründung · antwort Term
+- gegeben: f(x) = 3e^x + 1; Fläche zwischen Gf, der y-Achse, y = 1 und x = u mit u < 0
+- gesucht: Nachweis, dass der Inhalt 3 − 3e^u beträgt
+- verfahren: Integral über f(x) − 1 von u bis 0
+- fehlerquelle: Grenzen vertauschen (Vorzeichen)
+
+### 2025-bebb-lk-B2.1e (abi-katalog.csv)
+
+jahr 2025 · papier 2025-bebb-lk · punkte 5 · format Begründung|Rechnung · antwort Text
+- gegeben: h_k(x) = k/2 · (x − 2k)²; Schritte I: f_k(x) = h_k(x) ⇔ x = −k ∨ x = k ∨ x = 2k; II: ∫_{−k}^{k} (h_k − f_k) dx + ∫_{k}^{2k} (f_k − h_k) dx = 29/10 · k⁴; Aussage: für k > 3 ist die Summe der beiden Integrale kleiner als k⁵
+- gesucht: geometrische Deutung beider Schritte in Bezug auf die Graphen; Untersuchung der Aussage
+- verfahren: I als Schnittstellen, II als Flächeninhalt zwischen den Graphen deuten; 29/10 · k⁴ < k⁵ nach k auflösen
+- fehlerquelle: Ungleichung durch k⁴ teilen ohne k > 0 zu nennen; Wechsel der oberen Funktion bei x = k nicht erklären
+
+### 2025-C-2e (fhr-katalog.csv)
+
+jahr 2025 · papier C · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: der neue Tunnel hat eine Querschnittsfläche von 0,8 m^2 und soll genau das gleiche Volumen wie der alte Tunnel mit 114 m^3 haben
+- gesucht: geplante Länge des neuen Tunnels
+- verfahren: das Volumen des alten Tunnels durch die neue Querschnittsfläche teilen
+- fehlerquelle: Querschnittsfläche und Volumen multiplizieren statt zu teilen
+
+### 2026-C-2e (fhr-katalog.csv)
+
+jahr 2026 · papier C · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: die Fläche aus Teilaufgabe d ist der Querschnitt eines Aluminiumprofils, rund 54,33 FE; eine Längeneinheit im Koordinatensystem entspricht einem Millimeter; Profillänge 2 m; ein Kubikzentimeter Aluminium wiegt 2,7 g
+- gesucht: Masse eines zwei Meter langen Aluminiumprofils
+- verfahren: Querschnittsfläche in mm^2 mit der Länge in mm multiplizieren, das Volumen in cm^3 umrechnen und mit der Dichte multiplizieren
+- fehlerquelle: mm^3 mit dem Faktor 10 statt 1000 in cm^3 umrechnen
+
+### 2020-A-2d (fhr-katalog.csv)
+
+jahr 2020 · papier A · punkte 5 · format Rechnung · antwort Zahl
+- gegeben: g(x) = 0,01x^4 − 0,2x^2 + 5,64; x aus IR; die rote Glasscheibe liegt zwischen Gg und der x-Achse im Bereich −4 <= x <= 4; die blaue Glasscheibe hat rund 16,38 Flächeneinheiten; die Fensterfläche besteht nur aus beiden Scheiben
+- gesucht: Anteil der roten Glasfläche an der gesamten Fensterfläche
+- verfahren: g zwischen −4 und 4 integrieren und die so erhaltene rote Fläche durch die Summe beider Flächen teilen
+- fehlerquelle: die rote Fläche durch die blaue statt durch die Gesamtfläche teilen
+
+### 2025MerhoehtBAnalysisMMS2-2c (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ea-mms · punkte 6 · format Rechnung · antwort Zahl
+- gegeben: Wasserrutsche: r(x) = 1/16 · x² · e^(−0,25x + 1) (= f_(0,25)), Graph G beschreibt für −4 ≤ x ≤ 10 die Profillinie der Rutschbahn, die x-Achse den Boden und die Wasseroberfläche, links ein horizontales Startpodest; 1 LE = 1 m; Rutschbahn 1,5 m breit mit senkrechten Wänden; Wasser in der Mulde an der tiefsten Stelle 5 cm hoch (Abb. 2)
+- gesucht: Volumen des Wassers in der Mulde in Litern
+- verfahren: Wasserlinie y = 0,05 mit G schneiden, Fläche dazwischen integrieren, mit 1,5 multiplizieren und in Liter umrechnen
+- fehlerquelle: 5 cm als 5 statt 0,05 in Meter einsetzen; Umrechnung m³ → Liter vergessen
+
+### 2026MgrundlegendBAnalysisMMS2-1f (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ga-mms · punkte 5 · format Kurzantwort|Begründung · antwort Text
+- gegeben: Rechenschritte: f(x) = −1 ⇔ x = x₁ ∨ x₂ ∨ x₃ (≈ −3,03; −0,56; 1,59); ∫ von x₂ bis x₃ (−1 − f(x)) dx ≈ 1,09; 1,09 · 5² · 300 = 8175; also etwa 8175 cm³
+- gesucht: passende Aufgabenstellung; Erläuterung des Lösungswegs
+- verfahren: y = −1 als Wasserstand 5 cm unter dem Rand deuten, Integral als Querschnittsfläche, Faktor 25 und Länge 300 cm
+- fehlerquelle: Faktor 5² als 5 lesen; x₁ außerhalb der Rinne mitverwenden
+
+### 2020MgrundlegendBAnalysisWTR1-1f (iqb-katalog.csv)
+
+jahr 2020 · papier 2020-iqb-ga · punkte 5 · format Begründung · antwort Text
+- gegeben: Logo eines Geschäfts für Anglerbedarf: untere Begrenzungslinie des Fischs u(x) = 1/8 x³, obere Begrenzungslinie v(x) = 1/4 x² · (4 − x) (beide in IR definiert), Wasseroberfläche y = 5/4; die obere Spitze der Schwanzflosse liegt auf der Wasseroberfläche, die Strecke zwischen oberer und unterer Spitze der Schwanzflosse steht senkrecht dazu; x₁ Lösung von v(x) = 5/4 für 0 < x ≤ 8/3, x₂ Lösung von u(x) = 5/4; Term ∫₋₁^x₁ (v(x) − u(x)) dx + ∫_x₁^x₂ (5/4 − u(x)) dx
+- gesucht: passende Aufgabenstellung und Bedeutung der beiden Integrale
+- verfahren: Beide Integrale als Flächenstücke zwischen den Randlinien bzw. der Wasseroberfläche deuten und die Summe als Fläche des Fischteils unter Wasser erkennen
+- fehlerquelle: das zweite Integral als Fläche zwischen u und v deuten
+
+### 2022-bebb-gk-B2.2i (abi-katalog.csv)
+
+jahr 2022 · papier 2022-bebb-gk · punkte 4 · format Rechnung|Begründung · antwort Text
+- gegeben: Betonteil wie in h; Vorschlag: oberer Rand als Gerade durch A(0 | 0) und B(2 | 1,5) statt Graph von h
+- gesucht: ob die Querschnittsfläche dadurch größer, kleiner oder unverändert wäre
+- verfahren: Integral unter der Sehne mit dem Integral von h vergleichen
+- fehlerquelle: aus der Form des Graphen auf „größer“ schließen, ohne zu rechnen
+
+### 2025MerhoehtBAnalysisWTR2-1e (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ea · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: F(x) = −5(x + 1) e^−x Stammfunktion von f; Term aus d
+- gesucht: Flächeninhalt der Figur auf Zehntel
+- verfahren: Integral über F, einsetzen
+- fehlerquelle: F(ln 5) mit e^{−ln 5} = 1/5 falsch auswerten
+
+### 2017MerhoehtAAnalysis2-b (iqb-katalog.csv)
+
+jahr 2017 · papier 2017-iqb-ea · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: f(x) = −x³ + 12x mit H(2 | 16); Fläche unter dem Graphen über [0; 2] ist 20 (aus a); Gerade g durch H mit negativer Steigung; Graph, y-Achse und g schließen für 0 ≤ x ≤ 2 eine Fläche mit dem Inhalt 20 ein
+- gesucht: Koordinaten des Schnittpunkts von g mit der y-Achse
+- verfahren: Die Fläche zwischen Graph, y-Achse und y = 16 ist 2 · 16 − 20 = 12; die Fläche zwischen y = 16, y-Achse und g muss dann 20 − 12 = 8 sein, ein Dreieck mit Grundseite 2 (auf y = 16) und Höhe h auf der y-Achse: 1/2 · 2 · h = 8
+- fehlerquelle: die Flächenbedingung als Integral über g − f ansetzen und an der unbekannten Steigung scheitern
+
+### 2026-bb-gk-B2.2e (abi-katalog.csv)
+
+jahr 2026 · papier 2026-bb-gk · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: Flächeninhalt 3 − 3e^u (aus d); u = −ln 5; die Gerade x = a teilt die Fläche in zwei inhaltsgleiche Teile
+- gesucht: Wert von a
+- verfahren: Fläche von a bis 0 gleich halber Gesamtfläche setzen
+- fehlerquelle: Halbierung auf den Term mit u statt a anwenden
+
+### 2026MgrundlegendBAnalysisWTR2-1e (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ga · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: Flächeninhalt 3 − 3e^u (aus d); u = −ln 5; die Gerade x = a teilt die Fläche in zwei inhaltsgleiche Teile
+- gesucht: Wert von a
+- verfahren: Fläche von a bis 0 gleich halber Gesamtfläche setzen
+- fehlerquelle: Halbierung auf den Term mit u statt a anwenden
+
+### 2025MgrundlegendAAnalysis21-b (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ga · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: f(x) = x^4 − x^2; Quadrat mit den Ecken (±1; ±1); der Graph wird um c > 0 in y-Richtung verschoben, sodass er das Quadrat in zwei Flächen gleichen Inhalts teilt
+- gesucht: Wert von c
+- verfahren: der verschobene Graph x^4 − x^2 + c teilt das Quadrat genau dann in gleiche Teile, wenn er die x-Achse als Mittellinie im Mittel trifft: Integral von 0 bis 1 über x^4 − x^2 + c gleich 0 (Symmetrie zur y-Achse); 1/5 − 1/3 + c = 0
+- fehlerquelle: das Integral gleich 2 (halbe Quadratfläche) setzen statt gleich 0, oder über [−1; 1] ohne Symmetrie rechnen
+
+### 2020MgrundlegendBAnalysisWTR2-2c (iqb-katalog.csv)
+
+jahr 2020 · papier 2020-iqb-ga · punkte 4 · format Eintragen|Kurzantwort · antwort Grafik|Term
+- gegeben: Schar g_b(x) = 1/10 · x · (x − b) · eˣ, b ∈ IR₀⁺, x ∈ IR; g_b'(x) = 1/10 · (x² + (2 − b) · x − b) · eˣ; Abbildung 2 zeigt die Graphen von g₂ und g₃; f(x) = 1/10 · x · (3 − x) · eˣ aus Aufgabe 1; für jeden Wert von b schließen die Graphen von g_b und g_(b+1) im vierten Quadranten mit der x-Achse ein Flächenstück ein; für einen Wert von b hat es den Inhalt 5
+- gesucht: Markierung des Flächenstücks für b = 2 in Abbildung 2; eine Gleichung zur Bestimmung des Werts von b
+- verfahren: Flächenstück zwischen den beiden Graphen unter der x-Achse markieren; Inhalt als Differenz der Beträge der beiden Integrale von 0 bis zur jeweiligen Nullstelle ansetzen
+- fehlerquelle: das Integral von g_(b+1) − g_b von 0 bis b + 1 ansetzen und die x-Achse als Begrenzung vergessen
+
+### 2022-bebb-gk-B2.1i (abi-katalog.csv)
+
+jahr 2022 · papier 2022-bebb-gk · punkte 4 · format Begründung · antwort Text
+- gegeben: f(x) = (x + 2) · e^(−x), definiert in IR, mit f'(x) = −(x + 1) · e^(−x); im 4. Quadranten schließen der Graph von f', die Koordinatenachsen und die Gerade x = b eine Fläche A_b ein
+- gesucht: Begründung, dass es ein b mit Flächeninhalt A_b = 1 gibt
+- verfahren: A_b = f(0) − f(b) = 2 − f(b), wächst von 0 gegen 2, nimmt also den Wert 1 an
+- fehlerquelle: A_b nur für ein b ausrechnen
+
+### 2020MgrundlegendBAnalysisWTR2-1g (iqb-katalog.csv)
+
+jahr 2020 · papier 2020-iqb-ga · punkte 3 · format Begründung · antwort Text
+- gegeben: f(x) = 1/10 · x · (3 − x) · eˣ, x ∈ IR; Abbildung 1 zeigt den Graphen von f; f'(x) = −1/10 · (x² − x − 3) · eˣ; Behauptung: es gibt eine positive Zahl a mit ∫₀ᵃ f(x) dx = 0
+- gesucht: Begründung ohne Rechnung
+- verfahren: Flächenstücke oberhalb (über [0; 3]) und unterhalb der x-Achse (ab 3, unbeschränkt wachsend) vergleichen
+- fehlerquelle: a mit der Nullstelle 3 verwechseln (dort ist das Integral positiv)
+
+### 2019MgrundlegendBAnalysisWTR1-2f (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ga · punkte 3 · format Begründung · antwort Text
+- gegeben: k(x) = 1/40 · (x³ − 30x² + 288x − 815), in IR definiert; Abbildung 1 zeigt den Graphen; Laktattest: für 8,5 ≤ x ≤ 17,5 beschreibt k die Laktatkonzentration in mmol/l in Abhängigkeit von der Geschwindigkeit x in km/h; der Graph ist symmetrisch bezüglich seines Wendepunkts W(10 | 13/8); betrachtet werden Geraden durch W; Behauptung: es gibt z mit 4 < z < 5 und ∫_z^(z+1) k(x) dx = 0
+- gesucht: Begründung mithilfe von Abbildung 1
+- verfahren: Vorzeichen des Integrals für z = 4 und z = 5 vergleichen, Monotonie und Stetigkeit in z nutzen
+- fehlerquelle: ein konkretes z ausrechnen wollen
+
+### 2026MerhoehtBAnalysisWTR3-1c (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ea · punkte 4 · format Begründung · antwort Text
+- gegeben: Aussage: es gibt genau ein k > 0 mit ∫_{−1}^0 f(x) dx = −∫_0^k f(x) dx
+- gesucht: Begründung ohne Stammfunktion
+- verfahren: linke Seite als feste Fläche, rechte als wachsende Fläche unter der x-Achse
+- fehlerquelle: nur die Existenz, nicht die Eindeutigkeit begründen
+
+### 2023MgrundlegendBAnalysisWTR1-2a (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ga · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: w(x) momentane Durchflussrate in m³/s, x Zeit in s seit Beobachtungsbeginn; Graph in Abbildung 2; Zeitraum 4 s bis 6 s
+- gesucht: Volumen des in diesem Zeitraum vorbeifließenden Wassers
+- verfahren: Fläche unter dem Graphen zwischen 4 und 6 durch Kästchenzählen bestimmen
+- fehlerquelle: Funktionswert statt Fläche abgelesen
+
+### 2026-bb-ea-A1.6b (abi-katalog.csv)
+
+jahr 2026 · papier 2026-bb-ea · punkte 4 · format Begründung · antwort Text
+- gegeben: f_a(x) = 1/2 x³ − 2a²x, punktsymmetrisch zum Ursprung; g_a(x) = f_a(x) + 2a für 0 < a < 1, Graphen oberhalb der x-Achse auf [−2a; 2a]
+- gesucht: Begründung ohne Rechnung, dass ∫ von −2a bis 2a g_a(x) dx = 4a · 2a
+- verfahren: Integral in ungeraden Anteil (null) und konstanten Anteil (Rechteck) zerlegen
+- fehlerquelle: mit Stammfunktion rechnen; Rechteckbreite 2a statt 4a
+
+### 2022MerhoehtBAnalysisWTR1-2b (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ea · punkte 5 · format Begründung · antwort Text
+- gegeben: ∫₋₂² s(x) dx = 4; Abbildung 3 mit Quadrat und Flächenstücken A₁ bis A₄
+- gesucht: geometrische Begründung des Werts mithilfe der Abbildung
+- verfahren: Punktsymmetrie zu (0 | 1) nutzen: A₁ und A₄ gleich groß, A₂ und A₃ gleich groß, Lage zur Achse und zum Quadrat ergibt das Quadrat
+- fehlerquelle: A₁ mit positivem Vorzeichen addieren
+
+### 2018MerhoehtBAnalysisWTR1-1d (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ea · punkte 3 · format Kurzantwort|Begründung · antwort Zahl|Text
+- gegeben: f(x) = 1/18 · (x³ − 15x² + 50x), ganzrational dritten Grades, G_f schneidet die x-Achse bei 0, 5 und 10 und geht durch (1 | 2); Abbildung 1 zeigt G_f; F1(x) = ∫ von 1 bis x f(t) dt (Integralfunktion zu f mit unterer Grenze 1); F1 hat für 0 ≤ x ≤ 10 zwei ganzzahlige Nullstellen
+- gesucht: die beiden Nullstellen mit Begründung
+- verfahren: x = 1 wegen gleicher Grenzen; x = 9, weil G_f symmetrisch zu (5 | 0) ist und die Flächenstücke über [1; 5] und [5; 9] sich aufheben
+- fehlerquelle: x = 5 oder x = 10 als Nullstelle von F1 nennen (Nullstellen von f)
+
+### 2021-be-gk-A1.2b (abi-katalog.csv)
+
+jahr 2021 · papier 2021-be-gk · punkte 2 · format Begründung · antwort Text
+- gegeben: Graph von f wie in a; I₁ = Integral von x_A bis x_C über f, I₂ = Integral von x_C bis x_D über f; Aussage I₁ < I₂
+- gesucht: Entscheidung, ob die Aussage wahr ist, mit Begründung
+- verfahren: Vorzeichen der Integrale aus der Lage des Graphen zur x-Achse
+- fehlerquelle: Integrale als Flächeninhalte ohne Vorzeichen vergleichen
+
+### 2022-bebb-gk-B2.1f (abi-katalog.csv)
+
+jahr 2022 · papier 2022-bebb-gk · punkte 3 · format Begründung · antwort Text
+- gegeben: f(x) = (x + 2) · e^(−x), definiert in IR, mit f'(x) = −(x + 1) · e^(−x); Ungleichung ∫ von −3 bis −2 f'(x) dx > ∫ von −1 bis 0 f'(x) dx
+- gesucht: Begründung ohne Rechnung
+- verfahren: Vorzeichen von f' auf beiden Intervallen am Graphen
+- fehlerquelle: Flächeninhalte statt orientierter Integrale vergleichen
+
+### 2025MerhoehtBAnalysisWTR3-2d (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ea · punkte 4 · format Begründung|Kurzantwort · antwort Text
+- gegeben: Aussage ∫_6^20 (k(x) − h(x)) dx < 0; Graphen von k und h; Integral der Leistung ist die Energie
+- gesucht: Begründung mit Abbildung 2 und Deutung
+- verfahren: drei Flächenstücke zwischen den Graphen vergleichen, Vorzeichen zuordnen, deuten
+- fehlerquelle: nur A1 oder nur A3 gegen A2 stellen
+
+### 2019MgrundlegendBAnalysisWTR1-3d (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ga · punkte 3 · format Kurzantwort|Begründung · antwort Zahl|Text
+- gegeben: h(x) = 40/13 · 1/(x − 5), x ≠ 5; Abbildung 2 zeigt den Graphen von h; g(x) = 13/40 · (x − 5) aus Aufgabe 2; a, b ∈ ]−∞; 5[ und c, d ∈ ]5; +∞[ mit ∫_a^b h(x) dx · ∫_c^d h(x) dx > 0
+- gesucht: eine Möglichkeit für a, b, c, d mit Begründung
+- verfahren: Vorzeichen beider Integrale über Vorzeichen von h und Reihenfolge der Grenzen steuern
+- fehlerquelle: c < d wählen und ein positives mal negatives Integral erhalten
+
+### 2025-bebb-gk-B2.2c (abi-katalog.csv)
+
+jahr 2025 · papier 2025-bebb-gk · punkte 3 · format Begründung · antwort Text
+- gegeben: Term 1/2 · e · 4 als Näherungswert für ∫_{−3}^1 f(x) dx
+- gesucht: geometrische Begründung mit Eintragungen in Abbildung 1
+- verfahren: rechtwinkliges Dreieck unter dem Graphen zwischen x = −3 und x = 1 einzeichnen
+- fehlerquelle: Dreieck mit Kathete 5 (von −3 bis 2) ansetzen
+
+### 2025-bebb-lk-B2.1g (abi-katalog.csv)
+
+jahr 2025 · papier 2025-bebb-lk · punkte 4 · format Begründung · antwort Text
+- gegeben: Abbildung des Graphen von r mit Rechteck und Schraffuren; Aussage ∫_4^5 r(x) dx < 120
+- gesucht: Erläuterung, wie die Eintragungen die Aussage begründen; Deutung im Sachzusammenhang
+- verfahren: Rechteckinhalt 120 mit Über- und Fehlfläche vergleichen
+- fehlerquelle: das Rechteck als Obersumme ansehen, obwohl der Graph links über 120 liegt; Deutung als Füllstand statt als Zuflussmenge
+
+### 2025MgrundlegendBAnalysisWTR2-1c (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ga · punkte 3 · format Begründung · antwort Text
+- gegeben: Term 1/2 · e · 4 als Näherungswert für ∫_{−3}^1 f(x) dx
+- gesucht: geometrische Begründung mit Eintragungen in Abbildung 1
+- verfahren: rechtwinkliges Dreieck unter dem Graphen zwischen x = −3 und x = 1 einzeichnen
+- fehlerquelle: Dreieck mit Kathete 5 (von −3 bis 2) ansetzen
+
+### 2026MgrundlegendAAnalysis14-b (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ga · punkte 3 · format Zeichnen · antwort Grafik
+- gegeben: Abbildung mit dem Graphen von f (Graph I, Hochpunkt (0; 2), Tiefpunkt (2; 0)) und dem Graphen von f' (Graph II, Nullstellen 0 und 2, Tiefpunkt bei etwa (1; −1,6)); Aussage: das Integral von −2 bis 2 über f(x) − f'(x) dx ist kleiner als 12
+- gesucht: grafische Veranschaulichung der Aussage durch Eintragungen in der Abbildung
+- verfahren: die Fläche zwischen Graph I und Graph II von x = −2 bis x = 2 schraffieren und ein Rechteck von x = −2 bis 2 und y = −2 bis 1 (Fläche 4 · 3 = 12) eintragen, das die schraffierte Fläche ganz enthält
+- fehlerquelle: nur die Fläche unter Graph I schraffieren und Graph II nicht berücksichtigen
+
+### 2025MerhoehtBAnalysisMMS1-2c (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ea-mms · punkte 4 · format Begründung · antwort Text
+- gegeben: Regenwasser-Auffangbecken: momentane Zuflussrate r(x) = eˣ · f_(2,5)(x) für 0 ≤ x ≤ 5 (f_(2,5) aus der Schar mit k = 2,5), x Zeit in Stunden seit Beginn des Zuflusses, r(x) in m³/h; Abbildung mit Rechteck der Höhe 120 über [4; 5] und schraffierter Fläche unter dem Graphen; Aussage ∫₄⁵ r(x) dx < 120
+- gesucht: Erläuterung, wie die Eintragungen die Aussage begründen; Deutung im Sachzusammenhang
+- verfahren: Flächenbilanz Rechteck gegen Fläche unter dem Graphen am Bild, Integral als Zuflussmenge deuten
+- fehlerquelle: das Integral mit dem Rechner ausrechnen statt am Bild zu argumentieren
+
+### 2023MgrundlegendAAnalysis13-a (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ga · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: f(x) = x⁴ − 4x³, definiert in IR, Graph in der Abbildung; Integral von 0 bis 1 über f(x) dx
+- gesucht: Wert des Integrals
+- verfahren: Stammfunktion bilden und Grenzen einsetzen
+- fehlerquelle: 4x³ zu 4/4 x⁴ = x⁴ mit falschem Vorzeichen integrieren
+
+Nur außerhalb von „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ genannt, nicht aufgenommen: 2018-bb-ea-B2.2g
 
 ## 3 Maßstab (unterrichtsblatt.md, wortgleich)
 

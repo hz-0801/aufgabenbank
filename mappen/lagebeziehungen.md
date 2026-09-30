@@ -1,9 +1,9 @@
 # Mappe: lagebeziehungen
 
 Eintrag: hz-0801/mathe-nachhilfe, katalog/lagebeziehungen.md
-Katalog-Commit: 2a296e54827b16f81fd664c4430c6fcd84dd5719 (2026-09-28T22:05:53Z, „Katalog-Nachzug Teil 2: Sek II aus den Urteilen vom 28.09.“; ermittelt über GitHub-API)
+Katalog-Commit: db8d2a3f9f6ed0e6490a4087e3eaff2cbc8a9b19 (2026-09-30T08:03:34Z, „Katalog: Vorschläge vom 30.09. eingesetzt (24 Zeilen in 17 Einträgen, Marke „kein P10-Stoff“ in _vorlage.md)“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-29 17:58 UTC
+Datum: 2026-09-30 08:09 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -50,7 +50,7 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
  35  - Terme mit einem Parameter umformen und Fallunterscheidungen führen – die Scharen in Einheit 3. Sek-I-Thema terme.md; Sek-II-Nachbarthema funktionsscharen-und-ortskurven.md (der Familiengedanke). [GOST Q3 LK „auch unter Verwendung von Parametern in den Koordinaten (Scharen)“]
  36  - Punkte im räumlichen Koordinatensystem lesen und Bereiche deuten (Koordinatenschranken, Wandmaße) – die Bereichsprüfungen in Einheit 4. Sek-II-Nachbarthema punkte-und-strecken-im-koordinatensystem.md. [GOST Q3 L3 „koordinatisieren“; GOST-OHiMi 2.3]
  37  Erkennungsschritte (Vorstufe der Einheit, vor der sie stehen, nicht auf Blatt 0; eine Hauptnummer je Schritt):
- 38  - „Wer und wogegen?“ – zu Aufgabentexten ankreuzen, welche Objekte beteiligt sind (Punkt gegen Ebene, Gerade gegen Ebene) und welche Gleichung die Prüfregel ist; nichts rechnen. Vor Einheit 1 und 3. [GOST Q3 L3 „Lagebeziehungen zwischen: …“; Rohdatei: Klassen Punkt und Ebene, Gerade und Ebene]
+ 38  - „Wer und wogegen?“ – zu Aufgabentexten ankreuzen, welche Objekte beteiligt sind (Punkt gegen Ebene, Gerade gegen Ebene) und welche Gleichung die Prüfregel ist; nichts rechnen. Vor Einheit 1 bis 3. [GOST Q3 L3 „Lagebeziehungen zwischen: …“; Rohdatei: Klassen Punkt und Ebene, Gerade und Ebene]
  39
  40  ### Merkkasten
  41  Einheit 1 (Punktprobe und Seitenlage):
@@ -118,9 +118,9 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 103  Zielmarke: Einheit 1 – abi: die Punktprobe an der Parameterform (2021-be-gk-A1.5a, Niveau I, Teil A) und das Seitenargument fürs Innere (2023-bebb-gk-B3f, Niveau III); iqb: die Punktprobe mit Normalenvektor-Anschluss (2025MgrundlegendAAGLAA213-b, 2026MgrundlegendAAGLAA211-a, Niveau II, Teil A) und das Koordinatentausch-Gegenbeispiel (2026MerhoehtBAGLAA2MMS2-1c, Niveau II). Einheit 2 – abi: der Parameter mit Kontrollwert am Quader (2022-bebb-lk-B3h, Niveau II); iqb: der Punkt mit drei gleichen Koordinaten (2019MerhoehtAAGLAA22-a, Niveau II, Teil A). Einheit 3 – abi: die Geradenschar-Fallunterscheidung (2024-bebb-lk-A1.8a, Niveau II, Teil A, LK) und die Kreisbahn (2026-bb-ea-B3d, Niveau II); iqb: die Pyramidenschar (2020MerhoehtAAGLAA22-b, Niveau III, Teil A) und die Existenzbegründung (2019MerhoehtAAGLAA22-b, Niveau III, Teil A). Einheit 4 – abi: keine (die Sachbefunde stellt nur der Pool); iqb: der Auftreffpunkt im Spielfeld (2018MerhoehtBAGLAA2WTR3-1g, Niveau III) und der erläuterte Rollo-Schatten (2023MgrundlegendBAGLAA2WTR1-1g, Niveau III).
 ````
 
-## 2 Originale (42)
+## 2 Originale (43)
 
-Kennungen aus „Prüfungsform“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
+Kennungen aus „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
 
 ### 2021-be-gk-A1.5a (abi-katalog.csv)
 
@@ -458,7 +458,13 @@ jahr 2018 · papier 2018-iqb-ea · punkte 4 · format Rechnung · antwort Text
 - verfahren: x3 = 0 nach t lösen, Auftreffpunkt mit den Feldgrenzen vergleichen
 - fehlerquelle: nur die Zeit berechnen und die Lage nicht prüfen
 
-Nur außerhalb von „Prüfungsform“ genannt, nicht aufgenommen: 2026MerhoehtBAGLAA2MMS2-1d
+### 2026MerhoehtBAGLAA2MMS2-1d (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ea-mms · punkte 2 · format Begründung · antwort Text
+- gegeben: E: x1 + x2 + 2x3 = 12; g: x = (3; 1; 4) + r · (1; −1; 0), r ∈ IR
+- gesucht: Nachweis, dass g in E liegt
+- verfahren: Koordinaten des allgemeinen Geradenpunkts einsetzen, r fällt heraus
+- fehlerquelle: nur den Stützpunkt prüfen
 
 ## 3 Maßstab (unterrichtsblatt.md, wortgleich)
 

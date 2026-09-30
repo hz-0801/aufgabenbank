@@ -1,9 +1,9 @@
 # Mappe: binomialverteilung
 
 Eintrag: hz-0801/mathe-nachhilfe, katalog/binomialverteilung.md
-Katalog-Commit: f56cacecc590f51abf34cf81948a0d2b751d7d33 (2026-09-28T22:13:08Z, „Katalog-Nachzug Teil 5: Abschluss“; ermittelt über GitHub-API)
+Katalog-Commit: db8d2a3f9f6ed0e6490a4087e3eaff2cbc8a9b19 (2026-09-30T08:03:34Z, „Katalog: Vorschläge vom 30.09. eingesetzt (24 Zeilen in 17 Einträgen, Marke „kein P10-Stoff“ in _vorlage.md)“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-29 17:58 UTC
+Datum: 2026-09-30 08:05 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -138,7 +138,7 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 123  Sprossen je Verfahrenstyp (Reihenfolge = Kette des Hauptblatts) [LS-AA, Rohdatei; Sprossenfolge Ermessen, wo Lehrwerk und Rohdatei keine Reihenfolge vorgeben]:
 124  - Modell erkennen (Einheit 1): „Bernoulli oder nicht?“ – zu Aufgabentexten ankreuzen: zwei Ausgänge? feste Anzahl? p bei jedem Versuch gleich (mit Zurücklegen oder sehr große Gesamtheit)? unabhängig? – und bei „nein“ die verletzte Bedingung nennen; nichts rechnen (Vorstufe) → ein Bernoulli-Experiment erkennen, den Treffer festlegen und p nennen (Grundfall, viermal: Münze, Würfel, Glücksrad, Anteil in einer großen Bevölkerung) → die Kette beschreiben: n und p aus dem Text, X als „Anzahl der Treffer“, Schreibweise X ~ B(n; p) → genau ein Treffer bei zwei Versuchen über die zwei Pfade (abi 2024-bebb-lk-A1.9a, iqb 2024MgrundlegendAStochastik12-a) → mindestens zwei Treffer bei drei Versuchen als Summe zweier Fälle mit dem Anordnungsfaktor (abi 2023-bebb-lk-A1.8a, iqb 2023MerhoehtAStochastik22-a) → die Bernoulli-Bedingungen im Sachzusammenhang begründen: zwei Ausgänge, feste Anzahl, gleiches p, Unabhängigkeit; die sehr große Gesamtheit als Ersatz für das Zurücklegen (abi 2022-bebb-gk-B4a, iqb 2020MgrundlegendBStochastikWTR2-1a, 2023MgrundlegendBStochastikWTR2-1a) → die Ungeeignetheit begründen: kleine Gesamtheit ohne Zurücklegen, p ändert sich, der Wertebereich passt nicht zur Zahl der vorhandenen Treffer (abi 2018-be-gk-B3.2g, iqb 2018MgrundlegendBStochastikWTR1-1e, 2018MgrundlegendBStochastikWTR2-1g) → Prüfungshöhe: Aussagen über Bernoulli-Experiment und Bernoulli-Kette beurteilen und den dritten Ausgang finden (iqb 2018MgrundlegendBStochastikWTR3-2d, Niveau III) und zu einer gegebenen Verteilung eine gleichverteilte Zufallsgröße in einem anderen Experiment konstruieren (iqb 2024MerhoehtAStochastik23-b, Niveau III).
 125  - Bernoulli-Formel (Einheit 2): „Genau, höchstens oder mindestens?“ – zu Ereignissen die Grenze ankreuzen: genau k als Einzelwahrscheinlichkeit; höchstens, weniger als, mindestens, mehr als kumuliert, mit der richtigen ganzen Zahl k und mit oder ohne Gegenereignis; nichts rechnen (Vorstufe) → den Term für P(X = k) ohne Rechnung hinschreiben (Grundfall, viermal, kleine n) → die ganze Verteilung für kleines n: alle Einzelwahrscheinlichkeiten P(X = k) von k gleich null bis k gleich n der Reihe nach, Kontrolle: die Summe ist eins → den Binomialkoeffizienten mit der Rechnertaste und im Kopf bestimmen und den Term ausrechnen → die Sonderfälle „alle Treffer“ und „kein Treffer“ als Potenz ohne Binomialkoeffizient (abi 2018-bb-ea-B4.2b, 2020-be-gk-B4.1a) → die Trefferdefinition wechseln und mit den Nieten rechnen (abi 2018-bb-ea-B4.2b) → „höchstens einmal“ als Summe zweier Terme (abi 2026-bb-gk-A1.3a, iqb 2026MgrundlegendAStochastik12-a) → Platzhalter in einem vorgegebenen Term aus den Exponenten lesen (iqb 2021MgrundlegendAStochastik2-a) → die Rechnerfunktion für die Einzelwahrscheinlichkeit bei großem n (abi 2025-bebb-lk-B4a, iqb 2025MerhoehtBStochastikWTR2-1a) → k aus einem Anzahlverhältnis, p oder n aus dem Erwartungswert vor der Formel (abi 2020-be-gk-B4.2c, iqb 2020MgrundlegendAStochastik2-a, 2022MgrundlegendBStochastikWTR2-2a) → Prüfungshöhe: die Einzelwahrscheinlichkeit als Differenz zweier Tabellenwerte neben einer kumulierten (abi 2022-bebb-gk-B4b, 2019-be-gk-B4.1a, Niveau I bis II) und zwei Einzelwahrscheinlichkeiten über den Erwartungswert vergleichen (abi 2018-bb-ea-B4.2c, Niveau III, fünf Punkte).
-126  - Kumulierte Wahrscheinlichkeiten (Einheit 3): „Genau, höchstens oder mindestens?“ – zu Ereignissen die Grenze ankreuzen: genau k als Einzelwahrscheinlichkeit; höchstens, weniger als, mindestens, mehr als kumuliert, mit der richtigen ganzen Zahl k und mit oder ohne Gegenereignis; nichts rechnen (Vorstufe) → den Wortlaut in P(X ≤ k) übersetzen: höchstens, weniger als, mindestens, mehr als (Grundfall, viermal) → den Wert mit der Rechnerfunktion oder aus der Tabelle holen (abi 2026-bb-gk-B4b, iqb 2026MgrundlegendBStochastikWTR1-1b) → das Gegenereignis für „mindestens“ und „mehr als“ (iqb 2020MgrundlegendBStochastikWTR1-1a, abi 2022-bebb-lk-B4k) → das Intervall als Differenz zweier kumulierter Werte mit richtig gesetzter unterer Grenze (abi 2018-be-gk-B3.2a, iqb 2024MerhoehtBStochastikWTR2-1c) → Anteile in Anzahlen umrechnen: „mehr als die Hälfte“, „höchstens siebzig Prozent“ (abi 2023-bebb-lk-B4a, iqb 2024MgrundlegendBStochastikWTR2-2a, 2025MerhoehtBStochastikWTR1-1c) → eine Verhältnis- oder Summenbedingung in eine Ungleichung für X übersetzen (abi 2023-bebb-gk-B4.1d, iqb 2018MgrundlegendBStochastikWTR3-2b) → die Abweichung vom Erwartungswert als Intervall oder als einseitige Schranke (iqb 2019MgrundlegendBStochastikWTR1-1a, abi 2025-bebb-lk-B4b) → einen Summenterm in eine Sachaussage übersetzen: Grenzen, p, Gegenereignis (abi 2023-bebb-gk-B4.1e, iqb 2026MgrundlegendBStochastikWTR2-1d, 2021MgrundlegendBStochastikWTR3-1d) → Prüfungshöhe: zwei Binomialmodelle verketten – die Fehlerwahrscheinlichkeit einer Einheit als p der zweiten Verteilung, ein zweistufiger Prüfplan, eine in Abschnitte geteilte Kette (abi 2021-be-gk-B4d, 2022-bebb-lk-B4m; iqb 2023MerhoehtBStochastikWTR3-1c, 2023MgrundlegendBStochastikWTR1-2a, Niveau II bis III) und eine Ungleichung mit Binomialsumme als Sachaussage formulieren (iqb 2024MgrundlegendAStochastik21-b, 2020MgrundlegendAStochastik2-b, Niveau III).
+126  - Kumulierte Wahrscheinlichkeiten (Einheit 3): „Mit oder ohne Gegenereignis?“ – zu Ereignissen ankreuzen, ob P(X ≤ k) unmittelbar aus der Tabelle kommt (höchstens, weniger als) oder über eins minus P(X ≤ k) (mindestens, mehr als), und welches ganzzahlige k gilt; nichts rechnen (Vorstufe) → den Wortlaut in P(X ≤ k) übersetzen: höchstens, weniger als, mindestens, mehr als (Grundfall, viermal) → den Wert mit der Rechnerfunktion oder aus der Tabelle holen (abi 2026-bb-gk-B4b, iqb 2026MgrundlegendBStochastikWTR1-1b) → das Gegenereignis für „mindestens“ und „mehr als“ (iqb 2020MgrundlegendBStochastikWTR1-1a, abi 2022-bebb-lk-B4k) → das Intervall als Differenz zweier kumulierter Werte mit richtig gesetzter unterer Grenze (abi 2018-be-gk-B3.2a, iqb 2024MerhoehtBStochastikWTR2-1c) → Anteile in Anzahlen umrechnen: „mehr als die Hälfte“, „höchstens siebzig Prozent“ (abi 2023-bebb-lk-B4a, iqb 2024MgrundlegendBStochastikWTR2-2a, 2025MerhoehtBStochastikWTR1-1c) → eine Verhältnis- oder Summenbedingung in eine Ungleichung für X übersetzen (abi 2023-bebb-gk-B4.1d, iqb 2018MgrundlegendBStochastikWTR3-2b) → die Abweichung vom Erwartungswert als Intervall oder als einseitige Schranke (iqb 2019MgrundlegendBStochastikWTR1-1a, abi 2025-bebb-lk-B4b) → einen Summenterm in eine Sachaussage übersetzen: Grenzen, p, Gegenereignis (abi 2023-bebb-gk-B4.1e, iqb 2026MgrundlegendBStochastikWTR2-1d, 2021MgrundlegendBStochastikWTR3-1d) → Prüfungshöhe: zwei Binomialmodelle verketten – die Fehlerwahrscheinlichkeit einer Einheit als p der zweiten Verteilung, ein zweistufiger Prüfplan, eine in Abschnitte geteilte Kette (abi 2021-be-gk-B4d, 2022-bebb-lk-B4m; iqb 2023MerhoehtBStochastikWTR3-1c, 2023MgrundlegendBStochastikWTR1-2a, Niveau II bis III) und eine Ungleichung mit Binomialsumme als Sachaussage formulieren (iqb 2024MgrundlegendAStochastik21-b, 2020MgrundlegendAStochastik2-b, Niveau III).
 127  - Umkehraufgaben (Einheit 4): „Was ist gesucht?“ – zu Aufgaben ankreuzen, ob eine Wahrscheinlichkeit gesucht ist oder n, p oder k, und welcher Weg passt: Logarithmus (Mindestanzahl bei „mindestens einmal“), Wurzel (p bei „kein Treffer“), Probieren mit Nachbarwerten am Rechner (Grenze k, Umgebung, n bei „mehr als k Treffern“); nichts rechnen (Vorstufe) → den Ansatz für „mindestens ein Treffer“ aufstellen: Gegenereignis „kein Treffer“ als Potenz der Nietenwahrscheinlichkeit, Wahrscheinlichkeit für mindestens einen Treffer als eins minus diese Potenz (Grundfall, viermal) → nach n auflösen: logarithmieren, das Ungleichheitszeichen drehen, aufrunden (abi 2017-bb-ea-B4.2b, 2023-bebb-gk-B4.1f) → p aus der Wahrscheinlichkeit für „kein Treffer“ über die n-te Wurzel (abi 2022-bebb-gk-B4e, iqb 2018MgrundlegendBStochastikWTR2-1d) → das kleinste oder größte k gegen eine Schranke mit beiden Nachbarwerten am Rechner (abi 2025-bebb-gk-B4d, iqb 2022MerhoehtBStochastikWTR2-1e) → den kleinsten Radius einer Umgebung um den Erwartungswert, symmetrisch oder einseitig (abi 2023-bebb-lk-B4h, iqb 2019MgrundlegendBStochastikWTR3-1d, 2024MgrundlegendBStochastikWTR2-2b) → n durch Probieren für „mehr als k Treffer“ oder „mindestens drei Treffer“ (abi 2024-bebb-lk-B4c, iqb 2019MgrundlegendBStochastikWTR1-1b, 2018MerhoehtBStochastikWTR1-1b) → p durch Probieren auf ganze Prozent oder n zu einer vorgegebenen Einzelwahrscheinlichkeit (iqb 2021MgrundlegendBStochastikWTR2-1d, 2022MgrundlegendBStochastikWTR2-2b) → Aussagen über die Abhängigkeit von n beurteilen: eine Potenz mit Basis unter eins fällt, an Beispielen prüfen und allgemein begründen (abi 2018-be-gk-B3.2c, 2018-be-gk-B3.1c; iqb 2023MgrundlegendBStochastikWTR1-2b) → Prüfungshöhe: p aus einer Gleichung zweier Einzelwahrscheinlichkeiten und n und p aus einem Verhältnis und dem Erwartungswert ohne Rechner (iqb 2019MerhoehtAStochastik11-b, 2025MerhoehtAStochastik21, Niveau II bis III) und die Halbierungsaussage über das Potenzgesetz allgemein widerlegen (abi 2022-bebb-lk-B4f, iqb 2022MerhoehtBStochastikWTR1-1f, Niveau III).
 128  - Verteilung im Diagramm (Einheit 5): „Treffer oder Niete gezählt?“ ankreuzen (Vorstufe, Grundvorstellung) → Säulenhöhen als Einzelwahrscheinlichkeiten ablesen und benachbarte Säulen zu einer Intervallwahrscheinlichkeit addieren (abi 2023-bebb-gk-A1.7a, 2026-bb-gk-A1.6b; Grundfall, viermal) → den Erwartungswert berechnen und die höchste Säule finden, den Modalwert angeben, Achsen skalieren (abi 2018-be-gk-B3.2b, iqb 2020MerhoehtAStochastik11-b, 2025MgrundlegendBStochastikWTR2-1d) → eine Aussage über die Stelle des Maximums über den Erwartungswert beurteilen, ohne Wahrscheinlichkeiten zu rechnen (abi 2025-bebb-gk-B4c, 2020-be-gk-B4.2d) → unpassende Diagramme ausschließen: Lage des Maximums, Summe eins, Wertebereich (abi 2023-bebb-gk-A1.7b, iqb 2021MgrundlegendAStochastik12-b, 2018MerhoehtAStochastik11-a) → die Gegenzufallsgröße: Diagramm spiegeln, die Säule bei n minus k lesen (abi 2026-bb-gk-B4c, iqb 2024MerhoehtAStochastik23-a) → die kumulierte Darstellung: letzte Säule eins, Einzelwahrscheinlichkeit als Differenz (iqb 2019MerhoehtAStochastik11-a) → die Symmetrie für p gleich ein Halb nutzen: symmetrisches Intervall, Verschiebung des Maximums mit p (iqb 2021MerhoehtAStochastik12-b, 2020MerhoehtAStochastik11-c) → Prüfungshöhe: eine Einzelwahrscheinlichkeit aus Symmetrie und kumulierten Werten berechnen (abi 2025-bebb-gk-A1.9b, iqb 2021MgrundlegendAStochastik2-b, Niveau III), Aussagen an mehreren Verteilungen beurteilen (iqb 2022MgrundlegendBStochastikWTR2-3a, 2021MgrundlegendBStochastikWTR1-1c) und eine Binomialverteilung über Symmetrie, Wertebereich und eine Einzelwahrscheinlichkeit ausschließen (abi 2022-bebb-lk-A1.8b).
 129
@@ -150,9 +150,9 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 135  Zielmarke: Einheit 1 – abi: Ungeeignetheit des Modells begründen (2018-be-gk-B3.2g, Niveau II) und Bernoulli-Bedingungen begründen (2022-bebb-gk-B4a); iqb: Aussagen über Bernoulli-Experiment und Bernoulli-Kette beurteilen (2018MgrundlegendBStochastikWTR3-2d, Niveau III) und eine gleichverteilte Zufallsgröße konstruieren (2024MerhoehtAStochastik23-b, Niveau III); Teil A beider Profile: mindestens zwei Treffer bei drei Versuchen nachweisen (2023-bebb-lk-A1.8a, 2023MerhoehtAStochastik22-a). Einheit 2 – abi: Einzelwahrscheinlichkeit mit Vergleich über den Erwartungswert (2018-bb-ea-B4.2c, Niveau III) und Formel neben Tabelle (2019-be-gk-B4.1a); iqb: Term angeben in Teil A (2026MgrundlegendAStochastik12-a, 2021MgrundlegendAStochastik2-a, Niveau I bis II) und Einzel- neben kumulierter Wahrscheinlichkeit mit Anteilsangabe (2018MerhoehtBStochastikWTR1-1a). Einheit 3 – abi: Gewinn und Extrapreis über die geteilte Kette (2022-bebb-lk-B4m, Niveau III) und Anzahlverhältnis (2023-bebb-gk-B4.1d); iqb: zwei Binomialmodelle verketten (2023MerhoehtBStochastikWTR3-1c, Niveau III), Restwahrscheinlichkeit nach bekannten Würfen (2023MgrundlegendBStochastikWTR2-2b, Niveau III), Ungleichung als Sachaussage (2024MgrundlegendAStochastik21-b, Niveau III). Einheit 4 – abi: Mindestanzahl mit Logarithmus (2017-bb-ea-B4.2b, 2023-bebb-gk-B4.1f, Niveau II) und p über die Wurzel (2018-be-gk-B3.2d, Niveau III); iqb: n und p aus Verhältnis und Erwartungswert (2025MerhoehtAStochastik21), Mindestumfang durch Probieren (2019MgrundlegendBStochastikWTR1-1b, Niveau III), Halbierung widerlegen (2022MerhoehtBStochastikWTR1-1f). Einheit 5 – abi: Symmetrie und kumulierte Werte (2025-bebb-gk-A1.9b, Niveau III), Widerspruch zur Symmetrie (2022-bebb-lk-A1.8b), unpassende Diagramme (2023-bebb-gk-A1.7b); iqb: Symmetrie um die Mitte zweier Werte (2021MgrundlegendAStochastik2-b, Niveau III), Aussagen an mehreren Verteilungen (2022MgrundlegendBStochastikWTR2-3a), Achsen skalieren (2025MgrundlegendBStochastikWTR2-1d).
 ````
 
-## 2 Originale (72)
+## 2 Originale (130)
 
-Kennungen aus „Prüfungsform“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
+Kennungen aus „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
 
 ### 2017-be-gk-B3.1e (abi-katalog.csv)
 
@@ -730,7 +730,471 @@ jahr 2025 · papier 2025-iqb-ga · punkte 4 · format Rechnung|Eintragen · antw
 - verfahren: Erwartungswert und zugehörige Wahrscheinlichkeit berechnen und eintragen
 - fehlerquelle: 15 an eine beliebige Säule schreiben
 
-Nur außerhalb von „Prüfungsform“ genannt, nicht aufgenommen: 2019MerhoehtAStochastik11-b, 2020MgrundlegendBStochastikWTR2-1c, 2024MerhoehtBStochastikWTR2-1d, 2024MerhoehtAStochastik23-a, 2026-bb-gk-B4c, 2022-bebb-lk-B4k, 2023-bebb-lk-B4a, 2026-bb-gk-B4b, 2026-bb-ea-B4a, 2023-bebb-gk-A1.7a, 2025-bebb-gk-B4d, 2026MgrundlegendBStochastikWTR1-1b, 2026MgrundlegendBStochastikWTR2-1c, 2026MerhoehtBStochastikWTR1-1a, 2026MerhoehtBStochastikWTR2-1a, 2025MgrundlegendBStochastikWTR2-1c, 2025MgrundlegendBStochastikWTR3-1d, 2024MerhoehtBStochastikWTR2-1c, 2023MgrundlegendBStochastikWTR2-1b, 2023MerhoehtBStochastikWTR1-1, 2022MerhoehtBStochastikWTR1-1d, 2022MerhoehtBStochastikWTR2-1e, 2021MgrundlegendBStochastikWTR2-1a, 2020MgrundlegendBStochastikWTR1-1a, 2018MerhoehtBStochastikWTR2-1a, 2018MgrundlegendBStochastikWTR1-1d, 2025MgrundlegendBStochastikWTR1-1d, 2021MgrundlegendBStochastikWTR3-1c, 2024MgrundlegendBStochastikWTR2-2a, 2019MgrundlegendBStochastikWTR1-1a, 2025MerhoehtBStochastikWTR1-1c, 2025MerhoehtBStochastikWTR2-1b, 2023MgrundlegendBStochastikWTR3-1d, 2025-bebb-lk-B4b, 2018-bb-ea-B4.2b, 2017-bb-ea-B4.2d, 2023-bebb-gk-B4.1e, 2020-be-gk-B4.2c, 2023MgrundlegendBStochastikWTR3-1e, 2021MgrundlegendBStochastikWTR3-1d, 2022MerhoehtBStochastikWTR2-1d, 2020MgrundlegendBStochastikWTR1-1c, 2018MgrundlegendBStochastikWTR3-2b, 2020MerhoehtAStochastik11-a, 2018-bb-ea-B4.1b, 2026-bb-ea-A1.4a, 2026-bb-gk-A1.3a, 2024-bebb-lk-A1.9a, 2021-be-gk-B4d, 2026MerhoehtAStochastik11-a, 2026MerhoehtAStochastik22-a, 2024MgrundlegendAStochastik12-a, 2017MerhoehtAStochastik11-b, 2021MgrundlegendBStochastikWTR2-1c, 2025-bebb-lk-B4a, 2019-be-gk-B4.2e, 2020-be-gk-B4.2b, 2026-bb-gk-A1.6b, 2025MerhoehtBStochastikWTR2-1a, 2022MgrundlegendBStochastikWTR2-2a, 2026MgrundlegendBStochastikWTR2-1d, 2020MgrundlegendBStochastikWTR1-1b, 2026MgrundlegendAStochastik11-b, 2019MerhoehtAStochastik11-a, 2025MgrundlegendBStochastikWTR3-1c, 2025MerhoehtAStochastik12-a, 2019MgrundlegendBStochastikWTR2-1a, 2018-be-gk-B3.1b, 2018-be-gk-B3.1c, 2019-be-gk-B4.2d, 2021MerhoehtAStochastik12-b, 2020MgrundlegendBStochastikWTR2-1b, 2022-bebb-gk-B4d, 2019-be-gk-B4.1b, 2020-be-gk-B4.1c, 2021-be-gk-B4e, 2022-bebb-gk-B4e, 2018MgrundlegendBStochastikWTR2-1d, 2022MgrundlegendBStochastikWTR1-1c, 2023-bebb-lk-B4h, 2022MgrundlegendBStochastikWTR2-2b, 2021MgrundlegendBStochastikWTR2-1d, 2023MerhoehtBStochastikWTR2-2b, 2019MgrundlegendBStochastikWTR3-1d, 2024MgrundlegendBStochastikWTR2-2b, 2018MgrundlegendBStochastikWTR1-1e, 2018MgrundlegendBStochastikWTR2-1g, 2018MerhoehtBStochastikWTR2-1d, 2023MgrundlegendBStochastikWTR2-1a, 2020MgrundlegendBStochastikWTR2-1a, 2020-be-gk-B4.2d, 2026-bb-ea-B4b, 2020MgrundlegendBStochastikWTR1-1d, 2021MgrundlegendAStochastik12-b, 2019MgrundlegendAStochastik12-b, 2018MerhoehtAStochastik11-a, 2017MerhoehtAStochastik12-b, 2026MgrundlegendBStochastikWTR1-1c, 2026MerhoehtBStochastikWTR1-1b, 2025MgrundlegendAStochastik21-b, 2020MerhoehtAStochastik11-b, 2020MerhoehtAStochastik11-c, 2021MgrundlegendBStochastikWTR1-1c, 2025-bebb-gk-B4c, 2018-be-gk-B3.2c, 2018-be-gk-B3.2b, 2025MgrundlegendBStochastikWTR1-1c, 2018MgrundlegendBStochastikWTR2-1c, 2018MgrundlegendBStochastikWTR2-1b, 2023MgrundlegendBStochastikWTR1-2b, 2021-be-gk-B4b, 2023MgrundlegendBStochastikWTR1-2a, 2020-be-gk-B4.1a, 2020MgrundlegendAStochastik2-a, 2022MgrundlegendBStochastikWTR1-1a
+### 2018-bb-ea-B4.1b (abi-katalog.csv)
+
+jahr 2018 · papier 2018-bb-ea · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: Eine Umfrage ergab, dass zu medizinischen Fragen 73 % der Bevölkerung das Internet nutzen. 55 % der Internetnutzer nutzen Medinet, einen Ratgeber bei medizinischen Fragen, der nur im Internet verfügbar ist. Zwölf Personen werden zufällig ausgewählt.
+- gesucht: Wahrscheinlichkeit dafür, dass sich unter den zwölf Personen genau zehn befinden, die das Internet nutzen
+- verfahren: Die Auswahl als Bernoulli-Kette der Länge 12 mit der Trefferwahrscheinlichkeit 0,73 auffassen und die Binomialformel für zehn Treffer anwenden.
+- fehlerquelle: den Binomialkoeffizienten weglassen und nur das Produkt der Einzelwahrscheinlichkeiten angeben
+
+### 2024-bebb-lk-A1.9a (abi-katalog.csv)
+
+jahr 2024 · papier 2024-bebb-lk · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: Geräte einer großen Serie; ein zufällig ausgewähltes Gerät ist mit p = 0,2 defekt; zwei Geräte werden zufällig ausgewählt
+- gesucht: P(genau eines der beiden Geräte ist defekt)
+- verfahren: zwei Pfade (defekt–heil, heil–defekt) addieren
+- fehlerquelle: Faktor 2 für die Reihenfolge vergessen (0,16)
+
+### 2024MgrundlegendAStochastik12-a (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ga · punkte 2 · format Rechnung · antwort Text
+- gegeben: Glücksrad mit gleich großen Sektoren, 10 % davon grün; zweimal drehen
+- gesucht: Nachweis, dass die Wahrscheinlichkeit für genau einmal grün 18 % beträgt
+- verfahren: beide Pfade grün–nicht grün und nicht grün–grün addieren
+- fehlerquelle: nur einen Pfad rechnen (0,09)
+
+### 2020MgrundlegendBStochastikWTR2-1a (iqb-katalog.csv)
+
+jahr 2020 · papier 2020-iqb-ga · punkte 2 · format Begründung · antwort Text
+- gegeben: Postunternehmen Q befördert jährlich etwa 60 Millionen Briefe und stellt 95 % aller Briefe am ersten Werktag nach der Einlieferung zu; für 2000 zufällig ausgewählte Briefe wird untersucht, ob sie am ersten Werktag zugestellt werden
+- gesucht: Begründung, dass die Binomialverteilung für Vorhersagen geeignet ist
+- verfahren: Bernoulli-Bedingungen im Sachzusammenhang nennen
+- fehlerquelle: die Unabhängigkeit bzw. gleiche Wahrscheinlichkeit trotz Ziehens ohne Zurücklegen nicht begründen
+
+### 2023MgrundlegendBStochastikWTR2-1a (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ga · punkte 2 · format Begründung · antwort Text
+- gegeben: Würfelnetz mit Zahlen 2, 4, 2, 4 und 2, 2; 30 Würfe; X Anzahl der „4“
+- gesucht: Begründung, dass X binomialverteilt mit p = 1/3 ist
+- verfahren: Bernoulli-Bedingungen nennen und p aus dem Netz ablesen
+- fehlerquelle: Unabhängigkeit der Würfe nicht genannt
+
+### 2018MgrundlegendBStochastikWTR1-1e (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ga · punkte 2 · format Begründung · antwort Text
+- gegeben: Gruppe von zehn Jugendlichen, vier nutzen nur Smartphones, sechs nur Tablets; drei werden zufällig ausgewählt
+- gesucht: Begründung, dass die Binomialverteilung für die Anzahl der Smartphone-Nutzer unter den Ausgewählten nicht geeignet ist
+- verfahren: Auswahl ist Ziehen ohne Zurücklegen aus einer kleinen Gesamtheit, die Trefferwahrscheinlichkeit bleibt nicht konstant
+- fehlerquelle: mit „zu wenige Versuche“ argumentieren
+
+### 2018MgrundlegendBStochastikWTR2-1g (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ga · punkte 2 · format Begründung · antwort Text
+- gegeben: Von 40 geprüften Bildschirmen, unter denen 6 fehlerhaft sind, werden 10 zufällig ausgewählt
+- gesucht: Beurteilung, ob die Anzahl fehlerhafter Bildschirme unter den ausgewählten binomialverteilt ist
+- verfahren: Bei Binomialverteilung wären 7 fehlerhafte unter den 10 möglich, es gibt aber nur 6
+- fehlerquelle: Binomialverteilung wegen „fehlerhaft oder nicht“ bejahen
+
+### 2018-bb-ea-B4.2b (abi-katalog.csv)
+
+jahr 2018 · papier 2018-bb-ea · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: In einer großen Gemeinde tragen 62,5 % der Bevölkerung eine Brille. Bei den Frauen beträgt der Anteil 64,8 %. Bekannt ist außerdem, dass 52,1 % der Bevölkerung Frauen sind. Ereignis A: von acht zufällig ausgewählten Personen sind alle Brillenträger. Ereignis B: von 20 zufällig ausgewählten Personen sind genau drei keine Brillenträger.
+- gesucht: Wahrscheinlichkeiten der Ereignisse A und B
+- verfahren: Für A ist die Trefferzahl gleich der Kettenlänge, also einfach 0,625 hoch 8. Für B die Trefferdefinition wechseln: Treffer ist jetzt kein Brillenträger mit der Wahrscheinlichkeit 0,375, gesucht sind genau drei Treffer bei 20 Versuchen. Gleichwertig lässt sich mit genau 17 Brillenträgern rechnen.
+- fehlerquelle: bei B mit der Trefferwahrscheinlichkeit 0,625 und drei Treffern rechnen, also die Trefferdefinition nicht mitwechseln
+
+### 2020-be-gk-B4.1a (abi-katalog.csv)
+
+jahr 2020 · papier 2020-be-gk · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: Zwei Würfel mit gleich wahrscheinlichen Seiten: 5er-Würfel mit den Seiten 5, 6, 1, 2, 5, 4 (P(5) = 1/3, P(4) = P(6) = P(1) = P(2) = 1/6), 6er-Würfel mit den Seiten 6, 1, 2, 4, 6, 5 (P(6) = 1/3, P(5) = P(4) = P(1) = P(2) = 1/6); der 6er-Würfel wird 10-mal geworfen
+- gesucht: P(A): genau 4-mal eine 6; P(B): keine 6
+- verfahren: Bernoulli-Formel mit p = 1/3
+- fehlerquelle: p = 1/6 statt 1/3 (zwei Seiten zeigen die 6)
+
+### 2026-bb-gk-A1.3a (abi-katalog.csv)
+
+jahr 2026 · papier 2026-bb-gk · punkte 2 · format Kurzantwort · antwort Term
+- gegeben: eine Münze mit Zahl und Wappen wird fünfmal geworfen; Ergebnisse sind Abfolgen wie ZWZZW; Ereignis A: es wird höchstens einmal Wappen erzielt
+- gesucht: Term, mit dem P(A) berechnet werden kann
+- verfahren: P(kein Wappen) + P(genau einmal Wappen) mit (1/2)^5 und 5 · 1/2 · (1/2)^4
+- fehlerquelle: den Faktor 5 für die Position des Wappens vergessen
+
+### 2025-bebb-lk-B4a (abi-katalog.csv)
+
+jahr 2025 · papier 2025-bebb-lk · punkte 1 · format Rechnung · antwort Zahl
+- gegeben: 14 % Radausflügler, Anzahl binomialverteilt; Stichprobe 300
+- gesucht: P(genau 36 Radausflügler)
+- verfahren: P(X = 36) am Rechner
+- fehlerquelle: kumulierte statt Einzelwahrscheinlichkeit
+
+### 2025MerhoehtBStochastikWTR2-1a (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ea · punkte 1 · format Rechnung · antwort Zahl
+- gegeben: 14 % Radausflügler, Anzahl binomialverteilt; Stichprobe 300
+- gesucht: P(genau 36 Radausflügler)
+- verfahren: P(X = 36) am Rechner
+- fehlerquelle: kumulierte statt Einzelwahrscheinlichkeit
+
+### 2020-be-gk-B4.2c (abi-katalog.csv)
+
+jahr 2020 · papier 2020-be-gk · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: In einem großen Unternehmen ist 1/3 der Beschäftigten weiblich; 50 Beschäftigte werden zufällig ausgewählt, die Anzahl X der weiblichen darunter ist binomialverteilt (n = 50, p = 1/3)
+- gesucht: Wahrscheinlichkeit, dass die Anzahl der nicht weiblichen viermal so groß ist wie die der weiblichen
+- verfahren: Anzahl 10 weibliche aus a + 4a = 50, dann P(X = 10)
+- fehlerquelle: P(X = 40) (nicht weibliche) mit p = 1/3 berechnen
+
+### 2020MgrundlegendAStochastik2-a (iqb-katalog.csv)
+
+jahr 2020 · papier 2020-iqb-ga · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: X1 binomialverteilt mit n1 = 4 und p1; E(X1) = 2
+- gesucht: P(X1 = 4)
+- verfahren: p aus dem Erwartungswert, dann p⁴
+- fehlerquelle: (4 über 4) vergessen ist unschädlich; p = 2 aus E = 2 lesen
+
+### 2022MgrundlegendBStochastikWTR2-2a (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ga · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: Anzahl der Infizierten unter den Teilnehmenden binomialverteilt mit p = 1/3; Erwartungswert 200
+- gesucht: Anzahl der Teilnehmenden; Wahrscheinlichkeit für genau 200 Infizierte
+- verfahren: n aus n · p = 200, dann Binomialwahrscheinlichkeit
+- fehlerquelle: kumulierte statt Einzelwahrscheinlichkeit
+
+### 2026-bb-gk-B4b (abi-katalog.csv)
+
+jahr 2026 · papier 2026-bb-gk · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: X binomialverteilt mit n = 10, p = 0,75
+- gesucht: P(X < 8)
+- verfahren: kumulierte Wahrscheinlichkeit am Rechner
+- fehlerquelle: P(X ≤ 8) rechnen (≈ 75,6 %)
+
+### 2026MgrundlegendBStochastikWTR1-1b (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ga · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: X binomialverteilt mit n = 10, p = 0,75
+- gesucht: P(X < 8)
+- verfahren: kumulierte Wahrscheinlichkeit am Rechner
+- fehlerquelle: P(X ≤ 8) rechnen (≈ 75,6 %)
+
+### 2020MgrundlegendBStochastikWTR1-1a (iqb-katalog.csv)
+
+jahr 2020 · papier 2020-iqb-ga · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: Großes Unternehmen, 29 % der Beschäftigten sind weiblich; 40 Beschäftigte werden zufällig ausgewählt, die Anzahl X der weiblichen darunter ist binomialverteilt (n = 40, p = 0,29)
+- gesucht: P(mindestens 12 weibliche unter den 40)
+- verfahren: 1 − P(X ≤ 11) mit dem Rechner
+- fehlerquelle: P(X ≤ 12) statt P(X ≤ 11) abziehen
+
+### 2022-bebb-lk-B4k (abi-katalog.csv)
+
+jahr 2022 · papier 2022-bebb-lk · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: Glücksrad mit Sonne (S, p = 0,7) und Mond (M, 0,3), siebenmal gedreht, Anordnung aus sieben Symbolen; Gewinn bei mehr als drei Monden
+- gesucht: P(Gewinn)
+- verfahren: 1 − F(7; 0,3; 3) mit dem Rechner (n = 7 nicht in der Anlage)
+- fehlerquelle: „mehr als drei“ als X ≥ 3 lesen
+
+### 2024MerhoehtBStochastikWTR2-1c (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ea · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: 300 zufällig ausgewählte Haushalte; Anteil Lastenrad 8 %
+- gesucht: P(mehr als 20 und höchstens 30 mit Lastenrad)
+- verfahren: Differenz kumulierter Wahrscheinlichkeiten
+- fehlerquelle: 20 einschließen
+
+### 2023-bebb-lk-B4a (abi-katalog.csv)
+
+jahr 2023 · papier 2023-bebb-lk · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: Gruppe der Personen mit Urlaubsreise 2022: 45 % weiblich; unter den weiblichen 80 % zufrieden, unter den nicht weiblichen der Anteil a; 200 zufällig ausgewählte Personen; A: mehr als die Hälfte weiblich; B: höchstens 40 % weiblich
+- gesucht: P(A) und P(B)
+- verfahren: Binomialverteilung n = 200, p = 0,45 mit dem Rechner
+- fehlerquelle: „mehr als die Hälfte“ als X ≥ 100 lesen
+
+### 2024MgrundlegendBStochastikWTR2-2a (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ga · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: X Anzahl unter 900 Personen, die ein Software-Problem selbst lösen, binomialverteilt mit p = 0,68
+- gesucht: P(höchstens 70 % der 900)
+- verfahren: 0,7 · 900 = 630, P(X ≤ 630)
+- fehlerquelle: P(X ≤ 70)
+
+### 2025MerhoehtBStochastikWTR1-1c (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ea · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: 160 Personen; Anzahl in Großstadt binomialverteilt mit p = 0,75
+- gesucht: P(weniger als drei Viertel in einer Großstadt)
+- verfahren: P(X ≤ 119) am Rechner
+- fehlerquelle: P(X ≤ 120) ≈ 0,54
+
+### 2018MgrundlegendBStochastikWTR3-2b (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ga · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: Zwölfseitiger Spielwürfel, alle Seiten gleich wahrscheinlich, nach dem abgebildeten Netz neun Seiten mit 1 und drei Seiten mit 2 beschriftet; je Spiel wird viermal geworfen; Hauptpreis bei Summe mindestens 7
+- gesucht: Nachweis, dass im Mittel etwa bei einem von zwanzig Spielen ein Hauptpreis vergeben wird
+- verfahren: Summe ≥ 7 heißt höchstens eine 1 unter vier Würfen; P(X ≤ 1) mit X ~ B(4; 0,75)
+- fehlerquelle: Summe ≥ 7 als „mindestens drei Zweien“ mit falscher Trefferwahrscheinlichkeit rechnen
+
+### 2019MgrundlegendBStochastikWTR1-1a (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ga · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: Land mit 80 % Führerscheinbesitz unter Erwachsenen; 200 zufällig ausgewählte Erwachsene, X = Anzahl mit Führerschein, binomialverteilt (n = 200, p = 0,8)
+- gesucht: Wahrscheinlichkeit, dass X vom Erwartungswert um höchstens 5 % abweicht
+- verfahren: Intervall [160 − 8; 160 + 8] bilden und kumuliert berechnen
+- fehlerquelle: 5 % als 5 Personen lesen oder nur eine Seite rechnen
+
+### 2025-bebb-lk-B4b (abi-katalog.csv)
+
+jahr 2025 · papier 2025-bebb-lk · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: X wie in a
+- gesucht: P(Anzahl um mindestens 10 % größer als der Erwartungswert)
+- verfahren: μ berechnen, 1,1μ aufrunden, P(X ≥ 47)
+- fehlerquelle: X ≥ 46 rechnen (46 < 46,2)
+
+### 2023-bebb-gk-B4.1e (abi-katalog.csv)
+
+jahr 2023 · papier 2023-bebb-gk · punkte 2 · format Kurzantwort · antwort Text
+- gegeben: Von den Lehrkräften eines Landes arbeiten 25 % an einem Gymnasium; 15 % der Lehrkräfte sind weiblich und arbeiten an einem Gymnasium; insgesamt sind 72 % der Lehrkräfte weiblich. 100 Lehrkräfte werden zufällig ausgewählt; Term Σ von k = 75 bis 100 über C(100; k) · 0,75^k · 0,25^(100−k).
+- gesucht: Bedeutung des Terms im Sachzusammenhang
+- verfahren: Summe als P(X ≥ 75) mit p = 0,75 (nicht am Gymnasium) erkennen und übersetzen.
+- fehlerquelle: „mindestens 75 am Gymnasium“ (Erfolg und Misserfolg vertauscht)
+
+### 2026MgrundlegendBStochastikWTR2-1d (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ga · punkte 3 · format Kurzantwort · antwort Text
+- gegeben: 20 Lieder, p = 0,32; Aussage Summe k = 0 bis 8 von (20 über k) · 0,32^k · 0,68^(20 − k) ≈ 0,843
+- gesucht: Bedeutung der Aussage im Sachzusammenhang
+- verfahren: Summe als P(X ≤ 8) lesen
+- fehlerquelle: „genau acht“ statt „höchstens acht“
+
+### 2021MgrundlegendBStochastikWTR3-1d (iqb-katalog.csv)
+
+jahr 2021 · papier 2021-iqb-ga · punkte 3 · format Begründung · antwort Text
+- gegeben: Großes Unternehmen: 77 % aller Beschäftigten sind mit ihrem Gehalt zufrieden; 5 % aller Beschäftigten sind in der Werbeabteilung und nicht zufrieden; 12 % aller Beschäftigten gehören zur Werbeabteilung; Term 1 − Σ_(i=0)^400 (600 über i) · 0,23ⁱ · 0,77^(600−i)
+- gesucht: Bedeutung des Terms im Sachzusammenhang
+- verfahren: Erfolgswahrscheinlichkeit 0,23 als „nicht zufrieden“ erkennen, Summe als kumulierte Wahrscheinlichkeit, 1 − … als Gegenereignis
+- fehlerquelle: 0,23 als Zufriedenheitsanteil lesen
+
+### 2021-be-gk-B4d (abi-katalog.csv)
+
+jahr 2021 · papier 2021-be-gk · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: Smartphone-Spiel: jeden Sonntag zehn Versuche, je Versuch mit 40 % ein Stern; X = Anzahl der Sterne bei zehn Versuchen, binomialverteilt (n = 10, p = 0,4); vier Spieler machen je zehn Versuche
+- gesucht: Wahrscheinlichkeit, dass genau zwei der vier Spieler jeweils genau fünf Sterne gewinnen
+- verfahren: P(X = 5) als Trefferwahrscheinlichkeit einer Binomialverteilung mit n = 4
+- fehlerquelle: P(X = 5)² ohne Binomialkoeffizient und Gegenwahrscheinlichkeit
+
+### 2023MgrundlegendBStochastikWTR1-2a (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ga · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: 96 % der Säcke einwandfrei; Schritt 1: 50 Säcke, höchstens zwei mangelhaft ⇒ Vertrag; genau drei mangelhaft ⇒ Schritt 2: 25 Säcke, höchstens ein mangelhaft ⇒ Vertrag; sonst kein Vertrag
+- gesucht: Wahrscheinlichkeit für den Vertragsabschluss
+- verfahren: Direkter Abschluss plus Pfad über genau drei Mängel und zweiten Schritt, beide binomial
+- fehlerquelle: zweiten Schritt ohne Faktor P(X = 47) addieren
+
+### 2022-bebb-gk-B4e (abi-katalog.csv)
+
+jahr 2022 · papier 2022-bebb-gk · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: Paketzentrum: 10 % der Pakete haben das Ziel A, 7 % das Ziel B; Anlage mit Tabelle der summierten Binomialverteilung; 20 Pakete zufällig ausgewählt; P(keines mit Ziel C) ≈ 54 %
+- gesucht: Anteil der Pakete mit Ziel C unter allen Paketen
+- verfahren: (1 − p)^20 = 0,54 nach p auflösen
+- fehlerquelle: 0,54/20 rechnen
+
+### 2018MgrundlegendBStochastikWTR2-1d (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ga · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: Flachbildschirme, im Mittel einer von fünf fehlerhaft; die Anzahl fehlerhafter Geräte unter zufällig ausgewählten ist binomialverteilt (p = 0,2); nach einer Verbesserung soll P(keiner von 25 fehlerhaft) ≥ 10 % sein
+- gesucht: höchstzulässiger Anteil fehlerhafter Geräte nach der Verbesserung
+- verfahren: (1 − x)^25 ≥ 0,1 nach x auflösen
+- fehlerquelle: die 25. Wurzel als Division durch 25 ausführen
+
+### 2025-bebb-gk-B4d (abi-katalog.csv)
+
+jahr 2025 · papier 2025-bebb-gk · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: X wie in c; P(X ≤ k) soll mehr als 90 % betragen
+- gesucht: kleinstmögliches k
+- verfahren: kumulierte Wahrscheinlichkeiten um 90 % vergleichen
+- fehlerquelle: k = 103 angeben (Schranke nicht überschritten)
+
+### 2022MerhoehtBStochastikWTR2-1e (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ea · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: Befragung wie in d; Schranke 25 %
+- gesucht: größtes k mit P(X < k) < 25 %
+- verfahren: Kumulierte Wahrscheinlichkeiten um μ − 0,67σ probieren
+- fehlerquelle: k = 114 (Grenze mit ≤ statt <)
+
+### 2023-bebb-lk-B4h (abi-katalog.csv)
+
+jahr 2023 · papier 2023-bebb-lk · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: 80 000 Teilnehmer; X Anzahl mit zwei Strandkörben, p = 8 · 10⁻⁴; Intervall [μ − c; μ + c] mit Wahrscheinlichkeit mindestens 80 %
+- gesucht: kleinster ganzzahliger Wert von c
+- verfahren: μ berechnen, symmetrische Intervalle mit wachsendem c am Rechner prüfen
+- fehlerquelle: c über die Sigma-Regel ohne Nachbarwertprüfung
+
+### 2019MgrundlegendBStochastikWTR3-1d (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ga · punkte 5 · format Rechnung · antwort Zahl
+- gegeben: 200 zufällig ausgewählte befragte Männer; X = Anzahl mit Anzeichen spielsüchtigen Verhaltens, binomialverteilt mit p = 0,025
+- gesucht: kleinstes um E(X) symmetrisches Intervall, in dem X mit mehr als 90 % liegt
+- verfahren: E(X) = 5, Umgebungen [5 − r; 5 + r] mit wachsendem r prüfen
+- fehlerquelle: Sigma-Umgebung mit σ ≈ 2,2 ohne Prüfung angeben
+
+### 2024MgrundlegendBStochastikWTR2-2b (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ga · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: X wie in a; Bedingung P(μ − k ≤ X ≤ μ) ≥ 30 %
+- gesucht: μ und kleinstes natürliches k
+- verfahren: μ berechnen, Intervalle nach unten verlängern
+- fehlerquelle: symmetrische Umgebung μ ± k rechnen
+
+### 2021MgrundlegendBStochastikWTR2-1d (iqb-katalog.csv)
+
+jahr 2021 · papier 2021-iqb-ga · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: Smartphone-Spiel: jeden Sonntag zehn Versuche, je Versuch mit 40 % ein Stern; X = Anzahl der Sterne bei zehn Versuchen, binomialverteilt (n = 10, p = 0,4); nach einer Änderung von p beträgt P(höchstens drei Sterne bei zehn Versuchen) etwa 62 %
+- gesucht: die geänderte Wahrscheinlichkeit p auf ganze Prozent
+- verfahren: P(X ≤ 3) für Werte von p mit dem Rechner berechnen, bis etwa 62 % erreicht sind
+- fehlerquelle: p aus E(X) = 3 zu 30 % schließen
+
+### 2022MgrundlegendBStochastikWTR2-2b (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ga · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: zweite Studie, Anzahl der Infizierten binomialverteilt mit p = 1/3; P(X = 30) ≈ 3,6 %
+- gesucht: eine mögliche Anzahl der Teilnehmenden
+- verfahren: n variieren, bis P(X = 30) ≈ 0,036
+- fehlerquelle: n = 90 aus 30/p ansetzen und nicht prüfen
+
+### 2018-be-gk-B3.2c (abi-katalog.csv)
+
+jahr 2018 · papier 2018-be-gk · punkte 3 · format Begründung · antwort Text
+- gegeben: Die Anzahl fehlerhafter Bildschirme ist binomialverteilt mit p = 0,2. Zu beurteilen ist die Aussage, dass die Wahrscheinlichkeit dafür, dass alle Geräte fehlerfrei sind, geringer wird, wenn eine Stichprobe um einen zufällig ausgewählten Bildschirm ergänzt wird.
+- gesucht: Beurteilung der Aussage
+- verfahren: Bei n Geräten ist die Wahrscheinlichkeit 0,8ⁿ, bei n + 1 Geräten 0,8^(n+1) = 0,8 · 0,8ⁿ. Da mit 0,8 multipliziert wird, ist der Wert kleiner; die Aussage trifft zu.
+- fehlerquelle: die Aussage nur an einem Zahlenbeispiel prüfen und den allgemeinen Grund nicht nennen
+
+### 2018-be-gk-B3.1c (abi-katalog.csv)
+
+jahr 2018 · papier 2018-be-gk · punkte 5 · format Rechnung|Begründung · antwort Zahl|Text
+- gegeben: Das Spiel hat die Gewinnwahrscheinlichkeit p = 0,4 und wird n-mal gespielt. Ereignis C: wenigstens eins von n Spielen wird gewonnen. Eine Spielerin behauptet, P(C) werde kleiner, wenn n größer wird.
+- gesucht: Entscheidung über die Behauptung anhand zweier berechneter Wahrscheinlichkeiten
+- verfahren: P(C) über das Gegenereignis kein Gewinn bestimmen: P(C) = 1 − 0,6ⁿ. Zwei Werte berechnen, etwa n = 1 mit 0,4 und n = 10 mit etwa 0,994; da 0,6ⁿ mit wachsendem n kleiner wird, wächst P(C). Die Behauptung ist damit widerlegt.
+- fehlerquelle: P(C) als Summe der Einzelwahrscheinlichkeiten aufschreiben und im Rechenaufwand steckenbleiben, statt das Gegenereignis zu nutzen
+
+### 2023MgrundlegendBStochastikWTR1-2b (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ga · punkte 2 · format Begründung · antwort Text
+- gegeben: zweiter Schritt mit 15 statt 25 Säcken, sonst gleiche Bedingungen
+- gesucht: ob das für den Großhändler von Vorteil sein könnte, ohne Rechnung
+- verfahren: Wahrscheinlichkeit für höchstens einen Mangel wächst bei kleinerer Stichprobe
+- fehlerquelle: größere Stichprobe pauschal als besser ansehen
+
+### 2019MerhoehtAStochastik11-b (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ea · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: Y binomialverteilt mit n = 5 und p > 0; P(Y = 4) = 10 · P(Y = 5)
+- gesucht: Wert von p
+- verfahren: beide Wahrscheinlichkeiten als Terme in p, Gleichung lösen
+- fehlerquelle: (5 über 4) = 5 vergessen
+
+### 2023-bebb-gk-A1.7a (abi-katalog.csv)
+
+jahr 2023 · papier 2023-bebb-gk · punkte 2 · format Kurzantwort · antwort Zahl
+- gegeben: Abbildung der Wahrscheinlichkeitsverteilung einer binomialverteilten Zufallsgröße X (Säulen für k = 0 bis 9, Maximum bei k = 3 mit etwa 0,26).
+- gesucht: Näherungswert für P(3 < X < 6)
+- verfahren: Die Säulen für k = 4 und k = 5 ablesen und addieren.
+- fehlerquelle: die Säulen für k = 3 und k = 6 mitzählen (P(3 ≤ X ≤ 6) ≈ 0,58)
+
+### 2026-bb-gk-A1.6b (abi-katalog.csv)
+
+jahr 2026 · papier 2026-bb-gk · punkte 3 · format Kurzantwort · antwort Zahl
+- gegeben: Säulendiagramm von P(X = k) für X binomialverteilt mit n = 20 und p = 0,2: Säulenhöhen etwa 0,01, 0,06, 0,14, 0,205, 0,22, 0,175 für k = 0 bis 5; Bedingungen P(X = v) ≈ 0,175 und 0,15 < P(X <= w) < 0,25
+- gesucht: natürliche Zahlen v und w
+- verfahren: v an der Säule mit Höhe 0,175 ablesen; für w die Säulen von k = 0 an addieren, bis die Summe zwischen 0,15 und 0,25 liegt
+- fehlerquelle: für w die Säule mit Höhe zwischen 0,15 und 0,25 nehmen statt die Summe zu bilden
+
+### 2018-be-gk-B3.2b (abi-katalog.csv)
+
+jahr 2018 · papier 2018-be-gk · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: Die Anzahl fehlerhafter Geräte unter 250 zufällig ausgewählten Bildschirmen ist binomialverteilt mit p = 0,2.
+- gesucht: Anzahl fehlerhafter Bildschirme, die mit der größten Wahrscheinlichkeit auftritt
+- verfahren: Den Erwartungswert 250 · 0,2 = 50 bestimmen und die Einzelwahrscheinlichkeiten in seiner Umgebung vergleichen; alternativ über (n + 1) · p = 50,2 und Abrunden.
+- fehlerquelle: den Erwartungswert angeben, ohne zu prüfen, ob die Nachbarwerte kleinere Wahrscheinlichkeiten haben
+
+### 2020MerhoehtAStochastik11-b (iqb-katalog.csv)
+
+jahr 2020 · papier 2020-iqb-ea · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: Diagramm der Verteilung von X ohne Achsenwerte; die grauen Säulen stellen P(X ≤ k) dar und enden bei der höchsten Säule
+- gesucht: Wert von k
+- verfahren: Erwartungswert berechnen, mit der höchsten Säule identifizieren
+- fehlerquelle: Säulen abzählen wollen (keine Achsenwerte)
+
+### 2025-bebb-gk-B4c (abi-katalog.csv)
+
+jahr 2025 · papier 2025-bebb-gk · punkte 2 · format Begründung · antwort Text
+- gegeben: X Anzahl überbelegter Haushalte unter 1000, binomialverteilt mit p = 0,0918; Aussage: die Verteilung nimmt für 90 den größten Wert an
+- gesucht: Beurteilung ohne Berechnung von Wahrscheinlichkeiten
+- verfahren: Erwartungswert berechnen und mit 90 vergleichen
+- fehlerquelle: Wahrscheinlichkeiten doch berechnen
+
+### 2020-be-gk-B4.2d (abi-katalog.csv)
+
+jahr 2020 · papier 2020-be-gk · punkte 3 · format Begründung · antwort Text
+- gegeben: In einem großen Unternehmen ist 1/3 der Beschäftigten weiblich; 50 Beschäftigte werden zufällig ausgewählt, die Anzahl X der weiblichen darunter ist binomialverteilt (n = 50, p = 1/3)
+- gesucht: Begründung ohne Wahrscheinlichkeitsrechnung, dass die Verteilung von X für 16 oder 17 den größten Wert hat
+- verfahren: Erwartungswert berechnen; das Maximum liegt bei einer der beiden benachbarten ganzen Zahlen
+- fehlerquelle: das Maximum bei n/2 = 25 vermuten
+
+### 2021MgrundlegendAStochastik12-b (iqb-katalog.csv)
+
+jahr 2021 · papier 2021-iqb-ga · punkte 3 · format Begründung · antwort Text
+- gegeben: 36 Würfe; X Anzahl der Würfe ohne 6, binomialverteilt mit p = 25/36; Abb. 1 bis 3
+- gesucht: je Abbildung eine Begründung, dass sie nicht die Verteilung von X zeigt
+- verfahren: je ein Merkmal prüfen: Lage des Maximums, Summe, Wertebereich
+- fehlerquelle: Abb. 2 nur wegen der Form ablehnen
+
+### 2018MerhoehtAStochastik11-a (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ea · punkte 3 · format Kurzantwort|Begründung · antwort Text
+- gegeben: X binomialverteilt mit n = 10, p = 0,8; drei Säulendiagramme, eines zeigt die Verteilung von X
+- gesucht: die beiden Diagramme, die X nicht darstellen, mit Begründung
+- verfahren: Wertebereich und Summe prüfen
+- fehlerquelle: Abb. 1 wegen der Lage des Maximums bei 8 für richtig halten
+
+### 2026-bb-gk-B4c (abi-katalog.csv)
+
+jahr 2026 · papier 2026-bb-gk · punkte 2 · format Begründung · antwort Text
+- gegeben: Abbildung: Verteilung von Y mit n = 10, p = 0,25; X Anzahl der Sammler mit p = 0,75
+- gesucht: Erläuterung, wie man mit der Abbildung P(X = 6) ermittelt
+- verfahren: X = 6 Sammler heißt Y = 4 Nichtsammler
+- fehlerquelle: Säule bei k = 6 ablesen
+
+### 2024MerhoehtAStochastik23-a (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ea · punkte 2 · format Zeichnen · antwort Grafik
+- gegeben: Tetraeder mit Zahlen 1 bis 4, gleich wahrscheinlich, viermal geworfen; X zählt die Würfe mit 1, Verteilung in Abbildung 1; Y zählt die Würfe ohne 1
+- gesucht: Wahrscheinlichkeitsverteilung von Y in Abbildung 2
+- verfahren: Y = 4 − X, also die Säulen von Abbildung 1 in umgekehrter Reihenfolge eintragen
+- fehlerquelle: Abbildung 1 unverändert abzeichnen
+
+### 2019MerhoehtAStochastik11-a (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ea · punkte 2 · format Rechnung|Eintragen · antwort Zahl
+- gegeben: Diagramm mit kumulierten Werten P(X ≤ k) einer Binomialverteilung mit n = 5 für k = 0 bis 4
+- gesucht: Säule für k = 5 und P(X = 2)
+- verfahren: Säule der Höhe 1 ergänzen, Differenz zweier kumulierter Werte ablesen
+- fehlerquelle: P(X ≤ 2) = 0,5 als P(X = 2) ablesen
+
+### 2021MerhoehtAStochastik12-b (iqb-katalog.csv)
+
+jahr 2021 · papier 2021-iqb-ea · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: X ~ B(100; 0,5); P(X ≥ 61) ≈ 2 %
+- gesucht: P(40 ≤ X ≤ 60) aus diesem Wert
+- verfahren: beide Ränder abziehen
+- fehlerquelle: 98 % angeben (nur einen Rand abziehen)
+
+### 2020MerhoehtAStochastik11-c (iqb-katalog.csv)
+
+jahr 2020 · papier 2020-iqb-ea · punkte 2 · format Kurzantwort · antwort Term
+- gegeben: Y binomialverteilt mit n = 40 und p_Y, 0 < p_Y < 1
+- gesucht: alle p_Y mit P(Y = 10) > P(Y = 30)
+- verfahren: Lage von 10 und 30 zur Mitte 20 mit p vergleichen
+- fehlerquelle: p > 0,5 angeben
+
+### 2021MgrundlegendBStochastikWTR1-1c (iqb-katalog.csv)
+
+jahr 2021 · papier 2021-iqb-ga · punkte 4 · format Begründung · antwort Text
+- gegeben: Joghurtbecher auf Paletten zu je 20 Bechern; unter jedem Deckel genau eines von sechs Motiven; gegenwärtig wird jedes Motiv zufällig (je 1/6) ausgewählt; drei Becher werden nacheinander geöffnet; geplante Änderung: Motiv 6 künftig mit Wahrscheinlichkeit p; X = Anzahl der Becher mit Motiv 6 auf einer Palette (n = 20); die Abbildung zeigt für einen Wert von p die Wahrscheinlichkeitsverteilung von X; Aussage I: P(weniger als zwei Becher mit Motiv 6) > 50 %; Aussage II: p > 1/6
+- gesucht: Beurteilung beider Aussagen
+- verfahren: Säulenanteile für k < 2 abschätzen; Lage des Maximums mit n · p vergleichen
+- fehlerquelle: Aussage II mit der Säule zu k = 2 statt mit dem Erwartungswert 20p begründen wollen
+
+Nur außerhalb von „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ genannt, nicht aufgenommen: 2020MgrundlegendBStochastikWTR2-1c, 2024MerhoehtBStochastikWTR2-1d, 2026-bb-ea-B4a, 2026MgrundlegendBStochastikWTR2-1c, 2026MerhoehtBStochastikWTR1-1a, 2026MerhoehtBStochastikWTR2-1a, 2025MgrundlegendBStochastikWTR2-1c, 2025MgrundlegendBStochastikWTR3-1d, 2023MgrundlegendBStochastikWTR2-1b, 2023MerhoehtBStochastikWTR1-1, 2022MerhoehtBStochastikWTR1-1d, 2021MgrundlegendBStochastikWTR2-1a, 2018MerhoehtBStochastikWTR2-1a, 2018MgrundlegendBStochastikWTR1-1d, 2025MgrundlegendBStochastikWTR1-1d, 2021MgrundlegendBStochastikWTR3-1c, 2025MerhoehtBStochastikWTR2-1b, 2023MgrundlegendBStochastikWTR3-1d, 2017-bb-ea-B4.2d, 2023MgrundlegendBStochastikWTR3-1e, 2022MerhoehtBStochastikWTR2-1d, 2020MgrundlegendBStochastikWTR1-1c, 2020MerhoehtAStochastik11-a, 2026-bb-ea-A1.4a, 2026MerhoehtAStochastik11-a, 2026MerhoehtAStochastik22-a, 2017MerhoehtAStochastik11-b, 2021MgrundlegendBStochastikWTR2-1c, 2019-be-gk-B4.2e, 2020-be-gk-B4.2b, 2020MgrundlegendBStochastikWTR1-1b, 2026MgrundlegendAStochastik11-b, 2025MgrundlegendBStochastikWTR3-1c, 2025MerhoehtAStochastik12-a, 2019MgrundlegendBStochastikWTR2-1a, 2018-be-gk-B3.1b, 2019-be-gk-B4.2d, 2020MgrundlegendBStochastikWTR2-1b, 2022-bebb-gk-B4d, 2019-be-gk-B4.1b, 2020-be-gk-B4.1c, 2021-be-gk-B4e, 2022MgrundlegendBStochastikWTR1-1c, 2023MerhoehtBStochastikWTR2-2b, 2018MerhoehtBStochastikWTR2-1d, 2026-bb-ea-B4b, 2020MgrundlegendBStochastikWTR1-1d, 2019MgrundlegendAStochastik12-b, 2017MerhoehtAStochastik12-b, 2026MgrundlegendBStochastikWTR1-1c, 2026MerhoehtBStochastikWTR1-1b, 2025MgrundlegendAStochastik21-b, 2025MgrundlegendBStochastikWTR1-1c, 2018MgrundlegendBStochastikWTR2-1c, 2018MgrundlegendBStochastikWTR2-1b, 2021-be-gk-B4b, 2022MgrundlegendBStochastikWTR1-1a
 
 ## 3 Maßstab (unterrichtsblatt.md, wortgleich)
 

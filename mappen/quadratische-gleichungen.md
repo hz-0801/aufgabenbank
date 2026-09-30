@@ -1,9 +1,9 @@
 # Mappe: quadratische-gleichungen
 
 Eintrag: hz-0801/mathe-nachhilfe, katalog/quadratische-gleichungen.md
-Katalog-Commit: c651dc47624a28a96eb6724ed3e4864024a7bab4 (2026-09-27T22:25:43+00:00, „katalog: Erkennungsschritte“; ermittelt über git log (GitHub-API gesperrt))
+Katalog-Commit: c651dc47624a28a96eb6724ed3e4864024a7bab4 (2026-09-27T22:25:43Z, „katalog: Erkennungsschritte“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-28 02:02 UTC
+Datum: 2026-09-30 08:11 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -133,9 +133,9 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 118  Einheit 4 – kein P10-Original; Zielmarke nach RLP G („Übersetzungen zwischen verschiedenen Darstellungen … auch für quadratische Zusammenhänge“) und LISUM-PH Jg. 9 (Sachkontexte Architektur und Brückenbogen, Wurfparabeln, beide Reihen): zu einem Rechteck mit gegebener Seitenbeziehung und gegebener Fläche die Gleichung aufstellen, ordnen, mit der Lösungsformel lösen, die negative Lösung als Länge ausschließen und mit Einheit antworten (Lehrwerk Kl. 9 II 6). Nebenmarke 2014-OS-K7a, Niveau II, Stern (geführt in quadratische-funktionen.md): dort ist das Lösen der quadratischen Gleichung der alternative Weg zur Punktprobe.
 ````
 
-## 2 Originale (14)
+## 2 Originale (17)
 
-Kennungen aus „Prüfungsform“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
+Kennungen aus „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
 
 ### 2021-OS-K7c (msa-katalog-kontext.csv)
 
@@ -249,7 +249,29 @@ jahr 2014 · papier OS · punkte 4 · format Rechnung · antwort Zahl
 - verfahren: p(−3) = −9 und g(−3) = −6 − 3 = −9; beide erfüllt (alternativ −x² = 2x − 3 lösen: x = −3 oder x = 1)
 - fehlerquelle: p(−3) = +9 (Vorzeichen) oder nur in eine Funktion einsetzen
 
-Nur außerhalb von „Prüfungsform“ genannt, nicht aufgenommen: 2018-OS-K5b, 2018-OS-K5c, 2025-OS-K5b
+### 2018-OS-K5b (msa-katalog-kontext.csv)
+
+jahr 2018 · papier OS · punkte 1 · format Kurzantwort · antwort Zahl
+- gegeben: Graph von p(x) = x² − 4x + 2
+- gesucht: Koordinaten des Scheitelpunkts
+- verfahren: am Graphen ablesen (oder quadratische Ergänzung)
+- fehlerquelle: Koordinaten vertauschen S(−2|2)
+
+### 2018-OS-K5c (msa-katalog-kontext.csv)
+
+jahr 2018 · papier OS · punkte 2 · format Kurzantwort · antwort Term
+- gegeben: p(x) = x² − 4x + 2; Scheitel (2|−2)
+- gesucht: Scheitelpunktform
+- verfahren: p(x) = (x − 2)² − 2 (aus Scheitel oder durch quadratische Ergänzung x² − 4x + 4 − 4 + 2)
+- fehlerquelle: (x + 2)² − 2 (Vorzeichen in der Klammer); (x − 2)² + 2
+
+### 2025-OS-K5b (msa-katalog-kontext.csv)
+
+jahr 2025 · papier OS · punkte 2 · format Eintragen|Eintragen · antwort Zahl|Term
+- gegeben: p(x) = x² − 6x + 7, Parabel im Koordinatensystem abgebildet
+- gesucht: Scheitelpunkt S|Gleichung in Scheitelpunktform
+- verfahren: Scheitel am Graphen ablesen oder quadratische Ergänzung: x² − 6x + 9 − 2 = (x − 3)² − 2
+- fehlerquelle: Vorzeichen in der Scheitelpunktform: (x + 3)² − 2
 
 ## 3 Maßstab (unterrichtsblatt.md, wortgleich)
 

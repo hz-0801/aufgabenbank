@@ -1,9 +1,9 @@
 # Mappe: koerper
 
 Eintrag: hz-0801/mathe-nachhilfe, katalog/koerper.md
-Katalog-Commit: 761321330add6ed255669afc1c4e11b846250dd5 (2026-09-25T11:16:56+02:00, „katalog: Marken-Zeilen je Lerneinheit, drei Einheiten ergänzt, marken-bau.py“; ermittelt über git log (GitHub-API gesperrt))
+Katalog-Commit: c651dc47624a28a96eb6724ed3e4864024a7bab4 (2026-09-27T22:25:43Z, „katalog: Erkennungsschritte“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-27 12:32 UTC
+Datum: 2026-09-30 08:08 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -37,7 +37,7 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
  22  ### Typen je Lerneinheit
  23  Einheit 1: Körper in der Umwelt, aus Schrägbild oder Netz benennen (Prisma, Pyramide, Quader – Ankreuzen) · Grund- und Deckfläche, Seitenflächen benennen (auch beim liegenden Prisma) [OS 8] · Ecken, Kanten, Flächen zählen (Quader, Dreiecksprisma, quadratische Pyramide) [OS 5] · Würfelnetz: gültig oder nicht [OS 7] · Gegenfläche im Würfelnetz markieren · Netz von Quader oder Würfel mit Maßen zeichnen [OS 6, GYM 5] · Schrägbild lesen: verdeckte Kanten, Maße entnehmen · Schrägbild eines Quaders auf Rasterpapier zeichnen (Tiefe halb, schräg) [OS 5–6, GYM 5–6] · Schrägbild beschriften, Körperhöhe einzeichnen · Körper in ein Schrägbild einzeichnen (Kegel im Quader) · Fehler finden (Dreiecksprisma als Pyramide; angrenzende statt gegenüberliegende Fläche) · Begründen (warum ein Netz nicht zum Würfel faltet).
  24  Einheit 2: V = a · b · c mit ganzen Zahlen · Würfel a³ · Einheiten cm³, dm³ = l, m³ (1 l = 1000 cm³) · Oberfläche als sechs Rechtecke, Würfel 6 · a² [GYM 5] · Oberfläche ohne Deckel (Kiste, Aquarium) · Kante aus V und zwei Kanten · Würfelkante aus V (Kubikzahlen) · aus zwei Quadern zusammengesetzt (Treppe, L-Form) [OS 6, GYM 5–6] · Aquarium: Füllmenge in Litern, Füllhöhe · Fehler finden (a · b · c als Oberfläche; 3 · 3 statt 3 · 3 · 3; Oberfläche als Volumen angegeben) · Begründen (Schichten aus Einheitswürfeln).
- 25  Einheit 3: Grundfläche erkennen und markieren (auch liegend) · V = G · h mit gegebener Grundfläche · Rechteckgrundfläche (Quader als Prisma) · Dreiecksgrundfläche (G = g · h_g : 2) · Trapezgrundfläche · Mantel als Rechtecke (Umfang der Grundfläche · h) · Oberfläche = 2 · G + M · Netz eines Prismas vervollständigen (fehlende Rechtecke, Maße) [OS 8] · Höhe aus V und G · Sachaufgabe (Dach, Vitrine, Werbeprisma, Zelt, Schokoladenverpackung) · Fehler finden (Höhe der Grundfläche und Prismenhöhe vertauscht; Faktor 1/2 beim Dreieck vergessen; nur eine Seitenfläche) · Begründen (warum Grundfläche mal Höhe).
+ 25  Einheit 3: Grundfläche erkennen und markieren (auch liegend) · Rechteckgrundfläche (Quader als Prisma) · V = G · h mit gegebener Grundfläche · Dreiecksgrundfläche (G = g · h_g : 2) · Trapezgrundfläche · Mantel als Rechtecke (Umfang der Grundfläche · h) · Oberfläche = 2 · G + M · Netz eines Prismas vervollständigen (fehlende Rechtecke, Maße) [OS 8] · Höhe aus V und G · Sachaufgabe (Dach, Vitrine, Werbeprisma, Zelt, Schokoladenverpackung) · Fehler finden (Höhe der Grundfläche und Prismenhöhe vertauscht; Faktor 1/2 beim Dreieck vergessen; nur eine Seitenfläche) · Begründen (warum Grundfläche mal Höhe).
  26  Einheit 4: V = π · r² · h · r aus d · Liter (cm³ → dm³) · Mantel M = 2 · π · r · h (Umfang mal Höhe) · Netz: Rechtecklänge gleich Umfang [OS 8] · Oberfläche O = 2 · π · r² + M, ohne Deckel nur eine Grundfläche · h aus V · r aus V (Wurzel) · Behauptung prüfen (Herstellerangabe „ca. 400 ml“) · Volumen bei doppeltem Radius (vierfach) · Sachaufgabe (Dose, Regentonne, Turm, Becher, Rohr) · Fehler finden (d statt r; 2 · π · r · h als Volumen; Grund- und Deckfläche beim Mantel mitgerechnet) · Begründen (warum vierfach).
  27  Einheit 5: Körper in Teilkörper zerlegen und benennen (Haus = Quader + Dreiecksprisma; Pool = Quader + Halbzylinder) · Term zum Volumen aufstellen oder vorgegebene Terme prüfen (Klammer) · Volumen zusammengesetzter Körper · Restvolumen (Verpackung minus Inhalt) · kleinste Quaderverpackung aus Körpermaßen (Durchmesser, nicht Radius) · Packungsanzahl in einer Kiste durch Anordnen · Masse aus Volumen und Dichte (1 m³ Wasser = 1000 kg) [OS 8] · Füllstand in Prozent · Oberfläche eines zusammengesetzten Körpers (Vorrat) · Fehler finden (Klammer fehlt, h wirkt nur auf einen Teil; Radius als Mindestbreite) · Begründen (Zerlegung erklären; warum Volumen teilen nicht reicht).
  28
@@ -52,91 +52,88 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
  37  Erkennungsschritte (Vorstufe der Einheit, vor der sie stehen, nicht auf Blatt 0; eine Hauptnummer je Schritt):
  38  - „Welcher Körper?“ – zum Foto oder Schrägbild den Körper ankreuzen und die Grundfläche markieren (auch beim liegenden Prisma). Vor Einheit 1 und 3. [P10 2017-OS-B1c; RLP D]
  39  - „Volumen oder Oberfläche?“ – zu jeder Frage ankreuzen: Inhalt (Liter, füllen, passt hinein) oder Hülle (Farbe, Blech, Folie, Ziegel). Vor Einheit 2 bis 4. [RLP D „Unterscheiden zwischen Oberflächeninhalt und Volumen“; P10 2026-FOR-B1f, 2018-OS-K6b]
- 40  - „Was ist die Höhe?“ – im Schrägbild die Körperhöhe einzeichnen und von der Höhe der Grundfläche unterscheiden (Dreiecksprisma, Pyramide). Vor Einheit 3. [P10 2019-OS-K4c, 2015-OS-K6b]
- 41  - „Radius oder Durchmesser?“ – die gegebene Strecke benennen, die andere angeben, nicht weiterrechnen. Vor Einheit 4. [P10 2016-OS-K3c, 2021-OS-K4a]
- 42  - „Welche Einheit?“ – alle Maße vor dem Rechnen in dieselbe Einheit bringen (Liter in Kubikzentimeter; Meter und Zentimeter), Ergebniseinheit ankreuzen (cm² oder cm³). Vor Einheit 4 und 5. [P10 2023-OS-K5d]
- 43  - „Zerlege und benenne“ – Teilkörper im Schrägbild einzeichnen und benennen, nichts rechnen. Vor Einheit 5. [P10 2017-OS-K3c; RLP F]
- 44
- 45  ### Merkkasten
- 46  Einheit 1 (Körper, Netze, Schrägbilder):
- 47      Prisma: zwei gleiche Vielecke (Grund- und Deckfläche) und Rechtecke dazwischen. Zylinder: zwei Kreise und ein runder Mantel. Pyramide: ein Vieleck unten und Dreiecke zur Spitze.
- 48        Würfel: 8 Ecken, 12 Kanten, 6 Flächen      Dreiecksprisma: 6 Ecken, 9 Kanten, 5 Flächen
- 49      Netz: alle Flächen aufgeklappt, jede in wahrer Größe. Im Würfelnetz liegen sich zwei Flächen gegenüber, wenn genau eine Fläche dazwischenliegt.
- 50      Schrägbild: Vorderseite in wahrer Größe, Tiefe halb so lang und schräg (45°), verdeckte Kanten gestrichelt.
- 51      Formelsammlung: Körper – Netze und Schrägbilder [FS]
- 52  Quelle: [RLP D] wesentliche Merkmale; [Serlo Prisma] sinngemäß; [P10 2016-OS-B1j] Gegenfläche; eigene Formulierung.
- 53
- 54  Einheit 2 (Quader und Würfel):
- 55      Volumen: Länge mal Breite mal Höhe. Würfel: Kante mal Kante mal Kante.
- 56        a = 5 cm, b = 4 cm, c = 2 cm: V = 5 · 4 · 2 = 40 cm³      Würfel a = 4 cm: V = 4 · 4 · 4 = 64 cm³
- 57      Oberfläche: sechs Rechtecke, je zwei gleich.      O = 2 · (5 · 4 + 5 · 2 + 4 · 2) = 76 cm²      Würfel: O = 6 · 4 · 4 = 96 cm²
- 58      Einheiten: 1 dm³ = 1 l = 1000 cm³      1 m³ = 1000 l
- 59      Rückwärts: c = V : (a · b).
- 60      Formelsammlung: Körper – Quader, Würfel, V = a · b · c, O = 2 · (a · b + a · c + b · c) [FS]
- 61  Quelle: [RLP D] Rechenverfahren begründen; [LS-AA Kl. 5 V 6–7]; eigene Formulierung.
- 62
- 63  Einheit 3 (Prisma):
- 64      Volumen: Grundfläche mal Höhe – die Grundfläche ist die Fläche, die vorn und hinten gleich ist (auch wenn das Prisma liegt).
- 65        Dreieck g = 6 cm, h = 4 cm, Prismenhöhe 10 cm: G = 6 · 4 : 2 = 12 cm²      V = 12 · 10 = 120 cm³
- 66      Mantel: alle Rechtecke zusammen – Umfang der Grundfläche mal Höhe.      u = 6 + 5 + 5 = 16 cm: M = 16 · 10 = 160 cm²
- 67      Oberfläche: zweimal Grundfläche plus Mantel.      O = 2 · 12 + 160 = 184 cm²
- 68      Formelsammlung: Körper – Prisma, V = G · h, O = 2 · G + M [FS]
- 69  Quelle: [Serlo Prisma] sinngemäß; [RLP E] „Grundfläche mal Höhe“, „Addition der Teilflächeninhalte“.
- 70
- 71  Einheit 4 (Zylinder):
- 72      Volumen: Grundkreis mal Höhe.      r = 3 cm, h = 10 cm: V = π · 3² · 10 ≈ 282,7 cm³ ≈ 283 ml
- 73      Mantel: ein Rechteck – Umfang mal Höhe.      M = 2 · π · 3 · 10 ≈ 188,5 cm²      Oberfläche: O = 2 · π · 3² + M ≈ 245,0 cm²
- 74      Rückwärts: h = V : (π · r²)      r = √(V : (π · h))
- 75      Doppelter Radius: vierfaches Volumen, weil r im Quadrat steht.
- 76      Formelsammlung: Körper – Zylinder, V = π · r² · h, M = 2 · π · r · h [FS]
- 77  Quelle: [Serlo 55210] Aufgaben zu Prismen und Zylindern, sinngemäß; [RLP E]; [P10 2021-OS-K4b] doppelter Radius.
- 78
- 79  Einheit 5 (Zusammengesetzte Körper):
- 80      Zerlegen: Körper in Quader, Prismen, Zylinder oder halbe Zylinder schneiden, jedes Volumen berechnen, addieren – oder vom großen Körper den fehlenden Teil abziehen.
- 81        Haus: Quader 8 m · 6 m · 3 m und Dach als Dreiecksprisma (6 m breit, 2 m hoch, 8 m lang): 144 + 48 = 192 m³
- 82      Term prüfen: Bei „(Rechteck + Halbkreis) mal Tiefe“ muss die Klammer stehen – sonst wirkt die Tiefe nur auf einen Teil.
- 83      Passt es hinein? Der Durchmesser (nicht der Radius) muss in die Breite passen; beim Stapeln anordnen, nicht nur Volumen teilen.
- 84      Masse aus Volumen: Volumen in dm³ mal Dichte (Wasser: 1 kg je dm³).
- 85      Formelsammlung: Körper – zusammengesetzte Körper; Dichte [FS]
- 86  Quelle: [RLP F] Zerlegungs- und Ergänzungsprinzip; [P10 2017-OS-K3c, 2020-OS-K5c, 2024-OS-K4b] Verfahren; eigene Formulierung.
- 87
- 88  ### Typische Fehler
- 89  - Durchmesser statt Radius (oder umgekehrt) in die Formel: 12 statt 6 bei der Kugel; d als r bei Tonne und Becher; Mindestbreite der Verpackung mit dem Radius 30 statt dem Durchmesser 60. [P10 2016-OS-K3c, 2021-OS-K4a, 2022-OS-K2b, 2023-OS-K5b, 2024-OS-K4b]
- 90  - r² als 2 · r gerechnet; Wurzel vergessen (r = 19,3 statt 4,4); durch 2 · π · h statt π · h geteilt. [P10 2026-FOR-K2a, 2022-OS-K2d]
- 91  - Mantel und Volumen vertauscht: 2 · π · r · h als Volumen; Mantellänge als π · r² oder als Durchmesser. [P10 2022-OS-K2b, 2023-OS-K5a, 2022-OS-K2a]
- 92  - Grund- und Deckfläche beim Mantel mitgerechnet (Außenmauer, Kegeldach); falsche Höhe aus dem Aufgabenstamm (30 m statt 21,7 m). [P10 2018-OS-K6b, 2026-FOR-K2b]
- 93  - Volumen und Oberfläche vertauscht: 3 · 3 = 9 oder 54 cm² statt 27 cm³. [P10 2026-FOR-B1f]
- 94  - Faktor 1/2 bei der Dreiecksgrundfläche vergessen (1,95 statt 0,975); Grundflächenhöhe und Prismenhöhe vertauscht; gegebene Trapezfläche neu und falsch berechnet; 5 225 · 110 statt · 165. [P10 2019-OS-K4c, 2014-OS-K5a]
- 95  - Einheiten: cm³ in Liter mit 100 statt 1000; 1 l als 100 cm³; 10 % von der Leermasse statt vom Wasser. [P10 2021-OS-K4a, 2023-OS-K5d, 2019-OS-K4c]
- 96  - Term ohne Klammer: die Höhe wirkt nur auf den Kreis (V = a · b + π · (a/2)² · h). [P10 2017-OS-K3c]
- 97  - Radius verdoppelt, Volumen verdoppelt („r steht linear in der Formel“); (3r)² als 3r². [P10 2021-OS-K4b, 2026-FOR-K2d]
- 98  - Netz: Rückfläche mit falscher Höhe; Trapez spiegelverkehrt; Dreieck als rechtwinklig statt gleichseitig; ein Rechteck vergessen; a und c vertauscht; Zylindernetz mit dem Kreis an der kurzen Seite oder mit zu langem Rechteck. [P10 2020-OS-K5a, 2019-OS-K4a, 2014-OS-K5b, 2022-OS-K2a]
- 99  - Körper falsch benannt: Dreiecksprisma als Pyramide (Dreiecke als Seitenflächen gedeutet); Pyramidennetz als Prisma; Kantenzahl mit Eckenzahl verwechselt (5 statt 8). [P10 2017-OS-B1c, 2018-OS-B1i, 2019-OS-B1f]
-100  - Im Würfelnetz die angrenzende statt der gegenüberliegenden Fläche markiert. [P10 2016-OS-B1j]
-101  - Höhe im Schrägbild als Seitenkante oder als Höhe einer Seitenfläche eingezeichnet. [P10 2015-OS-K6b]
-102  - Packungsanzahl nur durch Volumendivision (8,4 → 8) ohne Passprobe; Schachteln einzeln gestapelt statt paarweise. [P10 2020-OS-K5c]
-103  - Faktor 1/3 beim Kegel vergessen; Kegel mit dem Radius der Verpackung gerechnet. [P10 2024-OS-K4c] (Kegel → pyramide-kegel-kugel.md)
-104
-105  ### Für schwache Schüler
-106  Mindeststoff (D/E) [RLP]: Einheit 1 Körper benennen, Würfel- und Quadernetze, Schrägbild von Würfel und Quader (D); Einheit 2 Volumen und Oberfläche des Quaders, Einheiten (D); Einheit 3 V = G · h mit gegebener, rechteckiger oder dreieckiger Grundfläche, Mantel als Rechtecke (E); Einheit 4 Volumen und Mantel des Zylinders (E). Vorrat: Umkehrungen mit Wurzel, Netz eines Trapezprismas mit Maßen, Volumenvergleich mit Variablen (Niveau III), Einheit 5 ganz (F), Kegel und Kugel (G).
-107  Grundvorstellung (Blatt 0) [RLP D, MO]: Volumen als Ausfüllen mit Einheitswürfeln – „Wie viele Würfel mit einem Zentimeter Kante passen in eine Schachtel von sechs mal drei mal drei Zentimetern? Lege die erste Schicht, zähle die Schichten“ – und Oberfläche als Einwickeln – „Wie viele Kästchen Papier braucht man, um die Schachtel zu bekleben? Zeichne das Netz.“ Wer für das Volumen die Kanten addiert oder für die Oberfläche Länge mal Breite mal Höhe rechnet, braucht das vor den Formeln. [P10 2026-FOR-B1f Fehlerquelle]
-108  Sprossen je Verfahrenstyp (Reihenfolge = Kette des Hauptblatts) [LS-AA, FD]:
-109  - Körper und Netze (Einheit 1): Körper ankreuzen (Vorstufe) → Körper aus Schrägbild benennen (4×) → Ecken, Kanten, Flächen zählen → Würfelnetz gültig oder ungültig → Gegenfläche im Würfelnetz → Quadernetz mit Maßen zeichnen → Schrägbild eines Quaders zeichnen → Schrägbild beschriften (Höhe einzeichnen) → Prüfungshöhe: Gegenfläche in einem Würfelnetz markieren und Kantenzahl einer quadratischen Pyramide ohne Bild angeben (P10-Form).
-110  - Quader (Einheit 2): Volumen oder Oberfläche ankreuzen (Vorstufe) → V aus a, b, c mit ganzen Zahlen (4×) → Würfel a³ → Einheiten cm³ ↔ l → O als sechs Rechtecke → Würfel als sechs gleiche Quadrate → Kante aus V → zusammengesetzt aus zwei Quadern → Prüfungshöhe: Würfelvolumen aus der Kante als Kurzantwort mit der Oberfläche als Falle (P10-Form); Aquarium in Litern als Sachaufgabe.
-111  - Prisma (Einheit 3): Grundfläche und Höhe markieren (Vorstufe) → V = G · h mit gegebener Grundfläche (4×) → Rechteckgrundfläche → Dreiecksgrundfläche → Trapezgrundfläche → liegendes Prisma → Mantel als Rechtecke → Oberfläche → Netz vervollständigen → h aus V → Prüfungshöhe: Dreiecksprisma, Deckfläche berechnen und Volumen ≈ 1,2 m³ nachweisen (P10-Form).
-112  - Zylinder (Einheit 4): Radius oder Durchmesser benennen (Vorstufe) → V aus r und h mit ganzen Zahlen (4×) → aus d → Dezimalzahlen mit Runden → in Liter → Mantel → Oberfläche mit und ohne Deckel → Netz auswählen (Rechtecklänge = Umfang) → h aus V → r aus V → Behauptung prüfen → doppelter Radius begründen → Prüfungshöhe: Höhe einer 1-Liter-Dose aus r = 4 cm (P10-Form, Stern).
-113  - Zusammengesetzt (Einheit 5): Teilkörper benennen (Vorstufe) → zwei Quader (4×) → Quader und Dreiecksprisma → Quader und Halbzylinder → Term zum Volumen prüfen → Restvolumen → Verpackungsmaße (Durchmesser) → Packungsanzahl durch Anordnen → Masse aus Volumen → Prüfungshöhe: Restvolumen Zylinderverpackung minus Kegel mit Kegelformel aus der Formelsammlung (P10-Form, Stern).
-114
-115  ### Prüfungsform (P10)
-116  Zwei P10-Themen [P10]. „Körper, Netze, Schrägbilder“ (zehn Typen, Raum und Form): Basisaufgaben „Gegenfläche im Würfelnetz bestimmen“, „Kantenzahl eines Körpers angeben“ (quadratische Pyramide ohne Bild), „Körper aus Netz oder Schrägbild benennen“ (zwei Originale: liegendes Dreiecksprisma; Pyramidennetz aus vier Dreiecken); Kontextaufgaben „Netz eines Prismas vervollständigen“ (drei Originale, Kästchenraster mit Maßstab, Trapez- und Dreiecksprisma), „Netz eines Zylinders erkennen“ (drei Skizzen, Rechtecklänge gegen Umfang), „Mantelfläche Zylinder als Netz skizzieren“ (a = 2 · π · r, b = h), „Körperskizze beschriften“ (Pyramidenhöhe einzeichnen), „Körper in Schrägbild skizzieren“ (Kegel im Quader), „Verpackungsmaße aus Körpermaßen bestimmen“ (Ankreuzen mit Begründung; nur als Nebentyp von 2024-OS-K4b belegt, kein eigenes Hauptoriginal), „Packungsanzahl in Quader bestimmen“ (Niveau III, Stern: zwei Trapezprismen ergeben einen Quader). „Volumen und Oberfläche“ (vierzehn Typen, Größen und Messen) – hier zehn: „Volumen Würfel berechnen“ (Basis), „Volumen Prisma berechnen“ (zwei Originale: 2014-OS-K5a mit gegebener Trapezfläche; 2019-OS-K4c Dreiecksprisma mit Nachweis), „Mantelfläche Prisma berechnen“ (2019-OS-K4b, drei gleiche Rechtecke addieren), „Volumen Zylinder berechnen“ (vier Originale, meist Nachweis einer Herstellerangabe in Litern oder Millilitern), „Mantelfläche Zylinder berechnen“ (π · d · h), „Höhe eines Zylinders aus Volumen berechnen“ (Stern), „Radius eines Zylinders aus Volumen berechnen“ (Stern, Wurzel), „Volumenänderung bei doppeltem Radius begründen“ (Stern), „Term zu Körper angeben“ (Stern, drei Terme prüfen), „Restvolumen berechnen“ (Stern, Zylinder minus Kegel); vier → pyramide-kegel-kugel.md: „Volumen Kegel berechnen“, „Mantelfläche Kegel berechnen“, „Volumen Kugel berechnen“, „Volumen Kegel und Zylinder vergleichen“ (Niveau III). Angrenzend: „Masse aus Volumen und Dichte berechnen“ (Nebentyp, einheiten.md Einheit 4 – sein einziges Original ist 2019-OS-K4c und wird hier geführt), „Draufsicht maßstabsgerecht zeichnen“ (Maßstab, strahlensaetze.md), Kreisfläche und Kreisumfang der Grundfläche (kreis.md).
-117  Zwei Originale des Werbeflächen-Stamms kreuzen mit flaechen.md zwischen Fläche und Volumen; beide folgen der Gliederungsregel „Typ nach typen.csv, Original nach seinem CSV-Thema“. 2019-OS-K4b (drei gleiche Seitenflächen addieren) hat das CSV-Thema „Flächeninhalt und Umfang“ und wird seit 10h von flaechen.md Einheit 1 geführt; sein Typ „Mantelfläche Prisma berechnen“ gehört zum Thema „Volumen und Oberfläche“ und bleibt mit seiner Sprossenkette hier in Einheit 3. Umgekehrt 2019-OS-K4c aus demselben Stamm: das Original bleibt hier (CSV-Thema „Volumen und Oberfläche“, Einheit 3), sein Haupttyp „Flächeninhalt Dreieck berechnen“ liegt bei flaechen.md Einheit 3 und die beiden Nebentypen bei diesem Eintrag („Volumen Prisma berechnen“) und bei einheiten.md („Masse aus Volumen und Dichte berechnen“).
-118  Zuordnung: Einheit 1 – Körper aus Netz oder Schrägbild benennen, Kantenzahl eines Körpers angeben, Gegenfläche im Würfelnetz bestimmen, Körperskizze beschriften, Körper in Schrägbild skizzieren; Einheit 2 – Volumen Würfel berechnen; Einheit 3 – Volumen Prisma berechnen (2014-OS-K5a; dazu 2019-OS-K4c, hier geführt, dessen Haupttyp „Flächeninhalt Dreieck berechnen“ bei flaechen.md liegt), Mantelfläche Prisma berechnen (Typ und Kette hier, Original 2019-OS-K4b bei flaechen.md), Netz eines Prismas vervollständigen; Einheit 4 – Volumen Zylinder berechnen, Mantelfläche Zylinder berechnen, Mantelfläche Zylinder als Netz skizzieren, Netz eines Zylinders erkennen, Höhe eines Zylinders aus Volumen berechnen, Radius eines Zylinders aus Volumen berechnen, Volumenänderung bei doppeltem Radius begründen; Einheit 5 – Term zu Körper angeben, Restvolumen berechnen, Verpackungsmaße aus Körpermaßen bestimmen, Packungsanzahl in Quader bestimmen.
-119  Zielmarke: Einheit 1 – im Würfelnetz die Gegenfläche einer markierten Fläche bestimmen (2016-OS-B1j, Basis) und die Kantenzahl einer quadratischen Pyramide ohne Bild angeben (2019-OS-B1f, Basis); daneben eine Körperskizze beschriften und dabei Körperhöhe, Seitenkante und Höhe einer Seitenfläche unterscheiden (2015-OS-K6b), einen Körper aus Netz oder Schrägbild benennen (2017-OS-B1c, 2018-OS-B1i) und einen Kegel in ein gegebenes Quader-Schrägbild einzeichnen (2024-OS-K4b). Einheit 2 – Würfelvolumen aus 3 cm Kante als Kurzantwort, mit der Oberfläche als Falle (2026-FOR-B1f, Basis). Einheit 3 – Deckfläche des Dreiecksprismas berechnen und das vorgegebene Volumen „≈ 1,2 m³“ nachweisen (2019-OS-K4c, Niveau II, drei Leistungen in einer Einheit), daneben Volumen aus gegebener Trapezfläche (2014-OS-K5a) und die Mantelfläche als Summe dreier gleicher Rechtecke (2019-OS-K4b, Original bei flaechen.md). Einheit 4 – Herstellerangabe „ca. 400 ml“ aus r = 4 cm und h = 8 cm nachweisen (2022-OS-K2b, 2023-OS-K5b), Höhe der 1-Liter-Dose aus dem Radius (2023-OS-K5d, Stern) und Radius aus dem Volumen mit Wurzel (2022-OS-K2d, Stern). Einheit 5 – kleinste Verpackung 61 cm × 61 cm × 81 cm mit Begründung (2024-OS-K4b) und Restvolumen Zylinder minus Kegel mit der Kegelformel aus der Formelsammlung (2024-OS-K4c, Stern).
+ 40  - „Welche Einheit?“ – alle Maße vor dem Rechnen in dieselbe Einheit bringen (Liter in Kubikzentimeter; Meter und Zentimeter), Ergebniseinheit ankreuzen (cm² oder cm³). Vor Einheit 4 und 5. [P10 2023-OS-K5d]
+ 41
+ 42  ### Merkkasten
+ 43  Einheit 1 (Körper, Netze, Schrägbilder):
+ 44      Prisma: zwei gleiche Vielecke (Grund- und Deckfläche) und Rechtecke dazwischen. Zylinder: zwei Kreise und ein runder Mantel. Pyramide: ein Vieleck unten und Dreiecke zur Spitze.
+ 45        Würfel: 8 Ecken, 12 Kanten, 6 Flächen      Dreiecksprisma: 6 Ecken, 9 Kanten, 5 Flächen
+ 46      Netz: alle Flächen aufgeklappt, jede in wahrer Größe. Im Würfelnetz liegen sich zwei Flächen gegenüber, wenn genau eine Fläche dazwischenliegt.
+ 47      Schrägbild: Vorderseite in wahrer Größe, Tiefe halb so lang und schräg (45°), verdeckte Kanten gestrichelt.
+ 48      Formelsammlung: Körper – Netze und Schrägbilder [FS]
+ 49  Quelle: [RLP D] wesentliche Merkmale; [Serlo Prisma] sinngemäß; [P10 2016-OS-B1j] Gegenfläche; eigene Formulierung.
+ 50
+ 51  Einheit 2 (Quader und Würfel):
+ 52      Volumen: Länge mal Breite mal Höhe. Würfel: Kante mal Kante mal Kante.
+ 53        a = 5 cm, b = 4 cm, c = 2 cm: V = 5 · 4 · 2 = 40 cm³      Würfel a = 4 cm: V = 4 · 4 · 4 = 64 cm³
+ 54      Oberfläche: sechs Rechtecke, je zwei gleich.      O = 2 · (5 · 4 + 5 · 2 + 4 · 2) = 76 cm²      Würfel: O = 6 · 4 · 4 = 96 cm²
+ 55      Einheiten: 1 dm³ = 1 l = 1000 cm³      1 m³ = 1000 l
+ 56      Rückwärts: c = V : (a · b).
+ 57      Formelsammlung: Körper – Quader, Würfel, V = a · b · c, O = 2 · (a · b + a · c + b · c) [FS]
+ 58  Quelle: [RLP D] Rechenverfahren begründen; [LS-AA Kl. 5 V 6–7]; eigene Formulierung.
+ 59
+ 60  Einheit 3 (Prisma):
+ 61      Volumen: Grundfläche mal Höhe – die Grundfläche ist die Fläche, die vorn und hinten gleich ist (auch wenn das Prisma liegt).
+ 62        Dreieck g = 6 cm, h = 4 cm, Prismenhöhe 10 cm: G = 6 · 4 : 2 = 12 cm²      V = 12 · 10 = 120 cm³
+ 63      Mantel: alle Rechtecke zusammen – Umfang der Grundfläche mal Höhe.      u = 6 + 5 + 5 = 16 cm: M = 16 · 10 = 160 cm²
+ 64      Oberfläche: zweimal Grundfläche plus Mantel.      O = 2 · 12 + 160 = 184 cm²
+ 65      Formelsammlung: Körper – Prisma, V = G · h, O = 2 · G + M [FS]
+ 66  Quelle: [Serlo Prisma] sinngemäß; [RLP E] „Grundfläche mal Höhe“, „Addition der Teilflächeninhalte“.
+ 67
+ 68  Einheit 4 (Zylinder):
+ 69      Volumen: Grundkreis mal Höhe.      r = 3 cm, h = 10 cm: V = π · 3² · 10 ≈ 282,7 cm³ ≈ 283 ml
+ 70      Mantel: ein Rechteck – Umfang mal Höhe.      M = 2 · π · 3 · 10 ≈ 188,5 cm²      Oberfläche: O = 2 · π · 3² + M ≈ 245,0 cm²
+ 71      Rückwärts: h = V : (π · r²)      r = √(V : (π · h))
+ 72      Doppelter Radius: vierfaches Volumen, weil r im Quadrat steht.
+ 73      Formelsammlung: Körper – Zylinder, V = π · r² · h, M = 2 · π · r · h [FS]
+ 74  Quelle: [Serlo 55210] Aufgaben zu Prismen und Zylindern, sinngemäß; [RLP E]; [P10 2021-OS-K4b] doppelter Radius.
+ 75
+ 76  Einheit 5 (Zusammengesetzte Körper):
+ 77      Zerlegen: Körper in Quader, Prismen, Zylinder oder halbe Zylinder schneiden, jedes Volumen berechnen, addieren – oder vom großen Körper den fehlenden Teil abziehen.
+ 78        Haus: Quader 8 m · 6 m · 3 m und Dach als Dreiecksprisma (6 m breit, 2 m hoch, 8 m lang): 144 + 48 = 192 m³
+ 79      Term prüfen: Bei „(Rechteck + Halbkreis) mal Tiefe“ muss die Klammer stehen – sonst wirkt die Tiefe nur auf einen Teil.
+ 80      Passt es hinein? Der Durchmesser (nicht der Radius) muss in die Breite passen; beim Stapeln anordnen, nicht nur Volumen teilen.
+ 81      Masse aus Volumen: Volumen in dm³ mal Dichte (Wasser: 1 kg je dm³).
+ 82      Formelsammlung: Körper – zusammengesetzte Körper; Dichte [FS]
+ 83  Quelle: [RLP F] Zerlegungs- und Ergänzungsprinzip; [P10 2017-OS-K3c, 2020-OS-K5c, 2024-OS-K4b] Verfahren; eigene Formulierung.
+ 84
+ 85  ### Typische Fehler
+ 86  - Durchmesser statt Radius (oder umgekehrt) in die Formel: 12 statt 6 bei der Kugel; d als r bei Tonne und Becher; Mindestbreite der Verpackung mit dem Radius 30 statt dem Durchmesser 60. [P10 2016-OS-K3c, 2021-OS-K4a, 2022-OS-K2b, 2023-OS-K5b, 2024-OS-K4b]
+ 87  - r² als 2 · r gerechnet; Wurzel vergessen (r = 19,3 statt 4,4); durch 2 · π · h statt π · h geteilt. [P10 2026-FOR-K2a, 2022-OS-K2d]
+ 88  - Mantel und Volumen vertauscht: 2 · π · r · h als Volumen; Mantellänge als π · r² oder als Durchmesser. [P10 2022-OS-K2b, 2023-OS-K5a, 2022-OS-K2a]
+ 89  - Grund- und Deckfläche beim Mantel mitgerechnet (Außenmauer, Kegeldach); falsche Höhe aus dem Aufgabenstamm (30 m statt 21,7 m). [P10 2018-OS-K6b, 2026-FOR-K2b]
+ 90  - Volumen und Oberfläche vertauscht: 3 · 3 = 9 oder 54 cm² statt 27 cm³. [P10 2026-FOR-B1f]
+ 91  - Faktor 1/2 bei der Dreiecksgrundfläche vergessen (1,95 statt 0,975); Grundflächenhöhe und Prismenhöhe vertauscht; gegebene Trapezfläche neu und falsch berechnet; 5 225 · 110 statt · 165. [P10 2019-OS-K4c, 2014-OS-K5a]
+ 92  - Einheiten: cm³ in Liter mit 100 statt 1000; 1 l als 100 cm³; 10 % von der Leermasse statt vom Wasser. [P10 2021-OS-K4a, 2023-OS-K5d, 2019-OS-K4c]
+ 93  - Term ohne Klammer: die Höhe wirkt nur auf den Kreis (V = a · b + π · (a/2)² · h). [P10 2017-OS-K3c]
+ 94  - Radius verdoppelt, Volumen verdoppelt („r steht linear in der Formel“); (3r)² als 3r². [P10 2021-OS-K4b, 2026-FOR-K2d]
+ 95  - Netz: Rückfläche mit falscher Höhe; Trapez spiegelverkehrt; Dreieck als rechtwinklig statt gleichseitig; ein Rechteck vergessen; a und c vertauscht; Zylindernetz mit dem Kreis an der kurzen Seite oder mit zu langem Rechteck. [P10 2020-OS-K5a, 2019-OS-K4a, 2014-OS-K5b, 2022-OS-K2a]
+ 96  - Körper falsch benannt: Dreiecksprisma als Pyramide (Dreiecke als Seitenflächen gedeutet); Pyramidennetz als Prisma; Kantenzahl mit Eckenzahl verwechselt (5 statt 8). [P10 2017-OS-B1c, 2018-OS-B1i, 2019-OS-B1f]
+ 97  - Im Würfelnetz die angrenzende statt der gegenüberliegenden Fläche markiert. [P10 2016-OS-B1j]
+ 98  - Höhe im Schrägbild als Seitenkante oder als Höhe einer Seitenfläche eingezeichnet. [P10 2015-OS-K6b]
+ 99  - Packungsanzahl nur durch Volumendivision (8,4 → 8) ohne Passprobe; Schachteln einzeln gestapelt statt paarweise. [P10 2020-OS-K5c]
+100  - Faktor 1/3 beim Kegel vergessen; Kegel mit dem Radius der Verpackung gerechnet. [P10 2024-OS-K4c] (Kegel → pyramide-kegel-kugel.md)
+101
+102  ### Für schwache Schüler
+103  Mindeststoff (D/E) [RLP]: Einheit 1 Körper benennen, Würfel- und Quadernetze, Schrägbild von Würfel und Quader (D); Einheit 2 Volumen und Oberfläche des Quaders, Einheiten (D); Einheit 3 V = G · h mit gegebener, rechteckiger oder dreieckiger Grundfläche, Mantel als Rechtecke (E); Einheit 4 Volumen und Mantel des Zylinders (E). Vorrat: Umkehrungen mit Wurzel, Netz eines Trapezprismas mit Maßen, Volumenvergleich mit Variablen (Niveau III), Einheit 5 ganz (F), Kegel und Kugel (G).
+104  Grundvorstellung (Blatt 0) [RLP D, MO]: Volumen als Ausfüllen mit Einheitswürfeln – „Wie viele Würfel mit einem Zentimeter Kante passen in eine Schachtel von sechs mal drei mal drei Zentimetern? Lege die erste Schicht, zähle die Schichten“ – und Oberfläche als Einwickeln – „Wie viele Kästchen Papier braucht man, um die Schachtel zu bekleben? Zeichne das Netz.“ Wer für das Volumen die Kanten addiert oder für die Oberfläche Länge mal Breite mal Höhe rechnet, braucht das vor den Formeln. [P10 2026-FOR-B1f Fehlerquelle]
+105  Sprossen je Verfahrenstyp (Reihenfolge = Kette des Hauptblatts) [LS-AA, FD]:
+106  - Körper und Netze (Einheit 1): Körper ankreuzen (Vorstufe) → Körper aus Schrägbild benennen (4×) → Ecken, Kanten, Flächen zählen → Würfelnetz gültig oder ungültig → Gegenfläche im Würfelnetz → Quadernetz mit Maßen zeichnen → Schrägbild eines Quaders zeichnen → Schrägbild beschriften (Höhe einzeichnen) → Prüfungshöhe: Gegenfläche in einem Würfelnetz markieren und Kantenzahl einer quadratischen Pyramide ohne Bild angeben (P10-Form).
+107  - Quader (Einheit 2): Volumen oder Oberfläche ankreuzen (Vorstufe) → V aus a, b, c mit ganzen Zahlen (4×) → Würfel a³ → Einheiten cm³ ↔ l → O als sechs Rechtecke → Würfel als sechs gleiche Quadrate → Kante aus V → zusammengesetzt aus zwei Quadern → Prüfungshöhe: Würfelvolumen aus der Kante als Kurzantwort mit der Oberfläche als Falle (P10-Form); Aquarium in Litern als Sachaufgabe.
+108  - Prisma (Einheit 3): „Was ist die Höhe?“ – im Schrägbild Grundfläche markieren und die Körperhöhe einzeichnen, von der Höhe der Grundfläche unterscheiden; nichts rechnen (Vorstufe) → Rechteckgrundfläche (Quader als Prisma) → V = G · h mit gegebener Grundfläche (4×) → Dreiecksgrundfläche → Trapezgrundfläche → liegendes Prisma → Mantel als Rechtecke → Oberfläche → Netz vervollständigen → h aus V → Prüfungshöhe: Dreiecksprisma, Deckfläche berechnen und Volumen ≈ 1,2 m³ nachweisen (P10-Form).
+109  - Zylinder (Einheit 4): „Radius oder Durchmesser?“ – die gegebene Strecke benennen, die andere angeben; nicht weiterrechnen (Vorstufe) → V aus r und h mit ganzen Zahlen (4×) → aus d → Dezimalzahlen mit Runden → in Liter → Mantel → Oberfläche mit und ohne Deckel → Netz auswählen (Rechtecklänge = Umfang) → h aus V → r aus V → Behauptung prüfen → doppelter Radius begründen → Prüfungshöhe: Höhe einer 1-Liter-Dose aus r = 4 cm (P10-Form, Stern).
+110  - Zusammengesetzt (Einheit 5): „Zerlege und benenne“ – Teilkörper im Schrägbild einzeichnen und benennen; nichts rechnen (Vorstufe) → zwei Quader (4×) → Quader und Dreiecksprisma → Quader und Halbzylinder → Term zum Volumen prüfen → Restvolumen → Verpackungsmaße (Durchmesser) → Packungsanzahl durch Anordnen → Masse aus Volumen → Prüfungshöhe: Restvolumen Zylinderverpackung minus Kegel mit Kegelformel aus der Formelsammlung (P10-Form, Stern).
+111
+112  ### Prüfungsform (P10)
+113  Zwei P10-Themen [P10]. „Körper, Netze, Schrägbilder“ (zehn Typen, Raum und Form): Basisaufgaben „Gegenfläche im Würfelnetz bestimmen“, „Kantenzahl eines Körpers angeben“ (quadratische Pyramide ohne Bild), „Körper aus Netz oder Schrägbild benennen“ (zwei Originale: liegendes Dreiecksprisma; Pyramidennetz aus vier Dreiecken); Kontextaufgaben „Netz eines Prismas vervollständigen“ (drei Originale, Kästchenraster mit Maßstab, Trapez- und Dreiecksprisma), „Netz eines Zylinders erkennen“ (drei Skizzen, Rechtecklänge gegen Umfang), „Mantelfläche Zylinder als Netz skizzieren“ (a = 2 · π · r, b = h), „Körperskizze beschriften“ (Pyramidenhöhe einzeichnen), „Körper in Schrägbild skizzieren“ (Kegel im Quader), „Verpackungsmaße aus Körpermaßen bestimmen“ (Ankreuzen mit Begründung; nur als Nebentyp von 2024-OS-K4b belegt, kein eigenes Hauptoriginal), „Packungsanzahl in Quader bestimmen“ (Niveau III, Stern: zwei Trapezprismen ergeben einen Quader). „Volumen und Oberfläche“ (vierzehn Typen, Größen und Messen) – hier zehn: „Volumen Würfel berechnen“ (Basis), „Volumen Prisma berechnen“ (zwei Originale: 2014-OS-K5a mit gegebener Trapezfläche; 2019-OS-K4c Dreiecksprisma mit Nachweis), „Mantelfläche Prisma berechnen“ (2019-OS-K4b, drei gleiche Rechtecke addieren), „Volumen Zylinder berechnen“ (vier Originale, meist Nachweis einer Herstellerangabe in Litern oder Millilitern), „Mantelfläche Zylinder berechnen“ (π · d · h), „Höhe eines Zylinders aus Volumen berechnen“ (Stern), „Radius eines Zylinders aus Volumen berechnen“ (Stern, Wurzel), „Volumenänderung bei doppeltem Radius begründen“ (Stern), „Term zu Körper angeben“ (Stern, drei Terme prüfen), „Restvolumen berechnen“ (Stern, Zylinder minus Kegel); vier → pyramide-kegel-kugel.md: „Volumen Kegel berechnen“, „Mantelfläche Kegel berechnen“, „Volumen Kugel berechnen“, „Volumen Kegel und Zylinder vergleichen“ (Niveau III). Angrenzend: „Masse aus Volumen und Dichte berechnen“ (Nebentyp, einheiten.md Einheit 4 – sein einziges Original ist 2019-OS-K4c und wird hier geführt), „Draufsicht maßstabsgerecht zeichnen“ (Maßstab, strahlensaetze.md), Kreisfläche und Kreisumfang der Grundfläche (kreis.md).
+114  Zwei Originale des Werbeflächen-Stamms kreuzen mit flaechen.md zwischen Fläche und Volumen; beide folgen der Gliederungsregel „Typ nach typen.csv, Original nach seinem CSV-Thema“. 2019-OS-K4b (drei gleiche Seitenflächen addieren) hat das CSV-Thema „Flächeninhalt und Umfang“ und wird seit 10h von flaechen.md Einheit 1 geführt; sein Typ „Mantelfläche Prisma berechnen“ gehört zum Thema „Volumen und Oberfläche“ und bleibt mit seiner Sprossenkette hier in Einheit 3. Umgekehrt 2019-OS-K4c aus demselben Stamm: das Original bleibt hier (CSV-Thema „Volumen und Oberfläche“, Einheit 3), sein Haupttyp „Flächeninhalt Dreieck berechnen“ liegt bei flaechen.md Einheit 3 und die beiden Nebentypen bei diesem Eintrag („Volumen Prisma berechnen“) und bei einheiten.md („Masse aus Volumen und Dichte berechnen“).
+115  Zuordnung: Einheit 1 – Körper aus Netz oder Schrägbild benennen, Kantenzahl eines Körpers angeben, Gegenfläche im Würfelnetz bestimmen, Körperskizze beschriften, Körper in Schrägbild skizzieren; Einheit 2 – Volumen Würfel berechnen; Einheit 3 – Volumen Prisma berechnen (2014-OS-K5a; dazu 2019-OS-K4c, hier geführt, dessen Haupttyp „Flächeninhalt Dreieck berechnen“ bei flaechen.md liegt), Mantelfläche Prisma berechnen (Typ und Kette hier, Original 2019-OS-K4b bei flaechen.md), Netz eines Prismas vervollständigen; Einheit 4 – Volumen Zylinder berechnen, Mantelfläche Zylinder berechnen, Mantelfläche Zylinder als Netz skizzieren, Netz eines Zylinders erkennen, Höhe eines Zylinders aus Volumen berechnen, Radius eines Zylinders aus Volumen berechnen, Volumenänderung bei doppeltem Radius begründen; Einheit 5 – Term zu Körper angeben, Restvolumen berechnen, Verpackungsmaße aus Körpermaßen bestimmen, Packungsanzahl in Quader bestimmen.
+116  Zielmarke: Einheit 1 – im Würfelnetz die Gegenfläche einer markierten Fläche bestimmen (2016-OS-B1j, Basis) und die Kantenzahl einer quadratischen Pyramide ohne Bild angeben (2019-OS-B1f, Basis); daneben eine Körperskizze beschriften und dabei Körperhöhe, Seitenkante und Höhe einer Seitenfläche unterscheiden (2015-OS-K6b), einen Körper aus Netz oder Schrägbild benennen (2017-OS-B1c, 2018-OS-B1i) und einen Kegel in ein gegebenes Quader-Schrägbild einzeichnen (2024-OS-K4b). Einheit 2 – Würfelvolumen aus 3 cm Kante als Kurzantwort, mit der Oberfläche als Falle (2026-FOR-B1f, Basis). Einheit 3 – Deckfläche des Dreiecksprismas berechnen und das vorgegebene Volumen „≈ 1,2 m³“ nachweisen (2019-OS-K4c, Niveau II, drei Leistungen in einer Einheit), daneben Volumen aus gegebener Trapezfläche (2014-OS-K5a) und die Mantelfläche als Summe dreier gleicher Rechtecke (2019-OS-K4b, Original bei flaechen.md). Einheit 4 – Herstellerangabe „ca. 400 ml“ aus r = 4 cm und h = 8 cm nachweisen (2022-OS-K2b, 2023-OS-K5b), Höhe der 1-Liter-Dose aus dem Radius (2023-OS-K5d, Stern) und Radius aus dem Volumen mit Wurzel (2022-OS-K2d, Stern). Einheit 5 – kleinste Verpackung 61 cm × 61 cm × 81 cm mit Begründung (2024-OS-K4b) und Restvolumen Zylinder minus Kegel mit der Kegelformel aus der Formelsammlung (2024-OS-K4c, Stern).
 ````
 
 ## 2 Originale (15)
 
-Kennungen aus „Prüfungsform“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
+Kennungen aus „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
 
 ### 2024-OS-K4b (msa-katalog-kontext.csv)
 
@@ -258,7 +255,7 @@ jahr 2024 · papier OS · punkte 3 · format Rechnung · antwort Zahl
 - verfahren: V_Zyl = π · 30,5² · 81 ≈ 236 720; V_Kegel = 1/3 · π · 30² · 80 ≈ 75 398; Differenz
 - fehlerquelle: Faktor 1/3 beim Kegel vergessen oder Kegelvolumen mit r = 30,5 rechnen
 
-Nur außerhalb von „Prüfungsform“ genannt, nicht aufgenommen: 2021-OS-K4a, 2018-OS-K6b, 2016-OS-K3c, 2017-OS-K3c, 2021-OS-K4b, 2020-OS-K5c, 2026-FOR-K2a, 2023-OS-K5a, 2022-OS-K2a, 2026-FOR-K2b, 2026-FOR-K2d, 2020-OS-K5a, 2019-OS-K4a, 2014-OS-K5b
+Nur außerhalb von „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ genannt, nicht aufgenommen: 2021-OS-K4a, 2018-OS-K6b, 2021-OS-K4b, 2017-OS-K3c, 2020-OS-K5c, 2016-OS-K3c, 2026-FOR-K2a, 2023-OS-K5a, 2022-OS-K2a, 2026-FOR-K2b, 2026-FOR-K2d, 2020-OS-K5a, 2019-OS-K4a, 2014-OS-K5b
 
 ## 3 Maßstab (unterrichtsblatt.md, wortgleich)
 

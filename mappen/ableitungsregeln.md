@@ -1,9 +1,9 @@
 # Mappe: ableitungsregeln
 
 Eintrag: hz-0801/mathe-nachhilfe, katalog/ableitungsregeln.md
-Katalog-Commit: f56cacecc590f51abf34cf81948a0d2b751d7d33 (2026-09-28T22:13:08Z, „Katalog-Nachzug Teil 5: Abschluss“; ermittelt über GitHub-API)
+Katalog-Commit: db8d2a3f9f6ed0e6490a4087e3eaff2cbc8a9b19 (2026-09-30T08:03:34Z, „Katalog: Vorschläge vom 30.09. eingesetzt (24 Zeilen in 17 Einträgen, Marke „kein P10-Stoff“ in _vorlage.md)“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-29 12:26 UTC
+Datum: 2026-09-30 08:04 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -48,7 +48,7 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
  33  - Funktionswerte berechnen und Punktprobe, Anstieg an einer Stelle als Wert der ersten Ableitung – die Anschlussleistungen der fhr-Zeilen (Punkt auf dem Graphen, Anstieg im Achsenschnittpunkt, Anstiege vergleichen). Sek-I-Thema lineare-funktionen.md; fhr-Typ „Anstieg des Graphen an einer Stelle berechnen“ bei tangente-normale-schnittwinkel.md. [GOST Eingangsvoraussetzung L4; FOS Pflichtthema 1 „Anstieg“, „Funktionsdarstellungen“]
  34  - Verschiebung und Streckung eines Graphen an der Gleichung erkennen (f(x − c) verschiebt nach rechts, c · f(x) streckt) – nur für die Prüfungshöhe von Einheit 2 (hundertste Ableitung als Verschiebung). Thema funktionsklassen-und-eigenschaften.md; Sek-I-Vorläufer quadratische-funktionen.md (Scheitelpunktform). **Ermessen:** die Eingangsvoraussetzung nennt Verschiebungen nur für quadratische Funktionen; gesetzt, weil die eine Poolzeile 2024MerhoehtAAnalysis23 genau daran scheitert („als Streckung deuten und keine Verschiebung finden“). [Ermessen; GOST-OHiMi 2.2 „Zusammenhang zwischen Funktionsgraph und Funktionsgleichung nach … Verschiebung“, „Streckung“; RLP G Scheitelpunktform]
  35  Erkennungsschritte (Vorstufe der Einheit, vor der sie stehen, nicht auf Blatt 0; eine Hauptnummer je Schritt):
- 36  - „Welche Regel?“ – zu Funktionstermen ankreuzen, was zu tun ist: Summe von Potenzen (Potenz-, Faktor-, Summenregel), Verkettung mit e-Funktion oder Klammer hoch n (Kettenregel), Produkt aus zwei Faktoren mit x (Produktregel, meist mit Kettenregel), oder eine Mischung – und in welcher Reihenfolge; nichts rechnen. Vor Einheit 1 bis 3. [GOST Q1 L4 „Funktionen ableiten, auch unter Verwendung der Konstanten-, Potenz-, Faktor-, Summen-, Produkt- und Kettenregel“; Rohdatei-Fehlerquelle „g' = f' · e^x ohne Produktregel ansetzen“ (2025MerhoehtAAnalysis21-a); fhr 2024-C-1c, abi 2022-bebb-lk-B2.2b]
+ 36  - „Welche Regel?“ – zu Funktionstermen ankreuzen, was zu tun ist: Summe von Potenzen (Potenz-, Faktor-, Summenregel), Verkettung mit e-Funktion oder Klammer hoch n (Kettenregel), Produkt aus zwei Faktoren mit x (Produktregel, meist mit Kettenregel), oder eine Mischung – und in welcher Reihenfolge; nichts rechnen. Vor Einheit 1 und 3. [GOST Q1 L4 „Funktionen ableiten, auch unter Verwendung der Konstanten-, Potenz-, Faktor-, Summen-, Produkt- und Kettenregel“; Rohdatei-Fehlerquelle „g' = f' · e^x ohne Produktregel ansetzen“ (2025MerhoehtAAnalysis21-a); fhr 2024-C-1c, abi 2022-bebb-lk-B2.2b]
  37  - „Zahl oder Variable?“ – zu Termen mit Buchstaben ankreuzen, nach welcher Variablen abgeleitet wird und welche Buchstaben dabei Zahlen sind (Parameter a, k; Werte f(x₀), g'(x₀) aus einer Abbildung); nichts rechnen. Vor Einheit 1 und 3. [GOST Q1 L4 LK „Scharen mit einem Parameter“; Rohdatei-Fehlerquellen „k beim Ableiten wie eine Variable behandeln“ (2021MerhoehtAAnalysis12-a), „Ableitung von (1 − ax) als −ax“ (2022-bebb-lk-A1.4a)]
  38
  39  ### Merkkasten
@@ -122,7 +122,7 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 
 ## 2 Originale (30)
 
-Kennungen aus „Prüfungsform“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
+Kennungen aus „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
 
 ### 2025-C-1c (fhr-katalog.csv)
 
@@ -364,7 +364,7 @@ jahr 2021 · papier 2021-iqb-ea · punkte 2 · format Rechnung · antwort Text
 - verfahren: Produktregel anwenden und zusammenfassen
 - fehlerquelle: innere Ableitung −1/100 vergessen
 
-Nur außerhalb von „Prüfungsform“ genannt, nicht aufgenommen: 2024MgrundlegendAAnalysis22, 2022MerhoehtBAnalysisWTR1-2c
+Nur außerhalb von „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ genannt, nicht aufgenommen: 2024MgrundlegendAAnalysis22, 2022MerhoehtBAnalysisWTR1-2c
 
 ## 3 Maßstab (unterrichtsblatt.md, wortgleich)
 

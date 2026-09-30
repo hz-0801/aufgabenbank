@@ -1,9 +1,9 @@
 # Mappe: hypergeometrische-verteilung
 
 Eintrag: hz-0801/mathe-nachhilfe, katalog/hypergeometrische-verteilung.md
-Katalog-Commit: 761321330add6ed255669afc1c4e11b846250dd5 (2026-09-25T11:16:56+02:00, „katalog: Marken-Zeilen je Lerneinheit, drei Einheiten ergänzt, marken-bau.py“; ermittelt über git log (GitHub-API gesperrt))
+Katalog-Commit: c651dc47624a28a96eb6724ed3e4864024a7bab4 (2026-09-27T22:25:43Z, „katalog: Erkennungsschritte“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-27 12:42 UTC
+Datum: 2026-09-30 08:07 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -42,50 +42,49 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 27  - Das Binomialmodell und seine Bedingungen (zur Abgrenzung: wann es ungeeignet ist) – die Modellwahl. Sek-II-Nachbarthema binomialverteilung.md Einheit 1. [GOST Q2 L5 beide Urnenmodelle]
 28  - Brüche multiplizieren und kürzen – die Bruchkette. Sek-I-Thema bruchrechnung.md. [GOST-OHiMi 2.1]
 29  Erkennungsschritte (Vorstufe der Einheit, vor der sie stehen, nicht auf Blatt 0; eine Hauptnummer je Schritt):
-30  - „Mit oder ohne Zurücklegen?“ – zu Aufgabentexten ankreuzen, ob die Gesamtheit beim Ziehen schrumpft (feste kleine Gruppe, Auslosung, Auswahl) oder gleich bleibt – und welches Modell folgt; nichts rechnen. Vor Einheit 1. [GOST Q2 L5; Rohdatei-Fehlerquelle „binomial rechnen“; abi 2017-bb-ea-B4.2e, iqb 2023MgrundlegendBStochastikWTR1-1b]
-31  - „Direkt oder übers Gegenereignis?“ – ankreuzen, ob „genau k“ gefragt ist (Formel) oder „mindestens/höchstens“ (Gegenereignis statt Fallsummen); nichts rechnen. Vor Einheit 1 und 2. [Rohdatei; abi 2022-bebb-gk-A1.6a, 2018-bb-ea-B4.1d]
-32
-33  ### Merkkasten
-34  Einheit 1 (Genau k Treffer ohne Zurücklegen):
-35      Erkennen: aus einer festen kleinen Gesamtheit wird ohne Zurücklegen gezogen – die Trefferwahrscheinlichkeit ändert sich von Zug zu Zug, das Binomialmodell ist ungeeignet.
-36      Formel: P(genau k Treffer) = (günstige Auswahlen) / (mögliche Auswahlen) – im Zähler das Produkt der Binomialkoeffizienten für Treffer und Nieten, im Nenner der Binomialkoeffizient aller Auswahlen.
-37      Bruchkette: gleichwertig die Pfadregel mit schrumpfendem Nenner – für kleine Fälle oft schneller; beide Wege müssen dasselbe liefern.
-38      Gegenereignis: „mindestens einer“ rechnet sich als eins minus „keiner“ – der Fall „keiner“ ist eine einzige Auswahl-Quote statt vieler Summanden.
-39      Auswendig (Teil A): der ganze Kasten – [GOST-OHiMi 2.4] „Ansätze zur Berechnung von Wahrscheinlichkeiten für … hypergeometrisch verteilte Zufallsgrößen“, „Kombinationen ohne Wiederholung“; [IQB-VER 4] setzt den Binomialkoeffizienten-Weg ausdrücklich voraus (Teil-A-Beleg 2022-bebb-gk-A1.6a).
-40      Formelsammlung: [FS-IQB 1.4] führt den Binomialkoeffizienten; eine hypergeometrische Formel steht nicht darin – der Ansatz muss sitzen – [FS] Wortlaut am PDF geprüft: nein, nur Textfassung
-41  Quelle: eigene Formulierung nach [GOST Q2 L5] „Ziehen ohne Zurücklegen (hypergeometrische Verteilung)“, [GOST-OHiMi 2.4] und [IQB-VER 4]; ohne Zahlenbeispiel (die Poolbeispiele sind kontextgebunden; Ermessen); [LS-AA Urnenmodell-Einheiten als Vorläufer].
-42
-43  Einheit 2 (Kumulieren gegen eine Schranke):
-44      Aufsummieren: kumulierte hypergeometrische Werte entstehen durch Addieren der Einzelwahrscheinlichkeiten – eine Rechnerfunktion wie beim Binomialmodell gibt es in der Prüfung nicht als Anlage, die Summe wird ausgeschrieben.
-45      Schranke: für „größte Trefferzahl unter der Schranke“ beide Nachbarwerte belegen – den letzten, der die Schranke unterschreitet, und den ersten, der sie reißt (dieselbe Arbeitsregel wie bei binomialverteilung.md Einheit 4).
-46      Auswendig (Teil A): keine – die Kumulierungsaufgabe ist Teil-B-Arbeit mit Rechner; sitzen muss der Ansatz aus Kasten eins.
-47      Formelsammlung: keine – [FS] offen
-48  Quelle: eigene Formulierung nach der Poolpraxis und [GOST-OHiMi 2.4]; ohne Zahlenbeispiel; Arbeitsregel aus binomialverteilung.md Einheit 4 übernommen.
-49
-50  ### Typische Fehler
-51  Verdichtet aus den Spalten `verfahren` und `fehlerquelle` der 7 Zeilen des Themas in abitur/abi-katalog.csv und abitur/iqb-katalog.csv (Zuordnung über profil, leitidee und thema aus themen.csv, wie rohdatei-bau.py); Beleg ist die Original-id. [FD] nicht verwendet.
-52  - Binomial statt hypergeometrisch – das Kernfehlmuster: mit einer festen Trefferwahrscheinlichkeit gerechnet, obwohl aus einer kleinen Gesamtheit ohne Zurücklegen gezogen wird; mit Zurücklegen gerechnet; die Binomialverteilung auch beim Kumulieren verwendet. [abi 2018-bb-ea-B4.1d, 2017-bb-ea-B4.2e, 2022-bebb-gk-A1.6a, 2023-bebb-lk-B4k, 2023-bebb-lk-B4l; iqb 2024MerhoehtBStochastikWTR2-1e, 2023MgrundlegendBStochastikWTR1-1b]
-53  - An der Schranke: den falschen Nachbarwert angegeben, weil nur ein Wert geprüft wurde. [abi 2023-bebb-lk-B4l]
-54
-55  ### Für schwache Schüler
-56  Mindeststoff (GK-Kern Q2 / Niveaustufe H / RLP FOS) [GOST, GOST-OHiMi, FOS]: GK-Kern Q2: das Urnenmodell ohne Zurücklegen und der Ansatz über Binomialkoeffizienten (Einheit 1); kein LK-Zusatz. Ohne Hilfsmittel (Anlage OHiMi 2.4, Prüfungsteil A): der Ansatz – Kasten eins vollständig. Vorrat (Ermessen): die Kumulierung gegen eine Schranke (Einheit 2, eine Zeile, lk-Heft). RLP FOS (fhr): kein Bestand. Geltungshinweis fürs Blatt: für Berliner Zielprüfungen (be-gk, be-lk) ist das Thema laut Geltungsdateien kein Stoff – Blätter dafür lassen es aus; für Brandenburger Zielprüfungen gilt es. COSH [COSH, nachrangig, aus dem Gedächtnis, nicht am Text geprüft]: der Mindestanforderungskatalog führt nach Erinnerung keine hypergeometrische Verteilung – kein zusätzlicher Posten.
-57  Grundvorstellung (Blatt 0) [GOST Q2 L5, MO]: Wer ohne Zurücklegen zieht, verändert die Urne – die zweite Ziehung findet eine andere Welt vor. „Hier sind sechs Kugeln in einem Beutel, vier rote und zwei grüne, kein Term. Ziehe eine Kugel und lege sie NICHT zurück: wie stehen die Chancen für Grün jetzt – besser oder schlechter als vorhin, und wovon hängt das ab? Und wenn du die gezogene Kugel zurücklegst: was ist dann bei der zweiten Ziehung anders? Bei welcher Spielart bleibt die Welt gleich, bei welcher schrumpft sie?“ Wer beiden Spielarten dieselben Chancen gibt, braucht das vor jeder Formel: Ohne Zurücklegen ändert jede Ziehung die Wahrscheinlichkeiten – deshalb zählt man Auswahlen statt unabhängige Wiederholungen. Verständnis, nicht Verfahren; die Vorstellung ist amtlich (Q2 L5, beide Urnenmodelle nebeneinander), die Aufgabenform Ermessen; sie ist das Gegenstück zur Bernoulli-Prüfliste von binomialverteilung.md. [GOST Q2 L5; MO-Logik: Vorstellung vor Verfahren; Rohdatei-Fehlerquelle „binomial rechnen“, abi 2018-bb-ea-B4.1d; BASICS nur als Strukturvorbild, keine Inhalte]
-58  Sprossen je Verfahrenstyp (Reihenfolge = Kette des Hauptblatts) [Rohdatei; Sprossenfolge Ermessen]:
-59  - Genau k ohne Zurücklegen (Einheit 1): „Mit oder ohne Zurücklegen?“ und „Direkt oder übers Gegenereignis?“ ankreuzen (Vorstufe, Grundvorstellung) → kleine Fälle über die Bruchkette und das Gegenereignis (Grundfall, viermal; abi 2022-bebb-gk-A1.6a, Teil A) → „genau k“ über günstige durch mögliche Teilmengen (abi 2023-bebb-lk-B4k; iqb 2024MerhoehtBStochastikWTR2-1e, 2023MgrundlegendBStochastikWTR1-1b) → „höchstens k“ über das Gegenereignis statt Fallsummen (abi 2018-bb-ea-B4.1d) → Prüfungshöhe: die Auslosung mit Gegenereignis und die Ungeeignetheit des Binomialmodells begründen (abi 2017-bb-ea-B4.2e, Niveau II – der Begründungsteil gehört als Typ zu binomialverteilung.md).
-60  - Kumulieren (Einheit 2): den Ansatz aus Einheit eins als Vorstufe → Einzelwahrscheinlichkeiten aufsummieren und beide Nachbarwerte gegen die Schranke belegen (Grundfall; abi 2023-bebb-lk-B4l, Niveau II – Prüfungshöhe zugleich, der Bestand trägt eine Zeile).
-61  Hinweis: die Sprossenkette der Einheit zwei ist mit einer Zeile die kürzeste des Sek-II-Katalogs; hinführende Aufgaben kommen beim Blattbau aus Einheit eins.
-62
-63  ### Prüfungsform (fhr / abi / iqb)
-64  Geltung [konzept.md § 4 Entscheidung 35]: Der IQB-Pool ist für das Profil abi voll maßgeblich – mit der Besonderheit dieses Themas: die Geltungsdateien führen es für bb-gk und bb-ea mit „ja“, für be-gk und be-lk mit „nein“ (das einzige Thema, bei dem sich die Länder unterscheiden; Entscheidung 30). Für fhr ist der Pool keine Vorgabe; kein Bestand. Die Rohdatei zählt 7 Zeilen mit 3 Haupttypen (abi 5 Zeilen, 3 Typen; iqb 2 Zeilen, 1 Typ; 1 Typ in beiden Profilen), Jahre 2017–2024. Der Eintrag setzt keine Decke; Häufigkeit ist Auskunft, ein einziges Vorkommen ein vollwertiger Typ. Typnamen wörtlich aus abitur/abitur-typen.csv (Thema ohne Gegenstandsklassen, daher ohne Präfix).
-65  fhr: kein Bestand, keine Zeile.
-66  abi (5 Zeilen, 3 Typen; Landeshefte bb-ea, bebb-gk, bebb-lk 2017–2023) [abi-Katalog]: Wahrscheinlichkeit beim Ziehen ohne Zurücklegen über das Gegenereignis berechnen (3, E1) · je 1: Größte Trefferzahl, bis zu der die kumulierte hypergeometrische Wahrscheinlichkeit unter einer Schranke bleibt, ermitteln (E2) · Hypergeometrische Wahrscheinlichkeit für genau k Treffer über Binomialkoeffizienten nachweisen (E1). Muster: Ungewöhnlich für das Bündel trägt hier der Landesbestand das Thema – keine der fünf Zeilen ist eine Pooldublette; die Brandenburger Hefte stellen die Auslosungs- und Auswahlkontexte (Freikarten 2017, Arztpraxis 2018, Urne in Teil A 2022, Reisegruppe 2023 mit zwei Zeilen im lk-Heft). Teil B vier Zeilen (zwei bis vier Punkte), Teil A eine (2022-bebb-gk-A1.6a, zwei Punkte). Niveau I 1, II 4.
-67  iqb (2 Zeilen, 1 Typ; Pool 2023–2024, grundlegend 1 und erhöht 1 Zeile, beide Teil B) [iqb-Katalog]: Hypergeometrische Wahrscheinlichkeit für genau k Treffer über Binomialkoeffizienten nachweisen (2, E1). Muster: der Pool prüft das Thema selten und nur als „genau k“ über Teilmengen-Quotienten (Probepackungen 2023, Lastenrad-Kinder 2024, je drei Punkte, Anforderungsbereich I bis II) – die Landeshefte prüfen es häufiger als der Pool (Gegenstück zur üblichen Poolbindung des Bündels). Amtlicher Anforderungsbereich in beiden Zeilen (höchster Bereich: I 1, II 1); Niveau II 2. Keine Dubletten.
-68  Zielmarke: Einheit 1 – abi: die Auslosung mit Gegenereignis und Modellbegründung (2017-bb-ea-B4.2e, Niveau II) und die Urne in Teil A (2022-bebb-gk-A1.6a, Niveau I); iqb: der Teilmengen-Nachweis (2024MerhoehtBStochastikWTR2-1e, Niveau II). Einheit 2 – abi: die Schrankenaufgabe (2023-bebb-lk-B4l, Niveau II).
+30  - „Direkt oder übers Gegenereignis?“ – ankreuzen, ob „genau k“ gefragt ist (Formel) oder „mindestens/höchstens“ (Gegenereignis statt Fallsummen); nichts rechnen. Vor Einheit 1 und 2. [Rohdatei; abi 2022-bebb-gk-A1.6a, 2018-bb-ea-B4.1d]
+31
+32  ### Merkkasten
+33  Einheit 1 (Genau k Treffer ohne Zurücklegen):
+34      Erkennen: aus einer festen kleinen Gesamtheit wird ohne Zurücklegen gezogen – die Trefferwahrscheinlichkeit ändert sich von Zug zu Zug, das Binomialmodell ist ungeeignet.
+35      Formel: P(genau k Treffer) = (günstige Auswahlen) / (mögliche Auswahlen) – im Zähler das Produkt der Binomialkoeffizienten für Treffer und Nieten, im Nenner der Binomialkoeffizient aller Auswahlen.
+36      Bruchkette: gleichwertig die Pfadregel mit schrumpfendem Nenner – für kleine Fälle oft schneller; beide Wege müssen dasselbe liefern.
+37      Gegenereignis: „mindestens einer“ rechnet sich als eins minus „keiner“ – der Fall „keiner“ ist eine einzige Auswahl-Quote statt vieler Summanden.
+38      Auswendig (Teil A): der ganze Kasten – [GOST-OHiMi 2.4] „Ansätze zur Berechnung von Wahrscheinlichkeiten für … hypergeometrisch verteilte Zufallsgrößen“, „Kombinationen ohne Wiederholung“; [IQB-VER 4] setzt den Binomialkoeffizienten-Weg ausdrücklich voraus (Teil-A-Beleg 2022-bebb-gk-A1.6a).
+39      Formelsammlung: [FS-IQB 1.4] führt den Binomialkoeffizienten; eine hypergeometrische Formel steht nicht darin – der Ansatz muss sitzen – [FS] Wortlaut am PDF geprüft: nein, nur Textfassung
+40  Quelle: eigene Formulierung nach [GOST Q2 L5] „Ziehen ohne Zurücklegen (hypergeometrische Verteilung)“, [GOST-OHiMi 2.4] und [IQB-VER 4]; ohne Zahlenbeispiel (die Poolbeispiele sind kontextgebunden; Ermessen); [LS-AA Urnenmodell-Einheiten als Vorläufer].
+41
+42  Einheit 2 (Kumulieren gegen eine Schranke):
+43      Aufsummieren: kumulierte hypergeometrische Werte entstehen durch Addieren der Einzelwahrscheinlichkeiten – eine Rechnerfunktion wie beim Binomialmodell gibt es in der Prüfung nicht als Anlage, die Summe wird ausgeschrieben.
+44      Schranke: für „größte Trefferzahl unter der Schranke“ beide Nachbarwerte belegen – den letzten, der die Schranke unterschreitet, und den ersten, der sie reißt (dieselbe Arbeitsregel wie bei binomialverteilung.md Einheit 4).
+45      Auswendig (Teil A): keine – die Kumulierungsaufgabe ist Teil-B-Arbeit mit Rechner; sitzen muss der Ansatz aus Kasten eins.
+46      Formelsammlung: keine – [FS] offen
+47  Quelle: eigene Formulierung nach der Poolpraxis und [GOST-OHiMi 2.4]; ohne Zahlenbeispiel; Arbeitsregel aus binomialverteilung.md Einheit 4 übernommen.
+48
+49  ### Typische Fehler
+50  Verdichtet aus den Spalten `verfahren` und `fehlerquelle` der 7 Zeilen des Themas in abitur/abi-katalog.csv und abitur/iqb-katalog.csv (Zuordnung über profil, leitidee und thema aus themen.csv, wie rohdatei-bau.py); Beleg ist die Original-id. [FD] nicht verwendet.
+51  - Binomial statt hypergeometrisch – das Kernfehlmuster: mit einer festen Trefferwahrscheinlichkeit gerechnet, obwohl aus einer kleinen Gesamtheit ohne Zurücklegen gezogen wird; mit Zurücklegen gerechnet; die Binomialverteilung auch beim Kumulieren verwendet. [abi 2018-bb-ea-B4.1d, 2017-bb-ea-B4.2e, 2022-bebb-gk-A1.6a, 2023-bebb-lk-B4k, 2023-bebb-lk-B4l; iqb 2024MerhoehtBStochastikWTR2-1e, 2023MgrundlegendBStochastikWTR1-1b]
+52  - An der Schranke: den falschen Nachbarwert angegeben, weil nur ein Wert geprüft wurde. [abi 2023-bebb-lk-B4l]
+53
+54  ### Für schwache Schüler
+55  Mindeststoff (GK-Kern Q2 / Niveaustufe H / RLP FOS) [GOST, GOST-OHiMi, FOS]: GK-Kern Q2: das Urnenmodell ohne Zurücklegen und der Ansatz über Binomialkoeffizienten (Einheit 1); kein LK-Zusatz. Ohne Hilfsmittel (Anlage OHiMi 2.4, Prüfungsteil A): der Ansatz – Kasten eins vollständig. Vorrat (Ermessen): die Kumulierung gegen eine Schranke (Einheit 2, eine Zeile, lk-Heft). RLP FOS (fhr): kein Bestand. Geltungshinweis fürs Blatt: für Berliner Zielprüfungen (be-gk, be-lk) ist das Thema laut Geltungsdateien kein Stoff – Blätter dafür lassen es aus; für Brandenburger Zielprüfungen gilt es. COSH [COSH, nachrangig, aus dem Gedächtnis, nicht am Text geprüft]: der Mindestanforderungskatalog führt nach Erinnerung keine hypergeometrische Verteilung – kein zusätzlicher Posten.
+56  Grundvorstellung (Blatt 0) [GOST Q2 L5, MO]: Wer ohne Zurücklegen zieht, verändert die Urne – die zweite Ziehung findet eine andere Welt vor. „Hier sind sechs Kugeln in einem Beutel, vier rote und zwei grüne, kein Term. Ziehe eine Kugel und lege sie NICHT zurück: wie stehen die Chancen für Grün jetzt – besser oder schlechter als vorhin, und wovon hängt das ab? Und wenn du die gezogene Kugel zurücklegst: was ist dann bei der zweiten Ziehung anders? Bei welcher Spielart bleibt die Welt gleich, bei welcher schrumpft sie?“ Wer beiden Spielarten dieselben Chancen gibt, braucht das vor jeder Formel: Ohne Zurücklegen ändert jede Ziehung die Wahrscheinlichkeiten – deshalb zählt man Auswahlen statt unabhängige Wiederholungen. Verständnis, nicht Verfahren; die Vorstellung ist amtlich (Q2 L5, beide Urnenmodelle nebeneinander), die Aufgabenform Ermessen; sie ist das Gegenstück zur Bernoulli-Prüfliste von binomialverteilung.md. [GOST Q2 L5; MO-Logik: Vorstellung vor Verfahren; Rohdatei-Fehlerquelle „binomial rechnen“, abi 2018-bb-ea-B4.1d; BASICS nur als Strukturvorbild, keine Inhalte]
+57  Sprossen je Verfahrenstyp (Reihenfolge = Kette des Hauptblatts) [Rohdatei; Sprossenfolge Ermessen]:
+58  - Genau k ohne Zurücklegen (Einheit 1): „Mit oder ohne Zurücklegen?“ – zu Aufgabentexten ankreuzen, ob die Gesamtheit beim Ziehen schrumpft (feste kleine Gruppe, Auslosung, Auswahl) oder gleich bleibt und welches Modell folgt – und „Direkt oder übers Gegenereignis?“ ankreuzen; nichts rechnen (Vorstufe, Grundvorstellung) → kleine Fälle über die Bruchkette und das Gegenereignis (Grundfall, viermal; abi 2022-bebb-gk-A1.6a, Teil A) → „genau k“ über günstige durch mögliche Teilmengen (abi 2023-bebb-lk-B4k; iqb 2024MerhoehtBStochastikWTR2-1e, 2023MgrundlegendBStochastikWTR1-1b) → „höchstens k“ über das Gegenereignis statt Fallsummen (abi 2018-bb-ea-B4.1d) → Prüfungshöhe: die Auslosung mit Gegenereignis und die Ungeeignetheit des Binomialmodells begründen (abi 2017-bb-ea-B4.2e, Niveau II – der Begründungsteil gehört als Typ zu binomialverteilung.md).
+59  - Kumulieren (Einheit 2): den Ansatz aus Einheit eins als Vorstufe → Einzelwahrscheinlichkeiten aufsummieren und beide Nachbarwerte gegen die Schranke belegen (Grundfall; abi 2023-bebb-lk-B4l, Niveau II – Prüfungshöhe zugleich, der Bestand trägt eine Zeile).
+60  Hinweis: die Sprossenkette der Einheit zwei ist mit einer Zeile die kürzeste des Sek-II-Katalogs; hinführende Aufgaben kommen beim Blattbau aus Einheit eins.
+61
+62  ### Prüfungsform (fhr / abi / iqb)
+63  Geltung [konzept.md § 4 Entscheidung 35]: Der IQB-Pool ist für das Profil abi voll maßgeblich – mit der Besonderheit dieses Themas: die Geltungsdateien führen es für bb-gk und bb-ea mit „ja“, für be-gk und be-lk mit „nein“ (das einzige Thema, bei dem sich die Länder unterscheiden; Entscheidung 30). Für fhr ist der Pool keine Vorgabe; kein Bestand. Die Rohdatei zählt 7 Zeilen mit 3 Haupttypen (abi 5 Zeilen, 3 Typen; iqb 2 Zeilen, 1 Typ; 1 Typ in beiden Profilen), Jahre 2017–2024. Der Eintrag setzt keine Decke; Häufigkeit ist Auskunft, ein einziges Vorkommen ein vollwertiger Typ. Typnamen wörtlich aus abitur/abitur-typen.csv (Thema ohne Gegenstandsklassen, daher ohne Präfix).
+64  fhr: kein Bestand, keine Zeile.
+65  abi (5 Zeilen, 3 Typen; Landeshefte bb-ea, bebb-gk, bebb-lk 2017–2023) [abi-Katalog]: Wahrscheinlichkeit beim Ziehen ohne Zurücklegen über das Gegenereignis berechnen (3, E1) · je 1: Größte Trefferzahl, bis zu der die kumulierte hypergeometrische Wahrscheinlichkeit unter einer Schranke bleibt, ermitteln (E2) · Hypergeometrische Wahrscheinlichkeit für genau k Treffer über Binomialkoeffizienten nachweisen (E1). Muster: Ungewöhnlich für das Bündel trägt hier der Landesbestand das Thema – keine der fünf Zeilen ist eine Pooldublette; die Brandenburger Hefte stellen die Auslosungs- und Auswahlkontexte (Freikarten 2017, Arztpraxis 2018, Urne in Teil A 2022, Reisegruppe 2023 mit zwei Zeilen im lk-Heft). Teil B vier Zeilen (zwei bis vier Punkte), Teil A eine (2022-bebb-gk-A1.6a, zwei Punkte). Niveau I 1, II 4.
+66  iqb (2 Zeilen, 1 Typ; Pool 2023–2024, grundlegend 1 und erhöht 1 Zeile, beide Teil B) [iqb-Katalog]: Hypergeometrische Wahrscheinlichkeit für genau k Treffer über Binomialkoeffizienten nachweisen (2, E1). Muster: der Pool prüft das Thema selten und nur als „genau k“ über Teilmengen-Quotienten (Probepackungen 2023, Lastenrad-Kinder 2024, je drei Punkte, Anforderungsbereich I bis II) – die Landeshefte prüfen es häufiger als der Pool (Gegenstück zur üblichen Poolbindung des Bündels). Amtlicher Anforderungsbereich in beiden Zeilen (höchster Bereich: I 1, II 1); Niveau II 2. Keine Dubletten.
+67  Zielmarke: Einheit 1 – abi: die Auslosung mit Gegenereignis und Modellbegründung (2017-bb-ea-B4.2e, Niveau II) und die Urne in Teil A (2022-bebb-gk-A1.6a, Niveau I); iqb: der Teilmengen-Nachweis (2024MerhoehtBStochastikWTR2-1e, Niveau II). Einheit 2 – abi: die Schrankenaufgabe (2023-bebb-lk-B4l, Niveau II).
 ````
 
-## 2 Originale (4)
+## 2 Originale (7)
 
-Kennungen aus „Prüfungsform“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
+Kennungen aus „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
 
 ### 2022-bebb-gk-A1.6a (abi-katalog.csv)
 
@@ -119,7 +118,29 @@ jahr 2023 · papier 2023-bebb-lk · punkte 4 · format Rechnung · antwort Zahl
 - verfahren: Kumulierte hypergeometrische Wahrscheinlichkeiten aufsummieren, bis 0,35 überschritten wird
 - fehlerquelle: Binomialverteilung verwenden; n = 2 wegen P(Y = 2) < 0,35 angeben
 
-Nur außerhalb von „Prüfungsform“ genannt, nicht aufgenommen: 2023MgrundlegendBStochastikWTR1-1b, 2018-bb-ea-B4.1d, 2023-bebb-lk-B4k
+### 2018-bb-ea-B4.1d (abi-katalog.csv)
+
+jahr 2018 · papier 2018-bb-ea · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: Eine Umfrage ergab, dass zu medizinischen Fragen 73 % der Bevölkerung das Internet nutzen. 55 % der Internetnutzer nutzen Medinet, einen Ratgeber bei medizinischen Fragen, der nur im Internet verfügbar ist. In einer Arztpraxis sitzen 12 Personen, die das Internet zu medizinischen Fragen nutzen. Von diesen recherchieren 7 bei Medinet. 3 Personen werden aufgerufen.
+- gesucht: Wahrscheinlichkeit dafür, dass unter den aufgerufenen Personen höchstens zwei sind, die bei Medinet recherchieren
+- verfahren: Aus einer festen Gruppe wird ohne Zurücklegen gezogen, die Verteilung ist also hypergeometrisch. Statt drei Fälle zu addieren, das Gegenereignis nehmen: alle drei Aufgerufenen recherchieren bei Medinet, mit der Wahrscheinlichkeit (7 über 3) geteilt durch (12 über 3).
+- fehlerquelle: binomial mit der festen Wahrscheinlichkeit 7/12 rechnen und das Ziehen ohne Zurücklegen übersehen
+
+### 2023-bebb-lk-B4k (abi-katalog.csv)
+
+jahr 2023 · papier 2023-bebb-lk · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: 30 Personen buchen, 12 davon weiblich; 5 werden zufällig ausgewählt
+- gesucht: P(alle 5 weiblich)
+- verfahren: Quotient der Binomialkoeffizienten (oder Produkt 12/30 · 11/29 · … · 8/26)
+- fehlerquelle: binomial mit p = 0,4 rechnen (0,4⁵ ≈ 0,010)
+
+### 2023MgrundlegendBStochastikWTR1-1b (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ga · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: 200 Probepackungen, 10 davon mit Gutschein; 180 zufällig ausgewählte werden verschenkt
+- gesucht: Wahrscheinlichkeit, dass alle Gutscheinpackungen verschenkt werden
+- verfahren: Anzahl günstiger Auswahlen (alle 10 Gutscheine und 170 der 190 anderen) durch Anzahl aller Auswahlen
+- fehlerquelle: Binomialverteilung mit p = 0,05 statt Ziehen ohne Zurücklegen
 
 ## 3 Maßstab (unterrichtsblatt.md, wortgleich)
 

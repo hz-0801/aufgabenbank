@@ -1,9 +1,9 @@
 # Mappe: terme
 
 Eintrag: hz-0801/mathe-nachhilfe, katalog/terme.md
-Katalog-Commit: d78032a884b6073d9e4c92cc8407e909e3c4ea2a (2026-09-29T07:07:16Z, „Katalog 29.09. aus dem Chat: terme E4 Vorstufe Zerlegen, prozentrechnung E4 Sprosse „nur ein Prozent bestimmen“, bruchrechnung E3 Sprosse Stammbruch von Bruch (Vorrat) und Kastenzeile a = a/1; K5-Beleg in faellig.md“; ermittelt über GitHub-API)
+Katalog-Commit: db8d2a3f9f6ed0e6490a4087e3eaff2cbc8a9b19 (2026-09-30T08:03:34Z, „Katalog: Vorschläge vom 30.09. eingesetzt (24 Zeilen in 17 Einträgen, Marke „kein P10-Stoff“ in _vorlage.md)“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-29 08:36 UTC
+Datum: 2026-09-30 08:14 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -33,9 +33,9 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 18  Eingabe mit Einheit-Stichwort (zusammenfassen, klammern, ausklammern) → direkt.
 19
 20  ### Typen je Lerneinheit
-21  Einheit 1: Termwert berechnen (auch negative Einsetzung) · Term zu Sachtext angeben (Doppeltes, vermindert um) · Term zu Figur angeben (Umfang, Fläche aus Rechtecken) [OS 6] · Situation zu Term angeben.
+21  Einheit 1: Termwert berechnen (auch negative Einsetzung) · Term zu Sachtext angeben (Doppeltes, vermindert um) · Term zu Figur angeben (Umfang, Fläche aus Rechtecken) [OS 6] · Situation zu Term angeben · Fehler finden (Reihenfolge bei „vermindert um“ vertauscht: vier minus x statt x minus vier; Klammer beim Doppelten einer Summe vergessen) · Begründen (warum das Doppelte von x plus zwei eine Klammer braucht – Zahlenprobe auf zwei Wegen).
 22  Einheit 2: gleichartige Glieder zusammenfassen [OS 7–8, GYM 7–8] · Zusammenfassen mit Potenzen (x, x²) · Zahl mal Term [OS 7, GYM 7] · Term mal Term (x · x = x²) [GYM 8] · Fehler finden · Begründen (zusammenfassbar oder nicht) · Term aus Situation aufstellen und zusammenfassen.
-23  Einheit 3: Plusklammer weglassen · Minusklammer (alle Vorzeichen drehen) [GYM 8] · Zahl mal Klammer [OS 7–8, GYM 8] · negative Zahl mal Klammer · Klammer auflösen und zusammenfassen · Fehler finden · Begründen (Gleichwertigkeit).
+23  Einheit 3: Plusklammer weglassen · Minusklammer (alle Vorzeichen drehen) [GYM 8] · Zahl mal Klammer [OS 7–8, GYM 8] · negative Zahl mal Klammer · Klammer auflösen und zusammenfassen · Sachterm mit Klammer auflösen (Preis mal (Anzahl plus x); Umfang eines Rechtecks als zwei mal (a plus b)) · Fehler finden · Begründen (Gleichwertigkeit).
 24  Einheit 4: gemeinsamen Zahlfaktor ausklammern · Variable ausklammern · Zahl und Variable ausklammern · Umkehrung prüfen (ausmultiplizieren als Probe) · Flächeninhalt einer Figur aus zwei Rechtecken mit gemeinsamer Seite als Summe der Teilflächen und als Produkt mit Klammer angeben · gleichwertige Sachterme mit gemeinsamem Faktor erkennen (Rabatt auf jeden Preis einzeln oder auf die Summe) · Fehler finden · Begründen (warum ausgeklammerter und ausmultiplizierter Term gleichwertig sind – am Rechteckbild und durch Einsetzen einer Zahl).
 25
 26  ### Voraussetzungen (Blatt 0)
@@ -49,56 +49,57 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 34  - Vorzahl lesen: „Welche Vorzahl hat x? −t? 0,5y?" (x = 1x, −t = −1t). Vor Einheit 2.
 35  - Vorzeichen als Teil des Gliedes: „Schreibe die Glieder mit ihrem Vorzeichen auf" (4x − 3y + 2 → 4x, −3y, +2). Vor Einheit 2 und 3.
 36  - Zeichen vor der Klammer feststellen: „Steht vor der Klammer + oder − oder eine Zahl?" Vor Einheit 3.
-37
-38  ### Merkkasten
-39  Einheit 2 (Zusammenfassen):
-40      Zusammenfassen: Nur gleiche Variablen mit gleicher Hochzahl darf man zusammenfassen – Vorzahlen addieren, Variable bleibt.
-41        3x + 5x = 8x      7a − 2a + 4 = 5a + 4      x² + 3x bleibt so
-42      Malnehmen: Zahlen mal Zahlen, Variablen mal Variablen.
-43        3 · 4x = 12x      2x · 3x = 6x²      3a · 2b = 6ab
-44      Formelsammlung: Terme – Rechengesetze [FS, Abschnitt prüfen]
-45  Quelle Formulierung: [Serlo 135559] „Nur gleiche Variablen in der gleichen Potenz dürfen zusammengefasst werden", sinngemäß.
-46
-47  Einheit 3 (Klammern):
-48      Plus vor der Klammer: Klammer weglassen.        a + (b − c) = a + b − c
-49      Minus vor der Klammer: alle Vorzeichen drehen.  a − (b − c) = a − b + c
-50      Zahl mal Klammer: jedes Glied malnehmen.        3 · (x + 4) = 3x + 12
-51      Formelsammlung: Terme – Klammerregeln, Distributivgesetz [FS]
-52  Quelle: [Serlo 135805]. Die Buchstabenform a, b, c ist hier zulässig, weil sie in der Formelsammlung genau so steht und auf dem Blatt jede Zeile ein Zahlenbeispiel daneben hat – abweichend von der alten Regel „keine Buchstabenformel"; auf dem Blatt stehen Regel und Beispiel in einer Zeile.
-53
-54  Einheit 4 (Ausklammern):
-55      Ausklammern: gemeinsamen Faktor vor die Klammer, Probe durch Ausmultiplizieren.
-56        6x + 9 = 3 · (2x + 3)      4a² + 2a = 2a · (2a + 1)
-57      Formelsammlung: Terme – Distributivgesetz [FS]
-58
-59  ### Typische Fehler
-60  - Ungleichartiges zusammengefasst: 3x + 4 = 7x; 2x + 3x² = 5x³. [FD Malle: Variable als Objekt gedeutet, „3 Äpfel plus 4"]
-61  - Vorzahl 1 übersehen: x + 6x = 6x; −t als 0 oder als +t gelesen. [FD]
-62  - Malnehmen wie Zusammenfassen: 2x · 3x = 6x; x · x = 2x. [FD]
-63  - Vorzeichen beim Sortieren verloren: 5a − 3b + 2a → 7a + 3b. [Serlo 40819 Hinweistexte]
-64  - Minusklammer nur beim ersten Glied gedreht: −(x − 4) = −x − 4. [FD, Serlo 135805]
-65  - Punkt vor Strich in Termen missachtet: 2 + 3 · x = 5x. [RLP D Fertigkeit]
-66  - Gleichheitszeichen als „ergibt" statt „ist gleich": Ketten wie 3x + 5x = 8x + 2x = 10x. [FD Malle]
-67
-68  ### Für schwache Schüler
-69  Mindeststoff (D/E) [RLP]: Einheit 1 (Termwert, Term zu Situation) und Einheit 2 ohne Potenzen; Einheit 3 nur Plus- und Zahl-mal-Klammer; Minusklammer und Einheit 4 sind F.
-70  Grundvorstellung (Blatt 0, eine Aufgabe) [MO, INKL]: „Was bedeutet eine Vorzahl vor x?" – so viele Kästchen mit je x Kugeln zeichnen lassen, wie die Vorzahl angibt; „x plus x plus x – wie schreibt man das kürzer?"; „Welcher Term passt zum Bild?" (ankreuzen). Wer die Vorzahl als eigenen Summanden liest („die Zahl und x"), braucht diese Aufgabe vor dem Zusammenfassen.
-71  Sprossen je Verfahrenstyp (Reihenfolge = Kette des Hauptblatts) [INKL, LS, FD]:
-72  - Zusammenfassen (Einheit 2): Grundfall zwei gleichartige Glieder mit Plus (4×) → Minus (5y − 2y) → drei Glieder → ein ungleichartiges Glied bleibt stehen (zwei x-Glieder und eine Zahl ohne Variable) → zwei Variablen sortieren (5a + 2b + 3a) → Vorzahl 1 (x + 6x) → negatives Ergebnis (3y − 8y) → negatives erstes Glied (−2x + 7x) → Potenz bleibt getrennt (5x² + 3x + 2x²) → Dezimalzahl als Vorzahl → Prüfungshöhe: langer Term mit allem.
-73  - Malnehmen (Einheit 2): Zahl · Term (4×) → Term · Zahl → Term · Term (x · x = x²) → mit Vorzeichen ((−2) · 3x) → zwei Variablen (3a · 2b) → drei Faktoren → Prüfungshöhe: Vorzeichen und zwei Variablen.
-74  - Klammern (Einheit 3): Plusklammer weglassen (3×) → Zahl · Klammer (4×, Tabelle als Bild [INKL]) → Minusklammer mit Zahlen auf zwei Wegen: zwanzig minus (sieben plus drei) erst mit der Klammer, dann Glied für Glied; beide Ergebnisse vergleichen → Minusklammer zwei Glieder → Minusklammer drei Glieder → negative Zahl · Klammer → auflösen und zusammenfassen → Prüfungshöhe: zwei Klammern.
-75  - Term aufstellen (Einheit 1): passenden Term ankreuzen (3×) [INKL] → Term aus Wörtern (Doppeltes, um vier mehr) → aus Figur → aus Situation mit zwei Variablen → zusammenfassen → Kette aus drei Anweisungen, bei der die Klammer nötig wird (Doppeltes, Differenz, Verdreifachen) → Prüfungshöhe: unter vier angebotenen Termen den passenden zu einem Sachtext aus drei Anweisungen ankreuzen; die Klammer entscheidet (P10-Form 2023-OS-B1h, Niveau I, ein Punkt, Ankreuzen).
-76  - Ausklammern (Einheit 4): Zerlegen mit vorgegebenem Faktor, noch ohne Klammer: jedes Glied als Produkt mit dem Faktor schreiben, sechs x plus fünfzehn gleich drei mal (Lücke) plus drei mal (Lücke) (Vorstufe) → Faktor vorgegeben, nur die Klammer füllen: zu sechs x plus fünfzehn ist der Faktor drei vor der Klammer vorgegeben, die beiden Glieder in der Klammer ergänzen (Vorstufe) → gemeinsamen Zahlfaktor bei zwei Gliedern (4×) → gemeinsame Variable → Zahl und Variable zusammen → ein Glied ist selbst der Faktor, in der Klammer bleibt die Eins → drei Glieder → Probe durch Ausmultiplizieren → Figur aus zwei Rechtecken mit gemeinsamer Seite: Flächeninhalt als Summe der Teilflächen und als gemeinsame Seite mal Summe der anderen Seiten → gleichwertige Sachterme erkennen: Rabatt auf jeden Preis einzeln gegen Rabatt auf die Summe → Fehler finden: Faktor nur aus einem Glied gezogen → Prüfungshöhe: kein P10-Original; Zielmarke nach RLP F (Distributivgesetz) und LISUM-PH Jahrgangsstufe sieben, Block „Terme äquivalent umformen“ („Klammer mit Faktor vor oder nach der Klammer auflösen und ausklammern“): einen dreigliedrigen Term mit gemeinsamem Zahl- und Variablenfaktor ausklammern und die Probe durch Ausmultiplizieren führen.
-77
-78  ### Prüfungsform (P10)
-79  Terme sind in der P10 kein eigenes Kontextthema. Verlangt werden: „Termwert berechnen" (Aufgabe 1, auch negative Zahlen), „Term zu Sachtext angeben", „Term zu Figur angeben", „Term zu Körper angeben" [P10]. Das typen.csv-Thema „Terme umformen“ hat vier Typen: „Term zu Sachtext angeben" und seit der Erfassung des Gymnasialpapiers (23.09.2026) drei Typen mit je einem Original nur im Gymnasialpapier – „Term durch Zusammenfassen gleichartiger Glieder vereinfachen" (2025-GYM-B2a: 6x − 3x² − 4x zusammenfassen und den Wert für eine Belegung berechnen, Niveau II), „Term mit Klammern und Potenzen vereinfachen" (2022-GYM-B2b: eine binomische Formel, eine Zahl mal Klammer mit Minus davor und ein Glied zusammenfassen, Niveau III) und „Binomische Formel anwenden" (2019-GYM-B1f: unter vier Termen das Quadrat einer Differenz ankreuzen, Niveau II). Der Oberschultyp „Term zu Sachtext angeben" hat fünf Originale, die auf drei CSV-Themen verteilt sind: 2017-OS-B1i und 2023-OS-B1h tragen das CSV-Thema „Terme umformen" und werden hier geführt; 2016-OS-B1b und 2021-OS-B1e tragen „Lineare Gleichungen" und werden von lineare-gleichungen.md geführt, 2015-OS-K2a trägt „Prozentrechnung" und gehört zu prozentrechnung.md – in allen dreien bleibt der Typ hier (Gliederungsregel, seit 10h angewandt). Inhaltlich ist die Reihe stimmig: die drei Basisaufgaben lassen unter vier Termen oder Gleichungen den passenden ankreuzen, 2015-OS-K2a lässt drei fertige Terme als richtig oder falsch beurteilen. Das Zusammenfassen selbst wird im Oberschulpapier beim Lösen linearer Gleichungen und Gleichungssysteme geprüft, im Gymnasialpapier auch als eigene Aufgabe (2025-GYM-B2a, 2022-GYM-B2b). Zielmarke für Einheit 2 daher: ein Term aus einer Figur oder Situation aufstellen und zusammenfassen.
-80  Zielmarke: Einheit 1 – unter vier Termen den passenden zu einem Sachtext aus drei Anweisungen ankreuzen, die Klammer entscheidet (2023-OS-B1h); daneben derselbe Griff mit zwei Anweisungen und der Reihenfolge als Falle (2017-OS-B1i: „das Dreifache einer Zahl, vermindert um fünf“, mit 3(x − 5) und 5 − 3x als Ablenkern) und, in den von lineare-gleichungen.md geführten Fällen, als Gleichung statt als Term (2016-OS-B1b, 2021-OS-B1e). Einheit 2 – einen Term aus einer Figur oder Situation aufstellen und zusammenfassen; kein Original im Oberschulpapier, die Marke stützt sich auf die Rolle des Zusammenfassens beim Gleichungslösen und auf LISUM-PH Jg. 7 („Erkennen gleichwertiger Terme durch Umformen“); im Gymnasialpapier gleichartige Glieder mit Potenz zusammenfassen und einsetzen (2025-GYM-B2a, Niveau II). Einheit 3 – eine Klammer mit negativer Zahl davor auflösen und den Rest zusammenfassen; kein Original im Oberschulpapier, Marke nach RLP F und LISUM-PH Jg. 7; das Gymnasialpapier geht mit einer binomischen Formel davor darüber hinaus (2022-GYM-B2b, Niveau III). Einheit 4 – einen dreigliedrigen Term mit gemeinsamem Zahl- und Variablenfaktor ausklammern und die Probe führen; kein Original, Marke nach RLP F und LISUM-PH Jg. 7. Die drei Marken ohne Original sind am 10f in der Gegenlese gesetzt worden; sie liegen bewusst unterhalb der Lehrwerkshöhe, weil die P10 aus diesem Eintrag nur das Aufstellen prüft.
-81  Zuordnung: Einheit 1 – Term zu Sachtext angeben (typen.csv-Thema „Terme umformen“; Originale 2017-OS-B1i und 2023-OS-B1h hier, 2016-OS-B1b und 2021-OS-B1e bei lineare-gleichungen.md, 2015-OS-K2a bei prozentrechnung.md); Einheit 2 – Term durch Zusammenfassen gleichartiger Glieder vereinfachen (nur Gymnasialpapier, 2025-GYM-B2a); Einheit 3 – Term mit Klammern und Potenzen vereinfachen (nur Gymnasialpapier, 2022-GYM-B2b; die binomische Formel darin → binomische-formeln.md Einheit 2); Einheit 4 – kein Typ; keiner Einheit dieses Eintrags zugeordnet – Binomische Formel anwenden (nur Gymnasialpapier, 2019-GYM-B1f; Verfahren und Kette in binomische-formeln.md Einheit 2, Original hier nach seinem typen.csv-Thema). Die Typen „Termwert berechnen“ (Thema Rationale Zahlen rechnen), „Term zu Figur angeben“ (Flächeninhalt und Umfang) und „Term zu Körper angeben“ (Volumen und Oberfläche) gehören nach der Gliederungsregel zur Datei ihres typen.csv-Themas; hier sind sie Verfahren der Einheit 1.
+37  - „Was steckt in jedem Glied?“ – zu Termen den Faktor einkreisen, der in jedem Glied steckt (Zahl, Variable oder beides); nichts ausklammern. Vor Einheit 4.
+38
+39  ### Merkkasten
+40  Einheit 2 (Zusammenfassen):
+41      Zusammenfassen: Nur gleiche Variablen mit gleicher Hochzahl darf man zusammenfassen – Vorzahlen addieren, Variable bleibt.
+42        3x + 5x = 8x      7a − 2a + 4 = 5a + 4      x² + 3x bleibt so
+43      Malnehmen: Zahlen mal Zahlen, Variablen mal Variablen.
+44        3 · 4x = 12x      2x · 3x = 6x²      3a · 2b = 6ab
+45      Formelsammlung: Terme – Rechengesetze [FS, Abschnitt prüfen]
+46  Quelle Formulierung: [Serlo 135559] „Nur gleiche Variablen in der gleichen Potenz dürfen zusammengefasst werden", sinngemäß.
+47
+48  Einheit 3 (Klammern):
+49      Plus vor der Klammer: Klammer weglassen.        a + (b − c) = a + b − c
+50      Minus vor der Klammer: alle Vorzeichen drehen.  a − (b − c) = a − b + c
+51      Zahl mal Klammer: jedes Glied malnehmen.        3 · (x + 4) = 3x + 12
+52      Formelsammlung: Terme – Klammerregeln, Distributivgesetz [FS]
+53  Quelle: [Serlo 135805]. Die Buchstabenform a, b, c ist hier zulässig, weil sie in der Formelsammlung genau so steht und auf dem Blatt jede Zeile ein Zahlenbeispiel daneben hat – abweichend von der alten Regel „keine Buchstabenformel"; auf dem Blatt stehen Regel und Beispiel in einer Zeile.
+54
+55  Einheit 4 (Ausklammern):
+56      Ausklammern: gemeinsamen Faktor vor die Klammer, Probe durch Ausmultiplizieren.
+57        6x + 9 = 3 · (2x + 3)      4a² + 2a = 2a · (2a + 1)
+58      Formelsammlung: Terme – Distributivgesetz [FS]
+59
+60  ### Typische Fehler
+61  - Ungleichartiges zusammengefasst: 3x + 4 = 7x; 2x + 3x² = 5x³. [FD Malle: Variable als Objekt gedeutet, „3 Äpfel plus 4"]
+62  - Vorzahl 1 übersehen: x + 6x = 6x; −t als 0 oder als +t gelesen. [FD]
+63  - Malnehmen wie Zusammenfassen: 2x · 3x = 6x; x · x = 2x. [FD]
+64  - Vorzeichen beim Sortieren verloren: 5a − 3b + 2a → 7a + 3b. [Serlo 40819 Hinweistexte]
+65  - Minusklammer nur beim ersten Glied gedreht: −(x − 4) = −x − 4. [FD, Serlo 135805]
+66  - Punkt vor Strich in Termen missachtet: 2 + 3 · x = 5x. [RLP D Fertigkeit]
+67  - Gleichheitszeichen als „ergibt" statt „ist gleich": Ketten wie 3x + 5x = 8x + 2x = 10x. [FD Malle]
+68
+69  ### Für schwache Schüler
+70  Mindeststoff (D/E) [RLP]: Einheit 1 (Termwert, Term zu Situation) und Einheit 2 ohne Potenzen; Einheit 3 nur Plus- und Zahl-mal-Klammer; Minusklammer und Einheit 4 sind F.
+71  Grundvorstellung (Blatt 0, eine Aufgabe) [MO, INKL]: „Was bedeutet eine Vorzahl vor x?" – so viele Kästchen mit je x Kugeln zeichnen lassen, wie die Vorzahl angibt; „x plus x plus x – wie schreibt man das kürzer?"; „Welcher Term passt zum Bild?" (ankreuzen). Wer die Vorzahl als eigenen Summanden liest („die Zahl und x"), braucht diese Aufgabe vor dem Zusammenfassen.
+72  Sprossen je Verfahrenstyp (Reihenfolge = Kette des Hauptblatts) [INKL, LS, FD]:
+73  - Zusammenfassen (Einheit 2): Grundfall zwei gleichartige Glieder mit Plus (4×) → Minus (5y − 2y) → drei Glieder → ein ungleichartiges Glied bleibt stehen (zwei x-Glieder und eine Zahl ohne Variable) → zwei Variablen sortieren (5a + 2b + 3a) → Vorzahl 1 (x + 6x) → negatives Ergebnis (3y − 8y) → negatives erstes Glied (−2x + 7x) → Potenz bleibt getrennt (5x² + 3x + 2x²) → Dezimalzahl als Vorzahl → Prüfungshöhe: langer Term mit allem.
+74  - Malnehmen (Einheit 2): Zahl · Term (4×) → Term · Zahl → Term · Term (x · x = x²) → mit Vorzeichen ((−2) · 3x) → zwei Variablen (3a · 2b) → drei Faktoren → Prüfungshöhe: Vorzeichen und zwei Variablen.
+75  - Klammern (Einheit 3): Plusklammer weglassen (3×) → Zahl · Klammer (4×, Tabelle als Bild [INKL]) → Minusklammer mit Zahlen auf zwei Wegen: zwanzig minus (sieben plus drei) erst mit der Klammer, dann Glied für Glied; beide Ergebnisse vergleichen → Minusklammer zwei Glieder → Minusklammer drei Glieder → negative Zahl · Klammer → auflösen und zusammenfassen → Prüfungshöhe: zwei Klammern.
+76  - Term aufstellen (Einheit 1): passenden Term ankreuzen (3×) [INKL] → Term aus Wörtern (Doppeltes, um vier mehr) → aus Figur → aus Situation mit zwei Variablen → zusammenfassen → Kette aus drei Anweisungen, bei der die Klammer nötig wird (Doppeltes, Differenz, Verdreifachen) → Prüfungshöhe: unter vier angebotenen Termen den passenden zu einem Sachtext aus drei Anweisungen ankreuzen; die Klammer entscheidet (P10-Form 2023-OS-B1h, Niveau I, ein Punkt, Ankreuzen).
+77  - Ausklammern (Einheit 4): Zerlegen mit vorgegebenem Faktor, noch ohne Klammer: jedes Glied als Produkt mit dem Faktor schreiben, sechs x plus fünfzehn gleich drei mal (Lücke) plus drei mal (Lücke) (Vorstufe) → Faktor vorgegeben, nur die Klammer füllen: zu sechs x plus fünfzehn ist der Faktor drei vor der Klammer vorgegeben, die beiden Glieder in der Klammer ergänzen (Vorstufe) → gemeinsamen Zahlfaktor bei zwei Gliedern (4×) → gemeinsame Variable → Zahl und Variable zusammen → ein Glied ist selbst der Faktor, in der Klammer bleibt die Eins → drei Glieder → Probe durch Ausmultiplizieren → Figur aus zwei Rechtecken mit gemeinsamer Seite: Flächeninhalt als Summe der Teilflächen und als gemeinsame Seite mal Summe der anderen Seiten → gleichwertige Sachterme erkennen: Rabatt auf jeden Preis einzeln gegen Rabatt auf die Summe → Fehler finden: Faktor nur aus einem Glied gezogen → Prüfungshöhe: kein P10-Original; Zielmarke nach RLP F (Distributivgesetz) und LISUM-PH Jahrgangsstufe sieben, Block „Terme äquivalent umformen“ („Klammer mit Faktor vor oder nach der Klammer auflösen und ausklammern“): einen dreigliedrigen Term mit gemeinsamem Zahl- und Variablenfaktor ausklammern und die Probe durch Ausmultiplizieren führen.
+78
+79  ### Prüfungsform (P10)
+80  Terme sind in der P10 kein eigenes Kontextthema. Verlangt werden: „Termwert berechnen" (Aufgabe 1, auch negative Zahlen), „Term zu Sachtext angeben", „Term zu Figur angeben", „Term zu Körper angeben" [P10]. Das typen.csv-Thema „Terme umformen“ hat vier Typen: „Term zu Sachtext angeben" und seit der Erfassung des Gymnasialpapiers (23.09.2026) drei Typen mit je einem Original nur im Gymnasialpapier – „Term durch Zusammenfassen gleichartiger Glieder vereinfachen" (2025-GYM-B2a: 6x − 3x² − 4x zusammenfassen und den Wert für eine Belegung berechnen, Niveau II), „Term mit Klammern und Potenzen vereinfachen" (2022-GYM-B2b: eine binomische Formel, eine Zahl mal Klammer mit Minus davor und ein Glied zusammenfassen, Niveau III) und „Binomische Formel anwenden" (2019-GYM-B1f: unter vier Termen das Quadrat einer Differenz ankreuzen, Niveau II). Der Oberschultyp „Term zu Sachtext angeben" hat fünf Originale, die auf drei CSV-Themen verteilt sind: 2017-OS-B1i und 2023-OS-B1h tragen das CSV-Thema „Terme umformen" und werden hier geführt; 2016-OS-B1b und 2021-OS-B1e tragen „Lineare Gleichungen" und werden von lineare-gleichungen.md geführt, 2015-OS-K2a trägt „Prozentrechnung" und gehört zu prozentrechnung.md – in allen dreien bleibt der Typ hier (Gliederungsregel, seit 10h angewandt). Inhaltlich ist die Reihe stimmig: die drei Basisaufgaben lassen unter vier Termen oder Gleichungen den passenden ankreuzen, 2015-OS-K2a lässt drei fertige Terme als richtig oder falsch beurteilen. Das Zusammenfassen selbst wird im Oberschulpapier beim Lösen linearer Gleichungen und Gleichungssysteme geprüft, im Gymnasialpapier auch als eigene Aufgabe (2025-GYM-B2a, 2022-GYM-B2b). Zielmarke für Einheit 2 daher: ein Term aus einer Figur oder Situation aufstellen und zusammenfassen.
+81  Zielmarke: Einheit 1 – unter vier Termen den passenden zu einem Sachtext aus drei Anweisungen ankreuzen, die Klammer entscheidet (2023-OS-B1h); daneben derselbe Griff mit zwei Anweisungen und der Reihenfolge als Falle (2017-OS-B1i: „das Dreifache einer Zahl, vermindert um fünf“, mit 3(x − 5) und 5 − 3x als Ablenkern) und, in den von lineare-gleichungen.md geführten Fällen, als Gleichung statt als Term (2016-OS-B1b, 2021-OS-B1e). Einheit 2 – einen Term aus einer Figur oder Situation aufstellen und zusammenfassen; kein Original im Oberschulpapier, die Marke stützt sich auf die Rolle des Zusammenfassens beim Gleichungslösen und auf LISUM-PH Jg. 7 („Erkennen gleichwertiger Terme durch Umformen“); im Gymnasialpapier gleichartige Glieder mit Potenz zusammenfassen und einsetzen (2025-GYM-B2a, Niveau II). Einheit 3 – eine Klammer mit negativer Zahl davor auflösen und den Rest zusammenfassen; kein Original im Oberschulpapier, Marke nach RLP F und LISUM-PH Jg. 7; das Gymnasialpapier geht mit einer binomischen Formel davor darüber hinaus (2022-GYM-B2b, Niveau III). Einheit 4 – einen dreigliedrigen Term mit gemeinsamem Zahl- und Variablenfaktor ausklammern und die Probe führen; kein Original, Marke nach RLP F und LISUM-PH Jg. 7. Die drei Marken ohne Original sind am 10f in der Gegenlese gesetzt worden; sie liegen bewusst unterhalb der Lehrwerkshöhe, weil die P10 aus diesem Eintrag nur das Aufstellen prüft.
+82  Zuordnung: Einheit 1 – Term zu Sachtext angeben (typen.csv-Thema „Terme umformen“; Originale 2017-OS-B1i und 2023-OS-B1h hier, 2016-OS-B1b und 2021-OS-B1e bei lineare-gleichungen.md, 2015-OS-K2a bei prozentrechnung.md); Einheit 2 – Term durch Zusammenfassen gleichartiger Glieder vereinfachen (nur Gymnasialpapier, 2025-GYM-B2a); Einheit 3 – Term mit Klammern und Potenzen vereinfachen (nur Gymnasialpapier, 2022-GYM-B2b; die binomische Formel darin → binomische-formeln.md Einheit 2); Einheit 4 – kein Typ; keiner Einheit dieses Eintrags zugeordnet – Binomische Formel anwenden (nur Gymnasialpapier, 2019-GYM-B1f; Verfahren und Kette in binomische-formeln.md Einheit 2, Original hier nach seinem typen.csv-Thema). Die Typen „Termwert berechnen“ (Thema Rationale Zahlen rechnen), „Term zu Figur angeben“ (Flächeninhalt und Umfang) und „Term zu Körper angeben“ (Volumen und Oberfläche) gehören nach der Gliederungsregel zur Datei ihres typen.csv-Themas; hier sind sie Verfahren der Einheit 1.
 ````
 
 ## 2 Originale (8)
 
-Kennungen aus „Prüfungsform“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
+Kennungen aus „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
 
 ### 2025-GYM-B2a (msa-katalog-gym.csv)
 

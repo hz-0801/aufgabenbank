@@ -1,9 +1,9 @@
 # Mappe: potenz-exponentialfunktionen
 
 Eintrag: hz-0801/mathe-nachhilfe, katalog/potenz-exponentialfunktionen.md
-Katalog-Commit: ca7939b8873ca0ea0c6a99ac2fbb90395bd0a700 (2026-09-27T22:08:06+00:00, „katalog: Vorschläge 27.09. umgesetzt“; ermittelt über git log (GitHub-API gesperrt))
+Katalog-Commit: ca7939b8873ca0ea0c6a99ac2fbb90395bd0a700 (2026-09-27T22:08:06Z, „katalog: Vorschläge 27.09. umgesetzt“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-28 02:02 UTC
+Datum: 2026-09-30 08:10 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -166,7 +166,7 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 
 ## 2 Originale (30)
 
-Kennungen aus „Prüfungsform“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
+Kennungen aus „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
 
 ### 2016-OS-K4a (msa-katalog-kontext.csv)
 
@@ -410,7 +410,7 @@ jahr 2020 · papier GYM · punkte 4 · format Zeichnen|Kurzantwort · antwort Gr
 
 Als Stamm ohne Teilaufgabe genannt (aufgenommen sind nur einzeln genannte Teilaufgaben): 2016-OS-K4, 2017-OS-K7, 2018-OS-K2, 2019-OS-K7, 2020-OS-K4, 2025-OS-K7, 2026-FOR-K7
 
-Nur außerhalb von „Prüfungsform“ genannt, nicht aufgenommen: 2014-OS-K7a, 2025-OS-B1h, 2020-OS-B1h, 2024-OS-B1g, 2018-OS-K5a, 2024-OS-K3c, 2020-OS-K3b
+Nur außerhalb von „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ genannt, nicht aufgenommen: 2014-OS-K7a, 2025-OS-B1h, 2020-OS-B1h, 2024-OS-B1g, 2018-OS-K5a, 2024-OS-K3c, 2020-OS-K3b
 
 ## 3 Maßstab (unterrichtsblatt.md, wortgleich)
 

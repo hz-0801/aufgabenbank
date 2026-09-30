@@ -3,7 +3,7 @@
 Eintrag: hz-0801/mathe-nachhilfe, katalog/pythagoras.md
 Katalog-Commit: cebfd509ea71ae238b589537bd00b7fc306df06f (2026-09-28T21:59:03Z, „Katalog-Nachzug Teil 1: Sek I aus den Urteilen vom 28.09.“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-29 12:26 UTC
+Datum: 2026-09-30 08:11 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -113,7 +113,7 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 
 ## 2 Originale (27)
 
-Kennungen aus „Prüfungsform“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
+Kennungen aus „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
 
 ### 2018-OS-K6d (msa-katalog-kontext.csv)
 
@@ -331,7 +331,7 @@ jahr 2023 · papier OS · punkte 4 · format Rechnung|Rechnung · antwort Zahl|Z
 - verfahren: in ABF: BF = 131,5 · sin 45°, AF = 131,5 · cos 45°; in CBF: BC = BF : cos 65° (oder Winkel bei C = 25°, BC = BF : sin 25°)
 - fehlerquelle: BC = BF : sin 65° oder Winkel 65° dem Punkt C zuordnen
 
-Nur außerhalb von „Prüfungsform“ genannt, nicht aufgenommen: 2025-OS-B1h, 2018-OS-K5d
+Nur außerhalb von „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ genannt, nicht aufgenommen: 2025-OS-B1h, 2018-OS-K5d
 
 ## 3 Maßstab (unterrichtsblatt.md, wortgleich)
 

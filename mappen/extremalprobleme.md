@@ -1,9 +1,9 @@
 # Mappe: extremalprobleme
 
 Eintrag: hz-0801/mathe-nachhilfe, katalog/extremalprobleme.md
-Katalog-Commit: 2a296e54827b16f81fd664c4430c6fcd84dd5719 (2026-09-28T22:05:53Z, „Katalog-Nachzug Teil 2: Sek II aus den Urteilen vom 28.09.“; ermittelt über GitHub-API)
+Katalog-Commit: db8d2a3f9f6ed0e6490a4087e3eaff2cbc8a9b19 (2026-09-30T08:03:34Z, „Katalog: Vorschläge vom 30.09. eingesetzt (24 Zeilen in 17 Einträgen, Marke „kein P10-Stoff“ in _vorlage.md)“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-29 13:56 UTC
+Datum: 2026-09-30 08:06 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -92,7 +92,7 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 77  Sprossen je Verfahrenstyp (Reihenfolge = Kette des Hauptblatts) [LS-AA, Rohdatei; Sprossenfolge Ermessen, wo Lehrwerk und Rohdatei keine Reihenfolge vorgeben]:
 78  - Figur und Term (Einheit 1): „Wo sitzen die Ecken?“ – zu Figuren am Graphen ankreuzen, welche Ecken auf dem Graphen, auf den Achsen oder fest liegen und welche Seite welche Koordinate oder welcher Funktionswert ist; nichts rechnen (Vorstufe, Grundvorstellung) → zu einer markierten Ecke auf dem Graphen die Seiten der Figur als Stelle und Funktionswert benennen (Grundfall, viermal) → Rechteck oder Dreieck für einen konkreten Wert einzeichnen (fhr 2020-C-2c, 2023-A-1e; iqb 2019MgrundlegendBAnalysisWTR2-1f) → den Flächenterm eines Dreiecks unter dem Graphen begründen (iqb 2020MerhoehtAAnalysis11-a, Teil A) → den Trapezterm über die Mittelparallele herleiten und die Schenkellänge mit dem Satz des Pythagoras angeben (iqb 2019MgrundlegendBAnalysisWTR2-1h, 2019MgrundlegendBAnalysisWTR2-1g) → Prüfungshöhe: das Dreieck zu den Schnittpunkten mit einer Parallelen einzeichnen und die Existenz von größtem und kleinstem Exemplar ohne Rechnung beurteilen (abi 2017-bb-ea-B2.2c, Niveau III); fhr-Zielmarke: Dreieck einzeichnen, Fläche berechnen und Zielfunktion nachweisen (fhr 2023-A-1e, Niveau II).
 79  - Zielfunktion aufstellen (Einheit 2): „Was wird extremal, was ist fest?“ – Hauptbedingung und Nebenbedingung im Text markieren und ankreuzen, wonach umgestellt wird; nichts rechnen (Vorstufe) → Haupt- und Nebenbedingung notieren und die Nebenbedingung nach einer Variablen umstellen (Grundfall, viermal) → eine feste Nebenbedingung, wechselnde Zielfunktion ohne Figur: eine Zahl in zwei Summanden zerlegen, einmal das Produkt, einmal die Summe der Quadrate als Zielfunktion aufstellen und ausmultiplizieren → den Flächeninhalt für konkrete Werte aus der Nebenbedingung berechnen (fhr 2025-A-2d) → die Zielfunktion durch Einsetzen aufstellen und ausmultiplizieren (fhr 2025-A-2e) → eine vorgegebene Zielfunktion nachweisen: Fläche mit Symmetriefaktoren (fhr 2020-C-2d), Umfang (fhr 2020-A-1f) → den Ansatz an einer Figur zwischen Ursprung und Graphenpunkt aufstellen (abi 2022-bebb-gk-B2.1h als Ansatz) → Prüfungshöhe: den Flächenterm an einer Schar mit e-Funktion begründen (iqb 2020MerhoehtAAnalysis11-a, Teil A, Niveau I bis II); fhr-Zielmarke: Umfangs-Zielfunktion nachweisen (fhr 2020-A-1f, Niveau III).
-80  - Maximum bestimmen (Einheit 3): „Stelle, Seiten oder Inhalt?“ – ankreuzen, was verlangt ist (die Stelle, die Maße, der Extremwert) und ob Art und Randwerte zu prüfen sind; nichts rechnen (Vorstufe) → die Zielfunktion ableiten, null setzen und die Lösung im Definitionsbereich wählen (Grundfall, viermal) → die Art über die zweite Ableitung bestätigen und alle gefragten Größen mit Einheit angeben (fhr 2025-A-2f, 2020-C-2e) → mit Substitution lösen und Lösungen außerhalb des Intervalls verwerfen (fhr 2023-A-1f) → Randmaximum: die Zielfunktion hat im Innern nur ein Minimum; das gesuchte Maximum über die Randwerte des Definitionsbereichs bestimmen (Vorrat: kein Abitur-GK-Beleg im Katalog) → das achsenparallele Rechteck maximaler Fläche über die Zielfunktion aus Stelle mal Funktionswert (abi 2022-bebb-gk-B2.1h) → den maximalen vertikalen Abstand zweier Graphen über die Differenzfunktion nachweisen (abi 2018-be-gk-B1.1g, 2020-be-gk-B2.1g, 2021-be-gk-B2.2i, 2024-bebb-gk-B2.2g) → den Parameter für den größten Flächeninhalt bestimmen (iqb 2020MerhoehtAAnalysis11-b, 2019MgrundlegendBAnalysisWTR2-1i) → eine Stelle als Maximalstelle über die notwendige Bedingung ausschließen (abi 2021-be-gk-A1.3b, Teil A) → Prüfungshöhe: zu vorgelegten Lösungsschritten die Extremwertaufgabe formulieren und die Schritte erläutern (iqb 2024MerhoehtBAnalysisWTR3-2f, Niveau III); fhr-Zielmarke: Maximum mit Substitution und Intervallprüfung (fhr 2023-A-1f, Niveau III).
+80  - Maximum bestimmen (Einheit 3): „Stelle, Seiten oder Inhalt?“ – ankreuzen, was verlangt ist (die Stelle, die Maße, der Extremwert) und ob Art und Randwerte zu prüfen sind; nichts rechnen (Vorstufe) → die Zielfunktion ableiten, null setzen und die Lösung im Definitionsbereich wählen (Grundfall, viermal) → die Art über die zweite Ableitung bestätigen und alle gefragten Größen mit Einheit angeben (fhr 2025-A-2f, 2020-C-2e) → mit Substitution lösen und Lösungen außerhalb des Intervalls verwerfen → Randmaximum: die Zielfunktion hat im Innern nur ein Minimum; das gesuchte Maximum über die Randwerte des Definitionsbereichs bestimmen (Vorrat: kein Abitur-GK-Beleg im Katalog) → das achsenparallele Rechteck maximaler Fläche über die Zielfunktion aus Stelle mal Funktionswert (abi 2022-bebb-gk-B2.1h) → den maximalen vertikalen Abstand zweier Graphen über die Differenzfunktion nachweisen (abi 2018-be-gk-B1.1g, 2020-be-gk-B2.1g, 2021-be-gk-B2.2i, 2024-bebb-gk-B2.2g) → den Parameter für den größten Flächeninhalt bestimmen (iqb 2020MerhoehtAAnalysis11-b, 2019MgrundlegendBAnalysisWTR2-1i) → eine Stelle als Maximalstelle über die notwendige Bedingung ausschließen (abi 2021-be-gk-A1.3b, Teil A) → Prüfungshöhe: zu vorgelegten Lösungsschritten die Extremwertaufgabe formulieren und die Schritte erläutern (iqb 2024MerhoehtBAnalysisWTR3-2f, Niveau III); fhr-Zielmarke: Maximum mit Substitution und Intervallprüfung (fhr 2023-A-1f, Niveau III).
 81
 82  ### Prüfungsform (fhr / abi / iqb)
 83  Geltung [konzept.md § 4 Entscheidung 35]: Der IQB-Pool ist für das Profil abi voll maßgeblich – Brandenburg entnimmt seit 2017 Poolaufgaben, seit der KMK-Ländervereinbarung 2020 unverändert, und der Pool wirkt normierend auf Landesaufgaben und Oberstufenklausuren; die Auswahl-Einschränkung steht allein in den Geltungsdateien abi-*-geltung.md, die das Thema für alle vier Zielprüfungen (be-gk, be-lk, bb-gk, bb-ea) mit „ja“ führen. Für fhr ist der Pool keine Vorgabe: dort gelten RLP FOS 2019 und der fhr-Katalog. Die Rohdatei zählt 27 Zeilen mit 16 Haupttypen (fhr 9 Zeilen, 5 Typen; abi 9 Zeilen, 5 Typen; iqb 9 Zeilen, 7 Typen), Jahre 2017–2025. Der Eintrag setzt keine Decke; Häufigkeit ist Auskunft, ein einziges Vorkommen ein vollwertiger Typ. Typnamen wörtlich aus fhr/fhr-typen.csv bzw. abitur/abitur-typen.csv (gemeinsame Liste abi/iqb; Thema ohne Gegenstandsklassen, daher ohne Präfix).
@@ -102,9 +102,9 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 87  Zielmarke: Einheit 1 – fhr: Dreieck einzeichnen mit Flächen- und Zielfunktionsnachweis (2023-A-1e, Niveau II); abi: Dreieck der Schar mit Existenzbegründung (2017-bb-ea-B2.2c, Niveau III); iqb: Trapezterm über die Mittelparallele (2019MgrundlegendBAnalysisWTR2-1h, Niveau II). Einheit 2 – fhr: Umfangs-Zielfunktion nachweisen (2020-A-1f, Niveau III) und Flächen-Zielfunktion aufstellen (2025-A-2e); abi/iqb: Ansatz an Rechteck bzw. Dreieck am Graphen (2022-bebb-gk-B2.1h, 2020MerhoehtAAnalysis11-a). Einheit 3 – fhr: Maximum mit Substitution und Intervall (2023-A-1f, Niveau III); abi: maximaler vertikaler Abstand (2018-be-gk-B1.1g, 2021-be-gk-B2.2i, Niveau II), kleinster Abstand zu einem Punkt nur CAS (2018-bb-ea-cas-B2.2i, Niveau III); iqb: Parameter für den größten Flächeninhalt (2019MgrundlegendBAnalysisWTR2-1i, 2017MerhoehtBAnalysisCAS1-1d) und die Rückwärtsaufgabe (2024MerhoehtBAnalysisWTR3-2f, Niveau III).
 ````
 
-## 2 Originale (22)
+## 2 Originale (27)
 
-Kennungen aus „Prüfungsform“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
+Kennungen aus „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
 
 ### 2020-A-1f (fhr-katalog.csv)
 
@@ -282,7 +282,45 @@ jahr 2019 · papier 2019-iqb-ga · punkte 5 · format Rechnung · antwort Zahl
 - verfahren: T(u) aufstellen, T' = 0 lösen, Lösung im Intervall wählen
 - fehlerquelle: u = 8 als Lösung nehmen; hinreichende Bedingung vergessen
 
-Nur außerhalb von „Prüfungsform“ genannt, nicht aufgenommen: 2020-C-2d, 2019MgrundlegendBAnalysisWTR2-1g, 2020-C-2e, 2025-A-2f, 2020MerhoehtAAnalysis11-b
+### 2019MgrundlegendBAnalysisWTR2-1g (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ga · punkte 2 · format Kurzantwort · antwort Term
+- gegeben: Schar f_k(x) = −kx · (x − 8), k > 0, in IR definiert; Graph G_k; k = 1/4; Trapeze mit den Ecken A(0 | 0), B(8 | 0), C_u(8 − u | f_(1/4)(u)) und D_u(u | f_(1/4)(u)) für 0 < u < 4
+- gesucht: Term für die Länge der beiden gleich langen Schenkel
+- verfahren: Abstand A–D_u mit dem Satz des Pythagoras
+- fehlerquelle: Schenkel als 8 − 2u (Differenz der parallelen Seiten) verwechseln
+
+### 2020-C-2d (fhr-katalog.csv)
+
+jahr 2020 · papier C · punkte 3 · format Rechnung · antwort Term
+- gegeben: f(x) = −(2/81)x^2 + 5; die Platine ist ein Rechteck mit den Eckpunkten P(−x; −f(x)), Q(x; −f(x)), R(x; f(x)) und S(−x; f(x)) für ein x zwischen 0 und 9; die äußere Form des Lautsprechers bleibt unverändert
+- gesucht: Nachweis, dass sich der Flächeninhalt der Platine für ein beliebiges x mit A(x) = −(8/81)x^3 + 20x berechnen lässt
+- verfahren: die Hauptbedingung A = a · b mit a = 2x und b = 2 · f(x) besetzen, f einsetzen und ausmultiplizieren
+- fehlerquelle: nur eine der beiden Seiten verdoppeln und dadurch den Faktor 4 verfehlen
+
+### 2025-A-2f (fhr-katalog.csv)
+
+jahr 2025 · papier A · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: rechteckige Trainingsfläche, eine Seite liegt an der Außenwand der Sporthalle; für die übrigen drei Seiten stehen insgesamt 46 m Baumaterial zur Verfügung, das vollständig verwendet wird; a ist die zur Wand senkrechte Seite, b die zur Wand parallele; die Dicke des Materials wird vernachlässigt; die Zielfunktion A(a) = −2a^2 + 46a ist aus Teilaufgabe e bekannt
+- gesucht: größter möglicher Flächeninhalt A|zugehörige Seitenlängen a und b
+- verfahren: A'(a) = 0 setzen, a berechnen, b aus der Nebenbedingung bestimmen und beide Werte in die Hauptbedingung einsetzen
+- fehlerquelle: nur a angeben und b oder den Flächeninhalt vergessen
+
+### 2020-C-2e (fhr-katalog.csv)
+
+jahr 2020 · papier C · punkte 5 · format Rechnung · antwort Zahl
+- gegeben: A(x) = −(8/81)x^3 + 20x als Flächeninhalt der Platine für ein x zwischen 0 und 9; eine Einheit entspricht einem Zentimeter
+- gesucht: größtmöglicher Flächeninhalt der Platine
+- verfahren: A ableiten, die Ableitung gleich null setzen, die positive Lösung über das Vorzeichen der zweiten Ableitung als Maximum bestätigen und den zugehörigen Funktionswert berechnen
+- fehlerquelle: die Extremstelle 8,22 als Ergebnis angeben statt den zugehörigen Flächeninhalt
+
+### 2020MerhoehtAAnalysis11-b (iqb-katalog.csv)
+
+jahr 2020 · papier 2020-iqb-ea · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: Flächeninhalt A(a) = 1/2 a² e^(−a) aus a; unter den Dreiecken hat eines den größten Inhalt
+- gesucht: zugehöriger Wert von a
+- verfahren: A ableiten, Nullstelle mit a > 0
+- fehlerquelle: Kettenregel bei e^(−a) vergessen (Vorzeichen)
 
 ## 3 Maßstab (unterrichtsblatt.md, wortgleich)
 

@@ -1,9 +1,9 @@
 # Mappe: zuordnungen
 
 Eintrag: hz-0801/mathe-nachhilfe, katalog/zuordnungen.md
-Katalog-Commit: de503c9cea3976774daeb6c514adb85829d8df2e (2026-09-25T16:06:01+02:00, „katalog: flaechen-ids, GYM-Typen zuordnungen und terme, Maßstab, klassen-ermessen, index Zeile 232“; ermittelt über git log (GitHub-API gesperrt))
+Katalog-Commit: de503c9cea3976774daeb6c514adb85829d8df2e (2026-09-25T14:06:01Z, „katalog: flaechen-ids, GYM-Typen zuordnungen und terme, Maßstab, klassen-ermessen, index Zeile 232“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-27 12:34 UTC
+Datum: 2026-09-30 08:15 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -119,7 +119,7 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 
 ## 2 Originale (13)
 
-Kennungen aus „Prüfungsform“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
+Kennungen aus „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
 
 ### 2014-OS-K4c (msa-katalog-kontext.csv)
 
@@ -225,7 +225,7 @@ jahr 2021 · papier OS · punkte 3 · format Zeichnen · antwort Grafik
 - verfahren: Skala wählen, z. B. 1 Kästchen = 5 min (80 min = 16 Kästchen) und 1 Kästchen = 2 cm (40 cm = 20 Kästchen); Punkte eintragen und verbinden
 - fehlerquelle: Skala so wählen, dass 80 min oder 40 cm nicht ins Raster passen; Achsen nicht beschriften
 
-Nur außerhalb von „Prüfungsform“ genannt, nicht aufgenommen: 2023-OS-B1a, 2022-OS-B1b, 2016-OS-B1d
+Nur außerhalb von „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ genannt, nicht aufgenommen: 2023-OS-B1a, 2022-OS-B1b, 2016-OS-B1d
 
 ## 3 Maßstab (unterrichtsblatt.md, wortgleich)
 

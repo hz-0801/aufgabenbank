@@ -3,7 +3,7 @@
 Eintrag: hz-0801/mathe-nachhilfe, katalog/funktionsklassen-und-eigenschaften.md
 Katalog-Commit: f56cacecc590f51abf34cf81948a0d2b751d7d33 (2026-09-28T22:13:08Z, „Katalog-Nachzug Teil 5: Abschluss“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-29 13:57 UTC
+Datum: 2026-09-30 08:07 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -162,9 +162,9 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 147  Zielmarke: Einheit 1 – fhr: Punktprobe und Nullstellennachweis (2025-A-1d, Niveau II); abi: Modellwert berechnen und deuten (2024-bebb-lk-B2.2g, Niveau I); iqb: Sachbedingung übersetzen und Stelle ablesen (2025MerhoehtBAnalysisWTR1-2b, Niveau III). Einheit 2 – fhr: Substitution mit vier Nullstellen und Achsenschnittpunkten (2026-B-1b, Niveau II); abi: Anzahl der Nullstellen aus der faktorisierten Form (2023-bebb-gk-B2.2a, Niveau II); iqb: Nullstellen aus Linearfaktoren mit Vollständigkeitsargument (2023MerhoehtBAnalysisWTR1-1a, Niveau II). Einheit 3 – fhr: keine; abi: Definitionsbereich mit Parameter (2017-bb-ea-B2.1a, Niveau II); iqb: Logarithmus-Abschätzung (2024MerhoehtBAnalysisWTR1-1e, Niveau III). Einheit 4 – fhr: Symmetrie als Prüfungsauftakt (2026-B-1a, Niveau I); abi: Punktsymmetrie mit Nullstelle und Grenzwert (2022-bebb-lk-B2.2a, Niveau I); iqb: Produkt symmetrischer Funktionen (2021MerhoehtAAnalysis21-b, Niveau III). Einheit 5 – fhr: keine; abi: Wertemenge einer transformierten Funktion (2026-bb-ea-A1.5b, Niveau III); iqb: Flächengleichheit über das Produkt der Streckfaktoren (2026MerhoehtBAnalysisMMS1-1d, Niveau III). Einheit 6 – fhr: Graph mit geeigneter Achseneinteilung (2023-C-1e, Niveau II); abi/iqb: Dreieck und Abstand der Sinus-Extrempunkte in Teil A (2026-bb-gk-A1.4a/b, 2026MgrundlegendAAnalysis12-a/b, Niveau I bis II); iqb: Achsenskalierung beurteilen (2023MgrundlegendAAnalysis13-b, Niveau II).
 ````
 
-## 2 Originale (87)
+## 2 Originale (227)
 
-Kennungen aus „Prüfungsform“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
+Kennungen aus „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
 
 ### 2023-A-1d (fhr-katalog.csv)
 
@@ -862,7 +862,1127 @@ jahr 2023 · papier 2023-iqb-ga · punkte 3 · format Begründung · antwort Tex
 - verfahren: einen Punkt mit bekannten Koordinaten (etwa (3; −27) oder die Nullstelle 4) mit den Abständen in der Abbildung vergleichen
 - fehlerquelle: aus dem Fehlen von Skalen keine Prüfung ableiten
 
-Nur außerhalb von „Prüfungsform“ genannt, nicht aufgenommen: 2026MgrundlegendBAnalysisMMS2-1a, 2020-C-1a, 2021-B-1a, 2023-A-1a, 2024MerhoehtBAnalysisWTR3-1a, 2026-bb-ea-A1.5a, 2022MgrundlegendAAnalysis13, 2021MgrundlegendAAnalysis13-b, 2019-A-1b, 2024-B-1c, 2021-be-gk-B2.1b, 2021-be-gk-B2.2a, 2020-C-1b, 2021-B-1b, 2022-C-1b, 2024-bebb-gk-B2.2b, 2020-A-1b, 2019-C-1b, 2020-be-gk-B2.2a, 2019MerhoehtAAnalysis11-a, 2020-be-gk-B2.1a, 2024-bebb-gk-B2.1a, 2019MgrundlegendBAnalysisWTR2-2a, 2025MgrundlegendAAnalysis13-a, 2024-C-1b, 2022-B-1b, 2021-A-1b, 2025-C-1b, 2018MgrundlegendBAnalysisWTR-2d, 2018MerhoehtBAnalysisWTR1-2c, 2019-A-1a, 2022-C-1a, 2024-B-2a, 2024-bebb-gk-B2.2a, 2023MerhoehtBAnalysisWTR2-2a, 2022MerhoehtAAnalysis12-a, 2022MerhoehtBAnalysisWTR2-1a, 2024MgrundlegendAAnalysis12-a, 2018MerhoehtBAnalysisWTR1-1c, 2018MgrundlegendBAnalysisWTR-1b, 2023MgrundlegendBAnalysisWTR2-1a, 2018MerhoehtAAnalysis2-a, 2023MerhoehtBAnalysisWTR2-1a, 2021MerhoehtAAnalysis21-a, 2022MgrundlegendBAnalysisWTR1-1b, 2024-bebb-gk-A1.7b, 2026-bb-gk-B2.2f, 2025-bebb-gk-B2.1c, 2022MgrundlegendAAnalysis12-b, 2024MgrundlegendBAnalysisWTR2-1d, 2019MgrundlegendAAnalysis2-a, 2025MgrundlegendAAnalysis21-a, 2023MerhoehtBAnalysisWTR2-1b, 2026MerhoehtAAnalysis11-a, 2026MgrundlegendBAnalysisWTR2-1f, 2022MerhoehtBAnalysisWTR3-1b, 2022MgrundlegendBAnalysisWTR2-1e, 2019MgrundlegendBAnalysisWTR1-3a, 2023-bebb-gk-B2.2j, 2026MgrundlegendBAnalysisWTR1-1b, 2023MgrundlegendBAnalysisWTR2-1e, 2024MgrundlegendAAnalysis11-b, 2024MgrundlegendBAnalysisWTR1-1d, 2021MgrundlegendBAnalysisWTR-1c, 2026MgrundlegendBAnalysisWTR2-1a, 2023MgrundlegendAAnalysis2-a, 2019MgrundlegendBAnalysisWTR2-2b, 2026MerhoehtAAnalysis21-a, 2026MerhoehtAAnalysis21-b, 2018MgrundlegendAAnalysis12-b, 2023MgrundlegendBAnalysisWTR2-2c, 2022MerhoehtBAnalysisWTR3-3a, 2026-bb-gk-B2.2g, 2026MerhoehtBAnalysisWTR2-2a, 2022MgrundlegendBAnalysisWTR1-2a, 2026MerhoehtBAnalysisMMS1-1e, 2026MgrundlegendBAnalysisWTR2-2a, 2024MerhoehtBAnalysisWTR2-2b, 2024MgrundlegendBAnalysisWTR1-2a, 2024MgrundlegendBAnalysisWTR2-2a, 2018MerhoehtBAnalysisWTR1-2a, 2018MgrundlegendBAnalysisWTR-2a, 2019MgrundlegendBAnalysisWTR1-1b, 2025MerhoehtBAnalysisWTR1-2a, 2025MgrundlegendBAnalysisWTR1-2a, 2025MgrundlegendBAnalysisWTR1-2b, 2024MgrundlegendBAnalysisWTR2-2b, 2025MerhoehtBAnalysisWTR3-2b, 2026MerhoehtBAnalysisMMS2-1a, 2026MgrundlegendBAnalysisMMS1-1a, 2026MgrundlegendBAnalysisWTR1-2a, 2022MerhoehtBAnalysisWTR3-3c, 2019-A-1f, 2019-C-1e, 2020-A-1e, 2020-C-1e, 2021-A-1f, 2021-B-1e, 2022-B-1e, 2022-C-1f, 2024-C-1f, 2025-A-1g, 2025-C-1e, 2026-B-1f, 2019MgrundlegendBAnalysisWTR2-2c, 2019MgrundlegendBAnalysisWTR1-2c, 2026-C-1b, 2021MgrundlegendAAnalysis12-a, 2022MgrundlegendBAnalysisWTR2-1c, 2026MgrundlegendBAnalysisMMS2-1b, 2018MerhoehtBAnalysisWTR2-1k, 2018MerhoehtBAnalysisWTR2-1c, 2019-C-1a, 2022MerhoehtBAnalysisWTR1-1a, 2020MgrundlegendBAnalysisWTR1-1d, 2019MgrundlegendBAnalysisWTR1-1a, 2019MgrundlegendBAnalysisWTR1-2b, 2019-be-gk-B2.1d, 2018-bb-ea-B2.2f, 2021-be-gk-B2.1j, 2022MgrundlegendBAnalysisWTR2-2b, 2018MerhoehtBAnalysisWTR2-1a, 2021-be-gk-B2.2c, 2026-bb-ea-A1.6a, 2026MgrundlegendBAnalysisMMS1-2a, 2023MerhoehtBAnalysisWTR2-1c, 2025MerhoehtBAnalysisMMS2-2a, 2023MerhoehtBAnalysisWTR2-2c, 2022MgrundlegendBAnalysisWTR1-1a, 2025-C-1a, 2026MerhoehtBAnalysisWTR1-1c, 2018MgrundlegendAAnalysis11-a, 2023MerhoehtAAnalysis21-a, 2024-bebb-gk-B2.2f, 2024MgrundlegendAAnalysis13-b, 2026-bb-ea-B2.2f, 2026-bb-ea-B2.2h, 2026MgrundlegendBAnalysisWTR1-2b, 2026MerhoehtBAnalysisWTR1-2a, 2026MerhoehtBAnalysisWTR1-2c, 2023-bebb-gk-B2.1i, 2022MgrundlegendBAnalysisWTR2-1f, 2026MgrundlegendAAnalysis12-b, 2026-bb-gk-A1.4b, 2023MgrundlegendAAnalysis11-a
+### 2024MgrundlegendBAnalysisWTR1-2a (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ga · punkte 2 · format Kurzantwort · antwort Zahl
+- gegeben: p(t) Phosphorkonzentration in mg/m³, t Jahre seit Beobachtungsbeginn, 0 ≤ t ≤ 40; Graph in Abbildung 2
+- gesucht: Zeitpunkt mit Phosphorkonzentration 30 mg/m³
+- verfahren: Waagerechte bei 30 mit dem Graphen schneiden
+- fehlerquelle: Achsen vertauschen (p(30) ablesen)
+
+### 2021-be-gk-B2.2c (abi-katalog.csv)
+
+jahr 2021 · papier 2021-be-gk · punkte 1 · format Rechnung · antwort Text
+- gegeben: f(x) = (−1/10 x² + 2x) · e^(−0,1x) und h(x) = −3/4 x · e^(−0,1x), beide in IR; Graphen G und H
+- gesucht: Nachweis des gemeinsamen Punkts S₁(0 | 0)
+- verfahren: Einsetzen
+- fehlerquelle: keine
+
+### 2026-bb-ea-A1.6a (abi-katalog.csv)
+
+jahr 2026 · papier 2026-bb-ea · punkte 1 · format Rechnung · antwort Text
+- gegeben: f_a(x) = 1/2 x³ − 2a²x, definiert in IR, a ∈ IR; Graphen punktsymmetrisch zum Ursprung
+- gesucht: Nachweis, dass 2a Nullstelle von f_a ist
+- verfahren: 2a einsetzen
+- fehlerquelle: (2a)³ = 2a³
+
+### 2025MgrundlegendAAnalysis13-a (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ga · punkte 1 · format Begründung · antwort Text
+- gegeben: f(x) = 2e^x − 2e, definiert in IR, Graph in der Abbildung
+- gesucht: Nachweis, dass 1 eine Nullstelle von f ist
+- verfahren: x = 1 einsetzen
+- fehlerquelle: e als Variable behandeln und die Gleichung lösen wollen
+
+### 2019MerhoehtAAnalysis11-a (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ea · punkte 1 · format Begründung · antwort Text
+- gegeben: f(x) = 1 − 1/x² in IR ohne 0, Nullstellen ±1, Graph achsensymmetrisch; Gerade g: y = −3
+- gesucht: Nachweis, dass ein Schnittpunkt von g und dem Graphen die x-Koordinate 1/2 hat
+- verfahren: f(1/2) berechnen
+- fehlerquelle: 1/(1/2)² = 2 statt 4
+
+### 2024-B-1c (fhr-katalog.csv)
+
+jahr 2024 · papier B · punkte 5 · format Rechnung · antwort Zahl
+- gegeben: f(x) = 1/5 x^5 − 1/5 x^4 − 2x^3; x aus IR
+- gesucht: Koordinaten aller Schnittpunkte von Gf mit den Koordinatenachsen
+- verfahren: f(0) für den y-Achsenschnitt berechnen; für die Nullstellen x^3 ausklammern und den quadratischen Faktor nach Multiplikation mit 5 als x^2 − x − 10 = 0 mit der Lösungsformel lösen
+- fehlerquelle: die Nullstelle x = 0 beim Ausklammern verlieren oder den y-Achsenschnitt nicht als eigenen Punkt angeben
+
+### 2026MgrundlegendBAnalysisMMS1-2a (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ga-mms · punkte 2 · format Kurzantwort · antwort Zahl
+- gegeben: f(x) = e^(−x+2) − 1 und h(x) = −2x − 2 in IR; Graphen in Abbildung 2
+- gesucht: Schnittpunkt von G_f mit der y-Achse und Steigung dort
+- verfahren: x = 0 einsetzen, Ableitung an der Stelle 0
+- fehlerquelle: Vorzeichen der inneren Ableitung
+
+### 2019MgrundlegendBAnalysisWTR2-2a (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ga · punkte 1 · format Rechnung · antwort Zahl
+- gegeben: CO₂-Konzentration in einem Raum: g(x) = −600 · e^(−0,5x) + 1000, in IR definiert, x Zeit in Stunden seit Beginn der Untersuchung, g(x) in ppm
+- gesucht: CO₂-Konzentration zu Beginn der Untersuchung
+- verfahren: g(0) berechnen
+- fehlerquelle: e⁰ = 0 setzen
+
+### 2024MgrundlegendBAnalysisWTR2-2a (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ga · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: f aus Aufgabe 1 beschreibt die Geschwindigkeit von Radfahrer A in m/s in den ersten 10 Sekunden, x Sekunden seit dem Start
+- gesucht: Geschwindigkeit von A drei Sekunden nach dem Start
+- verfahren: f(3) berechnen
+- fehlerquelle: Wert am Graphen von B ablesen
+
+### 2026MgrundlegendBAnalysisWTR1-2a (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ga · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: h(x) = 1/6 · cos(2π/3 · x) + 8/3, x Zeit in Sekunden ab Beobachtungsbeginn, h(x) Luftvolumen in Litern
+- gesucht: Luftvolumen 2,5 Sekunden nach Beobachtungsbeginn
+- verfahren: h(2,5) berechnen
+- fehlerquelle: Rechner im Gradmaß
+
+### 2026MgrundlegendBAnalysisWTR2-2a (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ga · punkte 1 · format Kurzantwort · antwort Zahl
+- gegeben: k(x) = 60e^{−x/400} + 20, x Zeit in Minuten seit Beginn des Abkühlens, k(x) Oberflächentemperatur in °C
+- gesucht: Oberflächentemperatur zu Beginn
+- verfahren: k(0)
+- fehlerquelle: 60 °C (Verschiebung 20 vergessen)
+
+### 2023MerhoehtBAnalysisWTR2-1c (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ea · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: r wie in a; Pfeiler bei x = 20; Wasseroberfläche 20 m unter der Fahrbahn
+- gesucht: Höhe der Pfeiler über der Wasseroberfläche
+- verfahren: r(20) umrechnen und 20 m addieren
+- fehlerquelle: 20 m Wassertiefe vergessen
+
+### 2024MerhoehtBAnalysisWTR3-1a (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ea · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: f(x) = 3 · (x + 10) · e^{−0,1x}, 0 ≤ x ≤ 44 Längsschnitt einer Rutschbahn; 1 LE = 10 cm
+- gesucht: Höhenunterschied zwischen Anfang und Ende
+- verfahren: f(0) − f(44), mal 10 cm
+- fehlerquelle: Maßstab vergessen
+
+### 2025MerhoehtBAnalysisMMS2-2a (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ea-mms · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: Wasserrutsche: r(x) = 1/16 · x² · e^(−0,25x + 1) (= f_(0,25)), Graph G beschreibt für −4 ≤ x ≤ 10 die Profillinie der Rutschbahn, die x-Achse den Boden und die Wasseroberfläche, links ein horizontales Startpodest; 1 LE = 1 m
+- gesucht: Höhe des Startpodests über dem Boden und Höhe des Endpunkts über der Wasseroberfläche
+- verfahren: r(−4) und r(10) berechnen
+- fehlerquelle: Höhe des Podests am Bild ablesen statt zu rechnen
+
+### 2026MerhoehtBAnalysisWTR2-2a (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ea · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: f(x) = 2,6 − 0,5 · (e^x + e^−x); Profil für −1,2 ≤ x ≤ 1,2; 1 LE = 20 m
+- gesucht: Nachweis der Breite 48 m und die Höhe der Halle
+- verfahren: Breite aus den Grenzen, Höhe aus f(0), beide mit dem Maßstab
+- fehlerquelle: Maßstab vergessen
+
+### 2026MgrundlegendBAnalysisMMS1-1a (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ga-mms · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: k(x) = 80e^1,5 − (4x + 80) · e^(−0,05x + 1,5) für x ≥ 0, x Zeit in Jahren, k(x) Gesamtmenge in Millionen Tonnen
+- gesucht: Nachweis k(8) ≈ 22; Zeitpunkt mit k(x) = 100
+- verfahren: Funktionswert berechnen, Gleichung k(x) = 100 mit dem Rechner lösen
+- fehlerquelle: Ergebnis 20,8 nicht als Zeitpunkt mit Einheit angeben
+
+### 2026-bb-gk-B2.2g (abi-katalog.csv)
+
+jahr 2026 · papier 2026-bb-gk · punkte 1 · format Kurzantwort · antwort Zahl
+- gegeben: k(x) = 60e^{−x/400} + 20, x Zeit in Minuten seit Beginn des Abkühlens, k(x) Oberflächentemperatur in °C
+- gesucht: Oberflächentemperatur zu Beginn
+- verfahren: k(0)
+- fehlerquelle: 60 °C (Verschiebung 20 vergessen)
+
+### 2019-be-gk-B2.1d (abi-katalog.csv)
+
+jahr 2019 · papier 2019-be-gk · punkte 7 · format Kurzantwort|Rechnung · antwort Zahl
+- gegeben: Wachstum eines Baums A für t ≥ 0 bis zur maximalen Höhe: h(t) = −0,1 · t⁴ + 20 · t², t in Jahren, h(t) Höhe in cm; Baum B: g(t) = a · t³ + b · t² (t Jahre, g(t) cm) mit g(t) = −2t³ + 30t² (aus c); beide beginnen bei t = 0
+- gesucht: Höhe beider Bäume zu Beobachtungsbeginn; Zeiten mit gleicher Wachstumsgeschwindigkeit
+- verfahren: Funktionswerte bei t = 0; Ableitungen gleichsetzen, t ausklammern, quadratische Gleichung 0,4t² − 6t + 20 = 0 lösen
+- fehlerquelle: die Funktionen statt der Ableitungen gleichsetzen oder t = 0 beim Ausklammern verlieren
+
+### 2018MgrundlegendBAnalysisWTR-2a (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ga · punkte 1 · format Kurzantwort · antwort Zahl
+- gegeben: Kostenfunktion K(x) = x³ − 12x² + 50x + 20, 0 ≤ x ≤ 9, K(x) in 1000 Euro für die Produktion von x Kubikmetern einer Flüssigkeit; Abbildung 3 zeigt den Graphen von K
+- gesucht: Produktionsmenge, bei der die Kosten 125 000 Euro betragen, mithilfe der Abbildung
+- verfahren: y = 125 am Graphen suchen
+- fehlerquelle: 125 000 als 125 000 Einheiten der y-Achse suchen
+
+### 2018MerhoehtBAnalysisWTR1-2a (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ea · punkte 1 · format Kurzantwort · antwort Zahl
+- gegeben: Kostenfunktion K(x) = x³ − 12x² + 50x + 20, 0 ≤ x ≤ 9, K(x) in 1000 Euro für die Produktion von x Kubikmetern einer Flüssigkeit; Abbildung 2 zeigt den Graphen von K
+- gesucht: Produktionsmenge mit Kosten 125 000 Euro, mithilfe der Abbildung
+- verfahren: y = 125 am Graphen suchen
+- fehlerquelle: Einheit der y-Achse übersehen
+
+### 2019MgrundlegendBAnalysisWTR1-1b (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ga · punkte 2 · format Kurzantwort · antwort Zahl
+- gegeben: k(x) = 1/40 · (x³ − 30x² + 288x − 815), in IR definiert; Abbildung 1 zeigt den Graphen; Laktattest: für 8,5 ≤ x ≤ 17,5 beschreibt k die Laktatkonzentration in mmol/l in Abhängigkeit von der Geschwindigkeit x in km/h
+- gesucht: Geschwindigkeit, ab der die Konzentration ansteigt; Geschwindigkeit, bei der 3,25 mmol/l überschritten werden
+- verfahren: Tiefpunkt und Stelle zu y = 3,25 aus Abbildung 1 ablesen
+- fehlerquelle: den Hochpunkt bei 8 als Beginn des Anstiegs nehmen
+
+### 2025MgrundlegendBAnalysisWTR1-2b (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ga · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: r wie in a; es gibt Temperaturen mit tatsächlicher Reichweite größer als Nennreichweite
+- gesucht: dieser Temperaturbereich mithilfe von Abbildung 2
+- verfahren: r(x) > 1 am Graphen ablesen
+- fehlerquelle: Bereich um den Hochpunkt schätzen statt r = 1 abzulesen
+
+### 2025MerhoehtBAnalysisWTR3-2b (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ea · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: Graphen von k (abgegebene Leistung) und h (aufgenommene Leistung) in Abbildung 2
+- gesucht: Zeitpunkte gleicher Leistung, grafisch
+- verfahren: Schnittstellen ablesen
+- fehlerquelle: Maximum von k statt der Schnittstellen nennen
+
+### 2024MgrundlegendBAnalysisWTR2-2b (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ga · punkte 3 · format Rechnung|Kurzantwort · antwort Zahl
+- gegeben: genau ein Zeitpunkt x_s mit gleicher Geschwindigkeit; Abbildung 2
+- gesucht: x_s und der Zeitraum, in dem A schneller ist als B
+- verfahren: Schnittstelle ablesen, Lage der Graphen vergleichen
+- fehlerquelle: Zeitraum nach x_s angeben
+
+### 2022MerhoehtBAnalysisWTR3-3c (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ea · punkte 4 · format Rechnung|Kurzantwort · antwort Zahl
+- gegeben: V(t) wie in 3a; Abbildung 3 mit V(h)
+- gesucht: Füllhöhe 50 Minuten nach Beginn
+- verfahren: V(50) berechnen, in Abbildung 3 die zugehörige Höhe ablesen
+- fehlerquelle: t = 50 als Füllhöhe in Abbildung 3 einsetzen
+
+### 2022MgrundlegendBAnalysisWTR2-2b (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ga · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: Tauchroboter, vertikale Bewegung für 0 ≤ t ≤ 30 mit h(t) = 9/40 t³ − 27/2 t² + 405/2 t, t Zeit in Minuten, h(t) Abstand von der Wasseroberfläche in Metern; Abbildung des Graphen; Maximum 900 m bei t = 10
+- gesucht: zurückgelegter Weg in den ersten 15 Minuten
+- verfahren: 900 + (900 − h(15))
+- fehlerquelle: h(15) als Weg nehmen
+
+### 2018MerhoehtBAnalysisWTR2-1a (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ea · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: Kugelstoßen im Koordinatensystem (1 LE = 1 m, x-Achse ist der Boden): Bahn von der Ruhelage R bis zum Abstoßpunkt A durch f(x) = 0,4 + 1,6 · e^(0,5x), x ∈ [−2; 0]; Flugkurven p_a(x) = −ax² + bx + 2, a > 0, ohne Knick in A
+- gesucht: Länge der Bahn von R bis A näherungsweise als Streckenlänge
+- verfahren: R(−2 | f(−2)) und A(0 | 2), Abstand
+- fehlerquelle: Bogenlänge über ein Integral versuchen
+
+### 2020MgrundlegendBAnalysisWTR1-1d (iqb-katalog.csv)
+
+jahr 2020 · papier 2020-iqb-ga · punkte 5 · format Rechnung · antwort Zahl
+- gegeben: Logo eines Geschäfts für Anglerbedarf: untere Begrenzungslinie des Fischs u(x) = 1/8 x³, obere Begrenzungslinie v(x) = 1/4 x² · (4 − x) (beide in IR definiert), Wasseroberfläche y = 5/4; die obere Spitze der Schwanzflosse liegt auf der Wasseroberfläche, die Strecke zwischen oberer und unterer Spitze der Schwanzflosse steht senkrecht dazu; Q(8/3 | 64/27) Hochpunkt; Ausdehnung des Fischs in y-Richtung 539/216; Kontrolle: Ausdehnung in x-Richtung 11/3
+- gesucht: Ausdehnung des Fischs in x-Richtung
+- verfahren: y-Koordinate der unteren Spitze aus 64/27 − 539/216, zugehörige Stelle über u(x) = −1/8, Abstand zur Kopfspitze 8/3
+- fehlerquelle: die Ausdehnung in y-Richtung von der Wasseroberfläche 5/4 statt vom Hochpunkt aus messen
+
+### 2019MgrundlegendBAnalysisWTR1-1a (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ga · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: k(x) = 1/40 · (x³ − 30x² + 288x − 815), in IR definiert; Abbildung 1 zeigt den Graphen; Laktattest: für 8,5 ≤ x ≤ 17,5 beschreibt k die Laktatkonzentration in mmol/l in Abhängigkeit von der Geschwindigkeit x in km/h; Messwerte: 9 km/h 1,92, 13 km/h 1,44, 17 km/h 8,09 mmol/l
+- gesucht: prozentuale Abweichung des Modellwerts bei 13 km/h vom Messwert
+- verfahren: k(13) berechnen und die Differenz auf den Messwert beziehen
+- fehlerquelle: Abweichung auf den Modellwert statt auf den Messwert beziehen
+
+### 2022MerhoehtBAnalysisWTR1-1a (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ea · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: f(x) = 30x³ − 90x² + 240, x Minuten seit 15:00 Uhr, f(x) Geschwindigkeit in km/h für 0 ≤ x ≤ 2; davor und danach konstante Geschwindigkeit
+- gesucht: Geschwindigkeit nach einer halben Minute; Nachweis, dass die Abnahme in der ersten halben Minute kleiner ist als in der zweiten
+- verfahren: f(0,5) berechnen, beide Differenzen bilden und vergleichen
+- fehlerquelle: Ableitungswerte statt Differenzen vergleichen
+
+### 2018MerhoehtBAnalysisWTR2-1k (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ea · punkte 3 · format Begründung · antwort Text
+- gegeben: Abbildung 2: Graph von a(s) = 0,8/s + 2/s²; Aussage: Unterscheiden sich zwei Weiten um 2 m, ist der Wert von a zur größeren Weite halb so groß
+- gesucht: Beurteilung der Aussage
+- verfahren: Gegenbeispiel s = 10 und s = 12
+- fehlerquelle: die Aussage an nur einem Wertepaar aus dem Graphen grob bestätigen
+
+### 2018MgrundlegendBAnalysisWTR-2d (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ga · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: Kostenfunktion K(x) = x³ − 12x² + 50x + 20, 0 ≤ x ≤ 9, K(x) in 1000 Euro für die Produktion von x Kubikmetern einer Flüssigkeit; Abbildung 3 zeigt den Graphen von K; Erlösfunktion E(x) = 23x, Gewinnfunktion G = E − K (positive Werte Gewinn, negative Verlust)
+- gesucht: Nachweis, dass bei vier verkauften Kubikmetern kein Gewinn entsteht
+- verfahren: E(4) und K(4) berechnen und vergleichen
+- fehlerquelle: Rechenfehler bei K(4) = 64 − 192 + 200 + 20
+
+### 2018MerhoehtBAnalysisWTR1-2c (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ea · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: Kostenfunktion K(x) = x³ − 12x² + 50x + 20, 0 ≤ x ≤ 9, K(x) in 1000 Euro für die Produktion von x Kubikmetern einer Flüssigkeit; Abbildung 2 zeigt den Graphen von K; Erlös E(x) = 23x, Gewinn G = E − K
+- gesucht: Nachweis, dass bei vier verkauften Kubikmetern kein Gewinn entsteht
+- verfahren: E(4) und K(4) vergleichen
+- fehlerquelle: Rechenfehler bei K(4)
+
+### 2019MgrundlegendBAnalysisWTR1-2c (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ga · punkte 3 · format Rechnung|Zeichnen · antwort Text|Grafik
+- gegeben: k(x) = 1/40 · (x³ − 30x² + 288x − 815), in IR definiert; Abbildung 1 zeigt den Graphen; Laktattest: für 8,5 ≤ x ≤ 17,5 beschreibt k die Laktatkonzentration in mmol/l in Abhängigkeit von der Geschwindigkeit x in km/h; der Graph ist symmetrisch bezüglich seines Wendepunkts W(10 | 13/8); betrachtet werden Geraden durch W; g(x) = 13/40 · (x − 5), in IR definiert
+- gesucht: rechnerischer Nachweis, dass der Graph von g durch W verläuft; Gerade in Abbildung 1
+- verfahren: g(10) berechnen; Gerade über die Nullstelle 5 und W zeichnen
+- fehlerquelle: Steigung 13/40 beim Zeichnen falsch abtragen
+
+### 2019MgrundlegendBAnalysisWTR1-2b (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ga · punkte 2 · format Rechnung · antwort Term
+- gegeben: k(x) = 1/40 · (x³ − 30x² + 288x − 815), in IR definiert; Abbildung 1 zeigt den Graphen; Laktattest: für 8,5 ≤ x ≤ 17,5 beschreibt k die Laktatkonzentration in mmol/l in Abhängigkeit von der Geschwindigkeit x in km/h; der Graph ist symmetrisch bezüglich seines Wendepunkts W(10 | 13/8); betrachtet werden Geraden durch W
+- gesucht: Term für den y-Achsenabschnitt n einer Geraden durch W in Abhängigkeit von der Steigung m
+- verfahren: W in y = mx + n einsetzen
+- fehlerquelle: n = 10m + 13/8 (Vorzeichen)
+
+### 2023MerhoehtBAnalysisWTR2-2c (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ea · punkte 5 · format Kurzantwort|Begründung · antwort Text
+- gegeben: Term (Σ_{k=1}^{24} s(−20 + 1,6 · k)) · 10; Halteseile mit Abstand 16 m von den Pfeilern und untereinander
+- gesucht: Bedeutung des Terms mit Begründung
+- verfahren: Stellen als Positionen der 24 Halteseile erkennen, Funktionswerte als Seillängen, Faktor 10 als Maßstab
+- fehlerquelle: Pfeiler als Halteseile mitzählen (Stellen ±20 fehlen im Term)
+
+### 2018MerhoehtBAnalysisWTR2-1c (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ea · punkte 3 · format Begründung · antwort Text
+- gegeben: Kugelstoßen im Koordinatensystem (1 LE = 1 m, x-Achse ist der Boden): Bahn von der Ruhelage R bis zum Abstoßpunkt A durch f(x) = 0,4 + 1,6 · e^(0,5x), x ∈ [−2; 0]; Flugkurven p_a(x) = −ax² + bx + 2, a > 0, ohne Knick in A; gemessene Höhen h1 bis h5 an den Stellen x1 bis x5; Aussage: Ist |Σ (h_i − f(x_i))| klein, beschreibt das Modell die Messwerte gut
+- gesucht: Beurteilung der Aussage
+- verfahren: Gegenargument: betragsgroße Abweichungen mit verschiedenen Vorzeichen können sich in der Summe aufheben
+- fehlerquelle: Betrag der Summe mit Summe der Beträge verwechseln
+
+### 2026MerhoehtBAnalysisMMS2-1a (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ea-mms · punkte 2 · format Kurzantwort · antwort Text
+- gegeben: r(t) = 3/4 · t · (t + 4) · e^(−t/2) Wachstumsrate in cm pro Woche, t Wochen seit dem Einpflanzen; Anfangshöhe 3 cm; r(10) < 1
+- gesucht: Bedeutung von r(10) < 1 im Sachzusammenhang
+- verfahren: Argument als Zeitpunkt, Wert als Rate mit Einheit aussprechen
+- fehlerquelle: r(10) als Höhe der Pflanze deuten
+
+### 2026MerhoehtBAnalysisMMS1-1e (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ea-mms · punkte 2 · format Begründung · antwort Text
+- gegeben: g(x) = f_11(x) für 0 ≤ x ≤ 11 und g(x) = 0 für 11 < x ≤ 12, x Stunden seit 9:00 Uhr, g(x) Eingangsrate in 1/h; Aussage: das Modell steht in Einklang damit, dass ab 20:00 Uhr kein Gast mehr eingelassen wird
+- gesucht: Begründung der Aussage
+- verfahren: 20:00 Uhr als x = 11 erkennen, g(x) = 0 für x ≥ 11 als Eingangsrate null deuten
+- fehlerquelle: Uhrzeit 20:00 mit x = 20 gleichsetzen
+
+### 2018-bb-ea-B2.2f (abi-katalog.csv)
+
+jahr 2018 · papier 2018-bb-ea · punkte 9 · format Rechnung|Begründung · antwort Text|Zahl
+- gegeben: Funktionenschar f_a mit f_a(x) = (1/a)·x³ + 3x² + 5x + 2a; x ∈ IR, a ∈ IR, a ≠ 0, und die Funktion h mit h(x) = −(1/2)·x^(−3); x ∈ IR, x ≠ 0. Die zugehörigen Graphen sind G_a und K. Ein Gartenbesitzer hat in einer Ecke seines Gartens einen Teich angelegt. Der Rand des Teiches an der Wasseroberfläche wird durch Teile der Graphen G_2 und K modelliert. Im Intervall von −3 bis −2 verläuft eine Brücke über den Teich; 1 LE = 1 m. Eine Darstellung zeigt Teichoberfläche und Brücke senkrecht von oben betrachtet. Gegeben sind die Punkte P1(−4 | 0) und P2(−0,64 | 1,9). Der Teich wird kurzzeitig durch eine rechteckige Plane abgedeckt, deren Seiten parallel zu den Koordinatenachsen liegen.
+- gesucht: Nachweis, dass P1 und P2 bei entsprechender Rundung der y-Koordinaten auf beiden zur Modellierung verwendeten Graphen liegen|Seitenlängen, die die Plane mindestens haben muss
+- verfahren: Für die Punktprobe beide x-Werte sowohl in f_2 als auch in h einsetzen und die Funktionswerte auf eine Nachkommastelle runden. Für die Plane die waagerechte Seite als Differenz der beiden x-Werte nehmen und die senkrechte als Abstand zwischen dem tiefsten Randpunkt (y = 0 bei P1) und dem lokalen Hochpunkt von G_2; dazu f_2′(x) = 0 lösen und den Funktionswert berechnen.
+- fehlerquelle: für die senkrechte Seite nur die y-Werte der beiden gegebenen Punkte vergleichen und den dazwischenliegenden Hochpunkt von G_2 übersehen
+
+### 2020-A-1b (fhr-katalog.csv)
+
+jahr 2020 · papier A · punkte 2 · format Kurzantwort · antwort Zahl
+- gegeben: f(x) = (2 − x) · (x + 1) · (x + 2) beziehungsweise f(x) = −x^3 − x^2 + 4x + 4; x aus IR
+- gesucht: alle Achsenschnittpunkte von Gf
+- verfahren: die drei Nullstellen aus den Linearfaktoren ablesen und für den Schnittpunkt mit der y-Achse den Funktionswert an der Stelle null bestimmen
+- fehlerquelle: das Vorzeichen der Linearfaktoren übernehmen und x = 1 statt x = −1 angeben
+
+### 2020-be-gk-B2.2a (abi-katalog.csv)
+
+jahr 2020 · papier 2020-be-gk · punkte 2 · format Kurzantwort · antwort Zahl
+- gegeben: f(x) = −0,01 · (x − 8) · (x + 1)², x ∈ IR
+- gesucht: Nullstellen von f
+- verfahren: Faktoren null setzen
+- fehlerquelle: Vorzeichen der Nullstellen aus (x − 8) und (x + 1) vertauschen
+
+### 2019-A-1b (fhr-katalog.csv)
+
+jahr 2019 · papier A · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: f(x) = −(1/10)x^5 + (2/3)x^3; x aus IR
+- gesucht: alle Nullstellen von f
+- verfahren: x^3 ausklammern, das Produkt gleich null setzen und die verbleibende quadratische Gleichung nach x auflösen
+- fehlerquelle: nach dem Ausklammern die Nullstelle x = 0 vergessen
+
+### 2021-be-gk-B2.1b (abi-katalog.csv)
+
+jahr 2021 · papier 2021-be-gk · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: f(x) = 1/12 x³ − x² + 3x und p(x) = −x² + 3,8x − 1,36, beide in IR; Graphen G_f und G_p (Parabel)
+- gesucht: Nullstellen von f
+- verfahren: x ausklammern, quadratischen Faktor lösen
+- fehlerquelle: die Nullstelle 0 beim Teilen durch x verlieren
+
+### 2022MgrundlegendBAnalysisWTR1-1a (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ga · punkte 2 · format Kurzantwort|Begründung · antwort Zahl|Text
+- gegeben: f(x) = 1/80 x⁵ − 1/6 x³ + x, definiert in IR; Abbildung 1 zeigt G_f; W(2 | f(2)) ist Wendepunkt
+- gesucht: die Nullstelle von f mit Begründung am Term
+- verfahren: x ausklammern bzw. fehlenden konstanten Summanden nennen
+- fehlerquelle: Nullstellen des Klammerterms suchen
+
+### 2019-C-1b (fhr-katalog.csv)
+
+jahr 2019 · papier C · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: f(x) = −(1/2)x^4 + 4x^2 − 2; x aus IR
+- gesucht: alle Nullstellen von f
+- verfahren: mit z = x^2 auf eine quadratische Gleichung zurückführen, beide z-Werte bestimmen und je zwei Wurzeln zurücksubstituieren
+- fehlerquelle: beim Ausklammern des Faktors −1/2 die Vorzeichen der Koeffizienten nicht anpassen
+
+### 2020-C-1b (fhr-katalog.csv)
+
+jahr 2020 · papier C · punkte 5 · format Rechnung|Kurzantwort · antwort Zahl
+- gegeben: f(x) = x^4 − (82/9)x^2 + 1; x aus IR
+- gesucht: Nullstellen von f|Schnittpunkt von Gf mit der y-Achse
+- verfahren: mit z = x^2 auf eine quadratische Gleichung zurückführen, beide z-Werte bestimmen, rücksubstituieren und je zwei Wurzeln angeben; für den Achsenschnittpunkt den Funktionswert an der Stelle null bilden
+- fehlerquelle: nach der Rücksubstitution nur die positiven Wurzeln angeben
+
+### 2021-B-1b (fhr-katalog.csv)
+
+jahr 2021 · papier B · punkte 6 · format Rechnung · antwort Zahl
+- gegeben: f(x) = 0,2x^4 − 4,45x^2 + 20; x aus IR
+- gesucht: Koordinaten aller Schnittpunkte von Gf mit den beiden Koordinatenachsen
+- verfahren: die Gleichung durch 0,2 teilen, x^2 = z substituieren, die quadratische Gleichung lösen, beide positiven Hilfslösungen zurücksubstituieren und für den y-Achsenschnitt x = 0 einsetzen
+- fehlerquelle: nur eine der beiden Hilfslösungen zurücksubstituieren und zwei der vier Nullstellen verlieren
+
+### 2022-C-1b (fhr-katalog.csv)
+
+jahr 2022 · papier C · punkte 5 · format Rechnung · antwort Zahl
+- gegeben: f(x) = −0,25x^4 + 1,75x^2 + 2,5; x aus IR
+- gesucht: alle Schnittpunkte des Graphen mit den Koordinatenachsen
+- verfahren: für den y-Achsenschnitt x = 0 einsetzen; für die Nullstellen die Gleichung durch −0,25 teilen, x^2 = z substituieren, die quadratische Gleichung lösen, die negative Lösung verwerfen und zurücksubstituieren
+- fehlerquelle: auch die negative Lösung z1 zurücksubstituieren und die Wurzel aus einer negativen Zahl ziehen
+
+### 2024-C-1b (fhr-katalog.csv)
+
+jahr 2024 · papier C · punkte 4 · format Rechnung|Begründung · antwort Zahl|Text
+- gegeben: f(x) = (1/4)x^3 − (23/4)x + 7; x aus IR; behauptete Nullstelle x1 = 4
+- gesucht: Nachweis, dass x1 = 4 eine Nullstelle von f ist|alle weiteren Nullstellen
+- verfahren: f(4) berechnen, den Linearfaktor (x − 4) abspalten und die restliche quadratische Gleichung lösen
+- fehlerquelle: bei der Polynomdivision den Bruch 1/4 verlieren oder die fehlende quadratische Potenz im Ausgangsterm nicht berücksichtigen
+
+### 2021-A-1b (fhr-katalog.csv)
+
+jahr 2021 · papier A · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: f(x) = −(1/4)x^3 + 2x^2 − x + 8; x aus IR; x = 8 ist eine Nullstelle
+- gesucht: Nachweis, dass es außer x = 8 keine weiteren Nullstellen gibt|Anstieg des Graphen Gf an dieser Stelle
+- verfahren: den Linearfaktor x − 8 abspalten, den quadratischen Restterm null setzen und zeigen, dass die entstehende Gleichung keine reelle Lösung hat, dann x = 8 in die erste Ableitung einsetzen
+- fehlerquelle: aus x^2 = −4 die Lösungen ±2 ziehen und zwei weitere Nullstellen behaupten
+
+### 2022-B-1b (fhr-katalog.csv)
+
+jahr 2022 · papier B · punkte 5 · format Rechnung · antwort Zahl
+- gegeben: f(x) = 3x^3 − x^2 − 20x − 12; x aus IR
+- gesucht: alle Nullstellen von Gf|Schnittpunkt mit der y-Achse
+- verfahren: durch Probieren eine ganzzahlige Nullstelle finden, den zugehörigen Linearfaktor abspalten, die verbleibende quadratische Gleichung mit der Lösungsformel lösen und für den y-Achsenschnitt x = 0 einsetzen
+- fehlerquelle: vor der Lösungsformel nicht durch den Faktor 3 teilen und mit falschen Koeffizienten rechnen
+
+### 2025-C-1b (fhr-katalog.csv)
+
+jahr 2025 · papier C · punkte 3 · format Rechnung|Kurzantwort · antwort Zahl
+- gegeben: f(x) = −(1/4)x^5 + 2x^3; x aus IR; behauptete Nullstelle x = √8
+- gesucht: Nachweis, dass x = √8 eine Nullstelle von f ist|die beiden weiteren Nullstellen von f
+- verfahren: √8 in f einsetzen und null erhalten; aus der Punktsymmetrie −√8 und 0 als weitere Nullstellen angeben
+- fehlerquelle: √8 nur gerundet einsetzen und deshalb nicht genau null erhalten
+
+### 2020-be-gk-B2.1a (abi-katalog.csv)
+
+jahr 2020 · papier 2020-be-gk · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: f(x) = (6x − 3) · e^(−x), x ∈ IR
+- gesucht: Schnittpunkte des Graphen von f mit den Koordinatenachsen
+- verfahren: Ersten Faktor null setzen; f(0) berechnen
+- fehlerquelle: e^(−x) = 0 als Nullstelle ansetzen
+
+### 2021-be-gk-B2.2a (abi-katalog.csv)
+
+jahr 2021 · papier 2021-be-gk · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: f(x) = (−1/10 x² + 2x) · e^(−0,1x) und h(x) = −3/4 x · e^(−0,1x), beide in IR; Graphen G und H
+- gesucht: Schnittpunkte von G mit den Koordinatenachsen
+- verfahren: Polynomfaktor null setzen; f(0)
+- fehlerquelle: x = 0 vergessen
+
+### 2024-bebb-gk-B2.1a (abi-katalog.csv)
+
+jahr 2024 · papier 2024-bebb-gk · punkte 2 · format Kurzantwort|Rechnung · antwort Zahl
+- gegeben: f(x) = (x − 2) · e^(−x/2 + 3), definiert in IR, mit f'(x) = (−x/2 + 2) · e^(−x/2 + 3); Abbildung 1 zeigt G_f und G_f'; f hat genau eine Nullstelle
+- gesucht: die Nullstelle; Koordinaten des Schnittpunkts von G_f mit der y-Achse
+- verfahren: x − 2 = 0; f(0) berechnen
+- fehlerquelle: e³ vergessen und (0 | −2) angeben
+
+### 2022MgrundlegendBAnalysisWTR1-2a (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ga · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: Übertopf, rotationssymmetrisch mit kreisförmiger Grundfläche und Höhe 40 cm; Profillinie des Mantels im Längsschnitt h(x) = 5 − 10/x², definiert in IR ohne 0, Rotationsachse ist die y-Achse; 1 LE = 10 cm (Abbildung 2)
+- gesucht: Nachweis, dass die Grundfläche einen Durchmesser von etwa 28 cm hat
+- verfahren: Nullstellen von h, Abstand verdoppeln, mit 10 cm multiplizieren
+- fehlerquelle: Radius statt Durchmesser; Maßstab vergessen
+
+### 2023MerhoehtBAnalysisWTR2-1a (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ea · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: r(x) = 253/100 · (e^((32 − x)/11) − 1) beschreibt das rechte Abspannseil; Pfeilerabstand 400 m; 1 LE = 10 m; Brücke achsensymmetrisch zur y-Achse
+- gesucht: Nachweis, dass die Fahrbahn 640 m lang ist
+- verfahren: Nullstelle von r als Fahrbahnende, verdoppeln und umrechnen
+- fehlerquelle: Maßstab vergessen (64 m) oder nur eine Hälfte
+
+### 2024-bebb-gk-B2.2b (abi-katalog.csv)
+
+jahr 2024 · papier 2024-bebb-gk · punkte 4 · format Begründung|Rechnung · antwort Text|Zahl
+- gegeben: f(x) = 0,5x⁴ − 4x² + 3,5, x ∈ IR, Graph G_f; (1 | 0) ist Schnittpunkt mit der x-Achse
+- gesucht: Begründung ohne Rechnung, dass (−1 | 0) ebenfalls Schnittpunkt ist; die weiteren Schnittpunkte mit der x-Achse
+- verfahren: Achsensymmetrie; Substitution u = x²
+- fehlerquelle: u = 7 nicht zurücksubstituieren (x = 7 statt ±√7)
+
+### 2026MgrundlegendBAnalysisMMS2-1a (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ga-mms · punkte 3 · format Rechnung|Kurzantwort · antwort Zahl
+- gegeben: f(x) = 3/16 · (x³ + 2x² − 4x − 8) in IR, Graph G
+- gesucht: Nullstellen; Verhalten für x → −∞
+- verfahren: Gleichung lösen (Rechner oder Faktorisierung), Grad und Leitkoeffizient betrachten
+- fehlerquelle: Grenzverhalten mit dem Vorzeichen des konstanten Glieds begründen
+
+### 2022MerhoehtBAnalysisWTR3-3a (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ea · punkte 2 · format Begründung · antwort Text
+- gegeben: V(t) = 150 · sin(π/12 · t) + 300, t Minuten, V(t) Füllvolumen in Litern
+- gesucht: Begründung, dass das minimale Füllvolumen 150 Liter beträgt
+- verfahren: Minimum des Sinus einsetzen
+- fehlerquelle: Minimum bei t = 0 (V = 300) vermuten
+
+### 2019MgrundlegendBAnalysisWTR2-2b (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ga · punkte 2 · format Begründung · antwort Text
+- gegeben: CO₂-Konzentration in einem Raum: g(x) = −600 · e^(−0,5x) + 1000, in IR definiert, x Zeit in Stunden seit Beginn der Untersuchung, g(x) in ppm; Wohlfühlbedingung: Konzentration unter 1000 ppm
+- gesucht: ob die Bedingung während der Untersuchung erfüllt war
+- verfahren: g(x) < 1000 aus e^(−0,5x) > 0 folgern
+- fehlerquelle: den Grenzwert 1000 als erreicht ansehen
+
+### 2026MgrundlegendBAnalysisWTR2-1a (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ga · punkte 3 · format Begründung|Kurzantwort · antwort Text
+- gegeben: f(x) = 3e^x + 1 in IR
+- gesucht: Begründung am Term, dass Gf die x-Achse nicht schneidet, und Wertemenge
+- verfahren: e^x > 0 nutzen
+- fehlerquelle: Wertemenge mit 1 einschließen
+
+### 2023MgrundlegendAAnalysis2-a (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ga · punkte 2 · format Kurzantwort · antwort Term
+- gegeben: f(x) = e^(x²), definiert in IR
+- gesucht: Wertemenge von f
+- verfahren: x² nimmt alle Werte ab 0 an, die e-Funktion ist streng monoton steigend, also alle Werte ab e^0 = 1
+- fehlerquelle: ]0; ∞[ wie bei e^x angeben
+
+### 2023MgrundlegendBAnalysisWTR2-2c (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ga · punkte 4 · format Kurzantwort · antwort Text
+- gegeben: h(x) = −3 · sin(π/6 · x) + 14 für 0 ≤ x < 12 als alternatives Modell
+- gesucht: alle angenommenen Temperaturen; wie oft jede angenommen wird
+- verfahren: Wertebereich aus Amplitude 3 um 14, Periode 12 ausnutzen: Extremwerte einmal, alle anderen zweimal
+- fehlerquelle: Häufigkeit der Randwerte falsch (Intervall halboffen, x = 0 und x = 12 nicht doppelt)
+
+### 2019-A-1a (fhr-katalog.csv)
+
+jahr 2019 · papier A · punkte 2 · format Begründung · antwort Text
+- gegeben: f(x) = −(1/10)x^5 + (2/3)x^3; x aus IR; der Graph der Funktion heißt Gf
+- gesucht: Entscheidung, ob Gf achsensymmetrisch zur y-Achse oder punktsymmetrisch zum Koordinatenursprung ist, mit Begründung
+- verfahren: die Exponenten des Funktionsterms prüfen oder f(−x) bilden und mit f(x) vergleichen
+- fehlerquelle: das Fehlen des Absolutglieds übersehen und nur an den Exponenten entscheiden
+
+### 2024-bebb-gk-B2.2a (abi-katalog.csv)
+
+jahr 2024 · papier 2024-bebb-gk · punkte 2 · format Begründung · antwort Text
+- gegeben: f(x) = 0,5x⁴ − 4x² + 3,5, x ∈ IR, Graph G_f
+- gesucht: Nachweis, dass G_f achsensymmetrisch zur y-Achse ist
+- verfahren: Term enthält nur gerade Exponenten (oder f(−x) = f(x))
+- fehlerquelle: Konstante 3,5 als ungeraden Summanden werten
+
+### 2024MgrundlegendAAnalysis12-a (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ga · punkte 1 · format Begründung · antwort Text
+- gegeben: f(x) = x³ − 4x, definiert in IR
+- gesucht: Begründung, dass der Graph symmetrisch bezüglich des Koordinatenursprungs ist
+- verfahren: Exponenten der Potenzen im Term prüfen
+- fehlerquelle: mit dem Vorzeichen des Koeffizienten −4 argumentieren
+
+### 2023MgrundlegendBAnalysisWTR2-1a (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ga · punkte 5 · format Begründung|Rechnung · antwort Zahl
+- gegeben: f(x) = 1/27x³ − 4/3x in IR; Wendepunkt (0 | 0)
+- gesucht: Begründung der Symmetrie zum Wendepunkt; Schnittpunkte mit den Achsen
+- verfahren: Exponenten betrachten, x ausklammern
+- fehlerquelle: x² − 36 = 0 nur eine Lösung
+
+### 2023MerhoehtBAnalysisWTR2-2a (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ea · punkte 2 · format Begründung · antwort Text
+- gegeben: Tragseil im mittleren Abschnitt: s(x) = (1/8)⁶ · (x⁴ + 2560x²) + 125/256; Halteseile senkrecht mit Abstand 16 m
+- gesucht: Begründung, dass der Term zur Achsensymmetrie der Seitenansicht passt
+- verfahren: Exponenten betrachten
+- fehlerquelle: Konstante 125/256 als Störung der Symmetrie ansehen
+
+### 2022MerhoehtBAnalysisWTR2-1a (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ea · punkte 4 · format Rechnung|Begründung|Kurzantwort · antwort Text
+- gegeben: f(x) = x · e^(−x²/2 + 1/2) in IR; Graph in Abbildung 1 ohne Koordinatensystem
+- gesucht: Nachweis der Punktsymmetrie zum Ursprung; Begründung genau einer Nullstelle; Grenzwert für x → +∞
+- verfahren: f(−x) umformen, Faktor e^(…) > 0, Grenzwert über das Wachstum der e-Funktion
+- fehlerquelle: Symmetrie nur am Bild ablesen
+
+### 2022MerhoehtAAnalysis12-a (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ea · punkte 1 · format Begründung · antwort Text
+- gegeben: f_k(x) = x⁴ + (2 − k) · x³ − k · x² in IR, k reell
+- gesucht: Begründung, dass der Graph von f_2 symmetrisch zur y-Achse ist
+- verfahren: f_2 aufstellen, Exponenten prüfen
+- fehlerquelle: den x³-Term übersehen und für allgemeines k argumentieren
+
+### 2019-C-1a (fhr-katalog.csv)
+
+jahr 2019 · papier C · punkte 8 · format Begründung|Rechnung · antwort Text
+- gegeben: f(x) = −(1/2)x^4 + 4x^2 − 2; x aus IR; zu beurteilen sind vier Aussagen: (1) Gf ist achsensymmetrisch zur y-Achse, (2) S(−2; 0) ist der Schnittpunkt von Gf mit der y-Achse, (3) die Grenzwerte für x gegen minus unendlich und gegen plus unendlich sind verschieden, (4) der Punkt P(−1; 1,5) liegt auf Gf
+- gesucht: Entscheidung und Begründung für jede der vier Aussagen
+- verfahren: die Symmetrie an den geraden Exponenten oder über f(−x) prüfen; am Punkt S die x-Koordinate betrachten; beim Grenzverhalten den geraden Grad nutzen; für P den Funktionswert an der Stelle −1 berechnen
+- fehlerquelle: bei Aussage (2) nur prüfen, ob S auf dem Graphen liegt, statt die x-Koordinate zu betrachten
+
+### 2022-C-1a (fhr-katalog.csv)
+
+jahr 2022 · papier C · punkte 4 · format Begründung|Kurzantwort · antwort Text
+- gegeben: f(x) = −0,25x^4 + 1,75x^2 + 2,5; x aus IR
+- gesucht: begründete Aussage zur Symmetrie von Gf bezüglich y-Achse und Koordinatenursprung|Verhalten der Funktionswerte im Unendlichen
+- verfahren: am Term prüfen, ob nur gerade Exponenten auftreten, und das über f(−x) = f(x) begründen; dann den Summanden höchsten Grades betrachten und für beide Richtungen den Grenzwert angeben
+- fehlerquelle: das Absolutglied als ungeraden Exponenten deuten oder wegen des geraden Grades +unendlich angeben und den negativen Leitkoeffizienten übersehen
+
+### 2025-C-1a (fhr-katalog.csv)
+
+jahr 2025 · papier C · punkte 4 · format Begründung|Kurzantwort · antwort Text
+- gegeben: f(x) = −(1/4)x^5 + 2x^3; x aus IR; der Graph der Funktion heißt Gf
+- gesucht: Entscheidung mit Begründung, ob Gf achsensymmetrisch zur y-Achse oder punktsymmetrisch zum Koordinatenursprung verläuft|Verhalten der Funktionswerte im Unendlichen
+- verfahren: über f(−x) = −f(x) oder über die ausschließlich ungeraden Exponenten bei fehlendem Absolutglied auf Punktsymmetrie schließen; aus Grad 5 und negativem Leitkoeffizienten die beiden Grenzwerte angeben
+- fehlerquelle: beide Grenzwerte gleich angeben, obwohl der Grad ungerade ist
+
+### 2026-C-1b (fhr-katalog.csv)
+
+jahr 2026 · papier C · punkte 3 · format Begründung · antwort Text
+- gegeben: f(x) = −6x^5 + 18,75x^4 + 20x^3 − 90x^2; x aus IR; drei Aussagen über Gf, je wahr oder falsch zu begründen
+- gesucht: Bewertung wahr oder falsch je Aussage mit Begründung
+- verfahren: Aussage I über die Exponenten prüfen (gerade Exponenten verhindern Punktsymmetrie); Aussage II über die Zahl der Nullstellen; Aussage III über die Zahl der Monotonie- und Krümmungswechsel
+- fehlerquelle: Aussage II bejahen, weil der Ursprung Schnittpunkt beider Achsen ist
+
+### 2021MerhoehtAAnalysis21-a (iqb-katalog.csv)
+
+jahr 2021 · papier 2021-iqb-ea · punkte 2 · format Kurzantwort · antwort Zahl|Text
+- gegeben: f in IR mit zur y-Achse symmetrischem Graphen, g in IR mit zum Ursprung symmetrischem Graphen; beide Graphen haben den Hochpunkt (2; 1)
+- gesucht: je ein weiterer Extrempunkt mit Art
+- verfahren: Spiegelung des Hochpunkts
+- fehlerquelle: für g einen Hochpunkt (−2; 1) angeben
+
+### 2022MgrundlegendBAnalysisWTR1-1b (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ga · punkte 2 · format Begründung · antwort Text
+- gegeben: f(x) = 1/80 x⁵ − 1/6 x³ + x, definiert in IR; Abbildung 1 zeigt G_f; W(2 | f(2)) ist Wendepunkt
+- gesucht: Begründung ohne Rechnung, dass (−2 | f(−2)) ebenfalls Wendepunkt ist
+- verfahren: Punktsymmetrie am Term ablesen, Wendepunkt spiegeln
+- fehlerquelle: mit f'' rechnen statt zu begründen
+
+### 2024-B-2a (fhr-katalog.csv)
+
+jahr 2024 · papier B · punkte 3 · format Begründung|Zeichnen · antwort Text|Grafik
+- gegeben: Holzsteg einer Freizeitanlage aus vier gleichen wellenförmigen Bauelementen; die Seitenteile eines Bauelements werden aus einer Holzplatte gefertigt; die obere Begrenzung eines Seitenteils beschreibt f(x) = −1/16 x^4 + 1/2 x^2 + 1/2; x aus IR, die untere Begrenzung g(x) = 3/10; x aus IR; die seitlichen Begrenzungen verlaufen senkrecht durch die Hochpunkte H1 und H2 von Gf; eine Längeneinheit entspricht 0,5 m in der Wirklichkeit
+- gesucht: Begründung, dass Gf achsensymmetrisch zur y-Achse verläuft|Lage der beiden Achsen eines geeigneten kartesischen Koordinatensystems in Abbildung 2
+- verfahren: am Funktionsterm zeigen, dass nur gerade Exponenten auftreten bzw. dass f(x) = f(−x) gilt; die y-Achse senkrecht durch den Tiefpunkt in der Mitte des Seitenteils legen und die x-Achse waagerecht unterhalb der unteren Begrenzung
+- fehlerquelle: die x-Achse auf die untere Begrenzung Gg legen, obwohl g(x) = 3/10 ungleich null ist
+
+### 2018MerhoehtAAnalysis2-a (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ea · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: f(x) = 4/x² in IR ohne 0, Graph achsensymmetrisch; Gerade parallel zur x-Achse durch P(0 | p) schneidet Gf in zwei Punkten mit Abstand 1
+- gesucht: Wert von p
+- verfahren: Schnittstellen ±1/2 aus der Symmetrie, p als Funktionswert
+- fehlerquelle: Abstand 1 als Schnittstelle x = 1 lesen (p = 4)
+
+### 2018MgrundlegendBAnalysisWTR-1b (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ga · punkte 4 · format Kurzantwort|Begründung · antwort Zahl|Text
+- gegeben: f(x) = 1/8 · (x³ − 15x² + 50x), x ∈ IR; Abbildung 1 zeigt den Graphen G_f; G_f geht aus dem Graphen von g(x) = 1/8 (x³ − 25x) durch Verschiebung in positive x-Richtung hervor
+- gesucht: Betrag der Verschiebung; Begründung mit g, dass G_f symmetrisch zum Wendepunkt ist
+- verfahren: f(x) = g(x − 5) nachrechnen oder an W erkennen: Verschiebung 5; g ist punktsymmetrisch zum Ursprung, weil nur ungerade Potenzen vorkommen, also G_f zu W(5 | 0)
+- fehlerquelle: die Symmetrie von f direkt an f(x) prüfen statt über g
+
+### 2018MerhoehtBAnalysisWTR1-1c (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ea · punkte 4 · format Kurzantwort|Begründung · antwort Zahl|Text
+- gegeben: f(x) = 1/18 · (x³ − 15x² + 50x), ganzrational dritten Grades, G_f schneidet die x-Achse bei 0, 5 und 10 und geht durch (1 | 2); Abbildung 1 zeigt G_f; G_f entsteht aus dem Graphen von g(x) = 1/18 (x³ − 25x) durch Verschiebung in positive x-Richtung
+- gesucht: Betrag der Verschiebung; Begründung der Symmetrie von G_f zum Wendepunkt mithilfe von g
+- verfahren: g(x − 5) = f(x): Verschiebung 5; g punktsymmetrisch zum Ursprung, also f zu W
+- fehlerquelle: Symmetrie an f statt an g prüfen
+
+### 2026-bb-ea-A1.5a (abi-katalog.csv)
+
+jahr 2026 · papier 2026-bb-ea · punkte 1 · format Begründung · antwort Text
+- gegeben: eine in IR definierte Funktion f mit der Wertemenge [−3; 2[
+- gesucht: Begründung, dass der Graph von f nicht symmetrisch bezüglich des Koordinatenursprungs ist
+- verfahren: bei Punktsymmetrie müsste mit jedem Wert y auch −y angenommen werden; −3 wird angenommen, 3 nicht
+- fehlerquelle: mit der Achsensymmetrie argumentieren oder das offene Intervallende als Grund nennen
+
+### 2026MerhoehtAAnalysis21-a (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ea · punkte 1 · format Begründung · antwort Text
+- gegeben: eine in IR definierte Funktion f mit der Wertemenge [−3; 2[
+- gesucht: Begründung, dass der Graph von f nicht symmetrisch bezüglich des Koordinatenursprungs ist
+- verfahren: bei Punktsymmetrie müsste mit jedem Wert y auch −y angenommen werden; −3 wird angenommen, 3 nicht
+- fehlerquelle: mit der Achsensymmetrie argumentieren oder das offene Intervallende als Grund nennen
+
+### 2019MgrundlegendBAnalysisWTR1-3a (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ga · punkte 2 · format Begründung · antwort Text
+- gegeben: h(x) = 40/13 · 1/(x − 5), x ≠ 5; Abbildung 2 zeigt den Graphen von h; g(x) = 13/40 · (x − 5) aus Aufgabe 2; i(x) = 1/x, x ≠ 0
+- gesucht: Beschreibung, wie der Graph von h aus dem Graphen von i hervorgeht
+- verfahren: Verschiebung aus (x − 5), Streckfaktor 40/13 ablesen
+- fehlerquelle: Verschiebung um −5 angeben
+
+### 2021MgrundlegendBAnalysisWTR-1c (iqb-katalog.csv)
+
+jahr 2021 · papier 2021-iqb-ga · punkte 2 · format Begründung · antwort Text
+- gegeben: f(x) = −5/16 x⁴ + 5x³, in IR definiert; die Abbildung zeigt den Graphen von f; Schar h_a(x) = 5a x², a ∈ IR, in IR definiert
+- gesucht: Beschreibung, wie der Graph von h₄ aus dem Graphen von h₃ erzeugt werden kann
+- verfahren: Quotient der Vorfaktoren 20/15 als Streckfaktor in y-Richtung nennen
+- fehlerquelle: Streckung in x-Richtung mit Faktor √(3/4) angeben oder eine Verschiebung vermuten
+
+### 2026-bb-gk-B2.2f (abi-katalog.csv)
+
+jahr 2026 · papier 2026-bb-gk · punkte 2 · format Kurzantwort · antwort Text
+- gegeben: f(x) = 3e^x + 1; k(x) = 60e^{−x/400} + 20 entsteht aus f durch Streckung in y-Richtung mit Faktor 20 und weitere Veränderungen durch den Faktor −1/400
+- gesucht: diese weiteren Veränderungen
+- verfahren: Faktor im Exponenten in Spiegelung und Streckung zerlegen
+- fehlerquelle: Streckung mit Faktor 1/400 (Stauchung) statt 400
+
+### 2026MgrundlegendBAnalysisWTR1-1b (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ga · punkte 2 · format Kurzantwort · antwort Text
+- gegeben: f(x) = 1/4 x³ + 1/4; u(x) = x³
+- gesucht: Beschreibung, wie G aus dem Graphen von u entsteht
+- verfahren: Term als Streckung und Verschiebung von x³ lesen
+- fehlerquelle: Reihenfolge vertauschen (erst verschieben, dann strecken ergibt 1/4 x³ + 1/16)
+
+### 2026MgrundlegendBAnalysisWTR2-1f (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ga · punkte 2 · format Kurzantwort · antwort Text
+- gegeben: f(x) = 3e^x + 1; k(x) = 60e^{−x/400} + 20 entsteht aus f durch Streckung in y-Richtung mit Faktor 20 und weitere Veränderungen durch den Faktor −1/400
+- gesucht: diese weiteren Veränderungen
+- verfahren: Faktor im Exponenten in Spiegelung und Streckung zerlegen
+- fehlerquelle: Streckung mit Faktor 1/400 (Stauchung) statt 400
+
+### 2026MerhoehtBAnalysisWTR1-1c (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ea · punkte 2 · format Kurzantwort · antwort Text
+- gegeben: Scharfunktion mit Term 1/4 (x + 1)³; G_0 Graph von 1/4 x³ + 1/4
+- gesucht: Verschiebungen, die den Graphen aus G_0 erzeugen
+- verfahren: Term als verschobenes 1/4 x³ lesen
+- fehlerquelle: Verschiebung nach rechts
+
+### 2026MerhoehtAAnalysis11-a (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ea · punkte 1 · format Kurzantwort · antwort Text
+- gegeben: k > 0; f(x) = 2e^(k · x) und g(x) = 2e^(−k · x), beide in IR definiert
+- gesucht: wie der Graph von f aus dem Graphen von g erzeugt werden kann
+- verfahren: f(x) = g(−x) erkennen, also Spiegelung an der y-Achse
+- fehlerquelle: Spiegelung an der x-Achse angeben, weil nur das Vorzeichen wechselt
+
+### 2019MgrundlegendAAnalysis2-a (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ga · punkte 1 · format Zeichnen · antwort Grafik
+- gegeben: f(x) = sin(x) − 2 in IR; Koordinatensystem mit Gitter für −π ≤ x ≤ 4π
+- gesucht: Skizze des Graphen von f im Koordinatensystem
+- verfahren: Sinuskurve um 2 nach unten verschoben einzeichnen
+- fehlerquelle: Kurve um 2 nach rechts statt nach unten verschieben
+
+### 2025MgrundlegendAAnalysis21-a (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ga · punkte 1 · format Zeichnen · antwort Grafik
+- gegeben: f(x) = x^4 − x^2, definiert in IR, Graph und Quadrat mit Seitenlänge 2 symmetrisch zu beiden Achsen in der Abbildung; der Graph wird um 1 in y-Richtung verschoben
+- gesucht: Skizze des verschobenen Graphen in der Abbildung
+- verfahren: jeden Punkt des Graphen um 1 nach oben setzen: Hochpunkt (0; 1) auf der oberen Quadratseite, Tiefpunkte bei (±0,7; 0,75), Punkte (±1; 1) in den oberen Ecken
+- fehlerquelle: den Graphen nach rechts statt nach oben verschieben
+
+### 2018MgrundlegendAAnalysis11-a (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ga · punkte 2 · format Zeichnen · antwort Grafik
+- gegeben: f(x) = 2/x² + 1 in IR ohne 0
+- gesucht: Skizze des Graphen von f
+- verfahren: Graph von 1/x² transformieren, Asymptote und Pol beachten
+- fehlerquelle: Asymptote y = 0 statt y = 1 zeichnen
+
+### 2024MgrundlegendBAnalysisWTR1-1d (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ga · punkte 4 · format Begründung|Zeichnen · antwort Grafik
+- gegeben: h_k(x) = k · (x² − 1) · e^x, k > 0; h_2 = f
+- gesucht: Begründung ohne Rechnung, dass der Graph von h1 einen Tiefpunkt im selben Quadranten wie der von h2 hat; Skizze von h1 in Abbildung 1
+- verfahren: h1 als halbierte h2 erkennen, Graph stauchen
+- fehlerquelle: Streckung als Verschiebung zeichnen
+
+### 2021MgrundlegendAAnalysis13-b (iqb-katalog.csv)
+
+jahr 2021 · papier 2021-iqb-ga · punkte 2 · format Kurzantwort · antwort Term
+- gegeben: f(x) = sin(x) + 1; Graph von g entsteht durch Strecken mit Faktor 0,2 in x-Richtung und Verschieben um 3 in positive y-Richtung
+- gesucht: Funktionsterm von g
+- verfahren: f(5x) + 3 vereinfachen
+- fehlerquelle: sin(0,2x) ansetzen (Faktor statt Kehrwert)
+
+### 2023MerhoehtAAnalysis21-a (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ea · punkte 2 · format Kurzantwort · antwort Zahl
+- gegeben: Graph von f mit den einzigen Extrempunkten (−1; 1) und (0; 0) in der Abbildung; g(x) = −f(x − 3)
+- gesucht: Koordinaten des Tiefpunkts des Graphen von g
+- verfahren: der Hochpunkt (−1; 1) von f wird durch Spiegelung zum Tiefpunkt (−1; −1) und durch Verschiebung um 3 nach rechts zu (2; −1)
+- fehlerquelle: um 3 nach links verschieben oder den Tiefpunkt (0; 0) von f verwenden (der wird Hochpunkt (3; 0))
+
+### 2024MgrundlegendAAnalysis11-b (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ga · punkte 3 · format Kurzantwort · antwort Text|Zahl
+- gegeben: Graph G_f mit Tiefpunkt (0; 0) in der Abbildung; u(x) = −f(x) + 2, definiert in IR
+- gesucht: Beschreibung, wie der Graph von u aus G_f entsteht|Koordinaten des Hochpunkts des Graphen von u
+- verfahren: Spiegelung an der x-Achse, dann Verschiebung um 2 nach oben; der Tiefpunkt (0; 0) von f wird zum Hochpunkt (0; 2)
+- fehlerquelle: erst verschieben und dann spiegeln und den Hochpunkt (0; −2) erhalten
+
+### 2024-bebb-gk-A1.7b (abi-katalog.csv)
+
+jahr 2024 · papier 2024-bebb-gk · punkte 3 · format Rechnung · antwort Term
+- gegeben: f(x) = e^(0,5x) − e; G wird entlang der x-Achse so verschoben, dass er durch den Ursprung verläuft; es entsteht der Graph von h
+- gesucht: eine Gleichung der Funktion h
+- verfahren: Nullstelle 2 bestimmen, Graph um 2 nach links schieben
+- fehlerquelle: h(x) = f(x − 2) (Verschiebung nach rechts)
+
+### 2024MgrundlegendBAnalysisWTR2-1d (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ga · punkte 4 · format Kurzantwort|Rechnung · antwort Zahl
+- gegeben: g(x) = a · f(b · x) mit a, b > 0; (10 | 10) auf dem Graphen von f wird zu (12 | 12) auf dem Graphen von g
+- gesucht: Bedeutung von a und b und ihre Werte
+- verfahren: Streckungen deuten, x- und y-Koordinate getrennt zuordnen
+- fehlerquelle: b = 6/5 (Streckfaktor mit b statt 1/b)
+
+### 2023-bebb-gk-B2.2j (abi-katalog.csv)
+
+jahr 2023 · papier 2023-bebb-gk · punkte 4 · format Rechnung|Kurzantwort · antwort Zahl|Text
+- gegeben: Die Funktion f mit f(x) = x³ − 12x² + 45x − 50, x ∈ IR, auch schreibbar als f(x) = (x − 5) · (x² − 7x + 10). h(x) = 4x³ − 48x² + 180x + 20 entsteht aus f durch h(x) = c · (f(x) + d).
+- gesucht: Werte der Parameter c und d; Beschreibung, wie der Graph von h aus dem Graphen von f entsteht
+- verfahren: c · x³ = 4x³ ⇒ c = 4; konstantes Glied 4 · (−50 + d) = 20 ⇒ d = 55 (Kontrolle: 4 · (x³ − 12x² + 45x + 5) = h(x)).
+- fehlerquelle: Reihenfolge vertauschen (erst strecken, dann um 55 verschieben ergäbe + 220)
+
+### 2024-bebb-gk-B2.2f (abi-katalog.csv)
+
+jahr 2024 · papier 2024-bebb-gk · punkte 5 · format Rechnung · antwort Zahl
+- gegeben: f(x) = 0,5x⁴ − 4x² + 3,5, x ∈ IR, Graph G_f; h entsteht durch Stauchung von G_f entlang der y-Achse mit dem Faktor a; Graph von h und x-Achse begrenzen für −1 ≤ x ≤ 1 eine Fläche mit Inhalt 1
+- gesucht: Wert von a
+- verfahren: a · ∫ von −1 bis 1 f(x) dx = 1 nach a auflösen
+- fehlerquelle: Stauchung als Faktor im Argument (f(ax)) ansetzen
+
+### 2024MgrundlegendAAnalysis13-b (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ga · punkte 2 · format Begründung · antwort Text
+- gegeben: g(x) = 2 · e^x − 2 mit g'(0) = 2, h(x) = e^x + 1; Aussage: es gibt eine Verschiebung in y-Richtung, durch die der Graph von h aus dem Graphen von g erzeugt werden kann
+- gesucht: Beurteilung der Aussage
+- verfahren: eine Verschiebung in y-Richtung lässt die Steigung an jeder Stelle unverändert; an der Stelle 0 haben g und h die Steigungen 2 und 1
+- fehlerquelle: aus h(0) − g(0) = 2 auf eine Verschiebung um 2 schließen
+
+### 2026-bb-ea-B2.2f (abi-katalog.csv)
+
+jahr 2026 · papier 2026-bb-ea · punkte 3 · format Rechnung|Kurzantwort · antwort Zahl
+- gegeben: h(x) = −π/4 · cos(π/3 · x) + 1, x Zeit in Sekunden, h(x) Durchflussrate in Litern je Sekunde; Graph in der Abbildung
+- gesucht: Anzahl der Maxima in der ersten Minute und ein Zeitpunkt stärkster Zunahme
+- verfahren: Periode 6, 60/6 Maxima; Wendestelle im steigenden Ast
+- fehlerquelle: Maximum bei 60 mitzählen oder Maximum als stärkste Zunahme nennen
+
+### 2026-bb-ea-B2.2h (abi-katalog.csv)
+
+jahr 2026 · papier 2026-bb-ea · punkte 3 · format Zeichnen · antwort Grafik
+- gegeben: andere Düse: maximale Rate 2 Liter je Sekunde, Abstand der Maxima 1,5-mal so groß wie bei h (also 9 s)
+- gesucht: möglicher Graph in der Abbildung
+- verfahren: periodische Kurve mit Maximum 2 und Periode 9 einzeichnen
+- fehlerquelle: Periode 1,5 s statt 9 s
+
+### 2026MgrundlegendBAnalysisWTR1-2b (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ga · punkte 3 · format Rechnung|Kurzantwort · antwort Zahl
+- gegeben: h(x) = 1/6 · cos(2π/3 · x) + 8/3; ein Atemzyklus ist ein vollständiger Aus- und Einatmungsvorgang; Abbildung des Graphen
+- gesucht: Anzahl der Atemzyklen pro Minute und ein Zeitpunkt stärkster Zunahme des Luftvolumens
+- verfahren: Periode berechnen und auf 60 s beziehen, Wendestelle im steigenden Ast ablesen
+- fehlerquelle: Maximum statt Wendestelle als stärkste Zunahme nennen
+
+### 2026MerhoehtBAnalysisWTR1-2a (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ea · punkte 3 · format Rechnung|Kurzantwort · antwort Zahl
+- gegeben: h(x) = −π/4 · cos(π/3 · x) + 1, x Zeit in Sekunden, h(x) Durchflussrate in Litern je Sekunde; Graph in der Abbildung
+- gesucht: Anzahl der Maxima in der ersten Minute und ein Zeitpunkt stärkster Zunahme
+- verfahren: Periode 6, 60/6 Maxima; Wendestelle im steigenden Ast
+- fehlerquelle: Maximum bei 60 mitzählen oder Maximum als stärkste Zunahme nennen
+
+### 2026MerhoehtBAnalysisWTR1-2c (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ea · punkte 3 · format Zeichnen · antwort Grafik
+- gegeben: andere Düse: maximale Rate 2 Liter je Sekunde, Abstand der Maxima 1,5-mal so groß wie bei h (also 9 s)
+- gesucht: möglicher Graph in der Abbildung
+- verfahren: periodische Kurve mit Maximum 2 und Periode 9 einzeichnen
+- fehlerquelle: Periode 1,5 s statt 9 s
+
+### 2023-bebb-gk-B2.1i (abi-katalog.csv)
+
+jahr 2023 · papier 2023-bebb-gk · punkte 2 · format Kurzantwort · antwort Term
+- gegeben: Die in IR definierte Funktion f mit f(x) = 0,5 · (x² − 4) · e^x, ihr Graph G; die erste Ableitung ist f'(x) = (0,5x² + x − 2) · e^x. Abbildung 2 zeigt die Draufsicht einer symmetrischen Tischplatte; die Randlinie im III. Quadranten ist der dort verlaufende Teil von G, die Randlinien im I., II. und IV. Quadranten sind Teile der Graphen der Funktionen g, h und k; 1 LE = 15 cm.
+- gesucht: Funktionsgleichungen von zwei dieser drei Funktionen
+- verfahren: Die Figur ist symmetrisch zu beiden Achsen: IV. Quadrant durch Spiegelung an der y-Achse, II. Quadrant durch Spiegelung an der x-Achse, I. Quadrant durch beides.
+- fehlerquelle: bei der Spiegelung an der y-Achse nur das Vorzeichen des Terms ändern
+
+### 2025-bebb-gk-B2.1c (abi-katalog.csv)
+
+jahr 2025 · papier 2025-bebb-gk · punkte 3 · format Begründung|Kurzantwort · antwort Text|Zahl
+- gegeben: Windrad: G_f und g: y = x/2 auf [−5; 5], um 90° gegen den Uhrzeigersinn um den Ursprung gedreht; gedrehte Gerade g*, A(5 | 2,5) Schnittpunkt von G_f und g auf dem Kreis
+- gesucht: Begründung, dass g*(x) = −2x; Koordinaten von A*
+- verfahren: Drehung um 90° bildet (x; y) auf (−y; x) ab: Steigung wird −1/m; A* = (−2,5 | 5)
+- fehlerquelle: Drehrichtung vertauschen (A*(2,5 | −5))
+
+### 2023MerhoehtBAnalysisWTR2-1b (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ea · punkte 3 · format Kurzantwort · antwort Term
+- gegeben: r wie in a für das rechte Abspannseil; linkes Abspannseil spiegelbildlich
+- gesucht: Term ℓ(x) für das linke Abspannseil und sein Intervall
+- verfahren: Spiegelung an der y-Achse, Intervall aus Pfeiler und Fahrbahnende
+- fehlerquelle: Intervall [−32; 32] oder Spiegelung an der x-Achse
+
+### 2022MgrundlegendAAnalysis13 (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ga · punkte 5 · format Rechnung · antwort Text|Zahl
+- gegeben: g: x ↦ 1/(x − 1)² − 5 in IR ohne 1; f: x ↦ 1/x² in IR ohne 0; der Graph von g entsteht aus dem von f durch Verschiebung in x- und in y-Richtung
+- gesucht: die beiden Verschiebungen; Term von f'; Wert g'(2) mit diesem Term
+- verfahren: Verschiebungen am Term ablesen; f als x^(−2) ableiten; g'(2) = f'(2 − 1), da die Verschiebung in y-Richtung die Steigung nicht ändert
+- fehlerquelle: g'(2) = f'(2) = −1/4 rechnen (Verschiebung in x-Richtung vergessen)
+
+### 2022MgrundlegendBAnalysisWTR2-1e (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ga · punkte 4 · format Rechnung · antwort Text
+- gegeben: f(x) = (x + 2) · e^(−x), definiert in IR, mit f'(x) = −(x + 1) · e^(−x); Graph von g entsteht aus dem Graphen von f durch Spiegelung an der x-Achse, Streckung mit 1/e in y-Richtung und Verschiebung um 1 in positive x-Richtung
+- gesucht: Nachweis, dass g(x) = f'(x)
+- verfahren: Transformationen nacheinander in den Term übersetzen und vereinfachen
+- fehlerquelle: Verschiebung nach rechts als f(x + 1) ansetzen; Faktor e aus e^(−x + 1) vergessen
+
+### 2022MgrundlegendBAnalysisWTR2-1f (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ga · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: f(x) = (x + 2) · e^(−x), definiert in IR, mit f'(x) = −(x + 1) · e^(−x); g(x) = f'(x) entsteht aus f durch Spiegelung, Streckung mit 1/e und Verschiebung um 1; Gleichung ∫₀² f(x) dx = k · ∫ₐᵇ g(x) dx
+- gesucht: reelle Zahlen a, b und k
+- verfahren: Jede Transformation in Faktor oder Grenzverschiebung übersetzen
+- fehlerquelle: Verschiebung nicht in die Grenzen übertragen; k = −1/e statt −e
+
+### 2026MerhoehtAAnalysis21-b (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ea · punkte 4 · format Kurzantwort|Begründung · antwort Term|Text
+- gegeben: f in IR definiert mit Wertemenge [−3; 2[; h(x) = −2 · f(x − 5) + 1, definiert in IR
+- gesucht: Wertemenge von h mit Begründung
+- verfahren: die Verschiebung um 5 in x-Richtung ändert die Wertemenge nicht; Spiegelung an der x-Achse und Streckung mit 2 machen aus [−3; 2[ das Intervall ]−4; 6]; die Verschiebung um 1 nach oben liefert ]−3; 7]
+- fehlerquelle: die Verschiebung um 5 auf die Wertemenge anwenden oder die Intervallenden nicht vertauschen
+
+### 2023MgrundlegendBAnalysisWTR2-1e (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ga · punkte 4 · format Kurzantwort|Begründung · antwort Zahl
+- gegeben: Graph von f; drei Schritte: Spiegeln an der x-Achse, Verschieben um 6 in positive x-Richtung, Verschieben um 14 in positive y-Richtung, in allen möglichen Reihenfolgen
+- gesucht: Anzahl der verschiedenen neuen Graphen mit Begründung
+- verfahren: Erkennen, dass nur die Reihenfolge von Spiegelung und y-Verschiebung das Ergebnis ändert; am Wendepunkt nachvollziehen
+- fehlerquelle: alle sechs Reihenfolgen als verschieden zählen
+
+### 2022MgrundlegendAAnalysis12-b (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ga · punkte 2 · format Rechnung · antwort Text
+- gegeben: g: x ↦ 3^x in IR; Graph um 2 in negative x-Richtung verschoben
+- gesucht: Nachweis, dass der verschobene Graph auch durch eine Streckung des Graphen von g in y-Richtung entsteht
+- verfahren: g(x + 2) mit dem Potenzgesetz umformen
+- fehlerquelle: Verschiebung nach links als g(x − 2) ansetzen
+
+### 2022MerhoehtBAnalysisWTR3-1b (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ea · punkte 4 · format Rechnung · antwort Term
+- gegeben: Abnahme der Füllhöhe um 25 cm ändert M vom Ausgangswert zum k-fachen
+- gesucht: Nachweis, dass k unabhängig von der Ausgangshöhe ist; Wert von k
+- verfahren: M(h − 25) umformen und als Vielfaches von M(h) schreiben
+- fehlerquelle: k = e^(−1) durch Verschiebung in die falsche Richtung
+
+### 2018MgrundlegendAAnalysis12-b (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ga · punkte 2 · format Kurzantwort · antwort Term
+- gegeben: f(x) = 3 − 2 sin x in IR
+- gesucht: Wertebereich von f
+- verfahren: Wertebereich von sin durch Faktor −2 und Verschiebung 3 transformieren
+- fehlerquelle: [−5; −1] durch falsches Vorzeichen
+
+### 2019-A-1f (fhr-katalog.csv)
+
+jahr 2019 · papier A · punkte 3 · format Zeichnen · antwort Grafik
+- gegeben: f(x) = −(1/10)x^5 + (2/3)x^3; x aus IR; das Intervall −3 <= x <= 3
+- gesucht: Zeichnung von Gf im angegebenen Intervall
+- verfahren: Nullstellen, Extrempunkte, Sattelstelle und Wendestellen eintragen, die Randwerte berechnen und den Graphen durchziehen
+- fehlerquelle: den steilen Verlauf zum Intervallrand hin zu flach zeichnen
+
+### 2019-C-1e (fhr-katalog.csv)
+
+jahr 2019 · papier C · punkte 3 · format Zeichnen · antwort Grafik
+- gegeben: f(x) = −(1/2)x^4 + 4x^2 − 2; x aus IR; das Intervall −3 <= x <= 3
+- gesucht: Zeichnung von Gf im angegebenen Intervall
+- verfahren: Nullstellen, Extrem- und Wendepunkte eintragen, die Randwerte berechnen und den Graphen durchziehen
+- fehlerquelle: den Tiefpunkt im Ursprung statt bei −2 eintragen
+
+### 2020-A-1e (fhr-katalog.csv)
+
+jahr 2020 · papier A · punkte 3 · format Zeichnen · antwort Grafik
+- gegeben: f(x) = −x^3 − x^2 + 4x + 4; x aus IR; das Intervall −2,5 <= x <= 2,5
+- gesucht: Zeichnung von Gf im angegebenen Intervall
+- verfahren: die zuvor berechneten Achsenschnittpunkte, Extrem- und Wendepunkte eintragen, bei Bedarf Zwischenwerte ergänzen und den Graphen durchziehen
+- fehlerquelle: die Randwerte nicht berechnen und den Graphen am Intervallrand willkürlich auslaufen lassen
+
+### 2021-A-1f (fhr-katalog.csv)
+
+jahr 2021 · papier A · punkte 3 · format Zeichnen · antwort Grafik
+- gegeben: f(x) = −(1/4)x^3 + 2x^2 − x + 8; x aus IR; zu zeichnen im Intervall −2 <= x <= 8
+- gesucht: Graph von f im angegebenen Intervall
+- verfahren: die Nullstelle, den Tiefpunkt, den Wendepunkt und den Hochpunkt eintragen, den y-Achsenschnitt bei 8 ergänzen und den Verlauf durchzeichnen
+- fehlerquelle: die x-Achse nur bis 5 einteilen und die Nullstelle bei x = 8 nicht mehr darstellen
+
+### 2025-C-1e (fhr-katalog.csv)
+
+jahr 2025 · papier C · punkte 3 · format Zeichnen · antwort Grafik
+- gegeben: f(x) = −(1/4)x^5 + 2x^3; x aus IR; Zeichenintervall −3 <= x <= 3
+- gesucht: Graph von Gf im Intervall −3 <= x <= 3 mit geeigneter Achseneinteilung
+- verfahren: die in den Teilaufgaben b und d berechneten Punkte eintragen, mit weiteren Funktionswerten ergänzen und den Verlauf durchzeichnen
+- fehlerquelle: beide Achsen gleich einteilen, obwohl die Funktionswerte bis ±8,41 reichen
+
+### 2020-C-1e (fhr-katalog.csv)
+
+jahr 2020 · papier C · punkte 3 · format Zeichnen · antwort Grafik
+- gegeben: f(x) = x^4 − (82/9)x^2 + 1; x aus IR; das Intervall −3 <= x <= 3
+- gesucht: Zeichnung von Gf im angegebenen Intervall
+- verfahren: die berechneten Nullstellen, Punkte mit waagerechter Tangente und Wendepunkte eintragen, eine für Werte bis −19,75 geeignete Achseneinteilung wählen und den Graphen durchziehen
+- fehlerquelle: beide Achsen gleich einteilen und den Graphen dadurch nicht mehr auf das Blatt bekommen
+
+### 2021-B-1e (fhr-katalog.csv)
+
+jahr 2021 · papier B · punkte 3 · format Zeichnen · antwort Grafik
+- gegeben: f(x) = 0,2x^4 − 4,45x^2 + 20; x aus IR; zu zeichnen im Intervall −4,5 <= x <= 4,5
+- gesucht: Graph von f im angegebenen Intervall
+- verfahren: die berechneten Nullstellen, den Hochpunkt auf der y-Achse, die beiden Tiefpunkte und die Wendepunkte eintragen und den symmetrischen Verlauf durchzeichnen
+- fehlerquelle: den Hochpunkt bei y = 20 und die Tiefpunkte bei y = −4,75 mit gleicher Achseneinteilung nicht unterbringen
+
+### 2022-B-1e (fhr-katalog.csv)
+
+jahr 2022 · papier B · punkte 3 · format Zeichnen · antwort Grafik
+- gegeben: f(x) = 3x^3 − x^2 − 20x − 12; x aus IR; zu zeichnen im Intervall −2 <= x <= 3; auf eine geeignete Achseneinteilung ist zu achten
+- gesucht: Graph von f im angegebenen Intervall
+- verfahren: die berechneten Nullstellen, den Hochpunkt, den Wendepunkt und den Tiefpunkt eintragen und den Verlauf durchzeichnen, dabei die y-Achse wegen des Wertebereichs von rund −34 bis rund 6 gröber einteilen als die x-Achse
+- fehlerquelle: beide Achsen gleich einteilen und den Tiefpunkt bei −34,27 nicht mehr auf das Blatt bekommen
+
+### 2022-C-1f (fhr-katalog.csv)
+
+jahr 2022 · papier C · punkte 3 · format Zeichnen · antwort Grafik
+- gegeben: f(x) = −0,25x^4 + 1,75x^2 + 2,5; x aus IR; zu zeichnen im Intervall −3 <= x <= 3
+- gesucht: Graph von f im angegebenen Intervall
+- verfahren: die berechneten Achsenschnittpunkte, Extrem- und Wendepunkte eintragen, die Randwerte ergänzen und den Verlauf durchzeichnen
+- fehlerquelle: die Achseneinteilung so wählen, dass der Bereich bis y = 5,56 nicht auf das Blatt passt
+
+### 2024-C-1f (fhr-katalog.csv)
+
+jahr 2024 · papier C · punkte 3 · format Zeichnen · antwort Grafik
+- gegeben: f(x) = (1/4)x^3 − (23/4)x + 7; x aus IR; Intervall −6 <= x <= 6
+- gesucht: Graph von Gf im Intervall −6 <= x <= 6 mit geeigneter Achseneinteilung
+- verfahren: die bekannten Nullstellen, Extrem- und Wendepunkte eintragen, bei Bedarf eine Wertetabelle ergänzen und den Graphen mit gestauchter y-Achse zeichnen
+- fehlerquelle: beide Achsen gleich einteilen und den Graphen dadurch nicht mehr auf das Blatt bringen
+
+### 2025-A-1g (fhr-katalog.csv)
+
+jahr 2025 · papier A · punkte 3 · format Zeichnen · antwort Grafik
+- gegeben: f(x) = −3x^3 + 5x^2 + 8x + 12; x aus IR; Intervall −2 <= x <= 3
+- gesucht: Graph von Gf im Intervall −2 <= x <= 3 mit geeigneter Achseneinteilung
+- verfahren: eine Wertetabelle anlegen oder die bekannten Extrempunkte und die Nullstelle nutzen und den Graphen mit gestauchter y-Achse zeichnen
+- fehlerquelle: beide Achsen gleich einteilen und den Graphen dadurch nicht mehr auf das Blatt bringen
+
+### 2026-B-1f (fhr-katalog.csv)
+
+jahr 2026 · papier B · punkte 3 · format Zeichnen · antwort Grafik
+- gegeben: f(x) = 0,4x^4 − 3,5x^2 + 5; x aus IR; Zeichenintervall −3 <= x <= 3
+- gesucht: Graph von Gf im Intervall −3 <= x <= 3
+- verfahren: die in den Teilaufgaben b, d und e berechneten Punkte eintragen, mit weiteren Funktionswerten ergänzen und den Verlauf durchzeichnen
+- fehlerquelle: die y-Achse so grob einteilen, dass die Tiefpunkte bei −2,66 nicht mehr erkennbar sind
+
+### 2019MgrundlegendBAnalysisWTR2-2c (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ga · punkte 2 · format Zeichnen · antwort Grafik
+- gegeben: CO₂-Konzentration in einem Raum: g(x) = −600 · e^(−0,5x) + 1000, in IR definiert, x Zeit in Stunden seit Beginn der Untersuchung, g(x) in ppm
+- gesucht: grafische Darstellung der Konzentration für die ersten zehn Stunden
+- verfahren: Koordinatensystem mit passender Skalierung, Graph von g zeichnen
+- fehlerquelle: y-Achse nicht bei 0 beginnen lassen ohne Kennzeichnung
+
+### 2021MgrundlegendAAnalysis12-a (iqb-katalog.csv)
+
+jahr 2021 · papier 2021-iqb-ga · punkte 2 · format Begründung · antwort Text
+- gegeben: f(x) = x³ − x in IR; Graphen I, II, III, einer stellt f dar
+- gesucht: die Graphen, die nicht infrage kommen, mit Begründung
+- verfahren: Vorzeichen eines Funktionswerts und Nichtkonstanz der Steigung prüfen
+- fehlerquelle: nur die Nullstellen prüfen (alle drei passen)
+
+### 2022MgrundlegendBAnalysisWTR2-1c (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ga · punkte 2 · format Kurzantwort|Begründung · antwort Text
+- gegeben: f(x) = (x + 2) · e^(−x), definiert in IR, mit f'(x) = −(x + 1) · e^(−x); Abbildungen I, II, III
+- gesucht: die Abbildung, die den Graphen von f zeigt, mit Begründung
+- verfahren: Einen Funktionswert (etwa f(0) = 2 oder f(1) ≈ 1,1) mit den Abbildungen vergleichen
+- fehlerquelle: nur f(0) = 2 prüfen (schließt III aus, nicht I)
+
+### 2026MgrundlegendBAnalysisMMS2-1b (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ga-mms · punkte 3 · format Begründung|Kurzantwort · antwort Zahl
+- gegeben: f wie in a; Tiefpunkt von G bei x = 2/3
+- gesucht: Begründung eines Hochpunkts; seine Koordinaten
+- verfahren: Über den Grad argumentieren, Hochpunkt aus f' = 0 oder aus der doppelten Nullstelle
+- fehlerquelle: Hochpunkt nur berechnen, Existenz nicht begründen
+
+### 2026MgrundlegendAAnalysis12-b (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ga · punkte 3 · format Begründung · antwort Text
+- gegeben: f(x) = sin x mit den Extrempunkten A(π/2; 1) und B(3π/2; −1); g(x) = 2 · sin(1/3 · x), definiert in IR; betrachtet wird die Strecke zwischen zwei direkt aufeinanderfolgenden Extrempunkten des Graphen von g
+- gesucht: Untersuchung, ob diese Strecke kürzer als die Strecke AB ist
+- verfahren: den Graphen von g als Streckung des Graphen von f in x-Richtung mit Faktor 3 und in y-Richtung mit Faktor 2 erkennen; beide Faktoren größer als 1, also wächst die waagerechte und die senkrechte Differenz der Extrempunkte, die Strecke ist länger
+- fehlerquelle: den Faktor 1/3 als Stauchung in x-Richtung deuten
+
+### 2026-bb-gk-A1.4b (abi-katalog.csv)
+
+jahr 2026 · papier 2026-bb-gk · punkte 3 · format Begründung · antwort Text
+- gegeben: f(x) = sin x mit den Extrempunkten A(π/2; 1) und B(3π/2; −1); g(x) = 2 · sin(1/3 · x), definiert in IR; betrachtet wird die Strecke zwischen zwei direkt aufeinanderfolgenden Extrempunkten des Graphen von g
+- gesucht: Untersuchung, ob diese Strecke kürzer als die Strecke AB ist
+- verfahren: den Graphen von g als Streckung des Graphen von f in x-Richtung mit Faktor 3 und in y-Richtung mit Faktor 2 erkennen; beide Faktoren größer als 1, also wächst die waagerechte und die senkrechte Differenz der Extrempunkte, die Strecke ist länger
+- fehlerquelle: den Faktor 1/3 als Stauchung in x-Richtung deuten
+
+### 2025MgrundlegendBAnalysisWTR1-2a (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ga · punkte 4 · format Kurzantwort · antwort Zahl
+- gegeben: r(x) Quotient aus tatsächlicher Reichweite und Nennreichweite bei Außentemperatur x in °C, −12 ≤ x ≤ 36; Graph in Abbildung 2
+- gesucht: Koordinaten des Hochpunkts und ihre Bedeutung
+- verfahren: Ablesen, beide Koordinaten deuten
+- fehlerquelle: 1,2 als Reichweite in km deuten
+
+### 2025MerhoehtBAnalysisWTR1-2a (iqb-katalog.csv)
+
+jahr 2025 · papier 2025-iqb-ea · punkte 4 · format Kurzantwort · antwort Zahl
+- gegeben: r(x) Quotient aus tatsächlicher Reichweite und Nennreichweite bei Außentemperatur x in °C, −12 ≤ x ≤ 36; Graph in Abbildung 2
+- gesucht: Koordinaten des Hochpunkts und ihre Bedeutung
+- verfahren: Ablesen, beide Koordinaten deuten
+- fehlerquelle: 1,2 als Reichweite in km deuten
+
+### 2023MgrundlegendAAnalysis11-a (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ga · punkte 1 · format Begründung · antwort Text
+- gegeben: Graph einer in IR definierten linearen Funktion f in der Abbildung
+- gesucht: Begründung, dass f(x) = 1/2 x + 5 gilt
+- verfahren: Achsenschnittpunkte (−10; 0) und (0; 5) ablesen, daraus Steigung und Achsenabschnitt
+- fehlerquelle: die Steigung als 10/5 = 2 ablesen
+
+Nur außerhalb von „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ genannt, nicht aufgenommen: 2020-C-1a, 2021-B-1a, 2023-A-1a, 2024MerhoehtBAnalysisWTR2-2b, 2021-be-gk-B2.1j
 
 ## 3 Maßstab (unterrichtsblatt.md, wortgleich)
 

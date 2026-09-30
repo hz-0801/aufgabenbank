@@ -1,9 +1,9 @@
 # Mappe: daten
 
 Eintrag: hz-0801/mathe-nachhilfe, katalog/daten.md
-Katalog-Commit: 72a01d36d39f9def19828a6f3a5cc5292cdd659f (2026-09-27T22:14:54+00:00, „katalog: Befund 3–8, Vorstufe prozentrechnung E4“; ermittelt über git log (GitHub-API gesperrt))
+Katalog-Commit: 72a01d36d39f9def19828a6f3a5cc5292cdd659f (2026-09-27T22:14:54Z, „katalog: Befund 3–8, Vorstufe prozentrechnung E4“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-28 02:02 UTC
+Datum: 2026-09-30 08:05 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -207,9 +207,9 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 192  Zielmarke (Sek II): Einheit 1 – fhr: relative Häufigkeiten zweier Städte mit gemeinsamem Diagramm (2025-C-3b, fünf Punkte, Niveau II) und die Hochrechnung mit Sicherheitsmenge (2024-C-3b, Niveau III); iqb: die relative Häufigkeit aus der Restanzahl (2023MgrundlegendBStochastikWTR2-2a, Niveau I). Einheit 4 – fhr: Median, Mittelwert und Standardabweichung mit der Deutung des Ausreißers (2019-A-3a, sechs Punkte, Niveau III); iqb: die Länge des sechsten Liedes aus dem Durchschnitt (2026MgrundlegendBStochastikWTR2-1e, Niveau II). Einheit 6 – fhr: Mittelwert und Standardabweichung aus Klassen mit Jahrgangsvergleich (2020-C-3c, sechs Punkte, Niveau III), die Medianklasse mit Begründung (2024-B-3a, Niveau II) und der Preis rückwärts aus dem Zielmittelwert (2021-A-3b, Niveau III); iqb: die Schranke des Mittelwerts (2026MerhoehtBStochastikWTR2-1e, Niveau III) und die Medianklasse am Säulendiagramm (2026MerhoehtBStochastikWTR2-1d, Niveau II).
 ````
 
-## 2 Originale (59)
+## 2 Originale (73)
 
-Kennungen aus „Prüfungsform“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
+Kennungen aus „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
 
 ### 2021-OS-B1f (msa-katalog-basis.csv)
 
@@ -683,7 +683,117 @@ jahr 2024 · papier B · punkte 2 · format Kurzantwort|Begründung · antwort T
 - verfahren: die Gesamtzahl bilden, die Position des Medians bestimmen und über die kumulierten Häufigkeiten die Zeitspanne suchen, in die der 520. und der 521. Wert fallen
 - fehlerquelle: die Zeitspanne mit der größten Anzahl angeben und damit den Modalwert statt des Medians nennen
 
-Nur außerhalb von „Prüfungsform“ genannt, nicht aufgenommen: 2022-C-3b, 2026-B-3a, 2022-B-3c, 2020-C-3a, 2023-A-3b, 2025-C-3a, 2021-A-3a, 2026-C-3a, 2025-A-3b, 2024-C-3a, 2023-C-3a, 2026-B-3b, 2026-C-3c, 2020-A-3a
+### 2020-A-3a (fhr-katalog.csv)
+
+jahr 2020 · papier A · punkte 3 · format Rechnung|Zeichnen · antwort Zahl|Grafik
+- gegeben: ein Modegeschäft bietet Ketten in sieben Farben an; die durchschnittlichen Verkaufszahlen pro Woche betragen weiß 27, grün 4, pink 3, rot 6, blau 17, lila 16 und schwarz 27
+- gesucht: relative Häufigkeiten der verkauften Ketten für jede Farbe|Darstellung dieser Häufigkeiten in einem geeigneten Diagramm
+- verfahren: jede Anzahl durch die Gesamtzahl 100 teilen und die sieben Werte in einem selbst gewählten Diagramm mit beschrifteten Achsen darstellen
+- fehlerquelle: die Gesamtzahl nicht bilden und die absoluten Anzahlen als Häufigkeiten angeben
+
+### 2026-B-3b (fhr-katalog.csv)
+
+jahr 2026 · papier B · punkte 4 · format Rechnung|Zeichnen · antwort Zahl|Grafik
+- gegeben: Verkaufszahlen eines Gewürzstreuers in sechs Testwochen: 150, 100, 250, 100, 100 und 200 Stück; insgesamt 900 Stück
+- gesucht: relative Häufigkeit der Stückzahl jeder Woche|grafische Darstellung in einem geeigneten Häufigkeitsdiagramm
+- verfahren: jede Wochenstückzahl durch 900 teilen und die sechs Werte in einem selbst angelegten Diagramm als Säulen eintragen
+- fehlerquelle: die Stückzahlen durch sechs statt durch 900 teilen
+
+### 2026-C-3c (fhr-katalog.csv)
+
+jahr 2026 · papier C · punkte 4 · format Rechnung|Zeichnen · antwort Zahl|Grafik
+- gegeben: Preistabelle: reduzierter Verkaufspreis 15,99 € (PG 1) mit Anzahl 24, 23,99 € (PG 2) mit Anzahl 10, 31,99 € (PG 3) mit Anzahl 6; insgesamt 40 T-Shirts
+- gesucht: relative Häufigkeiten der drei Preisgruppen|geeignete grafische Darstellung
+- verfahren: jede Anzahl durch 40 teilen und die drei Anteile in einem Säulendiagramm darstellen
+- fehlerquelle: die Anteile auf eine einzelne Preisgruppe statt auf alle 40 T-Shirts beziehen
+
+### 2020-C-3a (fhr-katalog.csv)
+
+jahr 2020 · papier C · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: sechs Schülerinnen und Schüler geben ihren wöchentlichen Zeitaufwand für Hausaufgaben mit 30 min, 140 min, 90 min, 80 min, 120 min und 200 min an
+- gesucht: arithmetisches Mittel des wöchentlichen Zeitaufwands|Standardabweichung des wöchentlichen Zeitaufwands
+- verfahren: die sechs Werte addieren und durch sechs teilen, dann die mittlere quadratische Abweichung vom Mittelwert bilden und die Wurzel ziehen
+- fehlerquelle: die Abweichungen ohne Quadrat addieren und dadurch null erhalten
+
+### 2022-C-3b (fhr-katalog.csv)
+
+jahr 2022 · papier C · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: die fünf zu beschenkenden Personen haben die Rechnungsbeträge 23,75 €, 10,50 €, 107,28 €, 2,05 € und 46,42 € angegeben
+- gesucht: arithmetischer Mittelwert dieser Angaben|Standardabweichung dieser Angaben
+- verfahren: die fünf Beträge summieren und durch fünf teilen, dann die quadratischen Abweichungen vom Mittelwert summieren, durch fünf beziehungsweise durch vier teilen und die Wurzel ziehen
+- fehlerquelle: die Wurzel vergessen und die Varianz als Standardabweichung angeben
+
+### 2025-A-3b (fhr-katalog.csv)
+
+jahr 2025 · papier A · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: die acht ausgewählten Befragten nannten die Konsumhäufigkeiten 2, 0, 10, 1, 0, 40, 0, 9
+- gesucht: arithmetisches Mittel|Standardabweichung der acht Werte
+- verfahren: die Summe der acht Werte durch acht teilen; die quadratischen Abweichungen vom Mittelwert bilden, ihren Mittelwert berechnen und die Wurzel ziehen
+- fehlerquelle: durch sieben statt durch acht teilen und die Standardabweichung der Stichprobe angeben
+
+### 2026-B-3a (fhr-katalog.csv)
+
+jahr 2026 · papier B · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: Verkaufszahlen eines Gewürzstreuers in sechs Testwochen: 150, 100, 250, 100, 100 und 200 Stück; insgesamt 900 Stück
+- gesucht: arithmetischer Mittelwert der wöchentlichen Verkaufszahlen|Standardabweichung
+- verfahren: die sechs Werte summieren und durch sechs teilen, dann die quadratischen Abweichungen vom Mittelwert summieren, durch sechs teilen und die Wurzel ziehen
+- fehlerquelle: durch die Anzahl minus eins teilen und 63,25 erhalten
+
+### 2024-C-3a (fhr-katalog.csv)
+
+jahr 2024 · papier C · punkte 4 · format Rechnung|Kurzantwort · antwort Zahl
+- gegeben: ein Radverleih im Havelland bietet Fahrräder in den drei Rahmengrößen S, M und L an, die nach der Körpergröße zugewiesen werden; am Montag wurden acht Fahrräder verliehen, die Fahrradcomputer zeigten die Tagesstrecken 29, 19, 34, 29, 29, 12, 25, 23 Kilometer
+- gesucht: Median der Tagesstrecken|arithmetischer Mittelwert|Standardabweichung
+- verfahren: die acht Werte ordnen und das Mittel aus dem vierten und fünften Wert bilden; die Summe durch acht teilen; die quadratischen Abweichungen vom Mittelwert bilden, ihren Mittelwert berechnen und die Wurzel ziehen
+- fehlerquelle: den Median an der unsortierten Liste ablesen
+
+### 2023-C-3a (fhr-katalog.csv)
+
+jahr 2023 · papier C · punkte 6 · format Kurzantwort|Rechnung · antwort Zahl
+- gegeben: Poolbillard mit 16 Kugeln: dem weißen Spielball und 15 durchnummerierten Objektbällen; die Bälle 1 bis 8 sind vollständig gefärbt und heißen die Vollen, dazu gehört auch die schwarze Kugel; die Halben mit den Nummern 9 bis 15 tragen nur einen farbigen Ring; alle Kugeln sind gleich groß und gleich schwer; ein neuer Satz Kugeln wird benötigt, der Preisvergleich ergab 59,90 €, 39,60 €, 49,95 € und 44,95 €; ein Anbieter verkauft die Kugeln einzeln für je 2,99 €; ein Einzelkauf umfasst 16 Kugeln
+- gesucht: Median der vier Preise|arithmetischer Mittelwert der Preise|Standardabweichung der vier Angebote|um wie viel Prozent der Einzelkauf von 16 Kugeln teurer wäre als das günstigste Set
+- verfahren: die vier Preise ordnen und die beiden mittleren mitteln; die Summe durch vier teilen; die mittlere quadratische Abweichung bilden und die Wurzel ziehen; den Einzelkaufpreis 16 · 2,99 € auf den günstigsten Setpreis als Grundwert beziehen und die Differenz zu 100 % angeben
+- fehlerquelle: den Prozentwert 120,81 % als Antwort angeben statt der Differenz von 20,81 %
+
+### 2022-B-3c (fhr-katalog.csv)
+
+jahr 2022 · papier B · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: beim Probelauf mit Glücksrad 1 ergaben sich nach zehn Spielen die Augensummen 8, 8, 5, 5, 4, 6, 6, 7, 10 und 7
+- gesucht: arithmetisches Mittel dieser Stichprobe|Standardabweichung dieser Stichprobe
+- verfahren: die zehn Werte summieren und durch zehn teilen, dann die quadratischen Abweichungen vom Mittelwert summieren, durch neun beziehungsweise durch zehn teilen und die Wurzel ziehen
+- fehlerquelle: gleiche Werte nur einmal zählen und durch die Zahl der verschiedenen Augensummen teilen
+
+### 2023-A-3b (fhr-katalog.csv)
+
+jahr 2023 · papier A · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: vier Tarifgruppen mit Anzahl und Eintrittspreis: 5 Erwachsene zu 15 €, 15 Kinder zu 10 €, 25 Erwachsene zu 25 €, 35 Kinder zu 18 €; insgesamt 80 Gäste
+- gesucht: arithmetisches Mittel des Eintrittspreises aller 80 Gäste|zugehörige Standardabweichung
+- verfahren: die vier Preise mit ihren Anzahlen gewichten und die Summe durch 80 teilen, dann die mit den Anzahlen gewichteten quadratischen Abweichungen vom Mittelwert summieren, durch 80 teilen und die Wurzel ziehen
+- fehlerquelle: den Mittelwert aus den vier Preisen ohne Gewichtung mit den Gästezahlen bilden
+
+### 2025-C-3a (fhr-katalog.csv)
+
+jahr 2025 · papier C · punkte 5 · format Rechnung|Kurzantwort · antwort Zahl
+- gegeben: eine Supermarktkette lässt alle Bewerberinnen und Bewerber einen Eignungstest schreiben, der mit einer Schulnote bewertet wird; in Altstadt sind es 30 Personen mit den Anzahlen 4 für Note 1, 10 für Note 2, 9 für Note 3, 4 für Note 4, 3 für Note 5 und 0 für Note 6
+- gesucht: arithmetischer Mittelwert der Ergebnisse in Altstadt|Median|Modalwert|Standardabweichung
+- verfahren: die mit den Anzahlen gewichtete Notensumme durch 30 teilen; den Median als mittleren Wert der geordneten Liste und den Modalwert als häufigste Note ablesen; die gewichteten quadratischen Abweichungen durch 30 teilen und die Wurzel ziehen
+- fehlerquelle: den Mittelwert als Summe der sechs Noten durch sechs berechnen und die Anzahlen nicht gewichten
+
+### 2026-C-3a (fhr-katalog.csv)
+
+jahr 2026 · papier C · punkte 4 · format Rechnung · antwort Zahl
+- gegeben: Preistabelle: reduzierter Verkaufspreis 15,99 € (PG 1) mit Anzahl 24, 23,99 € (PG 2) mit Anzahl 10, 31,99 € (PG 3) mit Anzahl 6; insgesamt 40 T-Shirts
+- gesucht: arithmetischer Mittelwert|Median|Standardabweichung der Verkaufspreise
+- verfahren: gewichtete Summe der Preise durch 40 teilen; Median als Mitte der 40 geordneten Werte; Standardabweichung aus den mit den Anzahlen gewichteten quadratischen Abweichungen vom Mittelwert
+- fehlerquelle: den Median als mittleren der drei Preise statt der 40 Werte bestimmen
+
+### 2021-A-3a (fhr-katalog.csv)
+
+jahr 2021 · papier A · punkte 6 · format Rechnung|Zeichnen · antwort Zahl|Grafik
+- gegeben: im Vorjahr wurden Rosen in fünf Farben verkauft: rosa zu 1,20 € (12 Stück), rot zu 2,10 € (33), orange zu 1,50 € (15), violett zu 0,90 € (10) und weiß zu 1,70 € (20)
+- gesucht: durchschnittliche Einnahmen pro verkaufter Rose|zugehörige Standardabweichung|Darstellung der Verkaufszahlen in einem geeigneten Diagramm
+- verfahren: jeden Preis mit seiner Verkaufszahl multiplizieren, die Produkte summieren und durch 90 teilen, dann die mit den Verkaufszahlen gewichteten quadratischen Abweichungen summieren, durch 90 teilen und die Wurzel ziehen; die fünf Verkaufszahlen als Säulendiagramm auftragen
+- fehlerquelle: die fünf Preise ungewichtet mitteln und 1,48 € statt 1,66 € erhalten
 
 ## 3 Maßstab (unterrichtsblatt.md, wortgleich)
 

@@ -1,9 +1,9 @@
 # Mappe: bedingte-wahrscheinlichkeit-und-bayes
 
 Eintrag: hz-0801/mathe-nachhilfe, katalog/bedingte-wahrscheinlichkeit-und-bayes.md
-Katalog-Commit: 95b0f8b09856c14466ca030dd604451b8d259cfa (2026-09-26T16:47:30+02:00, „katalog: Sek-II-Einträge auf den CAS-Nachtrag“; ermittelt über git log (GitHub-API gesperrt))
+Katalog-Commit: c651dc47624a28a96eb6724ed3e4864024a7bab4 (2026-09-27T22:25:43Z, „katalog: Erkennungsschritte“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-27 12:40 UTC
+Datum: 2026-09-30 08:04 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -47,67 +47,65 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 32  - Graphen lesen (Funktionswert zu Stelle, Stelle zu Funktionswert, Randwerte) – die Graphaufgaben der Einheit 3. Sek-I-Thema lineare-funktionen.md (Graphenlesen); daten.md. [GOST Eingangsvoraussetzung L4 sinngemäß]
 33  Erkennungsschritte (Vorstufe der Einheit, vor der sie stehen, nicht auf Blatt 0; eine Hauptnummer je Schritt):
 34  - „Was ist die Bedingung?“ – zu Aufgabentexten die Bedingungsgruppe unterstreichen („unter den …“, „ein zufällig ausgewählter Kunde mit …“, „die Person hat …“) und ankreuzen, durch wessen Anteil geteilt wird; nichts rechnen. Vor Einheit 1 und 2. [GOST-OHiMi 2.4; Rohdatei: das Kernfehlmuster (Bedingung vertauscht); abi 2023-bebb-gk-B4.1c, iqb 2018MgrundlegendBStochastikWTR1-1c]
-35  - „Mit dem Baum oder gegen den Baum?“ – ankreuzen, ob die gefragte Bedingung der ersten Stufe des Baums entspricht (Pfadregeln genügen) oder der zweiten (Bayes: Pfad durch Pfadsumme); nichts rechnen. Vor Einheit 2. [GOST Q2 L5 „Satz von Bayes“ (BB); abi 2022-bebb-lk-B4b, iqb 2018MgrundlegendBStochastikWTR3-1c]
-36  - „Was ändert der Parameter?“ – zu Parametertermen ankreuzen, ob der Parameter im Zähler, im Nenner oder in beiden steht, und was daraus für das Wachsen des Bruchs folgt; nichts rechnen. Vor Einheit 3. [Rohdatei-Fehlerquelle „Zähler für abhängig von a halten“; abi 2026-bb-ea-B4e, iqb 2026MgrundlegendBStochastikWTR1-2c]
-37
-38  ### Merkkasten
-39  Einheit 1 (Der Quotient):
-40      Definition: P_B(A) = P(A ∩ B) / P(B) – der Anteil von A innerhalb der Gruppe B; der Nenner ist immer der Anteil der Bedingung.
-41        20 Personen mit allgemeiner Frage, davon 5 Männer: P(Mann ¦ allgemeine Frage) = 5/20 = 0,25 – nicht 5/80.
-42      Aus der Tafel: Feld geteilt durch Rand; mit absoluten Häufigkeiten: Anzahl im Feld geteilt durch Anzahl in der Gruppe.
-43      Multiplikationssatz: P(A ∩ B) = P(B) · P_B(A) – die Umkehrung des Quotienten; so wird aus einer bedingten Angabe ein Feld (→ vierfeldertafel.md).
-44      Vergleichen: ob ein Merkmal in zwei Gruppen verschieden häufig ist, entscheiden die bedingten Anteile beider Gruppen – nie die Schnittanteile.
-45      Auswendig (Teil A): der ganze Kasten – [GOST-OHiMi 2.4] „bedingte Wahrscheinlichkeit: P_B(A) = P(A ∩ B)/P(B)“, „Multiplikationssatz“ (Teil-A-Beleg 2022MgrundlegendAStochastik12-a).
-46      Formelsammlung: [FS-IQB 1.4] „Bedingte Wahrscheinlichkeit und stochastische Unabhängigkeit“ führt P_A(B) = P(A ∩ B)/P(A) – die Anlage verlangt die Formel dennoch auswendig – [FS] Wortlaut am PDF geprüft: nein, nur Textfassung
-47  Quelle: eigene Formulierung nach [GOST-OHiMi 2.4] und [GOST Q2 L5] „bedingte Wahrscheinlichkeit“; Zahlenbeispiel aus abi 2017-bb-ea-B4.1b (wörtlich); [LS-AA QP VIII 3].
-48
-49  Einheit 2 (Bayes – gegen die Baumrichtung):
-50      Der Bayes-Quotient: ist B eingetreten und war A eine Ursache der ersten Stufe, gilt P_B(A) = Pfad(A und B) / Summe aller Pfade zu B – der Nenner ist die totale Wahrscheinlichkeit von B.
-51        Ein Drittel weiblich; unzufrieden sind wenige der Frauen und mehr der anderen: P(nicht weiblich ¦ unzufrieden) ist der Pfad „nicht weiblich und unzufrieden“ geteilt durch die Summe beider Unzufrieden-Pfade.
-52      Deuten: in einem vorgelegten Quotienten ist der Zähler ein Pfad, der Nenner die Pfadsumme – Zähler und Nenner benennen, dann die Bedingung („geteilt durch die Wahrscheinlichkeit des Eingetretenen“) aussprechen.
-53      Richtung: der Baum gibt P_A(B) (zweite Stufe nach erster); gefragt ist bei Bayes P_B(A) – die Richtung dreht sich, die Antwort „steht schon am Ast“ ist falsch.
-54      Nachweisen: einen vorgegebenen Bayes-Term bestätigt man, indem man alle Pfade benennt und einsetzt; unbekannte Größen folgen aus einem vorgegebenen Wert durch Auflösen.
-55      Auswendig (Teil A): „Der Bayes-Quotient“ und „Richtung“ – die Anlage nennt Bayes nicht, der Plan (BB) schon; begründetes Ermessen: der Pool prüft den Quotienten in Teil A (Belege 2020MgrundlegendAStochastik12-b, 2021MgrundlegendAStochastik11-b, 2026MgrundlegendAStochastik13-b, 2024MerhoehtAStochastik21), die Bausteine (Pfadregeln, Quotient) stehen in [GOST-OHiMi 2.4].
-56      Formelsammlung: keine – weder Bayes noch die totale Wahrscheinlichkeit stehen in [FS-IQB 1.4] – [FS] offen
-57  Quelle: eigene Formulierung nach [GOST Q2 L5] „Satz von der totalen Wahrscheinlichkeit“, „Satz von Bayes“ (nur BB) und [GOST-OHiMi 2.4]; Zahlenbeispiel sinngemäß aus abi 2020-be-gk-B4.2f (Struktur, ohne Zahlen); [LS-AA QP VIII 3].
-58
-59  Einheit 3 (Mit Parameter):
-60      Term aufstellen: den Bayes-Quotienten mit dem Parameter hinschreiben, ohne auszurechnen – Zähler ein Pfad, Nenner die Pfadsumme, der Parameter steht, wo der Text ihn hinsetzt.
-61      Monotonie: hängt nur der Nenner vom Parameter ab, wächst der Bruch genau dann, wenn der Nenner fällt (Zähler konstant); das trägt die Begründung „die Unzufriedenen der anderen Gruppe werden weniger, also wächst der Anteil der eigenen“ – allgemein, nicht am Zahlenbeispiel.
-62      Graphen: den richtigen Graphen wählen die Randwerte des Parameterbereichs (Werte an den Enden überlegen, mit den Kurven vergleichen); am Graphen löst die Waagerechte zum Funktionswert die Gleichung grafisch.
-63      Schranken: eine Bedingung an die bedingte Wahrscheinlichkeit wird zur Ungleichung im Parameter – auflösen und den kleinsten zulässigen Wert angeben.
-64      Auswendig (Teil A): keine – die Parameterformen sind Prüfungshöhe (Teil B und erhöhte Teil-A-Aufgaben); sitzen müssen Quotient und Bayes-Quotient der Kästen eins und zwei.
-65      Formelsammlung: keine – [FS] offen
-66  Quelle: eigene Formulierung nach der Poolpraxis (die Parameterformen haben weder Plan- noch Lehrwerkszeile; Ermessen); ohne Zahlenbeispiel; [LS-AA QP VIII 3 als Basis].
-67
-68  ### Typische Fehler
-69  Verdichtet aus den Spalten `verfahren` und `fehlerquelle` der 39 Zeilen des Themas in abitur/abi-katalog.csv und abitur/iqb-katalog.csv (Zuordnung über profil, leitidee und thema aus themen.csv, wie rohdatei-bau.py); Beleg ist die Original-id. [FD] nicht verwendet: das Quellenregister führt keine Stochastikdidaktik, die Muster sind allein aus den Katalogzeilen belegt.
-70  - Bedingung vertauscht – das Kernfehlmuster: durch den falschen Rand geteilt, die Richtung der Bedingung umgekehrt (P(B ¦ A) statt P(A ¦ B), „Test positiv, wenn krank“ statt „krank, wenn Test positiv“), die am Ast stehende bedingte Wahrscheinlichkeit als Antwort genommen, die Deutung eines Terms in der falschen Richtung. [abi 2018-be-gk-B3.2f, 2023-bebb-gk-B4.1c, 2022-bebb-gk-A1.7a, 2025-bebb-gk-B4e, 2022-bebb-lk-B4b, 2024-bebb-lk-B4b, 2023-bebb-lk-B4f; iqb 2022MgrundlegendAStochastik12-a, 2021MgrundlegendAStochastik11-b, 2020MgrundlegendAStochastik12-b, 2026MgrundlegendBStochastikWTR2-1b, 2025MgrundlegendBStochastikWTR1-1e, 2024MgrundlegendBStochastikWTR2-1c, 2024MerhoehtBStochastikWTR1-1b, 2023MgrundlegendBStochastikWTR3-1c, 2023MerhoehtBStochastikWTR2-1d, 2022MerhoehtBStochastikWTR1-1b, 2022MerhoehtBStochastikWTR2-1b, 2018MgrundlegendBStochastikWTR1-1c, 2018MgrundlegendBStochastikWTR2-1f, 2018MgrundlegendBStochastikWTR3-1c, 2018MerhoehtBStochastikWTR2-1e, 2022MgrundlegendBStochastikWTR2-1c, 2026MgrundlegendAStochastik13-b]
-71  - Auf die falsche Gesamtheit bezogen: den Quotienten durch alle geteilt statt durch die Bedingungsgruppe; einen Anteil unter den Frauen als Anteil an allen gelesen. [abi 2017-bb-ea-B4.1b; iqb 2019MgrundlegendBStochastikWTR3-1c]
-72  - Nenner falsch gebaut: die totale Wahrscheinlichkeit nur aus einem Ast gebildet; zusammengehörige Pfade nicht zusammengefasst; Gruppen mitgezählt, die die Bedingung nicht erfüllen können. [abi 2020-be-gk-B4.2f; iqb 2020MgrundlegendBStochastikWTR1-2b, 2024MerhoehtAStochastik21, 2021MgrundlegendBStochastikWTR3-1g]
-73  - Schnitt- statt bedingte Anteile verglichen, absolute statt bedingte: Schnittanteile direkt verglichen; absolute Anteile an der Gesamtheit gegeneinander gehalten. [iqb 2026MerhoehtBStochastikWTR2-1c, 2024MerhoehtBStochastikWTR2-1b, 2021MgrundlegendBStochastikWTR3-1b]
-74  - Mit Parameter verfehlt: mit einem Zahlenbeispiel statt allgemein argumentiert; den Zähler für parameterabhängig gehalten; den Graphen ohne Prüfung der Randwerte gewählt; die Bedingung im Term übersehen und nur den Zähler angegeben. [abi 2026-bb-gk-B4f, 2026-bb-ea-B4e; iqb 2026MgrundlegendBStochastikWTR1-2c, 2026MerhoehtBStochastikWTR1-2c, 2020MgrundlegendBStochastikWTR2-2c, 2026MerhoehtAStochastik22-b, 2018MerhoehtBStochastikWTR2-1e]
-75  Hinweis: 2018MerhoehtBStochastikWTR2-1e trägt beide Muster (Richtung und Schranke); die Schrankenrechnung selbst ist Einheit 3.
-76
-77  ### Für schwache Schüler
-78  Mindeststoff (GK-Kern Q2 / Niveaustufe H / RLP FOS) [GOST, GOST-OHiMi, FOS]: GK-Kern Q2 Brandenburg und Berlin: Einheit 1 („bedingte Wahrscheinlichkeit“) und Einheit 2 („Satz von der totalen Wahrscheinlichkeit“, „Satz von Bayes“ – die Namen nur in Brandenburg, die Sache in beiden Ländern); kein LK-Zusatz. Ohne Hilfsmittel (Anlage OHiMi 2.4, Prüfungsteil A): der Quotient und der Multiplikationssatz – Kasten eins vollständig, Kasten zwei als Ansatz. Vorrat (Ermessen nach dem Niveau der Rohdatei): die Parameterformen der Einheit 3 (Monotonie, Graphen, Schranken). Niveaustufe H der E-Phase [RLP]: die Sek-I-Pläne führen Pfadregeln und Vierfeldertafel, keine bedingte Wahrscheinlichkeit als Begriff – Blatt-0-Stoff sind die Pfade, der Begriff ist Q2-Stoff. RLP FOS (fhr): bedingte Wahrscheinlichkeiten sind Pflichtstoff; die Prüfungszeilen liegen bei unabhaengigkeit.md. COSH [COSH, nachrangig, aus dem Gedächtnis, nicht am Text geprüft]: der Mindestanforderungskatalog führt nach Erinnerung bedingte Wahrscheinlichkeiten – deckt sich mit dem GK-Kern, kein zusätzlicher Posten.
-79  Grundvorstellung (Blatt 0) [GOST Q2 L5, MO]: Die Bedingung schrumpft die Welt – gezählt wird nur noch innerhalb der Gruppe, von der man schon etwas weiß. „Hier sind die zwanzig Spielkarten aus der Vierfeldertafel-Übung, in vier Häufchen sortiert (rot/schwarz, markiert/unmarkiert), kein Term. Ich habe verdeckt eine Karte gezogen und verrate dir: sie ist markiert. Welche Häufchen kommen jetzt überhaupt noch infrage – lege die anderen beiseite. Wie wahrscheinlich ist jetzt ‚rot‘? Und warum ist das eine andere Zahl als vorhin, als noch alle zwanzig Karten im Spiel waren? Was wäre anders, wenn ich stattdessen verraten hätte: sie ist rot – welche Frage beantwortet dann ‚wie wahrscheinlich ist markiert‘?“ Wer die beiseitegelegten Karten weiterzählt oder die beiden Richtungen für dieselbe Frage hält, braucht das vor jeder Formel: Die Bedingung bestimmt den Nenner, und die Richtung der Frage entscheidet, welche Gruppe schrumpft. Verständnis, nicht Verfahren; die Vorstellung ist amtlich (Q2-Kern „bedingte Wahrscheinlichkeit“), die Aufgabenform ist Ermessen. [GOST Q2 L5; MO-Logik: Vorstellung vor Verfahren; Rohdatei-Fehlerquelle „Bedingung vertauschen“, abi 2023-bebb-gk-B4.1c; BASICS nur als Strukturvorbild Diagnose → Förderung → Nachtest, keine Inhalte]
-80  Sprossen je Verfahrenstyp (Reihenfolge = Kette des Hauptblatts) [LS-AA, Rohdatei; Sprossenfolge Ermessen, wo Lehrwerk und Rohdatei keine Reihenfolge vorgeben]:
-81  - Der Quotient (Einheit 1): „Was ist die Bedingung?“ ankreuzen (Vorstufe, Grundvorstellung) → den Quotienten aus Text oder Tafel bilden: Feld durch Rand (Grundfall, viermal; abi 2022-bebb-gk-A1.7a, Teil A; iqb 2022MgrundlegendAStochastik12-a, Teil A; abi 2023-bebb-gk-B4.1c, 2018-be-gk-B3.2f; iqb 2023MgrundlegendBStochastikWTR3-1c, 2018MgrundlegendBStochastikWTR2-1f, 2026MgrundlegendBStochastikWTR2-1b, 2024MgrundlegendBStochastikWTR2-1c, 2022MerhoehtBStochastikWTR2-1b) → mit absoluten Häufigkeiten (abi 2017-bb-ea-B4.1b; iqb 2019MgrundlegendBStochastikWTR3-1c, 2018MgrundlegendBStochastikWTR1-1c) → zwei bedingte Anteile vergleichen (iqb 2021MgrundlegendBStochastikWTR3-1b, 2024MerhoehtBStochastikWTR2-1b, 2026MerhoehtBStochastikWTR2-1c) → Prüfungshöhe: den Unterschied der Richtungen an einer Tafel erklären (Vorstufe zu Einheit zwei; Rohdatei-Fehlmuster als Aufgabe).
-82  - Bayes (Einheit 2): „Mit dem Baum oder gegen den Baum?“ ankreuzen (Vorstufe) → den Bayes-Quotienten aus dem Baum bilden: ein Pfad durch die Pfadsumme (Grundfall, viermal; abi 2020-be-gk-B4.2f, 2022-bebb-lk-B4b, 2024-bebb-lk-B4b; iqb 2020MgrundlegendBStochastikWTR1-2b, 2022MerhoehtBStochastikWTR1-1b, 2024MerhoehtBStochastikWTR1-1b, 2018MgrundlegendBStochastikWTR3-1c, 2022MgrundlegendBStochastikWTR2-1c) → einen vorgelegten Term deuten: Zähler als Pfad, Nenner als Pfadsumme benennen (iqb 2020MgrundlegendAStochastik12-b, 2021MgrundlegendAStochastik11-b, Teil A) → mit einer Schranke vergleichen (iqb 2026MgrundlegendAStochastik13-b, Teil A) → mit besonderen Bäumen: nur ein Teil der Gruppe kann die Bedingung erfüllen (iqb 2021MgrundlegendBStochastikWTR3-1g, Niveau III) → Prüfungshöhe: den Behälter-Term nachweisen und die Kugelzahl aus einem Wert bestimmen (iqb 2024MerhoehtAStochastik21, Teil A, Niveau III).
-83  - Mit Parameter (Einheit 3): „Was ändert der Parameter?“ ankreuzen (Vorstufe) → den Term mit Parameter aufstellen, ohne zu rechnen (iqb 2026MerhoehtAStochastik22-b, Teil A; Grundfall, viermal) → die Monotonie begründen: Zähler konstant, Nenner fällt (abi 2023-bebb-lk-B4f, 2026-bb-gk-B4f, 2026-bb-ea-B4e; iqb 2023MerhoehtBStochastikWTR2-1d, 2026MgrundlegendBStochastikWTR1-2c, 2026MerhoehtBStochastikWTR1-2c, Niveau III) → den Graphen über die Randwerte zuordnen (iqb 2020MgrundlegendBStochastikWTR2-2c, Niveau III) → am Graphen ablesen und Parameter samt Funktionswert deuten (abi 2025-bebb-gk-B4e, iqb 2025MgrundlegendBStochastikWTR1-1e, Niveau III) → Prüfungshöhe: den Mindestwert aus der Schranke an die bedingte Wahrscheinlichkeit berechnen (iqb 2018MerhoehtBStochastikWTR2-1e, Niveau III).
-84
-85  ### Prüfungsform (fhr / abi / iqb)
-86  Geltung [konzept.md § 4 Entscheidung 35]: Der IQB-Pool ist für das Profil abi voll maßgeblich – Brandenburg entnimmt seit 2017 Poolaufgaben, seit der KMK-Ländervereinbarung 2020 unverändert, und der Pool wirkt normierend auf Landesaufgaben und Oberstufenklausuren; die Auswahl-Einschränkung steht allein in den Geltungsdateien abi-*-geltung.md, die das Thema für alle vier Zielprüfungen mit „ja“ führen. Für fhr ist der Pool keine Vorgabe; die bedingten Anteile der FHR-Prüfungen liegen bei unabhaengigkeit.md, themen.csv führt hier keine fhr-Zeile. Die Rohdatei zählt 46 Zeilen mit 12 Haupttypen (abi 12 Zeilen, 4 Typen; iqb 34 Zeilen, 12 Typen; 4 Typen in beiden Profilen), Jahre 2017–2026. Der Eintrag setzt keine Decke; Häufigkeit ist Auskunft, ein einziges Vorkommen ein vollwertiger Typ. Typnamen wörtlich aus abitur/abitur-typen.csv (gemeinsame Liste abi/iqb; Thema ohne Gegenstandsklassen, daher ohne Präfix).
-87  fhr: kein eigener Bestand – die bedingten Anteile laufen in den Unabhängigkeitsaufgaben der FHR-Prüfungen (Zeilen bei unabhaengigkeit.md).
-88  abi (12 Zeilen, 4 Typen; Landeshefte bb-ea, be-gk, bebb-gk, bebb-lk, bb-gk 2017–2026) [abi-Katalog]: Bedingte Wahrscheinlichkeit aus Anteil und Schnittanteil berechnen (5, E1) · Bedingte Wahrscheinlichkeit über Bayes aus dem Baumdiagramm berechnen (3, E2) · Monotonie einer bedingten Wahrscheinlichkeit bei Änderung eines Anteils beurteilen (3, E3) · Bayes-Term mit Parameter grafisch lösen und Parameter und Funktionswert im Sachzusammenhang deuten (1, E3). Muster: Elf der zwölf Zeilen liegen in Teil B (zwei bis vier Punkte) als Fortsetzung der Vierfeldertafel- oder Baumaufgabe; die eine Teil-A-Zeile ist der Tafelquotient 2022-bebb-gk-A1.7a. 10 der 12 Zeilen sind wortgleiche Pooldubletten (2017-be-gk-B3.1d – seit dem Nachzug 2026-09-28: die Wahrscheinlichkeit für Werk A bei einem fehlerhaften Smartphone im Berliner Grundkursheft, Dublette von 2017MgrundlegendBStochastikWTR1-2b –, 2018-be-gk-B3.2f, 2022-bebb-gk-A1.7a, 2022-bebb-lk-B4b, 2023-bebb-gk-B4.1c, 2023-bebb-lk-B4f, 2024-bebb-lk-B4b, 2025-bebb-gk-B4e, 2026-bb-gk-B4f, 2026-bb-ea-B4e), eine abgewandelt (2020-be-gk-B4.2f – das Heft gibt einen Vierfeldertafel-Hinweis, der Pool nicht), Landeszusatz die Häufigkeitsaufgabe 2017-bb-ea-B4.1b. Niveau I 2, II 6, III 4.
-89  iqb (34 Zeilen, 12 Typen; Pool 2017–2026, grundlegend 21 und erhöht 13 Zeilen, Teil A 7 und Teil B 27 Zeilen, davon 3 CAS) [iqb-Katalog]: Bedingte Wahrscheinlichkeit aus Anteil und Schnittanteil berechnen (11, E1) · Bedingte Wahrscheinlichkeit über Bayes aus dem Baumdiagramm berechnen (8, E2) · Bedingte Anteile aus der Vierfeldertafel vergleichen (3, E1) · Monotonie einer bedingten Wahrscheinlichkeit bei Änderung eines Anteils beurteilen (3, E3) · Bayes-Term im Sachzusammenhang deuten (2, E2) · je 1: Bayes-Term für drei Behälter nachweisen und Kugelzahl bestimmen (E2) · Bayes-Term mit Parameter grafisch lösen und Parameter und Funktionswert im Sachzusammenhang deuten (E3) · Bedingte Wahrscheinlichkeit aus dem Baumdiagramm mit einer Schranke vergleichen (E2) · Bedingte Wahrscheinlichkeit aus der Vierfeldertafel mit absoluten Häufigkeiten angeben (E1) · Graph einer bedingten Wahrscheinlichkeit in Abhängigkeit von einem Parameter über Randwerte ohne Rechnung zuordnen (E3) · Mindestwert einer Erkennungswahrscheinlichkeit aus einer Bedingung an eine bedingte Wahrscheinlichkeit bestimmen (E3) · Term für eine bedingte Wahrscheinlichkeit mit Parameter aufstellen (E3). Muster: In Teil B folgt der Quotient fast immer unmittelbar auf die Vierfeldertafel- oder Baumzeile derselben Kontextaufgabe (zwei bis fünf Punkte, Anforderungsbereich II); die Parameterformen tragen den Anforderungsbereich III (2018MerhoehtBStochastikWTR2-1e, 2020MgrundlegendBStochastikWTR2-2c, 2025MgrundlegendBStochastikWTR1-1e, die Monotonie-Zeilen 2023–2026); Teil A prüft Termdeutungen und kleine Quotienten (2020MgrundlegendAStochastik12-b, 2021MgrundlegendAStochastik11-b, 2022MgrundlegendAStochastik12-a, 2026MgrundlegendAStochastik13-b, 2024MerhoehtAStochastik21, 2026MerhoehtAStochastik22-b, seit dem Nachzug 2026-09-28 auch der Bayes-Quotient am Urnenexperiment 2017MgrundlegendAStochastik2-b, drei Punkte, Niveau III). Der Jahrgang 2017 (seit dem Nachzug) stellt beide Richtungen in Teil B: den Quotienten vorwärts an den Smartphones (2017MgrundlegendBStochastikWTR1-2b; seit dem Nachzug 2026-09-29 auch die wortgleiche Teilaufgabe der grundlegenden CAS-Fassung 2017MgrundlegendBStochastikCAS-2b, drei Punkte, Niveau II, gleicher Typ, kein CAS-Anteil) und an der Haushaltsstatistik der CAS-Fassung (2017MerhoehtBStochastikCAS1-2), Bayes gegen den Baum am Saatgut (2017MerhoehtBStochastikWTR-1b) und am Schnelltest der CAS-Fassung (2017MerhoehtBStochastikCAS2-1c), je drei Punkte. Amtlicher Anforderungsbereich in allen 34 Zeilen (höchster Bereich: I 2, II 23, III 9); Niveau I 6, II 19, III 9. Kontexte: Bildschirme, Heuschnupfen-Test, Hundefutter, Unternehmen, Briefe, Wohnungen, Behälter, Sendungen, Smartphones, Saatgut, Haushalte, Schnelltest. 10 Poolzeilen kehren wortgleich in Landesheften wieder (Dubletten der abi-Liste), eine abgewandelt.
-90  Zielmarke: Einheit 1 – abi: der Tafelquotient in Teil A (2022-bebb-gk-A1.7a, Niveau I) und der Quotient nach der Tafel (2023-bebb-gk-B4.1c, Niveau II); iqb: der Vergleich zweier bedingter Anteile (2021MgrundlegendBStochastikWTR3-1b, 2026MerhoehtBStochastikWTR2-1c, Niveau II). Einheit 2 – abi: Bayes nach dem Baum (2024-bebb-lk-B4b, Niveau II) und die abgewandelte Fassung mit Tafelhinweis (2020-be-gk-B4.2f, Niveau II); iqb: der Behälter-Term (2024MerhoehtAStochastik21, Teil A, Niveau III) und der besondere Baum (2021MgrundlegendBStochastikWTR3-1g, Niveau III). Einheit 3 – abi: die Monotonie-Beurteilung (2026-bb-ea-B4e, Niveau III) und das grafische Lösen (2025-bebb-gk-B4e, Niveau III); iqb: der Mindestwert aus der Schranke (2018MerhoehtBStochastikWTR2-1e, Niveau III) und die Graphenzuordnung über Randwerte (2020MgrundlegendBStochastikWTR2-2c, Niveau III).
+35
+36  ### Merkkasten
+37  Einheit 1 (Der Quotient):
+38      Definition: P_B(A) = P(A ∩ B) / P(B) – der Anteil von A innerhalb der Gruppe B; der Nenner ist immer der Anteil der Bedingung.
+39        20 Personen mit allgemeiner Frage, davon 5 Männer: P(Mann ¦ allgemeine Frage) = 5/20 = 0,25 – nicht 5/80.
+40      Aus der Tafel: Feld geteilt durch Rand; mit absoluten Häufigkeiten: Anzahl im Feld geteilt durch Anzahl in der Gruppe.
+41      Multiplikationssatz: P(A ∩ B) = P(B) · P_B(A) – die Umkehrung des Quotienten; so wird aus einer bedingten Angabe ein Feld (→ vierfeldertafel.md).
+42      Vergleichen: ob ein Merkmal in zwei Gruppen verschieden häufig ist, entscheiden die bedingten Anteile beider Gruppen – nie die Schnittanteile.
+43      Auswendig (Teil A): der ganze Kasten – [GOST-OHiMi 2.4] „bedingte Wahrscheinlichkeit: P_B(A) = P(A ∩ B)/P(B)“, „Multiplikationssatz“ (Teil-A-Beleg 2022MgrundlegendAStochastik12-a).
+44      Formelsammlung: [FS-IQB 1.4] „Bedingte Wahrscheinlichkeit und stochastische Unabhängigkeit“ führt P_A(B) = P(A ∩ B)/P(A) – die Anlage verlangt die Formel dennoch auswendig – [FS] Wortlaut am PDF geprüft: nein, nur Textfassung
+45  Quelle: eigene Formulierung nach [GOST-OHiMi 2.4] und [GOST Q2 L5] „bedingte Wahrscheinlichkeit“; Zahlenbeispiel aus abi 2017-bb-ea-B4.1b (wörtlich); [LS-AA QP VIII 3].
+46
+47  Einheit 2 (Bayes – gegen die Baumrichtung):
+48      Der Bayes-Quotient: ist B eingetreten und war A eine Ursache der ersten Stufe, gilt P_B(A) = Pfad(A und B) / Summe aller Pfade zu B – der Nenner ist die totale Wahrscheinlichkeit von B.
+49        Ein Drittel weiblich; unzufrieden sind wenige der Frauen und mehr der anderen: P(nicht weiblich ¦ unzufrieden) ist der Pfad „nicht weiblich und unzufrieden“ geteilt durch die Summe beider Unzufrieden-Pfade.
+50      Deuten: in einem vorgelegten Quotienten ist der Zähler ein Pfad, der Nenner die Pfadsumme – Zähler und Nenner benennen, dann die Bedingung („geteilt durch die Wahrscheinlichkeit des Eingetretenen“) aussprechen.
+51      Richtung: der Baum gibt P_A(B) (zweite Stufe nach erster); gefragt ist bei Bayes P_B(A) – die Richtung dreht sich, die Antwort „steht schon am Ast“ ist falsch.
+52      Nachweisen: einen vorgegebenen Bayes-Term bestätigt man, indem man alle Pfade benennt und einsetzt; unbekannte Größen folgen aus einem vorgegebenen Wert durch Auflösen.
+53      Auswendig (Teil A): „Der Bayes-Quotient“ und „Richtung“ – die Anlage nennt Bayes nicht, der Plan (BB) schon; begründetes Ermessen: der Pool prüft den Quotienten in Teil A (Belege 2020MgrundlegendAStochastik12-b, 2021MgrundlegendAStochastik11-b, 2026MgrundlegendAStochastik13-b, 2024MerhoehtAStochastik21), die Bausteine (Pfadregeln, Quotient) stehen in [GOST-OHiMi 2.4].
+54      Formelsammlung: keine – weder Bayes noch die totale Wahrscheinlichkeit stehen in [FS-IQB 1.4] – [FS] offen
+55  Quelle: eigene Formulierung nach [GOST Q2 L5] „Satz von der totalen Wahrscheinlichkeit“, „Satz von Bayes“ (nur BB) und [GOST-OHiMi 2.4]; Zahlenbeispiel sinngemäß aus abi 2020-be-gk-B4.2f (Struktur, ohne Zahlen); [LS-AA QP VIII 3].
+56
+57  Einheit 3 (Mit Parameter):
+58      Term aufstellen: den Bayes-Quotienten mit dem Parameter hinschreiben, ohne auszurechnen – Zähler ein Pfad, Nenner die Pfadsumme, der Parameter steht, wo der Text ihn hinsetzt.
+59      Monotonie: hängt nur der Nenner vom Parameter ab, wächst der Bruch genau dann, wenn der Nenner fällt (Zähler konstant); das trägt die Begründung „die Unzufriedenen der anderen Gruppe werden weniger, also wächst der Anteil der eigenen“ – allgemein, nicht am Zahlenbeispiel.
+60      Graphen: den richtigen Graphen wählen die Randwerte des Parameterbereichs (Werte an den Enden überlegen, mit den Kurven vergleichen); am Graphen löst die Waagerechte zum Funktionswert die Gleichung grafisch.
+61      Schranken: eine Bedingung an die bedingte Wahrscheinlichkeit wird zur Ungleichung im Parameter – auflösen und den kleinsten zulässigen Wert angeben.
+62      Auswendig (Teil A): keine – die Parameterformen sind Prüfungshöhe (Teil B und erhöhte Teil-A-Aufgaben); sitzen müssen Quotient und Bayes-Quotient der Kästen eins und zwei.
+63      Formelsammlung: keine – [FS] offen
+64  Quelle: eigene Formulierung nach der Poolpraxis (die Parameterformen haben weder Plan- noch Lehrwerkszeile; Ermessen); ohne Zahlenbeispiel; [LS-AA QP VIII 3 als Basis].
+65
+66  ### Typische Fehler
+67  Verdichtet aus den Spalten `verfahren` und `fehlerquelle` der 39 Zeilen des Themas in abitur/abi-katalog.csv und abitur/iqb-katalog.csv (Zuordnung über profil, leitidee und thema aus themen.csv, wie rohdatei-bau.py); Beleg ist die Original-id. [FD] nicht verwendet: das Quellenregister führt keine Stochastikdidaktik, die Muster sind allein aus den Katalogzeilen belegt.
+68  - Bedingung vertauscht – das Kernfehlmuster: durch den falschen Rand geteilt, die Richtung der Bedingung umgekehrt (P(B ¦ A) statt P(A ¦ B), „Test positiv, wenn krank“ statt „krank, wenn Test positiv“), die am Ast stehende bedingte Wahrscheinlichkeit als Antwort genommen, die Deutung eines Terms in der falschen Richtung. [abi 2018-be-gk-B3.2f, 2023-bebb-gk-B4.1c, 2022-bebb-gk-A1.7a, 2025-bebb-gk-B4e, 2022-bebb-lk-B4b, 2024-bebb-lk-B4b, 2023-bebb-lk-B4f; iqb 2022MgrundlegendAStochastik12-a, 2021MgrundlegendAStochastik11-b, 2020MgrundlegendAStochastik12-b, 2026MgrundlegendBStochastikWTR2-1b, 2025MgrundlegendBStochastikWTR1-1e, 2024MgrundlegendBStochastikWTR2-1c, 2024MerhoehtBStochastikWTR1-1b, 2023MgrundlegendBStochastikWTR3-1c, 2023MerhoehtBStochastikWTR2-1d, 2022MerhoehtBStochastikWTR1-1b, 2022MerhoehtBStochastikWTR2-1b, 2018MgrundlegendBStochastikWTR1-1c, 2018MgrundlegendBStochastikWTR2-1f, 2018MgrundlegendBStochastikWTR3-1c, 2018MerhoehtBStochastikWTR2-1e, 2022MgrundlegendBStochastikWTR2-1c, 2026MgrundlegendAStochastik13-b]
+69  - Auf die falsche Gesamtheit bezogen: den Quotienten durch alle geteilt statt durch die Bedingungsgruppe; einen Anteil unter den Frauen als Anteil an allen gelesen. [abi 2017-bb-ea-B4.1b; iqb 2019MgrundlegendBStochastikWTR3-1c]
+70  - Nenner falsch gebaut: die totale Wahrscheinlichkeit nur aus einem Ast gebildet; zusammengehörige Pfade nicht zusammengefasst; Gruppen mitgezählt, die die Bedingung nicht erfüllen können. [abi 2020-be-gk-B4.2f; iqb 2020MgrundlegendBStochastikWTR1-2b, 2024MerhoehtAStochastik21, 2021MgrundlegendBStochastikWTR3-1g]
+71  - Schnitt- statt bedingte Anteile verglichen, absolute statt bedingte: Schnittanteile direkt verglichen; absolute Anteile an der Gesamtheit gegeneinander gehalten. [iqb 2026MerhoehtBStochastikWTR2-1c, 2024MerhoehtBStochastikWTR2-1b, 2021MgrundlegendBStochastikWTR3-1b]
+72  - Mit Parameter verfehlt: mit einem Zahlenbeispiel statt allgemein argumentiert; den Zähler für parameterabhängig gehalten; den Graphen ohne Prüfung der Randwerte gewählt; die Bedingung im Term übersehen und nur den Zähler angegeben. [abi 2026-bb-gk-B4f, 2026-bb-ea-B4e; iqb 2026MgrundlegendBStochastikWTR1-2c, 2026MerhoehtBStochastikWTR1-2c, 2020MgrundlegendBStochastikWTR2-2c, 2026MerhoehtAStochastik22-b, 2018MerhoehtBStochastikWTR2-1e]
+73  Hinweis: 2018MerhoehtBStochastikWTR2-1e trägt beide Muster (Richtung und Schranke); die Schrankenrechnung selbst ist Einheit 3.
+74
+75  ### Für schwache Schüler
+76  Mindeststoff (GK-Kern Q2 / Niveaustufe H / RLP FOS) [GOST, GOST-OHiMi, FOS]: GK-Kern Q2 Brandenburg und Berlin: Einheit 1 („bedingte Wahrscheinlichkeit“) und Einheit 2 („Satz von der totalen Wahrscheinlichkeit“, „Satz von Bayes“ – die Namen nur in Brandenburg, die Sache in beiden Ländern); kein LK-Zusatz. Ohne Hilfsmittel (Anlage OHiMi 2.4, Prüfungsteil A): der Quotient und der Multiplikationssatz – Kasten eins vollständig, Kasten zwei als Ansatz. Vorrat (Ermessen nach dem Niveau der Rohdatei): die Parameterformen der Einheit 3 (Monotonie, Graphen, Schranken). Niveaustufe H der E-Phase [RLP]: die Sek-I-Pläne führen Pfadregeln und Vierfeldertafel, keine bedingte Wahrscheinlichkeit als Begriff – Blatt-0-Stoff sind die Pfade, der Begriff ist Q2-Stoff. RLP FOS (fhr): bedingte Wahrscheinlichkeiten sind Pflichtstoff; die Prüfungszeilen liegen bei unabhaengigkeit.md. COSH [COSH, nachrangig, aus dem Gedächtnis, nicht am Text geprüft]: der Mindestanforderungskatalog führt nach Erinnerung bedingte Wahrscheinlichkeiten – deckt sich mit dem GK-Kern, kein zusätzlicher Posten.
+77  Grundvorstellung (Blatt 0) [GOST Q2 L5, MO]: Die Bedingung schrumpft die Welt – gezählt wird nur noch innerhalb der Gruppe, von der man schon etwas weiß. „Hier sind die zwanzig Spielkarten aus der Vierfeldertafel-Übung, in vier Häufchen sortiert (rot/schwarz, markiert/unmarkiert), kein Term. Ich habe verdeckt eine Karte gezogen und verrate dir: sie ist markiert. Welche Häufchen kommen jetzt überhaupt noch infrage – lege die anderen beiseite. Wie wahrscheinlich ist jetzt ‚rot‘? Und warum ist das eine andere Zahl als vorhin, als noch alle zwanzig Karten im Spiel waren? Was wäre anders, wenn ich stattdessen verraten hätte: sie ist rot – welche Frage beantwortet dann ‚wie wahrscheinlich ist markiert‘?“ Wer die beiseitegelegten Karten weiterzählt oder die beiden Richtungen für dieselbe Frage hält, braucht das vor jeder Formel: Die Bedingung bestimmt den Nenner, und die Richtung der Frage entscheidet, welche Gruppe schrumpft. Verständnis, nicht Verfahren; die Vorstellung ist amtlich (Q2-Kern „bedingte Wahrscheinlichkeit“), die Aufgabenform ist Ermessen. [GOST Q2 L5; MO-Logik: Vorstellung vor Verfahren; Rohdatei-Fehlerquelle „Bedingung vertauschen“, abi 2023-bebb-gk-B4.1c; BASICS nur als Strukturvorbild Diagnose → Förderung → Nachtest, keine Inhalte]
+78  Sprossen je Verfahrenstyp (Reihenfolge = Kette des Hauptblatts) [LS-AA, Rohdatei; Sprossenfolge Ermessen, wo Lehrwerk und Rohdatei keine Reihenfolge vorgeben]:
+79  - Der Quotient (Einheit 1): „Was ist die Bedingung?“ ankreuzen (Vorstufe, Grundvorstellung) → den Quotienten aus Text oder Tafel bilden: Feld durch Rand (Grundfall, viermal; abi 2022-bebb-gk-A1.7a, Teil A; iqb 2022MgrundlegendAStochastik12-a, Teil A; abi 2023-bebb-gk-B4.1c, 2018-be-gk-B3.2f; iqb 2023MgrundlegendBStochastikWTR3-1c, 2018MgrundlegendBStochastikWTR2-1f, 2026MgrundlegendBStochastikWTR2-1b, 2024MgrundlegendBStochastikWTR2-1c, 2022MerhoehtBStochastikWTR2-1b) → mit absoluten Häufigkeiten (abi 2017-bb-ea-B4.1b; iqb 2019MgrundlegendBStochastikWTR3-1c, 2018MgrundlegendBStochastikWTR1-1c) → zwei bedingte Anteile vergleichen (iqb 2021MgrundlegendBStochastikWTR3-1b, 2024MerhoehtBStochastikWTR2-1b, 2026MerhoehtBStochastikWTR2-1c) → Prüfungshöhe: den Unterschied der Richtungen an einer Tafel erklären (Vorstufe zu Einheit zwei; Rohdatei-Fehlmuster als Aufgabe).
+80  - Bayes (Einheit 2): „Mit dem Baum oder gegen den Baum?“ – ankreuzen, ob die gefragte Bedingung der ersten Stufe des Baums entspricht (Pfadregeln genügen) oder der zweiten (Bayes: Pfad durch Pfadsumme); nichts rechnen (Vorstufe) → den Bayes-Quotienten aus dem Baum bilden: ein Pfad durch die Pfadsumme (Grundfall, viermal; abi 2020-be-gk-B4.2f, 2022-bebb-lk-B4b, 2024-bebb-lk-B4b; iqb 2020MgrundlegendBStochastikWTR1-2b, 2022MerhoehtBStochastikWTR1-1b, 2024MerhoehtBStochastikWTR1-1b, 2018MgrundlegendBStochastikWTR3-1c, 2022MgrundlegendBStochastikWTR2-1c) → einen vorgelegten Term deuten: Zähler als Pfad, Nenner als Pfadsumme benennen (iqb 2020MgrundlegendAStochastik12-b, 2021MgrundlegendAStochastik11-b, Teil A) → mit einer Schranke vergleichen (iqb 2026MgrundlegendAStochastik13-b, Teil A) → mit besonderen Bäumen: nur ein Teil der Gruppe kann die Bedingung erfüllen (iqb 2021MgrundlegendBStochastikWTR3-1g, Niveau III) → Prüfungshöhe: den Behälter-Term nachweisen und die Kugelzahl aus einem Wert bestimmen (iqb 2024MerhoehtAStochastik21, Teil A, Niveau III).
+81  - Mit Parameter (Einheit 3): „Was ändert der Parameter?“ – zu Parametertermen ankreuzen, ob der Parameter im Zähler, im Nenner oder in beiden steht, und was daraus für das Wachsen des Bruchs folgt; nichts rechnen (Vorstufe) → den Term mit Parameter aufstellen, ohne zu rechnen (iqb 2026MerhoehtAStochastik22-b, Teil A; Grundfall, viermal) → die Monotonie begründen: Zähler konstant, Nenner fällt (abi 2023-bebb-lk-B4f, 2026-bb-gk-B4f, 2026-bb-ea-B4e; iqb 2023MerhoehtBStochastikWTR2-1d, 2026MgrundlegendBStochastikWTR1-2c, 2026MerhoehtBStochastikWTR1-2c, Niveau III) → den Graphen über die Randwerte zuordnen (iqb 2020MgrundlegendBStochastikWTR2-2c, Niveau III) → am Graphen ablesen und Parameter samt Funktionswert deuten (abi 2025-bebb-gk-B4e, iqb 2025MgrundlegendBStochastikWTR1-1e, Niveau III) → Prüfungshöhe: den Mindestwert aus der Schranke an die bedingte Wahrscheinlichkeit berechnen (iqb 2018MerhoehtBStochastikWTR2-1e, Niveau III).
+82
+83  ### Prüfungsform (fhr / abi / iqb)
+84  Geltung [konzept.md § 4 Entscheidung 35]: Der IQB-Pool ist für das Profil abi voll maßgeblich – Brandenburg entnimmt seit 2017 Poolaufgaben, seit der KMK-Ländervereinbarung 2020 unverändert, und der Pool wirkt normierend auf Landesaufgaben und Oberstufenklausuren; die Auswahl-Einschränkung steht allein in den Geltungsdateien abi-*-geltung.md, die das Thema für alle vier Zielprüfungen mit „ja“ führen. Für fhr ist der Pool keine Vorgabe; die bedingten Anteile der FHR-Prüfungen liegen bei unabhaengigkeit.md, themen.csv führt hier keine fhr-Zeile. Die Rohdatei zählt 46 Zeilen mit 12 Haupttypen (abi 12 Zeilen, 4 Typen; iqb 34 Zeilen, 12 Typen; 4 Typen in beiden Profilen), Jahre 2017–2026. Der Eintrag setzt keine Decke; Häufigkeit ist Auskunft, ein einziges Vorkommen ein vollwertiger Typ. Typnamen wörtlich aus abitur/abitur-typen.csv (gemeinsame Liste abi/iqb; Thema ohne Gegenstandsklassen, daher ohne Präfix).
+85  fhr: kein eigener Bestand – die bedingten Anteile laufen in den Unabhängigkeitsaufgaben der FHR-Prüfungen (Zeilen bei unabhaengigkeit.md).
+86  abi (12 Zeilen, 4 Typen; Landeshefte bb-ea, be-gk, bebb-gk, bebb-lk, bb-gk 2017–2026) [abi-Katalog]: Bedingte Wahrscheinlichkeit aus Anteil und Schnittanteil berechnen (5, E1) · Bedingte Wahrscheinlichkeit über Bayes aus dem Baumdiagramm berechnen (3, E2) · Monotonie einer bedingten Wahrscheinlichkeit bei Änderung eines Anteils beurteilen (3, E3) · Bayes-Term mit Parameter grafisch lösen und Parameter und Funktionswert im Sachzusammenhang deuten (1, E3). Muster: Elf der zwölf Zeilen liegen in Teil B (zwei bis vier Punkte) als Fortsetzung der Vierfeldertafel- oder Baumaufgabe; die eine Teil-A-Zeile ist der Tafelquotient 2022-bebb-gk-A1.7a. 10 der 12 Zeilen sind wortgleiche Pooldubletten (2017-be-gk-B3.1d – seit dem Nachzug 2026-09-28: die Wahrscheinlichkeit für Werk A bei einem fehlerhaften Smartphone im Berliner Grundkursheft, Dublette von 2017MgrundlegendBStochastikWTR1-2b –, 2018-be-gk-B3.2f, 2022-bebb-gk-A1.7a, 2022-bebb-lk-B4b, 2023-bebb-gk-B4.1c, 2023-bebb-lk-B4f, 2024-bebb-lk-B4b, 2025-bebb-gk-B4e, 2026-bb-gk-B4f, 2026-bb-ea-B4e), eine abgewandelt (2020-be-gk-B4.2f – das Heft gibt einen Vierfeldertafel-Hinweis, der Pool nicht), Landeszusatz die Häufigkeitsaufgabe 2017-bb-ea-B4.1b. Niveau I 2, II 6, III 4.
+87  iqb (34 Zeilen, 12 Typen; Pool 2017–2026, grundlegend 21 und erhöht 13 Zeilen, Teil A 7 und Teil B 27 Zeilen, davon 3 CAS) [iqb-Katalog]: Bedingte Wahrscheinlichkeit aus Anteil und Schnittanteil berechnen (11, E1) · Bedingte Wahrscheinlichkeit über Bayes aus dem Baumdiagramm berechnen (8, E2) · Bedingte Anteile aus der Vierfeldertafel vergleichen (3, E1) · Monotonie einer bedingten Wahrscheinlichkeit bei Änderung eines Anteils beurteilen (3, E3) · Bayes-Term im Sachzusammenhang deuten (2, E2) · je 1: Bayes-Term für drei Behälter nachweisen und Kugelzahl bestimmen (E2) · Bayes-Term mit Parameter grafisch lösen und Parameter und Funktionswert im Sachzusammenhang deuten (E3) · Bedingte Wahrscheinlichkeit aus dem Baumdiagramm mit einer Schranke vergleichen (E2) · Bedingte Wahrscheinlichkeit aus der Vierfeldertafel mit absoluten Häufigkeiten angeben (E1) · Graph einer bedingten Wahrscheinlichkeit in Abhängigkeit von einem Parameter über Randwerte ohne Rechnung zuordnen (E3) · Mindestwert einer Erkennungswahrscheinlichkeit aus einer Bedingung an eine bedingte Wahrscheinlichkeit bestimmen (E3) · Term für eine bedingte Wahrscheinlichkeit mit Parameter aufstellen (E3). Muster: In Teil B folgt der Quotient fast immer unmittelbar auf die Vierfeldertafel- oder Baumzeile derselben Kontextaufgabe (zwei bis fünf Punkte, Anforderungsbereich II); die Parameterformen tragen den Anforderungsbereich III (2018MerhoehtBStochastikWTR2-1e, 2020MgrundlegendBStochastikWTR2-2c, 2025MgrundlegendBStochastikWTR1-1e, die Monotonie-Zeilen 2023–2026); Teil A prüft Termdeutungen und kleine Quotienten (2020MgrundlegendAStochastik12-b, 2021MgrundlegendAStochastik11-b, 2022MgrundlegendAStochastik12-a, 2026MgrundlegendAStochastik13-b, 2024MerhoehtAStochastik21, 2026MerhoehtAStochastik22-b, seit dem Nachzug 2026-09-28 auch der Bayes-Quotient am Urnenexperiment 2017MgrundlegendAStochastik2-b, drei Punkte, Niveau III). Der Jahrgang 2017 (seit dem Nachzug) stellt beide Richtungen in Teil B: den Quotienten vorwärts an den Smartphones (2017MgrundlegendBStochastikWTR1-2b; seit dem Nachzug 2026-09-29 auch die wortgleiche Teilaufgabe der grundlegenden CAS-Fassung 2017MgrundlegendBStochastikCAS-2b, drei Punkte, Niveau II, gleicher Typ, kein CAS-Anteil) und an der Haushaltsstatistik der CAS-Fassung (2017MerhoehtBStochastikCAS1-2), Bayes gegen den Baum am Saatgut (2017MerhoehtBStochastikWTR-1b) und am Schnelltest der CAS-Fassung (2017MerhoehtBStochastikCAS2-1c), je drei Punkte. Amtlicher Anforderungsbereich in allen 34 Zeilen (höchster Bereich: I 2, II 23, III 9); Niveau I 6, II 19, III 9. Kontexte: Bildschirme, Heuschnupfen-Test, Hundefutter, Unternehmen, Briefe, Wohnungen, Behälter, Sendungen, Smartphones, Saatgut, Haushalte, Schnelltest. 10 Poolzeilen kehren wortgleich in Landesheften wieder (Dubletten der abi-Liste), eine abgewandelt.
+88  Zielmarke: Einheit 1 – abi: der Tafelquotient in Teil A (2022-bebb-gk-A1.7a, Niveau I) und der Quotient nach der Tafel (2023-bebb-gk-B4.1c, Niveau II); iqb: der Vergleich zweier bedingter Anteile (2021MgrundlegendBStochastikWTR3-1b, 2026MerhoehtBStochastikWTR2-1c, Niveau II). Einheit 2 – abi: Bayes nach dem Baum (2024-bebb-lk-B4b, Niveau II) und die abgewandelte Fassung mit Tafelhinweis (2020-be-gk-B4.2f, Niveau II); iqb: der Behälter-Term (2024MerhoehtAStochastik21, Teil A, Niveau III) und der besondere Baum (2021MgrundlegendBStochastikWTR3-1g, Niveau III). Einheit 3 – abi: die Monotonie-Beurteilung (2026-bb-ea-B4e, Niveau III) und das grafische Lösen (2025-bebb-gk-B4e, Niveau III); iqb: der Mindestwert aus der Schranke (2018MerhoehtBStochastikWTR2-1e, Niveau III) und die Graphenzuordnung über Randwerte (2020MgrundlegendBStochastikWTR2-2c, Niveau III).
 ````
 
-## 2 Originale (30)
+## 2 Originale (46)
 
-Kennungen aus „Prüfungsform“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
+Kennungen aus „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
 
 ### 2022-bebb-gk-A1.7a (abi-katalog.csv)
 
@@ -349,7 +347,133 @@ jahr 2021 · papier 2021-iqb-ga · punkte 3 · format Rechnung · antwort Zahl
 - verfahren: Pfad A → Ja (gehen) durch die Gesamtwahrscheinlichkeit für Ja teilen
 - fehlerquelle: alle Gehwilligen (20 %) durch den Ja-Anteil teilen, obwohl Gehwillige mit Frage B Nein antworten
 
-Nur außerhalb von „Prüfungsform“ genannt, nicht aufgenommen: 2018MgrundlegendBStochastikWTR1-1c, 2018MgrundlegendBStochastikWTR3-1c, 2026MgrundlegendBStochastikWTR1-2c, 2026MgrundlegendBStochastikWTR2-1b, 2024MgrundlegendBStochastikWTR2-1c, 2024MerhoehtBStochastikWTR1-1b, 2023MgrundlegendBStochastikWTR3-1c, 2023MerhoehtBStochastikWTR2-1d, 2022MerhoehtBStochastikWTR1-1b, 2022MerhoehtBStochastikWTR2-1b, 2018MgrundlegendBStochastikWTR2-1f, 2022MgrundlegendBStochastikWTR2-1c, 2019MgrundlegendBStochastikWTR3-1c, 2020MgrundlegendBStochastikWTR1-2b, 2024MerhoehtBStochastikWTR2-1b, 2026MerhoehtBStochastikWTR1-2c
+### 2023MgrundlegendBStochastikWTR3-1c (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ga · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: Vierfeldertafel aus a; ausgewählte Lehrkraft ist weiblich
+- gesucht: Wahrscheinlichkeit, dass sie am Gymnasium arbeitet
+- verfahren: Schnittanteil durch Randanteil
+- fehlerquelle: Bedingung vertauscht (15 %/25 %)
+
+### 2018MgrundlegendBStochastikWTR2-1f (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ga · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: Vierfeldertafel aus e (D∩N 1,0 %, D 10,7 %)
+- gesucht: Wahrscheinlichkeit, dass ein Bildschirm mit defektem Display ein defektes Netzteil hat
+- verfahren: Schnittanteil durch Randanteil von D
+- fehlerquelle: durch 3,0 % teilen (Bedingung vertauscht)
+
+### 2026MgrundlegendBStochastikWTR2-1b (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ga · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: P(H) = 0,32, P(H und L) = 0,14
+- gesucht: P(L | H)
+- verfahren: Quotient
+- fehlerquelle: 0,14/0,4 (Bedingung vertauscht)
+
+### 2024MgrundlegendBStochastikWTR2-1c (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ga · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: Auswahl unter den Desktop-Besitzern
+- gesucht: P(Laptop | Desktop)
+- verfahren: Schnitt durch Rand
+- fehlerquelle: durch 0,56 teilen (Richtung der Bedingung)
+
+### 2022MerhoehtBStochastikWTR2-1b (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ea · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: Kunde hat die Hotline noch nicht angerufen
+- gesucht: Wahrscheinlichkeit für Tarif S
+- verfahren: Schnittanteil durch Randanteil
+- fehlerquelle: 11 %/20 % (Bedingung vertauscht)
+
+### 2019MgrundlegendBStochastikWTR3-1c (iqb-katalog.csv)
+
+jahr 2019 · papier 2019-iqb-ga · punkte 2 · format Kurzantwort · antwort Zahl
+- gegeben: Befragung von 2 360 Männern und 2 200 Frauen (Glücksspielteilnahme): 2,5 % der Männer und 0,5 % der Frauen mit Anzeichen spielsüchtigen Verhaltens; M: Person ist ein Mann, S: Anzeichen spielsüchtigen Verhaltens; Vierfeldertafel aus a
+- gesucht: Wahrscheinlichkeit, dass eine zufällig aus den Personen mit Anzeichen ausgewählte Person eine Frau ist
+- verfahren: 11/70 aus der Tafel
+- fehlerquelle: 11/2 200 (Anteil unter den Frauen) angeben
+
+### 2018MgrundlegendBStochastikWTR1-1c (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ga · punkte 2 · format Rechnung · antwort Zahl
+- gegeben: Jugendliche eines Landes: 49,20 % weiblich (W), 47,10 % erledigen Finanzangelegenheiten regelmäßig mit Smartphone oder Tablet (S), 19,68 % sind weiblich und tun das
+- gesucht: Nachweis, dass unter den weiblichen Jugendlichen 40 % ihre Finanzangelegenheiten mit Smartphone oder Tablet erledigen
+- verfahren: Schnittanteil durch Randanteil
+- fehlerquelle: durch 47,10 % teilen (Bedingung vertauscht)
+
+### 2024MerhoehtBStochastikWTR2-1b (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ea · punkte 3 · format Begründung · antwort Text
+- gegeben: Vierfeldertafel aus a; Aussage: P(Lastenrad | ohne Pkw) ist mehr als dreimal so groß wie P(Lastenrad | mit Pkw)
+- gesucht: Beurteilung
+- verfahren: P(B | A) berechnen, verdreifachen, vergleichen
+- fehlerquelle: Schnittanteile 0,056 und 0,024 vergleichen
+
+### 2020MgrundlegendBStochastikWTR1-2b (iqb-katalog.csv)
+
+jahr 2020 · papier 2020-iqb-ga · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: Befragung im Unternehmen (29 % der Beschäftigten weiblich): 3,5 % der weiblichen und 10,5 % der anderen Beschäftigten sind unzufrieden; eine Person wird zufällig ausgewählt; Baumdiagramm mit erster Stufe w / nicht w, zweiter Stufe u / nicht u, an den Ästen x (nicht w, dann nicht u) und y (Pfad w und u); die ausgewählte Person ist unzufrieden
+- gesucht: Wahrscheinlichkeit, dass sie nicht weiblich ist
+- verfahren: P(nicht w ∩ u) durch P(u)
+- fehlerquelle: P(u) nur aus einem Ast bilden
+
+### 2022MerhoehtBStochastikWTR1-1b (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ea · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: Person nutzt ein Fitnessarmband
+- gesucht: Wahrscheinlichkeit für Datenschutzbedenken
+- verfahren: Pfad D–F durch Summe der Pfade zu F
+- fehlerquelle: P(F | D) = 23 % als Antwort
+
+### 2024MerhoehtBStochastikWTR1-1b (iqb-katalog.csv)
+
+jahr 2024 · papier 2024-iqb-ea · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: Baumdiagramm aus a; Person mit Komplettpaket
+- gesucht: P(höchstens 40 Jahre | Komplettpaket)
+- verfahren: Bayes-Quotient
+- fehlerquelle: P(B | A) = 80 % als Antwort
+
+### 2018MgrundlegendBStochastikWTR3-1c (iqb-katalog.csv)
+
+jahr 2018 · papier 2018-iqb-ga · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: Hundefutter: 2/3 der Kunden kaufen Trockenfutter (T), davon 40 % die Light-Variante (L); von den Nassfutterkäufern wählen 25 % Light; eine Person wird zufällig ausgewählt; P(L) = 35 %; die ausgewählte Person hat Light gewählt
+- gesucht: Wahrscheinlichkeit, dass es Nassfutter ist
+- verfahren: Pfad ¬T∩L durch P(L)
+- fehlerquelle: P_¬T(L) = 25 % als Antwort geben (Bedingung vertauscht)
+
+### 2022MgrundlegendBStochastikWTR2-1c (iqb-katalog.csv)
+
+jahr 2022 · papier 2022-iqb-ga · punkte 3 · format Rechnung · antwort Zahl
+- gegeben: Krankheit durch Bakterien: ein Drittel aller Menschen infiziert sich im Laufe des Lebens, bei 8 % der Infizierten bricht die Krankheit aus; bei einem Menschen bricht die Krankheit nicht aus
+- gesucht: Wahrscheinlichkeit, dass er sich infiziert hat
+- verfahren: Pfad I∧¬K durch P(¬K) teilen
+- fehlerquelle: Bedingung umkehren (P(¬K | I) = 0,92)
+
+### 2023MerhoehtBStochastikWTR2-1d (iqb-katalog.csv)
+
+jahr 2023 · papier 2023-iqb-ea · punkte 3 · format Begründung · antwort Text
+- gegeben: Person war nicht zufrieden; a wächst
+- gesucht: Begründung im Sachzusammenhang, dass P(weiblich | nicht zufrieden) mit a zunimmt
+- verfahren: Unzufriedene unter ¬W nehmen ab, unter W bleiben sie konstant, also wächst der Anteil der Weiblichen unter den Unzufriedenen
+- fehlerquelle: mit P(¬Z | W) statt P(W | ¬Z) argumentieren
+
+### 2026MgrundlegendBStochastikWTR1-2c (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ga · punkte 3 · format Begründung · antwort Text
+- gegeben: ein Jahr später: weiterhin 75 % Sammler, 80 % davon weiblich, a gestiegen; Aussage: P(T | nicht weiblich) ist größer als vor einem Jahr
+- gesucht: Beurteilung der Aussage
+- verfahren: Term in a aufstellen und Monotonie begründen
+- fehlerquelle: mit Zahlenbeispiel statt allgemein argumentieren; Zähler für abhängig von a halten
+
+### 2026MerhoehtBStochastikWTR1-2c (iqb-katalog.csv)
+
+jahr 2026 · papier 2026-iqb-ea · punkte 3 · format Begründung · antwort Text
+- gegeben: ein Jahr später: 75 % Sammler, 80 % davon weiblich, a gestiegen; Aussage: P(T | nicht weiblich) größer als vor einem Jahr
+- gesucht: Beurteilung
+- verfahren: Term in a aufstellen, Monotonie begründen
+- fehlerquelle: Zähler für abhängig von a halten
 
 ## 3 Maßstab (unterrichtsblatt.md, wortgleich)
 
