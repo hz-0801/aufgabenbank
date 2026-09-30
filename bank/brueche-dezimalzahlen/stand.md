@@ -1,13 +1,36 @@
 # Stand: brueche-dezimalzahlen
 
-Katalog-Commit: cebfd509ea71ae238b589537bd00b7fc306df06f
-(2026-09-28, aus dem Kopf von mappen/brueche-dezimalzahlen.md)
-Datum: 2026-09-29 10:55 (date, UTC)
-Grundlage: bank.md fünfte Fassung, werkzeuge/bank-pruef.py v0.8,
-Vorlage auftrag-eintrag.md 2026-09-29b; Nachzug des Bestands vom
-27./28.09. (Commits „brueche-dezimalzahlen: e1" bis „e5",
-„muster"). Endstand: 0 Abweichungen, 0 Warnungen, auch mit
-`--katalog` gegen die Zeilen der Mappe.
+Katalog-Commit: db8d2a3f9f6ed0e6490a4087e3eaff2cbc8a9b19
+(2026-09-30, aus dem Kopf von mappen/brueche-dezimalzahlen.md)
+Datum: 2026-09-30 08:43 (date, UTC)
+Grundlage: bank.md 2026-09-30b, werkzeuge/bank-pruef.py v0.12,
+Vorlage auftrag-eintrag.md 2026-09-29e; Nachzug 30.09. nach den
+Katalogänderungen vom 30.09. (Zeile 36: „Prozent als Hundertstel“
+auch für Einheit 1; Zeile 111: Vorrat-Klammer an der
+Prüfungshöhe von Einheit 5). Vorher: Nachzug 29.09. auf Katalog
+cebfd50 (bank-pruef v0.8). Endstand: 0 Abweichungen, 0 Warnungen,
+0 Formprobe-Hinweise, mit `--katalog` gegen die Mappe.
+
+## Nachzug 30.09.
+
+Prüfskript vorher: 10 Abweichungen, alle e5 k2 s10 („sprosse_text
+nicht wortgleich in Zeile 111“), 0 Warnungen, 1 Formprobe-Hinweis
+(e5 darstellung: nur eine Richtung). Nachher 0 / 0 / 0.
+
+    Datei  übernommen  neu  umgeschrieben  entfallen
+    zone         30      0              0          0
+    e1           79      0              0          0
+    e2           47      0              0          0
+    e3           41      0              0          0
+    e4           52      0              0          0
+    e5           57      0             11          0
+
+Umgeschrieben in e5: die zehn Zeilen der Prüfungssprosse k2 s10
+nur im Feld sprosse_text (Aufgabe, Lösung, original bleiben);
+dazu k6 s3 v1 (darstellung) neu als Ablesen am Zahlenstrahl mit
+Umschreiben in Bruch und Prozent, damit die drei darstellung-Zeilen
+zwei Richtungen haben (P7). Keine id umbenannt; punkte-nachziehen
+war nicht nötig.
 
 ## Zahlen je Datei
 
@@ -66,6 +89,22 @@ mit 4 Zeilen wird Sprosse mit 3).
 
 ## Entscheidungen
 
+Nachzug 30.09.:
+10. Zone bleibt: Die Fertigkeit „Prozent als Hundertstel“ heißt
+    weiter so; nur ihr Geltungsbereich (jetzt auch Einheit 1) ist
+    neu, und die P10-Form (Anteil einer Kästchenfigur als
+    Prozentsatz) übt bereits die Prüfungssprosse e1 k1 s6
+    (2014-OS-B1i, 2022-OS-B1a, 2023-OS-B1d).
+11. Die vier Zeilen zu 2014-OS-B1h und 2015-OS-B1c (Wurzel,
+    negative Zahlen) bleiben an e5 k2 s10; bank.md kennt kein
+    Feld für „Vorrat“ an einer Prüfungssprosse, die Zeilen tragen
+    die Marke nur über den sprosse_text (Befund 9).
+12. e5 k6 s3 v1 als Bild → Symbol umgeschrieben (Zahlenstrahl
+    ablesen, dann Bruch und Prozent); form teil, weil der
+    Zahlenstrahl kein Streifen mit Eintrag ist.
+
+Nachzug 29.09.:
+
 1. Zone bleibt: Fertigkeiten Z. 31–37 unverändert.
 2. Päckchen: fester Wert e1 k1 „Streifen mit 9 Teilen", e1 k2
    „das Ganze 48", e2 „der Bruch 2/9", e3 „6/11", e4 „Nenner
@@ -108,7 +147,21 @@ mit 4 Zeilen wird Sprosse mit 3).
 6. Vorlage: kein Baustein für Kästchenfiguren mit mehreren Reihen
    (2021-OS-B1b „3 von 4 Spalten").
 7. Prüfskript `--katalog` erwartet eine Katalogdatei; aus der
-   Mappe muss sie erst gebaut werden (Zeilennummern).
+   Mappe muss sie erst gebaut werden (Zeilennummern). (Erledigt
+   seit v0.9: liest Teil 1 der Mappe.)
+8. Befund 4 ist mit der Katalogänderung vom 30.09. (Z. 36)
+   erledigt: Prozent als Hundertstel gilt jetzt auch für
+   Einheit 1.
+9. bank.md: An einer Prüfungssprosse mit mehreren Originalen
+   lassen sich Vorrat-Originale (hier 2014-OS-B1h, 2015-OS-B1c
+   an e5 k2 s10) nicht je Zeile kennzeichnen; die Marke „(kein
+   P10-Stoff)“ gilt je Sprosse, nicht je Original. Der
+   Zusammenbau kann die vier Vorrat-Zeilen daher nicht von den
+   sechs Regelzeilen unterscheiden.
+10. Prüfskript: Die Formprobe für darstellung liest „Schreibe
+    0,65 als Bruch“ als Wort → Symbol; ein Wechsel zwischen
+    Bruch, Dezimalzahl und Prozent (Symbol → Symbol) wird nicht
+    als eigene Richtung erkannt.
 
 ## Offene Punkte
 
