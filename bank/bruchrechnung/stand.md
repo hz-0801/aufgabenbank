@@ -1,11 +1,13 @@
 # Stand: bruchrechnung
 
-Katalog-Commit: d78032a884b6073d9e4c92cc8407e909e3c4ea2a
-(2026-09-29, aus dem Kopf von mappen/bruchrechnung.md)
-Datum: 2026-09-29 13:01 (date, UTC)
-Grundlage: bank.md fünfte Fassung, werkzeuge/bank-pruef.py v0.9,
-Vorlage auftrag-eintrag.md 2026-09-29c; Nachzug des Bestands vom
-27.09. mit werkzeuge/einmalig/nachzug-bruchrechnung-2026-09-29.py.
+Katalog-Commit: db8d2a3f9f6ed0e6490a4087e3eaff2cbc8a9b19
+(2026-09-30, aus dem Kopf von mappen/bruchrechnung.md)
+Datum: 2026-09-30 08:43 (date, UTC)
+Grundlage: bank.md 2026-09-30b, werkzeuge/bank-pruef.py v0.9,
+Vorlage auftrag-eintrag.md 2026-09-29e; Nachtrag zu den
+Katalogänderungen vom 30.09. (Fehlerzeile Z. 87 und Typzeile Z. 25:
+Nenner geteilt statt malgenommen; Fertigkeit Z. 35: Einmaleins und
+Kopfrechnen). Vorheriger Stand: Nachzug vom 29.09. auf d78032a.
 Endstand: 0 Abweichungen, 0 Warnungen mit `--katalog`.
 
 ## Zahlen je Datei
@@ -23,7 +25,27 @@ Pflicht je Einheit (fehler/begruenden/anwendung/darstellung):
 e1 3/3/3/3 · e2 3/3/3/– · e3 3/3/3/3 · e4 3/3/3/– · e5 3/3/3/–;
 Zone fehler 1 (Paar).
 
-## Nachzug je Einheit
+## Nachtrag 30.09. je Einheit
+
+    Datei  übernommen  neu  umgeschrieben  entfallen
+    zone         24      0              2          0
+    e1           62      0              0          0
+    e2           35      0              0          0
+    e3           60      0              1          0
+    e4           42      0              0          0
+    e5           42      0              0          0
+
+Zone: kette und sprosse_text der Fertigkeit 5 nachgezogen (vier
+Zeilen); die mittlere Zeile und der Fallstrick (schriftliches
+Addieren und Subtrahieren) sind auf Kopfrechnen umgeschrieben
+(Vervielfachen mit Zerlegen, Teilen mit Zerlegen der Zehner). e3:
+sprosse_text der drei fehler-Zeilen nachgezogen; die Serie P1
+zeigte das Muster „Nenner geteilt“ schon (5/8 : 4 = 5/2), ihre
+Lösung nennt den Fehler jetzt beim Namen. Prüfskript vor dem
+Nachtrag: 7 Abweichungen (zone 4, e3 3), alle „sprosse_text nicht
+wortgleich“; Formprobe 0. Keine ids umbenannt.
+
+## Nachzug 29.09. je Einheit
 
     Datei  übernommen  neu  umgeschrieben  entfallen
     zone         26      0              0          0
@@ -85,6 +107,16 @@ e3 k2 s2 Kontrolle (3). Entfallen: e3 Erkennungsschritt
    wahr und falsch.
 8. e5 Termprüfung: Lösung beginnt mit der Folge der Urteile
    („Ja, nein, ja.“), weil \janein das erste Wort verlangt.
+9. Zone Fertigkeit 5 (30.09.): kette ist der Fertigkeitstext bis
+   zum Gedankenstrich, mit der Klammer; Fallstrick ist das
+   Zerlegen der Zehner beim Teilen im Kopf (96 : 8), weil die
+   Katalogzeile keinen Fallstrick nennt und dieser Handgriff in
+   Einheit 4 (Dezimalzahl geteilt durch natürliche Zahl) gebraucht
+   wird.
+10. e3 fehler (30.09.): die beiden Muster des Sprossentexts
+   verteilen sich auf die Schülerrechnung (Kehrbruch beim
+   Multiplizieren) und die Serie P1 (Nenner geteilt); die
+   fehlerfreie Vorlage P2 bleibt beim Multiplizieren.
 
 ## Befunde
 
@@ -92,12 +124,10 @@ e3 k2 s2 Kontrolle (3). Entfallen: e3 Erkennungsschritt
    die Vorstufe „„von“ markieren“ (Z. 101) und entfällt jetzt
    (bank.md, Vorlage 29c); Befund 9 des Stands vom 27.09. ist
    damit entschieden.
-2. Katalog Z. 87 (Z. 25): „Zähler geteilt statt Nenner mal“, das
-   Beispiel 3/4 : 2 = 3/2 zeigt den Nenner geteilt; die Bank folgt
-   dem Beispiel (unverändert seit 27.09.).
-3. Katalog Z. 35 „Schriftliches Rechnen“ gegen unterrichtsblatt
-   2.2 „Schriftliche Multiplikation ist keine Fertigkeit der Zone“
-   (unverändert).
+2. Erledigt 30.09.: Katalog Z. 87 und Z. 25 nennen jetzt „Nenner
+   geteilt statt malgenommen“; Bank und Beispiel stimmen überein.
+3. Erledigt 30.09.: Katalog Z. 35 heißt „Einmaleins und
+   Kopfrechnen“; die Zone hat keine schriftlichen Verfahren mehr.
 4. Prüfskript: \janein-Probe verlangt ja/nein als erstes Wort auch
    bei drei \janein in einer Aufgabe; die Lösung muss dann die
    Urteilsfolge voranstellen.
