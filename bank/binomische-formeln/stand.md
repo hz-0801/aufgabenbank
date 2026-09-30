@@ -1,41 +1,42 @@
 # Stand: binomische-formeln
 
-Katalog-Commit: cebfd509ea71ae238b589537bd00b7fc306df06f
-(2026-09-28, aus dem Kopf von mappen/binomische-formeln.md)
-Datum: 2026-09-29 11:19 (date, UTC)
-Grundlage: bank.md fünfte Fassung, werkzeuge/bank-pruef.py v0.8,
-Auftragsvorlage 2026-09-29b; Nachzug des Bestands vom 27./28.09.
-Endstand Prüfskript: 0 Abweichungen, 0 Warnungen in allen
-Dateien, auch mit --katalog (Teil 1 der Mappe als Katalog).
-Frühere Stände: git log dieser Datei (Stand 2026-09-27 mit
-Nachbesserungen 27. und 28.09.).
+Katalog-Commit: db8d2a3f9f6ed0e6490a4087e3eaff2cbc8a9b19
+(2026-09-30, aus dem Kopf von mappen/binomische-formeln.md)
+Datum: 2026-09-30 08:44 (date, UTC)
+Grundlage: bank.md Stand 2026-09-30b, werkzeuge/bank-pruef.py
+v0.12, Auftragsvorlage 2026-09-29e; Nachzug des Stands vom
+29.09. nach den Katalogänderungen vom 30.09. (Kopfzeile
+„Änderungen 2026-09-30“ des Katalogeintrags).
+Endstand Prüfskript: 0 Abweichungen, 0 Warnungen, Formprobe
+0 Hinweise in allen Dateien, mit --katalog.
+Frühere Stände: git log dieser Datei.
 
 ## Zahlen je Datei
 
     Datei       Zeilen  vorstufe grundfall sprosse pruefung pflicht
     zone.jsonl      30         0        14      15        0       1
     e1.jsonl        48         4         5      30        3       6
-    e2.jsonl        50         8         5      27        4       6
+    e2.jsonl        53         8         5      27        4       9
     e3.jsonl        45         4         5      27        3       6
 
-Pflicht je Einheit: fehler 3, begruenden 3 · Zone fehler 1
-(Paar). darstellung und anwendung fehlen (Befund 5).
+Pflicht je Einheit: fehler 3, begruenden 3; e2 dazu
+darstellung 3 (neu, Typ „Darstellung: Term ↔ Flächenbild“).
+Zone fehler 1 (Paar). anwendung fehlt weiter (kein Typ trägt sie).
 
-## Nachzug je Einheit
+## Nachzug je Einheit (30.09.)
 
     Datei  übernommen  neu  umgeschrieben  entfallen
     zone         30      0              0          0
-    e1           37      0             11          0
-    e2           44      0              6          0
-    e3           29      7              9          4
+    e1           44      0              4          0
+    e2           50      3              0          0
+    e3           45      0              0          0
 
-Übernommen heißt: Aufgabe wortgleich, nur id, sprosse,
-sprosse_text, kette_nr, quelle nachgezogen. Umgeschrieben: e1
-Grundfall (Päckchen) und je Einheit die sechs Pflichtzeilen
-(Pflichtformen; Zeile fehler v1 nur merkmal); e3 dazu die Sprosse
-„kein Binom begründen“ (Urteil zuerst, Schrittnamen). Neu in e3:
-Vorstufe mit drei Fragen (4) und Sprosse „Mittelglied prüfen“
-(3); entfallen die alte Vorstufe (4).
+Übernommen heißt: Aufgabe wortgleich; in e2 wurde bei der Sprosse
+„dritte Formel“ (3 Zeilen) nur sprosse_text nachgezogen, jetzt
+„(kein P10-Stoff)“ statt „(Vorrat: kein P10-Original)“.
+Umgeschrieben e1: die vier Vorstufenzeilen „Was mal was?“, nur
+der Satz mit den Pfeilen (siehe Entscheidung 1). Neu e2: die drei
+darstellung-Zeilen (k4 s3).
 
 ## Originale je Einheit
 
@@ -45,58 +46,79 @@ Vorstufe mit drei Fragen (4) und Sprosse „Mittelglied prüfen“
 
 ## Prüfskript vor der Korrektur
 
-- zone.jsonl: 0 / 0 (unverändert).
-- e1.jsonl: 0 / 0.
-- e2.jsonl: 1 / 0 – Sperre (x + 5)² (Merkkasten) in der P1-Serie;
-  dazu eigene Probe: Kastenzahl 12 in derselben Zeile. Beide
-  Glieder getauscht.
-- e3.jsonl: 1 / 0 – pruef nicht an der Ergebnisstelle; doppeltes
-  Produkt in der Lösung falsch (7x statt 14x) geschrieben.
-Keine Einheit ist zweimal gescheitert.
+Bestand vom 29.09. gegen die neue Mappe und Skript v0.12:
+- zone.jsonl: 0 / 0.
+- e1.jsonl: 4 / 0 – „grafik leer“ bei den vier Vorstufenzeilen
+  („Verbinde … mit Pfeilen“ gilt seit v0.9 als Zeichenauftrag).
+- e2.jsonl: 3 / 0 – sprosse_text der Sprosse „dritte Formel“ nicht
+  mehr wortgleich (Marke geändert).
+- e3.jsonl: 0 / 0.
+Erster Wurf der drei darstellung-Zeilen: 3 Abweichungen (zwei
+pruef-Zahlen nicht an der Ergebnisstelle, merkmal uneinheitlich),
+1 Formprobe-Hinweis (nur eine Richtung erkannt); alles in einem
+zweiten Durchgang bereinigt. Keine Einheit ist zweimal gescheitert.
 
 ## Entscheidungen
 
-1. Grundfall-Päckchen: e1 fester Teil „4x + 3y + 2x“, es wandert
-   die y-Zahl; e2 und e3 galten schon als Päckchen (a = x bzw. x²
-   fest, es wandert die Zahl) und bleiben wortgleich.
-2. Vorstufe e3 (drei Fragen): v1 und v4 „Ist das ein Quadrat?“
-   (ja/nein), v2 einkreisen und unterstreichen, v3 streichen; je
-   Frage mindestens eine Zeile.
-3. Vorstufe e1: sprosse_text ist der neue Katalogtext mit
-   „Was mal was?“; die vier Aufgaben bleiben, weil der Handgriff
-   gleich ist (Pfeile, nichts ausrechnen).
-4. Prüfungshöhe e2: sprosse_text endet jetzt auf „Einheit 2)“
-   wie im Katalog; Aufgaben unverändert.
-5. P1-Serien nummerieren die Rechnungen (1)–(4); die Lösung nennt
-   „Rechnungen 2 und 3“ (wie terme).
-6. e3 Sprosse „Mittelglied prüfen“: Antwortgerüst in antwort
-   („Wurzeln: __ und __; doppeltes Produkt: __; passt: __“),
-   Urteil Ja/Nein als erstes Wort; pruef Wurzel und Vorzahl des
-   doppelten Produkts.
-7. Die Formelgestalt (2x)² + 2·2x·3 + 3² bleibt Zwischenzeile der
-   Lösung, keine eigene Sprosse (Hinweis der Übergabe).
+1. e1-Vorstufe: Die Schüler ziehen die Pfeile über dem gedruckten
+   Term; es gibt keinen Baustein dafür, also bleibt grafik leer.
+   Der Satz heißt jetzt „Ziehe Pfeile „jedes mit jedem“: von jedem
+   Glied der ersten Klammer zu jedem Glied der zweiten.“ statt
+   „Verbinde mit Pfeilen …“, damit das Prüfskript nicht eine Grafik
+   verlangt, die keine Vorlage liefert. Sachlich unverändert.
+2. Darstellung e2: kein Baustein zeichnet ein zerlegtes Quadrat
+   (\rechteck kennt keine Teilung und keine Seitenbeschriftung),
+   darum form text ohne grafik; v1 lässt den Schüler skizzieren
+   (Term → Bild), v2 gibt die vier Teilflächen in Worten und fragt
+   Seite und Klammerquadrat (Bild → Term), v3 gibt Term und
+   Zerlegung und lässt die Glieder den Stücken zuordnen (Term →
+   Bild, in Worten). Quelle Zeile 20 (Typ), da die Sprossenkette
+   den Typ nicht führt.
+3. Die darstellung-Zeilen stehen als s3 der Pflichtkette k4 hinter
+   fehler (s1) und begruenden (s2), wie in bruchrechnung.
+4. „Welche Formel?“ (Zeile 34, jetzt nur „Vor Einheit 2“) und
+   „Was ist a, was ist b?“ (Zeile 35) entfallen nach bank.md
+   (Erkennungsschritte): die e2-Vorstufe „Formel erkennen und a, b
+   einkreisen“ (Zeile 84, k2 s0) trifft dieselbe Entscheidung an
+   derselben Vorlage (welche Formel, was ist a und b, nichts
+   rechnen); Einheit 2 ist die einzige Einheit des Bereichs.
+   „Gleiche Klammer zweimal?“ (Zeile 33) bleibt als k1: andere
+   Entscheidung (Quadrat einer Klammer oder nicht).
+5. Sprosse „dritte Formel (kein P10-Stoff)“: Zeilen unverändert,
+   nur sprosse_text; die Marke steuert den Zusammenbau (bank.md).
+6. ids wurden nicht umbenannt; punkte-nachziehen.py nicht nötig.
+   Neu: e2-k4-s3-v1 bis v3 (ohne original). Umgeschrieben:
+   e1-k1-s0-v1 bis v4 (ohne original).
+
+Frühere Entscheidungen (29.09., Päckchen e1, Vorstufe e3 mit drei
+Fragen, Antwortgerüst „Mittelglied prüfen“, Formelgestalt als
+Zwischenzeile) gelten weiter; siehe git log.
 
 ## Befunde
 
-1. Katalog: Die Erkennungsschritte „Was ist a, was ist b?“ und
-   „Welche Formel?“ (Zeilen 34, 35) wiederholen den Handgriff der
-   e2-Vorstufe „Formel erkennen und a, b einkreisen“ und entfallen;
-   „Was mal was?“ und die e3-Schritte stehen jetzt in den
-   Vorstufen selbst.
-2. Katalog: Die Prüfungshöhe e2 verweist auf
+1. Katalog (Erkennungsschritte, bank.md-Regel): Zeile 34 „Welche
+   Formel?“ und Zeile 35 „Was ist a, was ist b?“ gegen Zeile 84
+   e2-Vorstufe „Formel erkennen und a, b einkreisen“ – derselbe
+   Handgriff, beide Erkennungsschritte stehen nicht in der Bank.
+2. Prüfskript / Vorlage: Ein Pfeil-Auftrag über einem gedruckten
+   Term (e1-Vorstufe) und ein zerlegtes Quadrat (e2 Darstellung)
+   haben keinen Baustein; das Skript verlangt bei „Verbinde“ und
+   „Zeichne“ trotzdem eine Grafik. Entweder ein Baustein für Pfeile
+   am Term und für das zerlegte Quadrat (Seiten a, b beschriftet,
+   vier Teilflächen) oder eine Ausnahme im Skript für Aufträge, die
+   der Schüler auf dem Papier über dem Term ausführt.
+3. Katalog: Die Prüfungshöhe e2 verweist auf
    quadratische-gleichungen.md Einheit 2, die e3-Sprosse
-   „Anwendung“ auf Einheit 3 – einer der Verweise ist falsch.
-3. Katalog: Vorrat mitten in der Kette (e2 s3, s6 vor den
-   P10-tragenden s7–s9); ein Blatt für den Mindeststoff überspringt.
-4. Prüfskript: Termlösungen bleiben über eine Zahl prüfbar;
+   „Anwendung“ auf Einheit 3 – einer der Verweise ist falsch
+   (unverändert seit 29.09.).
+4. Katalog: „zwei Variablen (Vorrat)“ steht weiter mitten in der
+   Kette (e2 s6 vor den P10-tragenden s7–s9); ein Blatt für den
+   Mindeststoff überspringt.
+5. Katalog: Kein Typ trägt eine Sachanwendung; anwendung fehlt im
+   ganzen Eintrag (darstellung ist seit 30.09. in e2 gedeckt, in
+   e1 und e3 nicht).
+6. Prüfskript: Termlösungen bleiben über eine Zahl prüfbar;
    Gleichwertigkeit von Aufgabe und Lösungsterm prüft es nicht.
-5. Katalog: Kein Typ trägt Sachanwendung oder Darstellungswechsel;
-   anwendung und darstellung fehlen im ganzen Eintrag.
-6. Prüfskript: Ein Zeichenauftrag ohne grafik (e1-Vorstufe
-   „Verbinde mit Pfeilen“) wird nicht gemeldet; kein Baustein
-   trägt Pfeile zwischen Termgliedern.
-7. Auftrag: Die Gegenprobe „Kastenzahlen in keiner aufgabe“ trifft
-   „P10“ in der Prüfkennung; hier als nicht getroffen gewertet.
 
 ## Offene Punkte
 
@@ -104,6 +126,7 @@ Keine Einheit ist zweimal gescheitert.
   übernommene Bestand zeigt reine Ergebnisse.
 - LaTeX nicht kompiliert (\rechnung mit Zeilenwechsel, \janein
   am Satzende, Listen mit \\ in der P1-Serie).
-- Pfeile über dem gedruckten Term (e1-Vorstufe) mit dem
-  Zusammenbau klären.
+- Pfeile über dem gedruckten Term (e1-Vorstufe) und die Skizze
+  des zerlegten Quadrats (e2 Darstellung v1) brauchen Platz auf
+  dem Blatt; mit dem Zusammenbau klären.
 - Grundvorstellung (Zeile 81) steht nicht in der Bank.
