@@ -1,13 +1,12 @@
 # Stand: tangente-normale-schnittwinkel
 
-Katalog-Commit: f038ccb61160c64df73f067abd6bee324e86bee1
-(2026-09-29, aus dem Kopf von mappen/tangente-normale-schnittwinkel.md)
-Datum: 2026-09-29 15:51 (date, UTC)
-Grundlage: bank.md fünfte Fassung (29b), werkzeuge/bank-pruef.py
-v0.9, Vorlage auftrag-eintrag.md 2026-09-29d; Nachzug des Bestands
-vom 27./28.09. (Katalog 95b0f8b, Gegenlese 28.09.). Umbauskript:
-werkzeuge/einmalig/nachzug-tangente-normale-schnittwinkel-2026-09-29.py.
-Endstand: 0 Abweichungen, 0 Warnungen, mit `--katalog`.
+Katalog-Commit: db8d2a3f9f6ed0e6490a4087e3eaff2cbc8a9b19
+(2026-09-30, aus dem Kopf von mappen/tangente-normale-schnittwinkel.md)
+Datum: 2026-09-30 08:53 (date, UTC)
+Grundlage: bank.md 2026-09-30b, werkzeuge/bank-pruef.py v0.9,
+Vorlage auftrag-eintrag.md 2026-09-29e; Nachzug 30.09. des Stands
+vom 29.09. (Katalog f038ccb; Abschnitt „Nachzug 2026-09-30“ unten).
+Endstand: 0 Abweichungen, 0 Warnungen, Formprobe 0, mit `--katalog`.
 
 ## Zahlen je Datei
 
@@ -20,7 +19,7 @@ Endstand: 0 Abweichungen, 0 Warnungen, mit `--katalog`.
     e5.jsonl        39         4         5      18        6       6
     gesamt         263        28        37     133       34      31
 
-## Nachzug je Einheit
+## Nachzug je Einheit (29.09., Katalog f038ccb)
 
     Datei  übernommen  neu  umgeschrieben  entfallen
     zone         26      0              0          0
@@ -152,3 +151,63 @@ keine Zeile in bank/_punkte.csv.
   - tangente-normale-schnittwinkel-e4-k3-s2-v3: Urteil über die
     Größenordnung (beide Winkel zwischen 45° und 90°) statt über
     $\mathrm{tan}^{-1}$-Werte.
+
+## Nachzug 2026-09-30 (Katalog db8d2a3)
+
+Anlass: Katalogzeile „Änderungen 2026-09-30“ – Einheit 4 nur noch
+mit der Vorstufe „Welcher Winkel?“, Einheit 3 mit der zweiten
+Vorstufe „nur die Normalensteigung“; dazu mehr Originale in
+Abschnitt 2 der Mappe (146).
+
+Prüfskript vorher, Bestand vom 29.09. gegen die neue Mappe mit
+`--katalog`: 11 Abweichungen, 0 Warnungen, Formprobe 0 – e4 4×
+„sprosse_text nicht wortgleich in Zeile 120“ (die gestrichene
+Vorstufe), 7× Sperre gegen Terme aus neu aufgenommenen Originalen
+(zone 1, e1 1, e2 2, e3 1, e4 1, e5 1: x² − 2x − 8 aus
+2025MgrundlegendAAnalysis11-b, x³ − 4x aus 2024-bebb-lk-B2.2c,
+−x² + 4x − 1 aus 2025-bebb-gk-A1.7b, ½x² aus
+2024MgrundlegendAAnalysis21-a). Nachher: 0 / 0 / 0.
+
+    Datei  übernommen  neu  umgeschrieben  entfallen
+    zone         25      0              1          0
+    e1           58      0              1          0
+    e2           49      0              2          0
+    e3           35      4              1          0
+    e4           47      0              1          4
+    e5           38      0              1          0
+
+Umgeschrieben heißt hier: nur die Zahlen (Term, Punkt, Ergebnis),
+Sprosse, Form und Rechenweg unverändert. Neu: e3 s0 „nur die
+Normalensteigung“ (4 Zeilen, derselbe Punkt P(4 | 3) und dieselben
+Tangentensteigungen 2, −2, 4, −1 wie im Grundfall v1–v4); die alte
+Vorstufe „Tangente oder Normale?“ ist jetzt s−1 (ids e3-k1-s0-v1–4
+→ e3-k1-s-1-v1–4, ohne original). Entfallen: e4 s−1 „Was ist
+gegeben?“ (4 Zeilen); die Kette beginnt mit s0 „Welcher Winkel?“.
+Grundfälle, muster.md und die Pflichtformen unverändert.
+
+Entscheidungen 30.09.:
+10. Die neue Vorstufe e3 s0 trägt den Punkt des Grundfalls und
+    fragt nur die Steigung (Antwortgerüst m_n = __), form teil,
+    pruef die Zahl – Vorstufe und Grundfall am selben Körper.
+11. Zwei Zeilen mit original sind nur in den Zahlen umgeschrieben
+    (e3-k1-s6-v1 mit 2026-bb-ea-B2.2e, e4-k1-s10-v6 mit
+    2025-bebb-gk-B2.1d); `punkte-nachziehen.py 1c561b3` würde ihre
+    Zeilen in bank/_punkte.csv als „Aufgabe geändert“ streichen
+    (umbenannt 0, weil keine id mit original umbenannt wurde).
+    bank/_punkte.csv ist nicht geändert: Umfang und Handlung sind
+    dieselben, das Urteil „ganz“ gilt sachlich weiter; ob die zwei
+    Zeilen neu beurteilt werden, entscheidet der Chat.
+
+Befunde 30.09.:
+- Der Katalogbefund vom 29.09. (Vorstufe „Was ist gegeben?“ in e1
+  und e4 wortgleich) ist mit db8d2a3 erledigt; e4 hat nur noch
+  „Welcher Winkel?“. Der zweite Befund (Anstiegsvorstufe fehlte
+  in e3) ist mit „nur die Normalensteigung“ ebenfalls erledigt.
+- Sperre: Die vier Terme aus neu aufgenommenen Originalen trafen
+  Zeilen, die vor dem 30.09. sauber waren; jeder Mappenbau mit
+  mehr Originalen kann so Bestandszeilen kippen. Kein Fehler, aber
+  ein Grund, das Prüfskript nach jedem Mappenbau zu laufen.
+
+Offen 30.09.: bank/_punkte.csv für die zwei umgeschriebenen
+Originalzeilen (Entscheidung 11); die acht Zeilen ohne Urteil vom
+29.09. bleiben.
