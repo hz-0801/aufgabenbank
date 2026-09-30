@@ -1,119 +1,118 @@
 # Stand: flaecheninhalt-durch-integration
 
-Katalog-Commit: 2a296e54827b16f81fd664c4430c6fcd84dd5719
-(2026-09-28, aus dem Kopf der Mappe
+Katalog-Commit: db8d2a3f9f6ed0e6490a4087e3eaff2cbc8a9b19
+(2026-09-30, aus dem Kopf der Mappe
 mappen/flaecheninhalt-durch-integration.md)
-Datum: 2026-09-29 17:11 CEST (date)
-Grundlage: bank.md fünfte Fassung (29b), werkzeuge/bank-pruef.py
-v0.9 (--katalog aus der Mappe), Vorlage auftrag-eintrag.md 29d;
-Nachzug des Bestands vom 27.09. (Katalog 95b0f8b). Umbauskript
-in werkzeuge/einmalig/:
-nachzug-flaecheninhalt-durch-integration-2026-09-29.py.
-Endstand: 0 Abweichungen, 0 Warnungen, mit `--katalog`.
+Datum: 2026-09-30 08:58 UTC (date)
+Grundlage: bank.md Stand 2026-09-30b, werkzeuge/bank-pruef.py
+(--katalog aus der Mappe), Vorlage auftrag-eintrag.md 29e; Nachzug
+des Stands vom 29.09. (Katalog 2a296e5) nach den Katalogänderungen
+vom 30.09. (Zeile 127: Vorstufe der Einheit 4 in der Form der
+Nachbarketten) und der Mappe mit 148 Originalen.
+Endstand: 0 Abweichungen, 0 Warnungen, Formprobe 0, mit `--katalog`.
 
 ## Zahlen je Datei
 
     Datei       Zeilen  vorstufe grundfall sprosse pruefung pflicht
     zone.jsonl      26         0        12      13        0       1
     e1.jsonl        36         4         5      12        6       9
-    e2.jsonl        37         4         5      15        4       9
-    e3.jsonl        39         4         5      12        6      12
-    e4.jsonl        34         4         5      12        4       9
-    e5.jsonl        51         4         5      18       12      12
-    gesamt         223        20        37      82       32      52
+    e2.jsonl        41         4         5      15        8       9
+    e3.jsonl        47         4         5      12       14      12
+    e4.jsonl        36         4         5      12        6       9
+    e5.jsonl        53         4         5      18       14      12
+    gesamt         239        20        37      82       48      52
 
 ## Nachzug je Einheit
 
     Datei  übernommen  neu  umgeschrieben  entfallen
     zone         26      0              0          0
-    e1           24      0             12          0
-    e2           25      0             12          0
-    e3           24      0             15          0
-    e4           22      0             12          0
-    e5           29      7             15          0
+    e1           36      0              0          0
+    e2           37      4              0          0
+    e3           39      8              0          0
+    e4           30      2              4          0
+    e5           51      2              0          0
 
-Übernommen heißt: aufgabe, loesung, merkmal wortgleich; nachgezogen
-quelle (106–110 → 102–106), id, sprosse (e5 ab s3 um eins nach
-hinten) und sprosse_text (Vorstufen bis „nichts rechnen“,
-Prüfungssprossen mit dem Wortlaut der Mappe). Umgeschrieben: je
-Verfahrenskette die fünf Päckchenzeilen, die Pflichtformen (P1, P2,
-P4, P6, P8, in e3 und e5 die Rückrichtung P7) und die merkmal der
-Pflichtzeilen. Neu: e5 s3 „Wert und Fläche nebeneinander“ (3) und
-an der e5-Prüfungssprosse die Originale 2025MerhoehtBAnalysisMMS1-1c
-und 2024MerhoehtBAnalysisWTR1-1f (je 2).
+Übernommen heißt: Zeile wortgleich, auch quelle und sprosse_text
+(die Katalogzeilen 102–106 sind unverändert). Umgeschrieben: die
+vier Vorstufenzeilen der Einheit 4 (sprosse_text nach Zeile 105,
+drei Ankreuzoptionen statt zwei, merkmal). Neu: je zwei Zeilen zu
+den Originalen, die die Mappe seit dem 30.09. führt, alle an der
+Prüfungssprosse der Kette (e2 s7 v5–v8, e3 s6 v7–v14, e4 s6 v5–v6,
+e5 s8 v13–v14). Keine id ist umbenannt.
 
 ## Originale je Einheit
 
 - e1: 2024-bebb-lk-B2.1k, 2017MerhoehtAAnalysis2-a, 2021-B-1f
-- e2: 2025MerhoehtBAnalysisMMS1-1d, 2023-C-2d
-- e3: 2024-bebb-gk-B2.2e, 2020-be-gk-B2.2g, 2025-C-2c
-- e4: 2025MgrundlegendBAnalysisWTR1-1d, 2026MerhoehtBAnalysisMMS2-2e
+- e2: 2025MerhoehtBAnalysisMMS1-1d, 2023-C-2d, 2026-bb-gk-B2.2d
+  (Pooldublette von 2026MgrundlegendBAnalysisWTR2-1d, Kennung der
+  Mappe zuerst), 2025-bebb-lk-B2.1e
+- e3: 2024-bebb-gk-B2.2e, 2020-be-gk-B2.2g, 2025-C-2c,
+  2026MgrundlegendBAnalysisMMS2-1f, 2020MgrundlegendBAnalysisWTR1-1f,
+  2022-bebb-gk-B2.2i, 2025MerhoehtBAnalysisWTR2-1e
+- e4: 2025MgrundlegendBAnalysisWTR1-1d, 2026MerhoehtBAnalysisMMS2-2e,
+  2026MerhoehtBAnalysisWTR3-1c
 - e5: 2025-bebb-lk-B2.1d, 2025MerhoehtBAnalysisMMS1-1c,
   2025MerhoehtBAnalysisWTR2-1d, 2019MgrundlegendBAnalysisWTR1-2e,
-  2024-bebb-lk-B2.1j, 2024MerhoehtBAnalysisWTR1-1f
+  2024-bebb-lk-B2.1j, 2024MerhoehtBAnalysisWTR1-1f,
+  2019MgrundlegendBAnalysisWTR1-3d
 
 Alle an der letzten Sprosse der Kette (hoehe pruefung), je 2 Zeilen.
+Die neun Kennungen, die am 29.09. ohne Zeile blieben, sind jetzt
+alle in der Mappe und in der Bank.
 
 ## Prüfskript vor der Korrektur
 
-- Bestand gegen die neue Mappe mit `--katalog`: 139 Abweichungen
-  (e1 27, e2 28, e3 27, e4 25, e5 32), alle „sprosse_text nicht
-  wortgleich in Zeile“ (Katalogzeilen um vier verschoben,
-  Vorstufen- und Prüfungstexte länger).
-- Erster Wurf je Einheit: zone, e1–e5 je 0 Abweichungen, 0
-  Warnungen. Keine Einheit ist gescheitert.
+- Bestand gegen die neue Mappe mit `--katalog`: 4 Abweichungen
+  (e4 4), alle „sprosse_text nicht wortgleich in Zeile 105“ (die
+  Vorstufe der Einheit 4 ist neu gefasst); 0 Warnungen.
+- Erster Wurf der neuen Zeilen: 6 Abweichungen (e2 2, e3 4), fünf
+  „pruef-Zahl nicht an der Ergebnisstelle“ (Urteil oder Ergebnis
+  stand hinter anderen Zahlen), eine Sperre (die Gleichung
+  „f(x) = −1“ aus dem Original 2026MgrundlegendBAnalysisMMS2-1f in
+  der Aufgabe, ersetzt durch die ausgeschriebene Gleichung). Nach
+  einer Korrektur 0. Keine Einheit ist gescheitert.
 
 ## Entscheidungen
 
-1. Zone bleibt: Fertigkeiten Z. 34–39 unverändert.
-2. Päckchen, fester Wert im merkmal: e1 der Faktor 3 vor x² (die
-   Zahl dahinter wandert, Nullstellen ±1 … ±5), e2 f = 3x² + 2 und
-   g = −2x (obere Grenze wandert), e3 Graph x² + 1 und Höhe 10
-   (Breite des Rechtecks wandert), e4 Parabel 0,5x² (Inhalt
-   wandert), e5 Graph x − 2 (obere Grenze wandert).
-3. Die Kennungen der Prüfungssprossen, die nicht in Abschnitt 2 der
-   Mappe stehen (neun, siehe Befunde), bekommen keine Zeile; die
-   Sprosse trägt nur die Originale mit Kennung, keine Zeilen mit
-   original null daneben.
-4. P1 (Serie) in allen fünf Einheiten statt P3: keine Einheit übt
-   eine Umformungskette von Gleichungen.
-5. P7 nur in e3 und e5 (wie 27.09.): dort steht je eine
-   Zeile Term → Bild und eine Bild → Term; e1, e2, e4 haben keine
-   darstellung-Zeilen.
-6. Urteile je Einheit: P2 „Richtig“, P6 und P8 je einmal Ja, einmal
-   Nein (e1 Nein/Ja, e2 Ja/Nein, e3 Ja/Nein, e4 Ja/Nein, e5
-   Nein/Ja); die bestehende P5-Zeile v1 bleibt ohne Urteil.
-7. Schrittnamen nur in neuen und umgeschriebenen Zeilen; Integrale
-   weiter in Worten („Integral von a bis b über …“), weil `\int`
-   nicht in STANDARD steht.
-8. e5 s3 trägt das Antwortgerüst „Wert: __ Fläche: __“, weil die
-   Sprosse beide Ergebnisse nebeneinander verlangt.
+1. Zone, Grundfälle, Päckchen und muster.md bleiben: die Ketten
+   sind unverändert, nur die Vorstufe der Einheit 4 und die
+   Originale kamen dazu.
+2. Vorstufe e4: Die vier Zeilen waren schon Ankreuzaufgaben; weil
+   der neue Sprossentext drei Fälle nennt (Inhalt gesucht; Inhalt
+   gegeben und Parameter gesucht; Inhalt gegeben und Grenze
+   gesucht), tragen sie jetzt drei Optionen statt zwei; die vier
+   Situationen (v1 und v4 vorwärts, v2 Grenze, v3 Parameter) sind
+   geblieben.
+3. Pooldublette 2026-bb-gk-B2.2d / 2026MgrundlegendBAnalysisWTR2-1d:
+   ein Original, zwei Zeilen, Kennung 2026-bb-gk-B2.2d (steht in der
+   Mappe zuerst).
+4. 2025MerhoehtBAnalysisWTR2-1e („als Anschluss“ in Zeile 104) gilt
+   als Original der Prüfungssprosse e3 und bekommt zwei Zeilen.
+5. Nachweis-Aufgaben mit Term als Ergebnis (2 − 2e^u) tragen in
+   pruef den Zahlanteil des Terms an der Ergebnisstelle (wie „6k“
+   in e5 v11); Begründungen tragen die erste Zahl der Lösung.
+6. Das Original 2026MerhoehtBAnalysisWTR3-1c („genau ein k > 0“)
+   ist mit einer oberen Schranke für k gestellt (0 < k ≤ 4 bzw.
+   4 < k ≤ 6), weil bei einer ganzrationalen Funktion der Inhalt
+   unter der Achse hinter der nächsten Nullstelle wieder abnimmt
+   und die Gleichung sonst eine zweite Lösung hätte.
+7. Urteile: e2 v7 richtig, v8 falsch; e3 v11 größer, v12 kleiner.
 
 ## Befunde
 
-- Mappe: Neun Kennungen der Prüfungssprossen fehlen in Abschnitt 2
-  (2026-bb-gk-B2.2d, 2026MgrundlegendBAnalysisWTR2-1d,
-  2025-bebb-lk-B2.1e, 2026MgrundlegendBAnalysisMMS2-1f,
-  2020MgrundlegendBAnalysisWTR1-1f, 2022-bebb-gk-B2.2i,
-  2025MerhoehtBAnalysisWTR2-1e, 2026MerhoehtBAnalysisWTR3-1c,
-  2019MgrundlegendBAnalysisWTR1-3d) – wie am 27.09.
-- Katalog: Z. 105 nennt die Vorstufe von e4 in der Klammer
-  („Vorstufe: ist der Inhalt gegeben oder gesucht?“), die übrigen
-  Vorstufen enden auf „nichts rechnen“; der Sprossentext bleibt dort
-  unverändert.
-- bank/_punkte.csv: 8 ids mit original ändern sich (e5 k1 s7 → s8);
-  4 neue Zeilen mit original (e5 k1 s8 v9–v12) fehlen dort.
-- Prüfskript: \int fehlt weiter in STANDARD; die Form der
-  Pflichtzeilen (P1–P8) prüft es nicht.
-- Katalog: Die Erkennungsschritte sind seit 27.09. gestrichen (Z. 40);
-  nichts entfällt.
+- bank/_punkte.csv: 16 neue Zeilen mit original (e2 k1 s7 v5–v8,
+  e3 k1 s6 v7–v14, e4 k1 s6 v5–v6, e5 k1 s8 v13–v14) fehlen dort;
+  keine id ist umbenannt, punkte-nachziehen.py war nicht nötig.
+- Prüfskript: \int fehlt weiter in STANDARD; Integrale stehen in
+  Worten.
+- Katalog: Zeile 105 nennt die Vorstufe jetzt wie die Nachbarketten;
+  der Befund vom 29.09. (Klammerform) ist erledigt.
 
 ## Offene Punkte
 
-- Keine Grafik ist kompiliert; \flaeche und \flaechezwischen in der
-  Aufgabengrafik (e3 k2 s4 v3, e5 k2 s4 v3) beim Zusammenbau prüfen.
-- Die neun Kennungen ohne Zeile nachziehen, sobald die Mappe sie
-  führt.
+- Keine Grafik ist kompiliert; \funktionab mit zwei Ästen der
+  Hyperbel (e5 s8 v13, v14) und \flaeche, \flaechezwischen (e3 k2
+  s4 v3, e5 k2 s4 v3) beim Zusammenbau prüfen.
 - gegenlese.md und gegenlese2.md beziehen sich auf den Stand vom
   27./28.09. und sind nicht nachgezogen.
 - Übernommene Zeilen tragen keine Schrittnamen (Auftrag).
