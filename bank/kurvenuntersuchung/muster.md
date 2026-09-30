@@ -43,7 +43,7 @@ hat.
 | ausrechnen | $f'(3) = 27 - 36 + 9 = 0$ |
 | Ergebnis | $f'(3) = 0$, die Tangente bei $x = 3$ ist waagerecht |
 
-## e3 k1 Wendepunkte und Krümmung
+## e3 k2 Wendepunkte und Krümmung
 
 Aufgabe: Bilde die erste, zweite und dritte Ableitung von
 $f(x) = 2x^3 - 6x^2 + x$.
