@@ -96,3 +96,12 @@ Prüfskript: werkzeuge/bank-pruef.py v0.4; Endstand 0 Abweichungen,
 - Befunde: Keiner ist mit v0.5 erledigt; `\sin` und `\cos` fehlen
   weiter in STANDARD, ksys_bereiche kennt trigo weiter nicht, FOLGE
   kennt „°“ weiter nicht.
+
+## Nachbesserung 2026-09-30
+
+- Teil 1, Antwortgerüst: 142 Zeilen (e1.jsonl 33, e2.jsonl 26, e3.jsonl 30, e4.jsonl 18, zone.jsonl 35) –
+  im Feld antwort `\leerfeld[X]` → `__ X` und `\leerfeld` → `__`,
+  weil bank.md (Feld antwort) das Gerüst „__“ vorschreibt; alle
+  Zeilen dieser Dateien mit `\leerfeld` in antwort, ids über
+  `git show` des Commits oder das Skript
+  werkzeuge/einmalig/leerfeld-antwort-2026-09-30.py.

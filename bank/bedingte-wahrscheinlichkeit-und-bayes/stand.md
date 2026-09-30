@@ -93,3 +93,12 @@ e2-k1-s4-v3 (Aufteilung wie im Original, dann Kastenzahl 80).
 - bedingte-wahrscheinlichkeit-und-bayes-e3-k2-s3-v1: obere Schranke aufgerundet (w ≤ 0,0096 gibt 0,4999 < 0,5) → w ≤ 0,0095/0,99 ≈ 0,009596, abgerundet w ≤ 0,0095 (Regel b; Leser 2 stimmt im Abgleich zu).
 - bedingte-wahrscheinlichkeit-und-bayes-e3-k2-s3-v2: obere Schranke aufgerundet (k ≤ 0,0066 gibt 1,0001 % > 1 %) → k ≤ 0,00392/0,594 ≈ 0,006599, abgerundet k ≤ 0,0065 (Regel b; Leser 2 stimmt im Abgleich zu).
 - Prüfskript: Abweichungen 0.
+
+## Nachbesserung 2026-09-30
+
+- Teil 1, Antwortgerüst: 47 Zeilen (e1.jsonl 8, e2.jsonl 8, e3.jsonl 5, zone.jsonl 26) –
+  im Feld antwort `\leerfeld[X]` → `__ X` und `\leerfeld` → `__`,
+  weil bank.md (Feld antwort) das Gerüst „__“ vorschreibt; alle
+  Zeilen dieser Dateien mit `\leerfeld` in antwort, ids über
+  `git show` des Commits oder das Skript
+  werkzeuge/einmalig/leerfeld-antwort-2026-09-30.py.

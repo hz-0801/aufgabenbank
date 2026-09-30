@@ -113,3 +113,12 @@ Einheit ist zweimal gescheitert.
 - bank/_punkte.csv: die vier Päckchenzeilen v5 haben eine neue
   Aufgabe bei gleicher id; ihr Urteil ist neu zu fällen.
 - Sachbild-Aufgaben (e3 s3) stehen weiter ohne Grafik.
+
+## Nachbesserung 2026-09-30
+
+- Teil 1, Antwortgerüst: 70 Zeilen (e1.jsonl 12, e2.jsonl 15, e3.jsonl 11, e4.jsonl 11, zone.jsonl 21) –
+  im Feld antwort `\leerfeld[X]` → `__ X` und `\leerfeld` → `__`,
+  weil bank.md (Feld antwort) das Gerüst „__“ vorschreibt; alle
+  Zeilen dieser Dateien mit `\leerfeld` in antwort, ids über
+  `git show` des Commits oder das Skript
+  werkzeuge/einmalig/leerfeld-antwort-2026-09-30.py.

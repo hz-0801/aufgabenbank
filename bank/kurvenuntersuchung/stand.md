@@ -130,3 +130,12 @@ die Monotonie …“ (3), e4 s4 Übersichtstabelle (3).
 - Die Gegenlese vom 28.09. galt dem alten Bestand; die neuen und
   umgeschriebenen Zeilen (69) sind ungelesen.
 - Übernommene Zeilen tragen keine Schrittnamen (Auftrag).
+
+## Nachbesserung 2026-09-30
+
+- Teil 1, Antwortgerüst: 14 Zeilen (zone.jsonl 14) –
+  im Feld antwort `\leerfeld[X]` → `__ X` und `\leerfeld` → `__`,
+  weil bank.md (Feld antwort) das Gerüst „__“ vorschreibt; alle
+  Zeilen dieser Dateien mit `\leerfeld` in antwort, ids über
+  `git show` des Commits oder das Skript
+  werkzeuge/einmalig/leerfeld-antwort-2026-09-30.py.

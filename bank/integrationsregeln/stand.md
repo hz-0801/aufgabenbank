@@ -58,3 +58,12 @@ Prüfskript: werkzeuge/bank-pruef.py v0.5, 0 Abweichungen, 0 Warnungen
 
 - Stehen \int und \binom in STANDARD, kann e2 auf das Integralzeichen
   umgestellt werden.
+
+## Nachbesserung 2026-09-30
+
+- Teil 1, Antwortgerüst: 41 Zeilen (e1.jsonl 14, e2.jsonl 13, zone.jsonl 14) –
+  im Feld antwort `\leerfeld[X]` → `__ X` und `\leerfeld` → `__`,
+  weil bank.md (Feld antwort) das Gerüst „__“ vorschreibt; alle
+  Zeilen dieser Dateien mit `\leerfeld` in antwort, ids über
+  `git show` des Commits oder das Skript
+  werkzeuge/einmalig/leerfeld-antwort-2026-09-30.py.

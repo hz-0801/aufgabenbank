@@ -122,3 +122,12 @@ Prüfungshöhe von e1 und e2 (dritte Zeile, Menge 3).
 - Schrittnamen nur in neuen und umgeschriebenen Zeilen.
 - gegenlese.md und gegenlese2.md beziehen sich auf den Stand vom
   27./28.09.; nicht kompiliert (kein LaTeX in der Sitzung).
+
+## Nachbesserung 2026-09-30
+
+- Teil 1, Antwortgerüst: 141 Zeilen (e1.jsonl 5, e2.jsonl 11, e3.jsonl 24, e4.jsonl 9, e5.jsonl 19, e6.jsonl 9, e7.jsonl 10, e8.jsonl 20, zone.jsonl 34) –
+  im Feld antwort `\leerfeld[X]` → `__ X` und `\leerfeld` → `__`,
+  weil bank.md (Feld antwort) das Gerüst „__“ vorschreibt; alle
+  Zeilen dieser Dateien mit `\leerfeld` in antwort, ids über
+  `git show` des Commits oder das Skript
+  werkzeuge/einmalig/leerfeld-antwort-2026-09-30.py.
