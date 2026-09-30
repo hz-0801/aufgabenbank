@@ -1416,3 +1416,19 @@ keine
 - bank.md nennt im Abschnitt „Prüfung“ v0.5; nicht geändert, weil der Text dort den Stand v0.5 beschreibt und eine bloße Zahl ihn falsch machen würde.
 - Die Bestandsaufnahme (610 KB) wurde über Häufigkeiten und die vollständige Durchsicht aller Zeilen gelesen, die kein Merkmal traf (Restlisten je Sorte), nicht Zeile für Zeile.
 
+
+## Nachtrag v0.12 (Körperregel, 30.09.)
+
+Entscheidung des Lehrers 30.09.: Ein einzelner Punkt (Zahlenpaar oder Tripel als Koordinaten) ist frei; gesperrt sind zwei oder mehr verschiedene Punkte derselben Quelle in einer Zeile. Quelle ist ein Original (Kennung) oder der Kasten (Merkkasten und Typische Fehler der Mappe zusammen). Die Ausnahme „Punkte nur aus 0, 1, −1“ aus v0.11 ist entfernt; Ursprung frei, Matrizen ((a; b), (c; d)) kein Punkt, Anteil und Produkt unverändert. Lauf je Eintrag mit `--katalog` über 72 Einträge (ohne _basis).
+
+| | Abweichungen | Warnungen | Formprobe |
+|---|---|---|---|
+| v0.11 | 439 | 2 | 882 |
+| v0.12 | 317 | 2 | 882 |
+
+122 der 124 Punkt-Abweichungen aus v0.11 entfallen (15 Einträge); keine neue Zeile, keine der 315 übrigen verändert. Zwei Zeilen bleiben:
+
+| id | Befund | Urteil |
+|---|---|---|
+| geraden-e3-k1-s4-v1 | Sperre: Punkte (0\|5\|0), (5\|0\|0), (5\|5\|0) derselben Quelle (Original 2017MgrundlegendBAGLAA2CAS2-1f) | Treffer nach Regel, inhaltlich kein Körper des Originals: Die Zeile baut einen Würfel der Kantenlänge 5 (mit G(0\|5\|5)) nach 2021-be-gk-B3b; die drei Ecken decken sich zufällig mit dem Bodenquadrat der Zeltpyramide (Spitze S(2,5; 2,5; 3,9)). Entscheidung Chat. |
+| zufallsexperimente-und-pfadregeln-e2-k1-s0-v4 | Sperre: Punkte (2\|5), (5\|2) derselben Quelle (Kasten: Merkkasten, Zeile 70) | Kein Körper: Würfelergebnisse (2; 5)/(5; 2), keine Koordinaten; die Zeile übernimmt aber das Beispiel des Kastens wörtlich als Gegenstand. Das Skript unterscheidet Ergebnispaar und Punkt nicht. Entscheidung Chat. |

@@ -1,8 +1,8 @@
 # Aufgabenbank – Form und Regeln
 
-Stand 2026-09-29b, fünfte Fassung (Vorstufen-Nummerierung, eine
+Stand 2026-09-30, fünfte Fassung (Vorstufen-Nummerierung, eine
 Prüfungssprosse je Kette, Körperregel beim Nachzug; Pflichtformen
-und Päckchen seit 28.09.).
+und Päckchen seit 28.09.; Körperregel der Sperre für Punkte 30.09.).
 
 ## Zweck
 
@@ -219,7 +219,10 @@ Verfahrenskette ist daher nicht immer k1.
 - Keine ganze Gleichung, kein Term, kein Zahlenpaar und keine
   Funktion aus Merkkasten, Beispiel oder Original des Eintrags.
   Ein einzelner Bruch ist kein Zahlenpaar; frei sind einzelne
-  Ziffern und Zahlen unter 10.
+  Ziffern und Zahlen unter 10. Ein einzelnes Zahlenpaar oder
+  Tripel als Punkt ist frei; gesperrt sind zwei oder mehr Punkte
+  derselben Quelle (ein Original, der Kasten) in einer Zeile
+  (Körperregel der Sperre, 30.09.).
   Ausnahme: Frei sind der Gegenstand der Kette und die Form, die
   der Sprossentext selbst nennt (x², 2x², (x − d)² + e als Form).
   Gesperrt bleiben konkrete Zahlbelegungen aus Kasten und
@@ -396,13 +399,15 @@ passender Argumentzahl; bei ksys-Grafiken liegen die Punkte der
 Lösung, jeder Scheitel einer \parabel und jeder \punkt im
 Achsenbereich, bei ksys3 die Tripel der Lösung; form zeichnen
 oder ein Ablese- oder Zeichenauftrag in aufgabe verlangt grafik
-(das Wort „Graph" allein nicht); kein Zahlenpaar, kein Tripel,
+(das Wort „Graph" allein nicht); kein Zahlenpaar (Anteil,
+Produkt), keine zwei Punkte oder Tripel derselben Quelle (ein
+Original; Merkkasten und Typische Fehler zusammen als Kasten),
 keine Gleichung, kein Zahlterm und kein Term mit Variable und
 Zahl aus Merkkasten, Typische Fehler und den Originalen der Mappe
 in aufgabe (Sperre, Ausnahme nach „Regeln für den Inhalt"; ein
-einzelner Bruch ist kein Paar, der Ursprung kein Punkt; x⁴ der
-Mappe gilt wie x^4); keine Aufgabe doppelt (aufgabe und grafik
-zusammen).
+einzelner Bruch ist kein Paar, ein einzelner Punkt ist frei, der
+Ursprung zählt nicht als Punkt; x⁴ der Mappe gilt wie x^4); keine
+Aufgabe doppelt (aufgabe und grafik zusammen).
 
 Warnungen: Mengen aus „Mengen je Kette" (Grundfall je Kette,
 Prüfungshöhe ohne Original 3), das Zone-Paar, hoehe und merkmal

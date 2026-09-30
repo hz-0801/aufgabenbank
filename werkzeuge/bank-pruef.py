@@ -1,6 +1,17 @@
 #!/usr/bin/env python3
 """Prüft die Bank eines Katalogeintrags (bank.md, Abschnitt „Prüfung").
 
+v0.12, 2026-09-30 (Entscheidung Körperregel):
+  a) Punkte und Tripel der Sperre werden je Quelle gesammelt (ein
+     Original; Merkkasten und Typische Fehler zusammen als „Kasten“).
+     Ein einzelner Punkt ist frei; eine Zeile weicht ab, wenn zwei
+     oder mehr verschiedene Punkte derselben Quelle in aufgabe stehen
+     (gesperrt ist der Körper, nicht der Einzelpunkt). Die Meldung
+     nennt Quelle und Punkte.
+  b) Die Ausnahme „Punkte nur aus 0, 1, −1“ aus v0.11 entfällt; der
+     Ursprung bleibt frei, Matrizen ((a; b), (c; d)) bleiben kein
+     Punkt. Anteil, Produkt, Gleichungen und Terme wie bisher.
+
 v0.11, 2026-09-30 (Befunde Schub 1–4 und Übergabe 30.09.):
   a) Formprobe P1–P8 als eigene Rubrik (FORMPROBE-Zeilen, Zählung
      „Formprobe: n Hinweise“), nicht Abweichung, nicht Warnung: je
@@ -696,7 +707,7 @@ def zahlenpaare(text):
     Produkt. Ein einzelner Bruch a/b ist kein Paar; Zähler oder Nenner
     eines Bruchs bilden mit einem Faktor daneben kein Paar (1/12 · 3);
     der Ursprung (0|0) bzw. (0|0|0) ist keine Zahlbelegung, ebenso seit
-    v0.11 jeder Punkt aus 0, 1, −1 und jede Matrix ((a; b), (c; d))."""
+    v0.11 jede Matrix ((a; b), (c; d))."""
     t = mathnorm(text)
     n = r"(-?\d+(?:,\d+)?)"
     aus = set()
@@ -704,12 +715,12 @@ def zahlenpaare(text):
     # v0.11: Matrix ((2; 2), (3; 0)) zeilenweise ist kein Punkt.
     t = re.sub(r"\(\s*\([^()]*\)(?:\s*[,;]\s*\([^()]*\))+\s*\)", " ", t)
     for a, b in re.findall(r"\(\s*" + n + s + n + r"\s*\)", t):
-        if not einheitlich((zahl(a)[0], zahl(b)[0])):
+        if zahl(a)[0] or zahl(b)[0]:             # Ursprung frei
             aus.add(("Punkt", zahl(a)[0], zahl(b)[0]))
     for a, b, c in re.findall(r"\(\s*" + n + s + n + s
                               + n + r"\s*\)", t):
         k = tuple(zahl(x)[0] for x in (a, b, c))
-        if not einheitlich(k):
+        if any(k):                               # Ursprung frei
             aus.add(("Tripel",) + k)
     for muster, art in ((n + r"\s*%?\s*von\s*" + n, "Anteil"),
                         (n + r"\s*:\s*" + n, "Anteil"),
@@ -725,14 +736,10 @@ def zahlenpaare(text):
     return aus
 
 
-def einheitlich(k):
-    """v0.11: Koordinaten nur aus 0, 1, −1 (Ursprung, Einheits- und
-    Achsrichtung wie (0|0|1)) sind keine Zahlbelegung eines Originals."""
-    return all(x in (0, 1, -1) for x in k)
-
-
 def lade_sperre(mappe):
-    """{('gleichung'|'paar', muster): herkunft} aus der Mappe."""
+    """{('gleichung'|'paar', muster): herkunft} aus der Mappe; seit
+    v0.12 Punkte und Tripel als {('punkte', quelle): {punkt: herkunft}}
+    (Körperregel)."""
     return sperre_aus(mappe.read_text(encoding="utf-8"))
 
 
@@ -743,6 +750,9 @@ def originale_aus(text):
     orig = text.split("## 2 Originale")[1].split("\n## ")[0]
     return {z[4:].split(" ")[0] for z in orig.split("\n")
             if z.startswith("### ")}
+
+
+PUNKTARTEN = ("Punkt", "Tripel")
 
 
 def sperre_aus(text):
@@ -765,7 +775,11 @@ def sperre_aus(text):
             for g in gleichungen(inhalt):
                 sperre.setdefault(("gleichung", g), herkunft)
             for p in zahlenpaare(inhalt):
-                sperre.setdefault(("paar", p), herkunft)
+                if p[0] in PUNKTARTEN:            # v0.12 Körperregel
+                    sperre.setdefault(("punkte", "Kasten"), {}) \
+                        .setdefault(p, herkunft)
+                else:
+                    sperre.setdefault(("paar", p), herkunft)
     orig = text.split("## 2 Originale")[1].split("## 3 ")[0] \
         if "## 2 Originale" in text else ""
     kid = None
@@ -779,7 +793,11 @@ def sperre_aus(text):
             for g in gleichungen(m.group(2)):
                 sperre.setdefault(("gleichung", g), herkunft)
             for p in zahlenpaare(m.group(2)):
-                sperre.setdefault(("paar", p), herkunft)
+                if p[0] in PUNKTARTEN:            # v0.12 Körperregel
+                    sperre.setdefault(("punkte", herkunft), {}) \
+                        .setdefault(p, herkunft)
+                else:
+                    sperre.setdefault(("paar", p), herkunft)
     return sperre
 
 
@@ -797,7 +815,18 @@ def sperrprobe(a, sperre):
     frei = ohne_raum(mathnorm(a["sprosse_text"]))
     paare = zahlenpaare(a["aufgabe"])
     for (art, muster), herkunft in sperre.items():
-        if art == "gleichung":
+        if art == "punkte":
+            # v0.12 Körperregel: zwei oder mehr Punkte derselben Quelle
+            treffer = sorted((p for p in herkunft if p in paare),
+                             key=lambda p: (len(p), p[1:]))
+            if len(treffer) >= 2:
+                zeilen = sorted({herkunft[p] for p in treffer})
+                wo = muster if muster != "Kasten" else \
+                    "Kasten: " + "; ".join(zeilen)
+                b.append("Sperre: Punkte "
+                         + ", ".join(paar_text(p) for p in treffer)
+                         + f" derselben Quelle ({wo})")
+        elif art == "gleichung":
             if muster in frei:
                 continue                    # Gegenstand der Kette
             if re.search(r"(?<![\w²³,+\-·/^(|])" + re.escape(muster)
@@ -1503,7 +1532,8 @@ def selbsttest():
         ok &= ist == soll
     for punkt, text, ist, soll in (faelle_v03(basis)
                                    + faelle_v04(basis)
-                                   + faelle_v05(basis)):
+                                   + faelle_v05(basis)
+                                   + faelle_v012(basis)):
         zeichen = "OK" if ist == soll else "FEHLER"
         print(f"{zeichen} {punkt}) {text}")
         ok &= ist == soll
@@ -1642,8 +1672,8 @@ def faelle_v03(basis):
          gesperrt("Rechne $12 \\cdot 3$."), False),
         ("e", "einzelner Bruch 1/10 ist kein Zahlenpaar",
          gesperrt("$\\frac{1}{10}$ von $50$ € – wie viel?"), True),
-        ("e", "Punkt (12|5) bleibt gesperrt",
-         gesperrt("Liegt $(12|5)$ auf f?"), False),
+        ("e", "Einzelpunkt (12|5) des Kastens frei (v0.12)",
+         gesperrt("Liegt $(12|5)$ auf f?"), True),
         ("e", "gemischte Zahl 3\\frac{3}{5} als 18/5 gelesen",
          not vergleiche("[18, 5]", "$3\\frac{3}{5}$"), True),
         ("f", "„$-\\,6$“ als −6 gelesen",
@@ -1810,17 +1840,20 @@ def faelle_v05(basis):
                         "$A(1 | 2 | 0)$, $B(3 | -1 | 2)$"), True),
         ("b", "Paar (4|-2) weiter mit beiden Zahlen gelesen",
          not vergleiche("[4, -2]", "Scheitel $S(4 | -2)$"), True),
-        ("b", "Tripel A(1 | 2 | 0) aus dem Kasten gesperrt",
-         gesperrt("Liegt $A(1 \\mid 2 \\mid 0)$ auf g?"), False),
+        ("b", "Tripel A(1 | 2 | 0) aus dem Kasten allein frei (v0.12)",
+         gesperrt("Liegt $A(1 \\mid 2 \\mid 0)$ auf g?"), True),
         ("b", "anderes Tripel (1 | 2 | 5) frei",
          gesperrt("Liegt $P(1 | 2 | 5)$ auf g?"), True),
         ("b", "Tripel (12 | 5 | 1) ist nicht das Paar (12|5)",
          gesperrt("Liegt $Q(12 | 5 | 1)$ auf g?"), True),
-        ("b", "Paar (12|5) bleibt gesperrt",
-         gesperrt("Liegt $(12|5)$ auf f?"), False),
+        ("b", "Paar (12|5) allein frei (v0.12)",
+         gesperrt("Liegt $(12|5)$ auf f?"), True),
+        ("b", "A(1 | 2 | 0) und (12|5) zusammen gesperrt (v0.12)",
+         gesperrt("Liegen $A(1 | 2 | 0)$ und $(12|5)$ auf g?"), False),
         ("b", "Ursprung (0 | 0 | 0) ist kein gesperrtes Tripel",
-         not ("paar", ("Tripel", 0, 0, 0)) in sperre_aus(
-             mini.replace("A(1 | 2 | 0)", "O(0 | 0 | 0)")), True),
+         not ("Tripel", 0, 0, 0) in sperre_aus(
+             mini.replace("A(1 | 2 | 0)", "O(0 | 0 | 0)"))
+         .get(("punkte", "Kasten"), {}), True),
         ("b", "Tripel außerhalb des ksys3: Abweichung",
          grafik("$P(5 | 1 | 1)$", "5", ksys3), False),
         ("b", "Tripel im ksys3 ohne Befund",
@@ -1835,6 +1868,35 @@ def faelle_v05(basis):
         ("c", "x¹⁰ und x^{10} gleich normiert, x² bleibt x²",
          mathnorm("x¹⁰") == mathnorm("x^{10}")
          and mathnorm("x²") == mathnorm("x^2") == "x²", True),
+    ]
+
+
+def faelle_v012(basis):
+    """[(Punkt, Beschreibung, ist, soll)] für die Körperregel der v0.12.
+    ist/soll: True = ohne Befund."""
+    sperre = sperre_aus(
+        "## 1 Katalogeintrag\n"
+        "## 2 Originale (2)\n"
+        "### 2022-test-A1a (test)\n"
+        "- gegeben: A(1; 2; 3), B(4; 0; 2), C(0; 0; 1)\n"
+        "### 2023-test-B2b (test)\n"
+        "- gegeben: P(5; 1; 2)\n"
+        "## 3 Maßstab\n")
+
+    def frei(aufgabe):
+        z = dict(basis, variante=1, aufgabe=aufgabe, loesung="$1$",
+                 pruef="1", id="test-e2-k1-s1-v1")
+        return not sperrprobe(z, sperre)
+
+    return [
+        ("v0.12", "ein Punkt eines Originals: keine Abweichung",
+         frei("Liegt $A(1 | 2 | 3)$ auf g?"), True),
+        ("v0.12", "zwei Punkte desselben Originals: Abweichung",
+         frei("Gerade durch $A(1 | 2 | 3)$ und $B(4 | 0 | 2)$."), False),
+        ("v0.12", "je ein Punkt aus zwei Originalen: keine Abweichung",
+         frei("Gerade durch $A(1; 2; 3)$ und $P(5; 1; 2)$."), True),
+        ("v0.12", "Punkt nur aus 0, 1 zählt mit (Ausnahme v0.11 weg)",
+         frei("Gerade durch $A(1 | 2 | 3)$ und $C(0 | 0 | 1)$."), False),
     ]
 
 
