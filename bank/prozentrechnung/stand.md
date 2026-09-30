@@ -95,3 +95,16 @@ Prüfskript vor der Korrektur (mit `--katalog`): e1 0, e2 0, e3 4
   rückwärts) und die neuen Streifen sind nur über das Prüfskript
   geprüft.
 - Steigung in Prozent berechnen hat weiter kein eigenes Original.
+
+## Nachbesserung 2026-09-30
+
+- Teil 3, „Begründe, ohne genau zu rechnen“ – je Einheit die
+  P6-Zeile umgeschrieben
+  (bank.md: eine begruenden-Zeile je Einheit ohne Rechnung
+  entscheidbar); P6 bleibt, Urteil unverändert.
+  - prozentrechnung-e2-k5-s2-v2: Überschlag „weniger Mädchen als
+    Jungen, also unter 50 %“ statt Nachrechnen.
+  - prozentrechnung-e4-k3-s2-v3: Mo mit 120 % von 54 € – über 100 %
+    ist der Prozentwert größer als das Ganze.
+  - prozentrechnung-e5-k3-s2-v3: 100 % weniger hieße null übrig –
+    Größenordnung statt Rechnung.

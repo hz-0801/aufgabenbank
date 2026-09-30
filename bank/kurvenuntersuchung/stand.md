@@ -139,3 +139,15 @@ die Monotonie …“ (3), e4 s4 Übersichtstabelle (3).
   Zeilen dieser Dateien mit `\leerfeld` in antwort, ids über
   `git show` des Commits oder das Skript
   werkzeuge/einmalig/leerfeld-antwort-2026-09-30.py.
+- Teil 3, „Begründe, ohne genau zu rechnen“ – je Einheit die
+  P6-Zeile umgeschrieben
+  (bank.md: eine begruenden-Zeile je Einheit ohne Rechnung
+  entscheidbar); P6 bleibt, Urteil unverändert.
+  - kurvenuntersuchung-e2-k12-s2-v3: $f'(x) = 3(x-2)^2$ vorgegeben, Urteil
+    über das Vorzeichen des Quadrats.
+  - kurvenuntersuchung-e3-k7-s2-v3: Urteil über das Vorzeichen von $f''$
+    (Vielfaches von $x^2$), ohne $f''$ auszurechnen.
+  - kurvenuntersuchung-e4-k4-s2-v3: Hochpunkt $H(2 | 4)$ von $f'$
+    vorgegeben, Urteil über $f'(2) > 0$.
+  - kurvenuntersuchung-e5-k4-s2-v3: Zuwächse 12, 8, 5 cm und $h$, $t$
+    erklärt, Urteil über Monotonie der Zuwächse.

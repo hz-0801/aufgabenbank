@@ -143,3 +143,12 @@ keine Zeile in bank/_punkte.csv.
   umgeschriebenen Zeilen (73) sind ungelesen.
 - Ohne Zeile bleiben weiter die Originale, die nur außerhalb von
   „Prüfungsform“ stehen (Mappe, Abschnitt 2, Schluss).
+
+## Nachbesserung 2026-09-30
+
+- Teil 3, „Begründe, ohne genau zu rechnen“ – P6-Zeile umgeschrieben
+  (bank.md: eine begruenden-Zeile je Einheit ohne Rechnung
+  entscheidbar); P6 bleibt, Urteil unverändert.
+  - tangente-normale-schnittwinkel-e4-k3-s2-v3: Urteil über die
+    Größenordnung (beide Winkel zwischen 45° und 90°) statt über
+    $\mathrm{tan}^{-1}$-Werte.
