@@ -1,13 +1,32 @@
 # Stand: rationale-zahlen
 
-Katalog-Commit: cebfd509ea71ae238b589537bd00b7fc306df06f
-(2026-09-28, aus dem Kopf von mappen/rationale-zahlen.md)
-Datum: 2026-09-29 13:33 (date, UTC)
-Grundlage: bank.md fünfte Fassung, werkzeuge/bank-pruef.py v0.9,
-Vorlage auftrag-eintrag.md 2026-09-29c; Nachzug des Bestands vom
-27.09. (Stand davor in der Git-Geschichte dieser Datei). Umbau mit
-werkzeuge/einmalig/nachzug-rationale-zahlen-2026-09-29.py.
+Katalog-Commit: db8d2a3f9f6ed0e6490a4087e3eaff2cbc8a9b19
+(2026-09-30, aus dem Kopf von mappen/rationale-zahlen.md)
+Datum: 2026-09-30 08:52 (date, UTC)
+Grundlage: bank.md 2026-09-30b, werkzeuge/bank-pruef.py v0.9,
+Vorlage auftrag-eintrag.md 2026-09-29e; Nachzug 30.09. auf den
+Bestand vom 29.09. (Katalog cebfd50; Stand davor in der
+Git-Geschichte dieser Datei).
 Endstand: 0 Abweichungen, 0 Warnungen, auch mit `--katalog`.
+
+## Nachzug 30.09.
+
+Katalogänderung 30.09. (Kopfzeile des Eintrags): Einheit 2, die
+Sprosse „nur das Vorzeichen“ begründet am Pfeilbild statt mit den
+Beträgen (Z. 85). Prüfskript mit `--katalog` vor dem Nachzug: 3
+Abweichungen, alle e2 s2 „sprosse_text nicht wortgleich in Zeile
+85“; 0 Warnungen, Formprobe 0 Hinweise. Danach 0/0.
+
+    Datei  übernommen  neu  umgeschrieben  entfallen
+    zone         23      0              0          0
+    e1           46      0              0          0
+    e2           59      0              3          0
+    e3           44      0              0          0
+    e4           37      0              0          0
+
+Umgeschrieben: e2 k3 s2 v1–v3 (sprosse_text, merkmal, aufgabe,
+loesung, grafik); Zahlen und ids blieben, keine id umbenannt.
+Zone, muster.md und die Zahlen je Datei sind unverändert.
 
 ## Zahlen je Datei
 
@@ -64,8 +83,13 @@ Vorzeichen“ (3 Zeilen), die Sprossen danach rücken um eins.
    $-7$, e3 der Faktor $-6$, e4 der Startwert $-60$ €.
 3. Gerüst „Vorzeichen: __ Betrag: __ Ergebnis: __“ in e3 s1 v1–v2
    (Päckchen) und e2 s5 v1–v2; die Lösung trägt dieselben Wörter.
-4. e2 s2 „nur das Vorzeichen“: Ankreuzen mit zwei Optionen, Lösung
-   nennt die Option zuerst, dann den Betragsvergleich; pruef "".
+4. e2 s2 „nur das Vorzeichen“ (seit 30.09.): Ankreuzen mit zwei
+   Optionen; der Schüler zeichnet den Pfeil vom Start auf einer
+   Zahlengeraden (`\zahlenstrahl`, Start markiert, Bereich so, dass
+   Start, Null und Pfeilende liegen); die Lösung nennt die Option
+   zuerst, dann das Pfeilbild (Ende, reicht über die Null oder
+   nicht); pruef "". Die Vorlage hat keinen Pfeil-Baustein für den
+   Zahlenstrahl, darum zeichnet der Schüler; die Zahlen blieben.
 5. P6 steht, wo der Bestand eine Personenaussage hatte (e1, e2);
    e3 und e4 bekamen eine neue (Vorzeichenregel „nicht
    entscheidbar“, Temperaturunterschied); dort wich die
@@ -82,9 +106,14 @@ Vorzeichen“ (3 Zeilen), die Sprossen danach rücken um eins.
 1. Katalog Z. 33–35 und Vorstufen: „Pfeil an der Zahlengeraden“,
    „Wie viele Minuszeichen?“, „Startwert und Änderung“ stehen als
    Vorstufe; die Erkennungsschritte davon sind entfallen (wie 27.09.).
-2. Katalog Z. 85: Die Sprosse „nur das Vorzeichen“ steht vor
-   „negative Zahl addieren mit Klammer“, verlangt aber schon das
-   Betragsdenken der Typ-Zeile „Beträge“ (k4, Typ ohne Kette).
+2. Katalog Z. 85: Die Sprosse „nur das Vorzeichen“ verlangte das
+   Betragsdenken der Typ-Zeile „Beträge“ vor ihrer Zeit; seit 30.09.
+   begründet sie am Pfeilbild – der Befund vom 29.09. ist damit
+   erledigt.
+5. Bausteine: Ein Pfeil an der Zahlengeraden (Start, Länge,
+   Richtung) fehlt in `_bausteine.md`; Pfeilbilder (e2 s0, s2) sind
+   darum nur als Zeichenauftrag des Schülers möglich, eine
+   Lösungsgrafik mit dem Pfeil gibt es nicht.
 3. Prüfskript: Serie P1 und Aussagenserie P4 werden nur über
    pflicht erkannt; eine P2-Vorlage mit „Richtig.“ braucht pruef ""
    ohne eigene Regel (geht über pflicht fehler).
