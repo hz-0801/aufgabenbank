@@ -30,7 +30,7 @@ $R(5 | -1 | 3)$. Berechne den Winkel zwischen den Kanten PQ und PR.
 | Kosinus | $\mathrm{cos}\,\varphi = \frac{4}{3 \cdot \sqrt{17}}$ |
 | Ergebnis | $\varphi \approx 71{,}1^\circ$ |
 
-## e3 k1 Neigungswinkel von Ebenen
+## e3 k2 Neigungswinkel von Ebenen
 
 Aufgabe: Eine Ebene hat die Gleichung $2x + 2y + z = 8$. Berechne
 ihren Neigungswinkel gegen die xy-Ebene.
