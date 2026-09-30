@@ -1,8 +1,9 @@
 # Aufgabenbank – Form und Regeln
 
-Stand 2026-09-30, fünfte Fassung (Vorstufen-Nummerierung, eine
+Stand 2026-09-30b, fünfte Fassung (Vorstufen-Nummerierung, eine
 Prüfungssprosse je Kette, Körperregel beim Nachzug; Pflichtformen
-und Päckchen seit 28.09.; Körperregel der Sperre für Punkte 30.09.).
+und Päckchen seit 28.09.; Körperregel der Sperre für Punkte 30.09.;
+Erkennungsschritte und Vorstufen, Marke „kein P10-Stoff“ 30.09.b).
 
 ## Zweck
 
@@ -132,8 +133,11 @@ Vorstufe 4, jede Vorstufe der Kette (0, −1, −2 …) für sich;
 Grundfall 5; jede weitere Sprosse 3; Prüfungshöhe 2
 je Original des Katalogs (verfremdet); Pflichtelemente je
 Einheit: fehler 3, begruenden 3, anwendung 3, darstellung 3, wo
-die Typen der Einheit sie tragen. Zone: je Fertigkeit 2 sehr
-leichte, 1 mittlere, je Fallstrick 1.
+die Typen der Einheit sie tragen. In Sek-II-Einträgen tragen die
+Deutungstypen (Baumdiagramm darstellen, Term deuten, Ereignis
+beschreiben) die Pflichtelemente darstellung und anwendung, auch
+wenn die Typzeilen diese Wörter nicht nennen. Zone: je Fertigkeit
+2 sehr leichte, 1 mittlere, je Fallstrick 1.
 
 Die drei fehler-Zeilen einer Einheit tragen verschiedene Formen:
 Schülerrechnung mit Fehler; fehlerfreie Vorlage (P2); Serie
@@ -146,8 +150,11 @@ Die Formen P1–P8 stehen unter „Regeln für den Inhalt“ (Urteile vom
 
 Der Grundfall (5 Zeilen) gilt je Verfahrenskette, nicht je
 Einheit. Hat eine Einheit zwei Verfahrensketten, hat sie zwei
-Grundfälle. Die Pflichtelemente stehen je Einheit einmal; ihre
-Kette heißt nach der ersten Verfahrenskette der Einheit.
+Grundfälle. „(4×)“ oder „viermal“ am Grundfall im Katalog ist
+die Zahl der Grundfall-Aufgaben auf dem Blatt; die Bank hält fünf
+Zeilen, damit die Auswahl wechseln kann. Die Pflichtelemente
+stehen je Einheit einmal; ihre Kette heißt nach der ersten
+Verfahrenskette der Einheit.
 
 Eine Prüfungshöhe ohne P10-Original (Zielmarke aus
 Rahmenlehrplan oder Lehrwerk) trägt hoehe pruefung, original
@@ -160,15 +167,29 @@ Sprosse, je Original zwei Zeilen (Beschluss 29.09., Schub 1 und
 2: fünf Einträge haben so zusammengelegt, bis zwölf Zeilen an
 einer Sprosse). Grund: das Blatt zieht an der Prüfungshöhe „was
 die Prüfung fragt“, nicht ein bestimmtes Original.
+Ein Original, das zwei Einheiten durchläuft (Ansatz in der einen,
+Rechnung in der nächsten; der Katalog nennt es an beiden Stellen,
+etwa „als Ansatz“), bekommt seine zwei Zeilen an der
+Prüfungssprosse der späteren Einheit; in der früheren steht es nur
+als Verweis in sprosse_text.
 
-Erkennungsschritt 4 Zeilen: eigene Kette, nur Sprosse 0; er
-steht einmal, in der ersten Einheit seines Bereichs
-(unterrichtsblatt 2.3 a).
-
-Verlangt ein Erkennungsschritt denselben Handgriff wie die
-Vorstufe einer Kette derselben Einheit, entfällt der
-Erkennungsschritt; die Vorstufe bleibt. stand.md nennt den Fall
-unter „Befunde" als Katalogbefund (der Katalog führt beide).
+Erkennungsschritt 4 Zeilen: eigene Kette, nur Sprosse 0
+(unterrichtsblatt 2.3 a). Er wird einmal angelegt, in der ersten
+Einheit seines Bereichs („Vor Einheit …“ im Katalog), in der keine
+Kette eine Vorstufe mit demselben Handgriff hat; hat jede Einheit
+des Bereichs eine solche Vorstufe, entfällt er. Derselbe Handgriff
+heißt: dieselbe Entscheidung an derselben Art Vorlage (ankreuzen,
+ob eine Stelle gegeben oder gesucht ist; „von“ im Text markieren),
+gleich, wie die Frage heißt und ob die Ankreuzzeilen anders lauten.
+Eine andere Entscheidung oder eine andere Vorlage ist ein anderer
+Handgriff (Länge wählen gegen Dreieck finden; was fehlt gegen was
+gemeint ist), auch wenn beide nach Zahl oder Richtung fragen. Zwei
+Ketten mit Vorstufen desselben Handgriffs, auch in verschiedenen
+Einheiten: die Zeilen stehen einmal, bei der ersten Kette in der
+Reihenfolge der Datei; die zweite Kette beginnt mit dem Grundfall.
+Jeder dieser Fälle steht in stand.md unter „Befunde“ als
+Katalogbefund mit beiden Stellen (Erkennungsschritt oder erste
+Vorstufe; zweite Vorstufe); der Katalog bleibt unverändert.
 
 Typ ohne Kette 3 Zeilen: eine Sprosse, hoehe sprosse (nicht
 grundfall; der Grundfall gehört der Verfahrenskette).
@@ -230,6 +251,9 @@ Verfahrenskette ist daher nicht immer k1.
 - Ein Original wird verfremdet: gleiches Verfahren, gleiche
   Falle, gleiche Form, andere Zahlen, anderer Kontext; das Feld
   original trägt Kennung, Jahr und Papier.
+- Eine Sprosse mit der Katalogmarke „(kein P10-Stoff)“ bekommt
+  Bankzeilen wie jede andere; die Marke steuert nur den Zusammenbau
+  (das Prüfungsheft lässt sie aus, das Unterrichtsblatt führt sie).
 - Zahlen so, dass Ergebnisse endlich sind und leichte Aufgaben im
   Kopf gehen; periodische Dezimalbrüche tragen einen Hinweis.
   Dreisatz-Zahlen der Zone im Kopf rechenbar.

@@ -17,7 +17,8 @@ sind die Raw-URLs von hz-0801/mathe-nachhilfe und hz-0801/blattbau
    Zeilen mit „[RLP]" oder „LISUM" (auch außerhalb von SCHUTZ,
    etwa in Verortung und Lerneinheiten); solche Ausnahmen meldet
    der Lauf.
-3. Originale: je Kennung aus „Prüfungsform" und „Zielmarke" die
+3. Originale: je Kennung aus „Prüfungsform", „Für schwache Schüler"
+   (Sprossenketten; seit 30.09.2026, Vorschlag B.1) und „Zielmarke" die
    Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren,
    fehlerquelle, format, antwort aus den Prüfungsdateien (CSV).
 4. Maßstab: unterrichtsblatt.md 2.2, 2.3 c, 2.4 b–c, 3.6 wortgleich.
@@ -196,9 +197,10 @@ KANDIDAT = re.compile(r"(?<![\w.-])\d{4}-[A-Za-z]+-[A-Za-z0-9]+"
 
 def originale(eintrag_text, tabelle):
     pf = abschnitt(eintrag_text, "Prüfungsform")
+    ketten = abschnitt(eintrag_text, "Für schwache Schüler")
     ziel = "\n".join(z for z in eintrag_text.split("\n")
                      if z.startswith("Zielmarke"))
-    quelle = pf + "\n" + ziel
+    quelle = pf + "\n" + ketten + "\n" + ziel
     ids = kennungen(quelle, tabelle)
     unbekannt = {k for k in KANDIDAT.findall(quelle) if k not in tabelle}
     staemme = sorted(k for k in unbekannt
@@ -207,7 +209,8 @@ def originale(eintrag_text, tabelle):
     fehlt = sorted(unbekannt - set(staemme))
     rest = kennungen(eintrag_text, tabelle)
     ausserhalb = [k for k in rest if k not in ids]
-    aus = ["Kennungen aus „Prüfungsform“ und „Zielmarke“ in der Folge "
+    aus = ["Kennungen aus „Prüfungsform“, „Für schwache Schüler“ und "
+           "„Zielmarke“ in der Folge "
            "ihres ersten Auftretens; Spalten " + ", ".join(SPALTEN) + ".",
            ""]
     for kid in ids:
@@ -231,7 +234,8 @@ def originale(eintrag_text, tabelle):
                    + ", ".join(staemme))
         aus.append("")
     if ausserhalb:
-        aus.append("Nur außerhalb von „Prüfungsform“ genannt, nicht "
+        aus.append("Nur außerhalb von „Prüfungsform“, „Für schwache "
+                   "Schüler“ und „Zielmarke“ genannt, nicht "
                    "aufgenommen: " + ", ".join(ausserhalb))
         aus.append("")
     return aus, len(ids)
