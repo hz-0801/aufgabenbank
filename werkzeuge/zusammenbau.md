@@ -3,17 +3,20 @@
 Stand 2026-09-30, v0.9 (Lernblatt im Satz des Kompetenzblatts: Auftrag
 über der Nummer, kurze Terme nebeneinander, Ich-kann-Titel, Zweigzeile,
 Mengen nach bank.md, Zone-Verweis, siehe „Rezept Lernblatt (v0.9)“;
-v0.8 Rezept Kompetenzblatt nach dem Sprachlauf:
-Aufgabe in Sätzen als Absatz, Merkkasten als Mathe, siehe „Rezept
-Kompetenzblatt“; v0.7 Rezept Kompetenzblatt: `--kompetenz`,
-Kennung XXX-K<n>, Vorspann vorspann.tex; v0.6 Rezept Prüfungs-Fokus:
-`--fokus-pruefung`, Kennung XXX-P<n>; v0.5 Rezept Zettel: `--zettel basis`; Prüfkennung
-kurz in allen Rezepten; Zweigzeile „P10 ×n“; v0.4 Rezept Heft:
-`--heft`, `--nur-basis`; v0.3 Kennung, Register, Bauzettel; eine v0.2
-gab es im Repo nicht, v0.3 setzt auf v0.1 auf). Baut aus
-bank/<eintrag>/ LaTeX-Quelltexte für die Vorlage mathblatt.sty
-(hz-0801/blattbau). Kompiliert wird nicht; die Strukturprüfung im
-Skript ersetzt den Lauf bis zum ersten Render.
+zweiter Durchgang am selben Tag: Grundfall nach „(n×)“ im Katalog,
+Prüfungshöhe nach der Regel des Kompetenzblatts, Seite „Prüfe dich“ mit
+„Das kann ich“, Verweis „Hängst du hier → Nr. n“ unter der Nummer,
+Auftrag einmal auch im Kompetenzblatt, erstes Blatt TER-L4; v0.8 Rezept
+Kompetenzblatt nach dem Sprachlauf: Aufgabe in Sätzen als Absatz,
+Merkkasten als Mathe, siehe „Rezept Kompetenzblatt“; v0.7 Rezept
+Kompetenzblatt: `--kompetenz`, Kennung XXX-K<n>, Vorspann vorspann.tex;
+v0.6 Rezept Prüfungs-Fokus: `--fokus-pruefung`, Kennung XXX-P<n>; v0.5
+Rezept Zettel: `--zettel basis`; Prüfkennung kurz in allen Rezepten;
+Zweigzeile „P10 ×n“; v0.4 Rezept Heft: `--heft`, `--nur-basis`; v0.3
+Kennung, Register, Bauzettel; eine v0.2 gab es im Repo nicht, v0.3 setzt
+auf v0.1 auf). Baut aus bank/<eintrag>/ LaTeX-Quelltexte für die Vorlage
+mathblatt.sty (hz-0801/blattbau). Kompiliert wird nicht; die
+Strukturprüfung im Skript ersetzt den Lauf bis zum ersten Render.
 
 ## Aufruf
 
@@ -137,7 +140,8 @@ Aufgabendateien geben.
 Lernblatt und schwach: blatt0_a/_l (Zone), e<n>_a/_l je Einheit
 (n = Nummer im Katalog), Rahmen <K>-blatt0.tex, <K>-e<n>.tex,
 <K>.tex (bis v0.1 lernblatt.tex), <K>-gesamt.tex,
-<K>-loesungen.tex, abhaken.tex (<K> = Kennung). Fokus:
+<K>-loesungen.tex, abhaken.tex (<K> = Kennung); seit v0.9 im
+Lernblatt dazu pruefe_a/_l („Prüfe dich“) und vorspann.tex. Fokus:
 blatt0_a/_l, e<n>_a/_l, <K>.tex, <K>-loesungen.tex (bis v0.1
 fokus.tex, fokus_loesungen.tex). Dazu mathblatt.sty als Kopie,
 bau.json und zusammenbau.log: Kennung (KENNUNG), jede Auswahl
@@ -182,70 +186,103 @@ Wurzel setzt `* text eol=lf`, das verfälscht PDFs).
 
 ## Rezept Lernblatt (v0.9)
 
-Auftrag vom 30.09. (Chat verbessereBlätter): Das Lernblatt aus der Bank
-las sich schlechter als das Blatt aus dem erzeugenden Prompt
-(mathe-nachhilfe, blaetter/testlauf-2026-09-26/10-ka-terme-8-gym): zu
-wenige Aufgaben je Nummer, elfmal „Fasse zusammen:“ untereinander,
-Bank-Wörter als Titel, Antwortlinien am Zeilenende, kein
-Bearbeitungsraum. Seit v0.9 setzt das Lernblatt (Rezept L, ebenso F)
-im Satz des Kompetenzblatts; Aufruf und Dateisatz bleiben (blatt0,
-e<n>, gesamt, loesungen, <K>.tex, abhaken.tex), dazu vorspann.tex.
-Rezept S behält die Form 2.8 (`\swz`, `\swa`), bekommt aber Titel und
-Zweigzeile wie L. Kompetenzblatt, Heft, Zettel und Prüfungs-Fokus sind
-unverändert (Probe: Quelltexte byte-gleich bis auf die Versionszeile).
+Zwei Aufträge vom 30.09. (Chat verbessereBlätter). Anlass: Der Lehrer
+legte das Bank-Lernblatt Terme (v0.8, TER-L0) neben das Blatt des alten
+Prompts (mathe-nachhilfe,
+blaetter/testlauf-2026-09-26/10-ka-terme-8-gym) und sagte: zu wenige
+Aufgaben; liest sich schlecht, weil sich der Auftrag in jeder
+Teilaufgabe wiederholt; Layout wie das alte Blatt. Der erste Durchgang
+baute TER-L3, der zweite (auftrag-lernblatt-v09.md, archiv/) TER-L4.
+Seit v0.9 setzt das Lernblatt (Rezept L, ebenso F) im Satz des
+Kompetenzblatts; Rezept S behält die Form 2.8 (`\swz`, `\swa`), bekommt
+aber Titel und Zweigzeile wie L. Heft, Zettel und Prüfungs-Fokus sind
+unverändert (Probe: Quelltexte byte-gleich), das Kompetenzblatt nur um
+„Auftrag einmal“ ergänzt.
+
+### Mengen (bank.md „Mengen je Kette“)
+
+- Erkennungsschritt: alle Zeilen (4) in einer Nummer.
+- Verfahrenskette: je Vorstufe eine Nummer mit allen Zeilen; dann eine
+  Nummer mit dem Grundfall und je weiterer Sprosse Variante 1 (die volle
+  Leiter); dann eine Nummer mit den Prüfungshöhen.
+- Grundfall: so viele Zeilen, wie „(n×)“ am Grundfall in der Zeile der
+  Kette unter „Für schwache Schüler“ der Mappe sagt (terme:
+  Zusammenfassen, Malnehmen, Ausklammern 4; Klammern, Term aufstellen
+  3); ohne Angabe vier; der Rest RESERVE in der log.
+- Prüfungshöhe (`waehle_originale`, gemeinsam mit dem Kompetenzblatt):
+  je Original eine Aufgabe (kleinste Sprosse und Variante), nur die
+  jüngsten fünf Jahrgänge der Kette, verschiedene Formulierungen zuerst,
+  bis fünf; ohne Original eine der drei Zeilen.
+- Typ ohne Kette: alle Zeilen (3) in einer Nummer.
+- Pflichtelemente: je Sorte (fehler, begründen, darstellung, anwendung)
+  eine Nummer mit allen drei Zeilen.
+- Teilung (`zerteile`): erst nach 2.3 g ausgewogen (höchstens 12
+  Teilaufgaben, 6 mit Grafik, 13 → 7 + 6), dann in jedem Stück an einem
+  Auftrag, der darin schon stand; Fortsetzung „<Titel> – weiter“ oder
+  der eigene Ich-kann-Satz der ersten Sprosse des Stücks.
+- Fokus (F): alle Varianten der Kette, Pflichtelemente je Element.
+  schwach (S): Auswahl wie bis v0.8.
 
 ### Satz (gemeinsam mit dem Kompetenzblatt)
 
 - `KbSatz` (satz_teil, satz_halb, satz_halb_text, halb_tauglich) ist die
   gemeinsame Klasse von `KompetenzBau` und `Bau`; kein Code kopiert.
 - Jede Hauptnummer ist `kbaufgabe`, jede Teilaufgabe ein `kbblock`
-  (Befund 21: unteilbar, rückt ganz auf die nächste Seite).
-- Auftrag einmal über der Nummer (`laeufe_von`, Befund 5): aufeinander
-  folgende Teilaufgaben mit demselben Auftrag bilden einen Lauf; der
-  Auftrag steht einmal als `\kbanweisung`, die Teilaufgabe trägt nur den
-  Rest. Erkannt werden
-  1. „Verb …: Term“ („Fasse zusammen: $7x + 2x$“ → „Fasse zusammen.“),
-     auch für eine einzelne Teilaufgabe;
-  2. „Verb. Term“ („Berechne. $\frac{600}{100}$“);
-  3. Satzanfang + Term + Satzende („Berechne den Wert des Terms $4x-3$
-     für $x = 5$.“ → „Berechne den Wert des Terms.“) und Satzanfang +
-     Term + Satzrest („Welche Vorzahl hat $a$?“ → „Welche Vorzahl hat
-     …?“), ab zwei Teilaufgaben; höchstens drei Wörter zwischen den Termen;
-  4. gleicher Schlusssatz („Das Vierfache … Kreuze den Term an, der dazu
-     passt.“ → „Kreuze den Term an, der dazu passt.“), ab zwei; eine
-     Prüfkennung bleibt am Rest;
-  5. gleiche Aufgabe, in der sich nur Mathe an höchstens zwei Stellen
-     unterscheidet („Erfinde … zu der der Term … passt. … für … “), ab zwei;
-     die Teilaufgabe trägt die Stellen, mit Komma getrennt.
-  Ein Auftrag, der in derselben Nummer schon stand, beginnt eine neue
-  Nummer (`zerteile`), danach die Teilung nach 2.3 g.
-- Nebeneinander (`\lbpaar`, Buchstaben in derselben Flucht wie
-  untereinander): ein Lauf ab zwei Teilaufgaben mit Auftrag, deren Term
-  bis 30 Zeichen hat, ohne Grafik, Kontext, Prüfkennung, Pflichtelement,
-  `\rechnung`/`\kreuz`, mit höchstens zwei Feldern im Antwortgerüst:
-  „a) $7x + 2x =$ ____“ (Feld 2,6 cm, `\lbfeld`), kein Raum. „=“ nur bei
-  Rechenaufträgen (Fasse, Multipliziere, Berechne, Rechne, Löse die
-  Klammer, Klammere, Vereinfache) und reinem Term; sonst Feld mit Abstand
-  („Welche Vorzahl hat …? a) $-b$ ____“); kein Feld bei Unterstreiche,
-  Kreise, Markiere (die Antwort steht im Term). Ebenso nebeneinander:
-  Ankreuzaufgaben eines Laufs mit Text bis 110 Zeichen und Optionen bis
-  24 Zeichen; Vorstufen ohne gemeinsamen Auftrag bis 75 Zeichen als ganze
-  Aufgabe („Klammere den Faktor 3 aus: $9x + 21$.“), ohne Raum.
-- Einzeln (`teil_lern` → satz_teil): Term ohne Gleichheitszeichen bei
-  Umformen bekommt „= ____“ (Befund 42), Gleichungsraster mit Text wird
-  Textaufgabe (kein „Lösung: __“), Aufzählungen „\\ (1) … \\ (2) …“ je
-  eine Zeile, Vorstufe ohne Raum (Befund 38), Text-, Fehler- und
-  Anwendungsaufgaben ohne Antwortgerüst mit zwei Schreibzeilen
-  (Anwendung drei) statt eines Felds (log RAUM).
-- Prüfkennung klein rechts in der Auftaktzeile („P10 ’23“,
-  `kennung_kompetenz`), keine Punkte, kein Stern.
-- Zeichen, die Latin Modern nicht hat: `zeichen_vorspann` über alle
-  Quelltexte, in vorspann.tex (VORSPANN des Kompetenzblatts +
-  VORSPANN_LERN); mathblatt.sty unverändert. Alle Dokumente lesen
-  `\input{vorspann}`; `\weit` nur noch bei schwach.
-- Kopf wie bisher `\blattkopf*` (Thema · Blattart · Einheit), Fußzeile
-  seit v0.9 nur Kennung und Seite (Befund 2).
-- BANKWORT-Prüfung (Liste des Kompetenzblatts) über alle *_a.tex, log.
+  (Befund 21: unteilbar); Antwortfeld in eigener Zeile, Tabelle unter
+  dem Text, Kreuze je Zeile, Flattersatz, Prüfkennung klein rechts in
+  der Auftaktzeile („P10 ’23“, `kennung_kompetenz`).
+- Bearbeitungsraum nur bei Rechnen und Begründen (Befund 9): Zeilen aus
+  der Musterlösung (`rechenzeilen`), Text-, Fehler- und
+  Begründungsaufgaben ohne Antwortgerüst zwei Schreibzeilen, Anwendung
+  drei (log RAUM); kein Raum bei Vorstufe, Ankreuzen, Eintragen, kurzen
+  Termen.
+- Zeichen, die Latin Modern nicht hat: `zeichen_vorspann`, vorspann.tex
+  (VORSPANN des Kompetenzblatts + VORSPANN_LERN); mathblatt.sty
+  unverändert.
+- BANKWORT-Prüfung (Liste des Kompetenzblatts) über alle *_a.tex, log;
+  bau/terme/lernblatt-messen.py prüft dazu den PDF-Text.
+
+### Auftrag einmal (L und K)
+
+Aufeinander folgende Teilaufgaben mit demselben Auftrag bilden einen
+Lauf (`laeufe_von`); der Auftrag steht einmal als `\kbanweisung`, die
+Teilaufgabe trägt nur den Rest. Erkannt werden
+
+1. „Verb …: Term“ („Fasse zusammen: $7x + 2x$“ → „Fasse zusammen.“),
+   auch für eine einzelne Teilaufgabe;
+2. „Verb. Term“ („Berechne. $\frac{600}{100}$“);
+3. Satzanfang + Term + Satzende („Berechne den Wert des Terms $4x-3$ für
+   $x = 5$.“ → „Berechne den Wert des Terms.“), Satzanfang + Term +
+   Satzrest („Welche Vorzahl hat …?“), Term am Ende des ersten von zwei
+   Sätzen („Löse die Gleichung. Gib die Lösungsmenge an.“), ab zwei;
+4. gleicher Schlusssatz („… Kreuze den Term an, der dazu passt.“), ab
+   zwei; eine Prüfkennung bleibt am Rest;
+5. gleiche Aufgabe, in der sich nur Mathe an höchstens zwei Stellen
+   unterscheidet, ab zwei.
+
+Im Kompetenzblatt gilt das für eine Nummer, deren Teilaufgaben alle
+einen Lauf bilden (meist die Prüfungshöhen: „Kreuze den passenden Term
+an.“). Prüfung AUFTRAG: kein Auftragssatz zweimal in einer Hauptnummer,
+gezählt über die Anweisungen und die Aufträge der Teilaufgaben mit
+ganzem Text (log AUFTRAG, bau.json auftrag_doppelt). Hinweis
+AUFTRAG-SATZ: derselbe Aufforderungs- oder Fragesatz (Mathe als „…“)
+mehrfach, ohne dass ein gemeinsamer Auftrag erkannt wurde – meist
+verschieden formulierte Bankzeilen einer Sprosse (bau.json
+auftrag_satz_doppelt).
+
+### Paare (zwei je Zeile)
+
+- `\lbpaar` (Buchstaben in derselben Flucht wie untereinander): ein Lauf
+  ab zwei Teilaufgaben mit Auftrag, deren Term bis 30 Zeichen hat, ohne
+  Grafik, Kontext, Prüfkennung, Pflichtelement, `\rechnung`/`\kreuz`,
+  mit höchstens zwei Feldern: „a) $7x + 2x =$ ____“ (Feld 2,6 cm,
+  `\lbfeld`), kein Raum. „=“ nur bei Rechenaufträgen; sonst Feld mit
+  Abstand; kein Feld bei Unterstreiche, Kreise, Markiere.
+- Ebenso nebeneinander: Ankreuzaufgaben eines Laufs (Text bis 110,
+  Optionen bis 24 Zeichen); Vorstufen ohne gemeinsamen Auftrag bis 75
+  Zeichen als ganze Aufgabe.
+- Ein kurzer Term allein (Auftrag darüber, kein Raum) steht wie im Paar
+  in einer Zeile mit Feld (log KURZ); längere untereinander (Befund 6).
 
 ### Titel (Ich-kann-Satz je Hauptnummer)
 
@@ -254,79 +291,88 @@ kette;sprosse:
 
 | Hauptnummer | sprosse | Ersatz ohne Zeile |
 | --- | --- | --- |
-| Erkennungsschritt, Typ ohne Kette | leer (Kette = Typname) | „Ich kann: <merkmal>.“ |
+| Erkennungsschritt, Typ ohne Kette | leer | „Ich kann: <merkmal>.“ |
 | Vorstufe einer Kette | Zahl der Sprosse (0, -1) | „Ich kann: <merkmal>.“ |
 | Grundfall und Sprossen | leer | „Ich kann: <merkmal>.“ |
 | Prüfungshöhe | p | „Ich kann das auch in Aufgaben aus der Prüfung.“ |
-| Pflichtelement | fehler, begruenden, darstellung, anwendung | feste Sätze (PFLICHT_ICHKANN) |
+| Pflichtelement | fehler, begruenden, … | feste Sätze (PFLICHT_ICHKANN) |
 | Zone | einheit 0, Kette = Fertigkeit | „Ich kann <Fertigkeit>.“ |
 | Zone-Paar | einheit 0, paar | „Ich finde den Fehler und rechne richtig.“ |
 
 Ein fehlender Satz steht in der log (ICH-KANN fehlt) und in bau.json
-(ichkann_fehlt). Der Ersatz streicht ein Bank-Wort am Anfang des
-merkmal („Vorstufe: …“); bleibt eines, „Ich kann: <Kette>.“ Ein zweites
-Stück einer geteilten Nummer trägt den Satz seiner ersten Sprosse, wenn
-es ihn gibt, sonst „<Titel> – weiter“. Für terme sind die Zeilen mit
-quelle „Lernblatt v0.9“ ergänzt (35 Zeilen: Zone, Zone-Paar, Typen ohne
-Kette, Erkennungsschritte, Vorstufen, Prüfungshöhen, Pflichtelemente).
+(ichkann_fehlt). Für terme sind alle Zeilen da (35 mit quelle „Lernblatt
+v0.9“ aus dem ersten Durchgang); TER-L4 hat keinen Ersatz.
 
 ### Zweigzeile
 
-„Hier lernst du, … · Zeitmarke · Prüfungswort · baut auf: …“:
+Unter dem Einheitenkopf „Einheit n von m · <Titel>“ (wie im alten
+Blatt): „Hier lernst du, <Titel als zu-Infinitiv> – <Beschreibung> ·
+Zeitmarke · Prüfungswort · baut auf: …“.
 
-- Satz: die Beschreibung der Lerneinheit (Mappe, „Lerneinheiten“), wenn
-  sie mit „Hier lernst du“ oder „Du lernst“ beginnt; sonst aus dem Titel
-  mit zu-Infinitiv (`zu_infinitiv`: „Terme aufstellen und berechnen“ →
-  „Terme aufzustellen und zu berechnen“, „Ausklammern“ →
-  „auszuklammern“; trennbare Vorsilben TRENNBAR). Kein Verb im Titel:
-  Teil entfällt, TODO in der Zeile davor. Keine Mappe von terme trägt
-  heute einen Satz; alle vier kommen aus dem Titel.
+- Beschreibung: die Lerneinheiten-Zeile der Mappe nach „ – “, Wortlaut
+  wie im Katalog (`beschreibung_katalog`); weg fallen die Eingabe-Marke
+  „← Eingabe …“, Klammern mit Hinweisen für den Lehrer (→, .md, Kl.,
+  LISUM, RLP, Zeile, Fachbrief, amtlich, Reihe, Katalog) und Glieder mit
+  Bank-Wort („… als Grundfall“). Titel ohne Verb („Sachaufgaben“): „Hier
+  lernst du: <Beschreibung>“. Ist die Beschreibung schon ein Satz („Hier
+  lernst du …“), steht sie allein.
 - Zeitmarke und Prüfungswort wie bisher (1.5, `pruefwort_zahl`).
 - „baut auf:“ die Fertigkeiten der Voraussetzungen (Kurzname vor „ (“),
-  die für diese Einheit gelten: genannte Einheit, „alle Einheiten“ oder
-  „jeder Einheit“, oder die Einheit ihres Zone-Verweises (unten). Die Mappe
-  nennt keine Abhängigkeit zwischen Einheiten; „baut auf: Einheit 1“ wie
-  im alten Blatt gibt es darum nicht.
-
-### Mengen (bank.md „Mengen je Kette“)
-
-- Erkennungsschritt: alle Zeilen (4) in einer Nummer.
-- Verfahrenskette: je Vorstufe eine Nummer mit allen Zeilen (a–d); dann
-  eine Nummer mit dem Grundfall, vier von fünf (die fünfte: log RESERVE),
-  und je weiterer Sprosse Variante 1; dann eine Nummer mit den
-  Prüfungshöhen, je Original eine Zeile (kleinste Sprosse und Variante;
-  ohne Original gilt die Zielmarke als ein Original), weitere Varianten
-  RESERVE.
-- Typ ohne Kette: alle Zeilen (3) in einer Nummer.
-- Pflichtelemente: je Element (fehler, begründen, darstellung, anwendung)
-  eine Nummer, je Zeile eine Teilaufgabe.
-- Teilung 2.3 g ausgewogen (`teile_ausgewogen`): höchstens 12
-  Teilaufgaben, 6 mit Grafik, an Sprossengrenzen in gleich große Stücke
-  (13 → 7 + 6).
-- Fokus (F): alle Varianten der Kette, Pflichtelemente je Element, Titel
-  wie oben. schwach (S): Auswahl wie bis v0.8.
+  deren Zeile diese Einheit nennt („Einheit 2“, „ab Einheit 2“); „alle
+  Einheiten“, „jede Einheit“: jede Einheit; ohne Angabe: die erste
+  Einheit des Blatts (`fertigkeit_ziel`). Kein Kettenname, kein
+  Bank-Wort.
 
 ### Blatt 0 „Das kennst du schon“
 
-- Je Fertigkeit eine Nummer: die zwei sehr leichten (hoehe grundfall), die
-  mittlere (erste Sprosse, deren merkmal nicht mit „Fallstrick“ beginnt)
-  und je Fallstrick eine; das Zone-Paar (Fehler finden und die
-  gleichartige Rechnung der Folgesprosse) als eigene Nummer direkt hinter
-  seiner Fertigkeit. `--zone kurz`: eine leichte und ein Fallstrick.
-- Hinter dem Titel klein rechts „Hängst du hier? → Nr. n“ (`\lbverweis`):
-  n ist die erste Hauptnummer des Lernblatts, die die Fertigkeit braucht
-  (`fertigkeit_ziel`): genannte Einheit der Voraussetzungszeile
-  (`fertigkeit_einheiten`); sonst eine Kette, deren Name einen Wortstamm
-  mit dem Text der Zeile teilt („für Malnehmen“ → Kette Malnehmen); bei
-  Dezimalzahlen und Brüchen die erste Nummer mit Komma oder Bruch; sonst
-  die erste Nummer des Lernblatts (log ZONE-VERWEIS mit Grund). Keine
-  Nummer bei schwach.
+- Je Fertigkeit eine Nummer mit Ich-kann-Titel (einheit 0): die zwei
+  sehr leichten, die mittlere und je Fallstrick eine (bank.md); das
+  Zone-Paar (Fehler finden und die gleichartige Rechnung) am Ende der
+  Zone. `--zone kurz`: eine leichte und ein Fallstrick. Fokus und
+  schwach behalten das Zone-Paar hinter seiner Fertigkeit.
+- Unter jeder Nummer eine Zeile „Hängst du hier → Nr. n“ (`\lbhaengst`,
+  im letzten Block der Nummer): n ist die erste Hauptnummer der
+  kleinsten Einheit, die die Voraussetzungszeile nennt; bei „alle
+  Einheiten“ oder ohne Angabe die erste Einheit des Blatts (log
+  ZONE-VERWEIS mit Grund). Keine Zeile bei schwach.
+- Lösung: bei jeder Zeile, deren merkmal mit „Fallstrick:“ beginnt, der
+  Zusatz „(falsch → Lücke: <merkmal ohne ‚Fallstrick:‘>)“.
 
-### Abhakseite und Lösungen
+### Prüfe dich und Das kann ich (ziel.md § 2)
 
-Abhakseite wie bisher, je Ich-kann-Satz eine Zeile; eine „– weiter“-Nummer
-zählt zu ihrer ersten („18–19“). Lösungen wie bisher (`\erg` je Nummer).
-„Prüfe dich“ baut v0.9 nicht.
+- Nach der letzten Einheit, neue Seite „Prüfe dich“ (pruefe_a.tex): je
+  Verfahrenskette des Blatts eine Aufgabe, ohne Ich-kann-Titel und ohne
+  Verfahrensüberschrift; der Auftrag steht in der Zeile der Nummer. Die
+  Aufgabe ist die mittlere Sprosse der Kette (Grundfall und Sprossen,
+  ohne Vorstufe und Prüfungshöhe; bei gerader Zahl die obere Mitte) in
+  der kleinsten Variante, die im Blatt nicht steht; fehlt eine, Variante
+  1 (log PRÜFE-DICH). Gemischt nach der Prüfsumme der id (fest bei
+  gleicher Bestellung). Die Nummern laufen weiter.
+- Lösung (pruefe_l.tex, am Ende der Lösungen): „(falsch → Nr. n)“ auf
+  die Nummer der Leiter, in der die Sprosse steht.
+- Darunter „Das kann ich“ (abhaken.tex, Umgebung `lbdaskannich`, keine
+  neue Seite): je Kette einer Einheit die Ich-kann-Zeile der Kette
+  (sprosse leer) mit allen Nummern der Kette („6–8, 11–14“, Pflicht-
+  elemente tragen den Namen der ersten Verfahrenskette); im Gesamt davor
+  je Fertigkeit der Zone ihre Zeile mit Nummer und Zone-Paar. Ersetzt
+  die Abhakseite des Lernblatts; schwach behält sie.
+
+### Kopf, Fuß, Dateien
+
+- Kopf in jedem Dokument des Lernblatts „<Thema> · Lernblatt“ (Lösungen
+  „<Thema> · Lernblatt · Lösungen“), dazu ab der Seite einer Einheit
+  ihre Kurzform („Terme · Lernblatt · 2 Terme zusammenfassen“); Fuß
+  links die Kennung, rechts die Seite (Befund 1, 2). Abschnitte ohne
+  Linie.
+- bau.json je Teilaufgabe lage (zone, leiter, pruefung, pflicht,
+  pruefe-dich) und art (zone, zonepaar, erkennung, vorstufe, leiter,
+  ohne, pruefung, pflicht, pruefe-dich); dazu je_datei (Hauptnummern und
+  Teilaufgaben je Aufgabendatei), auftrag_doppelt, auftrag_satz_doppelt.
+  bau/terme/lernblatt-messen.py kompiliert (je Dokument zweimal), setzt
+  PNG je Seite des Gesamt und schreibt seiten, seiten_loesungen,
+  seiten_je_einheit, fehlende_zeichen, overfull, kompilierfehler,
+  bankwort, hauptnummern_je_einheit, teilaufgaben_je_einheit und
+  messwerte in bau.json.
 
 ### Entscheidungen v0.9
 
@@ -335,15 +381,27 @@ zählt zu ihrer ersten („18–19“). Lösungen wie bisher (`\erg` je Nummer).
    Ich-kann-Satz.
 2. „Pflichtelemente je Zeile eine Teilaufgabe“ gelesen als: alle drei
    Zeilen je Element; je Element eine Nummer mit eigenem Titel.
-3. Das Zone-Paar steht hinter seiner Fertigkeit, nicht am Ende der Zone.
-4. Der Verweis steht klein rechts im Titel der Zone-Nummer („Hängst du
-   hier? → Nr. 6“), wörtlich nach dem Auftrag.
-5. Wiederkehrender Auftrag in einer Kette (Klammern: „Löse die Klammer
-   auf.“ vor und nach der Tabelle) teilt die Nummer („– weiter“), statt die
-   Leiter umzuordnen.
+3. Das Zone-Paar steht am Ende der Zone (zweiter Durchgang; im ersten
+   hinter seiner Fertigkeit).
+4. Der Verweis steht als eigene kleine Zeile unter der Nummer, wörtlich
+   „Hängst du hier → Nr. n“ (zweiter Durchgang; im ersten klein rechts
+   im Titel mit Fragezeichen).
+5. Teilung erst nach Maß, dann am wiederholten Auftrag: so trennt die
+   Teilung nach Maß zwei gleiche Aufträge oft schon, und kein Stück hat
+   nur eine Teilaufgabe.
 6. `--nummer` auch für L/F/S, damit eine im Chat vergebene Kennung
-   (TER-L3) gebaut werden kann.
+   gebaut werden kann.
 7. Fußzeile nur Kennung (Befund 2); kennung-probe.py nimmt beide Formen.
+8. „Einheit n von m · <Titel>“ bleibt im Einheitenkopf, die Zweigzeile
+   beginnt mit „Hier lernst du“ – wie im alten Blatt; beide Zeilen lesen
+   sich zusammen als die Zweigzeile des Auftrags.
+9. Blatt 0 behält die Menge nach bank.md (zwei sehr leichte, eine
+   mittlere, je Fallstrick eine) statt „Sprosse 1 und 2“: ohne die
+   Fallstrick-Zeilen hätte die Lösung keine „Lücke“.
+10. Zweigzeile, Verweis, Fallstrick-Lösung und kurzer Term in einer
+    Zeile
+    gelten auch in Fokus und schwach (derselbe Code); Kopf, Prüfe dich,
+    Das kann ich und Zone-Paar am Ende nur im Lernblatt.
 
 ## Rezept Heft (v0.4)
 
@@ -714,26 +772,28 @@ Argumentzahl; kein nacktes %; Umgebungen paarig; Umlaute direkt;
 gerade Zahl von $; höchstens 26 Teilaufgaben je Hauptnummer.
 Zeilen ab Spalte 0 mit % sind Kommentar und werden übergangen.
 
-## Was v0.1 nicht kann
+## Was v0.1 nicht kann (Stand v0.9)
 
-- Ich-kann-Titel, Anweisungen, Zweigzeile Teil 1, Zahl der
-  Rechenplatz-Zeilen, `\verfahren`-Namen: nicht in der Bank,
-  daher TODO.
-- Grundfall mehrfach im Lernblatt (2.3 b) und Vorstufe mit vier
-  bis fünf Teilaufgaben (2.3 a): Regel „Variante 1“ gibt je eine.
-- Teilung nach 2.3 g außerhalb des Fokus; Teilung nach Form
-  (Streifen, rechnen, Sachtext); Pflichtelemente je eine
-  Hauptnummer (2.3 c).
-- `teilezwei` für kurze Teilaufgaben; Zeilenzahl im
+Seit v0.9 gehen: Ich-kann-Titel, Anweisungen und Zweigzeile Teil 1
+(ich-kann.csv, Mappe), Zahl der Schreibzeilen (aus der Lösung),
+Grundfall mehrfach und Vorstufe mit allen Zeilen, Teilung nach 2.3 g
+außerhalb des Fokus, Pflichtelemente je eine Hauptnummer, kurze
+Teilaufgaben zwei je Zeile, „baut auf:“. Es bleibt:
+
+- `\verfahren`-Namen: nicht in der Bank.
+- Teilung nach Form (Streifen, rechnen, Sachtext); Zeilenzahl im
   `gleichungsraster` nach dem Grundfall.
-- Schnitt der Zeitachse nach Klasse (Zone, Ausblick), Schulform,
-  „baut auf:“, „nicht für alle“.
+- Schnitt der Zeitachse nach Klasse (Zone, Ausblick), Schulform, „nicht
+  für alle“.
 - Darstellung für schwach, wo die Zeile keine grafik hat;
   Grundvorstellung als erste Hauptnummer der Zone.
 - „mit beispiel“, „mit tipps“, Sek-II-Kursart.
 - Fokus und schwach zusammen.
-- Kompilieren, Seitenfüllung (4.2), Lösungsgrafiken klein
-  nebeneinander.
+- Kompilieren im Skript (das tut bau/terme/lernblatt-messen.py),
+  Seitenfüllung (4.2), Lösungsgrafiken klein nebeneinander.
+- Ein gemeinsamer Auftrag, wenn Zahlen im Text stehen („Klammere den
+  Faktor 3 aus: …“) oder die Bankzeilen einer Sprosse verschieden
+  formuliert sind (Hinweis AUFTRAG-SATZ).
 
 ## Erster Render prüft
 

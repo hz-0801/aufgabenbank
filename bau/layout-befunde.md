@@ -196,3 +196,7 @@ Befunde des Lehrers an den ersten Kompetenzblättern (Prüfstein v0.7).
     (2x)² + 2·2x·3 + 3², noch nicht zusammengefasst – bei
     „Mittelglied prüfen“ und „erste Formel rückwärts“; keine eigene
     Aufgabe.
+
+Lernblatt v0.9 (2026-09-30, TER-L4): Befunde 1–5, 7–12, 15–17, 20,
+21, 25–28, 42, 47 (ohne Mini-Beispiel) und 49 im Lernblatt umgesetzt;
+6 bewusst nicht (kurze Terme zwei je Zeile, Auftrag vom 30.09.).
