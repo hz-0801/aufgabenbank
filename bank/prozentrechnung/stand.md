@@ -1,12 +1,14 @@
 # Stand: prozentrechnung
 
 Katalog: hz-0801/mathe-nachhilfe, katalog/prozentrechnung.md,
-Commit d78032a884b6073d9e4c92cc8407e909e3c4ea2a (Kopf der Mappe).
-quelle = Zeilennummern dieses Stands.
-Datum: 2026-09-29 13:41 CEST (date).
-Prüfung: `python3 werkzeuge/bank-pruef.py prozentrechnung` (v0.8) –
-257 Zeilen in e1–e5, 32 in der Zone, 0 Abweichungen, 0 Warnungen;
-mit `--katalog` (Katalog aus Abschnitt 1 der Mappe) ebenfalls 0.
+Commit db8d2a3f9f6ed0e6490a4087e3eaff2cbc8a9b19 (Kopf der Mappe).
+quelle = Zeilennummern dieses Stands (gegenüber d78032a
+unverändert; geändert ist nur Zeile 27, Typen der Einheit 5).
+Datum: 2026-09-30 08:44 UTC (date); voriger Stand 2026-09-29
+13:41 CEST (Katalog d78032a).
+Prüfung: `python3 werkzeuge/bank-pruef.py prozentrechnung --katalog`
+(v0.9) – 260 Zeilen in e1–e5, 32 in der Zone, 0 Abweichungen,
+0 Warnungen, Formprobe 1 Hinweis (e4 darstellung, wie vorher).
 
 ## Zahlen
 
@@ -27,12 +29,18 @@ Nachzug je Einheit (übernommen / neu / umgeschrieben / entfallen):
     e4   26 / 6 / 15 / 0
     e5   43 / 0 /  9 / 0
 
+Nachzug 2026-09-30 (Katalog db8d2a3, nur e5):
+
+    e5   52 / 3 /  0 / 0   (drei ids der anwendung-Zeilen umbenannt:
+                            k3-s3 → k3-s4, Aufgaben unverändert)
+
 „übernommen“ heißt: Aufgabe, Lösung und pruef wortgleich; nachgezogen
 wurden id, sprosse, sprosse_text (wo der Katalog ihn geändert hat),
 merkmal der Prüfungssprosse und quelle. Zone unverändert
 (Fertigkeiten Z. 30–36 gleich).
 
-Prüfskript vor der Korrektur (mit `--katalog`): e1 0, e2 0, e3 4
+Prüfskript vor der Korrektur am 30.09.: e5 0 Abweichungen,
+0 Warnungen (erster Wurf). Am 29.09.: e1 0, e2 0, e3 4
 (3× sprosse_text nicht in Zeile quelle bei der neuen Sprosse s3,
 1× Zwischenwert nicht an der Ergebnisstelle), e4 0, e5 1
 (Zwischenwert nicht an der Ergebnisstelle). Keine Einheit scheiterte.
@@ -71,6 +79,20 @@ Prüfskript vor der Korrektur (mit `--katalog`): e1 0, e2 0, e3 4
 7. Kastenzahlen: neue und umgeschriebene Aufgaben tragen keine
    mehrstellige Kastenzahl außer 100, 10, 20 (Prozent-Grundbegriff
    und glatte Sätze des Katalogs); der übernommene Bestand bleibt.
+8. (30.09.) Der neue Typ Darstellung der Einheit 5 steht als
+   Pflichtsprosse k3-s3 zwischen begruenden und anwendung, wie in
+   e1–e4; die anwendung-Zeilen rücken auf s4 (ids umbenannt, ohne
+   original; punkte-nachziehen.py meldet 0 Änderungen).
+9. (30.09.) Die drei darstellung-Zeilen zeigen nur Senkungen: der
+   alte Wert ist der ganze Streifen (100 %), der neue Wert der
+   gefärbte Teil; einmal ablesen (Bild → Zahl), einmal färben
+   (Wort → Bild), einmal rückwärts vom neuen Wert und dem
+   abgelesenen Satz zum alten Wert. Erhöhungen sind mit den
+   Streifen-Bausteinen nicht darstellbar (Befund 5).
+10. (30.09.) Abgelesen werden 70 %, 80 % und 90 %; 70 und 80 sind
+   Einzelzahlen aus Typische Fehler und Kasten e4, aber die
+   anderen glatten Zehner (30, 40, 60) stehen ebenso im Kasten und
+   10, 20 sind der Grundfall; Preise sind freie Zahlen.
 
 ## Befunde
 
@@ -82,11 +104,17 @@ Prüfskript vor der Korrektur (mit `--katalog`): e1 0, e2 0, e3 4
 2. Katalog: Kein Erkennungsschritt wiederholt eine Vorstufe
    derselben Einheit; „um oder auf?“ (Z. 41) ist wie bisher die
    Vorstufe von e5 und steht nicht doppelt.
-3. Katalog: e5 hat keinen Typ Darstellung; pflicht darstellung
-   fehlt dort (9 Pflichtzeilen).
+3. Katalog: e5 hatte keinen Typ Darstellung; seit db8d2a3
+   (30.09.) steht er in Zeile 27, die Bank trägt ihn (erledigt).
 4. Prüfskript: `--katalog` erwartet eine Datei; die Sitzung liest
    den Katalog nicht, er wurde aus Abschnitt 1 der Mappe
    nachgebaut (Kürzungen dort betreffen die Kettenzeilen nicht).
+5. Bausteine (30.09.): Die Streifen-Familie reicht von 0 bis
+   100 %; einen Streifen, der „über hundert Prozent verlängert“
+   wird (Typ Darstellung e5, Sprosse Faktor 1,2, Brutto/Netto),
+   gibt es nicht. Erhöhungen bleiben deshalb ohne Grafik; ein
+   Baustein mit Skala bis 150 oder 200 % würde den Typ ganz
+   abdecken.
 
 ## Offene Punkte
 
