@@ -1,6 +1,21 @@
 #!/usr/bin/env python3
 """Prüft die Bank eines Katalogeintrags (bank.md, Abschnitt „Prüfung").
 
+v0.11, 2026-09-30 (Befunde Schub 1–4 und Übergabe 30.09.):
+  a) Formprobe P1–P8 als eigene Rubrik (FORMPROBE-Zeilen, Zählung
+     „Formprobe: n Hinweise“), nicht Abweichung, nicht Warnung: je
+     Einheit fehler mit P2, begruenden mit P4, P6 und „ohne genau zu
+     rechnen“, anwendung mit P8, darstellung mit zwei Richtungen
+     (heuristisch); Form doppelt; P1/P4 mit pruef nicht "".
+  b) Punkte und Tripel auch mit Semikolon (4; 1), (1; 2; 3) – in
+     Sperre, Ergebnisstelle und Grafikprobe; Matrizen ((a; b), (c; d))
+     und Punkte nur aus 0, 1, −1 sind kein Zahlenpaar der Sperre.
+  c) Winkel nach „rund“, „etwa“, „ungefähr“, „ca.“ mit ° (auch
+     ^\\circ) ist Ergebnisstelle; „≈ 37°“ war es schon.
+  d) Zeile „Urteile: ja n, nein m, richtig r, falsch f, offen o,
+     sonst s“ je Eintrag über alle Urteilsfragen (erstes Wort der
+     loesung; P4 je Aussage); reine Info.
+
 v0.10, 2026-09-29 (Befunde Schub 3): „Zeichne nichts“ und „nichts zu
 zeichnen“ sind kein Zeichenauftrag; \int, \sum, \lim, \ln, \log,
 \exp, \sin, \cos, \tan, \mathbb in der Liste der Standardbefehle.
@@ -125,8 +140,9 @@ TOLERANZ = Decimal("0.005")
 # Zahl mit Dezimalkomma; Tausender sind vorher zusammengezogen.
 ZAHL = re.compile(r"(?<![\d,])[-−]?\d+(?:,\d+)?")
 # Punkt (x|y) oder Tripel (x|y|z); Gruppe 3 leer beim Paar.
-PUNKT = re.compile(r"\(\s*([-−]?\d+(?:,\d+)?)\s*\|\s*([-−]?\d+(?:,\d+)?)"
-                   r"(?:\s*\|\s*([-−]?\d+(?:,\d+)?))?\s*\)")
+# v0.11: auch mit Semikolon (4; 1), (1; 2; 3) – Originalschreibweise.
+PUNKT = re.compile(r"\(\s*([-−]?\d+(?:,\d+)?)\s*[|;]\s*([-−]?\d+(?:,\d+)?)"
+                   r"(?:\s*[|;]\s*([-−]?\d+(?:,\d+)?))?\s*\)")
 
 # LaTeX- und amsmath-Befehle, die keine Bausteine der Vorlage sind.
 STANDARD = set("""
@@ -224,7 +240,25 @@ def ergebnis_zahlen(text):
             vorige = None
     for m in PUNKT.finditer(t):
         aus += [zahl(g) for g in m.groups() if g is not None]
+    for m in WINKEL.finditer(winkelnorm(text)):       # v0.11
+        aus.append(zahl(m.group(1)))
     return aus
+
+
+# v0.11: Winkel mit Rundungswort „rund 37°“, „etwa 36{,}9^\circ“ ist
+# Ergebnisstelle („≈ 37°“ ist es schon über ≈).
+WINKEL = re.compile(r"(?<![A-Za-zÄÖÜäöüß])"
+                    r"(?:rund|etwa|ungefähr|ca\.|≈)"
+                    r"[\s$]*([-−]?\d+(?:,\d+)?)[\s$]*°")
+
+
+def winkelnorm(text):
+    """Text für WINKEL: {,} -> Komma, Grad-Befehle -> °, Leerbefehle weg."""
+    t = text.replace("{,}", ",").replace("\\approx", "≈")
+    t = re.sub(r"\^\{?\\circ\}?|\\degree\b|\\textdegree\b", "°", t)
+    for leer in ("\\,", "\\;", "\\:", "\\ ", "\\!"):
+        t = t.replace(leer, " ")
+    return t
 
 
 def gerundet(wert, stellen):
@@ -661,17 +695,21 @@ def zahlenpaare(text):
     """Paare: Punkt (a|b), Tripel (a|b|c), Anteil (a von b, a : b),
     Produkt. Ein einzelner Bruch a/b ist kein Paar; Zähler oder Nenner
     eines Bruchs bilden mit einem Faktor daneben kein Paar (1/12 · 3);
-    der Ursprung (0|0) bzw. (0|0|0) ist keine Zahlbelegung."""
+    der Ursprung (0|0) bzw. (0|0|0) ist keine Zahlbelegung, ebenso seit
+    v0.11 jeder Punkt aus 0, 1, −1 und jede Matrix ((a; b), (c; d))."""
     t = mathnorm(text)
     n = r"(-?\d+(?:,\d+)?)"
     aus = set()
-    for a, b in re.findall(r"\(\s*" + n + r"\s*\|\s*" + n + r"\s*\)", t):
-        if zahl(a)[0] or zahl(b)[0]:
+    s = r"\s*[|;]\s*"                  # v0.11: (4|1) und (4; 1)
+    # v0.11: Matrix ((2; 2), (3; 0)) zeilenweise ist kein Punkt.
+    t = re.sub(r"\(\s*\([^()]*\)(?:\s*[,;]\s*\([^()]*\))+\s*\)", " ", t)
+    for a, b in re.findall(r"\(\s*" + n + s + n + r"\s*\)", t):
+        if not einheitlich((zahl(a)[0], zahl(b)[0])):
             aus.add(("Punkt", zahl(a)[0], zahl(b)[0]))
-    for a, b, c in re.findall(r"\(\s*" + n + r"\s*\|\s*" + n + r"\s*\|\s*"
+    for a, b, c in re.findall(r"\(\s*" + n + s + n + s
                               + n + r"\s*\)", t):
         k = tuple(zahl(x)[0] for x in (a, b, c))
-        if any(k):
+        if not einheitlich(k):
             aus.add(("Tripel",) + k)
     for muster, art in ((n + r"\s*%?\s*von\s*" + n, "Anteil"),
                         (n + r"\s*:\s*" + n, "Anteil"),
@@ -685,6 +723,12 @@ def zahlenpaare(text):
                 x, y = sorted((x, y))
             aus.add((art, x, y))
     return aus
+
+
+def einheitlich(k):
+    """v0.11: Koordinaten nur aus 0, 1, −1 (Ursprung, Einheits- und
+    Achsrichtung wie (0|0|1)) sind keine Zahlbelegung eines Originals."""
+    return all(x in (0, 1, -1) for x in k)
 
 
 def lade_sperre(mappe):
@@ -1048,6 +1092,191 @@ def lade(datei):
     return zeilen
 
 
+# --- Formprobe und Urteile (v0.11) ---------------------------------------
+# Merkmale aus der Bestandsaufnahme der Pflichtzeilen vom 30.09.
+# (werkzeuge/einmalig/pflichtzeilen-2026-09-30.py). Hinweise, keine
+# Abweichungen: die Gegenlese hat die Formen noch nicht bestätigt.
+
+def _ws(t):
+    return re.sub(r"\s+", " ", t).strip()
+
+
+# Entscheidungsfrage: letzte Frage beginnt mit einem Verb (Bestand).
+VERB_FRAGE = re.compile(
+    r"(?:Reicht|Reichen|Ist|Sind|Passt|Passen|Kann|Können|Stimmt|Stimmen"
+    r"|Liegt|Liegen|Hält|Halten|Steht|Stehen|Darf|Dürfen|Kommt|Kommen"
+    r"|Schafft|Lohnt|Wächst|Erreicht|Hat|Haben|Bleibt|War|Stößt|Sollte"
+    r"|Rechtfertigen|Genügt|Genügen|Macht|Sitzt|Geht|Wirkt|Landet|Werden"
+    r"|Wird|Besteht|Sieht|Fliegt|Gelingt|Schneiden|Schneidet|Braucht"
+    r"|Gibt|Treffen|Trifft|Gefriert|Läuft|Gehört|Startet|Legt|Muss"
+    r"|Müssen|Gilt|Gelten|Überschreitet|Unterschreitet|Bekommt|Fährt)\b",
+    re.I)
+OB_AUFTRAG = re.compile(r"\b(?:[Pp]rüfe|[Ee]ntscheide|[Bb]egründe"
+                        r"|[Bb]eurteile|[Uu]ntersuche)\b[^.?!]*,\s*ob\b")
+OHNE_RECHNEN = re.compile(r"ohne (?:genau )?zu rechnen"
+                          r"|ohne (?:vollständige )?Rechnung"
+                          r"|ohne [^.?!,]{0,30}zu (?:be)?rechnen"
+                          r"|ohne den Rechner")
+
+
+def letzte_frage(aufgabe):
+    teile = [s for s in re.split(r"(?<=[.?!])\s+|\s+–\s+", _ws(aufgabe))
+             if s.endswith("?")]
+    return teile[-1] if teile else ""
+
+
+def entscheidungsfrage(aufgabe):
+    """Aufgabe verlangt ein Ja/Nein-Urteil (P8, Urteilszählung)."""
+    return (bool(VERB_FRAGE.match(letzte_frage(aufgabe)))
+            or bool(OB_AUFTRAG.search(_ws(aufgabe).split("?")[-1]
+                                      or _ws(aufgabe))))
+
+
+def form_fehler(a):
+    au, lo = _ws(a["aufgabe"]), _ws(a["loesung"])
+    if re.search(r"nicht stimmen", au):
+        return "P1"
+    if re.search(r"\bSetze\b.{0,80}\bein\b", au) and "Zeile" in au:
+        return "P3"
+    if re.search(r"[Gg]enau eine (?:der \w+ )?(?:Rechnung|Umformung|"
+                 r"Lösung|Zeile)\w* ist falsch", au):
+        return "P2m"
+    if re.match(r"Richtig\.", lo):
+        return "P2"
+    return "F"
+
+
+def form_begruenden(a):
+    au = _ws(a["aufgabe"])
+    if "wahr oder falsch" in au:
+        return "P4"
+    if re.search(r"[Rr]echt hat|\bsagt\b[^„.?!]{0,20}„", au):
+        return "P6"
+    return "B"
+
+
+def form_anwendung(a):
+    return "P8" if (entscheidungsfrage(a["aufgabe"])
+                    or re.match(r"(?:ja|nein)\b", _ws(a["loesung"]), re.I)) \
+        else "A"
+
+
+BILD = ("ksys", "saeulen", "baum", "bruchrechteck", "bruchkreis",
+        "zahlenstrahl", "termbaum", "netz", "prisma", "tikzpicture",
+        "binomialverteilung", "streifen")
+TAFEL = ("sachtabelle", "wertetabelle", "vierfeldertafel", "tabular")
+
+
+def ziel_darstellung(au):
+    if re.search(r"\b(?:Zeichne|Skizziere|Markiere|Beschrifte|Färbe)\b"
+                 r"|\b(?:Trage|Teile)\b[^.?!]*\bein\b|\bStelle\b[^.?!]*\bdar\b"
+                 r"|\bZeige\b[^.?!]*\ban\b|\b(?:Erstelle|Übertrage)\b[^.?!]*"
+                 r"(?:[Bb]aum|[Dd]iagramm|Koordinatensystem)", au):
+        return "Bild"
+    if re.search(r"\b(?:Beschreibe|Formuliere|Deute|Nenne|Sage|Erfinde)\b"
+                 r"|in Worten|Was bedeutet", au):
+        return "Wort"
+    if re.search(r"\b(?:Ergänze|Fülle|Vervollständige|Übertrage|Lege)\b"
+                 r"[^.?!]*(?:Tabelle|tafel)", au):
+        return "Tabelle"
+    if re.search(r"\b(?:Schreibe|Gib|Lies|Stelle\b[^.?!]*\bauf|Welche[rs]?"
+                 r" (?:Term|Gleichung|Bruch|Zahl))", au):
+        return "Symbol"
+    return None
+
+
+def richtung(a):
+    """(Quelle, Ziel) einer darstellung-Zeile oder None (heuristisch)."""
+    au = _ws(a["aufgabe"])
+    ziel = ziel_darstellung(au)
+    if ziel is None:
+        return None
+    g = a["grafik"]
+    if re.search(r"\bLies\b", au) or (ziel != "Bild"
+                                      and any(x in g for x in BILD)):
+        quelle = "Bild"
+    elif ziel != "Tabelle" and any(x in g + au for x in TAFEL):
+        quelle = "Tabelle"
+    elif re.search(r"\$[^$]*(?:=|\(x\))[^$]*\$", au):
+        quelle = "Symbol"
+    else:
+        quelle = "Wort"
+    return quelle, ziel
+
+
+def formprobe(zeilen, datei):
+    """Pflichtformen einer Einheit -> Hinweise (keine Abweichungen)."""
+    h = []
+    sorten = {}
+    for a in zeilen:
+        if a.get("hoehe") == "pflicht":
+            sorten.setdefault(a.get("pflicht"), []).append(a)
+    for p, gruppe in sorten.items():
+        if p == "fehler":
+            f = [form_fehler(a) for a in gruppe]
+            if not {"P2", "P2m"} & set(f):
+                h.append(f"{datei} fehler: P2 (fehlerfreie Vorlage) fehlt "
+                         f"[{', '.join(f)}]")
+            doppelt = sorted({x for x in f if f.count(x) > 1})
+        elif p == "begruenden":
+            f = [form_begruenden(a) for a in gruppe]
+            for soll in ("P4", "P6"):
+                if soll not in f:
+                    h.append(f"{datei} begruenden: {soll} fehlt "
+                             f"[{', '.join(f)}]")
+            if not any(OHNE_RECHNEN.search(_ws(a["aufgabe"]))
+                       for a in gruppe):
+                h.append(f"{datei} begruenden: „ohne genau zu rechnen“ "
+                         f"fehlt")
+            doppelt = sorted({x for x in f if f.count(x) > 1 and x != "B"})
+        elif p == "anwendung":
+            f = [form_anwendung(a) for a in gruppe]
+            if "P8" not in f:
+                h.append(f"{datei} anwendung: P8 (Entscheidung am "
+                         f"Grenzwert) fehlt")
+            doppelt = []
+        elif p == "darstellung":
+            r = [richtung(a) for a in gruppe]
+            erkannt = [x for x in r if x]
+            if len(erkannt) >= 2 and len(set(erkannt)) < 2:
+                q, z = erkannt[0]
+                h.append(f"{datei} darstellung: nur eine Richtung "
+                         f"({q} → {z}) in {len(erkannt)} erkannten Zeilen")
+            f, doppelt = [], []
+        else:
+            continue
+        for x in doppelt:
+            ids = [a["id"] for a, y in zip(gruppe, f) if y == x]
+            h.append(f"{datei} {p}: Form {x} doppelt ({', '.join(ids)})")
+        for a, x in zip(gruppe, f):
+            if x in ("P1", "P4") and a["pruef"] != "":
+                h.append(f"{a['id']}: {x} mit pruef nicht \"\"")
+    return h
+
+
+URTEILSFRAGE = re.compile(r"\\janein|[Rr]echt hat|Prüfe, ob|wahr oder falsch")
+
+
+def urteile(a):
+    """Urteile einer Zeile: Liste aus ja, nein, richtig, falsch, offen,
+    sonst; [] wenn die aufgabe keine Urteilsfrage stellt. P4 zählt je
+    Aussage (wahr = ja, falsch = nein)."""
+    au, lo = _ws(a["aufgabe"]), _ws(a["loesung"])
+    if "wahr oder falsch" in au:
+        return ["ja" if w == "wahr" else "nein"
+                for w in re.findall(r"(?:^|[;.]\s*|\s)\(?\w\)\s*(wahr|falsch)"
+                                    r"\b", lo)] or ["sonst"]
+    if not (URTEILSFRAGE.search(au) or entscheidungsfrage(a["aufgabe"])):
+        return []
+    if re.match(r"(?:das )?kann man nicht entscheiden|nicht entscheidbar",
+                lo, re.I):
+        return ["offen"]
+    w = re.match(r"[A-Za-zÄÖÜäöüß]+", lo)
+    w = w.group().lower() if w else ""
+    return [{"ja": "ja", "nein": "nein", "richtig": "richtig",
+             "falsch": "falsch", "fehler": "falsch"}.get(w, "sonst")]
+
+
 def kontext(eintrag, wurzel):
     """Bausteine und Sperre aus den Mappen; fehlt eine, Warnung."""
     ctx, w = {}, []
@@ -1079,6 +1308,9 @@ def pruefe_eintrag(eintrag, katalog=None, wurzel=Path("."), alle=False):
     summe = []
     ids = {}
     texte = {}
+    fp = []                                  # v0.11 Formprobe
+    zu = dict.fromkeys(("ja", "nein", "richtig", "falsch", "offen",
+                        "sonst"), 0)
     for datei in dateien:
         da, dw = 0, 0
         roh = datei.read_text(encoding="utf-8")
@@ -1129,9 +1361,18 @@ def pruefe_eintrag(eintrag, katalog=None, wurzel=Path("."), alle=False):
             for x in kw:
                 dw += 1
                 print(f"WARNUNG {x}")
+        if einheit and all(set(FELDER) <= set(a) for a in zeilen):
+            fp += formprobe(zeilen, datei.name)
+            for a in zeilen:
+                for u in urteile(a):
+                    zu[u] += 1
         abw += da
         warn += dw
         summe.append((datei.name, da, dw))
+    for x in fp:
+        print(f"FORMPROBE {x}")
+    print(f"Formprobe: {len(fp)} Hinweise")
+    print("Urteile: " + ", ".join(f"{k} {v}" for k, v in zu.items()))
     for name, da, dw in summe:
         print(f"{name}: Abweichungen {da}, Warnungen {dw}")
     print(f"Abweichungen: {abw}, Warnungen: {warn}")
