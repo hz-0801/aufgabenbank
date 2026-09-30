@@ -351,7 +351,7 @@ scharen-von-geraden-und-ebenen-e2-k1-s5-v3;2017-bb-ea-B3.1f;5;;ganz;ganzzahliger
 skalarprodukt-und-winkel-e4-k1-s2-v3;2017-bb-ea-B3.2a;3;;ganz;Neigungswinkel Gerade gegen Grundfläche gleich gerechnet
 schnittmengen-e1-k2-s3-v2;2017-bb-ea-B3.2b;2;;ganz;Spitze auf der Achse und Gesamthöhe gleich bestimmt
 ebenen-e2-k2-s5-v1;2017-bb-ea-B3.2c;3;;ganz;beide Punktproben und Orthogonalität des Richtungsvektors wie im Original
-abstaende-e2-k1-s2-v1;2017-bb-ea-B3.2d;2;;ganz;Lotgerade mit Normalenvektor angeben
+abstaende-e2-k2-s2-v1;2017-bb-ea-B3.2d;2;;ganz;Lotgerade mit Normalenvektor angeben
 vierfeldertafel-e1-k2-s4-v1;2017-bb-ea-B4.1a;2;;ganz;gleiche Anzahl über Anteile und Differenz
 bedingte-wahrscheinlichkeit-und-bayes-e1-k1-s2-v3;2017-bb-ea-B4.1b;4;;ganz;bedingte Wahrscheinlichkeit aus absoluten Zahlen
 binomialverteilung-e4-k1-s2-v1;2017-bb-ea-B4.2b;4;;ganz;Mindestanzahl über Gegenereignis und Logarithmus
@@ -381,6 +381,7 @@ schnittmengen-e1-k2-s1-v4;2017MerhoehtAAGLAA211-b;3;;ganz;Schnittpunkt Gerade Eb
 flaecheninhalt-und-volumen-im-raum-e1-k2-s1-v5;2017MerhoehtAAGLAA212-a;2;;ganz;Dreiecksfläche über Katheten nachweisen
 gleichungen-loesen-e2-k1-s2-v2;2017MerhoehtAAnalysis11-a;2;;ganz;Nullstelle durch Logarithmieren
 ableitung-und-aenderungsrate-e1-k1-s3-v2;2017MerhoehtAAnalysis12-a;3;;ganz;mittlere Änderungsrate aus dem Term
+ableitung-und-aenderungsrate-e2-k1-s4-v1;2017MerhoehtAAnalysis12-b;2;;ganz;Stelle zur vorgegebenen Rate über p'(t) = c wie im Original
 flaecheninhalt-durch-integration-e1-k1-s6-v3;2017MerhoehtAAnalysis2-a;2;;ganz;Flächeninhalt über Integral nachweisen
 flaecheninhalt-durch-integration-e1-k1-s6-v4;2017MerhoehtAAnalysis2-a;2;;ganz;Flächeninhalt über Integral nachweisen
 unabhaengigkeit-e3-k1-s1-v1;2017MerhoehtAStochastik11-c;2;;ganz;Ausgleichsaussage über Unabhängigkeit beurteilen
@@ -446,7 +447,7 @@ schnittmengen-e2-k2-s1-v1;2017MgrundlegendBAGLAA2CAS1-1e;4;;ganz;Schattenpunkt a
 schnittmengen-e2-k2-s1-v2;2017MgrundlegendBAGLAA2CAS1-1e;4;;ganz;Schattenpunkt als Schnitt zweier Geraden
 schnittmengen-e2-k2-s1-v3;2017MgrundlegendBAGLAA2CAS1-1e;4;;ganz;Schattenpunkt als Schnitt zweier Geraden
 geraden-e2-k2-s1-v3;2017MgrundlegendBAGLAA2CAS1-1f;4;;unklar;nur Punkte, Original verlangt das Teilungsverhältnis
-ebenen-e4-k2-s1-v1;2017MgrundlegendBAGLAA2WTR1-1f;4;;ganz;parallele Ebenen auswählen und der Höhe nach zuordnen
+ebenen-e4-k3-s1-v1;2017MgrundlegendBAGLAA2WTR1-1f;4;;ganz;parallele Ebenen auswählen und der Höhe nach zuordnen
 lagebeziehungen-e3-k1-s3-v2;2017MgrundlegendBAGLAA2WTR2-1a;2;;ganz;Parallelität über gleiche z-Koordinaten begründen
 vektoren-und-rechenoperationen-e2-k1-s5-v2;2017MgrundlegendBAGLAA2WTR2-1c;1;;ganz;vierter Eckpunkt über Vektoraddition
 flaecheninhalt-und-volumen-im-raum-e2-k2-s1-v1;2017MgrundlegendBAGLAA2WTR2-1g;4;;ganz;Flächenvergleich mit Querschnittsskizze begründen
@@ -571,10 +572,12 @@ orthogonalitaet-e1-k4-s5-v2;2018-bb-ea-B3.1b;3;;ganz;Nichtrechtwinkligkeit an al
 skalarprodukt-und-winkel-e2-k2-s3-v3;2018-bb-ea-B3.1c;5;;teil;nur der Innenwinkel, Original verlangt auch die Höhe
 flaecheninhalt-und-volumen-im-raum-e3-k2-s3-v1;2018-bb-ea-B3.1d;4;;ganz;Pyramidenvolumen und Leistungsbedarf nachweisen
 schnittmengen-e1-k2-s3-v1;2018-bb-ea-B3.1e;3;;ganz;Schnittpunkt mit achsenparalleler Ebene nachweisen
-abstaende-e2-k1-s4-v1;2018-bb-ea-B3.1f;6;;ganz;Punkt auf Strecke mit Abstand zur Ebene
+abstaende-e2-k2-s4-v1;2018-bb-ea-B3.1f;6;;ganz;Punkt auf Strecke mit Abstand zur Ebene
 ebenen-e1-k1-s2-v1;2018-bb-ea-B3.2a;2;;ganz;Parametergleichung aus Quadratecken angeben
 scharen-von-geraden-und-ebenen-e2-k1-s5-v1;2018-bb-ea-B3.2b;6;;teil;nur der Parameter, Original verlangt auch den Winkel
 vierfeldertafel-e1-k2-s2-v1;2018-bb-ea-B4.2a;5;;ganz;Vierfeldertafel und bedingte Wahrscheinlichkeit
+binomialverteilung-e2-k1-s5-v1;2018-bb-ea-B4.2b;4;;teil;Original verlangt P(A) und P(B), die Zeile übt nur den Wechsel der Trefferdefinition
+binomialverteilung-e2-k1-s5-v2;2018-bb-ea-B4.2b;4;;teil;Original verlangt P(A) und P(B), die Zeile übt nur den Wechsel der Trefferdefinition
 binomialverteilung-e2-k1-s10-v5;2018-bb-ea-B4.2c;5;;ganz;Einzelwahrscheinlichkeit und Vergleich über Erwartungswert
 binomialverteilung-e2-k1-s10-v6;2018-bb-ea-B4.2c;5;;ganz;Einzelwahrscheinlichkeit und Vergleich über Erwartungswert
 hypothesentests-e1-k1-s1-v1;2018-bb-ea-B4.2d;5;;ganz;Entscheidungsregel rechtsseitig mit gleichem Weg
@@ -619,6 +622,7 @@ kenngroessen-von-verteilungen-e1-k1-s3-v1;2018-be-gk-B3.1d;2;;ganz;Erwartungswer
 kenngroessen-von-verteilungen-e2-k1-s3-v1;2018-be-gk-B3.1e;6;;teil;nur Kugelzahl bestimmen, Original verlangt auch Gegenbeispiel-Nachweis
 binomialverteilung-e3-k2-s4-v1;2018-be-gk-B3.2a;4;;ganz;beide Wahrscheinlichkeiten mit gleichem Weg
 binomialverteilung-e3-k2-s4-v2;2018-be-gk-B3.2a;4;;ganz;beide Wahrscheinlichkeiten mit gleichem Weg
+binomialverteilung-e4-k1-s8-v1;2018-be-gk-B3.2c;3;;ganz;Aussage über die Abhängigkeit von n allgemein beurteilen wie im Original
 binomialverteilung-e4-k1-s3-v1;2018-be-gk-B3.2d;4;;ganz;höchster Anteil über n-te Wurzel
 binomialverteilung-e4-k1-s3-v2;2018-be-gk-B3.2d;4;;ganz;höchster Anteil über n-te Wurzel
 vierfeldertafel-e1-k2-s3-v1;2018-be-gk-B3.2e;3;;ganz;Vierfeldertafel aus gleichen Angabearten vervollständigt
@@ -655,8 +659,8 @@ punkte-und-strecken-im-koordinatensystem-e3-k1-s4-v3;2018MerhoehtBAGLAA2WTR1-1a;
 scharen-von-geraden-und-ebenen-e3-k1-s1-v4;2018MerhoehtBAGLAA2WTR1-1c;4;;ganz;Parameter für vorgegebenen Winkel über Kosinusformel
 schnittmengen-e3-k1-s5-v2;2018MerhoehtBAGLAA2WTR1-1d;3;;ganz;zeichnerisches Vorgehen beschrieben wie im Original
 scharen-von-geraden-und-ebenen-e4-k1-s3-v3;2018MerhoehtBAGLAA2WTR1-1f;4;;ganz;Parameterbereich und Lage der dritten Ecke beide verlangt
-abstaende-e2-k1-s5-v1;2018MerhoehtBAGLAA2WTR1-1g;3;;ganz;Aufgabenstellung aus Abstandsrechnung formuliert
-abstaende-e2-k1-s5-v2;2018MerhoehtBAGLAA2WTR1-1g;3;;ganz;Aufgabenstellung aus Abstandsrechnung formuliert
+abstaende-e2-k2-s5-v1;2018MerhoehtBAGLAA2WTR1-1g;3;;ganz;Aufgabenstellung aus Abstandsrechnung formuliert
+abstaende-e2-k2-s5-v2;2018MerhoehtBAGLAA2WTR1-1g;3;;ganz;Aufgabenstellung aus Abstandsrechnung formuliert
 schnittmengen-e2-k1-s3-v1;2018MerhoehtBAGLAA2WTR2-1f;8;;ganz;Höhe über Schnitt mit Kantengerade, Abstand als kleiner Schritt
 schnittmengen-e2-k1-s3-v2;2018MerhoehtBAGLAA2WTR2-1f;8;;ganz;Höhe über Schnitt mit Kantengerade, Abstand als kleiner Schritt
 schnittmengen-e2-k1-s3-v3;2018MerhoehtBAGLAA2WTR2-1f;8;;ganz;Höhe über Schnitt mit Kantengerade, Abstand als kleiner Schritt
@@ -817,6 +821,8 @@ geraden-e3-k1-s6-v1;2019-be-gk-A1.3b;2;;ganz;alle gesuchten Ergebnisse mit gleic
 geraden-e3-k1-s6-v2;2019-be-gk-A1.3b;2;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
 ableitung-und-aenderungsrate-e4-k1-s4-v1;2019-be-gk-B2.1b;4;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
 rekonstruktion-von-funktionsgleichungen-e2-k1-s2-v1;2019-be-gk-B2.1c;5;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
+ableitung-und-aenderungsrate-e4-k1-s9-v1;2019-be-gk-B2.1e;4;;ganz;Zeitpunkt größter Ratendifferenz über die Differenzfunktion, der Unterschied dazu verlangt mehr
+ableitung-und-aenderungsrate-e4-k1-s9-v2;2019-be-gk-B2.1e;4;;ganz;Zeitpunkte größter Ratendifferenz über die Differenzfunktion wie im Original
 rekonstruktion-von-bestaenden-e3-k1-s2-v1;2019-be-gk-B2.1g;6;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
 grenzwerte-und-verhalten-im-unendlichen-e2-k1-s5-v1;2019-be-gk-B2.2a;3;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
 grenzwerte-und-verhalten-im-unendlichen-e2-k1-s5-v2;2019-be-gk-B2.2a;3;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
@@ -836,8 +842,10 @@ punkte-und-strecken-im-koordinatensystem-e1-k1-s2-v1;2019-be-gk-B3.2a;2;;ganz;al
 punkte-und-strecken-im-koordinatensystem-e1-k1-s2-v3;2019-be-gk-B3.2a;2;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
 punkte-und-strecken-im-koordinatensystem-e4-k1-s5-v2;2019-be-gk-B3.2b;4;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
 skalarprodukt-und-winkel-e2-k2-s2-v3;2019-be-gk-B3.2c;2;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
+skalarprodukt-und-winkel-e2-k2-s6-v3;2019-be-gk-B3.2c;2;;ganz;ein Innenwinkel des Trapezes über zwei Kantenvektoren wie im Original
+skalarprodukt-und-winkel-e2-k2-s6-v4;2019-be-gk-B3.2c;2;;ganz;ein Innenwinkel des Trapezes über zwei Kantenvektoren wie im Original
 flaecheninhalt-und-volumen-im-raum-e2-k1-s3-v1;2019-be-gk-B3.2d;4;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
-ebenen-e4-k1-s2-v1;2019-be-gk-B3.2e;3;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
+ebenen-e4-k2-s2-v1;2019-be-gk-B3.2e;3;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
 schnittmengen-e2-k1-s5-v1;2019-be-gk-B3.2f;5;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
 schnittmengen-e2-k1-s5-v2;2019-be-gk-B3.2f;5;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
 binomialverteilung-e2-k1-s10-v3;2019-be-gk-B4.1a;4;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
@@ -851,6 +859,9 @@ lagebeziehungen-e2-k1-s5-v2;2019MerhoehtAAGLAA22-a;2;;ganz;alle gesuchten Ergebn
 lagebeziehungen-e3-k1-s5-v1;2019MerhoehtAAGLAA22-b;3;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
 kurvenuntersuchung-e3-k2-s10-v7;2019MerhoehtAAnalysis2-b;3;;ganz;Wendepunkt von f aus dem Graphen von g mit Kettenregel wie im Original
 kurvenuntersuchung-e3-k2-s10-v8;2019MerhoehtAAnalysis2-b;3;;ganz;Wendepunkt von f aus dem Graphen von g mit Kettenregel wie im Original
+binomialverteilung-e5-k1-s6-v2;2019MerhoehtAStochastik11-a;2;;teil;Original verlangt Säule eintragen und P(X = 2), die Zeile nur die Differenz kumulierter Werte
+binomialverteilung-e4-k1-s9-v7;2019MerhoehtAStochastik11-b;3;;ganz;p aus einer Gleichung zweier Einzelwahrscheinlichkeiten wie im Original
+binomialverteilung-e4-k1-s9-v8;2019MerhoehtAStochastik11-b;3;;ganz;p aus einer Gleichung zweier Einzelwahrscheinlichkeiten wie im Original
 geraden-e2-k1-s3-v1;2019MgrundlegendAAGLAA211-a;2;;ganz;eine Koordinate mehr, gleicher Weg über den Parameter
 geraden-e2-k1-s3-v2;2019MgrundlegendAAGLAA211-a;2;;ganz;eine Koordinate mehr, gleicher Weg über den Parameter
 geraden-e2-k1-s3-v3;2019MgrundlegendAAGLAA211-a;2;;ganz;eine Koordinate mehr, gleicher Weg über den Parameter
@@ -890,6 +901,8 @@ flaecheninhalt-durch-integration-e5-k1-s8-v6;2019MgrundlegendBAnalysisWTR1-2e;4;
 gleichungen-loesen-e1-k1-s10-v1;2019MgrundlegendBAnalysisWTR1-3b;4;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
 gleichungen-loesen-e1-k1-s10-v2;2019MgrundlegendBAnalysisWTR1-3b;4;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
 gleichungen-loesen-e1-k1-s10-v3;2019MgrundlegendBAnalysisWTR1-3b;4;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
+flaecheninhalt-durch-integration-e5-k1-s8-v13;2019MgrundlegendBAnalysisWTR1-3d;3;;ganz;Grenzen für ein positives Produkt angeben und begründen wie im Original
+flaecheninhalt-durch-integration-e5-k1-s8-v14;2019MgrundlegendBAnalysisWTR1-3d;3;;ganz;Grenzen für ein positives Produkt angeben und begründen wie im Original
 stammfunktion-und-hauptsatz-e3-k1-s4-v3;2019MgrundlegendBAnalysisWTR2-1e;3;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
 extremalprobleme-e1-k1-s2-v3;2019MgrundlegendBAnalysisWTR2-1f;2;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
 extremalprobleme-e1-k1-s4-v1;2019MgrundlegendBAnalysisWTR2-1h;4;;unklar;Bank verlangt zusätzlich die Schenkellänge
@@ -905,6 +918,8 @@ ableitung-und-aenderungsrate-e1-k1-s10-v3;2019MgrundlegendBAnalysisWTR2-2d;4;;ga
 ableitung-und-aenderungsrate-e1-k1-s10-v4;2019MgrundlegendBAnalysisWTR2-2d;4;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
 binomialverteilung-e4-k1-s6-v1;2019MgrundlegendBStochastikWTR1-1b;4;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
 binomialverteilung-e4-k1-s6-v2;2019MgrundlegendBStochastikWTR1-1b;4;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
+zufallsexperimente-und-pfadregeln-e2-k1-s8-v3;2019MgrundlegendBStochastikWTR2-3a;2;;ganz;Laplace-Term nach Hinzufügen von Kugeln als Anteil begründen wie im Original
+zufallsexperimente-und-pfadregeln-e2-k1-s8-v4;2019MgrundlegendBStochastikWTR2-3a;2;;ganz;Laplace-Term nach Hinzufügen von Kugeln als Anteil begründen wie im Original
 zufallsexperimente-und-pfadregeln-e2-k1-s8-v1;2019MgrundlegendBStochastikWTR2-3b;3;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
 zufallsexperimente-und-pfadregeln-e2-k1-s8-v2;2019MgrundlegendBStochastikWTR2-3b;3;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
 tangente-normale-schnittwinkel-e1-k1-s2-v1;2020-A-1d;2;;unklar;Bank verlangt zusätzlich die Tangentengleichung
@@ -1045,7 +1060,7 @@ schnittmengen-e3-k1-s7-v2;2020-be-gk-B3.1d;4;;ganz;Nichtparallelität begründen
 punkte-und-strecken-im-koordinatensystem-e3-k1-s2-v2;2020-be-gk-B3.2a;4;;teil;nur Seitenlängenprüfung, Eckpunkte H und G fehlen
 punkte-und-strecken-im-koordinatensystem-e5-k1-s2-v3;2020-be-gk-B3.2a;4;;teil;nur Eckpunkte G und H, Dreiecksprüfung fehlt
 ebenen-e2-k1-s6-v1;2020-be-gk-B3.2b;4;;ganz;Parameter- und Koordinatenform der Ebene
-ebenen-e4-k1-s4-v1;2020-be-gk-B3.2c;4;;ganz;parallele Ebene und größte Höhe, Angeben statt Begründen
+ebenen-e4-k2-s4-v1;2020-be-gk-B3.2c;4;;ganz;parallele Ebene und größte Höhe, Angeben statt Begründen
 zufallsexperimente-und-pfadregeln-e3-k1-s10-v5;2020-be-gk-B4.1f;3;;ganz;Behauptung über die Pfade widerlegen
 zufallsexperimente-und-pfadregeln-e3-k1-s10-v6;2020-be-gk-B4.1f;3;;ganz;Behauptung über die Pfade widerlegen
 bedingte-wahrscheinlichkeit-und-bayes-e2-k1-s1-v5;2020-be-gk-B4.2f;3;;ganz;bedingte Wahrscheinlichkeit rückwärts wie im Original
@@ -1072,8 +1087,8 @@ kombinatorik-e3-k1-s4-v1;2020MerhoehtAStochastik22-b;3;;ganz;Zerlegungen mit Sch
 matrizen-und-uebergangsprozesse-e1-k1-s7-v3;2020MgrundlegendAAGLAA12;5;;ganz;alle ganzzahligen Tupel aus dem Matrixquadrat
 matrizen-und-uebergangsprozesse-e1-k1-s7-v4;2020MgrundlegendAAGLAA12;5;;ganz;alle ganzzahligen Tupel aus dem Matrixquadrat
 orthogonalitaet-e3-k1-s2-v1;2020MgrundlegendAAGLAA211-a;2;;ganz;gerades Prisma über Normalenvektor begründen
-ebenen-e4-k1-s5-v1;2020MgrundlegendAAGLAA211-b;3;;ganz;parallele Ebene aus Volumenverhältnis mit gleichem Weg
-ebenen-e4-k1-s5-v2;2020MgrundlegendAAGLAA211-b;3;;ganz;parallele Ebene aus Volumenverhältnis mit gleichem Weg
+ebenen-e4-k2-s5-v1;2020MgrundlegendAAGLAA211-b;3;;ganz;parallele Ebene aus Volumenverhältnis mit gleichem Weg
+ebenen-e4-k2-s5-v2;2020MgrundlegendAAGLAA211-b;3;;ganz;parallele Ebene aus Volumenverhältnis mit gleichem Weg
 flaecheninhalt-und-volumen-im-raum-e3-k1-s6-v4;2020MgrundlegendAAGLAA212-a;3;;ganz;Pyramidenvolumen mit Pythagoras wie im Original
 flaecheninhalt-und-volumen-im-raum-e3-k1-s6-v5;2020MgrundlegendAAGLAA212-a;3;;ganz;Pyramidenvolumen mit Pythagoras wie im Original
 punkte-und-strecken-im-koordinatensystem-e5-k1-s2-v1;2020MgrundlegendAAGLAA212-b;2;;ganz;Eckpunktkoordinaten eines Körpers wählen
@@ -1099,6 +1114,8 @@ gleichungen-loesen-e1-k1-s9-v2;2020MgrundlegendBAnalysisWTR1-1a;5;;teil;nur die 
 gleichungen-loesen-e1-k1-s9-v3;2020MgrundlegendBAnalysisWTR1-1a;5;;teil;nur die gemeinsamen Punkte, Original auch Ableitungsnachweis
 ableitung-und-aenderungsrate-e2-k1-s8-v3;2020MgrundlegendBAnalysisWTR1-1c;3;;ganz;Allaussage mit Gegenbeispielstelle beurteilen
 ableitung-und-aenderungsrate-e2-k1-s8-v4;2020MgrundlegendBAnalysisWTR1-1c;3;;ganz;Allaussage mit Gegenbeispielstelle beurteilen
+flaecheninhalt-durch-integration-e3-k1-s6-v10;2020MgrundlegendBAnalysisWTR1-1f;5;;ganz;Aufgabenstellung formulieren und beide Integrale deuten wie im Original
+flaecheninhalt-durch-integration-e3-k1-s6-v9;2020MgrundlegendBAnalysisWTR1-1f;5;;ganz;Aufgabenstellung formulieren und beide Integrale deuten wie im Original
 funktionsscharen-und-ortskurven-e3-k1-s3-v2;2020MgrundlegendBAnalysisWTR1-1g;3;;ganz;Wendetangente x-Achse der Schar nachweisen
 grenzwerte-und-verhalten-im-unendlichen-e2-k1-s4-v3;2020MgrundlegendBAnalysisWTR2-1b;2;;ganz;Verlauf für x gegen minus unendlich mit Begründung
 tangente-normale-schnittwinkel-e2-k1-s5-v1;2020MgrundlegendBAnalysisWTR2-1c;3;;ganz;Tangente durch Punkt einzeichnen und Gleichung angeben
@@ -1106,6 +1123,7 @@ stammfunktion-und-hauptsatz-e1-k1-s3-v2;2020MgrundlegendBAnalysisWTR2-1e;4;;ganz
 stammfunktion-und-hauptsatz-e3-k1-s6-v4;2020MgrundlegendBAnalysisWTR2-1h;5;;ganz;Tiefpunkt begründen und Stammfunktion bestimmen, beide Teile
 stammfunktion-und-hauptsatz-e3-k1-s6-v5;2020MgrundlegendBAnalysisWTR2-1h;5;;ganz;Tiefpunkt begründen und Stammfunktion bestimmen, beide Teile
 funktionsscharen-und-ortskurven-e5-k1-s6-v1;2020MgrundlegendBAnalysisWTR2-2a;2;;ganz;Parameter des Spiegelbilds bestimmen
+binomialverteilung-e3-k2-s3-v1;2020MgrundlegendBStochastikWTR1-1a;2;;ganz;kumulierte Wahrscheinlichkeit für mindestens k über das Gegenereignis wie im Original
 bedingte-wahrscheinlichkeit-und-bayes-e3-k1-s3-v3;2020MgrundlegendBStochastikWTR2-2c;4;;ganz;Graph über Randwerte ohne Rechnung zuordnen
 ableitungsregeln-e1-k3-s1-v2;2021-A-1a;5;;ganz;Verhalten im Unendlichen und drei Ableitungen
 grenzwerte-und-verhalten-im-unendlichen-e1-k2-s2-v2;2021-A-1a;5;;teil;nur Verhalten im Unendlichen, Original auch drei Ableitungen
@@ -1223,6 +1241,8 @@ schnittmengen-e3-k1-s2-v1;2021-be-gk-B3h;2;;ganz;F bestimmen und beide Spurgerad
 flaecheninhalt-und-volumen-im-raum-e4-k1-s4-v1;2021-be-gk-B3i;4;;ganz;Volumenverhältnis über Formeln ohne Zahlen, anderer Körper
 unabhaengigkeit-e3-k1-s2-v1;2021-be-gk-B4c;2;;ganz;Aussage über Unabhängigkeit beurteilen wie im Original
 unabhaengigkeit-e3-k1-s2-v2;2021-be-gk-B4c;2;;ganz;Aussage über Unabhängigkeit beurteilen wie im Original
+binomialverteilung-e3-k2-s9-v10;2021-be-gk-B4d;3;;ganz;Einzelwahrscheinlichkeit als p einer zweiten Binomialverteilung wie im Original
+binomialverteilung-e3-k2-s9-v9;2021-be-gk-B4d;3;;ganz;Einzelwahrscheinlichkeit als p einer zweiten Binomialverteilung wie im Original
 kenngroessen-von-verteilungen-e2-k3-s1-v1;2021-be-gk-B4i;4;;ganz;beide Wahrscheinlichkeiten aus Erwartungswert und Summe eins
 geraden-e1-k2-s3-v1;2021MerhoehtAAGLAA112-a;1;;ganz;Parallelität zur Achse über Koordinaten begründet
 geraden-e1-k2-s3-v2;2021MerhoehtAAGLAA112-a;1;;unklar;andere Lage, Koordinatenebene statt Achse über Richtungsvektor
@@ -1247,6 +1267,8 @@ funktionsklassen-und-eigenschaften-e4-k1-s8-v6;2021MerhoehtAAnalysis21-b;3;;ganz
 vierfeldertafel-e1-k2-s6-v1;2021MerhoehtAStochastik11-a;3;;ganz;Tafel mit Parameter füllen und Wert ausschließen
 vierfeldertafel-e1-k2-s6-v2;2021MerhoehtAStochastik11-a;3;;ganz;Tafel mit Parameter füllen und Wert ausschließen
 unabhaengigkeit-e2-k1-s2-v1;2021MerhoehtAStochastik11-b;2;;ganz;Parameter für Unabhängigkeit über Produktregel
+binomialverteilung-e5-k1-s7-v1;2021MerhoehtAStochastik12-b;2;;ganz;symmetrisches Intervall aus einem Randwert über die Symmetrie wie im Original
+binomialverteilung-e5-k1-s7-v2;2021MerhoehtAStochastik12-b;2;;ganz;symmetrisches Intervall aus einem Randwert über die Symmetrie wie im Original
 zufallsgroessen-und-verteilungen-e1-k2-s3-v1;2021MerhoehtAStochastik13-a;1;;ganz;p über Summe eins nachweisen
 zufallsgroessen-und-verteilungen-e1-k2-s3-v2;2021MerhoehtAStochastik13-a;1;;ganz;p über Summe eins nachweisen
 zufallsgroessen-und-verteilungen-e1-k2-s3-v3;2021MerhoehtAStochastik13-a;1;;ganz;p über Summe eins nachweisen
@@ -1278,6 +1300,9 @@ abstaende-e3-k1-s6-v1;2021MgrundlegendBAGLAA2WTR2-1e;5;;ganz;Mittelpunkt S über
 kurvenuntersuchung-e3-k3-s1-v1;2021MgrundlegendBAnalysisWTR-1b;7;;ganz;Wendepunktgerade aufstellen und Parallele einzeichnen
 ableitung-und-aenderungsrate-e2-k1-s6-v1;2021MgrundlegendBAnalysisWTR-2a;2;;ganz;Koordinaten auf dem Ratengraphen deuten
 rekonstruktion-von-bestaenden-e2-k1-s2-v2;2021MgrundlegendBAnalysisWTR-2b;2;;ganz;Aussage über größten Bestand über Vorzeichenwechsel beurteilen
+binomialverteilung-e5-k1-s8-v10;2021MgrundlegendBStochastikWTR1-1c;4;;ganz;beide Aussagen am Säulendiagramm beurteilen wie im Original
+binomialverteilung-e5-k1-s8-v9;2021MgrundlegendBStochastikWTR1-1c;4;;ganz;beide Aussagen am Säulendiagramm beurteilen wie im Original
+binomialverteilung-e4-k1-s7-v1;2021MgrundlegendBStochastikWTR2-1d;3;;ganz;p auf ganze Prozent durch Probieren am Rechner wie im Original
 bedingte-wahrscheinlichkeit-und-bayes-e1-k1-s3-v3;2021MgrundlegendBStochastikWTR3-1b;3;;ganz;zwei bedingte Anteile berechnen und vergleichen
 bedingte-wahrscheinlichkeit-und-bayes-e2-k1-s4-v3;2021MgrundlegendBStochastikWTR3-1g;3;;ganz;bedingte Wahrscheinlichkeit über Bayes im Befragungsbaum
 ableitungsregeln-e1-k3-s1-v1;2022-B-1a;5;;ganz;Verhalten im Unendlichen und drei Ableitungen
@@ -1392,6 +1417,8 @@ ableitung-und-aenderungsrate-e3-k1-s5-v1;2022-bebb-gk-B2.2c;5;;ganz;Nachweis der
 rekonstruktion-von-funktionsgleichungen-e1-k1-s2-v1;2022-bebb-gk-B2.2g;2;;ganz;Geradengleichung durch zwei Punkte nachweisen
 rekonstruktion-von-funktionsgleichungen-e1-k1-s2-v2;2022-bebb-gk-B2.2g;2;;ganz;Geradengleichung durch zwei Punkte nachweisen
 rekonstruktion-von-funktionsgleichungen-e1-k1-s2-v3;2022-bebb-gk-B2.2g;2;;ganz;Geradengleichung durch zwei Punkte nachweisen
+flaecheninhalt-durch-integration-e3-k1-s6-v11;2022-bebb-gk-B2.2i;4;;ganz;Sehne statt Graph: größer, kleiner oder gleich mit Rechnung wie im Original
+flaecheninhalt-durch-integration-e3-k1-s6-v12;2022-bebb-gk-B2.2i;4;;ganz;Sehne statt Graph: größer, kleiner oder gleich mit Rechnung wie im Original
 rekonstruktion-von-funktionsgleichungen-e2-k1-s4-v2;2022-bebb-gk-B2.2k;5;;teil;nur a und b, ohne Nachweis der Verwendbarkeit
 flaecheninhalt-und-volumen-im-raum-e2-k1-s6-v3;2022-bebb-gk-B3a;3;;ganz;Flächenverhältnis der Quadrate nachweisen
 flaecheninhalt-und-volumen-im-raum-e2-k1-s6-v4;2022-bebb-gk-B3a;3;;ganz;Flächenverhältnis der Quadrate nachweisen
@@ -1459,6 +1486,7 @@ hypothesentests-e3-k1-s5-v1;2022-bebb-lk-B4g;4;;ganz;gleiche Leistungen mit glei
 hypothesentests-e3-k1-s5-v2;2022-bebb-lk-B4g;4;;ganz;gleiche Leistungen mit gleichem Weg, verfremdet
 hypothesentests-e2-k1-s3-v1;2022-bebb-lk-B4h;3;;ganz;gleiche Leistungen mit gleichem Weg, verfremdet
 hypothesentests-e2-k1-s3-v2;2022-bebb-lk-B4h;3;;ganz;gleiche Leistungen mit gleichem Weg, verfremdet
+binomialverteilung-e3-k2-s3-v2;2022-bebb-lk-B4k;2;;ganz;kumulierte Wahrscheinlichkeit für mehr als k über das Gegenereignis wie im Original
 kenngroessen-von-verteilungen-e2-k1-s4-v3;2022-bebb-lk-B4l;5;;ganz;gleiche Leistungen mit gleichem Weg, verfremdet
 binomialverteilung-e3-k2-s9-v1;2022-bebb-lk-B4m;5;;ganz;gleiche Leistungen mit gleichem Weg, verfremdet
 binomialverteilung-e3-k2-s9-v2;2022-bebb-lk-B4m;5;;ganz;gleiche Leistungen mit gleichem Weg, verfremdet
@@ -1535,8 +1563,8 @@ punkte-und-strecken-im-koordinatensystem-e4-k1-s9-v2;2022MgrundlegendAAGLAA22;5;
 rekonstruktion-von-funktionsgleichungen-e1-k1-s6-v1;2022MgrundlegendAAnalysis12-a;3;;ganz;a und b aus zwei Graphpunkten wie im Original
 zufallsgroessen-und-verteilungen-e1-k2-s4-v1;2022MgrundlegendAStochastik13-b;3;;ganz;beide Wahrscheinlichkeiten über unmöglichen Wert geschlossen
 zufallsgroessen-und-verteilungen-e1-k2-s4-v2;2022MgrundlegendAStochastik13-b;3;;ganz;beide Wahrscheinlichkeiten über unmöglichen Wert geschlossen
-zufallsexperimente-und-pfadregeln-e8-k1-s7-v1;2022MgrundlegendAStochastik2;5;;ganz;Term in p, Maximum und Winkel wie im Original
-zufallsexperimente-und-pfadregeln-e8-k1-s7-v2;2022MgrundlegendAStochastik2;5;;ganz;Term in p, Maximum und Winkel wie im Original
+zufallsexperimente-und-pfadregeln-e8-k2-s7-v1;2022MgrundlegendAStochastik2;5;;ganz;Term in p, Maximum und Winkel wie im Original
+zufallsexperimente-und-pfadregeln-e8-k2-s7-v2;2022MgrundlegendAStochastik2;5;;ganz;Term in p, Maximum und Winkel wie im Original
 matrizen-und-uebergangsprozesse-e4-k1-s7-v3;2022MgrundlegendBAGLAA1WTR-1f;5;;ganz;Matrixterm mit Abgang und Potenzen wie im Original
 matrizen-und-uebergangsprozesse-e4-k1-s7-v4;2022MgrundlegendBAGLAA1WTR-1f;5;;ganz;Matrixterm mit Abgang über Diagonalmatrix, etwas einfacher
 punkte-und-strecken-im-koordinatensystem-e4-k1-s4-v1;2022MgrundlegendBAGLAA2WTR1-1a;3;;ganz;Parallelogramm nachweisen und Rechteck ausschließen
@@ -1561,6 +1589,7 @@ funktionsscharen-und-ortskurven-e4-k1-s7-v1;2022MgrundlegendBAnalysisWTR1-2c;5;;
 grenzwerte-und-verhalten-im-unendlichen-e2-k1-s3-v3;2022MgrundlegendBAnalysisWTR2-1b;2;;ganz;Grenzwert und Verlauf beide verlangt
 kurvenuntersuchung-e5-k1-s2-v1;2022MgrundlegendBAnalysisWTR2-2c;2;;ganz;Wendepunkt im Sachzusammenhang deuten wie im Original
 ableitung-und-aenderungsrate-e4-k1-s7-v2;2022MgrundlegendBAnalysisWTR2-2d;5;;ganz;Zeitraum über f'(t) = c mit Phasenauswahl
+binomialverteilung-e4-k1-s7-v2;2022MgrundlegendBStochastikWTR2-2b;3;;ganz;n zu einer vorgegebenen Einzelwahrscheinlichkeit durch Probieren wie im Original
 binomialverteilung-e5-k1-s8-v5;2022MgrundlegendBStochastikWTR2-3a;3;;ganz;beide Aussagen am Diagramm beurteilen
 binomialverteilung-e5-k1-s8-v6;2022MgrundlegendBStochastikWTR2-3a;3;;ganz;beide Aussagen am Diagramm beurteilen
 grenzwerte-und-verhalten-im-unendlichen-e1-k2-s2-v1;2023-A-1a;3;;teil;nur Verhalten im Unendlichen, Symmetriebegründung fehlt
@@ -1707,7 +1736,7 @@ punkte-und-strecken-im-koordinatensystem-e2-k1-s5-v2;2023-bebb-gk-B3a;4;;teil;nu
 punkte-und-strecken-im-koordinatensystem-e2-k1-s5-v3;2023-bebb-gk-B3a;4;;teil;nur der Teilpunkt, Original verlangt auch Gleichseitigkeit
 punkte-und-strecken-im-koordinatensystem-e3-k1-s2-v1;2023-bebb-gk-B3a;4;;teil;nur Gleichseitigkeit, Original verlangt auch den Teilpunkt
 punkte-und-strecken-im-koordinatensystem-e3-k1-s2-v3;2023-bebb-gk-B3a;4;;teil;nur Gleichseitigkeit, Original verlangt auch den Teilpunkt
-ebenen-e4-k1-s3-v1;2023-bebb-gk-B3b;2;;ganz;dieselben Ergebnisse mit gleicher Handlung
+ebenen-e4-k2-s3-v1;2023-bebb-gk-B3b;2;;ganz;dieselben Ergebnisse mit gleicher Handlung
 abstaende-e4-k1-s1-v1;2023-bebb-gk-B3c;3;;ganz;Schrägstrecke gegen Ebenenabstand entschieden und begründet
 schnittmengen-e1-k2-s2-v1;2023-bebb-gk-B3d;3;;ganz;dieselben Ergebnisse mit gleicher Handlung
 lagebeziehungen-e1-k2-s7-v1;2023-bebb-gk-B3f;3;;ganz;Lage zwischen zwei parallelen Ebenen begründet wie im Original
@@ -1748,6 +1777,8 @@ rekonstruktion-von-funktionsgleichungen-e3-k1-s6-v1;2023-bebb-lk-B2.1l;3;;ganz;d
 rekonstruktion-von-funktionsgleichungen-e3-k1-s6-v2;2023-bebb-lk-B2.1l;3;;ganz;dieselben Ergebnisse mit gleicher Handlung
 ableitung-und-aenderungsrate-e2-k1-s5-v1;2023-bebb-lk-B2.2b;1;;ganz;dieselben Ergebnisse mit gleicher Handlung
 ableitung-und-aenderungsrate-e2-k1-s5-v2;2023-bebb-lk-B2.2b;1;;ganz;negative Rate im Sachzusammenhang deuten
+ableitung-und-aenderungsrate-e4-k1-s2-v2;2023-bebb-lk-B2.2c;5;;ganz;Zeitpunkt des Maximums über die Nullstellen der Ableitung und Auswahl an der Abbildung wie im Original
+ableitung-und-aenderungsrate-e4-k1-s2-v3;2023-bebb-lk-B2.2c;5;;ganz;Zeitpunkt des Maximums über die Nullstellen der Ableitung und Auswahl an der Abbildung wie im Original
 rekonstruktion-von-bestaenden-e2-k1-s2-v1;2023-bebb-lk-B2.2d;2;;ganz;dieselben Ergebnisse mit gleicher Handlung
 rekonstruktion-von-bestaenden-e2-k1-s3-v1;2023-bebb-lk-B2.2e;4;;ganz;dieselben Ergebnisse mit gleicher Handlung
 funktionsscharen-und-ortskurven-e2-k1-s4-v2;2023-bebb-lk-B2.2h;3;;ganz;dieselben Ergebnisse mit gleicher Handlung
@@ -1766,6 +1797,8 @@ zufallsexperimente-und-pfadregeln-e1-k1-s7-v1;2023-bebb-lk-B4b;2;;ganz;gleiche T
 zufallsexperimente-und-pfadregeln-e1-k1-s7-v2;2023-bebb-lk-B4b;2;;ganz;gleiche Termdeutung als genau eines der Ereignisse
 unabhaengigkeit-e2-k1-s1-v3;2023-bebb-lk-B4e;3;;ganz;Anteil für Unabhängigkeit angeben und begründen
 kenngroessen-von-verteilungen-e2-k4-s1-v1;2023-bebb-lk-B4g;4;;ganz;Restwahrscheinlichkeit und Teilerwartungswert wie im Original
+binomialverteilung-e4-k1-s5-v1;2023-bebb-lk-B4h;4;;ganz;kleinster Radius einer symmetrischen Umgebung um den Erwartungswert wie im Original
+binomialverteilung-e4-k1-s5-v2;2023-bebb-lk-B4h;4;;ganz;kleinster Radius einer symmetrischen Umgebung um den Erwartungswert wie im Original
 hypothesentests-e1-k1-s2-v1;2023-bebb-lk-B4i;4;;ganz;Entscheidungsregel linksseitig wie im Original
 hypothesentests-e3-k1-s1-v1;2023-bebb-lk-B4j;4;;ganz;Fehler zweiter Art für zwei Werte mit Deutung
 hypergeometrische-verteilung-e2-k1-s2-v1;2023-bebb-lk-B4l;4;;ganz;größtes n über kumulierte Summe wie im Original
@@ -1869,6 +1902,10 @@ kurvenuntersuchung-e5-k1-s9-v6;2023MgrundlegendBAnalysisWTR2-2b;4;;ganz;Aufgaben
 kurvenuntersuchung-e1-k1-s7-v7;2023MgrundlegendBAnalysisWTR2-2d;4;;ganz;Monotoniebereiche beider Modelle und Längenvergleich wie im Original
 kurvenuntersuchung-e1-k1-s7-v8;2023MgrundlegendBAnalysisWTR2-2d;4;;ganz;Monotoniebereiche beider Modelle und Längenvergleich wie im Original
 kombinatorik-e1-k1-s6-v3;2023MgrundlegendBStochastikWTR1-1a;2;;ganz;geordnete Auswahl ohne Wiederholung
+binomialverteilung-e3-k2-s9-v11;2023MgrundlegendBStochastikWTR1-2a;4;;ganz;zweistufiger Prüfplan über zwei Binomialwahrscheinlichkeiten wie im Original
+binomialverteilung-e3-k2-s9-v12;2023MgrundlegendBStochastikWTR1-2a;4;;ganz;zweistufiger Prüfplan über zwei Binomialwahrscheinlichkeiten wie im Original
+zufallsexperimente-und-pfadregeln-e1-k1-s7-v3;2023MgrundlegendBStochastikWTR1-2d;3;;ganz;Schnitt aus Randanteilen und Anteil ohne beide Merkmale nachweisen, ein Ergebnis wie im Original
+zufallsexperimente-und-pfadregeln-e1-k1-s7-v4;2023MgrundlegendBStochastikWTR1-2d;3;;ganz;Schnitt aus Randanteilen und Anteil ohne beide Merkmale nachweisen, ein Ergebnis wie im Original
 daten-e1-k2-s4-v2;2023MgrundlegendBStochastikWTR2-2a;2;;ganz;relative Häufigkeit aus Restanzahl
 binomialverteilung-e3-k3-s1-v1;2023MgrundlegendBStochastikWTR2-2b;4;;ganz;Restwahrscheinlichkeit nach bekannten Ergebnissen binomial
 binomialverteilung-e3-k3-s1-v2;2023MgrundlegendBStochastikWTR2-2b;4;;ganz;Restwahrscheinlichkeit nach bekannten Ergebnissen binomial
@@ -2019,9 +2056,11 @@ scharen-von-geraden-und-ebenen-e1-k2-s3-v3;2024-bebb-lk-A1.3b;3;;ganz;Zugehörig
 tangente-normale-schnittwinkel-e1-k1-s8-v1;2024-bebb-lk-A1.5a;1;;ganz;Tangentengleichung aus Abbildung abgelesen
 tangente-normale-schnittwinkel-e1-k1-s10-v1;2024-bebb-lk-A1.5b;4;;ganz;Achsenabschnitt der Tangente allgemein nachgewiesen
 tangente-normale-schnittwinkel-e1-k1-s10-v7;2024-bebb-lk-A1.5b;4;;ganz;y-Achsenabschnitt der Tangente allgemein nachgewiesen
-abstaende-e2-k1-s3-v3;2024-bebb-lk-A1.7b;3;;ganz;Ecke auf Lotgerade mit gleichem Weg
+abstaende-e2-k2-s3-v3;2024-bebb-lk-A1.7b;3;;ganz;Ecke auf Lotgerade mit gleichem Weg
 lagebeziehungen-e3-k1-s6-v1;2024-bebb-lk-A1.8a;5;;ganz;Lage mit Fallunterscheidung und Schnittpunkt
 lagebeziehungen-e3-k1-s6-v2;2024-bebb-lk-A1.8a;5;;ganz;Lage mit Fallunterscheidung und Schnittpunkt
+binomialverteilung-e1-k1-s3-v1;2024-bebb-lk-A1.9a;2;;ganz;genau ein Treffer bei zwei Versuchen über zwei Pfade wie im Original
+binomialverteilung-e1-k1-s3-v2;2024-bebb-lk-A1.9a;2;;ganz;genau ein Treffer bei zwei Versuchen über zwei Pfade wie im Original
 unabhaengigkeit-e2-k1-s5-v1;2024-bebb-lk-A1.9b;3;;ganz;Fehlerwahrscheinlichkeit aus Vereinigung berechnet
 funktionsscharen-und-ortskurven-e2-k1-s4-v1;2024-bebb-lk-B2.1a;3;;ganz;Grenzverhalten nach Parametervorzeichen
 ableitungsregeln-e3-k1-s4-v1;2024-bebb-lk-B2.1d;4;;ganz;Ableitung nachgewiesen und Extremstellen angegeben
@@ -2038,6 +2077,8 @@ ableitung-und-aenderungsrate-e1-k1-s2-v1;2024-bebb-lk-B2.2f;3;;ganz;mittlere Rat
 ableitung-und-aenderungsrate-e1-k1-s2-v3;2024-bebb-lk-B2.2f;3;;ganz;mittlere Rate aus Tabelle
 funktionsklassen-und-eigenschaften-e1-k1-s9-v3;2024-bebb-lk-B2.2g;3;;ganz;Funktionswert berechnet und als Rate gedeutet
 funktionsklassen-und-eigenschaften-e1-k1-s9-v4;2024-bebb-lk-B2.2g;3;;ganz;Funktionswert berechnet und als Rate gedeutet
+ableitung-und-aenderungsrate-e4-k1-s8-v1;2024-bebb-lk-B2.2h;3;;ganz;Eignung des Modells über das Vorzeichen hinter der Nullstelle begründen wie im Original
+ableitung-und-aenderungsrate-e4-k1-s8-v2;2024-bebb-lk-B2.2h;3;;ganz;Eignung des Modells über das Vorzeichen begründen, den Zeitpunkt dazu verlangt mehr
 rekonstruktion-von-bestaenden-e1-k1-s6-v1;2024-bebb-lk-B2.2i;5;;ganz;Modellwert und prozentuale Abweichung beide
 rekonstruktion-von-bestaenden-e1-k1-s6-v2;2024-bebb-lk-B2.2i;5;;ganz;Modellwert und prozentuale Abweichung beide
 flaecheninhalt-und-volumen-im-raum-e3-k1-s5-v1;2024-bebb-lk-B3a;4;;ganz;Oberfläche der Pyramide mit gleichem Weg
@@ -2080,6 +2121,7 @@ normalverteilung-und-sigma-regeln-e2-k1-s5-v1;2024MerhoehtAStochastik12-b;4;;gan
 normalverteilung-und-sigma-regeln-e2-k1-s5-v2;2024MerhoehtAStochastik12-b;4;;ganz;Näherungsrechnung vollständig erläutert
 bedingte-wahrscheinlichkeit-und-bayes-e2-k1-s5-v1;2024MerhoehtAStochastik21;5;;ganz;Bayes-Term nachgewiesen und Kugelzahl bestimmt
 bedingte-wahrscheinlichkeit-und-bayes-e2-k1-s5-v2;2024MerhoehtAStochastik21;5;;ganz;Bayes-Term nachgewiesen und Kugelzahl bestimmt
+binomialverteilung-e5-k1-s5-v2;2024MerhoehtAStochastik23-a;2;;ganz;Verteilung der Gegenzufallsgröße als gespiegeltes Diagramm zeichnen wie im Original
 binomialverteilung-e1-k1-s7-v3;2024MerhoehtAStochastik23-b;3;;ganz;Zufallsgröße angegeben und begründet
 binomialverteilung-e1-k1-s7-v4;2024MerhoehtAStochastik23-b;3;;ganz;Zufallsgröße angegeben und begründet
 orthogonalitaet-e1-k4-s4-v1;2024MerhoehtBAGLAA1WTR-2a;2;;ganz;rechten Winkel aus Achsenlage begründet
@@ -2089,6 +2131,7 @@ punkte-und-strecken-im-koordinatensystem-e3-k1-s8-v3;2024MerhoehtBAGLAA1WTR-2b;5
 punkte-und-strecken-im-koordinatensystem-e5-k1-s7-v1;2024MerhoehtBAGLAA1WTR-2c;3;;ganz;drei Bildpunkte der Drehung angegeben
 punkte-und-strecken-im-koordinatensystem-e5-k1-s7-v2;2024MerhoehtBAGLAA1WTR-2c;3;;ganz;drei Bildpunkte der Drehung angegeben
 punkte-und-strecken-im-koordinatensystem-e5-k1-s7-v3;2024MerhoehtBAGLAA1WTR-2c;3;;ganz;drei Bildpunkte der Drehung angegeben
+ebenen-e2-k1-s2-v2;2024MerhoehtBAGLAA2WTR1-1c;3;;unklar;nur der letzte Schritt (d aus einem Punkt) der einen Leistung Koordinatengleichung, Normalenvektor ist vorgegeben
 grenzwerte-und-verhalten-im-unendlichen-e3-k1-s3-v1;2024MerhoehtBAnalysisWTR1-1a;3;;ganz;Nullstellenfreiheit und beide Grenzwerte
 grenzwerte-und-verhalten-im-unendlichen-e3-k1-s3-v2;2024MerhoehtBAnalysisWTR1-1a;3;;ganz;Nullstellenfreiheit und beide Grenzwerte
 grenzwerte-und-verhalten-im-unendlichen-e3-k1-s3-v3;2024MerhoehtBAnalysisWTR1-1a;3;;ganz;Nullstellenfreiheit und beide Grenzwerte
@@ -2319,13 +2362,13 @@ spiegelung-e1-k3-s1-v5;2025-bebb-gk-A1.5a;2;;ganz;Punktspiegelung an Punkt wie i
 gleichungen-loesen-e3-k1-s8-v1;2025-bebb-gk-A1.7a;3;;ganz;Ableitung angeben und Gleichung lösen, beide Leistungen
 gleichungen-loesen-e3-k1-s8-v3;2025-bebb-gk-A1.7a;3;;ganz;Ableitung angeben und Gleichung lösen, beide Leistungen
 orthogonalitaet-e3-k1-s3-v1;2025-bebb-gk-A1.8a;2;;ganz;Normalenvektor über zwei Skalarprodukte nachweisen
-abstaende-e2-k1-s3-v2;2025-bebb-gk-A1.8b;3;;ganz;Punkt mit halbem Abstand auf Lotgerade, gleicher Weg
+abstaende-e2-k2-s3-v2;2025-bebb-gk-A1.8b;3;;ganz;Punkt mit halbem Abstand auf Lotgerade, gleicher Weg
 kenngroessen-von-verteilungen-e4-k1-s3-v1;2025-bebb-gk-A1.9a;2;;ganz;Parität von n aus Doppelmaximum begründen
 binomialverteilung-e5-k1-s8-v1;2025-bebb-gk-A1.9b;3;;ganz;Einzelwahrscheinlichkeit aus Symmetrie wie im Original
 binomialverteilung-e5-k1-s8-v2;2025-bebb-gk-A1.9b;3;;ganz;Einzelwahrscheinlichkeit aus Symmetrie wie im Original
 kurvenuntersuchung-e2-k5-s1-v1;2025-bebb-gk-B2.1b;7;;ganz;Extrempunkte und Winkelhalbierende nachweisen wie im Original
 tangente-normale-schnittwinkel-e4-k1-s10-v5;2025-bebb-gk-B2.1d;5;;ganz;Steigungswinkel und Aussage zum Schnittwinkel beide
-tangente-normale-schnittwinkel-e4-k1-s10-v6;2025-bebb-gk-B2.1d;5;;ganz;Steigungswinkel und Aussage zum Schnittwinkel beide
+tangente-normale-schnittwinkel-e4-k1-s10-v6;2025-bebb-gk-B2.1d;5;;ganz;Steigungswinkel der Tangente und Prüfung der Schnittwinkel-Aussage wie im Original
 grenzwerte-und-verhalten-im-unendlichen-e2-k1-s2-v1;2025-bebb-gk-B2.2a;3;;unklar;nur Grenzverhalten, Original verlangt auch Nullstelle
 grenzwerte-und-verhalten-im-unendlichen-e2-k1-s2-v3;2025-bebb-gk-B2.2a;3;;unklar;nur Grenzverhalten, Original verlangt auch Nullstelle
 grenzwerte-und-verhalten-im-unendlichen-e2-k1-s6-v1;2025-bebb-gk-B2.2a;3;;ganz;Nullstelle und Grenzverhalten wie im Original
@@ -2333,7 +2376,7 @@ grenzwerte-und-verhalten-im-unendlichen-e2-k1-s6-v2;2025-bebb-gk-B2.2a;3;;ganz;N
 kurvenuntersuchung-e2-k1-s6-v1;2025-bebb-gk-B2.2b;4;;ganz;Hochpunkt mit Produktregel wie im Original
 stammfunktion-und-hauptsatz-e2-k1-s4-v1;2025-bebb-gk-B2.2d;5;;ganz;exakter Wert mit vorgegebener Stammfunktion und prozentuale Abweichung
 stammfunktion-und-hauptsatz-e2-k1-s4-v2;2025-bebb-gk-B2.2d;5;;ganz;exakter Wert und prozentuale Abweichung beide
-ableitung-und-aenderungsrate-e1-k1-s2-v2;2025-bebb-gk-B2.2f;3;;ganz;Werte ablesen und mittlere Änderungsrate berechnen
+ableitung-und-aenderungsrate-e1-k1-s2-v2;2025-bebb-gk-B2.2f;3;;ganz;mittlere Änderungsrate aus abgelesenen Werten am Graphen wie im Original
 gleichungen-loesen-e3-k1-s4-v1;2025-bebb-gk-B2.2g;5;;ganz;Funktionalgleichung grafisch lösen und deuten
 gleichungen-loesen-e3-k1-s4-v3;2025-bebb-gk-B2.2g;5;;ganz;Funktionalgleichung grafisch lösen und deuten
 flaecheninhalt-und-volumen-im-raum-e3-k1-s3-v1;2025-bebb-gk-B3a;5;;unklar;nur Volumen, Original auch kürzeste und längste Kante
@@ -2341,6 +2384,8 @@ ebenen-e2-k1-s3-v2;2025-bebb-gk-B3b;4;;ganz;Koordinatengleichung aus drei Punkte
 skalarprodukt-und-winkel-e3-k2-s1-v5;2025-bebb-gk-B3c;3;;ganz;Neigungswinkel über Normalenvektoren berechnet wie im Original
 punkte-und-strecken-im-koordinatensystem-e4-k1-s10-v3;2025-bebb-gk-B3d;3;;ganz;Ansatz für rechten Innenwinkel erläutern wie im Original
 punkte-und-strecken-im-koordinatensystem-e4-k1-s10-v4;2025-bebb-gk-B3d;3;;ganz;Ansatz für rechten Innenwinkel erläutern wie im Original
+binomialverteilung-e5-k1-s3-v1;2025-bebb-gk-B4c;2;;ganz;Aussage zur Stelle des Maximums über den Erwartungswert beurteilen wie im Original
+binomialverteilung-e5-k1-s3-v2;2025-bebb-gk-B4c;2;;ganz;Aussage zur Stelle des Maximums über den Erwartungswert beurteilen wie im Original
 unabhaengigkeit-e2-k1-s6-v1;2025-bebb-lk-A1.10a;5;;ganz;P(A) über quadratische Gleichung wie im Original
 unabhaengigkeit-e2-k1-s6-v2;2025-bebb-lk-A1.10a;5;;ganz;P(A) über quadratische Gleichung, zwei Lösungen
 kurvenuntersuchung-e2-k2-s5-v1;2025-bebb-lk-A1.1a;2;;ganz;Extremstelle mit f' und gegebenem f'' nachweisen
@@ -2367,6 +2412,8 @@ ableitungsregeln-e1-k2-s7-v3;2025-bebb-lk-B2.1b;3;;ganz;faktorisierte Ableitung 
 funktionsscharen-und-ortskurven-e3-k1-s7-v1;2025-bebb-lk-B2.1c;5;;ganz;Abstand Hoch- zu Tiefpunkt in k, Extremstellen wie vorgegeben
 flaecheninhalt-durch-integration-e5-k1-s8-v1;2025-bebb-lk-B2.1d;4;;ganz;Scharflächenaussage über das Vorzeichen beurteilt
 flaecheninhalt-durch-integration-e5-k1-s8-v2;2025-bebb-lk-B2.1d;4;;ganz;Scharflächenaussage über das Vorzeichen beurteilt
+flaecheninhalt-durch-integration-e2-k1-s7-v7;2025-bebb-lk-B2.1e;5;;ganz;beide Schritte deuten und die Parameterungleichung untersuchen wie im Original
+flaecheninhalt-durch-integration-e2-k1-s7-v8;2025-bebb-lk-B2.1e;5;;ganz;beide Schritte deuten und die Parameterungleichung untersuchen wie im Original
 ableitung-und-aenderungsrate-e4-k1-s5-v3;2025-bebb-lk-B2.1f;3;;ganz;Zeitpunkt der maximalen Rate aus gegebener Ableitung
 rekonstruktion-von-bestaenden-e1-k1-s5-v3;2025-bebb-lk-B2.1h;3;;ganz;Bestandsterm mit Integral und Abpumpterm angegeben
 stammfunktion-und-hauptsatz-e2-k1-s3-v1;2025-bebb-lk-B2.2b;2;;ganz;Integral der Ableitung als Differenz von Funktionswerten
@@ -2379,6 +2426,8 @@ ebenen-e2-k2-s6-v2;2025-bebb-lk-B3b;3;;ganz;Normalenvektor über Vielfache der S
 scharen-von-geraden-und-ebenen-e4-k1-s1-v5;2025-bebb-lk-B3d;4;;ganz;Scharebene angeben und Schnittfigur einzeichnen, beides
 scharen-von-geraden-und-ebenen-e3-k1-s4-v1;2025-bebb-lk-B3e;6;;ganz;Parameter für minimale Fläche über Lotbedingung
 scharen-von-geraden-und-ebenen-e3-k1-s4-v2;2025-bebb-lk-B3e;6;;ganz;Parameter für minimale Fläche über Lotbedingung
+binomialverteilung-e2-k1-s8-v1;2025-bebb-lk-B4a;1;;ganz;Einzelwahrscheinlichkeit bei großem n mit dem Rechner wie im Original
+binomialverteilung-e2-k1-s8-v2;2025-bebb-lk-B4a;1;;ganz;Einzelwahrscheinlichkeit bei großem n mit dem Rechner wie im Original
 hypothesentests-e1-k1-s3-v1;2025-bebb-lk-B4e;5;;ganz;Entscheidungsregel am Nachbarwert bestimmt
 hypothesentests-e3-k1-s4-v1;2025-bebb-lk-B4f;5;;ganz;Mindestanteil ermittelt und Fehler zweiter Art beschrieben
 vektoren-und-rechenoperationen-e1-k2-s3-v1;2025MerhoehtAAGLAA11-a;2;;ganz;Koordinate aus der Länge mit Vorzeichenbedingung
@@ -2433,6 +2482,8 @@ umkehrfunktion-e1-k1-s4-v1;2025MerhoehtBAnalysisWTR2-1c;6;;ganz;Umkehrbarkeit be
 umkehrfunktion-e1-k1-s4-v2;2025MerhoehtBAnalysisWTR2-1c;6;;ganz;Umkehrbarkeit begründet und beide Bereiche angegeben
 flaecheninhalt-durch-integration-e5-k1-s8-v3;2025MerhoehtBAnalysisWTR2-1d;5;;ganz;Flächenterm der gespiegelten Figur begründet, Wert zusätzlich
 flaecheninhalt-durch-integration-e5-k1-s8-v4;2025MerhoehtBAnalysisWTR2-1d;5;;ganz;Flächenterm der gespiegelten Figur begründet, Wert zusätzlich
+flaecheninhalt-durch-integration-e3-k1-s6-v13;2025MerhoehtBAnalysisWTR2-1e;3;;ganz;Flächeninhalt mit vorgegebener Stammfunktion auf Zehntel wie im Original
+flaecheninhalt-durch-integration-e3-k1-s6-v14;2025MerhoehtBAnalysisWTR2-1e;3;;ganz;Flächeninhalt mit vorgegebener Stammfunktion auf Zehntel wie im Original
 funktionsscharen-und-ortskurven-e1-k1-s5-v2;2025MerhoehtBAnalysisWTR2-2a;5;;teil;nur Zuordnung, Original verlangt auch einen Tiefpunkt
 funktionsscharen-und-ortskurven-e1-k1-s3-v1;2025MerhoehtBAnalysisWTR3-1a;2;;ganz;Parameter im Exponenten durch Vergleich bestimmt
 gleichungen-loesen-e3-k1-s6-v1;2025MerhoehtBAnalysisWTR3-2a;5;;ganz;Sinusgleichung für halbe Maximalleistung als Uhrzeit
@@ -2609,7 +2660,7 @@ gleichungen-loesen-e2-k1-s7-v1;2026-bb-ea-A1.1a;1;;ganz;Schnittstellen über den
 gleichungen-loesen-e2-k1-s7-v3;2026-bb-ea-A1.1a;1;;ganz;Schnittstellen über den positiven Exponentialfaktor nachweisen
 tangente-normale-schnittwinkel-e4-k1-s7-v1;2026-bb-ea-A1.2b;4;;ganz;Parameter aus senkrechtem Schnitt wie im Original
 orthogonalitaet-e3-k1-s1-v2;2026-bb-ea-A1.3a;2;;ganz;Orthogonalität begründen und Punktprobe, beide Leistungen
-abstaende-e2-k1-s3-v1;2026-bb-ea-A1.3b;3;;ganz;Punkt mit vorgegebenem Abstand auf der Lotgeraden
+abstaende-e2-k2-s3-v1;2026-bb-ea-A1.3b;3;;ganz;Punkt mit vorgegebenem Abstand auf der Lotgeraden
 kenngroessen-von-verteilungen-e4-k1-s4-v1;2026-bb-ea-A1.4b;4;;ganz;μ, σ und Säulensumme im Sigma-Intervall
 kenngroessen-von-verteilungen-e4-k1-s4-v2;2026-bb-ea-A1.4b;4;;ganz;μ, σ und Säulensumme im Sigma-Intervall
 funktionsklassen-und-eigenschaften-e5-k1-s10-v1;2026-bb-ea-A1.5b;4;;ganz;Wertemenge nach Transformation angeben und begründen
@@ -2627,7 +2678,7 @@ rekonstruktion-von-funktionsgleichungen-e2-k1-s7-v1;2026-bb-ea-B2.1g;2;;ganz;k a
 rekonstruktion-von-funktionsgleichungen-e2-k1-s7-v2;2026-bb-ea-B2.1g;2;;ganz;k aus Anfangsänderungsrate wie im Original
 rekonstruktion-von-funktionsgleichungen-e2-k1-s7-v3;2026-bb-ea-B2.1g;2;;ganz;k aus Anfangsänderungsrate wie im Original
 funktionsscharen-und-ortskurven-e3-k1-s3-v1;2026-bb-ea-B2.2a;5;;ganz;Parameter aus Punkt und Wendepunktnachweis, beides verlangt
-tangente-normale-schnittwinkel-e3-k1-s6-v1;2026-bb-ea-B2.2e;5;;ganz;Mittelpunkt über Normale im Berührpunkt
+tangente-normale-schnittwinkel-e3-k1-s6-v1;2026-bb-ea-B2.2e;5;;ganz;Mittelpunkt des berührenden Kreises über die Normale im Berührpunkt wie im Original
 rekonstruktion-von-bestaenden-e1-k1-s1-v5;2026-bb-ea-B2.2g;4;;ganz;Integral der Rate berechnen und deuten
 flaecheninhalt-und-volumen-im-raum-e3-k1-s3-v2;2026-bb-ea-B3a;4;;ganz;Trapez nachweisen und Pyramidenvolumen berechnen
 schnittmengen-e1-k2-s2-v2;2026-bb-ea-B3c;4;;ganz;Schnitt der Kante mit der Ebene wie im Original
@@ -2656,10 +2707,12 @@ stammfunktion-und-hauptsatz-e3-k1-s4-v1;2026-bb-gk-B2.1b;2;;ganz;Minimum aller S
 kurvenuntersuchung-e5-k1-s8-v1;2026-bb-gk-B2.1f;2;;ganz;Höhe und Breite mit Halbkreisen gegen Platte prüfen
 ableitung-und-aenderungsrate-e1-k1-s7-v1;2026-bb-gk-B2.1i;3;;ganz;Gesamtlänge und Zeit, Radius aber direkt vorgegeben
 tangente-normale-schnittwinkel-e1-k1-s4-v1;2026-bb-gk-B2.2b;3;;ganz;Tangente im y-Achsenschnittpunkt aufstellen
+flaecheninhalt-durch-integration-e2-k1-s7-v5;2026-bb-gk-B2.2d;3;;ganz;Flächenterm in der variablen Grenze nachweisen wie im Original
+flaecheninhalt-durch-integration-e2-k1-s7-v6;2026-bb-gk-B2.2d;3;;ganz;Flächenterm in der variablen Grenze nachweisen wie im Original
 ableitung-und-aenderungsrate-e3-k1-s4-v1;2026-bb-gk-B2.2h;4;;ganz;beide Raten berechnet und relative Abweichung gegen Schranke geprüft wie im Original
 ableitung-und-aenderungsrate-e3-k1-s4-v2;2026-bb-gk-B2.2h;4;;ganz;beide Raten berechnet und relative Abweichung gegen Schranke geprüft wie im Original
-ableitung-und-aenderungsrate-e4-k1-s9-v4;2026-bb-gk-B2.2i;3;;ganz;Proportionalität von Bestand und Rate am Term begründen
-ableitung-und-aenderungsrate-e4-k1-s9-v5;2026-bb-gk-B2.2i;3;;ganz;Beziehung zwischen Bestand und Rate nachgewiesen wie im Original, c anzugeben verlangt mehr
+ableitung-und-aenderungsrate-e4-k1-s9-v3;2026-bb-gk-B2.2i;3;;ganz;Proportionalität von Bestand und Rate am Term begründen
+ableitung-und-aenderungsrate-e4-k1-s9-v4;2026-bb-gk-B2.2i;3;;ganz;Beziehung zwischen Bestand und Rate nachgewiesen wie im Original, c anzugeben verlangt mehr
 punkte-und-strecken-im-koordinatensystem-e4-k1-s6-v1;2026-bb-gk-B3a;3;;ganz;Trapez nachweisen und Flächeninhalt berechnen
 punkte-und-strecken-im-koordinatensystem-e4-k1-s6-v3;2026-bb-gk-B3a;3;;ganz;Trapez nachweisen und Flächeninhalt berechnen
 skalarprodukt-und-winkel-e2-k2-s1-v5;2026-bb-gk-B3b;3;;ganz;Winkel zweier Kanten über Skalarprodukt wie im Original
@@ -2668,6 +2721,7 @@ punkte-und-strecken-im-koordinatensystem-e2-k1-s4-v1;2026-bb-gk-B3d;2;;ganz;Mitt
 punkte-und-strecken-im-koordinatensystem-e2-k1-s4-v2;2026-bb-gk-B3d;2;;ganz;Mittelpunkt nachweisen und symmetrischen Punkt angeben
 punkte-und-strecken-im-koordinatensystem-e2-k1-s4-v3;2026-bb-gk-B3d;2;;ganz;Mittelpunkt nachweisen und symmetrischen Punkt angeben
 spiegelung-e2-k1-s4-v3;2026-bb-gk-B3e;4;;ganz;Spiegelebene aus Spiegelpaar samt Konstante
+binomialverteilung-e5-k1-s5-v1;2026-bb-gk-B4c;2;;unklar;Original verlangt eine Erläuterung des Vorgehens, die Zeile nur das Ablesen des Werts
 matrizen-und-uebergangsprozesse-e5-k1-s7-v5;2026MerhoehtAAGLAA11-b;4;;ganz;r aus M³ gleich Einheitsmatrix wie im Original
 matrizen-und-uebergangsprozesse-e5-k1-s7-v6;2026MerhoehtAAGLAA11-b;4;;ganz;r aus M³ gleich Einheitsmatrix wie im Original
 matrizen-und-uebergangsprozesse-e2-k1-s7-v1;2026MerhoehtAAGLAA121-b;3;;ganz;b in Abhängigkeit von c über Eigenvektorbeziehung
@@ -2694,6 +2748,7 @@ bedingte-wahrscheinlichkeit-und-bayes-e3-k1-s1-v5;2026MerhoehtAStochastik22-b;3;
 orthogonalitaet-e2-k1-s4-v2;2026MerhoehtBAGLAA1MMS-1b;4;;ganz;Höhe und Oberfläche beide verlangt
 vektoren-und-rechenoperationen-e2-k1-s4-v1;2026MerhoehtBAGLAA1WTR-1a;3;;ganz;Verbindungsvektor eingezeichnet und r, s, t angegeben wie im Original
 orthogonalitaet-e2-k1-s4-v1;2026MerhoehtBAGLAA1WTR-1b;4;;ganz;Höhe und Volumen beide verlangt
+ebenen-e2-k1-s5-v2;2026MerhoehtBAGLAA2MMS2-1b;3;;ganz;Koordinatengleichung aus drei Achsenpunkten, die Achsenabschnittsform ist im Original als Weg genannt
 lagebeziehungen-e1-k2-s8-v1;2026MerhoehtBAGLAA2MMS2-1c;3;;ganz;Allaussage mit Gegenbeispiel unter Koordinatentausch widerlegt wie im Original
 lagebeziehungen-e1-k2-s8-v2;2026MerhoehtBAGLAA2MMS2-1c;3;;ganz;Allaussage mit Gegenbeispiel unter Koordinatentausch widerlegt wie im Original
 scharen-von-geraden-und-ebenen-e3-k1-s1-v5;2026MerhoehtBAGLAA2MMS2-1e;3;;ganz;beide Parameterwerte über Kosinusformel
@@ -2731,6 +2786,8 @@ grenzwerte-und-verhalten-im-unendlichen-e3-k1-s2-v1;2026MerhoehtBAnalysisWTR3-1a
 grenzwerte-und-verhalten-im-unendlichen-e3-k1-s2-v2;2026MerhoehtBAnalysisWTR3-1a;4;;ganz;Monotonie, Ursprung und Grenzwert wie im Original
 grenzwerte-und-verhalten-im-unendlichen-e3-k1-s2-v3;2026MerhoehtBAnalysisWTR3-1a;4;;ganz;Monotonie, Ursprung und Grenzwert wie im Original
 stammfunktion-und-hauptsatz-e2-k1-s0-v1;2026MerhoehtBAnalysisWTR3-1b;2;;ganz;Integral mit vorgegebener Stammfunktion berechnet
+flaecheninhalt-durch-integration-e4-k1-s6-v5;2026MerhoehtBAnalysisWTR3-1c;4;;ganz;eindeutige Lösung der Flächengleichung über die Monotonie ohne Stammfunktion wie im Original
+flaecheninhalt-durch-integration-e4-k1-s6-v6;2026MerhoehtBAnalysisWTR3-1c;4;;ganz;eindeutige Lösung der Flächengleichung über die Monotonie ohne Stammfunktion wie im Original
 rotationsvolumen-e2-k1-s5-v3;2026MerhoehtBAnalysisWTR3-1d;3;;ganz;Aufgabenstellung zum Volumenanteil formulieren
 rotationsvolumen-e2-k1-s5-v4;2026MerhoehtBAnalysisWTR3-1d;3;;ganz;Aufgabenstellung zum Volumenanteil formulieren
 umkehrfunktion-e1-k1-s3-v1;2026MerhoehtBAnalysisWTR3-1e;4;;ganz;Definitionsbereich angeben und Umkehrterm nachweisen
@@ -2783,7 +2840,10 @@ skalarprodukt-und-winkel-e3-k2-s5-v2;2026MgrundlegendBAGLAA2WTR1-1e;4;;ganz;Gren
 punkte-und-strecken-im-koordinatensystem-e4-k1-s6-v2;2026MgrundlegendBAGLAA2WTR2-1a;3;;ganz;Trapez nachweisen und Flächeninhalt berechnen
 ableitung-und-aenderungsrate-e1-k1-s8-v1;2026MgrundlegendBAnalysisMMS1-1b;3;;ganz;Gleichung lösen und im Sachzusammenhang deuten
 ableitung-und-aenderungsrate-e4-k1-s4-v2;2026MgrundlegendBAnalysisMMS1-1c;3;;ganz;Zeitpunkt und Wert der größten Rate über k''
+ableitung-und-aenderungsrate-e4-k1-s7-v3;2026MgrundlegendBAnalysisMMS1-1d;3;;ganz;Länge des Zeitraums mit Mindestrate über die Lösungen von s'(t) = c wie im Original
 kurvenuntersuchung-e3-k5-s1-v1;2026MgrundlegendBAnalysisMMS2-1c;3;;ganz;Wendestelle und Winkel der Wendetangente nachweisen
+flaecheninhalt-durch-integration-e3-k1-s6-v7;2026MgrundlegendBAnalysisMMS2-1f;5;;ganz;Aufgabenstellung formulieren und den Lösungsweg erläutern wie im Original
+flaecheninhalt-durch-integration-e3-k1-s6-v8;2026MgrundlegendBAnalysisMMS2-1f;5;;ganz;Aufgabenstellung formulieren und den Lösungsweg erläutern wie im Original
 kurvenuntersuchung-e1-k1-s5-v1;2026MgrundlegendBAnalysisWTR1-1a;2;;ganz;Monotonie über Vorzeichen der Ableitung nachweisen
 tangente-normale-schnittwinkel-e4-k1-s3-v2;2026MgrundlegendBAnalysisWTR1-1c;4;;ganz;Tangentengleichung und Schnittwinkel mit gleichem Weg
 stammfunktion-und-hauptsatz-e1-k1-s5-v2;2026MgrundlegendBAnalysisWTR1-1d;3;;ganz;Stammfunktion aus Wertebedingung bestimmt
