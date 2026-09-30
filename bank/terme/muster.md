@@ -47,7 +47,7 @@ Aufgabe: Löse die Klammer auf: $3x + (4y - 2)$
 | Klammer weglassen | $3x + (4y - 2) = 3x + 4y - 2$ |
 | Ergebnis | $3x + 4y - 2$ |
 
-## e4 k1 Ausklammern
+## e4 k2 Ausklammern
 
 Aufgabe: Klammere den größten gemeinsamen Faktor aus: $6b + 18$
 
