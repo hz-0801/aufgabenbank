@@ -1,12 +1,15 @@
 # Stand: ebenen
 
-Katalog-Commit: 2a296e54827b16f81fd664c4430c6fcd84dd5719 (Mappe vom
-29.09., 17:59 UTC)
-Datum: 2026-09-30 00:49 CEST
-Vorlage auftrag-eintrag.md 2026-09-29e; Nachzug des Bestands vom
-27./28.09. (samt Gegenlese-Korrekturen). Prüfskript v0.10 mit
-`--katalog`: alle Dateien 0 Abweichungen, 0 Warnungen.
-Umbauskript: werkzeuge/einmalig/nachzug-ebenen-2026-09-29.py.
+Katalog-Commit: 2a296e54827b16f81fd664c4430c6fcd84dd5719 (Kopf der
+Mappe vom 30.09., 08:05 UTC; letzte Änderung von katalog/ebenen.md –
+der Repo-Stand db8d2a3 ändert den Eintrag nicht)
+Datum: 2026-09-30 09:07 UTC (date)
+Vorlage auftrag-eintrag.md 2026-09-29e; bank.md 2026-09-30b.
+Nachzug 30.09.b (Erkennungsschritte und Vorstufen, mehr Originale
+in der Mappe) auf dem Nachzug vom 30.09. 00:49 (Katalog 2a296e5,
+Umbauskript werkzeuge/einmalig/nachzug-ebenen-2026-09-29.py).
+Prüfskript mit `--katalog`: vorher und nachher alle Dateien
+0 Abweichungen, 0 Warnungen.
 
 ## Zeilen je Datei und hoehe
 
@@ -14,13 +17,33 @@ Umbauskript: werkzeuge/einmalig/nachzug-ebenen-2026-09-29.py.
 |-------|-------:|---------:|----------:|--------:|---------:|--------:|
 | zone  |     30 |        – |        14 |      15 |        – |       1 |
 | e1    |     37 |        4 |         5 |      12 |        4 |      12 |
-| e2    |     66 |        8 |        10 |      30 |        6 |      12 |
+| e2    |     62 |        4 |        10 |      30 |        6 |      12 |
 | e3    |     46 |        4 |         5 |      21 |        4 |      12 |
-| e4    |     32 |        4 |         5 |      12 |        2 |       9 |
+| e4    |     36 |        8 |         5 |      12 |        2 |       9 |
 
-Vorstufen: je Kette eine (s0); keine Kette hat −1 oder −2.
+Vorstufen: je Verfahrenskette eine (s0), außer e2 k2 (beginnt mit
+dem Grundfall); e4 k1 ist der Erkennungsschritt „Was legt die Ebene
+fest?“ (nur s0); keine Kette hat −1 oder −2.
 
-## Nachzug je Einheit
+## Nachzug 30.09.b je Einheit
+
+| Datei | übernommen | neu | umgeschrieben | entfallen |
+|-------|-----------:|----:|--------------:|----------:|
+| zone  |         30 |   0 |             0 |         0 |
+| e1    |         37 |   0 |             0 |         0 |
+| e2    |         60 |   0 |             2 |         4 |
+| e3    |         46 |   0 |             0 |         0 |
+| e4    |         32 |   4 |             0 |         0 |
+
+e2: entfallen e2 k2 s0 v1–v4 (Vorstufe „Welche Form, welcher Weg?“
+mit demselben Handgriff wie e2 k1 s0; die Zeilen stehen bei k1);
+umgeschrieben e2 k1 s2 v2 (original 2024MerhoehtBAGLAA2WTR1-1c,
+Prüfkennung ergänzt, Aufgabe sonst wortgleich) und e2 k1 s5 v2
+(original 2026MerhoehtBAGLAA2MMS2-1b, ebenso). e4: neu k1 s0 v1–v4
+(Erkennungsschritt, quelle 39); die bisherigen Ketten k1–k3 heißen
+k2–k4, Aufgaben wortgleich; muster.md-Abschnitt e4 k1 → e4 k2.
+
+## Nachzug 30.09. (00:49) je Einheit
 
 | Datei | übernommen | neu | umgeschrieben | entfallen |
 |-------|-----------:|----:|--------------:|----------:|
@@ -58,7 +81,7 @@ Einheit die Pflichtzeilen, die eine fehlende Form herstellen.
   2017MgrundlegendBAGLAA2WTR1-1f; Prüfungshöhe
   2020MgrundlegendAAGLAA211-b
 
-## Prüfskript vor der Korrektur
+## Prüfskript vor der Korrektur (Nachzug 30.09., 00:49)
 
 | Datei | Abweichungen | Warnungen | häufigster Grund               |
 |-------|-------------:|----------:|--------------------------------|
@@ -101,15 +124,35 @@ Abweichungen; keine Einheit ist gescheitert.
    einen Darstellungswechsel).
 9. muster.md: je Verfahrenskette eigene Zahlen außerhalb der
    Päckchen und der Sperre (fünf Abschnitte).
+10. Nachzug 30.09.b: Die drei jetzt in der Mappe stehenden
+    Kennungen liegen an Sprossen mitten in der Kette, nicht an
+    Prüfungssprossen; sie kommen ins Feld original der Variante,
+    die das Original schon verfremdet (Übernahme, nur die
+    Prüfkennung im Fragesatz ergänzt): 2024MerhoehtBAGLAA2WTR1-1c
+    an e2 k1 s2 v2, 2026MerhoehtBAGLAA2MMS2-1b an e2 k1 s5 v2.
+    2026MgrundlegendBAGLAA2WTR1-1c (e2 k1 s3) bleibt ohne Zeile:
+    alle drei Varianten der Sprosse tragen schon ein Original, und
+    bank.md gibt einer Sprosse mitten in der Kette drei Zeilen.
+11. Kennung bei Pooldubletten wie im Bestand (e1 k1 s4 v1, e2 k1
+    s4 v2): die Kennung, die die Sprossenzeile nennt (iqb), auch
+    wenn die Landesfassung in der Mappe früher steht
+    (2024MerhoehtBAGLAA2WTR1-1c = 2024-bebb-lk-B3c).
+12. Die vier Zeilen des Erkennungsschritts in e4 nehmen die Fälle
+    der Einheit (parallele Ebene und Punkt, parallele Ebene ohne
+    Punkt reicht nicht) und wiederholen keine Aufgabe aus e1 k1 s0.
 
 ## Befunde
 
-- Katalog: „Was legt die Ebene fest?“ steht als Erkennungsschritt
-  vor Einheit 1 und 4 und wiederholt die Vorstufe von e1; er
-  entfällt (e1) und steht auch vor e4 nicht (dort eigene Vorstufe).
-- Katalog: Sprossen nennen 2024MerhoehtBAGLAA2WTR1-1c,
-  2026MgrundlegendBAGLAA2WTR1-1c und 2026MerhoehtBAGLAA2MMS2-1b;
-  die Mappe führt sie nicht in Abschnitt 2 – kein original möglich.
+- Katalog (Regel bank.md 30.09.b): Erkennungsschritt „Was legt die
+  Ebene fest?“ (Zeile 39, vor Einheit 1 und 4) hat in Einheit 1 die
+  Vorstufe e1 k1 s0 mit demselben Handgriff (Zeile 114); in
+  Einheit 4 hat keine Kette diese Vorstufe – er steht dort als
+  e4 k1 (vier Zeilen, Sprosse 0).
+- Katalog (Regel bank.md 30.09.b): e2 k1 (Zeile 115) und e2 k2
+  (Zeile 116) haben dieselbe Vorstufe „Welche Form, welcher Weg?“;
+  die Zeilen stehen bei k1, k2 beginnt mit dem Grundfall.
+- Katalog: 2026MgrundlegendBAGLAA2WTR1-1c steht jetzt in der Mappe,
+  bekommt aber keine Bankzeile (Entscheidung 10).
 - bank.md: e1 k1 s4 v1 trägt 2022MgrundlegendBAGLAA2WTR2-1a, e2 k1
   s4 v2 2023MerhoehtBAGLAA2WTR2-1a; beide sind Pooldubletten, nach
   „Dublette = ein Original“ gälte die Landeskennung – als Übernahme
@@ -127,7 +170,10 @@ Abweichungen; keine Einheit ist gescheitert.
   gerendert; LaTeX ist in der Sitzung nicht verfügbar.
 - e3 k1 s4 v2 (Spurpunkte am \rebene ablesen) setzt bezifferte
   Achsen im Schrägbild voraus.
-- bank/_punkte.csv: fünf ids mit original in e2 k2 haben sich
-  verschoben (s2–s5 → s3–s6); punkte-nachziehen.py steht aus.
+- bank/_punkte.csv (nicht angefasst): umbenannt e4 k1 s2 v1, k1 s3
+  v1, k1 s4 v1, k1 s5 v1, k1 s5 v2 → k2, e4 k2 s1 v1 → k3 s1 v1;
+  neues Urteil für e2 k1 s2 v2 und e2 k1 s5 v2; ob die fünf ids in
+  e2 k2 (s2–s5 → s3–s6 vom 30.09.) schon nachgezogen sind, ist zu
+  prüfen (punkte-nachziehen.py).
 - gegenlese.md und gegenlese2.md beziehen sich auf den Stand vom
   27.09.; die umgeschriebenen Zeilen sind ungelesen.
