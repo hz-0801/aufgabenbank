@@ -56,7 +56,7 @@ liegen in einer Ebene. Gib ihre Gleichung an und beschreibe ihre Lage.
 | Ursprung prüfen | $0 \ne 5$: keine Koordinatenebene |
 | Ergebnis | $E\colon y = 5$, parallel zur $xz$-Ebene, 5 Einheiten daneben |
 
-## e4 k1 Parallele Ebenen
+## e4 k2 Parallele Ebenen
 
 Aufgabe: Gib eine Gleichung der Ebene $F$ an, die parallel zu
 $E\colon x + 3y - 2z = 5$ ist und durch $P(2 | 4 | 1)$ geht.
