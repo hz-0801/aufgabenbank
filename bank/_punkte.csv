@@ -341,10 +341,8 @@ funktionsscharen-und-ortskurven-e3-k1-s4-v2;2017-bb-ea-B2.2b;10;;teil;Extrempunk
 extremalprobleme-e1-k1-s5-v1;2017-bb-ea-B2.2c;9;;ganz;Dreieck zeichnen, Existenz begründen, Flächenterm angeben
 extremalprobleme-e1-k1-s5-v2;2017-bb-ea-B2.2c;9;;ganz;Dreieck zeichnen, Existenz begründen, Flächenterm angeben
 punkte-und-strecken-im-koordinatensystem-e5-k1-s2-v2;2017-bb-ea-B3.1a;5;;teil;nur Koordinaten, Original verlangt auch Zeichnung
-skalarprodukt-und-winkel-e2-k2-s6-v3;2017-bb-ea-B3.1b;4;;teil;zweite Ebene vorgegeben, Original stellt sie selbst auf
-skalarprodukt-und-winkel-e2-k2-s6-v4;2017-bb-ea-B3.1b;4;;teil;zweite Ebene vorgegeben, Original stellt sie selbst auf
-skalarprodukt-und-winkel-e3-k1-s5-v3;2017-bb-ea-B3.1b;4;;ganz;Nachbarebene aufstellen und stumpfen Winkel berechnen
-skalarprodukt-und-winkel-e3-k1-s5-v4;2017-bb-ea-B3.1b;4;;ganz;Nachbarebene aufstellen und stumpfen Winkel berechnen
+skalarprodukt-und-winkel-e3-k2-s5-v3;2017-bb-ea-B3.1b;4;;ganz;Nachbarebene aufstellen und stumpfen Winkel berechnen
+skalarprodukt-und-winkel-e3-k2-s5-v4;2017-bb-ea-B3.1b;4;;ganz;Nachbarebene aufstellen und stumpfen Winkel berechnen
 abstaende-e4-k1-s5-v1;2017-bb-ea-B3.1c;5;;ganz;Punkt auf Symmetrieachse mit Abstandsbedingung
 linearkombination-und-lineare-abhaengigkeit-e2-k1-s3-v1;2017-bb-ea-B3.1d;3;;ganz;derselbe Nachweis über Umformung und Parameterform
 linearkombination-und-lineare-abhaengigkeit-e2-k1-s3-v2;2017-bb-ea-B3.1d;3;;unklar;Bank verlangt zusätzlich einen konkreten Punkt
@@ -611,7 +609,7 @@ schnittmengen-e1-k2-s5-v2;2018-be-gk-B2.1e;5;;ganz;Zeit bis zur Ebene über Gera
 schnittmengen-e1-k2-s5-v3;2018-be-gk-B2.1e;5;;ganz;Zeit bis zur Ebene über Geradenparameter
 abstaende-e1-k2-s2-v2;2018-be-gk-B2.2a;3;;ganz;Mittelpunkte, Abstand und Seillänge mit Zuschlag
 punkte-und-strecken-im-koordinatensystem-e4-k1-s5-v1;2018-be-gk-B2.2b;3;;ganz;Trapez und gleich lange Schenkel nachgewiesen
-skalarprodukt-und-winkel-e3-k1-s3-v1;2018-be-gk-B2.2c;3;;ganz;Neigungswinkel über Normalenvektoren
+skalarprodukt-und-winkel-e3-k2-s3-v1;2018-be-gk-B2.2c;3;;ganz;Neigungswinkel über Normalenvektoren
 geraden-e2-k1-s5-v1;2018-be-gk-B2.2d;6;;teil;nur Punktprobe, Original verlangt auch Schattenpunkt und Zeichnung
 geraden-e2-k1-s5-v2;2018-be-gk-B2.2d;6;;teil;nur Punktprobe, Original verlangt auch Schattenpunkt und Zeichnung
 geraden-e2-k1-s5-v3;2018-be-gk-B2.2d;6;;teil;nur Punktprobe, Original verlangt auch Schattenpunkt und Zeichnung
@@ -1083,7 +1081,7 @@ punkte-und-strecken-im-koordinatensystem-e4-k1-s4-v3;2020MgrundlegendBAGLAA1WTR-
 punkte-und-strecken-im-koordinatensystem-e4-k1-s10-v5;2020MgrundlegendBAGLAA1WTR-2c;5;;ganz;Berührpunkt über Lage und Orthogonalität begründen
 punkte-und-strecken-im-koordinatensystem-e4-k1-s10-v6;2020MgrundlegendBAGLAA1WTR-2c;5;;ganz;Berührpunkt über Lage und Orthogonalität begründen
 ebenen-e2-k1-s2-v1;2020MgrundlegendBAGLAA2WTR-1a;1;;ganz;Konstante durch Einsetzen eines Punktes
-skalarprodukt-und-winkel-e3-k1-s4-v3;2020MgrundlegendBAGLAA2WTR-1b;4;;ganz;Neigung in Prozent prüfen mit gleichem Weg
+skalarprodukt-und-winkel-e3-k2-s4-v3;2020MgrundlegendBAGLAA2WTR-1b;4;;ganz;Neigung in Prozent prüfen mit gleichem Weg
 punkte-und-strecken-im-koordinatensystem-e2-k1-s3-v1;2020MgrundlegendBAGLAA2WTR-1c;3;;ganz;ursprüngliche Länge aus prozentualer Verlängerung
 punkte-und-strecken-im-koordinatensystem-e2-k1-s3-v2;2020MgrundlegendBAGLAA2WTR-1c;3;;ganz;ursprüngliche Länge aus prozentualer Verlängerung
 punkte-und-strecken-im-koordinatensystem-e2-k1-s3-v3;2020MgrundlegendBAGLAA2WTR-1c;3;;ganz;ursprüngliche Länge aus prozentualer Verlängerung
@@ -1489,7 +1487,7 @@ matrizen-und-uebergangsprozesse-e5-k1-s7-v2;2022MerhoehtBAGLAA1WTR-2d;5;;ganz;gl
 lagebeziehungen-e2-k1-s1-v5;2022MerhoehtBAGLAA2WTR1-1e;3;;ganz;Parameter aus enthaltenem Punkt bestimmt wie im Original
 spiegelung-e3-k1-s1-v5;2022MerhoehtBAGLAA2WTR2-1a;2;;ganz;gleiche Leistungen mit gleichem Weg, verfremdet
 punkte-und-strecken-im-koordinatensystem-e2-k1-s2-v3;2022MerhoehtBAGLAA2WTR2-1b;3;;ganz;gleiche Leistungen mit gleichem Weg, verfremdet
-skalarprodukt-und-winkel-e3-k1-s3-v3;2022MerhoehtBAGLAA2WTR2-1d;5;;ganz;gleiche Leistungen mit gleichem Weg, verfremdet
+skalarprodukt-und-winkel-e3-k2-s3-v3;2022MerhoehtBAGLAA2WTR2-1d;5;;ganz;gleiche Leistungen mit gleichem Weg, verfremdet
 flaecheninhalt-und-volumen-im-raum-e4-k1-s4-v3;2022MerhoehtBAGLAA2WTR2-1e;3;;ganz;gleiche Leistungen mit gleichem Weg, verfremdet
 vektoren-und-rechenoperationen-e1-k2-s5-v1;2022MerhoehtBAGLAA2WTR2-1f;4;;teil;nur eine Blickrichtung statt zwei, Draufsicht gleich
 abstaende-e3-k1-s7-v3;2022MerhoehtBAGLAA2WTR2-1g;4;;ganz;gleiche Leistungen mit gleichem Weg, verfremdet
@@ -1995,7 +1993,7 @@ punkte-und-strecken-im-koordinatensystem-e1-k1-s7-v1;2024-bebb-gk-B3c;2;;ganz;Ne
 punkte-und-strecken-im-koordinatensystem-e1-k1-s7-v2;2024-bebb-gk-B3c;2;;ganz;Netz um fehlende Seitenflächen ergänzt
 punkte-und-strecken-im-koordinatensystem-e1-k1-s7-v3;2024-bebb-gk-B3c;2;;ganz;Netz um fehlende Seitenflächen ergänzt
 ebenen-e2-k1-s3-v1;2024-bebb-gk-B3d;4;;ganz;Koordinatengleichung der Seitenfläche mit gleichem Weg
-skalarprodukt-und-winkel-e3-k1-s2-v3;2024-bebb-gk-B3e;3;;ganz;Winkel zweier Ebenen über Normalenvektoren
+skalarprodukt-und-winkel-e3-k2-s2-v3;2024-bebb-gk-B3e;3;;ganz;Winkel zweier Ebenen über Normalenvektoren
 punkte-und-strecken-im-koordinatensystem-e5-k1-s8-v5;2024-bebb-gk-B3f;5;;ganz;Kantenlänge und Begründung der Lage beide verlangt
 punkte-und-strecken-im-koordinatensystem-e5-k1-s8-v6;2024-bebb-gk-B3f;5;;ganz;Kantenlänge und Begründung der Lage beide verlangt
 vierfeldertafel-e1-k2-s1-v5;2024-bebb-gk-B4.1b;3;;ganz;ganze Vierfeldertafel aus Rändern und Feld
@@ -2118,7 +2116,7 @@ vektoren-und-rechenoperationen-e1-k2-s6-v1;2024MgrundlegendBAGLAA1WTR-1e;2;;ganz
 vektoren-und-rechenoperationen-e1-k2-s6-v2;2024MgrundlegendBAGLAA1WTR-1e;2;;ganz;Entscheidung mit Beispiel wie im Original
 skalarprodukt-und-winkel-e1-k1-s4-v3;2024MgrundlegendBAGLAA1WTR-1f;4;;ganz;beide Aussagen beurteilt mit gleichem Argument
 punkte-und-strecken-im-koordinatensystem-e2-k1-s5-v1;2024MgrundlegendBAGLAA2WTR1-1b;2;;ganz;Drittelpunkte auf gleichem Weg, zweiter Punkt kleine Zugabe
-skalarprodukt-und-winkel-e3-k1-s3-v2;2024MgrundlegendBAGLAA2WTR1-1c;6;;teil;nur der Winkel, Original verlangt auch die parallele Ebene
+skalarprodukt-und-winkel-e3-k2-s3-v2;2024MgrundlegendBAGLAA2WTR1-1c;6;;teil;nur der Winkel, Original verlangt auch die parallele Ebene
 lagebeziehungen-e4-k1-s2-v1;2024MgrundlegendBAGLAA2WTR1-1d;4;;ganz;beide Schritte im Sachzusammenhang erläutern
 punkte-und-strecken-im-koordinatensystem-e5-k1-s8-v7;2024MgrundlegendBAGLAA2WTR1-1e;4;;ganz;Eckenzahl und Bereich gleicher Schnittflächen verlangt
 punkte-und-strecken-im-koordinatensystem-e5-k1-s8-v8;2024MgrundlegendBAGLAA2WTR1-1e;4;;ganz;Eckenzahl und Bereich gleicher Schnittflächen verlangt
@@ -2326,7 +2324,7 @@ gleichungen-loesen-e3-k1-s4-v1;2025-bebb-gk-B2.2g;5;;ganz;Funktionalgleichung gr
 gleichungen-loesen-e3-k1-s4-v3;2025-bebb-gk-B2.2g;5;;ganz;Funktionalgleichung grafisch lösen und deuten
 flaecheninhalt-und-volumen-im-raum-e3-k1-s3-v1;2025-bebb-gk-B3a;5;;unklar;nur Volumen, Original auch kürzeste und längste Kante
 ebenen-e2-k1-s3-v2;2025-bebb-gk-B3b;4;;ganz;Koordinatengleichung aus drei Punkten mit Kontrolle
-skalarprodukt-und-winkel-e3-k1-s1-v5;2025-bebb-gk-B3c;3;;ganz;Neigungswinkel über Normalenvektoren berechnet wie im Original
+skalarprodukt-und-winkel-e3-k2-s1-v5;2025-bebb-gk-B3c;3;;ganz;Neigungswinkel über Normalenvektoren berechnet wie im Original
 punkte-und-strecken-im-koordinatensystem-e4-k1-s10-v3;2025-bebb-gk-B3d;3;;ganz;Ansatz für rechten Innenwinkel erläutern wie im Original
 punkte-und-strecken-im-koordinatensystem-e4-k1-s10-v4;2025-bebb-gk-B3d;3;;ganz;Ansatz für rechten Innenwinkel erläutern wie im Original
 unabhaengigkeit-e2-k1-s6-v1;2025-bebb-lk-A1.10a;5;;ganz;P(A) über quadratische Gleichung wie im Original
@@ -2764,8 +2762,8 @@ geraden-e2-k1-s8-v3;2026MgrundlegendBAGLAA2MMS2-1d;3;;ganz;Geradengleichung und 
 flaecheninhalt-und-volumen-im-raum-e4-k1-s7-v5;2026MgrundlegendBAGLAA2MMS2-1e;4;;ganz;Parameter aus Volumenanteil zweier Pyramiden bestimmen
 flaecheninhalt-und-volumen-im-raum-e4-k1-s7-v6;2026MgrundlegendBAGLAA2MMS2-1e;4;;ganz;Parameter aus Volumenanteil zweier Pyramiden bestimmen
 punkte-und-strecken-im-koordinatensystem-e1-k1-s5-v2;2026MgrundlegendBAGLAA2WTR1-1a;3;;ganz;Parallelität und Symmetrie aus Koordinaten begründen
-skalarprodukt-und-winkel-e3-k1-s5-v1;2026MgrundlegendBAGLAA2WTR1-1e;4;;ganz;Grenzwinkel als Ebenenwinkel berechnen und erläutern
-skalarprodukt-und-winkel-e3-k1-s5-v2;2026MgrundlegendBAGLAA2WTR1-1e;4;;ganz;Grenzwinkel als Ebenenwinkel berechnen und erläutern
+skalarprodukt-und-winkel-e3-k2-s5-v1;2026MgrundlegendBAGLAA2WTR1-1e;4;;ganz;Grenzwinkel als Ebenenwinkel berechnen und erläutern
+skalarprodukt-und-winkel-e3-k2-s5-v2;2026MgrundlegendBAGLAA2WTR1-1e;4;;ganz;Grenzwinkel als Ebenenwinkel berechnen und erläutern
 punkte-und-strecken-im-koordinatensystem-e4-k1-s6-v2;2026MgrundlegendBAGLAA2WTR2-1a;3;;ganz;Trapez nachweisen und Flächeninhalt berechnen
 ableitung-und-aenderungsrate-e1-k1-s8-v1;2026MgrundlegendBAnalysisMMS1-1b;3;;ganz;Gleichung lösen und im Sachzusammenhang deuten
 ableitung-und-aenderungsrate-e4-k1-s4-v2;2026MgrundlegendBAnalysisMMS1-1c;3;;ganz;Zeitpunkt und Wert der größten Rate über k''
