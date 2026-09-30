@@ -15,7 +15,7 @@ $B(3 | 5 | 6)$.
 | Betrag | $d = \sqrt{2^2 + 3^2 + 6^2} = \sqrt{49}$ |
 | Ergebnis | $d = 7$ |
 
-## e2 k1 Abstand Punkt–Ebene
+## e2 k2 Abstand Punkt–Ebene
 
 Aufgabe: Berechne den Abstand des Punktes $P(3 | 1 | 3)$ von der
 Ebene $E\colon 2x + y + 2z = 4$ mit der Hesseschen Normalform.
