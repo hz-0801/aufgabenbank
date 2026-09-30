@@ -401,7 +401,7 @@ funktionsscharen-und-ortskurven-e5-k1-s4-v2;2017MerhoehtBAnalysisCAS2-1e;3;;ganz
 gleichungen-loesen-e1-k2-s1-v1;2017MerhoehtBAnalysisCAS2-2a;5;;ganz;Radius in der Höhe und Linienlänge
 gleichungen-loesen-e1-k2-s1-v2;2017MerhoehtBAnalysisCAS2-2a;5;;unklar;nur Breite, Original verlangt die Linienlänge
 gleichungen-loesen-e1-k2-s1-v3;2017MerhoehtBAnalysisCAS2-2a;5;;ganz;Radius in der Höhe und Linienlänge
-kurvenuntersuchung-e3-k7-s3-v1;2017MerhoehtBAnalysisCAS2-2b;3;;ganz;konvexer Bereich über zweite Ableitung
+kurvenuntersuchung-e3-k8-s3-v1;2017MerhoehtBAnalysisCAS2-2b;3;;ganz;konvexer Bereich über zweite Ableitung
 tangente-normale-schnittwinkel-e2-k1-s4-v3;2017MerhoehtBAnalysisCAS2-2c;4;;ganz;Tangente, weiterer Schnittpunkt und Halmstück
 tangente-normale-schnittwinkel-e2-k2-s1-v1;2017MerhoehtBAnalysisCAS2-2d;4;;ganz;Berührpunkt der Tangente durch gegebenen Punkt
 umkehrfunktion-e1-k2-s1-v1;2017MerhoehtBAnalysisCAS2-3b;3;;ganz;Radiusterm über Umkehrung nachweisen
@@ -637,7 +637,7 @@ ebenen-e2-k1-s7-v1;2018MerhoehtAAGLAA212-b;3;;ganz;Koordinatenform aus zwei Gera
 gleichungen-loesen-e2-k1-s9-v1;2018MerhoehtAAnalysis11-a;2;;ganz;fehlender Schnittpunkt über unlösbare Gleichung begründet
 gleichungen-loesen-e2-k1-s9-v2;2018MerhoehtAAnalysis11-a;2;;ganz;fehlender Schnittpunkt über unlösbare Gleichung begründet
 gleichungen-loesen-e2-k1-s9-v3;2018MerhoehtAAnalysis11-a;2;;ganz;fehlender Schnittpunkt über unlösbare Gleichung begründet
-kurvenuntersuchung-e3-k6-s1-v1;2018MerhoehtAAnalysis12-b;3;;ganz;Schnittpunktanzahl nach Steigung wie im Original
+kurvenuntersuchung-e3-k7-s1-v1;2018MerhoehtAAnalysis12-b;3;;ganz;Schnittpunktanzahl nach Steigung wie im Original
 unabhaengigkeit-e1-k2-s5-v1;2018MerhoehtAStochastik12-b;3;;ganz;Unabhängigkeit über Produktregel geprüft
 punkte-und-strecken-im-koordinatensystem-e1-k1-s3-v1;2018MerhoehtBAGLAA1WTR-1a;3;;teil;nur Zeichnen, Original verlangt auch Parallelogrammnachweis
 punkte-und-strecken-im-koordinatensystem-e1-k1-s3-v2;2018MerhoehtBAGLAA1WTR-1a;3;;teil;nur Zeichnen eines Körpers, Original verlangt auch Nachweis
@@ -676,7 +676,7 @@ ableitung-und-aenderungsrate-e3-k2-s1-v1;2018MerhoehtBAnalysisCAS2-2c;4;;ganz;Se
 tangente-normale-schnittwinkel-e1-k2-s1-v1;2018MerhoehtBAnalysisCAS3-1d;3;;ganz;Stellen über Ungleichung für Achsenabschnitt bestimmt
 funktionsscharen-und-ortskurven-e4-k1-s5-v1;2018MerhoehtBAnalysisCAS3-1f;4;;ganz;Parameterbereich über Lösbarkeit der Schnittgleichung
 funktionsscharen-und-ortskurven-e4-k1-s7-v3;2018MerhoehtBAnalysisCAS3-2a;3;;ganz;Scharparameter aus Befestigungspunkt mit Symmetrie
-kurvenuntersuchung-e3-k7-s3-v2;2018MerhoehtBAnalysisCAS3-2d;3;;ganz;Vorzeichen des Parameters aus Krümmung begründet
+kurvenuntersuchung-e3-k8-s3-v2;2018MerhoehtBAnalysisCAS3-2d;3;;ganz;Vorzeichen des Parameters aus Krümmung begründet
 rekonstruktion-von-funktionsgleichungen-e3-k2-s1-v1;2018MerhoehtBAnalysisCAS3-2e;4;;ganz;beide Parameter aus Längenformel und Punkt
 rekonstruktion-von-funktionsgleichungen-e3-k2-s1-v2;2018MerhoehtBAnalysisCAS3-2e;4;;ganz;beide Parameter aus Längenformel und Punkt
 rekonstruktion-von-funktionsgleichungen-e3-k2-s1-v3;2018MerhoehtBAnalysisCAS3-2e;4;;ganz;beide Parameter aus Längenformel und Punkt
@@ -721,7 +721,7 @@ schnittmengen-e3-k1-s5-v1;2018MgrundlegendBAGLAA2WTR1-1c;3;;ganz;Vorgehen an der
 schnittmengen-e3-k1-s5-v3;2018MgrundlegendBAGLAA2WTR1-1c;3;;ganz;Vorgehen an der Schnittfigur beschreiben
 flaecheninhalt-und-volumen-im-raum-e4-k1-s1-v5;2018MgrundlegendBAGLAA2WTR1-1d;5;;ganz;Differenz zweier Pyramiden mit Erläuterung
 scharen-von-geraden-und-ebenen-e1-k2-s2-v3;2018MgrundlegendBAGLAA2WTR1-1e;2;;ganz;Spurpunkt der Scharebene nachweisen
-kurvenuntersuchung-e3-k1-s5-v1;2018MgrundlegendBAnalysisWTR-1a;6;;ganz;Wendepunkt nachweisen und Wendetangente aufstellen
+kurvenuntersuchung-e3-k2-s5-v1;2018MgrundlegendBAnalysisWTR-1a;6;;ganz;Wendepunkt nachweisen und Wendetangente aufstellen
 flaecheninhalt-und-volumen-im-raum-e4-k1-s5-v1;2018MgrundlegendBAnalysisWTR-1c;4;;ganz;Kegeloberfläche aus Rotation des Dreiecks
 stammfunktion-und-hauptsatz-e2-k1-s1-v5;2018MgrundlegendBAnalysisWTR-1d;3;;ganz;bestimmtes Integral mit selbst gebildeter Stammfunktion
 ableitung-und-aenderungsrate-e1-k1-s10-v1;2018MgrundlegendBAnalysisWTR-2c;2;;ganz;Aussage mit Differenzen als Gegenbeispiel beurteilen
@@ -729,6 +729,8 @@ ableitung-und-aenderungsrate-e1-k1-s10-v2;2018MgrundlegendBAnalysisWTR-2c;2;;gan
 kurvenuntersuchung-e5-k4-s4-v1;2018MgrundlegendBAnalysisWTR-2e;4;;ganz;Erlösgerade zeichnen und Gewinnbereich bestimmen
 binomialverteilung-e1-k1-s7-v1;2018MgrundlegendBStochastikWTR3-2d;3;;ganz;beide Aussagen beurteilen wie im Original
 binomialverteilung-e1-k1-s7-v2;2018MgrundlegendBStochastikWTR3-2d;3;;ganz;beide Aussagen beurteilen wie im Original
+kurvenuntersuchung-e2-k2-s10-v5;2019-A-1c;7;;ganz;drei Aussagen an der Stelle null mit Begründung wie im Original
+kurvenuntersuchung-e2-k2-s10-v6;2019-A-1c;7;;ganz;drei Aussagen an der Stelle null mit Begründung wie im Original
 tangente-normale-schnittwinkel-e2-k1-s3-v1;2019-A-2b;2;;ganz;gleiche Anstiege an der Nahtstelle nachweisen
 rotationsvolumen-e1-k1-s5-v3;2019-A-2d;5;;ganz;Volumen und Masse wie im Original
 rotationsvolumen-e1-k1-s5-v4;2019-A-2d;5;;ganz;Volumen und Masse wie im Original
@@ -847,6 +849,8 @@ vektoren-und-rechenoperationen-e2-k1-s7-v1;2019MerhoehtAAGLAA21-b;2;;teil;Origin
 lagebeziehungen-e2-k1-s5-v1;2019MerhoehtAAGLAA22-a;2;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
 lagebeziehungen-e2-k1-s5-v2;2019MerhoehtAAGLAA22-a;2;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
 lagebeziehungen-e3-k1-s5-v1;2019MerhoehtAAGLAA22-b;3;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
+kurvenuntersuchung-e3-k2-s10-v7;2019MerhoehtAAnalysis2-b;3;;ganz;Wendepunkt von f aus dem Graphen von g mit Kettenregel wie im Original
+kurvenuntersuchung-e3-k2-s10-v8;2019MerhoehtAAnalysis2-b;3;;ganz;Wendepunkt von f aus dem Graphen von g mit Kettenregel wie im Original
 geraden-e2-k1-s3-v1;2019MgrundlegendAAGLAA211-a;2;;ganz;eine Koordinate mehr, gleicher Weg über den Parameter
 geraden-e2-k1-s3-v2;2019MgrundlegendAAGLAA211-a;2;;ganz;eine Koordinate mehr, gleicher Weg über den Parameter
 geraden-e2-k1-s3-v3;2019MgrundlegendAAGLAA211-a;2;;ganz;eine Koordinate mehr, gleicher Weg über den Parameter
@@ -911,8 +915,10 @@ kombinatorik-e1-k1-s7-v1;2020-A-3e;6;;ganz;alle gesuchten Ergebnisse mit gleiche
 kombinatorik-e1-k1-s7-v2;2020-A-3e;6;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
 grenzwerte-und-verhalten-im-unendlichen-e1-k2-s3-v3;2020-C-1a;3;;teil;nur das Verhalten im Unendlichen, ohne Symmetrie
 grenzwerte-und-verhalten-im-unendlichen-e1-k2-s5-v2;2020-C-1a;3;;teil;nur die Symmetrie, ohne Verhalten im Unendlichen
-kurvenuntersuchung-e3-k1-s10-v5;2020-C-1d;9;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
-kurvenuntersuchung-e3-k1-s10-v6;2020-C-1d;9;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
+kurvenuntersuchung-e2-k2-s10-v3;2020-C-1c;9;;ganz;drei Aussagen und alle Punkte mit Anstieg null wie im Original
+kurvenuntersuchung-e2-k2-s10-v4;2020-C-1c;9;;ganz;drei Aussagen und alle Punkte mit Anstieg null wie im Original
+kurvenuntersuchung-e3-k2-s10-v5;2020-C-1d;9;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
+kurvenuntersuchung-e3-k2-s10-v6;2020-C-1d;9;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
 rekonstruktion-von-funktionsgleichungen-e1-k1-s8-v3;2020-C-2a;4;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
 rekonstruktion-von-funktionsgleichungen-e1-k1-s8-v4;2020-C-2a;4;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
 rotationsvolumen-e1-k1-s2-v1;2020-C-2b;5;;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
@@ -1105,7 +1111,7 @@ ableitungsregeln-e1-k3-s1-v2;2021-A-1a;5;;ganz;Verhalten im Unendlichen und drei
 grenzwerte-und-verhalten-im-unendlichen-e1-k2-s2-v2;2021-A-1a;5;;teil;nur Verhalten im Unendlichen, Original auch drei Ableitungen
 kurvenuntersuchung-e1-k1-s7-v3;2021-A-1c;8;;ganz;Extrempunkte mit Art und Monotonie
 kurvenuntersuchung-e1-k1-s7-v4;2021-A-1c;8;;ganz;Extrempunkte mit Art und Monotonie
-kurvenuntersuchung-e3-k3-s1-v1;2021-A-1d;3;;ganz;Wendepunkt aus vier Kandidaten mit Begründung
+kurvenuntersuchung-e3-k4-s1-v1;2021-A-1d;3;;ganz;Wendepunkt aus vier Kandidaten mit Begründung
 gleichungen-loesen-e1-k1-s3-v1;2021-A-1e;4;;ganz;beide weiteren Stellen zum Funktionswert
 rekonstruktion-von-funktionsgleichungen-e1-k1-s8-v1;2021-A-2a;7;;ganz;Funktion vierten Grades mit Symmetrie über LGS
 rekonstruktion-von-funktionsgleichungen-e1-k1-s8-v2;2021-A-2a;7;;ganz;Funktion vierten Grades mit Symmetrie über LGS
@@ -1196,8 +1202,8 @@ rekonstruktion-von-funktionsgleichungen-e2-k1-s1-v5;2021-be-gk-B2.1k;4;;ganz;Par
 grenzwerte-und-verhalten-im-unendlichen-e2-k1-s4-v2;2021-be-gk-B2.2b;2;;ganz;Grenzverhalten in beide Richtungen angeben
 kurvenuntersuchung-e2-k1-s10-v1;2021-be-gk-B2.2d;6;;ganz;Lage und Art aller Extrempunkte mit gegebener f''
 kurvenuntersuchung-e2-k1-s10-v2;2021-be-gk-B2.2d;6;;ganz;Lage und Art aller Extrempunkte mit gegebener f''
-kurvenuntersuchung-e3-k1-s10-v1;2021-be-gk-B2.2e;3;;ganz;Wendepunkt mit Skizze aus Tiefpunkt und Grenzwert begründen
-kurvenuntersuchung-e3-k1-s10-v2;2021-be-gk-B2.2e;3;;ganz;Wendepunkt mit Skizze aus Tiefpunkt und Grenzwert begründen
+kurvenuntersuchung-e3-k2-s10-v1;2021-be-gk-B2.2e;3;;ganz;Wendepunkt mit Skizze aus Tiefpunkt und Grenzwert begründen
+kurvenuntersuchung-e3-k2-s10-v2;2021-be-gk-B2.2e;3;;ganz;Wendepunkt mit Skizze aus Tiefpunkt und Grenzwert begründen
 tangente-normale-schnittwinkel-e5-k1-s7-v1;2021-be-gk-B2.2f;5;;ganz;Tangente im Ursprung und b aus Dreiecksfläche
 gleichungen-loesen-e2-k1-s6-v1;2021-be-gk-B2.2g;4;;ganz;Schnittstellen über Kürzen des e-Faktors, Abstand als Ergebnis
 gleichungen-loesen-e2-k1-s6-v3;2021-be-gk-B2.2g;4;;ganz;Schnittstellen über Kürzen des e-Faktors, Abstand als Ergebnis
@@ -1269,7 +1275,7 @@ punkte-und-strecken-im-koordinatensystem-e4-k1-s8-v3;2021MgrundlegendBAGLAA2WTR2
 schnittmengen-e2-k1-s1-v5;2021MgrundlegendBAGLAA2WTR2-1c;5;;ganz;Schnittpunkt zweier Geraden mit Probe berechnen
 skalarprodukt-und-winkel-e2-k2-s5-v3;2021MgrundlegendBAGLAA2WTR2-1d;3;;ganz;Schnittwinkel über Skalarprodukt nachweisen
 abstaende-e3-k1-s6-v1;2021MgrundlegendBAGLAA2WTR2-1e;5;;ganz;Mittelpunkt S über Skizze und Sinus berechnen
-kurvenuntersuchung-e3-k2-s1-v1;2021MgrundlegendBAnalysisWTR-1b;7;;ganz;Wendepunktgerade aufstellen und Parallele einzeichnen
+kurvenuntersuchung-e3-k3-s1-v1;2021MgrundlegendBAnalysisWTR-1b;7;;ganz;Wendepunktgerade aufstellen und Parallele einzeichnen
 ableitung-und-aenderungsrate-e2-k1-s6-v1;2021MgrundlegendBAnalysisWTR-2a;2;;ganz;Koordinaten auf dem Ratengraphen deuten
 rekonstruktion-von-bestaenden-e2-k1-s2-v2;2021MgrundlegendBAnalysisWTR-2b;2;;ganz;Aussage über größten Bestand über Vorzeichenwechsel beurteilen
 bedingte-wahrscheinlichkeit-und-bayes-e1-k1-s3-v3;2021MgrundlegendBStochastikWTR3-1b;3;;ganz;zwei bedingte Anteile berechnen und vergleichen
@@ -1496,7 +1502,7 @@ rekonstruktion-von-bestaenden-e1-k1-s4-v1;2022MerhoehtBAnalysisWTR1-1c;3;;ganz;g
 tangente-normale-schnittwinkel-e5-k1-s7-v2;2022MerhoehtBAnalysisWTR1-1d;5;;ganz;gleiche Leistungen mit gleichem Weg, verfremdet
 funktionsscharen-und-ortskurven-e4-k1-s6-v2;2022MerhoehtBAnalysisWTR1-1e;2;;ganz;gleiche Leistungen mit gleichem Weg, verfremdet
 rekonstruktion-von-funktionsgleichungen-e3-k1-s1-v5;2022MerhoehtBAnalysisWTR1-2a;3;;ganz;gleiche Leistungen mit gleichem Weg, verfremdet
-kurvenuntersuchung-e3-k5-s1-v1;2022MerhoehtBAnalysisWTR1-2c;4;;ganz;gleiche Leistungen mit gleichem Weg, verfremdet
+kurvenuntersuchung-e3-k6-s1-v1;2022MerhoehtBAnalysisWTR1-2c;4;;ganz;gleiche Leistungen mit gleichem Weg, verfremdet
 ableitungsregeln-e3-k1-s2-v3;2022MerhoehtBAnalysisWTR2-1b;2;;ganz;gleiche Leistungen mit gleichem Weg, verfremdet
 uneigentliche-integrale-e2-k1-s3-v1;2022MerhoehtBAnalysisWTR2-1e;3;;ganz;gleiche Leistungen mit gleichem Weg, verfremdet
 uneigentliche-integrale-e2-k1-s3-v2;2022MerhoehtBAnalysisWTR2-1e;3;;ganz;gleiche Leistungen mit gleichem Weg, verfremdet
@@ -1686,7 +1692,7 @@ binomialverteilung-e5-k1-s4-v1;2023-bebb-gk-A1.7b;3;;ganz;dieselben Ergebnisse m
 binomialverteilung-e5-k1-s4-v2;2023-bebb-gk-A1.7b;3;;ganz;dieselben Ergebnisse mit gleicher Handlung
 grenzwerte-und-verhalten-im-unendlichen-e2-k1-s4-v1;2023-bebb-gk-B2.1a;2;;ganz;dieselben Ergebnisse mit gleicher Handlung
 tangente-normale-schnittwinkel-e1-k1-s6-v1;2023-bebb-gk-B2.1c;2;;ganz;dieselben Ergebnisse mit gleicher Handlung
-kurvenuntersuchung-e3-k1-s8-v1;2023-bebb-gk-B2.1f;5;;ganz;dieselben Ergebnisse mit gleicher Handlung
+kurvenuntersuchung-e3-k2-s8-v1;2023-bebb-gk-B2.1f;5;;ganz;dieselben Ergebnisse mit gleicher Handlung
 stammfunktion-und-hauptsatz-e1-k1-s7-v4;2023-bebb-gk-B2.1l;5;;teil;nur die Stammfunktion, Original verlangt auch die Fläche
 stammfunktion-und-hauptsatz-e1-k1-s7-v5;2023-bebb-gk-B2.1l;5;;teil;nur die Stammfunktion, Original verlangt auch die Fläche
 funktionsklassen-und-eigenschaften-e2-k1-s10-v3;2023-bebb-gk-B2.2a;4;;ganz;dieselben Ergebnisse mit gleicher Handlung
@@ -1719,6 +1725,8 @@ kenngroessen-von-verteilungen-e1-k1-s3-v2;2023-bebb-gk-B4.2b;2;;ganz;dieselben E
 kenngroessen-von-verteilungen-e2-k1-s3-v2;2023-bebb-gk-B4.2c;5;;ganz;dieselben Ergebnisse mit gleicher Handlung
 kurvenuntersuchung-e4-k1-s7-v1;2023-bebb-lk-A1.1a;2;;ganz;dieselbe Begründung des Mindestgrads aus dem Extremum der Ableitung, gleiche Angaben
 kurvenuntersuchung-e4-k1-s6-v1;2023-bebb-lk-A1.1b;3;;ganz;dieselben Ergebnisse mit gleicher Handlung
+kurvenuntersuchung-e2-k2-s10-v1;2023-bebb-lk-A1.2b;3;;ganz;Extremstelle einer ln-Funktion begründet, Punkt als Zugabe
+kurvenuntersuchung-e2-k2-s10-v2;2023-bebb-lk-A1.2b;3;;ganz;Extremstelle über Symmetrie des Arguments begründet, Punkt als Zugabe
 rekonstruktion-von-funktionsgleichungen-e2-k1-s6-v1;2023-bebb-lk-A1.4b;3;;ganz;dieselben Ergebnisse mit gleicher Handlung
 rekonstruktion-von-funktionsgleichungen-e2-k1-s6-v2;2023-bebb-lk-A1.4b;3;;ganz;dieselben Ergebnisse mit gleicher Handlung
 rekonstruktion-von-funktionsgleichungen-e2-k1-s6-v3;2023-bebb-lk-A1.4b;3;;ganz;dieselben Ergebnisse mit gleicher Handlung
@@ -1856,13 +1864,17 @@ kurvenuntersuchung-e2-k6-s1-v1;2023MgrundlegendBAnalysisWTR1-1a;3;;ganz;Nullstel
 kurvenuntersuchung-e2-k12-s3-v1;2023MgrundlegendBAnalysisWTR1-1b;2;;unklar;Original nur Beschreibung, Bank verlangt zusätzlich die Rechnung
 tangente-normale-schnittwinkel-e4-k1-s3-v3;2023MgrundlegendBAnalysisWTR1-1c;4;;ganz;Schnittwinkel mit waagerechter Gerade über Ableitung
 funktionsscharen-und-ortskurven-e1-k1-s6-v2;2023MgrundlegendBAnalysisWTR1-3a;1;;ganz;Einfluss des additiven Parameters beschreiben
+kurvenuntersuchung-e5-k1-s9-v5;2023MgrundlegendBAnalysisWTR2-2b;4;;ganz;Aufgabenstellung und Erläuterung zum Lösungsweg wie im Original
+kurvenuntersuchung-e5-k1-s9-v6;2023MgrundlegendBAnalysisWTR2-2b;4;;ganz;Aufgabenstellung und Erläuterung zum Lösungsweg wie im Original
+kurvenuntersuchung-e1-k1-s7-v7;2023MgrundlegendBAnalysisWTR2-2d;4;;ganz;Monotoniebereiche beider Modelle und Längenvergleich wie im Original
+kurvenuntersuchung-e1-k1-s7-v8;2023MgrundlegendBAnalysisWTR2-2d;4;;ganz;Monotoniebereiche beider Modelle und Längenvergleich wie im Original
 kombinatorik-e1-k1-s6-v3;2023MgrundlegendBStochastikWTR1-1a;2;;ganz;geordnete Auswahl ohne Wiederholung
 daten-e1-k2-s4-v2;2023MgrundlegendBStochastikWTR2-2a;2;;ganz;relative Häufigkeit aus Restanzahl
 binomialverteilung-e3-k3-s1-v1;2023MgrundlegendBStochastikWTR2-2b;4;;ganz;Restwahrscheinlichkeit nach bekannten Ergebnissen binomial
 binomialverteilung-e3-k3-s1-v2;2023MgrundlegendBStochastikWTR2-2b;4;;ganz;Restwahrscheinlichkeit nach bekannten Ergebnissen binomial
 ableitungsregeln-e1-k2-s9-v1;2024-B-1d;5;;ganz;drei Ableitungen, Punktprobe und Extrempunktprüfung
 ableitungsregeln-e1-k2-s9-v2;2024-B-1d;5;;ganz;drei Ableitungen, Punktprobe und Extrempunktprüfung
-kurvenuntersuchung-e3-k1-s7-v1;2024-B-1e;7;;ganz;Nachweis, Koordinaten und Sattelpunkt wie im Original
+kurvenuntersuchung-e3-k2-s7-v1;2024-B-1e;7;;ganz;Nachweis, Koordinaten und Sattelpunkt wie im Original
 daten-e6-k1-s5-v1;2024-B-3a;2;;ganz;Medianklasse mit Begründung über kumulierte Häufigkeiten
 daten-e6-k1-s4-v2;2024-B-3b;5;;ganz;Abweichung vom Mittel und Standardabweichung, gleicher Weg
 unabhaengigkeit-e1-k2-s2-v2;2024-B-3e;5;;ganz;Anzahl bestimmen und Abhängigkeit prüfen wie im Original
@@ -2156,6 +2168,8 @@ extremalprobleme-e2-k1-s4-v1;2025-A-2e;3;;unklar;Bank verlangt zusätzlich den D
 extremalprobleme-e2-k1-s4-v2;2025-A-2e;3;;unklar;Bank verlangt zusätzlich den Definitionsbereich
 extremalprobleme-e2-k1-s4-v3;2025-A-2e;3;;unklar;Bank verlangt zusätzlich den Definitionsbereich
 ableitungsregeln-e1-k2-s3-v2;2025-C-1c;3;;ganz;erste bis dritte Ableitung wie im Original
+kurvenuntersuchung-e2-k1-s10-v5;2025-C-1d;11;;ganz;Extrempunkte, Sattelpunkt und Monotonie wie im Original
+kurvenuntersuchung-e2-k1-s10-v6;2025-C-1d;11;;ganz;Extrempunkte, Sattelpunkt und Monotonie wie im Original
 kurvenuntersuchung-e2-k1-s4-v1;2025-C-1d;11;;teil;Extrempunkte und Sattelpunkt, Original verlangt auch Monotonie
 tangente-normale-schnittwinkel-e2-k1-s4-v2;2025-C-1f;6;;teil;Anstieg, Tangente und Schnittpunkte ohne Einzeichnen der Tangente
 einheiten-e1-k3-s5-v1;2025-C-2b;6;;ganz;beide Stangenlängen auf gleichem Weg
@@ -2405,6 +2419,8 @@ flaecheninhalt-durch-integration-e5-k1-s8-v9;2025MerhoehtBAnalysisMMS1-1c;4;;gan
 flaecheninhalt-durch-integration-e2-k1-s7-v1;2025MerhoehtBAnalysisMMS1-1d;5;;ganz;Flächenaussage als Parameterungleichung untersucht
 flaecheninhalt-durch-integration-e2-k1-s7-v2;2025MerhoehtBAnalysisMMS1-1d;5;;ganz;Flächenaussage als Parameterungleichung untersucht
 ableitung-und-aenderungsrate-e4-k1-s6-v1;2025MerhoehtBAnalysisMMS1-2a;4;;ganz;größte und kleinste Rate mit Randwerten
+kurvenuntersuchung-e5-k1-s9-v7;2025MerhoehtBAnalysisMMS1-2b;3;;ganz;Bedeutung des Ableitungswerts an der Wendestelle wie im Original
+kurvenuntersuchung-e5-k1-s9-v8;2025MerhoehtBAnalysisMMS1-2b;3;;ganz;Bedeutung des Ableitungswerts an der Wendestelle wie im Original
 funktionsscharen-und-ortskurven-e2-k1-s4-v3;2025MerhoehtBAnalysisMMS2-1a;3;;teil;nur Grenzverhalten, Original verlangt auch den festen Funktionswert
 stammfunktion-und-hauptsatz-e3-k1-s5-v3;2025MerhoehtBAnalysisMMS2-1c;3;;unklar;Original Begründen, Bank Ankreuzen wahr oder falsch
 tangente-normale-schnittwinkel-e4-k1-s5-v1;2025MerhoehtBAnalysisMMS2-2b;4;;ganz;Winkel eingezeichnet und Nebenwinkel gedeutet
@@ -2472,8 +2488,8 @@ tangente-normale-schnittwinkel-e1-k1-s10-v9;2026-C-1d;3;;ganz;Punktprobe und Tan
 tangente-normale-schnittwinkel-e1-k1-s2-v2;2026-C-1d;3;;ganz;Punktprobe und Tangentengleichung
 kurvenuntersuchung-e2-k1-s10-v3;2026-C-1e;8;;ganz;Nachweis, Art mit Koordinaten und Monotonie
 kurvenuntersuchung-e2-k1-s10-v4;2026-C-1e;8;;ganz;Nachweis, Art mit Koordinaten und Monotonie
-kurvenuntersuchung-e3-k1-s10-v3;2026-C-1f;7;;ganz;Wendepunkte über Polynomdivision, Sattelprüfung kleine Zugabe
-kurvenuntersuchung-e3-k1-s10-v4;2026-C-1f;7;;ganz;Wendepunkte über Polynomdivision, Sattelprüfung kleine Zugabe
+kurvenuntersuchung-e3-k2-s10-v3;2026-C-1f;7;;ganz;Wendepunkte über Polynomdivision, Sattelprüfung kleine Zugabe
+kurvenuntersuchung-e3-k2-s10-v4;2026-C-1f;7;;ganz;Wendepunkte über Polynomdivision, Sattelprüfung kleine Zugabe
 rekonstruktion-von-funktionsgleichungen-e1-k1-s3-v3;2026-C-2c;6;;ganz;Parabel aus drei Punkten über LGS
 unabhaengigkeit-e1-k2-s2-v3;2026-C-3e;4;;ganz;Anzahlen ermitteln und Unabhängigkeit prüfen
 prozentrechnung-basis-k4-v1;2026-FOR-B1a;1;;ganz;Prozentwert mit gleichem Weg
@@ -2767,7 +2783,7 @@ skalarprodukt-und-winkel-e3-k2-s5-v2;2026MgrundlegendBAGLAA2WTR1-1e;4;;ganz;Gren
 punkte-und-strecken-im-koordinatensystem-e4-k1-s6-v2;2026MgrundlegendBAGLAA2WTR2-1a;3;;ganz;Trapez nachweisen und Flächeninhalt berechnen
 ableitung-und-aenderungsrate-e1-k1-s8-v1;2026MgrundlegendBAnalysisMMS1-1b;3;;ganz;Gleichung lösen und im Sachzusammenhang deuten
 ableitung-und-aenderungsrate-e4-k1-s4-v2;2026MgrundlegendBAnalysisMMS1-1c;3;;ganz;Zeitpunkt und Wert der größten Rate über k''
-kurvenuntersuchung-e3-k4-s1-v1;2026MgrundlegendBAnalysisMMS2-1c;3;;ganz;Wendestelle und Winkel der Wendetangente nachweisen
+kurvenuntersuchung-e3-k5-s1-v1;2026MgrundlegendBAnalysisMMS2-1c;3;;ganz;Wendestelle und Winkel der Wendetangente nachweisen
 kurvenuntersuchung-e1-k1-s5-v1;2026MgrundlegendBAnalysisWTR1-1a;2;;ganz;Monotonie über Vorzeichen der Ableitung nachweisen
 tangente-normale-schnittwinkel-e4-k1-s3-v2;2026MgrundlegendBAnalysisWTR1-1c;4;;ganz;Tangentengleichung und Schnittwinkel mit gleichem Weg
 stammfunktion-und-hauptsatz-e1-k1-s5-v2;2026MgrundlegendBAnalysisWTR1-1d;3;;ganz;Stammfunktion aus Wertebedingung bestimmt

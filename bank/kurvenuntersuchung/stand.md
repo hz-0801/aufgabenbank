@@ -41,7 +41,8 @@ Neu: e1 k1 s7 v7–v8 (2023MgrundlegendBAnalysisWTR2-2d); e2 k1 s10
 v5–v6 (2025-C-1d); e2 k2 s10 v4 (2020-C-1c), v5–v6 (2019-A-1c);
 e3 k1 s0 v1–v4 (Erkennungsschritt „Gegeben oder gesucht?“, Zeile
 41); e3 k2 s10 v7–v8 (2019MerhoehtAAnalysis2-b); e5 k1 s9 v5–v6
-(2023MgrundlegendBAnalysisWTR2-2b), v7–v8 (2025MerhoehtBAnalysisMMS1-2b).
+(2023MgrundlegendBAnalysisWTR2-2b) und v7–v8
+(2025MerhoehtBAnalysisMMS1-2b).
 Umgeschrieben: e2 k2 s10 v1–v2 (nur original 2023-bebb-lk-A1.2b und
 Prüfkennung nachgetragen, Aufgabe sonst gleich), v3 (auf 2020-C-1c
 umgeschrieben: drei Aussagen und Rechnung).
@@ -137,6 +138,11 @@ Vorstufen); k2 beginnt mit dem Grundfall.
 - Prüfskript: eine Nein-Antwort ohne Ergebniszahl („hat keinen
   Wendepunkt“) verlangt pruef; gelöst mit „Anzahl 0“ in der Lösung.
 - Prüfskript: \tan fehlt in STANDARD; weiter \mathrm{tan} verwendet.
+- punkte-nachziehen.py: Verschieben sich die Ketten um eins, trägt
+  die alte id (e3-k2-s1-v1) jetzt eine andere Aufgabe; das Skript
+  meldet „Aufgabe geändert“ und entfernt die Zeile, statt die
+  wortgleiche Aufgabe unter der neuen id zu suchen (fünf Zeilen von
+  Hand umbenannt: e3 k2–k6 s1 v1 → k3–k7).
 
 ## Offene Punkte
 
@@ -148,9 +154,11 @@ Vorstufen); k2 beginnt mit dem Grundfall.
 - Die neuen und umgeschriebenen Zeilen (vom 29.09.: 69; vom 30.09.:
   20) sind ungelesen; Gegenlese offen.
 - Übernommene Zeilen tragen keine Schrittnamen (Auftrag).
-- bank/_punkte.csv: Zeilen mit ids aus e3 sind umbenannt
-  (punkte-nachziehen.py); die neuen Zeilen mit original brauchen ein
-  Urteil (punkte.py --lesestoff --nur-neu).
+- bank/_punkte.csv: die 16 Zeilen mit ids aus e3 sind umbenannt
+  (punkte-nachziehen.py 1c561b3; fünf davon von Hand, siehe
+  Befunde), die 16 neuen Zeilen mit original tragen ein Urteil des
+  Schreibers (alle „ganz“, Punkte aus der Mappe, stern leer wie im
+  Bestand des Eintrags); Gegenlese der Urteile offen.
 
 ## Nachbesserung 2026-09-30 (vor dem Nachzug)
 
