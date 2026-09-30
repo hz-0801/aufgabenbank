@@ -1,12 +1,16 @@
 # Stand: abstaende
 
-Katalog-Commit: 2a296e54827b16f81fd664c4430c6fcd84dd5719
-(Mappe vom 29.09., 13:56 UTC)
-Datum: 2026-09-29 17:19 CEST
-Vorlage auftrag-eintrag.md 2026-09-29d; Nachzug des Bestands vom
-27./28.09. (samt Gegenlese-Korrektur). Prüfskript v0.9 mit
-`--katalog`: alle Dateien 0 Abweichungen, 0 Warnungen.
-Umbauskript: werkzeuge/einmalig/nachzug-abstaende-2026-09-29.py.
+Katalog-Commit: db8d2a3 (Katalogstand laut Auftrag 30.09.; der
+Kopf der Mappe vom 30.09., 08:04 UTC, nennt 2a296e5 als letzten
+Commit, der katalog/abstaende.md änderte – der Eintrag selbst ist
+seit dem 29.09. unverändert)
+Datum: 2026-09-30 09:05 (date, UTC)
+Grundlage: bank.md Stand 2026-09-30b, Prüfskript v0.9 (--katalog),
+Vorlage auftrag-eintrag.md 2026-09-29e. Nachzug des Stands vom 29.09.
+(Commit 17:19 CEST, Umbauskript
+werkzeuge/einmalig/nachzug-abstaende-2026-09-29.py) um die Regel zu
+Erkennungsschritten (bank.md 30.09.b). Vorher wie nachher: alle
+Dateien 0 Abweichungen, 0 Warnungen, Formprobe 0 Hinweise.
 
 ## Zeilen je Datei und hoehe
 
@@ -14,13 +18,36 @@ Umbauskript: werkzeuge/einmalig/nachzug-abstaende-2026-09-29.py.
 |-------|-------:|---------:|----------:|--------:|---------:|--------:|
 | zone  |     31 |        – |        12 |      18 |        – |       1 |
 | e1    |     41 |        8 |         5 |      15 |        4 |       9 |
-| e2    |     33 |        8 |         5 |       9 |        2 |       9 |
+| e2    |     37 |       12 |         5 |       9 |        2 |       9 |
 | e3    |     39 |        4 |         5 |      15 |        6 |       9 |
 | e4    |     34 |        4 |         5 |      12 |        4 |       9 |
 
-Vorstufen: e1 k1 Erkennungsschritt s0 und k2 s0 (je 4); e2 k1
-s-1 „Hin oder zurück?“ und s0 Abstand des Ursprungs (je 4); e3,
-e4 je s0.
+Vorstufen: e1 k1 Erkennungsschritt „Hin oder zurück?“ s0 und k2
+s0 „Abstand wovon zu was?“ (je 4); e2 k1 Erkennungsschritt
+„Abstand wovon zu was?“ s0 (neu 30.09.), k2 s-1 „Hin oder
+zurück?“ und s0 Abstand des Ursprungs (je 4); e3, e4 je s0.
+
+## Nachzug 30.09. (Erkennungsschritte)
+
+    Datei  übernommen  neu  umgeschrieben  entfallen
+    zone         31      0              0          0
+    e1           41      0              0          0
+    e2           33      4              0          0
+    e3           39      0              0          0
+    e4           34      0              0          0
+
+Neu: e2 k1 „Abstand wovon zu was?“, vier Zeilen, eigene Kette,
+Sprosse 0, quelle 38 (Bereich „vor allen Einheiten“; in e1 hat die
+Verfahrenskette eine Vorstufe mit demselben Handgriff, in e2 nicht).
+Dadurch in e2 die Verfahrenskette k1 → k2 und die Pflichtkette
+k2 → k3; alle 33 Bestandszeilen wortgleich, nachgezogen nur id und
+kette_nr; muster.md-Abschnitt „e2 k1“ → „e2 k2“. Umbenannte ids
+mit original (für _punkte.csv, nicht angefasst):
+abstaende-e2-k1-s2-v1, -s3-v1, -s3-v2, -s3-v3, -s4-v1, -s5-v1,
+-s5-v2 → jeweils abstaende-e2-k2-…; kein neues Urteil nötig, die
+Zeilen sind unverändert. „Hin oder zurück?“ bleibt Erkennungsschritt
+in e1 (dort hat keine Kette eine solche Vorstufe); e2 k2 s-1 bleibt
+als Vorstufe der Katalogkette.
 
 ## Nachzug je Einheit
 
@@ -100,13 +127,25 @@ gescheitert.
    P4-Serien mischen wahr und falsch.
 9. muster.md: je Verfahrenskette eigene Zahlen außerhalb von
    Päckchen und Sperre; e4 als Vergleich mit Kontrollzeile.
+10. Die vier neuen e2-Zeilen tragen zwei Punkt–Ebene-, eine
+    Punkt–Punkt- und eine Punkt–Gerade-Vorlage mit Kontexten, die in
+    e1 k2 s0 nicht vorkommen; Ankreuzoptionen wortgleich wie dort.
 
 ## Befunde
 
-- Katalog: „Abstand wovon zu was?“ (38) und „Hin oder zurück?“
-  (39) sind zugleich Vorstufen der Ketten e1 und e2; nach bank.md
-  entfällt nur der Doppel in e1 (dort bleibt „Hin oder zurück?“
-  als Erkennungsschritt k1, wie im Bestand).
+- Katalog: „Abstand wovon zu was?“ (38, vor allen Einheiten) ist
+  zugleich Vorstufe der Kette e1 (103); „Hin oder zurück?“ (39, vor
+  Einheit 1 und 2) zugleich Vorstufe der Kette e2 (104). Nach
+  bank.md 30.09.b steht jeder Erkennungsschritt einmal, in der
+  ersten Einheit seines Bereichs ohne gleiche Kettenvorstufe:
+  „Abstand wovon zu was?“ in e2 (k1, seit 30.09.), „Hin oder
+  zurück?“ in e1 (k1). Der Katalog bleibt unverändert.
+- bank.md: Die Regel sagt nicht, ob ein in e1 angelegter
+  Erkennungsschritt („Hin oder zurück?“) und die gleichnamige
+  Kettenvorstufe e2 k2 s-1 als „zwei Ketten mit Vorstufen desselben
+  Handgriffs“ zählen; hier sind beide belassen, weil der
+  Erkennungsschritt keine Kettenvorstufe ist und der Auftrag es so
+  vorgibt.
 - Katalog: die Sprossenzeilen nennen den Grundfall „viermal“,
   bank.md fünf Zeilen; bank.md angewandt.
 - bank.md: das Päckchen passt schlecht auf e4, dessen Grundfall
