@@ -61,3 +61,4 @@ LIN-K1;2026-09-28;lineare-funktionen;K;kompetenz=Graph zeichnen, einheiten=2, ni
 PRZ-K1;2026-09-28;prozentrechnung;K;kompetenz=Prozentsatz, einheiten=2, niveau=for, dicht=nein, ohne=–, aus=–;85c8bf2;v0.8;Version 2026-09-28a;bau/kompetenz/PRZ-K1
 TRI-K1;2026-09-28;trigonometrie;K;kompetenz=Sinussatz, einheiten=4, niveau=for, dicht=ja, ohne=–, aus=–;d7ccb59;v0.7;Version 2026-09-28a;bau/kompetenz/TRI-K1
 TER-L3;2026-09-30;terme;L;einheiten=alle, zone=ja, fokus=–, schwach=nein, klasse=–, kasten=nein, nummer=3, aus=bau/terme/TER-L3;546d722+geändert;v0.9;Version 2026-09-28a;bau/terme/TER-L3
+TER-L4;2026-09-30;terme;L;einheiten=alle, zone=ja, fokus=–, schwach=nein, klasse=–, kasten=nein, nummer=–, aus=–;fb02d3e;v0.9;Version 2026-09-28a;bau/terme/TER-L4
