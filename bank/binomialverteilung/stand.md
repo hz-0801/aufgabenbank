@@ -1,12 +1,14 @@
 # Stand: binomialverteilung
 
-Katalog-Commit: f56cacecc590f51abf34cf81948a0d2b751d7d33
-(2026-09-28, aus dem Kopf von mappen/binomialverteilung.md)
-Datum: 2026-09-29 23:09 CEST (date)
-Grundlage: bank.md fünfte Fassung, werkzeuge/bank-pruef.py v0.10
-(--katalog aus der Mappe); Nachzug des Bestands vom 27./28.09.
-(Katalog 95b0f8b). Umbauskript:
-werkzeuge/einmalig/nachzug-binomialverteilung-2026-09-29.py.
+Katalog-Commit: db8d2a3f9f6ed0e6490a4087e3eaff2cbc8a9b19
+(2026-09-30, aus dem Kopf von mappen/binomialverteilung.md)
+Datum: 2026-09-30 08:58 UTC (date)
+Grundlage: bank.md Stand 2026-09-30b, werkzeuge/bank-pruef.py v0.12
+(--katalog aus der Mappe); Nachzug des Stands vom 29.09. (Katalog
+f56cace) nach der Katalogänderung vom 30.09. (Zeile 152: Einheit 3
+mit eigener Vorstufe „Mit oder ohne Gegenereignis?“) und der Mappe
+mit den Kennungen der Sprossenketten in Abschnitt 2 (134 Originale
+statt 77).
 
 ## Zeilen je Datei und hoehe
 
@@ -14,103 +16,140 @@ werkzeuge/einmalig/nachzug-binomialverteilung-2026-09-29.py.
     zone       37         0        16      20        0       1
     e1         40         4         5      15        4      12
     e2         51         4         5      24        6      12
-    e3         60         8         5      27        8      12
-    e4         51         4         5      24        9       9
-    e5         50         4         5      21        8      12
+    e3         64         8         5      27       12      12
+    e4         50         4         5      24        8       9
+    e5         52         4         5      21       10      12
 
 ## Nachzug je Einheit
 
     Datei  übernommen  neu  umgeschrieben  entfallen
     zone         37      0              0          0
-    e1           35      0              5          0
-    e2           38      3             10          0
-    e3           46      4             10          0
-    e4           41      0             10          0
-    e5           40      0             10          0
+    e1           38      0              2          0
+    e2           47      0              4          0
+    e3           54      4              6          0
+    e4           43      0              7          1
+    e5           43      2              7          0
 
-Umgeschrieben: die fünf Grundfallzeilen (e2–e5, Päckchen) und die
-fehler- und begruenden-Zeilen v2, v3 sowie eine anwendung je Einheit
-(Pflichtformen). Nachgezogen in allen übernommenen Zeilen: quelle
-(125 → 122, 127–131 → 124–128), sprosse_text der Vorstufen (längerer
-Sprossentext bis „nichts rechnen“), in e2 sprosse (ab 2 um eins
-verschoben), in e3 kette_nr (um eins verschoben), dazu die id.
-Zeilen mit original und neuer id: 32 (e2 12, e3 20); bank/_punkte.csv
-nicht angefasst.
+Umgeschrieben heißt fast immer: nur das Feld original gesetzt und
+die Prüfkennung ans Ende des Fragesatzes gestellt (bank.md, 3.6),
+Aufgabe und Lösung sonst wortgleich (e1 2, e2 4, e3 2, e4 7, e5 7
+Zeilen). Wirklich umgeschrieben sind die vier Vorstufenzeilen e3 k2
+s0 (neue Vorstufe, Zeile 126, statt der wortgleichen Kopie von e2).
+Neu: e3 k2 s9 v9–v12 (2021-be-gk-B4d,
+2023MgrundlegendBStochastikWTR1-2a), e5 k1 s8 v9–v10
+(2021MgrundlegendBStochastikWTR1-1c). Entfallen: e4 k1 s9 v9 (dritte
+Zeile „p aus zwei Einzelwahrscheinlichkeiten“; die Sprosse trägt
+jetzt 2019MerhoehtAStochastik11-b mit zwei Zeilen v7, v8). Keine id
+umbenannt; punkte-nachziehen.py nicht nötig.
 
 ## Originale je Einheit
 
-- e1: 2023-bebb-lk-A1.8a, 2022-bebb-gk-B4a, 2018-be-gk-B3.2g;
-  Prüfungshöhe 2018MgrundlegendBStochastikWTR3-2d,
-  2024MerhoehtAStochastik23-b.
-- e2: 2017-be-gk-B3.1e, 2026MgrundlegendAStochastik12-a,
-  2021MgrundlegendAStochastik2-a; Prüfungshöhe 2022-bebb-gk-B4b,
+- e1: 2024-bebb-lk-A1.9a (neu, s3), 2023-bebb-lk-A1.8a,
+  2022-bebb-gk-B4a, 2018-be-gk-B3.2g; Prüfungshöhe
+  2018MgrundlegendBStochastikWTR3-2d, 2024MerhoehtAStochastik23-b.
+- e2: 2017-be-gk-B3.1e, 2018-bb-ea-B4.2b (neu, s5),
+  2026MgrundlegendAStochastik12-a, 2021MgrundlegendAStochastik2-a,
+  2025-bebb-lk-B4a (neu, s8); Prüfungshöhe 2022-bebb-gk-B4b,
   2019-be-gk-B4.1a, 2018-bb-ea-B4.2c.
-- e3: 2018-be-gk-B3.2a, 2018MerhoehtBStochastikWTR1-1a,
-  2023-bebb-gk-B4.1d, 2017MerhoehtBStochastikCAS2-2,
-  2017MerhoehtBStochastikCAS1-1b, 2023MgrundlegendBStochastikWTR2-2b;
-  Prüfungshöhe 2022-bebb-lk-B4m, 2023MerhoehtBStochastikWTR3-1c,
-  2024MgrundlegendAStochastik21-b, 2020MgrundlegendAStochastik2-b.
-- e4: 2017-bb-ea-B4.2b, 2018-be-gk-B3.2d,
-  2019MgrundlegendBStochastikWTR1-1b, 2017-be-gk-cas-B3.2d;
-  Prüfungshöhe 2025MerhoehtAStochastik21, 2022-bebb-lk-B4f,
-  2022MerhoehtBStochastikWTR1-1f.
-- e5: 2017-be-gk-cas-B3.1e, 2023-bebb-gk-A1.7b; Prüfungshöhe
+- e3: 2020MgrundlegendBStochastikWTR1-1a (neu, s3 v1),
+  2022-bebb-lk-B4k (neu, s3 v2), 2018-be-gk-B3.2a,
+  2018MerhoehtBStochastikWTR1-1a, 2023-bebb-gk-B4.1d,
+  2017MerhoehtBStochastikCAS2-2, 2017MerhoehtBStochastikCAS1-1b,
+  2023MgrundlegendBStochastikWTR2-2b (k3); Prüfungshöhe
+  2022-bebb-lk-B4m, 2023MerhoehtBStochastikWTR3-1c,
+  2024MgrundlegendAStochastik21-b, 2020MgrundlegendAStochastik2-b,
+  2021-be-gk-B4d (neu), 2023MgrundlegendBStochastikWTR1-2a (neu) –
+  alle sechs Kennungen der Katalogzeile, zwölf Zeilen.
+- e4: 2017-bb-ea-B4.2b, 2018-be-gk-B3.2d, 2023-bebb-lk-B4h (neu,
+  s5), 2021MgrundlegendBStochastikWTR2-1d (neu, s7 v1),
+  2022MgrundlegendBStochastikWTR2-2b (neu, s7 v2), 2018-be-gk-B3.2c
+  (neu, s8 v1), 2019MgrundlegendBStochastikWTR1-1b,
+  2017-be-gk-cas-B3.2d (k2); Prüfungshöhe 2025MerhoehtAStochastik21,
+  2022-bebb-lk-B4f, 2022MerhoehtBStochastikWTR1-1f,
+  2019MerhoehtAStochastik11-b (neu) – alle vier Kennungen, acht
+  Zeilen.
+- e5: 2017-be-gk-cas-B3.1e, 2025-bebb-gk-B4c (neu, s3),
+  2023-bebb-gk-A1.7b, 2026-bb-gk-B4c (neu, s5 v1),
+  2024MerhoehtAStochastik23-a (neu, s5 v2),
+  2019MerhoehtAStochastik11-a (neu, s6 v2),
+  2021MerhoehtAStochastik12-b (neu, s7); Prüfungshöhe
   2025-bebb-gk-A1.9b, 2021MgrundlegendAStochastik2-b,
-  2022MgrundlegendBStochastikWTR2-3a, 2022-bebb-lk-A1.8b.
+  2022MgrundlegendBStochastikWTR2-3a, 2022-bebb-lk-A1.8b,
+  2021MgrundlegendBStochastikWTR1-1c (neu) – alle fünf Kennungen,
+  zehn Zeilen.
 
 ## Prüfskript vor der Korrektur
 
-- Bestand vor dem Nachzug (v0.10 --katalog): 179 Abweichungen, alle
-  „sprosse_text nicht wortgleich in Zeile“ (Zeilen verschoben).
-- zone 0 / 0 (unverändert); e1 0 / 0; e2 0 / 0; e3 0 / 0; e4 0 / 0.
-- e5 1 / 0: grafik leer bei einem Ableseauftrag („liest … ab“ in
-  einer Fehler-Vorlage ohne Diagramm); Aufgabe umformuliert.
-- Keine Einheit scheiterte zweimal.
+- Bestand vor dem Nachzug (v0.12 --katalog): 4 Abweichungen, alle
+  e3 k2 s0 „sprosse_text nicht wortgleich in Zeile 126“ (die alte
+  Vorstufe); 0 Warnungen, Formprobe 0.
+- zone, e1, e2, e4: 0 / 0. e3: 1 / 0 (ein Zwischenwert der
+  Prüfplan-Lösung stand nach „·“, nicht an einer Ergebnisstelle; aus
+  pruef genommen). e5: 2 / 0 („pruef fehlt“ bei den zwei
+  Beurteilungszeilen mit Ziffern in der Lösung; die Säulensumme als
+  „P(X ≤ 1) ≈ …“ in die Lösung gestellt, pruef gesetzt).
+- Danach 0 / 0 in allen Dateien, Formprobe 0. Keine Einheit
+  scheiterte zweimal.
 
 ## Entscheidungen
 
 - Zone bleibt: Fertigkeiten (Zeilen 34–41) unverändert.
-- Päckchen: e2 n = 6, p = 0,4 fest, k wandert; e3 n = 40 und die
-  Zahl 12 fest, das Wort wandert; e4 p = 0,08 fest, die Schranke
-  wandert; e5 dasselbe Diagramm (B(8; 0,35) gerundet), das Ereignis
-  wandert.
-- e1 Grundfall bleibt übernommen: die Katalogzeile verlangt vier
-  Kontexte (Münze, Würfel, Glücksrad, Bevölkerung), ein festes p über
-  fünf Kontexte trüge nicht.
-- Erkennungsschritt „Treffer oder Niete gezählt?“ (Zeile 43) steht
-  als eigene Kette e3 k1 (erste Einheit seines Bereichs, bank.md);
-  in e5 bleibt die gleichnamige Vorstufe der Kette.
-- Neue Sprosse e2 s2 „die ganze Verteilung für kleines n“ mit
-  „k = 0:“ … als Zeilenkopf und „Kontrolle:“ als eigener Zeile.
-- Schrittnamen (regeln.md 12) nur in neuen und umgeschriebenen
-  Rechenzeilen; Anordnungsfaktor vorn mit Begründung (n über k).
-- Pflichtformen: fehler v1 Schülerrechnung/-aussage, v2 fehlerfreie
-  Vorlage (P2), v3 Serie (P1), in e4 Prüfzahl (P3); begruenden v1
-  Warum-Frage, v2 Aussagenserie (P4), v3 Personenaussage (P6).
-- Urteile: P6 zweimal Ja (e1, e5), dreimal Nein; P8 zweimal Ja
-  (e3, e4), dreimal Nein.
+- Neue Vorstufe e3: vier Ankreuzzeilen mit je drei Optionen der Form
+  „direkt: P(X ≤ k)“ / „Gegenereignis: 1 − P(X ≤ k)“; die Lösung
+  nennt die Option wortgleich, pruef leer. Die vier alten Zeilen
+  (Kopie von e2 s0) sind ersetzt, nicht ergänzt.
+- Originale mitten in der Kette: wo die vorhandenen Zeilen v1/v2
+  einer Sprosse dasselbe Verfahren und dieselbe Falle wie die erste
+  Kennung der Katalogzeile tragen, ist das Feld original gesetzt und
+  die Prüfkennung angehängt – Übernahme statt Neuschreiben (22
+  Zeilen). Nicht gesetzt, wo die Falle fehlt (e3 s2 „höchstens“
+  gegen 2026-bb-gk-B4b „weniger als“; e4 s4 v1 „≥“ gegen
+  2025-bebb-gk-B4d „mehr als“) oder das Verfahren nur teils passt
+  (e2 s9, e4 s8 v2, e5 s6 v1). Zwei Sprossen tragen je Zeile ein
+  anderes Original (e3 s3, e4 s7), weil jede Zeile genau einem
+  entspricht.
+- e2 s4 behält 2017-be-gk-B3.1e (kein Treffer als Potenz), obwohl
+  die Katalogzeile 2018-bb-ea-B4.2b und 2020-be-gk-B4.1a nennt; die
+  Zeilen verfremden das Berliner Original, das in der Mappe steht.
+- Prüfungssprosse e4: 2019MerhoehtAStochastik11-b an die zwei
+  vorhandenen Zeilen v7, v8 (Gleichung zweier
+  Einzelwahrscheinlichkeiten ohne Rechner); v9 entfällt (zwei Zeilen
+  je Original).
+- Erkennungsschritt „Treffer oder Niete gezählt?“ (Zeile 43) bleibt
+  als eigene Kette e3 k1; die gleichnamige Vorstufe e5 k1 s0 bleibt
+  auch. Lesart von bank.md 30.09.b: der Erkennungsschritt füllt die
+  Einheit ohne solche Vorstufe (e3), die Einheit mit Vorstufe (e5)
+  behält sie; die Regel „zwei Ketten mit Vorstufen desselben
+  Handgriffs“ lese ich als Regel für zwei Verfahrensketten, nicht
+  für Erkennungsschritt gegen Vorstufe.
+- Neue Lösungen mit Schrittnamen (regeln.md 12): „Erfolg einer
+  Spielerin:“, „erster Schritt:“, „zweiter Schritt:“, „Ergebnis:“;
+  in den Beurteilungszeilen das Urteil vorn („falsch (I): …; wahr
+  (II): …“), je eine Aussage wahr und eine falsch.
+- muster.md unverändert (Grundfälle unverändert).
 
 ## Befunde
 
-- Katalog: die drei gestrichenen Erkennungsschritte (alt Zeilen
-  43–45) stehen jetzt wortgleich als Vorstufen der Ketten; der vierte
-  (Zeile 43) wiederholt die Vorstufe von e5 und steht vor e3 ohne
-  Vorstufe – er bleibt dort als eigene Kette.
-- Katalog: „Genau, höchstens oder mindestens?“ ist weiter Vorstufe
-  von zwei Ketten (e2 und e3).
-- Mappe: 2024-bebb-lk-A1.9a, 2021-be-gk-B4d,
-  2023MgrundlegendBStochastikWTR1-2a und weitere Kennungen der
-  Sprossen stehen nicht in Abschnitt 2; sie bleiben original null.
-- Prüfskript: prüft die Pflichtformen P1–P8 nicht; die Formen sind
-  nur durch Durchsicht gesichert.
-- Prüfskript: „liest … ab“ in einer Fehler-Vorlage verlangt eine
-  Grafik, auch wenn nur das Vorgehen einer Person geschildert wird.
+- Katalog: Erkennungsschritt Zeile 43 und Vorstufe e5 (Zeile 128)
+  sind derselbe Handgriff an derselben Vorlage (Diagramm); nach
+  bank.md 30.09.b gehört der Fall hierher (beide Stellen: Zeile 43,
+  Zeile 128). Ob die Vorstufe in e5 entfallen soll, muss der Chat
+  entscheiden; hier bleibt sie.
+- bank.md: für ein Original mitten in der Kette ist keine Zeilenzahl
+  festgelegt (Prüfungshöhe: zwei je Original); hier tragen es ein
+  oder zwei Zeilen je Sprosse.
+- Prüfskript: „pruef fehlt“ trifft auch Beurteilungszeilen, deren
+  Lösung nur Vergleichszahlen nennt (Säulensumme, Erwartungswert);
+  die Lösung musste eine Ergebnisstelle bekommen.
+- Prüfskript: prüft die Pflichtformen P1–P8 nicht (unverändert).
+- bank/_punkte.csv: 28 Zeilen dieses Eintrags mit original haben
+  kein Urteil (22 nachgetragene, 6 neue); punkte.py meldet sie als
+  „ohne Urteil“. Nicht angefasst (außerhalb des Ordners).
 
 ## Offene Punkte
 
-- e3: der zweistufige Prüfplan (Original nicht in der Mappe) hat
-  keine eigene Zeile.
 - Grundvorstellung (Zeile 122) steht nur als darstellung-Pflicht e1.
 - gegenlese.md und gegenlese2.md beziehen sich auf den Stand vom
   27./28.09. und sind nicht nachgezogen.
-- bank/_punkte.csv braucht punkte-nachziehen.py für 32 ids.
+- Urteile für die 28 Zeilen in bank/_punkte.csv (Lesestoff über
+  `punkte.py --lesestoff DIR --nur-neu`).
