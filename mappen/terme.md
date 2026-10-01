@@ -1,9 +1,9 @@
 # Mappe: terme
 
 Eintrag: hz-0801/mathe-nachhilfe, katalog/terme.md
-Katalog-Commit: db8d2a3f9f6ed0e6490a4087e3eaff2cbc8a9b19 (2026-09-30T08:03:34Z, „Katalog: Vorschläge vom 30.09. eingesetzt (24 Zeilen in 17 Einträgen, Marke „kein P10-Stoff“ in _vorlage.md)“; ermittelt über GitHub-API)
+Katalog-Commit: 3f1a38965c8ffaa3551b460eb5a314a1ff7a8ec8 (2026-10-01T03:25:46+00:00, „Blattfolge terme (Lehrer 01.10.)“; ermittelt über git log, lokaler Klon)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-30 08:14 UTC
+Datum: 2026-10-01 03:25 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -29,7 +29,7 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
 14    Marken: OS Kl. 7–8 (Sekundo 8, Mathematik 2023 8, Schnittpunkt 7, Mathematik heute 8) · GYM Kl. 7–8 (LS 7, Fundamente 8, Elemente 7, mathe.delta 7) · keine P10-Aufgabe
 15  4. Ausklammern – gemeinsamer Zahlfaktor, gemeinsame Variable, Probe durch Ausmultiplizieren. (Kl. 7/8; Terme mit mehreren Variablen und Klammer mal Klammer → binomische-formeln.md Einheit 1)
 16    Marken: OS Kl. 8 · GYM Kl. 7–8 (LS 7, Fundamente 8, Elemente 7) · keine P10-Aufgabe
-17
+17  Blattfolge: 2, 3, 4, 1
 18  Eingabe mit Einheit-Stichwort (zusammenfassen, klammern, ausklammern) → direkt.
 19
 20  ### Typen je Lerneinheit

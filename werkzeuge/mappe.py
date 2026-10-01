@@ -26,11 +26,20 @@ sind die Raw-URLs von hz-0801/mathe-nachhilfe und hz-0801/blattbau
 Den Commit liefert die GitHub-API; ist sie gesperrt, ein Klon ohne
 Dateiinhalte (git clone --filter=blob:none) und git log. Nur
 Standardbibliothek.
+
+Seit 2026-10-01: Steht in der Umgebung MATHE_NACHHILFE der Pfad eines
+Klons von hz-0801/mathe-nachhilfe, kommt der Katalogeintrag aus diesem
+Klon (Text und Commit aus git log des Klons; „lokaler Klon“ in der
+Zeile Katalog-Commit) – für einen Katalog-Commit, der noch nicht
+gepusht ist. Die Zeile „Blattfolge: …“ unter den Lerneinheiten
+(katalog/_vorlage.md, optional) geht wie jede Katalogzeile wortgleich
+in Abschnitt 1 der Mappe; zusammenbau.py liest sie dort.
 """
 
 import csv
 import io
 import json
+import os
 import re
 import subprocess
 import sys
@@ -116,6 +125,29 @@ def letzter_commit(repo, pfad):
 def stand_zeile(repo, pfad):
     h, d, s, weg = letzter_commit(repo, pfad)
     return f"{h} ({d}, „{s}“; ermittelt über {weg})"
+
+
+def lokaler_katalog():
+    """Pfad des Klons aus MATHE_NACHHILFE oder None (seit 2026-10-01)."""
+    p = os.environ.get("MATHE_NACHHILFE")
+    if p and (Path(p) / "katalog").is_dir():
+        return Path(p)
+    return None
+
+
+def katalog_text_stand(pfad):
+    """(Text, Standzeile) des Katalogeintrags: aus dem lokalen Klon, wenn
+    MATHE_NACHHILFE gesetzt ist, sonst Raw-URL und GitHub-API."""
+    klon_ = lokaler_katalog()
+    if klon_ is None:
+        return hole(KATALOG, pfad), stand_zeile(KATALOG, pfad)
+    text = (klon_ / pfad).read_text(encoding="utf-8")
+    aus = subprocess.run(
+        ["git", "-C", str(klon_), "log", "-1", "--format=%H%x09%cI%x09%s",
+         "--", pfad], check=True, capture_output=True, text=True
+    ).stdout.strip()
+    h, d, s = aus.split("\t", 2)
+    return text, f"{h} ({d}, „{s}“; ermittelt über git log, lokaler Klon)"
 
 
 # --- 2 Katalogeintrag --------------------------------------------------
@@ -287,8 +319,7 @@ def jetzt():
 
 def baue_mappe(eintrag, tabelle, massstab_text, massstab_stand, ziel):
     pfad = f"katalog/{eintrag}.md"
-    text = hole(KATALOG, pfad)
-    stand = stand_zeile(KATALOG, pfad)
+    text, stand = katalog_text_stand(pfad)
     kz, n_kurz, ausnahmen = gekuerzt(katalog_zeilen(text))
     breite = len(str(kz[-1][0]))
     orig, n_orig = originale(text, tabelle)
