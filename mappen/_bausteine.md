@@ -1,7 +1,7 @@
 # Bausteine der Vorlage
 
 Quelle: hz-0801/blattbau, Anleitung_mathblatt.md, Commit dbac9c1af0d023b4b40629d07bd8245c7a6bdcf0 (2026-09-26T06:53:15+02:00, „vorlage: Stufe 6, Anleitung, CHANGELOG“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-10-01 03:25 UTC
+Datum: 2026-10-01 08:46 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern. werkzeuge/bank-pruef.py liest hieraus Namen und Argumentzahl der Bausteine.
 
 ## Kurzreferenz

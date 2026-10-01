@@ -1,9 +1,9 @@
 # Mappe: terme
 
 Eintrag: hz-0801/mathe-nachhilfe, katalog/terme.md
-Katalog-Commit: 3f1a38965c8ffaa3551b460eb5a314a1ff7a8ec8 (2026-10-01T03:25:46+00:00, „Blattfolge terme (Lehrer 01.10.)“; ermittelt über git log, lokaler Klon)
+Katalog-Commit: bbcf2d43ca331391c042cced97dc536889bb86cb (2026-10-01T08:08:41Z, „Merge pull request #1 from hz-0801/claude/determined-heisenberg-aywasw“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-10-01 03:25 UTC
+Datum: 2026-10-01 08:46 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
