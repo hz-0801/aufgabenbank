@@ -30,3 +30,16 @@ Abweichungen/Hinweise:
   - Nr. 13 (Probe durch Ausmultiplizieren) als Rechenkette mit breitem Feld statt Rechenraum,
     damit Einheit 3 samt Abschluss auf eine Seite passt.
   - Seite 3 endet nach Nr. 11 mit Leerraum, weil der Einheitentitel 3 ein Drittel Seite verlangt.
+
+Übernahme 2026-10-01: 31 Zeilen in die Bank (Nr. im neu.jsonl → id): 1→terme-zone-f1-v5, 2→terme-zone-f2-v5, 3→terme-zone-f3-v5, 4→terme-zone-f4-v5, 5→terme-e1-k4-s9-v1, 6→terme-e1-k4-s12-v1, 7→terme-e2-k1-s7-v1, 8→terme-e1-k4-s5-v4, 9→terme-e3-k2-s5-v1, 10→terme-e3-k2-s6-v1, 11→terme-e3-k3-s3-v1, 12→terme-e3-k3-s4-v1, 13→terme-e3-k3-s5-v1, 14→terme-e3-k3-s5-v2, 15→terme-e3-k4-s2-v1, 16→terme-e3-k4-s3-v1, 17→terme-e3-k4-s5-v1, 18→terme-e3-k4-s1-v4, 19→terme-e4-k2-s8-v1, 20→terme-e4-k2-s3-v4, 21→terme-e5-k1-s3-v1, 22→terme-e5-k1-s4-v1, 23→terme-e5-k1-s5-v1, 24→terme-e5-k1-s6-v1, 25→terme-e6-k1-s6-v4, 26→terme-e3-k4-s8-v4, 27→terme-e1-k4-s5-v5, 28→terme-e5-k1-s3-v2, 29→terme-e4-k2-s3-v5, 30→terme-e6-k1-s7-v4, 31→terme-e3-k4-s5-v2.
+  Angepasst bei der Übernahme: in allen Zeilen einheit, kette, kette_nr, sprosse,
+  sprosse_text, merkmal (das der Zielsprosse), hoehe, quelle (Katalogzeile, ganze Zahl)
+  und pruef (Lösungszahl statt sympy-Gleichung); Nr. 23 Vorzahl und Einsetzung als Bruch
+  (½a − 2b, b = −3/2; Sprosse verlangt Bruch, Ergebnis 7 unverändert); Nr. 30 um die Frage
+  „Was kostet ein Jahr mit 20 Besuchen?“ ergänzt (Sprosse Abschluss verlangt eine Frage).
+  Die Herkunft (Blatt terme 2026-10-01, Nr. aus dem alten Feld quelle) steht hier und in
+  bank/terme/stand.md, nicht im Feld quelle: bank-pruef.py verlangt dort eine ganze Zahl.
+1 nicht übernommen: Nr. 32 (terme-neu-2026-10-01-32, Prüfungshöhe 2025-GYM-B2a) – bis auf
+  Zahlen und Variablennamen gleich mit terme-e2-k4-s11-v1 (jetzt terme-e1-k4-s15-v1),
+  „Vereinfache den Term … und berechne seinen Wert für …“; die Sprosse hat die zwei Zeilen
+  je Original schon.
