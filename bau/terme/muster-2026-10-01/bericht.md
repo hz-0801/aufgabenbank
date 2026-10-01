@@ -207,3 +207,62 @@ Annahmen:
 - Die Fußzeile lautet „Terme · Muster 2 2026-10-01“.
 - „Gemischt“ der Einheiten 5 und 6 steht ohne Auftrag, weil die
   Teilaufgaben ihn selbst nennen.
+
+## Muster 3 (aus Muster 2: Merkkästen knapp, 14 a Zwischenschritt, = am Term)
+
+Dateien: `muster3.tex`, `muster3.pdf`. Seiten: 7 (6 Seiten Blatt,
+1 Seite Lösungen). Nummern und Teilaufgaben wie in Muster 2 (19 Nummern,
+111 Teilaufgaben: 58 aus der Bank, 3 geändert, 50 neu).
+
+Merkkästen stehen direkt unter dem Einheitentitel: ein schmaler grauer
+Rahmen über die Textbreite, keine Fläche. Die Inhalte stammen aus
+katalog/terme.md „Merkkasten“ und „Typische Fehler“; die Achtung-Zeile
+zu Einheit 4 kommt aus den Fehleraufgaben der Bank (Eins bleibt stehen),
+weil „Typische Fehler“ dazu nichts hat.
+1. Zusammenfassen: „Nur gleiche Variablen mit gleicher Hochzahl
+   zusammenfassen: Vorzahlen addieren, die Variable bleibt.“ /
+   „3x + 5x = 8x   7a − 2a + 4 = 5a + 4   x² + 3x bleibt so“ /
+   „Achtung: 3x + 4 ≠ 7x   x + 6x = 7x, nicht 6x“
+2. Malnehmen: „Zahlen mal Zahlen, Variablen mal Variablen.“ /
+   „3 · 4x = 12x   2x · 3x = 6x²   3a · 2b = 6ab“ /
+   „Achtung: x · x = x², nicht 2x“
+3. Klammern: „Plus vor der Klammer: Klammer weglassen.
+   a + (b − c) = a + b − c“ / „Minus vor der Klammer: alle Vorzeichen
+   drehen. a − (b − c) = a − b + c   Achtung: −(x − 4) = −x + 4“ /
+   „Zahl mal Klammer: jedes Glied malnehmen. 3 · (x + 4) = 3x + 12“
+4. Ausklammern: „Gemeinsamen Faktor vor die Klammer; Probe durch
+   Ausmultiplizieren.“ / „6x + 9 = 3 · (2x + 3)   4a² + 2a =
+   2a · (2a + 1)“ / „Achtung: 8x − 8 = 8 · (x − 1), die 1 bleibt in der
+   Klammer“
+5. Termwerte (eine Zeile): „Negative Zahlen in Klammern einsetzen:
+   3x² für x = −2: 3 · (−2)² = 12“
+6. Aufstellen (eine Zeile): „„um 5 vermindert“: x − 5   „das Doppelte
+   der Summe aus x und 5“: 2 · (x + 5), mit Klammer“
+
+Weitere Änderungen:
+- Vorgerechnete a) mit Zwischenschritt:
+  - 14 a: 5x + 10 = 5 · x + 5 · 2 = 5 · (x + 2)
+  - 6 a: 7x + 2x = (7 + 2) · x = 9x
+  - 8 a: 5 · 2x = 5 · 2 · x = 10x
+  - 11 a, 12 a und 16 a hatten schon einen Zwischenschritt; 10 a hat
+    keinen, weil dort kein Schritt dazwischenliegt.
+- Rechenketten: „=“ steht direkt hinter dem Term. Nur die Antwortfelder
+  stehen in einer festen Spalte, ebenso bei den Termwerten (Term und
+  „für x = …:“ zusammen).
+- Damit keine Seite nur eine Nummer trägt, ist der Satz etwas enger
+  geworden:
+  - Rechenraum: Linienabstand 7 statt 8 mm.
+  - Textzeilen: 7 statt 9 pt Abstand davor.
+  - Stufenfigur in 6 f: auf 80 % verkleinert.
+  - Merkkasten von Einheit 6: auf eine Zeile gekürzt.
+  - Im zweiten Lauf lag „Gemischt“ der Einheit 6 noch allein auf
+    Seite 7; nach diesen Änderungen steht es auf Seite 6.
+
+Prüfungen:
+- xelatex: 3 Durchläufe, im letzten 0 Fehler, 0 Missing character,
+  0 Overfull, 0 undefined.
+- `pruef.py muster3.tex`: 117 Proben, 0 Fehler (die neuen
+  Zwischenschritte sind mitgeprüft).
+- Alle Seiten als PNG angesehen: keine Seite mit nur einer Nummer. Die
+  größte Lücke liegt am Fuß von Seite 5 (etwa ein Fünftel); dort beginnt
+  wegen der Drittel-Regel Einheit 6 auf der neuen Seite.
