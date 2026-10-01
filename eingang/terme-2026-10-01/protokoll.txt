@@ -1,0 +1,32 @@
+Blatt terme 2026-10-01 – Protokoll
+
+Eintrag: terme (katalog/terme.md; Mappe mappen/terme.md, Katalog-Commit bbcf2d4)
+Eingabe: „terme“, keine Zusätze → Regelfall (Blatt 0, ohne Lösungsweg, ohne Vorstufen)
+Prompt: Unterrichtsblatt aus der Bank v5.1 (01.10.2026); Vorbild bau/terme/muster-2026-10-01/muster4.tex
+Modell: Claude Fable 5.1 (claude-fable-5-1)
+Vorlage: mathblatt.sty 2026-09-28a (aus hz-0801/blattbau, identisch mit der Kopie im Muster-Ordner);
+  Satzmakros (nr, kette, werte, rk/rw/rt/rtx/rs, merk, Lösungsliste) aus dem Muster übernommen,
+  da das Muster als Vorbild für den Satz gilt und die Anleitung diese Formen (Rechenkette mit
+  Antwortfeld in fester Spalte, Marken rechts) nicht als Bausteine kennt.
+
+Aufbau: Blatt 0 (Nr. 1–4) · Einheiten in der Blattfolge der Mappe 2, 3, 4, 1:
+  1 Terme zusammenfassen (Nr. 5–7) · 2 Klammern auflösen (Nr. 8–11) · 3 Ausklammern (Nr. 12–14)
+  · 4 Terme aufstellen und berechnen (Nr. 15–17) · Zum Schluss (Nr. 18) · Lösungen (Seite 7)
+Seiten: 7
+
+Teilaufgaben: 101 gesamt
+  aus der Bank: 69 (davon 6 nur in der Form geändert, „GEÄNDERT“: 9a, 9b, 11b, 12g, 14b, 16c)
+  aus eingang.jsonl: 0 (Datei nicht vorhanden)
+  neu erfunden: 32 (neu.jsonl, ids terme-neu-2026-10-01-1 … -32)
+Marken: GYM 8 (6h, 8g, 9h, 10h, 12h, 15g, 18f), P10 ’25 2 (15h aus Bank, 18g neu), P10 ’17 1 (16g), P10 ’23 1 (16h)
+
+Prüfungen:
+  pruef.py (sympy, Kopie aus dem Muster-Ordner, Variablenliste erweitert): 108 Proben, 0 Fehler
+  neu.jsonl: 32 pruef-Felder mit sympy nachgerechnet, 0 Fehler
+  xelatex zweimal: 0 Fehler, 0 „Missing character“ in der .log
+  Seiten als PNG angesehen: keine Seite mit nur einer Nummer, „Zum Schluss“ ungeteilt (Seite 6)
+
+Abweichungen/Hinweise:
+  - Nr. 13 (Probe durch Ausmultiplizieren) als Rechenkette mit breitem Feld statt Rechenraum,
+    damit Einheit 3 samt Abschluss auf eine Seite passt.
+  - Seite 3 endet nach Nr. 11 mit Leerraum, weil der Einheitentitel 3 ein Drittel Seite verlangt.
