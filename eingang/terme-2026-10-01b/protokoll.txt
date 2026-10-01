@@ -40,3 +40,17 @@ Abweichungen/Hinweise:
   - Nr. 25 trägt die Ankreuzaufgaben samt P10-Höhe, Nr. 26 das Schreiben – je Nummer eine Antwortform.
   - Nr. 21 (Ausklammern) läuft über den Seitenumbruch 5/6 (a–e / f–h); Nr. 26 über 7/8.
   - Sprossenzählung in neu.jsonl folgt der Bank (e<n>.jsonl); die Mappen-Sprosse steht in sprosse_text.
+
+Übernahme 2026-10-01: 15 Zeilen in die Bank (Nr. im neu.jsonl → id): 1→terme-zone-f5-v1, 2→terme-zone-f5-v2, 3→terme-zone-f5-v3, 4→terme-e1-k1-s3-v4, 5→terme-e1-k1-s4-v4, 7→terme-e1-k4-s12-v4, 10→terme-e2-k1-s9-v4, 11→terme-e3-k2-s6-v4, 15→terme-e3-k4-s2-v4, 16→terme-e3-k4-s3-v4, 18→terme-e4-k2-s8-v4, 19→terme-e4-k2-s9-v4, 21→terme-e5-k1-s4-v4, 23→terme-e5-k1-s6-v4, 24→terme-e6-k1-s1-v6.
+  Feld herkunft „Blatt terme 2026-10-01b, Nr. <Blattnummer>“; pruef als Lösungszahl;
+  Schrittnamen in den Lösungen von 10, 11, 15, 16, 18, 23; Nr. 3 ohne Bild als Text
+  (Kästen und Kugeln beschrieben, grafik leer: die Bildbeschreibung war kein Baustein);
+  Nr. 24 Ankreuzoptionen je Zeile; 1–3 als neue Zone-Fertigkeit „Grundvorstellung“
+  (Katalog Zeile 99, Lücke der Zone).
+11 nicht übernommen (Dublette: bis auf Zahlen mit Vorzeichen und Variablennamen gleich
+  mit einer Bankzeile derselben Sprosse; mit * die Zeilen aus Eingang 2026-10-01 oder aus
+  dem Nachzug, die das Blatt noch nicht kannte):
+  6 ≙ terme-e1-k4-s9-v1* · 8 wortgleich terme-e2-k1-s7-v2* · 9 ≙ terme-e2-k1-s8-v1* ·
+  12 ≙ terme-e3-k3-s3-v3* · 13 ≙ terme-e3-k3-s4-v1* · 14 ≙ terme-e3-k3-s5-v1* ·
+  17 ≙ terme-e3-k4-s8-v4* · 20 ≙ terme-e5-k1-s3-v1* · 22 ≙ terme-e5-k1-s5-v1* ·
+  25 ≙ terme-e2-k1-s11-v1 · 26 ≙ terme-e6-k1-s10-v1 (2023-OS-B1h, Sprosse hat 2 je Original).

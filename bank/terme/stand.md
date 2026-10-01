@@ -12,15 +12,18 @@ eingang/terme-2026-10-01/neu.jsonl. Vorheriger Stand: Commit
 
 ## Zahlen je Datei
 
+Stand nach Blatt 2026-10-01b (Block am Ende).
+
+
     Datei       Zeilen  vorstufe grundfall sprosse pruefung pflicht
-    zone.jsonl      22         0         8      13        0       1
-    e1.jsonl        77         8         5      53        2       9
-    e2.jsonl        38         0         5      27        3       3
-    e3.jsonl        77         4        15      45        4       9
-    e4.jsonl        73        12         5      38        3      15
-    e5.jsonl        20         0         5      15        0       0
-    e6.jsonl        47         0         5      29        4       9
-    gesamt         354
+    zone.jsonl      25         0        10      14        0       1
+    e1.jsonl        80         8         5      56        2       9
+    e2.jsonl        39         0         5      28        3       3
+    e3.jsonl        80         4        15      48        4       9
+    e4.jsonl        75        12         5      40        3      15
+    e5.jsonl        22         0         5      17        0       0
+    e6.jsonl        48         0         6      29        4       9
+    gesamt         369
 
 Einheiten: 1 Zusammenfassen, 2 Malnehmen, 3 Klammern auflösen,
 4 Ausklammern, 5 Termwerte, 6 Aufstellen. Ketten: e1 k1 Gleichartige
@@ -141,3 +144,22 @@ neue Zeile mit original, kein neues Urteil nötig.
 - e5 hat keine Pflichtelemente; der Katalog nennt für Einheit 5
   keine Zuruf-Typen.
 - Gegenlese der 84 neuen und 31 übernommenen Eingangszeilen.
+
+## Blatt 2026-10-01b
+
+15 Zeilen übernommen (Nr. → id): 1–3 → zone f5 v1–v3 (neue
+Fertigkeit Grundvorstellung, Katalog Zeile 99); 4 → e1 k1 s3 v4;
+5 → e1 k1 s4 v4; 7 → e1 k4 s12 v4; 10 → e2 k1 s9 v4; 11 → e3 k2
+s6 v4; 15 → e3 k4 s2 v4; 16 → e3 k4 s3 v4; 18 → e4 k2 s8 v4;
+19 → e4 k2 s9 v4; 21 → e5 k1 s4 v4; 23 → e5 k1 s6 v4; 24 → e6 k1
+s1 v6. Feld herkunft gesetzt, dazu bei den 31 Zeilen aus Blatt
+2026-10-01 nachgetragen (bank.md sechste Fassung).
+11 nicht übernommen, alle Dubletten (bis auf Zahlen mit Vorzeichen
+und Variablennamen gleich mit einer Zeile derselben Sprosse; neun
+davon mit Zeilen aus Eingang 1 oder dem Nachzug, die das Blatt
+nicht kannte): Nr. 6, 8, 9, 12, 13, 14, 17, 20, 22, 25, 26; je
+Zeile im Protokoll des Ordners eingang/terme-2026-10-01b.
+Prüfskript: 0 Abweichungen im ersten Lauf; Warnungen 25, davon neu
+Mengen über Soll (e5 k1 s4, s6; e6 k1 s1 sechs Grundfälle) und je
+Datei „Feld herkunft fehlt“ (v0.13, Hinweis für Bestandszeilen).
+Keine ids des Bestands geändert, punkte-nachziehen.py nicht nötig.
