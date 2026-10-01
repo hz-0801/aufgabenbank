@@ -1,5 +1,5 @@
-# Ich-kann-Titel für Kompetenzblätter und Regal (Stand 2026-09-28). Der Katalog trägt keine Ich-kann-Sätze; alle Titel sind aus Kettenname, sprosse_text, merkmal und der Zeile „Sprossen je Verfahrenstyp“ der Mappe umformuliert (quelle). sprosse: leer = Titel der Kette (Blatt, Regal); p = Prüfungshöhen; Zahl = Sprosse. einheit: Nummer der Bank (e<n>.jsonl); 0 = Fertigkeit der Zone (zone.jsonl, kette = Name der Zonen-Kette). anweisung: Aufforderung über der Teilaufgabe, wo die Bank nur eine Gleichung oder eine Kurzfrage trägt.
-eintrag;einheit;kette;sprosse;ich_kann;anweisung;quelle
+# Ich-kann-Titel für Kompetenzblätter und Regal (Stand 2026-09-28). Der Katalog trägt keine Ich-kann-Sätze; alle Titel sind aus Kettenname, sprosse_text, merkmal und der Zeile „Sprossen je Verfahrenstyp“ der Mappe umformuliert (quelle). sprosse: leer = Titel der Kette (Blatt, Regal); p = Prüfungshöhen; Zahl = Sprosse. einheit: Nummer der Bank (e<n>.jsonl); 0 = Fertigkeit der Zone (zone.jsonl, kette = Name der Zonen-Kette). anweisung: Aufforderung über der Teilaufgabe, wo die Bank nur eine Gleichung oder eine Kurzfrage trägt. titel (seit 2026-10-01, Lernblatt v1.0): Titel der Hauptnummer im Infinitiv, wo der Ich-kann-Satz keinen ergibt („Ich erkenne …“, „Ich finde …“); leer = maschinell aus „Ich kann …“.
+eintrag;einheit;kette;sprosse;ich_kann;anweisung;quelle;titel
 quadratische-gleichungen;3;p-q-Formel;;Ich kann quadratische Gleichungen mit der p-q-Formel lösen.;;umformuliert (Kette, Mappe)
 quadratische-gleichungen;3;p-q-Formel;0;Ich kann in einer Gleichung p und q ablesen.;Lies p und q mit Vorzeichen ab.;umformuliert (merkmal)
 quadratische-gleichungen;3;p-q-Formel;1;Ich kann eine Gleichung mit der p-q-Formel lösen.;Löse die Gleichung mit der p-q-Formel.;umformuliert (merkmal)
@@ -525,37 +525,37 @@ zuordnungen;4;Erkennen;;Ich kann erkennen, ob eine Zuordnung proportional ist.;;
 zuordnungen;4;Rate;;Ich kann mit einem Preis je Einheit rechnen.;;umformuliert (Kette)
 zuordnungen;4;*;;Ich kann Gegenbeispiele für proportionale Zuordnungen angeben.;;umformuliert (Typen ohne Kette)
 terme;0;Addieren und Subtrahieren negativer Zahlen;;Ich kann negative Zahlen addieren und subtrahieren.;;Lernblatt v0.9
-terme;0;Addieren und Subtrahieren negativer Zahlen;paar;Ich finde den Fehler beim Rechnen mit negativen Zahlen.;;Lernblatt v0.9
+terme;0;Addieren und Subtrahieren negativer Zahlen;paar;Ich finde den Fehler beim Rechnen mit negativen Zahlen.;;Lernblatt v0.9;Den Fehler beim Rechnen mit negativen Zahlen finden
 terme;0;Multiplizieren mit Vorzeichen;;Ich kann Zahlen mit Vorzeichen malnehmen.;;Lernblatt v0.9
 terme;0;Dezimalzahlen und einfache Brüche als Vorzahlen;;Ich kann mit Dezimalzahlen und einfachen Brüchen rechnen.;;Lernblatt v0.9
 terme;0;Punkt vor Strich mit Zahlen;;Ich kann Punkt vor Strich rechnen.;;Lernblatt v0.9
-terme;1;Term aufstellen;p;Ich finde auch in Aufgaben aus der Prüfung den passenden Term.;;Lernblatt v0.9
+terme;1;Term aufstellen;p;Ich finde auch in Aufgaben aus der Prüfung den passenden Term.;;Lernblatt v0.9;Den passenden Term auch in Aufgaben aus der Prüfung finden
 terme;1;Termwert berechnen;;Ich kann Termwerte berechnen.;;Lernblatt v0.9
 terme;1;Situation zu Term angeben;;Ich kann zu einem Term eine passende Situation erfinden.;;Lernblatt v0.9
-terme;1;Term aufstellen;fehler;Ich finde den Fehler beim Aufstellen eines Terms.;;Lernblatt v0.9
+terme;1;Term aufstellen;fehler;Ich finde den Fehler beim Aufstellen eines Terms.;;Lernblatt v0.9;Den Fehler beim Aufstellen eines Terms finden
 terme;1;Term aufstellen;begruenden;Ich kann begründen, ob ein Term zum Text passt.;;Lernblatt v0.9
 terme;1;Term aufstellen;darstellung;Ich kann Terme und Termbäume einander zuordnen.;;Lernblatt v0.9
 terme;1;Term aufstellen;anwendung;Ich kann Terme für Aufgaben aus dem Alltag aufstellen.;;Lernblatt v0.9
-terme;2;Gleichartige Glieder erkennen;;Ich erkenne gleichartige Glieder.;;Lernblatt v0.9
+terme;2;Gleichartige Glieder erkennen;;Ich erkenne gleichartige Glieder.;;Lernblatt v0.9;Gleichartige Glieder erkennen
 terme;2;Vorzahl lesen;;Ich kann die Vorzahl eines Gliedes ablesen.;;Lernblatt v0.9
 terme;2;Vorzeichen als Teil des Gliedes;;Ich kann die Glieder eines Terms mit ihrem Vorzeichen aufschreiben.;;Lernblatt v0.9
 terme;2;Zusammenfassen;p;Ich kann auch Aufgaben aus der Prüfung zum Zusammenfassen lösen.;;Lernblatt v0.9
 terme;2;Malnehmen;p;Ich kann auch Produkte mit Vorzeichen und zwei Variablen berechnen.;;Lernblatt v0.9
-terme;2;Zusammenfassen;fehler;Ich finde den Fehler beim Zusammenfassen.;;Lernblatt v0.9
+terme;2;Zusammenfassen;fehler;Ich finde den Fehler beim Zusammenfassen.;;Lernblatt v0.9;Den Fehler beim Zusammenfassen finden
 terme;2;Zusammenfassen;begruenden;Ich kann begründen, ob man Glieder zusammenfassen kann.;;Lernblatt v0.9
 terme;2;Zusammenfassen;darstellung;Ich kann Terme zu Figuren aufstellen und zusammenfassen.;;Lernblatt v0.9
 terme;2;Zusammenfassen;anwendung;Ich kann Terme im Alltag aufstellen und zusammenfassen.;;Lernblatt v0.9
-terme;3;Zeichen vor der Klammer feststellen;;Ich erkenne, was vor einer Klammer steht.;;Lernblatt v0.9
+terme;3;Zeichen vor der Klammer feststellen;;Ich erkenne, was vor einer Klammer steht.;;Lernblatt v0.9;Erkennen, was vor einer Klammer steht
 terme;3;Klammern;p;Ich kann auch zwei Klammern in einem Term auflösen und zusammenfassen.;;Lernblatt v0.9
-terme;3;Klammern;fehler;Ich finde den Fehler beim Auflösen von Klammern.;;Lernblatt v0.9
+terme;3;Klammern;fehler;Ich finde den Fehler beim Auflösen von Klammern.;;Lernblatt v0.9;Den Fehler beim Auflösen von Klammern finden
 terme;3;Klammern;begruenden;Ich kann begründen, wie man eine Klammer richtig auflöst.;;Lernblatt v0.9
 terme;3;Klammern;darstellung;Ich kann Klammern mit einer Tabelle oder einer Figur auflösen.;;Lernblatt v0.9
 terme;3;Klammern;anwendung;Ich kann Terme mit Klammer im Alltag aufstellen und auflösen.;;Lernblatt v0.9
-terme;4;Was steckt in jedem Glied?;;Ich erkenne, welcher Faktor in jedem Glied steckt.;;Lernblatt v0.9
+terme;4;Was steckt in jedem Glied?;;Ich erkenne, welcher Faktor in jedem Glied steckt.;;Lernblatt v0.9;Erkennen, welcher Faktor in jedem Glied steckt
 terme;4;Ausklammern;-1;Ich kann jedes Glied als Produkt mit einem Faktor schreiben.;;Lernblatt v0.9
 terme;4;Ausklammern;0;Ich kann einen vorgegebenen Faktor ausklammern.;;Lernblatt v0.9
 terme;4;Ausklammern;p;Ich kann auch Terme mit zwei Variablen so weit wie möglich ausklammern.;;Lernblatt v0.9
-terme;4;Ausklammern;fehler;Ich finde den Fehler beim Ausklammern.;;Lernblatt v0.9
+terme;4;Ausklammern;fehler;Ich finde den Fehler beim Ausklammern.;;Lernblatt v0.9;Den Fehler beim Ausklammern finden
 terme;4;Ausklammern;begruenden;Ich kann begründen, ob richtig ausgeklammert wurde.;;Lernblatt v0.9
 terme;4;Ausklammern;darstellung;Ich kann einen Term mit Klammer in Worten oder als Figur beschreiben.;;Lernblatt v0.9
 terme;4;Ausklammern;anwendung;Ich kann mit Ausklammern Aufgaben aus dem Alltag lösen.;;Lernblatt v0.9

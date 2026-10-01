@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Messlauf für ein Lernblatt aus zusammenbau.py (v0.9).
+"""Messlauf für ein Lernblatt aus zusammenbau.py (v0.9, ab v1.0 mit den
+Prüfungen des Auftrags auftrag-lernblatt-v10.md).
 
 Aufruf aus der Repo-Wurzel:
     python3 bau/terme/lernblatt-messen.py bau/terme/TER-L4
@@ -15,6 +16,14 @@ messwerte und die Kurzfelder seiten, seiten_loesungen,
 fehlende_zeichen, overfull, bankwort, hauptnummern_je_einheit,
 teilaufgaben_je_einheit). Hilfsdateien (.aux, .out, .abh, .log der
 Läufe) werden danach gelöscht.
+
+Ab zusammenbau v1.0 dazu (Feld pruefungen_v10 in bau.json): im PDF-Text
+des Gesamt kein „Ich kann“, kein „weiter“ außer in „Dann weiter zu“, kein
+„Einheit n von“, kein „Hier lernst du“; Folge der Einheiten im Gesamt;
+erste Hauptnummer jeder Einheit „Kannst du das schon“ und ihre
+Teilaufgaben je Kette; Pflicht-Teilaufgaben je Einheit; Teilaufgaben mit
+Sachkontext je Kette (Heuristik hat_sachkontext aus zusammenbau.py,
+ohne den Test); Ketten, deren Teilaufgabe in Einheit 1 zuerst steht.
 """
 
 import importlib.util
@@ -64,6 +73,65 @@ def lauf(ordner, name, n=2):
     }
 
 
+def pruefungen_v10(ordner, bau, text):
+    """Prüfungen des Auftrags vom 01.10. (Lernblatt v1.0)."""
+    k = bau["kennung"]
+    g = (ordner / f"{k}-gesamt.tex").read_text(encoding="utf-8")
+    folge = [int(m) for m in re.findall(r"\\input\{e(\d+)_a\}", g)]
+    flach = re.sub(r"\s+", " ", text)
+    weiter = [m.group(0) for m in re.finditer(r".{0,25}\bweiter\b.{0,15}",
+                                              flach)
+              if "Dann weiter zu" not in m.group(0)]
+    ids = {}
+    for p in (WURZEL / "bank" / bau["eintraege"][0]).glob("e*.jsonl"):
+        for z in p.read_text(encoding="utf-8").splitlines():
+            if z.strip():
+                d = json.loads(z)
+                ids[d["id"]] = d
+    je = {}
+    for a in bau["aufgaben"]:
+        if not a.get("id") or not a["datei"].startswith("e"):
+            continue
+        n = int(re.match(r"e(\d+)_", a["datei"]).group(1))
+        je.setdefault(n, []).append(a)
+    test, pflicht, sach, erste = {}, {}, {}, {}
+    for n, aa in je.items():
+        hn1 = min(a["hauptnummer"] for a in aa)
+        e_text = (ordner / f"e{n}_a.tex").read_text(encoding="utf-8")
+        titel = re.search(r"\\begin\{kbaufgabe\}\{([^\n]*)\}", e_text)
+        test[n] = {"titel": titel.group(1) if titel else None,
+                   "beginnt_mit_test": bool(titel and titel.group(1)
+                                            .startswith("Kannst du das schon")),
+                   "teilaufgaben": [ids[a["id"]]["kette"] for a in aa
+                                    if a["hauptnummer"] == hn1]}
+        pflicht[n] = sum(1 for a in aa if a.get("lage") == "pflicht")
+        for a in aa:
+            z = ids[a["id"]]
+            if a.get("lage") in ("leiter", "pruefung") and \
+                    ZB.hat_sachkontext(z):
+                sach.setdefault(f"e{n} {z['kette']}", []).append(a["id"])
+        reihe = []
+        for a in sorted(aa, key=lambda a: (a["hauptnummer"], a["teilaufgabe"])):
+            if a.get("lage") == "test":
+                continue
+            kette = ids[a["id"]]["kette"]
+            if kette not in reihe:
+                reihe.append(kette)
+        erste[n] = reihe
+    return {
+        "einheiten_folge": folge,
+        "ich_kann_im_pdf": flach.count("Ich kann"),
+        "weiter_im_pdf": weiter,
+        "einheit_n_von_im_pdf": len(re.findall(r"Einheit \d+ von", flach)),
+        "hier_lernst_du_im_pdf": flach.count("Hier lernst du"),
+        "kannst_du_im_pdf": flach.count("Kannst du das schon"),
+        "test": test,
+        "pflicht_je_einheit": pflicht,
+        "sachkontext_je_kette": sach,
+        "ketten_folge_je_einheit": erste,
+    }
+
+
 def main(ordner):
     ordner = Path(ordner)
     bau = json.loads((ordner / "bau.json").read_text(encoding="utf-8"))
@@ -75,6 +143,12 @@ def main(ordner):
         if (ordner / f"{d}.tex").exists():
             werte[d] = lauf(ordner, d)
             print(d, werte[d])
+    gesamt_text = subprocess.run(["pdftotext", str(ordner / f"{k}-gesamt.pdf"),
+                                  "-"], capture_output=True, text=True).stdout
+    if bau.get("zusammenbau", "v0.9") >= "v1.0":
+        bau["pruefungen_v10"] = pruefungen_v10(ordner, bau, gesamt_text)
+        print(json.dumps(bau["pruefungen_v10"], ensure_ascii=False,
+                         indent=1))
     for p in ordner.glob(f"{k}-gesamt-*.png"):
         p.unlink()
     subprocess.run(["pdftoppm", "-r", "80", "-png", f"{k}-gesamt.pdf",
