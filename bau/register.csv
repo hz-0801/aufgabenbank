@@ -64,3 +64,4 @@ TER-L3;2026-09-30;terme;L;einheiten=alle, zone=ja, fokus=–, schwach=nein, klas
 TER-L4;2026-09-30;terme;L;einheiten=alle, zone=ja, fokus=–, schwach=nein, klasse=–, kasten=nein, nummer=–, aus=–;fb02d3e;v0.9;Version 2026-09-28a;bau/terme/TER-L4
 TER-L5;2026-10-01;terme;L;einheiten=alle, zone=ja, fokus=–, schwach=nein, klasse=–, kasten=nein, nummer=–, aus=–, mit_sachaufgaben=nein;54aaeb3;v1.0;Version 2026-09-28a;bau/terme/TER-L5
 TER-L6;2026-10-01;terme;L;einheiten=alle, zone=ja, fokus=–, schwach=nein, klasse=–, kasten=nein, nummer=–, aus=–, mit_sachaufgaben=nein, mit_loesungsweg=nein;1ebd7df;v1.1;Version 2026-09-28a;bau/terme/TER-L6
+TER-L7;2026-10-01;terme;L;einheiten=alle, zone=ja, fokus=–, schwach=nein, klasse=–, kasten=nein, nummer=–, aus=–, mit_sachaufgaben=nein, mit_loesungsweg=nein;24541f5;v1.2;Version 2026-09-28a;bau/terme/TER-L7

@@ -26,7 +26,9 @@ import sys
 from pathlib import Path
 
 WURZEL = Path(__file__).resolve().parents[2]
-TEIL = re.compile(r"\\(teil|steil|gl|sgl|tz|stz|swz|swa|swfrage|kbteil)\b")
+# ab zusammenbau v1.2 auch die Zeilen der Leiter in lbflucht
+TEIL = re.compile(r"\\(teil|steil|gl|sgl|tz|stz|swz|swa|swfrage|kbteil)\b|"
+                  r"\\makebox\[1\.6em\]\[r\]")
 
 
 def bankzeilen(eintrag):

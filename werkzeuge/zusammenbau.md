@@ -1,6 +1,8 @@
 # zusammenbau.py – aus der Bank ein Blatt (Quelltext)
 
-Stand 2026-10-01, v1.1 (Lernblatt nach den Befunden am TER-L5, siehe
+Stand 2026-10-01, v1.2 (Dichte nach Höhe und Form, siehe „Rezept
+Lernblatt (v1.2)“; erstes Blatt TER-L7). Davor v1.1 (Lernblatt nach den
+Befunden am TER-L5, siehe
 „Rezept Lernblatt (v1.1)“; erstes Blatt TER-L6). Davor v1.0 (Lernblatt
 nach den Befunden des Lehrers am
 TER-L4: Blattfolge, Test „Kannst du das schon?“ am Kopf jeder Einheit,
@@ -193,6 +195,22 @@ Wurzel setzt `* text eol=lf`, das verfälscht PDFs).
   „Merkkasten“, Zuordnung der Zone aus „Voraussetzungen“.
 - Was Bank und Mappe nicht tragen, steht als `%% TODO` in der
   Zeile davor und in der log, nie als geratener Text.
+
+## Rezept Lernblatt (v1.2)
+
+Vierter Lauf vom 01.10.: nur Dichte und Anordnung, Inhalt wie v1.1.
+
+1. Vorstufe, Grundfall und Blatt 0 in Spalten (`teile_dicht`,
+   `\lbzelle`): zwei, drei bei Termen bis 14 Zeichen Quelltext, eine,
+   wenn Satz und Felder nicht in eine Spalte passen; Feld in der Zeile.
+2. Sprossen der Leiter (form teil, gleichungsraster; auch die
+   Prüfungshöhe ohne Original) untereinander, „=“ in einer Flucht
+   (Umgebung `lbflucht`).
+3. Bearbeitungsraum nur bei form text, Prüfung mit Original, Begründen,
+   Fehler finden, Anwendung (`raum_erlaubt`).
+4. Mischt eine Nummer Grundfall und Sprossen: erst der Spaltenblock,
+   dann die Leiter.
+5. Test- und Verstanden-Kasten mit halbem Innenabstand.
 
 ## Rezept Lernblatt (v1.1)
 
