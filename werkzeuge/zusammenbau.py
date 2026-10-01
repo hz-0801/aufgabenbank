@@ -1603,6 +1603,12 @@ LB_TEIL_GRENZE = 26     # Teilung erst über 26 Teilaufgaben (Befund 9)
 LB_KREUZ_PAAR = 120     # Ankreuzen nebeneinander bis 120 Zeichen Quelltext
 LB_SACH_WOERTER = 12    # Sachkontext: mehr als zwölf Wörter vor dem Auftrag
 LB_HALB_ZEILE = 45      # ganze Aufgabe in einer Zeile der halben Spalte
+# feste Ersatzsätze des Skripts (PFLICHT_ICHKANN, Zone-Paar) im Infinitiv
+ERSATZ_INFINITIV = {
+    "Ich finde den Fehler und rechne richtig.":
+        "Den Fehler finden und richtig rechnen",
+    "Ich kann das auch in Aufgaben aus der Prüfung.":
+        "Das auch in Aufgaben aus der Prüfung können"}
 TEST_TITEL = "Kannst du das schon?"
 VERSTANDEN_TITEL = "Verstanden?"
 VORSPANN_LERN10 = r"""% Lernblatt v1.0 (Befund 6 und 13 des Lehrers vom 01.10.): Striche für den
@@ -1761,6 +1767,8 @@ class Bau(KbSatz):
         nicht, der Satz ohne Punkt und log TITEL."""
         if k in self.titel_csv:
             return self.titel_csv[k]
+        if satz in ERSATZ_INFINITIV:
+            return ERSATZ_INFINITIV[satz]
         inf = infinitiv_titel(satz)
         if inf:
             return inf

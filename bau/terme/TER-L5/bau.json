@@ -1,0 +1,1406 @@
+{
+ "kennung": "TER-L5",
+ "datum": "2026-10-01",
+ "eintraege": [
+  "terme"
+ ],
+ "rezept": "L",
+ "rezept_name": "Lernblatt",
+ "bestellung": {
+  "einheiten": "alle",
+  "zone": "ja",
+  "fokus": null,
+  "schwach": false,
+  "klasse": null,
+  "kasten": false,
+  "nummer": null,
+  "aus": null,
+  "mit_sachaufgaben": false,
+  "ohne_register": false
+ },
+ "bank_commit": "54aaeb3",
+ "zusammenbau": "v1.0",
+ "vorlage": "Version 2026-09-28a",
+ "pfad": "bau/terme/TER-L5",
+ "kuerzel_quelle": "_kuerzel.csv (mathe-nachhilfe)",
+ "strukturfehler": 0,
+ "hauptnummern": 32,
+ "teilaufgaben": 127,
+ "ersatzzeichen": "",
+ "ichkann_fehlt": [],
+ "auftrag_doppelt": [
+  "Nr. 17: Löse die Klammer auf."
+ ],
+ "auftrag_satz_doppelt": [
+  "Nr. 17: Löse die Klammer auf."
+ ],
+ "titel_fehlt": [],
+ "gym": [],
+ "sachkontext_ausgelassen": [
+  "terme-e4-k2-s7-v1",
+  "terme-e4-k2-s8-v1",
+  "terme-e1-k1-s4-v1"
+ ],
+ "test": [
+  "e2 Zusammenfassen: terme-e2-k4-s11-v2",
+  "e2 Malnehmen: terme-e2-k5-s7-v2",
+  "e3 Klammern: terme-e3-k2-s8-v2",
+  "e4 Ausklammern: terme-e4-k2-s10-v2",
+  "e1 Term aufstellen: terme-e1-k1-s7-v2"
+ ],
+ "blattfolge": [
+  2,
+  3,
+  4,
+  1
+ ],
+ "je_datei": {
+  "blatt0": {
+   "hauptnummern": 5,
+   "teilaufgaben": 18
+  },
+  "e2": {
+   "hauptnummern": 9,
+   "teilaufgaben": 42
+  },
+  "e3": {
+   "hauptnummern": 5,
+   "teilaufgaben": 19
+  },
+  "e4": {
+   "hauptnummern": 7,
+   "teilaufgaben": 28
+  },
+  "e1": {
+   "hauptnummern": 6,
+   "teilaufgaben": 20
+  }
+ },
+ "aufgaben": [
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "a",
+   "id": "terme-zone-f1-v1",
+   "datei": "blatt0_a.tex",
+   "lage": "zone",
+   "art": "zone"
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "b",
+   "id": "terme-zone-f1-v2",
+   "datei": "blatt0_a.tex",
+   "lage": "zone",
+   "art": "zone"
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "c",
+   "id": "terme-zone-f1-v3",
+   "datei": "blatt0_a.tex",
+   "lage": "zone",
+   "art": "zone"
+  },
+  {
+   "aufgabe": "A1",
+   "hauptnummer": 1,
+   "teilaufgabe": "d",
+   "id": "terme-zone-f1-v4",
+   "datei": "blatt0_a.tex",
+   "lage": "zone",
+   "art": "zone"
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "a",
+   "id": "terme-zone-f2-v1",
+   "datei": "blatt0_a.tex",
+   "lage": "zone",
+   "art": "zone"
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "b",
+   "id": "terme-zone-f2-v2",
+   "datei": "blatt0_a.tex",
+   "lage": "zone",
+   "art": "zone"
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "c",
+   "id": "terme-zone-f2-v3",
+   "datei": "blatt0_a.tex",
+   "lage": "zone",
+   "art": "zone"
+  },
+  {
+   "aufgabe": "A2",
+   "hauptnummer": 2,
+   "teilaufgabe": "d",
+   "id": "terme-zone-f2-v4",
+   "datei": "blatt0_a.tex",
+   "lage": "zone",
+   "art": "zone"
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "a",
+   "id": "terme-zone-f3-v1",
+   "datei": "blatt0_a.tex",
+   "lage": "zone",
+   "art": "zone"
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "b",
+   "id": "terme-zone-f3-v2",
+   "datei": "blatt0_a.tex",
+   "lage": "zone",
+   "art": "zone"
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "c",
+   "id": "terme-zone-f3-v3",
+   "datei": "blatt0_a.tex",
+   "lage": "zone",
+   "art": "zone"
+  },
+  {
+   "aufgabe": "A3",
+   "hauptnummer": 3,
+   "teilaufgabe": "d",
+   "id": "terme-zone-f3-v4",
+   "datei": "blatt0_a.tex",
+   "lage": "zone",
+   "art": "zone"
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "a",
+   "id": "terme-zone-f4-v1",
+   "datei": "blatt0_a.tex",
+   "lage": "zone",
+   "art": "zone"
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "b",
+   "id": "terme-zone-f4-v2",
+   "datei": "blatt0_a.tex",
+   "lage": "zone",
+   "art": "zone"
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "c",
+   "id": "terme-zone-f4-v3",
+   "datei": "blatt0_a.tex",
+   "lage": "zone",
+   "art": "zone"
+  },
+  {
+   "aufgabe": "A4",
+   "hauptnummer": 4,
+   "teilaufgabe": "d",
+   "id": "terme-zone-f4-v4",
+   "datei": "blatt0_a.tex",
+   "lage": "zone",
+   "art": "zone"
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "teilaufgabe": "a",
+   "id": "terme-zone-f1-v5",
+   "datei": "blatt0_a.tex",
+   "lage": "zone",
+   "art": "zonepaar"
+  },
+  {
+   "aufgabe": "A5",
+   "hauptnummer": 5,
+   "teilaufgabe": "b",
+   "id": "terme-zone-f1-v6",
+   "datei": "blatt0_a.tex",
+   "lage": "zone",
+   "art": "zonepaar"
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "a",
+   "id": "terme-e2-k4-s11-v2",
+   "datei": "e2_a.tex",
+   "lage": "test",
+   "art": "test"
+  },
+  {
+   "aufgabe": "A6",
+   "hauptnummer": 6,
+   "teilaufgabe": "b",
+   "id": "terme-e2-k5-s7-v2",
+   "datei": "e2_a.tex",
+   "lage": "test",
+   "art": "test"
+  },
+  {
+   "aufgabe": "A7",
+   "hauptnummer": 7,
+   "teilaufgabe": "a",
+   "id": "terme-e2-k1-s0-v1",
+   "datei": "e2_a.tex",
+   "lage": "leiter",
+   "art": "erkennung"
+  },
+  {
+   "aufgabe": "A7",
+   "hauptnummer": 7,
+   "teilaufgabe": "b",
+   "id": "terme-e2-k1-s0-v2",
+   "datei": "e2_a.tex",
+   "lage": "leiter",
+   "art": "erkennung"
+  },
+  {
+   "aufgabe": "A7",
+   "hauptnummer": 7,
+   "teilaufgabe": "c",
+   "id": "terme-e2-k1-s0-v3",
+   "datei": "e2_a.tex",
+   "lage": "leiter",
+   "art": "erkennung"
+  },
+  {
+   "aufgabe": "A7",
+   "hauptnummer": 7,
+   "teilaufgabe": "d",
+   "id": "terme-e2-k1-s0-v4",
+   "datei": "e2_a.tex",
+   "lage": "leiter",
+   "art": "erkennung"
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "teilaufgabe": "a",
+   "id": "terme-e2-k2-s0-v1",
+   "datei": "e2_a.tex",
+   "lage": "leiter",
+   "art": "erkennung"
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "teilaufgabe": "b",
+   "id": "terme-e2-k2-s0-v2",
+   "datei": "e2_a.tex",
+   "lage": "leiter",
+   "art": "erkennung"
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "teilaufgabe": "c",
+   "id": "terme-e2-k2-s0-v3",
+   "datei": "e2_a.tex",
+   "lage": "leiter",
+   "art": "erkennung"
+  },
+  {
+   "aufgabe": "A8",
+   "hauptnummer": 8,
+   "teilaufgabe": "d",
+   "id": "terme-e2-k2-s0-v4",
+   "datei": "e2_a.tex",
+   "lage": "leiter",
+   "art": "erkennung"
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "a",
+   "id": "terme-e2-k3-s0-v1",
+   "datei": "e2_a.tex",
+   "lage": "leiter",
+   "art": "erkennung"
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "b",
+   "id": "terme-e2-k3-s0-v2",
+   "datei": "e2_a.tex",
+   "lage": "leiter",
+   "art": "erkennung"
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "c",
+   "id": "terme-e2-k3-s0-v3",
+   "datei": "e2_a.tex",
+   "lage": "leiter",
+   "art": "erkennung"
+  },
+  {
+   "aufgabe": "A9",
+   "hauptnummer": 9,
+   "teilaufgabe": "d",
+   "id": "terme-e2-k3-s0-v4",
+   "datei": "e2_a.tex",
+   "lage": "leiter",
+   "art": "erkennung"
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "a",
+   "id": "terme-e2-k4-s1-v1",
+   "datei": "e2_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "b",
+   "id": "terme-e2-k4-s1-v2",
+   "datei": "e2_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "c",
+   "id": "terme-e2-k4-s1-v3",
+   "datei": "e2_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "d",
+   "id": "terme-e2-k4-s1-v4",
+   "datei": "e2_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "e",
+   "id": "terme-e2-k4-s2-v1",
+   "datei": "e2_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "f",
+   "id": "terme-e2-k4-s3-v1",
+   "datei": "e2_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "g",
+   "id": "terme-e2-k4-s4-v1",
+   "datei": "e2_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "h",
+   "id": "terme-e2-k4-s5-v1",
+   "datei": "e2_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "i",
+   "id": "terme-e2-k4-s6-v1",
+   "datei": "e2_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "j",
+   "id": "terme-e2-k4-s7-v1",
+   "datei": "e2_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "k",
+   "id": "terme-e2-k4-s8-v1",
+   "datei": "e2_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "l",
+   "id": "terme-e2-k4-s9-v1",
+   "datei": "e2_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A10",
+   "hauptnummer": 10,
+   "teilaufgabe": "m",
+   "id": "terme-e2-k4-s10-v1",
+   "datei": "e2_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A11",
+   "hauptnummer": 11,
+   "teilaufgabe": "",
+   "id": "terme-e2-k4-s11-v1",
+   "datei": "e2_a.tex",
+   "lage": "pruefung",
+   "art": "pruefung"
+  },
+  {
+   "aufgabe": "A12",
+   "hauptnummer": 12,
+   "teilaufgabe": "a",
+   "id": "terme-e2-k5-s1-v1",
+   "datei": "e2_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A12",
+   "hauptnummer": 12,
+   "teilaufgabe": "b",
+   "id": "terme-e2-k5-s1-v2",
+   "datei": "e2_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A12",
+   "hauptnummer": 12,
+   "teilaufgabe": "c",
+   "id": "terme-e2-k5-s1-v3",
+   "datei": "e2_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A12",
+   "hauptnummer": 12,
+   "teilaufgabe": "d",
+   "id": "terme-e2-k5-s1-v4",
+   "datei": "e2_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A12",
+   "hauptnummer": 12,
+   "teilaufgabe": "e",
+   "id": "terme-e2-k5-s2-v1",
+   "datei": "e2_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A12",
+   "hauptnummer": 12,
+   "teilaufgabe": "f",
+   "id": "terme-e2-k5-s3-v1",
+   "datei": "e2_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A12",
+   "hauptnummer": 12,
+   "teilaufgabe": "g",
+   "id": "terme-e2-k5-s4-v1",
+   "datei": "e2_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A12",
+   "hauptnummer": 12,
+   "teilaufgabe": "h",
+   "id": "terme-e2-k5-s5-v1",
+   "datei": "e2_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A12",
+   "hauptnummer": 12,
+   "teilaufgabe": "i",
+   "id": "terme-e2-k5-s6-v1",
+   "datei": "e2_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A13",
+   "hauptnummer": 13,
+   "teilaufgabe": "",
+   "id": "terme-e2-k5-s7-v1",
+   "datei": "e2_a.tex",
+   "lage": "pruefung",
+   "art": "pruefung"
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "a",
+   "id": "terme-e2-k6-s1-v1",
+   "datei": "e2_a.tex",
+   "lage": "pflicht",
+   "art": "pflicht"
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "b",
+   "id": "terme-e2-k6-s2-v1",
+   "datei": "e2_a.tex",
+   "lage": "pflicht",
+   "art": "pflicht"
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "c",
+   "id": "terme-e2-k6-s3-v1",
+   "datei": "e2_a.tex",
+   "lage": "pflicht",
+   "art": "pflicht"
+  },
+  {
+   "aufgabe": "A14",
+   "hauptnummer": 14,
+   "teilaufgabe": "d",
+   "id": "terme-e2-k6-s4-v1",
+   "datei": "e2_a.tex",
+   "lage": "pflicht",
+   "art": "pflicht"
+  },
+  {
+   "aufgabe": "A15",
+   "hauptnummer": 15,
+   "teilaufgabe": "",
+   "id": "terme-e3-k2-s8-v2",
+   "datei": "e3_a.tex",
+   "lage": "test",
+   "art": "test"
+  },
+  {
+   "aufgabe": "A16",
+   "hauptnummer": 16,
+   "teilaufgabe": "a",
+   "id": "terme-e3-k1-s0-v1",
+   "datei": "e3_a.tex",
+   "lage": "leiter",
+   "art": "erkennung"
+  },
+  {
+   "aufgabe": "A16",
+   "hauptnummer": 16,
+   "teilaufgabe": "b",
+   "id": "terme-e3-k1-s0-v2",
+   "datei": "e3_a.tex",
+   "lage": "leiter",
+   "art": "erkennung"
+  },
+  {
+   "aufgabe": "A16",
+   "hauptnummer": 16,
+   "teilaufgabe": "c",
+   "id": "terme-e3-k1-s0-v3",
+   "datei": "e3_a.tex",
+   "lage": "leiter",
+   "art": "erkennung"
+  },
+  {
+   "aufgabe": "A16",
+   "hauptnummer": 16,
+   "teilaufgabe": "d",
+   "id": "terme-e3-k1-s0-v4",
+   "datei": "e3_a.tex",
+   "lage": "leiter",
+   "art": "erkennung"
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "a",
+   "id": "terme-e3-k2-s1-v1",
+   "datei": "e3_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "b",
+   "id": "terme-e3-k2-s1-v2",
+   "datei": "e3_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "c",
+   "id": "terme-e3-k2-s1-v3",
+   "datei": "e3_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "d",
+   "id": "terme-e3-k2-s2-v1",
+   "datei": "e3_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "e",
+   "id": "terme-e3-k2-s3-v1",
+   "datei": "e3_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "f",
+   "id": "terme-e3-k2-s4-v1",
+   "datei": "e3_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "g",
+   "id": "terme-e3-k2-s5-v1",
+   "datei": "e3_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "h",
+   "id": "terme-e3-k2-s6-v1",
+   "datei": "e3_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A17",
+   "hauptnummer": 17,
+   "teilaufgabe": "i",
+   "id": "terme-e3-k2-s7-v1",
+   "datei": "e3_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A18",
+   "hauptnummer": 18,
+   "teilaufgabe": "",
+   "id": "terme-e3-k2-s8-v1",
+   "datei": "e3_a.tex",
+   "lage": "pruefung",
+   "art": "pruefung"
+  },
+  {
+   "aufgabe": "A19",
+   "hauptnummer": 19,
+   "teilaufgabe": "a",
+   "id": "terme-e3-k3-s1-v1",
+   "datei": "e3_a.tex",
+   "lage": "pflicht",
+   "art": "pflicht"
+  },
+  {
+   "aufgabe": "A19",
+   "hauptnummer": 19,
+   "teilaufgabe": "b",
+   "id": "terme-e3-k3-s2-v1",
+   "datei": "e3_a.tex",
+   "lage": "pflicht",
+   "art": "pflicht"
+  },
+  {
+   "aufgabe": "A19",
+   "hauptnummer": 19,
+   "teilaufgabe": "c",
+   "id": "terme-e3-k3-s3-v1",
+   "datei": "e3_a.tex",
+   "lage": "pflicht",
+   "art": "pflicht"
+  },
+  {
+   "aufgabe": "A19",
+   "hauptnummer": 19,
+   "teilaufgabe": "d",
+   "id": "terme-e3-k3-s4-v1",
+   "datei": "e3_a.tex",
+   "lage": "pflicht",
+   "art": "pflicht"
+  },
+  {
+   "aufgabe": "A20",
+   "hauptnummer": 20,
+   "teilaufgabe": "",
+   "id": "terme-e4-k2-s10-v2",
+   "datei": "e4_a.tex",
+   "lage": "test",
+   "art": "test"
+  },
+  {
+   "aufgabe": "A21",
+   "hauptnummer": 21,
+   "teilaufgabe": "a",
+   "id": "terme-e4-k1-s0-v1",
+   "datei": "e4_a.tex",
+   "lage": "leiter",
+   "art": "erkennung"
+  },
+  {
+   "aufgabe": "A21",
+   "hauptnummer": 21,
+   "teilaufgabe": "b",
+   "id": "terme-e4-k1-s0-v2",
+   "datei": "e4_a.tex",
+   "lage": "leiter",
+   "art": "erkennung"
+  },
+  {
+   "aufgabe": "A21",
+   "hauptnummer": 21,
+   "teilaufgabe": "c",
+   "id": "terme-e4-k1-s0-v3",
+   "datei": "e4_a.tex",
+   "lage": "leiter",
+   "art": "erkennung"
+  },
+  {
+   "aufgabe": "A21",
+   "hauptnummer": 21,
+   "teilaufgabe": "d",
+   "id": "terme-e4-k1-s0-v4",
+   "datei": "e4_a.tex",
+   "lage": "leiter",
+   "art": "erkennung"
+  },
+  {
+   "aufgabe": "A22",
+   "hauptnummer": 22,
+   "teilaufgabe": "a",
+   "id": "terme-e4-k2-s-1-v1",
+   "datei": "e4_a.tex",
+   "lage": "leiter",
+   "art": "vorstufe"
+  },
+  {
+   "aufgabe": "A22",
+   "hauptnummer": 22,
+   "teilaufgabe": "b",
+   "id": "terme-e4-k2-s-1-v2",
+   "datei": "e4_a.tex",
+   "lage": "leiter",
+   "art": "vorstufe"
+  },
+  {
+   "aufgabe": "A22",
+   "hauptnummer": 22,
+   "teilaufgabe": "c",
+   "id": "terme-e4-k2-s-1-v3",
+   "datei": "e4_a.tex",
+   "lage": "leiter",
+   "art": "vorstufe"
+  },
+  {
+   "aufgabe": "A22",
+   "hauptnummer": 22,
+   "teilaufgabe": "d",
+   "id": "terme-e4-k2-s-1-v4",
+   "datei": "e4_a.tex",
+   "lage": "leiter",
+   "art": "vorstufe"
+  },
+  {
+   "aufgabe": "A23",
+   "hauptnummer": 23,
+   "teilaufgabe": "a",
+   "id": "terme-e4-k2-s0-v1",
+   "datei": "e4_a.tex",
+   "lage": "leiter",
+   "art": "vorstufe"
+  },
+  {
+   "aufgabe": "A23",
+   "hauptnummer": 23,
+   "teilaufgabe": "b",
+   "id": "terme-e4-k2-s0-v2",
+   "datei": "e4_a.tex",
+   "lage": "leiter",
+   "art": "vorstufe"
+  },
+  {
+   "aufgabe": "A23",
+   "hauptnummer": 23,
+   "teilaufgabe": "c",
+   "id": "terme-e4-k2-s0-v3",
+   "datei": "e4_a.tex",
+   "lage": "leiter",
+   "art": "vorstufe"
+  },
+  {
+   "aufgabe": "A23",
+   "hauptnummer": 23,
+   "teilaufgabe": "d",
+   "id": "terme-e4-k2-s0-v4",
+   "datei": "e4_a.tex",
+   "lage": "leiter",
+   "art": "vorstufe"
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "a",
+   "id": "terme-e4-k2-s1-v1",
+   "datei": "e4_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "b",
+   "id": "terme-e4-k2-s1-v2",
+   "datei": "e4_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "c",
+   "id": "terme-e4-k2-s1-v3",
+   "datei": "e4_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "d",
+   "id": "terme-e4-k2-s1-v4",
+   "datei": "e4_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "e",
+   "id": "terme-e4-k2-s2-v1",
+   "datei": "e4_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "f",
+   "id": "terme-e4-k2-s3-v1",
+   "datei": "e4_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "g",
+   "id": "terme-e4-k2-s4-v1",
+   "datei": "e4_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "h",
+   "id": "terme-e4-k2-s5-v1",
+   "datei": "e4_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "i",
+   "id": "terme-e4-k2-s6-v1",
+   "datei": "e4_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A24",
+   "hauptnummer": 24,
+   "teilaufgabe": "j",
+   "id": "terme-e4-k2-s9-v1",
+   "datei": "e4_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A25",
+   "hauptnummer": 25,
+   "teilaufgabe": "",
+   "id": "terme-e4-k2-s10-v1",
+   "datei": "e4_a.tex",
+   "lage": "pruefung",
+   "art": "pruefung"
+  },
+  {
+   "aufgabe": "A26",
+   "hauptnummer": 26,
+   "teilaufgabe": "a",
+   "id": "terme-e4-k3-s1-v1",
+   "datei": "e4_a.tex",
+   "lage": "pflicht",
+   "art": "pflicht"
+  },
+  {
+   "aufgabe": "A26",
+   "hauptnummer": 26,
+   "teilaufgabe": "b",
+   "id": "terme-e4-k3-s2-v1",
+   "datei": "e4_a.tex",
+   "lage": "pflicht",
+   "art": "pflicht"
+  },
+  {
+   "aufgabe": "A26",
+   "hauptnummer": 26,
+   "teilaufgabe": "c",
+   "id": "terme-e4-k3-s3-v1",
+   "datei": "e4_a.tex",
+   "lage": "pflicht",
+   "art": "pflicht"
+  },
+  {
+   "aufgabe": "A26",
+   "hauptnummer": 26,
+   "teilaufgabe": "d",
+   "id": "terme-e4-k3-s4-v1",
+   "datei": "e4_a.tex",
+   "lage": "pflicht",
+   "art": "pflicht"
+  },
+  {
+   "aufgabe": "A27",
+   "hauptnummer": 27,
+   "teilaufgabe": "",
+   "id": "terme-e1-k1-s7-v2",
+   "datei": "e1_a.tex",
+   "lage": "test",
+   "art": "test"
+  },
+  {
+   "aufgabe": "A28",
+   "hauptnummer": 28,
+   "teilaufgabe": "a",
+   "id": "terme-e1-k2-s1-v1",
+   "datei": "e1_a.tex",
+   "lage": "leiter",
+   "art": "ohne"
+  },
+  {
+   "aufgabe": "A28",
+   "hauptnummer": 28,
+   "teilaufgabe": "b",
+   "id": "terme-e1-k2-s1-v2",
+   "datei": "e1_a.tex",
+   "lage": "leiter",
+   "art": "ohne"
+  },
+  {
+   "aufgabe": "A28",
+   "hauptnummer": 28,
+   "teilaufgabe": "c",
+   "id": "terme-e1-k2-s1-v3",
+   "datei": "e1_a.tex",
+   "lage": "leiter",
+   "art": "ohne"
+  },
+  {
+   "aufgabe": "A29",
+   "hauptnummer": 29,
+   "teilaufgabe": "a",
+   "id": "terme-e1-k1-s1-v1",
+   "datei": "e1_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A29",
+   "hauptnummer": 29,
+   "teilaufgabe": "b",
+   "id": "terme-e1-k1-s1-v2",
+   "datei": "e1_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A29",
+   "hauptnummer": 29,
+   "teilaufgabe": "c",
+   "id": "terme-e1-k1-s1-v3",
+   "datei": "e1_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A29",
+   "hauptnummer": 29,
+   "teilaufgabe": "d",
+   "id": "terme-e1-k1-s2-v1",
+   "datei": "e1_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A29",
+   "hauptnummer": 29,
+   "teilaufgabe": "e",
+   "id": "terme-e1-k1-s3-v1",
+   "datei": "e1_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A29",
+   "hauptnummer": 29,
+   "teilaufgabe": "f",
+   "id": "terme-e1-k1-s5-v1",
+   "datei": "e1_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A29",
+   "hauptnummer": 29,
+   "teilaufgabe": "g",
+   "id": "terme-e1-k1-s6-v1",
+   "datei": "e1_a.tex",
+   "lage": "leiter",
+   "art": "leiter"
+  },
+  {
+   "aufgabe": "A30",
+   "hauptnummer": 30,
+   "teilaufgabe": "a",
+   "id": "terme-e1-k1-s7-v1",
+   "datei": "e1_a.tex",
+   "lage": "pruefung",
+   "art": "pruefung"
+  },
+  {
+   "aufgabe": "A30",
+   "hauptnummer": 30,
+   "teilaufgabe": "b",
+   "id": "terme-e1-k1-s7-v3",
+   "datei": "e1_a.tex",
+   "lage": "pruefung",
+   "art": "pruefung"
+  },
+  {
+   "aufgabe": "A31",
+   "hauptnummer": 31,
+   "teilaufgabe": "a",
+   "id": "terme-e1-k3-s1-v1",
+   "datei": "e1_a.tex",
+   "lage": "leiter",
+   "art": "ohne"
+  },
+  {
+   "aufgabe": "A31",
+   "hauptnummer": 31,
+   "teilaufgabe": "b",
+   "id": "terme-e1-k3-s1-v2",
+   "datei": "e1_a.tex",
+   "lage": "leiter",
+   "art": "ohne"
+  },
+  {
+   "aufgabe": "A31",
+   "hauptnummer": 31,
+   "teilaufgabe": "c",
+   "id": "terme-e1-k3-s1-v3",
+   "datei": "e1_a.tex",
+   "lage": "leiter",
+   "art": "ohne"
+  },
+  {
+   "aufgabe": "A32",
+   "hauptnummer": 32,
+   "teilaufgabe": "a",
+   "id": "terme-e1-k4-s1-v1",
+   "datei": "e1_a.tex",
+   "lage": "pflicht",
+   "art": "pflicht"
+  },
+  {
+   "aufgabe": "A32",
+   "hauptnummer": 32,
+   "teilaufgabe": "b",
+   "id": "terme-e1-k4-s2-v1",
+   "datei": "e1_a.tex",
+   "lage": "pflicht",
+   "art": "pflicht"
+  },
+  {
+   "aufgabe": "A32",
+   "hauptnummer": 32,
+   "teilaufgabe": "c",
+   "id": "terme-e1-k4-s3-v1",
+   "datei": "e1_a.tex",
+   "lage": "pflicht",
+   "art": "pflicht"
+  },
+  {
+   "aufgabe": "A32",
+   "hauptnummer": 32,
+   "teilaufgabe": "d",
+   "id": "terme-e1-k4-s4-v1",
+   "datei": "e1_a.tex",
+   "lage": "pflicht",
+   "art": "pflicht"
+  }
+ ],
+ "pruefungen_v10": {
+  "einheiten_folge": [
+   2,
+   3,
+   4,
+   1
+  ],
+  "ich_kann_im_pdf": 0,
+  "weiter_im_pdf": [
+   ") a) Von −7 geht es um 5 weiter nach unten, ni"
+  ],
+  "einheit_n_von_im_pdf": 0,
+  "hier_lernst_du_im_pdf": 0,
+  "kannst_du_im_pdf": 4,
+  "test": {
+   "2": {
+    "titel": "Kannst du das schon? Dann weiter zu „Klammern auflösen“",
+    "beginnt_mit_test": true,
+    "teilaufgaben": [
+     "Zusammenfassen",
+     "Malnehmen"
+    ]
+   },
+   "3": {
+    "titel": "Kannst du das schon? Dann weiter zu „Ausklammern“",
+    "beginnt_mit_test": true,
+    "teilaufgaben": [
+     "Klammern"
+    ]
+   },
+   "4": {
+    "titel": "Kannst du das schon? Dann weiter zu „Terme aufstellen und berechnen“",
+    "beginnt_mit_test": true,
+    "teilaufgaben": [
+     "Ausklammern"
+    ]
+   },
+   "1": {
+    "titel": "Kannst du das schon? Dann bist du fertig",
+    "beginnt_mit_test": true,
+    "teilaufgaben": [
+     "Term aufstellen"
+    ]
+   }
+  },
+  "pflicht_je_einheit": {
+   "2": 4,
+   "3": 4,
+   "4": 4,
+   "1": 4
+  },
+  "sachkontext_je_kette": {
+   "e4 Ausklammern": [
+    "terme-e4-k2-s9-v1"
+   ],
+   "e1 Term aufstellen": [
+    "terme-e1-k1-s6-v1"
+   ]
+  },
+  "ketten_folge_je_einheit": {
+   "2": [
+    "Gleichartige Glieder erkennen",
+    "Vorzahl lesen",
+    "Vorzeichen als Teil des Gliedes",
+    "Zusammenfassen",
+    "Malnehmen"
+   ],
+   "3": [
+    "Zeichen vor der Klammer feststellen",
+    "Klammern"
+   ],
+   "4": [
+    "Was steckt in jedem Glied?",
+    "Ausklammern"
+   ],
+   "1": [
+    "Termwert berechnen",
+    "Term aufstellen",
+    "Situation zu Term angeben"
+   ]
+  }
+ },
+ "messwerte": {
+  "TER-L5-gesamt": {
+   "seiten": 14,
+   "fehler": [],
+   "fehlende_zeichen": 0,
+   "overfull": 0,
+   "text_zeichen": 15809,
+   "todo_im_pdf": 0,
+   "bankwort_im_pdf": []
+  },
+  "TER-L5": {
+   "seiten": 11,
+   "fehler": [],
+   "fehlende_zeichen": 0,
+   "overfull": 0,
+   "text_zeichen": 9500,
+   "todo_im_pdf": 0,
+   "bankwort_im_pdf": []
+  },
+  "TER-L5-blatt0": {
+   "seiten": 1,
+   "fehler": [],
+   "fehlende_zeichen": 0,
+   "overfull": 0,
+   "text_zeichen": 762,
+   "todo_im_pdf": 0,
+   "bankwort_im_pdf": []
+  },
+  "TER-L5-loesungen": {
+   "seiten": 2,
+   "fehler": [],
+   "fehlende_zeichen": 0,
+   "overfull": 0,
+   "text_zeichen": 5529,
+   "todo_im_pdf": 0,
+   "bankwort_im_pdf": []
+  },
+  "TER-L5-e1": {
+   "seiten": 3,
+   "fehler": [],
+   "fehlende_zeichen": 0,
+   "overfull": 0,
+   "text_zeichen": 2930,
+   "todo_im_pdf": 0,
+   "bankwort_im_pdf": []
+  },
+  "TER-L5-e2": {
+   "seiten": 3,
+   "fehler": [],
+   "fehlende_zeichen": 0,
+   "overfull": 0,
+   "text_zeichen": 2296,
+   "todo_im_pdf": 0,
+   "bankwort_im_pdf": []
+  },
+  "TER-L5-e3": {
+   "seiten": 2,
+   "fehler": [],
+   "fehlende_zeichen": 0,
+   "overfull": 0,
+   "text_zeichen": 1709,
+   "todo_im_pdf": 0,
+   "bankwort_im_pdf": []
+  },
+  "TER-L5-e4": {
+   "seiten": 3,
+   "fehler": [],
+   "fehlende_zeichen": 0,
+   "overfull": 0,
+   "text_zeichen": 2554,
+   "todo_im_pdf": 0,
+   "bankwort_im_pdf": []
+  }
+ },
+ "seiten": 14,
+ "seiten_loesungen": 2,
+ "seiten_je_einheit": {
+  "e1": 3,
+  "e2": 3,
+  "e3": 2,
+  "e4": 3
+ },
+ "fehlende_zeichen": 0,
+ "overfull": 0,
+ "kompilierfehler": 0,
+ "bankwort": [],
+ "hauptnummern_je_einheit": {
+  "blatt0": 5,
+  "e2": 9,
+  "e3": 5,
+  "e4": 7,
+  "e1": 6
+ },
+ "teilaufgaben_je_einheit": {
+  "blatt0": 18,
+  "e2": 42,
+  "e3": 19,
+  "e4": 28,
+  "e1": 20
+ }
+}

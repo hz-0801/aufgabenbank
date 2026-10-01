@@ -62,3 +62,4 @@ PRZ-K1;2026-09-28;prozentrechnung;K;kompetenz=Prozentsatz, einheiten=2, niveau=f
 TRI-K1;2026-09-28;trigonometrie;K;kompetenz=Sinussatz, einheiten=4, niveau=for, dicht=ja, ohne=–, aus=–;d7ccb59;v0.7;Version 2026-09-28a;bau/kompetenz/TRI-K1
 TER-L3;2026-09-30;terme;L;einheiten=alle, zone=ja, fokus=–, schwach=nein, klasse=–, kasten=nein, nummer=3, aus=bau/terme/TER-L3;546d722+geändert;v0.9;Version 2026-09-28a;bau/terme/TER-L3
 TER-L4;2026-09-30;terme;L;einheiten=alle, zone=ja, fokus=–, schwach=nein, klasse=–, kasten=nein, nummer=–, aus=–;fb02d3e;v0.9;Version 2026-09-28a;bau/terme/TER-L4
+TER-L5;2026-10-01;terme;L;einheiten=alle, zone=ja, fokus=–, schwach=nein, klasse=–, kasten=nein, nummer=–, aus=–, mit_sachaufgaben=nein;54aaeb3;v1.0;Version 2026-09-28a;bau/terme/TER-L5
