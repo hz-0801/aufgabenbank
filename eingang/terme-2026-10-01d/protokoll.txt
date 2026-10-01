@@ -1,0 +1,85 @@
+Blatt terme 2026-10-01d (schwach, v5.3) – Protokoll
+
+Eintrag: terme (katalog/terme.md; Mappe mappen/terme.md, Katalog-Commit 9e85c1e, sechs Einheiten)
+Eingabe: „terme schwach“ → Zusatz „schwach“ nach Prompt v5.3: dieselbe Auswahl wie der Regelfall
+  (keine Sprosse weg, keine leichter, GYM- und P10-Marken bleiben), dazu Vorstufen; je
+  Verfahrenskette vorn ein Musterbeispiel aus bank/terme/muster.md und eine angefangene Lösung;
+  Päckchen (vier Teilaufgaben, eine Sache ändert sich) mit „Was bleibt gleich, was ändert sich?“;
+  neben jeder Aufgabe bis zur Prüfungshöhe eine leere Darstellung (Kästchen/Punkte für Terme,
+  Zeichentabelle für Plus-/Minusklammer, Malkreuz für Zahl mal Klammer und Ausklammern,
+  Einsetztabelle für Termwerte, leerer Termbaum für Terme aufstellen); Raster mit einer
+  Schreibzeile je Schritt (\swz/\schreibzeilen der Vorlage, 9 mm); Merkkasten am Ende jeder
+  Einheit; „Erkläre, wie du gerechnet hast“ nach jeder zweiten Nummer; Schülerworte vor dem
+  Fachwort („Was gehört zusammen?“, „Die Zahl vor der Variablen heißt Vorzahl“); Blatt 0 ja,
+  ohne Lösungsweg. Viertes Blatt zu terme am selben Tag → Ordner mit Anhang „d“
+  (terme-2026-10-01 Regelfall, terme-2026-10-01b und terme-2026-10-01c „schwach“ nach v5.1 mit anderer Lesart; c kam während dieses Baus aus einer anderen Sitzung ins Repo).
+Prompt: Unterrichtsblatt aus der Bank v5.3 (01.10.2026); Vorbild bau/terme/muster-2026-10-01/muster4.tex
+Modell: Claude Fable 5.1 (claude-fable-5-1)
+Vorlage: mathblatt.sty 2026-09-28a (Kopie aus dem Muster-Ordner, identisch mit hz-0801/blattbau);
+  Satzmakros aus dem Muster übernommen (nr, kette/rk, rfr, rt/rto/rtx/rs, merk/mz, Lösungsliste),
+  dazu für „schwach“: \sz (= \swz mit Lösungseintrag und Marke), \szx (Raster volle Breite, über
+  der Prüfungshöhe), \szt (angefangene Lösung als Block), muster-Tabelle (Schrittname links,
+  Gleichheitszeichen untereinander, Ergebnis fett abgesetzt), Darstellungen \bildplatz,
+  \malkreuz, \zeichentabelle, \einsetztabelle, \termbaumleer; \swfrage der Vorlage als
+  unteilbarer Block; \mitErklaerung hält die Erklärzeile mit der letzten Teilaufgabe zusammen;
+  Nummern umbrechbar (Dichte), die Musterbeispiel-Nummern nicht.
+
+Aufbau: Blatt 0 (Nr. 1–4 zweispaltig, Nr. 5 Grundvorstellung Vorzahl mit Kästchenbild) ·
+  Einheiten in der Blattfolge der Mappe:
+  1 Terme zusammenfassen (Nr. 6–8 Vorstufen, 9 Musterbeispiel, 10 Päckchen, 11–13, 14 Abschluss)
+  · 2 Terme malnehmen (15 Musterbeispiel, 16 Päckchen, 17–18, 19 Abschluss)
+  · 3 Klammern auflösen (20 Vorstufe, 21 Musterbeispiel, 22 Päckchen, 23–24 Minusklammer,
+    25 Musterbeispiel, 26 Päckchen, 27–28 Zahl mal Klammer, 29 Musterbeispiel, 30–31 Auflösen
+    und zusammenfassen, 32 Abschluss)
+  · 4 Ausklammern (33–35 Vorstufen, 36 Musterbeispiel, 37 Päckchen, 38–40, 41 Abschluss)
+  · 5 Termwerte berechnen (42 Musterbeispiel, 43 Päckchen, 44–45 mit P10 ’25)
+  · 6 Terme aufstellen (46 Musterbeispiel, 47 Päckchen, 48–49 mit P10 ’17 und P10 ’23, 50 Abschluss)
+  · Zum Schluss (Nr. 51, Seite 22, ungeteilt) · Lösungen (Seite 23, dreispaltig)
+Seiten: 23
+
+Teilaufgaben: 169 (ohne die fünf Päckchenfragen 164)
+  aus der Bank: 149 (davon 4 nur in der Form geändert, „GEÄNDERT“: 5c Bild statt Beschreibung,
+    32b und 41b Felder neben der Figur, 48b Feld neben der Figur; in „Zum Schluss“ sechs
+    Bankzeilen, die vorn auf dem Blatt nicht vorkamen: 51c, d, e, f, h, i)
+  neu erfunden: 20 (neu.jsonl führt 19 davon als Bankzeilen; die Päckchenfrage 26e und die
+    Blatt-0-Wiederholungen zählen wie beschrieben)
+Marken: P10 ’25 2 (45c aus Bank, 51j neu), P10 ’17 1 (49b), P10 ’23 1 (49c);
+  GYM 6 (18c, 24c, 28c, 31d, 40b, 45b) und 51i
+
+Prüfungen:
+  pruef.py (sympy, Kopie aus dem Muster-Ordner, Namensliste erweitert): 153 Proben, 0 Fehler
+    (18 \rk-Zeilen von Blatt 0 und Zum Schluss, 135 „% pruef:“-Zeilen zu allen übrigen
+    Rechen- und Sachaufgaben)
+  neu.jsonl: 18 pruef-Felder mit sympy nachgerechnet, 0 Fehler
+  xelatex zweimal: 0 Fehler, 0 „Missing character“, 0 Overfull in der .log
+  Seiten als PNG angesehen: keine Seite mit nur einer Nummer, Erklärzeilen und Päckchenfragen
+  nicht abgetrennt, „Zum Schluss“ ungeteilt auf Seite 22, Lösungen auf Seite 23
+
+Abweichungen/Hinweise:
+  - Dichte: zwei bis vier Nummern je Seite; die Nummern sind umbrechbar, sonst blieben halbe
+    Seiten leer (bei 4 Teilaufgaben mit Raster und Darstellung sind es rund 13 cm je Nummer).
+    Dadurch läuft etwa jede dritte Nummer über einen Seitenumbruch (zwischen Teilaufgaben).
+  - Blatt 0 steht mit Nr. 5 auf Seite 1 (fünf kleine Nummern, Mappe: Grundvorstellung ist eine
+    Aufgabe des Blatts 0); Einheit 1 beginnt auf derselben Seite wie im Muster 4.
+  - „Zum Schluss“ hat zehn Teilaufgaben (sechs Einheiten, zwei markierte höhere, zwei aus
+    Blatt 0 nach Regel 8 „schwach“) und füllt eine Seite, nicht eine halbe; die Blatt-0-Zeilen
+    mit Antwortspalte, die anderen mit Raster, ohne Darstellung.
+  - Die Päckchen zu Zahl mal Klammer (Nr. 26) sind erfunden, weil die fünf Grundfälle der Bank
+    (e3 k3 s1) kein Päckchen sind (stand.md, offene Punkte); nach der Dublettenregel bleiben
+    sie trotzdem draußen (Nr. 26a–d, siehe unten).
+  - Abschluss in den Einheiten 1, 2, 3, 4, 6 wie in Muster 4 und Regelfall-Blatt; Einheit 2
+    hat dazu eine Begründeaufgabe (19c, Bankzeile e2 k2 s1 v2 als „Stimmt das? Begründe“).
+  - Schreibzeilen 9 mm (Vorlage \swz) statt \rechenplatz (12 mm), damit vier Teilaufgaben je
+    Nummer auf die Seite passen; linke Spalte 0,54 statt 0,34 der Breite (mehr Schreibplatz).
+
+Übernahme 2026-10-01: 2 Zeilen in die Bank (Nr. → id): 5d → terme-zone-f5-v4 (Zone f5
+  Sprosse 3, form zeichnen, grafik \rechenplatz{2}), 19a → terme-e2-k1-s10-v4.
+  Feld herkunft „Blatt terme 2026-10-01d, Nr. <n>“.
+  bank-pruef.py terme --katalog: erster Lauf 2 Abweichungen an den neuen Zeilen (grafik leer bei
+  form zeichnen; merkmal uneinheitlich in e2 k1 s10), beide Zeilen korrigiert; zweiter Lauf
+  0 Abweichungen, 19 Warnungen mit bank-pruef.py v0.13b (neu: e2 k1 s10 vier Zeilen, Menge 3).
+17 nicht übernommen (Dublette: bis auf Zahlen und Variablennamen gleich mit einer Bankzeile
+  derselben Sprosse; die angefangenen Lösungen tragen denselben Aufgabentext wie der Grundfall):
+  9a ≙ e1 k4 s1 · 15a ≙ e2 k1 s1 · 15b ≙ e2 k1 s3 · 21a ≙ e3 k2 s3 · 25a ≙ e3 k3 s1 ·
+  26a–d ≙ e3 k3 s1 (Päckchen, siehe oben) · 29a ≙ e3 k4 s1 · 36a ≙ e4 k2 s1 · 42a ≙ e5 k1 s1 ·
+  46a ≙ e6 k1 s2 · 51a ≙ zone f1 v5 · 51b ≙ zone f4 v5 · 51g ≙ e2 k1 s11 v3 · 51j ≙ e1 k4 s15 v1.

@@ -163,3 +163,16 @@ Prüfskript: 0 Abweichungen im ersten Lauf; Warnungen 25, davon neu
 Mengen über Soll (e5 k1 s4, s6; e6 k1 s1 sechs Grundfälle) und je
 Datei „Feld herkunft fehlt“ (v0.13, Hinweis für Bestandszeilen).
 Keine ids des Bestands geändert, punkte-nachziehen.py nicht nötig.
+
+## Blatt 2026-10-01d
+
+2 Zeilen übernommen (Nr. → id): 5d → zone f5 v4 (Sprosse 3, form
+zeichnen, grafik \rechenplatz{2}); 19a → e2 k1 s10 v4. Feld herkunft
+gesetzt. 17 nicht (Dubletten bis auf Zahlen und Variablennamen mit
+einer Zeile derselben Sprosse; darunter die angefangenen Lösungen
+der Musterbeispiel-Nummern und das Päckchen zu e3 k3 s1, Nr. 26a–d
+– der offene Punkt „Päckchen fehlt“ bleibt damit offen; je Zeile im
+Protokoll des Ordners eingang/terme-2026-10-01d).
+Prüfskript: erster Lauf 2 Abweichungen an den neuen Zeilen, beide
+korrigiert (grafik, merkmal); dann 0 Abweichungen, 19 Warnungen (bank-pruef.py v0.13b)
+(neu: e2 k1 s10 vier Zeilen über Soll).

@@ -1,0 +1,1034 @@
+% Lernblatt Terme – Zusatz „schwach“ (Prompt v5.3) – gebaut aus der
+% Aufgabenbank (bank/terme), Vorbild Muster 4
+% (bau/terme/muster-2026-10-01/muster4.tex) für Aufbau und Satz.
+% Blattfolge der Mappe (2026-10-01, sechs Einheiten): 1 Zusammenfassen,
+% 2 Malnehmen, 3 Klammern auflösen, 4 Ausklammern, 5 Termwerte,
+% 6 Terme aufstellen; Blatt 0 davor, „Zum Schluss“ und Lösungen dahinter.
+% „schwach“ (v5.3): dieselbe Auswahl wie der Regelfall, dazu Vorstufen;
+% je Verfahrenskette vorn ein Musterbeispiel (bank/terme/muster.md) und
+% eine angefangene Lösung, dann das Päckchen mit „Was bleibt gleich?“;
+% neben jeder Aufgabe bis zur Prüfungshöhe eine leere Darstellung
+% (Kästchen/Punkte, Malkreuz, Zeichentabelle, Einsetztabelle, Termbaum);
+% Raster mit einer Schreibzeile je Schritt; Merkkasten am Ende der
+% Einheit; „Erkläre, wie du gerechnet hast“ nach jeder zweiten Nummer.
+% Quelle je Teilaufgabe im Kommentar davor: % <id> = aus der Bank,
+% % GEÄNDERT <id> = Form geändert, % NEU = nicht in der Bank.
+% % pruef: … = Rechenprobe (pruef.py).
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\usepackage{multicol}
+\usepackage{lastpage}
+% Kopf: nur das Thema; Fuß: „Seite n von m“
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\fancyhead[L]{\small Terme}
+\fancyfoot[C]{\small Seite \thepage\ von \pageref{LastPage}}
+\raggedright
+\makeatletter
+% ---------------------------------------------------------------- Satz (aus Muster 4)
+\newcommand{\vorgerechnet}[1]{\textcolor{gray!70}{#1}}
+\newcommand{\einheit}[2]{\par\Needspace*{0.3\textheight}\addvspace{16pt}%
+  \noindent{\Large\bfseries\ifblank{#1}{}{#1\hspace{0.6em}}#2}\par\nobreak\vspace{2pt}%
+  \gappto\mblsg{\lsgeinheit{\ifblank{#1}{}{#1\ }#2}}}
+\newcommand{\nrtitel}[1]{\noindent\hangindent1.6em\hangafter1%
+  \makebox[1.6em][l]{\textbf{\theaufgabe.}}#1\par\nobreak\vspace{1pt}\nobreak}
+\newsavebox{\nrbox}\newlength{\nrhoehe}
+\newenvironment{nr}[2][]{\refstepcounter{aufgabe}\setcounter{teil}{0}\mbinaufgabetrue%
+  \def\nrart{#1}%
+  \ifx\nrart\@empty
+    \begin{lrbox}{\nrbox}\begin{minipage}[t]{\linewidth}\raggedright
+    \setlength{\parskip}{0pt}\nrtitel{#2}%
+  \else
+    \par\addvspace{10pt}\Needspace*{10\baselineskip}\nrtitel{#2}%
+  \fi}%
+ {\ifx\nrart\@empty
+    \end{minipage}\end{lrbox}%
+    \setlength{\nrhoehe}{\dimexpr\ht\nrbox+\dp\nrbox\relax}%
+    \par\addvspace{10pt}\Needspace*{\nrhoehe}\noindent\usebox{\nrbox}\par
+  \else\par\fi}
+\newcommand{\teilmarke}{\stepcounter{teil}\makebox[1.6em][r]{\alph{teil})\hspace{0.35em}}}
+\newcommand{\marke}[1]{\ifblank{#1}{}{\hfill\mbox{\footnotesize #1}}}
+\newlength{\feldbreite}\setlength{\feldbreite}{4.5cm}
+\newcommand{\antwort}{\underline{\hspace{\feldbreite}}}
+\newcommand{\fld}[1][1.2cm]{\underline{\hspace{#1}}}
+\newcommand{\zeilenluft}{\par\nobreak\vskip 12pt plus 1pt\relax}
+\newcommand{\zeilenluftb}{\par\vskip 12pt plus 1pt\relax}
+\newlength{\kw}\newlength{\kwmax}
+\newcounter{kzahl}\newcounter{kzeile}
+\newcommand{\kliste}{}
+\newcommand{\kmerke}[2]{\settowidth{\kw}{#1}%
+  \ifdim\kw>\kwmax\global\kwmax=\kw\fi\stepcounter{kzahl}\gappto\kliste{#2}}
+\newcommand{\kstart}[1]{\global\kwmax=0pt\setcounter{kzahl}{0}\setcounter{kzeile}{0}%
+  \gdef\kliste{}\setlength{\feldbreite}{#1}}
+\newcommand{\kende}{\par\nobreak\vspace{3pt}\nobreak\kliste\par}
+\newcommand{\kettezeile}[1]{\stepcounter{kzeile}%
+  \ifnum\value{kzeile}>1
+    \ifnum\value{kzeile}<4 \zeilenluft
+    \else\ifnum\numexpr\value{kzahl}-\value{kzeile}\relax<2 \zeilenluft
+    \else\zeilenluftb\fi\fi
+  \fi
+  \noindent#1\par}
+\newenvironment{kette}[1][4.5cm]{\kstart{#1}}{\kende}
+\newcommand{\termspalte}[1]{\makebox[\kwmax][l]{$#1 =$}\hspace{0.6em}}
+\NewDocumentCommand{\rk}{O{} m m}{\kmerke{$#2 =$}{\kettezeile{\teilmarke\lsgm{#3}%
+  \termspalte{#2}\antwort\marke{#1}}}}
+% Frage in fester Spalte, dann Antwortfeld (Vorstufen): \rfr{Text}{Lösung}
+\NewDocumentCommand{\rfr}{O{} m m}{\kmerke{#2}{\kettezeile{\teilmarke\lsgt{#3}%
+  \makebox[\kwmax][l]{#2}\hspace{0.6em}\antwort\marke{#1}}}}
+% Unterstreichen
+\newenvironment{liste}{\kstart{0pt}}{\kende}
+\newcommand{\ru}[2]{\kmerke{}{\kettezeile{\teilmarke\lsgt{#2}#1}}}
+% Textzeile, Feld direkt hinter dem Text
+\NewDocumentCommand{\rt}{O{} m m}{\par\vspace{7pt}\noindent\hangindent1.6em\hangafter1
+  \teilmarke\lsgt{#3}#2\nobreak\hspace{0.6em}\underline{\hspace{4cm}}\marke{#1}\par}
+% Textzeile ohne Antwortfeld (Felder im Text)
+\NewDocumentCommand{\rto}{O{} m m}{\par\vspace{7pt}\noindent\hangindent1.6em\hangafter1
+  \teilmarke\lsgt{#3}#2\marke{#1}\par}
+\newlength{\kennbreite}\setlength{\kennbreite}{1.6cm}
+\NewDocumentCommand{\rtx}{O{} m m}{\par\vspace{7pt}\noindent
+  \ifblank{#1}{\parbox[t]{\linewidth}{\raggedright\hangindent1.6em\hangafter1
+   \teilmarke\lsgt{#3}#2}}%
+  {\parbox[t]{\dimexpr\linewidth-\kennbreite\relax}{\raggedright\hangindent1.6em\hangafter1
+   \teilmarke\lsgt{#3}#2}\parbox[t]{\kennbreite}{\raggedleft\footnotesize #1}}\par}
+% Textaufgabe mit Rechenraum (Sach-, Prüfungs-, Begründeaufgaben)
+\NewDocumentCommand{\rs}{O{} m m}{\par\vspace{9pt}\noindent
+  \teilmarke\lsgt{#3}%
+  \ifblank{#1}{\parbox[t]{\dimexpr\linewidth-1.6em\relax}{\raggedright #2}}%
+   {\parbox[t]{\dimexpr\linewidth-1.6em-\kennbreite\relax}{\raggedright #2}%
+    \parbox[t]{\kennbreite}{\raggedleft\footnotesize #1}}\par\raum}
+\newcommand{\raum}{\par\nobreak\vspace{7mm}\noindent\hspace*{1.6em}%
+  \rule{0.5\textwidth}{0.4pt}\par\nobreak\vspace{7mm}\noindent\hspace*{1.6em}%
+  \rule{0.5\textwidth}{0.4pt}\par}
+\newcommand{\kreuzzeile}[1]{\par\vspace{6pt}\noindent\hspace*{1.6em}#1\par}
+\renewcommand{\kreuz}[1]{$\square$\,#1\hspace{2.2em}}
+\newcommand{\figurfelder}[2]{\par\vspace{6pt}\noindent\hspace*{1.6em}%
+  $\vcenter{\hbox{#1}}$\hspace{1.5em}\begin{tabular}[c]{@{}l@{\hspace{0.5em}}l@{}}#2\end{tabular}\par}
+% Merkkasten (am Ende der Einheit): je Zeile ein Fall, zuletzt „Wichtig:“
+\newcommand{\merk}[1]{\par\addvspace{8pt}\noindent
+  \fcolorbox{black!60}{white}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+  \raggedright\setlength{\parskip}{1.5pt}#1}}\par\vspace{2pt}}
+\newcommand{\mz}[2]{\textbf{#1} #2\par}
+% ---------------------------------------------------------------- Satz „schwach“
+% Schreibzeilen 9 mm (Vorlage), links mehr Platz als in der Vorlage
+\setlength{\mbschreibhoehe}{9mm}
+\renewcommand{\mbswlinks}{0.54}\renewcommand{\mbswrechts}{0.42}
+\renewcommand{\mbswpaar}[2]{\par\noindent
+  \begin{minipage}[t]{\mbswlinks\linewidth}\vspace{0pt}\raggedright #1\end{minipage}\hfill
+  \begin{minipage}[t]{\mbswrechts\linewidth}\vspace{2pt}#2\end{minipage}\par\addvspace{1.5mm}}
+% Rechenteilaufgabe mit Raster links, Darstellung rechts:
+%   \sz[Zeilen][Marke]{Text}{Lösung}{Darstellung}
+\NewDocumentCommand{\sz}{O{2} O{} m m m}{\swz[#1]{\lsgt{#4}#3\marke{#2}}{#5}}
+% Rechenteilaufgabe ohne Darstellung (über der Prüfungshöhe), Raster über die volle Breite:
+%   \szx[Zeilen][Marke]{Text}{Lösung}
+\NewDocumentCommand{\szx}{O{2} O{} m m}{\par\noindent\stepcounter{teil}\mbtzkopf{\alph{teil})}%
+  \lsgt{#4}#3\marke{#2}\schreibzeilen{#1}\par\addvspace{3mm}}
+% Teilaufgabe mit eigenem Block darunter (angefangene Lösung, Tabelle):
+%   \szt[Marke]{Text}{Lösung}{Block}
+\NewDocumentCommand{\szt}{O{} m m m}{\par\noindent\begin{minipage}{\linewidth}\stepcounter{teil}\mbtzkopf{\alph{teil})}%
+  \lsgt{#3}#2\marke{#1}\par\vspace{3pt}\noindent\hspace*{1.6em}#4\end{minipage}\par\addvspace{3mm}}
+% Päckchenfrage unteilbar (Vorlage: \swfrage bricht zwischen den Schreibzeilen)
+\renewcommand{\swfrage}[1]{\par\noindent\begin{minipage}{\linewidth}%
+  \stepcounter{teil}\mbtzkopf{\alph{teil})}#1\schreibzeilen{2}\end{minipage}\par\addvspace{3mm}}
+% Erklärzeile nach jeder zweiten Nummer; mit der letzten Teilaufgabe zusammengehalten
+\newcommand{\mitErklaerung}[1]{\par\noindent\begin{minipage}{\linewidth}#1\erklaere\end{minipage}\par\addvspace{2mm}}
+\newcommand{\erklaere}{\par\nobreak\vspace{5pt}\noindent\hspace*{1.6em}%
+  \begin{minipage}{\dimexpr\linewidth-1.6em\relax}\itshape Erkläre, wie du gerechnet hast:\upshape
+  \setlength{\mbschreibhoehe}{8mm}\schreibzeilen{1}\end{minipage}\par\addvspace{2mm}}
+% Musterbeispiel: Schrittname links, Gleichheitszeichen untereinander, Ergebnis abgesetzt
+%   \begin{muster} \ms{Schritt}{links}{rechts} ... \mserg{Ergebnis} \end{muster}
+\newenvironment{muster}{\par\noindent\begin{tabular}{@{}l@{\hspace{1.2em}}r@{\;}l@{}}}{\end{tabular}\par}
+\newcommand{\ms}[3]{\textit{#1} & $#2$ & $#3$ \\[2pt]}
+\newcommand{\mst}[2]{\textit{#1} & \multicolumn{2}{@{}l@{}}{#2} \\[2pt]}
+\newcommand{\mserg}[1]{\noalign{\vspace{2pt}}\textbf{Ergebnis} & & $\mathbf{#1}$ \\}
+\newcommand{\msfld}[1][1.8cm]{\underline{\hspace{#1}}}
+% Darstellungen (leer, der Schüler füllt sie)
+\newcommand{\kx}{\tikz[baseline=-0.6ex]\draw[line width=0.5pt] (0,-0.17) rectangle (0.34,0.17) node[midway,font=\scriptsize]{$x$};}
+\newcommand{\pkt}{\tikz[baseline=-0.6ex]\fill (0,0) circle (1.3pt);}
+\newcommand{\bildplatz}[1][1.35cm]{\begin{minipage}[t]{\linewidth}\vspace{0pt}%
+  {\footnotesize Zeichne: \kx\ für die Variable, \pkt\ für die Zahl 1}\par\vspace{2pt}%
+  \tikz\draw[black!50,line width=0.4pt] (0,0) rectangle (\linewidth-0.6pt,#1);\end{minipage}}
+% Malkreuz: Faktor links, Glieder oben, Produkte in den Feldern
+\newcommand{\malkreuz}[1][2]{\begin{minipage}[t]{\linewidth}\vspace{0pt}%
+  {\footnotesize Malkreuz: Faktor links, Glieder oben, Produkte in die Felder}\par\vspace{2pt}%
+  \renewcommand{\arraystretch}{2.0}%
+  \ifnum#1=3
+  \begin{tabular}{|c|p{1.3cm}|p{1.3cm}|p{1.3cm}|}\hline $\cdot$ & & & \\ \hline & & & \\ \hline\end{tabular}%
+  \else
+  \begin{tabular}{|c|p{1.7cm}|p{1.7cm}|}\hline $\cdot$ & & \\ \hline & & \\ \hline\end{tabular}%
+  \fi\end{minipage}}
+% Zeichentabelle: jedes Glied in der Klammer, das Zeichen davor, das neue Glied
+\newcommand{\zeichentabelle}[1][2]{\begin{minipage}[t]{\linewidth}\vspace{0pt}%
+  \renewcommand{\arraystretch}{1.4}\footnotesize
+  \begin{tabular}{|p{1.9cm}|p{1.7cm}|p{1.9cm}|}\hline Glied in der Klammer & vor der Klammer & neues Glied \\ \hline
+  \ifnum#1>0 & & \\ \hline\fi \ifnum#1>1 & & \\ \hline\fi \ifnum#1>2 & & \\ \hline\fi
+  \end{tabular}\end{minipage}}
+% Einsetztabelle: Term, eingesetzt, Wert
+\newcommand{\einsetztabelle}{\begin{minipage}[t]{\linewidth}\vspace{0pt}%
+  \renewcommand{\arraystretch}{1.8}\footnotesize
+  \begin{tabular}{|p{1.6cm}|p{2.6cm}|p{1.1cm}|}\hline Term & eingesetzt & Wert \\ \hline & & \\ \hline\end{tabular}\end{minipage}}
+% Termbaum leer
+\newcommand{\termbaumleer}{\begin{minipage}[t]{\linewidth}\vspace{0pt}%
+  \termbaum{}{\tb{}{}{}}{}\end{minipage}}
+% ---------------------------------------------------------------- Lösungen
+\newcommand{\mblsg}{}
+\newcommand{\lsgm}[1]{\lsgt{$#1$}}
+\newcommand{\lsgextra}{}
+\newcommand{\lsgt}[1]{\xappto\mblsg{\noexpand\lz{\theaufgabe}{\alph{teil}}}%
+  \xappto\mblsg{{\unexpanded{#1}\unexpanded\expandafter{\lsgextra}}}%
+  \gdef\lsgextra{}}
+\newcommand{\falsch}[1]{\gdef\lsgextra{\quad{\footnotesize falsch $\rightarrow$ Nr.~#1}}}
+\newcommand{\falschk}[1]{\gappto\kliste{\falsch{#1}}}
+\newcommand{\lzletzte}{0}
+\newcommand{\lz}[3]{\par\noindent\hangindent3.4em\hangafter1
+  \ifnum#1=\lzletzte\relax\makebox[1.8em][l]{}\else\makebox[1.8em][l]{\textbf{#1}}\fi
+  \gdef\lzletzte{#1}%
+  \makebox[1.6em][l]{\ifx&#2&\else#2)\fi}#3\par}
+\newcommand{\lsgeinheit}[1]{\par\addvspace{4pt}\noindent{\bfseries #1}\par}
+\makeatother
+
+\begin{document}
+\setlength{\parskip}{0pt}
+
+% =================================================================== Blatt 0
+\einheit{}{Das kennst du schon}
+\noindent
+\begin{minipage}[t]{0.48\linewidth}
+\begin{nr}{Plus und Minus}\label{nr:plus}
+\begin{kette}[2cm]
+% terme-zone-f1-v1
+\rk{4 - 9}{-5}
+% terme-zone-f1-v4
+\rk{-6 - 4}{-10}
+% terme-zone-f1-v3
+\rk{-2{,}5 + 1}{-1{,}5}
+% terme-zone-f1-v5
+\rk{-3{,}5 - (-6)}{2{,}5}
+\end{kette}
+\end{nr}
+\begin{nr}{Mal mit Vorzeichen}
+\begin{kette}[2cm]
+% terme-zone-f2-v1
+\rk{(-5) \cdot 2}{-10}
+% terme-zone-f2-v4
+\rk{(-4) \cdot (-5)}{20}
+% terme-zone-f2-v3
+\rk{(-0{,}5) \cdot 8}{-4}
+% terme-zone-f2-v5
+\rk{(-2{,}5) \cdot (-4)}{10}
+\end{kette}
+\end{nr}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+\begin{nr}{Dezimalzahlen und Brüche}
+\begin{kette}[2cm]
+% terme-zone-f3-v1
+\rk{1{,}5 + 2{,}5}{4}
+% terme-zone-f3-v3
+\rk{0{,}5 - 1{,}5}{-1}
+% terme-zone-f3-v2
+\rk{\frac{1}{2} + \frac{1}{4}}{\frac{3}{4}}
+% terme-zone-f3-v5
+\rk{-0{,}7 - 0{,}5}{-1{,}2}
+\end{kette}
+\end{nr}
+\begin{nr}{Punkt vor Strich}\label{nr:pvs}
+\begin{kette}[2cm]
+% terme-zone-f4-v2
+\rk{10 + 6 \cdot 3}{28}
+% terme-zone-f4-v4
+\rk{9 - 2 \cdot 3}{3}
+% terme-zone-f4-v3
+\rk{6 - 4 \cdot 2{,}5}{-4}
+% terme-zone-f4-v5
+\rk{3 - 2 \cdot (-5)}{13}
+\end{kette}
+\end{nr}
+\end{minipage}
+
+\begin{nr}[b]{Was heißt die Zahl vor dem $x$? – In jedem Kästchen \kx\ stecken $x$ Kugeln, ein Punkt \pkt\ ist eine Kugel.}\label{nr:grund}
+% terme-zone-f5-v1
+% pruef: x + x + x == 3*x
+\sz[1]{Schreibe kürzer: $x + x + x$}{$3x$}{\bildplatz[1.1cm]}
+% terme-zone-f5-v2
+% pruef: y + y + y + y + 2 == 4*y + 2
+\sz[1]{Schreibe kürzer: $y + y + y + y + 2$}{$4y + 2$}{\bildplatz[1.1cm]}
+% GEÄNDERT terme-zone-f5-v3 (Bild statt Beschreibung)
+% pruef: 2*x + 3 == 2*x + 3
+\swa{\lsgt{$2x + 3$}Welcher Term passt zum Bild? Kreuze an. \\ \kreuz{$5x$} \\ \kreuz{$2x + 3$} \\ \kreuz{$x + 5$}}{\begin{tikzpicture}[line width=0.6pt]
+\draw (0,0) rectangle (1.1,0.9); \node at (0.55,0.45) {$x$};
+\draw (1.4,0) rectangle (2.5,0.9); \node at (1.95,0.45) {$x$};
+\fill (3.0,0.45) circle (2.2pt); \fill (3.4,0.45) circle (2.2pt); \fill (3.8,0.45) circle (2.2pt);
+\end{tikzpicture}}
+% NEU
+% pruef: 3*x + 2 == 3*x + 2
+\swa{\lsgt{drei Kästchen, zwei Punkte}Zeichne ein Bild zu $3x + 2$.}{\tikz\draw[black!50,line width=0.4pt] (0,0) rectangle (\linewidth-0.6pt,1.2cm);}
+\end{nr}
+
+% =================================================================== Einheit 1
+\einheit{1}{Terme zusammenfassen}
+
+\begin{nr}[b]{Was gehört zusammen? Unterstreiche.}
+\begin{liste}
+% terme-e1-k1-s1-v2
+\ru{$6$, \quad $2a$, \quad $8$, \quad $a$}{$2a$ und $a$; $6$ und $8$}
+% terme-e1-k1-s2-v2
+\ru{$3y^2$, \quad $8y$, \quad $y^2$, \quad $2y$}{$3y^2$ und $y^2$; $8y$ und $2y$}
+% terme-e1-k1-s3-v2
+\ru{$6x$, \quad $xy$, \quad $2y$, \quad $4xy$}{$xy$ und $4xy$}
+% terme-e1-k1-s4-v3
+\ru{$5pq^2$, \quad $2p^2q$, \quad $7p^2q$, \quad $pq^2$}{$5pq^2$ und $pq^2$; $2p^2q$ und $7p^2q$}
+\end{liste}
+\end{nr}
+
+\begin{nr}[b]{Die Zahl vor der Variablen heißt Vorzahl. Welche Vorzahl steht hier?}
+\begin{kette}[2.5cm]
+% terme-e1-k2-s0-v1
+\rfr{Welche Vorzahl hat $a$?}{$1$ (denn $a = 1a$)}
+% terme-e1-k2-s0-v2
+\rfr{Welche Vorzahl hat $-b$?}{$-1$ (denn $-b = -1b$)}
+% terme-e1-k2-s0-v3
+\rfr{Welche Vorzahl hat $1{,}5z$?}{$1{,}5$}
+% terme-e1-k2-s0-v4
+\rfr{Welche Vorzahl hat $-4w$?}{$-4$}
+\end{kette}
+\end{nr}
+
+\begin{nr}[b]{Jedes Glied nimmt sein Zeichen mit. Schreibe die Glieder mit ihrem Vorzeichen auf.}
+% terme-e1-k3-s0-v1
+\rt{$5a - 2b + 7$}{$+5a$, $-2b$, $+7$}
+% terme-e1-k3-s0-v2
+\rt{$-3x + 6 - y$}{$-3x$, $+6$, $-y$}
+% terme-e1-k3-s0-v3
+\rt{$2m - 9 - 5k$}{$+2m$, $-9$, $-5k$}
+\end{nr}
+
+\begin{nr}{So geht Zusammenfassen. Lies das Beispiel, dann ergänze die Lösung.}
+\begin{beispiel}
+Fasse zusammen: $6y + 3y$
+\begin{muster}
+\mst{was gehört zusammen?}{$6y$ und $3y$ haben beide die Variable $y$}
+\ms{Vorzahlen addieren}{6 + 3}{= 9}
+\ms{Variable anhängen}{6y + 3y}{= 9y}
+\mserg{9y}
+\end{muster}
+\end{beispiel}
+% NEU
+% pruef: 8*b + 5*b == 13*b
+\szt{Fasse zusammen: $8b + 5b$}{$13b$}{\begin{muster}
+\mst{was gehört zusammen?}{$8b$ und $5b$ haben beide die Variable $b$}
+\ms{Vorzahlen addieren}{8 + 5}{= \msfld}
+\ms{Variable anhängen}{8b + 5b}{= \msfld}
+\mserg{\msfld}
+\end{muster}}
+\end{nr}
+
+\begin{nr}[b]{Päckchen – fasse zusammen.}
+% terme-e1-k4-s1-v1
+% pruef: 7*x + 2*x == 9*x
+\sz{Fasse zusammen: $7x + 2x$}{$9x$}{\bildplatz}
+% terme-e1-k4-s1-v2
+% pruef: 7*x + 4*x == 11*x
+\sz{Fasse zusammen: $7x + 4x$}{$11x$}{\bildplatz}
+% terme-e1-k4-s1-v3
+% pruef: 7*x + 5*x == 12*x
+\sz{Fasse zusammen: $7x + 5x$}{$12x$}{\bildplatz}
+% terme-e1-k4-s1-v4
+% pruef: 7*x + 8*x == 15*x
+\sz{Fasse zusammen: $7x + 8x$}{$15x$}{\bildplatz}
+\mitErklaerung{\swfrage{Was bleibt gleich, was ändert sich?}}
+\end{nr}
+
+\begin{nr}[b]{Fasse zusammen.}\label{nr:zus}
+% terme-e1-k4-s2-v2
+% pruef: 8*a - 5*a == 3*a
+\sz{Fasse zusammen: $8a - 5a$}{$3a$}{\bildplatz}
+% terme-e1-k4-s3-v2
+% pruef: 8*y - 2*y + 5*y == 11*y
+\sz{Fasse zusammen: $8y - 2y + 5y$}{$11y$}{\bildplatz}
+% terme-e1-k4-s4-v2
+% pruef: 8*x - 2 + 3*x == 11*x - 2
+\sz{Fasse zusammen: $8x - 2 + 3x$}{$11x - 2$}{\bildplatz}
+% terme-e1-k4-s5-v1
+% pruef: 4*a + 3*b + 2*a == 6*a + 3*b
+\sz{Fasse zusammen: $4a + 3b + 2a$}{$6a + 3b$}{\bildplatz}
+\end{nr}
+
+\begin{nr}[b]{Fasse zusammen. Denk an die Vorzahl 1 und an das Zeichen vor jedem Glied.}
+% terme-e1-k4-s6-v1
+% pruef: y + 4*y == 5*y
+\sz{Fasse zusammen: $y + 4y$}{$5y$}{\bildplatz}
+% terme-e1-k4-s7-v1
+% pruef: 2*x - 7*x == -5*x
+\sz{Fasse zusammen: $2x - 7x$}{$-5x$}{\bildplatz}
+% terme-e1-k4-s8-v1
+% pruef: -3*x + 8*x == 5*x
+\sz{Fasse zusammen: $-3x + 8x$}{$5x$}{\bildplatz}
+% terme-e1-k4-s9-v1
+% pruef: -3*y + 8 - y - 10 == -4*y - 2
+\mitErklaerung{\sz[3]{Fasse zusammen: $-3y + 8 - y - 10$}{$-4y - 2$}{\bildplatz[2.3cm]}}
+\end{nr}
+
+\begin{nr}[b]{Fasse zusammen. Hochzahl und Dezimalzahl: Nur was gleich aussieht, gehört zusammen.}
+% terme-e1-k4-s11-v1
+% pruef: 1.5*x + 3.5*x == 5*x
+\sz{Fasse zusammen: $1{,}5x + 3{,}5x$}{$5x$}{\bildplatz}
+% terme-e1-k4-s10-v3
+% pruef: 3*y**2 + 7*y + 5*y**2 == 8*y**2 + 7*y
+\sz{Fasse zusammen: $3y^2 + 7y + 5y^2$}{$8y^2 + 7y$}{\bildplatz}
+% terme-e1-k4-s12-v1
+% pruef: 1.5*a**2 + 2*a - 0.5*a**2 - 3.5*a == a**2 - 1.5*a
+\sz[3]{Fasse zusammen: $1{,}5a^2 + 2a - 0{,}5a^2 - 3{,}5a$}{$a^2 - 1{,}5a$}{\bildplatz[2.3cm]}
+\end{nr}
+
+\begin{nr}[b]{Abschluss}
+% terme-e1-k4-s5-v4
+% pruef: 6*a - 2*b + 3 - 4*a + 5*b == 2*a + 3*b + 3
+\szx[3]{Fasse zusammen: $6a - 2b + 3 - 4a + 5b$}{$2a + 3b + 3$}
+% terme-e1-k4-s13-v1
+% pruef: 45*p + 38*p + 52*p == 135*p
+% pruef: 135*0.4 == 54
+\rs{Ein Kiosk verkauft Brötchen zu je $p$ Euro. Am Montag verkauft er 45 Stück, am Dienstag 38 und am Mittwoch 52. Stelle einen Term für die Einnahmen der drei Tage auf und fasse ihn zusammen. Der Kiosk will in den drei Tagen mindestens 50 € mit Brötchen einnehmen. Schafft er das bei $p = 0{,}40$?}{$45p + 38p + 52p = 135p$; ja, $135 \cdot 0{,}40 = 54$ €}
+% terme-e1-k5-s2-v3
+\mitErklaerung{\rs{Ole fasst $3y - 8y$ zusammen. Er sagt: „Das ergibt $5y$, denn 8 minus 3 ist 5.“ Stimmt das? Begründe.}{Nein; man rechnet $3 - 8 = -5$, also $-5y$}}
+\end{nr}
+
+\merk{\mz{Gleiche Variablen:}{Vorzahlen addieren, die Variable bleibt: $3x + 5x = \mathbf{8x}$}
+\mz{Zahl ohne Variable bleibt:}{$7a - 2a + 4 = \mathbf{5a + 4}$}
+\mz{Hochzahl zählt mit:}{$x^2 + 3x$ \textbf{bleibt so}}
+\mz{Wichtig:}{$3x + 4$ ist nicht $7x$. $x$ hat die Vorzahl 1: $x + 6x = 7x$, nicht $6x$.}}
+
+% =================================================================== Einheit 2
+\einheit{2}{Terme malnehmen}
+
+\begin{nr}{So geht Malnehmen. Lies das Beispiel, dann ergänze die Lösungen.}
+\begin{beispiel}
+Multipliziere: $4 \cdot 8a$
+\begin{muster}
+\ms{Zahlen malnehmen}{4 \cdot 8}{= 32}
+\ms{Variable anhängen}{4 \cdot 8a}{= 32a}
+\mserg{32a}
+\end{muster}
+\end{beispiel}
+% NEU
+% pruef: 6*7*b == 42*b
+\szt{Multipliziere: $6 \cdot 7b$}{$42b$}{\begin{muster}
+\ms{Zahlen malnehmen}{6 \cdot 7}{= \msfld}
+\ms{Variable anhängen}{6 \cdot 7b}{= \msfld}
+\mserg{\msfld}
+\end{muster}}
+% NEU
+% pruef: 3*c*5*c == 15*c**2
+\szt{Multipliziere: $3c \cdot 5c$}{$15c^2$}{\begin{muster}
+\ms{Zahlen malnehmen}{3 \cdot 5}{= 15}
+\ms{Variablen malnehmen}{c \cdot c}{= \msfld}
+\ms{zusammensetzen}{3c \cdot 5c}{= \msfld}
+\mserg{\msfld}
+\end{muster}}
+\end{nr}
+
+\begin{nr}[b]{Päckchen – multipliziere.}
+% terme-e2-k1-s1-v1
+% pruef: 5*2*x == 10*x
+\sz{Multipliziere: $5 \cdot 2x$}{$10x$}{\bildplatz}
+% terme-e2-k1-s1-v2
+% pruef: 5*3*x == 15*x
+\sz{Multipliziere: $5 \cdot 3x$}{$15x$}{\bildplatz}
+% terme-e2-k1-s1-v3
+% pruef: 5*6*x == 30*x
+\sz{Multipliziere: $5 \cdot 6x$}{$30x$}{\bildplatz}
+% terme-e2-k1-s1-v4
+% pruef: 5*7*x == 35*x
+\sz{Multipliziere: $5 \cdot 7x$}{$35x$}{\bildplatz}
+\mitErklaerung{\swfrage{Was bleibt gleich, was ändert sich?}}
+\end{nr}
+
+\begin{nr}[b]{Multipliziere.}\label{nr:mal}
+% terme-e2-k1-s2-v1
+% pruef: 4*x*5 == 20*x
+\sz{Multipliziere: $4x \cdot 5$}{$20x$}{\bildplatz}
+% terme-e2-k1-s3-v2
+% pruef: 5*a*3*a == 15*a**2
+\sz{Multipliziere: $5a \cdot 3a$}{$15a^2$}{\bildplatz}
+% terme-e2-k1-s4-v3
+% pruef: (-2)*(-7*y) == 14*y
+\sz{Multipliziere: $(-2) \cdot (-7y)$}{$14y$}{\bildplatz}
+% terme-e2-k1-s5-v1
+% pruef: 4*a*5*b == 20*a*b
+\sz{Multipliziere: $4a \cdot 5b$}{$20ab$}{\bildplatz}
+\end{nr}
+
+\begin{nr}[b]{Multipliziere. Drei Faktoren: Zahlen zuerst, dann die Variablen.}
+% terme-e2-k1-s6-v2
+% pruef: 5*a*2*3*b == 30*a*b
+\sz{Multipliziere: $5a \cdot 2 \cdot 3b$}{$30ab$}{\bildplatz}
+% terme-e2-k1-s11-v1
+% pruef: (-6*a)*2*b == -12*a*b
+\sz{Multipliziere: $(-6a) \cdot 2b$}{$-12ab$}{\bildplatz}
+% terme-e2-k1-s7-v1
+% pruef: (-1.5*x)*4*x*y*(-2*y) == 12*x**2*y**2
+\mitErklaerung{\szx[3][GYM]{Multipliziere: $(-1{,}5x) \cdot 4xy \cdot (-2y)$}{$12x^2y^2$}}
+\end{nr}
+
+\begin{nr}[b]{Abschluss}
+% NEU
+% pruef: 3*y*4 - 5*y == 7*y
+\szx{Vereinfache: $3y \cdot 4 - 5y$}{$7y$}
+% terme-e2-k1-s9-v2
+% pruef: a*2*a*3 == 6*a**2
+% pruef: 6*2**2 == 24
+\rs{Eine Kiste hat die Form eines Quaders. Sie ist $a$ dm lang, $2a$ dm breit und 3 dm hoch. Stelle einen Term für das Volumen in dm³ auf. Passen 50 Liter Sand hinein, wenn $a = 2$ ist?}{$a \cdot 2a \cdot 3 = 6a^2$; nein, $6 \cdot 2^2 = 24$ dm³ $= 24$ Liter}
+% terme-e2-k2-s1-v2
+% pruef: (-3*x)*2*y == -6*x*y
+\rs{Ben rechnet $(-3x) \cdot 2y = -6xy$. Stimmt das? Begründe.}{Ja; $(-3) \cdot 2 = -6$, die Variablen stehen dahinter: $-6xy$}
+\end{nr}
+
+\merk{\mz{Zahl mal Term:}{$3 \cdot 4x = \mathbf{12x}$}
+\mz{Term mal Term:}{Zahlen mal Zahlen, Variablen mal Variablen: $2x \cdot 3x = \mathbf{6x^2}$}
+\mz{Zwei Variablen:}{$3a \cdot 2b = \mathbf{6ab}$}
+\mz{Wichtig:}{$x \cdot x$ ist $x^2$, nicht $2x$. Minus mal Minus gibt Plus.}}
+
+% =================================================================== Einheit 3
+\einheit{3}{Klammern auflösen}
+
+\begin{nr}[b]{Was steht direkt vor der Klammer: Plus, Minus oder eine Zahl?}
+\begin{kette}[2.5cm]
+% terme-e3-k1-s0-v1
+\rfr{$7 + (a - 2)$}{ein Plus}
+% terme-e3-k1-s0-v2
+\rfr{$10 - (b + 4)$}{ein Minus}
+% terme-e3-k1-s0-v3
+\rfr{$5 \cdot (x - 1)$}{die Zahl 5 als Faktor}
+% terme-e3-k1-s0-v4
+\rfr{$2y - 6 \cdot (y + 1)$}{$-6$ als Faktor}
+\end{kette}
+\end{nr}
+
+\begin{nr}{So geht Plusklammer und Minusklammer. Lies das Beispiel, dann ergänze die Lösung.}
+\begin{beispiel}
+Löse die Klammer auf: $3x + (4y - 2)$
+\begin{muster}
+\mst{Zeichen vor der Klammer}{Plus}
+\ms{Klammer weglassen}{3x + (4y - 2)}{= 3x + 4y - 2}
+\mserg{3x + 4y - 2}
+\end{muster}
+\end{beispiel}
+% NEU
+% pruef: 7*a - (3*b + 2) == 7*a - 3*b - 2
+\mitErklaerung{\szt{Löse die Klammer auf: $7a - (3b + 2)$}{$7a - 3b - 2$}{\begin{muster}
+\mst{Zeichen vor der Klammer}{Minus}
+\ms{alle Zeichen in der Klammer drehen}{7a - (3b + 2)}{= 7a \msfld[1cm] 3b \msfld[1cm] 2}
+\mserg{\msfld[3cm]}
+\end{muster}}}
+\end{nr}
+
+\begin{nr}[b]{Päckchen – Plus vor der Klammer. Löse die Klammer auf.}
+% terme-e3-k2-s1-v1
+% pruef: 5*a + (2*b - 1) == 5*a + 2*b - 1
+\sz{Löse auf: $5a + (2b - 1)$}{$5a + 2b - 1$}{\zeichentabelle}
+% terme-e3-k2-s1-v2
+% pruef: 5*a + (2*b - 3) == 5*a + 2*b - 3
+\sz{Löse auf: $5a + (2b - 3)$}{$5a + 2b - 3$}{\zeichentabelle}
+% terme-e3-k2-s1-v3
+% pruef: 5*a + (2*b - 4) == 5*a + 2*b - 4
+\sz{Löse auf: $5a + (2b - 4)$}{$5a + 2b - 4$}{\zeichentabelle}
+% terme-e3-k2-s1-v4
+% pruef: 5*a + (2*b - 6) == 5*a + 2*b - 6
+\sz{Löse auf: $5a + (2b - 6)$}{$5a + 2b - 6$}{\zeichentabelle}
+\swfrage{Was bleibt gleich, was ändert sich?}
+\end{nr}
+
+\begin{nr}[b]{Minus vor der Klammer. Löse die Klammer auf.}\label{nr:pm}
+% terme-e3-k2-s2-v1
+% pruef: 30 - (12 + 8) == 10
+% pruef: 30 - 12 - 8 == 10
+\szx[2]{Rechne $30 - (12 + 8)$ auf zwei Wegen: erst die Klammer ausrechnen und dann abziehen; dann Glied für Glied abziehen. Vergleiche.}{$30 - 20 = 10$ und $30 - 12 - 8 = 10$; beide Wege ergeben 10}
+% terme-e3-k2-s3-v3
+% pruef: 6*y - (5*z + 1) == 6*y - 5*z - 1
+\sz{Löse auf: $6y - (5z + 1)$}{$6y - 5z - 1$}{\zeichentabelle}
+% terme-e3-k2-s3-v2
+% pruef: 8*x - (3*y - 6) == 8*x - 3*y + 6
+\mitErklaerung{\sz{Löse auf: $8x - (3y - 6)$}{$8x - 3y + 6$}{\zeichentabelle}}
+\end{nr}
+
+\begin{nr}[b]{Minus vor der Klammer, mehr Glieder. Löse auf und fasse zusammen, wo es geht.}
+% terme-e3-k2-s4-v2
+% pruef: 4*x - (y + 2*z - 8) == 4*x - y - 2*z + 8
+\sz{Löse auf: $4x - (y + 2z - 8)$}{$4x - y - 2z + 8$}{\zeichentabelle[3]}
+% terme-e3-k2-s5-v1
+% pruef: 2.5 - (-a + 1.5*b - 3.5) == a - 1.5*b + 6
+\sz[3]{Löse auf und fasse zusammen: $2{,}5 - (-a + 1{,}5b - 3{,}5)$}{$a - 1{,}5b + 6$}{\zeichentabelle[3]}
+% terme-e3-k2-s6-v1
+% pruef: (x**2 - 3*x*y) - (2*x**2 - x*y) - (-y**2) == -x**2 - 2*x*y + y**2
+\szx[3][GYM]{Löse auf und fasse zusammen: $(x^2 - 3xy) - (2x^2 - xy) - (-y^2)$}{$-x^2 - 2xy + y^2$}
+\end{nr}
+
+\begin{nr}{So geht Zahl mal Klammer. Lies das Beispiel, dann ergänze die Lösung.}
+\begin{beispiel}
+Löse die Klammer auf: $8 \cdot (x + 2)$
+\begin{muster}
+\ms{erstes Glied malnehmen}{8 \cdot x}{= 8x}
+\ms{zweites Glied malnehmen}{8 \cdot 2}{= 16}
+\ms{zusammensetzen}{8 \cdot (x + 2)}{= 8x + 16}
+\mserg{8x + 16}
+\end{muster}
+\end{beispiel}
+% NEU
+% pruef: 6*(y + 4) == 6*y + 24
+\mitErklaerung{\szt{Löse die Klammer auf: $6 \cdot (y + 4)$}{$6y + 24$}{\begin{muster}
+\ms{erstes Glied malnehmen}{6 \cdot y}{= 6y}
+\ms{zweites Glied malnehmen}{6 \cdot 4}{= \msfld}
+\ms{zusammensetzen}{6 \cdot (y + 4)}{= \msfld[2.5cm]}
+\mserg{\msfld[2.5cm]}
+\end{muster}}}
+\end{nr}
+
+\begin{nr}[b]{Päckchen – Zahl mal Klammer. Löse die Klammer auf.}
+% NEU (Päckchen zum Grundfall e3 k3 s1)
+% pruef: 4*(x + 2) == 4*x + 8
+\sz{Löse auf: $4 \cdot (x + 2)$}{$4x + 8$}{\malkreuz}
+% NEU
+% pruef: 4*(x + 3) == 4*x + 12
+\sz{Löse auf: $4 \cdot (x + 3)$}{$4x + 12$}{\malkreuz}
+% NEU
+% pruef: 4*(x + 5) == 4*x + 20
+\sz{Löse auf: $4 \cdot (x + 5)$}{$4x + 20$}{\malkreuz}
+% NEU
+% pruef: 4*(x + 6) == 4*x + 24
+\sz{Löse auf: $4 \cdot (x + 6)$}{$4x + 24$}{\malkreuz}
+\swfrage{Was bleibt gleich, was ändert sich?}
+\end{nr}
+
+\begin{nr}[b]{Löse die Klammer auf. Auch das Minus wird malgenommen.}
+% terme-e3-k3-s2-v3
+% pruef: -4*(b - 6) == -4*b + 24
+\sz{Löse auf: $-4 \cdot (b - 6)$}{$-4b + 24$}{\malkreuz}
+% terme-e3-k3-s2-v1
+% pruef: -2*(x + 5) == -2*x - 10
+\sz{Löse auf: $-2 \cdot (x + 5)$}{$-2x - 10$}{\malkreuz}
+% terme-e3-k3-s3-v1
+% pruef: 3*a*(2*a - 5) == 6*a**2 - 15*a
+\mitErklaerung{\sz{Löse auf: $3a \cdot (2a - 5)$}{$6a^2 - 15a$}{\malkreuz}}
+\end{nr}
+
+\begin{nr}[b]{Löse die Klammer auf. Der Faktor kann auch hinter der Klammer stehen.}
+% terme-e3-k3-s4-v1
+% pruef: (x - 3*y + 4)*(-2) == -2*x + 6*y - 8
+\sz{Löse auf: $(x - 3y + 4) \cdot (-2)$}{$-2x + 6y - 8$}{\malkreuz[3]}
+% terme-e3-k3-s5-v1
+% pruef: -0.5*x*(6*x - 4 + 2*y) == -3*x**2 + 2*x - x*y
+\sz{Löse auf: $-0{,}5x \cdot (6x - 4 + 2y)$}{$-3x^2 + 2x - xy$}{\malkreuz[3]}
+% terme-e3-k3-s5-v2
+% pruef: Rational(3,4)*b*(8*a*b - 4*b + 12) == 6*a*b**2 - 3*b**2 + 9*b
+\szx[2][GYM]{Löse auf: $\frac{3}{4}b \cdot (8ab - 4b + 12)$}{$6ab^2 - 3b^2 + 9b$}
+\end{nr}
+
+\begin{nr}{So geht Auflösen und Zusammenfassen. Lies das Beispiel, dann ergänze die Lösung.}
+\begin{beispiel}
+Löse die Klammer auf und fasse zusammen: $6a + 2 \cdot (a - 3)$
+\begin{muster}
+\ms{Klammer auflösen}{6a + 2 \cdot (a - 3)}{= 6a + 2a - 6}
+\ms{zusammenfassen}{6a + 2a - 6}{= 8a - 6}
+\mserg{8a - 6}
+\end{muster}
+\end{beispiel}
+% NEU
+% pruef: 4*c + 5*(c + 2) == 9*c + 10
+\mitErklaerung{\szt{Löse die Klammer auf und fasse zusammen: $4c + 5 \cdot (c + 2)$}{$9c + 10$}{\begin{muster}
+\ms{Klammer auflösen}{4c + 5 \cdot (c + 2)}{= 4c + 5c + 10}
+\ms{zusammenfassen}{4c + 5c + 10}{= \msfld[2.5cm]}
+\mserg{\msfld[2.5cm]}
+\end{muster}}}
+\end{nr}
+
+\begin{nr}[b]{Löse die Klammern auf und fasse zusammen.}\label{nr:kz}
+% terme-e3-k4-s1-v3
+% pruef: 6 + 4*(y - 1) == 4*y + 2
+\sz{$6 + 4 \cdot (y - 1)$}{$4y + 2$}{\malkreuz}
+% terme-e3-k4-s1-v2
+% pruef: 9*a - (4*a + 3) == 5*a - 3
+\sz{$9a - (4a + 3)$}{$5a - 3$}{\zeichentabelle}
+% terme-e3-k4-s1-v1
+% pruef: 5*x + 2*(x + 6) == 7*x + 12
+\sz{$5x + 2 \cdot (x + 6)$}{$7x + 12$}{\malkreuz}
+% terme-e3-k4-s8-v2
+% pruef: 5*(a + 3) - 2*(a - 1) == 3*a + 17
+\sz[3]{$5 \cdot (a + 3) - 2 \cdot (a - 1)$}{$3a + 17$}{\malkreuz}
+\end{nr}
+
+\begin{nr}[b]{Löse die Klammern auf und fasse zusammen. Bei Klammer in der Klammer: von innen nach außen.}
+% terme-e3-k4-s8-v3
+% pruef: -3*(b - 2) + 7*(b + 1) == 4*b + 13
+\sz[3]{$-3 \cdot (b - 2) + 7 \cdot (b + 1)$}{$4b + 13$}{\malkreuz}
+% terme-e3-k4-s2-v1
+% pruef: 3*x*(x - 2) - x*(4 - x) == 4*x**2 - 10*x
+\sz[3]{$3x \cdot (x - 2) - x \cdot (4 - x)$}{$4x^2 - 10x$}{\malkreuz}
+% terme-e3-k4-s3-v1
+% pruef: 7*a - (3 - 2*(a - 5)) == 9*a - 13
+\sz[3]{$7a - [\,3 - 2 \cdot (a - 5)\,]$}{$9a - 13$}{\malkreuz}
+% terme-e3-k4-s5-v1
+% pruef: 4*y - (x - (2*y - (3*x - y))) == -4*x + 7*y
+\mitErklaerung{\szx[3][GYM]{$4y - \{\,x - [\,2y - (3x - y)\,]\,\}$}{$-4x + 7y$}}
+\end{nr}
+
+\begin{nr}[b]{Abschluss}
+% terme-e3-k4-s1-v4
+% pruef: 8*y - (3*y - 4) + 3*2*y == 11*y + 4
+\szx[3]{Löse auf und fasse zusammen: $8y - (3y - 4) + 3 \cdot 2y$}{$11y + 4$}
+% GEÄNDERT terme-e3-k5-s3-v1 (Form: Felder neben der Figur)
+% pruef: 5*(x + 2) == 5*x + 10
+\rtx{Die Figur zeigt ein Rechteck (Maße in cm). Schreibe einen Term für den Flächeninhalt mit Klammer und dann ohne Klammer.}{$5 \cdot (x + 2) = 5x + 10$}
+\figurfelder{\rechteck[seiten={x+2,5,,},punkte=]{4}{1.6}}{mit Klammer: & \underline{\hspace{4cm}} \\[8mm]
+ohne Klammer: & \underline{\hspace{4cm}}}
+% terme-e3-k5-s2-v1
+\rs{Sind die Terme $5 - (x - 2)$ und $7 - x$ gleichwertig? Begründe.}{Ja: $5 - (x - 2) = 5 - x + 2 = 7 - x$}
+\end{nr}
+
+\merk{\mz{Plus vor der Klammer:}{Klammer weglassen: $a + (b - c) = \mathbf{a + b - c}$}
+\mz{Minus vor der Klammer:}{alle Vorzeichen drehen: $a - (b - c) = \mathbf{a - b + c}$}
+\mz{Zahl mal Klammer:}{jedes Glied malnehmen: $3 \cdot (x + 4) = \mathbf{3x + 12}$}
+\mz{Wichtig:}{Bei der Minusklammer dreht sich jedes Vorzeichen in der Klammer, nicht nur das erste: $-(x - 4) = -x + 4$.}}
+
+% =================================================================== Einheit 4
+\einheit{4}{Ausklammern}
+
+\begin{nr}[b]{Was steckt in jedem Glied? Kreise ein, was in allen Gliedern steckt: Zahl, Variable oder beides. Klammere noch nichts aus.}
+\begin{kette}[2.5cm]
+% terme-e4-k1-s0-v1
+\rfr{$8x + 12$}{die Zahl 4}
+% terme-e4-k1-s0-v2
+\rfr{$9y^2 + 2y$}{die Variable $y$}
+% terme-e4-k1-s0-v3
+\rfr{$6a^2 + 10a$}{die Zahl 2 und die Variable $a$, also $2a$}
+% terme-e4-k1-s0-v4
+\rfr{$9x - 6 + 15x^2$}{die Zahl 3}
+\end{kette}
+\end{nr}
+
+\begin{nr}[b]{Schreibe jedes Glied als Produkt mit dem Faktor. Noch ohne Klammer.}
+% terme-e4-k2-s-1-v1
+% pruef: 4*2*x + 4*5 == 8*x + 20
+\rto{$8x + 20 = 4 \cdot \fld + 4 \cdot \fld$}{$2x$ und $5$}
+% terme-e4-k2-s-1-v2
+% pruef: 2*3*a + 2*7 == 6*a + 14
+\rto{$6a + 14 = 2 \cdot \fld + 2 \cdot \fld$}{$3a$ und $7$}
+% terme-e4-k2-s-1-v3
+% pruef: 5*2*y + 5*3 == 10*y + 15
+\mitErklaerung{\rto{$10y + 15 = 5 \cdot \fld + 5 \cdot \fld$}{$2y$ und $3$}}
+\end{nr}
+
+\begin{nr}[b]{Der Faktor steht schon vor der Klammer. Fülle die Klammer.}
+% terme-e4-k2-s0-v1
+% pruef: 3*(3*x + 7) == 9*x + 21
+\rto{$9x + 21 = 3 \cdot (\fld + \fld)$}{$3x$ und $7$}
+% terme-e4-k2-s0-v2
+% pruef: 2*(2*y + 5) == 4*y + 10
+\rto{$4y + 10 = 2 \cdot (\fld + \fld)$}{$2y$ und $5$}
+% terme-e4-k2-s0-v3
+% pruef: 5*(2*a + 7) == 10*a + 35
+\rto{$10a + 35 = 5 \cdot (\fld + \fld)$}{$2a$ und $7$}
+\end{nr}
+
+\begin{nr}{So geht Ausklammern. Lies das Beispiel, dann ergänze die Lösung.}
+\begin{beispiel}
+Klammere den größten gemeinsamen Faktor aus: $6b + 18$
+\begin{muster}
+\mst{Faktor finden}{$6b = 6 \cdot b$, \ $18 = 6 \cdot 3$, \ gemeinsamer Faktor 6}
+\ms{ausklammern}{6b + 18}{= 6 \cdot (b + 3)}
+\ms{Probe}{6 \cdot b + 6 \cdot 3}{= 6b + 18}
+\mserg{6 \cdot (b + 3)}
+\end{muster}
+\end{beispiel}
+% NEU
+% pruef: 4*(m + 7) == 4*m + 28
+\mitErklaerung{\szt{Klammere den größten gemeinsamen Faktor aus: $4m + 28$}{$4 \cdot (m + 7)$}{\begin{muster}
+\mst{Faktor finden}{$4m = 4 \cdot m$, \ $28 = 4 \cdot \msfld[1cm]$, \ gemeinsamer Faktor \msfld[1cm]}
+\ms{ausklammern}{4m + 28}{= \msfld[2.5cm]}
+\ms{Probe}{\msfld[2.5cm]}{= \msfld[2.5cm]}
+\mserg{\msfld[2.5cm]}
+\end{muster}}}
+\end{nr}
+
+\begin{nr}[b]{Päckchen – klammere den größten gemeinsamen Faktor aus.}
+% terme-e4-k2-s1-v1
+% pruef: 5*(x + 2) == 5*x + 10
+\sz{Klammere aus: $5x + 10$}{$5 \cdot (x + 2)$}{\malkreuz}
+% terme-e4-k2-s1-v2
+% pruef: 5*(x + 5) == 5*x + 25
+\sz{Klammere aus: $5x + 25$}{$5 \cdot (x + 5)$}{\malkreuz}
+% terme-e4-k2-s1-v3
+% pruef: 5*(x + 6) == 5*x + 30
+\sz{Klammere aus: $5x + 30$}{$5 \cdot (x + 6)$}{\malkreuz}
+% terme-e4-k2-s1-v4
+% pruef: 5*(x + 7) == 5*x + 35
+\sz{Klammere aus: $5x + 35$}{$5 \cdot (x + 7)$}{\malkreuz}
+\swfrage{Was bleibt gleich, was ändert sich?}
+\end{nr}
+
+\begin{nr}[b]{Klammere den größten gemeinsamen Faktor aus.}\label{nr:aus}
+% terme-e4-k2-s2-v2
+% pruef: a*(4 + a) == 4*a + a**2
+\sz{Klammere aus: $4a + a^2$}{$a \cdot (4 + a)$}{\malkreuz}
+% terme-e4-k2-s3-v1
+% pruef: 3*x*(2*x + 5) == 6*x**2 + 15*x
+\sz{Klammere aus: $6x^2 + 15x$}{$3x \cdot (2x + 5)$}{\malkreuz}
+% terme-e4-k2-s4-v2
+% pruef: a*(4*a + 1) == 4*a**2 + a
+\sz{Klammere aus: $4a^2 + a$}{$a \cdot (4a + 1)$}{\malkreuz}
+% terme-e4-k2-s5-v3
+% pruef: 2*(y**2 + 4*y + 2) == 2*y**2 + 8*y + 4
+\mitErklaerung{\sz{Klammere aus: $2y^2 + 8y + 4$}{$2 \cdot (y^2 + 4y + 2)$}{\malkreuz[3]}}
+\end{nr}
+
+\begin{nr}[b]{Klammere aus und mache die Probe: ausmultiplizieren, es muss der Anfangsterm herauskommen.}\label{nr:probe}
+% terme-e4-k2-s6-v1
+% pruef: 6*(x + 5) == 6*x + 30
+\sz[3]{Klammere aus: $6x + 30$ \ Probe!}{$6 \cdot (x + 5)$; Probe: $6 \cdot x + 6 \cdot 5 = 6x + 30$}{\malkreuz}
+% terme-e4-k2-s6-v2
+% pruef: 4*a*(a + 5) == 4*a**2 + 20*a
+\sz[3]{Klammere aus: $4a^2 + 20a$ \ Probe!}{$4a \cdot (a + 5)$; Probe: $4a \cdot a + 4a \cdot 5 = 4a^2 + 20a$}{\malkreuz}
+% terme-e4-k2-s6-v3
+% pruef: 9*(y - 3) == 9*y - 27
+\sz[3]{Klammere aus: $9y - 27$ \ Probe!}{$9 \cdot (y - 3)$; Probe: $9 \cdot y - 9 \cdot 3 = 9y - 27$}{\malkreuz}
+\end{nr}
+
+\begin{nr}[b]{Klammere so weit wie möglich aus und mache die Probe.}
+% terme-e4-k2-s14-v1
+% pruef: 3*a*(a + 2*b + 3) == 3*a**2 + 6*a*b + 9*a
+\sz[3]{Klammere aus: $3a^2 + 6ab + 9a$ \ Probe!}{$3a \cdot (a + 2b + 3)$; Probe: $3a \cdot a + 3a \cdot 2b + 3a \cdot 3 = 3a^2 + 6ab + 9a$}{\malkreuz[3]}
+% terme-e4-k2-s8-v1
+% pruef: -2*a*b*(2*a - 3*b + 1) == -4*a**2*b + 6*a*b**2 - 2*a*b
+\mitErklaerung{\szx[3][GYM]{Klammere aus: $-4a^2b + 6ab^2 - 2ab$}{$-2ab \cdot (2a - 3b + 1)$}}
+\end{nr}
+
+\begin{nr}[b]{Abschluss}
+% terme-e4-k2-s3-v4
+% pruef: 6*b*(2*a - 3) == 12*a*b - 18*b
+\szx{Klammere aus: $12ab - 18b$}{$6b \cdot (2a - 3)$}
+% GEÄNDERT terme-e4-k2-s7-v2 (Form: Figur mit Feldern)
+% pruef: 3*a + 3*5 == 3*(a + 5)
+\rtx{Zwei Rechtecke liegen nebeneinander (Maße in cm). Gib den Flächeninhalt der ganzen Figur als Summe der Teilflächen und als Produkt mit Klammer an.}{$3a + 15 = 3 \cdot (a + 5)$}
+\figurfelder{\begin{tikzpicture}[line width=0.8pt]
+\draw (0,0) rectangle (1.6,1.3); \draw (1.6,0) rectangle (4.2,1.3);
+\node[left,font=\small] at (0,0.65) {$3$};
+\node[below,font=\small] at (0.8,0) {$a$};
+\node[below,font=\small] at (2.9,0) {$5$};
+\end{tikzpicture}}{Summe: & \underline{\hspace{4.5cm}} \\[8mm]
+Produkt: & \underline{\hspace{4.5cm}}}
+% terme-e4-k2-s10-v2
+% pruef: 0.2*45 == 9
+\rs{Ein Rucksack kostet 30 €, eine Trinkflasche 15 €. Es gibt 20 \% Rabatt. Emre rechnet den Rabatt mit $0{,}2 \cdot 30 + 15$, Lea mit $0{,}2 \cdot (30 + 15)$. Ergeben beide Terme denselben Rabatt? Begründe und berechne den Rabatt.}{Nein; bei Emre fehlt der Faktor $0{,}2$ vor der 15. Rabatt: $0{,}2 \cdot 45 = 9$ €}
+\end{nr}
+
+\merk{\mz{Zahl ausklammern:}{$6x + 9 = \mathbf{3 \cdot (2x + 3)}$}
+\mz{Variable ausklammern:}{$4a^2 + 2a = \mathbf{2a \cdot (2a + 1)}$}
+\mz{Probe:}{ausmultiplizieren, es muss der Anfangsterm herauskommen: $2a \cdot 2a + 2a \cdot 1 = \mathbf{4a^2 + 2a}$}
+\mz{Wichtig:}{Ist ein Glied selbst der Faktor, bleibt in der Klammer eine 1: $8x - 8 = 8 \cdot (x - 1)$, nicht $8 \cdot x$.}}
+
+% =================================================================== Einheit 5
+\einheit{5}{Termwerte berechnen}
+
+\begin{nr}{So rechnest du den Wert eines Terms aus. Lies das Beispiel, dann ergänze die Lösung.}
+\begin{beispiel}
+Berechne den Wert des Terms $3x + 4$ für $x = 5$.
+\begin{muster}
+\ms{einsetzen}{3x + 4}{= 3 \cdot 5 + 4}
+\ms{Punkt vor Strich}{3 \cdot 5 + 4}{= 15 + 4 = 19}
+\mserg{19}
+\end{muster}
+\end{beispiel}
+% NEU
+% pruef: 5*4 - 2 == 18
+\szt{Berechne den Wert des Terms $5y - 2$ für $y = 4$.}{$18$}{\begin{muster}
+\ms{einsetzen}{5y - 2}{= 5 \cdot 4 - 2}
+\ms{Punkt vor Strich}{5 \cdot 4 - 2}{= \msfld[1cm] - 2 = \msfld[1cm]}
+\mserg{\msfld}
+\end{muster}}
+\end{nr}
+
+\begin{nr}[b]{Päckchen – berechne den Wert des Terms $4x - 3$.}
+% terme-e5-k1-s1-v1
+% pruef: 4*5 - 3 == 17
+\sz{$4x - 3$ für $x = 5$}{$17$}{\einsetztabelle}
+% terme-e5-k1-s1-v2
+% pruef: 4*2 - 3 == 5
+\sz{$4x - 3$ für $x = 2$}{$5$}{\einsetztabelle}
+% terme-e5-k1-s1-v3
+% pruef: 4*3 - 3 == 9
+\sz{$4x - 3$ für $x = 3$}{$9$}{\einsetztabelle}
+% terme-e5-k1-s1-v4
+% pruef: 4*6 - 3 == 21
+\sz{$4x - 3$ für $x = 6$}{$21$}{\einsetztabelle}
+\mitErklaerung{\swfrage{Was bleibt gleich, was ändert sich?}}
+\end{nr}
+
+\begin{nr}[b]{Berechne den Wert des Terms. Negative Zahlen setzt du in Klammern ein.}\label{nr:wert}
+% terme-e5-k1-s2-v1
+% pruef: 2*(-3) + 9 == 3
+\sz{$2x + 9$ für $x = -3$}{$3$}{\einsetztabelle}
+% terme-e5-k1-s2-v2
+% pruef: 10 - 3*(-2) == 16
+\sz{$10 - 3x$ für $x = -2$}{$16$}{\einsetztabelle}
+% terme-e5-k1-s3-v1
+% pruef: (-2)**2 - 5*(-2) == 14
+\sz{$x^2 - 5x$ für $x = -2$}{$14$}{\einsetztabelle}
+% terme-e5-k1-s4-v1
+% pruef: 2*Rational(-1,2)**2 + 3*Rational(-1,2) == -1
+\sz[3]{$2x^2 + 3x$ für $x = -\frac{1}{2}$}{$-1$}{\einsetztabelle}
+\end{nr}
+
+\begin{nr}[b]{Berechne den Wert des Terms.}
+% terme-e5-k1-s5-v1
+% pruef: Rational(1,2)*8 - 2*Rational(-3,2) == 7
+\sz[3]{$\frac{1}{2}a - 2b$ für $a = 8$, $b = -\frac{3}{2}$}{$7$}{\einsetztabelle}
+% terme-e5-k1-s6-v1
+% pruef: 3*(2 - (-1))**2 + 2*(-1) == 25
+\szx[3][GYM]{$3 \cdot (x - y)^2 + xy$ für $x = 2$, $y = -1$}{$25$}
+% terme-e1-k4-s15-v2
+% pruef: 10*b - 5*b**2 - 7*b == 3*b - 5*b**2
+% pruef: 3*2 - 5*2**2 == -14
+\mitErklaerung{\rs[P10 ’25]{Vereinfache den Term $10b - 5b^2 - 7b$ und berechne seinen Wert für $b = 2$.}{$3b - 5b^2$; für $b = 2$: $-14$}}
+\end{nr}
+
+\merk{\mz{Einsetzen:}{$4x - 1$ für $x = 3$: $4 \cdot 3 - 1 = \mathbf{11}$ (Punkt vor Strich)}
+\mz{Negative Zahl:}{in Klammern einsetzen: $3x^2$ für $x = -2$: $3 \cdot (-2)^2 = \mathbf{12}$}
+\mz{Wichtig:}{$(-2)^2 = 4$, nicht $-4$. Die Klammer beim Einsetzen nicht weglassen.}}
+
+% =================================================================== Einheit 6
+\einheit{6}{Terme aufstellen}
+
+\begin{nr}{So findest du den Term zu einem Text. Lies das Beispiel, dann ergänze die Lösung.}
+\begin{beispiel}
+Das Sechsfache einer Zahl $x$ wird um 5 vermindert. Welcher Term passt: $6 \cdot (x - 5)$, \ $6x - 5$ \ oder \ $5 - 6x$?
+\begin{muster}
+\ms{erste Anweisung}{\text{das Sechsfache von } x}{= 6x}
+\ms{zweite Anweisung}{\text{um 5 vermindert}}{= 6x - 5}
+\mst{vergleichen}{$6 \cdot (x - 5)$ vermindert zuerst, $5 - 6x$ zieht falsch herum ab}
+\mserg{6x - 5}
+\end{muster}
+\end{beispiel}
+% NEU
+% pruef: 4*x + 7 == 4*x + 7
+\szt{Das Vierfache einer Zahl $x$ wird um 7 vergrößert. Schreibe den Term.}{$4x + 7$}{\begin{muster}
+\ms{erste Anweisung}{\text{das Vierfache von } x}{= 4x}
+\ms{zweite Anweisung}{\text{um 7 vergrößert}}{= \msfld[2.5cm]}
+\mserg{\msfld[2.5cm]}
+\end{muster}}
+\end{nr}
+
+\begin{nr}[b]{Päckchen – kreuze den Term an, der passt. Der Termbaum daneben hilft: oben das Rechenzeichen, unten die Teile.}
+% terme-e6-k1-s1-v1
+% pruef: 4*x - 3 == 4*x - 3
+\swa{\lsgt{$4x - 3$}Das Vierfache einer Zahl $x$ wird um 3 vermindert. \\ \kreuz{$4x - 3$} \\ \kreuz{$4 \cdot (x - 3)$} \\ \kreuz{$3 - 4x$}}{\termbaumleer}
+% terme-e6-k1-s1-v2
+% pruef: 4*x - 5 == 4*x - 5
+\swa{\lsgt{$4x - 5$}Das Vierfache einer Zahl $x$ wird um 5 vermindert. \\ \kreuz{$5 - 4x$} \\ \kreuz{$4x - 5$} \\ \kreuz{$4 \cdot (x - 5)$}}{\termbaumleer}
+% terme-e6-k1-s1-v3
+% pruef: 4*x - 6 == 4*x - 6
+\swa{\lsgt{$4x - 6$}Das Vierfache einer Zahl $x$ wird um 6 vermindert. \\ \kreuz{$4 \cdot (x - 6)$} \\ \kreuz{$6 - 4x$} \\ \kreuz{$4x - 6$}}{\termbaumleer}
+% terme-e6-k1-s1-v4
+% pruef: 4*x - 7 == 4*x - 7
+\swa{\lsgt{$4x - 7$}Das Vierfache einer Zahl $x$ wird um 7 vermindert. \\ \kreuz{$4x - 7$} \\ \kreuz{$7 - 4x$} \\ \kreuz{$4 \cdot (x - 7)$}}{\termbaumleer}
+\mitErklaerung{\swfrage{Was bleibt gleich, was ändert sich?}}
+\end{nr}
+
+\begin{nr}[b]{Schreibe einen Term.}\label{nr:auf}
+% terme-e6-k1-s2-v1
+% pruef: 3*x + 8 == 3*x + 8
+\sz[1]{Das Dreifache einer Zahl $x$ wird um 8 vergrößert.}{$3x + 8$}{\termbaumleer}
+% GEÄNDERT terme-e6-k1-s3-v1 (Form: Feld neben der Figur)
+% pruef: 5*x == 5*x
+\sz[1]{Flächeninhalt des Rechtecks (Maße in cm):}{$5x$}{\rechteck[seiten={5,x,,},punkte=]{3.6}{1.4}}
+% terme-e6-k1-s4-v2
+% pruef: 2*e + 5*k == 2*e + 5*k
+\sz[1]{Eine Eintrittskarte kostet für Erwachsene $e$ Euro und für Kinder $k$ Euro. Es kommen 2 Erwachsene und 5 Kinder. Was zahlen alle zusammen?}{$2e + 5k$}{\termbaumleer}
+% terme-e6-k1-s5-v2
+% pruef: m + 2*m + (m + 5) == 4*m + 5
+\sz{Tom hat $m$ Murmeln. Ina hat doppelt so viele wie Tom, Ali hat 5 mehr als Tom. Wie viele haben alle zusammen? Fasse zusammen.}{$m + 2m + (m + 5) = 4m + 5$}{\termbaumleer}
+\end{nr}
+
+\begin{nr}[b]{Schreibe den Term oder kreuze ihn an. Was zuerst gerechnet wird, kommt in die Klammer.}
+% terme-e6-k1-s6-v1
+% pruef: 2*(3*x + 2) == 6*x + 4
+\sz[1]{Verdreifache eine Zahl $x$, addiere 2 und verdopple die Summe.}{$2 \cdot (3x + 2)$}{\termbaumleer}
+% terme-e6-k1-s10-v3
+% pruef: 6*x - 2 == 6*x - 2
+\swa{\lsgt{$6x - 2$}Das Sechsfache einer Zahl $x$ wird um zwei vermindert. Kreuze den passenden Term an.\marke{P10 ’17} \\ \kreuz{$6 \cdot (x - 2)$} \\ \kreuz{$2 - 6x$} \\ \kreuz{$6x - 2$} \\ \kreuz{$6x - 2x$}}{\termbaumleer}
+% terme-e6-k1-s10-v2
+% pruef: (4*x + 9)/2 == (4*x + 9)/2
+\mitErklaerung{\swa{\lsgt{$(4x + 9) : 2$}Die Summe aus dem Vierfachen einer Zahl $x$ und 9 wird halbiert. Kreuze den passenden Term an.\marke{P10 ’23} \\ \kreuz{$4x + 9 : 2$} \\ \kreuz{$(4x + 9) : 2$} \\ \kreuz{$2 \cdot (4x + 9)$} \\ \kreuz{$4x : 9 + 2$}}{\termbaumleer}}
+\end{nr}
+
+\begin{nr}[b]{Abschluss}
+% terme-e6-k1-s6-v4
+% pruef: 4*(x + 6) == 4*x + 24
+\szx[1]{Schreibe als Term: Die Summe aus einer Zahl $x$ und 6 wird vervierfacht.}{$4 \cdot (x + 6)$}
+% terme-e6-k1-s7-v3
+% pruef: 30 + 45*3 == 165
+\rs{Ein Handwerker berechnet 30 € für die Anfahrt und 45 € je Arbeitsstunde. Stelle einen Term für die Rechnung in Euro bei $t$ Stunden auf. Was kostet ein Einsatz von 3 Stunden?}{$30 + 45t$; 165 €}
+% terme-e6-k3-s2-v1
+% pruef: 2*(3 + 9) == 24
+% pruef: 2*3 + 9 == 15
+\rs{Warum braucht man für „das Doppelte der Summe aus $x$ und 9“ eine Klammer? Begründe. Setze dazu $x = 3$ in $2 \cdot (x + 9)$ und in $2x + 9$ ein.}{Die Klammer verdoppelt die ganze Summe, nicht nur $x$: $2 \cdot (3 + 9) = 24$, aber $2 \cdot 3 + 9 = 15$}
+\end{nr}
+
+\merk{\mz{Vermindert um:}{„$x$ um 5 vermindert“: $\mathbf{x - 5}$}
+\mz{Das Mehrfache einer Summe:}{„das Doppelte der Summe aus $x$ und 5“: $\mathbf{2 \cdot (x + 5)}$, mit Klammer}
+\mz{Figur:}{Umfang Rechteck mit Seiten $x$ und 3: $x + 3 + x + 3 = \mathbf{2x + 6}$}
+\mz{Wichtig:}{„5 vermindert um $x$“ ist $5 - x$, nicht $x - 5$. Ohne Klammer wird nur das erste Glied vervielfacht.}}
+
+% =================================================================== Zum Schluss
+% Je Einheit eine Teilaufgabe mittlerer Höhe (gemischt), zwei aus Blatt 0
+% (schwach), dann zwei markierte höhere, die in gleicher Art schon vorkamen;
+% alle mit neuen Zahlen (Bankzeilen, die auf dem Blatt noch nicht vorkamen).
+\begin{nr}{Zum Schluss}
+\setlength{\mbschreibhoehe}{9mm}
+\begin{kette}[2.5cm]
+% NEU (Blatt 0: Plus und Minus, zwei Minus und Dezimalzahl)
+\falschk{\ref{nr:plus}}
+\rk{-1{,}5 - (-4)}{2{,}5}
+% NEU (Blatt 0: Punkt vor Strich)
+\falschk{\ref{nr:pvs}}
+\rk{2 - 3 \cdot (-4)}{14}
+\end{kette}\vspace{4pt}
+% terme-e3-k4-s8-v4 (Einheit 3)
+% pruef: 3*(2*a - 1) - (4*a - 6) == 2*a + 3
+\falsch{\ref{nr:kz}}
+\szx[2]{Löse auf und fasse zusammen: $3 \cdot (2a - 1) - (4a - 6)$}{$2a + 3$}
+% terme-e1-k4-s5-v5 (Einheit 1)
+% pruef: 5*x + 2*y - 7*x + 4*y - 3 == -2*x + 6*y - 3
+\falsch{\ref{nr:zus}}
+\szx[2]{Fasse zusammen: $5x + 2y - 7x + 4y - 3$}{$-2x + 6y - 3$}
+% terme-e5-k1-s3-v2 (Einheit 5)
+% pruef: 4 - 3*(-2)**2 == -8
+\falsch{\ref{nr:wert}}
+\szx[2]{Berechne den Wert: $4 - 3x^2$ für $x = -2$}{$-8$}
+% terme-e4-k2-s3-v5 (Einheit 4)
+% pruef: 5*y*(2*x - 3) == 10*x*y - 15*y
+\falsch{\ref{nr:aus}}
+\szx[2]{Klammere aus: $10xy - 15y$}{$5y \cdot (2x - 3)$}
+% NEU (Einheit 2)
+% pruef: 3*x*(-2*x*y) == -6*x**2*y
+\falsch{\ref{nr:mal}}
+\szx[1]{Multipliziere: $3x \cdot (-2xy)$}{$-6x^2y$}
+% terme-e6-k1-s7-v4 (Einheit 6)
+% pruef: 15 + 3*x == 15 + 3*x
+\falsch{\ref{nr:auf}}
+\szx[1]{Ein Schwimmbad verlangt 15 € Jahresbeitrag und 3 € je Besuch. Stelle einen Term für die Kosten in Euro bei $x$ Besuchen auf.}{$15 + 3x$}
+% terme-e3-k4-s5-v2 (GYM, wie Nr. kz, letzte Teilaufgabe)
+% pruef: 5*a - (2*b - (3*a - (b - a))) == 9*a - 3*b
+\falsch{\ref{nr:pm}, \ref{nr:kz}}
+\szx[2][GYM]{Löse auf und fasse zusammen: $5a - \{\,2b - [\,3a - (b - a)\,]\,\}$}{$9a - 3b$}
+% NEU (P10 ’25, wie Nr. wert; Original 2025-GYM-B2a mit neuen Zahlen)
+% pruef: 9*c - 4*c**2 - 6*c == 3*c - 4*c**2
+% pruef: 3*(-1) - 4*(-1)**2 == -7
+\falsch{\ref{nr:zus}, \ref{nr:wert}}
+\szx[2][P10 ’25]{Vereinfache den Term $9c - 4c^2 - 6c$ und berechne seinen Wert für $c = -1$.}{$3c - 4c^2$; für $c = -1$: $-7$}
+\end{nr}
+
+% =================================================================== Lösungen
+\clearpage
+\noindent{\Large\bfseries Lösungen}\par\vspace{2pt}
+\begin{multicols}{3}\raggedright\footnotesize\linespread{0.96}\selectfont
+\mblsg
+\end{multicols}
+\end{document}
