@@ -279,8 +279,8 @@ potenzen-wurzeln-e2-k1-s17-v7;2017-OS-B1e;1;nein;ganz;kleinste Zahl mit Zehnerpo
 potenzen-wurzeln-e2-k1-s17-v8;2017-OS-B1e;1;nein;ganz;kleinste Zahl mit Zehnerpotenzen ankreuzen
 wahrscheinlichkeit-e1-k1-s6-v1;2017-OS-B1f;1;nein;ganz;Anzahl der Ergebnisse zweier Würfe angeben
 daten-e4-k1-s7-v1;2017-OS-B1h;1;nein;ganz;arithmetisches Mittel von vier Dezimalzahlen
-terme-e1-k1-s7-v3;2017-OS-B1i;1;nein;ganz;passenden Term zum Sachtext ankreuzen
-terme-e1-k1-s7-v4;2017-OS-B1i;1;nein;ganz;passenden Term zum Sachtext ankreuzen
+terme-e6-k1-s10-v3;2017-OS-B1i;1;nein;ganz;passenden Term zum Sachtext ankreuzen
+terme-e6-k1-s10-v4;2017-OS-B1i;1;nein;ganz;passenden Term zum Sachtext ankreuzen
 trigonometrie-e1-k3-s1-v1;2017-OS-B1j;1;nein;ganz;Seitenverhältnis für den Sinus angeben
 rationale-zahlen-e4-k1-s6-v3;2017-OS-K2a;1;nein;ganz;Ausgangswert aus Differenz zurückrechnen
 rationale-zahlen-e4-k1-s6-v4;2017-OS-K2a;1;nein;ganz;Ausgangswert aus Differenz zurückrechnen
@@ -1664,8 +1664,8 @@ terme-basis-k2-v6;2023-OS-B1h;1;nein;ganz;passenden Term zum Sachtext ankreuzen
 terme-basis-k2-v7;2023-OS-B1h;1;nein;ganz;passenden Term zum Sachtext ankreuzen
 terme-basis-k2-v8;2023-OS-B1h;1;nein;ganz;passenden Term zum Sachtext ankreuzen
 terme-basis-k2-v9;2023-OS-B1h;1;nein;ganz;passenden Term zum Sachtext ankreuzen
-terme-e1-k1-s7-v1;2023-OS-B1h;1;nein;ganz;passenden Term zum Sachtext ankreuzen
-terme-e1-k1-s7-v2;2023-OS-B1h;1;nein;ganz;passenden Term zum Sachtext ankreuzen
+terme-e6-k1-s10-v1;2023-OS-B1h;1;nein;ganz;passenden Term zum Sachtext ankreuzen
+terme-e6-k1-s10-v2;2023-OS-B1h;1;nein;ganz;passenden Term zum Sachtext ankreuzen
 lineare-funktionen-basis-k3-v1;2023-OS-B1i;1;nein;ganz;dieselben Ergebnisse mit gleicher Handlung
 lineare-funktionen-basis-k3-v10;2023-OS-B1i;1;nein;ganz;dieselben Ergebnisse mit gleicher Handlung
 lineare-funktionen-basis-k3-v2;2023-OS-B1i;1;nein;ganz;dieselben Ergebnisse mit gleicher Handlung
@@ -2234,8 +2234,8 @@ terme-basis-k1-v6;2025-GYM-B2a;2;;ganz;vereinfachen und Termwert berechnen
 terme-basis-k1-v7;2025-GYM-B2a;2;;ganz;vereinfachen und Termwert berechnen
 terme-basis-k1-v8;2025-GYM-B2a;2;;ganz;vereinfachen und Termwert berechnen
 terme-basis-k1-v9;2025-GYM-B2a;2;;ganz;vereinfachen und Termwert berechnen
-terme-e2-k4-s11-v1;2025-GYM-B2a;2;;ganz;vereinfachen und Termwert berechnen
-terme-e2-k4-s11-v2;2025-GYM-B2a;2;;ganz;vereinfachen und Termwert berechnen
+terme-e1-k4-s15-v1;2025-GYM-B2a;2;;ganz;vereinfachen und Termwert berechnen
+terme-e1-k4-s15-v2;2025-GYM-B2a;2;;ganz;vereinfachen und Termwert berechnen
 prozentrechnung-basis-k1-v1;2025-OS-B1a;1;nein;ganz;Grundwert aus Rabatt wie im Original
 prozentrechnung-basis-k1-v10;2025-OS-B1a;1;nein;ganz;Grundwert aus Rabatt wie im Original
 prozentrechnung-basis-k1-v2;2025-OS-B1a;1;nein;ganz;Grundwert aus Rabatt wie im Original
