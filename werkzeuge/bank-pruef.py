@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """Prüft die Bank eines Katalogeintrags (bank.md, Abschnitt „Prüfung").
 
+v0.13, 2026-10-01 (bank.md sechste Fassung): Feld herkunft erlaubt
+  (Zeilen aus Blatt-Chats), sonst unverändert.
+
 v0.12, 2026-09-30 (Entscheidung Körperregel):
   a) Punkte und Tripel der Sperre werden je Quelle gesammelt (ein
      Original; Merkkasten und Typische Fehler zusammen als „Kasten“).
@@ -134,7 +137,7 @@ FELDER = ["id", "eintrag", "einheit", "kette", "kette_nr", "sprosse",
           "sprosse_text", "merkmal", "hoehe", "variante", "aufgabe",
           "form", "antwort", "loesung", "pruef", "original", "grafik",
           "quelle"]
-FELDER_NEU = ["loesungsgrafik"]  # seit bank.md 2. Fassung
+FELDER_NEU = ["loesungsgrafik", "herkunft"]  # seit bank.md 2. bzw. 6. Fassung
 HOEHEN = ["vorstufe", "grundfall", "sprosse", "pruefung", "pflicht"]
 PFLICHT = ["fehler", "begruenden", "darstellung", "anwendung"]
 FORMEN = ["teil", "gleichungsraster", "dreisatz", "streifenfeld",

@@ -1,6 +1,6 @@
 # Aufgabenbank – Form und Regeln
 
-Stand 2026-09-30b, fünfte Fassung (Vorstufen-Nummerierung, eine
+Stand 2026-10-01, sechste Fassung (Feld herkunft für Zeilen aus Blatt-Chats, Übernahme durch den Blatt-Chat 01.10.; Vorstufen-Nummerierung, eine
 Prüfungssprosse je Kette, Körperregel beim Nachzug; Pflichtformen
 und Päckchen seit 28.09.; Körperregel der Sperre für Punkte 30.09.;
 Erkennungsschritte und Vorstufen, Marke „kein P10-Stoff“ 30.09.b).
@@ -115,6 +115,14 @@ Leerzeilen. Reihenfolge der Zeilen = Reihenfolge der Kette.
                   zwei bis drei Punkte beschreibbar ist
     quelle        Zeile des Katalogeintrags, aus der die Sprosse
                   stammt (Zeilennummer beim Stand-Commit)
+    herkunft      nur bei Zeilen, die ein Blatt-Chat erfunden hat:
+                  „Blatt <eintrag> <JJJJ-MM-TT>[b], Nr. <n>“ (Ordner
+                  in eingang/ und Nummer auf dem Blatt); sonst fehlt
+                  das Feld. Der Blatt-Chat (bankblatt.md v5.2) prüft
+                  seine Erfindungen gegen die Bank (Prüfskript,
+                  Doppelte, Sprosse) und trägt sie selbst ein; der
+                  Lehrer streicht, was ihm auf dem Blatt nicht
+                  gefällt (Beschluss 01.10.).
 
 Eine Pooldublette (derselbe Text in zwei Heften, im Katalog als
 „Dublette von“ vermerkt) zählt als ein Original; die Bankzeile trägt
