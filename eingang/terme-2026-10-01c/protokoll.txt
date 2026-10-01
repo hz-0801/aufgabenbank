@@ -1,0 +1,53 @@
+Blatt terme 2026-10-01c – Protokoll
+
+Eintrag: terme (katalog/terme.md; Mappe mappen/terme.md, Katalog-Commit 9e85c1e, sechs Einheiten)
+Eingabe: „Terme“, keine Zusätze → Regelfall (Blatt 0, ohne Lösungsweg, ohne Vorstufen)
+Anlass: drittes Blatt am selben Tag; das erste (eingang/terme-2026-10-01/, Regelfall) war nach
+  der älteren Mappe mit vier Einheiten gebaut, der Lehrer hat den Neubau nach der Sechs-Einheiten-
+  Mappe bestätigt. Während des Baus kam eingang/terme-2026-10-01b/ („schwach“, anderer Chat)
+  hinzu, daher Anhang „c“.
+Bankstand: gebaut auf bank/terme beim Chatstart (Commit 5e8baab, vier Einheiten, 239 Zeilen);
+  während des Baus wurde die Bank auf sechs Einheiten umgestellt (Commit 4493f71, 369 Zeilen,
+  alle Sprossen belegt). Die ids im Quelltext sind auf die neue Bank umgeschrieben (jede alte
+  Zeile wortgleich wiedergefunden); die 36 neuen Aufgaben sind textgleich in der neuen Bank nicht
+  enthalten, inhaltlich können sie sich mit den 84 neuen Bankzeilen überschneiden – Prüfung
+  durch die Werkstatt.
+Prompt: Unterrichtsblatt aus der Bank v5.1 (01.10.2026); Vorbild bau/terme/muster-2026-10-01/muster4.tex
+Modell: Claude Fable 5.1 (claude-fable-5-1)
+Vorlage: mathblatt.sty 2026-09-28a (aus hz-0801/blattbau, identisch mit der Kopie im Muster-Ordner);
+  Satzmakros (nr, kette, werte, rk/rw/rt/rtx/rs, merk, Lösungsliste) aus dem Muster übernommen
+  wie beim ersten Blatt; dazu eine Umgebung „zusammen“ (Minipage), die Figurenaufgabe und Felder
+  gegen Umbruch zusammenhält.
+
+Aufbau: Blatt 0 (Nr. 1–4) · Einheiten in der Blattfolge der Mappe 1–6:
+  1 Terme zusammenfassen (Nr. 5–6) · 2 Terme malnehmen (Nr. 7–8) · 3 Klammern auflösen (Nr. 9–12)
+  · 4 Ausklammern (Nr. 13–14) · 5 Termwerte berechnen (Nr. 15) · 6 Terme aufstellen (Nr. 16–17)
+  · Zum Schluss (Nr. 18) · Lösungen (Seite 7)
+Seiten: 7
+
+Teilaufgaben: 93 gesamt
+  aus der Bank: 57 (davon 8 geändert, „GEÄNDERT“: 6a, 10a, 10b, 14a, 14b, 16c, 16e, 18h)
+  aus bank/terme/eingang.jsonl: 0 (Datei nicht vorhanden)
+  neu erfunden: 36 (neu.jsonl, ids terme-neu-2026-10-01c-1 … -36; einheit/kette_nr/sprosse nach
+    der Sechs-Einheiten-Bank)
+Marken: GYM 7 (5g, 7h, 11f, 11g, 11h, 13h, 18g), P10 ’25 2 (6c aus Bank, 18h geändert),
+  P10 ’17 1 (16g), P10 ’23 1 (16h)
+
+Prüfungen:
+  pruef.py (sympy, Kopie aus dem Muster-Ordner): 96 Proben, 0 Fehler
+  neu.jsonl: 36 pruef-Felder mit sympy nachgerechnet (neu_bauen.py), 0 Fehler
+  xelatex zweimal: 0 Fehler, 0 „Missing character“ in der .log
+  Seiten als PNG angesehen: keine Seite mit nur einer Nummer, „Zum Schluss“ ungeteilt (Seite 6)
+
+Abweichungen/Hinweise:
+  - Blatt 0 mit drei Rechnungen je Nummer (Regel: drei bis vier), damit Einheit 1 samt
+    Abschluss auf Seite 1 passt.
+  - Nr. 5 (Zusammenfassen) mit sieben Teilaufgaben; die Sprosse „Potenz und Dezimalvorzahl mit
+    negativem Ergebnis“ ist nicht gesondert belegt, Dezimalvorzahl steckt in 5e.
+  - Die Probe durch Ausmultiplizieren steht als Teilaufgabe 13g in der Ausklammer-Kette
+    (Feld 6 cm), nicht als eigene Nummer; die Bankzeilen e4-k2-s6 sind deshalb nicht verwendet.
+  - Abschluss in Einheit 1 (ein Verfahren) wie im Muster 4, weil die Kette Zusammenfassen nach
+    der Mappe mit der P10-’25-Sprosse endet (6c) und die Anwendung (6a) dort gehört.
+  - Rechenraum 6 mm statt 7 mm Zeilenabstand (Muster: 7 mm), damit Nr. 14 auf Seite 4 bleibt.
+  - Seite 2 endet nach Nr. 8 mit Leerraum, weil der Einheitentitel 3 ein Drittel Seite verlangt.
+  - Figuren 6a, 14a, 16c (Dreieck, zwei Rechtecke) kleiner als in der Bankzeile gesetzt.
