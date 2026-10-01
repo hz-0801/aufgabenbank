@@ -1,0 +1,42 @@
+Blatt terme 2026-10-01b (schwach) – Protokoll
+
+Eintrag: terme (katalog/terme.md; Mappe mappen/terme.md, Katalog-Commit 9e85c1e, Mappe 2026-10-01 19:10 UTC, sechs Einheiten)
+Eingabe: „terme schwach“ → Zusatz „schwach“: feine Leiter (alle Sprossen der Mappe), Vorstufen
+  (Erkennungsschritte) als eigene Nummern vor der Einheit, Grundvorstellung „Vorzahl“ auf Blatt 0;
+  Annahme: GYM-Sprossen weggelassen, P10-Höhe bleibt. Blatt 0 ja, ohne Lösungsweg.
+Zweites Blatt zu terme am selben Tag (eingang/terme-2026-10-01 ist der Regelfall) → Ordner mit Anhang „b“.
+Prompt: Unterrichtsblatt aus der Bank v5.1 (01.10.2026); Vorbild bau/terme/muster-2026-10-01/muster4.tex
+Modell: Claude Fable 5.1 (claude-fable-5-1)
+Vorlage: mathblatt.sty 2026-09-28a (Kopie aus dem Muster-Ordner); Satzmakros aus dem Blatt
+  terme-2026-10-01 übernommen, dazu \rfr (Frage in fester Spalte mit Antwortfeld, Vorstufen),
+  \rto (Textzeile mit Feldern im Text) und \fld (kurzes Feld); Nummerntitel und Kettenanfang
+  jetzt mit \nobreak, damit kein Titel am Seitenende allein steht.
+
+Aufbau: Blatt 0 (Nr. 1–5, Nr. 5 Grundvorstellung Vorzahl) · Einheiten in der Blattfolge der Mappe:
+  1 Terme zusammenfassen (Nr. 6–8 Vorstufen, 9–10) · 2 Terme malnehmen (Nr. 11–12)
+  · 3 Klammern auflösen (Nr. 13 Vorstufe, 14–16, 17 Abschluss) · 4 Ausklammern (Nr. 18–20 Vorstufen,
+  21–22, 23 Abschluss) · 5 Termwerte berechnen (Nr. 24) · 6 Terme aufstellen (Nr. 25–26, 27 Abschluss)
+  · Zum Schluss (Nr. 28) · Lösungen (Seite 9, dreispaltig)
+Seiten: 9
+
+Teilaufgaben: 138 gesamt
+  aus der Bank: 99 (davon 5 nur in der Form geändert, „GEÄNDERT“: 15a, 15b, 17b, 23b, 26b)
+  aus bank/terme/eingang.jsonl: 0 (Datei nicht vorhanden)
+  aus eingang/terme-2026-10-01/neu.jsonl („EINGANG“): 13
+  neu erfunden: 26 (neu.jsonl, ids terme-neu-2026-10-01b-1 … -26; Anhang „b“ in der id, damit
+    sie sich nicht mit terme-neu-2026-10-01-1 … -32 des Vormittagsblatts überschneiden)
+Marken: P10 ’25 2 (10g aus Bank, 28g EINGANG), P10 ’17 1 (25d), P10 ’23 2 (25e aus Bank, 28h neu); GYM 0
+
+Prüfungen:
+  pruef.py (sympy, Kopie aus dem Muster-Ordner): 117 Proben, 0 Fehler
+  neu.jsonl: 27 pruef-Proben mit sympy nachgerechnet, 0 Fehler
+  xelatex zweimal: 0 Fehler, 0 „Missing character“ in der .log
+  Seiten als PNG angesehen: keine Seite mit nur einer Nummer, kein Titel allein am Seitenende,
+  „Zum Schluss“ ungeteilt (Seite 8)
+
+Abweichungen/Hinweise:
+  - Einheiten 1, 2 und 5 haben nur ein Verfahren (plus Vorstufen) und daher keine eigene
+    Abschluss-Nummer; die Anwendung steht als letzte Sprosse der Kette (10f, 12c).
+  - Nr. 25 trägt die Ankreuzaufgaben samt P10-Höhe, Nr. 26 das Schreiben – je Nummer eine Antwortform.
+  - Nr. 21 (Ausklammern) läuft über den Seitenumbruch 5/6 (a–e / f–h); Nr. 26 über 7/8.
+  - Sprossenzählung in neu.jsonl folgt der Bank (e<n>.jsonl); die Mappen-Sprosse steht in sprosse_text.
