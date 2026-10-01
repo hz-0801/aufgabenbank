@@ -1,8 +1,12 @@
 # zusammenbau.py – aus der Bank ein Blatt (Quelltext)
 
-Stand 2026-09-30, v0.9 (Lernblatt im Satz des Kompetenzblatts: Auftrag
-über der Nummer, kurze Terme nebeneinander, Ich-kann-Titel, Zweigzeile,
-Mengen nach bank.md, Zone-Verweis, siehe „Rezept Lernblatt (v0.9)“;
+Stand 2026-10-01, v1.0 (Lernblatt nach den Befunden des Lehrers am
+TER-L4: Blattfolge, Test „Kannst du das schon?“ am Kopf jeder Einheit,
+„Verstanden?“, Titel im Infinitiv, Auftrag nur bei Mehrdeutigkeit,
+Lösungen am Ende des Gesamt, siehe „Rezept Lernblatt (v1.0)“; erstes
+Blatt TER-L5). Davor v0.9 (Lernblatt im Satz des Kompetenzblatts:
+Auftrag über der Nummer, kurze Terme nebeneinander, Ich-kann-Titel,
+Zweigzeile, Mengen nach bank.md, Zone-Verweis, siehe „Rezept Lernblatt (v0.9)“;
 zweiter Durchgang am selben Tag: Grundfall nach „(n×)“ im Katalog,
 Prüfungshöhe nach der Regel des Kompetenzblatts, Seite „Prüfe dich“ mit
 „Das kann ich“, Verweis „Hängst du hier → Nr. n“ unter der Nummer,
@@ -25,6 +29,7 @@ Strukturprüfung im Skript ersetzt den Lauf bis zum ersten Render.
         [--klasse 7] [--kasten] [--aus <ordner>]
         [--vorlage <pfad/mathblatt.sty>] [--ohne-register]
         [--kuerzel <pfad/_kuerzel.csv>] [--nummer n]
+        [--mit-sachaufgaben]
 
 Ohne Schalter: Lernblatt mit Zone und allen Einheiten, Mengen nach
 bank.md (seit v0.9; bis v0.8 je Sprosse Variante 1), ohne Klasse, mit
@@ -47,6 +52,7 @@ werden trotzdem geschrieben).
 | `--ohne-register` | Probe: Kennung XXX-R0, keine Registerzeile |
 | `--kuerzel <csv>` | Pfad zu katalog/_kuerzel.csv |
 | `--nummer n` | Kennung XXX-R<n> vorgegeben (v0.9; bricht ab, wenn sie im Register steht) |
+| `--mit-sachaufgaben` | Lernblatt: alle Sachaufgaben der Ketten (v1.0; sonst je Kette eine) |
 
 mathblatt.sty sucht das Skript sonst unter $BLATTBAU,
 ../hz-0801/blattbau/ und ../blattbau/ neben dem Repo;
@@ -141,7 +147,9 @@ Lernblatt und schwach: blatt0_a/_l (Zone), e<n>_a/_l je Einheit
 (n = Nummer im Katalog), Rahmen <K>-blatt0.tex, <K>-e<n>.tex,
 <K>.tex (bis v0.1 lernblatt.tex), <K>-gesamt.tex,
 <K>-loesungen.tex, abhaken.tex (<K> = Kennung); seit v0.9 im
-Lernblatt dazu pruefe_a/_l („Prüfe dich“) und vorspann.tex. Fokus:
+Lernblatt dazu pruefe_a/_l („Prüfe dich“) und vorspann.tex; seit
+v1.0 im Lernblatt ohne pruefe_a/_l und abhaken.tex (Rezept Lernblatt
+v1.0). Fokus:
 blatt0_a/_l, e<n>_a/_l, <K>.tex, <K>-loesungen.tex (bis v0.1
 fokus.tex, fokus_loesungen.tex). Dazu mathblatt.sty als Kopie,
 bau.json und zusammenbau.log: Kennung (KENNUNG), jede Auswahl
@@ -183,6 +191,85 @@ Wurzel setzt `* text eol=lf`, das verfälscht PDFs).
   „Merkkasten“, Zuordnung der Zone aus „Voraussetzungen“.
 - Was Bank und Mappe nicht tragen, steht als `%% TODO` in der
   Zeile davor und in der log, nie als geratener Text.
+
+## Rezept Lernblatt (v1.0)
+
+Auftrag vom 01.10. (auftrag-lernblatt-v10.md, archiv/): Der Lehrer legte
+TER-L4 neben das Blatt des alten Prompts und gab 15 Befunde
+(bau/layout-befunde.md, Abschnitt „Befunde des Lehrers 01.10. am
+TER-L4“). Gilt für Rezept L; F, S und K teilen Code, ihre Quelltexte
+sind bis auf die Versionszeile gleich geblieben (Probe). Was hier nicht
+steht, gilt weiter wie in v0.9.
+
+1. Blattfolge: Zeile „Blattfolge: 2, 3, 4, 1“ unter den Lerneinheiten
+   des Katalogs (optional, katalog/_vorlage.md), über die Mappe gelesen
+   (`Mappe.blattfolge`). Die Einheiten stehen in dieser Folge, die
+   Nummern laufen durch; Dateinamen (e<n>_a.tex, <K>-e<n>.tex) behalten
+   die Katalognummer. Je Einheit erst die Ketten ohne Textaufgabe im
+   Grundfall, dann die mit (Textaufgabe: form text oder ein Satz vor dem
+   Auftrag, `ist_textaufgabe`); Pflichtelemente zuletzt; log FOLGE.
+2. Keine Verzeichniszeile, weder im Gesamt noch in den Teilen.
+3. Auftrag nur bei Mehrdeutigkeit (`laeufe_lern`, `anweisung_noetig`):
+   ein gemeinsamer Auftrag über der Nummer nur bei nackten Termen und
+   Gleichungen („Fasse zusammen: $7x + 2x$“); Teilaufgaben mit Bedingung
+   oder Kontext („… $4x - 3$ für $x = 5$“, Sachtext, gleicher
+   Schlusssatz, gleiche Vorlage) tragen je den ganzen Satz (log
+   AUFTRAG-SATZ-JE-TEIL). Die Anweisung entfällt, wenn jede Teilaufgabe
+   form teil ist und ein „=“ trägt oder eine reine Zahlrechnung ist und
+   der Titel die Handlung nennt (log ANWEISUNG-WEG). Prüfung AUFTRAG nur
+   für nackte Terme.
+4. Titel im Infinitiv: Spalte `titel` in bau/regal/ich-kann.csv (neu, am
+   Ende der Zeile; für terme gefüllt), sonst „Ich kann …“ maschinell
+   (`infinitiv_titel`), feste Ersatzsätze aus `ERSATZ_INFINITIV`; geht
+   nichts, der Satz ohne Punkt und log TITEL.
+5. Einheitenkopf nur der Titel
+   (`\einheitenkopf[e<n>][<Titel>]{<Titel>}`), keine Zweigzeile, auch nicht mit `--klasse`; Kopfzeile „Thema ·
+   Lernblatt · <Titel>“. Typen, die „Typen je Lerneinheit“ nur dem
+   Gymnasium zuordnet („[GYM 8]“ ohne OS), geben „GYM“ klein rechts im
+   Titel der Hauptnummer (`\lbgym`), wenn alle Teilaufgaben der Nummer
+   zu dem Typ gehören (Kettenname, sprosse_text oder Klammerinhalt des
+   Typs); sonst log GYM ohne Marke.
+6. Striche für den Rechenweg (`\kbraum` im Vorspann neu): Linie wie das
+   Antwortfeld (`\underline`, schwarz), halbe Textbreite, eingerückt wie
+   die Teilaufgabe; vor dem ersten Strich und vor dem Antwortfeld
+   (`\kbantwort`) eine Zeile Luft.
+7. Kein „Einheit n von m“, weder im Kopf noch in der Kopfzeile.
+8. Ankreuzen nebeneinander nur bis 120 Zeichen Quelltext (Text und
+   Optionen); ganze Vorstufen paarweise nur bis 45 Zeichen (eine Zeile
+   der halben Spalte).
+9. Keine Teilung unter 27 Teilaufgaben (`hn_lern`); darüber an einer
+   Sprossengrenze, das zweite Stück trägt den Titel seiner Sprosse.
+10. Test am Kopf jeder Einheit (`test_hn`): „Kannst du das schon? Dann
+    weiter zu „<nächste Einheit>““ (letzte: „Dann bist du fertig“); je
+    Verfahrenskette eine Teilaufgabe der höchsten Sprosse mit form ≠
+    text und ohne Sachkontext, kleinste Variante, die im Blatt nicht
+    steht (sonst die höchste, log TEST); ohne Verfahrenskette die Typen
+    ohne Kette. Lösung: „(richtig → Nr. a–b überspringen)“ mit den
+    Nummern der Kette. „Prüfe dich“, „Das kann ich“ und abhaken.tex
+    entfallen.
+11. „Verstanden?“ am Ende der Einheit (`verstanden_hn`): je Sorte
+    (fehler, begründen, darstellung, anwendung) eine Teilaufgabe, die
+    kleinste Sprosse und Variante, Anwendung zuletzt.
+12. Je Verfahrenskette höchstens eine Teilaufgabe mit Sachkontext
+    (`hat_sachkontext`: mehr als zwölf Wörter vor dem ersten Auftrag,
+    Mathe als ein Wort): die mit der höchsten Sprosse bleibt, die
+    übrigen entfallen (log TEXT); der Grundfall bleibt immer.
+    `--mit-sachaufgaben` hebt die Grenze auf.
+13. Grafik links, Antwort rechts (`grafik_mass_lern` kennt \viereck,
+    \dreieck, \termbaum, \sachtabelle): passt die Grafik in die Breite
+    minus 4,5 cm, steht das Antwortfeld (mit Bezeichner aus dem
+    Antwortgerüst) rechts daneben, etwa auf halber Höhe (log GRAFIK).
+14. <K>-gesamt.tex endet mit „Lösungen“ auf neuer Seite (Kopfzeile
+    „Thema · Lernblatt · Lösungen“); die Lösungsteile tragen ihre
+    Überschrift als `\kbabschnitt`, ohne Einfluss auf die Kopfzeile.
+    <K>-loesungen.tex bleibt.
+
+Dateien: blatt0_a/_l, e<n>_a/_l, <K>.tex, <K>-gesamt.tex,
+<K>-blatt0.tex, <K>-e<n>.tex, <K>-loesungen.tex, vorspann.tex
+(VORSPANN, VORSPANN_LERN, VORSPANN_LERN10). bau.json im Lernblatt dazu:
+lage test, titel_fehlt, gym, sachkontext_ausgelassen, test, blattfolge,
+nach dem Messlauf pruefungen_v10 (bau/terme/lernblatt-messen.py).
+Erstes Blatt: bau/terme/TER-L5 (bericht.md).
 
 ## Rezept Lernblatt (v0.9)
 

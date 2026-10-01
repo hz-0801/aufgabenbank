@@ -200,3 +200,23 @@ Befunde des Lehrers an den ersten Kompetenzblättern (Prüfstein v0.7).
 Lernblatt v0.9 (2026-09-30, TER-L4): Befunde 1–5, 7–12, 15–17, 20,
 21, 25–28, 42, 47 (ohne Mini-Beispiel) und 49 im Lernblatt umgesetzt;
 6 bewusst nicht (kurze Terme zwei je Zeile, Auftrag vom 30.09.).
+
+## Befunde des Lehrers 01.10. am TER-L4
+
+Umsetzung zusammenbau v1.0 (auftrag-lernblatt-v10.md), Blatt TER-L5.
+
+1. Blattfolge 2, 3, 4, 1; Termwert vor Term aufstellen: umgesetzt
+2. Keine Verzeichniszeile, keine doppelte Überschrift: umgesetzt
+3. Auftrag nur bei Mehrdeutigkeit, sonst ganzer Satz je Teil: umgesetzt
+4. Titel im Infinitiv ohne „Ich kann“ (Spalte titel): umgesetzt
+5. Keine Zweigzeile, keine Zeitmarke; GYM im Titel: umgesetzt (terme 0)
+6. Rechenweg-Striche wie Antwortlinie, halbe Breite, Luft: umgesetzt
+7. Kein „Einheit n von m“ in Kopf und Kopfzeile: umgesetzt
+8. Ankreuzen nebeneinander nur bis 120 Zeichen: umgesetzt
+9. Kein „– weiter“, Teilung erst über 26 Teilaufgaben: umgesetzt
+10. Test „Kannst du das schon?“ am Kopf jeder Einheit: umgesetzt
+11. Pflicht je Sorte eine Teilaufgabe in „Verstanden?“: umgesetzt
+12. Je Kette höchstens eine Sachaufgabe, --mit-sachaufgaben: umgesetzt
+13. Grafik links, Antwortfeld rechts daneben: umgesetzt
+14. Lösungen am Ende des Gesamt auf neuer Seite: umgesetzt
+15. Bank „Kreuze den Term an, der dazu passt.“: offen (Gegenlese terme)
