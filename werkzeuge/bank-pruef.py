@@ -2,7 +2,8 @@
 """Prüft die Bank eines Katalogeintrags (bank.md, Abschnitt „Prüfung").
 
 v0.13, 2026-10-01 (bank.md sechste Fassung): Feld herkunft erlaubt
-  (Zeilen aus Blatt-Chats), sonst unverändert.
+  (Zeilen aus Blatt-Chats); es ist Wahlfeld, sein Fehlen gibt keine
+  Warnung (v0.13b).
 
 v0.12, 2026-09-30 (Entscheidung Körperregel):
   a) Punkte und Tripel der Sperre werden je Quelle gesammelt (ein
@@ -137,7 +138,8 @@ FELDER = ["id", "eintrag", "einheit", "kette", "kette_nr", "sprosse",
           "sprosse_text", "merkmal", "hoehe", "variante", "aufgabe",
           "form", "antwort", "loesung", "pruef", "original", "grafik",
           "quelle"]
-FELDER_NEU = ["loesungsgrafik", "herkunft"]  # seit bank.md 2. bzw. 6. Fassung
+FELDER_NEU = ["loesungsgrafik"]  # seit bank.md 2. Fassung
+FELDER_WAHL = ["herkunft"]  # seit bank.md 6. Fassung, nur bei Zeilen aus Blatt-Chats
 HOEHEN = ["vorstufe", "grundfall", "sprosse", "pruefung", "pflicht"]
 PFLICHT = ["fehler", "begruenden", "darstellung", "anwendung"]
 FORMEN = ["teil", "gleichungsraster", "dreisatz", "streifenfeld",
@@ -861,7 +863,7 @@ def pruefe_zeile(a, eintrag, einheit, ctx=None, basis=False):
     fehlt = [f for f in FELDER if f not in a]
     if fehlt:
         return ["Feld fehlt: " + ", ".join(fehlt)], w
-    extra = set(a) - set(FELDER) - set(FELDER_NEU) - {"pflicht"}
+    extra = set(a) - set(FELDER) - set(FELDER_NEU) - set(FELDER_WAHL) - {"pflicht"}
     if extra:
         b.append("unbekanntes Feld: " + ", ".join(sorted(extra)))
     if a["eintrag"] != eintrag:
