@@ -121,7 +121,7 @@ from bisect import bisect_right
 from pathlib import Path
 
 WURZEL = Path(__file__).resolve().parent.parent
-VERSION = "v1.1"
+VERSION = "v1.2"
 
 # Befehle der Rahmendateien, die weder in STANDARD (bank-pruef.py) noch
 # in _bausteine.md stehen; jede Argumentzahl zulässig.
@@ -144,7 +144,9 @@ RAHMEN |= {"lbgym", "lbantwortrechts"}
 # Lernblatt v1.1
 RAHMEN |= {"lbnr", "lbtest", "lbtt", "lbhinweis", "lbloes", "lbloesgrafik",
            "medskip", "raggedright", "lbkopfloesungen", "small",
-           "setlength", "parskip"}
+           "setlength", "parskip", "lbzelle", "lbzelleleer",
+           "lbfluchtabstand", "leftmargin", "makebox"}
+RAHMEN_UMGEBUNG |= {"lbflucht"}
 RAHMEN_UMGEBUNG |= {"lbaufgabe", "lbkasten", "multicols"}
 RAHMEN_UMGEBUNG |= {"lbdaskannich"}
 
@@ -1027,6 +1029,8 @@ class KbSatz:
         tabellen = [tabelle_text(x) for x in t["tabellen"]]
         feld = [] if feld_im_grafik(z) else antwort_zeilen(z.get("antwort", ""))
         n_raum = rechenzeilen(z)
+        if getattr(self, "lernblatt", False) and not self.raum_erlaubt(z):
+            n_raum = 0      # v1.2 (Regel 2)
         if z["form"] == "gleichungsraster" and not feld:
             feld = [antwortfeld("Lösung: __").replace("\\leerfeld", "\\kbfeld")]
             self.log(f"ANTWORT {wo}: Bank ohne Antwortgerüst – „Lösung: __“")
@@ -1643,15 +1647,15 @@ VORSPANN_LERN10 = r"""% Lernblatt v1.0 (Befund 6 und 13 des Lehrers vom 01.10.):
 % Test „Kannst du das schon?“: hellgrauer Kasten ohne Nummer, Lösung klein
 % unten rechts
 \newcommand{\lbtest}[3]{\par\addvspace{8pt}\noindent
-  \fcolorbox{gray!55}{gray!10}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+  {\setlength{\fboxsep}{1.5pt}\fcolorbox{gray!55}{gray!10}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
   \raggedright{\bfseries #1}\par\vspace{3pt}#2\par\vspace{2pt}%
-  {\raggedleft\footnotesize Lösung: #3\par}}}\par\addvspace{6pt}}
+  {\raggedleft\footnotesize Lösung: #3\par}}}}\par\addvspace{6pt}}
 \newcommand{\lbtt}[2]{\par\noindent\hangindent1.6em\hangafter1%
   \makebox[1.6em][l]{#1}#2\par\vspace{3pt}}
 % „Verstanden?“ im Kasten wie der Test (bricht über die Seite)
 \newenvironment{lbkasten}{\par\addvspace{8pt}\begin{tcolorbox}[breakable,
-  colback=gray!10,colframe=gray!55,boxrule=0.4pt,arc=0pt,left=3pt,right=3pt,
-  top=2pt,bottom=4pt]}{\end{tcolorbox}}
+  colback=gray!10,colframe=gray!55,boxrule=0.4pt,arc=0pt,left=1.5pt,right=1.5pt,
+  top=1pt,bottom=2pt]}{\end{tcolorbox}}
 \newcommand{\lbhinweis}[1]{{\small\itshape #1}\par\vspace{2pt}}
 % Lösungen: je Teilaufgabe eine Zeile, Nummer nur an der ersten
 \newcommand{\lbloes}[3]{\par\noindent\hangindent2.8em\hangafter1%
@@ -1659,6 +1663,12 @@ VORSPANN_LERN10 = r"""% Lernblatt v1.0 (Befund 6 und 13 des Lehrers vom 01.10.):
 % Kopfzeile der Lösungsseiten fest „… · Lösungen“ (multicols überdeckt die
 % Marke des Einheitenkopfs)
 \newcommand{\lbkopfloesungen}{\renewcommand{\mbkopfeinheit}{\,\textperiodcentered\,Lösungen}}
+% v1.2: Zellen der Spaltenblöcke, Leiter mit „=“ in einer Flucht
+\newcommand{\lbzelle}[2]{\begin{minipage}[t]{\dimexpr(\linewidth+\leftmargin)/#1-0.6em\relax}\kbhalb{#2}\end{minipage}}
+\newcommand{\lbzelleleer}[1]{\hspace*{\dimexpr(\linewidth+\leftmargin)/#1-0.6em\relax}}
+\newcommand{\lbfluchtabstand}{5pt}
+\newenvironment{lbflucht}{\renewcommand{\arraystretch}{1.25}%
+  \begin{tabular}{@{}l@{}r@{\ }c@{\ }l@{}}}{\end{tabular}}
 \newcommand{\lbloesgrafik}[1]{\par\noindent\hspace*{2.8em}\resizebox{!}{2.2cm}{#1}\par}"""
 
 
@@ -1718,6 +1728,8 @@ LB_SYNONYM = {"multiplizieren": ["malnehmen", "multiplizieren"],
               "auflösen": ["auflösen"], "ausklammern": ["ausklammern"],
               "zusammenfassen": ["zusammenfassen"]}
 LB_GRUNDFALL_LERN = 2
+LB_SPALTE3 = 14         # v1.2: drei Spalten, wenn alle Terme bis 14 Zeichen
+LB_FLUCHT_MAX = 12      # v1.2: Zeilen je Fluchtblock (unteilbar)
 LB_PRUEFUNG_TITEL = "Wie in der Prüfung"
 LB_GEMISCHT = "Gemischt – erkenne selbst, was zu tun ist."
 
@@ -2608,6 +2620,100 @@ class Bau(KbSatz):
                      "Antwortgerüst)")
         return zeilen
 
+    def raum_erlaubt(self, z):
+        """v1.2 (Regel 2): Bearbeitungsraum nur bei form text, Prüfungshöhe
+        mit Original, Begründen, Fehler finden und Anwendung."""
+        h = getattr(self, "_h", None)
+        return z["form"] == "text" or z.get("pflicht") in (
+            "begruenden", "fehler", "anwendung") or (
+            h is not None and h.lage == "pruefung")
+
+    def inline_teile(self, z, t, auftrag):
+        """(links, Zeichen, Feld) einer Teilaufgabe in einer Zeile (v1.2):
+        Zeichen „=“ bei Rechenaufträgen ohne „=“ im Term, „:“ bei anderen
+        Aufträgen mit Feld, „“ bei Frage oder ohne Feld."""
+        if t is None:
+            felder = antwort_zeilen(z.get("antwort") or "") or ["\\kbfeld"]
+            return (KENNUNG.sub("", z["aufgabe"]).strip(), "",
+                    " \\quad ".join(felder))
+        if LB_OHNE_FELD.search(auftrag or ""):
+            return t, "", ""
+        feld = antwort_zeilen(z.get("antwort") or "") or ["\\lbfeld"]
+        feld = ["\\lbfeld" if f.strip() == "\\kbfeld" else f for f in feld]
+        text_ohne = re.sub(r"\$[^$]*\$", "", t)
+        rechnen = (LB_RECHNEN.match(auftrag or "") or z["form"] ==
+                   "gleichungsraster") and "=" not in t and \
+            not re.search(r"[A-Za-zÄÖÜäöüß]{2,}", text_ohne)
+        if re.fullmatch(r"\s*=?\s*\\(lb|kb)feld\s*", feld[0]) is None and \
+                feld[0].lstrip().startswith("="):
+            feld = [feld[0].lstrip()[1:].strip()] + feld[1:]
+            rechnen = True
+        return t, "=" if rechnen else ":", " \\quad ".join(feld)
+
+    def dicht_klasse(self, h, z, t, auftrag):
+        """v1.2 (Regel 1): „spalten“ für Vorstufe, Grundfall und Blatt 0,
+        „flucht“ für Sprossen der Leiter (form teil), sonst „einzel“."""
+        a = z["aufgabe"]
+        if z.get("grafik") or z.get("pflicht") or \
+                z["form"] not in ("teil", "gleichungsraster") or \
+                re.search(r"\\(kreuz|rechnung|wertetabelle)|\\\\", a):
+            return "einzel"
+        ant = z.get("antwort") or ""
+        if ant.count("__") > 2 or ";" in ant:
+            return "einzel"
+        if t is None and not self.frage_inline(z):
+            return "einzel"
+        lhs = self.inline_teile(z, t, auftrag)[0]
+        if (h.lage in ("zone", "zonepaar") or z["hoehe"] in ("vorstufe",
+                                                             "grundfall")):
+            return "spalten" if len(schlicht(lhs)) <= 40 else "einzel"
+        if z["hoehe"] == "sprosse" or (z["hoehe"] == "pruefung" and
+                                        h.lage == "leiter"):
+            # Prüfungshöhe ohne Original steht seit v1.1 in der Leiter
+            return "flucht" if len(schlicht(lhs)) <= 60 else "einzel"
+        return "einzel"
+
+    def teile_dicht(self, h):
+        """v1.2: Läufe in Blöcke gleicher Klasse; der Auftrag steht über dem
+        ersten Block des Laufs."""
+        teile = []
+        for auftrag, zz, terme in h.laeufe:
+            klassen = [self.dicht_klasse(h, z, t, auftrag)
+                       for z, t in zip(zz, terme)]
+            j = 0
+            while j < len(zz):
+                k = j
+                while k < len(zz) and klassen[k] == klassen[j]:
+                    k += 1
+                if klassen[j] == "einzel":
+                    for m in range(j, k):
+                        teile.append(("einzel", auftrag if terme[m] is not None
+                                      and m == 0 else "", zz[m], terme[m]))
+                else:
+                    teile.append(("gruppe", auftrag if j == 0 else "",
+                                  list(zip(zz[j:k], terme[j:k])), klassen[j],
+                                  auftrag))
+                j = k
+        # Einzelne Spaltenaufgaben mit je eigenem Auftrag („Klammere den
+        # Faktor 3 aus: …“, „… Faktor 2 …“) zu einem Block: je Zelle der
+        # ganze Satz
+        aus, k = [], 0
+        while k < len(teile):
+            u = teile[k]
+            m = k
+            while m < len(teile) and teile[m][0] == "gruppe" and \
+                    teile[m][3] == "spalten" and len(teile[m][2]) == 1 and \
+                    self.frage_inline(teile[m][2][0][0]):
+                m += 1
+            if m - k >= 2:
+                aus.append(("gruppe", "", [(teile[x][2][0][0], None)
+                                           for x in range(k, m)], "spalten", ""))
+                k = m
+                continue
+            aus.append(u)
+            k += 1
+        return aus
+
     def frage_inline(self, z):
         """v1.1 (Regel 6): Fragesatz oder „Auftrag: Term“ mit kurzem
         Antwortfeld ohne Rechenweg – Feld in derselben Zeile."""
@@ -2705,10 +2811,78 @@ class Bau(KbSatz):
                 neu.append(teile[k])
                 k += 1
         teile = neu
+        if self.lernblatt:
+            teile = self.teile_dicht(h)
+        self._h = h
         i = 0
         erste = True
         voll = []           # Teilaufgaben mit ganzem Text (Auftrag darin)
         for u in teile:
+            if u[0] == "gruppe" and u[3] in ("spalten", "flucht"):
+                # v1.2 (Regel 1, 3): Spaltenblock bzw. Leiter mit „=“ in
+                # einer Flucht, ohne Bearbeitungsraum
+                _, zeige_anw, paare, art, auftrag = u
+                anw_g = zeige_anw or (h.anweisung if erste else "")
+                kopf = []
+                if anw_g and self.anweisung_noetig(
+                        h, anw_g, [p_[0] for p_ in paare],
+                        [p_[1] for p_ in paare]):
+                    kopf = [f"\\kbanweisung{{{klar(anw_g)}}}"]
+                stuecke = [self.inline_teile(z, t, auftrag) for z, t in paare]
+                bs = []
+                for z, _t in paare:
+                    bs.append(buchstabe(i) + ")" if mehr else "")
+                    h.buchstaben.append((buchstabe(i) if mehr else "", z))
+                    i += 1
+                if art == "spalten":
+                    n = 3 if all(len(s[0]) <= LB_SPALTE3 for s in stuecke) \
+                        else 2
+                    if any(len(schlicht(s[0])) + 8 * s[2].count("feld") > 44
+                           for s in stuecke):
+                        n = 1   # Satz und Felder passen nicht in eine Spalte
+                    self.log(f"DICHTE Nr. {h.nr}: {len(paare)} Teilaufgaben in "
+                             f"{n} Spalten")
+                    for k in range(0, len(paare), n):
+                        zellen = []
+                        for (lhs, sep, rhs), b in zip(stuecke[k:k + n],
+                                                      bs[k:k + n]):
+                            inhalt = lhs + ((" $=$ " if sep == "=" else ": "
+                                             if sep == ":" else " \\quad ")
+                                            + rhs if rhs else "")
+                            if sep == "=" and lhs.startswith("$") and \
+                                    lhs.endswith("$") and lhs.count("$") == 2:
+                                inhalt = lhs[:-1] + " =$ " + rhs
+                            zellen.append(f"\\lbzelle{{{n}}}{{\\kbteil{{{b}}}"
+                                          f"{{{inhalt}}}{{}}}}")
+                        while len(zellen) < n:
+                            zellen.append(f"\\lbzelleleer{{{n}}}")
+                        aus.append("\\begin{kbblock}")
+                        if k == 0:
+                            aus += kopf
+                        aus.append("\\item[]\\hspace*{-\\leftmargin}"
+                                   + "\\hfill".join(zellen) + "\\par")
+                        aus.append("\\end{kbblock}")
+                else:
+                    self.log(f"DICHTE Nr. {h.nr}: {len(paare)} Teilaufgaben "
+                             "untereinander, „=“ in einer Flucht")
+                    for k in range(0, len(paare), LB_FLUCHT_MAX):
+                        reihen = []
+                        for (lhs, sep, rhs), b in zip(
+                                stuecke[k:k + LB_FLUCHT_MAX],
+                                bs[k:k + LB_FLUCHT_MAX]):
+                            zeichen = "$=$" if sep == "=" else ":" if sep == \
+                                ":" else ""
+                            reihen.append(f"\\makebox[1.6em][r]{{{b}\\hspace{{0.2em}}}} & "
+                                          f"{lhs} & {zeichen} & {rhs}")
+                        aus.append("\\begin{kbblock}")
+                        if k == 0:
+                            aus += kopf
+                        aus.append("\\item[]\\hspace*{-\\leftmargin}"
+                                   "\\begin{lbflucht}" + " \\\\[\\lbfluchtabstand] "
+                                   .join(reihen) + "\\end{lbflucht}\\par")
+                        aus.append("\\end{kbblock}")
+                erste = False
+                continue
             if u[0] == "gruppe":
                 _, auftrag, paare, art = u
                 self.log(f"NEBENEINANDER Nr. {h.nr}: {len(paare)} Teilaufgaben "
@@ -5290,7 +5464,7 @@ TEXT_ARG = {"teil", "steil", "tz", "stz", "swz", "swa", "swfrage", "erg",
             "kbpaar", "kbteilpaar", "lbpaar"}
 MATHE_ARG = {"gl", "sgl", "rechnung"}
 TEXT_IN_MATHE = {"text", "textbf", "textit", "mbox", "emph"}
-AUSRICHTUNG = {"tabular", "array", "aligned", "matrix", "pmatrix", "cases",
+AUSRICHTUNG = {"lbflucht", "tabular", "array", "aligned", "matrix", "pmatrix", "cases",
                "gleichungsraster"}
 GRAFIK_UMGEBUNG = {"ksys", "ksys3", "boxplots", "kreis", "dreisatz",
                    "zahlengerade"}
