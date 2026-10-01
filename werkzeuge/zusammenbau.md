@@ -1,6 +1,8 @@
 # zusammenbau.py – aus der Bank ein Blatt (Quelltext)
 
-Stand 2026-10-01, v1.0 (Lernblatt nach den Befunden des Lehrers am
+Stand 2026-10-01, v1.1 (Lernblatt nach den Befunden am TER-L5, siehe
+„Rezept Lernblatt (v1.1)“; erstes Blatt TER-L6). Davor v1.0 (Lernblatt
+nach den Befunden des Lehrers am
 TER-L4: Blattfolge, Test „Kannst du das schon?“ am Kopf jeder Einheit,
 „Verstanden?“, Titel im Infinitiv, Auftrag nur bei Mehrdeutigkeit,
 Lösungen am Ende des Gesamt, siehe „Rezept Lernblatt (v1.0)“; erstes
@@ -191,6 +193,36 @@ Wurzel setzt `* text eol=lf`, das verfälscht PDFs).
   „Merkkasten“, Zuordnung der Zone aus „Voraussetzungen“.
 - Was Bank und Mappe nicht tragen, steht als `%% TODO` in der
   Zeile davor und in der log, nie als geratener Text.
+
+## Rezept Lernblatt (v1.1)
+
+Auftrag vom 01.10. (Befunde am TER-L5, dritter Lauf). Ersetzt v1.0, wo
+es abweicht; K, F, S unverändert.
+
+1. Eine Datei <K>-gesamt.tex (Blatt, dann Lösungen); <K>.tex,
+   <K>-blatt0.tex, <K>-e<n>.tex, <K>-loesungen.tex entfallen.
+2. Lösungen: je Teilaufgabe eine Zeile, nur das Ergebnis
+   (`kurz_loesung`; Fehler/Begründen der erste Satz), zweispaltig,
+   Blatt 0 mit „falsch → Nr. n“; `--mit-loesungsweg` gibt das Feld ganz.
+3. Blatt 0 ohne Titel (`lbaufgabe`, Nummer vor a)); Zone-Paar nur die
+   Fehlerzeile.
+4. Einheitentitel als \einheitenkopf* (groß, halbfett, Linie).
+5. Test ohne Nummer im grauen Kasten (`\lbtest`), kein Raum, kein
+   Auftrag, Lösung klein unten rechts; Nummern beginnen bei der Übung.
+6. Fragen und „Auftrag: Term“ mit kurzem Feld untereinander, Feld in
+   der Zeile; nebeneinander nur Terme und Rechnungen mit „=“.
+7. Auftrag einmal oben, wenn nur Term oder Zahl wechselt, auch bei
+   Bedingung („a) 4x − 3 für x = 5: ____“).
+8. Kein Auftrag, wenn der Titel die Handlung nennt (`titel_nennt`,
+   Synonyme `LB_SYNONYM`) und der Auftrag einfach ist (ein Satz, keine
+   Zahl, kein „und“, kein „mit“).
+9. Grundfall zweimal (`LB_GRUNDFALL_LERN`), Vorstufen alle.
+10. Prüfungshöhe ohne Original: letzte Teilaufgabe der Leiter.
+11. Prüfungshöhe mit Original: Titel „Wie in der Prüfung“, zwei
+    Schreibzeilen.
+12. „Verstanden?“ im Kasten (`lbkasten`) mit „Gemischt – erkenne
+    selbst, was zu tun ist.“; Fehler und Begründen die schwerste Zeile
+    (`pflicht_rang`, log PFLICHT).
 
 ## Rezept Lernblatt (v1.0)
 

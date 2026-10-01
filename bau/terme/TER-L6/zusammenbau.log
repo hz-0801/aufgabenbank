@@ -1,0 +1,240 @@
+# zusammenbau v1.1: zusammenbau.py terme
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG TER-L6 – Kürzel TER aus _kuerzel.csv (mathe-nachhilfe); Rezept L (Lernblatt); Nummer 6 = nächste freie in bau/register.csv
+BLATTFOLGE [2, 3, 4, 1] aus der Mappe → Einheiten [2, 3, 4, 1]
+EINHEITEN [2, 3, 4, 1]
+AUSWAHL terme-zone-f1-v1 – Zone f1 „Addieren und Subtrahieren negativer Zahl“: sehr leicht
+AUSWAHL terme-zone-f1-v2 – Zone f1 „Addieren und Subtrahieren negativer Zahl“: sehr leicht
+AUSWAHL terme-zone-f1-v3 – Zone f1 „Addieren und Subtrahieren negativer Zahl“: mittel
+AUSWAHL terme-zone-f1-v4 – Zone f1 „Addieren und Subtrahieren negativer Zahl“: Fallstrick
+AUSWAHL terme-zone-f1-v5 – Zone-Paar Zone f1 „Addieren und Subtrahieren negativer Zahl“ (am Ende der Zone)
+AUSWAHL terme-zone-f2-v1 – Zone f2 „Multiplizieren mit Vorzeichen“: sehr leicht
+AUSWAHL terme-zone-f2-v2 – Zone f2 „Multiplizieren mit Vorzeichen“: sehr leicht
+AUSWAHL terme-zone-f2-v3 – Zone f2 „Multiplizieren mit Vorzeichen“: mittel
+AUSWAHL terme-zone-f2-v4 – Zone f2 „Multiplizieren mit Vorzeichen“: Fallstrick
+AUSWAHL terme-zone-f3-v1 – Zone f3 „Dezimalzahlen und einfache Brüche als Vo“: sehr leicht
+AUSWAHL terme-zone-f3-v2 – Zone f3 „Dezimalzahlen und einfache Brüche als Vo“: sehr leicht
+AUSWAHL terme-zone-f3-v3 – Zone f3 „Dezimalzahlen und einfache Brüche als Vo“: mittel
+AUSWAHL terme-zone-f3-v4 – Zone f3 „Dezimalzahlen und einfache Brüche als Vo“: Fallstrick
+AUSWAHL terme-zone-f4-v1 – Zone f4 „Punkt vor Strich mit Zahlen“: sehr leicht
+AUSWAHL terme-zone-f4-v2 – Zone f4 „Punkt vor Strich mit Zahlen“: sehr leicht
+AUSWAHL terme-zone-f4-v3 – Zone f4 „Punkt vor Strich mit Zahlen“: mittel
+AUSWAHL terme-zone-f4-v4 – Zone f4 „Punkt vor Strich mit Zahlen“: Fallstrick
+FOLGE e2: „Gleichartige Glieder erkennen“ (erkennung) → „Vorzahl lesen“ (erkennung) → „Vorzeichen als Teil des Gliedes“ (erkennung) → „Zusammenfassen“ (verfahren) → „Malnehmen“ (verfahren)
+AUSWAHL terme-e2-k1-s0-v1 – e2 k1 „Gleichartige Glieder erkennen“ (erkennung): Erkennungsschritt, alle Zeilen
+AUSWAHL terme-e2-k1-s0-v2 – e2 k1 „Gleichartige Glieder erkennen“ (erkennung): Erkennungsschritt, alle Zeilen
+AUSWAHL terme-e2-k1-s0-v3 – e2 k1 „Gleichartige Glieder erkennen“ (erkennung): Erkennungsschritt, alle Zeilen
+AUSWAHL terme-e2-k1-s0-v4 – e2 k1 „Gleichartige Glieder erkennen“ (erkennung): Erkennungsschritt, alle Zeilen
+AUSWAHL terme-e2-k2-s0-v1 – e2 k2 „Vorzahl lesen“ (erkennung): Erkennungsschritt, alle Zeilen
+AUSWAHL terme-e2-k2-s0-v2 – e2 k2 „Vorzahl lesen“ (erkennung): Erkennungsschritt, alle Zeilen
+AUSWAHL terme-e2-k2-s0-v3 – e2 k2 „Vorzahl lesen“ (erkennung): Erkennungsschritt, alle Zeilen
+AUSWAHL terme-e2-k2-s0-v4 – e2 k2 „Vorzahl lesen“ (erkennung): Erkennungsschritt, alle Zeilen
+AUSWAHL terme-e2-k3-s0-v1 – e2 k3 „Vorzeichen als Teil des Gliedes“ (erkennung): Erkennungsschritt, alle Zeilen
+AUSWAHL terme-e2-k3-s0-v2 – e2 k3 „Vorzeichen als Teil des Gliedes“ (erkennung): Erkennungsschritt, alle Zeilen
+AUSWAHL terme-e2-k3-s0-v3 – e2 k3 „Vorzeichen als Teil des Gliedes“ (erkennung): Erkennungsschritt, alle Zeilen
+AUSWAHL terme-e2-k3-s0-v4 – e2 k3 „Vorzeichen als Teil des Gliedes“ (erkennung): Erkennungsschritt, alle Zeilen
+AUSWAHL terme-e2-k4-s1-v1 – e2 k4 „Zusammenfassen“ (verfahren): Grundfall (2 von 5)
+AUSWAHL terme-e2-k4-s1-v2 – e2 k4 „Zusammenfassen“ (verfahren): Grundfall (2 von 5)
+RESERVE terme-e2-k4-s1-v3 – e2 k4 „Zusammenfassen“ (verfahren): Grundfall über 2 (Päckchen wechselt)
+RESERVE terme-e2-k4-s1-v4 – e2 k4 „Zusammenfassen“ (verfahren): Grundfall über 2 (Päckchen wechselt)
+RESERVE terme-e2-k4-s1-v5 – e2 k4 „Zusammenfassen“ (verfahren): Grundfall über 2 (Päckchen wechselt)
+AUSWAHL terme-e2-k4-s2-v1 – e2 k4 „Zusammenfassen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL terme-e2-k4-s3-v1 – e2 k4 „Zusammenfassen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL terme-e2-k4-s4-v1 – e2 k4 „Zusammenfassen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL terme-e2-k4-s5-v1 – e2 k4 „Zusammenfassen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL terme-e2-k4-s6-v1 – e2 k4 „Zusammenfassen“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL terme-e2-k4-s7-v1 – e2 k4 „Zusammenfassen“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL terme-e2-k4-s8-v1 – e2 k4 „Zusammenfassen“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL terme-e2-k4-s9-v1 – e2 k4 „Zusammenfassen“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+AUSWAHL terme-e2-k4-s10-v1 – e2 k4 „Zusammenfassen“ (verfahren), Sprosse 10: Variante 1; übergangen v2, v3
+RESERVE terme-e2-k4-s11-v2 (2025-GYM-B2a) – weitere Variante desselben Originals
+PRÜFUNG 1 Originale, Jahrgänge [2025]; Fenster (jüngste fünf): [2025]
+TEXT e2 k4 „Zusammenfassen“ (verfahren): 0 Teilaufgabe mit Sachkontext – nichts ausgelassen
+AUSWAHL terme-e2-k4-s11-v1 – e2 k4 „Zusammenfassen“ (verfahren): Prüfungshöhe (2025-GYM-B2a)
+AUSWAHL terme-e2-k5-s1-v1 – e2 k5 „Malnehmen“ (verfahren): Grundfall (2 von 5)
+AUSWAHL terme-e2-k5-s1-v2 – e2 k5 „Malnehmen“ (verfahren): Grundfall (2 von 5)
+RESERVE terme-e2-k5-s1-v3 – e2 k5 „Malnehmen“ (verfahren): Grundfall über 2 (Päckchen wechselt)
+RESERVE terme-e2-k5-s1-v4 – e2 k5 „Malnehmen“ (verfahren): Grundfall über 2 (Päckchen wechselt)
+RESERVE terme-e2-k5-s1-v5 – e2 k5 „Malnehmen“ (verfahren): Grundfall über 2 (Päckchen wechselt)
+AUSWAHL terme-e2-k5-s2-v1 – e2 k5 „Malnehmen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL terme-e2-k5-s3-v1 – e2 k5 „Malnehmen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL terme-e2-k5-s4-v1 – e2 k5 „Malnehmen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL terme-e2-k5-s5-v1 – e2 k5 „Malnehmen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL terme-e2-k5-s6-v1 – e2 k5 „Malnehmen“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+RESERVE terme-e2-k5-s7-v2 (ohne Original) – weitere Variante desselben Originals
+RESERVE terme-e2-k5-s7-v3 (ohne Original) – weitere Variante desselben Originals
+PRÜFUNG 1 Originale, Jahrgänge [0]; Fenster (jüngste fünf): [0]
+TEXT e2 k5 „Malnehmen“ (verfahren): 0 Teilaufgabe mit Sachkontext – nichts ausgelassen
+PRÜFUNGSHÖHE e2 k5 „Malnehmen“ (verfahren): ohne Original ans Ende der Leiter – terme-e2-k5-s7-v1
+AUSWAHL terme-e2-k6-s1-v3 – e2 Pflicht fehler: eine Teilaufgabe „Verstanden?“ (übrig 2)
+PFLICHT e2 fehler: terme-e2-k6-s1-v3 Rang 4, terme-e2-k6-s1-v2 Rang 2, terme-e2-k6-s1-v1 Rang 1 → terme-e2-k6-s1-v3 (schwerste)
+AUSWAHL terme-e2-k6-s2-v2 – e2 Pflicht begruenden: eine Teilaufgabe „Verstanden?“ (übrig 2)
+PFLICHT e2 begruenden: terme-e2-k6-s2-v2 Rang 3, terme-e2-k6-s2-v3 Rang 2, terme-e2-k6-s2-v1 Rang 1 → terme-e2-k6-s2-v2 (schwerste)
+AUSWAHL terme-e2-k6-s3-v1 – e2 Pflicht darstellung: eine Teilaufgabe „Verstanden?“ (übrig 2)
+AUSWAHL terme-e2-k6-s4-v1 – e2 Pflicht anwendung: eine Teilaufgabe „Verstanden?“ (übrig 2)
+AUFTRAG-SATZ-JE-TEIL terme-e2-k6-s1-v3 …: „Begründe, ohne genau zu rechnen.“ – Text vor dem Schlusssatz verschieden, je Teilaufgabe der ganze Satz (2 Teilaufgaben)
+FOLGE e3: „Zeichen vor der Klammer feststellen“ (erkennung) → „Klammern“ (verfahren)
+AUSWAHL terme-e3-k1-s0-v1 – e3 k1 „Zeichen vor der Klammer feststellen“ (erkennung): Erkennungsschritt, alle Zeilen
+AUSWAHL terme-e3-k1-s0-v2 – e3 k1 „Zeichen vor der Klammer feststellen“ (erkennung): Erkennungsschritt, alle Zeilen
+AUSWAHL terme-e3-k1-s0-v3 – e3 k1 „Zeichen vor der Klammer feststellen“ (erkennung): Erkennungsschritt, alle Zeilen
+AUSWAHL terme-e3-k1-s0-v4 – e3 k1 „Zeichen vor der Klammer feststellen“ (erkennung): Erkennungsschritt, alle Zeilen
+AUSWAHL terme-e3-k2-s1-v1 – e3 k2 „Klammern“ (verfahren): Grundfall (2 von 5)
+AUSWAHL terme-e3-k2-s1-v2 – e3 k2 „Klammern“ (verfahren): Grundfall (2 von 5)
+RESERVE terme-e3-k2-s1-v3 – e3 k2 „Klammern“ (verfahren): Grundfall über 2 (Päckchen wechselt)
+RESERVE terme-e3-k2-s1-v4 – e3 k2 „Klammern“ (verfahren): Grundfall über 2 (Päckchen wechselt)
+RESERVE terme-e3-k2-s1-v5 – e3 k2 „Klammern“ (verfahren): Grundfall über 2 (Päckchen wechselt)
+AUSWAHL terme-e3-k2-s2-v1 – e3 k2 „Klammern“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL terme-e3-k2-s3-v1 – e3 k2 „Klammern“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL terme-e3-k2-s4-v1 – e3 k2 „Klammern“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL terme-e3-k2-s5-v1 – e3 k2 „Klammern“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL terme-e3-k2-s6-v1 – e3 k2 „Klammern“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL terme-e3-k2-s7-v1 – e3 k2 „Klammern“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+RESERVE terme-e3-k2-s8-v2 (ohne Original) – weitere Variante desselben Originals
+RESERVE terme-e3-k2-s8-v3 (ohne Original) – weitere Variante desselben Originals
+PRÜFUNG 1 Originale, Jahrgänge [0]; Fenster (jüngste fünf): [0]
+TEXT e3 k2 „Klammern“ (verfahren): 0 Teilaufgabe mit Sachkontext – nichts ausgelassen
+PRÜFUNGSHÖHE e3 k2 „Klammern“ (verfahren): ohne Original ans Ende der Leiter – terme-e3-k2-s8-v1
+AUSWAHL terme-e3-k3-s1-v3 – e3 Pflicht fehler: eine Teilaufgabe „Verstanden?“ (übrig 2)
+PFLICHT e3 fehler: terme-e3-k3-s1-v3 Rang 4, terme-e3-k3-s1-v2 Rang 2, terme-e3-k3-s1-v1 Rang 1 → terme-e3-k3-s1-v3 (schwerste)
+AUSWAHL terme-e3-k3-s2-v3 – e3 Pflicht begruenden: eine Teilaufgabe „Verstanden?“ (übrig 2)
+PFLICHT e3 begruenden: terme-e3-k3-s2-v3 Rang 3, terme-e3-k3-s2-v2 Rang 2, terme-e3-k3-s2-v1 Rang 1 → terme-e3-k3-s2-v3 (schwerste)
+AUSWAHL terme-e3-k3-s3-v1 – e3 Pflicht darstellung: eine Teilaufgabe „Verstanden?“ (übrig 2)
+AUSWAHL terme-e3-k3-s4-v1 – e3 Pflicht anwendung: eine Teilaufgabe „Verstanden?“ (übrig 2)
+AUFTRAG-SATZ-JE-TEIL terme-e3-k3-s1-v3 …: „Begründe, ohne genau zu rechnen.“ – Text vor dem Schlusssatz verschieden, je Teilaufgabe der ganze Satz (2 Teilaufgaben)
+FOLGE e4: „Was steckt in jedem Glied?“ (erkennung) → „Ausklammern“ (verfahren)
+AUSWAHL terme-e4-k1-s0-v1 – e4 k1 „Was steckt in jedem Glied?“ (erkennung): Erkennungsschritt, alle Zeilen
+AUSWAHL terme-e4-k1-s0-v2 – e4 k1 „Was steckt in jedem Glied?“ (erkennung): Erkennungsschritt, alle Zeilen
+AUSWAHL terme-e4-k1-s0-v3 – e4 k1 „Was steckt in jedem Glied?“ (erkennung): Erkennungsschritt, alle Zeilen
+AUSWAHL terme-e4-k1-s0-v4 – e4 k1 „Was steckt in jedem Glied?“ (erkennung): Erkennungsschritt, alle Zeilen
+AUSWAHL terme-e4-k2-s-1-v1 – e4 k2 „Ausklammern“ (verfahren), Vorstufe -1: alle Zeilen
+AUSWAHL terme-e4-k2-s-1-v2 – e4 k2 „Ausklammern“ (verfahren), Vorstufe -1: alle Zeilen
+AUSWAHL terme-e4-k2-s-1-v3 – e4 k2 „Ausklammern“ (verfahren), Vorstufe -1: alle Zeilen
+AUSWAHL terme-e4-k2-s-1-v4 – e4 k2 „Ausklammern“ (verfahren), Vorstufe -1: alle Zeilen
+AUSWAHL terme-e4-k2-s0-v1 – e4 k2 „Ausklammern“ (verfahren), Vorstufe 0: alle Zeilen
+AUSWAHL terme-e4-k2-s0-v2 – e4 k2 „Ausklammern“ (verfahren), Vorstufe 0: alle Zeilen
+AUSWAHL terme-e4-k2-s0-v3 – e4 k2 „Ausklammern“ (verfahren), Vorstufe 0: alle Zeilen
+AUSWAHL terme-e4-k2-s0-v4 – e4 k2 „Ausklammern“ (verfahren), Vorstufe 0: alle Zeilen
+AUSWAHL terme-e4-k2-s1-v1 – e4 k2 „Ausklammern“ (verfahren): Grundfall (2 von 5)
+AUSWAHL terme-e4-k2-s1-v2 – e4 k2 „Ausklammern“ (verfahren): Grundfall (2 von 5)
+RESERVE terme-e4-k2-s1-v3 – e4 k2 „Ausklammern“ (verfahren): Grundfall über 2 (Päckchen wechselt)
+RESERVE terme-e4-k2-s1-v4 – e4 k2 „Ausklammern“ (verfahren): Grundfall über 2 (Päckchen wechselt)
+RESERVE terme-e4-k2-s1-v5 – e4 k2 „Ausklammern“ (verfahren): Grundfall über 2 (Päckchen wechselt)
+AUSWAHL terme-e4-k2-s2-v1 – e4 k2 „Ausklammern“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL terme-e4-k2-s3-v1 – e4 k2 „Ausklammern“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL terme-e4-k2-s4-v1 – e4 k2 „Ausklammern“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL terme-e4-k2-s5-v1 – e4 k2 „Ausklammern“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL terme-e4-k2-s6-v1 – e4 k2 „Ausklammern“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+AUSWAHL terme-e4-k2-s7-v1 – e4 k2 „Ausklammern“ (verfahren), Sprosse 7: Variante 1; übergangen v2, v3
+AUSWAHL terme-e4-k2-s8-v1 – e4 k2 „Ausklammern“ (verfahren), Sprosse 8: Variante 1; übergangen v2, v3
+AUSWAHL terme-e4-k2-s9-v1 – e4 k2 „Ausklammern“ (verfahren), Sprosse 9: Variante 1; übergangen v2, v3
+RESERVE terme-e4-k2-s10-v2 (ohne Original) – weitere Variante desselben Originals
+RESERVE terme-e4-k2-s10-v3 (ohne Original) – weitere Variante desselben Originals
+PRÜFUNG 1 Originale, Jahrgänge [0]; Fenster (jüngste fünf): [0]
+TEXT e4 k2 „Ausklammern“ (verfahren): Sachkontext bleibt terme-e4-k2-s9-v1; ausgelassen terme-e4-k2-s7-v1, terme-e4-k2-s8-v1
+PRÜFUNGSHÖHE e4 k2 „Ausklammern“ (verfahren): ohne Original ans Ende der Leiter – terme-e4-k2-s10-v1
+AUSWAHL terme-e4-k3-s1-v3 – e4 Pflicht fehler: eine Teilaufgabe „Verstanden?“ (übrig 2)
+PFLICHT e4 fehler: terme-e4-k3-s1-v3 Rang 4, terme-e4-k3-s1-v2 Rang 2, terme-e4-k3-s1-v1 Rang 1 → terme-e4-k3-s1-v3 (schwerste)
+AUSWAHL terme-e4-k3-s2-v2 – e4 Pflicht begruenden: eine Teilaufgabe „Verstanden?“ (übrig 2)
+PFLICHT e4 begruenden: terme-e4-k3-s2-v2 Rang 3, terme-e4-k3-s2-v3 Rang 2, terme-e4-k3-s2-v1 Rang 1 → terme-e4-k3-s2-v2 (schwerste)
+AUSWAHL terme-e4-k3-s3-v1 – e4 Pflicht darstellung: eine Teilaufgabe „Verstanden?“ (übrig 2)
+AUSWAHL terme-e4-k3-s4-v1 – e4 Pflicht anwendung: eine Teilaufgabe „Verstanden?“ (übrig 2)
+AUFTRAG-SATZ-JE-TEIL terme-e4-k3-s1-v3 …: „Begründe, ohne genau zu rechnen.“ – Text vor dem Schlusssatz verschieden, je Teilaufgabe der ganze Satz (2 Teilaufgaben)
+FOLGE e1: „Termwert berechnen“ (ohne) → „Term aufstellen“ (verfahren, Textaufgabe im Grundfall) → „Situation zu Term angeben“ (ohne, Textaufgabe im Grundfall)
+AUSWAHL terme-e1-k2-s1-v1 – e1 k2 „Termwert berechnen“ (ohne): Typ ohne Kette, alle Zeilen
+AUSWAHL terme-e1-k2-s1-v2 – e1 k2 „Termwert berechnen“ (ohne): Typ ohne Kette, alle Zeilen
+AUSWAHL terme-e1-k2-s1-v3 – e1 k2 „Termwert berechnen“ (ohne): Typ ohne Kette, alle Zeilen
+AUSWAHL terme-e1-k1-s1-v1 – e1 k1 „Term aufstellen“ (verfahren): Grundfall (2 von 5)
+AUSWAHL terme-e1-k1-s1-v2 – e1 k1 „Term aufstellen“ (verfahren): Grundfall (2 von 5)
+RESERVE terme-e1-k1-s1-v3 – e1 k1 „Term aufstellen“ (verfahren): Grundfall über 2 (Päckchen wechselt)
+RESERVE terme-e1-k1-s1-v4 – e1 k1 „Term aufstellen“ (verfahren): Grundfall über 2 (Päckchen wechselt)
+RESERVE terme-e1-k1-s1-v5 – e1 k1 „Term aufstellen“ (verfahren): Grundfall über 2 (Päckchen wechselt)
+AUSWAHL terme-e1-k1-s2-v1 – e1 k1 „Term aufstellen“ (verfahren), Sprosse 2: Variante 1; übergangen v2, v3
+AUSWAHL terme-e1-k1-s3-v1 – e1 k1 „Term aufstellen“ (verfahren), Sprosse 3: Variante 1; übergangen v2, v3
+AUSWAHL terme-e1-k1-s4-v1 – e1 k1 „Term aufstellen“ (verfahren), Sprosse 4: Variante 1; übergangen v2, v3
+AUSWAHL terme-e1-k1-s5-v1 – e1 k1 „Term aufstellen“ (verfahren), Sprosse 5: Variante 1; übergangen v2, v3
+AUSWAHL terme-e1-k1-s6-v1 – e1 k1 „Term aufstellen“ (verfahren), Sprosse 6: Variante 1; übergangen v2, v3
+RESERVE terme-e1-k1-s7-v2 (2023-OS-B1h) – weitere Variante desselben Originals
+RESERVE terme-e1-k1-s7-v4 (2017-OS-B1i) – weitere Variante desselben Originals
+PRÜFUNG 2 Originale, Jahrgänge [2017, 2023]; Fenster (jüngste fünf): [2017, 2023]
+TEXT e1 k1 „Term aufstellen“ (verfahren): Sachkontext bleibt terme-e1-k1-s6-v1; ausgelassen terme-e1-k1-s4-v1
+AUSWAHL terme-e1-k1-s7-v1 – e1 k1 „Term aufstellen“ (verfahren): Prüfungshöhe (2023-OS-B1h)
+AUSWAHL terme-e1-k1-s7-v3 – e1 k1 „Term aufstellen“ (verfahren): Prüfungshöhe (2017-OS-B1i)
+AUFTRAG-SATZ-JE-TEIL terme-e1-k1-s7-v1 …: „Kreuze den passenden Term an.“ – Text vor dem Schlusssatz verschieden, je Teilaufgabe der ganze Satz (2 Teilaufgaben)
+AUSWAHL terme-e1-k3-s1-v1 – e1 k3 „Situation zu Term angeben“ (ohne): Typ ohne Kette, alle Zeilen
+AUSWAHL terme-e1-k3-s1-v2 – e1 k3 „Situation zu Term angeben“ (ohne): Typ ohne Kette, alle Zeilen
+AUSWAHL terme-e1-k3-s1-v3 – e1 k3 „Situation zu Term angeben“ (ohne): Typ ohne Kette, alle Zeilen
+AUSWAHL terme-e1-k4-s1-v3 – e1 Pflicht fehler: eine Teilaufgabe „Verstanden?“ (übrig 2)
+PFLICHT e1 fehler: terme-e1-k4-s1-v3 Rang 4, terme-e1-k4-s1-v2 Rang 2, terme-e1-k4-s1-v1 Rang 1 → terme-e1-k4-s1-v3 (schwerste)
+AUSWAHL terme-e1-k4-s2-v2 – e1 Pflicht begruenden: eine Teilaufgabe „Verstanden?“ (übrig 2)
+PFLICHT e1 begruenden: terme-e1-k4-s2-v2 Rang 3, terme-e1-k4-s2-v3 Rang 2, terme-e1-k4-s2-v1 Rang 1 → terme-e1-k4-s2-v2 (schwerste)
+AUSWAHL terme-e1-k4-s3-v1 – e1 Pflicht darstellung: eine Teilaufgabe „Verstanden?“ (übrig 2)
+AUSWAHL terme-e1-k4-s4-v1 – e1 Pflicht anwendung: eine Teilaufgabe „Verstanden?“ (übrig 2)
+TEST terme-e2-k4-s11-v2 – e2 „Zusammenfassen“ (Verfahrenskette): oberste Sprosse ohne Textaufgabe 11 (pruefung), kleinste freie Variante
+TEST terme-e2-k5-s7-v2 – e2 „Malnehmen“ (Verfahrenskette): oberste Sprosse ohne Textaufgabe 7 (pruefung), kleinste freie Variante
+TEST terme-e3-k2-s8-v2 – e3 „Klammern“ (Verfahrenskette): oberste Sprosse ohne Textaufgabe 8 (pruefung), kleinste freie Variante
+TEST terme-e4-k2-s10-v2 – e4 „Ausklammern“ (Verfahrenskette): oberste Sprosse ohne Textaufgabe 10 (pruefung), kleinste freie Variante
+TEST terme-e1-k1-s7-v2 – e1 „Term aufstellen“ (Verfahrenskette): oberste Sprosse ohne Textaufgabe 7 (pruefung), kleinste freie Variante
+GYM e2 Typ „Term mal Term (x · x = x²)“: Teilaufgaben terme-e2-k5-s3-v1 in Nr. 11 „Terme malnehmen“, die Nummer trägt auch anderes – keine Marke
+GYM e3 Typ „Minusklammer (alle Vorzeichen drehen)“: Teilaufgaben terme-e3-k2-s3-v1, terme-e3-k2-s4-v1, terme-e3-k2-s5-v1 in Nr. 14 „Klammern auflösen“, die Nummer trägt auch anderes – keine Marke
+ZONE-VERWEIS Nr. 1 → Nr. 6 (Einheit 2; alle Einheiten)
+ZONE-VERWEIS Nr. 5 → Nr. 6 (Einheit 2; alle Einheiten)
+ZONE-VERWEIS Nr. 2 → Nr. 6 (Einheit 2; ohne Angabe: erste Einheit)
+ZONE-VERWEIS Nr. 3 → Nr. 6 (Einheit 2; ohne Angabe: erste Einheit)
+ZONE-VERWEIS Nr. 4 → Nr. 6 (Einheit 2; Einheit genannt)
+NEBENEINANDER Nr. 1: 4 Teilaufgaben (kurz), Auftrag „Rechne.“
+ANWEISUNG-WEG Nr. 1: „Rechne.“ – nackte Rechnung, der Titel „Negative Zahlen addieren und subtrahieren“ nennt die Handlung
+NEBENEINANDER Nr. 2: 4 Teilaufgaben (kurz), Auftrag „Rechne.“
+ANWEISUNG-WEG Nr. 2: „Rechne.“ – nackte Rechnung, der Titel „Zahlen mit Vorzeichen malnehmen“ nennt die Handlung
+NEBENEINANDER Nr. 3: 4 Teilaufgaben (kurz), Auftrag „Rechne.“
+ANWEISUNG-WEG Nr. 3: „Rechne.“ – der Titel „Mit Dezimalzahlen und einfachen Brüchen rechnen“ nennt die Handlung (Regel 8)
+NEBENEINANDER Nr. 4: 4 Teilaufgaben (kurz), Auftrag „Rechne.“
+ANWEISUNG-WEG Nr. 4: „Rechne.“ – der Titel „Punkt vor Strich rechnen“ nennt die Handlung (Regel 8)
+RAUM terme-zone-f1-v5: 2 Schreibzeilen (Text ohne Antwortgerüst)
+KOPF Einheit 2: „Terme zusammenfassen“ (nur Titel)
+NEBENEINANDER Nr. 6: 4 Teilaufgaben (kurz), Auftrag „Unterstreiche, was zusammengehört.“
+NEBENEINANDER Nr. 7: 4 Teilaufgaben (liste), Auftrag „Welche Vorzahl hat …?“
+NEBENEINANDER Nr. 8: 4 Teilaufgaben (liste), Auftrag „Schreibe die Glieder des Terms … mit ihrem Vorzeichen auf.“
+NEBENEINANDER Nr. 9: 11 Teilaufgaben (kurz), Auftrag „Fasse zusammen.“
+ANWEISUNG-WEG Nr. 9: „Fasse zusammen.“ – der Titel „Terme zusammenfassen“ nennt die Handlung (Regel 8)
+NEBENEINANDER Nr. 11: 8 Teilaufgaben (kurz), Auftrag „Multipliziere.“
+ANWEISUNG-WEG Nr. 11: „Multipliziere.“ – der Titel „Terme malnehmen“ nennt die Handlung (Regel 8)
+GRAFIK terme-e2-k6-s3-v1: Grafik links (7.6 cm), Antwort rechts
+RAUM terme-e2-k6-s4-v1: 3 Schreibzeilen (Text ohne Antwortgerüst)
+KOPF Einheit 3: „Klammern auflösen“ (nur Titel)
+NEBENEINANDER Nr. 13: 4 Teilaufgaben (liste), Auftrag „Was steht im Term … direkt vor der Klammer?“
+NEBENEINANDER Nr. 14: 2 Teilaufgaben (kurz), Auftrag „Löse die Klammer auf.“
+ANWEISUNG-WEG Nr. 14: „Löse die Klammer auf.“ – der Titel „Klammern auflösen“ nennt die Handlung (Regel 8)
+GRAFIK terme-e3-k2-s2-v1: Grafik links (5.2 cm), Antwort rechts
+ANTWORT terme-e3-k2-s3-v1: Bank ohne Antwortgerüst – leeres Feld
+NEBENEINANDER Nr. 14: 3 Teilaufgaben (kurz), Auftrag „Löse die Klammer auf.“
+ANWEISUNG-WEG Nr. 14: „Löse die Klammer auf.“ – der Titel „Klammern auflösen“ nennt die Handlung (Regel 8)
+WARNUNG Nr. 14: 9 Teilaufgaben, 1 mit Grafik – über dem Halbseitenmaß (2.3 g)
+RAUM terme-e3-k3-s1-v3: 2 Schreibzeilen (Text ohne Antwortgerüst)
+GRAFIK terme-e3-k3-s3-v1: Grafik links (7.6 cm), Antwort rechts
+KOPF Einheit 4: „Ausklammern“ (nur Titel)
+NEBENEINANDER Nr. 16: 2 Teilaufgaben (kurz), Auftrag „Was steckt in jedem Glied von …? Kreise den Faktor ein, der in beiden Gliedern steckt. Klammere nichts aus.“
+ANTWORT terme-e4-k1-s0-v3: Bank ohne Antwortgerüst – leeres Feld
+ANTWORT terme-e4-k1-s0-v4: Bank ohne Antwortgerüst – leeres Feld
+KURZ terme-e4-k2-s0-v1: Term und Feld in einer Zeile
+KURZ terme-e4-k2-s0-v2: Term und Feld in einer Zeile
+KURZ terme-e4-k2-s0-v3: Term und Feld in einer Zeile
+KURZ terme-e4-k2-s0-v4: Term und Feld in einer Zeile
+NEBENEINANDER Nr. 19: 6 Teilaufgaben (kurz), Auftrag „Klammere den größten gemeinsamen Faktor aus.“
+ANWEISUNG-WEG Nr. 19: „Klammere den größten gemeinsamen Faktor aus.“ – der Titel „Ausklammern“ nennt die Handlung (Regel 8)
+ANTWORT terme-e4-k2-s9-v1: Bank ohne Antwortgerüst – leeres Feld
+RAUM terme-e4-k3-s1-v3: 2 Schreibzeilen (Text ohne Antwortgerüst)
+RAUM terme-e4-k3-s3-v1: 2 Schreibzeilen (Text ohne Antwortgerüst)
+KOPF Einheit 1: „Terme aufstellen und berechnen“ (nur Titel)
+NEBENEINANDER Nr. 21: 3 Teilaufgaben (liste), Auftrag „Berechne den Wert des Terms.“
+ANWEISUNG-WEG Nr. 21: „Berechne den Wert des Terms.“ – der Titel „Termwerte berechnen“ nennt die Handlung (Regel 8)
+GRAFIK terme-e1-k1-s3-v1: Grafik links (6.6 cm), Antwort rechts
+ANTWORT terme-e1-k3-s1-v1: Bank ohne Antwortgerüst – leeres Feld
+RAUM terme-e1-k4-s1-v3: 2 Schreibzeilen (Text ohne Antwortgerüst)
+GRAFIK terme-e1-k4-s3-v1: Grafik links (6.0 cm), Antwort rechts
+RAUM terme-e1-k4-s4-v1: 3 Schreibzeilen (Text ohne Antwortgerüst)
+ZEICHEN Ersatz im Vorspann: –
+AUFTRAG 0 Hauptnummern mit einem Auftragssatz in mehr als einer Teilaufgabe (nackte Terme); Hinweis AUFTRAG-SATZ 0 Sätze
+TEXT 3 Teilaufgaben mit Sachkontext ausgelassen
+GYM 0 Hauptnummern mit Marke
+TODO 0 Stellen in den Quelltexten:
+STRUKTUR 0 Fehler
