@@ -5,6 +5,8 @@
   „A = B“ in der Lösung jeder Teil).
 - \\rw{Term}{Einsetzung}{Lösung}: Wert des Terms nach Einsetzen.
 - % pruef: <Python-Ausdruck mit ==>: Rechenprobe für Textaufgaben.
+- Muster 4: Dezimalkomma in der Einsetzung (x = -1{,}5) wird vor dem
+  Trennen der Einsetzungen umgesetzt; „Zum Schluss“ braucht sonst nichts Neues.
 Aufruf: python3 pruef.py [muster.tex]; Ausgabe je Fehler eine Zeile,
 am Ende die Zahl der Proben. Rückgabewert 1 bei einem Fehler.
 """
@@ -84,7 +86,7 @@ def main():
     for m in re.finditer(r"\\rw(?=[\[{ ])", text):
         (term, einsetz, lsg), _ = argumente(text, m.end(), 3)
         werte = {}
-        for teil in einsetz.replace("\\ ", "").split(","):
+        for teil in einsetz.replace("{,}", ".").replace("\\ ", "").split(","):
             if "=" not in teil:
                 continue
             v, w = teil.split("=")
@@ -105,7 +107,7 @@ def main():
     for m in re.finditer(r"\\rwv(?=[{ ])", text):
         (term, einsetz, schritte), _ = argumente(text, m.end(), 3)
         werte = {}
-        for teil in einsetz.replace("\\ ", "").split(","):
+        for teil in einsetz.replace("{,}", ".").replace("\\ ", "").split(","):
             v, w = teil.split("=")
             werte[Symbol(v.strip())] = sympy_term(w)
         wert = sympy_term(term).subs(werte)

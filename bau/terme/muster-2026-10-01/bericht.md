@@ -266,3 +266,60 @@ Prüfungen:
 - Alle Seiten als PNG angesehen: keine Seite mit nur einer Nummer. Die
   größte Lücke liegt am Fuß von Seite 5 (etwa ein Fünftel); dort beginnt
   wegen der Drittel-Regel Einheit 6 auf der neuen Seite.
+
+## Muster 4 (Ziel für das Skript: Kopf/Fuß, Abschluss, Schlusstest, a) nur mit Weg)
+
+Dateien: `muster4.tex`, `muster4.pdf`. Seiten: 7 (6 Seiten Blatt,
+1 Seite Lösungen). 18 Nummern, 110 Teilaufgaben: 55 aus der Bank,
+4 geändert, 51 neu.
+
+| Einheit | Nummern | Teilaufgaben | Bank | geändert | neu |
+|---|---|---|---|---|---|
+| 0 Das kennst du schon | 1–4 | 15 | 11 | 0 | 4 |
+| 1 Zusammenfassen | 5–7 (7 Abschluss) | 16 | 9 | 0 | 7 |
+| 2 Malnehmen | 8–9 (9 Abschluss) | 13 | 6 | 0 | 7 |
+| 3 Klammern auflösen | 10–13 (13 Abschluss) | 28 | 13 | 2 | 13 |
+| 4 Ausklammern | 14 | 12 | 7 | 0 | 5 |
+| 5 Termwerte | 15 | 8 | 4 | 0 | 4 |
+| 6 Aufstellen | 16–17 (17 Abschluss) | 10 | 5 | 1 | 4 |
+| Zum Schluss | 18 | 8 | 0 | 1 | 7 |
+
+Schlusstest (Nr. 18, ungeteilt auf Seite 6, knapp halbe Seite; in der
+Lösung je Aufgabe „falsch → Nr. n“):
+- a) 5 − 2x² für x = −1,5 (Einheit 5, aus „Gemischt“ von Muster 3) → Nr. 15
+- b) 4 · (2a − 3) − (5a − 7) (Einheit 3) → Nr. 12
+- c) 2x + 5y − 6x + y (Einheit 1) → Nr. 6
+- d) Klammere aus: 14ab − 21b (Einheit 4, aus „Gemischt“) → Nr. 14
+- e) 3x · (−2xy) (Einheit 2) → Nr. 8
+- f) Fitnessstudio 12 € + 6 € je Besuch, Term (Einheit 6) → Nr. 16
+- g) GYM: 2a − {3b − [a − (2b − 3a)]} (wie 12 h) → Nr. 10, 12
+- h) P10 ’25: 6b − 3b² − 2b vereinfachen, Wert für b = −2 (wie 15 h,
+  neue Zahlen) → Nr. 6, 15
+
+Änderungen gegenüber Muster 3:
+- Kopf nur „Terme“ links; Fuß „Seite n von m“ Mitte, „Muster 4
+  2026-10-01“ klein links. Keine Linie unter den Einheitentiteln (auch
+  nicht unter „Lösungen“).
+- „Gemischt“ heißt „Abschluss“, je drei Teilaufgaben mit einer
+  Anwendung, nur in Einheit 1, 2, 3, 6. Weggefallen: in 2 „6a + 2b −
+  a · 2b“ und die Kantensumme des Quaders (Quader nur noch Volumen,
+  ohne GYM); in 3 „−4a · (−2b)“ und das Rahmenband (e3-k3-s4-v2). In
+  Einheit 4 und 5 kein Abschluss: 14ab − 21b und 5 − 2x² wandern in den
+  Schlusstest; 3a · (2a − 5), 8x − 2 · (3x − 4), Anna/Ben (e4-k2-s8-v1)
+  und Trikots (e4-k3-s4-v1) entfallen.
+- P10 ’25 (e2-k4-s11-v1) bleibt im Blatt als 15 h, damit der
+  Schlusstest die gleiche Art mit neuen Zahlen bringen kann.
+- Grau vorgerechnet nur noch 10 a, 11 a, 12 a, 14 a (mit
+  Zwischenschritt) und 15 a; 5 a, 6 a, 8 a und 16 a sind normale
+  Aufgaben.
+- Nr. 16 darf umbrechen (a–f auf Seite 5, g auf Seite 6), damit
+  Abschluss 17 und der Schlusstest mit auf Seite 6 passen; sonst lag der
+  Schlusstest allein auf einer achten Seite.
+- `pruef.py`: Einsetzungen mit Dezimalkomma (x = −1{,}5) werden richtig
+  getrennt.
+
+Prüfungen:
+- xelatex: 3 Durchläufe, 0 Fehler, 0 Missing character, 0 Overfull.
+- `pruef.py muster4.tex`: 112 Proben, 0 Fehler.
+- Alle Seiten als PNG angesehen: keine Seite mit nur einer Nummer,
+  Schlusstest ungeteilt, Merkkästen höchstens drei Zeilen.
