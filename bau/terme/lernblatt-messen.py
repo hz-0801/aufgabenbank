@@ -96,14 +96,20 @@ def pruefungen_v10(ordner, bau, text):
         je.setdefault(n, []).append(a)
     test, pflicht, sach, erste = {}, {}, {}, {}
     for n, aa in je.items():
-        hn1 = min(a["hauptnummer"] for a in aa)
+        hn1 = min((a["hauptnummer"] for a in aa if a["hauptnummer"]),
+                  default=None)
         e_text = (ordner / f"e{n}_a.tex").read_text(encoding="utf-8")
-        titel = re.search(r"\\begin\{kbaufgabe\}\{([^\n]*)\}", e_text)
+        titel = re.search(r"\\begin\{kbaufgabe\}\{([^\n]*)\}|"
+                          r"\\lbtest\{([^\n]*)\}\{", e_text)
+        if titel and titel.group(2):
+            titel = re.search(r"\\lbtest\{(.*)\}\{", e_text)
+        tt = [a for a in aa if a.get("lage") == "test"] or \
+            [a for a in aa if a["hauptnummer"] == hn1]
         test[n] = {"titel": titel.group(1) if titel else None,
                    "beginnt_mit_test": bool(titel and titel.group(1)
                                             .startswith("Kannst du das schon")),
-                   "teilaufgaben": [ids[a["id"]]["kette"] for a in aa
-                                    if a["hauptnummer"] == hn1]}
+                   "ohne_nummer": all(a["hauptnummer"] is None for a in tt),
+                   "teilaufgaben": [ids[a["id"]]["kette"] for a in tt]}
         pflicht[n] = sum(1 for a in aa if a.get("lage") == "pflicht")
         for a in aa:
             z = ids[a["id"]]
@@ -111,7 +117,7 @@ def pruefungen_v10(ordner, bau, text):
                     ZB.hat_sachkontext(z):
                 sach.setdefault(f"e{n} {z['kette']}", []).append(a["id"])
         reihe = []
-        for a in sorted(aa, key=lambda a: (a["hauptnummer"], a["teilaufgabe"])):
+        for a in sorted(aa, key=lambda a: (a["hauptnummer"] or 0, a["teilaufgabe"])):
             if a.get("lage") == "test":
                 continue
             kette = ids[a["id"]]["kette"]
@@ -159,7 +165,18 @@ def main(ordner):
     je = bau.get("je_datei", {})
     bau["messwerte"] = werte
     bau["seiten"] = werte[f"{k}-gesamt"]["seiten"]
-    bau["seiten_loesungen"] = werte[f"{k}-loesungen"]["seiten"]
+    if f"{k}-loesungen" in werte:
+        bau["seiten_loesungen"] = werte[f"{k}-loesungen"]["seiten"]
+    else:
+        # ab v1.1: Lösungen am Ende des Gesamt – Seiten ab „Lösungen“
+        n = bau["seiten"]
+        for s in range(1, n + 1):
+            seite = subprocess.run(["pdftotext", "-f", str(s), "-l", str(s),
+                                    str(ordner / f"{k}-gesamt.pdf"), "-"],
+                                   capture_output=True, text=True).stdout
+            if re.search(r"^Lösungen\s*$", seite, re.M):
+                bau["seiten_loesungen"] = n - s + 1
+                break
     bau["seiten_je_einheit"] = {d[len(k) + 1:]: w["seiten"]
                                 for d, w in werte.items()
                                 if re.fullmatch(rf"{k}-e\d+", d)}

@@ -71,6 +71,8 @@ def pruefe(kennung, register, fehler):
     # 3. Quelltexte: Teilaufgaben je Hauptnummer
     soll = {}
     for a in zettel["aufgaben"]:
+        if a["hauptnummer"] is None:      # Lernblatt v1.1: Test ohne Nummer
+            continue
         soll.setdefault((a["datei"], a["hauptnummer"]), 0)
         soll[(a["datei"], a["hauptnummer"])] += 1
     ist = {}
@@ -80,9 +82,10 @@ def pruefe(kennung, register, fehler):
         m = re.search(r"\\setcounter\{aufgabe\}\{(\d+)\}", text)
         nr = int(m.group(1)) if m else 0
         # zusammenbau bis v0.8: aufgabe; ab v0.9 (Lernblatt): kbaufgabe
-        for block in re.split(r"\\begin\{(?:kb)?aufgabe\}", text)[1:]:
+        # ab v1.1 auch lbaufgabe (Blatt 0 ohne Titel)
+        for block in re.split(r"\\begin\{(?:kb|lb)?aufgabe\}", text)[1:]:
             nr += 1
-            rumpf = re.split(r"\\end\{(?:kb)?aufgabe\}", block)[0]
+            rumpf = re.split(r"\\end\{(?:kb|lb)?aufgabe\}", block)[0]
             ist[(datei, nr)] = len(TEIL.findall(rumpf))
     if ist != soll:
         for k in sorted(set(ist) | set(soll)):
@@ -90,7 +93,11 @@ def pruefe(kennung, register, fehler):
                 fehler.append(f"{kennung}: {k[0]} Nr. {k[1]}: Quelltext "
                               f"{ist.get(k)} Teilaufgaben, bau.json {soll.get(k)}")
     # 4. Kennung in Namen und Fußzeile
-    for name in (f"{kennung}.tex", f"{kennung}-loesungen.tex"):
+    # Lernblatt ab zusammenbau v1.1: nur <K>-gesamt.tex
+    eine = zettel.get("rezept") == "L" and zettel.get("zusammenbau",
+                                                      "") >= "v1.1"
+    for name in ((f"{kennung}-gesamt.tex",) if eine else
+                 (f"{kennung}.tex", f"{kennung}-loesungen.tex")):
         if not (ordner / name).exists():
             fehler.append(f"{kennung}: {name} fehlt")
     doks = sorted(ordner.glob(f"{kennung}*.tex"))
