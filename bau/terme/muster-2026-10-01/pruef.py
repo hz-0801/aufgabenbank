@@ -93,6 +93,27 @@ def main():
         if simplify(sympy_term(term).subs(werte) - sympy_term(lsg)) != 0:
             fehler += 1
             print(f"FEHLER rw: {term} für {einsetz} = {lsg}")
+    # vorgerechnete Teilaufgaben a): \rkv{Term}{Schritte}, \rwv{Term}{Einsetzung}{Schritte}
+    for m in re.finditer(r"\\rkv(?=[{ ])", text):
+        (term, schritte), _ = argumente(text, m.end(), 2)
+        t = sympy_term(term)
+        for teil in schritte.split("="):
+            proben += 1
+            if simplify(t - sympy_term(teil)) != 0:
+                fehler += 1
+                print(f"FEHLER rkv: {term} = {schritte} (Teil {teil!r})")
+    for m in re.finditer(r"\\rwv(?=[{ ])", text):
+        (term, einsetz, schritte), _ = argumente(text, m.end(), 3)
+        werte = {}
+        for teil in einsetz.replace("\\ ", "").split(","):
+            v, w = teil.split("=")
+            werte[Symbol(v.strip())] = sympy_term(w)
+        wert = sympy_term(term).subs(werte)
+        for teil in schritte.split("="):
+            proben += 1
+            if simplify(wert - sympy_term(teil)) != 0:
+                fehler += 1
+                print(f"FEHLER rwv: {term} für {einsetz} = {schritte} (Teil {teil!r})")
     for m in re.finditer(r"^% pruef: (.*)$", text, re.M):
         ausdruck = m.group(1)
         links, rechts = ausdruck.split("==")

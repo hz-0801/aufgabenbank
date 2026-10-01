@@ -143,3 +143,67 @@ die Bank sollte sie als Varianten der höchsten Sprosse führen.
   von Blatt 0 zu benennen.
 - Commit-Trailer mit dem Modell, das tatsächlich lief (Opus 5.5), nicht
   „Fable 5.1“ wie im Auftrag.
+
+## Muster 2 (Entscheidungen des Lehrers 01.10.)
+
+Dateien: `muster2.tex`, `muster2.pdf`; `pruef.py` prüft jetzt auch die
+vorgerechneten a) (Zwischenschritt und Ergebnis).
+
+Seiten: 7 (6 Seiten Blatt, 1 Seite Lösungen). Nummern: 19.
+Teilaufgaben: 111, davon 58 aus der Bank, 3 geändert, 50 neu.
+
+| Teil | Nummern | Teilaufgaben | Bank | geändert | neu |
+|---|---|---|---|---|---|
+| Blatt 0 | 4 | 15 | 11 | 0 | 4 |
+| 1 Terme zusammenfassen | 3 | 16 | 9 | 0 | 7 |
+| 2 Terme malnehmen | 2 | 14 | 6 | 0 | 8 |
+| 3 Klammern auflösen | 4 | 30 | 14 | 2 | 14 |
+| 4 Ausklammern | 2 | 17 | 9 | 0 | 8 |
+| 5 Termwerte berechnen | 2 | 9 | 4 | 0 | 5 |
+| 6 Terme aufstellen | 2 | 10 | 5 | 1 | 4 |
+
+Umbau gegenüber Muster 1:
+- Die Testnummern und „Für Schnelle“ sind entfallen. Die Aufgaben aus
+  „Für Schnelle“ stehen als letzte Teilaufgaben ihrer Nummer, mit der
+  Marke „GYM“. Ausnahme ist der Quader: Er mischt Malnehmen und
+  Aufstellen und steht deshalb in „Gemischt“ der Einheit 2.
+- Prüfungsoriginale:
+  - P10 ’23 (Ankreuzen) ist die letzte Teilaufgabe von „Terme
+    aufstellen“.
+  - P10 ’25 mischt Zusammenfassen und Termwert und steht deshalb in
+    „Gemischt“ der Einheit 5.
+  - Die Sachaufgaben aus E3 und E4 stehen in „Gemischt“.
+- Testaufgaben aus Muster 1:
+  - Sechs sind entfallen (E2, E3 und E4 je zwei). Sie lagen auf der Höhe
+    der letzten Teilaufgaben.
+  - Zwei sind geblieben: 3x² − 2x für x = −½ als Termwert e) und „Die
+    Differenz aus dem Fünffachen …“ in „Gemischt“ der Einheit 6.
+- „Gemischt“ der Einheit 1 hat zwei neue Aufgaben, weil die bisherigen
+  das Malnehmen brauchen; sie stehen jetzt in Einheit 2.
+- Teilaufgabe a) ist vorgerechnet: grau am Platz des Antwortfelds, mit
+  höchstens einem Zwischenschritt, und sie steht nicht auf der
+  Lösungsseite.
+- Rechenketten: Der Term steht linksbündig; „=“ und das Feld stehen in
+  einer festen Spalte, so breit wie der längste Term der Nummer.
+- Bei Text- und Figuraufgaben steht das Antwortfeld direkt hinter dem
+  Text bzw. neben der Figur.
+
+Prüfungen:
+- xelatex: 2 Durchläufe, 0 Fehler, 0 Missing character, 0 Overfull,
+  0 undefined.
+- `pruef.py muster2.tex`: 114 Proben, 0 Fehler. Auch Muster 1 ist
+  weiter fehlerfrei (116 Proben).
+- Alle sieben Seiten als PNG angesehen. Keine Seite trägt nur eine
+  Nummer. Die größte Lücke liegt am Fuß von Seite 2 und 6 (etwa ein
+  Fünftel); sie entsteht durch die Drittel-Regel bzw. weil „Gemischt“
+  nicht geteilt wird.
+
+Annahmen:
+- Blatt 0 bleibt ohne vorgerechnete a), ist aber ebenfalls linksbündig
+  gesetzt.
+- In „Gleichartige Glieder erkennen“ ist a) mit grauen Unterstrichen
+  vorgerechnet.
+- Die Einheitentitel tragen ihre Nummer („1 Terme zusammenfassen“).
+- Die Fußzeile lautet „Terme · Muster 2 2026-10-01“.
+- „Gemischt“ der Einheiten 5 und 6 steht ohne Auftrag, weil die
+  Teilaufgaben ihn selbst nennen.
