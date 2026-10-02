@@ -1,9 +1,9 @@
 # Mappe: zuordnungen
 
 Eintrag: hz-0801/mathe-nachhilfe, katalog/zuordnungen.md
-Katalog-Commit: de503c9cea3976774daeb6c514adb85829d8df2e (2026-09-25T14:06:01Z, „katalog: flaechen-ids, GYM-Typen zuordnungen und terme, Maßstab, klassen-ermessen, index Zeile 232“; ermittelt über GitHub-API)
+Katalog-Commit: 21d0c96fea4834cc677b764dd0f5fce3e524f210 (2026-10-02T15:58:50Z, „zuordnungen.md: Kennungen der drei Dreisatz-Originale in der Prüfungsform (für Basisvorrat und Mappe)“; ermittelt über GitHub-API)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-09-30 08:15 UTC
+Datum: 2026-10-02 15:59 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 
@@ -111,15 +111,39 @@ Ohne „Status“, „Offene Punkte“ und „Prüfliste“. Die Zahl am Zeilena
  96  - Rate (Einheit 4): Rate ablesen („je Liter“, „je Stunde“) (Vorstufe) → Kosten aus Menge mal Preis (4×) → Menge aus Kosten geteilt durch Preis → Geschwindigkeit aus Weg : Zeit → Dauer aus Weg : Geschwindigkeit → Einheit umrechnen (s → min, ct → €) → Prüfungshöhe: Dauer aus Strecke und Geschwindigkeit in der verlangten Zeiteinheit (P10-Form).
  97
  98  ### Prüfungsform (P10)
- 99  Thema „Zuordnungen proportional und antiproportional“ mit fünf Typen [P10]: „Proportionale Zuordnung Dreisatz“ (Basisaufgabe Niveau I, drei Originale: Zeit für Strecke, Preis für Menge, Fettgehalt), „Kosten aus Menge und Preis berechnen“ (2014-OS-K4c, 2014-OS-K4d, 2024-OS-K2d), „Geschwindigkeit aus Weg und Zeit berechnen“ (2015-OS-K4c), „Dauer aus Menge und Rate berechnen“ (2014-OS-K2c, 2015-OS-K3c, 2024-OS-K6c; dazu 2017-OS-K3d bei einheiten.md) – Kontextaufgaben Niveau I–II, Rechnung, meist mit Einheitenwechsel –, dazu seit der Erfassung des Gymnasialpapiers (23.09.2026) „Antiproportionale Zuordnung Dreisatz“ mit einem Original nur im Gymnasialpapier (2014-GYM-B1c, Basisaufgabe Niveau II: ein Futtervorrat für vier Pferde reicht acht Tage, gesucht die Dauer für acht Pferde über das Produkt der Pferdetage; Fehlerquelle proportional gerechnet). Antiproportionale Zuordnungen haben damit einen eigenen Typ, aber kein Original im Oberschulpapier. Aus dem Thema „Funktionen allgemein“ gehören „Wertetabelle als Punkte darstellen“ und „Achseneinteilung wählen“ zu Einheit 1; „Funktionswert berechnen“, „Punktprobe durchführen“, „Wertetabelle einer Funktion zuordnen“, „Graph zu Tarif zuordnen“, „Eigenschaften eines Graphen beurteilen“ liegen in lineare-funktionen.md. Ab 09d: die drei Originale dieser beiden Typen in Wachstumskontexten – 2025-OS-K7a (Bakterientabelle als Punkte) sowie 2016-OS-K4b und 2017-OS-K7b (Achseneinteilung wählen, Punkte eintragen, zur Kurve verbinden) – führt potenz-exponentialfunktionen.md in seiner Prüfungsform; die Typen bleiben hier (wie die Parabel-Originale bei quadratische-funktionen.md). Ab 10g gilt dasselbe für das vierte Original dieser beiden Typen: 2021-OS-K6b (Kerze, Achseneinteilung selbst wählen und die Tabellenwerte eintragen) hat das CSV-Thema „Lineare Funktionen“ und wird deshalb von lineare-funktionen.md geführt; der Typ bleibt hier. Damit hat Einheit 1 kein Original in der eigenen Prüfungsform – ihre Zielmarke stützt sich auf die vier Originale in den drei anderen Dateien.
+ 99  Thema „Zuordnungen proportional und antiproportional“ mit fünf Typen [P10]: „Proportionale Zuordnung Dreisatz“ (Basisaufgabe Niveau I, drei Originale: Zeit für Strecke, Preis für Menge, Fettgehalt – 2016-OS-B1d, 2022-OS-B1b, 2023-OS-B1a), „Kosten aus Menge und Preis berechnen“ (2014-OS-K4c, 2014-OS-K4d, 2024-OS-K2d), „Geschwindigkeit aus Weg und Zeit berechnen“ (2015-OS-K4c), „Dauer aus Menge und Rate berechnen“ (2014-OS-K2c, 2015-OS-K3c, 2024-OS-K6c; dazu 2017-OS-K3d bei einheiten.md) – Kontextaufgaben Niveau I–II, Rechnung, meist mit Einheitenwechsel –, dazu seit der Erfassung des Gymnasialpapiers (23.09.2026) „Antiproportionale Zuordnung Dreisatz“ mit einem Original nur im Gymnasialpapier (2014-GYM-B1c, Basisaufgabe Niveau II: ein Futtervorrat für vier Pferde reicht acht Tage, gesucht die Dauer für acht Pferde über das Produkt der Pferdetage; Fehlerquelle proportional gerechnet). Antiproportionale Zuordnungen haben damit einen eigenen Typ, aber kein Original im Oberschulpapier. Aus dem Thema „Funktionen allgemein“ gehören „Wertetabelle als Punkte darstellen“ und „Achseneinteilung wählen“ zu Einheit 1; „Funktionswert berechnen“, „Punktprobe durchführen“, „Wertetabelle einer Funktion zuordnen“, „Graph zu Tarif zuordnen“, „Eigenschaften eines Graphen beurteilen“ liegen in lineare-funktionen.md. Ab 09d: die drei Originale dieser beiden Typen in Wachstumskontexten – 2025-OS-K7a (Bakterientabelle als Punkte) sowie 2016-OS-K4b und 2017-OS-K7b (Achseneinteilung wählen, Punkte eintragen, zur Kurve verbinden) – führt potenz-exponentialfunktionen.md in seiner Prüfungsform; die Typen bleiben hier (wie die Parabel-Originale bei quadratische-funktionen.md). Ab 10g gilt dasselbe für das vierte Original dieser beiden Typen: 2021-OS-K6b (Kerze, Achseneinteilung selbst wählen und die Tabellenwerte eintragen) hat das CSV-Thema „Lineare Funktionen“ und wird deshalb von lineare-funktionen.md geführt; der Typ bleibt hier. Damit hat Einheit 1 kein Original in der eigenen Prüfungsform – ihre Zielmarke stützt sich auf die vier Originale in den drei anderen Dateien.
 100  Seit 09e führt einheiten.md drei Originale, deren CSV-Thema „Einheiten umrechnen“ ist, während der Typ hier steht: 2017-OS-K3d (Swimmingpool, Dauer aus Menge und Rate nach Umrechnung von Kubikmeter in Liter) – Typ hier, Original dort; ebenso sind die Zeit- und Uhrzeit-Nebentypen der Originale 2024-OS-K6c, 2015-OS-K3c und 2014-OS-K2c dort in Einheit 2 geführt (Typen „Zeiteinheiten umrechnen“ und „Uhrzeit aus Startzeit und Dauer berechnen“ gehören zum Thema Einheiten umrechnen, die Originale bleiben hier).
 101  Zuordnung: Einheit 1 – Wertetabelle als Punkte darstellen, Achseneinteilung wählen; Einheit 2 – Proportionale Zuordnung Dreisatz; Einheit 3 – Antiproportionale Zuordnung Dreisatz (nur Gymnasialpapier, 2014-GYM-B1c); Einheit 4 – Kosten aus Menge und Preis berechnen (2014-OS-K4c, 2014-OS-K4d, 2024-OS-K2d), Geschwindigkeit aus Weg und Zeit berechnen (2015-OS-K4c), Dauer aus Menge und Rate berechnen (2014-OS-K2c, 2015-OS-K3c, 2024-OS-K6c).
 102  Zielmarke: Einheit 1 – ein Koordinatensystem ohne Skala für eine gegebene Wertetabelle selbst einteilen, beide Achsen mit Größe und Einheit beschriften und die Punkte eintragen (2021-OS-K6b, Niveau II, drei Punkte; Original bei lineare-funktionen.md); daneben Punkte einer Tabelle in ein vorgegebenes System mit grober Skala eintragen (2025-OS-K7a; Original bei potenz-exponentialfunktionen.md). Einheit 2 – Kurzantwort ohne Taschenrechner mit Wert je Portion als Dezimalzahl (Minuten je Kilometer). Einheit 3 – kein P10-Original im Oberschulpapier (im Gymnasialpapier der umgekehrte Dreisatz als Kurzantwort, 2014-GYM-B1c, Niveau II); Marke nach RLP E („Berechnen von Größen in direkt und indirekt proportionalen Zuordnungen“) und LISUM-PH Jg. 7, Block „Indirekt proportionale Zuordnungen“ („Überprüfen der Produktgleichheit“): umgekehrter Dreisatz mit Zwischenschritt auf eine Einheit und Probe über das gleichbleibende Produkt. Einheit 4 – Rechnung mit Einheitenwechsel (Sekunden in Minuten, Cent in Euro) und Antwortsatz; als schwerste Form der Nachweis eines vorgegebenen Betrags, bei dem die Menge erst aus zwei Angaben zu bilden ist (2014-OS-K4d, Niveau II: aus Fahrleistung und Verbrauch die Kraftstoffmenge, daraus die Kosten, daraus die behauptete Differenz).
 ````
 
-## 2 Originale (13)
+## 2 Originale (16)
 
 Kennungen aus „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ in der Folge ihres ersten Auftretens; Spalten id, jahr, papier, punkte, gegeben, gesucht, verfahren, fehlerquelle, format, antwort.
+
+### 2016-OS-B1d (msa-katalog-basis.csv)
+
+jahr 2016 · papier OS · punkte 1 · format Kurzantwort · antwort Zahl
+- gegeben: 100 g enthalten 30 g Fett
+- gesucht: Fett in 20 g
+- verfahren: 30 : 5 oder 0,3 · 20
+- fehlerquelle: 30 − 20 = 10 g; 30 : 20 = 1,5 g
+
+### 2022-OS-B1b (msa-katalog-basis.csv)
+
+jahr 2022 · papier OS · punkte 1 · format Kurzantwort · antwort Zahl
+- gegeben: 3 kg Äpfel kosten 4,80 €
+- gesucht: Preis für 5 kg
+- verfahren: 4,80 : 3 = 1,60 € je kg, mal 5
+- fehlerquelle: 4,80 + 2 · 1,60 falsch addieren oder 4,80 · 5 rechnen
+
+### 2023-OS-B1a (msa-katalog-basis.csv)
+
+jahr 2023 · papier OS · punkte 1 · format Kurzantwort · antwort Zahl
+- gegeben: 4 km in 25 min bei gleichbleibender Geschwindigkeit
+- gesucht: Zeit für 6 km in Minuten
+- verfahren: 25 : 4 = 6,25 min je km, mal 6
+- fehlerquelle: antiproportional rechnen oder 25 + 2 setzen
 
 ### 2014-OS-K4c (msa-katalog-kontext.csv)
 
@@ -224,8 +248,6 @@ jahr 2021 · papier OS · punkte 3 · format Zeichnen · antwort Grafik
 - gesucht: Achseneinteilung|Graph zu den Tabellenwerten
 - verfahren: Skala wählen, z. B. 1 Kästchen = 5 min (80 min = 16 Kästchen) und 1 Kästchen = 2 cm (40 cm = 20 Kästchen); Punkte eintragen und verbinden
 - fehlerquelle: Skala so wählen, dass 80 min oder 40 cm nicht ins Raster passen; Achsen nicht beschriften
-
-Nur außerhalb von „Prüfungsform“, „Für schwache Schüler“ und „Zielmarke“ genannt, nicht aufgenommen: 2023-OS-B1a, 2022-OS-B1b, 2016-OS-B1d
 
 ## 3 Maßstab (unterrichtsblatt.md, wortgleich)
 
