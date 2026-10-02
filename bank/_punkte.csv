@@ -166,8 +166,8 @@ wahrscheinlichkeit-e1-k1-s8-v3;2015-OS-K5a;1;nein;ganz;Dreiecksanzahl ankreuzen 
 winkel-dreiecke-e3-k2-s7-v3;2015-OS-K5b;1;nein;ganz;Winkelsumme im Teildreieck wie im Original
 trigonometrie-e4-k1-s4-v1;2015-OS-K5c;2;ja;ganz;Diagonale mit Sinussatz wie im Original
 trigonometrische-funktionen-e1-k1-s13-v1;2015-OS-K5c;2;ja;unklar;Sinussatz-Term vorgegeben, dazu Einheitskreis-Erklärung
-trigonometrie-e3-k1-s17-v11;2015-OS-K5d;3;nein;ganz;benötigte Größen und Rechenschritte beide beschrieben
-trigonometrie-e3-k1-s17-v12;2015-OS-K5d;3;nein;ganz;benötigte Größen und Rechenschritte beide beschrieben
+trigonometrie-e3-k1-s19-v11;2015-OS-K5d;3;nein;ganz;benötigte Größen und Rechenschritte beide beschrieben
+trigonometrie-e3-k1-s19-v12;2015-OS-K5d;3;nein;ganz;benötigte Größen und Rechenschritte beide beschrieben
 strahlensaetze-e1-k2-s11-v3;2015-OS-K6a;2;nein;ganz;beide Originalmaße aus Maßstab
 strahlensaetze-e1-k2-s11-v4;2015-OS-K6a;2;nein;ganz;beide Originalmaße aus Maßstab
 koerper-e1-k1-s7-v1;2015-OS-K6b;2;nein;ganz;Höhe einzeichnen und beide Maße beschriften
@@ -267,8 +267,8 @@ lineare-gleichungssysteme-e1-k1-s9-v1;2016-OS-K6d;4;ja;unklar;Bank verlangt zus�
 lineare-gleichungssysteme-e1-k1-s9-v2;2016-OS-K6d;4;ja;unklar;Bank verlangt zusätzlich Begründung der Eindeutigkeit, Original LGS
 winkel-dreiecke-e1-k2-s9-v3;2016-OS-K7a;1;nein;ganz;Weg aus zwei Teilstrecken addieren
 winkel-dreiecke-e1-k2-s9-v4;2016-OS-K7a;1;nein;ganz;Weg aus zwei Teilstrecken addieren
-trigonometrie-e3-k1-s17-v10;2016-OS-K7c;4;ja;ganz;Teilwinkel und Seite mit Tangens wie im Original
-trigonometrie-e3-k1-s17-v9;2016-OS-K7c;4;ja;ganz;Teilwinkel und Seite mit Tangens wie im Original
+trigonometrie-e3-k1-s19-v10;2016-OS-K7c;4;ja;ganz;Teilwinkel und Seite mit Tangens wie im Original
+trigonometrie-e3-k1-s19-v9;2016-OS-K7c;4;ja;ganz;Teilwinkel und Seite mit Tangens wie im Original
 brueche-dezimalzahlen-e1-k1-s6-v11;2017-OS-B1a;1;nein;ganz;Bruchteil einer Kästchenfläche schraffieren
 brueche-dezimalzahlen-e1-k1-s6-v12;2017-OS-B1a;1;nein;ganz;Bruchteil einer Kästchenfläche schraffieren
 prozentrechnung-e3-k1-s9-v3;2017-OS-B1b;1;nein;ganz;Prozentwert mit gleichem Weg
@@ -293,8 +293,8 @@ flaechen-e5-k1-s7-v2;2017-OS-K3b;3;nein;ganz;Rechteck mit zwei Halbkreisen wie i
 einheiten-e3-k1-s10-v1;2017-OS-K3d;2;nein;ganz;Dauer aus Menge und Durchsatz nach Umrechnung
 einheiten-e3-k1-s10-v2;2017-OS-K3d;2;nein;ganz;Dauer aus Menge und Durchsatz nach Umrechnung
 winkel-dreiecke-e3-k2-s2-v1;2017-OS-K4a;1;nein;ganz;dritter Winkel über die Winkelsumme
-trigonometrie-e1-k3-s16-v5;2017-OS-K4b;2;nein;ganz;Abstand aus Höhe und Winkel mit Tangens
-trigonometrie-e1-k3-s16-v6;2017-OS-K4b;2;nein;ganz;Abstand aus Höhe und Winkel mit Tangens
+trigonometrie-e1-k3-s17-v5;2017-OS-K4b;2;nein;ganz;Abstand aus Höhe und Winkel mit Tangens
+trigonometrie-e1-k3-s17-v6;2017-OS-K4b;2;nein;ganz;Abstand aus Höhe und Winkel mit Tangens
 lineare-funktionen-e4-k1-s6-v5;2017-OS-K5a;3;nein;ganz;Gerade zeichnen und Gleichung nachweisen
 lineare-funktionen-e4-k1-s6-v6;2017-OS-K5a;3;nein;ganz;Gerade zeichnen und Gleichung nachweisen
 lineare-funktionen-e3-k2-s7-v10;2017-OS-K5b;2;nein;ganz;y-Koordinate durch Einsetzen berechnen
@@ -528,10 +528,10 @@ daten-e5-k1-s10-v6;2018-OS-K3d;4;ja;ganz;zwei Aussagen ankreuzen und begründen
 winkel-dreiecke-e1-k2-s9-v1;2018-OS-K4a;1;nein;ganz;Winkel als Differenz zweier Winkel
 winkel-dreiecke-e1-k2-s9-v2;2018-OS-K4a;1;nein;ganz;Winkel als Differenz zweier Winkel
 winkel-dreiecke-e3-k2-s7-v2;2018-OS-K4b;1;nein;ganz;vorgegebenen Winkel über Nebenwinkel und Winkelsumme zeigen
-trigonometrie-e4-k1-s16-v5;2018-OS-K4c;2;ja;ganz;Seite mit Sinussatz bestätigen
-trigonometrie-e4-k1-s16-v6;2018-OS-K4c;2;ja;ganz;Seite mit Sinussatz bestätigen
-trigonometrie-e3-k1-s17-v1;2018-OS-K4d;4;nein;ganz;Höhe mit Sinus plus Zuschläge, beide Werte
-trigonometrie-e3-k1-s17-v2;2018-OS-K4d;4;nein;ganz;Höhe mit Sinus plus Zuschläge, beide Werte
+trigonometrie-e4-k1-s17-v5;2018-OS-K4c;2;ja;ganz;Seite mit Sinussatz bestätigen
+trigonometrie-e4-k1-s17-v6;2018-OS-K4c;2;ja;ganz;Seite mit Sinussatz bestätigen
+trigonometrie-e3-k1-s19-v1;2018-OS-K4d;4;nein;ganz;Höhe mit Sinus plus Zuschläge, beide Werte
+trigonometrie-e3-k1-s19-v2;2018-OS-K4d;4;nein;ganz;Höhe mit Sinus plus Zuschläge, beide Werte
 quadratische-funktionen-e3-k1-s9-v3;2018-OS-K5c;2;ja;ganz;Scheitelpunktform aus Scheitel angeben
 quadratische-funktionen-e3-k1-s9-v4;2018-OS-K5c;2;ja;ganz;Scheitelpunktform aus Scheitel angeben
 quadratische-funktionen-e2-k1-s15-v1;2018-OS-K5d;4;ja;ganz;Skizze, Gleichung und Spiegelbild wie im Original
@@ -779,12 +779,12 @@ lineare-funktionen-e2-k5-s6-v1;2019-OS-K2c;3;nein;ganz;drei Gleichungen den Grap
 lineare-funktionen-e2-k5-s6-v2;2019-OS-K2c;3;nein;ganz;drei Gleichungen den Graphen zuordnen
 pythagoras-e3-k2-s19-v7;2019-OS-K2d;4;nein;teil;nur die Streckenlänge, Original verlangt auch den Winkel
 pythagoras-e3-k2-s19-v8;2019-OS-K2d;4;nein;teil;nur die Streckenlänge, Original verlangt auch den Winkel
-trigonometrie-e2-k1-s11-v11;2019-OS-K2d;4;nein;ganz;Länge und Winkel wie im Original
-trigonometrie-e2-k1-s11-v12;2019-OS-K2d;4;nein;ganz;Länge und Winkel wie im Original
-trigonometrie-e2-k1-s11-v3;2019-OS-K3b;2;nein;ganz;Winkel mit cos⁻¹ rechnerisch nachweisen
-trigonometrie-e2-k1-s11-v4;2019-OS-K3b;2;nein;ganz;Winkel mit cos⁻¹ rechnerisch nachweisen
-trigonometrie-e4-k1-s16-v7;2019-OS-K3c;4;ja;ganz;Winkelschritte und Sinussatz wie im Original
-trigonometrie-e4-k1-s16-v8;2019-OS-K3c;4;ja;ganz;Winkelschritte und Sinussatz wie im Original
+trigonometrie-e2-k1-s12-v11;2019-OS-K2d;4;nein;ganz;Länge und Winkel wie im Original
+trigonometrie-e2-k1-s12-v12;2019-OS-K2d;4;nein;ganz;Länge und Winkel wie im Original
+trigonometrie-e2-k1-s12-v3;2019-OS-K3b;2;nein;ganz;Winkel mit cos⁻¹ rechnerisch nachweisen
+trigonometrie-e2-k1-s12-v4;2019-OS-K3b;2;nein;ganz;Winkel mit cos⁻¹ rechnerisch nachweisen
+trigonometrie-e4-k1-s17-v7;2019-OS-K3c;4;ja;ganz;Winkelschritte und Sinussatz wie im Original
+trigonometrie-e4-k1-s17-v8;2019-OS-K3c;4;ja;ganz;Winkelschritte und Sinussatz wie im Original
 koerper-e3-k1-s10-v1;2019-OS-K4c;4;nein;teil;Fläche und Volumen, Original verlangt auch die Masse
 koerper-e3-k1-s10-v2;2019-OS-K4c;4;nein;teil;Fläche und Volumen, Original verlangt auch die Masse
 prozentrechnung-e3-k1-s9-v10;2019-OS-K5a;2;nein;ganz;Abnahme als Prozentwert der Grundmenge
@@ -955,8 +955,8 @@ symmetrie-abbildungen-basis-k2-v8;2020-OS-B1b;1;nein;ganz;alle gesuchten Ergebni
 symmetrie-abbildungen-basis-k2-v9;2020-OS-B1b;1;nein;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
 symmetrie-abbildungen-e1-k2-s10-v1;2020-OS-B1b;1;nein;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
 symmetrie-abbildungen-e1-k2-s10-v2;2020-OS-B1b;1;nein;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
-trigonometrie-e1-k3-s16-v13;2020-OS-B1c;1;nein;ganz;Tangens als Seitenverhältnis angeben wie im Original
-trigonometrie-e1-k3-s16-v14;2020-OS-B1c;1;nein;ganz;Tangens als Seitenverhältnis angeben wie im Original
+trigonometrie-e1-k3-s17-v13;2020-OS-B1c;1;nein;ganz;Tangens als Seitenverhältnis angeben wie im Original
+trigonometrie-e1-k3-s17-v14;2020-OS-B1c;1;nein;ganz;Tangens als Seitenverhältnis angeben wie im Original
 potenzen-wurzeln-e3-k2-s10-v1;2020-OS-B1d;1;nein;ganz;Quadratseite aus Fläche wie im Original
 potenzen-wurzeln-e3-k2-s10-v2;2020-OS-B1d;1;nein;ganz;Quadratseite aus Fläche wie im Original
 potenzen-wurzeln-e3-k2-s10-v3;2020-OS-B1d;1;nein;ganz;Quadratseite aus Fläche wie im Original
@@ -999,8 +999,8 @@ trigonometrie-basis-k1-v6;2020-OS-B1j;1;nein;unklar;x im Zähler, nur Multiplizi
 trigonometrie-basis-k1-v7;2020-OS-B1j;1;nein;unklar;x im Zähler, nur Multiplizieren statt Umstellen
 trigonometrie-basis-k1-v8;2020-OS-B1j;1;nein;unklar;x im Zähler, nur Multiplizieren statt Umstellen
 trigonometrie-basis-k1-v9;2020-OS-B1j;1;nein;ganz;x im Nenner, gleiches Umstellen
-trigonometrie-e1-k3-s16-v10;2020-OS-B1j;1;nein;ganz;x im Nenner, gleiches Umstellen
-trigonometrie-e1-k3-s16-v9;2020-OS-B1j;1;nein;ganz;x im Nenner, gleiches Umstellen
+trigonometrie-e1-k3-s17-v10;2020-OS-B1j;1;nein;ganz;x im Nenner, gleiches Umstellen
+trigonometrie-e1-k3-s17-v9;2020-OS-B1j;1;nein;ganz;x im Nenner, gleiches Umstellen
 daten-e2-k2-s7-v2;2020-OS-K2a;1;nein;ganz;Balken mit gegebenem Wert ergänzen
 daten-e2-k2-s4-v2;2020-OS-K2b;1;nein;ganz;Tage über Schwelle auswählen wie im Original
 daten-e4-k1-s8-v1;2020-OS-K2c;2;nein;ganz;Mittelwert aus Diagramm und Text wie im Original
@@ -1019,8 +1019,8 @@ potenz-exponentialfunktionen-e4-k1-s9-v1;2020-OS-K4b;3;nein;ganz;Verdopplungszei
 potenz-exponentialfunktionen-e4-k1-s9-v2;2020-OS-K4b;3;nein;ganz;Verdopplungszeit ablesen und Vorgehen beschreiben
 potenz-exponentialfunktionen-e3-k2-s8-v3;2020-OS-K4c;3;ja;ganz;beide Vorhersagen berechnen und vergleichen
 potenz-exponentialfunktionen-e3-k2-s8-v4;2020-OS-K4c;3;ja;ganz;beide Vorhersagen berechnen und vergleichen
-trigonometrie-e3-k1-s17-v3;2020-OS-K5b;3;nein;ganz;Winkel im Trapez über Hilfsdreieck
-trigonometrie-e3-k1-s17-v4;2020-OS-K5b;3;nein;ganz;Winkel im Trapez über Hilfsdreieck
+trigonometrie-e3-k1-s19-v3;2020-OS-K5b;3;nein;ganz;Winkel im Trapez über Hilfsdreieck
+trigonometrie-e3-k1-s19-v4;2020-OS-K5b;3;nein;ganz;Winkel im Trapez über Hilfsdreieck
 wahrscheinlichkeit-e1-k1-s7-v1;2020-OS-K6a;3;nein;teil;nur Paare aufzählen, Original verlangt auch Wahrscheinlichkeit
 wahrscheinlichkeit-e3-k3-s9-v2;2020-OS-K6b;3;nein;ganz;Entscheidung mit Begründung über Wahrscheinlichkeiten
 bruchrechnung-e1-k3-s8-v5;2020-OS-K6c;3;ja;teil;nur Pfadwahrscheinlichkeiten addieren, ohne Baum
@@ -1031,8 +1031,8 @@ pythagoras-e1-k2-s15-v1;2020-OS-K7a;2;nein;ganz;Hypotenuse aus zwei Katheten wie
 pythagoras-e1-k2-s15-v2;2020-OS-K7a;2;nein;ganz;Hypotenuse aus zwei Katheten wie im Original
 flaechen-e3-k1-s7-v1;2020-OS-K7b;2;nein;ganz;Grundseite aus Dreiecksfläche wie im Original
 flaechen-e3-k1-s7-v2;2020-OS-K7b;2;nein;ganz;Grundseite aus Dreiecksfläche wie im Original
-trigonometrie-e4-k1-s16-v10;2020-OS-K7c;3;ja;ganz;Winkelsumme, Sinussatz und Differenz wie im Original
-trigonometrie-e4-k1-s16-v9;2020-OS-K7c;3;ja;ganz;Winkelsumme, Sinussatz und Differenz wie im Original
+trigonometrie-e4-k1-s17-v10;2020-OS-K7c;3;ja;ganz;Winkelsumme, Sinussatz und Differenz wie im Original
+trigonometrie-e4-k1-s17-v9;2020-OS-K7c;3;ja;ganz;Winkelsumme, Sinussatz und Differenz wie im Original
 trigonometrische-funktionen-e1-k1-s13-v2;2020-OS-K7c;3;ja;teil;nur Sinussatz-Schritt, ohne Winkelsumme und Differenz
 stammfunktion-und-hauptsatz-e1-k1-s2-v1;2020-be-gk-A1.1a;1;;ganz;f durch Ableiten der Stammfunktion
 stammfunktion-und-hauptsatz-e1-k1-s2-v2;2020-be-gk-A1.1a;1;;ganz;f durch Ableiten der Stammfunktion
@@ -1175,12 +1175,12 @@ lineare-funktionen-e3-k2-s7-v13;2021-OS-K2b;2;nein;ganz;zwei richtige Aussagen z
 lineare-funktionen-e3-k2-s7-v14;2021-OS-K2b;2;nein;ganz;zwei richtige Aussagen zur Geraden ankreuzen
 quadratische-gleichungen-e3-k3-s13-v7;2021-OS-K2c;4;ja;ganz;Schnittpunkte Parabel und Gerade berechnen
 quadratische-gleichungen-e3-k3-s13-v8;2021-OS-K2c;4;ja;ganz;Schnittpunkte Parabel und Gerade berechnen
-trigonometrie-e1-k3-s16-v1;2021-OS-K3a;2;nein;ganz;Seite mit Sinus nachweisen
-trigonometrie-e1-k3-s16-v2;2021-OS-K3a;2;nein;ganz;Seite mit Sinus nachweisen
-trigonometrie-e1-k3-s16-v3;2021-OS-K3b;2;nein;ganz;Seite mit Kosinus berechnen
-trigonometrie-e1-k3-s16-v4;2021-OS-K3b;2;nein;ganz;Seite mit Kosinus berechnen
-trigonometrie-e4-k1-s16-v11;2021-OS-K3c;3;ja;ganz;Winkelschritte, Sinussatz und Entscheidung zur Aussage
-trigonometrie-e4-k1-s16-v12;2021-OS-K3c;3;ja;ganz;Winkelschritte, Sinussatz und Entscheidung zur Aussage
+trigonometrie-e1-k3-s17-v1;2021-OS-K3a;2;nein;ganz;Seite mit Sinus nachweisen
+trigonometrie-e1-k3-s17-v2;2021-OS-K3a;2;nein;ganz;Seite mit Sinus nachweisen
+trigonometrie-e1-k3-s17-v3;2021-OS-K3b;2;nein;ganz;Seite mit Kosinus berechnen
+trigonometrie-e1-k3-s17-v4;2021-OS-K3b;2;nein;ganz;Seite mit Kosinus berechnen
+trigonometrie-e4-k1-s17-v11;2021-OS-K3c;3;ja;ganz;Winkelschritte, Sinussatz und Entscheidung zur Aussage
+trigonometrie-e4-k1-s17-v12;2021-OS-K3c;3;ja;ganz;Winkelschritte, Sinussatz und Entscheidung zur Aussage
 strahlensaetze-e1-k3-s11-v1;2021-OS-K4c;5;ja;ganz;Draufsicht mit Maßstab und Entscheidung
 strahlensaetze-e1-k3-s11-v2;2021-OS-K4c;5;ja;ganz;Draufsicht mit Maßstab und Entscheidung
 daten-e4-k1-s7-v3;2021-OS-K5a;5;nein;teil;Spannweite und Mittel ohne prozentuale Erhöhung
@@ -1381,11 +1381,11 @@ daten-e5-k1-s5-v1;2022-OS-K4c;2;nein;ganz;beide Teilbehauptungen prüfen und beg
 daten-e3-k1-s9-v2;2022-OS-K4d;3;nein;ganz;Sektoren beschriften und Mittelpunktswinkel berechnen
 pythagoras-e2-k3-s12-v3;2022-OS-K5a;2;nein;ganz;Nachweis der Teilstrecke mit Pythagoras
 pythagoras-e2-k3-s12-v4;2022-OS-K5a;2;nein;ganz;Nachweis der Teilstrecke mit Pythagoras
-trigonometrie-e2-k1-s11-v7;2022-OS-K5b;2;nein;ganz;Winkel im Teildreieck über den Sinus
-trigonometrie-e2-k1-s11-v8;2022-OS-K5b;2;nein;ganz;Winkel im Teildreieck über den Sinus
+trigonometrie-e2-k1-s12-v7;2022-OS-K5b;2;nein;ganz;Winkel im Teildreieck über den Sinus
+trigonometrie-e2-k1-s12-v8;2022-OS-K5b;2;nein;ganz;Winkel im Teildreieck über den Sinus
 winkel-dreiecke-e3-k2-s7-v1;2022-OS-K5c;2;nein;ganz;Winkel im Teildreieck über die Winkelsumme
-trigonometrie-e1-k3-s16-v7;2022-OS-K5d;2;nein;ganz;Seite im Teildreieck über den Sinus
-trigonometrie-e1-k3-s16-v8;2022-OS-K5d;2;nein;ganz;Seite im Teildreieck über den Sinus
+trigonometrie-e1-k3-s17-v7;2022-OS-K5d;2;nein;ganz;Seite im Teildreieck über den Sinus
+trigonometrie-e1-k3-s17-v8;2022-OS-K5d;2;nein;ganz;Seite im Teildreieck über den Sinus
 lineare-funktionen-e5-k1-s5-v11;2022-OS-K6a;1;nein;ganz;Endwert nach linearer Veränderung wie im Original
 lineare-funktionen-e5-k1-s5-v12;2022-OS-K6a;1;nein;ganz;Endwert nach linearer Veränderung wie im Original
 lineare-funktionen-e5-k1-s5-v7;2022-OS-K6b;4;ja;ganz;Gleichung aufstellen und Mindestzahl der Monate
@@ -1701,8 +1701,8 @@ daten-e4-k1-s1-v5;2023-OS-K6c;3;nein;ganz;dieselben Ergebnisse mit gleicher Hand
 daten-e2-k2-s11-v1;2023-OS-K6d;3;nein;ganz;dieselben Ergebnisse mit gleicher Handlung
 daten-e2-k2-s11-v2;2023-OS-K6d;3;nein;ganz;dieselben Ergebnisse mit gleicher Handlung
 winkel-dreiecke-e3-k2-s8-v3;2023-OS-K7a;1;nein;ganz;dieselben Ergebnisse mit gleicher Handlung
-trigonometrie-e3-k1-s17-v5;2023-OS-K7b;4;nein;ganz;dieselben Ergebnisse mit gleicher Handlung
-trigonometrie-e3-k1-s17-v6;2023-OS-K7b;4;nein;ganz;dieselben Ergebnisse mit gleicher Handlung
+trigonometrie-e3-k1-s19-v5;2023-OS-K7b;4;nein;ganz;dieselben Ergebnisse mit gleicher Handlung
+trigonometrie-e3-k1-s19-v6;2023-OS-K7b;4;nein;ganz;dieselben Ergebnisse mit gleicher Handlung
 tangente-normale-schnittwinkel-e1-k1-s8-v3;2023-bebb-gk-A1.1a;2;;ganz;dieselben Ergebnisse mit gleicher Handlung
 stammfunktion-und-hauptsatz-e3-k1-s1-v3;2023-bebb-gk-A1.2b;4;;ganz;Stammfunktionsgraph durch einen Punkt aus dem Graphen von f skizziert
 geraden-e2-k1-s2-v1;2023-bebb-gk-A1.4a;1;;ganz;dieselben Ergebnisse mit gleicher Handlung
@@ -2008,12 +2008,12 @@ potenzen-wurzeln-e3-k2-s13-v7;2024-OS-K6a;2;nein;ganz;Kathete über Pythagoras i
 potenzen-wurzeln-e3-k2-s13-v8;2024-OS-K6a;2;nein;ganz;Kathete über Pythagoras im Sachkontext
 pythagoras-e2-k3-s12-v1;2024-OS-K6a;2;nein;ganz;Höhenunterschied als Kathete berechnen
 pythagoras-e2-k3-s12-v2;2024-OS-K6a;2;nein;ganz;Höhenunterschied als Kathete berechnen
-trigonometrie-e2-k1-s11-v1;2024-OS-K6b;2;nein;ganz;Winkel über Kosinus aus Kathete und Hypotenuse
-trigonometrie-e2-k1-s11-v2;2024-OS-K6b;2;nein;ganz;Winkel über Kosinus aus Kathete und Hypotenuse
+trigonometrie-e2-k1-s12-v1;2024-OS-K6b;2;nein;ganz;Winkel über Kosinus aus Kathete und Hypotenuse
+trigonometrie-e2-k1-s12-v2;2024-OS-K6b;2;nein;ganz;Winkel über Kosinus aus Kathete und Hypotenuse
 zuordnungen-e4-k3-s6-v5;2024-OS-K6c;2;nein;ganz;Dauer aus Strecke und Geschwindigkeit in Minuten
 zuordnungen-e4-k3-s6-v6;2024-OS-K6c;2;nein;ganz;Dauer aus Strecke und Geschwindigkeit in Minuten
-trigonometrie-e4-k1-s16-v1;2024-OS-K6d;4;ja;ganz;dritter Winkel und Sinussatz wie im Original
-trigonometrie-e4-k1-s16-v2;2024-OS-K6d;4;ja;ganz;dritter Winkel und Sinussatz wie im Original
+trigonometrie-e4-k1-s17-v1;2024-OS-K6d;4;ja;ganz;dritter Winkel und Sinussatz wie im Original
+trigonometrie-e4-k1-s17-v2;2024-OS-K6d;4;ja;ganz;dritter Winkel und Sinussatz wie im Original
 lineare-gleichungssysteme-e4-k1-s8-v1;2024-OS-K7a;2;nein;ganz;beide Gleichungen aufstellen
 lineare-gleichungssysteme-e4-k1-s8-v2;2024-OS-K7a;2;nein;ganz;beide Gleichungen aufstellen
 lineare-gleichungssysteme-e4-k1-s8-v3;2024-OS-K7b;4;ja;ganz;Gleichung als Satz deuten und System lösen
@@ -2297,8 +2297,8 @@ trigonometrie-basis-k2-v6;2025-OS-B1g;1;nein;ganz;Seitenverhältnis als Bruch ei
 trigonometrie-basis-k2-v7;2025-OS-B1g;1;nein;ganz;Seitenverhältnis als Bruch eintragen, andere Winkelfunktion
 trigonometrie-basis-k2-v8;2025-OS-B1g;1;nein;ganz;Seitenverhältnis als Bruch eintragen wie im Original
 trigonometrie-basis-k2-v9;2025-OS-B1g;1;nein;ganz;Seitenverhältnis als Bruch eintragen, andere Winkelfunktion
-trigonometrie-e1-k3-s16-v11;2025-OS-B1g;1;nein;ganz;Sinus als Bruch eintragen wie im Original
-trigonometrie-e1-k3-s16-v12;2025-OS-B1g;1;nein;ganz;Sinus als Bruch eintragen wie im Original
+trigonometrie-e1-k3-s17-v11;2025-OS-B1g;1;nein;ganz;Sinus als Bruch eintragen wie im Original
+trigonometrie-e1-k3-s17-v12;2025-OS-B1g;1;nein;ganz;Sinus als Bruch eintragen wie im Original
 quadratische-gleichungen-basis-k1-v1;2025-OS-B1h;1;nein;ganz;Lösung durch Einsetzen ankreuzen wie im Original
 quadratische-gleichungen-basis-k1-v10;2025-OS-B1h;1;nein;ganz;Lösung durch Einsetzen ankreuzen wie im Original
 quadratische-gleichungen-basis-k1-v2;2025-OS-B1h;1;nein;ganz;Lösung durch Einsetzen ankreuzen wie im Original
@@ -2323,12 +2323,12 @@ wahrscheinlichkeit-e3-k3-s4-v1;2025-OS-K3c;2;ja;ganz;Summe zweier Pfadwahrschein
 wahrscheinlichkeit-e3-k3-s10-v1;2025-OS-K3d;2;ja;ganz;Scheiben belegen und durch Rechnung zeigen
 pythagoras-e1-k2-s15-v3;2025-OS-K4a;4;nein;teil;nur Rampenlänge, Original auch Anstiegswinkel
 pythagoras-e1-k2-s15-v4;2025-OS-K4a;4;nein;teil;nur Steglänge, Original auch Anstiegswinkel
-trigonometrie-e2-k1-s11-v10;2025-OS-K4a;4;nein;ganz;Rampenlänge und Anstiegswinkel mit gleichem Weg
-trigonometrie-e2-k1-s11-v9;2025-OS-K4a;4;nein;ganz;Rampenlänge und Anstiegswinkel mit gleichem Weg
+trigonometrie-e2-k1-s12-v10;2025-OS-K4a;4;nein;ganz;Rampenlänge und Anstiegswinkel mit gleichem Weg
+trigonometrie-e2-k1-s12-v9;2025-OS-K4a;4;nein;ganz;Rampenlänge und Anstiegswinkel mit gleichem Weg
 prozentrechnung-e5-k2-s8-v11;2025-OS-K4b;3;nein;ganz;Lückensatz und Steigungsprüfung wie im Original
 prozentrechnung-e5-k2-s8-v12;2025-OS-K4b;3;nein;ganz;Lückensatz und Steigungsprüfung, eine Lücke vorgegeben
-trigonometrie-e4-k1-s16-v3;2025-OS-K4c;3;ja;ganz;dritter Winkel und Sinussatz wie im Original
-trigonometrie-e4-k1-s16-v4;2025-OS-K4c;3;ja;ganz;dritter Winkel und Sinussatz wie im Original
+trigonometrie-e4-k1-s17-v3;2025-OS-K4c;3;ja;ganz;dritter Winkel und Sinussatz wie im Original
+trigonometrie-e4-k1-s17-v4;2025-OS-K4c;3;ja;ganz;dritter Winkel und Sinussatz wie im Original
 trigonometrische-funktionen-e1-k1-s13-v3;2025-OS-K4c;3;ja;unklar;nur letzter Rechenschritt, dazu Einheitskreis-Erklärung
 lineare-funktionen-e4-k1-s6-v1;2025-OS-K5a;4;nein;ganz;Zeichnen, Ankreuzen und Gleichung wie im Original
 lineare-funktionen-e4-k1-s6-v2;2025-OS-K5a;4;nein;ganz;Zeichnen, Ankreuzen und Gleichung wie im Original
@@ -2632,10 +2632,10 @@ daten-e2-k2-s7-v3;2026-FOR-K3d;1;;ganz;Säule mit gegebenem Wert einzeichnen
 daten-e5-k1-s10-v3;2026-FOR-K3e;1;;ganz;Verzerrung durch abgeschnittene Achse erklären
 daten-e5-k1-s10-v4;2026-FOR-K3e;1;;ganz;Verzerrung durch abgeschnittene Achse erklären
 reelle-zahlen-e3-k1-s5-v3;2026-FOR-K4a;2;;ganz;Kathete über Pythagoras mit gleichem Weg
-trigonometrie-e2-k1-s11-v5;2026-FOR-K4b;2;;ganz;Nachweis des Winkels über cos⁻¹ wie im Original
-trigonometrie-e2-k1-s11-v6;2026-FOR-K4b;2;;ganz;gleiche Winkelrechnung, Berechnen statt Nachweis eines Näherungswerts
-trigonometrie-e3-k1-s17-v7;2026-FOR-K4c;3;;ganz;Diagonale aus Höhe und Winkel mit dem Sinus
-trigonometrie-e3-k1-s17-v8;2026-FOR-K4c;3;;ganz;Diagonale aus Höhe und Winkel mit dem Sinus
+trigonometrie-e2-k1-s12-v5;2026-FOR-K4b;2;;ganz;Nachweis des Winkels über cos⁻¹ wie im Original
+trigonometrie-e2-k1-s12-v6;2026-FOR-K4b;2;;ganz;gleiche Winkelrechnung, Berechnen statt Nachweis eines Näherungswerts
+trigonometrie-e3-k1-s19-v7;2026-FOR-K4c;3;;ganz;Diagonale aus Höhe und Winkel mit dem Sinus
+trigonometrie-e3-k1-s19-v8;2026-FOR-K4c;3;;ganz;Diagonale aus Höhe und Winkel mit dem Sinus
 lineare-funktionen-e2-k4-s8-v1;2026-FOR-K5a;2;;ganz;Gerade aus Gleichung zeichnen wie im Original
 lineare-funktionen-e2-k4-s8-v2;2026-FOR-K5a;2;;ganz;Gerade aus Gleichung zeichnen wie im Original
 lineare-funktionen-e3-k2-s7-v11;2026-FOR-K5b;2;;ganz;rechnerische Punktprobe mit Entscheidung

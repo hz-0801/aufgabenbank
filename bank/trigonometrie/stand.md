@@ -112,3 +112,17 @@ e4, zeilenweise ersetzt.
 - trigonometrie-e2-k1-s1-v2: „$\mathrm{sin}^{-1}(0{,}5556) \approx 33{,}7^\circ$“ falsch ($33{,}752^\circ$) → Umkehrtaste auf $\frac{5}{9}$ ($33{,}749^\circ \approx 33{,}7^\circ$), „$= 0{,}5556$“ → „$\approx 0{,}5556$“; pruef unverändert (Regel b).
 - trigonometrie-e2-k1-s11-v5: $69{,}7^\circ$ folgte scheinbar aus $0{,}346$ (ergibt $69{,}757^\circ$) → „$\varepsilon = \mathrm{cos}^{-1}\left(\frac{9}{26}\right) \approx 69{,}7^\circ$“; pruef unverändert (Regel b).
 - Prüfskript: Abweichungen 0.
+
+## Nachtrag 2026-10-02: Duden-Abgleich und Leiterregeln
+
+Katalog: mathe-nachhilfe katalog/trigonometrie.md, Commit 011af98 (Leiterregeln 02.10.2026). Neue Sprossen je 3 Zeilen, herkunft „Regel 02.10.“: e1 Kette 3 Rückwärts (s16), Prüfung jetzt s17; e2 Kette 1 Gemischt (s11), Prüfung s12; e3 Kette 1 Rückwärts (s17) und Gemischt (s18), Prüfung s19; e4 Kette 1 Gemischt (s16), Prüfung s17. Zusatzvarianten A14–A18 aus eingang/duden9-2026-10-02/neu-pyt-duden9.jsonl an den alten Sprossen (die Vorstufen e1 k3 s0 und e3 k1 s0 behalten ihren Kurztext, Altlast). Verschobene Prüfungszeilen tragen quelle 97–100 und den Katalogtext. ids in bank/_punkte.csv nachgezogen (50 Zeilen). Prüfskript ohne --katalog 0 Abweichungen, mit --katalog 250 → 208 (Rest alte quelle 39/40, 102–105).
+
+| Datei | vorstufe | grundfall | sprosse | pruefung | pflicht | Summe |
+|---|---:|---:|---:|---:|---:|---:|
+| e1 | 14 | 7 | 54 | 14 | 9 | 98 |
+| e2 | 4 | 5 | 39 | 12 | 9 | 69 |
+| e3 | 5 | 5 | 54 | 12 | 9 | 85 |
+| e4 | 4 | 5 | 45 | 12 | 9 | 75 |
+| zone | 0 | 18 | 19 | 0 | 1 | 38 |
+
+Summe 365 Zeilen.
