@@ -104,3 +104,16 @@ Prüfskript: werkzeuge/bank-pruef.py, am Ende 0 Abweichungen,
   weiter eine Lösung an, die mit der kürzeren Option beginnt
   („ähnlich oder nicht ähnlich“ bei den Optionen „ähnlich“ und
   „nicht ähnlich“).
+
+## Nachtrag 2026-10-02: Duden-Abgleich und Leiterregeln
+
+Katalog: mathe-nachhilfe katalog/strahlensaetze.md, Commit 28a9b9e (Umsetzung 02.10.2026). Neue Sprossen, je mindestens 3 Zeilen (Entwürfe aus eingang/duden9-2026-10-02/ ergänzt): e1 Kette 2 Maßstabsleiste (s9) und Gemischt (s10), Prüfung jetzt s11; e1 Kette 3 Rückwärts (s9) und Gemischt (s10), Prüfung s11; e2 Kette 1 Volumen mal k³ (s12, Vorrat), negativer Streckfaktor (s13, GYM), zwei Streckungen nacheinander (s14, GYM), Gemischt (s15), Prüfung s16; e2 Kette 2 Fixgerade (s2, GYM) und Prüfungshöhe (s3); e3 Kette 1 Verhältnisgleichung mit Streckennamen ergänzen (s3; alte s3–s9 rücken um eins), Rückwärts (s10), Gemischt (s11), Prüfung s12; e3 Kette 3 Verhältnis m zu n (s2, Vorrat), Hilfsstrahl (s3, GYM), Prüfungshöhe (s4). Zusatzvarianten A1–A17 an den alten Sprossen (über der Sollmenge, Beschluss 02.10.). Neue und verschobene Zeilen tragen quelle der Katalogzeilen 81–86; Zusatzvarianten an nicht verschobenen Sprossen tragen die quelle ihrer Sprosse (Prüfskript verlangt sie einheitlich) und bleiben Altlast des Nachzugs. ids in bank/_punkte.csv nachgezogen (6 Zeilen). Befund: Sprosse 1 der Vorrat-Ketten e2 k2 und e3 k3 bleibt hoehe sprosse (früher Typ ohne Kette), kein Grundfall. Prüfskript ohne --katalog 0 Abweichungen, mit --katalog 145 → 127 (alle alte quelle 37/87–90).
+
+| Datei | vorstufe | grundfall | sprosse | pruefung | pflicht | Summe |
+|---|---:|---:|---:|---:|---:|---:|
+| e1 | 12 | 10 | 56 | 6 | 12 | 96 |
+| e2 | 4 | 5 | 59 | 6 | 10 | 84 |
+| e3 | 4 | 5 | 48 | 6 | 13 | 76 |
+| zone | 0 | 18 | 20 | 0 | 1 | 39 |
+
+Summe 295 Zeilen.
