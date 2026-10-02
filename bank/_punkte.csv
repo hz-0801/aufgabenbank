@@ -233,8 +233,8 @@ rationale-zahlen-e4-k1-s6-v1;2016-OS-K2d;2;nein;ganz;günstigste Preiskombinatio
 rationale-zahlen-e4-k1-s6-v2;2016-OS-K2d;2;nein;ganz;günstigste Preiskombination ermitteln
 einheiten-e1-k2-s10-v1;2016-OS-K3a;1;nein;ganz;Umrechnung mit Faktor und Nachweis wie im Original
 einheiten-e1-k2-s10-v2;2016-OS-K3a;1;nein;ganz;Umrechnung mit Faktor und Nachweis wie im Original
-kreis-e2-k1-s7-v1;2016-OS-K3b;2;nein;ganz;Kreisfläche aus Durchmesser mit gleichem Weg
-kreis-e2-k1-s7-v2;2016-OS-K3b;2;nein;ganz;Kreisfläche aus Durchmesser mit gleichem Weg
+kreis-e2-k1-s8-v1;2016-OS-K3b;2;nein;ganz;Kreisfläche aus Durchmesser mit gleichem Weg
+kreis-e2-k1-s8-v2;2016-OS-K3b;2;nein;ganz;Kreisfläche aus Durchmesser mit gleichem Weg
 pyramide-kegel-kugel-e3-k1-s13-v1;2016-OS-K3c;3;nein;ganz;Kugelvolumen aus Durchmesser mit gleichem Weg
 pyramide-kegel-kugel-e3-k1-s13-v2;2016-OS-K3c;3;nein;ganz;Kugelvolumen aus Durchmesser mit gleichem Weg
 einheiten-e4-k1-s10-v1;2016-OS-K3d;2;nein;ganz;Volumen aus Masse und Dichte wie im Original
@@ -1990,8 +1990,8 @@ lineare-funktionen-e2-k4-s8-v3;2024-OS-K3a;2;nein;ganz;Gerade aus Gleichung zeic
 lineare-funktionen-e2-k4-s8-v4;2024-OS-K3a;2;nein;ganz;Gerade aus Gleichung zeichnen
 quadratische-gleichungen-e3-k3-s13-v11;2024-OS-K3d;4;ja;ganz;Schnittpunkte Gerade und Parabel berechnen
 quadratische-gleichungen-e3-k3-s13-v12;2024-OS-K3d;4;ja;ganz;Schnittpunkte Gerade und Parabel berechnen
-kreis-e2-k1-s7-v3;2024-OS-K4a;2;nein;ganz;Grundfläche des Kegels als Kreisfläche
-kreis-e2-k1-s7-v4;2024-OS-K4a;2;nein;ganz;Grundfläche des Kegels als Kreisfläche
+kreis-e2-k1-s8-v3;2024-OS-K4a;2;nein;ganz;Grundfläche des Kegels als Kreisfläche
+kreis-e2-k1-s8-v4;2024-OS-K4a;2;nein;ganz;Grundfläche des Kegels als Kreisfläche
 koerper-e1-k4-s1-v1;2024-OS-K4b;4;nein;teil;nur Skizze, Auswahl und Begründung fehlen
 koerper-e1-k4-s1-v2;2024-OS-K4b;4;nein;teil;nur Skizze, Auswahl und Begründung fehlen
 koerper-e1-k4-s1-v3;2024-OS-K4b;4;nein;teil;nur Skizze, Auswahl und Begründung fehlen
@@ -2273,8 +2273,8 @@ kreis-basis-k1-v6;2025-OS-B1e;2;nein;ganz;Sektoranteil in Prozent aus dem Winkel
 kreis-basis-k1-v7;2025-OS-B1e;2;nein;ganz;Sektoranteil in Prozent aus dem Winkel
 kreis-basis-k1-v8;2025-OS-B1e;2;nein;ganz;Sektoranteil in Prozent aus dem Winkel
 kreis-basis-k1-v9;2025-OS-B1e;2;nein;ganz;Sektoranteil in Prozent aus dem Winkel
-kreis-e3-k1-s8-v1;2025-OS-B1e;2;nein;ganz;Sektoranteil in Prozent mit Restwinkel als Falle
-kreis-e3-k1-s8-v2;2025-OS-B1e;2;nein;ganz;Sektoranteil in Prozent mit Restwinkel als Falle
+kreis-e3-k1-s11-v1;2025-OS-B1e;2;nein;ganz;Sektoranteil in Prozent mit Restwinkel als Falle
+kreis-e3-k1-s11-v2;2025-OS-B1e;2;nein;ganz;Sektoranteil in Prozent mit Restwinkel als Falle
 lineare-funktionen-basis-k1-v1;2025-OS-B1f;1;nein;ganz;gleiches Ankreuzen der linearen Funktion
 lineare-funktionen-basis-k1-v10;2025-OS-B1f;1;nein;ganz;gleiches Ankreuzen der linearen Funktion
 lineare-funktionen-basis-k1-v2;2025-OS-B1f;1;nein;ganz;gleiches Ankreuzen der linearen Funktion

@@ -157,3 +157,16 @@ Keine Zeile geändert oder gestrichen.
   durch bank.md 2026-09-27b nicht erledigt (1 und 3 Katalog;
   2 „bis zum Doppelpunkt" und 4 „Zielmarke aus Rahmenlehrplan oder
   Lehrwerk" stehen unverändert).
+
+## Nachtrag 2026-10-02: Duden-Abgleich und Leiterregeln
+
+Katalog: mathe-nachhilfe katalog/kreis.md, Commit 5f57d5b (Umsetzung 02.10.2026). e1 Kette 2 (Umfang): Umfangsänderung (s8, Vorrat) und Gemischt (s9), Prüfung jetzt s10; e1 neue Kette 6 „Lage einer Geraden zum Kreis“ (Typ ohne Kette, Vorrat, 3 Zeilen), die Pflichtkette heißt jetzt k7; e2 Kette 1 Gemischt (s7), Prüfung s8; e3 Kette 1 Kreisabschnitt (s7, Vorrat), Kreisring s8, Kreisring rückwärts (s9, Vorrat), Gemischt (s10), Prüfung s11. Zusatzvarianten A1–A8 an den alten Sprossen; sie tragen die quelle ihrer Sprosse (Altlast). Die Entwürfe NEU-umfangswinkel gehen nach winkel-dreiecke (Kette „Winkel am Kreis“). ids in bank/_punkte.csv nachgezogen (6 Zeilen). Prüfskript ohne --katalog 0 Abweichungen, mit --katalog 84 → 85 (alle alte quelle 77–79; die eine zusätzliche ist eine Zusatzvariante an einer nicht verschobenen Sprosse).
+
+| Datei | vorstufe | grundfall | sprosse | pruefung | pflicht | Summe |
+|---|---:|---:|---:|---:|---:|---:|
+| e1 | 8 | 5 | 42 | 3 | 12 | 70 |
+| e2 | 4 | 5 | 31 | 4 | 12 | 56 |
+| e3 | 4 | 5 | 35 | 2 | 12 | 58 |
+| zone | 0 | 12 | 13 | 0 | 1 | 26 |
+
+Summe 210 Zeilen.
