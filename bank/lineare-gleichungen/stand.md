@@ -140,3 +140,16 @@ angeglichen wurde (Päckchen-Merkmal, Vorstufen-Text).
 - Schrittnamen nur in neuen und umgeschriebenen Zeilen; der
   übernommene Bestand zeigt reine Ergebnisse.
 - gegenlese.md, gegenlese2.md und weg.jsonl sind Bestand.
+
+## Nachtrag 02.10.2026: Duden-Abgleich und Leiterregeln
+
+Katalog-Commit: a121fb5e5eb74e20193a42b2377239f997c56fda (2026-10-02, katalog/lineare-gleichungen.md, lokaler Klon).
+Neue Sprossen: e1 k2 s5 rückwärts; e2 k3 s10 gemischt; e3 k2 s7 rückwärts, s8 gemischt, s9 lineare Ungleichung (Vorrat, GYM); e4 k1 s6 rückwärts, s7 gemischt, s8 Ungleichung aus Sachverhalt (Vorrat, GYM). Duden-Zeilen A1 (e1 k2 s4, zwei), A3 (e4 k1 s3, zwei), A4 (e3 k2 s4 eine, e3 k2 s8 eine). Prüfungssprossen verschoben, ids in weg.jsonl mitgezogen (zwölf Wege). Die neue Fehlerzeile im Katalog verschiebt die Kettenzeilen um eins; quelle aller betroffenen Zeilen nachgezogen (106). Zeilen e1–e4 vorher 177, nachher 206. Prüfskript: 1 Abweichung (weg.jsonl: Dateiname, Bestand), 3 Warnungen (Zusatzzeilen); mit --katalog 1 → 1.
+
+| Datei | Zeilen | vorst. | grundf. | sprosse | pruef. | pflicht |
+|---|--:|--:|--:|--:|--:|--:|
+| e1.jsonl | 53 | 4 | 10 | 23 | 7 | 9 |
+| e2.jsonl | 52 | 12 | 5 | 27 | 2 | 6 |
+| e3.jsonl | 50 | 8 | 5 | 28 | 3 | 6 |
+| e4.jsonl | 51 | 0 | 5 | 26 | 8 | 12 |
+| zone.jsonl | 28 | 0 | 10 | 17 | 0 | 1 |
