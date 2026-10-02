@@ -114,8 +114,8 @@ winkel-dreiecke-basis-k3-v6;2015-OS-B1d;1;nein;ganz;gleiche Größe mit gleichem
 winkel-dreiecke-basis-k3-v7;2015-OS-B1d;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
 winkel-dreiecke-basis-k3-v8;2015-OS-B1d;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
 winkel-dreiecke-basis-k3-v9;2015-OS-B1d;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
-winkel-dreiecke-e2-k2-s10-v1;2015-OS-B1d;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
-winkel-dreiecke-e2-k2-s10-v2;2015-OS-B1d;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
+winkel-dreiecke-e2-k2-s11-v1;2015-OS-B1d;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
+winkel-dreiecke-e2-k2-s11-v2;2015-OS-B1d;1;nein;ganz;gleiche Größe mit gleichem Lösungsweg
 zinsrechnung-e1-k1-s11-v1;2015-OS-B1e;1;nein;ganz;Zinsen nach einem Jahr mit gleichem Weg
 zinsrechnung-e1-k1-s11-v2;2015-OS-B1e;1;nein;ganz;Zinsen nach einem Jahr mit gleichem Weg
 daten-e4-k1-s4-v2;2015-OS-B1f;1;nein;ganz;Median bei ungerader Anzahl mit gleichem Weg
@@ -265,8 +265,8 @@ lineare-funktionen-e5-k1-s5-v10;2016-OS-K6c;2;ja;ganz;Funktionsgleichung aus Gru
 lineare-funktionen-e5-k1-s5-v9;2016-OS-K6c;2;ja;ganz;Funktionsgleichung aus Grundpreis und km-Preis
 lineare-gleichungssysteme-e1-k1-s9-v1;2016-OS-K6d;4;ja;unklar;Bank verlangt zusätzlich Begründung der Eindeutigkeit, Original LGS
 lineare-gleichungssysteme-e1-k1-s9-v2;2016-OS-K6d;4;ja;unklar;Bank verlangt zusätzlich Begründung der Eindeutigkeit, Original LGS
-winkel-dreiecke-e1-k2-s9-v3;2016-OS-K7a;1;nein;ganz;Weg aus zwei Teilstrecken addieren
-winkel-dreiecke-e1-k2-s9-v4;2016-OS-K7a;1;nein;ganz;Weg aus zwei Teilstrecken addieren
+winkel-dreiecke-e1-k2-s10-v3;2016-OS-K7a;1;nein;ganz;Weg aus zwei Teilstrecken addieren
+winkel-dreiecke-e1-k2-s10-v4;2016-OS-K7a;1;nein;ganz;Weg aus zwei Teilstrecken addieren
 trigonometrie-e3-k1-s19-v10;2016-OS-K7c;4;ja;ganz;Teilwinkel und Seite mit Tangens wie im Original
 trigonometrie-e3-k1-s19-v9;2016-OS-K7c;4;ja;ganz;Teilwinkel und Seite mit Tangens wie im Original
 brueche-dezimalzahlen-e1-k1-s6-v11;2017-OS-B1a;1;nein;ganz;Bruchteil einer Kästchenfläche schraffieren
@@ -525,8 +525,8 @@ lineare-gleichungen-e4-k1-s6-v4;2018-OS-K3b;2;nein;unklar;Aufgabe nennt die übr
 daten-e3-k1-s2-v2;2018-OS-K3c;2;nein;ganz;Streifendiagramm mit vier Anteilen zeichnen
 daten-e5-k1-s10-v5;2018-OS-K3d;4;ja;ganz;zwei Aussagen ankreuzen und begründen
 daten-e5-k1-s10-v6;2018-OS-K3d;4;ja;ganz;zwei Aussagen ankreuzen und begründen
-winkel-dreiecke-e1-k2-s9-v1;2018-OS-K4a;1;nein;ganz;Winkel als Differenz zweier Winkel
-winkel-dreiecke-e1-k2-s9-v2;2018-OS-K4a;1;nein;ganz;Winkel als Differenz zweier Winkel
+winkel-dreiecke-e1-k2-s10-v1;2018-OS-K4a;1;nein;ganz;Winkel als Differenz zweier Winkel
+winkel-dreiecke-e1-k2-s10-v2;2018-OS-K4a;1;nein;ganz;Winkel als Differenz zweier Winkel
 winkel-dreiecke-e3-k2-s7-v2;2018-OS-K4b;1;nein;ganz;vorgegebenen Winkel über Nebenwinkel und Winkelsumme zeigen
 trigonometrie-e4-k1-s17-v5;2018-OS-K4c;2;ja;ganz;Seite mit Sinussatz bestätigen
 trigonometrie-e4-k1-s17-v6;2018-OS-K4c;2;ja;ganz;Seite mit Sinussatz bestätigen
@@ -987,8 +987,8 @@ winkel-dreiecke-basis-k1-v6;2020-OS-B1i;1;nein;ganz;Dreiecksungleichung ankreuze
 winkel-dreiecke-basis-k1-v7;2020-OS-B1i;1;nein;ganz;Dreiecksungleichung ankreuzen wie im Original
 winkel-dreiecke-basis-k1-v8;2020-OS-B1i;1;nein;ganz;Dreiecksungleichung ankreuzen, andere Fragestellung
 winkel-dreiecke-basis-k1-v9;2020-OS-B1i;1;nein;ganz;Dreiecksungleichung ankreuzen wie im Original
-winkel-dreiecke-e4-k1-s10-v1;2020-OS-B1i;1;nein;ganz;Dreiecksungleichung ankreuzen wie im Original
-winkel-dreiecke-e4-k1-s10-v2;2020-OS-B1i;1;nein;ganz;Dreiecksungleichung ankreuzen wie im Original
+winkel-dreiecke-e4-k1-s12-v1;2020-OS-B1i;1;nein;ganz;Dreiecksungleichung ankreuzen wie im Original
+winkel-dreiecke-e4-k1-s12-v2;2020-OS-B1i;1;nein;ganz;Dreiecksungleichung ankreuzen wie im Original
 trigonometrie-basis-k1-v1;2020-OS-B1j;1;nein;ganz;x im Nenner, gleiches Umstellen
 trigonometrie-basis-k1-v10;2020-OS-B1j;1;nein;ganz;x im Nenner, gleiches Umstellen
 trigonometrie-basis-k1-v2;2020-OS-B1j;1;nein;ganz;x im Nenner, gleiches Umstellen
@@ -1652,8 +1652,8 @@ winkel-dreiecke-basis-k2-v6;2023-OS-B1g;2;nein;ganz;Seitenlänge und dritter Win
 winkel-dreiecke-basis-k2-v7;2023-OS-B1g;2;nein;ganz;Seitenlänge und dritter Winkel beide verlangt
 winkel-dreiecke-basis-k2-v8;2023-OS-B1g;2;nein;ganz;Seitenlänge und dritter Winkel beide verlangt
 winkel-dreiecke-basis-k2-v9;2023-OS-B1g;2;nein;ganz;Seitenlänge und dritter Winkel beide verlangt
-winkel-dreiecke-e3-k2-s11-v1;2023-OS-B1g;2;nein;ganz;Seitenlänge und dritter Winkel beide verlangt
-winkel-dreiecke-e3-k2-s11-v2;2023-OS-B1g;2;nein;ganz;Seitenlänge und dritter Winkel im Sachkontext
+winkel-dreiecke-e3-k2-s13-v1;2023-OS-B1g;2;nein;ganz;Seitenlänge und dritter Winkel beide verlangt
+winkel-dreiecke-e3-k2-s13-v2;2023-OS-B1g;2;nein;ganz;Seitenlänge und dritter Winkel im Sachkontext
 terme-basis-k2-v1;2023-OS-B1h;1;nein;ganz;passenden Term zum Sachtext ankreuzen
 terme-basis-k2-v10;2023-OS-B1h;1;nein;ganz;passende Gleichung statt Term ankreuzen, gleiche Handlung
 terme-basis-k2-v2;2023-OS-B1h;1;nein;ganz;passenden Term zum Sachtext ankreuzen
@@ -2315,8 +2315,8 @@ symmetrie-abbildungen-e2-k2-s12-v1;2025-OS-K2a;4;nein;teil;nur Symmetrieachsen, 
 symmetrie-abbildungen-e2-k2-s12-v2;2025-OS-K2a;4;nein;teil;nur Symmetrieachsen, Original auch BF-Nachweis und AB
 pythagoras-e2-k3-s12-v5;2025-OS-K2c;2;ja;ganz;rechten Winkel begründen über Pythagoras-Umkehrung, im Original zugelassen
 pythagoras-e2-k3-s12-v6;2025-OS-K2c;2;ja;ganz;rechten Winkel begründen über Pythagoras-Umkehrung, andere Figur
-winkel-dreiecke-e3-k2-s11-v3;2025-OS-K2c;2;ja;ganz;rechten Winkel im Drachenviereck gleich begründet
-winkel-dreiecke-e3-k2-s11-v4;2025-OS-K2c;2;ja;ganz;rechten Winkel im Drachenviereck gleich begründet
+winkel-dreiecke-e3-k2-s13-v3;2025-OS-K2c;2;ja;ganz;rechten Winkel im Drachenviereck gleich begründet
+winkel-dreiecke-e3-k2-s13-v4;2025-OS-K2c;2;ja;ganz;rechten Winkel im Drachenviereck gleich begründet
 wahrscheinlichkeit-e1-k1-s6-v2;2025-OS-K3a;1;nein;ganz;alle zweistelligen Zahlen aufzählen wie im Original
 wahrscheinlichkeit-e3-k3-s9-v1;2025-OS-K3b;3;nein;ganz;Behauptung prüfen mit beiden Pfadwahrscheinlichkeiten
 wahrscheinlichkeit-e3-k3-s4-v1;2025-OS-K3c;2;ja;ganz;Summe zweier Pfadwahrscheinlichkeiten wie im Original
@@ -2615,8 +2615,8 @@ winkel-dreiecke-basis-k4-v6;2026-FOR-B1i;1;;ganz;Nachbarwinkel im Parallelogramm
 winkel-dreiecke-basis-k4-v7;2026-FOR-B1i;1;;unklar;Gegenwinkel statt Nachbarwinkel, anderer Lösungsweg
 winkel-dreiecke-basis-k4-v8;2026-FOR-B1i;1;;ganz;Nachbarwinkel im Parallelogramm über 180°
 winkel-dreiecke-basis-k4-v9;2026-FOR-B1i;1;;ganz;Nachbarwinkel im Parallelogramm über 180°
-winkel-dreiecke-e2-k2-s10-v3;2026-FOR-B1i;1;;ganz;Nachbarwinkel im Parallelogramm über 180°
-winkel-dreiecke-e2-k2-s10-v4;2026-FOR-B1i;1;;ganz;Nachbarwinkel im Parallelogramm über 180°
+winkel-dreiecke-e2-k2-s11-v3;2026-FOR-B1i;1;;ganz;Nachbarwinkel im Parallelogramm über 180°
+winkel-dreiecke-e2-k2-s11-v4;2026-FOR-B1i;1;;ganz;Nachbarwinkel im Parallelogramm über 180°
 pyramide-kegel-kugel-e2-k2-s12-v1;2026-FOR-K2b;3;;unklar;verlangt zusätzlich die Gesamthöhe aus der Folgeteilaufgabe
 pyramide-kegel-kugel-e2-k2-s12-v2;2026-FOR-K2b;3;;unklar;verlangt zusätzlich die Gesamthöhe aus der Folgeteilaufgabe
 pyramide-kegel-kugel-e2-k2-s12-v3;2026-FOR-K2b;3;;unklar;verlangt zusätzlich die Gesamthöhe aus der Folgeteilaufgabe

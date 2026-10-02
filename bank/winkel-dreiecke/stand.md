@@ -93,3 +93,18 @@ Prüfskript: werkzeuge/bank-pruef.py, 0 Abweichungen, 0 Warnungen
   „Welches Teildreieck?“ und die Vorstufe von E5 sind reiner Text.
 - Ankreuzen Winkelart: Die Option „überstumpf“ enthält „stumpf“;
   das Skript wertet die Lösung trotzdem als eindeutig.
+
+## Nachtrag 2026-10-02: Duden-Abgleich und Leiterregeln
+
+Katalog: mathe-nachhilfe katalog/winkel-dreiecke.md, Commit 73a202e (Umsetzung 02.10.2026). Neue Kette 2 in e5 „Winkel am Kreis“ (GYM, aus „Nicht aufgenommen“ geholt, Duden-Abgleich Kap. 7 A14): Vorstufe 4, Grundfall 5, Mittelpunktswinkel aus Umfangswinkel, gleiche Umfangswinkel, Thales als Sonderfall, Sehnenviereck, Rückwärts, Gemischt je 3, Prüfungshöhe ohne Original 3; herkunft „Duden WÜT Mathematik 9 (2017), S. 93–95 – Typ“ bzw. „Regel 02.10.“; zwei Zeilen aus den Entwürfen eingang/duden9-2026-10-02/neu-kreis-duden9.jsonl (NEU-umfangswinkel). Die Pflichtkette von e5 heißt jetzt k3. Leiterregeln je 3 Zeilen: e1 k2 Gemischt (s9), Prüfung s10; e2 k2 Gemischt (s10), Prüfung s11; e3 k2 Rückwärts (s11), Gemischt (s12), Prüfung s13; e4 k1 Rückwärts (s10), Gemischt (s11), Prüfung s12; e5 k1 Rückwärts (s9), Gemischt (s10), Prüfung s11. ids in bank/_punkte.csv nachgezogen (14 Zeilen). Prüfskript ohne --katalog 0 Abweichungen, mit --katalog 188 → 174 (Rest alte quelle 38–42, 113–117).
+
+| Datei | vorstufe | grundfall | sprosse | pruefung | pflicht | Summe |
+|---|---:|---:|---:|---:|---:|---:|
+| e1 | 8 | 5 | 27 | 4 | 9 | 53 |
+| e2 | 8 | 5 | 30 | 4 | 9 | 56 |
+| e3 | 8 | 5 | 36 | 4 | 9 | 62 |
+| e4 | 4 | 5 | 33 | 5 | 9 | 56 |
+| e5 | 8 | 10 | 45 | 6 | 9 | 78 |
+| zone | 0 | 10 | 11 | 0 | 1 | 22 |
+
+Summe 327 Zeilen.
