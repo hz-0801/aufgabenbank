@@ -1,6 +1,9 @@
 # Aufgabenbank – Form und Regeln
 
-Stand 2026-10-01, sechste Fassung (Feld herkunft für Zeilen aus Blatt-Chats, Übernahme durch den Blatt-Chat 01.10.; Vorstufen-Nummerierung, eine
+Stand 2026-10-02, siebte Fassung (Leiterregeln 02.10.: Rückwärts-
+und Mischsprosse vor der Prüfungssprosse, krumme Zahlen oben,
+Zusatzzeilen über der Sollmenge, herkunft „Regel 02.10.“; vorher
+sechste Fassung 01.10.: Feld herkunft für Zeilen aus Blatt-Chats, Übernahme durch den Blatt-Chat 01.10.; Vorstufen-Nummerierung, eine
 Prüfungssprosse je Kette, Körperregel beim Nachzug; Pflichtformen
 und Päckchen seit 28.09.; Körperregel der Sperre für Punkte 30.09.;
 Erkennungsschritte und Vorstufen, Marke „kein P10-Stoff“ 30.09.b).
@@ -117,8 +120,11 @@ Leerzeilen. Reihenfolge der Zeilen = Reihenfolge der Kette.
                   stammt (Zeilennummer beim Stand-Commit)
     herkunft      nur bei Zeilen, die ein Blatt-Chat erfunden hat:
                   „Blatt <eintrag> <JJJJ-MM-TT>[b], Nr. <n>“ (Ordner
-                  in eingang/ und Nummer auf dem Blatt); sonst fehlt
-                  das Feld. Der Blatt-Chat (bankblatt.md v5.2) prüft
+                  in eingang/ und Nummer auf dem Blatt), und bei
+                  Zeilen, die nach den Leiterregeln vom 02.10.2026
+                  gebaut sind (Rückwärts-, Mischsprosse, krumme
+                  Zahlen oben, Zusatzzeilen): „Regel 02.10.“; sonst
+                  fehlt das Feld. Der Blatt-Chat (bankblatt.md v5.2) prüft
                   seine Erfindungen gegen die Bank (Prüfskript,
                   Doppelte, Sprosse) und trägt sie selbst ein; der
                   Lehrer streicht, was ihm auf dem Blatt nicht
@@ -163,6 +169,17 @@ die Zahl der Grundfall-Aufgaben auf dem Blatt; die Bank hält fünf
 Zeilen, damit die Auswahl wechseln kann. Die Pflichtelemente
 stehen je Einheit einmal; ihre Kette heißt nach der ersten
 Verfahrenskette der Einheit.
+
+Rückwärts- und Mischsprosse (Leiterregeln 02.10.2026, Katalog
+konzept.md Entscheidung 38) sind gewöhnliche Sprossen: je 3 Zeilen,
+hoehe sprosse, beide unmittelbar vor der Prüfungssprosse – erst
+Rückwärts, dann Gemischt. Hat die Kette sie schon, wird nichts
+ergänzt; nennt der Katalog unter „Offene Punkte“ einen Grund
+gegen die Umkehrung, fehlt die Rückwärtssprosse.
+
+Zusatzzeilen über der Sollmenge werden dazugeschrieben, nicht
+gegen vorhandene getauscht; der Lehrer streicht am Blatt
+(Beschluss 02.10.). Die Sollmenge ist eine Untergrenze.
 
 Eine Prüfungshöhe ohne P10-Original (Zielmarke aus
 Rahmenlehrplan oder Lehrwerk) trägt hoehe pruefung, original
@@ -227,6 +244,13 @@ Verfahrenskette ist daher nicht immer k1.
 
 ## Regeln für den Inhalt
 
+- Krumme Zahlen (Dezimal, Bruch, negativ, gemischte Einheiten)
+  stehen auf den oberen Sprossen einer Kette, für alle Schüler und
+  ohne Gymnasialmarke; Grundfall und Vorstufen bleiben glatt
+  (Beschluss 02.10.). Eine Mischsprosse mischt Fälle oder
+  Verfahren der Kette, ohne Überschrift oder Reihenfolge, die den
+  Fall verrät; eine Rückwärtssprosse gibt Ergebnis oder
+  Eigenschaft vor und fragt nach der Aufgabe.
 - Die Kette kommt aus dem Katalog; jede Variante einer Sprosse
   ändert genau das Merkmal der Sprosse, sonst nichts. Varianten
   derselben Sprosse unterscheiden sich in Zahlen und Kontext,
