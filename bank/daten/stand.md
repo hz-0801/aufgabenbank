@@ -221,3 +221,22 @@ Quelle: bau/render-alle/bericht.md, bau/hefte/bericht.md, bau/fokus/bericht.md, 
 - e5-k1-s10-v1, e5-k1-s10-v2 (2): Dimension too large – ksys-x-Achse mit Jahreszahlen. Änderung: `ksys` mit Jahreszahlen auf der x-Achse (x bis 2025 → Maß über 16\,384 pt) → `\saeulenab` mit denselben Werten, Jahren als Kategorien und abgeschnittener y-Achse (ymin bleibt).
 
 Nur diese 4 Zeilen geändert, alle übrigen byte-gleich. `bank-pruef.py daten`: 0 Abweichungen. Probe: jede Zeile allein in einem Minimaldokument mit mathblatt.sty (hz-0801/blattbau) gesetzt wie werkzeuge/zusammenbau.py v0.7 (teile_normal, teil_schwach, Lösung in \erg), xelatex ohne Fehler.
+
+## Umsetzung Duden-Abgleich und Leiterregeln (2026-10-02)
+
+Katalog: daten.md, Commit 919f3ee (Abgleich
+katalog/_abgleich-duden9-kap10.md). Zeilen e1 88 → 95, e2 59 → 62,
+e3 54 → 61, e4 79 → 90, e5 87 → 101, e7 75 → 78 (e6, zone unverändert).
+
+Neue Sprossen (je 3 Zeilen; Entwürfe aus
+eingang/duden9-2026-10-02/neu-st-duden9.jsonl, Rest herkunft „Regel
+02.10.“): e1 k1 gemischt, e1 k5 s2 Säulendiagramm oder Histogramm
+wählen (Vorrat, zweite Sprosse des Typs ohne Kette, quelle 31); e2 k2
+gemischt; e3 k1 zwei Streifendiagramme vergleichen, gemischt; e4 k1 alle
+Kenngrößen einer Liste, Mittelwert aus einer Häufigkeitstabelle; e4 k2
+mittlere Abweichung (GYM, Vorrat); e5 k1 gemischt; e5 k2 Quartile über
+den Rangplatz (Vorrat), rückwärts (Liste zum Boxplot), gemischt; e7 k2
+rückwärts (Anzahl aus Zeilenanteil). Zusatzzeilen aus dem Duden-Eingang
+(Beschluss 6): e1 k4 s1 v4, e3 k1 s4 v4, e4 k2 s1 v6, e4 k3 s1 v4,
+e5 k2 s2 v4, e5 k2 s8 v4. Prüfskript: 0 Abweichungen, 6 Warnungen
+(Menge, alle durch Zusatzzeilen); mit --katalog 0 → 0.
