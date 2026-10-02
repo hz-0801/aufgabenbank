@@ -1,9 +1,9 @@
 # Mappe: koerper
 
 Eintrag: hz-0801/mathe-nachhilfe, katalog/koerper.md
-Katalog-Commit: 32b0d7f78745000a6c3d5df704c9a9dc0b24699d (2026-10-02T13:51:07+00:00, „koerper: Umsetzung Duden-Abgleich/Leiterregeln 02.10.“; ermittelt über git log, lokaler Klon)
+Katalog-Commit: c0019b6f761023c53ad8f6c736c521653b2a8274 (2026-10-02T13:52:38+00:00, „koerper: Umsetzung Duden-Abgleich/Leiterregeln 02.10.“; ermittelt über git log, lokaler Klon)
 Maßstab: hz-0801/blattbau, unterrichtsblatt.md, Commit 36b7b1216bd31e3ab15e356b63a8ad6ad4a543b1 (2026-09-26T19:14:32+02:00, „prompt: Unterrichtsblatt v4.4 (Befunde Testlauf 25.09.)“; ermittelt über git log (GitHub-API gesperrt))
-Datum: 2026-10-02 13:51 UTC
+Datum: 2026-10-02 13:54 UTC
 Gebaut mit werkzeuge/mappe.py; nicht von Hand ändern.
 Kürzung: Katalogzeilen über 600 Zeichen enden nach 200 Zeichen mit „… (gekürzt, <n> Zeichen)“, außer in Merkkasten, Für schwache Schüler, Typen je Lerneinheit, Typische Fehler, Voraussetzungen, Prüfungsform, Zielmarke und Zeilen mit „[RLP]“ oder „LISUM“ (auch außerhalb dieser Abschnitte).
 

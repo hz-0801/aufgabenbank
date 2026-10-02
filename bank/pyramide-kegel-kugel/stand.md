@@ -171,3 +171,27 @@ berichtigt; sonst 0 Treffer.
   „$\frac{4}{3} \cdot \pi \cdot 5^3$" in aufgabe weiterhin nicht
   (Probe an einer Kopie von e2 k2-s1). Befunde 2, 4, 5 und 6
   bleiben offen; bank.md 2026-09-27b regelt sie nicht.
+
+## Umsetzung Duden-Abgleich und Leiterregeln (2026-10-02)
+
+Katalog: pyramide-kegel-kugel.md, Commit 57f3da8 (Abgleich
+katalog/_abgleich-duden9-kap8.md, Beschluss des Lehrers 02.10.).
+Neue und verschobene Zeilen tragen den wortgleichen sprosse_text und
+die quelle 89–91; Gruppen mit Zusatzzeilen sind mit berichtigt, damit
+sie einheitlich bleiben; sonst alte Zeilen unverändert.
+
+| Datei | vorher | nachher | neu |
+|-------|-------:|--------:|----:|
+| e1    |     77 |      88 |  11 |
+| e2    |     63 |      71 |   8 |
+| e3    |     58 |      82 |  24 |
+
+Neue Sprossen (je 3 Zeilen): e1 aus Grundkante und Seitenkante,
+Volumenfaktor, gemischt; e2 r aus V und h (Vorrat), gemischt; e3
+Hohlkugel (Vorrat), r aus dem Umfang, r aus V (Vorrat), gemischt,
+Kugelabschnitt (GYM, Vorrat). Cavalieri: zwei Begründen-Zeilen an der
+Pflicht begruenden (e3 k2 s2, GYM, Vorrat). Zusatzzeilen aus dem
+Duden-Eingang an bestehenden Sprossen (Beschluss 6: dazugeschrieben).
+Prüfskript: 0 Abweichungen, 11 Warnungen (Menge, alle durch
+Zusatzzeilen); mit --katalog 140 → 88, alle in unveränderten alten
+Zeilen.
