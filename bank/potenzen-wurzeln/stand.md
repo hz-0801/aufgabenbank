@@ -192,3 +192,15 @@ Basis zehn). Alles ersetzt. Keine Einheit scheiterte zweimal.
 - Prüfungshöhe e2 zu 2015-OS-K3a mit Speicherchip und Herzschlag
   statt Astronomie (anderer Kontext); ob der Stamm „Sterne“
   erhalten bleiben soll, offen.
+
+## Nachtrag 02.10.2026: Duden-Abgleich und Leiterregeln
+
+Katalog-Commit: a624d32f0aa0146d4c011f07717947cc3c735bf9 (2026-10-02, katalog/potenzen-wurzeln.md, lokaler Klon).
+Neue Sprossen: e1 k3 s15 gemischt, e2 k1 s17 gemischt, e3 k2 s13 rückwärts und s14 gemischt; Prüfungssprossen dahinter verschoben (quelle und sprosse_text nachgezogen). Entwürfe A-B12 aus eingang/duden9-2026-10-02/neu-rz-duden9.jsonl an e1 k3 s7, e3 k2 s7 und s9. Zeilen e1–e3 vorher 211, nachher 226. Prüfskript: 0 Abweichungen, 3 Warnungen (Zusatzzeilen); mit --katalog 184 → 159 (nur Altlasten).
+
+| Datei | Zeilen | vorst. | grundf. | sprosse | pruef. | pflicht |
+|---|--:|--:|--:|--:|--:|--:|
+| e1.jsonl | 83 | 12 | 5 | 52 | 8 | 6 |
+| e2.jsonl | 71 | 4 | 5 | 48 | 8 | 6 |
+| e3.jsonl | 72 | 8 | 5 | 41 | 12 | 6 |
+| zone.jsonl | 46 | 0 | 18 | 27 | 0 | 1 |
