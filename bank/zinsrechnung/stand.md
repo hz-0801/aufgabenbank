@@ -76,3 +76,19 @@ Datum: 2026-09-27 12:22 UTC
 - e1 hat kein Pflichtelement darstellung.
 - zone f4 und f5: merkmal der zweiten Grundfall-Zeile passt nur
   ungefähr (Multiplizieren, fester Faktor pro Tag).
+
+## Umsetzung Duden-Abgleich und Leiterregeln (2026-10-02)
+
+Katalog: zinsrechnung.md, Commit b97e699 (Abgleich
+katalog/_abgleich-duden9-kap9.md). Zeilen e1 75 → 86, e2 55 → 60.
+
+Neue Sprossen (je 3 Zeilen): e1 k1 gemischt (Jahreszinsen), e1 k2
+gemischte Zinstabelle (zwei Entwürfe aus
+eingang/duden9-2026-10-02/neu-pz-duden9.jsonl, eine neu), e2 k1
+gemischt (Zinseszins). Zusatzzeilen aus dem Duden-Eingang (Beschluss 6):
+e1 k1 s0 v5, e1 k1 s6 v4–v5, e1 k2 s3 v4–v5, e2 k1 s6 v4–v5; die
+Gruppen mit Zusatzzeilen tragen jetzt den wortgleichen sprosse_text und
+die neue quelle. Prüfskript: 0 Abweichungen, 4 Warnungen (Menge); mit
+--katalog 100 → 74, alle in unveränderten alten Zeilen. Altbefund:
+e1 k1 s1/s2 stehen in der Bank in umgekehrter Folge wie im Katalog
+(Dezimalzahl vor 1 %-Weg) – nicht angefasst.
