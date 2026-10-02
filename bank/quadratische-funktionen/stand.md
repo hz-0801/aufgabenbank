@@ -247,3 +247,16 @@ Quelle: bau/render-alle/bericht.md, bau/hefte/bericht.md, bau/fokus/bericht.md, 
 - e1-k2-s1-v1, e1-k2-s3-v1 (2): There's no line here to end – `\\` nach `\wertetabelle` (Blockbaustein endet mit `\par`). Änderung: `\\` nach `\wertetabelle` gestrichen (1×).
 
 Nur diese 7 Zeilen geändert, alle übrigen byte-gleich. `bank-pruef.py quadratische-funktionen`: 0 Abweichungen in e1–e5 und zone; 1 Abweichung „Dateiname weg.jsonl“ bestand schon vorher (Datei, keine Zeile). Probe: jede Zeile allein in einem Minimaldokument mit mathblatt.sty (hz-0801/blattbau) gesetzt wie werkzeuge/zusammenbau.py v0.7 (teile_normal, teil_schwach, Lösung in \erg), xelatex ohne Fehler.
+
+## Duden-Abgleich und Leiterregeln 2026-10-02
+
+- Grundlage: katalog/_abgleich-duden9-kap3.md, Lehrerbeschluss 02.10.2026 (Rückwärts- und Mischsprosse je Kette, krumme Zahlen oben, Gewicht je Einheit); Katalog-Commit 735599b. Entwürfe aus eingang/duden9-2026-10-02/neu-quadratische-funktionen-duden9.jsonl übernommen (Platzhalter ersetzt), fehlende Zeilen selbst gebaut (herkunft „Regel 02.10.“, sympy-nachgerechnet).
+- Krumme Zahlen nach Regel 4c oben: die Duden-Zeilen mit halben x-Werten und a als Bruch (Abgleich: e1 Grundfall und s6) stehen an der neuen Sprosse „krumme Zahlen“ (e1 s11); die mit Dezimal- und Bruchscheitel (Abgleich: e2 s2, s4, s5) an e2 s14.
+- e1 (49 → 60): Vorstufe +2 (ungeordnete Terme); neu s5 x² + e an der Wertetabelle, s10 Rückwärts (a aus einem Punkt), s11 krumme Zahlen; alte s5–s11 → s6–s9, s12–s14.
+- e2 (60 → 75): neu s5 steigen und fallen, s14 krumme Zahlen (5 Zeilen), s15 Gemischt; s7 (Gleichung aus dem Graphen) +2 (zwei Parabeln in einem Bild), s13 (gestreckte Parabel) +2 (a als Bruch); Prüfungssprossen s13–s15 → s16–s18.
+- e3 (42 → 51): neu s9 krumme Zahlen, s10 Gemischt (Paare vergleichen), s11 quadratische Ergänzung ohne Graph (Vorrat, GYM); Prüfung s9–s10 → s12–s13.
+- e4 (60 → 81): leere Katalogsprossen gefüllt – s4 Wert unter der Wurzel null, s5 negativ (Duden-Entwürfe), s12 Gerade berührt, s13 kein gemeinsamer Punkt (neu); neu s17 krumme Zahlen, s18 Gemischt, s19 größtes Rechteck bei festem Zaun (Vorrat, GYM); Prüfung s13–s15 → s20–s22.
+- weg.jsonl: 22 ids mitgezogen (umbenannt, nichts entfernt).
+- Warnungen (Zusatzzeilen über der Sollmenge, Beschluss 02.10. Punkt 6): e1 s0 6, e2 s7 5, e2 s13 5, e2 s14 5.
+- Prüfskript: ohne --katalog 1 Abweichung (weg.jsonl: Dateiname – Altlast, vorher ebenso), 4 Warnungen; mit --katalog 4 → 4 (Altlast e4-k2-s2 sprosse_text, weg.jsonl).
+- Zeilen gesamt (ohne zone, weg) 211 → 267.
