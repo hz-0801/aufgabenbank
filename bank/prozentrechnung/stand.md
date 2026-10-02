@@ -136,3 +136,20 @@ Prüfskript vor der Korrektur am 30.09.: e5 0 Abweichungen,
     ist der Prozentwert größer als das Ganze.
   - prozentrechnung-e5-k3-s2-v3: 100 % weniger hieße null übrig –
     Größenordnung statt Rechnung.
+
+## Umsetzung Duden-Abgleich und Leiterregeln (2026-10-02)
+
+Katalog: prozentrechnung.md, Commit 8417651 (Abgleich
+katalog/_abgleich-duden9-kap9.md). Zeilen e1 47 → 50, e2 60 → 63,
+e3 51 → 59, e4 47 → 47, e5 55 → 58.
+
+Neue Sprossen (je 3 Zeilen): e1 Umwandlungstabelle (zwei Entwürfe aus
+eingang/duden9-2026-10-02/neu-pz-duden9.jsonl, eine neu), e2 gemischt,
+e3 rückwärts und gemischt, e5 gemischt (herkunft „Regel 02.10.“).
+Zusatzzeilen (Beschluss 6): e3 k2 „Mehrwertsteuer in Euro“ v4–v5.
+Befund e4: Die Sprosse „gemischt: erst zuordnen, dann rechnen“ war
+gefüllt (k2 s7, drei gemischte Aufgaben), aber s5–s7 trugen den
+sprosse_text der jeweils vorigen Sprosse; berichtigt (s5 „beliebiger
+Satz mit Taschenrechner“, s6 „Sachtext“, s7 „gemischt“), Sollmenge 3
+erfüllt. Prüfskript: 0 Abweichungen, 1 Warnung (Menge); mit --katalog
+0 → 0.
