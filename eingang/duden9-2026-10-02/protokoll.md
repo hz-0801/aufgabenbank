@@ -1,7 +1,7 @@
 # Eingang duden9-2026-10-02
 
 Aufgabenentwürfe aus dem Abgleich Duden „Wissen – Üben – Testen,
-Mathematik 9“ (2017), Kapitel 1–6, sechs Opus-Agenten am 01./02.10.2026.
+Mathematik 9“ (2017), Kapitel 1–10, zehn Opus-Agenten am 01./02.10.2026 (255 Zeilen).
 Typ und Stufung aus dem Buch, Zahlen und Wortlaut eigen; Feld
 `herkunft` nennt Seite und Nummer. Das Buch liegt nicht im Repo.
 Abgleichdateien: mathe-nachhilfe `katalog/_abgleich-duden9-kap<n>.md`.
