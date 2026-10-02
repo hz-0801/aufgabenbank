@@ -24,6 +24,17 @@ Stand 2026-10-02 (Erweiterung, Lehrer 02.10.; Abschnitt „Erweiterung
 - Keine Aufgabe des Vorrats steht wortgleich (aufgabe und grafik) in
   einem anderen Ordner der Bank (Abgleich über alle bank/*/*.jsonl).
 
+Nachtrag 2026-10-02 abends (Lehrer, Basiszettel v0.7): keine
+Prüfkennung „(P10 …)“ mehr in aufgabe (vorher in allen 640 Zeilen);
+Bündel a)–c) in den Varianten 1, 3, 5, 7, 9 von Prozentwert berechnen,
+Winkelfunktion Seitenverhältnis angeben, Wahrscheinlichkeit einstufig,
+Winkel an geschnittenen Parallelen bestimmen, Zeiteinheiten umrechnen,
+Arithmetisches Mittel berechnen (mit Median und Spannweite), Ergebnisse
+mit sympy (assert in vorrat.py); Term zu Figur ohne Trapez, Raute,
+Parallelogramm (zusammengesetzte Figuren: kein Baustein); Trigonometrische
+Gleichung nur umstellen. typen.csv neu mit niveau und ab2020.
+`bank-pruef.py _basis`: 0 Abweichungen, 12 Warnungen (Mengen 5/20).
+
 ## Dateien
 
     typen.py      bestimmt die Basis-Typen, schreibt typen.csv/typen.md

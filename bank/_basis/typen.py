@@ -164,6 +164,13 @@ def main():
             "papier": kat[j]["papier"], "einheit": e,
             "quelle": max(sorted(set(qs)), key=qs.count),
             "grundlage": "katalog"})
+    # v0.7 (Lehrer 02.10.): Steigerung im Zettelplan nach Niveau (Mehrheit
+    # von niveau_geschaetzt der Basis-Originale) und Jahrgängen seit 2020
+    for z in zeilen:
+        nv = [k["niveau_geschaetzt"] for k in kat.values()
+              if k["block"] == "Basis" and k["typ"] == z["typ"]]
+        z["niveau"] = "II" if nv.count("II") * 2 > len(nv) else "I"
+        z["ab2020"] = sum(1 for x in jahre[z["typ"]] if x >= 2020)
     zeilen.sort(key=lambda z: (-z["jahrgaenge"], z["typ"]))
     # kette_nr je Eintragsdatei: bisherige Nummer bleibt, neue Typen
     # alphabetisch dahinter

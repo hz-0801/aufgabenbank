@@ -1,65 +1,65 @@
-typ;thema;jahrgaenge;jahre;originale_bank;zahl_originale;eintraege;eintrag;original;jahr;papier;einheit;quelle;grundlage;kette_nr
-Bruchteil einer Fläche bestimmen;Brüche und Dezimalzahlen;9;2014 2017 2019 2021 2022 2023 2024 2025 2026;2014-OS-B1i 2017-OS-B1a 2019-OS-B1c 2021-OS-B1b 2022-OS-B1a 2023-OS-B1d 2024-OS-B1b 2025-OS-B1c 2026-FOR-B1b;9;brueche-dezimalzahlen;brueche-dezimalzahlen;2026-FOR-B1b;2026;FOR;1;106;bank;1
-Zahlen in verschiedenen Darstellungen vergleichen;Brüche und Dezimalzahlen;7;2014 2015 2017 2018 2019 2022 2023;2014-OS-B1h 2015-OS-B1c 2017-OS-B1e 2018-OS-B1d 2019-OS-B1d 2022-OS-B1j 2023-OS-B1f;7;bruchrechnung brueche-dezimalzahlen potenzen-wurzeln rationale-zahlen;brueche-dezimalzahlen;2023-OS-B1f;2023;OS;5;111;bank;4
-Term zu Figur angeben;Flächeninhalt und Umfang;6;2014 2019 2022 2023 2024 2025;;0;flaechen;flaechen;2025-OS-B1i;2025;OS;1;100;katalog;4
-Prozentwert berechnen;Prozentrechnung;5;2014 2015 2017 2021 2026;2014-OS-B1a 2015-OS-B1e 2017-OS-B1b 2021-OS-B1c 2026-FOR-B1a;5;prozentrechnung zinsrechnung;prozentrechnung;2026-FOR-B1a;2026;FOR;3;100;bank;4
-Termwert berechnen;Rationale Zahlen rechnen;5;2016 2019 2021 2022 2026;2016-OS-B1i 2021-OS-B1g 2026-FOR-B1g;3;bruchrechnung rationale-zahlen;rationale-zahlen;2026-FOR-B1g;2026;FOR;3;86;bank;1
-Winkelfunktion Seitenverhältnis angeben;Trigonometrie im rechtwinkligen Dreieck;5;2017 2018 2019 2020 2025;2020-OS-B1c 2025-OS-B1g;2;trigonometrie;trigonometrie;2025-OS-B1g;2025;OS;1;97;bank;2
-Lineare Gleichung lösen;Lineare Gleichungen;4;2020 2021 2023 2024;2023-OS-B1e;1;lineare-gleichungen;lineare-gleichungen;2024-OS-B1d;2024;OS;2;79;bank;1
-Pythagoras Gleichung zuordnen;Satz des Pythagoras;4;2017 2021 2024 2026;;0;pythagoras;pythagoras;2026-FOR-B1j;2026;FOR;1;87;katalog;1
-Term zu Sachtext angeben;Terme umformen;4;2016 2017 2021 2023;2016-OS-B1b 2017-OS-B1i 2021-OS-B1e 2023-OS-B1h;4;lineare-gleichungen terme;terme;2023-OS-B1h;2023;OS;6;111;bank;2
-Zehnerpotenzschreibweise umwandeln;Zehnerpotenzen und Näherungswerte;4;2016 2017 2019 2025;2019-OS-B1j 2025-OS-B1d;2;potenzen-wurzeln;potenzen-wurzeln;2025-OS-B1d;2025;OS;2;88;bank;3
-Arithmetisches Mittel berechnen;Kenngrößen;3;2016 2017 2021;;0;daten;daten;2021-OS-B1f;2021;OS;4;173;katalog;1
-Eigenschaft einer Figur zuordnen;Ebene Figuren und Winkel;3;2014 2016 2026;;0;winkel-dreiecke;winkel-dreiecke;2026-FOR-B1c;2026;FOR;3;115;katalog;5
-Größen vergleichen;Einheiten umrechnen;3;2018 2019 2026;;0;einheiten;einheiten;2026-FOR-B1d;2026;FOR;1;115;katalog;2
-Lösung durch Einsetzen prüfen;Quadratische Gleichungen;3;2018 2022 2025;2018-OS-B1c 2022-OS-B1c 2025-OS-B1h;3;lineare-gleichungen quadratische-gleichungen;quadratische-gleichungen;2025-OS-B1h;2025;OS;2;118;bank;1
-Proportionale Zuordnung Dreisatz;Zuordnungen proportional und antiproportional;3;2016 2022 2023;;0;zuordnungen;zuordnungen;2023-OS-B1a;2023;OS;2;93;katalog;2
-Wahrscheinlichkeit einstufig;Wahrscheinlichkeit einstufig;3;2014 2015 2016;2014-OS-B1d;1;bruchrechnung;bruchrechnung;2016-OS-B1f;2016;OS;1;99;bank;1
-Zeiteinheiten umrechnen;Einheiten umrechnen;3;2018 2024 2025;;0;einheiten;einheiten;2025-OS-B1b;2025;OS;2;116;katalog;5
-Zufallsgerät zu Wahrscheinlichkeit entwerfen;Wahrscheinlichkeit einstufig;3;2015 2018 2019;;0;wahrscheinlichkeit;wahrscheinlichkeit;2019-OS-B1g;2019;OS;2;96;katalog;2
-Bruchteil einer Größe berechnen;Brüche und Dezimalzahlen;2;2015 2018;2015-OS-B1h 2018-OS-B1a;2;brueche-dezimalzahlen;brueche-dezimalzahlen;2018-OS-B1a;2018;OS;1;107;bank;2
-Exponent einer Potenz bestimmen;Potenzen und Wurzeln;2;2020 2024;2020-OS-B1h 2024-OS-B1g;2;potenzen-wurzeln;potenzen-wurzeln;2024-OS-B1g;2024;OS;1;87;bank;1
-Grundwert berechnen;Prozentrechnung;2;2023 2025;2023-OS-B1b 2025-OS-B1a;2;prozentrechnung;prozentrechnung;2025-OS-B1a;2025;OS;4;101;bank;1
-Körper aus Netz oder Schrägbild benennen;Körper, Netze, Schrägbilder;2;2017 2018;;0;koerper;koerper;2018-OS-B1i;2018;OS;1;109;katalog;4
-Median bestimmen;Kenngrößen;2;2015 2024;;0;daten;daten;2024-OS-B1h;2024;OS;4;173;katalog;3
-Prozent und Anteil umwandeln;Prozentrechnung;2;2020 2022;2020-OS-B1a 2022-OS-B1f;2;prozentrechnung;prozentrechnung;2022-OS-B1f;2022;OS;1;98;bank;2
-Quadratseite aus Fläche berechnen;Flächeninhalt und Umfang;2;2014 2020;;0;flaechen;flaechen;2020-OS-B1d;2020;OS;1;100;katalog;2
-Symmetrieachsen bestimmen;Symmetrie und Abbildungen;2;2021 2022;2021-OS-B1j 2022-OS-B1i;2;symmetrie-abbildungen;symmetrie-abbildungen;2022-OS-B1i;2022;OS;2;74;bank;3
-Winkel an geschnittenen Parallelen bestimmen;Ebene Figuren und Winkel;2;2015 2020;2015-OS-B1d;1;winkel-dreiecke;winkel-dreiecke;2020-OS-B1g;2020;OS;2;109;bank;3
-Winkel im Viereck berechnen;Ebene Figuren und Winkel;2;2021 2026;2026-FOR-B1i;1;winkel-dreiecke;winkel-dreiecke;2026-FOR-B1i;2026;FOR;2;109;bank;4
-Winkel über Scheitel- oder Nebenwinkel bestimmen;Ebene Figuren und Winkel;2;2014 2019;;0;winkel-dreiecke;winkel-dreiecke;2019-OS-B1a;2019;OS;2;114;katalog;6
-Zahl zu Bedingung angeben;Rationale Zahlen rechnen;2;2014 2015;2014-OS-B1c 2015-OS-B1b;2;brueche-dezimalzahlen rationale-zahlen;rationale-zahlen;2015-OS-B1b;2015;OS;1;84;bank;3
-Antiproportionale Zuordnung Dreisatz;Zuordnungen proportional und antiproportional;1;2014;2014-GYM-B1c;1;zuordnungen;zuordnungen;2014-GYM-B1c;2014;GYM;3;94;bank;1
-Dreiecksungleichung anwenden;Ebene Figuren und Winkel;1;2020;2020-OS-B1i;1;winkel-dreiecke;winkel-dreiecke;2020-OS-B1i;2020;OS;4;111;bank;1
-Ergebnismenge aufzählen;Zählen und Kombinatorik;1;2017;;0;wahrscheinlichkeit;wahrscheinlichkeit;2017-OS-B1f;2017;OS;1;95;katalog;1
-Fehlenden Wert aus Mittelwert bestimmen;Kenngrößen;1;2022;;0;daten;daten;2022-OS-B1d;2022;OS;4;173;katalog;2
-Figur nach Spiegelung benennen;Symmetrie und Abbildungen;1;2018;2018-OS-B1h;1;symmetrie-abbildungen;symmetrie-abbildungen;2018-OS-B1h;2018;OS;2;75;bank;1
-Gegenfläche im Würfelnetz bestimmen;Körper, Netze, Schrägbilder;1;2016;2016-OS-B1j;1;koerper;koerper;2016-OS-B1j;2016;OS;1;106;bank;1
-Gleichschenkliges Dreieck erkennen;Ebene Figuren und Winkel;1;2023;2023-OS-B1g;1;winkel-dreiecke;winkel-dreiecke;2023-OS-B1g;2023;OS;3;110;bank;2
-Graph einer linearen Funktion erkennen;Lineare Funktionen;1;2025;2025-OS-B1f;1;lineare-funktionen;lineare-funktionen;2025-OS-B1f;2025;OS;2;84;bank;1
-Graph nach Eigenschaft auswählen;Lineare Funktionen;1;2016;2016-OS-B1c;1;lineare-funktionen;lineare-funktionen;2016-OS-B1c;2016;OS;2;84;bank;2
-Kantenzahl eines Körpers angeben;Körper, Netze, Schrägbilder;1;2019;2019-OS-B1f;1;koerper;koerper;2019-OS-B1f;2019;OS;1;106;bank;2
-Kreissektor Anteil berechnen;Flächeninhalt und Umfang;1;2025;2025-OS-B1e;1;kreis;kreis;2025-OS-B1e;2025;OS;3;78;bank;1
-Lage eines Punktes zu den Achsen erkennen;Koordinaten und Zeichnen;1;2020;2020-OS-B1b;1;symmetrie-abbildungen;symmetrie-abbildungen;2020-OS-B1b;2020;OS;1;73;bank;2
-Mitte zweier Zahlen bestimmen;Brüche und Dezimalzahlen;1;2020;2020-OS-B1f;1;brueche-dezimalzahlen;brueche-dezimalzahlen;2020-OS-B1f;2020;OS;5;111;bank;3
-Parabel verschieben;Quadratische Funktionen;1;2015;;0;quadratische-funktionen;quadratische-funktionen;2015-OS-B1i;2015;OS;2;104;katalog;2
-Portionen aus Gesamtmenge berechnen;Einheiten umrechnen;1;2022;;0;einheiten;einheiten;2022-OS-B1h;2022;OS;4;118;katalog;3
-Prozentsatz berechnen;Zinsrechnung;1;2014;2014-OS-B1e;1;prozentrechnung zinsrechnung;prozentrechnung;2014-OS-B1e;2014;OS;2;99;bank;3
-Punktprobe durchführen;Funktionen allgemein;1;2023;2023-OS-B1i;1;lineare-funktionen;lineare-funktionen;2023-OS-B1i;2023;OS;3;85;bank;3
-Rechteckseite aus Fläche berechnen;Flächeninhalt und Umfang;1;2023;;0;flaechen;flaechen;2023-OS-B1c;2023;OS;1;100;katalog;3
-Rechteckseite aus Umfang berechnen;Flächeninhalt und Umfang;1;2018;2018-OS-B1f;1;flaechen;flaechen;2018-OS-B1f;2018;OS;1;100;bank;1
-Satz des Pythagoras formulieren;Satz des Pythagoras;1;2022;;0;pythagoras;pythagoras;2022-OS-B1g;2022;OS;1;87;katalog;2
-Scheitelpunkt ablesen;Quadratische Funktionen;1;2021;;0;quadratische-funktionen;quadratische-funktionen;2021-OS-B1d;2021;OS;2;104;katalog;3
-Scheitelpunktform aufstellen;Quadratische Funktionen;1;2016;;0;quadratische-funktionen;quadratische-funktionen;2016-OS-B1g;2016;OS;2;104;katalog;4
-Spannweite berechnen;Kenngrößen;1;2019;;0;daten;daten;2019-OS-B1i;2019;OS;4;173;katalog;4
-Strecke aus Teilstrecken berechnen;Einheiten umrechnen;1;2018;;0;einheiten;einheiten;2018-OS-B1b;2018;OS;4;118;katalog;4
-Term durch Zusammenfassen gleichartiger Glieder vereinfachen;Terme umformen;1;2025;2025-GYM-B2a;1;terme;terme;2025-GYM-B2a;2025;GYM;1;104;bank;1
-Trigonometrische Gleichung nach Seite umstellen;Trigonometrie im rechtwinkligen Dreieck;1;2020;2020-OS-B1j;1;trigonometrie;trigonometrie;2020-OS-B1j;2020;OS;1;97;bank;1
-Uhrzeit aus Startzeit und Dauer berechnen;Einheiten umrechnen;1;2021;2021-OS-B1a;1;einheiten;einheiten;2021-OS-B1a;2021;OS;2;116;bank;1
-Umfang Rechteck berechnen;Flächeninhalt und Umfang;1;2026;;0;flaechen;flaechen;2026-FOR-B1h;2026;FOR;1;100;katalog;5
-Volumen Würfel berechnen;Volumen und Oberfläche;1;2026;2026-FOR-B1f;1;koerper;koerper;2026-FOR-B1f;2026;FOR;2;107;bank;3
-Vorzeichenregel anwenden;Rationale Zahlen rechnen;1;2015;2015-OS-B1g;1;rationale-zahlen;rationale-zahlen;2015-OS-B1g;2015;OS;3;86;bank;2
-Wert nach prozentualer Erhöhung berechnen;Prozentrechnung;1;2024;2024-OS-B1e;1;prozentrechnung;prozentrechnung;2024-OS-B1e;2024;OS;5;102;bank;5
-Wertetabelle einer Funktion zuordnen;Quadratische Funktionen;1;2026;2026-FOR-B1e;1;quadratische-funktionen;quadratische-funktionen;2026-FOR-B1e;2026;FOR;1;103;bank;1
-Wurzel eines Quadrats berechnen;Potenzen und Wurzeln;1;2015;2015-OS-B1j;1;potenzen-wurzeln;potenzen-wurzeln;2015-OS-B1j;2015;OS;3;89;bank;2
-y-Achsenabschnitt ablesen;Lineare Funktionen;1;2024;2024-OS-B1i;1;lineare-funktionen;lineare-funktionen;2024-OS-B1i;2024;OS;2;84;bank;4
+typ;thema;jahrgaenge;jahre;originale_bank;zahl_originale;eintraege;eintrag;original;jahr;papier;einheit;quelle;grundlage;niveau;ab2020;kette_nr
+Bruchteil einer Fläche bestimmen;Brüche und Dezimalzahlen;9;2014 2017 2019 2021 2022 2023 2024 2025 2026;2014-OS-B1i 2017-OS-B1a 2019-OS-B1c 2021-OS-B1b 2022-OS-B1a 2023-OS-B1d 2024-OS-B1b 2025-OS-B1c 2026-FOR-B1b;9;brueche-dezimalzahlen;brueche-dezimalzahlen;2026-FOR-B1b;2026;FOR;1;106;bank;I;6;1
+Zahlen in verschiedenen Darstellungen vergleichen;Brüche und Dezimalzahlen;7;2014 2015 2017 2018 2019 2022 2023;2014-OS-B1h 2015-OS-B1c 2017-OS-B1e 2018-OS-B1d 2019-OS-B1d 2022-OS-B1j 2023-OS-B1f;7;bruchrechnung brueche-dezimalzahlen potenzen-wurzeln rationale-zahlen;brueche-dezimalzahlen;2023-OS-B1f;2023;OS;5;111;bank;I;2;4
+Term zu Figur angeben;Flächeninhalt und Umfang;6;2014 2019 2022 2023 2024 2025;;0;flaechen;flaechen;2025-OS-B1i;2025;OS;1;100;katalog;I;4;4
+Prozentwert berechnen;Prozentrechnung;5;2014 2015 2017 2021 2026;2014-OS-B1a 2015-OS-B1e 2017-OS-B1b 2021-OS-B1c 2026-FOR-B1a;5;prozentrechnung zinsrechnung;prozentrechnung;2026-FOR-B1a;2026;FOR;3;100;bank;I;2;4
+Termwert berechnen;Rationale Zahlen rechnen;5;2016 2019 2021 2022 2026;2016-OS-B1i 2021-OS-B1g 2026-FOR-B1g;3;bruchrechnung rationale-zahlen;rationale-zahlen;2026-FOR-B1g;2026;FOR;3;86;bank;I;3;1
+Winkelfunktion Seitenverhältnis angeben;Trigonometrie im rechtwinkligen Dreieck;5;2017 2018 2019 2020 2025;2020-OS-B1c 2025-OS-B1g;2;trigonometrie;trigonometrie;2025-OS-B1g;2025;OS;1;97;bank;I;2;2
+Lineare Gleichung lösen;Lineare Gleichungen;4;2020 2021 2023 2024;2023-OS-B1e;1;lineare-gleichungen;lineare-gleichungen;2024-OS-B1d;2024;OS;2;79;bank;I;4;1
+Pythagoras Gleichung zuordnen;Satz des Pythagoras;4;2017 2021 2024 2026;;0;pythagoras;pythagoras;2026-FOR-B1j;2026;FOR;1;87;katalog;I;3;1
+Term zu Sachtext angeben;Terme umformen;4;2016 2017 2021 2023;2016-OS-B1b 2017-OS-B1i 2021-OS-B1e 2023-OS-B1h;4;lineare-gleichungen terme;terme;2023-OS-B1h;2023;OS;6;111;bank;I;2;2
+Zehnerpotenzschreibweise umwandeln;Zehnerpotenzen und Näherungswerte;4;2016 2017 2019 2025;2019-OS-B1j 2025-OS-B1d;2;potenzen-wurzeln;potenzen-wurzeln;2025-OS-B1d;2025;OS;2;88;bank;I;1;3
+Arithmetisches Mittel berechnen;Kenngrößen;3;2016 2017 2021;;0;daten;daten;2021-OS-B1f;2021;OS;4;173;katalog;I;1;1
+Eigenschaft einer Figur zuordnen;Ebene Figuren und Winkel;3;2014 2016 2026;;0;winkel-dreiecke;winkel-dreiecke;2026-FOR-B1c;2026;FOR;3;115;katalog;I;1;5
+Größen vergleichen;Einheiten umrechnen;3;2018 2019 2026;;0;einheiten;einheiten;2026-FOR-B1d;2026;FOR;1;115;katalog;I;1;2
+Lösung durch Einsetzen prüfen;Quadratische Gleichungen;3;2018 2022 2025;2018-OS-B1c 2022-OS-B1c 2025-OS-B1h;3;lineare-gleichungen quadratische-gleichungen;quadratische-gleichungen;2025-OS-B1h;2025;OS;2;118;bank;I;2;1
+Proportionale Zuordnung Dreisatz;Zuordnungen proportional und antiproportional;3;2016 2022 2023;;0;zuordnungen;zuordnungen;2023-OS-B1a;2023;OS;2;93;katalog;I;2;2
+Wahrscheinlichkeit einstufig;Wahrscheinlichkeit einstufig;3;2014 2015 2016;2014-OS-B1d;1;bruchrechnung;bruchrechnung;2016-OS-B1f;2016;OS;1;99;bank;I;0;1
+Zeiteinheiten umrechnen;Einheiten umrechnen;3;2018 2024 2025;;0;einheiten;einheiten;2025-OS-B1b;2025;OS;2;116;katalog;I;2;5
+Zufallsgerät zu Wahrscheinlichkeit entwerfen;Wahrscheinlichkeit einstufig;3;2015 2018 2019;;0;wahrscheinlichkeit;wahrscheinlichkeit;2019-OS-B1g;2019;OS;2;96;katalog;I;0;2
+Bruchteil einer Größe berechnen;Brüche und Dezimalzahlen;2;2015 2018;2015-OS-B1h 2018-OS-B1a;2;brueche-dezimalzahlen;brueche-dezimalzahlen;2018-OS-B1a;2018;OS;1;107;bank;I;0;2
+Exponent einer Potenz bestimmen;Potenzen und Wurzeln;2;2020 2024;2020-OS-B1h 2024-OS-B1g;2;potenzen-wurzeln;potenzen-wurzeln;2024-OS-B1g;2024;OS;1;87;bank;I;2;1
+Grundwert berechnen;Prozentrechnung;2;2023 2025;2023-OS-B1b 2025-OS-B1a;2;prozentrechnung;prozentrechnung;2025-OS-B1a;2025;OS;4;101;bank;I;2;1
+Körper aus Netz oder Schrägbild benennen;Körper, Netze, Schrägbilder;2;2017 2018;;0;koerper;koerper;2018-OS-B1i;2018;OS;1;109;katalog;I;0;4
+Median bestimmen;Kenngrößen;2;2015 2024;;0;daten;daten;2024-OS-B1h;2024;OS;4;173;katalog;I;1;3
+Prozent und Anteil umwandeln;Prozentrechnung;2;2020 2022;2020-OS-B1a 2022-OS-B1f;2;prozentrechnung;prozentrechnung;2022-OS-B1f;2022;OS;1;98;bank;I;2;2
+Quadratseite aus Fläche berechnen;Flächeninhalt und Umfang;2;2014 2020;;0;flaechen;flaechen;2020-OS-B1d;2020;OS;1;100;katalog;I;1;2
+Symmetrieachsen bestimmen;Symmetrie und Abbildungen;2;2021 2022;2021-OS-B1j 2022-OS-B1i;2;symmetrie-abbildungen;symmetrie-abbildungen;2022-OS-B1i;2022;OS;2;74;bank;I;2;3
+Winkel an geschnittenen Parallelen bestimmen;Ebene Figuren und Winkel;2;2015 2020;2015-OS-B1d;1;winkel-dreiecke;winkel-dreiecke;2020-OS-B1g;2020;OS;2;109;bank;I;1;3
+Winkel im Viereck berechnen;Ebene Figuren und Winkel;2;2021 2026;2026-FOR-B1i;1;winkel-dreiecke;winkel-dreiecke;2026-FOR-B1i;2026;FOR;2;109;bank;I;2;4
+Winkel über Scheitel- oder Nebenwinkel bestimmen;Ebene Figuren und Winkel;2;2014 2019;;0;winkel-dreiecke;winkel-dreiecke;2019-OS-B1a;2019;OS;2;114;katalog;I;0;6
+Zahl zu Bedingung angeben;Rationale Zahlen rechnen;2;2014 2015;2014-OS-B1c 2015-OS-B1b;2;brueche-dezimalzahlen rationale-zahlen;rationale-zahlen;2015-OS-B1b;2015;OS;1;84;bank;I;0;3
+Antiproportionale Zuordnung Dreisatz;Zuordnungen proportional und antiproportional;1;2014;2014-GYM-B1c;1;zuordnungen;zuordnungen;2014-GYM-B1c;2014;GYM;3;94;bank;II;0;1
+Dreiecksungleichung anwenden;Ebene Figuren und Winkel;1;2020;2020-OS-B1i;1;winkel-dreiecke;winkel-dreiecke;2020-OS-B1i;2020;OS;4;111;bank;I;1;1
+Ergebnismenge aufzählen;Zählen und Kombinatorik;1;2017;;0;wahrscheinlichkeit;wahrscheinlichkeit;2017-OS-B1f;2017;OS;1;95;katalog;I;0;1
+Fehlenden Wert aus Mittelwert bestimmen;Kenngrößen;1;2022;;0;daten;daten;2022-OS-B1d;2022;OS;4;173;katalog;II;1;2
+Figur nach Spiegelung benennen;Symmetrie und Abbildungen;1;2018;2018-OS-B1h;1;symmetrie-abbildungen;symmetrie-abbildungen;2018-OS-B1h;2018;OS;2;75;bank;I;0;1
+Gegenfläche im Würfelnetz bestimmen;Körper, Netze, Schrägbilder;1;2016;2016-OS-B1j;1;koerper;koerper;2016-OS-B1j;2016;OS;1;106;bank;I;0;1
+Gleichschenkliges Dreieck erkennen;Ebene Figuren und Winkel;1;2023;2023-OS-B1g;1;winkel-dreiecke;winkel-dreiecke;2023-OS-B1g;2023;OS;3;110;bank;I;1;2
+Graph einer linearen Funktion erkennen;Lineare Funktionen;1;2025;2025-OS-B1f;1;lineare-funktionen;lineare-funktionen;2025-OS-B1f;2025;OS;2;84;bank;I;1;1
+Graph nach Eigenschaft auswählen;Lineare Funktionen;1;2016;2016-OS-B1c;1;lineare-funktionen;lineare-funktionen;2016-OS-B1c;2016;OS;2;84;bank;I;0;2
+Kantenzahl eines Körpers angeben;Körper, Netze, Schrägbilder;1;2019;2019-OS-B1f;1;koerper;koerper;2019-OS-B1f;2019;OS;1;106;bank;I;0;2
+Kreissektor Anteil berechnen;Flächeninhalt und Umfang;1;2025;2025-OS-B1e;1;kreis;kreis;2025-OS-B1e;2025;OS;3;78;bank;I;1;1
+Lage eines Punktes zu den Achsen erkennen;Koordinaten und Zeichnen;1;2020;2020-OS-B1b;1;symmetrie-abbildungen;symmetrie-abbildungen;2020-OS-B1b;2020;OS;1;73;bank;I;1;2
+Mitte zweier Zahlen bestimmen;Brüche und Dezimalzahlen;1;2020;2020-OS-B1f;1;brueche-dezimalzahlen;brueche-dezimalzahlen;2020-OS-B1f;2020;OS;5;111;bank;I;1;3
+Parabel verschieben;Quadratische Funktionen;1;2015;;0;quadratische-funktionen;quadratische-funktionen;2015-OS-B1i;2015;OS;2;104;katalog;I;0;2
+Portionen aus Gesamtmenge berechnen;Einheiten umrechnen;1;2022;;0;einheiten;einheiten;2022-OS-B1h;2022;OS;4;118;katalog;I;1;3
+Prozentsatz berechnen;Zinsrechnung;1;2014;2014-OS-B1e;1;prozentrechnung zinsrechnung;prozentrechnung;2014-OS-B1e;2014;OS;2;99;bank;I;0;3
+Punktprobe durchführen;Funktionen allgemein;1;2023;2023-OS-B1i;1;lineare-funktionen;lineare-funktionen;2023-OS-B1i;2023;OS;3;85;bank;I;1;3
+Rechteckseite aus Fläche berechnen;Flächeninhalt und Umfang;1;2023;;0;flaechen;flaechen;2023-OS-B1c;2023;OS;1;100;katalog;I;1;3
+Rechteckseite aus Umfang berechnen;Flächeninhalt und Umfang;1;2018;2018-OS-B1f;1;flaechen;flaechen;2018-OS-B1f;2018;OS;1;100;bank;I;0;1
+Satz des Pythagoras formulieren;Satz des Pythagoras;1;2022;;0;pythagoras;pythagoras;2022-OS-B1g;2022;OS;1;87;katalog;I;1;2
+Scheitelpunkt ablesen;Quadratische Funktionen;1;2021;;0;quadratische-funktionen;quadratische-funktionen;2021-OS-B1d;2021;OS;2;104;katalog;I;1;3
+Scheitelpunktform aufstellen;Quadratische Funktionen;1;2016;;0;quadratische-funktionen;quadratische-funktionen;2016-OS-B1g;2016;OS;2;104;katalog;I;0;4
+Spannweite berechnen;Kenngrößen;1;2019;;0;daten;daten;2019-OS-B1i;2019;OS;4;173;katalog;I;0;4
+Strecke aus Teilstrecken berechnen;Einheiten umrechnen;1;2018;;0;einheiten;einheiten;2018-OS-B1b;2018;OS;4;118;katalog;I;0;4
+Term durch Zusammenfassen gleichartiger Glieder vereinfachen;Terme umformen;1;2025;2025-GYM-B2a;1;terme;terme;2025-GYM-B2a;2025;GYM;1;104;bank;II;1;1
+Trigonometrische Gleichung nach Seite umstellen;Trigonometrie im rechtwinkligen Dreieck;1;2020;2020-OS-B1j;1;trigonometrie;trigonometrie;2020-OS-B1j;2020;OS;1;97;bank;I;1;1
+Uhrzeit aus Startzeit und Dauer berechnen;Einheiten umrechnen;1;2021;2021-OS-B1a;1;einheiten;einheiten;2021-OS-B1a;2021;OS;2;116;bank;I;1;1
+Umfang Rechteck berechnen;Flächeninhalt und Umfang;1;2026;;0;flaechen;flaechen;2026-FOR-B1h;2026;FOR;1;100;katalog;I;1;5
+Volumen Würfel berechnen;Volumen und Oberfläche;1;2026;2026-FOR-B1f;1;koerper;koerper;2026-FOR-B1f;2026;FOR;2;107;bank;I;1;3
+Vorzeichenregel anwenden;Rationale Zahlen rechnen;1;2015;2015-OS-B1g;1;rationale-zahlen;rationale-zahlen;2015-OS-B1g;2015;OS;3;86;bank;I;0;2
+Wert nach prozentualer Erhöhung berechnen;Prozentrechnung;1;2024;2024-OS-B1e;1;prozentrechnung;prozentrechnung;2024-OS-B1e;2024;OS;5;102;bank;I;1;5
+Wertetabelle einer Funktion zuordnen;Quadratische Funktionen;1;2026;2026-FOR-B1e;1;quadratische-funktionen;quadratische-funktionen;2026-FOR-B1e;2026;FOR;1;103;bank;I;1;1
+Wurzel eines Quadrats berechnen;Potenzen und Wurzeln;1;2015;2015-OS-B1j;1;potenzen-wurzeln;potenzen-wurzeln;2015-OS-B1j;2015;OS;3;89;bank;I;0;2
+y-Achsenabschnitt ablesen;Lineare Funktionen;1;2024;2024-OS-B1i;1;lineare-funktionen;lineare-funktionen;2024-OS-B1i;2024;OS;2;84;bank;I;1;4

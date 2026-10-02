@@ -397,14 +397,18 @@ Regeln für den Inhalt gelten (Sperre gegen die Mappe des Eintrags,
 Verfremdung, keine Aufgabe doppelt). Die Aufgaben stehen in
 bank/_basis/vorrat.py, das die jsonl schreibt; geprüft mit
 `werkzeuge/bank-pruef.py _basis` (v0.6, Menge 10 je Kette als
-Warnung). Das Zettel-Rezept (`zusammenbau.py --zettel basis`,
-Kennung BAS-Z<n>, v0.6 seit 02.10.) füllt je Zettel eine A4-Seite
-mit 16–18 verschiedenen Typen (kurze zweispaltig, leicht vor schwer,
-ohne Hilfsmittelangabe, ausgedachte Aufgaben ohne Marke, Originale nur
-mit Jahreszahl), nach Jahrgängen gewichtet, ohne eine Aufgabe zweimal
-zu nehmen, bis der Vorrat erschöpft ist; Zettel 1–10 (v0.5, zehn
-Aufgaben) bleiben, v0.6 beginnt bei Zettel 11 (werkzeuge/zusammenbau.md,
-„Rezept Zettel“).
+Warnung). Seit 02.10. abends: keine Prüfkennung im Aufgabentext; bei
+sechs Typen ist die Hälfte der Varianten (1, 3, 5, …) ein Bündel – eine
+Vorgabe, Teile a), b), c), wo der Vergleich etwas lehrt (Winkelfunktion
+sin/cos/tan, Mittelwert/Median/Spannweite, Prozenttabelle mit je Zeile
+anderem gesuchten Wert, Wahrscheinlichkeit einstufig, Winkel an
+Parallelen, eine Dauer in zwei Einheiten); „Term zu Figur“ nur Rechteck,
+Quadrat, Dreieck; die trigonometrische Gleichung wird nur umgestellt.
+Das Zettel-Rezept (`zusammenbau.py --zettel basis`, v0.7, Kennung
+BAS-S<n>, auf dem Blatt „Basis n“) baut eine feste Serie ohne
+Rückmeldung: Wiederkehr nach 2, 5, 10 Zetteln, leichte und häufige Typen
+zuerst, keine Variante doppelt, eine Spalte, eine volle Seite; der
+Vorrat trägt 33 Zettel (werkzeuge/zusammenbau.md, „Rezept Zettel“).
 
 ## Punkte
 

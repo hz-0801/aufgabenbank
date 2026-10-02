@@ -6,8 +6,11 @@ bank/_basis/<eintrag>.jsonl: je Basis-Typ zehn Aufgaben in
 Prüfungsform, Felder nach bank.md, hoehe "basis", sprosse 1,
 original = jüngstes Original des Typs. Die Aufgaben stehen unten in
 AUFGABEN, von Hand geschrieben (Zahlen, Kontexte, Formulierungen);
-das Skript setzt nur die Felder zusammen. „{K}“ im Aufgabentext wird
-die Prüfkennung „(P10 <jahr> <papier>)“ des Originals.
+das Skript setzt nur die Felder zusammen. „{K}“ im Aufgabentext
+entfällt seit v0.7 (Lehrer 02.10.): keine Prüfkennung in den Daten, damit
+sie nie auf einem Zettel erscheint; das Original steht im Feld original.
+Bündel (v0.7): bei sechs Typen ist die Hälfte der Varianten (1, 3, 5, 7, 9)
+eine Aufgabe mit Teilen a), b), c) zu einer Vorgabe (BUENDEL).
 
 Aufruf: python3 bank/_basis/vorrat.py [--nur <eintrag>]
 Danach: python3 werkzeuge/bank-pruef.py _basis
@@ -16,6 +19,8 @@ import csv
 import json
 import sys
 from pathlib import Path
+
+import sympy as _sp
 
 ORDNER = Path(__file__).resolve().parent
 MERKMAL = "Basisaufgabe in Prüfungsform, ohne Rechner"
@@ -271,6 +276,25 @@ def _t3():
         aus.append(A(f"${pz(p)}$ von ${eur(g)}$ {{K}}",
                      f"${dez(p / 100)} \\cdot {g} = {eur(w, 2 if w % 1 else None)}$",
                      f"{p / 100}*{g}", antwort="__ €"))
+    # Bündel (v0.7): je Zeile ein anderer gesuchter Wert (W, p, G)
+    tab = [((80, 25), (40, 10), (10, 7)), ((60, 20), (60, 15), (50, 18)),
+           ((90, 10), (30, 6), (25, 5)), ((46, 50), (90, 9), (20, 8)),
+           ((40, 75), (48, 12), (10, "4.5"))]
+    for i, ((g1, p1), (g2, w2), (p3, w3)) in enumerate(tab):
+        w1 = _sp.Rational(g1 * p1, 100)
+        p2 = _sp.Rational(w2 * 100, g2)
+        g3 = _sp.Rational(str(w3)) * 100 / p3
+        assert w1.is_Integer and p2.is_Integer and g3.is_Integer
+        grafik = ("$\\begin{array}{c|c|c|c} & G & p & W \\\\ "
+                  f"a) & {g1}\\,€ & {p1}\\,\\% & ? \\\\ "
+                  f"b) & {g2}\\,€ & ? & {w2}\\,€ \\\\ "
+                  f"c) & ? & {p3}\\,\\% & {eur(float(w3), 2 if float(w3) % 1 else None)} \\end{{array}}$")
+        aus[2 * i] = A("Ergänze die Tabelle ($G$ Grundwert, $p$ Prozentsatz, "
+                       "$W$ Prozentwert).",
+                       f"a) $W = {w1}\\,€$ b) $p = {p2}\\,\\%$ "
+                       f"c) $G = {g3}\\,€$", f"[{w1}, {p2}, {g3}]",
+                       antwort="a) $W =$ __ € b) $p =$ __ % c) $G =$ __ €",
+                       grafik=grafik)
     return aus
 
 
@@ -311,7 +335,7 @@ def _t5():
     ]
     griech = {"A": "\\alpha", "B": "\\beta", "C": "\\gamma"}
     aus = []
-    for rw, bei, fn, seiten in daten:
+    for nr, (rw, bei, fn, seiten) in enumerate(daten):
         s = dict(zip("ABC", seiten.split()))       # Seite gegenüber der Ecke
         dritte = ({"A", "B", "C"} - {rw, bei}).pop()
         geg, an, hyp = s[bei], s[dritte], s[rw]
@@ -333,6 +357,16 @@ def _t5():
         grafik = (f"\\dreieck{koord}{{{s['A']}}}{{{s['B']}}}{{{s['C']}}}"
                   f"{{{wink[0]}}}{{{wink[1]}}}{{{wink[2]}}}")
         g = griech[bei]
+        if nr % 2 == 0:  # Bündel (v0.7): zu einem Winkel sin, cos und tan
+            b = {"sin": (geg, hyp), "cos": (an, hyp), "tan": (geg, an)}
+            aus.append(A(
+                f"Rechter Winkel bei ${rw}$. Trage die Brüche ein.",
+                " ".join(f"{t}) $\\mathrm{{{f}}}\\,{g} = \\frac{{{b[f][0]}}}"
+                         f"{{{b[f][1]}}}$" for t, f in zip("abc", b)),
+                "", antwort=" ".join(f"{t}) $\\mathrm{{{f}}}\\,{g} =$ __"
+                                     for t, f in zip("abc", b)),
+                grafik=grafik))
+            continue
         aus.append(A(f"Rechter Winkel bei ${rw}$. Trage den Bruch ein. {{K}}",
                      f"$\\mathrm{{{fn}}}\\,{g} = \\frac{{{bruch[0]}}}"
                      f"{{{bruch[1]}}}$", "", antwort=f"$\\mathrm{{{fn}}}\\,{g} =$ __",
@@ -492,6 +526,57 @@ AUFGABEN["Wahrscheinlichkeit einstufig"] = [
 ]
 
 
+def _t10b():
+    """Bündel (v0.7): ein Zufallsgerät, drei Ereignisse."""
+    from fractions import Fraction
+    daten = [
+        ("Ein Spielwürfel wird einmal geworfen.", 6,
+         [("eine 6", {6}), ("eine gerade Zahl", {2, 4, 6}),
+          ("eine Zahl größer als 4", {5, 6})]),
+        ("Ein Glücksrad hat 8 gleich große Felder mit den Zahlen 1 bis 8.", 8,
+         [("die 8", {8}), ("eine ungerade Zahl", {1, 3, 5, 7}),
+          ("eine Zahl kleiner als 3", {1, 2})]),
+        ("Ein Spielwürfel wird einmal geworfen.", 6,
+         [("keine 6", {1, 2, 3, 4, 5}), ("eine 1 oder eine 2", {1, 2}),
+          ("eine Zahl kleiner als 7", {1, 2, 3, 4, 5, 6})]),
+        ("Ein Glücksrad hat 10 gleich große Felder mit den Zahlen 1 bis 10.",
+         10, [("die 10", {10}), ("eine Zahl größer als 6", {7, 8, 9, 10}),
+              ("eine durch 5 teilbare Zahl", {5, 10})]),
+        ("Zwölf Karten tragen die Zahlen 1 bis 12. Eine wird gezogen.", 12,
+         [("die 7", {7}), ("eine gerade Zahl", set(range(2, 13, 2))),
+          ("eine Zahl größer als 9", {10, 11, 12})]),
+    ]
+    aus = []
+    for text, n, ereig in daten:
+        teile, los, pr = [], [], []
+        for t, (was, menge) in zip("abc", ereig):
+            assert menge <= set(range(1, n + 1))
+            q = Fraction(len(menge), n)
+            assert _sp.Rational(len(menge), n) == _sp.Rational(q.numerator,
+                                                              q.denominator)
+            teile.append(f"{t}) {was}")
+            roh = f"\\frac{{{len(menge)}}}{{{n}}}"
+            if q == 1:
+                los.append(f"{t}) ${roh} = 1$")
+                pr.append("1")
+            elif q.denominator == n:
+                los.append(f"{t}) ${roh}$")
+                pr.append(f"[{q.numerator}, {q.denominator}]")
+            else:
+                los.append(f"{t}) ${roh} = \\frac{{{q.numerator}}}"
+                           f"{{{q.denominator}}}$")
+                pr.append(f"[{q.numerator}, {q.denominator}]")
+        aus.append(A(f"{text} Gib die Wahrscheinlichkeit an für "
+                     + ", ".join(teile[:2]) + " und " + teile[2] + ".",
+                     " ".join(los), "[" + ", ".join(pr) + "]",
+                     antwort="a) __ b) __ c) __"))
+    return aus
+
+
+for _i, _b in enumerate(_t10b()):
+    AUFGABEN["Wahrscheinlichkeit einstufig"][2 * _i] = _b
+
+
 # T11 Bruchteil einer Größe berechnen – 2018-OS-B1a („3/4 von 1,2 kg“)
 AUFGABEN["Bruchteil einer Größe berechnen"] = [
     A("Wie viel Gramm sind $\\frac{2}{3}$ von $1{,}5$ kg? {K}",
@@ -644,8 +729,27 @@ def _t16():
     daten = [(62, 2, 5), (48, 3, 4), (70, 2, 4), (55, 4, 3), (65, 5, 2),
              (40, 2, 5), (75, 3, 5), (58, 4, 2), (50, 5, 4), (72, 3, 2)]
     aus = []
-    for t, geg, ges in daten:
+    for nr, (t, geg, ges) in enumerate(daten):
         wert = {2: t, 3: 180 - t, 4: t, 5: 180 - t}
+        if nr % 2 == 0:  # Bündel (v0.7): drei Winkel aus einem gegebenen
+            assert wert[2] + wert[3] == 180
+            lab = {k: "" for k in wert}
+            lab[geg] = f"{wert[geg]}^\\circ"
+            gr = [k for k in (2, 3, 4, 5) if k != geg]
+            for k, n in zip(gr, ("\\alpha", "\\beta", "\\gamma")):
+                lab[k] = n
+            grafik = "\\parallelenpaar{%d}{%s}{%s}{%s}{%s}" % (
+                t, lab[2], lab[3], lab[4], lab[5])
+            aus.append(A(
+                "Die beiden waagerechten Geraden sind parallel. Bestimme "
+                "$\\alpha$, $\\beta$ und $\\gamma$.",
+                " ".join(f"{b}) ${lab[k]} = {wert[k]}^\\circ$"
+                         for b, k in zip("abc", gr)),
+                "[" + ", ".join(str(wert[k]) for k in gr) + "]",
+                antwort=" ".join(f"{b}) ${lab[k]} =$ __°"
+                                 for b, k in zip("abc", gr)),
+                grafik=grafik))
+            continue
         lab = {2: "", 3: "", 4: "", 5: ""}
         lab[geg] = f"{wert[geg]}^\\circ"
         lab[ges] = "\\alpha"
@@ -1265,7 +1369,12 @@ def _t34():
             x = zv * wv
             weg = f"$x = {z} \\cdot {fn} = {z} \\cdot {wt} = {dez(x)}$"
             p = f"{zv}*{rad}"
-        aus.append(A(f"${gl}$ – berechne $x$. {{K}}", weg, p, antwort="x = __"))
+        # v0.7 (Lehrer 02.10.): nur umstellen, kein Zahlenwert
+        del weg, p, x
+        op = ":" if lage == "unten" else "\\cdot"
+        aus.append(A(f"${gl}$. Stelle nach $x$ um.",
+                     f"$x = {z} {op} {fn}$", f"{zv:g}",
+                     antwort="$x =$ __"))
     return aus
 
 
@@ -1648,24 +1757,21 @@ def _t42():
         ("\\dreieckrw{3.5}{2.5}{p}{q}{r}", "den Flächeninhalt $A$",
          ["$A = p \\cdot q$", "$A = p \\cdot q : 2$", "$A = p \\cdot r : 2$",
           "$A = (p + q) : 2$"], 1),
-        ("\\parallelogramm[punkte=,seiten={g,,,},hoehe=h]{3.5}{2}{60}",
-         "den Flächeninhalt $A$",
-         ["$A = g \\cdot h : 2$", "$A = 2 \\cdot (g + h)$", "$A = g \\cdot h$",
-          "$A = g + h$"], 2),
-        ("\\trapez[punkte=,seiten={a,,c,},hoehe=h]{4}{2}{1.8}",
-         "den Flächeninhalt $A$",
-         ["$A = a \\cdot c \\cdot h$", "$A = (a + c) \\cdot h$",
-          "$A = (a + c) \\cdot h : 2$", "$A = a \\cdot h + c$"], 2),
-        ("\\raute[punkte=,seiten={b,,,}]{3}{2}", "den Umfang $u$ der Raute",
-         ["$u = b^4$", "$u = 4 \\cdot b$", "$u = b \\cdot b$",
-          "$u = 2 \\cdot b$"], 1),
+        (R % ("a,b,,", 3.4, 1.6), "den Umfang $u$",
+         ["$u = a \\cdot b$", "$u = a + b + a + b$", "$u = a + b$",
+          "$u = 2 \\cdot a + b$"], 1),
+        (R % ("e,,,", 2, 2), "den Umfang $u$ des Quadrats",
+         ["$u = e^2$", "$u = 4 \\cdot e$", "$u = 2 \\cdot e$",
+          "$u = e + 4$"], 1),
+        ("\\dreieckrw{3.5}{2.5}{a}{b}{c}", "den Umfang $u$",
+         ["$u = a \\cdot b : 2$", "$u = a + b + c$",
+          "$u = a \\cdot b \\cdot c$", "$u = a + b$"], 1),
         (R % ("m,n,,", 3.2, 1.5), "den Flächeninhalt $A$",
          ["$A = 2 \\cdot (m + n)$", "$A = m + n$", "$A = m \\cdot n : 2$",
           "$A = m \\cdot n$"], 3),
-        ("\\parallelogramm[punkte=,seiten={c,d,,}]{3.2}{1.8}{70}",
-         "den Umfang $u$ des Parallelogramms",
-         ["$u = c \\cdot d$", "$u = 2 \\cdot (c + d)$", "$u = c + d$",
-          "$u = 4 \\cdot c$"], 1),
+        (R % ("3a,a,,", 3.6, 1.2), "den Flächeninhalt $A$",
+         ["$A = 4 \\cdot a$", "$A = 3 \\cdot a^2$", "$A = 8 \\cdot a$",
+          "$A = 3 + a^2$"], 1),
         (R % ("2k,k,,", 3.2, 1.6), "den Umfang $u$",
          ["$u = 2 \\cdot k^2$", "$u = 3 \\cdot k$", "$u = 6 \\cdot k$",
           "$u = 4 \\cdot k$"], 2),
@@ -1683,20 +1789,20 @@ def _t42():
          "$A = m \\cdot n : 2$",
          "die Katheten $m$ und $n$ stehen senkrecht aufeinander; die "
          "Hypotenuse $o$ gehört nicht in die Formel", "2"),
-        ("\\parallelogramm[punkte=,seiten={a,b,,}]{3.5}{2}{60}",
-         "den Umfang $u$", "$u = 2 \\cdot a + 2 \\cdot b$",
+        (R % ("a,b,,", 3.5, 2), "den Umfang $u$",
+         "$u = 2 \\cdot a + 2 \\cdot b$",
          "je zwei Seiten sind gleich lang", "[2, 2]"),
         (R % ("3x,x,,", 3.6, 1.2), "den Umfang $u$",
          "$u = 8 \\cdot x$", "$3x + x + 3x + x = 8x$", "8"),
         (R % ("2a,a,,", 3.2, 1.6), "den Flächeninhalt $A$",
          "$A = 2 \\cdot a^2$", "$2a \\cdot a = 2a^2$", "[2, 2]"),
-        ("\\raute[punkte=,diagonalen={p,q}]{3}{2.2}", "den Flächeninhalt $A$",
-         "$A = p \\cdot q : 2$", "halbes Produkt der Diagonalen", "2"),
+        (R % ("t,,,", 2, 2), "den Flächeninhalt $A$ des Quadrats",
+         "$A = t^2$", "Seite mal Seite", ""),
         ("\\dreieck{(0,0)}{(3,0)}{(1.5,2.2)}{s}{s}{b}{}{}{}",
          "den Umfang $u$", "$u = 2 \\cdot s + b$",
          "zwei Schenkel $s$ und die Basis $b$", "2"),
-        ("\\trapez[punkte=,seiten={a,b,c,d}]{4}{2}{1.8}", "den Umfang $u$",
-         "$u = a + b + c + d$", "alle vier Seiten addieren", ""),
+        ("\\dreieckrw{3.4}{2}{x}{y}{z}", "den Umfang $u$",
+         "$u = x + y + z$", "alle drei Seiten addieren", ""),
         (R % ("y,3,,", 3.2, 1.5), "den Flächeninhalt $A$ (Breite $3$)",
          "$A = 3 \\cdot y$", "Länge mal Breite", "3"),
     ]
@@ -1754,21 +1860,32 @@ def _x(opt, i, k):
 # T44 Zeiteinheiten umrechnen – 2025-OS-B1b (Kurzantwort / Ankreuzen)
 def _t44():
     kurz = [  # (Text, Wert, Faktor, Zieleinheit, Antwort)
-        ("Eine Busfahrt dauert $2{,}5$ h. Gib die Dauer in Minuten an.",
-         "2.5", 60, "min"),
         ("Ein Training dauert $0{,}2$ h. Gib die Dauer in Minuten an.",
          "0.2", 60, "min"),
-        ("Eine Wanderung dauert $4{,}25$ h. Gib die Dauer in Minuten an.",
-         "4.25", 60, "min"),
-        ("Ein Kuchen backt $1{,}2$ h. Gib die Backzeit in Minuten an.",
-         "1.2", 60, "min"),
         ("Eine Ampel bleibt $3$ min rot. Gib die Zeit in Sekunden an.",
          "3", 60, "s"),
-        ("Ein Zeltlager dauert $2{,}5$ Tage. Gib die Dauer in Stunden an.",
-         "2.5", 24, "h"),
-        ("Eine Hausaufgabe dauert $0{,}4$ h. Gib die Dauer in Minuten an.",
-         "0.4", 60, "min"),
     ]
+    # Bündel (v0.7): eine Dauer in zwei Einheiten
+    buendel = [  # (Satz, Wert, Faktor, klein, groß)
+        ("Eine Busfahrt dauert $2{,}5$ h.", "2.5", 60, "min", "h"),
+        ("Eine Wanderung dauert $4{,}25$ h.", "4.25", 60, "min", "h"),
+        ("Ein Kuchen backt $1{,}2$ h.", "1.2", 60, "min", "h"),
+        ("Ein Zeltlager dauert $2{,}5$ Tage.", "2.5", 24, "h", "Tage"),
+        ("Eine Autofahrt dauert $3{,}2$ h.", "3.2", 60, "min", "h"),
+    ]
+    wort = {"min": "Minuten", "h": "Stunden", "Tage": "Tagen"}
+    bnd = []
+    for satz, w, f, kl, gr in buendel:
+        r = _q(w) * f
+        assert r.is_Integer
+        ganz, rest = divmod(int(r), f)
+        assert _q(ganz) + _sp.Rational(rest, f) == _q(w)
+        bnd.append(A(f"{satz} Gib die Dauer an a) in {wort[kl]}, b) in "
+                     f"{wort[gr]} und {wort[kl]}.",
+                     f"a) ${dez(float(w))} \\cdot {f} = {_zahl(r)}$ {kl} "
+                     f"b) ${ganz}$ {gr} ${rest}$ {kl}",
+                     f"[{r}]",
+                     antwort=f"a) __ {kl} b) __ {gr} __ {kl}"))
     aus = []
     for text, w, f, e in kurz:
         r = _q(w) * f
@@ -1789,7 +1906,10 @@ def _t44():
     for text, opt, i, weg, (p, soll) in ank:
         _gleich(_sp.sympify(p), soll)
         aus.append(X(f"{text} Kreuze an. {{K}}", opt, f"{opt[i]}: {weg}", p))
-    return aus
+    gemischt = []
+    for b, e in zip(bnd, aus):
+        gemischt += [b, e]
+    return gemischt
 
 
 # T45 Eigenschaft einer Figur zuordnen – 2026-FOR-B1c (Ankreuzen)
@@ -2172,6 +2292,33 @@ def _t55():
                      + (f" {e}" if e else ""),
                      f"({'+'.join(werte)})/{len(werte)}",
                      antwort=f"__ {e}".rstrip()))
+    # Bündel (v0.7): zu einer Liste Mittelwert, Median und Spannweite
+    bd = [("Bei fünf Würfen erzielt Mia", ["2", "6", "1", "6", "5"], "",
+           "Augenzahlen"),
+          ("Drei Kürbisse wiegen", ["8", "26", "14"], "kg", ""),
+          ("In vier Spielen erzielt Tom", ["10", "22", "14", "6"], "",
+           "Punkte"),
+          ("Fünf Kinder sparen im Monat", ["10", "4", "25", "8", "13"], "€",
+           ""),
+          ("An vier Tagen fallen", ["3", "0", "7", "2"], "mm", "Regen")]
+    for i, (text, werte, e, nach) in enumerate(bd):
+        q = [_q(w) for w in werte]
+        m = sum(q) / len(q)
+        med = _q(_median(sorted(q)))
+        r = max(q) - min(q)
+        assert (m * 100).is_Integer and med == _sp.Rational(
+            sorted(q)[(len(q) - 1) // 2] + sorted(q)[len(q) // 2], 2)
+        assert m != med
+        ein = f" {e}" if e else ""
+        liste = "; ".join(f"${_w(w, e)}$" for w in werte)
+        aus[2 * i] = A(
+            f"{text} {liste}{ein}{(' ' + nach) if nach else ''}. Bestimme "
+            "a) das arithmetische Mittel, b) den Median, c) die Spannweite.",
+            f"a) ${_w(sum(q), e)} : {len(q)} = {_w(m, e)}${ein} "
+            f"b) $\\mathrm{{Median}} = {_w(med, e)}${ein} "
+            f"c) ${_w(max(q), e)} - {_w(min(q), e)} = {_w(r, e)}${ein}",
+            f"[{m}, {med}, {r}]",
+            antwort=f"a) __{ein} b) __{ein} c) __{ein}")
     return aus
 
 
@@ -2451,14 +2598,14 @@ def main(argv):
         for t in reihe:
             auf = AUFGABEN[t["typ"]]
             assert len(auf) == ZIEL.get(t["typ"], 10), (t["typ"], len(auf))
-            k = f"(P10 {t['jahr']} {t['papier']})"
             for v, a in enumerate(auf, 1):
                 z = {"id": f"{eintrag}-basis-k{t['kette_nr']}-v{v}",
                      "eintrag": eintrag, "einheit": int(t["einheit"]),
                      "kette": t["typ"], "kette_nr": int(t["kette_nr"]),
                      "sprosse": 1, "sprosse_text": t["typ"],
                      "merkmal": MERKMAL, "hoehe": "basis", "variante": v,
-                     "aufgabe": a["aufgabe"].replace("{K}", k),
+                     "aufgabe": a["aufgabe"].replace(" {K}", "")
+                                            .replace("{K}", "").strip(),
                      "form": a["form"], "antwort": a["antwort"],
                      "loesung": a["loesung"], "pruef": a["pruef"],
                      "original": {"id": t["original"], "jahr": int(t["jahr"]),
