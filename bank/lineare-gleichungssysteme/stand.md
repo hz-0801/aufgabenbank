@@ -195,3 +195,17 @@ zweimal.
   Jahr GK/LK)“.
 - Ob Blätter mit Ziel Abitur die Sek-II-Sprosse als Prüfungshöhe
   brauchen (Entscheidung 3).
+
+## Nachtrag 02.10.2026: Duden-Abgleich und Leiterregeln
+
+Katalog-Commit: 60f3c33f8af54ebdf9134337df243dc2ca526209 (2026-10-02, katalog/lineare-gleichungssysteme.md, lokaler Klon).
+Neue Sprossen: e1 s8 rückwärts (zweite Gerade, Entwurf A8), s9 gemischt (Entwürfe A7 von s7 hierher verschoben), s11 Halbebene und s12 Ungleichungssystem (Vorrat, GYM); e2 s10 rückwärts, s11 gemischt (ordnen für alle); e3 s6 erst ordnen (Entwurf A11), s10 rückwärts; e4 s8 gemischt; e5 s4 Dreiecksform und s5 Sachaufgabe mit drei Unbekannten (GYM Kl. 9; Entwürfe A17, A18), s10 rückwärts, s11 gemischt. Die drei kurzen Sek-II-Ketten unverändert (Grund im Katalog, Offene Punkte). Zeilen e1–e5 vorher 252, nachher 299. Prüfskript: 0 Abweichungen, 8 Warnungen (Zusatzzeilen); mit --katalog 207 → 173 (nur Altlasten; die e2-Zeilen mit quelle 126 sind alte Nummern, die jetzt zufällig auf die Kette der Einheit 5 zeigen).
+
+| Datei | Zeilen | vorst. | grundf. | sprosse | pruef. | pflicht |
+|---|--:|--:|--:|--:|--:|--:|
+| e1.jsonl | 64 | 8 | 10 | 35 | 5 | 6 |
+| e2.jsonl | 51 | 4 | 5 | 34 | 2 | 6 |
+| e3.jsonl | 64 | 8 | 10 | 34 | 6 | 6 |
+| e4.jsonl | 70 | 8 | 10 | 35 | 11 | 6 |
+| e5.jsonl | 50 | 4 | 6 | 31 | 3 | 6 |
+| zone.jsonl | 42 | 0 | 20 | 21 | 0 | 1 |
