@@ -160,3 +160,28 @@ Abweichungen, 0 Warnungen, Endstand ebenso.
 - Die Grundfälle von e2 (Kette) und e5 sind inhaltlich nah (zwei
   Quader addieren); verschiedene Zahlen und Kontexte, keine
   Aufgabe doppelt.
+
+## Umsetzung Duden-Abgleich und Leiterregeln (2026-10-02)
+
+Katalog: koerper.md im Commit „Umsetzung Duden-Abgleich/Leiterregeln
+02.10.“ (Abgleich katalog/_abgleich-duden9-kap8.md). Neue Sprossen und
+verschobene Zeilen tragen den wortgleichen sprosse_text und die neue
+quelle (Zeilen 106–110); alte, nicht verschobene Zeilen unverändert.
+
+| Datei | vorher | nachher | neu |
+|-------|-------:|--------:|----:|
+| e1    |     52 |      58 |   6 |
+| e2    |     56 |      62 |   6 |
+| e3    |     47 |      57 |  10 |
+| e4    |     57 |      67 |  10 |
+| e5    |     50 |      56 |   6 |
+
+Neue Sprossen: e1 rückwärts (Körper aus Ecken-, Kanten-, Flächenzahl),
+gemischt; e2 Maßzahlvergleich (Vorrat), gemischt; e3 Vieleckgrundfläche,
+schiefes Prisma (Cavalieri; GYM, Vorrat), gemischt; e4 Hohlzylinder,
+gerolltes Rechteck, Größentabelle gemischt; e5 rückwärts, gemischt.
+Je 3 Zeilen; Entwürfe aus eingang/duden9-2026-10-02/neu-rg-duden9.jsonl
+(Feld herkunft Duden), Rest herkunft „Regel 02.10.“. Zusatzzeilen über
+der Sollmenge (Beschluss 6): e3 pflicht anwendung v4 (Deich), e4 k2
+s10 „h aus V“ v4. Prüfskript: 0 Abweichungen, 2 Warnungen (Menge);
+mit --katalog 169 → 115, alle in unveränderten alten Zeilen.
