@@ -210,3 +210,16 @@ Nur diese 75 Zeilen geändert, alle übrigen byte-gleich. `bank-pruef.py quadrat
 - Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
 - quadratische-gleichungen-e1-k3-s4-v2: Zwischenwert r² ≈ 0,95 führte auf r ≈ 0,97, nicht auf das genannte 0,98 → r² = 3 : π ≈ 0,955; r ≈ 0,98 m (Regel a).
 - Prüfskript: Abweichungen 0.
+
+## Duden-Abgleich und Leiterregeln 2026-10-02
+
+- Grundlage: katalog/_abgleich-duden9-kap4.md, Lehrerbeschluss 02.10.2026 (Rückwärts- und Mischsprosse je Kette, krumme Zahlen oben, Gewicht je Einheit); Entwürfe aus eingang/duden9-2026-10-02/neu-quadratische-gleichungen-duden9.jsonl übernommen (Platzhalter durch echte Sprossen ersetzt, „Gib die Lösungsmenge an“ → „Gib die Lösungen an“), fehlende Zeilen selbst gebaut (herkunft „Regel 02.10.“, sympy-nachgerechnet).
+- Nummerierung: Die Bankdateien tragen weiter die Folge vor dem Tausch vom 27.09. (e2 = Nullprodukt, e3 = p-q-Formel; Katalog: 2 = p-q-Formel, 3 = Nullprodukt); „Lösungsweg wählen“ steht noch als e3-k3-s16 in der p-q-Kette statt in der Nullprodukt-Kette. Umzug ist Sache des Nachzugs der 48. Neue Zeilen tragen die Nummern der Bankdatei.
+- e1 (63 → 75): k2 neu s11 Quadrat erkennen, s15 Rückwärts (reinquadratisch), s16 krumme Zahlen, s17 Gemischt; alte s11–s14 → s12–s14, s18.
+- e2 (43 → 49): k1 neu s10 krumme Zahlen (Vorzahl in der Klammer), s11 Rückwärts (Produktform); alte Prüfungshöhe s10 → s12.
+- e3 (79 → 102): k3 neu s8 Zahl der Lösungen entscheiden (Katalogsprosse, fehlte), s9 Rückwärts (Zahl wählen), s11 Parameter (GYM), s14 Vieta (Vorrat), s17 krumme Zahlen (dazu die zwei Duden-Zeilen „Normieren mit 0,5 und ¼“), s18 gemischt; s15 (Klammer auflösen) +2 Zeilen (x-Glied hebt sich weg; Zusatzzeilen über der Sollmenge, Warnung erwartet); neue k5 Typ ohne Kette „grafisch lösen mit Normalparabel und Gerade“; Pflicht k5 → k6. Sperre-Altlast e3-k3-s13-v9 (jetzt s19-v9, (x − 3)² − 2 aus 2025-OS-K5b) durch (x − 3)² − 5 und y = −2x + 16 ersetzt.
+- e4 (39 → 48): k1 neu s8 krumme Zahlen, s9 Rückwärts, s10 gemischt; Prüfungshöhe s8 → s11.
+- e5 neu (74): Einheit 5 [GYM] [Vorrat] – Bruchgleichungen (k1, Vorstufe bis Prüfungshöhe), Wurzelgleichungen (k2), quadratische Ungleichungen (k3), Pflicht fehler und begruenden (k4).
+- quelle: neue und verschobene Zeilen auf die Zeile des neuen Katalogstands; Zeilen, die vorher wortgleich passten, mitgezogen.
+- Prüfskript: ohne --katalog 0 Abweichungen, 1 Warnung (e3 k3 s15, Zusatzzeilen); mit --katalog 195 → 169 (nur Altlasten: alte quelle-Nummern und nicht wortgleiche sprosse_text unverschobener Zeilen).
+- Zeilen gesamt 258 → 382.
