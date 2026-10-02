@@ -89,3 +89,15 @@ geändert oder gestrichen.
   Katalog); keine Kette zu streichen.
 - Befunde „Exponenten zählen nicht als Zahl“ und „\ell fehlt“ gegen
   v0.5 geprüft: beide bestehen fort und bleiben offen.
+
+## Nachtrag 02.10.2026: Duden-Abgleich und Leiterregeln
+
+Katalog-Commit: bb24577068bc2413480273dad762463b34308af3 (2026-10-02, katalog/reelle-zahlen.md, lokaler Klon).
+Neue Sprossen: e1 s10–s14 (Intervallschachtelung, Zirkel, Beweis, rückwärts, gemischt), e2 s11 krumme Basen und s13 rückwärts, e3 s8 Bruch-Exponent, s12 Definitionsmenge, s14 Ausmultiplizieren, s15 rückwärts, s16 gemischt; e3 s3/s4 getauscht (Abgleich B1). Entwürfe aus eingang/duden9-2026-10-02/neu-rz-duden9.jsonl übernommen (Feld herkunft Duden), eigene Zeilen mit herkunft „Regel 02.10.“; verschobene Zeilen mit neuer quelle und wortgleichem sprosse_text. Zeilen e1–e3 vorher 162, nachher 214. Prüfskript: 0 Abweichungen, 10 Warnungen (Zusatzzeilen über der Sollmenge); mit --katalog 120 → 97 (nur Altlasten).
+
+| Datei | Zeilen | vorst. | grundf. | sprosse | pruef. | pflicht |
+|---|--:|--:|--:|--:|--:|--:|
+| e1.jsonl | 72 | 4 | 5 | 48 | 3 | 12 |
+| e2.jsonl | 65 | 4 | 5 | 44 | 3 | 9 |
+| e3.jsonl | 77 | 4 | 5 | 53 | 3 | 12 |
+| zone.jsonl | 33 | 0 | 14 | 18 | 0 | 1 |
