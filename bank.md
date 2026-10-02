@@ -28,6 +28,9 @@ Struktur.
     werkzeuge/mappe.py            baut die Mappe eines Eintrags
     mappen/<eintrag>.md           Quellen eines Eintrags in einer Datei
     mappen/_bausteine.md          Bausteine der Vorlage (Kurzreferenz)
+    eingang/gebaut.csv            gebaute Blätter je Schülernummer (S01 …;
+                                  Namen nur in der privaten Projektdatei)
+    bau/zettel/vorlage-2026-10-03/ Vorlage Basiszettel (Lehrer 03.10.)
 
 `<eintrag>` ist der Dateiname des Katalogeintrags ohne `.md`.
 JSONL: eine Aufgabe je Zeile, ein JSON-Objekt, UTF-8, keine
