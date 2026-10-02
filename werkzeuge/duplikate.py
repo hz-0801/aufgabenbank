@@ -189,6 +189,8 @@ def sachwoerter(text):
 def lies_bank():
     zeilen = []
     for pfad in sorted(BANK.glob("*/*.jsonl")):
+        if pfad.name == "weg.jsonl":  # Lösungswege, keine Aufgabenzeilen
+            continue
         with pfad.open(encoding="utf-8") as f:
             for roh in f:
                 if roh.strip():
