@@ -508,8 +508,8 @@ symmetrie-abbildungen-basis-k1-v6;2018-OS-B1h;1;nein;ganz;Figur nach Spiegelung 
 symmetrie-abbildungen-basis-k1-v7;2018-OS-B1h;1;nein;ganz;Figur nach Spiegelung benennen, anderes Ausgangsstück
 symmetrie-abbildungen-basis-k1-v8;2018-OS-B1h;1;nein;ganz;Figur nach Spiegelung benennen, anderes Ausgangsstück
 symmetrie-abbildungen-basis-k1-v9;2018-OS-B1h;1;nein;ganz;Figur nach Spiegelung benennen
-symmetrie-abbildungen-e2-k3-s8-v1;2018-OS-B1h;1;nein;ganz;Drachenviereck aus Dreieck und Spiegelbild benennen
-symmetrie-abbildungen-e2-k3-s8-v2;2018-OS-B1h;1;nein;ganz;Drachenviereck aus Dreieck und Spiegelbild benennen
+symmetrie-abbildungen-e2-k3-s10-v1;2018-OS-B1h;1;nein;ganz;Drachenviereck aus Dreieck und Spiegelbild benennen
+symmetrie-abbildungen-e2-k3-s10-v2;2018-OS-B1h;1;nein;ganz;Drachenviereck aus Dreieck und Spiegelbild benennen
 koerper-e1-k5-s4-v1;2018-OS-B1i;1;nein;ganz;Körper zum Netz ankreuzen wie im Original
 wahrscheinlichkeit-e2-k3-s8-v1;2018-OS-B1j;1;nein;ganz;Felderzahl aus Wahrscheinlichkeit wie im Original
 potenz-exponentialfunktionen-e2-k1-s7-v3;2018-OS-K2a;2;nein;ganz;Prozentsatz an zwei Jahreswerten nachweisen
@@ -953,8 +953,8 @@ symmetrie-abbildungen-basis-k2-v6;2020-OS-B1b;1;nein;ganz;alle gesuchten Ergebni
 symmetrie-abbildungen-basis-k2-v7;2020-OS-B1b;1;nein;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
 symmetrie-abbildungen-basis-k2-v8;2020-OS-B1b;1;nein;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
 symmetrie-abbildungen-basis-k2-v9;2020-OS-B1b;1;nein;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
-symmetrie-abbildungen-e1-k2-s8-v1;2020-OS-B1b;1;nein;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
-symmetrie-abbildungen-e1-k2-s8-v2;2020-OS-B1b;1;nein;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
+symmetrie-abbildungen-e1-k2-s10-v1;2020-OS-B1b;1;nein;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
+symmetrie-abbildungen-e1-k2-s10-v2;2020-OS-B1b;1;nein;ganz;alle gesuchten Ergebnisse mit gleicher Handlung
 trigonometrie-e1-k3-s16-v13;2020-OS-B1c;1;nein;ganz;Tangens als Seitenverhältnis angeben wie im Original
 trigonometrie-e1-k3-s16-v14;2020-OS-B1c;1;nein;ganz;Tangens als Seitenverhältnis angeben wie im Original
 potenzen-wurzeln-e3-k2-s10-v1;2020-OS-B1d;1;nein;ganz;Quadratseite aus Fläche wie im Original
@@ -1167,8 +1167,8 @@ bruchrechnung-e5-k1-s6-v2;2021-OS-B1g;1;nein;ganz;Termwert eines Bruchterms bere
 rationale-zahlen-e3-k1-s7-v1;2021-OS-B1g;1;nein;ganz;Termwert mit negativen Einsetzungen
 rationale-zahlen-e3-k1-s7-v2;2021-OS-B1g;1;nein;ganz;Termwert mit negativen Einsetzungen
 winkel-dreiecke-e2-k2-s9-v2;2021-OS-B1i;1;nein;ganz;fehlender Trapezwinkel berechnen
-symmetrie-abbildungen-e2-k2-s9-v3;2021-OS-B1j;1;nein;ganz;Zahl der Symmetrieachsen ankreuzen
-symmetrie-abbildungen-e2-k2-s9-v4;2021-OS-B1j;1;nein;ganz;Zahl der Symmetrieachsen ankreuzen
+symmetrie-abbildungen-e2-k2-s11-v3;2021-OS-B1j;1;nein;ganz;Zahl der Symmetrieachsen ankreuzen
+symmetrie-abbildungen-e2-k2-s11-v4;2021-OS-B1j;1;nein;ganz;Zahl der Symmetrieachsen ankreuzen
 lineare-funktionen-e2-k4-s8-v7;2021-OS-K2a;2;nein;ganz;Gerade aus Gleichung zeichnen
 lineare-funktionen-e2-k4-s8-v8;2021-OS-K2a;2;nein;ganz;Gerade aus Gleichung zeichnen
 lineare-funktionen-e3-k2-s7-v13;2021-OS-K2b;2;nein;ganz;zwei richtige Aussagen zur Geraden ankreuzen
@@ -1351,8 +1351,8 @@ symmetrie-abbildungen-basis-k3-v6;2022-OS-B1i;1;nein;ganz;Zahl der Symmetrieachs
 symmetrie-abbildungen-basis-k3-v7;2022-OS-B1i;1;nein;ganz;Zahl der Symmetrieachsen ankreuzen
 symmetrie-abbildungen-basis-k3-v8;2022-OS-B1i;1;nein;ganz;Zahl der Symmetrieachsen ankreuzen
 symmetrie-abbildungen-basis-k3-v9;2022-OS-B1i;1;nein;ganz;Zahl der Symmetrieachsen ankreuzen
-symmetrie-abbildungen-e2-k2-s9-v1;2022-OS-B1i;1;nein;ganz;Zahl der Symmetrieachsen des Trapezes ankreuzen
-symmetrie-abbildungen-e2-k2-s9-v2;2022-OS-B1i;1;nein;ganz;Zahl der Symmetrieachsen des Trapezes ankreuzen
+symmetrie-abbildungen-e2-k2-s11-v1;2022-OS-B1i;1;nein;ganz;Zahl der Symmetrieachsen des Trapezes ankreuzen
+symmetrie-abbildungen-e2-k2-s11-v2;2022-OS-B1i;1;nein;ganz;Zahl der Symmetrieachsen des Trapezes ankreuzen
 potenzen-wurzeln-e1-k3-s15-v7;2022-OS-B1j;1;nein;ganz;Vergleichszeichen zwischen Potenz und Dezimalzahl
 potenzen-wurzeln-e1-k3-s15-v8;2022-OS-B1j;1;nein;ganz;Vergleichszeichen zwischen Potenz und Dezimalzahl
 koerper-e4-k2-s10-v2;2022-OS-K2b;2;nein;ganz;Zylindervolumen berechnen und Behauptung prüfen
@@ -2311,8 +2311,8 @@ quadratische-gleichungen-basis-k1-v8;2025-OS-B1h;1;nein;ganz;Lösung durch Einse
 quadratische-gleichungen-basis-k1-v9;2025-OS-B1h;1;nein;ganz;Lösung durch Einsetzen ankreuzen wie im Original
 quadratische-gleichungen-e2-k1-s10-v1;2025-OS-B1h;1;nein;ganz;Lösung durch Einsetzen ankreuzen wie im Original
 quadratische-gleichungen-e2-k1-s10-v2;2025-OS-B1h;1;nein;ganz;Lösung durch Einsetzen ankreuzen wie im Original
-symmetrie-abbildungen-e2-k2-s10-v1;2025-OS-K2a;4;nein;teil;nur Symmetrieachsen, Original auch BF-Nachweis und AB
-symmetrie-abbildungen-e2-k2-s10-v2;2025-OS-K2a;4;nein;teil;nur Symmetrieachsen, Original auch BF-Nachweis und AB
+symmetrie-abbildungen-e2-k2-s12-v1;2025-OS-K2a;4;nein;teil;nur Symmetrieachsen, Original auch BF-Nachweis und AB
+symmetrie-abbildungen-e2-k2-s12-v2;2025-OS-K2a;4;nein;teil;nur Symmetrieachsen, Original auch BF-Nachweis und AB
 pythagoras-e2-k3-s10-v5;2025-OS-K2c;2;ja;ganz;rechten Winkel begründen über Pythagoras-Umkehrung, im Original zugelassen
 pythagoras-e2-k3-s10-v6;2025-OS-K2c;2;ja;ganz;rechten Winkel begründen über Pythagoras-Umkehrung, andere Figur
 winkel-dreiecke-e3-k2-s11-v3;2025-OS-K2c;2;ja;ganz;rechten Winkel im Drachenviereck gleich begründet

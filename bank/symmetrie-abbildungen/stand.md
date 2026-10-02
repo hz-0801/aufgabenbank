@@ -109,3 +109,16 @@ Entscheidungen, Punkt 4).
 - Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
 - symmetrie-abbildungen-e2-k2-s4-v3: Grafik \dreieck{(0,0)}{(5,0)}{(1,3)} war gleichschenklig (AB = BC = 5) gegen Text „drei verschieden lange Seiten“ und Lösung 0 → dritte Ecke (1.5,3), Seiten 5; 4,61; 3,35, Lösung 0 bleibt (Regel a).
 - Prüfskript: Abweichungen 0.
+
+## Nachtrag 2026-10-02: Duden-Abgleich und Leiterregeln
+
+Katalog: mathe-nachhilfe katalog/symmetrie-abbildungen.md, Commit 2e7f1ee (Leiterregeln 02.10.2026; der Duden-Abgleich weist dem Eintrag nichts zu). Neue Sprossen je 3 Zeilen, herkunft „Regel 02.10.“: e1 Kette 2 Rückwärts (s8) und Gemischt (s9), Prüfung jetzt s10; e2 Kette 2 Rückwärts (s9) und Gemischt (s10), Prüfungssprossen jetzt s11 und s12; e2 Kette 3 Rückwärts (s8) und Gemischt (s9), Prüfung s10; e3 Kette 1 Rückwärts (s10) und Gemischt (s11), Prüfung s12. Verschobene Zeilen tragen quelle 73–76 und den Sprossentext wortgleich aus dem Katalog; ids in bank/_punkte.csv nachgezogen (10 Zeilen). Prüfskript ohne --katalog 0 Abweichungen, mit --katalog 170 → 157 (Rest alte quelle).
+
+| Datei | vorstufe | grundfall | sprosse | pruefung | pflicht | Summe |
+|---|---:|---:|---:|---:|---:|---:|
+| e1 | 8 | 5 | 33 | 2 | 12 | 60 |
+| e2 | 12 | 10 | 57 | 8 | 12 | 99 |
+| e3 | 4 | 5 | 36 | 3 | 12 | 60 |
+| zone | 0 | 14 | 15 | 0 | 1 | 30 |
+
+Summe 249 Zeilen.
