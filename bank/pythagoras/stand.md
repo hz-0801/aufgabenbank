@@ -99,3 +99,16 @@ ersten Lauf 0. Keine Einheit scheiterte.
   `\dreieck` als loesungsgrafik (e3 darstellung v2).
 - Übernommene Lösungen tragen keine Schrittnamen (Auftrag).
 - duplikate.md und bau/sprachlauf/pythagoras.md nennen alte ids.
+
+## Nachtrag 2026-10-02: Duden-Abgleich und Leiterregeln
+
+Katalog: mathe-nachhilfe katalog/pythagoras.md, Commit 4f12b9c (Umsetzung 02.10.2026). e1 Kette 2 (Hypotenuse): Satz begründen, Zerlegungsbeweis (s12, GYM), Rückwärts (s13), Gemischt (s14), Prüfung jetzt s15. e2 Kette 3 (Kathete): Rückwärts (s10), Gemischt (s11 = Abgleich A2, unmittelbar vor der Prüfung statt nach s4), Prüfung s12. e2 neue Kette 4 Kathetensatz und Höhensatz (GYM): Grundfall 5, Kathetensatz, Abschnitte bilden, Rechteck in Quadrat, Rückwärts, Gemischt je 3, Prüfungshöhe ohne Original 3 (zwei aus den Entwürfen); die alten Ketten 4 (Tripel) und 5 (Pflicht) heißen jetzt 5 und 6. e3 Kette 2: Quadrat aus Diagonale (s7, alte 7–13 rücken um eins), Sichtweite/Tangente (s15, GYM), Raumdiagonale s16, Rückwärts (s17), Gemischt (s18), Prüfung s19. Zusatzvarianten A1, A3, A4, A6, A10, A12, A13 an den alten Sprossen. ids in bank/_punkte.csv nachgezogen (18 Zeilen). Prüfskript ohne und mit --katalog 0 Abweichungen.
+
+| Datei | vorstufe | grundfall | sprosse | pruefung | pflicht | Summe |
+|---|---:|---:|---:|---:|---:|---:|
+| e1 | 8 | 5 | 47 | 4 | 12 | 76 |
+| e2 | 12 | 10 | 54 | 9 | 12 | 97 |
+| e3 | 8 | 6 | 60 | 8 | 12 | 94 |
+| zone | 0 | 18 | 19 | 0 | 1 | 38 |
+
+Summe 305 Zeilen.
