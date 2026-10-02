@@ -247,7 +247,10 @@ Verfahrenskette ist daher nicht immer k1.
 - Krumme Zahlen (Dezimal, Bruch, negativ, gemischte Einheiten)
   stehen auf den oberen Sprossen einer Kette, für alle Schüler und
   ohne Gymnasialmarke; Grundfall und Vorstufen bleiben glatt
-  (Beschluss 02.10.). Eine Mischsprosse mischt Fälle oder
+  (Beschluss 02.10.). Sparsam (Lehrer 02.10.): je Kette höchstens
+  eine Sprosse mit krummen Zahlen, am Ende vor Rückwärts-, Misch-
+  und Prüfungssprosse; das Blatt nimmt eine Aufgabe daraus, beim
+  Blatt „schwach“ keine, außer auf Zuruf. Eine Mischsprosse mischt Fälle oder
   Verfahren der Kette, ohne Überschrift oder Reihenfolge, die den
   Fall verrät; eine Rückwärtssprosse gibt Ergebnis oder
   Eigenschaft vor und fragt nach der Aufgabe.
