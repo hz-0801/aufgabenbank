@@ -1,0 +1,26 @@
+# zusammenbau v1.3: zusammenbau.py --zettel basis --nummer 16
+VORRAT 64 Typen, 640 Aufgaben, davon 100 auf Zettel 1–10 (v0.5) verbraucht; Vorrat erschöpft ab Zettel 36
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG BAS-Z16 – Kürzel BAS (Basisvorrat, fest), Rezept Z (Zettel, v0.6); Inhalt von Zettel 16
+HÖHE geschätzt 24.4 cm (Maß 24.5 cm), 17 Aufgaben (Ziel 16–18)
+AUSWAHL Nr. 1: brueche-dezimalzahlen-basis-k2-v6 – Bruchteil einer Größe berechnen (Jahrgänge 2, Variante 6, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 2: rationale-zahlen-basis-k3-v4 – Zahl zu Bedingung angeben (Jahrgänge 2, Variante 4, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 3: potenzen-wurzeln-basis-k1-v6 – Exponent einer Potenz bestimmen (Jahrgänge 2, Variante 6, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 4: potenzen-wurzeln-basis-k3-v8 – Zehnerpotenzschreibweise umwandeln (Jahrgänge 4, Variante 8, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 5: prozentrechnung-basis-k5-v2 – Wert nach prozentualer Erhöhung berechnen (Jahrgänge 1, Variante 2, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 6: einheiten-basis-k5-v3 – Zeiteinheiten umrechnen (Jahrgänge 3, Variante 3, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 7: lineare-gleichungen-basis-k1-v10 – Lineare Gleichung lösen (Jahrgänge 4, Variante 10, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 8: daten-basis-k1-v4 – Arithmetisches Mittel berechnen (Jahrgänge 3, Variante 4, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 9: potenzen-wurzeln-basis-k2-v2 – Wurzel eines Quadrats berechnen (Jahrgänge 1, Variante 2, Stufe 2, volle Breite)
+AUSWAHL Nr. 10: zuordnungen-basis-k1-v4 – Antiproportionale Zuordnung Dreisatz (Jahrgänge 1, Variante 4, Stufe 2, volle Breite)
+SATZ Nr. 11: 4 kurze Ankreuzoptionen in einer Zeile
+AUSWAHL Nr. 11: terme-basis-k2-v9 – Term zu Sachtext angeben (Jahrgänge 4, Variante 9, Stufe 2, volle Breite)
+SATZ Nr. 12: 3 kurze Ankreuzoptionen in einer Zeile
+AUSWAHL Nr. 12: winkel-dreiecke-basis-k1-v4 – Dreiecksungleichung anwenden (Jahrgänge 1, Variante 4, Stufe 2, volle Breite)
+AUSWAHL Nr. 13: winkel-dreiecke-basis-k5-v4 – Eigenschaft einer Figur zuordnen (Jahrgänge 3, Variante 4, Stufe 2, volle Breite)
+AUSWAHL Nr. 14: wahrscheinlichkeit-basis-k1-v2 – Ergebnismenge aufzählen (Jahrgänge 1, Variante 2, Stufe 2, volle Breite)
+AUSWAHL Nr. 15: wahrscheinlichkeit-basis-k2-v3 – Zufallsgerät zu Wahrscheinlichkeit entwerfen (Jahrgänge 3, Variante 3, Stufe 2, volle Breite)
+SATZ Nr. 16: 6 kurze Ankreuzoptionen in einer Zeile
+AUSWAHL Nr. 16: symmetrie-abbildungen-basis-k3-v3 – Symmetrieachsen bestimmen (Jahrgänge 2, Variante 3, Stufe 3, volle Breite)
+AUSWAHL Nr. 17: kreis-basis-k1-v2 – Kreissektor Anteil berechnen (Jahrgänge 1, Variante 2, Stufe 3, volle Breite)
+STRUKTUR 0 Fehler

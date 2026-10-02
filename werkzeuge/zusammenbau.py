@@ -16,6 +16,12 @@ Aufruf:
     python3 werkzeuge/zusammenbau.py <eintrag> --kompetenz <kette>
         --einheiten n [--niveau for|ebr] [--dicht] [--ohne <ids>]
 
+v1.3 (2026-10-02, Lehrer 02.10.): Rezept Zettel v0.6 – volle Seite (16–18
+Aufgaben, seitenfüllend nach zettel_seitenhoehe), kurze Aufgaben zweispaltig,
+leicht vor schwer, ohne Hilfsmittelangabe, ohne Marke an ausgedachten
+Aufgaben (Schalter ist_original: nur Jahreszahl), Schülerseite ohne Kennung,
+Namens- und Punktefeld; Plan v0.6 ab Zettel 11 ohne die Aufgaben von 1–10.
+
 v1.0 (2026-10-01, auftrag-lernblatt-v10.md, Befunde des Lehrers am TER-L4):
 Rezept L (Lernblatt); F, S und K unverändert, wo sie den Code teilen.
 - Blattfolge aus der Mappe („Blattfolge: 2, 3, 4, 1“); je Einheit erst die
@@ -121,7 +127,7 @@ from bisect import bisect_right
 from pathlib import Path
 
 WURZEL = Path(__file__).resolve().parent.parent
-VERSION = "v1.2"
+VERSION = "v1.3"
 
 # Befehle der Rahmendateien, die weder in STANDARD (bank-pruef.py) noch
 # in _bausteine.md stehen; jede Argumentzahl zulässig.
@@ -5666,8 +5672,11 @@ def main(argv=None):
     p.add_argument("eintrag", nargs="*",
                    help="Eintrag; mit --heft mehrere in Heftfolge")
     p.add_argument("--zettel", choices=["basis"],
-                   help="Rezept Z: Zettel mit zehn Basisaufgaben aus "
+                   help="Rezept Z: seitenfüllender Basiszettel aus "
                         "bank/_basis/ (Kennung BAS-Z<n>)")
+    p.add_argument("--zettel-messen", action="store_true",
+                   help="Rezept Z: Höhe jeder Basisaufgabe messen "
+                        "(xelatex) → bau/zettel/hoehen.csv")
     p.add_argument("--nummer", type=int,
                    help="Zettel: Nummer n (sonst die nächste freie aus "
                         "bau/register.csv)")
@@ -5715,6 +5724,8 @@ def main(argv=None):
                    help="Lernblatt: alle Sachaufgaben der Ketten (sonst je "
                         "Kette höchstens eine Teilaufgabe mit Sachkontext)")
     args = p.parse_args(argv)
+    if args.zettel_messen:
+        return zettel_messen(finde_vorlage(args.vorlage))
     if args.zettel:
         return main_zettel(args)
     if not args.eintrag:
@@ -6130,35 +6141,52 @@ def main_fokus_pruefung(args):
     return 1 if fehler else 0
 
 
-# --- Rezept Zettel (v0.5) ----------------------------------------------------
+# --- Rezept Zettel (v0.6) ----------------------------------------------------
 #
-# Beschluss des Lehrers vom 28.09.: Basisaufgaben (Teil A der P10, ohne
-# Rechner) werden getrennt geübt – am Stundenanfang ein Zettel mit zehn
-# kurzen Aufgaben, je Stunde ein neuer, ohne Wiederholung. Der Inhalt von
-# Zettel n hängt nur vom Vorrat (bank/_basis/) und von n ab: der Plan wird
-# von Zettel 1 bis n durchgerechnet.
+# Beschluss des Lehrers vom 28.09.: Basisaufgaben (Teil A der P10) werden
+# getrennt geübt – am Stundenanfang ein Zettel, je Stunde ein neuer, ohne
+# Wiederholung. v0.6 (Lehrer 02.10.): eine volle A4-Seite (Ziel 16–18
+# Aufgaben), kurze Aufgaben zweispaltig, keine Hilfsmittelangabe (Aufgabe 1
+# der P10 wird bis 2027 mit Taschenrechner und Formelsammlung geschrieben),
+# keine Marke an ausgedachten Aufgaben, Originale nur mit Jahreszahl, keine
+# Kennung auf der Schülerseite. Zettel 1–10 sind mit v0.5 gebaut (zehn
+# Aufgaben, bau/zettel/BAS-Z1..10); Plan v0.6 beginnt bei Zettel 11 mit dem
+# Vorrat ohne die dort verwendeten Aufgaben. Der Inhalt von Zettel n hängt
+# nur vom Vorrat, von diesen zehn bau.json und von n ab.
 
 BASIS = WURZEL / "bank" / "_basis"
-ZETTEL_ZAHL = 10          # Aufgaben je Zettel
+ZETTEL_V06_AB = 11        # erster Zettel nach Plan v0.6
+ZETTEL_ALT = range(1, ZETTEL_V06_AB)   # mit v0.5 gebaut, Aufgaben verbraucht
+ZETTEL_MIN = 16           # Ziel 16–18 Aufgaben je Zettel
+ZETTEL_MAX = 18
+ZETTEL_UNTER = 12         # weniger passen nicht mehr: Vorrat erschöpft
 JAHRGAENGE_ALLE = 13      # P10 2014–2026
 GROSS_HOECHSTENS = 2      # große Grafiken (ksys, Wertetabellen) je Zettel
 GROSS = re.compile(r"\\begin\{ksys\}|\\wertetabelle")
-SEITE_CM = 25.0           # geschätzte Höhe aller zehn Aufgaben höchstens
-ZEILE_CM = 1.45           # kleinste geschätzte Höhe einer Aufgabe
+SEITE_CM = 24.5           # Höhe aller Reihen höchstens (gemessen, Seite 1)
+GRAFIK_CM = 9.0           # davon Aufgaben mit Grafik höchstens (Platz für
+                          # kurze Aufgaben: Ziel 16–18 je Zettel)
+VOLL, HALB = 92, 42       # Zeichen je Zeile: volle Breite, halbe Spalte
+KURZ_ZEICHEN = 100        # kurze Aufgabe: ohne Grafik, Text bis hier
 
 
-def zettel_hoehe(z):
+def zettel_text(z):
+    """Aufgabentext ohne Formeln und Befehle (für Länge und Höhe)."""
+    t = re.sub(r"\\kreuz\{[^{}]*\}", "X" * 8, KENNUNG.sub("", z["aufgabe"]))
+    t = re.sub(r"\$[^$]*\$", "XXXX", t)
+    return re.sub(r"\\[A-Za-z]+", "", t)
+
+
+def zettel_hoehe(z, zeichen=VOLL):
     """Geschätzte Höhe einer Aufgabe auf dem Zettel in cm (geeicht an 41
     Probezetteln vom 28.09.: bis 25 cm blieb jeder auf einer Seite).
-    Text: Zeichen ohne Formeln und Befehle, 92 je volle Zeile, 52 neben
-    einer Grafik; Grafik nach Baustein; Text und Grafik nebeneinander
-    zählen einmal (das Höhere)."""
+    Text: Zeichen ohne Formeln und Befehle, `zeichen` je volle Zeile (92,
+    in der halben Spalte 42), 52 neben einer Grafik; Grafik nach Baustein;
+    Text und Grafik nebeneinander zählen einmal (das Höhere)."""
     g = z.get("grafik", "")
-    t = re.sub(r"\\kreuz\{[^{}]*\}", "X" * 8, z["aufgabe"])
-    t = re.sub(r"\$[^$]*\$", "XXXX", t)
-    t = re.sub(r"\\[A-Za-z]+", "", t)
+    t = zettel_text(z)
     unter = not g or "\\quad" in g or "\\wertetabelle" in g
-    zeilen = len(t) // (92 if unter else 52) + 1
+    zeilen = len(t) // (zeichen if unter else 52) + 1
     text = (zeilen * 0.5 + (0.6 if z.get("antwort") else 0)
             + (0.5 if "\\kreuz" in z["aufgabe"] else 0))
     if not g:
@@ -6178,7 +6206,34 @@ def zettel_hoehe(z):
     else:
         bild = 2.9
     return (text + bild if unter else max(text, bild)) + 0.45
-# Reihenfolge auf dem Zettel: nach Bereich wie im Basisteil der P10
+
+
+def zettel_kurz(z):
+    """Kurz = ohne Grafik, Text bis KURZ_ZEICHEN, Ankreuzoptionen zusammen
+    höchstens 40 Zeichen: steht in der halben Spalte."""
+    if z.get("grafik"):
+        return False
+    opt = re.findall(r"\\kreuz\{((?:[^{}]|\{[^{}]*\})*)\}", z["aufgabe"])
+    return (len(zettel_text(z)) <= KURZ_ZEICHEN
+            and sum(len(o) for o in opt) <= 40)
+
+
+def zettel_stufe(z):
+    """Leicht vor schwer (Lehrer 02.10.), soweit am Datensatz erkennbar:
+    0 kurz mit einer Antwort oder Ankreuzen, 1 kurz mit mehreren Feldern
+    (zwei Schritte), 2 längerer Text ohne Grafik, 3 mit Grafik."""
+    if zettel_kurz(z):
+        return 0 if z.get("antwort", "").count("__") <= 1 else 1
+    return 2 if not z.get("grafik") else 3
+
+
+def ist_original(z):
+    """Schalter für echte Originale (Feld ist_original: true im Vorrat):
+    sie tragen rechtsbündig nur die Jahreszahl des Originals. Ausgedachte
+    Aufgaben (Stand 02.10.: der ganze Vorrat) tragen keine Marke."""
+    return z.get("ist_original") is True
+
+
 ZETTEL_FOLGE = ["brueche-dezimalzahlen", "rationale-zahlen", "potenzen-wurzeln",
                 "prozentrechnung", "zinsrechnung", "einheiten", "zuordnungen",
                 "terme", "lineare-gleichungen", "quadratische-gleichungen",
@@ -6186,6 +6241,118 @@ ZETTEL_FOLGE = ["brueche-dezimalzahlen", "rationale-zahlen", "potenzen-wurzeln",
                 "symmetrie-abbildungen", "winkel-dreiecke", "flaechen", "kreis",
                 "koerper", "trigonometrie", "bruchrechnung", "daten",
                 "wahrscheinlichkeit"]
+
+
+def zettel_ordnen(zettel):
+    """Reihenfolge auf dem Zettel: Stufe (leicht vor schwer), dann Bereich
+    wie im Basisteil der P10 (ZETTEL_FOLGE), dann Kette."""
+    def folge(tz):
+        z = tz[1]
+        e = z["eintrag"]
+        return (zettel_stufe(z), ZETTEL_FOLGE.index(e) if e in ZETTEL_FOLGE
+                else 99, e, z["kette_nr"])
+    return sorted(zettel, key=folge)
+
+
+def zettel_reihen(zettel):
+    """Geordnete Aufgaben in Reihen: zwei kurze nebeneinander, sonst eine
+    über die volle Breite. Liste von Listen mit 1 oder 2 (typ, zeile)."""
+    reihen, i = [], 0
+    while i < len(zettel):
+        if (i + 1 < len(zettel) and zettel_kurz(zettel[i][1])
+                and zettel_kurz(zettel[i + 1][1])):
+            reihen.append([zettel[i], zettel[i + 1]])
+            i += 2
+        else:
+            reihen.append([zettel[i]])
+            i += 1
+    return reihen
+
+
+def zettel_seitenhoehe(zettel):
+    """Höhe des geordneten Zettels in cm: Summe der Reihen (zettel_reihe_cm,
+    je Reihe die höhere Spalte; gemessen, wo bau/zettel/hoehen.csv die
+    Aufgabe kennt, sonst geschätzt)."""
+    return sum(zettel_reihe_cm(r)
+               for r in zettel_reihen(zettel_ordnen(zettel)))
+
+
+HOEHEN = WURZEL / "bau" / "zettel" / "hoehen.csv"
+_HOEHEN = None
+ABSTAND_CM = 0.4          # Abstand der aufgabe-Umgebung je Reihe (2 × 5 pt + Rest)
+
+
+def zettel_gemessen():
+    """{id: (voll_cm, halb_cm)} aus bau/zettel/hoehen.csv (zettel_messen)."""
+    global _HOEHEN
+    if _HOEHEN is None:
+        _HOEHEN = {}
+        if HOEHEN.exists():
+            with open(HOEHEN, encoding="utf-8", newline="") as f:
+                for r in csv.DictReader(f, delimiter=";"):
+                    _HOEHEN[r["id"]] = (float(r["voll_cm"]),
+                                        float(r["halb_cm"] or 0))
+    return _HOEHEN
+
+
+def zettel_messen(vorlage):
+    """Misst jede Aufgabe des Vorrats so, wie zettel_satz sie setzt (\\small,
+    volle Breite; kurze auch in der halben Spalte, 0,485 der Breite) mit
+    xelatex und schreibt bau/zettel/hoehen.csv (id;voll_cm;halb_cm). Neu
+    messen, wenn sich der Vorrat ändert; fehlt eine id, nimmt der Plan die
+    Schätzung."""
+    import tempfile
+    typen, vorrat = lies_vorrat()
+    zeilen = [z for zz in vorrat.values() for z in zz]
+    still = lambda *a, **k: None
+    d = ["\\documentclass[11pt]{article}", "\\usepackage{mathblatt}",
+         "\\newsavebox{\\mbmess}", "\\begin{document}", "\\small"]
+    for z in zeilen:
+        satz = "\n".join(zettel_satz(1, z["kette"], z, still))
+        for art, breite in (("voll", "\\linewidth"),
+                            ("halb", "0.485\\linewidth")):
+            if art == "halb" and not zettel_kurz(z):
+                continue
+            d += ["\\setcounter{aufgabe}{0}",
+                  f"\\sbox{{\\mbmess}}{{\\begin{{minipage}}[t]{{{breite}}}"
+                  "\\raggedright", satz, "\\end{minipage}}",
+                  f"\\typeout{{HOEHE;{z['id']};{art};\\the\\dimexpr"
+                  "\\ht\\mbmess+\\dp\\mbmess\\relax}"]
+    d.append("\\end{document}")
+    with tempfile.TemporaryDirectory() as tmp:
+        shutil.copyfile(vorlage, Path(tmp) / "mathblatt.sty")
+        (Path(tmp) / "mess.tex").write_text("\n".join(d) + "\n",
+                                            encoding="utf-8")
+        subprocess.run(["xelatex", "-interaction=nonstopmode", "mess.tex"],
+                       cwd=tmp, stdout=subprocess.DEVNULL)
+        log = (Path(tmp) / "mess.log").read_text(encoding="utf-8",
+                                                 errors="replace")
+    werte = {}
+    for i, art, pt in re.findall(r"HOEHE;([^;\n]+);(voll|halb);([\d.]+)pt",
+                                 log):
+        werte.setdefault(i, {})[art] = float(pt) / 72.27 * 2.54
+    with open(HOEHEN, "w", encoding="utf-8", newline="\n") as f:
+        f.write("id;voll_cm;halb_cm\n")
+        for z in zeilen:
+            w = werte.get(z["id"], {})
+            if "voll" in w:
+                f.write(f"{z['id']};{w['voll']:.2f};"
+                        + (f"{w['halb']:.2f}" if "halb" in w else "") + "\n")
+    print(f"HÖHEN {len(werte)} von {len(zeilen)} Aufgaben gemessen → "
+          f"{HOEHEN.relative_to(WURZEL)}")
+    return 0 if len(werte) == len(zeilen) else 1
+
+
+def zettel_reihe_cm(reihe):
+    """Höhe einer Reihe in cm: gemessen (hoehen.csv), sonst geschätzt."""
+    m = zettel_gemessen()
+    if all(z["id"] in m for _, z in reihe):
+        if len(reihe) == 2:
+            return max(m[z["id"]][1] for _, z in reihe) + ABSTAND_CM
+        return m[reihe[0][1]["id"]][0] + ABSTAND_CM
+    if len(reihe) == 2:
+        return max(zettel_hoehe(z, HALB) for _, z in reihe)
+    return zettel_hoehe(reihe[0][1])
 
 
 def lies_vorrat():
@@ -6205,28 +6372,41 @@ def lies_vorrat():
     return typen, vorrat
 
 
+def zettel_verbraucht():
+    """ids der Aufgaben auf den mit v0.5 gebauten Zetteln 1–10 (bau.json)."""
+    ids = set()
+    for n in ZETTEL_ALT:
+        p = WURZEL / "bau" / "zettel" / f"BAS-Z{n}" / "bau.json"
+        if p.exists():
+            ids |= {a["id"] for a in
+                    json.loads(p.read_text(encoding="utf-8"))["aufgaben"]}
+    return ids
+
+
 def zettel_plan(typen, vorrat, bis):
-    """[[(typ, zeile)] je Zettel 1..bis] und die Nummer des ersten Zettels,
+    """[[(typ, zeile)] je Zettel 11..bis] und die Nummer des ersten Zettels,
     für den der Vorrat nicht mehr reicht (None, wenn er bis dahin reicht).
 
-    Gewicht eines Typs = Zahl der Jahrgänge (typen.csv). Typen, die in
-    allen 13 Jahrgängen vorkommen, stehen auf jedem Zettel; die übrigen
-    Plätze gehen nach Stride-Verfahren im Wechsel: jeder Typ hat einen
-    Stand, gewählt werden die kleinsten Stände (bei Gleichstand das größere
+    Vorrat: ohne die Aufgaben der Zettel 1–10 (v0.5), Varianten je Typ in
+    ihrer Folge. Gewicht eines Typs = Zahl der Jahrgänge (typen.csv). Typen,
+    die in allen 13 Jahrgängen vorkommen, stehen auf jedem Zettel; die
+    übrigen Plätze gehen nach Stride-Verfahren: jeder Typ hat einen Stand,
+    gewählt werden die kleinsten Stände (bei Gleichstand das größere
     Gewicht, dann die Folge in typen.csv), nach der Wahl steigt der Stand
-    um 1/Gewicht. So kommt ein Typ mit neun Jahrgängen neunmal so oft wie
-    einer mit einem. Startstand: die Typen gleichen Gewichts w (Anzahl m,
-    i-ter in typen.csv) beginnen gestaffelt bei (i + 0,5) / (m · w); so
-    mischen sich häufige und seltene Typen von Zettel 1 an, statt dass die
-    seltenen alle vorn oder alle hinten stehen. Je Typ höchstens eine Aufgabe je Zettel; der
-    k-te Einsatz eines Typs nimmt Variante k, keine Aufgabe zweimal.
-    Höchstens zwei große Grafiken (Koordinatensystem, Wertetabellen) je
-    Zettel und geschätzte Höhe höchstens SEITE_CM, damit er auf eine Seite
-    passt: ein Typ, der nicht mehr passt, wartet auf den nächsten Zettel
-    (sein Stand bleibt, er kommt dann zuerst). Geht das gegen Ende des
-    Vorrats nicht mehr auf, wird ohne Maß gewählt (die log nennt die
-    geschätzte Höhe); erschöpft ist der Vorrat erst, wenn weniger als zehn
-    Typen übrig sind."""
+    um 1/Gewicht. Startstand gestaffelt: die Typen gleichen Gewichts w
+    (Anzahl m, i-ter) beginnen bei (i + 0,5) / (m · w). Je Typ höchstens
+    eine Aufgabe je Zettel; jede Aufgabe höchstens einmal.
+    Seitenfüllend: in Standfolge wird genommen, was passt – höchstens
+    ZETTEL_MAX Aufgaben, höchstens zwei große Grafiken, Aufgaben mit Grafik
+    zusammen höchstens GRAFIK_CM, Höhe des
+    zweispaltig gesetzten Zettels (zettel_seitenhoehe) höchstens SEITE_CM;
+    ein Typ, der nicht passt, wartet (sein Stand bleibt). Erschöpft ist
+    der Vorrat, wenn weniger als ZETTEL_MIN Typen übrig sind oder weniger
+    als ZETTEL_UNTER Aufgaben auf die Seite passen."""
+    weg = zettel_verbraucht()
+    rest_vorrat = {t: [z for z in zz if z["id"] not in weg]
+                   for t, zz in vorrat.items()}
+    typen = [t for t in typen if rest_vorrat.get(t["typ"])]
     gleich = {}
     for t in typen:
         gleich.setdefault(t["jahrgaenge"], []).append(t["typ"])
@@ -6238,53 +6418,64 @@ def zettel_plan(typen, vorrat, bis):
     rang = {t["typ"]: i for i, t in enumerate(typen)}
     gewicht = {t["typ"]: t["jahrgaenge"] for t in typen}
     plan = []
-    for n in range(1, bis + 1):
-        frei = [t for t in stand if genutzt[t] < len(vorrat[t])]
-        if len(frei) < ZETTEL_ZAHL:
+    for n in range(ZETTEL_V06_AB, bis + 1):
+        frei = [t for t in stand if genutzt[t] < len(rest_vorrat[t])]
+        if len(frei) < ZETTEL_MIN:
             return plan, n
         pflicht = [t for t in frei if gewicht[t] >= JAHRGAENGE_ALLE]
         rest = sorted((t for t in frei if t not in pflicht),
                       key=lambda t: (stand[t], -gewicht[t], rang[t]))
-        for streng in (True, False):
-            wahl, gross, hoehe = [], 0, 0.0
-            for t in pflicht + rest:
-                z = vorrat[t][genutzt[t]]
-                g = bool(GROSS.search(z.get("grafik", "")))
-                h = zettel_hoehe(z)
-                # Platz für die noch offenen Plätze freihalten (je ZEILE_CM)
-                offen = ZETTEL_ZAHL - len(wahl) - 1
-                if len(wahl) == ZETTEL_ZAHL or (streng and t not in pflicht
-                        and ((g and gross >= GROSS_HOECHSTENS)
-                             or hoehe + h + offen * ZEILE_CM > SEITE_CM)):
-                    continue
-                wahl.append(t)
-                gross += g
-                hoehe += h
-            if len(wahl) == ZETTEL_ZAHL:
+        wahl, gross, bild = [], 0, 0.0
+        for t in pflicht + rest:
+            if len(wahl) == ZETTEL_MAX:
                 break
-        # ohne Maß (streng False) nur, wenn der Rest des Vorrats nicht anders
-        # passt; die log des Zettels nennt dann die geschätzte Höhe
-        zettel = []
-        for t in wahl:
-            zettel.append((t, vorrat[t][genutzt[t]]))
+            z = rest_vorrat[t][genutzt[t]]
+            g = bool(GROSS.search(z.get("grafik", "")))
+            b = zettel_reihe_cm([(t, z)]) if z.get("grafik") else 0.0
+            if t not in pflicht and (
+                    (g and gross >= GROSS_HOECHSTENS)
+                    or bild + b > GRAFIK_CM
+                    or zettel_seitenhoehe(wahl + [(t, z)]) > SEITE_CM):
+                continue
+            wahl.append((t, z))
+            gross += g
+            bild += b
+        if len(wahl) < ZETTEL_UNTER:
+            return plan, n
+        for t, _ in wahl:
             genutzt[t] += 1
             stand[t] += 1 / gewicht[t]
-        plan.append(zettel)
+        plan.append(wahl)
     return plan, None
 
 
 def zettel_erschoepft(typen, vorrat):
     """Nummer des ersten Zettels, für den der Vorrat nicht reicht."""
     gesamt = sum(len(v) for v in vorrat.values())
-    _, ab = zettel_plan(typen, vorrat, gesamt // ZETTEL_ZAHL + 2)
+    _, ab = zettel_plan(typen, vorrat,
+                        ZETTEL_V06_AB + gesamt // ZETTEL_MIN + 2)
     return ab
 
 
 def zettel_satz(nr, typ, z, log):
-    """Eine Hauptnummer des Zettels: Text (mit Feld und Kennung) links,
-    Grafik rechts; eine Reihe von Figuren (Grafik mit \\quad) darunter."""
+    """Eine Hauptnummer des Zettels: Text mit Feld, ohne Marke (ausgedacht)
+    oder mit der Jahreszahl rechtsbündig (Original); Grafik rechts, eine
+    Reihe von Figuren (Grafik mit \\quad) darunter."""
     feld = "" if feld_im_grafik(z) else antwortfeld(z.get("antwort", ""))
-    aufgabe, _ = mit_kennung(z["aufgabe"], bool(feld), z)
+    roh = z["aufgabe"]
+    m = KENNUNG.search(roh)
+    marke = (" \\hfill " + str((z.get("original") or {}).get("jahr", ""))
+             if ist_original(z) else "")
+    if m:
+        vor, nach = roh[:m.start()], roh[m.end():]
+        aufgabe = vor + marke + nach
+        if marke and not nach.strip() and feld:
+            aufgabe += " \\\\"
+    else:
+        aufgabe = roh + marke + (" \\\\" if marke and feld else "")
+    # Lücke „__“ im Aufgabentext (außerhalb von $…$) als Schreiblinie
+    aufgabe = re.sub(r"(?<![\\\w])__(?!\w)", r"\\underline{\\hspace{1cm}}",
+                     aufgabe)
     # kurze Ankreuzoptionen in einer Zeile (Platz: ein Zettel ist eine Seite)
     opt = re.findall(r"\\kreuz\{((?:[^{}]|\{[^{}]*\})*)\}", aufgabe)
     if len(opt) > 1 and sum(len(o) for o in opt) <= 70:
@@ -6294,12 +6485,11 @@ def zettel_satz(nr, typ, z, log):
     text = aufgabe + (f" {feld}" if feld else "")
     grafik = z.get("grafik", "")
     if ",ablesen]" in grafik:
-        # Ablesegrafik (Karo 6 mm, 6 cm hoch) in der kleinen Form (Karo
-        # 3,5 mm): zwei Koordinatensysteme passen sonst nicht auf eine Seite
         grafik = grafik.replace(",ablesen]", ",klein]")
         log(f"SATZ Nr. {nr}: ksys ablesen → klein (Karo 3,5 mm)")
     kopf = [f"% {nr}: {typ} – {z['id']} (Original "
-            f"{(z.get('original') or {}).get('id')})"]
+            f"{(z.get('original') or {}).get('id')}"
+            + ("" if ist_original(z) else ", ausgedacht: keine Marke") + ")"]
     if not grafik:
         return kopf + [f"\\begin{{aufgabe}}{{{text}}}", "\\end{aufgabe}"]
     if "\\quad" in grafik or "\\wertetabelle" in grafik:
@@ -6315,7 +6505,7 @@ def zettel_satz(nr, typ, z, log):
 
 
 def main_zettel(args):
-    """Rezept Z (v0.5): Zettel mit zehn Basisaufgaben, BAS-Z<n>."""
+    """Rezept Z (v0.6): seitenfüllender Basiszettel, BAS-Z<n>."""
     log = Log()
     if args.eintrag or args.heft or args.fokus or args.schwach:
         sys.exit("--zettel nimmt keinen Eintrag und kein anderes Rezept")
@@ -6325,6 +6515,10 @@ def main_zettel(args):
     kuerzel, rezept = "BAS", "Z"
     register = lies_register()
     nummer = args.nummer or naechste_nummer(kuerzel, rezept, register)
+    if nummer < ZETTEL_V06_AB:
+        sys.exit(f"Zettel 1–{ZETTEL_V06_AB - 1} sind mit Rezept Z v0.5 "
+                 "gebaut (bau/zettel/); Plan v0.6 beginnt bei Zettel "
+                 f"{ZETTEL_V06_AB}")
     kennung = f"{kuerzel}-{rezept}{0 if args.ohne_register else nummer}"
     aufruf = ["zusammenbau.py", "--zettel", args.zettel]
     if args.nummer:
@@ -6333,8 +6527,10 @@ def main_zettel(args):
         aufruf.append("--ohne-register")
     log(f"# zusammenbau {VERSION}: " + " ".join(aufruf))
     ab = zettel_erschoepft(typen, vorrat)
+    weg = zettel_verbraucht()
     log(f"VORRAT {len(typen)} Typen, {sum(len(v) for v in vorrat.values())} "
-        f"Aufgaben; Vorrat erschöpft ab Zettel {ab}")
+        f"Aufgaben, davon {len(weg)} auf Zettel 1–{ZETTEL_V06_AB - 1} (v0.5) "
+        f"verbraucht; Vorrat erschöpft ab Zettel {ab}")
     if ab is not None and nummer >= ab:
         print(f"Vorrat erschöpft ab Zettel {ab} – Zettel {nummer} nicht gebaut")
         return 1
@@ -6346,44 +6542,63 @@ def main_zettel(args):
     version = version.split(" (", 1)[0]
     log(f"VORLAGE mathblatt.sty: {version}")
     log(f"KENNUNG {kennung} – Kürzel BAS (Basisvorrat, fest), Rezept Z "
-        f"(Zettel); Inhalt von Zettel {nummer}"
+        f"(Zettel, v0.6); Inhalt von Zettel {nummer}"
         + (" (Probe ohne Register)" if args.ohne_register else
            "" if args.nummer else " = nächste freie Nummer in bau/register.csv"))
     plan, _ = zettel_plan(typen, vorrat, nummer)
-    zettel = plan[-1]
+    zettel = zettel_ordnen(plan[-1])
     info = {t["typ"]: t for t in typen}
-
-    def folge(tz):
-        e = tz[1]["eintrag"]
-        return (ZETTEL_FOLGE.index(e) if e in ZETTEL_FOLGE else 99, e,
-                tz[1]["kette_nr"])
-    zettel = sorted(zettel, key=folge)
-    geschaetzt = sum(zettel_hoehe(z) for _, z in zettel)
-    log(f"HÖHE geschätzt {geschaetzt:.1f} cm (Maß {SEITE_CM} cm)"
-        + (" – ÜBER DEM MASS, Render prüfen" if geschaetzt > SEITE_CM else ""))
+    zahl = len(zettel)
+    geschaetzt = zettel_seitenhoehe(zettel)
+    log(f"HÖHE geschätzt {geschaetzt:.1f} cm (Maß {SEITE_CM} cm), "
+        f"{zahl} Aufgaben (Ziel {ZETTEL_MIN}–{ZETTEL_MAX})"
+        + ("" if zahl >= ZETTEL_MIN else " – UNTER DEM ZIEL"))
     a = ["\\documentclass[11pt]{article}", "\\usepackage{mathblatt}",
          "\\begin{document}",
-         f"\\blattkopf*{{Basisaufgaben}}{{{kennung}}}"
-         f"{{Basisaufgaben · Zettel · {kennung}}}",
-         f"\\einheitenkopf[][Zettel {nummer}]{{Basisaufgaben · Zettel "
-         f"{nummer}}}",
-         "\\zweigzeile{ohne Taschenrechner · je Aufgabe 1 Punkt · Lösungen "
-         "auf der Rückseite}",
-         "% \\small: zehn Aufgaben mit bis zu zwei Koordinatensystemen auf "
-         "einer Seite (Render 28.09.)", "\\small", ""]
-    l = ["\\begleitteil"]
+         "% Kopfzeile Seite 1 ohne Kennung; die Rückseite (Lösungen, für "
+         "den Lehrer) bekommt sie nach \\begleitteil",
+         "\\blattkopf{Mathematik}{Basisaufgaben}",
+         f"\\einheitenkopf[][Zettel {nummer}]{{Basisaufgaben · Zettel {nummer}}}",
+         "\\zweigzeile{je Aufgabe 1 Punkt · Lösungen auf der Rückseite}",
+         "\\par\\vspace{2pt}\\noindent Name \\underline{\\hspace{7cm}}"
+         "\\hfill Datum \\underline{\\hspace{3cm}}\\hfill Punkte "
+         f"\\underline{{\\hspace{{1.2cm}}}} / {zahl}\\par\\vspace{{6pt}}",
+         "% \\small: volle Seite, kurze Aufgaben zweispaltig (v0.6)",
+         "\\small", ""]
+    l = ["\\begleitteil",
+         f"\\blattkopf{{Basisaufgaben · Zettel {nummer}}}{{{kennung} · "
+         "Lösungen}"]
     aufgaben = []
-    for i, (typ, z) in enumerate(zettel, 1):
-        a += zettel_satz(i, typ, z, log) + [""]
-        l.append(f"\\erg{{{i}}}{{{z['loesung']}}}")
-        t = info[typ]
-        log(f"AUSWAHL Nr. {i}: {z['id']} – {typ} (Jahrgänge {t['jahrgaenge']}, "
-            f"Variante {z['variante']})")
-        aufgaben.append({"aufgabe": f"A{i}", "hauptnummer": i,
-                         "id": z["id"], "kette": typ,
-                         "jahrgaenge": t["jahrgaenge"],
-                         "variante": z["variante"],
-                         "original": (z.get("original") or {}).get("id")})
+    nr = 0
+    for reihe in zettel_reihen(zettel):
+        saetze = []
+        for typ, z in reihe:
+            nr += 1
+            saetze.append(zettel_satz(nr, typ, z, log))
+            t = info[typ]
+            jahr = (z.get("original") or {}).get("jahr", "–")
+            l.append(f"\\erg{{{nr}}}{{{z['loesung']} \\hfill "
+                     f"{{\\footnotesize\\textit{{{typ} · {jahr}}}}}}}")
+            log(f"AUSWAHL Nr. {nr}: {z['id']} – {typ} (Jahrgänge "
+                f"{t['jahrgaenge']}, Variante {z['variante']}, Stufe "
+                f"{zettel_stufe(z)}, {'halbe Spalte' if len(reihe) == 2 else 'volle Breite'})")
+            aufgaben.append({"aufgabe": f"A{nr}", "hauptnummer": nr,
+                             "id": z["id"], "kette": typ,
+                             "jahrgaenge": t["jahrgaenge"],
+                             "variante": z["variante"],
+                             "stufe": zettel_stufe(z),
+                             "spalte": "halb" if len(reihe) == 2 else "voll",
+                             "ist_original": ist_original(z),
+                             "original": (z.get("original") or {}).get("id")})
+        if len(saetze) == 2:
+            a += (["\\noindent\\begin{minipage}[t]{0.485\\linewidth}"
+                   "\\raggedright"]
+                  + saetze[0] + ["\\end{minipage}\\hfill"
+                                 "\\begin{minipage}[t]{0.485\\linewidth}"
+                                 "\\raggedright"]
+                  + saetze[1] + ["\\end{minipage}\\par", ""])
+        else:
+            a += saetze[0] + [""]
     texte = {f"{kennung}.tex": "\n".join(a + l + ["\\end{document}"]) + "\n"}
     sig = BP.lade_bausteine(WURZEL / "mappen" / "_bausteine.md")
     fehler = pruefe_struktur(texte, sig)
@@ -6410,9 +6625,11 @@ def main_zettel(args):
     bauzettel = {
         "kennung": kennung, "datum": datum, "eintraege": ["_basis"],
         "rezept": rezept, "rezept_name": REZEPT[rezept],
+        "rezept_version": "Z v0.6",
         "bestellung": bestellung, "bank_commit": commit,
         "zusammenbau": VERSION, "vorlage": version, "pfad": pfad,
         "kuerzel_quelle": "fest (Basisvorrat)", "strukturfehler": len(fehler),
+        "hoehe_geschaetzt_cm": round(geschaetzt, 1),
         "vorrat_erschoepft_ab": ab, "aufgaben": aufgaben}
     (ziel / "bau.json").write_text(
         json.dumps(bauzettel, ensure_ascii=False, indent=1) + "\n",
@@ -6426,14 +6643,13 @@ def main_zettel(args):
             "vorlage": version, "pfad": pfad})
         print(f"REGISTER {kennung} an bau/register.csv angehängt")
     print(f"KENNUNG {kennung}")
-    print(f"{len(texte)} Quelltext nach {ziel}; Typen: "
-          + "; ".join(t for t, _ in zettel))
+    print(f"{len(texte)} Quelltext nach {ziel}; {zahl} Aufgaben, Höhe "
+          f"geschätzt {geschaetzt:.1f} cm")
     print(f"Vorrat erschöpft ab Zettel {ab}")
     print(f"Strukturprüfung {len(fehler)} Fehler")
     for name, zl, meldung in fehler:
         print(f"FEHLER {name}:{zl}: {meldung}")
     return 1 if fehler else 0
-
 
 if __name__ == "__main__":
     sys.exit(main())

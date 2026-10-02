@@ -1,0 +1,29 @@
+# zusammenbau v1.3: zusammenbau.py --zettel basis --nummer 14
+VORRAT 64 Typen, 640 Aufgaben, davon 100 auf Zettel 1–10 (v0.5) verbraucht; Vorrat erschöpft ab Zettel 36
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG BAS-Z14 – Kürzel BAS (Basisvorrat, fest), Rezept Z (Zettel, v0.6); Inhalt von Zettel 14
+HÖHE geschätzt 24.3 cm (Maß 24.5 cm), 18 Aufgaben (Ziel 16–18)
+AUSWAHL Nr. 1: brueche-dezimalzahlen-basis-k2-v5 – Bruchteil einer Größe berechnen (Jahrgänge 2, Variante 5, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 2: rationale-zahlen-basis-k1-v10 – Termwert berechnen (Jahrgänge 5, Variante 10, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 3: potenzen-wurzeln-basis-k1-v5 – Exponent einer Potenz bestimmen (Jahrgänge 2, Variante 5, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 4: prozentrechnung-basis-k1-v4 – Grundwert berechnen (Jahrgänge 2, Variante 4, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 5: prozentrechnung-basis-k4-v10 – Prozentwert berechnen (Jahrgänge 5, Variante 10, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 6: einheiten-basis-k5-v2 – Zeiteinheiten umrechnen (Jahrgänge 3, Variante 2, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 7: lineare-gleichungen-basis-k1-v8 – Lineare Gleichung lösen (Jahrgänge 4, Variante 8, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 8: bruchrechnung-basis-k1-v5 – Wahrscheinlichkeit einstufig (Jahrgänge 3, Variante 5, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 9: daten-basis-k1-v3 – Arithmetisches Mittel berechnen (Jahrgänge 3, Variante 3, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 10: daten-basis-k3-v2 – Median bestimmen (Jahrgänge 2, Variante 2, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 11: daten-basis-k4-v1 – Spannweite berechnen (Jahrgänge 1, Variante 1, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 12: wahrscheinlichkeit-basis-k2-v2 – Zufallsgerät zu Wahrscheinlichkeit entwerfen (Jahrgänge 3, Variante 2, Stufe 0, halbe Spalte)
+SATZ Nr. 13: 4 kurze Ankreuzoptionen in einer Zeile
+AUSWAHL Nr. 13: terme-basis-k2-v8 – Term zu Sachtext angeben (Jahrgänge 4, Variante 8, Stufe 2, volle Breite)
+AUSWAHL Nr. 14: quadratische-funktionen-basis-k4-v1 – Scheitelpunktform aufstellen (Jahrgänge 1, Variante 1, Stufe 2, volle Breite)
+AUSWAHL Nr. 15: flaechen-basis-k1-v2 – Rechteckseite aus Umfang berechnen (Jahrgänge 1, Variante 2, Stufe 2, volle Breite)
+SATZ Nr. 16: 3 kurze Ankreuzoptionen in einer Zeile
+AUSWAHL Nr. 16: pythagoras-basis-k2-v1 – Satz des Pythagoras formulieren (Jahrgänge 1, Variante 1, Stufe 2, volle Breite)
+SATZ Nr. 17: 4 kurze Ankreuzoptionen in einer Zeile
+SATZ Nr. 17: ksys ablesen → klein (Karo 3,5 mm)
+AUSWAHL Nr. 17: lineare-funktionen-basis-k1-v2 – Graph einer linearen Funktion erkennen (Jahrgänge 1, Variante 2, Stufe 3, volle Breite)
+SATZ Nr. 18: 4 kurze Ankreuzoptionen in einer Zeile
+AUSWAHL Nr. 18: flaechen-basis-k4-v2 – Term zu Figur angeben (Jahrgänge 6, Variante 2, Stufe 3, volle Breite)
+STRUKTUR 0 Fehler

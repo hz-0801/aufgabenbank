@@ -1,0 +1,27 @@
+# zusammenbau v1.3: zusammenbau.py --zettel basis --nummer 20
+VORRAT 64 Typen, 640 Aufgaben, davon 100 auf Zettel 1–10 (v0.5) verbraucht; Vorrat erschöpft ab Zettel 36
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG BAS-Z20 – Kürzel BAS (Basisvorrat, fest), Rezept Z (Zettel, v0.6); Inhalt von Zettel 20
+HÖHE geschätzt 23.9 cm (Maß 24.5 cm), 17 Aufgaben (Ziel 16–18)
+AUSWAHL Nr. 1: prozentrechnung-basis-k5-v3 – Wert nach prozentualer Erhöhung berechnen (Jahrgänge 1, Variante 3, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 2: einheiten-basis-k1-v3 – Uhrzeit aus Startzeit und Dauer berechnen (Jahrgänge 1, Variante 3, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 3: einheiten-basis-k2-v6 – Größen vergleichen (Jahrgänge 3, Variante 6, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 4: einheiten-basis-k5-v6 – Zeiteinheiten umrechnen (Jahrgänge 3, Variante 6, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 5: zuordnungen-basis-k2-v6 – Proportionale Zuordnung Dreisatz (Jahrgänge 3, Variante 6, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 6: lineare-gleichungen-basis-k1-v13 – Lineare Gleichung lösen (Jahrgänge 4, Variante 13, Stufe 0, halbe Spalte)
+SATZ Nr. 7: 4 kurze Ankreuzoptionen in einer Zeile
+AUSWAHL Nr. 7: quadratische-gleichungen-basis-k1-v10 – Lösung durch Einsetzen prüfen (Jahrgänge 3, Variante 10, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 8: flaechen-basis-k2-v4 – Quadratseite aus Fläche berechnen (Jahrgänge 2, Variante 4, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 9: flaechen-basis-k5-v2 – Umfang Rechteck berechnen (Jahrgänge 1, Variante 2, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 10: koerper-basis-k3-v3 – Volumen Würfel berechnen (Jahrgänge 1, Variante 3, Stufe 0, halbe Spalte)
+SATZ Nr. 11: 3 kurze Ankreuzoptionen in einer Zeile
+AUSWAHL Nr. 11: rationale-zahlen-basis-k2-v3 – Vorzeichenregel anwenden (Jahrgänge 1, Variante 3, Stufe 2, volle Breite)
+AUSWAHL Nr. 12: potenzen-wurzeln-basis-k2-v3 – Wurzel eines Quadrats berechnen (Jahrgänge 1, Variante 3, Stufe 2, volle Breite)
+SATZ Nr. 13: 4 kurze Ankreuzoptionen in einer Zeile
+AUSWAHL Nr. 13: prozentrechnung-basis-k2-v6 – Prozent und Anteil umwandeln (Jahrgänge 2, Variante 6, Stufe 2, volle Breite)
+AUSWAHL Nr. 14: winkel-dreiecke-basis-k5-v6 – Eigenschaft einer Figur zuordnen (Jahrgänge 3, Variante 6, Stufe 2, volle Breite)
+AUSWAHL Nr. 15: bruchrechnung-basis-k1-v9 – Wahrscheinlichkeit einstufig (Jahrgänge 3, Variante 9, Stufe 2, volle Breite)
+AUSWAHL Nr. 16: winkel-dreiecke-basis-k6-v1 – Winkel über Scheitel- oder Nebenwinkel bestimmen (Jahrgänge 2, Variante 1, Stufe 3, volle Breite)
+SATZ Nr. 17: 4 kurze Ankreuzoptionen in einer Zeile
+AUSWAHL Nr. 17: flaechen-basis-k4-v3 – Term zu Figur angeben (Jahrgänge 6, Variante 3, Stufe 3, volle Breite)
+STRUKTUR 0 Fehler

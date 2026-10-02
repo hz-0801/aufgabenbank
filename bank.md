@@ -376,8 +376,12 @@ jedes Blatt am Grundfall seiner Einheit beginnt; Prüfstein terme
 ## Basisvorrat
 
 bank/_basis/ (seit 28.09.) hält den Vorrat für die Basiszettel:
-Basisaufgaben (Teil A der P10, ohne Rechner) werden getrennt geübt,
-am Stundenanfang ein Zettel mit zehn kurzen Aufgaben. Ein Basis-Typ
+Basisaufgaben (Teil A der P10) werden getrennt geübt, am
+Stundenanfang ein Zettel. Hilfsmittel: Aufgabe 1 der P10 wird bis 2027
+mit Taschenrechner und Formelsammlung geschrieben (msa/msa-vorgaben.md
+in mathe-nachhilfe; „ohne Rechner“ bis 02.10. war falsch); ab 2028
+kommt ein hilfsmittelfreier Teil (10 BE) dazu – dafür später eine
+eigene Zettelsorte. Ein Basis-Typ
 ist seit 02.10.2026 jeder Typ des ganzen Basisteils der P10
 (msa/msa-katalog-basis.csv, Spalte typ: 62 Typen) und dazu der Typ
 jedes Basisteil-Originals, das in der Bank als Prüfungshöhe steht (zwei
@@ -394,9 +398,13 @@ Verfremdung, keine Aufgabe doppelt). Die Aufgaben stehen in
 bank/_basis/vorrat.py, das die jsonl schreibt; geprüft mit
 `werkzeuge/bank-pruef.py _basis` (v0.6, Menge 10 je Kette als
 Warnung). Das Zettel-Rezept (`zusammenbau.py --zettel basis`,
-Kennung BAS-Z<n>) zieht je Zettel zehn verschiedene Typen, nach
-Jahrgängen gewichtet, ohne eine Aufgabe zweimal zu nehmen, bis der
-Vorrat erschöpft ist (werkzeuge/zusammenbau.md, „Rezept Zettel“).
+Kennung BAS-Z<n>, v0.6 seit 02.10.) füllt je Zettel eine A4-Seite
+mit 16–18 verschiedenen Typen (kurze zweispaltig, leicht vor schwer,
+ohne Hilfsmittelangabe, ausgedachte Aufgaben ohne Marke, Originale nur
+mit Jahreszahl), nach Jahrgängen gewichtet, ohne eine Aufgabe zweimal
+zu nehmen, bis der Vorrat erschöpft ist; Zettel 1–10 (v0.5, zehn
+Aufgaben) bleiben, v0.6 beginnt bei Zettel 11 (werkzeuge/zusammenbau.md,
+„Rezept Zettel“).
 
 ## Punkte
 

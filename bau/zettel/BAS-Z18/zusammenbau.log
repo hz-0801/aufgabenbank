@@ -1,0 +1,27 @@
+# zusammenbau v1.3: zusammenbau.py --zettel basis --nummer 18
+VORRAT 64 Typen, 640 Aufgaben, davon 100 auf Zettel 1–10 (v0.5) verbraucht; Vorrat erschöpft ab Zettel 36
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG BAS-Z18 – Kürzel BAS (Basisvorrat, fest), Rezept Z (Zettel, v0.6); Inhalt von Zettel 18
+HÖHE geschätzt 24.2 cm (Maß 24.5 cm), 18 Aufgaben (Ziel 16–18)
+AUSWAHL Nr. 1: brueche-dezimalzahlen-basis-k2-v7 – Bruchteil einer Größe berechnen (Jahrgänge 2, Variante 7, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 2: brueche-dezimalzahlen-basis-k3-v3 – Mitte zweier Zahlen bestimmen (Jahrgänge 1, Variante 3, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 3: rationale-zahlen-basis-k3-v5 – Zahl zu Bedingung angeben (Jahrgänge 2, Variante 5, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 4: potenzen-wurzeln-basis-k3-v10 – Zehnerpotenzschreibweise umwandeln (Jahrgänge 4, Variante 10, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 5: prozentrechnung-basis-k3-v3 – Prozentsatz berechnen (Jahrgänge 1, Variante 3, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 6: einheiten-basis-k2-v5 – Größen vergleichen (Jahrgänge 3, Variante 5, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 7: zuordnungen-basis-k2-v5 – Proportionale Zuordnung Dreisatz (Jahrgänge 3, Variante 5, Stufe 0, halbe Spalte)
+SATZ Nr. 8: 4 kurze Ankreuzoptionen in einer Zeile
+AUSWAHL Nr. 8: quadratische-gleichungen-basis-k1-v9 – Lösung durch Einsetzen prüfen (Jahrgänge 3, Variante 9, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 9: flaechen-basis-k3-v2 – Rechteckseite aus Fläche berechnen (Jahrgänge 1, Variante 2, Stufe 0, volle Breite)
+AUSWAHL Nr. 10: einheiten-basis-k3-v2 – Portionen aus Gesamtmenge berechnen (Jahrgänge 1, Variante 2, Stufe 2, volle Breite)
+SATZ Nr. 11: 3 kurze Ankreuzoptionen in einer Zeile
+AUSWAHL Nr. 11: lineare-funktionen-basis-k3-v3 – Punktprobe durchführen (Jahrgänge 1, Variante 3, Stufe 2, volle Breite)
+SATZ Nr. 12: 4 kurze Ankreuzoptionen in einer Zeile
+AUSWAHL Nr. 12: symmetrie-abbildungen-basis-k2-v3 – Lage eines Punktes zu den Achsen erkennen (Jahrgänge 1, Variante 3, Stufe 2, volle Breite)
+AUSWAHL Nr. 13: winkel-dreiecke-basis-k5-v5 – Eigenschaft einer Figur zuordnen (Jahrgänge 3, Variante 5, Stufe 2, volle Breite)
+AUSWAHL Nr. 14: koerper-basis-k2-v3 – Kantenzahl eines Körpers angeben (Jahrgänge 1, Variante 3, Stufe 2, volle Breite)
+AUSWAHL Nr. 15: daten-basis-k1-v5 – Arithmetisches Mittel berechnen (Jahrgänge 3, Variante 5, Stufe 2, volle Breite)
+AUSWAHL Nr. 16: wahrscheinlichkeit-basis-k2-v4 – Zufallsgerät zu Wahrscheinlichkeit entwerfen (Jahrgänge 3, Variante 4, Stufe 2, volle Breite)
+AUSWAHL Nr. 17: brueche-dezimalzahlen-basis-k1-v13 – Bruchteil einer Fläche bestimmen (Jahrgänge 9, Variante 13, Stufe 3, volle Breite)
+AUSWAHL Nr. 18: winkel-dreiecke-basis-k3-v3 – Winkel an geschnittenen Parallelen bestimmen (Jahrgänge 2, Variante 3, Stufe 3, volle Breite)
+STRUKTUR 0 Fehler

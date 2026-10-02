@@ -1,0 +1,25 @@
+# zusammenbau v1.3: zusammenbau.py --zettel basis --nummer 17
+VORRAT 64 Typen, 640 Aufgaben, davon 100 auf Zettel 1–10 (v0.5) verbraucht; Vorrat erschöpft ab Zettel 36
+VORLAGE mathblatt.sty: Version 2026-09-28a
+KENNUNG BAS-Z17 – Kürzel BAS (Basisvorrat, fest), Rezept Z (Zettel, v0.6); Inhalt von Zettel 17
+HÖHE geschätzt 24.0 cm (Maß 24.5 cm), 17 Aufgaben (Ziel 16–18)
+AUSWAHL Nr. 1: potenzen-wurzeln-basis-k3-v9 – Zehnerpotenzschreibweise umwandeln (Jahrgänge 4, Variante 9, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 2: einheiten-basis-k2-v4 – Größen vergleichen (Jahrgänge 3, Variante 4, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 3: einheiten-basis-k5-v4 – Zeiteinheiten umrechnen (Jahrgänge 3, Variante 4, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 4: zuordnungen-basis-k2-v4 – Proportionale Zuordnung Dreisatz (Jahrgänge 3, Variante 4, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 5: lineare-gleichungen-basis-k1-v11 – Lineare Gleichung lösen (Jahrgänge 4, Variante 11, Stufe 0, halbe Spalte)
+SATZ Nr. 6: 4 kurze Ankreuzoptionen in einer Zeile
+AUSWAHL Nr. 6: quadratische-gleichungen-basis-k1-v8 – Lösung durch Einsetzen prüfen (Jahrgänge 3, Variante 8, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 7: flaechen-basis-k2-v3 – Quadratseite aus Fläche berechnen (Jahrgänge 2, Variante 3, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 8: daten-basis-k3-v3 – Median bestimmen (Jahrgänge 2, Variante 3, Stufe 0, halbe Spalte)
+AUSWAHL Nr. 9: winkel-dreiecke-basis-k2-v3 – Gleichschenkliges Dreieck erkennen (Jahrgänge 1, Variante 3, Stufe 1, volle Breite)
+AUSWAHL Nr. 10: prozentrechnung-basis-k1-v5 – Grundwert berechnen (Jahrgänge 2, Variante 5, Stufe 2, volle Breite)
+AUSWAHL Nr. 11: prozentrechnung-basis-k2-v5 – Prozent und Anteil umwandeln (Jahrgänge 2, Variante 5, Stufe 2, volle Breite)
+SATZ Nr. 12: 4 kurze Ankreuzoptionen in einer Zeile
+AUSWAHL Nr. 12: terme-basis-k2-v10 – Term zu Sachtext angeben (Jahrgänge 4, Variante 10, Stufe 2, volle Breite)
+AUSWAHL Nr. 13: symmetrie-abbildungen-basis-k1-v4 – Figur nach Spiegelung benennen (Jahrgänge 1, Variante 4, Stufe 2, volle Breite)
+AUSWAHL Nr. 14: bruchrechnung-basis-k1-v7 – Wahrscheinlichkeit einstufig (Jahrgänge 3, Variante 7, Stufe 2, volle Breite)
+AUSWAHL Nr. 15: daten-basis-k2-v2 – Fehlenden Wert aus Mittelwert bestimmen (Jahrgänge 1, Variante 2, Stufe 2, volle Breite)
+AUSWAHL Nr. 16: trigonometrie-basis-k2-v7 – Winkelfunktion Seitenverhältnis angeben (Jahrgänge 5, Variante 7, Stufe 3, volle Breite)
+AUSWAHL Nr. 17: pythagoras-basis-k1-v2 – Pythagoras Gleichung zuordnen (Jahrgänge 4, Variante 2, Stufe 3, volle Breite)
+STRUKTUR 0 Fehler

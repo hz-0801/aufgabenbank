@@ -621,67 +621,99 @@ Originale selbst; ohne Original die Marke ohne Zahl. „keine …“ bleibt
 wörtlich; mehrere Marken stehen mit „ · “ nebeneinander (bis v0.4 nur
 die erste). Die log zeigt je Einheit PRÜFWORT mit Quelle.
 
-## Rezept Zettel (v0.5)
+## Rezept Zettel (v0.6)
 
-Beschluss des Lehrers vom 28.09.: Basisaufgaben (Teil A der P10, ohne
-Rechner) werden getrennt geübt, am Stundenanfang ein Zettel mit zehn
-kurzen Aufgaben, je Stunde ein neuer, ohne Wiederholung. Aufruf:
+Beschluss des Lehrers vom 28.09.: Basisaufgaben (Teil A der P10) werden
+getrennt geübt, am Stundenanfang ein Zettel, je Stunde ein neuer, ohne
+Wiederholung. v0.6 nach den Vorgaben des Lehrers vom 02.10.: eine volle
+A4-Seite Aufgaben (Ziel 16–18), kurze Aufgaben zweispaltig, keine
+Hilfsmittelangabe (Aufgabe 1 der P10 wird bis 2027 mit Taschenrechner
+und Formelsammlung geschrieben, msa/msa-vorgaben.md in mathe-nachhilfe),
+keine Marke an ausgedachten Aufgaben, keine Kennung auf der
+Schülerseite. Aufruf:
 
     python3 werkzeuge/zusammenbau.py --zettel basis [--nummer n]
         [--ohne-register] [--aus <ordner>] [--vorlage <sty>]
+    python3 werkzeuge/zusammenbau.py --zettel-messen [--vorlage <sty>]
 
-- Vorrat: bank/_basis/*.jsonl (je Basis-Typ zehn Aufgaben, bank.md
-  „Basisvorrat“), Gewichte aus bank/_basis/typen.csv (Spalte
-  jahrgaenge).
+- Vorrat: bank/_basis/*.jsonl (bank.md „Basisvorrat“), Gewichte aus
+  bank/_basis/typen.csv (Spalte jahrgaenge).
 - Kennung BAS-Z<n>, n = nächste freie Nummer für BAS-Z in
   bau/register.csv; `--nummer n` baut Zettel n (bricht ab, wenn die
   Kennung schon im Register steht). `--ohne-register`: Ordner BAS-Z0,
-  Inhalt von Zettel n (Voreinstellung die nächste freie Nummer).
-- Inhalt von Zettel n hängt nur vom Vorrat und von n ab: der Plan wird
-  von Zettel 1 bis n durchgerechnet (`zettel_plan`). Je Zettel zehn
-  verschiedene Typen. Typen mit allen 13 Jahrgängen stehen auf jedem
-  Zettel (zurzeit keiner; der häufigste hat neun); die übrigen Plätze
-  nach Stride-Verfahren: gewählt die kleinsten Stände (bei Gleichstand
-  das größere Gewicht, dann die Folge in typen.csv), danach Stand +
-  1/Gewicht. Ein Typ mit neun Jahrgängen kommt so neunmal so oft wie
-  einer mit einem, bis sein Vorrat leer ist. Startstand gestaffelt:
-  der i-te von m Typen mit Gewicht w beginnt bei (i + 0,5) / (m · w);
-  so mischen sich häufige und seltene Typen von Zettel 1 an (mit Start
-  0 standen alle 41 Typen auf Zettel 1–4 und danach fast nur noch die
-  häufigen). Der k-te Einsatz eines Typs nimmt Variante k: keine
-  Aufgabe auf zwei Zetteln.
-- Seitenmaß: höchstens zwei große Grafiken (Koordinatensystem,
-  Wertetabellen) je Zettel und geschätzte Höhe der zehn Aufgaben
-  höchstens 25 cm (`zettel_hoehe`, geeicht an 41 Probezetteln: Text
-  nach Zeichen, Grafik nach Baustein; bei der Wahl bleibt für jeden
-  noch offenen Platz 1,45 cm frei). Ein Typ, der nicht passt, wartet
-  auf den nächsten Zettel. Geht das gegen Ende des Vorrats nicht mehr
-  auf, wird ohne Maß gewählt; die log nennt dann „ÜBER DEM MASS“.
-  Probe 28.09.: alle 41 Zettel des Vorrats zwei Seiten.
-- Reicht der Vorrat nicht mehr für zehn Typen, baut das Skript nicht
-  und meldet „Vorrat erschöpft ab Zettel n“ (log und bau.json
-  `vorrat_erschoepft_ab`). Beim Vorrat vom 28.09. (41 Typen, 410
-  Aufgaben): erschöpft ab Zettel 42, also 41 Zettel.
-- Satz: eine Seite Aufgaben, nummeriert 1–10 (je `aufgabe`, Titel =
-  Aufgabentext mit Feld und Kennung), danach `\begleitteil` mit
-  `\erg{1}{…}` bis `\erg{10}{…}` als zweite Seite (Rückseite).
-  Reihenfolge auf dem Zettel nach Bereich (ZETTEL_FOLGE im Skript:
-  Zahlen, Prozente, Größen, Terme und Gleichungen, Funktionen,
-  Geometrie, Wahrscheinlichkeit). Aufgabe mit einer Grafik: Text links
-  (0,6 der Breite), Grafik rechts (0,37) in `minipage`; Reihe von
-  Figuren (`\quad`) und Wertetabellen unter dem Text. Kurze
-  Ankreuzoptionen (zusammen höchstens 70 Zeichen Quelltext) in einer
-  Zeile statt je `\kreuz` eine Zeile – abweichend von der Anleitung,
-  damit zehn Aufgaben auf eine Seite passen. `ablesen`-Koordinatensysteme
-  in der Form `klein` (Karo 3,5 mm). Aufgabenteil in `\small`.
-- Dateien: bau/zettel/<K>/<K>.tex, mathblatt.sty (Kopie), bau.json
-  (je Aufgabe id, kette, jahrgaenge, variante, original),
-  zusammenbau.log (VORRAT, AUSWAHL, SATZ, Strukturprüfung);
-  Registerzeile mit eintraege `_basis`, bestellung
-  `zettel=basis, nummer=n`.
-- Kompilieren: `xelatex <K>.tex` einmal; soll zwei Seiten geben.
+  Inhalt von Zettel n.
+- Übergang von v0.5: Zettel 1–10 sind am 28.09. mit v0.5 gebaut (zehn
+  Aufgaben je Zettel, im Register) und bleiben, wie sie sind; eine
+  Nummer unter 11 baut v0.6 nicht. Plan v0.6 beginnt bei Zettel 11 mit
+  dem Vorrat ohne die 100 Aufgaben, die in bau/zettel/BAS-Z1..10/bau.json
+  stehen (`zettel_verbraucht`); keine Aufgabe kommt zweimal vor. Der
+  Inhalt von Zettel n hängt nur vom Vorrat, diesen zehn bau.json,
+  bau/zettel/hoehen.csv und n ab: der Plan wird von 11 bis n
+  durchgerechnet (`zettel_plan`).
+- Wahl: Je Zettel verschiedene Typen. Typen mit allen 13 Jahrgängen
+  stehen auf jedem Zettel (zurzeit keiner); sonst Stride-Verfahren wie
+  v0.5 (kleinster Stand, bei Gleichstand das größere Gewicht, dann die
+  Folge in typen.csv; Stand + 1/Gewicht; Startstand gestaffelt
+  (i + 0,5) / (m · w)). Der k-te Einsatz eines Typs nimmt die k-te noch
+  freie Variante.
+- Seitenfüllend: In Standfolge wird genommen, was passt – höchstens 18
+  Aufgaben (ZETTEL_MAX), höchstens zwei große Grafiken
+  (Koordinatensystem, Wertetabellen), Aufgaben mit Grafik zusammen
+  höchstens 9 cm (GRAFIK_CM, sonst blieben auf grafikreichen Zetteln
+  nur 7–11 Aufgaben), Höhe aller Reihen höchstens 24,5 cm (SEITE_CM).
+  Ein Typ, der nicht passt, wartet (Stand bleibt). Höhe einer Reihe:
+  gemessen aus bau/zettel/hoehen.csv plus 0,4 cm Abstand, zwei kurze
+  nebeneinander zählen mit der höheren; fehlt eine id, die Schätzung
+  `zettel_hoehe` (Zeichen und Baustein, wie v0.5). Die Schätzung allein
+  lag um bis zu ein Drittel daneben (Probe 02.10.: bei 24 cm drei
+  Viertel der Seite, bei 31 cm drei Seiten); deshalb die Messung.
+  `--zettel-messen` setzt jede Vorratsaufgabe wie auf dem Zettel
+  (`\small`, volle Breite, kurze auch in 0,485 der Breite) mit xelatex
+  und schreibt hoehen.csv (13 s für 640 Aufgaben); neu messen, wenn
+  sich der Vorrat ändert. Eichung 02.10.: bei 24,5 cm endet die
+  unterste Zeile auf allen zehn Probezetteln über dem unteren Rand
+  (≤ 785 pt von 791 pt).
+- Erschöpft: Der Vorrat gilt ab dem Zettel als erschöpft, für den
+  weniger als 16 Typen übrig sind oder weniger als 12 Aufgaben
+  (ZETTEL_UNTER) auf die Seite passen; dann baut das Skript nicht und
+  meldet „Vorrat erschöpft ab Zettel n“ (log, bau.json
+  `vorrat_erschoepft_ab`). Vorrat vom 02.10. (64 Typen, 640 Aufgaben):
+  erschöpft ab Zettel 36, also Zettel 11–35 mit 15–18 Aufgaben.
+- Reihenfolge (`zettel_ordnen`): leicht vor schwer, soweit am Datensatz
+  erkennbar (`zettel_stufe`): 0 kurz mit einer Antwort oder Ankreuzen,
+  1 kurz mit mehreren Antwortfeldern (zwei Schritte), 2 längerer Text
+  ohne Grafik, 3 mit Grafik; innerhalb der Stufe nach Bereich
+  (ZETTEL_FOLGE) wie bisher.
+- Satz Seite 1 (Schülerseite): Kopfzeile „Mathematik · Basisaufgaben ·
+  Zettel n“, fetter Kopf „Basisaufgaben · Zettel n“, Zweigzeile „je
+  Aufgabe 1 Punkt · Lösungen auf der Rückseite“, darunter „Name ___
+  Datum ___ Punkte ___ / <Zahl der Aufgaben>“; keine Kennung in Kopf
+  und Fuß. Kurz (`zettel_kurz`: ohne Grafik, Text ohne Formeln bis 100
+  Zeichen, Ankreuzoptionen zusammen bis 40 Zeichen) stehen zwei
+  nebeneinander (je `minipage` 0,485, `\raggedright`), alles andere
+  über die volle Breite; Grafik rechts (0,37) oder als Reihe von
+  Figuren darunter wie v0.5. Antwortfelder bleiben; „__“ im
+  Aufgabentext wird zur Schreiblinie. Bordmittel im .tex, mathblatt.sty
+  unverändert.
+- Marken: ausgedachte Aufgaben (der ganze Vorrat) tragen keine Marke
+  mehr; die Prüfkennung „(P10 …)“ des Datensatzes wird entfernt. Für
+  echte Originale gilt der Schalter `ist_original` (Feld
+  `"ist_original": true` in der Vorratszeile): rechtsbündig nur die
+  Jahreszahl des Originals („2023“) an der Stelle der Kennung; „P10“
+  steht nirgends.
+- Rückseite (Lehrer): `\begleitteil` „Ergebnisse“, Kopfzeile
+  „Basisaufgaben · Zettel n · BAS-Z<n> · Lösungen“, je Aufgabe die
+  Lösung und rechts klein kursiv Typ · Jahr des jüngsten Originals.
+- Dateien: bau/zettel/<K>/<K>.tex, <K>.pdf, mathblatt.sty (Kopie),
+  bau.json (je Aufgabe id, kette, jahrgaenge, variante, stufe, spalte,
+  ist_original, original; dazu rezept_version, hoehe_geschaetzt_cm),
+  zusammenbau.log; Registerzeile wie v0.5.
+- Kompilieren: `xelatex <K>.tex` zweimal; soll zwei Seiten geben
+  (Aufgaben, Lösungen).
 
-Erster Lauf: bau/zettel/ (BAS-Z1 bis BAS-Z10, bericht.md).
+Erster Lauf v0.5: bau/zettel/ (BAS-Z1 bis BAS-Z10, bericht.md). Erster
+Lauf v0.6 (02.10.): BAS-Z11 bis BAS-Z20 mit 18, 18, 18, 18, 18, 17, 17,
+18, 18, 17 Aufgaben, je zwei Seiten.
 
 ## Rezept Prüfungs-Fokus (v0.6)
 
