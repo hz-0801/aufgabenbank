@@ -7,9 +7,20 @@ Einträge), Katalog hz-0801/mathe-nachhilfe a439398
 
 ## Zahlen
 
-- 41 Basis-Typen (typen.md, typen.csv), 410 Aufgaben in 18 Dateien.
-- `python3 werkzeuge/bank-pruef.py _basis` (v0.6): 0 Abweichungen,
-  0 Warnungen.
+Stand 2026-10-02 (Erweiterung, Lehrer 02.10.; Abschnitt „Erweiterung
+02.10.2026“ unten):
+
+- 64 Basis-Typen (typen.md, typen.csv): alle 62 Typen des Basisteils
+  der P10 (msa-katalog-basis.csv) und die zwei GYM-Typen aus der Bank
+  (Antiproportionale Zuordnung Dreisatz; Term durch Zusammenfassen
+  gleichartiger Glieder vereinfachen). Vorher 41.
+- 640 Aufgaben in 21 Dateien (vorher 410 in 18): 230 neu.
+- `python3 werkzeuge/bank-pruef.py _basis`: 10 Abweichungen (alle eine
+  Ursache: zuordnungen-basis-k2, original 2023-OS-B1a steht nicht in
+  mappen/zuordnungen.md), 12 Warnungen (Ketten mit 5 oder 20 statt 10
+  Varianten – gewollt, Ziel je Typ).
+- `python3 werkzeuge/duplikate.py`: Abschnitt A (wortgleich) unverändert,
+  keine Basiszeile darin.
 - Keine Aufgabe des Vorrats steht wortgleich (aufgabe und grafik) in
   einem anderen Ordner der Bank (Abgleich über alle bank/*/*.jsonl).
 
@@ -83,3 +94,48 @@ Prüfung. Die jsonl nicht von Hand ändern, sondern vorrat.py.
   diese Originale in der Bank (die Einträge daten, pythagoras,
   quadratische-funktionen u. a. führen sie bisher nicht als
   Prüfungshöhe).
+
+## Erweiterung 02.10.2026
+
+Auftrag des Lehrers vom 02.10.: Basisvorrat auf alle Basistypen der P10;
+Ziel je Typ 20, 10 oder 5 Aufgaben (nach Jahrgängen), 250 Aufgaben für
+die 25 Zieltypen (23 neu, zwei aufgestockt: Bruchteil einer Fläche
+bestimmen und Lineare Gleichung lösen von 10 auf 20).
+
+Entscheidungen:
+
+1. Typenmenge: Typen aus msa-katalog-basis.csv (62) plus die Typen der
+   Basisteil-Originale in der Bank; die zwei GYM-Typen bleiben (ihr
+   Vorrat wird nicht gelöscht), daher 64 statt 62.
+2. Eintrag eines neuen Typs: der Katalogeintrag, der sein Thema trägt
+   (themen.csv, Profil msa; „Zählen und Kombinatorik“ →
+   wahrscheinlichkeit, „Kenngrößen“ → daten). einheit von Hand nach den
+   Einheiten des Katalogeintrags (NEU_EINHEIT in typen.py), quelle = die
+   häufigste quelle der Bankzeilen dieser Einheit.
+3. Original jedes Typs: das jüngste Basisteil-Original des Typs, das in
+   der Mappe des Eintrags steht. Damit wechseln zwei Bestandstypen auf
+   ein jüngeres Original (Wahrscheinlichkeit einstufig 2014-OS-B1d →
+   2016-OS-B1f; Winkel an geschnittenen Parallelen bestimmen 2015-OS-B1d
+   → 2020-OS-B1g). Ausnahme: Proportionale Zuordnung Dreisatz – keines
+   seiner Originale steht in einer Mappe; original = 2023-OS-B1a, das
+   Prüfskript meldet es, bis katalog/zuordnungen.md (mathe-nachhilfe)
+   die Kennung nennt und die Mappe neu gebaut ist.
+4. kette_nr der vorhandenen Typen bleibt (ids des Vorrats stabil); neue
+   Typen hängen sich je Eintrag alphabetisch an. typen.py liest dazu die
+   alte typen.csv.
+5. Neu gerechnet: quelle (und bei den zwei Terme-Typen einheit) der
+   Bestandstypen nach dem heutigen Stand der Bank – Folge der
+   Katalogänderungen seit 28.09., nicht von Hand gesetzt.
+6. Aufstockung: v11–v20 an die zehn vorhandenen Varianten angehängt;
+   Bruchteil einer Fläche als Kurzantwort zu einer Figur (Bruch oder
+   Prozent) statt Ankreuzen über vier Figuren.
+7. Term zu Figur angeben: Kurzantwort mit Zahlfaktor (z. B. u = 4 · d)
+   trägt den Faktor als pruef. Größen vergleichen: Form teil, Werte in
+   aufgabe und antwort („0,3 l __ 30 ml“).
+8. Grafiken mit den Bausteinen der Sty: \rechteck, \parallelogramm,
+   \trapez, \raute (Schlüssel seiten, hoehe, diagonalen), \dreieckrw,
+   \dreieck, \geradenkreuzung, \bruchrechteck, \bruchkreis, \netzquader,
+   \netzzylinder, \netzpyramide, \netzwuerfel, \kegel, \parabel im ksys.
+9. Probe: `zusammenbau.py --zettel basis --nummer 11 --ohne-register`
+   (Kennung BAS-Z0), xelatex: 2 Seiten (Aufgaben, Lösungen), Grafiken
+   erscheinen; Probe-PDF nicht im Repo.

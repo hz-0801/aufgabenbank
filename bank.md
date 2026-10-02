@@ -378,14 +378,17 @@ jedes Blatt am Grundfall seiner Einheit beginnt; Prüfstein terme
 bank/_basis/ (seit 28.09.) hält den Vorrat für die Basiszettel:
 Basisaufgaben (Teil A der P10, ohne Rechner) werden getrennt geübt,
 am Stundenanfang ein Zettel mit zehn kurzen Aufgaben. Ein Basis-Typ
-ist der Typ (Prüfungskatalog, Spalte typ) eines Basisteil-Originals
-(Kennung JJJJ-PAPIER-B…), das in der Bank als Prüfungshöhe steht;
-bank/_basis/typen.md listet sie mit Zahl der Jahrgänge (Stand 28.09.:
-41 Typen). Je Typ zehn Aufgaben in Prüfungsform in
+ist seit 02.10.2026 jeder Typ des ganzen Basisteils der P10
+(msa/msa-katalog-basis.csv, Spalte typ: 62 Typen) und dazu der Typ
+jedes Basisteil-Originals, das in der Bank als Prüfungshöhe steht (zwei
+GYM-Typen); bank/_basis/typen.md listet sie mit Zahl der Jahrgänge
+(Stand 02.10.: 64 Typen, 640 Aufgaben). Ein Typ ohne Prüfungshöhe in der
+Bank liegt im Eintrag, der sein Thema trägt (themen.csv). Je Typ 5, 10
+oder 20 Aufgaben (Ziel nach Jahrgängen, Lehrer 02.10.) in Prüfungsform in
 bank/_basis/<eintrag>.jsonl – Felder wie oben, hoehe "basis" (nur
 hier), id "<eintrag>-basis-k<k>-v<v>", kette = sprosse_text =
-Typname, sprosse 1, variante 1–10, original = das jüngste Original
-des Typs (Pflicht), Form wie im Original, im Kopf rechenbar; die
+Typname, sprosse 1, variante 1–n, original = das jüngste Original
+des Typs, das in der Mappe des Eintrags steht (Pflicht), Form wie im Original, im Kopf rechenbar; die
 Regeln für den Inhalt gelten (Sperre gegen die Mappe des Eintrags,
 Verfremdung, keine Aufgabe doppelt). Die Aufgaben stehen in
 bank/_basis/vorrat.py, das die jsonl schreibt; geprüft mit

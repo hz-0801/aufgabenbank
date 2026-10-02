@@ -1495,6 +1495,942 @@ def _t41():
 AUFGABEN["y-Achsenabschnitt ablesen"] = _t41()
 
 
+# --- Erweiterung 02.10.2026 (Lehrer): alle Basistypen der P10 ---------------
+# Ziel je Typ: ZIEL (Ankreuz- und Kurzaufgaben in Prüfungsform). Jedes
+# Ergebnis wird hier mit sympy nachgerechnet (assert), bevor es in den Text
+# geht. Distraktoren aus dem Feld fehlerquelle der Originale.
+import sympy as _sp
+from fractions import Fraction as _F
+from statistics import median as _median
+
+ZIEL = {"Bruchteil einer Fläche bestimmen": 20, "Lineare Gleichung lösen": 20,
+        "Term zu Figur angeben": 20, "Pythagoras Gleichung zuordnen": 20}
+for _t in ["Zeiteinheiten umrechnen", "Eigenschaft einer Figur zuordnen",
+           "Größen vergleichen", "Umfang Rechteck berechnen",
+           "Median bestimmen", "Proportionale Zuordnung Dreisatz",
+           "Rechteckseite aus Fläche berechnen",
+           "Fehlenden Wert aus Mittelwert bestimmen",
+           "Satz des Pythagoras formulieren",
+           "Portionen aus Gesamtmenge berechnen", "Scheitelpunkt ablesen",
+           "Arithmetisches Mittel berechnen",
+           "Quadratseite aus Fläche berechnen"]:
+    ZIEL[_t] = 10
+for _t in ["Winkel über Scheitel- oder Nebenwinkel bestimmen",
+           "Zufallsgerät zu Wahrscheinlichkeit entwerfen",
+           "Spannweite berechnen", "Strecke aus Teilstrecken berechnen",
+           "Körper aus Netz oder Schrägbild benennen",
+           "Ergebnismenge aufzählen", "Scheitelpunktform aufstellen",
+           "Parabel verschieben"]:
+    ZIEL[_t] = 5
+
+
+def _q(x):
+    """exakter Wert (sympy Rational) aus Zahl oder Text."""
+    return _sp.nsimplify(str(x), rational=True)
+
+
+def _gleich(a, b):
+    assert _sp.simplify(_q(a) - _q(b)) == 0, (a, b)
+
+
+def _w(x, e=""):
+    """Zahl für LaTeX; Euro-Beträge mit zwei Nachkommastellen."""
+    x = _q(x)
+    if e == "€" and not x.is_Integer:
+        return f"{float(x):.2f}".replace(".", "{,}")
+    return _zahl(x)
+
+
+def _rot(opt, i, k):
+    """Optionen um k Stellen drehen; gibt (Optionen, Lösungstext)."""
+    k %= len(opt)
+    neu = opt[k:] + opt[:k]
+    return neu, neu.index(opt[i])
+
+
+def _zahl(x):
+    """Zahl als LaTeX mit Dezimalkomma; Tausender mit Leerzeichen."""
+    x = _q(x)
+    if x.is_Integer and abs(x) >= 10000:
+        s = f"{int(x):,}".replace(",", "\\,")
+        return s
+    return dez(float(x))
+
+
+# T1b Bruchteil einer Fläche bestimmen (Varianten 11–20): Kurzantwort zu
+# einer Figur – Anteil als Bruch (gekürzt) oder in Prozent. Fehlerquelle der
+# Originale: grau zu weiß statt grau zu allen, Felder falsch zählen.
+def _t1b():
+    daten = [  # (Kontext, Figur, z, n, Prozent?)
+        ("Ein Fenster besteht aus gleich großen Scheiben; die grauen sind "
+         "aus Milchglas.", "\\bruchrechteck[4]{6}{10}", 6, 10, True),
+        ("Eine Pizza ist in gleich große Stücke geschnitten; die grauen "
+         "Stücke sind schon gegessen.", "\\bruchkreis[0.9]{6}{8}", 6, 8, False),
+        ("Ein Beet ist in gleich große Streifen geteilt; auf den grauen "
+         "wachsen Kräuter.", "\\bruchrechteck[4]{4}{5}", 4, 5, True),
+        ("Ein Glücksrad hat gleich große Felder; die grauen sind Gewinnfelder.",
+         "\\bruchkreis[0.9]{4}{6}", 4, 6, False),
+        ("Eine Tafel Schokolade hat gleich große Stücke; die grauen sind "
+         "schon weg.", "\\bruchrechteck[5]{10}{12}", 10, 12, False),
+        ("Eine runde Torte ist in gleich große Stücke geteilt; die grauen "
+         "sind verkauft.", "\\bruchkreis[0.9]{3}{10}", 3, 10, True),
+        ("Ein Zaun hat gleich breite Felder; die grauen sind schon "
+         "gestrichen.", "\\bruchrechteck[4]{8}{10}", 8, 10, False),
+        ("Eine Uhr ist in gleich große Abschnitte geteilt; die grauen "
+         "zeigen die Schulzeit.", "\\bruchkreis[0.9]{5}{8}", 5, 8, False),
+        ("Ein Regal hat gleich große Fächer; die grauen sind belegt.",
+         "\\bruchrechteck[5]{12}{16}", 12, 16, True),
+        ("Ein runder Tisch ist in gleich große Felder geteilt; die "
+         "grauen sind gedeckt.", "\\bruchkreis[0.9]{2}{5}", 2, 5, True),
+    ]
+    aus = []
+    for text, fig, z, n, proz in daten:
+        f = _F(z, n)
+        if proz:
+            p = _q(z) / n * 100
+            assert p.is_Integer
+            aus.append(A(f"{text} Wie viel Prozent der Fläche sind grau? {{K}}",
+                         f"${z}$ von ${n}$ gleichen Teilen: "
+                         f"$\\frac{{{z}}}{{{n}}} = {int(p)}\\,\\%$",
+                         f"{z}/{n}*100", antwort="__ %", grafik=fig))
+        else:
+            gek = (f"$\\frac{{{z}}}{{{n}}} = "
+                   f"\\frac{{{f.numerator}}}{{{f.denominator}}}$")
+            if f.denominator == n:
+                gek = f"$\\frac{{{z}}}{{{n}}}$"
+            wie = "gekürzten " if f.denominator != n else ""
+            aus.append(A(f"{text} Welcher Anteil der Fläche ist grau? Gib ihn "
+                         f"als {wie}Bruch an. {{K}}",
+                         f"{gek} (${z}$ von ${n}$ gleichen Teilen)",
+                         f"[{f.numerator}, {f.denominator}]", grafik=fig))
+    return aus
+
+
+# T6b Lineare Gleichung lösen (Varianten 11–20)
+def _t6b():
+    daten = [(4, -2.5, 0, 0), (3, 2, 0, 21), (2, -7, 0, -4), (5, -6, 4, 4),
+             (6, 1, 0, 30), (2, 5.5, 0, 0), (3, -9, -2, 1), (8, -2, 0, 40),
+             (4, 6, 0, 12), (9, -3, 5, 14)]
+    x = _sp.Symbol("x")
+    aus = []
+    for a, b, c, d in daten:
+        bq, cq, dq = _q(b), _q(c), _q(d)
+        los = _sp.solve(_sp.Eq(a * (x + bq) + cq, dq), x)
+        assert len(los) == 1
+        r = los[0]
+        kl = f"x {'+' if b > 0 else '-'} {dez(abs(b))}"
+        g = f"{a} \\cdot ({kl})"
+        if c:
+            g += f" {'+' if c > 0 else '-'} {abs(c)}"
+        g += f" = {d}"
+        schritte = []
+        if c:
+            schritte.append(f"${a} \\cdot ({kl}) = {_zahl(dq - cq)}$")
+        rest = (dq - cq) / a
+        schritte.append(f"${kl} = {_zahl(rest)}$")
+        weg = ", ".join(schritte) + f", also $x = {_zahl(r)}$"
+        aus.append(A(f"Löse die Gleichung ${g}$. {{K}}", weg,
+                     str(float(r)) if not r.is_Integer else str(int(r)),
+                     antwort="x = __"))
+    return aus
+
+
+# T42 Term zu Figur angeben – 2025-OS-B1i (Ankreuzen / Kurzantwort)
+def _t42():
+    R = "\\rechteck[punkte=,seiten={%s}]{%s}{%s}"
+    ank = [  # (Figur, Frage, Optionen, richtig)
+        (R % ("x,y,,", 3, 1.8), "den Umfang $u$",
+         ["$u = x \\cdot y$", "$u = 2 \\cdot x + 2 \\cdot y$", "$u = x + y$",
+          "$u = 4 \\cdot x$"], 1),
+        (R % ("s,,,", 2, 2), "den Flächeninhalt $A$ des Quadrats",
+         ["$A = 4 \\cdot s$", "$A = s^2$", "$A = 2 \\cdot s$", "$A = s + s$"],
+         1),
+        ("\\dreieckrw{3.5}{2.5}{p}{q}{r}", "den Flächeninhalt $A$",
+         ["$A = p \\cdot q$", "$A = p \\cdot q : 2$", "$A = p \\cdot r : 2$",
+          "$A = (p + q) : 2$"], 1),
+        ("\\parallelogramm[punkte=,seiten={g,,,},hoehe=h]{3.5}{2}{60}",
+         "den Flächeninhalt $A$",
+         ["$A = g \\cdot h : 2$", "$A = 2 \\cdot (g + h)$", "$A = g \\cdot h$",
+          "$A = g + h$"], 2),
+        ("\\trapez[punkte=,seiten={a,,c,},hoehe=h]{4}{2}{1.8}",
+         "den Flächeninhalt $A$",
+         ["$A = a \\cdot c \\cdot h$", "$A = (a + c) \\cdot h$",
+          "$A = (a + c) \\cdot h : 2$", "$A = a \\cdot h + c$"], 2),
+        ("\\raute[punkte=,seiten={b,,,}]{3}{2}", "den Umfang $u$ der Raute",
+         ["$u = b^4$", "$u = 4 \\cdot b$", "$u = b \\cdot b$",
+          "$u = 2 \\cdot b$"], 1),
+        (R % ("m,n,,", 3.2, 1.5), "den Flächeninhalt $A$",
+         ["$A = 2 \\cdot (m + n)$", "$A = m + n$", "$A = m \\cdot n : 2$",
+          "$A = m \\cdot n$"], 3),
+        ("\\parallelogramm[punkte=,seiten={c,d,,}]{3.2}{1.8}{70}",
+         "den Umfang $u$ des Parallelogramms",
+         ["$u = c \\cdot d$", "$u = 2 \\cdot (c + d)$", "$u = c + d$",
+          "$u = 4 \\cdot c$"], 1),
+        (R % ("2k,k,,", 3.2, 1.6), "den Umfang $u$",
+         ["$u = 2 \\cdot k^2$", "$u = 3 \\cdot k$", "$u = 6 \\cdot k$",
+          "$u = 4 \\cdot k$"], 2),
+        ("\\dreieck{(0,0)}{(3.5,0)}{(1,2)}{r}{s}{t}{}{}{}",
+         "den Umfang $u$ des Dreiecks",
+         ["$u = r \\cdot s \\cdot t$", "$u = 3 \\cdot r$",
+          "$u = (r + s) \\cdot t$", "$u = r + s + t$"], 3),
+    ]
+    kurz = [  # (Figur, Größe, Lösung, Weg, pruef)
+        (R % ("d,,,", 2, 2), "den Umfang $u$ des Quadrats",
+         "$u = 4 \\cdot d$", "vier gleich lange Seiten", "4"),
+        (R % ("k,l,,", 3.4, 1.6), "den Flächeninhalt $A$",
+         "$A = k \\cdot l$", "Länge mal Breite", ""),
+        ("\\dreieckrw{3}{2.2}{m}{n}{o}", "den Flächeninhalt $A$",
+         "$A = m \\cdot n : 2$",
+         "die Katheten $m$ und $n$ stehen senkrecht aufeinander; die "
+         "Hypotenuse $o$ gehört nicht in die Formel", "2"),
+        ("\\parallelogramm[punkte=,seiten={a,b,,}]{3.5}{2}{60}",
+         "den Umfang $u$", "$u = 2 \\cdot a + 2 \\cdot b$",
+         "je zwei Seiten sind gleich lang", "[2, 2]"),
+        (R % ("3x,x,,", 3.6, 1.2), "den Umfang $u$",
+         "$u = 8 \\cdot x$", "$3x + x + 3x + x = 8x$", "8"),
+        (R % ("2a,a,,", 3.2, 1.6), "den Flächeninhalt $A$",
+         "$A = 2 \\cdot a^2$", "$2a \\cdot a = 2a^2$", "[2, 2]"),
+        ("\\raute[punkte=,diagonalen={p,q}]{3}{2.2}", "den Flächeninhalt $A$",
+         "$A = p \\cdot q : 2$", "halbes Produkt der Diagonalen", "2"),
+        ("\\dreieck{(0,0)}{(3,0)}{(1.5,2.2)}{s}{s}{b}{}{}{}",
+         "den Umfang $u$", "$u = 2 \\cdot s + b$",
+         "zwei Schenkel $s$ und die Basis $b$", "2"),
+        ("\\trapez[punkte=,seiten={a,b,c,d}]{4}{2}{1.8}", "den Umfang $u$",
+         "$u = a + b + c + d$", "alle vier Seiten addieren", ""),
+        (R % ("y,3,,", 3.2, 1.5), "den Flächeninhalt $A$ (Breite $3$)",
+         "$A = 3 \\cdot y$", "Länge mal Breite", "3"),
+    ]
+    aus = []
+    for k, (fig, was, opt, i) in enumerate(ank):
+        o, j = _rot(opt, i, k)
+        aus.append(X(f"Welche Formel beschreibt {was}? {{K}}", o, o[j],
+                     grafik=fig))
+    for fig, was, los, weg, pr in kurz:
+        aus.append(A(f"Gib eine Formel für {was} der Figur an. {{K}}",
+                     f"{los} ({weg})", pr, antwort="__", grafik=fig))
+    return aus
+
+
+# T43 Pythagoras Gleichung zuordnen – 2026-FOR-B1j (Ankreuzen)
+def _t43():
+    saetze = [("p", "q", "r", 3.5, 2.5), ("e", "f", "g", 3, 2.2),
+              ("k", "l", "m", 4, 2), ("r", "s", "t", 2.5, 3),
+              ("b", "c", "a", 3.5, 2), ("s", "t", "u", 3, 3),
+              ("f", "g", "h", 4, 2.5), ("a", "c", "b", 2.6, 3.2),
+              ("m", "n", "p", 3.6, 2.4), ("h", "k", "l", 3, 2)]
+    aus = []
+    for n, (k1, k2, h, w, hh) in enumerate(saetze):
+        fig = f"\\dreieckrw{{{w}}}{{{hh}}}{{{k1}}}{{{k2}}}{{{h}}}"
+        if n % 2 == 0:
+            opt = [f"${h}^2 = {k1}^2 + {k2}^2$", f"${k1}^2 = {k2}^2 + {h}^2$",
+                   f"${h}^2 = {k1}^2 - {k2}^2$", f"${h} = {k1} + {k2}$"]
+            aus.append(X("Welche Gleichung gilt in diesem rechtwinkligen "
+                         "Dreieck? {K}", *_x(opt, 0, n),
+                         grafik=fig))
+            opt = [f"${k1} = \\sqrt{{{h}^2 - {k2}^2}}$",
+                   f"${k1} = \\sqrt{{{h}^2 + {k2}^2}}$",
+                   f"${k1} = {h}^2 - {k2}^2$",
+                   f"${k1} = \\sqrt{{{k2}^2 - {h}^2}}$"]
+            aus.append(X(f"Mit welcher Gleichung berechnet man ${k1}$? {{K}}",
+                         *_x(opt, 0, n + 1), grafik=fig))
+        else:
+            opt = [f"${h} = \\sqrt{{{k1}^2 - {k2}^2}}$",
+                   f"${h} = \\sqrt{{{k1}^2 + {k2}^2}}$",
+                   f"${h} = {k1}^2 + {k2}^2$", f"${h} = {k1} + {k2}$"]
+            aus.append(X(f"Mit welcher Gleichung berechnet man ${h}$? {{K}}",
+                         *_x(opt, 1, n), grafik=fig))
+            opt = [f"${k2}^2 = {h}^2 + {k1}^2$", f"${k2}^2 = {h}^2 - {k1}^2$",
+                   f"${k2}^2 = {k1}^2 - {h}^2$", f"${k2} = {h} - {k1}$"]
+            aus.append(X(f"Welche Gleichung gilt für die Kathete ${k2}$? {{K}}",
+                         *_x(opt, 1, n + 2), grafik=fig))
+    return aus
+
+
+def _x(opt, i, k):
+    o, j = _rot(opt, i, k)
+    return o, o[j]
+
+
+# T44 Zeiteinheiten umrechnen – 2025-OS-B1b (Kurzantwort / Ankreuzen)
+def _t44():
+    kurz = [  # (Text, Wert, Faktor, Zieleinheit, Antwort)
+        ("Eine Busfahrt dauert $2{,}5$ h. Gib die Dauer in Minuten an.",
+         "2.5", 60, "min"),
+        ("Ein Training dauert $0{,}2$ h. Gib die Dauer in Minuten an.",
+         "0.2", 60, "min"),
+        ("Eine Wanderung dauert $4{,}25$ h. Gib die Dauer in Minuten an.",
+         "4.25", 60, "min"),
+        ("Ein Kuchen backt $1{,}2$ h. Gib die Backzeit in Minuten an.",
+         "1.2", 60, "min"),
+        ("Eine Ampel bleibt $3$ min rot. Gib die Zeit in Sekunden an.",
+         "3", 60, "s"),
+        ("Ein Zeltlager dauert $2{,}5$ Tage. Gib die Dauer in Stunden an.",
+         "2.5", 24, "h"),
+        ("Eine Hausaufgabe dauert $0{,}4$ h. Gib die Dauer in Minuten an.",
+         "0.4", 60, "min"),
+    ]
+    aus = []
+    for text, w, f, e in kurz:
+        r = _q(w) * f
+        aus.append(A(f"{text} {{K}}",
+                     f"${dez(float(w))} \\cdot {f} = {_zahl(r)}$ {e}",
+                     f"{w}*{f}", antwort=f"__ {e}"))
+    ank = [  # (Text, Optionen, richtig, Rechnung, Kontrolle)
+        ("Ein Film dauert $1{,}75$ h. Wie viele Minuten sind das?",
+         ["$95$ min", "$105$ min", "$115$ min", "$175$ min"], 1,
+         "$1{,}75 \\cdot 60 = 105$", ("1.75*60", 105)),
+        ("Eine Pause dauert $45$ min. Wie viele Stunden sind das?",
+         ["$0{,}45$ h", "$4{,}5$ h", "$0{,}75$ h", "$0{,}5$ h"], 2,
+         "$45 : 60 = 0{,}75$", ("45/60", "0.75")),
+        ("Eine Zugfahrt dauert $135$ min. Wie viele Stunden sind das?",
+         ["$1{,}35$ h", "$2{,}25$ h", "$2{,}15$ h", "$1{,}75$ h"], 1,
+         "$135 : 60 = 2{,}25$", ("135/60", "2.25")),
+    ]
+    for text, opt, i, weg, (p, soll) in ank:
+        _gleich(_sp.sympify(p), soll)
+        aus.append(X(f"{text} Kreuze an. {{K}}", opt, f"{opt[i]}: {weg}", p))
+    return aus
+
+
+# T45 Eigenschaft einer Figur zuordnen – 2026-FOR-B1c (Ankreuzen)
+def _t45():
+    daten = [
+        ("Rechteck", ["sind die Diagonalen gleich lang",
+                      "stehen die Diagonalen senkrecht aufeinander",
+                      "sind alle Seiten gleich lang"], 0),
+        ("Raute", ["sind alle Winkel rechte Winkel",
+                   "sind alle Seiten gleich lang",
+                   "sind die Diagonalen gleich lang"], 1),
+        ("Quadrat", ["gibt es genau eine Symmetrieachse",
+                     "sind zwei Winkel stumpf",
+                     "sind die Diagonalen gleich lang und stehen senkrecht "
+                     "aufeinander"], 2),
+        ("Drachenviereck", ["stehen die Diagonalen senkrecht aufeinander",
+                            "sind gegenüberliegende Seiten parallel",
+                            "sind alle Seiten gleich lang"], 0),
+        ("gleichseitigen Dreieck", ["gibt es einen rechten Winkel",
+                                     "ist jeder Winkel $60^\\circ$ groß",
+                                     "ist ein Winkel stumpf"], 1),
+        ("Parallelogramm", ["sind die Diagonalen gleich lang",
+                            "sind alle Winkel gleich groß",
+                            "halbieren sich die Diagonalen gegenseitig"], 2),
+        ("rechtwinkligen Dreieck", ["liegt die längste Seite dem rechten "
+                                     "Winkel gegenüber",
+                                     "sind zwei Seiten gleich lang",
+                                     "ist ein Winkel stumpf"], 0),
+        ("gleichschenkligen Dreieck", ["sind alle Seiten gleich lang",
+                                        "sind zwei Winkel gleich groß",
+                                        "gibt es einen rechten Winkel"], 1),
+        ("Viereck", ["gibt es ein Paar paralleler Seiten",
+                     "sind zwei Seiten gleich lang",
+                     "beträgt die Summe der Innenwinkel $360^\\circ$"], 2),
+        ("Dreieck", ["beträgt die Summe der Innenwinkel $180^\\circ$",
+                     "ist ein Winkel ein rechter Winkel",
+                     "sind zwei Seiten gleich lang"], 0),
+    ]
+    assert _sp.Integer(180) - 60 - 60 == 60
+    aus = []
+    for fig, opt, i in daten:
+        aus.append(X(f"Kreuze die richtige Ergänzung an: „In jedem {fig} "
+                     "…“ {K}", ["… " + o + "." for o in opt],
+                     f"… {opt[i]}."))
+    return aus
+
+
+# T46 Größen vergleichen – 2026-FOR-B1d (Eintragen <, =, >)
+def _t46():
+    daten = [  # (links Wert, Einheit, rechts Wert, Einheit, Faktor l→r)
+        ("0.8", "km", "80", "m", 1000), ("1.5", "kg", "1500", "g", 1000),
+        ("0.3", "l", "30", "ml", 1000), ("45", "mm", "4.5", "dm", "1/100"),
+        ("2.4", "t", "240", "kg", 1000), ("0.05", "m", "5", "cm", 100),
+        ("7", "dm", "0.07", "m", "1/10"), ("120", "cm", "12", "m", "1/100"),
+        ("650", "g", "0.65", "kg", "1/1000"), ("2.5", "h", "250", "min", 60),
+    ]
+    aus = []
+    for l, el, r, er, f in daten:
+        lw = _q(l) * _q(f)
+        rw = _q(r)
+        z = "<" if lw < rw else ">" if lw > rw else "="
+        ld, rd = dez(float(l)), dez(float(r))
+        aus.append(A(f"Vergleiche ${ld}$ {el} und ${rd}$ {er}. Setze das "
+                     "richtige Zeichen ein: $<$, $=$ oder $>$. {K}",
+                     f"${ld}$ {el} $= {_zahl(lw)}$ {er}, also "
+                     f"${ld}$ {el} ${z}$ ${rd}$ {er}",
+                     f"{l}*{f}", antwort=f"${ld}$ {el} __ ${rd}$ {er}"))
+    return aus
+
+
+# T47 Umfang Rechteck berechnen – 2026-FOR-B1h (Kurzantwort)
+def _t47():
+    daten = [("Ein Beet", "4.5", "2", "m"), ("Ein Bilderrahmen", "30", "20", "cm"),
+             ("Eine Tischplatte", "1.2", "0.8", "m"),
+             ("Ein Spielfeld", "40", "25", "m"),
+             ("Eine Briefmarke", "3", "2.5", "cm"),
+             ("Ein Handy", "15", "7.5", "cm"), ("Eine Weide", "60", "35", "m"),
+             ("Eine Tafel", "3.6", "1.2", "m"),
+             ("Ein Sandkasten", "2.25", "1.75", "m"),
+             ("Ein Fenster", "1.3", "0.9", "m")]
+    aus = []
+    for was, a, b, e in daten:
+        u = 2 * (_q(a) + _q(b))
+        aus.append(A(f"{was} ist rechteckig, ${dez(float(a))}$ {e} lang und "
+                     f"${dez(float(b))}$ {e} breit. Berechne den Umfang. {{K}}",
+                     f"$u = 2 \\cdot ({dez(float(a))} + {dez(float(b))}) = "
+                     f"{_zahl(u)}$ {e}", f"2*({a}+{b})", antwort=f"u = __ {e}"))
+    return aus
+
+
+# T48 Median bestimmen – 2024-OS-B1h (Kurzantwort)
+def _t48():
+    daten = [
+        ("Tore in fünf Spielen", ["3", "1", "4", "0", "2"], ""),
+        ("Wartezeiten an der Kasse in Minuten", ["12", "7", "9", "15", "7",
+                                                  "10"], "min"),
+        ("Punkte in einem Test", ["18", "25", "21", "16", "23", "19", "22"],
+         "Punkte"),
+        ("Preise für eine Kugel Eis in Euro", ["1.5", "1.2", "1.8", "1.4"],
+         "€"),
+        ("Schlafdauer in Stunden", ["8", "7", "9", "6", "7"], "h"),
+        ("Körpergrößen in Zentimetern", ["162", "175", "168", "171", "159",
+                                         "180"], "cm"),
+        ("Wurfweiten in Metern", ["24", "31", "27", "19", "35", "28", "22"],
+         "m"),
+        ("Laufzeiten in Sekunden", ["14", "12", "15", "13"], "s"),
+        ("Taschengeld im Monat in Euro", ["20", "15", "30", "25", "10"], "€"),
+        ("Seitenzahlen von Büchern", ["240", "180", "320", "210", "260",
+                                      "190"], "Seiten"),
+    ]
+    aus = []
+    for was, werte, e in daten:
+        q = [_q(w) for w in werte]
+        m = _sp.nsimplify(_median(q))
+        s = sorted(q)
+        liste = "; ".join(f"${_w(w, e)}$" for w in werte)
+        geo = "; ".join(f"${_w(w, e)}$" for w in s)
+        if len(q) % 2:
+            weg = f"geordnet {geo}; der mittlere Wert ist ${_zahl(m)}$"
+        else:
+            a, b = s[len(s) // 2 - 1], s[len(s) // 2]
+            weg = (f"geordnet {geo}; $({_w(a, e)} + {_w(b, e)}) : 2 "
+                   f"= {_w(m, e) if e == '€' and len(str(m)) < 5 else _zahl(m)}$")
+        aus.append(A(f"{was}: {liste}. Bestimme den Median. {{K}}",
+                     weg + (f" {e}" if e else ""), str(float(m)),
+                     antwort=f"__ {e}".rstrip()))
+    return aus
+
+
+# T49 Proportionale Zuordnung Dreisatz – 2023-OS-B1a (Kurzantwort)
+def _t49():
+    daten = [  # (Satz mit {a} {b}, a, b, Frage mit {c}, c, Einheit)
+        ("{a} Brötchen kosten {b} €.", "4", "1.6",
+         "Wie viel kosten {c} Brötchen?", "7", "€"),
+        ("{a} l Benzin kosten {b} €.", "5", "9",
+         "Wie viel kosten {c} l?", "8", "€"),
+        ("Ein Drucker druckt {b} Seiten in {a} min.", "2", "12",
+         "Wie viele Seiten druckt er in {c} min?", "5", "Seiten"),
+        ("{a} m Stoff kosten {b} €.", "3", "21",
+         "Wie viel kosten {c} m?", "5", "€"),
+        ("Für {a} Kekse braucht man {b} g Mehl.", "10", "250",
+         "Wie viel Mehl braucht man für {c} Kekse?", "24", "g"),
+        ("Ein Wasserhahn füllt {b} l in {a} min.", "4", "6",
+         "Wie viele Liter sind es in {c} min?", "10", "l"),
+        ("Für {a} h Arbeit bekommt Lea {b} €.", "3", "42",
+         "Wie viel bekommt sie für {c} h?", "5", "€"),
+        ("{a} kg Kartoffeln kosten {b} €.", "2", "3.4",
+         "Wie viel kosten {c} kg?", "6", "€"),
+        ("Ein Auto braucht für {a} km {b} l Benzin.", "150", "9",
+         "Wie viel braucht es für {c} km?", "250", "l"),
+        ("{a} Hefte kosten {b} €.", "8", "12",
+         "Wie viel kosten {c} Hefte?", "3", "€"),
+    ]
+    aus = []
+    for satz, a, b, frage, c, e in daten:
+        aq, bq, cq = _q(a), _q(b), _q(c)
+        r = bq / aq * cq
+        eins = bq / aq
+        f = (lambda x: f"${dez(float(x))}$")
+        wert = (eur(float(r), 2) + "$" if e == "€"
+                else f"{_zahl(r)}$ {e}")
+        text = (satz.format(a=f(aq), b=f"${_w(bq, e)}$") + " "
+                + frage.format(c=f(cq)) + " {K}")
+        weg = (f"Für $1$: ${_w(bq, e)} : {_zahl(aq)} = {_w(eins, e)}$; "
+               f"${_w(eins, e)} \\cdot {_zahl(cq)} = {wert}")
+        aus.append(A(text, weg, f"{b}/{a}*{c}", antwort=f"__ {e}"))
+    return aus
+
+
+# T50 Rechteckseite aus Fläche berechnen – 2023-OS-B1c (Kurzantwort)
+def _t50():
+    daten = [("Ein rechteckiges Beet", "24", "4", "m"),
+             ("Ein rechteckiges Spielfeld", "1800", "30", "m"),
+             ("Ein rechteckiges Foto", "150", "10", "cm"),
+             ("Eine rechteckige Tischplatte", "1.2", "1.5", "m"),
+             ("Eine rechteckige Platte", "3600", "40", "mm"),
+             ("Eine rechteckige Terrasse", "27", "4.5", "m"),
+             ("Ein rechteckiges Plakat", "3000", "50", "cm"),
+             ("Ein rechteckiges Grundstück", "600", "20", "m"),
+             ("Eine rechteckige Heftseite", "630", "21", "cm"),
+             ("Eine rechteckige Garage", "15", "2.5", "m")]
+    aus = []
+    for was, A_, b, e in daten:
+        r = _q(A_) / _q(b)
+        aus.append(A(f"{was} hat den Flächeninhalt ${_zahl(A_)}$ {e}² und "
+                     f"ist ${dez(float(b))}$ {e} breit. Wie lang ist es? {{K}}",
+                     f"${_zahl(A_)} : {dez(float(b))} = {_zahl(r)}$ {e}",
+                     f"{A_}/{b}", antwort=f"__ {e}"))
+    return aus
+
+
+# T51 Fehlenden Wert aus Mittelwert bestimmen – 2022-OS-B1d (Eintragen)
+def _t51():
+    daten = [  # (Text, Werte mit None, Mittel, Einheit)
+        ("Vier Schüler haben im Test diese Punkte", [18, 22, None, 20], 21,
+         "Punkte"),
+        ("Ein Eiscafé verkauft von Montag bis Freitag so viele Becher",
+         [30, 45, 40, None, 35], 38, "Becher"),
+        ("Eine Mannschaft schießt in fünf Spielen diese Tore",
+         [2, 0, 3, None, 1], 2, "Tore"),
+        ("Ein Museum zählt an drei Tagen diese Besucher", [120, 150, None],
+         140, "Besucher"),
+        ("In sechs Monaten fällt so viel Regen (in mm)",
+         [40, 55, 35, 60, 50, None], 50, "mm"),
+        ("Ein Bote liefert an vier Tagen so viele Pakete", [85, 90, None, 70],
+         80, "Pakete"),
+        ("Tim läuft an fünf Tagen so viele Tausend Schritte",
+         [8, 11, 9, 12, None], 9, "Tausend"),
+        ("Vier Kürbisse wiegen (in kg)", [6, 9, None, 7], 8, "kg"),
+        ("Mia läuft vier Runden in diesen Zeiten (in Minuten)",
+         [12, 15, 13, None], 14, "min"),
+        ("Fünf Klassen sammeln diese Spenden (in €)", [60, 80, 75, None, 90],
+         75, "€"),
+    ]
+    aus = []
+    for text, werte, m, e in daten:
+        n = len(werte)
+        bek = [w for w in werte if w is not None]
+        fehlt = n * m - sum(bek)
+        _gleich(_sp.Rational(sum(bek) + fehlt, n), m)
+        assert fehlt != m and fehlt >= 0
+        liste = "; ".join("__" if w is None else f"${w}$" for w in werte)
+        aus.append(A(f"{text}: {liste}. Der Durchschnitt beträgt ${m}$. "
+                     f"Ergänze den fehlenden Wert. {{K}}",
+                     f"${n} \\cdot {m} = {n * m}$; ${n * m} - "
+                     f"{sum(bek)} = {fehlt}$",
+                     f"{n}*{m}-{sum(bek)}", antwort=f"__ {e}"))
+    return aus
+
+
+# T52 Satz des Pythagoras formulieren – 2022-OS-B1g (Ankreuzen)
+def _t52():
+    daten = [
+        ("Im Dreieck $ABC$ liegt der rechte Winkel bei $C$. Welche Gleichung "
+         "gilt?", ["$a^2 = b^2 + c^2$", "$a^2 + b^2 = c^2$", "$a + b = c$"], 1),
+        ("Im Dreieck $ABC$ liegt der rechte Winkel bei $A$. Welche Gleichung "
+         "gilt?", ["$b^2 + c^2 = a^2$", "$a^2 + b^2 = c^2$",
+                   "$b \\cdot c = a^2$"], 0),
+        ("Wo liegt im rechtwinkligen Dreieck die Hypotenuse?",
+         ["am rechten Winkel", "immer unten", "dem rechten Winkel gegenüber"],
+         2),
+        ("Welche Aussage gilt in jedem rechtwinkligen Dreieck?",
+         ["Die Katheten sind zusammen so lang wie die Hypotenuse.",
+          "Die Hypotenuse ist die längste Seite.",
+          "Eine Kathete ist länger als die Hypotenuse."], 1),
+        ("Im Dreieck $ABC$ liegt der rechte Winkel bei $B$. Welche Gleichung "
+         "gilt?", ["$a^2 - c^2 = b^2$", "$a^2 + b^2 = c^2$",
+                   "$a^2 + c^2 = b^2$"], 2),
+        ("Im Dreieck $PQR$ liegt der rechte Winkel bei $Q$; die Seiten heißen "
+         "$p$, $q$, $r$ (gegenüber $P$, $Q$, $R$). Welche Gleichung gilt?",
+         ["$p^2 + r^2 = q^2$", "$p^2 + q^2 = r^2$", "$p + r = q$"], 0),
+        ("Welche Aussage ist der Satz des Pythagoras?",
+         ["Die beiden Kathetenquadrate sind zusammen doppelt so groß wie das "
+          "Hypotenusenquadrat.",
+          "Das Hypotenusenquadrat ist so groß wie ein Kathetenquadrat.",
+          "Das Quadrat über der Hypotenuse hat denselben Flächeninhalt wie "
+          "die beiden Kathetenquadrate zusammen."], 2),
+        ("Für welche Dreiecke gilt der Satz des Pythagoras?",
+         ["für jedes rechtwinklige Dreieck", "für jedes gleichseitige Dreieck",
+          "für jedes Dreieck"], 0),
+        ("Im Dreieck $EFG$ liegt der rechte Winkel bei $E$; die Seiten heißen "
+         "$e$, $f$, $g$ (gegenüber $E$, $F$, $G$). Welche Gleichung gilt?",
+         ["$e^2 + f^2 = g^2$", "$f^2 + g^2 = e^2$", "$e = f + g$"], 1),
+        ("Welche Seiten heißen im rechtwinkligen Dreieck Katheten?",
+         ["die beiden längsten Seiten", "die beiden Seiten am rechten Winkel",
+          "die Seite gegenüber dem rechten Winkel"], 1),
+    ]
+    a, b, c = _sp.symbols("a b c", positive=True)
+    assert _sp.simplify((3**2 + 4**2) - 5**2) == 0
+    return [X(f"{t} Kreuze an. {{K}}", o, o[i]) for t, o, i in daten]
+
+
+# T53 Portionen aus Gesamtmenge berechnen – 2022-OS-B1h (Kurzantwort)
+def _t53():
+    daten = [  # (Text, gesamt groß, Einheit groß, Faktor, Einheit klein,
+               #  Portion, Antworteinheit)
+        ("In einer Kanne sind $2$ l Saft. Ein Becher fasst $250$ ml. Wie "
+         "viele Becher kann man füllen?", "2", "l", 1000, "ml", 250, "Becher"),
+        ("Ein Bäcker hat $3$ kg Mehl. Für einen Kuchen braucht er $500$ g. "
+         "Für wie viele Kuchen reicht das Mehl?", "3", "kg", 1000, "g", 500,
+         "Kuchen"),
+        ("Ein Band ist $1{,}2$ m lang. Es wird in Stücke von $15$ cm "
+         "geschnitten. Wie viele Stücke entstehen?", "1.2", "m", 100, "cm", 15,
+         "Stücke"),
+        ("Ein Topf enthält $4{,}5$ l Suppe. Ein Teller fasst $300$ ml. Wie "
+         "viele Teller kann man füllen?", "4.5", "l", 1000, "ml", 300,
+         "Teller"),
+        ("Für ein Grillfest gibt es $2{,}4$ kg Hackfleisch. Ein Burger braucht "
+         "$120$ g. Wie viele Burger kann man machen?", "2.4", "kg", 1000, "g",
+         120, "Burger"),
+        ("Eine Übungsstunde dauert $1$ h. Eine Aufgabe dauert $4$ min. Wie "
+         "viele Aufgaben schafft man?", "1", "h", 60, "min", 4, "Aufgaben"),
+        ("Eine Flasche enthält $0{,}75$ l Sirup. Für ein Glas braucht man "
+         "$25$ ml. Für wie viele Gläser reicht der Sirup?", "0.75", "l", 1000,
+         "ml", 25, "Gläser"),
+        ("Eine Stoffbahn ist $5$ m lang. Sie wird in Stücke von $25$ cm "
+         "geschnitten. Wie viele Stücke entstehen?", "5", "m", 100, "cm", 25,
+         "Stücke"),
+        ("Ein Korb enthält $3{,}6$ kg Äpfel. Eine Tüte fasst $450$ g. Wie "
+         "viele Tüten kann man füllen?", "3.6", "kg", 1000, "g", 450, "Tüten"),
+        ("In einer Packung sind $2{,}4$ l Milch. Eine Tasse fasst $200$ ml. "
+         "Wie viele Tassen kann man füllen?", "2.4", "l", 1000, "ml", 200,
+         "Tassen"),
+    ]
+    aus = []
+    for text, g, eg, f, ek, p, e in daten:
+        gk = _q(g) * f
+        r = gk / p
+        assert r.is_Integer
+        aus.append(A(f"{text} {{K}}",
+                     f"${dez(float(g))}$ {eg} $= {_zahl(gk)}$ {ek}; "
+                     f"${_zahl(gk)} : {p} = {int(r)}$",
+                     f"{g}*{f}/{p}", antwort=f"__ {e}"))
+    return aus
+
+
+def _ks(*teile):
+    return ("\\begin{ksys}[xmin=-5,xmax=5,ymin=-5,ymax=5,ablesen] "
+            + " ".join(teile) + " \\end{ksys}")
+
+
+def _pt(x, y):
+    return f"({x}|{y})".replace("-", "-")
+
+
+# T54 Scheitelpunkt ablesen – 2021-OS-B1d (Ankreuzen am Graphen)
+def _t54():
+    daten = [(1, 2, -3), (1, -1, 3), (-1, 3, 1), (1, -4, -3), (-1, 1, 4),
+             (-1, -2, 3), (-1, 0, 3), (-1, 2, 2), (1, 4, -1), (1, -1, -4)]
+    aus = []
+    for k, (a, d, e) in enumerate(daten):
+        kand = []
+        for p in [(d, e), (e, d), (-d, e), (d, -e), (-d, -e), (-e, -d)]:
+            if p not in kand:
+                kand.append(p)
+        opt = [f"$S{_pt(*p)}$" for p in kand[:4]]
+        o, j = _rot(opt, 0, k)
+        # Kontrolle: Scheitel ist Extremstelle von a(x-d)^2+e
+        x = _sp.Symbol("x")
+        f = a * (x - d) ** 2 + e
+        assert _sp.solve(_sp.diff(f, x), x) == [d] and f.subs(x, d) == e
+        aus.append(X("Gib den Scheitelpunkt der Parabel an. Kreuze an. {K}",
+                     o, o[j], f"[{d}, {e}]",
+                     _ks(f"\\parabel{{{a}}}{{{d}}}{{{e}}}{{}}")))
+    return aus
+
+
+# T55 Arithmetisches Mittel berechnen – 2021-OS-B1f (Kurzantwort)
+def _t55():
+    daten = [
+        ("Eine Radtour dauert drei Tage. Gefahren werden", ["42", "35", "49"],
+         "km", "Strecke pro Tag"),
+        ("In vier Spielen erzielt Ben", ["12", "18", "9", "21"], "Punkte",
+         "Punktzahl"),
+        ("Lena hat diese Noten", ["2", "3", "1", "2", "2"], "",
+         "Note"),
+        ("Ein Heft kostet in vier Läden", ["2.4", "3.1", "2.8", "3.3"], "€",
+         "Preis"),
+        ("An der Bushaltestelle wartet Ali", ["5", "9", "7", "11"], "min",
+         "Wartezeit"),
+        ("Drei Hunde wiegen", ["12", "30", "18"], "kg", "Masse"),
+        ("Über $100$ m läuft Kim", ["13.4", "14.1", "13.8", "14.3"], "s",
+         "Zeit"),
+        ("Ein Kino zählt an fünf Abenden", ["250", "310", "190", "330", "270"],
+         "Besucher", "Besucherzahl"),
+        ("Drei Apfelbäume tragen", ["6", "14", "10"], "kg", "Ernte"),
+        ("Sechs Kinder bekommen im Monat", ["15", "25", "20", "30", "35", "25"],
+         "€", "Taschengeld"),
+    ]
+    aus = []
+    for text, werte, e, was in daten:
+        q = [_q(w) for w in werte]
+        m = sum(q) / len(q)
+        assert (m * 100).is_Integer
+        liste = "; ".join(f"${_w(w, e)}$" for w in werte)
+        summe = sum(q)
+        aus.append(A(f"{text} {liste}{(' ' + e) if e else ''}. Berechne das "
+                     f"arithmetische Mittel ({was}). {{K}}",
+                     f"${_w(summe, e)} : {len(q)} = {_w(m, e)}$"
+                     + (f" {e}" if e else ""),
+                     f"({'+'.join(werte)})/{len(werte)}",
+                     antwort=f"__ {e}".rstrip()))
+    return aus
+
+
+# T56 Quadratseite aus Fläche berechnen – 2020-OS-B1d (Kurzantwort)
+def _t56():
+    daten = [("Eine quadratische Fliese", "49", "cm"),
+             ("Ein quadratisches Beet", "81", "m"),
+             ("Ein quadratisches Kissen", "1600", "cm"),
+             ("Eine quadratische Tischdecke", "0.25", "m"),
+             ("Ein quadratischer Platz", "400", "m"),
+             ("Ein quadratischer Aufkleber", "64", "mm"),
+             ("Ein quadratischer Teppich", "1.44", "m"),
+             ("Ein quadratisches Bild", "121", "cm"),
+             ("Ein quadratischer Garten", "900", "m"),
+             ("Eine quadratische Terrasse", "2.25", "m")]
+    aus = []
+    for was, A_, e in daten:
+        s = _sp.sqrt(_q(A_))
+        assert s.is_Rational
+        aus.append(A(f"{was} hat den Flächeninhalt ${_zahl(A_)}$ {e}². Wie "
+                     f"lang ist eine Seite? {{K}}",
+                     f"${_zahl(s)} \\cdot {_zahl(s)} = {_zahl(A_)}$, also "
+                     f"${_zahl(s)}$ {e}", f"{A_}**0.5", antwort=f"__ {e}"))
+    return aus
+
+
+# T57 Winkel über Scheitel- oder Nebenwinkel bestimmen – 2019-OS-B1a
+def _t57():
+    # \geradenkreuzung{t}{rechts oben}{links oben}{links unten}{rechts unten}:
+    # rechts oben und links unten = t, die beiden anderen 180 − t
+    daten = [(40, 2, 4), (55, 3, 2), (70, 4, 3), (25, 5, 3), (65, 2, 5)]
+    aus = []
+    for t, geg, ges in daten:
+        wert = {2: t, 3: 180 - t, 4: t, 5: 180 - t}
+        lab = {2: "", 3: "", 4: "", 5: ""}
+        lab[geg] = f"{wert[geg]}^\\circ"
+        lab[ges] = "\\varepsilon"
+        a = wert[ges]
+        if a == wert[geg]:
+            weg = f"$\\varepsilon = {a}^\\circ$ (Scheitelwinkel)"
+            pr = str(a)
+        else:
+            assert a + wert[geg] == 180
+            weg = (f"$\\varepsilon = 180^\\circ - {wert[geg]}^\\circ = "
+                   f"{a}^\\circ$ (Nebenwinkel)")
+            pr = f"180-{wert[geg]}"
+        aus.append(A("Zwei Geraden schneiden sich. Wie groß ist "
+                     "$\\varepsilon$? {K}", weg, pr,
+                     antwort="$\\varepsilon =$ __°",
+                     grafik="\\geradenkreuzung{%d}{%s}{%s}{%s}{%s}" % (
+                         t, lab[2], lab[3], lab[4], lab[5])))
+    return aus
+
+
+# T58 Zufallsgerät zu Wahrscheinlichkeit entwerfen – 2019-OS-B1g
+def _t58():
+    daten = [
+        ("Ein Glücksrad hat $8$ gleich große Felder. Die Wahrscheinlichkeit "
+         "für Blau soll $25\\,\\%$ sein. Wie viele Felder müssen blau sein?",
+         "8*25/100", 2, "$25\\,\\% = \\frac{1}{4}$; $\\frac{1}{4} \\cdot 8 = 2$",
+         "Felder"),
+        ("In einer Urne liegen $6$ rote Kugeln. Wie viele weiße Kugeln muss "
+         "man dazulegen, damit $P(\\text{rot}) = \\frac{3}{4}$ ist?",
+         "6*4/3-6", 2, "$6$ rote sind $\\frac{3}{4}$ von $8$ Kugeln, also "
+         "$8 - 6 = 2$ weiße", "Kugeln"),
+        ("Ein Stapel hat $12$ Karten. Die Wahrscheinlichkeit, einen Joker zu "
+         "ziehen, soll $\\frac{1}{4}$ sein. Wie viele Joker braucht man?",
+         "12/4", 3, "$12 : 4 = 3$", "Joker"),
+        ("In einer Tüte sind $5$ grüne Bonbons und noch andere. Die "
+         "Wahrscheinlichkeit für Grün soll $\\frac{1}{3}$ sein. Wie viele "
+         "andere Bonbons müssen in der Tüte sein?", "5*3-5", 10,
+         "$5$ grüne sind $\\frac{1}{3}$ von $15$, also $15 - 5 = 10$ andere",
+         "Bonbons"),
+        ("Ein Glücksrad hat $10$ gleich große Felder. Die Wahrscheinlichkeit "
+         "für einen Gewinn soll $60\\,\\%$ sein. Wie viele Gewinnfelder "
+         "braucht man?", "10*60/100", 6, "$10 \\cdot 0{,}6 = 6$",
+         "Felder"),
+    ]
+    aus = []
+    for text, p, soll, weg, e in daten:
+        _gleich(_sp.sympify(p), soll)
+        aus.append(A(f"{text} {{K}}", weg, p, antwort=f"__ {e}"))
+    return aus
+
+
+# T59 Spannweite berechnen – 2019-OS-B1i (Kurzantwort)
+def _t59():
+    daten = [("Eine Tafel Schokolade kostet in vier Läden",
+              ["1.29", "0.99", "1.59", "1.19"], "€"),
+             ("Fünf Kinder sind so groß", ["158", "171", "164", "149", "166"],
+              "cm"),
+             ("Vier Läufer brauchen über $100$ m", ["12.8", "13.4", "12.5",
+                                                    "13.1"], "s"),
+             ("Fünf Spieler erzielen", ["34", "47", "29", "41", "38"],
+              "Punkte"),
+             ("Vier Koffer wiegen", ["18.5", "21", "19.5", "23"], "kg")]
+    aus = []
+    for text, werte, e in daten:
+        q = [_q(w) for w in werte]
+        sp = max(q) - min(q)
+        liste = "; ".join(f"${dez(float(w))}$" for w in werte)
+        rt = (eur(float(sp), 2) + "$" if e == "€"
+              else f"{_zahl(sp)}$ {e}")
+        aus.append(A(f"{text}: {liste} {e}. Gib die Spannweite an. {{K}}",
+                     f"größter minus kleinster Wert: ${dez(float(max(q)))} - "
+                     f"{dez(float(min(q)))} = " + rt,
+                     f"{max(werte, key=float)}-{min(werte, key=float)}",
+                     antwort=f"__ {e}"))
+    return aus
+
+
+# T60 Strecke aus Teilstrecken berechnen – 2018-OS-B1b (Kurzantwort)
+def _t60():
+    daten = [
+        ("Ein Brett ist $3$ m lang. Davon werden $4$ Stücke von je $45$ cm "
+         "abgesägt. Wie lang ist der Rest?", "300-4*45", 120, "cm",
+         "$3$ m $= 300$ cm; $300 - 4 \\cdot 45 = 300 - 180 = 120$ cm"),
+        ("Eine Schnur ist $2{,}5$ m lang. Davon werden $6$ Stücke von je "
+         "$25$ cm abgeschnitten. Wie lang ist der Rest?", "250-6*25", 100,
+         "cm", "$2{,}5$ m $= 250$ cm; $250 - 6 \\cdot 25 = 250 - 150 = 100$ cm"),
+        ("Ein Wanderweg ist $12$ km lang. Drei Abschnitte von je $2{,}5$ km "
+         "sind geschafft. Wie weit ist es noch?", "12-3*2.5", "4.5", "km",
+         "$12 - 3 \\cdot 2{,}5 = 12 - 7{,}5 = 4{,}5$ km"),
+        ("Ein Rohr ist $4$ m lang. Davon werden $3$ Teile von je $80$ cm "
+         "abgeschnitten. Wie lang ist der Rest?", "400-3*80", 160, "cm",
+         "$4$ m $= 400$ cm; $400 - 3 \\cdot 80 = 400 - 240 = 160$ cm"),
+        ("Von einer Stoffrolle mit $10$ m werden $7$ Stücke von je $1{,}2$ m "
+         "verkauft. Wie viel Stoff bleibt?", "10-7*1.2", "1.6", "m",
+         "$10 - 7 \\cdot 1{,}2 = 10 - 8{,}4 = 1{,}6$ m"),
+    ]
+    aus = []
+    for text, p, soll, e, weg in daten:
+        _gleich(_sp.nsimplify(p, rational=True), soll)
+        aus.append(A(f"{text} {{K}}", weg, p, antwort=f"__ {e}"))
+    return aus
+
+
+# T61 Körper aus Netz oder Schrägbild benennen – 2018-OS-B1i (Ankreuzen)
+def _t61():
+    daten = [("Netz", "\\netzquader{2}{1}{1.5}{}{}{}",
+              ["Würfel", "Quader", "Prisma mit dreieckiger Grundfläche"], 1),
+             ("Netz", "\\netzzylinder{0.7}{2.4}{}{}",
+              ["Kegel", "Zylinder", "Prisma"], 1),
+             ("Netz", "\\netzpyramide{2}{1.8}{}{}",
+              ["Prisma", "Quader", "Pyramide"], 2),
+             ("Schrägbild", "\\kegel{1.2}{2.5}{}{}{}",
+              ["Pyramide", "Kegel", "Zylinder"], 1),
+             ("Netz", "\\netzwuerfel{1.2}{}",
+              ["Würfel", "Pyramide", "Zylinder"], 0)]
+    return [X(f"Zu welchem Körper gehört das {art}? Kreuze an. {{K}}", o, o[i],
+              grafik=g) for art, g, o, i in daten]
+
+
+# T62 Ergebnismenge aufzählen – 2017-OS-B1f (Kurzantwort)
+def _t62():
+    daten = [
+        ("Man wirft eine Münze (Zahl oder Wappen) und einen Spielwürfel. Wie "
+         "viele verschiedene Ergebnisse gibt es?", 2, 6,
+         "$2 \\cdot 6 = 12$ (Z1 bis Z6 und W1 bis W6)"),
+        ("Ein Glücksrad mit den Farben Rot, Gelb und Blau wird zweimal "
+         "gedreht. Wie viele verschiedene Ergebnisse gibt es?", 3, 3,
+         "$3 \\cdot 3 = 9$ (RR, RG, RB, GR, GG, GB, BR, BG, BB)"),
+        ("Jonas hat $3$ T-Shirts und $2$ Hosen. Wie viele verschiedene "
+         "Kombinationen aus T-Shirt und Hose kann er anziehen?", 3, 2,
+         "$3 \\cdot 2 = 6$"),
+        ("Eine Münze wird dreimal geworfen. Wie viele verschiedene "
+         "Ergebnisse gibt es?", 4, 2,
+         "$2 \\cdot 2 \\cdot 2 = 8$ (ZZZ, ZZW, ZWZ, ZWW, WZZ, WZW, WWZ, WWW)"),
+        ("Ein Zahlenschloss hat zwei Räder mit den Ziffern $0$ bis $4$. Wie "
+         "viele verschiedene Zahlencodes gibt es?", 5, 5, "$5 \\cdot 5 = 25$"),
+    ]
+    aus = []
+    for text, a, b, weg in daten:
+        r = 8 if a == 4 else a * b
+        aus.append(A(f"{text} {{K}}", weg, "2*2*2" if a == 4 else f"{a}*{b}",
+                     antwort="__ Ergebnisse"))
+        assert str(r) in weg
+    return aus
+
+
+def _sp_term(d, e):
+    kl = "x" if d == 0 else f"(x {'-' if d > 0 else '+'} {abs(d)})^2"
+    if d == 0:
+        kl = "x^2"
+    return kl + ("" if e == 0 else f" {'+' if e > 0 else '-'} {abs(e)}")
+
+
+# T63 Scheitelpunktform aufstellen – 2016-OS-B1g (Ankreuzen)
+def _t63():
+    daten = [(2, -5), (-4, 3), (4, 2), (-1, -6), (5, -2)]
+    x = _sp.Symbol("x")
+    aus = []
+    for k, (d, e) in enumerate(daten):
+        opt = [f"$y = {_sp_term(d, e)}$", f"$y = {_sp_term(-d, e)}$",
+               f"$y = {_sp_term(d, -e)}$", f"$y = {_sp_term(e, d)}$"]
+        f = (x - d) ** 2 + e
+        assert f.subs(x, d) == e and _sp.solve(_sp.diff(f, x), x) == [d]
+        o, j = _rot(opt, 0, k + 1)
+        aus.append(X(f"Eine verschobene Normalparabel hat den Scheitelpunkt "
+                     f"$S({d}|{e})$. Welche Gleichung gehört zu ihr? "
+                     "Kreuze an. {K}", o, o[j]))
+    return aus
+
+
+# T64 Parabel verschieben – 2015-OS-B1i (Kurzantwort)
+def _t64():
+    daten = [  # (Text, Start-Scheitel, Verschiebung (dx, dy), Graph?)
+        ("Die Normalparabel wird um $3$ Einheiten nach links verschoben.",
+         (0, 0), (-3, 0), True),
+        ("Die Normalparabel wird um $4$ Einheiten nach oben verschoben.",
+         (0, 0), (0, 4), True),
+        ("Die Normalparabel wird um $1$ Einheit nach rechts und um $2$ "
+         "Einheiten nach unten verschoben.", (0, 0), (1, -2), True),
+        ("Die Parabel im Bild wird um $2$ Einheiten nach links verschoben.",
+         (1, 3), (-2, 0), True),
+        ("Die Parabel mit $y = x^2 + 2$ wird um $3$ Einheiten nach rechts "
+         "verschoben.", (0, 2), (3, 0), False),
+    ]
+    x = _sp.Symbol("x")
+    aus = []
+    for text, (d, e), (dx, dy), graph in daten:
+        nd, ne = d + dx, e + dy
+        f = (x - dx - d) ** 2 + e + dy  # verschobener Graph
+        assert f.subs(x, nd) == ne
+        aus.append(A(f"{text} Gib den Scheitelpunkt der neuen Parabel an. {{K}}",
+                     f"$S({d}|{e})$ wandert nach $S({nd}|{ne})$",
+                     f"[{nd}, {ne}]", antwort="S( __ | __ )",
+                     grafik=_ks(f"\\parabel{{1}}{{{d}}}{{{e}}}{{}}")
+                     if graph else ""))
+    return aus
+
+
+AUFGABEN["Bruchteil einer Fläche bestimmen"] += _t1b()
+AUFGABEN["Lineare Gleichung lösen"] += _t6b()
+AUFGABEN["Term zu Figur angeben"] = _t42()
+AUFGABEN["Pythagoras Gleichung zuordnen"] = _t43()
+AUFGABEN["Zeiteinheiten umrechnen"] = _t44()
+AUFGABEN["Eigenschaft einer Figur zuordnen"] = _t45()
+AUFGABEN["Größen vergleichen"] = _t46()
+AUFGABEN["Umfang Rechteck berechnen"] = _t47()
+AUFGABEN["Median bestimmen"] = _t48()
+AUFGABEN["Proportionale Zuordnung Dreisatz"] = _t49()
+AUFGABEN["Rechteckseite aus Fläche berechnen"] = _t50()
+AUFGABEN["Fehlenden Wert aus Mittelwert bestimmen"] = _t51()
+AUFGABEN["Satz des Pythagoras formulieren"] = _t52()
+AUFGABEN["Portionen aus Gesamtmenge berechnen"] = _t53()
+AUFGABEN["Scheitelpunkt ablesen"] = _t54()
+AUFGABEN["Arithmetisches Mittel berechnen"] = _t55()
+AUFGABEN["Quadratseite aus Fläche berechnen"] = _t56()
+AUFGABEN["Winkel über Scheitel- oder Nebenwinkel bestimmen"] = _t57()
+AUFGABEN["Zufallsgerät zu Wahrscheinlichkeit entwerfen"] = _t58()
+AUFGABEN["Spannweite berechnen"] = _t59()
+AUFGABEN["Strecke aus Teilstrecken berechnen"] = _t60()
+AUFGABEN["Körper aus Netz oder Schrägbild benennen"] = _t61()
+AUFGABEN["Ergebnismenge aufzählen"] = _t62()
+AUFGABEN["Scheitelpunktform aufstellen"] = _t63()
+AUFGABEN["Parabel verschieben"] = _t64()
+
+
 # --- Schreiben ---------------------------------------------------------------
 
 def main(argv):
@@ -1514,7 +2450,7 @@ def main(argv):
         zeilen = []
         for t in reihe:
             auf = AUFGABEN[t["typ"]]
-            assert len(auf) == 10, (t["typ"], len(auf))
+            assert len(auf) == ZIEL.get(t["typ"], 10), (t["typ"], len(auf))
             k = f"(P10 {t['jahr']} {t['papier']})"
             for v, a in enumerate(auf, 1):
                 z = {"id": f"{eintrag}-basis-k{t['kette_nr']}-v{v}",
