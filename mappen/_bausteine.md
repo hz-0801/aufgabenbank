@@ -104,6 +104,7 @@ Alle Zeilen der Anleitung, die mit `\` oder `\begin{` beginnen (auch eingerückt
 ````text
 \dreieckrw{4}{3}{a}{b}{c}                          rechtwinklig bei C
 \dreieck{(0,0)}{(5,0)}{(1.5,3)}{a}{b}{c}{\alpha}{\beta}{\gamma}
+\rwbei{C}\dreieck{(0,0)}{(3,0)}{(3,2.2)}{a}{b}{c}{}{}{}   rechter Winkel bei A, B oder C: Bogen mit Punkt (Vorlage 2026-10-03a)
 \quader{4}{2}{3}{a}{b}{c}   \zylinder{1.2}{3}{r}{h}   \prismadreieck{4}{2.5}{2}{g}{h}{l}
 \pyramide{4}{3}{3.5}{a}{b}{h}      Rechteckpyramide: Grundkanten a (vorn), b (Tiefe), Höhe h; quadratisch mit a = b
 \kegel{1.5}{3}{r}{h}{s}            Radius, Höhe; Labels r, h, s (Mantellinie)

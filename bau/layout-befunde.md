@@ -220,3 +220,4 @@ Umsetzung zusammenbau v1.0 (auftrag-lernblatt-v10.md), Blatt TER-L5.
 13. Grafik links, Antwortfeld rechts daneben: umgesetzt
 14. Lösungen am Ende des Gesamt auf neuer Seite: umgesetzt
 15. Bank „Kreuze den Term an, der dazu passt.“: offen (Gegenlese terme)
+16. Rechter Winkel immer als Viertelkreisbogen mit Punkt (deutsche Konvention), nie als Quadrat; in jedem rechtwinkligen Dreieck markiert, wenn der Text sich darauf bezieht (Lehrer 03.10., Basiszettel): umgesetzt in mathblatt.sty 2026-10-03a (\rwbei) und bank/_basis/vorrat.py

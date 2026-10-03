@@ -2942,14 +2942,14 @@ ORIGINALE = [
     O("Winkelfunktion Seitenverhältnis angeben", "2025-OS-B1g", "form",
       A("Der rechte Winkel liegt bei $B$. Ergänze den Bruch.", "$\\mathrm{sin}\\,\\gamma = \\frac{u}{w}$", "",
         antwort="$\\mathrm{sin}\\,\\gamma =$ __",
-        grafik="\\dreieck{(0,0)}{(3,0)}{(3,2.2)}{v}{w}{u}{}{}{\\gamma}"),
+        grafik="\\rwbei{B}\\dreieck{(0,0)}{(3,0)}{(3,2.2)}{v}{w}{u}{}{}{\\gamma}"),
       ["$\\frac{u}{w}$"]),
     O("Winkelfunktion Seitenverhältnis angeben", "2020-OS-B1c", "form",
       A("Der rechte Winkel liegt bei $C$. Gib $\\mathrm{tan}\\,\\alpha$ als "
         "Bruch an.",
         "$\\mathrm{tan}\\,\\alpha = \\frac{r}{s}$", "",
         antwort="$\\mathrm{tan}\\,\\alpha =$ __",
-        grafik="\\dreieck{(0,0)}{(4,0)}{(1.6,1.96)}{r}{s}{t}{\\alpha}{}{}"),
+        grafik="\\rwbei{C}\\dreieck{(0,0)}{(4,0)}{(1.6,1.96)}{r}{s}{t}{\\alpha}{}{}"),
       ["$\\frac{r}{s}$"]),
     # Daten
     # Originale 2014–2019 der Typen des Zettels „schwach“ (Kern und die zwei
@@ -3004,7 +3004,7 @@ ORIGINALE = [
         "Bruch an.",
         "$\\mathrm{sin}\\,\\alpha = \\frac{r}{t}$", "",
         antwort="$\\mathrm{sin}\\,\\alpha =$ __",
-        grafik="\\dreieck{(0,0)}{(4,0)}{(1.6,1.96)}{r}{s}{t}{\\alpha}{}{}"),
+        grafik="\\rwbei{C}\\dreieck{(0,0)}{(4,0)}{(1.6,1.96)}{r}{s}{t}{\\alpha}{}{}"),
       ["$\\frac{r}{t}$"]),
     O("Winkelfunktion Seitenverhältnis angeben", "2018-OS-B1g", "form",
       X("Der rechte Winkel liegt bei $C$. Kreuze die Gleichung an, die in "
@@ -3013,14 +3013,14 @@ ORIGINALE = [
          "$\\mathrm{sin}\\,\\beta = \\frac{b}{a}$",
          "$\\mathrm{cos}\\,\\beta = \\frac{b}{a}$"],
         "$\\mathrm{sin}\\,\\beta = \\frac{b}{a}$",
-        grafik="\\dreieck{(3,0)}{(0,2.2)}{(0,0)}{b}{c}{a}{\\beta}{}{}"),
+        grafik="\\rwbei{C}\\dreieck{(3,0)}{(0,2.2)}{(0,0)}{b}{c}{a}{\\beta}{}{}"),
       ["B"]),
     O("Winkelfunktion Seitenverhältnis angeben", "2017-OS-B1j", "form",
       A("Der rechte Winkel liegt bei $C$. Gib $\\mathrm{sin}\\,\\beta$ als "
         "Bruch an.",
         "$\\mathrm{sin}\\,\\beta = \\frac{r}{t}$", "",
         antwort="$\\mathrm{sin}\\,\\beta =$ __",
-        grafik="\\dreieck{(3,0)}{(0,2.2)}{(0,0)}{r}{s}{t}{\\beta}{}{}"),
+        grafik="\\rwbei{C}\\dreieck{(3,0)}{(0,2.2)}{(0,0)}{r}{s}{t}{\\beta}{}{}"),
       ["$\\frac{r}{t}$"]),
     O("Median bestimmen", "2024-OS-B1h", "form",
       A("An sechs Tagen wurden mittags diese Temperaturen gemessen: $20$; "
@@ -3204,7 +3204,7 @@ def _vs_weitere():
             f"a) ${k}$ b) $\\mathrm{{{fn}}}\\,\\alpha = \\frac{{{bruch[0]}}}"
             f"{{{bruch[1]}}}$", "",
             antwort=f"a) __ b) $\\mathrm{{{fn}}}\\,\\alpha =$ __",
-            grafik="\\dreieck{(0,0)}{(3,2.2)}{(3,0)}{a}{b}{c}{\\alpha}{}{}"),
+            grafik="\\rwbei{C}\\dreieck{(0,0)}{(3,2.2)}{(3,0)}{a}{b}{c}{\\alpha}{}{}"),
             [f"${k}$", f"$\\frac{{{bruch[0]}}}{{{bruch[1]}}}$"],
             "Die Hypotenuse liegt dem rechten Winkel gegenüber."))
     for n, preis, m, ding in [(3, "2.4", 5, "Hefte"), (4, "1.6", 7, "Brötchen")]:
