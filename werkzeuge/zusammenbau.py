@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""zusammenbau.py v1.6 – aus bank/<eintrag>/ LaTeX-Quelltexte für mathblatt.sty.
+"""zusammenbau.py v1.7 – aus bank/<eintrag>/ LaTeX-Quelltexte für mathblatt.sty.
 
 Aufruf:
     python3 werkzeuge/zusammenbau.py <eintrag> [--einheiten 1,3]
@@ -15,6 +15,21 @@ Aufruf:
         [--heft msa|abitur-gk|abitur-lk|fhr] [--einheiten n] [--aus <ordner>]
     python3 werkzeuge/zusammenbau.py <eintrag> --kompetenz <kette>
         --einheiten n [--niveau for|ebr] [--dicht] [--ohne <ids>]
+
+v1.7 (2026-10-03, Lehrer 03.10.): Rezept Zettel v0.10 – Schwierigkeit
+nach dem Urteil des Lehrers (bank/_basis/schwierigkeit.csv, typ;stufe;grund,
+1 leicht, 2 mittel, 3 schwer; einzige Quelle für „leicht“, die Regel aus
+v1.6 – Form, ab2020, z09_einfach – entfällt für die Reihenfolge). (1)
+Reihenfolge nach Stufe aufsteigend, in der Stufe nach Form: Zahl eintragen
+vor Ankreuzen vor Zeichnen/Figur; die ersten zwei Aufgaben sind Stufe 1;
+Typ ohne Stufe gilt als 2 (Log STUFE). (2) Schwach: Stufe-3-Typen nur mit
+Vorstufe; Übergang 17 Typen (ab2020 ≥ 2) bleibt, dazu mindestens drei
+Aufgaben der Stufe 1. (3) Ankreuzoptionen immer untereinander („A □ …“ je
+Zeile), auch bei drei; Figurenwahl (Bilder A–D) bleibt nebeneinander. (4)
+Keine feste Zahl: normal 6–10, nachlegen, solange das Höhenmaß trägt;
+schwach 5–8; eine Seite. (5) Übriges wie v1.6. Gegenproben: Zahl im
+Bereich, erste 2 Stufe 1, keine Stufe fällt; schwach Stufe 1 ≥ 3 und
+Stufe 3 nur als Vorstufe.
 
 v1.6 (2026-10-03, Befunde des Lehrers vom 03.10. am Basiszettel): Rezept
 Zettel v0.9 – fünf Regeln. (1) Leicht heißt einfach, nicht kurz: die ersten
@@ -168,7 +183,7 @@ from bisect import bisect_right
 from pathlib import Path
 
 WURZEL = Path(__file__).resolve().parent.parent
-VERSION = "v1.6"
+VERSION = "v1.7"
 
 # Befehle der Rahmendateien, die weder in STANDARD (bank-pruef.py) noch
 # in _bausteine.md stehen; jede Argumentzahl zulässig.
@@ -5714,7 +5729,7 @@ def main(argv=None):
     p.add_argument("eintrag", nargs="*",
                    help="Eintrag; mit --heft mehrere in Heftfolge")
     p.add_argument("--zettel", choices=["basis"],
-                   help="Rezept Z v0.9: Basiszettel nach der Vorlage vom "
+                   help="Rezept Z v0.10: Basiszettel nach der Vorlage vom "
                         "03.10. aus bank/_basis/ (Kennung BAS-S<n>, mit "
                         "--schwach BAS-W<n>)")
     p.add_argument("--pdf", action="store_true",
@@ -5755,7 +5770,7 @@ def main(argv=None):
     p.add_argument("--fokus", metavar="KETTE",
                    help="Kettenname wortgleich aus der Bank (Feld kette)")
     p.add_argument("--schwach", action="store_true",
-                   help="Lernblatt: schwache Form; Zettel: 7 Aufgaben aus "
+                   help="Lernblatt: schwache Form; Zettel: 5–8 Aufgaben aus "
                         "Typen mit ab2020 ≥ 2, Vorstufen, sonst Tipps")
     p.add_argument("--klasse", type=int)
     p.add_argument("--kasten", action="store_true",
@@ -6548,8 +6563,16 @@ def zettel_satz(nr, typ, z, log):
 # SCHWACH_AB2020, je Typ die Vorstufe, wenn eine frei ist, Tipp nur ohne
 # Vorstufe, \large.
 
-# v1.6 (Rezept Zettel v0.9, Lehrer 03.10.): Zahl (mindestens, Ziel, höchstens)
-ZAHL_09 = {"normal": (8, 10, 11), "schwach": (6, 7, 8)}
+# v1.7 (Rezept Zettel v0.10): Schwierigkeit nach dem Urteil des Lehrers
+# (schwierigkeit.csv), Reihenfolge Stufe, dann Form (z10_form); die ersten
+# zwei Stufe 1, schwach mindestens drei Stufe 1, Stufe 3 schwach nur als
+# Vorstufe; keine feste Zahl (normal 6–10, schwach 5–8, so viele das
+# Höhenmaß trägt); Ankreuzoptionen untereinander.
+# v1.7: Zahl (mindestens, höchstens); v1.6 hatte (8, 10, 11) und (6, 7, 8)
+ZAHL_10 = {"normal": (6, 10), "schwach": (5, 8)}
+STUFE1_MIN = {"normal": 2, "schwach": 3}      # Aufgaben der Stufe 1 je Zettel
+STUFE_ANFANG = 2          # die ersten zwei Aufgaben sind Stufe 1
+STUFE_FEHLT = 2           # Typ ohne Zeile in schwierigkeit.csv gilt als 2
 ORIGINALE_MIN = {"normal": 3, "schwach": 0}   # schwach: Hinweis, keine Regel
 VORSTUFEN_MIN = {"normal": 2, "schwach": 0}   # schwach: Vorstufe wo vorhanden
 LEICHT_ANFANG = 2         # die ersten zwei: einfache Rechnung (z09_einfach)
@@ -6636,7 +6659,32 @@ def z08_typinfo():
         t["rang"] = i
         t["kern"] = t["ab2020"] >= KERN_ANTEIL * seit
         info[t["typ"]] = t
+    stufen = z10_stufen()
+    for typ, t in info.items():
+        t["stufe_fehlt"] = typ not in stufen
+        t["stufe"] = stufen.get(typ, STUFE_FEHLT)
     return info, seit
+
+
+def z10_stufen():
+    """{typ: stufe} aus bank/_basis/schwierigkeit.csv (Urteil des Lehrers,
+    1 leicht, 2 mittel, 3 schwer)."""
+    pfad = BASIS / "schwierigkeit.csv"
+    if not pfad.exists():
+        return {}
+    with open(pfad, encoding="utf-8", newline="") as f:
+        return {r["typ"].strip(): int(r["stufe"]) for r in
+                csv.DictReader(f, delimiter=";") if r.get("stufe")}
+
+
+def z10_form(z):
+    """Form für die Reihenfolge in einer Stufe: 0 Zahl eintragen
+    (Kurzantwort/Eintragen), 1 Ankreuzen, 2 Zeichnen oder Figur."""
+    if z["form"] == "zeichnen" or z.get("grafik"):
+        return 2
+    if z["form"] == "ankreuzen":
+        return 1
+    return 0
 
 
 def z08_vorrat():
@@ -6723,7 +6771,9 @@ def z08_hoehe(z, variante):
     opt = z08_optionen(z["aufgabe"])
     if opt:
         lang = sum(len(z08_sichtbar(o)) for o in opt)
-        zeilen += 1 if lang <= 55 or len(opt) > 4 else len(opt)
+        # v1.7: untereinander; nur Buchstaben (Figurenwahl) in einer Zeile
+        buchst = all(len(o) == 1 and o.isalpha() for o in opt)
+        zeilen += 1 if buchst else len(opt)
     if len(seg) > 1:
         zeilen += len(seg)
     elif g in ("klein", "ksys") and seg:
@@ -6836,33 +6886,37 @@ def z08_plan(info, vorrat, nummer, variante, log=None):
 
 
 def z08_waehle(info, vorrat, erlaubt, genutzt, einsaetze, variante):
-    """Eine Auswahl [(typ, zeile)] nach den Regeln v0.9 oder ein Grund.
-    normal: zwei einfache Rechnungen, verfremdete Originale, Vorstufen, dann
-    auffüllen bis zum Ziel und, wenn die Seite es trägt, eine mehr.
-    schwach: je Typ die Vorstufe, wenn eine frei ist (Regel 4), sonst ein
-    Original, sonst der Bestand; zwei einfache Rechnungen vorn."""
-    lo, ziel, hi = ZAHL_09[variante]
+    """Eine Auswahl [(typ, zeile)] nach den Regeln v0.10 oder ein Grund.
+    Zuerst STUFE1_MIN Typen der Stufe 1 (schierigkeit.csv); normal dann
+    verfremdete Originale und Vorstufen; dann nachlegen, solange das
+    Höhenmaß trägt (normal höchstens 10, schwach höchstens 8). schwach: je
+    Typ die Vorstufe, wenn eine frei ist (sonst Original, sonst Bestand);
+    Typen der Stufe 3 nur mit freier Vorstufe."""
+    lo, hi = ZAHL_10[variante]
     vorrang = sorted(erlaubt, key=lambda t: (
         einsaetze[t] / (1 + info[t]["ab2020"]), -info[t]["jahrgaenge"],
         info[t]["rang"]))
-    wahl, typen, themen, vorn = [], set(), set(), []
+    wahl, typen, themen = [], set(), set()
     stand = {"gross": 0, "hoehe": 0.0, "kreuz": 0, "term": 0}
 
-    def frei(t, art=None, einfach=False):
+    def frei(t, art=None):
         zz = [z for z in vorrat[t] if z["id"] not in genutzt]
         if variante == "schwach":
             vs = [z for z in zz if z08_art(z) == "vorstufe"]
+            if info[t]["stufe"] >= 3:
+                return vs          # v0.10 Regel 2: Stufe 3 nur mit Vorstufe
             zz = vs or ([z for z in zz if z08_art(z) == "original"]
                         + [z for z in zz if z08_art(z) == "bestand"])
         elif art:
             zz = [z for z in zz if z08_art(z) == art]
-        if einfach:
-            zz = [z for z in zz if z09_einfach(z, info, t)]
         return zz
 
     def nimm(t, z, bis):
         """z aufnehmen, wenn Typ, Thema, Ankreuzen und Höhe es zulassen;
-        Platz für die Aufgaben bis zur Zahl bis bleibt frei."""
+        Platz für die Aufgaben bis zur Zahl bis bleibt frei (bis None:
+        nichts freihalten)."""
+        if len(wahl) >= hi:
+            return False
         if t in typen or info[t]["thema"] in themen:
             return False
         g = z08_grafikart(z.get("grafik", "")) == "tabelle"
@@ -6873,7 +6927,7 @@ def z08_waehle(info, vorrat, erlaubt, genutzt, einsaetze, variante):
         if z09_kreuz_term(z) and stand["term"] >= KREUZ_TERM_MAX:
             return False
         h = z08_hoehe(z, variante)
-        rest = max(0, bis - len(wahl) - 1)
+        rest = max(0, (bis or 0) - len(wahl) - 1)
         vst = sum(z08_art(x) == "vorstufe" for _, x in wahl) + (
             z08_art(z) == "vorstufe")
         fehlt_v = min(rest, max(0, VORSTUFEN_MIN[variante] - vst))
@@ -6895,23 +6949,22 @@ def z08_waehle(info, vorrat, erlaubt, genutzt, einsaetze, variante):
             if nimm(t, z, bis):
                 return z
             if variante == "schwach":
-                return None   # Regel 4: nur die bevorzugte Zeile des Typs
+                return None   # nur die bevorzugte Zeile des Typs
         return None
 
-    # 1. zwei einfache Rechnungen (normal: Original vor Bestand)
-    for t in vorrang:
-        if len(vorn) >= LEICHT_ANFANG:
+    # 1. Stufe 1 (normal: Original vor Bestand vor Vorstufe)
+    eins = [t for t in vorrang if info[t]["stufe"] == 1]
+    for t in eins:
+        if sum(info[x]["stufe"] == 1 for x, _ in wahl) >= STUFE1_MIN[variante]:
             break
         if variante == "schwach":
             k = frei(t)[:1]
-            k = [z for z in k if z09_einfach(z, info, t)]
         else:
-            k = frei(t, "original", True) + frei(t, "bestand", True)
-        z = versuche(t, k, ziel)
-        if z:
-            vorn.append(z["id"])
-    if len(vorn) < LEICHT_ANFANG:
-        return f"nur {len(vorn)} einfache Rechnungen frei"
+            k = frei(t, "original") + frei(t, "bestand") + frei(t, "vorstufe")
+        versuche(t, k, lo)
+    n1 = sum(info[x]["stufe"] == 1 for x, _ in wahl)
+    if n1 < STUFE1_MIN[variante]:
+        return f"nur {n1} Aufgaben der Stufe 1 frei"
     if variante == "normal":
         # 2. verfremdete Originale, 3. Vorstufen
         for art, mindest in (("original", ORIGINALE_MIN["normal"]),
@@ -6919,39 +6972,40 @@ def z08_waehle(info, vorrat, erlaubt, genutzt, einsaetze, variante):
             for t in vorrang:
                 if sum(z08_art(z) == art for _, z in wahl) >= mindest:
                     break
-                versuche(t, frei(t, art), ziel)
+                versuche(t, frei(t, art), lo)
             if sum(z08_art(z) == art for _, z in wahl) < mindest:
                 return (f"weniger als {mindest} Zeilen der Art {art} "
                         "verschiedener Themen frei")
-        # 4. auffüllen bis zum Ziel, dann so viele mehr, wie die Seite trägt
-        for bis in (ziel, hi):
+        # 4. nachlegen: erst bis zur Mindestzahl mit Platz für den Rest,
+        #    dann bis höchstens hi, solange das Höhenmaß trägt
+        for bis in (lo, hi, None):
             for art in ("bestand", None):
                 for t in vorrang:
-                    if len(wahl) >= bis:
+                    if len(wahl) >= (bis or hi):
                         break
                     if t not in typen:
                         versuche(t, frei(t, art), bis)
     else:
-        for t in vorrang:
-            if len(wahl) >= ziel:
-                break
-            if t not in typen:
-                versuche(t, frei(t), ziel)
+        for bis in (lo, hi, None):
+            for t in vorrang:
+                if len(wahl) >= (bis or hi):
+                    break
+                if t not in typen:
+                    versuche(t, frei(t)[:1], bis)
     if len(wahl) < lo:
         return f"nur {len(wahl)} Aufgaben passen (mindestens {lo})"
-    erste = [tz for tz in wahl if tz[1]["id"] in vorn]
-    erste.sort(key=lambda tz: z08_hoehe(tz[1], variante))
-    rest = [tz for tz in wahl if tz[1]["id"] not in vorn]
-    return erste + z08_ordnen(rest, info)
+    return z08_ordnen(wahl, info)
 
 
 def z08_ordnen(wahl, info):
-    """Steigend: nach Stufe; innerhalb einer Stufe kurze Texte vorn, dann
-    Bereich wie im Basisteil."""
+    """v0.10: nach der Stufe des Lehrers (schwierigkeit.csv), in der Stufe
+    nach Form (Zahl eintragen, Ankreuzen, Zeichnen/Figur); dann wie bisher
+    Höhenstufe, kurze Texte vorn, Bereich wie im Basisteil."""
     def folge(tz):
         t, z = tz
         e = z["eintrag"]
-        return (z08_stufe(z), len(z08_sichtbar(z08_stamm(z["aufgabe"]))) // 40,
+        return (info[t]["stufe"], z10_form(z), z08_stufe(z),
+                len(z08_sichtbar(z08_stamm(z["aufgabe"]))) // 40,
                 ZETTEL_FOLGE.index(e) if e in ZETTEL_FOLGE else 99,
                 info[t]["rang"])
     return sorted(wahl, key=folge)
@@ -7033,21 +7087,14 @@ def z08_breite(t):
 
 
 def z08_optionszeilen(opt, variante="normal"):
-    """Ankreuzoptionen: passen sie in eine Zeile, in eine Zeile; sonst zwei
-    je Zeile, bei langen Optionen je eine. Option, die nur ihr eigener
-    Buchstabe ist, ohne Text."""
+    """Ankreuzoptionen v0.10 (Lehrer 03.10.): immer untereinander, je Zeile
+    „A □ …“, auch bei drei Optionen. Option, die nur ihr eigener Buchstabe
+    ist, ohne Text."""
     buch = "ABCDEF"
     teile = []
     for i, o in enumerate(opt):
         text = "" if (len(o) == 1 and o.isalpha()) else o
         teile.append(f"\\op{{{buch[i]}}}{{{text}}}")
-    zeichen = 50 if variante == "schwach" else 60
-    breiten = [z08_breite(o) + 6 for o in opt]
-    if sum(breiten) <= zeichen:
-        return ["".join(teile)]
-    paare = [teile[i:i + 2] for i in range(0, len(teile), 2)]
-    if all(sum(breiten[i:i + 2]) <= zeichen for i in range(0, len(opt), 2)):
-        return ["".join(p) for p in paare]
     return teile
 
 
@@ -7193,22 +7240,29 @@ def z08_satz(nr, typ, z, variante, log):
 
 
 def z08_gegenprobe(wahl, info, variante, befund, vorrat=None, genutzt=None):
-    """Regeln des Rezepts v0.9 am fertigen Zettel prüfen → [(ok, Text)]."""
-    lo, ziel, hi = ZAHL_09[variante]
+    """Regeln des Rezepts v0.10 am fertigen Zettel prüfen → [(ok, Text)]."""
+    lo, hi = ZAHL_10[variante]
     typen = [t for t, _ in wahl]
     themen = [info[t]["thema"] for t in typen]
     orig = sum(1 for _, z in wahl if z.get("ist_original"))
     vst = sum(1 for _, z in wahl if z.get("vorstufe"))
     kreuz = sum(z09_kreuz(z) for _, z in wahl)
     term = sum(z09_kreuz_term(z) for _, z in wahl)
-    einfach = [z09_einfach(z, info, t) for t, z in wahl[:LEICHT_ANFANG]]
+    stufen = [info[t]["stufe"] for t in typen]
+    anfang = stufen[:STUFE_ANFANG]
+    faellt = [i + 2 for i in range(len(stufen) - 1)
+              if stufen[i + 1] < stufen[i]]
     aus = [
-        (lo <= len(wahl) <= hi, f"Zahl der Aufgaben {len(wahl)} (soll "
-                                f"{lo}–{hi}, Ziel {ziel})"),
-        (len(einfach) == LEICHT_ANFANG and all(einfach),
-         f"erste {LEICHT_ANFANG} einfache Rechnungen (Kurzantwort, Zahl oder "
-         "Größe, ohne Variable, Grafik, Ankreuzen; Typ ab2020 ≥ 2): "
-         + ", ".join("ja" if e else "nein" for e in einfach)),
+        (lo <= len(wahl) <= hi, f"Zahl der Aufgaben {len(wahl)} (Bereich "
+                                f"{lo}–{hi})"),
+        (len(anfang) == STUFE_ANFANG and all(x == 1 for x in anfang),
+         f"erste {STUFE_ANFANG} Stufe 1: "
+         + ", ".join(str(x) for x in anfang)),
+        (not faellt, "keine Stufe fällt (" + " ".join(map(str, stufen))
+         + ")" + ("" if not faellt else ": fällt bei Nr. "
+                  + ", ".join(map(str, faellt)))),
+        (stufen.count(1) >= STUFE1_MIN[variante],
+         f"Stufe 1 {stufen.count(1)} (soll ≥ {STUFE1_MIN[variante]})"),
         (len(set(typen)) == len(typen), "kein Typ doppelt"
          + ("" if len(set(typen)) == len(typen) else ": "
             + ", ".join(sorted({t for t in typen if typen.count(t) > 1})))),
@@ -7238,6 +7292,10 @@ def z08_gegenprobe(wahl, info, variante, befund, vorrat=None, genutzt=None):
                     ohne.append(t)
         aus.append((not ohne, "Vorstufe, wo der Vorrat eine hat" + (
             "" if not ohne else ": ohne bei " + "; ".join(ohne))))
+        s3 = [t for t, z in wahl if info[t]["stufe"] >= 3
+              and not z.get("vorstufe")]
+        aus.append((not s3, "Stufe 3 nur als Vorstufe" + (
+            "" if not s3 else ": nicht bei " + "; ".join(s3))))
         tipp_vs = [t for t, z in wahl if z.get("vorstufe") and z.get("tipp")]
         aus.append((not tipp_vs, "kein Tipp an einer Vorstufe"))
     for b in befund:
@@ -7246,7 +7304,7 @@ def z08_gegenprobe(wahl, info, variante, befund, vorrat=None, genutzt=None):
 
 
 def main_zettel(args):
-    """Rezept Z v0.9: Basis <n> nach der Vorlage vom 03.10.2026, Kennung
+    """Rezept Z v0.10: Basis <n> nach der Vorlage vom 03.10.2026, Kennung
     BAS-S<n> (normal) bzw. BAS-W<n> (--schwach); Probe: BAS-S0/BAS-W0."""
     log = Log()
     if args.eintrag or args.heft or args.fokus:
@@ -7284,6 +7342,12 @@ def main_zettel(args):
     log(f"KERN {len(kern)} Typen (ab2020 ≥ {KERN_ANTEIL:.0%} von {seit} "
         f"Jahrgängen {KERN_AB}–{KERN_AB + seit - 1}; seit v1.6 nur Hinweis): "
         + "; ".join(kern))
+    ohne = sorted((t for t in info if info[t]["stufe_fehlt"]),
+                  key=lambda t: info[t]["rang"])
+    stz = {k: sum(info[t]["stufe"] == k for t in info) for k in (1, 2, 3)}
+    log(f"STUFE schwierigkeit.csv: Stufe 1 {stz[1]}, 2 {stz[2]}, 3 {stz[3]} "
+        f"Typen; ohne Stufe (gilt als {STUFE_FEHLT}) {len(ohne)}"
+        + (": " + "; ".join(ohne) if ohne else ""))
     if variante == "schwach":
         log(f"SCHWACH {len(schwach_typen)} Typen mit ab2020 ≥ {SCHWACH_AB2020}"
             " (Übergang bis zur Entscheidung des Lehrers): "
@@ -7305,7 +7369,7 @@ def main_zettel(args):
     version = vorlage.read_text(encoding="utf-8").splitlines()[1].lstrip("% ")
     version = version.split(" (", 1)[0]
     log(f"VORLAGE mathblatt.sty: {version} (nur Grafik-Bausteine)")
-    log(f"KENNUNG {kennung} – Basiszettel (Rezept Z v0.9, {variante}), auf "
+    log(f"KENNUNG {kennung} – Basiszettel (Rezept Z v0.10, {variante}), auf "
         f"dem Blatt nur „Basis {nummer}“"
         + (" (Probe ohne Register)" if args.ohne_register else ""))
     log(f"FOLGE {variante} trägt {reicht} Zettel"
@@ -7326,15 +7390,18 @@ def main_zettel(args):
                if z.get("ist_original") else "")
             + f"; Thema {t['thema']}; Jahrgänge seit {KERN_AB} {t['ab2020']}"
             + (", Kern" if t["kern"] else "")
-            + f"; Stufe {z08_stufe(z)}"
-            + ("; einfach" if z09_einfach(z, info, typ) else "")
+            + f"; Stufe {t['stufe']}"
+            + (" (fehlt, gesetzt)" if t["stufe_fehlt"] else "")
+            + f"; Form {('eintragen', 'ankreuzen', 'zeichnen/Figur')[z10_form(z)]}"
+            + f"; Höhenstufe {z08_stufe(z)}"
             + ("; Ankreuzen" + (" mit Term" if z09_kreuz_term(z) else "")
                if z09_kreuz(z) else "")
             + f"; Höhe ≈ {h:.1f} cm)")
         aufgaben.append({"aufgabe": f"A{nr}", "hauptnummer": nr,
                          "id": z["id"], "kette": typ, "thema": t["thema"],
                          "art": z08_art(z), "kern": t["kern"],
-                         "ab2020": t["ab2020"], "stufe": z08_stufe(z),
+                         "ab2020": t["ab2020"], "stufe": t["stufe"],
+                         "hoehenstufe": z08_stufe(z),
                          "original": (z["original"]["id"]
                                       if z.get("ist_original") else None),
                          "verfremdung": z.get("verfremdung"),
@@ -7392,7 +7459,7 @@ def main_zettel(args):
     bauzettel = {
         "kennung": kennung, "datum": datum, "eintraege": ["_basis"],
         "rezept": rezept, "rezept_name": "Basiszettel " + variante,
-        "rezept_version": "Z v0.9",
+        "rezept_version": "Z v0.10",
         "bestellung": {"zettel": args.zettel, "nummer": nummer,
                        "schwach": bool(args.schwach),
                        "ohne_register": args.ohne_register},

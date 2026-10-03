@@ -1,7 +1,9 @@
 # zusammenbau.py – aus der Bank ein Blatt (Quelltext)
 
-Nachtrag 2026-10-03, v1.6: Basiszettel nach den Befunden des Lehrers,
-siehe „Rezept Zettel (v0.9, zusammenbau.py v1.6)“.
+Nachtrag 2026-10-03, v1.7: Basiszettel nach der Schwierigkeit des
+Lehrers (bank/_basis/schwierigkeit.csv), siehe „Rezept Zettel (v0.10,
+zusammenbau.py v1.7)“. Davor v1.6, „Rezept Zettel (v0.9, zusammenbau.py
+v1.6)“.
 
 Stand 2026-10-01, v1.2 (Dichte nach Höhe und Form, siehe „Rezept
 Lernblatt (v1.2)“; erstes Blatt TER-L7). Davor v1.1 (Lernblatt nach den
@@ -623,6 +625,54 @@ verschiedenen Jahre, in denen einer dieser Typen im Profil vorkommt
 Originale selbst; ohne Original die Marke ohne Zahl. „keine …“ bleibt
 wörtlich; mehrere Marken stehen mit „ · “ nebeneinander (bis v0.4 nur
 die erste). Die log zeigt je Einheit PRÜFWORT mit Quelle.
+
+## Rezept Zettel (v0.10, zusammenbau.py v1.7)
+
+Vorgaben des Lehrers vom 03.10.: Schwierigkeit nach seinem Urteil je Typ
+in bank/_basis/schwierigkeit.csv (typ;stufe;grund; 1 leicht, 2 mittel,
+3 schwer). Sie ist die einzige Quelle für „leicht“; die Regel 1 aus v0.9
+(`z09_einfach`: Form, ab2020) entfällt für Auswahl und Reihenfolge. Aufruf
+wie v0.9.
+
+- Regel 1 – Reihenfolge: nach Stufe aufsteigend; in der Stufe nach Form
+  (`z10_form`): Zahl eintragen (Kurzantwort/Eintragen) vor Ankreuzen vor
+  Zeichnen oder Figur (jede Aufgabe mit Grafik, auch Ankreuzen mit Figur
+  oder Figurenwahl); danach wie bisher Höhenstufe, Textlänge, Bereich.
+  Die Auswahl nimmt zuerst Typen der Stufe 1 (normal mindestens zwei,
+  Original vor Bestand vor Vorstufe), damit die ersten zwei Aufgaben
+  Stufe 1 sind. Typ ohne Zeile in der Datei gilt als 2; der Log nennt ihn
+  (Zeile STUFE, Stand 03.10.: alle 64 Typen haben eine Stufe – 21 × 1,
+  19 × 2, 24 × 3).
+- Regel 2 – schwach: Typen der Stufe 3 nur als Vorstufe (ohne freie
+  Vorstufe fällt der Typ für diesen Zettel aus); die Übergangsregel bleibt
+  (17 Typen mit ab2020 ≥ 2), dazu mindestens drei Aufgaben der Stufe 1.
+  Unter den 17 Typen haben genau drei Stufe 1 (Bruchteil einer Fläche,
+  Zeiteinheiten umrechnen, Symmetrieachsen bestimmen) – jeder schwache
+  Zettel hat diese drei.
+- Regel 3 – Ankreuzen: Optionen immer untereinander, je Zeile „A □ …“,
+  auch bei drei Optionen. Figurenwahl (Optionen nur Buchstaben, Bilder
+  A–D in einer Reihe) bleibt nebeneinander mit Buchstabe davor. Das
+  Höhenmaß zählt je Option eine Zeile.
+- Regel 4 – Zahl: kein Ziel. Normal 6–10, schwach 5–8; nachgelegt wird,
+  solange das Höhenmaß trägt (24,5 cm, schwach 24,2 cm): erst bis zur
+  Mindestzahl mit Platz für den Rest, dann bis zur Obergrenze, zuletzt
+  ohne Platzhalter. Eine Seite (`--pdf` prüft).
+- Regel 5 – unverändert aus v0.9: Figur rechts auf Aufgabenhöhe, höchstens
+  drei Ankreuzaufgaben (schwach zwei), davon zwei mit Term; kein Typ und
+  kein Thema doppelt; normal mindestens drei verfremdete Originale und zwei
+  Vorstufen; schwach Vorstufe statt Tipp.
+- GEGENPROBE: Zahl im Bereich, erste 2 Stufe 1, keine Stufe fällt
+  (monoton), Stufe 1 mindestens 2 (schwach 3), kein Typ und kein Thema
+  doppelt, Ankreuzen, Ankreuzen mit Term; normal Originale, Vorstufen;
+  schwach nur Typen ab2020 ≥ 2, Vorstufe wo vorhanden, Stufe 3 nur als
+  Vorstufe, kein Tipp an einer Vorstufe; mit `--pdf` Seiten 1, Renderfehler 0.
+- bau.json: `stufe` ist jetzt die Stufe des Lehrers, `hoehenstufe` die
+  alte Formstufe (`z08_stufe`).
+- Reichweite (Vorrat 03.10.): Folge normal trägt 25, Folge schwach 12
+  Zettel.
+
+Probe v1.7 (03.10., nicht abgelegt): Basis 1–4 normal 10, 10, 8, 10
+Aufgaben, schwach 6, 6, 5, 6; alle eine Seite, alle Gegenproben ok.
 
 ## Rezept Zettel (v0.9, zusammenbau.py v1.6)
 

@@ -412,6 +412,11 @@ BAS-S<n>, auf dem Blatt „Basis n“) baut eine feste Serie ohne
 Rückmeldung: Wiederkehr nach 2, 5, 10 Zetteln, leichte und häufige Typen
 zuerst, keine Variante doppelt, eine Spalte, eine volle Seite; der
 Vorrat trägt 33 Zettel (werkzeuge/zusammenbau.md, „Rezept Zettel“).
+Seit 03.10. (v1.7) liegt daneben bank/_basis/schwierigkeit.csv
+(typ;stufe;grund), das Urteil des Lehrers je Typ – 1 leicht, 2 mittel,
+3 schwer –, von Hand gepflegt und einzige Quelle für „leicht“: der
+Zettel ordnet danach, beginnt mit zwei Aufgaben der Stufe 1 und nimmt
+schwach Stufe 3 nur als Vorstufe.
 
 ## Punkte
 
