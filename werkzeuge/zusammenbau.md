@@ -626,6 +626,41 @@ Originale selbst; ohne Original die Marke ohne Zahl. „keine …“ bleibt
 wörtlich; mehrere Marken stehen mit „ · “ nebeneinander (bis v0.4 nur
 die erste). Die log zeigt je Einheit PRÜFWORT mit Quelle.
 
+## Original-Zettel (zusammenbau.py v1.8)
+
+Probe des Lehrers vom 03.10.: Aufgabe 1 (Basisaufgaben) eines P10-Hefts
+wortgetreu als Zettel, damit der Schüler das Original in der Form übt,
+die er vom Basiszettel kennt.
+
+    python3 werkzeuge/zusammenbau.py --zettel original --heft 2026-FOR \
+        --ohne-register --pdf --aus <ordner außerhalb des Repos> \
+        [--vorlage <pfad/mathblatt.sty>]
+
+- Quelle: `basis-originale.jsonl` im privaten Repo
+  hz-0801/aufgabenbank-privat, gesucht unter `$PRIVAT` (Ordner oder
+  Datei) und `../aufgabenbank-privat/` neben dem Repo; fehlt sie, bricht
+  das Skript mit Meldung ab. Eine Zeile je Teilaufgabe: id
+  (Katalogkennung), jahr, papier, teil, punkte, typ, aufgabe (LaTeX, Wortlaut
+  in Du-Form), form (kurzantwort | ankreuzen | eintragen | zeichnen),
+  optionen, antwort („__ €“), loesung (wie im Streifen), grafik (Bausteine
+  oder roher TikZ), quelle (datei, seite).
+- Form wie der Basiszettel (Rezept Z v0.10, Makros aus `VORSPANN_08`):
+  eine Seite, 12pt (passt es nicht, ein zweiter Satz mit 11pt), Kopf
+  „Basis · P10 <jahr> <papier>“, Teilaufgaben a–j in der Heftreihenfolge
+  als 1–10 ohne Sortierung und ohne Jahresmarke, Ankreuzoptionen
+  untereinander „A □ …“ (Buchstaben vom Skript); sind alle Optionen Figuren
+  oder Tabellen, stehen sie nebeneinander mit „A □“ darüber wie im Heft.
+  Figur rechts auf Aufgabenhöhe (`\AG`), Felder voll lang (`\AF`, `\FT`),
+  Vergleich „3,5 m □ 35 cm“ mit Kästchen, Lösungsstreifen rechts.
+- Kennung ORG-<jahr>-<papier>; `--ohne-register` wie bisher. Die Ausgabe
+  (enthält den Wortlaut) darf nicht unter dem öffentlichen Repo liegen –
+  das Skript bricht sonst ab; ohne `--aus` schreibt es nach
+  `<privat>/bau/<kennung>/`.
+- Gegenproben im Log: Teile lückenlos ab a, Ankreuzlösung unter den
+  Optionen, Lösung und typ gegen msa/msa-katalog-basis.csv
+  (mathe-nachhilfe neben dem Repo oder `$MATHE_NACHHILFE`; Ankreuzen über
+  „erste/zweite …“ oder den Optionstext), eine Seite, keine Renderfehler.
+
 ## Rezept Zettel (v0.10, zusammenbau.py v1.7)
 
 Vorgaben des Lehrers vom 03.10.: Schwierigkeit nach seinem Urteil je Typ

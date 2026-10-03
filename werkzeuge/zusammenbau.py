@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""zusammenbau.py v1.7 – aus bank/<eintrag>/ LaTeX-Quelltexte für mathblatt.sty.
+"""zusammenbau.py v1.8 – aus bank/<eintrag>/ LaTeX-Quelltexte für mathblatt.sty.
 
 Aufruf:
     python3 werkzeuge/zusammenbau.py <eintrag> [--einheiten 1,3]
@@ -11,10 +11,30 @@ Aufruf:
         abitur-gk|abitur-lk|fhr] [--nur-basis] [--titel <text>] --aus <ordner>
     python3 werkzeuge/zusammenbau.py --zettel basis [--schwach] [--nummer n]
         [--ohne-register] [--pdf] [--rueckseite]
+    python3 werkzeuge/zusammenbau.py --zettel original --heft <jahr>-<papier>
+        [--ohne-register] [--pdf] [--aus <ordner>] [--vorlage <sty>]
     python3 werkzeuge/zusammenbau.py <eintrag> --fokus-pruefung <kette>
         [--heft msa|abitur-gk|abitur-lk|fhr] [--einheiten n] [--aus <ordner>]
     python3 werkzeuge/zusammenbau.py <eintrag> --kompetenz <kette>
         --einheiten n [--niveau for|ebr] [--dicht] [--ohne <ids>]
+
+v1.8 (2026-10-03, Probe „Original-Zettel“, Lehrer 03.10.): --zettel
+original --heft <jahr>-<papier> setzt Aufgabe 1 (Basisaufgaben) eines
+Hefts wortgetreu (Du-Form) in der Form des Basiszettels (Rezept Z v0.10):
+eine Seite, Kopf „Basis · P10 <jahr> <papier>“, Teilaufgaben a–j in der
+Heftreihenfolge als 1–10 (keine Sortierung, keine Jahresmarke),
+Ankreuzoptionen untereinander mit „A □ …“ (Buchstaben vom Skript; Figuren
+und Tabellen als Optionen nebeneinander wie im Heft), Figur rechts auf
+Aufgabenhöhe, Felder voll lang, Lösungsstreifen rechts. Quelle:
+aufgabenbank-privat/basis-originale.jsonl neben dem Repo oder $PRIVAT
+(Ordner oder Datei); fehlt sie, bricht das Skript ab. Kennung
+ORG-<jahr>-<papier>; Ausgabe nie unter dem öffentlichen Repo (Voreinstellung
+<privat>/bau/<kennung>/). Passen die Aufgaben nicht auf eine Seite, zweiter
+Satz mit 11pt. Gegenproben: Teile lückenlos, Ankreuzlösung unter den
+Optionen, Lösung und typ gegen msa/msa-katalog-basis.csv (mathe-nachhilfe
+neben dem Repo), eine Seite. pruefe_struktur nimmt dafür weitere
+Umgebungen an (tikzpicture, tabular*: roher TikZ der privaten Zeilen).
+--heft prüft das Profil seitdem im Hauptprogramm statt über choices.
 
 v1.7 (2026-10-03, Lehrer 03.10.): Rezept Zettel v0.10 – Schwierigkeit
 nach dem Urteil des Lehrers (bank/_basis/schwierigkeit.csv, typ;stufe;grund,
@@ -183,7 +203,7 @@ from bisect import bisect_right
 from pathlib import Path
 
 WURZEL = Path(__file__).resolve().parent.parent
-VERSION = "v1.7"
+VERSION = "v1.8"
 
 # Befehle der Rahmendateien, die weder in STANDARD (bank-pruef.py) noch
 # in _bausteine.md stehen; jede Argumentzahl zulässig.
@@ -5598,9 +5618,10 @@ def modusfehler(rein, zeile):
     return sorted(aus)
 
 
-def pruefe_struktur(dateien, sig, extra=frozenset()):
+def pruefe_struktur(dateien, sig, extra=frozenset(), extra_umg=frozenset()):
     """[(datei, zeile, meldung)] für alle .tex-Texte {name: text}; extra:
-    weitere erlaubte Befehle (Zettel v0.8: Makros der Vorlage)."""
+    weitere erlaubte Befehle (Zettel v0.8: Makros der Vorlage); extra_umg:
+    weitere erlaubte Umgebungen (v1.8: roher TikZ im Original-Zettel)."""
     fehler = []
     for name in sorted(dateien):
         text = dateien[name]
@@ -5663,7 +5684,8 @@ def pruefe_struktur(dateien, sig, extra=frozenset()):
                     stapel.append((umg, zl))
                     if umg == "aufgabe":
                         teil_zaehler = 0
-                    if umg in BP.UMGEBUNG_STANDARD or umg in RAHMEN_UMGEBUNG:
+                    if (umg in BP.UMGEBUNG_STANDARD or umg in RAHMEN_UMGEBUNG
+                            or umg in extra_umg):
                         continue
                     key = "begin:" + umg
                     if key not in sig:
@@ -5728,10 +5750,12 @@ def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     p.add_argument("eintrag", nargs="*",
                    help="Eintrag; mit --heft mehrere in Heftfolge")
-    p.add_argument("--zettel", choices=["basis"],
-                   help="Rezept Z v0.10: Basiszettel nach der Vorlage vom "
-                        "03.10. aus bank/_basis/ (Kennung BAS-S<n>, mit "
-                        "--schwach BAS-W<n>)")
+    p.add_argument("--zettel", choices=["basis", "original"],
+                   help="Rezept Z v0.10: basis = Basiszettel nach der Vorlage "
+                        "vom 03.10. aus bank/_basis/ (Kennung BAS-S<n>, mit "
+                        "--schwach BAS-W<n>); original = Aufgabe 1 eines "
+                        "Hefts wortgetreu aus aufgabenbank-privat (v1.8, "
+                        "--heft <jahr>-<papier>, Kennung ORG-<jahr>-<papier>)")
     p.add_argument("--pdf", action="store_true",
                    help="Zettel: zweimal xelatex, Seitenzahl prüfen")
     p.add_argument("--rueckseite", action="store_true",
@@ -5743,8 +5767,11 @@ def main(argv=None):
     p.add_argument("--nummer", type=int,
                    help="Zettel: Nummer n (sonst die nächste freie aus "
                         "bau/register.csv)")
-    p.add_argument("--heft", nargs="?", const="msa", choices=sorted(HEFT_PROFIL),
-                   help="Rezept H: Prüfungsheft (Profil, Voreinstellung msa)")
+    p.add_argument("--heft", nargs="?", const="msa",
+                   help="Rezept H: Prüfungsheft (Profil: "
+                        + ", ".join(sorted(HEFT_PROFIL)) + "; Voreinstellung "
+                        "msa); mit --zettel original das Heft als "
+                        "<jahr>-<papier>, z. B. 2026-FOR")
     p.add_argument("--nur-basis", action="store_true",
                    help="Heft: nur Originale aus dem Basisteil (OS/FOR/EBR, "
                         "id mit -B), ohne Anlauf")
@@ -5789,6 +5816,12 @@ def main(argv=None):
                    help="Lernblatt: alle Sachaufgaben der Ketten (sonst je "
                         "Kette höchstens eine Teilaufgabe mit Sachkontext)")
     args = p.parse_args(argv)
+    if args.zettel == "original":
+        return main_original(args)
+    if args.heft and args.heft not in HEFT_PROFIL:
+        p.error(f"--heft {args.heft}: Profil nicht bekannt (erlaubt: "
+                + ", ".join(sorted(HEFT_PROFIL)) + "; <jahr>-<papier> nur "
+                "mit --zettel original)")
     if args.zettel_messen:
         return zettel_messen(finde_vorlage(args.vorlage))
     if args.zettel:
@@ -7512,6 +7545,278 @@ def z08_rendern(ziel, kennung, log):
         if p.exists():
             p.unlink()
     return seiten, fehler
+
+
+# --- Original-Zettel (v1.8, Probe des Lehrers vom 03.10.2026) ---------------
+#
+# Aufgabe 1 (Basisaufgaben) eines Hefts wortgetreu (Du-Form) in der Form des
+# Basiszettels (Rezept Z v0.10): eine Seite, Kopf „Basis · P10 <jahr>
+# <papier>“, Teilaufgaben a–j in der Heftreihenfolge als 1–10 (keine
+# Sortierung, keine Jahresmarke), Ankreuzen mit Buchstaben des Skripts
+# („A □ …“ untereinander; Figuren und Tabellen als Optionen nebeneinander wie
+# im Heft), Figur rechts auf Aufgabenhöhe, Felder voll lang,
+# Lösungsstreifen rechts. Quelle ist die private Datei
+# aufgabenbank-privat/basis-originale.jsonl (Wortlaut der Prüfungsoriginale,
+# nie im öffentlichen Repo); die Ausgabe landet darum nie unter WURZEL.
+
+PRIVAT_DATEI = "basis-originale.jsonl"
+ORIGINAL_FORMEN = {"kurzantwort", "eintragen", "ankreuzen", "zeichnen"}
+# roher TikZ und Tabellen aus der privaten Zeile (Feld grafik/optionen)
+ORIGINAL_ROH = {"draw", "fill", "filldraw", "node", "path", "coordinate",
+                "columncolor", "hline", "cline", "extracolsep", "scriptsize",
+                "tiny", "beta", "alpha", "gamma", "circ", "sqrt", "dots",
+                "kopf", "zbild", "zkasten", "op", "li", "AF", "AFL", "AT",
+                "AG", "FT", "FTL", "loes", "fill", "hfill", "par", "vspace"}
+ORIGINAL_UMG = {"tikzpicture", "tabular*"}
+ORDINAL = {"erste": 0, "zweite": 1, "dritte": 2, "vierte": 3, "fünfte": 4}
+
+
+def finde_privat():
+    """Pfad zu basis-originale.jsonl: Umgebungsvariable PRIVAT (Ordner oder
+    Datei), sonst aufgabenbank-privat neben dem Repo."""
+    kandidaten = []
+    if os.environ.get("PRIVAT"):
+        k = Path(os.environ["PRIVAT"])
+        kandidaten.append(k if k.suffix == ".jsonl" else k / PRIVAT_DATEI)
+    kandidaten.append(WURZEL.parent / "aufgabenbank-privat" / PRIVAT_DATEI)
+    for k in kandidaten:
+        if k.is_file():
+            return k
+    sys.exit("basis-originale.jsonl nicht gefunden (gesucht: "
+             + ", ".join(str(k) for k in kandidaten) + ") – das private Repo "
+             "hz-0801/aufgabenbank-privat neben aufgabenbank klonen oder "
+             "PRIVAT=<ordner> setzen")
+
+
+def zo_grafisch(o):
+    """Option ist eine Figur oder Tabelle (nebeneinander wie im Heft)."""
+    return bool(re.search(r"\\begin\{(tikzpicture|tabular)\}", o)
+                or GRAFIK.search(o))
+
+
+def zo_satz(nr, z):
+    """Eine Teilaufgabe des Originals in den Makros der Vorlage (VORSPANN_08)."""
+    stamm = z["aufgabe"]
+    g = z.get("grafik", "")
+    e = z08_streifen(z["loesung"])
+    aus = [f"% {nr}: {z['id']} – {z['typ']} ({z['form']})"]
+    if z["form"] == "ankreuzen":
+        opt = z["optionen"]
+        buch = "ABCDEF"
+        if all(zo_grafisch(o) for o in opt):
+            spalten = "c" * len(opt)
+            kopf = " & ".join(f"{{\\small {buch[i]}}}\\,$\\square$"
+                              for i in range(len(opt)))
+            reihe = (f"\\begin{{tabular*}}{{\\linewidth}}{{@{{\\extracolsep"
+                     f"{{\\fill}}}}{spalten}@{{}}}}{kopf} \\\\[4pt] "
+                     + " & ".join(opt) + " \\end{tabular*}")
+            aus.append(f"\\AT{{{nr}}}{{{stamm}}}")
+            aus.append(f"\\vspace{{4pt}}\\zbild[\\linewidth]{{{reihe}}}"
+                       f"\\hfill\\loes{{{e}}}")
+        else:
+            zeilen = [f"\\op{{{buch[i]}}}{{{o}}}" for i, o in enumerate(opt)]
+            if g:
+                inhalt = (stamm + "\\par\\vspace{5pt}"
+                          + "\\par\\vspace{3pt}".join(zeilen) + f"\\li{{{e}}}")
+                aus.append(f"\\AG{{{nr}}}{{{inhalt}}}{{\\zbild{{{g}}}}}")
+            else:
+                aus.append(f"\\AT{{{nr}}}{{{stamm}}}")
+                erste, *rest = zeilen
+                aus.append(f"\\vspace{{3pt}}{erste}\\hfill\\loes{{{e}}}")
+                for r_ in rest:
+                    aus.append(f"\\par\\vspace{{2pt}}{r_}")
+        return aus
+    antwort = z.get("antwort", "").strip()
+    vor, _, nach = antwort.partition("__")
+    vor, nach = pct(vor.strip()), pct(nach.strip())
+    if re.search(r"\d", vor) and re.search(r"\d", nach):
+        # Vergleich „3,5 m □ 35 cm“: Kästchen wie im Heft
+        aus.append(f"\\AT{{{nr}}}{{{stamm}}}")
+        aus.append(f"\\vspace{{2pt}}{vor}\\ \\zkasten\\ {nach}\\hfill\\loes{{{e}}}")
+    elif g:
+        ft = "FTL" if z08_af(nach) == "AFL" else "FT"
+        inhalt = stamm + f"\\{ft}[{vor}]{{}}{{{nach}}}{{{e}}}"
+        aus.append(f"\\AG{{{nr}}}{{{inhalt}}}{{\\zbild{{{g}}}}}")
+    else:
+        aus.append(f"\\{z08_af(nach)}{{{nr}}}{{{stamm}}}{{{vor}}}{{{nach}}}"
+                   f"{{{e}}}")
+    return aus
+
+
+def zo_norm(t):
+    t = re.sub(r"\\[,;! ]|~|\$|\\%", " ", t).replace("−", "-")
+    return re.sub(r"\s+", " ", t).strip()
+
+
+def zo_katalog(zeilen, log):
+    """Gegenprobe gegen msa/msa-katalog-basis.csv (mathe-nachhilfe neben dem
+    Repo oder MATHE_NACHHILFE): Lösung ↔ ergebnis, typ ↔ typ."""
+    kand = []
+    if os.environ.get("MATHE_NACHHILFE"):
+        kand.append(Path(os.environ["MATHE_NACHHILFE"]))
+    kand.append(WURZEL.parent / "mathe-nachhilfe")
+    pfad = next((k / "msa" / "msa-katalog-basis.csv" for k in kand
+                 if (k / "msa" / "msa-katalog-basis.csv").is_file()), None)
+    if not pfad:
+        log("KATALOG msa-katalog-basis.csv nicht gefunden – Gegenprobe entfällt")
+        return []
+    with open(pfad, encoding="utf-8", newline="") as f:
+        kat = {r["id"]: r for r in csv.DictReader(f, delimiter=";")}
+    proben = []
+    for z in zeilen:
+        r = kat.get(z["id"])
+        if not r:
+            proben.append((False, f"{z['id']} fehlt im Katalog"))
+            continue
+        erg = zo_norm(r["ergebnis"])
+        if z["form"] == "ankreuzen":
+            i = "ABCDEF".index(z["loesung"])
+            o = zo_norm(z["optionen"][i]) if i < len(z["optionen"]) else ""
+            ordnung = [n for w, n in ORDINAL.items() if w in erg.lower()]
+            ok = (ordnung == [i]) or (o and not zo_grafisch(z["optionen"][i])
+                                      and o.rstrip(".") in erg)
+        else:
+            lo = zo_norm(z["loesung"])
+            ok = (re.findall(r"-?\d+(?:,\d+)?", lo)
+                  == re.findall(r"-?\d+(?:,\d+)?", erg)) and lo[:1] in erg
+        proben.append((ok, f"{z['id']} Lösung {z['loesung']} ↔ Katalog "
+                           f"„{r['ergebnis']}“"))
+        if r["typ"] != z["typ"]:
+            proben.append((False, f"{z['id']} typ {z['typ']} ↔ Katalog "
+                                  f"{r['typ']}"))
+    return proben
+
+
+def main_original(args):
+    """Original-Zettel v1.8: Aufgabe 1 eines Hefts wortgetreu, Kennung
+    ORG-<jahr>-<papier>."""
+    log = Log()
+    if args.eintrag or args.fokus or args.schwach:
+        sys.exit("--zettel original nimmt keinen Eintrag, kein --fokus und "
+                 "kein --schwach")
+    m = re.fullmatch(r"(\d{4})-([A-Z]{2,4})", args.heft or "")
+    if not m:
+        sys.exit("--zettel original braucht --heft <jahr>-<papier>, z. B. "
+                 "--heft 2026-FOR")
+    jahr, papier = int(m.group(1)), m.group(2)
+    quelle = finde_privat()
+    alle = lies_jsonl(quelle)
+    zeilen = sorted((z for z in alle if z.get("jahr") == jahr
+                     and z.get("papier") == papier), key=lambda z: z["teil"])
+    if not zeilen:
+        sys.exit(f"{quelle}: keine Zeile zu {jahr} {papier}")
+    kennung = f"ORG-{jahr}-{papier}"
+    aufruf = ["zusammenbau.py", "--zettel", "original", "--heft", args.heft]
+    if args.ohne_register:
+        aufruf.append("--ohne-register")
+    log(f"# zusammenbau {VERSION}: " + " ".join(aufruf))
+    log(f"QUELLE {quelle} ({len(zeilen)} Zeilen zu {jahr} {papier}; privat)")
+    vorlage = finde_vorlage(args.vorlage)
+    version = vorlage.read_text(encoding="utf-8").splitlines()[1].lstrip("% ")
+    version = version.split(" (", 1)[0]
+    log(f"VORLAGE mathblatt.sty: {version} (nur Grafik-Bausteine)")
+    proben = []
+    teile = [z["teil"] for z in zeilen]
+    soll = list("abcdefghijklmnop"[:len(zeilen)])
+    proben.append((teile == soll, f"Teilaufgaben {''.join(teile)} lückenlos ab a"))
+    for z in zeilen:
+        fehlt = [k for k in ("id", "typ", "aufgabe", "form", "loesung")
+                 if not z.get(k)]
+        if fehlt or z["form"] not in ORIGINAL_FORMEN:
+            proben.append((False, f"{z.get('id')}: Feld fehlt {fehlt} oder "
+                                  f"form {z.get('form')}"))
+        if z["form"] == "ankreuzen":
+            ok = (len(z.get("optionen") or []) >= 2 and z["loesung"] in
+                  "ABCDEF"[:len(z["optionen"])])
+            proben.append((ok, f"{z['id']}: Lösung {z['loesung']} unter "
+                               f"{len(z.get('optionen') or [])} Optionen"))
+    proben += zo_katalog(zeilen, log)
+    punkte = sum(int(z.get("punkte") or 0) for z in zeilen)
+    log(f"PUNKTE {punkte} ({len(zeilen)} Teilaufgaben)")
+    ziel = (Path(args.aus) if args.aus else
+            quelle.parent / "bau" / kennung)
+    try:
+        ziel.resolve().relative_to(WURZEL)
+        sys.exit(f"{ziel} liegt im öffentlichen Repo – Wortlaut der Originale "
+                 "gehört nicht dorthin; --aus außerhalb angeben")
+    except ValueError:
+        pass
+    ziel.mkdir(parents=True, exist_ok=True)
+    sig = BP.lade_bausteine(WURZEL / "mappen" / "_bausteine.md")
+    seiten, renderfehler, groesse = None, None, 12
+    for groesse in (12, 11):
+        a = [VORSPANN_08.rstrip().replace("[12pt]", f"[{groesse}pt]"),
+             "\\begin{document}", f"\\kopf{{· P10 {jahr} {papier}}}"]
+        for nr, z in enumerate(zeilen, 1):
+            a += zo_satz(nr, z)
+        a += ["\\vspace*{\\fill}", "\\end{document}"]
+        text = "\n".join(a) + "\n"
+        rumpf = "\\begin{document}" + text.split("\\begin{document}", 1)[1]
+        fehler = pruefe_struktur({f"{kennung}.tex": rumpf}, sig,
+                                 Z08_BEFEHLE | ORIGINAL_ROH, ORIGINAL_UMG)
+        (ziel / f"{kennung}.tex").write_text(text, encoding="utf-8",
+                                             newline="\n")
+        shutil.copyfile(vorlage, ziel / "mathblatt.sty")
+        if not args.pdf:
+            break
+        seiten, renderfehler = z08_rendern(ziel, kennung, log)
+        log(f"SCHRIFT {groesse}pt: {seiten} Seite(n)")
+        if seiten == 1:
+            break
+    for nr, z in enumerate(zeilen, 1):
+        log(f"AUFGABE Nr. {nr}: {z['id']} – {z['typ']} ({z['form']}"
+            + (f", {len(z['optionen'])} Optionen" if z.get("optionen") else "")
+            + (", Figur" if z.get("grafik") else "") + f"; Lösung {z['loesung']})")
+    log(f"STRUKTUR {len(fehler)} Fehler")
+    for name, zl, meldung in fehler:
+        log(f"  FEHLER {name}:{zl}: {meldung}")
+    if args.pdf:
+        proben.append((seiten == 1, f"Seiten {seiten} (soll 1, Schrift "
+                                    f"{groesse}pt)"))
+        proben.append((not renderfehler, f"Renderfehler {renderfehler}"))
+    for ok, t in proben:
+        log(f"GEGENPROBE {'ok ' if ok else 'VERLETZT'} {t}")
+    verletzt = sum(not ok for ok, _ in proben)
+    (ziel / "zusammenbau.log").write_text("\n".join(log.zeilen) + "\n",
+                                          encoding="utf-8", newline="\n")
+    datum = heute()
+    commit = bank_commit()
+    bauzettel = {
+        "kennung": kennung, "datum": datum, "eintraege": [],
+        "rezept": "Z", "rezept_name": "Original-Zettel",
+        "rezept_version": "Z v0.10 (Original, zusammenbau v1.8)",
+        "bestellung": {"zettel": "original", "heft": args.heft,
+                       "ohne_register": args.ohne_register},
+        "quelle": quelle.name, "bank_commit": commit, "zusammenbau": VERSION,
+        "vorlage": version, "pfad": ziel.resolve().as_posix(),
+        "schrift_pt": groesse, "strukturfehler": len(fehler),
+        "gegenprobe_verletzt": verletzt, "seiten": seiten,
+        "aufgaben": [{"nr": nr, "id": z["id"], "typ": z["typ"],
+                      "form": z["form"], "loesung": z["loesung"]}
+                     for nr, z in enumerate(zeilen, 1)]}
+    (ziel / "bau.json").write_text(
+        json.dumps(bauzettel, ensure_ascii=False, indent=1) + "\n",
+        encoding="utf-8", newline="\n")
+    if not args.ohne_register:
+        if any(r.get("kennung") == kennung for r in lies_register()):
+            print(f"{kennung} steht schon in bau/register.csv – keine neue Zeile")
+        else:
+            haenge_an_register({
+                "kennung": kennung, "datum": datum, "eintraege": "",
+                "rezept": "Z", "bestellung": f"zettel=original, heft={args.heft}",
+                "bank_commit": commit, "zusammenbau": VERSION,
+                "vorlage": version, "pfad": "(privat)"})
+            print(f"REGISTER {kennung} an bau/register.csv angehängt")
+    print(f"KENNUNG {kennung} (Original-Zettel, {len(zeilen)} Aufgaben, "
+          f"{punkte} Punkte) nach {ziel}")
+    for ok, t in proben:
+        print(f"GEGENPROBE {'ok ' if ok else 'VERLETZT'} {t}")
+    if seiten is not None:
+        print(f"PDF {seiten} Seite(n), Schrift {groesse}pt")
+    print(f"Strukturprüfung {len(fehler)} Fehler")
+    for name, zl, meldung in fehler:
+        print(f"FEHLER {name}:{zl}: {meldung}")
+    return 1 if fehler or verletzt else 0
 
 
 if __name__ == "__main__":

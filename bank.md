@@ -418,6 +418,16 @@ Seit 03.10. (v1.7) liegt daneben bank/_basis/schwierigkeit.csv
 Zettel ordnet danach, beginnt mit zwei Aufgaben der Stufe 1 und nimmt
 schwach Stufe 3 nur als Vorstufe.
 
+Original-Zettel (seit 03.10., zusammenbau.py v1.8, Probe des Lehrers):
+Aufgabe 1 eines P10-Hefts wortgetreu (Du-Form) in der Form des
+Basiszettels, Teilaufgaben in der Heftreihenfolge. Der Wortlaut der
+Prüfungsoriginale liegt nur im privaten Repo hz-0801/aufgabenbank-privat
+(`basis-originale.jsonl`, eine Zeile je Teilaufgabe, Felder in
+werkzeuge/zusammenbau.md „Original-Zettel“), nie in diesem Repo; auch der
+gebaute Zettel bleibt draußen. Aufruf: `python3 werkzeuge/zusammenbau.py
+--zettel original --heft 2026-FOR --ohne-register --pdf --aus <ordner>`
+(Kennung ORG-2026-FOR). Erfasst: 2026 FOR.
+
 ## Punkte
 
 bank/_punkte.csv (seit 28.09., Semikolon, UTF-8, LF) hat je
