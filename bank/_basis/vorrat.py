@@ -324,6 +324,22 @@ AUFGABEN["Termwert berechnen"] = _t4()
 
 
 # T5 Winkelfunktion Seitenverhältnis angeben – 2025-OS-B1g
+def _ecken_gamma(rw, l=1.5, halb=28):
+    """Rechtwinkliges Dreieck mit γ an der Spitze C (v1.6, Lehrer 03.10.):
+    Winkelhalbierende von γ senkrecht, rechter Winkel bei A oder B; die
+    kürzere Kathete am rechten Winkel hat die Länge l, γ = 2·halb."""
+    s, c = _m.sin(_m.radians(halb)), _m.cos(_m.radians(halb))
+    lang = l / _m.cos(_m.radians(2 * halb))
+    links, rechts = (l, lang) if rw == "A" else (lang, l)
+    a = (round(-links * s, 2), round(-links * c, 2))
+    b = (round(rechts * s, 2), round(rechts * c * -1, 2))
+    dy = -min(a[1], b[1])
+    dx = -a[0]
+    return {"A": (round(a[0] + dx, 2), round(a[1] + dy, 2)),
+            "B": (round(b[0] + dx, 2), round(b[1] + dy, 2)),
+            "C": (round(dx, 2), round(dy, 2))}
+
+
 def _t5():
     lage = {"A": [(0, 0), (4, 0), (0, 3)],        # rechter Winkel bei A
             "B": [(0, 0), (4, 0), (4, 3)],        # bei B
@@ -344,7 +360,11 @@ def _t5():
         bruch = {"sin": (geg, hyp), "cos": (an, hyp), "tan": (geg, an)}[fn]
         pkt = lage[rw] if rw != "C" else lage["C"]
         # Ecken so legen, dass der rechte Winkel an der gewählten Ecke liegt
-        if rw == "A":
+        if bei == "C":
+            # v1.6: γ an der Spitze (Winkelhalbierende senkrecht), sonst
+            # stünde das Label γ auf der Seite AC bzw. BC
+            ecken = _ecken_gamma(rw)
+        elif rw == "A":
             ecken = {"A": (0, 0), "B": (3, 0), "C": (0, 2.2)}
         elif rw == "B":
             ecken = {"A": (0, 0), "B": (3, 0), "C": (3, 2.2)}
@@ -356,7 +376,7 @@ def _t5():
         koord = "".join("{(" + ",".join(dez(c).replace("{,}", ".")
                                         for c in ecken[e]) + ")}"
                         for e in "ABC")
-        grafik = (f"\\dreieck{koord}{{{s['A']}}}{{{s['B']}}}{{{s['C']}}}"
+        grafik = (f"\\rwbei{{{rw}}}\\dreieck{koord}{{{s['A']}}}{{{s['B']}}}{{{s['C']}}}"
                   f"{{{wink[0]}}}{{{wink[1]}}}{{{wink[2]}}}")
         g = griech[bei]
         if nr % 2 == 0:  # Bündel (v0.7): zu einem Winkel sin, cos und tan
@@ -2618,11 +2638,11 @@ def O(typ, oid, verfremdung, zeile, ergebnis, tipp=""):
     return z
 
 
-def V(typ, zeile, ergebnis, tipp=""):
+def V(typ, zeile, ergebnis):
+    """Vorstufe: a) ist der erste Schritt – deshalb kein Tipp (v1.6, Lehrer
+    03.10.: Vorstufe statt Tipp; Tipps nur bei Aufgaben ohne Vorstufe)."""
     z = dict(zeile)
-    z.update(vorstufe=True, ergebnis=ergebnis, typ=typ)
-    if tipp:
-        z["tipp"] = tipp
+    z.update(vorstufe=True, ergebnis=ergebnis, typ=typ, tipp="")
     return z
 
 
@@ -2641,8 +2661,7 @@ ORIGINALE = [
       ["800\\,€"]),
     O("Prozentwert berechnen", "2026-FOR-B1a", "form",
       A("Berechne $30\\,\\%$ von $70\\,€$.", "$0{,}3 \\cdot 70 = 21\\,€$",
-        "0.3*70", antwort="__ €"), ["21\\,€"],
-      "$10\\,\\%$ heißt: durch $10$ teilen."),
+        "0.3*70", antwort="__ €"), ["21\\,€"]),
     O("Prozentwert berechnen", "2021-OS-B1c", "form",
       X("Ein Fahrrad kostet $550\\,€$. Bei Barzahlung gibt es $20\\,\\%$ "
         "Rabatt. Kreuze an, wie viel Euro man spart.",
@@ -2736,7 +2755,7 @@ ORIGINALE = [
     O("Lineare Gleichung lösen", "2024-OS-B1d", "form",
       A("Löse die Gleichung $2 \\cdot (x - 6{,}5) = 0$.",
         "$x - 6{,}5 = 0$, also $x = 6{,}5$", "6.5", antwort="x = __"),
-      ["$6{,}5$"], "Ein Produkt ist $0$, wenn ein Faktor $0$ ist."),
+      ["$6{,}5$"]),
     O("Lineare Gleichung lösen", "2023-OS-B1e", "form",
       A("Löse die Gleichung $3 \\cdot (x - 8) + 2 = 2$.",
         "$3 \\cdot (x - 8) = 0$, also $x = 8$", "8", antwort="x = __"),
@@ -2983,17 +3002,15 @@ ORIGINALE = [
     O("Prozentwert berechnen", "2017-OS-B1b", "form",
       A("Ein Fahrrad kostet $120{,}00\\,€$. Es gibt $20\\,\\%$ Rabatt. "
         "Berechne den Rabatt in Euro.", "$0{,}2 \\cdot 120 = 24\\,€$",
-        "0.2*120", antwort="__ €"), ["24\\,€"],
-      "$10\\,\\%$ heißt: durch $10$ teilen."),
+        "0.2*120", antwort="__ €"), ["24\\,€"]),
     O("Prozentwert berechnen", "2015-OS-B1e", "form",
       A("Ein Guthaben von $400\\,€$ wird ein Jahr lang mit $2\\,\\%$ "
         "verzinst. Berechne die Zinsen.", "$0{,}02 \\cdot 400 = 8\\,€$",
-        "0.02*400", antwort="__ €"), ["8\\,€"],
-      "$1\\,\\%$ heißt: durch $100$ teilen."),
+        "0.02*400", antwort="__ €"), ["8\\,€"]),
     O("Prozentwert berechnen", "2014-OS-B1a", "form",
       A("Berechne $13\\,\\%$ von $50\\,€$.",
         "$0{,}13 \\cdot 50 = 6{,}50\\,€$", "0.13*50", antwort="__ €"),
-      ["6{,}50\\,€"], "$1\\,\\%$ von $50\\,€$ sind $0{,}50\\,€$."),
+      ["6{,}50\\,€"]),
     O("Pythagoras Gleichung zuordnen", "2017-OS-B1d", "form",
       X("Kreuze die Gleichung an, die in diesem rechtwinkligen Dreieck gilt.",
         ["$x^2 = y^2 + z^2$", "$z^2 = x^2 - y^2$", "$z^2 \\cdot y^2 = x^2$",
@@ -3058,8 +3075,7 @@ def _vs_bruch():
             f"{{{f.denominator}}}$",
             f"[{n}, {f.numerator}, {f.denominator}]",
             antwort="a) __ Teile b) __", grafik=fig),
-            [str(n), f"$\\frac{{{f.numerator}}}{{{f.denominator}}}$"],
-            "Zähle zuerst alle Teile, dann die grauen."))
+            [str(n), f"$\\frac{{{f.numerator}}}{{{f.denominator}}}$"]))
     return aus
 
 
@@ -3077,8 +3093,7 @@ def _vs_termfigur():
             "Seiten. b) Fasse zusammen.",
             f"a) $U = {summe}$ b) $U = {kurz}$", pr,
             antwort="a) $U =$ __ b) $U =$ __", grafik=fig),
-            [f"${summe}$", f"${kurz}$"],
-            "Der Umfang ist der Weg einmal außen herum."))
+            [f"${summe}$", f"${kurz}$"]))
     for fig, was, zahlen, wert, formel, pr, ant in [
             (_RW % ("a,b,,", 3, 1.8), "den Flächeninhalt",
              "$a = 4$ cm und $b = 3$ cm", "12 cm²", "a \\cdot b", "4*3",
@@ -3091,8 +3106,7 @@ def _vs_termfigur():
             f"für {was} ${groesse}$ an.",
             f"a) ${groesse} = {pr.replace('*', ' \\cdot ')} = "
             f"{wert.split()[0]}$ {wert.split()[1]} b) ${groesse} = {formel}$",
-            pr, antwort=ant, grafik=fig), [wert, f"${formel}$"],
-            "Setze zuerst die Zahlen ein."))
+            pr, antwort=ant, grafik=fig), [wert, f"${formel}$"]))
     return aus
 
 
@@ -3110,8 +3124,7 @@ def _vs_termwert():
             f"a) ${ein}$ b) ${a} \\cdot ({x + b}) = {w}$"
             if x + b < 0 else f"a) ${ein}$ b) ${a} \\cdot {x + b} = {w}$",
             f"{a}*({x}{'+' if b > 0 else '-'}{abs(b)})",
-            antwort="a) __ b) __"), [f"${ein}$", f"${w}$"],
-            "Rechne zuerst die Klammer aus."))
+            antwort="a) __ b) __"), [f"${ein}$", f"${w}$"]))
     return aus
 
 
@@ -3128,8 +3141,7 @@ def _vs_gleichung():
             f"durch ${a}$.",
             f"a) ${a} \\cdot x = {d - c}$ b) $x = {r}$", f"[{d - c}, {r}]",
             antwort=f"a) ${a} \\cdot x =$ __ b) $x =$ __"),
-            [f"${d - c}$", f"${r}$"],
-            f"Rechne zuerst auf beiden Seiten ${op}$."))
+            [f"${d - c}$", f"${r}$"]))
     for a, b, d in [(3, 2, 12), (4, 5, 8)]:
         r = _sp.solve(_sp.Eq(a * (x - b), d), x)[0]
         assert r.is_Integer
@@ -3138,7 +3150,7 @@ def _vs_gleichung():
             f"Seiten durch ${a}$. b) Gib $x$ an.",
             f"a) $x - {b} = {d // a}$ b) $x = {r}$", f"[{d // a}, {r}]",
             antwort=f"a) $x - {b} =$ __ b) $x =$ __"),
-            [f"${d // a}$", f"${r}$"], f"Teile zuerst beide Seiten durch ${a}$."))
+            [f"${d // a}$", f"${r}$"]))
     return aus
 
 
@@ -3153,8 +3165,7 @@ def _vs_pythagoras():
             f"a) ${h}$ (gegenüber dem rechten Winkel) b) ${h}^2 = {k1}^2 + "
             f"{k2}^2$", "", antwort=f"a) __ b) ${h}^2 =$ __",
             grafik=f"\\dreieckrw{{{w}}}{{{hh}}}{{{k1}}}{{{k2}}}{{{h}}}"),
-            [f"${h}$", f"${k1}^2 + {k2}^2$"],
-            "Die Hypotenuse liegt dem rechten Winkel gegenüber."))
+            [f"${h}$", f"${k1}^2 + {k2}^2$"]))
     return aus
 
 
@@ -3167,8 +3178,7 @@ def _vs_weitere():
             f"a) ${g} : 10 = {_zahl(z)}\\,€$ b) ${_zahl(z)} \\cdot {p // 10} = "
             f"{_zahl(w)}\\,€$", f"[{g}/10, {g}*{p}/100]",
             antwort="a) __ € b) __ €"),
-            [f"{_zahl(z)}\\,€", f"{_zahl(w)}\\,€"],
-            "$10\\,\\%$ heißt: durch $10$ teilen."))
+            [f"{_zahl(z)}\\,€", f"{_zahl(w)}\\,€"]))
     for h1, h2 in [("2", "2.5"), ("1", "1.5"), ("3", "3.25")]:
         m1, m2 = _q(h1) * 60, _q(h2) * 60
         aus.append(V("Zeiteinheiten umrechnen", A(
@@ -3177,8 +3187,7 @@ def _vs_weitere():
             f"a) ${dez(float(h1))} \\cdot 60 = {_zahl(m1)}$ min b) "
             f"${dez(float(h2))} \\cdot 60 = {_zahl(m2)}$ min",
             f"[{h1}*60, {h2}*60]", antwort="a) __ min b) __ min"),
-            [f"{_zahl(m1)} min", f"{_zahl(m2)} min"],
-            "$0{,}5$ h sind $30$ Minuten."))
+            [f"{_zahl(m1)} min", f"{_zahl(m2)} min"]))
     for wer, werte in [("Mia würfelt fünfmal und erhält die Augenzahlen",
                         [2, 6, 1, 6, 5]),
                        ("Tom schreibt in fünf Tests diese Noten:",
@@ -3191,8 +3200,7 @@ def _vs_weitere():
             "Median an.",
             f"a) {', '.join(str(w) for w in s)} b) Median $= {med}$",
             f"{med}", antwort="a) __ b) __"),
-            [", ".join(str(w) for w in s), f"${med}$"],
-            "Der Median steht nach dem Ordnen in der Mitte."))
+            [", ".join(str(w) for w in s), f"${med}$"]))
     for fn, seite, bruch in [("sin", "Gegenkathete", ("a", "c")),
                              ("cos", "Ankathete", ("b", "c")),
                              ("tan", "Ankathete", ("a", "b"))]:
@@ -3205,8 +3213,7 @@ def _vs_weitere():
             f"{{{bruch[1]}}}$", "",
             antwort=f"a) __ b) $\\mathrm{{{fn}}}\\,\\alpha =$ __",
             grafik="\\rwbei{C}\\dreieck{(0,0)}{(3,2.2)}{(3,0)}{a}{b}{c}{\\alpha}{}{}"),
-            [f"${k}$", f"$\\frac{{{bruch[0]}}}{{{bruch[1]}}}$"],
-            "Die Hypotenuse liegt dem rechten Winkel gegenüber."))
+            [f"${k}$", f"$\\frac{{{bruch[0]}}}{{{bruch[1]}}}$"]))
     for n, preis, m, ding in [(3, "2.4", 5, "Hefte"), (4, "1.6", 7, "Brötchen")]:
         eins = _q(preis) / n
         ges = eins * m
@@ -3324,8 +3331,56 @@ def _vs_weitere():
     return aus
 
 
+def _koord(ecken):
+    return "".join("{(" + ",".join(dez(c).replace("{,}", ".")
+                                    for c in ecken[e]) + ")}" for e in "ABC")
+
+
+def _vs_rechtwinklig():
+    """v1.6 (Lehrer 03.10.): Vorstufen mit \\rwbei im Dreieck – Winkelfunktion
+    zu γ (a) Hypotenuse und Kathete zu γ benennen, zwei Buchstaben; b) der
+    Bruch) und Pythagoras (a) Hypotenuse benennen; b) die Gleichung), dort,
+    wo der rechte Winkel nicht wie bei \\dreieckrw unten links liegt."""
+    aus = []
+    for rw, fn, seiten in [("A", "sin", "a b c"), ("B", "sin", "d e f"),
+                           ("A", "cos", "p q r")]:
+        s = dict(zip("ABC", seiten.split()))
+        dritte = ({"A", "B"} - {rw}).pop()
+        hyp, geg, an = s[rw], s["C"], s[dritte]
+        kat, name = (geg, "Gegenkathete") if fn == "sin" else (an, "Ankathete")
+        grafik = (f"\\rwbei{{{rw}}}\\dreieck{_koord(_ecken_gamma(rw))}"
+                  f"{{{s['A']}}}{{{s['B']}}}{{{s['C']}}}{{}}{{}}{{\\gamma}}")
+        aus.append(V("Winkelfunktion Seitenverhältnis angeben", A(
+            f"Der rechte Winkel liegt bei ${rw}$. a) Gib an, welche Seite die "
+            f"Hypotenuse und welche die {name} zu $\\gamma$ ist. b) Gib "
+            f"$\\mathrm{{{fn}}}\\,\\gamma$ als Bruch an.",
+            f"a) Hypotenuse ${hyp}$, {name} ${kat}$ b) "
+            f"$\\mathrm{{{fn}}}\\,\\gamma = \\frac{{{kat}}}{{{hyp}}}$", "",
+            antwort=f"a) __ b) $\\mathrm{{{fn}}}\\,\\gamma =$ __",
+            grafik=grafik),
+            [f"${hyp}$ und ${kat}$", f"$\\frac{{{kat}}}{{{hyp}}}$"]))
+    # Pythagoras: rechter Winkel bei A bzw. B, Dreieck gedreht
+    for typ, rw, seiten in [("Pythagoras Gleichung zuordnen", "A", "u v w"),
+                            ("Pythagoras Gleichung zuordnen", "B", "k l m"),
+                            ("Satz des Pythagoras formulieren", "A", "a b c"),
+                            ("Satz des Pythagoras formulieren", "B", "a b c")]:
+        s = dict(zip("ABC", seiten.split()))
+        hyp = s[rw]
+        kath = [s[e] for e in "ABC" if e != rw]
+        grafik = (f"\\rwbei{{{rw}}}\\dreieck{_koord(_ecken_gamma(rw, 1.6, 30))}"
+                  f"{{{s['A']}}}{{{s['B']}}}{{{s['C']}}}{{}}{{}}{{}}")
+        aus.append(V(typ, A(
+            f"Der rechte Winkel liegt bei ${rw}$. a) Gib die Seite an, die die "
+            "Hypotenuse ist. b) Ergänze den Satz des Pythagoras.",
+            f"a) ${hyp}$ (gegenüber dem rechten Winkel) b) ${hyp}^2 = "
+            f"{kath[0]}^2 + {kath[1]}^2$", "",
+            antwort=f"a) __ b) ${hyp}^2 =$ __", grafik=grafik),
+            [f"${hyp}$", f"${kath[0]}^2 + {kath[1]}^2$"]))
+    return aus
+
+
 VORSTUFEN = (_vs_bruch() + _vs_termfigur() + _vs_termwert() + _vs_gleichung()
-             + _vs_pythagoras() + _vs_weitere())
+             + _vs_pythagoras() + _vs_weitere() + _vs_rechtwinklig())
 
 
 # Prüfungsverb vorn: Regeln für die Fragen des Bestands (v0.8). Zuerst die
@@ -3569,20 +3624,31 @@ def ergebnis_von(z, typ=""):
     return [_ergebnis_teil(lo, _einheit_aus(seg[0]), seg[0].count("__"))]
 
 
-# Tipp im Bestand: Prozentwert (Vorlage „10 % heißt: durch 10 teilen.“) und
-# Lineare Gleichung (Vorlage „Rechne zuerst auf beiden Seiten −3.“)
+# Tipp im Bestand (v1.6, Lehrer 03.10.): ein Tipp nennt den ersten Schritt,
+# nie eine Regel – „Rechne erst 10 %, dann mal 3.“ statt „10 % heißt: durch 10
+# teilen.“ Vorstufen haben keinen Tipp (a) ist der erste Schritt).
 def tipp_von(typ, z):
     a = z["aufgabe"]
     if typ == "Prozentwert berechnen":
-        m = _re.match(r"Berechne \$(\d+)\\,\\%\$", a)
+        m = _re.search(r"\$(\d+)\\,\\%\$", a)
         if not m:
             return ""
         p = int(m.group(1))
-        return {25: "$25\\,\\%$ ist ein Viertel.",
-                75: "$75\\,\\%$ sind drei Viertel.",
-                5: "$5\\,\\%$ ist die Hälfte von $10\\,\\%$.",
-                15: "$15\\,\\% = 10\\,\\% + 5\\,\\%$."}.get(
-            p, "$10\\,\\%$ heißt: durch $10$ teilen.")
+        zehn = "$10\\,\\%$"
+        if p == 10:
+            return "Teile zuerst durch $10$."
+        if p == 25:
+            return "Teile zuerst durch $4$."
+        if p == 75:
+            return "Teile erst durch $4$, dann mal $3$."
+        if p == 5:
+            return f"Rechne erst {zehn}, dann die Hälfte davon."
+        if p == 15:
+            return (f"Rechne erst {zehn}, dann die Hälfte davon und zähle "
+                    "beides zusammen.")
+        if p % 10 == 0:
+            return f"Rechne erst {zehn}, dann mal ${p // 10}$."
+        return f"Rechne erst $1\\,\\%$, dann mal ${p}$."
     if typ == "Lineare Gleichung lösen":
         m = _re.search(r"(\d+) \\cdot \(x [+-] [\d{},]+\)(?: ([+-]) (\d+))? = "
                        r"(-?\d+)", a)
@@ -3592,7 +3658,7 @@ def tipp_von(typ, z):
             gegen = "-" if m.group(2) == "+" else "+"
             return f"Rechne zuerst auf beiden Seiten ${gegen}{m.group(3)}$."
         if m.group(4) == "0":
-            return "Ein Produkt ist $0$, wenn ein Faktor $0$ ist."
+            return "Setze zuerst die Klammer gleich $0$."
         return f"Teile zuerst beide Seiten durch ${m.group(1)}$."
     return ""
 

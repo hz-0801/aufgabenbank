@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""zusammenbau.py v1.0 – aus bank/<eintrag>/ LaTeX-Quelltexte für mathblatt.sty.
+"""zusammenbau.py v1.6 – aus bank/<eintrag>/ LaTeX-Quelltexte für mathblatt.sty.
 
 Aufruf:
     python3 werkzeuge/zusammenbau.py <eintrag> [--einheiten 1,3]
@@ -15,6 +15,26 @@ Aufruf:
         [--heft msa|abitur-gk|abitur-lk|fhr] [--einheiten n] [--aus <ordner>]
     python3 werkzeuge/zusammenbau.py <eintrag> --kompetenz <kette>
         --einheiten n [--niveau for|ebr] [--dicht] [--ohne <ids>]
+
+v1.6 (2026-10-03, Befunde des Lehrers vom 03.10. am Basiszettel): Rezept
+Zettel v0.9 – fünf Regeln. (1) Leicht heißt einfach, nicht kurz: die ersten
+zwei Aufgaben jedes Zettels sind einfache Rechnungen (z09_einfach: form teil,
+je Teil ein Feld, Ergebnis Zahl oder Größe, keine Variable, kein □, keine
+negative Zahl, keine Punkt- oder Winkelnamen im Text, keine Grafik, kein
+Ankreuzen; Typ niveau I und ab2020 ≥ 2 – niveau allein taugt nicht, 61 von
+64 Typen haben I); danach steigend wie bisher. (2) Mischung wie Aufgabe 1
+der Prüfung: höchstens 3 Ankreuzaufgaben (schwach 2), davon höchstens 2 mit
+Term oder Gleichung in den Optionen (Variable oder „=“). (3) Figur rechts in
+der Antwortspalte in fester Breite (\\AG), Oberkante auf der ersten
+Textzeile; Felder mit voller Linie (2,4 cm) unter dem Text in der
+Textspalte (\\FT, \\FTL), auch die langen Einheiten (\\feldlang 2,4 cm). (4)
+Schwach: Vorstufe statt Tipp – je Typ die freie Vorstufe, sonst Original,
+sonst Bestand; Tipp nur ohne Vorstufe (die Vorstufen im Vorrat tragen keinen
+mehr). (5) Schwach (Übergang bis zur Entscheidung des Lehrers): sieben
+Aufgaben aus den 17 Typen mit ab2020 ≥ 2; die 30-%-Kernregel nur als
+HINWEIS im Log. Dazu: normal 8–11 Aufgaben (Ziel 10, eine mehr, wenn die
+Seite sie trägt), schwach 6–8 (Ziel 7); Originale ≥ 3 und Vorstufen ≥ 2 nur
+noch normal. Vortext vor der Linie („x =“) geht von der Textspalte ab.
 
 v1.5 (2026-10-03, Auftrag „Basiszettel ins Skript“, Vorlage des Lehrers vom
 03.10., bau/zettel/vorlage-2026-10-03/): Rezept Zettel v0.8 – Form der
@@ -148,7 +168,7 @@ from bisect import bisect_right
 from pathlib import Path
 
 WURZEL = Path(__file__).resolve().parent.parent
-VERSION = "v1.5"
+VERSION = "v1.6"
 
 # Befehle der Rahmendateien, die weder in STANDARD (bank-pruef.py) noch
 # in _bausteine.md stehen; jede Argumentzahl zulässig.
@@ -5694,7 +5714,7 @@ def main(argv=None):
     p.add_argument("eintrag", nargs="*",
                    help="Eintrag; mit --heft mehrere in Heftfolge")
     p.add_argument("--zettel", choices=["basis"],
-                   help="Rezept Z v0.8: Basiszettel nach der Vorlage vom "
+                   help="Rezept Z v0.9: Basiszettel nach der Vorlage vom "
                         "03.10. aus bank/_basis/ (Kennung BAS-S<n>, mit "
                         "--schwach BAS-W<n>)")
     p.add_argument("--pdf", action="store_true",
@@ -5735,8 +5755,8 @@ def main(argv=None):
     p.add_argument("--fokus", metavar="KETTE",
                    help="Kettenname wortgleich aus der Bank (Feld kette)")
     p.add_argument("--schwach", action="store_true",
-                   help="Lernblatt: schwache Form; Zettel: 7 Aufgaben, nur "
-                        "Kerntypen, Tipps")
+                   help="Lernblatt: schwache Form; Zettel: 7 Aufgaben aus "
+                        "Typen mit ab2020 ≥ 2, Vorstufen, sonst Tipps")
     p.add_argument("--klasse", type=int)
     p.add_argument("--kasten", action="store_true",
                    help="Merkkasten am Anfang jeder Einheit (3.1 „mit kasten“)")
@@ -6501,7 +6521,7 @@ def zettel_satz(nr, typ, z, log):
         "\\end{minipage}}", "\\end{aufgabe}"]
 
 
-# --- Rezept Zettel v0.8 (Vorlage des Lehrers vom 03.10.2026) ----------------
+# --- Rezept Zettel v0.8/v0.9 (Vorlage des Lehrers vom 03.10.2026) -----------
 #
 # Form wie bau/zettel/vorlage-2026-10-03/vorlage.tex (vom Lehrer gutgeheißen):
 # ein Blatt, eine Spalte, 12pt; Kopf „Basis n“ fett links und rechts klein
@@ -6519,22 +6539,25 @@ def zettel_satz(nr, typ, z, log):
 # Auswahl (Übergabe 03.10.): jeder Zettel steht für sich, die Nummer
 # verhindert nur Wiederholung (keine Variante zweimal in einer Folge; die
 # Folgen normal und schwach zählen getrennt). Je Zettel kein Typ und kein
-# Thema doppelt, mindestens ORIGINALE_MIN verfremdete Originale, mindestens
-# VORSTUFEN_MIN Vorstufen (a)/b)), die ersten LEICHT_ANFANG Aufgaben aus der
-# leichtesten Höhe (Stufe 0: ohne Grafik, ein Feld oder kurzes Ankreuzen,
-# kurzer Text). Häufige Typen öfter: Vorrang hat der Typ mit dem kleinsten
+# Thema doppelt. Häufige Typen öfter: Vorrang hat der Typ mit dem kleinsten
 # Verhältnis aus bisherigen Einsätzen und (1 + Jahrgänge seit 2020).
-# „schwach“: 7 Aufgaben, nur Kerntypen (Kern = Typ in mindestens KERN_ANTEIL
-# der Jahrgänge seit 2020, Spalte ab2020 in typen.csv), mehr Vorstufen,
-# Tipp-Zeilen, \large. Reichen die Kerntypen nicht für 7 verschiedene Typen
-# mit verschiedenen Themen, nimmt der Plan die häufigsten weiteren Typen dazu
-# und die Gegenprobe meldet es (Befund, keine Lockerung).
+# v0.9 (v1.6): die ersten LEICHT_ANFANG Aufgaben sind einfache Rechnungen
+# (z09_einfach), höchstens KREUZ_MAX Ankreuzen, davon KREUZ_TERM_MAX mit
+# Term; normal 8–11 Aufgaben mit ORIGINALE_MIN Originalen und VORSTUFEN_MIN
+# Vorstufen; „schwach“ 6–8 (Ziel 7) aus den Typen mit ab2020 ≥
+# SCHWACH_AB2020, je Typ die Vorstufe, wenn eine frei ist, Tipp nur ohne
+# Vorstufe, \large.
 
-ZETTEL_ZAHL = {"normal": 10, "schwach": 7}
-ORIGINALE_MIN = 3
-VORSTUFEN_MIN = {"normal": 2, "schwach": 3}
-LEICHT_ANFANG = 2
-KERN_ANTEIL = 0.30
+# v1.6 (Rezept Zettel v0.9, Lehrer 03.10.): Zahl (mindestens, Ziel, höchstens)
+ZAHL_09 = {"normal": (8, 10, 11), "schwach": (6, 7, 8)}
+ORIGINALE_MIN = {"normal": 3, "schwach": 0}   # schwach: Hinweis, keine Regel
+VORSTUFEN_MIN = {"normal": 2, "schwach": 0}   # schwach: Vorstufe wo vorhanden
+LEICHT_ANFANG = 2         # die ersten zwei: einfache Rechnung (z09_einfach)
+EINFACH_AB2020 = 2        # einfache Rechnung nur aus Typen mit ab2020 ≥ 2
+KREUZ_MAX = {"normal": 3, "schwach": 2}       # Ankreuzaufgaben je Zettel
+KREUZ_TERM_MAX = 2        # davon mit Term oder Gleichung in den Optionen
+SCHWACH_AB2020 = 2        # Übergang: schwach = Typen mit ab2020 ≥ 2
+KERN_ANTEIL = 0.30        # alte Kernregel, nur noch Hinweis im Log
 KERN_AB = 2020
 GROSS_08 = 1              # höchstens eine große Grafik (Wertetabellen) je Zettel
 HOEHE_08 = {"normal": 24.5, "schwach": 24.2}   # cm für alle Aufgaben (Schätzung,
@@ -6555,9 +6578,11 @@ VORSPANN_08 = r"""\documentclass[12pt]{article}
 \newcommand{\loes}[1]{\rlap{\hspace{0.85cm}\small #1}}
 \renewcommand{\feld}[3][]{\hfill #1\,\rule[-1pt]{2.4cm}{0.4pt}\,\makebox[0.7cm][l]{#2}\loes{#3}}
 \newcommand{\nr}[2]{\leavevmode\llap{\makebox[2.05cm][l]{{\footnotesize\color{gray}#1}}}\llap{\textbf{#2.}\hspace{6pt}}}
-\newcommand{\AF}[6][]{\par\vspace{10pt plus 1fill}\parbox[b]{\tw}{\raggedright\nr{#1}{#2}#3}\feld[#4]{#5}{#6}}
+\newsavebox{\zvbox}
+% v1.6: Vortext vor der Linie („x =“) geht von der Textspalte ab, nicht über den Rand
+\newcommand{\AF}[6][]{\par\vspace{10pt plus 1fill}\sbox{\zvbox}{#4\,}\parbox[b]{\dimexpr\tw-\wd\zvbox\relax}{\raggedright\nr{#1}{#2}#3}\feld[#4]{#5}{#6}}
 \newcommand{\AT}[3][]{\par\vspace{10pt plus 1fill}\parbox[t]{\tw}{\raggedright\nr{#1}{#2}#3}\par}
-\newcommand{\TF}[5][]{\par\vspace{3pt}\parbox[b]{\tw}{#2}\feld[#1]{#3}{#5}}
+\newcommand{\TF}[5][]{\par\vspace{3pt}\sbox{\zvbox}{#1\,}\parbox[b]{\dimexpr\tw-\wd\zvbox\relax}{#2}\feld[#1]{#3}{#5}}
 \newcommand{\li}[1]{\hfill\rlap{\hspace{\dimexpr\textwidth-\tw+0.85cm\relax}\small #1}}
 \newcommand{\lis}[1]{\rlap{\hspace{\dimexpr\textwidth-\tw+0.85cm\relax}\small #1}}
 \newcommand{\lf}{\rule[-1pt]{1.6cm}{0.4pt}}
@@ -6574,10 +6599,18 @@ VORSPANN_08 = r"""\documentclass[12pt]{article}
 \newsavebox{\zbox}
 \newcommand{\zbild}[2][\linewidth]{\sbox{\zbox}{#2}\raisebox{\depth}{\ifdim\wd\zbox>#1\relax\resizebox{#1}{!}{\usebox{\zbox}}\else\usebox{\zbox}\fi}}
 \newcommand{\zkasten}{\framebox[0.8cm]{\rule{0pt}{0.45cm}}}
-% v1.5: lange Einheit („Kästchen“, „Gläser“): kürzere Linie, breiteres Feld
-\newcommand{\feldlang}[3][]{\hfill #1\,\rule[-1pt]{1.3cm}{0.4pt}\,\makebox[1.8cm][l]{\small #2}\loes{#3}}
-\newcommand{\AFL}[6][]{\par\vspace{10pt plus 1fill}\parbox[b]{\tw}{\raggedright\nr{#1}{#2}#3}\feldlang[#4]{#5}{#6}}
-\newcommand{\TFL}[5][]{\par\vspace{3pt}\parbox[b]{\tw}{#2}\feldlang[#1]{#3}{#5}}
+% v1.5: lange Einheit („Kästchen“, „Gläser“): breiteres Feld für die Einheit;
+% v1.6: Linie voll (2,4 cm), die Textspalte gibt dafür 1,1 cm ab
+\newcommand{\feldlang}[3][]{\hfill #1\,\rule[-1pt]{2.4cm}{0.4pt}\,\makebox[1.8cm][l]{\small #2}\loes{#3}}
+\newcommand{\AFL}[6][]{\par\vspace{10pt plus 1fill}\sbox{\zvbox}{#4\,}\parbox[b]{\dimexpr\tw-1.1cm-\wd\zvbox\relax}{\raggedright\nr{#1}{#2}#3}\feldlang[#4]{#5}{#6}}
+\newcommand{\TFL}[5][]{\par\vspace{3pt}\sbox{\zvbox}{#1\,}\parbox[b]{\dimexpr\tw-1.1cm-\wd\zvbox\relax}{#2}\feldlang[#1]{#3}{#5}}
+% v1.6 (Lehrer 03.10.): Figur rechts in der Antwortspalte (feste Breite \fw),
+% Oberkante auf der ersten Textzeile; Felder unter dem Text in der Textspalte
+% mit voller Linie (2,4 cm), Lösung im Streifen auf Höhe des Felds
+\newlength{\fw}
+\newcommand{\AG}[4][]{\par\vspace{10pt plus 1fill}\setlength{\fw}{\dimexpr\textwidth-\tw-0.2cm\relax}\parbox[t]{\tw}{\vspace{0pt}\raggedright\nr{#1}{#2}#3}\hfill\parbox[t]{\fw}{\vspace{0pt}\centering #4}\par}
+\newcommand{\FT}[4][]{\par\vspace{4pt}\sbox{\zvbox}{#1\,}\parbox[b]{\dimexpr\linewidth-3.4cm-\wd\zvbox\relax}{\raggedright #2}\hfill #1\,\rule[-1pt]{2.4cm}{0.4pt}\,\makebox[0.7cm][l]{#3}\lis{#4}}
+\newcommand{\FTL}[4][]{\par\vspace{4pt}\sbox{\zvbox}{#1\,}\parbox[b]{\dimexpr\linewidth-4.5cm-\wd\zvbox\relax}{\raggedright #2}\hfill #1\,\rule[-1pt]{2.4cm}{0.4pt}\,\makebox[1.8cm][l]{\small #3}\lis{#4}}
 """
 Z08_BEFEHLE = {"AF", "AT", "TF", "AB", "op", "tipp", "kopf", "feld", "nr",
                "loes", "li", "lis", "lf", "zbild", "zkasten", "large",
@@ -6585,7 +6618,8 @@ Z08_BEFEHLE = {"AF", "AT", "TF", "AB", "op", "tipp", "kopf", "feld", "nr",
                "small", "textbf", "noindent", "makebox", "raggedright",
                "hspace", "framebox", "rule", "linewidth", "fill",
                "setlength", "parbox", "footnotesize", "raisebox", "depth",
-               "feldlang", "AFL", "TFL"}
+               "feldlang", "AFL", "TFL", "AG", "FT", "FTL", "fw", "zvbox", "sbox", "wd", "linewidth",
+               "dimexpr", "textwidth", "relax"}
 
 
 def z08_typinfo():
@@ -6675,218 +6709,245 @@ def z08_stufe(z):
 
 
 def z08_hoehe(z, variante):
-    """Geschätzte Höhe in cm (Text, Felder, Optionen, Grafik, Abstand)."""
+    """Geschätzte Höhe in cm (Text, Felder, Optionen, Grafik, Abstand).
+    v1.6: kleine Figur und Koordinatensystem rechts neben dem Text (Höhe =
+    das Größere), Felder unter dem Text."""
     zeile = 0.62 if variante == "schwach" else 0.53
     je = 54 if variante == "schwach" else 64
     stamm = z08_sichtbar(z08_stamm(z["aufgabe"]))
+    g = z08_grafikart(z.get("grafik", ""))
+    seg = z08_segmente(z.get("antwort", ""))
+    if g in ("klein", "ksys"):
+        je = int(je * 0.72)        # Text neben der Figur: Felder rechts im Text
     zeilen = len(stamm) // je + 1
     opt = z08_optionen(z["aufgabe"])
     if opt:
         lang = sum(len(z08_sichtbar(o)) for o in opt)
         zeilen += 1 if lang <= 55 or len(opt) > 4 else len(opt)
-    zeilen += len(z08_segmente(z.get("antwort", ""))) if len(
-        z08_segmente(z.get("antwort", ""))) > 1 else 0
+    if len(seg) > 1:
+        zeilen += len(seg)
+    elif g in ("klein", "ksys") and seg:
+        zeilen += 1                # Feld unter dem Text
     text = zeilen * zeile
-    g = z08_grafikart(z.get("grafik", ""))
-    bild = {"": 0, "klein": 2.3, "ksys": 3.6, "reihe": 1.7,
+    bild = {"": 0, "klein": 2.6, "ksys": 3.5, "reihe": 1.7,
             "tabelle": 4.6}[g]
-    if g in ("klein", "ksys") and (opt or len(z08_segmente(
-            z.get("antwort", ""))) > 1):
+    if g in ("klein", "ksys"):
         h = max(text, bild)
     else:
         h = text + bild
-    if variante == "schwach" and z.get("tipp"):
+    if variante == "schwach" and z.get("tipp") and not z.get("vorstufe"):
         h += 0.45
     return h + 0.75
 
 
+# --- v1.6: einfache Rechnung, Ankreuzen mit Term ---------------------------
+
+Z09_EINHEITEN = {"€", "%", "cm", "m", "km", "mm", "dm", "g", "kg", "t", "l",
+                 "ml", "h", "min", "s", "cm²", "m²", "dm²", "mm²", "km²",
+                 "cm³", "m³", "dm³", "mm³", "°", "Std.", "Tage", "Jahre",
+                 "Minuten", "Stunden", "Sekunden"}
+
+
+def z09_variable(t):
+    """Steht in t eine Variable (Buchstabe in einer Formel, ohne Befehle,
+    \\mathrm/\\text-Inhalte und Einheiten)?"""
+    for m in re.findall(r"\$([^$]*)\$", t):
+        m = re.sub(r"\\(?:text|mathrm|operatorname)\{[^{}]*\}", "", m)
+        m = re.sub(r"\b[A-Z]\s?\(", "(", m)     # Punkt P(5|6): kein Term
+        m = re.sub(r"\\[A-Za-z]+", "", m)
+        if re.search(r"[A-Za-z]", m):
+            return True
+    return False
+
+
+def z09_groesse(e):
+    """Ist das Ergebnis e eine Zahl oder Größe (Zahl mit Einheit)?"""
+    t = e.replace("$", "").replace("{,}", ",")
+    t = re.sub(r"\\[,;! ]|~", " ", t)
+    t = re.sub(r"\^\{?\\circ\}?|\\%", lambda m: " ° " if "circ" in
+               m.group(0) else " % ", t)
+    t = t.replace("€", " € ").replace("%", " % ")
+    teile = t.split()
+    zahl = [x for x in teile if re.fullmatch(r"[−-]?\d[\d.]*(?:,\d+)?", x)]
+    return bool(zahl) and all(x in Z09_EINHEITEN or x in zahl for x in teile)
+
+
+def z09_einfach(z, info, typ):
+    """Rezept Zettel v0.9, Regel 1 (Lehrer 03.10.: leicht heißt einfach,
+    nicht kurz): Kurzantwort oder Eintragen (form teil, ein Feld je Teil),
+    Ergebnis Zahl oder Größe, keine Variable und keine Lücke (□) im Text,
+    keine Grafik, kein Ankreuzen, Typ mit niveau I und ab2020 ≥ 2."""
+    if z["form"] != "teil" or z.get("grafik"):
+        return False
+    # niveau taugt nicht als Maß (61 von 64 Typen haben I); Ersatz nach dem
+    # Auftrag: Typ mit ab2020 ≥ EINFACH_AB2020 (und niveau I)
+    if (info[typ].get("niveau", "I") != "I"
+            or info[typ]["ab2020"] < EINFACH_AB2020):
+        return False
+    stamm = z08_stamm(z["aufgabe"])
+    if z09_variable(stamm) or "\\square" in stamm or "__" in stamm:
+        return False
+    # keine negativen Zahlen („Termwert mit positiver Zahl“), keine Winkel-
+    # und Punktnamen (Geometrie ist keine einfache Rechnung)
+    if re.search(r"(?:^|[^\w)}])[−-]\s?\d|\\(?:alpha|beta|gamma|delta)"
+                 r"|\b[A-Z]{2,3}\b", stamm):
+        return False
+    seg = z08_segmente(z.get("antwort", ""))
+    if not seg or any(x.count("__") != 1 for x in seg):
+        return False
+    if any(z09_variable(x) and not re.search(r"\$[A-Za-z] =\$", x)
+           for x in seg):
+        return False
+    erg = z.get("ergebnis") or []
+    return bool(erg) and all(z09_groesse(e) for e in erg)
+
+
+def z09_kreuz(z):
+    return z["form"] == "ankreuzen"
+
+
+def z09_kreuz_term(z):
+    """Ankreuzen mit Term oder Gleichung in den Optionen (Variable oder =)."""
+    return z09_kreuz(z) and any(z09_variable(o) or "=" in o
+                                for o in z08_optionen(z["aufgabe"]))
+
+
 def z08_plan(info, vorrat, nummer, variante, log=None):
     """Zettel 1..nummer der Folge variante; gibt (Auswahl für nummer, Befunde
-    des Plans) oder (None, Grund), wenn der Vorrat nicht mehr reicht."""
+    des Plans, genutzte Zeilen vor diesem Zettel) oder (None, Grund, None),
+    wenn der Vorrat nicht mehr reicht."""
     genutzt, einsaetze = set(), {t: 0 for t in info}
-    zahl = ZETTEL_ZAHL[variante]
     if variante == "schwach":
-        kern = [t for t in info if info[t]["kern"] and vorrat.get(t)]
-        dazu = sorted((t for t in info if not info[t]["kern"]
-                       and vorrat.get(t)),
-                      key=lambda t: (-info[t]["ab2020"],
-                                     -info[t]["jahrgaenge"], info[t]["rang"]))
-        erlaubt = list(kern)
-        themen = {info[t]["thema"] for t in erlaubt}
-        for t in dazu:
-            if len(erlaubt) >= zahl:
-                break
-            if info[t]["thema"] not in themen:
-                erlaubt.append(t)
-                themen.add(info[t]["thema"])
-        befund = ([f"nur {len(kern)} Kerntypen (Kern: ab2020 ≥ "
-                   f"{KERN_ANTEIL:.0%} der Jahrgänge seit {KERN_AB}); dazu "
-                   "genommen: " + ", ".join(erlaubt[len(kern):])]
-                  if len(kern) < zahl else [])
+        erlaubt = {t for t in info if info[t]["ab2020"] >= SCHWACH_AB2020
+                   and vorrat.get(t)}
     else:
-        erlaubt = [t for t in info if vorrat.get(t)]
-        befund = []
-    erlaubt = set(erlaubt)
+        erlaubt = {t for t in info if vorrat.get(t)}
     for n in range(1, nummer + 1):
-        if variante == "schwach":
-            wahl = z08_waehle_fest(info, vorrat, sorted(
-                erlaubt, key=lambda t: info[t]["rang"]), genutzt, variante)
-        else:
-            wahl = z08_waehle(info, vorrat, erlaubt, genutzt, einsaetze,
-                              variante)
+        wahl = z08_waehle(info, vorrat, erlaubt, genutzt, einsaetze,
+                          variante)
         if isinstance(wahl, str):
-            return None, f"Zettel {n}: {wahl}"
+            return None, f"Zettel {n}: {wahl}", None
         if n == nummer:
-            return wahl, befund
+            return wahl, [], set(genutzt)
         for t, z in wahl:
             genutzt.add(z["id"])
             einsaetze[t] += 1
-    return None, "keine Nummer"
+    return None, "keine Nummer", None
 
 
 def z08_waehle(info, vorrat, erlaubt, genutzt, einsaetze, variante):
-    """Eine Auswahl [(typ, zeile)] nach den Regeln oben oder ein Grund."""
-    zahl = ZETTEL_ZAHL[variante]
+    """Eine Auswahl [(typ, zeile)] nach den Regeln v0.9 oder ein Grund.
+    normal: zwei einfache Rechnungen, verfremdete Originale, Vorstufen, dann
+    auffüllen bis zum Ziel und, wenn die Seite es trägt, eine mehr.
+    schwach: je Typ die Vorstufe, wenn eine frei ist (Regel 4), sonst ein
+    Original, sonst der Bestand; zwei einfache Rechnungen vorn."""
+    lo, ziel, hi = ZAHL_09[variante]
     vorrang = sorted(erlaubt, key=lambda t: (
         einsaetze[t] / (1 + info[t]["ab2020"]), -info[t]["jahrgaenge"],
         info[t]["rang"]))
-    wahl, typen, themen = [], set(), set()
-    gross = 0
-    hoehe = 0.0
+    wahl, typen, themen, vorn = [], set(), set(), []
+    stand = {"gross": 0, "hoehe": 0.0, "kreuz": 0, "term": 0}
 
-    def frei(t, art=None, leicht=False):
-        for z in vorrat[t]:
-            if z["id"] in genutzt:
-                continue
-            if art and z08_art(z) != art:
-                continue
-            if leicht and z08_stufe(z) != 0:
-                continue
-            return z
-        return None
+    def frei(t, art=None, einfach=False):
+        zz = [z for z in vorrat[t] if z["id"] not in genutzt]
+        if variante == "schwach":
+            vs = [z for z in zz if z08_art(z) == "vorstufe"]
+            zz = vs or ([z for z in zz if z08_art(z) == "original"]
+                        + [z for z in zz if z08_art(z) == "bestand"])
+        elif art:
+            zz = [z for z in zz if z08_art(z) == art]
+        if einfach:
+            zz = [z for z in zz if z09_einfach(z, info, t)]
+        return zz
 
-    def nimm(t, z):
-        nonlocal gross, hoehe
+    def nimm(t, z, bis):
+        """z aufnehmen, wenn Typ, Thema, Ankreuzen und Höhe es zulassen;
+        Platz für die Aufgaben bis zur Zahl bis bleibt frei."""
+        if t in typen or info[t]["thema"] in themen:
+            return False
         g = z08_grafikart(z.get("grafik", "")) == "tabelle"
+        if g and stand["gross"] >= GROSS_08:
+            return False
+        if z09_kreuz(z) and stand["kreuz"] >= KREUZ_MAX[variante]:
+            return False
+        if z09_kreuz_term(z) and stand["term"] >= KREUZ_TERM_MAX:
+            return False
         h = z08_hoehe(z, variante)
-        rest = zahl - len(wahl) - 1
-        # Platz für die noch fehlenden Aufgaben freihalten: je fehlende
-        # Vorstufe VORSTUFE_CM, sonst KURZ_CM
+        rest = max(0, bis - len(wahl) - 1)
         vst = sum(z08_art(x) == "vorstufe" for _, x in wahl) + (
             z08_art(z) == "vorstufe")
         fehlt_v = min(rest, max(0, VORSTUFEN_MIN[variante] - vst))
         frei_cm = fehlt_v * VORSTUFE_CM[variante] + (rest - fehlt_v) * \
             KURZ_CM[variante]
-        if g and gross >= GROSS_08:
-            return False
-        if hoehe + h + frei_cm > HOEHE_08[variante]:
+        if stand["hoehe"] + h + frei_cm > HOEHE_08[variante]:
             return False
         wahl.append((t, z))
         typen.add(t)
         themen.add(info[t]["thema"])
-        gross += g
-        hoehe += h
+        stand["gross"] += g
+        stand["kreuz"] += z09_kreuz(z)
+        stand["term"] += z09_kreuz_term(z)
+        stand["hoehe"] += h
         return True
 
-    def offen(t):
-        return t not in typen and info[t]["thema"] not in themen
+    def versuche(t, kandidaten, bis):
+        for z in kandidaten:
+            if nimm(t, z, bis):
+                return z
+            if variante == "schwach":
+                return None   # Regel 4: nur die bevorzugte Zeile des Typs
+        return None
 
-    # 1. verfremdete Originale
+    # 1. zwei einfache Rechnungen (normal: Original vor Bestand)
     for t in vorrang:
-        if sum(z08_art(z) == "original" for _, z in wahl) >= ORIGINALE_MIN:
+        if len(vorn) >= LEICHT_ANFANG:
             break
-        z = frei(t, "original") if offen(t) else None
+        if variante == "schwach":
+            k = frei(t)[:1]
+            k = [z for z in k if z09_einfach(z, info, t)]
+        else:
+            k = frei(t, "original", True) + frei(t, "bestand", True)
+        z = versuche(t, k, ziel)
         if z:
-            nimm(t, z)
-    if sum(z08_art(z) == "original" for _, z in wahl) < ORIGINALE_MIN:
-        return (f"weniger als {ORIGINALE_MIN} verfremdete Originale "
-                "verschiedener Themen frei")
-    # 2. Vorstufen
-    for t in vorrang:
-        if sum(z08_art(z) == "vorstufe" for _, z in wahl) >= \
-                VORSTUFEN_MIN[variante]:
-            break
-        z = frei(t, "vorstufe") if offen(t) else None
-        if z:
-            nimm(t, z)
-    if sum(z08_art(z) == "vorstufe" for _, z in wahl) < VORSTUFEN_MIN[variante]:
-        return (f"weniger als {VORSTUFEN_MIN[variante]} Vorstufen "
-                "verschiedener Themen frei")
-    # 3. leichter Einstieg: so viele leichte Aufgaben, dass zwei vorn stehen
-    for t in vorrang:
-        if sum(z08_stufe(z) == 0 for _, z in wahl) >= LEICHT_ANFANG:
-            break
-        z = frei(t, "bestand", leicht=True) if offen(t) else None
-        if z:
-            nimm(t, z)
-    # 4. auffüllen (Bestand, dann weitere Originale und Vorstufen)
-    for art in ("bestand", None):
+            vorn.append(z["id"])
+    if len(vorn) < LEICHT_ANFANG:
+        return f"nur {len(vorn)} einfache Rechnungen frei"
+    if variante == "normal":
+        # 2. verfremdete Originale, 3. Vorstufen
+        for art, mindest in (("original", ORIGINALE_MIN["normal"]),
+                             ("vorstufe", VORSTUFEN_MIN["normal"])):
+            for t in vorrang:
+                if sum(z08_art(z) == art for _, z in wahl) >= mindest:
+                    break
+                versuche(t, frei(t, art), ziel)
+            if sum(z08_art(z) == art for _, z in wahl) < mindest:
+                return (f"weniger als {mindest} Zeilen der Art {art} "
+                        "verschiedener Themen frei")
+        # 4. auffüllen bis zum Ziel, dann so viele mehr, wie die Seite trägt
+        for bis in (ziel, hi):
+            for art in ("bestand", None):
+                for t in vorrang:
+                    if len(wahl) >= bis:
+                        break
+                    if t not in typen:
+                        versuche(t, frei(t, art), bis)
+    else:
         for t in vorrang:
-            if len(wahl) >= zahl:
+            if len(wahl) >= ziel:
                 break
-            z = frei(t, art) if offen(t) else None
-            if z:
-                nimm(t, z)
-    if len(wahl) < zahl:
-        return f"nur {len(wahl)} von {zahl} Aufgaben passen"
-    return z08_ordnen(wahl, info)
-
-
-def z08_waehle_fest(info, vorrat, typen, genutzt, variante):
-    """Zettel „schwach“: die Typen stehen fest (je einer); gesucht ist je Typ
-    eine Zeile – Original, Vorstufe, leichte oder andere Bestandsaufgabe –,
-    so dass die Regeln gelten. Alle Zuordnungen werden geprüft; gewählt wird
-    die, die am wenigsten Originale und Vorstufen verbraucht (sie sind
-    knapp) und sie bei den Typen nimmt, die am meisten davon übrig haben,
-    dann die niedrigste Höhe."""
-    import itertools
-    zahl = ZETTEL_ZAHL[variante]
-    if len(typen) < zahl:
-        return f"nur {len(typen)} Typen für {zahl} Aufgaben"
-    typen = typen[:zahl]
-    kandidaten = []
-    for t in typen:
-        k, arten = [], set()
-        for z in vorrat[t]:
-            if z["id"] in genutzt:
-                continue
-            schluessel = (z08_art(z), z08_stufe(z) == 0)
-            if schluessel not in arten:
-                arten.add(schluessel)
-                k.append(z)
-        if not k:
-            return f"Typ {t} erschöpft"
-        kandidaten.append(k)
-    rest = {(t, a): sum(1 for z in vorrat[t] if z["id"] not in genutzt
-                        and z08_art(z) == a)
-            for t in typen for a in ("original", "vorstufe", "bestand")}
-    beste = None
-    for wahl in itertools.product(*kandidaten):
-        orig = sum(z08_art(z) == "original" for z in wahl)
-        vst = sum(z08_art(z) == "vorstufe" for z in wahl)
-        leicht = sum(z08_stufe(z) == 0 for z in wahl)
-        gross = sum(z08_grafikart(z.get("grafik", "")) == "tabelle"
-                    for z in wahl)
-        hoehe = sum(z08_hoehe(z, variante) for z in wahl)
-        if (orig < ORIGINALE_MIN or vst < VORSTUFEN_MIN[variante]
-                or leicht < LEICHT_ANFANG or gross > GROSS_08
-                or hoehe > HOEHE_08[variante]):
-            continue
-        # knappe Arten dort nehmen, wo am meisten davon übrig ist
-        vorrat_rest = -sum(rest[(t, z08_art(z))] for t, z in zip(typen, wahl)
-                           if z08_art(z) != "bestand")
-        wert = (orig, vst, vorrat_rest, hoehe)
-        if beste is None or wert < beste[0]:
-            beste = (wert, wahl)
-    if beste is None:
-        return ("keine Zuordnung erfüllt die Regeln (Originale, Vorstufen, "
-                "leichter Einstieg, Höhe)")
-    return z08_ordnen(list(zip(typen, beste[1])), info)
+            if t not in typen:
+                versuche(t, frei(t), ziel)
+    if len(wahl) < lo:
+        return f"nur {len(wahl)} Aufgaben passen (mindestens {lo})"
+    erste = [tz for tz in wahl if tz[1]["id"] in vorn]
+    erste.sort(key=lambda tz: z08_hoehe(tz[1], variante))
+    rest = [tz for tz in wahl if tz[1]["id"] not in vorn]
+    return erste + z08_ordnen(rest, info)
 
 
 def z08_ordnen(wahl, info):
-    """Leichte zuerst (Stufe 0: Originale dahinter, kurze Texte vorn), dann
-    nach Stufe; innerhalb einer Stufe Bereich wie im Basisteil."""
+    """Steigend: nach Stufe; innerhalb einer Stufe kurze Texte vorn, dann
+    Bereich wie im Basisteil."""
     def folge(tz):
         t, z = tz
         e = z["eintrag"]
@@ -7011,6 +7072,19 @@ def z08_streifen(e):
     return e
 
 
+def z09_feld(text, seg, e):
+    """Eine Feldzeile in der Textspalte (v1.6): Text links, Feld mit voller
+    Linie rechts am Ende der Textspalte, Lösung im Streifen."""
+    ft = z08_feldteile(seg)
+    if ft and z08_af(ft[1]) == "AFL":
+        return f"\\FTL[{ft[0]}]{{{text}}}{{{ft[1]}}}{{{e}}}"
+    if ft:
+        return f"\\FT[{ft[0]}]{{{text}}}{{{ft[1]}}}{{{e}}}"
+    return (f"\\par\\vspace{{4pt}}\\parbox[b]{{\\dimexpr\\linewidth-4.4cm"
+            f"\\relax}}{{\\raggedright {text}}}\\hfill {z08_inline(seg)}"
+            f"\\lis{{{e}}}")
+
+
 def z08_satz(nr, typ, z, variante, log):
     """Eine Aufgabe in den Makros der Vorlage."""
     jahr = str(z["original"]["jahr"]) if z.get("ist_original") else ""
@@ -7045,7 +7119,7 @@ def z08_satz(nr, typ, z, variante, log):
                 inhalt = (stamm + "\\par\\vspace{5pt}"
                           + "\\par\\vspace{3pt}".join(zeilen)
                           + f"\\li{{{erg[0]}}}")
-                aus.append(f"\\AB{j}{{{nr}}}{{{inhalt}}}{{\\zbild{{{g}}}}}")
+                aus.append(f"\\AG{j}{{{nr}}}{{{inhalt}}}{{\\zbild{{{g}}}}}")
             else:
                 aus.append(f"\\AT{j}{{{nr}}}{{{stamm}}}")
                 erste, *rest = zeilen
@@ -7055,13 +7129,11 @@ def z08_satz(nr, typ, z, variante, log):
     elif len(seg) > 1:
         intro, teile = z08_teiltexte(stamm, len(seg))
         if art in ("klein", "ksys"):
-            zeilen = [intro]
-            for t, s, e in zip(teile, seg, erg):
-                ft = z08_feldteile(s)
-                feld = (f"{ft[0]}\\,\\lf\\,{ft[1]}" if ft else z08_inline(s))
-                zeilen.append(f"{t} \\hfill {feld}\\lis{{{e}}}")
-            inhalt = "\\par\\vspace{4pt}".join(x for x in zeilen if x)
-            aus.append(f"\\AB{j}{{{nr}}}{{{inhalt}}}{{\\zbild{{{g}}}}}")
+            # v1.6: Figur rechts auf Aufgabenhöhe, je Teil eine Zeile mit
+            # vollem Feld unter dem Text (z09_feld)
+            inhalt = intro + "".join(z09_feld(t, s_, e)
+                                     for t, s_, e in zip(teile, seg, erg))
+            aus.append(f"\\AG{j}{{{nr}}}{{{inhalt}}}{{\\zbild{{{g}}}}}")
         else:
             aus.append(f"\\AT{j}{{{nr}}}{{{intro}}}")
             if art:
@@ -7094,6 +7166,13 @@ def z08_satz(nr, typ, z, variante, log):
         elif not art:
             aus.append(f"\\AT{j}{{{nr}}}{{{stamm}}}")
             aus.append(f"\\vspace{{2pt}}\\hfill {z08_inline(s)}\\loes{{{e}}}")
+        elif art in ("klein", "ksys"):
+            # v1.6: Figur rechts auf Aufgabenhöhe, Feld unter dem Text
+            if z["form"] == "zeichnen" or not s:
+                inhalt = f"{stamm}\\li{{{e}}}"
+            else:
+                inhalt = stamm + z09_feld("", s, e)
+            aus.append(f"\\AG{j}{{{nr}}}{{{inhalt}}}{{\\zbild{{{g}}}}}")
         else:
             breite = "\\tw" if art in ("reihe", "tabelle") else "6cm"
             aus.append(f"\\AT{j}{{{nr}}}{{{stamm}}}")
@@ -7108,47 +7187,66 @@ def z08_satz(nr, typ, z, variante, log):
             else:
                 aus.append(f"\\vspace{{2pt}}{bild}\\hfill {z08_inline(s)}"
                            f"\\loes{{{e}}}")
-    if variante == "schwach" and z.get("tipp"):
+    if variante == "schwach" and z.get("tipp") and not z.get("vorstufe"):
         aus.append(f"\\tipp{{{z['tipp']}}}")
     return kopf + aus
 
 
-def z08_gegenprobe(wahl, info, variante, befund):
-    """Regeln des Rezepts am fertigen Zettel prüfen → [(ok, Text)]."""
-    zahl = ZETTEL_ZAHL[variante]
+def z08_gegenprobe(wahl, info, variante, befund, vorrat=None, genutzt=None):
+    """Regeln des Rezepts v0.9 am fertigen Zettel prüfen → [(ok, Text)]."""
+    lo, ziel, hi = ZAHL_09[variante]
     typen = [t for t, _ in wahl]
     themen = [info[t]["thema"] for t in typen]
     orig = sum(1 for _, z in wahl if z.get("ist_original"))
     vst = sum(1 for _, z in wahl if z.get("vorstufe"))
-    stufen = [z08_stufe(z) for _, z in wahl]
+    kreuz = sum(z09_kreuz(z) for _, z in wahl)
+    term = sum(z09_kreuz_term(z) for _, z in wahl)
+    einfach = [z09_einfach(z, info, t) for t, z in wahl[:LEICHT_ANFANG]]
     aus = [
-        (len(wahl) == zahl, f"Zahl der Aufgaben {len(wahl)} (soll {zahl})"),
-        (orig >= ORIGINALE_MIN, f"verfremdete Originale {orig} (soll ≥ "
-                                f"{ORIGINALE_MIN})"),
-        (all(s == min(stufen) == 0 for s in stufen[:LEICHT_ANFANG]),
-         f"erste {LEICHT_ANFANG} Aufgaben aus der leichtesten Höhe (Stufen "
-         + ", ".join(str(s) for s in stufen[:LEICHT_ANFANG])
-         + f"; leichteste {min(stufen)})"),
+        (lo <= len(wahl) <= hi, f"Zahl der Aufgaben {len(wahl)} (soll "
+                                f"{lo}–{hi}, Ziel {ziel})"),
+        (len(einfach) == LEICHT_ANFANG and all(einfach),
+         f"erste {LEICHT_ANFANG} einfache Rechnungen (Kurzantwort, Zahl oder "
+         "Größe, ohne Variable, Grafik, Ankreuzen; Typ ab2020 ≥ 2): "
+         + ", ".join("ja" if e else "nein" for e in einfach)),
         (len(set(typen)) == len(typen), "kein Typ doppelt"
          + ("" if len(set(typen)) == len(typen) else ": "
             + ", ".join(sorted({t for t in typen if typen.count(t) > 1})))),
         (len(set(themen)) == len(themen), "kein Thema doppelt"),
-        (vst >= VORSTUFEN_MIN[variante], f"Vorstufen {vst} (soll ≥ "
-                                         f"{VORSTUFEN_MIN[variante]})"),
+        (kreuz <= KREUZ_MAX[variante], f"Ankreuzen {kreuz} (soll ≤ "
+                                       f"{KREUZ_MAX[variante]})"),
+        (term <= KREUZ_TERM_MAX, f"Ankreuzen mit Term oder Gleichung {term} "
+                                 f"(soll ≤ {KREUZ_TERM_MAX})"),
     ]
-    if variante == "schwach":
-        nicht = [t for t in typen if not info[t]["kern"]]
-        aus.append((not nicht, "nur Kerntypen" + (
-            "" if not nicht else ": nicht Kern " + "; ".join(
-                f"{t} ({info[t]['ab2020']} Jahrgänge seit {KERN_AB})"
-                for t in nicht))))
+    if variante == "normal":
+        aus += [
+            (orig >= ORIGINALE_MIN["normal"], f"verfremdete Originale {orig} "
+             f"(soll ≥ {ORIGINALE_MIN['normal']})"),
+            (vst >= VORSTUFEN_MIN["normal"], f"Vorstufen {vst} (soll ≥ "
+             f"{VORSTUFEN_MIN['normal']})"),
+        ]
+    else:
+        nicht = [t for t in typen if info[t]["ab2020"] < SCHWACH_AB2020]
+        aus.append((not nicht, f"nur Typen mit ab2020 ≥ {SCHWACH_AB2020}" + (
+            "" if not nicht else ": nicht " + "; ".join(nicht))))
+        ohne = []
+        if vorrat is not None:
+            for t, z in wahl:
+                if not z.get("vorstufe") and any(
+                        x.get("vorstufe") and x["id"] not in (genutzt or set())
+                        for x in vorrat[t]):
+                    ohne.append(t)
+        aus.append((not ohne, "Vorstufe, wo der Vorrat eine hat" + (
+            "" if not ohne else ": ohne bei " + "; ".join(ohne))))
+        tipp_vs = [t for t, z in wahl if z.get("vorstufe") and z.get("tipp")]
+        aus.append((not tipp_vs, "kein Tipp an einer Vorstufe"))
     for b in befund:
         aus.append((False, "Plan: " + b))
     return aus
 
 
 def main_zettel(args):
-    """Rezept Z v0.8: Basis <n> nach der Vorlage vom 03.10.2026, Kennung
+    """Rezept Z v0.9: Basis <n> nach der Vorlage vom 03.10.2026, Kennung
     BAS-S<n> (normal) bzw. BAS-W<n> (--schwach); Probe: BAS-S0/BAS-W0."""
     log = Log()
     if args.eintrag or args.heft or args.fokus:
@@ -7178,15 +7276,22 @@ def main_zettel(args):
               for a in ("bestand", "original", "vorstufe")}
     kern = sorted((t for t in info if info[t]["kern"]),
                   key=lambda t: info[t]["rang"])
+    schwach_typen = sorted((t for t in info if info[t]["ab2020"] >=
+                            SCHWACH_AB2020), key=lambda t: info[t]["rang"])
     log(f"VORRAT {len(vorrat)} Typen, {len(zeilen)} Aufgaben (Bestand "
         f"{zahlen['bestand']}, verfremdete Originale {zahlen['original']}, "
         f"Vorstufen {zahlen['vorstufe']})")
     log(f"KERN {len(kern)} Typen (ab2020 ≥ {KERN_ANTEIL:.0%} von {seit} "
-        f"Jahrgängen {KERN_AB}–{KERN_AB + seit - 1}): " + "; ".join(kern))
+        f"Jahrgängen {KERN_AB}–{KERN_AB + seit - 1}; seit v1.6 nur Hinweis): "
+        + "; ".join(kern))
+    if variante == "schwach":
+        log(f"SCHWACH {len(schwach_typen)} Typen mit ab2020 ≥ {SCHWACH_AB2020}"
+            " (Übergang bis zur Entscheidung des Lehrers): "
+            + "; ".join(schwach_typen))
     if (not args.ohne_register
             and any(z.get("kennung") == kennung for z in register)):
         sys.exit(f"{kennung} steht schon in bau/register.csv – nichts gebaut")
-    wahl, befund = z08_plan(info, vorrat, nummer, variante, log)
+    wahl, befund, genutzt = z08_plan(info, vorrat, nummer, variante, log)
     if wahl is None:
         log(f"ERSCHÖPFT {befund}")
         print(f"Vorrat erschöpft – Basis {nummer} ({variante}) nicht gebaut: "
@@ -7200,7 +7305,7 @@ def main_zettel(args):
     version = vorlage.read_text(encoding="utf-8").splitlines()[1].lstrip("% ")
     version = version.split(" (", 1)[0]
     log(f"VORLAGE mathblatt.sty: {version} (nur Grafik-Bausteine)")
-    log(f"KENNUNG {kennung} – Basiszettel (Rezept Z v0.8, {variante}), auf "
+    log(f"KENNUNG {kennung} – Basiszettel (Rezept Z v0.9, {variante}), auf "
         f"dem Blatt nur „Basis {nummer}“"
         + (" (Probe ohne Register)" if args.ohne_register else ""))
     log(f"FOLGE {variante} trägt {reicht} Zettel"
@@ -7221,7 +7326,11 @@ def main_zettel(args):
                if z.get("ist_original") else "")
             + f"; Thema {t['thema']}; Jahrgänge seit {KERN_AB} {t['ab2020']}"
             + (", Kern" if t["kern"] else "")
-            + f"; Stufe {z08_stufe(z)}; Höhe ≈ {h:.1f} cm)")
+            + f"; Stufe {z08_stufe(z)}"
+            + ("; einfach" if z09_einfach(z, info, typ) else "")
+            + ("; Ankreuzen" + (" mit Term" if z09_kreuz_term(z) else "")
+               if z09_kreuz(z) else "")
+            + f"; Höhe ≈ {h:.1f} cm)")
         aufgaben.append({"aufgabe": f"A{nr}", "hauptnummer": nr,
                          "id": z["id"], "kette": typ, "thema": t["thema"],
                          "art": z08_art(z), "kern": t["kern"],
@@ -7239,9 +7348,14 @@ def main_zettel(args):
                      + "; ".join(z.get("ergebnis") or []) + "\\par")
     a.append("\\end{document}")
     log(f"HÖHE ≈ {hoehe:.1f} cm (Maß {HOEHE_08[variante]} cm)")
-    proben = z08_gegenprobe(wahl, info, variante, befund)
+    proben = z08_gegenprobe(wahl, info, variante, befund, vorrat, genutzt)
     for ok, text in proben:
         log(f"GEGENPROBE {'ok ' if ok else 'VERLETZT'} {text}")
+    kern_n = sum(info[t]["kern"] for t, _ in wahl)
+    log(f"HINWEIS Kern 30 %: {kern_n} von {len(wahl)}")
+    log(f"HINWEIS verfremdete Originale "
+        f"{sum(1 for _, z in wahl if z.get('ist_original'))}, Vorstufen "
+        f"{sum(1 for _, z in wahl if z.get('vorstufe'))}")
     verletzt = sum(not ok for ok, _ in proben)
     texte = {f"{kennung}.tex": "\n".join(a) + "\n"}
     sig = BP.lade_bausteine(WURZEL / "mappen" / "_bausteine.md")
@@ -7278,7 +7392,7 @@ def main_zettel(args):
     bauzettel = {
         "kennung": kennung, "datum": datum, "eintraege": ["_basis"],
         "rezept": rezept, "rezept_name": "Basiszettel " + variante,
-        "rezept_version": "Z v0.8",
+        "rezept_version": "Z v0.9",
         "bestellung": {"zettel": args.zettel, "nummer": nummer,
                        "schwach": bool(args.schwach),
                        "ohne_register": args.ohne_register},

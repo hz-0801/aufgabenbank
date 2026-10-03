@@ -45,6 +45,27 @@ Prüfungsverb vorn statt Frage; Ankreuzen A–D mit Buchstabe als Lösung;
 Offen: Kern nach der 30-%-Regel sind nur 5 Typen; --schwach nimmt zwei
 weitere dazu und meldet es (GEGENPROBE VERLETZT).
 
+Nachtrag 2026-10-03 abends (Befunde des Lehrers, zusammenbau.py v1.6,
+Rezept Zettel v0.9): 784 Zeilen (Bestand 640, Originale 78, Vorstufen 66
+statt 59). Neue Vorstufen (7, alle mit `\rwbei` im Dreieck, γ an der
+Spitze): Winkelfunktion Seitenverhältnis angeben 3 (a) Hypotenuse und
+Gegen- bzw. Ankathete zu γ, Antwort zwei Buchstaben; b) sin γ bzw.
+cos γ), Pythagoras Gleichung zuordnen 2 und Satz des Pythagoras
+formulieren 2 (a) Hypotenuse benennen; b) Gleichung). Rechter Winkel
+jetzt auch in den zehn Bestandsaufgaben der Winkelfunktion markiert
+(`\rwbei`); dort, wo nach γ gefragt ist, steht C an der Spitze (vorher
+stand das Label γ auf der Seite). Tipps: 36 statt 72 – die 37 Tipps an
+Vorstufen entfallen (Vorstufe statt Tipp), 15 Regeln wurden zu ersten
+Schritten („10 % heißt: durch 10 teilen.“ → „Rechne erst 10 %, dann
+mal 3.“; „Ein Produkt ist 0, wenn ein Faktor 0 ist.“ → „Setze zuerst
+die Klammer gleich 0.“), 20 blieben, einer kam dazu (Ankreuzen 20 %
+Rabatt). Typen für schwach (Übergang bis zur Entscheidung des Lehrers):
+17 Typen mit ab2020 ≥ 2; die 30-%-Kernregel steht nur noch als HINWEIS
+im Log. Nicht markiert: das Trapez mit zwei rechten Winkeln
+(Symmetrieachsen, k3-v7) – `\viereck` kann keinen rechten Winkel
+markieren (Vorlage). `bank-pruef.py _basis`: 0 Abweichungen, 52
+Warnungen.
+
 ## Dateien
 
     typen.py      bestimmt die Basis-Typen, schreibt typen.csv/typen.md

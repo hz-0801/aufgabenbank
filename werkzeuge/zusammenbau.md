@@ -1,5 +1,8 @@
 # zusammenbau.py – aus der Bank ein Blatt (Quelltext)
 
+Nachtrag 2026-10-03, v1.6: Basiszettel nach den Befunden des Lehrers,
+siehe „Rezept Zettel (v0.9, zusammenbau.py v1.6)“.
+
 Stand 2026-10-01, v1.2 (Dichte nach Höhe und Form, siehe „Rezept
 Lernblatt (v1.2)“; erstes Blatt TER-L7). Davor v1.1 (Lernblatt nach den
 Befunden am TER-L5, siehe
@@ -620,6 +623,63 @@ verschiedenen Jahre, in denen einer dieser Typen im Profil vorkommt
 Originale selbst; ohne Original die Marke ohne Zahl. „keine …“ bleibt
 wörtlich; mehrere Marken stehen mit „ · “ nebeneinander (bis v0.4 nur
 die erste). Die log zeigt je Einheit PRÜFWORT mit Quelle.
+
+## Rezept Zettel (v0.9, zusammenbau.py v1.6)
+
+Befunde des Lehrers vom 03.10. am Basiszettel v0.8 (Form nach der Vorlage
+bau/zettel/vorlage-2026-10-03/, Abgleich bau/zettel/abgleich-2026-10-03.md).
+Aufruf wie v0.8:
+
+    python3 werkzeuge/zusammenbau.py --zettel basis [--schwach] --nummer n
+        [--ohne-register] [--pdf] [--aus <ordner>] [--vorlage <sty>]
+
+- Form der Vorlage bleibt (ein Blatt, eine Spalte, 12pt, Kopf nur
+  „Basis n“, Lösungsstreifen rechts hinter der gestrichelten Linie, Text
+  11,4 cm, schwach 11,0 cm und `\large`, Jahreszahl grau vor der Nummer
+  bei verfremdeten Originalen). Keine Hilfsmittelzeile.
+- Zahl: normal 8–11 Aufgaben, Ziel 10, eine mehr, wenn die Seite sie nach
+  dem Höhenmaß trägt (24,5 cm), bei Figuren weniger; schwach 6–8, Ziel 7.
+  Immer eine Seite (`--pdf` prüft).
+- Regel 1 – leicht heißt einfach, nicht kurz: die ersten zwei Aufgaben
+  sind einfache Rechnungen (`z09_einfach`): form teil, je Teil genau ein
+  Feld, jedes Ergebnis eine Zahl oder Größe, keine Variable und kein □
+  im Text, keine negative Zahl, keine Punkt- oder Winkelnamen, keine
+  Grafik, kein Ankreuzen; Typ mit niveau I und ab2020 ≥ 2 (niveau allein
+  taugt nicht: 61 von 64 Typen haben I). Normal nimmt dafür ein Original
+  vor dem Bestand, schwach die Vorstufe des Typs. Danach steigend wie
+  bisher (Stufe, Textlänge, Bereich).
+- Regel 2 – Mischung wie Aufgabe 1 der Prüfung: höchstens drei
+  Ankreuzaufgaben (schwach zwei), davon höchstens zwei mit Term oder
+  Gleichung in den Optionen (Option mit Variable oder „=“; Punkte wie
+  P(5|6) zählen nicht als Term).
+- Regel 3 – Figur: kleine Figur und Koordinatensystem rechts in der
+  Antwortspalte in fester Breite (`\AG`, Breite Textbreite − Textspalte
+  − 0,2 cm), Oberkante auf der ersten Textzeile. Die Felder stehen unter
+  dem Text in der Textspalte, je Teil eine Zeile, Linie immer 2,4 cm
+  (`\FT`, lange Einheit `\FTL`); die Lösung steht im Streifen auf Höhe
+  des Felds. Figurenreihen und Wertetabellen (Optionen) bleiben unter
+  dem Text. Auch `\feldlang` hat jetzt die volle Linie; die Textspalte
+  gibt dafür 1,1 cm ab. Ein Vortext vor der Linie („x =“) geht von der
+  Textspalte ab statt über den Rand.
+- Regel 4 – schwach: Vorstufe statt Tipp. Hat der Vorrat für den Typ
+  eine freie Vorstufe, kommt die Aufgabe als Vorstufe; sonst Original,
+  sonst Bestand. Tipps nur an Aufgaben ohne Vorstufe; ein Tipp nennt den
+  ersten Schritt, keine Regel (bank/_basis/vorrat.py, `tipp_von`).
+- Regel 5 – Typen für schwach (Übergang bis zur Entscheidung des
+  Lehrers): die 17 Typen mit ab2020 ≥ 2; die alte Kernregel (ab2020 ≥
+  30 % der Jahrgänge seit 2020, 5 Typen) steht nur als
+  „HINWEIS Kern 30 %: n von 7“ im Log.
+- Normal weiter: mindestens 3 verfremdete Originale und 2 Vorstufen.
+  Schwach: Originale und Vorstufen als HINWEIS.
+- GEGENPROBE (Log und Ausgabe): Zahl, erste zwei einfach, kein Typ und
+  kein Thema doppelt, Ankreuzen, Ankreuzen mit Term; normal Originale,
+  Vorstufen; schwach nur Typen ab2020 ≥ 2, Vorstufe wo vorhanden, kein
+  Tipp an einer Vorstufe; mit `--pdf` Seiten 1 und Renderfehler 0.
+- Reichweite (Vorrat 03.10. abends, 784 Zeilen): Folge normal trägt 17,
+  Folge schwach 10 Zettel.
+
+Probe v1.6 (03.10., nicht abgelegt): Basis 1–4 normal je 10 Aufgaben,
+schwach je 7, alle eine Seite, alle Gegenproben ok.
 
 ## Rezept Zettel (v0.7)
 
