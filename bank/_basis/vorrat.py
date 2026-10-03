@@ -2832,10 +2832,11 @@ ORIGINALE = [
         "teilen und einen Teil färben", "", form="zeichnen", antwort="",
         grafik="\\rechteck[punkte=]{2}{2}"), ["$\\frac{1}{4}$ gefärbt"]),
     O("Bruchteil einer Fläche bestimmen", "2023-OS-B1d", "form",
-      A("Eine Figur besteht aus $24$ gleich großen Kästchen. Gib an, wie "
-        "viele Kästchen du färben musst, damit ein Viertel der Figur "
-        "gefärbt ist.", "$24 : 4 = 6$ Kästchen", "24/4",
-        antwort="__ Kästchen"), ["6"]),
+      A("Die Figur besteht aus $24$ gleich großen Kästchen. Färbe ein "
+        "Viertel der Figur.", "$24 : 4 = 6$ Kästchen färben", "24/4",
+        form="zeichnen", antwort="",
+        grafik="\\kaestchen{6}{4}"),
+      ["6 Kästchen"]),
     O("Bruchteil einer Fläche bestimmen", "2022-OS-B1a", "form",
       A("Das Rechteck besteht aus $15$ gleich großen Kästchen. Färbe "
         "$\\frac{1}{5}$ der Fläche.", "$15 : 5 = 3$ Kästchen", "15/5",

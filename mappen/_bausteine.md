@@ -219,6 +219,7 @@ Alle Zeilen der Anleitung, die mit `\` oder `\begin{` beginnen (auch eingerückt
 \end{zahlengerade}
 \bruchkreis{3}{8}   \bruchkreis[0.8]{1}{3}   \bruchkreis{0}{6}      Teile gefüllt/gesamt; [r] Radius in cm
 \bruchrechteck{3}{8}   \bruchrechteck[3]{2}{5}                      [Breite] in cm, Höhe 1 cm
+\kaestchen{6}{4}   \kaestchen[5]{6}{4}                          Figur aus Spalten x Zeilen Kästchen; [n] graut n Kästchen ein
 \termbaum{+}{3x}{\tb{\cdot}{2}{y}}           Kinder sind Text (Blatt) oder \tb{Knoten}{Kind}{Kind}
 \termbaum{}{\tb{}{5}{x}}{\tb{}{}{}}          leere Knoten = Felder zum Eintragen
 ````
