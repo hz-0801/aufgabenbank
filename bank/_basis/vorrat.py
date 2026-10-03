@@ -215,9 +215,11 @@ def _t1():
     ]
     aus = []
     for z, n, fig, richtig, grund in daten:
-        grafik = " \\quad ".join(f"{b} {f}" for b, f in zip("PQRS", fig))
+        # v0.8 (Vorlage 03.10.): Buchstaben A–D statt P–S
+        richtig = "ABCD"["PQRS".index(richtig)]
+        grafik = " \\quad ".join(f"{b} {f}" for b, f in zip("ABCD", fig))
         aus.append(X(f"Bei welcher Figur ist genau $\\frac{{{z}}}{{{n}}}$ "
-                     f"grau? {{K}}", list("PQRS"),
+                     f"grau? {{K}}", list("ABCD"),
                      f"{richtig}, denn {grund}", f"[{z}, {n}]", grafik))
     return aus
 
@@ -273,7 +275,7 @@ def _t3():
     aus = []
     for p, g in daten:
         w = p * g / 100
-        aus.append(A(f"${pz(p)}$ von ${eur(g)}$ {{K}}",
+        aus.append(A(f"Berechne ${pz(p)}$ von ${eur(g)}$. {{K}}",
                      f"${dez(p / 100)} \\cdot {g} = {eur(w, 2 if w % 1 else None)}$",
                      f"{p / 100}*{g}", antwort="__ €"))
     # Bündel (v0.7): je Zeile ein anderer gesuchter Wert (W, p, G)
@@ -1592,8 +1594,8 @@ def _t41():
         mt = dez(m)
         term = (("" if m == 1 else "-" if m == -1 else mt) + "x"
                 + (f" + {dez(n)}" if n > 0 else f" - {dez(-n)}"))
-        aus.append(A("Schnittpunkt mit der y-Achse: Markiere ihn an der "
-                     f"Geraden $y = {term}$. {{K}}", f"$(0|{n})$",
+        aus.append(A("Markiere den Schnittpunkt der Geraden "
+                     f"$y = {term}$ mit der y-Achse. {{K}}", f"$(0|{n})$",
                      f"[0, {n}]", form="zeichnen", antwort="",
                      grafik=("\\begin{ksys}[xmin=-5,xmax=5,ymin=-5,ymax=5,"
                              f"ablesen] \\gerade{{{mt.replace('{,}', '.')}}}"
@@ -1951,7 +1953,8 @@ def _t45():
     assert _sp.Integer(180) - 60 - 60 == 60
     aus = []
     for fig, opt, i in daten:
-        aus.append(X(f"Kreuze die richtige Ergänzung an: „In jedem {fig} "
+        art = "jeder" if fig == "Raute" else "jedem"  # v0.8: „In jeder Raute“
+        aus.append(X(f"Kreuze die richtige Ergänzung an: „In {art} {fig} "
                      "…“ {K}", ["… " + o + "." for o in opt],
                      f"… {opt[i]}."))
     return aus
@@ -2578,7 +2581,1047 @@ AUFGABEN["Scheitelpunktform aufstellen"] = _t63()
 AUFGABEN["Parabel verschieben"] = _t64()
 
 
+
+# --- Zettel v0.8 (Vorlage des Lehrers vom 03.10.2026) ------------------------
+# Vier Ergänzungen, alle in den Daten, damit zusammenbau.py nur setzt:
+# (1) verfremdete Originale (ORIGINALE): je Basisteil-Original 2020–2026, das
+#     ohne neue Bausteine setzbar ist, eine Zeile mit ist_original true, original
+#     = dieses Original, verfremdung form | kontext | zahlen
+#       form     Zahlen wie im Original, nur der Wortlaut neu (du, Verb vorn,
+#                Figur aus Bausteinen statt Originalskizze)
+#       kontext  Zahlen wie im Original, anderer Sachkontext
+#       zahlen   Form und Kontext wie im Original, andere Zahlen
+#     Auf dem Zettel steht links vor der Nummer die Jahreszahl.
+# (2) Vorstufen (VORSTUFEN): Aufgaben mit a) leichterem Schritt (ein Schritt
+#     weniger oder leichtere Zahlen) und b) dem Schritt der Basisaufgabe, wie
+#     in der Vorlage (Zeit 2 h → 2,5 h, 10 % → 30 %, Term einsetzen → rechnen);
+#     Feld vorstufe true. Je Kerntyp mindestens zwei.
+# (3) Prüfungsverb vorn in jeder Aufgabe (verb_vorn), Ankreuzen mit A, B, C, D
+#     (Feld ergebnis nennt den Buchstaben), „U“ statt „u“ für den Umfang.
+# (4) Feld ergebnis: je Antwortfeld (je Teil a), b), …) das kurze Ergebnis für
+#     den Lösungsstreifen; Feld tipp: graue Tipp-Zeile (Zettel „schwach“).
+import re as _re
+
+
+def _orig(oid):
+    jahr, papier = oid.split("-")[:2]
+    return {"id": oid, "jahr": int(jahr), "papier": papier}
+
+
+def O(typ, oid, verfremdung, zeile, ergebnis, tipp=""):
+    assert verfremdung in ("form", "kontext", "zahlen")
+    z = dict(zeile)
+    z.update(ist_original=True, verfremdung=verfremdung, original=_orig(oid),
+             ergebnis=ergebnis, typ=typ)
+    if tipp:
+        z["tipp"] = tipp
+    return z
+
+
+def V(typ, zeile, ergebnis, tipp=""):
+    z = dict(zeile)
+    z.update(vorstufe=True, ergebnis=ergebnis, typ=typ)
+    if tipp:
+        z["tipp"] = tipp
+    return z
+
+
+_RW = "\\rechteck[punkte=,seiten={%s}]{%s}{%s}"
+
+ORIGINALE = [
+    # Prozentrechnung
+    O("Grundwert berechnen", "2025-OS-B1a", "kontext",
+      A("Beim Kauf eines Pullovers spart Ela $6\\,€$, das sind $20\\,\\%$ des "
+        "alten Preises. Berechne den alten Preis.",
+        "$6 \\cdot 5 = 30\\,€$ (nicht $20\\,\\%$ von $6\\,€$)", "6*100/20",
+        antwort="__ €"), ["30\\,€"]),
+    O("Grundwert berechnen", "2023-OS-B1b", "form",
+      A("$25\\,\\%$ eines Gewinns sind $200\\,€$. Berechne den ganzen Gewinn.",
+        "$200 \\cdot 4 = 800\\,€$", "200*100/25", antwort="__ €"),
+      ["800\\,€"]),
+    O("Prozentwert berechnen", "2026-FOR-B1a", "form",
+      A("Berechne $30\\,\\%$ von $70\\,€$.", "$0{,}3 \\cdot 70 = 21\\,€$",
+        "0.3*70", antwort="__ €"), ["21\\,€"],
+      "$10\\,\\%$ heißt: durch $10$ teilen."),
+    O("Prozentwert berechnen", "2021-OS-B1c", "form",
+      X("Ein Fahrrad kostet $550\\,€$. Bei Barzahlung gibt es $20\\,\\%$ "
+        "Rabatt. Kreuze an, wie viel Euro man spart.",
+        ["$100\\,€$", "$440\\,€$", "$110\\,€$", "$660\\,€$"],
+        "$110\\,€$: $0{,}2 \\cdot 550 = 110$", "0.2*550"), ["C"]),
+    O("Wert nach prozentualer Erhöhung berechnen", "2024-OS-B1e", "form",
+      A("Ein Eintritt kostet $3{,}50\\,€$ und wird um $20\\,\\%$ teurer. "
+        "Berechne den neuen Preis.", "$3{,}50 \\cdot 1{,}2 = 4{,}20\\,€$",
+        "3.5*1.2", antwort="__ €"), ["4{,}20\\,€"]),
+    O("Prozent und Anteil umwandeln", "2022-OS-B1f", "form",
+      X("Jeder fünfte Jugendliche fährt mit dem Bus. Kreuze an, wie viel "
+        "Prozent das sind.", ["$5\\,\\%$", "$20\\,\\%$", "$25\\,\\%$",
+                              "$50\\,\\%$"],
+        "$20\\,\\%$ ($\\frac{1}{5} = \\frac{20}{100}$)", "20"), ["B"]),
+    O("Prozent und Anteil umwandeln", "2020-OS-B1a", "form",
+      X("Nur $4\\,\\%$ der gepflanzten Bäume wachsen nicht an. Kreuze die "
+        "passende Aussage an.",
+        ["4 von 10 Bäumen wachsen nicht an.",
+         "Jeder 4. Baum wächst nicht an.",
+         "4 von 100 Bäumen wachsen nicht an."],
+        "4 von 100 Bäumen wachsen nicht an."), ["C"]),
+    # Einheiten und Zuordnungen
+    O("Zeiteinheiten umrechnen", "2025-OS-B1b", "form",
+      A("Gib $1{,}5$ h in Minuten an.", "$1{,}5 \\cdot 60 = 90$ min",
+        "1.5*60", antwort="__ min"), ["90 min"]),
+    O("Zeiteinheiten umrechnen", "2024-OS-B1a", "form",
+      X("Kreuze an, wie viele Minuten $3{,}25$ h sind.",
+        ["$185$ min", "$195$ min", "$205$ min", "$215$ min"],
+        "$195$ min: $3{,}25 \\cdot 60 = 195$", "3.25*60"), ["B"]),
+    O("Größen vergleichen", "2026-FOR-B1d", "form",
+      A("Vergleiche $3{,}5$ m und $35$ cm. Setze das richtige Zeichen ein: "
+        "$<$, $=$ oder $>$.",
+        "$3{,}5$ m $= 350$ cm, also $3{,}5$ m $>$ $35$ cm", "3.5*100",
+        antwort="$3{,}5$ m __ $35$ cm"), [">"]),
+    O("Uhrzeit aus Startzeit und Dauer berechnen", "2021-OS-B1a", "form",
+      A("Ein Zug fährt um 11:38 Uhr ab. Die Fahrt dauert $2$ h $35$ min. "
+        "Berechne, wann er ankommt.",
+        "11:38 Uhr $+ 2$ h $=$ 13:38 Uhr, $+ 35$ min $=$ 14:13 Uhr",
+        "[13, (11*60+38+2*60+35)//60]", antwort="__ Uhr"), ["14:13 Uhr"]),
+    O("Portionen aus Gesamtmenge berechnen", "2022-OS-B1h", "form",
+      A("Lena trinkt am Tag $1{,}5$ l Wasser. Ein Glas fasst $300$ ml. "
+        "Berechne, wie viele Gläser das sind.",
+        "$1{,}5$ l $= 1\\,500$ ml; $1\\,500 : 300 = 5$", "1.5*1000/300",
+        antwort="__ Gläser"), ["5 Gläser"]),
+    O("Proportionale Zuordnung Dreisatz", "2023-OS-B1a", "form",
+      A("Ein Läufer schafft $4$ km in $25$ min. Er läuft gleich schnell "
+        "weiter. Berechne, wie lange er für $6$ km braucht.",
+        "Für $1$ km: $25 : 4 = 6{,}25$ min; $6{,}25 \\cdot 6 = 37{,}5$ min",
+        "25/4*6", antwort="__ min"), ["37{,}5 min"]),
+    O("Proportionale Zuordnung Dreisatz", "2022-OS-B1b", "form",
+      A("$3$ kg Äpfel kosten $4{,}80\\,€$. Berechne den Preis für $5$ kg.",
+        "Für $1$ kg: $4{,}80 : 3 = 1{,}60\\,€$; $1{,}60 \\cdot 5 = 8{,}00\\,€$",
+        "4.8/3*5", antwort="__ €"), ["8{,}00\\,€"]),
+    # Zahlen
+    O("Zehnerpotenzschreibweise umwandeln", "2025-OS-B1d", "form",
+      A("Ergänze die Hochzahl: $850\\,000 = 8{,}5 \\cdot 10^{\\square}$.",
+        "$5$ – das Komma wandert fünf Stellen", "5"), ["5"]),
+    O("Zahlen in verschiedenen Darstellungen vergleichen", "2023-OS-B1f",
+      "form",
+      A("Gib den kleinsten Wert an: $4{,}4$; $0{,}44$; $0{,}4^2$; "
+        "$44\\,\\%$.", "$0{,}4^2 = 0{,}16$; die anderen sind $4{,}4$ und "
+        "zweimal $0{,}44$", "0.4**2"), ["$0{,}4^2$"]),
+    O("Zahlen in verschiedenen Darstellungen vergleichen", "2022-OS-B1j",
+      "form",
+      A("Vergleiche $2^{-5}$ und $0{,}25$. Setze das richtige Zeichen ein: "
+        "$<$, $=$ oder $>$.",
+        "$2^{-5} = \\frac{1}{32} = 0{,}03125$, also $2^{-5} < 0{,}25$",
+        "2**-5", antwort="$2^{-5}$ __ $0{,}25$"), ["<"]),
+    O("Mitte zweier Zahlen bestimmen", "2020-OS-B1f", "form",
+      A("Gib die Zahl an, die genau in der Mitte zwischen $-0{,}6$ und "
+        "$-0{,}5$ liegt.", "$(-0{,}6 + (-0{,}5)) : 2 = -0{,}55$",
+        "(-0.6-0.5)/2"), ["$-0{,}55$"]),
+    O("Exponent einer Potenz bestimmen", "2024-OS-B1g", "form",
+      A("Bestimme die Zahl $x$ in der Gleichung $4^x = 256$.",
+        "$4, 16, 64, 256$: vier Faktoren, also $x = 4$", "4",
+        antwort="x = __"), ["4"]),
+    O("Exponent einer Potenz bestimmen", "2020-OS-B1h", "form",
+      A("Bestimme die Zahl $x$ in der Gleichung $2^x = 16$.",
+        "$2, 4, 8, 16$: vier Faktoren, also $x = 4$", "4",
+        antwort="x = __"), ["4"]),
+    O("Termwert berechnen", "2026-FOR-B1g", "form",
+      A("Berechne den Wert des Terms $5 \\cdot (x - 3)$ für $x = -2$.",
+        "$5 \\cdot (-2 - 3) = 5 \\cdot (-5) = -25$", "5*(-2-3)"),
+      ["$-25$"], "Rechne zuerst die Klammer aus."),
+    O("Termwert berechnen", "2021-OS-B1g", "form",
+      A("Berechne den Wert des Terms $\\frac{a + b}{c}$ für $a = 8$, "
+        "$b = -1$ und $c = -2$.",
+        "$\\frac{8 + (-1)}{-2} = \\frac{7}{-2} = -3{,}5$", "(8-1)/(-2)"),
+      ["$-3{,}5$"], "Rechne zuerst den Zähler aus."),
+    # Gleichungen und Funktionen
+    O("Lineare Gleichung lösen", "2024-OS-B1d", "form",
+      A("Löse die Gleichung $2 \\cdot (x - 6{,}5) = 0$.",
+        "$x - 6{,}5 = 0$, also $x = 6{,}5$", "6.5", antwort="x = __"),
+      ["$6{,}5$"], "Ein Produkt ist $0$, wenn ein Faktor $0$ ist."),
+    O("Lineare Gleichung lösen", "2023-OS-B1e", "form",
+      A("Löse die Gleichung $3 \\cdot (x - 8) + 2 = 2$.",
+        "$3 \\cdot (x - 8) = 0$, also $x = 8$", "8", antwort="x = __"),
+      ["8"], "Rechne zuerst auf beiden Seiten $-2$."),
+    O("Lineare Gleichung lösen", "2020-OS-B1e", "form",
+      A("Löse die Gleichung $2 \\cdot (x - 4) = 6$.",
+        "$x - 4 = 3$, also $x = 7$", "7", antwort="x = __"),
+      ["7"], "Teile zuerst beide Seiten durch $2$."),
+    O("Lösung durch Einsetzen prüfen", "2025-OS-B1h", "form",
+      X("Kreuze an, welcher Wert die Gleichung $x \\cdot (x + 5) = -6$ "
+        "erfüllt.", ["$x = 2$", "$x = 3$", "$x = -2$", "$x = -6$"],
+        "$x = -2$, denn $(-2) \\cdot 3 = -6$", "-2"), ["C"]),
+    O("Lösung durch Einsetzen prüfen", "2022-OS-B1c", "form",
+      X("Kreuze an, welcher Wert die Gleichung $5 - 2x = 3x - 25$ erfüllt.",
+        ["$x = 2$", "$x = 4$", "$x = 6$", "$x = 8$"],
+        "$x = 6$, denn $5 - 12 = -7$ und $18 - 25 = -7$", "6"), ["C"]),
+    O("Term zu Sachtext angeben", "2023-OS-B1h", "form",
+      X("Die Differenz aus dem Doppelten einer Zahl $a$ und $13$ wird "
+        "verdreifacht. Kreuze den passenden Term an.",
+        ["$(2a - 13) : 3$", "$2a : 13 \\cdot 3$", "$3 \\cdot (2a - 13)$",
+         "$2a - 13 \\cdot 3$"], "$3 \\cdot (2a - 13)$"), ["C"]),
+    O("Term zu Sachtext angeben", "2021-OS-B1e", "form",
+      X("Das Fünffache einer Zahl $x$ vermindert um $4$ ist gleich $36$. "
+        "Kreuze die passende Gleichung an.",
+        ["$5x = -4 + 36$", "$5 - 4x = 36$", "$5x - 4 = 36$",
+         "$36 - 4 = 5x$"], "$5x - 4 = 36$"), ["C"]),
+    O("Punktprobe durchführen", "2023-OS-B1i", "form",
+      X("Gegeben ist $f(x) = -7x + 3$. Kreuze den Punkt an, der nicht auf "
+        "dem Graphen von $f$ liegt.", ["$(-1|10)$", "$(3|-24)$",
+                                       "$(-4|31)$"],
+        "$(3|-24)$, denn $f(3) = -18$", "[3, -24]"), ["B"]),
+    O("Wertetabelle einer Funktion zuordnen", "2026-FOR-B1e", "form",
+      X("Kreuze die Wertetabelle an, die zu $y = 3x^2$ gehört.",
+        list("ABC"), "Tabelle A: $3 \\cdot 2^2 = 12$", "3*2**2",
+        "A: \\wertetabelle[12,3,0,3,12]{x}{y}{-2,-1,0,1,2} "
+        "B: \\wertetabelle[-6,-3,0,3,6]{x}{y}{-2,-1,0,1,2} "
+        "C: \\wertetabelle[4,1,0,1,4]{x}{y}{-2,-1,0,1,2}"), ["A"]),
+    O("Scheitelpunkt ablesen", "2021-OS-B1d", "form",
+      X("Kreuze den Scheitelpunkt der Parabel an.",
+        ["$S(-1|-2)$", "$S(-1|2)$", "$S(-2|-1)$", "$S(2|-1)$"],
+        "$S(-2|-1)$", "[-2, -1]",
+        "\\begin{ksys}[xmin=-5,xmax=5,ymin=-5,ymax=5,ablesen] "
+        "\\parabel{1}{-2}{-1}{} \\end{ksys}"), ["C"]),
+    O("Graph einer linearen Funktion erkennen", "2025-OS-B1f", "form",
+      X("Kreuze den Graphen an, der zu einer linearen Funktion gehört.",
+        list("ABCD"), "A (eine Gerade ohne Knick)", "",
+        "\\begin{ksys}[xmin=-5,xmax=5,ymin=-5,ymax=5,ablesen] "
+        + " ".join(ksys_labels(["\\gerade{-1}{0}{A}",
+                                "\\funktionab{2/\\x}{B}{0.4}{5}",
+                                "\\parabel{1}{0}{-3}{C}",
+                                "\\funktion{-abs(\\x-2)+2}{D}"]))
+        + " \\end{ksys}"), ["A"]),
+    O("y-Achsenabschnitt ablesen", "2024-OS-B1i", "form",
+      A("Markiere den Schnittpunkt der Geraden $y = 0{,}5x - 1$ mit der "
+        "y-Achse.", "$(0|-1)$", "[0, -1]", form="zeichnen", antwort="",
+        grafik="\\begin{ksys}[xmin=-5,xmax=5,ymin=-5,ymax=5,ablesen] "
+               "\\gerade{0.5}{-1}{g} \\end{ksys}"), ["$(0|-1)$"]),
+    O("Trigonometrische Gleichung nach Seite umstellen", "2020-OS-B1j",
+      "form",
+      A("Stelle die Gleichung $\\mathrm{sin}\\,30^\\circ = \\frac{7}{x}$ "
+        "nach $x$ um.", "$x = 7 : \\mathrm{sin}\\,30^\\circ$", "7",
+        antwort="$x =$ __"), ["$7 : \\mathrm{sin}\\,30^\\circ$"]),
+    # Brüche und Flächen
+    O("Bruchteil einer Fläche bestimmen", "2026-FOR-B1b", "form",
+      X("Kreuze die Figur an, bei der genau $\\frac{1}{3}$ der Fläche grau "
+        "ist.", list("ABCD"), "D, denn $\\frac{120}{360} = \\frac{1}{3}$",
+        "[1, 3]",
+        "A \\bruchrechteck[2.4]{1}{6} \\quad B \\bruchrechteck[2]{1}{4} "
+        "\\quad C \\bruchkreis[0.6]{1}{2} \\quad D \\kreissektor[0.6]{120}{}"),
+      ["D"]),
+    O("Bruchteil einer Fläche bestimmen", "2025-OS-B1c", "form",
+      A("Färbe ein Viertel der Fläche des Quadrats.",
+        "z. B. das Quadrat mit beiden Mittellinien in vier gleiche Teile "
+        "teilen und einen Teil färben", "", form="zeichnen", antwort="",
+        grafik="\\rechteck[punkte=]{2}{2}"), ["$\\frac{1}{4}$ gefärbt"]),
+    O("Bruchteil einer Fläche bestimmen", "2023-OS-B1d", "form",
+      A("Eine Figur besteht aus $24$ gleich großen Kästchen. Gib an, wie "
+        "viele Kästchen du färben musst, damit ein Viertel der Figur "
+        "gefärbt ist.", "$24 : 4 = 6$ Kästchen", "24/4",
+        antwort="__ Kästchen"), ["6"]),
+    O("Bruchteil einer Fläche bestimmen", "2022-OS-B1a", "form",
+      A("Das Rechteck besteht aus $15$ gleich großen Kästchen. Färbe "
+        "$\\frac{1}{5}$ der Fläche.", "$15 : 5 = 3$ Kästchen", "15/5",
+        form="zeichnen", antwort="", grafik="\\bruchrechteck[4.5]{0}{15}"),
+      ["3 Kästchen"]),
+    O("Bruchteil einer Fläche bestimmen", "2021-OS-B1b", "form",
+      A("Das Rechteck besteht aus $8$ gleich großen Kästchen. Färbe "
+        "$\\frac{3}{8}$ der Fläche.", "$3$ der $8$ Kästchen", "3",
+        form="zeichnen", antwort="", grafik="\\bruchrechteck[4]{0}{8}"),
+      ["3 Kästchen"]),
+    O("Term zu Figur angeben", "2025-OS-B1i", "form",
+      X("Ein Rechteck ist $a$ breit. Es besteht aus zwei Streifen mit den "
+        "Höhen $b$ und $c$. Kreuze den Term für den Flächeninhalt $A$ an.",
+        ["$A = 2 \\cdot (a + b + c)$", "$A = a + 2 \\cdot a \\cdot b$",
+         "$A = a \\cdot (b + c)$", "$A = a \\cdot b \\cdot c$"],
+        "$A = a \\cdot (b + c)$"), ["C"]),
+    O("Term zu Figur angeben", "2024-OS-B1c", "form",
+      X("Ein gleichseitiges Dreieck hat die Seitenlänge $a$. Kreuze die "
+        "Formel für den Umfang $U$ an.",
+        ["$U = a \\cdot a \\cdot a$", "$U = a^3$", "$U = 3 \\cdot a$",
+         "$U = a : 3$"], "$U = 3 \\cdot a$"), ["C"]),
+    O("Term zu Figur angeben", "2022-OS-B1e", "form",
+      A("Gib eine Formel für den Flächeninhalt $A$ des Dreiecks an.",
+        "$A = d \\cdot e : 2$ (die Katheten $d$ und $e$ stehen senkrecht "
+        "aufeinander)", "2", antwort="$A =$ __",
+        grafik="\\dreieckrw{3}{2.2}{d}{e}{c}"), ["$d \\cdot e : 2$"]),
+    O("Umfang Rechteck berechnen", "2026-FOR-B1h", "form",
+      A("Ein Rechteck ist $3{,}5$ cm lang und $1{,}5$ cm breit. Berechne den "
+        "Umfang.", "$U = 2 \\cdot (3{,}5 + 1{,}5) = 10$ cm", "2*(3.5+1.5)",
+        antwort="$U =$ __ cm"), ["10 cm"]),
+    O("Rechteckseite aus Fläche berechnen", "2023-OS-B1c", "form",
+      A("Ein Rechteck hat den Flächeninhalt $42\\,000$ mm² und ist $400$ mm "
+        "breit. Berechne die Länge.", "$42\\,000 : 400 = 105$ mm",
+        "42000/400", antwort="__ mm"), ["105 mm"]),
+    O("Quadratseite aus Fläche berechnen", "2020-OS-B1d", "form",
+      A("Ein Quadrat hat den Flächeninhalt $36$ cm². Gib die Seitenlänge an.",
+        "$6 \\cdot 6 = 36$, also $6$ cm", "36**0.5", antwort="__ cm"),
+      ["6 cm"]),
+    O("Kreissektor Anteil berechnen", "2025-OS-B1e", "form",
+      A("Der graue Kreisausschnitt hat den Mittelpunktswinkel $145^\\circ$. "
+        "Berechne, wie viel Prozent der Kreisfläche grau sind.",
+        "$145 : 360 \\cdot 100 \\approx 40{,}3\\,\\%$", "145/360*100",
+        antwort="__ %", grafik="\\kreissektor[1.2]{145}{$145^\\circ$}"),
+      ["$\\approx 40{,}3\\,\\%$"]),
+    O("Volumen Würfel berechnen", "2026-FOR-B1f", "form",
+      A("Ein Würfel hat die Kantenlänge $3$ cm. Berechne sein Volumen.",
+        "$3 \\cdot 3 \\cdot 3 = 27$ cm³", "3**3", antwort="$V =$ __ cm³"),
+      ["27 cm³"]),
+    # Figuren und Winkel
+    O("Eigenschaft einer Figur zuordnen", "2026-FOR-B1c", "form",
+      X("Kreuze die richtige Ergänzung an: „In jedem Trapez …“",
+        ["… sind alle Winkel gleich groß.",
+         "… gibt es ein Paar paralleler Seiten.",
+         "… sind alle Seiten gleich lang."],
+        "… gibt es ein Paar paralleler Seiten."), ["B"]),
+    O("Winkel im Viereck berechnen", "2026-FOR-B1i", "form",
+      A("Das Viereck ist ein Parallelogramm. Bestimme die Größe des "
+        "Winkels $\\beta$.", "$\\beta = 180^\\circ - 75^\\circ = 105^\\circ$",
+        "180-75", antwort="$\\beta =$ __°",
+        grafik="\\parallelogramm[winkel={75^\\circ,\\beta,,}]{3}{1.8}{75}"),
+      ["$105^\\circ$"]),
+    O("Winkel im Viereck berechnen", "2021-OS-B1i", "form",
+      A("In einem Viereck sind drei Winkel $50^\\circ$, $140^\\circ$ und "
+        "$130^\\circ$ groß. Bestimme die Größe des vierten Winkels "
+        "$\\alpha$.", "$\\alpha = 360^\\circ - 50^\\circ - 140^\\circ - "
+        "130^\\circ = 40^\\circ$", "360-50-140-130",
+        antwort="$\\alpha =$ __°"), ["$40^\\circ$"]),
+    O("Winkel an geschnittenen Parallelen bestimmen", "2020-OS-B1g", "form",
+      A("Die beiden waagerechten Geraden sind parallel. Bestimme die Größe "
+        "des Winkels $\\alpha$.", "$\\alpha = 74^\\circ$ (Stufenwinkel)",
+        "74", antwort="$\\alpha =$ __°",
+        grafik="\\parallelenpaar{106}{}{\\alpha}{}{74^\\circ}"),
+      ["$74^\\circ$"]),
+    O("Gleichschenkliges Dreieck erkennen", "2023-OS-B1g", "form",
+      A("Im Dreieck ABC ist $\\alpha = \\beta = 70^\\circ$ und AC = $6$ cm. "
+        "Gib an a) die Länge von BC, b) die Größe von $\\gamma$.",
+        "a) BC = AC = $6$ cm b) $\\gamma = 180^\\circ - 2 \\cdot 70^\\circ = "
+        "40^\\circ$", "[6, 180-2*70]",
+        antwort="a) BC = __ cm b) $\\gamma =$ __°"),
+      ["6 cm", "$40^\\circ$"]),
+    O("Dreiecksungleichung anwenden", "2020-OS-B1i", "form",
+      X("Ein Dreieck ABC hat die Seite $a = 10$ cm. Kreuze an, was für die "
+        "Summe der beiden anderen Seiten $b$ und $c$ gilt.",
+        ["$b + c > 10$ cm", "$b + c = 10$ cm", "$b + c < 10$ cm"],
+        "$b + c > 10$ cm"), ["A"]),
+    O("Symmetrieachsen bestimmen", "2022-OS-B1i", "form",
+      X("Kreuze an, wie viele Symmetrieachsen ein gleichschenkliges Trapez "
+        "hat.", [str(i) for i in range(6)], "1", "1",
+        "\\trapez{3}{1.6}{1.4}"), ["B"]),
+    O("Symmetrieachsen bestimmen", "2021-OS-B1j", "form",
+      X("Kreuze an, wie viele Symmetrieachsen ein Quadrat hat.",
+        [str(i) for i in range(6)], "4", "4", "\\rechteck[punkte=]{1.6}{1.6}"),
+      ["E"]),
+    O("Lage eines Punktes zu den Achsen erkennen", "2020-OS-B1b", "form",
+      X("Genau einer der vier Punkte liegt auf der x-Achse. Kreuze ihn an.",
+        ["$A(3|2)$", "$B(0|2)$", "$C(-3|-2)$", "$D(3|0)$"], "$D(3|0)$"),
+      ["D"]),
+    # Satz des Pythagoras, Trigonometrie
+    O("Pythagoras Gleichung zuordnen", "2026-FOR-B1j", "form",
+      X("Kreuze die Gleichung an, die in diesem rechtwinkligen Dreieck gilt.",
+        ["$w = \\sqrt{v^2 - u^2}$", "$w = \\sqrt{u^2 - v^2}$",
+         "$w = \\sqrt{u^2 + v^2}$"], "$w = \\sqrt{u^2 + v^2}$",
+        grafik="\\dreieckrw{3}{2.2}{u}{v}{w}"), ["C"]),
+    O("Pythagoras Gleichung zuordnen", "2024-OS-B1f", "form",
+      X("Kreuze die Gleichung an, mit der man $z$ berechnet.",
+        ["$z = x^2 - y^2$", "$z = \\sqrt{x^2 + y^2}$", "$z = x + y$",
+         "$z = \\sqrt{x^2 - y^2}$"], "$z = \\sqrt{x^2 - y^2}$",
+        grafik="\\dreieckrw{3}{2.2}{z}{y}{x}"), ["D"]),
+    O("Pythagoras Gleichung zuordnen", "2021-OS-B1h", "form",
+      X("Kreuze die Gleichung an, die in diesem rechtwinkligen Dreieck gilt.",
+        ["$z = \\sqrt{x^2 - y^2}$", "$z = \\sqrt{x^2 + y^2}$",
+         "$z = \\sqrt{y^2 - x^2}$", "$z = y^2 + x^2$"],
+        "$z = \\sqrt{x^2 + y^2}$", grafik="\\dreieckrw{2.4}{3}{x}{y}{z}"),
+      ["B"]),
+    O("Satz des Pythagoras formulieren", "2022-OS-B1g", "form",
+      X("Kreuze die Aussage an, die der Satz des Pythagoras macht.",
+        ["Dem rechten Winkel liegt eine Kathete gegenüber.",
+         "$c = a + b$",
+         "Die Kathetenquadrate haben zusammen denselben Flächeninhalt wie "
+         "das Hypotenusenquadrat."],
+        "Die Kathetenquadrate haben zusammen denselben Flächeninhalt wie "
+        "das Hypotenusenquadrat."), ["C"]),
+    O("Winkelfunktion Seitenverhältnis angeben", "2025-OS-B1g", "form",
+      A("Der rechte Winkel liegt bei $B$. Ergänze den Bruch.", "$\\mathrm{sin}\\,\\gamma = \\frac{u}{w}$", "",
+        antwort="$\\mathrm{sin}\\,\\gamma =$ __",
+        grafik="\\dreieck{(0,0)}{(3,0)}{(3,2.2)}{v}{w}{u}{}{}{\\gamma}"),
+      ["$\\frac{u}{w}$"]),
+    O("Winkelfunktion Seitenverhältnis angeben", "2020-OS-B1c", "form",
+      A("Der rechte Winkel liegt bei $C$. Gib $\\mathrm{tan}\\,\\alpha$ als "
+        "Bruch an.",
+        "$\\mathrm{tan}\\,\\alpha = \\frac{r}{s}$", "",
+        antwort="$\\mathrm{tan}\\,\\alpha =$ __",
+        grafik="\\dreieck{(0,0)}{(4,0)}{(1.6,1.96)}{r}{s}{t}{\\alpha}{}{}"),
+      ["$\\frac{r}{s}$"]),
+    # Daten
+    # Originale 2014–2019 der Typen des Zettels „schwach“ (Kern und die zwei
+    # häufigsten weiteren), damit dessen Folge länger trägt
+    O("Bruchteil einer Fläche bestimmen", "2019-OS-B1c", "form",
+      A("Ein Kreis ist in Sektoren geteilt: fünf zu $60^\\circ$ und zwei zu "
+        "$30^\\circ$. Grau sind ein $60^\\circ$- und ein $30^\\circ$-Sektor. "
+        "Gib den grauen Anteil des Kreises als gekürzten Bruch an.",
+        "$\\frac{90}{360} = \\frac{1}{4}$", "[1, 4]"), ["$\\frac{1}{4}$"]),
+    O("Bruchteil einer Fläche bestimmen", "2017-OS-B1a", "form",
+      A("Ein Rechteck besteht aus $28$ gleich großen Kästchen ($7$ "
+        "nebeneinander, $4$ übereinander). Gib an, wie viele Kästchen du für "
+        "$\\frac{6}{7}$ der Fläche färben musst.",
+        "$28 : 7 \\cdot 6 = 24$ Kästchen", "28/7*6", antwort="__ Kästchen"),
+      ["24"]),
+    O("Bruchteil einer Fläche bestimmen", "2014-OS-B1i", "form",
+      A("Das Rechteck besteht aus $15$ gleich großen Feldern, $9$ davon sind "
+        "grau. Gib den grauen Anteil an a) als gekürzten Bruch, b) in Prozent.",
+        "a) $\\frac{9}{15} = \\frac{3}{5}$ b) $\\frac{3}{5} = 60\\,\\%$", "[3, 5, 60]",
+        antwort="a) __ b) __ %", grafik="\\bruchrechteck[4.5]{9}{15}"),
+      ["$\\frac{3}{5}$", "60\\,\\%"]),
+    O("Term zu Figur angeben", "2019-OS-B1e", "form",
+      A("Ein Rechteck besteht aus zwei Teilrechtecken mit den Breiten $a$ und "
+        "$b$; beide sind $c$ hoch. Gib eine Formel für den Flächeninhalt $A$ "
+        "des ganzen Rechtecks an.", "$A = (a + b) \\cdot c$", "",
+        antwort="$A =$ __"), ["$(a + b) \\cdot c$"]),
+    O("Termwert berechnen", "2016-OS-B1i", "form",
+      A("Berechne den Wert des Terms $(a + b) : c$ für $a = 2$, $b = -4$ und "
+        "$c = -2$.", "$(2 + (-4)) : (-2) = (-2) : (-2) = 1$", "(2-4)/(-2)"),
+      ["$1$"], "Rechne zuerst die Klammer aus."),
+    O("Prozentwert berechnen", "2017-OS-B1b", "form",
+      A("Ein Fahrrad kostet $120{,}00\\,€$. Es gibt $20\\,\\%$ Rabatt. "
+        "Berechne den Rabatt in Euro.", "$0{,}2 \\cdot 120 = 24\\,€$",
+        "0.2*120", antwort="__ €"), ["24\\,€"],
+      "$10\\,\\%$ heißt: durch $10$ teilen."),
+    O("Prozentwert berechnen", "2015-OS-B1e", "form",
+      A("Ein Guthaben von $400\\,€$ wird ein Jahr lang mit $2\\,\\%$ "
+        "verzinst. Berechne die Zinsen.", "$0{,}02 \\cdot 400 = 8\\,€$",
+        "0.02*400", antwort="__ €"), ["8\\,€"],
+      "$1\\,\\%$ heißt: durch $100$ teilen."),
+    O("Prozentwert berechnen", "2014-OS-B1a", "form",
+      A("Berechne $13\\,\\%$ von $50\\,€$.",
+        "$0{,}13 \\cdot 50 = 6{,}50\\,€$", "0.13*50", antwort="__ €"),
+      ["6{,}50\\,€"], "$1\\,\\%$ von $50\\,€$ sind $0{,}50\\,€$."),
+    O("Pythagoras Gleichung zuordnen", "2017-OS-B1d", "form",
+      X("Kreuze die Gleichung an, die in diesem rechtwinkligen Dreieck gilt.",
+        ["$x^2 = y^2 + z^2$", "$z^2 = x^2 - y^2$", "$z^2 \\cdot y^2 = x^2$",
+         "$z^2 = x^2 + y^2$"], "$z^2 = x^2 + y^2$",
+        grafik="\\dreieckrw{3}{2.2}{y}{x}{z}"), ["D"]),
+    O("Winkelfunktion Seitenverhältnis angeben", "2019-OS-B1h", "form",
+      A("Der rechte Winkel liegt bei $C$. Gib $\\mathrm{sin}\\,\\alpha$ als "
+        "Bruch an.",
+        "$\\mathrm{sin}\\,\\alpha = \\frac{r}{t}$", "",
+        antwort="$\\mathrm{sin}\\,\\alpha =$ __",
+        grafik="\\dreieck{(0,0)}{(4,0)}{(1.6,1.96)}{r}{s}{t}{\\alpha}{}{}"),
+      ["$\\frac{r}{t}$"]),
+    O("Winkelfunktion Seitenverhältnis angeben", "2018-OS-B1g", "form",
+      X("Der rechte Winkel liegt bei $C$. Kreuze die Gleichung an, die in "
+        "diesem Dreieck gilt.",
+        ["$\\mathrm{sin}\\,\\beta = \\frac{a}{b}$",
+         "$\\mathrm{sin}\\,\\beta = \\frac{b}{a}$",
+         "$\\mathrm{cos}\\,\\beta = \\frac{b}{a}$"],
+        "$\\mathrm{sin}\\,\\beta = \\frac{b}{a}$",
+        grafik="\\dreieck{(3,0)}{(0,2.2)}{(0,0)}{b}{c}{a}{\\beta}{}{}"),
+      ["B"]),
+    O("Winkelfunktion Seitenverhältnis angeben", "2017-OS-B1j", "form",
+      A("Der rechte Winkel liegt bei $C$. Gib $\\mathrm{sin}\\,\\beta$ als "
+        "Bruch an.",
+        "$\\mathrm{sin}\\,\\beta = \\frac{r}{t}$", "",
+        antwort="$\\mathrm{sin}\\,\\beta =$ __",
+        grafik="\\dreieck{(3,0)}{(0,2.2)}{(0,0)}{r}{s}{t}{\\beta}{}{}"),
+      ["$\\frac{r}{t}$"]),
+    O("Median bestimmen", "2024-OS-B1h", "form",
+      A("An sechs Tagen wurden mittags diese Temperaturen gemessen: $20$; "
+        "$17$; $21$; $18$; $21$; $11$ (in °C). Bestimme den Median.",
+        "geordnet $11$; $17$; $18$; $20$; $21$; $21$; "
+        "$(18 + 20) : 2 = 19$ °C", "19", antwort="__ °C"), ["19 °C"]),
+    O("Arithmetisches Mittel berechnen", "2021-OS-B1f", "form",
+      A("Bei vier Sprüngen erreicht Jana diese Weiten: $4{,}08$ m; "
+        "$3{,}88$ m; $3{,}92$ m; $4{,}12$ m. Berechne das arithmetische "
+        "Mittel.", "$16 : 4 = 4$ m", "(4.08+3.88+3.92+4.12)/4",
+        antwort="__ m"), ["4{,}00 m"]),
+    O("Fehlenden Wert aus Mittelwert bestimmen", "2022-OS-B1d", "form",
+      A("An sechs Tagen einer Woche wurden diese Temperaturen gemessen: "
+        "$21$; $20$; $19$; $22$; $20$; $20$ (in °C). Der Durchschnitt der "
+        "ganzen Woche beträgt $20$ °C. Ergänze den Wert des siebten Tages.",
+        "$7 \\cdot 20 = 140$; $140 - 122 = 18$", "7*20-122",
+        antwort="__ °C"), ["18 °C"]),
+]
+
+
+def _vs_bruch():
+    aus = []
+    for fig, z, n in [("\\bruchrechteck[3]{2}{8}", 2, 8),
+                      ("\\bruchkreis[0.8]{3}{6}", 3, 6),
+                      ("\\bruchrechteck[3.6]{3}{12}", 3, 12),
+                      ("\\bruchkreis[0.8]{2}{8}", 2, 8),
+                      ("\\bruchkreis[0.8]{4}{10}", 4, 10),
+                      ("\\bruchrechteck[3.6]{6}{9}", 6, 9)]:
+        f = _F(z, n)
+        aus.append(V("Bruchteil einer Fläche bestimmen", A(
+            "Die Figur ist in gleich große Teile geteilt. a) Gib die Zahl der "
+            "Teile an. b) Gib den Anteil der grauen Fläche als gekürzten "
+            "Bruch an.",
+            f"a) ${n}$ Teile b) $\\frac{{{z}}}{{{n}}} = \\frac{{{f.numerator}}}"
+            f"{{{f.denominator}}}$",
+            f"[{n}, {f.numerator}, {f.denominator}]",
+            antwort="a) __ Teile b) __", grafik=fig),
+            [str(n), f"$\\frac{{{f.numerator}}}{{{f.denominator}}}$"],
+            "Zähle zuerst alle Teile, dann die grauen."))
+    return aus
+
+
+def _vs_termfigur():
+    aus = []
+    for fig, was, summe, kurz, pr in [
+            (_RW % ("x,y,,", 3, 1.8), "des Rechtecks", "x + y + x + y",
+             "2 \\cdot x + 2 \\cdot y", "[2, 2]"),
+            (_RW % ("s,,,", 1.8, 1.8), "des Quadrats", "s + s + s + s",
+             "4 \\cdot s", "4"),
+            ("\\dreieck{(0,0)}{(2.6,0)}{(1.3,2.25)}{a}{a}{a}{}{}{}",
+             "des gleichseitigen Dreiecks", "a + a + a", "3 \\cdot a", "3")]:
+        aus.append(V("Term zu Figur angeben", A(
+            f"Gib den Umfang $U$ {was} an. a) Schreibe ihn als Summe aller "
+            "Seiten. b) Fasse zusammen.",
+            f"a) $U = {summe}$ b) $U = {kurz}$", pr,
+            antwort="a) $U =$ __ b) $U =$ __", grafik=fig),
+            [f"${summe}$", f"${kurz}$"],
+            "Der Umfang ist der Weg einmal außen herum."))
+    for fig, was, zahlen, wert, formel, pr, ant in [
+            (_RW % ("a,b,,", 3, 1.8), "den Flächeninhalt",
+             "$a = 4$ cm und $b = 3$ cm", "12 cm²", "a \\cdot b", "4*3",
+             "a) $A =$ __ cm² b) $A =$ __"),
+            (_RW % ("s,,,", 1.8, 1.8), "den Umfang", "$s = 5$ cm", "20 cm",
+             "4 \\cdot s", "4*5", "a) $U =$ __ cm b) $U =$ __")]:
+        groesse = "A" if "Fläche" in was else "U"
+        aus.append(V("Term zu Figur angeben", A(
+            f"a) Berechne {was} der Figur für {zahlen}. b) Gib eine Formel "
+            f"für {was} ${groesse}$ an.",
+            f"a) ${groesse} = {pr.replace('*', ' \\cdot ')} = "
+            f"{wert.split()[0]}$ {wert.split()[1]} b) ${groesse} = {formel}$",
+            pr, antwort=ant, grafik=fig), [wert, f"${formel}$"],
+            "Setze zuerst die Zahlen ein."))
+    return aus
+
+
+def _vs_termwert():
+    aus = []
+    for a, b, x in [(4, 1, 2), (3, -2, 5), (2, 3, -1), (5, -4, 1)]:
+        kl = f"x {'+' if b > 0 else '-'} {abs(b)}"
+        xs = f"({x})" if x < 0 else str(x)
+        ein = f"{a} \\cdot ({xs} {'+' if b > 0 else '-'} {abs(b)})"
+        w = a * (x + b)
+        assert _sp.Integer(a) * (x + b) == w
+        aus.append(V("Termwert berechnen", A(
+            f"Setze $x = {x}$ in den Term ${a} \\cdot ({kl})$ ein. a) Schreibe "
+            "den Term mit der Zahl. b) Berechne den Wert.",
+            f"a) ${ein}$ b) ${a} \\cdot ({x + b}) = {w}$"
+            if x + b < 0 else f"a) ${ein}$ b) ${a} \\cdot {x + b} = {w}$",
+            f"{a}*({x}{'+' if b > 0 else '-'}{abs(b)})",
+            antwort="a) __ b) __"), [f"${ein}$", f"${w}$"],
+            "Rechne zuerst die Klammer aus."))
+    return aus
+
+
+def _vs_gleichung():
+    aus = []
+    x = _sp.Symbol("x")
+    for a, c, d in [(2, 3, 11), (3, 4, 19), (5, -2, 13)]:
+        r = _sp.solve(_sp.Eq(a * x + c, d), x)[0]
+        assert r.is_Integer
+        op = f"{'-' if c > 0 else '+'} {abs(c)}"
+        aus.append(V("Lineare Gleichung lösen", A(
+            f"Löse die Gleichung ${a} \\cdot x {'+' if c > 0 else '-'} "
+            f"{abs(c)} = {d}$. a) Rechne auf beiden Seiten ${op}$. b) Teile "
+            f"durch ${a}$.",
+            f"a) ${a} \\cdot x = {d - c}$ b) $x = {r}$", f"[{d - c}, {r}]",
+            antwort=f"a) ${a} \\cdot x =$ __ b) $x =$ __"),
+            [f"${d - c}$", f"${r}$"],
+            f"Rechne zuerst auf beiden Seiten ${op}$."))
+    for a, b, d in [(3, 2, 12), (4, 5, 8)]:
+        r = _sp.solve(_sp.Eq(a * (x - b), d), x)[0]
+        assert r.is_Integer
+        aus.append(V("Lineare Gleichung lösen", A(
+            f"Löse die Gleichung ${a} \\cdot (x - {b}) = {d}$. a) Teile beide "
+            f"Seiten durch ${a}$. b) Gib $x$ an.",
+            f"a) $x - {b} = {d // a}$ b) $x = {r}$", f"[{d // a}, {r}]",
+            antwort=f"a) $x - {b} =$ __ b) $x =$ __"),
+            [f"${d // a}$", f"${r}$"], f"Teile zuerst beide Seiten durch ${a}$."))
+    return aus
+
+
+def _vs_pythagoras():
+    aus = []
+    for k1, k2, h, w, hh in [("p", "q", "r", 3.2, 2.2), ("e", "f", "g", 3, 2),
+                             ("k", "l", "m", 2.6, 2.4), ("s", "t", "u", 3, 2.4),
+                             ("x", "y", "z", 3.4, 2)]:
+        aus.append(V("Pythagoras Gleichung zuordnen", A(
+            "Im Dreieck ist der rechte Winkel markiert. a) Gib die Seite an, "
+            "die die Hypotenuse ist. b) Ergänze den Satz des Pythagoras.",
+            f"a) ${h}$ (gegenüber dem rechten Winkel) b) ${h}^2 = {k1}^2 + "
+            f"{k2}^2$", "", antwort=f"a) __ b) ${h}^2 =$ __",
+            grafik=f"\\dreieckrw{{{w}}}{{{hh}}}{{{k1}}}{{{k2}}}{{{h}}}"),
+            [f"${h}$", f"${k1}^2 + {k2}^2$"],
+            "Die Hypotenuse liegt dem rechten Winkel gegenüber."))
+    return aus
+
+
+def _vs_weitere():
+    aus = []
+    for g, p in [(50, 30), (80, 20), (40, 70), (90, 40)]:
+        z, w = _q(g) / 10, _q(g) * p / 100
+        aus.append(V("Prozentwert berechnen", A(
+            f"Berechne. a) $10\\,\\%$ von ${g}\\,€$ b) ${p}\\,\\%$ von ${g}\\,€$",
+            f"a) ${g} : 10 = {_zahl(z)}\\,€$ b) ${_zahl(z)} \\cdot {p // 10} = "
+            f"{_zahl(w)}\\,€$", f"[{g}/10, {g}*{p}/100]",
+            antwort="a) __ € b) __ €"),
+            [f"{_zahl(z)}\\,€", f"{_zahl(w)}\\,€"],
+            "$10\\,\\%$ heißt: durch $10$ teilen."))
+    for h1, h2 in [("2", "2.5"), ("1", "1.5"), ("3", "3.25")]:
+        m1, m2 = _q(h1) * 60, _q(h2) * 60
+        aus.append(V("Zeiteinheiten umrechnen", A(
+            f"Eine Stunde hat $60$ Minuten. a) Gib ${dez(float(h1))}$ h in "
+            f"Minuten an. b) Gib ${dez(float(h2))}$ h in Minuten an.",
+            f"a) ${dez(float(h1))} \\cdot 60 = {_zahl(m1)}$ min b) "
+            f"${dez(float(h2))} \\cdot 60 = {_zahl(m2)}$ min",
+            f"[{h1}*60, {h2}*60]", antwort="a) __ min b) __ min"),
+            [f"{_zahl(m1)} min", f"{_zahl(m2)} min"],
+            "$0{,}5$ h sind $30$ Minuten."))
+    for wer, werte in [("Mia würfelt fünfmal und erhält die Augenzahlen",
+                        [2, 6, 1, 6, 5]),
+                       ("Tom schreibt in fünf Tests diese Noten:",
+                        [3, 1, 4, 2, 2])]:
+        s = sorted(werte)
+        med = _median(s)
+        liste = ", ".join(str(w) for w in werte)
+        aus.append(V("Median bestimmen", A(
+            f"{wer} {liste}. a) Ordne die Werte der Größe nach. b) Gib den "
+            "Median an.",
+            f"a) {', '.join(str(w) for w in s)} b) Median $= {med}$",
+            f"{med}", antwort="a) __ b) __"),
+            [", ".join(str(w) for w in s), f"${med}$"],
+            "Der Median steht nach dem Ordnen in der Mitte."))
+    for fn, seite, bruch in [("sin", "Gegenkathete", ("a", "c")),
+                             ("cos", "Ankathete", ("b", "c")),
+                             ("tan", "Ankathete", ("a", "b"))]:
+        k = {"Gegenkathete": "a", "Ankathete": "b"}[seite]
+        aus.append(V("Winkelfunktion Seitenverhältnis angeben", A(
+            f"Das Dreieck hat bei $C$ einen rechten Winkel. a) Gib die "
+            f"{seite} von $\\alpha$ an. b) Gib $\\mathrm{{{fn}}}\\,\\alpha$ "
+            "als Bruch an.",
+            f"a) ${k}$ b) $\\mathrm{{{fn}}}\\,\\alpha = \\frac{{{bruch[0]}}}"
+            f"{{{bruch[1]}}}$", "",
+            antwort=f"a) __ b) $\\mathrm{{{fn}}}\\,\\alpha =$ __",
+            grafik="\\dreieck{(0,0)}{(3,2.2)}{(3,0)}{a}{b}{c}{\\alpha}{}{}"),
+            [f"${k}$", f"$\\frac{{{bruch[0]}}}{{{bruch[1]}}}$"],
+            "Die Hypotenuse liegt dem rechten Winkel gegenüber."))
+    for n, preis, m, ding in [(3, "2.4", 5, "Hefte"), (4, "1.6", 7, "Brötchen")]:
+        eins = _q(preis) / n
+        ges = eins * m
+        aus.append(V("Proportionale Zuordnung Dreisatz", A(
+            f"${n}$ {ding} kosten ${_w(preis, '€')}\\,€$. a) Berechne den "
+            f"Preis für ein Stück. b) Berechne den Preis für ${m}$ {ding}.",
+            f"a) ${_w(preis, '€')} : {n} = {_w(eins, '€')}\\,€$ b) "
+            f"${_w(eins, '€')} \\cdot {m} = {_w(ges, '€')}\\,€$",
+            f"[{preis}/{n}, {preis}/{n}*{m}]", antwort="a) __ € b) __ €"),
+            [f"{_w(eins, '€')}\\,€", f"{_w(ges, '€')}\\,€"]))
+    for satz, n, p in [("Jeder vierte Schüler kommt mit dem Rad.", 4, 25),
+                       ("Jedes fünfte Kind hat einen Hund.", 5, 20)]:
+        assert 100 % n == 0 and 100 // n == p
+        aus.append(V("Prozent und Anteil umwandeln", A(
+            f"{satz} a) Gib den Anteil als Bruch an. b) Gib den Anteil in "
+            "Prozent an.",
+            f"a) $\\frac{{1}}{{{n}}}$ b) $\\frac{{1}}{{{n}}} = "
+            f"\\frac{{{p}}}{{100}} = {p}\\,\\%$", f"[1, {n}, {p}]",
+            antwort="a) __ b) __ %"),
+            [f"$\\frac{{1}}{{{n}}}$", f"{p}\\,\\%"]))
+    for a in (4, 5):
+        aus.append(V("Volumen Würfel berechnen", A(
+            f"Ein Würfel hat die Kantenlänge ${a}$ cm. a) Berechne den "
+            "Flächeninhalt einer Seitenfläche. b) Berechne das Volumen.",
+            f"a) ${a} \\cdot {a} = {a * a}$ cm² b) ${a * a} \\cdot {a} = "
+            f"{a ** 3}$ cm³", f"[{a}**2, {a}**3]",
+            antwort="a) __ cm² b) $V =$ __ cm³"),
+            [f"{a * a} cm²", f"{a ** 3} cm³"]))
+    for l, b, e in [("2.5", "1.5", "cm"), ("4.5", "2", "m")]:
+        s = _q(l) + _q(b)
+        aus.append(V("Umfang Rechteck berechnen", A(
+            f"Ein Rechteck ist ${dez(float(l))}$ {e} lang und "
+            f"${dez(float(b))}$ {e} breit. a) Berechne Länge plus Breite. "
+            "b) Berechne den Umfang.",
+            f"a) ${dez(float(l))} + {dez(float(b))} = {_zahl(s)}$ {e} b) "
+            f"$U = 2 \\cdot {_zahl(s)} = {_zahl(2 * s)}$ {e}",
+            f"[{l}+{b}, 2*({l}+{b})]", antwort=f"a) __ {e} b) $U =$ __ {e}"),
+            [f"{_zahl(s)} {e}", f"{_zahl(2 * s)} {e}"]))
+    for was, menge, p in [("größer als 4", [5, 6], (1, 3)),
+                          ("gerade", [2, 4, 6], (1, 2))]:
+        assert _sp.Rational(len(menge), 6) == _sp.Rational(*p)
+        zahl = " und ".join(str(m) for m in menge) if len(menge) == 2 else \
+            ", ".join(str(m) for m in menge)
+        aus.append(V("Wahrscheinlichkeit einstufig", A(
+            f"Ein Würfel wird einmal geworfen. a) Gib alle Augenzahlen an, die "
+            f"{was} sind. b) Gib die Wahrscheinlichkeit für eine Augenzahl "
+            f"an, die {was} ist.",
+            f"a) {zahl} b) $\\frac{{{len(menge)}}}{{6}} = "
+            f"\\frac{{{p[0]}}}{{{p[1]}}}$", f"[{p[0]}, {p[1]}]",
+            antwort="a) __ b) __"),
+            [zahl, f"$\\frac{{{p[0]}}}{{{p[1]}}}$"]))
+    for ding, w, p in [("einer Jacke", 8, 20), ("eines Rucksacks", 9, 30)]:
+        zehn, g = _q(w) * 10 / p, _q(w) * 100 / p
+        assert zehn.is_Integer and g.is_Integer
+        aus.append(V("Grundwert berechnen", A(
+            f"Beim Kauf {ding} spart Tom ${w}\\,€$, das sind ${p}\\,\\%$ des "
+            "alten Preises. a) Berechne, wie viel Euro $10\\,\\%$ sind. "
+            "b) Berechne den alten Preis.",
+            f"a) ${w} : {p // 10} = {zehn}\\,€$ b) ${zehn} \\cdot 10 = {g}\\,€$",
+            f"[{w}*10/{p}, {w}*100/{p}]", antwort="a) __ € b) __ €"),
+            [f"{zehn}\\,€", f"{g}\\,€"]))
+    for l, el, f, ek, r, z in [("1.2", "m", 100, "cm", "102", ">"),
+                               ("0.5", "kg", 1000, "g", "450", ">")]:
+        um = _q(l) * f
+        assert (um > _q(r)) == (z == ">")
+        aus.append(V("Größen vergleichen", A(
+            f"a) Gib ${dez(float(l))}$ {el} in {'Zentimetern' if ek == 'cm' else 'Gramm'} "
+            f"an. b) Setze das richtige Zeichen ein: $<$, $=$ oder $>$.",
+            f"a) ${dez(float(l))}$ {el} $= {_zahl(um)}$ {ek} b) "
+            f"${dez(float(l))}$ {el} ${z}$ ${r}$ {ek}", f"{l}*{f}",
+            antwort=f"a) __ {ek} b) ${dez(float(l))}$ {el} __ ${r}$ {ek}"),
+            [f"{_zahl(um)} {ek}", z]))
+    for zahl, m, e in [("53\\,000", "5{,}3", 4), ("3\\,600\\,000", "3{,}6", 6)]:
+        aus.append(V("Zehnerpotenzschreibweise umwandeln", A(
+            f"a) Gib an, um wie viele Stellen das Komma von ${m}$ bis "
+            f"${zahl}$ wandert. b) Ergänze die Hochzahl: ${zahl} = {m} "
+            "\\cdot 10^{\\square}$.",
+            f"a) ${e}$ Stellen nach rechts b) ${e}$", f"[{e}, {e}]",
+            antwort="a) __ Stellen b) __"), [f"{e}", f"{e}"]))
+    for w in (70, 62):
+        aus.append(V("Winkel im Viereck berechnen", A(
+            "Das Viereck ist ein Parallelogramm. a) Ergänze: Benachbarte "
+            "Winkel im Parallelogramm sind zusammen … groß. b) Bestimme die "
+            "Größe des Winkels $\\beta$.",
+            f"a) $180^\\circ$ b) $\\beta = 180^\\circ - {w}^\\circ = "
+            f"{180 - w}^\\circ$", f"[180, 180-{w}]",
+            antwort="a) __° b) $\\beta =$ __°",
+            grafik=f"\\parallelogramm[winkel={{{w}^\\circ,\\beta,,}}]"
+                   f"{{3}}{{1.8}}{{{w}}}"),
+            ["$180^\\circ$", f"${180 - w}^\\circ$"]))
+    for wer, werte, e in [("Ben erzielt in vier Spielen diese Punkte:",
+                           [12, 18, 9, 21], ""),
+                          ("Ali wartet an vier Tagen so lange auf den Bus (in "
+                           "Minuten):", [5, 9, 7, 11], "min")]:
+        s = sum(werte)
+        m = _sp.Rational(s, len(werte))
+        assert m.is_Integer
+        ein = f" {e}" if e else ""
+        aus.append(V("Arithmetisches Mittel berechnen", A(
+            f"{wer} " + "; ".join(f"${w}$" for w in werte)
+            + ". a) Berechne die Summe. b) Berechne das arithmetische Mittel.",
+            f"a) ${'+'.join(str(w) for w in werte)} = {s}$ b) ${s} : "
+            f"{len(werte)} = {m}${ein}", f"[{s}, {s}/{len(werte)}]",
+            antwort=f"a) __ b) __{ein}"), [f"${s}$", f"${m}${ein}"]))
+    for b, c, x0, ja in [(4, -3, -1, True), (3, 10, -2, False)]:
+        wert = x0 * (x0 + b)
+        assert (wert == c) == ja
+        aus.append(V("Lösung durch Einsetzen prüfen", A(
+            f"Prüfe, ob $x = {x0}$ die Gleichung $x \\cdot (x + {b}) = {c}$ "
+            f"erfüllt. a) Setze ein und berechne $({x0}) \\cdot ({x0} + {b})$. "
+            "b) Gib an: ja oder nein.",
+            f"a) $({x0}) \\cdot {x0 + b} = {wert}$ b) "
+            + ("ja" if ja else "nein"), f"{x0}*({x0}+{b})",
+            antwort="a) __ b) __"), [f"${wert}$", "ja" if ja else "nein"]))
+    return aus
+
+
+VORSTUFEN = (_vs_bruch() + _vs_termfigur() + _vs_termwert() + _vs_gleichung()
+             + _vs_pythagoras() + _vs_weitere())
+
+
+# Prüfungsverb vorn: Regeln für die Fragen des Bestands (v0.8). Zuerst die
+# besonderen Muster, dann die allgemeine Umstellung „Wie viele … braucht er?“
+# → „Berechne, wie viele … er braucht.“; jede Aufgabe muss danach mit einem
+# Satz beginnen, der mit einem Verb aus VERBEN anfängt, und darf außerhalb
+# der Formeln kein „?“ mehr haben (assert).
+_M = r"(\$[^$]*\$)"
+VERB_REGELN = [
+    (r"Bei welcher Figur ist genau " + _M + r" grau\?",
+     r"Kreuze die Figur an, bei der genau \1 der Fläche grau ist."),
+    (r"Welcher Anteil der Fläche ist grau\? Gib ihn als (gekürzten )?Bruch an\.",
+     r"Gib den Anteil der grauen Fläche als \1Bruch an."),
+    (_M + r" von " + _M + r" (\w+) – wie viele? \w+\?", r"Berechne \1 von \2 \3."),
+    (r"Wie viel (Gramm|Meter|Liter|Kilogramm) sind " + _M + r" von " + _M
+     + r" (\w+)\?", r"Berechne \2 von \3 \4 in \1."),
+    (r"([^.]+?) – wie viel Prozent\? Kreuze an\.",
+     r"\1. Kreuze an, wie viel Prozent das sind."),
+    (_M + r" – welche Hochzahl\?", r"Ergänze die Hochzahl: \1."),
+    (_M + r" – welche Zahl ist " + _M + r"\?",
+     r"Bestimme die Zahl \2 in der Gleichung \1."),
+    (r"Welcher Wert ist der (kleinste|größte): (.+)\?", r"Gib den \1n Wert an: \2."),
+    (r"Wie viel kosten (.+?)\?", r"Berechne den Preis für \1."),
+    (r"Wie groß ist die Wahrscheinlichkeit, (.+?)\?",
+     r"Gib die Wahrscheinlichkeit an, \1."),
+    (r"Wie groß ist die Wahrscheinlichkeit für (.+?)\?",
+     r"Gib die Wahrscheinlichkeit für \1 an."),
+    (r"Wie groß ist (?:der Winkel )?" + _M
+     + r"( links oben| links unten| rechts oben| rechts unten)?\?",
+     r"Bestimme die Größe des Winkels \1\2."),
+    (r"Welche Formel beschreibt (den \w+ \$[^$]*\$(?: des \w+)?)\?",
+     r"Kreuze die Formel für \1 an."),
+    (r"Welcher Term passt\?", "Kreuze den passenden Term an."),
+    (r"Welche Gleichung passt\?", "Kreuze die passende Gleichung an."),
+    (r"Welche Aussage passt\?", "Kreuze die passende Aussage an."),
+    (r"Die Fläche (\w) ist der Deckel( einer Schachtel)?; welche ist der "
+     r"Boden\?", r"Die Fläche \1 ist der Deckel\2. Gib an, welche Fläche der "
+     r"Boden ist."),
+    (r"(liegt [^.]+)\. Welcher\?", r"\1. Kreuze ihn an."),
+    (r"Wie hoch war der alte Preis\?", "Berechne den alten Preis."),
+    (r"Wie hoch ist der neue Preis\?", "Berechne den neuen Preis."),
+    (r"Wie hoch ist der Zinssatz\?", "Berechne den Zinssatz."),
+    (r"Das Ergebnis ist …", "Kreuze die passende Ergänzung an: Das Ergebnis "
+     "ist …"),
+    (r"Wie lang ist eine Seite\?", "Berechne die Seitenlänge."),
+    (r"Wie lang ist es\?", "Berechne die Länge."),
+    (r"Wie breit ist (?:er|es|das Beet)\?", "Berechne die Breite."),
+    (r"Wie lang ist die Seite " + _M + r"\?", r"Berechne die Länge der Seite \1."),
+    (r"Wie lang ist die andere Seite\?", "Berechne die Länge der anderen Seite."),
+    (r"Wie lang ist der Rest\?", "Berechne die Länge des Rests."),
+    (r"Gib den Scheitelpunkt der Parabel an\. Kreuze an\.",
+     "Kreuze den Scheitelpunkt der Parabel an."),
+]
+VERBEN_FINIT = {"ist", "sind", "hat", "gehört", "gilt", "liegt", "steigt",
+                "fällt", "geht", "schneidet", "verläuft", "erfüllt",
+                "beschreibt", "bilden", "entsteht", "entstehen", "braucht",
+                "brauchen", "reicht", "bekommt", "druckt", "gibt", "kann",
+                "muss", "müssen", "müsste", "war", "passen", "bleibt",
+                "endet", "kommt", "landet", "heißen", "schafft", "berechnet",
+                "passt"}
+VERBEN = ("Berechne", "Bestimme", "Gib", "Kreuze", "Löse", "Ergänze", "Setze",
+          "Trage", "Ordne", "Vereinfache", "Markiere", "Stelle", "Schreibe",
+          "Färbe", "Vergleiche", "Prüfe", "Nenne")
+_RECHNEN = ("Wie viel", "Wie lang", "Wie hoch", "Wie weit", "Wie breit",
+            "Wie groß", "Wann", "Für wie viele")
+
+
+def _umstellen(frage, ankreuzen):
+    """„Wie viele Becher kann man füllen?“ → „Berechne, wie viele Becher man
+    füllen kann.“ (finites Verb ans Ende, trennbares an/hinein davor)."""
+    worte = frage[:-1].split(" ")
+    i = next((k for k, w in enumerate(worte) if k and w in VERBEN_FINIT), None)
+    assert i is not None, frage
+    verb, kopf, rest = worte[i], worte[:i], worte[i + 1:]
+    rest = " ".join(rest)
+    teil, komma = (rest.split(", ", 1) + [""])[:2]
+    for p in ("an", "hinein"):
+        if teil.endswith(" " + p) or teil == p:
+            teil, verb = teil[:-len(p)].rstrip(), p + verb
+    satz = " ".join(kopf + ([teil] if teil else []) + [verb])
+    satz = satz[0].lower() + satz[1:]
+    if komma:
+        satz += ", " + komma
+    if ankreuzen:
+        v = "Kreuze an"
+    elif frage.startswith(_RECHNEN) and not frage.startswith("Wie viele "
+                                                            "verschiedene"):
+        v = "Berechne"
+    else:
+        v = "Gib an"
+    return f"{v}, {satz}."
+
+
+def verb_vorn(aufgabe, ankreuzen):
+    stamm, sep, opt = aufgabe.partition("\\\\ \\kreuz")
+    for muster, ersatz in VERB_REGELN:
+        stamm = _re.sub(muster, ersatz, stamm)
+    # übrige Fragen allgemein umstellen (je Satz)
+    teile = _re.split(r"(?<=[.?!:]) (?=[A-ZÄÖÜ])", stamm)
+    neu = []
+    for t in teile:
+        if t.rstrip().endswith("?") and _re.match(
+                r"(Wie|Wann|Wo|Was|Welche[rsmn]?|Zu welchem|Mit welcher|Für welche|"
+                r"Für wie viele|Aus welchen)\b", t):
+            t = _umstellen(t.rstrip(), ankreuzen)
+        neu.append(t)
+    stamm = " ".join(neu)
+    if "Kreuze" in stamm.replace("Kreuze an.", ""):
+        stamm = stamm.replace(" Kreuze an.", "")
+    aus = stamm + sep + opt
+    ohne = _re.sub(r"\$[^$]*\$", "", stamm)
+    assert "?" not in ohne, aufgabe
+    saetze = _re.split(r"(?<=[.:!…“]) |^", _re.sub(r"(?:^|(?<= ))[a-e]\) ", "",
+                                                ohne))
+    assert any(s.startswith(VERBEN) for s in saetze) or ohne.startswith(
+        VERBEN), aufgabe
+    return aus
+
+
+_U_IN_MATHE = _re.compile(r"(?<![\\\w])u(?![\w])")
+
+
+def gross_u(z):
+    """„U“ statt „u“ für den Umfang (Vorlage 03.10.), nur in Zeilen, die
+    vom Umfang sprechen, nur in Formeln und im Antwortgerüst."""
+    if "Umfang" not in z["aufgabe"]:
+        return z
+    def mathe(t):
+        return _re.sub(r"\$[^$]*\$",
+                       lambda m: _U_IN_MATHE.sub("U", m.group(0)), t)
+    for f in ("aufgabe", "loesung", "antwort"):
+        z[f] = mathe(z[f])
+    z["antwort"] = _re.sub(r"(?<![\\\w$])u =", "U =", z["antwort"])
+    z["loesung"] = _re.sub(r"(?<![\\\w$])u =", "U =", z["loesung"])
+    return z
+
+
+def optionen_von(aufgabe):
+    return _re.findall(r"\\kreuz\{((?:[^{}]|\{(?:[^{}]|\{[^{}]*\})*\})*)\}",
+                       aufgabe)
+
+
+def _wort(t):
+    t = _re.sub(r"\s+", " ", t.replace("\\,", " ")).strip()
+    return t.rstrip(".")
+
+
+def kreuz_buchstabe(z):
+    """Buchstabe A, B, C, … der richtigen Option (Lösungsstreifen)."""
+    opt = optionen_von(z["aufgabe"])
+    lo = _wort(z["loesung"])
+    m = _re.match(r"(?:Tabelle )?([A-F])\b(?![(|])", lo)
+    if m and all(len(o) == 1 for o in opt):
+        assert m.group(1) in opt, (z["aufgabe"], lo)
+        return "ABCDEF"[opt.index(m.group(1))]
+    treffer = [i for i, o in enumerate(opt) if lo.startswith(_wort(o))]
+    if len(treffer) > 1:  # längste passende Option
+        treffer = [max(treffer, key=lambda i: len(_wort(opt[i])))]
+    if not treffer:
+        treffer = [i for i, o in enumerate(opt) if _wort(o) in lo]
+    assert len(treffer) == 1, (z["aufgabe"], lo, opt)
+    return "ABCDEF"[treffer[0]]
+
+
+def segmente(antwort):
+    """Antwortgerüst in Felder je Teil: „a) … b) …“ → zwei; sonst eins."""
+    if not antwort.strip():
+        return []
+    teile = _re.split(r"(?:^|\s)(?=[a-e]\) )", antwort.strip())
+    return [t for t in teile if t.strip()]
+
+
+_EINHEIT_TEXT = {"cm", "m", "km", "mm", "dm", "g", "kg", "t", "l", "ml",
+                 "h", "min", "s", "€", "°C", "cm²", "m²", "mm²", "cm³", "m³",
+                 "Uhr"}
+
+
+def _einheit_aus(seg):
+    """Einheit hinter dem (einzigen) Feld im Antwortgerüst, sonst ""."""
+    m = _re.search(r"__\s*([^\s$_]+)\s*$", seg)
+    return m.group(1) if m and m.group(1) not in ("|", ")") else ""
+
+
+def _ergebnis_teil(lo, einheit="", felder=1):
+    lo = lo.strip().rstrip(".;, ")
+    lo = _re.sub(r"\s*\((?:[^()]|\([^()]*\))*\)\s*$", "", lo)
+    lo = _re.sub(r"^z\. B\. ", "", lo)
+    lo = lo.split("; richtig ist")[0]
+    if felder > 1:
+        klauseln = lo.split("; ")
+        if len(klauseln) == felder:
+            return ", ".join(_ergebnis_teil(k) for k in klauseln)
+        if "=" not in lo:
+            mathe = _re.findall(r"\$[^$]*\$", lo)
+            if mathe and "|" in mathe[-1]:
+                return mathe[-1]
+            return lo
+    mathe = list(_re.finditer(r"\$[^$]*\$", lo))
+    if not mathe:
+        return lo
+    m = mathe[-1]
+    inhalt = m.group(0)[1:-1].strip()
+    nach = lo[m.end():].strip()
+    if inhalt == "=":                       # „… $=$ 11:15 Uhr“
+        return nach
+    w = _re.match(r"^([^\s,;.]{1,6})", nach)
+    text_einheit = w.group(1) if w and w.group(1) in _EINHEIT_TEXT else ""
+    if "=" in inhalt:
+        wert = inhalt.split("=")[-1].strip()
+    else:
+        wert = inhalt
+    if not wert:
+        return lo
+    aus = f"${wert}$"
+    e = einheit or text_einheit
+    if e and not _re.search(r"\\circ|\\%|€", wert) and e not in ("°",):
+        aus += " " + e
+    elif e == "°" and "circ" not in wert:
+        aus = f"${wert}^\\circ$"
+    return aus
+
+
+def ergebnis_von(z, typ=""):
+    """Kurze Ergebnisse für den Streifen, je Feld eins (Bestand; neue Zeilen
+    tragen ergebnis selbst)."""
+    if z["form"] == "ankreuzen":
+        return [kreuz_buchstabe(z)]
+    seg = segmente(z["antwort"]) or [""]
+    lo = z["loesung"]
+    if typ == "Zahlen in verschiedenen Darstellungen vergleichen":
+        erst = _re.match(r"\$([^$=]*)=?", lo.split(";")[0])
+        return [f"${erst.group(1).strip()}$"]
+    if typ == "Größen vergleichen":
+        z_ = _re.findall(r"\$([<>=])\$", lo)
+        return [z_[-1]]
+    if len(seg) > 1:
+        teile = _re.split(r"(?:^|\s)[a-e]\) ", " " + lo)[1:]
+        assert len(teile) == len(seg), (z["aufgabe"], lo, seg)
+        return [_ergebnis_teil(t, _einheit_aus(s), s.count("__"))
+                for t, s in zip(teile, seg)]
+    return [_ergebnis_teil(lo, _einheit_aus(seg[0]), seg[0].count("__"))]
+
+
+# Tipp im Bestand: Prozentwert (Vorlage „10 % heißt: durch 10 teilen.“) und
+# Lineare Gleichung (Vorlage „Rechne zuerst auf beiden Seiten −3.“)
+def tipp_von(typ, z):
+    a = z["aufgabe"]
+    if typ == "Prozentwert berechnen":
+        m = _re.match(r"Berechne \$(\d+)\\,\\%\$", a)
+        if not m:
+            return ""
+        p = int(m.group(1))
+        return {25: "$25\\,\\%$ ist ein Viertel.",
+                75: "$75\\,\\%$ sind drei Viertel.",
+                5: "$5\\,\\%$ ist die Hälfte von $10\\,\\%$.",
+                15: "$15\\,\\% = 10\\,\\% + 5\\,\\%$."}.get(
+            p, "$10\\,\\%$ heißt: durch $10$ teilen.")
+    if typ == "Lineare Gleichung lösen":
+        m = _re.search(r"(\d+) \\cdot \(x [+-] [\d{},]+\)(?: ([+-]) (\d+))? = "
+                       r"(-?\d+)", a)
+        if not m:
+            return ""
+        if m.group(2):
+            gegen = "-" if m.group(2) == "+" else "+"
+            return f"Rechne zuerst auf beiden Seiten ${gegen}{m.group(3)}$."
+        if m.group(4) == "0":
+            return "Ein Produkt ist $0$, wenn ein Faktor $0$ ist."
+        return f"Teile zuerst beide Seiten durch ${m.group(1)}$."
+    return ""
+
+
+ERGEBNIS_VON_HAND = {}   # id → [Ergebnisse], wo ergebnis_von irrt
+
 # --- Schreiben ---------------------------------------------------------------
+
+def zeile_fertig(typ, a):
+    """Felder der Zettelform v0.8 an eine Aufgabe: Prüfungsverb vorn, U,
+    ergebnis (Streifen), tipp; Original- und Vorstufenfelder."""
+    a = dict(a)
+    a["aufgabe"] = a["aufgabe"].replace(" {K}", "").replace("{K}", "").strip()
+    a["aufgabe"] = verb_vorn(a["aufgabe"], a["form"] == "ankreuzen")
+    a = gross_u(a)
+    if "ergebnis" not in a:
+        a["ergebnis"] = ergebnis_von(a, typ)
+    if a["form"] == "ankreuzen":
+        assert a["ergebnis"] == [kreuz_buchstabe(a)], (a["aufgabe"],
+                                                       a["ergebnis"])
+    else:
+        n = max(1, len(segmente(a["antwort"])))
+        assert len(a["ergebnis"]) == n, (a["aufgabe"], a["ergebnis"])
+    if "tipp" not in a:
+        t = tipp_von(typ, a)
+        if t:
+            a["tipp"] = t
+    return a
+
 
 def main(argv):
     nur = argv[argv.index("--nur") + 1] if "--nur" in argv else None
@@ -2590,6 +3633,14 @@ def main(argv):
     fehlt = [t["typ"] for t in typen if t["typ"] not in AUFGABEN]
     if fehlt:
         raise SystemExit("keine Aufgaben für: " + ", ".join(fehlt))
+    namen = {t["typ"] for t in typen}
+    for z in ORIGINALE + VORSTUFEN:
+        assert z["typ"] in namen, z["typ"]
+    gesehen = set()
+    for z in ORIGINALE:
+        assert z["original"]["id"] not in gesehen, z["original"]["id"]
+        gesehen.add(z["original"]["id"])
+    zahl = {"bestand": 0, "original": 0, "vorstufe": 0, "tipp": 0}
     for eintrag, reihe in sorted(je.items()):
         if nur and eintrag != nur:
             continue
@@ -2598,24 +3649,45 @@ def main(argv):
         for t in reihe:
             auf = AUFGABEN[t["typ"]]
             assert len(auf) == ZIEL.get(t["typ"], 10), (t["typ"], len(auf))
-            for v, a in enumerate(auf, 1):
+            # v0.8: Bestand, dann verfremdete Originale, dann Vorstufen
+            dazu = ([z for z in ORIGINALE if z["typ"] == t["typ"]]
+                    + [z for z in VORSTUFEN if z["typ"] == t["typ"]])
+            for v, a in enumerate(auf + dazu, 1):
+                a = zeile_fertig(t["typ"], a)
+                o = a.get("original") or {"id": t["original"],
+                                          "jahr": int(t["jahr"]),
+                                          "papier": t["papier"]}
                 z = {"id": f"{eintrag}-basis-k{t['kette_nr']}-v{v}",
                      "eintrag": eintrag, "einheit": int(t["einheit"]),
                      "kette": t["typ"], "kette_nr": int(t["kette_nr"]),
                      "sprosse": 1, "sprosse_text": t["typ"],
                      "merkmal": MERKMAL, "hoehe": "basis", "variante": v,
-                     "aufgabe": a["aufgabe"].replace(" {K}", "")
-                                            .replace("{K}", "").strip(),
+                     "aufgabe": a["aufgabe"],
                      "form": a["form"], "antwort": a["antwort"],
                      "loesung": a["loesung"], "pruef": a["pruef"],
-                     "original": {"id": t["original"], "jahr": int(t["jahr"]),
-                                  "papier": t["papier"]},
+                     "original": o,
                      "grafik": a["grafik"], "loesungsgrafik": "",
-                     "quelle": int(t["quelle"])}
+                     "quelle": int(t["quelle"]),
+                     "ergebnis": a["ergebnis"]}
+                if a.get("ist_original"):
+                    z["ist_original"] = True
+                    z["verfremdung"] = a["verfremdung"]
+                    zahl["original"] += 1
+                elif a.get("vorstufe"):
+                    z["vorstufe"] = True
+                    zahl["vorstufe"] += 1
+                else:
+                    zahl["bestand"] += 1
+                if a.get("tipp"):
+                    z["tipp"] = a["tipp"]
+                    zahl["tipp"] += 1
                 zeilen.append(json.dumps(z, ensure_ascii=False))
         (ORDNER / f"{eintrag}.jsonl").write_text("\n".join(zeilen) + "\n",
                                                 encoding="utf-8")
         print(f"{eintrag}.jsonl: {len(zeilen)} Zeilen")
+    print(f"zusammen {sum(zahl.values()) - zahl['tipp']} Zeilen: Bestand "
+          f"{zahl['bestand']}, verfremdete Originale {zahl['original']}, "
+          f"Vorstufen {zahl['vorstufe']}; mit Tipp {zahl['tipp']}")
 
 
 if __name__ == "__main__":

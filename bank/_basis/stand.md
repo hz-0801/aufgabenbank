@@ -35,6 +35,16 @@ Parallelogramm (zusammengesetzte Figuren: kein Baustein); Trigonometrische
 Gleichung nur umstellen. typen.csv neu mit niveau und ab2020.
 `bank-pruef.py _basis`: 0 Abweichungen, 12 Warnungen (Mengen 5/20).
 
+Nachtrag 2026-10-03 (Auftrag „Basiszettel ins Skript“, Vorlage des
+Lehrers vom 03.10., zusammenbau.py v1.5, Rezept Zettel v0.8): 777 Zeilen
+(vorher 640): 78 als verfremdetes Original markiert (ist_original, Jahr
+links vor der Nummer), 59 Vorstufen (a)/b) vor dem Grundfall), 72 Tipps;
+Prüfungsverb vorn statt Frage; Ankreuzen A–D mit Buchstabe als Lösung;
+„U“ statt „u“. Abgleich Vorlage ↔ v1.4: bau/zettel/abgleich-2026-10-03.md.
+`bank-pruef.py _basis`: 0 Abweichungen, 52 Warnungen (Mengen je Kette).
+Offen: Kern nach der 30-%-Regel sind nur 5 Typen; --schwach nimmt zwei
+weitere dazu und meldet es (GEGENPROBE VERLETZT).
+
 ## Dateien
 
     typen.py      bestimmt die Basis-Typen, schreibt typen.csv/typen.md

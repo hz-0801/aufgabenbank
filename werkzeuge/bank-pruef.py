@@ -1,6 +1,17 @@
 #!/usr/bin/env python3
 """Prüft die Bank eines Katalogeintrags (bank.md, Abschnitt „Prüfung").
 
+v0.14, 2026-10-03 (Basiszettel nach Vorlage 03.10., zusammenbau.py v1.5):
+  im Basisvorrat (bank/_basis/) die Wahlfelder der Zettelform
+  FELDER_BASIS: ergebnis (Liste, je Antwortfeld ein kurzes Ergebnis für
+  den Lösungsstreifen), tipp (graue Tipp-Zeile), ist_original und
+  verfremdung (form | kontext | zahlen; verfremdete Originale), vorstufe
+  (Aufgabe mit a) leichterem Schritt und b) Basisschritt). Eine Zeile mit
+  ist_original darf ein anderes original tragen als die übrigen Zeilen
+  ihrer Kette („original wechselt“ zählt nur die übrigen). Die Sperre
+  gegen die Mappe gilt nicht für ist_original mit verfremdung form oder
+  kontext (Zahlen des Originals gewollt, Jahreszahl auf dem Zettel).
+
 v0.13, 2026-10-01 (bank.md sechste Fassung): Feld herkunft erlaubt
   (Zeilen aus Blatt-Chats); es ist Wahlfeld, sein Fehlen gibt keine
   Warnung (v0.13b).
@@ -140,6 +151,9 @@ FELDER = ["id", "eintrag", "einheit", "kette", "kette_nr", "sprosse",
           "quelle"]
 FELDER_NEU = ["loesungsgrafik"]  # seit bank.md 2. Fassung
 FELDER_WAHL = ["herkunft"]  # seit bank.md 6. Fassung, nur bei Zeilen aus Blatt-Chats
+FELDER_BASIS = ["ergebnis", "tipp", "ist_original", "verfremdung",
+                "vorstufe"]  # v0.14, nur bank/_basis/
+VERFREMDUNG = ["form", "kontext", "zahlen"]
 HOEHEN = ["vorstufe", "grundfall", "sprosse", "pruefung", "pflicht"]
 PFLICHT = ["fehler", "begruenden", "darstellung", "anwendung"]
 FORMEN = ["teil", "gleichungsraster", "dreisatz", "streifenfeld",
@@ -864,6 +878,17 @@ def pruefe_zeile(a, eintrag, einheit, ctx=None, basis=False):
     if fehlt:
         return ["Feld fehlt: " + ", ".join(fehlt)], w
     extra = set(a) - set(FELDER) - set(FELDER_NEU) - set(FELDER_WAHL) - {"pflicht"}
+    if basis:
+        extra -= set(FELDER_BASIS)
+        if "ergebnis" in a and not (isinstance(a["ergebnis"], list)
+                                    and a["ergebnis"]
+                                    and all(isinstance(e, str) and e.strip()
+                                            for e in a["ergebnis"])):
+            b.append("ergebnis keine Liste nicht leerer Texte")
+        if a.get("ist_original") and a.get("verfremdung") not in VERFREMDUNG:
+            b.append(f"verfremdung {a.get('verfremdung')!r} unbekannt")
+        if ("verfremdung" in a) != bool(a.get("ist_original")):
+            b.append("verfremdung genau dann, wenn ist_original")
     if extra:
         b.append("unbekanntes Feld: " + ", ".join(sorted(extra)))
     if a["eintrag"] != eintrag:
@@ -936,7 +961,11 @@ def pruefe_zeile(a, eintrag, einheit, ctx=None, basis=False):
     b.extend(grafikprobe(a))
     if ctx.get("bausteine") is not None:
         b.extend(bausteinprobe(a, ctx["bausteine"]))
-    if ctx.get("sperre") is not None:
+    # v0.14: verfremdete Originale mit den Zahlen des Originals (form,
+    # kontext) tragen dessen Zahlen gewollt – die Sperre gilt dort nicht
+    if ctx.get("sperre") is not None and not (
+            basis and a.get("ist_original")
+            and a.get("verfremdung") in ("form", "kontext")):
         b.extend(sperrprobe(a, ctx["sperre"]))
     return b, w
 
@@ -1470,7 +1499,8 @@ def pruefe_basis(wurzel=Path("."), alle=False):
             if len({a.get("kette") for a in reihe}) > 1:
                 da += 1
                 print(f"ABWEICHUNG {datei.name} k{k}: kette-Name wechselt")
-            if len({(a.get("original") or {}).get("id") for a in reihe}) > 1:
+            if len({(a.get("original") or {}).get("id") for a in reihe
+                    if not a.get("ist_original")}) > 1:
                 da += 1
                 print(f"ABWEICHUNG {datei.name} k{k}: original wechselt")
             v = [a.get("variante") for a in reihe]

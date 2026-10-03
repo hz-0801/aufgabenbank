@@ -9,12 +9,27 @@ Aufruf:
         [--mit-sachaufgaben]
     python3 werkzeuge/zusammenbau.py <eintrag> <eintrag> … --heft [msa|
         abitur-gk|abitur-lk|fhr] [--nur-basis] [--titel <text>] --aus <ordner>
-    python3 werkzeuge/zusammenbau.py --zettel basis [--nummer n]
-        [--ohne-register]
+    python3 werkzeuge/zusammenbau.py --zettel basis [--schwach] [--nummer n]
+        [--ohne-register] [--pdf] [--rueckseite]
     python3 werkzeuge/zusammenbau.py <eintrag> --fokus-pruefung <kette>
         [--heft msa|abitur-gk|abitur-lk|fhr] [--einheiten n] [--aus <ordner>]
     python3 werkzeuge/zusammenbau.py <eintrag> --kompetenz <kette>
         --einheiten n [--niveau for|ebr] [--dicht] [--ohne <ids>]
+
+v1.5 (2026-10-03, Auftrag „Basiszettel ins Skript“, Vorlage des Lehrers vom
+03.10., bau/zettel/vorlage-2026-10-03/): Rezept Zettel v0.8 – Form der
+Vorlage (ein Blatt, eine Spalte, 12pt, Kopf „Basis n“ mit Hilfsmittelzeile,
+Lösungsstreifen rechts hinter gestrichelter Linie, Buchstabe vor dem Feld,
+Einheit dahinter, Ankreuzen A □ …, Jahreszahl links vor der Nummer nur bei
+verfremdeten Originalen, Tipp grau); Makros der Vorlage, mathblatt.sty nur
+für die Grafik. Jeder Zettel steht für sich (keine Serie mit Wiederkehr):
+10 Aufgaben, kein Typ und kein Thema doppelt, mind. 3 verfremdete Originale,
+mind. 2 Vorstufen, die ersten zwei leicht; --schwach: 7 Aufgaben nur
+Kerntypen (ab2020 ≥ 30 % der Jahrgänge seit 2020), mind. 3 Vorstufen,
+Tipps, \\large (Kennung BAS-W<n>). Das Skript prüft die Regeln selbst
+(GEGENPROBE im Log); --pdf rendert zweimal mit xelatex und prüft eine Seite;
+--rueckseite setzt zusätzlich „Nr – Lösung“ auf Seite 2. --ohne-register:
+Kennung BAS-S0 bzw. BAS-W0, Inhalt nach --nummer.
 
 v1.4 (2026-10-02, Lehrer 02.10. abends): Rezept Zettel v0.7 – feste Serie
 Basis 1, 2, 3 … ohne Rückmeldung (BAS-S<n>; Wiederkehr nach 2, 5, 10
@@ -133,7 +148,7 @@ from bisect import bisect_right
 from pathlib import Path
 
 WURZEL = Path(__file__).resolve().parent.parent
-VERSION = "v1.4"
+VERSION = "v1.5"
 
 # Befehle der Rahmendateien, die weder in STANDARD (bank-pruef.py) noch
 # in _bausteine.md stehen; jede Argumentzahl zulässig.
@@ -5548,8 +5563,9 @@ def modusfehler(rein, zeile):
     return sorted(aus)
 
 
-def pruefe_struktur(dateien, sig):
-    """[(datei, zeile, meldung)] für alle .tex-Texte {name: text}."""
+def pruefe_struktur(dateien, sig, extra=frozenset()):
+    """[(datei, zeile, meldung)] für alle .tex-Texte {name: text}; extra:
+    weitere erlaubte Befehle (Zettel v0.8: Makros der Vorlage)."""
     fehler = []
     for name in sorted(dateien):
         text = dateien[name]
@@ -5642,7 +5658,7 @@ def pruefe_struktur(dateien, sig):
                                                     "swz", "swa", "swfrage",
                                                     "gl", "sgl"):
                 teil_zaehler += 1
-            if cmd in BP.STANDARD or cmd in RAHMEN:
+            if cmd in BP.STANDARD or cmd in RAHMEN or cmd in extra:
                 continue
             if cmd not in sig:
                 fehler.append((name, zl, f"\\{cmd} weder Standard-LaTeX noch "
@@ -5678,8 +5694,14 @@ def main(argv=None):
     p.add_argument("eintrag", nargs="*",
                    help="Eintrag; mit --heft mehrere in Heftfolge")
     p.add_argument("--zettel", choices=["basis"],
-                   help="Rezept Z: seitenfüllender Basiszettel aus "
-                        "bank/_basis/ (Kennung BAS-Z<n>)")
+                   help="Rezept Z v0.8: Basiszettel nach der Vorlage vom "
+                        "03.10. aus bank/_basis/ (Kennung BAS-S<n>, mit "
+                        "--schwach BAS-W<n>)")
+    p.add_argument("--pdf", action="store_true",
+                   help="Zettel: zweimal xelatex, Seitenzahl prüfen")
+    p.add_argument("--rueckseite", action="store_true",
+                   help="Zettel: zweite Seite „Nr – Lösung“ (sonst nur der "
+                        "Lösungsstreifen)")
     p.add_argument("--zettel-messen", action="store_true",
                    help="Rezept Z: Höhe jeder Basisaufgabe messen "
                         "(xelatex) → bau/zettel/hoehen.csv")
@@ -5712,7 +5734,9 @@ def main(argv=None):
                         "etwa nach einem Kompilierfehler; Buchstaben neu")
     p.add_argument("--fokus", metavar="KETTE",
                    help="Kettenname wortgleich aus der Bank (Feld kette)")
-    p.add_argument("--schwach", action="store_true")
+    p.add_argument("--schwach", action="store_true",
+                   help="Lernblatt: schwache Form; Zettel: 7 Aufgaben, nur "
+                        "Kerntypen, Tipps")
     p.add_argument("--klasse", type=int)
     p.add_argument("--kasten", action="store_true",
                    help="Merkkasten am Anfang jeder Einheit (3.1 „mit kasten“)")
@@ -6477,75 +6501,753 @@ def zettel_satz(nr, typ, z, log):
         "\\end{minipage}}", "\\end{aufgabe}"]
 
 
+# --- Rezept Zettel v0.8 (Vorlage des Lehrers vom 03.10.2026) ----------------
+#
+# Form wie bau/zettel/vorlage-2026-10-03/vorlage.tex (vom Lehrer gutgeheißen):
+# ein Blatt, eine Spalte, 12pt; Kopf „Basis n“ fett links und rechts klein
+# „Erlaubt: Taschenrechner, Formelsammlung, Schmierblatt“; gestrichelte Linie
+# 2,7 cm vom rechten Blattrand, rechts davon der Lösungsstreifen (je Feld das
+# kurze Ergebnis aus dem Feld ergebnis, bei Ankreuzen der Buchstabe); Text in
+# fester Spalte (11,4 cm), Feld rechts: Buchstabe vor der Linie, Einheit
+# dahinter; Teilaufgaben je eine Zeile mit eigenem Feld; Ankreuzen „A □ …“;
+# Jahreszahl grau links vor der Nummer nur bei verfremdeten Originalen
+# (ist_original); kleine Figur rechts in der Feldspalte, Figurenreihe und
+# Wertetabellen unter dem Text. Die Makros sind die der Vorlage (\AF, \AT,
+# \TF, \AB, \op, \tipp, \kopf, \feld, \nr, \loes, \li, \lf); mathblatt.sty
+# wird nur für die Grafik-Bausteine geladen, sein \feld wird überschrieben.
+#
+# Auswahl (Übergabe 03.10.): jeder Zettel steht für sich, die Nummer
+# verhindert nur Wiederholung (keine Variante zweimal in einer Folge; die
+# Folgen normal und schwach zählen getrennt). Je Zettel kein Typ und kein
+# Thema doppelt, mindestens ORIGINALE_MIN verfremdete Originale, mindestens
+# VORSTUFEN_MIN Vorstufen (a)/b)), die ersten LEICHT_ANFANG Aufgaben aus der
+# leichtesten Höhe (Stufe 0: ohne Grafik, ein Feld oder kurzes Ankreuzen,
+# kurzer Text). Häufige Typen öfter: Vorrang hat der Typ mit dem kleinsten
+# Verhältnis aus bisherigen Einsätzen und (1 + Jahrgänge seit 2020).
+# „schwach“: 7 Aufgaben, nur Kerntypen (Kern = Typ in mindestens KERN_ANTEIL
+# der Jahrgänge seit 2020, Spalte ab2020 in typen.csv), mehr Vorstufen,
+# Tipp-Zeilen, \large. Reichen die Kerntypen nicht für 7 verschiedene Typen
+# mit verschiedenen Themen, nimmt der Plan die häufigsten weiteren Typen dazu
+# und die Gegenprobe meldet es (Befund, keine Lockerung).
+
+ZETTEL_ZAHL = {"normal": 10, "schwach": 7}
+ORIGINALE_MIN = 3
+VORSTUFEN_MIN = {"normal": 2, "schwach": 3}
+LEICHT_ANFANG = 2
+KERN_ANTEIL = 0.30
+KERN_AB = 2020
+GROSS_08 = 1              # höchstens eine große Grafik (Wertetabellen) je Zettel
+HOEHE_08 = {"normal": 24.5, "schwach": 24.2}   # cm für alle Aufgaben (Schätzung,
+                                               # an den Proben vom 03.10. geeicht)
+TW_08 = {"normal": 11.4, "schwach": 11.0}      # Textspalte in cm
+VORSTUFE_CM = {"normal": 2.9, "schwach": 3.4}  # freizuhalten je fehlende
+KURZ_CM = {"normal": 1.3, "schwach": 1.5}      # Vorstufe bzw. Aufgabe
+
+VORSPANN_08 = r"""\documentclass[12pt]{article}
+\usepackage{mathblatt}
+\geometry{a4paper,left=2.9cm,right=3.0cm,top=1.4cm,bottom=1.2cm}
+\usetikzlibrary{calc}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+% Makros der Vorlage vom 03.10.2026 (bau/zettel/vorlage-2026-10-03/vorlage.tex)
+\newlength{\tw}\setlength{\tw}{11.4cm}
+\newcommand{\loes}[1]{\rlap{\hspace{0.85cm}\small #1}}
+\renewcommand{\feld}[3][]{\hfill #1\,\rule[-1pt]{2.4cm}{0.4pt}\,\makebox[0.7cm][l]{#2}\loes{#3}}
+\newcommand{\nr}[2]{\leavevmode\llap{\makebox[2.05cm][l]{{\footnotesize\color{gray}#1}}}\llap{\textbf{#2.}\hspace{6pt}}}
+\newcommand{\AF}[6][]{\par\vspace{10pt plus 1fill}\parbox[b]{\tw}{\raggedright\nr{#1}{#2}#3}\feld[#4]{#5}{#6}}
+\newcommand{\AT}[3][]{\par\vspace{10pt plus 1fill}\parbox[t]{\tw}{\raggedright\nr{#1}{#2}#3}\par}
+\newcommand{\TF}[5][]{\par\vspace{3pt}\parbox[b]{\tw}{#2}\feld[#1]{#3}{#5}}
+\newcommand{\li}[1]{\hfill\rlap{\hspace{\dimexpr\textwidth-\tw+0.85cm\relax}\small #1}}
+\newcommand{\lis}[1]{\rlap{\hspace{\dimexpr\textwidth-\tw+0.85cm\relax}\small #1}}
+\newcommand{\lf}{\rule[-1pt]{1.6cm}{0.4pt}}
+\newcommand{\AB}[4][]{\par\vspace{10pt plus 1fill}\parbox[b]{\tw}{\raggedright\nr{#1}{#2}#3}\hfill\parbox[b]{\dimexpr\textwidth-\tw-0.2cm\relax}{\centering #4}}
+\newcommand{\op}[2]{{\small #1}\,$\square$\,#2\hspace{1.4em}}
+\newcommand{\tipp}[1]{\par\vspace{2pt}{\small\color{gray}Tipp: #1}}
+\newcommand{\kopf}[1]{\begin{tikzpicture}[remember picture,overlay]
+ \draw[gray,dashed,line width=0.4pt] ($(current page.north east)+(-2.7cm,-1.2cm)$)--($(current page.south east)+(-2.7cm,1.0cm)$);
+\end{tikzpicture}%
+\llap{\makebox[1.6cm][l]{}}{\bfseries Basis #1}\hfill{\small Erlaubt: Taschenrechner, Formelsammlung, Schmierblatt}\par\vspace{-6pt}}
+% v1.5: Grafik höchstens so breit wie #1 (verkleinert, nie vergrößert),
+% Grundlinie unten (die Bausteine hängen sonst nach unten);
+% Kästchen für <, =, > wie in der Vorlage
+\newsavebox{\zbox}
+\newcommand{\zbild}[2][\linewidth]{\sbox{\zbox}{#2}\raisebox{\depth}{\ifdim\wd\zbox>#1\relax\resizebox{#1}{!}{\usebox{\zbox}}\else\usebox{\zbox}\fi}}
+\newcommand{\zkasten}{\framebox[0.8cm]{\rule{0pt}{0.45cm}}}
+% v1.5: lange Einheit („Kästchen“, „Gläser“): kürzere Linie, breiteres Feld
+\newcommand{\feldlang}[3][]{\hfill #1\,\rule[-1pt]{1.3cm}{0.4pt}\,\makebox[1.8cm][l]{\small #2}\loes{#3}}
+\newcommand{\AFL}[6][]{\par\vspace{10pt plus 1fill}\parbox[b]{\tw}{\raggedright\nr{#1}{#2}#3}\feldlang[#4]{#5}{#6}}
+\newcommand{\TFL}[5][]{\par\vspace{3pt}\parbox[b]{\tw}{#2}\feldlang[#1]{#3}{#5}}
+"""
+Z08_BEFEHLE = {"AF", "AT", "TF", "AB", "op", "tipp", "kopf", "feld", "nr",
+               "loes", "li", "lis", "lf", "zbild", "zkasten", "large",
+               "setlength", "tw", "newpage", "vspace", "par", "hfill",
+               "small", "textbf", "noindent", "makebox", "raggedright",
+               "hspace", "framebox", "rule", "linewidth", "fill",
+               "setlength", "parbox", "footnotesize", "raisebox", "depth",
+               "feldlang", "AFL", "TFL"}
+
+
+def z08_typinfo():
+    """{typ: zeile aus typen.csv} mit thema, ab2020, jahrgaenge, rang und
+    kern (bool); dazu die Zahl der Jahrgänge seit KERN_AB."""
+    with open(BASIS / "typen.csv", encoding="utf-8", newline="") as f:
+        typen = list(csv.DictReader(f, delimiter=";"))
+    jahre = {int(j) for t in typen for j in t["jahre"].split()}
+    seit = len([j for j in range(KERN_AB, max(jahre) + 1)])
+    info = {}
+    for i, t in enumerate(typen):
+        t["ab2020"] = int(t.get("ab2020") or 0)
+        t["jahrgaenge"] = int(t["jahrgaenge"])
+        t["rang"] = i
+        t["kern"] = t["ab2020"] >= KERN_ANTEIL * seit
+        info[t["typ"]] = t
+    return info, seit
+
+
+def z08_vorrat():
+    vorrat = {}
+    for p in sorted(BASIS.glob("*.jsonl")):
+        for z in lies_jsonl(p):
+            vorrat.setdefault(z["kette"], []).append(z)
+    for zz in vorrat.values():
+        zz.sort(key=lambda z: z["variante"])
+    return vorrat
+
+
+def z08_art(z):
+    return ("original" if z.get("ist_original") else
+            "vorstufe" if z.get("vorstufe") else "bestand")
+
+
+def z08_optionen(aufgabe):
+    return re.findall(r"\\kreuz\{((?:[^{}]|\{(?:[^{}]|\{[^{}]*\})*\})*)\}",
+                      aufgabe)
+
+
+def z08_stamm(aufgabe):
+    return aufgabe.split("\\\\ \\kreuz")[0].strip()
+
+
+def z08_segmente(antwort):
+    if not antwort.strip():
+        return []
+    return [t for t in re.split(r"(?:^|\s)(?=[a-e]\) )", antwort.strip())
+            if t.strip()]
+
+
+def z08_grafikart(g):
+    if not g:
+        return ""
+    if "\\wertetabelle" in g:
+        return "tabelle"
+    if "\\quad" in g:
+        return "reihe"
+    if "\\begin{ksys}" in g:
+        return "ksys"
+    return "klein"
+
+
+def z08_sichtbar(t):
+    t = re.sub(r"\$[^$]*\$", "XXXX", t)
+    return re.sub(r"\\[A-Za-z]+|[{}]", "", t)
+
+
+def z08_stufe(z):
+    """Höhe für die Reihenfolge: 0 leicht (ohne Grafik, ein Feld oder kurzes
+    Ankreuzen, kurzer Text), 1 länger, 2 Teilaufgaben, 3 kleine Figur,
+    4 Figurenreihe, Koordinatensystem oder Tabelle."""
+    g = z08_grafikart(z.get("grafik", ""))
+    if g in ("reihe", "ksys", "tabelle"):
+        return 4
+    if g:
+        return 3
+    seg = z08_segmente(z.get("antwort", ""))
+    if len(seg) > 1:
+        return 2
+    text = len(z08_sichtbar(z08_stamm(z["aufgabe"])))
+    opt = sum(len(z08_sichtbar(o)) for o in z08_optionen(z["aufgabe"]))
+    if z["form"] == "ankreuzen":
+        return 0 if text <= 90 and opt <= 40 else 1
+    if seg and seg[0].count("__") > 1:
+        return 1
+    return 0 if text <= 75 else 1
+
+
+def z08_hoehe(z, variante):
+    """Geschätzte Höhe in cm (Text, Felder, Optionen, Grafik, Abstand)."""
+    zeile = 0.62 if variante == "schwach" else 0.53
+    je = 54 if variante == "schwach" else 64
+    stamm = z08_sichtbar(z08_stamm(z["aufgabe"]))
+    zeilen = len(stamm) // je + 1
+    opt = z08_optionen(z["aufgabe"])
+    if opt:
+        lang = sum(len(z08_sichtbar(o)) for o in opt)
+        zeilen += 1 if lang <= 55 or len(opt) > 4 else len(opt)
+    zeilen += len(z08_segmente(z.get("antwort", ""))) if len(
+        z08_segmente(z.get("antwort", ""))) > 1 else 0
+    text = zeilen * zeile
+    g = z08_grafikart(z.get("grafik", ""))
+    bild = {"": 0, "klein": 2.3, "ksys": 3.6, "reihe": 1.7,
+            "tabelle": 4.6}[g]
+    if g in ("klein", "ksys") and (opt or len(z08_segmente(
+            z.get("antwort", ""))) > 1):
+        h = max(text, bild)
+    else:
+        h = text + bild
+    if variante == "schwach" and z.get("tipp"):
+        h += 0.45
+    return h + 0.75
+
+
+def z08_plan(info, vorrat, nummer, variante, log=None):
+    """Zettel 1..nummer der Folge variante; gibt (Auswahl für nummer, Befunde
+    des Plans) oder (None, Grund), wenn der Vorrat nicht mehr reicht."""
+    genutzt, einsaetze = set(), {t: 0 for t in info}
+    zahl = ZETTEL_ZAHL[variante]
+    if variante == "schwach":
+        kern = [t for t in info if info[t]["kern"] and vorrat.get(t)]
+        dazu = sorted((t for t in info if not info[t]["kern"]
+                       and vorrat.get(t)),
+                      key=lambda t: (-info[t]["ab2020"],
+                                     -info[t]["jahrgaenge"], info[t]["rang"]))
+        erlaubt = list(kern)
+        themen = {info[t]["thema"] for t in erlaubt}
+        for t in dazu:
+            if len(erlaubt) >= zahl:
+                break
+            if info[t]["thema"] not in themen:
+                erlaubt.append(t)
+                themen.add(info[t]["thema"])
+        befund = ([f"nur {len(kern)} Kerntypen (Kern: ab2020 ≥ "
+                   f"{KERN_ANTEIL:.0%} der Jahrgänge seit {KERN_AB}); dazu "
+                   "genommen: " + ", ".join(erlaubt[len(kern):])]
+                  if len(kern) < zahl else [])
+    else:
+        erlaubt = [t for t in info if vorrat.get(t)]
+        befund = []
+    erlaubt = set(erlaubt)
+    for n in range(1, nummer + 1):
+        if variante == "schwach":
+            wahl = z08_waehle_fest(info, vorrat, sorted(
+                erlaubt, key=lambda t: info[t]["rang"]), genutzt, variante)
+        else:
+            wahl = z08_waehle(info, vorrat, erlaubt, genutzt, einsaetze,
+                              variante)
+        if isinstance(wahl, str):
+            return None, f"Zettel {n}: {wahl}"
+        if n == nummer:
+            return wahl, befund
+        for t, z in wahl:
+            genutzt.add(z["id"])
+            einsaetze[t] += 1
+    return None, "keine Nummer"
+
+
+def z08_waehle(info, vorrat, erlaubt, genutzt, einsaetze, variante):
+    """Eine Auswahl [(typ, zeile)] nach den Regeln oben oder ein Grund."""
+    zahl = ZETTEL_ZAHL[variante]
+    vorrang = sorted(erlaubt, key=lambda t: (
+        einsaetze[t] / (1 + info[t]["ab2020"]), -info[t]["jahrgaenge"],
+        info[t]["rang"]))
+    wahl, typen, themen = [], set(), set()
+    gross = 0
+    hoehe = 0.0
+
+    def frei(t, art=None, leicht=False):
+        for z in vorrat[t]:
+            if z["id"] in genutzt:
+                continue
+            if art and z08_art(z) != art:
+                continue
+            if leicht and z08_stufe(z) != 0:
+                continue
+            return z
+        return None
+
+    def nimm(t, z):
+        nonlocal gross, hoehe
+        g = z08_grafikart(z.get("grafik", "")) == "tabelle"
+        h = z08_hoehe(z, variante)
+        rest = zahl - len(wahl) - 1
+        # Platz für die noch fehlenden Aufgaben freihalten: je fehlende
+        # Vorstufe VORSTUFE_CM, sonst KURZ_CM
+        vst = sum(z08_art(x) == "vorstufe" for _, x in wahl) + (
+            z08_art(z) == "vorstufe")
+        fehlt_v = min(rest, max(0, VORSTUFEN_MIN[variante] - vst))
+        frei_cm = fehlt_v * VORSTUFE_CM[variante] + (rest - fehlt_v) * \
+            KURZ_CM[variante]
+        if g and gross >= GROSS_08:
+            return False
+        if hoehe + h + frei_cm > HOEHE_08[variante]:
+            return False
+        wahl.append((t, z))
+        typen.add(t)
+        themen.add(info[t]["thema"])
+        gross += g
+        hoehe += h
+        return True
+
+    def offen(t):
+        return t not in typen and info[t]["thema"] not in themen
+
+    # 1. verfremdete Originale
+    for t in vorrang:
+        if sum(z08_art(z) == "original" for _, z in wahl) >= ORIGINALE_MIN:
+            break
+        z = frei(t, "original") if offen(t) else None
+        if z:
+            nimm(t, z)
+    if sum(z08_art(z) == "original" for _, z in wahl) < ORIGINALE_MIN:
+        return (f"weniger als {ORIGINALE_MIN} verfremdete Originale "
+                "verschiedener Themen frei")
+    # 2. Vorstufen
+    for t in vorrang:
+        if sum(z08_art(z) == "vorstufe" for _, z in wahl) >= \
+                VORSTUFEN_MIN[variante]:
+            break
+        z = frei(t, "vorstufe") if offen(t) else None
+        if z:
+            nimm(t, z)
+    if sum(z08_art(z) == "vorstufe" for _, z in wahl) < VORSTUFEN_MIN[variante]:
+        return (f"weniger als {VORSTUFEN_MIN[variante]} Vorstufen "
+                "verschiedener Themen frei")
+    # 3. leichter Einstieg: so viele leichte Aufgaben, dass zwei vorn stehen
+    for t in vorrang:
+        if sum(z08_stufe(z) == 0 for _, z in wahl) >= LEICHT_ANFANG:
+            break
+        z = frei(t, "bestand", leicht=True) if offen(t) else None
+        if z:
+            nimm(t, z)
+    # 4. auffüllen (Bestand, dann weitere Originale und Vorstufen)
+    for art in ("bestand", None):
+        for t in vorrang:
+            if len(wahl) >= zahl:
+                break
+            z = frei(t, art) if offen(t) else None
+            if z:
+                nimm(t, z)
+    if len(wahl) < zahl:
+        return f"nur {len(wahl)} von {zahl} Aufgaben passen"
+    return z08_ordnen(wahl, info)
+
+
+def z08_waehle_fest(info, vorrat, typen, genutzt, variante):
+    """Zettel „schwach“: die Typen stehen fest (je einer); gesucht ist je Typ
+    eine Zeile – Original, Vorstufe, leichte oder andere Bestandsaufgabe –,
+    so dass die Regeln gelten. Alle Zuordnungen werden geprüft; gewählt wird
+    die, die am wenigsten Originale und Vorstufen verbraucht (sie sind
+    knapp) und sie bei den Typen nimmt, die am meisten davon übrig haben,
+    dann die niedrigste Höhe."""
+    import itertools
+    zahl = ZETTEL_ZAHL[variante]
+    if len(typen) < zahl:
+        return f"nur {len(typen)} Typen für {zahl} Aufgaben"
+    typen = typen[:zahl]
+    kandidaten = []
+    for t in typen:
+        k, arten = [], set()
+        for z in vorrat[t]:
+            if z["id"] in genutzt:
+                continue
+            schluessel = (z08_art(z), z08_stufe(z) == 0)
+            if schluessel not in arten:
+                arten.add(schluessel)
+                k.append(z)
+        if not k:
+            return f"Typ {t} erschöpft"
+        kandidaten.append(k)
+    rest = {(t, a): sum(1 for z in vorrat[t] if z["id"] not in genutzt
+                        and z08_art(z) == a)
+            for t in typen for a in ("original", "vorstufe", "bestand")}
+    beste = None
+    for wahl in itertools.product(*kandidaten):
+        orig = sum(z08_art(z) == "original" for z in wahl)
+        vst = sum(z08_art(z) == "vorstufe" for z in wahl)
+        leicht = sum(z08_stufe(z) == 0 for z in wahl)
+        gross = sum(z08_grafikart(z.get("grafik", "")) == "tabelle"
+                    for z in wahl)
+        hoehe = sum(z08_hoehe(z, variante) for z in wahl)
+        if (orig < ORIGINALE_MIN or vst < VORSTUFEN_MIN[variante]
+                or leicht < LEICHT_ANFANG or gross > GROSS_08
+                or hoehe > HOEHE_08[variante]):
+            continue
+        # knappe Arten dort nehmen, wo am meisten davon übrig ist
+        vorrat_rest = -sum(rest[(t, z08_art(z))] for t, z in zip(typen, wahl)
+                           if z08_art(z) != "bestand")
+        wert = (orig, vst, vorrat_rest, hoehe)
+        if beste is None or wert < beste[0]:
+            beste = (wert, wahl)
+    if beste is None:
+        return ("keine Zuordnung erfüllt die Regeln (Originale, Vorstufen, "
+                "leichter Einstieg, Höhe)")
+    return z08_ordnen(list(zip(typen, beste[1])), info)
+
+
+def z08_ordnen(wahl, info):
+    """Leichte zuerst (Stufe 0: Originale dahinter, kurze Texte vorn), dann
+    nach Stufe; innerhalb einer Stufe Bereich wie im Basisteil."""
+    def folge(tz):
+        t, z = tz
+        e = z["eintrag"]
+        return (z08_stufe(z), len(z08_sichtbar(z08_stamm(z["aufgabe"]))) // 40,
+                ZETTEL_FOLGE.index(e) if e in ZETTEL_FOLGE else 99,
+                info[t]["rang"])
+    return sorted(wahl, key=folge)
+
+
+# --- Satz ----------------------------------------------------------------
+
+def z08_mathe(t):
+    """„x =“ und „U =“ im Antwortgerüst als Formel."""
+    t = t.strip()
+    if t and "$" not in t and re.fullmatch(r"[A-Za-z]{1,3} =", t):
+        return f"${t}$"
+    return t
+
+
+def z08_feldteile(seg):
+    """(Vortext, Einheit) bei einem Feld; None bei mehreren Feldern."""
+    seg = re.sub(r"^[a-e]\) ", "", seg.strip())
+    if seg.count("__") != 1:
+        return None
+    vor, nach = seg.split("__")
+    return pct(z08_mathe(vor)), pct(nach.strip())
+
+
+def z08_af(einheit):
+    """\\AF (Einheit passt in 0,7 cm) oder \\AFL (lange Einheit)."""
+    return "AFL" if z08_breite(einheit) > 3 else "AF"
+
+
+def z08_lang(vor):
+    """Vortext zu breit für den Platz vor der Linie (Vorlage: „x =“, „V =“)?
+    Dann steht er rechtsbündig am Ende der Textspalte."""
+    return z08_breite(vor) > 3
+
+
+def z08_inline(seg):
+    """Mehrere Felder in einer Zeile („S( __ | __ )“, „__ h __ min“)."""
+    seg = re.sub(r"^[a-e]\) ", "", seg.strip())
+    teile = pct(seg).split("__")
+    aus = z08_mathe(teile[0])
+    for t in teile[1:]:
+        aus += "\\,\\lf\\," + t.strip() + " "
+    return aus.strip()
+
+
+def z08_vergleich(seg):
+    """„3,5 m __ 35 cm“: Größen links und rechts → Kästchen wie Vorlage."""
+    seg = re.sub(r"^[a-e]\) ", "", seg.strip())
+    if seg.count("__") != 1:
+        return None
+    vor, nach = (s.strip() for s in seg.split("__"))
+    if re.search(r"\d", vor) and re.search(r"\d", nach):
+        return f"{pct(vor)} \\ \\zkasten\\ {pct(nach)}"
+    return None
+
+
+def z08_teiltexte(stamm, n):
+    """Einleitung und je Teil der Text (aus „… a) … b) …“), sonst nur die
+    Buchstaben."""
+    m = re.split(r"(?:^|\s)(?=[a-e]\) )", stamm)
+    if len(m) == n + 1 or (len(m) == n and m[0].startswith("a) ")):
+        if m[0].startswith("a) "):
+            m = [""] + m
+        intro = m[0].strip()
+        teile = [re.sub(r"(?:,|;)?\s*(?:und)?\s*$", "", t.strip())
+                 for t in m[1:]]
+        teile = [t if t.endswith((".", "…", "?", "!")) else t
+                 for t in teile]
+        return intro, teile
+    return stamm, [f"{'abcde'[i]})" for i in range(n)]
+
+
+def z08_breite(t):
+    """Ungefähre Zahl der Zeichen, die t gesetzt braucht (Formeln mit)."""
+    t = re.sub(r"\\(?:cdot|square|circ|le|ge)\b", "x", t)
+    t = re.sub(r"\\frac\{([^{}]*)\}\{([^{}]*)\}", r"\1", t)
+    t = re.sub(r"\\[A-Za-z]+|[{}$^_]|\\[,;! ]", "", t)
+    return len(t)
+
+
+def z08_optionszeilen(opt, variante="normal"):
+    """Ankreuzoptionen: passen sie in eine Zeile, in eine Zeile; sonst zwei
+    je Zeile, bei langen Optionen je eine. Option, die nur ihr eigener
+    Buchstabe ist, ohne Text."""
+    buch = "ABCDEF"
+    teile = []
+    for i, o in enumerate(opt):
+        text = "" if (len(o) == 1 and o.isalpha()) else o
+        teile.append(f"\\op{{{buch[i]}}}{{{text}}}")
+    zeichen = 50 if variante == "schwach" else 60
+    breiten = [z08_breite(o) + 6 for o in opt]
+    if sum(breiten) <= zeichen:
+        return ["".join(teile)]
+    paare = [teile[i:i + 2] for i in range(0, len(teile), 2)]
+    if all(sum(breiten[i:i + 2]) <= zeichen for i in range(0, len(opt), 2)):
+        return ["".join(p) for p in paare]
+    return teile
+
+
+def z08_figurenreihe(g):
+    """Figurenreihe mit Buchstaben „A …“ → „A □ …“ wie in der Vorlage."""
+    return re.sub(r"(^|\\quad )([A-F]) ",
+                  lambda m: m.group(1) + f"{{\\small {m.group(2)}\\,$\\square$}}\\,",
+                  g.strip())
+
+
+def z08_tabellen(g):
+    return re.sub(r"(^|\s)([A-F]): ",
+                  lambda m: m.group(1) + f"\\par\\vspace{{3pt}}{{\\small "
+                  f"{m.group(2)}\\,$\\square$}}\\quad ", g.strip())
+
+
+def z08_streifen(e):
+    """Lösung im Streifen: lange Ergebnisse klein und umbrochen (Streifen
+    2,7 cm breit)."""
+    if z08_breite(e) > 9:
+        return f"\\parbox[b]{{2.1cm}}{{\\raggedright\\footnotesize {e}}}"
+    return e
+
+
+def z08_satz(nr, typ, z, variante, log):
+    """Eine Aufgabe in den Makros der Vorlage."""
+    jahr = str(z["original"]["jahr"]) if z.get("ist_original") else ""
+    j = f"[{jahr}]" if jahr else ""
+    stamm = z08_stamm(z["aufgabe"])
+    stamm = re.sub(r"(?<![\\\w])__(?!\w)", r"\\lf", stamm)
+    opt = z08_optionen(z["aufgabe"])
+    erg = [z08_streifen(e) for e in
+           (z.get("ergebnis") or [kurz_loesung(z["loesung"])])]
+    g = z.get("grafik", "")
+    if ",ablesen]" in g:
+        g = g.replace(",ablesen]", ",klein]")
+    art = z08_grafikart(g)
+    seg = z08_segmente(z.get("antwort", ""))
+    kopf = [f"% {nr}: {typ} – {z['id']}"
+            + (f" (Original {z['original']['id']}, verfremdet: "
+               f"{z.get('verfremdung')})" if jahr else "")
+            + (" (Vorstufe)" if z.get("vorstufe") else "")]
+    aus = []
+    if z["form"] == "ankreuzen":
+        buchstaben = all(len(o) == 1 and o.isalpha() for o in opt)
+        if buchstaben and art == "reihe":
+            aus.append(f"\\AT{j}{{{nr}}}{{{stamm}}}")
+            aus.append(f"\\vspace{{4pt}}\\zbild[\\tw]{{{z08_figurenreihe(g)}}}"
+                       f"\\hfill\\loes{{{erg[0]}}}")
+        elif buchstaben and art == "tabelle":
+            aus.append(f"\\AT{j}{{{nr}}}{{{stamm}\\li{{{erg[0]}}}}}")
+            aus.append(z08_tabellen(g))
+        else:
+            zeilen = z08_optionszeilen(opt, variante)
+            if art:
+                inhalt = (stamm + "\\par\\vspace{5pt}"
+                          + "\\par\\vspace{3pt}".join(zeilen)
+                          + f"\\li{{{erg[0]}}}")
+                aus.append(f"\\AB{j}{{{nr}}}{{{inhalt}}}{{\\zbild{{{g}}}}}")
+            else:
+                aus.append(f"\\AT{j}{{{nr}}}{{{stamm}}}")
+                erste, *rest = zeilen
+                aus.append(f"\\vspace{{3pt}}{erste}\\hfill\\loes{{{erg[0]}}}")
+                for r in rest:
+                    aus.append(f"\\par\\vspace{{2pt}}{r}")
+    elif len(seg) > 1:
+        intro, teile = z08_teiltexte(stamm, len(seg))
+        if art in ("klein", "ksys"):
+            zeilen = [intro]
+            for t, s, e in zip(teile, seg, erg):
+                ft = z08_feldteile(s)
+                feld = (f"{ft[0]}\\,\\lf\\,{ft[1]}" if ft else z08_inline(s))
+                zeilen.append(f"{t} \\hfill {feld}\\lis{{{e}}}")
+            inhalt = "\\par\\vspace{4pt}".join(x for x in zeilen if x)
+            aus.append(f"\\AB{j}{{{nr}}}{{{inhalt}}}{{\\zbild{{{g}}}}}")
+        else:
+            aus.append(f"\\AT{j}{{{nr}}}{{{intro}}}")
+            if art:
+                aus.append(f"\\vspace{{2pt}}\\zbild[\\tw]{{{g}}}")
+            for t, s, e in zip(teile, seg, erg):
+                ft = z08_feldteile(s)
+                tf = "TFL" if z08_af(ft[1] if ft else "") == "AFL" else "TF"
+                if ft and z08_lang(ft[0]):
+                    aus.append(f"\\{tf}{{{t}\\hfill {ft[0]}}}{{{ft[1]}}}{{}}"
+                               f"{{{e}}}")
+                elif ft:
+                    aus.append(f"\\{tf}[{ft[0]}]{{{t}}}{{{ft[1]}}}{{}}{{{e}}}")
+                else:
+                    aus.append(f"\\par\\vspace{{3pt}}\\parbox[b]{{\\tw}}{{{t}}}"
+                               f"\\hfill {z08_inline(s)}\\loes{{{e}}}")
+    else:
+        s = seg[0] if seg else ""
+        ft = z08_feldteile(s) if s else ("", "")
+        vergleich = z08_vergleich(s) if s else None
+        e = erg[0] if len(erg) == 1 else "; ".join(erg)
+        if vergleich:
+            aus.append(f"\\AT{j}{{{nr}}}{{{stamm}}}")
+            aus.append(f"\\vspace{{2pt}}{vergleich}\\hfill\\loes{{{e}}}")
+        elif not art and ft and z08_lang(ft[0]):
+            aus.append(f"\\{z08_af(ft[1])}{j}{{{nr}}}{{{stamm}\\hfill\\ "
+                       f"{ft[0]}}}{{}}{{{ft[1]}}}{{{e}}}")
+        elif not art and ft:
+            aus.append(f"\\{z08_af(ft[1])}{j}{{{nr}}}{{{stamm}}}{{{ft[0]}}}"
+                       f"{{{ft[1]}}}{{{e}}}")
+        elif not art:
+            aus.append(f"\\AT{j}{{{nr}}}{{{stamm}}}")
+            aus.append(f"\\vspace{{2pt}}\\hfill {z08_inline(s)}\\loes{{{e}}}")
+        else:
+            breite = "\\tw" if art in ("reihe", "tabelle") else "6cm"
+            aus.append(f"\\AT{j}{{{nr}}}{{{stamm}}}")
+            bild = (f"\\begin{{minipage}}[b]{{\\tw}}{g}\\end{{minipage}}"
+                    if art == "tabelle" else f"\\zbild[{breite}]{{{g}}}")
+            if z["form"] == "zeichnen" or not s:
+                aus.append(f"\\vspace{{2pt}}{bild}\\hfill\\loes{{{e}}}")
+            elif ft:
+                feld = "feldlang" if z08_af(ft[1]) == "AFL" else "feld"
+                aus.append(f"\\vspace{{2pt}}{bild}\\{feld}[{ft[0]}]"
+                           f"{{{ft[1]}}}{{{e}}}")
+            else:
+                aus.append(f"\\vspace{{2pt}}{bild}\\hfill {z08_inline(s)}"
+                           f"\\loes{{{e}}}")
+    if variante == "schwach" and z.get("tipp"):
+        aus.append(f"\\tipp{{{z['tipp']}}}")
+    return kopf + aus
+
+
+def z08_gegenprobe(wahl, info, variante, befund):
+    """Regeln des Rezepts am fertigen Zettel prüfen → [(ok, Text)]."""
+    zahl = ZETTEL_ZAHL[variante]
+    typen = [t for t, _ in wahl]
+    themen = [info[t]["thema"] for t in typen]
+    orig = sum(1 for _, z in wahl if z.get("ist_original"))
+    vst = sum(1 for _, z in wahl if z.get("vorstufe"))
+    stufen = [z08_stufe(z) for _, z in wahl]
+    aus = [
+        (len(wahl) == zahl, f"Zahl der Aufgaben {len(wahl)} (soll {zahl})"),
+        (orig >= ORIGINALE_MIN, f"verfremdete Originale {orig} (soll ≥ "
+                                f"{ORIGINALE_MIN})"),
+        (all(s == min(stufen) == 0 for s in stufen[:LEICHT_ANFANG]),
+         f"erste {LEICHT_ANFANG} Aufgaben aus der leichtesten Höhe (Stufen "
+         + ", ".join(str(s) for s in stufen[:LEICHT_ANFANG])
+         + f"; leichteste {min(stufen)})"),
+        (len(set(typen)) == len(typen), "kein Typ doppelt"
+         + ("" if len(set(typen)) == len(typen) else ": "
+            + ", ".join(sorted({t for t in typen if typen.count(t) > 1})))),
+        (len(set(themen)) == len(themen), "kein Thema doppelt"),
+        (vst >= VORSTUFEN_MIN[variante], f"Vorstufen {vst} (soll ≥ "
+                                         f"{VORSTUFEN_MIN[variante]})"),
+    ]
+    if variante == "schwach":
+        nicht = [t for t in typen if not info[t]["kern"]]
+        aus.append((not nicht, "nur Kerntypen" + (
+            "" if not nicht else ": nicht Kern " + "; ".join(
+                f"{t} ({info[t]['ab2020']} Jahrgänge seit {KERN_AB})"
+                for t in nicht))))
+    for b in befund:
+        aus.append((False, "Plan: " + b))
+    return aus
+
+
 def main_zettel(args):
-    """Rezept Z (v0.7): Basis <n> der festen Serie, Kennung BAS-S<n>."""
+    """Rezept Z v0.8: Basis <n> nach der Vorlage vom 03.10.2026, Kennung
+    BAS-S<n> (normal) bzw. BAS-W<n> (--schwach); Probe: BAS-S0/BAS-W0."""
     log = Log()
-    if args.eintrag or args.heft or args.fokus or args.schwach:
+    if args.eintrag or args.heft or args.fokus:
         sys.exit("--zettel nimmt keinen Eintrag und kein anderes Rezept")
-    typen, vorrat = lies_vorrat()
-    if not typen:
+    variante = "schwach" if args.schwach else "normal"
+    info, seit = z08_typinfo()
+    vorrat = z08_vorrat()
+    if not vorrat:
         sys.exit("bank/_basis/ ist leer – kein Vorrat")
-    kuerzel, rezept = "BAS", "S"
+    kuerzel, rezept = "BAS", ("W" if args.schwach else "S")
     register = lies_register()
     nummer = args.nummer or naechste_nummer(kuerzel, rezept, register)
-    kennung = f"{kuerzel}-{rezept}{nummer}"
+    kennung = (f"{kuerzel}-{rezept}0" if args.ohne_register
+               else f"{kuerzel}-{rezept}{nummer}")
     aufruf = ["zusammenbau.py", "--zettel", args.zettel]
+    if args.schwach:
+        aufruf.append("--schwach")
     if args.nummer:
         aufruf += ["--nummer", str(args.nummer)]
     if args.ohne_register:
         aufruf.append("--ohne-register")
+    if args.rueckseite:
+        aufruf.append("--rueckseite")
     log(f"# zusammenbau {VERSION}: " + " ".join(aufruf))
-    ab = zettel_erschoepft(typen, vorrat)
-    log(f"VORRAT {len(typen)} Typen, {sum(len(v) for v in vorrat.values())} "
-        f"Aufgaben; Serie trägt {ab - 1 if ab else '∞'} Zettel")
-    if ab is not None and nummer >= ab:
-        print(f"Vorrat erschöpft ab Zettel {ab} – Zettel {nummer} nicht gebaut")
-        return 1
+    zeilen = [z for zz in vorrat.values() for z in zz]
+    zahlen = {a: sum(z08_art(z) == a for z in zeilen)
+              for a in ("bestand", "original", "vorstufe")}
+    kern = sorted((t for t in info if info[t]["kern"]),
+                  key=lambda t: info[t]["rang"])
+    log(f"VORRAT {len(vorrat)} Typen, {len(zeilen)} Aufgaben (Bestand "
+        f"{zahlen['bestand']}, verfremdete Originale {zahlen['original']}, "
+        f"Vorstufen {zahlen['vorstufe']})")
+    log(f"KERN {len(kern)} Typen (ab2020 ≥ {KERN_ANTEIL:.0%} von {seit} "
+        f"Jahrgängen {KERN_AB}–{KERN_AB + seit - 1}): " + "; ".join(kern))
     if (not args.ohne_register
             and any(z.get("kennung") == kennung for z in register)):
         sys.exit(f"{kennung} steht schon in bau/register.csv – nichts gebaut")
+    wahl, befund = z08_plan(info, vorrat, nummer, variante, log)
+    if wahl is None:
+        log(f"ERSCHÖPFT {befund}")
+        print(f"Vorrat erschöpft – Basis {nummer} ({variante}) nicht gebaut: "
+              f"{befund}")
+        # Länge der Folge nachsehen
+        return 1
+    reicht = nummer
+    while reicht < 200 and z08_plan(info, vorrat, reicht + 1, variante)[0]:
+        reicht += 1
     vorlage = finde_vorlage(args.vorlage)
     version = vorlage.read_text(encoding="utf-8").splitlines()[1].lstrip("% ")
     version = version.split(" (", 1)[0]
-    log(f"VORLAGE mathblatt.sty: {version}")
-    log(f"KENNUNG {kennung} – Basisserie (Rezept Z v0.7), auf dem Blatt "
-        f"nur „Basis {nummer}“"
+    log(f"VORLAGE mathblatt.sty: {version} (nur Grafik-Bausteine)")
+    log(f"KENNUNG {kennung} – Basiszettel (Rezept Z v0.8, {variante}), auf "
+        f"dem Blatt nur „Basis {nummer}“"
         + (" (Probe ohne Register)" if args.ohne_register else ""))
-    plan, _ = zettel_plan(typen, vorrat, nummer)
-    info = {t["typ"]: t for t in typen}
-    zettel = zettel_ordnen(plan[-1], info)
-    vorher = {t for w in plan[:-1] for t, _ in w}
-    zahl = len(zettel)
-    hoehe = zettel_seitenhoehe(zettel)
-    log(f"HÖHE {hoehe:.1f} cm (Maß {SEITE_CM} cm), {zahl} Aufgaben, davon "
-        f"{sum(t not in vorher for t, _ in zettel)} Typen zum ersten Mal")
-    a = ["\\documentclass[11pt]{article}", "\\usepackage{mathblatt}",
-         "\\begin{document}", "\\pagestyle{empty}\\thispagestyle{empty}",
-         f"\\noindent\\hfill{{\\footnotesize Basis {nummer}}}\\par"
-         "\\vspace{2pt}",
-         "% \\small, eine Spalte, volle Seite (v0.7)", "\\small", ""]
-    l = ["\\clearpage\\thispagestyle{empty}",
-         f"\\noindent{{\\footnotesize Basis {nummer} – Lösungen}}\\par"
-         "\\vspace{6pt}", "\\small"]
+    log(f"FOLGE {variante} trägt {reicht} Zettel"
+        + (" (oder mehr)" if reicht >= 200 else ""))
+    a = [VORSPANN_08.rstrip(), "\\begin{document}"]
+    if variante == "schwach":
+        a += ["\\large", f"\\setlength{{\\tw}}{{{TW_08['schwach']}cm}}"]
+    a.append(f"\\kopf{{{nummer}}}")
     aufgaben = []
-    for nr, (typ, z) in enumerate(zettel, 1):
-        a += zettel_satz(nr, typ, z, log) + [""]
-        l.append(f"\\noindent\\makebox[1.8em][l]{{{nr}}}{z['loesung']}\\par")
+    hoehe = 0.0
+    for nr, (typ, z) in enumerate(wahl, 1):
+        a += z08_satz(nr, typ, z, variante, log)
         t = info[typ]
-        log(f"AUSWAHL Nr. {nr}: {z['id']} – {typ} (Niveau {t['niveau']}, "
-            f"Jahrgänge {t['jahrgaenge']}, seit 2020 {t['ab2020']}, "
-            f"Variante {z['variante']}, Stufe {zettel_stufe(z)}"
-            + (", neu" if typ not in vorher else "") + ")")
+        h = z08_hoehe(z, variante)
+        hoehe += h
+        log(f"AUSWAHL Nr. {nr}: {z['id']} – {typ} ({z08_art(z)}"
+            + (f" {z['original']['id']}, verfremdet {z.get('verfremdung')}"
+               if z.get("ist_original") else "")
+            + f"; Thema {t['thema']}; Jahrgänge seit {KERN_AB} {t['ab2020']}"
+            + (", Kern" if t["kern"] else "")
+            + f"; Stufe {z08_stufe(z)}; Höhe ≈ {h:.1f} cm)")
         aufgaben.append({"aufgabe": f"A{nr}", "hauptnummer": nr,
-                         "id": z["id"], "kette": typ,
-                         "niveau": t["niveau"], "jahrgaenge": t["jahrgaenge"],
-                         "ab2020": t["ab2020"], "variante": z["variante"],
-                         "stufe": zettel_stufe(z), "neu": typ not in vorher,
-                         "ist_original": ist_original(z),
-                         "original": (z.get("original") or {}).get("id")})
-    texte = {f"{kennung}.tex": "\n".join(a + l + ["\\end{document}"]) + "\n"}
+                         "id": z["id"], "kette": typ, "thema": t["thema"],
+                         "art": z08_art(z), "kern": t["kern"],
+                         "ab2020": t["ab2020"], "stufe": z08_stufe(z),
+                         "original": (z["original"]["id"]
+                                      if z.get("ist_original") else None),
+                         "verfremdung": z.get("verfremdung"),
+                         "ergebnis": z.get("ergebnis")})
+    a.append("\\vspace*{\\fill}")
+    if args.rueckseite:
+        a += ["\\newpage", f"{{\\bfseries Basis {nummer}}}\\par\\vspace{{8pt}}",
+              "\\small"]
+        for nr, (_, z) in enumerate(wahl, 1):
+            a.append(f"\\makebox[1.8em][l]{{{nr}}}"
+                     + "; ".join(z.get("ergebnis") or []) + "\\par")
+    a.append("\\end{document}")
+    log(f"HÖHE ≈ {hoehe:.1f} cm (Maß {HOEHE_08[variante]} cm)")
+    proben = z08_gegenprobe(wahl, info, variante, befund)
+    for ok, text in proben:
+        log(f"GEGENPROBE {'ok ' if ok else 'VERLETZT'} {text}")
+    verletzt = sum(not ok for ok, _ in proben)
+    texte = {f"{kennung}.tex": "\n".join(a) + "\n"}
     sig = BP.lade_bausteine(WURZEL / "mappen" / "_bausteine.md")
-    fehler = pruefe_struktur(texte, sig)
+    rumpf = "\\begin{document}" + texte[f"{kennung}.tex"].split(
+        "\\begin{document}", 1)[1]
+    fehler = pruefe_struktur({f"{kennung}.tex": rumpf}, sig, Z08_BEFEHLE)
     ziel = Path(args.aus) if args.aus else WURZEL / "bau" / "zettel" / kennung
     if not args.ohne_register and ziel.exists() and any(ziel.iterdir()):
         sys.exit(f"{ziel} ist nicht leer – nichts gebaut")
@@ -6556,6 +7258,15 @@ def main_zettel(args):
     log(f"STRUKTUR {len(fehler)} Fehler")
     for name, zl, meldung in fehler:
         log(f"  FEHLER {name}:{zl}: {meldung}")
+    seiten = None
+    if args.pdf:
+        seiten, renderfehler = z08_rendern(ziel, kennung, log)
+        soll = 2 if args.rueckseite else 1
+        log(f"GEGENPROBE {'ok ' if seiten == soll else 'VERLETZT'} Seiten "
+            f"{seiten} (soll {soll})")
+        log(f"GEGENPROBE {'ok ' if not renderfehler else 'VERLETZT'} "
+            f"Renderfehler {renderfehler}")
+        verletzt += (seiten != soll) + bool(renderfehler)
     (ziel / "zusammenbau.log").write_text("\n".join(log.zeilen) + "\n",
                                           encoding="utf-8", newline="\n")
     datum = heute()
@@ -6566,14 +7277,16 @@ def main_zettel(args):
         pfad = ziel.resolve().as_posix()
     bauzettel = {
         "kennung": kennung, "datum": datum, "eintraege": ["_basis"],
-        "rezept": rezept, "rezept_name": "Basisserie",
-        "rezept_version": "Z v0.7",
+        "rezept": rezept, "rezept_name": "Basiszettel " + variante,
+        "rezept_version": "Z v0.8",
         "bestellung": {"zettel": args.zettel, "nummer": nummer,
+                       "schwach": bool(args.schwach),
                        "ohne_register": args.ohne_register},
         "bank_commit": commit, "zusammenbau": VERSION, "vorlage": version,
         "pfad": pfad, "kuerzel_quelle": "fest (Basisvorrat)",
-        "strukturfehler": len(fehler), "hoehe_cm": round(hoehe, 1),
-        "vorrat_erschoepft_ab": ab, "aufgaben": aufgaben}
+        "strukturfehler": len(fehler), "gegenprobe_verletzt": verletzt,
+        "hoehe_cm": round(hoehe, 1), "folge_traegt": reicht,
+        "seiten": seiten, "aufgaben": aufgaben}
     (ziel / "bau.json").write_text(
         json.dumps(bauzettel, ensure_ascii=False, indent=1) + "\n",
         encoding="utf-8", newline="\n")
@@ -6581,18 +7294,43 @@ def main_zettel(args):
         haenge_an_register({
             "kennung": kennung, "datum": datum, "eintraege": "_basis",
             "rezept": rezept,
-            "bestellung": f"zettel={args.zettel}, nummer={nummer}",
+            "bestellung": f"zettel={args.zettel}, nummer={nummer}, "
+                          f"{variante}",
             "bank_commit": commit, "zusammenbau": VERSION,
             "vorlage": version, "pfad": pfad})
         print(f"REGISTER {kennung} an bau/register.csv angehängt")
-    print(f"KENNUNG {kennung} (Basis {nummer})")
-    print(f"{len(texte)} Quelltext nach {ziel}; {zahl} Aufgaben, Höhe "
-          f"{hoehe:.1f} cm")
-    print(f"Serie trägt {ab - 1 if ab else '∞'} Zettel (erschöpft ab {ab})")
+    print(f"KENNUNG {kennung} (Basis {nummer}, {variante})")
+    print(f"{len(texte)} Quelltext nach {ziel}; {len(wahl)} Aufgaben, Höhe "
+          f"≈ {hoehe:.1f} cm; Folge trägt {reicht} Zettel")
+    for ok, text in proben:
+        print(f"GEGENPROBE {'ok ' if ok else 'VERLETZT'} {text}")
+    if seiten is not None:
+        print(f"PDF {seiten} Seite(n)")
     print(f"Strukturprüfung {len(fehler)} Fehler")
     for name, zl, meldung in fehler:
         print(f"FEHLER {name}:{zl}: {meldung}")
-    return 1 if fehler else 0
+    return 1 if fehler or verletzt else 0
+
+
+def z08_rendern(ziel, kennung, log):
+    """Zweimal xelatex (Linie über remember picture); → (Seiten, Fehler)."""
+    for _ in range(2):
+        r = subprocess.run(["xelatex", "-interaction=nonstopmode",
+                            f"{kennung}.tex"], cwd=ziel,
+                           stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    logtext = (ziel / f"{kennung}.log").read_text(encoding="utf-8",
+                                                  errors="replace")
+    m = re.search(r"Output written on .*?\((\d+) pages?", logtext)
+    seiten = int(m.group(1)) if m else 0
+    fehler = len(re.findall(r"^! ", logtext, re.M))
+    voll = len(re.findall(r"^Overfull \\hbox", logtext, re.M))
+    log(f"RENDER xelatex ×2: {seiten} Seite(n), {fehler} Fehler, "
+        f"{voll} Overfull hbox, Rückgabe {r.returncode}")
+    for name in (".aux", ".out", ".abh"):
+        p = ziel / f"{kennung}{name}"
+        if p.exists():
+            p.unlink()
+    return seiten, fehler
 
 
 if __name__ == "__main__":
