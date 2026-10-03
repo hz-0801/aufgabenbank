@@ -6505,7 +6505,7 @@ def zettel_satz(nr, typ, z, log):
 #
 # Form wie bau/zettel/vorlage-2026-10-03/vorlage.tex (vom Lehrer gutgeheißen):
 # ein Blatt, eine Spalte, 12pt; Kopf „Basis n“ fett links und rechts klein
-# „Erlaubt: Taschenrechner, Formelsammlung, Schmierblatt“; gestrichelte Linie
+# Kopf nur „Basis n“ (Hilfsmittel nicht auf dem Zettel, Lehrer 03.10.); gestrichelte Linie
 # 2,7 cm vom rechten Blattrand, rechts davon der Lösungsstreifen (je Feld das
 # kurze Ergebnis aus dem Feld ergebnis, bei Ankreuzen der Buchstabe); Text in
 # fester Spalte (11,4 cm), Feld rechts: Buchstabe vor der Linie, Einheit
@@ -6567,7 +6567,7 @@ VORSPANN_08 = r"""\documentclass[12pt]{article}
 \newcommand{\kopf}[1]{\begin{tikzpicture}[remember picture,overlay]
  \draw[gray,dashed,line width=0.4pt] ($(current page.north east)+(-2.7cm,-1.2cm)$)--($(current page.south east)+(-2.7cm,1.0cm)$);
 \end{tikzpicture}%
-\llap{\makebox[1.6cm][l]{}}{\bfseries Basis #1}\hfill{\small Erlaubt: Taschenrechner, Formelsammlung, Schmierblatt}\par\vspace{-6pt}}
+\llap{\makebox[1.6cm][l]{}}{\bfseries Basis #1}\par\vspace{-6pt}}
 % v1.5: Grafik höchstens so breit wie #1 (verkleinert, nie vergrößert),
 % Grundlinie unten (die Bausteine hängen sonst nach unten);
 % Kästchen für <, =, > wie in der Vorlage
