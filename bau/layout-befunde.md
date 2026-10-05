@@ -263,5 +263,6 @@ befund-punkte-eichung-2026-10-05.md in mathe-nachhilfe.
    Teilaufgaben mit anderem Weg eine Kleinzeile mit dem
    Gerätebefehl.
 10. „schwach“: je Zwischenergebnis Wort + Ansatz ⇒ Wert.
-11. Quelle der Kurzlösung: Katalogfeld kurzloesung; ergebnis bleibt
-    die amtliche Fassung.
+11. Quelle der Kurzlösung: Katalogfeld kurzloesung; ergebnis ist
+    das Endergebnis des Katalogs (eigene Rechnung bei den
+    BB-Heften, amtlich nur bei Muster 2028 und IQB).
