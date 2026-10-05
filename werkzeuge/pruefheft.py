@@ -590,6 +590,7 @@ class Stufe:
         self.kern = z['kern'] == 'ja'
         self.ids = z['katalog_ids'].split()
         self.sprossen = z['bank_sprossen'].split()
+        self.zielzahl = int(z.get('ziel') or 6)
         self.aufgaben = []
         self.ziel = 's' + re.sub(r'[^a-z]', '', self.name.lower())[:20]
 
@@ -706,7 +707,14 @@ def baue_modell(D, args):
         if rest:
             echte = rest   # Prüfstein-Teilaufgaben nicht doppelt (Entscheidung)
         echte.sort(key=lambda a: (a.rang, -a.jahr))
-        n = args.bank if args.bank is not None else (3 if st.kern else 2)
+        # Bankaufgaben je Stufe (Entscheidung): Vorgabe Kern 3, sonst 2 (Leitaufgabe + weitere
+        # bleiben überblätterbar); im Fokus bis zur Zielzahl der Zuordnung (zwei Durchgänge).
+        if args.bank is not None:
+            n = args.bank
+        elif args.fokus and args.fokus.lower() in st.name.lower():
+            n = max(0, st.zielzahl - len(echte))
+        else:
+            n = 3 if st.kern else 2
         bank = [bank_aufgabe(D, r, st.name) for r in bank_wahl(D, st, n)]
         st.reserve = bank_wahl(D, st, 50, {b.id for b in bank})
         if not echte:
@@ -1047,7 +1055,7 @@ def main():
             sys.exit(f'Fokus „{args.fokus}“ trifft keine Stufe')
         teil += f'-fokus-{args.fokus.lower()}'
         mit_ue = False
-        unter = f'Fokus {args.fokus}' + (' \\textperiodcentered{} schwach' if args.art == 'schwach' else '')
+        unter = 'Prüfungsheft P10 \\textperiodcentered{} Fokus' + (' \\textperiodcentered{} schwach' if args.art == 'schwach' else '')
     name = f'{args.kapitel}-{teil}'
     arbeit = tempfile.mkdtemp(prefix='pruefheft-')
     if args.portion:
