@@ -1,6 +1,9 @@
 # Aufgabenbank – Form und Regeln
 
-Stand 2026-10-02, siebte Fassung (Leiterregeln 02.10.: Rückwärts-
+Stand 2026-10-05, achte Fassung (Beschlüsse 05.10.: Ziel 12
+Aufgaben je Kern-Stufe, 6 je übriger Stufe, Zählregel; Kern aus
+hoehe; Option „schwach“ ohne Musterbeispiel; vorher siebte Fassung
+02.10., Leiterregeln: Rückwärts-
 und Mischsprosse vor der Prüfungssprosse, krumme Zahlen oben,
 Zusatzzeilen über der Sollmenge, herkunft „Regel 02.10.“; vorher
 sechste Fassung 01.10.: Feld herkunft für Zeilen aus Blatt-Chats, Übernahme durch den Blatt-Chat 01.10.; Vorstufen-Nummerierung, eine
@@ -98,7 +101,13 @@ Leerzeilen. Reihenfolge der Zeilen = Reihenfolge der Kette.
                   Prozentsatz „Überschlag: … ≈ …“ vor der
                   Rechnung (Beschluss 28.09. abends);
                   LaTeX-fähig wie aufgabe (für \erg), Tausender
-                  mit `\,`, das Prüfskript zieht sie zusammen
+                  mit `\,`, das Prüfskript zieht sie zusammen.
+                  Auf dem Lösungsblatt setzt der Zusammenbau die
+                  Zeile nach layout-befunde „Lösungsblatt 05.10.“
+                  (Ergebnis fett, Zwischenergebnisse als
+                  Ansatz ⇒ Wert, kein Antwortsatz, kein
+                  Fehlerhinweis); Antwortsatz und Regelsatz oben
+                  sind Bestand, neue Zeilen folgen der neuen Form
     pruef         Python-Ausdruck, der die Lösungszahl ergibt
                   (mehrere: Liste); bei Rundungsaufgaben der
                   ungerundete Wert, das Skript rundet kaufmännisch
@@ -146,7 +155,23 @@ nicht in der Prüfkennung. Sie steht am Ende des Fragesatzes
 
 ## Mengen je Kette
 
-Vorstufe 4, jede Vorstufe der Kette (0, −1, −2 …) für sich;
+Ziel (Beschluss 05.10.): 12 Aufgaben je Kern-Stufe, 6 je übriger
+Stufe. Kern-Stufe ist jede Sprosse mit hoehe grundfall (eine
+eigene Kern-Marke gibt es noch nicht). Bedarf: ein Durchgang =
+Leitaufgabe, zwei weitere, Rückblick, Check, Wiederholung = 6;
+zwei Durchgänge = 12. Zählregel: Eine Aufgabe zählt als neu, wenn
+der Schüler sie nicht durch Erinnern lösen kann. Innermathematisch
+genügen andere Zahlen (besser auch ein anderer Term); bei
+Sachaufgaben muss sich Sachzusammenhang, Struktur oder Darstellung
+ändern; Formulierungen wechseln (sprachlauf/regeln.md). Wege:
+innermathematische Parallelaufgaben per Skript (sympy),
+Sachaufgaben mit neuen Kontexten vom Modell, gleiche Prüfung wie
+jede Bankzeile; zuerst Prozent. Die Zahlen unten bleiben die
+Untergrenze eines Füllaufs und die Warnschwelle des Prüfskripts,
+bis das Ziel erreicht ist; Zone und Basisvorrat behalten ihre
+eigenen Mengen.
+
+Untergrenze: Vorstufe 4, jede Vorstufe der Kette (0, −1, −2 …) für sich;
 Grundfall 5; jede weitere Sprosse 3; Prüfungshöhe 2
 je Original des Katalogs (verfremdet); Pflichtelemente je
 Einheit: fehler 3, begruenden 3, anwendung 3, darstellung 3, wo
@@ -361,20 +386,32 @@ Verfahrenskette ist daher nicht immer k1.
   A(1 | 2 | 0).
 - sin, cos, ln als \mathrm{…}.
 
+## Option „schwach“
+
+„schwach“ (ziel.md § 2, Beschluss 05.10.) ändert die Form, nicht
+die Auswahl: dieselben Sprossen, dieselbe Höhe, Kern zuerst. Der
+Zusammenbau setzt (1) Zerlegung mit Ausblenden – erste Aufgabe
+einer Stufe mit allen Zwischenfragen (aus den Zwischenergebnissen
+der Lösung bzw. Katalogfeld zwischenergebnis), zweite nur mit der
+ersten Zwischenfrage, dritte ohne; (2) ein Rechenraster, eine Zeile
+je Schritt; (3) im Lösungsblatt Wort + Ansatz ⇒ Wert je
+Zwischenergebnis. Die Bank braucht dafür je Stufe mindestens drei
+Zeilen und je Zeile Zwischenergebnisse in loesung. Päckchen,
+Erklärzeile, Merkkasten am Ende und Fachwort spät nur im
+Unterrichtsblatt.
+
 ## Musterbeispiel
 
 bank/<eintrag>/muster.md (seit 29.09.) hält je Verfahrenskette ein
-vorgerechnetes Beispiel für die Option „schwach“ (ziel.md: vorn am
-Grundfall ein Musterbeispiel): Abschnitt „## e<n> k<k> <kette>“, die
+vorgerechnetes Beispiel. Seit 05.10. steht es vorerst nicht auf dem
+Blatt, auch nicht bei „schwach“ (Tafelbeispiel für den Lehrer
+später); vorhandene Dateien bleiben, neue werden nicht angelegt.
+Form: Abschnitt „## e<n> k<k> <kette>“, die
 Aufgabe des Grundfalls mit eigenen Zahlen (nicht aus dem Päckchen),
 darunter eine Tabelle Schritt | Zeile, eine Zeile je Umformung, das
 Ergebnis als letzte Zeile. Reine Daten ohne Bausteine; die Form auf
-dem Blatt (Schrittname links, Gleichheitszeichen untereinander,
-Ergebnis abgesetzt) setzt der Zusammenbau nach layout-befunde 55.
-Liefert der Lehrer ein Beispiel, gilt seins (ziel.md). Annahme
-29.09.: je Verfahrenskette statt „einmal je Eintrag“ (ziel.md), weil
-jedes Blatt am Grundfall seiner Einheit beginnt; Prüfstein terme
-(TER-S1, TER-S2 des Lehrers).
+dem Blatt setzt der Zusammenbau nach layout-befunde 55.
+Liefert der Lehrer ein Beispiel, gilt seins (ziel.md).
 
 ## Basisvorrat
 

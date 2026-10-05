@@ -177,6 +177,10 @@ Befunde des Lehrers an den ersten Kompetenzblättern (Prüfstein v0.7).
     eine Zeile, Gleichheitszeichen untereinander, der Schrittname
     klein links vor der Zeile (nicht rechts daneben, vgl. 38), das
     Ergebnis zuletzt und abgesetzt.
+    Vermerk 05.10. (vorläufig, am ersten Blatt prüfen): links der
+    Ansatz statt des Schrittnamens, gleiche Ordnung wie das
+    Lösungsblatt (Befund „Lösungsblatt 05.10.“). Musterbeispiele
+    stehen vorerst nicht auf dem Blatt.
 
 56. Merkkasten mit Fällen (Urteile vom 28.09., Ergänzung zu 54):
     Unterscheidet ein Kasten Fälle, steht eine Tafel statt Sätzen –
@@ -221,3 +225,43 @@ Umsetzung zusammenbau v1.0 (auftrag-lernblatt-v10.md), Blatt TER-L5.
 14. Lösungen am Ende des Gesamt auf neuer Seite: umgesetzt
 15. Bank „Kreuze den Term an, der dazu passt.“: offen (Gegenlese terme)
 16. Rechter Winkel immer als Viertelkreisbogen mit Punkt (deutsche Konvention), nie als Quadrat; in jedem rechtwinkligen Dreieck markiert, wenn der Text sich darauf bezieht (Lehrer 03.10., Basiszettel): umgesetzt in mathblatt.sty 2026-10-03a (\rwbei) und bank/_basis/vorrat.py
+
+## Lösungsblatt 05.10. (Beschlüsse des Lehrers, fest)
+
+Gilt für alle Blattarten (Unterrichtsblatt, Prüfungsheft, Bank-,
+Basis- und Original-Zettel); ersetzt für das Lösungsblatt 55 und
+die Lösungsformen in ziel.md § 4 alt. Quelle: ziel.md § 2,
+befund-punkte-eichung-2026-10-05.md in mathe-nachhilfe.
+
+1. Tabelle, je Teilaufgabe eine Zeile; eine Aufgabe nie über
+   Spalte oder Seite. Knapp und übersichtlich, keine Seitengrenze.
+2. Links das gefragte Ergebnis fett (bei mehreren alle), mit
+   Einheit; rechts klein die Zwischenergebnisse.
+3. Zwischenergebnis je Handgriff eines, als Ansatz ⇒ Wert
+   (f′(x) = 0 ⇒ x = 1), wo ein Handgriff mit einem Ansatz beginnt;
+   sonst der Wert allein. Läuft ein Handgriff mehrfach, steht jedes
+   Ergebnis. Ein Ansatz aus der Sachlage ist eine eigene Zeile.
+   Grafik: Merkmale (Kontrollpunkte, Achsenschnitt, Lage) statt
+   Zwischenwerte.
+4. Kopf der Aufgabe: was mehrere Teilaufgaben brauchen (f′, f″, F;
+   Vektoren; p, n, Vierfeldertafel), einmal, untereinander. Baut b
+   auf a auf, steht es nicht doppelt; b verweist „mit a)“.
+5. Je Antwortart: Zahl → Wert mit Einheit; Term → Term;
+   Begründen/Beurteilen → Urteil und Kern mit ⇒, kein Antwortsatz;
+   Nachweis → links der tragende Schritt; Grafik → Merkmale;
+   Kreuz → Buchstabe.
+6. BE an der Zeile, wo die Teilaufgabe BE hat; BE ist Obergrenze
+   (höchstens BE − 1 Zwischenergebnisse), keine Mindestzahl. Ohne
+   BE gilt die Handgriff-Regel (3).
+7. Kein Tipp, kein ausführlicher Weg, kein Fehlerhinweis.
+8. Schreibweise: Brüche gestapelt (in der Zeile \tfrac, im Kopf
+   \frac); Vektoren als Spalte mit \sv (mathblatt.sty), Punkte in
+   der Zeile P(1 | 2 | 3); nur ⇒, kein ⇔; Mengenzeichen (∈, ∩, ∨)
+   nur im Abitur. „⟨“ aus dem
+   Katalog erscheint nie auf dem Blatt (blatt-pruef.py warnt).
+9. CAS: ein Lösungsblatt; Schalter aus der Schülerliste setzt an
+   Teilaufgaben mit anderem Weg eine Kleinzeile mit dem
+   Gerätebefehl.
+10. „schwach“: je Zwischenergebnis Wort + Ansatz ⇒ Wert.
+11. Quelle der Kurzlösung: Katalogfeld kurzloesung; ergebnis bleibt
+    die amtliche Fassung.
