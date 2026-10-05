@@ -209,3 +209,7 @@ Neue Sprossen: e1 s8 rückwärts (zweite Gerade, Entwurf A8), s9 gemischt (Entw�
 | e4.jsonl | 70 | 8 | 10 | 35 | 11 | 6 |
 | e5.jsonl | 50 | 4 | 6 | 31 | 3 | 6 |
 | zone.jsonl | 42 | 0 | 20 | 21 | 0 | 1 |
+
+## Blatt 2026-10-05: 7 Zeilen übernommen (ids zone-f6-v5, zone-f6-v6, zone-f5-v7, zone-f2-v5, zone-f1-v5, zone-f4-v5, e2-k1-s11-v4), 11 nicht (9 Dubletten: neue e2-k1-s1-v6…v9, e2-k1-s4-v4, v5, e2-k1-s8-v4, e2-k1-s11-v5, zone-f5-v8; 2 nach zwei Anläufen herausgenommen: e2-k1-s6-v5, e2-k1-s9-v4 – quelle 126 der Sprosse ist nicht wortgleich, 120 ist uneinheitlich)
+
+Prüfskript --katalog: 173 Abweichungen vorher und nachher, Warnungen 8 → 19. Ordner eingang/lineare-gleichungssysteme-2026-10-05.

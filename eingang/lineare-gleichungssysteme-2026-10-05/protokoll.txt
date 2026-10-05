@@ -1,0 +1,57 @@
+Blatt lineare-gleichungssysteme 2026-10-05 (schwach) – Protokoll
+
+Eintrag: lineare-gleichungssysteme (Mappe mappen/lineare-gleichungssysteme.md, Katalog-Commit 60f3c33)
+Eingabe: Einsetzungsverfahren für S06, schwach, „dichtes Das kennst du schon“ → Einheit 2
+  (Einsetzungsverfahren, Gleichsetzen als Sonderfall), Zusatz „schwach“, Blatt 0 ja, ohne Lösungsweg.
+  S06: Kl. 9, Gesamtschule (kein „gymnasium“). Kein früheres Blatt zu diesem Eintrag (gebaut.csv,
+  blaetter/index.md).
+Lehrerwunsch im Chat: „keine p10!“ → Prüfungssprosse e2 k1 s12 (P10 ’22) und jede P10-Marke entfallen;
+  die Kette endet mit s11 (gemischt, erst ordnen). „Zum Schluss“ hat daher keine markierten höheren
+  Aufgaben, sondern zwei unmarkierte wie Nr. 17.
+Prompt: Unterrichtsblatt aus der Bank v5.4 (03.10.2026); Vorbild bau/terme/muster-2026-10-01/muster4.tex
+Modell: Claude Opus 5.5 (claude-opus-5-5)
+Vorlage: mathblatt.sty 2026-10-03c (hz-0801/blattbau); Satzmakros aus eingang/terme-2026-10-01d
+  (schwach) übernommen, dazu \eb/\ebo/\ebg (Einsetzbild), \probebild, \rgl, \rpr, \rkr.
+
+Aufbau: Blatt 0 dicht (ganze Seite, Nr. 1–6: Minus und Komma, Klammer auflösen, Gleichung lösen,
+  y allein, Probe, Grundvorstellung „zwei Unbekannte brauchen zwei Angaben“) ·
+  Einheit 2: 7 Vorstufe „fast fertig?“, 8 Musterbeispiel + angefangene Lösung, 9 Päckchen,
+  10 Grundfälle, 11 erst umstellen (nach y, nach x), 12 Klammer und Minus vor der Klammer,
+  13 Komma und negative Lösung, 14 Gleichsetzen (Musterbeispiel, angefangene Lösung, eine Aufgabe),
+  15 Probe und Zahlenpaar, 16 rückwärts, 17 gemischt erst ordnen, 18 Abschluss (Rechnung,
+  Anwendung Eis/Waffel, Begründen), Merkkasten am Ende · 19 Zum Schluss · Lösungen zweispaltig.
+Seiten: 10
+
+Teilaufgaben: 68 (mit Päckchenfrage); aus der Bank 47, neu 21
+  (1c, 1d, 2d, 4d, 5d, 6a, 6b, 9a–d, 9e Frage, 18a, 18b, 19a–g).
+Marken: keine (keine GYM-Sprosse in Einheit 2; P10 auf Lehrerwunsch weg).
+
+Abweichungen/Hinweise:
+  - Blatt 0 eine ganze Seite mit sechs Nummern statt einer halben (Lehrerwunsch „dicht“).
+  - bank/lineare-gleichungssysteme/muster.md fehlt; Musterbeispiele aus e2-k1-s1-v1 und e2-k1-s8-v1,
+    angefangene Lösungen aus e2-k1-s1-v2 und e2-k1-s8-v2.
+  - Darstellung: Einsetzbild (die andere Gleichung mit leerem Kasten für den Term) bzw. Probetabelle
+    statt Waage; die Vorlage hat keine Waage, und für zwei Variablen zeigt der Kasten den Weg.
+  - Seite 9 trägt nur „Zum Schluss“ (ungeteilt, sieben Teilaufgaben mit Raster füllen die Seite).
+  - Vorrat e2 k2 (Bruch als Lösung) nicht verwendet.
+
+Prüfungen:
+  pruef.py (sympy, L/G/T/U-Proben): 61 Proben, 0 Fehler (alle Rechenaufgaben außer den
+    Ankreuz- und Begründeaufgaben)
+  xelatex zweimal: 0 Fehler, 0 „Missing character“, 0 Overfull
+  Seiten als PNG angesehen: Päckchenfrage nicht abgetrennt, „Gleichsetzen“ nicht am Seitenende
+    allein (nach Korrektur), „Zum Schluss“ ungeteilt, Lösungen auf Seite 10.
+
+Übernahme 2026-10-05: 7 Zeilen in die Bank (Nr. → id):
+  1c → lineare-gleichungssysteme-zone-f6-v5 · 1d → zone-f6-v6 · 2d → zone-f5-v7 · 4d → zone-f2-v5 ·
+  5d → zone-f1-v5 · 19b → zone-f4-v5 · 19g → lineare-gleichungssysteme-e2-k1-s11-v4
+  bank-pruef.py --katalog: vorher 173 Abweichungen, nachher 173 (keine neue), Warnungen 8 → 19
+  (Mengen und Variantenfolge der Zone, s11 vier Zeilen).
+Nicht übernommen:
+  Dublette (bis auf Zahlen gleich mit einer Bankzeile derselben Sprosse): 9a–d ≙ e2 k1 s1 ·
+  18a ≙ e2 k1 s4 v2 · 19a ≙ zone f5 v4 · 19c ≙ e2 k1 s4 v1 · 19d ≙ e2 k1 s8 v2 · 19f ≙ e2 k1 s11 v1.
+  Nach zwei Anläufen herausgenommen: 18b (e2-k1-s6-v5) und 19e (e2-k1-s9-v4) – mit quelle 126 wie
+  die Sprosse „sprosse_text nicht wortgleich in Zeile 126“, mit quelle 120 „quelle uneinheitlich“;
+  die Bestandszeilen von s6 und s9 tragen die alte Nummer 126 (Altlast, stand.md 02.10.).
+  Ohne Sprosse: Nr. 6 (Grundvorstellung) – die Zone hat dafür keine Fertigkeit.
+Feld herkunft „Blatt lineare-gleichungssysteme 2026-10-05, Nr. <n>“.

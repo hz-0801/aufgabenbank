@@ -1,0 +1,567 @@
+% Lernblatt Lineare Gleichungssysteme, Einheit 2 Einsetzungsverfahren –
+% Zusatz „schwach“ (Prompt v5.4), Blatt 0 dicht (Lehrerwunsch), keine
+% P10-Aufgaben (Lehrerwunsch im Chat). Gebaut aus der Aufgabenbank
+% (bank/lineare-gleichungssysteme), Vorbild Muster 4 für Aufbau und Satz,
+% Satzmakros „schwach“ aus eingang/terme-2026-10-01d.
+% Quelle je Teilaufgabe im Kommentar davor: % <id> = aus der Bank,
+% % NEU = nicht in der Bank. % pruef: … = Rechenprobe (pruef.py).
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\usepackage{multicol}
+\usepackage{lastpage}
+% Kopf: nur das Thema; Fuß: „Seite n von m“
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\fancyhead[L]{\small Einsetzungsverfahren}
+\fancyfoot[C]{\small Seite \thepage\ von \pageref{LastPage}}
+\raggedright
+\makeatletter
+% ---------------------------------------------------------------- Satz (aus Muster 4)
+\newcommand{\vorgerechnet}[1]{\textcolor{gray!70}{#1}}
+\newcommand{\einheit}[2]{\par\Needspace*{0.3\textheight}\addvspace{16pt}%
+  \noindent{\Large\bfseries\ifblank{#1}{}{#1\hspace{0.6em}}#2}\par\nobreak\vspace{2pt}%
+  \gappto\mblsg{\lsgeinheit{\ifblank{#1}{}{#1\ }#2}}}
+\newcommand{\nrtitel}[1]{\noindent\hangindent1.6em\hangafter1%
+  \makebox[1.6em][l]{\textbf{\theaufgabe.}}#1\par\nobreak\vspace{1pt}\nobreak}
+\newsavebox{\nrbox}\newlength{\nrhoehe}
+\newenvironment{nr}[2][]{\refstepcounter{aufgabe}\setcounter{teil}{0}\mbinaufgabetrue%
+  \def\nrart{#1}%
+  \ifx\nrart\@empty
+    \begin{lrbox}{\nrbox}\begin{minipage}[t]{\linewidth}\raggedright
+    \setlength{\parskip}{0pt}\nrtitel{#2}%
+  \else
+    \par\addvspace{10pt}\Needspace*{10\baselineskip}\nrtitel{#2}%
+  \fi}%
+ {\ifx\nrart\@empty
+    \end{minipage}\end{lrbox}%
+    \setlength{\nrhoehe}{\dimexpr\ht\nrbox+\dp\nrbox\relax}%
+    \par\addvspace{10pt}\Needspace*{\nrhoehe}\noindent\usebox{\nrbox}\par
+  \else\par\fi}
+\newcommand{\teilmarke}{\stepcounter{teil}\makebox[1.6em][r]{\alph{teil})\hspace{0.35em}}}
+\newcommand{\marke}[1]{\ifblank{#1}{}{\hfill\mbox{\footnotesize #1}}}
+\newlength{\feldbreite}\setlength{\feldbreite}{4.5cm}
+\newcommand{\antwort}{\underline{\hspace{\feldbreite}}}
+\newcommand{\fld}[1][1.2cm]{\underline{\hspace{#1}}}
+\newcommand{\zeilenluft}{\par\nobreak\vskip 12pt plus 1pt\relax}
+\newcommand{\zeilenluftb}{\par\vskip 12pt plus 1pt\relax}
+\newlength{\kw}\newlength{\kwmax}
+\newcounter{kzahl}\newcounter{kzeile}
+\newcommand{\kliste}{}
+\newcommand{\kmerke}[2]{\settowidth{\kw}{#1}%
+  \ifdim\kw>\kwmax\global\kwmax=\kw\fi\stepcounter{kzahl}\gappto\kliste{#2}}
+\newcommand{\kstart}[1]{\global\kwmax=0pt\setcounter{kzahl}{0}\setcounter{kzeile}{0}%
+  \gdef\kliste{}\setlength{\feldbreite}{#1}}
+\newcommand{\kende}{\par\nobreak\vspace{3pt}\nobreak\kliste\par}
+\newcommand{\kettezeile}[1]{\stepcounter{kzeile}%
+  \ifnum\value{kzeile}>1
+    \ifnum\value{kzeile}<4 \zeilenluft
+    \else\ifnum\numexpr\value{kzahl}-\value{kzeile}\relax<2 \zeilenluft
+    \else\zeilenluftb\fi\fi
+  \fi
+  \noindent#1\par}
+\newenvironment{kette}[1][4.5cm]{\kstart{#1}}{\kende}
+\newcommand{\termspalte}[1]{\makebox[\kwmax][l]{$#1 =$}\hspace{0.6em}}
+\NewDocumentCommand{\rk}{O{} m m}{\kmerke{$#2 =$}{\kettezeile{\teilmarke\lsgm{#3}%
+  \termspalte{#2}\antwort\marke{#1}}}}
+% Frage in fester Spalte, dann Antwortfeld (Vorstufen): \rfr{Text}{Lösung}
+\NewDocumentCommand{\rfr}{O{} m m}{\kmerke{#2}{\kettezeile{\teilmarke\lsgt{#3}%
+  \makebox[\kwmax][l]{#2}\hspace{0.6em}\antwort\marke{#1}}}}
+% Unterstreichen
+\newenvironment{liste}{\kstart{0pt}}{\kende}
+\newcommand{\ru}[2]{\kmerke{}{\kettezeile{\teilmarke\lsgt{#2}#1}}}
+% Textzeile, Feld direkt hinter dem Text
+\NewDocumentCommand{\rt}{O{} m m}{\par\vspace{7pt}\noindent\hangindent1.6em\hangafter1
+  \teilmarke\lsgt{#3}#2\nobreak\hspace{0.6em}\underline{\hspace{4cm}}\marke{#1}\par}
+% Textzeile ohne Antwortfeld (Felder im Text)
+\NewDocumentCommand{\rto}{O{} m m}{\par\vspace{7pt}\noindent\hangindent1.6em\hangafter1
+  \teilmarke\lsgt{#3}#2\marke{#1}\par}
+\newlength{\kennbreite}\setlength{\kennbreite}{1.6cm}
+\NewDocumentCommand{\rtx}{O{} m m}{\par\vspace{7pt}\noindent
+  \ifblank{#1}{\parbox[t]{\linewidth}{\raggedright\hangindent1.6em\hangafter1
+   \teilmarke\lsgt{#3}#2}}%
+  {\parbox[t]{\dimexpr\linewidth-\kennbreite\relax}{\raggedright\hangindent1.6em\hangafter1
+   \teilmarke\lsgt{#3}#2}\parbox[t]{\kennbreite}{\raggedleft\footnotesize #1}}\par}
+% Textaufgabe mit Rechenraum (Sach-, Prüfungs-, Begründeaufgaben)
+\NewDocumentCommand{\rs}{O{} m m}{\par\vspace{9pt}\noindent
+  \teilmarke\lsgt{#3}%
+  \ifblank{#1}{\parbox[t]{\dimexpr\linewidth-1.6em\relax}{\raggedright #2}}%
+   {\parbox[t]{\dimexpr\linewidth-1.6em-\kennbreite\relax}{\raggedright #2}%
+    \parbox[t]{\kennbreite}{\raggedleft\footnotesize #1}}\par\raum}
+\newcommand{\raum}{\par\nobreak\vspace{7mm}\noindent\hspace*{1.6em}%
+  \rule{0.5\textwidth}{0.4pt}\par\nobreak\vspace{7mm}\noindent\hspace*{1.6em}%
+  \rule{0.5\textwidth}{0.4pt}\par}
+\newcommand{\kreuzzeile}[1]{\par\vspace{6pt}\noindent\hspace*{1.6em}#1\par}
+\renewcommand{\kreuz}[1]{$\square$\,#1\hspace{2.2em}}
+\newcommand{\figurfelder}[2]{\par\vspace{6pt}\noindent\hspace*{1.6em}%
+  $\vcenter{\hbox{#1}}$\hspace{1.5em}\begin{tabular}[c]{@{}l@{\hspace{0.5em}}l@{}}#2\end{tabular}\par}
+% Merkkasten (am Ende der Einheit): je Zeile ein Fall, zuletzt „Wichtig:“
+\newcommand{\merk}[1]{\par\addvspace{8pt}\noindent
+  \fcolorbox{black!60}{white}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+  \raggedright\setlength{\parskip}{1.5pt}#1}}\par\vspace{2pt}}
+\newcommand{\mz}[2]{\textbf{#1} #2\par}
+% ---------------------------------------------------------------- Satz „schwach“
+% Schreibzeilen 9 mm (Vorlage), links mehr Platz als in der Vorlage
+\setlength{\mbschreibhoehe}{9mm}
+\renewcommand{\mbswlinks}{0.54}\renewcommand{\mbswrechts}{0.42}
+\renewcommand{\mbswpaar}[2]{\par\noindent
+  \begin{minipage}[t]{\mbswlinks\linewidth}\vspace{0pt}\raggedright #1\end{minipage}\hfill
+  \begin{minipage}[t]{\mbswrechts\linewidth}\vspace{2pt}#2\end{minipage}\par\addvspace{1.5mm}}
+% Rechenteilaufgabe mit Raster links, Darstellung rechts:
+%   \sz[Zeilen][Marke]{Text}{Lösung}{Darstellung}
+\NewDocumentCommand{\sz}{O{2} O{} m m m}{\swz[#1]{\lsgt{#4}#3\marke{#2}}{#5}}
+% Rechenteilaufgabe ohne Darstellung (über der Prüfungshöhe), Raster über die volle Breite:
+%   \szx[Zeilen][Marke]{Text}{Lösung}
+\NewDocumentCommand{\szx}{O{2} O{} m m}{\par\noindent\stepcounter{teil}\mbtzkopf{\alph{teil})}%
+  \lsgt{#4}#3\marke{#2}\schreibzeilen{#1}\par\addvspace{3mm}}
+% Teilaufgabe mit eigenem Block darunter (angefangene Lösung, Tabelle):
+%   \szt[Marke]{Text}{Lösung}{Block}
+\NewDocumentCommand{\szt}{O{} m m m}{\par\noindent\begin{minipage}{\linewidth}\stepcounter{teil}\mbtzkopf{\alph{teil})}%
+  \lsgt{#3}#2\marke{#1}\par\vspace{3pt}\noindent\hspace*{1.6em}#4\end{minipage}\par\addvspace{3mm}}
+% Päckchenfrage unteilbar (Vorlage: \swfrage bricht zwischen den Schreibzeilen)
+\renewcommand{\swfrage}[1]{\par\noindent\begin{minipage}{\linewidth}%
+  \stepcounter{teil}\mbtzkopf{\alph{teil})}#1\schreibzeilen{2}\end{minipage}\par\addvspace{3mm}}
+% Erklärzeile nach jeder zweiten Nummer; mit der letzten Teilaufgabe zusammengehalten
+\newcommand{\mitErklaerung}[1]{\par\noindent\begin{minipage}{\linewidth}#1\erklaere\end{minipage}\par\addvspace{2mm}}
+\newcommand{\erklaere}{\par\nobreak\vspace{5pt}\noindent\hspace*{1.6em}%
+  \begin{minipage}{\dimexpr\linewidth-1.6em\relax}\itshape Erkläre, wie du gerechnet hast:\upshape
+  \setlength{\mbschreibhoehe}{8mm}\schreibzeilen{1}\end{minipage}\par\addvspace{2mm}}
+% Musterbeispiel: Schrittname links, Gleichheitszeichen untereinander, Ergebnis abgesetzt
+%   \begin{muster} \ms{Schritt}{links}{rechts} ... \mserg{Ergebnis} \end{muster}
+\newenvironment{muster}{\par\noindent\begin{tabular}{@{}l@{\hspace{1.2em}}r@{\;}l@{}}}{\end{tabular}\par}
+\newcommand{\ms}[3]{\textit{#1} & $#2$ & $#3$ \\[2pt]}
+\newcommand{\mst}[2]{\textit{#1} & \multicolumn{2}{@{}l@{}}{#2} \\[2pt]}
+\newcommand{\mserg}[1]{\noalign{\vspace{2pt}}\textbf{Ergebnis} & & $\mathbf{#1}$ \\}
+\newcommand{\msfld}[1][1.8cm]{\underline{\hspace{#1}}}
+% Darstellungen (leer, der Schüler füllt sie)
+\newcommand{\kx}{\tikz[baseline=-0.6ex]\draw[line width=0.5pt] (0,-0.17) rectangle (0.34,0.17) node[midway,font=\scriptsize]{$x$};}
+\newcommand{\pkt}{\tikz[baseline=-0.6ex]\fill (0,0) circle (1.3pt);}
+\newcommand{\bildplatz}[1][1.35cm]{\begin{minipage}[t]{\linewidth}\vspace{0pt}%
+  {\footnotesize Zeichne: \kx\ für die Variable, \pkt\ für die Zahl 1}\par\vspace{2pt}%
+  \tikz\draw[black!50,line width=0.4pt] (0,0) rectangle (\linewidth-0.6pt,#1);\end{minipage}}
+% Malkreuz: Faktor links, Glieder oben, Produkte in den Feldern
+\newcommand{\malkreuz}[1][2]{\begin{minipage}[t]{\linewidth}\vspace{0pt}%
+  {\footnotesize Malkreuz: Faktor links, Glieder oben, Produkte in die Felder}\par\vspace{2pt}%
+  \renewcommand{\arraystretch}{2.0}%
+  \ifnum#1=3
+  \begin{tabular}{|c|p{1.3cm}|p{1.3cm}|p{1.3cm}|}\hline $\cdot$ & & & \\ \hline & & & \\ \hline\end{tabular}%
+  \else
+  \begin{tabular}{|c|p{1.7cm}|p{1.7cm}|}\hline $\cdot$ & & \\ \hline & & \\ \hline\end{tabular}%
+  \fi\end{minipage}}
+% Zeichentabelle: jedes Glied in der Klammer, das Zeichen davor, das neue Glied
+\newcommand{\zeichentabelle}[1][2]{\begin{minipage}[t]{\linewidth}\vspace{0pt}%
+  \renewcommand{\arraystretch}{1.4}\footnotesize
+  \begin{tabular}{|p{1.9cm}|p{1.7cm}|p{1.9cm}|}\hline Glied in der Klammer & vor der Klammer & neues Glied \\ \hline
+  \ifnum#1>0 & & \\ \hline\fi \ifnum#1>1 & & \\ \hline\fi \ifnum#1>2 & & \\ \hline\fi
+  \end{tabular}\end{minipage}}
+% Einsetztabelle: Term, eingesetzt, Wert
+\newcommand{\einsetztabelle}{\begin{minipage}[t]{\linewidth}\vspace{0pt}%
+  \renewcommand{\arraystretch}{1.8}\footnotesize
+  \begin{tabular}{|p{1.6cm}|p{2.6cm}|p{1.1cm}|}\hline Term & eingesetzt & Wert \\ \hline & & \\ \hline\end{tabular}\end{minipage}}
+% Termbaum leer
+\newcommand{\termbaumleer}{\begin{minipage}[t]{\linewidth}\vspace{0pt}%
+  \termbaum{}{\tb{}{}{}}{}\end{minipage}}
+% ---------------------------------------------------------------- Lösungen
+\newcommand{\mblsg}{}
+\newcommand{\lsgm}[1]{\lsgt{$#1$}}
+\newcommand{\lsgextra}{}
+\newcommand{\lsgt}[1]{\xappto\mblsg{\noexpand\lz{\theaufgabe}{\alph{teil}}}%
+  \xappto\mblsg{{\unexpanded{#1}\unexpanded\expandafter{\lsgextra}}}%
+  \gdef\lsgextra{}}
+\newcommand{\falsch}[1]{\gdef\lsgextra{\quad{\footnotesize falsch $\rightarrow$ Nr.~#1}}}
+\newcommand{\falschk}[1]{\gappto\kliste{\falsch{#1}}}
+\newcommand{\lzletzte}{0}
+\newcommand{\lz}[3]{\par\noindent\hangindent3.4em\hangafter1
+  \ifnum#1=\lzletzte\relax\makebox[1.8em][l]{}\else\makebox[1.8em][l]{\textbf{#1}}\fi
+  \gdef\lzletzte{#1}%
+  \makebox[1.6em][l]{\ifx&#2&\else#2)\fi}#3\par}
+\newcommand{\lsgeinheit}[1]{\par\addvspace{4pt}\noindent{\bfseries #1}\par}
+\makeatother
+% ---------------------------------------------------------------- Zusätze Einsetzen
+\makeatletter
+% Kasten zum Hineinschreiben, Klammer mit Kasten (der eingesetzte Term)
+\newcommand{\kast}[1][2.2cm]{\tikz[baseline=-0.7ex]\draw[black!60,line width=0.5pt] (0,-0.28) rectangle (#1,0.28);}
+\newcommand{\klam}[1][2.2cm]{\big(\,\kast[#1]\,\big)}
+% Einsetzbild: was allein steht, die andere Gleichung mit Kasten, Lösung
+%   \eb{y}{$3x + \klam = 16$}
+\newcommand{\ebkopf}{{\footnotesize\color{black!70}Einsetzbild – fülle es aus:}\par\vspace{3pt}}
+\newcommand{\eb}[2]{\begin{minipage}[t]{\linewidth}\vspace{0pt}\ebkopf
+  \renewcommand{\arraystretch}{1.7}\small
+  \begin{tabular}{@{}l@{\hspace{0.6em}}l@{}}
+  \textit{steht allein:} & $#1 = {}$\kast[2.6cm] \\
+  \textit{einsetzen:} & #2 \\
+  \textit{Lösung:} & $x = {}$\fld[1cm]\quad $y = {}$\fld[1cm]
+  \end{tabular}\end{minipage}}
+% mit Zeile „erst ordnen“ davor
+\newcommand{\ebo}[2]{\begin{minipage}[t]{\linewidth}\vspace{0pt}\ebkopf
+  \renewcommand{\arraystretch}{1.7}\small
+  \begin{tabular}{@{}l@{\hspace{0.6em}}l@{}}
+  \textit{erst ordnen:} & \kast[3.6cm] \\
+  \textit{steht allein:} & \kast[0.6cm]${}={}$\kast[2.6cm] \\
+  \textit{einsetzen:} & #2 \\
+  \textit{Lösung:} & $x = {}$\fld[1cm]\quad $y = {}$\fld[1cm]
+  \end{tabular}\end{minipage}}
+% Gleichsetzen: zwei Kästen
+\newcommand{\ebg}{\begin{minipage}[t]{\linewidth}\vspace{0pt}\ebkopf
+  \renewcommand{\arraystretch}{1.7}\small
+  \begin{tabular}{@{}l@{\hspace{0.6em}}l@{}}
+  \textit{gleichsetzen:} & \kast[1.9cm]${}={}$\kast[1.9cm] \\
+  \textit{Lösung:} & $x = {}$\fld[1cm]\quad $y = {}$\fld[1cm]
+  \end{tabular}\end{minipage}}
+% Probebild: Zahlenpaar in beide Gleichungen
+\newcommand{\probebild}{\begin{minipage}[t]{\linewidth}\vspace{0pt}%
+  {\footnotesize\color{black!70}Probe – setze in beide Gleichungen ein:}\par\vspace{3pt}%
+  \renewcommand{\arraystretch}{1.8}\footnotesize
+  \begin{tabular}{|c|p{3.1cm}|c|}\hline & eingesetzt & stimmt? \\ \hline
+  I & & $\square$ \\ \hline II & & $\square$ \\ \hline\end{tabular}\end{minipage}}
+% Gleichung lösen in der Kette: Gleichung, dann „x =“ und Feld
+\newlength{\glw}
+\NewDocumentCommand{\rgl}{m m}{\kmerke{$#1$}{\kettezeile{\teilmarke\lsgt{$x = #2$}%
+  \makebox[\kwmax][l]{$#1$}\hspace{0.8em}$x = {}$\antwort}}}
+% Probe in der Kette: Text, dann ja/nein
+\NewDocumentCommand{\rpr}{m m}{\kmerke{#1}{\kettezeile{\teilmarke\lsgt{#2}%
+  \makebox[\kwmax][l]{#1}\hspace{0.8em}\kreuz{ja}\kreuz{nein}}}}
+% Ankreuzen in der Kette (Vorstufe): zwei Gleichungen, dann I oder II
+\NewDocumentCommand{\rkr}{m m m}{\kmerke{I: $#1$\qquad II: $#2$}{\kettezeile{\teilmarke\lsgt{#3}%
+  \makebox[\kwmax][l]{I: $#1$\qquad II: $#2$}\hspace{1.2em}\kreuz{I}\kreuz{II}}}}
+\makeatother
+\begin{document}
+\setlength{\parskip}{0pt}
+
+% =================================================================== Blatt 0 (dicht, auf Wunsch)
+\einheit{}{Das kennst du schon}
+\noindent
+\begin{minipage}[t]{0.48\linewidth}
+\begin{nr}{Minus und Komma}\label{nr:minus}
+\begin{kette}[2cm]
+% lineare-gleichungssysteme-zone-f6-v2
+% pruef: -4 + 9 == 5
+\rk{-4 + 9}{5}
+% lineare-gleichungssysteme-zone-f6-v1
+% pruef: abs(3*2.4 - 7.2) < 1e-9
+\rk{3 \cdot 2{,}40}{7{,}20}
+% NEU
+% pruef: -3 - (-8) == 5
+\rk{-3 - (-8)}{5}
+% NEU
+% pruef: 4*(-1.5) == -6
+\rk{4 \cdot (-1{,}5)}{-6}
+\end{kette}
+\end{nr}
+\begin{nr}{Klammer auflösen}\label{nr:klam}
+\begin{kette}[2.4cm]
+% lineare-gleichungssysteme-zone-f5-v1
+% pruef: T("3*(x + 4)", "3*x + 12")
+\rk{3 \cdot (x + 4)}{3x + 12}
+% lineare-gleichungssysteme-zone-f5-v3
+% pruef: T("4*(2*x - 3*y)", "8*x - 12*y")
+\rk{4 \cdot (2x - 3y)}{8x - 12y}
+% lineare-gleichungssysteme-zone-f5-v4
+% pruef: T("8 - (x - 3)", "11 - x")
+\rk{8 - (x - 3)}{11 - x}
+% NEU
+% pruef: T("0.5*(6*x - 4)", "3*x - 2")
+\rk{0{,}5 \cdot (6x - 4)}{3x - 2}
+\end{kette}
+\end{nr}
+\begin{nr}{Gleichung lösen}\label{nr:gl}
+\begin{kette}[1.6cm]
+% lineare-gleichungssysteme-zone-f4-v1
+% pruef: G("2*x + 5 = 17") == 6
+\rgl{2x + 5 = 17}{6}
+% lineare-gleichungssysteme-zone-f4-v2
+% pruef: G("4*x = x + 15") == 5
+\rgl{4x = x + 15}{5}
+% lineare-gleichungssysteme-zone-f4-v3
+% pruef: G("0.5*x + 2 = 4.5") == 5
+\rgl{0{,}5x + 2 = 4{,}5}{5}
+% lineare-gleichungssysteme-zone-f4-v4
+% pruef: G("7 - 2*x = 3*x - 8") == 3
+\rgl{7 - 2x = 3x - 8}{3}
+\end{kette}
+\end{nr}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+\begin{nr}{Bring $y$ allein auf eine Seite.}\label{nr:um}
+\begin{kette}[2.2cm]
+% lineare-gleichungssysteme-zone-f2-v1
+% pruef: U("x + y = 15", "15 - x")
+\rk{x + y = 15 \;\rightarrow\; y}{15 - x}
+% lineare-gleichungssysteme-zone-f2-v3
+% pruef: U("4*x + 2*y = 14", "7 - 2*x")
+\rk{4x + 2y = 14 \;\rightarrow\; y}{7 - 2x}
+% lineare-gleichungssysteme-zone-f2-v4
+% pruef: U("3*x - y = 8", "3*x - 8")
+\rk{3x - y = 8 \;\rightarrow\; y}{3x - 8}
+% NEU
+% pruef: U("y - 0.5*x = 3", "0.5*x + 3")
+\rk{y - 0{,}5x = 3 \;\rightarrow\; y}{0{,}5x + 3}
+\end{kette}
+\end{nr}
+\begin{nr}{Probe: Stimmt die Gleichung, wenn du einsetzt?}\label{nr:probe}
+\begin{kette}
+% lineare-gleichungssysteme-zone-f1-v1
+% pruef: 4 + 5 == 9
+\rpr{$x = 4$ in $x + 5 = 9$}{ja: $4 + 5 = 9$ (wA)}
+% lineare-gleichungssysteme-zone-f1-v2
+% pruef: 5*3 != 25
+\rpr{$x = 3$ in $5x = 25$}{nein: $5 \cdot 3 = 15$ (fA)}
+% lineare-gleichungssysteme-zone-f1-v4
+% pruef: 9 - (-4) != 5
+\rpr{$x = -4$ in $9 - x = 5$}{nein: $9 - (-4) = 13$ (fA)}
+% NEU
+% pruef: 4*1.5 - 1 == 5
+\rpr{$x = 1{,}5$ in $4x - 1 = 5$}{ja: $6 - 1 = 5$ (wA)}
+\end{kette}
+\end{nr}
+\begin{nr}{Zwei Unbekannte brauchen zwei Angaben.}\label{nr:grund}
+% NEU (Grundvorstellung der Mappe, neue Zahlen)
+% pruef: 8 + 5 == 13 and 8 - 5 == 3
+\par\vspace{3pt}\noindent\hspace*{1.6em}\parbox[t]{\dimexpr\linewidth-1.6em\relax}{\raggedright
+Mia und Tom haben zusammen 13 Murmeln.}
+\rto{Schreib drei Möglichkeiten in die Tabelle.}{z.\,B. 10 und 3, 7 und 6, 8 und 5}
+\par\vspace{4pt}\noindent\hspace*{1.6em}{\renewcommand{\arraystretch}{1.6}%
+\begin{tabular}{|l|p{0.9cm}|p{0.9cm}|p{0.9cm}|}\hline Mia & & & \\ \hline Tom & & & \\ \hline\end{tabular}}
+\rto{Mia hat 3 Murmeln mehr als Tom. Welche Möglichkeit bleibt übrig? \\ Mia \fld, Tom \fld}{Mia 8, Tom 5}
+\end{nr}
+\end{minipage}
+
+% =================================================================== Einheit 2
+\einheit{}{Das Einsetzungsverfahren}
+
+\begin{nr}[b]{Welche Gleichung ist fast fertig? Dort steht $x$ oder $y$ schon allein oder ohne Zahl davor. Kreuze an, nichts rechnen.}
+\begin{kette}
+% lineare-gleichungssysteme-e2-k1-s0-v1
+\rkr{3x + 7y = 17}{x + 4y = 9}{II}
+% lineare-gleichungssysteme-e2-k1-s0-v2
+\rkr{y = 4x - 3}{5x + 2y = 21}{I}
+% lineare-gleichungssysteme-e2-k1-s0-v3
+\rkr{4x + y = 9}{3x + 4y = 14}{I}
+% lineare-gleichungssysteme-e2-k1-s0-v4
+\rkr{6x - 4y = 2}{x = 3y + 1}{II}
+\end{kette}
+\end{nr}
+
+\begin{nr}{So geht Einsetzen: I sagt dir, was $y$ ist. Das schreibst du in II statt $y$ – in Klammern. Lies das Beispiel, dann ergänze die Lösung.}\label{nr:mb}
+\begin{beispiel}
+Löse: I: $y = 2x + 1$ \quad II: $3x + y = 16$
+\begin{muster}
+% lineare-gleichungssysteme-e2-k1-s1-v1 (Musterbeispiel)
+\ms{I sagt}{y}{= 2x + 1}
+\ms{in II statt $y$ einsetzen}{3x + (2x + 1)}{= 16}
+\ms{zusammenfassen}{5x + 1}{= 16}
+\ms{$x$ ausrechnen}{x}{= 3}
+\ms{$y$ ausrechnen}{y}{= 2 \cdot 3 + 1 = 7}
+\mserg{(3 \mid 7)}
+\end{muster}
+\end{beispiel}
+% lineare-gleichungssysteme-e2-k1-s1-v2 (angefangene Lösung)
+% pruef: L("y = x + 3", "2*x + y = 15") == (4, 7)
+\szt{Löse: I: $y = x + 3$ \quad II: $2x + y = 15$}{$x = 4$, $y = 7$; Lösung $(4 \mid 7)$}{\begin{muster}
+\ms{I sagt}{y}{= x + 3}
+\ms{in II statt $y$ einsetzen}{2x + (x + 3)}{= 15}
+\ms{zusammenfassen}{3x + 3}{= \msfld}
+\ms{$x$ ausrechnen}{x}{= \msfld}
+\ms{$y$ ausrechnen}{y}{= \msfld[2.5cm]}
+\mserg{(\msfld[1cm] \mid \msfld[1cm])}
+\end{muster}}
+\end{nr}
+
+\begin{nr}[b]{Päckchen – setze I in II ein.}\label{nr:pack}
+% NEU
+% pruef: L("y = x + 1", "3*x + y = 9") == (2, 3)
+\sz[3]{I: $y = x + 1$ \quad II: $3x + y = 9$}{$(2 \mid 3)$}{\eb{y}{$3x + \klam = 9$}}
+% NEU
+% pruef: L("y = x + 1", "3*x + y = 13") == (3, 4)
+\sz[3]{I: $y = x + 1$ \quad II: $3x + y = 13$}{$(3 \mid 4)$}{\eb{y}{$3x + \klam = 13$}}
+% NEU
+% pruef: L("y = x + 1", "3*x + y = 17") == (4, 5)
+\sz[3]{I: $y = x + 1$ \quad II: $3x + y = 17$}{$(4 \mid 5)$}{\eb{y}{$3x + \klam = 17$}}
+% NEU
+% pruef: L("y = x + 1", "3*x + y = 21") == (5, 6)
+\par\noindent\begin{minipage}{\linewidth}
+\sz[3]{I: $y = x + 1$ \quad II: $3x + y = 21$}{$(5 \mid 6)$}{\eb{y}{$3x + \klam = 21$}}
+\swfrage{Was bleibt gleich, was ändert sich?}
+\end{minipage}\par
+\end{nr}
+
+\begin{nr}[b]{Setze I in II ein.}\label{nr:grundf}
+% lineare-gleichungssysteme-e2-k1-s1-v3
+% pruef: L("y = 3*x - 2", "x + y = 14") == (4, 10)
+\sz[3]{I: $y = 3x - 2$ \quad II: $x + y = 14$}{$(4 \mid 10)$}{\eb{y}{$x + \klam = 14$}}
+% lineare-gleichungssysteme-e2-k1-s1-v4
+% pruef: L("y = 4*x", "x + 2*y = 27") == (3, 12)
+\sz[3]{I: $y = 4x$ \quad II: $x + 2y = 27$}{$(3 \mid 12)$}{\eb{y}{$x + 2 \cdot \klam = 27$}}
+% lineare-gleichungssysteme-e2-k1-s1-v5
+% pruef: L("y = 5*x - 4", "2*x + y = 17") == (3, 11)
+\mitErklaerung{\sz[3]{I: $y = 5x - 4$ \quad II: $2x + y = 17$}{$(3 \mid 11)$}{\eb{y}{$2x + \klam = 17$}}}
+\end{nr}
+
+\begin{nr}[b]{Erst umstellen: Bring in I eine Variable allein auf eine Seite. Nimm die ohne Zahl davor. Dann setze in II ein.}\label{nr:umst}
+% lineare-gleichungssysteme-e2-k1-s2-v1
+% pruef: L("2*x + y = 9", "4*x + y = 17") == (4, 1)
+\sz[4]{I: $2x + y = 9$ \quad II: $4x + y = 17$}{$y = 9 - 2x$; $(4 \mid 1)$}{\eb{y}{$4x + \klam = 17$}}
+% lineare-gleichungssysteme-e2-k1-s2-v2
+% pruef: L("3*x + y = 14", "x + y = 6") == (4, 2)
+\sz[4]{I: $3x + y = 14$ \quad II: $x + y = 6$}{$y = 14 - 3x$; $(4 \mid 2)$}{\eb{y}{$x + \klam = 6$}}
+% lineare-gleichungssysteme-e2-k1-s3-v1
+% pruef: L("x + 2*y = 7", "x + 5*y = 16") == (1, 3)
+\sz[4]{I: $x + 2y = 7$ \quad II: $x + 5y = 16$ \\ Hier steht $x$ ohne Zahl davor.}{$x = 7 - 2y$; $(1 \mid 3)$}{\eb{x}{$\klam + 5y = 16$}}
+% lineare-gleichungssysteme-e2-k1-s3-v2
+% pruef: L("x - 3*y = 1", "x + 2*y = 16") == (10, 3)
+\sz[4]{I: $x - 3y = 1$ \quad II: $x + 2y = 16$}{$x = 1 + 3y$; $(10 \mid 3)$}{\eb{x}{$\klam + 2y = 16$}}
+\end{nr}
+
+\begin{nr}[b]{Mit Klammer: Die Zahl vor der Klammer gilt für jedes Glied darin. Ein Minus vor der Klammer dreht beide Vorzeichen.}\label{nr:klammer}
+% lineare-gleichungssysteme-e2-k1-s4-v1
+% pruef: L("y = x + 2", "3*x + 4*y = 29") == (3, 5)
+\sz[4]{I: $y = x + 2$ \quad II: $3x + 4y = 29$}{$3x + 4x + 8 = 29$; $(3 \mid 5)$}{\eb{y}{$3x + 4 \cdot \klam = 29$}}
+% lineare-gleichungssysteme-e2-k1-s4-v3
+% pruef: L("y = 8 - x", "4*x + 5*y = 35") == (5, 3)
+\sz[4]{I: $y = 8 - x$ \quad II: $4x + 5y = 35$}{$4x + 40 - 5x = 35$; $(5 \mid 3)$}{\eb{y}{$4x + 5 \cdot \klam = 35$}}
+% lineare-gleichungssysteme-e2-k1-s5-v1
+% pruef: L("y = x + 4", "5*x - y = 16") == (5, 9)
+\sz[4]{I: $y = x + 4$ \quad II: $5x - y = 16$}{$5x - x - 4 = 16$; $(5 \mid 9)$}{\eb{y}{$5x - \klam = 16$}}
+% lineare-gleichungssysteme-e2-k1-s5-v2
+% pruef: L("y = 2*x - 5", "7*x - y = 25") == (4, 3)
+\mitErklaerung{\sz[4]{I: $y = 2x - 5$ \quad II: $7x - y = 25$}{$7x - 2x + 5 = 25$; $(4 \mid 3)$}{\eb{y}{$7x - \klam = 25$}}}
+\end{nr}
+
+\begin{nr}[b]{Komma und Minus: Auch Kommazahlen und negative Zahlen können herauskommen.}\label{nr:komma}
+% lineare-gleichungssysteme-e2-k1-s6-v1
+% pruef: L("x + y = 3.50", "4*x + 5*y = 15.10") == (2.4, 1.1)
+\sz[4]{$x$ und $y$ sind Preise in Euro. \\ I: $x + y = 3{,}50$ \quad II: $4x + 5y = 15{,}10$}{$x = 2{,}40$, $y = 1{,}10$}{\eb{y}{$4x + 5 \cdot \klam = 15{,}10$}}
+% lineare-gleichungssysteme-e2-k1-s6-v3
+% pruef: L("y = x + 0.60", "4*x + 2*y = 7.20") == (1, 1.6)
+\sz[4]{$x$ und $y$ sind Preise in Euro. \\ I: $y = x + 0{,}60$ \quad II: $4x + 2y = 7{,}20$}{$x = 1{,}00$, $y = 1{,}60$}{\eb{y}{$4x + 2 \cdot \klam = 7{,}20$}}
+% lineare-gleichungssysteme-e2-k1-s7-v1
+% pruef: L("y = x + 5", "2*x + y = -1") == (-2, 3)
+\sz[3]{I: $y = x + 5$ \quad II: $2x + y = -1$}{$(-2 \mid 3)$}{\eb{y}{$2x + \klam = -1$}}
+% lineare-gleichungssysteme-e2-k1-s7-v3
+% pruef: L("y = -2*x", "3*x - y = 15") == (3, -6)
+\sz[3]{I: $y = -2x$ \quad II: $3x - y = 15$}{$(3 \mid -6)$}{\eb{y}{$3x - \klam = 15$}}
+\end{nr}
+
+\begin{nr}{\textbf{Gleichsetzen.} So geht es: Beide Gleichungen sagen, was $y$ ist. Dann sind die rechten Seiten gleich. Lies das Beispiel, dann ergänze die Lösung.}\label{nr:gleich}
+\begin{beispiel}
+Löse: I: $y = 3x - 4$ \quad II: $y = x + 2$
+\begin{muster}
+% lineare-gleichungssysteme-e2-k1-s8-v1 (Musterbeispiel)
+\ms{rechte Seiten gleich}{3x - 4}{= x + 2}
+\ms{$x$ auf eine Seite}{2x - 4}{= 2}
+\ms{$x$ ausrechnen}{x}{= 3}
+\ms{$y$ ausrechnen}{y}{= 3 + 2 = 5}
+\mserg{(3 \mid 5)}
+\end{muster}
+\end{beispiel}
+% lineare-gleichungssysteme-e2-k1-s8-v2 (angefangene Lösung)
+% pruef: L("y = -3*x + 14", "y = x - 2") == (4, 2)
+\szt{Löse: I: $y = -3x + 14$ \quad II: $y = x - 2$}{$x = 4$, $y = 2$; Lösung $(4 \mid 2)$}{\begin{muster}
+\ms{rechte Seiten gleich}{-3x + 14}{= x - 2}
+\ms{$x$ auf eine Seite}{-4x + 14}{= \msfld}
+\ms{$x$ ausrechnen}{x}{= \msfld}
+\ms{$y$ ausrechnen}{y}{= \msfld[2.5cm]}
+\mserg{(\msfld[1cm] \mid \msfld[1cm])}
+\end{muster}}
+% lineare-gleichungssysteme-e2-k1-s8-v3
+% pruef: L("y = 0.5*x + 1", "y = 2*x - 5") == (4, 3)
+\mitErklaerung{\sz[3]{I: $y = 0{,}5x + 1$ \quad II: $y = 2x - 5$}{$(4 \mid 3)$}{\ebg}}
+\end{nr}
+
+\begin{nr}[b]{Mach die Probe in beiden Gleichungen und gib die Lösung als Zahlenpaar $(x \mid y)$ an.}\label{nr:paar}
+% lineare-gleichungssysteme-e2-k1-s9-v1
+% pruef: L("x + 3*y = 14", "2*x - y = 7") == (5, 3)
+\sz[4]{I: $x + 3y = 14$ \quad II: $2x - y = 7$}{$(5 \mid 3)$; Probe: $5 + 9 = 14$ (wA), $10 - 3 = 7$ (wA)}{\probebild}
+% lineare-gleichungssysteme-e2-k1-s9-v2
+% pruef: L("y = 4*x - 7", "5*x + 2*y = 25") == (3, 5)
+\sz[4]{I: $y = 4x - 7$ \quad II: $5x + 2y = 25$}{$(3 \mid 5)$; Probe: $12 - 7 = 5$ (wA), $15 + 10 = 25$ (wA)}{\probebild}
+% lineare-gleichungssysteme-e2-k1-s9-v3
+% pruef: L("x - y = 4", "2*x + 5*y = 15") == (5, 1)
+\sz[4]{I: $x - y = 4$ \quad II: $2x + 5y = 15$}{$(5 \mid 1)$; Probe: $5 - 1 = 4$ (wA), $10 + 5 = 15$ (wA)}{\probebild}
+\end{nr}
+
+\begin{nr}[b]{Rückwärts: Die Lösung ist schon bekannt. Was fehlt im Kästchen?}\label{nr:rueck}
+% lineare-gleichungssysteme-e2-k1-s10-v1
+% pruef: 3*2 + 5 == 11 and 5 == 2 + 3
+\sz[2]{Lösung $(2 \mid 5)$. \\ I: $y = x + 3$ \quad II: $3x + y = \square$}{$11$, denn $3 \cdot 2 + 5 = 11$}{\probebild}
+% lineare-gleichungssysteme-e2-k1-s10-v2
+% pruef: 3*4 - 3 == 9 and 4 + 3 == 7
+\sz[2]{Lösung $(4 \mid 3)$. \\ I: $x + y = 7$ \quad II: $\square \cdot x - y = 9$}{$3$, denn $3 \cdot 4 - 3 = 9$}{\probebild}
+% lineare-gleichungssysteme-e2-k1-s10-v3
+% pruef: 2*1.5 - (-2) == 5 and -2 == -2*1.5 + 1
+\mitErklaerung{\sz[2]{Lösung $(1{,}5 \mid -2)$. \\ I: $2x - y = \square$ \quad II: $y = -2x + 1$}{$5$, denn $2 \cdot 1{,}5 - (-2) = 5$}{\probebild}}
+\end{nr}
+
+\begin{nr}[b]{Gemischt: Ordne zuerst. Dann wähle selbst, welche Gleichung du umstellst.}\label{nr:gemischt}
+% lineare-gleichungssysteme-e2-k1-s11-v1
+% pruef: L("2*(x + 1) = y + 4", "x + y = 7") == (3, 4)
+\sz[4]{I: $2(x + 1) = y + 4$ \quad II: $x + y = 7$}{I geordnet: $2x - y = 2$; $(3 \mid 4)$}{\ebo{}{\kast[3.6cm]}}
+% lineare-gleichungssysteme-e2-k1-s11-v2
+% pruef: L("3*x - 2*y = x + 4", "y = 2*x - 5") == (3, 1)
+\sz[4]{I: $3x - 2y = x + 4$ \quad II: $y = 2x - 5$}{I geordnet: $x - y = 2$; $(3 \mid 1)$}{\ebo{}{\kast[3.6cm]}}
+% lineare-gleichungssysteme-e2-k1-s11-v3
+% pruef: L("0.5*x + y = 4", "3*(x - y) = 6") == (4, 2)
+\sz[4]{I: $0{,}5x + y = 4$ \quad II: $3(x - y) = 6$}{II geordnet: $x - y = 2$; $(4 \mid 2)$}{\ebo{}{\kast[3.6cm]}}
+\end{nr}
+
+\begin{nr}[b]{Abschluss}\label{nr:abschluss}
+% NEU
+% pruef: L("x = 2*y + 1", "3*x - 4*y = 7") == (5, 2)
+\szx[4]{Löse: I: $x = 2y + 1$ \quad II: $3x - 4y = 7$}{$(5 \mid 2)$}
+% NEU
+% pruef: L("y = x + 0.50", "2*x + y = 6.50") == (2, 2.5)
+\rs{Eine Kugel Eis kostet $x$ Euro, eine Waffel $y$ Euro. Die Waffel kostet $0{,}50\,€$ mehr als eine Kugel: I: $y = x + 0{,}50$. Zwei Kugeln und eine Waffel kosten $6{,}50\,€$: II: $2x + y = 6{,}50$. Was kostet eine Kugel, was eine Waffel? Schreib einen Antwortsatz.}{$x = 2{,}00$, $y = 2{,}50$: Eine Kugel kostet $2{,}00\,€$, eine Waffel $2{,}50\,€$.}
+% lineare-gleichungssysteme-e2-k3-s4-v1
+\rs{Gegeben sind I: $y = 2x + 3$ und II: $5x - y = 6$. Man setzt I in II ein. Erkläre, warum danach nur noch $x$ in der Gleichung steht.}{In II wird $y$ durch $2x + 3$ ersetzt; der Term enthält nur $x$, also kommt $y$ nicht mehr vor.}
+\end{nr}
+
+\merk{\mz{Erst umstellen:}{I $x + y = 9$ \ $\rightarrow$ \ $\mathbf{y = 9 - x}$}
+\mz{Einsetzen, mit Klammer:}{II $3x + 2y = 22$ \ $\rightarrow$ \ $3x + 2 \cdot (9 - x) = 22$ \ $\rightarrow$ \ $\mathbf{x = 4}$, \ $\mathbf{y = 9 - 4 = 5}$}
+\mz{Probe in beiden:}{$4 + 5 = 9$, \ $12 + 10 = 22$ \ $\rightarrow$ \ Lösung $\mathbf{(4 \mid 5)}$}
+\mz{Gleichsetzen:}{$y = 2x + 1$ und $y = x + 4$ \ $\rightarrow$ \ $\mathbf{2x + 1 = x + 4}$}
+\mz{Wichtig:}{Den Term immer in die andere Gleichung einsetzen, nie in dieselbe. Die Lösung sind zwei Zahlen: $x$ und $y$.}}
+
+% =================================================================== Zum Schluss
+% Zwei aus Blatt 0 (schwach), drei mittlere aus der Einheit, dann zwei
+% höhere wie Nr. gemischt (keine Prüfungsmarke: Lehrer „keine P10“).
+\begin{nr}{Zum Schluss}
+\begin{kette}[2.5cm]
+% NEU (Blatt 0: Klammer, zwei Minus)
+% pruef: T("5 - (x - 2)", "7 - x")
+\falschk{\ref{nr:klam}}
+\rk{5 - (x - 2)}{7 - x}
+\end{kette}
+\begin{kette}[1.6cm]
+% NEU (Blatt 0: Gleichung lösen)
+% pruef: G("3*x - 4 = x + 6") == 5
+\falschk{\ref{nr:gl}}
+\rgl{3x - 4 = x + 6}{5}
+\end{kette}\vspace{4pt}
+% NEU (Einsetzen mit Klammer)
+% pruef: L("y = x - 1", "2*x + 3*y = 12") == (3, 2)
+\falsch{\ref{nr:klammer}}
+\szx[3]{Löse: I: $y = x - 1$ \quad II: $2x + 3y = 12$}{$(3 \mid 2)$}
+% NEU (Gleichsetzen)
+% pruef: L("y = 2*x - 3", "y = -x + 6") == (3, 3)
+\falsch{\ref{nr:gleich}}
+\szx[3]{Löse: I: $y = 2x - 3$ \quad II: $y = -x + 6$}{$(3 \mid 3)$}
+% NEU (Probe)
+% pruef: 5 == 3*2 - 1 and 2 + 5 != 8
+\falsch{\ref{nr:paar}}
+\szx[1]{Ist $(2 \mid 5)$ die Lösung von I: $y = 3x - 1$ \quad II: $x + y = 8$? Prüfe beide.}{nein: I stimmt, II: $2 + 5 = 7$, nicht $8$}
+% NEU (höher, wie Nr. gemischt)
+% pruef: L("2*(x - 1) = y", "x + y = 10") == (4, 6)
+\falsch{\ref{nr:gemischt}}
+\szx[3]{Löse: I: $2(x - 1) = y$ \quad II: $x + y = 10$}{$(4 \mid 6)$}
+% NEU (höher, wie Nr. gemischt und Nr. klammer)
+% pruef: L("3*(x + y) = 2*x + 9", "x - y = 1") == (3, 2)
+\falsch{\ref{nr:gemischt}, \ref{nr:klammer}}
+\szx[3]{Löse: I: $3(x + y) = 2x + 9$ \quad II: $x - y = 1$}{I geordnet: $x + 3y = 9$; $(3 \mid 2)$}
+\end{nr}
+
+% =================================================================== Lösungen
+\clearpage
+\noindent{\Large\bfseries Lösungen}\par\vspace{2pt}
+\begin{multicols}{2}\raggedright\small\linespread{0.96}\selectfont
+\mblsg
+\end{multicols}
+\end{document}
