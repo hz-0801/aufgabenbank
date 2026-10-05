@@ -1,6 +1,8 @@
 # Aufgabenbank – Form und Regeln
 
-Stand 2026-10-05, achte Fassung (Beschlüsse 05.10.: Ziel 12
+Stand 2026-10-06, neunte Fassung (Beschlüsse 05./06.10.: Vorstufen
+tragen die Leiter jeder Stufe, kopfrechenbare Zahlen unten, exakt
+vor gerundet in loesung, Feld bild; vorher achte Fassung 05.10.: Ziel 12
 Aufgaben je Kern-Stufe, 6 je übriger Stufe, Zählregel; Kern aus
 hoehe; Option „schwach“ ohne Musterbeispiel; vorher siebte Fassung
 02.10., Leiterregeln: Rückwärts-
@@ -125,6 +127,12 @@ Leerzeilen. Reihenfolge der Zeilen = Reihenfolge der Kette.
                   null („Mengen je Kette")
     grafik        "" oder der Bausteinaufruf der Grafik, aus den
                   Aufgabenwerten berechnet
+    bild          optional: das Aufgabenbild als ein Wort („Tarif“,
+                  „Leiter“, „Glücksrad“, „Sparplan“), wenn die
+                  Aufgabe eines hat; der Zusammenbau setzt es klein
+                  und grau an den Anfang der Gruppe (Beschluss
+                  06.10.); fehlt es, steht keins – kein Wort wird
+                  erfunden
     loesungsgrafik "" oder der Bausteinaufruf der Lösungsgrafik –
                   für Skizzieraufgaben, deren Lösung nicht durch
                   zwei bis drei Punkte beschreibbar ist
@@ -319,6 +327,20 @@ Verfahrenskette ist daher nicht immer k1.
   (das Prüfungsheft lässt sie aus, das Unterrichtsblatt führt sie).
 - Zahlen so, dass Ergebnisse endlich sind und leichte Aufgaben im
   Kopf gehen; periodische Dezimalbrüche tragen einen Hinweis.
+- Zahlen wachsen mit der Leiter (Beschluss 06.10.): Vorstufen und
+  Grundfall im Kopf rechenbar (bei Prozent 10, 50, 25, 20, 1 %;
+  glatte Werte, Ergebnis ganz oder mit einer Nachkommastelle),
+  mittlere Sprossen glatt mit Taschenrechner, oben wie in der
+  Prüfung. Der Zusammenbau sortiert danach (Kennzahl
+  „kopfrechenbar“ per Skript); jede Stufe braucht unten genug
+  Vorstufen – normal zwei, „schwach“ alle; fehlende leichte
+  Aufgaben werden beim Auffüllen nachgezogen. Im Zweifel eine
+  leichte Aufgabe mehr.
+- Ergebnisse in loesung exakt zuerst, dann gerundet („25\sqrt{2}
+  \approx 35{,}4“ cm, „\tfrac{15}{32} \approx 0{,}47“); glatte Werte
+  allein; schreibt die Aufgabe eine Rundung vor: exakt und die
+  vorgeschriebene Rundung (Beschluss 06.10.). Gilt für neue und
+  geänderte Zeilen.
   Dreisatz-Zahlen der Zone im Kopf rechenbar.
 - Keine Aufgabe doppelt, auch nicht über Ketten hinweg.
 - Ankreuzen: Die loesung nennt die richtige Option wortgleich
@@ -396,7 +418,10 @@ der Lösung bzw. Katalogfeld zwischenergebnis), zweite nur mit der
 ersten Zwischenfrage, dritte ohne; (2) ein Rechenraster, eine Zeile
 je Schritt; (3) im Lösungsblatt Wort + Ansatz ⇒ Wert je
 Zwischenergebnis. Die Bank braucht dafür je Stufe mindestens drei
-Zeilen und je Zeile Zwischenergebnisse in loesung. Päckchen,
+Zeilen und je Zeile Zwischenergebnisse in loesung. Die Leiter
+beginnt bei „schwach“ weiter unten (alle Vorstufen der Stufe,
+Rückblick zwei je Voraussetzung); „schwach“ hängt nicht am Kurs
+(EBR/FOR) und streicht nichts (06.10.). Päckchen,
 Erklärzeile, Merkkasten am Ende und Fachwort spät nur im
 Unterrichtsblatt.
 
@@ -483,7 +508,8 @@ Katalogpunkten zusammen (--urteile) und prüft ohne Argument, dass
 jede Bankzeile mit original genau eine Zeile hat und jedes
 original im Katalog steht. Regel (Beschluss 28.09.): Punkte
 stehen nur im Prüfungsheft und im Prüfungs-Fokus, und dort immer,
-als Punkte des Originals; ins Heft kommen nur Zeilen mit umfang
+als Punkte des Originals, rechts an der Aufgabe, nicht in der
+Lösungsdatei (06.10.); ins Heft kommen nur Zeilen mit umfang
 ganz. Zeilen mit teil oder unklar bleiben auf Lernblättern und
 stehen dort ohne Punkte. Verlangt die Bankzeile mehr als das
 Original (eine Frage dazu), ist sie ganz (29.09.). Nach einem

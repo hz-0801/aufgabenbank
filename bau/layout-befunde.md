@@ -266,3 +266,63 @@ befund-punkte-eichung-2026-10-05.md in mathe-nachhilfe.
 11. Quelle der Kurzlösung: Katalogfeld kurzloesung; ergebnis ist
     das Endergebnis des Katalogs (eigene Rechnung bei den
     BB-Heften, amtlich nur bei Muster 2028 und IQB).
+
+## Beschlüsse 05./06.10. (Prüfungsheft Prozent, fest)
+
+Arbeitsliste: bau/pruefheft/beschluesse-2026-10-06.md (Punkte 1–29,
+dort A–H); voller Wortlaut in mathe-nachhilfe offen.html. Gilt für
+alle Blätter, wenn nicht anders gesagt; ersetzt, wo abweichend, 9,
+17, 19, 23, 24 und 38 oben und Punkt 6 von „Lösungsblatt 05.10.“.
+
+1. Leiter je Stufe: unten Vorstufen aus der Bank (hoehe vorstufe;
+   normal zwei, „schwach“ alle von ganz unten), oben die echte
+   Prüfungsaufgabe. Reihenfolge: Vorstufen, glatt vor krumm, wenig
+   Text vor viel, eine Frage vor zwei, Prüfungshöhe zuletzt.
+2. Zahlen wachsen: unten kopfrechenbar (10/50/25/20/1 %, Ergebnis
+   ganz oder eine Nachkommastelle), Mitte glatt mit Taschenrechner,
+   oben wie in der Prüfung; „kopfrechenbar“ bestimmt das Skript.
+   Im Zweifel eine leichte Aufgabe mehr. Heranführen = Leiter unten
+   verlängern; Zwischenfragen nur bei echten Mehrschritt-Aufgaben,
+   Gerüst gegeben/gesucht/Formel nur bei Formel-Aufgaben.
+3. Gruppen je Stufe nach dem, was der Schüler sieht (rechnen,
+   Sachaufgabe, Ankreuzen, Vergleich), je Gruppe leicht → schwer;
+   Aufgabenbild als ein Wort klein und grau am Gruppenanfang, wo es
+   eines gibt („Tarif“, „Leiter“, „Glücksrad“, „Sparplan“), sonst
+   keins. „weitere dieser Art“ nur innerhalb einer Gruppe und nur,
+   was wie ein Duplikat aussieht.
+4. Aufgaben untereinander, jede mit Rechenplatz nach Schrittzahl
+   (Ankreuzen und Ein-Wort-Antwort ohne); ersetzt „weitere dieser
+   Art kompakt, zweispaltig, ohne Rechenplatz“.
+5. Keine Übersicht und kein Inhaltsverzeichnis vorn (ersetzt 19).
+6. Stufenkopf: Name mit Bezeichnung („Grundwert G“), kein „neu:“,
+   keine Definitionszeile; grau „in 3 der letzten 5 Prüfungen“,
+   sonst „selten geprüft“ (Abitur: letzte fünf BB-Jahrgänge).
+7. Aufgabenzeile: grau „P10 ’26“ ganz links, Nummer, Aufgabe,
+   Punkte rechts (ersetzt 12); Fundstelle (Heft · Aufgabe) nur in
+   der Lösungsdatei. Eigene Aufgaben ohne Prüfungsmarke, als
+   „eigene Aufgabe“ erkennbar.
+8. Formel einmal an der Aufgabe, ab der sie gebraucht wird („ab
+   hier: G = W : p“).
+9. Darstellungen (Streifen, Waage, Wertetabelle, Skizze) bei den
+   Vorstufen, nach oben verschwindend; je Handgriff einmal
+   festgelegt, bis dahin keine.
+10. Prüfungsheft: kein Siezen; Operatoren in Du-Form, auch im
+    eigenen Wortlaut der Prüfungsaufgaben und im Prüfstein.
+11. Jedes Blatt und jede Portion beginnt mit Rückblick: erste
+    Portion Grundlagen (eine Aufgabe je Voraussetzung, mindestens
+    drei; „schwach“ zwei je Voraussetzung), spätere Portionen
+    Rückblick auf die vorige. Eine Portion darf nach einer
+    abgeschlossenen Gruppe enden, auch mitten in der Stufe.
+12. Prüfstein: ganze echte Aufgabe aus den letzten fünf Jahren am
+    Ende, ohne Hilfen, ohne laufende Nummer.
+13. Seitenfuß auf allen Blättern ohne Ausnahme: kopfüber, klein;
+    Kontrollwert, wo es einen kurzen gibt; Tipp nur als Ansatz
+    (f′(x) = 0) und nur, wo es einen gibt, keine Themenwörter.
+14. Ergebnisse überall exakt zuerst, dann ≈ gerundet („25√2 ≈
+    35,4 cm“); glatte Werte allein; vorgeschriebene Rundung: exakt
+    und diese Rundung.
+15. Lösungsdatei ohne Punkte (ersetzt Punkt 6 „BE an der Zeile“ von
+    „Lösungsblatt 05.10.“); Form sonst wie dort.
+16. P10: ein Blatt für beide Kurse; FOR-only-Aufgaben tragen *
+    (ersetzt 23 „Stern entfällt überall“ für P10). Heft nach Kurs
+    (Parameter, ohne Angabe FOR); „schwach“ ändert nur die Form.
