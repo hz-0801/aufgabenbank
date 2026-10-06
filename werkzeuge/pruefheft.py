@@ -77,6 +77,61 @@ def textteil(t, latex):
     return t
 
 
+def _klammer_ende(t, i):
+    tiefe = 0
+    for j in range(i, len(t)):
+        tiefe += {'(': 1, ')': -1}.get(t[j], 0)
+        if tiefe == 0:
+            return j
+    return len(t) - 1
+
+
+ABI_MATH = {'∞': r'\infty', '→': r'\to', '≠': r'\neq', '⊥': r'\perp', '∪': r'\cup', '±': r'\pm',
+            '×': r'\times', '√': r'\sqrt{\,}'}
+
+
+def abi_tx(s):
+    """Klartext-Formeln der Abitur-Katalogfelder (kurzloesung, zwischenergebnis) -> LaTeX (Lauf B2):
+    e^(…) und ^(…) als Hochzahl, √a und √(…) als Wurzel, ∞ → ≠ ⊥ ∪ ± im Mathemodus, ′ als Strich,
+    ⇔ als ⇒ (nur ⇒, Lösungsblatt 05.10.)."""
+    if not s:
+        return ''
+    t = s.replace('⇔', '⇒').replace('′', "'").replace('″', "''")
+    out, i = '', 0
+    while i < len(t):
+        c = t[i]
+        if c == '^':
+            if i + 1 < len(t) and t[i + 1] == '(':
+                j = _klammer_ende(t, i + 1)
+                inner = t[i + 2:j]
+                i = j + 1
+            else:
+                m = re.match(r'[\w,.−-]+', t[i + 1:])
+                inner = m.group(0) if m else ''
+                i += 1 + len(inner)
+            inner = inner.replace('−', '-').replace('·', r'\cdot ').replace(',', '{,}')
+            inner = re.sub(r'(\d+)/(\d+)', r'\\tfrac{\1}{\2}', inner)
+            out += '$^{' + inner + '}$'
+            continue
+        if c == '√':
+            if i + 1 < len(t) and t[i + 1] == '(':
+                j = _klammer_ende(t, i + 1)
+                inner, i = t[i + 2:j], j + 1
+            else:
+                m = re.match(r'[\d,]+', t[i + 1:])
+                inner = m.group(0) if m else ''
+                i += 1 + len(inner)
+            out += '$\\sqrt{' + inner.replace(',', '{,}').replace('−', '-') + '}$'
+            continue
+        if c in ABI_MATH and c != '√':
+            out += '$' + ABI_MATH[c] + '$'
+            i += 1
+            continue
+        out += c
+        i += 1
+    return tx(out).replace('$$', '')
+
+
 def tx(s, latex=False):
     """Klartext (latex=False) oder Bank-LaTeX (latex=True) -> sicherer LaTeX-Text."""
     if not s:
@@ -106,35 +161,61 @@ def lies_jsonl(p):
         return [json.loads(l) for l in f if l.strip()]
 
 
+# Prüfungsprofile (Lauf B2): Ordner, Kataloge, Zuschnitt, Marke, Prüfungsjahre
+PROFIL = {
+    'p10': dict(ordner='msa', kataloge='msa-katalog-*.csv', zuschnitt='skript-zuschnitt-p10.csv',
+                marke='P10', titel='Prüfungsheft P10', papiere=lambda r: r['papier'] in ('OS', 'FOR'),
+                stern=True, pruefstein=True, kennung='PRZ-PH'),
+    # Abitur GK: „in x der letzten 5 Prüfungen“ über die letzten fünf BB-Jahrgänge (Beschluss 13);
+    # kein Stern; kein Prüfstein (je Gebiet offen)
+    'abi-gk': dict(ordner='abitur', kataloge='abi-katalog.csv', zuschnitt='skript-zuschnitt-abi-gk.csv',
+                   marke='Abi', titel='Probeheft Abitur GK',
+                   papiere=lambda r: re.search(r'-(bebb|bb)-gk$', r['papier']) is not None,
+                   stern=False, pruefstein=False, kennung='KUR-PH'),
+}
+
+
 class Daten:
-    def __init__(self, mn, kapitel):
+    def __init__(self, mn, kapitel, pruefung='p10'):
         self.mn = mn
         self.kapitel = kapitel
+        self.pr = PROFIL[pruefung]
+        o = self.pr['ordner']
         self.kat = {}
-        for p in sorted(glob.glob(os.path.join(mn, 'msa', 'msa-katalog-*.csv'))):
+        for p in sorted(glob.glob(os.path.join(mn, o, self.pr['kataloge']))):
             for r in lies_csv(p):
                 self.kat[r['id']] = r
-        self.pruefjahre = sorted({(r['jahr']) for r in self.kat.values()
-                                  if r['papier'] in ('OS', 'FOR')})
-        self.zu = lies_csv(os.path.join(mn, 'msa', f'zuordnung-{kapitel}.csv'))
+        self.pruefjahre = sorted({(r['jahr']) for r in self.kat.values() if self.pr['papiere'](r)})
+        self.zu = lies_csv(os.path.join(mn, o, f'zuordnung-{kapitel}.csv'))
         self.zwilling_zu = {}
         for z in self.zu:
             for paar in (z.get('ebr_zwilling') or '').split():
                 f, e = paar.split('=')
                 self.zwilling_zu[f] = e
-        wl = lies_csv(os.path.join(mn, 'msa', f'wortlaut-eigen-{kapitel}.csv'))
+        wl = lies_csv(os.path.join(mn, o, f'wortlaut-eigen-{kapitel}.csv'))
+        for r in wl:   # Datenbefund B1: f\\'(x) und ′ in der Wortlaut-Datei
+            for f in ('wortlaut', 'abbildung'):
+                r[f] = (r.get(f) or '').replace("\\'", "'").replace('′', "'").replace('″', "''")
         self.wort = OrderedDict((r['id'], r) for r in wl)
-        self.zuschnitt = lies_csv(os.path.join(mn, 'msa', 'skript-zuschnitt-p10.csv'))
+        self.zuschnitt = lies_csv(os.path.join(mn, o, self.pr['zuschnitt']))
+        # Bankeinträge = die, die die Zuordnung nennt (Prozent: wie bisher)
+        ein_z = []
+        for z in self.zu:
+            for sp in z['bank_sprossen'].split():
+                m = re.match(r'([a-z-]+?)-(e\d+|zone)-', sp)
+                if m and m.group(1) not in ein_z:
+                    ein_z.append(m.group(1))
+        self.eintraege = ein_z or ['prozentrechnung', 'zinsrechnung']
         self.bank = {}
         self.zone = []
-        for ein in ('prozentrechnung', 'zinsrechnung'):
+        for ein in self.eintraege:
             for p in sorted(glob.glob(os.path.join(BANK, 'bank', ein, 'e*.jsonl'))):
                 for r in lies_jsonl(p):
                     self.bank[r['id']] = r
-        zp = os.path.join(BANK, 'bank', 'prozentrechnung', 'zone.jsonl')
+        zp = os.path.join(BANK, 'bank', self.eintraege[0], 'zone.jsonl')
         self.zone = lies_jsonl(zp)
         self.zone_alle = []
-        for ein in ('prozentrechnung', 'zinsrechnung'):
+        for ein in self.eintraege[:2]:   # Zone der beiden Haupteinträge (Entscheidung)
             zp = os.path.join(BANK, 'bank', ein, 'zone.jsonl')
             if os.path.exists(zp):
                 self.zone_alle += lies_jsonl(zp)
@@ -154,9 +235,9 @@ class Daten:
                     self.ebr_zwilling[m.group(1)] = r['id']
         self.ebr_zwilling.update(self.zwilling_zu)   # Zuordnung geht vor (Reparatur Punkt 13)
         self.zusatz = {}
-        for p in glob.glob(os.path.join(mn, 'msa', '*-zusatz.jsonl')):
+        for p in glob.glob(os.path.join(mn, o, '*-zusatz.jsonl')):
             name = os.path.basename(p)
-            self.zusatz['msa/' + name] = lies_jsonl(p)
+            self.zusatz[o + '/' + name] = lies_jsonl(p)
         self.befunde = []   # Datenformat-Erkenntnisse während des Baus
 
     def befund(self, s):
@@ -288,8 +369,16 @@ def abbildung(desc, D, iid, vorspann_abb=''):
         return abb_saeulenraster(d)
     if 'wie im Text' in d:
         return ''   # Werte stehen im Wortlaut; Entscheidung: keine zweite Darstellung
-    if d.startswith('Tabelle aus dem Vorspann'):
+    if d.startswith('Tabelle aus dem Vorspann') or d.startswith('Graph aus dem Vorspann') \
+            or re.match(r'Skizze aus \d', d):
         return vorspann_abb
+    if re.match(r'(Graph|Skizze|Diagramm):', d):
+        # Abitur (Lauf B2): Graphen liegen nur als Beschreibung vor, kein Funktionsterm zum Zeichnen –
+        # gesetzt wird ein Rahmen mit der Beschreibung, damit Lehrer und Schüler wissen, welche
+        # Abbildung zur Aufgabe gehört (Entscheidung; Datenbefund, Zählung D.abb_beschreibung)
+        D.abb_beschreibung = getattr(D, 'abb_beschreibung', 0) + 1
+        return (r'\fbox{\parbox{0.9\linewidth}{\footnotesize\color{mbgrau}Abbildung im Original: '
+                + tx(d.split(':', 1)[1].strip()) + '}}')
     if d.startswith('Säulendiagramm'):
         return abb_saeulen(d, D, iid)
     if d.startswith('Tabelle (Spalten'):
@@ -343,6 +432,9 @@ class Aufgabe:
         self.hrang = 2
         self.stern = False
         self.zw_roh = []
+        self.sicher = 'ja'
+        self.hilfsmittel = ''
+        self.abhaengig = ''
 
 
 def ankreuz_zerlegen(text):
@@ -435,7 +527,11 @@ def vorspann_gilt(vs, teil):
     m = re.search(r'Vorspann für ([^;]*)', vs.get('anmerkung', ''))
     if not m:
         return True
-    return teil in re.findall(r'\d+([a-z])', m.group(1))
+    tl = m.group(1)
+    for x, y in re.findall(r'\d([a-z]) bis [\d.]*\d([a-z])', tl):   # „2.1a bis 2.1h“
+        if x <= teil <= y:
+            return True
+    return teil in re.findall(r'\d+([a-z])', tl)
 
 
 def echt_aufgabe(D, iid, stufe):
@@ -446,7 +542,14 @@ def echt_aufgabe(D, iid, stufe):
         return None
     a = Aufgabe()
     a.art, a.id = 'echt', iid
+    a.sicher = w.get('sicher', 'ja') or 'ja'
+    a.hilfsmittel = k.get('hilfsmittel', '')
+    a.abhaengig = k.get('abhaengig_von', '')
     pre = iid[:-1]
+    if D.pr['ordner'] == 'abitur':
+        # Vorspann-id im Abitur: Aufgabe ohne Buchstabe, bei zwei Aufgabenteilen -T1/-T2
+        kand = [v for v in (pre, pre + '-T1', pre + '-T2') if v in D.wort]
+        pre = next((v for v in kand if vorspann_gilt(D.wort[v], w['teil'])), kand[0] if kand else pre)
     vs = D.wort.get(pre)
     vs_abb = ''
     text = w['wortlaut']
@@ -490,12 +593,13 @@ def echt_aufgabe(D, iid, stufe):
         wv = re.split(r'≈|=', x)[-1].strip()
         if x and wv not in werte:   # „Sektor ≈ 52° | ≈ 52°“ nur einmal (Reparatur Punkt 6)
             teile.append(x); werte.add(wv)
-    a.kurz = '; '.join(tx(x) for x in teile)
+    fx = abi_tx if D.pr['ordner'] == 'abitur' else tx
+    a.kurz = '; '.join(fx(x) for x in teile)
     if not k['kurzloesung']:
         D.befund(f'{iid}: kurzloesung leer')
     zw = [x.strip() for x in k['zwischenergebnis'].split(' ; ') if x.strip()]
     a.zf = [x.strip() for x in w.get('zwischenfragen', '').split(' ; ') if x.strip()]
-    a.zw = [tx(z) for z in zw]
+    a.zw = [fx(z) for z in zw]
     a.zw_roh = zw
     for i, z in enumerate(zw):
         a.zw_wort.append('' if hat_wort(z) else wort_fuer(z, i, a.zf, len(zw), stufe))
@@ -593,6 +697,16 @@ def bank_loesung(l):
     if len(seg) > 1 and not re.search(r'=|≈|\\approx|<|>|\\le|\\ge', seg[-1]) and \
             len(re.findall(r'[A-Za-zÄÖÜäöüß]{3,}', re.sub(r'\$[^$]*\$', '', seg[-1]))) >= 3:
         seg = seg[:-1]
+    # Mehrere Ergebnisse (x_1 = …, x_2 = …; Lauf B2): ab „Ergebnis:“ bzw. ab der ersten von mindestens
+    # zwei indizierten Zuweisungen im letzten Abschnitt ist alles Ergebnis
+    ie = next((i for i, x in enumerate(seg) if re.match(r'(Ergebnis|Antwort):', x)), None)
+    if ie is not None and ie < len(seg) - 1:
+        kurz = '; '.join(re.sub(r'^(Ergebnis|Antwort):\s*', '', x) for x in seg[ie:])
+        return kurz, seg[:ie] + extra
+    idx = list(re.finditer(r'\$?[A-Za-z]_\{?\d+\}?\s*=', seg[-1]))
+    if len(idx) >= 2:
+        vor = seg[-1][:idx[0].start()].rstrip(' :,')
+        return seg[-1][idx[0].start():], seg[:-1] + ([vor + '$' if vor.count('$') % 2 else vor] if re.search(r'\d', vor) else []) + extra
     erste = seg[0]
     if re.match(r'^(Ja|Nein)\b', erste):
         kurz = erste
@@ -626,6 +740,12 @@ def bank_loesung(l):
                 break
     zw = seg[:-1] + ([vor.strip()] if vor.strip() and vor.strip() != '$$' else []) + extra
     return kurz.strip(), zw
+
+
+DU = {'Berechnen': 'Berechne', 'Bestimmen': 'Bestimme', 'Zeigen': 'Zeige', 'Geben': 'Gib',
+      'Weisen': 'Weise', 'Ermitteln': 'Ermittle', 'Untersuchen': 'Untersuche', 'Begründen': 'Begründe',
+      'Skizzieren': 'Skizziere', 'Beschreiben': 'Beschreibe', 'Entscheiden': 'Entscheide',
+      'Kreuzen': 'Kreuze', 'Prüfen': 'Prüfe', 'Überprüfen': 'Überprüfe', 'Zeichnen': 'Zeichne'}
 
 
 def bank_aufgabe(D, r, stufe):
@@ -672,7 +792,18 @@ def bank_aufgabe(D, r, stufe):
                 out += ('\\leerfeld[%s]' % tx(e) if e else '\\leerfeld') + ' '
         a.antwort = out.replace('\\\\', '\\')
     a.kreuz = r.get('form') == 'ankreuzen'
-    kurz, zw = bank_loesung(r['loesung'])
+    lo = r['loesung']
+    # Prüfungsheft ohne Siezen (Beschluss 17): zitierte Operatoren der Bank („Zeigen Sie, …“) beim
+    # Setzen in Du-Form; die Bankzeile bleibt (Befund, Zählung D.n_sie)
+    t0 = a.text
+    a.text = re.sub(r'\b(' + '|'.join(DU) + r') Sie\b', lambda m: DU[m.group(1)], a.text)
+    if a.text != t0:
+        D.n_sie = getattr(D, 'n_sie', 0) + 1
+    if D.pr['ordner'] == 'abitur':
+        lo = lo.replace('\\Leftrightarrow', '\\Rightarrow').replace('⇔', '⇒')   # nur ⇒ (Lösungsblatt 05.10.)
+        # Schlusssatz „…: die Gerade ist $y = -x$.“ -> Ergebnis ist der Ausdruck nach dem letzten „ist“
+        lo = re.sub(r':\s*(die|der|das)\s+\w+\s+ist\s+(\$[^$]+\$)\.?\s*$', r'; Ergebnis: \2', lo)
+    kurz, zw = bank_loesung(lo)
     a.kurz = tx(kurz, latex=True)
     a.zw = [tx(z, latex=True) for z in zw]
     a.zw_roh = zw
@@ -890,7 +1021,7 @@ def erkennung_einheiten(D):
     """Erkennungsschritte (eigene Ketten nur aus Vorstufen): für welche Einheiten sie gelten – aus den
     Zeilen „Vor Einheit …“ des Themenkatalogs (nur diese Zeilen werden gelesen)."""
     erg = {}
-    for ein in ('prozentrechnung', 'zinsrechnung'):
+    for ein in D.eintraege:
         p = os.path.join(D.mn, 'katalog', ein + '.md')
         if not os.path.exists(p):
             continue
@@ -956,6 +1087,8 @@ def kennzahlen(D, a):
 
 
 def stern_fuer(D, iid):
+    if not D.pr['stern']:
+        return False   # Abitur: kein Stern (Lauf B2)
     """* für Aufgaben, die nur FOR sind (Beschluss 26): Katalogfeld stern ja (Sternaufgabe der
     OS-Hefte = Niveaustufe G außerhalb der EBR-Liste) oder ein FOR-Heft-Teil ohne EBR-Zwilling."""
     k = D.kat.get(iid)
@@ -974,7 +1107,7 @@ def baue_modell(D, args):
         stufen = [s for s in stufen if args.fokus.lower() in s.name.lower()]
         if not stufen:
             sys.exit(f'Fokus „{args.fokus}“ trifft keine Stufe')
-    ps = None if args.fokus else pruefstein_waehlen(D)
+    ps = None if (args.fokus or not D.pr['pruefstein']) else pruefstein_waehlen(D)
     ps_ids = set(ps[3]) if ps else set()
     tief = args.art == 'schwach' or bool(args.fokus)     # Leiter von ganz unten (Beschlüsse 1, 7, 29)
     for st in stufen:
@@ -993,12 +1126,12 @@ def baue_modell(D, args):
         # Ketten und Einheiten der Stufe
         ketten, einheiten = [], set()
         for sp in st.sprossen:
-            if sp.startswith('msa/'):
+            if re.match(r'(msa|abitur)/', sp):
                 continue
             k = kette_von(sp)
             if k not in ketten:
                 ketten.append(k)
-            m = re.match(r'(\w+)-e(\d+)-', sp)
+            m = re.match(r'([a-z-]+?)-e(\d+)-', sp)
             einheiten.add((m.group(1), int(m.group(2))))
         # Vorstufen: eigene der Ketten zuerst, dann Erkennungsschritte der Einheit (engster Bereich
         # zuerst); normal zwei, schwach/Fokus alle Sprossen mit je zwei Varianten (Entscheidung).
@@ -1064,7 +1197,7 @@ def baue_modell(D, args):
                 D.befund(f'Fokus {st.name}: {a.id} fragt nach {gesucht(a)} – nicht gesetzt')
             mitte = [a for a in mitte if a not in weg]
         for sp in st.sprossen:
-            m = re.match(r'(msa/[\w-]+\.jsonl)\((\d+)\)', sp)
+            m = re.match(r'((?:msa|abitur)/[\w-]+\.jsonl)\((\d+)\)', sp)
             if m:
                 rs = [r for r in D.zusatz.get(m.group(1), []) if r['id'] not in B.benutzt]
                 # eigene Aufgaben in Prüfungshöhe nur, wenn echte fehlen (Beschlüsse 21, 22)
@@ -1169,11 +1302,17 @@ KOPF = r"""\documentclass[11pt]{article}
 """
 
 
+D_AKT = None   # Daten des laufenden Baus (für marke)
+
+
 def marke(a, kurs):
+    if a.art == 'echt' and D_AKT is not None and D_AKT.pr['ordner'] == 'abitur' and a.hilfsmittel == 'nein':
+        # Rechner-Hinweis nur, wo der Katalog es verlangt (hilfsmittelfreier Teil; Lauf B2)
+        return f'{D_AKT.pr["marke"]} ’{str(a.jahr)[2:]}\\\\ohne Hilfsmittel'
     """Grau links (Beschluss 14): „P10 ’26“ an echten Aufgaben, „eigene Aufgabe“ an Bankaufgaben,
     nichts im Rückblick (Entscheidung)."""
     if a.art == 'echt':
-        return f'P10 ’{str(a.jahr)[2:]}'
+        return f'{D_AKT.pr["marke"]} ’{str(a.jahr)[2:]}'
     if a.art == 'zone':
         return ''
     return 'eigene Aufgabe'
@@ -1538,11 +1677,45 @@ def setze_loesung(D, args, titel, eintraege, ps_loes):
     """Lösungsdatei ohne Punkte (Beschluss 25); rechts klein die Fundstelle statt der BE."""
     out = [KOPF.replace('\\begin{document}', ''), f'\\blattfuss{{{titel}}}{{Lösungen}}',
            '\\begin{document}', f'\\noindent{{\\large\\bfseries {titel} \\textperiodcentered{{}} Lösungen}}\\par\\medskip']
+    abi = D.pr['ordner'] == 'abitur'
+    kopf_auf, kopf_da, nr_von = {}, set(), {}
+    if abi:
+        # Kopf der Aufgabe (Lösungsblatt 05.10. Punkt 4; Lauf B2): Ableitungen und Stammfunktion
+        # (f′, f″, F …), einmal je Aufgabe untereinander, wo mindestens zwei ihrer Teilaufgaben im Heft
+        # stehen; die Teilaufgaben verweisen darauf statt zu wiederholen
+        gr = OrderedDict()
+        for nr, a in eintraege:
+            if a.art == 'echt':
+                gr.setdefault(a.id[:-1], []).append(a)
+                nr_von[a.id] = nr
+        for auf, al in gr.items():
+            defs = []
+            for a in al:
+                for z in a.zw_roh:
+                    # nur Definitionen „f′(x) = Term“ der Funktion der Aufgabe, kein „= 0 ⇒ …“, keine Zahl
+                    m = re.match(r"^\s*([a-z])('+|[′″]+)\(([a-z])\)\s*=\s*(.+)$", z)
+                    if m and not re.search(r'⇒|⇔|=', m.group(4)) and re.search(m.group(3), m.group(4)) \
+                            and z not in defs:
+                        defs.append(z)
+            if len(al) >= 2 and defs:
+                kopf_auf[auf] = defs
     for nr, a in eintraege:
         k, z, f = loesung_zeilen(D, a, args.art, args.kurs)
+        if abi and a.art == 'echt':
+            auf = a.id[:-1]
+            zr = [x for x in a.zw_roh if x not in kopf_auf.get(auf, [])]
+            mit = [d[-1] + ')' for d in a.abhaengig.split('|') if d and d[:-1] == auf]
+            z = '; '.join((['mit ' + ', '.join(mit)] if mit else []) + [abi_tx(x) for x in zr])
         # Fundstelle (Heft · Aufgabe) grau im Kopf der Tabelle, nur an echten Aufgaben (Beschluss 14);
         # die vierte Spalte (früher BE) bleibt leer (Beschluss 25)
         kopf = f'{{\\small\\color{{mbgrau}}{f}}}' if f else ''
+        if abi and a.art == 'echt' and a.id[:-1] in kopf_auf and a.id[:-1] not in kopf_da:
+            kopf_da.add(a.id[:-1])
+            kopf = (f'{{\\small\\color{{mbgrau}}{f}}}' + ''.join(
+                r'\par\noindent{\small ' + abi_tx(d) + '}' for d in kopf_auf[a.id[:-1]]))   # untereinander
+        elif abi and a.art == 'echt' and a.id[:-1] in kopf_auf:
+            z = f'Kopf bei Nr. {nr_von[min((x for x in nr_von if x[:-1] == a.id[:-1]), key=lambda x: int(nr_von[x][:-1]))]}' \
+                + ('; ' + z if z else '')
         out.append(f'\\begin{{pfloesung}}{{{kopf}}}')
         out.append(f'\\lz{{{nr}}}{{{k}}}{{{z}}}{{}}')
         out.append('\\end{pfloesung}')
@@ -1563,7 +1736,7 @@ def setze_loesung(D, args, titel, eintraege, ps_loes):
 def fertigkeit_einheiten(D):
     """Fertigkeiten (Zone) -> Einheiten, aus dem Block „Fertigkeiten:“ der Themenkataloge."""
     erg = {}
-    for ein in ('prozentrechnung', 'zinsrechnung'):
+    for ein in D.eintraege[:2]:
         p = os.path.join(D.mn, 'katalog', ein + '.md')
         if not os.path.exists(p):
             continue
@@ -1582,7 +1755,9 @@ def fertigkeit_einheiten(D):
     return erg
 
 
-WORT_VORAUS = [('Bruch', 'Bruch'), ('Anteil', 'Bruch'), ('Dezimal', 'Dezimalzahl'), ('Runden', 'Runden'),
+WORT_VORAUS = [('Ableitung', 'Ableitungen bilden'), ('Gleichung', 'Gleichungen lösen'),
+               ('ausklammern', 'Gleichungen lösen'), ('pq-Formel', 'Gleichungen lösen'),
+               ('Punktprobe', 'Funktionswerte'), ('Bruch', 'Bruch'), ('Anteil', 'Bruch'), ('Dezimal', 'Dezimalzahl'), ('Runden', 'Runden'),
                ('runden', 'Runden'), ('Potenz', 'Potenz'), ('Tabelle', 'Tabelle'), ('Dreisatz', 'Dreisatz'),
                ('Prozentsatz', 'Prozentsatz'), ('Prozentwert', 'Prozentwert')]
 
@@ -1597,7 +1772,7 @@ def rueckblick_grundlagen(D, args, stufen, B):
     kern = [st for st in stufen if st.kern] or stufen
     for st in kern:
         for sp in st.sprossen:
-            m = re.match(r'(\w+)-e(\d+)-', sp)
+            m = re.match(r'([a-z-]+?)-e(\d+)-', sp)
             if m:
                 einheiten.add((m.group(1), int(m.group(2))))
     namen = {st.name for st in stufen}
@@ -1613,12 +1788,17 @@ def rueckblick_grundlagen(D, args, stufen, B):
         rng = next((v for (e2, n), v in fe.items() if e2 == ein and k.startswith(n[:25])), set())
         if any((ein, n) in einheiten for n in rng):
             wahl.append((ein, k))
+    if not wahl:
+        # Abitur (Lauf B2): der Themenkatalog trägt keine Zeile „Fertigkeiten:“ mit Einheiten –
+        # alle Zone-Fertigkeiten des Haupteintrags (Kapitel) sind Voraussetzungen (Entscheidung)
+        wahl = [kk for kk in ketten if kk[0] == D.kapitel]
     voraus = set()
     for st in kern:
         for i in st.ids:
             for v in (D.kat.get(i, {}).get('voraussetzungen', '') or '').split('|'):
                 if v:
                     voraus.add(v)
+    ohne = []
     for v in sorted(voraus):
         treffer = [kk for kk in ketten if any(w in v and w2 in kk[1] for w, w2 in WORT_VORAUS)]
         if treffer:
@@ -1626,7 +1806,14 @@ def rueckblick_grundlagen(D, args, stufen, B):
                 if t not in wahl:
                     wahl.append(t)
         else:
+            ohne.append(v)
+    if ohne and len(ohne) <= 8:
+        for v in ohne:
             D.befund(f'Rückblick: Voraussetzung „{v}“ (Katalogfeld) hat keine Zone-Aufgabe')
+    elif ohne:
+        D.befund(f'Rückblick: {len(ohne)} Einträge des Katalogfelds voraussetzungen ohne passende '
+                 f'Zone-Fertigkeit (Wortliste WORT_VORAUS kennt die Abitur-Wörter nicht), z. B. '
+                 + '; '.join(f'„{v}“' for v in ohne[:4]))
     je = 2 if args.art == 'schwach' else 1
     out = []
     while len(out) < 3 and wahl and je <= 4:   # mindestens drei: dann zwei je Voraussetzung (Entsch.)
@@ -1806,8 +1993,9 @@ def register(args, name, ordner, seiten):
     pfad = os.path.relpath(ordner, BANK)
     alt = [z.split(';')[0] for z in zeilen if z.endswith(';' + pfad)]
     zeilen = [z for z in zeilen if not z.endswith(';' + pfad)]
-    nrn = [int(z.split(';')[0][6:]) for z in zeilen if re.match(r'PRZ-PH\d+;', z)]
-    kenn = alt[0] if alt else f'PRZ-PH{max(nrn + [0]) + 1}'   # Neubau behält seine Kennung
+    kp = D_AKT.pr['kennung']
+    nrn = [int(z.split(';')[0][len(kp):]) for z in zeilen if re.match(kp + r'\d+;', z)]
+    kenn = alt[0] if alt else f'{kp}{max(nrn + [0]) + 1}'   # Neubau behält seine Kennung
     best = (f'kapitel={args.kapitel}, art={args.art}, portion={args.portion or "–"}, '
             f'fokus={args.fokus or "–"}, kurs={args.kurs}, seiten={seiten}')
     try:
@@ -1815,7 +2003,7 @@ def register(args, name, ordner, seiten):
                                 text=True).stdout.strip()
     except Exception:
         commit = ''
-    zeilen.append(f'{kenn};{args.datum};prozentrechnung,zinsrechnung;PH;{best};{commit};'
+    zeilen.append(f'{kenn};{args.datum};{",".join(D_AKT.eintraege)};PH;{best};{commit};'
                   f'pruefheft.py v0.2;Version 2026-10-06;{pfad}')
     open(p, 'w', encoding='utf-8').write('\n'.join(zeilen) + '\n')
 
@@ -1823,6 +2011,8 @@ def register(args, name, ordner, seiten):
 def main():
     ap = argparse.ArgumentParser(description='Prüfungsheft aus Daten setzen')
     ap.add_argument('--kapitel', required=True)
+    ap.add_argument('--pruefung', choices=sorted(PROFIL), default='p10',
+                    help='Prüfungsprofil: p10 (Vorgabe) oder abi-gk (Abitur Grundkurs)')
     ap.add_argument('--art', choices=['normal', 'schwach'], default='normal')
     ap.add_argument('--portion', type=int)
     ap.add_argument('--fokus')
@@ -1836,7 +2026,9 @@ def main():
     ap.add_argument('--ohne-register', action='store_true')
     args = ap.parse_args()
 
-    D = Daten(args.mn, args.kapitel)
+    global D_AKT
+    D = Daten(args.mn, args.kapitel, args.pruefung)
+    D_AKT = D
     D.n_exakt_offen = 0
     stufen, ps, B = baue_modell(D, args)
     for st in stufen:
@@ -1844,7 +2036,7 @@ def main():
             if a.art == 'bank':
                 exakt_vor(D, a, D.bank.get(a.id) or {})
     kap = args.kapitel.capitalize()
-    unter = 'Prüfungsheft P10' + (' \\textperiodcentered{} EBR' if args.kurs == 'EBR' else '') + \
+    unter = D.pr['titel'] + (' \\textperiodcentered{} EBR' if args.kurs == 'EBR' else '') + \
             (' \\textperiodcentered{} schwach' if args.art == 'schwach' else '')
     name = f'{args.kapitel}-{args.art}'
     titel = kap
