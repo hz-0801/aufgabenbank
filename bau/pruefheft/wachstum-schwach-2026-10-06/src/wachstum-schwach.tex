@@ -122,6 +122,7 @@ Ein Guthaben wächst jedes Jahr um $10\,\%$. In der Zeile der Jahre fehlt eine A
 \rechenraster{1}
 \fusshilfe{\mbox{21:~$1\,331$}}
 \end{pfnr}
+\pfgruppe{}
 \begin{pfnr}{P10 ’16}{22.}{2 BE}
 Um Krankheiten der Schilddrüse zu erkennen, spritzt man dem Patienten eine Flüssigkeit, die eine kleine Menge radioaktives Technetium enthält. Die Masse des Technetiums im Körper wird jede Stunde um etwa 11 \% kleiner. Ergänze die beiden Lücken in der Tabelle: die Masse nach 1 Stunde und die Zeit, zu der noch 3,14 mg vorhanden sind.
 \par\smallskip\noindent \sachtabelle{lccccccc}{Zeit in h & 0 & 1 & 2 & \leerzelle & 5 & 6 & 8}{Masse in mg & 5,00 & \leerzelle & 3,96 & 3,14 & 2,79 & 2,48 & 1,97}\par
@@ -159,56 +160,60 @@ Der Zahlenstrahl ist in Hunderterschritten beschriftet. Welche Zahl gehört zum 
 \fusshilfe{\mbox{26:~$350$}}
 \end{pfnr}
 \pfgruppe{}
-\begin{pfnr}{P10 ’25}{27.}{2 BE}
+\begin{pfnr}{eigene Aufgabe}{27.}{}
+Lies am Graphen $f$ die Werte für $t = 0$, $t = 2$ und $t = 4$ ab und trage sie in die Tabelle ein. \wertetabelle{t}{\text{Wert}}{0,2,4}
+\par\smallskip\noindent \begin{ksys}[xmin=0,xmax=6,ymin=0,ymax=400,xstep=1,ystep=50,xlabel=t,ylabel=Wert,ablesen] \funktionab{50*1.4^\x}{f}{0}{6} \end{ksys}\par
+\rechenraster{1}
+\fusshilfe{\mbox{27:~$192$}}
+\end{pfnr}
+\pfgruppe{}
+\begin{pfnr}{eigene Aufgabe}{28.}{}
+Die Tabelle zeigt Wertepaare. Trage jedes Wertepaar als Punkt in das Koordinatensystem ein. \wertetabelle[100,120,144,173,207]{t}{\text{Anzahl}}{0,1,2,3,4}
+\par\smallskip\noindent \begin{ksys}[xmin=0,xmax=5,ymin=0,ymax=250,xstep=1,ystep=25,xlabel=t,ylabel=Anzahl]  \end{ksys}\par
+\rechenraster{1}
+\end{pfnr}
+\begin{pfnr}{eigene Aufgabe}{29.}{}
+Im Koordinatensystem ist die senkrechte Achse in Fünfzigerschritten eingeteilt. Trage die Werte aus der Tabelle genau als Punkte ein. \wertetabelle[125,150,180,216]{t}{\text{Wert}}{0,1,2,3}
+\par\smallskip\noindent \begin{ksys}[xmin=0,xmax=4,ymin=0,ymax=250,xstep=1,ystep=50,xlabel=t,ylabel=Wert]  \end{ksys}\par
+\rechenraster{1}
+\end{pfnr}
+\begin{pfnr}{eigene Aufgabe}{30.}{}
+Im Koordinatensystem sind Punkte eingetragen. Sie zeigen ein Wachstum. Verbinde die Punkte zu einer glatten Kurve.
+\par\smallskip\noindent \begin{ksys}[xmin=0,xmax=5,ymin=0,ymax=250,xstep=1,ystep=25,xlabel=t,ylabel=Anzahl] \punkt{0}{100}{} \punkt{1}{120}{} \punkt{2}{144}{} \punkt{3}{173}{} \punkt{4}{207}{} \end{ksys}\par
+\rechenraster{1}
+\end{pfnr}
+\begin{pfnr}{eigene Aufgabe}{31.}{}
+Das Koordinatensystem hat auf jeder Achse $8$ Kästchen. Teile die Achsen so ein, dass alle Werte der Tabelle passen. Beschrifte die Achsen. Trage dann die Punkte ein. \wertetabelle[300,363,439,531]{\text{Jahr}}{\text{Euro}}{0,2,4,6}
+\par\smallskip\noindent \begin{ksys}[xmin=0,xmax=8,ymin=0,ymax=8]  \end{ksys}\par
+\rechenraster{1}
+\fusshilfe{\mbox{31:~Punkte eingetragen}}
+\end{pfnr}
+\pfgruppe{}
+\begin{pfnr}{P10 ’25}{32.}{2 BE}
 Man beobachtet einen Bakterienstamm, der exponentiell wächst. Die Tabelle zeigt die Zahl der Bakterien in den ersten 4 Stunden. Stelle das Wachstum der Bakterien im Koordinatensystem dar.
 \par\smallskip\noindent \begin{tikzpicture}\begin{axis}[xmin=0,xmax=4,ymin=0,ymax=400,tick label style={font=\scriptsize},clip=true,/pgf/number format/use comma,axis line style={-{Stealth[length=2mm]}},every axis plot/.append style={line width=0.9pt},width=11.5cm,height=7.5cm,grid=both,grid style={mbgitter,line width=0.3pt},minor tick num=1,axis lines=left,xlabel={Zeit in Stunden},ylabel={Anzahl der Bakterien},label style={font=\small},scaled ticks=false,/pgf/number format/1000 sep={\,}]\end{axis}\end{tikzpicture}\par
 \rechenraster{1}
 \end{pfnr}
-\begin{pfnr}{P10 ’21}{28.}{3 BE}
+\begin{pfnr}{P10 ’21}{33.}{3 BE}
 Eine 40 cm hohe Kerze brennt ab. Gegeben: Tabelle Zeit in Minuten 0, 10, 20, 30, 40, 80; Höhe in cm 40, 38, 36, 34, 32, 24. Stelle diese Werte als Graph im Koordinatensystem dar. Trag dazu zuerst die fehlende Einteilung der Achsen ein.
 \par\smallskip\noindent \begin{tikzpicture}[x=0.450cm,y=0.450cm]\draw[mbgitter,line width=0.3pt,step=1] (0,0) grid (26,24);\draw[line width=0.7pt,-{Stealth[length=2mm]}] (1,1) -- (25.7,1);\draw[line width=0.7pt,-{Stealth[length=2mm]}] (1,1) -- (1,23.7);\node[font=\small,anchor=north east] at (25.7,0.8) {Zeit in Minuten};\node[font=\small,anchor=south west] at (1.3,23.7) {Höhe in cm};\end{tikzpicture}\par
 \pfzwfrage{Lege fest, wie viele Minuten ein Kästchen auf der Rechtsachse bedeutet.}
 \pfzwfrage{Lege fest, wie viele Zentimeter ein Kästchen auf der Hochachse bedeutet.}
 \rechenraster{2}
+\fusshilfe{\mbox{33:~2 cm; fallende Strecke von (0; 40) bis (80; 24)}}
 \end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{29.}{}
-Die Tabelle zeigt Wertepaare. Trage jedes Wertepaar als Punkt in das Koordinatensystem ein. \wertetabelle[100,120,144,173,207]{t}{\text{Anzahl}}{0,1,2,3,4}
-\par\smallskip\noindent \begin{ksys}[xmin=0,xmax=5,ymin=0,ymax=250,xstep=1,ystep=25,xlabel=t,ylabel=Anzahl]  \end{ksys}\par
-\rechenraster{1}
-\end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{30.}{}
-Im Koordinatensystem ist die senkrechte Achse in Fünfzigerschritten eingeteilt. Trage die Werte aus der Tabelle genau als Punkte ein. \wertetabelle[125,150,180,216]{t}{\text{Wert}}{0,1,2,3}
-\par\smallskip\noindent \begin{ksys}[xmin=0,xmax=4,ymin=0,ymax=250,xstep=1,ystep=50,xlabel=t,ylabel=Wert]  \end{ksys}\par
-\rechenraster{1}
-\end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{31.}{}
-Im Koordinatensystem sind Punkte eingetragen. Sie zeigen ein Wachstum. Verbinde die Punkte zu einer glatten Kurve.
-\par\smallskip\noindent \begin{ksys}[xmin=0,xmax=5,ymin=0,ymax=250,xstep=1,ystep=25,xlabel=t,ylabel=Anzahl] \punkt{0}{100}{} \punkt{1}{120}{} \punkt{2}{144}{} \punkt{3}{173}{} \punkt{4}{207}{} \end{ksys}\par
-\rechenraster{1}
-\end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{32.}{}
-Das Koordinatensystem hat auf jeder Achse $8$ Kästchen. Teile die Achsen so ein, dass alle Werte der Tabelle passen. Beschrifte die Achsen. Trage dann die Punkte ein. \wertetabelle[300,363,439,531]{\text{Jahr}}{\text{Euro}}{0,2,4,6}
-\par\smallskip\noindent \begin{ksys}[xmin=0,xmax=8,ymin=0,ymax=8]  \end{ksys}\par
-\rechenraster{1}
-\fusshilfe{\mbox{32:~Punkte eingetragen}}
-\end{pfnr}
-\begin{pfnr}{P10 ’16}{\llap{\textasteriskcentered\,}33.}{4 BE}
+\begin{pfnr}{P10 ’16}{\llap{\textasteriskcentered\,}34.}{4 BE}
 Um Krankheiten der Schilddrüse zu erkennen, spritzt man dem Patienten eine Flüssigkeit, die eine kleine Menge radioaktives Technetium enthält. Die Masse des Technetiums im Körper wird jede Stunde um etwa 11 \% kleiner. Beschrifte die Achsen des Koordinatensystems passend zur Tabelle und zeichne ein, wie die Masse abnimmt. Gegeben: Tabelle 0 h: 5,00 mg; 1 h: 4,45 mg; 2 h: 3,96 mg; 4 h: 3,14 mg; 5 h: 2,79 mg; 6 h: 2,48 mg; 8 h: 1,97 mg.
 \par\smallskip\noindent \begin{tikzpicture}[x=0.450cm,y=0.450cm]\draw[mbgitter,line width=0.3pt,step=1] (0,0) grid (19,18);\draw[line width=0.7pt,-{Stealth[length=2mm]}] (1,2) -- (18.7,2);\draw[line width=0.7pt,-{Stealth[length=2mm]}] (1,2) -- (1,17.7);\draw[line width=0.5pt] (3,1.75) -- (3,2.25);\draw[line width=0.5pt] (5,1.75) -- (5,2.25);\draw[line width=0.5pt] (7,1.75) -- (7,2.25);\draw[line width=0.5pt] (9,1.75) -- (9,2.25);\draw[line width=0.5pt] (11,1.75) -- (11,2.25);\draw[line width=0.5pt] (13,1.75) -- (13,2.25);\draw[line width=0.5pt] (15,1.75) -- (15,2.25);\draw[line width=0.5pt] (17,1.75) -- (17,2.25);\draw[line width=0.5pt] (0.75,4) -- (1.25,4);\draw[line width=0.5pt] (0.75,6) -- (1.25,6);\draw[line width=0.5pt] (0.75,8) -- (1.25,8);\draw[line width=0.5pt] (0.75,10) -- (1.25,10);\draw[line width=0.5pt] (0.75,12) -- (1.25,12);\draw[line width=0.5pt] (0.75,14) -- (1.25,14);\draw[line width=0.5pt] (0.75,16) -- (1.25,16);\end{tikzpicture}\par
 \pfzwfrage{Wähle, welche Größe auf die Rechtsachse und welche auf die Hochachse kommt.}
 \rechenraster{2}
+\fusshilfe{\mbox{34:~y-Achse Masse in mg, 1 mg je Teilstrich}}
 \end{pfnr}
-\begin{pfnr}{P10 ’17}{34.}{4 BE}
+\begin{pfnr}{P10 ’17}{35.}{4 BE}
 Auf Meereshöhe (0 km) misst man einen Luftdruck von ungefähr 1000 hPa (Hektopascal). Je höher man steigt, desto kleiner wird der Luftdruck: mit jedem Kilometer Höhe um 13 \%. Vervollständige das Koordinatensystem und zeichne den Luftdruck in Abhängigkeit von der Höhe. Gegeben: 0 km: 1000 hPa; 1 km: 870 hPa; 2 km: 757 hPa; 3 km: 659 hPa; 5 km: 498 hPa; 8 km: 328 hPa; 10 km: 248 hPa.
 \par\smallskip\noindent \begin{tikzpicture}[x=0.450cm,y=0.450cm]\draw[mbgitter,line width=0.3pt,step=1] (0,0) grid (24,24);\draw[line width=0.7pt,-{Stealth[length=2mm]}] (2,2) -- (23.7,2);\draw[line width=0.7pt,-{Stealth[length=2mm]}] (2,2) -- (2,23.7);\end{tikzpicture}\par
 \rechenraster{2}
-\end{pfnr}
-\pfgruppe{}
-\begin{pfnr}{eigene Aufgabe}{35.}{}
-Lies am Graphen $f$ die Werte für $t = 0$, $t = 2$ und $t = 4$ ab und trage sie in die Tabelle ein. \wertetabelle{t}{\text{Wert}}{0,2,4}
-\par\smallskip\noindent \begin{ksys}[xmin=0,xmax=6,ymin=0,ymax=400,xstep=1,ystep=50,xlabel=t,ylabel=Wert,ablesen] \funktionab{50*1.4^\x}{f}{0}{6} \end{ksys}\par
-\rechenraster{1}
-\fusshilfe{\mbox{35:~$192$}}
+\fusshilfe{\mbox{35:~x-Achse Höhe in km, 2 Kästchen je km}}
 \end{pfnr}
 \pfstufekopf[sfaktorbestimmengleic]{Faktor bestimmen, Gleichung aufstellen}{in 2 der letzten 5 Prüfungen}
 \pfgruppe{}
@@ -292,61 +297,65 @@ Die Zahl der Mitglieder eines Vereins wird mit $M(t) = 250 \cdot 1{,}05^t$ berec
 \rechenraster{1}
 \fusshilfe{\mbox{49:~$1{,}05$: Faktor, jedes Jahr $5\,\%$ mehr}}
 \end{pfnr}
-\begin{pfnr}{P10 ’18}{50.}{2 BE}
-Ein junges Berliner Unternehmen zeigt in einer Tabelle, wie sein Umsatz gewachsen ist: 2013: 600 000 €, 2014: 648 000 €, 2015: 699 840 €, 2016: 755 827 €, 2017: 816 293 €. Es behauptet, der Umsatz wachse jedes Jahr um 8 \%. Zeige, dass das für 2014 stimmt.
-\par\smallskip\noindent \sachtabelle{lrrrrr}{Jahr & 2013 & 2014 & 2015 & 2016 & 2017}{Umsatz in € & 600 000 & 648 000 & 699 840 & 755 827 & 816 293}\par
-\rechenraster{1}
-\fusshilfe{\mbox{50:~600 000 € · 1,08 = 648 000 €}}
-\end{pfnr}
-\begin{pfnr}{P10 ’19}{\llap{\textasteriskcentered\,}51.}{3 BE}
-Ein Ferkel wiegt 10 kg. Aus Erfahrung weiß man, dass seine Masse jede Woche um etwa 4 \% zunimmt. Zu Beginn jeder Woche wird es gewogen. Die Bäuerin Wilma berechnet die Masse des Ferkels nach $x$ Wochen mit $f(x) = 10 \cdot 1{,}04^x$. Schreib auf, was $10$, $1{,}04$ und $x$ in dieser Gleichung bedeuten.
-\par\smallskip\noindent \sachtabelle{lc}{Teil der Gleichung & Bedeutung}{10 & \leerzelle\\ 1,04 & \leerzelle\\ x & \leerzelle}\par
-\rechenraster{1}
-\end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{52.}{}
+\begin{pfnr}{eigene Aufgabe}{50.}{}
 Die Tabelle zeigt, wie sich eine Anzahl entwickelt. Berechne die Quotienten von Wert zu Wert. Teile dazu immer den neuen Wert durch den alten. Schreibe das Ergebnis in einem Satz auf. \wertetabelle[150,180,216,259{,}2]{\text{Jahr}}{\text{Anzahl}}{0,1,2,3}
 \par\noindent Quotienten: \leerfeld , \leerfeld , \leerfeld \par
 \rechenraster{1}
 \end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{53.}{}
+\begin{pfnr}{eigene Aufgabe}{51.}{}
 Eine Gemeinde hatte im Jahr $2019$ genau $2\,500$ Einwohner. Die Zahl wächst jedes Jahr um $6\,\%$. Wie viele Einwohner sind es im Jahr $2025$? Runde auf ganze Personen.
 \par\noindent t = \leerfeld , $\approx$ \leerfeld \par
 \rechenraster{1}
-\fusshilfe{\mbox{53:~$\approx 3\,546$}}
+\fusshilfe{\mbox{51:~$\approx 3\,546$}}
 \end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{54.}{}
+\begin{pfnr}{eigene Aufgabe}{52.}{}
 Ein Guthaben von $2\,000\,€$ wächst jedes Jahr um $4\,\%$. Jemand sagt: „Nach zehn Jahren sind es über $3\,000\,€$.“ Prüfe mit einer Rechnung, ob das stimmt.
 \rechenraster{1}
 \end{pfnr}
-\begin{pfnr}{P10 ’16}{\llap{\textasteriskcentered\,}55.}{1 BE}
+\pfgruppe{}
+\begin{pfnr}{eigene Aufgabe}{53.}{}
+Ein Bestand von $2\,000$ Tieren nimmt jedes Jahr um $10\,\%$ ab. Kreuze an, welche Gleichung den Bestand $B$ nach $t$ Jahren beschreibt. 
+\pfkreuzzeile{$B(t) = 2\,000 \cdot 1{,}1^t$}\pfkreuzzeile{$B(t) = 2\,000 \cdot 0{,}9^t$}\pfkreuzzeile{$B(t) = 2\,000 - 10t$}\pfkreuzzeile{$B(t) = 2\,000 \cdot 0{,}1^t$}
+\fusshilfe{\mbox{53:~Abnahme um $10\,\%$ heißt Faktor $0{,}9$}}
+\end{pfnr}
+\begin{pfnr}{eigene Aufgabe}{54.}{}
+Die Tabelle zeigt Werte. Kreuze an, zu welcher Gleichung die Tabelle gehört. \wertetabelle[80,100,125]{t}{\text{Wert}}{0,1,2}
+\pfkreuzzeile{$f(t) = 80 \cdot 1{,}25^t$}\pfkreuzzeile{$f(t) = 80 + 20t$}\pfkreuzzeile{$f(t) = 80 \cdot 0{,}8^t$}
+\fusshilfe{\mbox{54:~Startwert $80$ und Quotient $1{,}25$}}
+\end{pfnr}
+\pfgruppe{}
+\begin{pfnr}{P10 ’17}{\llap{\textasteriskcentered\,}55.}{1 BE}
+Auf Meereshöhe (0 km) misst man einen Luftdruck von ungefähr 1000 hPa (Hektopascal). Je höher man steigt, desto kleiner wird der Luftdruck: mit jedem Kilometer Höhe um 13 \%. Die Abnahme des Luftdrucks lässt sich mit einer Gleichung beschreiben ($x$: Höhe in km, $y$: Luftdruck in hPa). Kreuze die richtige an:
+\pfkreuzzeile{$y = 0{,}87 \cdot x$}\pfkreuzzeile{$y = 1000 \cdot 0{,}87^x$}\pfkreuzzeile{$y = x^{1{,}13}$}\pfkreuzzeile{$y = 1000 \cdot 1{,}13^x$}
+\par\smallskip\noindent \sachtabelle{lccccccc}{Höhe in km & 0 & 1 & 2 & 3 & 5 & 8 & 10}{Luftdruck in hPa & 1000 & 870 & \leerzelle & 659 & 498 & \leerzelle & 248}\par
+\fusshilfe{\mbox{55:~y = 1000 · $0{,}87^{x}$}}
+\end{pfnr}
+\pfgruppe{}
+\begin{pfnr}{P10 ’18}{56.}{2 BE}
+Ein junges Berliner Unternehmen zeigt in einer Tabelle, wie sein Umsatz gewachsen ist: 2013: 600 000 €, 2014: 648 000 €, 2015: 699 840 €, 2016: 755 827 €, 2017: 816 293 €. Es behauptet, der Umsatz wachse jedes Jahr um 8 \%. Zeige, dass das für 2014 stimmt.
+\par\smallskip\noindent \sachtabelle{lrrrrr}{Jahr & 2013 & 2014 & 2015 & 2016 & 2017}{Umsatz in € & 600 000 & 648 000 & 699 840 & 755 827 & 816 293}\par
+\rechenraster{1}
+\fusshilfe{\mbox{56:~600 000 € · 1,08 = 648 000 €}}
+\end{pfnr}
+\begin{pfnr}{P10 ’19}{\llap{\textasteriskcentered\,}57.}{3 BE}
+Ein Ferkel wiegt 10 kg. Aus Erfahrung weiß man, dass seine Masse jede Woche um etwa 4 \% zunimmt. Zu Beginn jeder Woche wird es gewogen. Die Bäuerin Wilma berechnet die Masse des Ferkels nach $x$ Wochen mit $f(x) = 10 \cdot 1{,}04^x$. Schreib auf, was $10$, $1{,}04$ und $x$ in dieser Gleichung bedeuten.
+\par\smallskip\noindent \sachtabelle{lc}{Teil der Gleichung & Bedeutung}{10 & \leerzelle\\ 1,04 & \leerzelle\\ x & \leerzelle}\par
+\rechenraster{1}
+\fusshilfe{\mbox{57:~1,04: Wachstumsfaktor, +4 \% je Woche}}
+\end{pfnr}
+\begin{pfnr}{P10 ’16}{\llap{\textasteriskcentered\,}58.}{1 BE}
 Um Krankheiten der Schilddrüse zu erkennen, spritzt man dem Patienten eine Flüssigkeit, die eine kleine Menge radioaktives Technetium enthält. Die Masse des Technetiums im Körper wird jede Stunde um etwa 11 \% kleiner. Berechne, wie viele Milligramm Technetium 24 Stunden nach der Spritze noch im Körper sind.
 \par\smallskip\noindent \sachtabelle{lccccccc}{Zeit in h & 0 & 1 & 2 & \leerzelle & 5 & 6 & 8}{Masse in mg & 5,00 & \leerzelle & 3,96 & 3,14 & 2,79 & 2,48 & 1,97}\par
 \pfzwfrage{Schreib den Term für die Masse nach $t$ Stunden auf.}
 \rechenraster{2}
-\fusshilfe{\mbox{55:~$\approx$ 0,31 mg}}
+\fusshilfe{\mbox{58:~$\approx$ 0,31 mg}}
 \end{pfnr}
-\begin{pfnr}{P10 ’25}{\llap{\textasteriskcentered\,}56.}{4 BE}
+\begin{pfnr}{P10 ’25}{\llap{\textasteriskcentered\,}59.}{4 BE}
 Man beobachtet einen Bakterienstamm, der exponentiell wächst. Die Tabelle zeigt die Zahl der Bakterien in den ersten 4 Stunden. Zeige, dass der Wachstumsfaktor 1,4 ist. Gib eine Gleichung an, die die Zahl der Bakterien nach $t$ Stunden beschreibt. Prüfe mit einer Rechnung, ob diese Aussage stimmt: „Nach 24 Stunden sind es mehr als 250 000 Bakterien.“
 \par\smallskip\noindent \sachtabelle{lrrrrr}{Zeit in Stunden & 0 & 1 & 2 & 3 & 4}{Anzahl der Bakterien & 80 & 112 & 157 & 220 & 308}\par
 \pfzwfrage{Teile jeden Tabellenwert durch den Wert davor.}
 \rechenraster{4}
-\end{pfnr}
-\pfgruppe{}
-\begin{pfnr}{eigene Aufgabe}{57.}{}
-Ein Bestand von $2\,000$ Tieren nimmt jedes Jahr um $10\,\%$ ab. Kreuze an, welche Gleichung den Bestand $B$ nach $t$ Jahren beschreibt. 
-\pfkreuzzeile{$B(t) = 2\,000 \cdot 1{,}1^t$}\pfkreuzzeile{$B(t) = 2\,000 \cdot 0{,}9^t$}\pfkreuzzeile{$B(t) = 2\,000 - 10t$}\pfkreuzzeile{$B(t) = 2\,000 \cdot 0{,}1^t$}
-\fusshilfe{\mbox{57:~Abnahme um $10\,\%$ heißt Faktor $0{,}9$}}
-\end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{58.}{}
-Die Tabelle zeigt Werte. Kreuze an, zu welcher Gleichung die Tabelle gehört. \wertetabelle[80,100,125]{t}{\text{Wert}}{0,1,2}
-\pfkreuzzeile{$f(t) = 80 \cdot 1{,}25^t$}\pfkreuzzeile{$f(t) = 80 + 20t$}\pfkreuzzeile{$f(t) = 80 \cdot 0{,}8^t$}
-\fusshilfe{\mbox{58:~Startwert $80$ und Quotient $1{,}25$}}
-\end{pfnr}
-\begin{pfnr}{P10 ’17}{\llap{\textasteriskcentered\,}59.}{1 BE}
-Auf Meereshöhe (0 km) misst man einen Luftdruck von ungefähr 1000 hPa (Hektopascal). Je höher man steigt, desto kleiner wird der Luftdruck: mit jedem Kilometer Höhe um 13 \%. Die Abnahme des Luftdrucks lässt sich mit einer Gleichung beschreiben ($x$: Höhe in km, $y$: Luftdruck in hPa). Kreuze die richtige an:
-\pfkreuzzeile{$y = 0{,}87 \cdot x$}\pfkreuzzeile{$y = 1000 \cdot 0{,}87^x$}\pfkreuzzeile{$y = x^{1{,}13}$}\pfkreuzzeile{$y = 1000 \cdot 1{,}13^x$}
-\par\smallskip\noindent \sachtabelle{lccccccc}{Höhe in km & 0 & 1 & 2 & 3 & 5 & 8 & 10}{Luftdruck in hPa & 1000 & 870 & \leerzelle & 659 & 498 & \leerzelle & 248}\par
-\fusshilfe{\mbox{59:~y = 1000 · $0{,}87^{x}$}}
+\fusshilfe{\mbox{59:~1,4; 80 · $1{,}4^{t}$; $\approx$ 257 136 > 250 000}}
 \end{pfnr}
 \pfgruppe{}
 \begin{pfnr}{P10 ’17}{60.}{2 BE}
@@ -358,6 +367,7 @@ Auf Meereshöhe (0 km) misst man einen Luftdruck von ungefähr 1000 hPa (Hektopa
 \begin{pfnr}{P10 ’20}{\llap{\textasteriskcentered\,}61.}{3 BE}
 Nach einer Studie lag der Wasserverbrauch 2019 bei durchschnittlich 54 Tausend Litern pro Person und Jahr; er soll jedes Jahr um 3 \% steigen. Diese Vorhersage beschreibt die Gleichung $y = 54\cdot 1{,}03^{x}$ ($x$: Jahre ab 2019, $y$: Verbrauch pro Person in Tausend Litern). Eine zweite Studie erwartet, dass der Verbrauch pro Person von 2019 bis 2033 insgesamt um etwa 40 \% zunimmt. Untersuche, ob beide Studien für 2033 denselben Verbrauch vorhersagen.
 \rechenraster{3}
+\fusshilfe{\mbox{61:~75,6}}
 \end{pfnr}
 \pfstufekopf[sgraphzuordnenundbegr]{Graph zuordnen und begründen}{in 1 der letzten 5 Prüfungen}
 \pfgruppe{}
@@ -385,29 +395,31 @@ Ein Pilz bedeckt am Anfang eine Fläche von $100\,\mathrm{cm}^2$. Die Fläche w�
 \par\smallskip\noindent \begin{ksys}[xmin=0,xmax=10,ymin=0,ymax=700,xstep=1,ystep=100,xlabel=t in Tagen,ylabel=Fläche,ablesen] \funktionab{100*1.2^\x}{f}{0}{10} \gerade{30}{100}{g} \parabel{6}{0}{0}{h} \end{ksys}\par
 \rechenraster{1}
 \end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{\llap{\textasteriskcentered\,}66.}{3 BE}
+\begin{pfnr}{eigene Aufgabe}{66.}{}
+Ein Konto wächst jedes Jahr um $15\,\%$. Das Koordinatensystem zeigt drei Graphen. Begründe in einem Satz, warum der Graph $g$ nicht zu dem Konto passt.
+\par\smallskip\noindent \begin{ksys}[xmin=0,xmax=10,ymin=0,ymax=1000,xstep=1,ystep=100,xlabel=t in Jahren,ylabel=Wert,ablesen] \funktionab{240*1.15^\x}{f}{0}{10} \gerade{48}{240}{g} \parabel{8}{0}{0}{h} \end{ksys}\par
+\rechenraster{1}
+\fusshilfe{\mbox{66:~eine Gerade hat immer denselben Zuwachs}}
+\end{pfnr}
+\pfgruppe{}
+\begin{pfnr}{eigene Aufgabe}{67.}{}
+Das Koordinatensystem zeigt drei Graphen $a$, $b$ und $c$. Welcher Graph ist eine Gerade?
+\par\smallskip\noindent \begin{ksys}[xmin=0,xmax=10,ymin=0,ymax=1000,xstep=1,ystep=100,xlabel=t in Jahren,ylabel=Wert,ablesen] \funktionab{250*1.14^\x}{a}{0}{10} \gerade{45}{250}{b} \parabel{8}{0}{0}{c} \end{ksys}\par
+\par\noindent \leerfeld \par
+\fusshilfe{\mbox{67:~$b$ ist die Gerade}}
+\end{pfnr}
+\pfgruppe{}
+\begin{pfnr}{eigene Aufgabe}{\llap{\textasteriskcentered\,}68.}{3 BE}
 Ein Kalb wiegt $45\,\mathrm{kg}$. Es nimmt jede Woche um $5\,\%$ zu. Das Koordinatensystem zeigt drei Graphen $f$, $g$ und $h$. Entscheide für jeden Graphen, ob er passt. Begründe jede Entscheidung.
 \par\smallskip\noindent \begin{ksys}[xmin=0,xmax=10,ymin=0,ymax=80,xstep=1,ystep=10,xlabel=t in Wochen,ylabel=kg,ablesen] \funktionab{45*1.05^\x}{f}{0}{10} \gerade{2}{45}{g} \parabel{0.7}{0}{0}{h} \end{ksys}\par
 \rechenraster{1}
 \end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{67.}{}
-Ein Konto wächst jedes Jahr um $15\,\%$. Das Koordinatensystem zeigt drei Graphen. Begründe in einem Satz, warum der Graph $g$ nicht zu dem Konto passt.
-\par\smallskip\noindent \begin{ksys}[xmin=0,xmax=10,ymin=0,ymax=1000,xstep=1,ystep=100,xlabel=t in Jahren,ylabel=Wert,ablesen] \funktionab{240*1.15^\x}{f}{0}{10} \gerade{48}{240}{g} \parabel{8}{0}{0}{h} \end{ksys}\par
-\rechenraster{1}
-\fusshilfe{\mbox{67:~eine Gerade hat immer denselben Zuwachs}}
-\end{pfnr}
 \pfgruppe{}
-\begin{pfnr}{P10 ’19}{\llap{\textasteriskcentered\,}68.}{3 BE}
+\begin{pfnr}{P10 ’19}{\llap{\textasteriskcentered\,}69.}{3 BE}
 Ein Ferkel wiegt 10 kg. Aus Erfahrung weiß man, dass seine Masse jede Woche um etwa 4 \% zunimmt. Zu Beginn jeder Woche wird es gewogen. Für jeden der drei Graphen: Entscheide, ob er zum Wachstum des Ferkels passt, und begründe.
 \par\smallskip\noindent \begin{tabular}[t]{@{}c@{}}{\small 1}\enspace$\square$\\\begin{tikzpicture}\begin{axis}[width=3.9cm,height=3.4cm,scale only axis=false,axis lines=middle,xtick=\empty,ytick=\empty,xmin=0,xmax=1.08,ymin=0,ymax=1.08,clip=true,axis line style={-{Stealth[length=1.5mm]}},grid=both,minor tick num=0,xtick={0.2,0.4,0.6,0.8,1},ytick={0.2,0.4,0.6,0.8,1},xticklabels={},yticklabels={},grid style={mbgitter},xlabel={\tiny Zeit in Wochen},ylabel={\tiny Masse in kg},x label style={anchor=north east,at={(1,0)},yshift=-2pt},y label style={anchor=south west,at={(0,1)},xshift=1pt}]\addplot[black,line width=0.9pt,domain=0:1,samples=80] {0.25+0.6*x};\end{axis}\end{tikzpicture}\\[1pt]{\footnotesize $\square$ passt\quad $\square$ passt nicht}\\[2pt]\rule{3cm}{0.4pt}\end{tabular}\hspace{0.4cm}\begin{tabular}[t]{@{}c@{}}{\small 2}\enspace$\square$\\\begin{tikzpicture}\begin{axis}[width=3.9cm,height=3.4cm,scale only axis=false,axis lines=middle,xtick=\empty,ytick=\empty,xmin=0,xmax=1.08,ymin=0,ymax=1.08,clip=true,axis line style={-{Stealth[length=1.5mm]}},grid=both,minor tick num=0,xtick={0.2,0.4,0.6,0.8,1},ytick={0.2,0.4,0.6,0.8,1},xticklabels={},yticklabels={},grid style={mbgitter},xlabel={\tiny Zeit in Wochen},ylabel={\tiny Masse in kg},x label style={anchor=north east,at={(1,0)},yshift=-2pt},y label style={anchor=south west,at={(0,1)},xshift=1pt}]\addplot[black,line width=0.9pt,domain=0:1,samples=80] {0.2*exp(1.45*x)};\end{axis}\end{tikzpicture}\\[1pt]{\footnotesize $\square$ passt\quad $\square$ passt nicht}\\[2pt]\rule{3cm}{0.4pt}\end{tabular}\hspace{0.4cm}\begin{tabular}[t]{@{}c@{}}{\small 3}\enspace$\square$\\\begin{tikzpicture}\begin{axis}[width=3.9cm,height=3.4cm,scale only axis=false,axis lines=middle,xtick=\empty,ytick=\empty,xmin=0,xmax=1.08,ymin=0,ymax=1.08,clip=true,axis line style={-{Stealth[length=1.5mm]}},grid=both,minor tick num=0,xtick={0.2,0.4,0.6,0.8,1},ytick={0.2,0.4,0.6,0.8,1},xticklabels={},yticklabels={},grid style={mbgitter},xlabel={\tiny Zeit in Wochen},ylabel={\tiny Masse in kg},x label style={anchor=north east,at={(1,0)},yshift=-2pt},y label style={anchor=south west,at={(0,1)},xshift=1pt}]\addplot[black,line width=0.9pt,domain=0:1,samples=80] {0.88*(x^2)};\end{axis}\end{tikzpicture}\\[1pt]{\footnotesize $\square$ passt\quad $\square$ passt nicht}\\[2pt]\rule{3cm}{0.4pt}\end{tabular}\par
 \rechenraster{1}
-\end{pfnr}
-\pfgruppe{}
-\begin{pfnr}{eigene Aufgabe}{69.}{}
-Das Koordinatensystem zeigt drei Graphen $a$, $b$ und $c$. Welcher Graph ist eine Gerade?
-\par\smallskip\noindent \begin{ksys}[xmin=0,xmax=10,ymin=0,ymax=1000,xstep=1,ystep=100,xlabel=t in Jahren,ylabel=Wert,ablesen] \funktionab{250*1.14^\x}{a}{0}{10} \gerade{45}{250}{b} \parabel{8}{0}{0}{c} \end{ksys}\par
-\par\noindent \leerfeld \par
-\fusshilfe{\mbox{69:~$b$ ist die Gerade}}
+\fusshilfe{\mbox{69:~Graph 1 nein; Graph 2 ja; Graph 3 nein}}
 \end{pfnr}
 \pfpruefstein{P10 ’26}
 \begin{pfnr}{}{}{}

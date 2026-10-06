@@ -565,6 +565,20 @@ def echt_aufgabe(D, iid, stufe):
     abb = abbildung(w['abbildung'], D, iid, vs_abb)
     if abb == '' and vs_abb and 'wie im Text' not in (w['abbildung'] or '') and not w['abbildung']:
         abb = vs_abb
+    if abb == 'TABELLENAUSWAHL':
+        # Reparatur Punkt 7: „Tabelle 1: x = …; y = … Tabelle 2: …“ -> drei kleine Tabellen mit Ankreuzfeld
+        tabs = re.findall(r'Tabelle (\d+): x = ([^;]*); y = ([^.]*(?:\.\d[^.]*)*)\.', text)
+        if tabs:
+            text = text[:text.find('Tabelle ' + tabs[0][0] + ':')].strip()
+            bl = []
+            for n, xs, ys in tabs:
+                xs = [v.strip() for v in xs.split(',')]
+                ys = [v.strip() for v in ys.split(',')]
+                bl.append(r'\begin{tabular}[t]{@{}c@{}}\renewcommand{\arraystretch}{1.3}\begin{tabular}{|c|%s}\hline $x$ & %s \\ \hline $y$ & %s \\ \hline\end{tabular}\\[3pt]{\small Tabelle %s\enspace$\square$}\end{tabular}'
+                          % ('c|' * len(xs), ' & '.join(tx(v) for v in xs), ' & '.join(tx(v) for v in ys), n))
+            abb = r'\hspace{0.5cm}'.join(bl)
+        else:
+            abb = ''
     m_kr = re.search(r'ANKREUZ\{([^{}]*)\}\{([^{}]*)\}\{([^{}]*)\}$', abb or '')
     if m_kr:   # Ankreuztabellen der neuen Wortlautdateien (Lauf C)
         abb, text = ankreuz_tabelle(abb[:m_kr.start()].rstrip(), text, m_kr.groups(), a)
@@ -602,6 +616,7 @@ def echt_aufgabe(D, iid, stufe):
             teile.append(x); werte.add(wv)
     fx = abi_tx if D.pr['ordner'] == 'abitur' else tx
     a.kurz = '; '.join(fx(x) for x in teile)
+    a.kurz_roh = teile   # Klartext der Teile (Ausweichwert im Fuß, Reparatur Punkt 2)
     if not k['kurzloesung']:
         D.befund(f'{iid}: kurzloesung leer')
     zw = [x.strip() for x in k['zwischenergebnis'].split(' ; ') if x.strip()]
@@ -649,8 +664,9 @@ def satz_split(s):
         if c == '$' and (i == 0 or s[i - 1] != '\\'):
             m = not m
         cur += c
-        if not m and c == '.' and re.match(r'\s+[A-ZÄÖÜ]', s[i + 1:i + 3] or ''):
-            teile.append(cur); cur = ''
+        if not m and c == '.' and re.match(r'\s+[A-ZÄÖÜ]', s[i + 1:i + 3] or '') \
+                and not re.search(r'(^|[\s(])(z|d|u|v|bzw|ca|Nr|vgl|evtl|usw|S|B|h|a)\.$', cur):
+            teile.append(cur); cur = ''   # Abkürzungen (z. B., d. h., bzw.) nicht zerreißen (Reparatur Punkt 8)
     teile.append(cur)
     return [x.strip() for x in teile if x.strip()]
 
@@ -955,11 +971,13 @@ def fragenzahl(a):
 
 
 GRUPPEN = ['rechnen', 'Ankreuzen', 'Sachaufgabe', 'Vergleich']   # Reihenfolge: Entscheidung
+PH = ' (Prüfungshöhe)'   # Gruppen auf Prüfungshöhe stehen in jeder Stufe zuletzt (Reparatur Punkt 1)
 
 
 def gruppen_schluessel(x):
     # leichteste Aufgabe: Zahlklasse, dann Grundfall im Kopf; bei Gleichstand Punkt 8 (Entscheidung)
-    return (schluessel(x[2][0])[:2], GRUPPEN.index(x[0]) if x[0] in GRUPPEN else 9)
+    g = x[0].replace(PH, '')
+    return (schluessel(x[2][0])[:2], GRUPPEN.index(g) if g in GRUPPEN else 9)
 
 
 def gruppe_von(D, a):
@@ -1290,13 +1308,18 @@ def baue_modell(D, args):
         # Zweite Reparatur: eine Gruppe je Form, darin Zahlklasse zuerst (schluessel); Gruppen in der
         # Folge der Zahlklasse ihrer leichtesten Aufgabe, bei Gleichstand rechnen, Ankreuzen,
         # Sachaufgabe, Vergleich (Beschluss 8)
-        for g in GRUPPEN:
-            gl = sorted([a for a in alle if a.gruppe == g], key=schluessel)
-            if gl:
-                wort = next((a.bild for a in gl if a.bild), '')
-                st.gruppen.append((g, wort, gl))
-        if not args.fokus:
-            st.gruppen.sort(key=gruppen_schluessel)
+        # Reparatur Sichtprüfung Punkt 1 (Beschluss 2 „Prüfungshöhe zuletzt“): erst die Gruppen unterhalb
+        # der Prüfungshöhe (nach leichtester Aufgabe), dann alle Aufgaben auf Prüfungshöhe, wieder in Gruppen
+        for oben in (False, True):
+            teil = []
+            for g in GRUPPEN:
+                gl = sorted([a for a in alle if a.gruppe == g and (min(a.hrang, 3) == 3) == oben], key=schluessel)
+                if gl:
+                    wort = next((a.bild for a in gl if a.bild), '')
+                    teil.append((g + (PH if oben else ''), wort, gl))
+            if not args.fokus:
+                teil.sort(key=gruppen_schluessel)
+            st.gruppen += teil
         if not echte:
             D.befund(f'{st.name}: keine echte Aufgabe – Prüfungshöhe nur aus der Bank')
         st.reserve = []
@@ -1430,7 +1453,80 @@ def kurz_kontrolle(a):
         mit = [m for m in mit if klartext(m) != klartext(k)]
         if mit:
             k = mit[-1] + '; ' + k
-    return k if k and len(klartext(k)) <= 45 else ''
+    if k and len(klartext(k)) <= 45:
+        return k
+    return ausweichwert(a) or kurzurteil(a)
+
+
+def _wert_roh(t):
+    """Wert eines Ergebnisteils (Klartext): hinter dem letzten = bzw. ≈, mit Einheit; ein kurzer
+    exakter Wert (√, π, Bruch) vor dem ≈ bleibt davor. Ohne Relation: der Teil selbst."""
+    # Klammerzusätze mit Wörtern weg („(Arabisch)“), Klammern in Formeln und Punkten bleiben
+    t = re.sub(r'\s*\((?=[^()]*[A-Za-zÄÖÜäöüß]{3})(?:[^()]|\([^()]*\))*\)', '', t).strip()
+    t = re.sub(r'(?<![A-Z][a-z])\.$', '', t) if not re.search(r'(Mio|Mrd|Tsd|ca)\.$', t) else t
+    t = re.split(r'\s*(?:⇒|, also|, denn|→)\s*', t)[-1] if re.search(r'\d', re.split(r'\s*(?:⇒|, also|, denn|→)\s*', t)[-1]) else t
+    pos = [m for m in re.finditer(r'≈|(?<![<>≤≥!])=', t)]
+    if not pos:
+        return t
+    if re.match(r'^\s*[a-zA-Z](\(x\))?\s*=', t) and len(pos) == 1 and not re.search(r'\d\s*$', t[:pos[0].start()]):
+        return t   # Gleichung „y = (x − 2)² − 4“ ist selbst der Wert
+    last = pos[-1]
+    if not re.search(r'\d', t[last.end():]) and len(pos) >= 2:   # „… ≈ 93,0 cm = AF“: Wert davor
+        t = t[:last.start()].strip()
+        pos = pos[:-1]
+        last = pos[-1]
+    wert = t[last.end():].strip()
+    if last.group(0) == '≈':
+        ex = t[pos[-2].end():last.start()].strip() if len(pos) >= 2 else ''
+        if ex and len(ex) <= 12 and re.search(r'√|π|/', ex):
+            return ex + ' ≈ ' + wert
+        return '≈ ' + wert
+    return wert
+
+
+def ausweichwert(a):
+    """Kontrollwert, wenn die Kurzlösung zu lang ist (Reparatur Punkt 2): je gefragtem Wert (Teile der
+    Kurzlösung) der Wert nach dem letzten = bzw. ≈; alle Werte, solange zusammen bis 60 Zeichen, sonst
+    der letzte allein (bis 45). Teile ohne Zahl nur, wenn sie kurz sind (Urteil wie „Aussage 2 falsch“)."""
+    roh = getattr(a, 'kurz_roh', None)
+    if not roh:
+        return ''
+    werte = []
+    for x in roh:
+        for y in [z for z in re.split(r';\s*', x) if z.strip()]:
+            w = _wert_roh(y)
+            if not w or (not re.search(r'\d', w) and len(w) > 25) or len(w) > 40 \
+                    or not re.search(r'[\dA-Za-zÄÖÜäöü]', w) or re.match(r'^\s*[²³^]', w):
+                continue
+            if w not in werte:
+                werte.append(w)
+    if not werte:
+        return ''
+    fx = abi_tx if D_AKT is not None and D_AKT.pr['ordner'] == 'abitur' else tx
+    alle = '; '.join(werte)
+    if len(alle) <= 60:
+        return fx(alle)
+    mit_zahl = [w for w in werte if re.search(r'\d', w)]
+    return fx(mit_zahl[-1]) if mit_zahl and len(mit_zahl[-1]) <= 45 else ''
+
+
+def kurzurteil(a):
+    """Letzter Ausweg für den Fuß (Reparatur Punkt 2): das erste Stück der Kurzlösung bis zum ersten
+    Komma bzw. „⇒“, wenn es kurz ist (bis 45 Zeichen) – Urteil oder Kernaussage („genau ein gemeinsamer
+    Punkt S(2|-2)“, „nein“)."""
+    roh = getattr(a, 'kurz_roh', None) or []
+    if not roh:
+        return ''
+    t = re.sub(r'^z\. ?B\.\s*', '', roh[0])
+    teile = re.split(r'(,\s|\s⇒\s|\s\(|:\s)', t)
+    t = teile[0].strip()
+    rest = ''.join(teile[1:])
+    if re.match(r',\s\d', rest) or (' ' not in t and not re.fullmatch(r'(ja|nein|wahr|falsch|richtig)', t, re.I)):
+        return ''   # Aufzählung abgeschnitten („Streifen mit 1 cm, …“) oder ein einzelnes Wort ohne Urteil
+    if 3 <= len(t) <= 45:
+        fx = abi_tx if D_AKT is not None and D_AKT.pr['ordner'] == 'abitur' else tx
+        return fx(t)
+    return ''
 
 
 def fuss(a, nr):
@@ -1458,7 +1554,9 @@ def platz(a, art):
         s = int(re.sub(r'\D', '', a.schritte) or 1)
     else:
         s = len(a.zw) + 1
-    if not a.zw and a.art != 'echt' and len(klartext(a.kurz)) <= 25:
+    if re.search(r'\b(Prüfe|Überprüfe|Entscheide|Begründe|Zeige|Weise)\b', klartext(a.text)) and not a.optionen:
+        s = max(s, 1)   # Prüf- und Entscheidungsaufgaben brauchen eine Antwortzeile (Reparatur Punkt 9)
+    elif not a.zw and a.art != 'echt' and len(klartext(a.kurz)) <= 25:
         return 0   # Ein-Wort-, Ein-Zahl- und Rundungsaufgaben ohne Platz (Beschluss 11)
     if art == 'schwach':
         return max(1, min(5, schrittzahl(a)))   # eine Rasterzeile je Schritt (Beschluss 29)
@@ -2038,6 +2136,16 @@ def exakt_vor(D, a, r):
     if abs(float(w) - g) < 1e-9:
         return   # Überschlag oder glatter Wert: ≈ steht für das Schätzen, kein exakter Wert davor
     e = w / 100 if prozent else w
+    if not e.is_Rational and abs(float(w) - g) <= 0.06 * max(1, abs(g) / 100):
+        # Vielfache von π bzw. Wurzeln (4π ≈ 12,6 cm; Reparatur Punkt 11)
+        q = sympy.nsimplify(e / sympy.pi)
+        if q.is_Rational and q.q <= 100 and len(sympy.latex(e)) <= 16 or \
+                (e.is_Mul or e.is_Pow) and e.has(sympy.sqrt(2).func) and len(sympy.latex(e)) <= 16:
+            ex = sympy.latex(e).replace('\\frac', '\\tfrac')
+            if not prozent:
+                ex += rhs[zt.end():]
+            a.kurz = f'${ex} \\approx {rhs}${nach}'
+            return
     if not e.is_Rational or e.q > 1000 or e.q == 1 or abs(float(w) - g) > 0.06 * max(1, abs(g) / 100):
         D.n_exakt_offen += 1
         return
@@ -2104,9 +2212,21 @@ def sortierung_md(titel):
         letzte[key] = (k, nr)
         gruppen.setdefault(stn, OrderedDict()).setdefault(g, []).append(a)
     for stn, gs in gruppen.items():
-        ks = [gruppen_schluessel((g, '', sorted(al, key=schluessel))) for g, al in gs.items()]
-        if ks != sorted(ks):
-            fehler.append(f'{stn}: Gruppen nicht nach leichtester Aufgabe ({", ".join(gs)})')
+        for oben in (False, True):
+            gg = [(g, al) for g, al in gs.items() if g.endswith(PH) == oben]
+            ks = [gruppen_schluessel((g, '', sorted(al, key=schluessel))) for g, al in gg]
+            if ks != sorted(ks):
+                fehler.append(f'{stn}: Gruppen nicht nach leichtester Aufgabe ({", ".join(g for g, _ in gg)})')
+    # Prüfungshöhe zuletzt (Beschluss 2; Reparatur Punkt 1): nach der ersten Aufgabe auf Prüfungshöhe
+    # keine leichtere Aufgabe mehr in derselben Stufe
+    oben_ab = {}
+    for stn, nr, g, a in SORT:
+        if g in ('Vorstufe', 'Prüfung'):
+            continue
+        if min(a.hrang, 3) == 3:
+            oben_ab.setdefault(stn, nr)
+        elif stn in oben_ab:
+            fehler.append(f'{stn}: Nr. {nr} (Höhe {min(a.hrang, 3)}) steht hinter Nr. {oben_ab[stn]} auf Prüfungshöhe')
     zl += ['', '## Prüfung', ''] + (['- ' + f for f in fehler] if fehler else ['- keine Abweichung'])
     return '\n'.join(zl) + '\n', fehler
 

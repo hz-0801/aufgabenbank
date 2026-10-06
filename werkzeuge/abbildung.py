@@ -235,15 +235,20 @@ def abb_graph_term(d, D, iid):
 # ===========================================================================
 def rahmen(d, D=None, iid='', grund=''):
     """Grauer Beschreibungsrahmen (seltene Typen, Beschreibung reicht nicht zum Zeichnen)."""
-    if D is not None:
+    if D is not None and not rest_zeichnen(iid, d.strip()):
         D.abb_rahmen = getattr(D, 'abb_rahmen', 0) + 1
         if grund:
             D.abb_rahmen_grund = getattr(D, 'abb_rahmen_grund', [])
             D.abb_rahmen_grund.append(f'{iid}: {grund}')
             if hasattr(D, 'befund'):
                 D.befund(f'{iid}: Abbildung als Beschreibungsrahmen ({grund[:90]})')
-    return (r'\fbox{\parbox{0.9\linewidth}{\footnotesize\color{mbgrau}Abbildung im Original: '
-            + tx(d.strip()) + '}}')
+    z = rest_zeichnen(iid, d.strip())
+    if z:
+        D.abb_rest_gezeichnet = getattr(D, 'abb_rest_gezeichnet', 0) + 1 if D is not None else 0
+        return z
+    if D is not None:
+        D.abb_skizze = getattr(D, 'abb_skizze', []) + [iid]
+    return skizze_text(d)
 
 
 def _z(s):
@@ -353,6 +358,13 @@ def abb_diagramm(d, D, iid, liegend=False):
           'bar width=%s' % ('5mm' if n > 8 else '7mm')]
     if leer:
         ax += ['minor y tick num=1', 'yminorgrids']   # Raster zum Ergänzen der fehlenden Säule
+    # Werte über den Säulen (Reparatur Sichtprüfung Punkt 3): gesetzt, wenn ein Wert nicht auf einer
+    # Linie des Rasters (halber Teilstrich) liegt – dann ist die Aufgabe ohne ihn nicht lösbar (19,2 mm
+    # bei 20er-Teilung); liegen alle Werte auf dem Raster, prüft die Aufgabe das Ablesen selbst: keine
+    # Werte (Entscheidung; die Wortlaut-Beschreibung sagt nicht, ob das Original sie zeigt)
+    halb = schritt / 2
+    if any(abs((w - y0) / halb - round((w - y0) / halb)) > 1e-6 for w in werte):
+        ax += ['nodes near coords', 'every node near coord/.append style={font=\\scriptsize,%s}' % zahlfmt]
     if liegend:
         ax = [a.replace('ymin', 'xmin').replace('ymax', 'xmax').replace('ytick distance', 'xtick distance')
               .replace('ymajorgrids', 'xmajorgrids').replace('yminorgrids', 'xminorgrids')
@@ -2044,8 +2056,8 @@ def _abbildung_alt(desc, D, iid, vorspann_abb=""):
         # gesetzt wird ein Rahmen mit der Beschreibung, damit Lehrer und Schüler wissen, welche
         # Abbildung zur Aufgabe gehört (Entscheidung; Datenbefund, Zählung D.abb_beschreibung)
         D.abb_beschreibung = getattr(D, 'abb_beschreibung', 0) + 1
-        return (r'\fbox{\parbox{0.9\linewidth}{\footnotesize\color{mbgrau}Abbildung im Original: '
-                + tx(d.split(':', 1)[1].strip()) + '}}')
+        D.abb_skizze = getattr(D, 'abb_skizze', []) + [iid]
+        return skizze_text(d)   # Reparatur Punkt 6: neutrale Skizzenbeschreibung
     if d.startswith('Säulendiagramm'):
         return abb_saeulen(d, D, iid)
     if d.startswith('Tabelle (Spalten'):
@@ -2098,7 +2110,7 @@ def _typenliste(mn):
                     art = 'nichts'
                 elif verweis:
                     art = 'Verweis'
-                elif getattr(D, 'abb_rahmen', 0) > n0 or t.startswith('\\fbox'):
+                elif getattr(D, 'abb_rahmen', 0) > n0 or t.startswith('\\fbox{\\parbox{0.9'):
                     art = 'Rahmen'
                 elif not t:
                     art = 'unbekannt'
@@ -2120,3 +2132,181 @@ if __name__ == '__main__':
         os.path.abspath(__file__)))), 'mathe-nachhilfe'))
     a = ap.parse_args()
     _typenliste(a.mn)
+
+
+# ===========================================================================
+# Reparatur Sichtprüfung Punkt 6/7: Restfälle zeichnen (je Muster eine Routine)
+# ===========================================================================
+def _tikz(inhalt, nm=False, opt='line width=0.6pt'):
+    z = r'\begin{tikzpicture}[%s,baseline=(current bounding box.north)]' % opt + inhalt
+    if nm:
+        z += r'\node[font=\scriptsize,mbgrau,anchor=north west] at ([yshift=-2pt]current bounding box.south west) {nicht maßstabsgerecht};'
+    return z + r'\end{tikzpicture}'
+
+
+def _w(p, a1, a2, lab, r=0.5, recht=False):
+    """Winkelbogen bei p von a1 nach a2 (Grad), Beschriftung in der Mitte."""
+    x, y = p
+    if recht:
+        import math as m
+        u = (m.cos(m.radians(a1)) * 0.25, m.sin(m.radians(a1)) * 0.25)
+        v = (m.cos(m.radians(a2)) * 0.25, m.sin(m.radians(a2)) * 0.25)
+        return (r'\draw[line width=0.4pt] (%.2f,%.2f) -- (%.2f,%.2f) -- (%.2f,%.2f);'
+                % (x + u[0], y + u[1], x + u[0] + v[0], y + u[1] + v[1], x + v[0], y + v[1]))
+    s = r'\draw[line width=0.4pt] (%.2f,%.2f) ++(%s:%s) arc (%s:%s:%s);' % (x, y, a1, r, a1, a2, r)
+    if lab:
+        s += r'\node[font=\scriptsize,fill=white,inner sep=0.5pt] at ($(%.2f,%.2f)+(%s:%s)$) {%s};' % (
+            x, y, (a1 + a2) / 2, r + 0.3, tx(lab))
+    return s
+
+
+def _n(p, t, anker):
+    return r'\node[font=\small,anchor=%s] at (%.2f,%.2f) {%s};' % (anker, p[0], p[1], t if t.startswith('$') else '$' + t + '$')
+
+
+def _m(p, q, t, seite):
+    return r'\path (%.2f,%.2f) -- node[font=\scriptsize,%s] {%s} (%.2f,%.2f);' % (p[0], p[1], seite, tx(t), q[0], q[1])
+
+
+def rest_zeichnen(iid, d):
+    """Zeichnet die Zeilen, die die allgemeinen Routinen nicht verstehen, nach ihrer Beschreibung
+    (Form nicht maßstabsgerecht, Beschriftungen wie beschrieben). '' = kein Muster."""
+    nm = 'nicht maßstabsgerecht' in d
+    if d.startswith('Lageskizze: Ufer als schräge Gerade'):
+        C, D_, B = (0, 3.0), (3.0, 2.4), (5.6, 1.88)
+        ux, uy = D_[0] - C[0], D_[1] - C[1]
+        A = (D_[0] - uy / math.hypot(ux, uy) * 2.6, D_[1] + ux / math.hypot(ux, uy) * 2.6)
+        A = (2 * D_[0] - A[0], 2 * D_[1] - A[1]) if A[1] > D_[1] else A
+        wi = lambda p, q: math.degrees(math.atan2(q[1] - p[1], q[0] - p[0])) % 360
+        z = (r'\draw (-0.6,3.12) -- (6.4,1.72);' + r'\draw (%.2f,%.2f) -- (%.2f,%.2f);' % (*A, *C)
+             + r'\draw (%.2f,%.2f) -- (%.2f,%.2f);' % (*A, *B)
+             + r'\draw[dashed] (%.2f,%.2f) -- (%.2f,%.2f);' % (*A, *D_)
+             + _n(C, 'C', 'south') + _n(D_, 'D', 'south') + _n(B, 'B', 'south') + _n(A, 'A', 'north')
+             + _m(A, C, '920 m', 'left') + _m(C, D_, '541 m', 'above')
+             + _w(C, wi(C, A), wi(C, D_), '54°', 0.55) + _w(A, wi(A, B), wi(A, C), '70°', 0.7)
+             + _w(D_, wi(D_, A), wi(D_, B) + (360 if wi(D_, B) < wi(D_, A) else 0), '', recht=True)
+             + r'\node[font=\scriptsize,mbgrau,anchor=west] at (6.4,1.72) {Ufer};')
+        return _tikz(z, nm)
+    if d.startswith('Lageskizze: A links (Messgerät auf Stativ'):
+        A, B, C, D_ = (0, 0.6), (5.5, 0.6), (5.5, 3.1), (5.5, 4.2)
+        z = (r'\draw[dashed] (-0.4,0) -- (6.2,0);' + r'\draw (0,0) -- (%.2f,%.2f);' % A
+             + r'\draw (%.2f,%.2f) -- (%.2f,%.2f) -- (%.2f,%.2f);' % (*A, *B, *D_)
+             + r'\draw (%.2f,%.2f) -- (%.2f,%.2f); \draw (%.2f,%.2f) -- (%.2f,%.2f);' % (*A, *C, *A, *D_)
+             + r'\draw[line width=1.2pt] (%.2f,%.2f) -- (%.2f,%.2f);' % (*C, *D_)
+             + _n(A, 'A', 'east') + _n(B, 'B', 'north west') + _n(C, 'C', 'west') + _n(D_, 'D', 'south')
+             + _m((0, 0), A, '1,5 m', 'left') + _m(C, D_, '12,0 m', 'right')
+             + _w(A, 0, 24.4, '30°', 1.6) + _w(A, 24.4, 33.2, r'$\gamma$', 2.4) + _w(B, 90, 180, '', recht=True)
+             + _w(D_, 180 + 33.2, 270, r'$\delta$', 0.6)
+             + _w(A, 0, 33.2, '35°', 3.4))
+        return _tikz(z, nm)
+    if d.startswith('Dreieck: Rampenfuß links'):
+        R, T, S = (0, 0), (5.0, 0), (6.4, 1.0)
+        z = (r'\fill[black!20] (5.0,0) rectangle (5.7,0.5); \fill[black!20] (5.7,0) rectangle (6.4,1.0);'
+             + r'\draw (-0.3,0) -- (7,0); \draw (%.2f,%.2f) -- (%.2f,%.2f);' % (*R, *S)
+             + r'\draw[dashed] (%.2f,%.2f) -- (%.2f,%.2f);' % (*T, *S)
+             + r'\node[font=\scriptsize,anchor=north] at (0,0) {Rampenfuß};'
+             + r'\node[font=\scriptsize,anchor=north] at (5,0) {Treppenfuß};'
+             + r'\node[font=\scriptsize,anchor=south] at (6.4,1.0) {Stufenkante};'
+             + _m(R, T, '160 cm', 'below=8pt') + _m(R, S, '$y$', 'above')
+             + _w(R, 0, 8.9, '5°', 1.4) + _w(T, 35.5, 180, '141°', 0.35))
+        return _tikz(z, nm)
+    if d.startswith('rechtwinkliges Dreieck: rechter Winkel bei E, Hypotenuse AD'):
+        A, E, D_ = (3.4, -1.3), (3.4, 0), (0, 0)
+        z = (r'\draw (%.2f,%.2f) -- (%.2f,%.2f) -- (%.2f,%.2f) -- cycle;' % (*A, *E, *D_)
+             + _n(A, 'A', 'north') + _n(E, 'E', 'south west') + r'\node[font=\small,anchor=east] at (0,0) {$D$};'
+             + _m(D_, A, '4,1 cm', 'below left') + _w(E, 180, 270, '', recht=True)
+             + r'\draw[line width=0.4pt] (1.1,0) arc (0:-20.9:1.1);'
+             + r'\node[font=\scriptsize,anchor=west] at (1.15,-0.2) {$\delta = 21°$};')
+        return _tikz(z, nm)
+    if d.startswith('Dreieck: gleichseitig, grau, mit gestrichelter Höhe'):
+        z = (r'\draw[fill=black!20] (0,0) -- (3,0) -- (1.5,2.6) -- cycle;'
+             r'\draw[dashed] (1.5,2.6) -- (1.5,0);' + _w((1.5, 0), 0, 90, '', recht=True)
+             + r'\node[font=\scriptsize,anchor=west] at (1.5,1.2) {$h_{\text{Deckfläche}}$};')
+        return _tikz(z, nm)
+    if d.startswith('Kästchenfigur: graues Kreuz'):
+        z = (r'\draw[mbgitter,line width=0.3pt,step=0.5] (-0.5,-0.5) grid (3.0,2.0);'
+             r'\fill[black!30,draw=black] (0,0.5) -- (1,0.5) -- (1,0) -- (1.5,0) -- (1.5,0.5) -- (2.5,0.5) -- (2.5,1)'
+             r' -- (1.5,1) -- (1.5,1.5) -- (1,1.5) -- (1,1) -- (0,1) -- cycle;'
+             r'\node[font=\small,anchor=east] at (0,0.75) {$a$};')
+        return _tikz(z)
+    if d.startswith('Kreis mit Sektor'):
+        z = (r'\draw (0,0) circle (1.5); \fill[black!25] (0,0) -- (90:1.5) arc (90:-55:1.5) -- cycle;'
+             r'\draw (0,0) -- (90:1.5); \draw (0,0) -- (-55:1.5); \fill (0,0) circle (1.3pt);'
+             + r'\node[font=\small] at (17.5:0.9) {145°};' + _w((0, 0), 90, 305, r'$\alpha$', 0.35))
+        return _tikz(z, nm)
+    if d.startswith('leerer Streifen'):
+        return r'\begin{tikzpicture}\draw[mbgitter,line width=0.3pt,step=0.5] (-0.5,-0.5) grid (10.5,2);\draw[line width=0.7pt] (0,0) rectangle (10,1.5);\end{tikzpicture}'
+    if d.startswith('leeres Karoraster ohne Achsen'):
+        return r'\begin{tikzpicture}[x=0.5cm,y=0.5cm]\draw[mbgitter,line width=0.3pt] (0,0) grid (28,15);\end{tikzpicture}'
+    if d.startswith('Gefäße: drei Töpfe'):
+        teile = re.findall(r'Topf (\d): (\d+) weiß, (\d+) grau', d)
+        bilder = []
+        for n, w, g in teile:
+            k = ['white'] * int(w) + ['black!40'] * int(g)
+            kug = ''.join(r'\draw[fill=%s] (%.2f,%.2f) circle (0.17);' % (f, 0.3 + 0.4 * (i % 3), 0.25 + 0.38 * (i // 3))
+                          for i, f in enumerate(k))
+            bilder.append(r'\begin{tikzpicture}[line width=0.6pt]\draw (0,1.1) -- (0,0) -- (1.5,0) -- (1.5,1.1);'
+                          + kug + r'\node[font=\small] at (0.75,-0.4) {Topf %s\quad $\square$};\end{tikzpicture}' % n)
+        return r'\hspace{0.8cm}'.join(bilder)
+    if d.startswith('Gefäß: 4 schwarze Kugeln'):
+        kug = ''.join(r'\fill (%.2f,0.25) circle (0.17);' % (0.3 + 0.4 * i) for i in range(4))
+        gef = r'\draw (0,1.6) -- (0,0) -- (1.9,0) -- (1.9,1.6);' + kug
+        baum = (r'\draw (3,0.8) -- (4.6,1.5) node[right,font=\small] {schwarz};'
+                r'\draw (3,0.8) -- (4.6,0.1) node[right,font=\small] {weiß};'
+                r'\node[font=\scriptsize,fill=white,inner sep=1pt] at (3.8,1.35) {$\tfrac{2}{3}$};'
+                r'\node[font=\scriptsize,fill=white,inner sep=1pt] at (3.8,0.25) {$\tfrac{1}{3}$};\fill (3,0.8) circle (1.2pt);')
+        return _tikz(gef + baum)
+    if d.startswith('Gewinnplan-Kasten'):
+        return (r'\fbox{\parbox{6cm}{\small\textbf{Gewinnplan}\\ Hauptgewinn: Los-Nr.\ 326\\'
+                r' Trostpreis: alle Lose mit der Endung 26 (außer 326)}}')
+    if d.startswith('Ankreuznetze'):
+        teile = re.findall(r'(\d)\. Kreis ([^;]*?), Rechteck (?:knapp |etwa )?([\d,]+) (?:Kreis)?[Dd]urchmesser lang', d)
+        bilder = []
+        r = 0.35
+        for n, lage, L in teile:
+            L = _z(L) * 2 * r
+            h = 0.9
+            if 'kurzen Seite' in lage:
+                z = r'\draw (0,0) rectangle (%.2f,%.2f); \draw (%.2f,%.2f) circle (%s);' % (L, h, L + r, h / 2, r)
+            elif 'mittig' in lage:
+                z = r'\draw (0,0) rectangle (%.2f,%.2f); \draw (%.2f,%.2f) circle (%s);' % (L, h, L / 2, h + r, r)
+            else:
+                z = r'\draw (0,0) rectangle (%.2f,%.2f); \draw (%.2f,%.2f) circle (%s);' % (L, h, L - r, h + r, r)
+            bilder.append(r'\begin{tikzpicture}[line width=0.6pt,baseline=0]' + z
+                          + r'\node[font=\small,anchor=north] at (%.2f,-0.1) {%s\enspace$\square$};\end{tikzpicture}' % (L / 2, n))
+        return r'\hspace{0.7cm}'.join(bilder) if len(bilder) == 3 else ''
+    if d.startswith('Schrägbild: Prisma mit Grundfläche 14 cm × 12 cm'):
+        # Schrägbild (links) und begonnenes Netz auf Karo (rechts)
+        t = (0.8, 0.5)
+        G = [(0, 0), (2.8, 0), (2.8 + t[0], t[1]), (t[0], t[1])]
+        vo, hi = 1.2, 3.0
+        z = (r'\draw (0,0) -- (2.8,0) -- (2.8,%.1f) -- (0,%.1f) -- cycle;' % (vo, vo)
+             + r'\draw (2.8,0) -- (%.1f,%.1f) -- (%.1f,%.1f) -- (2.8,%.1f);' % (2.8 + t[0], t[1], 2.8 + t[0], t[1] + hi, vo)
+             + r'\draw (0,%.1f) -- (%.1f,%.1f) -- (%.1f,%.1f);' % (vo, t[0], t[1] + hi, 2.8 + t[0], t[1] + hi)
+             + r'\draw[dashed] (0,0) -- (%.1f,%.1f) -- (%.1f,%.1f); \draw[dashed] (%.1f,%.1f) -- (%.1f,%.1f);'
+             % (t[0], t[1], 2.8 + t[0], t[1], t[0], t[1], t[0], t[1] + hi)
+             + _m((0, 0), (2.8, 0), '14 cm', 'below') + _m((2.8, 0), (2.8 + t[0], t[1]), '12 cm', 'below right')
+             + _m((0, 0), (0, vo), '6 cm', 'left') + _m((2.8 + t[0], t[1]), (2.8 + t[0], t[1] + hi), '15 cm', 'right')
+             + _m((0, vo), (t[0], t[1] + hi), '16 cm', 'left'))
+        k = 0.25
+        netz = [r'\draw[mbgitter,line width=0.3pt,step=%s] (5,-0.5) grid (10.5,3.25);' % k]
+        x = 5.25
+        for b in (8.3, 3, 7):
+            netz.append(r'\draw (%.3f,0) rectangle ++(%.3f,%.3f);' % (x, b * k, 6 * k))
+            x += b * k
+        x0 = 5.25 + 11.3 * k
+        netz.append(r'\draw (%.3f,%.3f) -- (%.3f,%.3f) -- (%.3f,%.3f) -- (%.3f,%.3f);'
+                    % (x0, 6 * k, x0, 9 * k, x0 + 7 * k, 13.5 * k, x0 + 7 * k, 6 * k))
+        netz.append(r'\node[font=\scriptsize,mbgrau,anchor=north west] at (5,-0.5) {1 Kästchen = 2 cm};')
+        return _tikz(z + ''.join(netz), nm)
+    if d.startswith('Tabellenauswahl: drei Wertetabellen'):
+        return 'TABELLENAUSWAHL'
+    return ''
+
+
+def skizze_text(d):
+    """Neutrale Skizzenbeschreibung für den Rest (Reparatur Punkt 6): kein „im Original“, kein
+    Autorenhinweis „zum Lösen nicht nötig“."""
+    t = re.sub(r';?\s*zum Lösen nicht nötig', '', d.strip())
+    t = re.sub(r'^(Skizze|Graph|Diagramm):\s*', '', t)
+    return r'\fbox{\parbox{0.9\linewidth}{\footnotesize Skizze: ' + tx(t) + '}}'

@@ -14,21 +14,21 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Tabelle ergänzen | 14 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | Ein Stoff zerfällt. Nach jeder Stunde bleiben 70% der Menge  |
 | Tabelle ergänzen | 15 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | Ein Auto kostet neu 24000€. Es verliert jedes Jahr 15% seine |
 | Tabelle ergänzen | 16 | Sachaufgabe | 1 | 1 | 2 | 2 | eigene Aufgabe | Ein Guthaben wächst jedes Jahr um 10%. In der Zeile der Jahr |
-| Tabelle ergänzen | 17 | Sachaufgabe | 1 | 3 | 1 | 3 | 2016-OS-K4a | Um Krankheiten der Schilddrüse zu erkennen, spritzt man dem  |
-| Tabelle ergänzen | 18 | Sachaufgabe | 2 | 1 | 1 | 3 | 2020-OS-K4a | Laut einer Studie aus dem Jahr 2019 verbrauchte jeder Mensch |
-| Tabelle ergänzen | 19 | Sachaufgabe | 2 | 2 | 1 | 3 | 2017-OS-K7a | Auf Meereshöhe (0 km) misst man einen Luftdruck von ungefähr |
-| Tabelle ergänzen | 20 | Sachaufgabe | 2 | 3 | 1 | 3 | 2019-OS-K7a | Ein Ferkel wiegt 10 kg. Aus Erfahrung weiß man, dass seine M |
+| Tabelle ergänzen | 17 | Sachaufgabe (Prüfungshöhe) | 1 | 3 | 1 | 3 | 2016-OS-K4a | Um Krankheiten der Schilddrüse zu erkennen, spritzt man dem  |
+| Tabelle ergänzen | 18 | Sachaufgabe (Prüfungshöhe) | 2 | 1 | 1 | 3 | 2020-OS-K4a | Laut einer Studie aus dem Jahr 2019 verbrauchte jeder Mensch |
+| Tabelle ergänzen | 19 | Sachaufgabe (Prüfungshöhe) | 2 | 2 | 1 | 3 | 2017-OS-K7a | Auf Meereshöhe (0 km) misst man einen Luftdruck von ungefähr |
+| Tabelle ergänzen | 20 | Sachaufgabe (Prüfungshöhe) | 2 | 3 | 1 | 3 | 2019-OS-K7a | Ein Ferkel wiegt 10 kg. Aus Erfahrung weiß man, dass seine M |
 | Punkte darstellen | 21 | Vorstufe | 1 | 1 | 1 | 0 | eigene Aufgabe | Der Zahlenstrahl ist in Hunderterschritten beschriftet. Welc |
 | Punkte darstellen | 22 | Vorstufe | 1 | 1 | 1 | 0 | eigene Aufgabe | Der Zahlenstrahl ist in Fünfzigerschritten beschriftet. Welc |
-| Punkte darstellen | 23 | Sachaufgabe | 0 | 1 | 1 | 3 | 2025-OS-K7a | Man beobachtet einen Bakterienstamm, der exponentiell wächst |
-| Punkte darstellen | 24 | Sachaufgabe | 0 | 2 | 1 | 3 | 2021-OS-K6b | Eine 40 cm hohe Kerze brennt ab. Gegeben: Tabelle Zeit in Mi |
-| Punkte darstellen | 25 | Sachaufgabe | 1 | 1 | 1 | 1 | eigene Aufgabe | Die Tabelle zeigt Wertepaare. Trage jedes Wertepaar als Punk |
-| Punkte darstellen | 26 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | Im Koordinatensystem ist die senkrechte Achse in Fünfzigersc |
-| Punkte darstellen | 27 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | Im Koordinatensystem sind Punkte eingetragen. Sie zeigen ein |
-| Punkte darstellen | 28 | Sachaufgabe | 1 | 1 | 2 | 2 | eigene Aufgabe | Das Koordinatensystem hat auf jeder Achse 8 Kästchen. Teile  |
-| Punkte darstellen | 29 | Sachaufgabe | 1 | 2 | 1 | 3 | 2016-OS-K4b | Um Krankheiten der Schilddrüse zu erkennen, spritzt man dem  |
-| Punkte darstellen | 30 | Sachaufgabe | 1 | 2 | 1 | 3 | 2017-OS-K7b | Auf Meereshöhe (0 km) misst man einen Luftdruck von ungefähr |
-| Punkte darstellen | 31 | rechnen | 1 | 1 | 1 | 2 | eigene Aufgabe | Lies am Graphen f die Werte für t = 0, t = 2 und t = 4 ab un |
+| Punkte darstellen | 23 | rechnen | 1 | 1 | 1 | 2 | eigene Aufgabe | Lies am Graphen f die Werte für t = 0, t = 2 und t = 4 ab un |
+| Punkte darstellen | 24 | Sachaufgabe | 1 | 1 | 1 | 1 | eigene Aufgabe | Die Tabelle zeigt Wertepaare. Trage jedes Wertepaar als Punk |
+| Punkte darstellen | 25 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | Im Koordinatensystem ist die senkrechte Achse in Fünfzigersc |
+| Punkte darstellen | 26 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | Im Koordinatensystem sind Punkte eingetragen. Sie zeigen ein |
+| Punkte darstellen | 27 | Sachaufgabe | 1 | 1 | 2 | 2 | eigene Aufgabe | Das Koordinatensystem hat auf jeder Achse 8 Kästchen. Teile  |
+| Punkte darstellen | 28 | Sachaufgabe (Prüfungshöhe) | 0 | 1 | 1 | 3 | 2025-OS-K7a | Man beobachtet einen Bakterienstamm, der exponentiell wächst |
+| Punkte darstellen | 29 | Sachaufgabe (Prüfungshöhe) | 0 | 2 | 1 | 3 | 2021-OS-K6b | Eine 40 cm hohe Kerze brennt ab. Gegeben: Tabelle Zeit in Mi |
+| Punkte darstellen | 30 | Sachaufgabe (Prüfungshöhe) | 1 | 2 | 1 | 3 | 2016-OS-K4b | Um Krankheiten der Schilddrüse zu erkennen, spritzt man dem  |
+| Punkte darstellen | 31 | Sachaufgabe (Prüfungshöhe) | 1 | 2 | 1 | 3 | 2017-OS-K7b | Auf Meereshöhe (0 km) misst man einen Luftdruck von ungefähr |
 | Faktor bestimmen, Gleichung aufstellen | 32 | Vorstufe | 1 | 1 | 1 | 0 | eigene Aufgabe | Ein Wert wird jedes Jahr mit 1,35 multipliziert. Kreuze an,  |
 | Faktor bestimmen, Gleichung aufstellen | 33 | Vorstufe | 1 | 1 | 1 | 0 | eigene Aufgabe | Ein Bestand wird ab 2016 jedes Jahr größer. Kreuze an, welch |
 | Faktor bestimmen, Gleichung aufstellen | 34 | rechnen | 0 | 1 | 1 | 1 | eigene Aufgabe | Ein Wert steigt jedes Jahr um 40%. Mit welchem Faktor wird e |
@@ -42,27 +42,27 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Faktor bestimmen, Gleichung aufstellen | 42 | Sachaufgabe | 0 | 1 | 2 | 2 | eigene Aufgabe | In einer Tabelle stehen nacheinander die Werte 350 und 420.  |
 | Faktor bestimmen, Gleichung aufstellen | 43 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | Die Menge eines Medikaments nimmt jede Stunde um 25% ab. Mit |
 | Faktor bestimmen, Gleichung aufstellen | 44 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | Die Zahl der Mitglieder eines Vereins wird mit M(t) = 250 1, |
-| Faktor bestimmen, Gleichung aufstellen | 45 | Sachaufgabe | 1 | 1 | 1 | 3 | 2018-OS-K2a | Ein junges Berliner Unternehmen zeigt in einer Tabelle, wie  |
-| Faktor bestimmen, Gleichung aufstellen | 46 | Sachaufgabe | 1 | 1 | 1 | 3 | 2019-OS-K7b | Ein Ferkel wiegt 10 kg. Aus Erfahrung weiß man, dass seine M |
-| Faktor bestimmen, Gleichung aufstellen | 47 | Sachaufgabe | 1 | 1 | 3 | 2 | eigene Aufgabe | Die Tabelle zeigt, wie sich eine Anzahl entwickelt. Berechne |
-| Faktor bestimmen, Gleichung aufstellen | 48 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | Eine Gemeinde hatte im Jahr 2019 genau 2500 Einwohner. Die Z |
-| Faktor bestimmen, Gleichung aufstellen | 49 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | Ein Guthaben von 2000€ wächst jedes Jahr um 4%. Jemand sagt: |
-| Faktor bestimmen, Gleichung aufstellen | 50 | Sachaufgabe | 2 | 2 | 1 | 3 | 2016-OS-K4e | Um Krankheiten der Schilddrüse zu erkennen, spritzt man dem  |
-| Faktor bestimmen, Gleichung aufstellen | 51 | Sachaufgabe | 2 | 4 | 2 | 3 | 2025-OS-K7b | Man beobachtet einen Bakterienstamm, der exponentiell wächst |
-| Faktor bestimmen, Gleichung aufstellen | 52 | Ankreuzen | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Bestand von 2000 Tieren nimmt jedes Jahr um 10% ab. Kreu |
-| Faktor bestimmen, Gleichung aufstellen | 53 | Ankreuzen | 1 | 1 | 1 | 2 | eigene Aufgabe | Die Tabelle zeigt Werte. Kreuze an, zu welcher Gleichung die |
-| Faktor bestimmen, Gleichung aufstellen | 54 | Ankreuzen | 1 | 1 | 1 | 3 | 2017-OS-K7c | Auf Meereshöhe (0 km) misst man einen Luftdruck von ungefähr |
-| Faktor bestimmen, Gleichung aufstellen | 55 | Vergleich | 2 | 1 | 1 | 3 | 2017-OS-K7d | Auf Meereshöhe (0 km) misst man einen Luftdruck von ungefähr |
-| Faktor bestimmen, Gleichung aufstellen | 56 | Vergleich | 2 | 3 | 1 | 3 | 2020-OS-K4c | Nach einer Studie lag der Wasserverbrauch 2019 bei durchschn |
+| Faktor bestimmen, Gleichung aufstellen | 45 | Sachaufgabe | 1 | 1 | 3 | 2 | eigene Aufgabe | Die Tabelle zeigt, wie sich eine Anzahl entwickelt. Berechne |
+| Faktor bestimmen, Gleichung aufstellen | 46 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | Eine Gemeinde hatte im Jahr 2019 genau 2500 Einwohner. Die Z |
+| Faktor bestimmen, Gleichung aufstellen | 47 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | Ein Guthaben von 2000€ wächst jedes Jahr um 4%. Jemand sagt: |
+| Faktor bestimmen, Gleichung aufstellen | 48 | Ankreuzen | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Bestand von 2000 Tieren nimmt jedes Jahr um 10% ab. Kreu |
+| Faktor bestimmen, Gleichung aufstellen | 49 | Ankreuzen | 1 | 1 | 1 | 2 | eigene Aufgabe | Die Tabelle zeigt Werte. Kreuze an, zu welcher Gleichung die |
+| Faktor bestimmen, Gleichung aufstellen | 50 | Ankreuzen (Prüfungshöhe) | 1 | 1 | 1 | 3 | 2017-OS-K7c | Auf Meereshöhe (0 km) misst man einen Luftdruck von ungefähr |
+| Faktor bestimmen, Gleichung aufstellen | 51 | Sachaufgabe (Prüfungshöhe) | 1 | 1 | 1 | 3 | 2018-OS-K2a | Ein junges Berliner Unternehmen zeigt in einer Tabelle, wie  |
+| Faktor bestimmen, Gleichung aufstellen | 52 | Sachaufgabe (Prüfungshöhe) | 1 | 1 | 1 | 3 | 2019-OS-K7b | Ein Ferkel wiegt 10 kg. Aus Erfahrung weiß man, dass seine M |
+| Faktor bestimmen, Gleichung aufstellen | 53 | Sachaufgabe (Prüfungshöhe) | 2 | 2 | 1 | 3 | 2016-OS-K4e | Um Krankheiten der Schilddrüse zu erkennen, spritzt man dem  |
+| Faktor bestimmen, Gleichung aufstellen | 54 | Sachaufgabe (Prüfungshöhe) | 2 | 4 | 2 | 3 | 2025-OS-K7b | Man beobachtet einen Bakterienstamm, der exponentiell wächst |
+| Faktor bestimmen, Gleichung aufstellen | 55 | Vergleich (Prüfungshöhe) | 2 | 1 | 1 | 3 | 2017-OS-K7d | Auf Meereshöhe (0 km) misst man einen Luftdruck von ungefähr |
+| Faktor bestimmen, Gleichung aufstellen | 56 | Vergleich (Prüfungshöhe) | 2 | 3 | 1 | 3 | 2020-OS-K4c | Nach einer Studie lag der Wasserverbrauch 2019 bei durchschn |
 | Graph zuordnen und begründen | 57 | Vorstufe | 1 | 1 | 1 | 0 | eigene Aufgabe | Sieh dir im Koordinatensystem den Graphen f an. Kreuze an, b |
 | Graph zuordnen und begründen | 58 | Vorstufe | 1 | 1 | 1 | 0 | eigene Aufgabe | Das Koordinatensystem zeigt drei Graphen f, g und h. Kreuze  |
 | Graph zuordnen und begründen | 59 | Ankreuzen | 0 | 1 | 1 | 2 | eigene Aufgabe | Eine Tasse Tee kühlt ab. Der Tee ist wärmer als die Luft im  |
 | Graph zuordnen und begründen | 60 | Ankreuzen | 0 | 1 | 1 | 2 | eigene Aufgabe | In einem Wasserbecken sind 300 Liter. Jede Minute fließen 60 |
 | Graph zuordnen und begründen | 61 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Pilz bedeckt am Anfang eine Fläche von 100 cm^2. Die Flä |
-| Graph zuordnen und begründen | 62 | Sachaufgabe | 0 | 1 | 2 | 3 | eigene Aufgabe | Ein Kalb wiegt 45 kg. Es nimmt jede Woche um 5% zu. Das Koor |
-| Graph zuordnen und begründen | 63 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | Ein Konto wächst jedes Jahr um 15%. Das Koordinatensystem ze |
-| Graph zuordnen und begründen | 64 | Vergleich | 0 | 1 | 1 | 3 | 2019-OS-K7c | Ein Ferkel wiegt 10 kg. Aus Erfahrung weiß man, dass seine M |
-| Graph zuordnen und begründen | 65 | rechnen | 1 | 1 | 1 | 1 | eigene Aufgabe | Das Koordinatensystem zeigt drei Graphen a, b und c. Welcher |
+| Graph zuordnen und begründen | 62 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | Ein Konto wächst jedes Jahr um 15%. Das Koordinatensystem ze |
+| Graph zuordnen und begründen | 63 | rechnen | 1 | 1 | 1 | 1 | eigene Aufgabe | Das Koordinatensystem zeigt drei Graphen a, b und c. Welcher |
+| Graph zuordnen und begründen | 64 | Sachaufgabe (Prüfungshöhe) | 0 | 1 | 2 | 3 | eigene Aufgabe | Ein Kalb wiegt 45 kg. Es nimmt jede Woche um 5% zu. Das Koor |
+| Graph zuordnen und begründen | 65 | Vergleich (Prüfungshöhe) | 0 | 1 | 1 | 3 | 2019-OS-K7c | Ein Ferkel wiegt 10 kg. Aus Erfahrung weiß man, dass seine M |
 
 ## Prüfung
 

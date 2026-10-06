@@ -10,34 +10,34 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Ergebnisse aufzählen | 9 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Würfel wird zweimal geworfen. Schreibe alle Paare auf, b |
 | Ergebnisse aufzählen | 10 | rechnen | 1 | 1 | 1 | 2 | eigene Aufgabe | Eine Münze wird zweimal geworfen. Schreibe alle Ergebnisse a |
 | Ergebnisse aufzählen | 11 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Zwei Glücksräder haben je vier gleich große Felder: links 4, |
-| Ergebnisse aufzählen | 12 | Sachaufgabe | 0 | 1 | 1 | 3 | 2025-OS-K3a | Bei einem Spiel werden zwei Scheiben gleichzeitig gedreht. B |
-| Ergebnisse aufzählen | 13 | Sachaufgabe | 0 | 1 | 2 | 2 | eigene Aufgabe | Die Ziffern 1, 4 und 7 werden in zufälliger Reihenfolge zu e |
-| Ergebnisse aufzählen | 14 | Sachaufgabe | 0 | 1 | 2 | 2 | eigene Aufgabe | Ein Glücksrad mit den Feldern 5, 7 und 9 wird zweimal gedreh |
-| Ergebnisse aufzählen | 15 | Sachaufgabe | 1 | 1 | 1 | 3 | 2017-OS-B1f | Zwei gleiche Münzen werden zusammen geworfen. Man unterschei |
-| Ergebnisse aufzählen | 16 | Sachaufgabe | 2 | 2 | 1 | 3 | 2020-OS-K6a | Wirft man einen Würfel zweimal hintereinander, gibt es 36 ve |
+| Ergebnisse aufzählen | 12 | Sachaufgabe | 0 | 1 | 2 | 2 | eigene Aufgabe | Die Ziffern 1, 4 und 7 werden in zufälliger Reihenfolge zu e |
+| Ergebnisse aufzählen | 13 | Sachaufgabe | 0 | 1 | 2 | 2 | eigene Aufgabe | Ein Glücksrad mit den Feldern 5, 7 und 9 wird zweimal gedreh |
+| Ergebnisse aufzählen | 14 | Sachaufgabe (Prüfungshöhe) | 0 | 1 | 1 | 3 | 2025-OS-K3a | Bei einem Spiel werden zwei Scheiben gleichzeitig gedreht. B |
+| Ergebnisse aufzählen | 15 | Sachaufgabe (Prüfungshöhe) | 1 | 1 | 1 | 3 | 2017-OS-B1f | Zwei gleiche Münzen werden zusammen geworfen. Man unterschei |
+| Ergebnisse aufzählen | 16 | Sachaufgabe (Prüfungshöhe) | 2 | 2 | 1 | 3 | 2020-OS-K6a | Wirft man einen Würfel zweimal hintereinander, gibt es 36 ve |
 | Wahrscheinlichkeit angeben | 17 | Vorstufe | 0 | 1 | 1 | 0 | eigene Aufgabe | Das Glücksrad im Bild hat sechs gleich große Felder. Kreuze  |
 | Wahrscheinlichkeit angeben | 18 | Vorstufe | 0 | 1 | 1 | 0 | eigene Aufgabe | In einer Lostrommel liegen 30 Nieten und 5 Gewinne. Gesucht  |
 | Wahrscheinlichkeit angeben | 19 | rechnen | 0 | 1 | 1 | 1 | eigene Aufgabe | Ein Würfel wird einmal geworfen. Wie groß ist die Wahrschein |
 | Wahrscheinlichkeit angeben | 20 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Das Glücksrad im Bild hat sechs gleich große Felder. Wie gro |
 | Wahrscheinlichkeit angeben | 21 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Würfel wird einmal geworfen. Wie groß ist die Wahrschein |
-| Wahrscheinlichkeit angeben | 22 | rechnen | 0 | 1 | 1 | 3 | 2014-OS-B1b | In einer Lostrommel liegen 80 Nieten und 20 Gewinnlose. Gib  |
-| Wahrscheinlichkeit angeben | 23 | rechnen | 0 | 1 | 1 | 3 | 2014-OS-B1d | Ein Spielwürfel wird einmal geworfen. Gib die Wahrscheinlich |
-| Wahrscheinlichkeit angeben | 24 | rechnen | 1 | 1 | 1 | 2 | eigene Aufgabe | Die Gewinnwahrscheinlichkeit beträgt 35%. Schreibe sie als g |
-| Wahrscheinlichkeit angeben | 25 | Ankreuzen | 0 | 1 | 1 | 2 | eigene Aufgabe | Drei Dosen enthalten je 8 Bonbons: links 5 Kirsch und 3 Zitr |
-| Wahrscheinlichkeit angeben | 26 | Ankreuzen | 0 | 1 | 1 | 3 | 2015-OS-B1a | In jedem der drei Töpfe liegen sechs Kugeln. Die Wahrscheinl |
-| Wahrscheinlichkeit angeben | 27 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | In einer Urne liegen 5 rote, 3 blaue und 1 grüne Kugel. Eine |
-| Wahrscheinlichkeit angeben | 28 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | In einer Schachtel liegen 50 Murmeln: 18 blaue, 9 rote und 2 |
-| Wahrscheinlichkeit angeben | 29 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Bei einer Tombola liegen 45 Nieten und 15 Gewinnlose in der  |
-| Wahrscheinlichkeit angeben | 30 | Sachaufgabe | 0 | 1 | 1 | 3 | 2016-OS-B1f | Von 100 Energiesparlampen in einer Kiste sind 5 defekt. Eine |
-| Wahrscheinlichkeit angeben | 31 | Sachaufgabe | 0 | 1 | 1 | 3 | 2019-OS-K6a | In einer Kiste liegen 20 Buntstifte: 7 grüne, 4 rote, 3 gelb |
-| Wahrscheinlichkeit angeben | 32 | Sachaufgabe | 0 | 1 | 1 | 3 | 2024-OS-K5a | In Familie Siebert helfen alle 5 Kinder im Haushalt. Jede Au |
-| Wahrscheinlichkeit angeben | 33 | Sachaufgabe | 0 | 1 | 1 | 3 | 2017-OS-K6a | An einem Zahlenschloss lässt sich jeder der drei Ringe auf e |
-| Wahrscheinlichkeit angeben | 34 | Sachaufgabe | 1 | 2 | 2 | 3 | 2014-OS-K6a | Für ein Kinderfest hat Pauls Vater ein Glücksrad gebaut. In  |
-| Wahrscheinlichkeit angeben | 35 | Vergleich | 0 | 1 | 1 | 2 | eigene Aufgabe | Nils sagt: „Beim Würfeln ist eine 6 seltener als eine 1.“ Be |
-| Wahrscheinlichkeit angeben | 36 | Vergleich | 0 | 1 | 1 | 2 | eigene Aufgabe | Auf einem Teller liegen 18 Muffins, 3 davon mit Chili, die a |
-| Wahrscheinlichkeit angeben | 37 | Vergleich | 1 | 1 | 1 | 3 | 2016-OS-K5c | Mia und Lukas verkaufen Lose mit den Nummern 101 bis 900, je |
-| Wahrscheinlichkeit angeben | 38 | Vergleich | 1 | 3 | 2 | 3 | 2016-OS-K5d | Mia und Lukas verkaufen Lose mit den Nummern 101 bis 900, je |
-| Wahrscheinlichkeit angeben | 39 | Vergleich | 2 | 1 | 1 | 3 | 2018-OS-K7b | Eva hat 16 Pfannkuchen gebacken: 14 mit Marmelade, 2 mit Sen |
+| Wahrscheinlichkeit angeben | 22 | rechnen | 1 | 1 | 1 | 2 | eigene Aufgabe | Die Gewinnwahrscheinlichkeit beträgt 35%. Schreibe sie als g |
+| Wahrscheinlichkeit angeben | 23 | Ankreuzen | 0 | 1 | 1 | 2 | eigene Aufgabe | Drei Dosen enthalten je 8 Bonbons: links 5 Kirsch und 3 Zitr |
+| Wahrscheinlichkeit angeben | 24 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | In einer Urne liegen 5 rote, 3 blaue und 1 grüne Kugel. Eine |
+| Wahrscheinlichkeit angeben | 25 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | In einer Schachtel liegen 50 Murmeln: 18 blaue, 9 rote und 2 |
+| Wahrscheinlichkeit angeben | 26 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Bei einer Tombola liegen 45 Nieten und 15 Gewinnlose in der  |
+| Wahrscheinlichkeit angeben | 27 | Vergleich | 0 | 1 | 1 | 2 | eigene Aufgabe | Nils sagt: „Beim Würfeln ist eine 6 seltener als eine 1.“ Be |
+| Wahrscheinlichkeit angeben | 28 | Vergleich | 0 | 1 | 1 | 2 | eigene Aufgabe | Auf einem Teller liegen 18 Muffins, 3 davon mit Chili, die a |
+| Wahrscheinlichkeit angeben | 29 | rechnen (Prüfungshöhe) | 0 | 1 | 1 | 3 | 2014-OS-B1b | In einer Lostrommel liegen 80 Nieten und 20 Gewinnlose. Gib  |
+| Wahrscheinlichkeit angeben | 30 | rechnen (Prüfungshöhe) | 0 | 1 | 1 | 3 | 2014-OS-B1d | Ein Spielwürfel wird einmal geworfen. Gib die Wahrscheinlich |
+| Wahrscheinlichkeit angeben | 31 | Ankreuzen (Prüfungshöhe) | 0 | 1 | 1 | 3 | 2015-OS-B1a | In jedem der drei Töpfe liegen sechs Kugeln. Die Wahrscheinl |
+| Wahrscheinlichkeit angeben | 32 | Sachaufgabe (Prüfungshöhe) | 0 | 1 | 1 | 3 | 2016-OS-B1f | Von 100 Energiesparlampen in einer Kiste sind 5 defekt. Eine |
+| Wahrscheinlichkeit angeben | 33 | Sachaufgabe (Prüfungshöhe) | 0 | 1 | 1 | 3 | 2019-OS-K6a | In einer Kiste liegen 20 Buntstifte: 7 grüne, 4 rote, 3 gelb |
+| Wahrscheinlichkeit angeben | 34 | Sachaufgabe (Prüfungshöhe) | 0 | 1 | 1 | 3 | 2024-OS-K5a | In Familie Siebert helfen alle 5 Kinder im Haushalt. Jede Au |
+| Wahrscheinlichkeit angeben | 35 | Sachaufgabe (Prüfungshöhe) | 0 | 1 | 1 | 3 | 2017-OS-K6a | An einem Zahlenschloss lässt sich jeder der drei Ringe auf e |
+| Wahrscheinlichkeit angeben | 36 | Sachaufgabe (Prüfungshöhe) | 1 | 2 | 2 | 3 | 2014-OS-K6a | Für ein Kinderfest hat Pauls Vater ein Glücksrad gebaut. In  |
+| Wahrscheinlichkeit angeben | 37 | Vergleich (Prüfungshöhe) | 1 | 1 | 1 | 3 | 2016-OS-K5c | Mia und Lukas verkaufen Lose mit den Nummern 101 bis 900, je |
+| Wahrscheinlichkeit angeben | 38 | Vergleich (Prüfungshöhe) | 1 | 3 | 2 | 3 | 2016-OS-K5d | Mia und Lukas verkaufen Lose mit den Nummern 101 bis 900, je |
+| Wahrscheinlichkeit angeben | 39 | Vergleich (Prüfungshöhe) | 2 | 1 | 1 | 3 | 2018-OS-K7b | Eva hat 16 Pfannkuchen gebacken: 14 mit Marmelade, 2 mit Sen |
 | Baum ergänzen | 40 | Vorstufe | 0 | 1 | 2 | 0 | eigene Aufgabe | In einer Dose sind 9 Kekse, 4 davon mit Schoko. Ein Schokoke |
 | Baum ergänzen | 41 | Vorstufe | 1 | 1 | 1 | 0 | eigene Aufgabe | Ein Glücksrad wird zweimal gedreht. Kreuze an, ob das wie Zi |
 | Baum ergänzen | 42 | Sachaufgabe | 0 | 1 | 1 | 1 | eigene Aufgabe | Ein Glücksrad hat drei gleich große Felder: 1 rotes und 2 bl |
@@ -46,11 +46,11 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Baum ergänzen | 45 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | In einem Beutel liegen 4 rote und 3 grüne Kugeln. Zwei werde |
 | Baum ergänzen | 46 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | In einer Schachtel liegen 15 Pralinen, 5 davon mit Nuss. Emi |
 | Baum ergänzen | 47 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | Der Baum zeigt einen zweistufigen Zufallsversuch. Beschreibe |
-| Baum ergänzen | 48 | Sachaufgabe | 1 | 1 | 1 | 3 | 2014-OS-K6b | Für ein Kinderfest hat Pauls Vater ein Glücksrad gebaut. In  |
-| Baum ergänzen | 49 | Sachaufgabe | 2 | 4 | 2 | 3 | 2020-OS-K6c | Wirft man einen Würfel zweimal hintereinander, gibt es 36 ve |
-| Baum ergänzen | 50 | Sachaufgabe | 2 | 4 | 2 | 3 | 2015-OS-K7d | Beim Elfmetertraining stehen 11 Spieler bereit. Jeder schieß |
-| Baum ergänzen | 51 | Vergleich | 0 | 2 | 1 | 3 | 2024-OS-K5b | In Familie Siebert helfen alle 5 Kinder im Haushalt. Jede Au |
-| Baum ergänzen | 52 | Vergleich | 2 | 3 | 1 | 3 | 2019-OS-K6b | In einer Kiste liegen 20 Buntstifte: 7 grüne, 4 rote, 3 gelb |
+| Baum ergänzen | 48 | Vergleich (Prüfungshöhe) | 0 | 2 | 1 | 3 | 2024-OS-K5b | In Familie Siebert helfen alle 5 Kinder im Haushalt. Jede Au |
+| Baum ergänzen | 49 | Vergleich (Prüfungshöhe) | 2 | 3 | 1 | 3 | 2019-OS-K6b | In einer Kiste liegen 20 Buntstifte: 7 grüne, 4 rote, 3 gelb |
+| Baum ergänzen | 50 | Sachaufgabe (Prüfungshöhe) | 1 | 1 | 1 | 3 | 2014-OS-K6b | Für ein Kinderfest hat Pauls Vater ein Glücksrad gebaut. In  |
+| Baum ergänzen | 51 | Sachaufgabe (Prüfungshöhe) | 2 | 4 | 2 | 3 | 2020-OS-K6c | Wirft man einen Würfel zweimal hintereinander, gibt es 36 ve |
+| Baum ergänzen | 52 | Sachaufgabe (Prüfungshöhe) | 2 | 4 | 2 | 3 | 2015-OS-K7d | Beim Elfmetertraining stehen 11 Spieler bereit. Jeder schieß |
 | Pfadregel | 53 | Vorstufe | 1 | 1 | 1 | 0 | eigene Aufgabe | Ein Würfel wird zweimal geworfen. Das Ereignis heißt „mindes |
 | Pfadregel | 54 | Vorstufe | 1 | 1 | 1 | 0 | eigene Aufgabe | Der Baum zeigt zweimaliges Drehen eines Glücksrads. Schreibe |
 | Pfadregel | 55 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Würfel wird dreimal geworfen. Wie groß ist die Wahrschei |
@@ -58,11 +58,11 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Pfadregel | 57 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Zwei Glücksräder haben je vier gleich große Felder: links 7, |
 | Pfadregel | 58 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Glücksrad hat 8 gleich große Felder: 5-mal rot, 2-mal bl |
 | Pfadregel | 59 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | Eine Elfmeterschützin trifft erfahrungsgemäß mit der Wahrsch |
-| Pfadregel | 60 | Sachaufgabe | 1 | 3 | 1 | 3 | 2025-OS-K3c | Bei einem Spiel werden zwei Scheiben gleichzeitig gedreht. B |
-| Pfadregel | 61 | Sachaufgabe | 2 | 3 | 1 | 3 | 2014-OS-K6c | Für ein Kinderfest hat Pauls Vater ein Glücksrad gebaut. In  |
-| Pfadregel | 62 | Vergleich | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Würfel wird zweimal geworfen. Mia behauptet: „Zwei gleic |
-| Pfadregel | 63 | Vergleich | 0 | 3 | 1 | 3 | 2025-OS-K3b | Bei einem Spiel werden zwei Scheiben gleichzeitig gedreht. B |
-| Pfadregel | 64 | Ankreuzen | 1 | 2 | 1 | 3 | 2020-OS-K6b | Wirft man einen Würfel zweimal hintereinander, gibt es 36 ve |
+| Pfadregel | 60 | Vergleich | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Würfel wird zweimal geworfen. Mia behauptet: „Zwei gleic |
+| Pfadregel | 61 | Vergleich (Prüfungshöhe) | 0 | 3 | 1 | 3 | 2025-OS-K3b | Bei einem Spiel werden zwei Scheiben gleichzeitig gedreht. B |
+| Pfadregel | 62 | Ankreuzen (Prüfungshöhe) | 1 | 2 | 1 | 3 | 2020-OS-K6b | Wirft man einen Würfel zweimal hintereinander, gibt es 36 ve |
+| Pfadregel | 63 | Sachaufgabe (Prüfungshöhe) | 1 | 3 | 1 | 3 | 2025-OS-K3c | Bei einem Spiel werden zwei Scheiben gleichzeitig gedreht. B |
+| Pfadregel | 64 | Sachaufgabe (Prüfungshöhe) | 2 | 3 | 1 | 3 | 2014-OS-K6c | Für ein Kinderfest hat Pauls Vater ein Glücksrad gebaut. In  |
 | ohne Zurücklegen | 65 | Vorstufe | 1 | 1 | 1 | 0 | eigene Aufgabe | Tim dreht ein Glücksrad einmal. Kreuze an, wie viele Stufen  |
 | ohne Zurücklegen | 66 | Vorstufe | 1 | 1 | 1 | 0 | eigene Aufgabe | Eine Münze wird dreimal geworfen. Kreuze an, wie viele Stufe |
 | ohne Zurücklegen | 67 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | In einer Urne liegen 3 rote und 2 weiße Kugeln. Zwei werden  |
@@ -71,18 +71,18 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | ohne Zurücklegen | 70 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Beim Staffellauf wird die Reihenfolge der 9 Läuferinnen zufä |
 | ohne Zurücklegen | 71 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | In einer Kiste liegen 15 Stifte: 5 rote, 3 grüne und 7 schwa |
 | ohne Zurücklegen | 72 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Bei einem Gewinnspiel liegen 5 Umschläge aus, in 2 steckt ei |
-| ohne Zurücklegen | 73 | Sachaufgabe | 0 | 2 | 1 | 3 | 2024-OS-K5c | In Familie Siebert helfen alle 5 Kinder im Haushalt. Jede Au |
-| ohne Zurücklegen | 74 | Sachaufgabe | 2 | 3 | 1 | 3 | 2018-OS-K7c | Für ein anderes Fest backt Eva wieder 14 Pfannkuchen mit Mar |
-| ohne Zurücklegen | 75 | Vergleich | 2 | 3 | 1 | 3 | 2019-OS-K6c | In einer Kiste liegen 20 Buntstifte: 7 grüne, 4 rote, 3 gelb |
+| ohne Zurücklegen | 73 | Sachaufgabe (Prüfungshöhe) | 0 | 2 | 1 | 3 | 2024-OS-K5c | In Familie Siebert helfen alle 5 Kinder im Haushalt. Jede Au |
+| ohne Zurücklegen | 74 | Sachaufgabe (Prüfungshöhe) | 2 | 3 | 1 | 3 | 2018-OS-K7c | Für ein anderes Fest backt Eva wieder 14 Pfannkuchen mit Mar |
+| ohne Zurücklegen | 75 | Vergleich (Prüfungshöhe) | 2 | 3 | 1 | 3 | 2019-OS-K6c | In einer Kiste liegen 20 Buntstifte: 7 grüne, 4 rote, 3 gelb |
 | Gegenereignis | 76 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Würfel wird einmal geworfen. Wie groß ist die Wahrschein |
 | Gegenereignis | 77 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Würfel wird zweimal geworfen. Wie groß ist die Wahrschei |
 | Gegenereignis | 78 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein roter Würfel trägt die Zahlen 1, 2, 2, 3, 5, 6, ein blau |
 | Zufallsgerät entwerfen | 79 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Glücksrad hat 4 gleich große Felder in Rot und Gelb. Die |
 | Zufallsgerät entwerfen | 80 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Zeichne ein Glücksrad mit 6 gleich großen Feldern. Die Wahrs |
 | Zufallsgerät entwerfen | 81 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Das Bild zeigt zwei leere Glücksräder mit je vier gleich gro |
-| Zufallsgerät entwerfen | 82 | Sachaufgabe | 0 | 1 | 1 | 3 | 2018-OS-B1j | Ein Glücksrad hat 5 gleich große Felder in den Farben Rot, G |
-| Zufallsgerät entwerfen | 83 | Sachaufgabe | 1 | 2 | 1 | 3 | 2019-OS-B1g | In einem Gefäß liegen schwarze und weiße Kugeln. Das Baumdia |
-| Zufallsgerät entwerfen | 84 | Vergleich | 0 | 2 | 1 | 3 | 2025-OS-K3d | Bei einem Spiel werden zwei Scheiben gleichzeitig gedreht. B |
+| Zufallsgerät entwerfen | 82 | Sachaufgabe (Prüfungshöhe) | 0 | 1 | 1 | 3 | 2018-OS-B1j | Ein Glücksrad hat 5 gleich große Felder in den Farben Rot, G |
+| Zufallsgerät entwerfen | 83 | Sachaufgabe (Prüfungshöhe) | 1 | 2 | 1 | 3 | 2019-OS-B1g | In einem Gefäß liegen schwarze und weiße Kugeln. Das Baumdia |
+| Zufallsgerät entwerfen | 84 | Vergleich (Prüfungshöhe) | 0 | 2 | 1 | 3 | 2025-OS-K3d | Bei einem Spiel werden zwei Scheiben gleichzeitig gedreht. B |
 
 ## Prüfung
 

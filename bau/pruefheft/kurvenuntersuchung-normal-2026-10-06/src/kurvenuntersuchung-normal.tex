@@ -93,6 +93,7 @@ $f(x) = x^3 - x^2 - 6x$ – alle Schnittpunkte mit den Achsen?
 \rechenplatz{2}
 \fusshilfe{\mbox{16:~$N_1(-2 | 0)$, $N_2(0 | 0)$, $N_3(3 | 0)$}}
 \end{pfnr}
+\pfgruppe{}
 \begin{pfnr}{Abi ’22\\ohne Hilfsmittel}{17.}{2 BE}
 Berechne die Nullstellen der Funktion $f$ mit $f(x) = x^3 - 8x^2 + 12x$.
 \rechenplatz{2}
@@ -107,6 +108,7 @@ Ein Speicherofen kühlt ab. Die Temperatur seiner Oberfläche in °C wird beschr
 \begin{pfnr}{Abi ’23}{19.}{4 BE}
 Gegeben ist die Funktion $f$ mit $f(x) = x^3 - 12x^2 + 45x - 50$, $x \in \mathbb{R}$. Man kann den Term auch als $f(x) = (x - 5)\cdot(x^2 - 7x + 10)$ schreiben. Gib die Koordinaten des Punkts an, in dem der Graph von $f$ die $y$-Achse schneidet. Ermittle, wie viele Nullstellen $f$ hat.
 \rechenplatz{3}
+\fusshilfe{\mbox{19:~(0; $-$50); 5}}
 \end{pfnr}
 \begin{pfnr}{Abi ’23}{20.}{5 BE}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = 0{,}5\cdot(x^2 - 4)\cdot e^x$; ihr Graph heißt $G$. Die erste Ableitung ist $f'(x) = (0{,}5x^2 + x - 2)\cdot e^x$. Bestimme die Koordinaten der Punkte, in denen $G$ die beiden Koordinatenachsen schneidet. Diese drei Punkte bilden zusammen mit einem Punkt $R$ die Ecken einer Raute. Gib die Koordinaten von $R$ an.
@@ -130,14 +132,17 @@ Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = 2e^x - 2e$; 
 Gegeben ist die Funktion $f$ mit $f(x) = 3e^x + 1$, $x \in \mathbb{R}$; ihr Graph heißt $G_f$. Begründe am Funktionsterm, dass $G_f$ die $x$-Achse nicht schneidet. Gib die Wertemenge von $f$ an.
 \par\smallskip\noindent \begin{tikzpicture}\begin{axis}[xmin=-3.0,xmax=2.0,ymin=0.0,ymax=6.0,axis lines=middle,width=11cm,height=7cm,xlabel={$x$},ylabel={$y$},tick label style={font=\scriptsize},samples=160,clip=true,every axis plot/.append style={line width=0.9pt},/pgf/number format/use comma,grid=both,grid style={mbgitter},minor tick num=1]\addplot[black,domain=-3.0:2.0] {3*exp(x)+1};\node[font=\small,fill=white,inner sep=1pt,anchor=south west] at (axis cs:0.30000000000000027,{3*exp((0.30000000000000027))+1}) {$G_f$};\end{axis}\end{tikzpicture}\par
 \rechenplatz{2}
+\fusshilfe{\mbox{23:~Wertemenge ]1}}
 \end{pfnr}
 \begin{pfnr}{Abi ’24}{24.}{4 BE}
 Gegeben ist die Funktion $f$ mit $f(x) = 0{,}5x^4 - 4x^2 + 3{,}5$, $x \in \mathbb{R}$; ihr Graph heißt $G_f$. Gegeben: $G_f$ ist achsensymmetrisch zur $y$-Achse, und $(1 \mid 0)$ liegt auf $G_f$. Begründe ohne Rechnung, dass auch $(-1 \mid 0)$ auf $G_f$ liegt. Bestimme die übrigen Schnittpunkte von $G_f$ mit der $x$-Achse.
 \rechenplatz{3}
+\fusshilfe{\mbox{24:~0)}}
 \end{pfnr}
 \begin{pfnr}{Abi ’22}{25.}{5 BE}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = (x + 2)\cdot e^{-x}$. Ihre Ableitung ist $f'(x) = -(x + 1)\cdot e^{-x}$. Gib die Punkte an, in denen der Graph von $f$ die Koordinatenachsen schneidet. Begründe, dass der Graph einen Hochpunkt hat, und gib seine Koordinaten an.
 \rechenplatz{3}
+\fusshilfe{\mbox{25:~($-$2; 0), (0; 2); Hochpunkt ($-$1; e)}}
 \end{pfnr}
 \pfstufekopf[sextrempunkteberechne]{Extrempunkte berechnen}{in 4 der letzten 5 Prüfungen}
 \pfgruppe{Was ist zu tun? Ankreuzen, nicht rechnen}
@@ -186,44 +191,48 @@ Bestimme die Koordinaten des Hochpunkts des Graphen von $f(x) = (3 - x) \cdot \m
 \fusshilfe{\mbox{34:~$H(2 | \mathrm{e}^{2})$, also $H(2 | 7{,}39)$}}
 \end{pfnr}
 \pfgruppe{}
-\begin{pfnr}{Abi ’23\\ohne Hilfsmittel}{35.}{2 BE}
+\begin{pfnr}{eigene Aufgabe}{35.}{7 BE}
+Der Graph von $f(x) = \tfrac{1}{8}x^3 - 1{,}5x$ hat genau zwei Extrempunkte. Berechne ihre Koordinaten und weise nach, dass die Gerade durch sie die Winkelhalbierende des II. und IV. Quadranten ist.
+\rechenplatz{4}
+\fusshilfe{\mbox{35:~$y = -x$}}
+\end{pfnr}
+\pfgruppe{}
+\begin{pfnr}{Abi ’23\\ohne Hilfsmittel}{36.}{2 BE}
 Die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = x^3 - 3x^2$ hat genau zwei Extremstellen. Berechne diese beiden Stellen.
 \rechenplatz{2}
-\fusshilfe{\mbox{35:~x = 0 und x = 2}}
+\fusshilfe{\mbox{36:~x = 0 und x = 2}}
 \end{pfnr}
-\begin{pfnr}{Abi ’25}{36.}{4 BE}
+\begin{pfnr}{Abi ’25}{37.}{4 BE}
 Gegeben ist die Funktion $f$ mit $f(x) = (2 - x)\cdot e^x$, $x \in \mathbb{R}$; die Abbildung zeigt ihren Graphen. Berechne die Koordinaten des Hochpunkts des Graphen von $f$.
 \par\smallskip\noindent \begin{tikzpicture}\begin{axis}[xmin=-5.0,xmax=2.5,ymin=-0.5,ymax=3.0,axis lines=middle,width=11cm,height=7cm,xlabel={$x$},ylabel={$y$},tick label style={font=\scriptsize},samples=160,clip=true,every axis plot/.append style={line width=0.9pt},/pgf/number format/use comma,grid=both,grid style={mbgitter},minor tick num=1]\addplot[black,domain=-5.0:2.5] {(2-x)*exp(x)};\node[font=\small,fill=white,inner sep=1pt,anchor=south west] at (axis cs:1.6,{(2-(1.6))*exp((1.6))}) {$G_f$};\end{axis}\end{tikzpicture}\par
 \rechenplatz{3}
-\fusshilfe{\mbox{36:~Hochpunkt (1; e)}}
+\fusshilfe{\mbox{37:~Hochpunkt (1; e)}}
 \end{pfnr}
-\begin{pfnr}{Abi ’22}{37.}{6 BE}
+\begin{pfnr}{Abi ’22}{38.}{6 BE}
 Gegeben ist die Funktion $f$ mit $f(x) = -\tfrac{1}{6}x^3 + \tfrac{1}{2}x^2$, $x \in \mathbb{R}$. Ermittle Lage und Art aller Extrempunkte des Graphen von $f$.
 \rechenplatz{4}
-\fusshilfe{\mbox{37:~Tiefpunkt (0; 0), Hochpunkt (2; $\tfrac{2}{3}$)}}
+\fusshilfe{\mbox{38:~Tiefpunkt (0; 0), Hochpunkt (2; $\tfrac{2}{3}$)}}
 \end{pfnr}
-\begin{pfnr}{Abi ’25}{38.}{7 BE}
+\begin{pfnr}{Abi ’25}{39.}{7 BE}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = \tfrac{2}{25}x^3 - \tfrac{3}{2}x$; ihr Graph heißt $G_f$. Aus $G_f$ und der Geraden $g$ mit $g(x) = \tfrac{1}{2}x$ wird ein Windrad gestaltet (Abbildung). $G_f$ hat genau zwei Extrempunkte. Bestimme ihre Koordinaten. Zeige, dass die Gerade durch diese beiden Punkte die Winkelhalbierende des II. und IV. Quadranten ist.
 \par\smallskip\noindent \begin{tikzpicture}\begin{axis}[xmin=-6.0,xmax=6.0,ymin=-6.0,ymax=6.0,axis lines=middle,width=11cm,xlabel={$x$},ylabel={$y$},tick label style={font=\scriptsize},samples=160,clip=true,every axis plot/.append style={line width=0.9pt},/pgf/number format/use comma,grid=both,grid style={mbgitter},minor tick num=1,axis equal image]\addplot[black,domain=-6.0:6.0] {2/25*x^3-3/2*x};\node[font=\small,fill=white,inner sep=1pt,anchor=south west] at (axis cs:4.5600000000000005,{2/25*(4.5600000000000005)^3-3/2*(4.5600000000000005)}) {$G_f$};\addplot[black,domain=-5:5] {x/2};\node[font=\small,fill=white,inner sep=1pt,anchor=south west] at (axis cs:3.8,{(3.8)/2}) {$g$};\addplot[black!60,domain=0:360,samples=90] ({0+5.59*cos(x)},{0+5.59*sin(x)});\end{axis}\end{tikzpicture}\par
 \rechenplatz{4}
+\fusshilfe{\mbox{39:~Hochpunkt ($-$2,5; 2,5), Tiefpunkt (2,5; $-$2,5)}}
 \end{pfnr}
-\begin{pfnr}{Abi ’23}{39.}{6 BE}
+\begin{pfnr}{Abi ’23}{40.}{6 BE}
 Gegeben ist die Funktion $f$ mit $f(x) = x^3 - 12x^2 + 45x - 50$, $x \in \mathbb{R}$. Man kann den Term auch als $f(x) = (x - 5)\cdot(x^2 - 7x + 10)$ schreiben. Bestimme Lage und Art aller Extrempunkte des Graphen von $f$.
 \rechenplatz{4}
-\fusshilfe{\mbox{39:~H(3; 4), T(5; 0)}}
-\end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{40.}{7 BE}
-Der Graph von $f(x) = \tfrac{1}{8}x^3 - 1{,}5x$ hat genau zwei Extrempunkte. Berechne ihre Koordinaten und weise nach, dass die Gerade durch sie die Winkelhalbierende des II. und IV. Quadranten ist.
-\rechenplatz{4}
-\fusshilfe{\mbox{40:~$y = -x$}}
+\fusshilfe{\mbox{40:~H(3; 4), T(5; 0)}}
 \end{pfnr}
 \begin{pfnr}{Abi ’24}{41.}{6 BE}
 Gegeben ist die Funktion $f$ mit $f(x) = 0{,}5x^4 - 4x^2 + 3{,}5$, $x \in \mathbb{R}$; ihr Graph heißt $G_f$. Bestimme Lage und Art der Extrempunkte von $G_f$.
 \rechenplatz{4}
+\fusshilfe{\mbox{41:~Hochpunkt (0; 3,5); Tiefpunkte ($-$2; $-$4,5), (2; $-$4,5)}}
 \end{pfnr}
 \begin{pfnr}{Abi ’23}{42.}{2 BE}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = 0{,}5\cdot(x^2 - 4)\cdot e^x$; ihr Graph heißt $G$. Die erste Ableitung ist $f'(x) = (0{,}5x^2 + x - 2)\cdot e^x$. Zeige, dass $G$ an der Stelle $x = -1 + \sqrt{5}$ eine waagerechte Tangente hat. Berechne den Funktionswert an dieser Stelle.
 \rechenplatz{3}
+\fusshilfe{\mbox{42:~0 $\Rightarrow$ waagerechte Tangente; $\approx$ $-$4,25}}
 \end{pfnr}
 \begin{pfnr}{Abi ’24}{43.}{3 BE}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = (x - 2)\cdot e^{-\tfrac{x}{2} + 3}$ und ihrer Ableitung $f'(x) = \left(-\tfrac{x}{2} + 2\right)\cdot e^{-\tfrac{x}{2} + 3}$. Die Abbildung zeigt den Graphen $G_f$ und den Graphen von $f'$. $G_f$ hat genau einen Hochpunkt. Bestimme seine Koordinaten.
@@ -236,6 +245,7 @@ Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = (x - 2)\cdot
 Ein Tauchroboter bewegt sich 30 Minuten lang nur senkrecht nach unten und oben. Sein Abstand von der Wasseroberfläche wird beschrieben durch $h(t) = \tfrac{9}{40}t^3 - \tfrac{27}{2}t^2 + \tfrac{405}{2}t$ mit $0 \le t \le 30$ ($t$: Zeit in Minuten, $h(t)$: Abstand in Metern). Weise nach, dass der Roboter nach 10 Minuten am weitesten von der Wasseroberfläche entfernt ist und dieser Abstand 900 m beträgt.
 \par\smallskip\noindent \begin{tikzpicture}\begin{axis}[xmin=0.0,xmax=30.0,ymin=0.0,ymax=1000.0,axis lines=middle,width=11cm,height=7cm,xlabel={$t$},ylabel={$h(t)$},tick label style={font=\scriptsize},samples=160,clip=true,every axis plot/.append style={line width=0.9pt},/pgf/number format/use comma,grid=both,grid style={mbgitter},minor tick num=1]\addplot[black,domain=0.0:30.0] {9/40*x^3-27/2*x^2+405/2*x};\node[font=\small,fill=white,inner sep=1pt,anchor=south west] at (axis cs:25.8,{9/40*(25.8)^3-27/2*(25.8)^2+405/2*(25.8)}) {$G_h$};\end{axis}\end{tikzpicture}\par
 \rechenplatz{3}
+\fusshilfe{\mbox{44:~$-$13,5 < 0 $\Rightarrow$ Maximum; 900 m}}
 \end{pfnr}
 \pfstufekopf[swendepunkteberechnen]{Wendepunkte berechnen}{in 4 der letzten 5 Prüfungen}
 \pfgruppe{Was ist zu tun? Ankreuzen, nicht rechnen}
@@ -281,22 +291,23 @@ Ein Getränk wird in einen Raum mit $20$ °C gebracht. Die Abbildung zeigt seine
 \par\smallskip\noindent \begin{ksys}[xmin=0,xmax=40,ymin=0,ymax=100,xstep=10,ystep=20,xlabel=t in min,ylabel=T in °C,ablesen] \funktionab{20+70*exp(-0.1*\x)}{T}{0}{40} \end{ksys}\par
 \rechenplatz{1}
 \end{pfnr}
-\begin{pfnr}{Abi ’23}{53.}{3 BE}
-Gegeben ist die Funktion $f$ mit $f(x) = x^3 - 12x^2 + 45x - 50$, $x \in \mathbb{R}$. Man kann den Term auch als $f(x) = (x - 5)\cdot(x^2 - 7x + 10)$ schreiben. Der Graph von $f$ hat genau einen Wendepunkt. Berechne seine Koordinaten.
-\rechenplatz{2}
-\fusshilfe{\mbox{53:~W(4; 2)}}
-\end{pfnr}
-\begin{pfnr}{Abi ’26}{54.}{4 BE}
-Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = \tfrac{1}{12}(x^4 + 4x^3 + 24)$. Ihre Ableitung ist $f'(x) = x^2\cdot\left(\tfrac{1}{3}x + 1\right) = \tfrac{1}{3}x^3 + x^2$; die Abbildung zeigt den Graphen von $f'$. Der Graph von $f$ hat genau zwei Wendepunkte. Berechne ihre Koordinaten.
-\par\smallskip\noindent \begin{tikzpicture}\begin{axis}[xmin=-3.0,xmax=2.0,ymin=-1.0,ymax=2.0,axis lines=middle,width=11cm,height=7cm,xlabel={$x$},ylabel={$y$},tick label style={font=\scriptsize},samples=160,clip=true,every axis plot/.append style={line width=0.9pt},/pgf/number format/use comma,grid=both,grid style={mbgitter},minor tick num=1]\addplot[black,domain=-3.0:2.0] {x^3/3+x^2};\node[font=\small,fill=white,inner sep=1pt,anchor=south west] at (axis cs:1.0,{(1.0)^3/3+(1.0)^2}) {Graph von f'};\end{axis}\end{tikzpicture}\par
-\rechenplatz{4}
-\fusshilfe{\mbox{54:~W1($-$2; $\tfrac{2}{3}$), W2(0; 2)}}
-\end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{55.}{2 BE}
+\begin{pfnr}{eigene Aufgabe}{53.}{2 BE}
 Die Abbildung zeigt die Höhe $h$ (in m) eines Heißluftballons $t$ Minuten nach dem Start mit dem Wendepunkt $W$. Gib die Bedeutung des Wendepunkts für die Fahrt an.
 \par\smallskip\noindent \begin{ksys}[xmin=0,xmax=20,ymin=0,ymax=90,xstep=5,ystep=10,xlabel=t in min,ylabel=h in m,ablesen] \funktionab{-0.02*\x^3+0.6*\x^2}{h}{0}{20} \wendepunkt{10}{40}{W} \end{ksys}\par
 \rechenplatz{2}
-\fusshilfe{\mbox{55:~der Wendepunkt ist kein Richtungswechsel}}
+\fusshilfe{\mbox{53:~der Wendepunkt ist kein Richtungswechsel}}
+\end{pfnr}
+\pfgruppe{}
+\begin{pfnr}{Abi ’23}{54.}{3 BE}
+Gegeben ist die Funktion $f$ mit $f(x) = x^3 - 12x^2 + 45x - 50$, $x \in \mathbb{R}$. Man kann den Term auch als $f(x) = (x - 5)\cdot(x^2 - 7x + 10)$ schreiben. Der Graph von $f$ hat genau einen Wendepunkt. Berechne seine Koordinaten.
+\rechenplatz{2}
+\fusshilfe{\mbox{54:~W(4; 2)}}
+\end{pfnr}
+\begin{pfnr}{Abi ’26}{55.}{4 BE}
+Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = \tfrac{1}{12}(x^4 + 4x^3 + 24)$. Ihre Ableitung ist $f'(x) = x^2\cdot\left(\tfrac{1}{3}x + 1\right) = \tfrac{1}{3}x^3 + x^2$; die Abbildung zeigt den Graphen von $f'$. Der Graph von $f$ hat genau zwei Wendepunkte. Berechne ihre Koordinaten.
+\par\smallskip\noindent \begin{tikzpicture}\begin{axis}[xmin=-3.0,xmax=2.0,ymin=-1.0,ymax=2.0,axis lines=middle,width=11cm,height=7cm,xlabel={$x$},ylabel={$y$},tick label style={font=\scriptsize},samples=160,clip=true,every axis plot/.append style={line width=0.9pt},/pgf/number format/use comma,grid=both,grid style={mbgitter},minor tick num=1]\addplot[black,domain=-3.0:2.0] {x^3/3+x^2};\node[font=\small,fill=white,inner sep=1pt,anchor=south west] at (axis cs:1.0,{(1.0)^3/3+(1.0)^2}) {Graph von f'};\end{axis}\end{tikzpicture}\par
+\rechenplatz{4}
+\fusshilfe{\mbox{55:~W1($-$2; $\tfrac{2}{3}$), W2(0; 2)}}
 \end{pfnr}
 \begin{pfnr}{Abi ’22}{56.}{2 BE}
 Ein Tauchroboter bewegt sich 30 Minuten lang nur senkrecht nach unten und oben. Sein Abstand von der Wasseroberfläche wird beschrieben durch $h(t) = \tfrac{9}{40}t^3 - \tfrac{27}{2}t^2 + \tfrac{405}{2}t$ mit $0 \le t \le 30$ ($t$: Zeit in Minuten, $h(t)$: Abstand in Metern). Beschreibe, was der Wendepunkt des Graphen von $h$ für die Bewegung des Roboters bedeutet.
@@ -305,8 +316,9 @@ Ein Tauchroboter bewegt sich 30 Minuten lang nur senkrecht nach unten und oben. 
 \end{pfnr}
 \begin{pfnr}{Abi ’22\\ohne Hilfsmittel}{57.}{2 BE}
 Die Abbildung zeigt den Graphen einer Funktion $f$ für $0 \le x \le 2{,}2$. Gib mithilfe des Graphen je einen Wert für $a$ und $b$ an, sodass $f'(0{,}2) = a$ und $f''(b) = 0$ gilt.
-\par\smallskip\noindent \fbox{\parbox{0.9\linewidth}{\footnotesize\color{mbgrau}Abbildung im Original: Gitter, x von 0 bis 2,2 in Zehntelschritten, y von $-$0,1 bis 0,25; Graph fällt von links oben steil zum Tiefpunkt bei etwa (0,2 | $-$0,11), steigt durch die Nullstelle bei etwa 0,4 mit abnehmender Steigung zu einem flachen Bereich um (0,9 | 0,2), steigt weiter zum Hochpunkt bei etwa (1,6 | 0,25), fällt zum Tiefpunkt bei etwa (2 | 0,2) und steigt dann steil an}}\par
+\par\smallskip\noindent \fbox{\parbox{0.9\linewidth}{\footnotesize Skizze: Gitter, x von 0 bis 2,2 in Zehntelschritten, y von $-$0,1 bis 0,25; Graph fällt von links oben steil zum Tiefpunkt bei etwa (0,2 | $-$0,11), steigt durch die Nullstelle bei etwa 0,4 mit abnehmender Steigung zu einem flachen Bereich um (0,9 | 0,2), steigt weiter zum Hochpunkt bei etwa (1,6 | 0,25), fällt zum Tiefpunkt bei etwa (2 | 0,2) und steigt dann steil an}}\par
 \rechenplatz{1}
+\fusshilfe{\mbox{57:~a = 0; $\approx$ 0,5}}
 \end{pfnr}
 \begin{pfnr}{Abi ’23}{58.}{5 BE}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = 0{,}5\cdot(x^2 - 4)\cdot e^x$; ihr Graph heißt $G$. Die erste Ableitung ist $f'(x) = (0{,}5x^2 + x - 2)\cdot e^x$. $G$ hat zwei Wendepunkte. Berechne ihre Koordinaten und runde auf zwei Nachkommastellen.
@@ -318,11 +330,13 @@ Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = 0{,}5\cdot(x
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = (x - 2)\cdot e^{-\tfrac{x}{2} + 3}$ und ihrer Ableitung $f'(x) = \left(-\tfrac{x}{2} + 2\right)\cdot e^{-\tfrac{x}{2} + 3}$. Die Abbildung zeigt den Graphen $G_f$ und den Graphen von $f'$. Weise nach, dass $f''(x) = \left(\tfrac{x}{4} - \tfrac{3}{2}\right)\cdot e^{-\tfrac{x}{2} + 3}$ gilt. $G_f$ hat genau einen Wendepunkt. Zeige, dass dies der Punkt $(6 \mid 4)$ ist.
 \par\smallskip\noindent \begin{tikzpicture}\begin{axis}[xmin=0.0,xmax=12.0,ymin=-3.0,ymax=7.0,axis lines=middle,width=11cm,height=7cm,xlabel={$x$},ylabel={$y$},tick label style={font=\scriptsize},samples=160,clip=true,every axis plot/.append style={line width=0.9pt},/pgf/number format/use comma]\addplot[black,domain=0.0:12.0] {(x-2)*exp(-x/2+3)};\node[font=\small,fill=white,inner sep=1pt,anchor=south west] at (axis cs:10.56,{((10.56)-2)*exp(-(10.56)/2+3)}) {$G_f$};\addplot[black,dashed,domain=0.0:12.0] {(-x/2+2)*exp(-x/2+3)};\node[font=\small,fill=white,inner sep=1pt,anchor=south west] at (axis cs:10.56,{(-(10.56)/2+2)*exp(-(10.56)/2+3)}) {$f'$};\end{axis}\end{tikzpicture}\par
 \rechenplatz{4}
+\fusshilfe{\mbox{59:~Wendepunkt (6; 4)}}
 \end{pfnr}
 \begin{pfnr}{Abi ’22\\ohne Hilfsmittel}{60.}{3 BE}
 Die Abbildung zeigt den Graphen einer Funktion $f$ für $0 \le x \le 2{,}2$. Markiere auf dem Graphen einen Punkt $P$, für den $f''(x_P) = 0$ und $f'(x_P) < 0$ gilt. Begründe deine Wahl.
-\par\smallskip\noindent \fbox{\parbox{0.9\linewidth}{\footnotesize\color{mbgrau}Abbildung im Original: Gitter, x von 0 bis 2,2 in Zehntelschritten, y von $-$0,1 bis 0,25; Graph fällt von links oben steil zum Tiefpunkt bei etwa (0,2 | $-$0,11), steigt durch die Nullstelle bei etwa 0,4 mit abnehmender Steigung zu einem flachen Bereich um (0,9 | 0,2), steigt weiter zum Hochpunkt bei etwa (1,6 | 0,25), fällt zum Tiefpunkt bei etwa (2 | 0,2) und steigt dann steil an}}\par
+\par\smallskip\noindent \fbox{\parbox{0.9\linewidth}{\footnotesize Skizze: Gitter, x von 0 bis 2,2 in Zehntelschritten, y von $-$0,1 bis 0,25; Graph fällt von links oben steil zum Tiefpunkt bei etwa (0,2 | $-$0,11), steigt durch die Nullstelle bei etwa 0,4 mit abnehmender Steigung zu einem flachen Bereich um (0,9 | 0,2), steigt weiter zum Hochpunkt bei etwa (1,6 | 0,25), fällt zum Tiefpunkt bei etwa (2 | 0,2) und steigt dann steil an}}\par
 \rechenplatz{2}
+\fusshilfe{\mbox{60:~$\approx$ (1,8; 0,22); 0 und f'(x\_P) < 0}}
 \end{pfnr}
 \pfstufekopf[smonotonieundkrmmunga]{Monotonie und Krümmung aus der Ableitung begründen}{in 4 der letzten 5 Prüfungen}
 \pfgruppe{}
@@ -368,43 +382,51 @@ Bestimme die Monotonieintervalle von $f(x) = -x^3 + 3x^2 + 9x$. Prüfe das Vorze
 \rechenplatz{4}
 \fusshilfe{\mbox{68:~$-15 < 0$: $f$ fällt auf $[3; \infty[$}}
 \end{pfnr}
-\begin{pfnr}{Abi ’26}{69.}{2 BE}
-Die Abbildung zeigt den Schienenverlauf einer Modelleisenbahn von oben; er ist symmetrisch zur $x$-Achse und zur $y$-Achse. Für $-2 \le x \le 0$ beschreibt der Graph $G$ der Funktion $g$ mit $g(x) = \tfrac{1}{3}x^3 + x^2$ den oberen Verlauf; er beginnt in $A\left(-2 \mid \tfrac{4}{3}\right)$. Oberer und unterer Verlauf sind links und rechts durch je einen Halbkreis verbunden, der waagerecht an die Schienen anschließt. 1 LE entspricht 1 m. An der Strecke wird ein Sensor im Punkt $Q(x_Q \mid y_Q)$ mit $x_Q \neq 0$ angebracht. Für ihn gilt $y_Q = -g(-x_Q)$ und $g'(-x_Q) = 0$. Beschreibe mithilfe der Abbildung, wo der Sensor liegt.
-\par\smallskip\noindent \begin{tikzpicture}\begin{axis}[xmin=-4.0,xmax=4.0,ymin=-1.5,ymax=1.5,axis lines=middle,width=11cm,xlabel={$x$},ylabel={$y$},tick label style={font=\scriptsize},samples=160,clip=true,every axis plot/.append style={line width=0.9pt},/pgf/number format/use comma,grid=both,grid style={mbgitter},minor tick num=1,axis equal image]\addplot[black,domain=-2:0] {x^3/3+x^2};\node[font=\small,fill=white,inner sep=1pt,anchor=south west] at (axis cs:-0.24,{(-0.24)^3/3+(-0.24)^2}) {$G$};\addplot[black,domain=-2:0] {-(x^3/3+x^2)};\addplot[black,domain=0:2] {-x^3/3+x^2};\addplot[black,domain=0:2] {x^3/3-x^2};\addplot[black,domain=90:270,samples=60] ({-2+1.333*cos(x)},{0+1.333*sin(x)});\addplot[black,domain=-90:90,samples=60] ({2+1.333*cos(x)},{0+1.333*sin(x)});\end{axis}\end{tikzpicture}\par
-\rechenplatz{2}
-\end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{70.}{}
+\begin{pfnr}{eigene Aufgabe}{69.}{}
 Die Abbildung zeigt den Graphen von $f$. Gib die Nullstellen von $f'$ an und trage das Vorzeichen von $f'$ in jedem Abschnitt dazwischen ein.
 \par\smallskip\noindent \begin{ksys}[xmin=-3,xmax=5,ymin=-5,ymax=5,ablesen] \funktionab{0.25*(\x-1)^3-3*(\x-1)}{f}{-3}{5} \end{ksys}\par
 \rechenplatz{3}
 \end{pfnr}
+\pfgruppe{}
+\begin{pfnr}{Abi ’26}{70.}{2 BE}
+Die Abbildung zeigt den Schienenverlauf einer Modelleisenbahn von oben; er ist symmetrisch zur $x$-Achse und zur $y$-Achse. Für $-2 \le x \le 0$ beschreibt der Graph $G$ der Funktion $g$ mit $g(x) = \tfrac{1}{3}x^3 + x^2$ den oberen Verlauf; er beginnt in $A\left(-2 \mid \tfrac{4}{3}\right)$. Oberer und unterer Verlauf sind links und rechts durch je einen Halbkreis verbunden, der waagerecht an die Schienen anschließt. 1 LE entspricht 1 m. An der Strecke wird ein Sensor im Punkt $Q(x_Q \mid y_Q)$ mit $x_Q \neq 0$ angebracht. Für ihn gilt $y_Q = -g(-x_Q)$ und $g'(-x_Q) = 0$. Beschreibe mithilfe der Abbildung, wo der Sensor liegt.
+\par\smallskip\noindent \begin{tikzpicture}\begin{axis}[xmin=-4.0,xmax=4.0,ymin=-1.5,ymax=1.5,axis lines=middle,width=11cm,xlabel={$x$},ylabel={$y$},tick label style={font=\scriptsize},samples=160,clip=true,every axis plot/.append style={line width=0.9pt},/pgf/number format/use comma,grid=both,grid style={mbgitter},minor tick num=1,axis equal image]\addplot[black,domain=-2:0] {x^3/3+x^2};\node[font=\small,fill=white,inner sep=1pt,anchor=south west] at (axis cs:-0.24,{(-0.24)^3/3+(-0.24)^2}) {$G$};\addplot[black,domain=-2:0] {-(x^3/3+x^2)};\addplot[black,domain=0:2] {-x^3/3+x^2};\addplot[black,domain=0:2] {x^3/3-x^2};\addplot[black,domain=90:270,samples=60] ({-2+1.333*cos(x)},{0+1.333*sin(x)});\addplot[black,domain=-90:90,samples=60] ({2+1.333*cos(x)},{0+1.333*sin(x)});\end{axis}\end{tikzpicture}\par
+\rechenplatz{2}
+\fusshilfe{\mbox{70:~Q(2}}
+\end{pfnr}
 \begin{pfnr}{Abi ’23}{71.}{2 BE}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = 0{,}5\cdot(x^2 - 4)\cdot e^x$; ihr Graph heißt $G$. Die erste Ableitung ist $f'(x) = (0{,}5x^2 + x - 2)\cdot e^x$. Gegeben: Der Tiefpunkt von $G$ liegt bei $x = -1 + \sqrt{5}$; für $x \ge 0$ hat $G$ keinen weiteren Extrempunkt. Gib das Monotonieverhalten von $f$ für $x \ge 0$ an.
 \rechenplatz{1}
+\fusshilfe{\mbox{71:~streng monoton fallend auf [0}}
 \end{pfnr}
 \pfgruppe{}
 \begin{pfnr}{Abi ’26\\ohne Hilfsmittel}{72.}{2 BE}
 Die Abbildung zeigt den Graphen der Ableitung $f'$ einer in $\mathbb{R}$ definierten Funktion $f$. Die einzige Nullstelle von $f'$ ist $-3$. Begründe, dass $f$ für $x \le -3$ monoton fällt und für $x \ge -3$ monoton steigt.
-\par\smallskip\noindent \fbox{\parbox{0.9\linewidth}{\footnotesize\color{mbgrau}Abbildung im Original: Gitter, x von $-$4 bis 4, y von $-$3 bis 4; Graph von f' (beschriftet) kommt von links unten, steigt steil durch die einzige Nullstelle $-$3 zum Hochpunkt ($-$2 | 4), fällt dann und nähert sich für große x von oben der x-Achse (bei x = 4 etwa 0,2)}}\par
+\par\smallskip\noindent \fbox{\parbox{0.9\linewidth}{\footnotesize Skizze: Gitter, x von $-$4 bis 4, y von $-$3 bis 4; Graph von f' (beschriftet) kommt von links unten, steigt steil durch die einzige Nullstelle $-$3 zum Hochpunkt ($-$2 | 4), fällt dann und nähert sich für große x von oben der x-Achse (bei x = 4 etwa 0,2)}}\par
 \rechenplatz{1}
+\fusshilfe{\mbox{72:~f fällt für x $\le$ $-$3 und steigt für x $\ge$ $-$3}}
 \end{pfnr}
 \begin{pfnr}{Abi ’22}{73.}{2 BE}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = (x + 2)\cdot e^{-x}$. Ihre Ableitung ist $f'(x) = -(x + 1)\cdot e^{-x}$. Die Abbildung zeigt die Graphen von $f$ und $f'$, beschriftet mit I und II. Gegeben: Der Hochpunkt des Graphen von $f$ liegt bei $x = -1$. Entscheide, welcher Graph zu $f'$ gehört, und begründe deine Entscheidung.
 \par\smallskip\noindent \begin{tikzpicture}\begin{axis}[xmin=-2.5,xmax=4.0,ymin=-2.0,ymax=3.0,axis lines=middle,width=11cm,height=7cm,xlabel={$x$},ylabel={$y$},tick label style={font=\scriptsize},samples=160,clip=true,every axis plot/.append style={line width=0.9pt},/pgf/number format/use comma]\addplot[black,domain=-2.5:4.0] {(x+2)*exp(-x)};\node[font=\small,fill=white,inner sep=1pt,anchor=south west] at (axis cs:3.2199999999999998,{((3.2199999999999998)+2)*exp(-(3.2199999999999998))}) {$I$};\addplot[black,domain=-2.5:4.0] {-(x+1)*exp(-x)};\node[font=\small,fill=white,inner sep=1pt,anchor=south west] at (axis cs:3.2199999999999998,{-((3.2199999999999998)+1)*exp(-(3.2199999999999998))}) {$II$};\end{axis}\end{tikzpicture}\par
 \rechenplatz{1}
+\fusshilfe{\mbox{73:~Graph II ist f'}}
 \end{pfnr}
 \begin{pfnr}{Abi ’24\\ohne Hilfsmittel}{74.}{2 BE}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = e^{0{,}5x} - e$; ihr Graph heißt $G$. Weise nach, dass $G$ streng monoton steigt.
 \rechenplatz{2}
+\fusshilfe{\mbox{74:~f'(x) = 0,5 · e$^{0{,}5x}$ > 0 für alle x}}
 \end{pfnr}
 \begin{pfnr}{Abi ’23}{75.}{3 BE}
 Gegeben ist die Funktion $g$ mit $g(x) = 0{,}4x^3 - 6x^2 + 30x - 50$, $x \in \mathbb{R}$. Die Abbildung zeigt den Graphen von $g'$. Begründe mithilfe der Abbildung: (1) Der Graph von $g$ hat nur in einem Punkt eine waagerechte Tangente. (2) Der Graph von $g$ hat keinen Extrempunkt.
 \par\smallskip\noindent \begin{tikzpicture}\begin{axis}[xmin=0.0,xmax=7.0,ymin=0.0,ymax=6.0,axis lines=middle,width=11cm,height=7cm,xlabel={$x$},ylabel={$y$},tick label style={font=\scriptsize},samples=160,clip=true,every axis plot/.append style={line width=0.9pt},/pgf/number format/use comma,grid=both,grid style={mbgitter},minor tick num=1]\addplot[black,domain=0.0:7.0] {1.2*(x-5)^2};\node[font=\small,fill=white,inner sep=1pt,anchor=south west] at (axis cs:6.16,{1.2*((6.16)-5)^2}) {$g'$};\end{axis}\end{tikzpicture}\par
 \rechenplatz{2}
+\fusshilfe{\mbox{75:~5) $\Rightarrow$ genau eine waagerechte Tangente}}
 \end{pfnr}
 \begin{pfnr}{Abi ’23}{76.}{4 BE}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = 0{,}5\cdot(x^2 - 4)\cdot e^x$; ihr Graph heißt $G$. Die erste Ableitung ist $f'(x) = (0{,}5x^2 + x - 2)\cdot e^x$. Gegeben: $G$ hat genau zwei Extrempunkte, einen im II. und einen im IV. Quadranten; der Tiefpunkt ist $T(-1 + \sqrt{5} \mid f(-1 + \sqrt{5}))$. Entscheide ohne weitere Rechnung, ob die beiden Aussagen wahr sind, und begründe jeweils. (I) $f(-0{,}9 + \sqrt{5})$ ist kleiner als die $y$-Koordinate des Tiefpunkts. (II) $f'(-0{,}9 + \sqrt{5})$ ist größer als null.
 \rechenplatz{2}
+\fusshilfe{\mbox{76:~f'($-$0,9 + $\sqrt{5}$) > 0}}
 \end{pfnr}
 \pfstufekopf[sgrenzverhaltenangebe]{Grenzverhalten angeben}{in 4 der letzten 5 Prüfungen}
 \pfgruppe{Was ist zu tun? Ankreuzen, nicht rechnen}
@@ -460,9 +482,11 @@ $f(x) = (4 - x) \cdot e^{x}$. Gib das Verhalten für $x \to -\infty$ und $x \to 
 \par\noindent x $\to$ +∞: f(x) $\to$ \leerfeld ; x $\to$ $-$∞: f(x) $\to$ \leerfeld \par
 \fusshilfe{\mbox{85:~für $x \to +\infty$: $f(x) \to -\infty$}}
 \end{pfnr}
+\pfgruppe{}
 \begin{pfnr}{Abi ’22}{86.}{2 BE}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = (x + 2)\cdot e^{-x}$. Ihre Ableitung ist $f'(x) = -(x + 1)\cdot e^{-x}$. Gib den Grenzwert von $f(x)$ für $x \to +\infty$ an. Beschreibe, wie der Graph von $f$ für große $x$ verläuft.
 \rechenplatz{1}
+\fusshilfe{\mbox{86:~Grenzwert 0}}
 \end{pfnr}
 \begin{pfnr}{Abi ’22}{87.}{2 BE}
 Gegeben ist die Funktion $f$ mit $f(x) = -\tfrac{1}{6}x^3 + \tfrac{1}{2}x^2$, $x \in \mathbb{R}$. Gib an, wie sich die Funktionswerte von $f$ für $x \to +\infty$ und für $x \to -\infty$ verhalten.
@@ -521,15 +545,18 @@ $g$ ist punktsymmetrisch zum Ursprung und hat den Tiefpunkt $T(2 | -3)$. Welcher
 \begin{pfnr}{Abi ’24\\ohne Hilfsmittel}{97.}{1 BE}
 Begründe, dass der Graph der Funktion $f$ mit $f(x) = x^3 - 4x$, $x \in \mathbb{R}$, punktsymmetrisch zum Koordinatenursprung ist.
 \rechenplatz{1}
+\fusshilfe{\mbox{97:~nur ungerade Exponenten}}
 \end{pfnr}
 \begin{pfnr}{Abi ’24}{98.}{2 BE}
 Gegeben ist die Funktion $f$ mit $f(x) = 0{,}5x^4 - 4x^2 + 3{,}5$, $x \in \mathbb{R}$; ihr Graph heißt $G_f$. Weise nach, dass $G_f$ achsensymmetrisch zur $y$-Achse ist.
 \rechenplatz{1}
+\fusshilfe{\mbox{98:~nur gerade Exponenten}}
 \end{pfnr}
 \begin{pfnr}{Abi ’25}{99.}{5 BE}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = \tfrac{2}{25}x^3 - \tfrac{3}{2}x$; ihr Graph heißt $G_f$. Aus $G_f$ und der Geraden $g$ mit $g(x) = \tfrac{1}{2}x$ wird ein Windrad gestaltet (Abbildung). Weise nach, dass $G_f$ punktsymmetrisch zum Ursprung ist. Bestimme die Nullstellen von $f$.
 \par\smallskip\noindent \begin{tikzpicture}\begin{axis}[xmin=-6.0,xmax=6.0,ymin=-6.0,ymax=6.0,axis lines=middle,width=11cm,xlabel={$x$},ylabel={$y$},tick label style={font=\scriptsize},samples=160,clip=true,every axis plot/.append style={line width=0.9pt},/pgf/number format/use comma,grid=both,grid style={mbgitter},minor tick num=1,axis equal image]\addplot[black,domain=-6.0:6.0] {2/25*x^3-3/2*x};\node[font=\small,fill=white,inner sep=1pt,anchor=south west] at (axis cs:4.5600000000000005,{2/25*(4.5600000000000005)^3-3/2*(4.5600000000000005)}) {$G_f$};\addplot[black,domain=-5:5] {x/2};\node[font=\small,fill=white,inner sep=1pt,anchor=south west] at (axis cs:3.8,{(3.8)/2}) {$g$};\addplot[black!60,domain=0:360,samples=90] ({0+5.59*cos(x)},{0+5.59*sin(x)});\end{axis}\end{tikzpicture}\par
 \rechenplatz{3}
+\fusshilfe{\mbox{99:~$-\tfrac{2}{25}$ x³ + $\tfrac{3}{2}$ x; $\approx$ $\pm$4,33}}
 \end{pfnr}
 \pfstufekopf[sgraphverschiebenspie]{Graph verschieben, spiegeln, strecken}{in 4 der letzten 5 Prüfungen}
 \pfgruppe{}
@@ -575,6 +602,7 @@ Die Gerade $y = 2x$ wird um $90 ^\circ $ gegen den Uhrzeigersinn um den Ursprung
 \rechenplatz{2}
 \fusshilfe{\mbox{107:~$P'(-2 | 1)$}}
 \end{pfnr}
+\pfgruppe{}
 \begin{pfnr}{Abi ’26}{108.}{2 BE}
 Gegeben ist die Funktion $f$ mit $f(x) = 3e^x + 1$, $x \in \mathbb{R}$; ihr Graph heißt $G_f$. Der Graph der Funktion $k$ mit $k(x) = 60e^{-\tfrac{x}{400}} + 20$ entsteht aus $G_f$ unter anderem durch eine Streckung in $y$-Richtung mit dem Faktor 20. Der Faktor $-\tfrac{1}{400}$ im Exponenten bewirkt weitere Veränderungen. Gib diese an.
 \par\smallskip\noindent \begin{tikzpicture}\begin{axis}[xmin=-3.0,xmax=2.0,ymin=0.0,ymax=6.0,axis lines=middle,width=11cm,height=7cm,xlabel={$x$},ylabel={$y$},tick label style={font=\scriptsize},samples=160,clip=true,every axis plot/.append style={line width=0.9pt},/pgf/number format/use comma,grid=both,grid style={mbgitter},minor tick num=1]\addplot[black,domain=-3.0:2.0] {3*exp(x)+1};\node[font=\small,fill=white,inner sep=1pt,anchor=south west] at (axis cs:0.30000000000000027,{3*exp((0.30000000000000027))+1}) {$G_f$};\end{axis}\end{tikzpicture}\par
@@ -583,6 +611,7 @@ Gegeben ist die Funktion $f$ mit $f(x) = 3e^x + 1$, $x \in \mathbb{R}$; ihr Grap
 \begin{pfnr}{Abi ’23}{109.}{4 BE}
 Gegeben ist die Funktion $f$ mit $f(x) = x^3 - 12x^2 + 45x - 50$, $x \in \mathbb{R}$. Man kann den Term auch als $f(x) = (x - 5)\cdot(x^2 - 7x + 10)$ schreiben. Die Funktion $h$ mit $h(x) = 4x^3 - 48x^2 + 180x + 20$ beschreibt den Temperaturverlauf eines anderen Ofens. Sie entsteht aus $f$ durch $h(x) = c\cdot(f(x) + d)$. Ermittle die Werte von $c$ und $d$. Beschreibe, wie der Graph von $h$ aus dem Graphen von $f$ entsteht.
 \rechenplatz{3}
+\fusshilfe{\mbox{109:~55}}
 \end{pfnr}
 \begin{pfnr}{Abi ’24\\ohne Hilfsmittel}{110.}{3 BE}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = e^{0{,}5x} - e$; ihr Graph heißt $G$. $G$ wird in Richtung der $x$-Achse so verschoben, dass er durch den Ursprung geht; so entsteht der Graph einer Funktion $h$. Ermittle eine Gleichung von $h$.
@@ -593,10 +622,11 @@ Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = e^{0{,}5x} -
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = 0{,}5\cdot(x^2 - 4)\cdot e^x$; ihr Graph heißt $G$. Die erste Ableitung ist $f'(x) = (0{,}5x^2 + x - 2)\cdot e^x$. Die Abbildung zeigt die Draufsicht auf die Platte eines Beistelltischs (1 LE entspricht 15 cm). Die Platte ist symmetrisch zu beiden Koordinatenachsen. Ihr Rand im III. Quadranten ist der Teil von $G$ zwischen $(-2 \mid 0)$ und $(0 \mid -2)$; die Ränder in den anderen drei Quadranten sind Teile der Graphen weiterer Funktionen. Gib für zwei dieser Ränder je eine Funktionsgleichung an und nenne den Quadranten.
 \par\smallskip\noindent \begin{tikzpicture}\begin{axis}[xmin=-2.5,xmax=2.5,ymin=-2.5,ymax=2.5,axis lines=middle,width=11cm,height=7cm,xlabel={$x$},ylabel={$y$},tick label style={font=\scriptsize},samples=160,clip=true,every axis plot/.append style={line width=0.9pt},/pgf/number format/use comma,grid=both,grid style={mbgitter},minor tick num=1]\addplot[black,domain=-2:0] {0.5*(x^2-4)*exp(x)};\node[font=\small,fill=white,inner sep=1pt,anchor=south west] at (axis cs:-0.24,{0.5*((-0.24)^2-4)*exp((-0.24))}) {$G$};\addplot[black,domain=0:2] {0.5*(x^2-4)*exp(-x)};\addplot[black,domain=-2:0] {-0.5*(x^2-4)*exp(x)};\addplot[black,domain=0:2] {-0.5*(x^2-4)*exp(-x)};\end{axis}\end{tikzpicture}\par
 \rechenplatz{2}
+\fusshilfe{\mbox{111:~$-$0,5 · (x² $-$ 4) · e$^{x}$; k(x) = $-$f($-$x)}}
 \end{pfnr}
 \begin{pfnr}{Abi ’26}{112.}{4 BE}
 Gegeben ist die Gerade $t$ mit $t(x) = \tfrac{4}{3}x + \tfrac{10}{3}$. Verschiebt man $t$ um $z$ Einheiten in negative $y$-Richtung, entsteht eine Gerade $h$, die von $t$ den Abstand 5 hat. Ermittle einen Wert für $z$; die Abbildung hilft dir dabei.
-\par\smallskip\noindent \fbox{\parbox{0.9\linewidth}{\footnotesize\color{mbgrau}Abbildung im Original: Koordinatensystem ohne Skalierung mit den parallelen Geraden t (durch ihren y-Achsenabschnitt) und h darunter; Lot vom y-Achsenabschnitt von t auf h mit rechtem Winkel; Beschriftungen t, h}}\par
+\par\smallskip\noindent \fbox{\parbox{0.9\linewidth}{\footnotesize Skizze: Koordinatensystem ohne Skalierung mit den parallelen Geraden t (durch ihren y-Achsenabschnitt) und h darunter; Lot vom y-Achsenabschnitt von t auf h mit rechtem Winkel; Beschriftungen t, h}}\par
 \rechenplatz{3}
 \fusshilfe{\mbox{112:~z = $\tfrac{25}{3}$ $\approx$ 8,33}}
 \end{pfnr}
@@ -604,22 +634,26 @@ Gegeben ist die Gerade $t$ mit $t(x) = \tfrac{4}{3}x + \tfrac{10}{3}$. Verschieb
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = (x - 2)\cdot e^{-\tfrac{x}{2} + 3}$ und ihrer Ableitung $f'(x) = \left(-\tfrac{x}{2} + 2\right)\cdot e^{-\tfrac{x}{2} + 3}$. Die Abbildung zeigt den Graphen $G_f$ und den Graphen von $f'$. Ein Schrankknauf entsteht, wenn $G_f$ für $2 \le x \le 11$ um die $x$-Achse rotiert. Die Abbildung zeigt seinen Querschnitt: oben begrenzt durch $G_f$, unten durch den Graphen einer Funktion $g$, der durch Spiegelung von $G_f$ an der $x$-Achse entsteht. Der Sockel liegt bei $x = 11$; 1 LE entspricht 0,5 cm. Gib eine Gleichung von $g$ an. Bestimme den Durchmesser des Sockels in Millimetern.
 \par\smallskip\noindent \begin{tikzpicture}\begin{axis}[xmin=0.0,xmax=12.0,ymin=-6.0,ymax=6.0,axis lines=middle,width=11cm,height=7cm,xlabel={$x$},ylabel={$y$},tick label style={font=\scriptsize},samples=160,clip=true,every axis plot/.append style={line width=0.9pt},/pgf/number format/use comma]\addplot[black,domain=2:11] {(x-2)*exp(-x/2+3)};\node[font=\small,fill=white,inner sep=1pt,anchor=south west] at (axis cs:9.92,{((9.92)-2)*exp(-(9.92)/2+3)}) {$G_f$};\addplot[black,domain=2:11] {-(x-2)*exp(-x/2+3)};\node[font=\small,fill=white,inner sep=1pt,anchor=south west] at (axis cs:9.92,{-((9.92)-2)*exp(-(9.92)/2+3)}) {$G_g$};\draw[black] (axis cs:11,-0.739) -- (axis cs:11,0.739);\end{axis}\end{tikzpicture}\par
 \rechenplatz{3}
+\fusshilfe{\mbox{113:~g(x) = $-$(x $-$ 2) · e$^{-x/2 + 3}$; $\approx$ 7,4 mm}}
 \end{pfnr}
 \pfgruppe{}
 \begin{pfnr}{Abi ’24\\ohne Hilfsmittel}{114.}{2 BE}
 Gegeben sind die in $\mathbb{R}$ definierten Funktionen $g$ mit $g(x) = 2e^x - 2$ und $h$ mit $h(x) = e^x + 1$; es gilt $g'(0) = 2$. Beurteile die Aussage: „Man kann den Graphen von $g$ so in $y$-Richtung verschieben, dass der Graph von $h$ entsteht.“
 \par\smallskip\noindent \begin{tikzpicture}\begin{axis}[xmin=-3.0,xmax=2.0,ymin=-2.0,ymax=4.0,axis lines=middle,width=11cm,height=7cm,xlabel={$x$},ylabel={$y$},tick label style={font=\scriptsize},samples=160,clip=true,every axis plot/.append style={line width=0.9pt},/pgf/number format/use comma,grid=both,grid style={mbgitter},minor tick num=1]\addplot[black,domain=-3.0:2.0] {2*exp(x)-2};\node[font=\small,fill=white,inner sep=1pt,anchor=south west] at (axis cs:0.8999999999999999,{2*exp((0.8999999999999999))-2}) {Graph von g};\addplot[black,domain=-3.0:2.0] {exp(x)+1};\node[font=\small,fill=white,inner sep=1pt,anchor=south west] at (axis cs:0.7,{exp((0.7))+1}) {Graph von h};\end{axis}\end{tikzpicture}\par
 \rechenplatz{1}
+\fusshilfe{\mbox{114:~falsch; 1}}
 \end{pfnr}
 \begin{pfnr}{Abi ’25}{115.}{3 BE}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = \tfrac{2}{25}x^3 - \tfrac{3}{2}x$; ihr Graph heißt $G_f$. Aus $G_f$ und der Geraden $g$ mit $g(x) = \tfrac{1}{2}x$ wird ein Windrad gestaltet (Abbildung). Für das Windrad werden $G_f$ und die Strecke von $g$ für $-5 \le x \le 5$ um 90° gegen den Uhrzeigersinn um den Ursprung gedreht. Dabei wird $g$ zur Geraden $g^*$ und der Punkt $A(5 \mid 2{,}5)$, in dem sich $G_f$ und $g$ schneiden, zum Punkt $A^*$. Begründe, dass $g^*(x) = -2x$ gilt. Gib die Koordinaten von $A^*$ an.
 \par\smallskip\noindent \begin{tikzpicture}\begin{axis}[xmin=-6.0,xmax=6.0,ymin=-6.0,ymax=6.0,axis lines=middle,width=11cm,xlabel={$x$},ylabel={$y$},tick label style={font=\scriptsize},samples=160,clip=true,every axis plot/.append style={line width=0.9pt},/pgf/number format/use comma,grid=both,grid style={mbgitter},minor tick num=1,axis equal image]\addplot[black,domain=-6.0:6.0] {2/25*x^3-3/2*x};\node[font=\small,fill=white,inner sep=1pt,anchor=south west] at (axis cs:4.5600000000000005,{2/25*(4.5600000000000005)^3-3/2*(4.5600000000000005)}) {$G_f$};\addplot[black,domain=-5:5] {x/2};\node[font=\small,fill=white,inner sep=1pt,anchor=south west] at (axis cs:3.8,{(3.8)/2}) {$g$};\addplot[black!60,domain=0:360,samples=90] ({0+5.59*cos(x)},{0+5.59*sin(x)});\end{axis}\end{tikzpicture}\par
 \rechenplatz{2}
+\fusshilfe{\mbox{115:~$-$2x; A*($-$2,5; 5)}}
 \end{pfnr}
 \begin{pfnr}{Abi ’26\\ohne Hilfsmittel}{116.}{3 BE}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = \sin x$. Drei direkt aufeinanderfolgende Extrempunkte ihres Graphen, $A\left(\tfrac{\pi}{2} \mid 1\right)$, $B\left(\tfrac{3\pi}{2} \mid -1\right)$ und $C\left(\tfrac{5\pi}{2} \mid 1\right)$, sind die Ecken des Dreiecks $ABC$ (Abbildung). Gegeben ist die Funktion $g$ mit $g(x) = 2\cdot\sin\left(\tfrac{1}{3}x\right)$, $x \in \mathbb{R}$. Betrachte die Strecke zwischen zwei direkt aufeinanderfolgenden Extrempunkten des Graphen von $g$. Untersuche, ob diese Strecke kürzer ist als die Strecke $AB$.
 \par\smallskip\noindent \begin{tikzpicture}\begin{axis}[xmin=0.0,xmax=9.43,ymin=-1.5,ymax=1.5,axis lines=middle,width=11cm,height=7cm,xlabel={$x$},ylabel={$y$},tick label style={font=\scriptsize},samples=160,clip=true,every axis plot/.append style={line width=0.9pt},/pgf/number format/use comma,xtick={1.5708,3.1416,4.7124,6.2832,7.854,9.4248},xticklabels={$\frac{\pi}{2}$,$\pi$,$\frac{3\pi}{2}$,$2\pi$,$\frac{5\pi}{2}$,$3\pi$}]\addplot[black,dashed,domain=0.0:9.43] {sin(deg(x))};\node[font=\small,fill=white,inner sep=1pt,anchor=south west] at (axis cs:8.298399999999999,{sin(deg((8.298399999999999)))}) {$sin$};\draw[black] (axis cs:1.571,1) -- (axis cs:4.712,-1) -- (axis cs:7.854,1) -- (axis cs:1.571,1);\end{axis}\end{tikzpicture}\par
 \rechenplatz{2}
+\fusshilfe{\mbox{116:~nein}}
 \end{pfnr}
 \pfstufekopf[smaeimsachzusammenhan]{Maße im Sachzusammenhang aus dem Graphen berechnen}{in 4 der letzten 5 Prüfungen}
 \pfgruppe{}
@@ -634,16 +668,17 @@ Ein Spielball ist rotationssymmetrisch, sein Rand wird durch $f(x) = -\tfrac{1}{
 \rechenplatz{3}
 \fusshilfe{\mbox{118:~$40$ cm}}
 \end{pfnr}
-\begin{pfnr}{Abi ’26\\ohne Hilfsmittel}{119.}{2 BE}
+\begin{pfnr}{eigene Aufgabe}{119.}{}
+Ein Brückenbogen wird durch $f(x) = -0{,}1x^2 + 2{,}5$ beschrieben, oberhalb der $x$-Achse (1 LE = 2 m). Wie breit und wie hoch ist der Bogen in Metern?
+\rechenplatz{3}
+\fusshilfe{\mbox{119:~$5$ m}}
+\end{pfnr}
+\pfgruppe{}
+\begin{pfnr}{Abi ’26\\ohne Hilfsmittel}{120.}{2 BE}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = \sin x$. Drei direkt aufeinanderfolgende Extrempunkte ihres Graphen, $A\left(\tfrac{\pi}{2} \mid 1\right)$, $B\left(\tfrac{3\pi}{2} \mid -1\right)$ und $C\left(\tfrac{5\pi}{2} \mid 1\right)$, sind die Ecken des Dreiecks $ABC$ (Abbildung). Berechne den Flächeninhalt des Dreiecks $ABC$.
 \par\smallskip\noindent \begin{tikzpicture}\begin{axis}[xmin=0.0,xmax=9.43,ymin=-1.5,ymax=1.5,axis lines=middle,width=11cm,height=7cm,xlabel={$x$},ylabel={$y$},tick label style={font=\scriptsize},samples=160,clip=true,every axis plot/.append style={line width=0.9pt},/pgf/number format/use comma,xtick={1.5708,3.1416,4.7124,6.2832,7.854,9.4248},xticklabels={$\frac{\pi}{2}$,$\pi$,$\frac{3\pi}{2}$,$2\pi$,$\frac{5\pi}{2}$,$3\pi$}]\addplot[black,dashed,domain=0.0:9.43] {sin(deg(x))};\node[font=\small,fill=white,inner sep=1pt,anchor=south west] at (axis cs:8.298399999999999,{sin(deg((8.298399999999999)))}) {$sin$};\draw[black] (axis cs:1.571,1) -- (axis cs:4.712,-1) -- (axis cs:7.854,1) -- (axis cs:1.571,1);\end{axis}\end{tikzpicture}\par
 \rechenplatz{2}
-\fusshilfe{\mbox{119:~A = $\tfrac{1}{2}$ · 2$\pi$ · 2 = 2$\pi$}}
-\end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{120.}{}
-Ein Brückenbogen wird durch $f(x) = -0{,}1x^2 + 2{,}5$ beschrieben, oberhalb der $x$-Achse (1 LE = 2 m). Wie breit und wie hoch ist der Bogen in Metern?
-\rechenplatz{3}
-\fusshilfe{\mbox{120:~$5$ m}}
+\fusshilfe{\mbox{120:~A = $\tfrac{1}{2}$ · 2$\pi$ · 2 = 2$\pi$}}
 \end{pfnr}
 \begin{pfnr}{Abi ’23}{121.}{4 BE}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = 0{,}5\cdot(x^2 - 4)\cdot e^x$; ihr Graph heißt $G$. Die erste Ableitung ist $f'(x) = (0{,}5x^2 + x - 2)\cdot e^x$. Gegeben: Die Spitzen der Tischplatte liegen bei $(\pm 2 \mid 0)$ und $(0 \mid \pm 2)$; 1 LE entspricht 15 cm. Der Tisch ist 0,5 m hoch und wird in einem quaderförmigen Karton mit quadratischer Grundfläche geliefert. Die Kanten der Grundfläche verlaufen parallel zu den Koordinatenachsen. Bestimme, wie viele Liter der Karton mindestens fassen muss.
@@ -673,6 +708,7 @@ Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = (x - 2)\cdot
 Die Abbildung zeigt den Schienenverlauf einer Modelleisenbahn von oben; er ist symmetrisch zur $x$-Achse und zur $y$-Achse. Für $-2 \le x \le 0$ beschreibt der Graph $G$ der Funktion $g$ mit $g(x) = \tfrac{1}{3}x^3 + x^2$ den oberen Verlauf; er beginnt in $A\left(-2 \mid \tfrac{4}{3}\right)$. Oberer und unterer Verlauf sind links und rechts durch je einen Halbkreis verbunden, der waagerecht an die Schienen anschließt. 1 LE entspricht 1 m. Weise nach, dass der ganze Schienenverlauf auf eine rechteckige Holzplatte von 2,7 m mal 6,7 m passt.
 \par\smallskip\noindent \begin{tikzpicture}\begin{axis}[xmin=-4.0,xmax=4.0,ymin=-1.5,ymax=1.5,axis lines=middle,width=11cm,xlabel={$x$},ylabel={$y$},tick label style={font=\scriptsize},samples=160,clip=true,every axis plot/.append style={line width=0.9pt},/pgf/number format/use comma,grid=both,grid style={mbgitter},minor tick num=1,axis equal image]\addplot[black,domain=-2:0] {x^3/3+x^2};\node[font=\small,fill=white,inner sep=1pt,anchor=south west] at (axis cs:-0.24,{(-0.24)^3/3+(-0.24)^2}) {$G$};\addplot[black,domain=-2:0] {-(x^3/3+x^2)};\addplot[black,domain=0:2] {-x^3/3+x^2};\addplot[black,domain=0:2] {x^3/3-x^2};\addplot[black,domain=90:270,samples=60] ({-2+1.333*cos(x)},{0+1.333*sin(x)});\addplot[black,domain=-90:90,samples=60] ({2+1.333*cos(x)},{0+1.333*sin(x)});\end{axis}\end{tikzpicture}\par
 \rechenplatz{2}
+\fusshilfe{\mbox{125:~passt; $\tfrac{20}{3}$ m $\approx$ 6,67 m $\le$ 6,7 m}}
 \end{pfnr}
 \pfstufekopf[sgleichungenundunglei]{Gleichungen und Ungleichungen zwischen Funktionen lösen}{in 4 der letzten 5 Prüfungen}
 \pfgruppe{Was ist zu tun? Ankreuzen, nicht rechnen}
@@ -730,6 +766,7 @@ $a(x)$ ist die Zahl der Abonnenten eines Kanals in Hundert, $x$ in Wochen (Graph
 \rechenplatz{2}
 \fusshilfe{\mbox{134:~$2$}}
 \end{pfnr}
+\pfgruppe{}
 \begin{pfnr}{Abi ’25\\ohne Hilfsmittel}{135.}{3 BE}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = -x^2 + 4x - 1$; die Abbildung zeigt ihren Graphen. Gib einen Term von $f'$ an. Ermittle rechnerisch alle Lösungen der Gleichung $\tfrac{f(x) - 0}{x - 0} = f'(x)$.
 \par\smallskip\noindent \begin{tikzpicture}\begin{axis}[xmin=-2.0,xmax=6.0,ymin=-6.0,ymax=3.0,axis lines=middle,width=11cm,height=7cm,xlabel={$x$},ylabel={$y$},tick label style={font=\scriptsize},samples=160,clip=true,every axis plot/.append style={line width=0.9pt},/pgf/number format/use comma,grid=both,grid style={mbgitter},minor tick num=1]\addplot[black,domain=-2.0:6.0] {-x^2+4*x-1};\node[font=\small,fill=white,inner sep=1pt,anchor=south west] at (axis cs:4.72,{-(4.72)^2+4*(4.72)-1}) {$G_f$};\end{axis}\end{tikzpicture}\par
@@ -743,17 +780,20 @@ Gegeben ist die Funktion $f$ mit $f(x) = x^3 - 12x^2 + 45x - 50$, $x \in \mathbb
 \end{pfnr}
 \begin{pfnr}{Abi ’25}{137.}{5 BE}
 Unter einem Beitrag auf einer Internetseite werden Likes gesammelt. $a(x)$ ist die Anzahl der Likes, die seit 12:00 Uhr abgegeben wurden; $x$ ist die Zeit in Stunden seit 12:00 Uhr. Die Abbildung zeigt den Graphen von $a$. Die Gleichung $a(x + 3) = a(x) + 1000$ hat für $x > 0$ genau eine Lösung. Ermittle diese Lösung grafisch mithilfe der Abbildung. Deute die Gleichung im Sachzusammenhang.
-\par\smallskip\noindent \fbox{\parbox{0.9\linewidth}{\footnotesize\color{mbgrau}Abbildung im Original: x von 0 bis 7 (Stunden), y von 0 bis 3000; Graph steigt von 0 erst immer steiler, ab etwa x = 1 immer flacher und nähert sich 2500; a(2) $\approx$ 1500, a(4) $\approx$ 2300}}\par
+\par\smallskip\noindent \fbox{\parbox{0.9\linewidth}{\footnotesize Skizze: x von 0 bis 7 (Stunden), y von 0 bis 3000; Graph steigt von 0 erst immer steiler, ab etwa x = 1 immer flacher und nähert sich 2500; a(2) $\approx$ 1500, a(4) $\approx$ 2300}}\par
 \rechenplatz{3}
+\fusshilfe{\mbox{137:~$\approx$ 1,9}}
 \end{pfnr}
 \pfgruppe{}
 \begin{pfnr}{Abi ’22}{138.}{2 BE}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = (x + 2)\cdot e^{-x}$. Ihre Ableitung ist $f'(x) = -(x + 1)\cdot e^{-x}$. Weise nach, dass sich die Graphen von $f$ und $f'$ an der Stelle $x = -1{,}5$ schneiden.
 \rechenplatz{2}
+\fusshilfe{\mbox{138:~$-$1,5}}
 \end{pfnr}
 \begin{pfnr}{Abi ’24}{139.}{3 BE}
 Gegeben ist die Funktion $f$ mit $f(x) = 0{,}5x^4 - 4x^2 + 3{,}5$, $x \in \mathbb{R}$; ihr Graph heißt $G_f$. Gegeben: Für $-1 \le x \le 1$ beträgt die größte Differenz von $p(x) = -3{,}5x^2 + 3{,}5$ und $f(x)$ genau $\tfrac{1}{8}$. Für $x \ge 1$ soll $p$ als Näherung für $f$ gelten, solange der Betrag der Differenz höchstens dreimal so groß ist wie diese größte Differenz. Beschreibe einen Lösungsweg, mit dem du alle $x \ge 1$ ermittelst, für die $p$ als Näherung geeignet ist.
 \rechenplatz{3}
+\fusshilfe{\mbox{139:~$\approx$ 1,22}}
 \end{pfnr}
 \pfstufekopf[sgraphskizzierenundve]{Graph skizzieren und Verlauf beschreiben}{in 2 der letzten 5 Prüfungen}
 \pfgruppe{Was ist zu tun? Ankreuzen, nicht rechnen}
@@ -774,20 +814,21 @@ Fülle die Wertetabelle von $f(x) = x^3 - x$ aus und übertrage die Punkte ins K
 \rechenplatz{2}
 \end{pfnr}
 \pfgruppe{}
-\begin{pfnr}{Abi ’25}{143.}{2 BE}
-Unter einem Beitrag auf einer Internetseite werden Likes gesammelt. $a(x)$ ist die Anzahl der Likes, die seit 12:00 Uhr abgegeben wurden; $x$ ist die Zeit in Stunden seit 12:00 Uhr. Die Abbildung zeigt den Graphen von $a$. Beschreibe den Verlauf des Graphen von $a$ im Sachzusammenhang.
-\par\smallskip\noindent \fbox{\parbox{0.9\linewidth}{\footnotesize\color{mbgrau}Abbildung im Original: x von 0 bis 7 (Stunden), y von 0 bis 3000; Graph steigt von 0 erst immer steiler, ab etwa x = 1 immer flacher und nähert sich 2500; a(2) $\approx$ 1500, a(4) $\approx$ 2300}}\par
-\rechenplatz{1}
-\end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{144.}{}
+\begin{pfnr}{eigene Aufgabe}{143.}{}
 $f(x) = 0{,}5x^4 - 4x^2$ hat die Tiefpunkte $(-2 | -8)$ und $(2 | -8)$ und den Hochpunkt im Ursprung. Berechne die Randwerte und zeichne den Graphen für $-3 \le x \le 3$.
 \par\smallskip\noindent \begin{ksys}[xmin=-4,xmax=4,ymin=-9,ymax=5]\end{ksys}\par
 \rechenplatz{2}
-\fusshilfe{\mbox{144:~$4{,}5$}}
+\fusshilfe{\mbox{143:~$4{,}5$}}
+\end{pfnr}
+\pfgruppe{}
+\begin{pfnr}{Abi ’25}{144.}{2 BE}
+Unter einem Beitrag auf einer Internetseite werden Likes gesammelt. $a(x)$ ist die Anzahl der Likes, die seit 12:00 Uhr abgegeben wurden; $x$ ist die Zeit in Stunden seit 12:00 Uhr. Die Abbildung zeigt den Graphen von $a$. Beschreibe den Verlauf des Graphen von $a$ im Sachzusammenhang.
+\par\smallskip\noindent \fbox{\parbox{0.9\linewidth}{\footnotesize Skizze: x von 0 bis 7 (Stunden), y von 0 bis 3000; Graph steigt von 0 erst immer steiler, ab etwa x = 1 immer flacher und nähert sich 2500; a(2) $\approx$ 1500, a(4) $\approx$ 2300}}\par
+\rechenplatz{1}
 \end{pfnr}
 \begin{pfnr}{Abi ’23}{145.}{1 BE}
 Ein Hersteller prüft Temperatursteuerungen für Backöfen. Nach dem Einschalten steigt die Temperatur; ist die Solltemperatur erreicht, schaltet die Heizung ab, und unter einem bestimmten Wert schaltet sie wieder ein. Die Abbildung zeigt den Temperaturverlauf. Die ersten 5 Minuten heißen Startphase, die Zeit danach Dauerphase. Gib näherungsweise die durchschnittliche Temperatur in der Dauerphase an.
-\par\smallskip\noindent \fbox{\parbox{0.9\linewidth}{\footnotesize\color{mbgrau}Abbildung im Original: Gitter, Zeit in Minuten von 0 bis 20 (beschriftet 2, 4, …, 18), Temperatur in °C von 20 bis 260 in Schritten von 20; Kurve von (0 | 20) steil ansteigend, bei etwa 2 min 200 °C, Maximum etwa 238 °C bei 3,5 min, danach wellenförmig mit Tiefs bei etwa 222 °C (5,5; 9,5; 13,5; 17,5 min) und Hochs bei etwa 240 bis 245 °C (7,5; 11,5; 15,5; 19,5 min)}}\par
+\par\smallskip\noindent \fbox{\parbox{0.9\linewidth}{\footnotesize Skizze: Gitter, Zeit in Minuten von 0 bis 20 (beschriftet 2, 4, …, 18), Temperatur in °C von 20 bis 260 in Schritten von 20; Kurve von (0 | 20) steil ansteigend, bei etwa 2 min 200 °C, Maximum etwa 238 °C bei 3,5 min, danach wellenförmig mit Tiefs bei etwa 222 °C (5,5; 9,5; 13,5; 17,5 min) und Hochs bei etwa 240 bis 245 °C (7,5; 11,5; 15,5; 19,5 min)}}\par
 \rechenplatz{1}
 \fusshilfe{\mbox{145:~$\approx$ 230 °C (228 bis 235 °C vertretbar)}}
 \end{pfnr}
@@ -795,6 +836,7 @@ Ein Hersteller prüft Temperatursteuerungen für Backöfen. Nach dem Einschalten
 \begin{pfnr}{Abi ’23}{146.}{4 BE}
 Gegeben ist die Funktion $f$ mit $f(x) = x^3 - 12x^2 + 45x - 50$, $x \in \mathbb{R}$. Man kann den Term auch als $f(x) = (x - 5)\cdot(x^2 - 7x + 10)$ schreiben. Gegeben: Der Graph von $f$ hat den Hochpunkt $H(3 \mid 4)$, den Tiefpunkt $T(5 \mid 0)$ und den Wendepunkt $W(4 \mid 2)$. Skizziere den Graphen von $f$ für $0 \le x \le 7$. Beurteile mithilfe deiner Skizze die Aussage: „Jede Tangente an den Graphen von $f$ hat mit dem Graphen zwei gemeinsame Punkte.“
 \rechenplatz{3}
+\fusshilfe{\mbox{146:~falsch}}
 \end{pfnr}
 \pfstufekopf[sfunktionsgleichungau]{Funktionsgleichung aus Bedingungen aufstellen}{in 2 der letzten 5 Prüfungen}
 \pfgruppe{Was ist zu tun? Ankreuzen, nicht rechnen}
@@ -832,21 +874,24 @@ Die Parabel mit $p(x) = ax^2 + b$ soll bei $x = 2$ ohne Knick an die Gerade $g(x
 \rechenplatz{4}
 \fusshilfe{\mbox{152:~$1$}}
 \end{pfnr}
-\begin{pfnr}{Abi ’23}{153.}{6 BE}
-Für eine neue Heizung soll der Temperaturverlauf in der Startphase durch eine ganzrationale Funktion $k$ dritten Grades beschrieben werden ($x$: Zeit in Minuten, $k(x)$: Temperatur in °C). Es gilt $k(0) = 20$ und $k'(0) = 130$; im Punkt $(5 \mid 220)$ hat der Graph von $k$ eine waagerechte Tangente. Ermittle eine Gleichung von $k$.
+\pfgruppe{}
+\begin{pfnr}{Abi ’22}{153.}{5 BE}
+Bei einem größeren Bauteil verläuft der obere Rand zwischen $R(2 \mid 1)$ und $S(4 \mid 4)$ geradlinig. Links davon führt eine Kurve vom Ursprung nach $R$, rechts eine Kurve von $S$ nach $(5 \mid 5)$. Im Ursprung schließt der Rand waagerecht an; an den Übergängen im Ursprung, in $R$, in $S$ und in $(5 \mid 5)$ hat er keinen Knick. Das Kurvenstück vom Ursprung bis $R$ soll der Graph von $k(x) = a\cdot x^4 + b\cdot x^2$ sein. Weise nach, dass sich eine solche Funktion $k$ dafür eignet, und bestimme $a$ und $b$.
+\par\smallskip\noindent \fbox{\parbox{0.9\linewidth}{\footnotesize Skizze: Gitter, x von 0 bis 6, y von 0 bis 5; s-förmige Kurve vom Ursprung über R(2 | 1) und S(4 | 4) nach (5 | 5), zwischen R und S geradlinig; Beschriftungen R, S}}\par
 \rechenplatz{4}
-\fusshilfe{\mbox{153:~k(x) = 2x³ $-$ 28x² + 130x + 20}}
+\fusshilfe{\mbox{153:~$\tfrac{1}{8}$; 1,5}}
+\end{pfnr}
+\begin{pfnr}{Abi ’22}{154.}{2 BE}
+Ein Betonteil für den Hochwasserschutz hat im Querschnitt einen geraden unteren Rand. Er liegt auf der Geraden $g$ durch $C(0{,}4 \mid -0{,}4)$ und $D(2 \mid 1{,}2)$. Weise nach, dass $g(x) = x - 0{,}8$ eine Gleichung dieser Geraden ist.
+\par\smallskip\noindent \fbox{\parbox{0.9\linewidth}{\footnotesize Skizze: Querschnitt eines Betonteils: oberer Rand von A (Ursprung) nach B(2 | 1,5) als s-förmiger Bogen, unterer Rand Gerade von C(0,4 | $-$0,4) nach D(2 | 1,2), Seiten AC und BD; Beschriftungen A, B, C, D}}\par
+\rechenplatz{2}
+\fusshilfe{\mbox{154:~g(x) = x $-$ 0,8}}
 \end{pfnr}
 \pfgruppe{}
-\begin{pfnr}{Abi ’22}{154.}{5 BE}
-Bei einem größeren Bauteil verläuft der obere Rand zwischen $R(2 \mid 1)$ und $S(4 \mid 4)$ geradlinig. Links davon führt eine Kurve vom Ursprung nach $R$, rechts eine Kurve von $S$ nach $(5 \mid 5)$. Im Ursprung schließt der Rand waagerecht an; an den Übergängen im Ursprung, in $R$, in $S$ und in $(5 \mid 5)$ hat er keinen Knick. Das Kurvenstück vom Ursprung bis $R$ soll der Graph von $k(x) = a\cdot x^4 + b\cdot x^2$ sein. Weise nach, dass sich eine solche Funktion $k$ dafür eignet, und bestimme $a$ und $b$.
-\par\smallskip\noindent \fbox{\parbox{0.9\linewidth}{\footnotesize\color{mbgrau}Abbildung im Original: Gitter, x von 0 bis 6, y von 0 bis 5; s-förmige Kurve vom Ursprung über R(2 | 1) und S(4 | 4) nach (5 | 5), zwischen R und S geradlinig; Beschriftungen R, S}}\par
+\begin{pfnr}{Abi ’23}{155.}{6 BE}
+Für eine neue Heizung soll der Temperaturverlauf in der Startphase durch eine ganzrationale Funktion $k$ dritten Grades beschrieben werden ($x$: Zeit in Minuten, $k(x)$: Temperatur in °C). Es gilt $k(0) = 20$ und $k'(0) = 130$; im Punkt $(5 \mid 220)$ hat der Graph von $k$ eine waagerechte Tangente. Ermittle eine Gleichung von $k$.
 \rechenplatz{4}
-\end{pfnr}
-\begin{pfnr}{Abi ’22}{155.}{2 BE}
-Ein Betonteil für den Hochwasserschutz hat im Querschnitt einen geraden unteren Rand. Er liegt auf der Geraden $g$ durch $C(0{,}4 \mid -0{,}4)$ und $D(2 \mid 1{,}2)$. Weise nach, dass $g(x) = x - 0{,}8$ eine Gleichung dieser Geraden ist.
-\par\smallskip\noindent \fbox{\parbox{0.9\linewidth}{\footnotesize\color{mbgrau}Abbildung im Original: Querschnitt eines Betonteils: oberer Rand von A (Ursprung) nach B(2 | 1,5) als s-förmiger Bogen, unterer Rand Gerade von C(0,4 | $-$0,4) nach D(2 | 1,2), Seiten AC und BD; Beschriftungen A, B, C, D; zum Lösen nicht nötig}}\par
-\rechenplatz{2}
+\fusshilfe{\mbox{155:~k(x) = 2x³ $-$ 28x² + 130x + 20}}
 \end{pfnr}
 \pfstufekopf[sextremalproblemzielf]{Extremalproblem: Zielfunktion aufstellen und maximieren}{in 2 der letzten 5 Prüfungen}
 \pfgruppe{Was ist zu tun? Ankreuzen, nicht rechnen}
@@ -888,9 +933,11 @@ Der Ursprung und $P(u | f(u))$ mit $u > 0$ auf dem Graphen von $f(x) = (x + 3) \
 \rechenplatz{4}
 \fusshilfe{\mbox{162:~$P(3 | 1{,}34)$}}
 \end{pfnr}
+\pfgruppe{}
 \begin{pfnr}{Abi ’24}{163.}{4 BE}
 Gegeben ist die Funktion $f$ mit $f(x) = 0{,}5x^4 - 4x^2 + 3{,}5$, $x \in \mathbb{R}$; ihr Graph heißt $G_f$. Für $-1 \le x \le 1$ wird $f$ durch $p(x) = -3{,}5x^2 + 3{,}5$ angenähert. Die Differenz von $p$ und $f$ ist in diesem Bereich an genau zwei Stellen am größten. Zeige, dass diese größte Differenz $\tfrac{1}{8}$ beträgt.
 \rechenplatz{3}
+\fusshilfe{\mbox{163:~$\tfrac{1}{8}$}}
 \end{pfnr}
 \begin{pfnr}{Abi ’22}{164.}{5 BE}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = (x + 2)\cdot e^{-x}$. Ihre Ableitung ist $f'(x) = -(x + 1)\cdot e^{-x}$. Der Ursprung und ein Punkt $P(u \mid v)$ des Graphen von $f$ mit $u > 0$ sind gegenüberliegende Ecken eines Rechtecks, dessen Seiten parallel zu den Koordinatenachsen liegen. Für genau einen Wert von $u$ ist der Flächeninhalt des Rechtecks am größten. Ermittle für diesen Fall die Koordinaten von $P$. Zur Kontrolle: Für die Ableitung der Flächeninhaltsfunktion gilt $A'(u) = (2 - u^2)\cdot e^{-u}$.
