@@ -104,6 +104,31 @@ verbessereBlaetter 06.10. vormittags.
     Prüfungsheft als kurze Stufe nach den Geschwistern. Ohne Geschwister
     keine. Daten: je Stufe „verwechselbar mit …“.
 
+## N5 Nach dem Fokusblatt Grundwert (06.10. mittags)
+
+20. Auffüllen B: Die Zielzahl 12/6 gilt für den Vorrat (Serie,
+    Rückblick, Wiederholung, Check), nicht für die Länge eines Blatts.
+    Auf dem Blatt: alle BB/BE-Originale, die herausgelösten, und eine
+    fremde oder eigene Aufgabe nur dort, wo zwischen zwei Sprossen ein
+    Sprung ist. Ersetzt die Auffüll-Regel im Endbau vom 06.10.
+21. Punkte: auf dem Blatt nur noch beim Prüfstein; in den Daten bleiben
+    sie. Wo sie stehen, auf der Grundlinie der Nummer.
+22. Anhang „Mehr zum Üben“: automatisch, wenn der Kernteil kurz ist
+    (unter zwei Seiten oder weniger als 8 echte Aufgaben), sonst nur auf
+    Zuruf; 4–8 Aufgaben aus anderen Ländern, leicht → schwer,
+    verschiedene Sachen, nie schwerer als die schwerste BB/BE-Aufgabe der
+    Stufe; zwischen Kernteil und Prüfstein. Nie in langen Heften ohne
+    Zuruf, nie in einer Serien-Portion, nie Kopien, nie unsichere
+    Lösungen.
+23. Erkennen (ändert N4.19): im Fokusblatt keine Erkennen-Aufgabe. Im
+    ganzen Prüfungsheft als kurze Stufe nach allen Geschwistern; in
+    allgemeinen Blättern nur, wenn das Blatt alle Geschwister vorher
+    übt. Quelle: erkennen-p10.csv und msa/fremd/*-erkennen.csv.
+24. Rahmen bei vielen gleichartigen (Vorschlag Chat, nicht bestätigt):
+    beginnt nach der ersten Aufgabe einer Art, endet vor der ersten
+    anderer Art, zeigt höchstens vier (jüngste zuerst), Kopf mit voller
+    Zahl („8× geprüft, 4 davon hier“).
+
 ## Nicht entschieden
 
 - „ab hier“/Formel: wann und wo, verallgemeinert (Gespräch steht aus;
