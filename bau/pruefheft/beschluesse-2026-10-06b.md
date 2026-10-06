@@ -83,10 +83,28 @@ verbessereBlaetter 06.10. vormittags.
     eine Seite wegfällt; passt alles auf eine Seite, nie zweispaltig.
     Form sonst bestätigt (Abitur).
 
+## N4 Bezeichnungen, Fundstelle, Erkennen
+
+17. Fundstelle: Auf dem Blatt reicht die Jahresmarke („P10 ’26“); die
+    genaue Fundstelle (Heft · Aufgabe) bleibt nur in den Daten.
+18. Bezeichnungen in Lösungen (alle Blätter): Antwort in der Form der
+    Frage – Punkte mit Buchstaben N₁(−2 | 0), H, T, W, S_y; Stellen als
+    x-Werte. Bedeutungsindex (x_N1, x_E, x_W) nur, wenn eine Aufgabe zwei
+    Arten von Stellen hat, sonst x₁, x₂. Buchstaben wie in Prüfung und
+    Formelsammlung, keine eigenen. Rechte Spalte gleich („f′(x) = 0 ⇒
+    x_E1 = 1, x_E2 = 3“). Sachaufgaben: Variablen nach der Sache (r, t),
+    wenn die Aufgabe keine vorgibt.
+19. Erkennen (vorläufig, Lehrer beurteilt am ersten Blatt erneut den
+    Sinn): Hat ein Handgriff verwechselbare Geschwister (W/G/p;
+    Pythagoras/Winkelfunktion/Sinussatz; Zinsen/Zinseszins;
+    mit/ohne Zurücklegen; linear/exponentiell), bekommt das Fokusblatt
+    eine Aufgabe mit 4–6 kurzen Sätzen aus echten Aufgaben, ankreuzen,
+    was gesucht ist, nicht rechnen – mitten in der Leiter, nach den
+    ersten Rechenschritten, vor den echten Prüfungsaufgaben. Im ganzen
+    Prüfungsheft als kurze Stufe nach den Geschwistern. Ohne Geschwister
+    keine. Daten: je Stufe „verwechselbar mit …“.
+
 ## Nicht entschieden
 
-- Exakte Fundstelle (Heft · Aufgabe) nach dem Wegfall in der
-  Lösungsdatei: in die Marke („P10 ’26 · 1a“) oder ganz weg.
-- „W, G oder p erkennen“ als eigene Stufe im ganzen Prüfungsheft
-  (Vorschlag Chat, nicht bestätigt).
-- „ab hier“/Formel: wann und wo, verallgemeinert (Gespräch steht aus).
+- „ab hier“/Formel: wann und wo, verallgemeinert (Gespräch steht aus;
+  bis dahin gilt die jetzige Regel).
