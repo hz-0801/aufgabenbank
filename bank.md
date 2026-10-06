@@ -1,6 +1,9 @@
 # Aufgabenbank – Form und Regeln
 
-Stand 2026-10-06, neunte Fassung (Beschlüsse 05./06.10.: Vorstufen
+Stand 2026-10-06, zehnte Fassung (Nachtrag 06.10., bau/pruefheft/
+beschluesse-2026-10-06b.md: Herkunftsfolge echt → fremd → eigen,
+eigene sparsam und verschieden, herausgelöste Aufgaben, Feld ruht;
+vorher neunte Fassung, Beschlüsse 05./06.10.: Vorstufen
 tragen die Leiter jeder Stufe, kopfrechenbare Zahlen unten, exakt
 vor gerundet in loesung, Feld bild; vorher achte Fassung 05.10.: Ziel 12
 Aufgaben je Kern-Stufe, 6 je übriger Stufe, Zählregel; Kern aus
@@ -138,6 +141,13 @@ Leerzeilen. Reihenfolge der Zeilen = Reihenfolge der Kette.
                   zwei bis drei Punkte beschreibbar ist
     quelle        Zeile des Katalogeintrags, aus der die Sprosse
                   stammt (Zeilennummer beim Stand-Commit)
+    ruht          optional: gesetzt (true bzw. ein Grund), wenn die
+                  Zeile stillgelegt ist – eine Kopie, die sich von einer
+                  anderen Zeile der Sprosse nur in der Zahl
+                  unterscheidet, oder eine eigene, die eine echte
+                  ersetzt (Nachtrag 06.10., N1.3). Kein Bau nimmt eine
+                  ruhende Zeile; sie bleibt als Beleg in der Datei.
+                  Ein vorhandenes Feld gleicher Bedeutung gilt gleich.
     herkunft      nur bei Zeilen, die ein Blatt-Chat erfunden hat:
                   „Blatt <eintrag> <JJJJ-MM-TT>[b], Nr. <n>“ (Ordner
                   in eingang/ und Nummer auf dem Blatt), und bei
@@ -343,6 +353,29 @@ Verfahrenskette ist daher nicht immer k1.
   geänderte Zeilen.
   Dreisatz-Zahlen der Zone im Kopf rechenbar.
 - Keine Aufgabe doppelt, auch nicht über Ketten hinweg.
+- Herkunft (Nachtrag 06.10., N1): Blätter nehmen echte
+  Prüfungsaufgaben zuerst – BB/BE (P10 2014–2026, OS/EBR/FOR, GYM) →
+  Abschlussprüfungen anderer Länder (mathe-nachhilfe msa/fremd/,
+  Quellen quellen/quelle-fremd-*) → eigene Bankzeilen. Fremde nur bei
+  weniger als 12 (Kern) bzw. 6 echten BB/BE der Stufe und nie schwerer
+  als die schwerste BB/BE-Aufgabe der Stufe (Schritte, Zahlart,
+  Textlänge); fremde Fachwörter, die in BB nicht vorkommen, werden
+  umformuliert.
+- Eigene Zeilen sparsam: nur übliche Formulierungen, die in P10
+  fehlen, und nur für Lücken der Leiter. Zwei eigene Zeilen einer
+  Sprosse unterscheiden sich in mindestens zwei Merkmalen – Sache,
+  Darstellung (Text, Tabelle, Bild, Diagramm), Fragerichtung
+  (vorwärts, rückwärts, vergleichen, Aussage prüfen), Sprachform.
+  Keine Kopien, die sich nur in der Zahl unterscheiden („Äpfel
+  10/50/25/20 %“); solche Zeilen ruhen (Feld ruht). Eine eigene, die
+  einer echten oder einer anderen eigenen in Sache, Darstellung und
+  Fragerichtung gleicht, setzt der Bau nicht.
+- Herausgelöste Aufgaben (N1.4): Steckt ein Handgriff als
+  Zwischenschritt in einer echten Aufgabe, entsteht eine Aufgabe mit
+  echter Sache und echten Zahlen ohne das Nebensächliche (Muster
+  mathe-nachhilfe beispiel-zwischenschritt.html), Marke „nach P10 ’15“.
+  Sie liegen in mathe-nachhilfe msa/herausgeloest-p10.csv und ersetzen
+  eine ausgedachte Bankzeile, wo sie genau auf eine Sprosse passen.
 - Ankreuzen: Die loesung nennt die richtige Option wortgleich
   (Zahl, Term oder Gleichung wie in der Option); pruef trägt die
   Zahl, wenn die Optionen Zahlen sind, sonst "".

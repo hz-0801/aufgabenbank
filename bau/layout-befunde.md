@@ -326,3 +326,44 @@ alle Blätter, wenn nicht anders gesagt; ersetzt, wo abweichend, 9,
 16. P10: ein Blatt für beide Kurse; FOR-only-Aufgaben tragen *
     (ersetzt 23 „Stern entfällt überall“ für P10). Heft nach Kurs
     (Parameter, ohne Angabe FOR); „schwach“ ändert nur die Form.
+
+## Nachtrag 06.10. (Tag, fest; bau/pruefheft/beschluesse-2026-10-06b.md)
+
+Ersetzt, wo abweichend, 3 („weitere dieser Art“), 4, 6, 7, 11, 12 und 15
+des Abschnitts darüber.
+
+17. Herkunft: echte zuerst (BB/BE → andere Länder → eigene). Fremde nur
+    bei Mangel (< 12 Kern, < 6 sonst) und nie schwerer als die schwerste
+    BB/BE-Aufgabe der Stufe; leichtere fremde unten statt eigener.
+    Eigene sparsam, zwei eigene einer Stufe in mindestens zwei Merkmalen
+    verschieden (Sache, Darstellung, Fragerichtung, Sprachform), keine
+    Kopien nur mit anderer Zahl; gleichartige eigene fallen weg.
+18. Marken: grau im linken Rand auf der Grundlinie der Nummer, nur das
+    Jahr („P10 ’26“, „BY ’23“, „NRW ’24“, „VERA ’24“; herausgelöst
+    „nach P10 ’15“). Eigene ohne Marke; „eigene Aufgabe“ entfällt. Die
+    genaue Fundstelle bleibt in den Daten, auch nicht in der Lösung.
+19. Kopf nur der Name („Grundwert G“), „P10“ klein; unten nur
+    Seitenzahl und Fuß, keine laufende Titelzeile.
+20. Prüfungsheft: jede echte Aufgabe einmal, am Hauptplatz, ganz; in
+    anderen Stufen grau „steckt auch in Nr. 47 (P10 ’24)“. Fokusblatt:
+    jede Original-Aufgabe des Handgriffs, ganz oder herausgelöst.
+21. Bündel: gleichartige BB/BE-Originale nach der ersten ihrer Art im
+    dünnen Rahmen, zweispaltig, je eine kurze Rechenzeile, Kopf grau
+    „gleiche Art · n× geprüft – kannst du überspringen“ (ersetzt 4 für
+    diesen Fall). Fremde und eigene nie im Bündel.
+22. Zählung im Stufenkopf: Jahre der letzten fünf, in denen der
+    Handgriff gebraucht wurde, auch als Zwischenschritt.
+23. Rückblick: nur was die Leiter gleich braucht, jede Aufgabe kommt
+    in der Leiter wieder vor; keine Mindestzahl (ersetzt 11).
+24. Tabellen mit Linien; mindestens eine Prozent-Tabelle je
+    Prozent-Heft; Aufgaben mit Tabelle oder Antwortfeld ohne
+    Zusatzlinien. Prüfstein mit Fuß (ersetzt 12 „ohne Hilfen“).
+25. Lösungsdatei: keine Fundstellenzeile; rechte Spalte nur, was nicht
+    links steht und zum Ergebnis führt, kurz; Begründen links Urteil,
+    rechts Kern; zweispaltig nur, wenn dadurch eine Seite wegfällt.
+    Bezeichnungen wie in der Frage (N₁, H, T, W, S_y; x_N1/x_E nur bei
+    zwei Arten von Stellen, sonst x₁, x₂).
+26. Erkennen (vorläufig): bei verwechselbaren Geschwistern eine
+    Ankreuzaufgabe aus 4–6 kurzen echten Sätzen „was ist gesucht?“ –
+    Fokus mitten in der Leiter, Heft als kurze Stufe nach den
+    Geschwistern.
