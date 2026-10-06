@@ -62,9 +62,31 @@ Braucht xelatex, pdfinfo, sympy und mathblatt.sty ab 2026-10-06. Ausgabe:
   (Heft · Aufgabe, nur echte); Bank-Ergebnisse mit ≈ bekommen den exakten
   Wert aus `pruef` davor (Bruch, Nenner ≤ 1000).
 
-## Abbildungen
+## Abbildungen (werkzeuge/abbildung.py, Lauf C)
 
-Aus der Beschreibung im Feld `abbildung` nach Typ am Anfang: Säulendiagramm
-(Wertepaare, „Achse beginnt bei“), Tabelle (Spalten a. bis b. Wort),
-leerer Kreis, rechtwinkliges Dreieck, Ankreuztabelle; „keine“ und „wie im
-Text“ setzen nichts. Unbekannte Typen meldet das Programm als Datenbefund.
+Die Zeichenroutinen liegen in `werkzeuge/abbildung.py`; `pruefheft.py` ruft
+`abbildung(desc, D, iid, vorspann_abb)`. Typ = Text am Anfang des Felds `abbildung` (vor „:“, „(“
+oder „,“). Liste mit Häufigkeit: `python3 werkzeuge/abbildung.py --typen`.
+
+- Gezeichnet (TikZ/pgfplots): Tabelle (auch mit `leer` = Eintragfeld, breite Tabellen gestürzt),
+  Graph (Terme, Stücke „für a..b“, „Punkte …“ mit „als Dreieck verbunden“, Winkel „β bei B zwischen
+  BA und BC“, „Achsen X | Y“, „Gitter ja (Kästchen 0,5)“), Koordinatensystem, Säulen- und
+  Balkendiagramm (`leer` = Säule fehlt, „Achse beginnt bei“, „Achse ohne Einteilung, Länge in
+  Kästchen“; keine Zahlen über den Säulen), Kreisdiagramm (Füllung, `[leer]` mit Schreiblinie),
+  Glücksrad, Zahlenscheiben, Würfelnetze, Baumdiagramm (`leer` = Kästchen, „Pfad fett“, „nur X
+  verzweigt weiter“), Graphauswahl, Achsenkreuz ohne Einteilung, Ankreuztabelle (Spalten
+  richtig/falsch/wahr/… als Kästchen, „Korrektur“ als Schreibfeld, „Begründung“-Zeile),
+  Dreieck/Viereck/Lageskizze/rechtwinkliges Dreieck (Lagewörter, Maße, Winkel, Höhe, Diagonalen,
+  Schraffur; Form nicht maßstabsgerecht, Trapez aus Längen bzw. Winkeln), Schrägbild (Zylinder,
+  Kegel, Zylinder mit Kegel, Pyramide, Quader, Prismen), Netz, zusammengesetzte Figur,
+  Säulenraster, leerer Kreis.
+- „ // “ trennt zwei Abbildungen; „… aus dem Vorspann“ / „aus 3d“ / „aus b)“ übernimmt die Abbildung
+  der Vorspann-Zeile (mit Zusatz „zusätzlich …“ bzw. „(mit …)“ als grauer Satz darunter).
+- Grauer Beschreibungsrahmen: seltene Typen (Kästchenfigur, Kreis mit Sektor, Ankreuznetze, leeres
+  Karoraster, Tabellenauswahl, leerer Streifen, Gefäß(e), Gewinnplan-Kasten) und Zeilen, deren
+  Beschreibung das Muster verlässt (Befund im Lauf). Unbekannte Typen meldet das Programm als
+  Datenbefund.
+- Prozent und Abitur laufen über die alten Routinen (`alte_form`); ihre Ausgabe bleibt byte-gleich.
+- Bank-Grafiken beim Setzen repariert (Bank unverändert): Astnamen mit Umlaut als `\text`,
+  `ksys` mit Jahreszahlen bzw. Achse ab ≠ 0 als pgfplots, `\wertetabelle` mit Wort-Zeilennamen und
+  breiten Werten.

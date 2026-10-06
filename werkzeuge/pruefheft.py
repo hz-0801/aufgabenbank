@@ -39,7 +39,10 @@ BANK = os.path.dirname(HIER)
 # ---------------------------------------------------------------------------
 UNI_MATH = {'⇒': r'\Rightarrow', '≈': r'\approx', '−': '-', '≤': r'\le', '≥': r'\ge',
             'π': r'\pi', '≙': r'\mathrel{\widehat{=}}', 'α': r'\alpha', 'β': r'\beta', '→': r'\to', '⇔': r'\Leftrightarrow',
-            '·': r'\cdot', '°': r'^\circ'}
+            '·': r'\cdot', '°': r'^\circ',
+            # Lauf C (Geometrie, Funktionen): fehlten in der Schrift (Missing character)
+            'γ': r'\gamma', 'δ': r'\delta', 'ε': r'\varepsilon', 'φ': r'\varphi', 'μ': r'\mu',
+            '≠': r'\neq', '∠': r'\angle', '₁': r'_1', '₂': r'_2', '₃': r'_3', '₀': r'_0', '′': r"'"}
 SUP = str.maketrans('⁰¹²³⁴⁵⁶⁷⁸⁹', '0123456789')
 
 
@@ -74,6 +77,16 @@ def textteil(t, latex):
             continue
         t = t.replace(k, '$' + v + '$')
     t = t.replace('$$', '')
+    return t
+
+
+def text_lauf_c(t):
+    """Klartext der neuen Kapitel (Lauf C): ⁻¹ (tan⁻¹) und a^b außerhalb von $…$ als Hochzahl;
+    Wörter im Index ($h_{Deckfläche}$) als \\text. Nur wirksam, wenn das Zeichen vorkommt –
+    Prozent-Texte enthalten keins (byte-gleich)."""
+    if '⁻' in t:
+        t = re.sub(r'⁻(\$\^\{(\d+)\}\$|([¹²³]))', lambda m: '$^{-' + (m.group(2) or m.group(3).translate(SUP)) + '}$', t)
+        t = t.replace('⁻', '$^{-}$')
     return t
 
 
@@ -198,10 +211,15 @@ def tx(s, latex=False):
         if m:
             for k, v in UNI_MATH.items():
                 t = t.replace(k, ' ' + v + ' ')
+            if re.search(r'[äöüÄÖÜß]', t):   # Wort im Index ($h_{Deckfläche}$; Lauf C)
+                t = re.sub(r'_\{([^{}]*[äöüÄÖÜß][^{}]*)\}', r'_{\\text{\1}}', t)
             t = t.replace(r'\frac', r'\tfrac')
             res.append('$' + t + '$')
         else:
-            res.append(textteil(t, latex))
+            if '^' in t and not latex:
+                # a^b im Klartext (Katalog Wachstum: 1,4^24) -> Hochzahl (Lauf C)
+                t = re.sub(r'(\d+(?:,\d+)?)\^(\d+|\(?[a-z]\)?)', lambda m: '$' + m.group(1).replace(',', '{,}') + '^{' + m.group(2).strip('()') + '}$', t)
+            res.append(text_lauf_c(textteil(t, latex)))
     return ''.join(res).replace('$$', '')
 
 
@@ -303,253 +321,12 @@ class Daten:
 
 
 # ---------------------------------------------------------------------------
-# Abbildungen aus der Beschreibung (Feld abbildung) – Typ am Anfang erkannt
+# Abbildungen: werkzeuge/abbildung.py (Lauf C)
 # ---------------------------------------------------------------------------
-def zahl(s):
-    return float(s.replace(',', '.'))
-
-
-def abb_saeulen(desc, D, iid):
-    kopf, _, rest = desc.partition(':')
-    paare = re.findall(r'([A-Za-zÄÖÜäöü0-9]+):?\s+(\d+(?:,\d+)?)', rest)
-    if len(paare) < 2:
-        D.befund(f'{iid}: Säulendiagramm ohne lesbare Wertepaare')
-        return ''
-    ymin = 0
-    m = re.search(r'Achse beginnt bei (\d+)', kopf)
-    if m:
-        ymin = int(m.group(1))
-    ylabel = re.sub(r'Säulendiagramm|\(.*?\)|[,]', '', kopf).strip() or 'Anzahl'
-    werte = [zahl(v) for _, v in paare]
-    ymax = max(werte) * 1.2
-    if ymin:
-        ymax = ymin + (max(werte) - ymin) * 1.25
-    coords = ' '.join(f'({k},{zahl(v)})' for k, v in paare)
-    cats = ','.join(k for k, _ in paare)
-    breite = min(15, 1.3 * len(paare) + 2)
-    return (r'\begin{tikzpicture}\begin{axis}[ybar,width=%.1fcm,height=4.6cm,ymin=%s,ymax=%.2f,'
-            r'symbolic x coords={%s},xtick=data,enlarge x limits=0.08,bar width=6mm,'
-            r'ylabel={%s},ylabel style={font=\small},tick label style={font=\small},'
-            r'nodes near coords,every node near coord/.append style={font=\scriptsize,'
-            r'/pgf/number format/.cd,use comma,1000 sep={}},'
-            r'ymajorgrids,grid style={mbgitter}]'
-            r'\addplot[fill=mbkasten,draw=black] coordinates {%s};\end{axis}\end{tikzpicture}'
-            % (breite, ymin, ymax, cats, tx(ylabel), coords))
-
-
-def abb_tabelle_spalten(desc, D, iid):
-    # „Tabelle (Spalten 11. bis 15. Geburtstag): Zinsen –, 4,00 €, …; Einzahlung je 200,00 €; …“
-    m = re.match(r'Tabelle \(Spalten (\d+)\. bis (\d+)\. (\w+)\):\s*(.*)', desc)
-    if not m:
-        return None
-    a, b, wort, rest = int(m.group(1)), int(m.group(2)), m.group(3), m.group(4)
-    n = b - a + 1
-    kopf = ' & '.join([wort] + [f'{k}.' for k in range(a, b + 1)])
-    zeilen = []
-    for teil in rest.split(';'):
-        teil = teil.strip()
-        mm = re.match(r'([A-Za-zÄÖÜäöüß ]+?)\s+(je\s+)?(.*)', teil)
-        if not mm:
-            continue
-        name, je, werte = mm.group(1), mm.group(2), mm.group(3)
-        if je:
-            vals = [werte] * n
-        else:
-            vals = [v.strip() for v in werte.split(', ')]
-        if len(vals) != n:
-            D.befund(f'{iid}: Tabellenzeile „{name}“ mit {len(vals)} statt {n} Werten')
-            return ''
-        vals = [r'\leerzelle' if v == 'leer' else tx(v) for v in vals]
-        zeilen.append(' & '.join([name] + vals))
-    return r'\sachtabelle{l%s}{%s}{%s}' % ('r' * n, kopf, r'\\ '.join(zeilen))
-
-
-def abb_dreieck(desc):
-    w = re.search(r'waagerechte Kathete (\d+(?:,\d+)?) ?(\w+)', desc)
-    s = re.search(r'senkrechte Kathete[^\d]*(\d+(?:,\d+)?) ?(\w+)', desc)
-    h = re.search(r'Hypotenuse (\w+)', desc)
-    a = re.search(r'Anstiegswinkel (\S+)', desc)
-    lw = f'{w.group(1)} {w.group(2)}' if w else ''
-    ls = f'{s.group(1)} {s.group(2)}' if s else ''
-    lh = h.group(1) if h else ''
-    la = a.group(1) if a else ''
-    # nicht maßstabsgerecht: Höhe überzeichnet, damit die Stufe sichtbar bleibt
-    return (r'\begin{tikzpicture}[line width=0.6pt]\draw (0,0) -- (6,0) -- (6,1.4) -- cycle;'
-            r'\draw (5.7,0) -- (5.7,0.3) -- (6,0.3);'
-            r'\node[below,font=\small] at (3,0) {%s};\node[right,font=\small] at (6,0.7) {%s};'
-            r'\node[above left,font=\small] at (3,0.7) {%s};\node[font=\small] at (1.1,0.12) {%s};'
-            r'\node[font=\scriptsize,mbgrau,anchor=west] at (0,-0.75) {nicht maßstabsgerecht};'
-            r'\end{tikzpicture}' % (tx(lw), tx(ls), tx('$' + lh + '$' if lh else ''),
-                                    tx(la)))
-
-
-def abb_tabelle_zeilen(desc):
-    # „Tabelle: Kopf | Kopf; Zeile | Wert; …“ (Reparatur 06.10., Punkt 10)
-    teile = [t.strip() for t in desc.split(':', 1)[1].split(';') if t.strip()]
-    zeilen = [[tx(z.strip()) for z in t.split(' | ')] for t in teile]
-    n = max(len(z) for z in zeilen)
-    zeilen = [z + [''] * (n - len(z)) for z in zeilen]
-    return r'\sachtabelle{l%s}{%s}{%s}' % ('r' * (n - 1), ' & '.join(zeilen[0]),
-                                          r'\\ '.join(' & '.join(z) for z in zeilen[1:]))
-
-
-def abb_saeulenraster(desc):
-    # „Säulenraster (14 Kästchen hoch): y-Achse …; x-Achse …; Spanisch 7,8; ___ 10,5; Arabisch –“
-    h = int(re.search(r'\((\d+) Kästchen hoch\)', desc).group(1))
-    teile = [t.strip() for t in desc.split(':', 1)[1].split(';')]
-    ylab = re.sub(r'^y-Achse\s*|\s*ohne Einteilung', '', teile[0])
-    xlab = re.sub(r'^x-Achse\s*', '', teile[1])
-    saeulen = [re.match(r'(.*\S)\s+(\S+)$', t).groups() for t in teile[2:]]
-    b = 5 * len(saeulen) + 1
-    out = [r'\begin{tikzpicture}[x=0.45cm,y=0.45cm]',
-           r'\draw[mbgitter,line width=0.3pt] (0,0) grid (%d,%d);' % (b, h),
-           r'\draw[line width=0.7pt,->] (0,0) -- (0,%.1f) node[above,font=\small] {%s};' % (h + 0.6, tx(ylab)),
-           r'\draw[line width=0.7pt,->] (0,0) -- (%.1f,0) node[right,font=\small] {%s};' % (b + 0.6, tx(xlab))]
-    for i, (name, wert) in enumerate(saeulen):
-        x = 2 + 5 * i
-        if wert not in ('–', '-'):
-            out.append(r'\fill[mbkasten,draw=black] (%d,0) rectangle (%d,%s);' % (x, x + 2, wert.replace(',', '.')))
-        lab = r'\leerzelle' if name.startswith('_') else tx(name)
-        out.append(r'\node[below=2pt,font=\small] at (%d,0) {%s};' % (x + 1, lab))
-    out.append(r'\end{tikzpicture}')
-    return ''.join(out)
-
-
-def _pgf(term):
-    """Term der Wortlaut-CSV (Python-Schreibweise) -> pgfplots-Ausdruck."""
-    t = term.replace('**', '^').replace('e', 'EULER').replace('EULERxp', 'exp').replace('dEULERg', 'deg')
-    t = re.sub(r'(?<![a-z])EULER(?![a-z])', '2.718281828', t)
-    return t
-
-
-def _ist_term(t):
-    return re.search(r'\bx\b|exp|sin', t) is not None
-
-
-def abb_graph_term(d, D, iid):
-    """Abbildungstyp „Graph: <Name>: <Term> [für a..b] [gestrichelt]; …; x a..b; y c..d; Gitter ja|nein
-    [; Linie (x|y)-(x|y)…] [; Bogen (x|y) r w1..w2] [; Kreis (x|y) r] [; Achsen t | h(t)] [; Marken pi]“
-    (Lauf B3): gezeichnet mit pgfplots aus dem Term."""
-    teile = [t.strip() for t in d.split(':', 1)[1].split(';')]
-    kurven, opt = [], {}
-    for t in teile:
-        m = re.match(r'^x (-?[\d.]+)\.\.(-?[\d.]+)$', t) or re.match(r'^y (-?[\d.]+)\.\.(-?[\d.]+)$', t)
-        if m:
-            opt[t[0]] = (float(m.group(1)), float(m.group(2)))
-            continue
-        if t.startswith('Gitter'):
-            opt['gitter'] = t.endswith('ja'); continue
-        if t.startswith(('Linie', 'Bogen', 'Kreis', 'Achsen', 'Marken')):
-            opt.setdefault('extra', []).append(t); continue
-        m = re.match(r'^(?:(.+?):\s*)?(.+?)(?:\s+für (-?[\d.]+)\.\.(-?[\d.]+))?(\s+gestrichelt)?$', t)
-        if m and _ist_term(m.group(2)):
-            name = m.group(1) or (kurven[-1][0] if kurven else '')
-            kurven.append((name if m.group(1) else '', m.group(2), m.group(3), m.group(4), bool(m.group(5))))
-    if not kurven or 'x' not in opt or 'y' not in opt:
-        return None
-    (x0, x1), (y0, y1) = opt['x'], opt['y']
-    xl, yl = 'x', 'y'
-    for e in opt.get('extra', []):
-        if e.startswith('Achsen'):
-            xl, yl = [z.strip() for z in e[6:].split('|')]
-    ax = [f'xmin={x0},xmax={x1},ymin={y0},ymax={y1}', 'axis lines=middle', 'width=11cm', 'height=7cm',
-          f'xlabel={{${xl}$}}', f'ylabel={{${yl}$}}', 'tick label style={font=\\scriptsize}',
-          'samples=160', 'clip=true', 'every axis plot/.append style={line width=0.9pt}',
-          '/pgf/number format/use comma']
-    if opt.get('gitter'):
-        ax += ['grid=both', 'grid style={mbgitter}', 'minor tick num=1']
-    if any(e.startswith(('Kreis', 'Bogen')) for e in opt.get('extra', [])):
-        ax = [x for x in ax if not x.startswith('height')] + ['axis equal image']   # Kreis bleibt rund
-    if any('Marken pi' in e for e in opt.get('extra', [])):
-        ax += ['xtick={1.5708,3.1416,4.7124,6.2832,7.854,9.4248}',
-               'xticklabels={$\\frac{\\pi}{2}$,$\\pi$,$\\frac{3\\pi}{2}$,$2\\pi$,$\\frac{5\\pi}{2}$,$3\\pi$}']
-    out = [r'\begin{tikzpicture}\begin{axis}[' + ','.join(ax) + ']']
-    beschriftet = set()
-    for name, term, a, b, gestr in kurven:
-        dom = f'domain={a}:{b}' if a else f'domain={x0}:{x1}'
-        stil = 'black' + (',dashed' if gestr else '')
-        out.append(r'\addplot[%s,%s] {%s};' % (stil, dom, _pgf(term)))
-        if name and name not in beschriftet:
-            beschriftet.add(name)
-            # Beschriftung an einer Stelle, an der die Kurve im Fenster liegt (von rechts gesucht)
-            import math
-            pyt = term.replace('^', '**').replace('deg(x)', 'x')
-            lo, hi = (float(a), float(b)) if a else (x0, x1)
-            xb = None
-            for k in range(40):
-                xt = hi - (hi - lo) * (0.12 + 0.02 * k)
-                try:
-                    yt = eval(pyt, {'x': xt, 'exp': math.exp, 'sin': math.sin, 'e': math.e})
-                except Exception:
-                    continue
-                if y0 + 0.08 * (y1 - y0) < yt < y1 - 0.15 * (y1 - y0):
-                    xb = xt
-                    break
-            if xb is None:
-                xb = lo + 0.5 * (hi - lo)
-            lab = name.replace('G_', 'G_').replace("'", "'")
-            lab = re.sub(r'^G_(\w)$', r'G_\1', lab)
-            lab = '$' + lab + '$' if re.fullmatch(r"[A-Za-z_' ]{1,5}|I+", lab) else tx(lab)
-            out.append(r'\node[font=\small,fill=white,inner sep=1pt,anchor=south west] at (axis cs:%s,{%s}) {%s};'
-                       % (xb, _pgf(term).replace('x', '(%s)' % xb).replace('e(%s)p' % xb, 'exp'), lab))
-    for e in opt.get('extra', []):
-        if e.startswith('Linie'):
-            pts = re.findall(r'\((-?[\d.]+)\|(-?[\d.]+)\)', e)
-            out.append(r'\draw[black] ' + ' -- '.join(f'(axis cs:{x},{y})' for x, y in pts) + ';')
-        elif e.startswith('Bogen'):
-            m = re.match(r'Bogen \((-?[\d.]+)\|(-?[\d.]+)\) ([\d.]+) (-?\d+)\.\.(-?\d+)', e)
-            cx, cy, r_, w1, w2 = m.groups()
-            out.append(r'\addplot[black,domain=%s:%s,samples=60] ({%s+%s*cos(x)},{%s+%s*sin(x)});'
-                       % (w1, w2, cx, r_, cy, r_))
-        elif e.startswith('Kreis'):
-            m = re.match(r'Kreis \((-?[\d.]+)\|(-?[\d.]+)\) ([\d.]+)', e)
-            cx, cy, r_ = m.groups()
-            out.append(r'\addplot[black!60,domain=0:360,samples=90] ({%s+%s*cos(x)},{%s+%s*sin(x)});'
-                       % (cx, r_, cy, r_))
-    out.append(r'\end{axis}\end{tikzpicture}')
-    D.abb_gezeichnet = getattr(D, 'abb_gezeichnet', 0) + 1
-    return ''.join(out)
-
-
-def abbildung(desc, D, iid, vorspann_abb=''):
-    """Liefert (latex, ankreuztabelle?) zur Beschreibung; '' wenn keine nötig."""
-    d = (desc or '').strip()
-    if not d or d.startswith('keine'):
-        return ''
-    if d.startswith('Tabelle:'):
-        return abb_tabelle_zeilen(d)
-    if d.startswith('Säulenraster'):
-        return abb_saeulenraster(d)
-    if 'wie im Text' in d:
-        return ''   # Werte stehen im Wortlaut; Entscheidung: keine zweite Darstellung
-    if d.startswith('Tabelle aus dem Vorspann') or d.startswith('Graph aus dem Vorspann') \
-            or re.match(r'Skizze aus \d', d):
-        return vorspann_abb
-    if d.startswith('Graph:') and re.search(r'; x -?[\d.]+\.\.', d):
-        g = abb_graph_term(d, D, iid)
-        if g:
-            return g
-    if re.match(r'(Graph|Skizze|Diagramm):', d):
-        # Abitur (Lauf B2): Graphen liegen nur als Beschreibung vor, kein Funktionsterm zum Zeichnen –
-        # gesetzt wird ein Rahmen mit der Beschreibung, damit Lehrer und Schüler wissen, welche
-        # Abbildung zur Aufgabe gehört (Entscheidung; Datenbefund, Zählung D.abb_beschreibung)
-        D.abb_beschreibung = getattr(D, 'abb_beschreibung', 0) + 1
-        return (r'\fbox{\parbox{0.9\linewidth}{\footnotesize\color{mbgrau}Abbildung im Original: '
-                + tx(d.split(':', 1)[1].strip()) + '}}')
-    if d.startswith('Säulendiagramm'):
-        return abb_saeulen(d, D, iid)
-    if d.startswith('Tabelle (Spalten'):
-        t = abb_tabelle_spalten(d, D, iid)
-        if t is not None:
-            return t
-    if d.startswith('leerer Kreis'):
-        return r'\kreisleer[2]'
-    if d.startswith('rechtwinkliges Dreieck'):
-        return abb_dreieck(d)
-    if d.startswith('Ankreuztabelle'):
-        return 'ANKREUZTABELLE'
-    D.befund(f'{iid}: Abbildung „{d[:40]}…“ hat keinen bekannten Typ – nicht gesetzt')
-    return ''
+sys.path.insert(0, HIER)
+import abbildung as AB
+AB.einrichten(tx)
+abbildung = AB.abbildung
 
 
 # ---------------------------------------------------------------------------
@@ -691,6 +468,60 @@ def vorspann_gilt(vs, teil):
     return teil in re.findall(r'\d+([a-z])', tl)
 
 
+KREUZSPALTE = ('richtig', 'falsch', 'wahr', 'nicht entscheidbar', 'passt', 'passt nicht', 'ja', 'nein')
+
+
+def ankreuz_tabelle(bild, text, kr, a):
+    """Ankreuztabelle aus der Kennung ANKREUZ{Kopf}{Zeilen}{Art} (Lauf C). Art liste: gewöhnliche
+    Ankreuzzeilen (Optionen aus dem Text); opt: Zeilen = Optionen bzw. zitierte Aussagen des Texts;
+    fest: Zeilen aus der Beschreibung. Spalten richtig/falsch/wahr … als Kästchen, andere
+    (Korrektur) als Schreibfeld; „+begruendung“: eine Schreibzeile unter jeder Zeile."""
+    kopf, zeilen, art = kr
+    if art == 'liste':
+        vor, opts = ankreuz_zerlegen(text)
+        if opts:
+            a.optionen = [tx(o) for o in opts]
+            return bild, vor
+        return bild, text
+    nach = ''
+    if art.startswith('opt'):
+        vor, opts = ankreuz_zerlegen(text)
+        if opts:
+            mm = re.search(r'\.\s+(?=[A-ZÄÖÜ])', opts[-1])
+            if mm:   # „… / letzte Aussage. Gib eine Gleichung an.“ -> Auftrag danach in den Text
+                opts[-1], nach = opts[-1][:mm.start()], opts[-1][mm.end():]
+        else:
+            z = aussagen_zerlegen(text)
+            if not z:
+                return bild, text
+            vor, opts, nach = z
+        text = vor + (' ' + nach if nach else '')
+        reihen = opts
+    else:
+        reihen = [r for r in zeilen.split('|') if r]
+        z = aussagen_zerlegen(text)
+        if z and len(z[1]) == len(reihen):
+            text = z[0] + ' ' + z[2]
+    sp = kopf.split('|')
+    def zelle(k):
+        return '$\\square$' if k.strip() in KREUZSPALTE or k.strip().startswith('$') else ''
+    breit_c = sum(0.45 + 0.2 * len(k) for k in sp[1:] if zelle(k))
+    n_p = sum(1 for k in sp[1:] if not zelle(k))
+    w_a = max(4.0, min(8.0, 13.0 - breit_c - 3.6 * n_p))
+    form = '|p{%.1fcm}|' % w_a + ''.join('c|' if zelle(k) else 'p{3.4cm}|' for k in sp[1:])
+    if any(k.strip().startswith('$') for k in sp[1:]):
+        form = '|l|' + 'c|' * (len(sp) - 1)
+    begr = art.endswith('+begruendung')
+    z_tex = []
+    for r in reihen:
+        z_tex.append(' & '.join([tx(r)] + [zelle(k) for k in sp[1:]]) + r' \\ \hline')
+        if begr:
+            z_tex.append(r'\multicolumn{%d}{|l|}{\rule{0pt}{3.2ex}\footnotesize\color{mbgrau}Begründung:} \\ \hline' % len(sp))
+    tab = (r'\begingroup\renewcommand{\arraystretch}{1.5}\begin{tabular}{%s}\hline %s \\ \hline %s\end{tabular}\endgroup'
+           % (form, ' & '.join(tx(k) for k in sp), ' '.join(z_tex)))
+    return (bild + '\n\\par\\smallskip\\noindent ' + tab) if bild else tab, text
+
+
 def echt_aufgabe(D, iid, stufe):
     w = D.wort.get(iid)
     k = D.kat.get(iid)
@@ -718,7 +549,10 @@ def echt_aufgabe(D, iid, stufe):
     abb = abbildung(w['abbildung'], D, iid, vs_abb)
     if abb == '' and vs_abb and 'wie im Text' not in (w['abbildung'] or '') and not w['abbildung']:
         abb = vs_abb
-    if abb == 'ANKREUZTABELLE':
+    m_kr = re.search(r'ANKREUZ\{([^{}]*)\}\{([^{}]*)\}\{([^{}]*)\}$', abb or '')
+    if m_kr:   # Ankreuztabellen der neuen Wortlautdateien (Lauf C)
+        abb, text = ankreuz_tabelle(abb[:m_kr.start()].rstrip(), text, m_kr.groups(), a)
+    elif abb == 'ANKREUZTABELLE':
         vor, opts = ankreuz_zerlegen(text)
         zeilen = r' \\ '.join(f'{tx(o)} & $\\square$ & $\\square$' for o in opts)
         abb = (r'\begingroup\renewcommand{\arraystretch}{1.5}\begin{tabular}{|l|c|c|}\hline '
@@ -905,6 +739,49 @@ DU = {'Berechnen': 'Berechne', 'Bestimmen': 'Bestimme', 'Zeigen': 'Zeige', 'Gebe
       'Kreuzen': 'Kreuze', 'Prüfen': 'Prüfe', 'Überprüfen': 'Überprüfe', 'Zeichnen': 'Zeichne'}
 
 
+def grafik_bank(D, g, iid):
+    """Bank-Grafik (mathblatt-Makros) mit zwei Reparaturen beim Setzen (Lauf C; Bank unverändert,
+    Zählung D.n_grafik_rep): Wörter mit Umlaut als Astname im Baum stehen im Mathemodus ($grün$ fehlt
+    in der Schrift) -> \\text{grün}; ksys mit Jahreszahlen als x-Achse (xmin=2019) läuft in pgf über
+    (Dimension too large) -> Achse ab 0, Beschriftung der Jahre bleibt über xlabel."""
+    if not g:
+        return g
+    g0 = g
+    if re.match(r'\\baum(zwei|drei)', g):
+        g = re.sub(r'(?<=[{,])([A-Za-zÄÖÜäöüß]*[äöüÄÖÜß][A-Za-zÄÖÜäöüß]*)/', r'\\text{\1}/', g)
+    m = re.match(r'\\begin\{ksys\}\[([^\]]*)\]((?:\s*\\punkt\{[^}]*\}\{[^}]*\}\{[^}]*\})+)\s*\\end\{ksys\}$', g)
+    if m:
+        o = dict(x.split('=', 1) if '=' in x else (x, '') for x in m.group(1).split(','))
+        try:
+            x0, x1, y0, y1 = (float(o[k]) for k in ('xmin', 'xmax', 'ymin', 'ymax'))
+        except (KeyError, ValueError):
+            x0 = y0 = 0
+        if x0 > 100 or y0 > 0:
+            # Achse beginnt nicht bei null bzw. Jahreszahlen: ksys zeichnet die Achsen durch den Ursprung
+            # (läuft über); als pgfplots mit Achsen links/unten
+            pts = re.findall(r'\\punkt\{([^}]*)\}\{([^}]*)\}', m.group(2))
+            g = (r'\begin{tikzpicture}\begin{axis}[axis lines=left,width=9cm,height=6cm,xmin=%s,xmax=%s,ymin=%s,ymax=%s,'
+                 r'xtick distance=%s,ytick distance=%s,grid=both,grid style={mbgitter},tick label style={font=\scriptsize},'
+                 r'/pgf/number format/1000 sep={},xlabel={%s},ylabel={%s},label style={font=\small}]'
+                 r'\addplot[only marks,mark=*,mark size=1.5pt] coordinates {%s};\end{axis}\end{tikzpicture}'
+                 % (o['xmin'], o['xmax'], o['ymin'], o['ymax'], o.get('xstep', '1'), o.get('ystep', '1'),
+                    o.get('xlabel', ''), o.get('ylabel', ''), ' '.join(f'({x},{y})' for x, y in pts)))
+    m = re.search(r'\\wertetabelle(\[[^\]]*\])?\{([^{}]*)\}\{([^{}]*)\}\{([^{}]*)\}', g)
+    if m:
+        # Wertetabelle: Zeilennamen mit Wörtern im Mathemodus der Vorlage -> \text; breite Werte -> breitere Zelle
+        k1, k2 = [('\\text{%s}' % x if re.search(r'[A-Za-zÄÖÜäöüß]{3,}', x) and '\\text' not in x else x)
+                  for x in (m.group(2), m.group(3))]
+        werte = re.split(r'(?<![{\\]),(?!\})', (m.group(1) or '').strip('[]')) + m.group(4).split(',')
+        breit = max(len(re.sub(r'\\[,;]|[{}]', '', w)) for w in werte)
+        neu = '\\wertetabelle%s{%s}{%s}{%s}' % (m.group(1) or '', k1, k2, m.group(4))
+        if breit > 6:
+            neu = '{\\setlength{\\mbzell}{%.1fcm}%s}' % (0.2 * breit + 0.3, neu)
+        g = g[:m.start()] + neu + g[m.end():]
+    if g != g0:
+        D.n_grafik_rep = getattr(D, 'n_grafik_rep', 0) + 1
+    return g
+
+
 def bank_aufgabe(D, r, stufe):
     a = Aufgabe()
     a.art, a.id = 'bank', r['id']
@@ -934,7 +811,9 @@ def bank_aufgabe(D, r, stufe):
         t = vor
         a.optionen = [tx(o, latex=True) for o in opts]
     a.text = tx(t, latex=True)
-    a.abb = r.get('grafik', '') or ''
+    if '\\wertetabelle' in a.text:
+        a.text = grafik_bank(D, a.text, r['id'])   # Wertetabelle im Aufgabentext (Lauf C)
+    a.abb = grafik_bank(D, r.get('grafik', '') or '', r['id'])
     if '\\streifenfeld' in (r.get('grafik') or ''):
         pass   # \streifenfeld setzt sein Antwortfeld selbst – kein zweites (Reparatur Punkt 7)
     elif r.get('antwort') and r['antwort'].strip() and '__' in r['antwort']:
@@ -1737,15 +1616,43 @@ def _stueck(t):
     t = t.strip()
     if not t:
         return ''
-    if '\\' in t or '{' in t or '^' in t:
+    if '\\' in t or '{' in t or '^' in t or '_' in t:
         t = re.sub(r'(?<!\\)%', r'\\%', t)
         if not re.search(r'\\(cdot|t?frac|pi|approx|text|sqrt|Rightarrow)|\^', t):
+            if re.search(r'\\(mathrm|bar|pm|times|alpha|beta|gamma|delta|varepsilon|neq|le|ge|angle|circ)(?![A-Za-z])|_', t):
+                # weitere Mathebefehle der neuen Kapitel (\mathrm, \bar, \pm, \times, x_1; Lauf C):
+                # Wörter bleiben Text, der Rest Mathe
+                return _mathe_stuecke(t)
             return t   # Bank-LaTeX ohne Mathebefehl (30\,\%, 0{,}25) geht im Text
         m = re.match(r'^(.*?)(\s+[A-Za-zÄÖÜäöüß][A-Za-zÄÖÜäöüß. ]*)$', t)
+        rumpf = m.group(1) if m else t
+        if re.search(r'(?<![\\A-Za-z])[A-Za-zÄÖÜäöüß]*[äöüÄÖÜß][A-Za-zÄÖÜäöüß]*|(?<![\\A-Za-z{])[A-Za-z]{4,}', rumpf):
+            return _mathe_stuecke(t)   # Wörter mitten in der Rechnung (Lauf C) bleiben Text
         if m:
             return tx('$' + m.group(1) + '$') + tx(m.group(2))   # Einheit/Wort hinter der Zahl aufrecht
         return tx('$' + t + '$')
     return tx(t)
+
+
+def _mathe_stuecke(t):
+    """Teil mit Mathebefehlen außer \\cdot/\\frac (Lauf C): Wörter (drei Buchstaben und mehr,
+    außerhalb von Befehlen) bleiben Text, alles zwischen ihnen wird Mathe."""
+    toks = re.split(r'(\s+)', t)
+    out, cur = [], []
+    def wort(x):
+        return (re.fullmatch(r'[A-Za-zÄÖÜäöüß.,:;()\-]*[A-Za-zÄÖÜäöüß]{3,}[A-Za-zÄÖÜäöüß.,:;()\-]*', x) is not None
+                or re.fullmatch(r'[a-zäöüß]{2}', x) is not None) and '\\' not in x
+    for x in toks:
+        if x.strip() and wort(x):
+            if ''.join(cur).strip():
+                out.append('$' + ''.join(cur).strip() + '$ ')
+            cur = []
+            out.append(x + ' ')
+        elif x.strip():
+            cur.append(x + ' ')
+    if ''.join(cur).strip():
+        out.append('$' + ''.join(cur).strip() + '$')
+    return ''.join(out).strip().replace('$:', ':$').replace('$$', '')
 
 
 OP = re.compile(r'\s(:|·|-|−|\+)\s|\\cdot|\\t?frac|\^|/|\bvon\b')
@@ -1791,7 +1698,7 @@ def schwach_zeile(z, a):
         # nur ein Wert: Wort + Wert
         return (tx(wort) + ': ' if wort else '') + ' '.join(
             ([_stueck(ansatz)] + [(r'$\approx$ ' if sp in ('\\approx', '≈') else '= ') + _stueck(sg) for sg, sp in rest]))
-    if not wort:
+    if not wort and not re.search(r'(?<![\\A-Za-z])[a-z](?![A-Za-z])', ansatz.replace('cm', '').replace(' m ', ' ')):
         ps = {v for v, p, _ in zahlen(a.text) if p}
         mm = re.match(r'^\s*([\d{},.\\ ]+)\s*:\s*([\d{},.\\ ]+)\s*$', ansatz)
         q = _num(ansatz)
@@ -1824,9 +1731,22 @@ def schwach_zeile(z, a):
     return (tx(wort) + ': ' if wort else '') + _stueck(ansatz) + (r' $\Rightarrow$ ' + wert if wert else '')
 
 
+def mathe_sicher(t):
+    """Befehle, die nur im Mathemodus gehen, stehen außerhalb von $…$ (Lauf C, neue Kapitel):
+    diese Stücke in $…$ setzen. Ohne solche Stücke unverändert (Prozent byte-gleich)."""
+    teile = re.split(r'((?<!\\)\$[^$]*(?<!\\)\$)', t)
+    neu = []
+    for x in teile:
+        if x.startswith('$') or not re.search(r'\\(mathrm|bar|pm|times|mid|sqrt|cdot|t?frac|alpha|beta|gamma|delta|varepsilon|pi|approx|neq|le|ge|angle|circ|Rightarrow)(?![A-Za-z])|[_^]', x):
+            neu.append(x)
+        else:
+            neu.append(_mathe_stuecke(x) if x.strip() else x)
+    return ''.join(neu)
+
+
 def loesung_zeilen(D, a, art, kurs):
     if art == 'schwach':
-        zw = '; '.join(schwach_zeile(z, a) for z in (a.zw_roh or a.zw))
+        zw = '; '.join(mathe_sicher(schwach_zeile(z, a)) for z in (a.zw_roh or a.zw))
     else:
         zw = '; '.join(a.zw)
     f = fundstelle(D, a.id, kurs) if a.art == 'echt' else ''
@@ -2080,6 +2000,11 @@ def exakt_vor(D, a, r):
         D.n_exakt_offen += 1
         return
     prozent = '%' in rhs[zt.end():]
+    try:
+        float(w)
+    except (TypeError, ValueError):   # Ausdruck mit Variable (Lauf C, Dreiecke): kein Zahlwert
+        D.n_exakt_offen += 1
+        return
     if abs(float(w) - g) < 1e-9:
         return   # Überschlag oder glatter Wert: ≈ steht für das Schätzen, kein exakter Wert davor
     e = w / 100 if prozent else w
