@@ -228,6 +228,8 @@ def tx(s, latex=False):
             if '^' in t and not latex:
                 # a^b im Klartext (Katalog Wachstum: 1,4^24) -> Hochzahl (Lauf C)
                 t = re.sub(r'(\d+(?:,\d+)?)\^(\d+|\(?[a-z]\)?)', lambda m: '$' + m.group(1).replace(',', '{,}') + '^{' + m.group(2).strip('()') + '}$', t)
+                # Buchstabe als Basis (f(x) = b · a^x; neue Daten): ebenfalls Hochzahl
+                t = re.sub(r'(?<![\\A-Za-z])([a-zA-Z])\^(\d+|\(?[a-z]\)?)', lambda m: '$' + m.group(1) + '^{' + m.group(2).strip('()') + '}$', t)
             res.append(text_lauf_c(textteil(t, latex)))
     return ''.join(res).replace('$$', '')
 
@@ -1133,6 +1135,96 @@ def schwerste_echt(echte):
     return (max(schrittzahl(a) for a in bb), max(a.zk for a in bb), max(woerter(a) for a in bb))
 
 
+UNSICHER = re.compile(r'unsicher|\?|erschlossen', re.I)
+
+
+def kandidat(D, r, st, art, mass):
+    """Zeile aus fremd/herausgelöst als Aufgabe, wenn sie zeichenbar und nicht schwerer als die BB/BE der
+    Stufe ist (N1.2; herausgelöste aus P10 ohne Maßstab-Grenze); sonst None."""
+    n_bef = len(D.befunde)
+    try:
+        a = daten_aufgabe(D, r, st.name, art)
+    except Exception as e:   # Abbildungsbeschreibung, die das Zeichenprogramm nicht versteht: Zeile nicht setzen
+        del D.befunde[n_bef:]
+        D.fremd_ohne_bild = getattr(D, 'fremd_ohne_bild', []) + [r.get('id', '')]
+        return None
+    if (r.get('abbildung') or '').strip() and (not a.abb or len(D.befunde) > n_bef):
+        del D.befunde[n_bef:]
+        D.fremd_ohne_bild = getattr(D, 'fremd_ohne_bild', []) + [a.id]
+        return None
+    kennzahlen(D, a)
+    if a.zahlart:
+        a.zk = zahlart_wert(a.zahlart, a)
+    p10 = art == 'heraus' and a.marke_text.startswith('nach ' + D.pr['marke'])
+    if not p10:
+        if (mass and (schrittzahl(a) > mass[0] or a.zk > mass[1] or woerter(a) > mass[2])) \
+                or (not mass and schrittzahl(a) > 2):
+            D.fremd_zu_schwer = getattr(D, 'fremd_zu_schwer', 0) + 1
+            return None
+    a.unsicher = bool(UNSICHER.search(r.get('bemerkung') or ''))
+    return a
+
+
+def merkmale(a):
+    return (frozenset(sache(a)), darstellung(a), richtung(a))
+
+
+def auffuellen(D, st, echte, steckt, B):
+    """Fremde und herausgelöste Aufgaben bis zur Zielzahl der Stufe (12 Kern, 6 sonst, zusammen mit den
+    echten). Heft: leichtere fremde zuerst (N1.2), dann herausgelöste; Fokus: alle herausgelösten der
+    BB/BE-Originale stehen schon (platz_ids), fremde bis zur Zielzahl. Vielfalt vor Menge: zuerst je neue
+    Kombination aus Darstellung und Fragerichtung bzw. neue Sache, gleichartige (N1.3) gar nicht. Zeilen mit
+    „unsicher“, „?“ oder „erschlossen“ in bemerkung nur, wenn sonst die Zielzahl fehlt (gezählt)."""
+    soll = 12 if st.kern else 6
+    frei = soll - len(echte)
+    if frei <= 0:
+        return []
+    mass = schwerste_echt(echte)
+    kand = []
+    for r in D.fremd:
+        if r.get('id') not in B.benutzt and stufe_trifft(r.get('stufe'), st.name):
+            a = kandidat(D, r, st, 'fremd', mass)
+            if a:
+                kand.append((0, a))
+    if not FOKUS_LAUF:
+        for r in D.heraus:
+            if r.get('id') in B.benutzt or not stufe_trifft(r.get('stufe'), st.name):
+                continue
+            if (r.get('eltern_id') or '').strip() in steckt:
+                continue   # steht als „steckt auch in“ (N2.6)
+            a = kandidat(D, r, st, 'heraus', mass)
+            if a:
+                kand.append((1, a))
+    # leichte zuerst innerhalb der Herkunft (fremde vor herausgelösten), sichere vor unsicheren
+    kand.sort(key=lambda x: (x[1].unsicher, x[0], x[1].zk, schrittzahl(x[1]), woerter(x[1])))
+    wahl = []
+    gesehen = {merkmale(a)[1:] for a in echte}
+    for runde in (0, 1, 2):
+        for _, a in kand:
+            if len(wahl) >= frei:
+                break
+            if any(a is w for w in wahl) or (runde < 2 and a.unsicher):
+                continue
+            if any(gleichartig(a, b) for b in echte + wahl):
+                continue
+            if runde == 0 and merkmale(a)[1:] in gesehen:
+                continue   # erst neue Darstellung/Fragerichtung (Vielfalt vor Menge)
+            wahl.append(a)
+            gesehen.add(merkmale(a)[1:])
+    for a in wahl:
+        B.benutzt.add(a.id)
+        if a.art == 'fremd':
+            D.n_fremd += 1
+        else:
+            D.n_heraus += 1
+        if a.unsicher:
+            D.n_unsicher = getattr(D, 'n_unsicher', 0) + 1
+    return wahl
+
+
+FOKUS_LAUF = False
+
+
 def fremde_fuer(D, st, echte, B):
     """Fremde Aufgaben der Stufe (N1.1–2): nur, wenn BB/BE weniger als 12 (Kern) bzw. 6 echte hat; nie
     schwerer als die schwerste BB/BE-Aufgabe; höchstens bis zur Sollzahl. Ohne echte gibt es keinen
@@ -1600,6 +1692,8 @@ def baue_modell(D, args):
             if rs:
                 for r in rs:
                     a = daten_aufgabe(D, r, st.name, 'heraus'); kennzahlen(D, a)
+                    if UNSICHER.search(r.get('bemerkung') or ''):
+                        D.n_unsicher = getattr(D, 'n_unsicher', 0) + 1
                     if a.zahlart:
                         a.zk = zahlart_wert(a.zahlart, a)
                     B.benutzt.add(a.id); D.n_heraus += 1
@@ -1611,28 +1705,9 @@ def baue_modell(D, args):
                              f'Fassung fehlt in herausgeloest-p10.csv – ganz gesetzt')
                     a.hrang = 3; a.stern = stern_fuer(D, i); kennzahlen(D, a)
                     echte.append(a)
-        # Herausgelöste Aufgaben, die genau auf die Stufe passen (N1.4), ersetzen eigene – im Heft nur bei
-        # Mangel an echten (Entscheidung: sonst steht die Elternaufgabe ganz am Hauptplatz)
-        soll = 12 if st.kern else 6
-        if not args.fokus and len(echte) < soll:
-            for r in D.heraus:
-                if r.get('id') in B.benutzt or not stufe_trifft(r.get('stufe'), st.name):
-                    continue
-                if (r.get('eltern_id') or '').strip() in steckt:
-                    continue   # steht als „steckt auch in“ (N2.6)
-                a = daten_aufgabe(D, r, st.name, 'heraus'); kennzahlen(D, a)
-                if a.zahlart:
-                    a.zk = zahlart_wert(a.zahlart, a)
-                if not a.marke_text.startswith('nach ' + D.pr['marke']):
-                    # aus einer fremden Aufgabe herausgelöst: Maßstab wie fremde (N1.2)
-                    mass = schwerste_echt(echte)
-                    if not mass or schrittzahl(a) > mass[0] or a.zk > mass[1] or woerter(a) > mass[2]:
-                        D.fremd_zu_schwer = getattr(D, 'fremd_zu_schwer', 0) + 1
-                        continue
-                B.benutzt.add(a.id); D.n_heraus += 1
-                echte.append(a)
-        # fremde Aufgaben nur bei Mangel, nie schwerer als die schwerste BB/BE (N1.1–2)
-        echte += fremde_fuer(D, st, echte, B)
+        # Auffüllen bis zur Zielzahl (Endbau-Nachbesserung 2): leichtere fremde zuerst, dann herausgelöste;
+        # Vielfalt vor Menge; unsichere Zeilen nur, wenn sonst die Zielzahl fehlt
+        echte += auffuellen(D, st, echte, steckt, B)
         # Ketten und Einheiten der Stufe
         ketten, einheiten = [], set()
         for sp in st.sprossen:
@@ -3315,7 +3390,8 @@ def main():
                          'parallele Bauten mit --ohne-register, danach je Bau einmal --nur-register)')
     args = ap.parse_args()
 
-    global D_AKT
+    global D_AKT, FOKUS_LAUF
+    FOKUS_LAUF = bool(args.fokus)
     D = Daten(args.mn, args.kapitel, args.pruefung)
     D_AKT = D
     D.n_exakt_offen = 0
@@ -3354,18 +3430,28 @@ def main():
             if start >= len(folge):
                 sys.exit(f'Portion {p} ist leer – das Kapitel endet mit Portion {p - 1}')
             benutzt0 = set(B.benutzt)
-            def rb_fuer():
+            def rb_fuer(e=None):
                 B.benutzt = set(benutzt0)
-                return rueckblick(D, args, [st for st, _ in teile_aus(folge[start:ende + 1])], B)
-            ende = start + 1
-            while ende < len(folge):
-                rb = rb_fuer()
+                return rueckblick(D, args, [st for st, _ in teile_aus(folge[start:e or len(folge)])], B)
+            # Endbau-Nachbesserung 4: binäre Suche über die Blockgrenzen, höchstens 6 Kompilierungen je
+            # Portion; ende = größte Grenze, deren Satz in --seiten Seiten passt (mindestens ein Block)
+            def passt(e):
+                rb = rb_fuer(e)
                 tex, _, _ = heft_tex(D, args, f'{kap} \\textperiodcentered{{}} Portion {p}', unter, rb,
-                                     teile_aus(folge[start:ende + 1]), None)
-                if xelatex(tex, args.bb, 'probe', arbeit)['seiten'] > args.seiten:
-                    break
-                ende += 1
-            rb = rb_fuer()
+                                     teile_aus(folge[start:e]), None)
+                return xelatex(tex, args.bb, 'probe', arbeit)['seiten'] <= args.seiten
+            lo, hi, n_k = start + 1, len(folge), 0
+            if hi > lo:
+                hi = min(hi, start + 40)   # obere Schranke: 40 Blöcke je Portion (Entscheidung)
+                while lo < hi and n_k < 6:
+                    mid = (lo + hi + 1) // 2
+                    n_k += 1
+                    if passt(mid):
+                        lo = mid
+                    else:
+                        hi = mid - 1
+            ende = lo
+            rb = rb_fuer(ende)
             if p == args.portion:
                 letzte = ende >= len(folge)
                 titel = f'{kap} \\textperiodcentered{{}} Portion {p}'
@@ -3426,11 +3512,14 @@ def main():
     print(f'Aufgaben: {len(loes)}; Bankzeilen ohne Feld bild (Aufgabenbild): {D.ohne_bild} von {len(D.bank)}')
     # Nachtrag 06.10.: was an neuen Daten da war und was daraus wurde
     print('Neue Daten:', ', '.join(f'{k} {"ja" if v else "fehlt"}' for k, v in D.neu.items()))
+    zahl = Counter(a.art for _, a in loes)
+    print(f'Aufgaben nach Herkunft: echt {zahl["echt"]} · fremd {zahl["fremd"]} · herausgelöst {zahl["heraus"]} · '
+          f'eigen {zahl["bank"]} · Rückblick {zahl["zone"]} · Erkennen {zahl["erkennen"]}')
     print(f'Herkunft: fremde {D.n_fremd}, herausgelöste {D.n_heraus}, Bündel {D.n_buendel}, '
           f'eigene weg (gleichartig) {D.n_eigen_weg}, eigene über der schwersten echten weg '
           f'{getattr(D, "n_eigen_oben", 0)}, fremde zu schwer/ohne Bild {getattr(D, "fremd_zu_schwer", 0)}/'
           f'{len(getattr(D, "fremd_ohne_bild", []))}, ruhende Bankzeilen {D.n_ruht}, „steckt auch in“ '
-          f'{getattr(D, "n_steckt", 0)}, Erkennen {getattr(D, "n_erkennen", 0)}, Lösung {D.loesung_spalten}-spaltig '
+          f'{getattr(D, "n_steckt", 0)}, unsichere gesetzt {getattr(D, "n_unsicher", 0)}, Erkennen {getattr(D, "n_erkennen", 0)}, Lösung {D.loesung_spalten}-spaltig '
           f'(einspaltig {D.loesung_seiten_einspaltig} S.)')
     if seiten >= 30:
         # N2.9: keine Obergrenze; ab 30 Seiten nennt der Bau den Grund

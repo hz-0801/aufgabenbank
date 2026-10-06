@@ -367,7 +367,10 @@ def lies_jsonl(pfad):
     with open(pfad, encoding="utf-8") as f:
         for zeile in f:
             if zeile.strip():
-                aus.append(json.loads(zeile))
+                r = json.loads(zeile)
+                if r.get("ruht"):
+                    continue   # stillgelegte Kopie (Feld ruht, Nachtrag 06.10. N1.3): nie auswählen
+                aus.append(r)
     return aus
 
 
