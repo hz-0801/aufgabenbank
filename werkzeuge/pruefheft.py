@@ -3932,6 +3932,9 @@ def main():
     if args.fokus:
         name += f'-fokus-{args.fokus.lower()}'
         titel = kopfname(stufen[0])
+        if D.sb and len([s for s in stufen if s.gruppen]) > 1:
+            # mehrere Stufen: Name aus dem Steckbrief-Titel ohne „Steckbrief“ und Klammer (Entscheidung)
+            titel = tx(re.sub(r'^Steckbrief\s+|\s*\(.*$', '', D.sb['titel'])) or titel
         rb = rueckblick(D, args, stufen, B)
         ueb = anhang(D, args, stufen, B, titel, unter, teile_aus(folge), arbeit)
         schl = zum_schluss(D, args, stufen, B, [z['stufe'] for z in D.zu])
