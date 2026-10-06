@@ -32,10 +32,10 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Volumen direkt | 28 | Vergleich | 2 | 2 | 1 | 3 | 2023-OS-K5b | Eine Konservendose hat die Form eines Zylinders mit dem Radi |
 | Volumen direkt | 29 | Schluss | 2 | 2 | 1 | 3 | 2021-OS-K4a | Herr Gärtner stellt eine Regentonne in Form eines Zylinders  |
 | Netz erkennen | 30 | Vorstufe | 1 | 1 | 1 | 0 | eigene | Ein Zelt hat die Form im Bild. Kreuze an, welcher Körper es  |
-| Netz erkennen | 31 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene | Ein Kegel hat den Radius 3 cm und die Mantellinie 8 cm. Sein |
-| Netz erkennen | 32 | rechnen | 1 | 1 | 1 | 1 | eigene | Ein Schuhkarton hat die Form im Bild. Wie heißt dieser Körpe |
-| Netz erkennen | 33 | Ankreuzen | 1 | 1 | 1 | 2 | eigene | Das Bild zeigt ein Netz. Kann man daraus einen Würfel falten |
-| Netz erkennen | 34 | rechnen | 1 | 1 | 1 | 2 | eigene | Aus dem Netz im Bild wird ein Würfel gefaltet. Welche Fläche |
+| Netz erkennen | 31 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene | Aus dem Netz im Bild wird ein Spielwürfel gebastelt. Auf ein |
+| Netz erkennen | 32 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene | Ein Kegel hat den Radius 3 cm und die Mantellinie 8 cm. Sein |
+| Netz erkennen | 33 | rechnen | 1 | 1 | 1 | 1 | eigene | Ein Schuhkarton hat die Form im Bild. Wie heißt dieser Körpe |
+| Netz erkennen | 34 | Ankreuzen | 1 | 1 | 1 | 2 | eigene | Das Bild zeigt ein Netz. Kann man daraus einen Würfel falten |
 | Netz erkennen | 35 | Ankreuzen | 1 | 1 | 1 | 3 | 2017-OS-B1c | Die Abbildung zeigt einen Körper im Schrägbild. Kreuze an, w |
 | Netz erkennen | 36 | Ankreuzen | 1 | 1 | 1 | 3 | 2018-OS-B1i | Kreuze an, welcher Körper zu dem abgebildeten Netz gehört: |
 | Netz erkennen | 37 | Sachaufgabe | 1 | 1 | 1 | 3 | 2016-OS-B1j | Aus dem abgebildeten Netz wird ein Würfel gefaltet. Nach dem |

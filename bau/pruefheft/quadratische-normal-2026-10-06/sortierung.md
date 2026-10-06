@@ -15,7 +15,7 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Scheitelpunktform angeben | 13 | rechnen | 0 | 1 | 1 | 2 | eigene | Eine Normalparabel ist nach oben geöffnet. Ihr Scheitel ist  |
 | Scheitelpunktform angeben | 14 | Ankreuzen | 0 | 1 | 1 | 3 | 2016-OS-B1g | Der Scheitelpunkt einer verschobenen Normalparabel ist S(1/3 |
 | Scheitelpunktform angeben | 15 | Sachaufgabe | 0 | 1 | 1 | 3 | fremd BW-WRS-2023-A1-8 | Eine Parabel ist gegenüber der Normalparabel um 2 nach unten |
-| Scheitelpunktform angeben | 16 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene | Die Parabel f(x) = (x - 1)^2 + 2 wird um 4 nach unten versch |
+| Scheitelpunktform angeben | 16 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene | Die Parabel f(x) = (x - 4)^2 + 2 wird an der y-Achse gespieg |
 | Scheitelpunktform angeben | 17 | Sachaufgabe | 0 | 1 | 1 | 3 | 2015-OS-B1i | Die gezeichnete Normalparabel wird um 2 Einheiten nach recht |
 | Scheitelpunktform angeben | 18 | Sachaufgabe | 0 | 1 | 1 | 3 | 2018-OS-K5c | Im Koordinatensystem ist die Parabel p mit p(x) = x^2 - 4x + |
 | Scheitelpunktform angeben | 19 | Sachaufgabe | 0 | 1 | 1 | 3 | 2020-OS-K3d | Die Parabel zu f mit y = (x+2)^2 - 4 ist im Koordinatensyste |

@@ -22,10 +22,10 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Grundfigur berechnen | 19 | rechnen | 0 | 1 | 1 | 1 | eigene | Ein Parallelogramm hat die Grundseite g = 9 cm und die Höhe  |
 | Grundfigur berechnen | 20 | Sachaufgabe | 0 | 1 | 1 | 1 | eigene | Ein Trapez hat die parallelen Seiten a = 9 cm und c = 5 cm.  |
 | Grundfigur berechnen | 21 | rechnen | 0 | 1 | 1 | 2 | eigene | Ein Drachenviereck hat die Diagonalen e = 7 cm und f = 6 cm. |
-| Grundfigur berechnen | 22 | Sachaufgabe | 0 | 1 | 1 | 3 | 2025-OS-K2b | Ein Drachenviereck ABCD (A links, D oben, C rechts, B unten) |
-| Grundfigur berechnen | 23 | Sachaufgabe | 0 | 2 | 1 | 3 | fremd BY-JST6-2025-18 | Von vier Vierecken sind Umfang und Flächeninhalt bekannt: (1 |
-| Grundfigur berechnen | 24 | Sachaufgabe | 0 | 2 | 3 | 3 | fremd BW-WRS-2021-A2-7 | Trage A(-3 / 3), B(3 / -4) und C(1 / 3) ein (1 LE = 1 cm) un |
-| Grundfigur berechnen | 25 | rechnen | 1 | 1 | 1 | 2 | eigene | Die Figur zeigt ein rechtwinkliges Dreieck. Berechne die Flä |
+| Grundfigur berechnen | 22 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene | Die Figur zeigt ein stumpfwinkliges Dreieck mit der Grundsei |
+| Grundfigur berechnen | 23 | Sachaufgabe | 0 | 1 | 1 | 3 | 2025-OS-K2b | Ein Drachenviereck ABCD (A links, D oben, C rechts, B unten) |
+| Grundfigur berechnen | 24 | Sachaufgabe | 0 | 2 | 1 | 3 | fremd BY-JST6-2025-18 | Von vier Vierecken sind Umfang und Flächeninhalt bekannt: (1 |
+| Grundfigur berechnen | 25 | Sachaufgabe | 0 | 2 | 3 | 3 | fremd BW-WRS-2021-A2-7 | Trage A(-3 / 3), B(3 / -4) und C(1 / 3) ein (1 LE = 1 cm) un |
 | Grundfigur berechnen | 26 | rechnen | 1 | 1 | 1 | 3 | 2026-FOR-B1h | Ein Rechteck ist a = 3,5 cm lang und b = 1,5 cm breit. Gib s |
 | Grundfigur berechnen | 27 | Sachaufgabe | 2 | 1 | 1 | 3 | 2024-OS-K4a | Eine Firma stellt Kegel mit dem Radius r = 30 cm und der Höh |
 | Grundfigur berechnen | 28 | Sachaufgabe | 2 | 1 | 2 | 3 | fremd NI-HS10G-2024-A5b | Klara will den Rand einer Schultüte (Kreis, r = 12 cm) mit e |
@@ -37,10 +37,10 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Grundfigur berechnen | 34 | Vergleich | 2 | 3 | 1 | 3 | 2015-OS-K6c | Mia baut das Modell einer Pyramide mit quadratischer Grundfl |
 | Grundfigur berechnen | 35 | Schluss | 2 | 5 | 2 | 3 | 2019-OS-K4c | Auf einem Mast sitzt ein Prisma, dessen Grund- und Deckfläch |
 | rückwärts: Seite aus Fläche | 36 | rechnen | 0 | 1 | 1 | 2 | eigene | Ein Quadrat hat die Fläche A = 64 cm². Wie lang ist eine Sei |
-| rückwärts: Seite aus Fläche | 37 | rechnen | 0 | 1 | 1 | 2 | eigene | Eine Raute hat die Fläche A = 54 m². Eine Diagonale ist e =  |
-| rückwärts: Seite aus Fläche | 38 | rechnen | 0 | 1 | 1 | 3 | 2020-OS-B1d | Ein Quadrat hat den Flächeninhalt 36 cm². Gib seine Seitenlä |
-| rückwärts: Seite aus Fläche | 39 | rechnen | 0 | 1 | 1 | 3 | 2023-OS-B1c | Ein Rechteck ist 400 mm breit und hat den Flächeninhalt 42 0 |
-| rückwärts: Seite aus Fläche | 40 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene | Ein Parallelogramm hat die Fläche A = 63 cm² und die Grundse |
+| rückwärts: Seite aus Fläche | 37 | rechnen | 0 | 1 | 1 | 2 | eigene | Ein Dreieck hat die Fläche A = 26 cm² und die Höhe h = 4 cm. |
+| rückwärts: Seite aus Fläche | 38 | rechnen | 0 | 1 | 1 | 2 | eigene | Eine Raute hat die Fläche A = 54 m². Eine Diagonale ist e =  |
+| rückwärts: Seite aus Fläche | 39 | rechnen | 0 | 1 | 1 | 3 | 2020-OS-B1d | Ein Quadrat hat den Flächeninhalt 36 cm². Gib seine Seitenlä |
+| rückwärts: Seite aus Fläche | 40 | rechnen | 0 | 1 | 1 | 3 | 2023-OS-B1c | Ein Rechteck ist 400 mm breit und hat den Flächeninhalt 42 0 |
 | rückwärts: Seite aus Fläche | 41 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene | Ein Trapez hat die Fläche A = 42 cm². Die parallelen Seiten  |
 | rückwärts: Seite aus Fläche | 42 | rechnen | 0 | 2 | 1 | 3 | 2018-OS-B1f | Ein Rechteck hat den Umfang u = 26 cm; die Seite a ist 8 cm  |
 | rückwärts: Seite aus Fläche | 43 | Sachaufgabe | 0 | 2 | 1 | 3 | 2020-OS-K7b | Im Dreieck ABC ist bei C ein rechter Winkel; BC ist 12 m und |
@@ -48,8 +48,8 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | rückwärts: Seite aus Fläche | 45 | Schluss | 1 | 2 | 1 | 3 | 2014-OS-K5c | Für ein Café wird eine Kühlvitrine in Form eines Prismas geb |
 | Figur erst zerlegen oder Strecke erst berechnen | 46 | Vorstufe | 1 | 1 | 1 | 0 | eigene | Die Figur zeigt ein Viereck. Schreibe auf, in welche einfach |
 | Figur erst zerlegen oder Strecke erst berechnen | 47 | Vorstufe | 1 | 1 | 1 | 0 | eigene | Im Bild ist ein Teil des Kreises grau. Kreuze an, welcher Te |
-| Figur erst zerlegen oder Strecke erst berechnen | 48 | Sachaufgabe | 0 | 1 | 1 | 1 | eigene | Ein Beet hat die Form eines L. Es besteht aus zwei Rechtecke |
-| Figur erst zerlegen oder Strecke erst berechnen | 49 | Sachaufgabe | 0 | 1 | 2 | 1 | eigene | Ein Kreisausschnitt hat den Mittelpunktswinkel = 90^ . Welch |
+| Figur erst zerlegen oder Strecke erst berechnen | 48 | Sachaufgabe | 0 | 1 | 2 | 1 | eigene | Ein Kreisausschnitt hat den Mittelpunktswinkel = 90^ . Welch |
+| Figur erst zerlegen oder Strecke erst berechnen | 49 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene | Ein Raum hat die Form eines L. Er besteht aus zwei Rechtecke |
 | Figur erst zerlegen oder Strecke erst berechnen | 50 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene | Eine Holzplatte hat die Seiten 70 cm und 45 cm. Aus ihr wird |
 | Figur erst zerlegen oder Strecke erst berechnen | 51 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene | Ein Rechteck hat die Seiten 11 m und 6 m. An einer Ecke fehl |
 | Figur erst zerlegen oder Strecke erst berechnen | 52 | Sachaufgabe | 0 | 1 | 1 | 3 | 2017-OS-K3a | Familie Sommer hat einen Swimmingpool gebaut. Seine Grundflä |
@@ -76,7 +76,7 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Nr. | Aufgabe | gebraucht ab Nr. |
 |---|---|---|
 | 1 | Schreib kürzer: a + a + a; a · a; 2 · a + 2 · b. | 12 |
-| 2 | Ergänze die Tabelle Figur / Formel. | 22 |
+| 2 | Ergänze die Tabelle Figur / Formel. | 23 |
 | 3 | Zwei Halbkreise mit 5 m Durchmesser ergeben zusammen einen K | 52 |
 
 ## Prüfung

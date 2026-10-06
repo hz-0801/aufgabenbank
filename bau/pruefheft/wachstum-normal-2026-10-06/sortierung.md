@@ -59,8 +59,9 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Faktor bestimmen, Gleichung aufstellen | 56 | Schluss | 2 | 4 | 2 | 3 | 2025-OS-K7b | Man beobachtet einen Bakterienstamm, der exponentiell wächst |
 | Graph zuordnen und begründen | 57 | Vorstufe | 1 | 1 | 1 | 0 | eigene | Sieh dir im Koordinatensystem den Graphen f an. Kreuze an, b |
 | Graph zuordnen und begründen | 58 | Ankreuzen | 0 | 1 | 1 | 2 | eigene | Eine Tasse Tee kühlt ab. Der Tee ist wärmer als die Luft im  |
-| Graph zuordnen und begründen | 59 | Ankreuzen | 0 | 1 | 1 | 2 | eigene | In einem Wasserbecken sind 300 Liter. Jede Minute fließen 60 |
-| Graph zuordnen und begründen | 60 | Schluss | 0 | 1 | 1 | 3 | 2019-OS-K7c | Ein Ferkel wiegt 10 kg. Aus Erfahrung weiß man, dass seine M |
+| Graph zuordnen und begründen | 59 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene | Ein Pilz bedeckt am Anfang eine Fläche von 100 cm^2. Die Flä |
+| Graph zuordnen und begründen | 60 | Ankreuzen | 0 | 1 | 1 | 2 | eigene | In einem Wasserbecken sind 300 Liter. Jede Minute fließen 60 |
+| Graph zuordnen und begründen | 61 | Schluss | 0 | 1 | 1 | 3 | 2019-OS-K7c | Ein Ferkel wiegt 10 kg. Aus Erfahrung weiß man, dass seine M |
 
 ## Rückblick: gebraucht ab
 

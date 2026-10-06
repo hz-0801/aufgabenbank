@@ -1085,7 +1085,8 @@ STOPP = set("""Prozent Prozentsatz Prozentwert Grundwert Menge Ganze Ganzen Ganz
 Tabelle Streifen Rechne Berechne Bestimme Gib Wie Was Kreuze Trage Ermittle Begründe Prüfe Entscheide Schreibe
 Runde Teil Teile Wert Werte Anteil Lösung Euro Stelle Stellen Rechnung Graph Funktion Gleichung Term
 Abschnitt Ende Nachkommastelle Dezimalzahl Bruch Ist Sind Das Die Der Ein Eine Er Sie Es Im In Am Von Um Auf
-Mit Zu Bei Nach Für Wenn Dann Hier Rechnet Erkläre Markiere Kästchen""".split())
+Mit Zu Bei Nach Für Wenn Dann Hier Rechnet Erkläre Markiere Kästchen
+Strecke Betrag Betrags Größe Länge Masse Gewicht Zahlenwert Anzahl Teils Mengen Strecken""".split())   # Einheit/Größe ist keine Sache
 
 
 def sache(a):
@@ -1107,6 +1108,11 @@ def gleichartig(a, b):
     if difflib.SequenceMatcher(None, gerippe(a), gerippe(b)).ratio() >= 0.85:
         return True
     sa, sb = sache(a), sache(b)
+    if a.art == 'bank' and b.art == 'bank' and not sa and not sb:
+        # zwei eigene ohne Sache („9 % einer Menge sind 63 kg“, „64 % einer Strecke sind 52 m“): verschieden
+        # nur in Zahl und Einheit – eine Einheit ist keine Sache (Sichtprüfung Fokus 06.10.)
+        D_AKT.n_ohne_sache = getattr(D_AKT, 'n_ohne_sache', 0) + 1
+        return True
     return bool(sa and sb) and 2 * len(sa & sb) >= min(len(sa), len(sb))
 
 
@@ -1115,10 +1121,14 @@ def eigene_sparsam(D, aufg):
     eigenen in Sache, Darstellung und Fragerichtung gleicht, fällt weg; Leiterplätze (fest) bleiben."""
     halten = [a for a in aufg if a.art in ('echt', 'fremd', 'heraus', 'zone', 'erkennen') or a.fest]
     eigene = []
-    for a in aufg:
+    # je Gruppe gleichartiger bleibt die leichteste (passt unten in die Leiter; Entscheidung)
+    for a in sorted(aufg, key=lambda x: (getattr(x, 'zk', 0), schrittzahl(x), getattr(x, 'tl', 0), x.id)):
         if any(a is h for h in halten):
             continue
+        n0 = getattr(D, 'n_ohne_sache', 0)
         if any(gleichartig(a, b) for b in halten + eigene):
+            if getattr(D, 'n_ohne_sache', 0) > n0:
+                D.n_ohne_sache_weg = getattr(D, 'n_ohne_sache_weg', 0) + 1
             D.n_eigen_weg += 1
             D.eigen_weg = getattr(D, 'eigen_weg', []) + [a.id]
             continue
@@ -3560,7 +3570,7 @@ def main():
           f'eigene weg (gleichartig) {D.n_eigen_weg}, eigene über der schwersten echten weg '
           f'{getattr(D, "n_eigen_oben", 0)}, fremde zu schwer/ohne Bild {getattr(D, "fremd_zu_schwer", 0)}/'
           f'{len(getattr(D, "fremd_ohne_bild", []))}, ruhende Bankzeilen {D.n_ruht}, „steckt auch in“ '
-          f'{getattr(D, "n_steckt", 0)}, zweischrittig erkannt {getattr(D, "n_zweischritt", 0)}, unsichere gesetzt {getattr(D, "n_unsicher", 0)}, Erkennen {getattr(D, "n_erkennen", 0)}, Lösung {D.loesung_spalten}-spaltig '
+          f'{getattr(D, "n_steckt", 0)}, eigene ohne Sache weg {getattr(D, "n_ohne_sache_weg", 0)}, zweischrittig erkannt {getattr(D, "n_zweischritt", 0)}, unsichere gesetzt {getattr(D, "n_unsicher", 0)}, Erkennen {getattr(D, "n_erkennen", 0)}, Lösung {D.loesung_spalten}-spaltig '
           f'(einspaltig {D.loesung_seiten_einspaltig} S.)')
     if seiten >= 30:
         # N2.9: keine Obergrenze; ab 30 Seiten nennt der Bau den Grund

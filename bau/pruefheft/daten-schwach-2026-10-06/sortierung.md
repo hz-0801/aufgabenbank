@@ -93,9 +93,9 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | aus Prozent darstellen | 92 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene | Ein Kiosk verkauft Eis: im Juni Vanille 40%, Schoko 35%, Erd |
 | aus Prozent darstellen | 93 | Sachaufgabe | 1 | 2 | 1 | 3 | fremd NI-HS9E-2024-W1a | In Deutschland haben 41 % Blutgruppe 0, 43 % Blutgruppe A un |
 | aus Prozent darstellen | 94 | Schluss | 2 | 3 | 1 | 3 | 2025-OS-K6b | In derselben Kita arbeiten 11 Erziehende. Sie sind so alt (i |
-| falschen Eindruck erklären | 95 | Sachaufgabe | 0 | 1 | 1 | 3 | eigene | Ein Diagramm zeigt die Temperatur an vier Tagen. Die y-Achse |
-| falschen Eindruck erklären | 96 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene | Zwei Diagramme zeigen dieselben Werte 84, 86 und 88. Im erst |
-| falschen Eindruck erklären | 97 | Vergleich | 0 | 1 | 1 | 2 | eigene | Die y-Achse beginnt bei 90. Die Werte sind 92 und 96. Tim sa |
+| falschen Eindruck erklären | 95 | Vergleich | 0 | 1 | 1 | 2 | eigene | Erkläre, warum die y-Achse eines Säulendiagramms bei 0 begin |
+| falschen Eindruck erklären | 96 | Sachaufgabe | 0 | 1 | 1 | 3 | eigene | Ein Diagramm zeigt die Temperatur an vier Tagen. Die y-Achse |
+| falschen Eindruck erklären | 97 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene | Zwei Diagramme zeigen dieselben Werte 84, 86 und 88. Im erst |
 | falschen Eindruck erklären | 98 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene | Ein Diagramm zeigt die Werte 1020, 1040 und 1060. Seine Achs |
 | falschen Eindruck erklären | 99 | Schluss | 2 | 1 | 1 | 3 | 2014-OS-K3d | Eine andere Bank zahlt nur 0,25 % Zinsen im Jahr. Für ihre W |
 

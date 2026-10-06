@@ -25,7 +25,7 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | durch zwei Punkte, Gleichung ablesen | 24 | rechnen | 0 | 1 | 1 | 2 | herausgelöst BW-WRS-2024-B1b-h1 | Eine lineare Funktion geht durch (0 / 1) und (1 / 4). Bestim |
 | durch zwei Punkte, Gleichung ablesen | 25 | rechnen | 0 | 1 | 1 | 3 | fremd HH-MSA-2026-B5-4 | Die Gerade g geht durch A(3 / 4) und B(2 / 1). Ermittle ihre |
 | durch zwei Punkte, Gleichung ablesen | 26 | rechnen | 0 | 1 | 1 | 3 | fremd NRW-ABS-2023-F6 | Eine Gerade hat die Steigung m = 3 und geht durch P(2 / 6).  |
-| durch zwei Punkte, Gleichung ablesen | 27 | rechnen | 1 | 1 | 1 | 1 | eigene | Das Koordinatensystem zeigt die Gerade g. Bestimme die Gleic |
+| durch zwei Punkte, Gleichung ablesen | 27 | Sachaufgabe | 0 | 1 | 2 | 2 | eigene | Trage die Punkte A(-3/-1) und B(2/4) in das Koordinatensyste |
 | durch zwei Punkte, Gleichung ablesen | 28 | Sachaufgabe | 0 | 3 | 1 | 3 | 2017-OS-K5a | Eine Gerade g geht durch die Punkte K(-4/-1) und L(2/2). Zei |
 | durch zwei Punkte, Gleichung ablesen | 29 | Sachaufgabe | 0 | 3 | 1 | 3 | 2015-OS-K4d | Lena springt mit dem Fallschirm aus einem Flugzeug. Ihre Höh |
 | durch zwei Punkte, Gleichung ablesen | 30 | rechnen | 1 | 2 | 1 | 3 | fremd NRW-MSA-2021-V1-4b | Gib eine lineare Gleichung an, die zur Wertetabelle passt. |
