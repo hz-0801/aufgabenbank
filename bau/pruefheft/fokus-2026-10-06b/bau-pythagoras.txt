@@ -1,0 +1,29 @@
+Sortierung: keine Abweichung
+dreiecke-normal-fokus-pythagoras: 11 Seiten, Fehler 0, Missing character 0, Overfull 0
+dreiecke-normal-fokus-pythagoras-loesung: 3 Seiten, Fehler 0, Missing character 0, Overfull 0
+Ordner: bau/pruefheft/fokus-2026-10-06b/dreiecke-normal-fokus-pythagoras
+Stufen: Kathete oder Hypotenuse direkt, Gleichung aufstellen, Dreieck erst in Figur oder Körper finden
+Aufgaben: 39; Bankzeilen ohne Feld bild (Aufgabenbild): 1114 von 1114
+Neue Daten: handgriffe-p10.csv ja, herausgeloest-p10.csv ja, rueckblick-p10.csv ja, erkennen-p10.csv ja, fremd/*.csv ja
+Aufgaben nach Herkunft: echt 17 · fremd 1 · herausgelöst 9 · eigen 10 · Rückblick 2 · Erkennen 0
+Herkunft: fremde 1, herausgelöste 9, Bündel 2, eigene weg (gleichartig) 71, eigene über der schwersten echten weg 0, fremde zu schwer/ohne Bild 6/22, ruhende Bankzeilen 4, „steckt auch in“ 0, eigene ohne Sache weg 0, zweischrittig erkannt 0, unsichere gesetzt 0, Erkennen 0, Lösung 1-spaltig (einspaltig 3 S.)
+Mehr zum Üben: aus (nur auf Zuruf --uebung)
+Sprünge 2, davon ohne Füller 0; eigene ohne Sprung weg 49
+Steckbrief: katalog/steckbrief/pythagoras-seite.md – Verständnis 2, Leiter 7, Merkkasten ja, typische Fehler in der Lösung
+Datenbefunde:
+ - Steckbrief: Schätzfrage ohne Zahlen, Vorschläge oder Lösung – keine Schätzaufgabe gesetzt
+ - 2019-GYM-K3b: fehlt im Wortlaut oder Katalog – nicht gesetzt
+ - 2020-GYM-B1a: fehlt im Wortlaut oder Katalog – nicht gesetzt
+ - 2022-GYM-K5a: fehlt im Wortlaut oder Katalog – nicht gesetzt
+ - 2023-GYM-K6a: fehlt im Wortlaut oder Katalog – nicht gesetzt
+ - 2026-EBR-K3a: fehlt im Wortlaut oder Katalog – nicht gesetzt
+ - 2017-GYM-B1d: fehlt im Wortlaut oder Katalog – nicht gesetzt
+ - 2026-EBR-B1j: fehlt im Wortlaut oder Katalog – nicht gesetzt
+ - 2017-GYM-K2d: fehlt im Wortlaut oder Katalog – nicht gesetzt
+ - 2018-GYM-K2e: fehlt im Wortlaut oder Katalog – nicht gesetzt
+ - 2022-GYM-K4b: fehlt im Wortlaut oder Katalog – nicht gesetzt
+ - 2023-GYM-B2b: fehlt im Wortlaut oder Katalog – nicht gesetzt
+ - Rückblick: „Hypotenuse erkennen“ ist keine Voraussetzung im Steckbrief – weggelassen
+ - Rückblick: Voraussetzung „Quadratzahlen bis 20² im Kopf“ (Steckbrief) hat keine Rückblick-Zeile
+ - Rückblick: Voraussetzung „cm und m angleichen.“ (Steckbrief) hat keine Rückblick-Zeile
+ - Zum Schluss: keine Stufe vor dem Fokus im Kapitel – keine ältere Aufgabe
