@@ -132,6 +132,63 @@ def abi_tx(s):
     return tx(out).replace('$$', '')
 
 
+SUPZ = {'⁰': '0', '¹': '1', '²': '2', '³': '3', '⁴': '4', '⁵': '5', '⁶': '6', '⁷': '7', '⁸': '8', '⁹': '9'}
+
+
+def abi_formel(s):
+    """Klartext-Formel (Katalog) ganz im Mathesatz (Lauf B3): f'(x) = 3x² − 24x + 45 ->
+    $f'(x) = 3x^{2} - 24x + 45$. Nur für Zeilen ohne deutsches Wort; sonst abi_tx."""
+    t = s.strip().replace('′', "'").replace('″', "''").replace('⇔', '⇒')
+    if re.search(r'[A-Za-zÄÖÜäöüß]{3,}', re.sub(r'\b(exp|sin|cos|tan|ln)\b', '', t)):
+        return abi_tx(s)
+    t = re.sub(r'([⁰¹²³⁴⁵⁶⁷⁸⁹]+)', lambda m: '^{' + ''.join(SUPZ[c] for c in m.group(1)) + '}', t)
+    def hoch(t):
+        out, i = '', 0
+        while i < len(t):
+            if t[i] in '^√' and i + 1 < len(t) and t[i + 1] == '(':
+                j = _klammer_ende(t, i + 1)
+                inner = hoch(t[i + 2:j])
+                out += ('^{' + inner + '}') if t[i] == '^' else ('\\sqrt{' + inner + '}')
+                i = j + 1
+                continue
+            if t[i] == '√':
+                m = re.match(r'[\d,]+|[a-z]', t[i + 1:])
+                w = m.group(0) if m else ''
+                out += '\\sqrt{' + w + '}'
+                i += 1 + len(w)
+                continue
+            out += t[i]
+            i += 1
+        return out
+    t = hoch(t)
+    t = re.sub(r'(?<![\d{])(\d+)/(\d+)(?![\d}])', r'\\tfrac{\1}{\2}', t)
+    t = re.sub(r'(?<=\d),(?=\d)', '{,}', t)
+    for k, v in (('−', '-'), ('·', '\\cdot '), ('×', '\\times '), ('⇒', '\\Rightarrow '), ('≈', '\\approx '),
+                 ('∞', '\\infty '), ('≠', '\\neq '), ('≤', '\\le '), ('≥', '\\ge '), ('±', '\\pm '),
+                 ('π', '\\pi '), ('→', '\\to '), ('°', '^\\circ ')):
+        t = t.replace(k, v)
+    t = t.replace('|', '\\mid ').replace(';', ';\\ ')
+    return '$' + t + '$'
+
+
+def abi_zw(z, kurz=''):
+    """Rechte Spalte der Lösung im Abitur (Lösungsblatt 05.10.; Lauf B3): je Handgriff ein kurzes
+    Zwischenergebnis „Ansatz ⇒ Ergebnis“. Erklär-Etiketten („ersten Faktor null setzen:“) fallen weg,
+    „, also“ wird ⇒; Einträge ohne Wert (nur „f′(x)“, „x“, „positiv“) und Wiederholungen des
+    Ergebnisses fallen weg. Rückgabe Klartext/LaTeX oder ''."""
+    t = z.strip()
+    t = re.sub(r'^[A-Za-zÄÖÜäöüß][A-Za-zÄÖÜäöüß ,()]{2,40}:\s+', '', t)   # Etikett vorn
+    t = re.sub(r'^[A-Za-zÄÖÜäöüß]+ (\$[^$]*\$):\s+', '', t)   # „Bedingung $f(x) = 0$: …“ -> der Ansatz danach
+    t = re.sub(r'(\$?),?\s*also\s*', r'\1 ⇒ ', t).replace('$ ⇒ $', ' \\Rightarrow ')
+    t = t.replace(' ⇒ ', ' $\\Rightarrow$ ') if '$' in t else t
+    kl = klartext(t)
+    if not re.search(r'=|⇒|Rightarrow|≈|approx|<|>', t) or not re.search(r'\d', kl):
+        return ''
+    if kurz and klartext(kurz).replace(' ', '') in kl.replace(' ', '') and len(kl) < len(klartext(kurz)) + 6:
+        return ''
+    return t
+
+
 def tx(s, latex=False):
     """Klartext (latex=False) oder Bank-LaTeX (latex=True) -> sicherer LaTeX-Text."""
     if not s:
@@ -358,6 +415,102 @@ def abb_saeulenraster(desc):
     return ''.join(out)
 
 
+def _pgf(term):
+    """Term der Wortlaut-CSV (Python-Schreibweise) -> pgfplots-Ausdruck."""
+    t = term.replace('**', '^').replace('e', 'EULER').replace('EULERxp', 'exp').replace('dEULERg', 'deg')
+    t = re.sub(r'(?<![a-z])EULER(?![a-z])', '2.718281828', t)
+    return t
+
+
+def _ist_term(t):
+    return re.search(r'\bx\b|exp|sin', t) is not None
+
+
+def abb_graph_term(d, D, iid):
+    """Abbildungstyp „Graph: <Name>: <Term> [für a..b] [gestrichelt]; …; x a..b; y c..d; Gitter ja|nein
+    [; Linie (x|y)-(x|y)…] [; Bogen (x|y) r w1..w2] [; Kreis (x|y) r] [; Achsen t | h(t)] [; Marken pi]“
+    (Lauf B3): gezeichnet mit pgfplots aus dem Term."""
+    teile = [t.strip() for t in d.split(':', 1)[1].split(';')]
+    kurven, opt = [], {}
+    for t in teile:
+        m = re.match(r'^x (-?[\d.]+)\.\.(-?[\d.]+)$', t) or re.match(r'^y (-?[\d.]+)\.\.(-?[\d.]+)$', t)
+        if m:
+            opt[t[0]] = (float(m.group(1)), float(m.group(2)))
+            continue
+        if t.startswith('Gitter'):
+            opt['gitter'] = t.endswith('ja'); continue
+        if t.startswith(('Linie', 'Bogen', 'Kreis', 'Achsen', 'Marken')):
+            opt.setdefault('extra', []).append(t); continue
+        m = re.match(r'^(?:(.+?):\s*)?(.+?)(?:\s+für (-?[\d.]+)\.\.(-?[\d.]+))?(\s+gestrichelt)?$', t)
+        if m and _ist_term(m.group(2)):
+            name = m.group(1) or (kurven[-1][0] if kurven else '')
+            kurven.append((name if m.group(1) else '', m.group(2), m.group(3), m.group(4), bool(m.group(5))))
+    if not kurven or 'x' not in opt or 'y' not in opt:
+        return None
+    (x0, x1), (y0, y1) = opt['x'], opt['y']
+    xl, yl = 'x', 'y'
+    for e in opt.get('extra', []):
+        if e.startswith('Achsen'):
+            xl, yl = [z.strip() for z in e[6:].split('|')]
+    ax = [f'xmin={x0},xmax={x1},ymin={y0},ymax={y1}', 'axis lines=middle', 'width=11cm', 'height=7cm',
+          f'xlabel={{${xl}$}}', f'ylabel={{${yl}$}}', 'tick label style={font=\\scriptsize}',
+          'samples=160', 'clip=true', 'every axis plot/.append style={line width=0.9pt}',
+          '/pgf/number format/use comma']
+    if opt.get('gitter'):
+        ax += ['grid=both', 'grid style={mbgitter}', 'minor tick num=1']
+    if any(e.startswith(('Kreis', 'Bogen')) for e in opt.get('extra', [])):
+        ax = [x for x in ax if not x.startswith('height')] + ['axis equal image']   # Kreis bleibt rund
+    if any('Marken pi' in e for e in opt.get('extra', [])):
+        ax += ['xtick={1.5708,3.1416,4.7124,6.2832,7.854,9.4248}',
+               'xticklabels={$\\frac{\\pi}{2}$,$\\pi$,$\\frac{3\\pi}{2}$,$2\\pi$,$\\frac{5\\pi}{2}$,$3\\pi$}']
+    out = [r'\begin{tikzpicture}\begin{axis}[' + ','.join(ax) + ']']
+    beschriftet = set()
+    for name, term, a, b, gestr in kurven:
+        dom = f'domain={a}:{b}' if a else f'domain={x0}:{x1}'
+        stil = 'black' + (',dashed' if gestr else '')
+        out.append(r'\addplot[%s,%s] {%s};' % (stil, dom, _pgf(term)))
+        if name and name not in beschriftet:
+            beschriftet.add(name)
+            # Beschriftung an einer Stelle, an der die Kurve im Fenster liegt (von rechts gesucht)
+            import math
+            pyt = term.replace('^', '**').replace('deg(x)', 'x')
+            lo, hi = (float(a), float(b)) if a else (x0, x1)
+            xb = None
+            for k in range(40):
+                xt = hi - (hi - lo) * (0.12 + 0.02 * k)
+                try:
+                    yt = eval(pyt, {'x': xt, 'exp': math.exp, 'sin': math.sin, 'e': math.e})
+                except Exception:
+                    continue
+                if y0 + 0.08 * (y1 - y0) < yt < y1 - 0.15 * (y1 - y0):
+                    xb = xt
+                    break
+            if xb is None:
+                xb = lo + 0.5 * (hi - lo)
+            lab = name.replace('G_', 'G_').replace("'", "'")
+            lab = re.sub(r'^G_(\w)$', r'G_\1', lab)
+            lab = '$' + lab + '$' if re.fullmatch(r"[A-Za-z_' ]{1,5}|I+", lab) else tx(lab)
+            out.append(r'\node[font=\small,fill=white,inner sep=1pt,anchor=south west] at (axis cs:%s,{%s}) {%s};'
+                       % (xb, _pgf(term).replace('x', '(%s)' % xb).replace('e(%s)p' % xb, 'exp'), lab))
+    for e in opt.get('extra', []):
+        if e.startswith('Linie'):
+            pts = re.findall(r'\((-?[\d.]+)\|(-?[\d.]+)\)', e)
+            out.append(r'\draw[black] ' + ' -- '.join(f'(axis cs:{x},{y})' for x, y in pts) + ';')
+        elif e.startswith('Bogen'):
+            m = re.match(r'Bogen \((-?[\d.]+)\|(-?[\d.]+)\) ([\d.]+) (-?\d+)\.\.(-?\d+)', e)
+            cx, cy, r_, w1, w2 = m.groups()
+            out.append(r'\addplot[black,domain=%s:%s,samples=60] ({%s+%s*cos(x)},{%s+%s*sin(x)});'
+                       % (w1, w2, cx, r_, cy, r_))
+        elif e.startswith('Kreis'):
+            m = re.match(r'Kreis \((-?[\d.]+)\|(-?[\d.]+)\) ([\d.]+)', e)
+            cx, cy, r_ = m.groups()
+            out.append(r'\addplot[black!60,domain=0:360,samples=90] ({%s+%s*cos(x)},{%s+%s*sin(x)});'
+                       % (cx, r_, cy, r_))
+    out.append(r'\end{axis}\end{tikzpicture}')
+    D.abb_gezeichnet = getattr(D, 'abb_gezeichnet', 0) + 1
+    return ''.join(out)
+
+
 def abbildung(desc, D, iid, vorspann_abb=''):
     """Liefert (latex, ankreuztabelle?) zur Beschreibung; '' wenn keine nötig."""
     d = (desc or '').strip()
@@ -372,6 +525,10 @@ def abbildung(desc, D, iid, vorspann_abb=''):
     if d.startswith('Tabelle aus dem Vorspann') or d.startswith('Graph aus dem Vorspann') \
             or re.match(r'Skizze aus \d', d):
         return vorspann_abb
+    if d.startswith('Graph:') and re.search(r'; x -?[\d.]+\.\.', d):
+        g = abb_graph_term(d, D, iid)
+        if g:
+            return g
     if re.match(r'(Graph|Skizze|Diagramm):', d):
         # Abitur (Lauf B2): Graphen liegen nur als Beschreibung vor, kein Funktionsterm zum Zeichnen –
         # gesetzt wird ein Rahmen mit der Beschreibung, damit Lehrer und Schüler wissen, welche
@@ -752,7 +909,7 @@ def bank_aufgabe(D, r, stufe):
     a = Aufgabe()
     a.art, a.id = 'bank', r['id']
     t = r['aufgabe']
-    m = re.search(r'\s*\(P10 (\d{4})(?: (\w+))?\)', t)
+    m = re.search(r'\s*\((?:P10|Abitur) (\d{4})(?: (\w+))?\)', t)
     nach = ''
     if m:
         nach = f' nach P10 {m.group(1)}'
@@ -1468,7 +1625,10 @@ def setze_bloecke(D, args, teile, nr, formel_da):
                 kopf_gesetzt = True
             if art == 'kopf':
                 if inh:
-                    out.append('\\pfgruppe{}')
+                    # Abitur (Lauf B3): Vorstufen sind Erkennungsaufgaben – klein und grau benannt
+                    out.append('\\pfgruppe{Was ist zu tun? Ankreuzen, nicht rechnen}'
+                               if D.pr['ordner'] == 'abitur' and all(x.kreuz or x.optionen for x in inh)
+                               else '\\pfgruppe{}')
                 aufg, g = inh, 'Vorstufe'
             else:
                 g, wort, aufg = inh
@@ -1705,14 +1865,24 @@ def setze_loesung(D, args, titel, eintraege, ps_loes):
             auf = a.id[:-1]
             zr = [x for x in a.zw_roh if x not in kopf_auf.get(auf, [])]
             mit = [d[-1] + ')' for d in a.abhaengig.split('|') if d and d[:-1] == auf]
-            z = '; '.join((['mit ' + ', '.join(mit)] if mit else []) + [abi_tx(x) for x in zr])
+            z = '; '.join((['mit ' + ', '.join(mit)] if mit else []) + [abi_formel(x) for x in zr])
+        elif abi:
+            zs = [abi_zw(x, a.kurz) for x in (a.zw_roh or [])]
+            zs = [x for x in zs if x]
+            gesamt, z2 = 0, []
+            for x in zs:   # kurz, eine Zeile: höchstens zwei Handgriffe, zusammen bis 70 Zeichen
+                if len(z2) >= 2 or gesamt + len(klartext(x)) > 70:
+                    break
+                z2.append(x if '$' in x or '\\' not in x else '$' + x + '$')
+                gesamt += len(klartext(x))
+            z = '; '.join(tx(x, latex=True) for x in z2)
         # Fundstelle (Heft · Aufgabe) grau im Kopf der Tabelle, nur an echten Aufgaben (Beschluss 14);
         # die vierte Spalte (früher BE) bleibt leer (Beschluss 25)
         kopf = f'{{\\small\\color{{mbgrau}}{f}}}' if f else ''
         if abi and a.art == 'echt' and a.id[:-1] in kopf_auf and a.id[:-1] not in kopf_da:
             kopf_da.add(a.id[:-1])
             kopf = (f'{{\\small\\color{{mbgrau}}{f}}}' + ''.join(
-                r'\par\noindent{\small ' + abi_tx(d) + '}' for d in kopf_auf[a.id[:-1]]))   # untereinander
+                r'\par\noindent{\small ' + abi_formel(d) + '}' for d in kopf_auf[a.id[:-1]]))   # untereinander
         elif abi and a.art == 'echt' and a.id[:-1] in kopf_auf:
             z = f'Kopf bei Nr. {nr_von[min((x for x in nr_von if x[:-1] == a.id[:-1]), key=lambda x: int(nr_von[x][:-1]))]}' \
                 + ('; ' + z if z else '')

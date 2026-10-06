@@ -78,9 +78,9 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Grenzverhalten angeben | 79 | rechnen | 0 | 1 | 1 | 1 | eigene Aufgabe | f(x) = x^2 - 6x + 1. Verhalten für x + und x - ? |
 | Grenzverhalten angeben | 80 | rechnen | 0 | 1 | 1 | 1 | eigene Aufgabe | f(x) = e^3x. Verhalten für x + und x - ? |
 | Grenzverhalten angeben | 81 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | f(x) = -2x^3 + x^2 - 4x + 6. Gib das Verhalten der Funktions |
-| Grenzverhalten angeben | 82 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | f(x) = (x + 4) e^-x. Grenzwert für x + ? Beschreibe den Verl |
-| Grenzverhalten angeben | 83 | rechnen | 1 | 1 | 1 | 2 | eigene Aufgabe | f(x) = 0,5 (x^2 - 9) e^x. Verhalten für x + und x - ? (Abitu |
-| Grenzverhalten angeben | 84 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | f(x) = 1/20x^5 - x^2 hat die Ableitung f'(x) = 1/4x^4 - 2x.  |
+| Grenzverhalten angeben | 82 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | f(x) = 1/20x^5 - x^2 hat die Ableitung f'(x) = 1/4x^4 - 2x.  |
+| Grenzverhalten angeben | 83 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | f(x) = (x + 4) e^-x. Grenzwert für x + ? Beschreibe den Verl |
+| Grenzverhalten angeben | 84 | rechnen | 1 | 1 | 1 | 2 | eigene Aufgabe | f(x) = 0,5 (x^2 - 9) e^x. Verhalten für x + und x - ? |
 | Grenzverhalten angeben | 85 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | f(x) = (4 - x) e^x. Gib das Verhalten für x - und x + an und |
 | Grenzverhalten angeben | 86 | Sachaufgabe | 0 | 1 | 1 | 3 | 2022-bebb-gk-B2.1b | Gegeben ist die in R definierte Funktion f mit f(x) = (x + 2 |
 | Grenzverhalten angeben | 87 | Sachaufgabe | 0 | 1 | 1 | 3 | 2022-bebb-gk-B2.2a | Gegeben ist die Funktion f mit f(x) = -1/6x^3 + 1/2x^2, x R. |
@@ -126,11 +126,11 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Gleichungen und Ungleichungen zwischen Funktionen lösen | 127 | Vorstufe | 0 | 1 | 1 | 0 | eigene Aufgabe | Welche Lösungen zählen? x^2 (x - 3) > 0 |
 | Gleichungen und Ungleichungen zwischen Funktionen lösen | 128 | rechnen | 0 | 1 | 1 | 1 | eigene Aufgabe | f(x) = x^2 - 2x - 1, g(x) = x + 9. Schnittpunkte? |
 | Gleichungen und Ungleichungen zwischen Funktionen lösen | 129 | rechnen | 0 | 1 | 1 | 1 | eigene Aufgabe | Für welche x gilt (x - 1) (x + 2)^2 > 0? |
-| Gleichungen und Ungleichungen zwischen Funktionen lösen | 130 | rechnen | 0 | 2 | 1 | 2 | eigene Aufgabe | f(x) = -x^2 + 6x - 4. Bilde f'(x) und löse f(x) - 0x - 0 = f |
-| Gleichungen und Ungleichungen zwischen Funktionen lösen | 131 | Sachaufgabe | 0 | 1 | 2 | 1 | eigene Aufgabe | Der Graph zeigt die Höhe h(t) einer Drohne (t in s, h in m). |
-| Gleichungen und Ungleichungen zwischen Funktionen lösen | 132 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | f(x) = x^2 + 3x - 1, g(x) = -x^2 - x + 5. Zeige, dass sich d |
-| Gleichungen und Ungleichungen zwischen Funktionen lösen | 133 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | a(x) ist die Zahl der Abonnenten eines Kanals in Hundert, x  |
-| Gleichungen und Ungleichungen zwischen Funktionen lösen | 134 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | f(x) = -x^3 + 5x^2 - 10x + 2, g(x) = -3x^2 + 6x + 2. Bestimm |
+| Gleichungen und Ungleichungen zwischen Funktionen lösen | 130 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | f(x) = x^2 + 3x - 1, g(x) = -x^2 - x + 5. Zeige, dass sich d |
+| Gleichungen und Ungleichungen zwischen Funktionen lösen | 131 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | f(x) = -x^3 + 5x^2 - 10x + 2, g(x) = -3x^2 + 6x + 2. Bestimm |
+| Gleichungen und Ungleichungen zwischen Funktionen lösen | 132 | rechnen | 0 | 2 | 1 | 2 | eigene Aufgabe | f(x) = -x^2 + 6x - 4. Bilde f'(x) und löse f(x) - 0x - 0 = f |
+| Gleichungen und Ungleichungen zwischen Funktionen lösen | 133 | Sachaufgabe | 0 | 1 | 2 | 1 | eigene Aufgabe | Der Graph zeigt die Höhe h(t) einer Drohne (t in s, h in m). |
+| Gleichungen und Ungleichungen zwischen Funktionen lösen | 134 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | a(x) ist die Zahl der Abonnenten eines Kanals in Hundert, x  |
 | Gleichungen und Ungleichungen zwischen Funktionen lösen | 135 | Sachaufgabe | 0 | 3 | 2 | 3 | 2025-bebb-gk-A1.7a | Gegeben ist die in R definierte Funktion f mit f(x) = -x^2 + |
 | Gleichungen und Ungleichungen zwischen Funktionen lösen | 136 | Sachaufgabe | 1 | 4 | 1 | 3 | 2023-bebb-gk-B2.2g | Gegeben ist die Funktion f mit f(x) = x^3 - 12x^2 + 45x - 50 |
 | Gleichungen und Ungleichungen zwischen Funktionen lösen | 137 | Sachaufgabe | 2 | 3 | 1 | 3 | 2025-bebb-gk-B2.2g | Unter einem Beitrag auf einer Internetseite werden Likes ges |
@@ -146,9 +146,9 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Funktionsgleichung aus Bedingungen aufstellen | 147 | Vorstufe | 0 | 1 | 1 | 0 | eigene Aufgabe | „Der Graph von f hat den Hochpunkt H(3/1).“ Wie viele Gleich |
 | Funktionsgleichung aus Bedingungen aufstellen | 148 | Vorstufe | 0 | 1 | 1 | 0 | eigene Aufgabe | Gesucht ist eine quadratische Funktion f(x) = ax^2 + bx + c; |
 | Funktionsgleichung aus Bedingungen aufstellen | 149 | rechnen | 0 | 1 | 1 | 1 | eigene Aufgabe | Bestimme die Gleichung der Geraden durch A(1/5) und B(4/14). |
-| Funktionsgleichung aus Bedingungen aufstellen | 150 | Sachaufgabe | 0 | 1 | 1 | 1 | eigene Aufgabe | Der Graph einer quadratischen Funktion f verläuft durch A(0/ |
-| Funktionsgleichung aus Bedingungen aufstellen | 151 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Die Parabel mit p(x) = ax^2 + b soll bei x = 2 ohne Knick an |
-| Funktionsgleichung aus Bedingungen aufstellen | 152 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | Die Gerade h verläuft durch C(0,6/1,2) und D(3/6). Weise nac |
+| Funktionsgleichung aus Bedingungen aufstellen | 150 | rechnen | 1 | 1 | 1 | 2 | eigene Aufgabe | Die Gerade h verläuft durch C(0,6/1,2) und D(3/6). Weise nac |
+| Funktionsgleichung aus Bedingungen aufstellen | 151 | Sachaufgabe | 0 | 1 | 1 | 1 | eigene Aufgabe | Der Graph einer quadratischen Funktion f verläuft durch A(0/ |
+| Funktionsgleichung aus Bedingungen aufstellen | 152 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Die Parabel mit p(x) = ax^2 + b soll bei x = 2 ohne Knick an |
 | Funktionsgleichung aus Bedingungen aufstellen | 153 | Sachaufgabe | 1 | 5 | 1 | 3 | 2023-bebb-gk-B2.2k | Für eine neue Heizung soll der Temperaturverlauf in der Star |
 | Funktionsgleichung aus Bedingungen aufstellen | 154 | Vergleich | 0 | 4 | 1 | 3 | 2022-bebb-gk-B2.2k | Bei einem größeren Bauteil verläuft der obere Rand zwischen  |
 | Funktionsgleichung aus Bedingungen aufstellen | 155 | Vergleich | 1 | 2 | 1 | 3 | 2022-bebb-gk-B2.2g | Ein Betonteil für den Hochwasserschutz hat im Querschnitt ei |
