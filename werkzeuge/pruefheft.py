@@ -738,7 +738,7 @@ def zahlklasse(a):
     kopf = True
     for v, p, roh in zs:
         if p:
-            kopf &= v == int(v) and (int(v) in KOPF_P or int(v) < 10)   # 1–9 % und 10/20/25/50/75 %
+            kopf &= v == int(v) and (int(v) in KOPF_P or int(v) < 10 or int(v) % 10 == 0)   # 1–9 %, Zehnerschritte, 25/75 %
         else:
             kopf &= v == int(v) and len(str(int(v)).strip('0')) <= 2
     for v, p, roh in zahlen(a.kurz):
@@ -772,6 +772,11 @@ def fragenzahl(a):
 
 
 GRUPPEN = ['rechnen', 'Ankreuzen', 'Sachaufgabe', 'Vergleich']   # Reihenfolge: Entscheidung
+
+
+def gruppen_schluessel(x):
+    # leichteste Aufgabe: Zahlklasse, dann Grundfall im Kopf; bei Gleichstand Punkt 8 (Entscheidung)
+    return (schluessel(x[2][0])[:2], GRUPPEN.index(x[0]) if x[0] in GRUPPEN else 9)
 
 
 def gruppe_von(D, a):
@@ -832,8 +837,7 @@ def schluessel(a):
     (eigene vor echter bei Gleichstand, jüngere Prüfung zuerst)."""
     pkt = int(a.punkte) if a.art == 'echt' and str(a.punkte).isdigit() else 0
     unten = 0 if (a.zk == 0 and a.hrang <= 1) else 1   # Grundfall im Kopf zuerst (Muster 6)
-    return (a.zk, unten, schrittzahl(a), min(a.fz, 2), min(a.hrang, 3), a.tl, a.sr, pkt,
-            a.art == 'echt', -a.jahr, a.id)
+    return (a.zk, unten, schrittzahl(a), min(a.fz, 2), min(a.hrang, 3), a.tl, a.sr, pkt, a.id)
 
 
 # ---------------------------------------------------------------------------
@@ -1097,15 +1101,16 @@ def baue_modell(D, args):
         # geht über die ganze Stufe – erst alle kopfrechenbaren Gruppen, dann glatte, dann krumme;
         # in einer Zahlklasse Gruppen nach ihrer leichtesten Aufgabe, bei Gleichstand rechnen,
         # Ankreuzen, Sachaufgabe; Vergleich (Urteil) am Ende der Zahlklasse (Entscheidung)
-        for zk in (0, 1, 2):
-            for g in GRUPPEN:
-                gl = sorted([a for a in alle if a.gruppe == g and a.zk == zk], key=schluessel)
-                if gl:
-                    wort = next((a.bild for a in gl if a.bild), '')
-                    st.gruppen.append((g, wort, gl))
+        # Zweite Reparatur: eine Gruppe je Form, darin Zahlklasse zuerst (schluessel); Gruppen in der
+        # Folge der Zahlklasse ihrer leichtesten Aufgabe, bei Gleichstand rechnen, Ankreuzen,
+        # Sachaufgabe, Vergleich (Beschluss 8)
+        for g in GRUPPEN:
+            gl = sorted([a for a in alle if a.gruppe == g], key=schluessel)
+            if gl:
+                wort = next((a.bild for a in gl if a.bild), '')
+                st.gruppen.append((g, wort, gl))
         if not args.fokus:
-            st.gruppen.sort(key=lambda x: (x[2][0].zk, x[0] == 'Vergleich', schluessel(x[2][0])[:5],
-                                           GRUPPEN.index(x[0])))
+            st.gruppen.sort(key=gruppen_schluessel)
         if not echte:
             D.befund(f'{st.name}: keine echte Aufgabe – Prüfungshöhe nur aus der Bank')
         st.reserve = []
@@ -1256,9 +1261,11 @@ def platz(a, art):
         s = int(re.sub(r'\D', '', a.schritte) or 1)
     else:
         s = len(a.zw) + 1
-    if not a.zw and a.zk == 0 and a.art != 'echt' and len(klartext(a.kurz)) <= 25:
-        return 0
-    return max(2, min(5, s)) if art == 'schwach' else max(1, min(4, s))
+    if not a.zw and a.art != 'echt' and len(klartext(a.kurz)) <= 25:
+        return 0   # Ein-Wort-, Ein-Zahl- und Rundungsaufgaben ohne Platz (Beschluss 11)
+    if art == 'schwach':
+        return max(1, min(5, schrittzahl(a)))   # eine Rasterzeile je Schritt (Beschluss 29)
+    return max(1, min(4, s))
 
 
 def zf_fuer(a, zaehler, art):
@@ -1291,9 +1298,10 @@ def aufgabe_tex(D, a, nr, art, zfs, kurs, mit_nr=True):
 def braucht_formel(st, a):
     """Formel ab der ersten Aufgabe, die rechnet und nicht mehr im Kopf geht; in den Zins-Stufen ab der
     ersten Rechnung (Zinssatz und Kapital brauchen die umgestellte Formel; Reparatur Punkt 4)."""
-    if st.name not in FORMEL or a.hrang == 0 or a.kreuz or a.optionen:
+    if st.name not in FORMEL or a.hrang == 0 or a.kreuz or a.optionen or a.form.startswith('streifen') \
+            or (a.hrang == 1 and not any(re.search(r'\\cdot|·|: ?0', z) for z in a.zw_roh)):
         return False
-    return a.zk >= 1 or st.name.startswith('Zinsen')
+    return gesucht(a) in ('', st.name) or st.name.startswith('Zinsen')   # zweite Reparatur Punkt 2
 
 
 def bloecke(st):
@@ -1322,7 +1330,7 @@ def setze_bloecke(D, args, teile, nr, formel_da):
             if art == 'kopf':
                 if inh:
                     out.append('\\pfgruppe{}')
-                aufg = inh
+                aufg, g = inh, 'Vorstufe'
             else:
                 g, wort, aufg = inh
                 out.append(f'\\pfgruppe{{{tx(wort)}}}')
@@ -1333,6 +1341,7 @@ def setze_bloecke(D, args, teile, nr, formel_da):
                 nr += 1
                 out.append(aufgabe_tex(D, a, nr, args.art, zf_fuer(a, zaehler, args.art), args.kurs))
                 loes.append((f'{nr}.', a))
+                SORT.append((st.name, nr, g, a))
     return '\n'.join(out), nr, loes
 
 
@@ -1662,6 +1671,7 @@ def rueckblick_vorige(D, args, vorige_stufen, B):
 # Heft zusammensetzen
 # ---------------------------------------------------------------------------
 def heft_tex(D, args, titel, unter, rb, teile, ps):
+    SORT.clear()
     out = [KOPF.replace('\\begin{document}', ''), '\\begin{document}',
            f'\\pruefheftstil{{{titel}}}{{{unter}}}',
            f'\\noindent{{\\Large\\bfseries {titel}}}\\hfill{{\\small\\color{{mbgrau}}{unter}}}\\par\\medskip']
@@ -1753,6 +1763,40 @@ def xelatex(tex, bb, name, arbeit):
     return {'pdf': pdf if os.path.exists(pdf) and not fehler else None, 'fehler': fehler,
             'missing': log.count('Missing character'),
             'overfull': len(re.findall(r'Overfull \\hbox \((\d+\.\d+)pt', log)), 'seiten': seiten}
+
+
+SORT = []   # (Stufe, Nr., Gruppe, Aufgabe) des zuletzt gesetzten Hefts
+
+
+def sortierung_md(titel):
+    """Tabelle der Reihenfolge und maschinelle Prüfung (zweite Reparatur Punkt 4): in jeder Gruppe
+    steigt der Schlüssel (Zahlklasse, Grundfall, Schritte, Fragen, Höhe, Text, Satz, Punkte) nicht ab;
+    die Gruppen einer Stufe stehen nach gruppen_schluessel ihrer leichtesten Aufgabe."""
+    zl = [f'# Sortierung {titel}', '', 'Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; '
+          'Höhe 0 Vorstufe … 3 Prüfung; Herkunft.', '',
+          '| Stufe | Nr. | Gruppe | Zahlkl. | Schritte | Fragen | Höhe | Herkunft | Aufgabe |',
+          '|---|---|---|---|---|---|---|---|---|']
+    fehler = []
+    letzte = {}
+    gruppen = OrderedDict()
+    for stn, nr, g, a in SORT:
+        her = a.id if a.art == 'echt' else ('Rückblick' if a.art == 'zone' else 'eigene Aufgabe')
+        zl.append(f'| {stn} | {nr} | {g} | {a.zk} | {schrittzahl(a)} | {a.fz} | {min(a.hrang, 3)} | {her} | '
+                  f'{klartext(a.text)[:60].replace("|", "/")} |')
+        if g in ('Vorstufe', 'Prüfung'):
+            continue
+        k = schluessel(a)
+        key = (stn, g)
+        if key in letzte and k < letzte[key][0]:
+            fehler.append(f'{stn}, {g}: Nr. {nr} leichter als Nr. {letzte[key][1]}')
+        letzte[key] = (k, nr)
+        gruppen.setdefault(stn, OrderedDict()).setdefault(g, []).append(a)
+    for stn, gs in gruppen.items():
+        ks = [gruppen_schluessel((g, '', sorted(al, key=schluessel))) for g, al in gs.items()]
+        if ks != sorted(ks):
+            fehler.append(f'{stn}: Gruppen nicht nach leichtester Aufgabe ({", ".join(gs)})')
+    zl += ['', '## Prüfung', ''] + (['- ' + f for f in fehler] if fehler else ['- keine Abweichung'])
+    return '\n'.join(zl) + '\n', fehler
 
 
 def register(args, name, ordner, seiten):
@@ -1875,6 +1919,10 @@ def main():
         bericht += ['   ' + fl for fl in erg['fehler'][:5]]
     if not args.ohne_register:
         register(args, name, ordner, seiten)
+    # Sortiertabelle nur aus dem endgültigen Satz (Probeläufe der Serie zählen nicht)
+    md, sfehler = sortierung_md(name)
+    open(os.path.join(ordner, 'sortierung.md'), 'w', encoding='utf-8').write(md)
+    print('Sortierung:', 'keine Abweichung' if not sfehler else '; '.join(sfehler))
     print('\n'.join(bericht))
     print('Ordner:', ordner)
     print('Stufen:', ', '.join(s.name for s in stufen))
