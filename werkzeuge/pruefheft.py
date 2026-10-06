@@ -1129,7 +1129,7 @@ def eigene_sparsam(D, aufg):
 def schwerste_echt(echte):
     """Maßstab für fremde Aufgaben (N1.2): Schritte, Zahlart, Textlänge der BB/BE-Aufgaben der Stufe, je
     Merkmal das Maximum (Entscheidung: eine fremde darf in keinem Merkmal darüber liegen)."""
-    bb = [a for a in echte if a.art == 'echt']
+    bb = [a for a in echte if bbbe(a)]   # Maßstab: BB/BE ganz oder herausgelöst (N1.2, Fokus 06.10.)
     if not bb:
         return None
     return (max(schrittzahl(a) for a in bb), max(a.zk for a in bb), max(woerter(a) for a in bb))
@@ -1156,13 +1156,51 @@ def kandidat(D, r, st, art, mass):
     if a.zahlart:
         a.zk = zahlart_wert(a.zahlart, a)
     p10 = art == 'heraus' and a.marke_text.startswith('nach ' + D.pr['marke'])
+    if p10:
+        a.schritte = str(rechenschritte(r.get('loesung') or '', schrittzahl(a)))
     if not p10:
+        s_daten = schrittzahl(a)
+        a.schritte = str(max(s_daten, schritte_geschaetzt(a, r)))
+        if mass and int(a.schritte) > mass[0] and s_daten <= mass[0]:
+            # erst die Schätzung macht sie zu schwer (Rückwärts vom vermehrten/verminderten Grundwert)
+            D.n_zweischritt = getattr(D, 'n_zweischritt', 0) + 1
         if (mass and (schrittzahl(a) > mass[0] or a.zk > mass[1] or woerter(a) > mass[2])) \
                 or (not mass and schrittzahl(a) > 2):
             D.fremd_zu_schwer = getattr(D, 'fremd_zu_schwer', 0) + 1
             return None
     a.unsicher = bool(UNSICHER.search(r.get('bemerkung') or ''))
     return a
+
+
+def rechenschritte(lo, standard):
+    """Schritte einer herausgelösten Aufgabe aus ihrer Lösung (Sichtprüfung 06.10.: „G = 4 : 2/3 = 6 Kugeln
+    (1/3 sind 2 Kugeln)“ ist ein Schritt, auch wenn die Daten 2 sagen): Rechenzeichen der Lösung ohne
+    Klammerzusätze, Brüche a/b nicht gezählt; höchstens die Zahl aus den Daten."""
+    t = re.sub(r'\([^()]*[A-Za-zÄÖÜäöü]{3}[^()]*\)', '', lo)
+    t = t.split('|')[0]
+    n = len(re.findall(r'\s[:·×+−-]\s', t))
+    return max(1, min(standard, n)) if n else standard
+
+
+def schritte_geschaetzt(a, r):
+    """Schritte einer fremden Aufgabe aus Text und Lösung (Sichtprüfung Fokus Grundwert 06.10.): Die Daten
+    zählen „440 € : 1,1“ als einen Schritt; der Faktor 1 ± p/100 aus „10 % mehr“, „+20 %“, „20 % Rabatt“
+    ist aber ein eigener Schritt (vermehrter/verminderter Grundwert, Prozentwert mit Veränderung). Erkannt:
+    die Lösung teilt oder multipliziert mit einer Dezimalzahl 1 ± p/100 zu einem Prozentsatz p des Texts
+    (p ≠ 100). Sonst die Zahl aus den Daten."""
+    s = 1
+    lo = (r.get('loesung') or '') + ' ' + (r.get('schritte') or '')
+    ps = {v for v, pr, _ in zahlen(a.text) if pr and 0 < v < 100}
+    for m in re.finditer(r'[:·]\s*(\d+,\d+)', lo):
+        f = float(m.group(1).replace(',', '.'))
+        if any(abs(f - (1 + p / 100)) < 1e-9 or abs(f - (1 - p / 100)) < 1e-9 for p in ps):
+            s = 2
+    return s
+
+
+def bbbe(a):
+    """BB/BE-Original: echt oder aus einem P10-Original herausgelöst („nach P10 ’15“)."""
+    return a.art == 'echt' or (a.art == 'heraus' and (a.marke_text or '').startswith('nach ' + D_AKT.pr['marke']))
 
 
 def merkmale(a):
@@ -1694,6 +1732,7 @@ def baue_modell(D, args):
                     a = daten_aufgabe(D, r, st.name, 'heraus'); kennzahlen(D, a)
                     if UNSICHER.search(r.get('bemerkung') or ''):
                         D.n_unsicher = getattr(D, 'n_unsicher', 0) + 1
+                    a.schritte = str(rechenschritte(r.get('loesung') or '', schrittzahl(a)))
                     if a.zahlart:
                         a.zk = zahlart_wert(a.zahlart, a)
                     B.benutzt.add(a.id); D.n_heraus += 1
@@ -1829,7 +1868,9 @@ def baue_modell(D, args):
         st.vor = eigene_sparsam(D, st.vor)
         # Gruppen (Beschluss 8): je Gruppe leicht -> schwer; Aufgabenbild-Wort aus Feld bild
         alle = mitte + echte
-        st.gruppen = buendeln(D, ordne_stufe(alle, [a for a in echte if a.art == 'echt'] or echte))
+        # Oben steht die schwerste BB/BE-Aufgabe, ganz oder herausgelöst (Sichtprüfung Fokus 06.10.: sonst steht
+        # „Quark 93 %“ vor dem einschrittigen glatten T-Shirt und die Leiter fällt am Ende ab)
+        st.gruppen = buendeln(D, ordne_stufe(alle, [a for a in echte if bbbe(a)] or echte))
         if st.leiter:
             st.gruppen.insert(0, (LEITER, '', st.leiter))
         # Erkennen (N4.19): Fokus mitten in der Leiter, vor der ersten Gruppe mit echter Aufgabe
@@ -2017,7 +2058,7 @@ def ordne_stufe(alle, echte):
     if echte:
         top = max(echte, key=functools.cmp_to_key(vergleich))
         top.ist_top = True   # die Prüfung (sortierung_md) nimmt dieselbe, auch wenn Bündel Aufgaben herausnehmen
-        schluss = [x for x in alle if x is not top and x.art != 'echt' and vergleich(x, top) > 0] + [top]
+        schluss = [x for x in alle if x is not top and not bbbe(x) and x.art != 'echt' and vergleich(x, top) > 0] + [top]
         alle = [x for x in alle if all(x is not y for y in schluss)]
         if D_AKT is not None and (D_AKT.handgriffe or D_AKT.fremd):
             # Nachtrag N1.3/E22: oben auf der Leiter steht Echtes – eigene, die schwerer sind als die schwerste
@@ -3312,7 +3353,7 @@ def sortierung_md(titel):
         for (n1, g1, a1), (n2, g2, a2) in zip(haupt, haupt[1:]):
             if vergleich(a2, a1) < 0:
                 fehler.append(f'{stn}: Nr. {n2} leichter als Nr. {n1}')
-        echt = [a for _, _, a in ls if a.art == 'echt']
+        echt = [a for _, _, a in ls if a.art == 'echt' or getattr(a, 'ist_top', False)]
         if echt:
             import functools
             top = next((a for a in echt if getattr(a, 'ist_top', False)), None)
@@ -3519,7 +3560,7 @@ def main():
           f'eigene weg (gleichartig) {D.n_eigen_weg}, eigene über der schwersten echten weg '
           f'{getattr(D, "n_eigen_oben", 0)}, fremde zu schwer/ohne Bild {getattr(D, "fremd_zu_schwer", 0)}/'
           f'{len(getattr(D, "fremd_ohne_bild", []))}, ruhende Bankzeilen {D.n_ruht}, „steckt auch in“ '
-          f'{getattr(D, "n_steckt", 0)}, unsichere gesetzt {getattr(D, "n_unsicher", 0)}, Erkennen {getattr(D, "n_erkennen", 0)}, Lösung {D.loesung_spalten}-spaltig '
+          f'{getattr(D, "n_steckt", 0)}, zweischrittig erkannt {getattr(D, "n_zweischritt", 0)}, unsichere gesetzt {getattr(D, "n_unsicher", 0)}, Erkennen {getattr(D, "n_erkennen", 0)}, Lösung {D.loesung_spalten}-spaltig '
           f'(einspaltig {D.loesung_seiten_einspaltig} S.)')
     if seiten >= 30:
         # N2.9: keine Obergrenze; ab 30 Seiten nennt der Bau den Grund
