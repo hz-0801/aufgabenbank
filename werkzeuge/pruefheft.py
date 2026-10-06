@@ -1601,6 +1601,19 @@ def fuss(a, nr):
     return f'\\fusshilfe{{{s}}}'
 
 
+def rechenaufgabe(a):
+    """Muss gerechnet werden (Sichtprüfung Kurvenuntersuchung Nr. 12: Nullstellen von x² − 6x + 5 ohne
+    Rechenplatz, weil die Bank kein Zwischenergebnis nennt)? Ja bei Nullstellen, Ableitung, Gleichung,
+    Extrem-/Wende-/Schnittpunkt, Term mit Potenz, und wenn die Lösung mehrere Werte (x₁, x₂) hat."""
+    t = klartext(a.text)
+    if re.search(r'Nullstelle|Ableitung|Gleichung|lös|Extrem|Hochpunkt|Tiefpunkt|Wendepunkt|Schnittpunkt|'
+                 r'Scheitel|Berechne|Bestimme|Ermittle|Rechne|Schreibe die Umkehrung|Schreibe an', t):
+        return True
+    if re.search(r'\^|²|³', t) or re.search(r'x_?\{?[12]', a.kurz or ''):
+        return True
+    return False
+
+
 def platz(a, art):
     """Rechenplatz nach Schrittzahl (Beschluss 11): Ankreuzen und Ein-Wort-Antwort (kopfrechenbar,
     ohne Zwischenergebnis, kurze Antwort) ohne Platz; sonst Schritte = Katalogfeld schritte bzw.
@@ -1615,7 +1628,7 @@ def platz(a, art):
         s = len(a.zw) + 1
     if re.search(r'\b(Prüfe|Überprüfe|Entscheide|Begründe|Zeige|Weise)\b', klartext(a.text)) and not a.optionen:
         s = max(s, 1)   # Prüf- und Entscheidungsaufgaben brauchen eine Antwortzeile (Reparatur Punkt 9)
-    elif not a.zw and a.art != 'echt' and len(klartext(a.kurz)) <= 25:
+    elif not a.zw and a.art != 'echt' and len(klartext(a.kurz)) <= 25 and not rechenaufgabe(a):
         return 0   # Ein-Wort-, Ein-Zahl- und Rundungsaufgaben ohne Platz (Beschluss 11)
     if art == 'schwach':
         return max(1, min(5, schrittzahl(a)))   # eine Rasterzeile je Schritt (Beschluss 29)
