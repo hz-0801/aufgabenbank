@@ -1031,6 +1031,15 @@ def schrittzahl(a):
     return min(4, max(1, n))
 
 
+def schwierigkeit(a):
+    """Schwierigkeit nach Korrektur Lauf C (Regel b): Zahlklasse (Kopf, glatt, krumm), Grundfall im
+    Kopf zuerst (Muster 6), Schritte, Fragen, Textlänge, Satzmuster; Herkunft (echt/eigen) und
+    Bank-Höhe zählen nicht. Danach nur noch zum festen Ordnen: Punkte, id."""
+    pkt = int(a.punkte) if a.art == 'echt' and str(a.punkte).isdigit() else 0
+    unten = 0 if (a.zk == 0 and a.hrang <= 1) else 1
+    return (a.zk, unten, schrittzahl(a), min(a.fz, 2), a.tl, a.sr, pkt, a.id)
+
+
 def schluessel(a):
     """Reihenfolge (Beschlüsse 2, 8; Reparatur 06.10.): Zahlklasse (kopfrechenbar, glatt, krumm),
     Schrittzahl, Fragenzahl, Höhe der Bank (Vorstufe, Grundfall, Sprosse, Prüfung), Textlänge,
@@ -1290,36 +1299,7 @@ def baue_modell(D, args):
             a.stern = bool(a.orig and stern_fuer(D, a.orig))
         # Gruppen (Beschluss 8): je Gruppe leicht -> schwer; Aufgabenbild-Wort aus Feld bild
         alle = mitte + echte
-        if args.fokus:
-            # Fokus (Muster 6): oben nur echte Prüfungshöhe, längste zuletzt (Reparatur Punkt 3)
-            gl_unten = sorted(mitte, key=schluessel)
-            gl_oben = sorted(echte, key=lambda a: (a.tl, schrittzahl(a), int(a.punkte or 1), -a.jahr))
-            st.gruppen = [(g, '', [a for a in gl_unten if a.gruppe == g]) for g in GRUPPEN]
-            st.gruppen = [x for x in st.gruppen if x[2]]
-            st.gruppen.sort(key=lambda x: (schluessel(x[2][0])[:5], GRUPPEN.index(x[0])))
-            st.gruppen.append(('Prüfung', '', gl_oben))
-            alle = []
-        else:
-            st.gruppen = []
-        # Kleine Gruppen nach Form und Zahlklasse (Beschlüsse 2, 3, 8; Reparatur Punkt 2): die Leiter
-        # geht über die ganze Stufe – erst alle kopfrechenbaren Gruppen, dann glatte, dann krumme;
-        # in einer Zahlklasse Gruppen nach ihrer leichtesten Aufgabe, bei Gleichstand rechnen,
-        # Ankreuzen, Sachaufgabe; Vergleich (Urteil) am Ende der Zahlklasse (Entscheidung)
-        # Zweite Reparatur: eine Gruppe je Form, darin Zahlklasse zuerst (schluessel); Gruppen in der
-        # Folge der Zahlklasse ihrer leichtesten Aufgabe, bei Gleichstand rechnen, Ankreuzen,
-        # Sachaufgabe, Vergleich (Beschluss 8)
-        # Reparatur Sichtprüfung Punkt 1 (Beschluss 2 „Prüfungshöhe zuletzt“): erst die Gruppen unterhalb
-        # der Prüfungshöhe (nach leichtester Aufgabe), dann alle Aufgaben auf Prüfungshöhe, wieder in Gruppen
-        for oben in (False, True):
-            teil = []
-            for g in GRUPPEN:
-                gl = sorted([a for a in alle if a.gruppe == g and (min(a.hrang, 3) == 3) == oben], key=schluessel)
-                if gl:
-                    wort = next((a.bild for a in gl if a.bild), '')
-                    teil.append((g + (PH if oben else ''), wort, gl))
-            if not args.fokus:
-                teil.sort(key=gruppen_schluessel)
-            st.gruppen += teil
+        st.gruppen = ordne_stufe(alle, echte)
         if not echte:
             D.befund(f'{st.name}: keine echte Aufgabe – Prüfungshöhe nur aus der Bank')
         st.reserve = []
@@ -1331,6 +1311,36 @@ def baue_modell(D, args):
             D.befund('Lücke: ' + l)
     D.ohne_bild = sum(1 for r in D.bank.values() if not r.get('bild'))
     return stufen, ps, B
+
+
+SCHLUSS = 'Schluss'   # letzte Gruppe einer Stufe: schwerere eigene, dann die schwerste echte (Regel d)
+
+
+def ordne_stufe(alle, echte):
+    """Korrektur Lauf C (Koordinator, Muster 6 des Lehrers): nach den Vorstufen alle Aufgaben nach
+    Schwierigkeit (b); Gruppen nach Form nur innerhalb einer Zahlklasse, Gruppen dort nach ihrer
+    leichtesten Aufgabe, in der Gruppe leicht -> schwer (c); die Stufe endet mit der schwersten echten
+    Aufgabe, schwerere eigene stehen direkt davor (d). Gibt [(Gruppe, Wort, [Aufgabe])] zurück."""
+    alle = sorted(alle, key=schwierigkeit)
+    schluss = []
+    if echte:
+        top = max(echte, key=schwierigkeit)
+        schluss = [x for x in alle if x is not top and x.art != 'echt' and schwierigkeit(x) > schwierigkeit(top)] + [top]
+        alle = [x for x in alle if all(x is not y for y in schluss)]
+    gruppen = []
+    # Gruppen nach Form innerhalb gleicher Zahlklasse und gleicher Schrittzahl (Entscheidung: sonst zieht
+    # eine Formgruppe eine leichte eigene Aufgabe hinter eine schwerere echte, Körper/Kurvenuntersuchung)
+    for zk in sorted({(x.zk, schrittzahl(x)) for x in alle}):
+        teil = []
+        for g in GRUPPEN:
+            gl = [x for x in alle if (x.zk, schrittzahl(x)) == zk and x.gruppe == g]
+            if gl:
+                teil.append((g, next((x.bild for x in gl if x.bild), ''), gl))
+        teil.sort(key=lambda t: (schwierigkeit(t[2][0]), GRUPPEN.index(t[0])))
+        gruppen += teil
+    if schluss:
+        gruppen.append((SCHLUSS, '', schluss))
+    return gruppen
 
 
 def self_sprossen(B, k):
@@ -2197,36 +2207,42 @@ def sortierung_md(titel):
           '| Stufe | Nr. | Gruppe | Zahlkl. | Schritte | Fragen | Höhe | Herkunft | Aufgabe |',
           '|---|---|---|---|---|---|---|---|---|']
     fehler = []
-    letzte = {}
-    gruppen = OrderedDict()
+    # Prüfung (Korrektur Lauf C): je Stufe ohne Vorstufen und Prüfstein: (b) Zahlklasse steigt nicht ab
+    # (außer im Schluss); (c) in jeder Gruppe Schwierigkeit monoton, Gruppen einer Zahlklasse nach ihrer
+    # leichtesten Aufgabe; (d) letzte Aufgabe ist die schwerste echte, davor nur schwerere eigene
+    stufen = OrderedDict()
     for stn, nr, g, a in SORT:
         her = a.id if a.art == 'echt' else ('Rückblick' if a.art == 'zone' else 'eigene Aufgabe')
         zl.append(f'| {stn} | {nr} | {g} | {a.zk} | {schrittzahl(a)} | {a.fz} | {min(a.hrang, 3)} | {her} | '
                   f'{klartext(a.text)[:60].replace("|", "/")} |')
         if g in ('Vorstufe', 'Prüfung'):
             continue
-        k = schluessel(a)
-        key = (stn, g)
-        if key in letzte and k < letzte[key][0]:
-            fehler.append(f'{stn}, {g}: Nr. {nr} leichter als Nr. {letzte[key][1]}')
-        letzte[key] = (k, nr)
-        gruppen.setdefault(stn, OrderedDict()).setdefault(g, []).append(a)
-    for stn, gs in gruppen.items():
-        for oben in (False, True):
-            gg = [(g, al) for g, al in gs.items() if g.endswith(PH) == oben]
-            ks = [gruppen_schluessel((g, '', sorted(al, key=schluessel))) for g, al in gg]
-            if ks != sorted(ks):
-                fehler.append(f'{stn}: Gruppen nicht nach leichtester Aufgabe ({", ".join(g for g, _ in gg)})')
-    # Prüfungshöhe zuletzt (Beschluss 2; Reparatur Punkt 1): nach der ersten Aufgabe auf Prüfungshöhe
-    # keine leichtere Aufgabe mehr in derselben Stufe
-    oben_ab = {}
-    for stn, nr, g, a in SORT:
-        if g in ('Vorstufe', 'Prüfung'):
-            continue
-        if min(a.hrang, 3) == 3:
-            oben_ab.setdefault(stn, nr)
-        elif stn in oben_ab:
-            fehler.append(f'{stn}: Nr. {nr} (Höhe {min(a.hrang, 3)}) steht hinter Nr. {oben_ab[stn]} auf Prüfungshöhe')
+        stufen.setdefault(stn, []).append((nr, g, a))
+    for stn, ls in stufen.items():
+        haupt = [x for x in ls if x[1] != SCHLUSS]
+        for (n1, g1, a1), (n2, g2, a2) in zip(haupt, haupt[1:]):
+            if a2.zk < a1.zk:
+                fehler.append(f'{stn}: Nr. {n2} (Zahlklasse {a2.zk}) nach Nr. {n1} (Zahlklasse {a1.zk})')
+            if g1 == g2 and (a1.zk, schrittzahl(a1)) == (a2.zk, schrittzahl(a2)) and schwierigkeit(a2) < schwierigkeit(a1):
+                fehler.append(f'{stn}, {g1}: Nr. {n2} leichter als Nr. {n1}')
+        for (n1, g1, a1), (n2, g2, a2) in zip(haupt, haupt[1:]):
+            if (a2.zk, schrittzahl(a2)) < (a1.zk, schrittzahl(a1)):
+                fehler.append(f'{stn}: Nr. {n2} (weniger Schritte) nach Nr. {n1}')
+        ersten = OrderedDict()
+        for nr, g, a in haupt:
+            ersten.setdefault(((a.zk, schrittzahl(a)), g), (schwierigkeit(a), nr))
+        for zk in {k[0] for k in ersten}:
+            ks = [v for k, v in ersten.items() if k[0] == zk]
+            if [k[0] for k in ks] != sorted(k[0] for k in ks):
+                fehler.append(f'{stn}: Gruppen der Klasse {zk} nicht nach leichtester Aufgabe')
+        echt = [a for _, _, a in ls if a.art == 'echt']
+        if echt:
+            top = max(echt, key=schwierigkeit)
+            if ls[-1][2] is not top:
+                fehler.append(f'{stn}: letzte Aufgabe Nr. {ls[-1][0]} ist nicht die schwerste echte')
+            for nr, g, a in ls:
+                if g == SCHLUSS and a is not top and (a.art == 'echt' or schwierigkeit(a) <= schwierigkeit(top)):
+                    fehler.append(f'{stn}: Nr. {nr} im Schluss, aber nicht schwerer als die schwerste echte')
     zl += ['', '## Prüfung', ''] + (['- ' + f for f in fehler] if fehler else ['- keine Abweichung'])
     return '\n'.join(zl) + '\n', fehler
 
