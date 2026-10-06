@@ -38,7 +38,7 @@ BANK = os.path.dirname(HIER)
 # Text: Katalog/Wortlaut sind Klartext mit $…$-Stellen; Bank ist LaTeX.
 # ---------------------------------------------------------------------------
 UNI_MATH = {'⇒': r'\Rightarrow', '≈': r'\approx', '−': '-', '≤': r'\le', '≥': r'\ge',
-            'π': r'\pi', 'α': r'\alpha', 'β': r'\beta', '→': r'\to', '⇔': r'\Leftrightarrow',
+            'π': r'\pi', '≙': r'\mathrel{\widehat{=}}', 'α': r'\alpha', 'β': r'\beta', '→': r'\to', '⇔': r'\Leftrightarrow',
             '·': r'\cdot', '°': r'^\circ'}
 SUP = str.maketrans('⁰¹²³⁴⁵⁶⁷⁸⁹', '0123456789')
 
@@ -117,6 +117,11 @@ class Daten:
         self.pruefjahre = sorted({(r['jahr']) for r in self.kat.values()
                                   if r['papier'] in ('OS', 'FOR')})
         self.zu = lies_csv(os.path.join(mn, 'msa', f'zuordnung-{kapitel}.csv'))
+        self.zwilling_zu = {}
+        for z in self.zu:
+            for paar in (z.get('ebr_zwilling') or '').split():
+                f, e = paar.split('=')
+                self.zwilling_zu[f] = e
         wl = lies_csv(os.path.join(mn, 'msa', f'wortlaut-eigen-{kapitel}.csv'))
         self.wort = OrderedDict((r['id'], r) for r in wl)
         self.zuschnitt = lies_csv(os.path.join(mn, 'msa', 'skript-zuschnitt-p10.csv'))
@@ -147,6 +152,7 @@ class Daten:
                 m = re.search(r'Wortgleich mit (\d{4}-FOR-\w+?)[.)\s]', r['bemerkung'] + ' ')
                 if m:
                     self.ebr_zwilling[m.group(1)] = r['id']
+        self.ebr_zwilling.update(self.zwilling_zu)   # Zuordnung geht vor (Reparatur Punkt 13)
         self.zusatz = {}
         for p in glob.glob(os.path.join(mn, 'msa', '*-zusatz.jsonl')):
             name = os.path.basename(p)
@@ -239,11 +245,47 @@ def abb_dreieck(desc):
                                     tx(la)))
 
 
+def abb_tabelle_zeilen(desc):
+    # „Tabelle: Kopf | Kopf; Zeile | Wert; …“ (Reparatur 06.10., Punkt 10)
+    teile = [t.strip() for t in desc.split(':', 1)[1].split(';') if t.strip()]
+    zeilen = [[tx(z.strip()) for z in t.split(' | ')] for t in teile]
+    n = max(len(z) for z in zeilen)
+    zeilen = [z + [''] * (n - len(z)) for z in zeilen]
+    return r'\sachtabelle{l%s}{%s}{%s}' % ('r' * (n - 1), ' & '.join(zeilen[0]),
+                                          r'\\ '.join(' & '.join(z) for z in zeilen[1:]))
+
+
+def abb_saeulenraster(desc):
+    # „Säulenraster (14 Kästchen hoch): y-Achse …; x-Achse …; Spanisch 7,8; ___ 10,5; Arabisch –“
+    h = int(re.search(r'\((\d+) Kästchen hoch\)', desc).group(1))
+    teile = [t.strip() for t in desc.split(':', 1)[1].split(';')]
+    ylab = re.sub(r'^y-Achse\s*|\s*ohne Einteilung', '', teile[0])
+    xlab = re.sub(r'^x-Achse\s*', '', teile[1])
+    saeulen = [re.match(r'(.*\S)\s+(\S+)$', t).groups() for t in teile[2:]]
+    b = 5 * len(saeulen) + 1
+    out = [r'\begin{tikzpicture}[x=0.45cm,y=0.45cm]',
+           r'\draw[mbgitter,line width=0.3pt] (0,0) grid (%d,%d);' % (b, h),
+           r'\draw[line width=0.7pt,->] (0,0) -- (0,%.1f) node[above,font=\small] {%s};' % (h + 0.6, tx(ylab)),
+           r'\draw[line width=0.7pt,->] (0,0) -- (%.1f,0) node[right,font=\small] {%s};' % (b + 0.6, tx(xlab))]
+    for i, (name, wert) in enumerate(saeulen):
+        x = 2 + 5 * i
+        if wert not in ('–', '-'):
+            out.append(r'\fill[mbkasten,draw=black] (%d,0) rectangle (%d,%s);' % (x, x + 2, wert.replace(',', '.')))
+        lab = r'\leerzelle' if name.startswith('_') else tx(name)
+        out.append(r'\node[below=2pt,font=\small] at (%d,0) {%s};' % (x + 1, lab))
+    out.append(r'\end{tikzpicture}')
+    return ''.join(out)
+
+
 def abbildung(desc, D, iid, vorspann_abb=''):
     """Liefert (latex, ankreuztabelle?) zur Beschreibung; '' wenn keine nötig."""
     d = (desc or '').strip()
     if not d or d.startswith('keine'):
         return ''
+    if d.startswith('Tabelle:'):
+        return abb_tabelle_zeilen(d)
+    if d.startswith('Säulenraster'):
+        return abb_saeulenraster(d)
     if 'wie im Text' in d:
         return ''   # Werte stehen im Wortlaut; Entscheidung: keine zweite Darstellung
     if d.startswith('Tabelle aus dem Vorspann'):
@@ -442,7 +484,13 @@ def echt_aufgabe(D, iid, stufe):
     a.fund = w['fundstelle']
     a.jahr = int(k['jahr'])
     a.rang = NIVEAU.get(k['niveau_geschaetzt'], 2.5)
-    a.kurz = '; '.join(tx(x.strip()) for x in k['kurzloesung'].split(' | ') if x.strip())
+    teile, werte = [], set()
+    for x in k['kurzloesung'].split(' | '):
+        x = x.strip()
+        wv = re.split(r'≈|=', x)[-1].strip()
+        if x and wv not in werte:   # „Sektor ≈ 52° | ≈ 52°“ nur einmal (Reparatur Punkt 6)
+            teile.append(x); werte.add(wv)
+    a.kurz = '; '.join(tx(x) for x in teile)
     if not k['kurzloesung']:
         D.befund(f'{iid}: kurzloesung leer')
     zw = [x.strip() for x in k['zwischenergebnis'].split(' ; ') if x.strip()]
@@ -571,6 +619,10 @@ def bank_loesung(l):
                 vorher = ''.join(('$' + x + '$') if mm else x for mm, x in teile[:idx])
                 kurz = ('$\\approx ' if rel != '=' else '$') + rhs + '$' + nach
                 vor = vorher + '$' + lhs + '$'
+                if rel != '=' and '=' in lhs and re.search(r'\\(t?frac|pi|sqrt)', lhs.rsplit('=', 1)[1]):
+                    ex = lhs.rsplit('=', 1)[1].strip()   # exakt vor gerundet (Beschluss 24)
+                    kurz = '$' + ex + ' \\approx ' + rhs + '$' + nach
+                    vor = vorher + '$' + lhs.rsplit('=', 1)[0].strip() + '$'
                 break
     zw = seg[:-1] + ([vor.strip()] if vor.strip() and vor.strip() != '$$' else []) + extra
     return kurz.strip(), zw
@@ -606,7 +658,9 @@ def bank_aufgabe(D, r, stufe):
         a.optionen = [tx(o, latex=True) for o in opts]
     a.text = tx(t, latex=True)
     a.abb = r.get('grafik', '') or ''
-    if r.get('antwort') and r['antwort'].strip() and '__' in r['antwort']:
+    if '\\streifenfeld' in (r.get('grafik') or ''):
+        pass   # \streifenfeld setzt sein Antwortfeld selbst – kein zweites (Reparatur Punkt 7)
+    elif r.get('antwort') and r['antwort'].strip() and '__' in r['antwort']:
         s = r['antwort']
         teile = re.split(r'__ ?([^\s,;]+(?= |,|;|$))?', s)
         # teile: Text, Einheit, Text, Einheit, …
@@ -621,6 +675,7 @@ def bank_aufgabe(D, r, stufe):
     kurz, zw = bank_loesung(r['loesung'])
     a.kurz = tx(kurz, latex=True)
     a.zw = [tx(z, latex=True) for z in zw]
+    a.zw_roh = zw
     a.zw_wort = ['' if hat_wort(z) and not z.startswith('$') else wort_fuer(z, i, [], len(zw), stufe)
                  for i, z in enumerate(zw)]
     a.rang = HOEHE.get(r.get('hoehe'), 1.2)
@@ -681,14 +736,11 @@ def zahlklasse(a):
     if any(p and v != int(v) for v, p, _ in zs):
         return 2
     kopf = True
-    nur1 = any(p and v == 1 for v, p, _ in zs)   # „Wie viel ist 1 %?“ – der Schritt selbst ist Kopf
     for v, p, roh in zs:
-        if p and not nur1:
-            kopf &= int(v) in KOPF_P
-        elif p:
-            kopf &= v == int(v) and v < 100
+        if p:
+            kopf &= v == int(v) and (int(v) in KOPF_P or int(v) < 10)   # 1–9 % und 10/20/25/50/75 %
         else:
-            kopf &= v == int(v) and len(roh.strip('0').replace(',', '')) <= 2
+            kopf &= v == int(v) and len(str(int(v)).strip('0')) <= 2
     for v, p, roh in zahlen(a.kurz):
         if ',' in roh and len(roh.split(',')[1].rstrip('0')) > 1:
             kopf = False
@@ -746,18 +798,42 @@ def gruppe_von(D, a):
     return 'Sachaufgabe'
 
 
+def gesucht(a):
+    """Gesuchte Größe der Aufgabe aus der letzten Frage (Reparatur Punkt 3): Prozentsatz, Prozentwert,
+    Grundwert oder '' (unbestimmt)."""
+    t = klartext(a.text)
+    fr = [x for x in re.split(r'(?<=[.?!])\s+', t) if x.endswith('?') or re.match(OPERATOR, x)]
+    q = ' '.join(fr[-2:]) if fr else t
+    if re.search(r'[Ww]ie viel Prozent|Prozentsatz|Zinssatz|[Uu]m wie viel Prozent|in Prozent', q):
+        return 'Prozentsatz'
+    if re.search(r'ganze|Ganze|insgesamt|vorher|alte|ursprünglich|voller|gesamt|passen in|hat die|hatte|1\s*%|[Kk]apital', q):
+        return 'Grundwert'
+    if re.search(r'\d\s*% von|spart|Nachlass|Rabatt|Zinsen|kostet|bezahl|neue', q):
+        return 'Prozentwert'
+    return ''
+
+
 HRANG = {'vorstufe': 0, 'grundfall': 1, 'sprosse': 2, 'pflicht': 2, 'pruefung': 3}
 
 
+def schrittzahl(a):
+    """Schritte: echte Aufgaben aus dem Katalogfeld schritte; Bankaufgaben = Zwischenergebnisse mit
+    Rechnung (Operator) + 1, höchstens 4."""
+    if a.art == 'echt':
+        return max(1, int(re.sub(r'\D', '', a.schritte or '1') or 1))
+    n = sum(1 for z in (a.zw_roh or []) if re.search(r'\s(:|·|-|−|\+)\s|\\cdot|frac', z))
+    return min(4, max(1, n))
+
+
 def schluessel(a):
-    """Reihenfolge in einer Gruppe (Beschluss 2): Prüfungshöhe zuletzt, glatt vor krumm, wenig Text vor
-    viel, eine Frage vor zwei; danach Höhe der Bank, dann jüngere Prüfung zuerst."""
-    stufe = 2 if getattr(a, 'dazu', False) else (1 if a.hrang >= 3 else 0)
-    if stufe == 2:
-        return (1, 0, 0, 1.5, 1, 3, 0, a.id)   # nach den kurzen, vor den langen Prüfungsaufgaben
-    if stufe == 1:
-        return (1, 0, 0, a.tl, min(a.fz, 2), 3, -a.jahr, a.id)
-    return (0, a.zk, a.sr if a.zk == 0 else 0, a.tl, min(a.fz, 2), a.hrang, -a.jahr, a.id)
+    """Reihenfolge (Beschlüsse 2, 8; Reparatur 06.10.): Zahlklasse (kopfrechenbar, glatt, krumm),
+    Schrittzahl, Fragenzahl, Höhe der Bank (Vorstufe, Grundfall, Sprosse, Prüfung), Textlänge,
+    Prozentsatz-Muster (10, 50, 25, 1, 20 %), Punkte; die Prüfungsherkunft entscheidet erst danach
+    (eigene vor echter bei Gleichstand, jüngere Prüfung zuerst)."""
+    pkt = int(a.punkte) if a.art == 'echt' and str(a.punkte).isdigit() else 0
+    unten = 0 if (a.zk == 0 and a.hrang <= 1) else 1   # Grundfall im Kopf zuerst (Muster 6)
+    return (a.zk, unten, schrittzahl(a), min(a.fz, 2), min(a.hrang, 3), a.tl, a.sr, pkt,
+            a.art == 'echt', -a.jahr, a.id)
 
 
 # ---------------------------------------------------------------------------
@@ -766,7 +842,7 @@ def schluessel(a):
 BEZEICHNUNG = {'Grundwert': 'Grundwert $G$', 'Prozentwert': 'Prozentwert $W$',
                'Prozentsatz': 'Prozentsatz $p$', 'Zinsen und Zinssatz': 'Zinsen $Z$ und Zinssatz $p$'}
 FORMEL = {'Grundwert': '$G = W : p$', 'Prozentwert': '$W = G \\cdot p$', 'Prozentsatz': '$p = W : G$',
-          'Zinsen und Zinssatz': '$Z = K \\cdot p$'}   # Schreibweise wie im Katalog (zwischenergebnis)
+          'Zinsen und Zinssatz': '$Z = K \\cdot p$, $p = Z : K$'}   # Schreibweise wie im Katalog (zwischenergebnis)
 
 
 class Stufe:
@@ -834,6 +910,8 @@ def erkennung_einheiten(D):
 # Fokus: Sprossen anderer Stufen, die das Muster der Stufe ausdrücklich nennt (Beschluss 6:
 # „… → nach Rabatt (80 %) → …“ ist Grundwert rückwärts aus Einheit 5)
 FOKUS_DAZU = {'Grundwert': ['prozentrechnung-e5-k2-s4']}
+# … und die echte „nach Rabatt (80 %)“-Aufgabe als längere Prüfungsaufgabe am Schluss
+FOKUS_ECHT = {'Grundwert': ['2015-OS-K2b']}
 
 
 class Bau:
@@ -850,6 +928,8 @@ class Bau:
         for v in self.sprossen.values():
             v.sort(key=lambda r: r['variante'])
         self.stern_orig = {}
+        self.vor_sp = set()   # Vorstufen-Sprossen, die schon eine Stufe dieses Hefts trägt
+        self.grund_k = set()  # Ketten, deren Grundfall schon eine Stufe dieses Hefts trägt
 
     def nimm(self, sp, n, stufe, kopf_zuerst=True):
         rs = [r for r in self.sprossen.get(sp, []) if r['id'] not in self.benutzt]
@@ -927,8 +1007,14 @@ def baue_modell(D, args):
             erk = []   # Fokus: nur die Vorstufen der eigenen Kette, wie Muster 6 (Entscheidung)
         for _, k in erk:
             vsp += [sp for sp in self_sprossen(B, k) if sp not in vsp]
+        # Vorstufe = Vorstufe genau dieses Handgriffs: eine Sprosse, die schon eine frühere Stufe
+        # des Hefts trägt, kommt nicht noch einmal (Reparatur Punkt 8)
+        vsp = [sp for sp in vsp if sp not in B.vor_sp]
         vor = []
-        if tief:
+        if args.art == 'schwach':
+            for sp in vsp:
+                vor += B.nimm(sp, 1, st.name)   # schwach: alle Vorstufen von ganz unten, je eine (Punkt 9)
+        elif tief:
             for sp in vsp:
                 vor += B.nimm(sp, 2, st.name)
         else:
@@ -944,24 +1030,35 @@ def baue_modell(D, args):
                               + (' (Ketten ' + ', '.join(ketten) + ')' if ketten else ' (keine Bankkette)'))
         for a in vor:
             a.hrang = 0
+            B.vor_sp.add(sprosse_von(a.id))
         st.vor = sorted(vor, key=lambda a: (a.zk, a.sr, a.tl, a.fz, a.id))
         # Mitte: Grundfall je Kette (kopfrechenbar zuerst), die genannten Sprossen der Zuordnung
         mitte = []
-        n_grund = 4 if args.fokus else (2 if tief else 1)
+        n_grund = 4 if args.fokus else 1
         n_spr = 2 if args.fokus else 1
         for k in ketten:
             for sp in self_sprossen(B, k):
                 h = B.sprossen[sp][0]['hoehe']
-                if h == 'grundfall':
-                    mitte += B.nimm(sp, n_grund, st.name)
+                if h == 'grundfall' and k not in B.grund_k:
+                    mitte += B.nimm(sp, n_grund, st.name)   # Grundfall einer Kette nur in ihrer ersten Stufe
+                    B.grund_k.add(k)
                 elif args.fokus and h == 'sprosse' and sp not in st.sprossen:
                     mitte += B.nimm(sp, 1, st.name)   # Fokus: ganze Kette von unten (Beschluss 7)
         if args.fokus:
             for sp in FOKUS_DAZU.get(st.name, []):
                 for a in B.nimm(sp, 1, st.name, kopf_zuerst=False):   # v1: „nach Rabatt (80 %)“
-                    a.dazu = True   # steht nach der echten Rabatt-Aufgabe (Muster 6)
                     a.gruppe = 'Sachaufgabe'
                     mitte.append(a)
+            for iid in FOKUS_ECHT.get(st.name, []):
+                a = echt_aufgabe(D, iid, st.name)
+                if a:
+                    a.hrang = 3; a.stern = stern_fuer(D, iid); kennzahlen(D, a)
+                    echte.append(a)
+            # nur Aufgaben, die nach der Größe der Stufe fragen (Reparatur Punkt 3)
+            weg = [a for a in mitte if gesucht(a) not in ('', st.name) and st.name in ('Grundwert', 'Prozentwert', 'Prozentsatz')]
+            for a in weg:
+                D.befund(f'Fokus {st.name}: {a.id} fragt nach {gesucht(a)} – nicht gesetzt')
+            mitte = [a for a in mitte if a not in weg]
         for sp in st.sprossen:
             m = re.match(r'(msa/[\w-]+\.jsonl)\((\d+)\)', sp)
             if m:
@@ -985,15 +1082,30 @@ def baue_modell(D, args):
             a.stern = bool(a.orig and stern_fuer(D, a.orig))
         # Gruppen (Beschluss 8): je Gruppe leicht -> schwer; Aufgabenbild-Wort aus Feld bild
         alle = mitte + echte
-        st.gruppen = []
-        for g in GRUPPEN:
-            gl = sorted([a for a in alle if a.gruppe == g], key=schluessel)
-            if gl:
-                wort = next((a.bild for a in gl if a.bild), '')
-                st.gruppen.append((g, wort, gl))
-        # Gruppen nach ihrer leichtesten Aufgabe (Leiter über die ganze Stufe, Beschluss 2);
-        # bei Gleichstand die Folge in GRUPPEN (Entscheidung)
-        st.gruppen.sort(key=lambda x: (schluessel(x[2][0])[:3], GRUPPEN.index(x[0])))
+        if args.fokus:
+            # Fokus (Muster 6): oben nur echte Prüfungshöhe, längste zuletzt (Reparatur Punkt 3)
+            gl_unten = sorted(mitte, key=schluessel)
+            gl_oben = sorted(echte, key=lambda a: (a.tl, schrittzahl(a), int(a.punkte or 1), -a.jahr))
+            st.gruppen = [(g, '', [a for a in gl_unten if a.gruppe == g]) for g in GRUPPEN]
+            st.gruppen = [x for x in st.gruppen if x[2]]
+            st.gruppen.sort(key=lambda x: (schluessel(x[2][0])[:5], GRUPPEN.index(x[0])))
+            st.gruppen.append(('Prüfung', '', gl_oben))
+            alle = []
+        else:
+            st.gruppen = []
+        # Kleine Gruppen nach Form und Zahlklasse (Beschlüsse 2, 3, 8; Reparatur Punkt 2): die Leiter
+        # geht über die ganze Stufe – erst alle kopfrechenbaren Gruppen, dann glatte, dann krumme;
+        # in einer Zahlklasse Gruppen nach ihrer leichtesten Aufgabe, bei Gleichstand rechnen,
+        # Ankreuzen, Sachaufgabe; Vergleich (Urteil) am Ende der Zahlklasse (Entscheidung)
+        for zk in (0, 1, 2):
+            for g in GRUPPEN:
+                gl = sorted([a for a in alle if a.gruppe == g and a.zk == zk], key=schluessel)
+                if gl:
+                    wort = next((a.bild for a in gl if a.bild), '')
+                    st.gruppen.append((g, wort, gl))
+        if not args.fokus:
+            st.gruppen.sort(key=lambda x: (x[2][0].zk, x[0] == 'Vergleich', schluessel(x[2][0])[:5],
+                                           GRUPPEN.index(x[0])))
         if not echte:
             D.befund(f'{st.name}: keine echte Aufgabe – Prüfungshöhe nur aus der Bank')
         st.reserve = []
@@ -1091,8 +1203,31 @@ def tipp_ansatz(a):
     return ''
 
 
+def _rhs(z):
+    """Wert hinter dem letzten = / ≈ eines rohen Zwischenergebnisses, als LaTeX; '' ohne Zahl."""
+    t = z.replace('$', '')
+    teile = re.split(r'=|\\approx|≈|\\Rightarrow|⇒', t)
+    if len(teile) < 2:
+        return ''
+    w = teile[-1].strip()
+    return _stueck(w) if re.search(r'\d', w) else ''
+
+
 def kurz_kontrolle(a):
+    """Kontrollwert (Reparatur Punkt 6): ein Urteil („Ja“) wird durch den Zahlwert ersetzt, auf den es
+    sich stützt (letztes Zwischenergebnis mit Wert vor „vergleichen“); bei zwei Fragen steht zuerst der
+    Wert der ersten Frage (letztes Zwischenergebnis mit eigenem Wert), dann der der zweiten."""
     k = a.kurz
+    roh = a.zw_roh if a.art != 'echt' else []
+    if roh and re.match(r'^\$?\s*(Ja|Nein|ja|nein)\b[^\d]*$', klartext(k) or ''):
+        basis = [z for z in roh if not re.match(r'\s*(vergleichen|Rest)', klartext(z)) and _rhs(z)]
+        if basis:
+            k = _rhs(basis[-1])
+    elif roh and a.fz >= 2 and klartext(k).count(', ') < 1 and ';' not in klartext(k):
+        mit = [_rhs(z) for z in roh if _rhs(z)]
+        mit = [m for m in mit if klartext(m) != klartext(k)]
+        if mit:
+            k = mit[-1] + '; ' + k
     return k if k and len(klartext(k)) <= 45 else ''
 
 
@@ -1102,9 +1237,10 @@ def fuss(a, nr):
     t = tipp_ansatz(a)
     if not k and not t:
         return ''
-    s = f'{nr}' + (f': {k}' if k else '')
+    s = f'{nr}' + (f':~{k}' if k else '')
+    s = f'\\mbox{{{s}}}'   # Nummer und Wert nie getrennt (Reparatur Punkt 5)
     if t:
-        s += f', Tipp: {t}'
+        s += f', \\mbox{{Tipp: {t}}}'
     return f'\\fusshilfe{{{s}}}'
 
 
@@ -1122,7 +1258,7 @@ def platz(a, art):
         s = len(a.zw) + 1
     if not a.zw and a.zk == 0 and a.art != 'echt' and len(klartext(a.kurz)) <= 25:
         return 0
-    return max(2, min(6, s + 1)) if art == 'schwach' else max(1, min(4, s))
+    return max(2, min(5, s)) if art == 'schwach' else max(1, min(4, s))
 
 
 def zf_fuer(a, zaehler, art):
@@ -1146,14 +1282,18 @@ def aufgabe_tex(D, a, nr, art, zfs, kurs, mit_nr=True):
         out.append(f'\\pfzwfrage{{{tx(f)}}}')
     n = platz(a, art)
     if n:
-        out.append(f'\\rechenplatz{{{n}}}')
+        out.append(f'\\rechenraster{{{n}}}' if art == 'schwach' else f'\\rechenplatz{{{n}}}')
     out.append(fuss(a, nr))
     out.append('\\end{pfnr}')
     return '\n'.join(x for x in out if x)
 
 
 def braucht_formel(st, a):
-    return st.name in FORMEL and a.hrang > 0 and a.zk >= 1
+    """Formel ab der ersten Aufgabe, die rechnet und nicht mehr im Kopf geht; in den Zins-Stufen ab der
+    ersten Rechnung (Zinssatz und Kapital brauchen die umgestellte Formel; Reparatur Punkt 4)."""
+    if st.name not in FORMEL or a.hrang == 0 or a.kreuz or a.optionen:
+        return False
+    return a.zk >= 1 or st.name.startswith('Zinsen')
 
 
 def bloecke(st):
@@ -1260,9 +1400,125 @@ def fundstelle(D, iid, kurs, ganz=False):
     return f
 
 
+def _num(t):
+    """Rechenausdruck (LaTeX oder Klartext) -> Wert oder None."""
+    t = t.replace('$', '').replace('\\,', '').replace('{,}', '.').replace('\\cdot', '*').replace('·', '*')
+    t = t.replace('−', '-').replace(':', '/').replace('\\ldots', '')
+    t = re.sub(r'\\t?frac\{([^}]*)\}\{([^}]*)\}', r'((\1)/(\2))', t)
+    t = re.sub(r'(\d)\.(?=\d{3}\b)', r'\1', t) if re.search(r'\d,\d', t) else t
+    t = t.replace(',', '.').replace('^', '**')
+    t = re.sub(r'\s*(€|kg|km|cm|m|l|h|Stunden|Kinder|\\%|%|Mio\.?)\s*', ' ', t).strip()
+    if not t or not re.fullmatch(r'[\d.+\-*/() ]+', t) or not re.search(r'[+\-*/]', t.strip('-')):
+        return None
+    try:
+        return eval(t, {'__builtins__': {}})
+    except Exception:
+        return None
+
+
+def _de(v):
+    s = f'{v:.2f}'.rstrip('0').rstrip('.') if abs(v - round(v)) > 1e-9 else str(int(round(v)))
+    return s.replace('.', '{,}')
+
+
+WORT_GROESSE = {'G': 'Grundwert', 'W': 'Prozentwert', 'p': 'Prozentsatz', 'Z': 'Zinsen', 'K': 'Kapital'}
+
+
+def _stueck(t):
+    """Teil einer Rechnung setzen: mit LaTeX-Befehlen im Mathemodus, Klartext wie im Katalog."""
+    t = t.strip()
+    if not t:
+        return ''
+    if '\\' in t or '{' in t or '^' in t:
+        t = re.sub(r'(?<!\\)%', r'\\%', t)
+        if not re.search(r'\\(cdot|t?frac|pi|approx|text|sqrt|Rightarrow)|\^', t):
+            return t   # Bank-LaTeX ohne Mathebefehl (30\,\%, 0{,}25) geht im Text
+        m = re.match(r'^(.*?)(\s+[A-Za-zÄÖÜäöüß][A-Za-zÄÖÜäöüß. ]*)$', t)
+        if m:
+            return tx('$' + m.group(1) + '$') + tx(m.group(2))   # Einheit/Wort hinter der Zahl aufrecht
+        return tx('$' + t + '$')
+    return tx(t)
+
+
+OP = re.compile(r'\s(:|·|-|−|\+)\s|\\cdot|\\t?frac|\^|/|\bvon\b')
+
+
+def schwach_zeile(z, a):
+    """„schwach“ (Beschluss 29): Wort + Ansatz ⇒ Wert. Das Wort ist die gesuchte Größe der Zeile, aus
+    dem Ansatz bestimmt; lässt sie sich nicht bestimmen, steht kein Wort (Reparatur Punkt 1).
+    Reihenfolge (Entscheidung): Formelbuchstabe vorn (G, W, p, Z, K) -> Größe; Beschriftung vorn
+    („Rabatt 64 : 4“, „1 Karte: …“) -> sie ist das Wort; sonst aus der Rechnung: a : b mit b gleich
+    einem Prozentsatz der Aufgabe -> „1 %“; a : 1,x -> „alter Wert“; a : b < 1 -> „Anteil“;
+    · 100 -> „100 %“; Faktor 0,5…1,9 mal Wert -> „neuer Wert“, 0,0x…0,4 -> „Prozentwert“; a − b ->
+    „Unterschied“; sonst keins. Symbolische Teile („W : p“) fallen weg; fehlt der Wert, rechnet das
+    Programm ihn aus."""
+    s = z.strip().replace('$', '')
+    wort = ''
+    m = re.match(r'^([GWpZK])\s*=\s*(.*)$', s)
+    if m:
+        wort, s = WORT_GROESSE[m.group(1)], m.group(2)
+    teile = re.split(r'\s*(=|\\approx|≈|\\Rightarrow|⇒)\s*', s)
+    segs, seps = teile[0::2], teile[1::2]
+    # Beschriftung vor der ersten Zahl
+    lm = re.match(r'^([A-Za-zÄÖÜäöüß][A-Za-zÄÖÜäöüß .]*?)\s*:?\s+(?=[\d(\\]|$)', segs[0])
+    if lm and (re.fullmatch(r'[A-Za-z]', lm.group(1).strip()) or re.search(r'\b(von|je|oder)$', lm.group(1).strip())):
+        lm = None
+    if lm:
+        if not wort:
+            wort = lm.group(1).strip().rstrip(':')
+        segs[0] = segs[0][lm.end():]
+    else:
+        lm2 = re.match(r'^([^:$=]{0,28}[^\s:$=]):\s+(.*)$', segs[0])
+        if lm2:
+            wort = wort or lm2.group(1).strip()
+            segs[0] = lm2.group(2)
+    # symbolische Teile weg (nur Buchstaben und Zeichen, keine Zahl)
+    paare = [(sg, seps[k - 1] if k else '') for k, sg in enumerate(segs)]
+    paare = [(sg, sp) for sg, sp in paare if re.search(r'\d', sg)]
+    if not paare:
+        return (tx(wort) + ': ' if wort else '') + _stueck(z.replace('$', ''))
+    ansatz = paare[0][0]
+    rest = paare[1:]
+    if not OP.search(' ' + ansatz + ' '):
+        # nur ein Wert: Wort + Wert
+        return (tx(wort) + ': ' if wort else '') + ' '.join(
+            ([_stueck(ansatz)] + [(r'$\approx$ ' if sp in ('\\approx', '≈') else '= ') + _stueck(sg) for sg, sp in rest]))
+    if not wort:
+        ps = {v for v, p, _ in zahlen(a.text) if p}
+        mm = re.match(r'^\s*([\d{},.\\ ]+)\s*:\s*([\d{},.\\ ]+)\s*$', ansatz)
+        q = _num(ansatz)
+        if mm:
+            b = _num('(' + mm.group(2) + ')*1')
+            if b in ps and q is not None and q >= 1:
+                wort = '1 %'
+            elif b is not None and any(abs(b - (1 + p / 100)) < 1e-9 or abs(b - (1 - p / 100)) < 1e-9 for p in ps):
+                wort = 'alter Wert'
+            elif q is not None and q < 1:
+                wort = 'Anteil'
+        elif re.search(r'(\\cdot|·)\s*100\s*$', ansatz):
+            wort = '100 %'
+        elif re.search(r'(^|\s)(0\{?,\}?0\d|0\{?,\}?[1-4]\d*)\s*(\\cdot|·)|(\\cdot|·)\s*0\{?,\}?(0\d|[1-4])', ansatz):
+            wort = 'Prozentwert'
+        elif re.search(r'(^|\s)(0\{?,\}?[5-9]|1\{?,\}?\d+)\s*(\\cdot|·)|(\\cdot|·)\s*(0\{?,\}?[5-9]|1\{?,\}?\d+)', ansatz) \
+                and '^' not in ansatz:
+            wort = 'neuer Wert'
+        elif re.search(r'\s(-|−)\s', ansatz) and '(' not in ansatz:
+            wort = 'Unterschied'
+    if rest:
+        wert = ''
+        for k, (sg, sp) in enumerate(rest):
+            wert += ('' if k == 0 else (r' $\approx$ ' if sp in ('\\approx', '≈') else ' = ')) + _stueck(sg)
+        if rest[0][1] in ('\\approx', '≈'):
+            wert = r'$\approx$ ' + wert
+    else:
+        v = _num(ansatz)
+        wert = _stueck(_de(v)) if v is not None else ''
+    return (tx(wort) + ': ' if wort else '') + _stueck(ansatz) + (r' $\Rightarrow$ ' + wert if wert else '')
+
+
 def loesung_zeilen(D, a, art, kurs):
     if art == 'schwach':
-        zw = '; '.join((w + ': ' if w else '') + z for z, w in zip(a.zw, a.zw_wort + [''] * len(a.zw)))
+        zw = '; '.join(schwach_zeile(z, a) for z in (a.zw_roh or a.zw))
     else:
         zw = '; '.join(a.zw)
     f = fundstelle(D, a.id, kurs) if a.art == 'echt' else ''
@@ -1504,8 +1760,10 @@ def register(args, name, ordner, seiten):
     p = os.path.join(BANK, 'bau', 'register.csv')
     zeilen = open(p, encoding='utf-8').read().splitlines()
     pfad = os.path.relpath(ordner, BANK)
+    alt = [z.split(';')[0] for z in zeilen if z.endswith(';' + pfad)]
     zeilen = [z for z in zeilen if not z.endswith(';' + pfad)]
-    n = 1 + sum(1 for z in zeilen if z.startswith('PRZ-PH'))
+    nrn = [int(z.split(';')[0][6:]) for z in zeilen if re.match(r'PRZ-PH\d+;', z)]
+    kenn = alt[0] if alt else f'PRZ-PH{max(nrn + [0]) + 1}'   # Neubau behält seine Kennung
     best = (f'kapitel={args.kapitel}, art={args.art}, portion={args.portion or "–"}, '
             f'fokus={args.fokus or "–"}, kurs={args.kurs}, seiten={seiten}')
     try:
@@ -1513,7 +1771,7 @@ def register(args, name, ordner, seiten):
                                 text=True).stdout.strip()
     except Exception:
         commit = ''
-    zeilen.append(f'PRZ-PH{n};{args.datum};prozentrechnung,zinsrechnung;PH;{best};{commit};'
+    zeilen.append(f'{kenn};{args.datum};prozentrechnung,zinsrechnung;PH;{best};{commit};'
                   f'pruefheft.py v0.2;Version 2026-10-06;{pfad}')
     open(p, 'w', encoding='utf-8').write('\n'.join(zeilen) + '\n')
 
