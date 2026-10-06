@@ -1,0 +1,455 @@
+% Lernblatt Lineare Funktionen – gebaut aus der Aufgabenbank
+% (bank/lineare-funktionen) nach Prompt v5.4, Vorbild Muster 4
+% (bau/terme/muster-2026-10-01/muster4.tex). Für S02 (Kl. 10, Gesamtschule,
+% P10 2027). Eingabe „p10 lineare funktionen“: die P10-Einheiten 2–5 der
+% Mappe in Katalogfolge (Einheit 1, proportionale Funktion, hat keinen
+% P10-Typ und entfällt); auf dem Blatt gezählt 1–4.
+% Quelle je Teilaufgabe im Kommentar davor: % <id> = aus der Bank (Auftrag im
+% Titel der Nummer), % GEÄNDERT <id> = Form oder Zahlen geändert,
+% % NEU = nicht in der Bank (neu.jsonl).
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\usepackage{multicol}
+\usepackage{lastpage}
+% Kopf: nur das Thema; Fuß: „Seite n von m“
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\fancyhead[L]{\small Lineare Funktionen}
+\fancyfoot[C]{\small Seite \thepage\ von \pageref{LastPage}}
+\raggedright
+\makeatletter
+% ---------------------------------------------------------------- Satz
+\newcommand{\vorgerechnet}[1]{\textcolor{gray!70}{#1}}
+\newcommand{\einheit}[2]{\par\Needspace*{0.33\textheight}\addvspace{16pt}%
+  \noindent{\Large\bfseries\ifblank{#1}{}{#1\hspace{0.6em}}#2}\par\nobreak\vspace{2pt}%
+  \gappto\mblsg{\lsgeinheit{\ifblank{#1}{}{#1\ }#2}}}
+\newsavebox{\nrbox}\newlength{\nrhoehe}
+\newcommand{\nrtitel}[1]{\noindent\hangindent1.6em\hangafter1%
+  \makebox[1.6em][l]{\textbf{\theaufgabe.}}#1\par\vspace{1pt}}
+\newenvironment{nr}[2][]{\refstepcounter{aufgabe}\setcounter{teil}{0}%
+  \def\nrart{#1}%
+  \ifx\nrart\@empty
+    \begin{lrbox}{\nrbox}\begin{minipage}[t]{\linewidth}\raggedright
+    \setlength{\parskip}{0pt}\nrtitel{#2}%
+  \else
+    \par\addvspace{11pt}\Needspace*{8\baselineskip}\nrtitel{#2}%
+  \fi}%
+ {\ifx\nrart\@empty
+    \end{minipage}\end{lrbox}%
+    \setlength{\nrhoehe}{\dimexpr\ht\nrbox+\dp\nrbox\relax}%
+    \par\addvspace{11pt}\Needspace*{\nrhoehe}\noindent\usebox{\nrbox}\par
+  \else\par\fi}
+\newcommand{\teilmarke}{\stepcounter{teil}\makebox[1.6em][r]{\alph{teil})\hspace{0.35em}}}
+\newcommand{\marke}[1]{\ifblank{#1}{}{\hfill{\footnotesize #1}}}
+\newlength{\feldbreite}\setlength{\feldbreite}{4.5cm}
+\newcommand{\antwort}{\underline{\hspace{\feldbreite}}}
+\newcommand{\zeilenluft}{\par\nobreak\vskip 12pt plus 1pt\relax}
+\newcommand{\zeilenluftb}{\par\vskip 12pt plus 1pt\relax}
+\newlength{\kw}\newlength{\kwmax}
+\newcounter{kzahl}\newcounter{kzeile}
+\newcommand{\kliste}{}
+\newcommand{\kmerke}[2]{\settowidth{\kw}{#1}%
+  \ifdim\kw>\kwmax\global\kwmax=\kw\fi\stepcounter{kzahl}\gappto\kliste{#2}}
+\newcommand{\kstart}[1]{\global\kwmax=0pt\setcounter{kzahl}{0}\setcounter{kzeile}{0}%
+  \gdef\kliste{}\setlength{\feldbreite}{#1}}
+\newcommand{\kende}{\par\vspace{3pt}\kliste\par}
+\newcommand{\kettezeile}[1]{\stepcounter{kzeile}%
+  \ifnum\value{kzeile}>1
+    \ifnum\value{kzeile}<4 \zeilenluft
+    \else\ifnum\numexpr\value{kzahl}-\value{kzeile}\relax<2 \zeilenluft
+    \else\zeilenluftb\fi\fi
+  \fi
+  \noindent#1\par}
+\newenvironment{kette}[1][4.5cm]{\kstart{#1}}{\kende}
+\newcommand{\termspalte}[1]{\makebox[\kwmax][l]{$#1 =$}\hspace{0.6em}}
+\NewDocumentCommand{\rk}{O{} m m}{\kmerke{$#2 =$}{\kettezeile{\teilmarke\lsgm{#3}%
+  \termspalte{#2}\antwort\marke{#1}}}}
+\newcommand{\rkv}[2]{\kmerke{$#1 =$}{\kettezeile{\teilmarke\termspalte{#1}%
+  \vorgerechnet{$#2$}}}}
+% Angabe links in fester Spalte, rechts Feld mit Bezeichner (Zeile einer Kette)
+\NewDocumentCommand{\rx}{O{} m m m}{\kmerke{#2}{\kettezeile{\teilmarke\lsgt{#4}%
+  \makebox[\kwmax][l]{#2}\hspace{1.2em}#3\marke{#1}}}}
+\newcommand{\rxv}[2]{\kmerke{#1}{\kettezeile{\teilmarke
+  \makebox[\kwmax][l]{#1}\hspace{1.2em}\vorgerechnet{#2}}}}
+% Zeichenauftrag in einer Kette: nur die Angabe, kein Feld
+\NewDocumentCommand{\rz}{O{} m m}{\kmerke{#2}{\kettezeile{\teilmarke\lsgt{#3}%
+  \makebox[\kwmax][l]{#2}\marke{#1}}}}
+\newcommand{\fx}{$f(x) =$\,\antwort}
+\newcommand{\sfeld}{$S\,($\underline{\hspace{1.4cm}}$\,\mid\,$\underline{\hspace{1.4cm}}$)$}
+\newcommand{\jn}{$\square$\,ja\hspace{1.2em}$\square$\,nein}
+\newenvironment{werte}[1][2.8cm]{\kstart{#1}}{\kende}
+\newcommand{\wertkopf}[2]{$#1$\hspace{0.8em}für $#2$:}
+\NewDocumentCommand{\rw}{O{} m m m}{\kmerke{\wertkopf{#2}{#3}}{\kettezeile{\teilmarke\lsgm{#4}%
+  \makebox[\kwmax][l]{\wertkopf{#2}{#3}}\hspace{0.6em}\antwort\marke{#1}}}}
+\newcommand{\rwv}[3]{\kmerke{\wertkopf{#1}{#2}}{\kettezeile{\teilmarke
+  \makebox[\kwmax][l]{\wertkopf{#1}{#2}}\hspace{0.6em}\vorgerechnet{$#3$}}}}
+\NewDocumentCommand{\rt}{O{} m m}{\par\vspace{7pt}\noindent\hangindent1.6em\hangafter1
+  \teilmarke\lsgt{#3}#2\nobreak\hspace{0.6em}\underline{\hspace{4cm}}\marke{#1}\par}
+\newlength{\kennbreite}\setlength{\kennbreite}{1.6cm}
+\NewDocumentCommand{\rtx}{O{} m m}{\par\vspace{7pt}\noindent
+  \ifblank{#1}{\parbox[t]{\linewidth}{\raggedright\hangindent1.6em\hangafter1
+   \teilmarke\lsgt{#3}#2}}%
+  {\parbox[t]{\dimexpr\linewidth-\kennbreite\relax}{\raggedright\hangindent1.6em\hangafter1
+   \teilmarke\lsgt{#3}#2}\parbox[t]{\kennbreite}{\raggedleft\footnotesize #1}}\par}
+\NewDocumentCommand{\rs}{O{} m m}{\par\vspace{9pt}\noindent
+  \teilmarke\lsgt{#3}%
+  \ifblank{#1}{\parbox[t]{\dimexpr\linewidth-1.6em\relax}{\raggedright #2}}%
+   {\parbox[t]{\dimexpr\linewidth-1.6em-\kennbreite\relax}{\raggedright #2}%
+    \parbox[t]{\kennbreite}{\raggedleft\footnotesize #1}}\par\raum}
+\newcommand{\raum}{\par\nobreak\vspace{6mm}\noindent\hspace*{1.6em}%
+  \rule{0.5\textwidth}{0.4pt}\par\nobreak\vspace{6mm}\noindent\hspace*{1.6em}%
+  \rule{0.5\textwidth}{0.4pt}\par}
+\newcommand{\kreuzzeile}[1]{\par\vspace{6pt}\noindent\hspace*{1.6em}#1\par}
+\renewcommand{\kreuz}[1]{$\square$\,#1\hspace{2.2em}}
+\newcommand{\bilder}[1]{\par\vspace{6pt}\noindent\hspace*{1.6em}#1\par}
+% Merkkasten: schmaler Rahmen, je Zeile ein Fall (Stichwort fett, Beispiel,
+% Ergebnis fett), zuletzt „Wichtig:“
+\newcommand{\merk}[1]{\par\nobreak\vspace{5pt}\noindent
+  \fcolorbox{black!60}{white}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+  \raggedright\setlength{\parskip}{1.5pt}#1}}\par\vspace{2pt}}
+\newcommand{\mz}[2]{\textbf{#1} #2\par}
+% ---------------------------------------------------------------- Lösungen
+\newcommand{\mblsg}{}
+\newcommand{\lsgm}[1]{\lsgt{$#1$}}
+\newcommand{\lsgextra}{}
+\newcommand{\lsgt}[1]{\xappto\mblsg{\noexpand\lsgz{\theaufgabe}{\alph{teil}}}%
+  \xappto\mblsg{{\unexpanded{#1}\unexpanded\expandafter{\lsgextra}}}%
+  \gdef\lsgextra{}}
+\newcommand{\falsch}[1]{\gdef\lsgextra{\quad{\footnotesize falsch $\rightarrow$ Nr.~#1}}}
+\newcommand{\falschk}[1]{\gappto\kliste{\falsch{#1}}}
+\newcommand{\lzletzte}{0}
+\newcommand{\lsgz}[3]{\par\noindent\hangindent3.4em\hangafter1
+  \ifnum#1=\lzletzte\relax\makebox[1.8em][l]{}\else\makebox[1.8em][l]{\textbf{#1}}\fi
+  \gdef\lzletzte{#1}%
+  \makebox[1.6em][l]{\ifx&#2&\else#2)\fi}#3\par}
+\newcommand{\lsgeinheit}[1]{\par\addvspace{4pt}\noindent{\bfseries #1}\par}
+\makeatother
+
+\begin{document}
+\setlength{\parskip}{0pt}
+
+% =================================================================== Blatt 0
+\einheit{}{Das kennst du schon}
+\noindent
+\begin{minipage}[t]{0.48\linewidth}
+\begin{nr}{Mal und geteilt mit Vorzeichen}
+\begin{kette}[2cm]
+% lineare-funktionen-zone-f3-v1
+\rk{(-3) \cdot 4}{-12}
+% lineare-funktionen-zone-f3-v2
+\rk{(-20) : 5}{-4}
+% lineare-funktionen-zone-f3-v3
+\rk{(-1{,}5) \cdot (-4)}{6}
+% lineare-funktionen-zone-f3-v4
+\rk{-4 \cdot (-2) + 1}{9}
+\end{kette}
+\end{nr}
+\begin{nr}{Bruch oder Dezimalzahl mal Zahl}
+\begin{kette}[2cm]
+% lineare-funktionen-zone-f4-v1
+\rk{\frac{1}{2} \cdot 8}{4}
+% lineare-funktionen-zone-f4-v3
+\rk{-\frac{3}{4} \cdot 8}{-6}
+% lineare-funktionen-zone-f4-v4
+\rk{\frac{1}{2} \cdot (-6)}{-3}
+% NEU
+\rk{-0{,}4 \cdot (-5)}{2}
+\end{kette}
+\end{nr}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+\begin{nr}{Gleichung lösen}
+\begin{kette}[2cm]
+% lineare-funktionen-zone-f5-v1
+\rx{$0 = 2x - 8$}{$x =$\,\antwort}{$x = 4$}
+% lineare-funktionen-zone-f5-v3
+\rx{$0 = -4x + 12$}{$x =$\,\antwort}{$x = 3$}
+% lineare-funktionen-zone-f5-v4
+\rx{$0 = -0{,}2x + 6$}{$x =$\,\antwort}{$x = 30$}
+% NEU
+\rx{$0 = -3x - 6$}{$x =$\,\antwort}{$x = -2$}
+\end{kette}
+\end{nr}
+\begin{nr}{Terme zusammenfassen}
+\begin{kette}[2cm]
+% lineare-funktionen-zone-f6-v1
+\rk{3x + 4x}{7x}
+% lineare-funktionen-zone-f6-v3
+\rk{2x + 5 - 4x + 1}{-2x + 6}
+% lineare-funktionen-zone-f6-v4
+\rk{7 - 3x - 2x}{-5x + 7}
+% NEU
+\rk{1{,}5x - 4 - 2{,}5x}{-x - 4}
+\end{kette}
+\end{nr}
+\end{minipage}
+
+% =================================================================== Einheit 1 (Mappe 2)
+\einheit{1}{Geraden zeichnen und ablesen}
+\merk{\mz{Lineare Funktion:}{$f(x) = m \cdot x + n$}
+\mz{Steigung m:}{1 nach rechts, m nach oben; \ $f(x) = 2x + 1$: \ \textbf{1 nach rechts, 2 nach oben}}
+\mz{y-Achsenabschnitt n:}{die Gerade schneidet die y-Achse bei $(0 \mid n)$; \ $f(x) = 2x + 1$: \ \textbf{bei} $\mathbf{(0 \mid 1)}$}
+\mz{m als Bruch:}{$m = \frac{1}{2}$: \ \textbf{2 nach rechts, 1 nach oben}}
+\mz{Wichtig:}{m negativ heißt nach unten. m ist die Zahl vor dem x, n die Zahl allein – nicht vertauschen.}}
+
+\begin{nr}{Zeichne die Geraden mit n und einem Steigungsdreieck: a) bis c) links, d) bis g) rechts.}\label{nr:zei}
+\noindent\begin{minipage}[t]{0.34\linewidth}\raggedright
+\begin{kette}
+% e2-k4-s4-v2
+\rz{$f(x) = 2x + 4$}{Gerade durch $(0|4)$ und $(1|6)$}
+% e2-k4-s4-v3
+\rz{$f(x) = 4x + 3$}{Gerade durch $(0|3)$ und $(1|7)$}
+% e2-k4-s5-v2
+\rz{$f(x) = -x + 3$}{Gerade durch $(0|3)$ und $(1|2)$}
+% e2-k4-s6-v1
+\rz{$f(x) = \frac{1}{2}x + 3$}{Gerade durch $(0|3)$ und $(2|4)$}
+% e2-k4-s7-v2
+\rz{$f(x) = 3x - 5$}{Gerade durch $(0|-5)$ und $(1|-2)$}
+% NEU
+\rz{$f(x) = -\frac{2}{3}x - 1$}{Gerade durch $(0|-1)$ und $(3|-3)$}
+% e2-k4-s8-v1
+\rz[P10 ’26]{$f(x) = -4x + 3$}{Gerade durch $(0|3)$ und $(1|-1)$}
+\end{kette}
+\end{minipage}\hfill\begin{minipage}[t]{0.64\linewidth}\vspace{4pt}
+\noindent \begin{ksys}[xmin=-4,xmax=4,ymin=-3,ymax=8,karo=0.5]\end{ksys}\ksysabstand\begin{ksys}[xmin=-4,xmax=4,ymin=-6,ymax=5,karo=0.5]\end{ksys}\par
+\end{minipage}
+\end{nr}
+
+\begin{nr}{Lies an den Geraden ab.}\label{nr:abl}
+\bilder{\begin{ksys}[xmin=-5,xmax=5,ymin=-5,ymax=5,ablesen]\gerade{3}{-2}{p}\gerade{-2}{4}{q}\gerade{0.333333}{1}{r}\end{ksys}\ksysabstand\begin{ksys}[xmin=-5,xmax=5,ymin=-5,ymax=5,ablesen]\gerade{-3}{3}{f}\gerade{2}{3}{g}\gerade{0}{-3}{h}\end{ksys}}
+\begin{kette}
+% GEÄNDERT e2-k5-s1-v2 (Gerade q im gemeinsamen Bild)
+\rx{y-Achsenabschnitt von q}{$n =$\,\antwort}{$n = 4$}
+% GEÄNDERT e2-k5-s1-v3 (Gerade p im gemeinsamen Bild)
+\rx{y-Achsenabschnitt von p}{$n =$\,\antwort}{$n = -2$}
+% GEÄNDERT e2-k5-s2-v2 (Gerade p)
+\rx{Steigung von p}{$m =$\,\antwort}{$m = 3$}
+% GEÄNDERT e2-k5-s3-v1 (Gerade q)
+\rx{Steigung von q}{$m =$\,\antwort}{$m = -2$}
+% NEU
+\rx{Steigung von r}{$m =$\,\antwort}{$m = \frac{1}{3}$ (3 nach rechts, 1 nach oben)}
+\end{kette}
+% GEÄNDERT e2-k5-s5-v3 (Gerade r, eigene Auswahl)
+\rtx{Kreuze die Gleichung von r an.}{$y = \frac{1}{3}x + 1$}
+\kreuzzeile{\kreuz{$y = x + \frac{1}{3}$}\kreuz{$y = \frac{1}{3}x - 1$}\kreuz{$y = \frac{1}{3}x + 1$}\kreuz{$y = -\frac{1}{3}x + 1$}}
+% e2-k5-s6-v1
+\rtx[P10 ’19]{Rechtes Bild: Ordne jeder Geraden eine Gleichung zu: \ $y = -3x + 3$; \ $y = -\frac{1}{3}x + 3$; \ $y = -3$; \ $y = 2x + 3$; \ $y = -3x$; \ $y = 2x - 3$.}{f: $y = -3x + 3$, \ g: $y = 2x + 3$, \ h: $y = -3$}
+\kreuzzeile{f: \underline{\hspace{3cm}}\hspace{1.5em}g: \underline{\hspace{3cm}}\hspace{1.5em}h: \underline{\hspace{3cm}}}
+\end{nr}
+
+\begin{nr}{Abschluss}
+% e2-k6-s1-v1
+\rt{Drei Geraden haben die Gleichungen $f(x) = 4x - 1$, $g(x) = -4x + 5$ und $h(x) = 4x + 6$. Welche zwei Geraden sind parallel?}{f und h, beide haben $m = 4$}
+% e2-k7-s2-v2
+\rs{Welche Gerade ist steiler: $f(x) = -4x + 9$ oder $g(x) = 2x - 6$? Begründe ohne Rechnung.}{f, denn es zählt die Größe von m ohne Vorzeichen: 4 ist mehr als 2}
+% NEU
+\rs{In einem Becken steigt das Wasser. Nach $x$ Minuten ist es $y$ cm hoch, mit $y = 2x + 30$. Was bedeuten die 30 und die 2?}{30: Wasserhöhe am Anfang (30 cm); 2: das Wasser steigt je Minute um 2 cm}
+\end{nr}
+
+% =================================================================== Einheit 2 (Mappe 3)
+\einheit{2}{Punkte und Werte}
+\merk{\mz{Funktionswert:}{x einsetzen; \ $f(x) = 2x + 1$, $x = 3$: \ $f(3) = 2 \cdot 3 + 1 = \mathbf{7}$}
+\mz{Punktprobe:}{x einsetzen, mit y vergleichen; \ $P(3 \mid 7)$ liegt auf f, \textbf{weil} $\mathbf{f(3) = 7}$}
+\mz{Nullstelle:}{$f(x) = 0$ setzen und lösen; \ $0 = 2x + 1$ \ $\Rightarrow$ $\mathbf{x = -0{,}5}$}
+\mz{Wichtig:}{Die Nullstelle liegt auf der x-Achse, der y-Achsenabschnitt auf der y-Achse. Negative Zahlen in Klammern einsetzen.}}
+
+\begin{nr}[b]{Berechne den Funktionswert.}\label{nr:fw}
+\begin{werte}
+% e3-k2-s1-v1 (vorgerechnet)
+\rwv{f(x) = 2x + 5}{x = 4}{f(4) = 2 \cdot 4 + 5 = 13}
+% e3-k2-s1-v2
+\rw{f(x) = 3x - 4}{x = 5}{11}
+% e3-k2-s2-v2
+\rw{f(x) = -2x + 5}{x = -4}{13}
+% e3-k2-s3-v3
+\rw{f(x) = 10x - 4}{x = 0{,}3}{-1}
+% NEU
+\rw{f(x) = -\frac{2}{5}x + 3}{x = -5}{5}
+\end{werte}
+% e3-k2-s7-v9
+\rs[P10 ’17]{Der Punkt A liegt auf der Geraden $y = \frac{1}{3}x - 2$. Seine x-Koordinate ist $-9$. Berechne die y-Koordinate von A.}{$y = \frac{1}{3} \cdot (-9) - 2 = -5$}
+\end{nr}
+
+\begin{nr}[b]{Für welches x hat f den Wert? Ab d) ist der Wert null: die Nullstelle.}\label{nr:null}
+\begin{kette}
+% e3-k2-s4-v1 (vorgerechnet)
+\rxv{$f(x) = 2x + 3$, \ $f(x) = 11$}{$11 = 2x + 3$, \ $x = 4$}
+% e3-k2-s4-v2
+\rx{$f(x) = -3x + 5$, \ $f(x) = -10$}{$x =$\,\antwort}{$x = 5$}
+% e3-k2-s4-v3
+\rx{$f(x) = \frac{1}{2}x + 2$, \ $f(x) = 6$}{$x =$\,\antwort}{$x = 8$}
+% e3-k2-s6-v1
+\rx{$f(x) = 3x - 12$, \ $f(x) = 0$}{$x =$\,\antwort}{$x = 4$}
+% e3-k2-s6-v2
+\rx{$f(x) = -2x + 12$, \ $f(x) = 0$}{$x =$\,\antwort}{$x = 6$}
+% e3-k2-s6-v3
+\rx{$f(x) = 4x + 6$, \ $f(x) = 0$}{$x =$\,\antwort}{$x = -1{,}5$}
+\end{kette}
+% e3-k2-s7-v3
+\rs[P10 ’21]{Ein Wassertank enthält 60 Liter. Die Gleichung $y = -0{,}4x + 60$ beschreibt die Wassermenge im Tank. Dabei sind nach x Minuten noch y Liter im Tank. Berechne, nach wie vielen Minuten der Tank leer ist.}{$0 = -0{,}4x + 60$, $x = 60 : 0{,}4 = 150$; nach 150 Minuten}
+\end{nr}
+
+\begin{nr}{Liegt der Punkt auf der Geraden?}\label{nr:pp}
+\begin{kette}
+% e3-k2-s5-v1
+\rx{$P(3|8)$, \ $f(x) = 3x - 1$}{\jn}{ja: $f(3) = 8$}
+% e3-k2-s5-v2
+\rx{$P(-2|7)$, \ $f(x) = -4x - 2$}{\jn}{nein: $f(-2) = 6$, nicht $7$}
+% e3-k2-s5-v3
+\rx{$P(5|1)$, \ $f(x) = -x + 6$}{\jn}{ja: $f(5) = 1$}
+\end{kette}
+% e3-k2-s7-v12
+\rs[P10 ’26]{Prüfe mit einer Rechnung, ob der Punkt $P(-2|4)$ auf der Geraden $f(x) = -\frac{3}{2}x - 1$ liegt.}{nein: $f(-2) = 2$, nicht $4$}
+% e3-k2-s7-v15
+\rtx[P10 ’23]{Die Gerade f hat die Gleichung $f(x) = -6x + 2$. Kreuze den Punkt an, der nicht auf f liegt.}{$(-3|16)$, denn $f(-3) = 20$}
+\kreuzzeile{\kreuz{$(-1|8)$}\kreuz{$(2|-10)$}\kreuz{$(-3|16)$}}
+\end{nr}
+
+\begin{nr}{Abschluss}
+% e3-k3-s1-v3
+\rtx{Fülle die Wertetabelle zu $f(x) = -3x + 7$ aus.}{$10$, $7$, $4$, $1$, $-2$}
+\bilder{\wertetabelle{x}{f(x)}{-1,0,1,2,3}}
+% GEÄNDERT e3-k5-s2-v2 (Form: Stimmt das?)
+\rs{Stimmt das? „Die Funktion $f(x) = 4$ hat keine Nullstelle.“ Begründe ohne Rechnung.}{ja: Die Gerade verläuft parallel zur x-Achse, oberhalb von ihr, und trifft sie nie}
+% e3-k5-s4-v2
+\rs{Ein Auto hat 45 Liter im Tank und verbraucht 0{,}06 Liter je km. Nach x km sind noch $f(x) = -0{,}06x + 45$ Liter im Tank. Reicht die Tankfüllung für 700 km?}{ja: $f(700) = 3$, es bleiben 3 Liter}
+\end{nr}
+
+% =================================================================== Einheit 3 (Mappe 4)
+\einheit{3}{Gleichung bestimmen}
+\merk{\mz{Steigung aus zwei Punkten:}{$A(1 \mid 3)$, $B(3 \mid 7)$: \ $m = (7 - 3) : (3 - 1) = \mathbf{2}$}
+\mz{Dann n:}{m und einen Punkt in $y = m \cdot x + n$ einsetzen; \ $3 = 2 \cdot 1 + n$: \ $\mathbf{n = 1}$}
+\mz{Schnittpunkt zweier Geraden:}{Terme gleichsetzen, x ausrechnen, \textbf{y aus einer Gleichung}}
+\mz{Wichtig:}{Oben und unten in derselben Reihenfolge abziehen: beide Male B minus A.}}
+
+\begin{nr}[b]{Bestimme die Gleichung der Geraden.}\label{nr:gl}
+\begin{kette}
+% e4-k1-s2-v1 (vorgerechnet)
+\rxv{$m = 2$, \ $P(4|7)$}{$7 = 2 \cdot 4 + n$, \ $n = -1$, \ $f(x) = 2x - 1$}
+% e4-k1-s2-v2
+\rx{$m = -3$, \ $P(2|1)$}{\fx}{$f(x) = -3x + 7$}
+% e4-k1-s3-v1
+\rx{$A(0|4)$, \ $B(2|10)$}{\fx}{$f(x) = 3x + 4$}
+% e4-k1-s4-v3
+\rx{$A(2|1)$, \ $B(4|9)$}{\fx}{$f(x) = 4x - 7$}
+% e4-k1-s5-v2
+\rx{$A(-2|9)$, \ $B(2|1)$}{\fx}{$f(x) = -2x + 5$}
+% NEU
+\rx{$A(-3|1)$, \ $B(3|5)$}{\fx}{$f(x) = \frac{2}{3}x + 3$}
+% NEU
+\rx{$A(-2|-3)$, \ $B(4|6)$}{\fx}{$f(x) = 1{,}5x$}
+\end{kette}
+% e4-k1-s6-v3
+\rs[P10 ’15]{Ein Heißluftballon sinkt gleichmäßig. 10 Minuten nach Beginn der Messung ist er in 800 m Höhe. Nach 40 Minuten ist er in 440 m Höhe. Nach t Minuten ist er h Meter hoch. Bestimme die Gleichung $h(t)$.}{$m = -12$, $n = 920$: $h(t) = -12t + 920$}
+\end{nr}
+
+\begin{nr}{Zeichne die Gerade durch die Punkte und gib ihre Gleichung an: a) links, b) rechts.}\label{nr:zp}
+% GEÄNDERT e4-k2-s1-v3 (Gleichung dazu)
+\rtx{$A(-1|-5)$ und $B(3|3)$. \ Gleichung: \ $f(x) =$ \underline{\hspace{3cm}}}{$f(x) = 2x - 3$}
+% e4-k1-s6-v1
+\rtx[P10 ’25]{$A(-2|8)$ und $B(4|-1)$. Kreuze an, ob die Aussage wahr ist. Gib dann eine Gleichung an.}{erste Aussage falsch, zweite wahr; $f(x) = -1{,}5x + 5$}
+\kreuzzeile{\kreuz{wahr}\kreuz{falsch} f verläuft monoton steigend.}
+\kreuzzeile{\kreuz{wahr}\kreuz{falsch} f schneidet die y-Achse in $(0|5)$. \hspace{1em} $f(x) =$ \underline{\hspace{3cm}}}
+\bilder{\begin{ksys}[xmin=-4,xmax=4,ymin=-6,ymax=4,karo=0.6]\end{ksys}\ksysabstand\begin{ksys}[xmin=-4,xmax=5,ymin=-4,ymax=9,karo=0.6]\end{ksys}}
+\end{nr}
+
+\begin{nr}[b]{Berechne den Schnittpunkt der Geraden f und g.}\label{nr:sp}
+\begin{kette}
+% e4-k3-s1-v1 (vorgerechnet)
+\rxv{$f(x) = 3x - 4$, \ $g(x) = -x + 8$}{$3x - 4 = -x + 8$, \ $x = 3$, \ $y = 5$, \ $S(3|5)$}
+% e4-k3-s1-v2
+\rx{$f(x) = 2x + 5$, \ $g(x) = -3x - 10$}{\sfeld}{$S(-3|-1)$}
+% e4-k3-s1-v3
+\rx{$f(x) = 0{,}5x + 4$, \ $g(x) = 2x - 2$}{\sfeld}{$S(4|6)$}
+% NEU
+\rx{$f(x) = 4x - 3$, \ $g(x) = -2x + 6$}{\sfeld}{$S(1{,}5|3)$}
+% NEU
+\rx{$f(x) = -1{,}5x + 5$, \ $g(x) = x$}{\sfeld}{$S(2|2)$}
+% NEU
+\rx{$f(x) = -3x + 2$, \ $g(x) = -3x - 4$}{\sfeld}{kein Schnittpunkt: gleiche Steigung, parallel}
+\end{kette}
+\end{nr}
+
+\begin{nr}{Abschluss}
+% e4-k4-s3-v3
+\rt{Du willst die Gerade $f(x) = -2x + 7$ zeichnen. Gib dafür zwei Punkte der Geraden an.}{zum Beispiel $(0|7)$ und $(1|5)$}
+% e4-k4-s2-v3
+\rs{Wie viele gemeinsame Punkte haben die Geraden $f(x) = 2x + 6$ und $g(x) = 6 + 2x$? Begründe.}{unendlich viele: beide Gleichungen beschreiben dieselbe Gerade}
+% e4-k4-s4-v2
+\rs{Ein junger Baum wächst gleichmäßig. 3 Jahre nach dem Pflanzen ist er 1{,}9 m hoch. Nach 8 Jahren ist er 4{,}4 m hoch. Wie hoch war der Baum beim Pflanzen?}{$m = 0{,}5$; $n = 1{,}9 - 3 \cdot 0{,}5 = 0{,}4$: 0{,}4 m}
+\end{nr}
+
+% =================================================================== Einheit 4 (Mappe 5)
+\einheit{4}{Anwendungen}
+\merk{\mz{Anfangswert = n:}{3{,}50 € Grundgebühr: \ $\mathbf{n = 3{,}5}$}
+\mz{Änderung je Einheit = m:}{2 € je km: \ $\mathbf{m = 2}$, \ zusammen $\mathbf{K(x) = 2x + 3{,}5}$}
+\mz{Wichtig:}{Cent in Euro umrechnen (20 Cent sind 0{,}20 €). Anfangswert und Änderung nicht vertauschen.}}
+
+\begin{nr}[b]{Sachaufgaben}\label{nr:sach}
+% e5-k1-s2-v1
+\rt{Ein Kino-Abo kostet einmalig 10 € und dazu 6 € je Film. Für x Filme zahlt man y Euro. Stelle eine Gleichung für y auf.}{$y = 6x + 10$}
+% e5-k1-s2-v3
+\rt{Ein Wassertank mit 500 Litern verliert jeden Tag 20 Liter. Nach x Tagen sind noch y Liter im Tank. Stelle eine Gleichung für y auf.}{$y = -20x + 500$}
+% e5-k1-s3-v2
+\rt{Ein Baggersee ist 4{,}20 m tief. Der Wasserstand sinkt jede Woche um 0{,}15 m. Wie tief ist der See nach 8 Wochen?}{$4{,}20 - 8 \cdot 0{,}15 = 3$; 3 m}
+% e5-k1-s4-v1
+\rs{Tarif A kostet 20 € Grundgebühr und 0{,}30 € je km. Tarif B kostet 0{,}70 € je km ohne Grundgebühr. Welcher Tarif ist für 60 km günstiger?}{A 38 €, B 42 €: A ist günstiger}
+% GEÄNDERT e5-k1-s5-v6 (Text gekürzt, gleiche Zahlen)
+\rs[P10 ’21]{Ein Parkhaus kostet 2 € bei der Einfahrt und 60 Cent je Stunde. Ein Sportverein kostet 60 € Aufnahmegebühr und 2 € je Training. y ist jeweils der Preis in €, x die Anzahl der Stunden oder der Trainings. Ordne zu: \ $y = 60x + 2$, \ $y = 2x + 60$, \ $y = 0{,}60x + 2$.}{Parkhaus: $y = 0{,}60x + 2$; Sportverein: $y = 2x + 60$}
+% e5-k1-s5-v7
+\rs[P10 ’22]{Lina hat 640 € auf dem Konto. Sie zahlt jeden Monat 45 € ein. Nach x Monaten hat sie y Euro Guthaben. Stelle eine Gleichung für das Guthaben auf. Berechne, nach wie vielen Monaten Lina mindestens 1\,500 € hat.}{$y = 45x + 640$; $x \approx 19{,}1$: nach 20 Monaten}
+% GEÄNDERT e5-k1-s5-v1 (Text gekürzt, gleiche Zahlen)
+\rs[P10 ’23]{Jana will ein Auto mieten. Bei Angebot 1 kostet die Miete 32 € pro Tag. 300 km sind insgesamt frei, jeder weitere km kostet 0{,}30 €. Bei Angebot 2 zahlt man einmalig 95 € für eine Woche. Dazu kommen 0{,}12 € für jeden km. Jana mietet 4 Tage und fährt 420 km. Berechne die Gesamtkosten für beide Angebote. Entscheide, welches Angebot günstiger ist. Stelle für Angebot 2 eine Gleichung für eine Woche auf (x Strecke in km, y Preis in €).}{Angebot 1: $4 \cdot 32 + 120 \cdot 0{,}30 = 164$ €; Angebot 2: $95 + 420 \cdot 0{,}12 = 145{,}40$ €; Angebot 2 ist günstiger; $y = 0{,}12x + 95$}
+\end{nr}
+
+\begin{nr}{Abschluss}
+% e5-k1-s5-v16
+\rtx[P10 ’16]{Der Verein Hoch verlangt 30 € Aufnahmegebühr und 5 € je Monat. Der Verein Weit verlangt 8 € je Monat ohne Aufnahmegebühr. Ordne jedem Verein seinen Graphen zu. Begründe deine Wahl für Hoch.}{Hoch: I, Weit: II; I beginnt bei 30 € auf der y-Achse, das ist die Aufnahmegebühr}
+\bilder{$\vcenter{\hbox{\begin{ksys}[xmin=0,xmax=12,ymin=0,ymax=100,xstep=1,ystep=10,xlabel=x in Monaten,ylabel=y in €,ablesen]\gerade[11]{5}{30}{I}\gerade[6]{8}{0}{II}\end{ksys}}}$\hspace{1.5em}\begin{tabular}[c]{@{}l@{}}Hoch: \underline{\hspace{1.5cm}}\quad Weit: \underline{\hspace{1.5cm}}\\[8mm]\underline{\hspace{6.5cm}}\\[8mm]\underline{\hspace{6.5cm}}\end{tabular}}
+% e5-k4-s2-v3
+\rs{Die Geraden von zwei Tarifen schneiden sich bei 200 km. Tim sagt: „Ab 200 km ist der Tarif mit Grundgebühr günstiger.“ Begründe, ob Tim recht hat.}{nicht immer: rechts vom Schnittpunkt ist der Tarif mit dem kleineren Preis je km günstiger}
+% e5-k3-s1-v2
+\rs{Denke dir eine Situation zur Gleichung $y = -15x + 300$ aus. Beschreibe sie und sage, was x und y bedeuten.}{zum Beispiel ein Tank mit 300 Litern, der je Minute 15 Liter verliert; x Minuten, y Liter}
+\end{nr}
+
+% =================================================================== Zum Schluss
+% Je Einheit eine Teilaufgabe mittlerer Höhe (a–e, gemischt), dann zwei
+% höhere wie 10 d (P10 ’26) und 16 f (P10 ’22), neue Zahlen; ungeteilt.
+\par\addvspace{10pt}
+\begin{nr}{Zum Schluss}
+\begin{werte}
+% NEU (Einheit 2)
+\falschk{\ref{nr:fw}}
+\rw{f(x) = -3x + 1}{x = -2}{7}
+\end{werte}
+\par\vspace{7pt}\begin{kette}
+% NEU (Einheit 3)
+\falschk{\ref{nr:gl}}
+\rx{Gerade durch $A(1|5)$ und $B(3|-1)$}{\fx}{$f(x) = -3x + 8$}
+\end{kette}
+% NEU (Einheit 1)
+\falsch{\ref{nr:zei}, \ref{nr:abl}}
+\rt{Steigt oder fällt die Gerade $y = -0{,}5x + 4$? Wo schneidet sie die y-Achse?}{fällt; bei $(0|4)$}
+\par\vspace{7pt}\begin{kette}
+% NEU (Einheit 3)
+\falschk{\ref{nr:sp}}
+\rx{$f(x) = x + 3$, \ $g(x) = -2x + 9$}{\sfeld}{$S(2|5)$}
+\end{kette}
+% NEU (Einheit 4)
+\falsch{\ref{nr:sach}}
+\rt{Ein Fitnesskurs kostet 20 € Anmeldung und 8 € je Termin. Was kosten 12 Termine?}{$20 + 12 \cdot 8 = 116$; 116 €}
+% NEU (wie 10 d)
+\falsch{\ref{nr:fw}, \ref{nr:pp}}
+\rs[P10 ’26]{Prüfe mit einer Rechnung, ob der Punkt $P(-6|1)$ auf der Geraden $f(x) = -\frac{2}{3}x - 3$ liegt.}{ja: $f(-6) = 4 - 3 = 1$}
+% NEU (wie 16 f)
+\falsch{\ref{nr:sach}}
+\rs[P10 ’22]{Mia hat 380 € gespart. Sie legt jeden Monat 45 € dazu. Stelle eine Gleichung für ihr Guthaben y nach x Monaten auf. Nach wie vielen Monaten hat sie mindestens 1\,000 €?}{$y = 45x + 380$; $x \approx 13{,}8$: nach 14 Monaten}
+\end{nr}
+
+% =================================================================== Lösungen
+\clearpage
+\noindent{\Large\bfseries Lösungen}\par\vspace{2pt}
+\begin{multicols}{2}\raggedright\small\linespread{0.96}\selectfont
+\mblsg
+\end{multicols}
+\end{document}

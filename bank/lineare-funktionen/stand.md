@@ -220,3 +220,5 @@ Prüfskript v0.5 vorher 1 Abweichung, 0 Warnungen; nachher 0/0.
 - lineare-funktionen-e2-k5-s5-v2: pruef "-1" bei Gleichungsoptionen → pruef "" (Regel a).
 - lineare-funktionen-e2-k5-s5-v3: pruef "[1, 2]" bei Gleichungsoptionen → pruef "" (Regel a).
 - Prüfskript: Abweichungen 0.
+
+## Blatt 2026-10-06: 12 Zeilen übernommen (ids zone-f4-v5, zone-f5-v5, zone-f6-v5, e2-k4-s6-v4, e2-k6-s1-v4, e2-k6-s1-v5, e3-k2-s2-v4, e4-k1-s4-v4, e4-k1-s4-v5, e4-k3-s1-v4, e4-k3-s1-v5, e4-k3-s1-v6), 7 nicht (Dublette: bis auf Zahlen gleich e2-k5-s4-v1, e3-k2-s2-v2, e4-k1-s5-v1, e4-k3-s1-v1, e5-k1-s3-v3, e3-k2-s7-v11, e5-k1-s5-v7)

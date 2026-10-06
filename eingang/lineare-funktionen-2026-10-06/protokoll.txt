@@ -1,0 +1,56 @@
+Blatt lineare-funktionen 2026-10-06 – Protokoll
+
+Eintrag: lineare-funktionen (Mappe mappen/lineare-funktionen.md, Katalog-Commit c651dc4)
+Eingabe: Schülername, „10 klasse p10 lineare funktionen“ → S02 (Kl. 10, Gesamtschule, P10 2027,
+  EBR/FOR offen), kein „gymnasium“; keine Zusätze → Regelfall, Blatt 0 ja, ohne Lösungsweg.
+  „p10“ gedeutet als: die vier Einheiten mit P10-Typ (Mappe 2–5) in Katalogfolge; Einheit 1
+  (proportionale Funktion) hat laut Mappe keinen P10-Typ und entfällt. Auf dem Blatt gezählt 1–4.
+  Kein früheres Lernblatt zu S02 oder zu diesem Eintrag (gebaut.csv, eingang/, blaetter/index.md);
+  im Register stehen nur Fokus-, Kompetenz- und Prüfhefte (LIN-*).
+Prompt: Unterrichtsblatt aus der Bank v5.4 (03.10.2026); Vorbild bau/terme/muster-2026-10-01/muster4.tex
+Modell: Claude Opus 5.5 (claude-opus-5-5)
+Vorlage: mathblatt.sty 2026-10-06c (hz-0801/blattbau); Satzmakros aus eingang/terme-2026-10-01c,
+  \lz in \lsgz umbenannt (Vorlage 06.10. kennt \lz), dazu \rx/\rxv (Angabe in fester Spalte, Feld
+  rechts), \rz (Zeichenauftrag ohne Feld), \sfeld (S( | )), \jn, \bilder.
+
+Aufbau: Blatt 0 (Nr. 1–4: Vorzeichen, Bruch/Dezimalzahl mal Zahl, Gleichung lösen, Zusammenfassen) ·
+  1 Geraden zeichnen und ablesen (Nr. 5 Zeichnen, 6 Ablesen, 7 Abschluss) ·
+  2 Punkte und Werte (8 Funktionswert, 9 Argument/Nullstelle, 10 Punktprobe, 11 Abschluss) ·
+  3 Gleichung bestimmen (12 aus Steigung/Punkten, 13 Zeichnen und Gleichung, 14 Schnittpunkt,
+  15 Abschluss) · 4 Anwendungen (16 Sachaufgaben, 17 Abschluss) · 18 Zum Schluss · Lösungen.
+Seiten: 9
+
+Teilaufgaben: 90; aus der Bank 71 (davon 9 geändert: 6a–d Gerade im gemeinsamen Bild, 6f eigene
+  Auswahl, 11b Form „Stimmt das?“, 13a Gleichung dazu, 16e und 16g Text gekürzt), neu 19
+  (2d, 3d, 4d, 5f, 6e, 7c, 8e, 12f, 12g, 14d, 14e, 14f, 18a–g).
+Marken: P10 ’26 (5g, 10d, 18f), ’19 (6g), ’17 (8f), ’21 (9g, 16e), ’23 (10e, 16g), ’15 (12h),
+  ’25 (13b), ’22 (16f, 18g), ’16 (17a); keine GYM-Marke (Schulform Gesamtschule).
+
+Prüfungen:
+  pruef.py (sympy): 100 Proben, 0 Fehler
+  xelatex zweimal: 0 Fehler, 0 „Missing character“, 0 Overfull
+  Seiten als PNG angesehen: „Zum Schluss“ ungeteilt; Lösungen auf Seite 9.
+
+Abweichungen/Hinweise:
+  - Blatt 0 ohne die Fertigkeit „Koordinaten lesen“ und „Dreisatz“ (Platz: halbe Seite; Dreisatz
+    nur für Einheit 1 nötig).
+  - Seite 8 trägt nur Nr. 18 „Zum Schluss“ (ungeteilt hat Vorrang; die Nummer passt nicht mehr
+    auf Seite 7).
+  - Zeichen- und Ablesegitter kleiner als in den Bankzeilen (Karo 5–6 mm), Geraden einer Nummer
+    in zwei gemeinsamen Systemen statt je eines eigenen.
+
+Übernahme 2026-10-06: 12 Zeilen in die Bank (Nr. → id):
+  2d → lineare-funktionen-zone-f4-v5 · 3d → zone-f5-v5 · 4d → zone-f6-v5 · 5f → e2-k4-s6-v4 ·
+  7c → e2-k6-s1-v4 · 18c → e2-k6-s1-v5 · 8e → e3-k2-s2-v4 · 12f → e4-k1-s4-v4 · 12g → e4-k1-s4-v5 ·
+  14d → e4-k3-s1-v4 · 14e → e4-k3-s1-v5 · 14f → e4-k3-s1-v6
+Nicht übernommen (Dublette, bis auf Zahlen gleich einer Bankzeile derselben Sprosse):
+  6e ≙ e2-k5-s4-v1 · 18a ≙ e3-k2-s2-v2 · 18b ≙ e4-k1-s5-v1 · 18d ≙ e4-k3-s1-v1 ·
+  18e ≙ e5-k1-s3-v3 · 18f ≙ e3-k2-s7-v11 · 18g ≙ e5-k1-s5-v7
+bank-pruef.py --katalog: vorher 158 Abweichungen / 1 Warnung, nachher 161 / 12.
+  Die 3 neuen Abweichungen sind „sprosse_text nicht wortgleich in Zeile 83/86“ an e2-k4-s6-v4,
+  e4-k1-s4-v4, -v5 – dieselbe Meldung tragen die Bestandszeilen dieser Sprossen (Altlast; der
+  Prompt verlangt sprosse_text wie die Bankzeilen derselben Sprosse). Warnungen: Mengen je Sprosse
+  und Variantenfolge der Zone.
+  Korrigiert im ersten Anlauf: zone-f6-v5 pruef, e4-k3-s1-v6 pruef/loesung, merkmal an den Bestand
+  der Sprosse angeglichen; zweiter Anlauf: e2-k6-s1-v4 pruef „30“.
+Feld herkunft „Blatt lineare-funktionen 2026-10-06, Nr. <n>“.
