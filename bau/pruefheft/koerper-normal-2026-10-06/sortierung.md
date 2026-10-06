@@ -42,8 +42,8 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Netz erkennen | 44 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Aus dem Netz im Bild wird ein Spielwürfel gebastelt. Auf ein |
 | Netz erkennen | 45 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Kegel hat den Radius 3 cm und die Mantellinie 8 cm. Sein |
 | Netz erkennen | 46 | rechnen | 1 | 1 | 1 | 1 | eigene Aufgabe | Ein Schuhkarton hat die Form im Bild. Wie heißt dieser Körpe |
-| Netz erkennen | 47 | rechnen | 1 | 1 | 1 | 2 | eigene Aufgabe | Aus dem Netz im Bild wird ein Würfel gefaltet. Welche Fläche |
-| Netz erkennen | 48 | Ankreuzen | 1 | 1 | 1 | 2 | eigene Aufgabe | Das Bild zeigt ein Netz. Kann man daraus einen Würfel falten |
+| Netz erkennen | 47 | Ankreuzen | 1 | 1 | 1 | 2 | eigene Aufgabe | Das Bild zeigt ein Netz. Kann man daraus einen Würfel falten |
+| Netz erkennen | 48 | rechnen | 1 | 1 | 1 | 2 | eigene Aufgabe | Aus dem Netz im Bild wird ein Würfel gefaltet. Welche Fläche |
 | Netz erkennen | 49 | Ankreuzen | 1 | 1 | 1 | 2 | eigene Aufgabe | Aus dem Netz im Bild wird ein Körper gefaltet. Kreuze an, we |
 | Netz erkennen | 50 | Ankreuzen | 1 | 1 | 1 | 3 | 2017-OS-B1c | Die Abbildung zeigt einen Körper im Schrägbild. Kreuze an, w |
 | Netz erkennen | 51 | Ankreuzen | 1 | 1 | 1 | 3 | 2018-OS-B1i | Kreuze an, welcher Körper zu dem abgebildeten Netz gehört: |
@@ -83,12 +83,12 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Mantelfläche mit Kosten | 85 | Schluss | 2 | 2 | 1 | 3 | 2018-OS-K6b | Ein runder Turm hat 6,4 m Durchmesser. Seine zylinderförmige |
 | vergleichen und urteilen | 86 | Vorstufe | 0 | 1 | 2 | 0 | eigene Aufgabe | Eine Eistüte ist oben 6 cm breit. Entscheide, ob das der Rad |
 | vergleichen und urteilen | 87 | Vorstufe | 0 | 1 | 2 | 0 | eigene Aufgabe | Ein Verkehrshütchen hat einen runden Boden. Vom Mittelpunkt  |
-| vergleichen und urteilen | 88 | Sachaufgabe | 0 | 3 | 2 | 2 | eigene Aufgabe | Zylinder A hat den Radius 3 cm und die Höhe 5 cm. Zylinder B |
-| vergleichen und urteilen | 89 | Sachaufgabe | 0 | 3 | 2 | 2 | eigene Aufgabe | Bei einer quadratischen Pyramide wird die Grundkante halbier |
-| vergleichen und urteilen | 90 | Vergleich | 1 | 1 | 1 | 2 | eigene Aufgabe | Der Radius eines Zylinders wird verdoppelt. Erkläre, warum d |
-| vergleichen und urteilen | 91 | Vergleich | 1 | 1 | 1 | 2 | eigene Aufgabe | Ein Kegel und ein Zylinder haben gleichen Radius und gleiche |
-| vergleichen und urteilen | 92 | Sachaufgabe | 1 | 1 | 1 | 3 | eigene Aufgabe | Ein Kegel und ein Zylinder sind gleich hoch. Mia sagt: „Wenn |
-| vergleichen und urteilen | 93 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | Kugel A hat den Radius 2 cm. Kugel B hat den Radius 4 cm. Be |
+| vergleichen und urteilen | 88 | Vergleich | 1 | 1 | 1 | 2 | eigene Aufgabe | Der Radius eines Zylinders wird verdoppelt. Erkläre, warum d |
+| vergleichen und urteilen | 89 | Sachaufgabe | 1 | 1 | 1 | 3 | eigene Aufgabe | Ein Kegel und ein Zylinder sind gleich hoch. Mia sagt: „Wenn |
+| vergleichen und urteilen | 90 | Vergleich | 1 | 1 | 1 | 2 | eigene Aufgabe | Ein Kegel und ein Zylinder haben gleichen Radius und gleiche |
+| vergleichen und urteilen | 91 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | Kugel A hat den Radius 2 cm. Kugel B hat den Radius 4 cm. Be |
+| vergleichen und urteilen | 92 | Schluss | 0 | 3 | 2 | 2 | eigene Aufgabe | Zylinder A hat den Radius 3 cm und die Höhe 5 cm. Zylinder B |
+| vergleichen und urteilen | 93 | Schluss | 0 | 3 | 2 | 2 | eigene Aufgabe | Bei einer quadratischen Pyramide wird die Grundkante halbier |
 | vergleichen und urteilen | 94 | Schluss | 2 | 2 | 2 | 2 | eigene Aufgabe | Ein Kegel und ein Zylinder haben beide den Radius 3 cm und d |
 | vergleichen und urteilen | 95 | Schluss | 2 | 1 | 1 | 3 | 2021-OS-K4b | Herr Gärtner stellt eine Regentonne in Form eines Zylinders  |
 | Netz mit Maßen skizzieren | 96 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Zeichne das Netz einer Streichholzschachtel. Die Schachtel i |
@@ -106,9 +106,9 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Körper im Schrägbild skizzieren | 108 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Die Figur zeigt eine Pyramide mit einem Quadrat als Grundflä |
 | Körper im Schrägbild skizzieren | 109 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Kegel hat den Radius 2 cm und die Höhe 5 cm. Skizziere s |
 | Körper im Schrägbild skizzieren | 110 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Eine Waffeltüte ist oben 5 cm breit und 11 cm tief. Skizzier |
-| Körper im Schrägbild skizzieren | 111 | Sachaufgabe | 0 | 1 | 2 | 2 | eigene Aufgabe | Skizziere eine Kugel mit dem Radius 2 cm. Zeichne einen Krei |
-| Körper im Schrägbild skizzieren | 112 | Sachaufgabe | 0 | 1 | 3 | 2 | eigene Aufgabe | Eine Pyramide hat ein Quadrat als Grundfläche. Die Grundkant |
-| Körper im Schrägbild skizzieren | 113 | Ankreuzen | 0 | 1 | 1 | 3 | 2024-OS-K4b | Eine Firma stellt Kegel mit dem Radius r = 30 cm und der Höh |
+| Körper im Schrägbild skizzieren | 111 | Ankreuzen | 0 | 1 | 1 | 3 | 2024-OS-K4b | Eine Firma stellt Kegel mit dem Radius r = 30 cm und der Höh |
+| Körper im Schrägbild skizzieren | 112 | Sachaufgabe | 0 | 1 | 2 | 2 | eigene Aufgabe | Skizziere eine Kugel mit dem Radius 2 cm. Zeichne einen Krei |
+| Körper im Schrägbild skizzieren | 113 | Sachaufgabe | 0 | 1 | 3 | 2 | eigene Aufgabe | Eine Pyramide hat ein Quadrat als Grundfläche. Die Grundkant |
 | Körper im Schrägbild skizzieren | 114 | Schluss | 1 | 1 | 1 | 3 | 2015-OS-K6b | Mia hat ein Modell einer Pyramide mit quadratischer Grundflä |
 
 ## Prüfung

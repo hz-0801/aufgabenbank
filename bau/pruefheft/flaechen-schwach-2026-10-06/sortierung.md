@@ -25,10 +25,10 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Grundfigur berechnen | 33 | Vorstufe | 1 | 1 | 1 | 0 | eigene Aufgabe | Die Figur zeigt ein Viereck. In den Formeln sind a und c par |
 | Grundfigur berechnen | 34 | Vorstufe | 1 | 1 | 2 | 0 | eigene Aufgabe | Im Bild ist eine Strecke im Kreis beschriftet. Ist sie ein R |
 | Grundfigur berechnen | 35 | rechnen | 0 | 1 | 1 | 1 | eigene Aufgabe | Ein Parallelogramm hat die Grundseite g = 9 cm und die Höhe  |
-| Grundfigur berechnen | 36 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Quadrat hat die Seitenlänge a = 6 cm. Berechne die Fläch |
-| Grundfigur berechnen | 37 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Fünfeck hat die Seiten 3 cm, 4 cm, 5 cm, 2 cm und 6 cm.  |
-| Grundfigur berechnen | 38 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Drachenviereck hat die Diagonalen e = 7 cm und f = 6 cm. |
-| Grundfigur berechnen | 39 | Sachaufgabe | 0 | 1 | 1 | 1 | eigene Aufgabe | Ein Trapez hat die parallelen Seiten a = 9 cm und c = 5 cm.  |
+| Grundfigur berechnen | 36 | Sachaufgabe | 0 | 1 | 1 | 1 | eigene Aufgabe | Ein Trapez hat die parallelen Seiten a = 9 cm und c = 5 cm.  |
+| Grundfigur berechnen | 37 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Quadrat hat die Seitenlänge a = 6 cm. Berechne die Fläch |
+| Grundfigur berechnen | 38 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Fünfeck hat die Seiten 3 cm, 4 cm, 5 cm, 2 cm und 6 cm.  |
+| Grundfigur berechnen | 39 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Drachenviereck hat die Diagonalen e = 7 cm und f = 6 cm. |
 | Grundfigur berechnen | 40 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Parallelogramm hat die Grundseite 9 cm und die schräge S |
 | Grundfigur berechnen | 41 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Die Figur zeigt ein stumpfwinkliges Dreieck mit der Grundsei |
 | Grundfigur berechnen | 42 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein gleichschenkliges Trapez hat die parallelen Seiten a = 1 |
@@ -76,11 +76,11 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Figur erst zerlegen oder Strecke erst berechnen | 84 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Eine Holzplatte hat die Seiten 70 cm und 45 cm. Aus ihr wird |
 | Figur erst zerlegen oder Strecke erst berechnen | 85 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Rechteck hat die Seiten 11 m und 6 m. An einer Ecke fehl |
 | Figur erst zerlegen oder Strecke erst berechnen | 86 | Sachaufgabe | 0 | 1 | 1 | 3 | 2017-OS-K3a | Familie Sommer hat einen Swimmingpool gebaut. Seine Grundflä |
-| Figur erst zerlegen oder Strecke erst berechnen | 87 | Sachaufgabe | 0 | 3 | 1 | 2 | eigene Aufgabe | Ein gleichschenkliges Trapez hat die parallelen Seiten a = 1 |
-| Figur erst zerlegen oder Strecke erst berechnen | 88 | rechnen | 2 | 1 | 1 | 3 | 2025-OS-B1e | Bestimme, wie viel Prozent der Kreisfläche grau gefärbt sind |
-| Figur erst zerlegen oder Strecke erst berechnen | 89 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | Eine quadratische Tischplatte hat 90 cm Seitenlänge. In der  |
-| Figur erst zerlegen oder Strecke erst berechnen | 90 | Sachaufgabe | 2 | 1 | 2 | 2 | eigene Aufgabe | Ein Kreisausschnitt hat den Radius r = 6 cm und den Mittelpu |
-| Figur erst zerlegen oder Strecke erst berechnen | 91 | Sachaufgabe | 2 | 1 | 2 | 2 | eigene Aufgabe | Ein Kreisring hat außen den Radius 7 cm und innen den Radius |
+| Figur erst zerlegen oder Strecke erst berechnen | 87 | rechnen | 2 | 1 | 1 | 3 | 2025-OS-B1e | Bestimme, wie viel Prozent der Kreisfläche grau gefärbt sind |
+| Figur erst zerlegen oder Strecke erst berechnen | 88 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | Eine quadratische Tischplatte hat 90 cm Seitenlänge. In der  |
+| Figur erst zerlegen oder Strecke erst berechnen | 89 | Sachaufgabe | 2 | 1 | 2 | 2 | eigene Aufgabe | Ein Kreisausschnitt hat den Radius r = 6 cm und den Mittelpu |
+| Figur erst zerlegen oder Strecke erst berechnen | 90 | Sachaufgabe | 2 | 1 | 2 | 2 | eigene Aufgabe | Ein Kreisring hat außen den Radius 7 cm und innen den Radius |
+| Figur erst zerlegen oder Strecke erst berechnen | 91 | Sachaufgabe | 0 | 3 | 1 | 2 | eigene Aufgabe | Ein gleichschenkliges Trapez hat die parallelen Seiten a = 1 |
 | Figur erst zerlegen oder Strecke erst berechnen | 92 | Sachaufgabe | 2 | 2 | 2 | 2 | eigene Aufgabe | Ein Kreisausschnitt hat den Radius r = 8 cm und den Mittelpu |
 | Figur erst zerlegen oder Strecke erst berechnen | 93 | Sachaufgabe | 2 | 3 | 1 | 3 | 2018-OS-K6a | Ein runder Turm mit 6,4 m Durchmesser steht auf einer Rasenf |
 | Figur erst zerlegen oder Strecke erst berechnen | 94 | Sachaufgabe | 2 | 3 | 1 | 3 | 2017-OS-K3b | Familie Sommer hat einen Swimmingpool gebaut. Seine Grundflä |

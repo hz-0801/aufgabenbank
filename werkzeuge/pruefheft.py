@@ -1014,8 +1014,15 @@ def gesucht(a):
         return 'Prozentsatz'
     if re.search(r'ganze|Ganze|insgesamt|vorher|alte|ursprünglich|voller|gesamt|passen in|hat die|hatte|1\s*%|[Kk]apital', q):
         return 'Grundwert'
-    if re.search(r'\d\s*% von|spart|Nachlass|Rabatt|Zinsen|kostet|bezahl|neue', q):
+    if re.search(r'\d\s*% von|spart|Nachlass|Rabatt|Zinsen|kostet|bezahl|neue|% davon|Mehrwertsteuer', q):
         return 'Prozentwert'
+    # Korrektur Lauf C: „40 % von 65 Kindern … Wie viele …?“ und Lösungshinweis „Prozentwert gesucht“
+    if re.search(r'\d\s*% von \d', t) and re.search(r'[Ww]ie viele?\b', q):
+        return 'Prozentwert'
+    for z in getattr(a, 'zw_roh', []) or []:
+        m = re.search(r'(Prozentwert|Grundwert|Prozentsatz) gesucht', z)
+        if m:
+            return m.group(1)
     return ''
 
 
@@ -1038,6 +1045,43 @@ def schwierigkeit(a):
     pkt = int(a.punkte) if a.art == 'echt' and str(a.punkte).isdigit() else 0
     unten = 0 if (a.zk == 0 and a.hrang <= 1) else 1
     return (a.zk, unten, schrittzahl(a), min(a.fz, 2), a.tl, a.sr, pkt, a.id)
+
+
+def prozentrang(a):
+    """Leiter innerhalb der Zahlklasse für das Kapitel Prozent (Korrektur Lauf C Punkt 1): 100/50/10 %
+    -> 25/20/75 % -> 1 % -> Zehnerschritte -> 5, 2 und andere ganze -> Kommaprozent; bei mehreren Sätzen
+    zählt der schwerste. Andere Kapitel: 0."""
+    if D_AKT is None or D_AKT.kapitel != 'prozent':
+        return 0
+    ps = [v for v, p, _ in zahlen(a.text) if p]
+    if not ps:
+        return 0
+    def r(v):
+        if v != int(v):
+            return 5
+        v = int(v)
+        if v in (100, 50, 10):
+            return 0
+        if v in (25, 20, 75):
+            return 1
+        if v == 1:
+            return 2
+        if v % 10 == 0:
+            return 3
+        return 4
+    return max(r(v) for v in ps)
+
+
+def vergleich(a, b):
+    """Reihenfolge zweier Aufgaben (Korrektur Lauf C): weichen die Schritte um 2 oder mehr ab, entscheiden
+    die Schritte; sonst Zahlklasse, im Kapitel Prozent dann der Prozentsatz-Rang, dann die übrige
+    Schwierigkeit (Grundfall im Kopf, Schritte, Fragen, Text, Satzmuster, Punkte, id)."""
+    sa, sb = schrittzahl(a), schrittzahl(b)
+    if abs(sa - sb) >= 2:
+        return -1 if sa < sb else 1
+    ka = (a.zk, prozentrang(a)) + schwierigkeit(a)[1:]
+    kb = (b.zk, prozentrang(b)) + schwierigkeit(b)[1:]
+    return (ka > kb) - (ka < kb)
 
 
 def schluessel(a):
@@ -1272,10 +1316,7 @@ def baue_modell(D, args):
                     a.hrang = 3; a.stern = stern_fuer(D, iid); kennzahlen(D, a)
                     echte.append(a)
             # nur Aufgaben, die nach der Größe der Stufe fragen (Reparatur Punkt 3)
-            weg = [a for a in mitte if gesucht(a) not in ('', st.name) and st.name in ('Grundwert', 'Prozentwert', 'Prozentsatz')]
-            for a in weg:
-                D.befund(f'Fokus {st.name}: {a.id} fragt nach {gesucht(a)} – nicht gesetzt')
-            mitte = [a for a in mitte if a not in weg]
+            pass   # Filter nach gesuchter Größe gilt jetzt für alle Fassungen (unten)
         for sp in st.sprossen:
             m = re.match(r'((?:msa|abitur)/[\w-]+\.jsonl)\((\d+)\)', sp)
             if m:
@@ -1295,6 +1336,17 @@ def baue_modell(D, args):
             if h in ('grundfall', 'vorstufe'):
                 continue
             mitte += B.nimm(sp, n_spr, st.name)
+        if st.name in ('Grundwert', 'Prozentwert', 'Prozentsatz'):
+            # Korrektur Lauf C Punkt 2: in den Stufen G, W, p nur Aufgaben, die nach dieser Größe fragen
+            # (eigene Aufgaben; echte ordnet die Zuordnung zu – Abweichung nur als Befund)
+            weg = [a for a in mitte if gesucht(a) not in ('', st.name)]
+            for a in weg:
+                D.befund(f'Stufe {st.name}: {a.id} fragt nach {gesucht(a)} – nicht gesetzt')
+                D.herausgefallen = getattr(D, 'herausgefallen', []) + [(st.name, a.id, gesucht(a), klartext(a.text)[:60])]
+            mitte = [a for a in mitte if a not in weg]
+            for a in echte:
+                if gesucht(a) not in ('', st.name):
+                    D.befund(f'Stufe {st.name}: echte {a.id} fragt laut Text nach {gesucht(a)} (bleibt, Zuordnung)')
         for a in mitte:
             a.stern = bool(a.orig and stern_fuer(D, a.orig))
         # Gruppen (Beschluss 8): je Gruppe leicht -> schwer; Aufgabenbild-Wort aus Feld bild
@@ -1317,27 +1369,24 @@ SCHLUSS = 'Schluss'   # letzte Gruppe einer Stufe: schwerere eigene, dann die sc
 
 
 def ordne_stufe(alle, echte):
-    """Korrektur Lauf C (Koordinator, Muster 6 des Lehrers): nach den Vorstufen alle Aufgaben nach
-    Schwierigkeit (b); Gruppen nach Form nur innerhalb einer Zahlklasse, Gruppen dort nach ihrer
-    leichtesten Aufgabe, in der Gruppe leicht -> schwer (c); die Stufe endet mit der schwersten echten
-    Aufgabe, schwerere eigene stehen direkt davor (d). Gibt [(Gruppe, Wort, [Aufgabe])] zurück."""
-    alle = sorted(alle, key=schwierigkeit)
+    """Korrektur Lauf C: nach den Vorstufen alle Aufgaben nach vergleich() (Schritte bei großem Abstand,
+    Zahlklasse, Prozentsatz-Rang, Schwierigkeit; Herkunft zählt nicht). Gruppen nach Form = Folgen
+    gleicher Form in dieser Reihenfolge innerhalb einer Zahlklasse (keine Gruppe zieht eine schwerere
+    Aufgabe vor eine leichtere). Die Stufe endet mit der schwersten echten Aufgabe, schwerere eigene
+    stehen direkt davor."""
+    import functools
+    alle = sorted(alle, key=functools.cmp_to_key(vergleich))
     schluss = []
     if echte:
-        top = max(echte, key=schwierigkeit)
-        schluss = [x for x in alle if x is not top and x.art != 'echt' and schwierigkeit(x) > schwierigkeit(top)] + [top]
+        top = max(echte, key=functools.cmp_to_key(vergleich))
+        schluss = [x for x in alle if x is not top and x.art != 'echt' and vergleich(x, top) > 0] + [top]
         alle = [x for x in alle if all(x is not y for y in schluss)]
     gruppen = []
-    # Gruppen nach Form innerhalb gleicher Zahlklasse und gleicher Schrittzahl (Entscheidung: sonst zieht
-    # eine Formgruppe eine leichte eigene Aufgabe hinter eine schwerere echte, Körper/Kurvenuntersuchung)
-    for zk in sorted({(x.zk, schrittzahl(x)) for x in alle}):
-        teil = []
-        for g in GRUPPEN:
-            gl = [x for x in alle if (x.zk, schrittzahl(x)) == zk and x.gruppe == g]
-            if gl:
-                teil.append((g, next((x.bild for x in gl if x.bild), ''), gl))
-        teil.sort(key=lambda t: (schwierigkeit(t[2][0]), GRUPPEN.index(t[0])))
-        gruppen += teil
+    for x in alle:
+        if gruppen and gruppen[-1][0] == x.gruppe and gruppen[-1][2][-1].zk == x.zk:
+            gruppen[-1][2].append(x)
+        else:
+            gruppen.append((x.gruppe, x.bild or '', [x]))
     if schluss:
         gruppen.append((SCHLUSS, '', schluss))
     return gruppen
@@ -2221,27 +2270,16 @@ def sortierung_md(titel):
     for stn, ls in stufen.items():
         haupt = [x for x in ls if x[1] != SCHLUSS]
         for (n1, g1, a1), (n2, g2, a2) in zip(haupt, haupt[1:]):
-            if a2.zk < a1.zk:
-                fehler.append(f'{stn}: Nr. {n2} (Zahlklasse {a2.zk}) nach Nr. {n1} (Zahlklasse {a1.zk})')
-            if g1 == g2 and (a1.zk, schrittzahl(a1)) == (a2.zk, schrittzahl(a2)) and schwierigkeit(a2) < schwierigkeit(a1):
-                fehler.append(f'{stn}, {g1}: Nr. {n2} leichter als Nr. {n1}')
-        for (n1, g1, a1), (n2, g2, a2) in zip(haupt, haupt[1:]):
-            if (a2.zk, schrittzahl(a2)) < (a1.zk, schrittzahl(a1)):
-                fehler.append(f'{stn}: Nr. {n2} (weniger Schritte) nach Nr. {n1}')
-        ersten = OrderedDict()
-        for nr, g, a in haupt:
-            ersten.setdefault(((a.zk, schrittzahl(a)), g), (schwierigkeit(a), nr))
-        for zk in {k[0] for k in ersten}:
-            ks = [v for k, v in ersten.items() if k[0] == zk]
-            if [k[0] for k in ks] != sorted(k[0] for k in ks):
-                fehler.append(f'{stn}: Gruppen der Klasse {zk} nicht nach leichtester Aufgabe')
+            if vergleich(a2, a1) < 0:
+                fehler.append(f'{stn}: Nr. {n2} leichter als Nr. {n1}')
         echt = [a for _, _, a in ls if a.art == 'echt']
         if echt:
-            top = max(echt, key=schwierigkeit)
+            import functools
+            top = max(echt, key=functools.cmp_to_key(vergleich))
             if ls[-1][2] is not top:
                 fehler.append(f'{stn}: letzte Aufgabe Nr. {ls[-1][0]} ist nicht die schwerste echte')
             for nr, g, a in ls:
-                if g == SCHLUSS and a is not top and (a.art == 'echt' or schwierigkeit(a) <= schwierigkeit(top)):
+                if g == SCHLUSS and a is not top and (a.art == 'echt' or vergleich(a, top) <= 0):
                     fehler.append(f'{stn}: Nr. {nr} im Schluss, aber nicht schwerer als die schwerste echte')
     zl += ['', '## Prüfung', ''] + (['- ' + f for f in fehler] if fehler else ['- keine Abweichung'])
     return '\n'.join(zl) + '\n', fehler

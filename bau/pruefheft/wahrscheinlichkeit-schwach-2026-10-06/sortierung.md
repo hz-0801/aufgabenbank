@@ -18,14 +18,14 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Wahrscheinlichkeit angeben | 22 | Vorstufe | 0 | 1 | 1 | 0 | eigene Aufgabe | In einer Lostrommel liegen 30 Nieten und 5 Gewinne. Gesucht  |
 | Wahrscheinlichkeit angeben | 23 | Vorstufe | 1 | 1 | 1 | 0 | eigene Aufgabe | Tim dreht ein Glücksrad einmal. Kreuze an, wie viele Stufen  |
 | Wahrscheinlichkeit angeben | 24 | rechnen | 0 | 1 | 1 | 1 | eigene Aufgabe | Ein Würfel wird einmal geworfen. Wie groß ist die Wahrschein |
-| Wahrscheinlichkeit angeben | 25 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Das Glücksrad im Bild hat sechs gleich große Felder. Wie gro |
-| Wahrscheinlichkeit angeben | 26 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Würfel wird einmal geworfen. Wie groß ist die Wahrschein |
-| Wahrscheinlichkeit angeben | 27 | rechnen | 0 | 1 | 1 | 3 | 2014-OS-B1b | In einer Lostrommel liegen 80 Nieten und 20 Gewinnlose. Gib  |
-| Wahrscheinlichkeit angeben | 28 | rechnen | 0 | 1 | 1 | 3 | 2014-OS-B1d | Ein Spielwürfel wird einmal geworfen. Gib die Wahrscheinlich |
-| Wahrscheinlichkeit angeben | 29 | Vergleich | 0 | 1 | 1 | 2 | eigene Aufgabe | Nils sagt: „Beim Würfeln ist eine 6 seltener als eine 1.“ Be |
-| Wahrscheinlichkeit angeben | 30 | Vergleich | 0 | 1 | 1 | 2 | eigene Aufgabe | Auf einem Teller liegen 18 Muffins, 3 davon mit Chili, die a |
-| Wahrscheinlichkeit angeben | 31 | Ankreuzen | 0 | 1 | 1 | 2 | eigene Aufgabe | Drei Dosen enthalten je 8 Bonbons: links 5 Kirsch und 3 Zitr |
-| Wahrscheinlichkeit angeben | 32 | Ankreuzen | 0 | 1 | 1 | 3 | 2015-OS-B1a | In jedem der drei Töpfe liegen sechs Kugeln. Die Wahrscheinl |
+| Wahrscheinlichkeit angeben | 25 | Vergleich | 0 | 1 | 1 | 2 | eigene Aufgabe | Nils sagt: „Beim Würfeln ist eine 6 seltener als eine 1.“ Be |
+| Wahrscheinlichkeit angeben | 26 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Das Glücksrad im Bild hat sechs gleich große Felder. Wie gro |
+| Wahrscheinlichkeit angeben | 27 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Würfel wird einmal geworfen. Wie groß ist die Wahrschein |
+| Wahrscheinlichkeit angeben | 28 | rechnen | 0 | 1 | 1 | 3 | 2014-OS-B1b | In einer Lostrommel liegen 80 Nieten und 20 Gewinnlose. Gib  |
+| Wahrscheinlichkeit angeben | 29 | rechnen | 0 | 1 | 1 | 3 | 2014-OS-B1d | Ein Spielwürfel wird einmal geworfen. Gib die Wahrscheinlich |
+| Wahrscheinlichkeit angeben | 30 | Ankreuzen | 0 | 1 | 1 | 2 | eigene Aufgabe | Drei Dosen enthalten je 8 Bonbons: links 5 Kirsch und 3 Zitr |
+| Wahrscheinlichkeit angeben | 31 | Ankreuzen | 0 | 1 | 1 | 3 | 2015-OS-B1a | In jedem der drei Töpfe liegen sechs Kugeln. Die Wahrscheinl |
+| Wahrscheinlichkeit angeben | 32 | Vergleich | 0 | 1 | 1 | 2 | eigene Aufgabe | Auf einem Teller liegen 18 Muffins, 3 davon mit Chili, die a |
 | Wahrscheinlichkeit angeben | 33 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | In einer Urne liegen 5 rote, 3 blaue und 1 grüne Kugel. Eine |
 | Wahrscheinlichkeit angeben | 34 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | In einer Schachtel liegen 50 Murmeln: 18 blaue, 9 rote und 2 |
 | Wahrscheinlichkeit angeben | 35 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Bei einer Tombola liegen 45 Nieten und 15 Gewinnlose in der  |
@@ -36,8 +36,8 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Wahrscheinlichkeit angeben | 40 | rechnen | 1 | 1 | 1 | 2 | eigene Aufgabe | Die Gewinnwahrscheinlichkeit beträgt 35%. Schreibe sie als g |
 | Wahrscheinlichkeit angeben | 41 | Vergleich | 1 | 1 | 1 | 3 | 2016-OS-K5c | Mia und Lukas verkaufen Lose mit den Nummern 101 bis 900, je |
 | Wahrscheinlichkeit angeben | 42 | Sachaufgabe | 1 | 2 | 2 | 3 | 2014-OS-K6a | Für ein Kinderfest hat Pauls Vater ein Glücksrad gebaut. In  |
-| Wahrscheinlichkeit angeben | 43 | Vergleich | 1 | 3 | 2 | 3 | 2016-OS-K5d | Mia und Lukas verkaufen Lose mit den Nummern 101 bis 900, je |
-| Wahrscheinlichkeit angeben | 44 | Schluss | 2 | 1 | 1 | 3 | 2018-OS-K7b | Eva hat 16 Pfannkuchen gebacken: 14 mit Marmelade, 2 mit Sen |
+| Wahrscheinlichkeit angeben | 43 | Vergleich | 2 | 1 | 1 | 3 | 2018-OS-K7b | Eva hat 16 Pfannkuchen gebacken: 14 mit Marmelade, 2 mit Sen |
+| Wahrscheinlichkeit angeben | 44 | Schluss | 1 | 3 | 2 | 3 | 2016-OS-K5d | Mia und Lukas verkaufen Lose mit den Nummern 101 bis 900, je |
 | Baum ergänzen | 45 | Vorstufe | 0 | 1 | 2 | 0 | eigene Aufgabe | In einer Dose sind 9 Kekse, 4 davon mit Schoko. Ein Schokoke |
 | Baum ergänzen | 46 | Vorstufe | 1 | 1 | 1 | 0 | eigene Aufgabe | Ein Würfel wird zweimal geworfen. Das Ereignis heißt „mindes |
 | Baum ergänzen | 47 | Vorstufe | 1 | 1 | 1 | 0 | eigene Aufgabe | Ein Glücksrad wird zweimal gedreht. Kreuze an, ob das wie Zi |
@@ -58,8 +58,8 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Pfadregel | 62 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Zwei Glücksräder haben je vier gleich große Felder: links 7, |
 | Pfadregel | 63 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Glücksrad hat 8 gleich große Felder: 5-mal rot, 2-mal bl |
 | Pfadregel | 64 | Vergleich | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Würfel wird zweimal geworfen. Mia behauptet: „Zwei gleic |
-| Pfadregel | 65 | Vergleich | 0 | 3 | 1 | 3 | 2025-OS-K3b | Bei einem Spiel werden zwei Scheiben gleichzeitig gedreht. B |
-| Pfadregel | 66 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | Eine Elfmeterschützin trifft erfahrungsgemäß mit der Wahrsch |
+| Pfadregel | 65 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | Eine Elfmeterschützin trifft erfahrungsgemäß mit der Wahrsch |
+| Pfadregel | 66 | Vergleich | 0 | 3 | 1 | 3 | 2025-OS-K3b | Bei einem Spiel werden zwei Scheiben gleichzeitig gedreht. B |
 | Pfadregel | 67 | Ankreuzen | 1 | 2 | 1 | 3 | 2020-OS-K6b | Wirft man einen Würfel zweimal hintereinander, gibt es 36 ve |
 | Pfadregel | 68 | Sachaufgabe | 1 | 3 | 1 | 3 | 2025-OS-K3c | Bei einem Spiel werden zwei Scheiben gleichzeitig gedreht. B |
 | Pfadregel | 69 | Schluss | 2 | 3 | 1 | 3 | 2014-OS-K6c | Für ein Kinderfest hat Pauls Vater ein Glücksrad gebaut. In  |

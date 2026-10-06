@@ -9,37 +9,37 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Gleichung aufstellen | 25 | Vorstufe | 1 | 1 | 1 | 0 | eigene Aufgabe | Ein rechtwinkliges Dreieck hat diese drei Seiten. Kreuze an, |
 | Gleichung aufstellen | 26 | Vorstufe | 1 | 1 | 1 | 0 | eigene Aufgabe | Breite und Höhe eines Bildschirms sind gegeben, gesucht ist  |
 | Gleichung aufstellen | 27 | Vorstufe | 1 | 1 | 1 | 0 | eigene Aufgabe | Der Satz heißt: „Wenn ein Tier ein Hund ist, dann hat es vie |
-| Gleichung aufstellen | 28 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Zeichne ein rechtwinkliges Dreieck, zu dem die Gleichung 7^2 |
-| Gleichung aufstellen | 29 | Ankreuzen | 0 | 1 | 1 | 2 | eigene Aufgabe | Die Figur zeigt ein rechtwinkliges Dreieck. Prüfe jede Gleic |
-| Gleichung aufstellen | 30 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Die Figur zeigt ein rechtwinkliges Dreieck mit der Kathete y |
-| Gleichung aufstellen | 31 | Sachaufgabe | 0 | 2 | 1 | 1 | eigene Aufgabe | In einem rechtwinkligen Dreieck sind die Katheten a = 36 cm  |
-| Gleichung aufstellen | 32 | Sachaufgabe | 0 | 2 | 1 | 1 | eigene Aufgabe | In einem rechtwinkligen Dreieck ist die Hypotenuse c = 85 cm |
+| Gleichung aufstellen | 28 | Sachaufgabe | 0 | 2 | 1 | 1 | eigene Aufgabe | In einem rechtwinkligen Dreieck sind die Katheten a = 36 cm  |
+| Gleichung aufstellen | 29 | Sachaufgabe | 0 | 2 | 1 | 1 | eigene Aufgabe | In einem rechtwinkligen Dreieck ist die Hypotenuse c = 85 cm |
+| Gleichung aufstellen | 30 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Zeichne ein rechtwinkliges Dreieck, zu dem die Gleichung 7^2 |
+| Gleichung aufstellen | 31 | Ankreuzen | 0 | 1 | 1 | 2 | eigene Aufgabe | Die Figur zeigt ein rechtwinkliges Dreieck. Prüfe jede Gleic |
+| Gleichung aufstellen | 32 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Die Figur zeigt ein rechtwinkliges Dreieck mit der Kathete y |
 | Gleichung aufstellen | 33 | Ankreuzen | 1 | 1 | 1 | 2 | eigene Aufgabe | Kreuze an, welche Aussage im rechtwinkligen Dreieck gilt. |
 | Gleichung aufstellen | 34 | Ankreuzen | 1 | 1 | 1 | 2 | eigene Aufgabe | Die Figur zeigt ein rechtwinkliges Dreieck. Kreuze an, welch |
 | Gleichung aufstellen | 35 | Ankreuzen | 1 | 1 | 1 | 3 | 2022-OS-B1g | Kreuze die Aussage an, die für jedes rechtwinklige Dreieck s |
-| Gleichung aufstellen | 36 | Ankreuzen | 1 | 1 | 1 | 3 | 2017-OS-B1d | Im abgebildeten Dreieck sind x und y die Katheten, z ist die |
-| Gleichung aufstellen | 37 | Ankreuzen | 1 | 1 | 1 | 3 | 2021-OS-B1h | Im abgebildeten Dreieck sind x und y die Katheten, z ist die |
-| Gleichung aufstellen | 38 | Ankreuzen | 1 | 1 | 1 | 3 | 2024-OS-B1f | Im abgebildeten Dreieck sind y und z die Katheten, x ist die |
-| Gleichung aufstellen | 39 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | Die Figur zeigt ein rechtwinkliges Dreieck. Schreibe mit sei |
+| Gleichung aufstellen | 36 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | Die Figur zeigt ein rechtwinkliges Dreieck. Schreibe mit sei |
+| Gleichung aufstellen | 37 | Ankreuzen | 1 | 1 | 1 | 3 | 2017-OS-B1d | Im abgebildeten Dreieck sind x und y die Katheten, z ist die |
+| Gleichung aufstellen | 38 | Ankreuzen | 1 | 1 | 1 | 3 | 2021-OS-B1h | Im abgebildeten Dreieck sind x und y die Katheten, z ist die |
+| Gleichung aufstellen | 39 | Ankreuzen | 1 | 1 | 1 | 3 | 2024-OS-B1f | Im abgebildeten Dreieck sind y und z die Katheten, x ist die |
 | Gleichung aufstellen | 40 | Schluss | 1 | 1 | 1 | 3 | 2026-FOR-B1j | Im abgebildeten Dreieck sind u und v die Katheten, w ist die |
 | Kathete oder Hypotenuse direkt | 41 | Vorstufe | 0 | 1 | 1 | 0 | eigene Aufgabe | Die Figur zeigt einen Kegel. Sein Durchmesser ist 18 cm lang |
 | Kathete oder Hypotenuse direkt | 42 | Vorstufe | 1 | 1 | 1 | 0 | eigene Aufgabe | Die Figur zeigt ein gleichschenkliges Trapez mit seiner Höhe |
 | Kathete oder Hypotenuse direkt | 43 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Eine rechteckige Wiese ist 60 m lang und 11 m breit. Ein Weg |
 | Kathete oder Hypotenuse direkt | 44 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Waldweg ist 250 m lang und führt bergauf. Waagerecht gem |
 | Kathete oder Hypotenuse direkt | 45 | Sachaufgabe | 0 | 2 | 1 | 2 | eigene Aufgabe | Lea lässt einen Drachen steigen. Die Schnur ist 65 m lang un |
-| Kathete oder Hypotenuse direkt | 46 | Sachaufgabe | 0 | 3 | 1 | 1 | eigene Aufgabe | Die Figur zeigt ein gleichschenkliges Dreieck. Die Grundseit |
-| Kathete oder Hypotenuse direkt | 47 | rechnen | 1 | 1 | 1 | 2 | eigene Aufgabe | In einem rechtwinkligen Dreieck sind a = 2,5 m und b = 6 m d |
-| Kathete oder Hypotenuse direkt | 48 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | In einem rechtwinkligen Dreieck sind a = 1,2 m und b = 50 cm |
-| Kathete oder Hypotenuse direkt | 49 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | In einem rechtwinkligen Dreieck ist c = 6,5 m die Hypotenuse |
-| Kathete oder Hypotenuse direkt | 50 | Sachaufgabe | 1 | 1 | 2 | 2 | eigene Aufgabe | Im Dreieck ist eine Seite mit ? markiert. Wie lang ist diese |
-| Kathete oder Hypotenuse direkt | 51 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | In einem rechtwinkligen Dreieck sind a = 4 cm und b = 9 cm d |
-| Kathete oder Hypotenuse direkt | 52 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | In einem rechtwinkligen Dreieck ist c = 11 cm die Hypotenuse |
-| Kathete oder Hypotenuse direkt | 53 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | In einem rechtwinkligen Dreieck ist die Hypotenuse 8 cm lang |
+| Kathete oder Hypotenuse direkt | 46 | rechnen | 1 | 1 | 1 | 2 | eigene Aufgabe | In einem rechtwinkligen Dreieck sind a = 2,5 m und b = 6 m d |
+| Kathete oder Hypotenuse direkt | 47 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | In einem rechtwinkligen Dreieck sind a = 1,2 m und b = 50 cm |
+| Kathete oder Hypotenuse direkt | 48 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | In einem rechtwinkligen Dreieck ist c = 6,5 m die Hypotenuse |
+| Kathete oder Hypotenuse direkt | 49 | Sachaufgabe | 1 | 1 | 2 | 2 | eigene Aufgabe | Im Dreieck ist eine Seite mit ? markiert. Wie lang ist diese |
+| Kathete oder Hypotenuse direkt | 50 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | In einem rechtwinkligen Dreieck sind a = 4 cm und b = 9 cm d |
+| Kathete oder Hypotenuse direkt | 51 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | In einem rechtwinkligen Dreieck ist c = 11 cm die Hypotenuse |
+| Kathete oder Hypotenuse direkt | 52 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | In einem rechtwinkligen Dreieck ist die Hypotenuse 8 cm lang |
+| Kathete oder Hypotenuse direkt | 53 | Sachaufgabe | 0 | 3 | 1 | 1 | eigene Aufgabe | Die Figur zeigt ein gleichschenkliges Dreieck. Die Grundseit |
 | Kathete oder Hypotenuse direkt | 54 | Vergleich | 2 | 2 | 1 | 2 | eigene Aufgabe | Ein Bildschirm ist 111 cm breit und 62 cm hoch. Im Laden ste |
-| Kathete oder Hypotenuse direkt | 55 | Vergleich | 2 | 2 | 1 | 3 | 2022-OS-K5a | Gegeben ist ein Dreieck ABC, das nicht rechtwinklig ist. Die |
-| Kathete oder Hypotenuse direkt | 56 | Sachaufgabe | 2 | 2 | 1 | 3 | 2020-OS-K7a | Im Dreieck ABC ist bei C ein rechter Winkel. Die Strecke BC  |
-| Kathete oder Hypotenuse direkt | 57 | Sachaufgabe | 2 | 2 | 1 | 3 | 2016-OS-K7b | An einem Fluss liegen der Bioladen C, eine Brücke D und eine |
-| Kathete oder Hypotenuse direkt | 58 | Sachaufgabe | 2 | 2 | 1 | 3 | 2019-OS-K3a | Beim Fußballtraining spielen sich drei Kinder den Ball zu: A |
+| Kathete oder Hypotenuse direkt | 55 | Sachaufgabe | 2 | 2 | 1 | 3 | 2020-OS-K7a | Im Dreieck ABC ist bei C ein rechter Winkel. Die Strecke BC  |
+| Kathete oder Hypotenuse direkt | 56 | Sachaufgabe | 2 | 2 | 1 | 3 | 2016-OS-K7b | An einem Fluss liegen der Bioladen C, eine Brücke D und eine |
+| Kathete oder Hypotenuse direkt | 57 | Sachaufgabe | 2 | 2 | 1 | 3 | 2019-OS-K3a | Beim Fußballtraining spielen sich drei Kinder den Ball zu: A |
+| Kathete oder Hypotenuse direkt | 58 | Vergleich | 2 | 2 | 1 | 3 | 2022-OS-K5a | Gegeben ist ein Dreieck ABC, das nicht rechtwinklig ist. Die |
 | Kathete oder Hypotenuse direkt | 59 | Sachaufgabe | 2 | 2 | 1 | 3 | 2024-OS-K6a | Eine Seilbahn führt vom Ort B im Tal zum Ort A auf einem Ber |
 | Kathete oder Hypotenuse direkt | 60 | Schluss | 2 | 3 | 1 | 3 | 2022-OS-K2c | Ein Becher hat die Form eines Zylinders ohne Deckel. Er ist  |
 | Dreieck erst in Figur oder Körper finden | 61 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Die Figur zeigt einen Kegel. Die Mantellinie ist 82 cm lang, |
@@ -61,19 +61,19 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Dreieck erst in Figur oder Körper finden | 77 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | Die Diagonale eines Quadrats ist 10 cm lang. Berechne die Se |
 | Dreieck erst in Figur oder Körper finden | 78 | Vergleich | 2 | 1 | 1 | 2 | eigene Aufgabe | Ein Regenschirm ist 62 cm lang. Man kann ihn nicht kürzer ma |
 | Dreieck erst in Figur oder Körper finden | 79 | Sachaufgabe | 2 | 3 | 1 | 3 | 2026-FOR-K2c | Ein Turm besteht unten aus einem Zylinder, sein Dach ist ein |
-| Dreieck erst in Figur oder Körper finden | 80 | Sachaufgabe | 2 | 3 | 2 | 3 | 2025-OS-K4a | Familie Yücel baut an die Stufe vor der Haustür eine feste R |
-| Dreieck erst in Figur oder Körper finden | 81 | Ankreuzen | 2 | 3 | 1 | 3 | 2025-OS-K2a | Ein Drachenviereck ABCD (A links, D oben, C rechts, B unten) |
+| Dreieck erst in Figur oder Körper finden | 80 | Ankreuzen | 2 | 3 | 1 | 3 | 2025-OS-K2a | Ein Drachenviereck ABCD (A links, D oben, C rechts, B unten) |
+| Dreieck erst in Figur oder Körper finden | 81 | Sachaufgabe | 2 | 3 | 2 | 3 | 2025-OS-K4a | Familie Yücel baut an die Stufe vor der Haustür eine feste R |
 | Dreieck erst in Figur oder Körper finden | 82 | Schluss | 2 | 4 | 2 | 3 | 2019-OS-K2d | Im Koordinatensystem bilden die Punkte A(0/-2), B(2/-2) und  |
 | Seitenverhältnis benennen | 83 | Vorstufe | 0 | 1 | 1 | 0 | eigene Aufgabe | Mit der Gleichung sin23^ = x8 soll die Seite x berechnet wer |
 | Seitenverhältnis benennen | 84 | Vorstufe | 1 | 1 | 1 | 0 | eigene Aufgabe | Die Figur zeigt ein Dreieck mit rechtem Winkel bei B. Vom Wi |
 | Seitenverhältnis benennen | 85 | Vorstufe | 1 | 1 | 1 | 0 | eigene Aufgabe | Die Figur zeigt ein Dreieck mit rechtem Winkel bei B. Schau  |
 | Seitenverhältnis benennen | 86 | rechnen | 0 | 2 | 1 | 3 | 2020-OS-B1j | Für x gilt die Gleichung 30^ = 7x. Gib den Wert von x an. |
 | Seitenverhältnis benennen | 87 | rechnen | 1 | 1 | 1 | 1 | eigene Aufgabe | Die Figur zeigt ein Dreieck mit rechtem Winkel bei C. Schrei |
-| Seitenverhältnis benennen | 88 | rechnen | 1 | 1 | 1 | 3 | 2017-OS-B1j | Schreibe als Verhältnis zweier Seiten des abgebildeten Dreie |
-| Seitenverhältnis benennen | 89 | rechnen | 1 | 1 | 1 | 3 | 2019-OS-B1h | Schreibe als Verhältnis zweier Seiten des abgebildeten Dreie |
-| Seitenverhältnis benennen | 90 | rechnen | 1 | 1 | 1 | 3 | 2020-OS-B1c | Schreibe als Verhältnis zweier Seiten des abgebildeten Dreie |
-| Seitenverhältnis benennen | 91 | rechnen | 1 | 1 | 1 | 3 | 2025-OS-B1g | Ergänze die Gleichung passend zur Abbildung: = \_\_\_ |
-| Seitenverhältnis benennen | 92 | Ankreuzen | 1 | 1 | 1 | 2 | eigene Aufgabe | Die Figur zeigt ein Dreieck mit rechtem Winkel bei A. Kreuze |
+| Seitenverhältnis benennen | 88 | Ankreuzen | 1 | 1 | 1 | 2 | eigene Aufgabe | Die Figur zeigt ein Dreieck mit rechtem Winkel bei A. Kreuze |
+| Seitenverhältnis benennen | 89 | rechnen | 1 | 1 | 1 | 3 | 2017-OS-B1j | Schreibe als Verhältnis zweier Seiten des abgebildeten Dreie |
+| Seitenverhältnis benennen | 90 | rechnen | 1 | 1 | 1 | 3 | 2019-OS-B1h | Schreibe als Verhältnis zweier Seiten des abgebildeten Dreie |
+| Seitenverhältnis benennen | 91 | rechnen | 1 | 1 | 1 | 3 | 2020-OS-B1c | Schreibe als Verhältnis zweier Seiten des abgebildeten Dreie |
+| Seitenverhältnis benennen | 92 | rechnen | 1 | 1 | 1 | 3 | 2025-OS-B1g | Ergänze die Gleichung passend zur Abbildung: = \_\_\_ |
 | Seitenverhältnis benennen | 93 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | Ein Dreieck hat bei C einen rechten Winkel. Vom Winkel aus i |
 | Seitenverhältnis benennen | 94 | Schluss | 2 | 1 | 1 | 2 | eigene Aufgabe | Löse die Gleichung. sin48^ = 6x |
 | Seitenverhältnis benennen | 95 | Schluss | 1 | 1 | 1 | 3 | 2018-OS-B1g | Im abgebildeten Dreieck ist a die Hypotenuse, b die Kathete  |
@@ -94,23 +94,23 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Winkel berechnen | 110 | Sachaufgabe | 2 | 2 | 1 | 3 | 2024-OS-K6b | Eine Seilbahn führt vom Ort B im Tal zum Ort A auf einem Ber |
 | Winkel berechnen | 111 | Schluss | 2 | 3 | 1 | 3 | 2020-OS-K5b | Eine Schachtel hat als Seitenfläche ein Trapez mit zwei rech |
 | Seite berechnen | 112 | Vorstufe | 1 | 1 | 1 | 0 | eigene Aufgabe | Die Figur zeigt ein Parallelogramm mit einer Höhe. Die Höhe  |
-| Seite berechnen | 113 | Sachaufgabe | 1 | 3 | 2 | 3 | 2018-OS-K4d | Lea will die Höhe eines Berges bestimmen. Auf der Bergspitze |
-| Seite berechnen | 114 | rechnen | 2 | 1 | 1 | 2 | eigene Aufgabe | Ein rechtwinkliges Dreieck hat den Winkel = 27^ . Die Hypote |
-| Seite berechnen | 115 | rechnen | 2 | 1 | 1 | 2 | eigene Aufgabe | Die Figur zeigt ein Dreieck mit rechtem Winkel bei A. Es gil |
-| Seite berechnen | 116 | rechnen | 2 | 1 | 1 | 2 | eigene Aufgabe | Ein Trapez ist 4 m hoch. Ein Basiswinkel ist 62^ groß. Wie l |
-| Seite berechnen | 117 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | Ein rechtwinkliges Dreieck hat den Winkel = 31^ . Die Gegenk |
-| Seite berechnen | 118 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | Ein rechtwinkliges Dreieck hat den Winkel = 72^ . Die Hypote |
-| Seite berechnen | 119 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | Ein rechtwinkliges Dreieck hat den Winkel = 42,6^ . Die Hypo |
-| Seite berechnen | 120 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | Ein rechtwinkliges Dreieck hat den Winkel = 42^ . Die Hypote |
-| Seite berechnen | 121 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | Eine Leiter ist 4,2 m lang und lehnt an einer Wand. Sie bild |
-| Seite berechnen | 122 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | Ein rechtwinkliges Dreieck hat den Winkel = 31^ . Die Hypote |
-| Seite berechnen | 123 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | Ein rechtwinkliges Dreieck hat den Winkel = 44^ . Die Gegenk |
-| Seite berechnen | 124 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | Ein rechtwinkliges Dreieck hat den Winkel = 32^ . Die Ankath |
-| Seite berechnen | 125 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | Ein rechtwinkliges Dreieck hat den Winkel = 27^ . Die Ankath |
-| Seite berechnen | 126 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | Eine Leiter ist 6 m lang. Sie soll im Winkel von 72^ zum Bod |
-| Seite berechnen | 127 | Sachaufgabe | 2 | 1 | 1 | 1 | eigene Aufgabe | Ein Dreieck ist gleichschenklig. Seine Schenkel sind 7 cm la |
-| Seite berechnen | 128 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | Ein Trapez hat einen 5 cm langen Schenkel. Der Basiswinkel a |
-| Seite berechnen | 129 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | Ein Messgerät steht 45 m waagerecht von einem Baum entfernt. |
+| Seite berechnen | 113 | rechnen | 2 | 1 | 1 | 2 | eigene Aufgabe | Ein rechtwinkliges Dreieck hat den Winkel = 27^ . Die Hypote |
+| Seite berechnen | 114 | rechnen | 2 | 1 | 1 | 2 | eigene Aufgabe | Die Figur zeigt ein Dreieck mit rechtem Winkel bei A. Es gil |
+| Seite berechnen | 115 | rechnen | 2 | 1 | 1 | 2 | eigene Aufgabe | Ein Trapez ist 4 m hoch. Ein Basiswinkel ist 62^ groß. Wie l |
+| Seite berechnen | 116 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | Ein rechtwinkliges Dreieck hat den Winkel = 31^ . Die Gegenk |
+| Seite berechnen | 117 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | Ein rechtwinkliges Dreieck hat den Winkel = 72^ . Die Hypote |
+| Seite berechnen | 118 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | Ein rechtwinkliges Dreieck hat den Winkel = 42,6^ . Die Hypo |
+| Seite berechnen | 119 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | Ein rechtwinkliges Dreieck hat den Winkel = 42^ . Die Hypote |
+| Seite berechnen | 120 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | Eine Leiter ist 4,2 m lang und lehnt an einer Wand. Sie bild |
+| Seite berechnen | 121 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | Ein rechtwinkliges Dreieck hat den Winkel = 31^ . Die Hypote |
+| Seite berechnen | 122 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | Ein rechtwinkliges Dreieck hat den Winkel = 44^ . Die Gegenk |
+| Seite berechnen | 123 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | Ein rechtwinkliges Dreieck hat den Winkel = 32^ . Die Ankath |
+| Seite berechnen | 124 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | Ein rechtwinkliges Dreieck hat den Winkel = 27^ . Die Ankath |
+| Seite berechnen | 125 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | Eine Leiter ist 6 m lang. Sie soll im Winkel von 72^ zum Bod |
+| Seite berechnen | 126 | Sachaufgabe | 2 | 1 | 1 | 1 | eigene Aufgabe | Ein Dreieck ist gleichschenklig. Seine Schenkel sind 7 cm la |
+| Seite berechnen | 127 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | Ein Trapez hat einen 5 cm langen Schenkel. Der Basiswinkel a |
+| Seite berechnen | 128 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | Ein Messgerät steht 45 m waagerecht von einem Baum entfernt. |
+| Seite berechnen | 129 | Sachaufgabe | 1 | 3 | 2 | 3 | 2018-OS-K4d | Lea will die Höhe eines Berges bestimmen. Auf der Bergspitze |
 | Seite berechnen | 130 | Sachaufgabe | 2 | 2 | 1 | 3 | 2017-OS-K4b | Ein Dachboden hat als Querschnitt das Dreieck ABC. Die Dachs |
 | Seite berechnen | 131 | Sachaufgabe | 2 | 2 | 1 | 3 | 2021-OS-K3a | Gegeben ist das Viereck ABCD mit der Diagonale BD = 1500 m.  |
 | Seite berechnen | 132 | Sachaufgabe | 2 | 2 | 1 | 3 | 2021-OS-K3b | Gegeben ist das Viereck ABCD mit der Diagonale BD = 1500 m.  |
@@ -134,8 +134,8 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Seite berechnen (Sinussatz) | 150 | Sachaufgabe | 2 | 3 | 1 | 3 | 2014-OS-K2b | Von einer Jugendherberge J führt ein Weg zu einem Forsthaus  |
 | Seite berechnen (Sinussatz) | 151 | Sachaufgabe | 2 | 3 | 1 | 3 | 2024-OS-K6d | Eine Seilbahn führt vom Ort B im Tal zum Ort A auf einem Ber |
 | Seite berechnen (Sinussatz) | 152 | Sachaufgabe | 2 | 4 | 1 | 3 | 2020-OS-K7c | Im Dreieck DEF ist DF = 4 m und FE = 11 m. Der Winkel bei F  |
-| Seite berechnen (Sinussatz) | 153 | Sachaufgabe | 2 | 4 | 1 | 3 | 2019-OS-K3c | Ein viertes Kind, Deniz, steht bei D. Es entsteht das Vierec |
-| Seite berechnen (Sinussatz) | 154 | Vergleich | 2 | 4 | 1 | 3 | 2021-OS-K3c | Gegeben ist das Viereck ABCD mit der Diagonale BD = 1500 m.  |
+| Seite berechnen (Sinussatz) | 153 | Vergleich | 2 | 4 | 1 | 3 | 2021-OS-K3c | Gegeben ist das Viereck ABCD mit der Diagonale BD = 1500 m.  |
+| Seite berechnen (Sinussatz) | 154 | Sachaufgabe | 2 | 4 | 1 | 3 | 2019-OS-K3c | Ein viertes Kind, Deniz, steht bei D. Es entsteht das Vierec |
 | Seite berechnen (Sinussatz) | 155 | Schluss | 2 | 4 | 2 | 3 | 2017-OS-K4c | Ein Dachboden hat als Querschnitt das Dreieck ABC. Die Dachs |
 | Winkelsumme | 156 | Vorstufe | 0 | 1 | 2 | 0 | eigene Aufgabe | Die Figur zeigt ein Dreieck mit den Seiten a = 4 cm, b = 4 c |
 | Winkelsumme | 157 | Vorstufe | 1 | 1 | 1 | 0 | eigene Aufgabe | Die Figur zeigt zwei Geraden, die sich kreuzen. Kreuze an, w |
@@ -149,14 +149,14 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Winkelsumme | 165 | rechnen | 0 | 1 | 1 | 3 | 2026-FOR-B1i | Im abgebildeten Parallelogramm ist ein Winkel 75° groß. Best |
 | Winkelsumme | 166 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Verkehrsschild hat die Form eines gleichseitigen Dreieck |
 | Winkelsumme | 167 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Satteldach ist im Querschnitt ein gleichschenkliges Drei |
-| Winkelsumme | 168 | Sachaufgabe | 0 | 3 | 1 | 2 | eigene Aufgabe | Die Punkte B, C und D liegen senkrecht übereinander. C liegt |
-| Winkelsumme | 169 | rechnen | 1 | 1 | 1 | 2 | eigene Aufgabe | Im Dreieck ABC ist = 38,6^ und = 94,7^ . Wie groß ist ? |
-| Winkelsumme | 170 | rechnen | 1 | 1 | 1 | 2 | eigene Aufgabe | Ein Viereck hat die Winkel 84^ , 97^ und 103^ . Wie groß ist |
-| Winkelsumme | 171 | rechnen | 1 | 1 | 1 | 3 | 2021-OS-B1i | Bestimme die Größe des fehlenden Winkels im abgebildeten Tra |
-| Winkelsumme | 172 | Sachaufgabe | 1 | 1 | 1 | 3 | 2017-OS-K4a | Ein Dachboden hat als Querschnitt das Dreieck ABC. Die Dachs |
-| Winkelsumme | 173 | Sachaufgabe | 1 | 1 | 1 | 3 | 2015-OS-K5b | Gegeben ist ein Drachenviereck ABCD. Die Diagonale AC ist se |
-| Winkelsumme | 174 | Sachaufgabe | 1 | 1 | 1 | 3 | 2023-OS-K2a | Gegeben ist ein Trapez mit den parallelen Seiten 25,80 m (un |
-| Winkelsumme | 175 | Vergleich | 1 | 2 | 1 | 3 | 2018-OS-K4b | Lea will die Höhe eines Berges bestimmen. Auf der Bergspitze |
+| Winkelsumme | 168 | rechnen | 1 | 1 | 1 | 2 | eigene Aufgabe | Im Dreieck ABC ist = 38,6^ und = 94,7^ . Wie groß ist ? |
+| Winkelsumme | 169 | rechnen | 1 | 1 | 1 | 2 | eigene Aufgabe | Ein Viereck hat die Winkel 84^ , 97^ und 103^ . Wie groß ist |
+| Winkelsumme | 170 | rechnen | 1 | 1 | 1 | 3 | 2021-OS-B1i | Bestimme die Größe des fehlenden Winkels im abgebildeten Tra |
+| Winkelsumme | 171 | Sachaufgabe | 1 | 1 | 1 | 3 | 2017-OS-K4a | Ein Dachboden hat als Querschnitt das Dreieck ABC. Die Dachs |
+| Winkelsumme | 172 | Sachaufgabe | 1 | 1 | 1 | 3 | 2015-OS-K5b | Gegeben ist ein Drachenviereck ABCD. Die Diagonale AC ist se |
+| Winkelsumme | 173 | Sachaufgabe | 1 | 1 | 1 | 3 | 2023-OS-K2a | Gegeben ist ein Trapez mit den parallelen Seiten 25,80 m (un |
+| Winkelsumme | 174 | Vergleich | 1 | 2 | 1 | 3 | 2018-OS-K4b | Lea will die Höhe eines Berges bestimmen. Auf der Bergspitze |
+| Winkelsumme | 175 | Schluss | 0 | 3 | 1 | 2 | eigene Aufgabe | Die Punkte B, C und D liegen senkrecht übereinander. C liegt |
 | Winkelsumme | 176 | Schluss | 2 | 1 | 1 | 3 | 2022-OS-K5c | Gegeben ist ein Dreieck ABC, das nicht rechtwinklig ist. Die |
 | Symmetrieachsen zählen | 177 | Vorstufe | 1 | 1 | 1 | 0 | eigene Aufgabe | Zeichne mit dem Geodreieck alle Symmetrieachsen der Figur im |
 | Symmetrieachsen zählen | 178 | Vorstufe | 1 | 1 | 1 | 0 | eigene Aufgabe | Kreuze an, wie viele Symmetrieachsen das Rechteck im Bild ha |
@@ -164,20 +164,20 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Symmetrieachsen zählen | 180 | rechnen | 1 | 1 | 1 | 1 | eigene Aufgabe | Zeichne die Symmetrieachse der Figur im Bild ein. |
 | Symmetrieachsen zählen | 181 | rechnen | 1 | 1 | 1 | 2 | eigene Aufgabe | Wie viele Symmetrieachsen hat die Figur im Bild? |
 | Symmetrieachsen zählen | 182 | rechnen | 1 | 1 | 1 | 2 | eigene Aufgabe | Wie viele Symmetrieachsen hat die Raute im Bild? |
-| Symmetrieachsen zählen | 183 | rechnen | 1 | 1 | 1 | 2 | eigene Aufgabe | Wie viele Symmetrieachsen hat ein gleichseitiges Dreieck? |
-| Symmetrieachsen zählen | 184 | rechnen | 1 | 1 | 1 | 2 | eigene Aufgabe | Wie viele Symmetrieachsen hat der Großbuchstabe H? |
-| Symmetrieachsen zählen | 185 | Ankreuzen | 1 | 1 | 1 | 2 | eigene Aufgabe | Kreuze die Figur an, die keine Symmetrieachse hat. |
-| Symmetrieachsen zählen | 186 | Ankreuzen | 1 | 1 | 2 | 3 | 2021-OS-B1j | Wie viele Symmetrieachsen hat ein Quadrat? Kreuze an: |
-| Symmetrieachsen zählen | 187 | Ankreuzen | 1 | 1 | 2 | 3 | 2022-OS-B1i | Wie viele Symmetrieachsen hat das abgebildete gleichschenkli |
-| Symmetrieachsen zählen | 188 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | Trage in die Tabelle ein, wie viele Symmetrieachsen jedes Vi |
+| Symmetrieachsen zählen | 183 | Ankreuzen | 1 | 1 | 1 | 2 | eigene Aufgabe | Kreuze die Figur an, die keine Symmetrieachse hat. |
+| Symmetrieachsen zählen | 184 | rechnen | 1 | 1 | 1 | 2 | eigene Aufgabe | Wie viele Symmetrieachsen hat ein gleichseitiges Dreieck? |
+| Symmetrieachsen zählen | 185 | rechnen | 1 | 1 | 1 | 2 | eigene Aufgabe | Wie viele Symmetrieachsen hat der Großbuchstabe H? |
+| Symmetrieachsen zählen | 186 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | Trage in die Tabelle ein, wie viele Symmetrieachsen jedes Vi |
+| Symmetrieachsen zählen | 187 | Ankreuzen | 1 | 1 | 2 | 3 | 2021-OS-B1j | Wie viele Symmetrieachsen hat ein Quadrat? Kreuze an: |
+| Symmetrieachsen zählen | 188 | Ankreuzen | 1 | 1 | 2 | 3 | 2022-OS-B1i | Wie viele Symmetrieachsen hat das abgebildete gleichschenkli |
 | Symmetrieachsen zählen | 189 | Schluss | 2 | 3 | 1 | 3 | 2025-OS-K2a | Ein Drachenviereck ABCD (A links, D oben, C rechts, B unten) |
-| gemischt, ohne Überschrift je Aufgabe | 190 | Sachaufgabe | 0 | 3 | 2 | 2 | eigene Aufgabe | Berechne jeweils die gesuchte Länge. (1) Quader mit den Kant |
-| gemischt, ohne Überschrift je Aufgabe | 191 | Sachaufgabe | 1 | 2 | 4 | 2 | eigene Aufgabe | Im Dreieck KLM liegt bei L ein rechter Winkel. Überlege zuer |
-| gemischt, ohne Überschrift je Aufgabe | 192 | Sachaufgabe | 2 | 1 | 2 | 2 | eigene Aufgabe | Berechne jeweils den Winkel auf eine Stelle nach dem Komma.  |
+| gemischt, ohne Überschrift je Aufgabe | 190 | Sachaufgabe | 1 | 2 | 4 | 2 | eigene Aufgabe | Im Dreieck KLM liegt bei L ein rechter Winkel. Überlege zuer |
+| gemischt, ohne Überschrift je Aufgabe | 191 | Sachaufgabe | 2 | 1 | 2 | 2 | eigene Aufgabe | Berechne jeweils den Winkel auf eine Stelle nach dem Komma.  |
+| gemischt, ohne Überschrift je Aufgabe | 192 | Sachaufgabe | 0 | 3 | 2 | 2 | eigene Aufgabe | Berechne jeweils die gesuchte Länge. (1) Quader mit den Kant |
 | gemischt, ohne Überschrift je Aufgabe | 193 | Sachaufgabe | 2 | 2 | 1 | 2 | eigene Aufgabe | Entscheide bei jedem Dreieck ABC selbst, welcher Weg passt.  |
-| gemischt, ohne Überschrift je Aufgabe | 194 | Sachaufgabe | 2 | 2 | 1 | 3 | 2022-OS-K5b | Gegeben ist ein Dreieck ABC, das nicht rechtwinklig ist. Die |
-| gemischt, ohne Überschrift je Aufgabe | 195 | Sachaufgabe | 2 | 2 | 1 | 3 | 2024-OS-K6a | Eine Seilbahn führt vom Ort B im Tal zum Ort A auf einem Ber |
-| gemischt, ohne Überschrift je Aufgabe | 196 | Vergleich | 2 | 2 | 1 | 3 | 2022-OS-K5a | Gegeben ist ein Dreieck ABC, das nicht rechtwinklig ist. Die |
+| gemischt, ohne Überschrift je Aufgabe | 194 | Vergleich | 2 | 2 | 1 | 3 | 2022-OS-K5a | Gegeben ist ein Dreieck ABC, das nicht rechtwinklig ist. Die |
+| gemischt, ohne Überschrift je Aufgabe | 195 | Sachaufgabe | 2 | 2 | 1 | 3 | 2022-OS-K5b | Gegeben ist ein Dreieck ABC, das nicht rechtwinklig ist. Die |
+| gemischt, ohne Überschrift je Aufgabe | 196 | Sachaufgabe | 2 | 2 | 1 | 3 | 2024-OS-K6a | Eine Seilbahn führt vom Ort B im Tal zum Ort A auf einem Ber |
 | gemischt, ohne Überschrift je Aufgabe | 197 | Schluss | 2 | 2 | 2 | 2 | eigene Aufgabe | Ein rechtwinkliges Dreieck hat den Winkel = 33^ . Die Hypote |
 | gemischt, ohne Überschrift je Aufgabe | 198 | Schluss | 2 | 2 | 1 | 3 | 2024-OS-K6b | Eine Seilbahn führt vom Ort B im Tal zum Ort A auf einem Ber |
 | Eigenschaft erkennen | 199 | rechnen | 1 | 1 | 1 | 2 | eigene Aufgabe | Welche Vierecke im Haus der Vierecke haben mindestens zwei S |

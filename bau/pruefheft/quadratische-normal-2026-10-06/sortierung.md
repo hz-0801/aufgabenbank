@@ -39,9 +39,9 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Nullstellen berechnen | 42 | rechnen | 0 | 2 | 1 | 2 | eigene Aufgabe | Berechne die Nullstellen von f(x) = x^2 - 2x - 8. |
 | Nullstellen berechnen | 43 | rechnen | 0 | 2 | 1 | 2 | eigene Aufgabe | Berechne die Nullstellen von f(x) = 3x^2 - 3x - 18. |
 | Nullstellen berechnen | 44 | Sachaufgabe | 0 | 2 | 2 | 2 | eigene Aufgabe | Berechne die Nullstellen von f(x) = x^2 + 12x + 36. Wo liegt |
-| Nullstellen berechnen | 45 | rechnen | 0 | 3 | 1 | 3 | 2020-OS-K3e | Berechne die Nullstellen der Funktion mit y = 2x^2 + 8x + 6. |
-| Nullstellen berechnen | 46 | Sachaufgabe | 0 | 3 | 2 | 2 | eigene Aufgabe | Die Parabel f(x) = x^2 - 4x + 7 hat den Scheitel S(2/3). Ber |
-| Nullstellen berechnen | 47 | rechnen | 2 | 1 | 1 | 2 | eigene Aufgabe | Berechne die Nullstellen von f(x) = x^2 - 4x + 1. Runde auf  |
+| Nullstellen berechnen | 45 | rechnen | 2 | 1 | 1 | 2 | eigene Aufgabe | Berechne die Nullstellen von f(x) = x^2 - 4x + 1. Runde auf  |
+| Nullstellen berechnen | 46 | rechnen | 0 | 3 | 1 | 3 | 2020-OS-K3e | Berechne die Nullstellen der Funktion mit y = 2x^2 + 8x + 6. |
+| Nullstellen berechnen | 47 | Sachaufgabe | 0 | 3 | 2 | 2 | eigene Aufgabe | Die Parabel f(x) = x^2 - 4x + 7 hat den Scheitel S(2/3). Ber |
 | Nullstellen berechnen | 48 | Sachaufgabe | 2 | 3 | 1 | 3 | 2025-OS-K5c | Die quadratische Funktion p hat die Gleichung p(x) = x^2 - 6 |
 | Nullstellen berechnen | 49 | Schluss | 2 | 4 | 1 | 3 | 2017-OS-K5d | Die Parabel p hat die Gleichung y = (x+3)^2 - 2 und ist im K |
 | Gerade und Parabel gleichsetzen | 50 | Vorstufe | 0 | 1 | 1 | 0 | eigene Aufgabe | Kreuze an, welche Form die Gleichung x^2 - 3x + 1 = 0 hat un |
@@ -68,8 +68,8 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Punkt auf der Parabel prüfen | 71 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Gegeben sind die Parabel f(x) = x^2 - 5 und die Gerade g(x)  |
 | Punkt auf der Parabel prüfen | 72 | Sachaufgabe | 0 | 1 | 1 | 3 | 2024-OS-K3c | Die Gerade f ist der Graph von f(x) = 4x + 1. Die Parabel p  |
 | Punkt auf der Parabel prüfen | 73 | Ankreuzen | 0 | 2 | 1 | 3 | 2020-OS-K3b | Die Parabel zu f mit y = (x+2)^2 - 4 ist im Koordinatensyste |
-| Punkt auf der Parabel prüfen | 74 | Ankreuzen | 0 | 2 | 1 | 3 | 2018-OS-K5a | Im Koordinatensystem ist die Parabel p mit p(x) = x^2 - 4x + |
-| Punkt auf der Parabel prüfen | 75 | Sachaufgabe | 0 | 2 | 1 | 3 | 2020-OS-K3c | Die Parabel zu f mit y = (x+2)^2 - 4 ist im Koordinatensyste |
+| Punkt auf der Parabel prüfen | 74 | Sachaufgabe | 0 | 2 | 1 | 3 | 2020-OS-K3c | Die Parabel zu f mit y = (x+2)^2 - 4 ist im Koordinatensyste |
+| Punkt auf der Parabel prüfen | 75 | Ankreuzen | 0 | 2 | 1 | 3 | 2018-OS-K5a | Im Koordinatensystem ist die Parabel p mit p(x) = x^2 - 4x + |
 | Punkt auf der Parabel prüfen | 76 | Schluss | 0 | 2 | 1 | 3 | 2014-OS-K7a | Im Koordinatensystem sind die Parabel p mit p(x) = -x^2 und  |
 | Parabel skizzieren | 77 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Skizziere die Parabel zu f(x) = (x - 2)^2 + 1 im Koordinaten |
 | Parabel skizzieren | 78 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Zeichne die Parabel zu f(x) = 4x^2 in das Koordinatensystem. |
@@ -83,9 +83,9 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Lösung prüfen | 86 | rechnen | 0 | 1 | 1 | 1 | eigene Aufgabe | Löse die Gleichung x^2 = 81. Gib die Lösungsmenge an. |
 | Lösung prüfen | 87 | rechnen | 0 | 1 | 1 | 1 | eigene Aufgabe | Löse die Gleichung (x - 2) (x - 5) = 0. Gib die Lösungsmenge |
 | Lösung prüfen | 88 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Prüfe, ob x = -7 eine Lösung von (x + 2)^2 = 25 ist. |
-| Lösung prüfen | 89 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Prüfe, ob x = -5 eine Lösung von (x + 5) (x - 1) = 0 ist. |
-| Lösung prüfen | 90 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Prüfe durch Einsetzen, ob x = -2 eine Lösung von x^2 - 3x -  |
-| Lösung prüfen | 91 | Ankreuzen | 0 | 1 | 1 | 3 | eigene Aufgabe | Kreuze an, welcher Wert die Gleichung x (x + 9) = -14 erfüll |
+| Lösung prüfen | 89 | Ankreuzen | 0 | 1 | 1 | 3 | eigene Aufgabe | Kreuze an, welcher Wert die Gleichung x (x + 9) = -14 erfüll |
+| Lösung prüfen | 90 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Prüfe, ob x = -5 eine Lösung von (x + 5) (x - 1) = 0 ist. |
+| Lösung prüfen | 91 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Prüfe durch Einsetzen, ob x = -2 eine Lösung von x^2 - 3x -  |
 | Lösung prüfen | 92 | Schluss | 0 | 1 | 1 | 3 | 2025-OS-B1h | Genau einer der Werte löst die Gleichung x(x+5) = -6. Kreuze |
 | x zu gegebenem y | 93 | rechnen | 0 | 2 | 1 | 3 | eigene Aufgabe | Die Parabel f(x) = -x^2 + 4x + 2 ist nach unten geöffnet. Fü |
 | x zu gegebenem y | 94 | rechnen | 0 | 2 | 1 | 2 | eigene Aufgabe | Gegeben ist f(x) = x^2 + x + 1. Für welche x ist f(x) = 7? |

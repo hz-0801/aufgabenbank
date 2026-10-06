@@ -11,8 +11,8 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | aufstellen | 17 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Eine Jugendherberge hat 23 Zimmer. Es gibt Zweibettzimmer un |
 | aufstellen | 18 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Die Summe zweier Zahlen ist 31. Ihre Differenz ist 7. x ist  |
 | aufstellen | 19 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Die Summe zweier Zahlen ist 42. Die größere Zahl ist das Dop |
-| aufstellen | 20 | Sachaufgabe | 0 | 4 | 1 | 3 | 2016-OS-K6d | Eine Jugendherberge hat nur Zimmer mit drei Betten und Zimme |
-| aufstellen | 21 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | Beim Schulfest wurden 120 Getränke verkauft. Ein Wasser kost |
+| aufstellen | 20 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | Beim Schulfest wurden 120 Getränke verkauft. Ein Wasser kost |
+| aufstellen | 21 | Sachaufgabe | 0 | 4 | 1 | 3 | 2016-OS-K6d | Eine Jugendherberge hat nur Zimmer mit drei Betten und Zimme |
 | aufstellen | 22 | Schluss | 1 | 5 | 1 | 3 | 2021-OS-K7b | Zwei Familien besuchen in Paris den Eiffelturm. Familie Beye |
 | lösen | 23 | Vorstufe | 0 | 1 | 1 | 0 | eigene Aufgabe | Gegeben sind I: 2x + 3y = 9 und II: 5x - 3y = 14. Kreuze an, |
 | lösen | 24 | Vorstufe | 0 | 1 | 1 | 0 | eigene Aufgabe | Gegeben sind I: 3x + 7y = 17 und II: x + 4y = 9. Du willst e |

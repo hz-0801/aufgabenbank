@@ -14,8 +14,8 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Tabelle ergänzen | 14 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | Ein Auto kostet neu 24000€. Es verliert jedes Jahr 15% seine |
 | Tabelle ergänzen | 15 | Sachaufgabe | 1 | 1 | 2 | 2 | eigene Aufgabe | Ein Guthaben wächst jedes Jahr um 10%. In der Zeile der Jahr |
 | Tabelle ergänzen | 16 | rechnen | 1 | 2 | 1 | 2 | eigene Aufgabe | Ein Bestand wächst jedes Jahr mit dem Faktor 1,1. Fülle die  |
-| Tabelle ergänzen | 17 | Sachaufgabe | 1 | 3 | 1 | 3 | 2016-OS-K4a | Um Krankheiten der Schilddrüse zu erkennen, spritzt man dem  |
-| Tabelle ergänzen | 18 | Sachaufgabe | 2 | 1 | 1 | 3 | 2020-OS-K4a | Laut einer Studie aus dem Jahr 2019 verbrauchte jeder Mensch |
+| Tabelle ergänzen | 17 | Sachaufgabe | 2 | 1 | 1 | 3 | 2020-OS-K4a | Laut einer Studie aus dem Jahr 2019 verbrauchte jeder Mensch |
+| Tabelle ergänzen | 18 | Sachaufgabe | 1 | 3 | 1 | 3 | 2016-OS-K4a | Um Krankheiten der Schilddrüse zu erkennen, spritzt man dem  |
 | Tabelle ergänzen | 19 | Sachaufgabe | 2 | 2 | 1 | 3 | 2017-OS-K7a | Auf Meereshöhe (0 km) misst man einen Luftdruck von ungefähr |
 | Tabelle ergänzen | 20 | Schluss | 2 | 3 | 1 | 3 | 2019-OS-K7a | Ein Ferkel wiegt 10 kg. Aus Erfahrung weiß man, dass seine M |
 | Punkte darstellen | 21 | Vorstufe | 1 | 1 | 1 | 0 | eigene Aufgabe | Der Zahlenstrahl ist in Hunderterschritten beschriftet. Welc |
@@ -34,17 +34,17 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Faktor bestimmen, Gleichung aufstellen | 34 | rechnen | 0 | 1 | 1 | 1 | eigene Aufgabe | Ein Wert steigt jedes Jahr um 40%. Mit welchem Faktor wird e |
 | Faktor bestimmen, Gleichung aufstellen | 35 | Sachaufgabe | 0 | 1 | 1 | 1 | eigene Aufgabe | Ein Roller ist 3000€ wert. Er verliert jedes Jahr 20% seines |
 | Faktor bestimmen, Gleichung aufstellen | 36 | Sachaufgabe | 0 | 1 | 1 | 1 | eigene Aufgabe | Im Text steht: „Auf einem Blatt sitzen 40 Blattläuse. Ihre Z |
-| Faktor bestimmen, Gleichung aufstellen | 37 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | In einem Becher sind 600 mg eines Stoffs. Jede Stunde zerfal |
-| Faktor bestimmen, Gleichung aufstellen | 38 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Roller ist 3000€ wert. Er verliert jedes Jahr 20% seines |
-| Faktor bestimmen, Gleichung aufstellen | 39 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Die Menge eines Stoffs sinkt in zwei Stunden von 1000 mg auf |
-| Faktor bestimmen, Gleichung aufstellen | 40 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Auf einem Blatt sitzen 40 Blattläuse. Ihre Zahl wächst jeden |
-| Faktor bestimmen, Gleichung aufstellen | 41 | Sachaufgabe | 0 | 1 | 2 | 2 | eigene Aufgabe | In einer Tabelle stehen nacheinander die Werte 350 und 420.  |
-| Faktor bestimmen, Gleichung aufstellen | 42 | Ankreuzen | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Bestand von 2000 Tieren nimmt jedes Jahr um 10% ab. Kreu |
+| Faktor bestimmen, Gleichung aufstellen | 37 | Ankreuzen | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Bestand von 2000 Tieren nimmt jedes Jahr um 10% ab. Kreu |
+| Faktor bestimmen, Gleichung aufstellen | 38 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | In einem Becher sind 600 mg eines Stoffs. Jede Stunde zerfal |
+| Faktor bestimmen, Gleichung aufstellen | 39 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Roller ist 3000€ wert. Er verliert jedes Jahr 20% seines |
+| Faktor bestimmen, Gleichung aufstellen | 40 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Die Menge eines Stoffs sinkt in zwei Stunden von 1000 mg auf |
+| Faktor bestimmen, Gleichung aufstellen | 41 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Auf einem Blatt sitzen 40 Blattläuse. Ihre Zahl wächst jeden |
+| Faktor bestimmen, Gleichung aufstellen | 42 | Sachaufgabe | 0 | 1 | 2 | 2 | eigene Aufgabe | In einer Tabelle stehen nacheinander die Werte 350 und 420.  |
 | Faktor bestimmen, Gleichung aufstellen | 43 | rechnen | 1 | 1 | 1 | 2 | eigene Aufgabe | Ein Wert wird jedes Jahr mit 1,15 multipliziert. Um wie viel |
 | Faktor bestimmen, Gleichung aufstellen | 44 | Ankreuzen | 1 | 1 | 1 | 2 | eigene Aufgabe | Die Tabelle zeigt Werte. Kreuze an, zu welcher Gleichung die |
-| Faktor bestimmen, Gleichung aufstellen | 45 | Ankreuzen | 1 | 1 | 1 | 3 | 2017-OS-K7c | Auf Meereshöhe (0 km) misst man einen Luftdruck von ungefähr |
-| Faktor bestimmen, Gleichung aufstellen | 46 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | Die Menge eines Medikaments nimmt jede Stunde um 25% ab. Mit |
-| Faktor bestimmen, Gleichung aufstellen | 47 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | Die Zahl der Mitglieder eines Vereins wird mit M(t) = 250 1, |
+| Faktor bestimmen, Gleichung aufstellen | 45 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | Die Menge eines Medikaments nimmt jede Stunde um 25% ab. Mit |
+| Faktor bestimmen, Gleichung aufstellen | 46 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | Die Zahl der Mitglieder eines Vereins wird mit M(t) = 250 1, |
+| Faktor bestimmen, Gleichung aufstellen | 47 | Ankreuzen | 1 | 1 | 1 | 3 | 2017-OS-K7c | Auf Meereshöhe (0 km) misst man einen Luftdruck von ungefähr |
 | Faktor bestimmen, Gleichung aufstellen | 48 | Sachaufgabe | 1 | 1 | 1 | 3 | 2018-OS-K2a | Ein junges Berliner Unternehmen zeigt in einer Tabelle, wie  |
 | Faktor bestimmen, Gleichung aufstellen | 49 | Sachaufgabe | 1 | 1 | 1 | 3 | 2019-OS-K7b | Ein Ferkel wiegt 10 kg. Aus Erfahrung weiß man, dass seine M |
 | Faktor bestimmen, Gleichung aufstellen | 50 | Sachaufgabe | 1 | 1 | 3 | 2 | eigene Aufgabe | Die Tabelle zeigt, wie sich eine Anzahl entwickelt. Berechne |
@@ -57,8 +57,8 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Graph zuordnen und begründen | 57 | Vorstufe | 1 | 1 | 1 | 0 | eigene Aufgabe | Sieh dir im Koordinatensystem den Graphen f an. Kreuze an, b |
 | Graph zuordnen und begründen | 58 | Vorstufe | 1 | 1 | 1 | 0 | eigene Aufgabe | Das Koordinatensystem zeigt drei Graphen f, g und h. Kreuze  |
 | Graph zuordnen und begründen | 59 | Ankreuzen | 0 | 1 | 1 | 2 | eigene Aufgabe | Eine Tasse Tee kühlt ab. Der Tee ist wärmer als die Luft im  |
-| Graph zuordnen und begründen | 60 | Ankreuzen | 0 | 1 | 1 | 2 | eigene Aufgabe | In einem Wasserbecken sind 300 Liter. Jede Minute fließen 60 |
-| Graph zuordnen und begründen | 61 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Pilz bedeckt am Anfang eine Fläche von 100 cm^2. Die Flä |
+| Graph zuordnen und begründen | 60 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Pilz bedeckt am Anfang eine Fläche von 100 cm^2. Die Flä |
+| Graph zuordnen und begründen | 61 | Ankreuzen | 0 | 1 | 1 | 2 | eigene Aufgabe | In einem Wasserbecken sind 300 Liter. Jede Minute fließen 60 |
 | Graph zuordnen und begründen | 62 | Schluss | 0 | 1 | 2 | 3 | eigene Aufgabe | Ein Kalb wiegt 45 kg. Es nimmt jede Woche um 5% zu. Das Koor |
 | Graph zuordnen und begründen | 63 | Schluss | 1 | 1 | 1 | 1 | eigene Aufgabe | Das Koordinatensystem zeigt drei Graphen a, b und c. Welcher |
 | Graph zuordnen und begründen | 64 | Schluss | 1 | 1 | 1 | 2 | eigene Aufgabe | Ein Konto wächst jedes Jahr um 15%. Das Koordinatensystem ze |

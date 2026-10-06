@@ -12,11 +12,11 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Minimum, Maximum, Spannweite | 14 | Sachaufgabe | 0 | 1 | 2 | 2 | eigene Aufgabe | Das Säulendiagramm zeigt die Besucher an jedem Tag einer Woc |
 | Minimum, Maximum, Spannweite | 15 | Sachaufgabe | 0 | 2 | 1 | 2 | eigene Aufgabe | Ein Verein hat in zehn Spielen so viele Tore geschossen: 2,  |
 | Minimum, Maximum, Spannweite | 16 | Sachaufgabe | 0 | 2 | 2 | 3 | 2022-OS-K4a | Von 2017 bis 2021 wurden jedes Jahr 1 200 Jugendliche gefrag |
-| Minimum, Maximum, Spannweite | 17 | Vergleich | 0 | 3 | 1 | 3 | 2020-OS-K2d | Das Säulendiagramm zeigt die Besucherzahlen eines Freibads a |
-| Minimum, Maximum, Spannweite | 18 | rechnen | 1 | 1 | 1 | 2 | eigene Aufgabe | Die Weiten beim Weitsprung in m sind: 4,35; 4,62; 4,18; 4,50 |
-| Minimum, Maximum, Spannweite | 19 | rechnen | 1 | 1 | 1 | 3 | 2019-OS-B1i | Gib die Spannweite dieser Daten an: 9,7 m; 9,9 m; 9,6 m; 9,5 |
-| Minimum, Maximum, Spannweite | 20 | Sachaufgabe | 1 | 1 | 1 | 3 | 2024-OS-K2a | Das Säulendiagramm zeigt, wie viel Niederschlag 2021 in Bran |
-| Minimum, Maximum, Spannweite | 21 | Sachaufgabe | 1 | 1 | 1 | 3 | 2023-OS-K6c | Auf der Welt werden wohl über 7 000 Sprachen gesprochen. Die |
+| Minimum, Maximum, Spannweite | 17 | rechnen | 1 | 1 | 1 | 2 | eigene Aufgabe | Die Weiten beim Weitsprung in m sind: 4,35; 4,62; 4,18; 4,50 |
+| Minimum, Maximum, Spannweite | 18 | rechnen | 1 | 1 | 1 | 3 | 2019-OS-B1i | Gib die Spannweite dieser Daten an: 9,7 m; 9,9 m; 9,6 m; 9,5 |
+| Minimum, Maximum, Spannweite | 19 | Sachaufgabe | 1 | 1 | 1 | 3 | 2024-OS-K2a | Das Säulendiagramm zeigt, wie viel Niederschlag 2021 in Bran |
+| Minimum, Maximum, Spannweite | 20 | Sachaufgabe | 1 | 1 | 1 | 3 | 2023-OS-K6c | Auf der Welt werden wohl über 7 000 Sprachen gesprochen. Die |
+| Minimum, Maximum, Spannweite | 21 | Vergleich | 0 | 3 | 1 | 3 | 2020-OS-K2d | Das Säulendiagramm zeigt die Besucherzahlen eines Freibads a |
 | Minimum, Maximum, Spannweite | 22 | Schluss | 2 | 4 | 2 | 3 | 2021-OS-K5a | Das Säulendiagramm gibt an, wie viele Container (in Millione |
 | Mittelwert | 23 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Die Werte sind: 6; 30; 45. Berechne das arithmetische Mittel |
 | Mittelwert | 24 | rechnen | 0 | 1 | 1 | 3 | 2016-OS-B1a | Gib das arithmetische Mittel (den Durchschnitt) der Werte 8; |
@@ -59,12 +59,12 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Aussage prüfen | 61 | Vorstufe | 0 | 1 | 1 | 0 | eigene Aufgabe | Die y-Achse eines Säulendiagramms ist mit 0, 50, 100, 150 be |
 | Aussage prüfen | 62 | Vorstufe | 1 | 1 | 1 | 0 | eigene Aufgabe | Sieh dir die y-Achse des Liniendiagramms an. Kreuze an, wo s |
 | Aussage prüfen | 63 | Vergleich | 0 | 1 | 1 | 1 | eigene Aufgabe | Mia sagt: „Im März wurden mehr als 60 Bücher ausgeliehen.“ B |
-| Aussage prüfen | 64 | Vergleich | 0 | 1 | 1 | 2 | eigene Aufgabe | Emma sagt: „Der Preis ist von Dienstag auf Mittwoch um mehr  |
-| Aussage prüfen | 65 | Vergleich | 0 | 1 | 1 | 3 | 2019-OS-K5c | 2015 erschien ein Zeitungsartikel mit der Überschrift „Büche |
-| Aussage prüfen | 66 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Laut einem Diagramm fahren 5% der Schüler mit dem Roller. Ma |
-| Aussage prüfen | 67 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | 2022 kamen 240 Besucher, 2023 kamen 320 Besucher. Lina sagt: |
-| Aussage prüfen | 68 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Verein verliert seit vier Jahren jedes Jahr 20 Mitgliede |
-| Aussage prüfen | 69 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Jedes Jahr werden 900 Jugendliche befragt, ob sie täglich Sp |
+| Aussage prüfen | 64 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Laut einem Diagramm fahren 5% der Schüler mit dem Roller. Ma |
+| Aussage prüfen | 65 | Vergleich | 0 | 1 | 1 | 2 | eigene Aufgabe | Emma sagt: „Der Preis ist von Dienstag auf Mittwoch um mehr  |
+| Aussage prüfen | 66 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | 2022 kamen 240 Besucher, 2023 kamen 320 Besucher. Lina sagt: |
+| Aussage prüfen | 67 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Verein verliert seit vier Jahren jedes Jahr 20 Mitgliede |
+| Aussage prüfen | 68 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Jedes Jahr werden 900 Jugendliche befragt, ob sie täglich Sp |
+| Aussage prüfen | 69 | Vergleich | 0 | 1 | 1 | 3 | 2019-OS-K5c | 2015 erschien ein Zeitungsartikel mit der Überschrift „Büche |
 | Aussage prüfen | 70 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | Eine Stadt zählt jedes Jahr die Fahrraddiebstähle: 2020 410, |
 | Aussage prüfen | 71 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | Die y-Achse beginnt bei 70. Am Montag ist der Wert 72, am Di |
 | Aussage prüfen | 72 | Vergleich | 2 | 1 | 1 | 3 | 2022-OS-K4c | Von 2017 bis 2021 wurden jedes Jahr 1 200 Jugendliche gefrag |
@@ -80,7 +80,7 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Aussagen prüfen, Auswirkung erklären | 82 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Der Durchschnitt von fünf Werten ist 20. Ein sechster Wert 3 |
 | Aussagen prüfen, Auswirkung erklären | 83 | Sachaufgabe | 0 | 1 | 2 | 2 | eigene Aufgabe | Fünf Kinder bekommen so viel Taschengeld in €: 10, 12, 8, 11 |
 | Aussagen prüfen, Auswirkung erklären | 84 | Sachaufgabe | 0 | 2 | 1 | 3 | 2025-OS-K6a | In einer Kita-Gruppe sind die Kinder so alt (in Jahren): 5,  |
-| Aussagen prüfen, Auswirkung erklären | 85 | Schluss | 1 | 1 | 1 | 2 | eigene Aufgabe | Erkläre, warum ein einzelner sehr großer Wert den Mittelwert |
+| Aussagen prüfen, Auswirkung erklären | 85 | Vergleich | 1 | 1 | 1 | 2 | eigene Aufgabe | Erkläre, warum ein einzelner sehr großer Wert den Mittelwert |
 | Aussagen prüfen, Auswirkung erklären | 86 | Schluss | 0 | 3 | 2 | 3 | 2025-OS-K6c | In derselben Kita arbeiten 11 Erziehende. Sie sind so alt (i |
 | aus Prozent darstellen | 87 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Zeichne die Anteile nacheinander in den Streifen und beschri |
 | aus Prozent darstellen | 88 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Sektor hat einen Mittelpunktswinkel von 72^ . Wie viel P |
@@ -88,10 +88,10 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | aus Prozent darstellen | 90 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | Ein Kiosk verkauft Eis: im Juni Vanille 40%, Schoko 35%, Erd |
 | aus Prozent darstellen | 91 | Schluss | 2 | 3 | 1 | 3 | 2025-OS-K6b | In derselben Kita arbeiten 11 Erziehende. Sie sind so alt (i |
 | falschen Eindruck erklären | 92 | Vergleich | 0 | 1 | 1 | 2 | eigene Aufgabe | Erkläre, warum die y-Achse eines Säulendiagramms bei 0 begin |
-| falschen Eindruck erklären | 93 | Vergleich | 0 | 1 | 1 | 2 | eigene Aufgabe | Die y-Achse beginnt bei 90. Die Werte sind 92 und 96. Tim sa |
-| falschen Eindruck erklären | 94 | Sachaufgabe | 0 | 1 | 1 | 3 | eigene Aufgabe | Ein Diagramm zeigt die Temperatur an vier Tagen. Die y-Achse |
-| falschen Eindruck erklären | 95 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Zwei Diagramme zeigen dieselben Werte 84, 86 und 88. Im erst |
-| falschen Eindruck erklären | 96 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Zwei Diagramme zeigen dieselben Werte 52 und 55. Im ersten g |
+| falschen Eindruck erklären | 93 | Sachaufgabe | 0 | 1 | 1 | 3 | eigene Aufgabe | Ein Diagramm zeigt die Temperatur an vier Tagen. Die y-Achse |
+| falschen Eindruck erklären | 94 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Zwei Diagramme zeigen dieselben Werte 84, 86 und 88. Im erst |
+| falschen Eindruck erklären | 95 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Zwei Diagramme zeigen dieselben Werte 52 und 55. Im ersten g |
+| falschen Eindruck erklären | 96 | Vergleich | 0 | 1 | 1 | 2 | eigene Aufgabe | Die y-Achse beginnt bei 90. Die Werte sind 92 und 96. Tim sa |
 | falschen Eindruck erklären | 97 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | Ein Diagramm zeigt die Werte 1020, 1040 und 1060. Seine Achs |
 | falschen Eindruck erklären | 98 | Schluss | 2 | 1 | 1 | 3 | 2014-OS-K3d | Eine andere Bank zahlt nur 0,25 % Zinsen im Jahr. Für ihre W |
 
