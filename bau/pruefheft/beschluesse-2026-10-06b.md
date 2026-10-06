@@ -142,6 +142,17 @@ verbessereBlaetter 06.10. vormittags.
 28. Alte Bestellwörter („ohne blatt 0“, „Blatt 0 dicht“) gelten als
     Zuruf weiter; Dateinamen (zone.jsonl) bleiben.
 
+29. Rückblick-Regel: (1) nur was die Leiter gleich braucht, jede Aufgabe
+    kommt wieder (Prüfstein: Nummer, ab der gebraucht); (2)
+    zusammenhängend statt verstreut, Tabellen mit Linien; (3) Kopfzahlen,
+    kein Taschenrechner; (4) echte Aufgaben zuerst (VERA 8, ESA/HS,
+    Bayern Kl. 6/8), mit Marke; (5) keine Kopien (≥ 2 Merkmale
+    verschieden); (6) Fuß mit Kontrollwert; (7) nicht hinein:
+    Verständnisfragen, Erkennen, Wiederholung; (8) Voraussetzungen aus dem
+    Steckbrief („was man vorher können muss“), nicht aus dem Katalogfeld
+    allein. „schwach“: dieselben Voraussetzungen, je eine Aufgabe mehr auf
+    leichterer Stufe, keine zusätzlichen Themen.
+
 ## Nicht entschieden
 
 - „ab hier“/Formel: wann und wo, verallgemeinert (Gespräch steht aus;
