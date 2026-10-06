@@ -12,7 +12,8 @@ Nummer steht im Programm am Kommentar.
     python3 werkzeuge/pruefheft.py --kapitel prozent --art normal --portion 1
     python3 werkzeuge/pruefheft.py --kapitel prozent --art normal --fokus grundwert
     … --kurs EBR        Heft ab 2026 nach Kurs (Vorgabe FOR, Beschluss 27)
-    … --uebung / --ohne-uebung   Anhang „Mehr zum Üben“ erzwingen / abschalten (N5.22)
+    … --uebung          Anhang „Mehr zum Üben“, nur auf Zuruf (Punkt 31; --ohne-uebung ohne Wirkung)
+    python3 werkzeuge/pruefheft.py --kapitel dreiecke --art normal --fokus pythagoras   (Steckbrief pythagoras-seite)
     python3 werkzeuge/pruefheft.py --kapitel dreiecke --art schwach   (alle zehn P10-Kapitel, Lauf C)
 
 Pfade: `--mn ../mathe-nachhilfe --bb ../blattbau` (Vorgabe: Nachbarordner).
@@ -151,3 +152,23 @@ oder „,“). Liste mit Häufigkeit: `python3 werkzeuge/abbildung.py --typen`.
 - Bank-Grafiken beim Setzen repariert (Bank unverändert): Astnamen mit Umlaut als `\text`,
   `ksys` mit Jahreszahlen bzw. Achse ab ≠ 0 als pgfplots, `\wertetabelle` mit Wort-Zeilennamen und
   breiten Werten.
+
+## Nachtrag 06.10. abends (Steckbriefe, N6, Punkte 30–31; geht vor)
+
+- Steckbrief (`mathe-nachhilfe/katalog/steckbrief/<kapitel>-<handgriff>.md`, Format dort in README.md, Leser
+  `werkzeuge/steckbrief.py`): `--fokus` findet ihn über den Dateinamen (ganz, Anfang oder Ende) oder über
+  die Stufen; seine Zeile „Stufen:“ legt die Stufen des Fokusblatts fest, geordnet nach der kleinsten
+  Bank-Sprosse. Daraus setzt das Fokusblatt: Verständnis-Sprosse als erste Gruppe („erst verstehen – nicht
+  rechnen“: Verständnis-Bank, dann die Schätzfrage als Ankreuzaufgabe, wenn sie Zahlen, Vorschläge und
+  eine Lösung hat; N6.27), Merkkasten (Begriff, Merkregel aus „Formel“) danach, die Leiter-Bank als festen
+  unteren Teil der Leiter (jede Sprosse in der Stufe, die sie trägt; ersetzt Vorstufen und Grundwert-Leiter),
+  den Rückblick nur zu „Vorher können“ (N6.29.8; Befund je Voraussetzung ohne Zeile), typische Fehler oben
+  in der Lösungsdatei; Raster (Sachen, Lücke) und Formulierungen geben eigenen Aufgaben in Sprüngen den
+  Vorzug. Ohne Steckbrief wie bisher; der Bau meldet „Steckbrief: …“ bzw. „keiner“.
+- N6.26 Behalten: Fokusblatt endet mit „Zum Schluss“ – je eine echte Aufgabe (Kopf oder glatt, ohne
+  Abbildung) der zwei Stufen, die im Kapitel vor dem Fokus stehen; keine davor: keine (Befund).
+- Punkt 30: Grundwert-Leiter ohne Steckbrief = glatte Sätze (Grundfall e4-k2-s1) vor dem 1 %-Weg.
+- Satz: Prozent-Tabelle ohne Streifen daneben; Bündel gleichartiger BB/BE-Originale eingerückt statt
+  gerahmt, einspaltig, je Aufgabe eine Antwortlinie, grauer Hinweis einmal je Gruppe (auch mit Abbildung).
+- Punkt 31: Anhang „Mehr zum Üben“ nur auf `--uebung`, 1–8 Aufgaben, sonst keiner; Konsolenzeile
+  „Mehr zum Üben: n von höchstens 8“ bzw. „keine passende“.

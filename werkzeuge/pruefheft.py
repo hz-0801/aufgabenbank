@@ -8,6 +8,7 @@ bau/pruefheft/<kapitel>-<art>[-p<n>|-fokus-<wort>][-ebr]-<datum>/ (Unterordner s
   python3 werkzeuge/pruefheft.py --kapitel prozent --art schwach
   python3 werkzeuge/pruefheft.py --kapitel prozent --art normal --portion 1
   python3 werkzeuge/pruefheft.py --kapitel prozent --art normal --fokus grundwert
+  python3 werkzeuge/pruefheft.py --kapitel dreiecke --art normal --fokus pythagoras   (Steckbrief, 06.10. abends)
   --kurs EBR|FOR (Vorgabe FOR): Heft ab 2026 nach Kurs (Fundstellen), * an FOR-only-Aufgaben
   Pfade: --mn ../mathe-nachhilfe --bb ../blattbau (Voreinstellung: Nachbarordner des Repos)
 
@@ -389,6 +390,7 @@ class Daten:
             [r for r in self.fremd if (r.get('art') or '').strip() == 'herausgeloest']
         self.fremd = [r for r in self.fremd if (r.get('art') or 'ganz').strip() != 'herausgeloest']
         self.n_fremd = self.n_heraus = self.n_eigen_weg = self.n_buendel = 0
+        self.sb = None   # Steckbrief des Fokus (werkzeuge/steckbrief.py), sonst None
 
     def befund(self, s):
         if s not in self.befunde:
@@ -400,6 +402,7 @@ class Daten:
 # ---------------------------------------------------------------------------
 sys.path.insert(0, HIER)
 import abbildung as AB
+import steckbrief as SB
 AB.einrichten(tx)
 abbildung = AB.abbildung
 
@@ -1330,7 +1333,7 @@ def spruenge_fuellen(D, st, kern, basis, pool):
             if any(gleichartig(a, b) for b in kern + basis + wahl):
                 continue
             g = max(max(abs(z - z1), abs(s - s1)), max(abs(z2 - z), abs(s2 - s)))
-            k = (g, her, woerter(a), a.id)
+            k = (g, her, sb_raster_rang(D, a), woerter(a), a.id)
             if best is None or k < best[0]:
                 best = (k, a)
         if best:
@@ -1612,6 +1615,9 @@ class Stufe:
         self.steckt = []       # [(id, Aufgabe)] „steckt auch in Nr. n“ (N2.6), Nr. beim Setzen
         self.erkennen = None   # Aufgabe (N4.19)
         self.leiter = []       # feste Grundwert-Leiter (N2.11)
+        self.verst = []        # Verständnis-Sprosse aus dem Steckbrief (N6.27)
+        self.merke = ''        # Merkkasten aus dem Steckbrief (LaTeX)
+        self.sb_leiter = []
 
 
 def kopfname(st):
@@ -1776,20 +1782,283 @@ def platz_ids(D, st, alle_namen, kap_ids, fokus):
     return ids, steckt + zw, []
 
 
+# ---------------------------------------------------------------------------
+# Steckbriefe (mathe-nachhilfe/katalog/steckbrief/*.md, werkzeuge/steckbrief.py; Lauf 06.10. abends)
+# Gibt es zum Fokus einen Steckbrief, nimmt das Fokusblatt daraus: Verständnis-Sprosse als erste Sprosse
+# der Leiter (N6.27), Merkkasten (Begriff, Merkregel), typische Fehler (Lösungsdatei), den unteren Teil der
+# Leiter (Leiter-Bank), die Voraussetzungen des Rückblicks (N6.29.8) und Raster/Formulierungen als Vorzug
+# bei eigenen Aufgaben in Sprüngen. Ohne Steckbrief: wie bisher.
+# ---------------------------------------------------------------------------
+VERSTAENDNIS = 'Verständnis'
+
+
+def sb_schluessel(sp):
+    m = re.match(r'[a-z-]+?-e(\d+)-k(\d+)-s(\d+)', sp)
+    return tuple(int(x) for x in m.groups()) if m else (99, 99, 99)
+
+
+def sb_stufenfolge(D, sb, stufen):
+    """Stufen des Steckbriefs in der Folge seiner Leiter: nach der kleinsten Bank-Sprosse (Einheit, Kette,
+    Sprosse) jeder Stufe (Entscheidung; Pythagoras: Hypotenuse/Kathete direkt vor Gleichung ankreuzen vor
+    Teildreieck in Figur, wie Leiter (Katalog))."""
+    def k(st):
+        ks = [sb_schluessel(sp) for sp in st.sprossen if not re.match(r'(msa|abitur)/', sp)]
+        return min(ks) if ks else (99, 99, 99)
+    return sorted(stufen, key=k)
+
+
+def sb_stufe_fuer(sp, stufen):
+    s = sprosse_von(sp)
+    for st in stufen:
+        if s in st.sprossen:
+            return st.name
+    # sonst die Stufe, die die meisten Sprossen derselben Kette trägt (Teildreieck nachfahren -> Figur/Körper)
+    n = [(sum(1 for x in st.sprossen if kette_von(x) == kette_von(s)), -i, st.name) for i, st in enumerate(stufen)]
+    best = max(n)
+    return best[2] if best[0] else stufen[0].name
+
+
+def sb_zuteilen(D, sb, stufen):
+    """Leiter-Bank und Verständnis-Bank des Steckbriefs auf die Stufen des Blatts: Verständnis in die erste
+    Stufe; jede Leiter-Sprosse in die Stufe, die sie (oder ihre Kette) in der Zuordnung trägt."""
+    D.sb_verst = SB.ids(sb['teil1'].get('Verständnis-Bank', ''))
+    D.sb_leiter = OrderedDict((st.name, []) for st in stufen)
+    for sp in SB.ids(sb['teil1'].get('Leiter-Bank', '')):
+        D.sb_leiter[sb_stufe_fuer(sp, stufen)].append(sp)
+
+
+def sb_nimm(D, B, sp, stufe):
+    """Eine Bankaufgabe zur Sprosse (oder genau die Variante, wenn die id sie nennt); Prozent-Grundwert
+    1 %-Weg wie bisher die erste kopfrechenbare in Euro (Prozent-Tabelle)."""
+    if re.search(r'-v\d+$', sp):
+        r = D.bank.get(sp)
+        if not r or sp in B.benutzt:
+            D.befund(f'Steckbrief: Bankaufgabe {sp} fehlt oder ruht – nicht gesetzt')
+            return None
+        a = bank_aufgabe(D, r, stufe); kennzahlen(D, a); B.benutzt.add(a.id)
+        return a
+    if sp not in B.sprossen:
+        D.befund(f'Steckbrief: Bank-Sprosse {sp} fehlt – nicht gesetzt')
+        return None
+    if sp.endswith('prozentrechnung-e4-k2-s3'):
+        rs = [r for r in B.sprossen[sp] if r['id'] not in B.benutzt]
+        aufg = [bank_aufgabe(D, r, stufe) for r in rs]
+        for a in aufg:
+            kennzahlen(D, a)
+        a = next((x for x in aufg if x.zk == 0 and '€' in x.text), aufg[0] if aufg else None)
+        if a:
+            B.benutzt.add(a.id)
+        return a
+    vorstufe = B.sprossen[sp][0].get('hoehe') == 'vorstufe'
+    w = B.nimm(sp, 1, stufe, kopf_zuerst=not vorstufe)   # Vorstufe: erste Variante (Steckbrief-Beispiel 20 %)
+    return w[0] if w else None
+
+
+def sb_merke(D, a, sp):
+    """Leiter-/Verständnis-Sprosse merken: Vorstufen und Grundfälle kommen in späteren Stufen nicht wieder."""
+    h = (D.bank.get(a.id) or {}).get('hoehe', '')
+    B = D.bau
+    B.sb_sp.add(sprosse_von(a.id))
+    if h == 'vorstufe':
+        B.vor_sp.add(sprosse_von(a.id))
+    if h == 'grundfall':
+        B.grund_k.add(kette_von(a.id))
+
+
+def sb_leiter(D, B, st, darstellung_tab):
+    out = []
+    for sp in D.sb_leiter.get(st.name, []):
+        a = sb_nimm(D, B, sp, st.name)
+        if not a:
+            continue
+        a.fest = len(out) + 1
+        a.hrang = HRANG.get((D.bank.get(a.id) or {}).get('hoehe'), 2)
+        if darstellung_tab and sprosse_von(a.id).endswith('prozentrechnung-e4-k2-s3'):
+            prozent_tabelle(a)   # Prozent-Tabelle als Verfahren, ohne Streifen daneben (Steckbrief Darstellung)
+        sb_merke(D, a, sp)
+        out.append(a)
+    return out
+
+
+def sb_schaetzfrage(D, sb, stufe):
+    """Schätzfrage des Steckbriefs als Ankreuzaufgabe – nur, wenn sie Zahlen und Vorschläge („Was kann passen:
+    A · B · C“) hat und eine Lösung im Steckbrief steht (Schätzfrage-Lösung); sonst keine (Befund)."""
+    q = SB.zitate(sb['teil1'].get('Schätzfrage', ''))
+    lo = SB.schuelertext(sb['teil1'].get('Schätzfrage-Lösung', ''))
+    if not q or not lo or not re.search(r'\d', q[0]) or 'passen:' not in q[0]:
+        D.befund('Steckbrief: Schätzfrage ohne Zahlen, Vorschläge oder Lösung – keine Schätzaufgabe gesetzt')
+        return None
+    vor, opts = q[0].split('passen:', 1)
+    a = Aufgabe()
+    a.art, a.id = 'bank', 'steckbrief-' + sb['name'] + '-schaetzfrage'
+    a.text = tx(vor.strip() + ' passen? Kreuze an, rechne nicht.')
+    a.optionen = [tx(o.strip(' ?')) for o in opts.split('·') if o.strip(' ?')]
+    a.kreuz, a.form = True, 'ankreuzen'
+    a.kurz_roh = [lo]
+    a.kurz = tx(lo)
+    a.loesung_roh = lo
+    kennzahlen(D, a)
+    a.hrang = 0
+    return a
+
+
+def sb_verstaendnis(D, B, sb, st):
+    """Erste Sprosse (N6.27): Verständnis-Bank des Steckbriefs (Erste Frage), dann die Schätzfrage."""
+    out = []
+    for sp in D.sb_verst:
+        a = sb_nimm(D, B, sp, st.name)
+        if a:
+            a.hrang = 0
+            sb_merke(D, a, sp)
+            out.append(a)
+    a = sb_schaetzfrage(D, sb, st.name)
+    if a:
+        out.append(a)
+    for i, a in enumerate(out):
+        a.fest = i + 1
+    return out
+
+
+def sb_merkkasten(sb):
+    """Merkkasten: Begriff und Merkregel (zitierte Sätze im Feld Formel), Schülertext ohne Belege."""
+    teile = []
+    b = SB.schuelertext(sb['teil1'].get('Begriff', ''))
+    if b:
+        teile.append(tx(b))
+    for z in SB.zitate(sb['teil1'].get('Formel', '')):
+        teile.append(tx('Merkregel: ' + z + '.'))
+    if not teile:
+        return ''
+    return ('\\par\\addvspace{4pt}{\\small\\uebersichtskasten{\\textbf{Merke:} ' + ' '.join(teile) + '}}\\par')
+
+
+def sb_fehler_tex(sb):
+    """Typische Fehler (Lösungsdatei, oben): Schülertext ohne Belege."""
+    fs = sb['teil1'].get('Typische Fehler') or []
+    if isinstance(fs, str):
+        fs = [fs]
+    fs = [SB.schuelertext(f) for f in fs if SB.schuelertext(f)]
+    if not fs:
+        return ''
+    return ('{\\small\\noindent\\textbf{Typische Fehler}\\par\\smallskip\\noindent '
+            + '\\par\\noindent '.join('\\textbullet\\ ' + tx(f) for f in fs) + '\\par}\\medskip')
+
+
+SB_STOPP = {'Prozent', 'Tabelle', 'Kopf', 'Aufgabe', 'Rechnen', 'Ankreuzen', 'Kreuze', 'Berechne', 'Ergänze'}
+
+
+def sb_nomen(t):
+    return {w.lower() for w in re.findall(r'\b[A-ZÄÖÜ][a-zäöüß]{4,}', t or '') if w not in SB_STOPP}
+
+
+def sb_vorher(D, sb, rb):
+    """N6.29.8: Rückblick nur zu Voraussetzungen des Steckbriefs („Vorher können“): eine Zeile der
+    Rückblick-Datei bleibt, wenn ein Hauptwort ihrer Voraussetzung in einer Voraussetzung des Steckbriefs
+    steckt (Teilwort genügt: „Winkel“ in „Rechtwinkelmarke“; Entscheidung). Voraussetzungen ohne Zeile:
+    Befund."""
+    vk = SB.schuelertext(sb['teil1'].get('Vorher können', ''))
+    teile = [x.strip() for x in re.split(r';', vk) if x.strip()]
+    if not teile:
+        return rb
+    raus, gedeckt = [], set()
+    for a in rb:
+        nv = sb_nomen(getattr(a, 'voraus', ''))
+        hit = [i for i, t in enumerate(teile) if any(w in t.lower() for w in nv)]
+        if hit:
+            gedeckt.update(hit)
+        else:
+            raus.append(a)
+            D.befund(f'Rückblick: „{getattr(a, "voraus", "")}“ ist keine Voraussetzung im Steckbrief – weggelassen')
+    for i, t in enumerate(teile):
+        if i not in gedeckt:
+            D.befund(f'Rückblick: Voraussetzung „{t}“ (Steckbrief) hat keine Rückblick-Zeile')
+    return [a for a in rb if all(a is not x for x in raus)]
+
+
+def sb_raster_rang(D, a):
+    """Vorzug eigener Aufgaben in Sprüngen (Steckbrief Teil 2/3): 0 = passt (Sache aus dem Raster oder die
+    Darstellung der Raster-Lücke oder eine Frage wie in Teil 3), 1 = sonst. Ohne Steckbrief: 0."""
+    sb = getattr(D, 'sb', None)
+    if not sb or a.art != 'bank':
+        return 0
+    rs = sb_nomen(sb['teil2'].get('Sachen', ''))
+    if rs & {w.lower() for w in sache(a)}:
+        return 0
+    lk = sb.get('luecke', '').lower()
+    if lk and darstellung(a) in lk:
+        return 0
+    frage = klartext(a.text).split('. ')[-1][:18].lower()
+    if any(f[:18].lower() == frage for f, _ in sb['kurz'] + sb['lang'] if f):
+        return 0
+    return 1
+
+
+def zum_schluss(D, args, stufen, B, alle_namen):
+    """N6.26 Behalten: „Zum Schluss“ (Fokus) zwei ältere Aufgaben – je eine echte BB/BE-Aufgabe der zwei
+    Stufen, die im Kapitel vor der ersten Stufe des Blatts stehen (Zuordnung), die leichteste (Kopf oder
+    glatt), nicht schon auf dem Blatt. Steht keine Stufe davor: keine (Befund)."""
+    import functools
+    namen = [st.name for st in stufen]
+    erste = min(alle_namen.index(n) for n in namen if n in alle_namen)
+    vorher = [z for z in D.zu[:erste] if z['stufe'] not in namen][-2:][::-1]
+    if not vorher:
+        D.befund('Zum Schluss: keine Stufe vor dem Fokus im Kapitel – keine ältere Aufgabe')
+        return []
+    auf_blatt = {x.id for st in stufen for _, _, gl in st.gruppen for x in gl} | \
+        {g.id for st in stufen for _, _, gl in st.gruppen for x in gl for g in getattr(x, 'glieder', [])}
+    out = []
+    for z in vorher:
+        ks = []
+        for i in z['katalog_ids'].split():
+            if i in auf_blatt or i in B.benutzt:
+                continue
+            a = echt_aufgabe(D, i, z['stufe'])
+            if a and not a.abb:
+                a.hrang = 3; a.stern = stern_fuer(D, i); kennzahlen(D, a)
+                if a.zk <= 1:
+                    ks.append(a)
+        if ks:
+            a = min(ks, key=functools.cmp_to_key(vergleich))
+            B.benutzt.add(a.id)
+            out.append(a)
+    if len(out) < 2:
+        D.befund(f'Zum Schluss: nur {len(out)} ältere Aufgabe(n) ohne Abbildung, Kopf oder glatt')
+    return out
+
+
 def baue_modell(D, args):
     B = Bau(D, args)
     stufen = [Stufe(z) for z in D.zu]
     stufen = [s for s in stufen if s.kern] + [s for s in stufen if not s.kern]   # Kern zuerst
     if args.fokus:
-        stufen = [s for s in stufen if args.fokus.lower() in s.name.lower()]
+        # Steckbrief (mathe-nachhilfe/katalog/steckbrief/, Lauf 06.10. abends): nennt er Stufen, gelten sie;
+        # sonst wie bisher die Stufen, deren Name das Fokuswort enthält
+        sb = SB.finde(D.mn, D.kapitel, fokus=args.fokus)
+        if not sb:
+            sb = SB.finde(D.mn, D.kapitel, stufen=[s.name for s in stufen if args.fokus.lower() in s.name.lower()] or ['-'])
+        if sb and sb['stufen']:
+            stufen = [s for s in stufen if s.name in sb['stufen']]
+        else:
+            stufen = [s for s in stufen if args.fokus.lower() in s.name.lower()]
         if not stufen:
             sys.exit(f'Fokus „{args.fokus}“ trifft keine Stufe')
+        D.sb = sb if sb and stufen else None
+        if D.sb:
+            stufen = sb_stufenfolge(D, D.sb, stufen)
     ps = None if (args.fokus or not D.pr['pruefstein']) else pruefstein_waehlen(D)
     ps_ids = set(ps[3]) if ps else set()
     tief = args.art == 'schwach' or bool(args.fokus)     # Leiter von ganz unten (Beschlüsse 1, 7, 29)
     alle_namen = [z['stufe'] for z in D.zu]
     kap_ids = {i for z in D.zu for i in z['katalog_ids'].split()} | set(D.wort_eigen)
+    sb = getattr(D, 'sb', None)
+    D.bau = B
+    B.sb_sp = set()
+    if sb:
+        sb_zuteilen(D, sb, stufen)
     for st in stufen:
+        st.verst = sb_verstaendnis(D, B, sb, st) if sb and st is stufen[0] else []
+        st.merke = sb_merkkasten(sb) if sb and st is stufen[0] else ''
+        st.sb_leiter = sb_leiter(D, B, st, D.kapitel == 'prozent') if sb else []
         st.kd, st.selten = jahre_info(D, st)
         # echte Aufgaben (oben auf der Leiter); Hauptplatz aus handgriffe-p10.csv (N2.5/N2.6)
         ids, steckt, heraus_ids = platz_ids(D, st, alle_namen, kap_ids, bool(args.fokus))
@@ -1853,6 +2122,8 @@ def baue_modell(D, args):
         # Vorstufe = Vorstufe genau dieses Handgriffs: eine Sprosse, die schon eine frühere Stufe
         # des Hefts trägt, kommt nicht noch einmal (Reparatur Punkt 8)
         vsp = [sp for sp in vsp if sp not in B.vor_sp]
+        if sb:
+            vsp = []   # Steckbrief: die Vorstufen stehen in seiner Leiter (Leiter-Bank), keine weiteren
         vor = []
         if args.art == 'schwach':
             for sp in vsp:
@@ -1868,7 +2139,7 @@ def baue_modell(D, args):
                         break
                     vor += B.nimm(sp, 1, st.name)
                 runde += 1
-        if len(vor) < 2:
+        if len(vor) < 2 and not sb:
             st.luecken.append(f'{st.name}: {len(vor)} Vorstufe(n) in der Bank'
                               + (' (Ketten ' + ', '.join(ketten) + ')' if ketten else ' (keine Bankkette)'))
         for a in vor:
@@ -1882,6 +2153,8 @@ def baue_modell(D, args):
         for k in ketten:
             for sp in self_sprossen(B, k):
                 h = B.sprossen[sp][0]['hoehe']
+                if sp in B.sb_sp:
+                    continue   # steht schon in der Steckbrief-Leiter
                 if h == 'grundfall' and k not in B.grund_k:
                     mitte += B.nimm(sp, n_grund, st.name)   # Grundfall einer Kette nur in ihrer ersten Stufe
                     B.grund_k.add(k)
@@ -1918,6 +2191,8 @@ def baue_modell(D, args):
             h = B.sprossen[sp][0]['hoehe']
             if h == 'pruefung' and len(echte) >= 2:
                 continue
+            if sp in B.sb_sp:
+                continue
             if h in ('grundfall', 'vorstufe'):
                 continue
             mitte += B.nimm(sp, n_spr, st.name)
@@ -1936,7 +2211,11 @@ def baue_modell(D, args):
             a.stern = bool(a.orig and stern_fuer(D, a.orig))
         # Grundwert-Leiter (N2.11): 1 %-Schritt in der Prozent-Tabelle mit Streifen, dann 10/25/50 % als
         # Abkürzung; dann Formel (ab der ersten Aufgabe, die sie braucht), dann die übrigen
-        if D.kapitel == 'prozent' and st.name == 'Grundwert':
+        if sb:
+            # Steckbrief: Leiter-Bank in Katalog-Folge (N6.30: glatte Sätze vor dem 1 %-Weg)
+            st.leiter = st.sb_leiter
+            mitte = [a for a in mitte if all(sprosse_von(a.id) != sprosse_von(l.id) for l in st.leiter)]
+        elif D.kapitel == 'prozent' and st.name == 'Grundwert':
             st.leiter = grundwert_leiter(D, B, st.name)
             mitte = [a for a in mitte if all(sprosse_von(a.id) != sprosse_von(l.id) for l in st.leiter)]
             if st.leiter:
@@ -1946,7 +2225,7 @@ def baue_modell(D, args):
                 st.vor = []
         # Eigene sparsam (N1.3): gleicht eine eigene einer echten/fremden/herausgelösten oder einer früheren
         # eigenen in Sache, Darstellung und Fragerichtung, fällt sie weg (Vorstufen untereinander ebenso)
-        rest = eigene_sparsam(D, echte + st.leiter + mitte)
+        rest = eigene_sparsam(D, echte + st.verst + st.leiter + mitte)
         mitte = [a for a in mitte if any(a is x for x in rest)]
         st.vor = eigene_sparsam(D, st.vor)
         # N5.20: fremde und eigene nur, wo zwischen zwei aufeinanderfolgenden Aufgaben der Leiter ein Sprung
@@ -1975,6 +2254,8 @@ def baue_modell(D, args):
         st.gruppen = buendeln(D, ordne_stufe(alle, [a for a in echte if bbbe(a)] or echte))
         if st.leiter:
             st.gruppen.insert(0, (LEITER, '', st.leiter))
+        if st.verst:
+            st.gruppen.insert(0, (VERSTAENDNIS, 'erst verstehen – nicht rechnen', st.verst))
         # Erkennen (N5.23, ändert N4.19): im Fokusblatt keine Erkennen-Aufgabe; im ganzen Heft eine kurze
         # Stufe nach allen Geschwistern (erkennen_stufen)
         if not echte:
@@ -2023,14 +2304,15 @@ ERKENNEN = 'Erkennen' # Erkennen-Aufgabe (N4.19)
 
 
 def grundwert_leiter(D, B, stufe):
-    """Grundwert-Leiter (N2.11) aus der Bank: (1) 1 %-Schritt – erste kopfrechenbare Variante der Sprosse
-    „erst 1 %, dann auf 100 %“ (prozentrechnung-e4-k2-s3), gesetzt als Prozent-Tabelle % | Größe mit den
-    Zeilen p → 1 → 100 und dem Streifen daneben (N2.12: Prozent-Tabelle mit Linien); (2) Abkürzung
-    10/25/50 % – erste Variante der Sprosse „derselbe Prozentwert zu verschiedenen Sätzen“
-    (prozentrechnung-e4-k2-s4), deren Sätze in {10, 20, 25, 50} liegen. Fehlt eine Sprosse: Befund."""
+    """Grundwert-Leiter ohne Steckbrief (N2.11, geändert durch Punkt 30 in 06b): (1) glatte Sätze – erste Variante
+    des Grundfalls „mal 2, 4, 5, 10“ (prozentrechnung-e4-k2-s1) mit Satz in {10, 20, 25, 50}; (2) 1 %-Weg – erste
+    kopfrechenbare Variante in Euro von prozentrechnung-e4-k2-s3 als Prozent-Tabelle % | Größe (p → 1 → 100),
+    ohne Streifen daneben (Satz 06.10. abends). Mit Steckbrief gilt dessen Leiter-Bank. Fehlt eine Sprosse:
+    Befund."""
     out = []
-    for sp, wahl in (('prozentrechnung-e4-k2-s3', lambda a: a.zk == 0 and '€' in a.text),
-                     ('prozentrechnung-e4-k2-s4', lambda a: {int(v) for v, p, _ in zahlen(a.text) if p} <= {10, 20, 25, 50})):
+    # Punkt 30 (06b, ändert N2.11): Katalog-Folge – glatte Sätze (Grundfall „mal 2, 4, 5, 10“) vor dem 1 %-Weg
+    for sp, wahl in (('prozentrechnung-e4-k2-s1', lambda a: {int(v) for v, p, _ in zahlen(a.text) if p} <= {10, 20, 25, 50}),
+                     ('prozentrechnung-e4-k2-s3', lambda a: a.zk == 0 and '€' in a.text)):
         rs = [r for r in B.sprossen.get(sp, []) if r['id'] not in B.benutzt]
         aufg = [bank_aufgabe(D, r, stufe) for r in rs]
         for a in aufg:
@@ -2042,7 +2324,7 @@ def grundwert_leiter(D, B, stufe):
         B.benutzt.add(a.id)
         a.fest = len(out) + 1
         a.hrang = 1
-        if sp.endswith('s3'):
+        if sp.endswith('-s3'):
             prozent_tabelle(a)
         out.append(a)
     return out
@@ -2061,9 +2343,8 @@ def prozent_tabelle(a):
            r'$100\,\%%$ & \leerzelle \\ \hline\end{tabular}\endgroup'
            r'\hspace{2mm}{\small\color{mbgrau}\begin{tabular}[t]{@{}l@{}}\rule{0pt}{2.6ex}\\ $\downarrow : %s$\\ $\downarrow \cdot 100$\end{tabular}}'
            % (e_tx or 'Wert', p, w, e_tx, p))
-    strf = (r'\begin{minipage}[t]{0.46\linewidth}\vspace{-2mm}\resizebox{\linewidth}{!}{\begin{minipage}{10.8cm}'
-            r'\streifen[0]{%s}{$0$}{$100\,\%%$}\end{minipage}}\end{minipage}' % p)
-    a.abb = r'\begin{minipage}[t]{0.48\linewidth}' + tab + r'\end{minipage}\hfill' + strf
+    # Lauf 06.10. abends (Satz): Streifen nur, wo er trägt – nicht als Schmuck neben der Tabelle
+    a.abb = tab
     a.text = a.text[:m.end()].rstrip() + ' Rechne in der Tabelle: erst $1\\,\\%$, dann das Ganze ($100\\,\\%$).'
     a.form = 'tabelle'
     a.antwort = ''
@@ -2197,12 +2478,12 @@ def buendeln(D, gruppen):
     einzeln (Entscheidung: zweispaltig passen Grafiken nicht)."""
     if not D.pr.get('buendel', True):
         return gruppen
-    reihe = [x for g in gruppen if g[0] not in (LEITER, ERKENNEN) for x in g[2]]
+    reihe = [x for g in gruppen if g[0] not in (LEITER, ERKENNEN, VERSTAENDNIS) for x in g[2]]
     schluss = gruppen[-1][2][-1] if gruppen and gruppen[-1][0] == SCHLUSS else None
     klassen = OrderedDict()
     for a in reihe:
-        if a.art != 'echt' or a is schluss or a.abb:
-            continue
+        if a.art != 'echt' or a is schluss:
+            continue   # Abbildung erlaubt, seit das Bündel einspaltig eingerückt steht (Lauf 06.10. abends)
         klassen.setdefault(art_schluessel(D, a), []).append(a)
     for k, al in klassen.items():
         if len(al) < 2:
@@ -2243,6 +2524,7 @@ def rueckblick_daten(D, args, stufen, alle):
         da.add(norm(t))
         a = Aufgabe()
         a.art, a.id = 'zone', 'rueckblick-' + str(len(out) + 1)
+        a.voraus = (r.get('voraussetzung') or '').strip()
         form = (r.get('form') or '').strip()
         lo = (r.get('loesung') or '').strip()
         a.text = tx(t)
@@ -2292,7 +2574,12 @@ def ziel_von(g, stufen, alle):
     if re.search(r'Leiter|erste Sprosse|1 %-Schritt|Abkürzung', g):
         for st in stufen:
             if st.leiter:
-                treffer.append(st.leiter[0] if re.search(r'1 %-Schritt|Anfang', g) else st.leiter[-1])
+                if re.search(r'1 %-Schritt|Anfang', g):
+                    # Steckbrief-Leiter beginnt mit der Streifen-Vorstufe: der 1 %-Schritt ist die Prozent-Tabelle
+                    treffer.append(next((x for x in st.leiter if x.form == 'tabelle'), st.leiter[0]))
+                else:
+                    # „Abkürzung 10/25/50 %“: mit Steckbrief der Grundfall (glatte Sätze), sonst das Ende
+                    treffer.append(next((x for x in st.leiter if x.hrang == 1), st.leiter[-1]))
                 break
             erste = [x for _, _, gl in st.gruppen for x in gl if not isinstance(x, Buendel)]
             if erste:
@@ -2318,6 +2605,11 @@ def rueckblick(D, args, stufen, B):
     alle += [g for st in stufen for _, _, gl in st.gruppen for b in gl if isinstance(b, Buendel) for g in b.glieder]
     if D.rueck:
         rb = rueckblick_daten(D, args, stufen, alle)
+        if rb and D.sb:
+            rb = sb_vorher(D, D.sb, rb)   # N6.29.8: Voraussetzungen aus dem Steckbrief
+            for i, a in enumerate(rb):
+                a.id = 'rueckblick-' + str(i + 1)
+            return rb
         if rb:
             return rb
     return rueckblick_ohne_datei(D, args, stufen, B)
@@ -2638,18 +2930,22 @@ UMG = 'pfaufg'   # Aufgabenumgebung (mathblatt 2026-10-06c); Abitur-Profil ebens
 
 
 def buendel_tex(D, b, nrn, kurs):
-    """Bündel (N2.8): Rahmen, Kopf grau „gleiche Art · n× geprüft – kannst du überspringen“, zweispaltig, je
-    Glied Marke, Nummer, Text, Punkte und eine kurze Rechenzeile. n = Zahl der Originale dieser Art (Kopf und
-    Glieder). Fuß der Glieder wie sonst."""
+    """Bündel (N2.8, Satz Lauf 06.10. abends): gleichartige BB/BE-Originale eingerückt statt gerahmt; einmal je
+    Gruppe der graue Hinweis „gleiche Art · n× geprüft – kannst du überspringen“, je Aufgabe Marke im Rand,
+    Nummer, Text und eine Antwortlinie; Fuß wie sonst. n = Zahl der Originale dieser Art (Kopf und Glieder).
+    Entscheidung: einspaltig (eingerückt ist die Spalte schmaler; zweispaltig würde der Text umbrechen)."""
     n = 1 + len(b.glieder)
-    out = [f'\\begin{{pfbuendel}}{{gleiche Art \\textperiodcentered{{}} {n}$\\times$ geprüft – kannst du überspringen}}']
-    glieder = []
+    out = ['\\par\\addvspace{4pt}\\Needspace*{0.3\\textheight}\\begin{list}{}{\\setlength{\\leftmargin}{8mm}\\setlength{\\topsep}{0pt}}\\item[]',
+           f'\\noindent{{\\footnotesize\\color{{mbgrau}}gleiche Art \\textperiodcentered{{}} {n}$\\times$ geprüft – '
+           f'kannst du überspringen}}\\par']
     for a, nr in zip(b.glieder, nrn):
         t = a.text + (optionen_tex(a) if a.optionen else '')
-        glieder.append(f'\\pfbglied{{{marke(a, kurs)}}}{{{nummer(a, nr)}}}{{{t}}}{{{punkte_von(D, a)}}}' + fuss(a, nr))
-    for i in range(0, len(glieder), 2):
-        out.append(f'\\pfbpaar{{{glieder[i]}}}{{{glieder[i + 1] if i + 1 < len(glieder) else ""}}}')
-    out.append('\\end{pfbuendel}')
+        if a.abb:
+            t += '\\par\\smallskip\\noindent ' + a.abb + '\\par'
+        linie = '' if a.optionen else '\\par\\vspace{7mm}\\noindent{\\color{black!45}\\rule{\\linewidth}{0.4pt}}'
+        out.append(f'\\begin{{{UMG}}}{{{marke(a, kurs)}}}{{{nummer(a, nr)}}}{{{punkte_von(D, a)}}}\n{t}{linie}\n'
+                   + fuss(a, nr) + f'\n\\end{{{UMG}}}')
+    out.append('\\end{list}')
     return '\n'.join(out)
 
 
@@ -2694,6 +2990,9 @@ def setze_bloecke(D, args, teile, nr, formel_da):
                 aufg, g = inh, 'Vorstufe'
             else:
                 g, wort, aufg = inh
+                if st.merke and g != VERSTAENDNIS and not getattr(st, 'merke_da', False):
+                    out.append(st.merke)   # Merkkasten (Steckbrief) nach der Verständnis-Sprosse
+                    st.merke_da = True
                 if g == ERKENNEN and st.name == 'Was ist gesucht?':
                     # eigene kurze Stufe (N4.19): Kopf nie allein unten auf der Seite
                     out[-1] = '\\par\\Needspace*{0.55\\textheight}' + out[-1]
@@ -3100,6 +3399,8 @@ def setze_loesung(D, args, titel, eintraege, ps_loes, zweispaltig=False):
     eine Seite wegfällt (main probiert beides)."""
     out = [KOPF.replace('\\begin{document}', '').replace('\\usepackage{mathblatt}', '\\usepackage{mathblatt}\n\\usepackage{multicol}'),
            '\\begin{document}', '\\pfheftstil', f'\\pfheftkopf{{{titel} \\textperiodcentered{{}} Lösungen}}{{}}']
+    if getattr(D, 'sb', None):
+        out.append(sb_fehler_tex(D.sb))   # typische Fehler aus dem Steckbrief, über den Lösungen
     if zweispaltig:
         out.append('\\begin{multicols}{2}\\raggedcolumns')
     abi = D.pr['ordner'] == 'abitur'
@@ -3330,15 +3631,15 @@ def uebung_waehlen(D, stufen, B):
             wahl.append(a)
             break
         i += 1
-    if len(wahl) < 4:
-        D.uebung_grund = f'nur {len(wahl)} passende fremde Aufgabe(n)'
+    if not wahl:
+        D.uebung_grund = 'keine passende'   # Punkt 31: keine Untergrenze; passt keine, entfällt der Anhang
         return []
     for a in wahl:
         B.benutzt.add(a.id)
     return sorted(wahl, key=functools.cmp_to_key(vergleich))
 
 
-def heft_tex(D, args, titel, unter, rb, teile, ps, uebung=None):
+def heft_tex(D, args, titel, unter, rb, teile, ps, uebung=None, schluss=None):
     """Kopf nur der Name, die Prüfungsart klein (N3.14: „Grundwert G“ · „P10“); unten nur Seitenzahl und
     Fuß, keine laufende Titelzeile (\\pfheftstil, mathblatt 2026-10-06c)."""
     SORT.clear(); NR_VON.clear(); STECKT.clear(); RUECK.clear()
@@ -3369,6 +3670,15 @@ def heft_tex(D, args, titel, unter, rb, teile, ps, uebung=None):
             out.append(aufgabe_tex(D, a, nr, args.art, [], args.kurs))
             loes.append((f'{nr}.', a))
             SORT.append(('Mehr zum Üben', nr, 'Übung', a))
+            NR_VON[a.id] = nr
+    if schluss:
+        # N6.26 Behalten: „Zum Schluss“ zwei ältere Aufgaben (Fokus), nach Kernteil und Anhang
+        out.append('\\pfstufekopf[sschluss]{Zum Schluss}{zwei ältere Aufgaben, damit nichts verloren geht}')
+        for a in schluss:
+            nr += 1
+            out.append(aufgabe_tex(D, a, nr, args.art, [], args.kurs))
+            loes.append((f'{nr}.', a))
+            SORT.append(('Zum Schluss', nr, 'Zum Schluss', a))
             NR_VON[a.id] = nr
     ps_loes = None
     if ps:
@@ -3493,7 +3803,7 @@ def sortierung_md(titel):
                'erkennen': 'Erkennen'}.get(a.art, 'eigene')
         zl.append(f'| {stn} | {nr} | {g} | {a.zk} | {schrittzahl(a)} | {a.fz} | {min(a.hrang, 3)} | {her} | '
                   f'{klartext(a.text)[:60].replace("|", "/")} |')
-        if g in ('Vorstufe', 'Prüfung', 'Bündel', LEITER, ERKENNEN, 'Übung'):
+        if g in ('Vorstufe', 'Prüfung', 'Bündel', LEITER, ERKENNEN, 'Übung', VERSTAENDNIS, 'Zum Schluss'):
             continue   # Bündel folgt seiner ersten Aufgabe, Leiter und Erkennen haben feste Plätze (N2.8, N2.11, N4.19)
         stufen.setdefault(stn, []).append((nr, g, a))
     for stn, ls in stufen.items():
@@ -3559,24 +3869,14 @@ def register(args, name, ordner, seiten):
 
 
 def anhang(D, args, stufen, B, titel, unter, teile, arbeit):
-    """N5.22: Anhang automatisch, wenn der Kernteil (ohne Rückblick und Prüfstein) unter zwei Seiten bleibt
-    oder weniger als 8 echte Aufgaben (BB/BE ganz oder herausgelöst) hat; --uebung erzwingt, --ohne-uebung
-    schaltet ab. Serien-Portionen rufen ihn nie."""
-    D.uebung_info = 'aus'
-    if args.ohne_uebung:
-        return []
-    n_echt = sum(1 for st in stufen for _, _, gl in st.gruppen for x in gl for y in [x] + list(getattr(x, 'glieder', []))
-                 if not isinstance(y, Buendel) and bbbe(y))
-    tex, _, _ = heft_tex(D, args, titel, unter, None, teile, None)
-    s_kern = xelatex(tex, args.bb, 'kernprobe', arbeit)['seiten']
-    grund = 'Zuruf' if args.uebung else ('Kernteil ' + str(s_kern) + ' S.' if s_kern < 2 else '') or \
-        (f'{n_echt} echte' if n_echt < 8 else '')
-    if not grund:
-        D.uebung_info = f'nicht nötig (Kernteil {s_kern} S., {n_echt} echte)'
+    """Punkt 31 (Lehrer 06.10. abends, ersetzt N5.22 teilweise): Anhang „Mehr zum Üben“ nie automatisch, nur
+    auf Zuruf (--uebung); so viele passende Aufgaben, wie da sind, höchstens 8; passt keine, entfällt er.
+    Serien-Portionen rufen ihn nie. --ohne-uebung bleibt (wirkungslos, alte Aufrufe)."""
+    if not args.uebung or args.ohne_uebung:
+        D.uebung_info = 'aus (nur auf Zuruf --uebung)'
         return []
     wahl = uebung_waehlen(D, stufen, B)
-    D.uebung_info = (f'{len(wahl)} Aufgaben ({grund}; Kernteil {s_kern} S., {n_echt} echte)' if wahl else
-                     f'fällig ({grund}), aber {getattr(D, "uebung_grund", "keine fremden")}')
+    D.uebung_info = f'{len(wahl)} von höchstens 8' if wahl else 'keine passende'
     return wahl
 
 
@@ -3595,8 +3895,8 @@ def main():
     ap.add_argument('--bb', default=os.path.join(os.path.dirname(BANK), 'blattbau'))
     ap.add_argument('--datum', default=datetime.date.today().isoformat())
     ap.add_argument('--aus', help='Ausgabeordner (Vorgabe bau/pruefheft/<name>)')
-    ap.add_argument('--uebung', action='store_true', help='Anhang „Mehr zum Üben“ erzwingen (N5.22)')
-    ap.add_argument('--ohne-uebung', action='store_true', help='Anhang „Mehr zum Üben“ abschalten (N5.22)')
+    ap.add_argument('--uebung', action='store_true', help='Anhang „Mehr zum Üben“ (nur auf Zuruf, Punkt 31)')
+    ap.add_argument('--ohne-uebung', action='store_true', help='ohne Wirkung seit Punkt 31 (Anhang nie automatisch)')
     ap.add_argument('--ohne-register', action='store_true')
     ap.add_argument('--nur-register', action='store_true',
                     help='nichts setzen, nur die Registerzeile des schon gebauten Ordners schreiben (Lauf C: '
@@ -3634,7 +3934,8 @@ def main():
         titel = kopfname(stufen[0])
         rb = rueckblick(D, args, stufen, B)
         ueb = anhang(D, args, stufen, B, titel, unter, teile_aus(folge), arbeit)
-        tex, loes, ps_loes = heft_tex(D, args, titel, unter, rb, teile_aus(folge), None, ueb)
+        schl = zum_schluss(D, args, stufen, B, [z['stufe'] for z in D.zu])
+        tex, loes, ps_loes = heft_tex(D, args, titel, unter, rb, teile_aus(folge), None, ueb, schl)
     elif args.portion:
         # Serie (Beschluss 19): Portion endet nach einer abgeschlossenen Gruppe (Block); Startmaß
         # --seiten Seiten, gemessen durch Probeläufe; mindestens ein Block je Portion.
@@ -3736,8 +4037,15 @@ def main():
           f'{len(getattr(D, "fremd_ohne_bild", []))}, ruhende Bankzeilen {D.n_ruht}, „steckt auch in“ '
           f'{getattr(D, "n_steckt", 0)}, eigene ohne Sache weg {getattr(D, "n_ohne_sache_weg", 0)}, zweischrittig erkannt {getattr(D, "n_zweischritt", 0)}, unsichere gesetzt {getattr(D, "n_unsicher", 0)}, Erkennen {getattr(D, "n_erkennen", 0)}, Lösung {D.loesung_spalten}-spaltig '
           f'(einspaltig {D.loesung_seiten_einspaltig} S.)')
-    print(f'Mehr zum Üben: {getattr(D, "uebung_info", "aus (Serie)")}; Sprünge {getattr(D, "n_sprung", 0)}, '
-          f'davon ohne Füller {getattr(D, "n_sprung_offen", 0)}; eigene ohne Sprung weg {getattr(D, "n_eigen_kein_sprung", 0)}')
+    print(f'Mehr zum Üben: {getattr(D, "uebung_info", "aus (Serie)")}')
+    print(f'Sprünge {getattr(D, "n_sprung", 0)}, davon ohne Füller {getattr(D, "n_sprung_offen", 0)}; '
+          f'eigene ohne Sprung weg {getattr(D, "n_eigen_kein_sprung", 0)}')
+    if getattr(D, 'sb', None):
+        print(f'Steckbrief: {os.path.relpath(D.sb["datei"], D.mn)} – Verständnis '
+              f'{sum(len(st.verst) for st in stufen)}, Leiter {sum(len(st.sb_leiter) for st in stufen)}, '
+              f'Merkkasten {"ja" if any(st.merke for st in stufen) else "nein"}, typische Fehler in der Lösung')
+    else:
+        print('Steckbrief: keiner')
     if seiten >= 30:
         # N2.9: keine Obergrenze; ab 30 Seiten nennt der Bau den Grund
         n_st = len(stufen)

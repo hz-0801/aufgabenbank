@@ -157,6 +157,11 @@ verbessereBlaetter 06.10. vormittags.
     ohne Zahl → glatte Sätze (mal 2, 4, 5, 10) → 1 %-Weg → beliebiger
     Satz → Sachtext → Prüfungshöhe (Steckbrief Grundwert, Lehrer 06.10.).
 
+31. Anhang „Mehr zum Üben“ (Lehrer 06.10. abends, ersetzt N5.22 teilweise):
+    nie automatisch, nur auf Zuruf (`--uebung`); keine Untergrenze – so viele
+    passende Aufgaben wie da sind, höchstens 8; passt keine, entfällt er. Der Bau
+    nennt die Zahl („Mehr zum Üben: 3 von höchstens 8“ bzw. „keine passende“).
+
 ## Nicht entschieden
 
 - „ab hier“/Formel: wann und wo, verallgemeinert (Gespräch steht aus;
