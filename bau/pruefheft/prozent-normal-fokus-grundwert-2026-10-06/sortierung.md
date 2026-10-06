@@ -6,17 +6,11 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 |---|---|---|---|---|---|---|---|---|
 | Grundwert | 3 | Leiter | 0 | 1 | 1 | 1 | eigene | 7% eines Betrags sind 56€. Rechne in der Tabelle: erst 1%, d |
 | Grundwert | 4 | Leiter | 0 | 3 | 2 | 1 | eigene | 16 m sind 10%, 20% oder 25% eines Ganzen. Wie groß ist jewei |
-| Grundwert | 5 | rechnen | 0 | 2 | 1 | 1 | eigene | Ein Händler hat 24 kg Äpfel verkauft. Das sind 50% seiner Äp |
-| Grundwert | 6 | rechnen | 0 | 1 | 1 | 2 | eigene | Im Tank sind noch 12 l. Das sind 20% der Tankfüllung. Wie vi |
-| Grundwert | 7 | rechnen | 0 | 1 | 1 | 2 | eigene | 21 Kinder fahren mit dem Rad. Das sind 75% der Klasse. Wie v |
-| Grundwert | 8 | Erkennen | 0 | 1 | 1 | 2 | Erkennen | Was ist gesucht? Kreuze an. Rechne nicht. |
-| Grundwert | 9 | Sachaufgabe | 0 | 1 | 1 | 3 | 2023-OS-B1b | Mia gewinnt bei einem Wettbewerb Geld. Sie gibt 25 % des Gew |
-| Grundwert | 10 | Bündel | 0 | 1 | 1 | 3 | 2025-OS-B1a | Ein T-Shirt ist um 6 € billiger geworden. Dieser Nachlass en |
-| Grundwert | 11 | Sachaufgabe | 0 | 1 | 2 | 3 | fremd NI-RS-2026-H4c | An einer Schule kommen 40 % mit dem Fahrrad. Das sind 120 Ki |
-| Grundwert | 12 | Sachaufgabe | 1 | 1 | 1 | 3 | fremd NI-HS10G-2024-A1c | Im Mai 2022 wurden in Norwegen 8 400 Elektro-Autos verkauft. |
-| Grundwert | 13 | rechnen | 1 | 1 | 1 | 3 | fremd BW-WRS-2023-A1-6 | Am „Black Friday“ kostet ein Tablet 360,00 €. Der Preis wurd |
-| Grundwert | 14 | Sachaufgabe | 2 | 1 | 1 | 2 | herausgelöst 2019-OS-B1g-h1 | In einem Gefäß liegen 4 schwarze Kugeln. Sie sind 2/3 aller  |
-| Grundwert | 15 | Schluss | 2 | 1 | 1 | 2 | herausgelöst 2017-GYM-K4c-h1 | In einem Becher steht der Quark 8 cm hoch; das sind 93 % der |
+| Grundwert | 5 | Sachaufgabe | 0 | 1 | 1 | 3 | 2023-OS-B1b | Mia gewinnt bei einem Wettbewerb Geld. Sie gibt 25 % des Gew |
+| Grundwert | 6 | Bündel | 0 | 1 | 1 | 3 | 2025-OS-B1a | Ein T-Shirt ist um 6 € billiger geworden. Dieser Nachlass en |
+| Grundwert | 7 | rechnen | 1 | 1 | 1 | 3 | fremd BW-WRS-2023-A1-6 | Am „Black Friday“ kostet ein Tablet 360,00 €. Der Preis wurd |
+| Grundwert | 8 | Sachaufgabe | 2 | 1 | 1 | 2 | herausgelöst 2019-OS-B1g-h1 | In einem Gefäß liegen 4 schwarze Kugeln. Sie sind 2/3 aller  |
+| Grundwert | 9 | Schluss | 2 | 1 | 1 | 2 | herausgelöst 2017-GYM-K4c-h1 | In einem Becher steht der Quark 8 cm hoch; das sind 93 % der |
 
 ## Rückblick: gebraucht ab
 

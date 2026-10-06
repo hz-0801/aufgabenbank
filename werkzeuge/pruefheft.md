@@ -12,6 +12,7 @@ Nummer steht im Programm am Kommentar.
     python3 werkzeuge/pruefheft.py --kapitel prozent --art normal --portion 1
     python3 werkzeuge/pruefheft.py --kapitel prozent --art normal --fokus grundwert
     … --kurs EBR        Heft ab 2026 nach Kurs (Vorgabe FOR, Beschluss 27)
+    … --uebung / --ohne-uebung   Anhang „Mehr zum Üben“ erzwingen / abschalten (N5.22)
     python3 werkzeuge/pruefheft.py --kapitel dreiecke --art schwach   (alle zehn P10-Kapitel, Lauf C)
 
 Pfade: `--mn ../mathe-nachhilfe --bb ../blattbau` (Vorgabe: Nachbarordner).
@@ -99,6 +100,28 @@ Fuß; Aufgaben mit Tabelle oder Antwortfeld ohne Rechenlinien. Lösungsdatei ohn
 rechte Spalte ohne Wiederholung des Linken, Begründen links Urteil / rechts Kern, Bezeichnungen
 (H, T, W, N₁, Sᵧ, x₁ …), zweispaltig nur, wenn eine Seite wegfällt. Ab 30 Seiten nennt der Bau den
 Grund (Zeile „Länge …“).
+
+## Nachtrag N5 (06.10. nachmittags, beschluesse-2026-10-06b.md N5.20–23; geht vor)
+
+- N5.20 Auffüllen B: Auf dem Blatt (Heft und Fokus) alle BB/BE-Originale und alle herausgelösten der
+  P10-Originale (ohne unsichere, ohne die mit „steckt auch in“). Fremde, herausgelöste anderer Länder und
+  eigene Bankaufgaben nur in einen Sprung der Leiter: zwischen zwei aufeinanderfolgenden Aufgaben (nach
+  Vorstufe/Grundwert-Leiter, ohne sie ab Zahlklasse 0, 1 Schritt) steigt die Zahlklasse oder die
+  Schrittzahl um 2 oder mehr; je Sprung höchstens eine, die dazwischen liegt und ihn am besten teilt
+  (fremde vor herausgelösten vor eigenen), nie gleichartig, nie unsicher. Vorstufen unten wie bisher;
+  eigene in Prüfungshöhe bei fehlenden echten wie bisher. Die Zielzahl 12/6 gilt nur noch für den
+  Vorrat. Stufen ohne BB/BE-Aufgabe: Mitte wie bisher. Der Bau meldet Sprünge, Sprünge ohne Füller und
+  „eigene ohne Sprung weg“.
+- N5.21 Punkte stehen auf dem Blatt nur beim Prüfstein (rechts, Grundlinie der Teilaufgabe); in den
+  Daten bleiben sie.
+- N5.22 Anhang „Mehr zum Üben“ (Stufenkopf, zwischen Kernteil und Prüfstein): automatisch, wenn der
+  Kernteil ohne Rückblick und Prüfstein unter 2 Seiten bleibt oder weniger als 8 echte (BB/BE ganz oder
+  herausgelöst) hat; `--uebung` erzwingt, `--ohne-uebung` schaltet ab; nie in einer Serien-Portion.
+  4–8 fremde der Stufen des Blatts, reihum je Stufe, leicht → schwer, verschiedene Sachen, je Stufe nie
+  schwerer als ihre schwerste BB/BE-Aufgabe, keine unsicheren, keine gleichartigen zu Aufgaben des
+  Blatts; unter 4 passenden: kein Anhang (Zeile „Mehr zum Üben: …“ nennt den Grund).
+- N5.23 Erkennen: im Fokusblatt keine Erkennen-Aufgabe; im ganzen Heft als Stufe „Was ist gesucht?“
+  nach der letzten Geschwister-Stufe (unverändert).
 
 ## Abbildungen (werkzeuge/abbildung.py, Lauf C)
 

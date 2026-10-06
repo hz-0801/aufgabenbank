@@ -1218,7 +1218,7 @@ def merkmale(a):
 
 
 def auffuellen(D, st, echte, steckt, B):
-    """Fremde und herausgelöste Aufgaben bis zur Zielzahl der Stufe (12 Kern, 6 sonst, zusammen mit den
+    """Ersetzt durch N5.20 (blatt_kandidaten, spruenge_fuellen); nicht mehr aufgerufen. Fremde und herausgelöste Aufgaben bis zur Zielzahl der Stufe (12 Kern, 6 sonst, zusammen mit den
     echten). Heft: leichtere fremde zuerst (N1.2), dann herausgelöste; Fokus: alle herausgelösten der
     BB/BE-Originale stehen schon (platz_ids), fremde bis zur Zielzahl. Vielfalt vor Menge: zuerst je neue
     Kombination aus Darstellung und Fragerichtung bzw. neue Sache, gleichartige (N1.3) gar nicht. Zeilen mit
@@ -1267,6 +1267,76 @@ def auffuellen(D, st, echte, steckt, B):
             D.n_heraus += 1
         if a.unsicher:
             D.n_unsicher = getattr(D, 'n_unsicher', 0) + 1
+    return wahl
+
+
+def blatt_kandidaten(D, st, echte, steckt, B):
+    """N5.20 (Auffüllen B): (1) alle herausgelösten der P10-Originale der Stufe (ohne die, deren Original als
+    „steckt auch in“ steht, N2.6; ohne unsichere) – sie stehen fest auf dem Blatt; (2) der Vorrat für die
+    Sprünge: fremde und herausgelöste anderer Länder, nie schwerer als die BB/BE der Stufe, keine unsicheren
+    („unsicher“, „?“, „erschlossen“ in bemerkung). Fokus: die herausgelösten stehen schon (platz_ids)."""
+    heraus, pool = [], []
+    if not FOKUS_LAUF:
+        for r in D.heraus:
+            if r.get('id') in B.benutzt or not stufe_trifft(r.get('stufe'), st.name):
+                continue
+            if (r.get('eltern_id') or '').strip() in steckt:
+                continue
+            a = kandidat(D, r, st, 'heraus', None)
+            if a and bbbe(a) and not a.unsicher:
+                B.benutzt.add(a.id); D.n_heraus += 1
+                heraus.append(a)
+    mass = schwerste_echt(echte + heraus)
+    if not mass:
+        return heraus, []
+    for her, quelle in ((0, D.fremd), (1, D.heraus)):
+        for r in quelle:
+            if r.get('id') in B.benutzt or not stufe_trifft(r.get('stufe'), st.name):
+                continue
+            a = kandidat(D, r, st, 'fremd' if her == 0 else 'heraus', mass)
+            if a and not a.unsicher and not bbbe(a):
+                pool.append((her, a))
+    return heraus, pool
+
+
+def spruenge_fuellen(D, st, kern, basis, pool):
+    """N5.20: Leiter = Vorstufen/Grundwert-Leiter (unten, bleiben) und die Aufgaben der Stufe, geordnet. Ein
+    Sprung zwischen zwei aufeinanderfolgenden Aufgaben: Zahlklasse oder Schritte steigen um 2 oder mehr
+    (ohne Vorstufe beginnt die Leiter bei Zahlklasse 0, 1 Schritt). Je Sprung höchstens eine Aufgabe aus dem
+    Vorrat, die dazwischen liegt (beide Merkmale im Bereich, nicht gleich einem Ende) und den Sprung am
+    besten teilt; bei Gleichstand fremde vor herausgelösten anderer Länder vor eigenen, dann kürzere.
+    Gleichartige (N1.3) nie. Entscheidung: der Sprung wird zwischen den Aufgaben der Stufe gemessen,
+    der Füller nicht erneut geprüft."""
+    import functools
+    def sk(a):
+        return (a.zk, schrittzahl(a))
+    leiter = sorted(kern, key=functools.cmp_to_key(vergleich))
+    unten = sorted(basis, key=functools.cmp_to_key(vergleich))
+    punkte = [sk(unten[-1]) if unten else (0, 1)] + [sk(a) for a in leiter]
+    wahl = []
+    for (z1, s1), (z2, s2) in zip(punkte, punkte[1:]):
+        if z2 - z1 < 2 and s2 - s1 < 2:
+            continue   # nur aufwärts (Entscheidung: ein Abstieg nach der Leiter ist keine Lücke)
+        D.n_sprung = getattr(D, 'n_sprung', 0) + 1
+        zl, zh = sorted((z1, z2))
+        sl, sh = sorted((s1, s2))
+        best = None
+        for her, a in pool:
+            if any(a is w for w in wahl):
+                continue
+            z, s = sk(a)
+            if not (zl <= z <= zh and sl <= s <= sh) or (z, s) in ((z1, s1), (z2, s2)):
+                continue
+            if any(gleichartig(a, b) for b in kern + basis + wahl):
+                continue
+            g = max(max(abs(z - z1), abs(s - s1)), max(abs(z2 - z), abs(s2 - s)))
+            k = (g, her, woerter(a), a.id)
+            if best is None or k < best[0]:
+                best = (k, a)
+        if best:
+            wahl.append(best[1])
+        else:
+            D.n_sprung_offen = getattr(D, 'n_sprung_offen', 0) + 1
     return wahl
 
 
@@ -1754,9 +1824,11 @@ def baue_modell(D, args):
                              f'Fassung fehlt in herausgeloest-p10.csv – ganz gesetzt')
                     a.hrang = 3; a.stern = stern_fuer(D, i); kennzahlen(D, a)
                     echte.append(a)
-        # Auffüllen bis zur Zielzahl (Endbau-Nachbesserung 2): leichtere fremde zuerst, dann herausgelöste;
-        # Vielfalt vor Menge; unsichere Zeilen nur, wenn sonst die Zielzahl fehlt
-        echte += auffuellen(D, st, echte, steckt, B)
+        # N5.20 (Auffüllen B): alle herausgelösten der P10-Originale gehören aufs Blatt; fremde und eigene nur
+        # in Sprünge der Leiter (unten, spruenge_fuellen); die Zielzahl 12/6 gilt nicht mehr fürs Blatt
+        heraus_p10, sprung_pool = blatt_kandidaten(D, st, echte, steckt, B)
+        echte += heraus_p10
+        st.mass = schwerste_echt(echte)
         # Ketten und Einheiten der Stufe
         ketten, einheiten = [], set()
         for sp in st.sprossen:
@@ -1837,6 +1909,7 @@ def baue_modell(D, args):
                 if len(echte) < 2:
                     for r in rs[:max(1, 2 - len(echte))]:
                         a = bank_aufgabe(D, r, st.name); kennzahlen(D, a); B.benutzt.add(a.id)
+                        a.zusatz = True   # Prüfungshöhe aus der Bank: bleibt (N5.20 gilt nur für Füller)
                         mitte.append(a)
                 continue
             if sp not in B.sprossen:
@@ -1876,6 +1949,25 @@ def baue_modell(D, args):
         rest = eigene_sparsam(D, echte + st.leiter + mitte)
         mitte = [a for a in mitte if any(a is x for x in rest)]
         st.vor = eigene_sparsam(D, st.vor)
+        # N5.20: fremde und eigene nur, wo zwischen zwei aufeinanderfolgenden Aufgaben der Leiter ein Sprung
+        # ist (je Sprung höchstens eine); ohne BB/BE-Aufgabe in der Stufe bleibt die Mitte wie bisher
+        if any(bbbe(a) for a in echte):
+            fest_m = [a for a in mitte if getattr(a, 'zusatz', False)]
+            pool = sprung_pool + [(2, a) for a in mitte if not getattr(a, 'zusatz', False)]
+            wahl = spruenge_fuellen(D, st, echte + fest_m, st.vor + st.leiter, pool)
+            for a in mitte:
+                if not any(a is w for w in wahl) and not getattr(a, 'zusatz', False):
+                    B.benutzt.discard(a.id)
+                    D.n_eigen_kein_sprung = getattr(D, 'n_eigen_kein_sprung', 0) + 1
+            mitte = fest_m + [a for a in wahl if a.art == 'bank']
+            for a in wahl:
+                if a.art != 'bank':
+                    B.benutzt.add(a.id)
+                    if a.art == 'fremd':
+                        D.n_fremd += 1
+                    else:
+                        D.n_heraus += 1
+                    echte.append(a)
         # Gruppen (Beschluss 8): je Gruppe leicht -> schwer; Aufgabenbild-Wort aus Feld bild
         alle = mitte + echte
         # Oben steht die schwerste BB/BE-Aufgabe, ganz oder herausgelöst (Sichtprüfung Fokus 06.10.: sonst steht
@@ -1883,13 +1975,8 @@ def baue_modell(D, args):
         st.gruppen = buendeln(D, ordne_stufe(alle, [a for a in echte if bbbe(a)] or echte))
         if st.leiter:
             st.gruppen.insert(0, (LEITER, '', st.leiter))
-        # Erkennen (N4.19): Fokus mitten in der Leiter, vor der ersten Gruppe mit echter Aufgabe
-        if args.fokus:
-            st.erkennen = erkennen_aufgabe(D, [st.name] + st.verwechselbar, st.name)
-            if st.erkennen:
-                i = next((k for k, g in enumerate(st.gruppen)
-                          if any(x.art in ('echt', 'fremd', 'heraus') for x in g[2])), len(st.gruppen))
-                st.gruppen.insert(i, (ERKENNEN, '', [st.erkennen]))
+        # Erkennen (N5.23, ändert N4.19): im Fokusblatt keine Erkennen-Aufgabe; im ganzen Heft eine kurze
+        # Stufe nach allen Geschwistern (erkennen_stufen)
         if not echte:
             D.befund(f'{st.name}: keine echte Aufgabe – Prüfungshöhe nur aus der Bank')
         st.reserve = []
@@ -2340,6 +2427,8 @@ def nummer(a, nr):
 
 
 def punkte_von(D, a):
+    """N5.21: auf dem Blatt Punkte nur beim Prüfstein (setze_pruefstein); in den Daten bleiben sie."""
+    return ''
     if a.art == 'echt':
         return f'{a.punkte} BE' if a.punkte else ''
     p = D.punkte.get(a.id)
@@ -3209,7 +3298,47 @@ def rueckblick_vorige(D, args, vorige_stufen, B):
 # ---------------------------------------------------------------------------
 # Heft zusammensetzen
 # ---------------------------------------------------------------------------
-def heft_tex(D, args, titel, unter, rb, teile, ps):
+def uebung_waehlen(D, stufen, B):
+    """N5.22: 4–8 fremde Aufgaben der Stufe(n) des Blatts, leicht -> schwer, verschiedene Sachen, je Stufe nie
+    schwerer als deren schwerste BB/BE-Aufgabe (Stufen ohne BB/BE: keine), keine unsicheren, keine Kopien
+    (gleichartig zu einer Aufgabe des Blatts oder einer schon gewählten). Weniger als 4: kein Anhang.
+    Entscheidung: Verteilung reihum über die Stufen, damit nicht eine Stufe den Anhang füllt."""
+    import functools
+    auf_blatt = [x for st in stufen for _, _, gl in st.gruppen for x in gl] + [x for st in stufen for x in st.vor]
+    auf_blatt = auf_blatt + [g for x in auf_blatt for g in getattr(x, 'glieder', [])]
+    je = []
+    for st in stufen:
+        mass = getattr(st, 'mass', None)
+        if not mass:
+            continue
+        ks = []
+        for r in D.fremd:
+            if r.get('id') in B.benutzt or not stufe_trifft(r.get('stufe'), st.name):
+                continue
+            a = kandidat(D, r, st, 'fremd', mass)
+            if a and not a.unsicher and not any(gleichartig(a, b) for b in auf_blatt if not isinstance(b, Buendel)):
+                ks.append(a)
+        ks.sort(key=functools.cmp_to_key(vergleich))
+        je.append(ks)
+    wahl, i = [], 0
+    while len(wahl) < 8 and any(je):
+        ks = je[i % len(je)]
+        while ks:
+            a = ks.pop(0)
+            if any(a.id == w.id or gleichartig(a, w) or (sache(a) & sache(w)) for w in wahl):
+                continue
+            wahl.append(a)
+            break
+        i += 1
+    if len(wahl) < 4:
+        D.uebung_grund = f'nur {len(wahl)} passende fremde Aufgabe(n)'
+        return []
+    for a in wahl:
+        B.benutzt.add(a.id)
+    return sorted(wahl, key=functools.cmp_to_key(vergleich))
+
+
+def heft_tex(D, args, titel, unter, rb, teile, ps, uebung=None):
     """Kopf nur der Name, die Prüfungsart klein (N3.14: „Grundwert G“ · „P10“); unten nur Seitenzahl und
     Fuß, keine laufende Titelzeile (\\pfheftstil, mathblatt 2026-10-06c)."""
     SORT.clear(); NR_VON.clear(); STECKT.clear(); RUECK.clear()
@@ -3232,6 +3361,15 @@ def heft_tex(D, args, titel, unter, rb, teile, ps):
         out.append(t); loes += l
     t, nr, l = setze_bloecke(D, args, teile, nr, set())
     out.append(t); loes += l
+    if uebung:
+        # N5.22: Anhang „Mehr zum Üben“ zwischen Kernteil und Prüfstein
+        out.append('\\pfstufekopf[suebung]{Mehr zum Üben}{aus anderen Ländern, leicht $\\to$ schwer}')
+        for a in uebung:
+            nr += 1
+            out.append(aufgabe_tex(D, a, nr, args.art, [], args.kurs))
+            loes.append((f'{nr}.', a))
+            SORT.append(('Mehr zum Üben', nr, 'Übung', a))
+            NR_VON[a.id] = nr
     ps_loes = None
     if ps:
         t, ps_loes = setze_pruefstein(D, args, ps)
@@ -3355,7 +3493,7 @@ def sortierung_md(titel):
                'erkennen': 'Erkennen'}.get(a.art, 'eigene')
         zl.append(f'| {stn} | {nr} | {g} | {a.zk} | {schrittzahl(a)} | {a.fz} | {min(a.hrang, 3)} | {her} | '
                   f'{klartext(a.text)[:60].replace("|", "/")} |')
-        if g in ('Vorstufe', 'Prüfung', 'Bündel', LEITER, ERKENNEN):
+        if g in ('Vorstufe', 'Prüfung', 'Bündel', LEITER, ERKENNEN, 'Übung'):
             continue   # Bündel folgt seiner ersten Aufgabe, Leiter und Erkennen haben feste Plätze (N2.8, N2.11, N4.19)
         stufen.setdefault(stn, []).append((nr, g, a))
     for stn, ls in stufen.items():
@@ -3420,6 +3558,28 @@ def register(args, name, ordner, seiten):
     open(p, 'w', encoding='utf-8').write('\n'.join(zeilen) + '\n')
 
 
+def anhang(D, args, stufen, B, titel, unter, teile, arbeit):
+    """N5.22: Anhang automatisch, wenn der Kernteil (ohne Rückblick und Prüfstein) unter zwei Seiten bleibt
+    oder weniger als 8 echte Aufgaben (BB/BE ganz oder herausgelöst) hat; --uebung erzwingt, --ohne-uebung
+    schaltet ab. Serien-Portionen rufen ihn nie."""
+    D.uebung_info = 'aus'
+    if args.ohne_uebung:
+        return []
+    n_echt = sum(1 for st in stufen for _, _, gl in st.gruppen for x in gl for y in [x] + list(getattr(x, 'glieder', []))
+                 if not isinstance(y, Buendel) and bbbe(y))
+    tex, _, _ = heft_tex(D, args, titel, unter, None, teile, None)
+    s_kern = xelatex(tex, args.bb, 'kernprobe', arbeit)['seiten']
+    grund = 'Zuruf' if args.uebung else ('Kernteil ' + str(s_kern) + ' S.' if s_kern < 2 else '') or \
+        (f'{n_echt} echte' if n_echt < 8 else '')
+    if not grund:
+        D.uebung_info = f'nicht nötig (Kernteil {s_kern} S., {n_echt} echte)'
+        return []
+    wahl = uebung_waehlen(D, stufen, B)
+    D.uebung_info = (f'{len(wahl)} Aufgaben ({grund}; Kernteil {s_kern} S., {n_echt} echte)' if wahl else
+                     f'fällig ({grund}), aber {getattr(D, "uebung_grund", "keine fremden")}')
+    return wahl
+
+
 def main():
     ap = argparse.ArgumentParser(description='Prüfungsheft aus Daten setzen')
     ap.add_argument('--kapitel', required=True)
@@ -3435,6 +3595,8 @@ def main():
     ap.add_argument('--bb', default=os.path.join(os.path.dirname(BANK), 'blattbau'))
     ap.add_argument('--datum', default=datetime.date.today().isoformat())
     ap.add_argument('--aus', help='Ausgabeordner (Vorgabe bau/pruefheft/<name>)')
+    ap.add_argument('--uebung', action='store_true', help='Anhang „Mehr zum Üben“ erzwingen (N5.22)')
+    ap.add_argument('--ohne-uebung', action='store_true', help='Anhang „Mehr zum Üben“ abschalten (N5.22)')
     ap.add_argument('--ohne-register', action='store_true')
     ap.add_argument('--nur-register', action='store_true',
                     help='nichts setzen, nur die Registerzeile des schon gebauten Ordners schreiben (Lauf C: '
@@ -3471,7 +3633,8 @@ def main():
         name += f'-fokus-{args.fokus.lower()}'
         titel = kopfname(stufen[0])
         rb = rueckblick(D, args, stufen, B)
-        tex, loes, ps_loes = heft_tex(D, args, titel, unter, rb, teile_aus(folge), None)
+        ueb = anhang(D, args, stufen, B, titel, unter, teile_aus(folge), arbeit)
+        tex, loes, ps_loes = heft_tex(D, args, titel, unter, rb, teile_aus(folge), None, ueb)
     elif args.portion:
         # Serie (Beschluss 19): Portion endet nach einer abgeschlossenen Gruppe (Block); Startmaß
         # --seiten Seiten, gemessen durch Probeläufe; mindestens ein Block je Portion.
@@ -3514,7 +3677,8 @@ def main():
         name += f'-p{args.portion}'
     else:
         rb = rueckblick(D, args, stufen, B)
-        tex, loes, ps_loes = heft_tex(D, args, titel, unter, rb, teile_aus(folge), ps)
+        ueb = anhang(D, args, stufen, B, titel, unter, teile_aus(folge), arbeit)
+        tex, loes, ps_loes = heft_tex(D, args, titel, unter, rb, teile_aus(folge), ps, ueb)
     if args.kurs == 'EBR':
         name += '-ebr'
     ordner = args.aus or os.path.join(BANK, 'bau', 'pruefheft', f'{name}-{args.datum}')
@@ -3572,6 +3736,8 @@ def main():
           f'{len(getattr(D, "fremd_ohne_bild", []))}, ruhende Bankzeilen {D.n_ruht}, „steckt auch in“ '
           f'{getattr(D, "n_steckt", 0)}, eigene ohne Sache weg {getattr(D, "n_ohne_sache_weg", 0)}, zweischrittig erkannt {getattr(D, "n_zweischritt", 0)}, unsichere gesetzt {getattr(D, "n_unsicher", 0)}, Erkennen {getattr(D, "n_erkennen", 0)}, Lösung {D.loesung_spalten}-spaltig '
           f'(einspaltig {D.loesung_seiten_einspaltig} S.)')
+    print(f'Mehr zum Üben: {getattr(D, "uebung_info", "aus (Serie)")}; Sprünge {getattr(D, "n_sprung", 0)}, '
+          f'davon ohne Füller {getattr(D, "n_sprung_offen", 0)}; eigene ohne Sprung weg {getattr(D, "n_eigen_kein_sprung", 0)}')
     if seiten >= 30:
         # N2.9: keine Obergrenze; ab 30 Seiten nennt der Bau den Grund
         n_st = len(stufen)
