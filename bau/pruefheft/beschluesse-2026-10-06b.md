@@ -129,6 +129,19 @@ verbessereBlaetter 06.10. vormittags.
     anderer Art, zeigt höchstens vier (jüngste zuerst), Kopf mit voller
     Zahl („8× geprüft, 4 davon hier“).
 
+## N6 Rückblick vereinheitlicht (06.10. nachmittags)
+
+25. Ein Name für alles vorn: „Rückblick“ (ersetzt „Blatt 0“, Zone „kennst
+    du schon“, Heftsorte „Vorbereitung“). Eine Regel: holt nur, was die
+    Leiter gleich braucht, aus allem, was davor liegt (Voraussetzung aus
+    dem Katalog oder Stoff der vorigen Portion).
+26. Behalten (Wiederholung gegen Vergessen) steht hinten in „Zum Schluss“
+    (zwei ältere Aufgaben eingemischt), nicht im Rückblick.
+27. Verständnisfragen („Was ist hier das Ganze?“) sind die erste Sprosse
+    der Leiter und kommen aus dem Steckbrief, nicht aus dem Rückblick.
+28. Alte Bestellwörter („ohne blatt 0“, „Blatt 0 dicht“) gelten als
+    Zuruf weiter; Dateinamen (zone.jsonl) bleiben.
+
 ## Nicht entschieden
 
 - „ab hier“/Formel: wann und wo, verallgemeinert (Gespräch steht aus;
