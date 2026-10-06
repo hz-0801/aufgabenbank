@@ -958,7 +958,7 @@ def baue_modell(D, args):
                     mitte += B.nimm(sp, 1, st.name)   # Fokus: ganze Kette von unten (Beschluss 7)
         if args.fokus:
             for sp in FOKUS_DAZU.get(st.name, []):
-                for a in B.nimm(sp, 1, st.name):
+                for a in B.nimm(sp, 1, st.name, kopf_zuerst=False):   # v1: „nach Rabatt (80 %)“
                     a.dazu = True   # steht nach der echten Rabatt-Aufgabe (Muster 6)
                     a.gruppe = 'Sachaufgabe'
                     mitte.append(a)
