@@ -4,25 +4,27 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 
 | Stufe | Nr. | Gruppe | Zahlkl. | Schritte | Fragen | Höhe | Herkunft | Aufgabe |
 |---|---|---|---|---|---|---|---|---|
-| Grundwert | 4 | Vorstufe | 0 | 1 | 2 | 0 | eigene Aufgabe | Der graue Abschnitt ist 10% des Ganzen. Trage den Abschnitt  |
-| Grundwert | 5 | Vorstufe | 0 | 1 | 2 | 0 | eigene Aufgabe | Der graue Abschnitt ist 50% des Ganzen. Trage den Abschnitt  |
-| Grundwert | 6 | rechnen | 0 | 2 | 1 | 1 | eigene Aufgabe | Ein Händler hat 24 kg Äpfel verkauft. Das sind 10% seiner Äp |
-| Grundwert | 7 | rechnen | 0 | 2 | 1 | 1 | eigene Aufgabe | Ein Händler hat 24 kg Äpfel verkauft. Das sind 50% seiner Äp |
-| Grundwert | 8 | rechnen | 0 | 2 | 1 | 1 | eigene Aufgabe | Ein Händler hat 24 kg Äpfel verkauft. Das sind 25% seiner Äp |
-| Grundwert | 9 | rechnen | 0 | 2 | 1 | 1 | eigene Aufgabe | Ein Händler hat 24 kg Äpfel verkauft. Das sind 20% seiner Äp |
-| Grundwert | 10 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Im Tank sind noch 12 l. Das sind 20% der Tankfüllung. Wie vi |
-| Grundwert | 11 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Nach 20% Rabatt kostet ein Rad 360€. Wie hoch war der alte P |
-| Grundwert | 12 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | 21 Kinder fahren mit dem Rad. Das sind 75% der Klasse. Wie v |
-| Grundwert | 13 | Sachaufgabe | 0 | 1 | 1 | 3 | 2023-OS-B1b | Mia gewinnt bei einem Wettbewerb Geld. Sie gibt 25 % des Gew |
-| Grundwert | 14 | Sachaufgabe | 0 | 1 | 1 | 3 | 2025-OS-B1a | Ein T-Shirt ist um 6 € billiger geworden. Dieser Nachlass en |
-| Grundwert | 15 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | 9% einer Menge sind 63 kg. Wie viel ist 1% der Menge? Rechne |
-| Grundwert | 16 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | 3% einer Menge sind 12 kg. Wie viel kg ist die ganze Menge? |
-| Grundwert | 17 | Sachaufgabe | 0 | 3 | 2 | 2 | eigene Aufgabe | 90€ sind 10%, 20% oder 50% eines Ganzen. Wie groß ist jeweil |
-| Grundwert | 18 | Sachaufgabe | 0 | 2 | 2 | 2 | eigene Aufgabe | Die Klassenfahrt ist zu 70% bezahlt. Das sind 4200€. Wie teu |
-| Grundwert | 19 | Schluss | 1 | 2 | 1 | 2 | eigene Aufgabe | 36% einer Menge sind 81 kg. Wie viel kg ist die ganze Menge? |
-| Grundwert | 20 | Schluss | 1 | 2 | 1 | 2 | eigene Aufgabe | 64% einer Strecke sind 52 m. Wie lang ist die ganze Strecke? |
-| Grundwert | 21 | Schluss | 1 | 3 | 2 | 2 | eigene Aufgabe | Tims Kopfhörer zeigen 28% Akku. Laut Anzeige reicht das noch |
-| Grundwert | 22 | Schluss | 1 | 2 | 1 | 3 | 2015-OS-K2b | Für den Berliner Fernsehturm gelten diese Eintrittspreise: E |
+| Grundwert | 3 | Leiter | 0 | 1 | 1 | 1 | eigene | 7% eines Betrags sind 56€. Rechne in der Tabelle: erst 1%, d |
+| Grundwert | 4 | Leiter | 0 | 3 | 2 | 1 | eigene | 16 m sind 10%, 20% oder 25% eines Ganzen. Wie groß ist jewei |
+| Grundwert | 5 | rechnen | 0 | 2 | 1 | 1 | eigene | Ein Händler hat 24 kg Äpfel verkauft. Das sind 10% seiner Äp |
+| Grundwert | 6 | Erkennen | 0 | 1 | 1 | 2 | Erkennen | Was ist gesucht? Kreuze an. Rechne nicht. |
+| Grundwert | 7 | Sachaufgabe | 0 | 1 | 1 | 3 | fremd BY-JST8-2025-19 | Carinas Klassenfahrt ins Skilager kostet 440 €. Das sind 10  |
+| Grundwert | 8 | rechnen | 0 | 1 | 1 | 3 | fremd BY-JST8-2023-16 | Der Preis eines E-Bikes wurde um 20 % erhöht. Jetzt kostet e |
+| Grundwert | 9 | rechnen | 0 | 1 | 1 | 2 | eigene | Im Tank sind noch 12 l. Das sind 20% der Tankfüllung. Wie vi |
+| Grundwert | 10 | rechnen | 0 | 1 | 1 | 2 | eigene | 21 Kinder fahren mit dem Rad. Das sind 75% der Klasse. Wie v |
+| Grundwert | 11 | Sachaufgabe | 0 | 1 | 1 | 3 | 2023-OS-B1b | Mia gewinnt bei einem Wettbewerb Geld. Sie gibt 25 % des Gew |
+| Grundwert | 12 | Sachaufgabe | 0 | 1 | 1 | 3 | fremd BY-JST8-2021-7 | Ein Laden gibt 20 % Rabatt auf alles. Eine Jeans kostet nach |
+| Grundwert | 13 | Schluss | 0 | 1 | 2 | 3 | fremd NI-RS-2026-H4c | An einer Schule kommen 40 % mit dem Fahrrad. Das sind 120 Ki |
+| Grundwert | 14 | Schluss | 2 | 2 | 1 | 2 | herausgelöst 2019-OS-B1g-h1 | In einem Gefäß liegen 4 schwarze Kugeln. Sie sind 2/3 aller  |
+| Grundwert | 15 | Schluss | 2 | 1 | 1 | 2 | herausgelöst 2017-GYM-K4c-h1 | In einem Becher steht der Quark 8 cm hoch; das sind 93 % der |
+| Grundwert | 16 | Schluss | 0 | 1 | 1 | 3 | 2025-OS-B1a | Ein T-Shirt ist um 6 € billiger geworden. Dieser Nachlass en |
+
+## Rückblick: gebraucht ab
+
+| Nr. | Aufgabe | gebraucht ab Nr. |
+|---|---|---|
+| 1 | Ergänze die Tabelle Prozent / Bruch / Dezimalzahl. | 4 |
+| 2 | Berechne 10 % von 70 €. | 3 |
 
 ## Prüfung
 

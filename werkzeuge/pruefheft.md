@@ -1,4 +1,4 @@
-# pruefheft.py – Prüfungsheft aus Daten (v0.2, 06.10.2026)
+# pruefheft.py – Prüfungsheft aus Daten (v0.3, 06.10.2026)
 
 Setzt ein Prüfungsheft (Skript) ohne Modell: Bestellung rein, .tex und PDF
 (Heft + eigene Lösungsdatei) raus. Probelauf am P10-Kapitel Prozent. Regeln:
@@ -64,6 +64,41 @@ Braucht xelatex, pdfinfo, sympy und mathblatt.sty ab 2026-10-06. Ausgabe:
 - Lösungsdatei (24, 25): keine Punkte; grau über der Zeile die Fundstelle
   (Heft · Aufgabe, nur echte); Bank-Ergebnisse mit ≈ bekommen den exakten
   Wert aus `pruef` davor (Bruch, Nenner ≤ 1000).
+
+## Nachtrag 06.10. (v0.3, bau/pruefheft/beschluesse-2026-10-06b.md N1–N4; geht vor)
+
+Neue Daten aus mathe-nachhilfe, alle optional (fehlt eine, baut das Programm wie bisher; der Bau
+meldet „Neue Daten: … ja/fehlt“ und eine Zeile „Herkunft: …“ mit den Zählungen):
+- `msa/handgriffe-p10.csv` (id;hauptplatz;ganz_auch;zwischenschritt;begruendung, Stufen als
+  „kapitel:Stufe“, mehrere mit „|“): echte Aufgaben am Hauptplatz ganz; liegt der Hauptplatz in einer
+  anderen Stufe des Hefts, steht in der Stufe grau „steckt auch in Nr. n (P10 ’jj)“ (`\pfsteckt`);
+  ganz_auch-Aufgaben ganz in der Stufe, wenn ihr Hauptplatz nicht im Heft liegt (sonst „steckt auch
+  in“ – jede Aufgabe einmal; Entscheidung). Fokus: alle Aufgaben des Handgriffs, Zwischenschritte
+  herausgelöst (Befund, wenn die herausgelöste Fassung fehlt; dann ganz).
+- `msa/herausgeloest-p10.csv` und `msa/fremd/*.csv` (Schema id;marke;quelle;kapitel;stufe;handgriffe;
+  art;eltern_id;wortlaut;abbildung;loesung;schritte;zahlart;fragerichtung;darstellung;woerter;bemerkung):
+  fremde nur bei weniger als 12 (Kern) bzw. 6 echten, nie schwerer als die BB/BE-Aufgaben der Stufe
+  (je Merkmal Maximum: Schritte, Zahlart, Wörter); fremde mit nicht zeichenbarer Abbildung nicht.
+  Herausgelöste im Heft nur bei Mangel. Marken nur Jahr („BY ’23“, „nach P10 ’15“), eigene ohne Marke.
+- `msa/rueckblick-p10.csv` (kapitel;stufe;voraussetzung;aufgabe;form;loesung;gebraucht_ab): Rückblick nur
+  mit Aufgaben, deren gebraucht_ab (Katalog-id, Bank-Sprosse, „Leiter …“) im Blatt bzw. in der Portion
+  vorkommt; Tabelle mit Linien; sortierung.md listet „gebraucht ab Nr.“ (Prüfstein N2.10). Ohne Datei:
+  höchstens zwei Aufgaben aus Grundfall-Sprossen der Leiter.
+- `msa/erkennen-p10.csv` und `msa/fremd/*-erkennen.csv` (kapitel;stufe;satz;gesucht;quelle) mit Spalte
+  verwechselbar der Zuordnung: Erkennen-Aufgabe (4–6 Sätze, ankreuzen, Spalten = gesuchte Größen) –
+  Fokus vor der ersten echten Aufgabe, ganzes Heft als Stufe „Was ist gesucht?“ nach den Geschwistern.
+- Zuordnung `jahre_letzte5` (Zählung B im Stufenkopf), `nebenplaetze` (wie ganz_auch).
+
+Weiter: eigene Bankaufgaben, die einer echten/fremden/herausgelösten oder einer früheren eigenen in
+Sache, Darstellung und Fragerichtung gleichen, fallen weg; eigene über der schwersten echten fallen
+weg, wenn neue Daten da sind; Bankzeilen mit `ruht` nie. Bündel (`pfbuendel`): gleichartige
+BB/BE-Originale ohne Abbildung (gleiche Schritte, Zahlart, Richtung, Darstellung, Katalogtyp).
+Grundwert-Leiter (Prozent): 1 %-Schritt als Prozent-Tabelle mit Streifen, dann 10/20/50 % als
+Abkürzung, dann Formel. Kopf nur Name und „P10“ klein, unten nur Seitenzahl und Fuß; Prüfstein mit
+Fuß; Aufgaben mit Tabelle oder Antwortfeld ohne Rechenlinien. Lösungsdatei ohne Fundstellenzeile,
+rechte Spalte ohne Wiederholung des Linken, Begründen links Urteil / rechts Kern, Bezeichnungen
+(H, T, W, N₁, Sᵧ, x₁ …), zweispaltig nur, wenn eine Seite wegfällt. Ab 30 Seiten nennt der Bau den
+Grund (Zeile „Länge …“).
 
 ## Abbildungen (werkzeuge/abbildung.py, Lauf C)
 
