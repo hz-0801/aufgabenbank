@@ -1054,6 +1054,16 @@ class Skizze:
                 dx, dy = x - cx, y - cy
                 ln = math.hypot(dx, dy) or 1
                 dx, dy = dx / ln, dy / ln
+                if p in self.auf and len(p) > 1:   # Punkt auf einer Seite mit Namen: nach innen, Maß außen
+                    a_, b_ = self.auf[p]
+                    ux, uy = self.P[b_][0] - self.P[a_][0], self.P[b_][1] - self.P[a_][1]
+                    ln = math.hypot(ux, uy) or 1
+                    nx_, ny_ = -uy / ln, ux / ln
+                    if nx_ * (cx - x) + ny_ * (cy - y) < 0:
+                        nx_, ny_ = -nx_, -ny_
+                    out.append(r'\node[font=\scriptsize,inner sep=1pt] at (%.3f,%.3f) {%s};'
+                               % (x + 0.32 / s * nx_, y + 0.32 / s * ny_, tx(p)))
+                    continue
                 out.append(r'\node[font=\small,inner sep=1pt] at (%.3f,%.3f) {%s};'
                            % (x + 0.3 / s * dx, y + 0.3 / s * dy, tx(p) if len(p) > 1 else '$' + p + '$'))
         for p in self.punkte:

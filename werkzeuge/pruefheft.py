@@ -495,7 +495,10 @@ def ankreuz_tabelle(bild, text, kr, a):
             if not z:
                 return bild, text
             vor, opts, nach = z
-        text = vor + (' ' + nach if nach else '')
+        if nach:
+            # Auftrag nach den Aussagen („Gib eine Gleichung von f an.“) steht unter der Tabelle (Lauf C)
+            a.nach_tabelle = tx(nach)
+        text = vor
         reihen = opts
     else:
         reihen = [r for r in zeilen.split('|') if r]
@@ -519,6 +522,8 @@ def ankreuz_tabelle(bild, text, kr, a):
             z_tex.append(r'\multicolumn{%d}{|l|}{\rule{0pt}{3.2ex}\footnotesize\color{mbgrau}Begründung:} \\ \hline' % len(sp))
     tab = (r'\begingroup\renewcommand{\arraystretch}{1.5}\begin{tabular}{%s}\hline %s \\ \hline %s\end{tabular}\endgroup'
            % (form, ' & '.join(tx(k) for k in sp), ' '.join(z_tex)))
+    if getattr(a, 'nach_tabelle', ''):
+        tab += '\n\\par\\smallskip\\noindent ' + a.nach_tabelle
     return (bild + '\n\\par\\smallskip\\noindent ' + tab) if bild else tab, text
 
 
@@ -1021,7 +1026,8 @@ class Stufe:
         self.name = z['stufe']
         self.kern = z['kern'] == 'ja'
         self.ids = z['katalog_ids'].split()
-        self.sprossen = [re.sub(r'\[.*\]', '', s) for s in z['bank_sprossen'].split()]
+        # „(i)“ = innermathematisch markiert (zuordnung-stand.md); „[…]“ = Prüfungs-ids der Sprosse
+        self.sprossen = [re.sub(r'\[.*\]|\(i\)$', '', s) for s in z['bank_sprossen'].split()]
         self.ziel = 's' + re.sub(r'[^a-z]', '', self.name.lower())[:20]
         self.vor = []          # Vorstufen (Aufgabe)
         self.gruppen = []      # [(name, wort, [Aufgabe])]
@@ -1652,7 +1658,15 @@ def _mathe_stuecke(t):
             cur.append(x + ' ')
     if ''.join(cur).strip():
         out.append('$' + ''.join(cur).strip() + '$')
-    return ''.join(out).strip().replace('$:', ':$').replace('$$', '')
+    r = ''.join(out).strip().replace('$:', ':$').replace('$$', '')
+    teile = re.split(r'((?<!\\)\$[^$]*(?<!\\)\$)', r)
+    for i, x in enumerate(teile):
+        if x.startswith('$'):
+            for k, v in UNI_MATH.items():
+                if k in x and k not in '·°':
+                    x = x.replace(k, ' ' + v + ' ')
+            teile[i] = x
+    return ''.join(teile)
 
 
 OP = re.compile(r'\s(:|·|-|−|\+)\s|\\cdot|\\t?frac|\^|/|\bvon\b')
@@ -2089,6 +2103,15 @@ def register(args, name, ordner, seiten):
     alt = [z.split(';')[0] for z in zeilen if z.endswith(';' + pfad)]
     zeilen = [z for z in zeilen if not z.endswith(';' + pfad)]
     kp = D_AKT.pr['kennung']
+    if D_AKT.pr['ordner'] == 'msa':
+        # Kennung je Kapitel (Lauf C): Kürzel des ersten Bankeintrags (katalog/_kuerzel.csv) + PH
+        kz = os.path.join(D_AKT.mn, 'katalog', '_kuerzel.csv')
+        if os.path.exists(kz):
+            for z in open(kz, encoding='utf-8'):
+                f = z.strip().split(';')
+                if len(f) >= 2 and f[1] == D_AKT.eintraege[0]:
+                    kp = f[0] + '-PH'
+                    break
     nrn = [int(z.split(';')[0][len(kp):]) for z in zeilen if re.match(kp + r'\d+;', z)]
     kenn = alt[0] if alt else f'{kp}{max(nrn + [0]) + 1}'   # Neubau behält seine Kennung
     best = (f'kapitel={args.kapitel}, art={args.art}, portion={args.portion or "–"}, '
@@ -2119,6 +2142,9 @@ def main():
     ap.add_argument('--datum', default=datetime.date.today().isoformat())
     ap.add_argument('--aus', help='Ausgabeordner (Vorgabe bau/pruefheft/<name>)')
     ap.add_argument('--ohne-register', action='store_true')
+    ap.add_argument('--nur-register', action='store_true',
+                    help='nichts setzen, nur die Registerzeile des schon gebauten Ordners schreiben (Lauf C: '
+                         'parallele Bauten mit --ohne-register, danach je Bau einmal --nur-register)')
     args = ap.parse_args()
 
     global D_AKT
@@ -2187,9 +2213,15 @@ def main():
         tex, loes, ps_loes = heft_tex(D, args, titel, unter, rb, teile_aus(folge), ps)
     if args.kurs == 'EBR':
         name += '-ebr'
+    ordner = args.aus or os.path.join(BANK, 'bau', 'pruefheft', f'{name}-{args.datum}')
+    if args.nur_register:
+        info = subprocess.run(['pdfinfo', os.path.join(ordner, 'pdf', name + '.pdf')], capture_output=True,
+                              text=True).stdout
+        register(args, name, ordner, int(re.search(r'Pages:\s+(\d+)', info).group(1)))
+        print('Register:', name)
+        return
     ltitel = titel
     ltex = setze_loesung(D, args, ltitel, loes, ps_loes)
-    ordner = args.aus or os.path.join(BANK, 'bau', 'pruefheft', f'{name}-{args.datum}')
     os.makedirs(os.path.join(ordner, 'src'), exist_ok=True)
     os.makedirs(os.path.join(ordner, 'pdf'), exist_ok=True)
     bericht, seiten = [], 0

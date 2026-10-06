@@ -12,10 +12,13 @@ Nummer steht im Programm am Kommentar.
     python3 werkzeuge/pruefheft.py --kapitel prozent --art normal --portion 1
     python3 werkzeuge/pruefheft.py --kapitel prozent --art normal --fokus grundwert
     … --kurs EBR        Heft ab 2026 nach Kurs (Vorgabe FOR, Beschluss 27)
+    python3 werkzeuge/pruefheft.py --kapitel dreiecke --art schwach   (alle zehn P10-Kapitel, Lauf C)
 
 Pfade: `--mn ../mathe-nachhilfe --bb ../blattbau` (Vorgabe: Nachbarordner).
 `--seiten n` Startmaß einer Portion (Vorgabe 2). `--ohne-register` schreibt
-keine Zeile in `bau/register.csv` (sonst eine Zeile je Bau, Kennung PRZ-PH<n>).
+keine Zeile in `bau/register.csv` (sonst eine Zeile je Bau, Kennung <Kürzel>-PH<n>, Kürzel des
+ersten Bankeintrags aus `katalog/_kuerzel.csv`). Parallele Bauten mit `--ohne-register`, danach je
+Bau einmal `--nur-register` (schreibt nur die Registerzeile des fertigen Ordners).
 Braucht xelatex, pdfinfo, sympy und mathblatt.sty ab 2026-10-06. Ausgabe:
 `bau/pruefheft/<kapitel>-<art>[-p<n>|-fokus-<wort>][-ebr]-<datum>/src|pdf/`.
 
