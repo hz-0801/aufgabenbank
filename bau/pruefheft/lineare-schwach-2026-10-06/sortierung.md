@@ -24,61 +24,60 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | aus Gleichung zeichnen | 32 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Zeichne die Gerade zu f(x) = 2x - 4 in das Koordinatensystem |
 | aus Gleichung zeichnen | 33 | rechnen | 0 | 1 | 1 | 3 | 2021-OS-K2a | Die lineare Funktion f hat die Gleichung y = 3x + 1. Zeichne |
 | aus Gleichung zeichnen | 34 | rechnen | 0 | 1 | 1 | 3 | 2024-OS-K3a | Die lineare Funktion f hat die Gleichung f(x) = 4x + 1. Zeic |
-| aus Gleichung zeichnen | 35 | rechnen | 0 | 1 | 1 | 3 | 2026-FOR-K5a | Die lineare Funktion f hat die Gleichung f(x) = -2x + 2. Zei |
-| aus Gleichung zeichnen | 36 | Sachaufgabe | 0 | 2 | 2 | 3 | 2022-OS-K3a | Gegeben ist die lineare Funktion f(x) = -2x + 3. Zeichne den |
-| durch zwei Punkte, Gleichung ablesen | 37 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Eine Gerade geht durch die Punkte A(0/4) und B(2/10). Bestim |
-| durch zwei Punkte, Gleichung ablesen | 38 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Eine Gerade geht durch die Punkte A(2/3) und B(5/9). Bestimm |
-| durch zwei Punkte, Gleichung ablesen | 39 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Eine Gerade geht durch die Punkte A(1/6) und B(3/0). Bestimm |
-| durch zwei Punkte, Gleichung ablesen | 40 | rechnen | 1 | 1 | 1 | 1 | eigene Aufgabe | Das Koordinatensystem zeigt die Gerade g. Bestimme die Gleic |
-| durch zwei Punkte, Gleichung ablesen | 41 | Sachaufgabe | 0 | 1 | 2 | 2 | eigene Aufgabe | Trage die Punkte A(-3/-1) und B(2/4) in das Koordinatensyste |
-| durch zwei Punkte, Gleichung ablesen | 42 | Sachaufgabe | 0 | 3 | 1 | 3 | 2017-OS-K5a | Eine Gerade g geht durch die Punkte K(-4/-1) und L(2/2). Zei |
-| durch zwei Punkte, Gleichung ablesen | 43 | Sachaufgabe | 0 | 3 | 1 | 3 | 2015-OS-K4d | Lena springt mit dem Fallschirm aus einem Flugzeug. Ihre Höh |
-| durch zwei Punkte, Gleichung ablesen | 44 | Sachaufgabe | 1 | 2 | 1 | 2 | eigene Aufgabe | Eine Taxifahrt von 4 km kostet 12,60 €. Eine Fahrt von 10 km |
-| durch zwei Punkte, Gleichung ablesen | 45 | Vergleich | 1 | 3 | 2 | 3 | 2025-OS-K5a | Der Graph einer linearen Funktion f geht durch die Punkte A( |
-| rechnerisch an Gerade und Parabel | 46 | Vorstufe | 0 | 1 | 1 | 0 | eigene Aufgabe | Setze x = 4 in den Term 3x - 2 ein. Berechne den Wert. |
-| rechnerisch an Gerade und Parabel | 47 | Vorstufe | 0 | 1 | 1 | 0 | eigene Aufgabe | Kreuze an, ob der Graph von f(x) = 4x - 1 eine Gerade oder e |
-| rechnerisch an Gerade und Parabel | 48 | Vorstufe | 0 | 1 | 1 | 0 | eigene Aufgabe | Kreuze an, in welcher Form f(x) = x^2 + 4x - 1 geschrieben i |
-| rechnerisch an Gerade und Parabel | 49 | Vorstufe | 0 | 1 | 1 | 0 | eigene Aufgabe | Du willst die Schnittpunkte der Parabel f(x) = x^2 - 2x und  |
-| rechnerisch an Gerade und Parabel | 50 | rechnen | 0 | 1 | 1 | 1 | eigene Aufgabe | Setze x = 4 in f(x) = 2x + 5 ein. Berechne so den Funktionsw |
-| rechnerisch an Gerade und Parabel | 51 | rechnen | 0 | 1 | 1 | 1 | eigene Aufgabe | Gib den Schnittpunkt der Parabel f(x) = x^2 + 3x + 5 mit der |
-| rechnerisch an Gerade und Parabel | 52 | rechnen | 0 | 1 | 1 | 1 | eigene Aufgabe | Berechne die Nullstellen von f(x) = (x - 1)^2 - 4. |
-| rechnerisch an Gerade und Parabel | 53 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Berechne f(-6) für f(x) = x^2. |
-| rechnerisch an Gerade und Parabel | 54 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Berechne f(-3) für f(x) = x^2 + 4x - 2. |
-| rechnerisch an Gerade und Parabel | 55 | rechnen | 0 | 1 | 1 | 3 | 2017-OS-K5b | Die Gerade g hat die Gleichung y = 1/2x + 1. Auf ihr liegt d |
-| rechnerisch an Gerade und Parabel | 56 | rechnen | 0 | 1 | 1 | 3 | 2026-FOR-K5b | Prüfe mit einer Rechnung, ob der Punkt P(-4/10) auf dem Grap |
-| rechnerisch an Gerade und Parabel | 57 | rechnen | 1 | 1 | 1 | 1 | eigene Aufgabe | Fülle die Wertetabelle zu f(x) = x^2 aus. xf(x)-2,-1,0,1,2 |
-| rechnerisch an Gerade und Parabel | 58 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Gegeben sind die Parabel f(x) = x^2 - 5 und die Gerade g(x)  |
-| Gleichung aufstellen und rückwärts rechnen | 59 | Vorstufe | 0 | 1 | 1 | 0 | eigene Aufgabe | Ein Handwerker berechnet 45 € für die Anfahrt und 38 € je Ar |
-| Gleichung aufstellen und rückwärts rechnen | 60 | Vorstufe | 1 | 1 | 1 | 0 | eigene Aufgabe | Die Tabelle zeigt x-Werte und y-Werte. Jeder x-Wert wird mit |
-| Gleichung aufstellen und rückwärts rechnen | 61 | Ankreuzen | 0 | 1 | 1 | 1 | eigene Aufgabe | Ein Taxi kostet 4 € Grundgebühr und 2 € je km. Für x km zahl |
-| Gleichung aufstellen und rückwärts rechnen | 62 | Sachaufgabe | 0 | 1 | 2 | 1 | eigene Aufgabe | Berechne die y-Werte zu y = 3x für x = 0, 1, 2. Zeichne dann |
-| Gleichung aufstellen und rückwärts rechnen | 63 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Kino-Abo kostet einmalig 10 € und dazu 6 € je Film. Für  |
-| Gleichung aufstellen und rückwärts rechnen | 64 | Sachaufgabe | 1 | 1 | 1 | 3 | 2016-OS-K6c | Die 10b fährt mit dem Bus in eine Jugendherberge. Zwei Busfi |
-| Gleichung aufstellen und rückwärts rechnen | 65 | Sachaufgabe | 1 | 1 | 1 | 3 | 2021-OS-K7a | Ordne jedem Sachverhalt die passende Gleichung zu. Sachverha |
-| Gleichung aufstellen und rückwärts rechnen | 66 | Sachaufgabe | 1 | 1 | 1 | 3 | 2021-OS-K6c | Eine 40 cm hohe Kerze wird angezündet. Die Tabelle hält fest |
-| Gleichung aufstellen und rückwärts rechnen | 67 | Sachaufgabe | 1 | 2 | 1 | 3 | 2021-OS-K6d | Eine 40 cm hohe Kerze wird angezündet. Die Tabelle hält fest |
-| Gleichung aufstellen und rückwärts rechnen | 68 | Sachaufgabe | 1 | 3 | 1 | 3 | 2022-OS-K6b | Maxi und Paula haben zum 16. Geburtstag Geld bekommen und le |
-| Gleichung aufstellen und rückwärts rechnen | 69 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Denke dir eine Situation zur Gleichung y = -15x + 300 aus. B |
-| Gleichung aufstellen und rückwärts rechnen | 70 | Vergleich | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Handwerker berechnet 35 € Anfahrt und 48 € je Stunde. Ne |
-| zeichnen und Aussagen prüfen | 71 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Eine Gerade hat die Gleichung f(x) = 6. Gib ihre Steigung m  |
-| zeichnen und Aussagen prüfen | 72 | Ankreuzen | 0 | 2 | 1 | 3 | 2021-OS-K2b | Die lineare Funktion f hat die Gleichung y = 3x + 1. Kreuze  |
-| zeichnen und Aussagen prüfen | 73 | Vergleich | 0 | 1 | 2 | 2 | eigene Aufgabe | Welche Gerade ist steiler: f(x) = 3x - 7 oder g(x) = 5x + 4? |
-| zeichnen und Aussagen prüfen | 74 | Vergleich | 0 | 1 | 2 | 2 | eigene Aufgabe | Schneiden sich die Geraden f(x) = 3x - 7 und g(x) = 3x + 5?  |
-| zeichnen und Aussagen prüfen | 75 | Vergleich | 0 | 2 | 3 | 3 | 2023-OS-K4a | Im Koordinatensystem ist eine nach unten geöffnete Normalpar |
-| ankreuzen | 76 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Prüfe, ob der Punkt P(3/8) auf der Geraden f(x) = 3x - 1 lie |
-| ankreuzen | 77 | rechnen | 0 | 1 | 1 | 3 | eigene Aufgabe | Der Punkt A liegt auf der Geraden y = 3/4x + 2. Seine x-Koor |
-| ankreuzen | 78 | Ankreuzen | 0 | 3 | 1 | 3 | 2023-OS-B1i | Die Gerade f hat die Gleichung f(x) = -7x + 3. Einer dieser  |
-| Endwert berechnen | 79 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Tom hat 85 € gespart. Jede Woche kommen 15 € dazu. Wie viel  |
-| Endwert berechnen | 80 | Sachaufgabe | 0 | 2 | 1 | 3 | 2021-OS-K6a | Eine 40 cm hohe Kerze wird angezündet. Die Tabelle hält fest |
-| Endwert berechnen | 81 | Sachaufgabe | 1 | 2 | 1 | 3 | 2022-OS-K6a | Maxi und Paula haben zum 16. Geburtstag Geld bekommen und le |
-| Endwert berechnen | 82 | Vergleich | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Handwerker berechnet 45 € für die Anfahrt und 52 € je St |
-| Graph zum Tarif zuordnen | 83 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Tarif kostet 10 € Grundgebühr und 2 € je Stunde. Das Koo |
-| Graph zum Tarif zuordnen | 84 | Sachaufgabe | 0 | 1 | 1 | 3 | eigene Aufgabe | Ole hat 830 € auf dem Konto. Er zahlt jeden Monat 35 € ein.  |
-| Graph zum Tarif zuordnen | 85 | Vergleich | 1 | 1 | 2 | 3 | 2016-OS-K6a | Die 10b fährt mit dem Bus in eine Jugendherberge. Zwei Busfi |
-| Tarife vergleichen | 86 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Studio A kostet 50 € Aufnahmegebühr und 20 € je Monat. Studi |
-| Tarife vergleichen | 87 | Sachaufgabe | 0 | 1 | 1 | 3 | eigene Aufgabe | Ein Wassertank wird gleichmäßig geleert. Die Tabelle zeigt d |
-| Tarife vergleichen | 88 | Vergleich | 0 | 1 | 1 | 2 | eigene Aufgabe | Die Geraden von zwei Tarifen schneiden sich bei 200 km. Tim  |
-| Tarife vergleichen | 89 | Vergleich | 1 | 4 | 2 | 3 | 2016-OS-K6b | Die 10b fährt mit dem Bus in eine Jugendherberge. Zwei Busfi |
+| aus Gleichung zeichnen | 35 | Sachaufgabe | 0 | 2 | 2 | 3 | 2022-OS-K3a | Gegeben ist die lineare Funktion f(x) = -2x + 3. Zeichne den |
+| durch zwei Punkte, Gleichung ablesen | 36 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Eine Gerade geht durch die Punkte A(0/4) und B(2/10). Bestim |
+| durch zwei Punkte, Gleichung ablesen | 37 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Eine Gerade geht durch die Punkte A(2/3) und B(5/9). Bestimm |
+| durch zwei Punkte, Gleichung ablesen | 38 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Eine Gerade geht durch die Punkte A(1/6) und B(3/0). Bestimm |
+| durch zwei Punkte, Gleichung ablesen | 39 | rechnen | 1 | 1 | 1 | 1 | eigene Aufgabe | Das Koordinatensystem zeigt die Gerade g. Bestimme die Gleic |
+| durch zwei Punkte, Gleichung ablesen | 40 | Sachaufgabe | 0 | 1 | 2 | 2 | eigene Aufgabe | Trage die Punkte A(-3/-1) und B(2/4) in das Koordinatensyste |
+| durch zwei Punkte, Gleichung ablesen | 41 | Sachaufgabe | 0 | 3 | 1 | 3 | 2017-OS-K5a | Eine Gerade g geht durch die Punkte K(-4/-1) und L(2/2). Zei |
+| durch zwei Punkte, Gleichung ablesen | 42 | Sachaufgabe | 0 | 3 | 1 | 3 | 2015-OS-K4d | Lena springt mit dem Fallschirm aus einem Flugzeug. Ihre Höh |
+| durch zwei Punkte, Gleichung ablesen | 43 | Sachaufgabe | 1 | 2 | 1 | 2 | eigene Aufgabe | Eine Taxifahrt von 4 km kostet 12,60 €. Eine Fahrt von 10 km |
+| durch zwei Punkte, Gleichung ablesen | 44 | Vergleich | 1 | 3 | 2 | 3 | 2025-OS-K5a | Der Graph einer linearen Funktion f geht durch die Punkte A( |
+| rechnerisch an Gerade und Parabel | 45 | Vorstufe | 0 | 1 | 1 | 0 | eigene Aufgabe | Setze x = 4 in den Term 3x - 2 ein. Berechne den Wert. |
+| rechnerisch an Gerade und Parabel | 46 | Vorstufe | 0 | 1 | 1 | 0 | eigene Aufgabe | Kreuze an, ob der Graph von f(x) = 4x - 1 eine Gerade oder e |
+| rechnerisch an Gerade und Parabel | 47 | Vorstufe | 0 | 1 | 1 | 0 | eigene Aufgabe | Kreuze an, in welcher Form f(x) = x^2 + 4x - 1 geschrieben i |
+| rechnerisch an Gerade und Parabel | 48 | Vorstufe | 0 | 1 | 1 | 0 | eigene Aufgabe | Du willst die Schnittpunkte der Parabel f(x) = x^2 - 2x und  |
+| rechnerisch an Gerade und Parabel | 49 | rechnen | 0 | 1 | 1 | 1 | eigene Aufgabe | Setze x = 4 in f(x) = 2x + 5 ein. Berechne so den Funktionsw |
+| rechnerisch an Gerade und Parabel | 50 | rechnen | 0 | 1 | 1 | 1 | eigene Aufgabe | Gib den Schnittpunkt der Parabel f(x) = x^2 + 3x + 5 mit der |
+| rechnerisch an Gerade und Parabel | 51 | rechnen | 0 | 1 | 1 | 1 | eigene Aufgabe | Berechne die Nullstellen von f(x) = (x - 1)^2 - 4. |
+| rechnerisch an Gerade und Parabel | 52 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Berechne f(-6) für f(x) = x^2. |
+| rechnerisch an Gerade und Parabel | 53 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Berechne f(-3) für f(x) = x^2 + 4x - 2. |
+| rechnerisch an Gerade und Parabel | 54 | rechnen | 0 | 1 | 1 | 3 | 2017-OS-K5b | Die Gerade g hat die Gleichung y = 1/2x + 1. Auf ihr liegt d |
+| rechnerisch an Gerade und Parabel | 55 | rechnen | 1 | 1 | 1 | 1 | eigene Aufgabe | Fülle die Wertetabelle zu f(x) = x^2 aus. xf(x)-2,-1,0,1,2 |
+| rechnerisch an Gerade und Parabel | 56 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Gegeben sind die Parabel f(x) = x^2 - 5 und die Gerade g(x)  |
+| rechnerisch an Gerade und Parabel | 57 | Sachaufgabe | 0 | 1 | 1 | 3 | 2024-OS-K3c | Die Gerade f ist der Graph von f(x) = 4x + 1. Die Parabel p  |
+| Gleichung aufstellen und rückwärts rechnen | 58 | Vorstufe | 0 | 1 | 1 | 0 | eigene Aufgabe | Ein Handwerker berechnet 45 € für die Anfahrt und 38 € je Ar |
+| Gleichung aufstellen und rückwärts rechnen | 59 | Vorstufe | 1 | 1 | 1 | 0 | eigene Aufgabe | Die Tabelle zeigt x-Werte und y-Werte. Jeder x-Wert wird mit |
+| Gleichung aufstellen und rückwärts rechnen | 60 | Ankreuzen | 0 | 1 | 1 | 1 | eigene Aufgabe | Ein Taxi kostet 4 € Grundgebühr und 2 € je km. Für x km zahl |
+| Gleichung aufstellen und rückwärts rechnen | 61 | Sachaufgabe | 0 | 1 | 2 | 1 | eigene Aufgabe | Berechne die y-Werte zu y = 3x für x = 0, 1, 2. Zeichne dann |
+| Gleichung aufstellen und rückwärts rechnen | 62 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Kino-Abo kostet einmalig 10 € und dazu 6 € je Film. Für  |
+| Gleichung aufstellen und rückwärts rechnen | 63 | Sachaufgabe | 1 | 1 | 1 | 3 | 2016-OS-K6c | Die 10b fährt mit dem Bus in eine Jugendherberge. Zwei Busfi |
+| Gleichung aufstellen und rückwärts rechnen | 64 | Sachaufgabe | 1 | 1 | 1 | 3 | 2021-OS-K7a | Ordne jedem Sachverhalt die passende Gleichung zu. Sachverha |
+| Gleichung aufstellen und rückwärts rechnen | 65 | Sachaufgabe | 1 | 1 | 1 | 3 | 2021-OS-K6c | Eine 40 cm hohe Kerze wird angezündet. Die Tabelle hält fest |
+| Gleichung aufstellen und rückwärts rechnen | 66 | Sachaufgabe | 1 | 2 | 1 | 3 | 2021-OS-K6d | Eine 40 cm hohe Kerze wird angezündet. Die Tabelle hält fest |
+| Gleichung aufstellen und rückwärts rechnen | 67 | Sachaufgabe | 1 | 3 | 1 | 3 | 2022-OS-K6b | Maxi und Paula haben zum 16. Geburtstag Geld bekommen und le |
+| Gleichung aufstellen und rückwärts rechnen | 68 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Denke dir eine Situation zur Gleichung y = -15x + 300 aus. B |
+| Gleichung aufstellen und rückwärts rechnen | 69 | Vergleich | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Handwerker berechnet 35 € Anfahrt und 48 € je Stunde. Ne |
+| zeichnen und Aussagen prüfen | 70 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Eine Gerade hat die Gleichung f(x) = 6. Gib ihre Steigung m  |
+| zeichnen und Aussagen prüfen | 71 | Ankreuzen | 0 | 2 | 1 | 3 | 2021-OS-K2b | Die lineare Funktion f hat die Gleichung y = 3x + 1. Kreuze  |
+| zeichnen und Aussagen prüfen | 72 | Vergleich | 0 | 1 | 2 | 2 | eigene Aufgabe | Welche Gerade ist steiler: f(x) = 3x - 7 oder g(x) = 5x + 4? |
+| zeichnen und Aussagen prüfen | 73 | Vergleich | 0 | 1 | 2 | 2 | eigene Aufgabe | Schneiden sich die Geraden f(x) = 3x - 7 und g(x) = 3x + 5?  |
+| zeichnen und Aussagen prüfen | 74 | Vergleich | 0 | 2 | 3 | 3 | 2023-OS-K4a | Im Koordinatensystem ist eine nach unten geöffnete Normalpar |
+| ankreuzen | 75 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Prüfe, ob der Punkt P(3/8) auf der Geraden f(x) = 3x - 1 lie |
+| ankreuzen | 76 | rechnen | 0 | 1 | 1 | 3 | eigene Aufgabe | Der Punkt A liegt auf der Geraden y = 3/4x + 2. Seine x-Koor |
+| ankreuzen | 77 | Ankreuzen | 0 | 3 | 1 | 3 | 2023-OS-B1i | Die Gerade f hat die Gleichung f(x) = -7x + 3. Einer dieser  |
+| Endwert berechnen | 78 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Tom hat 85 € gespart. Jede Woche kommen 15 € dazu. Wie viel  |
+| Endwert berechnen | 79 | Sachaufgabe | 0 | 2 | 1 | 3 | 2021-OS-K6a | Eine 40 cm hohe Kerze wird angezündet. Die Tabelle hält fest |
+| Endwert berechnen | 80 | Sachaufgabe | 1 | 2 | 1 | 3 | 2022-OS-K6a | Maxi und Paula haben zum 16. Geburtstag Geld bekommen und le |
+| Endwert berechnen | 81 | Vergleich | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Handwerker berechnet 45 € für die Anfahrt und 52 € je St |
+| Graph zum Tarif zuordnen | 82 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Tarif kostet 10 € Grundgebühr und 2 € je Stunde. Das Koo |
+| Graph zum Tarif zuordnen | 83 | Sachaufgabe | 1 | 1 | 1 | 3 | 2023-OS-K3a | Herr Mert braucht für seinen Umzug einen Transporter. Angebo |
+| Graph zum Tarif zuordnen | 84 | Vergleich | 1 | 1 | 2 | 3 | 2016-OS-K6a | Die 10b fährt mit dem Bus in eine Jugendherberge. Zwei Busfi |
+| Tarife vergleichen | 85 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Studio A kostet 50 € Aufnahmegebühr und 20 € je Monat. Studi |
+| Tarife vergleichen | 86 | Sachaufgabe | 1 | 4 | 2 | 3 | 2023-OS-K3b | Herr Mert braucht für seinen Umzug einen Transporter. Angebo |
+| Tarife vergleichen | 87 | Vergleich | 0 | 1 | 1 | 2 | eigene Aufgabe | Die Geraden von zwei Tarifen schneiden sich bei 200 km. Tim  |
+| Tarife vergleichen | 88 | Vergleich | 1 | 4 | 2 | 3 | 2016-OS-K6b | Die 10b fährt mit dem Bus in eine Jugendherberge. Zwei Busfi |
 
 ## Prüfung
 

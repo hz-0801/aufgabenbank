@@ -52,14 +52,15 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Faktor bestimmen, Gleichung aufstellen | 58 | Ankreuzen | 1 | 1 | 1 | 2 | eigene Aufgabe | Die Tabelle zeigt Werte. Kreuze an, zu welcher Gleichung die |
 | Faktor bestimmen, Gleichung aufstellen | 59 | Ankreuzen | 1 | 1 | 1 | 3 | 2017-OS-K7c | Auf Meereshöhe (0 km) misst man einen Luftdruck von ungefähr |
 | Faktor bestimmen, Gleichung aufstellen | 60 | Vergleich | 2 | 1 | 1 | 3 | 2017-OS-K7d | Auf Meereshöhe (0 km) misst man einen Luftdruck von ungefähr |
-| Graph zuordnen und begründen | 61 | Vorstufe | 1 | 1 | 1 | 0 | eigene Aufgabe | Sieh dir im Koordinatensystem den Graphen f an. Kreuze an, b |
-| Graph zuordnen und begründen | 62 | Ankreuzen | 0 | 1 | 1 | 2 | eigene Aufgabe | Eine Tasse Tee kühlt ab. Der Tee ist wärmer als die Luft im  |
-| Graph zuordnen und begründen | 63 | Ankreuzen | 0 | 1 | 1 | 2 | eigene Aufgabe | In einem Wasserbecken sind 300 Liter. Jede Minute fließen 60 |
-| Graph zuordnen und begründen | 64 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Pilz bedeckt am Anfang eine Fläche von 100 cm^2. Die Flä |
-| Graph zuordnen und begründen | 65 | Sachaufgabe | 0 | 1 | 2 | 3 | eigene Aufgabe | Ein Kalb wiegt 45 kg. Es nimmt jede Woche um 5% zu. Das Koor |
-| Graph zuordnen und begründen | 66 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | Ein Konto wächst jedes Jahr um 15%. Das Koordinatensystem ze |
-| Graph zuordnen und begründen | 67 | Vergleich | 0 | 1 | 1 | 3 | 2019-OS-K7c | Ein Ferkel wiegt 10 kg. Aus Erfahrung weiß man, dass seine M |
-| Graph zuordnen und begründen | 68 | rechnen | 1 | 1 | 1 | 1 | eigene Aufgabe | Das Koordinatensystem zeigt drei Graphen a, b und c. Welcher |
+| Faktor bestimmen, Gleichung aufstellen | 61 | Vergleich | 2 | 3 | 1 | 3 | 2020-OS-K4c | Nach einer Studie lag der Wasserverbrauch 2019 bei durchschn |
+| Graph zuordnen und begründen | 62 | Vorstufe | 1 | 1 | 1 | 0 | eigene Aufgabe | Sieh dir im Koordinatensystem den Graphen f an. Kreuze an, b |
+| Graph zuordnen und begründen | 63 | Ankreuzen | 0 | 1 | 1 | 2 | eigene Aufgabe | Eine Tasse Tee kühlt ab. Der Tee ist wärmer als die Luft im  |
+| Graph zuordnen und begründen | 64 | Ankreuzen | 0 | 1 | 1 | 2 | eigene Aufgabe | In einem Wasserbecken sind 300 Liter. Jede Minute fließen 60 |
+| Graph zuordnen und begründen | 65 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Pilz bedeckt am Anfang eine Fläche von 100 cm^2. Die Flä |
+| Graph zuordnen und begründen | 66 | Sachaufgabe | 0 | 1 | 2 | 3 | eigene Aufgabe | Ein Kalb wiegt 45 kg. Es nimmt jede Woche um 5% zu. Das Koor |
+| Graph zuordnen und begründen | 67 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | Ein Konto wächst jedes Jahr um 15%. Das Koordinatensystem ze |
+| Graph zuordnen und begründen | 68 | Vergleich | 0 | 1 | 1 | 3 | 2019-OS-K7c | Ein Ferkel wiegt 10 kg. Aus Erfahrung weiß man, dass seine M |
+| Graph zuordnen und begründen | 69 | rechnen | 1 | 1 | 1 | 1 | eigene Aufgabe | Das Koordinatensystem zeigt drei Graphen a, b und c. Welcher |
 
 ## Prüfung
 

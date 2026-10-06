@@ -136,276 +136,284 @@ Von 2017 bis 2021 wurden jedes Jahr 1 200 Jugendliche gefragt, wie oft sie Büch
 \pfzwfrage{Berechne die Summe der fünf Werte.}
 \rechenraster{2}
 \end{pfnr}
-\begin{pfnr}{P10 ’26}{26.}{1 BE}
-Eine Tankstelle hat eine Woche lang jeden Tag um 18 Uhr den Benzinpreis notiert. Gib die Spannweite der Benzinpreise in € pro Liter an.
-\par\smallskip\noindent \sachtabelle{lrrrrrrr}{Wochentag & Mo & Di & Mi & Do & Fr & Sa & So}{Benzinpreis in € pro Liter & 1,77 & 1,78 & 1,77 & 1,79 & 1,84 & 1,82 & 1,85}\par
-\rechenraster{1}
-\fusshilfe{\mbox{26:~0,08 € pro Liter}}
-\end{pfnr}
-\begin{pfnr}{P10 ’24}{27.}{2 BE}
+\begin{pfnr}{P10 ’24}{26.}{2 BE}
 Das Säulendiagramm zeigt, wie viel Niederschlag 2021 in Brandenburg in jedem Monat gefallen ist (in mm). Ermittle die Spannweite der monatlichen Niederschläge im Jahr 2021 in mm.
 \par\smallskip\noindent \begin{tikzpicture}\begin{axis}[ymin=0,ymax=100,ytick distance=20,tick label style={font=\small},xtick pos=bottom,ytick pos=left,yticklabel style={/pgf/number format/use comma,/pgf/number format/1000 sep={\,},/pgf/number format/fixed,/pgf/number format/precision=1},ymajorgrids,grid style={mbgitter},xtick={0,1,2,3,4,5,6,7,8,9,10,11},xticklabels={{Jan},{Feb},{Mär},{Apr},{Mai},{Jun},{Jul},{Aug},{Sep},{Okt},{Nov},{Dez}},xmin=-0.5,xmax=11.5,bar width=5mm,ybar,width=13.5cm,height=5.2cm,ylabel={Niederschlag in mm},ylabel style={font=\small}]\addplot[fill=mbkasten,draw=black] coordinates {(0,52.2) (1,39.6) (2,35.3) (3,19.2) (4,49.3) (5,85.1) (6,36.1) (7,82.4) (8,21.7) (9,54.6) (10,64.1) (11,42.1)};\end{axis}\end{tikzpicture}\par
 \rechenraster{1}
-\fusshilfe{\mbox{27:~65,9 mm}}
+\fusshilfe{\mbox{26:~65,9 mm}}
+\end{pfnr}
+\begin{pfnr}{P10 ’23}{27.}{3 BE}
+Auf der Welt werden wohl über 7 000 Sprachen gesprochen. Die Tabelle nennt die fünf Sprachen mit den meisten Muttersprachlern (Anzahl in Millionen): Arabisch 290, Chinesisch 1 300, Englisch 500, Hindi 525, Spanisch 389. Gib für diese fünf Werte das Minimum, das Maximum und die Spannweite an.
+\par\smallskip\noindent \sachtabelle{lr}{Sprache & Muttersprachler in Millionen}{Arabisch & 290\\ Chinesisch & 1 300\\ Englisch & 500\\ Hindi & 525\\ Spanisch & 389}\par
+\rechenraster{1}
+\end{pfnr}
+\begin{pfnr}{P10 ’21}{28.}{5 BE}
+Das Säulendiagramm gibt an, wie viele Container (in Millionen) in den Jahren 2009 bis 2017 im Hamburger Hafen be- und entladen wurden. Berechne die Spannweite und den Durchschnitt (das arithmetische Mittel) dieser Containerzahlen. Berechne, um wie viel Prozent die Containerzahl von 2010 auf 2011 gestiegen ist.
+\par\smallskip\noindent \begin{tikzpicture}\begin{axis}[ybar,width=13.7cm,height=4.6cm,ymin=0,ymax=11.64,symbolic x coords={2009,2010,2011,2012,2013,2014,2015,2016,2017},xtick=data,enlarge x limits=0.08,bar width=6mm,ylabel={Container in Millionen},ylabel style={font=\small},tick label style={font=\small},nodes near coords,every node near coord/.append style={font=\scriptsize,/pgf/number format/.cd,use comma,1000 sep={}},ymajorgrids,grid style={mbgitter}]\addplot[fill=mbkasten,draw=black] coordinates {(2009,7.0) (2010,7.9) (2011,9.0) (2012,8.9) (2013,9.3) (2014,9.7) (2015,8.8) (2016,8.9) (2017,8.8)};\end{axis}\end{tikzpicture}\par
+\pfzwfrage{Berechne die Differenz aus der größten und der kleinsten Containerzahl.}
+\rechenraster{4}
+\fusshilfe{\mbox{28:~2,7 Mio.; 8,7 Mio.; $\tfrac{11}{79}$ $\approx$ 13,9 \%}}
+\end{pfnr}
+\pfgruppe{}
+\begin{pfnr}{P10 ’20}{29.}{2 BE}
+Das Säulendiagramm zeigt die Besucherzahlen eines Freibads an den Tagen der ersten Ferienwoche. Die beiden folgenden Aussagen sind richtig: „Die Besucherzahlen der ersten Ferienwoche haben eine Spannweite von 150.“ „Am Sonntag gab es ein Drittel mehr Besucher als am Mittwoch.“ Weise beide Aussagen rechnerisch nach.
+\par\smallskip\noindent \begin{tikzpicture}\begin{axis}[ybar,width=11.1cm,height=4.6cm,ymin=0,ymax=336.00,symbolic x coords={Mo,Di,Mi,Do,Fr,Sa,So},xtick=data,enlarge x limits=0.08,bar width=6mm,ylabel={Besucher je Wochentag},ylabel style={font=\small},tick label style={font=\small},nodes near coords,every node near coord/.append style={font=\scriptsize,/pgf/number format/.cd,use comma,1000 sep={}},ymajorgrids,grid style={mbgitter}]\addplot[fill=mbkasten,draw=black] coordinates {(Mo,170.0) (Di,130.0) (Mi,210.0) (Do,180.0) (Fr,190.0) (Sa,240.0) (So,280.0)};\end{axis}\end{tikzpicture}\par
+\rechenraster{3}
+\fusshilfe{\mbox{29:~280 $-$ 130 = 150; 210 + 210 : 3 = 280}}
 \end{pfnr}
 \pfstufekopf[smittelwert]{Mittelwert}{in 2 der letzten 5 Prüfungen}
 \pfgruppe{}
-\begin{pfnr}{eigene Aufgabe}{28.}{1 BE}
+\begin{pfnr}{eigene Aufgabe}{30.}{1 BE}
 Die Werte sind: $6$; $30$; $45$. Berechne das arithmetische Mittel.
 \rechenraster{1}
-\fusshilfe{\mbox{28:~$27$}}
+\fusshilfe{\mbox{30:~$27$}}
 \end{pfnr}
-\begin{pfnr}{P10 ’16}{29.}{1 BE}
+\begin{pfnr}{P10 ’16}{31.}{1 BE}
 Gib das arithmetische Mittel (den Durchschnitt) der Werte 8; 40; 60 an.
 \rechenraster{1}
-\fusshilfe{\mbox{29:~36}}
+\fusshilfe{\mbox{31:~36}}
 \end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{30.}{2 BE}
+\begin{pfnr}{eigene Aufgabe}{32.}{2 BE}
 Ein Verein hatte in $8$ Jahren zusammen $2\,120$ Mitglieder. Wie viele waren es im Durchschnitt je Jahr?
 \rechenraster{1}
-\fusshilfe{\mbox{30:~$265$ Mitglieder}}
+\fusshilfe{\mbox{32:~$265$ Mitglieder}}
 \end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{31.}{1 BE}
+\begin{pfnr}{eigene Aufgabe}{33.}{1 BE}
 Die Sprunghöhen sind: $1{,}45$ m; $1{,}50$ m; $1{,}35$ m; $1{,}50$ m. Berechne das arithmetische Mittel.
 \par\noindent \leerfeld[m] \par
 \rechenraster{1}
-\fusshilfe{\mbox{31:~$1{,}45$ m}}
+\fusshilfe{\mbox{33:~$1{,}45$ m}}
 \end{pfnr}
-\begin{pfnr}{P10 ’17}{32.}{1 BE}
+\begin{pfnr}{P10 ’17}{34.}{1 BE}
 Gib den Durchschnitt (das arithmetische Mittel) dieser Längen an: 1,8 m; 1,7 m; 1,6 m; 1,7 m
 \rechenraster{1}
-\fusshilfe{\mbox{32:~1,7 m}}
+\fusshilfe{\mbox{34:~1,7 m}}
 \end{pfnr}
-\begin{pfnr}{P10 ’21}{33.}{1 BE}
+\begin{pfnr}{P10 ’21}{35.}{1 BE}
 Jonas springt im Weitsprung 4,08 m, 3,88 m, 3,92 m und 4,12 m. Gib seine durchschnittliche Weite an.
 \rechenraster{2}
-\fusshilfe{\mbox{33:~4,00 m}}
+\fusshilfe{\mbox{35:~4,00 m}}
 \end{pfnr}
 \pfgruppe{}
-\begin{pfnr}{eigene Aufgabe}{34.}{}
+\begin{pfnr}{eigene Aufgabe}{36.}{}
 In mehreren Spielen fielen diese Tore: $1$, $0$, $2$, $1$, $3$, $1$, $0$, $2$, $1$, $2$. Fülle die Häufigkeitstabelle aus. Berechne damit den Mittelwert.
 \par\smallskip\noindent \sachtabelle{lc}{Tore & Anzahl}{0 & \leerzelle \\ 1 & \leerzelle \\ 2 & \leerzelle \\ 3 & \leerzelle}\par
 \rechenraster{1}
-\fusshilfe{\mbox{34:~(0 + 4 + 6 + 3) : 10; $1{,}3$}}
+\fusshilfe{\mbox{36:~(0 + 4 + 6 + 3) : 10; $1{,}3$}}
 \end{pfnr}
-\begin{pfnr}{P10 ’20}{35.}{2 BE}
+\begin{pfnr}{P10 ’20}{37.}{2 BE}
 Ein Schwimmbad zählt in der ersten Woche der Sommerferien jeden Tag seine Besucher. Am Donnerstag kamen 180 Besucher. Im Balkendiagramm fehlt der Balken für Donnerstag noch. Berechne, wie viele Besucher in dieser Woche durchschnittlich an einem Tag im Schwimmbad waren.
 \par\smallskip\noindent \begin{tikzpicture}\begin{axis}[xmin=0,xmax=400,xtick distance=100,tick label style={font=\small},xticklabel style={/pgf/number format/use comma,/pgf/number format/1000 sep={\,},/pgf/number format/fixed,/pgf/number format/precision=0},xmajorgrids,grid style={mbgitter},ytick={0,1,2,3,4,5,6},yticklabels={{Mo},{Di},{Mi},{Do},{Fr},{Sa},{So}},ymin=-0.5,ymax=6.5,minor x tick num=1,xminorgrids,bar width=4mm,xtick pos=bottom,ytick pos=left,xbar,y dir=reverse,width=11cm,height=6.8cm,xlabel={Anzahl der Besucher}]\addplot[fill=mbkasten,draw=black] coordinates {(170,0) (130,1) (210,2) (190,4) (240,5) (280,6)};\end{axis}\end{tikzpicture}\par
 \pfzwfrage{Berechne die Summe der Besucher aller sieben Tage.}
 \rechenraster{2}
-\fusshilfe{\mbox{35:~200 Besucher}}
+\fusshilfe{\mbox{37:~200 Besucher}}
 \end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{36.}{}
+\begin{pfnr}{eigene Aufgabe}{38.}{}
 Ein Busfahrer notiert die Fahrgäste bei acht Fahrten: $23$, $31$, $18$, $27$, $35$, $22$, $29$, $31$. Der Bus hat $32$ Plätze. Berechne Mittelwert und Spannweite. Hat der Bus immer genug Plätze?
 \rechenraster{2}
-\fusshilfe{\mbox{36:~35 - 18; $17$}}
+\fusshilfe{\mbox{38:~35 - 18; $17$}}
 \end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{37.}{}
+\begin{pfnr}{eigene Aufgabe}{39.}{}
 Der Notenspiegel einer Klassenarbeit ist in der Tabelle. Berechne die Zahl der Schüler und den Notendurchschnitt.
 \par\smallskip\noindent \sachtabelle{lcccccc}{Note & $1$ & $2$ & $3$ & $4$ & $5$ & $6$}{Anzahl & $4$ & $6$ & $7$ & $5$ & $2$ & $1$}\par
 \par\noindent n = \leerfeld , x̄ = \leerfeld \par
 \rechenraster{2}
-\fusshilfe{\mbox{37:~$2{,}92$}}
+\fusshilfe{\mbox{39:~$2{,}92$}}
 \end{pfnr}
-\begin{pfnr}{P10 ’26}{38.}{2 BE}
-Eine Tankstelle hat eine Woche lang jeden Tag um 18 Uhr den Benzinpreis notiert. Ein Kunde meint: Von Montag bis Freitag hat ein Liter Benzin an dieser Tankstelle im Durchschnitt weniger als 1,80 € gekostet. Zeige mit einer Rechnung, dass er recht hat.
-\par\smallskip\noindent \sachtabelle{lrrrrrrr}{Wochentag & Mo & Di & Mi & Do & Fr & Sa & So}{Benzinpreis in € pro Liter & 1,77 & 1,78 & 1,77 & 1,79 & 1,84 & 1,82 & 1,85}\par
-\pfzwfrage{Berechne die Summe der Preise von Montag bis Freitag.}
-\rechenraster{2}
-\end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{39.}{1 BE}
+\begin{pfnr}{eigene Aufgabe}{40.}{1 BE}
 Zu $19$ Heimspielen kamen insgesamt $412\,879$ Zuschauer. Wie viele Zuschauer kamen im Durchschnitt pro Spiel? Runde sinnvoll.
 \rechenraster{1}
-\fusshilfe{\mbox{39:~$\approx 21\,730$ Zuschauer}}
+\fusshilfe{\mbox{40:~$\approx 21\,730$ Zuschauer}}
 \end{pfnr}
-\begin{pfnr}{P10 ’15}{40.}{2 BE}
+\begin{pfnr}{P10 ’15}{41.}{2 BE}
 Eine Fußballmannschaft hatte in einer Saison 17 Heimspiele. Zu diesen Spielen kamen zusammen 680 353 Zuschauer. Berechne, wie viele Zuschauer im Durchschnitt bei einem Heimspiel waren. Runde sinnvoll.
 \rechenraster{1}
-\fusshilfe{\mbox{40:~680 $\tfrac{353}{17}$ $\approx$ 40 000 Zuschauer (40 021)}}
+\fusshilfe{\mbox{41:~680 $\tfrac{353}{17}$ $\approx$ 40 000 Zuschauer (40 021)}}
 \end{pfnr}
-\begin{pfnr}{P10 ’24}{41.}{3 BE}
+\begin{pfnr}{P10 ’24}{42.}{3 BE}
 Das Säulendiagramm zeigt, wie viel Niederschlag 2021 in Brandenburg in jedem Monat gefallen ist (in mm). Im ganzen Jahr 2021 fielen 581,7 mm Niederschlag. Zeige, dass im Durchschnitt pro Monat etwa 48,5 mm fielen. Ermittle, um wie viel Prozent der Niederschlag im April unter diesem Monatsdurchschnitt lag.
 \par\smallskip\noindent \begin{tikzpicture}\begin{axis}[ymin=0,ymax=100,ytick distance=20,tick label style={font=\small},xtick pos=bottom,ytick pos=left,yticklabel style={/pgf/number format/use comma,/pgf/number format/1000 sep={\,},/pgf/number format/fixed,/pgf/number format/precision=1},ymajorgrids,grid style={mbgitter},xtick={0,1,2,3,4,5,6,7,8,9,10,11},xticklabels={{Jan},{Feb},{Mär},{Apr},{Mai},{Jun},{Jul},{Aug},{Sep},{Okt},{Nov},{Dez}},xmin=-0.5,xmax=11.5,bar width=5mm,ybar,width=13.5cm,height=5.2cm,ylabel={Niederschlag in mm},ylabel style={font=\small}]\addplot[fill=mbkasten,draw=black] coordinates {(0,52.2) (1,39.6) (2,35.3) (3,19.2) (4,49.3) (5,85.1) (6,36.1) (7,82.4) (8,21.7) (9,54.6) (10,64.1) (11,42.1)};\end{axis}\end{tikzpicture}\par
+\pfzwfrage{Berechne den Unterschied zwischen dem Monatsdurchschnitt und dem Aprilwert.}
 \rechenraster{3}
 \end{pfnr}
 \pfstufekopf[swinkelberechnenundbe]{Winkel berechnen und beschriften}{in 2 der letzten 5 Prüfungen}
 \pfgruppe{}
-\begin{pfnr}{eigene Aufgabe}{42.}{}
+\begin{pfnr}{eigene Aufgabe}{43.}{}
 Ein Satz lautet: „Ein Viertel der Befragten fährt Rad, das sind $25$.“ Kreuze an, was die Zahl $25$ hier ist.
 \pfkreuzzeile{Anteil in \%}\pfkreuzzeile{Winkel in Grad}
-\fusshilfe{\mbox{42:~Anteil in \%}}
+\fusshilfe{\mbox{43:~Anteil in \%}}
 \end{pfnr}
 \pfgruppe{}
-\begin{pfnr}{eigene Aufgabe}{43.}{}
+\begin{pfnr}{eigene Aufgabe}{44.}{}
 Färbe $30\,\%$ des Streifens. Wie lang ist der gefärbte Teil?
 \par\smallskip\noindent \streifenleer\par
 \par\noindent \leerfeld[cm] \par
-\fusshilfe{\mbox{43:~$3$ cm}}
+\fusshilfe{\mbox{44:~$3$ cm}}
 \end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{44.}{}
+\begin{pfnr}{eigene Aufgabe}{45.}{}
 Ein Sektor im Kreisdiagramm steht für $10\,\%$. Wie groß ist sein Mittelpunktswinkel?
 \par\noindent \leerfeld[°] \par
 \rechenraster{1}
-\fusshilfe{\mbox{44:~$36^\circ$}}
+\fusshilfe{\mbox{45:~$36^\circ$}}
 \end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{45.}{}
+\begin{pfnr}{eigene Aufgabe}{46.}{}
 Zeichne in den Kreis einen Sektor mit $72^\circ$. Beginne am Radius. Beschrifte den Sektor mit „Bus“.
 \par\smallskip\noindent \kreisleer\par
 \rechenraster{1}
-\fusshilfe{\mbox{45:~Sektor $72^\circ$ ab der Nullmarke, beschriftet}}
+\fusshilfe{\mbox{46:~Sektor $72^\circ$ ab der Nullmarke, beschriftet}}
 \end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{46.}{}
+\begin{pfnr}{eigene Aufgabe}{47.}{}
 Im Streifen sind $45\,\%$ Rad und $30\,\%$ Bus eingetragen. Der Rest ist „zu Fuß“. Wie viel Prozent sind „zu Fuß“?
 \par\noindent \leerfeld[\%] \par
 \rechenraster{1}
-\fusshilfe{\mbox{46:~$25\,\%$}}
+\fusshilfe{\mbox{47:~$25\,\%$}}
 \end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{47.}{}
+\begin{pfnr}{eigene Aufgabe}{48.}{}
 Ein Sektor im Kreisdiagramm steht für $45\,\%$. Wie groß ist sein Mittelpunktswinkel?
 \par\noindent \leerfeld[°] \par
 \rechenraster{1}
-\fusshilfe{\mbox{47:~$162^\circ$}}
+\fusshilfe{\mbox{48:~$162^\circ$}}
 \end{pfnr}
 \pfgruppe{}
-\begin{pfnr}{P10 ’21}{48.}{2 BE}
+\begin{pfnr}{P10 ’21}{49.}{2 BE}
 Die Tabelle gibt an, welche Güter im Hamburger Hafen be- und entladen werden (Anteile in \%): Schrott 17, Flüssigkeiten ?, Container 66, Getreide 6, Sonstiges 1, gesamt 100. Ergänze den fehlenden Anteil für Flüssigkeiten. Schreib an jeden Sektor des Kreisdiagramms das passende Gut.
 \par\smallskip\noindent \begin{tikzpicture}[line width=0.6pt,baseline=(current bounding box.north)]\begin{scope}\clip (0,0) -- (68.4:2.0) arc (68.4:90:2.0) -- cycle;\foreach \i in {-14,...,14}{\foreach \j in {-14,...,14}{\fill (\i*0.16,\j*0.16) circle (0.5pt);}}\end{scope}\draw (0,0) -- (90:2.0);\begin{scope}\clip (0,0) -- (32.4:2.0) arc (32.4:68.4:2.0) -- cycle;\foreach \i in {-12,...,12}{\draw[line width=0.3pt] (\i*0.18-2.5,-2.5) -- ++(5,5);}\end{scope}\draw (0,0) -- (68.4:2.0);\fill[black!60] (0,0) -- (-28.8:2.0) arc (-28.8:32.4:2.0) -- cycle;\draw (0,0) -- (32.4:2.0);\draw (0,0) -- (-28.8:2.0);\fill[black!10] (0,0) -- (-270:2.0) arc (-270:-32.4:2.0) -- cycle;\draw (0,0) -- (-32.4:2.0);\draw (0,0) circle (2.0); \fill (0,0) circle (1.3pt);\draw[line width=0.4pt] (79.2:1.40) -- (79.2:2.40);\draw[line width=0.4pt] ($(79.2:2.40)+(0,-0.00)$) -- ++(1.8,0);\draw[line width=0.4pt] (50.4:1.40) -- (50.4:2.40);\draw[line width=0.4pt] ($(50.4:2.40)+(0,-0.00)$) -- ++(1.8,0);\draw[line width=0.4pt] (1.8:1.40) -- (1.8:2.40);\draw[line width=0.4pt] ($(1.8:2.40)+(0,-0.00)$) -- ++(1.8,0);\draw[line width=0.4pt] (-30.6:1.40) -- (-30.6:2.40);\draw[line width=0.4pt] ($(-30.6:2.40)+(0,-0.00)$) -- ++(1.8,0);\draw[line width=0.4pt] (-151.2:1.40) -- (-151.2:2.40);\draw[line width=0.4pt] ($(-151.2:2.40)+(0,-0.00)$) -- ++(-1.8,0);\end{tikzpicture}\par
 \rechenraster{1}
 \end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{49.}{}
+\begin{pfnr}{eigene Aufgabe}{50.}{}
 So kommen Kinder zur Schule: Rad $50\,\%$, Bus $40\,\%$, zu Fuß $10\,\%$. Berechne zuerst die Winkel. Zeichne dann das Kreisdiagramm.
 \par\smallskip\noindent \kreisleer\par
 \rechenraster{1}
-\fusshilfe{\mbox{49:~180; $36$}}
+\fusshilfe{\mbox{50:~180; $36$}}
 \end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{50.}{}
+\begin{pfnr}{eigene Aufgabe}{51.}{}
 Ein Grundstück ist $800$ m² groß. Davon sind $160$ m² Haus, $400$ m² Rasen, $120$ m² Beete und $120$ m² Wege. Berechne die Anteile in Prozent und die Winkel für ein Kreisdiagramm. Welcher Teil ist am größten?
 \rechenraster{1}
-\fusshilfe{\mbox{50:~15\,\%; der Rasen}}
+\fusshilfe{\mbox{51:~15\,\%; der Rasen}}
 \end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{51.}{3 BE}
+\begin{pfnr}{eigene Aufgabe}{52.}{3 BE}
 So kommen Kinder zur Schule: Rad $45\,\%$, Bus $30\,\%$, Auto $15\,\%$, zu Fuß $10\,\%$. Ordne die Sektoren im Kreisdiagramm den Anteilen zu und beschrifte sie.
 \par\smallskip\noindent \kreisdiagrammleer{/45,/15,/30,/10}\par
 \rechenraster{1}
 \end{pfnr}
-\begin{pfnr}{P10 ’22}{52.}{3 BE}
+\begin{pfnr}{P10 ’22}{53.}{3 BE}
 750 Jugendliche wurden gefragt, wie oft sie Comics lesen. Ergebnis: mehrmals pro Woche 39 \%, einmal pro Woche 18 \%, einmal im Monat 27 \%, nie 16 \%. Im Kreisdiagramm ist nur der Sektor „nie“ beschriftet. Beschrifte die drei anderen Sektoren. Berechne den Mittelpunktswinkel für „nie“.
 \par\smallskip\noindent \begin{tikzpicture}[line width=0.6pt,baseline=(current bounding box.north)]\draw (0,0) -- (90:2.0);\node[font=\small,anchor=241.2] at (61.2:2.15) {nie};\draw (0,0) -- (32.4:2.0);\draw (0,0) -- (-32.4:2.0);\draw (0,0) -- (-129.6:2.0);\draw (0,0) circle (2.0); \fill (0,0) circle (1.3pt);\draw[line width=0.4pt] (0:1.40) -- (0:2.40);\draw[line width=0.4pt] ($(0:2.40)+(0,-0.00)$) -- ++(1.8,0);\draw[line width=0.4pt] (-81:1.40) -- (-81:2.40);\draw[line width=0.4pt] ($(-81:2.40)+(0,-0.00)$) -- ++(1.8,0);\draw[line width=0.4pt] (-199.8:1.40) -- (-199.8:2.40);\draw[line width=0.4pt] ($(-199.8:2.40)+(0,-0.00)$) -- ++(-1.8,0);\end{tikzpicture}\par
 \pfzwfrage{Berechne 16 \% von 360°.}
 \rechenraster{2}
 \end{pfnr}
-\begin{pfnr}{P10 ’24}{\llap{\textasteriskcentered\,}53.}{3 BE}
+\begin{pfnr}{P10 ’24}{\llap{\textasteriskcentered\,}54.}{3 BE}
 Familie Becker verbraucht am Tag etwa 508 Liter Leitungswasser: 1 Trinken und Kochen 12 l, 2 Körperpflege 256 l, 3 Toilettenspülung 136 l, 4 Wäsche waschen 60 l, 5 Gartenpflege 16 l, 6 Sonstiges 28 l. Das Kreisdiagramm zeigt diese Anteile; beschriftet sind nur „1 Trinken und Kochen“ und „5 Gartenpflege“. Beschrifte den Sektor für „Wäsche waschen“. Berechne den Mittelpunktswinkel für den Anteil „Trinken und Kochen“ am gesamten Verbrauch.
 \par\smallskip\noindent \begin{tikzpicture}[line width=0.6pt,baseline=(current bounding box.north)]\draw (0,0) -- (90:2.0);\draw (0,0) -- (-91.4:2.0);\draw (0,0) -- (-111.2:2.0);\fill[black!25] (0,0) -- (-165:2.0) arc (-165:-153.7:2.0) -- cycle;\draw (0,0) -- (-153.7:2.0);\node[font=\small,anchor=20.65] at (-159.35:2.15) {5 Gartenpflege};\draw (0,0) -- (-165:2.0);\fill[black!25] (0,0) -- (-269.9:2.0) arc (-269.9:-261.4:2.0) -- cycle;\draw (0,0) -- (-261.4:2.0);\node[font=\small,anchor=274.35] at (-265.65:2.15) {1 Trinken und Kochen};\draw (0,0) circle (2.0); \fill (0,0) circle (1.3pt);\draw[line width=0.4pt] (-0.7:1.40) -- (-0.7:2.40);\draw[line width=0.4pt] ($(-0.7:2.40)+(0,-0.00)$) -- ++(1.8,0);\draw[line width=0.4pt] (-101.3:1.40) -- (-101.3:2.40);\draw[line width=0.4pt] ($(-101.3:2.40)+(0,-0.00)$) -- ++(-1.8,0);\draw[line width=0.4pt] (-132.45:1.40) -- (-132.45:2.40);\draw[line width=0.4pt] ($(-132.45:2.40)+(0,-0.00)$) -- ++(-1.8,0);\draw[line width=0.4pt] (-213.2:1.40) -- (-213.2:2.40);\draw[line width=0.4pt] ($(-213.2:2.40)+(0,-0.00)$) -- ++(-1.8,0);\end{tikzpicture}\par
 \pfzwfrage{Berechne den Winkel für 60 l.}
 \rechenraster{2}
 \end{pfnr}
-\begin{pfnr}{P10 ’17}{54.}{3 BE}
+\begin{pfnr}{P10 ’17}{55.}{3 BE}
 Die Tabelle zeigt, als wievieltes Kind ihrer Mutter die Kinder des Jahrgangs 2013 in Deutschland zur Welt kamen (Anteil in Prozent): erstes Kind 49,4 \%, zweites Kind 34,4 \%, drittes Kind 11,2 \%, viertes oder weiteres Kind 5,0 \%. Im Kreisdiagramm ist einer dieser Anteile grau gefärbt. Schreib an den grauen Sektor, zu welchem Anteil er gehört. Berechne, wie groß der Mittelpunktswinkel für „drittes Kind“ sein muss. Zeichne diesen Sektor in den Kreis ein und beschrifte ihn.
 \par\smallskip\noindent \begin{tikzpicture}[line width=0.6pt,baseline=(current bounding box.north)]\fill[black!25] (0,0) -- (-180:2.0) arc (-180:-162:2.0) -- cycle;\draw (0,0) -- (-180:2.0);\draw (0,0) circle (2.0); \fill (0,0) circle (1.3pt);\draw[line width=0.4pt] (-171:1.40) -- (-171:2.40);\draw[line width=0.4pt] ($(-171:2.40)+(0,-0.00)$) -- ++(-1.8,0);\draw[line width=0.4pt] ($(-171:2.40)+(0,-0.55)$) -- ++(-1.8,0);\draw[line width=0.4pt] ($(-171:2.40)+(0,-1.10)$) -- ++(-1.8,0);\end{tikzpicture}\par
 \rechenraster{2}
 \end{pfnr}
 \pfstufekopf[sergnzen]{ergänzen}{in 2 der letzten 5 Prüfungen}
 \pfgruppe{}
-\begin{pfnr}{eigene Aufgabe}{55.}{}
+\begin{pfnr}{eigene Aufgabe}{56.}{}
 Die y-Achse (senkrechte Achse) eines Säulendiagramms ist mit $0$, $20$, $40$, $60$, $80$ beschriftet. Kreuze an, ob die Achse bei null beginnt. Wenn nicht, trage den Startwert ein.
 \pfkreuzzeile{ja, bei null}\pfkreuzzeile{nein, Startwert}
-\fusshilfe{\mbox{55:~ja, bei null}}
+\fusshilfe{\mbox{56:~ja, bei null}}
 \end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{56.}{}
+\begin{pfnr}{eigene Aufgabe}{57.}{}
 Sieh dir die y-Achse des Säulendiagramms an. Wie viel ist eine Hilfslinie wert? Gib nur diesen Wert an.
 \par\smallskip\noindent \saeulenab[ymax=2,ystep=0.5,yfein=0.1,ylabel=Länge in m]{A/1.3,B/0.7,C/1.8}\par
 \par\noindent \leerfeld[je]  Linie\par
 \rechenraster{1}
-\fusshilfe{\mbox{56:~$0{,}1$ je Linie}}
+\fusshilfe{\mbox{57:~$0{,}1$ je Linie}}
 \end{pfnr}
 \pfgruppe{}
-\begin{pfnr}{eigene Aufgabe}{57.}{}
+\begin{pfnr}{eigene Aufgabe}{58.}{}
 Am Donnerstag kamen $140$ Besucher. Zeichne dafür die Säule in das Säulendiagramm ein.
 \par\smallskip\noindent \saeulenab[ymax=200,ystep=50,yfein=10,ylabel=Besucher]{Mo/120,Di/90,Mi/160,Do/,Fr/150}\par
 \rechenraster{1}
-\fusshilfe{\mbox{57:~Säule Do bis $140$}}
+\fusshilfe{\mbox{58:~Säule Do bis $140$}}
 \end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{58.}{}
+\begin{pfnr}{eigene Aufgabe}{59.}{}
 Lies im Säulendiagramm ab, wie viele Besucher am Dienstag kamen.
 \par\smallskip\noindent \saeulenab[ymax=80,ystep=10,yfein=10,ylabel=Besucher]{Mo/30,Di/40,Mi/70,Do/50}\par
 \par\noindent \leerfeld[Besucher] \par
-\fusshilfe{\mbox{58:~$40$ Besucher}}
+\fusshilfe{\mbox{59:~$40$ Besucher}}
 \end{pfnr}
 \pfgruppe{}
-\begin{pfnr}{eigene Aufgabe}{59.}{}
+\begin{pfnr}{eigene Aufgabe}{60.}{}
 An der y-Achse des Säulendiagramms stehen keine Zahlen. Die Säule A ist $6$ Kästchen hoch und zeigt $240$. Wie viel ist ein Kästchen wert?
 \par\smallskip\noindent \saeulenab[ymax=400,ystep=40,yfein=40,ylabel=Anzahl,ohnezahlen]{A/240,B/320,C/120}\par
 \par\noindent \leerfeld[je]  Kästchen\par
 \rechenraster{1}
-\fusshilfe{\mbox{59:~$40$ je Kästchen}}
+\fusshilfe{\mbox{60:~$40$ je Kästchen}}
 \end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{60.}{}
+\begin{pfnr}{eigene Aufgabe}{61.}{}
 So kommen Kinder zur Schule: Rad $18$, Bus $24$, Auto $6$, zu Fuß $12$. Wähle eine passende Einteilung der y-Achse. Der größte Wert muss hineinpassen. Zeichne dann das Säulendiagramm.
 \par\smallskip\noindent \saeulen{Rad/,Bus/,Auto/,zu Fuß/}{30}{6}{Kinder}\par
 \rechenraster{1}
-\fusshilfe{\mbox{60:~Säulen $18$, $24$, $6$, $12$}}
+\fusshilfe{\mbox{61:~Säulen $18$, $24$, $6$, $12$}}
 \end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{61.}{}
+\begin{pfnr}{eigene Aufgabe}{62.}{}
 Die Temperaturen der Monate in °C sind: Jan $1$, Feb $3$, Mär $7$, Apr $12$, Mai $16$. Zeichne den Verlauf als Liniendiagramm.
 \par\smallskip\noindent \liniendia[ymax=20,ystep=5,yfein=1,ylabel=Temperatur in $^\circ$C]{Jan/,Feb/,Mär/,Apr/,Mai/}\par
 \rechenraster{1}
 \end{pfnr}
-\begin{pfnr}{P10 ’20}{62.}{1 BE}
+\begin{pfnr}{P10 ’20}{63.}{1 BE}
 Ein Schwimmbad zählt in der ersten Woche der Sommerferien jeden Tag seine Besucher. Am Donnerstag kamen 180 Besucher. Im Balkendiagramm fehlt der Balken für Donnerstag noch. Zeichne im Diagramm den Balken für Donnerstag ein.
 \par\smallskip\noindent \begin{tikzpicture}\begin{axis}[xmin=0,xmax=400,xtick distance=100,tick label style={font=\small},xticklabel style={/pgf/number format/use comma,/pgf/number format/1000 sep={\,},/pgf/number format/fixed,/pgf/number format/precision=0},xmajorgrids,grid style={mbgitter},ytick={0,1,2,3,4,5,6},yticklabels={{Mo},{Di},{Mi},{Do},{Fr},{Sa},{So}},ymin=-0.5,ymax=6.5,minor x tick num=1,xminorgrids,bar width=4mm,xtick pos=bottom,ytick pos=left,xbar,y dir=reverse,width=11cm,height=6.8cm,xlabel={Anzahl der Besucher}]\addplot[fill=mbkasten,draw=black] coordinates {(170,0) (130,1) (210,2) (190,4) (240,5) (280,6)};\end{axis}\end{tikzpicture}\par
 \rechenraster{1}
-\fusshilfe{\mbox{62:~Balken bei Do bis 180}}
+\fusshilfe{\mbox{63:~Balken bei Do bis 180}}
 \end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{63.}{}
+\begin{pfnr}{eigene Aufgabe}{64.}{}
 Ein Verein hat diese Mitgliederzahlen: Fußball $340$, Handball $280$, Tennis $120$, Turnen $200$. Welche Sportart zeigt die Säule mit dem Fragezeichen? Zeichne auch die Säule für Tennis ein.
 \par\smallskip\noindent \saeulenab[ymax=400,ystep=100,yfein=20,ylabel=Mitglieder]{Fußball/340,?/280,Tennis/,Turnen/200}\par
 \rechenraster{1}
-\fusshilfe{\mbox{63:~280; $120$}}
+\fusshilfe{\mbox{64:~280; $120$}}
 \end{pfnr}
-\begin{pfnr}{P10 ’18}{64.}{2 BE}
+\begin{pfnr}{P10 ’18}{65.}{2 BE}
 1000 Jugendliche haben ihr Lieblingsessen genannt: Schnitzel 80, Pizza 90, Kartoffelgerichte 160, Gemüsegerichte 160, Fischgerichte 110; die Zahlen für Pasta und Salat fehlen noch. Die fünf bekannten Zahlen sind in einem Balkendiagramm dargestellt. Die Achse „Anzahl“ hat aber noch keine Einteilung, und die Balken sind nur mit A bis E bezeichnet. Trag an der Achse eine passende Einteilung ein. Schreib zu jedem Balken das passende Gericht.
 \par\smallskip\noindent \begin{tikzpicture}[x=0.45cm,y=0.45cm]\draw[mbgitter,line width=0.3pt,step=1] (0,0) grid (18,11);\draw[line width=0.7pt] (0,0) -- (0,11);\draw[line width=0.7pt,->] (0,0) -- (11,0);\fill[mbkasten,draw=black] (0,8.60) rectangle (5.5,9.40);\node[left,font=\small] at (0,9) {A};\draw[line width=0.4pt] (11,8.6) -- (17,8.6);\fill[mbkasten,draw=black] (0,6.60) rectangle (4.0,7.40);\node[left,font=\small] at (0,7) {B};\draw[line width=0.4pt] (11,6.6) -- (17,6.6);\fill[mbkasten,draw=black] (0,4.60) rectangle (4.5,5.40);\node[left,font=\small] at (0,5) {C};\draw[line width=0.4pt] (11,4.6) -- (17,4.6);\fill[mbkasten,draw=black] (0,2.60) rectangle (8.0,3.40);\node[left,font=\small] at (0,3) {D};\draw[line width=0.4pt] (11,2.6) -- (17,2.6);\fill[mbkasten,draw=black] (0,0.60) rectangle (8.0,1.40);\node[left,font=\small] at (0,1) {E};\draw[line width=0.4pt] (11,0.6) -- (17,0.6);\end{tikzpicture}\par
 \pfzwfrage{Gib an, welche beiden Gerichte am häufigsten genannt wurden.}
 \pfzwfrage{Berechne, wie viele Jugendliche ein Kästchen darstellt.}
 \rechenraster{2}
 \end{pfnr}
-\begin{pfnr}{P10 ’26}{65.}{1 BE}
-Eine Tankstelle hat eine Woche lang jeden Tag um 18 Uhr den Benzinpreis notiert. Timo hat die Preise aus der Tabelle in ein Säulendiagramm übertragen. Die Säule für Sonntag fehlt noch. Zeichne sie ein.
-\par\smallskip\noindent \begin{tikzpicture}\begin{axis}[ymin=1.75,ymax=1.85,ytick distance=0.02,tick label style={font=\small},xtick pos=bottom,ytick pos=left,yticklabel style={/pgf/number format/use comma,/pgf/number format/1000 sep={\,},/pgf/number format/fixed,/pgf/number format/precision=2},ymajorgrids,grid style={mbgitter},xtick={0,1,2,3,4,5,6},xticklabels={{Mo},{Di},{Mi},{Do},{Fr},{Sa},{So}},xmin=-0.5,xmax=6.5,bar width=7mm,minor y tick num=1,yminorgrids,ybar,width=10.2cm,height=5.2cm,ylabel={Benzinpreis in € pro Liter},ylabel style={font=\small}]\addplot[fill=mbkasten,draw=black] coordinates {(0,1.77) (1,1.78) (2,1.77) (3,1.79) (4,1.84) (5,1.82)};\end{axis}\end{tikzpicture}\par
-\rechenraster{1}
-\fusshilfe{\mbox{65:~Säule So bis 1,85 (höchste Säule)}}
+\begin{pfnr}{P10 ’23}{66.}{3 BE}
+In einem Säulendiagramm sind zwei Werte aus der Tabelle schon als Säulen gezeichnet; die erste Säule gehört zu Spanisch. Trag an der y-Achse eine passende Einteilung ein. Schreib unter die zweite Säule, zu welcher Sprache sie gehört. Zeichne die Säule für Arabisch ein.
+\par\smallskip\noindent \begin{tikzpicture}[x=0.45cm,y=0.45cm]\draw[mbgitter,line width=0.3pt] (0,0) grid (16,14);\draw[line width=0.7pt,->] (0,0) -- (0,14.6) node[above,font=\small] {Anzahl in Mio.};\draw[line width=0.7pt,->] (0,0) -- (16.6,0) node[right,font=\small] {Sprache};\fill[mbkasten,draw=black] (2,0) rectangle (4,7.8);\node[below=2pt,font=\small] at (3,0) {Spanisch};\fill[mbkasten,draw=black] (7,0) rectangle (9,10.5);\node[below=2pt,font=\small] at (8,0) {\leerzelle};\node[below=2pt,font=\small] at (13,0) {Arabisch};\end{tikzpicture}\par
+\pfzwfrage{Zähle, wie viele Kästchen hoch die Säule für Spanisch ist.}
+\rechenraster{3}
 \end{pfnr}
 \pfstufekopf[saussageprfen]{Aussage prüfen}{in 1 der letzten 5 Prüfungen}
 \pfgruppe{}
-\begin{pfnr}{eigene Aufgabe}{66.}{}
+\begin{pfnr}{eigene Aufgabe}{67.}{}
 Die y-Achse eines Säulendiagramms ist mit $0$, $50$, $100$, $150$ beschriftet. Kreuze an, wo sie beginnt.
 \pfkreuzzeile{bei null}\pfkreuzzeile{nicht bei null}
-\fusshilfe{\mbox{66:~bei null}}
+\fusshilfe{\mbox{67:~bei null}}
 \end{pfnr}
 \pfgruppe{}
-\begin{pfnr}{eigene Aufgabe}{67.}{}
+\begin{pfnr}{eigene Aufgabe}{68.}{}
 Mia sagt: „Im März wurden mehr als $60$ Bücher ausgeliehen.“ Begründe mit dem Säulendiagramm, ob Mia recht hat.
 \par\smallskip\noindent \saeulenab[ymax=100,ystep=20,yfein=5,ylabel=Bücher]{Jan/45,Feb/75,Mär/60,Apr/85}\par
-\fusshilfe{\mbox{67:~Nein}}
+\fusshilfe{\mbox{68:~Nein}}
 \end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{68.}{}
+\begin{pfnr}{eigene Aufgabe}{69.}{}
 Emma sagt: „Der Preis ist von Dienstag auf Mittwoch um mehr als $20$ Cent gestiegen.“ Begründe mit dem Säulendiagramm, ob Emma recht hat.
 \par\smallskip\noindent \saeulenab[ymax=2,ystep=0.5,yfein=0.05,ylabel=Preis in €]{Mo/1.55,Di/1.6,Mi/1.75,Do/1.7}\par
 \rechenraster{1}
-\fusshilfe{\mbox{68:~Nein}}
+\fusshilfe{\mbox{69:~Nein}}
 \end{pfnr}
-\begin{pfnr}{P10 ’19}{\llap{\textasteriskcentered\,}69.}{2 BE}
+\begin{pfnr}{P10 ’19}{\llap{\textasteriskcentered\,}70.}{2 BE}
 2015 erschien ein Zeitungsartikel mit der Überschrift „Bücherlesen bald out?“. Darin heißt es: Die Buchhändler klagen, dass jedes Jahr dramatisch weniger Jugendliche Bücher lesen. Man fürchte, dass schon bald kein einziger Jugendlicher mehr zu einem Buch greift. Neben dem Text steht das Säulendiagramm. Schüler einer 10. Klasse halten zwei Aussagen des Artikels für falsch. Nenne eine davon und berichtige sie.
 \par\smallskip\noindent \begin{tikzpicture}\begin{axis}[ymin=30,ymax=50,ytick distance=5,tick label style={font=\small},xtick pos=bottom,ytick pos=left,yticklabel style={/pgf/number format/use comma,/pgf/number format/1000 sep={\,},/pgf/number format/fixed,/pgf/number format/precision=0},ymajorgrids,grid style={mbgitter},xtick={0,1,2,3,4},xticklabels={{2011},{2012},{2013},{2014},{2015}},xmin=-0.5,xmax=4.5,bar width=7mm,ybar,width=8.0cm,height=5.2cm,ylabel={Bücher lesende Jugendliche in \%},ylabel style={font=\small}]\addplot[fill=mbkasten,draw=black] coordinates {(0,44) (1,42) (2,40) (3,39) (4,36)};\end{axis}\end{tikzpicture}\par
 \rechenraster{1}
 \end{pfnr}
-\begin{pfnr}{P10 ’22}{70.}{2 BE}
+\begin{pfnr}{P10 ’22}{71.}{2 BE}
 Von 2017 bis 2021 wurden jedes Jahr 1 200 Jugendliche gefragt, wie oft sie Bücher lesen. Das Säulendiagramm zeigt, wie viele von ihnen mehrmals pro Woche ein Buch lesen. Ben schaut auf das Diagramm und sagt: „Jedes Jahr lesen weniger Jugendliche Bücher. Von 2018 bis 2021 ist ihre Zahl um mehr als die Hälfte gesunken.“ Entscheide, ob Ben recht hat. Begründe deine Entscheidung.
 \par\smallskip\noindent \begin{tikzpicture}\begin{axis}[ybar,width=8.5cm,height=4.6cm,ymin=390,ymax=508.75,symbolic x coords={2017,2018,2019,2020,2021},xtick=data,enlarge x limits=0.08,bar width=6mm,ylabel={Anzahl},ylabel style={font=\small},tick label style={font=\small},nodes near coords,every node near coord/.append style={font=\scriptsize,/pgf/number format/.cd,use comma,1000 sep={}},ymajorgrids,grid style={mbgitter}]\addplot[fill=mbkasten,draw=black] coordinates {(2017,468.0) (2018,432.0) (2019,485.0) (2020,470.0) (2021,400.0)};\end{axis}\end{tikzpicture}\par
 \rechenraster{1}
 \end{pfnr}
-\begin{pfnr}{P10 ’18}{\llap{\textasteriskcentered\,}71.}{4 BE}
+\begin{pfnr}{P10 ’18}{\llap{\textasteriskcentered\,}72.}{4 BE}
 Frauen wurden gefragt, wie oft sie Fleisch oder Wurst essen. Das Säulendiagramm zeigt die Anteile der Antworten. Prüfe die beiden Aussagen zum Säulendiagramm. Kreuze jeweils an, ob sie richtig, falsch oder nicht entscheidbar ist, und begründe. Aussage 1:
 \par\smallskip\noindent \begingroup\renewcommand{\arraystretch}{1.5}\begin{tabular}{|p{5.5cm}|c|c|c|}\hline Aussage & richtig & falsch & nicht entscheidbar \\ \hline „Nicht einmal die Hälfte der Frauen isst 4- bis 6-mal pro Woche Fleisch oder Wurst.“ & $\square$ & $\square$ & $\square$ \\ \hline \multicolumn{4}{|l|}{\rule{0pt}{3.2ex}\footnotesize\color{mbgrau}Begründung:} \\ \hline „1- bis 3-mal pro Woche Fleisch oder Wurst isst jede 15. Frau.“ & $\square$ & $\square$ & $\square$ \\ \hline \multicolumn{4}{|l|}{\rule{0pt}{3.2ex}\footnotesize\color{mbgrau}Begründung:} \\ \hline\end{tabular}\endgroup\par
 \pfzwfrage{Vergleiche 55 \% mit der Hälfte.}
@@ -413,188 +421,204 @@ Frauen wurden gefragt, wie oft sie Fleisch oder Wurst essen. Das Säulendiagramm
 \rechenraster{2}
 \end{pfnr}
 \pfgruppe{}
-\begin{pfnr}{eigene Aufgabe}{72.}{}
-Laut einem Diagramm fahren $5\,\%$ der Schüler mit dem Roller. Mara sagt: „Jeder zwanzigste Schüler fährt Roller.“ Rechne nach und begründe, ob Mara recht hat.
-\rechenraster{1}
-\fusshilfe{\mbox{72:~die Aussage stimmt}}
-\end{pfnr}
 \begin{pfnr}{eigene Aufgabe}{73.}{}
-2022 kamen $240$ Besucher, 2023 kamen $320$ Besucher. Lina sagt: „2023 kamen um ein Drittel mehr Besucher als 2022.“ Rechne nach und begründe, ob Lina recht hat.
+Laut einem Diagramm fahren $5\,\%$ der Schüler mit dem Roller. Mara sagt: „Jeder zwanzigste Schüler fährt Roller.“ Rechne nach und begründe, ob Mara recht hat.
 \rechenraster{1}
 \fusshilfe{\mbox{73:~die Aussage stimmt}}
 \end{pfnr}
 \begin{pfnr}{eigene Aufgabe}{74.}{}
+2022 kamen $240$ Besucher, 2023 kamen $320$ Besucher. Lina sagt: „2023 kamen um ein Drittel mehr Besucher als 2022.“ Rechne nach und begründe, ob Lina recht hat.
+\rechenraster{1}
+\fusshilfe{\mbox{74:~die Aussage stimmt}}
+\end{pfnr}
+\begin{pfnr}{eigene Aufgabe}{75.}{}
 Ein Verein verliert seit vier Jahren jedes Jahr $20$ Mitglieder. Die Zahl sank von $400$ auf $320$. Ina sagt: „In $16$ Jahren hat der Verein keine Mitglieder mehr.“ Begründe, ob Ina recht hat.
 \rechenraster{1}
 \end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{75.}{2 BE}
+\begin{pfnr}{eigene Aufgabe}{76.}{2 BE}
 Jedes Jahr werden $900$ Jugendliche befragt, ob sie täglich Sport treiben. Das Säulendiagramm zeigt, wie viele es sind. Jemand behauptet: „Von Jahr zu Jahr treiben immer weniger Jugendliche täglich Sport. Von 2020 bis 2023 hat sich die Anzahl um mehr als die Hälfte verringert.“ Prüfe beide Teile der Behauptung und begründe.
 \par\smallskip\noindent \saeulenab[ymax=400,ystep=100,yfein=10,ylabel=Jugendliche]{2019/372,2020/348,2021/361,2022/330,2023/296}\par
 \rechenraster{1}
-\fusshilfe{\mbox{75:~$52$, weit unter der Hälfte}}
+\fusshilfe{\mbox{76:~$52$, weit unter der Hälfte}}
 \end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{76.}{}
+\begin{pfnr}{eigene Aufgabe}{77.}{}
 Eine Stadt zählt jedes Jahr die Fahrraddiebstähle: 2020 $410$, 2021 $380$, 2022 $395$, 2023 $350$. Die Zeitung schreibt: „Jedes Jahr gibt es weniger Diebstähle. 2030 gibt es keine mehr.“ Prüfe beide Teile der Aussage.
 \rechenraster{1}
 \end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{77.}{}
+\begin{pfnr}{eigene Aufgabe}{78.}{}
 Die y-Achse beginnt bei $70$. Am Montag ist der Wert $72$, am Dienstag $74$. Ein Schüler sagt: „Die Säule für Dienstag ist doppelt so hoch, der Wert hat sich verdoppelt.“ Um wie viel Prozent ist der Wert wirklich gestiegen?
 \rechenraster{1}
-\fusshilfe{\mbox{77:~$\tfrac{1}{36} \approx 2{,}8\,\%$}}
+\fusshilfe{\mbox{78:~$\tfrac{1}{36} \approx 2{,}8\,\%$}}
 \end{pfnr}
 \pfstufekopf[smedian]{Median}{in 1 der letzten 5 Prüfungen}
 \pfgruppe{}
-\begin{pfnr}{eigene Aufgabe}{78.}{}
+\begin{pfnr}{eigene Aufgabe}{79.}{}
 Die Punkte sind: $14$, $9$, $22$, $17$, $11$. Bestimme den Median.
 \rechenraster{1}
-\fusshilfe{\mbox{78:~$14$}}
+\fusshilfe{\mbox{79:~$14$}}
 \end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{79.}{}
+\begin{pfnr}{eigene Aufgabe}{80.}{}
 Die Punkte sind: $8$, $15$, $11$, $20$, $13$, $9$. Bestimme den Median.
 \rechenraster{1}
-\fusshilfe{\mbox{79:~$12$}}
+\fusshilfe{\mbox{80:~$12$}}
 \end{pfnr}
-\begin{pfnr}{P10 ’15}{80.}{1 BE}
+\begin{pfnr}{P10 ’15}{81.}{1 BE}
 Gib den Median (Zentralwert) dieser Messwerte an: 5 °C; 7 °C; 3 °C; 8 °C; 1 °C; 8 °C; 5 °C
 \rechenraster{1}
-\fusshilfe{\mbox{80:~5 °C}}
+\fusshilfe{\mbox{81:~5 °C}}
 \end{pfnr}
-\begin{pfnr}{P10 ’24}{81.}{2 BE}
+\begin{pfnr}{P10 ’24}{82.}{2 BE}
 Ermittle den Median (Zentralwert) dieser Datenreihe: 20 °C; 17 °C; 21 °C; 18 °C; 21 °C; 11 °C
 \pfzwfrage{Ordne die Werte der Größe nach.}
 \pfzwfrage{Berechne den Mittelwert der beiden mittleren Werte.}
 \rechenraster{2}
-\fusshilfe{\mbox{81:~19 °C}}
+\fusshilfe{\mbox{82:~19 °C}}
 \end{pfnr}
 \pfstufekopf[srckwrtsfehlenderwert]{rückwärts: fehlender Wert}{in 1 der letzten 5 Prüfungen}
 \pfgruppe{}
-\begin{pfnr}{P10 ’22}{82.}{1 BE}
+\begin{pfnr}{P10 ’22}{83.}{1 BE}
 In einer Woche lag die Temperatur im Durchschnitt bei 20 °C. Ergänze die fehlende Temperatur am Samstag.
 \par\smallskip\noindent \sachtabelle{lcccccc}{Mo & Di & Mi & Do & Fr & Sa & So}{21 °C & 20 °C & 19 °C & 22 °C & 20 °C & \leerzelle & 20 °C}\par
 \pfzwfrage{Berechne, wie groß die Summe aller sieben Temperaturen sein muss.}
 \rechenraster{2}
-\fusshilfe{\mbox{82:~18 °C}}
+\fusshilfe{\mbox{83:~18 °C}}
 \end{pfnr}
 \pfgruppe{}
-\begin{pfnr}{eigene Aufgabe}{83.}{}
+\begin{pfnr}{eigene Aufgabe}{84.}{}
 Die Tageswerte in °C sind: Mo $17$, Di $19$, Mi $16$, Do $21$, Fr $18$, Sa ?, So $15$. Der Durchschnitt der Woche ist $18$ °C. Gib den fehlenden Wert für Samstag an.
 \par\noindent Sa: \leerfeld[°C] \par
 \rechenraster{2}
-\fusshilfe{\mbox{83:~$20$ °C}}
+\fusshilfe{\mbox{84:~$20$ °C}}
 \end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{84.}{}
+\begin{pfnr}{eigene Aufgabe}{85.}{}
 Die Tabelle zeigt die Punkte von $50$ Prüflingen in Klassen. Berechne den Mittelwert aus den Klassenmitten. Ab $60$ Punkten hat man bestanden. Wie viel Prozent der Prüflinge haben bestanden?
 \par\smallskip\noindent \sachtabelle{lc}{Punkte & Anzahl}{$20 \le x < 40$ & 8 \\ $40 \le x < 60$ & 18 \\ $60 \le x < 80$ & 19 \\ $80 \le x < 100$ & 5}\par
 \rechenraster{2}
-\fusshilfe{\mbox{84:~24 von 50, das sind; $48\,\%$}}
+\fusshilfe{\mbox{85:~24 von 50, das sind; $48\,\%$}}
 \end{pfnr}
 \pfstufekopf[saussagenprfenauswirk]{Aussagen prüfen, Auswirkung erklären}{in 1 der letzten 5 Prüfungen}
 \pfgruppe{}
-\begin{pfnr}{eigene Aufgabe}{85.}{3 BE}
+\begin{pfnr}{eigene Aufgabe}{86.}{3 BE}
 Das Alter der Kinder einer Gruppe ist: $6$, $3$, $2$, $5$, $3$, $5$, $3$, $5$, $3$, $4$. Aussage 1 lautet: „Die Spannweite beträgt $4$ Jahre.“ Aussage 2 lautet: „Der Modalwert beträgt $5$ Jahre.“ Eine Aussage ist falsch. Kreuze sie an und berichtige sie.
 \pfkreuzzeile{Aussage 1}\pfkreuzzeile{Aussage 2}
-\fusshilfe{\mbox{85:~$4$}}
+\fusshilfe{\mbox{86:~$4$}}
 \end{pfnr}
 \pfgruppe{}
-\begin{pfnr}{eigene Aufgabe}{86.}{}
+\begin{pfnr}{eigene Aufgabe}{87.}{}
 Der Durchschnitt von fünf Werten ist $20$. Ein sechster Wert $32$ kommt dazu. Begründe ohne neue Rechnung, ob der Mittelwert steigt oder sinkt.
 \rechenraster{1}
 \end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{87.}{}
+\begin{pfnr}{eigene Aufgabe}{88.}{}
 Fünf Kinder bekommen so viel Taschengeld in €: $10$, $12$, $8$, $11$, $54$. Berechne Mittelwert und Median. Welcher Wert beschreibt das typische Taschengeld besser?
 \rechenraster{1}
-\fusshilfe{\mbox{87:~19; $11$}}
+\fusshilfe{\mbox{88:~19; $11$}}
 \end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{\llap{\textasteriskcentered\,}88.}{}
-Eine Theatergruppe hat $11$ Mitglieder. Ihr Alter in Jahren ist: $47$, $23$, $39$, $61$, $35$, $29$, $52$, $44$, $19$, $58$, $33$. a) Berechne das Durchschnittsalter. b) Die älteste und die jüngste Person verlassen die Gruppe. Wie wirkt sich das auf das Durchschnittsalter aus? Begründe.
+\begin{pfnr}{P10 ’25}{89.}{2 BE}
+In einer Kita-Gruppe sind die Kinder so alt (in Jahren): 5, 2, 1, 4, 2, 4, 2, 4, 2, 2. Eine der beiden Aussagen ist falsch: Kreuze die falsche Aussage an und berichtige sie.
+\par\smallskip\noindent \begingroup\renewcommand{\arraystretch}{1.5}\begin{tabular}{|p{7.8cm}|c|p{3.4cm}|}\hline Aussage & falsch & Korrektur \\ \hline Die Spannweite beträgt 4 Jahre. & $\square$ &  \\ \hline Der Modalwert beträgt 4 Jahre. & $\square$ &  \\ \hline\end{tabular}\endgroup\par
+\pfzwfrage{Zähle, wie oft jedes Alter vorkommt.}
 \rechenraster{2}
 \end{pfnr}
 \pfgruppe{}
-\begin{pfnr}{eigene Aufgabe}{89.}{}
+\begin{pfnr}{P10 ’25}{\llap{\textasteriskcentered\,}90.}{3 BE}
+In derselben Kita arbeiten 11 Erziehende. Sie sind so alt (in Jahren): 52, 57, 33, 44, 31, 30, 66, 58, 61, 41, 55. Bestimme das Durchschnittsalter der Erziehenden. Die älteste und die jüngste Person verlassen die Kita. Erkläre, wie sich dadurch das Durchschnittsalter verändert.
+\pfzwfrage{Berechne die Summe aller 11 Alter.}
+\rechenraster{3}
+\end{pfnr}
+\begin{pfnr}{eigene Aufgabe}{91.}{}
 Erkläre, warum ein einzelner sehr großer Wert den Mittelwert verschiebt, den Median aber kaum.
 \rechenraster{1}
 \end{pfnr}
 \pfstufekopf[sausprozentdarstellen]{aus Prozent darstellen}{in 1 der letzten 5 Prüfungen}
 \pfgruppe{}
-\begin{pfnr}{eigene Aufgabe}{90.}{}
+\begin{pfnr}{eigene Aufgabe}{92.}{}
 Zeichne die Anteile nacheinander in den Streifen und beschrifte sie: Rad $40\,\%$, Bus $30\,\%$, zu Fuß $30\,\%$.
 \par\smallskip\noindent \streifenleer[0]\par
-\fusshilfe{\mbox{90:~$4$ cm, $3$ cm, $3$ cm, beschriftet}}
+\fusshilfe{\mbox{92:~$4$ cm, $3$ cm, $3$ cm, beschriftet}}
 \end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{91.}{}
+\begin{pfnr}{eigene Aufgabe}{93.}{}
 Ein Sektor hat einen Mittelpunktswinkel von $72^\circ$. Wie viel Prozent des Kreises sind das?
 \par\noindent \leerfeld[\%] \par
 \rechenraster{1}
-\fusshilfe{\mbox{91:~$20\,\%$}}
+\fusshilfe{\mbox{93:~$20\,\%$}}
 \end{pfnr}
 \pfgruppe{}
-\begin{pfnr}{P10 ’18}{92.}{2 BE}
+\begin{pfnr}{P10 ’18}{94.}{2 BE}
 Frauen wurden gefragt, wie oft sie Fleisch oder Wurst essen. Das Säulendiagramm zeigt die Anteile der Antworten. Stelle die Anteile aus dem Säulendiagramm als Streifendiagramm dar. Der vorgezeichnete Streifen ist 10 cm lang.
 \par\smallskip\noindent \fbox{\parbox{0.9\linewidth}{\footnotesize\color{mbgrau}Abbildung im Original: leerer Streifen: 10 cm lang, 1,5 cm hoch, auf Karopapier}}\par
 \pfzwfrage{Gib an, wie viele Zentimeter des Streifens 10 \% entsprechen.}
 \rechenraster{2}
 \end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{93.}{}
+\begin{pfnr}{eigene Aufgabe}{95.}{}
 Ein Kiosk verkauft Eis: im Juni Vanille $40\,\%$, Schoko $35\,\%$, Erdbeere $25\,\%$; im August Vanille $30\,\%$, Schoko $35\,\%$, Erdbeere $35\,\%$. Vergleiche die beiden Streifen: Welcher Anteil blieb gleich, welche änderten sich und um wie viele Prozentpunkte?
 \rechenraster{1}
 \end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{\llap{\textasteriskcentered\,}94.}{}
-Ein Haushalt verbraucht in einem Jahr $3\,600$ kWh Strom. Die Teile in kWh sind: Heizung $1\,440$, Warmwasser $720$, Kühlen $540$, Kochen $360$, Sonstiges $360$, Licht $180$. Das Kreisdiagramm zeigt die sechs Anteile. Nur Heizung und Licht sind beschriftet. a) Beschrifte den Sektor „Kühlen“. b) Berechne den Mittelpunktswinkel für „Licht“.
-\par\smallskip\noindent \kreisdiagramm{Heizung/1440,/720,/540,/360,/360,Licht/180}\par
-\rechenraster{1}
-\fusshilfe{\mbox{94:~$18^\circ$}}
+\begin{pfnr}{P10 ’25}{96.}{3 BE}
+In derselben Kita arbeiten 11 Erziehende. Sie sind so alt (in Jahren): 52, 57, 33, 44, 31, 30, 66, 58, 61, 41, 55. Ermittle, wie viel Prozent der Erziehenden jünger als 50 Jahre sind. Stelle diesen Anteil in einem Kreisdiagramm dar.
+\par\smallskip\noindent \kreisleer[2.5]\par
+\pfzwfrage{Zähle die Erziehenden unter 50 Jahren.}
+\rechenraster{3}
 \end{pfnr}
 \pfstufekopf[sfalscheneindruckerkl]{falschen Eindruck erklären}{in 1 der letzten 5 Prüfungen}
 \pfgruppe{}
-\begin{pfnr}{eigene Aufgabe}{95.}{}
+\begin{pfnr}{eigene Aufgabe}{97.}{}
 Zwei Diagramme zeigen dieselben Werte $84$, $86$ und $88$. Im ersten beginnt die Achse bei $0$, im zweiten bei $82$. Erkläre, warum im zweiten Diagramm die dritte Säule dreimal so hoch wirkt wie die erste.
 \rechenraster{1}
 \end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{96.}{}
+\begin{pfnr}{eigene Aufgabe}{98.}{}
 Zwei Diagramme zeigen dieselben Werte $52$ und $55$. Im ersten geht die y-Achse von $0$ bis $60$, im zweiten von $50$ bis $56$. Erkläre, in welchem Diagramm der Unterschied größer wirkt.
 \rechenraster{1}
 \end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{97.}{}
+\begin{pfnr}{eigene Aufgabe}{\llap{\textasteriskcentered\,}99.}{}
+Ein Diagramm zeigt die Temperatur an vier Tagen. Die y-Achse beginnt bei $18$ °C. Jemand sagt: „Am Mittwoch ($21$ °C) war es dreimal so warm wie am Montag ($19$ °C), das sieht man an den Säulen.“ Erkläre, wie dieser falsche Eindruck entsteht.
+\rechenraster{1}
+\fusshilfe{\mbox{99:~$2$ Grad, gut $10\,\%$}}
+\end{pfnr}
+\begin{pfnr}{eigene Aufgabe}{100.}{}
 Ein Diagramm zeigt die Werte $1\,020$, $1\,040$ und $1\,060$. Seine Achse beginnt bei $1\,000$. Skizziere das Diagramm mit einer Achse ab $0$. Vergleiche, wie die beiden Diagramme wirken.
 \par\smallskip\noindent \saeulen{2021/,2022/,2023/}{1200}{200}{Anzahl}\par
 \rechenraster{1}
 \end{pfnr}
 \pfgruppe{}
-\begin{pfnr}{eigene Aufgabe}{98.}{}
+\begin{pfnr}{eigene Aufgabe}{101.}{}
 Erkläre, warum die y-Achse eines Säulendiagramms bei $0$ beginnen sollte.
 \rechenraster{1}
 \end{pfnr}
-\begin{pfnr}{eigene Aufgabe}{99.}{}
+\begin{pfnr}{eigene Aufgabe}{102.}{}
 Die y-Achse beginnt bei $90$. Die Werte sind $92$ und $96$. Tim sagt: „Die Säule ist doppelt so hoch, also hat sich der Wert verdoppelt.“ Finde den Fehler und schreibe die Aussage richtig.
 \rechenraster{1}
-\fusshilfe{\mbox{99:~$4$, gut $4\,\%$}}
+\fusshilfe{\mbox{102:~$4$, gut $4\,\%$}}
 \end{pfnr}
-\begin{pfnr}{P10 ’26}{\llap{\textasteriskcentered\,}100.}{1 BE}
-Eine Tankstelle hat eine Woche lang jeden Tag um 18 Uhr den Benzinpreis notiert. Timo schreibt in einer Bewertung der Tankstelle: „Mein Diagramm beweist: Von Donnerstag auf Freitag ist der Preis auf mehr als das Doppelte gestiegen.“ Begründe, wodurch Timos Diagramm diesen falschen Eindruck erweckt.
-\par\smallskip\noindent \sachtabelle{lrrrrrrr}{Wochentag & Mo & Di & Mi & Do & Fr & Sa & So}{Benzinpreis in € pro Liter & 1,77 & 1,78 & 1,77 & 1,79 & 1,84 & 1,82 & 1,85}\par{\footnotesize\color{mbgrau}Säule So: 1,85}\par
-\rechenraster{1}
-\end{pfnr}
-\begin{pfnr}{P10 ’14}{\llap{\textasteriskcentered\,}101.}{2 BE}
+\begin{pfnr}{P10 ’14}{\llap{\textasteriskcentered\,}103.}{2 BE}
 Eine andere Bank zahlt nur 0,25 \% Zinsen im Jahr. Für ihre Werbung „Tolle Zinsen!“ zeichnet sie ein Säulendiagramm, in dem das Guthaben kräftig zu wachsen scheint. Erkläre, mit welchem Trick die Grafik die Entwicklung des Guthabens besser aussehen lässt, als sie ist.
 \par\smallskip\noindent \begin{tikzpicture}\begin{axis}[ymin=1060,ymax=1072,ytick distance=2,tick label style={font=\small},xtick pos=bottom,ytick pos=left,yticklabel style={/pgf/number format/use comma,/pgf/number format/1000 sep={\,},/pgf/number format/fixed,/pgf/number format/precision=1},ymajorgrids,grid style={mbgitter},xtick={0,1,2},xticklabels={{nach einem Jahr},{nach zwei Jahren},{nach drei Jahren}},xmin=-0.5,xmax=2.5,bar width=7mm,ybar,width=8.2cm,height=5.2cm,ylabel={Guthaben in Euro},ylabel style={font=\small},xticklabel style={text width=2cm,align=center,font=\scriptsize}]\addplot[fill=mbkasten,draw=black] coordinates {(0,1064) (1,1067) (2,1069.5)};\end{axis}\end{tikzpicture}\par
 \rechenraster{1}
 \end{pfnr}
-\pfpruefstein{P10 ’25}
+\pfpruefstein{P10 ’26}
 \begin{pfnr}{}{}{}
-In derselben Kita arbeiten 11 Erziehende. Sie sind so alt (in Jahren): 52, 57, 33, 44, 31, 30, 66, 58, 61, 41, 55.
+Eine Tankstelle hat eine Woche lang jeden Tag um 18 Uhr den Benzinpreis notiert.
+\par\smallskip\noindent \sachtabelle{lrrrrrrr}{Wochentag & Mo & Di & Mi & Do & Fr & Sa & So}{Benzinpreis in € pro Liter & 1,77 & 1,78 & 1,77 & 1,79 & 1,84 & 1,82 & 1,85}\par
 \end{pfnr}
-\begin{pfnr}{}{a)}{2 BE}
-In einer Kita-Gruppe sind die Kinder so alt (in Jahren): 5, 2, 1, 4, 2, 4, 2, 4, 2, 2. Eine der beiden Aussagen ist falsch: Kreuze die falsche Aussage an und berichtige sie.
-\par\smallskip\noindent \begingroup\renewcommand{\arraystretch}{1.5}\begin{tabular}{|p{7.8cm}|c|p{3.4cm}|}\hline Aussage & falsch & Korrektur \\ \hline Die Spannweite beträgt 4 Jahre. & $\square$ &  \\ \hline Der Modalwert beträgt 4 Jahre. & $\square$ &  \\ \hline\end{tabular}\endgroup\par
+\begin{pfnr}{}{a)}{1 BE}
+Gib die Spannweite der Benzinpreise in € pro Liter an.
 \rechenplatz{3}
 \end{pfnr}
-\begin{pfnr}{}{b)}{3 BE}
-Ermittle, wie viel Prozent der Erziehenden jünger als 50 Jahre sind. Stelle diesen Anteil in einem Kreisdiagramm dar.
-\par\smallskip\noindent \kreisleer[2.5]\par
+\begin{pfnr}{}{b)}{2 BE}
+Ein Kunde meint: Von Montag bis Freitag hat ein Liter Benzin an dieser Tankstelle im Durchschnitt weniger als 1,80 € gekostet. Zeige mit einer Rechnung, dass er recht hat.
 \rechenplatz{3}
 \end{pfnr}
-\begin{pfnr}{}{*c)}{3 BE}
-Bestimme das Durchschnittsalter der Erziehenden. Die älteste und die jüngste Person verlassen die Kita. Erkläre, wie sich dadurch das Durchschnittsalter verändert.
+\begin{pfnr}{}{c)}{2 BE}
+An einer Tankstelle wurde eine Woche lang täglich um 18 Uhr der Benzinpreis notiert (€ pro Liter): Mo 1,77, Di 1,78, Mi 1,77, Do 1,79, Fr 1,84, Sa 1,82, So 1,85. Berechne die prozentuale Preissteigerung von Donnerstag auf Freitag.
+\rechenplatz{3}
+\end{pfnr}
+\begin{pfnr}{}{d)}{1 BE}
+Timo hat die Preise aus der Tabelle in ein Säulendiagramm übertragen. Die Säule für Sonntag fehlt noch. Zeichne sie ein.
+\par\smallskip\noindent \begin{tikzpicture}\begin{axis}[ymin=1.75,ymax=1.85,ytick distance=0.02,tick label style={font=\small},xtick pos=bottom,ytick pos=left,yticklabel style={/pgf/number format/use comma,/pgf/number format/1000 sep={\,},/pgf/number format/fixed,/pgf/number format/precision=2},ymajorgrids,grid style={mbgitter},xtick={0,1,2,3,4,5,6},xticklabels={{Mo},{Di},{Mi},{Do},{Fr},{Sa},{So}},xmin=-0.5,xmax=6.5,bar width=7mm,minor y tick num=1,yminorgrids,ybar,width=10.2cm,height=5.2cm,ylabel={Benzinpreis in € pro Liter},ylabel style={font=\small}]\addplot[fill=mbkasten,draw=black] coordinates {(0,1.77) (1,1.78) (2,1.77) (3,1.79) (4,1.84) (5,1.82)};\end{axis}\end{tikzpicture}\par
+\rechenplatz{3}
+\end{pfnr}
+\begin{pfnr}{}{*e)}{1 BE}
+Timo schreibt in einer Bewertung der Tankstelle: „Mein Diagramm beweist: Von Donnerstag auf Freitag ist der Preis auf mehr als das Doppelte gestiegen.“ Begründe, wodurch Timos Diagramm diesen falschen Eindruck erweckt.
+\par\smallskip\noindent \sachtabelle{lrrrrrrr}{Wochentag & Mo & Di & Mi & Do & Fr & Sa & So}{Benzinpreis in € pro Liter & 1,77 & 1,78 & 1,77 & 1,79 & 1,84 & 1,82 & 1,85}\par{\footnotesize\color{mbgrau}Säule So: 1,85}\par
 \rechenplatz{3}
 \end{pfnr}
 \end{document}

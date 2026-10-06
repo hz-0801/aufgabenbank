@@ -62,7 +62,7 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Aussagen prüfen | 63 | Vergleich | 2 | 1 | 1 | 3 | 2017-OS-K2b | Von allen Kindern, die 2013 in Deutschland zur Welt kamen, w |
 | Aussagen prüfen | 64 | Vergleich | 2 | 2 | 1 | 3 | 2025-OS-K4b | Eine Rampe für Rollstühle darf höchstens 6 % Steigung haben, |
 | Prozent aus einer berechneten Fläche | 65 | Sachaufgabe | 2 | 4 | 1 | 3 | eigene Aufgabe | Aus einer quadratischen Korkplatte mit 40 cm Seitenlänge wer |
-| Prozent aus einer berechneten Fläche | 66 | Vergleich | 2 | 4 | 1 | 3 | 2023-OS-K5c | Für Konservendosen werden kreisrunde Deckel mit dem Radius 4 |
+| Prozent aus einer berechneten Fläche | 66 | Vergleich | 2 | 4 | 1 | 3 | 2023-OS-K5c | Eine Konservendose hat die Form eines Zylinders mit dem Radi |
 | Zinsen und Zinssatz | 67 | Vorstufe | 0 | 1 | 1 | 0 | eigene Aufgabe | Lena legt 850€ für ein Jahr auf ein Sparbuch. Die Bank zahlt |
 | Zinsen und Zinssatz | 68 | Vorstufe | 0 | 1 | 1 | 0 | eigene Aufgabe | Auf einem Konto liegen 2400€. Nach einem Jahr gab es 48€ Zin |
 | Zinsen und Zinssatz | 69 | Sachaufgabe | 0 | 1 | 1 | 1 | eigene Aufgabe | Auf einem Sparbuch liegen 300€. Die Bank zahlt 2% Zinsen im  |

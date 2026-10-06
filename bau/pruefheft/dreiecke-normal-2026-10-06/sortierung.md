@@ -35,7 +35,7 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Kathete oder Hypotenuse direkt | 40 | Sachaufgabe | 2 | 2 | 1 | 3 | 2016-OS-K7b | An einem Fluss liegen der Bioladen C, eine Brücke D und eine |
 | Kathete oder Hypotenuse direkt | 41 | Sachaufgabe | 2 | 2 | 1 | 3 | 2019-OS-K3a | Beim Fußballtraining spielen sich drei Kinder den Ball zu: A |
 | Kathete oder Hypotenuse direkt | 42 | Sachaufgabe | 2 | 2 | 1 | 3 | 2024-OS-K6a | Eine Seilbahn führt vom Ort B im Tal zum Ort A auf einem Ber |
-| Kathete oder Hypotenuse direkt | 43 | Sachaufgabe | 2 | 3 | 1 | 3 | 2022-OS-K2c | Ein Becher hat die Form eines Zylinders ohne Deckel; er ist  |
+| Kathete oder Hypotenuse direkt | 43 | Sachaufgabe | 2 | 3 | 1 | 3 | 2022-OS-K2c | Ein Becher hat die Form eines Zylinders ohne Deckel. Er ist  |
 | Kathete oder Hypotenuse direkt | 44 | rechnen | 1 | 1 | 1 | 2 | eigene Aufgabe | In einem rechtwinkligen Dreieck sind a = 2,5 m und b = 6 m d |
 | Kathete oder Hypotenuse direkt | 45 | Vergleich | 2 | 2 | 1 | 2 | eigene Aufgabe | Ein Bildschirm ist 111 cm breit und 62 cm hoch. Im Laden ste |
 | Kathete oder Hypotenuse direkt | 46 | Vergleich | 2 | 2 | 1 | 3 | 2022-OS-K5a | Gegeben ist ein Dreieck ABC, das nicht rechtwinklig ist. Die |
@@ -57,7 +57,7 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Dreieck erst in Figur oder Körper finden | 62 | Sachaufgabe | 0 | 2 | 1 | 2 | eigene Aufgabe | Die Figur zeigt ein gleichschenkliges Trapez. Die parallelen |
 | Dreieck erst in Figur oder Körper finden | 63 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | Ein Turm besteht aus einem Zylinder und einem Kegeldach. Der |
 | Dreieck erst in Figur oder Körper finden | 64 | Sachaufgabe | 2 | 1 | 1 | 2 | eigene Aufgabe | Die Diagonale eines Quadrats ist 10 cm lang. Berechne die Se |
-| Dreieck erst in Figur oder Körper finden | 65 | Sachaufgabe | 2 | 3 | 1 | 3 | 2026-FOR-K2c | Ein Turm besteht aus einem Zylinder (Höhe 25,0 m, Radius 4,7 |
+| Dreieck erst in Figur oder Körper finden | 65 | Sachaufgabe | 2 | 3 | 1 | 3 | 2026-FOR-K2c | Ein Turm besteht unten aus einem Zylinder, sein Dach ist ein |
 | Dreieck erst in Figur oder Körper finden | 66 | Sachaufgabe | 2 | 3 | 2 | 3 | 2025-OS-K4a | Familie Yücel baut an die Stufe vor der Haustür eine feste R |
 | Dreieck erst in Figur oder Körper finden | 67 | Sachaufgabe | 2 | 4 | 2 | 3 | 2019-OS-K2d | Im Koordinatensystem bilden die Punkte A(0/-2), B(2/-2) und  |
 | Dreieck erst in Figur oder Körper finden | 68 | Vergleich | 1 | 2 | 1 | 3 | 2018-OS-K6d | Ein runder Turm mit 6,4 m Durchmesser hat ein Dach in Form e |
@@ -153,8 +153,8 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Winkelsumme | 158 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Satteldach ist im Querschnitt ein gleichschenkliges Drei |
 | Winkelsumme | 159 | Sachaufgabe | 0 | 3 | 1 | 2 | eigene Aufgabe | Die Punkte B, C und D liegen senkrecht übereinander. C liegt |
 | Winkelsumme | 160 | Sachaufgabe | 1 | 1 | 1 | 3 | 2017-OS-K4a | Ein Dachboden hat als Querschnitt das Dreieck ABC. Die Dachs |
-| Winkelsumme | 161 | Sachaufgabe | 1 | 1 | 1 | 3 | 2023-OS-K2a | Ein Trapez hat die parallelen Seiten 25,80 m (unten) und 15, |
-| Winkelsumme | 162 | Sachaufgabe | 1 | 1 | 1 | 3 | 2015-OS-K5b | Gegeben ist ein Drachenviereck ABCD. Die Diagonale AC ist se |
+| Winkelsumme | 161 | Sachaufgabe | 1 | 1 | 1 | 3 | 2015-OS-K5b | Gegeben ist ein Drachenviereck ABCD. Die Diagonale AC ist se |
+| Winkelsumme | 162 | Sachaufgabe | 1 | 1 | 1 | 3 | 2023-OS-K2a | Gegeben ist ein Trapez mit den parallelen Seiten 25,80 m (un |
 | Winkelsumme | 163 | Sachaufgabe | 2 | 1 | 1 | 3 | 2022-OS-K5c | Gegeben ist ein Dreieck ABC, das nicht rechtwinklig ist. Die |
 | Winkelsumme | 164 | Vergleich | 1 | 2 | 1 | 3 | 2018-OS-K4b | Lea will die Höhe eines Berges bestimmen. Auf der Bergspitze |
 | Symmetrieachsen zählen | 165 | Vorstufe | 1 | 1 | 1 | 0 | eigene Aufgabe | Zeichne mit dem Geodreieck alle Symmetrieachsen der Figur im |

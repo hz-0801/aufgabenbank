@@ -36,7 +36,7 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Grundfigur berechnen | 44 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Parallelogramm hat die Grundseite 9 cm und die schräge S |
 | Grundfigur berechnen | 45 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Die Figur zeigt ein stumpfwinkliges Dreieck mit der Grundsei |
 | Grundfigur berechnen | 46 | Sachaufgabe | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein gleichschenkliges Trapez hat die parallelen Seiten a = 1 |
-| Grundfigur berechnen | 47 | Sachaufgabe | 0 | 1 | 1 | 3 | 2025-OS-K2b | Ein Drachenviereck ABCD hat die Diagonalen AC = 50 cm und BD |
+| Grundfigur berechnen | 47 | Sachaufgabe | 0 | 1 | 1 | 3 | 2025-OS-K2b | Ein Drachenviereck ABCD (A links, D oben, C rechts, B unten) |
 | Grundfigur berechnen | 48 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | Ein Parallelogramm hat die Grundseite g = 6,5 cm und die Höh |
 | Grundfigur berechnen | 49 | Sachaufgabe | 1 | 1 | 1 | 2 | eigene Aufgabe | Ein Trapez hat die parallelen Seiten a = 7,5 cm und c = 4,5  |
 | Grundfigur berechnen | 50 | Sachaufgabe | 2 | 1 | 1 | 3 | 2024-OS-K4a | Eine Firma stellt Kegel mit dem Radius r = 30 cm und der Höh |
@@ -48,7 +48,7 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Grundfigur berechnen | 56 | Sachaufgabe | 2 | 1 | 2 | 2 | eigene Aufgabe | Ein Kreis hat den Radius r = 2,6 m. Wie groß ist seine Fläch |
 | Grundfigur berechnen | 57 | Sachaufgabe | 2 | 2 | 1 | 3 | 2016-OS-K3b | Beim Kugelstoßen steht man in einem Abwurfring; das ist ein  |
 | Grundfigur berechnen | 58 | Sachaufgabe | 2 | 5 | 2 | 3 | 2019-OS-K4c | Auf einem Mast sitzt ein Prisma, dessen Grund- und Deckfläch |
-| Grundfigur berechnen | 59 | Vergleich | 2 | 1 | 2 | 3 | 2015-OS-K5d | Im Dreieck AED ist bei E ein rechter Winkel. Die Hypotenuse  |
+| Grundfigur berechnen | 59 | Vergleich | 2 | 1 | 2 | 3 | 2015-OS-K5d | Gegeben ist ein Drachenviereck ABCD. Die Diagonale AC ist se |
 | Grundfigur berechnen | 60 | Vergleich | 2 | 3 | 1 | 3 | 2015-OS-K6c | Mia baut das Modell einer Pyramide mit quadratischer Grundfl |
 | rückwärts: Seite aus Fläche | 61 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Rechteck hat die Fläche A = 56 cm² und die Länge a = 8 c |
 | rückwärts: Seite aus Fläche | 62 | rechnen | 0 | 1 | 1 | 2 | eigene Aufgabe | Ein Rechteck hat den Umfang u = 20 cm und die Länge a = 6 cm |
@@ -64,8 +64,8 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | rückwärts: Seite aus Fläche | 72 | Sachaufgabe | 2 | 1 | 2 | 2 | eigene Aufgabe | Ein Kreis hat den Umfang u = 47 cm. Wie groß ist sein Durchm |
 | rückwärts: Seite aus Fläche | 73 | Sachaufgabe | 2 | 1 | 2 | 2 | eigene Aufgabe | Ein Kreis hat den Umfang u = 75 cm. Wie groß ist sein Radius |
 | rückwärts: Seite aus Fläche | 74 | Sachaufgabe | 2 | 1 | 2 | 2 | eigene Aufgabe | Ein Kreis hat die Fläche A = 154 cm². Wie groß ist sein Radi |
-| rückwärts: Seite aus Fläche | 75 | Vergleich | 1 | 2 | 1 | 3 | 2014-OS-K5d | Die Rückwand derselben Vitrine ist ein Rechteck, 110 cm brei |
-| rückwärts: Seite aus Fläche | 76 | Vergleich | 1 | 2 | 1 | 3 | 2014-OS-K5c | Eine Kühlvitrine hat die Form eines Prismas. Ihre Grundfläch |
+| rückwärts: Seite aus Fläche | 75 | Vergleich | 1 | 2 | 1 | 3 | 2014-OS-K5d | Für ein Café wird eine Kühlvitrine in Form eines Prismas geb |
+| rückwärts: Seite aus Fläche | 76 | Vergleich | 1 | 2 | 1 | 3 | 2014-OS-K5c | Für ein Café wird eine Kühlvitrine in Form eines Prismas geb |
 | Figur erst zerlegen oder Strecke erst berechnen | 77 | Vorstufe | 1 | 1 | 1 | 0 | eigene Aufgabe | Die Figur zeigt ein Viereck. Schreibe auf, in welche einfach |
 | Figur erst zerlegen oder Strecke erst berechnen | 78 | Vorstufe | 1 | 1 | 1 | 0 | eigene Aufgabe | Im Bild ist ein Teil des Kreises grau. Kreuze an, welcher Te |
 | Figur erst zerlegen oder Strecke erst berechnen | 79 | Sachaufgabe | 0 | 1 | 1 | 1 | eigene Aufgabe | Ein Beet hat die Form eines L. Es besteht aus zwei Rechtecke |
@@ -82,10 +82,11 @@ Spalten: Zahlklasse 0 Kopf, 1 glatt, 2 krumm; Schritte; Fragen; Höhe 0 Vorstufe
 | Figur erst zerlegen oder Strecke erst berechnen | 90 | Sachaufgabe | 2 | 1 | 2 | 2 | eigene Aufgabe | Ein Kreisring hat außen den Radius 7 cm und innen den Radius |
 | Figur erst zerlegen oder Strecke erst berechnen | 91 | Sachaufgabe | 2 | 2 | 2 | 2 | eigene Aufgabe | Ein Kreisausschnitt hat den Radius r = 8 cm und den Mittelpu |
 | Figur erst zerlegen oder Strecke erst berechnen | 92 | Sachaufgabe | 2 | 3 | 1 | 3 | 2018-OS-K6a | Ein runder Turm mit 6,4 m Durchmesser steht auf einer Rasenf |
-| Figur erst zerlegen oder Strecke erst berechnen | 93 | Sachaufgabe | 2 | 3 | 1 | 3 | 2022-OS-K5e | Im Dreieck ABC ist die Höhe h_c 7,4 m; ihr Fußpunkt D liegt  |
-| Figur erst zerlegen oder Strecke erst berechnen | 94 | Sachaufgabe | 2 | 3 | 1 | 3 | 2017-OS-K3b | Familie Sommer hat einen Swimmingpool gebaut. Seine Grundflä |
+| Figur erst zerlegen oder Strecke erst berechnen | 93 | Sachaufgabe | 2 | 3 | 1 | 3 | 2017-OS-K3b | Familie Sommer hat einen Swimmingpool gebaut. Seine Grundflä |
+| Figur erst zerlegen oder Strecke erst berechnen | 94 | Sachaufgabe | 2 | 3 | 1 | 3 | 2022-OS-K5e | Gegeben ist ein Dreieck ABC, das nicht rechtwinklig ist. Die |
 | Figur erst zerlegen oder Strecke erst berechnen | 95 | rechnen | 2 | 1 | 1 | 3 | 2025-OS-B1e | Bestimme, wie viel Prozent der Kreisfläche grau gefärbt sind |
 | Anteil in Prozent (Verschnitt) | 96 | Sachaufgabe | 0 | 4 | 1 | 2 | eigene Aufgabe | Für ein Buntglasfenster wird aus einer rechteckigen Glassche |
+| Anteil in Prozent (Verschnitt) | 97 | Vergleich | 2 | 4 | 1 | 3 | 2023-OS-K5c | Eine Konservendose hat die Form eines Zylinders mit dem Radi |
 
 ## Prüfung
 

@@ -268,6 +268,17 @@ class Daten:
                 f, e = paar.split('=')
                 self.zwilling_zu[f] = e
         wl = lies_csv(os.path.join(mn, o, f'wortlaut-eigen-{kapitel}.csv'))
+        self.wort_eigen = {r['id'] for r in wl}
+        # Teilaufgaben, die absichtlich nur einmal geschrieben sind, stehen in einer anderen
+        # wortlaut-eigen-*.csv (Lauf C Nachbesserung): alle Dateien, eigene zuerst, erste gewinnt
+        da = set(self.wort_eigen)
+        for p in sorted(glob.glob(os.path.join(mn, o, 'wortlaut-eigen-*.csv'))):
+            if p.endswith(f'wortlaut-eigen-{kapitel}.csv'):
+                continue
+            for r in lies_csv(p):
+                if r['id'] not in da:
+                    da.add(r['id'])
+                    wl.append(r)
         for r in wl:   # Datenbefund B1: f\\'(x) und ′ in der Wortlaut-Datei
             for f in ('wortlaut', 'abbildung'):
                 r[f] = (r.get(f) or '').replace("\\'", "'").replace('′', "'").replace('″', "''")
@@ -1313,6 +1324,11 @@ def pruefstein_waehlen(D):
     for iid, w in D.wort.items():
         if w['teil'] != 'vorspann':
             gruppen.setdefault(iid[:-1], []).append(iid)
+    # Aufgabe des eigenen Kapitels: mindestens die Hälfte ihrer Teile steht in der eigenen Wortlautdatei
+    # (Lauf C Nachbesserung; Teile aus anderen Dateien ergänzen sie, machen sie aber nicht zur eigenen)
+    gruppen = OrderedDict((pre, ids) for pre, ids in gruppen.items()
+                          if 2 * sum(1 for i in ids if i in D.wort_eigen) >= len(ids)
+                          and any(i in D.wort_eigen for i in ids))
     ganz, teil, fehlt = [], [], []
     for pre, ids in gruppen.items():
         alle = sorted(k for k in D.kat if k.startswith(pre) and len(k) == len(pre) + 1)
