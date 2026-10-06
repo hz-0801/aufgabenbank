@@ -153,6 +153,10 @@ verbessereBlaetter 06.10. vormittags.
     allein. „schwach“: dieselben Voraussetzungen, je eine Aufgabe mehr auf
     leichterer Stufe, keine zusätzlichen Themen.
 
+30. Grundwert-Leiter (ändert N2.11): Katalog-Folge – Streifen-Vorstufe
+    ohne Zahl → glatte Sätze (mal 2, 4, 5, 10) → 1 %-Weg → beliebiger
+    Satz → Sachtext → Prüfungshöhe (Steckbrief Grundwert, Lehrer 06.10.).
+
 ## Nicht entschieden
 
 - „ab hier“/Formel: wann und wo, verallgemeinert (Gespräch steht aus;
