@@ -18,6 +18,7 @@ zitate() liefert die Sätze in „…“ (Schülerwortlaut); ids() die Bank-ids 
 import glob
 import os
 import re
+from collections import OrderedDict
 
 TEILE = {'1': 'teil1', '2': 'teil2', '3': 'teil3', '4': 'teil4'}
 
@@ -106,7 +107,69 @@ def lies(pfad):
     for k, v in list(sb['teil2'].items()):
         if isinstance(v, str):
             sb['teil2'][k] = re.sub(r'\s*\*\*Lücke:\*\*.*$', '', v)
+    sb['arten_kopf'], sb['arten'] = lies_arten(txt)
     return sb
+
+
+def _felder(zeilen):
+    """„- **Schlüssel:** Wert“ mit Fortsetzung und Unterpunkten -> {Schlüssel: Wert | [Unterpunkte]}."""
+    f, key = OrderedDict(), None
+    for z in zeilen:
+        m = re.match(r'- \*\*(.+?):\*\*\s*(.*)$', z)
+        if m:
+            key = _schluessel(m.group(1))
+            f[key] = m.group(2).strip()
+            continue
+        m = re.match(r'\s{2,}- (.*)$', z)
+        if m and key:
+            v = f[key]
+            if isinstance(v, str):
+                v = [] if not v or v.startswith('(') else [v]
+            v.append(m.group(1).strip())
+            f[key] = v
+            continue
+        m = re.match(r'\s{2,}(\S.*)$', z)
+        if m and key:
+            if isinstance(f[key], list) and f[key]:
+                f[key][-1] += ' ' + m.group(1).strip()
+            elif isinstance(f[key], str):
+                f[key] = (f[key] + ' ' + m.group(1).strip()).strip()
+            continue
+        if z.strip():
+            key = None
+    return f
+
+
+def lies_arten(txt):
+    """Teil 5 „Arten“ (Beschlüsse 07.10., Format in README.md): (Kopf, [Art]); Kopf und Art sind dicts der
+    Felder; je Art dazu „name“ (Überschrift ###), „aufgaben“ (P10-ids), „gruppen“ [(Name, [ids])],
+    „nur_gekuerzt“ {id: Grund}. Ohne Teil 5: ({}, [])."""
+    m = re.search(r'^## 5 Arten\s*$', txt, re.M)
+    if not m:
+        return {}, []
+    rest = txt[m.end():]
+    rest = re.split(r'^## \d', rest, flags=re.M)[0]
+    bloecke = re.split(r'^### ', rest, flags=re.M)
+    kopf = _felder(bloecke[0].splitlines())
+    arten = []
+    for b in bloecke[1:]:
+        zl = b.splitlines()
+        a = _felder(zl[1:])
+        a['name'] = zl[0].strip()
+        idre = r'\d{4}-[A-Z]+-[A-Z]\d+[a-z]'
+        a['aufgaben'] = re.findall(idre, a.get('Aufgaben', ''))
+        a['gruppen'] = []
+        for g in [x for x in (a.get('Gruppen') or '').split(' | ') if x.strip()]:
+            n, _, ids = g.partition(':')
+            # P10-ids und Kennungen fremder Aufgaben (F1: das Programm filtert sie über handgriffe)
+            a['gruppen'].append((n.strip(), [i for i in ids.split() if re.search(r'\d', i)]))
+        a['nur_gekuerzt'] = OrderedDict()
+        for t in re.split(r'\s*·\s*', a.get('Nur gekürzt', '')):
+            mm = re.match(r'(' + idre + r')\s*(?:\((.*)\))?', t.strip())
+            if mm:
+                a['nur_gekuerzt'][mm.group(1)] = mm.group(2) or ''
+        arten.append(a)
+    return kopf, arten
 
 
 def alle(mn):

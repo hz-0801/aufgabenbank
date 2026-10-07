@@ -172,3 +172,39 @@ oder „,“). Liste mit Häufigkeit: `python3 werkzeuge/abbildung.py --typen`.
   gerahmt, einspaltig, je Aufgabe eine Antwortlinie, grauer Hinweis einmal je Gruppe (auch mit Abbildung).
 - Punkt 31: Anhang „Mehr zum Üben“ nur auf `--uebung`, 1–8 Aufgaben, sonst keiner; Konsolenzeile
   „Mehr zum Üben: n von höchstens 8“ bzw. „keine passende“.
+
+## Grundform G1 im Fokusblatt (Lauf 07.10., bau/pruefheft/beschluesse-2026-10-07.md; geht vor)
+
+Hat der Steckbrief des Fokus Teil 5 „Arten“ (mathe-nachhilfe
+katalog/steckbrief/README.md), baut `--fokus` die Grundform G1 (`g1_bau`);
+sonst wie bisher. Aufbau: Kopf mit Name und Niveau (B2) · Begriff erkennen
+aus Erkennen-Fälle bzw. Erkennen-Bank (A1) · Merkkasten nur mit der Formel
+(B7) · Formel aufstellen aus Formel-Fälle (A2) · je Art Überschrift
+(Kurzname), kurze Leiter (Leiter-Bank), dann die Gruppen: je Gruppe eine
+Aufgabe normal, die übrigen BB/BE-Originale eingerückt (8 mm), eine
+Schriftstufe kleiner, schwarz, Randmarke grau (G1, B6) · Schlusszeile mit
+Zahl seit 2014 ohne GYM, EBR und FOR / nur FOR, Nicht geprüft, ★ nur bei
+Stern, Vorher/Weiter (F3, F4). Kein Rückblick, kein „Zum Schluss“, kein
+Beispiel, keine Info-Zeilen (B1, F5, F6).
+
+- Gekürzt (T1–T4): jede Aufgabe einer Art außer der letzten, die nicht unter
+  „Nur gekürzt“ steht; Wortlaut, Skizze, Ergebnis und Zwischenschritt aus
+  mathe-nachhilfe `msa/gekuerzt-p10.csv` (von Hand, Urteil), Marke „nach P10
+  ’JJ“. Fehlt die gekürzte Fassung, nimmt das Programm die herausgelöste
+  (mit Sache, T4) oder setzt ungekürzt (Befund).
+- Fremde (F1, F2): nur wenn `handgriffe` genau die Stufe der Art nennt, die
+  Lösung zum Fremd-Merkmal der Art passt, kein Merkmal einer nicht geprüften
+  Art trägt, eine Sache hat und das Bild zeichenbar ist; nie schwerer als die
+  BB/BE-Aufgaben der Art; nur bei Arten mit weniger als drei BB/BE-Aufgaben.
+  GYM gilt als fremd (Marke „nach GYM ’JJ“).
+- Kennung (B3): drei Zeichen aus 2–9, A–Z ohne I und O, eindeutig gegen
+  bau/register.csv, Neubau desselben Ordners behält sie; schwach „ +“. Klein
+  und grau links im Fuß; Register-Rezept F.
+- Strecken mit Überstrich (B8), Längen neben der Linie (B9, `fall_dreieck`),
+  Pfeile in der Prozenttabelle beidseitig ohne Beschriftung (B5,
+  `pfeiltabelle`), Zahlprüfung erkennt Quadrate (B10, `quadrat_drin`).
+- Prüfschritte (`g1_pruefe`, Ergebnis in aufbau.md): kein Satz doppelt (T6),
+  Antworten der Erkennen- und Formelaufgabe nicht alle gleich (P1), eigene
+  Aufgaben ohne krumme Zahlen außer „Runde“ (B10).
+- Ausgabe zusätzlich `aufbau.md` (Nr., Abschnitt, eingerückt, Herkunft,
+  Marke, id) statt sortierung.md.

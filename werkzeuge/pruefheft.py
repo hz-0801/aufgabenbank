@@ -9,6 +9,7 @@ bau/pruefheft/<kapitel>-<art>[-p<n>|-fokus-<wort>][-ebr]-<datum>/ (Unterordner s
   python3 werkzeuge/pruefheft.py --kapitel prozent --art normal --portion 1
   python3 werkzeuge/pruefheft.py --kapitel prozent --art normal --fokus grundwert
   python3 werkzeuge/pruefheft.py --kapitel dreiecke --art normal --fokus pythagoras   (Steckbrief, 06.10. abends)
+  Steckbrief mit Teil 5 „Arten“: Fokusblatt in Grundform G1 (Beschlüsse 07.10., g1_bau; v0.4)
   --kurs EBR|FOR (Vorgabe FOR): Heft ab 2026 nach Kurs (Fundstellen), * an FOR-only-Aufgaben
   Pfade: --mn ../mathe-nachhilfe --bb ../blattbau (Voreinstellung: Nachbarordner des Repos)
 
@@ -1027,6 +1028,8 @@ def daten_aufgabe(D, r, stufe, art):
     el = (r.get('eltern_id') or '').strip()
     if art == 'heraus':
         a.orig = el
+        if '-GYM-' in el and m:
+            m = re.sub(r'P10', 'GYM', m)   # F2 (07.10.): GYM zählt nicht als P10, Marke ohne „P10“
         if not m and re.match(r'\d{4}', el):
             m = f'nach {D.pr["marke"]} {jahr_kurz(el[:4])}'   # Marke „nach P10 ’15“ (N1.4)
         elif m and not m.startswith('nach'):
@@ -1423,6 +1426,8 @@ def zahlklasse(a):
     erg = a.kurz + ' ' + ' '.join(a.zw)
     if '≈' in erg or 'approx' in erg or re.search(r'\bRunde\b|\brunde\b', klartext(a.text)):
         return 2
+    if quadrat_drin(a.text + ' ' + erg + ' ' + ' '.join(getattr(a, 'zw_roh', []) or [])):
+        return 1   # B10 (07.10.): 36² + 15² ist nicht „Kopf“, sondern Taschenrechner (glatt)
     zs = zahlen(a.text)
     if any(p and v != int(v) for v, p, _ in zs):
         return 2
@@ -1436,6 +1441,17 @@ def zahlklasse(a):
         if ',' in roh and len(roh.split(',')[1].rstrip('0')) > 1:
             kopf = False
     return 0 if kopf and zs else 1
+
+
+def quadrat_drin(t):
+    """B10: Quadrat oder Potenz einer Zahl über 12 oder mit Komma (36², 1,2², 85^2, 7\\,225) im Text oder in der
+    Lösung – dann nicht im Kopf rechenbar."""
+    t = (t or '').replace('{,}', ',').replace('\\,', '').replace('{', '').replace('}', '')
+    for m in re.finditer(r'(\d+(?:,\d+)?)\s*(?:²|³|\^\s*\d)', t):
+        v = m.group(1)
+        if ',' in v or float(v) > 12:
+            return True
+    return bool(re.search(r'√\s*\(?\s*\d{3,}|\\sqrt\s*\d{3,}', t))
 
 
 SATZRANG = {10: 0, 50: 1, 25: 2, 1: 3, 20: 4, 5: 5, 75: 6, 100: 7}   # Muster Fokus Grundwert (6)
@@ -2338,16 +2354,29 @@ def prozent_tabelle(a):
         return
     p, w, e = m.group(1), m.group(2), m.group(4).strip('$.').replace('\\,', '')
     e_tx = e if e else ''
-    tab = (r'\begingroup\renewcommand{\arraystretch}{1.35}\begin{tabular}[t]{|r|r|}\hline '
-           r'\textbf{Prozent} & \textbf{%s} \\ \hline $%s\,\%%$ & $%s$\,%s \\ \hline $1\,\%%$ & \leerzelle \\ \hline '
-           r'$100\,\%%$ & \leerzelle \\ \hline\end{tabular}\endgroup'
-           r'\hspace{2mm}{\small\color{mbgrau}\begin{tabular}[t]{@{}l@{}}\rule{0pt}{2.6ex}\\ $\downarrow : %s$\\ $\downarrow \cdot 100$\end{tabular}}'
-           % (e_tx or 'Wert', p, w, e_tx, p))
-    # Lauf 06.10. abends (Satz): Streifen nur, wo er trägt – nicht als Schmuck neben der Tabelle
-    a.abb = tab
-    a.text = a.text[:m.end()].rstrip() + ' Rechne in der Tabelle: erst $1\\,\\%$, dann das Ganze ($100\\,\\%$).'
+    a.abb = pfeiltabelle(['Prozent', e_tx or 'Wert'], [['$' + p + r'\,\%$', '$' + w + r'$\,' + e_tx],
+                                                         [r'$1\,\%$', r'\leerzelle'], [r'$100\,\%$', r'\leerzelle']])
+    # B5 (07.10.): der Text nennt den Weg nicht; Frage nach dem Ganzen bleibt
+    a.text = a.text[:m.end()].rstrip() + ' Wie viel ist das Ganze?'
     a.form = 'tabelle'
     a.antwort = ''
+
+
+def pfeiltabelle(kopf, zeilen):
+    """Tabelle mit Pfeilen auf beiden Seiten, ohne Beschriftung, genau zwischen den Zeilen (B5, 07.10.): die
+    Tabelle steht in einem TikZ-Knoten; je Zeilenpaar links und rechts ein Bogen von Zeilenmitte zu Zeilenmitte."""
+    n = len(zeilen)
+    z = r' \\ \hline '.join(' & '.join(x) for x in zeilen)
+    tab = (r'\renewcommand{\arraystretch}{1.35}\begin{tabular}{|r|r|}\hline '
+           r'\textbf{%s} & \textbf{%s} \\ \hline %s \\ \hline\end{tabular}' % (kopf[0], kopf[1], z))
+    bs = []
+    for i in range(1, n):
+        f1, f2 = (i + 0.5) / (n + 1), (i + 1.5) / (n + 1)
+        for a, b, w in (('north west', 'south west', 180), ('north east', 'south east', 0)):
+            bs.append(r'\draw[->,mbgrau,line width=0.5pt] ($(T.%s)!%.4f!(T.%s)$) to[out=%d,in=%d,looseness=1.8] '
+                      r'($(T.%s)!%.4f!(T.%s)$);' % (a, f1, b, w, w, a, f2, b))
+    return (r'\begin{tikzpicture}[baseline=(T.north)]\node[inner sep=0,outer sep=1.5pt] (T) {' + tab + '};'
+            + ''.join(bs) + r'\end{tikzpicture}')
 
 
 GESUCHT_KAT = [(r'^(zinseszins|endkapital)', 'Zinseszins'), (r'^(zinsen|z\b)', 'Zinsen $Z$'),
@@ -3880,6 +3909,627 @@ def anhang(D, args, stufen, B, titel, unter, teile, arbeit):
     return wahl
 
 
+# ---------------------------------------------------------------------------
+# Fokusblatt Grundform G1 (Beschlüsse 07.10., bau/pruefheft/beschluesse-2026-10-07.md)
+# Gilt, wenn der Steckbrief des Fokus Teil 5 „Arten“ hat; sonst baut --fokus wie bisher.
+# Aufbau: Kopf (B2) · Begriff erkennen (A1) · Merkkasten nur Formel (B7) · Formel aufstellen (A2) ·
+# je Art (A3, Reihenfolge des Steckbriefs, versteckte zuletzt): Überschrift = Kurzname, kurze Leiter
+# (Leiter-Bank, eigene mit glatten Zahlen B10), höchstens eine fremde Aufgabe mit genau dem Handgriff
+# (F1, nur wenn die Art weniger als drei BB/BE-Aufgaben hat), dann die Gruppen (G1): je Gruppe eine
+# Aufgabe normal, die übrigen BB/BE-Originale eingerückt, eine Schriftstufe kleiner (B6) · Schlusszeile
+# (F3, F4). Kein Rückblick ohne Eintrag im Steckbrief (A1), kein „Zum Schluss“ (F5), kein Beispiel (F6),
+# keine Kommentarzeilen (B1). Gekürzte Fassungen (T1–T6) stehen als Daten in msa/gekuerzt-p10.csv.
+# ---------------------------------------------------------------------------
+G1_PRAEAMBEL = r'''\makeatletter
+% Überschrift (Art, Gruppe) im Kasten der nächsten Aufgabe: nie allein am Seitenende (wie \pfab)
+\let\gkopf\empty
+\newcommand{\gueber}[1]{\gdef\gkopf{#1}}
+\newcommand{\gueberdazu}[1]{\ifx\gkopf\empty\gdef\gkopf{#1}\else\expandafter\gdef\expandafter\gkopf\expandafter{\gkopf#1}\fi}
+% eingerückt (B6): \gEin Einzug, \gSchrift eine Stufe kleiner; die Überschrift bleibt ohne Einzug
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+% Ankreuzzeile mit hängendem Einzug (lange Aussagen brechen unter dem Text um, nicht unter dem Kästchen)
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \ifx\gkopf\empty\else\noindent\gkopf\par\global\let\gkopf\empty\fi
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr-\mbpfbe\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \begin{minipage}[t]{\mbpfbe}\raggedleft\small\color{mbgrau}\strut#3\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \par\addvspace{6pt}\Needspace*{\mbaufgabehoehe}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{6pt}}
+\makeatother
+'''
+KENN_ZEICHEN = '23456789ABCDEFGHJKLMNPQRSTUVWXYZ'   # B3: 2–9 und A–Z ohne I und O
+
+
+def g1_kennung(pfad, schwach=False):
+    """B3: drei Zeichen, eindeutig gegen bau/register.csv; ein Neubau desselben Ordners behält seine Kennung;
+    schwache Fassung „ +“ dahinter."""
+    import hashlib
+    p = os.path.join(BANK, 'bau', 'register.csv')
+    zeilen = open(p, encoding='utf-8').read().splitlines()[1:]
+    for z in zeilen:
+        f = z.split(';')
+        if f[-1] == pfad and re.fullmatch(r'[2-9A-HJ-NP-Z]{3}( \+)?', f[0]):
+            return f[0]
+    belegt = {z.split(';')[0].replace(' +', '') for z in zeilen}
+    h = int(hashlib.sha1(pfad.encode()).hexdigest(), 16)
+    while True:
+        k = ''.join(KENN_ZEICHEN[(h >> (5 * i)) % 32] for i in range(3))
+        if k not in belegt:
+            return k + (' +' if schwach else '')
+        h += 1
+
+
+def g1_register(args, kenn, ordner, seiten, n_aufg):
+    p = os.path.join(BANK, 'bau', 'register.csv')
+    zeilen = open(p, encoding='utf-8').read().splitlines()
+    pfad = os.path.relpath(ordner, BANK)
+    zeilen = [z for z in zeilen if not z.endswith(';' + pfad)]
+    best = (f'kapitel={args.kapitel}, art={args.art}, fokus={args.fokus}, grundform=G1, kurs={args.kurs}, '
+            f'seiten={seiten}, aufgaben={n_aufg}')
+    commit = subprocess.run(['git', 'rev-parse', '--short', 'HEAD'], cwd=BANK, capture_output=True,
+                            text=True).stdout.strip()
+    zeilen.append(f'{kenn};{args.datum};{",".join(D_AKT.eintraege)};F;{best};{commit};'
+                  f'pruefheft.py v0.4;Version 2026-10-06c;{pfad}')
+    open(p, 'w', encoding='utf-8').write('\n'.join(zeilen) + '\n')
+
+
+def ueberstrich(t):
+    """B8: Strecke mit Überstrich ($\\overline{AB}$), auch im Quadrat; nur außerhalb von $…$ und nur bei zwei
+    Großbuchstaben, die frei stehen (Dreieck ABC und Abkürzungen bleiben)."""
+    if not t:
+        return t
+    aus = {'BB', 'BE', 'EU', 'OK', 'TV', 'CD', 'PC'}
+    out = []
+    for m, s in teile_math(t):
+        if m:
+            out.append('$' + s + '$')
+            continue
+        s = re.sub(r'(?<![A-Za-zÄÖÜäöüß\\])([A-Z])([A-Z])(?![A-Za-zÄÖÜäöüß])(²)?',
+                   lambda x: x.group(0) if x.group(1) + x.group(2) in aus else
+                   ('$\\overline{' + x.group(1) + x.group(2) + '}' + ('^2' if x.group(3) else '') + '$'), s)
+        out.append(s)
+    return ''.join(out).replace('$$', '')
+
+
+def _de_num(v):
+    return ('%g' % v).replace('.', '{,}')
+
+
+def fall_dreieck(spec, massstab=1.0, marke=True, hoehe=False):
+    """Dreieck im Fälle-Format des Steckbriefs bzw. der gekürzten Fassungen:
+    „(x|y) (x|y) (x|y); Seiten a b c (oder a / b / c, – = ohne); Ecken A B C; rechter Winkel 1–3 oder 0;
+    nicht maßstabsgerecht“. Seite i liegt Ecke i gegenüber. Beschriftung neben der Linie, nach außen (B9);
+    Rechtwinkelmarke Bogen mit Punkt (Katalog)."""
+    spec = spec.replace('−', '-')
+    pts = [(float(a.replace(',', '.')) * massstab, float(b.replace(',', '.')) * massstab)
+           for a, b in re.findall(r'\((-?[\d,]+)\|(-?[\d,]+)\)', spec)][:3]
+    m = re.search(r'Seiten\s+([^;]+)', spec)
+    seiten = []
+    if m:
+        s = m.group(1).strip()
+        seiten = [x.strip() for x in (s.split(' / ') if ' / ' in s else s.split())]
+    m = re.search(r'Ecken\s+([^;]+)', spec)
+    ecken = m.group(1).split() if m else []
+    m = re.search(r'rechter Winkel (\d)', spec)
+    rw = int(m.group(1)) if m else 0
+    gx, gy = sum(p[0] for p in pts) / 3, sum(p[1] for p in pts) / 3
+    z = [r'\begin{tikzpicture}[line width=0.7pt,baseline=(current bounding box.north)]']
+    for i, p in enumerate(pts):
+        z.append(r'\coordinate (P%d) at (%.3f,%.3f);' % (i + 1, p[0], p[1]))
+    z.append(r'\draw (P1) -- (P2) -- (P3) -- cycle;')
+    if rw and marke:
+        a, b = [k for k in (1, 2, 3) if k != rw]
+        z.append(r'\mbrwmarke{(P%d)}{(P%d)}{(P%d)}' % (rw, a, b))
+    for i in range(3):
+        a, b = [k for k in range(3) if k != i]
+        mx, my = (pts[a][0] + pts[b][0]) / 2, (pts[a][1] + pts[b][1]) / 2
+        if i < len(seiten) and seiten[i] not in ('–', '-', ''):
+            lab = seiten[i]
+            lab = lab if '$' in lab or ' ' in lab else '$' + lab + '$'
+            lab = tx(lab)
+            dx, dy = pts[b][0] - pts[a][0], pts[b][1] - pts[a][1]
+            n = (dx * dx + dy * dy) ** 0.5 or 1
+            nx, ny = -dy / n, dx / n
+            if nx * (mx - gx) + ny * (my - gy) < 0:
+                nx, ny = -nx, -ny
+            anker = ('west' if nx > 0.38 else 'east' if nx < -0.38 else '') if abs(nx) > 0.38 else ''
+            anker = (('south ' if ny > 0.38 else 'north ' if ny < -0.38 else '') + anker).strip() or 'center'
+            z.append(r'\node[font=\small,anchor=%s,inner sep=1.5pt] at (%.3f,%.3f) {%s};'
+                     % (anker, mx + nx * 0.08, my + ny * 0.08, lab))
+        if i < len(ecken):
+            dx, dy = pts[i][0] - gx, pts[i][1] - gy
+            n = (dx * dx + dy * dy) ** 0.5 or 1
+            z.append(r'\node[font=\small] at (%.3f,%.3f) {$%s$};' % (pts[i][0] + dx / n * 0.3, pts[i][1] + dy / n * 0.3, ecken[i]))
+    if hoehe:
+        # Höhe von Ecke 3 auf die Seite P1P2 (gleichschenklig: Mitte), gestrichelt, rechter Winkel, „h“ rechts daneben
+        fx, fy = (pts[0][0] + pts[1][0]) / 2, (pts[0][1] + pts[1][1]) / 2
+        z.append(r'\coordinate (H) at (%.3f,%.3f); \draw[dashed,line width=0.5pt] (P3) -- (H); \mbrwmarke{(H)}{(P2)}{(P3)}'
+                 r'\node[font=\small,anchor=west] at ($(H)!0.45!(P3)+(0.06,0)$) {$h$};' % (fx, fy))
+    if 'nicht maßstabsgerecht' in spec:
+        z.append(r'\node[font=\scriptsize,mbgrau,anchor=north west] at ([yshift=-2pt]current bounding box.south west) {nicht maßstabsgerecht};')
+    z.append(r'\end{tikzpicture}')
+    return ''.join(z), rw, seiten
+
+
+def g1_bankfigur(a):
+    """\\dreieck der Bank (Beschriftung auf der Linie) -> fall_dreieck (B9: neben der Linie, nach außen); nennt der
+    Text die Höhe h eines gleichschenkligen Dreiecks, wird sie gestrichelt mit rechtem Winkel eingezeichnet."""
+    m = re.match(r'\\dreieck\{\(([-\d.]+),([-\d.]+)\)\}\{\(([-\d.]+),([-\d.]+)\)\}\{\(([-\d.]+),([-\d.]+)\)\}'
+                 r'\{([^{}]*(?:\{[^{}]*\}[^{}]*)*)\}\{([^{}]*(?:\{[^{}]*\}[^{}]*)*)\}\{([^{}]*(?:\{[^{}]*\}[^{}]*)*)\}',
+                 (a.abb or '').strip())
+    if not m:
+        return
+    v = [float(x) for x in m.groups()[:6]]
+    labs = [re.sub(r'\\text\{\s*(.*?)\}', r' \1', x).strip() or '–' for x in m.groups()[6:9]]
+    labs = [('$' + x.split(' ', 1)[0] + '$ ' + x.split(' ', 1)[1]) if ' ' in x and x != '–' else x for x in labs]
+    pts = ' '.join('(%s|%s)' % (('%g' % v[i]).replace('.', ','), ('%g' % v[i + 1]).replace('.', ',')) for i in (0, 2, 4))
+    spec = f'{pts}; Seiten {labs[0]} / {labs[1]} / {labs[2]}; Ecken A B C'
+    hoehe = 'gleichschenklig' in klartext(a.text) and re.search(r'Höhe\s*\$?h', a.text)
+    a.abb = fall_dreieck(spec, 1.0, hoehe=bool(hoehe))[0]
+
+
+def g1_skizze(D, spec, iid):
+    spec = (spec or '').strip()
+    if not spec:
+        return ''
+    if spec.startswith('tikz:'):
+        return spec[5:].strip()
+    if spec.startswith('dreieck:'):
+        return fall_dreieck(spec[8:], 1.0)[0]
+    return abbildung(spec, D, iid)
+
+
+def lies_gekuerzt(D):
+    p = os.path.join(D.mn, D.pr['ordner'], 'gekuerzt-p10.csv')
+    D.neu['gekuerzt-p10.csv'] = os.path.exists(p)
+    return {r['id']: r for r in lies_csv(p)} if os.path.exists(p) else {}
+
+
+def g1_echt(D, iid, art_name, voll, gk, sb_art):
+    """Original der Art: voll (letzte echte der Art, T3) oder gekürzt (T1–T4); „Nur gekürzt“ ohne Zeile in
+    gekuerzt-p10.csv: herausgelöste Fassung (T4); fehlt auch die: nicht gesetzt (Befund)."""
+    r = gk.get(iid)
+    heraus = [h for h in D.heraus if (h.get('eltern_id') or '').strip() == iid]
+    if not voll and not (r and r.get('wortlaut_kurz')) and heraus:
+        h = heraus[0]
+        a = daten_aufgabe(D, h, art_name, 'heraus')
+        kennzahlen(D, a)
+        if not g1_sache(a):
+            D.befund(f'{iid}: herausgelöste Fassung ohne Sache – nicht gesetzt (T4)')
+            return None
+        a.hrang = 3
+        a.stern = stern_fuer(D, iid)
+        a.g1_herkunft = 'nach P10'
+        return a
+    a = echt_aufgabe(D, iid, art_name)
+    if not a:
+        return None
+    a.hrang = 3
+    a.stern = stern_fuer(D, iid)
+    a.g1_herkunft = 'BB/BE'
+    if r:
+        wl = r.get('wortlaut_voll' if voll else 'wortlaut_kurz') or ''
+        sk = r.get('skizze_voll' if voll else 'skizze_kurz') or ''
+        if wl:
+            vor, opts = ankreuz_zerlegen(wl)
+            if opts:
+                a.text, a.optionen = tx(vor), [tx(o) for o in opts]
+                a.kreuz = True
+            else:
+                a.text, a.optionen = tx(wl), []
+            a.abb = g1_skizze(D, sk, iid) if sk else ('' if not voll else a.abb)
+            if not voll:
+                a.g1_herkunft = 'nach P10'
+                a.marke_text = f'nach P10 {jahr_kurz(a.jahr)}'
+        if r.get('ergebnis_kurz'):
+            a.kurz_roh = [r['ergebnis_kurz']]
+        if r.get('zwischen_kurz') or r.get('ergebnis_kurz'):
+            a.zw_roh = [x.strip() for x in (r.get('zwischen_kurz') or '').split(';') if x.strip()]
+            a.zw = [tx(x) for x in a.zw_roh]
+    elif not voll:
+        D.befund(f'{iid}: keine gekürzte Fassung in gekuerzt-p10.csv – ungekürzt gesetzt (T3 offen)')
+    if not voll and iid in sb_art['nur_gekuerzt'] and not (r and r.get('wortlaut_kurz')):
+        D.befund(f'{iid}: nur gekürzt erlaubt, aber keine gekürzte Fassung – nicht gesetzt')
+        return None
+    if a.kurz_roh:
+        a.kurz = '; '.join(tx(x) for x in a.kurz_roh)
+    kennzahlen(D, a)
+    return a
+
+
+G1_FACH = {'Dreieck', 'Dreiecks', 'Kathete', 'Katheten', 'Hypotenuse', 'Seite', 'Seiten', 'Länge', 'Strecke',
+           'Winkel', 'Satz', 'Pythagoras', 'Höhe', 'Basis', 'Schenkel', 'Grundseite', 'Figur', 'Punkte', 'Punkt',
+           'Diagonale', 'Quadrat', 'Rechteck', 'Seitenlänge', 'Flächeninhalt', 'Entfernung', 'Wurzel', 'Gleichung',
+           'Rechnung', 'Betrag', 'Menge', 'Anteil'}
+
+
+def g1_sache(a):
+    return {w for w in sache(a) if w not in G1_FACH}
+
+
+def g1_fremde(D, art, n, mass, gesehen):
+    """F1: fremde Aufgaben nur mit genau dem Handgriff der Art (Feld handgriffe, eine Angabe = Stufe der Art);
+    Lösung passt zum Fremd-Merkmal der Art; nicht die Merkmale der nicht geprüften Arten; mit Sache (T4); Bild
+    zeichenbar; nie schwerer als die BB/BE-Aufgaben der Art (F2: GYM gilt wie ein anderes Land)."""
+    if n <= 0:
+        return []
+    stufe = art.get('Stufe', '')
+    fm = art.get('Fremd-Merkmal', '').strip()
+    ng = D.sb['arten_kopf'].get('Nicht-geprüft-Merkmal', '').strip()
+    kand = []
+    for r in D.fremd + D.heraus:
+        if r.get('id') in gesehen or not (r.get('id') or '').strip():
+            continue
+        hs = [h.split(':')[-1].strip() for h in (r.get('handgriffe') or r.get('stufe') or '').split('|') if h.strip()]
+        if len(hs) != 1 or not stufe_trifft(hs[0], stufe):
+            continue
+        el = (r.get('eltern_id') or '')
+        if re.match(r'\d{4}-(OS|EBR|FOR)-', el):
+            continue   # herausgelöste BB/BE-Aufgaben stehen bei ihrer Art, nicht als fremde
+        lo = (r.get('loesung') or '') + ' ' + (r.get('schritte') or '')
+        if fm and not re.search(fm, lo):
+            continue
+        if ng and re.search(ng, r.get('wortlaut', '')):
+            continue
+        n_bef, n_sk = len(D.befunde), len(getattr(D, 'abb_skizze', []))
+        a = daten_aufgabe(D, r, stufe, 'fremd' if not el else 'heraus')
+        if (r.get('abbildung') or '').strip() and (not a.abb or len(D.befunde) > n_bef
+                                                  or len(getattr(D, 'abb_skizze', [])) > n_sk):
+            del D.befunde[n_bef:]
+            continue   # Bild nicht zeichenbar (Beschreibungsrahmen): keine fremde Aufgabe ohne ihr Bild
+        kennzahlen(D, a)
+        if a.zahlart:
+            a.zk = zahlart_wert(a.zahlart, a)
+        if not g1_sache(a):
+            continue
+        if mass and (schrittzahl(a) > mass[0] or a.zk > mass[1] or woerter(a) > mass[2]):
+            continue
+        a.art = 'fremd'
+        a.g1_herkunft = 'fremd'
+        kand.append(a)
+    kand.sort(key=lambda a: (a.zk, schrittzahl(a), woerter(a), a.id))
+    for a in kand[:n]:
+        gesehen.add(a.id)
+    return kand[:n]
+
+
+def g1_gruppen(art):
+    """G1: Gruppen des Steckbriefs [(Name, ids, mit_ueberschrift)]. Eine Gruppe mit einer Aufgabe läuft ohne
+    eigene Überschrift: steht sie vor der ersten Gruppe mit mehreren Aufgaben, als eigene Aufgabe normal (sie
+    ist ihr eigener Pflichtweg); sonst unter der vorigen Gruppe, eingerückt (nächstverwandt, Entscheidung)."""
+    roh = [[n, list(ids)] for n, ids in art['gruppen']] or [[art.get('Kurzname', art['name']), list(art['aufgaben'])]]
+    out = []
+    for n, ids in roh:
+        if len(ids) == 1 and any(len(x[1]) > 1 for x in out):
+            for x in reversed(out):
+                if len(x[1]) > 1:
+                    x[1] += ids
+                    break
+            continue
+        out.append([n, ids])
+    mehr = sum(1 for x in out if len(x[1]) > 1)
+    return [(n, ids, len(ids) > 1 and (mehr > 1 or len(out) > 1)) for n, ids in out]
+
+
+def g1_aufgabe_tex(D, a, nr, art, eingerueckt=False):
+    """Satz einer Aufgabe (T6: Skizze vor den Antwortmöglichkeiten); Marke grau im Rand, ★ bei nur FOR (F4)."""
+    mk = marke(a, 'FOR') if a.art == 'echt' and not a.marke_text else (tx(a.marke_text) if a.marke_text else '')
+    if getattr(a, 'stern', False):
+        mk = '$\\bigstar$\\,' + mk
+    out = [f'\\begin{{{UMG}}}{{{mk}}}{{{nr}.}}{{}}', ueberstrich(a.text)]
+    if a.abb:
+        out.append('\\par\\smallskip\\noindent ' + a.abb + '\\par')
+    if a.optionen:
+        out.append(''.join(f'\\pfkreuzzeile{{{ueberstrich(o)}}}' for o in a.optionen))
+    if getattr(a, 'antwort', ''):
+        out.append('\\par\\noindent ' + a.antwort + '\\par')
+    n = 0 if a.art == 'erkennen' else platz(a, art)
+    if n and (getattr(a, 'antwort', '') or re.search(r'tabular|leerzelle|leerfeld', (a.abb or '') + a.text)):
+        n = 0
+    if n:
+        out.append(f'\\rechenplatz{{{min(n, 2) if eingerueckt else n}}}')
+    k = kurz_kontrolle(a)
+    if k:
+        out.append(ueberstrich(f'\\fusshilfe{{\\mbox{{{nr}:~{k}}}}}'))
+    out.append(f'\\end{{{UMG}}}')
+    return '\n'.join(x for x in out if x)
+
+
+def formel_tex(f):
+    """Formel des Steckbriefs (Klartext „G = W · 100 : p“, „a² + b² = c²“) im Mathesatz."""
+    f = f.replace('·', r'\cdot ').replace('²', '^2').replace('³', '^3').replace('−', '-')
+    return '$' + f + '$'
+
+
+def g1_synth(nr_text, kurz, zw=None, art='erkennen', aid=''):
+    a = Aufgabe()
+    a.art, a.id = art, aid
+    a.text = nr_text
+    a.kurz = kurz
+    a.kurz_roh = []
+    a.zw, a.zw_roh = list(zw or []), []
+    a.hrang = 0
+    a.zk, a.tl, a.fz, a.sr = 0, 0, 1, 8
+    a.g1_herkunft = 'eigen'
+    return a
+
+
+def g1_zitat(t):
+    """Satz in „…“; innere „…“ bleiben (äußeres Paar: erstes „ bis letztes “)."""
+    t = (t or '').strip()
+    i, j = t.find('„'), t.rfind('“')
+    return t[i + 1:j].strip() if 0 <= i < j else t
+
+
+def g1_erkennen(D, B, sb):
+    """A1: erste Sprosse und Erkennungsschritt aus dem Steckbrief: Erkennen-Fälle (Dreiecke verschiedener Lage,
+    mit wechselnden Buchstaben, ohne Längen; einer ohne rechten Winkel als Gegenfall) oder Erkennen-Bank (Sätze).
+    P1: die Antworten dürfen nicht alle gleich sein."""
+    k = sb['arten_kopf']
+    frage = g1_zitat(k.get('Erkennen-Frage', ''))
+    faelle = k.get('Erkennen-Fälle') or []
+    if isinstance(faelle, str):
+        faelle = [faelle] if faelle and not faelle.startswith('(') else []
+    if faelle:
+        bilder, loes, antw = [], [], []
+        for i, f in enumerate(faelle):
+            t, rw, seiten = fall_dreieck(f, 0.5, marke=True)
+            bilder.append('\\begin{minipage}[t]{0.225\\linewidth}\\centering ' + t
+                          + '\\par\\vspace{1mm}{\\small ' + 'abcd'[i] + ')}\\end{minipage}')
+            h = seiten[rw - 1] if rw else 'keiner'
+            antw.append(h if rw else 'keiner')
+            loes.append(f'{"abcd"[i]}) ' + (f'H = ${h}$' if rw else 'kein rechter Winkel'))
+        a = g1_synth(tx(frage) + '\\par\\smallskip\\noindent ' + '\\hfill'.join(bilder), '; '.join(loes),
+                     aid='erkennen-faelle')
+        a.antworten = antw
+        return a
+    ids = re.findall(r'[a-z-]+-e\d+-k\d+-s\d+-v\d+', k.get('Erkennen-Bank', ''))
+    saetze, loes, antw = [], [], []
+    for i, sp in enumerate(ids):
+        r = D.bank.get(sp)
+        if not r:
+            D.befund(f'Erkennen-Bank: {sp} fehlt')
+            continue
+        B.benutzt.add(sp)
+        t = re.sub(r'\s*(Welche[rs]?|Was)\b[^.?]*\?\s*$', '', r['aufgabe']).strip()
+        saetze.append(f'{"abcdef"[i]}) ' + tx(t, latex=True))
+        lo = re.sub(r'\s*\(.*\)\s*$', '', r['loesung']).strip()
+        loes.append(f'{"abcdef"[i]}) ' + tx(lo, latex=True))
+        antw.append(klartext(lo))
+    a = g1_synth(tx(frage) + '\\par\\smallskip\\noindent ' + '\\par\\noindent '.join(saetze), '; '.join(loes),
+                 aid='erkennen-bank')
+    a.antworten = antw
+    return a
+
+
+def g1_formel(D, sb):
+    """A2: Formel aufstellen – Rollen zuordnen, erst in Rollen, dann mit den Buchstaben der Aufgabe."""
+    k = sb['arten_kopf']
+    frage = g1_zitat(k.get('Formel-Frage', ''))
+    faelle = k.get('Formel-Fälle') or []
+    if isinstance(faelle, str):
+        faelle = [faelle]
+    if not frage or not faelle:
+        return None
+    if all(f.lstrip().startswith('(') for f in faelle):
+        bilder, loes, antw = [], [], []
+        for i, f in enumerate(faelle):
+            t, rw, s = fall_dreieck(f, 0.62)
+            h = s[rw - 1]
+            kk = [s[j] for j in range(3) if j != rw - 1]
+            bilder.append('\\begin{minipage}[t]{0.31\\linewidth}\\centering ' + t + '\\par\\vspace{1mm}\\raggedright'
+                          '{\\small ' + 'abc'[i] + ')}\\par\\vspace{6mm}\\noindent{\\color{black!45}\\rule{\\linewidth}{0.4pt}}'
+                          '\\par\\vspace{6mm}\\noindent{\\color{black!45}\\rule{\\linewidth}{0.4pt}}\\end{minipage}')
+            loes.append(f'{"abc"[i]}) ${h}^2 = {kk[0]}^2 + {kk[1]}^2$')
+            antw.append(h)
+        a = g1_synth(tx(frage) + '\\par\\smallskip\\noindent ' + '\\hfill'.join(bilder), '; '.join(loes),
+                     aid='formel-faelle')
+        a.antworten = antw
+        return a
+    saetze, loes, antw = [], [], []
+    for i, f in enumerate(faelle):
+        s, _, l = f.partition('→')
+        saetze.append(f'{"abc"[i]}) ' + tx(s.strip()) + '\\par\\vspace{6mm}\\noindent{\\color{black!45}\\rule{\\linewidth}{0.4pt}}')
+        loes.append(f'{"abc"[i]}) ' + tx(l.strip()))
+        antw.append(l.strip())
+    a = g1_synth(tx(frage) + '\\par\\smallskip\\noindent ' + '\\par\\smallskip\\noindent '.join(saetze),
+                 '; '.join(loes), aid='formel-saetze')
+    a.antworten = antw
+    return a
+
+
+def g1_schlusszeile(D, sb, mit_stern):
+    """F3/F4: klein am Ende: P10-Zahl je Art seit dem ersten Prüfungsjahr (ohne GYM), „EBR und FOR“ oder „nur
+    FOR“, nicht geprüfte Arten, ★-Erklärung nur bei Stern, Vorher/Weiter mit Kurznamen."""
+    k = sb['arten_kopf']
+    seit = min(int(j) for j in D.pruefjahre)
+    teile = []
+    for a in sb['arten']:
+        m = re.match(r'(\d+)×\s*\(([^)]*)\)', a.get('Geprüft', ''))
+        if m:
+            teile.append((a.get('Kurzname', a['name']), m.group(1), m.group(2)))
+    name = k.get('Kurzname', '')
+    if len(teile) == 1:
+        s = f'{name} in der P10: {teile[0][1]}× seit {seit} ({teile[0][2]}).'
+    else:
+        kurse = {t[2] for t in teile}
+        s = (f'{name} in der P10 seit {seit}: ' + ' · '.join(f'{t[0]} {t[1]}×' + ('' if len(kurse) == 1 else f' ({t[2]})')
+                                                        for t in teile)
+             + (f' (je {kurse.pop()}).' if len(kurse) == 1 else '.'))
+    ng = SB.schuelertext(k.get('Nicht geprüft', ''))
+    if ng:
+        s += f' Nicht geprüft: {ng}.'
+    if mit_stern:
+        s += ' \\mbox{$\\bigstar$ = nur FOR.}'
+    vw = []
+    if k.get('Vorher'):
+        vw.append('Vorher: ' + k['Vorher'])
+    if k.get('Weiter'):
+        vw.append('Weiter: ' + k['Weiter'])
+    s = tx(s).replace('\\$', '$').replace('\\mbox\\{', '\\mbox{').replace('.\\}', '.}')
+    return ('\\par\\vfill\\noindent{\\footnotesize\\color{black!70}' + s
+            + (('\\par\\noindent ' + tx(' · '.join(vw))) if vw else '') + '\\par}')
+
+
+def g1_pruefe(D, alle, eintraege):
+    """Prüfschritte (T6, P1, B10, B1): kein Satz doppelt in einer Aufgabe; Erkennen/Formel-Antworten nicht alle
+    gleich; eigene Aufgaben ohne krumme Zahlen außer „Wurzel geht nicht auf“; keine Kommentarzeilen."""
+    fehler = []
+    for nr, a in eintraege:
+        s = [x.strip().lower() for x in re.split(r'(?<=[.?!])\s+', klartext(a.text)) if len(x.strip()) > 12]
+        dop = [x for x, c in Counter(s).items() if c > 1]
+        if dop:
+            fehler.append(f'T6: Nr. {nr} Satz doppelt: {dop[0][:50]}')
+        if getattr(a, 'antworten', None) is not None and len(set(a.antworten)) < 2:
+            fehler.append(f'P1: Nr. {nr} Antwort immer gleich ({a.antworten[0] if a.antworten else "–"})')
+        if a.art == 'bank' and a.zk == 2 and not re.search(r'[Rr]unde', klartext(a.text)):
+            fehler.append(f'B10: Nr. {nr} eigene Aufgabe mit krummen Zahlen')
+    return fehler
+
+
+def g1_bau(D, args):
+    sb = D.sb
+    B = Bau(D, args)
+    D.bau = B
+    B.sb_sp = set()
+    gk = lies_gekuerzt(D)
+    name = f'{args.kapitel}-{args.art}-fokus-{args.fokus.lower()}'
+    ordner = args.aus or os.path.join(BANK, 'bau', 'pruefheft', f'{name}-{args.datum}')
+    kenn = g1_kennung(os.path.relpath(ordner, BANK), args.art == 'schwach')
+    titel = tx(sb['arten_kopf'].get('Kurzname') or sb['name'])
+    unter = D.pr['kopf']
+    fuss_kenn = ('\\fancyfoot[C]{\\parbox[t]{\\textwidth}{\\mbfhbox\\par\\vspace{1.5mm}{\\footnotesize\\color{mbgrau}'
+                 '{\\scriptsize ' + kenn.replace('+', '{+}') + '}\\hfill\\thepage}}}')
+    out = [KOPF.replace('\\begin{document}', '') + G1_PRAEAMBEL, '\\begin{document}', '\\pfheftstil', fuss_kenn,
+           f'\\pfheftkopf{{{titel}}}{{{unter}}}']
+    nr, eintraege, alle = 0, [], []
+    herkunft = Counter()
+    SORT.clear()
+
+    def setze(a, eingerueckt=False, gruppe=''):
+        nonlocal nr
+        nr += 1
+        eintraege.append((f'{nr}.', a))
+        herkunft[getattr(a, 'g1_herkunft', 'eigen')] += 1
+        SORT.append((gruppe or '–', nr, 'G1', a))
+        a.g1_eingerueckt = eingerueckt
+        return g1_aufgabe_tex(D, a, nr, args.art, eingerueckt)
+
+    # A1 Begriff erkennen
+    e = g1_erkennen(D, B, sb)
+    out.append(setze(e, gruppe='Erkennen'))
+    # B7 Merkkasten nur mit der Formel
+    f = re.split(r'\s*\(vorläufig', sb['arten_kopf'].get('Formel', ''))[0].strip()
+    if f:
+        out.append('\\par\\addvspace{4pt}\\begin{center}\\begin{minipage}{0.5\\linewidth}{\\uebersichtskasten{\\centering '
+                   + formel_tex(f) + '}}\\end{minipage}\\end{center}\\par')
+    # A2 Formel aufstellen
+    fa = g1_formel(D, sb)
+    if fa:
+        out.append(setze(fa, gruppe='Formel aufstellen'))
+    gesehen = set()
+    mit_stern = False
+    for art in sb['arten']:
+        an = art.get('Kurzname', art['name'])
+        out.append(f'\\par\\addvspace{{6pt}}\\gueber{{\\vspace{{10pt}}{{\\large\\bfseries {tx(an)}}}\\par\\vspace{{2pt}}}}')
+        # kurze Leiter der Art (Leiter-Bank; eigene)
+        for sp in SB.ids(art.get('Leiter-Bank', '')):
+            a = sb_nimm(D, B, sp, art.get('Stufe', an))
+            if not a:
+                continue
+            if D.kapitel == 'prozent' and sprosse_von(a.id).endswith('prozentrechnung-e4-k2-s3'):
+                prozent_tabelle(a)
+            a.g1_herkunft = 'eigen'
+            if (D.bank.get(a.id) or {}).get('hoehe') == 'vorstufe' and not a.optionen:
+                a.kurz, a.zw, a.zw_roh = tx(D.bank[a.id]['loesung'], latex=True), [], []   # Vorstufe: Lösung ganz
+            g1_bankfigur(a)
+            out.append(setze(a, gruppe=an))
+        gruppen = g1_gruppen(art)
+        n_bb = len(art['aufgaben'])
+        letzte_voll = [i for i in art['aufgaben'] if i not in art['nur_gekuerzt']]
+        voll_id = letzte_voll[-1] if letzte_voll else None
+        echte = {}
+        for i in art['aufgaben']:
+            a = g1_echt(D, i, art.get('Stufe', an), i == voll_id, gk, art)
+            if a:
+                echte[i] = a
+        mass = schwerste_echt([a for a in echte.values()])
+        for a in g1_fremde(D, art, 3 - n_bb, mass, gesehen):
+            out.append(setze(a, gruppe=an))
+        for gname, ids, kopf in gruppen:
+            ls = [echte[i] for i in ids if i in echte]
+            if not ls:
+                continue
+            if kopf:
+                # Gruppenüberschrift im Kasten der nächsten Aufgabe (mit der Art-Überschrift, wenn sie aussteht)
+                out.append(f'\\gueberdazu{{\\vspace{{4pt}}{{\\bfseries\\small {tx(gname)}}}\\par}}')
+            out.append(setze(ls[0], gruppe=gname))
+            if len(ls) > 1:
+                # B6: eingerückt, eine Schriftstufe kleiner, schwarz; Randmarke grau (Einzug über leftskip und
+                # eine um 8 mm schmalere Zeile – pfaufg nimmt \\linewidth)
+                out.append('\\par\\setlength{\\gEin}{8mm}\\let\\gSchrift\\small')
+                for a in ls[1:]:
+                    out.append(setze(a, True, gruppe=gname))
+                out.append('\\par\\setlength{\\gEin}{0pt}\\let\\gSchrift\\relax')
+            mit_stern |= any(getattr(a, 'stern', False) for a in ls)
+    out.append(g1_schlusszeile(D, sb, mit_stern))
+    out.append('\\end{document}')
+    tex = '\n'.join(out)
+    # Lösung: wie bisher (typische Fehler oben), Überstrich, Kennung im Fuß
+    for _, a in eintraege:
+        if getattr(a, 'kurz_roh', None):
+            a.kurz_roh = [ueberstrich(tx(x)) if False else x for x in a.kurz_roh]
+    ltex = setze_loesung(D, args, titel, eintraege, None)
+    ltex = ltex.replace('\\pfheftstil', '\\pfheftstil\n' + fuss_kenn, 1)
+    ltex = '\n'.join(ueberstrich(z) if z.startswith('\\lz{') else z for z in ltex.split('\n'))
+    # Rest „…, $c$“ am Ende der Zwischenergebnisse (Bank: „$c^2 = 97$, $c \\approx 9{,}8$“ halb abgeschnitten)
+    ltex = re.sub(r',\s*\$[a-zA-Z]\$\}\{\}$', '}{}', ltex, flags=re.M)
+    fehler = g1_pruefe(D, alle, eintraege)
+    arbeit = tempfile.mkdtemp(prefix='pruefheft-')
+    os.makedirs(os.path.join(ordner, 'src'), exist_ok=True)
+    os.makedirs(os.path.join(ordner, 'pdf'), exist_ok=True)
+    bericht, seiten = [], 0
+    for nm, t in ((name, tex), (name + '-loesung', ltex)):
+        erg = xelatex(t, args.bb, nm, arbeit)
+        open(os.path.join(ordner, 'src', nm + '.tex'), 'w', encoding='utf-8').write(t)
+        if erg['pdf']:
+            shutil.copy(erg['pdf'], os.path.join(ordner, 'pdf', nm + '.pdf'))
+        if nm == name:
+            seiten = erg['seiten']
+        bericht.append(f'{nm}: {erg["seiten"]} Seiten, Fehler {len(erg["fehler"])}, '
+                       f'Missing character {erg["missing"]}, Overfull {erg["overfull"]}')
+        bericht += ['   ' + fl for fl in erg['fehler'][:5]]
+    if not args.ohne_register:
+        g1_register(args, kenn, ordner, seiten, len(eintraege))
+    zl = [f'# Aufbau {titel} (Grundform G1, Kennung {kenn})', '',
+          '| Nr. | Abschnitt | eingerückt | Herkunft | Marke | id |', '|---|---|---|---|---|---|']
+    for (n, a), (g, _, _, _) in zip(eintraege, SORT):
+        zl.append(f'| {n} | {g} | {"ja" if getattr(a, "g1_eingerueckt", False) else ""} | '
+                  f'{getattr(a, "g1_herkunft", "eigen")} | {klartext(marke(a, "FOR") if a.art == "echt" and not a.marke_text else a.marke_text)} | {a.id} |')
+    zl += ['', '## Prüfung', ''] + (['- ' + x for x in fehler] if fehler else ['- keine Abweichung'])
+    open(os.path.join(ordner, 'aufbau.md'), 'w', encoding='utf-8').write('\n'.join(zl) + '\n')
+    print('Grundform G1 (Beschlüsse 07.10.), Kennung', kenn)
+    print('\n'.join(bericht))
+    print('Ordner:', ordner)
+    pfl = sum(1 for _, a in eintraege if not getattr(a, 'g1_eingerueckt', False))
+    print(f'Aufgaben: {len(eintraege)} (Pflichtweg {pfl}, eingerückt {len(eintraege) - pfl}); Herkunft: '
+          + ', '.join(f'{k} {v}' for k, v in herkunft.items()))
+    print('Prüfung:', 'keine Abweichung' if not fehler else '; '.join(fehler))
+    if D.befunde:
+        print('Datenbefunde:')
+        for b in D.befunde:
+            print(' -', b)
+    return fehler
+
+
+
 def main():
     ap = argparse.ArgumentParser(description='Prüfungsheft aus Daten setzen')
     ap.add_argument('--kapitel', required=True)
@@ -3908,6 +4558,13 @@ def main():
     D = Daten(args.mn, args.kapitel, args.pruefung)
     D_AKT = D
     D.n_exakt_offen = 0
+    if args.fokus and D.pr['ordner'] == 'msa':
+        # Grundform G1 (Beschlüsse 07.10.): Steckbrief mit Teil 5 „Arten“
+        sb = SB.finde(D.mn, D.kapitel, fokus=args.fokus)
+        if sb and sb.get('arten'):
+            D.sb = sb
+            g1_bau(D, args)
+            return
     stufen, ps, B = baue_modell(D, args)
     for st in stufen:
         for a in st.vor + [x for _, _, gl in st.gruppen for x in gl]:
