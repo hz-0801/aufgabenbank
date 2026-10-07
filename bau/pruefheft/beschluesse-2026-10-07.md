@@ -66,6 +66,12 @@ A4. Wissen einmal ermitteln, im Steckbrief ablegen, beim Bauen nur
     Stern), Kurzname, Vorher, Weiter. skript-zuschnitt-p10.csv wird aus den
     Steckbriefen erzeugt, nicht daneben gepflegt.
 
+A5. Ankreuzaufgaben gehören zu der Art, deren Rechenweg sie abfragen:
+    „Gleichung erkennen“ und Aussagen zum Begriff stehen beim Formel-
+    Aufstellen; „Formel mit Wurzel“ für die gesuchte Größe ist Einstieg
+    ihrer Art (Pythagoras: 2021-OS-B1h, 2026-FOR-B1j → lange Seite;
+    2024-OS-B1f → kurze Seite). Befund UTU Nr. 4–6 (Lehrer 07.10.).
+
 ## F Fokusblatt (Prüfung)
 
 F1. Nur Arten, die BB/BE geprüft hat. Fremde Aufgaben nur, wenn sie genau den
