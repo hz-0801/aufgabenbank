@@ -3930,6 +3930,20 @@ G1_PRAEAMBEL = r'''\makeatletter
 \let\gSchrift\relax
 % Ankreuzzeile mit hängendem Einzug (lange Aussagen brechen unter dem Text um, nicht unter dem Kästchen)
 \renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+% Bauregeln 6.7: kurze Optionen in einer Zeile
+\newcommand{\gkreuzreihe}[1]{\par\noindent\hspace*{1.6em}#1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2.2em}}
+% Bauregeln 6.6: links, was man ansieht, rechts, was man tut; Spaltengrenze auf dem ganzen Blatt an derselben
+% Stelle (halbe Satzbreite vom linken Rand); untereinander, wenn die Skizze breiter als die linke Spalte ist
+\newsavebox{\gbox}\newlength{\gLinks}
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr0.5\textwidth-\gEin-\mbpfnr\relax}%
+  \ifdim\wd\gbox>\dimexpr\gLinks-4mm\relax
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[c]{\gLinks}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[c]{\dimexpr\linewidth-\gLinks\relax}#2\end{minipage}%
+  \fi\par}
 \RenewDocumentEnvironment{pfaufg}{m m m}{%
   \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
   \ifx\gkopf\empty\else\noindent\gkopf\par\global\let\gkopf\empty\fi
@@ -3976,7 +3990,7 @@ def g1_register(args, kenn, ordner, seiten, n_aufg):
     commit = subprocess.run(['git', 'rev-parse', '--short', 'HEAD'], cwd=BANK, capture_output=True,
                             text=True).stdout.strip()
     zeilen.append(f'{kenn};{args.datum};{",".join(D_AKT.eintraege)};F;{best};{commit};'
-                  f'pruefheft.py v0.4;Version 2026-10-06c;{pfad}')
+                  f'pruefheft.py v0.5;Version 2026-10-06c;{pfad}')
     open(p, 'w', encoding='utf-8').write('\n'.join(zeilen) + '\n')
 
 
@@ -4224,12 +4238,22 @@ def g1_aufgabe_tex(D, a, nr, art, eingerueckt=False):
     if getattr(a, 'stern', False):
         mk = '$\\bigstar$\\,' + mk
     out = [f'\\begin{{{UMG}}}{{{mk}}}{{{nr}.}}{{}}', ueberstrich(a.text)]
-    if a.abb:
-        out.append('\\par\\smallskip\\noindent ' + a.abb + '\\par')
+    rechts = ''
     if a.optionen:
-        out.append(''.join(f'\\pfkreuzzeile{{{ueberstrich(o)}}}' for o in a.optionen))
+        kurz_opt = sum(len(klartext(o)) + 4 for o in a.optionen) <= 120
+        if kurz_opt and not a.abb:
+            rechts = '\\gkreuzreihe{' + ''.join(f'\\gkreuz{{{ueberstrich(o)}}}' for o in a.optionen) + '}'
+        else:
+            rechts = ''.join(f'\\pfkreuzzeile{{{ueberstrich(o)}}}' for o in a.optionen)
     if getattr(a, 'antwort', ''):
-        out.append('\\par\\noindent ' + a.antwort + '\\par')
+        rechts += '\\par\\noindent ' + a.antwort + '\\par'
+    if a.abb and rechts:
+        out.append('\\gzwei{' + a.abb + '}{' + rechts + '}')   # Bauregeln 6.6
+    else:
+        if a.abb:
+            out.append('\\par\\smallskip\\noindent ' + a.abb + '\\par')
+        if rechts:
+            out.append(rechts)
     n = 0 if a.art == 'erkennen' else platz(a, art)
     if n and (getattr(a, 'antwort', '') or re.search(r'tabular|leerzelle|leerfeld', (a.abb or '') + a.text)):
         n = 0
@@ -4374,8 +4398,9 @@ def g1_schlusszeile(D, sb, mit_stern):
     if k.get('Weiter'):
         vw.append('Weiter: ' + k['Weiter'])
     s = tx(s).replace('\\$', '$').replace('\\mbox\\{', '\\mbox{').replace('.\\}', '.}')
-    return ('\\par\\vfill\\noindent{\\footnotesize\\color{black!70}' + s
-            + (('\\par\\noindent ' + tx(' · '.join(vw))) if vw else '') + '\\par}')
+    # zusammen halten: nie über den Seitenrand verteilt
+    return ('\\par\\vfill\\noindent\\begin{minipage}{\\linewidth}{\\footnotesize\\color{black!70}' + s
+            + (('\\par\\noindent ' + tx(' · '.join(vw))) if vw else '') + '\\par}\\end{minipage}')
 
 
 def g1_pruefe(D, alle, eintraege):
@@ -4394,7 +4419,69 @@ def g1_pruefe(D, alle, eintraege):
     return fehler
 
 
+G1_IDRE = r'\d{4}-[A-Z]+-[A-Z]\d+[a-z]'
+
+
+def g1_abruf(sb):
+    """Bauregeln 3.2: Abruf statt Merkkasten – „Notiere …“ als erste Aufgabe, Lösung knapp im Fuß."""
+    k = sb['arten_kopf']
+    frage = g1_zitat(k.get('Abruf-Frage', ''))
+    if not frage:
+        return None
+    loes = re.split(r'\s*\(', k.get('Abruf-Lösung', ''))[0].strip()
+    a = g1_synth(tx(frage), formel_tex(loes) if loes else '', aid='abruf')
+    a.kurz_roh = [loes] if loes else []
+    a.art = 'abruf'
+    a.antwort = '\\vspace{7mm}\\noindent{\\color{black!45}\\rule{0.5\\linewidth}{0.4pt}}'
+    return a
+
+
+def g1_art_erkennen(art):
+    """Bauregeln 3.3: Erkennen vor einer Art, eine Entscheidung je Teil, beide Arten gemischt (Sätze
+    „Text → Entscheidung; Gleichung“): je Fall eine Zeile zum Entscheiden und eine für die Gleichung."""
+    frage = g1_zitat(art.get('Erkennen-Frage', ''))
+    faelle = art.get('Erkennen-Fälle') or []
+    if isinstance(faelle, str):
+        faelle = [faelle] if faelle and not faelle.startswith('(') else []
+    if not frage or not faelle:
+        return None
+    linie = '{\\color{black!45}\\rule{%s}{0.4pt}}'
+    saetze, loes, antw = [], [], []
+    for i, f in enumerate(faelle):
+        t, _, l = f.partition('→')
+        ent, _, gl = l.partition(';')
+        saetze.append(f'{"abcdef"[i]}) ' + tx(t.strip()) + '\\par\\vspace{5mm}\\noindent '
+                      + (linie % '0.28\\linewidth') + '\\hspace{1.5em}' + (linie % '0.55\\linewidth'))
+        loes.append(f'{"abcdef"[i]}) ' + tx(ent.strip()) + (', $' + gl.strip().replace('²', '^2') + '$' if gl.strip() else ''))
+        antw.append(ent.strip())
+    a = g1_synth(tx(frage) + '\\par\\smallskip\\noindent ' + '\\par\\smallskip\\noindent '.join(saetze),
+                 '; '.join(loes), aid='erkennen-art')
+    a.antworten = antw
+    return a
+
+
+def g1_auswahl(art, ids, voll_id, n_max=None):
+    """Bauregeln 2.1 (Richtung): aus einer Gruppe (Sorte) eine Aufgabe, aus häufigen (ab drei) zwei; zuerst die
+    volle Prüfungsform der Art, dann die mit dem belegten Fehler aus dem Steckbrief, bei Gleichstand die
+    jüngste. Reihenfolge des Steckbriefs (leicht → schwer) bleibt."""
+    n = n_max or (2 if len(ids) >= 3 else 1)
+    fehler = set(re.findall(G1_IDRE, str(art.get('Typischer Fehler', ''))))
+    ids = list(dict.fromkeys(ids))
+    rang = sorted(ids, key=lambda i: (i != voll_id, i not in fehler, -int(i[:4])))
+    wahl = set(rang[:n])
+    return [i for i in ids if i in wahl]
+
+
 def g1_bau(D, args):
+    """Bauregeln 2.1: erst alle Originale; füllen sie mehr als drei Seiten, neu mit Auswahl je Sorte."""
+    fehler, seiten = g1_bau_einmal(D, args, False)
+    if seiten > 3 and not getattr(args, 'alle', False):
+        print(f'{seiten} Seiten mit allen Originalen – neu mit Auswahl je Sorte (Bauregeln 2.1)')
+        fehler, seiten = g1_bau_einmal(D, args, True)
+    return fehler
+
+
+def g1_bau_einmal(D, args, auswahl):
     sb = D.sb
     B = Bau(D, args)
     D.bau = B
@@ -4422,14 +4509,13 @@ def g1_bau(D, args):
         a.g1_eingerueckt = eingerueckt
         return g1_aufgabe_tex(D, a, nr, args.art, eingerueckt)
 
-    # A1 Begriff erkennen
+    # Bauregeln 3.2: Abruf statt Merkkasten
+    ab = g1_abruf(sb)
+    if ab:
+        out.append(setze(ab, gruppe='Abruf'))
+    # 3.3 Begriff erkennen
     e = g1_erkennen(D, B, sb)
     out.append(setze(e, gruppe='Erkennen'))
-    # B7 Merkkasten nur mit der Formel
-    f = re.split(r'\s*\(vorläufig', sb['arten_kopf'].get('Formel', ''))[0].strip()
-    if f:
-        out.append('\\par\\addvspace{4pt}\\begin{center}\\begin{minipage}{0.5\\linewidth}{\\uebersichtskasten{\\centering '
-                   + formel_tex(f) + '}}\\end{minipage}\\end{center}\\par')
     # A2 Formel aufstellen
     fa = g1_formel(D, sb)
     if fa:
@@ -4439,6 +4525,21 @@ def g1_bau(D, args):
     for art in sb['arten']:
         an = art.get('Kurzname', art['name'])
         out.append(f'\\par\\addvspace{{6pt}}\\gueber{{\\vspace{{10pt}}{{\\large\\bfseries {tx(an)}}}\\par\\vspace{{2pt}}}}')
+        # 3.3 Erkennen vor der Art (gemischte Fälle), 3.5 Einstieg: Ankreuzaufgaben zum Rechenweg der Art
+        ea = g1_art_erkennen(art)
+        if ea:
+            out.append(setze(ea, gruppe=an))
+        ein = list(dict.fromkeys(re.findall(G1_IDRE, str(art.get('Einstieg', '')))))
+        if auswahl and ein:
+            ein = g1_auswahl(art, ein, None, 1)
+        for j, i in enumerate(ein):
+            a = g1_echt(D, i, art.get('Stufe', an), False, gk, art)
+            if a:
+                if j == 1:
+                    out.append('\\par\\setlength{\\gEin}{8mm}\\let\\gSchrift\\small')
+                out.append(setze(a, j > 0, gruppe=an))
+        if len(ein) > 1:
+            out.append('\\par\\setlength{\\gEin}{0pt}\\let\\gSchrift\\relax')
         # kurze Leiter der Art (Leiter-Bank; eigene)
         for sp in SB.ids(art.get('Leiter-Bank', '')):
             a = sb_nimm(D, B, sp, art.get('Stufe', an))
@@ -4451,10 +4552,15 @@ def g1_bau(D, args):
                 a.kurz, a.zw, a.zw_roh = tx(D.bank[a.id]['loesung'], latex=True), [], []   # Vorstufe: Lösung ganz
             g1_bankfigur(a)
             out.append(setze(a, gruppe=an))
-        gruppen = g1_gruppen(art)
         n_bb = len(art['aufgaben'])
         letzte_voll = [i for i in art['aufgaben'] if i not in art['nur_gekuerzt']]
         voll_id = letzte_voll[-1] if letzte_voll else None
+        if auswahl:
+            art = dict(art)
+            roh = art['gruppen'] or [(an, list(art['aufgaben']))]
+            art['gruppen'] = [(g, g1_auswahl(art, ids, voll_id)) for g, ids in roh]
+            art['aufgaben'] = [i for i in art['aufgaben'] if any(i in ids for _, ids in art['gruppen'])]
+        gruppen = g1_gruppen(art)
         echte = {}
         for i in art['aufgaben']:
             a = g1_echt(D, i, art.get('Stufe', an), i == voll_id, gk, art)
@@ -4476,7 +4582,8 @@ def g1_bau(D, args):
                 # eine um 8 mm schmalere Zeile – pfaufg nimmt \\linewidth)
                 out.append('\\par\\setlength{\\gEin}{8mm}\\let\\gSchrift\\small')
                 for a in ls[1:]:
-                    out.append(setze(a, True, gruppe=gname))
+                    # Bauregeln 3.6: die volle Prüfungsform ist immer Pflicht
+                    out.append(setze(a, a.id != voll_id, gruppe=gname))
                 out.append('\\par\\setlength{\\gEin}{0pt}\\let\\gSchrift\\relax')
             mit_stern |= any(getattr(a, 'stern', False) for a in ls)
     out.append(g1_schlusszeile(D, sb, mit_stern))
@@ -4526,7 +4633,7 @@ def g1_bau(D, args):
         print('Datenbefunde:')
         for b in D.befunde:
             print(' -', b)
-    return fehler
+    return fehler, seiten
 
 
 
@@ -4548,6 +4655,7 @@ def main():
     ap.add_argument('--uebung', action='store_true', help='Anhang „Mehr zum Üben“ (nur auf Zuruf, Punkt 31)')
     ap.add_argument('--ohne-uebung', action='store_true', help='ohne Wirkung seit Punkt 31 (Anhang nie automatisch)')
     ap.add_argument('--ohne-register', action='store_true')
+    ap.add_argument('--alle', action='store_true', help='Fokusblatt mit allen Originalen, ohne Auswahl je Sorte (Bauregeln 2.1)')
     ap.add_argument('--nur-register', action='store_true',
                     help='nichts setzen, nur die Registerzeile des schon gebauten Ordners schreiben (Lauf C: '
                          'parallele Bauten mit --ohne-register, danach je Bau einmal --nur-register)')
