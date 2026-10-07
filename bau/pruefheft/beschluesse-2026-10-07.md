@@ -84,7 +84,14 @@ F5. „Zum Schluss“ entfällt im Fokusblatt (schmal; der Schüler geht mit der
     schwersten gelösten Grundwert-Aufgabe raus). Mischen gehört ins
     allgemeine Blatt und ins Prüfungsheft.
 F6. Kein vorgerechnetes Beispiel im Fokusblatt.
-F7. Pythagoras-Steckbrief teilen; Zuschnitt nach Arten (A3).
+F7. Pythagoras nach Arten (A3): Hypotenuse gesucht, Kathete gesucht, davor
+    „Gleichung aufstellen“ (A2). Kein eigenes Fokusblatt „in Figuren und
+    Körpern“ (zu dünn: 5 OS-Originale, 2 mit Hauptplatz hier): ein, zwei
+    Aufgaben mit verstecktem Dreieck als oberste Sprosse, der Rest über
+    „Weiter“ in Körper/Flächen. Im allgemeinen Blatt eigener Abschnitt.
+F8. Grenze: Dreieck mit Marke und nötigen Längen eingezeichnet = direkt (auch
+    als Teil einer Figur, z. B. 2026-FOR-K4a, 2022-OS-K5a); selbst finden,
+    Linie denken oder Länge erst ableiten = versteckt.
 
 ## T Teilaufgaben und Skizzen
 
