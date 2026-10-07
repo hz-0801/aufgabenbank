@@ -103,6 +103,10 @@ B11. Ersetzt B7 für das Fokusblatt: kein Merkkasten. Wo der Schüler das
     folgen daraus. Allgemeines Blatt (erstes Lernen): knapper Kasten wie im
     Tafelwerk, Merkhilfe nur belegt – im Gespräch über den Aufbau.
 
+B12. Fuß bleibt schmal: nur Ergebnisse, kein Rechenweg und kein „Tipp“ (der
+    Lehrer fragt am Tisch, welcher Weg dem Schüler liegt). Ausnahme: Lösung
+    einer Abrufaufgabe (B11).
+
 ## G Grundform (Lehrer 07.10.)
 
 G1. Fokusblatt (Prüfung): zeigt alles, was zum Handgriff in der P10 vorkam;
@@ -154,6 +158,10 @@ P1. Es muss eine naheliegende falsche Antwort geben, aus der der Schüler das
     Winkel: Antwort immer „ja“ – fällt).
 
 ## Offen, im Gespräch über den Aufbau
+
+- Wegweiser je Thema (Rechenwege, Merkhilfe, Übersicht), wenn Blätter und
+  Ablauf stehen (Lehrer 07.10.: Prozent ist in der P10 selten, nicht alle
+  Wege besprechen).
 
 - Was erwarten wir bei welchem Blatt (Fokus, Prüfungsheft, allgemein, mehr);
   lange Prüfungshefte (Dreiecke 42 S.) gegen „kurze Blätter sind besser“.
