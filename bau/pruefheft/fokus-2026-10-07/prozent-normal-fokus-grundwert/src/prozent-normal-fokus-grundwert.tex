@@ -11,6 +11,20 @@
 \let\gSchrift\relax
 % Ankreuzzeile mit hängendem Einzug (lange Aussagen brechen unter dem Text um, nicht unter dem Kästchen)
 \renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+% Bauregeln 6.7: kurze Optionen in einer Zeile
+\newcommand{\gkreuzreihe}[1]{\par\noindent\hspace*{1.6em}#1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2.2em}}
+% Bauregeln 6.6: links, was man ansieht, rechts, was man tut; Spaltengrenze auf dem ganzen Blatt an derselben
+% Stelle (halbe Satzbreite vom linken Rand); untereinander, wenn die Skizze breiter als die linke Spalte ist
+\newsavebox{\gbox}\newlength{\gLinks}
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr0.5\textwidth-\gEin-\mbpfnr\relax}%
+  \ifdim\wd\gbox>\dimexpr\gLinks-4mm\relax
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[c]{\gLinks}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[c]{\dimexpr\linewidth-\gLinks\relax}\raggedright #2\end{minipage}%
+  \fi\par}
 \RenewDocumentEnvironment{pfaufg}{m m m}{%
   \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
   \ifx\gkopf\empty\else\noindent\gkopf\par\global\let\gkopf\empty\fi
@@ -32,15 +46,13 @@
 \begin{pfaufg}{}{1.}{}
 Was ist hier das Ganze? Unterstreiche es. Rechne nicht.\par\smallskip\noindent a) In der Klasse sind $28$ Kinder. $7$ davon haben einen Hund.\par\noindent b) $45$ Gäste essen vegetarisch. Eingeladen sind $150$ Gäste.\par\noindent c) Ein Pullover kostete $60\,€$. Jetzt kostet er $45\,€$.
 \end{pfaufg}
-\par\addvspace{4pt}\begin{center}\begin{minipage}{0.5\linewidth}{\uebersichtskasten{\centering $G = W \cdot  100 : p$}}\end{minipage}\end{center}\par
 \begin{pfaufg}{}{2.}{}
 Schreibe zu jedem Satz auf, was W und was p ist. Schreibe dann die Rechnung für G mit den Zahlen hin. Rechne nicht aus.\par\smallskip\noindent a) 30 \% der Klasse sind 9 Kinder.\par\vspace{6mm}\noindent{\color{black!45}\rule{\linewidth}{0.4pt}}\par\smallskip\noindent b) 18 € Rabatt sind 15 \% des alten Preises.\par\vspace{6mm}\noindent{\color{black!45}\rule{\linewidth}{0.4pt}}
 \end{pfaufg}
 \par\addvspace{6pt}\gueber{\vspace{10pt}{\large\bfseries Vom Teil zum Ganzen}\par\vspace{2pt}}
 \begin{pfaufg}{}{3.}{}
 Der graue Abschnitt ist $20\,\%$ des Ganzen. Trage den Abschnitt so oft ab, bis du bei $100\,\%$ bist. Markiere das Ganze.
-\par\smallskip\noindent \streifen[0]{20}{$0\,\%$}{}\par
-\par\noindent \leerfeld[Abschnitte] \par
+\gzwei{\streifen[0]{20}{$0\,\%$}{}}{\par\noindent \leerfeld[Abschnitte] \par}
 \end{pfaufg}
 \begin{pfaufg}{}{4.}{}
 Ein Händler hat $24$ kg Äpfel verkauft. Das sind $10\,\%$ seiner Äpfel. Wie viel kg Äpfel hatte er?
@@ -68,11 +80,12 @@ Ein T-Shirt ist um 6 € billiger geworden. Dieser Nachlass entspricht 20 \% des
 \rechenplatz{1}
 \fusshilfe{\mbox{8:~30 €}}
 \end{pfaufg}
+\par\setlength{\gEin}{0pt}\let\gSchrift\relax
+\par\addvspace{6pt}\gueber{\vspace{10pt}{\large\bfseries Mit einem Bruch}\par\vspace{2pt}}
 \begin{pfaufg}{nach P10 ’19}{9.}{}
-In einem Gefäß liegen 4 schwarze Kugeln. Sie sind $\tfrac{2}{3}$ aller Kugeln im Gefäß. Berechne, wie viele Kugeln insgesamt im Gefäß liegen.
+Für ein Spiel soll Schwarz in $\tfrac{2}{3}$ der Fälle gezogen werden. Im Gefäß liegen 4 schwarze Kugeln. Berechne, wie viele Kugeln insgesamt im Gefäß liegen müssen.
 \rechenplatz{2}
 \fusshilfe{\mbox{9:~G = 4 : $\tfrac{2}{3}$ = 6 Kugeln ($\tfrac{1}{3}$ sind 2 Kugeln)}}
 \end{pfaufg}
-\par\setlength{\gEin}{0pt}\let\gSchrift\relax
-\par\vfill\noindent{\footnotesize\color{black!70}Grundwert in der P10: 3× seit 2014 (EBR und FOR). Nicht geprüft: vermehrter und verminderter Grundwert.\par\noindent Vorher: Prozent von einem Betrag · Weiter: Erhöhung und Senkung in Prozent\par}
+\par\vfill\noindent\begin{minipage}{\linewidth}{\footnotesize\color{black!70}Grundwert in der P10 seit 2014: Vom Teil zum Ganzen 2× · Mit einem Bruch 1× (je EBR und FOR). Nicht geprüft: vermehrter und verminderter Grundwert.\par\noindent Vorher: Prozent von einem Betrag · Weiter: Erhöhung und Senkung in Prozent\par}\end{minipage}
 \end{document}
