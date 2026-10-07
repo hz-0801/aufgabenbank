@@ -50,9 +50,16 @@ Steckbrief, nie hier.
 
 ## 2 Blattarten
 
-2.1 Fokusblatt (P10, Abitur): ein Handgriff. Zeigt alles, was zum
-    Handgriff in der Prüfung vorkam, ganz oder herausgelöst; der
-    Pflichtweg ist kurz. Nur Arten, die BB/BE geprüft hat. Kein
+2.1 Fokusblatt (P10, Abitur): ein Handgriff. Der Schüler soll sehen, was
+    ihn erwartet; der Pflichtweg ist kurz. Nur Arten, die BB/BE geprüft
+    hat. Richtung, schmal, aber vollständig: Würden alle Originale (ganz
+    oder herausgelöst) mehr als zwei, drei Seiten füllen, steht jede Sorte
+    (was der Schüler anders erlebt: Darstellung, Fragerichtung, Falle)
+    einmal da, häufige Sorten zweimal; gewählt wird die Aufgabe mit dem
+    belegten Fehler aus dem Steckbrief, bei Gleichstand die jüngste. Sonst
+    alle. Kein Hinweis auf weitere Fundstellen; wie oft geprüft wurde,
+    sagt die Schlusszeile (3.12). [Lehrer 07.10., Pythagoras-Blatt: 27
+    Aufgaben auf 9 Seiten] Kein
     vorgerechnetes Beispiel, kein Merkkasten, kein „Zum Schluss“, kein
     Mischen. [G1, F1, F5, F6, B11, 07.10.]
 2.2 Prüfungsheft: dieselbe Grundform je Handgriff hintereinander; jede
@@ -66,8 +73,11 @@ Steckbrief, nie hier.
     P10-Zahl, Stern. Schluss: „Zum Schluss“ mit zwei älteren Aufgaben
     eingemischt; Unterscheiden-Aufgabe (3.3), wenn das Blatt alle
     Geschwister vorher übt. Einzelheiten offen (11). [G3, N6.26]
-2.4 „mehr“: reines Übungsblatt mit neuen Aufgaben derselben Art;
-    Überschriften nur bei mehreren Arten. [B4, G3]
+2.4 „mehr“: Richtung: Nach einem Fokusblatt liefert „<Kennung> mehr“ die
+    Originale des Handgriffs, die noch nicht auf dem Blatt standen; sonst
+    neue Aufgaben derselben Art. Überschriften nur bei mehreren Arten. Wie
+    sich ein Mehr-Blatt sonst unterscheidet: offen (11). [B4, G3; Lehrer
+    07.10.]
 2.5 GYM-Hefte sind keine P10: GYM-Aufgaben zählen nicht mit und werden wie
     Aufgaben anderer Länder behandelt (nie schwerer als BB/BE, Marke ohne
     „P10“). [F2, Lehrer 07.10.]
@@ -253,10 +263,11 @@ Steckbrief, nie hier.
 
 ## 9 Kurzbefehle und Lieferung
 
-9.1 Im Blatt-Chat: „K7P mehr“ (reines Übungsblatt; allgemeines Blatt
-    wahlweise „K7P mehr <Art>“), „K7P weiter“, „K7P Lösung“, „K7P Nr. 7
-    falsch“ (der Chat stellt die Schritte genau dieser Aufgabe als Fragen),
-    „mehr Gerüst“. [B4, A7]
+9.1 Im Blatt-Chat: Die Kennung führt zum Blatt (Register). „K7P mehr“
+    (2.4; allgemeines Blatt wahlweise „K7P mehr <Art>“), „K7P weiter“, „K7P
+    Lösung“, „K7P Nr. 7 falsch“ (der Chat stellt die Schritte genau dieser
+    Aufgabe als Fragen), „mehr Gerüst“. Knöpfe statt Tippen erst, wenn echte
+    Stunden zeigen, welche gebraucht werden. [B4, A7; Lehrer 07.10.]
 9.2 EBR/FOR: ein Blatt für beide Kurse; das Prüfungsheft folgt dem Kurs
     (ohne Angabe FOR), als Parameter. [06.10. G26–27]
 
@@ -279,6 +290,11 @@ Steckbrief, nie hier.
     Nr. 7, 9, 11; 06.10. F25; N3.16]
 
 ## 11 Offen (nicht bauen, nicht festlegen)
+
+- Pflicht nach der Auswahl (2.1): Gerüst plus je Sorte eine, oder nur das
+  Gerüst (3.6 „einzige ihrer Sorte“ machte 22 von 27 zur Pflicht) – am
+  neu gebauten Pythagoras-Blatt zählen und entscheiden.
+- Mehr-Blatt: ob und worin es sich vom ersten Blatt unterscheidet.
 
 - Erwartung je Blattart (Fokus, Prüfungsheft, allgemein, „mehr“); lange
   Prüfungshefte (Dreiecke 42 S.) gegen 1.2.
