@@ -90,6 +90,25 @@ A6. Erkennen vor einer Art fragt eine Entscheidung je Teil, nicht zwei auf
     Befund UTU Nr. 12; Steckbrief Pythagoras „Formel“ nachgezogen
     (Lehrer 07.10.).
 
+A7. Zerlegen in Schritte, für alle Themen (Lehrer 07.10.): Jede Art hat im
+    Steckbrief das Feld „Schritte“ – die Entscheidungen des Schülers in
+    seiner Folge, je Schritt die Frage, die naheliegende falsche Antwort und
+    der belegte Fehler, den er verhindert. Prüfstein: ohne belegten Fehler
+    kein Schritt, ein belegter Fehler ohne Schritt heißt, einer fehlt.
+    Formulierung nach Sokrates (Menon): Die Teilfrage verlangt eine
+    Entscheidung, bei der eine falsche Antwort naheliegt, und fragt nach
+    Anschauung, Vergleich oder Vorhersage („Kann die Leiter höher als 5 m
+    reichen?“), nicht nach einem Begriff; der Widerspruch entsteht aus den
+    eigenen Antworten des Schülers, keine vorgelegte falsche Rechnung auf dem
+    Blatt. Einsatz: Heranführung und Leiter als Teilfragen a), b), c) unter
+    einer Aufgabe, nach oben abgebaut (zuerst fällt die Gleichungsfrage,
+    zuletzt die Vorhersage); schwache Fassung und Zuruf „mehr Gerüst“ (länger
+    stehen lassen); „K7P Nr. n falsch“ im Blatt-Chat (die Schritte genau
+    dieser Aufgabe als Fragen). Nicht in voller Prüfungsform, Abrufaufgabe
+    und Fuß (B12). Die Schritte schreibt der Chat selbst; der Lehrer urteilt
+    am gebauten Blatt. Erste Fassungen: Steckbriefe Pythagoras und
+    Grundwert (mathe-nachhilfe katalog/steckbrief/).
+
 ## F Fokusblatt (Prüfung)
 
 F1. Nur Arten, die BB/BE geprüft hat. Fremde Aufgaben nur, wenn sie genau den
