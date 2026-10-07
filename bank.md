@@ -337,15 +337,9 @@ Verfahrenskette ist daher nicht immer k1.
   (das Prüfungsheft lässt sie aus, das Unterrichtsblatt führt sie).
 - Zahlen so, dass Ergebnisse endlich sind und leichte Aufgaben im
   Kopf gehen; periodische Dezimalbrüche tragen einen Hinweis.
-- Zahlen wachsen mit der Leiter (Beschluss 06.10.): Vorstufen und
-  Grundfall im Kopf rechenbar (bei Prozent 10, 50, 25, 20, 1 %;
-  glatte Werte, Ergebnis ganz oder mit einer Nachkommastelle),
-  mittlere Sprossen glatt mit Taschenrechner, oben wie in der
-  Prüfung. Der Zusammenbau sortiert danach (Kennzahl
-  „kopfrechenbar“ per Skript); jede Stufe braucht unten genug
-  Vorstufen – normal zwei, „schwach“ alle; fehlende leichte
-  Aufgaben werden beim Auffüllen nachgezogen. Im Zweifel eine
-  leichte Aufgabe mehr.
+- Zahlen wachsen mit der Leiter: Bauregeln 5.1 (bau/bauregeln.md);
+  für die Bank heißt das: je Stufe unten genug glatte, kopfrechenbare
+  Vorstufen.
 - Ergebnisse in loesung exakt zuerst, dann gerundet („25\sqrt{2}
   \approx 35{,}4“ cm, „\tfrac{15}{32} \approx 0{,}47“); glatte Werte
   allein; schreibt die Aufgabe eine Rundung vor: exakt und die
@@ -353,29 +347,12 @@ Verfahrenskette ist daher nicht immer k1.
   geänderte Zeilen.
   Dreisatz-Zahlen der Zone im Kopf rechenbar.
 - Keine Aufgabe doppelt, auch nicht über Ketten hinweg.
-- Herkunft (Nachtrag 06.10., N1): Blätter nehmen echte
-  Prüfungsaufgaben zuerst – BB/BE (P10 2014–2026, OS/EBR/FOR, GYM) →
-  Abschlussprüfungen anderer Länder (mathe-nachhilfe msa/fremd/,
-  Quellen quellen/quelle-fremd-*) → eigene Bankzeilen. Fremde nur bei
-  weniger als 12 (Kern) bzw. 6 echten BB/BE der Stufe und nie schwerer
-  als die schwerste BB/BE-Aufgabe der Stufe (Schritte, Zahlart,
-  Textlänge); fremde Fachwörter, die in BB nicht vorkommen, werden
-  umformuliert.
-- Eigene Zeilen sparsam: nur übliche Formulierungen, die in P10
-  fehlen, und nur für Lücken der Leiter. Zwei eigene Zeilen einer
-  Sprosse unterscheiden sich in mindestens zwei Merkmalen – Sache,
-  Darstellung (Text, Tabelle, Bild, Diagramm), Fragerichtung
-  (vorwärts, rückwärts, vergleichen, Aussage prüfen), Sprachform.
-  Keine Kopien, die sich nur in der Zahl unterscheiden („Äpfel
-  10/50/25/20 %“); solche Zeilen ruhen (Feld ruht). Eine eigene, die
-  einer echten oder einer anderen eigenen in Sache, Darstellung und
-  Fragerichtung gleicht, setzt der Bau nicht.
-- Herausgelöste Aufgaben (N1.4): Steckt ein Handgriff als
-  Zwischenschritt in einer echten Aufgabe, entsteht eine Aufgabe mit
-  echter Sache und echten Zahlen ohne das Nebensächliche (Muster
-  mathe-nachhilfe beispiel-zwischenschritt.html), Marke „nach P10 ’15“.
-  Sie liegen in mathe-nachhilfe msa/herausgeloest-p10.csv und ersetzen
-  eine ausgedachte Bankzeile, wo sie genau auf eine Sprosse passen.
+- Herkunft, eigene und herausgelöste Aufgaben: Bauregeln 4.1–4.3. Für
+  die Bank: eigene Zeilen sparsam, zwei eigene einer Sprosse in
+  mindestens zwei Merkmalen verschieden (Sache, Darstellung,
+  Fragerichtung, Sprachform); Kopien nur mit anderer Zahl ruhen (Feld
+  ruht). Herausgelöste liegen in mathe-nachhilfe
+  msa/herausgeloest-p10.csv.
 - Ankreuzen: Die loesung nennt die richtige Option wortgleich
   (Zahl, Term oder Gleichung wie in der Option); pruef trägt die
   Zahl, wenn die Optionen Zahlen sind, sonst "".
@@ -431,9 +408,6 @@ Verfahrenskette ist daher nicht immer k1.
   (Urteile vom 28.09.).
 - Anwendung: realistische Größen, eine im Kontext sinnvolle
   Frage; eine eingekleidete Rechnung ist keine Anwendung.
-- Fragewort je Aufgabe: was gefragt ist, in wenigen Wörtern,
-  nicht der ganze Anweisungssatz („13 von 25 – wie viel
-  Prozent?").
 - Streifen, Tabelle, Skizze nur, wenn an ihr gelesen, gefärbt
   oder eingeteilt wird.
 - Operatoren in KMK-Bedeutung; Formulierungen eindeutig.
@@ -443,20 +417,9 @@ Verfahrenskette ist daher nicht immer k1.
 
 ## Option „schwach“
 
-„schwach“ (ziel.md § 2, Beschluss 05.10.) ändert die Form, nicht
-die Auswahl: dieselben Sprossen, dieselbe Höhe, Kern zuerst. Der
-Zusammenbau setzt (1) Zerlegung mit Ausblenden – erste Aufgabe
-einer Stufe mit allen Zwischenfragen (aus den Zwischenergebnissen
-der Lösung bzw. Katalogfeld zwischenergebnis), zweite nur mit der
-ersten Zwischenfrage, dritte ohne; (2) ein Rechenraster, eine Zeile
-je Schritt; (3) im Lösungsblatt Wort + Ansatz ⇒ Wert je
-Zwischenergebnis. Die Bank braucht dafür je Stufe mindestens drei
-Zeilen und je Zeile Zwischenergebnisse in loesung. Die Leiter
-beginnt bei „schwach“ weiter unten (alle Vorstufen der Stufe,
-Rückblick zwei je Voraussetzung); „schwach“ hängt nicht am Kurs
-(EBR/FOR) und streicht nichts (06.10.). Päckchen,
-Erklärzeile, Merkkasten am Ende und Fachwort spät nur im
-Unterrichtsblatt.
+Was „schwach“ auf dem Blatt ändert: Bauregeln 8.1. Die Bank braucht
+dafür je Stufe mindestens drei Zeilen und je Zeile Zwischenergebnisse in
+loesung.
 
 ## Musterbeispiel
 
@@ -468,7 +431,7 @@ Form: Abschnitt „## e<n> k<k> <kette>“, die
 Aufgabe des Grundfalls mit eigenen Zahlen (nicht aus dem Päckchen),
 darunter eine Tabelle Schritt | Zeile, eine Zeile je Umformung, das
 Ergebnis als letzte Zeile. Reine Daten ohne Bausteine; die Form auf
-dem Blatt setzt der Zusammenbau nach layout-befunde 55.
+dem Blatt regeln die Bauregeln (bau/bauregeln.md).
 Liefert der Lehrer ein Beispiel, gilt seins (ziel.md).
 
 ## Basisvorrat
