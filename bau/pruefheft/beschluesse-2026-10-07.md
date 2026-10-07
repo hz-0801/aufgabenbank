@@ -107,6 +107,16 @@ B12. Fuß bleibt schmal: nur Ergebnisse, kein Rechenweg und kein „Tipp“ (der
     Lehrer fragt am Tisch, welcher Weg dem Schüler liegt). Ausnahme: Lösung
     einer Abrufaufgabe (B11).
 
+B13. Belegung einer Formel: einmal je Formel (auch je Umstellung, z. B.
+    Kathete) steht bei der ersten Aufgabe, die sie einsetzt, die Belegung als
+    Zeile vorgegeben („W = …, p = …“, „p = …, q = …“, „m = …, n = …“); danach
+    nicht mehr – der Lehrer setzt die Gewohnheit am Tisch durch. Schwache
+    Fassung: Vorgabe bei den ersten zwei, höchstens bis zur ersten echten
+    Aufgabe; Zuruf „mehr Gerüst“. „geg./ges.“ nur, wo die Angaben über Text
+    und Skizze verstreut sind und mehr als drei Größen vorkommen, dann einmal
+    am Anfang. Keine Prüfungs-Markierung („Prüfung“-Linie) auf Fokusblatt und
+    Prüfungsheft (Randmarke genügt); fürs allgemeine Blatt offen.
+
 ## G Grundform (Lehrer 07.10.)
 
 G1. Fokusblatt (Prüfung): zeigt alles, was zum Handgriff in der P10 vorkam;
@@ -166,6 +176,12 @@ P1. Es muss eine naheliegende falsche Antwort geben, aus der der Schüler das
 
 ## Offen, im Gespräch über den Aufbau
 
+- Rechenwege zur Wahl: einmal je Blatt „Löse mit dem Weg, den du kennst:
+  Dreisatz-Tabelle, Formel oder Verhältnisgleichung“, nur wo Lehrwerke/LISUM
+  mehrere gleichwertige Wege nennen (Feld „Wege“ im Steckbrief) – Vorschlag,
+  nicht entschieden.
+- Allgemeines Blatt: kleine Markierung „so in der Prüfung“ vor echten
+  Aufgaben?
 - Wegweiser je Thema (Rechenwege, Merkhilfe, Übersicht), wenn Blätter und
   Ablauf stehen (Lehrer 07.10.: Prozent ist in der P10 selten, nicht alle
   Wege besprechen).
