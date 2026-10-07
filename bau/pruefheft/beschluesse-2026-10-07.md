@@ -94,6 +94,15 @@ F8. Grenze: Dreieck mit Marke und nötigen Längen eingezeichnet = direkt (auch
     als Teil einer Figur, z. B. 2026-FOR-K4a, 2022-OS-K5a); selbst finden,
     Linie denken oder Länge erst ableiten = versteckt.
 
+B11. Ersetzt B7 für das Fokusblatt: kein Merkkasten. Wo der Schüler das
+    Thema schon hatte, es eine kurze feste Formel/Regel gibt, die das ganze
+    Blatt braucht, ist die erste Aufgabe „Notiere …“ (Abruf aus dem
+    Gedächtnis), Lösung im Fuß knapp wie im Tafelwerk, bei Geometrie mit
+    kleiner Skizze. Pythagoras: „Notiere den Satz des Pythagoras mit H für die
+    Hypotenuse“ – nur die Hypotenuse wird erkannt und benannt, die Katheten
+    folgen daraus. Allgemeines Blatt (erstes Lernen): knapper Kasten wie im
+    Tafelwerk, Merkhilfe nur belegt – im Gespräch über den Aufbau.
+
 ## G Grundform (Lehrer 07.10.)
 
 G1. Fokusblatt (Prüfung): zeigt alles, was zum Handgriff in der P10 vorkam;
