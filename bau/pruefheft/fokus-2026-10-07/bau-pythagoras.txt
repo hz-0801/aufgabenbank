@@ -1,0 +1,6 @@
+Grundform G1 (Beschlüsse 07.10.), Kennung UTU
+dreiecke-normal-fokus-pythagoras: 9 Seiten, Fehler 0, Missing character 0, Overfull 0
+dreiecke-normal-fokus-pythagoras-loesung: 2 Seiten, Fehler 0, Missing character 0, Overfull 0
+Ordner: bau/pruefheft/fokus-2026-10-07/dreiecke-normal-fokus-pythagoras
+Aufgaben: 27 (Pflichtweg 15, eingerückt 12); Herkunft: eigen 9, nach P10 14, BB/BE 4
+Prüfung: keine Abweichung

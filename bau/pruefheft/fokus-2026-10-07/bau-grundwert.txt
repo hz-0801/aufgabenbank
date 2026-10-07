@@ -1,0 +1,6 @@
+Grundform G1 (Beschlüsse 07.10.), Kennung Z8W
+prozent-normal-fokus-grundwert: 2 Seiten, Fehler 0, Missing character 0, Overfull 0
+prozent-normal-fokus-grundwert-loesung: 1 Seiten, Fehler 0, Missing character 0, Overfull 0
+Ordner: bau/pruefheft/fokus-2026-10-07/prozent-normal-fokus-grundwert
+Aufgaben: 9 (Pflichtweg 7, eingerückt 2); Herkunft: eigen 6, nach P10 2, BB/BE 1
+Prüfung: keine Abweichung
