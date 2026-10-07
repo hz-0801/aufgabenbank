@@ -6,7 +6,8 @@ nicht als Einzelkorrektur.
 
 ## B Blatt allgemein
 
-B1. Kein Kommentar auf dem Blatt: alles, was über das Blatt spricht (wozu ein
+B1. Kein Text ohne Nutzen für den Schüler (Sinn der Regel, nicht strikt
+    auslegen; kurze Orientierung, die ihm hilft, ist erlaubt). Fällt: alles, was über das Blatt spricht (wozu ein
     Abschnitt da ist, wie oft geprüft, „kannst du überspringen“, „erst
     verstehen – nicht rechnen“, „damit nichts verloren geht“, „in 3 der
     letzten 5 Prüfungen“), fällt weg. Hilfen wie „ab hier: G = W : p“ bleiben.
@@ -25,8 +26,8 @@ B5. Pfeile in Tabellen: auf beiden Seiten, ohne Beschriftung, genau zwischen
     den Zeilen; der Aufgabentext nennt den Weg nicht.
 B6. Eingerückt werden nur BB/BE-Originale gleicher Art, ab der zweiten; die
     erste ihrer Art (die leichteste) steht normal. Eingerückt: eine
-    Schriftstufe kleiner, schwarz; Randmarke grau; darüber einmal grau
-    „wie Nr. 8“.
+    Schriftstufe kleiner, schwarz; Randmarke grau. (Der Hinweis „wie Nr. 8“
+    entfällt mit G1: die Gruppenüberschrift sagt, was zusammengehört.)
 B7. Merkkasten nur mit der Formel, wörtlich aus der Formelsammlung, und nur bei
     Handgriffen, die mit einer Formel gerechnet werden; sonst kein Kasten.
 B8. Notation, Rangfolge: Formelsammlung der Prüfung (Formeln, Buchstaben) →
@@ -93,6 +94,26 @@ F8. Grenze: Dreieck mit Marke und nötigen Längen eingezeichnet = direkt (auch
     als Teil einer Figur, z. B. 2026-FOR-K4a, 2022-OS-K5a); selbst finden,
     Linie denken oder Länge erst ableiten = versteckt.
 
+## G Grundform (Lehrer 07.10.)
+
+G1. Fokusblatt (Prüfung): zeigt alles, was zum Handgriff in der P10 vorkam;
+    der Pflichtweg ist kurz. Gruppen nach Art (Schülerblick: gleicher
+    Rechenweg, gleiche Falle; bei versteckten Dreiecken z. B. nach der
+    Vorarbeit: Länge halbieren/verdoppeln, Längen aus Koordinaten), je Gruppe
+    eine kurze Überschrift in Schülersprache (Kurzname im Steckbrief), eine
+    Aufgabe normal (Pflichtweg), die übrigen eingerückt (freiwillig). Gruppen
+    leicht → schwer; davor Begriff erkennen, Formel aufstellen, kurze Leiter.
+    Eine Gruppe mit nur einer Aufgabe läuft ohne eigene Überschrift unter der
+    nächstverwandten. Viele Originale (Pythagoras) kommen damit alle aufs
+    Blatt, die Stufe drüber eingeschlossen.
+G2. Prüfungsheft und Abitur: dieselbe Grundform je Handgriff. Neubau erst,
+    wenn die Steckbriefe aller Handgriffe den Teil „Arten“ haben. Schwache
+    Fassung (Kennung mit +): je Gruppe zwei Aufgaben normal.
+G3. Allgemeines Blatt: Überschriften je Art ja, Pflichtweg ist dort die Leiter
+    der Art; eingerückt nur Wiederholungen – Einzelheiten im Gespräch über den
+    Aufbau. „mehr“: Überschriften nur bei mehreren Arten. Nicht übertragbar:
+    nur geprüfte Arten, P10-Zahl, Stern.
+
 ## T Teilaufgaben und Skizzen
 
 T1. Aus Text und Skizze fällt, was nur andere Teilaufgaben brauchen (Punkt Q in
@@ -106,7 +127,9 @@ T3. Gekürzt wird jede Aufgabe außer der letzten echten jeder Stufe; die steht
 T4. Herausgelöste Aufgaben behalten ihre Sache in einem kurzen Satz und eine
     Skizze nur mit den nötigen Angaben; ohne Sache werden sie nicht gesetzt.
     Ihre Stufe richtet sich nach dem Handgriff im Original (Teildreieck in
-    Pyramide/Trapez → Figuren und Körper, nicht „direkt“).
+    Pyramide/Trapez → versteckt, nicht „direkt“).
+T6. Skizze steht vor den Antwortmöglichkeiten; kein Satz doppelt (Prüfschritt;
+    2022-OS-K2c hatte den Stamm zweimal).
 T5. Skizzen dürfen die Längenverhältnisse nicht umkehren (2020-OS-K7a: 12 m
     lang, 34 m kurz gezeichnet).
 
