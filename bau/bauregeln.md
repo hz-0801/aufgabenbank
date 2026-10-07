@@ -287,11 +287,14 @@ Steckbrief, nie hier.
 
 ## 9 Kurzbefehle und Lieferung
 
-9.1 Im Blatt-Chat: Die Kennung führt zum Blatt (Register). „K7P mehr“
-    (2.4; allgemeines Blatt wahlweise „K7P mehr <Art>“), „K7P weiter“, „K7P
-    Lösung“, „K7P Nr. 7 falsch“ (der Chat stellt die Schritte genau dieser
-    Aufgabe als Fragen), „mehr Gerüst“. Knöpfe statt Tippen erst, wenn echte
-    Stunden zeigen, welche gebraucht werden. [B4, A7; Lehrer 07.10.]
+9.1 Bestellung: Das erste Blatt kommt über den Bestellbaum aus offen.html
+    (Prüfungsart → Teil → Sorte → Thema → Zeitraum, Knöpfe, darunter
+    Freitext). Danach öffnet die Kennung einen Folgebaum, vorläufig mit
+    fünf Knöpfen: Mehr davon (die fehlenden Originale) · Weiter (nächster
+    Handgriff laut Steckbrief, bei Serie nächste Portion) · Leichter
+    (Fassung „+“) · Lösung · Hängt bei Nr. … (Schritte dieser Aufgabe als
+    Fragen). Vorläufig; tiefe Diskussion steht aus (11). [B4, A7; Lehrer
+    07.10.]
 9.2 EBR/FOR: ein Blatt für beide Kurse; das Prüfungsheft folgt dem Kurs
     (ohne Angabe FOR), als Parameter. [06.10. G26–27]
 
@@ -314,6 +317,10 @@ Steckbrief, nie hier.
     Nr. 7, 9, 11; 06.10. F25; N3.16]
 
 ## 11 Offen (nicht bauen, nicht festlegen)
+
+- Folgebaum der Kennung (9.1): tiefe Diskussion nötig. Idee des Lehrers:
+  „Mehr davon“ beginnt mit einem kleinen Test o. Ä., weil die Aufgaben schon
+  einmal bearbeitet wurden.
 
 Erprobt am Pythagoras-Blatt 07.10., noch keine Regel (am nächsten Blatt prüfen):
 - Erkennen mit kurzen Lagen statt Fragen und erstem Fall vorgedruckt in Grau,
