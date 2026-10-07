@@ -87,6 +87,11 @@ Steckbrief, nie hier.
 2.5 GYM-Hefte sind keine P10: GYM-Aufgaben zählen nicht mit und werden wie
     Aufgaben anderer Länder behandelt (nie schwerer als BB/BE, Marke ohne
     „P10“). [F2, Lehrer 07.10.]
+    Am Ende jedes Themas der Prüfstein: genau eine ganze echte Aufgabe aus
+    den letzten fünf Jahren, alle Teilaufgaben in Folge wie im Heft, ohne
+    Überschriften und Hilfen. Das Fokusblatt hat keinen Prüfstein (die
+    volle Prüfungsform je Art steht dort schon). [offen.html fest 04.10.;
+    Lehrer 07.10.]
 
 ## 3 Aufbau eines Handgriffs
 
