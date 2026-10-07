@@ -6,10 +6,10 @@
 | 2. | Formel aufstellen |  | eigen |  | formel-faelle |
 | 3. | Gleichung ankreuzen |  | nach P10 | nach P10 ’17 | 2017-OS-B1d |
 | 4. | Satz in Worten |  | BB/BE | P10 ’22 | 2022-OS-B1g |
-| 5. | Die lange Seite gesucht |  | nach P10 | nach P10 ’21 | 2021-OS-B1h |
-| 6. | Die lange Seite gesucht |  | eigen |  | pythagoras-e1-k2-s1-v1 |
-| 7. | Hypotenuse aus zwei Katheten |  | BB/BE | P10 ’20 | 2020-OS-K7a |
-| 8. | Eine kurze Seite gesucht |  | eigen |  | erkennen-art |
+| 5. | Unterscheiden |  | eigen |  | erkennen-art |
+| 6. | Die lange Seite gesucht |  | nach P10 | nach P10 ’21 | 2021-OS-B1h |
+| 7. | Die lange Seite gesucht |  | eigen |  | pythagoras-e1-k2-s1-v1 |
+| 8. | Hypotenuse aus zwei Katheten |  | BB/BE | P10 ’20 | 2020-OS-K7a |
 | 9. | Eine kurze Seite gesucht |  | eigen |  | rechnen-fall |
 | 10. | Kathete aus Hypotenuse und Kathete |  | nach P10 | nach P10 ’24 | 2024-OS-K6a |
 | 11. | Kathete aus Hypotenuse und Kathete |  | BB/BE | P10 ’16 | 2016-OS-K7b |

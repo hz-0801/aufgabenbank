@@ -3942,7 +3942,7 @@ G1_PRAEAMBEL = r'''\makeatletter
     \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
   \else
     \begin{minipage}[c]{\gLinks}\usebox{\gbox}\end{minipage}%
-    \begin{minipage}[c]{\dimexpr\linewidth-\gLinks\relax}#2\end{minipage}%
+    \begin{minipage}[c]{\dimexpr\linewidth-\gLinks\relax}\raggedright #2\end{minipage}%
   \fi\par}
 \RenewDocumentEnvironment{pfaufg}{m m m}{%
   \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
@@ -4246,7 +4246,8 @@ def g1_aufgabe_tex(D, a, nr, art, eingerueckt=False):
         else:
             rechts = ''.join(f'\\pfkreuzzeile{{{ueberstrich(o)}}}' for o in a.optionen)
     if getattr(a, 'antwort', ''):
-        rechts += '\\par\\noindent ' + a.antwort + '\\par'
+        aw = a.antwort.replace(' , ', '\\par\\smallskip\\noindent ') if a.abb else a.antwort   # schmale Spalte: je Feld eine Zeile
+        rechts += '\\par\\noindent ' + aw + '\\par'
     n = 0 if a.art in ('erkennen', 'abruf') else platz(a, art)
     if n and (getattr(a, 'antwort', '') or re.search(r'tabular|leerzelle|leerfeld', (a.abb or '') + a.text)):
         n = 0
@@ -4554,15 +4555,20 @@ def g1_bau_einmal(D, args, auswahl):
         out.append(setze(fa, gruppe='Formel aufstellen'))
     gesehen = set()
     mit_stern = False
+    nr_erk = None
     for art in sb['arten']:
         an = art.get('Kurzname', art['name'])
-        out.append(f'\\par\\addvspace{{6pt}}\\gueber{{\\vspace{{10pt}}{{\\large\\bfseries {tx(an)}}}\\par\\vspace{{2pt}}}}')
-        # 3.3 Erkennen vor der Art (gemischte Fälle), 3.5 Einstieg: Ankreuzaufgaben zum Rechenweg der Art
+        # 3.3 Erkennen vor der Art (gemischte Fälle); „vor der Überschrift“: als Brücke ohne Überschrift
         ea = g1_art_erkennen(art)
-        nr_erk = None
-        if ea:
+        vor = 'vor der Überschrift' in str(art.get('Erkennen-Platz', ''))
+        if ea and vor:
+            out.append(setze(ea, gruppe='Unterscheiden'))
+            nr_erk = nr
+        out.append(f'\\par\\addvspace{{6pt}}\\gueber{{\\vspace{{10pt}}{{\\large\\bfseries {tx(an)}}}\\par\\vspace{{2pt}}}}')
+        if ea and not vor:
             out.append(setze(ea, gruppe=an))
             nr_erk = nr
+        # 3.5 Einstieg: Ankreuzaufgaben zum Rechenweg der Art
         ein = list(dict.fromkeys(re.findall(G1_IDRE, str(art.get('Einstieg', '')).split('(')[0])))
         if auswahl and ein:
             ein = g1_auswahl(art, ein, None, 1)

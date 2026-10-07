@@ -23,7 +23,7 @@
     \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
   \else
     \begin{minipage}[c]{\gLinks}\usebox{\gbox}\end{minipage}%
-    \begin{minipage}[c]{\dimexpr\linewidth-\gLinks\relax}#2\end{minipage}%
+    \begin{minipage}[c]{\dimexpr\linewidth-\gLinks\relax}\raggedright #2\end{minipage}%
   \fi\par}
 \RenewDocumentEnvironment{pfaufg}{m m m}{%
   \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
@@ -60,28 +60,28 @@ Kreuze die Gleichung an, die für dieses Dreieck gilt:
 Kreuze die Aussage an, die für jedes rechtwinklige Dreieck stimmt:
 \pfkreuzzeile{Die Seite gegenüber dem rechten Winkel ist eine Kathete.}\pfkreuzzeile{$c=a+b$}\pfkreuzzeile{Die beiden Kathetenquadrate haben zusammen denselben Flächeninhalt wie das Hypotenusenquadrat}
 \end{pfaufg}
-\par\addvspace{6pt}\gueber{\vspace{10pt}{\large\bfseries Die lange Seite gesucht}\par\vspace{2pt}}
-\begin{pfaufg}{nach P10 ’21}{5.}{}
-Kreuze die Formel an, mit der man z berechnet:
-\gzwei{\begin{tikzpicture}[line width=0.7pt,baseline=(current bounding box.north)]\coordinate (P1) at (0.000,0.000);\coordinate (P2) at (3.200,0.000);\coordinate (P3) at (3.200,2.200);\draw (P1) -- (P2) -- (P3) -- cycle;\mbrwmarke{(P2)}{(P1)}{(P3)}\node[font=\small,anchor=west,inner sep=1.5pt] at (3.280,1.100) {$y$};\node[font=\small,anchor=south east,inner sep=1.5pt] at (1.555,1.166) {$z$};\node[font=\small,anchor=north,inner sep=1.5pt] at (1.600,-0.080) {$x$};\end{tikzpicture}}{\pfkreuzzeile{$z=\sqrt{x^2-y^2}$}\pfkreuzzeile{$z=\sqrt{x^2+y^2}$}\pfkreuzzeile{$z=\sqrt{y^2-x^2}$}\pfkreuzzeile{$z=y^2+x^2$}}
-\fusshilfe{\mbox{5:~z = √(x² + y²)}}
-\end{pfaufg}
-\begin{pfaufg}{}{6.}{}
-In einem rechtwinkligen Dreieck sind die Katheten $a = 36$ cm und $b = 15$ cm lang. Berechne die Länge der Hypotenuse $c$.
-\par\noindent c² = \leerfeld , c = \leerfeld[cm] \par
-\fusshilfe{\mbox{6:~$c = 39$ cm}}
-\end{pfaufg}
-\begin{pfaufg}{P10 ’20}{7.}{}
-Im Dreieck ABC ist bei C ein rechter Winkel. Die Strecke $\overline{BC}$ ist 12 m lang, die Strecke $\overline{AC}$ 34 m. Berechne die Länge der Strecke $\overline{AB}$.
-\gzwei{\begin{tikzpicture}[line width=0.7pt,baseline=(current bounding box.north)]\coordinate (P1) at (0.000,0.000);\coordinate (P2) at (1.200,3.400);\coordinate (P3) at (0.000,3.400);\draw (P1) -- (P2) -- (P3) -- cycle;\mbrwmarke{(P3)}{(P1)}{(P2)}\node[font=\small] at (-0.052,-0.295) {$A$};\node[font=\small] at (1.373,3.645) {$B$};\node[font=\small] at (-0.100,3.683) {$C$};\node[font=\scriptsize,mbgrau,anchor=north west] at ([yshift=-2pt]current bounding box.south west) {nicht maßstabsgerecht};\end{tikzpicture}}{\rechenplatz{2}}
-\fusshilfe{\mbox{7:~$\overline{AB}$ = 10√13 $\approx$ 36,1 m}}
-\end{pfaufg}
-\par\addvspace{6pt}\gueber{\vspace{10pt}{\large\bfseries Eine kurze Seite gesucht}\par\vspace{2pt}}
-\begin{pfaufg}{}{8.}{}
+\begin{pfaufg}{}{5.}{}
 Hypotenuse oder Kathete gesucht? Schreibe die Gleichung auf.\par\smallskip\noindent a) Leiter 5 m lang, Fuß 1,4 m von der Wand – Höhe an der Wand?\par\vspace{2mm}\noindent\hspace*{1.2em}\parbox[b]{0.22\linewidth}{{\color{black!55}Kathete}\par\vspace{-1pt}{\color{black!45}\rule{\linewidth}{0.4pt}}}\hspace{6mm}\parbox[b]{0.45\linewidth}{{\color{black!55}$5^2 = h^2 + 1{,}4^2$}\par\vspace{-1pt}{\color{black!45}\rule{\linewidth}{0.4pt}}}\par\medskip\noindent b) Rampe 3 m lang, 0,4 m hoch – schräge Fläche?\par\vspace{2mm}\noindent\hspace*{1.2em}\parbox[b]{0.22\linewidth}{\par\vspace{-1pt}{\color{black!45}\rule{\linewidth}{0.4pt}}}\hspace{6mm}\parbox[b]{0.45\linewidth}{\par\vspace{-1pt}{\color{black!45}\rule{\linewidth}{0.4pt}}}\par\medskip\noindent c) Bildschirm 48 cm breit, 27 cm hoch – Diagonale?\par\vspace{2mm}\noindent\hspace*{1.2em}\parbox[b]{0.22\linewidth}{\par\vspace{-1pt}{\color{black!45}\rule{\linewidth}{0.4pt}}}\hspace{6mm}\parbox[b]{0.45\linewidth}{\par\vspace{-1pt}{\color{black!45}\rule{\linewidth}{0.4pt}}}\par\medskip\noindent d) Drachenschnur 25 m lang, Lena 7 m neben dem Punkt unter dem Drachen – Höhe?\par\vspace{2mm}\noindent\hspace*{1.2em}\parbox[b]{0.22\linewidth}{\par\vspace{-1pt}{\color{black!45}\rule{\linewidth}{0.4pt}}}\hspace{6mm}\parbox[b]{0.45\linewidth}{\par\vspace{-1pt}{\color{black!45}\rule{\linewidth}{0.4pt}}}
 \end{pfaufg}
+\par\addvspace{6pt}\gueber{\vspace{10pt}{\large\bfseries Die lange Seite gesucht}\par\vspace{2pt}}
+\begin{pfaufg}{nach P10 ’21}{6.}{}
+Kreuze die Formel an, mit der man z berechnet:
+\gzwei{\begin{tikzpicture}[line width=0.7pt,baseline=(current bounding box.north)]\coordinate (P1) at (0.000,0.000);\coordinate (P2) at (3.200,0.000);\coordinate (P3) at (3.200,2.200);\draw (P1) -- (P2) -- (P3) -- cycle;\mbrwmarke{(P2)}{(P1)}{(P3)}\node[font=\small,anchor=west,inner sep=1.5pt] at (3.280,1.100) {$y$};\node[font=\small,anchor=south east,inner sep=1.5pt] at (1.555,1.166) {$z$};\node[font=\small,anchor=north,inner sep=1.5pt] at (1.600,-0.080) {$x$};\end{tikzpicture}}{\pfkreuzzeile{$z=\sqrt{x^2-y^2}$}\pfkreuzzeile{$z=\sqrt{x^2+y^2}$}\pfkreuzzeile{$z=\sqrt{y^2-x^2}$}\pfkreuzzeile{$z=y^2+x^2$}}
+\fusshilfe{\mbox{6:~z = √(x² + y²)}}
+\end{pfaufg}
+\begin{pfaufg}{}{7.}{}
+In einem rechtwinkligen Dreieck sind die Katheten $a = 36$ cm und $b = 15$ cm lang. Berechne die Länge der Hypotenuse $c$.
+\par\noindent c² = \leerfeld , c = \leerfeld[cm] \par
+\fusshilfe{\mbox{7:~$c = 39$ cm}}
+\end{pfaufg}
+\begin{pfaufg}{P10 ’20}{8.}{}
+Im Dreieck ABC ist bei C ein rechter Winkel. Die Strecke $\overline{BC}$ ist 12 m lang, die Strecke $\overline{AC}$ 34 m. Berechne die Länge der Strecke $\overline{AB}$.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,baseline=(current bounding box.north)]\coordinate (P1) at (0.000,0.000);\coordinate (P2) at (1.200,3.400);\coordinate (P3) at (0.000,3.400);\draw (P1) -- (P2) -- (P3) -- cycle;\mbrwmarke{(P3)}{(P1)}{(P2)}\node[font=\small] at (-0.052,-0.295) {$A$};\node[font=\small] at (1.373,3.645) {$B$};\node[font=\small] at (-0.100,3.683) {$C$};\node[font=\scriptsize,mbgrau,anchor=north west] at ([yshift=-2pt]current bounding box.south west) {nicht maßstabsgerecht};\end{tikzpicture}}{\rechenplatz{2}}
+\fusshilfe{\mbox{8:~$\overline{AB}$ = 10√13 $\approx$ 36,1 m}}
+\end{pfaufg}
+\par\addvspace{6pt}\gueber{\vspace{10pt}{\large\bfseries Eine kurze Seite gesucht}\par\vspace{2pt}}
 \begin{pfaufg}{}{9.}{}
-Rechne die Höhe der Leiter aus 8 a) aus.
+Rechne die Höhe der Leiter aus 5 a) aus.
 \par\noindent $h^2 = $\,\rule{25mm}{0.4pt}\,, \ $h = $\,\rule{25mm}{0.4pt}\, m\par
 \fusshilfe{\mbox{9:~h = 4,8 m}}
 \end{pfaufg}
@@ -104,7 +104,7 @@ Die Figur zeigt ein gleichschenkliges Trapez mit seiner Höhe. Fahre das rechtwi
 \end{pfaufg}
 \begin{pfaufg}{}{13.}{}
 Die Figur zeigt ein gleichschenkliges Dreieck. Die Grundseite ist $32$ cm lang, die Schenkel sind je $65$ cm lang. Berechne die Höhe $h$.
-\gzwei{\begin{tikzpicture}[line width=0.7pt,baseline=(current bounding box.north)]\coordinate (P1) at (0.000,0.000);\coordinate (P2) at (2.290,0.000);\coordinate (P3) at (1.145,4.500);\draw (P1) -- (P2) -- (P3) -- cycle;\node[font=\small,anchor=west,inner sep=1.5pt] at (1.795,2.270) {$65$ cm};\node[font=\small] at (-0.182,-0.238) {$A$};\node[font=\small] at (2.472,-0.238) {$B$};\node[font=\small,anchor=north,inner sep=1.5pt] at (1.145,-0.080) {$32$ cm};\node[font=\small] at (1.145,4.800) {$C$};\coordinate (H) at (1.145,0.000); \draw[dashed,line width=0.5pt] (P3) -- (H); \mbrwmarke{(H)}{(P2)}{(P3)}\node[font=\small,anchor=west] at ($(H)!0.45!(P3)+(0.06,0)$) {$h$};\end{tikzpicture}}{\par\noindent h² = \leerfeld , h = \leerfeld[cm] \par}
+\gzwei{\begin{tikzpicture}[line width=0.7pt,baseline=(current bounding box.north)]\coordinate (P1) at (0.000,0.000);\coordinate (P2) at (2.290,0.000);\coordinate (P3) at (1.145,4.500);\draw (P1) -- (P2) -- (P3) -- cycle;\node[font=\small,anchor=west,inner sep=1.5pt] at (1.795,2.270) {$65$ cm};\node[font=\small] at (-0.182,-0.238) {$A$};\node[font=\small] at (2.472,-0.238) {$B$};\node[font=\small,anchor=north,inner sep=1.5pt] at (1.145,-0.080) {$32$ cm};\node[font=\small] at (1.145,4.800) {$C$};\coordinate (H) at (1.145,0.000); \draw[dashed,line width=0.5pt] (P3) -- (H); \mbrwmarke{(H)}{(P2)}{(P3)}\node[font=\small,anchor=west] at ($(H)!0.45!(P3)+(0.06,0)$) {$h$};\end{tikzpicture}}{\par\noindent h² = \leerfeld\par\smallskip\noindent h = \leerfeld[cm] \par}
 \fusshilfe{\mbox{13:~$h = 63$ cm}}
 \end{pfaufg}
 \begin{pfaufg}{nach P10 ’19}{14.}{}
