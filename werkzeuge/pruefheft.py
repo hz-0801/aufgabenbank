@@ -4016,7 +4016,7 @@ def _de_num(v):
     return ('%g' % v).replace('.', '{,}')
 
 
-def fall_dreieck(spec, massstab=1.0, marke=True, hoehe=False):
+def fall_dreieck(spec, massstab=1.0, marke=True, hoehe=False, unten=False):
     """Dreieck im Fälle-Format des Steckbriefs bzw. der gekürzten Fassungen:
     „(x|y) (x|y) (x|y); Seiten a b c (oder a / b / c, – = ohne); Ecken A B C; rechter Winkel 1–3 oder 0;
     nicht maßstabsgerecht“. Seite i liegt Ecke i gegenüber. Beschriftung neben der Linie, nach außen (B9);
@@ -4034,7 +4034,7 @@ def fall_dreieck(spec, massstab=1.0, marke=True, hoehe=False):
     m = re.search(r'rechter Winkel (\d)', spec)
     rw = int(m.group(1)) if m else 0
     gx, gy = sum(p[0] for p in pts) / 3, sum(p[1] for p in pts) / 3
-    z = [r'\begin{tikzpicture}[line width=0.7pt,baseline=(current bounding box.north)]']
+    z = [r'\begin{tikzpicture}[line width=0.7pt,baseline=(current bounding box.%s)]' % ('south' if unten else 'north')]
     for i, p in enumerate(pts):
         z.append(r'\coordinate (P%d) at (%.3f,%.3f);' % (i + 1, p[0], p[1]))
     z.append(r'\draw (P1) -- (P2) -- (P3) -- cycle;')
@@ -4352,7 +4352,7 @@ def g1_formel(D, sb):
         n = len(faelle)
         breite = '%.3f' % (0.96 / n)
         for i, f in enumerate(faelle):
-            t, rw, s = fall_dreieck(f, 0.5 if n > 3 else 0.62)
+            t, rw, s = fall_dreieck(f, 0.5 if n > 3 else 0.62, unten=True)
             h = s[rw - 1]
             kk = [s[j] for j in range(3) if j != rw - 1]
             bilder.append('\\begin{minipage}[t]{' + breite + '\\linewidth}\\raggedright{\\small ' + 'abcd'[i] + ')}\\par'
@@ -4444,26 +4444,50 @@ def g1_abruf(sb):
 
 
 def g1_art_erkennen(art):
-    """Bauregeln 3.3: Erkennen vor einer Art, eine Entscheidung je Teil, beide Arten gemischt (Sätze
-    „Text → Entscheidung; Gleichung“): je Fall eine Zeile zum Entscheiden und eine für die Gleichung."""
+    """Bauregeln 3.3: Erkennen vor einer Art, beide Arten gemischt; je Fall eine kurze Lage, rechts zwei Felder
+    (Entscheidung, Gleichung). Erprobung 07.10.: der erste Fall steht vorgedruckt in Grau (Erkennen-Vorgabe)."""
     frage = g1_zitat(art.get('Erkennen-Frage', ''))
     faelle = art.get('Erkennen-Fälle') or []
     if isinstance(faelle, str):
         faelle = [faelle] if faelle and not faelle.startswith('(') else []
     if not frage or not faelle:
         return None
-    linie = '{\\color{black!45}\\rule{%s}{0.4pt}}'
-    saetze, loes, antw = [], [], []
+    vorgabe = 'a' in (art.get('Erkennen-Vorgabe') or '')
+    def feld(b, inhalt=''):
+        return ('\\parbox[b]{' + b + '}{' + inhalt + '\\par\\vspace{-1pt}{\\color{black!45}\\rule{\\linewidth}{0.4pt}}}')
+    zeilen, loes, antw = [], [], []
     for i, f in enumerate(faelle):
         t, _, l = f.partition('→')
         ent, _, gl = l.partition(';')
-        saetze.append(f'{"abcdef"[i]}) ' + tx(t.strip()) + '\\par\\vspace{5mm}\\noindent '
-                      + (linie % '0.28\\linewidth') + '\\hspace{1.5em}' + (linie % '0.55\\linewidth'))
-        loes.append(f'{"abcdef"[i]}) ' + tx(ent.strip()) + (', $' + gl.strip().replace('²', '^2') + '$' if gl.strip() else ''))
+        gl_tex = '$' + gl.strip().replace('²', '^2').replace(',', '{,}') + '$' if gl.strip() else ''
+        if vorgabe and i == 0:
+            e1 = '{\\color{black!55}' + tx(ent.strip()) + '}'
+            e2 = '{\\color{black!55}' + gl_tex + '}'
+        else:
+            e1 = e2 = ''
+            loes.append(f'{"abcdef"[i]}) ' + tx(ent.strip()) + (', ' + gl_tex if gl_tex else ''))
+        zeilen.append(f'{"abcdef"[i]}) ' + tx(t.strip()) + '\\par\\vspace{2mm}\\noindent\\hspace*{1.2em}'
+                      + feld('0.22\\linewidth', e1) + '\\hspace{6mm}' + feld('0.45\\linewidth', e2))
         antw.append(ent.strip())
-    a = g1_synth(tx(frage) + '\\par\\smallskip\\noindent ' + '\\par\\smallskip\\noindent '.join(saetze),
-                 '; '.join(loes), aid='erkennen-art')
+    tab = '\\par\\smallskip\\noindent ' + '\\par\\medskip\\noindent '.join(zeilen)
+    a = g1_synth(tx(frage) + tab, '; '.join(loes), aid='erkennen-art')
     a.antworten = antw
+    return a
+
+
+def g1_rechnen_fall(art, nr_erkennen):
+    """Erprobung 07.10.: statt einer eigenen Leiter-Aufgabe den vorgedruckten Fall des Erkennens ausrechnen."""
+    f = (art.get('Rechnen-Fall') or '').strip()
+    if not f or not nr_erkennen:
+        return None
+    t, _, l = f.partition('→')
+    t = g1_zitat(t).replace('{nr}', str(nr_erkennen))
+    teile = [x.strip() for x in l.split('(')[0].split(';') if x.strip()]
+    erg = teile[-1] if teile else ''
+    a = g1_synth(tx(t), tx(erg), zw=[tx(x) for x in teile[:-1]], art='bank', aid='rechnen-fall')
+    a.kurz_roh = [erg]
+    a.antwort = '$h^2 = $\\,\\rule{25mm}{0.4pt}\\,, \\ $h = $\\,\\rule{25mm}{0.4pt}\\, m'
+    a.zk = 0
     return a
 
 
@@ -4535,8 +4559,10 @@ def g1_bau_einmal(D, args, auswahl):
         out.append(f'\\par\\addvspace{{6pt}}\\gueber{{\\vspace{{10pt}}{{\\large\\bfseries {tx(an)}}}\\par\\vspace{{2pt}}}}')
         # 3.3 Erkennen vor der Art (gemischte Fälle), 3.5 Einstieg: Ankreuzaufgaben zum Rechenweg der Art
         ea = g1_art_erkennen(art)
+        nr_erk = None
         if ea:
             out.append(setze(ea, gruppe=an))
+            nr_erk = nr
         ein = list(dict.fromkeys(re.findall(G1_IDRE, str(art.get('Einstieg', '')).split('(')[0])))
         if auswahl and ein:
             ein = g1_auswahl(art, ein, None, 1)
@@ -4560,6 +4586,9 @@ def g1_bau_einmal(D, args, auswahl):
                 a.kurz, a.zw, a.zw_roh = tx(D.bank[a.id]['loesung'], latex=True), [], []   # Vorstufe: Lösung ganz
             g1_bankfigur(a)
             out.append(setze(a, gruppe=an))
+        rf = g1_rechnen_fall(art, nr_erk)
+        if rf:
+            out.append(setze(rf, gruppe=an))
         n_bb = len(art['aufgaben'])
         letzte_voll = [i for i in art['aufgaben'] if i not in art['nur_gekuerzt']]
         voll_id = letzte_voll[-1] if letzte_voll else None
@@ -4577,6 +4606,12 @@ def g1_bau_einmal(D, args, auswahl):
         mass = schwerste_echt([a for a in echte.values()])
         for a in g1_fremde(D, art, 3 - n_bb, mass, gesehen):
             out.append(setze(a, gruppe=an))
+        # Erprobung 07.10.: Sternaufgaben (nur FOR) ans Ende der Art; nur die Art-Überschrift, keine Gruppen-
+        # überschriften (Lehrer 07.10., Vorschlag A)
+        sterne = [i for _, ids, _ in gruppen for i in ids if i in echte and getattr(echte[i], 'stern', False)]
+        gruppen = [(g, [i for i in ids if i not in sterne], False) for g, ids, _ in gruppen]
+        if sterne:
+            gruppen.append(('nur FOR', sterne, False))
         for gname, ids, kopf in gruppen:
             ls = [echte[i] for i in ids if i in echte]
             if not ls:

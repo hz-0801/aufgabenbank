@@ -307,6 +307,13 @@ Steckbrief, nie hier.
 
 ## 11 Offen (nicht bauen, nicht festlegen)
 
+Erprobt am Pythagoras-Blatt 07.10., noch keine Regel (am nächsten Blatt prüfen):
+- Erkennen mit kurzen Lagen statt Fragen und erstem Fall vorgedruckt in Grau,
+  ohne „Beispiel“; Felder unter jeder Lage.
+- „Rechne … aus 8 a) aus“ statt einer eigenen Leiter-Aufgabe.
+- Sternaufgaben (nur FOR) am Ende jeder Art.
+- Nur die Art-Überschrift, keine Gruppenüberschriften.
+
 - Pflicht nach der Auswahl (2.1): Gerüst plus je Sorte eine, oder nur das
   Gerüst (3.6 „einzige ihrer Sorte“ machte 22 von 27 zur Pflicht) – am
   neu gebauten Pythagoras-Blatt zählen und entscheiden.
