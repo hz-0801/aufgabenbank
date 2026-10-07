@@ -148,10 +148,15 @@ Steckbrief, nie hier.
     Fragerichtung, Sprachform); keine Kopien mit anderer Zahl. Nie oben auf
     der Leiter, nie für nie geprüfte Arten. [N1.3, 06.10. E]
 4.3 Herauslösen: Steckt der Handgriff als Zwischenschritt in einer echten
-    Aufgabe, entsteht eine Aufgabe mit echter Sache in einem kurzen Satz,
-    echten Zahlen und einer Skizze nur mit den nötigen Angaben; ohne Sache
-    wird sie nicht gesetzt. Ihre Stufe richtet sich nach dem Handgriff im
-    Original. [N1.4, T4]
+    Aufgabe, entsteht eine Aufgabe mit echter Sache in einem kurzen Satz
+    und echten Zahlen (auch Namen wie im Original); ohne Sache wird sie
+    nicht gesetzt. Ihre Stufe richtet sich nach dem Handgriff im Original.
+    Richtung: Die Skizze, die das Original zu dieser Aufgabe zeigt, bleibt,
+    gekürzt auf das Nötige und ohne das, was der Schüler selbst finden
+    soll; hatte das Original keine, kommt keine hinzu. Ein vorbereitender
+    Schritt des Originals („Zeichne ein“, „Beschrifte“) wird mitgenommen,
+    wenn er den Handgriff vorbereitet. [N1.4, T4; Pythagoras-Blatt Nr. 24,
+    2015-OS-K6, Lehrer 07.10.]
 4.4 Kürzen: Aus Text und Skizze fällt, was nur andere Teilaufgaben
     brauchen; was diese Teilaufgabe nennt, bleibt, auch als Ablenker.
     Gekürzt wird jede echte Aufgabe außer der letzten jeder Art; die steht
