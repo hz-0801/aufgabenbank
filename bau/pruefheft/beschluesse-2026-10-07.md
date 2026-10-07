@@ -82,6 +82,14 @@ A5. Ankreuzaufgaben gehören zu der Art, deren Rechenweg sie abfragen:
     ihrer Art (Pythagoras: 2021-OS-B1h, 2026-FOR-B1j → lange Seite;
     2024-OS-B1f → kurze Seite). Befund UTU Nr. 4–6 (Lehrer 07.10.).
 
+A6. Erkennen vor einer Art fragt eine Entscheidung je Teil, nicht zwei auf
+    einmal: je Fall erst „Gesucht ist die Hypotenuse oder eine Kathete?“,
+    dann „Schreibe die Gleichung auf“ (schreiben, nicht wählen). Die Fälle
+    mischen beide Arten, damit die Überschrift die Antwort nicht verrät.
+    Keine Merkregel „plus/minus“ statt der Gleichung in Rollen (A2).
+    Befund UTU Nr. 12; Steckbrief Pythagoras „Formel“ nachgezogen
+    (Lehrer 07.10.).
+
 ## F Fokusblatt (Prüfung)
 
 F1. Nur Arten, die BB/BE geprüft hat. Fremde Aufgaben nur, wenn sie genau den
