@@ -132,6 +132,13 @@ G4. Zum Pflichtweg gehören immer die letzte Aufgabe in voller Prüfungsform und
     davor eine normal gesetzte Aufgabe derselben Sorte steht (Befund Z8W:
     Nr. 8 P10 ’25 und Nr. 9 Kugeln/Bruch standen eingerückt).
 
+G5. Grundwert: zweite Art „Mit einem Bruch“ (eigene Stolperstelle: durch einen
+    Bruch teilen) mit eigener Überschrift; 2019-OS-B1g herausgelöst mit
+    knappem Rahmen („Für ein Spiel soll Schwarz in 2/3 der Fälle gezogen
+    werden; 4 schwarze Kugeln liegen im Gefäß. Wie viele Kugeln insgesamt?“),
+    als letzte, schwerste Aufgabe. Überschriften gibt es genau für die Arten
+    im Steckbrief; der Einstieg steht ohne Überschrift unter dem Titel.
+
 ## T Teilaufgaben und Skizzen
 
 T1. Aus Text und Skizze fällt, was nur andere Teilaufgaben brauchen (Punkt Q in
