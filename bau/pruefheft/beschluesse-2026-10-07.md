@@ -41,6 +41,16 @@ B10. Eigene Aufgaben mit glatten Zahlen (Wurzel geht auf); krumm nur in der
     des Programms muss Quadrate und Potenzen erkennen (36² + 15² ist nicht
     „Kopf“).
 
+B14. Aufgabe mit Skizze, Tabelle oder Graph als Block mit zwei Spalten,
+    für alle Bauwege (Bauprogramm, Bank-Prompt; ersetzt layout-befunde 27):
+    Text oben über volle Breite; darunter links, was man ansieht, rechts,
+    was man tut (Kästchen, Antwortzeile, Lückengleichung), mittig zur
+    Skizze. Spaltengrenze auf dem ganzen Blatt an derselben Stelle.
+    Untereinander nur, wenn die Skizze breiter als die linke Spalte ist.
+    Mehrzeiliger Rechenraum bleibt darunter in voller Breite
+    (layout-befunde 38 gilt dafür weiter). Befund UTU Nr. 3–6: Programm
+    setzte Skizze und Kästchen nacheinander (Lehrer 07.10.).
+
 ## A Anfang und Aufbau
 
 A1. Das Blatt beginnt mit dem, was der Katalog als erste Sprosse und
