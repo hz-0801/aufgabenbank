@@ -53,6 +53,11 @@ Steckbrief, nie hier.
 
 ## 2 Blattarten
 
+Fünf Sorten (Lehrer 07.10.): Original, Original neu, Prüfungsheft (wie
+im Bestellbaum, offen.html), Fokus, Lernblatt. Basis, ganze Prüfung und
+„mehr“ sind Äste oder Knöpfe, keine Sorten. Fokusblatt = Fokus;
+allgemeines Blatt = Lernblatt.
+
 2.1 Fokusblatt (P10, Abitur): ein Handgriff. Der Schüler soll sehen, was
     ihn erwartet; der Pflichtweg ist kurz. Nur Arten, die BB/BE geprüft
     hat. Richtung, schmal, aber vollständig: Würden alle Originale (ganz
@@ -73,7 +78,7 @@ Steckbrief, nie hier.
     deren Handgriff sie als Zwischenschritt enthält, grau „steckt auch in
     Nr. 47 (P10 ’24)“. Neubau erst, wenn die Steckbriefe aller Handgriffe
     den Teil „Arten“ haben. [G2, N2.6]
-2.3 Allgemeines Blatt (Unterrichtsblatt, erstes Lernen): Abschnitte je Art
+2.3 Lernblatt (Schulstoff, erstes Lernen; bisher „allgemeines Blatt“): Abschnitte je Art
     mit Überschrift, Pflichtweg ist die Leiter der Art; eingerückt nur
     Wiederholungen. Nicht übertragbar vom Fokusblatt: nur geprüfte Arten,
     P10-Zahl, Stern. Schluss: „Zum Schluss“ mit zwei älteren Aufgaben
