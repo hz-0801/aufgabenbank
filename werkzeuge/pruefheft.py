@@ -4247,6 +4247,12 @@ def g1_aufgabe_tex(D, a, nr, art, eingerueckt=False):
             rechts = ''.join(f'\\pfkreuzzeile{{{ueberstrich(o)}}}' for o in a.optionen)
     if getattr(a, 'antwort', ''):
         rechts += '\\par\\noindent ' + a.antwort + '\\par'
+    n = 0 if a.art in ('erkennen', 'abruf') else platz(a, art)
+    if n and (getattr(a, 'antwort', '') or re.search(r'tabular|leerzelle|leerfeld', (a.abb or '') + a.text)):
+        n = 0
+    n = min(n, 2) if eingerueckt else n
+    if a.abb and not rechts and n:
+        rechts, n = f'\\rechenplatz{{{n}}}', 0   # Bauregeln 6.6: Rechenraum rechts neben der Skizze
     if a.abb and rechts:
         out.append('\\gzwei{' + a.abb + '}{' + rechts + '}')   # Bauregeln 6.6
     else:
@@ -4254,11 +4260,8 @@ def g1_aufgabe_tex(D, a, nr, art, eingerueckt=False):
             out.append('\\par\\smallskip\\noindent ' + a.abb + '\\par')
         if rechts:
             out.append(rechts)
-    n = 0 if a.art == 'erkennen' else platz(a, art)
-    if n and (getattr(a, 'antwort', '') or re.search(r'tabular|leerzelle|leerfeld', (a.abb or '') + a.text)):
-        n = 0
     if n:
-        out.append(f'\\rechenplatz{{{min(n, 2) if eingerueckt else n}}}')
+        out.append(f'\\rechenplatz{{{n}}}')
     k = kurz_kontrolle(a)
     if k:
         out.append(ueberstrich(f'\\fusshilfe{{\\mbox{{{nr}:~{k}}}}}'))
@@ -4298,6 +4301,8 @@ def g1_erkennen(D, B, sb):
     P1: die Antworten dürfen nicht alle gleich sein."""
     k = sb['arten_kopf']
     frage = g1_zitat(k.get('Erkennen-Frage', ''))
+    if not frage:
+        return None   # Erkennen und Aufstellen in einer Aufgabe (Bauregeln 3.4)
     faelle = k.get('Erkennen-Fälle') or []
     if isinstance(faelle, str):
         faelle = [faelle] if faelle and not faelle.startswith('(') else []
@@ -4344,14 +4349,16 @@ def g1_formel(D, sb):
         return None
     if all(f.lstrip().startswith('(') for f in faelle):
         bilder, loes, antw = [], [], []
+        n = len(faelle)
+        breite = '%.3f' % (0.96 / n)
         for i, f in enumerate(faelle):
-            t, rw, s = fall_dreieck(f, 0.62)
+            t, rw, s = fall_dreieck(f, 0.5 if n > 3 else 0.62)
             h = s[rw - 1]
             kk = [s[j] for j in range(3) if j != rw - 1]
-            bilder.append('\\begin{minipage}[t]{0.31\\linewidth}\\centering ' + t + '\\par\\vspace{1mm}\\raggedright'
-                          '{\\small ' + 'abc'[i] + ')}\\par\\vspace{6mm}\\noindent{\\color{black!45}\\rule{\\linewidth}{0.4pt}}'
-                          '\\par\\vspace{6mm}\\noindent{\\color{black!45}\\rule{\\linewidth}{0.4pt}}\\end{minipage}')
-            loes.append(f'{"abc"[i]}) ${h}^2 = {kk[0]}^2 + {kk[1]}^2$')
+            bilder.append('\\begin{minipage}[t]{' + breite + '\\linewidth}\\raggedright{\\small ' + 'abcd'[i] + ')}\\par'
+                          '\\begin{minipage}[b][1.8cm][b]{\\linewidth}\\centering ' + t + '\\end{minipage}\\par'
+                          '\\vspace{7mm}\\noindent{\\color{black!45}\\rule{0.92\\linewidth}{0.4pt}}\\end{minipage}')
+            loes.append(f'{"abcd"[i]}) ${h}^2 = {kk[0]}^2 + {kk[1]}^2$')
             antw.append(h)
         a = g1_synth(tx(frage) + '\\par\\smallskip\\noindent ' + '\\hfill'.join(bilder), '; '.join(loes),
                      aid='formel-faelle')
@@ -4429,10 +4436,10 @@ def g1_abruf(sb):
     if not frage:
         return None
     loes = re.split(r'\s*\(', k.get('Abruf-Lösung', ''))[0].strip()
-    a = g1_synth(tx(frage), formel_tex(loes) if loes else '', aid='abruf')
+    a = g1_synth(tx(frage) + '\\hfill{\\color{black!45}\\rule[-1pt]{0.45\\linewidth}{0.4pt}}',
+                 formel_tex(loes) if loes else '', aid='abruf')
     a.kurz_roh = [loes] if loes else []
     a.art = 'abruf'
-    a.antwort = '\\vspace{7mm}\\noindent{\\color{black!45}\\rule{0.5\\linewidth}{0.4pt}}'
     return a
 
 
@@ -4515,7 +4522,8 @@ def g1_bau_einmal(D, args, auswahl):
         out.append(setze(ab, gruppe='Abruf'))
     # 3.3 Begriff erkennen
     e = g1_erkennen(D, B, sb)
-    out.append(setze(e, gruppe='Erkennen'))
+    if e:
+        out.append(setze(e, gruppe='Erkennen'))
     # A2 Formel aufstellen
     fa = g1_formel(D, sb)
     if fa:
@@ -4529,7 +4537,7 @@ def g1_bau_einmal(D, args, auswahl):
         ea = g1_art_erkennen(art)
         if ea:
             out.append(setze(ea, gruppe=an))
-        ein = list(dict.fromkeys(re.findall(G1_IDRE, str(art.get('Einstieg', '')))))
+        ein = list(dict.fromkeys(re.findall(G1_IDRE, str(art.get('Einstieg', '')).split('(')[0])))
         if auswahl and ein:
             ein = g1_auswahl(art, ein, None, 1)
         for j, i in enumerate(ein):

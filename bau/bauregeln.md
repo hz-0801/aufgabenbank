@@ -57,9 +57,12 @@ Steckbrief, nie hier.
     (was der Schüler anders erlebt: Darstellung, Fragerichtung, Falle)
     einmal da, häufige Sorten zweimal; gewählt wird die Aufgabe mit dem
     belegten Fehler aus dem Steckbrief, bei Gleichstand die jüngste. Sonst
-    alle. Kein Hinweis auf weitere Fundstellen; wie oft geprüft wurde,
+    alle. Die Sorte gilt über das ganze Blatt, auch über Arten hinweg (die
+    Formel mit Wurzel ankreuzen ist eine Sorte, ob Hypotenuse oder
+    Kathete); nur andere Zahlen oder eine Rundung machen keine neue Sorte,
+    eine andere Sache schon. Kein Hinweis auf weitere Fundstellen; wie oft geprüft wurde,
     sagt die Schlusszeile (3.12). [Lehrer 07.10., Pythagoras-Blatt: 27
-    Aufgaben auf 9 Seiten] Kein
+    Aufgaben auf 9 Seiten; neues Blatt: Nr. 8 wie 7, 11 wie 6, 13 wie 12] Kein
     vorgerechnetes Beispiel, kein Merkkasten, kein „Zum Schluss“, kein
     Mischen. [G1, F1, F5, F6, B11, 07.10.]
 2.2 Prüfungsheft: dieselbe Grundform je Handgriff hintereinander; jede
@@ -92,16 +95,22 @@ Steckbrief, nie hier.
     Aufgabe „Notiere …“; Lösung im Fuß knapp wie im Tafelwerk, bei
     Geometrie mit kleiner Skizze. [B11, 07.10.]
 3.3 Begriff erkennen: mehrere Fälle in verschiedenen Lagen, ohne Rechnen,
-    gebaut wie im Steckbrief (Erkennen-Frage, -Fälle). Eine Entscheidung
+    gebaut wie im Steckbrief (Erkennen-Frage, -Fälle). Nie eine Handlung,
+    die nur markiert, was schon sichtbar dasteht (den eingezeichneten
+    rechten Winkel einkreisen): sie hat keine naheliegende falsche Antwort
+    (3.9), und die Prüfung zeichnet die Marke immer ein. [Lehrer 07.10.] Eine Entscheidung
     je Teil; unter einer Art-Überschrift mischen die Fälle beide Arten,
     damit die Überschrift nicht antwortet. Davon getrennt: Unterscheiden
     verwechselbarer Geschwister (W/G/p; Pythagoras/Winkelfunktion) nur im
     ganzen Prüfungsheft als kurzer Abschnitt nach allen Geschwistern und
     im allgemeinen Blatt nach 2.3, nie im Fokusblatt. [A1, A6, N5.23]
-3.4 Formel aufstellen: vor dem Rechnen Rollen zuordnen und die Gleichung
-    hinschreiben, erst in Rollen (H² = K² + K²), dann mit den Buchstaben
-    der Aufgabe. Richtung: eher die Gleichung in Rollen als eine Merkregel
-    („plus/minus“). [A2, A6]
+3.4 Formel aufstellen: vor dem Rechnen die Rolle finden, die die Formel
+    trägt, und die Gleichung mit den Buchstaben der Aufgabe hinschreiben.
+    Richtung: ein kurzer Satz zum Bau der Formel statt eines
+    Rollenschemas („Suche zuerst die Hypotenuse – sie steht allein auf
+    einer Seite.“), damit der Schüler vom Buchstaben c wegkommt; eher das
+    als eine Merkregel („plus/minus“). Erkennen und Aufstellen dürfen eine
+    Aufgabe sein. [A2, A6; Lehrer 07.10.: „H² = K² + K²“ zu streng]
 3.5 Arten: Jede gesuchte Größe mit entscheidend anderem Rechenweg ist eine
     eigene Art mit eigener Überschrift (Kurzname aus dem Steckbrief,
     Schülersprache). Überschriften gibt es genau für die Arten im
@@ -206,13 +215,15 @@ Steckbrief, nie hier.
     Breite; darunter links, was man ansieht, rechts, was man tut
     (Kästchen, Antwortzeile, Lückengleichung), mittig zur Skizze;
     Spaltengrenze auf dem ganzen Blatt an derselben Stelle. Untereinander
-    nur, wenn die Skizze breiter als die linke Spalte ist. Mehrzeiliger
-    Rechenraum darunter in voller Breite. Die Skizze steht vor den
-    Antwortmöglichkeiten. [B14, UTU 07.10.; T6]
+    nur, wenn die Skizze breiter als die linke Spalte ist. Richtung:
+    Rechenraum rechts neben der Skizze, wo er dort hinpasst; sonst darunter
+    in voller Breite. Die Skizze steht vor den Antwortmöglichkeiten. [B14,
+    UTU 07.10.; T6; Lehrer 07.10. am neuen Blatt]
 6.7 Ankreuzen: Frage, dann Kästchen; kurze Optionen (zusammen höchstens
     120 Zeichen) in einer Zeile, sonst und neben einer Skizze
     untereinander. [TER-L4 01.10. Nr. 8]
-6.8 Antwortfeld: Lückenzeile in Form des Ergebnisses („c² = ___ , c =
+6.8 Antwortfeld: Eine kurze Antwort (eine Formel, ein Wert) steht rechts
+    in derselben Zeile wie der Auftrag, wo Platz ist. Lückenzeile in Form des Ergebnisses („c² = ___ , c =
     ___ cm“; „… = ___“ beim Umformen); Rechenraum nur bei Rechen- und
     Begründungsaufträgen, Zeilen = Rechenschritte der Musterlösung + 1,
     höchstens 8, Karo statt Linien; keiner bei Ablesen, Ankreuzen,
@@ -234,6 +245,11 @@ Steckbrief, nie hier.
 6.12 Ein Satz zum Auftrag je Aufgabe; gilt ein Auftrag für alle
     Teilaufgaben, steht er einmal unter der Nummer; keine nackte Gleichung
     ohne Auftrag. [layout 5, 51; TER 01.10. Nr. 3]
+
+6.13 Nebeneinander stehende Teile (a, b, c) richten sich an gemeinsamen
+    Linien aus: Buchstabe oben links, Bilder unten bündig, Antwortzeilen auf
+    gleicher Höhe; so viele Zeilen, wie gefragt ist. [Lehrer 07.10.,
+    Pythagoras-Blatt Nr. 3]
 
 ## 7 Sprache und Schreibweise
 
