@@ -45,8 +45,11 @@ Steckbrief, nie hier.
     über das Blatt spricht („kannst du überspringen“, „in 3 der letzten 5
     Prüfungen“, „erst verstehen – nicht rechnen“), fällt weg; eine kurze
     Hilfe wie „ab hier: G = W : p“ bleibt. [B1, 07.10.]
-1.4 Herkunft und Lage jeder Aufgabe stehen in den Daten; das Blatt zeigt
-    nur die Jahresmarke (6.4).
+1.4 Fundstellen: An der Aufgabe steht nur die Jahresmarke (6.4). Am Ende
+    des Blatts steht klein über der Schlusszeile die Liste der Originale
+    (Jahr · Aufgabe · Teilaufgabe, z. B. „2020 · 7a“), damit Schüler mit
+    dem Stark-Heft Original und Lösung selbst finden. [offen.html fest
+    04.10.; am 07.10. versehentlich gestrichen, Lehrer 07.10. bestätigt]
 
 ## 2 Blattarten
 
@@ -60,7 +63,7 @@ Steckbrief, nie hier.
     alle. Die Sorte gilt über das ganze Blatt, auch über Arten hinweg (die
     Formel mit Wurzel ankreuzen ist eine Sorte, ob Hypotenuse oder
     Kathete); nur andere Zahlen oder eine Rundung machen keine neue Sorte,
-    eine andere Sache schon. Kein Hinweis auf weitere Fundstellen; wie oft geprüft wurde,
+    eine andere Sache schon. Wie oft geprüft wurde,
     sagt die Schlusszeile (3.12). [Lehrer 07.10., Pythagoras-Blatt: 27
     Aufgaben auf 9 Seiten; neues Blatt: Nr. 8 wie 7, 11 wie 6, 13 wie 12] Kein
     vorgerechnetes Beispiel, kein Merkkasten, kein „Zum Schluss“, kein
