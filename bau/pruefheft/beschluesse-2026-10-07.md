@@ -114,6 +114,11 @@ G3. Allgemeines Blatt: Überschriften je Art ja, Pflichtweg ist dort die Leiter
     Aufbau. „mehr“: Überschriften nur bei mehreren Arten. Nicht übertragbar:
     nur geprüfte Arten, P10-Zahl, Stern.
 
+G4. Zum Pflichtweg gehören immer die letzte Aufgabe in voller Prüfungsform und
+    jede Aufgabe, die als einzige ihre Sorte zeigt. Eingerückt wird nur, wenn
+    davor eine normal gesetzte Aufgabe derselben Sorte steht (Befund Z8W:
+    Nr. 8 P10 ’25 und Nr. 9 Kugeln/Bruch standen eingerückt).
+
 ## T Teilaufgaben und Skizzen
 
 T1. Aus Text und Skizze fällt, was nur andere Teilaufgaben brauchen (Punkt Q in
