@@ -4382,19 +4382,22 @@ def g1_schlusszeile(D, sb, mit_stern):
     FOR“, nicht geprüfte Arten, ★-Erklärung nur bei Stern, Vorher/Weiter mit Kurznamen."""
     k = sb['arten_kopf']
     seit = min(int(j) for j in D.pruefjahre)
+    # Bauregeln 3.12: je Art in wie vielen der letzten fünf Prüfungsjahre, zuletzt wann (ohne GYM)
+    letzt = max(int(j) for j in D.pruefjahre)
+    fenster = set(range(letzt - 4, letzt + 1))
     teile = []
     for a in sb['arten']:
         m = re.match(r'(\d+)×\s*\(([^)]*)\)', a.get('Geprüft', ''))
-        if m:
-            teile.append((a.get('Kurzname', a['name']), m.group(1), m.group(2)))
+        ids = re.findall(G1_IDRE, str(a.get('Aufgaben', '')) + ' ' + str(a.get('Einstieg', '')).split('(')[0])
+        jahre = {int(i[:4]) for i in ids if '-GYM-' not in i}
+        if m and jahre:
+            n5 = len(jahre & fenster)
+            teile.append((a.get('Kurzname', a['name']), n5, max(jahre), m.group(2)))
     name = k.get('Kurzname', '')
-    if len(teile) == 1:
-        s = f'{name} in der P10: {teile[0][1]}× seit {seit} ({teile[0][2]}).'
-    else:
-        kurse = {t[2] for t in teile}
-        s = (f'{name} in der P10 seit {seit}: ' + ' · '.join(f'{t[0]} {t[1]}×' + ('' if len(kurse) == 1 else f' ({t[2]})')
-                                                        for t in teile)
-             + (f' (je {kurse.pop()}).' if len(kurse) == 1 else '.'))
+    kurse = {t[3] for t in teile}
+    s = (f'{name} in der P10, letzte fünf Jahre: ' + ' · '.join(
+        (f'{t[0]} {t[1]}× (zuletzt {t[2]})' if t[1] else f'{t[0]} nicht (zuletzt {t[2]})') + ('' if len(kurse) == 1 else f', {t[3]}') for t in teile)
+        + (f'; je {kurse.pop()}.' if len(kurse) == 1 else '.'))
     ng = SB.schuelertext(k.get('Nicht geprüft', ''))
     if ng:
         s += f' Nicht geprüft: {ng}.'

@@ -156,10 +156,11 @@ Steckbrief, nie hier.
     über Text und Skizze verstreut sind und mehr als drei Größen
     vorkommen, dann einmal am Anfang. [B13; layout 44]
 3.12 Schlusszeile am Ende jedes Fokusblatts und Prüfungshefts, klein über
-    dem Fuß: wie oft der Handgriff seit 2014 geprüft wurde, je Art „EBR
-    und FOR“ oder „nur FOR“ (ohne GYM), was nicht geprüft wurde, „★ = nur
-    FOR“ nur, wenn das Blatt einen Stern trägt, dazu „Vorher: … · Weiter:
-    …“ mit Kurznamen. [F3, F4]
+    dem Fuß: je Art, in wie vielen der letzten fünf Prüfungsjahre sie
+    drankam und wann zuletzt (ohne GYM), „EBR und FOR“ oder „nur FOR“; was
+    nicht geprüft wurde; „★ = nur FOR“ nur, wenn das Blatt einen Stern
+    trägt; dazu „Vorher: … · Weiter: …“ mit Kurznamen. [F3, F4; offen.html
+    fest 04.10. „kommt das dran?“; Lehrer 07.10.]
 
 ## 4 Herkunft und Zuschnitt
 
