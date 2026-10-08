@@ -1,0 +1,11 @@
+Prüfstein Sek II (Teil 5 des Gliederungs-Umbaus, 08./09.10.2026)
+
+Befehl: python3 werkzeuge/pruefheft.py --kapitel kurvenuntersuchung --pruefung abi-gk --art normal --ohne-register
+Programm: pruefheft.py nach Teil 4 (steckbrief.py liest die Gliederung); Daten: abitur/zuordnung-kurvenuntersuchung.csv (aus abitur/gliederung/kurvenuntersuchung.md).
+Ergebnis: Heft 31 Seiten, Lösung 7 Seiten, 0 Fehler; 12 Stufen, 96 Aufgaben (68 echte, 26 eigene, 2 Rückblick). Zum Vergleich: kurvenuntersuchung-normal-2026-10-06 hatte 38 Seiten.
+Steckbrief: keiner (Abitur hat noch keinen Fokus-Block).
+Auffälligkeiten:
+- Ketten: 68 echte Teilaufgaben aus 20 Aufgabenstämmen; 10 Stämme mit 3 oder mehr Teilaufgaben, längste 9 (2023-bebb-gk-B2.2), 8 (2023-bebb-gk-B2.1, 2022-bebb-gk-B2.1). Der Stamm wird bei jeder Teilaufgabe wiederholt, Zwischenergebnisse stehen als „Gegeben: …“ – lesbar, aber der Stamm von f(x) = x³ − 12x² + 45x − 50 steht so fünfmal im Heft.
+- Graphen: 28 gezeichnete Graphen (pgfplots aus dem Term), 9 Aufgaben nur mit Kasten „Skizze: …“ statt Graph, weil das Original einen Graphen ohne Term zeigt (Nr. 30, 31, 37, 64, 79, 83, 85, 89, 90; darunter alle Aufgaben „Ableitungsgraph lesen“).
+- Datenbefund des Programms: Stufe „Maße im Sachzusammenhang aus dem Graphen berechnen“ ohne Vorstufe in der Bank.
+- Die Bank hat für kein Analysis-Original ein Aufgabenbild (Feld bild: 0 von 1129 Zeilen).
