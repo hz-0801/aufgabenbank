@@ -133,3 +133,19 @@ Inhaltsregeln für Bankzeilen bleiben dort. Blattregeln, die dort doppelt
 standen, verweisen jetzt hierher; „Fragewort je Aufgabe (13 von 25 – wie
 viel Prozent?)“ fiel, überholt durch die Sprachregeln (28.09.): „Zahlen wachsen“ → 5.1, Ergebnisse →
 5.2, Herkunft → 4.1, eigene → 4.2, herausgelöst → 4.3, „Option schwach“ → 8.
+
+## Umbau 08.10.2026 (Lehrer: Handwerk bleibt Regel, Didaktik wird Zweck + Beispiel, Sorten werden Filter)
+
+Alte Fassung: `archiv/bauregeln-bis-2026-10-07.md`. Zuordnung alt → neu:
+0.1–0.4 Pflege → entfällt (plan.md § 0 und Linie 8; 0.3 „Regel aus einem
+Befund am Blatt“ gestrichen) · 1.1 → 1.3 · 1.2 → 1.2 (Zweck statt „kurz“) ·
+1.3 → 1.4 · 1.4 → 6.5 · 2.1–2.4 → 2.2 (Filter) · 2.5 → 2.5 · 3.1 → 4.1 ·
+3.2 → 1.5 (feste Regel) · 3.3 → 4.3 · 3.4 → 4.5 · 3.5 → 4.6 · 3.6 → 4.7 ·
+3.7 → 4.2 · 3.8 → 4.4 · 3.9 → 1.4 · 3.10 → 4.8 · 3.11 → 4.11 · 3.12 → 3.3
+und 3.4 (Übersicht, Vorgänger/Nachfolger) · 4.1–4.3 → 4.9 · 4.4 → 4.10 ·
+4.5 → entfällt als Regel (Original einmal folgt aus 2.2) · 5.1 → 4.2 und 5.2
+· 5.2 → 5.1 · 5.3 → 5.3 · 6.1–6.13 → 6.1–6.14 (6.7 Ankreuzen jetzt nur bei
+echter Entscheidung, 6.12 kein grauer Hintergrund) · 7 → 7 · 8.1 → 9 Offen ·
+9.1 → 2.1 und 9 Offen · 9.2 → 2.5 · 10 → 8 · 11 Offen → archiviert, bis auf
+die drei Posten in 9. Neu: 2.1 drei PDFs, 2.3, 2.4 Reihenfolge, 3.1–3.5
+Übersicht und Serie.
