@@ -8,7 +8,6 @@
 \newgeometry{a4paper,margin=18mm,top=15mm,bottom=20mm,footskip=9mm}
 \pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}
 \gdef\aktkenn{}
-\fancyfoot[L]{\footnotesize\color{mbgrau}\ifx\aktkenn\empty\else Mehr Aufgaben zu diesem Abschnitt? Schreib: „mehr \aktkenn“\fi}
 \fancyfoot[R]{\footnotesize\color{mbgrau}\thepage}
 \setlength{\parskip}{3pt}
 
@@ -43,7 +42,8 @@
 % ------------------------------------------------------------ Seite 1 Übersicht
 \noindent{\LARGE\bfseries Geraden und Dreiecke im Koordinatensystem}\par\smallskip
 \noindent{\small\color{mbgrau}Selbstlernheft Klasse 11 \textperiodcentered{} mit Lösungsheft}\par\medskip
-\noindent\textbf{So nutzt du das Heft:} Lies im Abschnitt das Beispiel. Rechne dann die Aufgaben der Reihe nach und vergleiche jede sofort mit dem Lösungsheft. Kreuze „kann ich“ an, wenn du die letzte Aufgabe allein schaffst. Mehr Aufgaben zu einem Abschnitt bekommst du mit seiner Kennung, z.\,B. „mehr B3“.\par
+\noindent\textbf{So nutzt du das Heft:} Lies im Abschnitt das Beispiel. Rechne dann die Aufgaben der Reihe nach und vergleiche jede sofort mit dem Lösungsheft. Kreuze „kann ich“ an, wenn du die letzte Aufgabe allein schaffst.\par
+\noindent Mehr Aufgaben zu einem Abschnitt: Kennung deinem Nachhilfelehrer schicken (z.\,B. „mehr B3“).\par
 \noindent\textbf{Wenig Zeit?} Mach in jedem Abschnitt das Beispiel, Aufgabe 1 und die Aufgabe mit „Test“ am Rand. Zum Schluss der Probetest.\par\medskip
 
 {\arrayrulecolor{mbgrau}\renewcommand{\arraystretch}{1.22}
@@ -107,7 +107,7 @@ D5 & Innenwinkel & \pageref{s:D5} & $\square$\\\hline
 \fs{Mittelsenkrechte (D2)}{durch den Mittelpunkt einer Seite, senkrecht zu ihr\\ Zusatz: zwei Mittelsenkrechte schneiden sich im Umkreismittelpunkt $U$}{\mini{\draw (0,0)--(7,1)--(2,5)--cycle;\draw[mbgrau] (3.8,-1.2)--(3.1,3.7);\fill (3.5,0.5) circle (5pt);}}
 \fs{Höhe, Abstand (D3)}{Höhe $h_c$: durch $C$, senkrecht zu $AB$\\ Lotfußpunkt $F$ = Schnittpunkt mit $AB$\\ Länge $\overline{CF}$ = Abstand von $C$ zu $AB$}{\mini{\draw (0,0)--(7,1)--(2,5)--cycle;\draw[mbgrau] (2,5)--(2.66,0.38);\fill (2.66,0.38) circle (5pt) node[below]{$F$};}}
 \fs{Flächeninhalt (D4)}{Rechteck um das Dreieck minus drei rechtwinklige Dreiecke ($\tfrac12\cdot$Breite$\cdot$Höhe)\\ oder: $A = \tfrac12\cdot g\cdot h$}{\mini{\fill[black!12] (0,0)--(7,0)--(7,1)--cycle (7,1)--(7,5)--(2,5)--cycle (2,5)--(0,5)--(0,0)--cycle;\draw[mbgrau] (0,0) rectangle (7,5);\draw (0,0)--(7,1)--(2,5)--cycle;}}
-\fs{Innenwinkel (D5)}{Unterschied der Steigungswinkel der zwei Seiten; mit Skizze prüfen (spitz/stumpf).\\ Probe: $\alpha + \beta + \gamma = 180^\circ$}{\mini{\draw (0,0)--(7,1)--(2,5)--cycle;\draw (0,0) ++(8.13:1.2) arc (8.13:68.2:1.2);\node at (1.6,1.1){$\alpha$};}}
+\fs{Innenwinkel (D5)}{Je Ecke $\delta = |\alpha_1-\alpha_2|$; darf über $90^\circ$ sein.\\ Summe der drei nicht $180^\circ$: größten Wert durch $180^\circ$ minus ihn ersetzen.}{\mini{\draw (0,0)--(7,1)--(2,5)--cycle;\draw (0,0) ++(8.13:1.2) arc (8.13:68.2:1.2);\node at (1.6,1.1){$\alpha$};}}
 \fs{Runden}{Zwischenwerte mit zwei Stellen nach dem Komma (oder im Rechner lassen), erst am Ende runden.}{}
 \end{multicols}
 
@@ -242,18 +242,18 @@ a)\ \Pk{C}{-3}{4} und \Pk{D}{5}{4}\qquad b)\ \Pk{E}{2}{5} und \Pk{F}{2}{-1}
 \begin{ksys}[xmin=-2,xmax=5,ymin=-5,ymax=5,karo=0.5]
 \gerade{-2}{2}{}
 \draw[dashed,mbgrau] (-1,4) -- (3,4) -- (3,-4);
-\node[above,font=\small] at (1,4) {$4$};\node[right,font=\small] at (3,0.5) {$-8$};
+\node[above,font=\small] at (1,4) {$4$};\node[right,font=\small,fill=white,inner sep=1pt] at (3,-2) {$-8$};
 \pkt[left]{-1}{4}{P}\pkt[left]{3}{-4}{Q}
 \end{ksys}}
-\noindent\begin{minipage}[t]{0.66\linewidth}\vspace{0pt}
+\noindent\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}
 \textbf{Sonderfälle}\par
 Gleiche y-Werte, z.\,B. \Pk{}{-2}{3} und \Pk{}{4}{3}: Die Gerade ist waagerecht, $y = 3$ ($m = 0$).\par
 Gleiche x-Werte, z.\,B. \Pk{}{1}{-2} und \Pk{}{1}{5}: Die Gerade ist senkrecht, $x = 1$. Sie hat keine Steigung (durch 0 teilen geht nicht).
 \end{minipage}\hfill
-\begin{minipage}[t]{0.3\linewidth}\vspace{0pt}\centering
-\begin{ksys}[xmin=-3,xmax=5,ymin=-3,ymax=6,karo=0.32]
+\begin{minipage}[t]{0.37\linewidth}\vspace{0pt}\centering
+\begin{ksys}[xmin=-3,xmax=5,ymin=-3,ymax=6,karo=0.5]
 \draw[line width=0.9pt] (-3,3) -- (5,3);\draw[line width=0.9pt] (1,-3) -- (1,6);
-\node[above,font=\scriptsize,fill=white,inner sep=1pt] at (3.5,3.2) {$y{=}3$};\node[right,font=\scriptsize,fill=white,inner sep=1pt] at (1,5) {$x{=}1$};
+\node[above,font=\small,fill=white,inner sep=1pt] at (3.3,3.1) {$y = 3$};\node[right,font=\small,fill=white,inner sep=1pt] at (1.1,5) {$x = 1$};
 \end{ksys}
 \end{minipage}
 \begin{aufgaben}
@@ -293,7 +293,8 @@ c)\ Liegt \Pk{C}{-1}{6} über oder unter $g$?
 \bsp{Wo schneidet $g\colon y = 2x - 6$ die Achsen?}{%
 \sch{1}{y-Achse: $x = 0$ einsetzen: $y = 2\cdot 0 - 6 = -6$, also \Pk{S_y}{0}{-6}}
 \sch{2}{x-Achse: $0 = 2x - 6 \quad|+6 \qquad 6 = 2x \quad|:2 \qquad x = 3$}
-\sch{3}{also \Pk{S_x}{3}{0}}}{%
+\sch{3}{also \Pk{S_x}{3}{0}}
+\sch{}{Steht die Gleichung anders da, z.\,B. $4x + 2y = 8$, stell sie erst nach $y$ um: $2y = -4x + 8 \ |:2$, \ $y = -2x + 4$.}}{%
 \begin{ksys}[xmin=-1,xmax=5,ymin=-7,ymax=3,karo=0.5]
 \gerade[4.2]{2}{-6}{g}
 \pkt[right]{0}{-6}{S_y}\pkt[above left]{3}{0}{S_x}
@@ -302,6 +303,7 @@ c)\ Liegt \Pk{C}{-1}{6} über oder unter $g$?
 \item Berechne die Schnittpunkte von $y = 3x - 6$ mit den Achsen.
 \item Berechne die Schnittpunkte von $y = -2x + 5$ mit den Achsen.
 \item Berechne die Schnittpunkte von $y = \tfrac34x + 3$ mit den Achsen.
+\item Stell erst nach $y$ um. Berechne dann die Schnittpunkte mit den Achsen.\quad a)\ $3x + 2y = 6$\qquad b)\ $x - 2y = 4$
 \item Berechne die Schnittpunkte mit den Achsen. Was ist hier anders?\quad a)\ $y = 4$\qquad b)\ $x = -2$
 \item \tn Die Gerade $g\colon y = -\tfrac12x + 3$ bildet mit den beiden Achsen ein Dreieck. Berechne seinen Flächeninhalt.
 \end{aufgaben}
@@ -324,7 +326,7 @@ c)\ Liegt \Pk{C}{-1}{6} über oder unter $g$?
 \item Berechne den Steigungswinkel. Runde auf eine Stelle.\quad a)\ $m = 1$\quad b)\ $m = 3$\quad c)\ $m = 0{,}5$
 \item Berechne den Steigungswinkel.\quad a)\ $y = -2x + 1$\qquad b)\ $y = -\tfrac13x$
 \item Berechne den Steigungswinkel der Geraden durch \Pk{P}{-1}{1} und \Pk{Q}{3}{4}.
-\item Umgekehrt: Welche Steigung $m$ hat eine Gerade mit dem Steigungswinkel\quad a)\ $60^\circ$\quad b)\ $135^\circ$?
+\item Umgekehrt: Welche Steigung $m$ hat eine Gerade mit dem Steigungswinkel\quad a)\ $60^\circ$\quad b)\ $135^\circ$?\\ c)\ Gib die Gleichung der Geraden mit dem Steigungswinkel $60^\circ$ durch \Pk{P}{1}{2} an.
 \item \tn Dreieck \Pk{A}{1}{-4}, \Pk{B}{7}{2}, \Pk{C}{-1}{6}: Berechne die Steigungswinkel der Seiten $AB$, $BC$ und $AC$.
 \end{aufgaben}
 
@@ -351,6 +353,8 @@ $m_1\cdot m_2 = -1$ & schneiden sich senkrecht (rechter Winkel)
 \item $h\colon y = \square\, x + 1$. Welche Steigung braucht $h$, damit $h$ zu $g\colon y = 4x - 2$\quad a)\ parallel\quad b)\ senkrecht ist?
 \item \tn a)\ Zeige: Die Gerade durch \Pk{P}{0}{1} und \Pk{Q}{4}{3} steht senkrecht auf der Geraden durch \Pk{R}{1}{5} und \Pk{S}{3}{1}.\\
 b)\ Hat das Dreieck \Pk{K}{-2}{1}, \Pk{L}{2}{3}, \Pk{N}{0}{7} einen rechten Winkel? Wenn ja, an welcher Ecke?
+\item \tn a)\ Ist das Viereck \Pk{A}{-2}{0}, \Pk{B}{2}{-2}, \Pk{C}{4}{2}, \Pk{D}{0}{4} ein Rechteck? Begründe mit den Steigungen der vier Seiten.\\
+b)\ $ABCD$ ist ein Parallelogramm mit \Pk{A}{1}{1}, \Pk{B}{5}{2}, \Pk{C}{6}{5}. Berechne $D$. {\small Tipp: Von $A$ nach $D$ geht es genauso weit wie von $B$ nach $C$.}
 \end{aufgaben}
 
 % ------------------------------------------------------------ C2
@@ -492,29 +496,32 @@ Zweiter Weg, wenn du eine Höhe schon hast (D3): $A = \tfrac12\cdot g\cdot h$ (S
 
 % ------------------------------------------------------------ D5
 \abschnitt{D5}{Innenwinkel eines Dreiecks}{Der Winkel an einer Ecke liegt zwischen den zwei Seiten an dieser Ecke. Du rechnest ihn aus den Steigungswinkeln dieser zwei Seiten (B6).}
-\formel{$\delta = |\alpha_1 - \alpha_2|$.\quad Prüfe an der Skizze: Ist der Winkel spitz, aber $\delta > 90^\circ$ – oder stumpf, aber $\delta < 90^\circ$ –, dann ist der Winkel $180^\circ - \delta$.\par
-Probe: Die drei Winkel ergeben zusammen $180^\circ$.}
-\bsp{Winkel bei $A$ und bei $B$ im Dreieck $ABC$.}{%
+\formel{Für jede Ecke: $\delta = |\alpha_1 - \alpha_2|$ (Steigungswinkel der zwei Seiten an der Ecke).\par
+Anders als in C4: Ein Innenwinkel darf über $90^\circ$ sein.\par
+Rechne alle drei Winkel. Ist die Summe nicht $180^\circ$, ist der größte Winkel stumpf: nimm $180^\circ$ minus ihn. Danach ist die Summe $180^\circ$.}
+\bsp{Alle drei Innenwinkel im Dreieck $ABC$.}{%
 \sch{1}{Steigungswinkel der Seiten (B6):\\ AB ($m = 1$): $45^\circ$; \ AC ($m = -5$): $\approx 101{,}31^\circ$;\\ BC ($m = -\tfrac12$): $\approx 153{,}43^\circ$}
-\sch{2}{Bei A (Seiten AB und AC): $101{,}31^\circ - 45^\circ = 56{,}31^\circ$.\\ Skizze: spitz \checkmark. Also $\alpha \approx 56{,}3^\circ$.}
-\sch{3}{Bei B (Seiten AB und BC): $153{,}43^\circ - 45^\circ = 108{,}43^\circ$.\\ Skizze: Der Winkel bei B ist spitz! Also\\ $\beta = 180^\circ - 108{,}43^\circ \approx 71{,}6^\circ$.}}{%
+\sch{2}{A (AB, AC): $101{,}31^\circ - 45^\circ = 56{,}31^\circ$\\ B (AB, BC): $153{,}43^\circ - 45^\circ = 108{,}43^\circ$\\ C (AC, BC): $153{,}43^\circ - 101{,}31^\circ = 52{,}12^\circ$}
+\sch{3}{Summe: $216{,}86^\circ$, nicht $180^\circ$. Der größte Wert ist $108{,}43^\circ$ bei B: $\beta = 180^\circ - 108{,}43^\circ = 71{,}57^\circ$}
+\sch{4}{$\alpha \approx 56{,}3^\circ$, \ $\beta \approx 71{,}6^\circ$, \ $\gamma \approx 52{,}1^\circ$.\\ Probe: $56{,}31^\circ + 71{,}57^\circ + 52{,}12^\circ = 180^\circ$ \checkmark}}{%
 \kT{\draw[line width=0.6pt] (1,-4) ++(45:1.2) arc (45:101.31:1.2);\node[font=\scriptsize] at ($(1,-4)+(73:1.8)$) {$\alpha$};
-\draw[line width=0.6pt] (7,2) ++(153.43:1.2) arc (153.43:225:1.2);\node[font=\scriptsize] at ($(7,2)+(189:1.8)$) {$\beta$};}}
+\draw[line width=0.6pt] (7,2) ++(153.43:1.2) arc (153.43:225:1.2);\node[font=\scriptsize] at ($(7,2)+(189:1.8)$) {$\beta$};
+\draw[line width=0.6pt] (-1,6) ++(281.31:1.2) arc (281.31:333.43:1.2);\node[font=\scriptsize] at ($(-1,6)+(307:1.8)$) {$\gamma$};}}
 \begin{aufgaben}
-\item Dreieck $ABC$: Berechne den Winkel $\gamma$ bei $C$. Mach die Probe mit der Winkelsumme.
+\item Berechne alle drei Innenwinkel des Dreiecks \Pk{K}{-2}{1}, \Pk{L}{4}{-1}, \Pk{N}{2}{5}.
 \item Berechne alle drei Innenwinkel des Dreiecks \Pk{P}{0}{0}, \Pk{Q}{4}{0}, \Pk{R}{1}{3}.
 \item Berechne alle drei Innenwinkel des Dreiecks \Pk{K}{-2}{-1}, \Pk{L}{4}{1}, \Pk{N}{0}{5}.
 \item \tn Berechne alle drei Innenwinkel des Dreiecks \Pk{P}{-3}{0}, \Pk{Q}{5}{0}, \Pk{R}{-1}{2}. Zeichne zuerst eine Skizze.
 \end{aufgaben}
 
 % ------------------------------------------------------------ T
-\abschnitt{T}{Probetest}{Etwa 45 Minuten, Taschenrechner erlaubt. Schreib alle Rechenschritte auf. Schau erst ins Lösungsheft, wenn du fertig bist. Dort steht bei jeder Aufgabe, welchen Abschnitt du wiederholen kannst.}
+\abschnitt{T}{Probetest}{Etwa 45 Minuten, Taschenrechner erlaubt. Rechne auf einem extra Blatt. Schreib alle Rechenschritte auf. Schau erst ins Lösungsheft, wenn du fertig bist. Dort steht bei jeder Aufgabe, welchen Abschnitt du wiederholen kannst.}
 \begin{enumerate}[label=\textbf{\arabic*.},leftmargin=7mm,itemsep=9pt]
 \item Gegeben sind \Pk{P}{-2}{5} und \Pk{Q}{4}{-1}.\\
 a)\ Berechne den Mittelpunkt der Strecke $PQ$.\quad b)\ Berechne die Länge der Strecke $PQ$.\\
 c)\ Gib die Gleichung der Geraden $g$ durch $P$ und $Q$ an.\quad d)\ Berechne den Steigungswinkel von $g$.\\
 e)\ Berechne die Schnittpunkte von $g$ mit den Achsen.
-\item $g\colon y = -x + 3$.\quad a)\ Liegt \Pk{R}{5}{-2} auf $g$?\quad b)\ Liegt \Pk{S}{-1}{5} über oder unter $g$?\quad c)\ \Pk{T}{a}{-3} liegt auf $g$. Berechne $a$.
+\item $g\colon y = -x + 4$.\quad a)\ Liegt \Pk{R}{6}{-2} auf $g$?\quad b)\ Liegt \Pk{S}{-1}{6} über oder unter $g$?\quad c)\ \Pk{T}{a}{-3} liegt auf $g$. Berechne $a$.
 \item $g\colon y = 2x - 1$,\ \ $h\colon y = -\tfrac12x + 6$,\ \ $k\colon y = 2x + 3$.\\
 a)\ Wie liegen $g$ und $h$ zueinander? Wie liegen $g$ und $k$ zueinander? Begründe.\\
 b)\ Berechne den Schnittpunkt von $g$ und $h$.

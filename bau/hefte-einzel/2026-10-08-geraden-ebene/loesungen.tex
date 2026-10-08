@@ -10,7 +10,7 @@
 \newcommand{\lk}[2]{\par\Needspace{30mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[9mm]{\bfseries\strut #1}}\hspace{2mm}{\bfseries #2}\par\vspace{4pt}}
 \newcommand{\lsg}[3]{\par\noindent\begin{minipage}[t]{7mm}\textbf{#1}\end{minipage}%
   \begin{minipage}[t]{50mm}\raggedright\bfseries\boldmath #2\end{minipage}\hspace{3mm}%
-  \begin{minipage}[t]{\dimexpr\linewidth-60mm\relax}\raggedright\small #3\end{minipage}\par\vspace{5pt}}
+  \begin{minipage}[t]{\dimexpr\linewidth-60mm\relax}\raggedright\small #3\end{minipage}\par\vspace{3pt}}
 \newcommand{\ab}[1]{\hfill{\scriptsize\color{mbgrau}→ #1}}
 
 \begin{document}
@@ -67,14 +67,15 @@
 \lsg{1.}{\Pk{S_y}{0}{-6}, \ \Pk{S_x}{2}{0}}{$0 = 3x - 6$, \ $x = 2$}
 \lsg{2.}{\Pk{S_y}{0}{5}, \ \Pk{S_x}{2{,}5}{0}}{$0 = -2x + 5$, \ $2x = 5$, \ $x = 2{,}5$}
 \lsg{3.}{\Pk{S_y}{0}{3}, \ \Pk{S_x}{-4}{0}}{$0 = \tfrac34x + 3$, \ $-3 = \tfrac34x$, \ $x = -4$}
-\lsg{4.}{a) \Pk{S_y}{0}{4}, keine Nullstelle\\ b) \Pk{S_x}{-2}{0}, kein Schnitt mit der y-Achse}{a) $y$ ist immer 4, nie 0: parallel zur x-Achse.\ \ b) $x$ ist immer $-2$, nie 0: parallel zur y-Achse.}
-\lsg{5.}{$A = 9$ FE}{\Pk{S_y}{0}{3}; \ $0 = -\tfrac12x + 3$, \ $x = 6$, \ \Pk{S_x}{6}{0}. Rechtwinkliges Dreieck mit Katheten 6 und 3: $\tfrac12\cdot 6\cdot 3 = 9$}
+\lsg{4.}{a) \Pk{S_y}{0}{3}, \Pk{S_x}{2}{0}\\ b) \Pk{S_y}{0}{-2}, \Pk{S_x}{4}{0}}{a) $2y = -3x + 6$, \ $y = -1{,}5x + 3$; \ $0 = -1{,}5x + 3$, \ $x = 2$.\ \ b) $-2y = -x + 4 \ |:(-2)$, \ $y = 0{,}5x - 2$; \ $0 = 0{,}5x - 2$, \ $x = 4$}
+\lsg{5.}{a) \Pk{S_y}{0}{4}, keine Nullstelle\\ b) \Pk{S_x}{-2}{0}, kein Schnitt mit der y-Achse}{a) $y$ ist immer 4, nie 0: parallel zur x-Achse.\ \ b) $x$ ist immer $-2$, nie 0: parallel zur y-Achse.}
+\lsg{6.}{$A = 9$ FE}{\Pk{S_y}{0}{3}; \ $0 = -\tfrac12x + 3$, \ $x = 6$, \ \Pk{S_x}{6}{0}. Rechtwinkliges Dreieck mit Katheten 6 und 3: $\tfrac12\cdot 6\cdot 3 = 9$}
 
 \lk{B6}{Steigungswinkel}
 \lsg{1.}{a) $45^\circ$ \ b) $\approx 71{,}6^\circ$ \ c) $\approx 26{,}6^\circ$}{$\tan^{-1}(1)$, \ $\tan^{-1}(3)$, \ $\tan^{-1}(0{,}5)$}
 \lsg{2.}{a) $\approx 116{,}6^\circ$ \ b) $\approx 161{,}6^\circ$}{a) $180^\circ + \tan^{-1}(-2) = 180^\circ - 63{,}43^\circ$.\ \ b) $180^\circ + \tan^{-1}(-\tfrac13) = 180^\circ - 18{,}43^\circ$}
 \lsg{3.}{$\approx 36{,}9^\circ$}{$m = \tfrac{4-1}{3+1} = \tfrac34$; \ $\tan^{-1}(0{,}75) \approx 36{,}87^\circ$}
-\lsg{4.}{a) $m \approx 1{,}73$ \ b) $m = -1$}{$m = \tan\alpha$: \ $\tan 60^\circ \approx 1{,}732$; \ $\tan 135^\circ = -1$}
+\lsg{4.}{a) $m \approx 1{,}73$ \ b) $m = -1$\\ c) $y \approx 1{,}73x + 0{,}27$}{$m = \tan\alpha$: \ $\tan 60^\circ \approx 1{,}732$; \ $\tan 135^\circ = -1$.\ \ c) $2 = 1{,}732\cdot 1 + n$, \ $n \approx 0{,}27$ \ (genau: $y = \sqrt3\,x + 2 - \sqrt3$)}
 \lsg{5.}{$AB$: $45^\circ$; \ $BC$: $\approx 153{,}4^\circ$;\\ $AC$: $\approx 101{,}3^\circ$}{$m = 1$, $-\tfrac12$, $-5$ (B1).\ \ $180^\circ - 26{,}57^\circ$; \ $180^\circ - 78{,}69^\circ$}
 
 \lk{C1}{Lage zweier Geraden}
@@ -83,6 +84,7 @@
 \lsg{3.}{a) identisch \quad b) parallel}{a) $2(x-1)+3 = 2x - 2 + 3 = 2x + 1$, genau $h$.\ \ b) $2y = 6x - 4 \ |:2$, \ $y = 3x - 2$: $m$ gleich, $n$ verschieden.}
 \lsg{4.}{a) $4$ \quad b) $-\tfrac14$}{parallel: gleiches $m$; senkrecht: $-\tfrac{1}{4}$}
 \lsg{5.}{a) $\tfrac12\cdot(-2) = -1$ \checkmark\\ b) ja, rechter Winkel bei $L$}{a) $m_{PQ} = \tfrac24 = \tfrac12$, \ $m_{RS} = \tfrac{1-5}{3-1} = -2$.\ \ b) $m_{KL} = \tfrac{3-1}{2+2} = \tfrac12$, \ $m_{LN} = \tfrac{7-3}{0-2} = -2$, \ $m_{KN} = 3$. $KL$ und $LN$ sind senkrecht; sie treffen sich in $L$.}
+\lsg{6.}{a) ja, Rechteck\\ b) \Pk{D}{2}{4}}{a) $m_{AB} = \tfrac{-2}{4} = -\tfrac12$, \ $m_{BC} = \tfrac42 = 2$, \ $m_{CD} = \tfrac{2}{-4} = -\tfrac12$, \ $m_{DA} = \tfrac42 = 2$. Gegenseiten parallel; $-\tfrac12\cdot 2 = -1$: rechte Winkel.\ \ b) Von B nach C: 1 nach rechts, 3 nach oben. $D = (1+1\,|\,1+3)$}
 
 \lk{C2}{Schnittpunkt zweier Geraden}
 \lsg{1.}{\Pk{S}{3}{7}}{$3x - 2 = x + 4$, \ $2x = 6$, \ $x = 3$; \ $y = 3 + 4 = 7$}
@@ -130,14 +132,14 @@
 \lsg{4.}{$A = 6{,}75$ FE}{$g \cap h$: $x + 1 = -2x + 7$, \ $x = 2$, \ $y = 3$. Nullstellen: $g$ bei $-1$, $h$ bei $3{,}5$. Grundseite $3{,}5 - (-1) = 4{,}5$, Höhe 3: \ $\tfrac12\cdot 4{,}5\cdot 3$}
 
 \lk{D5}{Innenwinkel}
-\lsg{1.}{$\gamma \approx 52{,}1^\circ$}{$AC$: $101{,}31^\circ$, \ $BC$: $153{,}43^\circ$; \ $\delta = 52{,}12^\circ$, spitz \checkmark. Probe: $56{,}3^\circ + 71{,}6^\circ + 52{,}1^\circ = 180^\circ$}
-\lsg{2.}{bei P $\approx 71{,}6^\circ$, bei Q $45^\circ$,\\ bei R $\approx 63{,}4^\circ$}{$PQ$: $0^\circ$; \ $PR$ ($m = 3$): $71{,}57^\circ$; \ $QR$ ($m = -1$): $135^\circ$. \ Q: $\delta = 135^\circ$, aber spitz, also $45^\circ$. \ R: $135^\circ - 71{,}57^\circ$. Summe $180^\circ$ \checkmark}
-\lsg{3.}{bei K $\approx 53{,}1^\circ$, bei L $\approx 63{,}4^\circ$,\\ bei N $\approx 63{,}4^\circ$}{$KL$ ($m = \tfrac13$): $18{,}43^\circ$; \ $LN$ ($m = -1$): $135^\circ$; \ $KN$ ($m = 3$): $71{,}57^\circ$. \ K: $71{,}57^\circ - 18{,}43^\circ$. \ L: $\delta = 116{,}57^\circ$, aber spitz, also $63{,}43^\circ$. \ N: $135^\circ - 71{,}57^\circ$}
-\lsg{4.}{bei P $45^\circ$, bei Q $\approx 18{,}4^\circ$,\\ bei R $\approx 116{,}6^\circ$}{$PQ$: $0^\circ$; \ $PR$ ($m = 1$): $45^\circ$; \ $QR$ ($m = -\tfrac13$): $161{,}57^\circ$. \ Q: $\delta = 161{,}57^\circ$, aber spitz, also $18{,}43^\circ$. \ R: $161{,}57^\circ - 45^\circ = 116{,}57^\circ$, in der Skizze stumpf \checkmark}
+\lsg{1.}{bei K $\approx 63{,}4^\circ$, bei L $\approx 53{,}1^\circ$,\\ bei N $\approx 63{,}4^\circ$}{$KL$ ($m = -\tfrac13$): $161{,}57^\circ$; \ $LN$ ($m = -3$): $108{,}43^\circ$; \ $KN$ ($m = 1$): $45^\circ$. \ K: $116{,}57^\circ$, \ L: $53{,}13^\circ$, \ N: $63{,}43^\circ$. Summe $233{,}13^\circ$: größter Wert bei K, $180^\circ - 116{,}57^\circ = 63{,}43^\circ$}
+\lsg{2.}{bei P $\approx 71{,}6^\circ$, bei Q $45^\circ$,\\ bei R $\approx 63{,}4^\circ$}{$PQ$: $0^\circ$; \ $PR$ ($m = 3$): $71{,}57^\circ$; \ $QR$ ($m = -1$): $135^\circ$. \ P: $71{,}57^\circ$, \ Q: $135^\circ$, \ R: $63{,}43^\circ$. Summe $270^\circ$: größter Wert bei Q, $180^\circ - 135^\circ = 45^\circ$}
+\lsg{3.}{bei K $\approx 53{,}1^\circ$, bei L $\approx 63{,}4^\circ$,\\ bei N $\approx 63{,}4^\circ$}{$KL$ ($m = \tfrac13$): $18{,}43^\circ$; \ $LN$ ($m = -1$): $135^\circ$; \ $KN$ ($m = 3$): $71{,}57^\circ$. \ K: $53{,}13^\circ$, \ L: $116{,}57^\circ$, \ N: $63{,}43^\circ$. Summe $233{,}13^\circ$: größter Wert bei L, $180^\circ - 116{,}57^\circ = 63{,}43^\circ$}
+\lsg{4.}{bei P $45^\circ$, bei Q $\approx 18{,}4^\circ$,\\ bei R $\approx 116{,}6^\circ$}{$PQ$: $0^\circ$; \ $PR$ ($m = 1$): $45^\circ$; \ $QR$ ($m = -\tfrac13$): $161{,}57^\circ$. \ P: $45^\circ$, \ Q: $161{,}57^\circ$, \ R: $116{,}57^\circ$. Summe $323{,}14^\circ$: größter Wert bei Q, $180^\circ - 161{,}57^\circ = 18{,}43^\circ$. R bleibt stumpf. Probe $180^\circ$ \checkmark}
 
 \lk{T}{Probetest}
 \lsg{1.}{a) \Pk{M}{1}{2} \ b) $\approx 8{,}49$\\ c) $y = -x + 3$ \ d) $135^\circ$\\ e) \Pk{S_y}{0}{3}, \Pk{S_x}{3}{0}}{a) $\tfrac{-2+4}{2}$, $\tfrac{5-1}{2}$\ab{A1}\\ b) $\sqrt{6^2+6^2} = \sqrt{72}$\ab{A2}\\ c) $m = \tfrac{-1-5}{4+2} = -1$, \ $5 = 2 + n$, \ $n = 3$\ab{B3}\\ d) $180^\circ + \tan^{-1}(-1)$\ab{B6}\\ e) $0 = -x + 3$, \ $x = 3$\ab{B5}}
-\lsg{2.}{a) ja \ b) über $g$ \ c) $a = 6$}{a) $-5 + 3 = -2$ \checkmark.\ \ b) $1 + 3 = 4$, \ $5 > 4$.\ \ c) $-3 = -a + 3$, \ $a = 6$\ab{B4}}
+\lsg{2.}{a) ja \ b) über $g$ \ c) $a = 7$}{a) $-6 + 4 = -2$ \checkmark.\ \ b) $1 + 4 = 5$, \ $6 > 5$.\ \ c) $-3 = -a + 4$, \ $a = 7$\ab{B4}}
 \lsg{3.}{a) $g \perp h$; \ $g \parallel k$\\ b) \Pk{S}{2{,}8}{4{,}6}}{a) $2\cdot(-\tfrac12) = -1$; \ $g$, $k$: $m$ gleich, $n$ verschieden\ab{C1}\\ b) $2x - 1 = -\tfrac12x + 6$, \ $2{,}5x = 7$, \ $x = 2{,}8$, \ $y = 4{,}6$\ab{C2}}
 \lsg{4.}{$45^\circ$}{$\alpha_k = 63{,}43^\circ$, \ $\alpha_l = 180^\circ - 71{,}57^\circ = 108{,}43^\circ$; \ $\delta = 45{,}0^\circ$\ab{C4}}
 \lsg{5.}{a) $y = -\tfrac12x + 4$\\ b) $\approx 4{,}47$ \ ($= \sqrt{20}$)}{a) $1 = -\tfrac12\cdot 6 + n = -3 + n$, \ $n = 4$\ab{C3}\\ b) $2x - 1 = -\tfrac12x + 4$, \ $x = 2$, \ $y = 3$: \Pk{F}{2}{3}; \ $\sqrt{4^2+2^2}$\ab{D3}}
@@ -145,7 +147,7 @@
 c) $m_{AB} = \tfrac44 = 1$, senkrecht $-1$; \ $-2 = -4 + n$, \ $n = 2$\ab{D2}\\
 d) $AB\colon y = x - 6$; \ $h_c$: $m = -1$, $n = 4$; \ $x - 6 = -x + 4$, \ $x = 5$; \ $\sqrt{5^2+5^2} = \sqrt{50}$\ab{D3}\\
 e) Rechteck $6\cdot 8 = 48$; \ $8 + 12 + 8 = 28$; \ $48 - 28$. Kontrolle $\tfrac12\cdot\sqrt{32}\cdot\sqrt{50} = 20$\ab{D4}\\
-f) $AB$: $45^\circ$; \ $AC$ ($m = -4$): $104{,}04^\circ$; \ $\delta = 59{,}04^\circ$, spitz\ab{D5}\\
+f) $AB$: $45^\circ$; \ $AC$ ($m = -4$): $104{,}04^\circ$; \ $BC$ ($m = -\tfrac23$): $146{,}31^\circ$. A: $59{,}04^\circ$, B: $101{,}31^\circ$, C: $42{,}27^\circ$; Summe $202{,}62^\circ$: nur B wird $78{,}69^\circ$, $\alpha$ bleibt\ab{D5}\\
 g) $m_{AB} = 1$, $m_{BC} = -\tfrac23$, $m_{AC} = -4$; kein Produkt ist $-1$\ab{C1}}
 \lsg{7.}{\Pk{U}{1{,}8}{0{,}2}}{Mittelsenkrechte von $AC$: \Pk{M_{AC}}{1}{0}, senkrecht zu $-4$: $\tfrac14$, \ $0 = \tfrac14 + n$, \ $n = -\tfrac14$. \ $-x + 2 = \tfrac14x - \tfrac14$, \ $2{,}25 = 1{,}25x$, \ $x = 1{,}8$, \ $y = 0{,}2$\ab{D2}}
 
