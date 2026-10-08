@@ -119,32 +119,45 @@ b)\ $1{,}2$ m und $50$ cm
 \fusshilfe{\mbox{5:~a) 9,8 cm; b) 130 cm}}
 \end{pfaufg}
 
-% 6 Sache: das Dreieck steckt im Rechteck; Frage nach der Länge
+% 6–8 Sache: der Schüler findet das Dreieck selbst – erst im Bild ohne Dreieck (Leiter, rechter Winkel
+% nur zwischen Wand und Boden), dann auf einer Karte (Strecke selbst einzeichnen), dann nur Text (Skizze
+% selbst); Fragen wechseln: reicht es? · wie viel kürzer? · wie lang? (Lehrer 09.10.: Skizzen sahen gleich aus)
 \begin{pfaufg}{}{6.}{}
-Wie lang ist die Diagonale $d$ des Bilderrahmens?
-\gzwei{\begin{tikzpicture}[line width=0.7pt]\draw (0,0) rectangle (3.6,1.92);\draw[line width=1.2pt] (0,0) -- (3.6,1.92);
-\node[font=\small,anchor=north] at (1.8,-0.08) {$45$ cm};\node[font=\small,anchor=west] at (3.68,0.96) {$24$ cm};\node[font=\small,anchor=south east] at (1.65,0.95) {$d$};\end{tikzpicture}}{%
-\karo{2.5}}
-\fusshilfe{\mbox{6:~51 cm}}
+Herr Kaya will das Fenster putzen. Seine Leiter ist $2{,}6$ m lang. Reicht sie bis zum Fenster?
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=1.05]
+\fill[black!10] (3,0) rectangle (3.6,3.6);\draw (3,0) -- (3,3.6);
+\draw (2.85,2.4) rectangle (3,3.3);\draw (2.85,2.4) -- (3.6,2.4);
+\draw (-0.4,0) -- (4.0,0);
+\draw[line width=1.8pt] (2.3,0) -- (2.97,2.4);
+\draw[|-|,line width=0.4pt] (2.3,-0.35) -- (3,-0.35) node[midway,below,font=\small] {$0{,}7$ m};
+\draw[|-|,line width=0.4pt] (3.9,0) -- (3.9,2.4) node[midway,right,font=\small] {$2{,}4$ m};
+\node[font=\small,anchor=east] at (2.45,1.3) {Leiter};
+\end{tikzpicture}}{%
+\karo{3}\par\smallskip\hfill\kk{ja}\kk{nein}}
+\fusshilfe{\mbox{6:~ja, gebraucht werden 2,5 m}}
 \end{pfaufg}
 
-% 7 Sache: Abkürzung; Frage nach dem Unterschied
 \begin{pfaufg}{}{7.}{}
-Lena geht am Rand der Wiese von $A$ über $B$ nach $C$. Wie viele Meter spart sie, wenn sie quer über die Wiese geht?
-\gzwei{\begin{tikzpicture}[line width=0.7pt]\fill[black!8] (0,0) rectangle (3.2,2.4);\draw (0,0) -- (3.2,0) -- (3.2,2.4);\draw[dashed] (0,0) -- (3.2,2.4);\mbrwmarke{(3.2,0)}{(0,0)}{(3.2,2.4)}
-\node[font=\small,anchor=north east] at (0,0) {$A$};\node[font=\small,anchor=north west] at (3.2,0) {$B$};\node[font=\small,anchor=south west] at (3.2,2.4) {$C$};
-\node[font=\small,anchor=north] at (1.6,-0.08) {$80$ m};\node[font=\small,anchor=west] at (3.28,1.2) {$60$ m};\end{tikzpicture}}{%
+Lena geht von $A$ über die Ecke $K$ nach $C$. Quer durch den Park ist der Weg kürzer. Wie viele Meter spart sie?
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.8]
+\fill[black!10] (0,0.45) rectangle (3.55,3.2);
+\draw (-0.3,0) -- (4.0,0);\draw (-0.3,0.45) -- (3.55,0.45) -- (3.55,3.2);\draw (4.0,0) -- (4.0,3.2);
+\node[font=\scriptsize] at (1.7,1.9) {Park};
+\fill (0,0.22) circle (1.6pt) node[font=\small,anchor=east] {$A$};
+\fill (3.78,0.22) circle (1.6pt) node[font=\small,anchor=north west] {$K$};
+\fill (3.78,3.0) circle (1.6pt) node[font=\small,anchor=south] {$C$};
+\draw[|-|,line width=0.4pt] (0,-0.35) -- (3.78,-0.35) node[midway,below,font=\small] {$80$ m};
+\draw[|-|,line width=0.4pt] (4.35,0.22) -- (4.35,3.0) node[midway,right,font=\small] {$60$ m};
+\end{tikzpicture}}{%
 \karo{3}}
 \fusshilfe{\mbox{7:~40 m}}
 \end{pfaufg}
 
-% 8 Sache: Entscheidung (passt / passt nicht)
 \begin{pfaufg}{}{8.}{}
-Ein Stab ist $52$ cm lang. Die Skizze zeigt den Boden einer Kiste von oben. Passt der Stab flach auf den Boden?
-\gzwei{\begin{tikzpicture}[line width=0.7pt]\draw (0,0) rectangle (3.2,2.4);\draw[dashed] (0,0) -- (3.2,2.4);
-\node[font=\small,anchor=north] at (1.6,-0.08) {$40$ cm};\node[font=\small,anchor=west] at (3.28,1.2) {$30$ cm};\end{tikzpicture}}{%
-\karo{2.5}\par\smallskip\hfill\kk{ja}\kk{nein}}
-\fusshilfe{\mbox{8:~nein, die Diagonale ist 50 cm}}
+Der Bildschirm eines Fernsehers ist $80$ cm breit und $45$ cm hoch. Im Laden wird seine Diagonale angegeben. Berechne sie. Runde auf eine Stelle nach dem Komma.\par
+Skizziere zuerst den Bildschirm und zeichne die Diagonale ein.
+\karo{4}
+\fusshilfe{\mbox{8:~91,8 cm}}
 \end{pfaufg}
 
 \clearpage
