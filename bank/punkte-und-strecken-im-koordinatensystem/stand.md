@@ -144,3 +144,4 @@ Entscheidung 5).
 - punkte-und-strecken-im-koordinatensystem-e1-k1-s2-v3: nicht eben (Determinante −6) → $P(0 | 1 | 0)$ und $S(3 | 0 | 4)$ statt $P(0 | 3 | 0)$ und $S(1 | 0 | 4)$ (Ein-Punkt-Lösungen stoßen an die Sperre), Lösungsgrafik angepasst (Regel a).
 - punkte-und-strecken-im-koordinatensystem-e3-k1-s3-v3: „für jedes $p$ gleichschenklig“ falsch für $p = 2$ (entartet) → „für jedes $p \ne 2$“ in aufgabe und loesung (Regel a).
 - Prüfskript: Abweichungen 0.
+- 2026-10-08 Aufräumlauf: Lücke „Netz eines Körpers vervollständigen“ (Abitur GK, 2024-bebb-gk-B3c): e1-k1-s7-v4 bis v7 neu (Spitze über B, D, A, C; Seiten 4/3, 3/4, 1,5/2, 2/1,5; wahre Längen und Netzspitzen nachgerechnet); Prüfskript: Abweichungen 0, Warnung s7 7 Zeilen über Menge 3 (gewollt, Ziel 6 der Zuordnung).
