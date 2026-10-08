@@ -3,10 +3,10 @@
 Stand 09.10.2026. Die einzige Datei mit Regeln für den Bau von Blättern –
 für das Bauprogramm `werkzeuge/pruefheft.py`, den Bank-Prompt
 (`blattbau/bankblatt.md`) und jeden Chat, der ein Blatt baut oder beurteilt.
-Über ihr steht `mathe-nachhilfe/plan.md` (große Linien, vor allem Linie 8:
-jede Blattsorte ist ein Filter auf den Bestand). Fassung bis 07.10. mit allen
-Belegen: `archiv/bauregeln-bis-2026-10-07.md`; Zuordnung alt → neu am Ende
-von `bau/bauregeln-streichliste.md`.
+Über ihr steht `mathe-nachhilfe/plan.md`; die Didaktik des Baus steht in
+`bau/bauauftrag.md`. Regeln werden mit Namen zitiert, nicht mit Nummern
+(plan.md Linie 5). Fassung bis 07.10.: `archiv/bauregeln-bis-2026-10-07.md`;
+Zuordnung alt → neu: `archiv/bauregeln-streichliste-2026-10-09.md`.
 
 Drei Arten von Inhalt, verschieden streng:
 
@@ -44,17 +44,17 @@ Typische Fehler stehen im Katalog, nie hier.
 
 2.1 Jede Bestellung liefert ungefragt drei druckfertige PDFs: Übersicht,
     Blatt, Lösungen.
-2.2 Jede Sorte ist ein Filter auf den Bestand; sie wählt aus und erfindet
-    nichts dazu:
-    - Lernblatt: ein Unterkapitel, alles, was Rahmenlehrplan und
-      Lehrwerke dazu nennen.
-    - Prüfungsblatt: ein Unterkapitel, nur was die Prüfung abfragt.
-    - Fokus: ein Handgriff.
-    - Prüfungsheft: alle Blätter eines Kapitels hintereinander.
+2.2 Sorten (plan.md Linie 4): alle aus Lernweg (Katalog) und Bank.
+    - Lernblatt: der Lernweg einer Lerneinheit (Unterkapitel).
+    - Prüfungsblatt: die Stufen der Prüfungsgliederung in Katalogfolge, je
+      Stufe die passenden Schritte, am Ende ein echtes Original ganz.
+    - Fokus: ein Schritt.
+    - Prüfungsheft: die Prüfungsblätter eines Kapitels hintereinander.
     - „mehr“: was noch nicht auf dem Blatt war, zuerst fehlende Originale.
     - Original, Original neu: die Aufgaben einer Prüfung, ganz.
-2.3 Fehlt einem Blatt etwas, wird der Bestand ergänzt; es entsteht keine
-    Regel für ein einzelnes Blatt.
+2.3 Fehlt einem Blatt etwas, wird die Lerneinheit nach bau/bauauftrag.md
+    gebaut oder nachgebessert; es entsteht keine Regel für ein einzelnes
+    Blatt (plan.md Linie 8).
 2.4 Reihenfolge ist ein Schalter: Original und Original neu folgen der
     Prüfung; alles andere folgt der Sachlogik der Inhaltsverzeichnisse
     (Katalog). Die Prüfungsgliederung wählt aus und gewichtet, sie ordnet

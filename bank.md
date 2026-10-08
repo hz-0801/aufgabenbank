@@ -171,6 +171,36 @@ bebb-lk und bb-ea sind LK; CAS/MMS-Fassung und Teil A/B stehen
 nicht in der Prüfkennung. Sie steht am Ende des Fragesatzes
 (unterrichtsblatt 3.6), vor den Ankreuzoptionen.
 
+## Felder für den Lernweg (plan.md, 09.10.2026)
+
+Neu; gesetzt nur an Zeilen, die beim Bau einer Lerneinheit nach
+`bau/bauauftrag.md` gewählt, geschrieben oder geprüft wurden – nie global.
+Fehlt der Schlüssel, ist die Zeile noch nicht an einem Lernweg geprüft.
+
+    schritt       "L<einheit>-<n>": Schritt n des Lernwegs der Einheit
+                  (Katalog, Abschnitt „Lernweg“); steht neben sprosse,
+                  ersetzt sie nicht
+    sache         Sachkontext in ein bis drei Wörtern („Leiter“,
+                  „Weg im Park“, „Bildschirm“); "" bei innermathematisch
+    darstellung   "skizze-fertig" (Figur mit allen Maßen, das gesuchte
+                  Stück eingezeichnet) | "bild" (Situation gezeichnet,
+                  mathematische Figur nicht) | "karte" | "text" (Schüler
+                  skizziert selbst) | "tabelle" | "graph" | "term"
+    frage         "laenge" (Größe berechnen) | "unterschied" |
+                  "entscheidung" (ja/nein, passt/passt nicht) |
+                  "begruendung" | "zuordnung" | "erkennen" | "gleichung"
+    antwortform   "rechnen" | "ankreuzen" | "zuordnen" | "begruenden" |
+                  "zeichnen" | "eintragen"
+    status        "gut" (stand auf einem Blatt mit Lernweg, geprüft,
+                  vom Kritiker durchgelassen) | "schwach" | "ruht"
+    status_grund  bei schwach/ruht: ein Halbsatz
+    besser        bei schwach: id der besseren Zeile desselben Schritts
+    blatt         Kennungen der Blätter, auf denen die Zeile stand,
+                  Liste
+
+Gelöscht wird nichts; schwach und ruht werden nicht gesetzt. Neue Zeilen
+aus einem Bau tragen herkunft wie bisher und dazu alle Felder oben.
+
 ## Mengen je Kette
 
 Ziel (Beschluss 05.10.): 12 Aufgaben je Kern-Stufe, 6 je übriger
