@@ -3010,7 +3010,7 @@ def setze_bloecke(D, args, teile, nr, formel_da):
             art, inh = bl[i]
             if not kopf_gesetzt:
                 fort = '' if i == 0 else ' (Fortsetzung)'
-                info = st.kd
+                info = ''   # Bauregeln 1.3: keine Zählung im Stufenkopf; sie steht in der Schlusszeile (3.12)
                 out.append(f'\\pfstufekopf[{st.ziel}{"" if i == 0 else "f" + str(i)}]{{{kopfname(st)}{fort}}}{{{info}}}')
                 kopf_gesetzt = True
             if art == 'kopf':
@@ -3716,11 +3716,31 @@ def heft_tex(D, args, titel, unter, rb, teile, ps, uebung=None, schluss=None):
     if ps:
         t, ps_loes = setze_pruefstein(D, args, ps)
         out.append(t)
+    out.append(heft_schlusszeile(D, titel, [st for st, _ in teile]))
     out.append('\\end{document}')
     tex = '\n'.join(out)
     for z, st in STECKT.items():
         tex = tex.replace(f'%%STECKT {z}%%', steckt_text(D, st, args.kurs))
     return tex, loes, ps_loes
+
+
+def heft_schlusszeile(D, titel, stufen):
+    """Bauregeln 3.12 (Programmfehler 08.10.): die Zählung je Stufe, die bis dahin im Stufenkopf stand
+    (1.3), klein am Ende des Hefts: „k× (zuletzt J)“ bzw. „selten geprüft“; jede Stufe einmal."""
+    teile, gesehen = [], set()
+    for st in stufen:
+        if st.name in gesehen or not st.kd:
+            continue
+        gesehen.add(st.name)
+        m = re.match(r'in (\d+) der letzten 5', st.kd)
+        jahre = [int(D.kat[i]['jahr']) for i in st.ids if i in D.kat and D.pr['papiere'](D.kat[i])]
+        zul = f' (zuletzt {max(jahre)})' if jahre else ''
+        teile.append(f'{kopfname(st)} {m.group(1)}×{zul}' if m else f'{kopfname(st)} selten{zul}')
+    if not teile:
+        return ''
+    s = f'{D.pr["kopf"]}, letzte fünf Jahre: ' + ' \\textperiodcentered{} '.join(teile) + '.'
+    return ('\\par\\vfill\\noindent\\begin{minipage}{\\linewidth}{\\footnotesize\\color{black!70}' + s
+            + '\\par}\\end{minipage}')
 
 
 # ---------------------------------------------------------------------------
