@@ -1,0 +1,160 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Lösungsheft zu heft.tex, 08.10.2026. Alle Werte mit sympy nachgerechnet.
+\newgeometry{a4paper,margin=18mm,top=15mm,bottom=20mm,footskip=9mm}
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\footnotesize\color{mbgrau}Lösungen \textperiodcentered{} Geraden und Dreiecke im Koordinatensystem}
+\fancyfoot[R]{\footnotesize\color{mbgrau}\thepage}
+\setlength{\parskip}{0pt}
+\newcommand{\Pk}[3]{\ensuremath{#1(#2\,|\,{#3})}}
+\newcommand{\lk}[2]{\par\Needspace{30mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[9mm]{\bfseries\strut #1}}\hspace{2mm}{\bfseries #2}\par\vspace{4pt}}
+\newcommand{\lsg}[3]{\par\noindent\begin{minipage}[t]{7mm}\textbf{#1}\end{minipage}%
+  \begin{minipage}[t]{50mm}\raggedright\bfseries\boldmath #2\end{minipage}\hspace{3mm}%
+  \begin{minipage}[t]{\dimexpr\linewidth-60mm\relax}\raggedright\small #3\end{minipage}\par\vspace{5pt}}
+\newcommand{\ab}[1]{\hfill{\scriptsize\color{mbgrau}→ #1}}
+
+\begin{document}
+\noindent{\Large\bfseries Lösungen}\hspace{1em}{\color{mbgrau}Geraden und Dreiecke im Koordinatensystem}\par\smallskip
+\noindent{\small Links das Ergebnis, rechts der Weg in kurzen Schritten. Stimmt dein Ergebnis nicht, such den ersten Schritt, der anders ist.}\par
+
+\lk{V}{Vorher}
+\lsg{1.}{$g\colon y = 2x - 3$\\ $h\colon y = -\tfrac12x + 2$}{g schneidet die y-Achse bei $-3$; 1 nach rechts, 2 nach oben. h schneidet bei 2; 2 nach rechts, 1 nach unten, also $m = -\tfrac12$.}
+\lsg{2.}{$k$: durch $(0|1)$ und $(2|3)$\\ $l$: durch $(0|4)$ und $(2|{-2})$}{k: bei 1 starten, 1 nach rechts, 1 nach oben. l: bei 4 starten, 1 nach rechts, 3 nach unten.}
+\lsg{3.}{$p$: durch $(0|{-1})$ und $(3|1)$;\\ 3 nach rechts, 2 nach oben}{$m = \tfrac23$: 3 nach rechts, dann $3\cdot\tfrac23 = 2$ nach oben.}
+
+\lk{A1}{Mittelpunkt einer Strecke}
+\lsg{1.}{\Pk{M}{4}{3}}{$\tfrac{2+6}{2} = 4$;\ \ $\tfrac{1+5}{2} = 3$}
+\lsg{2.}{\Pk{M}{1}{-1}}{$\tfrac{-3+5}{2} = 1$;\ \ $\tfrac{2+(-4)}{2} = -1$}
+\lsg{3.}{\Pk{M}{1{,}5}{2{,}5}}{$\tfrac{-1+4}{2} = 1{,}5$;\ \ $\tfrac{4+1}{2} = 2{,}5$}
+\lsg{4.}{\Pk{B}{5}{-1}}{Von A nach M: 3 nach rechts ($-1 \to 2$), 2 nach unten ($3 \to 1$). Von M noch einmal: $2+3 = 5$, $1-2 = -1$. Probe: $\tfrac{-1+5}{2} = 2$, $\tfrac{3+(-1)}{2} = 1$ \checkmark}
+\lsg{5.}{\Pk{M_{AB}}{4}{-1}\\ \Pk{M_{BC}}{3}{4}\\ \Pk{M_{AC}}{0}{1}}{$\tfrac{1+7}{2} = 4$, $\tfrac{-4+2}{2} = -1$;\ \ $\tfrac{7-1}{2} = 3$, $\tfrac{2+6}{2} = 4$;\ \ $\tfrac{1-1}{2} = 0$, $\tfrac{-4+6}{2} = 1$}
+
+\lk{A2}{Länge einer Strecke}
+\lsg{1.}{$10$}{Unterschiede 6 und 8; $\sqrt{36+64} = \sqrt{100} = 10$}
+\lsg{2.}{$10$}{Unterschiede 6 und $-8$; $\sqrt{36+64} = 10$}
+\lsg{3.}{$\approx 6{,}71$}{Unterschiede 3 und 6; $\sqrt{9+36} = \sqrt{45} \approx 6{,}71$}
+\lsg{4.}{$\overline{AB} \approx 8{,}49$, $\overline{BC} \approx 8{,}94$,\\ $\overline{AC} \approx 10{,}20$; \ $u \approx 27{,}63$}{$AB$: $\sqrt{6^2+6^2} = \sqrt{72}$;\ \ $BC$: $\sqrt{(-8)^2+4^2} = \sqrt{80}$;\ \ $AC$: $\sqrt{(-2)^2+10^2} = \sqrt{104}$;\ \ $u = 8{,}49+8{,}94+10{,}20$}
+\lsg{5.}{$\overline{KL} = \overline{LN} = \sqrt{40}$}{$KL$: $\sqrt{6^2+(-2)^2} = \sqrt{40}$;\ \ $LN$: $\sqrt{(-2)^2+6^2} = \sqrt{40}$;\ \ $KN$: $\sqrt{4^2+4^2} = \sqrt{32}$. Zwei Seiten gleich lang.}
+
+\lk{B1}{Steigung aus zwei Punkten}
+\lsg{1.}{$m = 3$}{$\tfrac{7-1}{2-0} = \tfrac62$}
+\lsg{2.}{$m = -2$}{$\tfrac{-3-5}{3-(-1)} = \tfrac{-8}{4}$}
+\lsg{3.}{$m = \tfrac12$}{$\tfrac{2-(-1)}{2-(-4)} = \tfrac36$}
+\lsg{4.}{a) $m = 0$, waagerecht\\ b) keine Steigung, senkrecht}{a) $\tfrac{4-4}{5+3} = \tfrac08 = 0$.\ \ b) $\tfrac{-1-5}{2-2} = \tfrac{-6}{0}$: durch 0 teilen geht nicht. Mehr dazu in B3.}
+\lsg{5.}{$m_{AB} = 1$, $m_{BC} = -\tfrac12$, $m_{AC} = -5$}{$\tfrac{2+4}{7-1} = \tfrac66$;\ \ $\tfrac{6-2}{-1-7} = \tfrac{4}{-8}$;\ \ $\tfrac{6+4}{-1-1} = \tfrac{10}{-2}$}
+
+\lk{B2}{Gerade aus Punkt und Steigung}
+\lsg{1.}{$y = 3x + 2$}{$5 = 3\cdot 1 + n$, \ $n = 2$}
+\lsg{2.}{$y = -2x + 5$}{$-3 = -2\cdot 4 + n = -8 + n$, \ $n = 5$}
+\lsg{3.}{$y = \tfrac12x + 3$}{$1 = \tfrac12\cdot(-4) + n = -2 + n$, \ $n = 3$}
+\lsg{4.}{$y = \tfrac34x - \tfrac12$ \ ($= 0{,}75x - 0{,}5$)}{$1 = \tfrac34\cdot 2 + n = 1{,}5 + n$, \ $n = -0{,}5$}
+\lsg{5.}{$h\colon y = -3x + 5$}{gleiche Steigung $m = -3$; \ $-1 = -3\cdot 2 + n = -6 + n$, \ $n = 5$}
+
+\lk{B3}{Gerade aus zwei Punkten}
+\lsg{1.}{$y = 2x + 1$}{$m = \tfrac{5-1}{2-0} = 2$; A liegt auf der y-Achse, also $n = 1$.}
+\lsg{2.}{$y = 3x - 5$}{$m = \tfrac{10-1}{5-2} = 3$; \ $1 = 3\cdot 2 + n$, \ $n = -5$}
+\lsg{3.}{$y = -\tfrac12x + 4$}{$m = \tfrac{2-5}{4+2} = -\tfrac36 = -\tfrac12$; \ $5 = -\tfrac12\cdot(-2) + n = 1 + n$, \ $n = 4$}
+\lsg{4.}{a) $y = 2$ \quad b) $x = 4$}{a) gleiche y-Werte: waagerecht.\ \ b) gleiche x-Werte: senkrecht.}
+\lsg{5.}{$AB\colon y = x - 5$\\ $BC\colon y = -\tfrac12x + 5{,}5$\\ $AC\colon y = -5x + 1$}{Steigungen aus B1.\ \ $AB$: $-4 = 1 + n$, $n = -5$.\ \ $BC$: $2 = -\tfrac12\cdot 7 + n = -3{,}5 + n$, $n = 5{,}5$.\ \ $AC$: $-4 = -5 + n$, $n = 1$.}
+
+\lk{B4}{Punktprobe}
+\lsg{1.}{A liegt auf $g$, B nicht (B liegt unter $g$)}{A: $3\cdot 2 + 1 = 7$ \checkmark.\ \ B: $3\cdot(-1) + 1 = -2$; \ $-3 < -2$}
+\lsg{2.}{P auf $g$, Q über $g$, R unter $g$}{P: $-3 + 4 = 1$ \checkmark.\ \ Q: $1 + 4 = 5$, \ $6 > 5$.\ \ R: $-2 + 4 = 2$, \ $1 < 2$}
+\lsg{3.}{a) $k = -1$ \quad b) $t = 6$}{a) $2\cdot 3 - 7 = -1$.\ \ b) $5 = 2t - 7$, \ $12 = 2t$, \ $t = 6$}
+\lsg{4.}{a) beide auf $g$\\ b) P ja, Q nein\\ c) C liegt über $g$}{a) $3 - 5 = -2$ \checkmark, \ $9 - 5 = 4$ \checkmark.\ \ b) $x_P = 3$ liegt zwischen 1 und 7, $x_Q = 9$ nicht.\ \ c) $-1 - 5 = -6$; \ $6 > -6$}
+
+\lk{B5}{Schnittpunkte mit den Achsen}
+\lsg{1.}{\Pk{S_y}{0}{-6}, \ \Pk{S_x}{2}{0}}{$0 = 3x - 6$, \ $x = 2$}
+\lsg{2.}{\Pk{S_y}{0}{5}, \ \Pk{S_x}{2{,}5}{0}}{$0 = -2x + 5$, \ $2x = 5$, \ $x = 2{,}5$}
+\lsg{3.}{\Pk{S_y}{0}{3}, \ \Pk{S_x}{-4}{0}}{$0 = \tfrac34x + 3$, \ $-3 = \tfrac34x$, \ $x = -4$}
+\lsg{4.}{a) \Pk{S_y}{0}{4}, keine Nullstelle\\ b) \Pk{S_x}{-2}{0}, kein Schnitt mit der y-Achse}{a) $y$ ist immer 4, nie 0: parallel zur x-Achse.\ \ b) $x$ ist immer $-2$, nie 0: parallel zur y-Achse.}
+\lsg{5.}{$A = 9$ FE}{\Pk{S_y}{0}{3}; \ $0 = -\tfrac12x + 3$, \ $x = 6$, \ \Pk{S_x}{6}{0}. Rechtwinkliges Dreieck mit Katheten 6 und 3: $\tfrac12\cdot 6\cdot 3 = 9$}
+
+\lk{B6}{Steigungswinkel}
+\lsg{1.}{a) $45^\circ$ \ b) $\approx 71{,}6^\circ$ \ c) $\approx 26{,}6^\circ$}{$\tan^{-1}(1)$, \ $\tan^{-1}(3)$, \ $\tan^{-1}(0{,}5)$}
+\lsg{2.}{a) $\approx 116{,}6^\circ$ \ b) $\approx 161{,}6^\circ$}{a) $180^\circ + \tan^{-1}(-2) = 180^\circ - 63{,}43^\circ$.\ \ b) $180^\circ + \tan^{-1}(-\tfrac13) = 180^\circ - 18{,}43^\circ$}
+\lsg{3.}{$\approx 36{,}9^\circ$}{$m = \tfrac{4-1}{3+1} = \tfrac34$; \ $\tan^{-1}(0{,}75) \approx 36{,}87^\circ$}
+\lsg{4.}{a) $m \approx 1{,}73$ \ b) $m = -1$}{$m = \tan\alpha$: \ $\tan 60^\circ \approx 1{,}732$; \ $\tan 135^\circ = -1$}
+\lsg{5.}{$AB$: $45^\circ$; \ $BC$: $\approx 153{,}4^\circ$;\\ $AC$: $\approx 101{,}3^\circ$}{$m = 1$, $-\tfrac12$, $-5$ (B1).\ \ $180^\circ - 26{,}57^\circ$; \ $180^\circ - 78{,}69^\circ$}
+
+\lk{C1}{Lage zweier Geraden}
+\lsg{1.}{a) parallel \ b) senkrecht\\ c) schneiden sich}{a) $m$ gleich (3), $n$ verschieden.\ \ b) $1\cdot(-1) = -1$.\ \ c) $2 \ne 3$; \ $2\cdot 3 = 6$, also nicht senkrecht.}
+\lsg{2.}{a) ja \quad b) nein}{a) $\tfrac23\cdot(-\tfrac32) = -1$.\ \ b) $4\cdot(-4) = -16$}
+\lsg{3.}{a) identisch \quad b) parallel}{a) $2(x-1)+3 = 2x - 2 + 3 = 2x + 1$, genau $h$.\ \ b) $2y = 6x - 4 \ |:2$, \ $y = 3x - 2$: $m$ gleich, $n$ verschieden.}
+\lsg{4.}{a) $4$ \quad b) $-\tfrac14$}{parallel: gleiches $m$; senkrecht: $-\tfrac{1}{4}$}
+\lsg{5.}{a) $\tfrac12\cdot(-2) = -1$ \checkmark\\ b) ja, rechter Winkel bei $L$}{a) $m_{PQ} = \tfrac24 = \tfrac12$, \ $m_{RS} = \tfrac{1-5}{3-1} = -2$.\ \ b) $m_{KL} = \tfrac{3-1}{2+2} = \tfrac12$, \ $m_{LN} = \tfrac{7-3}{0-2} = -2$, \ $m_{KN} = 3$. $KL$ und $LN$ sind senkrecht; sie treffen sich in $L$.}
+
+\lk{C2}{Schnittpunkt zweier Geraden}
+\lsg{1.}{\Pk{S}{3}{7}}{$3x - 2 = x + 4$, \ $2x = 6$, \ $x = 3$; \ $y = 3 + 4 = 7$}
+\lsg{2.}{\Pk{S}{2}{3}}{$-2x + 7 = \tfrac12x + 2$, \ $-2{,}5x = -5$, \ $x = 2$; \ $y = -4 + 7 = 3$}
+\lsg{3.}{a) \Pk{S}{2}{5} \quad b) \Pk{S}{-1}{1}}{a) $4x - 3 = 5$, \ $4x = 8$, \ $x = 2$.\ \ b) $x = -1$ einsetzen: $y = 2\cdot(-1) + 3 = 1$}
+\lsg{4.}{\Pk{S}{0{,}75}{2{,}5}}{$2x + 1 = -2x + 4$, \ $4x = 3$, \ $x = 0{,}75$; \ $y = 1{,}5 + 1 = 2{,}5$}
+\lsg{5.}{a) parallel, kein Schnittpunkt\\ b) \Pk{S}{2}{0}\\ c) \Pk{S}{3{,}2}{1{,}6}}{a) $m$ gleich (2), $n$ verschieden.\ \ b) $-x + 2 = 3x - 6$, \ $-4x = -8$, \ $x = 2$, \ $y = 0$.\ \ c) $g$: $m = \tfrac{1+1}{2+2} = \tfrac12$, \ $-1 = -1 + n$, \ $n = 0$, \ $g\colon y = \tfrac12x$; \ $\tfrac12x = -2x + 8$, \ $2{,}5x = 8$, \ $x = 3{,}2$, \ $y = 1{,}6$}
+
+\lk{C3}{Parallele und Senkrechte durch einen Punkt}
+\lsg{1.}{a) $-\tfrac13$ \ b) $\tfrac12$ \ c) $-2$ \ d) $\tfrac43$}{Kehrwert, Vorzeichen umdrehen.}
+\lsg{2.}{$y = -3x + 7$}{$m = -3$; \ $4 = -3 + n$, \ $n = 7$}
+\lsg{3.}{$y = -2x + 7$}{$m = -2$; \ $3 = -4 + n$, \ $n = 7$}
+\lsg{4.}{a) $y = \tfrac32x + 2$ \ ($= 1{,}5x + 2$)\\ b) $x = 2$}{a) $m = \tfrac32$; \ $-1 = \tfrac32\cdot(-2) + n = -3 + n$, \ $n = 2$.\ \ b) $y = 3$ ist waagerecht, die Senkrechte dazu ist senkrecht und geht durch $x = 2$.}
+\lsg{5.}{$h\colon y = -\tfrac12x + 1$}{$g$ auf der x-Achse: $0 = 2x - 4$, \ $x = 2$, Punkt \Pk{}{2}{0}. \ $m = -\tfrac12$; \ $0 = -1 + n$, \ $n = 1$}
+
+\lk{C4}{Schnittwinkel}
+\lsg{1.}{$\approx 26{,}6^\circ$}{$45^\circ$ und $71{,}57^\circ$; \ $\delta = 26{,}57^\circ$}
+\lsg{2.}{$\approx 71{,}6^\circ$}{$63{,}43^\circ$ und $135^\circ$; \ $\delta = 71{,}57^\circ$}
+\lsg{3.}{$\approx 77{,}5^\circ$}{$14{,}04^\circ$ und $116{,}57^\circ$; \ $\delta = 102{,}53^\circ > 90^\circ$, \ $180^\circ - 102{,}53^\circ = 77{,}47^\circ$}
+\lsg{4.}{a) $90^\circ$ \quad b) $\approx 63{,}4^\circ$}{a) $63{,}43^\circ$ und $153{,}43^\circ$, \ $\delta = 90^\circ$ (auch: $2\cdot(-\tfrac12) = -1$).\ \ b) $y = 3$ hat $\alpha = 0^\circ$; \ $63{,}43^\circ - 0^\circ$}
+\lsg{5.}{\Pk{S}{4}{3}, \ Schnittwinkel $45^\circ$}{$g$: $m = \tfrac{2-0}{2+2} = \tfrac12$, \ $0 = -1 + n$, \ $n = 1$. \ $\tfrac12x + 1 = 3x - 9$, \ $10 = 2{,}5x$, \ $x = 4$, \ $y = 3$. \ Winkel $26{,}57^\circ$ und $71{,}57^\circ$, \ $\delta = 45{,}0^\circ$}
+
+\lk{D1}{Seitenhalbierende}
+\lsg{1.}{$y = 3x - 3$}{\Pk{M_{PQ}}{1}{0}; \ $m = \tfrac{6-0}{3-1} = 3$; \ $6 = 9 + n$, \ $n = -3$}
+\lsg{2.}{$s_b\colon y = \tfrac17x + 1$\\ Länge $\approx 7{,}07$}{\Pk{M_{AC}}{0}{1}; \ $m = \tfrac{1-2}{0-7} = \tfrac17$; $M_{AC}$ liegt auf der y-Achse, also $n = 1$. Länge $\sqrt{7^2+1^2} = \sqrt{50}$}
+\lsg{3.}{$s_c\colon y = -1{,}4x + 4{,}6$\\ Länge $\approx 8{,}60$}{\Pk{M_{AB}}{4}{-1}; \ $m = \tfrac{-1-6}{4+1} = -\tfrac75 = -1{,}4$; \ $6 = -1{,}4\cdot(-1) + n = 1{,}4 + n$, \ $n = 4{,}6$. Länge $\sqrt{5^2+7^2} = \sqrt{74}$}
+\lsg{4.}{$S\left(\tfrac73\,\big|\,\tfrac43\right) \approx (2{,}33\,|\,1{,}33)$}{a) $4x - 8 = \tfrac17x + 1$, \ $\tfrac{27}{7}x = 9$, \ $x = \tfrac73$; \ $y = \tfrac{28}{3} - 8 = \tfrac43$.\ \ b) $\tfrac{1+7-1}{3} = \tfrac73$, \ $\tfrac{-4+2+6}{3} = \tfrac43$ \checkmark}
+
+\lk{D2}{Mittelsenkrechte}
+\lsg{1.}{$y = -2x + 5$}{\Pk{M}{2}{1}; \ $m = \tfrac24 = \tfrac12$, senkrecht $-2$; \ $1 = -4 + n$, \ $n = 5$}
+\lsg{2.}{$y = 2x - 2$}{\Pk{M_{BC}}{3}{4}; \ $m_{BC} = -\tfrac12$, senkrecht $2$; \ $4 = 6 + n$, \ $n = -2$}
+\lsg{3.}{$y = \tfrac15x + 1$ \ ($= 0{,}2x + 1$)}{\Pk{M_{AC}}{0}{1}; \ $m_{AC} = -5$, senkrecht $\tfrac15$; $M_{AC}$ auf der y-Achse, also $n = 1$}
+\lsg{4.}{a) $PQ\colon y = -3x + 1$,\\ \phantom{a) }$PR\colon y = -\tfrac12x + 1$\\ b) \Pk{U}{0}{1} \quad c) $r = \sqrt{50} \approx 7{,}07$}{a) \Pk{M_{PQ}}{1}{-2}, $m_{PQ} = \tfrac{4}{12} = \tfrac13$, senkrecht $-3$, $-2 = -3 + n$, $n = 1$.\ \ \Pk{M_{PR}}{-2}{2}, $m_{PR} = \tfrac{12}{6} = 2$, senkrecht $-\tfrac12$, $2 = 1 + n$, $n = 1$.\ \ b) $-3x + 1 = -\tfrac12x + 1$, \ $x = 0$, \ $y = 1$.\ \ c) $\sqrt{(-5-0)^2+(-4-1)^2} = \sqrt{50}$}
+
+\lk{D3}{Höhe, Lotfußpunkt, Abstand}
+\lsg{1.}{a) $y = -\tfrac12x + 2{,}5$\\ b) \Pk{F}{1}{2} \quad c) $\approx 4{,}47$}{a) $m = -\tfrac12$; \ $0 = -2{,}5 + n$, \ $n = 2{,}5$.\ \ b) $2x = -\tfrac12x + 2{,}5$, \ $2{,}5x = 2{,}5$, \ $x = 1$, \ $y = 2$.\ \ c) $\sqrt{4^2+2^2} = \sqrt{20}$}
+\lsg{2.}{$h_a\colon y = 2x - 6$\\ \Pk{F_a}{4{,}6}{3{,}2}\\ Länge $\approx 8{,}05$}{$m = 2$ (senkrecht zu $-\tfrac12$); \ $-4 = 2 + n$, \ $n = -6$. \ $2x - 6 = -\tfrac12x + 5{,}5$, \ $2{,}5x = 11{,}5$, \ $x = 4{,}6$, \ $y = 3{,}2$. \ $\sqrt{3{,}6^2 + 7{,}2^2} = \sqrt{64{,}8}$. Kontrolle: $\tfrac12\cdot\sqrt{80}\cdot\sqrt{64{,}8} = 36$ (D4) \checkmark}
+\lsg{3.}{$h_b\colon y = 0{,}2x + 0{,}6$}{$m = \tfrac15$ (senkrecht zu $-5$); \ $2 = \tfrac15\cdot 7 + n = 1{,}4 + n$, \ $n = 0{,}6$}
+\lsg{4.}{$\approx 6{,}71$ \ ($= \sqrt{45}$)}{Lot: $m = -2$; \ $-3 = -14 + n$, \ $n = 11$. \ $\tfrac12x + 1 = -2x + 11$, \ $2{,}5x = 10$, \ $x = 4$, \ $y = 3$: \Pk{F}{4}{3}. \ $\sqrt{3^2+6^2} = \sqrt{45}$}
+
+\lk{D4}{Flächeninhalt}
+\lsg{1.}{$A = 12$ FE}{Grundseite $g = 6$ (von P bis Q), Höhe $h = 4$ (y-Wert von R); \ $\tfrac12\cdot 6\cdot 4$}
+\lsg{2.}{$A = 9{,}5$ FE}{Rechteck x 1 bis 5, y 1 bis 6: $4\cdot 5 = 20$. Dreiecke: an $PQ$ $\tfrac12\cdot 4\cdot 1 = 2$, an $QR$ $\tfrac12\cdot 3\cdot 4 = 6$, an $RP$ $\tfrac12\cdot 1\cdot 5 = 2{,}5$. \ $20 - 10{,}5$}
+\lsg{3.}{$A = 16$ FE}{Rechteck $6\cdot 6 = 36$. Dreiecke: $\tfrac12\cdot 6\cdot 2 = 6$, \ $\tfrac12\cdot 4\cdot 4 = 8$, \ $\tfrac12\cdot 2\cdot 6 = 6$. \ $36 - 20$}
+\lsg{4.}{$A = 6{,}75$ FE}{$g \cap h$: $x + 1 = -2x + 7$, \ $x = 2$, \ $y = 3$. Nullstellen: $g$ bei $-1$, $h$ bei $3{,}5$. Grundseite $3{,}5 - (-1) = 4{,}5$, Höhe 3: \ $\tfrac12\cdot 4{,}5\cdot 3$}
+
+\lk{D5}{Innenwinkel}
+\lsg{1.}{$\gamma \approx 52{,}1^\circ$}{$AC$: $101{,}31^\circ$, \ $BC$: $153{,}43^\circ$; \ $\delta = 52{,}12^\circ$, spitz \checkmark. Probe: $56{,}3^\circ + 71{,}6^\circ + 52{,}1^\circ = 180^\circ$}
+\lsg{2.}{bei P $\approx 71{,}6^\circ$, bei Q $45^\circ$,\\ bei R $\approx 63{,}4^\circ$}{$PQ$: $0^\circ$; \ $PR$ ($m = 3$): $71{,}57^\circ$; \ $QR$ ($m = -1$): $135^\circ$. \ Q: $\delta = 135^\circ$, aber spitz, also $45^\circ$. \ R: $135^\circ - 71{,}57^\circ$. Summe $180^\circ$ \checkmark}
+\lsg{3.}{bei K $\approx 53{,}1^\circ$, bei L $\approx 63{,}4^\circ$,\\ bei N $\approx 63{,}4^\circ$}{$KL$ ($m = \tfrac13$): $18{,}43^\circ$; \ $LN$ ($m = -1$): $135^\circ$; \ $KN$ ($m = 3$): $71{,}57^\circ$. \ K: $71{,}57^\circ - 18{,}43^\circ$. \ L: $\delta = 116{,}57^\circ$, aber spitz, also $63{,}43^\circ$. \ N: $135^\circ - 71{,}57^\circ$}
+\lsg{4.}{bei P $45^\circ$, bei Q $\approx 18{,}4^\circ$,\\ bei R $\approx 116{,}6^\circ$}{$PQ$: $0^\circ$; \ $PR$ ($m = 1$): $45^\circ$; \ $QR$ ($m = -\tfrac13$): $161{,}57^\circ$. \ Q: $\delta = 161{,}57^\circ$, aber spitz, also $18{,}43^\circ$. \ R: $161{,}57^\circ - 45^\circ = 116{,}57^\circ$, in der Skizze stumpf \checkmark}
+
+\lk{T}{Probetest}
+\lsg{1.}{a) \Pk{M}{1}{2} \ b) $\approx 8{,}49$\\ c) $y = -x + 3$ \ d) $135^\circ$\\ e) \Pk{S_y}{0}{3}, \Pk{S_x}{3}{0}}{a) $\tfrac{-2+4}{2}$, $\tfrac{5-1}{2}$\ab{A1}\\ b) $\sqrt{6^2+6^2} = \sqrt{72}$\ab{A2}\\ c) $m = \tfrac{-1-5}{4+2} = -1$, \ $5 = 2 + n$, \ $n = 3$\ab{B3}\\ d) $180^\circ + \tan^{-1}(-1)$\ab{B6}\\ e) $0 = -x + 3$, \ $x = 3$\ab{B5}}
+\lsg{2.}{a) ja \ b) über $g$ \ c) $a = 6$}{a) $-5 + 3 = -2$ \checkmark.\ \ b) $1 + 3 = 4$, \ $5 > 4$.\ \ c) $-3 = -a + 3$, \ $a = 6$\ab{B4}}
+\lsg{3.}{a) $g \perp h$; \ $g \parallel k$\\ b) \Pk{S}{2{,}8}{4{,}6}}{a) $2\cdot(-\tfrac12) = -1$; \ $g$, $k$: $m$ gleich, $n$ verschieden\ab{C1}\\ b) $2x - 1 = -\tfrac12x + 6$, \ $2{,}5x = 7$, \ $x = 2{,}8$, \ $y = 4{,}6$\ab{C2}}
+\lsg{4.}{$45^\circ$}{$\alpha_k = 63{,}43^\circ$, \ $\alpha_l = 180^\circ - 71{,}57^\circ = 108{,}43^\circ$; \ $\delta = 45{,}0^\circ$\ab{C4}}
+\lsg{5.}{a) $y = -\tfrac12x + 4$\\ b) $\approx 4{,}47$ \ ($= \sqrt{20}$)}{a) $1 = -\tfrac12\cdot 6 + n = -3 + n$, \ $n = 4$\ab{C3}\\ b) $2x - 1 = -\tfrac12x + 4$, \ $x = 2$, \ $y = 3$: \Pk{F}{2}{3}; \ $\sqrt{4^2+2^2}$\ab{D3}}
+\lsg{6.}{b) $s_c\colon y = -1{,}5x + 4$\\ c) $y = -x + 2$\\ d) $h_c\colon y = -x + 4$, \Pk{F}{5}{-1},\\ \phantom{d) }Länge $\approx 7{,}07$\\ e) $A = 20$ FE\\ f) $\alpha \approx 59{,}0^\circ$\\ g) nein}{b) \Pk{M_{AB}}{4}{-2}, \ $m = \tfrac{-2-4}{4-0} = -1{,}5$, C auf der y-Achse: $n = 4$\ab{D1}\\
+c) $m_{AB} = \tfrac44 = 1$, senkrecht $-1$; \ $-2 = -4 + n$, \ $n = 2$\ab{D2}\\
+d) $AB\colon y = x - 6$; \ $h_c$: $m = -1$, $n = 4$; \ $x - 6 = -x + 4$, \ $x = 5$; \ $\sqrt{5^2+5^2} = \sqrt{50}$\ab{D3}\\
+e) Rechteck $6\cdot 8 = 48$; \ $8 + 12 + 8 = 28$; \ $48 - 28$. Kontrolle $\tfrac12\cdot\sqrt{32}\cdot\sqrt{50} = 20$\ab{D4}\\
+f) $AB$: $45^\circ$; \ $AC$ ($m = -4$): $104{,}04^\circ$; \ $\delta = 59{,}04^\circ$, spitz\ab{D5}\\
+g) $m_{AB} = 1$, $m_{BC} = -\tfrac23$, $m_{AC} = -4$; kein Produkt ist $-1$\ab{C1}}
+\lsg{7.}{\Pk{U}{1{,}8}{0{,}2}}{Mittelsenkrechte von $AC$: \Pk{M_{AC}}{1}{0}, senkrecht zu $-4$: $\tfrac14$, \ $0 = \tfrac14 + n$, \ $n = -\tfrac14$. \ $-x + 2 = \tfrac14x - \tfrac14$, \ $2{,}25 = 1{,}25x$, \ $x = 1{,}8$, \ $y = 0{,}2$\ab{D2}}
+
+\medskip
+\noindent\begin{minipage}[t]{0.5\linewidth}\vspace{0pt}{\small\textbf{Zu 6 a):} So sieht das Dreieck aus.}\end{minipage}\hfill
+\begin{minipage}[t]{0.45\linewidth}\vspace{0pt}\centering
+\begin{ksys}[xmin=-2,xmax=8,ymin=-5,ymax=5,karo=0.4]
+\draw[line width=0.9pt] (2,-4) -- (6,0) -- (0,4) -- cycle;
+\fill (2,-4) circle (1.6pt) node[below left,font=\small]{$A$};\fill (6,0) circle (1.6pt) node[above right,font=\small]{$B$};\fill (0,4) circle (1.6pt) node[above right,font=\small]{$C$};
+\end{ksys}
+\end{minipage}
+\end{document}

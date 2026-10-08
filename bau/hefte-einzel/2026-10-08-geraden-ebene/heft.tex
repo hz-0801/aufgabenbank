@@ -1,0 +1,539 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Selbstlernheft „Geraden und Dreiecke im Koordinatensystem“, Kl. 11 (EP), 08.10.2026.
+% Präambel nach aufgabenbank bau/proben/2026-10-08/paket-pythagoras-2/2-blatt.tex; Plan: plan.md.
+\usepackage{multicol}
+\usepackage{enumitem}
+\usetikzlibrary{calc}
+\newgeometry{a4paper,margin=18mm,top=15mm,bottom=20mm,footskip=9mm}
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\gdef\aktkenn{}
+\fancyfoot[L]{\footnotesize\color{mbgrau}\ifx\aktkenn\empty\else Mehr Aufgaben zu diesem Abschnitt? Schreib: „mehr \aktkenn“\fi}
+\fancyfoot[R]{\footnotesize\color{mbgrau}\thepage}
+\setlength{\parskip}{3pt}
+
+\newcommand{\Pk}[3]{\ensuremath{#1(#2\,|\,{#3})}}
+\newcommand{\pkt}[4][above right]{\fill (#2,#3) circle (1.6pt) node[#1,font=\small,inner sep=1.5pt]{$#4$};}
+\newcommand{\abschnitt}[3]{\clearpage\gdef\aktkenn{#1}\label{s:#1}%
+  \noindent\colorbox{black!12}{\makebox[10mm]{\Large\bfseries\strut #1}}\hspace{3mm}{\Large\bfseries #2}\par\smallskip
+  \noindent #3\par\medskip}
+\newcommand{\formel}[1]{\par\noindent\textbf{Formel}\par\nopagebreak\noindent\hspace*{4mm}%
+  \begin{minipage}{\dimexpr\linewidth-4mm\relax}\setlength{\parskip}{3pt}#1\end{minipage}\par\medskip}
+\newcommand{\bsp}[3]{\par\medskip\noindent\textbf{Beispiel}\quad #1\par\smallskip
+  \noindent\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}#2\end{minipage}\hfill
+  \begin{minipage}[t]{0.37\linewidth}\vspace{0pt}\centering #3\end{minipage}\par\medskip}
+\newcommand{\sch}[2]{\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{#1}}#2\par\smallskip}
+\newenvironment{aufgaben}{\par\medskip\noindent\textbf{Aufgaben}\hspace{1em}{\small\color{mbgrau}Rechne unten im Karo oder auf einem extra Blatt. Vergleiche jede Aufgabe gleich mit dem Lösungsheft.}\par\smallskip
+  \begin{enumerate}[label=\textbf{\arabic*.},leftmargin=7mm,itemsep=6pt,topsep=2pt]}{\end{enumerate}\karorest}
+% Rechenkaro bis zum Seitenende (Platz statt leerer halber Seite)
+\newlength{\kr}
+\newcommand{\karorest}{\par\vspace{3mm}\setlength{\kr}{\dimexpr\pagegoal-\pagetotal-12mm\relax}%
+  \ifdim\kr>30mm\noindent{\scriptsize\color{mbgrau}Platz zum Rechnen}\par\nointerlineskip\vspace{1mm}\noindent
+  \begin{tikzpicture}\clip (0,0) rectangle ({\linewidth-0.5mm},\kr);\draw[black!16,line width=0.3pt,step=5mm] (0,0) grid (\linewidth,\kr);\end{tikzpicture}\fi\par}
+\newcommand{\tn}{\leavevmode\llap{\scriptsize\color{mbgrau}Test\hspace{9mm}}}
+\newcommand{\zs}{\leavevmode\llap{\scriptsize\color{mbgrau}Zusatz\hspace{9mm}}}
+\newcommand{\gr}{\color{black!45}}
+% festes Dreieck für Teil D
+\newcommand{\dreieckT}{\draw[line width=0.9pt] (1,-4) -- (7,2) -- (-1,6) -- cycle;
+  \pkt[below left]{1}{-4}{A}\pkt[right]{7}{2}{B}\pkt[above right]{-1}{6}{C}}
+\newcommand{\kT}[1]{\begin{ksys}[xmin=-2,xmax=8,ymin=-5,ymax=7,karo=0.52]\dreieckT #1\end{ksys}}
+
+\begin{document}
+
+% ------------------------------------------------------------ Seite 1 Übersicht
+\noindent{\LARGE\bfseries Geraden und Dreiecke im Koordinatensystem}\par\smallskip
+\noindent{\small\color{mbgrau}Selbstlernheft Klasse 11 \textperiodcentered{} mit Lösungsheft}\par\medskip
+\noindent\textbf{So nutzt du das Heft:} Lies im Abschnitt das Beispiel. Rechne dann die Aufgaben der Reihe nach und vergleiche jede sofort mit dem Lösungsheft. Kreuze „kann ich“ an, wenn du die letzte Aufgabe allein schaffst. Mehr Aufgaben zu einem Abschnitt bekommst du mit seiner Kennung, z.\,B. „mehr B3“.\par
+\noindent\textbf{Wenig Zeit?} Mach in jedem Abschnitt das Beispiel, Aufgabe 1 und die Aufgabe mit „Test“ am Rand. Zum Schluss der Probetest.\par\medskip
+
+{\arrayrulecolor{mbgrau}\renewcommand{\arraystretch}{1.22}
+\noindent\begin{tabular}{|>{\bfseries}p{10mm}|p{112mm}|>{\raggedleft\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{14mm}|}\hline
+\rowcolor{black!8}\textbf{} & \textbf{Abschnitt} & \textbf{Seite} & \textbf{kann ich}\\\hline
+V  & Vorher (Klasse 10): $m$ und $n$ ablesen, Steigungsdreieck, Gerade zeichnen & \pageref{s:V} & $\square$\\\hline
+\rowcolor{black!4}\multicolumn{4}{|l|}{\textbf{A\quad Punkte und Strecken}}\\\hline
+A1 & Mittelpunkt einer Strecke & \pageref{s:A1} & $\square$\\\hline
+A2 & Länge einer Strecke & \pageref{s:A2} & $\square$\\\hline
+\rowcolor{black!4}\multicolumn{4}{|l|}{\textbf{B\quad Eine Gerade}}\\\hline
+B1 & Steigung aus zwei Punkten & \pageref{s:B1} & $\square$\\\hline
+B2 & Gerade aus Punkt und Steigung & \pageref{s:B2} & $\square$\\\hline
+B3 & Gerade aus zwei Punkten; waagerecht und senkrecht & \pageref{s:B3} & $\square$\\\hline
+B4 & Punktprobe: auf, über oder unter der Geraden & \pageref{s:B4} & $\square$\\\hline
+B5 & Schnittpunkte mit den Achsen & \pageref{s:B5} & $\square$\\\hline
+B6 & Steigungswinkel & \pageref{s:B6} & $\square$\\\hline
+\rowcolor{black!4}\multicolumn{4}{|l|}{\textbf{C\quad Zwei Geraden}}\\\hline
+C1 & Lage: identisch, parallel, schneiden sich, senkrecht & \pageref{s:C1} & $\square$\\\hline
+C2 & Schnittpunkt zweier Geraden & \pageref{s:C2} & $\square$\\\hline
+C3 & Parallele und Senkrechte durch einen Punkt & \pageref{s:C3} & $\square$\\\hline
+C4 & Schnittwinkel & \pageref{s:C4} & $\square$\\\hline
+\rowcolor{black!4}\multicolumn{4}{|l|}{\textbf{D\quad Dreieck im Koordinatensystem}}\\\hline
+D1 & Seitenhalbierende (Zusatz: Schwerpunkt) & \pageref{s:D1} & $\square$\\\hline
+D2 & Mittelsenkrechte (Zusatz: Umkreismittelpunkt) & \pageref{s:D2} & $\square$\\\hline
+D3 & Höhe, Lotfußpunkt, Abstand Punkt–Gerade & \pageref{s:D3} & $\square$\\\hline
+D4 & Flächeninhalt & \pageref{s:D4} & $\square$\\\hline
+D5 & Innenwinkel & \pageref{s:D5} & $\square$\\\hline
+\rowcolor{black!4}T  & \textbf{Probetest} (ca. 45 Minuten) & \pageref{s:T} & $\square$\\\hline
+\end{tabular}}
+
+\bigskip
+\noindent\textbf{Was im Test typisch drankommt – und wo du es lernst}\par\smallskip
+{\renewcommand{\arraystretch}{1.3}
+\noindent\begin{tabular}{@{}p{128mm}@{\hspace{4mm}}l@{}}
+„Gegeben ist das Dreieck $A$, $B$, $C$. Berechne Seitenhalbierende, Mittelsenkrechte, Höhe, Flächeninhalt und Innenwinkel.“ & A1, B3, C3, D1--D5\\
+„Untersuche die Lage der Geraden $g$ und $h$. Berechne Schnittpunkt und Schnittwinkel.“ & C1, C2, B6, C4\\
+„Liegt $P$ auf $g$? Wo schneidet $g$ die Achsen? Wie groß ist der Steigungswinkel?“ & B4, B5, B6\\
+\end{tabular}}
+
+% ------------------------------------------------------------ Seite 2 Formelsammlung
+\clearpage
+\noindent{\Large\bfseries Formeln auf einen Blick}\hfill{\small\color{mbgrau}Punkte $P(x_1\,|\,y_1)$, $Q(x_2\,|\,y_2)$; Gerade $y = mx + n$}\par\medskip
+\newcommand{\fs}[3]{\par\noindent\begin{minipage}[t]{0.66\linewidth}\vspace{0pt}\raggedright\textbf{#1}\par\smallskip #2\end{minipage}\hfill
+  \begin{minipage}[t]{0.32\linewidth}\vspace{0pt}\centering #3\end{minipage}\par\vspace{2.2mm}{\color{black!25}\hrule}\vspace{1.6mm}}
+\newcommand{\mini}[1]{\begin{tikzpicture}[scale=0.24,line width=0.6pt,font=\scriptsize]#1\end{tikzpicture}}
+\newcommand{\minipkt}[3]{\fill (#1,#2) circle (4pt) node[#3,inner sep=1pt]{};}
+\begin{multicols}{2}\small
+\fs{Mittelpunkt (A1)}{$M\left(\dfrac{x_1+x_2}{2}\,\Big|\,\dfrac{y_1+y_2}{2}\right)$}{\mini{\draw (0,0)--(6,4);\fill (0,0) circle (5pt) (6,4) circle (5pt);\fill[black] (3,2) circle (6pt) node[below right]{$M$};}}
+\fs{Länge (A2)}{$d = \sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$}{\mini{\draw[dashed,mbgrau] (0,0)--(6,0)--(6,4);\draw[line width=1pt] (0,0)--(6,4) node[midway,above left]{$d$};\node[below] at (3,0){$\Delta x$};\node[right] at (6,2){$\Delta y$};}}
+\fs{Steigung (B1)}{$m = \dfrac{y_2-y_1}{x_2-x_1}$}{\mini{\draw (0,0)--(6,4);\draw[dashed,mbgrau] (1.5,1)--(4.5,1)--(4.5,3);\node[below] at (3,1){$\Delta x$};\node[right] at (4.5,2){$\Delta y$};}}
+\fs{Gerade aufstellen (B2, B3)}{$m$ bestimmen, einen Punkt in $y = mx+n$ einsetzen, nach $n$ lösen.\par waagerecht: $y = c$ \quad senkrecht: $x = c$ (kein $m$)}{\mini{\draw[->,mbgrau] (-1,0)--(6,0);\draw[->,mbgrau] (0,-1)--(0,5);\draw (-1,3)--(6,3);\node[above] at (1.6,3){$y{=}3$};\draw (4,-1)--(4,5);\node[right] at (4,0.8){$x{=}4$};}}
+\fs{Punktprobe (B4)}{$m\cdot x_P + n$ ausrechnen. Gleich $y_P$: auf $g$. \\ $y_P$ größer: über $g$, kleiner: unter $g$.}{\mini{\draw (0,0)--(6,4);\fill (1.5,3.5) circle (5pt) node[above]{über};\fill (4.5,3) circle (5pt);\fill (5,1) circle (5pt) node[right]{unter};}}
+\fs{Achsenschnittpunkte (B5)}{y-Achse: $S_y(0\,|\,n)$\\ x-Achse: $0 = mx + n$ lösen, $S_x(x\,|\,0)$}{\mini{\draw[->,mbgrau] (-1,0)--(6,0);\draw[->,mbgrau] (0,-3)--(0,4);\draw (-0.5,-3)--(4,3.75);\fill (0,-2.33) circle (5pt) node[left]{$n$};\fill (1.75,0) circle (5pt);}}
+\fs{Steigungswinkel (B6)}{$\tan\alpha = m$\\ $m>0$: $\alpha = \tan^{-1}(m)$\\ $m<0$: $\alpha = 180^\circ + \tan^{-1}(m)$}{\mini{\draw[->,mbgrau] (-1,0)--(7,0);\draw (0.5,-0.5)--(5,4);\draw (1,0)++(1.5,0) arc (0:45:1.5);\node at (3.6,0.8){$\alpha$};}}
+\fs{Lage zweier Geraden (C1)}{gleiches $m$, gleiches $n$: identisch\\ gleiches $m$, anderes $n$: parallel\\ anderes $m$: schneiden sich\\ $m_1\cdot m_2 = -1$: senkrecht}{\mini{\draw (0,0)--(5,2.5);\draw (0,2)--(5,4.5);\draw (2,-0.5)--(0.5,2.5);}}
+\fs{Schnittpunkt (C2)}{$m_1x + n_1 = m_2x + n_2$ nach $x$ lösen,\\ $x$ einsetzen, $y$ ausrechnen.}{\mini{\draw (0,0)--(6,4);\draw (0,4)--(6,0);\fill (3,2) circle (6pt) node[above=2pt]{$S$};}}
+\columnbreak
+\fs{Parallele, Senkrechte (C3)}{parallel: $m_2 = m_1$\\ senkrecht: $m_2 = -\dfrac{1}{m_1}$\quad ($2 \to -\tfrac12$)}{\mini{\draw (0,0)--(6,3);\draw (3.5,-0.5)--(2,2.5);\draw (2.6,1.3) -- ++(26.57:0.7) -- ++(116.57:0.7) -- ++(206.57:0.7);}}
+\fs{Schnittwinkel (C4)}{$\delta = |\alpha_1-\alpha_2|$; über $90^\circ$: $180^\circ - \delta$}{\mini{\draw (0,0)--(6,4);\draw (0,4)--(6,0.5);\draw (3,2) ++(-30:1.3) arc (-30:33.7:1.3);}}
+\fs{Seitenhalbierende (D1)}{von einer Ecke zum Mittelpunkt der Gegenseite\\ Zusatz: Schwerpunkt\\ $S\left(\dfrac{x_A+x_B+x_C}{3}\,\Big|\,\dfrac{y_A+y_B+y_C}{3}\right)$}{\mini{\draw (0,0)--(7,1)--(2,5)--cycle;\draw[mbgrau] (0,0)--(4.5,3);\fill (4.5,3) circle (5pt);}}
+\fs{Mittelsenkrechte (D2)}{durch den Mittelpunkt einer Seite, senkrecht zu ihr\\ Zusatz: zwei Mittelsenkrechte schneiden sich im Umkreismittelpunkt $U$}{\mini{\draw (0,0)--(7,1)--(2,5)--cycle;\draw[mbgrau] (3.8,-1.2)--(3.1,3.7);\fill (3.5,0.5) circle (5pt);}}
+\fs{Höhe, Abstand (D3)}{Höhe $h_c$: durch $C$, senkrecht zu $AB$\\ Lotfußpunkt $F$ = Schnittpunkt mit $AB$\\ Länge $\overline{CF}$ = Abstand von $C$ zu $AB$}{\mini{\draw (0,0)--(7,1)--(2,5)--cycle;\draw[mbgrau] (2,5)--(2.66,0.38);\fill (2.66,0.38) circle (5pt) node[below]{$F$};}}
+\fs{Flächeninhalt (D4)}{Rechteck um das Dreieck minus drei rechtwinklige Dreiecke ($\tfrac12\cdot$Breite$\cdot$Höhe)\\ oder: $A = \tfrac12\cdot g\cdot h$}{\mini{\fill[black!12] (0,0)--(7,0)--(7,1)--cycle (7,1)--(7,5)--(2,5)--cycle (2,5)--(0,5)--(0,0)--cycle;\draw[mbgrau] (0,0) rectangle (7,5);\draw (0,0)--(7,1)--(2,5)--cycle;}}
+\fs{Innenwinkel (D5)}{Unterschied der Steigungswinkel der zwei Seiten; mit Skizze prüfen (spitz/stumpf).\\ Probe: $\alpha + \beta + \gamma = 180^\circ$}{\mini{\draw (0,0)--(7,1)--(2,5)--cycle;\draw (0,0) ++(8.13:1.2) arc (8.13:68.2:1.2);\node at (1.6,1.1){$\alpha$};}}
+\fs{Runden}{Zwischenwerte mit zwei Stellen nach dem Komma (oder im Rechner lassen), erst am Ende runden.}{}
+\end{multicols}
+
+% ------------------------------------------------------------ V
+\abschnitt{V}{Vorher: Das kannst du schon}{Kurzer Check aus Klasse 10. Klappt alles, geht es mit A1 weiter.}
+\noindent\begin{minipage}[t]{0.5\linewidth}\vspace{0pt}
+In $y = mx + n$ ist $n$ der y-Wert, bei dem die Gerade die y-Achse schneidet. $m$ sagt: 1 nach rechts, dann $m$ nach oben (bei $m < 0$ nach unten).
+
+\begin{enumerate}[label=\textbf{\arabic*.},leftmargin=7mm,itemsep=8pt]
+\item Lies $m$ und $n$ von $g$ und $h$ ab. Schreib beide Gleichungen auf.
+\item Zeichne $k\colon y = x + 1$ und $l\colon y = -3x + 4$ ins Koordinatensystem.
+\item Zeichne $p\colon y = \tfrac23x - 1$. Zeichne an $p$ ein Steigungsdreieck: 3 nach rechts, wie viel nach oben?
+\end{enumerate}
+
+\medskip
+\noindent$\square$ $m$ und $n$ ablesen\\
+$\square$ Steigungsdreieck\\
+$\square$ Gerade aus der Gleichung zeichnen
+\end{minipage}\hfill
+\begin{minipage}[t]{0.46\linewidth}\vspace{0pt}\centering
+\begin{ksys}[xmin=-4,xmax=5,ymin=-5,ymax=6,karo=0.62]
+\gerade[2.4]{2}{-3}{g}\gerade[-3]{-0.5}{2}{h}
+\end{ksys}
+\end{minipage}
+
+\bigskip
+\noindent{\small\color{mbgrau}Für 2. und 3.:}\par\smallskip
+\begin{center}
+\begin{ksys}[xmin=-4,xmax=5,ymin=-5,ymax=6,karo=0.62]
+\end{ksys}
+\end{center}
+
+% ------------------------------------------------------------ A1
+\abschnitt{A1}{Mittelpunkt einer Strecke}{Der Mittelpunkt $M$ liegt genau in der Mitte zwischen $P$ und $Q$. Du nimmst den Mittelwert der x-Werte und den Mittelwert der y-Werte.}
+\formel{$P(x_1\,|\,y_1)$ und $Q(x_2\,|\,y_2)$:\qquad $M\left(\dfrac{x_1+x_2}{2}\;\Big|\;\dfrac{y_1+y_2}{2}\right)$}
+\bsp{Gesucht ist der Mittelpunkt von \Pk{P}{-2}{1} und \Pk{Q}{4}{5}.}{%
+\sch{1}{x-Wert: $\dfrac{-2+4}{2} = \dfrac{2}{2} = 1$}
+\sch{2}{y-Wert: $\dfrac{1+5}{2} = \dfrac{6}{2} = 3$}
+\sch{3}{Ergebnis: \Pk{M}{1}{3}. Die Skizze zeigt: $M$ liegt in der Mitte.}}{%
+\begin{ksys}[xmin=-3,xmax=5,ymin=-1,ymax=6,karo=0.65]
+\draw[line width=0.9pt] (-2,1) -- (4,5);
+\draw[dashed,mbgrau] (1,0) -- (1,3) -- (0,3);
+\pkt[above left]{-2}{1}{P}\pkt[above left]{4}{5}{Q}\pkt[below right]{1}{3}{M}
+\end{ksys}}
+\begin{aufgaben}
+\item Berechne den Mittelpunkt von \Pk{A}{2}{1} und \Pk{B}{6}{5}.
+\item Berechne den Mittelpunkt von \Pk{P}{-3}{2} und \Pk{Q}{5}{-4}. Achte auf die Minuszeichen.
+\item Berechne den Mittelpunkt von \Pk{R}{-1}{4} und \Pk{S}{4}{1}. Das Ergebnis darf eine Kommazahl sein.
+\item \Pk{M}{2}{1} ist der Mittelpunkt von \Pk{A}{-1}{3} und $B$. Berechne $B$.\\
+{\small Tipp: Wie weit ist es von $A$ nach $M$ (nach rechts, nach unten)? Geh von $M$ aus noch einmal so weit.}
+\item \tn Gegeben ist das Dreieck \Pk{A}{1}{-4}, \Pk{B}{7}{2}, \Pk{C}{-1}{6}. Berechne die Mittelpunkte $M_{AB}$, $M_{BC}$ und $M_{AC}$ der drei Seiten.\\
+{\small\color{mbgrau}Dieses Dreieck kommt in B und D wieder. Heb deine Ergebnisse auf.}
+\end{aufgaben}
+
+% ------------------------------------------------------------ A2
+\abschnitt{A2}{Länge einer Strecke}{Die Strecke $PQ$ ist die schräge Seite eines rechtwinkligen Dreiecks. Seine Katheten sind der Unterschied der x-Werte und der Unterschied der y-Werte. Dann hilft Pythagoras.}
+\formel{$d = \sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$}
+\bsp{Wie lang ist die Strecke von \Pk{P}{1}{1} nach \Pk{Q}{5}{4}?}{%
+\sch{1}{Unterschied der x-Werte: $5-1 = 4$}
+\sch{2}{Unterschied der y-Werte: $4-1 = 3$}
+\sch{3}{$d = \sqrt{4^2+3^2} = \sqrt{16+9} = \sqrt{25} = 5$}
+\sch{}{Die Strecke ist 5 Längeneinheiten (LE) lang.}}{%
+\begin{ksys}[xmin=-1,xmax=6,ymin=-1,ymax=5,karo=0.7]
+\draw[dashed,mbgrau] (1,1) -- (5,1) -- (5,4);
+\draw[line width=0.9pt] (1,1) -- (5,4);
+\node[below,font=\small] at (3,1) {$4$};\node[right,font=\small] at (5,2.5) {$3$};
+\node[above left,font=\small] at (3,2.5) {$d$};
+\pkt[left]{1}{1}{P}\pkt[above]{5}{4}{Q}
+\end{ksys}}
+\begin{aufgaben}
+\item Wie lang ist die Strecke von \Pk{A}{0}{0} nach \Pk{B}{6}{8}?
+\item Wie lang ist die Strecke von \Pk{P}{-2}{3} nach \Pk{Q}{4}{-5}? Ein negativer Unterschied wird beim Quadrieren positiv.
+\item Wie lang ist die Strecke von \Pk{R}{1}{2} nach \Pk{S}{4}{8}? Runde auf zwei Stellen nach dem Komma.
+\item \tn Dreieck \Pk{A}{1}{-4}, \Pk{B}{7}{2}, \Pk{C}{-1}{6}: Berechne die drei Seitenlängen und den Umfang. Runde auf zwei Stellen.
+\item \tn Zeige, dass das Dreieck \Pk{K}{-2}{1}, \Pk{L}{4}{-1}, \Pk{N}{2}{5} gleichschenklig ist (zwei Seiten gleich lang).
+\end{aufgaben}
+
+% ------------------------------------------------------------ B1
+\abschnitt{B1}{Steigung aus zwei Punkten}{Die Steigung $m$ sagt: 1 nach rechts, dann $m$ nach oben (bei negativem $m$ nach unten). Aus zwei Punkten rechnest du sie so: Höhenunterschied geteilt durch Breitenunterschied.}
+\formel{$m = \dfrac{y_2-y_1}{x_2-x_1}$\qquad Oben und unten zuerst den Wert von $Q$, dann den von $P$ – nie mischen.}
+\bsp{Steigung der Geraden durch \Pk{P}{1}{2} und \Pk{Q}{4}{8}.}{%
+\sch{1}{oben: $y_2-y_1 = 8-2 = 6$}
+\sch{2}{unten: $x_2-x_1 = 4-1 = 3$}
+\sch{3}{$m = \dfrac{6}{3} = 2$}
+\sch{}{Die Skizze zeigt: 3 nach rechts, 6 nach oben. Das ist dasselbe wie 1 nach rechts, 2 nach oben.}}{%
+\begin{ksys}[xmin=-1,xmax=5,ymin=-1,ymax=9,karo=0.5]
+\gerade{2}{0}{}
+\draw[dashed,mbgrau] (1,2) -- (4,2) -- (4,8);
+\node[below,font=\small] at (2.5,2) {$3$};\node[right,font=\small] at (4,5) {$6$};
+\pkt[left]{1}{2}{P}\pkt[left]{4}{8}{Q}
+\end{ksys}}
+\begin{aufgaben}
+\item Berechne die Steigung der Geraden durch \Pk{A}{0}{1} und \Pk{B}{2}{7}.
+\item Berechne die Steigung der Geraden durch \Pk{P}{-1}{5} und \Pk{Q}{3}{-3}.
+\item Berechne die Steigung der Geraden durch \Pk{R}{-4}{-1} und \Pk{S}{2}{2}. Kürze den Bruch.
+\item Berechne die Steigung. Was fällt dir auf?\quad
+a)\ \Pk{C}{-3}{4} und \Pk{D}{5}{4}\qquad b)\ \Pk{E}{2}{5} und \Pk{F}{2}{-1}
+\item \tn Dreieck \Pk{A}{1}{-4}, \Pk{B}{7}{2}, \Pk{C}{-1}{6}: Berechne die Steigungen der drei Seiten $AB$, $BC$ und $AC$.
+\end{aufgaben}
+
+% ------------------------------------------------------------ B2
+\abschnitt{B2}{Gerade aus Punkt und Steigung}{Eine Gerade hat die Gleichung $y = mx + n$. Kennst du $m$ und einen Punkt, fehlt nur $n$: Setze den Punkt ein und löse nach $n$ auf.}
+\formel{$y_P = m\cdot x_P + n$\qquad nach $n$ auflösen, dann $y = mx + n$ hinschreiben}
+\bsp{Die Gerade hat die Steigung $m = 2$ und geht durch \Pk{P}{3}{1}.}{%
+\sch{1}{Ansatz: $y = 2x + n$}
+\sch{2}{P einsetzen ($x = 3$, $y = 1$): $1 = 2\cdot 3 + n$}
+\sch{3}{$1 = 6 + n \quad|-6 \qquad n = -5$}
+\sch{4}{Gleichung: $y = 2x - 5$}
+\sch{}{Probe: $2\cdot 3 - 5 = 1$ \checkmark}}{%
+\begin{ksys}[xmin=-1,xmax=4,ymin=-6,ymax=3,karo=0.55]
+\gerade{2}{-5}{}
+\pkt[left]{3}{1}{P}
+\fill (0,-5) circle (1.6pt) node[right,font=\small]{$n = -5$};
+\end{ksys}}
+\begin{aufgaben}
+\item Die Gerade hat die Steigung $m = 3$ und geht durch \Pk{P}{1}{5}. Gib ihre Gleichung an.
+\item Die Gerade hat die Steigung $m = -2$ und geht durch \Pk{P}{4}{-3}. Gib ihre Gleichung an.
+\item Die Gerade hat die Steigung $m = \tfrac12$ und geht durch \Pk{P}{-4}{1}. Gib ihre Gleichung an.
+\item Die Gerade hat die Steigung $m = \tfrac34$ und geht durch \Pk{P}{2}{1}. Gib ihre Gleichung an.
+\item \tn Die Gerade $h$ hat dieselbe Steigung wie $g\colon y = -3x + 4$ und geht durch \Pk{P}{2}{-1}. Gib die Gleichung von $h$ an.
+\end{aufgaben}
+
+% ------------------------------------------------------------ B3
+\abschnitt{B3}{Gerade aus zwei Punkten}{Zwei Schritte: erst die Steigung aus den zwei Punkten (B1), dann $n$ mit einem der Punkte (B2).}
+\formel{$m = \dfrac{y_2-y_1}{x_2-x_1}$, dann einen Punkt in $y = mx + n$ einsetzen und $n$ ausrechnen.}
+\bsp{Gerade durch \Pk{P}{-1}{4} und \Pk{Q}{3}{-4}.}{%
+\sch{1}{$m = \dfrac{-4-4}{3-(-1)} = \dfrac{-8}{4} = -2$}
+\sch{2}{P einsetzen: $4 = -2\cdot(-1) + n$}
+\sch{3}{$4 = 2 + n \qquad n = 2$}
+\sch{4}{Gleichung: $y = -2x + 2$}
+\sch{}{Probe mit Q: $-2\cdot 3 + 2 = -4$ \checkmark}}{%
+\begin{ksys}[xmin=-2,xmax=5,ymin=-5,ymax=5,karo=0.5]
+\gerade{-2}{2}{}
+\draw[dashed,mbgrau] (-1,4) -- (3,4) -- (3,-4);
+\node[above,font=\small] at (1,4) {$4$};\node[right,font=\small] at (3,0.5) {$-8$};
+\pkt[left]{-1}{4}{P}\pkt[left]{3}{-4}{Q}
+\end{ksys}}
+\noindent\begin{minipage}[t]{0.66\linewidth}\vspace{0pt}
+\textbf{Sonderfälle}\par
+Gleiche y-Werte, z.\,B. \Pk{}{-2}{3} und \Pk{}{4}{3}: Die Gerade ist waagerecht, $y = 3$ ($m = 0$).\par
+Gleiche x-Werte, z.\,B. \Pk{}{1}{-2} und \Pk{}{1}{5}: Die Gerade ist senkrecht, $x = 1$. Sie hat keine Steigung (durch 0 teilen geht nicht).
+\end{minipage}\hfill
+\begin{minipage}[t]{0.3\linewidth}\vspace{0pt}\centering
+\begin{ksys}[xmin=-3,xmax=5,ymin=-3,ymax=6,karo=0.32]
+\draw[line width=0.9pt] (-3,3) -- (5,3);\draw[line width=0.9pt] (1,-3) -- (1,6);
+\node[above,font=\scriptsize,fill=white,inner sep=1pt] at (3.5,3.2) {$y{=}3$};\node[right,font=\scriptsize,fill=white,inner sep=1pt] at (1,5) {$x{=}1$};
+\end{ksys}
+\end{minipage}
+\begin{aufgaben}
+\item Gib die Gleichung der Geraden durch \Pk{A}{0}{1} und \Pk{B}{2}{5} an.
+\item Gib die Gleichung der Geraden durch \Pk{P}{2}{1} und \Pk{Q}{5}{10} an.
+\item Gib die Gleichung der Geraden durch \Pk{R}{-2}{5} und \Pk{S}{4}{2} an.
+\item Gib die Gleichung der Geraden an.\quad a)\ \Pk{C}{-3}{2} und \Pk{D}{5}{2}\qquad b)\ \Pk{E}{4}{-1} und \Pk{F}{4}{6}
+\item \tn Dreieck \Pk{A}{1}{-4}, \Pk{B}{7}{2}, \Pk{C}{-1}{6}: Gib die Gleichungen der drei Geraden durch die Seiten $AB$, $BC$ und $AC$ an.
+\end{aufgaben}
+
+% ------------------------------------------------------------ B4
+\abschnitt{B4}{Punktprobe: auf, über oder unter der Geraden}{Setze den x-Wert des Punktes in die Gleichung ein. Vergleiche das Ergebnis mit dem y-Wert des Punktes.}
+\formel{Rechne $m\cdot x_P + n$.\quad Gleich $y_P$: $P$ liegt auf $g$.\quad $y_P$ größer: $P$ liegt über $g$.\quad $y_P$ kleiner: unter $g$.\par
+Auf der Strecke $AB$ liegt $P$, wenn $P$ auf der Geraden liegt und $x_P$ zwischen $x_A$ und $x_B$ liegt.}
+\bsp{$g\colon y = 2x - 3$. Wo liegen \Pk{P}{4}{5} und \Pk{Q}{1}{2}?}{%
+\sch{1}{P: $2\cdot 4 - 3 = 5$. Der y-Wert von P ist auch 5.\\ Gleich, also liegt P auf g.}
+\sch{2}{Q: $2\cdot 1 - 3 = -1$. Der y-Wert von Q ist 2.}
+\sch{3}{$2 > -1$, also liegt Q über g.}}{%
+\begin{ksys}[xmin=-1,xmax=5,ymin=-4,ymax=6,karo=0.5]
+\gerade[2.6]{2}{-3}{g}
+\draw[dashed,mbgrau] (1,2) -- (1,-1);\fill[mbgrau] (1,-1) circle (1.4pt);
+\pkt[left]{4}{5}{P}\pkt[left]{1}{2}{Q}
+\end{ksys}}
+\begin{aufgaben}
+\item $g\colon y = 3x + 1$. Liegen \Pk{A}{2}{7} und \Pk{B}{-1}{-3} auf $g$?
+\item $g\colon y = -\tfrac12x + 4$. Liegen \Pk{P}{6}{1}, \Pk{Q}{-2}{6} und \Pk{R}{4}{1} auf, über oder unter $g$?
+\item $g\colon y = 2x - 7$.\quad a)\ \Pk{P}{3}{k} liegt auf $g$. Berechne $k$.\quad b)\ \Pk{Q}{t}{5} liegt auf $g$. Berechne $t$.
+\item \tn Die Gerade $g\colon y = x - 5$ geht durch \Pk{A}{1}{-4} und \Pk{B}{7}{2}.\\
+a)\ Liegen \Pk{P}{3}{-2} und \Pk{Q}{9}{4} auf $g$?\quad
+b)\ Liegen sie auch auf der Strecke $AB$?\quad
+c)\ Liegt \Pk{C}{-1}{6} über oder unter $g$?
+\end{aufgaben}
+
+% ------------------------------------------------------------ B5
+\abschnitt{B5}{Schnittpunkte mit den Achsen}{Auf der y-Achse ist $x = 0$. Auf der x-Achse ist $y = 0$.}
+\formel{y-Achse: $S_y(0\,|\,n)$\qquad x-Achse (Nullstelle): $0 = mx + n$ nach $x$ lösen, dann $S_x(x\,|\,0)$}
+\bsp{Wo schneidet $g\colon y = 2x - 6$ die Achsen?}{%
+\sch{1}{y-Achse: $x = 0$ einsetzen: $y = 2\cdot 0 - 6 = -6$, also \Pk{S_y}{0}{-6}}
+\sch{2}{x-Achse: $0 = 2x - 6 \quad|+6 \qquad 6 = 2x \quad|:2 \qquad x = 3$}
+\sch{3}{also \Pk{S_x}{3}{0}}}{%
+\begin{ksys}[xmin=-1,xmax=5,ymin=-7,ymax=3,karo=0.5]
+\gerade[4.2]{2}{-6}{g}
+\pkt[right]{0}{-6}{S_y}\pkt[above left]{3}{0}{S_x}
+\end{ksys}}
+\begin{aufgaben}
+\item Berechne die Schnittpunkte von $y = 3x - 6$ mit den Achsen.
+\item Berechne die Schnittpunkte von $y = -2x + 5$ mit den Achsen.
+\item Berechne die Schnittpunkte von $y = \tfrac34x + 3$ mit den Achsen.
+\item Berechne die Schnittpunkte mit den Achsen. Was ist hier anders?\quad a)\ $y = 4$\qquad b)\ $x = -2$
+\item \tn Die Gerade $g\colon y = -\tfrac12x + 3$ bildet mit den beiden Achsen ein Dreieck. Berechne seinen Flächeninhalt.
+\end{aufgaben}
+
+% ------------------------------------------------------------ B6
+\abschnitt{B6}{Steigungswinkel}{Der Steigungswinkel $\alpha$ liegt zwischen der x-Achse (nach rechts) und der Geraden, gegen den Uhrzeigersinn gemessen. Es gilt $\tan\alpha = m$.}
+\formel{$m > 0$:\ $\alpha = \tan^{-1}(m)$\qquad $m < 0$:\ $\alpha = 180^\circ + \tan^{-1}(m)$\qquad ($\tan^{-1}$ ist SHIFT\,+\,tan; Rechner auf DEG)}
+\bsp{Steigungswinkel von $g\colon y = 2x - 2$ und $h\colon y = -x + 3$.}{%
+\sch{1}{g: $m = 2$. $\alpha = \tan^{-1}(2) \approx 63{,}4^\circ$}
+\sch{2}{h: $m = -1$. Der Rechner zeigt $\tan^{-1}(-1) = -45^\circ$.}
+\sch{3}{$m < 0$, also $\alpha = 180^\circ + (-45^\circ) = 135^\circ$}}{%
+\begin{ksys}[xmin=-1,xmax=5,ymin=-2,ymax=5,karo=0.65]
+\gerade[2.6]{2}{-2}{g}\gerade[-0.5]{-1}{3}{h}
+\draw[line width=0.6pt] (1,0) ++(0.6,0) arc (0:63.43:0.6);
+\node[font=\scriptsize] at ($(1,0)+(22:1.3)$) {$63{,}4^\circ$};
+\draw[line width=0.6pt] (3,0) ++(0.5,0) arc (0:135:0.5);
+\node[font=\scriptsize] at ($(3,0)+(50:1.1)$) {$135^\circ$};
+\end{ksys}}
+\begin{aufgaben}
+\item Berechne den Steigungswinkel. Runde auf eine Stelle.\quad a)\ $m = 1$\quad b)\ $m = 3$\quad c)\ $m = 0{,}5$
+\item Berechne den Steigungswinkel.\quad a)\ $y = -2x + 1$\qquad b)\ $y = -\tfrac13x$
+\item Berechne den Steigungswinkel der Geraden durch \Pk{P}{-1}{1} und \Pk{Q}{3}{4}.
+\item Umgekehrt: Welche Steigung $m$ hat eine Gerade mit dem Steigungswinkel\quad a)\ $60^\circ$\quad b)\ $135^\circ$?
+\item \tn Dreieck \Pk{A}{1}{-4}, \Pk{B}{7}{2}, \Pk{C}{-1}{6}: Berechne die Steigungswinkel der Seiten $AB$, $BC$ und $AC$.
+\end{aufgaben}
+
+% ------------------------------------------------------------ C1
+\abschnitt{C1}{Lage zweier Geraden}{Vergleiche zuerst die Steigungen, dann – wenn nötig – die y-Achsenabschnitte $n$. Steht eine Gleichung nicht als $y = mx + n$ da, bring sie zuerst in diese Form.}
+\formel{\renewcommand{\arraystretch}{1.25}\begin{tabular}{@{}ll@{}}
+$m_1 = m_2$ und $n_1 = n_2$ & identisch (dieselbe Gerade)\\
+$m_1 = m_2$ und $n_1 \ne n_2$ & parallel, kein Schnittpunkt\\
+$m_1 \ne m_2$ & schneiden sich in genau einem Punkt\\
+$m_1\cdot m_2 = -1$ & schneiden sich senkrecht (rechter Winkel)
+\end{tabular}}
+\bsp{$g\colon y = 2x + 1$,\ \ $h\colon y = -\tfrac12x + 4$,\ \ $k\colon y = 2x - 3$}{%
+\sch{1}{g und h: $2 \ne -\tfrac12$, also schneiden sie sich.}
+\sch{2}{$2\cdot\left(-\tfrac12\right) = -1$, also sogar senkrecht.}
+\sch{3}{g und k: gleiches $m = 2$, verschiedenes $n$ (1 und $-3$), also parallel.}}{%
+\begin{ksys}[xmin=-2,xmax=5,ymin=-3,ymax=6,karo=0.55]
+\gerade[1.8]{2}{1}{g}\gerade[4]{-0.5}{4}{h}\gerade[4.2]{2}{-3}{k}
+\mbrwmarke{(1.2,3.4)}{(2.2,5.4)}{(3.2,2.4)}
+\end{ksys}}
+\begin{aufgaben}
+\item Wie liegen die Geraden zueinander?\\ a)\ $y = 3x + 2$, \ $y = 3x - 1$\qquad b)\ $y = x + 4$, \ $y = -x + 4$\qquad c)\ $y = 2x + 1$, \ $y = 3x + 1$
+\item Schneiden sich die Geraden senkrecht?\quad a)\ $y = \tfrac23x - 1$, $y = -1{,}5x + 2$\qquad b)\ $y = 4x$, $y = -4x$
+\item Wie liegen die Geraden zueinander?\\ a)\ $g\colon y = 2(x - 1) + 3$, \ $h\colon y = 2x + 1$\qquad b)\ $g\colon 2y = 6x - 4$, \ $h\colon y = 3x + 1$
+\item $h\colon y = \square\, x + 1$. Welche Steigung braucht $h$, damit $h$ zu $g\colon y = 4x - 2$\quad a)\ parallel\quad b)\ senkrecht ist?
+\item \tn a)\ Zeige: Die Gerade durch \Pk{P}{0}{1} und \Pk{Q}{4}{3} steht senkrecht auf der Geraden durch \Pk{R}{1}{5} und \Pk{S}{3}{1}.\\
+b)\ Hat das Dreieck \Pk{K}{-2}{1}, \Pk{L}{2}{3}, \Pk{N}{0}{7} einen rechten Winkel? Wenn ja, an welcher Ecke?
+\end{aufgaben}
+
+% ------------------------------------------------------------ C2
+\abschnitt{C2}{Schnittpunkt zweier Geraden}{Im Schnittpunkt haben beide Geraden denselben y-Wert. Darum setzt du die rechten Seiten gleich.}
+\formel{$m_1x + n_1 = m_2x + n_2$\quad nach $x$ lösen, $x$ in eine Gleichung einsetzen, $y$ ausrechnen}
+\bsp{$g\colon y = 2x - 1$ und $h\colon y = -x + 5$}{%
+\sch{1}{Gleichsetzen: $2x - 1 = -x + 5$}
+\sch{2}{$|+x$:\ $3x - 1 = 5$\qquad $|+1$:\ $3x = 6$\qquad $|:3$:\ $x = 2$}
+\sch{3}{In g einsetzen: $y = 2\cdot 2 - 1 = 3$, also \Pk{S}{2}{3}}
+\sch{}{Probe in h: $-2 + 5 = 3$ \checkmark}}{%
+\begin{ksys}[xmin=-1,xmax=5,ymin=-2,ymax=6,karo=0.6]
+\gerade[3.2]{2}{-1}{g}\gerade[4.2]{-1}{5}{h}
+\pkt[right]{2}{3}{S}
+\end{ksys}}
+\begin{aufgaben}
+\item Berechne den Schnittpunkt von $y = 3x - 2$ und $y = x + 4$.
+\item Berechne den Schnittpunkt von $y = -2x + 7$ und $y = \tfrac12x + 2$.
+\item Berechne den Schnittpunkt.\quad a)\ $y = 4x - 3$ und $y = 5$\qquad b)\ $y = 2x + 3$ und $x = -1$
+\item Berechne den Schnittpunkt von $y = 2x + 1$ und $y = -2x + 4$.
+\item \tn Untersuche die Lage. Berechne den Schnittpunkt, wenn es einen gibt.\\
+a)\ $y = 2x - 3$, $y = 2x + 1$\qquad b)\ $y = -x + 2$, $y = 3x - 6$\qquad c)\ $g$ durch \Pk{P}{-2}{-1} und \Pk{Q}{2}{1}, $h\colon y = -2x + 8$
+\end{aufgaben}
+
+% ------------------------------------------------------------ C3
+\abschnitt{C3}{Parallele und Senkrechte durch einen Punkt}{Erst die Steigung, dann $n$ mit dem Punkt (wie B2). Diesen Schritt brauchst du für Mittelsenkrechte und Höhe in D2 und D3.}
+\formel{parallel: $m_2 = m_1$\qquad senkrecht: $m_2 = -\dfrac{1}{m_1}$\quad (Kehrwert und Vorzeichen umdrehen: $2 \to -\tfrac12$, \ $-\tfrac34 \to \tfrac43$)}
+\bsp{$g\colon y = 2x + 1$ und \Pk{P}{4}{1}. Gesucht ist die Senkrechte zu $g$ durch $P$.}{%
+\sch{1}{Steigung: $m = -\tfrac12$}
+\sch{2}{P einsetzen: $1 = -\tfrac12\cdot 4 + n$, \ $1 = -2 + n$, \ $n = 3$}
+\sch{3}{Senkrechte: $s\colon y = -\tfrac12x + 3$}
+\sch{}{Die Parallele durch P geht genauso mit $m = 2$: $1 = 2\cdot 4 + n$, $n = -7$, also $p\colon y = 2x - 7$.}}{%
+\begin{ksys}[xmin=-1,xmax=6,ymin=-3,ymax=6,karo=0.55]
+\gerade[2]{2}{1}{g}\gerade[-0.5]{-0.5}{3}{s}\gerade[4.7]{2}{-7}{p}
+\mbrwmarke{(0.8,2.6)}{(1.8,4.6)}{(2.8,1.6)}
+\pkt[below left]{4}{1}{P}
+\end{ksys}}
+\begin{aufgaben}
+\item Welche Steigung hat eine Senkrechte zu einer Geraden mit\\ a)\ $m = 3$\quad b)\ $m = -2$\quad c)\ $m = \tfrac12$\quad d)\ $m = -\tfrac34$?
+\item Gib die Gleichung der Parallelen zu $y = -3x + 2$ durch \Pk{P}{1}{4} an.
+\item Gib die Gleichung der Senkrechten zu $y = \tfrac12x - 1$ durch \Pk{P}{2}{3} an.
+\item Gib die Gleichung der Senkrechten an.\\ a)\ zu $y = -\tfrac23x + 1$ durch \Pk{Q}{-2}{-1}\qquad b)\ zu $y = 3$ durch \Pk{R}{2}{5}
+\item \tn Die Gerade $h$ steht senkrecht auf $g\colon y = 2x - 4$ und schneidet $g$ auf der x-Achse. Gib die Gleichung von $h$ an.
+\end{aufgaben}
+
+% ------------------------------------------------------------ C4
+\abschnitt{C4}{Schnittwinkel zweier Geraden}{Zwei Geraden bilden zwei Winkel, zusammen $180^\circ$. Der Schnittwinkel ist der kleinere, also höchstens $90^\circ$.}
+\formel{Steigungswinkel $\alpha_1$ und $\alpha_2$ (B6) ausrechnen.\quad $\delta = |\alpha_1 - \alpha_2|$.\quad Ist $\delta > 90^\circ$, dann ist der Schnittwinkel $180^\circ - \delta$.}
+\bsp{Schnittwinkel von $g\colon y = \tfrac12x + 1$ und $h\colon y = -x + 4$}{%
+\sch{1}{$\alpha_g = \tan^{-1}(0{,}5) \approx 26{,}57^\circ$}
+\sch{2}{$\alpha_h = 180^\circ + \tan^{-1}(-1) = 135^\circ$}
+\sch{3}{$\delta = 135^\circ - 26{,}57^\circ = 108{,}43^\circ$. Das ist mehr als $90^\circ$.}
+\sch{4}{Schnittwinkel: $180^\circ - 108{,}43^\circ \approx 71{,}6^\circ$}}{%
+\begin{ksys}[xmin=-1,xmax=5,ymin=-1,ymax=5,karo=0.7]
+\gerade[4.4]{0.5}{1}{g}\gerade[0.6]{-1}{4}{h}
+\draw[line width=0.6pt] (2,2) ++(-45:0.8) arc (-45:26.57:0.8);
+\node[font=\scriptsize] at ($(2,2)+(-9:1.45)$) {$71{,}6^\circ$};
+\pkt[above]{2}{2}{S}
+\end{ksys}}
+\begin{aufgaben}
+\item Berechne den Schnittwinkel von $y = x$ und $y = 3x$.
+\item Berechne den Schnittwinkel von $y = 2x + 1$ und $y = -x + 3$.
+\item Berechne den Schnittwinkel von $y = \tfrac14x$ und $y = -2x + 1$.
+\item Berechne den Schnittwinkel.\quad a)\ $y = 2x$ und $y = -\tfrac12x$\qquad b)\ $y = 3$ und $y = 2x - 1$
+\item \tn Die Gerade $g$ geht durch \Pk{P}{-2}{0} und \Pk{Q}{2}{2}; $h\colon y = 3x - 9$. Berechne den Schnittpunkt und den Schnittwinkel von $g$ und $h$.
+\end{aufgaben}
+
+% ------------------------------------------------------------ D1
+\abschnitt{D1}{Seitenhalbierende}{Die Seitenhalbierende geht von einer Ecke zum Mittelpunkt der gegenüberliegenden Seite. $s_a$ beginnt bei $A$, $s_b$ bei $B$, $s_c$ bei $C$.\\ In Teil D rechnest du immer wieder am Dreieck \Pk{A}{1}{-4}, \Pk{B}{7}{2}, \Pk{C}{-1}{6} (bekannt aus A1 bis B6).}
+\formel{Mittelpunkt der Gegenseite (A1)\ $\to$\ Gerade durch Ecke und Mittelpunkt (B3)\ $\to$\ Länge (A2)}
+\bsp{Seitenhalbierende $s_a$ im Dreieck $ABC$: Gleichung und Länge.}{%
+\sch{1}{Gegenseite von A ist BC:\\ $M_{BC}\left(\tfrac{7+(-1)}{2}\,\big|\,\tfrac{2+6}{2}\right) = M_{BC}(3\,|\,4)$}
+\sch{2}{Steigung von A nach $M_{BC}$: $m = \dfrac{4-(-4)}{3-1} = \dfrac{8}{2} = 4$}
+\sch{3}{A einsetzen: $-4 = 4\cdot 1 + n$, \ $n = -8$, \ also $s_a\colon y = 4x - 8$}
+\sch{4}{Länge: $\sqrt{(3-1)^2 + (4-(-4))^2} = \sqrt{4+64} = \sqrt{68} \approx 8{,}25$}}{%
+\kT{\draw[line width=0.9pt,mbgrau] (1,-4) -- (3,4);\pkt[above]{3}{4}{M_{BC}}\node[font=\small,mbgrau] at (2.5,0.6) {$s_a$};}}
+\begin{aufgaben}
+\item Dreieck \Pk{P}{-2}{0}, \Pk{Q}{4}{0}, \Pk{R}{3}{6}: Gib die Gleichung der Seitenhalbierenden an, die bei $R$ beginnt.
+\item Dreieck $ABC$: Berechne die Gleichung und die Länge von $s_b$.
+\item Dreieck $ABC$: Berechne die Gleichung und die Länge von $s_c$.
+\item \zs Die drei Seitenhalbierenden schneiden sich im Schwerpunkt $S$.\\
+a)\ Berechne $S$ als Schnittpunkt von $s_a$ und $s_b$.\quad
+b)\ Vergleiche mit der Formel $S\left(\tfrac{x_A+x_B+x_C}{3}\,\big|\,\tfrac{y_A+y_B+y_C}{3}\right)$.
+\end{aufgaben}
+
+% ------------------------------------------------------------ D2
+\abschnitt{D2}{Mittelsenkrechte}{Die Mittelsenkrechte einer Seite geht durch den Mittelpunkt der Seite und steht senkrecht auf ihr. Jeder Punkt auf ihr ist von beiden Ecken gleich weit entfernt.}
+\formel{Mittelpunkt (A1)\ $\to$\ Steigung der Seite (B1)\ $\to$\ senkrechte Steigung $-\tfrac{1}{m}$ (C3)\ $\to$\ $n$ mit dem Mittelpunkt (B2)}
+\bsp{Mittelsenkrechte der Seite $AB$ im Dreieck $ABC$.}{%
+\sch{1}{$M_{AB}\left(\tfrac{1+7}{2}\,\big|\,\tfrac{-4+2}{2}\right) = M_{AB}(4\,|\,{-1})$}
+\sch{2}{Steigung der Seite: $m_{AB} = \dfrac{2-(-4)}{7-1} = \dfrac{6}{6} = 1$}
+\sch{3}{senkrecht dazu: $m = -\tfrac11 = -1$}
+\sch{4}{$M_{AB}$ einsetzen: $-1 = -1\cdot 4 + n$, \ $n = 3$, \ also $y = -x + 3$}}{%
+\kT{\draw[line width=0.9pt,mbgrau] (-2,5) -- (8,-5);\mbrwmarke{(4,-1)}{(7,2)}{(2,1)}\pkt[below left]{4}{-1}{M_{AB}}}}
+\begin{aufgaben}
+\item Gib die Gleichung der Mittelsenkrechten der Strecke von \Pk{P}{0}{0} nach \Pk{Q}{4}{2} an.
+\item Dreieck $ABC$: Gib die Gleichung der Mittelsenkrechten der Seite $BC$ an.
+\item Dreieck $ABC$: Gib die Gleichung der Mittelsenkrechten der Seite $AC$ an.
+\item \zs Die drei Mittelsenkrechten schneiden sich im Umkreismittelpunkt $U$. Dreieck \Pk{P}{-5}{-4}, \Pk{Q}{7}{0}, \Pk{R}{1}{8}:\\
+a)\ Gib die Mittelsenkrechten von $PQ$ und $PR$ an.\quad
+b)\ Berechne $U$.\quad
+c)\ Berechne den Radius $r = \overline{UP}$ des Umkreises.
+\end{aufgaben}
+
+% ------------------------------------------------------------ D3
+\abschnitt{D3}{Höhe, Lotfußpunkt, Abstand Punkt–Gerade}{Die Höhe $h_c$ geht durch $C$ und steht senkrecht auf der Seite $AB$. Sie trifft $AB$ im Lotfußpunkt $F$. Die Länge $\overline{CF}$ ist die Höhe – und zugleich der Abstand von $C$ zur Geraden $AB$.}
+\formel{Gerade durch die Seite (B3)\ $\to$\ Senkrechte durch die Ecke (C3)\ $\to$\ Schnittpunkt $F$ (C2)\ $\to$\ Länge $\overline{CF}$ (A2)}
+\bsp{Höhe $h_c$ im Dreieck $ABC$ und ihre Länge.}{%
+\sch{1}{Seite AB: $y = x - 5$ (aus B3), also $m = 1$}
+\sch{2}{senkrecht durch C: $m = -1$; \ $6 = -1\cdot(-1) + n$, \ $n = 5$;\\ $h_c\colon y = -x + 5$}
+\sch{3}{Lotfußpunkt: $x - 5 = -x + 5$, \ $2x = 10$, \ $x = 5$, \ $y = 0$;\\ also \Pk{F}{5}{0}}
+\sch{4}{$\overline{CF} = \sqrt{(5-(-1))^2 + (0-6)^2} = \sqrt{72} \approx 8{,}49$}}{%
+\kT{\draw[line width=0.9pt,mbgrau] (-1,6) -- (5,0);\mbrwmarke{(5,0)}{(7,2)}{(-1,6)}\pkt[below right]{5}{0}{F}\node[font=\small,mbgrau] at (1.6,2.2) {$h_c$};}}
+\begin{aufgaben}
+\item Abstand des Punktes \Pk{P}{5}{0} von $g\colon y = 2x$.\\ a)\ Senkrechte zu $g$ durch $P$\quad b)\ Lotfußpunkt $F$\quad c)\ Abstand $\overline{PF}$
+\item Dreieck $ABC$: Die Seite $BC$ liegt auf $y = -\tfrac12x + 5{,}5$. Berechne die Höhe $h_a$ (Gleichung), ihren Lotfußpunkt und ihre Länge.
+\item Dreieck $ABC$: Die Seite $AC$ liegt auf $y = -5x + 1$. Gib die Gleichung der Höhe $h_b$ an.
+\item \tn Berechne den Abstand des Punktes \Pk{P}{7}{-3} von der Geraden $g\colon y = \tfrac12x + 1$.
+\end{aufgaben}
+
+% ------------------------------------------------------------ D4
+\abschnitt{D4}{Flächeninhalt eines Dreiecks}{Sicherer Weg: Leg ein Rechteck mit waagerechten und senkrechten Seiten genau um das Dreieck. Zieh die drei rechtwinkligen Dreiecke außen ab. Du brauchst nur Unterschiede von Koordinaten.}
+\formel{$A$ = Rechteck $-$ drei Dreiecke;\quad rechtwinkliges Dreieck: $\tfrac12\cdot\text{Breite}\cdot\text{Höhe}$\par
+Zweiter Weg, wenn du eine Höhe schon hast (D3): $A = \tfrac12\cdot g\cdot h$ (Seite mal zugehörige Höhe, halbiert)}
+\bsp{Flächeninhalt des Dreiecks $ABC$.}{%
+\sch{1}{Rechteck: x von $-1$ bis 7, Breite 8; y von $-4$ bis 6, Höhe 10. Fläche $8\cdot 10 = 80$}
+\sch{2}{rechts unten (an AB): $\tfrac12\cdot 6\cdot 6 = 18$}
+\sch{3}{rechts oben (an BC): $\tfrac12\cdot 8\cdot 4 = 16$;\ \ links (an AC): $\tfrac12\cdot 2\cdot 10 = 10$}
+\sch{4}{$A = 80 - 18 - 16 - 10 = 36$ Flächeneinheiten (FE)}
+\sch{}{Kontrolle mit D3: $\tfrac12\cdot\overline{AB}\cdot\overline{CF} = \tfrac12\cdot\sqrt{72}\cdot\sqrt{72} = 36$ \checkmark}}{%
+\kT{\fill[black!12] (1,-4) -- (7,-4) -- (7,2) -- cycle (7,2) -- (7,6) -- (-1,6) -- cycle (-1,6) -- (-1,-4) -- (1,-4) -- cycle;
+\draw[mbgrau,line width=0.6pt] (-1,-4) rectangle (7,6);\dreieckT
+\node[font=\scriptsize] at (5.6,-2.6) {18};\node[font=\scriptsize] at (5,4.6) {16};\node[font=\scriptsize] at (0.45,-3.2) {10};}}
+\begin{aufgaben}
+\item Dreieck \Pk{P}{0}{0}, \Pk{Q}{6}{0}, \Pk{R}{2}{4}: Die Seite $PQ$ liegt auf der x-Achse. Berechne den Flächeninhalt mit $\tfrac12\cdot g\cdot h$.
+\item Berechne den Flächeninhalt des Dreiecks \Pk{P}{1}{1}, \Pk{Q}{5}{2}, \Pk{R}{2}{6}. Zeichne zuerst eine Skizze.
+\item Berechne den Flächeninhalt des Dreiecks \Pk{K}{-2}{-1}, \Pk{L}{4}{1}, \Pk{N}{0}{5}.
+\item \tn Die Geraden $g\colon y = x + 1$ und $h\colon y = -2x + 7$ bilden mit der x-Achse ein Dreieck. Berechne seinen Flächeninhalt.
+\end{aufgaben}
+
+% ------------------------------------------------------------ D5
+\abschnitt{D5}{Innenwinkel eines Dreiecks}{Der Winkel an einer Ecke liegt zwischen den zwei Seiten an dieser Ecke. Du rechnest ihn aus den Steigungswinkeln dieser zwei Seiten (B6).}
+\formel{$\delta = |\alpha_1 - \alpha_2|$.\quad Prüfe an der Skizze: Ist der Winkel spitz, aber $\delta > 90^\circ$ – oder stumpf, aber $\delta < 90^\circ$ –, dann ist der Winkel $180^\circ - \delta$.\par
+Probe: Die drei Winkel ergeben zusammen $180^\circ$.}
+\bsp{Winkel bei $A$ und bei $B$ im Dreieck $ABC$.}{%
+\sch{1}{Steigungswinkel der Seiten (B6):\\ AB ($m = 1$): $45^\circ$; \ AC ($m = -5$): $\approx 101{,}31^\circ$;\\ BC ($m = -\tfrac12$): $\approx 153{,}43^\circ$}
+\sch{2}{Bei A (Seiten AB und AC): $101{,}31^\circ - 45^\circ = 56{,}31^\circ$.\\ Skizze: spitz \checkmark. Also $\alpha \approx 56{,}3^\circ$.}
+\sch{3}{Bei B (Seiten AB und BC): $153{,}43^\circ - 45^\circ = 108{,}43^\circ$.\\ Skizze: Der Winkel bei B ist spitz! Also\\ $\beta = 180^\circ - 108{,}43^\circ \approx 71{,}6^\circ$.}}{%
+\kT{\draw[line width=0.6pt] (1,-4) ++(45:1.2) arc (45:101.31:1.2);\node[font=\scriptsize] at ($(1,-4)+(73:1.8)$) {$\alpha$};
+\draw[line width=0.6pt] (7,2) ++(153.43:1.2) arc (153.43:225:1.2);\node[font=\scriptsize] at ($(7,2)+(189:1.8)$) {$\beta$};}}
+\begin{aufgaben}
+\item Dreieck $ABC$: Berechne den Winkel $\gamma$ bei $C$. Mach die Probe mit der Winkelsumme.
+\item Berechne alle drei Innenwinkel des Dreiecks \Pk{P}{0}{0}, \Pk{Q}{4}{0}, \Pk{R}{1}{3}.
+\item Berechne alle drei Innenwinkel des Dreiecks \Pk{K}{-2}{-1}, \Pk{L}{4}{1}, \Pk{N}{0}{5}.
+\item \tn Berechne alle drei Innenwinkel des Dreiecks \Pk{P}{-3}{0}, \Pk{Q}{5}{0}, \Pk{R}{-1}{2}. Zeichne zuerst eine Skizze.
+\end{aufgaben}
+
+% ------------------------------------------------------------ T
+\abschnitt{T}{Probetest}{Etwa 45 Minuten, Taschenrechner erlaubt. Schreib alle Rechenschritte auf. Schau erst ins Lösungsheft, wenn du fertig bist. Dort steht bei jeder Aufgabe, welchen Abschnitt du wiederholen kannst.}
+\begin{enumerate}[label=\textbf{\arabic*.},leftmargin=7mm,itemsep=9pt]
+\item Gegeben sind \Pk{P}{-2}{5} und \Pk{Q}{4}{-1}.\\
+a)\ Berechne den Mittelpunkt der Strecke $PQ$.\quad b)\ Berechne die Länge der Strecke $PQ$.\\
+c)\ Gib die Gleichung der Geraden $g$ durch $P$ und $Q$ an.\quad d)\ Berechne den Steigungswinkel von $g$.\\
+e)\ Berechne die Schnittpunkte von $g$ mit den Achsen.
+\item $g\colon y = -x + 3$.\quad a)\ Liegt \Pk{R}{5}{-2} auf $g$?\quad b)\ Liegt \Pk{S}{-1}{5} über oder unter $g$?\quad c)\ \Pk{T}{a}{-3} liegt auf $g$. Berechne $a$.
+\item $g\colon y = 2x - 1$,\ \ $h\colon y = -\tfrac12x + 6$,\ \ $k\colon y = 2x + 3$.\\
+a)\ Wie liegen $g$ und $h$ zueinander? Wie liegen $g$ und $k$ zueinander? Begründe.\\
+b)\ Berechne den Schnittpunkt von $g$ und $h$.
+\item Berechne den Schnittwinkel von $k\colon y = 2x + 3$ und $l\colon y = -3x + 1$.
+\item Gegeben sind $g\colon y = 2x - 1$ und \Pk{P}{6}{1}.\quad a)\ Gib die Senkrechte zu $g$ durch $P$ an.\quad b)\ Berechne den Abstand von $P$ zu $g$.
+\item Gegeben ist das Dreieck \Pk{A}{2}{-4}, \Pk{B}{6}{0}, \Pk{C}{0}{4}.\\
+a)\ Zeichne das Dreieck in das Koordinatensystem unten.\\
+b)\ Berechne die Gleichung der Seitenhalbierenden $s_c$.\\
+c)\ Berechne die Gleichung der Mittelsenkrechten der Seite $AB$.\\
+d)\ Berechne die Höhe $h_c$: Gleichung, Lotfußpunkt und Länge.\\
+e)\ Berechne den Flächeninhalt des Dreiecks.\\
+f)\ Berechne den Innenwinkel $\alpha$ bei $A$.\\
+g)\ Ist das Dreieck rechtwinklig? Begründe mit den Steigungen.
+\item \zs Dreieck aus Aufgabe 6: Berechne den Umkreismittelpunkt $U$. Die Mittelsenkrechte von $AB$ kennst du aus 6\,c).
+\end{enumerate}
+\medskip
+\begin{center}
+\begin{ksys}[xmin=-2,xmax=8,ymin=-5,ymax=5,karo=0.55]
+\end{ksys}
+\end{center}
+
+\end{document}
