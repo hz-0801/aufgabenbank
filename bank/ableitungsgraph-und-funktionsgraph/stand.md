@@ -1,7 +1,8 @@
 # Stand: ableitungsgraph-und-funktionsgraph
 
 Katalog-Commit: ae6c3fc63b3c02a4f91f338899f160063635aec6
-(2026-10-07, aus dem Kopf von mappen/ableitungsgraph-und-funktionsgraph.md)
+(2026-10-07, aus dem Kopf von
+mappen/ableitungsgraph-und-funktionsgraph.md)
 Datum: 2026-10-08 03:52 (date, UTC)
 Grundlage: bank.md Stand 2026-10-06 (zehnte Fassung),
 werkzeuge/bank-pruef.py mit --katalog, Vorlage auftrag-eintrag.md
