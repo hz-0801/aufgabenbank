@@ -1381,6 +1381,8 @@ def pruefe_eintrag(eintrag, katalog=None, wurzel=Path("."), alle=False):
         if roh.startswith("﻿") or "\r" in roh or "\n\n" in roh:
             print(f"ABWEICHUNG {datei.name}: BOM, CR oder Leerzeile")
             da += 1
+        if datei.stem == "weg":              # v0.15: Lösungswege (bau/weg-vorschlag.md), keine Bankzeilen
+            continue
         m = re.fullmatch(r"e(\d+)|zone", datei.stem)
         if not m:
             print(f"ABWEICHUNG {datei.name}: Dateiname")

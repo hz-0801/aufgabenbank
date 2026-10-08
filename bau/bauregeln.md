@@ -11,9 +11,10 @@ warum: `bau/bauregeln-streichliste.md`.
 
 Nicht hier: wie Bankzeilen entstehen (`bank.md`, Wortlaut der Aufgaben
 `bau/sprachlauf/regeln.md`) und was zu einem Thema gehört (Katalog,
-Steckbriefe in `mathe-nachhilfe/katalog/steckbrief/`). Themenwissen –
-Arten, Leiter, Darstellung, Schritte, typische Fehler – steht im
-Steckbrief, nie hier.
+Prüfungsgliederung `mathe-nachhilfe/msa/gliederung/`, `abitur/gliederung/`;
+seit 09.10. statt der Steckbriefe). Themenwissen – Arten, Leiter,
+Darstellung, Schritte – steht in der Gliederung, typische Fehler im
+Katalog, nie hier.
 
 ## 0 Pflege
 
