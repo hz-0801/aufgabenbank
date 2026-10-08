@@ -225,9 +225,10 @@ Typische Fehler stehen im Katalog, nie hier.
 
 ## 9 Offen
 
-- „schwach“: ein eigenes Blatt (Filter, der die kleinen Schritte aus dem
-  Bestand holt) oder ein Blatt für alle mit anderer Form – Entscheidung des
-  Lehrers, nicht schnell. Bis dahin: Stoff, Höhe und Reihenfolge gleich; die
-  Leiter beginnt weiter unten, mehr Hilfen nach 4.4.
+- Einstieg (Versuch, Lehrer 08.10.; ersetzt „schwach/stark“): ein Schalter
+  unten · normal · oben. Unten: mit Vorstufen, mehr Hilfe (4.4), längere
+  Päckchen. Oben: ab der Mitte der Kette, kaum Hilfe, gleich zur Prüfung.
+  Stoff und Sorten bleiben gleich; keine Sorte wird zusammengefasst. Ob es
+  trägt, zeigt das erste Blatt mit Einstieg unten und oben.
 - Folgebaum der Kennung (weiter · mehr · leichter · Lösung · hängt bei Nr.).
 - Zerlegung als Grundbaustein des Bestands (plan.md § 6 „Später“).
