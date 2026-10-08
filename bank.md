@@ -367,7 +367,7 @@ Verfahrenskette ist daher nicht immer k1.
   (das Prüfungsheft lässt sie aus, das Unterrichtsblatt führt sie).
 - Zahlen so, dass Ergebnisse endlich sind und leichte Aufgaben im
   Kopf gehen; periodische Dezimalbrüche tragen einen Hinweis.
-- Zahlen wachsen mit der Leiter: Bauregeln 5.1 (bau/bauregeln.md);
+- Zahlen wachsen mit der Leiter: bauregeln.md „Leiter“ und „Zahlen“;
   für die Bank heißt das: je Stufe unten genug glatte, kopfrechenbare
   Vorstufen.
 - Ergebnisse in loesung exakt zuerst, dann gerundet („25\sqrt{2}
@@ -377,7 +377,7 @@ Verfahrenskette ist daher nicht immer k1.
   geänderte Zeilen.
   Dreisatz-Zahlen der Zone im Kopf rechenbar.
 - Keine Aufgabe doppelt, auch nicht über Ketten hinweg.
-- Herkunft, eigene und herausgelöste Aufgaben: Bauregeln 4.1–4.3. Für
+- Herkunft, eigene und herausgelöste Aufgaben: bauregeln.md „Herkunft“. Für
   die Bank: eigene Zeilen sparsam, zwei eigene einer Sprosse in
   mindestens zwei Merkmalen verschieden (Sache, Darstellung,
   Fragerichtung, Sprachform); Kopien nur mit anderer Zahl ruhen (Feld
@@ -447,7 +447,7 @@ Verfahrenskette ist daher nicht immer k1.
 
 ## Option „schwach“
 
-Was „schwach“ auf dem Blatt ändert: Bauregeln 8.1. Die Bank braucht
+Was „schwach“ auf dem Blatt ändert: bauregeln.md „Offen“ (Einstieg unten). Die Bank braucht
 dafür je Stufe mindestens drei Zeilen und je Zeile Zwischenergebnisse in
 loesung.
 

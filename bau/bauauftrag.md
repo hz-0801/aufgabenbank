@@ -26,7 +26,8 @@ Lies nur, was der Bau braucht, nie ganze große Dateien:
   sache/darstellung, falls gesetzt. Nicht die ganze Datei ausgeben.
 - Originale: Gliederung `mathe-nachhilfe/msa/gliederung/` (bzw. abitur/) für
   die Stufen und Originale der Einheit; Wortlaut nur der gewählten Originale.
-- Nicht lesen: `quellen/`, Mappen, alte Prompts, Archiv.
+- Nicht lesen: `quellen/`, Mappen (sie dienen dem Füllen der Bank, nicht
+  dem Bau), alte Prompts, Archiv.
 
 ## Ablauf
 
@@ -40,7 +41,8 @@ Lies nur, was der Bau braucht, nie ganze große Dateien:
    sie dem Schritt dient. Sonst neu schreiben. Je Schritt eine Aufgabe für
    das Blatt und, wo möglich, ein bis zwei gleichwertige für „neue Zahlen“.
 4. **Blatt setzen.** Mit `werkzeuge/setzer.py`, sobald es ihn gibt; bis
-   dahin von Hand nach dem Muster K4W mit `blattbau/mathblatt.sty`. Drei
+   dahin von Hand nach dem Muster K4W mit `mathblatt.sty` (Raw-URL
+   https://raw.githubusercontent.com/hz-0801/blattbau/main/mathblatt.sty). Drei
    PDFs: Übersicht, Blatt, Lösungen. Bilder der Seiten einmal ansehen.
 5. **Prüfen.** Jede Zahl mit sympy; neue Bankzeilen mit
    `werkzeuge/bank-pruef.py <eintrag>`; Dubletten mit `werkzeuge/duplikate.py`.

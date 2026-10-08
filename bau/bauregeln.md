@@ -237,4 +237,4 @@ Typische Fehler stehen im Katalog, nie hier.
   Stoff und Sorten bleiben gleich; keine Sorte wird zusammengefasst. Ob es
   trägt, zeigt das erste Blatt mit Einstieg unten und oben.
 - Folgebaum der Kennung (weiter · mehr · leichter · Lösung · hängt bei Nr.).
-- Zerlegung als Grundbaustein des Bestands (plan.md § 6 „Später“).
+- Zerlegung als Grundbaustein des Bestands (plan.md „Später“).
