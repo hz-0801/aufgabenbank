@@ -35,9 +35,10 @@ Typische Fehler stehen im Katalog, nie hier.
     Antwort; jede Hilfe deckt etwas auf, das die Aufgabe sonst verbirgt.
     Was über das Blatt spricht („kannst du überspringen“, „Prüfungsniveau“),
     fällt weg.
-1.5 Feste Regel: kein Merkkasten, kein vorgerechnetes Beispiel. Braucht das
-    Blatt eine kurze feste Formel, die der Schüler schon hatte, ist die
-    erste Aufgabe „Notiere …“ (Lösung knapp im Fuß).
+1.5 Feste Regel: kein Merkkasten. Ein vorgerechnetes Beispiel darf als
+    graue Teilaufgabe a) stehen, ohne das Wort „Beispiel“, wo es einen
+    neuen Schritt zeigt (Umstellen); b) rechnet der Schüler selbst
+    (Lehrer 08.10.).
 
 ## 2 Lieferung und Sorten
 
@@ -128,8 +129,9 @@ Typische Fehler stehen im Katalog, nie hier.
 4.8 Rückblick: nur, was die Leiter gleich braucht und selbst nicht übt;
     sonst keiner.
     Schlecht: eine Wiederholung, die auf dem Blatt nicht mehr vorkommt.
-4.9 Herkunft: echte Aufgaben zuerst (BB/BE, dann andere Länder, dann
-    eigene); eigene nur für Lücken der Leiter, nie oben. In der Mitte nur
+4.9 Herkunft: echte Aufgaben dort, wo sie dem Lernweg dienen, nicht
+    zuerst; am Ende ein Original ganz (Lehrer 08.10.: zu viele P10-Aufgaben
+    zu früh). In der Mitte nur
     der Teil eines Originals, der den Handgriff des Abschnitts übt
     (herausgelöst, mit echter Sache, Marke „nach …“); das ganze Original
     am Ende.
@@ -176,7 +178,8 @@ Typische Fehler stehen im Katalog, nie hier.
     Optionen (zusammen höchstens 120 Zeichen) in einer Zeile, sonst
     untereinander. Wo gerechnet wird, steht eine Lücke.
 6.9 Antwortfeld: Eine kurze Antwort steht rechts in derselben Zeile, wo
-    Platz ist. Lückenzeile in Form des Ergebnisses („c² = ___ , c = ___ cm“).
+    Platz ist. Keine vorgegebene Ergebnisform, die einen Schritt erspart (kein
+    „c² = ___ , c = ___“: der Schüler soll umstellen; Lehrer 08.10.).
     Rechenraum nur bei Rechen- und Begründungsaufträgen: Zeilen =
     Rechenschritte der Musterlösung + 1, höchstens 8, Karo statt Linien.
 6.10 Skizzen: Längen neben der Linie, nach außen; Längenverhältnisse nicht
