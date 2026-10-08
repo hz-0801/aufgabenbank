@@ -116,7 +116,10 @@ Typische Fehler stehen im Katalog, nie hier.
     Arten, damit die Überschrift nicht antwortet.
     Schlecht: unter „Kathete berechnen“ die Frage „Hypotenuse oder
     Kathete?“.
-4.7 Menge: Jede Sorte steht einmal; wo eine Rechnung sitzen muss, steht ein
+4.7 Menge: Jede Sorte steht einmal. Sorte ist eine Sprosse der Bank, an der
+    der Schüler anders denken muss; Sprossen, die nur die Zahlen ändern
+    (Kommazahlen, Runden), kommen ins Päckchen der vorigen
+    (`mathe-nachhilfe/begriffe.md`). Wo eine Rechnung sitzen muss, steht ein
     kurzes Päckchen (a, b, c – gleicher Bau, wenig Text, Zahlen möglichst mit
     Struktur). Mehr gibt es über Nachbestellung. Gilt für alle Sorten außer
     Original und Original neu.
