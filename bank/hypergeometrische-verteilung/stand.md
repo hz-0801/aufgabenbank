@@ -75,3 +75,4 @@ Prüfskript: bank-pruef.py v0.5, am Ende 0 Abweichungen, 0 Warnungen
 - Grundlage: gegenlese.md und gegenlese2.md (Abgleich); geändert nur rechnerisch falsche Zeilen (beide Leser oder ein Leser plus eigene sympy-Rechnung); Übriges in bank/_strittig.md.
 - hypergeometrische-verteilung-e2-k2-s2-v2: loesung „damit größer als $P(X = k)$ allein“ (falsch für k = 0, dort gleich) → „damit mindestens so groß wie $P(X = k)$ allein“ (Regel a).
 - Prüfskript: Abweichungen 0.
+- 2026-10-08 Aufräumlauf: Sperre p = 0,4 (Original 2023-bebb-lk-B4k) in e2-k2-s1-v1 → 3 von 10 defekt, p = 0,3, Schranke 0,8 (binomial 0,784 → k = 1, hypergeometrisch 7/24 und 49/60 → k = 0); Prüfskript: Abweichungen 1 → 0.
