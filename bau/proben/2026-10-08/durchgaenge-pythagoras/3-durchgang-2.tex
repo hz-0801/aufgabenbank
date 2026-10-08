@@ -1,0 +1,121 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Probe 08.10.2026: „Die lange Seite“ in drei Durchgängen, Durchgang 2 (Wiederholung), von Hand gesetzt
+% nach aufgabenbank bau/bauregeln.md (Stand 08.10.2026) und mathe-nachhilfe plan.md § 5 „Richtung Durchgänge“.
+% Wiederholung: ohne Vorstufen, Hilfe nur am Anfang (Nr. 2), kurzes Päckchen, krumme Zahlen; gleiche Sorten, andere Varianten.
+\input{praeambel}
+\newcommand{\kennung}{H7Q}
+\newcommand{\pz}[3]{\noindent\makebox[41mm][l]{#1}$c #2$\linie{14mm}#3\par\smallskip}
+
+\begin{document}
+\pfheftstil
+\fancyfoot[C]{\parbox[t]{\textwidth}{\mbfhbox\par\vspace{1.5mm}{\footnotesize\color{mbgrau}{\scriptsize \kennung}\hfill\thepage}}}
+\pfheftkopf{Die lange Seite \pkt{} Hypotenuse}{P10 \pkt{} 2}
+
+% 1 Satz in Worten (Kette 2 s7 v2)
+\begin{pfaufg}{}{1.}{}
+Kreuze die Aussage an, die in jedem rechtwinkligen Dreieck gilt.
+\pfkreuzzeile{Die Längen der Katheten ergeben zusammen die Länge der Hypotenuse.}
+\pfkreuzzeile{Das Hypotenusenquadrat ist doppelt so groß wie ein Kathetenquadrat.}
+\pfkreuzzeile{Die Flächen der zwei Kathetenquadrate ergeben zusammen die Fläche des Hypotenusenquadrats.}
+\fusshilfe{\mbox{1:~die dritte Aussage}}
+\end{pfaufg}
+
+% 2 Gleichung aufstellen (Kette 2 s6 v1): Hypotenuse liegt unten; die einzige Hilfe des Durchgangs steht am Anfang
+\begin{pfaufg}{}{2.}{}
+Schreibe für dieses Dreieck die Gleichung nach dem Satz des Pythagoras auf.
+Suche zuerst die Hypotenuse.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.75]\coordinate (P) at (0,0);\coordinate (Q) at (3.4,0);\coordinate (R) at (1.119,1.598);\draw (P) -- (Q) -- (R) -- cycle;\mbrwmarke{(R)}{(P)}{(Q)}
+\node[font=\small,anchor=south east] at (0.52,0.82) {$m$};\node[font=\small,anchor=south west] at (2.30,0.82) {$n$};\node[font=\small,anchor=north] at (1.7,-0.08) {$k$};\end{tikzpicture}}{%
+\vspace{6mm}\linie{50mm}}
+\fusshilfe{\mbox{2:~$m^2 + n^2 = k^2$}}
+\end{pfaufg}
+
+% 3 Formel mit Wurzel (Kette 2 s8 v1); rechter Winkel oben rechts
+\begin{pfaufg}{}{3.}{}
+Kreuze die Formel an, mit der man $g$ berechnet.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.75]\coordinate (A) at (0,1.8);\coordinate (B) at (3.2,1.8);\coordinate (C) at (3.2,0);\draw (A) -- (B) -- (C) -- cycle;\mbrwmarke{(B)}{(C)}{(A)}
+\node[font=\small,anchor=south] at (1.6,1.88) {$e$};\node[font=\small,anchor=west] at (3.28,0.9) {$f$};\node[font=\small,anchor=north east] at (1.6,0.88) {$g$};\end{tikzpicture}}{%
+\pfkreuzzeile{$g = \sqrt{e^2 + f^2}$\hspace{2.4em}$\square$\ $g = e^2 + f^2$}
+\pfkreuzzeile{$g = \sqrt{e^2 - f^2}$\hspace{2.4em}$\square$\ $g = e + f$}}
+\fusshilfe{\mbox{3:~$g = \sqrt{e^2 + f^2}$}}
+\end{pfaufg}
+
+% 4 kurzes Päckchen, krumme Zahlen: Kette 2 s1 v4, s4 v2, s5 v2, s3 v2
+\begin{pfaufg}{}{4.}{}
+Berechne die Hypotenuse $c$. Runde in d) auf eine Stelle nach dem Komma.\par\medskip
+\gzwei{\begin{minipage}{66mm}
+\pz{a)\ $36$ cm und $77$ cm}{=}{cm}
+\pz{b)\ $4{,}5$ cm und $2{,}8$ cm}{=}{cm}
+\pz{c)\ $2{,}4$ m und $70$ cm}{=}{cm}
+\pz{d)\ $6$ m und $11$ m}{\approx}{m}
+\end{minipage}}{\karo{3}}
+\fusshilfe{\mbox{4:~a) 85 cm; b) 5,3 cm; c) 250 cm; d) $\sqrt{157} \approx 12{,}5$ m}}
+\end{pfaufg}
+
+% 5 Dreieck in anderer Lage (Kette 2 s2 v3): Hypotenuse oben waagerecht, ohne Hilfe
+\begin{pfaufg}{}{5.}{}
+Im Dreieck ist eine Seite mit ? markiert. Wie lang ist diese Seite?
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.7]\coordinate (A) at (0,2.48);\coordinate (B) at (5,2.48);\coordinate (C) at (2.16,0);\draw (A) -- (B) -- (C) -- cycle;\mbrwmarke{(C)}{(A)}{(B)}
+\node[font=\small,anchor=south] at (2.5,2.56) {?};\node[font=\small,anchor=north east] at (1.0,1.2) {$48$ cm};\node[font=\small,anchor=north west] at (3.68,1.2) {$55$ cm};\end{tikzpicture}}{%
+\karo{3}\par\smallskip\hfill ? $=$\linie{18mm}cm}
+\fusshilfe{\mbox{5:~73 cm}}
+\end{pfaufg}
+
+% 6 Diagonale im Rechteck (Kette 2 s9 v2): ohne Skizze, das Dreieck findet der Schüler selbst
+\begin{pfaufg}{}{6.}{}
+Ein Rechteck ist $3{,}5$~m lang und $1{,}2$~m breit. Wie lang ist seine Diagonale?
+\karo{3}\par\smallskip\hfill Diagonale:\linie{18mm}m
+\fusshilfe{\mbox{6:~3,7 m}}
+\end{pfaufg}
+
+% 7 Teil eines Originals: Maße nur in der Skizze (2025 · 4 · a, Winkel weg)
+\begin{pfaufg}{nach P10 ’25}{7.}{}
+Familie Yücel baut vor der Haustür eine Rampe für Rollstühle. Berechne die Länge $x$ der Rampe.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.62]\coordinate (P1) at (0,0);\coordinate (P2) at (5.95,0);\coordinate (P3) at (5.95,0.56);\draw (P1) -- (P2) -- (P3) -- cycle;\mbrwmarke{(P2)}{(P1)}{(P3)}
+\node[font=\small,anchor=north] at (2.97,-0.08) {$170$ cm};\node[font=\small,anchor=west] at (6.03,0.28) {$16$ cm};\node[font=\small,anchor=south] at (2.9,0.32) {$x$};
+\node[font=\scriptsize,mbgrau,anchor=north west] at (0,-0.5) {nicht maßstabsgerecht};\end{tikzpicture}}{%
+\karo{3}\par\smallskip\hfill $x \approx$\linie{18mm}cm}
+\fusshilfe{\mbox{7:~$x \approx 170{,}8$ cm}}
+\end{pfaufg}
+
+% 8 Überstand (Kette 2 s11 v2), ohne Hilfe; Draufsicht auf den Kistenboden
+\begin{pfaufg}{}{8.}{}
+Ein Stab liegt schräg in einer Kiste und ragt an einer Ecke hinaus. Wie lang ist der Stab?
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.72]
+\draw (0,0) rectangle (2.4,2.52);
+\draw[line width=1.8pt] (0,0) -- (2.617,2.748);
+\mbrwmarke{(2.4,0)}{(0,0)}{(2.4,2.52)}
+\node[font=\small,anchor=north] at (1.2,-0.08) {$40$ cm};
+\node[font=\small,anchor=west] at (2.48,1.26) {$42$ cm};
+\node[font=\small,anchor=south east] at (2.55,2.62) {$5$ cm};
+\node[font=\scriptsize,mbgrau,anchor=north west] at (0,-0.5) {von oben gesehen};
+\end{tikzpicture}}{%
+\karo{4}\par\smallskip\hfill Stab:\linie{18mm}cm}
+\fusshilfe{\mbox{8:~$58 + 5 = 63$ cm}}
+\end{pfaufg}
+
+% 9 Fehler finden (Kette 5 s1 v2): Wurzel aus jedem Summanden einzeln; „rechne richtig“ gestrichen (übt nur Nr. 4 noch einmal)
+\begin{pfaufg}{}{9.}{}
+Nora hat vier Hypotenusen berechnet. Genau eine Rechnung ist falsch. Kreuze sie an.\par\smallskip
+{\small
+\kk{}(1)\ Katheten $16$ cm und $30$ cm:\quad $c = \sqrt{256 + 900} = \sqrt{1\,156} = 34$ cm\par
+\kk{}(2)\ Katheten $16$ cm und $63$ cm:\quad $c = \sqrt{256 + 3\,969} = \sqrt{4\,225} = 65$ cm\par
+\kk{}(3)\ Katheten $21$ cm und $28$ cm:\quad $c = \sqrt{21^2 + 28^2} = 21 + 28 = 49$ cm\par
+\kk{}(4)\ Katheten $28$ cm und $45$ cm:\quad $c = \sqrt{784 + 2\,025} = \sqrt{2\,809} = 53$ cm\par}
+\fusshilfe{\mbox{9:~(3)}}
+\end{pfaufg}
+
+% 10 Prüfungshöhe (Kette 2 s15 v2, eigene Variante zu 2020 · 7 · a)
+\begin{pfaufg}{}{10.}{}
+Ein Boot fährt von Boje $A$ nach $C$ und dann rechtwinklig nach $B$. Berechne die Entfernung von $A$ nach $B$. Runde auf eine Stelle nach dem Komma.
+\gzwei{\begin{tikzpicture}[line width=0.7pt]\coordinate (A) at (0,0);\coordinate (C) at (3.76,0);\coordinate (B) at (3.76,1.76);\draw (A) -- (C) -- (B);\draw[dashed] (A) -- (B);\mbrwmarke{(C)}{(A)}{(B)}
+\foreach \p in {A,B,C}{\fill (\p) circle (1.6pt);}
+\node[font=\small,anchor=east] at (A) {$A$};\node[font=\small,anchor=west] at (C) {$C$};\node[font=\small,anchor=west] at (B) {$B$};
+\node[font=\small,anchor=north] at (1.88,-0.08) {$47$ m};\node[font=\small,anchor=west] at (3.84,0.88) {$22$ m};\end{tikzpicture}}{%
+\karo{3}\par\smallskip\hfill $\overline{AB}^2 =$\linie{22mm}\quad $\overline{AB} \approx$\linie{18mm}m}
+\fusshilfe{\mbox{10:~$\overline{AB}^2 = 2\,693$, $\overline{AB} \approx 51{,}9$ m}}
+\end{pfaufg}
+
+\blattende{2025 \pkt{} 4 \pkt{} a}{Vorher: Die lange Seite \pkt{} P10 \pkt{} 1\quad\textbullet\quad Weiter: Die lange Seite \pkt{} P10 \pkt{} 3}
+\end{document}

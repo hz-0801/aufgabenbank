@@ -1,0 +1,76 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Probe 08.10.2026: Lösungen zu „Die lange Seite“ in drei Durchgängen (H6Q, H7Q, H8Q) nach bau/bauregeln.md § 8.
+% Je Durchgang ein Abschnitt; je Teilaufgabe eine Zeile: links fett das Ergebnis in der Form der Frage, rechts klein Ansatz ⇒ Wert.
+% Alle Werte mit sympy nachgerechnet.
+\newcommand{\kennung}{H6Q \textperiodcentered{} H7Q \textperiodcentered{} H8Q}
+\newcommand{\abschnitt}[2]{\par\addvspace{12pt}\noindent{\large\bfseries #1}\hspace{0.6em}{\scriptsize\color{mbgrau}#2}\par\nobreak\vspace{2pt}}
+\newcommand{\ein}[3]{\begin{pfloesung}{}\lz{#1}{#2}{#3}{}\end{pfloesung}}
+\begin{document}
+\pfheftstil
+\fancyfoot[C]{{\footnotesize\color{mbgrau}\kennung\hfill\thepage}}
+\pfheftkopf{Die lange Seite \textperiodcentered{} Hypotenuse}{P10 \textperiodcentered{} Lösungen}
+
+\abschnitt{P10 \textperiodcentered{} 1}{H6Q}
+\begin{pfloesung}{}
+\lz{1a)}{9, 16 und 25 Kästchen}{$3^2 = 9$, \ $4^2 = 16$, \ $5^2 = 25$}{}
+\lz{b)}{die Quadrate}{$9 + 16 = 25$; \ Seiten: $3 + 4 = 7 \ne 5$}{}
+\end{pfloesung}
+\begin{pfloesung}{}
+\lz{2a)}{$r$}{}{}
+\lz{b)}{$b$}{}{}
+\lz{c)}{$e$}{}{}
+\lz{d)}{keine}{kein rechter Winkel, ein Winkel ist stumpf}{}
+\end{pfloesung}
+\ein{3.}{die dritte Aussage}{}
+\ein{4.}{$z^2 = x^2 + y^2$}{Hypotenuse $z$}
+\ein{5.}{$z = \sqrt{x^2 + y^2}$}{Hypotenuse $z$}
+\begin{pfloesung}{}
+\lz{6a)}{$c = 10$ cm}{$c^2 = 6^2 + 8^2 = 100$}{}
+\lz{b)}{$c = 39$ cm}{$c^2 = 36^2 + 15^2 = 1\,521$}{}
+\lz{c)}{$c = 60$ cm}{$c^2 = 36^2 + 48^2 = 3\,600$}{}
+\lz{d)}{$c = 6{,}5$ m}{$c^2 = 2{,}5^2 + 6^2 = 42{,}25$}{}
+\lz{e)}{$c = 130$ cm}{$1{,}2$ m $= 120$ cm; \ $c^2 = 120^2 + 50^2 = 16\,900$}{}
+\lz{f)}{$c = \sqrt{97} \approx 9{,}8$ cm}{$c^2 = 4^2 + 9^2 = 97$ \ $\Rightarrow$ \ $c \approx 9{,}85$}{}
+\end{pfloesung}
+\begin{pfloesung}{}
+\lz{7a)}{die Hypotenuse}{sie liegt dem rechten Winkel gegenüber}{}
+\lz{b)}{$53$ cm}{$?^2 = 28^2 + 45^2 = 2\,809$}{}
+\end{pfloesung}
+\ein{8.}{$d = 51$ cm}{$d^2 = 45^2 + 24^2 = 2\,601$}
+\ein{9.}{Seil $= \sqrt{73} \approx 8{,}5$ m}{$3^2 + 8^2 = 73$ \ $\Rightarrow$ \ $8{,}54$}
+\ein{10.}{$5{,}1$ m}{bis zur Kante: $0{,}9^2 + 4^2 = 16{,}81$ \ $\Rightarrow$ \ $4{,}1$ m; \ $4{,}1 + 1 = 5{,}1$}
+\begin{pfloesung}{}
+\lz{11.}{Wurzel vergessen; \ $c = 65$ cm}{$c = \sqrt{4\,225} = 65$}{}
+\end{pfloesung}
+\ein{12.}{$\overline{AB}^2 = 1\,717$, \ $\overline{AB} \approx 41{,}4$ m}{$\overline{AB}^2 = 14^2 + 39^2 = 1\,717$ \ $\Rightarrow$ \ $41{,}44$}
+
+\abschnitt{P10 \textperiodcentered{} 2}{H7Q}
+\ein{1.}{die dritte Aussage}{}
+\ein{2.}{$m^2 + n^2 = k^2$}{Hypotenuse $k$}
+\ein{3.}{$g = \sqrt{e^2 + f^2}$}{Hypotenuse $g$}
+\begin{pfloesung}{}
+\lz{4a)}{$c = 85$ cm}{$c^2 = 36^2 + 77^2 = 7\,225$}{}
+\lz{b)}{$c = 5{,}3$ cm}{$c^2 = 4{,}5^2 + 2{,}8^2 = 28{,}09$}{}
+\lz{c)}{$c = 250$ cm}{$2{,}4$ m $= 240$ cm; \ $c^2 = 240^2 + 70^2 = 62\,500$}{}
+\lz{d)}{$c = \sqrt{157} \approx 12{,}5$ m}{$c^2 = 6^2 + 11^2 = 157$ \ $\Rightarrow$ \ $12{,}53$}{}
+\end{pfloesung}
+\ein{5.}{$73$ cm}{$?^2 = 48^2 + 55^2 = 5\,329$}
+\ein{6.}{$3{,}7$ m}{$3{,}5^2 + 1{,}2^2 = 13{,}69$}
+\ein{7.}{$x = 2\sqrt{7\,289} \approx 170{,}8$ cm}{$x^2 = 170^2 + 16^2 = 29\,156$ \ $\Rightarrow$ \ $170{,}75$}
+\ein{8.}{$63$ cm}{schräges Stück: $40^2 + 42^2 = 3\,364$ \ $\Rightarrow$ \ $58$ cm; \ $58 + 5 = 63$}
+\ein{9.}{Rechnung (3)}{Wurzel einzeln gezogen; richtig: $\sqrt{441 + 784} = \sqrt{1\,225} = 35$ cm}
+\ein{10.}{$\overline{AB}^2 = 2\,693$, \ $\overline{AB} \approx 51{,}9$ m}{$\overline{AB}^2 = 47^2 + 22^2 = 2\,693$ \ $\Rightarrow$ \ $51{,}89$}
+
+\abschnitt{P10 \textperiodcentered{} 3}{H8Q}
+\ein{1.}{die erste Aussage}{}
+\ein{2.}{$g^2 + e^2 = f^2$}{Hypotenuse $f$}
+\ein{3.}{$r = \sqrt{p^2 + q^2}$}{Hypotenuse $r$}
+\ein{4.}{$c \approx 5{,}5$ m}{$c^2 = 3{,}6^2 + 4{,}1^2 = 29{,}77$ \ $\Rightarrow$ \ $c \approx 5{,}46$}
+\ein{5.}{$65$ cm}{$?^2 = 33^2 + 56^2 = 4\,225$}
+\ein{6.}{Diagonale $= \sqrt{130} \approx 11{,}4$ cm}{$9^2 + 7^2 = 130$ \ $\Rightarrow$ \ $11{,}40$}
+\ein{7.}{Steg $\approx 350{,}7$ cm}{$350^2 + 22^2 = 122\,984$ \ $\Rightarrow$ \ $350{,}69$}
+\ein{8.}{$5{,}7$ m}{schräges Stück: $4{,}5^2 + 2{,}4^2 = 26{,}01$ \ $\Rightarrow$ \ $5{,}1$ m; \ $5{,}1 + 0{,}6 = 5{,}7$}
+\ein{9.}{(2) und (3)}{(2): $49$ cm ist kürzer als die Kathete $60$ cm; \ (3): $98 = 18 + 80$, die Hypotenuse ist kürzer als beide Katheten zusammen}
+\ein{10.}{$\overline{AB} = 10\sqrt{13} \approx 36{,}1$ m}{$\overline{AB}^2 = 12^2 + 34^2 = 1\,300$ \ $\Rightarrow$ \ $36{,}06$}
+\end{document}

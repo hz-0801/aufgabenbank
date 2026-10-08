@@ -1,0 +1,177 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Probe 08.10.2026: „Die lange Seite“ in drei Durchgängen, Durchgang 1 (Einstieg), von Hand gesetzt
+% nach aufgabenbank bau/bauregeln.md (Stand 08.10.2026) und mathe-nachhilfe plan.md § 5 „Richtung Durchgänge“.
+% Einstieg: mit Vorstufen, Hilfen aufgedeckt, lange Päckchen, glatte Zahlen. Satz aus paket-pythagoras-2.
+\input{praeambel}
+\newcommand{\kennung}{H6Q}
+% Päckchenzeile mit Lücke für c² (Hilfe aufgedeckt)
+\newcommand{\pz}[3]{\noindent\makebox[47mm][l]{#1}$c^2 =$\linie{42mm}\hspace{5mm}$c #2$\linie{18mm}#3\par\medskip}
+
+\begin{document}
+\pfheftstil
+\fancyfoot[C]{\parbox[t]{\textwidth}{\mbfhbox\par\vspace{1.5mm}{\footnotesize\color{mbgrau}{\scriptsize \kennung}\hfill\thepage}}}
+\pfheftkopf{Die lange Seite \pkt{} Hypotenuse}{P10 \pkt{} 1}
+
+% 1 Vorstufe: Idee sichtbar machen (Bauregel 4.1; Kette 3, Zahlen 3-4-5)
+\begin{pfaufg}{}{1.}{}
+Das Dreieck hat einen rechten Winkel. Über jeder Seite steht ein Quadrat. Die schräge Seite ist 5 Kästchen lang.
+\gzwei{\begin{tikzpicture}[scale=0.40,line width=0.7pt]
+\draw[mbgitter,line width=0.3pt] (-4,-3) grid (7,7);
+\draw (0,0) -- (3,0) -- (3,-3) -- (0,-3) -- cycle;
+\draw (0,0) -- (-4,0) -- (-4,4) -- (0,4) -- cycle;
+\draw (0,4) -- (3,0) -- (7,3) -- (4,7) -- cycle;
+\draw[line width=1.4pt] (0,0) -- (3,0) -- (0,4) -- cycle;
+\mbrwmarke{(0,0)}{(3,0)}{(0,4)}
+\end{tikzpicture}}{%
+\textbf{a)}\ Zähle die Kästchen in jedem Quadrat.\par\smallskip
+\hspace*{1.4em}klein:\linie{12mm}und\linie{12mm}\quad groß:\linie{12mm}\par\bigskip
+\textbf{b)}\ Kreuze an, was stimmt.
+\pfkreuzzeile{Die zwei kurzen Seiten sind zusammen so lang wie die lange Seite.}
+\pfkreuzzeile{Die zwei kleinen Quadrate haben zusammen so viele Kästchen wie das große.}}
+\fusshilfe{\mbox{1:~a) 9, 16, 25; b) die Quadrate}}
+\end{pfaufg}
+
+% 2 Vorstufe: Erkennen in vier Lagen; d) ohne rechten Winkel (Kette 1 s0 v3: stumpfer Winkel)
+\begin{pfaufg}{}{2.}{}
+Die lange Seite gegenüber dem rechten Winkel heißt \textbf{Hypotenuse}. Die zwei kurzen Seiten am rechten Winkel heißen \textbf{Katheten}. Kreuze in jedem Dreieck die Hypotenuse an. Hat ein Dreieck keinen rechten Winkel, kreuze „keine“ an.\par\medskip\noindent
+\begin{minipage}[b]{0.245\linewidth}\centering
+\begin{tikzpicture}[line width=0.7pt,scale=0.85]\coordinate (P1) at (0,0);\coordinate (P2) at (2.5,0);\coordinate (P3) at (0.9,1.2);\draw (P1) -- (P2) -- (P3) -- cycle;\mbrwmarke{(P3)}{(P1)}{(P2)}
+\node[font=\small,anchor=north] at (1.25,-0.08) {$r$};\node[font=\small,anchor=south east] at (0.40,0.62) {$s$};\node[font=\small,anchor=south west] at (1.75,0.62) {$t$};\end{tikzpicture}\par\smallskip
+{\small a)\ \kk{$r$}\kk{$s$}\kk{$t$}\par\kk{keine}}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.245\linewidth}\centering
+\begin{tikzpicture}[line width=0.7pt,scale=0.85]\coordinate (P1) at (0,0);\coordinate (P2) at (2.2,0);\coordinate (P3) at (2.2,1.5);\draw (P1) -- (P2) -- (P3) -- cycle;\mbrwmarke{(P2)}{(P1)}{(P3)}
+\node[font=\small,anchor=north] at (1.1,-0.08) {$a$};\node[font=\small,anchor=west] at (2.28,0.75) {$c$};\node[font=\small,anchor=south east] at (1.05,0.80) {$b$};\end{tikzpicture}\par\smallskip
+{\small b)\ \kk{$a$}\kk{$b$}\kk{$c$}\par\kk{keine}}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.245\linewidth}\centering
+\begin{tikzpicture}[line width=0.7pt,scale=0.85]\coordinate (P1) at (0,1.25);\coordinate (P2) at (1.8,0);\coordinate (P3) at (2.8,1.44);\draw (P1) -- (P2) -- (P3) -- cycle;\mbrwmarke{(P2)}{(P1)}{(P3)}
+\node[font=\small,anchor=north east] at (0.85,0.56) {$f$};\node[font=\small,anchor=north west] at (2.37,0.67) {$g$};\node[font=\small,anchor=south] at (1.40,1.42) {$e$};\end{tikzpicture}\par\smallskip
+{\small c)\ \kk{$e$}\kk{$f$}\kk{$g$}\par\kk{keine}}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.245\linewidth}\centering
+\begin{tikzpicture}[line width=0.7pt,scale=0.85]\coordinate (P1) at (0.4,0);\coordinate (P2) at (2.9,0);\coordinate (P3) at (0,1.1);\draw (P1) -- (P2) -- (P3) -- cycle;
+\node[font=\small,anchor=north] at (1.65,-0.08) {$u$};\node[font=\small,anchor=east] at (0.15,0.5) {$v$};\node[font=\small,anchor=south west] at (1.5,0.58) {$w$};\end{tikzpicture}\par\smallskip
+{\small d)\ \kk{$u$}\kk{$v$}\kk{$w$}\par\kk{keine}}
+\end{minipage}
+\fusshilfe{\mbox{2:~a) $r$; b) $b$; c) $e$; d) keine}}
+\end{pfaufg}
+
+% 3 Satz in Worten, P10-Form (2022 · 1 · g)
+\begin{pfaufg}{P10 ’22}{3.}{}
+Kreuze die Aussage an, die für jedes rechtwinklige Dreieck stimmt.
+\pfkreuzzeile{Dem rechten Winkel liegt eine Kathete gegenüber.}
+\pfkreuzzeile{$c = a + b$}
+\pfkreuzzeile{Die Summe der Flächeninhalte der Kathetenquadrate ist gleich dem Flächeninhalt des Hypotenusenquadrates.}
+\fusshilfe{\mbox{3:~die dritte Aussage}}
+\end{pfaufg}
+
+% 4 Gleichung aufstellen mit Hilfe (Bauregel 4.5): z ist die Hypotenuse (2017 · 1 · d)
+\begin{pfaufg}{P10 ’17}{4.}{}
+Kreuze die Gleichung an, die für dieses Dreieck gilt.\par
+Suche zuerst die Hypotenuse – sie steht allein auf einer Seite.
+\gzwei{\begin{tikzpicture}[line width=0.7pt]\coordinate (P1) at (0,0);\coordinate (P2) at (3.2,0);\coordinate (P3) at (0,2.2);\draw (P1) -- (P2) -- (P3) -- cycle;\mbrwmarke{(P1)}{(P2)}{(P3)}
+\node[font=\small,anchor=north] at (1.6,-0.08) {$y$};\node[font=\small,anchor=east] at (-0.08,1.1) {$x$};\node[font=\small,anchor=south west] at (1.62,1.12) {$z$};\end{tikzpicture}}{%
+\pfkreuzzeile{$x^2 = y^2 + z^2$\hspace{3em}$\square$\ $z^2 = x^2 - y^2$}
+\pfkreuzzeile{$z^2 \cdot y^2 = x^2$\hspace{3.15em}$\square$\ $z^2 = x^2 + y^2$}}
+\fusshilfe{\mbox{4:~$z^2 = x^2 + y^2$}}
+\end{pfaufg}
+
+% 5 Formel mit Wurzel, ohne Hilfe (2021 · 1 · h)
+\begin{pfaufg}{P10 ’21}{5.}{}
+Kreuze die Formel an, mit der man $z$ berechnet.
+\gzwei{\begin{tikzpicture}[line width=0.7pt]\coordinate (P1) at (0,0);\coordinate (P2) at (3.2,0);\coordinate (P3) at (3.2,2.2);\draw (P1) -- (P2) -- (P3) -- cycle;\mbrwmarke{(P2)}{(P1)}{(P3)}\node[font=\small,anchor=west] at (3.28,1.1) {$y$};\node[font=\small,anchor=south east] at (1.555,1.166) {$z$};\node[font=\small,anchor=north] at (1.6,-0.08) {$x$};\end{tikzpicture}}{%
+\pfkreuzzeile{$z = \sqrt{x^2 - y^2}$\hspace{2.4em}$\square$\ $z = \sqrt{x^2 + y^2}$}
+\pfkreuzzeile{$z = \sqrt{y^2 - x^2}$\hspace{2.4em}$\square$\ $z = y^2 + x^2$}}
+\fusshilfe{\mbox{5:~$z = \sqrt{x^2 + y^2}$}}
+\end{pfaufg}
+
+% 6 langes Päckchen (Bauregel 4.7): Kette 2 s1 v1, s1 v3, s4 v1, s5 v1, s3 v1; a) eigene Kopfrechenzahl
+% Hilfe aufgedeckt: die Lücke zeigt die Zwischengröße c²
+\begin{pfaufg}{}{6.}{}
+Berechne die Hypotenuse $c$ aus den beiden Katheten. Runde in f) auf eine Stelle nach dem Komma.\par\medskip
+\pz{a)\ $6$ cm und $8$ cm}{=}{cm}
+\pz{b)\ $36$ cm und $15$ cm}{=}{cm}
+\pz{c)\ $36$ cm und $48$ cm}{=}{cm}
+\pz{d)\ $2{,}5$ m und $6$ m}{=}{m}
+\pz{e)\ $1{,}2$ m und $50$ cm}{=}{cm}
+\pz{f)\ $4$ cm und $9$ cm}{\approx}{cm}
+\fusshilfe{\mbox{6:~a) 10 cm; b) 39 cm; c) 60 cm; d) 6,5 m; e) 130 cm; f) $\sqrt{97} \approx 9{,}8$ cm}}
+\end{pfaufg}
+
+% 7 Dreieck in anderer Lage (Kette 2 s2 v1): die Hypotenuse liegt unten waagerecht; Hilfe a) deckt die Rolle auf
+\begin{pfaufg}{}{7.}{}
+Im Dreieck ist eine Seite mit ? markiert.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.8]\coordinate (A) at (0,0);\coordinate (B) at (5,0);\coordinate (C) at (1.4,2.24);\draw (A) -- (B) -- (C) -- cycle;\mbrwmarke{(C)}{(A)}{(B)}
+\node[font=\small,anchor=north] at (2.5,-0.08) {?};\node[font=\small,anchor=south east] at (0.66,1.12) {$28$ cm};\node[font=\small,anchor=south west] at (3.25,1.15) {$45$ cm};\end{tikzpicture}}{%
+\textbf{a)}\ Die Seite ? ist \kk{eine Kathete}\kk{die Hypotenuse}\par\medskip
+\textbf{b)}\ Berechne die Länge der Seite ?.
+\karo{3}\par\smallskip\hfill ? $=$\linie{18mm}cm}
+\fusshilfe{\mbox{7:~a) die Hypotenuse; b) 53 cm}}
+\end{pfaufg}
+
+% 8 Diagonale im Rechteck (Kette 2 s9 v1): die Skizze zeigt das Dreieck
+\begin{pfaufg}{}{8.}{}
+Wie lang ist die Diagonale $d$ des Bilderrahmens?
+\gzwei{\begin{tikzpicture}[line width=0.7pt]\draw (0,0) rectangle (3.6,1.92);\draw (0.25,0.25) rectangle (3.35,1.67);\draw[line width=1.2pt] (0,0) -- (3.6,1.92);
+\node[font=\small,anchor=north] at (1.8,-0.08) {$45$ cm};\node[font=\small,anchor=west] at (3.68,0.96) {$24$ cm};\node[font=\small,anchor=south east] at (1.65,0.95) {$d$};\end{tikzpicture}}{%
+\karo{3}\par\smallskip\hfill $d =$\linie{18mm}cm}
+\fusshilfe{\mbox{8:~$d = 51$ cm}}
+\end{pfaufg}
+
+% 9 Sache mit Skizze (Kette 2 s10 v3): Seil am Mast; Maße nur in der Skizze (Bauregel 6.10)
+\begin{pfaufg}{}{9.}{}
+Ein Seil hält einen Mast. Wie lang ist das Seil? Runde auf eine Stelle nach dem Komma.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.45]
+\draw (-0.6,0) -- (5.2,0);
+\draw[line width=2pt] (4,0) -- (4,8.6);
+\draw (0,0) -- (4,8);\fill (4,8) circle (2pt);
+\mbrwmarke{(4,0)}{(0,0)}{(4,8)}
+\node[font=\small,anchor=north] at (2,-0.1) {$3$ m};
+\node[font=\small,anchor=west] at (4.2,4) {$8$ m};
+\node[font=\small,anchor=south east] at (1.9,4.1) {Seil};
+\end{tikzpicture}}{%
+\karo{3}\par\smallskip\hfill Seil $\approx$\linie{18mm}m}
+\fusshilfe{\mbox{9:~$\sqrt{73} \approx 8{,}5$ m}}
+\end{pfaufg}
+
+% 10 Überstand (Kette 2 s11 v1); Hilfe deckt die Zwischengröße auf (Bauregel 4.4)
+\begin{pfaufg}{}{10.}{}
+Eine Leiter lehnt an einer Mauer. Oben ragt sie über die Mauerkante hinaus. Wie lang ist die ganze Leiter?\par
+Berechne zuerst das schräge Stück bis zur Mauerkante.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.55]
+\fill[black!10] (2.4,0) rectangle (3.0,4);\draw (2.4,0) -- (2.4,4) -- (3.0,4);
+\draw (-0.6,0) -- (3.6,0);
+\draw[line width=1.6pt] (0,0) -- (2.985,4.976);
+\mbrwmarke{(2.4,0)}{(0,0)}{(2.4,4)}
+\draw[|-|,line width=0.4pt] (0,-0.45) -- (2.4,-0.45) node[midway,below,font=\small] {$0{,}9$ m};
+\node[font=\small,anchor=west] at (3.05,2.0) {$4$ m};
+\node[font=\small,anchor=east] at (2.55,4.6) {$1$ m};
+\node[font=\scriptsize,mbgrau,anchor=north west] at (-0.6,-1.3) {nicht maßstabsgerecht};
+\end{tikzpicture}}{%
+\karo{4}\par\smallskip\hfill Leiter:\linie{18mm}m}
+\fusshilfe{\mbox{10:~$4{,}1 + 1 = 5{,}1$ m}}
+\end{pfaufg}
+
+% 11 Fehler finden (Kette 5 s1 v1): Wurzel vergessen
+\begin{pfaufg}{}{11.}{}
+Lara soll die Hypotenuse $c$ berechnen. Die Katheten sind $33$~cm und $56$~cm lang. Finde ihren Fehler und rechne richtig.
+\gzwei{\hspace*{4mm}$\begin{aligned} c^2 &= 33^2 + 56^2\\ c^2 &= 4\,225\\ c &= 4\,225 \text{ cm}\end{aligned}$}{%
+Fehler:\linie{50mm}\par\bigskip
+\karo{2}\par\smallskip\hfill $c =$\linie{18mm}cm}
+\fusshilfe{\mbox{11:~Wurzel vergessen; $c = 65$ cm}}
+\end{pfaufg}
+
+% 12 Prüfungshöhe (Kette 2 s15 v1, eigene Variante zu 2020 · 7 · a): Antwortzeile in Form des Ergebnisses
+\begin{pfaufg}{}{12.}{}
+Ein Grundstück $ABC$ hat bei $C$ einen rechten Winkel. Berechne die Länge der Seite $\overline{AB}$. Runde auf eine Stelle nach dem Komma.
+\gzwei{\begin{tikzpicture}[line width=0.7pt]\coordinate (C) at (0,0);\coordinate (B) at (1.26,0);\coordinate (A) at (0,3.51);\draw (A) -- (B) -- (C) -- cycle;\mbrwmarke{(C)}{(B)}{(A)}
+\node[font=\small,anchor=north east] at (C) {$C$};\node[font=\small,anchor=north west] at (B) {$B$};\node[font=\small,anchor=south] at (A) {$A$};
+\node[font=\small,anchor=north] at (0.63,-0.08) {$14$ m};\node[font=\small,anchor=east] at (-0.08,1.75) {$39$ m};\end{tikzpicture}}{%
+\karo{3}\par\smallskip\hfill $\overline{AB}^2 =$\linie{22mm}\quad $\overline{AB} \approx$\linie{18mm}m}
+\fusshilfe{\mbox{12:~$\overline{AB}^2 = 1\,717$, $\overline{AB} \approx 41{,}4$ m}}
+\end{pfaufg}
+
+\blattende{2017 \pkt{} 1 \pkt{} d \quad 2021 \pkt{} 1 \pkt{} h \quad 2022 \pkt{} 1 \pkt{} g}{Vorher: Quadrat und Wurzel\quad\textbullet\quad Weiter: Die lange Seite \pkt{} P10 \pkt{} 2}
+\end{document}

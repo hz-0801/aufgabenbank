@@ -1,0 +1,114 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Probe 08.10.2026: „Die lange Seite“ in drei Durchgängen, Durchgang 3 (Prüfung), von Hand gesetzt
+% nach aufgabenbank bau/bauregeln.md (Stand 08.10.2026) und mathe-nachhilfe plan.md § 5 „Richtung Durchgänge“.
+% Prüfung: ohne Hilfe, ohne Päckchen, am Ende das Original ganz; gleiche Sorten, andere Varianten.
+\input{praeambel}
+\newcommand{\kennung}{H8Q}
+
+\begin{document}
+\pfheftstil
+\fancyfoot[C]{\parbox[t]{\textwidth}{\mbfhbox\par\vspace{1.5mm}{\footnotesize\color{mbgrau}{\scriptsize \kennung}\hfill\thepage}}}
+\pfheftkopf{Die lange Seite \pkt{} Hypotenuse}{P10 \pkt{} 3}
+
+% 1 Satz in Worten (Kette 2 s7 v3)
+\begin{pfaufg}{}{1.}{}
+Kreuze die Aussage an, die in jedem rechtwinkligen Dreieck gilt.
+\pfkreuzzeile{Die Katheten liegen am rechten Winkel; ihre Quadrate ergeben zusammen das Quadrat der dritten Seite.}
+\pfkreuzzeile{Die Hypotenuse liegt am rechten Winkel; ihr Quadrat ist die Summe der anderen zwei.}
+\pfkreuzzeile{Das Quadrat der längsten Seite ist kleiner als die zwei anderen Quadrate zusammen.}
+\fusshilfe{\mbox{1:~die erste Aussage}}
+\end{pfaufg}
+
+% 2 Gleichung aufstellen (Kette 2 s6 v2), ohne Hilfe; Hypotenuse steht senkrecht links
+\begin{pfaufg}{}{2.}{}
+Schreibe für dieses Dreieck die Gleichung nach dem Satz des Pythagoras auf.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.55]\coordinate (P) at (0,2.6);\coordinate (Q) at (0,0);\coordinate (R) at (1.2,1.8);\draw (P) -- (Q) -- (R) -- cycle;\mbrwmarke{(R)}{(P)}{(Q)}
+\node[font=\small,anchor=east] at (-0.08,1.3) {$f$};\node[font=\small,anchor=south west] at (0.62,2.22) {$g$};\node[font=\small,anchor=north west] at (0.66,0.86) {$e$};\end{tikzpicture}}{%
+\vspace{4mm}\linie{50mm}}
+\fusshilfe{\mbox{2:~$g^2 + e^2 = f^2$}}
+\end{pfaufg}
+
+% 3 Formel mit Wurzel (Kette 2 s8 v3); rechter Winkel oben, Hypotenuse unten
+\begin{pfaufg}{}{3.}{}
+Kreuze die Formel an, mit der man $r$ berechnet.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.7]\coordinate (A) at (0,0);\coordinate (B) at (3.2,0);\coordinate (C) at (0.8,1.386);\draw (A) -- (B) -- (C) -- cycle;\mbrwmarke{(C)}{(A)}{(B)}
+\node[font=\small,anchor=south east] at (0.38,0.72) {$p$};\node[font=\small,anchor=south west] at (2.05,0.72) {$q$};\node[font=\small,anchor=north] at (1.6,-0.08) {$r$};\end{tikzpicture}}{%
+\pfkreuzzeile{$r = \sqrt{p^2 - q^2}$\hspace{2.4em}$\square$\ $r = \sqrt{q^2 - p^2}$}
+\pfkreuzzeile{$r = q^2 + p^2$\hspace{3.7em}$\square$\ $r = \sqrt{p^2 + q^2}$}}
+\fusshilfe{\mbox{3:~$r = \sqrt{p^2 + q^2}$}}
+\end{pfaufg}
+
+% 4 Hypotenuse berechnen, eine Aufgabe statt Päckchen (Kette 2 s4 v3: Kommazahlen und Runden)
+\begin{pfaufg}{}{4.}{}
+Die Katheten sind $3{,}6$~m und $4{,}1$~m lang. Berechne die Hypotenuse $c$ auf eine Stelle nach dem Komma.
+\karo{3}\par\smallskip\hfill $c \approx$\linie{18mm}m
+\fusshilfe{\mbox{4:~$c = \sqrt{29{,}77} \approx 5{,}5$ m}}
+\end{pfaufg}
+
+% 5 Dreieck in anderer Lage (Kette 2 s2 v2), gekippt
+\begin{pfaufg}{}{5.}{}
+Im Dreieck ist eine Seite mit ? markiert. Wie lang ist diese Seite?
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.9]\coordinate (R) at (1.6,0);\coordinate (L) at (0.049,0.564);\coordinate (M) at (2.558,2.631);\draw (R) -- (L) -- (M) -- cycle;\mbrwmarke{(R)}{(L)}{(M)}
+\node[font=\small,anchor=north east] at (0.82,0.26) {$33$ cm};\node[font=\small,anchor=west] at (2.15,1.25) {$56$ cm};\node[font=\small,anchor=south east] at (1.28,1.64) {?};\end{tikzpicture}}{%
+\karo{3}\par\smallskip\hfill ? $=$\linie{18mm}cm}
+\fusshilfe{\mbox{5:~65 cm}}
+\end{pfaufg}
+
+% 6 Diagonale im Rechteck (Kette 2 s9 v3), ohne Skizze
+\begin{pfaufg}{}{6.}{}
+Ein Rechteck ist $9$~cm lang und $7$~cm breit. Berechne die Diagonale auf eine Stelle nach dem Komma.
+\karo{3}\par\smallskip\hfill Diagonale $\approx$\linie{18mm}cm
+\fusshilfe{\mbox{6:~$\sqrt{130} \approx 11{,}4$ cm}}
+\end{pfaufg}
+
+% 7 Sache mit Skizze, Prüfungshöhe (Kette 2 s15 v4, eigene Variante zu 2025 · 4 · a)
+\begin{pfaufg}{}{7.}{}
+Ein Steg führt hinunter zu einem Boot. Berechne seine Länge auf eine Stelle nach dem Komma.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.62]\coordinate (P) at (0,0);\coordinate (Q) at (5.95,0);\coordinate (U) at (0,0.6);\draw[line width=0.4pt] (P) -- (Q);\draw (P) -- (U);\draw[line width=1.4pt] (U) -- (Q);\mbrwmarke{(P)}{(Q)}{(U)}
+\node[font=\small,anchor=north] at (2.97,-0.08) {$350$ cm};\node[font=\small,anchor=east] at (-0.08,0.3) {$22$ cm};\node[font=\small,anchor=south] at (3.1,0.32) {Steg};
+\node[font=\scriptsize,mbgrau,anchor=north west] at (0,-0.6) {nicht maßstabsgerecht};\end{tikzpicture}}{%
+\karo{3}\par\smallskip\hfill Steg $\approx$\linie{18mm}cm}
+\fusshilfe{\mbox{7:~$\sqrt{122\,984} \approx 350{,}7$ cm}}
+\end{pfaufg}
+
+% 8 Überstand (Kette 2 s11 v3), ohne Hilfe
+\begin{pfaufg}{}{8.}{}
+Ein Dachsparren ragt unten über die Hauswand hinaus. Wie lang ist der ganze Sparren?
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.62]
+\fill[black!10] (-0.35,-2.0) rectangle (0,0);\draw (0,-2.0) -- (0,0);
+\draw[line width=1.6pt] (-0.529,-0.282) -- (4.5,2.4);
+\draw[dashed,line width=0.4pt] (0,0) -- (4.5,0) -- (4.5,2.4);
+\mbrwmarke{(4.5,0)}{(0,0)}{(4.5,2.4)}
+\node[font=\small,anchor=north] at (2.25,-0.08) {$4{,}5$ m};
+\node[font=\small,anchor=west] at (4.58,1.2) {$2{,}4$ m};
+\node[font=\small,anchor=south east] at (-0.2,-0.1) {$0{,}6$ m};
+\node[font=\scriptsize,mbgrau,anchor=north west] at (0.2,-0.7) {Hauswand links};
+\end{tikzpicture}}{%
+\karo{4}\par\smallskip\hfill Sparren:\linie{18mm}m}
+\fusshilfe{\mbox{8:~$5{,}1 + 0{,}6 = 5{,}7$ m}}
+\end{pfaufg}
+
+% 9 Fehler finden (Kette 5 s1 v3): begründen ohne Rechnung
+\begin{pfaufg}{}{9.}{}
+Tim hat vier Hypotenusen berechnet. Welche Ergebnisse können nicht stimmen? Begründe, ohne genau zu rechnen.
+\gzwei{\begin{minipage}{62mm}\small
+(1)\ $12$ m und $35$ m:\quad $c = 37$ m\par
+(2)\ $11$ cm und $60$ cm:\quad $c = 49$ cm\par
+(3)\ $18$ m und $80$ m:\quad $c = 98$ m\par
+(4)\ $13$ cm und $84$ cm:\quad $c = 85$ cm\end{minipage}}{\karo{3}}
+\fusshilfe{\mbox{9:~(2): kürzer als eine Kathete; (3): so lang wie beide Katheten zusammen}}
+\end{pfaufg}
+
+% 10 am Ende das Original ganz (2020 · 7 · a), mit Punkt Q aus der Abbildung (Q braucht erst 7 b)
+\begin{pfaufg}{P10 ’20}{10.}{}
+Im Dreieck $ABC$ ist bei $C$ ein rechter Winkel. Die Strecke $\overline{BC}$ ist $12$~m lang, die Strecke $\overline{AC}$ $34$~m. Berechne die Länge der Strecke $\overline{AB}$.
+\gzwei{\begin{tikzpicture}[line width=0.7pt]\coordinate (A) at (0,0);\coordinate (B) at (1.2,3.4);\coordinate (C) at (0,3.4);\coordinate (Q) at (0,2.7);\draw (A) -- (B) -- (C) -- cycle;\draw[dashed] (Q) -- (B);\mbrwmarke{(C)}{(A)}{(B)}\fill (Q) circle (1.4pt);
+\node[font=\small] at (-0.05,-0.3) {$A$};\node[font=\small] at (1.37,3.64) {$B$};\node[font=\small] at (-0.1,3.68) {$C$};\node[font=\small,anchor=east] at (-0.06,2.7) {$Q$};
+\node[font=\scriptsize,mbgrau,anchor=north west] at (0,-0.5) {nicht maßstabsgerecht};\end{tikzpicture}}{%
+\karo{3}}
+\fusshilfe{\mbox{10:~$\overline{AB} \approx 36{,}1$ m}}
+\end{pfaufg}
+
+\blattende{2020 \pkt{} 7 \pkt{} a}{Vorher: Die lange Seite \pkt{} P10 \pkt{} 2\quad\textbullet\quad Weiter: Eine kurze Seite \pkt{} Kathete}
+\end{document}
