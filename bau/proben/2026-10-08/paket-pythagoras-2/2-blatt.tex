@@ -1,0 +1,195 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Probe 08.10.2026, Paket Pythagoras, zweite Fassung: erstes Kern-Blatt „Die lange Seite · Hypotenuse“,
+% von Hand gesetzt allein nach aufgabenbank bau/bauregeln.md (Stand 08.10.2026).
+% Präambel aus bau/proben/2026-10-08/paket-pythagoras/2-blatt.tex; ohne Kasten, ohne grauen Hintergrund.
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (Bauregel 6.4)
+% eingerückt (Bauregel 4.7, 6.6): \gEin Einzug, \gSchrift eine Stufe kleiner
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+% Bauregel 6.7: links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle
+\newsavebox{\gbox}\newlength{\gLinks}
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr0.5\textwidth-\gEin-\mbpfnr\relax}%
+  \ifdim\wd\gbox>\dimexpr\gLinks-4mm\relax
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \par\addvspace{7pt}\Needspace*{\mbaufgabehoehe}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{7pt}}
+\makeatother
+% Rechenraum als Karo (Bauregel 6.9): n Rechenschritte = n mal 10 mm
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kennung}{R7K}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+
+\begin{document}
+\pfheftstil
+\fancyfoot[C]{\parbox[t]{\textwidth}{\mbfhbox\par\vspace{1.5mm}{\footnotesize\color{mbgrau}{\scriptsize \kennung}\hfill\thepage}}}
+\pfheftkopf{Die lange Seite \textperiodcentered{} Hypotenuse}{P10}
+
+% 1 Idee sichtbar machen (Bauregel 4.1): der Schüler findet den Satz selbst
+\begin{pfaufg}{}{1.}{}
+Das Dreieck hat einen rechten Winkel. Über jeder Seite steht ein Quadrat. Die schräge Seite ist 5 Kästchen lang.
+\gzwei{\begin{tikzpicture}[scale=0.40,line width=0.7pt]
+\draw[mbgitter,line width=0.3pt] (-4,-3) grid (7,7);
+\draw (0,0) -- (3,0) -- (3,-3) -- (0,-3) -- cycle;
+\draw (0,0) -- (-4,0) -- (-4,4) -- (0,4) -- cycle;
+\draw (0,4) -- (3,0) -- (7,3) -- (4,7) -- cycle;
+\draw[line width=1.4pt] (0,0) -- (3,0) -- (0,4) -- cycle;
+\mbrwmarke{(0,0)}{(3,0)}{(0,4)}
+\end{tikzpicture}}{%
+\textbf{a)}\ Zähle die Kästchen in jedem Quadrat.\par\smallskip
+\hspace*{1.4em}klein:\linie{12mm}und\linie{12mm}\quad groß:\linie{12mm}\par\bigskip
+\textbf{b)}\ Kreuze an, was stimmt.
+\pfkreuzzeile{Die zwei kurzen Seiten sind zusammen so lang wie die lange Seite.}
+\pfkreuzzeile{Die zwei kleinen Quadrate haben zusammen so viele Kästchen wie das große.}}
+\fusshilfe{\mbox{1:~a) 9, 16, 25; b) die Quadrate}}
+\end{pfaufg}
+
+% 2 Erkennen (Bauregel 4.3): drei Lagen; in b) heißt eine Kathete c
+\begin{pfaufg}{}{2.}{}
+Die lange Seite gegenüber dem rechten Winkel heißt \textbf{Hypotenuse}. Die zwei kurzen Seiten am rechten Winkel heißen \textbf{Katheten}. Kreuze in jedem Dreieck die Hypotenuse an.\par\medskip\noindent
+\begin{minipage}[t]{0.32\linewidth}\centering
+\begin{tikzpicture}[line width=0.7pt]\coordinate (P1) at (0,0);\coordinate (P2) at (2.5,0);\coordinate (P3) at (0.9,1.2);\draw (P1) -- (P2) -- (P3) -- cycle;\mbrwmarke{(P3)}{(P1)}{(P2)}
+\node[font=\small,anchor=north] at (1.25,-0.08) {$r$};\node[font=\small,anchor=south east] at (0.40,0.62) {$s$};\node[font=\small,anchor=south west] at (1.75,0.62) {$t$};\end{tikzpicture}\par\smallskip
+{\small a)}\ \kk{$r$}\kk{$s$}\kk{$t$}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.32\linewidth}\centering
+\begin{tikzpicture}[line width=0.7pt]\coordinate (P1) at (0,0);\coordinate (P2) at (2.2,0);\coordinate (P3) at (2.2,1.5);\draw (P1) -- (P2) -- (P3) -- cycle;\mbrwmarke{(P2)}{(P1)}{(P3)}
+\node[font=\small,anchor=north] at (1.1,-0.08) {$a$};\node[font=\small,anchor=west] at (2.28,0.75) {$c$};\node[font=\small,anchor=south east] at (1.05,0.80) {$b$};\end{tikzpicture}\par\smallskip
+{\small b)}\ \kk{$a$}\kk{$b$}\kk{$c$}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.32\linewidth}\centering
+\begin{tikzpicture}[line width=0.7pt]\coordinate (P1) at (0,1.25);\coordinate (P2) at (1.8,0);\coordinate (P3) at (2.8,1.44);\draw (P1) -- (P2) -- (P3) -- cycle;\mbrwmarke{(P2)}{(P1)}{(P3)}
+\node[font=\small,anchor=north east] at (0.85,0.56) {$f$};\node[font=\small,anchor=north west] at (2.37,0.67) {$g$};\node[font=\small,anchor=south] at (1.40,1.42) {$e$};\end{tikzpicture}\par\smallskip
+{\small c)}\ \kk{$e$}\kk{$f$}\kk{$g$}
+\end{minipage}
+\fusshilfe{\mbox{2:~a) $r$; b) $b$; c) $e$}}
+\end{pfaufg}
+
+% 3 Satz in Worten, P10-Form (2022 · 1 · g)
+\begin{pfaufg}{P10 ’22}{3.}{}
+Kreuze die Aussage an, die für jedes rechtwinklige Dreieck stimmt.
+\pfkreuzzeile{Dem rechten Winkel liegt eine Kathete gegenüber.}
+\pfkreuzzeile{$c = a + b$}
+\pfkreuzzeile{Die Summe der Flächeninhalte der Kathetenquadrate ist gleich dem Flächeninhalt des Hypotenusenquadrates.}
+\fusshilfe{\mbox{3:~die dritte Aussage}}
+\end{pfaufg}
+
+% 4 Formel aufstellen (Bauregel 4.5): Hilfe = Rolle finden; z ist die Hypotenuse (2017 · 1 · d)
+\begin{pfaufg}{P10 ’17}{4.}{}
+Kreuze die Gleichung an, die für dieses Dreieck gilt.\par
+Suche zuerst die Hypotenuse – sie steht allein auf einer Seite.
+\gzwei{\begin{tikzpicture}[line width=0.7pt]\coordinate (P1) at (0,0);\coordinate (P2) at (3.2,0);\coordinate (P3) at (0,2.2);\draw (P1) -- (P2) -- (P3) -- cycle;\mbrwmarke{(P1)}{(P2)}{(P3)}
+\node[font=\small,anchor=north] at (1.6,-0.08) {$y$};\node[font=\small,anchor=east] at (-0.08,1.1) {$x$};\node[font=\small,anchor=south west] at (1.62,1.12) {$z$};\end{tikzpicture}}{%
+\pfkreuzzeile{$x^2 = y^2 + z^2$\hspace{3em}$\square$\ $z^2 = x^2 - y^2$}
+\pfkreuzzeile{$z^2 \cdot y^2 = x^2$\hspace{3.15em}$\square$\ $z^2 = x^2 + y^2$}}
+\fusshilfe{\mbox{4:~$z^2 = x^2 + y^2$}}
+\end{pfaufg}
+
+% 5 dieselbe Rolle, jetzt mit Wurzel, ohne Hilfe (2021 · 1 · h)
+\begin{pfaufg}{P10 ’21}{5.}{}
+Kreuze die Formel an, mit der man $z$ berechnet.
+\gzwei{\begin{tikzpicture}[line width=0.7pt]\coordinate (P1) at (0,0);\coordinate (P2) at (3.2,0);\coordinate (P3) at (3.2,2.2);\draw (P1) -- (P2) -- (P3) -- cycle;\mbrwmarke{(P2)}{(P1)}{(P3)}\node[font=\small,anchor=west] at (3.28,1.1) {$y$};\node[font=\small,anchor=south east] at (1.555,1.166) {$z$};\node[font=\small,anchor=north] at (1.6,-0.08) {$x$};\end{tikzpicture}}{%
+\pfkreuzzeile{$z = \sqrt{x^2 - y^2}$\hspace{2.4em}$\square$\ $z = \sqrt{x^2 + y^2}$}
+\pfkreuzzeile{$z = \sqrt{y^2 - x^2}$\hspace{2.4em}$\square$\ $z = y^2 + x^2$}}
+\fusshilfe{\mbox{5:~$z = \sqrt{x^2 + y^2}$}}
+\end{pfaufg}
+
+% 6 erste Rechnung, Kopfrechnen; die Lücke zeigt die Zwischengröße c²
+\begin{pfaufg}{}{6.}{}
+Die Katheten eines rechtwinkligen Dreiecks sind $6$~cm und $8$~cm lang. Berechne die Hypotenuse $c$.\par\medskip
+\hspace*{1.4em}$c^2 =$\linie{40mm}\hspace{8mm}$c =$\linie{22mm}cm
+\fusshilfe{\mbox{6:~$c = 10$ cm}}
+\end{pfaufg}
+
+% 7 Taschenrechner-Zahlen, ohne Lücke für c²
+\begin{pfaufg}{}{7.}{}
+Die Katheten eines rechtwinkligen Dreiecks sind $36$~cm und $15$~cm lang. Berechne die Hypotenuse $c$.
+\karo{3}\par\smallskip\hfill $c =$\linie{18mm}cm
+\fusshilfe{\mbox{7:~$c = 39$ cm}}
+\end{pfaufg}
+
+% eingerückt: weitere derselben Sorte (Bauregel 4.7)
+\setlength{\gEin}{8mm}\let\gSchrift\small
+\begin{pfaufg}{}{8.}{}
+Berechne die Hypotenuse aus den beiden Katheten.\par\smallskip
+a)\ $36$ cm und $48$ cm\hfill $c =$\linie{18mm}cm\par\smallskip
+b)\ $2{,}5$ m und $6$ m\hfill $c =$\linie{18mm}m
+\karo{3}
+\fusshilfe{\mbox{8:~a) 60 cm; b) 6,5 m}}
+\end{pfaufg}
+\setlength{\gEin}{0pt}\let\gSchrift\relax
+
+% 9 Wurzel geht nicht auf: exakt, dann gerundet (Bauregel 5.1)
+\begin{pfaufg}{}{9.}{}
+Die Katheten eines rechtwinkligen Dreiecks sind $4$~cm und $9$~cm lang. Berechne die Hypotenuse $c$. Runde auf eine Stelle nach dem Komma.
+\karo{3}\par\smallskip\hfill $c = \sqrt{\rule{0pt}{2.2ex}\hspace{14mm}} \approx$\linie{18mm}cm
+\fusshilfe{\mbox{9:~$c = \sqrt{97} \approx 9{,}8$ cm}}
+\end{pfaufg}
+
+% 10 Sache: das Dreieck steckt im Rechteck; die Skizze zeigt es
+\begin{pfaufg}{}{10.}{}
+Wie lang ist die Diagonale $d$ des Bilderrahmens?
+\gzwei{\begin{tikzpicture}[line width=0.7pt]\draw (0,0) rectangle (3.6,1.92);\draw (0.25,0.25) rectangle (3.35,1.67);\draw[line width=1.2pt] (0,0) -- (3.6,1.92);
+\node[font=\small,anchor=north] at (1.8,-0.08) {$45$ cm};\node[font=\small,anchor=west] at (3.68,0.96) {$24$ cm};\node[font=\small,anchor=south east] at (1.65,0.95) {$d$};\end{tikzpicture}}{%
+\karo{3}\par\smallskip\hfill $d =$\linie{18mm}cm}
+\fusshilfe{\mbox{10:~$d = 51$ cm}}
+\end{pfaufg}
+
+% 11 Teil eines Originals: Maße nur in der Skizze; die flache Rampe täuscht (2025 · 4 · a, Winkel weg)
+\begin{pfaufg}{nach P10 ’25}{11.}{}
+Familie Yücel baut vor der Haustür eine Rampe für Rollstühle. Berechne die Länge $x$ der Rampe.
+\gzwei{\begin{tikzpicture}[line width=0.7pt]\coordinate (P1) at (0,0);\coordinate (P2) at (5.95,0);\coordinate (P3) at (5.95,0.56);\draw (P1) -- (P2) -- (P3) -- cycle;\mbrwmarke{(P2)}{(P1)}{(P3)}
+\node[font=\small,anchor=north] at (2.97,-0.08) {$170$ cm};\node[font=\small,anchor=west] at (6.03,0.28) {$16$ cm};\node[font=\small,anchor=south] at (2.9,0.32) {$x$};
+\node[font=\scriptsize,mbgrau,anchor=north west] at (0,-0.5) {nicht maßstabsgerecht};\end{tikzpicture}}{%
+\karo{3}\par\smallskip\hfill $x \approx$\linie{18mm}cm}
+\fusshilfe{\mbox{11:~$x \approx 170{,}8$ cm}}
+\end{pfaufg}
+
+% 12 ein Schritt mehr: Überstand addieren (Bank e1-k2-s11-v1)
+\begin{pfaufg}{}{12.}{}
+Eine Leiter lehnt an einer Mauer. Oben ragt sie über die Mauerkante hinaus. Wie lang ist die ganze Leiter?
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.55]
+\fill[black!10] (2.4,0) rectangle (3.0,4);\draw (2.4,0) -- (2.4,4) -- (3.0,4);
+\draw (-0.6,0) -- (3.6,0);
+\draw[line width=1.6pt] (0,0) -- (2.985,4.976);
+\mbrwmarke{(2.4,0)}{(0,0)}{(2.4,4)}
+\draw[|-|,line width=0.4pt] (0,-0.45) -- (2.4,-0.45) node[midway,below,font=\small] {$0{,}9$ m};
+\node[font=\small,anchor=west] at (3.05,2.0) {$4$ m};
+\node[font=\small,anchor=east] at (2.55,4.6) {$1$ m};
+\node[font=\scriptsize,mbgrau,anchor=north west] at (-0.6,-1.3) {nicht maßstabsgerecht};
+\end{tikzpicture}}{%
+\karo{4}\par\smallskip\hfill Leiter:\linie{18mm}m}
+\fusshilfe{\mbox{12:~$5{,}1$ m}}
+\end{pfaufg}
+
+% 13 am Ende das Original ohne Hilfe (2020 · 7 · a; Punkt Q fehlt, darum „nach“)
+\begin{pfaufg}{nach P10 ’20}{13.}{}
+Im Dreieck $ABC$ ist bei $C$ ein rechter Winkel. Die Strecke $\overline{BC}$ ist $12$~m lang, die Strecke $\overline{AC}$ $34$~m. Berechne die Länge der Strecke $\overline{AB}$.
+\gzwei{\begin{tikzpicture}[line width=0.7pt]\coordinate (P1) at (0,0);\coordinate (P2) at (1.2,3.4);\coordinate (P3) at (0,3.4);\draw (P1) -- (P2) -- (P3) -- cycle;\mbrwmarke{(P3)}{(P1)}{(P2)}\node[font=\small] at (-0.05,-0.3) {$A$};\node[font=\small] at (1.37,3.64) {$B$};\node[font=\small] at (-0.1,3.68) {$C$};\node[font=\scriptsize,mbgrau,anchor=north west] at (0,-0.5) {nicht maßstabsgerecht};\end{tikzpicture}}{%
+\karo{3}}
+\fusshilfe{\mbox{13:~$\overline{AB} \approx 36{,}1$ m}}
+\end{pfaufg}
+
+\par\vfill\noindent\begin{minipage}{\linewidth}{\scriptsize\color{mbgrau}Originale: 2017 \textperiodcentered{} 1 \textperiodcentered{} d \quad 2020 \textperiodcentered{} 7 \textperiodcentered{} a \quad 2021 \textperiodcentered{} 1 \textperiodcentered{} h \quad 2022 \textperiodcentered{} 1 \textperiodcentered{} g \quad 2025 \textperiodcentered{} 4 \textperiodcentered{} a\par}\smallskip
+{\footnotesize Vorher: Quadrat und Wurzel\quad\textbullet\quad Weiter: Eine kurze Seite \textperiodcentered{} Kathete\par}\end{minipage}
+\end{document}

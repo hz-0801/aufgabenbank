@@ -1,0 +1,32 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Probe 08.10.2026, Paket Pythagoras, zweite Fassung: Übersicht nach bau/bauregeln.md § 3 (Stand 08.10.2026).
+% Bereiche als Überschrift, je Blatt eine Zeile, Name in Schülersprache; Fachwort nur, wenn es neu ist;
+% kein grauer Zusatz; Rand-Blätter grau; das gelieferte Blatt ▸ fett; davor „Vorher“, danach „Weiter“.
+\newcommand{\kennung}{R7K}
+\newcommand{\bereich}[1]{\par\addvspace{14pt}\noindent{\large\bfseries #1}\par\nobreak\vspace{4pt}}
+\newcommand{\bl}[1]{\par\noindent #1\par\vspace{3pt}}
+\newcommand{\blrand}[1]{\par\noindent{\color{mbgrau}#1}\par\vspace{3pt}}
+\newcommand{\blhier}[1]{\par\noindent\llap{$\blacktriangleright$\hspace{0.5em}}\textbf{#1}\par\vspace{3pt}}
+\begin{document}
+\pfheftstil
+\fancyfoot[C]{{\footnotesize\color{mbgrau}\kennung\hfill\thepage}}
+\pfheftkopf{Satz des Pythagoras}{P10}
+
+\bereich{Vorher}
+\bl{Quadrat und Wurzel}
+\bl{Rechter Winkel im Dreieck}
+
+\bereich{Satz des Pythagoras}
+\blhier{Die lange Seite \textperiodcentered{} Hypotenuse}
+\blrand{Warum der Satz stimmt}
+\bl{Eine kurze Seite \textperiodcentered{} Kathete}
+\blrand{Ist der Winkel recht? \textperiodcentered{} Umkehrung}
+
+\bereich{In Figuren und Körpern}
+\bl{Das Dreieck erst finden}
+\bl{Schräge Strecken im Körper}
+
+\bereich{Weiter}
+\bl{Seiten und Winkel mit sin, cos, tan}
+\end{document}
