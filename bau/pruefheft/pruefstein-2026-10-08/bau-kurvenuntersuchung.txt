@@ -1,0 +1,9 @@
+Prüfstein Kurvenuntersuchung nach „Programmfehler 08.10.“ (vier Punkte)
+
+Befehl: python3 werkzeuge/pruefheft.py --kapitel kurvenuntersuchung --pruefung abi-gk --art normal --ohne-register --aus bau/pruefheft/pruefstein-2026-10-08/kurvenuntersuchung-normal
+Ergebnis: Heft 31 Seiten, Lösung 7 Seiten, 0 Fehler; 12 Stufen, 96 Aufgaben (wie pruefstein-2026-10-09).
+Vorher → nachher (gegen pruefstein-2026-10-09):
+- „Gegeben ist/sind“ im Heft: 53 → 13 (davon die letzte echte Aufgabe jeder Art mit vollem Stamm, Bauregel 4.4)
+- Zählungen in Stufenköpfen: 12 → 0; Zählung je Stufe jetzt in der Schlusszeile auf der letzten Seite
+- Fuß-Einträge mit mehr als Ergebnis (Rechenkette, Begründung, Erklärung): 22 von 89 → 8 von 91 (Rest: Aufzählungen mehrerer Ergebnisse, kein Rechenweg)
+Seitenbilder (100 dpi): kurvenuntersuchung-normal/png/seite-01..03.png (Nr. 7 auf Seite 2)

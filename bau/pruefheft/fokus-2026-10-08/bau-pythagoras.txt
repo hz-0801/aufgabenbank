@@ -1,0 +1,13 @@
+Grundform G1 (Beschlüsse 07.10.), Kennung MRD
+dreiecke-normal-fokus-pythagoras: 7 Seiten, Fehler 0, Missing character 0, Overfull 0
+dreiecke-normal-fokus-pythagoras-loesung: 2 Seiten, Fehler 0, Missing character 0, Overfull 0
+Ordner: bau/pruefheft/fokus-2026-10-08/dreiecke-normal-fokus-pythagoras
+Aufgaben: 24 (Pflichtweg 17, eingerückt 7); Herkunft: eigen 7, nach P10 13, BB/BE 4
+Prüfung: keine Abweichung
+7 Seiten mit allen Originalen – neu mit Auswahl je Sorte (Bauregeln 2.1)
+Grundform G1 (Beschlüsse 07.10.), Kennung MRD
+dreiecke-normal-fokus-pythagoras: 5 Seiten, Fehler 0, Missing character 0, Overfull 0
+dreiecke-normal-fokus-pythagoras-loesung: 2 Seiten, Fehler 0, Missing character 0, Overfull 0
+Ordner: bau/pruefheft/fokus-2026-10-08/dreiecke-normal-fokus-pythagoras
+Aufgaben: 17 (Pflichtweg 17, eingerückt 0); Herkunft: eigen 7, nach P10 6, BB/BE 4
+Prüfung: keine Abweichung

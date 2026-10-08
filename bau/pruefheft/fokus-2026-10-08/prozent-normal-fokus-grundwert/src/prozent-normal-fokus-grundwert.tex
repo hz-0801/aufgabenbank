@@ -1,0 +1,96 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+
+\makeatletter
+% Überschrift (Art, Gruppe) im Kasten der nächsten Aufgabe: nie allein am Seitenende (wie \pfab)
+\let\gkopf\empty
+\newcommand{\gueber}[1]{\gdef\gkopf{#1}}
+\newcommand{\gueberdazu}[1]{\ifx\gkopf\empty\gdef\gkopf{#1}\else\expandafter\gdef\expandafter\gkopf\expandafter{\gkopf#1}\fi}
+% eingerückt (B6): \gEin Einzug, \gSchrift eine Stufe kleiner; die Überschrift bleibt ohne Einzug
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+% Ankreuzzeile mit hängendem Einzug (lange Aussagen brechen unter dem Text um, nicht unter dem Kästchen)
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+% Bauregeln 6.7: kurze Optionen in einer Zeile
+\newcommand{\gkreuzreihe}[1]{\par\noindent\hspace*{1.6em}#1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2.2em}}
+% Bauregeln 6.6: links, was man ansieht, rechts, was man tut; Spaltengrenze auf dem ganzen Blatt an derselben
+% Stelle (halbe Satzbreite vom linken Rand); untereinander, wenn die Skizze breiter als die linke Spalte ist
+\newsavebox{\gbox}\newlength{\gLinks}
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr0.5\textwidth-\gEin-\mbpfnr\relax}%
+  \ifdim\wd\gbox>\dimexpr\gLinks-4mm\relax
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[c]{\gLinks}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[c]{\dimexpr\linewidth-\gLinks\relax}\raggedright #2\end{minipage}%
+  \fi\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \ifx\gkopf\empty\else\noindent\gkopf\par\global\let\gkopf\empty\fi
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr-\mbpfbe\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \begin{minipage}[t]{\mbpfbe}\raggedleft\small\color{mbgrau}\strut#3\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \par\addvspace{6pt}\Needspace*{\mbaufgabehoehe}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{6pt}}
+\makeatother
+
+\begin{document}
+\pfheftstil
+\fancyfoot[C]{\parbox[t]{\textwidth}{\mbfhbox\par\vspace{1.5mm}{\footnotesize\color{mbgrau}{\scriptsize 3Z2}\hfill\thepage}}}
+\pfheftkopf{Grundwert}{P10}
+\begin{pfaufg}{}{1.}{}
+Notiere die Formel für den Grundwert G.\hfill{\color{black!45}\rule[-1pt]{0.45\linewidth}{0.4pt}}
+\fusshilfe{\mbox{1:~$G = W \cdot  100 : p$}}
+\end{pfaufg}
+\begin{pfaufg}{}{2.}{}
+Was ist hier das Ganze? Unterstreiche es. Rechne nicht.\par\smallskip\noindent a) In der Klasse sind $28$ Kinder. $7$ davon haben einen Hund.\par\noindent b) $45$ Gäste essen vegetarisch. Eingeladen sind $150$ Gäste.\par\noindent c) Ein Pullover kostete $60\,€$. Jetzt kostet er $45\,€$.
+\end{pfaufg}
+\begin{pfaufg}{}{3.}{}
+Nenne W und p.\par\smallskip\noindent a) 30 \% der Klasse sind 9 Kinder.\par\vspace{6mm}\noindent{\color{black!45}\rule{\linewidth}{0.4pt}}\par\smallskip\noindent b) 18 € Rabatt sind 15 \% des alten Preises.\par\vspace{6mm}\noindent{\color{black!45}\rule{\linewidth}{0.4pt}}
+\fusshilfe{\mbox{3:~a) W = 9 Kinder, p = 30; b) W = 18 €, p = 15}}
+\end{pfaufg}
+\par\addvspace{6pt}\gueber{\vspace{10pt}{\large\bfseries Vom Teil zum Ganzen}\par\vspace{2pt}}
+\begin{pfaufg}{}{4.}{}
+Der graue Abschnitt ist $20\,\%$ des Ganzen. Trage den Abschnitt so oft ab, bis du bei $100\,\%$ bist. Markiere das Ganze.
+\gzwei{\streifen[0]{20}{$0\,\%$}{}}{\par\noindent \leerfeld[Abschnitte] \par}
+\end{pfaufg}
+\begin{pfaufg}{}{5.}{}
+Ein Händler hat $24$ kg Äpfel verkauft. Das sind $10\,\%$ seiner Äpfel. Wie viel kg Äpfel hatte er?
+\par\noindent \leerfeld[kg] \par
+\fusshilfe{\mbox{5:~$240$ kg}}
+\end{pfaufg}
+\begin{pfaufg}{}{6.}{}
+$7\,\%$ eines Betrags sind $56\,€$. Wie viel ist das Ganze?
+\par\smallskip\noindent \begin{tikzpicture}[baseline=(T.north)]\node[inner sep=0,outer sep=1.5pt] (T) {\renewcommand{\arraystretch}{1.35}\begin{tabular}{|r|r|}\hline \textbf{Prozent} & \textbf{€} \\ \hline $7\,\%$ & $56$\,€ \\ \hline $1\,\%$ & \leerzelle \\ \hline $100\,\%$ & \leerzelle \\ \hline\end{tabular}};\draw[->,mbgrau,line width=0.5pt] ($(T.north west)!0.3750!(T.south west)$) to[out=180,in=180,looseness=1.8] ($(T.north west)!0.6250!(T.south west)$);\draw[->,mbgrau,line width=0.5pt] ($(T.north east)!0.3750!(T.south east)$) to[out=0,in=0,looseness=1.8] ($(T.north east)!0.6250!(T.south east)$);\draw[->,mbgrau,line width=0.5pt] ($(T.north west)!0.6250!(T.south west)$) to[out=180,in=180,looseness=1.8] ($(T.north west)!0.8750!(T.south west)$);\draw[->,mbgrau,line width=0.5pt] ($(T.north east)!0.6250!(T.south east)$) to[out=0,in=0,looseness=1.8] ($(T.north east)!0.8750!(T.south east)$);\end{tikzpicture}\par
+\fusshilfe{\mbox{6:~$800\,€$}}
+\end{pfaufg}
+\begin{pfaufg}{}{7.}{}
+$36\,\%$ einer Menge sind $81$ kg. Wie viel kg ist die ganze Menge?
+\par\noindent \leerfeld[kg] \par
+\fusshilfe{\mbox{7:~$225$ kg}}
+\end{pfaufg}
+\begin{pfaufg}{nach P10 ’23}{8.}{}
+Mia gibt 25 \% ihres Gewinns an ihre Eltern ab; das sind 200 €. Gib an, wie hoch der ganze Gewinn war.
+\rechenplatz{1}
+\fusshilfe{\mbox{8:~800 €}}
+\end{pfaufg}
+\par\setlength{\gEin}{8mm}\let\gSchrift\small
+\begin{pfaufg}{P10 ’25}{9.}{}
+Ein T-Shirt ist um 6 € billiger geworden. Dieser Nachlass entspricht 20 \% des ursprünglichen Preises. Gib den ursprünglichen Preis an.
+\rechenplatz{1}
+\fusshilfe{\mbox{9:~30 €}}
+\end{pfaufg}
+\par\setlength{\gEin}{0pt}\let\gSchrift\relax
+\par\addvspace{6pt}\gueber{\vspace{10pt}{\large\bfseries Mit einem Bruch}\par\vspace{2pt}}
+\begin{pfaufg}{nach P10 ’19}{10.}{}
+Für ein Spiel soll Schwarz in $\tfrac{2}{3}$ der Fälle gezogen werden. Im Gefäß liegen 4 schwarze Kugeln. Berechne, wie viele Kugeln insgesamt im Gefäß liegen müssen.
+\rechenplatz{2}
+\fusshilfe{\mbox{10:~G = 6 Kugeln}}
+\end{pfaufg}
+\par\vfill\noindent\begin{minipage}{\linewidth}{\footnotesize\color{black!70}Grundwert in der P10, letzte fünf Jahre: Vom Teil zum Ganzen 2× (zuletzt 2025) · Mit einem Bruch nicht (zuletzt 2019); je EBR und FOR. Nicht geprüft: vermehrter und verminderter Grundwert.\par\noindent Vorher: Prozent von einem Betrag · Weiter: Erhöhung und Senkung in Prozent\par}\end{minipage}
+\end{document}

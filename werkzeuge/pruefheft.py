@@ -2949,6 +2949,11 @@ def _vorn(k, n):
     out = []
     for t in _teile_oben(k or '', ['; ']):
         if len(klartext('; '.join(out + [t]))) > n:
+            if not out:   # schon der erste Teil zu lang: seine Glieder bis zum Komma („fallend auf [0; …], steigend …“)
+                glieder = _teile_oben(t, [', '])
+                while glieder and len(klartext(', '.join(glieder))) > n:
+                    glieder.pop()
+                return ', '.join(glieder)
             break
         out.append(t)
     return '; '.join(out)
@@ -3268,7 +3273,7 @@ def stammsatz(D, alle):
 
 def stamm_tex(k):
     """Gemeinsamer Stamm über den Aufgaben: in der Textspalte, bleibt mit der ersten Aufgabe zusammen."""
-    return ('\\par\\addvspace{6pt}\\Needspace*{10\\baselineskip}{\\leftskip\\mbpfnr\\noindent ' + k
+    return ('\\par\\addvspace{6pt}\\Needspace*{10\\baselineskip}{\\leftskip\\mbpfnr\\rightskip\\mbpfbe\\noindent ' + k
             + '\\par\\nobreak}')
 
 
