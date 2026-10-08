@@ -90,3 +90,4 @@ nur Läufe über die geschriebene Datei.
 
 - loesungsgrafik ist überall leer; Zeichenaufgaben beschreiben die
   Lösung über Punkte oder Eintragungen in Worten.
+- 2026-10-08 Aufräumlauf: Sperre Punkte (3|0|0), (0|9|0) (Original 2020-be-gk-B3.1e) in e4-k1-s7-v2 → P(4|0|0), Q(0|6|0); Ergebnis t hängt nur von der Höhe 10 ab, unverändert; Prüfskript: Abweichungen 1 → 0.
