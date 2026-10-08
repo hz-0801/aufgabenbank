@@ -121,3 +121,4 @@ Neu: e2 s6 „rückwärts“ (3), e2 Prüfungshöhe 2023-A-2d (2), e5 s0
 - Schrittnamen nur in neuen und umgeschriebenen Zeilen.
 - gegenlese.md und gegenlese2.md beziehen sich auf den Stand vom
   27./28.09.; nicht kompiliert (kein LaTeX in der Sitzung).
+- 2026-10-08 Aufräumlauf: Sperre f(x − 2) (Original 2024-bebb-gk-A1.7b) in e5-k1-s6-v2 und e5-k2-s2-v1 → f(x − 3), Lösung und pruef nachgerechnet (g'(5) = 4); Prüfskript: Abweichungen 2 → 0.
