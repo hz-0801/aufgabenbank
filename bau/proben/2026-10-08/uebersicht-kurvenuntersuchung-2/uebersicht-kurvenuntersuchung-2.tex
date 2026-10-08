@@ -1,0 +1,88 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\usepackage{multicol}
+% Probe Serie 08.10.2026: Übersichtsblatt Kurvenuntersuchung, Fassung 2 (Stichpunkte), von Hand gesetzt.
+% Reihenfolge und Rand/Kern aus Fassung 1 (bau/proben/2026-10-08/uebersicht-kurvenuntersuchung/);
+% Handgriffe aus mathe-nachhilfe abitur/gliederung/kurvenuntersuchung.md (Zuschnitt-Zeilen, 50 Sorten);
+% "selten" = Sorte mit höchstens einer Aufgabe 2022–2026. Keine Aufgaben, keine Lösungen.
+\newcommand{\kennung}{R4V}
+\newcommand{\ueblock}[1]{\par\addvspace{10pt}\noindent{\small\scshape\color{mbgrau}#1}\par\nobreak\vspace{-2pt}%
+  \noindent{\color{mbgitter}\rule{\linewidth}{0.4pt}}\par\nobreak\vspace{1pt}}
+\newcommand{\ueab}[2]{\par\addvspace{6pt}\noindent{\bfseries #1}\ifblank{#2}{}{\hspace{0.6em}{\footnotesize\color{mbgrau}Rand}}\par\nobreak\vspace{2pt}}
+\newcommand{\uf}[1]{\par\noindent\hangindent=1.25em\hangafter=1\makebox[1.25em][l]{$\square$}{\small #1}\par\vspace{3.5pt}}
+\newcommand{\kl}[1]{{\footnotesize\color{black!70}(#1)}}
+\newcommand{\selten}{\hspace{0.4em}{\footnotesize\color{mbgrau}selten}}
+\setlength{\columnsep}{9mm}
+
+\begin{document}
+\pfheftstil
+\fancyfoot[C]{{\footnotesize\color{mbgrau}\kennung\hfill\thepage}}
+\pfheftkopf{Kurvenuntersuchung}{Abi GK \textperiodcentered{} Übersicht}
+\noindent Was ist gemeint? Kannst du das? Frag, wenn du unsicher bist.
+\vspace{2pt}
+
+\begin{multicols}{2}
+\raggedright\setlength{\parskip}{0pt}
+\ueblock{Eigenschaften am Term}
+
+\ueab{Graphen verschieben und spiegeln}{}
+\uf{$-f(x)$, $f(-x)$: An welcher Achse gespiegelt? \kl{Drehung, selten}}
+\uf{$f(x-2)$, $f(x)+3$, $2f(x)$: Was macht der Graph?}
+\uf{Wie wird der eine Graph zum anderen?\selten}
+
+\ueab{Für große und kleine $x$}{}
+\uf{Wohin für $x\to\pm\infty$? Höchste Potenz ansehen.}
+\uf{Und bei $(4-x)\cdot e^{x}$? Wer gewinnt?}
+
+\ueab{Symmetrie}{rand}
+\uf{Symmetrisch? Sieh auf die Exponenten. \kl{mit $f(-x)$, selten}}
+
+\ueab{Nullstellen und Achsenschnittpunkte}{}
+\uf{Achsenschnittpunkte: $f(0)$ und $f(x)=0$, auch mit $e^{x}$.}
+\uf{Ausklammern; $e^{x}$ ist nie null. \kl{Substitution}\selten}
+\uf{Wie viele Nullstellen? Am Produkt ablesen.\selten}
+
+\ueblock{Ableitung}
+
+\ueab{Wo steigt, wo fällt der Graph?}{}
+\uf{Am Graphen von $f'$: über oder unter der $x$-Achse?}
+\uf{Am Term von $f'$ oder aus Hoch- und Tiefpunkt.\selten}
+\uf{Was sagen $f(a)$ und $f'(a)$ über den Graphen?\selten}
+
+\ueab{Hoch- und Tiefpunkte}{}
+\uf{Alle Extrempunkte: $f'(x)=0$, dann $f''$ prüfen.}
+\uf{Extrempunkt bei $x_0$? Zeige $f'(x_0)=0$.}
+\uf{Bei $(x+3)\cdot e^{-x}$: Produktregel. \kl{Verbindungsgerade}}
+
+\ueab{Wendepunkte}{}
+\uf{Wendepunkt: $f''(x)=0$ -- oder am Graphen ablesen.}
+\uf{Wendepunkt bei $e$-Funktion: zweimal ableiten.}
+\uf{Was bedeutet der Wendepunkt in der Sache?\selten}
+
+\ueab{Den Graphen skizzieren}{rand}
+\uf{Graph aus Hoch-, Tief-, Wendepunkt skizzieren.\selten}
+\uf{Werte ablesen, Verlauf in der Sache beschreiben.\selten}
+
+\ueblock{Anwenden}
+
+\ueab{Maße aus dem Graphen}{}
+\uf{Wie hoch, wie breit? Werte mal Maßstab. \kl{Kreisbögen}}
+\uf{Welcher Quader passt um das Profil?}
+
+\ueab{Größte Fläche, größter Abstand}{rand}
+\uf{Rechteck unter dem Graphen: $A(u)$ maximieren.\selten}
+\uf{Abstand $d(x)=f(x)-g(x)$ maximieren.\selten}
+
+\ueab{Gleichungen und Ungleichungen}{}
+\uf{Schnittstelle von $f$ und $g$ nachweisen.\selten}
+\uf{Wo ist $f>g$? Differenz faktorisieren. \kl{Betrag}\selten}
+\uf{Grafisch lösen; $f'(x)=$ mittlere Steigung.\selten}
+
+\ueab{Funktionsgleichung aus Bedingungen}{rand}
+\uf{Gerade durch zwei Punkte aufstellen.\selten}
+\uf{Gleichungen für $a,b,c,d$ aufstellen. \kl{knickfrei}\selten}
+
+\vfill
+\noindent{\small\color{mbgrau}Weiter: Graphen verschieben und spiegeln}
+\end{multicols}
+\end{document}
