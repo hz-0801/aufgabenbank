@@ -40,10 +40,29 @@ Kreuze in jedem Dreieck die Hypotenuse an.\par\medskip\noindent
 \fusshilfe{\mbox{1:~a) $c$; b) $r$; c) $s$; d) $e$}}
 \end{pfaufg}
 
+% 2 Grund des Satzes, nach dem Benennen: Flächen addieren, nicht Längen (Fehler c = a + b; Lehrer 09.10.)
+\begin{pfaufg}{}{2.}{}
+Über jeder Seite des rechtwinkligen Dreiecks steht ein Quadrat. Die Hypotenuse ist 5 Kästchen lang.
+\gzwei{\begin{tikzpicture}[scale=0.40,line width=0.7pt]
+\draw[mbgitter,line width=0.3pt] (-4,-3) grid (7,7);
+\draw (0,0) -- (3,0) -- (3,-3) -- (0,-3) -- cycle;
+\draw (0,0) -- (-4,0) -- (-4,4) -- (0,4) -- cycle;
+\draw (0,4) -- (3,0) -- (7,3) -- (4,7) -- cycle;
+\draw[line width=1.4pt] (0,0) -- (3,0) -- (0,4) -- cycle;
+\mbrwmarke{(0,0)}{(3,0)}{(0,4)}
+\end{tikzpicture}}{%
+\textbf{a)}\ Zähle die Kästchen in jedem Quadrat.\par\smallskip
+\hspace*{1.4em}Katheten:\linie{12mm}und\linie{12mm}\par\smallskip\hspace*{1.4em}Hypotenuse:\linie{12mm}\par\bigskip
+\textbf{b)}\ Kreuze an, was stimmt.
+\pfkreuzzeile{Die zwei Katheten sind zusammen so lang wie die Hypotenuse.}
+\pfkreuzzeile{Die zwei kleinen Quadrate haben zusammen so viele Kästchen wie das große.}}
+\fusshilfe{\mbox{2:~a) 9, 16, 25; b) die Quadrate}}
+\end{pfaufg}
+
 % 3 Gleichung aufstellen ohne Rechnen: wechselnde Buchstaben, Punktnamen wie in der P10,
 % ein Dreieck ohne rechten Winkel (Fehler: „c ist immer die Hypotenuse“, Satz ohne rechten Winkel)
-\begin{pfaufg}{}{2.}{}
-Der Satz des Pythagoras: In jedem rechtwinkligen Dreieck gilt \mbox{Hypotenuse$^2$ = Kathete$^2$ + Kathete$^2$.}\par\smallskip
+\begin{pfaufg}{}{3.}{}
+Das gilt in jedem rechtwinkligen Dreieck. Es ist der Satz des Pythagoras: \mbox{Hypotenuse$^2$ = Kathete$^2$ + Kathete$^2$.}\par\smallskip
 Schreibe für jedes Dreieck die Gleichung des Satzes auf. Hat ein Dreieck keinen rechten Winkel, schreibe „gilt nicht“.\par
 Suche zuerst die Hypotenuse – sie steht allein auf einer Seite der Gleichung.\par\medskip\noindent
 \begin{minipage}[b]{0.245\linewidth}\centering
@@ -66,12 +85,12 @@ Suche zuerst die Hypotenuse – sie steht allein auf einer Seite der Gleichung.\
 \node[font=\small,anchor=north] at (1.25,-0.08) {$m$};\node[font=\small,anchor=east] at (0.10,0.75) {$k$};\node[font=\small,anchor=south west] at (1.48,0.78) {$l$};\end{tikzpicture}\par\smallskip
 {\small d)}\linie{28mm}
 \end{minipage}
-\fusshilfe{\mbox{2:~a) $w^2 = u^2 + v^2$; b) $x^2 = y^2 + z^2$; c) $\overline{BC}^2 = \overline{AB}^2 + \overline{AC}^2$; d) gilt nicht}}
+\fusshilfe{\mbox{3:~a) $w^2 = u^2 + v^2$; b) $x^2 = y^2 + z^2$; c) $\overline{BC}^2 = \overline{AB}^2 + \overline{AC}^2$; d) gilt nicht}}
 \end{pfaufg}
 
 % 4 Rechnen mit glatten Zahlen; a) grau vorgerechnet (Bauregel 1.5), b) selbst; Probe statt Kästchenbild
 % (Fehler: Wurzel vergessen, c = a + b)
-\begin{pfaufg}{}{3.}{}
+\begin{pfaufg}{}{4.}{}
 Die Katheten eines rechtwinkligen Dreiecks sind gegeben. Berechne die Hypotenuse $c$.\par\medskip
 \grau{a)\ $6$ cm und $8$ cm:\quad $c^2 = 6^2 + 8^2 = 36 + 64 = 100$\quad $\Rightarrow$\quad $c = \sqrt{100} = 10$ cm}\par\medskip
 \noindent\begin{minipage}[t]{0.48\linewidth}
@@ -83,11 +102,11 @@ c)\ $9$ cm und $12$ cm
 \karo{3}
 \end{minipage}
 \par Prüfe dein Ergebnis: Die Hypotenuse ist länger als jede Kathete, aber kürzer als beide zusammen.
-\fusshilfe{\mbox{3:~b) 13 cm; c) 15 cm}}
+\fusshilfe{\mbox{4:~b) 13 cm; c) 15 cm}}
 \end{pfaufg}
 
 % 5 Rechenaufwand erst nach allen Denkschritten, kurz; Komma am Ende
-\begin{pfaufg}{}{4.}{}
+\begin{pfaufg}{}{5.}{}
 Berechne die Hypotenuse $c$ aus den beiden Katheten. Runde, wo nötig, auf eine Stelle nach dem Komma.\par\smallskip
 \noindent\begin{minipage}[t]{0.48\linewidth}
 a)\ $4$ cm und $9$ cm
@@ -97,53 +116,53 @@ a)\ $4$ cm und $9$ cm
 b)\ $1{,}2$ m und $50$ cm
 \karo{3}
 \end{minipage}
-\fusshilfe{\mbox{4:~a) 9,8 cm; b) 130 cm}}
+\fusshilfe{\mbox{5:~a) 9,8 cm; b) 130 cm}}
 \end{pfaufg}
 
 % 6 Sache: das Dreieck steckt im Rechteck; Frage nach der Länge
-\begin{pfaufg}{}{5.}{}
+\begin{pfaufg}{}{6.}{}
 Wie lang ist die Diagonale $d$ des Bilderrahmens?
 \gzwei{\begin{tikzpicture}[line width=0.7pt]\draw (0,0) rectangle (3.6,1.92);\draw[line width=1.2pt] (0,0) -- (3.6,1.92);
 \node[font=\small,anchor=north] at (1.8,-0.08) {$45$ cm};\node[font=\small,anchor=west] at (3.68,0.96) {$24$ cm};\node[font=\small,anchor=south east] at (1.65,0.95) {$d$};\end{tikzpicture}}{%
 \karo{2.5}}
-\fusshilfe{\mbox{5:~51 cm}}
+\fusshilfe{\mbox{6:~51 cm}}
 \end{pfaufg}
 
 % 7 Sache: Abkürzung; Frage nach dem Unterschied
-\begin{pfaufg}{}{6.}{}
+\begin{pfaufg}{}{7.}{}
 Lena geht am Rand der Wiese von $A$ über $B$ nach $C$. Wie viele Meter spart sie, wenn sie quer über die Wiese geht?
 \gzwei{\begin{tikzpicture}[line width=0.7pt]\fill[black!8] (0,0) rectangle (3.2,2.4);\draw (0,0) -- (3.2,0) -- (3.2,2.4);\draw[dashed] (0,0) -- (3.2,2.4);\mbrwmarke{(3.2,0)}{(0,0)}{(3.2,2.4)}
 \node[font=\small,anchor=north east] at (0,0) {$A$};\node[font=\small,anchor=north west] at (3.2,0) {$B$};\node[font=\small,anchor=south west] at (3.2,2.4) {$C$};
 \node[font=\small,anchor=north] at (1.6,-0.08) {$80$ m};\node[font=\small,anchor=west] at (3.28,1.2) {$60$ m};\end{tikzpicture}}{%
 \karo{3}}
-\fusshilfe{\mbox{6:~40 m}}
+\fusshilfe{\mbox{7:~40 m}}
 \end{pfaufg}
 
 % 8 Sache: Entscheidung (passt / passt nicht)
-\begin{pfaufg}{}{7.}{}
+\begin{pfaufg}{}{8.}{}
 Ein Stab ist $52$ cm lang. Die Skizze zeigt den Boden einer Kiste von oben. Passt der Stab flach auf den Boden?
 \gzwei{\begin{tikzpicture}[line width=0.7pt]\draw (0,0) rectangle (3.2,2.4);\draw[dashed] (0,0) -- (3.2,2.4);
 \node[font=\small,anchor=north] at (1.6,-0.08) {$40$ cm};\node[font=\small,anchor=west] at (3.28,1.2) {$30$ cm};\end{tikzpicture}}{%
 \karo{2.5}\par\smallskip\hfill\kk{ja}\kk{nein}}
-\fusshilfe{\mbox{7:~nein, die Diagonale ist 50 cm}}
+\fusshilfe{\mbox{8:~nein, die Diagonale ist 50 cm}}
 \end{pfaufg}
 
 \clearpage
 % 9 Zielaufgabe 1 (2020 · 7 · a, Punkt Q weggelassen): Punktnamen, Zwischenergebnis, Runden
-\begin{pfaufg}{nach P10 ’20}{8.}{}
+\begin{pfaufg}{nach P10 ’20}{9.}{}
 Im Dreieck $ABC$ ist bei $C$ ein rechter Winkel. Die Strecke $\overline{BC}$ ist $12$~m lang, die Strecke $\overline{AC}$ $34$~m. Berechne die Länge der Strecke $\overline{AB}$. Runde auf eine Stelle nach dem Komma.
 \gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.8]\coordinate (A) at (0,0);\coordinate (B) at (1.2,3.4);\coordinate (C) at (0,3.4);\draw (A) -- (B) -- (C) -- cycle;\mbrwmarke{(C)}{(A)}{(B)}\node[font=\small] at (-0.05,-0.3) {$A$};\node[font=\small] at (1.37,3.64) {$B$};\node[font=\small] at (-0.1,3.68) {$C$};\end{tikzpicture}}{%
 \karo{3}}
-\fusshilfe{\mbox{8:~36,1 m}}
+\fusshilfe{\mbox{9:~36,1 m}}
 \end{pfaufg}
 
 % 10 Zielaufgabe 2 (2025 · 4 · a, Winkel weggelassen): die kurze Höhe ist keine Hypotenuse
-\begin{pfaufg}{nach P10 ’25}{9.}{}
+\begin{pfaufg}{nach P10 ’25}{10.}{}
 Familie Yücel baut vor der Haustür eine Rampe für Rollstühle. Berechne die Länge $x$ der Rampe. Runde auf eine Stelle nach dem Komma.
 \gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.75]\coordinate (P1) at (0,0);\coordinate (P2) at (5.95,0);\coordinate (P3) at (5.95,0.56);\draw (P1) -- (P2) -- (P3) -- cycle;\mbrwmarke{(P2)}{(P1)}{(P3)}
 \node[font=\small,anchor=north] at (2.97,-0.08) {$170$ cm};\node[font=\small,anchor=west] at (6.03,0.28) {$16$ cm};\node[font=\small,anchor=south] at (2.9,0.32) {$x$};\end{tikzpicture}}{%
 \karo{3}}
-\fusshilfe{\mbox{9:~170,8 cm}}
+\fusshilfe{\mbox{10:~170,8 cm}}
 \end{pfaufg}
 
 \blattende{2020 \pkt{} 7 \pkt{} a \quad 2025 \pkt{} 4 \pkt{} a}{Vorher: Quadrat und Wurzel\quad\textbullet\quad Weiter: Kathete berechnen}
