@@ -1,6 +1,6 @@
 # Bauregeln – wie ein Blatt aussieht
 
-Stand 08.10.2026. Die einzige Datei mit Regeln für den Bau von Blättern –
+Stand 09.10.2026. Die einzige Datei mit Regeln für den Bau von Blättern –
 für das Bauprogramm `werkzeuge/pruefheft.py`, den Bank-Prompt
 (`blattbau/bankblatt.md`) und jeden Chat, der ein Blatt baut oder beurteilt.
 Über ihr steht `mathe-nachhilfe/plan.md` (große Linien, vor allem Linie 8:
@@ -87,9 +87,12 @@ Typische Fehler stehen im Katalog, nie hier.
 
 ## 4 Didaktik: Zweck und Beispiel
 
-4.1 Folge im Blatt: von der Idee zur echten Prüfungsaufgabe – Idee
-    sichtbar machen, erkennen, üben von leicht nach schwer, am Ende die
-    echte Aufgabe ganz und ohne Hilfe.
+4.1 Folge im Blatt: von der Idee zur Höhe der Prüfung – Idee
+    sichtbar machen, erkennen, üben von leicht nach schwer, am Ende ohne
+    Hilfe. Prüfungsblatt: am Ende die echte Aufgabe ganz. Lernblatt: am
+    Ende die schwerste Aufgabe des Lernwegs; ein Original nur, wo es die
+    beste Aufgabe für einen Schritt ist, dann ohne Sätze, die nur der
+    Prüfung dienen („Gib das Zwischenergebnis an“) (Lehrer 09.10.).
     Gut: Quadrate über den Seiten im Kästchengitter; der Schüler findet den
     Satz selbst. Schlecht: danach ein Kasten, der den Satz noch einmal
     vorsagt.
@@ -130,8 +133,8 @@ Typische Fehler stehen im Katalog, nie hier.
     sonst keiner.
     Schlecht: eine Wiederholung, die auf dem Blatt nicht mehr vorkommt.
 4.9 Herkunft: echte Aufgaben dort, wo sie dem Lernweg dienen, nicht
-    zuerst; am Ende ein Original ganz (Lehrer 08.10.: zu viele P10-Aufgaben
-    zu früh). In der Mitte nur
+    zuerst; im Prüfungsblatt am Ende ein Original ganz (Lehrer 08.10.: zu
+    viele P10-Aufgaben zu früh), im Lernblatt nach 4.1. In der Mitte nur
     der Teil eines Originals, der den Handgriff des Abschnitts übt
     (herausgelöst, mit echter Sache, Marke „nach …“); das ganze Original
     am Ende.
