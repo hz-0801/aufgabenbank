@@ -155,8 +155,9 @@ oder „,“). Liste mit Häufigkeit: `python3 werkzeuge/abbildung.py --typen`.
 
 ## Nachtrag 06.10. abends (Steckbriefe, N6, Punkte 30–31; geht vor)
 
-- Steckbrief (`mathe-nachhilfe/katalog/steckbrief/<kapitel>-<handgriff>.md`, Format dort in README.md, Leser
-  `werkzeuge/steckbrief.py`): `--fokus` findet ihn über den Dateinamen (ganz, Anfang oder Ende) oder über
+- Steckbrief (seit 08.10.2026 Block `## Fokus <name>` in `mathe-nachhilfe/msa/gliederung/<kapitel>.md`, Format
+  `msa/gliederung/README.md`; vorher `katalog/steckbrief/<kapitel>-<handgriff>.md`; Leser
+  `werkzeuge/steckbrief.py`): `--fokus` findet ihn über den Blocknamen (ganz, Anfang oder Ende) oder über
   die Stufen; seine Zeile „Stufen:“ legt die Stufen des Fokusblatts fest, geordnet nach der kleinsten
   Bank-Sprosse. Daraus setzt das Fokusblatt: Verständnis-Sprosse als erste Gruppe („erst verstehen – nicht
   rechnen“: Verständnis-Bank, dann die Schätzfrage als Ankreuzaufgabe, wenn sie Zahlen, Vorschläge und
@@ -176,7 +177,7 @@ oder „,“). Liste mit Häufigkeit: `python3 werkzeuge/abbildung.py --typen`.
 ## Grundform G1 im Fokusblatt (Lauf 07.10., bau/pruefheft/beschluesse-2026-10-07.md; geht vor)
 
 Hat der Steckbrief des Fokus Teil 5 „Arten“ (mathe-nachhilfe
-katalog/steckbrief/README.md), baut `--fokus` die Grundform G1 (`g1_bau`);
+msa/gliederung/README.md, vorher katalog/steckbrief/README.md), baut `--fokus` die Grundform G1 (`g1_bau`);
 sonst wie bisher. Aufbau: Kopf mit Name und Niveau (B2) · Begriff erkennen
 aus Erkennen-Fälle bzw. Erkennen-Bank (A1) · Merkkasten nur mit der Formel
 (B7) · Formel aufstellen aus Formel-Fälle (A2) · je Art Überschrift

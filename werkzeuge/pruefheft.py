@@ -9,6 +9,7 @@ bau/pruefheft/<kapitel>-<art>[-p<n>|-fokus-<wort>][-ebr]-<datum>/ (Unterordner s
   python3 werkzeuge/pruefheft.py --kapitel prozent --art normal --portion 1
   python3 werkzeuge/pruefheft.py --kapitel prozent --art normal --fokus grundwert
   python3 werkzeuge/pruefheft.py --kapitel dreiecke --art normal --fokus pythagoras   (Steckbrief, 06.10. abends)
+  Steckbriefe liest werkzeuge/steckbrief.py seit 08.10.2026 aus mathe-nachhilfe/msa/gliederung/<kapitel>.md (Block „## Fokus <name>“)
   Steckbrief mit Teil 5 „Arten“: Fokusblatt in Grundform G1 (Beschlüsse 07.10., g1_bau; v0.4)
   --kurs EBR|FOR (Vorgabe FOR): Heft ab 2026 nach Kurs (Fundstellen), * an FOR-only-Aufgaben
   Pfade: --mn ../mathe-nachhilfe --bb ../blattbau (Voreinstellung: Nachbarordner des Repos)
@@ -1799,7 +1800,9 @@ def platz_ids(D, st, alle_namen, kap_ids, fokus):
 
 
 # ---------------------------------------------------------------------------
-# Steckbriefe (mathe-nachhilfe/katalog/steckbrief/*.md, werkzeuge/steckbrief.py; Lauf 06.10. abends)
+# Steckbriefe (seit 08.10.2026 die Blöcke „## Fokus <name>“ der Prüfungsgliederung mathe-nachhilfe/msa/gliederung/
+# <kapitel>.md, Leser werkzeuge/steckbrief.py; bis dahin katalog/steckbrief/*.md; Lauf 06.10. abends). Typische Fehler
+# kommen über den Verweis des Steckbriefs aus dem Katalog (W2, Entscheidung A).
 # Gibt es zum Fokus einen Steckbrief, nimmt das Fokusblatt daraus: Verständnis-Sprosse als erste Sprosse
 # der Leiter (N6.27), Merkkasten (Begriff, Merkregel), typische Fehler (Lösungsdatei), den unteren Teil der
 # Leiter (Leiter-Bank), die Voraussetzungen des Rückblicks (N6.29.8) und Raster/Formulierungen als Vorzug
@@ -2047,7 +2050,7 @@ def baue_modell(D, args):
     stufen = [Stufe(z) for z in D.zu]
     stufen = [s for s in stufen if s.kern] + [s for s in stufen if not s.kern]   # Kern zuerst
     if args.fokus:
-        # Steckbrief (mathe-nachhilfe/katalog/steckbrief/, Lauf 06.10. abends): nennt er Stufen, gelten sie;
+        # Steckbrief (Fokus-Block der Gliederung, vorher mathe-nachhilfe/katalog/steckbrief/, Lauf 06.10. abends): nennt er Stufen, gelten sie;
         # sonst wie bisher die Stufen, deren Name das Fokuswort enthält
         sb = SB.finde(D.mn, D.kapitel, fokus=args.fokus)
         if not sb:

@@ -1,9 +1,17 @@
-"""steckbrief.py – liest die Steckbriefe aus mathe-nachhilfe/katalog/steckbrief/*.md (Format:
-katalog/steckbrief/README.md). Ohne Modell, ohne Abhängigkeiten.
+"""steckbrief.py – liest die Steckbriefe (Fokus-Blöcke „## Fokus <name>“) aus der Prüfungsgliederung
+mathe-nachhilfe/msa/gliederung/<kapitel>.md bzw. abitur/gliederung/<kapitel>.md (Format:
+msa/gliederung/README.md; bis 08.10.2026 eigene Dateien katalog/steckbrief/*.md, jetzt archiv/).
+Ohne Modell, ohne Abhängigkeiten.
 
     import steckbrief
     sb = steckbrief.finde(mn, 'prozent', fokus='grundwert')            # oder None
-    sb = steckbrief.lies('…/katalog/steckbrief/pythagoras-seite.md')
+    sb = steckbrief.lies('…/archiv/steckbrief-pythagoras-seite-2026-10-08.md')   # alte Einzeldatei
+    sb = steckbrief.lies_gliederung(mn, '…/msa/gliederung/prozent.md', 'grundwert')
+
+Verweise (W2: Merkkasten, Formel, Fehler stehen nur im Katalog): ein Wert „→ katalog/<eintrag>.md,
+Typische Fehler: Anfang | Anfang …“ wird beim Lesen durch die Sätze der Katalogliste ersetzt, die mit
+den genannten Wörtern beginnen (Reihenfolge der Nennung; fehlt ein Satz: Hinweis in sb['befunde']).
+Andere Verweise („→ katalog/…“ ohne Auswahl) bleiben Text.
 
 Ein Steckbrief ist ein dict:
     datei, name (Dateiname ohne .md), titel, kapitel, stufen [..], bank [..],
@@ -27,15 +35,51 @@ def _schluessel(k):
     return re.sub(r'\s*\(.*\)\s*$', '', k.strip()).strip()
 
 
-def lies(pfad):
+def lies(pfad, mn=None):
+    """Steckbrief als eigene Datei (altes Format)."""
+    return lies_text(open(pfad, encoding='utf-8').read(), pfad, os.path.splitext(os.path.basename(pfad))[0], mn)
+
+
+def fokus_bloecke(pfad):
+    """[(name, Text)] der Blöcke „## Fokus <name>“ einer Gliederungsdatei; Überschriften eine Ebene hoch
+    (### 1 Verständnis -> ## 1 Verständnis, #### Art -> ### Art), so dass der Block ein Steckbrief ist."""
     txt = open(pfad, encoding='utf-8').read()
-    sb = {'datei': pfad, 'name': os.path.splitext(os.path.basename(pfad))[0], 'titel': '', 'kapitel': '',
+    out = []
+    for b in re.split(r'^(?=## )', txt, flags=re.M)[1:]:
+        kopf = b.splitlines()[0]
+        if not kopf.startswith('## Fokus '):
+            continue
+        zl = []
+        for z in b.splitlines()[1:]:
+            if z.startswith('### ') or z.startswith('#### '):
+                z = z[1:]
+            zl.append(z)
+        out.append((kopf[9:].strip(), '\n'.join(zl) + '\n'))
+    return out
+
+
+def lies_gliederung(mn, pfad, name):
+    """Fokus-Block <name> der Gliederungsdatei pfad als Steckbrief; None, wenn es ihn nicht gibt."""
+    for n, txt in fokus_bloecke(pfad):
+        if n == name:
+            kap = os.path.splitext(os.path.basename(pfad))[0]
+            sb = lies_text(txt, f'{pfad}#{n}', f'{kap}-{n}', mn)
+            sb['fokus'] = n
+            return sb
+    return None
+
+
+def lies_text(txt, pfad, name, mn=None):
+    sb = {'datei': pfad, 'name': name, 'titel': '', 'kapitel': '',
           'stufen': [], 'bank': [], 'teil1': {}, 'teil2': {}, 'luecke': '', 'kurz': [], 'lang': [],
           'befunde': []}
     teil, key, liste3 = None, None, None
     for zeile in txt.splitlines():
         if zeile.startswith('# ') and not sb['titel']:
             sb['titel'] = zeile[2:].strip()
+            continue
+        if zeile.startswith('Titel:') and not sb['titel'] and teil is None:
+            sb['titel'] = zeile[6:].strip()
             continue
         m = re.match(r'##\s+(\d)\b', zeile)
         if m:
@@ -108,7 +152,36 @@ def lies(pfad):
         if isinstance(v, str):
             sb['teil2'][k] = re.sub(r'\s*\*\*Lücke:\*\*.*$', '', v)
     sb['arten_kopf'], sb['arten'] = lies_arten(txt)
+    for k, v in list(sb['teil1'].items()):
+        if isinstance(v, str) and v.startswith('→'):
+            sb['teil1'][k] = verweis(mn, v, sb)
     return sb
+
+
+def verweis(mn, wert, sb=None):
+    """„→ katalog/<datei>.md, <Abschnitt>: A | B“ -> Sätze des Abschnitts (### <Abschnitt>, Zeilen „- …“), die mit
+    A, B … beginnen (ohne Groß/Klein), in dieser Folge; ohne Auswahl oder ohne Katalog bleibt der Text."""
+    m = re.match(r'→\s*(katalog/[\w.-]+\.md)\s*,\s*([^:]+?)\s*:\s*(.+)$', wert)
+    if not m or not mn:
+        return wert
+    pfad = os.path.join(mn, m.group(1))
+    if not os.path.exists(pfad):
+        if sb is not None:
+            sb['befunde'].append(f'Verweis: {m.group(1)} fehlt')
+        return wert
+    txt = open(pfad, encoding='utf-8').read()
+    mm = re.search(r'^###\s+' + re.escape(m.group(2)) + r'\s*$(.*?)(?=^###? |\Z)', txt, re.M | re.S)
+    saetze = re.findall(r'^- (.*)$', mm.group(1), re.M) if mm else []
+    out = []
+    for anfang in [x.strip() for x in m.group(3).split('|') if x.strip()]:
+        treffer = [z for z in saetze if z.lower().startswith(anfang.lower())]
+        if treffer:
+            out.append(treffer[0])
+        else:
+            out.append(anfang)
+            if sb is not None:
+                sb['befunde'].append(f'Verweis: kein Satz „{anfang} …“ in {m.group(1)}, {m.group(2)}')
+    return out
 
 
 def _felder(zeilen):
@@ -173,8 +246,15 @@ def lies_arten(txt):
 
 
 def alle(mn):
-    return [lies(p) for p in sorted(glob.glob(os.path.join(mn, 'katalog', 'steckbrief', '*.md')))
-            if not os.path.basename(p).lower().startswith('readme')]
+    """Alle Fokus-Blöcke der Prüfungsgliederung (msa/gliederung, abitur/gliederung)."""
+    out = []
+    for ordner in ('msa', 'abitur'):
+        for p in sorted(glob.glob(os.path.join(mn, ordner, 'gliederung', '*.md'))):
+            if os.path.basename(p).lower() == 'readme.md':
+                continue
+            for n, _ in fokus_bloecke(p):
+                out.append(lies_gliederung(mn, p, n))
+    return out
 
 
 def _kap(a, b):
@@ -183,13 +263,14 @@ def _kap(a, b):
 
 
 def finde(mn, kapitel, fokus=None, stufen=None):
-    """Steckbrief zum Kapitel: über den Fokus (Dateiname gleich oder endet auf „-<fokus>“) oder über die
+    """Steckbrief zum Kapitel: über den Fokus (Blockname „## Fokus <name>“ gleich, beginnt mit „<fokus>-“ oder
+    endet auf „-<fokus>“) oder über die
     Stufen (alle Stufen des Blatts stehen im Steckbrief). Keiner: None."""
     sbs = [s for s in alle(mn) if _kap(s['kapitel'], kapitel)]
     if fokus:
         f = fokus.lower()
         for s in sbs:
-            n = s['name'].lower()
+            n = (s.get('fokus') or s['name']).lower()
             if n == f or n.endswith('-' + f) or n.startswith(f + '-'):
                 return s
     if stufen:
