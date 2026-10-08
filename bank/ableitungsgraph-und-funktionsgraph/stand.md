@@ -79,3 +79,4 @@ gekürzt).
 
 - _punkte.csv nachziehen (werkzeuge/punkte.py --lesestoff, Urteile).
 - Grafiken nicht kompiliert (kein LaTeX); Sichtprobe im Render offen.
+- 2026-10-08 Sichtprobe im Render (xelatex, mathblatt.sty aus blattbau main, 300 dpi): 6 Zeilen mit verschiedenen Bausteinen – e1-k1-s2-v1 (funktionab, punkt), e1-k2-s1-v1 (gerade), e1-k2-s1-v2 (parabel), e1-k6-s2-v9 (sinus, kosinus), e1-k12-s2-v2 (leeres ksys, funktion), e1-k17-s3-v1 (ableitungspaar); alle kompilieren, Lage und Werte stimmen mit Aufgabe und Lösung. Ein Fehler: e1-k6-s2-v9 – das Etikett „II“ lag auf der x-Achse bei 7π/4 (Nullstelle von II), im engen Bild (ablesen, karo 0,6) war nicht sicher, welche Kurve welche ist; behoben mit \funktion statt \sinus/\kosinus (Etikettstellen 5,2 und 3,6) und karo=1.4. Beobachtet, nicht geändert: Etiketten mit weißem Grund unterbrechen die Kurve (f bei k17, f' bei k2-s1-v1) – lesbar.
