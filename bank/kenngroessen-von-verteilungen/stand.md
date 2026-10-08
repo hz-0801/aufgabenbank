@@ -119,3 +119,4 @@ Nur diese 1 Zeilen geändert, alle übrigen byte-gleich. `bank-pruef.py kenngroe
 - kenngroessen-von-verteilungen-e3-k3-s1-v1, kenngroessen-von-verteilungen-e3-k3-s1-v2: Zuordnung der Diagramme zu X und Y fehlte, Verhältnis kippte (0,64 gegen 1,5625; 0,75 gegen 1,33) → „Das linke Diagramm gehört zu X, das rechte zu Y.“ ergänzt; Lösung unverändert (Regel b).
 - kenngroessen-von-verteilungen-e4-k1-s2-v1, kenngroessen-von-verteilungen-e4-k1-s2-v2: Zuordnung der Diagramme fehlte, p_X und p_Y vertauschbar → Zuordnung links X, rechts Y ergänzt; Lösung unverändert (Regel b).
 - Prüfskript: Abweichungen 0.
+- 2026-10-08 Aufräumlauf: Sperre n = 100 (Original 2021MerhoehtAStochastik12-a) in e3-k1-s1-v1 (n = 400, σ = 10), e3-k1-s1-v2 (n = 900, σ = 9), e3-k4-s1-v2 (n = 900, σ = 9), e3-k4-s3-v1 (n = 400, σ 6; 8; 10; 8; 6), e4-k1-s4-v1 (n = 64, Säulen und grafik nachgezogen, P ≈ 0,467); Prüfskript: Abweichungen 5 → 0.
