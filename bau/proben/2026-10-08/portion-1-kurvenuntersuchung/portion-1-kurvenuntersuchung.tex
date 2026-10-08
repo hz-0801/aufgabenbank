@@ -1,0 +1,127 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Probe Serie 08.10.2026: Portion 1 Kurvenuntersuchung, von Hand gesetzt.
+% Rohstoff: bau/pruefheft/pruefstein-2026-10-08/kurvenuntersuchung-normal/src/kurvenuntersuchung-normal.tex
+\AtBeginDocument{\pgfplotsset{pfklein/.style={axis lines=middle,xlabel={$x$},ylabel={$y$},tick label style={font=\scriptsize},samples=120,clip=true,every axis plot/.append style={line width=0.9pt},/pgf/number format/use comma,grid=both,grid style={mbgitter}}}}
+
+\begin{document}
+\pfheftstil
+\pfheftkopf{Kurvenuntersuchung}{Abi GK \textperiodcentered{} Teil 1}
+
+\pfstufekopf[snullstellenundachsen]{Nullstellen und Achsenschnittpunkte berechnen}{}
+\begin{pfaufg}{}{1.}{}
+\begin{minipage}[t]{0.52\linewidth}\vspace{0pt}\raggedright
+Die Abbildung zeigt den Graphen von $f(x) = x^3 - 2x^2 - x + 2$.
+\par\smallskip
+a) Lies die Nullstellen von $f$ ab.\par
+b) Lies den Schnittpunkt mit der $y$-Achse ab.\par
+c) Prüfe eine abgelesene Nullstelle durch Einsetzen in $f(x)$.
+\end{minipage}\hfill
+\begin{minipage}[t]{0.44\linewidth}\vspace{0pt}
+\begin{tikzpicture}\begin{axis}[pfklein,xmin=-1.5,xmax=2.5,ymin=-2,ymax=3,width=6.2cm,height=5cm,xtick={-1,...,2},ytick={-2,...,3}]
+\addplot[black,domain=-1.5:2.5] {x^3-2*x^2-x+2};
+\end{axis}\end{tikzpicture}
+\end{minipage}
+\rechenplatz{1}
+\fusshilfe{\mbox{1:~$x = -1$, $x = 1$, $x = 2$; $(0 \mid 2)$; $f(1) = 0$}}
+\end{pfaufg}
+
+\pfgruppe{Was ist zu tun? Ankreuzen, nicht rechnen – es geht um die Aufgaben 5 bis 8}
+\begin{pfaufg}{}{2.}{}
+In welcher Aufgabe klammerst du zuerst $x$ aus?\par \kreuz{Nr.\,5}\kreuz{Nr.\,6}\kreuz{Nr.\,7}\kreuz{Nr.\,8}
+\fusshilfe{\mbox{2:~Nr.\,6 (in Nr.\,7 stört die 3,5)}}
+\end{pfaufg}
+\begin{pfaufg}{}{3.}{}
+In welcher Aufgabe löst du keine Gleichung, sondern setzt nur ein?\par \kreuz{Nr.\,5}\kreuz{Nr.\,6}\kreuz{Nr.\,7}\kreuz{Nr.\,8}
+\fusshilfe{\mbox{3:~Nr.\,5}}
+\end{pfaufg}
+\begin{pfaufg}{}{4.}{}
+In welcher Aufgabe liefert ein Faktor gar keine Nullstelle?\par \kreuz{Nr.\,5}\kreuz{Nr.\,6}\kreuz{Nr.\,7}\kreuz{Nr.\,8}\par
+Welcher Faktor ist es? \leerfeld
+\fusshilfe{\mbox{4:~Nr.\,8, $e^x$ (in Nr.\,6 liefert $x$ die Nullstelle 0)}}
+\end{pfaufg}
+
+\pfgruppe{}
+\begin{pfaufg}{Abi ’25\\ohne Hilfsmittel}{5.}{}
+$f(x) = 2e^x - 2e$. Weise nach, dass 1 eine Nullstelle von $f$ ist.
+\par\smallskip\noindent\begin{tikzpicture}\begin{axis}[pfklein,xmin=-4,xmax=2,ymin=-6,ymax=2,width=6.5cm,height=5cm,minor tick num=1]\addplot[black,domain=-4:2] {2*exp(x)-2*2.718281828};\node[font=\small,fill=white,inner sep=1pt,anchor=south east] at (axis cs:1.15,0.6) {$G_f$};\end{axis}\end{tikzpicture}
+\rechenplatz{1}
+\fusshilfe{\mbox{5:~$f(1) = 2e - 2e = 0$}}
+\end{pfaufg}
+\begin{pfaufg}{Abi ’22\\ohne Hilfsmittel}{6.}{}
+Berechne die Nullstellen der Funktion $f$ mit $f(x) = x^3 - 8x^2 + 12x$.
+\rechenplatz{2}
+\fusshilfe{\mbox{6:~$x = 0$, $x = 2$, $x = 6$}}
+\end{pfaufg}
+\begin{pfaufg}{Abi ’24}{7.}{}
+$f(x) = 0{,}5x^4 - 4x^2 + 3{,}5$, Graph $G_f$. Gegeben: $G_f$ ist achsensymmetrisch zur $y$-Achse, und $(1 \mid 0)$ liegt auf $G_f$. Begründe ohne Rechnung, dass auch $(-1 \mid 0)$ auf $G_f$ liegt. Bestimme die übrigen Schnittpunkte von $G_f$ mit der $x$-Achse.
+\rechenplatz{3}
+\fusshilfe{\mbox{7:~$(-1 \mid 0)$ durch Spiegelung; $(-\sqrt{7} \mid 0)$, $(\sqrt{7} \mid 0)$}}
+\end{pfaufg}
+
+\pfgruppe{Prüfungsniveau}
+\begin{pfaufg}{Abi ’23\\B2.1\,b}{8.}{5 BE}
+Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = 0{,}5\cdot(x^2 - 4)\cdot e^x$; ihr Graph heißt $G$. Die erste Ableitung ist $f'(x) = (0{,}5x^2 + x - 2)\cdot e^x$.
+\par\smallskip
+Bestimme die Koordinaten der Punkte, in denen $G$ die beiden Koordinatenachsen schneidet. Diese drei Punkte bilden zusammen mit einem Punkt $R$ die Ecken einer Raute. Gib die Koordinaten von $R$ an.
+\rechenplatz{4}
+\fusshilfe{\mbox{8:~$(0 \mid -2)$, $(-2 \mid 0)$, $(2 \mid 0)$; $R(0 \mid 2)$}}
+\end{pfaufg}
+
+\pfstufekopf[sextrempunkteberechne]{Extrempunkte berechnen}{}
+\begin{pfaufg}{}{9.}{}
+Die Abbildung zeigt den Graphen von $f(x) = x^3 - 3x$; es ist $f'(x) = 3x^2 - 3$.\par
+a) Lies Hoch- und Tiefpunkt ab und zeichne dort die Tangente ein.\quad b) Fülle die Tabelle aus.\quad c) Gib an, wo $f'(x) = 0$ gilt.
+\par\smallskip\noindent
+\begin{minipage}[c]{0.6\linewidth}\wertetabelle{x}{f'(x)}{-2,-1,0,1,2}\end{minipage}\hfill
+\begin{minipage}[c]{0.37\linewidth}\raggedleft
+\begin{tikzpicture}\begin{axis}[pfklein,xmin=-2.5,xmax=2.5,ymin=-3,ymax=3,width=5.4cm,height=4.8cm,xtick={-2,...,2},ytick={-3,...,3}]
+\addplot[black,domain=-2.5:2.5] {x^3-3*x};
+\end{axis}\end{tikzpicture}
+\end{minipage}
+\fusshilfe{\mbox{9:~$H(-1 \mid 2)$, $T(1 \mid -2)$; $f'$: 9, 0, $-3$, 0, 9; $x = \pm 1$}}
+\end{pfaufg}
+
+\pfgruppe{Was ist zu tun? Ankreuzen, nicht rechnen – es geht um die Aufgaben 13 bis 16}
+\begin{pfaufg}{}{10.}{}
+In welcher Aufgabe ist die Stelle schon vorgegeben?\par \kreuz{Nr.\,13}\kreuz{Nr.\,14}\kreuz{Nr.\,15}\kreuz{Nr.\,16}
+\fusshilfe{\mbox{10:~Nr.\,14 (Nr.\,13 nennt nur die Anzahl)}}
+\end{pfaufg}
+\begin{pfaufg}{}{11.}{}
+In welcher Aufgabe genügt die Stelle $x$, ohne $y$-Wert?\par
+\kreuz{Nr.\,13}\kreuz{Nr.\,14}\kreuz{Nr.\,15}\kreuz{Nr.\,16}
+\fusshilfe{\mbox{11:~Nr.\,13 (in Nr.\,14 ist $h(10)$ zu zeigen)}}
+\end{pfaufg}
+\begin{pfaufg}{}{12.}{}
+In welcher Aufgabe musst du selbst entscheiden, ob Hoch- oder Tiefpunkt?\par
+\kreuz{Nr.\,13}\kreuz{Nr.\,14}\kreuz{Nr.\,15}\kreuz{Nr.\,16}
+\fusshilfe{\mbox{12:~Nr.\,16 (Nr.\,14 und 15 nennen die Art)}}
+\end{pfaufg}
+
+\pfgruppe{}
+\begin{pfaufg}{Abi ’23\\ohne Hilfsmittel}{13.}{}
+Die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = x^3 - 3x^2$ hat genau zwei Extremstellen. Berechne diese beiden Stellen.
+\rechenplatz{2}
+\fusshilfe{\mbox{13:~$x = 0$ und $x = 2$}}
+\end{pfaufg}
+\begin{pfaufg}{Abi ’22}{14.}{}
+Ein Tauchroboter bewegt sich 30 Minuten lang nur senkrecht nach unten und oben. Sein Abstand von der Wasseroberfläche wird beschrieben durch $h(t) = \tfrac{9}{40}t^3 - \tfrac{27}{2}t^2 + \tfrac{405}{2}t$ mit $0 \le t \le 30$ ($t$: Zeit in Minuten, $h(t)$: Abstand in Metern). Weise nach, dass der Roboter nach 10 Minuten am weitesten von der Wasseroberfläche entfernt ist und dieser Abstand 900 m beträgt.
+\par\smallskip\noindent\begin{tikzpicture}\begin{axis}[pfklein,xmin=0,xmax=30,ymin=0,ymax=1000,width=7cm,height=4.2cm,xlabel={$t$},ylabel={$h(t)$},xtick={0,10,20,30},ytick={0,500,1000}]\addplot[black,domain=0:30] {9/40*x^3-27/2*x^2+405/2*x};\end{axis}\end{tikzpicture}
+\rechenplatz{3}
+\fusshilfe{\mbox{14:~$h'(10) = 0$, $h''(10) = -13{,}5 < 0$; $h(10) = 900$; Ränder $h(0) = h(30) = 0$}}
+\end{pfaufg}
+\begin{pfaufg}{Abi ’25}{15.}{}
+$f(x) = (2 - x)\cdot e^x$. Berechne die Koordinaten des Hochpunkts des Graphen von $f$.
+\rechenplatz{3}
+\fusshilfe{\mbox{15:~$H(1 \mid e)$}}
+\end{pfaufg}
+
+\pfgruppe{Prüfungsniveau}
+\begin{pfaufg}{Abi ’24\\B2.2\,c}{16.}{6 BE}
+Gegeben ist die Funktion $f$ mit $f(x) = 0{,}5x^4 - 4x^2 + 3{,}5$, $x \in \mathbb{R}$; ihr Graph heißt $G_f$.
+\par\smallskip
+Bestimme Lage und Art der Extrempunkte von $G_f$.
+\rechenplatz{4}
+\fusshilfe{\mbox{16:~$H(0 \mid 3{,}5)$; $T(-2 \mid -4{,}5)$, $T(2 \mid -4{,}5)$}}
+\end{pfaufg}
+\end{document}
