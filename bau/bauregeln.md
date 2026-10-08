@@ -116,9 +116,12 @@ Typische Fehler stehen im Katalog, nie hier.
     Arten, damit die Überschrift nicht antwortet.
     Schlecht: unter „Kathete berechnen“ die Frage „Hypotenuse oder
     Kathete?“.
-4.7 Pflicht und freiwillig: Der Pflichtweg ist kurz; weitere Aufgaben
-    derselben Sorte stehen eingerückt als freiwillig.
-    Schlecht: 22 von 27 Aufgaben Pflicht.
+4.7 Menge: Jede Sorte steht einmal; wo eine Rechnung sitzen muss, steht ein
+    kurzes Päckchen (a, b, c – gleicher Bau, wenig Text, Zahlen möglichst mit
+    Struktur). Mehr gibt es über Nachbestellung. Gilt für alle Sorten außer
+    Original und Original neu.
+    Gut: a) 6 und 8 cm, b) 36 und 15 cm, c) 4 und 9 cm, runden. Schlecht:
+    drei einzelne Aufgaben derselben Sorte, dazu eingerückte freiwillige.
 4.8 Rückblick: nur, was die Leiter gleich braucht und selbst nicht übt;
     sonst keiner.
     Schlecht: eine Wiederholung, die auf dem Blatt nicht mehr vorkommt.
