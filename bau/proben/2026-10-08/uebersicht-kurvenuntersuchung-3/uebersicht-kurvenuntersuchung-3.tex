@@ -1,0 +1,31 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Probe Serie 08.10.2026: Übersichtsblatt Kurvenuntersuchung, Fassung 3.
+% Jeder Eintrag ist ein Blatt; Bereiche sind Überschriften; Anker nur, wo der Name nicht reicht.
+\newcommand{\kennung}{W7Q}
+\newcommand{\bereich}[1]{\par\addvspace{14pt}\noindent{\large\bfseries #1}\par\nobreak\vspace{4pt}}
+\newcommand{\bl}[2]{\par\noindent\makebox[1.6em][l]{$\square$}#1\ifblank{#2}{}{\hspace{0.6em}{\small\color{mbgrau}#2}}\par\vspace{3pt}}
+\newcommand{\rand}{\hspace{0.6em}{\small\color{mbgrau}Rand}}
+\begin{document}
+\pfheftstil
+\fancyfoot[C]{{\footnotesize\color{mbgrau}\kennung\hfill\thepage}}
+\pfheftkopf{Kurvenuntersuchung}{Abi GK \textperiodcentered{} Übersicht}
+
+\bereich{Eigenschaften am Term}
+\bl{Verschieben und spiegeln}{$f(x-2)+3$}
+\bl{Für große $x$}{$x\to\infty$}
+\bl{Symmetrie\rand}{}
+\bl{Nullstellen}{$f(x)=0$}
+
+\bereich{Ableitung}
+\bl{Steigen und fallen}{}
+\bl{Hoch- und Tiefpunkt}{}
+\bl{Wendepunkt}{}
+\bl{Graph skizzieren\rand}{}
+
+\bereich{Anwenden}
+\bl{Maße am Graphen}{Höhe, Breite, Maßstab}
+\bl{Größte Fläche\rand}{}
+\bl{Schnittpunkte von zwei Graphen}{}
+\bl{Funktionsgleichung aufstellen\rand}{}
+\end{document}
