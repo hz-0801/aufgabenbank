@@ -2788,6 +2788,173 @@ def _rhs(z):
 
 
 def kurz_kontrolle(a):
+    """Fuß nur Ergebnisse (Bauregeln 6.2, Programmfehler 08.10.): bei Ankreuzaufgaben die richtige Option;
+    sonst der Kontrollwert (_kontrollwert) ohne Rechenweg, Begründung und Erklärung (nur_ergebnis)."""
+    opt = kreuz_ergebnis(a)
+    if opt:
+        return opt
+    roh = getattr(a, 'kurz_roh', None) or []
+    if a.art == 'bank':
+        m = re.search(r'Ergebnis:\s*(.+?)\.?\s*$', a.loesung_roh or '')
+        if m:
+            k = nur_ergebnis(m.group(1), latex=True)
+            if k and len(klartext(k)) <= 60 and re.search(r'\d|\$', k):
+                return tx(k, latex=True)
+    if a.art == 'echt' and roh:
+        fx = abi_tx if D_AKT is not None and D_AKT.pr['ordner'] == 'abitur' else tx
+        k = _vorn(nur_ergebnis('; '.join(roh)), 60)
+        if k:
+            return fx(k)
+    k = _kontrollwert(a)
+    k2 = nur_ergebnis(k, latex=True)
+    return k2 if k2 else k
+
+
+def kreuz_ergebnis(a):
+    """Ankreuzaufgabe: die Option, mit der die Lösung beginnt (längste passende), sonst ''."""
+    if not a.optionen:
+        return ''
+    quellen = [klartext(x) for x in [getattr(a, 'loesung_roh', '')] + list(getattr(a, 'kurz_roh', None) or []) if x]
+    beste = ''
+    for o in a.optionen:
+        ko = klartext(o)
+        if ko and any(q.startswith(ko) for q in quellen) and len(ko) > len(klartext(beste)):
+            beste = o
+    return beste
+
+
+_URTEIL_WORT = re.compile(r'^\s*(?:[IVX]+\s+|Aussage\s*\d+\s*:?\s*|\(\d\)\s*)?(ja|nein|richtig|falsch|wahr|'
+                          r'stimmt nicht|stimmt|trifft zu|trifft nicht zu|passt nicht|passt|eingehalten|'
+                          r'nicht eingehalten)\s*$', re.I)
+
+
+def _teile_oben(s, seps):
+    """Teilt s an den Trennern außerhalb von $…$ und Klammern; Intervalle ]1; ∞[ bleiben ganz."""
+    s = re.sub(r'([\[\]][^;\[\]$]{1,15});(\s*[^;\[\]$]{1,15}[\[\]\)])', '\\1\x02\\2', s)
+    teile, cur, m, tiefe, i = [], '', False, 0, 0
+    while i < len(s):
+        c = s[i]
+        if c == '$' and (i == 0 or s[i - 1] != '\\'):
+            m = not m
+        elif not m and c == '(':
+            tiefe += 1
+        elif not m and c == ')':
+            tiefe = max(0, tiefe - 1)
+        if not m and tiefe == 0:
+            sep = next((x for x in seps if s.startswith(x, i)), None)
+            if sep:
+                teile.append(cur); cur = ''; i += len(sep); continue
+        cur += c
+        i += 1
+    teile.append(cur)
+    return [t.replace('\x02', ';').strip() for t in teile if t.strip()]
+
+
+def _ist_name(t):
+    """Linke Seite, die stehen bleibt: f(1), h(x), A, AB, x_1, Gesamthöhe, \\overline{AB}."""
+    t = t.strip().strip('$').strip()
+    if re.fullmatch(r'\x10\d+\x11', t):
+        return True   # maskierte Formel ($\overline{BC}$)
+    return bool(re.fullmatch(r"(\\overline\{[A-Z]+\}|[A-Za-zÄÖÜäöüß][\w'*]*(_\{?\w+\}?)?(\^\{?\w+\}?)?(²|³)?"
+                             r"(\([^()]*\))?|[A-Z]\([^()]*\))", t))
+
+
+def _exakt(t):
+    t = t.strip().strip('$').strip()
+    return len(t) <= 14 and not re.search(r'[+·:]|\\cdot|(?<=\S)\s[−-]\s', t) and re.search(r'√|π|/|\\sqrt|\\pi|frac', t)
+
+
+def _kette(t):
+    """Rechenkette „A = ½ · 2π · 2 = 2π“ -> „A = 2π“; „√89,96 + 2 ≈ 11,5 cm“ -> „≈ 11,5 cm“;
+    exakt vor gerundet bleibt („AB = 10√13 ≈ 36,1 m“). Nur Klartext oder eine ganze Formel."""
+    ganz = t.startswith('$') and t.endswith('$') and t.count('$') == 2
+    if '$' in t and not ganz:
+        return t
+    inn = t[1:-1] if ganz else t
+    rel = r'(?<![<>!≤≥\\])=|≈|\\approx|(?<![-=])>(?!=)|(?<![-=])<|≤|≥|\\le\b|\\ge\b'
+    st = re.split('(' + rel + ')', inn)
+    if len(st) < 5 and not (len(st) == 3 and not _ist_name(st[0]) and re.search(r'\d', st[0])
+                            and re.search(r'[+·:]|\\cdot|\s[−-]\s', st[0]) and re.search(r'\d', st[2])):
+        return t
+    segs, rels = st[0::2], st[1::2]
+    if not re.search(r'\w', segs[-1]) or any(r not in ('=', '≈', '\\approx') for r in rels) \
+            or any(re.search(r'[a-zäöüß]{3,}', re.sub(r'\\[a-z]+|e\^|\b(sin|cos|tan|ln|exp)\b', '', x)) for x in segs[1:-1]):
+        return t
+    lhs = segs[0].strip() if _ist_name(segs[0]) else ''
+    if rels[-1] in ('≈', '\\approx') and len(segs) >= 3 and _exakt(segs[-2]) and lhs:
+        out = f'{lhs} = {segs[-2].strip()} {rels[-1]} {segs[-1].strip()}'
+    else:
+        out = (lhs + ' ' if lhs else '') + rels[-1] + ' ' + segs[-1].strip()
+    return ('$' + out + '$') if ganz else out
+
+
+def nur_ergebnis(k, latex=False):
+    """Kontrollwert -> nur Ergebnisse (Bauregeln 6.2): Begründungen hinter einem Urteil („falsch; weil …“),
+    Schluss vor „⇒“ und „, also“, Klammerzusätze mit Wörtern, „wegen …“ und Rechenketten fallen weg.
+    Arbeitet auf Klartext (Katalog) oder Bank-LaTeX ($…$ bleibt ganz)."""
+    if not k:
+        return k
+    k = re.sub(r'\$\s*\\Rightarrow\s*\$', ' ⇒ ', k).replace('\\Rightarrow', '⇒')
+    k = re.sub(r'\$\s*⇒\s*\$', ' ⇒ ', k)
+    k = k.replace('$$', '').replace('⇔', '⇒').replace('\\Leftrightarrow', '⇒')
+    k = re.sub(r'(^|;\s*)z\.\s?B\.\s*', r'\1', k)
+    k = re.sub(r'\b([IVX]+)\. ', '\\1\x03 ', k)   # „II. Quadrant“ ist kein Satzende
+    teile = []
+    for satz in _teile_oben(k, ['. ']):
+        teile += [x.replace('\x03', '.') for x in _teile_oben(satz, ['; '])]
+    if any(re.match(r'\s*(Lösungsweg|Ansatz|Rechnung)\b', klartext(t)) for t in teile):
+        teile = teile[-1:]   # nur das Ergebnis des Lösungswegs
+    out, urteil_davor = [], False
+    for t in teile:
+        t = t.strip().rstrip('.')
+        if _URTEIL_WORT.match(klartext(t)):
+            out.append(t); urteil_davor = True
+            continue
+        u = re.match(r'^(\s*(?:[IVX]+\s+)?(?:ja|nein|richtig|falsch|wahr|passt|eingehalten))\s*[,:–]\s+', t, re.I)
+        if u:
+            out.append(u.group(1).strip()); urteil_davor = True
+            continue
+        if urteil_davor:
+            continue   # Begründung zum Urteil
+        t = re.split(r'\s*(?:⇒|, also\b|, denn\b)\s*', t)[-1].strip() or t
+        if re.search(r'\bmit \w*regel\b|\bansetzen\b|\beinsetzen\b', t):
+            continue   # Rechenschritt („f'' mit Produktregel“)
+        t = re.sub(r'^.*\s(?:maximal|minimal|am größten|am kleinsten) bei .*?\bmit (\S+ = .+)$', r'\1', t)
+        t = re.sub(r',?\s+(?:wegen|weil|denn|da)\s.*$', '', t)
+        # Klammerzusätze mit Wörtern außerhalb von $…$: „(doppelt)“, „(228 bis 235 °C vertretbar)“; Formeln
+        # in Text werden dafür maskiert, eine ganze Formel bleibt für _kette ganz
+        ganz = t.startswith('$') and t.endswith('$') and t.count('$') == 2
+        formeln = []
+        if not ganz:
+            def maske(m):
+                formeln.append(m.group(0)); return f'\x10{len(formeln) - 1}\x11'
+            t = re.sub(r'\$[^$]*\$', maske, t)
+            t = re.sub(r'\s*\((?=[^()]*[A-Za-zÄÖÜäöüß]{3})(?:[^()]|\([^()]*\))*\)', '', t).strip()
+        teil2 = _teile_oben(t, [', '])
+        t = ', '.join(_kette(x) for x in teil2) if teil2 else t
+        t = re.sub(r'\x10(\d+)\x11', lambda m: formeln[int(m.group(1))], t)
+        if t:
+            out.append(t)
+    # erklärende Sätze ohne Zahl und Formel hinter dem ersten Teil fallen weg, wenn ein Teil mit Zahl bleibt
+    def zahl(x):
+        return re.search(r'\d|\$', x)
+    if any(zahl(x) for x in out):
+        out = [x for i, x in enumerate(out) if i == 0 or zahl(x) or _URTEIL_WORT.match(klartext(x))
+               or len(re.findall(r'[A-Za-zÄÖÜäöüß]{2,}', x)) < 4]
+    return '; '.join(out)
+
+
+def _vorn(k, n):
+    """Kontrollwert bis n Zeichen: von vorn so viele Teile, wie passen; '' wenn schon der erste zu lang ist."""
+    out = []
+    for t in _teile_oben(k or '', ['; ']):
+        if len(klartext('; '.join(out + [t]))) > n:
+            break
+        out.append(t)
+    return '; '.join(out)
+
+
+def _kontrollwert(a):
     """Kontrollwert (Reparatur Punkt 6): ein Urteil („Ja“) wird durch den Zahlwert ersetzt, auf den es
     sich stützt (letztes Zwischenergebnis mit Wert vor „vergleichen“); bei zwei Fragen steht zuerst der
     Wert der ersten Frage (letztes Zwischenergebnis mit eigenem Wert), dann der der zweiten."""
@@ -2879,16 +3046,11 @@ def kurzurteil(a):
 
 
 def fuss(a, nr):
-    """Seitenfuß (Beschluss 23): Kontrollwert, wo kurz; Tipp nur als Ansatz."""
+    """Seitenfuß (Beschluss 23; Bauregeln 6.2): nur das Ergebnis, kein Rechenweg, kein Tipp."""
     k = kurz_kontrolle(a)
-    t = tipp_ansatz(a)
-    if not k and not t:
+    if not k:
         return ''
-    s = f'{nr}' + (f':~{k}' if k else '')
-    s = f'\\mbox{{{s}}}'   # Nummer und Wert nie getrennt (Reparatur Punkt 5)
-    if t:
-        s += f', \\mbox{{Tipp: {t}}}'
-    return f'\\fusshilfe{{{s}}}'
+    return f'\\fusshilfe{{\\mbox{{{nr}:~{k}}}}}'   # Nummer und Wert nie getrennt (Reparatur Punkt 5)
 
 
 def rechenaufgabe(a):
