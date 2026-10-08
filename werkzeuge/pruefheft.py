@@ -3161,6 +3161,117 @@ def bloecke(st):
     return bl
 
 
+STAMM_SATZ = re.compile(r'(Gegeben (ist|sind)\b|Ihre (erste )?Ableitung\b|Die erste Ableitung\b|Man kann den Term\b)')
+
+
+def stamm_von(a):
+    """(Stamm, Auftrag) einer echten Aufgabe als LaTeX: der Vorspann der Prüfung oder ein führender Satz
+    „Gegeben ist …“; ('', Text) ohne Stamm."""
+    t = a.text_voll
+    vs = getattr(a, 'vorspann', None)
+    if vs:
+        st = tx(vs['wortlaut'])
+        if st and t.startswith(st):
+            return st, t[len(st):].strip()
+    saetze = satz_split(t)
+    if len(saetze) >= 2 and re.match(r'Gegeben (ist|sind)\b', saetze[0]):
+        n = 1
+        while n < len(saetze) - 1 and STAMM_SATZ.match(saetze[n]):
+            n += 1
+        st = ' '.join(saetze[:n])
+        if t.startswith(st):
+            return st, t[len(st):].strip()
+    return '', t
+
+
+def kurzer_stamm(stamm, auftrag, mit_abb):
+    """Kurzer Stamm in einem Satz (Programmfehler 08.10., Bauregeln 4.4): aus „Gegeben ist die in ℝ
+    definierte Funktion f mit f(x) = …; ihr Graph heißt G. Ihre Ableitung ist f'(x) = ….“ wird
+    „$f(x) = …$, $f'(x) = …$.“; der Name des Graphen bleibt, wenn der Auftrag ihn braucht; andere Sätze
+    (Sachzusammenhang, Punkte) bleiben, „Die Abbildung zeigt …“ nur mit Abbildung. '' = nicht kürzbar."""
+    if not re.match(r'Gegeben (ist|sind)\b', stamm):
+        return ''
+    gl, rest, gname = [], [], ''
+    for satz in satz_split(stamm):
+        if STAMM_SATZ.match(satz):
+            for m in re.findall(r'\$[^$]*\$', satz):
+                if '=' in m and '\\in' not in m and '\\mathbb' not in m:
+                    gl.append(m)
+            g = re.search(r'Graph heißt (\$[^$]+\$)', satz)
+            if g:
+                gname = g.group(1)
+            nach = re.split(r';\s*', satz)
+            rest += [x.strip() for x in nach[1:] if x.strip() and not re.match(r'(ihr|sein) Graph heißt|die Abbildung zeigt', x.strip())
+                     and not re.search(r'\$[^$]*=[^$]*\$', x)]
+        elif satz.startswith('Die Abbildung zeigt'):
+            if mit_abb:
+                rest.append(satz)
+        else:
+            rest.append(satz)
+    if not gl:
+        return ''
+    # f(x) = A und f(x) = B -> f(x) = A = B
+    zus = []
+    for m in gl:
+        l = re.match(r'\$\s*([^=$]+?)\s*=\s*(.*)\$$', m)
+        if zus and l:
+            l0 = re.match(r'\$\s*([^=$]+?)\s*=', zus[-1])
+            if l0 and l0.group(1).strip() == l.group(1).strip():
+                zus[-1] = zus[-1][:-1] + ' = ' + l.group(2) + '$'
+                continue
+        zus.append(m)
+    k = ', '.join(zus)
+    if gname and gname in auftrag:
+        k += f', Graph {gname}'
+    k += '.'
+    if rest:
+        k += ' ' + ' '.join(x if re.search(r'[.?!]$', x) else x + '.' for x in rest)
+    return k
+
+
+def stammsatz(D, alle):
+    """Kurzer Kopf (Programmfehler 08.10., Bauregeln 6.12 und 4.4) für die Aufgaben einer Stufe in Satzfolge:
+    folgen echte Aufgaben mit demselben Stamm aufeinander, steht der Stamm einmal davor und jede beginnt mit
+    ihrem Auftrag; eine allein stehende bekommt den kurzen Stamm in einem Satz; die letzte echte Aufgabe der
+    Stufe behält den vollen Stamm. Rückgabe {id(Aufgabe): LaTeX des gemeinsamen Stamms vor ihr}."""
+    vor = {}
+    echte = [a for a in alle if getattr(a, 'art', '') == 'echt']
+    for a in echte:
+        if not hasattr(a, 'text_voll'):
+            a.text_voll = a.text
+        a.text = a.text_voll
+    letzte = echte[-1] if echte else None
+    i = 0
+    while i < len(alle):
+        a = alle[i]
+        if getattr(a, 'art', '') != 'echt':
+            i += 1; continue
+        st, auf = stamm_von(a)
+        j = i + 1
+        while st and j < len(alle) and getattr(alle[j], 'art', '') == 'echt' and stamm_von(alle[j])[0] == st:
+            j += 1
+        lauf = alle[i:j]
+        if st and len(lauf) >= 2:
+            k = '' if letzte in lauf else kurzer_stamm(st, ' '.join(stamm_von(x)[1] for x in lauf), any(x.abb for x in lauf))
+            vor[id(a)] = k or st
+            for x in lauf:
+                x.text = stamm_von(x)[1]
+            D.n_stamm_einmal = getattr(D, 'n_stamm_einmal', 0) + len(lauf) - 1
+        elif st and a is not letzte:
+            k = kurzer_stamm(st, auf, bool(a.abb))
+            if k:
+                a.text = k + ' ' + auf
+                D.n_stamm_kurz = getattr(D, 'n_stamm_kurz', 0) + 1
+        i = j
+    return vor
+
+
+def stamm_tex(k):
+    """Gemeinsamer Stamm über den Aufgaben: in der Textspalte, bleibt mit der ersten Aufgabe zusammen."""
+    return ('\\par\\addvspace{6pt}\\Needspace*{10\\baselineskip}{\\leftskip\\mbpfnr\\noindent ' + k
+            + '\\par\\nobreak}')
+
+
 def setze_bloecke(D, args, teile, nr, formel_da):
     """teile: [(stufe, [blockindex])] -> LaTeX, nr, Lösungseinträge."""
     out, loes = [], []
@@ -3168,6 +3279,12 @@ def setze_bloecke(D, args, teile, nr, formel_da):
         zaehler = [0]
         bl = bloecke(st)
         kopf_gesetzt = False
+        if D.pr['ordner'] == 'abitur':
+            folge = [a for j in range(len(bl)) for a in (bl[j][1] if bl[j][0] == 'kopf' else bl[j][1][2])
+                     if not isinstance(a, Buendel)]
+            stamm_vor = stammsatz(D, folge)
+        else:
+            stamm_vor = {}
         for i in idx:
             art, inh = bl[i]
             if not kopf_gesetzt:
@@ -3206,6 +3323,8 @@ def setze_bloecke(D, args, teile, nr, formel_da):
                     out.append(f'\\pfab{{{FORMEL[st.name]}}}')
                     formel_da.add(st.name)
                 nr += 1
+                if id(a) in stamm_vor:
+                    out.append(stamm_tex(stamm_vor[id(a)]))
                 out.append(aufgabe_tex(D, a, nr, args.art, zf_fuer(a, zaehler, args.art), args.kurs))
                 loes.append((f'{nr}.', a))
                 SORT.append((st.name, nr, g, a))
