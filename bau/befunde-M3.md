@@ -214,6 +214,7 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
   Prozent.
 - duplikate.py: neue Zeilen nur als Zahlvarianten in derselben Sprosse
   (Lostrommel, Würfel, Münze) und in C-Gruppen „Glücksrad, 1/2“.
+
 ## Quadratische Funktionen E1 „Normalparabel und Streckfaktor“ (GHQ, 10.10.2026)
 
 - Setzer (Abschnittsform): loesungsgrafik wird nicht gesetzt; die
