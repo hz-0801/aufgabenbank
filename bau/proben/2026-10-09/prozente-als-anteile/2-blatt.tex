@@ -1,0 +1,354 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% gesetzt von werkzeuge/setzer.py aus dem Lernweg (L1-1 · L1-2 · L1-3 · L1-4 · L1-5 · L1-6 · L1-7) und den Bankzeilen; Muster T6B.
+\input{praeambel}
+\newcommand{\kennung}{3Y5}
+\newcommand{\grau}[1]{{\color{mbgrau}#1}}
+
+\begin{document}
+\pfheftstil
+\fancyfoot[C]{\parbox[t]{\textwidth}{\mbfhbox\par\vspace{1.5mm}{\footnotesize\color{mbgrau}{\scriptsize \kennung}\hfill\thepage}}}
+\pfheftkopf{Prozente als Anteile}{Klasse 7}
+% L1-1: Prozent heißt Hundertstel: am Hunderterfeld gezählt ist der Anteil direkt die Prozentzahl
+\begin{pfaufg}{}{1.}{}
+Jedes Feld hat $100$ Kästchen. Wie viel Prozent des Feldes sind grau?\par\medskip\noindent
+\begin{minipage}[b]{0.32\linewidth}\centering
+\begin{tikzpicture}[scale=0.24]
+\fill[black!28] (0,9) rectangle ++(1,1);
+\fill[black!28] (1,9) rectangle ++(1,1);
+\fill[black!28] (2,9) rectangle ++(1,1);
+\fill[black!28] (3,9) rectangle ++(1,1);
+\fill[black!28] (4,9) rectangle ++(1,1);
+\fill[black!28] (5,9) rectangle ++(1,1);
+\fill[black!28] (6,9) rectangle ++(1,1);
+\fill[black!28] (7,9) rectangle ++(1,1);
+\fill[black!28] (8,9) rectangle ++(1,1);
+\fill[black!28] (9,9) rectangle ++(1,1);
+\fill[black!28] (0,8) rectangle ++(1,1);
+\fill[black!28] (1,8) rectangle ++(1,1);
+\fill[black!28] (2,8) rectangle ++(1,1);
+\fill[black!28] (3,8) rectangle ++(1,1);
+\fill[black!28] (4,8) rectangle ++(1,1);
+\fill[black!28] (5,8) rectangle ++(1,1);
+\fill[black!28] (6,8) rectangle ++(1,1);
+\fill[black!28] (7,8) rectangle ++(1,1);
+\fill[black!28] (8,8) rectangle ++(1,1);
+\fill[black!28] (9,8) rectangle ++(1,1);
+\fill[black!28] (0,7) rectangle ++(1,1);
+\fill[black!28] (1,7) rectangle ++(1,1);
+\fill[black!28] (2,7) rectangle ++(1,1);
+\fill[black!28] (3,7) rectangle ++(1,1);
+\fill[black!28] (4,7) rectangle ++(1,1);
+\fill[black!28] (5,7) rectangle ++(1,1);
+\fill[black!28] (6,7) rectangle ++(1,1);
+\fill[black!28] (7,7) rectangle ++(1,1);
+\fill[black!28] (8,7) rectangle ++(1,1);
+\fill[black!28] (9,7) rectangle ++(1,1);
+\fill[black!28] (0,6) rectangle ++(1,1);
+\fill[black!28] (1,6) rectangle ++(1,1);
+\fill[black!28] (2,6) rectangle ++(1,1);
+\fill[black!28] (3,6) rectangle ++(1,1);
+\fill[black!28] (4,6) rectangle ++(1,1);
+\fill[black!28] (5,6) rectangle ++(1,1);
+\fill[black!28] (6,6) rectangle ++(1,1);
+\draw[black!45,line width=0.3pt] (0,0) grid (10,10);
+\draw[line width=0.7pt] (0,0) rectangle (10,10);
+\end{tikzpicture}\par\smallskip
+\grau{{\small a)\ }\par\smallskip
+$37$ von $100$\par\smallskip $\frac{37}{100} = 37\,\%$}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.32\linewidth}\centering
+\begin{tikzpicture}[scale=0.24]
+\fill[black!28] (0,9) rectangle ++(1,1);
+\fill[black!28] (1,9) rectangle ++(1,1);
+\fill[black!28] (2,9) rectangle ++(1,1);
+\fill[black!28] (3,9) rectangle ++(1,1);
+\fill[black!28] (4,9) rectangle ++(1,1);
+\fill[black!28] (5,9) rectangle ++(1,1);
+\fill[black!28] (6,9) rectangle ++(1,1);
+\fill[black!28] (7,9) rectangle ++(1,1);
+\draw[black!45,line width=0.3pt] (0,0) grid (10,10);
+\draw[line width=0.7pt] (0,0) rectangle (10,10);
+\end{tikzpicture}\par\smallskip
+{\small b)\ Anteil in Prozent:}\par\smallskip
+\linie{30mm}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.32\linewidth}\centering
+\begin{tikzpicture}[scale=0.24]
+\fill[black!28] (0,9) rectangle ++(1,1);
+\fill[black!28] (1,9) rectangle ++(1,1);
+\fill[black!28] (2,9) rectangle ++(1,1);
+\fill[black!28] (3,9) rectangle ++(1,1);
+\fill[black!28] (4,9) rectangle ++(1,1);
+\fill[black!28] (5,9) rectangle ++(1,1);
+\fill[black!28] (6,9) rectangle ++(1,1);
+\fill[black!28] (7,9) rectangle ++(1,1);
+\fill[black!28] (8,9) rectangle ++(1,1);
+\fill[black!28] (9,9) rectangle ++(1,1);
+\fill[black!28] (0,8) rectangle ++(1,1);
+\fill[black!28] (1,8) rectangle ++(1,1);
+\fill[black!28] (2,8) rectangle ++(1,1);
+\fill[black!28] (3,8) rectangle ++(1,1);
+\fill[black!28] (4,8) rectangle ++(1,1);
+\fill[black!28] (5,8) rectangle ++(1,1);
+\fill[black!28] (6,8) rectangle ++(1,1);
+\fill[black!28] (7,8) rectangle ++(1,1);
+\fill[black!28] (8,8) rectangle ++(1,1);
+\fill[black!28] (9,8) rectangle ++(1,1);
+\fill[black!28] (0,7) rectangle ++(1,1);
+\fill[black!28] (1,7) rectangle ++(1,1);
+\fill[black!28] (2,7) rectangle ++(1,1);
+\fill[black!28] (3,7) rectangle ++(1,1);
+\fill[black!28] (4,7) rectangle ++(1,1);
+\fill[black!28] (5,7) rectangle ++(1,1);
+\fill[black!28] (6,7) rectangle ++(1,1);
+\fill[black!28] (7,7) rectangle ++(1,1);
+\fill[black!28] (8,7) rectangle ++(1,1);
+\fill[black!28] (9,7) rectangle ++(1,1);
+\fill[black!28] (0,6) rectangle ++(1,1);
+\fill[black!28] (1,6) rectangle ++(1,1);
+\fill[black!28] (2,6) rectangle ++(1,1);
+\fill[black!28] (3,6) rectangle ++(1,1);
+\fill[black!28] (4,6) rectangle ++(1,1);
+\fill[black!28] (5,6) rectangle ++(1,1);
+\fill[black!28] (6,6) rectangle ++(1,1);
+\fill[black!28] (7,6) rectangle ++(1,1);
+\fill[black!28] (8,6) rectangle ++(1,1);
+\fill[black!28] (9,6) rectangle ++(1,1);
+\fill[black!28] (0,5) rectangle ++(1,1);
+\fill[black!28] (1,5) rectangle ++(1,1);
+\fill[black!28] (2,5) rectangle ++(1,1);
+\fill[black!28] (3,5) rectangle ++(1,1);
+\fill[black!28] (4,5) rectangle ++(1,1);
+\fill[black!28] (5,5) rectangle ++(1,1);
+\fill[black!28] (6,5) rectangle ++(1,1);
+\fill[black!28] (7,5) rectangle ++(1,1);
+\fill[black!28] (8,5) rectangle ++(1,1);
+\fill[black!28] (9,5) rectangle ++(1,1);
+\fill[black!28] (0,4) rectangle ++(1,1);
+\fill[black!28] (1,4) rectangle ++(1,1);
+\fill[black!28] (2,4) rectangle ++(1,1);
+\fill[black!28] (3,4) rectangle ++(1,1);
+\fill[black!28] (4,4) rectangle ++(1,1);
+\fill[black!28] (5,4) rectangle ++(1,1);
+\fill[black!28] (6,4) rectangle ++(1,1);
+\fill[black!28] (7,4) rectangle ++(1,1);
+\fill[black!28] (8,4) rectangle ++(1,1);
+\fill[black!28] (9,4) rectangle ++(1,1);
+\draw[black!45,line width=0.3pt] (0,0) grid (10,10);
+\draw[line width=0.7pt] (0,0) rectangle (10,10);
+\end{tikzpicture}\par\smallskip
+{\small c)\ Anteil in Prozent:}\par\smallskip
+\linie{30mm}
+\end{minipage}
+\fusshilfe{\mbox{1:~b) 8\,\%; c) 60\,\%}}
+\end{pfaufg}
+
+% L1-2: Der ganze Streifen ist 100 %, auch wenn er 4, 5 oder 20 Teile hat: Teile auf Hundertstel umrechnen
+\begin{pfaufg}{}{2.}{}
+Der ganze Streifen ist $100\,\%$. Wie viel Prozent sind grau?\par\medskip\noindent
+\begin{minipage}[b]{0.32\linewidth}\centering
+\begin{tikzpicture}
+\fill[black!28] (0,0) rectangle (1.050,0.60);
+\draw[black!55,line width=0.4pt] (1.050,0) -- (1.050,0.60);
+\draw[black!55,line width=0.4pt] (2.100,0) -- (2.100,0.60);
+\draw[black!55,line width=0.4pt] (3.150,0) -- (3.150,0.60);
+\draw[line width=0.7pt] (0,0) rectangle (4.20,0.60);
+\end{tikzpicture}\par\smallskip
+\grau{{\small a)\ }\par\smallskip
+$\frac{1}{4} = \frac{25}{100}$\par\smallskip $= 25\,\%$}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.32\linewidth}\centering
+\begin{tikzpicture}
+\fill[black!28] (0,0) rectangle (1.680,0.60);
+\draw[black!55,line width=0.4pt] (0.840,0) -- (0.840,0.60);
+\draw[black!55,line width=0.4pt] (1.680,0) -- (1.680,0.60);
+\draw[black!55,line width=0.4pt] (2.520,0) -- (2.520,0.60);
+\draw[black!55,line width=0.4pt] (3.360,0) -- (3.360,0.60);
+\draw[line width=0.7pt] (0,0) rectangle (4.20,0.60);
+\end{tikzpicture}\par\smallskip
+{\small b)\ Anteil in Prozent:}\par\smallskip
+\linie{30mm}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.32\linewidth}\centering
+\begin{tikzpicture}
+\fill[black!28] (0,0) rectangle (1.470,0.60);
+\draw[black!55,line width=0.4pt] (0.210,0) -- (0.210,0.60);
+\draw[black!55,line width=0.4pt] (0.420,0) -- (0.420,0.60);
+\draw[black!55,line width=0.4pt] (0.630,0) -- (0.630,0.60);
+\draw[black!55,line width=0.4pt] (0.840,0) -- (0.840,0.60);
+\draw[black!55,line width=0.4pt] (1.050,0) -- (1.050,0.60);
+\draw[black!55,line width=0.4pt] (1.260,0) -- (1.260,0.60);
+\draw[black!55,line width=0.4pt] (1.470,0) -- (1.470,0.60);
+\draw[black!55,line width=0.4pt] (1.680,0) -- (1.680,0.60);
+\draw[black!55,line width=0.4pt] (1.890,0) -- (1.890,0.60);
+\draw[black!55,line width=0.4pt] (2.100,0) -- (2.100,0.60);
+\draw[black!55,line width=0.4pt] (2.310,0) -- (2.310,0.60);
+\draw[black!55,line width=0.4pt] (2.520,0) -- (2.520,0.60);
+\draw[black!55,line width=0.4pt] (2.730,0) -- (2.730,0.60);
+\draw[black!55,line width=0.4pt] (2.940,0) -- (2.940,0.60);
+\draw[black!55,line width=0.4pt] (3.150,0) -- (3.150,0.60);
+\draw[black!55,line width=0.4pt] (3.360,0) -- (3.360,0.60);
+\draw[black!55,line width=0.4pt] (3.570,0) -- (3.570,0.60);
+\draw[black!55,line width=0.4pt] (3.780,0) -- (3.780,0.60);
+\draw[black!55,line width=0.4pt] (3.990,0) -- (3.990,0.60);
+\draw[line width=0.7pt] (0,0) rectangle (4.20,0.60);
+\end{tikzpicture}\par\smallskip
+{\small c)\ Anteil in Prozent:}\par\smallskip
+\linie{30mm}
+\end{minipage}
+\fusshilfe{\mbox{2:~b) 40\,\%; c) 35\,\%}}
+\end{pfaufg}
+
+% L1-3: Ohne Bild: Bruch auf den Nenner 100 erweitern, dann ablesen
+\begin{pfaufg}{}{3.}{}
+Erweitere auf den Nenner $100$ und schreibe in Prozent.\par\medskip
+\grau{a)\ $\frac{3}{20}$\quad $\frac{3}{20} = \frac{3\cdot5}{20\cdot5} = \frac{15}{100} = 15\,\%$}\par\medskip
+\noindent\begin{minipage}[t]{0.48\linewidth}
+b)\ $\frac{7}{25}$
+\karo{1}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+c)\ $\frac{9}{50}$
+\karo{1}
+\end{minipage}
+\noindent\begin{minipage}[t]{0.48\linewidth}
+d)\ $\frac{13}{20}$
+\karo{1}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+e)\ $\frac{3}{4}$
+\karo{1}
+\end{minipage}
+\fusshilfe{\mbox{3:~b) 28\,\%; c) 18\,\%; d) 65\,\%; e) 75\,\%}}
+\end{pfaufg}
+
+% L1-4: Bruch, Hundertstelbruch, Prozent und Dezimalzahl sind dieselbe Zahl; von jeder Zeile aus umwandeln; Drittel nur gerundet
+\begin{pfaufg}{}{4.}{}
+Fülle die Tabelle aus. In jeder Spalte steht dieselbe Zahl. Kürze die Brüche.\par\medskip{\renewcommand{\arraystretch}{1.7}\begin{tabular}{|l|*{5}{>{\centering\arraybackslash}p{14mm}|}}\hline
+ & a) & b) & c) & d) & e)\\\hline
+gekürzter Bruch & \textcolor{mbgrau}{$\frac{1}{4}$} & $\frac{3}{5}$ & & & $\frac{1}{3}$\\\hline
+Bruch mit Nenner $100$ & \textcolor{mbgrau}{$\frac{25}{100}$} & & & & \\\hline
+Prozent & \textcolor{mbgrau}{$25\,\%$} & & & $4\,\%$ & \\\hline
+Dezimalzahl & \textcolor{mbgrau}{$0{,}25$} & & $0{,}65$ & & \\\hline
+\end{tabular}}\par\par
+\fusshilfe{\mbox{4:~b) 60\,\%; c) 13/20; d) 0,04; e) $\approx$ 33,3\,\%}}
+\end{pfaufg}
+
+% L1-5: „Jeder fünfte“ ist der Bruch 1/5, nicht die Zahl 5; „4 %“ ist 4 von 100, nicht jeder vierte
+\begin{pfaufg}{}{5.}{}
+Beide Bilder haben je $100$ Kästchen. Was zeigt das Bild? Kreuze an.\par\medskip\noindent
+\begin{minipage}[b]{0.48\linewidth}\centering
+\begin{tikzpicture}[scale=0.24]
+\fill[black!28] (0,0) rectangle ++(1,1);
+\fill[black!28] (5,0) rectangle ++(1,1);
+\fill[black!28] (3,1) rectangle ++(1,1);
+\fill[black!28] (8,1) rectangle ++(1,1);
+\fill[black!28] (1,2) rectangle ++(1,1);
+\fill[black!28] (6,2) rectangle ++(1,1);
+\fill[black!28] (4,3) rectangle ++(1,1);
+\fill[black!28] (9,3) rectangle ++(1,1);
+\fill[black!28] (2,4) rectangle ++(1,1);
+\fill[black!28] (7,4) rectangle ++(1,1);
+\fill[black!28] (0,5) rectangle ++(1,1);
+\fill[black!28] (5,5) rectangle ++(1,1);
+\fill[black!28] (3,6) rectangle ++(1,1);
+\fill[black!28] (8,6) rectangle ++(1,1);
+\fill[black!28] (1,7) rectangle ++(1,1);
+\fill[black!28] (6,7) rectangle ++(1,1);
+\fill[black!28] (4,8) rectangle ++(1,1);
+\fill[black!28] (9,8) rectangle ++(1,1);
+\fill[black!28] (2,9) rectangle ++(1,1);
+\fill[black!28] (7,9) rectangle ++(1,1);
+\draw[black!45,line width=0.3pt] (0,0) grid (10,10);
+\draw[line width=0.7pt] (0,0) rectangle (10,10);
+\end{tikzpicture}\par\smallskip
+{\small a)\ \kk{jedes fünfte Kästchen}\par\hspace*{1.1em}\kk{$5$ von $100$ Kästchen}}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.48\linewidth}\centering
+\begin{tikzpicture}[scale=0.24]
+\fill[black!28] (0,9) rectangle ++(1,1);
+\fill[black!28] (1,9) rectangle ++(1,1);
+\fill[black!28] (2,9) rectangle ++(1,1);
+\fill[black!28] (3,9) rectangle ++(1,1);
+\fill[black!28] (4,9) rectangle ++(1,1);
+\draw[black!45,line width=0.3pt] (0,0) grid (10,10);
+\draw[line width=0.7pt] (0,0) rectangle (10,10);
+\end{tikzpicture}\par\smallskip
+{\small b)\ \kk{jedes fünfte Kästchen}\par\hspace*{1.1em}\kk{$5$ von $100$ Kästchen}}
+\end{minipage}
+\fusshilfe{\mbox{5:~a) jedes fünfte = 20\,\%; b) 5 von 100 = 5\,\%}}
+\end{pfaufg}
+
+% L1-5: „Jeder fünfte“ ist der Bruch 1/5, nicht die Zahl 5; „4 %“ ist 4 von 100, nicht jeder vierte
+\begin{pfaufg}{}{6.}{}
+Schreibe in Prozent oder ergänze.\par\medskip
+\grau{a)\ jeder fünfte\quad $\frac{1}{5} = \frac{20}{100} = 20\,\%$}\par\medskip
+\noindent\begin{minipage}[t]{0.48\linewidth}
+b)\ jeder zehnte
+\karo{1}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+c)\ jeder fünfzigste
+\karo{1}
+\end{minipage}
+\noindent\begin{minipage}[t]{0.48\linewidth}
+d)\ $3$ von $5$
+\karo{1}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+e)\ $50\,\%$ heißt: jeder \linie{10mm}
+\karo{1}
+\end{minipage}
+\noindent\begin{minipage}[t]{0.48\linewidth}
+f)\ $5\,\%$ heißt: jeder \linie{10mm}
+\karo{1}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+g)\ $8\,\%$ heißt: \linie{10mm} von $100$
+\karo{1}
+\end{minipage}
+\fusshilfe{\mbox{6:~b) 10\,\%; c) 2\,\%; d) 60\,\%; e) jeder zweite; f) jeder zwanzigste; g) 8 von 100}}
+\end{pfaufg}
+
+% L1-5: „Jeder fünfte“ ist der Bruch 1/5, nicht die Zahl 5; „4 %“ ist 4 von 100, nicht jeder vierte
+\begin{pfaufg}{nach P10 ’20}{7.}{}
+Ein Paketdienst sagt: „$5\,\%$ der Pakete kommen zu spät.“ Kreuze an, welche Aussage dasselbe bedeutet.\par\medskip\noindent\kk{$5$ von $10$ Paketen kommen zu spät.}\par\smallskip\noindent\kk{Jedes 5. Paket kommt zu spät.}\par\smallskip\noindent\kk{$5$ von $100$ Paketen kommen zu spät.}\par
+\fusshilfe{\mbox{7:~5 von 100}}
+\end{pfaufg}
+
+% L1-6: Alle Anteile eines Ganzen ergeben 100 %; der fehlende Teil ist der Rest; am Streifen eine Prozentzahl als Bruch schätzen
+\begin{pfaufg}{}{8.}{}
+Der Streifen zeigt, welche Getränke am Schulkiosk verkauft werden. Ein Anteil fehlt.
+\gzwei{\begin{tikzpicture}[font=\small]
+\draw[line width=0.7pt] (0.00,0) rectangle (3.50,0.90);
+\node[align=center,font=\scriptsize] at (1.75,0.45) {Wasser\\$35\,\%$};
+\draw[line width=0.7pt] (3.50,0) rectangle (6.30,0.90);
+\node[align=center,font=\scriptsize] at (4.90,0.45) {Saft\\$28\,\%$};
+\draw[line width=0.7pt,fill=black!8] (6.30,0) rectangle (8.20,0.90);
+\node[align=center,font=\scriptsize] at (7.25,0.45) {Tee\\?};
+\draw[line width=0.7pt] (8.20,0) rectangle (9.20,0.90);
+\draw[black!55] (8.70,0) -- (8.70,-0.35);
+\node[anchor=north,align=center,font=\scriptsize] at (8.70,-0.35) {Milch\\$10\,\%$};
+\draw[line width=0.7pt] (9.20,0) rectangle (10.00,0.90);
+\draw[black!55] (9.60,0) -- (9.60,-0.35);
+\node[anchor=north,align=center,font=\scriptsize] at (9.60,-0.35) {Sonst.\\$8\,\%$};
+\node[anchor=south,font=\scriptsize] at (0,0.90) {$0\,\%$};
+\node[anchor=south,font=\scriptsize] at (10.00,0.90) {$100\,\%$};
+\end{tikzpicture}}{%
+\textbf{a)}\ Wie viel Prozent der Getränke sind Tee?\linie{14mm}\%\par\bigskip
+\textbf{b)}\ Welches Getränk wird jedes zehnte Mal gekauft?\linie{14mm}}
+\fusshilfe{\mbox{8:~a) 19\,\%; b) Milch}}
+\end{pfaufg}
+
+% L1-7: Zielaufgabe: Anteilsaussage in Prozent übersetzen, in der richtigen Spalte nachsehen, die falsche Aussage berichtigen
+\begin{pfaufg}{nach P10 ’19}{9.}{}
+Kinder einer Grundschule und einer Oberschule sagen, wie oft sie zu Hause frühstücken. Die Tabelle zeigt die Anteile.\par\medskip\noindent \begin{minipage}[t]{0.47\linewidth}\vspace{0pt}{\renewcommand{\arraystretch}{1.3}\begin{tabular}{|l|c|c|}\hline
+Frühstück & Grundschule & Oberschule\\\hline immer & $80\,\%$ & $60\,\%$\\\hline manchmal & $15\,\%$ & $30\,\%$\\\hline nie & $5\,\%$ & $10\,\%$\\\hline\end{tabular}}\end{minipage}\hfill\begin{minipage}[t]{0.5\linewidth}\vspace{0pt}Genau eine Aussage ist falsch. Kreuze sie an.\par\medskip\kk{Drei von fünf Oberschülern frühstücken immer zu Hause.}\par\medskip\kk{Jeder zehnte Grundschüler frühstückt nie zu Hause.}\end{minipage}\par
+\medskip Schreibe die falsche Aussage richtig.
+\karo{2}
+\fusshilfe{\mbox{9:~jeder zwanzigste}}
+\end{pfaufg}
+
+\blattende{2020 \pkt{} 1 \pkt{} a \quad 2019 \pkt{} 5 \pkt{} b}{Vorher: Brüche und Dezimalzahlen\quad\textbullet\quad Weiter: Prozentsatz berechnen}
+\end{document}
