@@ -134,3 +134,26 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
   weil die Aufgabe nichts ausrechnet.
 - Prüfer: Mengenwarnungen (k1 s0, k2 s1/s3/s5/s7, 2025-OS-B1a 5×,
   pflicht anwendung 4×) aus den verlangten Zusatzzeilen, wie E1–E3.
+
+## Prozentrechnung E5 „Prozentuale Veränderung“ (S2L, 09.10.2026)
+
+- Kritiker (Schritt 6) nicht vom Bau-Agenten gestartet (Auftrag: der
+  Chat startet ihn). Im Katalog „offen“.
+- Breite: Die Einheit trägt sieben Sorten (Faktor, Veränderung in
+  Prozent, alter Wert, Brutto/Netto, Prozentpunkte, Steigung, gemischt).
+  Das Blatt nimmt nur, was die Zielaufgabe (Preistabelle nach
+  2026-FOR-K3c) trägt; alter Wert, Brutto/Netto, Prozentpunkte und
+  Steigung stehen als Zusatz (neu je eine Zeile mit Streifen bzw.
+  Skizze). Zu entscheiden, ob ein zweites E5-Blatt („Rückwärts und
+  Sonderfälle“: alter Wert, Brutto/Netto, Prozentpunkte, Steigung nach
+  2025-OS-K4b) nötig ist – die drei Sorten sind P10-Stoff.
+- Bestand E5: Grundfall k2-s1 war fünfmal dieselben 70 €, der Streifen
+  zeigte nur den Prozentwert; v1–v5 schwach, besser k2-s1-v6 (Streifen
+  über oder unter 100 % verlängert). Keine E5-Zeile hatte satz; alle
+  Blattzeilen neu.
+- Setzer: kein Baustein „Streifen über 100 %“ in mathblatt.sty; die
+  verlängerten Streifen stehen als TikZ in grafik (Katalog 27.09.
+  nannte ihn Baustein-Wunsch). Tabelle im Päckchen wieder nur über
+  satz.text. form „frei“ für Ankreuzen mit grauem a) wie E4.
+- Prüfer: Mengenwarnungen (k1 s0, k2 s0–s8, 2026-FOR-K3c 5×) aus den
+  verlangten Zusatzzeilen, wie E1–E4.

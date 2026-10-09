@@ -1,0 +1,209 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% gesetzt von werkzeuge/setzer.py aus dem Lernweg (L5-1 · L5-2 · L5-3 · L5-4 · L5-5 · L5-6 · L5-7) und den Bankzeilen; Muster T6B.
+\input{praeambel}
+\newcommand{\kennung}{S2L}
+\newcommand{\grau}[1]{{\color{mbgrau}#1}}
+
+\begin{document}
+\pfheftstil
+\fancyfoot[C]{\parbox[t]{\textwidth}{\mbfhbox\par\vspace{1.5mm}{\footnotesize\color{mbgrau}{\scriptsize \kennung}\hfill\thepage}}}
+\pfheftkopf{Prozentuale Veränderung}{Klasse 7}
+% L5-1: Anschluss an Einheit 3: Der alte Wert ist der ganze Streifen (100 %); bei einer Erhöhung wird er länger, bei einer Senkung kürzer; neuer Wert = alter Wert plus oder minus den Prozentwert
+\begin{pfaufg}{}{1.}{}
+Der dicke Rahmen ist der alte Wert ($100\,\%$). Der graue Streifen ist der neue Wert. Wie groß ist der neue Wert?\par\medskip\noindent
+\begin{minipage}[b]{0.32\linewidth}\centering
+\begin{tikzpicture}
+\fill[black!28] (0,0) rectangle (3.750,0.6);
+\draw[black!55,line width=0.4pt] (0.750,0) -- (0.750,0.6);
+\draw[black!55,line width=0.4pt] (1.500,0) -- (1.500,0.6);
+\draw[black!55,line width=0.4pt] (2.250,0) -- (2.250,0.6);
+\draw[line width=0.9pt] (0,0) rectangle (3.000,0.6);
+\draw[line width=0.5pt,dashed] (3.000,0) rectangle (3.750,0.6);
+\draw[line width=0.4pt] (3.000,0.68) -- (3.000,0.82) -- (3.750,0.82) -- (3.750,0.68);
+\node[above,font=\small] at (3.375,0.80) {$+25\,\%$};
+\node[below,font=\small] at (1.500,0) {alt: $80\,€$};
+\end{tikzpicture}\par\smallskip
+\grau{{\small a)\ $80\,€$ um $25\,\%$ mehr}\par\smallskip
+$25\,\% = 20\,€$\par\smallskip $80\,€ + 20\,€ = 100\,€$}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.32\linewidth}\centering
+\begin{tikzpicture}
+\fill[black!28] (0,0) rectangle (2.700,0.6);
+\draw[black!55,line width=0.4pt] (0.300,0) -- (0.300,0.6);
+\draw[black!55,line width=0.4pt] (0.600,0) -- (0.600,0.6);
+\draw[black!55,line width=0.4pt] (0.900,0) -- (0.900,0.6);
+\draw[black!55,line width=0.4pt] (1.200,0) -- (1.200,0.6);
+\draw[black!55,line width=0.4pt] (1.500,0) -- (1.500,0.6);
+\draw[black!55,line width=0.4pt] (1.800,0) -- (1.800,0.6);
+\draw[black!55,line width=0.4pt] (2.100,0) -- (2.100,0.6);
+\draw[black!55,line width=0.4pt] (2.400,0) -- (2.400,0.6);
+\draw[black!55,line width=0.4pt] (2.700,0) -- (2.700,0.6);
+\draw[line width=0.9pt] (0,0) rectangle (3.000,0.6);
+\draw[line width=0.4pt] (2.700,0.68) -- (2.700,0.82) -- (3.000,0.82) -- (3.000,0.68);
+\node[above,font=\small] at (2.850,0.80) {$-10\,\%$};
+\node[below,font=\small] at (1.500,0) {alt: $60$ kg};
+\end{tikzpicture}\par\smallskip
+{\small b)\ $60$ kg um $10\,\%$ weniger}\par\smallskip
+\linie{30mm}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.32\linewidth}\centering
+\begin{tikzpicture}
+\fill[black!28] (0,0) rectangle (4.500,0.6);
+\draw[black!55,line width=0.4pt] (1.500,0) -- (1.500,0.6);
+\draw[line width=0.9pt] (0,0) rectangle (3.000,0.6);
+\draw[line width=0.5pt,dashed] (3.000,0) rectangle (4.500,0.6);
+\draw[line width=0.4pt] (3.000,0.68) -- (3.000,0.82) -- (4.500,0.82) -- (4.500,0.68);
+\node[above,font=\small] at (3.750,0.80) {$+50\,\%$};
+\node[below,font=\small] at (1.500,0) {alt: $40$ m};
+\end{tikzpicture}\par\smallskip
+{\small c)\ $40$ m um $50\,\%$ mehr}\par\smallskip
+\linie{30mm}
+\end{minipage}
+\fusshilfe{\mbox{1:~b) 54\text{ kg}; c) 60\text{ m}}}
+\end{pfaufg}
+
+% L5-2: Erkennen ohne Rechnen: „um 30 % weniger“ heißt „auf 70 %“, also mal 0,7; „um 5 %“ mehr heißt mal 1,05
+\begin{pfaufg}{}{2.}{}
+Mit welcher Zahl multiplizierst du den alten Wert? Kreuze an. Rechne nicht aus.\par\medskip
+\grau{a)\ Ein Preis wird um $20\,\%$ erhöht.\par\hspace*{1.2em}$\boxtimes$\,$1{,}2$\hspace{0.9em}$\square$\,$0{,}2$\hspace{0.9em}$\square$\,$0{,}8$}\par\medskip
+b)\ Ein Preis wird um $30\,\%$ gesenkt.\par\hspace*{1.2em}\kk{$0{,}3$}\kk{$0{,}7$}\kk{$1{,}3$}\par\medskip
+c)\ Ein Preis wird auf $90\,\%$ gesenkt.\par\hspace*{1.2em}\kk{$0{,}9$}\kk{$0{,}1$}\kk{$1{,}9$}\par\medskip
+d)\ Eine Miete steigt um $5\,\%$.\par\hspace*{1.2em}\kk{$1{,}5$}\kk{$1{,}05$}\kk{$0{,}05$}\par\medskip
+e)\ Ein Preis wird um $100\,\%$ erhöht.\par\hspace*{1.2em}\kk{$1$}\kk{$2$}\kk{$0$}\par\medskip
+f)\ Ein Gewicht nimmt um $12\,\%$ ab.\par\hspace*{1.2em}\kk{$0{,}12$}\kk{$1{,}12$}\kk{$0{,}88$}\par
+\fusshilfe{\mbox{2:~b) $0{,}7$; c) $0{,}9$; d) $1{,}05$; e) $2$; f) $0{,}88$}}
+\end{pfaufg}
+
+% L5-3: Mit dem Faktor in einem Schritt rechnen, auch mit Komma und kleinen Sätzen; der Faktor spart das Zusammenzählen
+\begin{pfaufg}{}{3.}{}
+Rechne in einem Schritt mit dem Faktor.\par\medskip
+\grau{a)\ $45\,€$ um $20\,\%$ erhöht\quad $45\,€ \cdot 1{,}2 = 54\,€$}\par\medskip
+\noindent\begin{minipage}[t]{0.48\linewidth}
+b)\ $90$ kg um $20\,\%$ weniger
+\karo{1}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+c)\ $240\,€$ um $15\,\%$ gesenkt
+\karo{1}
+\end{minipage}
+\noindent\begin{minipage}[t]{0.48\linewidth}
+d)\ $3{,}50\,€$ um $8\,\%$ erhöht
+\karo{1}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+e)\ $1\,200$ Mitglieder um $3\,\%$ mehr
+\karo{1}
+\end{minipage}
+\noindent\begin{minipage}[t]{0.48\linewidth}
+f)\ $85\,€$ auf $60\,\%$ gesenkt
+\karo{1}
+\end{minipage}
+\fusshilfe{\mbox{3:~b) 72 kg; c) 204\,€; d) 3{,}78\,€; e) 1\,236; f) 51\,€}}
+\end{pfaufg}
+
+% L5-4: Frage umgedreht: beide Werte gegeben, die Veränderung in Prozent gesucht; zwei Streifen untereinander, der alte ist 100 %; Unterschied durch den alten Wert (Einheit 2)
+\begin{pfaufg}{}{4.}{}
+Der alte Wert ist $100\,\%$. Um wie viel Prozent hat sich der Wert verändert?\par\medskip\noindent
+\begin{minipage}[b]{0.32\linewidth}\centering
+\begin{tikzpicture}
+\draw[line width=0.9pt] (0,0.75) rectangle (3.000,1.25);
+\node[font=\small] at (1.500,1.00) {alt: $40\,€$};
+\fill[black!28] (0,0) rectangle (3.750,0.5);
+\draw[line width=0.5pt] (0,0) rectangle (3.750,0.5);
+\draw[black!55,dashed,line width=0.4pt] (3.000,-0.12) -- (3.000,1.37);
+\node[font=\small] at (1.500,0.25) {neu: $50\,€$};
+\node[above right,font=\scriptsize,inner xsep=0pt] at (0,1.25) {$100\,\%$};
+\end{tikzpicture}\par\smallskip
+\grau{{\small a)\ von $40\,€$ auf $50\,€$}\par\smallskip
+Unterschied $10$\par\smallskip $10 : 40 = 25\,\%$ mehr}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.32\linewidth}\centering
+\begin{tikzpicture}
+\draw[line width=0.9pt] (0,0.75) rectangle (3.000,1.25);
+\node[font=\small] at (1.500,1.00) {alt: $80\,€$};
+\fill[black!28] (0,0) rectangle (2.550,0.5);
+\draw[line width=0.5pt] (0,0) rectangle (2.550,0.5);
+\draw[black!55,dashed,line width=0.4pt] (3.000,-0.12) -- (3.000,1.37);
+\node[font=\small] at (1.275,0.25) {neu: $68\,€$};
+\node[above right,font=\scriptsize,inner xsep=0pt] at (0,1.25) {$100\,\%$};
+\end{tikzpicture}\par\smallskip
+{\small b)\ von $80\,€$ auf $68\,€$}\par\smallskip
+\linie{30mm}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.32\linewidth}\centering
+\begin{tikzpicture}
+\draw[line width=0.9pt] (0,0.75) rectangle (3.000,1.25);
+\node[font=\small] at (1.500,1.00) {alt: $50$ kg};
+\fill[black!28] (0,0) rectangle (3.600,0.5);
+\draw[line width=0.5pt] (0,0) rectangle (3.600,0.5);
+\draw[black!55,dashed,line width=0.4pt] (3.000,-0.12) -- (3.000,1.37);
+\node[font=\small] at (1.500,0.25) {neu: $60$ kg};
+\node[above right,font=\scriptsize,inner xsep=0pt] at (0,1.25) {$100\,\%$};
+\end{tikzpicture}\par\smallskip
+{\small c)\ von $50$ kg auf $60$ kg}\par\smallskip
+\linie{30mm}
+\end{minipage}
+\fusshilfe{\mbox{4:~b) 15\,\% weniger; c) 20\,\% mehr}}
+\end{pfaufg}
+
+% L5-5: Welcher Wert ist der alte? Er steht nicht immer vorn („jetzt 400, früher 500“) oder muss erst gebildet werden („sinkt um 2 € auf 6 €“); die Rechnung wählen, ohne auszurechnen
+\begin{pfaufg}{}{5.}{}
+Welche Rechnung gibt die Veränderung in Prozent? Kreuze an. Rechne nicht aus.\par\medskip
+\grau{a)\ Ein Preis steigt von $60\,€$ auf $75\,€$.\par\hspace*{1.2em}$\boxtimes$\,$15 : 60$\hspace{0.9em}$\square$\,$15 : 75$\hspace{0.9em}$\square$\,$75 : 60$}\par\medskip
+b)\ Jetzt kommen $400$ Besucher. Früher waren es $500$.\par\hspace*{1.2em}\kk{$100 : 400$}\kk{$100 : 500$}\kk{$400 : 500$}\par\medskip
+c)\ Die Karte kostet jetzt $9\,€$. Vorher kostete sie $7{,}50\,€$.\par\hspace*{1.2em}\kk{$1{,}50 : 9$}\kk{$1{,}50 : 7{,}50$}\kk{$9 : 7{,}50$}\par\medskip
+d)\ Im Juni kamen $950$ Gäste, im Mai $1\,150$.\par\hspace*{1.2em}\kk{$200 : 950$}\kk{$200 : 1\,150$}\kk{$950 : 1\,150$}\par\medskip
+e)\ Ein Preis sinkt um $2\,€$ auf $6\,€$.\par\hspace*{1.2em}\kk{$2 : 6$}\kk{$2 : 8$}\kk{$6 : 8$}\par
+\fusshilfe{\mbox{5:~b) $100 : 500$; c) $1{,}50 : 7{,}50$; d) $200 : 1\,150$; e) $2 : 8$}}
+\end{pfaufg}
+
+% L5-6: Gemischt mit krummen Zahlen: erst entscheiden, ob der neue Wert (mal Faktor) oder die Veränderung in Prozent (Unterschied : alt) gesucht ist, dann rechnen und auf eine Stelle runden
+\begin{pfaufg}{}{6.}{}
+Entscheide zuerst: Ist der neue Wert gesucht oder die Veränderung in Prozent? Runde Prozentsätze auf eine Stelle nach dem Komma.\par\medskip
+\grau{a)\ Ein Dorf wächst von $640$ auf $690$ Einwohner. Um wie viel Prozent?\quad Veränderung: $50 : 640 = 0{,}078125 \approx 7{,}8\,\%$}\par\medskip
+\noindent\begin{minipage}[t]{0.48\linewidth}
+b)\ Eine Jacke kostet $72\,€$ und wird um $7\,\%$ billiger. Neuer Preis?
+\karo{2}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+c)\ Ein Verein wächst von $3\,400$ auf $3\,950$ Mitglieder. Um wie viel Prozent?
+\karo{2}
+\end{minipage}
+\noindent\begin{minipage}[t]{0.48\linewidth}
+d)\ Ein Paket wiegt $12{,}5$ kg, später $11{,}4$ kg. Um wie viel Prozent leichter?
+\karo{2}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+e)\ Eine Fahrkarte kostet $2{,}50\,€$ und wird um $12\,\%$ teurer. Neuer Preis?
+\karo{2}
+\end{minipage}
+\noindent\begin{minipage}[t]{0.48\linewidth}
+f)\ Ein Brot kostete $3{,}49\,€$, jetzt $3{,}79\,€$. Um wie viel Prozent?
+\karo{2}
+\end{minipage}
+\fusshilfe{\mbox{6:~b) 66{,}96\,€; c) 16{,}2\,\%; d) 8{,}8\,\%; e) 2{,}80\,€; f) 8{,}6\,\%}}
+\end{pfaufg}
+
+% L5-7: Zielaufgabe: In einer Preistabelle wechselt der alte Wert mit der Frage (Montag, dann Freitag); dieselben 8 Cent sind einmal 4,4 % mehr, einmal 4,2 % weniger
+\begin{pfaufg}{nach P10 ’26}{7.}{}
+Die Tabelle zeigt den Preis für 1 Liter Super an verschiedenen Tagen. Runde Prozentsätze auf eine Stelle nach dem Komma.\par\medskip\noindent {\renewcommand{\arraystretch}{1.3}\begin{tabular}{|l|c|c|c|c|}\hline
+Tag & Montag & Mittwoch & Freitag & Sonntag\\\hline
+1 Liter Super & $1{,}75\,€$ & $1{,}82\,€$ & $1{,}90\,€$ & $1{,}82\,€$\\\hline\end{tabular}}\par\smallskip
+\noindent\begin{minipage}[t]{0.48\linewidth}
+a)\ Um wie viel Prozent ist der Preis von Montag bis Freitag gestiegen?
+\karo{2}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+b)\ Um wie viel Prozent ist der Preis von Freitag bis Sonntag gesunken?
+\karo{2}
+\end{minipage}
+\noindent\begin{minipage}[t]{0.48\linewidth}
+c)\ Lea sagt: „Von Mittwoch bis Freitag stieg der Preis um $8$ Cent, von Freitag bis Sonntag sank er um $8$ Cent. Also stieg er um genauso viel Prozent, wie er danach sank.“ Hat Lea recht? Begründe mit einer Rechnung.
+\karo{3}
+\end{minipage}
+\fusshilfe{\mbox{7:~a) 8{,}6\,\%; b) 4{,}2\,\%; c) nein}}
+\end{pfaufg}
+
+\par\vfill\noindent{\footnotesize Vorher: Grundwert berechnen\quad\textbullet\quad Weiter: Zinsrechnung\par}
+\end{document}
