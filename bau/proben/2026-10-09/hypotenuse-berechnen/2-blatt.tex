@@ -1,0 +1,190 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% gesetzt von werkzeuge/setzer.py aus dem Lernweg (L1-1 · L1-2 · L1-3 · L1-4 · L1-5 · L1-6 · L1-7) und den Bankzeilen; Muster T6B.
+\input{praeambel}
+\newcommand{\kennung}{M74}
+\newcommand{\grau}[1]{{\color{mbgrau}#1}}
+
+\begin{document}
+\pfheftstil
+\fancyfoot[C]{\parbox[t]{\textwidth}{\mbfhbox\par\vspace{1.5mm}{\footnotesize\color{mbgrau}{\scriptsize \kennung}\hfill\thepage}}}
+\pfheftkopf{Hypotenuse berechnen}{Klasse 9}
+% L1-1: Die Hypotenuse liegt dem rechten Winkel gegenüber, in jeder Lage des Dreiecks
+\begin{pfaufg}{}{1.}{}
+Gegenüber dem rechten Winkel liegt die längste Seite des Dreiecks. Sie heißt \textbf{Hypotenuse}. Die beiden Seiten am rechten Winkel heißen \textbf{Katheten}.\par
+Kreuze in jedem Dreieck die Hypotenuse an.\par\medskip\noindent
+\begin{minipage}[b]{0.245\linewidth}\centering
+\begin{tikzpicture}[line width=0.7pt,scale=0.85]\coordinate (P1) at (0,0);\coordinate (P2) at (2.4,0);\coordinate (P3) at (0,1.5);\draw (P1) -- (P2) -- (P3) -- cycle;\mbrwmarke{(P1)}{(P2)}{(P3)}
+\node[font=\small,anchor=north] at (1.2,-0.08) {$a$};\node[font=\small,anchor=east] at (-0.08,0.75) {$b$};\node[font=\small,anchor=south west] at (1.22,0.78) {$c$};\end{tikzpicture}\par\smallskip
+{\small a)\ \kk{$a$}\kk{$b$}\kk{$c$}}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.245\linewidth}\centering
+\begin{tikzpicture}[line width=0.7pt,scale=0.85]\coordinate (P1) at (0,0);\coordinate (P2) at (2.4,0);\coordinate (P3) at (2.4,1.5);\draw (P1) -- (P2) -- (P3) -- cycle;\mbrwmarke{(P2)}{(P1)}{(P3)}
+\node[font=\small,anchor=north] at (1.2,-0.08) {$p$};\node[font=\small,anchor=west] at (2.48,0.75) {$q$};\node[font=\small,anchor=south east] at (1.18,0.78) {$r$};\end{tikzpicture}\par\smallskip
+{\small b)\ \kk{$p$}\kk{$q$}\kk{$r$}}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.245\linewidth}\centering
+\begin{tikzpicture}[line width=0.7pt,scale=0.85]\coordinate (P1) at (0,0);\coordinate (P2) at (2.5,0);\coordinate (P3) at (0.9,1.2);\draw (P1) -- (P2) -- (P3) -- cycle;\mbrwmarke{(P3)}{(P1)}{(P2)}
+\node[font=\small,anchor=north] at (1.25,-0.08) {$s$};\node[font=\small,anchor=south east] at (0.40,0.62) {$t$};\node[font=\small,anchor=south west] at (1.75,0.62) {$u$};\end{tikzpicture}\par\smallskip
+{\small c)\ \kk{$s$}\kk{$t$}\kk{$u$}}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.245\linewidth}\centering
+\begin{tikzpicture}[line width=0.7pt,scale=0.85]\coordinate (P1) at (0,1.25);\coordinate (P2) at (1.8,0);\coordinate (P3) at (2.8,1.44);\draw (P1) -- (P2) -- (P3) -- cycle;\mbrwmarke{(P2)}{(P1)}{(P3)}
+\node[font=\small,anchor=north east] at (0.85,0.56) {$f$};\node[font=\small,anchor=north west] at (2.37,0.67) {$g$};\node[font=\small,anchor=south] at (1.40,1.42) {$e$};\end{tikzpicture}\par\smallskip
+{\small d)\ \kk{$e$}\kk{$f$}\kk{$g$}}
+\end{minipage}
+\fusshilfe{\mbox{1:~a) $c$; b) $r$; c) $s$; d) $e$}}
+\end{pfaufg}
+
+% L1-2: Die zwei kleinen Quadrate füllen zusammen das große – Flächen addieren, nicht Längen
+\begin{pfaufg}{}{2.}{}
+Über jeder Seite des rechtwinkligen Dreiecks steht ein Quadrat. Die Hypotenuse ist $5$ Kästchen lang.
+\gzwei{\begin{tikzpicture}[scale=0.40,line width=0.7pt]
+\draw[mbgitter,line width=0.3pt] (-4,-3) grid (7,7);
+\draw (0,0) -- (3,0) -- (3,-3) -- (0,-3) -- cycle;
+\draw (0,0) -- (-4,0) -- (-4,4) -- (0,4) -- cycle;
+\draw (0,4) -- (3,0) -- (7,3) -- (4,7) -- cycle;
+\draw[line width=1.4pt] (0,0) -- (3,0) -- (0,4) -- cycle;
+\mbrwmarke{(0,0)}{(3,0)}{(0,4)}
+\end{tikzpicture}}{%
+\textbf{a)}\ Wie viele Kästchen haben die zwei kleinen Quadrate zusammen?\linie{14mm}\par\bigskip
+\textbf{b)}\ Wie viele Kästchen hat das große Quadrat?\linie{14mm}\par\bigskip
+\textbf{c)}\ Sind die zwei Katheten zusammen so lang wie die Hypotenuse?\linie{14mm}}
+\fusshilfe{\mbox{2:~a) 25; b) 25; c) nein}}
+\end{pfaufg}
+
+% L1-3: Die Gleichung mit den Buchstaben der Figur aufschreiben, die Hypotenuse allein; ohne rechten Winkel gilt sie nicht
+\begin{pfaufg}{}{3.}{}
+Ein Quadrat hat Seite mal Seite Kästchen: $3^2 + 4^2 = 5^2$. Das gilt in jedem rechtwinkligen Dreieck. Es ist der Satz des Pythagoras: \mbox{Hypotenuse$^2$ = Kathete$^2$ + Kathete$^2$.}\par\smallskip
+Schreibe für jedes Dreieck die Gleichung des Satzes auf. Hat ein Dreieck keinen rechten Winkel, schreibe „gilt nicht“.\par
+Suche zuerst die Hypotenuse – sie steht allein auf einer Seite der Gleichung.\par\medskip\noindent
+\begin{minipage}[b]{0.245\linewidth}\centering
+\begin{tikzpicture}[line width=0.7pt,scale=0.85]\coordinate (P1) at (0,0);\coordinate (P2) at (2.5,0);\coordinate (P3) at (1.6,1.2);\draw (P1) -- (P2) -- (P3) -- cycle;\mbrwmarke{(P3)}{(P1)}{(P2)}
+\node[font=\small,anchor=north] at (1.25,-0.08) {$w$};\node[font=\small,anchor=south east] at (0.78,0.62) {$u$};\node[font=\small,anchor=south west] at (2.08,0.62) {$v$};\end{tikzpicture}\par\smallskip
+{\small a)\ }\par\smallskip
+\linie{30mm}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.245\linewidth}\centering
+\begin{tikzpicture}[line width=0.7pt,scale=0.85]\coordinate (P1) at (0,0);\coordinate (P2) at (2.4,0);\coordinate (P3) at (2.4,1.5);\draw (P1) -- (P2) -- (P3) -- cycle;\mbrwmarke{(P2)}{(P1)}{(P3)}
+\node[font=\small,anchor=north] at (1.2,-0.08) {$z$};\node[font=\small,anchor=west] at (2.48,0.75) {$y$};\node[font=\small,anchor=south east] at (1.18,0.78) {$x$};\end{tikzpicture}\par\smallskip
+{\small b)\ }\par\smallskip
+\linie{30mm}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.245\linewidth}\centering
+\begin{tikzpicture}[line width=0.7pt,scale=0.85]\coordinate (A) at (0,0);\coordinate (B) at (2.4,0);\coordinate (C) at (0,1.5);\draw (A) -- (B) -- (C) -- cycle;\mbrwmarke{(A)}{(B)}{(C)}
+\node[font=\small,anchor=north east] at (A) {$A$};\node[font=\small,anchor=north west] at (B) {$B$};\node[font=\small,anchor=south east] at (C) {$C$};\end{tikzpicture}\par\smallskip
+{\small c)\ }\par\smallskip
+\linie{30mm}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.245\linewidth}\centering
+\begin{tikzpicture}[line width=0.7pt,scale=0.85]\coordinate (P1) at (0,0);\coordinate (P2) at (2.5,0);\coordinate (P3) at (0.35,1.5);\draw (P1) -- (P2) -- (P3) -- cycle;
+\node[font=\small,anchor=north] at (1.25,-0.08) {$m$};\node[font=\small,anchor=east] at (0.10,0.75) {$k$};\node[font=\small,anchor=south west] at (1.48,0.78) {$l$};\end{tikzpicture}\par\smallskip
+{\small d)\ }\par\smallskip
+\linie{30mm}
+\end{minipage}
+\fusshilfe{\mbox{3:~a) $w^2 = u^2 + v^2$; b) $x^2 = y^2 + z^2$; c) $\overline{BC}^2 = \overline{AB}^2 + \overline{AC}^2$; d) gilt nicht}}
+\end{pfaufg}
+
+% L1-4: Rechnen in drei Zeilen (Gleichung, Zwischenergebnis, Wurzel) mit Probe; dieselbe Rechnung als Formel unter Fallen wählen
+\begin{pfaufg}{}{4.}{}
+Die Katheten eines rechtwinkligen Dreiecks sind gegeben. Berechne die fehlende Seite.\par\medskip
+\grau{a)\ $6$ cm und $8$ cm:\quad $c^2 = 6^2 + 8^2 = 36 + 64 = 100$\quad $\Rightarrow$\quad $c = \sqrt{100} = 10$ cm}\par\medskip
+\noindent\begin{minipage}[t]{0.48\linewidth}
+b)\ $5$ cm und $12$ cm
+\karo{3}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+c)\ $9$ cm und $12$ cm
+\karo{3}
+\end{minipage}
+\par Prüfe dein Ergebnis: Die Hypotenuse ist länger als jede Kathete, aber kürzer als beide zusammen.
+\fusshilfe{\mbox{4:~b) 13 cm; c) 15 cm}}
+\end{pfaufg}
+
+% L1-4: Rechnen in drei Zeilen (Gleichung, Zwischenergebnis, Wurzel) mit Probe; dieselbe Rechnung als Formel unter Fallen wählen
+\begin{pfaufg}{nach P10 ’21}{5.}{}
+Kreuze an, mit welcher Gleichung man die Länge von $t$ berechnen kann.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.85]\coordinate (P1) at (0,0);\coordinate (P2) at (2.6,0);\coordinate (P3) at (2.6,1.6);\draw (P1) -- (P2) -- (P3) -- cycle;\mbrwmarke{(P2)}{(P1)}{(P3)}
+\node[font=\small,anchor=west] at (2.68,0.82) {$s$};\node[font=\small,anchor=south east] at (1.23,0.84) {$t$};\node[font=\small,anchor=north east] at (1.25,-0.06) {$r$};\end{tikzpicture}}{%
+\kk{$t = r^2 + s^2$}\kk{$t = \sqrt{r^2 + s^2}$}\par\medskip
+\kk{$t = r + s$}\kk{$t = \sqrt{s^2 - r^2}$}}
+\fusshilfe{\mbox{5:~$t = \sqrt{r^2 + s^2}$}}
+\end{pfaufg}
+
+% L1-5: Wurzel geht nicht auf: runden erst am Ende; Einheiten vorher angleichen
+\begin{pfaufg}{}{6.}{}
+Berechne die fehlende Seite. Runde, wo nötig, auf eine Stelle nach dem Komma.\par\medskip
+\grau{a)\ Katheten $5$ cm und $8$ cm:\quad $c^2 = 25 + 64 = 89$\quad $\Rightarrow$\quad $c = \sqrt{89} = 9{,}433\ldots \approx 9{,}4$ cm}\par\medskip
+\noindent\begin{minipage}[t]{0.48\linewidth}
+b)\ Katheten $6$ cm und $9$ cm
+\karo{3}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+c)\ Katheten $0{,}6$ m und $80$ cm
+\karo{3}
+\end{minipage}
+\fusshilfe{\mbox{6:~b) 10,8 cm; c) 100 cm = 1 m}}
+\end{pfaufg}
+
+% L1-6: Das Dreieck in der Sache selbst finden: Bild ohne Dreieck (reicht es?) → Karte (wie viel kürzer?) → nur Text (Skizze selbst)
+\begin{pfaufg}{}{7.}{}
+Herr Kaya will das Fenster putzen. Seine Leiter ist $2{,}6$ m lang. Reicht sie bis zum Fenster?
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=1.05]
+\fill[black!10] (3,0) rectangle (3.6,3.6);\draw (3,0) -- (3,3.6);
+\draw (2.85,2.4) rectangle (3,3.3);\draw (2.85,2.4) -- (3.6,2.4);
+\draw (-0.4,0) -- (4.0,0);
+\draw[line width=1.8pt] (2.3,0) -- (2.97,2.4);
+\mbrwmarke{(3,0)}{(2.3,0)}{(3,2.4)}
+\draw[|-|,line width=0.4pt] (2.3,-0.35) -- (3,-0.35) node[midway,below,font=\small] {$0{,}7$ m};
+\draw[|-|,line width=0.4pt] (3.9,0) -- (3.9,2.4) node[midway,right,font=\small] {$2{,}4$ m};
+\node[font=\small,anchor=east] at (2.45,1.3) {Leiter};
+\end{tikzpicture}}{%
+\karo{3}\par\smallskip\hfill\kk{ja}\kk{nein}}
+\fusshilfe{\mbox{7:~ja, gebraucht werden 2,5 m}}
+\end{pfaufg}
+
+% L1-6: Das Dreieck in der Sache selbst finden: Bild ohne Dreieck (reicht es?) → Karte (wie viel kürzer?) → nur Text (Skizze selbst)
+\begin{pfaufg}{}{8.}{}
+Lena geht von $A$ über die Ecke $K$ nach $C$. Quer durch den Park ist der Weg kürzer. Wie viele Meter spart sie?
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.8]
+\fill[black!10] (0,0.45) rectangle (3.55,3.2);
+\draw (-0.3,0) -- (4.0,0);\draw (-0.3,0.45) -- (3.55,0.45) -- (3.55,3.2);\draw (4.0,0) -- (4.0,3.2);
+\node[font=\scriptsize] at (1.7,1.9) {Park};
+\fill (0,0.22) circle (1.6pt) node[font=\small,anchor=east] {$A$};
+\fill (3.78,0.22) circle (1.6pt) node[font=\small,anchor=north west] {$K$};
+\mbrwmarke{(3.78,0.22)}{(0,0.22)}{(3.78,3.0)}
+\fill (3.78,3.0) circle (1.6pt) node[font=\small,anchor=south] {$C$};
+\draw[|-|,line width=0.4pt] (0,-0.35) -- (3.78,-0.35) node[midway,below,font=\small] {$80$ m};
+\draw[|-|,line width=0.4pt] (4.35,0.22) -- (4.35,3.0) node[midway,right,font=\small] {$60$ m};
+\end{tikzpicture}}{%
+\karo{3}}
+\fusshilfe{\mbox{8:~40 m}}
+\end{pfaufg}
+
+% L1-6: Das Dreieck in der Sache selbst finden: Bild ohne Dreieck (reicht es?) → Karte (wie viel kürzer?) → nur Text (Skizze selbst)
+\begin{pfaufg}{}{9.}{}
+Der Bildschirm eines Fernsehers ist $80$ cm breit und $45$ cm hoch. Im Laden wird seine Diagonale angegeben. Berechne sie. Runde auf eine Stelle nach dem Komma.\par
+Skizziere zuerst den Bildschirm und zeichne die Diagonale ein.\par
+\karo{4}
+\fusshilfe{\mbox{9:~91,8 cm}}
+\end{pfaufg}
+
+% L1-7: Zielaufgaben mit Streckennamen, großen Zahlen und fast gleich langer Kathete
+\begin{pfaufg}{nach P10 ’20}{10.}{}
+Im Dreieck $ABC$ ist bei $C$ ein rechter Winkel. Die Strecke $\overline{BC}$ ist $12$~m lang, die Strecke $\overline{AC}$ $34$~m. Berechne die Länge der Strecke $\overline{AB}$. Runde auf eine Stelle nach dem Komma.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.8]\coordinate (A) at (0,0);\coordinate (B) at (1.2,3.4);\coordinate (C) at (0,3.4);\draw (A) -- (B) -- (C) -- cycle;\mbrwmarke{(C)}{(A)}{(B)}\node[font=\small] at (-0.05,-0.3) {$A$};\node[font=\small] at (1.37,3.64) {$B$};\node[font=\small] at (-0.1,3.68) {$C$};\end{tikzpicture}}{%
+\karo{3}}
+\fusshilfe{\mbox{10:~36,1 m}}
+\end{pfaufg}
+
+% L1-7: Zielaufgaben mit Streckennamen, großen Zahlen und fast gleich langer Kathete
+\begin{pfaufg}{nach P10 ’25}{11.}{}
+Familie Yücel baut vor der Haustür eine Rampe für Rollstühle. Berechne die Länge $x$ der Rampe. Runde auf eine Stelle nach dem Komma.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.75]\coordinate (P1) at (0,0);\coordinate (P2) at (5.95,0);\coordinate (P3) at (5.95,0.56);\draw (P1) -- (P2) -- (P3) -- cycle;\mbrwmarke{(P2)}{(P1)}{(P3)}
+\node[font=\small,anchor=north] at (2.97,-0.08) {$170$ cm};\node[font=\small,anchor=west] at (6.03,0.28) {$16$ cm};\node[font=\small,anchor=south] at (2.9,0.32) {$x$};\end{tikzpicture}}{%
+\karo{3}}
+\fusshilfe{\mbox{11:~170,8 cm}}
+\end{pfaufg}
+
+\blattende{2021 \pkt{} 1 \pkt{} h \quad 2020 \pkt{} 7 \pkt{} a \quad 2025 \pkt{} 4 \pkt{} a}{Vorher: Quadrat und Wurzel\quad\textbullet\quad Weiter: Kathete berechnen}
+\end{document}
