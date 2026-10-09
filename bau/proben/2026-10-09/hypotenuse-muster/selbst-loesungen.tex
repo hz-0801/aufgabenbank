@@ -1,0 +1,46 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Lösungen Selbstlernfassung
+% Gesetzt aus aufgaben.jsonl (Prüfstein Musterauftrag, 09.10.2026).
+\usepackage{enumitem}
+\usetikzlibrary{calc}
+\newgeometry{a4paper,margin=18mm,top=15mm,bottom=20mm,footskip=9mm}
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\footnotesize\color{mbgrau}Lösungen \textperiodcentered{} Satz des Pythagoras: die Hypotenuse berechnen}
+\fancyfoot[R]{\footnotesize\color{mbgrau}\thepage}
+\setlength{\parskip}{3pt}
+\renewcommand{\kreuz}[1]{\mbox{$\square$\ #1}\quad}
+\newcommand{\kreuzl}[1]{\par\hangindent1.4em\hangafter1\noindent$\square$\ #1}
+\newcommand{\marke}[1]{\leavevmode\llap{\scriptsize\color{mbgrau}#1\hspace{9mm}}}
+\newcommand{\aufg}[3]{\par\noindent\makebox[0pt][r]{#3}\begin{minipage}[t]{\linewidth}#1\end{minipage}\par}
+\newcommand{\aufgg}[4]{\par\noindent\makebox[0pt][r]{#4}\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}#1\end{minipage}\hfill
+  \begin{minipage}[t]{0.37\linewidth}\vspace{0pt}\centering #2\end{minipage}\par}
+\newcommand{\nr}[1]{\makebox[7mm][l]{\textbf{#1}}}
+\newcommand{\lsg}[3]{\par\noindent\begin{minipage}[t]{9mm}\textbf{#1}\end{minipage}%
+  \begin{minipage}[t]{52mm}\raggedright\bfseries\boldmath #2\end{minipage}\hspace{3mm}%
+  \begin{minipage}[t]{\dimexpr\linewidth-64mm\relax}\raggedright\small #3\end{minipage}\par\vspace{4pt}}
+\begin{document}
+\noindent{\Large\bfseries Lösungen}\hspace{1em}{\color{mbgrau}Satz des Pythagoras: die Hypotenuse berechnen}\par\smallskip
+\noindent{\small Links das Ergebnis, rechts der Weg in kurzen Schritten. Stimmt dein Ergebnis nicht, such den ersten Schritt, der anders ist.}\par
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut A}}\hspace{2mm}{\bfseries Hypotenuse finden und berechnen}\par\vspace{4pt}
+\lsg{1.}{$x = 15$\,cm}{Rechter Winkel oben, gegenüber liegt die untere Seite $x$. $x^2 = 9^2 + 12^2 = 81 + 144 = 225$; $x = \sqrt{225} = 15$}
+\lsg{2.}{(a) $t^2 = r^2 + s^2$\quad (b) $t = 17$\,cm}{$t$ liegt dem rechten Winkel gegenüber. $t^2 = 8^2 + 15^2 = 64 + 225 = 289$; $t = \sqrt{289} = 17$}
+\lsg{3.}{$u = \sqrt{v^2 + w^2}$}{Der rechte Winkel liegt zwischen $v$ und $w$, gegenüber liegt $u$. $u^2 = v^2 + w^2$, also $u = \sqrt{v^2 + w^2}$. Ohne Wurzel wäre es $u^2$; $v + w$ ist zu lang.}
+\lsg{4.}{Nein: die Diagonale ist 250\,cm, die Decke nur 245\,cm hoch.}{Beim Kippen steht einmal die Diagonale der Seitenwand senkrecht. Seitenwand: Rechteck 240\,cm mal 70\,cm, die Diagonale ist die Hypotenuse. $d^2 = 240^2 + 70^2 = 57\,600 + 4\,900 = 62\,500$; $d = 250$\,cm. $250 > 245$: Der Schrank stößt an die Decke.}
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut B}}\hspace{2mm}{\bfseries Wenn die Wurzel nicht aufgeht}\par\vspace{4pt}
+\lsg{1.}{$c \approx 10{,}3$\,cm}{$c^2 = 25 + 81 = 106$; $c = \sqrt{106} \approx 10{,}296$}
+\lsg{2.}{$c \approx 4{,}9$\,m}{$2{,}5^2 = 6{,}25$; $4{,}2^2 = 17{,}64$; $c^2 = 23{,}89$; $c = \sqrt{23{,}89} \approx 4{,}888$}
+\lsg{3.}{$c = 130$\,cm $= 1{,}30$\,m}{1,2\,m $= 120$\,cm. $c^2 = 120^2 + 50^2 = 14\,400 + 2\,500 = 16\,900$; $c = \sqrt{16\,900} = 130$. (In Meter: $1{,}44 + 0{,}25 = 1{,}69$; $\sqrt{1{,}69} = 1{,}3$.)}
+\lsg{4.}{$d \approx 15{,}4$\,cm}{Die Diagonale teilt das Rechteck in zwei rechtwinklige Dreiecke; $d$ ist ihre Hypotenuse. $d^2 = 6{,}5^2 + 14^2 = 42{,}25 + 196 = 238{,}25$; $d = \sqrt{238{,}25} \approx 15{,}44$}
+\lsg{5.}{etwa 55,4\,m}{Außen herum: $160 + 70 = 230$\,m. Quer: Diagonale, Hypotenuse mit den Katheten 160\,m und 70\,m. $d^2 = 25\,600 + 4\,900 = 30\,500$; $d = \sqrt{30\,500} \approx 174{,}6$\,m. Ersparnis: $230 - 174{,}6 = 55{,}4$\,m.}
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut C}}\hspace{2mm}{\bfseries Sachaufgaben: Leiter, Rampe, Gelände}\par\vspace{4pt}
+\lsg{1.}{$x \approx 240{,}7$\,cm}{Rechter Winkel unter der Stufe, gegenüber liegt die Rampe $x$. $x^2 = 240^2 + 18^2 = 57\,600 + 324 = 57\,924$; $x = \sqrt{57\,924} \approx 240{,}67$. Nur wenig länger als 240\,cm – das stimmt, weil die Stufe so niedrig ist.}
+\lsg{2.}{$\overline{AB}^{\,2} = 1300$; $\overline{AB} \approx 36{,}1$\,m}{Gegenüber dem rechten Winkel bei $C$ liegt $AB$, nicht die 34\,m. $\overline{AB}^{\,2} = 34^2 + 12^2 = 1156 + 144 = 1300$; $\overline{AB} = \sqrt{1300} \approx 36{,}06$}
+\lsg{3.}{etwa 7,2\,m}{Schräges Seilstück $s$: $s^2 = 6^2 + 3^2 = 36 + 9 = 45$; $s = \sqrt{45} \approx 6{,}71$\,m. Mit Knoten: $6{,}71 + 0{,}5 = 7{,}21 \approx 7{,}2$\,m.}
+\lsg{4.}{Nein, nötig sind etwa 5,11\,m; es fehlen etwa 11\,cm.}{Wand und Boden bilden den rechten Winkel, die Leiter ist die Hypotenuse. $c^2 = 4{,}7^2 + 2^2 = 22{,}09 + 4 = 26{,}09$; $c = \sqrt{26{,}09} \approx 5{,}11$\,m. $5{,}11 - 5 = 0{,}11$\,m.}
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut T}}\hspace{2mm}{\bfseries Probetest}\par\vspace{4pt}
+\lsg{1.}{die zweite Aussage}{$a^2 + b^2 = c^2$: Die Quadrate der Katheten ergeben zusammen das Quadrat der Hypotenuse. Die erste wäre $c = a + b$ (falsch), bei der dritten liegt gegenüber die Hypotenuse.}
+\lsg{2.}{$a^2 = b^2 + c^2$}{Der rechte Winkel ist bei $A$, gegenüber liegt $a$. Hier ist $a$ die Hypotenuse, nicht $c$.}
+\lsg{3.}{$d^2 = 15\,649$; $d \approx 125{,}1$\,m}{Die Diagonale ist die Hypotenuse. $d^2 = 105^2 + 68^2 = 11\,025 + 4\,624 = 15\,649$; $d = \sqrt{15\,649} \approx 125{,}10$}
+\lsg{4.}{Nein: Die längste Strecke auf dem Boden ist etwa 2,56\,m $< 2{,}60$\,m.}{Am längsten ist die Diagonale des Bodens (Hypotenuse). $d^2 = 2{,}2^2 + 1{,}3^2 = 4{,}84 + 1{,}69 = 6{,}53$; $d = \sqrt{6{,}53} \approx 2{,}56$\,m. $2{,}56 < 2{,}60$: Die Stange passt nicht flach hinein.}
+\end{document}
