@@ -115,3 +115,22 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
   zweites Blatt; im Thema-Weg gestrichen, Serie angepasst. Zu
   entscheiden, ob ein zweites E3-Blatt (Quader, Pyramide) nötig ist.
 - Prüfer: Mengenwarnungen durch Zusatzzeilen wie bei E1/E2.
+
+## Prozentrechnung E4 „Grundwert berechnen“ (WFW, 09.10.2026)
+
+- Kritiker (Schritt 6) nicht vom Bau-Agenten gestartet (Auftrag: der
+  Chat startet ihn). Im Katalog „offen“.
+- Bestand E4: Grundfall k2-s1 war fünfmal dieselben 24 kg Äpfel, nur der
+  Satz wanderte, ohne Streifen; v1–v5 schwach, besser k2-s1-v6 (neu,
+  Streifen rückwärts). Die Ketten-Vorstufe k1-s0 fragte „Grundwert
+  ankreuzen“ unter einer Frage, die das Ganze schon nennt (Bauregel
+  „Erkennen“); neu k1-s0-v5–v7 stellen „p % von“ gegen „p % sind“.
+- Zielaufgabe: Die Originale (2025-OS-B1a, 2023-OS-B1b) sind
+  Kurzantworten; die Einheit soll alle drei Fragerichtungen mischen.
+  Darum eine Rabatt-Tabelle mit wechselnder Frage je Zeile („nach
+  P10 ’25“), nicht das Original selbst.
+- Setzer: Tabelle im Päckchen wieder nur über satz.text (wie E1/E3).
+  Fußhilfe zu Nr. 2 zeigt Rechenterme statt Ergebnisse; hingenommen,
+  weil die Aufgabe nichts ausrechnet.
+- Prüfer: Mengenwarnungen (k1 s0, k2 s1/s3/s5/s7, 2025-OS-B1a 5×,
+  pflicht anwendung 4×) aus den verlangten Zusatzzeilen, wie E1–E3.
