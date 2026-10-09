@@ -214,3 +214,32 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
   Prozent.
 - duplikate.py: neue Zeilen nur als Zahlvarianten in derselben Sprosse
   (Lostrommel, Würfel, Münze) und in C-Gruppen „Glücksrad, 1/2“.
+## Quadratische Funktionen E1 „Normalparabel und Streckfaktor“ (GHQ, 10.10.2026)
+
+- Setzer (Abschnittsform): loesungsgrafik wird nicht gesetzt; die
+  Zeichenaufgaben (A3, B2) zeigen im Lösungsheft nur die Punkte als
+  Text. (loesungsgrafik trotzdem gefüllt; setzer.py nicht geändert.)
+- Setzer: nimmt aus grafik nur `\begin{tikzpicture}…`; die
+  mathblatt-Umgebung `ksys` (Bestand der Kette) wird nicht erkannt.
+  Graphen darum als pgfplots-Achse in tikzpicture; die ksys-Proben
+  von bank-pruef greifen an diesen Zeilen nicht.
+- Setzer tisch-alt: Die rechte Spalte neben dem Bild ist schmal; eine
+  Wertetabelle mit sieben Spalten im grauen Beispiel ragt über den
+  Rand. (Beispieltabelle auf fünf Spalten gekürzt.)
+- Setzer: schreibt das Registerdatum nach Systemzeit (UTC, 09.10.);
+  von Hand auf 10.10. gesetzt.
+- Prüfer: merkmal muss je Sprosse gleich sein; was eine neue Zeile
+  gegenüber der vorigen ändert, lässt sich bei Lernweg-Zeilen darum
+  nicht festhalten. (merkmal aus dem Bestand übernommen.)
+- Prüfer: Mengenwarnungen (k1 s0–s12, 2015-OS-K4b 5×, 2026-FOR-B1e
+  4×, pflicht anwendung 15×) aus den verlangten Vorratszeilen, wie
+  bei allen Bauen; dazu „Prüfungshöhe ohne Original“ für das Beispiel
+  D (k1-s14, keine Prüfaufgabe). Hingenommen.
+- Katalog: Die Hauptmarke 2015-OS-K4b braucht den Startwert e; E1
+  führt darum a·x² + e (Abschnitte C, D). Der Thema-Weg vermerkt es;
+  E2 kann auf „Scheitel auf der y-Achse“ aufbauen.
+- Ziel bei Funktionen: „keine vorgegebene Gleichung“ heißt hier, der
+  Schüler stellt h(x) aus Breite und Höhe (Tor, Tunnel, Halfpipe) oder
+  aus dem Fallgesetz in Worten selbst auf. Zu prüfen am Kritiker, ob
+  der Sprung von C4 zu C5 (Ursprung selbst legen) zu groß ist; der
+  Tipp „Ursprung in die Mitte“ steht nur in C5.
