@@ -1,6 +1,6 @@
 # Bauauftrag – eine Lerneinheit von oben bauen
 
-Stand 09.10.2026 (plan.md Linie 2). Für jeden Agenten oder Chat, der eine
+Stand 09.10.2026 abends (plan.md Linie 2). Für jeden Agenten oder Chat, der eine
 Lerneinheit baut. Handwerk (Satz, Zahlen, Lösungen, Sprache): `bau/bauregeln.md`.
 Zeilenform der Bank: `bank.md`. Wörter: `mathe-nachhilfe/begriffe.md`.
 Muster eines gelungenen Baus: `bau/proben/2026-10-08/hypotenuse-berechnen/`
@@ -66,9 +66,17 @@ Lies nur, was der Bau braucht, nie ganze große Dateien:
    PDFs: Übersicht, Blatt, Lösungen. Bilder der Seiten einmal ansehen.
 5. **Prüfen.** Jede Zahl mit sympy; neue Bankzeilen mit
    `werkzeuge/bank-pruef.py <eintrag>`; Dubletten mit `werkzeuge/duplikate.py`.
-6. **Kritiker.** Ein zweiter Agent (Fable) ohne diese Datei, nur mit dem
-   Zweck oben und den PDFs; höchstens 400 Wörter, die drei wichtigsten
-   Änderungen. Übernehmen, was dem Zweck dient; Abweichungen begründen.
+   Anfänger-Test vor der Abgabe: Schafft ein unsicherer Schüler die erste
+   Aufgabe jedes Schritts allein mit dem Beispiel davor? Kein Sprung
+   zwischen zwei Stufen; vor der Zielaufgabe ist jedes ihrer Merkmale
+   einmal geübt (aus `bau/muster-auftrag.md`).
+6. **Kritiker.** Startet der Chat, nicht der Bau-Agent (Unteragenten können
+   keinen starten; gebündelt ist es billiger): Fable, ohne diese Datei, nur
+   Zweck und PDFs, höchstens 400 Wörter, Rechenfehler zuerst, dann die drei
+   wichtigsten Änderungen. Der Bau-Agent trägt den Kritiker im Katalog als
+   „offen“ ein. Nachbesserung genau der benannten Punkte, die der Chat
+   übernimmt, sonst nichts; Kritikerurteile gegenlesen, nicht blind
+   übernehmen (Runde 1: ein „Rechenfehler“ war keiner).
 7. **Zerlegen.** Fehlt im Katalogeintrag der Abschnitt „Thema-Weg“, lege
    ihn beim ersten Bau des Themas an: Folge der Lerneinheiten mit Grund für
    die Stelle, Vorher-Check (Voraussetzungen, Zone-ids), Probetest (ids von
