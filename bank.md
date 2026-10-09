@@ -177,7 +177,9 @@ Neu; gesetzt nur an Zeilen, die beim Bau einer Lerneinheit nach
 `bau/bauauftrag.md` gewählt, geschrieben oder geprüft wurden – nie global.
 Fehlt der Schlüssel, ist die Zeile noch nicht an einem Lernweg geprüft.
 
-    schritt       "L<einheit>-<n>": Schritt n des Lernwegs der Einheit
+    schritt       "L<einheit><teil>-<n>": Schritt n des Lernwegs (teil
+                  ein Kleinbuchstabe, wenn eine Einheit mehrere Blätter
+                  trägt, z. B. L2k-3; sonst leer)
                   (Katalog, Abschnitt „Lernweg“); steht neben sprosse,
                   ersetzt sie nicht
     sache         Sachkontext in ein bis drei Wörtern („Leiter“,
