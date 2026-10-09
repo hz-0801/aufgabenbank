@@ -222,6 +222,29 @@ Fehlt der Schlüssel, ist die Zeile noch nicht an einem Lernweg geprüft.
 Gelöscht wird nichts; schwach und ruht werden nicht gesetzt. Neue Zeilen
 aus einem Bau tragen herkunft wie bisher und dazu alle Felder oben.
 
+Dazu seit 10.10.2026 für Lernwege in Abschnittsform (`bau/bauauftrag.md`;
+Wahlfelder, die alten Felder bleiben gültig; schritt bleibt an alten
+Zeilen, neue tragen abschnitt):
+
+    abschnitt     "L<einheit><teil>-<B>": Abschnitt des Lernwegs
+                  (Katalog, Block „Form: abschnitte“), z. B. "L1-B"
+    rolle         "beispiel" (vorgerechnet, mit schritte) | "aufgabe" |
+                  "ziel" (letzte Aufgabe des Abschnitts) |
+                  "vorrat-leichter" | "vorrat-gleich" (nicht auf dem
+                  Blatt, nur zum Nachbestellen)
+    modell_selbst_finden
+                  "ja": der Schüler erkennt das Modell selbst (keine
+                  fertige Figur, keine Gleichung vorgegeben) | "nein"
+    ergebnis      kurzes Ergebnis für Lösung und Fuß, LaTeX (Text,
+                  nicht Liste; im Basisvorrat bleibt es die Liste)
+    schritte      nur bei rolle beispiel: die Rechenschritte als Liste
+                  von Zeilen
+
+Zeilen in Abschnittsform brauchen kein satz; der Setzer
+(`werkzeuge/setzer.py`) setzt sie aus aufgabe, grafik, ergebnis,
+loesung und schritte. Ankreuzoptionen stehen als \kreuz{…} in aufgabe,
+ohne Satzbefehle; loesung beginnt mit der gewählten Option.
+
 ## Mengen je Kette
 
 Ziel (Beschluss 05.10.): 12 Aufgaben je Kern-Stufe, 6 je übriger
