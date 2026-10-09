@@ -1,0 +1,199 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% gesetzt von werkzeuge/setzer.py aus dem Lernweg (L2-1 · L2-2 · L2-3 · L2-4 · L2-5 · L2-6 · L2-7) und den Bankzeilen; Muster T6B.
+\input{praeambel}
+\newcommand{\kennung}{4NT}
+\newcommand{\grau}[1]{{\color{mbgrau}#1}}
+
+\begin{document}
+\pfheftstil
+\fancyfoot[C]{\parbox[t]{\textwidth}{\mbfhbox\par\vspace{1.5mm}{\footnotesize\color{mbgrau}{\scriptsize \kennung}\hfill\thepage}}}
+\pfheftkopf{Prozentsatz berechnen}{Klasse 7}
+% L2-1: Anschluss an Einheit 1: Der Streifen steht jetzt für eine Größe (40 kg); der Anteil ist Teil durch Ganzes, der Streifen bleibt 100 %
+\begin{pfaufg}{}{1.}{}
+Der ganze Streifen ist $100\,\%$. Wie viel Prozent sind grau? Schreibe zuerst den Bruch $\frac{\text{Teil}}{\text{Ganzes}}$.\par\medskip\noindent
+\begin{minipage}[b]{0.32\linewidth}\centering
+\begin{tikzpicture}
+\fill[black!28] (0,0) rectangle (3.150,0.6);
+\draw[black!55,line width=0.4pt] (1.050,0) -- (1.050,0.6);
+\draw[black!55,line width=0.4pt] (2.100,0) -- (2.100,0.6);
+\draw[black!55,line width=0.4pt] (3.150,0) -- (3.150,0.6);
+\draw[line width=0.7pt] (0,0) rectangle (4.2,0.6);
+\draw[line width=0.4pt] (0,0.6799999999999999) -- (0,0.82) -- (3.150,0.82) -- (3.150,0.6799999999999999);
+\node[above,font=\small] at (1.575,0.8) {$30$ kg};
+\node[below,font=\small] at (2.1,0) {ganz: $40$ kg};
+\end{tikzpicture}\par\smallskip
+\grau{{\small a)\ }\par\smallskip
+$\frac{30}{40} = \frac{3}{4}$\par\smallskip $= 75\,\%$}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.32\linewidth}\centering
+\begin{tikzpicture}
+\fill[black!28] (0,0) rectangle (1.680,0.6);
+\draw[black!55,line width=0.4pt] (0.840,0) -- (0.840,0.6);
+\draw[black!55,line width=0.4pt] (1.680,0) -- (1.680,0.6);
+\draw[black!55,line width=0.4pt] (2.520,0) -- (2.520,0.6);
+\draw[black!55,line width=0.4pt] (3.360,0) -- (3.360,0.6);
+\draw[line width=0.7pt] (0,0) rectangle (4.2,0.6);
+\draw[line width=0.4pt] (0,0.6799999999999999) -- (0,0.82) -- (1.680,0.82) -- (1.680,0.6799999999999999);
+\node[above,font=\small] at (0.840,0.8) {$20\,€$};
+\node[below,font=\small] at (2.1,0) {ganz: $50\,€$};
+\end{tikzpicture}\par\smallskip
+{\small b)\ }\par\smallskip
+\linie{30mm}\par\medskip\linie{30mm}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.32\linewidth}\centering
+\begin{tikzpicture}
+\fill[black!28] (0,0) rectangle (2.940,0.6);
+\draw[line width=0.7pt] (0,0) rectangle (4.2,0.6);
+\draw[line width=0.4pt] (0,0.6799999999999999) -- (0,0.82) -- (2.940,0.82) -- (2.940,0.6799999999999999);
+\node[above,font=\small] at (1.470,0.8) {$140$ m};
+\node[below,font=\small] at (2.1,0) {ganz: $200$ m};
+\end{tikzpicture}\par\smallskip
+{\small c)\ }\par\smallskip
+\linie{30mm}\par\medskip\linie{30mm}
+\end{minipage}
+\fusshilfe{\mbox{1:~b) 40\,\%; c) 70\,\%}}
+\end{pfaufg}
+
+% L2-2: Erkennen ohne Rechnen: Was ist das Ganze? Es steht nicht immer im Text – mal ist es die Summe (13 + 3), mal der alte Preis, mal muss der Teil erst gebildet werden (frei = 24 − 18)
+\begin{pfaufg}{}{2.}{}
+Schreibe den Anteil als Bruch $\frac{\text{Teil}}{\text{Ganzes}}$. Rechne noch nicht aus.\par\medskip
+\grau{a)\ $7$ von $28$ Kindern haben einen Hund. Anteil mit Hund?\quad $\frac{7}{28}$}\par\medskip
+\noindent\begin{minipage}[t]{0.48\linewidth}
+b)\ Von $600$ Losen sind $90$ Gewinne. Anteil der Gewinne?
+\karo{1}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+c)\ $13$ Pfannkuchen sind mit Zucker, $3$ mit Käse. Anteil mit Käse?
+\karo{1}
+\end{minipage}
+\noindent\begin{minipage}[t]{0.48\linewidth}
+d)\ Eine Jacke kostete $80\,€$, jetzt $60\,€$. Anteil des Rabatts am alten Preis?
+\karo{1}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+e)\ $45$ Gäste essen vegetarisch, $105$ nicht. Anteil vegetarisch?
+\karo{1}
+\end{minipage}
+\noindent\begin{minipage}[t]{0.48\linewidth}
+f)\ $18$ von $24$ Plätzen sind belegt. Anteil der freien Plätze?
+\karo{1}
+\end{minipage}
+\fusshilfe{\mbox{2:~b) $\frac{90}{600}$; c) $\frac{3}{16}$; d) $\frac{20}{80}$; e) $\frac{45}{150}$; f) $\frac{6}{24}$}}
+\end{pfaufg}
+
+% L2-3: Ganzes ist ein Teiler oder Vielfaches von 100: wie in Einheit 1 erweitern (oder kürzen) bis Nenner 100
+\begin{pfaufg}{}{3.}{}
+Bringe den Bruch auf den Nenner $100$ (erweitern oder kürzen) und schreibe in Prozent.\par\medskip
+\grau{a)\ $7$ von $20$\quad $\frac{7}{20} = \frac{35}{100} = 35\,\%$}\par\medskip
+\noindent\begin{minipage}[t]{0.48\linewidth}
+b)\ $19$ von $50$
+\karo{1}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+c)\ $9$ von $25$
+\karo{1}
+\end{minipage}
+\noindent\begin{minipage}[t]{0.48\linewidth}
+d)\ $3$ von $10$
+\karo{1}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+e)\ $84$ von $200$
+\karo{1}
+\end{minipage}
+\noindent\begin{minipage}[t]{0.48\linewidth}
+f)\ $18$ von $300$
+\karo{1}
+\end{minipage}
+\fusshilfe{\mbox{3:~b) 38\,\%; c) 36\,\%; d) 30\,\%; e) 42\,\%; f) 6\,\%}}
+\end{pfaufg}
+
+% L2-4: Beliebiges Ganzes: Teil : Ganzes mit dem Taschenrechner, die Dezimalzahl als Prozent lesen; Kontrolle: Teil kleiner als Ganzes heißt unter 100 %
+\begin{pfaufg}{}{4.}{}
+Rechne mit dem Taschenrechner Teil : Ganzes und schreibe in Prozent.\par\medskip
+\grau{a)\ $7$ von $20$\quad $\frac{7}{20} = 7 : 20 = 0{,}35 = \frac{35}{100} = 35\,\%$}\par\medskip
+\noindent\begin{minipage}[t]{0.48\linewidth}
+b)\ $18$ von $45$
+\karo{1}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+c)\ $51$ von $340$
+\karo{1}
+\end{minipage}
+\noindent\begin{minipage}[t]{0.48\linewidth}
+d)\ $117$ von $180$
+\karo{1}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+e)\ $9$ von $12$
+\karo{1}
+\end{minipage}
+\noindent\begin{minipage}[t]{0.48\linewidth}
+f)\ Ben rechnet bei $18$ von $45$ so: $45 : 18 = 2{,}5 = 250\,\%$. Woran siehst du ohne Rechnung, dass das falsch ist?
+\karo{2}
+\end{minipage}
+\fusshilfe{\mbox{4:~b) 40\,\%; c) 15\,\%; d) 65\,\%; e) 75\,\%; f) unter 100\,\%}}
+\end{pfaufg}
+
+% L2-5: Das Ergebnis endet nicht: auf eine Stelle nach dem Komma runden; die dritte Stelle der Dezimalzahl entscheidet
+\begin{pfaufg}{}{5.}{}
+Rechne Teil : Ganzes und runde auf eine Stelle nach dem Komma.\par\medskip
+\grau{a)\ $5$ von $7$\quad $5 : 7 = 0{,}7142\ldots = 71{,}42\ldots\,\% \approx 71{,}4\,\%$}\par\medskip
+\noindent\begin{minipage}[t]{0.48\linewidth}
+b)\ $13$ von $24$
+\karo{1}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+c)\ $41$ von $55$
+\karo{1}
+\end{minipage}
+\noindent\begin{minipage}[t]{0.48\linewidth}
+d)\ $11$ von $30$
+\karo{1}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+e)\ $7$ von $9$
+\karo{1}
+\end{minipage}
+\fusshilfe{\mbox{5:~b) 54,2\,\%; c) 74,5\,\%; d) 36,7\,\%; e) 77,8\,\%}}
+\end{pfaufg}
+
+% L2-6: Das Ganze erst bilden: aus einer Tabelle (Summe aller Zeilen) und beim Rabatt (Differenz, bezogen auf den alten Preis)
+\begin{pfaufg}{}{6.}{}
+Alle Kinder der Klasse 7b haben gesagt, wie sie zur Schule kommen. Die Tabelle zeigt, wie viele Kinder es jeweils sind.\par\medskip\noindent \begin{minipage}[t]{0.40\linewidth}\vspace{0pt}{\renewcommand{\arraystretch}{1.3}\begin{tabular}{|l|c|}\hline
+Schulweg & Kinder\\\hline Bus & $9$\\\hline Fahrrad & $12$\\\hline zu Fuß & $5$\\\hline Auto & $2$\\\hline\end{tabular}}\end{minipage}\hfill\begin{minipage}[t]{0.56\linewidth}\vspace{0pt}\raggedright Runde auf eine Stelle nach dem Komma.\par\medskip \textbf{a)}\ Wie viel Prozent der Klasse kommen mit dem Fahrrad?\linie{14mm}\,\%\par\medskip \textbf{b)}\ Wie viel Prozent kommen mit dem Auto?\linie{14mm}\,\%\end{minipage}\par
+\karo{3}
+\fusshilfe{\mbox{6:~a) 42,9\,\%; b) 7,1\,\%}}
+\end{pfaufg}
+
+% L2-6: Das Ganze erst bilden: aus einer Tabelle (Summe aller Zeilen) und beim Rabatt (Differenz, bezogen auf den alten Preis)
+\begin{pfaufg}{}{7.}{}
+Ein Fahrrad kostete $240\,€$. Im Angebot kostet es $192\,€$. Wie viel Prozent Rabatt gibt es?\par
+\karo{3}
+\fusshilfe{\mbox{7:~20\,\%}}
+\end{pfaufg}
+
+% L2-7: Zielaufgabe: Im Sachtext selbst sehen, ob Teil oder Ganzes erst gebildet werden muss, dann rechnen, runden und mit einem Satz antworten; das Ganze wechselt mit der Frage
+\begin{pfaufg}{}{8.}{}
+Die $30$ Kinder der 7b stimmen über das Ziel des Wandertags ab. $14$ Kinder sind für den Zoo, $10$ für den Kletterpark, $6$ Kinder stimmen nicht ab. Prüfe mit einer Rechnung, ob die Aussage stimmt.\par\smallskip
+\noindent\begin{minipage}[t]{0.48\linewidth}
+a)\ Lena sagt: „Mehr als die Hälfte der Klasse ist für den Zoo.“
+\karo{3}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+b)\ Tim sagt: „Von den Kindern, die abgestimmt haben, sind mehr als $40\,\%$ für den Kletterpark.“
+\karo{3}
+\end{minipage}
+\fusshilfe{\mbox{8:~a) nein; b) ja}}
+\end{pfaufg}
+
+% L2-7: Zielaufgabe: Im Sachtext selbst sehen, ob Teil oder Ganzes erst gebildet werden muss, dann rechnen, runden und mit einem Satz antworten; das Ganze wechselt mit der Frage
+\begin{pfaufg}{nach P10 ’15}{9.}{}
+Mias Handballteam bekam in einer Saison $46$ Siebenmeter. $39$ davon wurden zu Toren. Berechne, wie viel Prozent der Siebenmeter nicht verwandelt wurden. Runde auf eine Stelle nach dem Komma.\par
+\karo{3}
+\fusshilfe{\mbox{9:~15,2\,\%}}
+\end{pfaufg}
+
+\par\vfill\noindent{\footnotesize Vorher: Prozente als Anteile\quad\textbullet\quad Weiter: Prozentwert berechnen\par}
+\end{document}
