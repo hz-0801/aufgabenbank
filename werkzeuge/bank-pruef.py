@@ -154,7 +154,10 @@ FELDER_WAHL = ["herkunft", "ruht", "bild",
                # Lernweg-Felder, bank.md „Felder für den Lernweg“ (09.10.2026)
                "schritt", "sache", "darstellung", "frage", "antwortform",
                "status", "status_grund", "besser", "blatt",
-               "satz"]  # herkunft seit bank.md 6. Fassung (Blatt-Chats); ruht seit 06.10.
+               "satz",
+               # neue Form (bau/bauauftrag.md 10.10.2026, bank.md)
+               "abschnitt", "rolle", "modell_selbst_finden", "ergebnis",
+               "schritte"]  # herkunft seit bank.md 6. Fassung (Blatt-Chats); ruht seit 06.10.
 # („kopie von <id>“, werkzeuge/vielfalt.py: stillgelegte Kopie, nicht gelöscht)
 FELDER_BASIS = ["ergebnis", "tipp", "ist_original", "verfremdung",
                 "vorstufe"]  # v0.14, nur bank/_basis/
