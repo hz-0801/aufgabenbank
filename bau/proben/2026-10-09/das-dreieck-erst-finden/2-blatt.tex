@@ -13,7 +13,7 @@
 \begin{pfaufg}{}{1.}{}
 Jede Figur enthält ein rechtwinkliges Dreieck. Fahre es farbig nach. Welche Strecke ist seine Hypotenuse?\par\medskip\noindent
 \begin{minipage}[b]{0.32\linewidth}\centering
-\begin{tikzpicture}[line width=0.7pt]\coordinate (A) at (0,0);\coordinate (B) at (3.2,0);\coordinate (C) at (2.4,1.6);\coordinate (D) at (0.8,1.6);\coordinate (F) at (0.8,0);\draw (A)--(B)--(C)--(D)--cycle;\draw[dashed,line width=0.5pt] (D)--(F);\mbrwmarke{(F)}{(B)}{(D)}\node[font=\small,anchor=north] at (A) {$A$};\node[font=\small,anchor=north] at (B) {$B$};\node[font=\small,anchor=south] at (C) {$C$};\node[font=\small,anchor=south] at (D) {$D$};\node[font=\small,anchor=north] at (F) {$F$};\end{tikzpicture}\par\smallskip
+\begin{tikzpicture}[line width=0.7pt]\coordinate (A) at (0,0);\coordinate (B) at (3.2,0);\coordinate (C) at (2.4,1.6);\coordinate (D) at (0.8,1.6);\coordinate (F) at (0.8,0);\draw (A)--(B)--(C)--(D)--cycle;\draw[dashed,line width=0.5pt] (D)--(F);\mbrwmarke{(F)}{(A)}{(D)}\node[font=\small,anchor=north] at (A) {$A$};\node[font=\small,anchor=north] at (B) {$B$};\node[font=\small,anchor=south] at (C) {$C$};\node[font=\small,anchor=south] at (D) {$D$};\node[font=\small,anchor=north] at (F) {$F$};\end{tikzpicture}\par\smallskip
 {\small a)\ Trapez}\par\smallskip
 \linie{30mm}
 \end{minipage}\hfill
@@ -42,7 +42,7 @@ Im Kegel und in der Pyramide gehört die Höhe zu einem rechtwinkligen Dreieck, 
 {\small b)\ \kk{$3{,}5$ m}\par\hspace*{1.1em}\kk{$7$ m}}
 \end{minipage}\hfill
 \begin{minipage}[b]{0.32\linewidth}\centering
-\begin{tikzpicture}[line width=0.7pt]\draw (0,2.4) ellipse (0.8 and 0.28);\draw (-0.8,0)--(-0.8,2.4) (0.8,0)--(0.8,2.4);\draw (-0.8,0) arc (180:360:0.8 and 0.28);\draw[dashed,line width=0.5pt] (-0.8,0) arc (180:0:0.8 and 0.28);\draw[line width=1.6pt] (-0.8,0)--(1.1,2.85);\draw[|-|,line width=0.4pt] (-0.8,-0.55)--(0.8,-0.55) node[midway,below,font=\small] {$6$ cm};\end{tikzpicture}\par\smallskip
+\begin{tikzpicture}[line width=0.7pt]\draw (0,2.4) ellipse (0.8 and 0.28);\draw (-0.8,0)--(-0.8,2.4) (0.8,0)--(0.8,2.4);\draw (-0.8,0) arc (180:360:0.8 and 0.28);\draw[dashed,line width=0.5pt] (-0.8,0) arc (180:0:0.8 and 0.28);\draw[line width=1.6pt] (-0.8,0)--(1.1,2.85);\draw[dashed,line width=0.5pt] (0,0)--(0.8,0);\fill (0,0) circle (0.8pt);\node[font=\small,anchor=north] at (0.4,-0.3) {$r = 3$ cm};\end{tikzpicture}\par\smallskip
 {\small c)\ \kk{$3$ cm}\par\hspace*{1.1em}\kk{$6$ cm}}
 \end{minipage}
 \fusshilfe{\mbox{2:~a) 9 cm; b) 3,5 m; c) 6 cm}}
@@ -70,15 +70,15 @@ Die Figur zeigt einen Kegel. Fahre zuerst das rechtwinklige Dreieck nach.
 \begin{pfaufg}{}{5.}{}
 Im Koordinatensystem sind die Punkte $A$ und $B$ eingezeichnet.
 \gzwei{\begin{tikzpicture}[x=0.6cm,y=0.6cm,line width=0.7pt]\draw[black!18,line width=0.3pt] (-4,-3) grid (3,5);\draw[-{Stealth[length=4pt]},line width=0.5pt] (-4,0)--(3.4,0) node[right,font=\small] {$x$};\draw[-{Stealth[length=4pt]},line width=0.5pt] (0,-3)--(0,5.4) node[above,font=\small] {$y$};\foreach \x in {-3,-2,-1,1,2} \node[font=\scriptsize,below] at (\x,0) {$\x$};\foreach \y in {-2,-1,1,2,3,4} \node[font=\scriptsize,left] at (0,\y) {$\y$};\fill (-3,-2) circle (2.2pt) node[below left,font=\small] {$A$};\fill (2,4) circle (2.2pt) node[above left,font=\small] {$B$};\draw[line width=0.9pt] (-3,-2)--(2,4);\end{tikzpicture}}{%
-\textbf{a)}\ Zeichne das rechtwinklige Dreieck mit einer waagerechten und einer senkrechten Kathete ein. Wie lang sind die Katheten?\linie{14mm}\par\bigskip
+\textbf{a)}\ Zeichne das rechtwinklige Dreieck mit einer waagerechten und einer senkrechten Kathete ein. Wie lang sind die Katheten (in Kästchen)?\linie{14mm}\par\bigskip
 \textbf{b)}\ Berechne die Länge von $\overline{AB}$. Runde auf eine Stelle nach dem Komma.\linie{14mm}\karo{4}}
-\fusshilfe{\mbox{5:~a) 5 und 6; b) 7,8}}
+\fusshilfe{\mbox{5:~a) 5 und 6 Kästchen; b) 7,8}}
 \end{pfaufg}
 
 % L3-6: Zusammengesetzt: Pythagoras liefert nur ein Teilstück; das andere Stück kommt dazu (Bild ohne Dreieck)
 \begin{pfaufg}{}{6.}{}
 Ein Turm besteht aus einem Zylinder und einem Kegeldach. Wie hoch ist der ganze Turm?
-\gzwei{\begin{tikzpicture}[line width=0.7pt]\draw (0,2.4) ellipse (0.8 and 0.28);\draw (-0.8,0)--(-0.8,2.4) (0.8,0)--(0.8,2.4);\draw (-0.8,0) arc (180:360:0.8 and 0.28);\draw (-0.8,2.4)--(0,4.0)--(0.8,2.4);\draw[dashed,line width=0.5pt] (0,2.4)--(0.8,2.4);\fill (0,2.4) circle (0.8pt);\node[font=\small,anchor=north] at (0.3,2.05) {$2{,}0$ m};\node[font=\small,anchor=south west] at (0.42,3.25) {$5{,}2$ m};\node[font=\small,anchor=west] at (0.85,1.2) {$18$ m};\end{tikzpicture}}{%
+\gzwei{\begin{tikzpicture}[line width=0.7pt]\draw (0,2.4) ellipse (0.8 and 0.28);\draw (-0.8,0)--(-0.8,2.4) (0.8,0)--(0.8,2.4);\draw (-0.8,0) arc (180:360:0.8 and 0.28);\draw (-0.8,2.4)--(0,4.0)--(0.8,2.4);\draw[dashed,line width=0.5pt] (0,2.4)--(0.8,2.4);\fill (0,2.4) circle (0.8pt);\node[font=\small,anchor=west] at (0.85,2.4) {$r = 2{,}0$ m};\node[font=\small,anchor=south west] at (0.42,3.25) {$5{,}2$ m};\node[font=\small,anchor=west] at (0.85,1.2) {$18$ m};\end{tikzpicture}}{%
 \karo{4}}
 \fusshilfe{\mbox{6:~22,8 m}}
 \end{pfaufg}
