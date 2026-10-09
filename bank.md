@@ -212,6 +212,12 @@ Fehlt der Schlüssel, ist die Zeile noch nicht an einem Lernweg geprüft.
                   (true: Teile laufen in der vorigen Nummer weiter) ·
                   fuss (Ergebnisse für den Fuß) · loesung [[Teil,
                   Ergebnis, Weg]] für die Lösungsseite
+                  Quelle für Auftrag und Lösung sind aufgabe und
+                  loesung; satz.text, satz.loesung und satz.fuss
+                  stehen nur, wo der Satz davon abweichen muss, und
+                  gelten dann vor ihnen (Setzer, 09.10.2026). Neue
+                  Zeilen schreiben in satz nur Form und Gestalt
+                  (form, teile, karo, kreuz, nach, marke, folgt).
 
 Gelöscht wird nichts; schwach und ruht werden nicht gesetzt. Neue Zeilen
 aus einem Bau tragen herkunft wie bisher und dazu alle Felder oben.

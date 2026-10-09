@@ -9,7 +9,10 @@ Beispiel: python3 werkzeuge/setzer.py pythagoras 2k --aus /tmp/t6b
 Liest den Lernweg-Block der Einheit („| L<teil>-<n> |“) aus
 mathe-nachhilfe/katalog/<eintrag>.md (Vorlage katalog/_vorlage.md,
 Abschnitt „Lernweg“) und die Bankzeilen bank/<eintrag>/e*.jsonl (Felder
-aufgabe, grafik, satz, original; bank.md „Felder für den Lernweg“). Schreibt
+aufgabe, loesung, grafik, satz; bank.md „Felder für den Lernweg“). Quelle
+für Auftrag und Lösung sind aufgabe und loesung; satz.text, satz.loesung
+und satz.fuss gelten nur, wo die Zeile sie trägt. Keine Originalliste auf
+dem Lernblatt (die gehört nur auf Prüfungsblätter). Schreibt
 1-uebersicht.tex, 2-blatt.tex, 3-loesungen.tex und praeambel.tex
 (werkzeuge/setzer-praeambel.tex) nach <ordner> und kompiliert jede Datei
 zweimal mit xelatex (Fußhilfe braucht den zweiten Lauf).
@@ -128,18 +131,37 @@ def kreuzzeilen(zeilen, trenner):
     return trenner.join("".join(f"\\kk{{{o}}}" for o in z) for z in zeilen)
 
 
+def loesung_aus_bank(nr, a):
+    """[[Ergebnis, Weg]] aus dem Feld loesung, wenn satz keine trägt
+    (bank.md „Felder für den Lernweg“, satz): je offenem Teil der Text
+    hinter „a)“, „b)“ …; ohne Teile die ganze loesung."""
+    offen = [i for i, t in enumerate(a["satz"].get("teile", []))
+             if not t.get("grau")]
+    if not offen:
+        return [[a["loesung"], ""]]
+    stuecke = dict(re.findall(r"(?:^|;\s*)([a-z])\)\s*(.*?)(?=;\s*[a-z]\)|$)",
+                              a["loesung"]))
+    fehlt = [BUCHST[i] for i in offen if BUCHST[i] not in stuecke]
+    if fehlt:
+        sys.exit(f"Nr. {nr}: {a['id']} ohne satz.loesung, und loesung "
+                 f"nennt die Teile {fehlt} nicht")
+    return [[stuecke[BUCHST[i]], ""] for i in offen]
+
+
 def setze_nummer(nr, zeilen, schritt_kommentar):
     """zeilen: Bankzeilen einer Nummer (zweite und weitere mit folgt)."""
     s0 = zeilen[0]["satz"]
     form = s0["form"]
-    text = s0.get("text", zeilen[0]["aufgabe"])
+    text = s0.get("text") or zeilen[0]["aufgabe"]   # aufgabe ist Quelle
     teile, grafiken, fuss, loes = [], [], [], []
     for a in zeilen:
         s = a["satz"]
         teile += s.get("teile", [])
         grafiken += bilder(a.get("grafik", ""))
-        fuss += s["fuss"] if isinstance(s["fuss"], list) else [s["fuss"]]
-        loes += s["loesung"]
+        lz = s.get("loesung") or loesung_aus_bank(nr, a)
+        f = s.get("fuss", [e for e, _ in lz])
+        fuss += f if isinstance(f, list) else [f]
+        loes += lz
     for i, t in enumerate(teile):
         t["_b"] = BUCHST[i]
     offen = [t for t in teile if not t.get("grau")]    # Fuß und Lösung
@@ -223,13 +245,6 @@ def setze_nummer(nr, zeilen, schritt_kommentar):
     return "\n".join(out), loesung
 
 
-def original_kurz(o):
-    """2024-OS-K6a -> 2024 · 6 · a (bauregeln „Satz“, Originalliste)."""
-    m = re.match(r"(\d{4})-[A-Z]+-[A-Z]*(\d+)([a-z]*)", o["id"])
-    teile = [m.group(1), m.group(2)] + ([m.group(3)] if m.group(3) else [])
-    return " \\pkt{} ".join(teile)
-
-
 # --- Dateien -------------------------------------------------------------
 
 KOPF = "\\documentclass[11pt]{article}\n\\usepackage{mathblatt}\n"
@@ -268,7 +283,7 @@ def tex_uebersicht(lw, kennung):
     return "\n".join(zeilen)
 
 
-def tex_blatt(lw, kennung, nummern, originale):
+def tex_blatt(lw, kennung, nummern):
     weg = " · ".join(s for s, _, _ in lw["schritte"])
     kopf = [KOPF + f"% gesetzt von werkzeuge/setzer.py aus dem Lernweg "
             f"({weg}) und den Bankzeilen; Muster T6B.",
@@ -277,10 +292,10 @@ def tex_blatt(lw, kennung, nummern, originale):
             "\\newcommand{\\grau}[1]{{\\color{mbgrau}#1}}",
             "", "\\begin{document}", "\\pfheftstil", FUSS_HILFE,
             f"\\pfheftkopf{{{lw['name']}}}{{{lw.get('niveau', '')}}}", ""]
-    orig = " \\quad ".join(originale)
-    ende = (f"\\blattende{{{orig}}}"
-            f"{{Vorher: {lw.get('vorher', '–')}\\quad\\textbullet\\quad "
-            f"Weiter: {lw.get('weiter', '–')}}}")
+    # Lernblatt: keine Originalliste (die steht nur auf Prüfungsblättern).
+    ende = ("\\par\\vfill\\noindent{\\footnotesize "
+            f"Vorher: {lw.get('vorher', '–')}\\quad\\textbullet\\quad "
+            f"Weiter: {lw.get('weiter', '–')}\\par}}")
     return "\n".join(kopf) + "\n\n".join(nummern) + "\n\n" + ende + \
         "\n\\end{document}\n"
 
@@ -336,7 +351,7 @@ def main():
         gruppen = gruppen_aus_register(arg.kennung)
     kennung = arg.kennung or neue_kennung()
 
-    nummern, loesungen, originale = [], [], []
+    nummern, loesungen = [], []
     for nr, g in enumerate(gruppen, 1):
         fehlt = [i for i in g if i not in bank or "satz" not in bank[i]]
         if fehlt:
@@ -345,15 +360,12 @@ def main():
         n, l = setze_nummer(nr, zeilen, schritt_von.get(g[0], g[0]))
         nummern.append(n)
         loesungen.append(l)
-        for a in zeilen:
-            if a.get("original"):
-                originale.append(original_kurz(a["original"]))
 
     aus = Path(arg.aus)
     aus.mkdir(parents=True, exist_ok=True)
     shutil.copy(HIER / "setzer-praeambel.tex", aus / "praeambel.tex")
     dateien = {"1-uebersicht": tex_uebersicht(lw, kennung),
-               "2-blatt": tex_blatt(lw, kennung, nummern, originale),
+               "2-blatt": tex_blatt(lw, kennung, nummern),
                "3-loesungen": tex_loesungen(lw, kennung, loesungen)}
     for name, inhalt in dateien.items():
         (aus / f"{name}.tex").write_text(inhalt, encoding="utf-8")
