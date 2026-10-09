@@ -244,6 +244,7 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
   aus dem Fallgesetz in Worten selbst auf. Zu prüfen am Kritiker, ob
   der Sprung von C4 zu C5 (Ursprung selbst legen) zu groß ist; der
   Tipp „Ursprung in die Mitte“ steht nur in C5.
+
 ## Trigonometrie E1 „Seite berechnen mit sin, cos und tan“ (N9M, 10.10.2026)
 
 - Erster Bau des Themas; Thema-Weg und Lernweg-Block im Katalog neu
