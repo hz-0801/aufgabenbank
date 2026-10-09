@@ -15,3 +15,10 @@ Je Zeile ein Befund aus dem Bau, der über diese Einheit hinausgeht; Entscheidun
 - Kritiker-Vorschlag „Kasten mit den drei Schritten vor Nr. 5“ nicht übernommen: Bauregel kein Merkkasten (1.5), der Weg steht grau in 5 a). „Antwortsatz und Ansatz mit Streckennamen“ nicht übernommen: Lernblatt ohne Sätze, die nur der Prüfung dienen (4.1); Nr. 10 verlangt die Strecken schon durch die Namen. „Skizze in Nr. 9“ übernommen.
 - Satzfehler nach der letzten Runde: In Nr. 8 berührt die Beschriftung B die Maßlinie „90 m“ (Kompiliergrenze erreicht, nicht mehr nachgesetzt).
 - `werkzeuge/duplikate.py` schreibt `duplikate.md` über alle 73 Einträge neu (Diff ~2000 Zeilen); nicht committet. Gemeldet für die neuen Zeilen nur B-327 (k6-s2-v4/v5, gleicher Bau mit anderen Zahlen, gewollt als „neue Zahlen“).
+
+## Lehrer 09.10. zu T6B: „insgesamt gut“ (Abnahme M2, Teil Bau)
+
+- Überschrift sagt schon „Kathete berechnen“, die Päckchen sagen noch einmal „Berechne die andere/fehlende Kathete“: dort verrät der Text die Entscheidung. Vorschlag zum Ende von M2: in Päckchen „die fehlende Seite“, und im Päckchen mit krummen Zahlen ein Fall, in dem die Hypotenuse fehlt (Unterscheiden statt Erkennen am Wort); in Sachaufgaben steht schon die Sachgröße.
+- Originalliste am Blattende: im Lernblatt entbehrlich (Marke im Rand genügt); bleibt im Prüfungsblatt/-heft (Stark-Heft). Vorschlag zum Ende von M2.
+- Mischen Hypotenuse/Kathete gehört voll in „Das Dreieck erst finden“ (nächste Einheit); in T6B nur Nr. 2 und Nr. 8.
+- Länge 10 Aufgaben / 3 Seiten, letzte halb leer: in Ordnung.
