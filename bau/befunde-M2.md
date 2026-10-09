@@ -22,3 +22,13 @@ Je Zeile ein Befund aus dem Bau, der über diese Einheit hinausgeht; Entscheidun
 - Originalliste am Blattende: im Lernblatt entbehrlich (Marke im Rand genügt); bleibt im Prüfungsblatt/-heft (Stark-Heft). Vorschlag zum Ende von M2.
 - Mischen Hypotenuse/Kathete gehört voll in „Das Dreieck erst finden“ (nächste Einheit); in T6B nur Nr. 2 und Nr. 8.
 - Länge 10 Aufgaben / 3 Seiten, letzte halb leer: in Ordnung.
+
+## Setzer (werkzeuge/setzer.py, 09.10.2026)
+
+- Setzzeit 3,7 s für drei PDFs (je zweimal xelatex, parallel); Text wortgleich mit T6B, Seitenbilder (pdftoppm -r 60) bis auf die Kennung pixelgleich; Seitenumbrüche gleich. Kennung des Setzer-Laufs 3S2 im Register (gleicher Inhalt wie T6B); `--kennung 3S2` setzt ihn wieder aus den Register-ids.
+- Feld satz trägt Auftragstext, Fuß-Ergebnisse und Lösungsweg noch einmal neben aufgabe/loesung: zwei Quellen derselben Sache. bank-pruef prüft pruef gegen loesung, nicht gegen satz.fuss/satz.loesung. (Offen: zum Ende von M2 entscheiden, ob satz.loesung loesung ersetzt oder bank-pruef auch satz prüft.)
+- Satz kann nur, was die vier Formen zwei/reihe/paeckchen/frei abdecken (aus T6B abgeleitet); K4W (Hypotenuse) hat noch kein satz-Feld und ist nicht setzbar (nicht angefasst). Beim Nachziehen von K4W zeigt sich, ob die Formen reichen.
+- bank-pruef meldete TikZ in grafik als „Baustein nicht in _bausteine.md“; TikZ-Bilder sind jetzt von der Bausteinprobe ausgenommen (das Bild prüft das Kompilieren).
+- Die Übersicht liest eine Zeile „Serie:“ am Kopf des Lernweg-Abschnitts im Katalog (neu in _vorlage.md); Vorgänger/Nachfolger und Niveau aus der Zeile „Blatt:“ des Blocks.
+- Originalliste am Blattende setzt der Setzer wie T6B, obwohl der Lehrer sie im Lernblatt entbehrlich fand (oben); Schalter erst mit der Entscheidung zum Ende von M2.
+- Setzer liest den Katalog aus ../mathe-nachhilfe/katalog neben dem Repo (sonst `--katalog DIR`).

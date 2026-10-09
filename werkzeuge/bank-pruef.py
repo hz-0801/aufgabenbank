@@ -153,7 +153,8 @@ FELDER_NEU = ["loesungsgrafik"]  # seit bank.md 2. Fassung
 FELDER_WAHL = ["herkunft", "ruht", "bild",
                # Lernweg-Felder, bank.md „Felder für den Lernweg“ (09.10.2026)
                "schritt", "sache", "darstellung", "frage", "antwortform",
-               "status", "status_grund", "besser", "blatt"]  # herkunft seit bank.md 6. Fassung (Blatt-Chats); ruht seit 06.10.
+               "status", "status_grund", "besser", "blatt",
+               "satz"]  # herkunft seit bank.md 6. Fassung (Blatt-Chats); ruht seit 06.10.
 # („kopie von <id>“, werkzeuge/vielfalt.py: stillgelegte Kopie, nicht gelöscht)
 FELDER_BASIS = ["ergebnis", "tipp", "ist_original", "verfremdung",
                 "vorstufe"]  # v0.14, nur bank/_basis/
@@ -410,10 +411,18 @@ def lade_bausteine(datei):
     return sig
 
 
+TIKZ = re.compile(r"\\begin\{tikzpicture\}.*?\\end\{tikzpicture\}", re.S)
+
+
 def bausteinprobe(a, sig):
     b = []
     for feld in ("aufgabe", "loesung", "grafik", "loesungsgrafik"):
-        for name, pflicht in aufrufe(a.get(feld, "")):
+        s = a.get(feld, "")
+        if feld in ("grafik", "loesungsgrafik"):
+            # TikZ ganz im Feld grafik (bauauftrag.md „Zerlegen“, 09.10.):
+            # das Bild prüft der Setzer beim Kompilieren, nicht diese Probe
+            s = TIKZ.sub("", s)
+        for name, pflicht in aufrufe(s):
             if name.startswith("begin:"):
                 if name[6:] in UMGEBUNG_STANDARD:
                     continue

@@ -199,6 +199,19 @@ Fehlt der Schlüssel, ist die Zeile noch nicht an einem Lernweg geprüft.
     besser        bei schwach: id der besseren Zeile desselben Schritts
     blatt         Kennungen der Blätter, auf denen die Zeile stand,
                   Liste
+    satz          was `werkzeuge/setzer.py` zum Setzen braucht (Objekt;
+                  Skizzen ganz als TikZ in grafik, je Teil ein Bild):
+                  form "zwei" (Skizze links, Arbeit rechts) | "reihe"
+                  (Teile nebeneinander, je Bild darüber) | "paeckchen"
+                  (Teile in zwei Spalten mit Karo) | "frei" (Text, Karo);
+                  text (gesetzter Auftrag, sonst gilt aufgabe) · teile
+                  [{text, grau (vorgerechnet), zeilen, karo, linien,
+                  luecke (Einheit hinter der Antwortlinie), kreuz}] ·
+                  karo (Karozeilen) · kreuz (Zeilen von Optionen) · nach
+                  (Satz nach den Teilen) · marke („P10 ’24“) · folgt
+                  (true: Teile laufen in der vorigen Nummer weiter) ·
+                  fuss (Ergebnisse für den Fuß) · loesung [[Teil,
+                  Ergebnis, Weg]] für die Lösungsseite
 
 Gelöscht wird nichts; schwach und ruht werden nicht gesetzt. Neue Zeilen
 aus einem Bau tragen herkunft wie bisher und dazu alle Felder oben.
