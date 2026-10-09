@@ -4,6 +4,8 @@
     python3 werkzeuge/setzer.py <eintrag> <teil> --aus <ordner>
             [--sorte tisch-alt|tisch|selbst] [--kennung K]
             [--katalog DIR] [--kein-register] [--ohne-pdf]
+            [--datum JJJJ-MM-TT] [--pfad P]
+    python3 werkzeuge/setzer.py <eintrag> <teil> --reserviere
 
 Beispiele:
     python3 werkzeuge/setzer.py pythagoras 2k --aus /tmp/t6b --kennung T6B
@@ -43,12 +45,29 @@ Zeile ins Register mit den gesetzten ids (Gruppen einer Nummer mit „+“).
 Mit --kennung K wird ein Blatt aus dem Register wieder gesetzt: dieselben
 ids, kein neuer Registereintrag.
 
+Kennung reservieren (--reserviere): zu Beginn eines Baus eine freie
+Kennung ziehen, eine Zeile mit Status „reserviert“ in bau/register.csv
+schreiben, committen und pushen (vorher git pull --rebase); gibt die
+Kennung aus. Parallele Bauten ziehen so nicht dieselbe Kennung. Der
+erste Satz ersetzt die Zeile; jeder weitere Satz ergänzt sorten= um die
+gesetzte Sorte.
+
+Registerzeile: Datum aus --datum, sonst heute in Europe/Berlin; Pfad aus
+--pfad, sonst --aus, wenn es im Repo liegt.
+
+Bilder (grafik, loesungsgrafik): tikzpicture und die Bausteine aus
+mathblatt.sty (ksys, Tabellen, \\kreisdiagramm …). Eine grafik mit einem
+Befehl oder einer Umgebung, die weder mathblatt.sty noch die kleine
+Liste LATEX_ERLAUBT kennt, bricht den Satz mit der id ab; nichts fällt
+still weg.
+
 mathblatt.sty liegt neben diesem Skript (nicht im Repo, .gitignore); fehlt
 es, wird es von hz-0801/blattbau geholt.
 """
 import argparse
 import concurrent.futures as cf
 import csv
+import io
 import datetime
 import json
 import os
@@ -59,6 +78,7 @@ import subprocess
 import sys
 import time
 import urllib.request
+import zoneinfo
 from pathlib import Path
 
 HIER = Path(__file__).resolve().parent
@@ -94,7 +114,7 @@ def lies_lernweg(katalog, teil, kennung=None):
     blatt = re.search(r"^Blatt: (.+)$", block, re.M)
     angaben = {}
     if blatt:
-        teile = [t.strip() for t in blatt.group(1).split("·")]
+        teile = blatt_teile(blatt.group(1))
         angaben["niveau"] = teile[0]
         for t in teile[1:]:
             k, _, v = t.partition(":")
@@ -113,6 +133,13 @@ def lies_lernweg(katalog, teil, kennung=None):
                 else "", schritte=schritte, **angaben)
 
 
+def blatt_teile(zeile):
+    """„Klasse 8 · Vorher: … · Weiter: …“ nur an „ · “ vor einem Schlüssel
+    teilen; ein „·“ in Mathe (m·x) bleibt."""
+    return [t.strip() for t in
+            re.split(r"\s+·\s+(?=[A-ZÄÖÜa-zäöü][\wäöüß ]{0,20}:)", zeile)]
+
+
 def lies_abschnitte(block, titel, serie, praefix):
     """Lernweg-Block in Abschnittsform (bau/bauauftrag.md 10.10.2026)."""
     kopf = block.splitlines()[0]
@@ -126,7 +153,7 @@ def lies_abschnitte(block, titel, serie, praefix):
         if m and m.group(1) == "Fehler":
             lw["fehler"].append(m.group(2).strip())
         elif m and m.group(1) == "Blatt":
-            teile = [t.strip() for t in m.group(2).split("·")]
+            teile = blatt_teile(m.group(2))
             lw["niveau"] = teile[0]
             for t in teile[1:]:
                 k, _, v = t.partition(":")
@@ -167,8 +194,16 @@ def register_zeilen():
         return list(csv.reader(f, delimiter=";"))
 
 
+def heute(datum=None):
+    """--datum oder heute in Europe/Berlin (nicht die Systemuhr in UTC)."""
+    if datum:
+        return datetime.date.fromisoformat(datum).isoformat()
+    return datetime.datetime.now(
+        zoneinfo.ZoneInfo("Europe/Berlin")).date().isoformat()
+
+
 def neue_kennung():
-    vergeben = {r[0] for r in register_zeilen()}
+    vergeben = {r[0] for r in register_zeilen() if r}
     while True:
         k = "".join(random.choice(ZEICHEN) for _ in range(3))
         if k not in vergeben:
@@ -186,9 +221,171 @@ def gruppen_aus_register(kennung):
 
 # --- Satz einer Nummer ---------------------------------------------------
 
-def bilder(grafik):
-    return re.findall(r"\\begin\{tikzpicture\}.*?\\end\{tikzpicture\}",
-                      grafik, re.S)
+TIKZ = r"\\begin\{tikzpicture\}.*?\\end\{tikzpicture\}"
+# LaTeX-Befehle, die neben Bausteinen in grafik stehen dürfen
+LATEX_ERLAUBT = {
+    "quad", "qquad", "hfill", "hfil", "hspace", "vspace", "par", "medskip",
+    "smallskip", "bigskip", "textbf", "textit", "emph", "small",
+    "footnotesize", "scriptsize", "normalsize", "large", "centering",
+    "newline", "enspace", "noindent", "scalebox", "resizebox", "raisebox",
+    "includegraphics", "tikz", "mbox", "makebox", "strut", "color",
+    "textcolor", "phantom", "hphantom", "vphantom", "displaystyle"}
+_STY = {}
+
+
+def sty_namen():
+    """Befehle und Umgebungen, die mathblatt.sty definiert."""
+    if not _STY:
+        sty = hole_sty().read_text(encoding="utf-8", errors="replace")
+        _STY["befehle"] = set(re.findall(
+            r"\\(?:newcommand|renewcommand|providecommand|"
+            r"DeclareRobustCommand|NewDocumentCommand|RenewDocumentCommand|"
+            r"DeclareDocumentCommand)\*?\s*\{?\\([A-Za-z@]+)", sty)) | set(
+            re.findall(r"\\(?:def|gdef|edef|xdef|let)\\([A-Za-z@]+)", sty))
+        _STY["umgebungen"] = set(re.findall(
+            r"\\(?:newenvironment|renewenvironment|NewDocumentEnvironment|"
+            r"RenewDocumentEnvironment|newtcolorbox|NewTColorBox)\*?\s*"
+            r"\{(\w+)\}", sty)) | {"tikzpicture", "tabular", "array",
+                                   "center", "minipage"}
+    return _STY
+
+
+def oben(tex):
+    """Befehle und Umgebungen auf oberster Ebene (nicht in Klammern, nicht
+    in $…$, nicht im Innern einer Umgebung)."""
+    namen, tiefe, umg, mathe, i = [], 0, 0, False, 0
+    while i < len(tex):
+        m = re.match(r"\\(begin|end)\{([\w*]+)\}|\\([A-Za-z@]+)\*?|\\.",
+                     tex[i:])
+        if m:
+            oberst = tiefe == 0 and umg == 0 and not mathe
+            if m.group(1) == "begin":
+                if oberst:
+                    namen.append("{" + m.group(2) + "}")
+                umg += 1
+            elif m.group(1) == "end":
+                umg -= 1
+            elif m.group(3) and oberst:
+                namen.append(m.group(3))
+            i += m.end()
+            continue
+        c = tex[i]
+        tiefe += {"{": 1, "}": -1}.get(c, 0)
+        if c == "$":
+            mathe = not mathe
+        i += 1
+    return namen
+
+
+def pruefe_grafik(tex, wer):
+    """Abbruch mit id, wenn grafik etwas trägt, das der Setzer nicht kennt."""
+    namen = sty_namen()
+    fremd = [n for n in oben(tex) if not (
+        n[1:-1] in namen["umgebungen"] if n.startswith("{")
+        else n in namen["befehle"] or n in LATEX_ERLAUBT)]
+    if fremd:
+        sys.exit(f"{wer}: grafik mit {', '.join(sorted(set(fremd)))} – "
+                 "kennt mathblatt.sty nicht; der Setzer setzt das nicht")
+
+
+def argument_ende(tex, i):
+    """Ende der Gruppe {…} oder […] ab tex[i] ({…} darin gezählt)."""
+    zu = {"{": "}", "[": "]"}[tex[i]]
+    tiefe, j = 0, i + 1
+    while j < len(tex):
+        c = tex[j]
+        if c == "\\":
+            j += 2
+            continue
+        if c == "{":
+            tiefe += 1
+        elif c == "}" and tiefe:
+            tiefe -= 1
+        elif c == zu and tiefe == 0:
+            return j + 1
+        j += 1
+    return len(tex)
+
+
+def aufruf_ende(tex, i):
+    """Ende eines Befehlsaufrufs ab dem Ende seines Namens (alle direkt
+    folgenden […] und {…})."""
+    while i < len(tex) and tex[i] in "{[":
+        i = argument_ende(tex, i)
+    return i
+
+
+TABELLEN = ("wertetabelleleer", "wertetabelle", "sachtabelle",
+            "vierfeldertafel")
+
+
+def fest(tex):
+    """\\wertetabelle mit leerem x-Eintrag ergäbe $$ und bräche die
+    Vorlage ab: leere Einträge werden {\\ }."""
+    aus, i = [], 0
+    for m in re.finditer(r"\\wertetabelle(?![a-z])", tex):
+        if m.start() < i:
+            continue
+        j, args = m.end(), []
+        while j < len(tex) and tex[j] in "{[":
+            k = argument_ende(tex, j)
+            args.append(tex[j:k])
+            j = k
+        if args and args[-1].startswith("{"):
+            werte = re.split(r",(?![^{]*\})", args[-1][1:-1])
+            args[-1] = "{" + ",".join(
+                w if w.strip() else "{\\ }" for w in werte) + "}"
+        aus.append(tex[i:m.end()] + "".join(args))
+        i = j
+    return "".join(aus) + tex[i:]
+
+
+def passend(tex, hoehe=None):
+    """In die Breite (und Höhe) einpassen; \\par und Tabellen dürfen
+    darin stehen (varwidth misst die natürliche Breite)."""
+    opt = "max width=\\linewidth" + (f",max height={hoehe}" if hoehe
+                                     else "")
+    return (f"\\adjustbox{{{opt}}}{{\\begin{{varwidth}}{{50cm}}"
+            f"{fest(tex)}\\end{{varwidth}}}}")
+
+
+def tabellen_einpassen(tex):
+    """Tabellen-Bausteine im Text (Beispielschritte, Aufgabe) einpassen,
+    damit sie in einer schmalen Spalte nicht über den Rand ragen."""
+    if not tex or "\\" not in tex:
+        return tex
+    tex = fest(tex)
+    aus, i = [], 0
+    for m in re.finditer(r"\\(" + "|".join(TABELLEN) + r")(?![a-zA-Z])",
+                         tex):
+        if m.start() < i:
+            continue
+        j = aufruf_ende(tex, m.end())
+        aus.append(tex[i:m.start()] + passend(tex[m.start():j]))
+        i = j
+    return "".join(aus) + tex[i:]
+
+
+def bilder(grafik, wer=""):
+    """Bilder einer grafik: die tikzpictures einzeln (Schrittform setzt sie
+    in Spalten); sonst die ganze grafik eingepasst als ein Bild."""
+    tikz = re.findall(TIKZ, grafik, re.S)
+    if not re.sub(TIKZ, "", grafik, flags=re.S).strip():
+        return tikz
+    pruefe_grafik(re.sub(TIKZ, "", grafik, flags=re.S), wer)
+    return [passend(grafik.strip())]
+
+
+def bild(a, feld="grafik", hoehe=None):
+    """Ein Bild aus grafik (oder loesungsgrafik) einer Bankzeile; mehrere
+    tikzpictures nebeneinander, nie still weggelassen."""
+    g = bilder(a.get(feld) or "", a.get("id", "?"))
+    if not g:
+        return ""
+    if len(g) == 1 and g[0].startswith("\\adjustbox"):
+        return passend(a[feld].strip(), hoehe) if hoehe else g[0]
+    inhalt = "\\quad\n".join(g)
+    return passend(inhalt, hoehe) if hoehe else inhalt
 
 
 def kreuzzeilen(zeilen, trenner):
@@ -221,7 +418,7 @@ def setze_nummer(nr, zeilen, schritt_kommentar):
     for a in zeilen:
         s = a["satz"]
         teile += s.get("teile", [])
-        grafiken += bilder(a.get("grafik", ""))
+        grafiken += bilder(a.get("grafik", ""), a["id"])
         lz = s.get("loesung") or loesung_aus_bank(nr, a)
         f = s.get("fuss", [e for e, _ in lz])
         fuss += f if isinstance(f, list) else [f]
@@ -339,12 +536,24 @@ def kurz(ergebnis):
 
 def weg(a):
     """loesung für die Lösungsseite; beginnt sie mit der gewählten
-    Ankreuzoption (bank-pruef), fällt die Option weg."""
+    Ankreuzoption (bank-pruef) oder mit dem ergebnis, das links schon
+    steht, fällt der Anfang weg."""
     _, opts = optionen(a["aufgabe"])
+    lo = a["loesung"]
     for o in sorted(opts, key=len, reverse=True):
-        if a["loesung"].startswith(o):
-            return a["loesung"][len(o):].lstrip(" :")
-    return a["loesung"]
+        if lo.startswith(o):
+            return lo[len(o):].lstrip(" :")
+    erg = (a.get("ergebnis") or "").strip().rstrip(".")
+    if erg and lo.startswith(erg) and (
+            len(lo) == len(erg) or lo[len(erg)] in " .,:;\n"):
+        return lo[len(erg):].lstrip(" .,:;\n")
+    return lo
+
+
+def loes_bild(a):
+    """loesungsgrafik unter dem Weg (Abschnittsform)."""
+    b = bild(a, "loesungsgrafik", hoehe="4cm")
+    return f"\\par\\smallskip {b}" if b else ""
 
 
 def gruppen_abschnitte(lw):
@@ -370,8 +579,8 @@ def setze_nummer_neu(nr, zeilen, kommentar):
         b = bsp[0]
         grau = ("\\grau{a)\\ " + b["aufgabe"] + "\\par\\smallskip "
                 + "\\par ".join(b.get("schritte", [])) + "}")
-        g = bilder(b.get("grafik", ""))
-        out.append(f"\\gzwei{{{g[0]}}}{{{grau}}}" if g else grau)
+        g = bild(b)
+        out.append(f"\\gzwei{{{g}}}{{{grau}}}" if g else grau)
         out.append("\\par\\medskip")
         marke = "b)"
     fuss, lz = [], []
@@ -387,12 +596,12 @@ def setze_nummer_neu(nr, zeilen, kommentar):
                     for i in range(0, len(opts), 2))
         else:
             rechts += "\\karo{3}"
-        g = bilder(a.get("grafik", ""))
-        out.append(f"\\gzwei{{{g[0]}}}{{%\n{rechts}}}" if g else rechts)
+        g = bild(a)
+        out.append(f"\\gzwei{{{g}}}{{%\n{rechts}}}" if g else rechts)
         fuss.append(f"{marke} {kurz(a.get('ergebnis', a['loesung']))}"
                     .strip())
         lz.append(f"\\lz{{{nr}{marke or '.'}}}{{{a.get('ergebnis', '')}}}"
-                  f"{{{weg(a)}}}{{}}")
+                  f"{{{weg(a)}{loes_bild(a)}}}{{}}")
     out.append(f"\\fusshilfe{{\\mbox{{{nr}:~{'; '.join(fuss)}}}}}")
     out.append("\\end{pfaufg}")
     return ("\n".join(out),
@@ -404,6 +613,7 @@ PRAEAMBEL_NEU = r"""\documentclass[11pt]{article}
 %% gesetzt von werkzeuge/setzer.py (Sorte %(sorte)s) aus dem Lernweg %(kennung)s
 %% und den Bankzeilen; Muster bau/proben/2026-10-09/hypotenuse-muster.
 \usepackage{enumitem}
+\usepackage{adjustbox,varwidth}
 \newgeometry{a4paper,margin=18mm,top=15mm,bottom=20mm,footskip=9mm}
 \pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}
 \fancyfoot[L]{\footnotesize\color{mbgrau}%(fuss)s}
@@ -449,9 +659,9 @@ def aufgabe_tex(a, nummer):
                 for i in range(0, len(opts), 2))
     links = f"\\hangindent7mm\\hangafter1\\nr{{{nummer}}}{text}"
     ziel = ZIEL if a.get("rolle") == "ziel" else ""
-    g = bilder(a.get("grafik", ""))
+    g = bild(a)
     if g:
-        return f"\\aufgg{{{links}}}{{{g[0]}}}{{}}{{{ziel}}}\n\\medskip"
+        return f"\\aufgg{{{links}}}{{{g}}}{{}}{{{ziel}}}\n\\medskip"
     return f"\\aufg{{{links}}}{{}}{{{ziel}}}\n\\medskip"
 
 
@@ -530,16 +740,16 @@ def tex_selbst(lw, kennung, bank):
             links.append("\\medskip")
         if lw.get("achtung"):
             links.append(f"{{\\small {lw['achtung']}}}")
-        bild = bilder(bank.get(lw.get("bild", ""), {}).get("grafik", ""))
+        bild_f = bild(bank.get(lw.get("bild", ""), {}))
         box = ["\\begin{tcolorbox}[colback=mbkasten,colframe=mbgrau,"
                "boxrule=0.5pt,arc=1mm,left=3mm,right=3mm,top=2mm,bottom=2mm,"
                "title={\\bfseries Formel auf einen Blick},coltitle=black,"
                "colbacktitle=black!10]"]
-        if bild:
+        if bild_f:
             box += ["\\begin{minipage}[t]{0.58\\linewidth}\\vspace{0pt}"]
             box += links + ["\\end{minipage}\\hfill",
                             "\\begin{minipage}[t]{0.38\\linewidth}"
-                            "\\vspace{2mm}\\centering", bild[0],
+                            "\\vspace{2mm}\\centering", bild_f,
                             "\\end{minipage}"]
         else:
             box += links
@@ -568,12 +778,12 @@ def tex_selbst(lw, kennung, bank):
                 "\\par\\noindent\\hangindent6mm\\hangafter1\\makebox[6mm][l]"
                 f"{{\\textbf{{{i}}}}}{s}\\par\\smallskip"
                 for i, s in enumerate(b.get("schritte", []), 1))
-            g = bilder(b.get("grafik", ""))
+            g = bild(b)
             if g:
                 t.append("\\noindent\\begin{minipage}[t]{0.6\\linewidth}"
                          f"\\vspace{{0pt}}{schritte}\\end{{minipage}}\\hfill")
                 t.append("\\begin{minipage}[t]{0.37\\linewidth}\\vspace{0pt}"
-                         f"\\centering {g[0]}\\end{{minipage}}\\par\\medskip")
+                         f"\\centering {g}\\end{{minipage}}\\par\\medskip")
             else:
                 t.append(f"\\noindent{schritte}\\par\\medskip")
         t.append("\\noindent\\textbf{Aufgaben}\\hspace{1em}{\\small\\color"
@@ -603,30 +813,92 @@ def tex_loesungen_neu(lw, kennung, bank, sorte):
         for k, a in enumerate(zeilen_von(ab, bank), 1):
             nummer = f"{bu}{k}" if sorte == "tisch" else f"{k}."
             t.append(f"\\lsg{{{nummer}}}{{{a.get('ergebnis', '')}}}"
-                     f"{{{weg(a)}}}")
+                     f"{{{weg(a)}{loes_bild(a)}}}")
     return "\n".join(t) + "\n\\end{document}\n"
 
 
-def register_neu(kennung, lw, eintrag, teil, gruppen, sorte):
-    """Registerzeile für einen Lernweg in Abschnittsform (einmal je
-    Kennung)."""
-    if any(r and r[0] == kennung for r in register_zeilen()):
+SORTEN = ("tisch-alt", "tisch", "selbst")
+
+
+def register_schreibe(kennung, zeile):
+    """Zeile der Kennung ersetzen oder anhängen; alle anderen Zeilen
+    bleiben Byte für Byte."""
+    puf = io.StringIO()
+    csv.writer(puf, delimiter=";", lineterminator="\n").writerow(zeile)
+    neu = puf.getvalue()
+    roh = REGISTER.read_text(encoding="utf-8").splitlines(keepends=True)
+    for i, z in enumerate(roh):
+        if z.split(";", 1)[0] == kennung:
+            roh[i] = neu
+            break
+    else:
+        if roh and not roh[-1].endswith("\n"):
+            roh[-1] += "\n"
+        roh.append(neu)
+    REGISTER.write_text("".join(roh), encoding="utf-8")
+
+
+def register_zeile(kennung):
+    return next((r for r in register_zeilen() if r and r[0] == kennung),
+                None)
+
+
+def git(*args):
+    return subprocess.run(["git", *args], cwd=WURZEL, capture_output=True,
+                          text=True)
+
+
+def reserviere(eintrag, teil, datum=None):
+    """Freie Kennung ziehen, als „reserviert“ ins Register, committen und
+    pushen; bei abgelehntem Push neu ziehen (bis 5-mal)."""
+    for versuch in range(5):
+        git("pull", "--rebase", "--autostash", "-q")
+        k = neue_kennung()
+        register_schreibe(k, [k, heute(datum), eintrag, "L",
+                              f"status=reserviert, lerneinheit={teil}",
+                              "–", "setzer.py", "–", "–"])
+        git("commit", "-q", "-m", f"Kennung {k} reserviert ({eintrag} "
+            f"L{teil}, setzer.py --reserviere)", "--", "bau/register.csv")
+        if git("push", "-q").returncode == 0:
+            return k
+        git("reset", "-q", "HEAD~1")
+        roh = REGISTER.read_text(encoding="utf-8").splitlines(keepends=True)
+        REGISTER.write_text("".join(z for z in roh
+                                    if z.split(";", 1)[0] != k),
+                            encoding="utf-8")
+        time.sleep(5 + 10 * versuch)
+    sys.exit("Kennung nicht reserviert: Push fünfmal abgelehnt")
+
+
+def register_neu(kennung, lw, eintrag, teil, gruppen, sorte, datum=None,
+                 pfad="–"):
+    """Registerzeile für einen Lernweg in Abschnittsform: beim ersten Satz
+    neu (oder anstelle der Reservierung), danach nur sorten= um die
+    gesetzte Sorte ergänzt."""
+    alt = register_zeile(kennung)
+    if alt and "status=reserviert" not in alt[4]:
+        m = re.search(r"sorten=([^,]*)", alt[4])
+        if m:
+            da = set(m.group(1).split()) | {sorte}
+            alt[4] = (alt[4][:m.start(1)] + " ".join(
+                x for x in SORTEN if x in da) + alt[4][m.end(1):])
+        if len(alt) > 8 and alt[8].startswith("–") and pfad != "–":
+            alt[8] = pfad
+        register_schreibe(kennung, alt)
         return
     ids = " ".join("+".join(g) for g in gruppen)
     ab = lw["abschnitte"]
     einheit = re.match(r"\d+", teil).group()
-    zeile = [kennung, datetime.date.today().isoformat(), eintrag, "L",
+    zeile = [kennung, heute(datum), eintrag, "L",
              f"lerneinheit={einheit} {lw['name']}, klasse="
              f"{lw.get('niveau', '').replace('Klasse ', '')}, form=abschnitte,"
-             f" abschnitte={ab[0]['id']}..{ab[-1]['id']}, sorten=tisch-alt "
-             f"tisch selbst, ids={ids}",
-             subprocess.run(["git", "rev-parse", "--short", "HEAD"],
-                            cwd=WURZEL, capture_output=True,
-                            text=True).stdout.strip(),
+             f" abschnitte={ab[0]['id']}..{ab[-1]['id']}, sorten={sorte}, "
+             f"ids={ids}",
+             git("rev-parse", "--short", "HEAD").stdout.strip(),
              "setzer.py", sty_version(),
+             f"{pfad} (zuerst als {sorte})" if pfad != "–" else
              f"– (aus Lernweg gesetzt, zuerst als {sorte})"]
-    with REGISTER.open("a", encoding="utf-8", newline="") as f:
-        csv.writer(f, delimiter=";", lineterminator="\n").writerow(zeile)
+    register_schreibe(kennung, zeile)
 
 
 # --- Dateien -------------------------------------------------------------
@@ -712,7 +984,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[1])
     ap.add_argument("eintrag")
     ap.add_argument("teil", help="Lernweg-Teil, z. B. 2k für L2k-1 …")
-    ap.add_argument("--aus", required=True)
+    ap.add_argument("--aus")
     ap.add_argument("--sorte", default="tisch-alt",
                     choices=["tisch-alt", "tisch", "selbst"])
     ap.add_argument("--kennung")
@@ -720,13 +992,33 @@ def main():
                     default=str(WURZEL.parent / "mathe-nachhilfe" / "katalog"))
     ap.add_argument("--kein-register", action="store_true")
     ap.add_argument("--ohne-pdf", action="store_true")
+    ap.add_argument("--datum", help="Registerdatum JJJJ-MM-TT (Vorgabe: "
+                    "heute in Europe/Berlin)")
+    ap.add_argument("--pfad", help="Ablage fürs Register (Vorgabe: --aus, "
+                    "wenn im Repo)")
+    ap.add_argument("--reserviere", action="store_true",
+                    help="Kennung ziehen, reservieren, pushen, ausgeben")
     arg = ap.parse_args()
     start = time.perf_counter()
+    if arg.reserviere:
+        print(reserviere(arg.eintrag, arg.teil, arg.datum))
+        return
+    if not arg.aus:
+        ap.error("--aus fehlt")
+    hole_sty()
 
     lw = lies_lernweg(Path(arg.katalog) / f"{arg.eintrag}.md", arg.teil,
                       arg.kennung)
     bank = lies_bank(arg.eintrag)
     abschnitte = lw.get("form") == "abschnitte"
+    if abschnitte:
+        for a in bank.values():
+            for f in ("aufgabe", "loesung", "ergebnis"):
+                if isinstance(a.get(f), str):
+                    a[f] = tabellen_einpassen(a[f])
+            if a.get("schritte"):
+                a["schritte"] = [tabellen_einpassen(x)
+                                 for x in a["schritte"]]
     if arg.sorte != "tisch-alt" and not abschnitte:
         sys.exit(f"--sorte {arg.sorte} braucht einen Lernweg-Block in "
                  "Abschnittsform (Form: abschnitte)")
@@ -783,13 +1075,14 @@ def main():
         laeufe = {"2-blatt": 2 if arg.sorte == "selbst" else 1,
                   "3-loesungen": 1}
     for name, inhalt in dateien.items():
+        if (inhalt.startswith(KOPF) and "\\adjustbox{" in inhalt
+                and "{adjustbox,varwidth}" not in inhalt):
+            inhalt = (KOPF + "\\usepackage{adjustbox,varwidth}\n"
+                      + inhalt[len(KOPF):])
         (aus / f"{name}.tex").write_text(inhalt, encoding="utf-8")
 
     fehler = []
     if not arg.ohne_pdf:
-        sty = HIER / "mathblatt.sty"
-        if not sty.exists():
-            urllib.request.urlretrieve(STY_URL, sty)
         with cf.ThreadPoolExecutor(3) as pool:
             fehler = [f for f in pool.map(
                 lambda n: kompiliere(aus, n, laeufe[n]), dateien) if f]
@@ -797,22 +1090,26 @@ def main():
             if p.suffix in (".aux", ".log", ".out", ".abh"):
                 p.unlink()
 
+    pfad = arg.pfad or "–"
+    if not arg.pfad and aus.resolve().is_relative_to(WURZEL):
+        pfad = str(aus.resolve().relative_to(WURZEL))
     if abschnitte and not arg.kein_register and not fehler:
-        register_neu(kennung, lw, arg.eintrag, arg.teil, gruppen, arg.sorte)
+        register_neu(kennung, lw, arg.eintrag, arg.teil, gruppen, arg.sorte,
+                     arg.datum, pfad)
     if neu and not arg.kein_register and not fehler:
         ids = " ".join("+".join(g) for g in gruppen)
         schritte = lw["schritte"]
         einheit = re.match(r"\d+", arg.teil).group()
-        zeile = [kennung, datetime.date.today().isoformat(), arg.eintrag, "L",
+        zeile = [kennung, heute(arg.datum), arg.eintrag, "L",
                  f"lerneinheit={einheit} {lw['name']}, klasse="
                  f"{lw.get('niveau', '').replace('Klasse ', '')}, schritte="
                  f"{schritte[0][0]}..{schritte[-1][0]}, ids={ids}",
                  subprocess.run(["git", "rev-parse", "--short", "HEAD"],
                                 cwd=WURZEL, capture_output=True,
                                 text=True).stdout.strip(),
-                 "setzer.py", sty_version(), "– (aus Lernweg gesetzt)"]
-        with REGISTER.open("a", encoding="utf-8", newline="") as f:
-            csv.writer(f, delimiter=";", lineterminator="\n").writerow(zeile)
+                 "setzer.py", sty_version(),
+                 pfad if pfad != "–" else "– (aus Lernweg gesetzt)"]
+        register_schreibe(kennung, zeile)
 
     dauer = time.perf_counter() - start
     for f in fehler:
@@ -820,6 +1117,13 @@ def main():
     print(f"{kennung} ({arg.sorte}): {len(gruppen)} Nummern, {aus} – "
           f"{dauer:.1f} s")
     sys.exit(1 if fehler else 0)
+
+
+def hole_sty():
+    sty = HIER / "mathblatt.sty"
+    if not sty.exists():
+        urllib.request.urlretrieve(STY_URL, sty)
+    return sty
 
 
 def sty_version():

@@ -78,7 +78,9 @@ Nur mit grep/awk/Python-Filter, nie ganze große Dateien:
   „frühere Fassung (<Kennung>)“; nichts löschen. Den Thema-Weg anlegen
   oder ergänzen, wenn der Bau die Folge ändert.
 - **Kennung** nach `bau/bauregeln.md` „Kennung“; die Registerzeile in
-  `bau/register.csv` schreibt der Setzer beim ersten Satz.
+  `bau/register.csv` schreibt der Setzer beim ersten Satz. Die Kennung
+  zu Beginn des Baus reservieren: `python3 werkzeuge/setzer.py <eintrag>
+  <teil> --reserviere` (Zeile „reserviert“ im Register, gepusht).
 - Setzen ohne Modell, alle drei Sorten:
   `python3 werkzeuge/setzer.py <eintrag> <teil> --aus <ordner> --sorte
   tisch-alt|tisch|selbst` (Blatt- und Lösungs-PDF je Sorte).

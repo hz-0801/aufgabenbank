@@ -1032,7 +1032,11 @@ def pruefe_ketten(zeilen, datei, einheit):
             if v != list(range(1, len(v) + 1)) and einheit != 0:
                 b.append(f"{datei} k{k} s{s}: Varianten nicht 1..n: {v}")
             for f in ("sprosse_text", "merkmal", "hoehe", "quelle"):
-                if len({a[f] for a in gruppe}) > 1:
+                # merkmal an Zeilen mit rolle (Abschnittsform) sagt, was
+                # die Zeile ändert; es muss je Sprosse nicht gleich sein
+                werte = {a[f] for a in gruppe
+                         if not (f == "merkmal" and a.get("rolle"))}
+                if len(werte) > 1:
                     b.append(f"{datei} k{k} s{s}: {f} uneinheitlich")
             h = gruppe[0]["hoehe"]
             if einheit == 0:
@@ -1950,7 +1954,24 @@ def faelle_v012(basis):
          frei("Gerade durch $A(1; 2; 3)$ und $P(5; 1; 2)$."), True),
         ("v0.12", "Punkt nur aus 0, 1 zählt mit (Ausnahme v0.11 weg)",
          frei("Gerade durch $A(1 | 2 | 3)$ und $C(0 | 0 | 1)$."), False),
+        ("rolle", "merkmal je Zeile mit rolle: kein Befund",
+         not merkmal_befund("aufgabe"), True),
+        ("rolle", "merkmal uneinheitlich ohne rolle: Befund",
+         not merkmal_befund(None), False),
     ]
+
+
+def merkmal_befund(rolle):
+    """Zwei Zeilen einer Sprosse mit verschiedenem merkmal; True, wenn
+    der Prüfer „merkmal uneinheitlich“ meldet."""
+    basis = {"kette_nr": 1, "kette": "k", "sprosse": 1,
+             "hoehe": "grundfall", "sprosse_text": "t", "quelle": 1, "original": None}
+    z = [dict(basis, variante=1, merkmal="Ganzes 100"),
+         dict(basis, variante=2, merkmal="neu: Ganzes 200")]
+    if rolle:
+        z[1]["rolle"] = rolle
+    b, _ = pruefe_ketten(z, "t.jsonl", 2)
+    return any("merkmal uneinheitlich" in x for x in b)
 
 
 def main(argv):

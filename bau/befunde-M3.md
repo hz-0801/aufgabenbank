@@ -172,16 +172,16 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
   eine `\wertetabelle` in grafik fiele stumm vom Blatt (erster Bau in
   Abschnittsform mit Koordinatensystemen). Umgangen: beide in einen
   tikzpicture-Knoten gewickelt. Vorschlag: `bilder()` auch `ksys` und
-  Tabellen erkennen lassen. (setzer.py nicht geändert.)
+  Tabellen erkennen lassen. (setzer.py nicht geändert.) – *erledigt 10.10.: setzer.py, Bausteine aus mathblatt.sty werden gesetzt, Unbekanntes bricht mit id ab*
 - Setzer: Die Kopfzeile „Blatt:“ wird an „·“ geteilt; „Weiter: Lineare
-  Funktion f(x) = m·x + n“ wurde abgeschnitten. (Im Block „mx + n“.)
+  Funktion f(x) = m·x + n“ wurde abgeschnitten. (Im Block „mx + n“.) – *erledigt 10.10.: setzer.py, geteilt nur an „ · “ vor einem Schlüssel*
 - mathblatt.sty: `\wertetabelle` mit leerem x-Eintrag ergibt `$$` und
   bricht ab; nur y-Einträge dürfen leer sein. (Leerer x-Eintrag als
-  `{\ }`.)
+  `{\ }`.) – *erledigt 10.10.: setzer.py, der Setzer macht leere Einträge zu `{\ }`*
 - Prüfer: merkmal muss je Sprosse gleich sein, kann also an
   Abschnittszeilen nicht sagen, was die Aufgabe ändert. (merkmal aus
   dem Bestand übernommen.) Mengenwarnungen (k1 s2–s8, k2 s1, pflicht
-  darstellung 17×) aus den verlangten Vorratszeilen, wie E1–E5 Prozent.
+  darstellung 17×) aus den verlangten Vorratszeilen, wie E1–E5 Prozent. – *erledigt 10.10.: bank-pruef.py prüft merkmal an Zeilen mit rolle nicht mehr*
 - Bestand E1: Die Ketten passen nur grob zum Lernweg; Abschnitt C
   (Gleichung am Graphen) und Teile von D liegen in Pflichtketten (k3).
   Fehler-finden (k1-s7) nicht auf dem Blatt (Bauauftrag 4).
@@ -200,18 +200,18 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
 - Setzer: `bilder()` nimmt nur `tikzpicture`; der Baustein
   `\kreisdiagramm` aus mathblatt.sty (Bestand E2) wird in tisch/selbst
   nicht gesetzt. Glücksräder darum als TikZ in grafik. Wunsch: Setzer
-  nimmt auch Bausteinaufrufe als Bild.
+  nimmt auch Bausteinaufrufe als Bild. – *erledigt 10.10.: setzer.py, Bausteine werden gesetzt*
 - Setzer: Registerzeile trägt das Systemdatum (2026-10-09, Container in
   UTC) und keinen Pfad; in der KUV-Zeile von Hand auf 2026-10-10 und
-  den Bauordner gesetzt.
+  den Bauordner gesetzt. – *erledigt 10.10.: setzer.py, Datum aus --datum oder Europe/Berlin, Pfad aus --aus/--pfad*
 - Kennung: Erst VUC gezogen, zeitgleich auch von lineare-funktionen E1
   vergeben (paralleler Bau, Register erst beim Satz). Umbenannt in KUV;
   im Katalog-Commit be8c06c steht noch VUC, berichtigt im Folgecommit.
-  Vorschlag: Kennung beim Start des Baus ins Register schreiben.
+  Vorschlag: Kennung beim Start des Baus ins Register schreiben. – *erledigt 10.10.: setzer.py, --reserviere; Bauauftrag „Ablage“*
 - Prüfer: merkmal muss je Sprosse gleich sein – neue Zeilen tragen das
   merkmal der Sprosse; das Feld sagt so nichts über die neue Stufe.
   Mengenwarnungen (k3 s1–s13, k4, k5) aus dem verlangten Vorrat, wie E1–E5
-  Prozent.
+  Prozent. – *erledigt 10.10.: bank-pruef.py prüft merkmal an Zeilen mit rolle nicht mehr*
 - duplikate.py: neue Zeilen nur als Zahlvarianten in derselben Sprosse
   (Lostrommel, Würfel, Münze) und in C-Gruppen „Glücksrad, 1/2“.
 
@@ -219,19 +219,19 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
 
 - Setzer (Abschnittsform): loesungsgrafik wird nicht gesetzt; die
   Zeichenaufgaben (A3, B2) zeigen im Lösungsheft nur die Punkte als
-  Text. (loesungsgrafik trotzdem gefüllt; setzer.py nicht geändert.)
+  Text. (loesungsgrafik trotzdem gefüllt; setzer.py nicht geändert.) – *erledigt 10.10.: setzer.py, loesungsgrafik unter dem Weg, alle Sorten*
 - Setzer: nimmt aus grafik nur `\begin{tikzpicture}…`; die
   mathblatt-Umgebung `ksys` (Bestand der Kette) wird nicht erkannt.
   Graphen darum als pgfplots-Achse in tikzpicture; die ksys-Proben
-  von bank-pruef greifen an diesen Zeilen nicht.
+  von bank-pruef greifen an diesen Zeilen nicht. – *erledigt 10.10.: setzer.py, ksys wird gesetzt*
 - Setzer tisch-alt: Die rechte Spalte neben dem Bild ist schmal; eine
   Wertetabelle mit sieben Spalten im grauen Beispiel ragt über den
-  Rand. (Beispieltabelle auf fünf Spalten gekürzt.)
+  Rand. (Beispieltabelle auf fünf Spalten gekürzt.) – *erledigt 10.10.: setzer.py, Tabellen werden in die Spaltenbreite eingepasst*
 - Setzer: schreibt das Registerdatum nach Systemzeit (UTC, 09.10.);
-  von Hand auf 10.10. gesetzt.
+  von Hand auf 10.10. gesetzt. – *erledigt 10.10.: setzer.py, Europe/Berlin*
 - Prüfer: merkmal muss je Sprosse gleich sein; was eine neue Zeile
   gegenüber der vorigen ändert, lässt sich bei Lernweg-Zeilen darum
-  nicht festhalten. (merkmal aus dem Bestand übernommen.)
+  nicht festhalten. (merkmal aus dem Bestand übernommen.) – *erledigt 10.10.: bank-pruef.py prüft merkmal an Zeilen mit rolle nicht mehr*
 - Prüfer: Mengenwarnungen (k1 s0–s12, 2015-OS-K4b 5×, 2026-FOR-B1e
   4×, pflicht anwendung 15×) aus den verlangten Vorratszeilen, wie
   bei allen Bauen; dazu „Prüfungshöhe ohne Original“ für das Beispiel
@@ -257,7 +257,7 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
 - Setzer: Ankreuzoptionen mit `\dfrac` überlappen sich zeilenweise
   (Zeilen ohne Zusatzabstand); darum `\frac` wie im Prüfstein, klein.
   Registerzeile nennt immer „sorten=tisch-alt tisch selbst“, auch wenn
-  nur zwei gesetzt sind, und das Datum der Systemuhr (2026-10-09).
+  nur zwei gesetzt sind, und das Datum der Systemuhr (2026-10-09). – *erledigt 10.10.: setzer.py, Register nennt nur gesetzte Sorten, Datum Europe/Berlin*
 - Prüfer: Mengenwarnungen k3 s0–s15, k4 s1 aus Blatt- und
   Vorratszeilen, wie bei den anderen Bauten. Bestehende Bankzeilen
   tragen quelle 102 (älterer Katalogstand); neue übernehmen den Wert
@@ -276,14 +276,14 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
   alten Zeilen (\bruchrechteck, \bruchkreis, \kreisdiagramm) erscheinen in
   den Sorten tisch/selbst nicht. Die alten E1-Zeilen sind darum in
   Abschnittsform nicht setzbar, ohne grafik neu zu schreiben. (Alle 67
-  Zeilen mit eigenem TikZ gebaut; setzer.py nicht geändert.)
+  Zeilen mit eigenem TikZ gebaut; setzer.py nicht geändert.) – *erledigt 10.10.: setzer.py, Bausteine werden gesetzt*
 - Setzer: Bei TikZ-Gittern mit `x=0.5cm` braucht `grid` die Angabe
   `step=1`, sonst liegen die Linien bei 1 cm (jedes zweite Kästchen) –
   Bildkontrolle fing es. Für bauauftrag.md „Zerlegen“ als Hinweis geeignet.
 - Setzer: Die Lösungsseite druckt links ergebnis und rechts loesung;
   beginnt loesung mit dem Ergebnis (nötig für die Ergebnisstelle des
   Prüfers), steht es doppelt. (Hingenommen; Vorschlag: weg() schneidet
-  ein führendes ergebnis ab, wie bei Ankreuzoptionen.)
+  ein führendes ergebnis ab, wie bei Ankreuzoptionen.) – *erledigt 10.10.: setzer.py, führendes ergebnis fällt im Weg weg*
 - Prüfer: Mengenwarnungen wie in M2/3Y5 (k1 s6 trägt jetzt 40 Varianten,
   Originale bis 10×), weil alle P10-Formen – Prozent, Schraffieren,
   Sektoren – an einer Prüfungssprosse hängen. Ein Abschnitt „Anteil in
