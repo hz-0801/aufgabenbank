@@ -67,3 +67,28 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
 - Die Zielaufgabe nach 2025-OS-K2c (Drachenfenster) hatte keine Skizze;
   das Original zeigt eine. TikZ-Skizze ergänzt und den Prüfungssatz „Nutze
   dazu die Umkehrung“ im satz.text weggelassen (Bauregel 4.1).
+
+## Prozentrechnung E3 „Prozentwert berechnen“ (E5F, 09.10.2026)
+
+- Kritiker (Schritt 6) nicht gelaufen: wieder kein Werkzeug für einen
+  Unteragenten im Bau-Agenten (wie P9H). (Im Katalog „offen“; Vorschlag
+  wie dort: Kritiker vom Chat aus.)
+- Erkennen (Teil oder Prozentsatz gesucht?) steht als L3-5 nach den
+  Rechenwegen, nicht vorn: Die Entscheidung „mal oder Teil : Ganzes“ setzt
+  voraus, dass beide Wege bekannt sind; vorn stünde nur der Weg aus E2.
+  Widerspricht dem Wortlaut „Erkennen vor Rechnen“; beim Mischen zweier
+  Verfahren gilt eher „Erkennen vor dem gemischten Rechnen“. (So gebaut;
+  am Ende von M3 klären.)
+- Setzer: Form „frei“ mit Ankreuzzeilen je Teil (L3-5) geht nur über \kk
+  im satz.text; die graue Musterzeile a) mit angekreuztem Kästchen
+  ($\boxtimes$) steht von Hand im Text. (Wie P9H; hingenommen.)
+- Setzer: Päckchen mit Tabelle (Zielaufgabe L3-7) nur, indem die Tabelle
+  in satz.text steht; grafik behält \sachtabelle für andere Wege. (Wie E1.)
+- Bestand E3: Grundfall k1-s1 war fünfmal dieselbe Aufgabe (25 % am
+  Streifen); v3–v5 schwach. Die Kette hatte keine Erkennen-Vorstufe; neu
+  als k1-s0 (4 Zeilen). Die Prüfungssprosse nennt 2019-OS-K5a nur als
+  „Zunahme“; die Zielaufgabe hängt eine Prozentsatz-Frage an (Ganzes erst
+  bilden), weil der Bauauftrag hier E2 einmischt.
+- Prüfer: Mengenwarnungen (k1 s1/s2/s4/s5/s7/s10, k2 s1, Originale
+  2021-OS-B1c und 2019-OS-K5a je 3×) entstehen aus den verlangten
+  Zusatzzeilen, wie E1/E2.

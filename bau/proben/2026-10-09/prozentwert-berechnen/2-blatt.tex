@@ -1,0 +1,203 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% gesetzt von werkzeuge/setzer.py aus dem Lernweg (L3-1 · L3-2 · L3-3 · L3-4 · L3-5 · L3-6 · L3-7) und den Bankzeilen; Muster T6B.
+\input{praeambel}
+\newcommand{\kennung}{E5F}
+\newcommand{\grau}[1]{{\color{mbgrau}#1}}
+
+\begin{document}
+\pfheftstil
+\fancyfoot[C]{\parbox[t]{\textwidth}{\mbfhbox\par\vspace{1.5mm}{\footnotesize\color{mbgrau}{\scriptsize \kennung}\hfill\thepage}}}
+\pfheftkopf{Prozentwert berechnen}{Klasse 7}
+% L3-1: Anschluss an Einheit 1 und 2: Jetzt ist der Prozentsatz gegeben und der graue Teil gesucht; 50 %, 25 %, 10 % sind Hälfte, Viertel, Zehntel des Ganzen
+\begin{pfaufg}{}{1.}{}
+Der ganze Streifen ist $100\,\%$. Wie viel ist der graue Teil?\par\medskip\noindent
+\begin{minipage}[b]{0.32\linewidth}\centering
+\begin{tikzpicture}
+\fill[black!28] (0,0) rectangle (2.100,0.6);
+\draw[black!55,line width=0.4pt] (2.100,0) -- (2.100,0.6);
+\draw[line width=0.7pt] (0,0) rectangle (4.2,0.6);
+\draw[line width=0.4pt] (0,0.68) -- (0,0.82) -- (2.100,0.82) -- (2.100,0.68);
+\node[above,font=\small] at (1.050,0.80) {?};
+\node[below,font=\small] at (2.1,0) {ganz: $36$ kg};
+\end{tikzpicture}\par\smallskip
+\grau{{\small a)\ $50\,\%$ von $36$ kg}\par\smallskip
+$36 : 2$\par\smallskip $= 18$ kg}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.32\linewidth}\centering
+\begin{tikzpicture}
+\fill[black!28] (0,0) rectangle (1.050,0.6);
+\draw[black!55,line width=0.4pt] (1.050,0) -- (1.050,0.6);
+\draw[black!55,line width=0.4pt] (2.100,0) -- (2.100,0.6);
+\draw[black!55,line width=0.4pt] (3.150,0) -- (3.150,0.6);
+\draw[line width=0.7pt] (0,0) rectangle (4.2,0.6);
+\draw[line width=0.4pt] (0,0.68) -- (0,0.82) -- (1.050,0.82) -- (1.050,0.68);
+\node[above,font=\small] at (0.525,0.80) {?};
+\node[below,font=\small] at (2.1,0) {ganz: $80\,€$};
+\end{tikzpicture}\par\smallskip
+{\small b)\ $25\,\%$ von $80\,€$}\par\smallskip
+\linie{30mm}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.32\linewidth}\centering
+\begin{tikzpicture}
+\fill[black!28] (0,0) rectangle (0.420,0.6);
+\draw[black!55,line width=0.4pt] (0.420,0) -- (0.420,0.6);
+\draw[black!55,line width=0.4pt] (0.840,0) -- (0.840,0.6);
+\draw[black!55,line width=0.4pt] (1.260,0) -- (1.260,0.6);
+\draw[black!55,line width=0.4pt] (1.680,0) -- (1.680,0.6);
+\draw[black!55,line width=0.4pt] (2.100,0) -- (2.100,0.6);
+\draw[black!55,line width=0.4pt] (2.520,0) -- (2.520,0.6);
+\draw[black!55,line width=0.4pt] (2.940,0) -- (2.940,0.6);
+\draw[black!55,line width=0.4pt] (3.360,0) -- (3.360,0.6);
+\draw[black!55,line width=0.4pt] (3.780,0) -- (3.780,0.6);
+\draw[line width=0.7pt] (0,0) rectangle (4.2,0.6);
+\draw[line width=0.4pt] (0,0.68) -- (0,0.82) -- (0.420,0.82) -- (0.420,0.68);
+\node[above,font=\small] at (0.210,0.80) {?};
+\node[below,font=\small] at (2.1,0) {ganz: $450$ m};
+\end{tikzpicture}\par\smallskip
+{\small c)\ $10\,\%$ von $450$ m}\par\smallskip
+\linie{30mm}
+\end{minipage}
+\fusshilfe{\mbox{1:~b) 20 €; c) 45 m}}
+\end{pfaufg}
+
+% L3-2: Aus 10 % lassen sich andere Sätze bauen: mal 3, halbieren, zusammenzählen, von 100 % abziehen
+\begin{pfaufg}{}{2.}{}
+Rechne zuerst $10\,\%$. Setze daraus zusammen.\par\medskip
+\grau{a)\ $30\,\%$ von $80\,€$\quad $10\,\% = 8\,€$, \ $30\,\% = 3 \cdot 8\,€ = 24\,€$}\par\medskip
+\noindent\begin{minipage}[t]{0.48\linewidth}
+b)\ $20\,\%$ von $45\,€$
+\karo{1}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+c)\ $5\,\%$ von $60$ kg
+\karo{1}
+\end{minipage}
+\noindent\begin{minipage}[t]{0.48\linewidth}
+d)\ $15\,\%$ von $40\,€$
+\karo{1}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+e)\ $35\,\%$ von $200$ m
+\karo{1}
+\end{minipage}
+\noindent\begin{minipage}[t]{0.48\linewidth}
+f)\ $90\,\%$ von $30\,€$
+\karo{1}
+\end{minipage}
+\fusshilfe{\mbox{2:~b) 9\,€; c) 3 kg; d) 6\,€; e) 70 m; f) 27\,€}}
+\end{pfaufg}
+
+% L3-3: Jeder Satz geht über 1 %: das Ganze durch 100, dann mal den Prozentsatz; warum: Prozent heißt Hundertstel
+\begin{pfaufg}{}{3.}{}
+Rechne zuerst $1\,\%$, dann mal den Prozentsatz.\par\medskip
+\grau{a)\ $7\,\%$ von $300\,€$\quad $1\,\% = 300\,€ : 100 = 3\,€$, \ $7\,\% = 7 \cdot 3\,€ = 21\,€$}\par\medskip
+\noindent\begin{minipage}[t]{0.48\linewidth}
+b)\ $3\,\%$ von $900$ kg
+\karo{1}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+c)\ $12\,\%$ von $400\,€$
+\karo{1}
+\end{minipage}
+\noindent\begin{minipage}[t]{0.48\linewidth}
+d)\ $8\,\%$ von $250$ m
+\karo{1}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+e)\ $19\,\%$ von $600\,€$
+\karo{1}
+\end{minipage}
+\noindent\begin{minipage}[t]{0.48\linewidth}
+f)\ Erkläre, warum du für $1\,\%$ durch $100$ teilst.
+\karo{2}
+\end{minipage}
+\fusshilfe{\mbox{3:~b) 27 kg; c) 48\,€; d) 20 m; e) 114\,€; f) Hundertstel}}
+\end{pfaufg}
+
+% L3-4: Kurzweg mit dem Taschenrechner: Prozentsatz als Dezimalzahl mal das Ganze; auch mit Komma im Ganzen und über 100 %
+\begin{pfaufg}{}{4.}{}
+Schreibe den Prozentsatz als Dezimalzahl und rechne mit dem Taschenrechner.\par\medskip
+\grau{a)\ $35\,\%$ von $60\,€$\quad $35\,\% = 0{,}35$; \ $0{,}35 \cdot 60 = 21\,€$}\par\medskip
+\noindent\begin{minipage}[t]{0.48\linewidth}
+b)\ $64\,\%$ von $25$ kg
+\karo{1}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+c)\ $8\,\%$ von $450\,€$
+\karo{1}
+\end{minipage}
+\noindent\begin{minipage}[t]{0.48\linewidth}
+d)\ $30\,\%$ von $14{,}60\,€$
+\karo{1}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+e)\ $150\,\%$ von $40$ kg
+\karo{1}
+\end{minipage}
+\noindent\begin{minipage}[t]{0.48\linewidth}
+f)\ Tom rechnet $40\,\%$ von $75\,€$ so: $0{,}04 \cdot 75 = 3\,€$. Woran siehst du ohne Rechnung, dass das nicht stimmt?
+\karo{2}
+\end{minipage}
+\fusshilfe{\mbox{4:~b) 16 kg; c) 36\,€; d) 4,38\,€; e) 60 kg; f) fast die Hälfte}}
+\end{pfaufg}
+
+% L3-5: Erkennen, gemischt mit Einheit 2: Ist ein Teil gesucht (mal) oder ein Prozentsatz (Teil : Ganzes)? Ohne zu rechnen die passende Rechnung wählen
+\begin{pfaufg}{}{5.}{}
+Kreuze die Rechnung an, die passt. Rechne nicht aus.\par\medskip
+\grau{a)\ In einer Klasse sind $25$ Kinder. $40\,\%$ haben ein Haustier. Wie viele Kinder sind das?\par\hspace*{1.2em}$\square$\,$25 : 40$\hspace{0.9em}$\boxtimes$\,$0{,}4 \cdot 25$\hspace{0.9em}$\square$\,$40 : 25$\hspace{0.9em}}\par\medskip
+b)\ In einer Klasse sind $25$ Kinder. $10$ fahren mit dem Bus. Wie viel Prozent sind das?\par\hspace*{1.2em}\kk{$0{,}1 \cdot 25$}\kk{$10 : 25$}\kk{$25 : 10$}\par\medskip
+c)\ Ein Hemd kostet $40\,€$. Es gibt $15\,\%$ Rabatt. Wie viel Euro spart man?\par\hspace*{1.2em}\kk{$40 : 15$}\kk{$15 : 40$}\kk{$0{,}15 \cdot 40$}\par\medskip
+d)\ Eine Hose kostete $50\,€$. Der Rabatt ist $10\,€$. Wie viel Prozent Rabatt sind das?\par\hspace*{1.2em}\kk{$0{,}1 \cdot 50$}\kk{$10 : 50$}\kk{$50 : 10$}\par\medskip
+e)\ Eine Schule hat $800$ Schüler. $5\,\%$ fehlen. Wie viele Schüler fehlen?\par\hspace*{1.2em}\kk{$0{,}05 \cdot 800$}\kk{$0{,}5 \cdot 800$}\kk{$800 : 5$}\par\medskip
+f)\ Von $800$ Schülern fehlen $40$. Wie viel Prozent sind das?\par\hspace*{1.2em}\kk{$40 : 800$}\kk{$800 : 40$}\kk{$0{,}4 \cdot 800$}\par
+\fusshilfe{\mbox{5:~b) $10 : 25$; c) $0{,}15 \cdot 40$; d) $10 : 50$; e) $0{,}05 \cdot 800$; f) $40 : 800$}}
+\end{pfaufg}
+
+% L3-6: Die Frage entscheidet: Ersparnis (der Teil) oder neuer Preis (der Rest); am Streifen sind beide zu sehen; in der Prüfung steht der Rest als Falle unter den Antworten
+\begin{pfaufg}{}{6.}{}
+Ein Handy hat $64$ GB Speicher. $25\,\%$ davon sind mit Fotos belegt.
+\gzwei{\begin{tikzpicture}
+\fill[black!28] (0,0) rectangle (1.500,0.7);
+\draw[black!55,line width=0.4pt] (1.500,0) -- (1.500,0.7);
+\draw[black!55,line width=0.4pt] (3.000,0) -- (3.000,0.7);
+\draw[black!55,line width=0.4pt] (4.500,0) -- (4.500,0.7);
+\draw[line width=0.7pt] (0,0) rectangle (6.0,0.7);
+\draw[line width=0.4pt] (0,0.78) -- (0,0.92) -- (1.500,0.92) -- (1.500,0.78);
+\node[above,font=\small] at (0.750,0.90) {belegt: $25\,\%$};
+\node[below,font=\small] at (3.0,0) {ganz: $64$ GB $= 100\,\%$};
+\end{tikzpicture}}{%
+\textbf{a)}\ Wie viel GB sind belegt?\linie{14mm}\,GB\par\bigskip
+\textbf{b)}\ Wie viel GB sind noch frei?\linie{14mm}\,GB\par\bigskip
+\textbf{c)}\ Wie viel Prozent sind frei?\linie{14mm}\,\%}
+\fusshilfe{\mbox{6:~a) 16 GB; b) 48 GB; c) 75\,\%}}
+\end{pfaufg}
+
+% L3-6: Die Frage entscheidet: Ersparnis (der Teil) oder neuer Preis (der Rest); am Streifen sind beide zu sehen; in der Prüfung steht der Rest als Falle unter den Antworten
+\begin{pfaufg}{nach P10 ’21}{7.}{}
+Ein Fahrrad kostet $640\,€$. Im Sommer gibt es $15\,\%$ Rabatt. Wie viel Euro spart man? Kreuze an.\par\medskip\noindent\kk{$544\,€$}\kk{$96\,€$}\kk{$9{,}60\,€$}\kk{$42{,}67\,€$}\par
+\karo{2}
+\fusshilfe{\mbox{7:~96\,€}}
+\end{pfaufg}
+
+% L3-7: Zielaufgabe: In einer Prozenttabelle einen Teil ausrechnen, die Zunahme in Prozentpunkten als Anzahl angeben und – Frage gewechselt – einen Prozentsatz bilden, dessen Ganzes erst ausgerechnet wird
+\begin{pfaufg}{nach P10 ’19}{8.}{}
+Eine Schule hat in beiden Jahren $750$ Schülerinnen und Schüler. Die Tabelle zeigt, wo sie mittags essen.\par\medskip\noindent {\renewcommand{\arraystretch}{1.3}\begin{tabular}{|l|c|c|}\hline
+Mittagessen & 2023 & 2025\\\hline Mensa & $36\,\%$ & $48\,\%$\\\hline Pausenbrot & $50\,\%$ & $42\,\%$\\\hline nichts & $14\,\%$ & $10\,\%$\\\hline\end{tabular}}\par\smallskip
+\noindent\begin{minipage}[t]{0.48\linewidth}
+a)\ Wie viele Schüler aßen 2023 in der Mensa?
+\karo{2}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+b)\ Um wie viele Schüler ist die Zahl der Mensa-Esser von 2023 bis 2025 gestiegen?
+\karo{3}
+\end{minipage}
+\noindent\begin{minipage}[t]{0.48\linewidth}
+c)\ 2025 essen $72$ der Mensa-Esser vegetarisch. Wie viel Prozent der Mensa-Esser sind das?
+\karo{3}
+\end{minipage}
+\fusshilfe{\mbox{8:~a) 270; b) 90; c) 20\,\%}}
+\end{pfaufg}
+
+\par\vfill\noindent{\footnotesize Vorher: Prozentsatz berechnen\quad\textbullet\quad Weiter: Grundwert berechnen\par}
+\end{document}
