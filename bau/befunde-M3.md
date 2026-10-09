@@ -186,3 +186,31 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
   (Gleichung am Graphen) und Teile von D liegen in Pflichtketten (k3).
   Fehler-finden (k1-s7) nicht auf dem Blatt (Bauauftrag 4).
 - Kritiker (Schritt 6) offen; der Chat startet ihn.
+## Wahrscheinlichkeit E2 „Wahrscheinlichkeit einstufig“ (KUV, 10.10.2026)
+
+- Erster Bau des Themas in Abschnittsform: Thema-Weg und Lernweg-Block
+  neu im Katalog (vor „Prüfliste“, Zeilennummern für quelle bleiben).
+  Kritiker offen.
+- Breite: Die Einheit trägt fünf Fertigkeiten (Laplace, Gesamtzahl und
+  Prozent, Gegenereignis, veränderte Grundmenge, Zufallsgerät und
+  Vorhersage) – fünf Abschnitte plus Probetest, 7 Seiten. Zu
+  entscheiden, ob das für Klasse 7 zu viel für ein Heft ist (Teilung
+  nach C möglich: „Wahrscheinlichkeit berechnen“ / „Grundmenge und
+  Vorhersage“).
+- Setzer: `bilder()` nimmt nur `tikzpicture`; der Baustein
+  `\kreisdiagramm` aus mathblatt.sty (Bestand E2) wird in tisch/selbst
+  nicht gesetzt. Glücksräder darum als TikZ in grafik. Wunsch: Setzer
+  nimmt auch Bausteinaufrufe als Bild.
+- Setzer: Registerzeile trägt das Systemdatum (2026-10-09, Container in
+  UTC) und keinen Pfad; in der KUV-Zeile von Hand auf 2026-10-10 und
+  den Bauordner gesetzt.
+- Kennung: Erst VUC gezogen, zeitgleich auch von lineare-funktionen E1
+  vergeben (paralleler Bau, Register erst beim Satz). Umbenannt in KUV;
+  im Katalog-Commit be8c06c steht noch VUC, berichtigt im Folgecommit.
+  Vorschlag: Kennung beim Start des Baus ins Register schreiben.
+- Prüfer: merkmal muss je Sprosse gleich sein – neue Zeilen tragen das
+  merkmal der Sprosse; das Feld sagt so nichts über die neue Stufe.
+  Mengenwarnungen (k3 s1–s13, k4, k5) aus dem verlangten Vorrat, wie E1–E5
+  Prozent.
+- duplikate.py: neue Zeilen nur als Zahlvarianten in derselben Sprosse
+  (Lostrommel, Würfel, Münze) und in C-Gruppen „Glücksrad, 1/2“.

@@ -1,0 +1,193 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% gesetzt von werkzeuge/setzer.py aus dem Lernweg (L2-A · L2-B · L2-C · L2-D · L2-E · L2-T) und den Bankzeilen; Muster T6B.
+\input{praeambel}
+\newcommand{\kennung}{KUV}
+\newcommand{\grau}[1]{{\color{mbgrau}#1}}
+
+\begin{document}
+\pfheftstil
+\fancyfoot[C]{\parbox[t]{\textwidth}{\mbfhbox\par\vspace{1.5mm}{\footnotesize\color{mbgrau}{\scriptsize \kennung}\hfill\thepage}}}
+\pfheftkopf{Wahrscheinlichkeit einstufig}{Klasse 7}
+% L2-A: Günstig durch möglich
+\begin{pfaufg}{}{1.}{}
+\gzwei{\begin{tikzpicture}[font=\small]\draw[line width=0.5pt] (0,0) -- (90.00:1.25);\node at (67.50:0.85) {\textbf{1}};\draw[line width=0.5pt] (0,0) -- (45.00:1.25);\node at (22.50:0.85) {\textbf{2}};\draw[line width=0.5pt] (0,0) -- (0.00:1.25);\node at (-22.50:0.85) {\textbf{3}};\draw[line width=0.5pt] (0,0) -- (-45.00:1.25);\node at (-67.50:0.85) {\textbf{4}};\draw[line width=0.5pt] (0,0) -- (-90.00:1.25);\node at (-112.50:0.85) {\textbf{5}};\draw[line width=0.5pt] (0,0) -- (-135.00:1.25);\node at (-157.50:0.85) {\textbf{6}};\draw[line width=0.5pt] (0,0) -- (-180.00:1.25);\node at (-202.50:0.85) {\textbf{7}};\draw[line width=0.5pt] (0,0) -- (-225.00:1.25);\node at (-247.50:0.85) {\textbf{8}};\draw[line width=0.8pt] (0,0) circle (1.25);\fill (0,1.20) -- (-0.14,1.55) -- (0.14,1.55) -- cycle;\end{tikzpicture}}{\grau{a)\ Das Glücksrad hat 8 gleich große Felder mit den Zahlen 1 bis 8. Wie groß ist die Wahrscheinlichkeit für eine gerade Zahl?\par\smallskip Möglich sind 8 Ergebnisse: 1, 2, \ldots, 8. Alle Felder sind gleich groß.\par Günstig sind die geraden Zahlen 2, 4, 6, 8: das sind 4.\par $P(\text{gerade}) = \dfrac{\text{günstig}}{\text{möglich}} = \dfrac{4}{8} = \dfrac{1}{2}$\par Die Wahrscheinlichkeit für eine gerade Zahl ist $\frac{1}{2}$.}}
+\par\medskip
+b)\ Ein Würfel wird einmal geworfen. Wie groß ist die Wahrscheinlichkeit für eine 5?\karo{3}
+\fusshilfe{\mbox{1:~b) $P = \frac{1}{6}$}}
+\end{pfaufg}
+
+% L2-A: Günstig durch möglich
+\begin{pfaufg}{}{2.}{}
+In einem Beutel liegen 4 rote, 7 blaue und 1 weiße Kugel. Lisa zieht ohne hinzusehen eine Kugel. Wie groß ist die Wahrscheinlichkeit für Blau?\karo{3}
+\fusshilfe{\mbox{2:~$P = \frac{7}{12}$}}
+\end{pfaufg}
+
+% L2-A: Günstig durch möglich
+\begin{pfaufg}{}{3.}{}
+\gzwei{\begin{tikzpicture}[font=\small]\fill[black!22] (0,0) -- (90.00:1.25) arc (90.00:30.00:1.25) -- cycle;\draw[line width=0.5pt] (0,0) -- (90.00:1.25);\node at (60.00:0.85) {\textbf{A}};\draw[line width=0.5pt] (0,0) -- (30.00:1.25);\node at (0.00:0.85) {\textbf{B}};\fill[black!22] (0,0) -- (-30.00:1.25) arc (-30.00:-90.00:1.25) -- cycle;\draw[line width=0.5pt] (0,0) -- (-30.00:1.25);\node at (-60.00:0.85) {\textbf{A}};\fill[black!6] (0,0) -- (-90.00:1.25) arc (-90.00:-150.00:1.25) -- cycle;\draw[line width=0.5pt] (0,0) -- (-90.00:1.25);\node at (-120.00:0.85) {\textbf{C}};\fill[black!22] (0,0) -- (-150.00:1.25) arc (-150.00:-210.00:1.25) -- cycle;\draw[line width=0.5pt] (0,0) -- (-150.00:1.25);\node at (-180.00:0.85) {\textbf{A}};\draw[line width=0.5pt] (0,0) -- (-210.00:1.25);\node at (-240.00:0.85) {\textbf{B}};\draw[line width=0.8pt] (0,0) circle (1.25);\fill (0,1.20) -- (-0.14,1.55) -- (0.14,1.55) -- cycle;\end{tikzpicture}}{%
+Das Glücksrad im Bild hat 6 gleich große Felder. Wie groß ist die Wahrscheinlichkeit für A?\karo{3}}
+\fusshilfe{\mbox{3:~$P = \frac{1}{2}$}}
+\end{pfaufg}
+
+% L2-A: Günstig durch möglich
+\begin{pfaufg}{}{4.}{}
+In einer Schachtel liegen 20 Zettel mit den Zahlen 1 bis 20. Tom zieht einen Zettel. Wie groß ist die Wahrscheinlichkeit, dass die Zahl durch 5 teilbar ist?\karo{3}
+\fusshilfe{\mbox{4:~$P = \frac{1}{5}$}}
+\end{pfaufg}
+
+% L2-A: Günstig durch möglich
+\begin{pfaufg}{}{5.}{}
+Lena darf aus einem von zwei Beuteln eine Kugel ziehen. Bei Rot gewinnt sie. Im ersten Beutel sind 3 rote und 5 grüne Kugeln, im zweiten 4 rote und 8 grüne. Aus welchem Beutel sollte sie ziehen? Begründe mit den Wahrscheinlichkeiten.\karo{3}
+\fusshilfe{\mbox{5:~Aus dem ersten: $\frac{3}{8} > \frac{1}{3}$}}
+\end{pfaufg}
+
+% L2-B: Alle mitzählen, in Prozent
+\begin{pfaufg}{}{6.}{}
+\grau{a)\ In einer Lostrommel liegen 36 Nieten und 12 Gewinne. Wie groß ist die Wahrscheinlichkeit für einen Gewinn? Gib sie als Bruch, als Dezimalzahl und in Prozent an.\par\smallskip Möglich sind alle Lose: $36 + 12 = 48$. Die Nieten zählen mit!\par Günstig sind die 12 Gewinne.\par $P = \dfrac{12}{48} = \dfrac{1}{4}$\par Dezimalzahl: $1 : 4 = 0{,}25$. Prozent: $0{,}25 = 25\,\%$.}
+\par\medskip
+b)\ Die Wahrscheinlichkeit für Rot ist $\frac{3}{5}$. Schreibe sie als Dezimalzahl und in Prozent.\karo{3}
+\fusshilfe{\mbox{6:~b) $0{,}6 = 60\,\%$}}
+\end{pfaufg}
+
+% L2-B: Alle mitzählen, in Prozent
+\begin{pfaufg}{}{7.}{}
+In einer Kiste liegen 54 volle und 6 leere Batterien. Jan nimmt ohne hinzusehen eine heraus. Wie groß ist die Wahrscheinlichkeit, dass sie leer ist? Gib sie in Prozent an.\karo{3}
+\fusshilfe{\mbox{7:~$\frac{1}{10} = 10\,\%$}}
+\end{pfaufg}
+
+% L2-B: Alle mitzählen, in Prozent
+\begin{pfaufg}{}{8.}{}
+In einer Tüte sind 11 rote, 6 grüne und 8 gelbe Gummibärchen. Wie groß ist die Wahrscheinlichkeit, ein rotes zu ziehen? Gib sie in Prozent an.\karo{3}
+\fusshilfe{\mbox{8:~$44\,\%$}}
+\end{pfaufg}
+
+% L2-B: Alle mitzählen, in Prozent
+\begin{pfaufg}{}{9.}{}
+Die Lose einer Tombola tragen die Nummern 201 bis 600. Die Lose mit den Nummern 201 bis 250 gewinnen. Wie groß ist die Wahrscheinlichkeit für einen Gewinn? Gib sie in Prozent an.\karo{3}
+\fusshilfe{\mbox{9:~$\frac{1}{8} = 12{,}5\,\%$}}
+\end{pfaufg}
+
+% L2-B: Alle mitzählen, in Prozent
+\begin{pfaufg}{}{10.}{}
+Beim Schulfest gibt es zwei Losbuden. In Bude A sind 150 Nieten und 50 Gewinne. In Bude B sind 300 Lose, davon 66 Gewinne. Max will ein Los dort kaufen, wo seine Chance besser ist. Welche Bude wählt er? Gib beide Chancen in Prozent an.\karo{3}
+\fusshilfe{\mbox{10:~Bude A: $25\,\%$ gegen $22\,\%$}}
+\end{pfaufg}
+
+% L2-C: Gegenereignis: „nicht“ und „weder … noch“
+\begin{pfaufg}{}{11.}{}
+\gzwei{\begin{tikzpicture}[font=\small]\draw[line width=0.5pt] (0,0) -- (90.00:1.25);\node at (72.00:0.85) {\textbf{1}};\draw[line width=0.5pt] (0,0) -- (54.00:1.25);\node at (36.00:0.85) {\textbf{2}};\draw[line width=0.5pt] (0,0) -- (18.00:1.25);\node at (0.00:0.85) {\textbf{3}};\draw[line width=0.5pt] (0,0) -- (-18.00:1.25);\node at (-36.00:0.85) {\textbf{4}};\draw[line width=0.5pt] (0,0) -- (-54.00:1.25);\node at (-72.00:0.85) {\textbf{5}};\draw[line width=0.5pt] (0,0) -- (-90.00:1.25);\node at (-108.00:0.85) {\textbf{6}};\draw[line width=0.5pt] (0,0) -- (-126.00:1.25);\node at (-144.00:0.85) {\textbf{7}};\draw[line width=0.5pt] (0,0) -- (-162.00:1.25);\node at (-180.00:0.85) {\textbf{8}};\draw[line width=0.5pt] (0,0) -- (-198.00:1.25);\node at (-216.00:0.85) {\textbf{9}};\draw[line width=0.5pt] (0,0) -- (-234.00:1.25);\node at (-252.00:0.85) {\textbf{10}};\draw[line width=0.8pt] (0,0) circle (1.25);\fill (0,1.20) -- (-0.14,1.55) -- (0.14,1.55) -- cycle;\end{tikzpicture}}{\grau{a)\ Ein Glücksrad hat 10 gleich große Felder mit den Zahlen 1 bis 10. Wie groß ist die Wahrscheinlichkeit, weder die 1 noch die 10 zu drehen?\par\smallskip Das Gegenteil von „weder 1 noch 10“ ist „1 oder 10“: 2 von 10 Feldern.\par $P(1 \text{ oder } 10) = \dfrac{2}{10}$\par $P(\text{weder 1 noch 10}) = 1 - \dfrac{2}{10} = \dfrac{8}{10} = \dfrac{4}{5}$\par Probe durch Zählen: 2, 3, \ldots, 9 sind 8 Felder, also $\frac{8}{10}$.}}
+\par\medskip
+b)\ Die Wahrscheinlichkeit, bei einem Spiel zu gewinnen, ist 0,3. Wie groß ist die Wahrscheinlichkeit, nicht zu gewinnen?\karo{3}
+\fusshilfe{\mbox{11:~b) $0{,}7$ (also $70\,\%$)}}
+\end{pfaufg}
+
+% L2-C: Gegenereignis: „nicht“ und „weder … noch“
+\begin{pfaufg}{}{12.}{}
+Ein Würfel wird einmal geworfen. Wie groß ist die Wahrscheinlichkeit, keine 6 zu würfeln?\karo{3}
+\fusshilfe{\mbox{12:~$P = \frac{5}{6}$}}
+\end{pfaufg}
+
+% L2-C: Gegenereignis: „nicht“ und „weder … noch“
+\begin{pfaufg}{}{13.}{}
+In einem Beutel liegen 5 rote, 3 blaue und 4 grüne Kugeln. Wie groß ist die Wahrscheinlichkeit, keine grüne Kugel zu ziehen?\karo{3}
+\fusshilfe{\mbox{13:~$P = \frac{2}{3}$}}
+\end{pfaufg}
+
+% L2-C: Gegenereignis: „nicht“ und „weder … noch“
+\begin{pfaufg}{}{14.}{}
+Ein Glücksrad hat 12 gleich große Felder mit den Zahlen 1 bis 12. Wie groß ist die Wahrscheinlichkeit für eine Zahl, die weder durch 3 noch durch 4 teilbar ist?\karo{3}
+\fusshilfe{\mbox{14:~$P = \frac{1}{2}$}}
+\end{pfaufg}
+
+% L2-C: Gegenereignis: „nicht“ und „weder … noch“
+\begin{pfaufg}{}{15.}{}
+Ole und Mia spielen mit einem Würfel. Ole gewinnt, wenn weder eine 1 noch eine 2 fällt. Sonst gewinnt Mia. Ole sagt: „Das Spiel ist fair. Wir haben die gleiche Chance.“ Hat Ole recht?\karo{3}
+\fusshilfe{\mbox{15:~Nein}}
+\end{pfaufg}
+
+% L2-D: Wenn sich die Grundmenge ändert
+\begin{pfaufg}{}{16.}{}
+\grau{a)\ In einer Dose liegen 20 Kekse, 4 davon mit Nuss. Nina hat schon 2 Kekse ohne Nuss gegessen. Wie groß ist jetzt die Wahrscheinlichkeit, einen Nusskeks zu erwischen?\par\smallskip Noch in der Dose: $20 - 2 = 18$ Kekse.\par Die Nusskekse sind noch alle da: 4.\par $P(\text{Nuss}) = \dfrac{4}{18} = \dfrac{2}{9}$ – nicht $\dfrac{4}{20}$.}
+\par\medskip
+b)\ In einem Beutel sind 3 rote und 7 blaue Kugeln. Tim zieht eine blaue Kugel und legt sie nicht zurück. Wie groß ist jetzt die Wahrscheinlichkeit für Rot?\karo{3}
+\fusshilfe{\mbox{16:~b) $P = \frac{1}{3}$}}
+\end{pfaufg}
+
+% L2-D: Wenn sich die Grundmenge ändert
+\begin{pfaufg}{}{17.}{}
+In einem Beutel sind 5 gelbe und 7 grüne Kugeln. Ela zieht eine gelbe Kugel und legt sie nicht zurück. Wie groß ist jetzt die Wahrscheinlichkeit, wieder Gelb zu ziehen?\karo{3}
+\fusshilfe{\mbox{17:~$P = \frac{4}{11}$}}
+\end{pfaufg}
+
+% L2-D: Wenn sich die Grundmenge ändert
+\begin{pfaufg}{}{18.}{}
+Lose tragen die Nummern 1 bis 40. Es gewinnen alle Lose, deren Nummer durch 4 teilbar ist. Tim sieht von seinem Los nur, dass die Nummer gerade ist. Wie groß ist die Wahrscheinlichkeit, dass er gewinnt?\karo{3}
+\fusshilfe{\mbox{18:~$P = \frac{1}{2}$}}
+\end{pfaufg}
+
+% L2-D: Wenn sich die Grundmenge ändert
+\begin{pfaufg}{}{19.}{}
+Beim Sommerfest gibt es Lose mit den Nummern 301 bis 800. Einen Trostpreis bekommt jedes Los, dessen Nummer auf 27 endet – außer dem Los 527, das ist der Hauptgewinn. Jonas sieht von seinem Los nur die letzte Ziffer: eine 7. Er sagt: „Meine Chance auf einen Trostpreis ist größer als 10\,\%.“ Hat Jonas recht?\karo{3}
+\fusshilfe{\mbox{19:~Nein: $\frac{4}{50} = 8\,\%$}}
+\end{pfaufg}
+
+% L2-E: Zufallsgerät bauen und vorhersagen
+\begin{pfaufg}{}{20.}{}
+\grau{a)\ Ein Glücksrad soll 10 gleich große Felder bekommen. Die Wahrscheinlichkeit für Gelb soll 30\,\% sein. a) Wie viele Felder färbst du gelb? b) Das Rad wird 200-mal gedreht. Wie oft kommt ungefähr Gelb?\par\smallskip $30\,\% = 0{,}3$\par a) gelbe Felder: $0{,}3 \cdot 10 = 3$\par b) erwartet: $0{,}3 \cdot 200 = 60$-mal\par „Ungefähr“: Es können auch 55 oder 64 sein. Die Wahrscheinlichkeit sagt nicht genau voraus.}
+\par\medskip
+b)\ Ein Glücksrad hat 8 gleich große Felder. Die Wahrscheinlichkeit für Rot soll $\frac{1}{4}$ sein. Wie viele Felder müssen rot sein?\karo{3}
+\fusshilfe{\mbox{20:~b) 2 rote Felder}}
+\end{pfaufg}
+
+% L2-E: Zufallsgerät bauen und vorhersagen
+\begin{pfaufg}{}{21.}{}
+In einem Beutel liegen 4 schwarze Kugeln. Wie viele weiße Kugeln musst du dazulegen, damit die Wahrscheinlichkeit für Schwarz $\frac{1}{3}$ ist?\karo{3}
+\fusshilfe{\mbox{21:~8 weiße Kugeln}}
+\end{pfaufg}
+
+% L2-E: Zufallsgerät bauen und vorhersagen
+\begin{pfaufg}{}{22.}{}
+Lukas würfelt 300-mal. Die 6 fällt 52-mal. Berechne die relative Häufigkeit der 6 und vergleiche sie mit der Wahrscheinlichkeit für eine 6.\karo{3}
+\fusshilfe{\mbox{22:~$\approx 0{,}173$ gegen $\approx 0{,}167$}}
+\end{pfaufg}
+
+% L2-E: Zufallsgerät bauen und vorhersagen
+\begin{pfaufg}{}{23.}{}
+Auf dem Kinderfest dreht jedes Kind einmal ein Glücksrad mit 16 gleich großen Feldern. Auf 2 Feldern gewinnt man einen Teddy. Erwartet werden 480 Kinder. Es gibt 50 Teddys. Reichen sie?\karo{3}
+\fusshilfe{\mbox{23:~Nein: etwa 60 nötig, rund 10 zu wenig}}
+\end{pfaufg}
+
+% L2-T: Probetest
+\begin{pfaufg}{}{24.}{}
+\gzwei{\begin{tikzpicture}[font=\small]\fill[red!45] (0,0) -- (90.00:1.25) arc (90.00:45.00:1.25) -- cycle;\draw[line width=0.5pt] (0,0) -- (90.00:1.25);\node at (67.50:0.85) {\textbf{R}};\fill[blue!35] (0,0) -- (45.00:1.25) arc (45.00:0.00:1.25) -- cycle;\draw[line width=0.5pt] (0,0) -- (45.00:1.25);\node at (22.50:0.85) {\textbf{B}};\fill[red!45] (0,0) -- (0.00:1.25) arc (0.00:-45.00:1.25) -- cycle;\draw[line width=0.5pt] (0,0) -- (0.00:1.25);\node at (-22.50:0.85) {\textbf{R}};\fill[green!45] (0,0) -- (-45.00:1.25) arc (-45.00:-90.00:1.25) -- cycle;\draw[line width=0.5pt] (0,0) -- (-45.00:1.25);\node at (-67.50:0.85) {\textbf{G}};\fill[red!45] (0,0) -- (-90.00:1.25) arc (-90.00:-135.00:1.25) -- cycle;\draw[line width=0.5pt] (0,0) -- (-90.00:1.25);\node at (-112.50:0.85) {\textbf{R}};\fill[blue!35] (0,0) -- (-135.00:1.25) arc (-135.00:-180.00:1.25) -- cycle;\draw[line width=0.5pt] (0,0) -- (-135.00:1.25);\node at (-157.50:0.85) {\textbf{B}};\fill[red!45] (0,0) -- (-180.00:1.25) arc (-180.00:-225.00:1.25) -- cycle;\draw[line width=0.5pt] (0,0) -- (-180.00:1.25);\node at (-202.50:0.85) {\textbf{R}};\fill[blue!35] (0,0) -- (-225.00:1.25) arc (-225.00:-270.00:1.25) -- cycle;\draw[line width=0.5pt] (0,0) -- (-225.00:1.25);\node at (-247.50:0.85) {\textbf{B}};\draw[line width=0.8pt] (0,0) circle (1.25);\fill (0,1.20) -- (-0.14,1.55) -- (0.14,1.55) -- cycle;\end{tikzpicture}}{%
+Das Glücksrad im Bild hat 8 gleich große Felder (R rot, B blau, G grün). Wie groß ist die Wahrscheinlichkeit für Rot? Kreuze an.\par\smallskip \gkreuz{$\frac{1}{3}$}\gkreuz{$\frac{1}{2}$}\par \gkreuz{$\frac{4}{3}$}\gkreuz{$\frac{1}{4}$}}
+\fusshilfe{\mbox{24:~$\frac{1}{2}$}}
+\end{pfaufg}
+
+% L2-T: Probetest
+\begin{pfaufg}{}{25.}{}
+In einer Lostrommel liegen 104 Nieten und 16 Gewinne. Wie groß ist die Wahrscheinlichkeit für einen Gewinn? Gib sie in Prozent an.\karo{3}
+\fusshilfe{\mbox{25:~$\frac{2}{15} \approx 13{,}3\,\%$}}
+\end{pfaufg}
+
+% L2-T: Probetest
+\begin{pfaufg}{}{26.}{}
+Ein Glücksrad hat 12 gleich große Felder mit den Zahlen 1 bis 12. Wie groß ist die Wahrscheinlichkeit, keine Zahl über 9 zu drehen?\karo{3}
+\fusshilfe{\mbox{26:~$P = \frac{3}{4}$}}
+\end{pfaufg}
+
+% L2-T: Probetest
+\begin{pfaufg}{}{27.}{}
+In einer Schale liegen 15 Bonbons, 3 davon mit Zitrone, die anderen mit Kirsche. Tom isst 3 Kirschbonbons. Sara sagt: „Die Wahrscheinlichkeit für Zitrone ist immer noch $\frac{3}{15}$.“ Hat Sara recht? Begründe.\karo{3}
+\fusshilfe{\mbox{27:~Nein: $\frac{3}{12} = \frac{1}{4}$}}
+\end{pfaufg}
+
+% L2-T: Probetest
+\begin{pfaufg}{}{28.}{}
+Eine Klasse baut für das Schulfest ein Glücksrad mit 12 gleich großen Feldern. Ein Preis soll mit der Wahrscheinlichkeit 25\,\% kommen. Erwartet werden 300 Drehungen. Die Klasse hat 70 Preise. Wie viele Felder werden Preisfelder? Reichen die Preise?\karo{3}
+\fusshilfe{\mbox{28:~3 Felder; etwa 75 nötig – 70 reichen nicht}}
+\end{pfaufg}
+
+\par\vfill\noindent{\footnotesize Vorher: Zählen und Ergebnismengen\quad\textbullet\quad Weiter: Baumdiagramm und Pfadregeln\par}
+\end{document}
