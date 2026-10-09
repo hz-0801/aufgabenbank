@@ -92,3 +92,26 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
 - Prüfer: Mengenwarnungen (k1 s1/s2/s4/s5/s7/s10, k2 s1, Originale
   2021-OS-B1c und 2019-OS-K5a je 3×) entstehen aus den verlangten
   Zusatzzeilen, wie E1/E2.
+
+## Pythagoras E3 „Das Dreieck erst finden“ (UV3, 09.10.2026)
+
+- Kritiker (Schritt 6) nicht gelaufen: auch dieser Bau-Agent hatte kein
+  Werkzeug für einen Unteragenten. (Im Katalog „offen“; Chat holt nach.)
+- Setzer: Körperskizzen mit benannten Punkten (S, M, P, H) und
+  Rechtwinkelmarke gibt es in mathblatt.sty nicht; \kegel und \pyramide
+  setzen keine Punktnamen, \zylinder keinen Stab. (Als freies TikZ im
+  Feld grafik gezeichnet; Vorschlag: \kegel/\pyramide/\zylinder mit
+  optionalen Punktnamen und Stab.)
+- Setzer: form „reihe“ setzt unter jedes Bild eine Antwortlinie auch
+  bei „Fahre nach“-Aufgaben; ein Teil ohne Linie fehlt. (Hingenommen.)
+- Setzer: form „frei“ hat keine Antwortzeile mit Einheit; Nr. 7 endet
+  im Karo. (Hingenommen.)
+- Bank-Kette E3: Die Grundfälle k2-s1 geben „h² = __“ vor und sind
+  fünfmal derselbe Schenkel 65 cm; v1, v3–v5 schwach, besser k2-s1-v7.
+  Weitere E3-Zeilen (s10–s12, s16) tragen „h_s = __“; nicht geändert.
+- Breite: Raumdiagonale, Trapez, Parallelogramm, Raute, Horizont und
+  Rückwärts-Sprossen stehen nicht auf dem Blatt (Zusatz oder ohne
+  Lernweg). Der Katalog nennt noch „Schräge Strecken im Körper“ als
+  zweites Blatt; im Thema-Weg gestrichen, Serie angepasst. Zu
+  entscheiden, ob ein zweites E3-Blatt (Quader, Pyramide) nötig ist.
+- Prüfer: Mengenwarnungen durch Zusatzzeilen wie bei E1/E2.

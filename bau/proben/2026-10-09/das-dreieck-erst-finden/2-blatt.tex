@@ -1,0 +1,95 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% gesetzt von werkzeuge/setzer.py aus dem Lernweg (L3-1 · L3-2 · L3-3 · L3-4 · L3-5 · L3-6 · L3-7) und den Bankzeilen; Muster T6B.
+\input{praeambel}
+\newcommand{\kennung}{UV3}
+\newcommand{\grau}[1]{{\color{mbgrau}#1}}
+
+\begin{document}
+\pfheftstil
+\fancyfoot[C]{\parbox[t]{\textwidth}{\mbfhbox\par\vspace{1.5mm}{\footnotesize\color{mbgrau}{\scriptsize \kennung}\hfill\thepage}}}
+\pfheftkopf{Das Dreieck erst finden}{Klasse 9}
+% L3-1: In jeder Figur und jedem Körper steckt ein rechtwinkliges Dreieck; man findet es am rechten Winkel und nennt die Hypotenuse gegenüber
+\begin{pfaufg}{}{1.}{}
+Jede Figur enthält ein rechtwinkliges Dreieck. Fahre es farbig nach. Welche Strecke ist seine Hypotenuse?\par\medskip\noindent
+\begin{minipage}[b]{0.32\linewidth}\centering
+\begin{tikzpicture}[line width=0.7pt]\coordinate (A) at (0,0);\coordinate (B) at (3.2,0);\coordinate (C) at (2.4,1.6);\coordinate (D) at (0.8,1.6);\coordinate (F) at (0.8,0);\draw (A)--(B)--(C)--(D)--cycle;\draw[dashed,line width=0.5pt] (D)--(F);\mbrwmarke{(F)}{(B)}{(D)}\node[font=\small,anchor=north] at (A) {$A$};\node[font=\small,anchor=north] at (B) {$B$};\node[font=\small,anchor=south] at (C) {$C$};\node[font=\small,anchor=south] at (D) {$D$};\node[font=\small,anchor=north] at (F) {$F$};\end{tikzpicture}\par\smallskip
+{\small a)\ Trapez}\par\smallskip
+\linie{30mm}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.32\linewidth}\centering
+\begin{tikzpicture}[line width=0.7pt]\coordinate (M) at (0,0);\coordinate (P) at (1.2,0);\coordinate (S) at (0,2.6);\draw (-1.2,0)--(S)--(P);\draw (-1.2,0) arc (180:360:1.2 and 0.4);\draw[dashed,line width=0.5pt] (-1.2,0) arc (180:0:1.2 and 0.4);\draw[dashed,line width=0.5pt] (M)--(S) (M)--(P);\fill (M) circle (0.8pt);\mbrwmarke{(M)}{(P)}{(S)}\node[font=\small,anchor=south] at (S) {$S$};\node[font=\small,anchor=north east] at (M) {$M$};\node[font=\small,anchor=west] at (P) {$P$};\end{tikzpicture}\par\smallskip
+{\small b)\ Kegel}\par\smallskip
+\linie{30mm}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.32\linewidth}\centering
+\begin{tikzpicture}[line width=0.7pt]\coordinate (A) at (0,0);\coordinate (B) at (3,0);\coordinate (C) at (4,0.8);\coordinate (D) at (1,0.8);\coordinate (M) at (2,0.4);\coordinate (S) at (2,2.7);\coordinate (H) at (1.5,0);\draw (A)--(B)--(C)--(S)--cycle (S)--(B);\draw[dashed,line width=0.5pt] (A)--(D)--(C) (D)--(S) (S)--(M)--(H);\draw[line width=0.5pt] (S)--(H);\fill (M) circle (0.8pt);\mbrwmarke{(M)}{(H)}{(S)}\node[font=\small,anchor=south] at (S) {$S$};\node[font=\small,anchor=west] at (M) {$M$};\node[font=\small,anchor=north] at (H) {$H$};\end{tikzpicture}\par\smallskip
+{\small c)\ Pyramide}\par\smallskip
+\linie{30mm}
+\end{minipage}
+\fusshilfe{\mbox{1:~a) AD; b) SP; c) SH}}
+\end{pfaufg}
+
+% L3-2: Ganz oder halb? Die Höhe trifft die Mitte (halbe Länge); ein Stab von Rand zu Rand nimmt die ganze
+\begin{pfaufg}{}{2.}{}
+Im Kegel und in der Pyramide gehört die Höhe zu einem rechtwinkligen Dreieck, im Becher der Stab. Welche Länge ist dort die waagerechte Kathete? Kreuze an.\par\medskip\noindent
+\begin{minipage}[b]{0.32\linewidth}\centering
+\begin{tikzpicture}[line width=0.7pt]\coordinate (M) at (0,0);\coordinate (P) at (1.2,0);\coordinate (S) at (0,2.6);\draw (-1.2,0)--(S)--(P);\draw (-1.2,0) arc (180:360:1.2 and 0.4);\draw[dashed,line width=0.5pt] (-1.2,0) arc (180:0:1.2 and 0.4);\draw[dashed,line width=0.5pt] (M)--(S) (M)--(P);\fill (M) circle (0.8pt);\mbrwmarke{(M)}{(P)}{(S)}\draw[|-|,line width=0.4pt] (-1.2,-0.65)--(1.2,-0.65) node[midway,below,font=\small] {$18$ cm};\end{tikzpicture}\par\smallskip
+{\small a)\ \kk{$9$ cm}\par\hspace*{1.1em}\kk{$18$ cm}}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.32\linewidth}\centering
+\begin{tikzpicture}[line width=0.7pt]\coordinate (A) at (0,0);\coordinate (B) at (3,0);\coordinate (C) at (4,0.8);\coordinate (D) at (1,0.8);\coordinate (M) at (2,0.4);\coordinate (S) at (2,2.7);\coordinate (H) at (1.5,0);\draw (A)--(B)--(C)--(S)--cycle (S)--(B);\draw[dashed,line width=0.5pt] (A)--(D)--(C) (D)--(S) (S)--(M)--(H);\draw[line width=0.5pt] (S)--(H);\fill (M) circle (0.8pt);\mbrwmarke{(M)}{(H)}{(S)}\node[font=\small,anchor=north] at (1.5,-0.05) {$7$ m};\end{tikzpicture}\par\smallskip
+{\small b)\ \kk{$3{,}5$ m}\par\hspace*{1.1em}\kk{$7$ m}}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.32\linewidth}\centering
+\begin{tikzpicture}[line width=0.7pt]\draw (0,2.4) ellipse (0.8 and 0.28);\draw (-0.8,0)--(-0.8,2.4) (0.8,0)--(0.8,2.4);\draw (-0.8,0) arc (180:360:0.8 and 0.28);\draw[dashed,line width=0.5pt] (-0.8,0) arc (180:0:0.8 and 0.28);\draw[line width=1.6pt] (-0.8,0)--(1.1,2.85);\draw[|-|,line width=0.4pt] (-0.8,-0.55)--(0.8,-0.55) node[midway,below,font=\small] {$6$ cm};\end{tikzpicture}\par\smallskip
+{\small c)\ \kk{$3$ cm}\par\hspace*{1.1em}\kk{$6$ cm}}
+\end{minipage}
+\fusshilfe{\mbox{2:~a) 9 cm; b) 3,5 m; c) 6 cm}}
+\end{pfaufg}
+
+% L3-3: Im gleichschenkligen Dreieck erst halbieren, dann entscheiden: Höhe gesucht (minus) oder Schenkel gesucht (plus)
+\begin{pfaufg}{}{3.}{}
+Die Figur zeigt ein gleichschenkliges Dreieck. Fahre zuerst das rechtwinklige Dreieck nach.
+\gzwei{\begin{tikzpicture}[line width=0.7pt]\coordinate (A) at (0,0);\coordinate (B) at (3,0);\coordinate (C) at (1.5,2.2);\coordinate (F) at (1.5,0);\draw (A)--(B)--(C)--cycle;\draw[dashed,line width=0.5pt] (C)--(F);\mbrwmarke{(F)}{(B)}{(C)}\node[font=\small,anchor=north] at (1.5,-0.05) {$g$};\node[font=\small,anchor=south west] at (2.3,1.15) {$s$};\node[font=\small,anchor=south east] at (0.7,1.15) {$s$};\node[font=\small,anchor=west] at (1.5,0.9) {$h$};\end{tikzpicture}}{%
+\textbf{a)}\ $g = 30$ cm, $s = 17$ cm. Berechne $h$.\linie{14mm}cm\par\bigskip
+\textbf{b)}\ $g = 42$ cm, $h = 20$ cm. Berechne $s$.\linie{14mm}cm\karo{5}}
+\fusshilfe{\mbox{3:~a) 8 cm; b) 29 cm}}
+\end{pfaufg}
+
+% L3-4: Dasselbe im Körper: Kegel mit Radius aus dem Durchmesser, Mantellinie oder Höhe gesucht
+\begin{pfaufg}{}{4.}{}
+Die Figur zeigt einen Kegel. Fahre zuerst das rechtwinklige Dreieck nach.
+\gzwei{\begin{tikzpicture}[line width=0.7pt]\coordinate (M) at (0,0);\coordinate (P) at (1.2,0);\coordinate (S) at (0,2.6);\draw (-1.2,0)--(S)--(P);\draw (-1.2,0) arc (180:360:1.2 and 0.4);\draw[dashed,line width=0.5pt] (-1.2,0) arc (180:0:1.2 and 0.4);\draw[dashed,line width=0.5pt] (M)--(S) (M)--(P);\fill (M) circle (0.8pt);\mbrwmarke{(M)}{(P)}{(S)}\draw[|-|,line width=0.4pt] (-1.2,-0.65)--(1.2,-0.65) node[midway,below,font=\small] {$d$};\node[font=\small,anchor=east] at (0,1.3) {$h$};\node[font=\small,anchor=south west] at (0.7,1.4) {$s$};\end{tikzpicture}}{%
+\textbf{a)}\ $d = 10$ cm, $h = 12$ cm. Berechne $s$.\linie{14mm}cm\par\bigskip
+\textbf{b)}\ $s = 29$ cm, $d = 40$ cm. Berechne $h$.\linie{14mm}cm\karo{5}}
+\fusshilfe{\mbox{4:~a) 13 cm; b) 21 cm}}
+\end{pfaufg}
+
+% L3-5: Strecke im Koordinatensystem: das Dreieck selbst einzeichnen, Katheten als Unterschiede abzählen, auch über die Achse
+\begin{pfaufg}{}{5.}{}
+Im Koordinatensystem sind die Punkte $A$ und $B$ eingezeichnet.
+\gzwei{\begin{tikzpicture}[x=0.6cm,y=0.6cm,line width=0.7pt]\draw[black!18,line width=0.3pt] (-4,-3) grid (3,5);\draw[-{Stealth[length=4pt]},line width=0.5pt] (-4,0)--(3.4,0) node[right,font=\small] {$x$};\draw[-{Stealth[length=4pt]},line width=0.5pt] (0,-3)--(0,5.4) node[above,font=\small] {$y$};\foreach \x in {-3,-2,-1,1,2} \node[font=\scriptsize,below] at (\x,0) {$\x$};\foreach \y in {-2,-1,1,2,3,4} \node[font=\scriptsize,left] at (0,\y) {$\y$};\fill (-3,-2) circle (2.2pt) node[below left,font=\small] {$A$};\fill (2,4) circle (2.2pt) node[above left,font=\small] {$B$};\draw[line width=0.9pt] (-3,-2)--(2,4);\end{tikzpicture}}{%
+\textbf{a)}\ Zeichne das rechtwinklige Dreieck mit einer waagerechten und einer senkrechten Kathete ein. Wie lang sind die Katheten?\linie{14mm}\par\bigskip
+\textbf{b)}\ Berechne die Länge von $\overline{AB}$. Runde auf eine Stelle nach dem Komma.\linie{14mm}\karo{4}}
+\fusshilfe{\mbox{5:~a) 5 und 6; b) 7,8}}
+\end{pfaufg}
+
+% L3-6: Zusammengesetzt: Pythagoras liefert nur ein Teilstück; das andere Stück kommt dazu (Bild ohne Dreieck)
+\begin{pfaufg}{}{6.}{}
+Ein Turm besteht aus einem Zylinder und einem Kegeldach. Wie hoch ist der ganze Turm?
+\gzwei{\begin{tikzpicture}[line width=0.7pt]\draw (0,2.4) ellipse (0.8 and 0.28);\draw (-0.8,0)--(-0.8,2.4) (0.8,0)--(0.8,2.4);\draw (-0.8,0) arc (180:360:0.8 and 0.28);\draw (-0.8,2.4)--(0,4.0)--(0.8,2.4);\draw[dashed,line width=0.5pt] (0,2.4)--(0.8,2.4);\fill (0,2.4) circle (0.8pt);\node[font=\small,anchor=north] at (0.3,2.05) {$2{,}0$ m};\node[font=\small,anchor=south west] at (0.42,3.25) {$5{,}2$ m};\node[font=\small,anchor=west] at (0.85,1.2) {$18$ m};\end{tikzpicture}}{%
+\karo{4}}
+\fusshilfe{\mbox{6:~22,8 m}}
+\end{pfaufg}
+
+% L3-7: Nur Text: selbst skizzieren, Durchmesser aus dem Radius, Diagonale, Überstand
+\begin{pfaufg}{nach P10 ’22}{7.}{}
+Ein Glas hat die Form eines Zylinders. Innen ist es $11$ cm hoch und hat den Radius $2{,}8$ cm. Ein Strohhalm steht schräg von der Bodenkante zur gegenüberliegenden oberen Kante. Er ragt $4$ cm heraus. Wie lang ist der Strohhalm? Runde auf eine Stelle nach dem Komma.\par
+Skizziere zuerst das Glas mit dem Strohhalm.
+\karo{5}
+\fusshilfe{\mbox{7:~16,3 cm}}
+\end{pfaufg}
+
+\par\vfill\noindent{\footnotesize Vorher: Ist der Winkel recht?\quad\textbullet\quad Weiter: Seiten und Winkel mit sin, cos, tan\par}
+\end{document}
