@@ -165,3 +165,24 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
   keiner – dort stand „auf 90 % gesenkt“ → 0,9. Umgestellt auf „um 90 %
   gesenkt“ → 0,1 mit „sinkt auf 70 %“ daneben. Übrige e5-Zeilen auf
   um/auf/Faktor gegengelesen: kein Fehler.
+
+## Lineare Funktionen E1 „Proportionale Funktion“ (VUC, 10.10.2026)
+
+- Setzer: `bilder()` findet nur `\begin{tikzpicture}`; ein `ksys` oder
+  eine `\wertetabelle` in grafik fiele stumm vom Blatt (erster Bau in
+  Abschnittsform mit Koordinatensystemen). Umgangen: beide in einen
+  tikzpicture-Knoten gewickelt. Vorschlag: `bilder()` auch `ksys` und
+  Tabellen erkennen lassen. (setzer.py nicht geändert.)
+- Setzer: Die Kopfzeile „Blatt:“ wird an „·“ geteilt; „Weiter: Lineare
+  Funktion f(x) = m·x + n“ wurde abgeschnitten. (Im Block „mx + n“.)
+- mathblatt.sty: `\wertetabelle` mit leerem x-Eintrag ergibt `$$` und
+  bricht ab; nur y-Einträge dürfen leer sein. (Leerer x-Eintrag als
+  `{\ }`.)
+- Prüfer: merkmal muss je Sprosse gleich sein, kann also an
+  Abschnittszeilen nicht sagen, was die Aufgabe ändert. (merkmal aus
+  dem Bestand übernommen.) Mengenwarnungen (k1 s2–s8, k2 s1, pflicht
+  darstellung 17×) aus den verlangten Vorratszeilen, wie E1–E5 Prozent.
+- Bestand E1: Die Ketten passen nur grob zum Lernweg; Abschnitt C
+  (Gleichung am Graphen) und Teile von D liegen in Pflichtketten (k3).
+  Fehler-finden (k1-s7) nicht auf dem Blatt (Bauauftrag 4).
+- Kritiker (Schritt 6) offen; der Chat startet ihn.
