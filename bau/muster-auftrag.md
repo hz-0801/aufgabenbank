@@ -3,8 +3,8 @@
 Stand 09.10.2026. Kern des Auftrags, mit dem am 08.10. das Selbstlernheft
 Geraden (bau/hefte-einzel/2026-10-08-geraden-ebene/, Lehrer: „gelungen“)
 gebaut wurde; alles Fallgebundene ist entfernt (Lehrer 09.10.). Spitze
-Klammern füllt die Bestellung oder der Katalog. Noch keine Regel: Ob es den
-Bauauftrag ersetzt oder ergänzt, entscheidet M4 (plan.md).
+Klammern füllt die Bestellung oder der Katalog. Seit 10.10.2026 Kern von
+`bau/bauauftrag.md` (Lehrer: Go); diese Datei bleibt als Beleg.
 
 ## Lage (aus der Bestellung; was fehlt, aus dem Katalog)
 
