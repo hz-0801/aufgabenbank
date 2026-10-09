@@ -109,10 +109,12 @@ Lies nur, was der Bau braucht, nie ganze große Dateien:
   ohne Figur → Karte → nur Text).
 - Antwortform und Fragerichtung wechseln (Länge, Unterschied, Entscheidung);
   bei Ja/Nein beide Antworten vorkommen lassen.
-- Verfremdetes Original behält die Falle des Originals.
-- Prüfungsblatt: am Ende ein echtes Original ganz. Lernblatt: Originale
-  nur, wo sie die beste Aufgabe sind, ohne Sätze, die nur der Prüfung
-  dienen.
+- Lernblatt: nur neue Aufgaben (Lehrer 09.10.: „ich möchte neue“). Ein
+  Original ist Vorbild: Form, Fragerichtung und Falle übernehmen, Sache,
+  Zahlen und Wortlaut neu; im Feld original steht die id des Vorbilds,
+  gedruckt wird sie auf Lernblättern nicht. Ein Original unverändert oder
+  nur mit neuen Zahlen ist auf Lernblättern verboten.
+- Prüfungsblatt: am Ende ein echtes Original ganz.
 - Kurz: so lang, wie der Weg es braucht.
 
 Nicht: Fehleraufgabe als Pflicht, Vollständigkeit vor Lernweg, Original am
