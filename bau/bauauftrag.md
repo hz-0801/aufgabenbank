@@ -38,8 +38,12 @@ Lies nur, was der Bau braucht, nie ganze große Dateien:
    begreift, wo er stolpert (aus „Typische Fehler“). Folge nach der Sache,
    nicht nach der Bank-Kette (die ist teils falsch geordnet).
 3. **Aufgaben je Schritt.** Erst in der Bank suchen; die beste nehmen, wenn
-   sie dem Schritt dient. Sonst neu schreiben. Je Schritt eine Aufgabe für
-   das Blatt und, wo möglich, ein bis zwei gleichwertige für „neue Zahlen“.
+   sie dem Schritt dient. Sonst neu schreiben. Je Schritt die Aufgaben für das Blatt
+   und zusätzlich, nur für die Bank (Lehrer 09.10.: „unbedingt, gerne auch
+   mehr“): mindestens eine leichtere Aufgabe (Einstieg unten: Vorstufe,
+   kleinere Zahlen, mehr aufgedeckt) und mindestens zwei gleichwertige mit
+   anderen Zahlen oder anderer Sache; bei Rechenschritten und Päckchen
+   mehr. Sie werden mitgeprüft und in den Lernweg-Block eingetragen.
 4. **Blatt setzen.** Mit `werkzeuge/setzer.py`, sobald es ihn gibt; bis
    dahin von Hand nach dem Muster K4W mit `mathblatt.sty` (Raw-URL
    https://raw.githubusercontent.com/hz-0801/blattbau/main/mathblatt.sty). Drei
@@ -51,7 +55,9 @@ Lies nur, was der Bau braucht, nie ganze große Dateien:
    Änderungen. Übernehmen, was dem Zweck dient; Abweichungen begründen.
 7. **Zerlegen.** Lernweg als Block in den Abschnitt „Lernweg“ des
    Katalogeintrags (Form: `katalog/_vorlage.md`). Gewählte und neue Aufgaben
-   mit den Lernweg-Feldern in die Bank (`bank.md`, „Felder für den
+   vollständig in die Bank: Text, Skizze als TikZ im Feld grafik (ganz, nicht
+   nur ein Name), Lösung, pruef – so, dass der Setzer das Blatt ohne die
+   .tex-Datei wieder setzen kann; dazu die Lernweg-Felder (`bank.md`, „Felder für den
    Lernweg“), status gut; schwächere Zeilen desselben Schritts schwach mit
    Grund und besser. Kennung und ids ins Register `bau/register.csv`.
 8. **Uhr und Bericht.** Endzeit mit `date`; Bericht (unten). Befunde, die
