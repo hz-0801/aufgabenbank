@@ -48,14 +48,18 @@ Lies nur, was der Bau braucht, nie ganze große Dateien:
    welcher Schritt bereitet jedes Merkmal vor? Je Schritt: was der Schüler
    begreift, wo er stolpert (aus „Typische Fehler“). Folge nach der Sache,
    nicht nach der Bank-Kette (die ist teils falsch geordnet).
-3. **Aufgaben je Schritt.** Erst in der Bank suchen; die beste nehmen, wenn
-   sie dem Schritt dient. Sonst neu schreiben. Je Schritt die Aufgaben für das Blatt
+3. **Aufgaben je Schritt.** Alle Aufgaben neu schreiben (Lehrer 09.10.:
+   „ich möchte neue“). Die Bank ist nur Vorbild: nachsehen, welche Typen und
+   Fallen es gibt, keinen Wortlaut übernehmen; alte Zeilen kommen in keinen
+   Lernweg. Je Schritt die Aufgaben für das Blatt
    und zusätzlich, nur für die Bank (Lehrer 09.10.: „unbedingt, gerne auch
    mehr“): mindestens eine leichtere Aufgabe (Einstieg unten: Vorstufe,
    kleinere Zahlen, mehr aufgedeckt) und mindestens zwei gleichwertige mit
    anderen Zahlen oder anderer Sache; bei Rechenschritten und Päckchen
    mehr. Sie werden mitgeprüft und in den Lernweg-Block eingetragen.
-   Zusätzlich je Schritt: die Formel oder der Merksatz in einer Zeile und
+   Zusätzlich je Schritt: die Formel oder der Merksatz in einer Zeile – ein
+   klarer Satz ohne Herleitung (z. B. „Im rechtwinkligen Dreieck gilt
+   a² + b² = c²; c ist die Hypotenuse.“) – und
    ein kurzes vorgerechnetes Beispiel (eine Bankzeile); beides druckt nur
    das Selbstlernheft. In Päckchen „die fehlende Seite“ statt der Größe,
    die die Überschrift schon nennt; wo zwei Verfahren getrennt geübt wurden,
@@ -73,7 +77,8 @@ Lies nur, was der Bau braucht, nie ganze große Dateien:
 6. **Kritiker.** Startet der Chat, nicht der Bau-Agent (Unteragenten können
    keinen starten; gebündelt ist es billiger): Fable, ohne diese Datei, nur
    Zweck und PDFs, höchstens 400 Wörter, Rechenfehler zuerst, dann die drei
-   wichtigsten Änderungen. Der Bau-Agent trägt den Kritiker im Katalog als
+   wichtigsten Änderungen; jede Zeichnung als Bild prüfen (passt sie zu den
+   Zahlen, ist sie für einen Anfänger lesbar?). Der Bau-Agent trägt den Kritiker im Katalog als
    „offen“ ein. Nachbesserung genau der benannten Punkte, die der Chat
    übernimmt, sonst nichts; Kritikerurteile gegenlesen, nicht blind
    übernehmen (Runde 1: ein „Rechenfehler“ war keiner).
@@ -101,8 +106,11 @@ Lies nur, was der Bau braucht, nie ganze große Dateien:
 - Ein neuer Schritt darf in a) grau vorgerechnet stehen; b) rechnet der
   Schüler.
 - Runden, krumme Zahlen, Einheiten erst nach allen Denkschritten.
-- Die Idee sichtbar machen, wo der häufigste Fehler sonst unerklärt bleibt
-  (Beispiel: Kästchenbild gegen c = a + b).
+- Keine Herleitungs- oder Entdeckungsaufgaben (Quadrate über den Seiten,
+  Kästchen zählen, „Sind die Katheten zusammen so lang …?“): Lehrer 09.10.
+  „kryptisch“. Den häufigsten Fehler fängt eine klare Aufgabe ab, kein Bild.
+- Jede Zeichnung muss der Schüler lesen können: nichts abgeschnitten,
+  schräge Flächen nie zum Zählen, Maße an der richtigen Linie.
 - Sache: Sie trägt die Mathematik. Über die ganze Einheit nie zweimal
   dasselbe Modell und nie dreimal dieselbe Darstellung; die Sachaufgaben
   steigern, wie viel der Schüler selbst sehen muss (fertige Skizze → Bild
