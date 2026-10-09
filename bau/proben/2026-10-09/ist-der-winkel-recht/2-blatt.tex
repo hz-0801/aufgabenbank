@@ -1,0 +1,162 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% gesetzt von werkzeuge/setzer.py aus dem Lernweg (L2u-1 · L2u-2 · L2u-3 · L2u-4 · L2u-5 · L2u-6 · L2u-7) und den Bankzeilen; Muster T6B.
+\input{praeambel}
+\newcommand{\kennung}{P9H}
+\newcommand{\grau}[1]{{\color{mbgrau}#1}}
+
+\begin{document}
+\pfheftstil
+\fancyfoot[C]{\parbox[t]{\textwidth}{\mbfhbox\par\vspace{1.5mm}{\footnotesize\color{mbgrau}{\scriptsize \kennung}\hfill\thepage}}}
+\pfheftkopf{Ist der Winkel recht?}{Klasse 9}
+% L2u-1: Der Satz geht auch rückwärts: passen die Quadrate, entsteht ein rechter Winkel (Knotenschnur); passen sie nicht, nicht
+\begin{pfaufg}{}{1.}{}
+Eine Schnur hat zwölf gleich lange Abschnitte. Man spannt sie zu einem Dreieck. Rechne die Quadrate der zwei kürzeren Seiten zusammen und vergleiche mit dem Quadrat der längsten Seite. Hat das Dreieck einen rechten Winkel?\par\medskip\noindent
+\begin{minipage}[b]{0.48\linewidth}\centering
+\begin{tikzpicture}[line width=0.7pt,x=4.5mm,y=4.5mm]
+\draw (0,0) -- (4,0) -- (0,3) -- cycle;
+\foreach \i in {0,...,4} {\fill (\i,0) circle (1.6pt);}
+\foreach \i in {1,2,3} {\fill (0,\i) circle (1.6pt);}
+\foreach \i in {1,...,4} {\fill ({4-0.8*\i},{0.6*\i}) circle (1.6pt);}
+\node[font=\small,anchor=north] at (2,-0.15) {$4$};\node[font=\small,anchor=east] at (-0.15,1.5) {$3$};\node[font=\small,anchor=south west] at (2.05,1.55) {$5$};
+\end{tikzpicture}\par\smallskip
+{\small a)\ $3$, $4$ und $5$ Abschnitte}\par\smallskip
+\linie{30mm}\par\medskip\linie{30mm}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.48\linewidth}\centering
+\begin{tikzpicture}[line width=0.7pt,x=4.5mm,y=4.5mm]
+\draw (0,0) -- (2,0) -- (1,4.899) -- cycle;
+\foreach \i in {0,1,2} {\fill (\i,0) circle (1.6pt);}
+\foreach \i in {1,...,5} {\fill ({0.2*\i},{0.9798*\i}) circle (1.6pt);}
+\foreach \i in {1,...,4} {\fill ({2-0.2*\i},{0.9798*\i}) circle (1.6pt);}
+\node[font=\small,anchor=north] at (1,-0.15) {$2$};\node[font=\small,anchor=east] at (0.35,2.45) {$5$};\node[font=\small,anchor=west] at (1.65,2.45) {$5$};
+\end{tikzpicture}\par\smallskip
+{\small b)\ $2$, $5$ und $5$ Abschnitte}\par\smallskip
+\linie{30mm}\par\medskip\linie{30mm}
+\end{minipage}
+\fusshilfe{\mbox{1:~a) ja, $9 + 16 = 25$; b) nein, $4 + 25 \ne 25$}}
+\end{pfaufg}
+
+% L2u-2: Nur die längste Seite kann c sein; dazu erst alles in eine Einheit
+\begin{pfaufg}{}{2.}{}
+Von einem Dreieck kennst du die drei Seiten. Du willst prüfen, ob es rechtwinklig ist. Kreuze die Seite an, die du als $c$ nimmst.\par\smallskip a)\ \kk{$8$ cm}\kk{$17$ cm}\kk{$15$ cm}\hspace{2em}b)\ \kk{$95$ cm}\kk{$0{,}6$ m}\kk{$1{,}1$ m}\par\smallskip c)\ \kk{$0{,}4$ m}\kk{$41$ cm}\kk{$9$ cm}\par
+\fusshilfe{\mbox{2:~a) 17 cm; b) 1,1 m; c) 41 cm}}
+\end{pfaufg}
+
+% L2u-3: Vergleichen statt ausrechnen: gleich → rechtwinklig, ungleich → nicht, auch wenn es fast passt
+\begin{pfaufg}{}{3.}{}
+Prüfe, ob das Dreieck rechtwinklig ist.\par\medskip
+\grau{a)\ $6$ cm, $10$ cm, $8$ cm:\quad längste Seite $10$ cm\quad $6^2 + 8^2 = 36 + 64 = 100$\quad $10^2 = 100$\quad gleich $\Rightarrow$ rechtwinklig}\par\medskip
+\noindent\begin{minipage}[t]{0.48\linewidth}
+b)\ $17$ cm, $8$ cm, $15$ cm
+\karo{2}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+c)\ $8$ m, $11$ m, $6$ m
+\karo{2}
+\end{minipage}
+\noindent\begin{minipage}[t]{0.48\linewidth}
+d)\ $15$ dm, $10$ dm, $11$ dm
+\karo{2}
+\end{minipage}
+\fusshilfe{\mbox{3:~b) ja; c) nein; d) nein}}
+\end{pfaufg}
+
+% L2u-4: Mit Streckennamen und gemischten Einheiten entscheiden und die Ecke des rechten Winkels nennen
+\begin{pfaufg}{}{4.}{}
+Ist das Dreieck $ABC$ rechtwinklig? Wenn ja: An welcher Ecke liegt der rechte Winkel?\par\smallskip
+\noindent\begin{minipage}[t]{0.48\linewidth}
+a)\ $\overline{AB} = 2{,}5$ dm, $\overline{BC} = 7$ cm, $\overline{AC} = 24$ cm
+\karo{3}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+b)\ $\overline{AB} = 1{,}1$ m, $\overline{BC} = 60$ cm, $\overline{AC} = 0{,}9$ m
+\karo{3}
+\end{minipage}
+\fusshilfe{\mbox{4:~a) ja, bei $C$; b) nein}}
+\end{pfaufg}
+
+% L2u-5: Pythagoreische Tripel: vervielfacht bleiben sie Tripel; mit kleinen Zahlen prüfen spart Rechnen
+\begin{pfaufg}{}{5.}{}
+Drei ganze Zahlen, die die Seiten eines rechtwinkligen Dreiecks sein können, heißen pythagoreisches Tripel.\par\medskip
+\grau{a)\ Verdopple $3$, $4$, $5$:\quad $6$, $8$, $10$\quad $6^2 + 8^2 = 100 = 10^2$\quad $\Rightarrow$ wieder ein Tripel}\par\medskip
+\noindent\begin{minipage}[t]{0.48\linewidth}
+b)\ Verdreifache $8$, $15$, $17$ und prüfe.
+\karo{2}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+c)\ Ist $30$, $40$, $60$ ein Tripel? Rechne mit kleinen Zahlen.
+\karo{2}
+\end{minipage}
+\noindent\begin{minipage}[t]{0.48\linewidth}
+d)\ Dreieck mit $9$ cm, $40$ cm, $41$ cm: Ist es rechtwinklig?
+\karo{2}
+\end{minipage}
+\fusshilfe{\mbox{5:~b) 24, 45, 51; ja; c) nein; d) ja}}
+\end{pfaufg}
+
+% L2u-6: Gemischt: welche Seite ist gesucht? Ist sie die längste, wird addiert, sonst subtrahiert
+\begin{pfaufg}{}{6.}{}
+Zwei Seiten eines Dreiecks sind $7$ cm und $24$ cm lang. Wie lang muss die dritte Seite sein, damit das Dreieck rechtwinklig ist? Runde auf eine Stelle nach dem Komma.\par\smallskip
+\noindent\begin{minipage}[t]{0.48\linewidth}
+a)\ Die dritte Seite ist die längste.
+\karo{3}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+b)\ $24$ cm ist die längste Seite.
+\karo{3}
+\end{minipage}
+\fusshilfe{\mbox{6:~a) 25 cm; b) 23,0 cm}}
+\end{pfaufg}
+
+% L2u-6: Gemischt: welche Seite ist gesucht? Ist sie die längste, wird addiert, sonst subtrahiert
+\begin{pfaufg}{}{7.}{}
+Im Dreieck $XYZ$ liegt bei $Y$ ein rechter Winkel. Berechne die fehlende Seite.\par\smallskip
+\noindent\begin{minipage}[t]{0.48\linewidth}
+a)\ $\overline{XY} = 1{,}2$ dm, $\overline{YZ} = 3{,}5$ dm, $\overline{XZ} = {?}$
+\karo{3}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+b)\ $\overline{XZ} = 2{,}9$ m, $\overline{YZ} = 2$ m, $\overline{XY} = {?}$
+\karo{3}
+\end{minipage}
+\noindent\begin{minipage}[t]{0.48\linewidth}
+c)\ $\overline{XY} = 40$ cm, $\overline{XZ} = 0{,}41$ m, $\overline{YZ} = {?}$
+\karo{3}
+\end{minipage}
+\fusshilfe{\mbox{7:~a) 3,7 dm; b) 2,1 m; c) 9 cm}}
+\end{pfaufg}
+
+% L2u-7: Den rechten Winkel in der Sache mit Rechnung begründen; das Aussehen entscheidet nicht
+\begin{pfaufg}{}{8.}{}
+Frau Berger legt das Fundament einer Terrasse. Sie misst an einer Ecke nach. Ist die Ecke rechtwinklig?
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=1.2]
+\fill[black!10] (0,0) rectangle (2.6,2.0);
+\draw (0,2.0) -- (0,0) -- (2.6,0);
+\fill (1.6,0) circle (1.6pt);\fill (0,1.2) circle (1.6pt);
+\draw[dashed] (1.6,0) -- (0,1.2);\node[font=\small,anchor=south west] at (0.85,0.62) {$2{,}1$ m};
+\draw[|-|,line width=0.4pt] (0,-0.3) -- (1.6,-0.3) node[midway,below,font=\small] {$1{,}6$ m};
+\draw[|-|,line width=0.4pt] (-0.3,0) -- (-0.3,1.2) node[midway,left,font=\small] {$1{,}2$ m};
+\node[font=\small] at (1.95,1.55) {Terrasse};
+\end{tikzpicture}}{%
+\karo{3}\par\smallskip\hfill\kk{ja}\kk{nein}}
+\fusshilfe{\mbox{8:~nein, $4 \ne 4{,}41$}}
+\end{pfaufg}
+
+% L2u-7: Den rechten Winkel in der Sache mit Rechnung begründen; das Aussehen entscheidet nicht
+\begin{pfaufg}{nach P10 ’25}{9.}{}
+Ein Fenster hat die Form eines Drachenvierecks $ABCD$. Seine Diagonalen schneiden sich im Punkt $M$ im rechten Winkel. Begründe mit einer Rechnung, dass das Fenster bei $D$ einen rechten Winkel hat.
+\gzwei{\begin{tikzpicture}[line width=0.7pt]
+\coordinate (A) at (-1.6,0);\coordinate (B) at (0,-2.9);\coordinate (C) at (1.6,0);\coordinate (D) at (0,1.6);\coordinate (M) at (0,0);
+\draw (A) -- (B) -- (C) -- (D) -- cycle;
+\draw[line width=0.4pt] (A) -- (C) (B) -- (D);
+\mbrwmarke{(M)}{(C)}{(D)}
+\node[font=\small,anchor=east] at (A) {$A$};\node[font=\small,anchor=north] at (B) {$B$};\node[font=\small,anchor=west] at (C) {$C$};\node[font=\small,anchor=south] at (D) {$D$};\node[font=\small,anchor=north west] at (0.03,-0.03) {$M$};
+\node[font=\small,anchor=south] at (-0.85,0.02) {$32$ cm};\node[font=\small,anchor=south] at (1.0,0.02) {$32$ cm};\node[font=\small,anchor=east] at (-0.04,0.95) {$32$ cm};
+\end{tikzpicture}}{%
+\karo{5}}
+\fusshilfe{\mbox{9:~$2\,048 + 2\,048 = 64^2$}}
+\end{pfaufg}
+
+\par\vfill\noindent{\footnotesize Vorher: Kathete berechnen\quad\textbullet\quad Weiter: Das Dreieck erst finden\par}
+\end{document}

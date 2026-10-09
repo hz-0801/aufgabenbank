@@ -47,3 +47,23 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
 - Bank-Kette E2: Die Erkennen-Kette k1-s0 („Was ist das Ganze?“) ist als Vorstufe einzeln je Zeile gebaut; das Päckchen mit gemischten Fallen (Summe, Differenz, alter Preis) fehlte. Die Grundfall-Zeilen k3-s1 sind fünfmal dieselbe Sache (Instrument) und darum bis auf v1 schwach markiert.
 - Prüfer: Mengenwarnungen durch die vom Bauauftrag verlangten Zusatzzeilen (k1-s0, k3-s0/s2/s4/s5/s6/s7, Originale 2015-OS-K7c und 2018-OS-K7a je 3×, pflicht anwendung 4×) – wie bei E1; verdecken echte Warnungen.
 - Thema-Weg: Der Probetest nennt 2018-OS-K7a für E2; der Bau zeigt, dass 2015-OS-K7c (Rest bilden, runden) die eigentliche Decke ist. Reihenfolge des Probetests unverändert.
+## Pythagoras E2 zweiter Teil „Ist der Winkel recht?“ (P9H, 09.10.2026)
+
+- Kritiker (Schritt 6) nicht gelaufen: Der Bau-Agent hatte kein Werkzeug,
+  um einen Unteragenten (Fable) zu starten. (Im Katalog „offen“; der Chat
+  holt ihn nach. Vorschlag: Kritiker vom Chat aus starten, nicht vom
+  Bau-Agenten.)
+- Setzer: Ankreuzen mit mehreren Teilen in einer Zeile (a, b, c je drei
+  Optionen) gibt es nicht; „reihe“ verlangt je Teil ein Bild, „zwei“ kennt
+  satz.kreuz nur für die ganze Nummer. (Als form „frei“ mit \kk im
+  satz.text und Teilen nur für Fuß und Lösung gesetzt.)
+- Setzer: In „reihe“ steht der Teiltext unter dem Bild; bei der
+  Knotenschnur wäre der Text über dem Bild natürlicher. (Hingenommen.)
+- Bank-Ketten: Die Umkehrung liegt als Sprossen 8–10 in der Kathete-Kette
+  (k3), die Knotenschnur in der Pflichtkette begruenden (k6), die
+  Zielaufgabe in k3-s12 neben der Seilbahn. Die Kette mischt zwei Blätter;
+  Lernweg-Feld schritt trennt sie (L2k/L2u). (Hingenommen; bei der
+  Katalogüberarbeitung eine eigene Kette „Umkehrung“ erwägen.)
+- Die Zielaufgabe nach 2025-OS-K2c (Drachenfenster) hatte keine Skizze;
+  das Original zeigt eine. TikZ-Skizze ergänzt und den Prüfungssatz „Nutze
+  dazu die Umkehrung“ im satz.text weggelassen (Bauregel 4.1).
