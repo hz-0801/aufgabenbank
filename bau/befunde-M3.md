@@ -244,3 +244,22 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
   aus dem Fallgesetz in Worten selbst auf. Zu prüfen am Kritiker, ob
   der Sprung von C4 zu C5 (Ursprung selbst legen) zu groß ist; der
   Tipp „Ursprung in die Mitte“ steht nur in C5.
+## Trigonometrie E1 „Seite berechnen mit sin, cos und tan“ (N9M, 10.10.2026)
+
+- Erster Bau des Themas; Thema-Weg und Lernweg-Block im Katalog neu
+  (vor der Prüfliste, Zeilennummern für quelle bleiben). Abschnitte
+  A Seiten benennen, B Kathete: mal, C Seite im Nenner: geteilt,
+  D Welche Funktion?, T Probetest. Mal und geteilt als eigene Abschnitte
+  statt der Kettenfolge sin → cos → sin geteilt …: eine Rechenregel je
+  Seite, die Funktion wechselt darin.
+- Kritiker (Schritt 6) startet der Chat; im Block „offen“.
+- Setzer: Ankreuzoptionen mit `\dfrac` überlappen sich zeilenweise
+  (Zeilen ohne Zusatzabstand); darum `\frac` wie im Prüfstein, klein.
+  Registerzeile nennt immer „sorten=tisch-alt tisch selbst“, auch wenn
+  nur zwei gesetzt sind, und das Datum der Systemuhr (2026-10-09).
+- Prüfer: Mengenwarnungen k3 s0–s15, k4 s1 aus Blatt- und
+  Vorratszeilen, wie bei den anderen Bauten. Bestehende Bankzeilen
+  tragen quelle 102 (älterer Katalogstand); neue übernehmen den Wert
+  der Sprosse, weil der Prüfer ihn je Sprosse einheitlich verlangt.
+- Probetest ohne Vorrat-leichter (kein Beispiel im Abschnitt); Vorrat
+  dort nur gleichwertig.
