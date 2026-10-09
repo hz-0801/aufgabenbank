@@ -135,6 +135,9 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
   weil die Aufgabe nichts ausrechnet.
 - Prüfer: Mengenwarnungen (k1 s0, k2 s1/s3/s5/s7, 2025-OS-B1a 5×,
   pflicht anwendung 4×) aus den verlangten Zusatzzeilen, wie E1–E3.
+- Nach Kritik (09.10.): 1 %-Weg und Taschenrechner in einer Nummer;
+  der Lernweg hat jetzt sechs Schritte (L4-1..L4-6, Felder schritt der
+  Bank nachgezogen). k2-s5-v4 schwach, besser k2-s3-v6.
 
 ## Prozentrechnung E5 „Prozentuale Veränderung“ (S2L, 09.10.2026)
 
@@ -158,3 +161,7 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
   satz.text. form „frei“ für Ankreuzen mit grauem a) wie E4.
 - Prüfer: Mengenwarnungen (k1 s0, k2 s0–s8, 2026-FOR-K3c 5×) aus den
   verlangten Zusatzzeilen, wie E1–E4.
+- Nach Kritik (09.10.): Der gemeldete Rechenfehler in Nr. 2 c) war
+  keiner – dort stand „auf 90 % gesenkt“ → 0,9. Umgestellt auf „um 90 %
+  gesenkt“ → 0,1 mit „sinkt auf 70 %“ daneben. Übrige e5-Zeilen auf
+  um/auf/Faktor gegengelesen: kein Fehler.
