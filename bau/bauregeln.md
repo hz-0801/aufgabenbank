@@ -64,6 +64,11 @@ Typische Fehler stehen im Katalog, nie hier.
     Prüfungsblatt nur, wo BB/BE-Aufgaben fehlen, nie schwerer als diese,
     mit Marke „GYM ’xx“.
 
+2.6 Selbstlernheft (Sorte offen, Lehrer 09.10.): für den Schüler allein;
+    Inhaltsverzeichnis, Formeln auf einen Blick, je Abschnitt eine Seite mit
+    einem Satz, Formel, Beispiel und 3–5 Aufgaben, wenig Text, Probetest am
+    Ende. Muster: bau/hefte-einzel/2026-10-08-geraden-ebene/.
+
 ## 3 Übersicht und Serie
 
 3.1 Ein Eintrag der Übersicht ist ein Blatt: ein Unterkapitel der
@@ -168,7 +173,8 @@ Typische Fehler stehen im Katalog, nie hier.
     herausgelösten, fremde „BY ’23“, „VERA ’24“; eigene ohne Marke; keine
     Fundstelle an der Marke. Stern bei Aufgaben nur für FOR. Punkte nur beim
     Prüfstein des Prüfungshefts.
-6.5 Am Ende des Blatts klein über der Zeile Vorgänger/Nachfolger die Liste
+6.5 Prüfungsblatt und Prüfungsheft (nicht Lernblatt, Lehrer 09.10.): am Ende
+    des Blatts klein über der Zeile Vorgänger/Nachfolger die Liste
     der Originale (Jahr · Aufgabe · Teilaufgabe), damit Schüler im
     Stark-Heft Original und Lösung finden.
 6.6 Eingerückt: eine Schriftstufe kleiner, schwarz, Marke grau.

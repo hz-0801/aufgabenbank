@@ -14,6 +14,17 @@ erfahrener Mathelehrer und Didaktiker: erst der Weg, dann die Aufgaben.
 Das Ergebnis wird zerlegt zurückgelegt (Lernweg in den Katalog, Aufgaben in
 die Bank), damit spätere Blätter ohne Modell gesetzt werden.
 
+## Für wen du baust
+
+Für einen Schüler der Klasse, die der Katalog an der Einheit nennt. Er kann
+die Voraussetzungen aus dem Katalog, ist bei Neuem unsicher und will am Ende
+die Zielaufgabe schaffen – sie ist sein Test. Daraus folgt: anfangen mit
+etwas, das er kann; wenig Text, ein klarer Satz je Schritt; erst Erfolg,
+dann Stolperstelle; der Weg führt sichtbar zur Zielaufgabe. Ob er allein
+arbeitet (Selbstlernheft) oder mit dem Lehrer am Tisch (Blatt), entscheidet
+erst die Sorte beim Setzen; der Bau legt für beides an (Lehrer 09.10., aus
+dem Befund Selbstlernheft Geraden: `mathe-nachhilfe/befund-selbstlernheft-2026-10-09.md`).
+
 ## Eingaben – sparsam lesen
 
 Lies nur, was der Bau braucht, nie ganze große Dateien:
@@ -44,6 +55,11 @@ Lies nur, was der Bau braucht, nie ganze große Dateien:
    kleinere Zahlen, mehr aufgedeckt) und mindestens zwei gleichwertige mit
    anderen Zahlen oder anderer Sache; bei Rechenschritten und Päckchen
    mehr. Sie werden mitgeprüft und in den Lernweg-Block eingetragen.
+   Zusätzlich je Schritt: die Formel oder der Merksatz in einer Zeile und
+   ein kurzes vorgerechnetes Beispiel (eine Bankzeile); beides druckt nur
+   das Selbstlernheft. In Päckchen „die fehlende Seite“ statt der Größe,
+   die die Überschrift schon nennt; wo zwei Verfahren getrennt geübt wurden,
+   mischt die folgende Einheit sie.
 4. **Blatt setzen.** Mit `werkzeuge/setzer.py`, sobald es ihn gibt; bis
    dahin von Hand nach dem Muster K4W mit `mathblatt.sty` (Raw-URL
    https://raw.githubusercontent.com/hz-0801/blattbau/main/mathblatt.sty). Drei
@@ -53,7 +69,11 @@ Lies nur, was der Bau braucht, nie ganze große Dateien:
 6. **Kritiker.** Ein zweiter Agent (Fable) ohne diese Datei, nur mit dem
    Zweck oben und den PDFs; höchstens 400 Wörter, die drei wichtigsten
    Änderungen. Übernehmen, was dem Zweck dient; Abweichungen begründen.
-7. **Zerlegen.** Lernweg als Block in den Abschnitt „Lernweg“ des
+7. **Zerlegen.** Fehlt im Katalogeintrag der Abschnitt „Thema-Weg“, lege
+   ihn beim ersten Bau des Themas an: Folge der Lerneinheiten mit Grund für
+   die Stelle, Vorher-Check (Voraussetzungen, Zone-ids), Probetest (ids von
+   Originalen, gemischt, schwerste zuletzt); spätere Baue ergänzen ihn.
+   Lernweg als Block in den Abschnitt „Lernweg“ des
    Katalogeintrags (Form: `katalog/_vorlage.md`). Gewählte und neue Aufgaben
    vollständig in die Bank: Text, Skizze als TikZ im Feld grafik (ganz, nicht
    nur ein Name), Lösung, pruef – so, dass der Setzer das Blatt ohne die
