@@ -1,0 +1,186 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Prüfstein M2 09.10.2026, Lernblatt: „Kathete berechnen“ (Pythagoras, Lerneinheit 2, erster Teil;
+% die Umkehrung ist ein eigenes Blatt). Nach bau/bauauftrag.md von oben gebaut; Muster K4W.
+% Lernweg: L2k-1 Idee (Flächen abziehen) · L2k-2 Hypotenuse oder Kathete gesucht · L2k-3 Gleichung
+% umstellen ohne Zahl, dann mit Wurzel wählen · L2k-4 Rechnen glatt, a) grau, Probe · L2k-5 Rechenaufwand
+% kurz · L2k-6 Sache: Bild ohne Dreieck → Karte → nur Text · L2k-7 Ziel nach P10 ’24 (Seilbahn).
+\input{praeambel}
+\newcommand{\kennung}{T6B}
+\newcommand{\grau}[1]{{\color{mbgrau}#1}}
+
+\begin{document}
+\pfheftstil
+\fancyfoot[C]{\parbox[t]{\textwidth}{\mbfhbox\par\vspace{1.5mm}{\footnotesize\color{mbgrau}{\scriptsize \kennung}\hfill\thepage}}}
+\pfheftkopf{Kathete berechnen}{Klasse 9}
+
+% L2k-1 Idee: der Satz rückwärts über Flächen – vom großen Quadrat abziehen (Fehler: Quadrate addiert)
+\begin{pfaufg}{}{1.}{}
+Die zwei kleinen Quadrate über den Katheten haben zusammen so viel Fläche wie das große Quadrat über der Hypotenuse. Hier fehlt eine Fläche.
+\gzwei{\begin{tikzpicture}[scale=0.85,line width=0.7pt]
+\draw (0,0) -- (2,0) -- (2,-2) -- (0,-2) -- cycle;
+\draw (0,0) -- (-1.5,0) -- (-1.5,1.5) -- (0,1.5) -- cycle;
+\draw (0,1.5) -- (2,0) -- (3.5,2) -- (1.5,3.5) -- cycle;
+\draw[line width=1.4pt] (0,0) -- (2,0) -- (0,1.5) -- cycle;
+\mbrwmarke{(0,0)}{(2,0)}{(0,1.5)}
+\node[font=\small] at (1.75,1.75) {$100$ cm$^2$};
+\node[font=\footnotesize,align=center] at (-0.75,0.75) {$36$\\cm$^2$};
+\node[font=\small] at (1,-1) {?};
+\end{tikzpicture}}{%
+\textbf{a)}\ Wie groß ist die Fläche des Quadrats mit dem Fragezeichen?\linie{14mm}cm$^2$\par\bigskip
+\textbf{b)}\ Wie lang ist die Seite dieses Quadrats?\linie{14mm}cm}
+\fusshilfe{\mbox{1:~a) 64 cm²; b) 8 cm}}
+\end{pfaufg}
+
+% L2k-2 Erkennen ohne Rechnen: gemischt, verschiedene Lagen (Fehler: längere Kathete für die Hypotenuse halten)
+\begin{pfaufg}{}{2.}{}
+Zwei Seiten sind gegeben. Ist die Seite mit dem Fragezeichen die Hypotenuse oder eine Kathete? Kreuze an.\par\medskip\noindent
+\begin{minipage}[b]{0.245\linewidth}\centering
+\begin{tikzpicture}[line width=0.7pt,scale=0.85]\coordinate (P1) at (0,0);\coordinate (P2) at (2.0,0);\coordinate (P3) at (0,1.5);\draw (P1) -- (P2) -- (P3) -- cycle;\mbrwmarke{(P1)}{(P2)}{(P3)}
+\node[font=\small,anchor=north] at (1.0,-0.08) {$8$ cm};\node[font=\small,anchor=east] at (-0.08,0.75) {$6$ cm};\node[font=\small,anchor=south west] at (1.02,0.78) {?};\end{tikzpicture}\par\smallskip
+{\small a)\ \kk{Hypotenuse}\par\hspace*{1.1em}\kk{Kathete}}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.245\linewidth}\centering
+\begin{tikzpicture}[line width=0.7pt,scale=0.85]\coordinate (P1) at (0,0);\coordinate (P2) at (2.55,0);\coordinate (P3) at (1.985,1.059);\draw (P1) -- (P2) -- (P3) -- cycle;\mbrwmarke{(P3)}{(P1)}{(P2)}
+\node[font=\small,anchor=north] at (1.27,-0.08) {$17$ cm};\node[font=\small,anchor=south east] at (0.95,0.56) {$15$ cm};\node[font=\small,anchor=south west] at (2.30,0.56) {?};\end{tikzpicture}\par\smallskip
+{\small b)\ \kk{Hypotenuse}\par\hspace*{1.1em}\kk{Kathete}}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.245\linewidth}\centering
+\begin{tikzpicture}[line width=0.7pt,scale=0.85]\coordinate (P1) at (0,0);\coordinate (P2) at (2.4,0);\coordinate (P3) at (2.4,0.7);\draw (P1) -- (P2) -- (P3) -- cycle;\mbrwmarke{(P2)}{(P1)}{(P3)}
+\node[font=\small,anchor=north] at (1.2,-0.08) {?};\node[font=\small,anchor=west] at (2.48,0.35) {$7$ cm};\node[font=\small,anchor=south east] at (1.18,0.38) {$25$ cm};\end{tikzpicture}\par\smallskip
+{\small c)\ \kk{Hypotenuse}\par\hspace*{1.1em}\kk{Kathete}}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.245\linewidth}\centering
+\begin{tikzpicture}[line width=0.7pt,scale=0.85]\coordinate (V) at (0.15,0.25);\coordinate (L) at (2.48,1.01);\coordinate (K) at (-0.12,1.07);\draw (V) -- (L) -- (K) -- cycle;\mbrwmarke{(V)}{(L)}{(K)}
+\node[font=\small,anchor=north west] at (1.32,0.63) {$34$ m};\node[font=\small,anchor=east] at (-0.02,0.62) {$12$ m};\node[font=\small,anchor=south] at (1.18,1.06) {?};\end{tikzpicture}\par\smallskip
+{\small d)\ \kk{Hypotenuse}\par\hspace*{1.1em}\kk{Kathete}}
+\end{minipage}
+\fusshilfe{\mbox{2:~a) H; b) K; c) K; d) H}}
+\end{pfaufg}
+
+% L2k-3 Gleichung umstellen ohne Zahl; a) grau vorgerechnet (Bauregel 1.5); wechselnde Buchstaben,
+% Punktnamen wie in der P10 (Fehler: gesuchte Seite allein, „c ist immer die Hypotenuse“)
+\begin{pfaufg}{}{3.}{}
+Schreibe den Satz des Pythagoras für das Dreieck auf. Stelle die Gleichung dann so um, dass das Quadrat der gesuchten Seite allein steht.\par\medskip\noindent
+\begin{minipage}[b]{0.32\linewidth}\centering
+\begin{tikzpicture}[line width=0.7pt,scale=0.85]\coordinate (P1) at (0,0);\coordinate (P2) at (2.4,0);\coordinate (P3) at (0,1.5);\draw (P1) -- (P2) -- (P3) -- cycle;\mbrwmarke{(P1)}{(P2)}{(P3)}
+\node[font=\small,anchor=north] at (1.2,-0.08) {$u$};\node[font=\small,anchor=east] at (-0.08,0.75) {$v$};\node[font=\small,anchor=south west] at (1.22,0.78) {$w$};\end{tikzpicture}\par\smallskip
+\grau{{\small a)\ gesucht: $u$}\par\smallskip
+$w^2 = u^2 + v^2$\par\smallskip $\Rightarrow\ u^2 = w^2 - v^2$}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.32\linewidth}\centering
+\begin{tikzpicture}[line width=0.7pt,scale=0.85]\coordinate (P1) at (0,0);\coordinate (P2) at (2.55,0);\coordinate (P3) at (0.565,1.059);\draw (P1) -- (P2) -- (P3) -- cycle;\mbrwmarke{(P3)}{(P1)}{(P2)}
+\node[font=\small,anchor=north] at (1.27,-0.08) {$r$};\node[font=\small,anchor=south east] at (0.25,0.56) {$p$};\node[font=\small,anchor=south west] at (1.60,0.56) {$q$};\end{tikzpicture}\par\smallskip
+{\small b)\ gesucht: $q$}\par\smallskip
+\linie{30mm}\par\medskip\linie{30mm}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.32\linewidth}\centering
+\begin{tikzpicture}[line width=0.7pt,scale=0.85]\coordinate (A) at (0,1.5);\coordinate (B) at (0,0);\coordinate (C) at (2.4,0);\draw (A) -- (B) -- (C) -- cycle;\mbrwmarke{(B)}{(C)}{(A)}
+\node[font=\small,anchor=south] at (A) {$A$};\node[font=\small,anchor=north east] at (B) {$B$};\node[font=\small,anchor=north west] at (C) {$C$};\end{tikzpicture}\par\smallskip
+{\small c)\ gesucht: $\overline{BC}$}\par\smallskip
+\linie{30mm}\par\medskip\linie{30mm}
+\end{minipage}
+\fusshilfe{\mbox{3:~b) $q^2 = r^2 - p^2$; c) $\overline{BC}^2 = \overline{AC}^2 - \overline{AB}^2$}}
+\end{pfaufg}
+
+% L2k-3, zweiter Teil: dieselbe Umstellung mit Wurzel, unter Fallen wählen (2024 · 1 · f ganz)
+\begin{pfaufg}{P10 ’24}{4.}{}
+Im Dreieck sind $y$ und $z$ die Katheten, $x$ ist die Hypotenuse. Kreuze die Gleichung an, mit der man die Länge von $z$ berechnen kann.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.85]\coordinate (P1) at (0,0);\coordinate (P2) at (2.6,0);\coordinate (P3) at (0,1.6);\draw (P1) -- (P2) -- (P3) -- cycle;\mbrwmarke{(P1)}{(P2)}{(P3)}
+\node[font=\small,anchor=north] at (1.3,-0.08) {$z$};\node[font=\small,anchor=east] at (-0.08,0.8) {$y$};\node[font=\small,anchor=south west] at (1.32,0.83) {$x$};\end{tikzpicture}}{%
+\kk{$z = x^2 - y^2$}\kk{$z = \sqrt{x^2 + y^2}$}\par\medskip
+\kk{$z = x + y$}\kk{$z = \sqrt{x^2 - y^2}$}}
+\fusshilfe{\mbox{4:~$z = \sqrt{x^2 - y^2}$}}
+\end{pfaufg}
+
+% L2k-4 Rechnen mit glatten Zahlen; a) grau vorgerechnet, b) c) selbst; Probe kürzer als die Hypotenuse
+\begin{pfaufg}{}{5.}{}
+Die Hypotenuse und eine Kathete eines rechtwinkligen Dreiecks sind gegeben. Berechne die andere Kathete.\par\medskip
+\grau{a)\ Hypotenuse $10$ cm, Kathete $6$ cm:\quad $a^2 = 10^2 - 6^2 = 100 - 36 = 64$\quad $\Rightarrow$\quad $a = \sqrt{64} = 8$ cm}\par\medskip
+\noindent\begin{minipage}[t]{0.48\linewidth}
+b)\ Hypotenuse $13$ cm, Kathete $5$ cm
+\karo{3}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+c)\ Hypotenuse $25$ cm, Kathete $7$ cm
+\karo{3}
+\end{minipage}
+\par Prüfe dein Ergebnis: Die Kathete ist kürzer als die Hypotenuse.
+\fusshilfe{\mbox{5:~b) 12 cm; c) 24 cm}}
+\end{pfaufg}
+
+% L2k-5 Rechenaufwand erst nach allen Denkschritten, kurz: Wurzel geht nicht auf; Einheiten angleichen
+\begin{pfaufg}{}{6.}{}
+Berechne die fehlende Kathete. Runde, wo nötig, auf eine Stelle nach dem Komma.\par\smallskip
+\noindent\begin{minipage}[t]{0.48\linewidth}
+a)\ Hypotenuse $8$ cm, Kathete $3$ cm
+\karo{3}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+b)\ Hypotenuse $1{,}3$ m, Kathete $50$ cm
+\karo{3}
+\end{minipage}
+\fusshilfe{\mbox{6:~a) 7,4 cm; b) 120 cm}}
+\end{pfaufg}
+
+% L2k-6 Sache: der Schüler zeichnet das Dreieck selbst – erst im Bild ohne Dreieck (Seil nicht gezeichnet),
+% dann auf einer Karte (Punkt gegenüber selbst finden), dann nur Text; Fragen wechseln: reicht es? (nein,
+% K4W hatte ja) · Hypotenuse gesucht, Karte (Kritiker: eine gemischte Aufgabe) · wie hoch, mit Zusatzstrecke
+\begin{pfaufg}{}{7.}{}
+Tim spannt ein Seil von der Spitze der Zeltstange bis zu einem Hering im Boden. Das Seil ist $3{,}4$ m lang. Reicht der Platz bis zum Zaun dafür?
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=1.0]
+\draw (-1.4,0) -- (3.6,0);
+\draw[line width=1.8pt] (0,0) -- (0,1.6);
+\foreach \x in {2.8,3.05,3.3,3.55} {\draw (\x,0) -- (\x,0.9);}
+\draw (2.7,0.75) -- (3.6,0.75);\draw (2.7,0.3) -- (3.6,0.3);
+\node[font=\small,anchor=east] at (-0.05,1.85) {Stange};
+\draw[|-|,line width=0.4pt] (0,-0.35) -- (2.8,-0.35) node[midway,below,font=\small] {$2{,}8$ m};
+\draw[|-|,line width=0.4pt] (0.35,0) -- (0.35,1.6) node[midway,right,font=\small] {$1{,}6$ m};
+\node[font=\small,anchor=south] at (3.15,0.95) {Zaun};
+\end{tikzpicture}}{%
+\karo{3}\par\smallskip\hfill\kk{ja}\kk{nein}}
+\fusshilfe{\mbox{7:~nein, gebraucht werden 3 m}}
+\end{pfaufg}
+
+\begin{pfaufg}{}{8.}{}
+Ein Boot fährt bei $A$ los und will genau gegenüber anlegen. Die Strömung treibt es ab. Es legt bei $B$ an, $90$ m flussabwärts. Wie lang war die Fahrt von $A$ nach $B$?
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.8]
+\fill[black!10] (-0.3,0) rectangle (4.3,2.4);
+\draw (-0.3,0) -- (4.3,0);\draw (-0.3,2.4) -- (4.3,2.4);
+\draw[->,line width=0.5pt] (2.6,1.2) -- (3.6,1.2);\node[font=\scriptsize,anchor=south] at (3.1,1.2) {Strömung};
+\fill (0.6,0) circle (1.8pt) node[font=\small,anchor=north] {$A$};
+\fill (2.4,2.4) circle (1.8pt) node[font=\small,anchor=south] {$B$};
+\draw[|-|,line width=0.4pt] (0.6,2.75) -- (2.4,2.75) node[midway,above,font=\small] {$90$ m};
+\draw[|-|,line width=0.4pt] (-0.65,0) -- (-0.65,2.4) node[midway,left,font=\small] {$120$ m};
+\end{tikzpicture}}{%
+\karo{3}}
+\fusshilfe{\mbox{8:~150 m}}
+\end{pfaufg}
+
+\begin{pfaufg}{}{9.}{}
+Lea lässt einen Drachen steigen. Die Schnur ist $65$ m lang und straff gespannt. Waagerecht gemessen ist der Drachen $39$ m von Lea entfernt. Ihre Hand ist $1$ m über dem Boden. Wie hoch über dem Boden fliegt der Drachen?\par
+Skizziere zuerst die Lage.
+\karo{4}
+\fusshilfe{\mbox{9:~53 m}}
+\end{pfaufg}
+
+% L2k-7 Zielaufgabe (2024 · 6 · a, Punkt C und Teil b weggelassen): Höhe als Kathete, dreistellige Zahlen, Runden
+\begin{pfaufg}{nach P10 ’24}{10.}{}
+Eine Seilbahn fährt von der Talstation $B$ zur Bergstation $A$. Das Seil $\overline{AB}$ ist $384$ m lang. Der Punkt $F$ liegt senkrecht unter $A$. Die Strecke $\overline{FA}$ ist der Höhenunterschied zwischen $B$ und $A$. Berechne diesen Höhenunterschied. Runde auf eine Stelle nach dem Komma.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.8]
+\fill[black!8] (-1.0,0) -- (-0.4,2.2) -- (0,2.87) -- (0.5,2.3) -- (1.1,1.4) -- (1.5,0.6) -- (2.2,0) -- cycle;
+\draw[black!45] (-1.0,0) -- (-0.4,2.2) -- (0,2.87) -- (0.5,2.3) -- (1.1,1.4) -- (1.5,0.6) -- (2.2,0);
+\draw (-1.2,0) -- (4.3,0);
+\coordinate (A) at (0,2.87);\coordinate (F) at (0,0);\coordinate (B) at (3.83,0);
+\draw[dashed] (A) -- (F);\draw (F) -- (B);\draw[line width=1.2pt] (A) -- (B);
+\mbrwmarke{(F)}{(B)}{(A)}
+\node[font=\small,anchor=south] at (A) {$A$};\node[font=\small,anchor=north] at (F) {$F$};\node[font=\small,anchor=north] at (B) {$B$};
+\node[font=\small,anchor=south west] at (2.0,1.45) {$384$ m};
+\node[font=\small,anchor=north] at (1.92,-0.25) {$255$ m};
+\end{tikzpicture}}{%
+\karo{3}}
+\fusshilfe{\mbox{10:~287,1 m}}
+\end{pfaufg}
+
+\blattende{2024 \pkt{} 1 \pkt{} f \quad 2024 \pkt{} 6 \pkt{} a}{Vorher: Hypotenuse berechnen\quad\textbullet\quad Weiter: Das Dreieck erst finden}
+\end{document}

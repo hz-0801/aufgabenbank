@@ -1,0 +1,17 @@
+# Befunde M2 – Prüfstein „Kathete berechnen“ (T6B, 09.10.2026)
+
+Je Zeile ein Befund aus dem Bau, der über diese Einheit hinausgeht; Entscheidung des Agenten in Klammern.
+
+- Lerneinheit 2 trägt im Katalog zwei Blätter (Kathete berechnen; Umkehrung). Die Lernweg-Vorlage kennt nur „Lerneinheit <n>“; Schritt-Kennungen hier „L2k-<n>“, Block „Lerneinheit 2 – Kathete berechnen (erster Teil)“. (Vorschlag: Lerneinheiten im Katalog so schneiden, wie Blätter entstehen – 2a Kathete, 2b Umkehrung.)
+- Das Feld schritt in bank.md ist als "L<einheit>-<n>" definiert; für ein Teilblatt passt das nicht. (L2k-<n> gesetzt, bank.md nicht geändert.)
+- `katalog/_vorlage.md` setzt „Lernweg“ nach „Lerneinheiten“; dort eingefügt verschiebt der Block alle Zeilennummern, und das Bankfeld quelle (Zeilennummer) bricht in allen Zeilen des Eintrags (bank-pruef --katalog: Abweichungen). (Block ans Ende vor „Prüfliste“ gesetzt; Vorschlag: Lernweg in der Vorlage ans Ende oder quelle auf Abschnittsnamen umstellen.)
+- `werkzeuge/bank-pruef.py` kannte die Lernweg-Felder aus bank.md (09.10.) nicht und meldete „unbekanntes Feld“; auch das Feld bild (06.10.) fehlte. (In FELDER_WAHL ergänzt.)
+- bank-pruef verlangt ein einheitliches merkmal je Sprosse; das Merkmal einer neuen Lernweg-Zeile (was sie gegenüber dem vorigen Schritt ändert) passt oft nicht dazu. (Merkmal der Sprosse übernommen; das eigene steht im Lernweg-Block.)
+- Lernweg-Schritte liegen quer zu den Bank-Ketten: L2k-1 (Idee) und L2k-3 (Umstellen) fanden Platz nur in der Pflichtkette k6 (begruenden, darstellung), L2k-6 nutzt k3 s7, s11 und k6 s3. Die Mengenwarnungen des Prüfers (pflicht begruenden 5×, Menge 3) entstehen daraus.
+- Die Bank-Grundfälle k3-s1 v1–v5 haben vierstellige Quadrate (85² − 36²) und die Antwortform „a² = __“ (Bauregel Antwortfeld verbietet sie); als schwach markiert, besser = neue Zeile v6.
+- Bank-Vorstufe k3-s0 „Plus oder minus?“ verrät mit „Kathete gesucht – minus“ die Regel; die Gliederung (A6) wollte sie schon ersetzen. Neue Vorstufe s0-v5 mit Dreiecken in vier Lagen; s0-v1–v4 nicht als schwach markiert, weil sie einen anderen Schritt (Text statt Figur) bedienen.
+- Kein Setzer (`werkzeuge/setzer.py`) vorhanden; Blatt von Hand nach K4W gesetzt. Für M2 („mit einem Setzer-Rohling gesetzt“, Setzzeit) fehlt damit die Messung.
+- Kein Agent-Werkzeug in der Sitzung; der Kritiker lief über `claude -p --model fable` mit Zweck und PDF-Pfaden.
+- Kritiker-Vorschlag „Kasten mit den drei Schritten vor Nr. 5“ nicht übernommen: Bauregel kein Merkkasten (1.5), der Weg steht grau in 5 a). „Antwortsatz und Ansatz mit Streckennamen“ nicht übernommen: Lernblatt ohne Sätze, die nur der Prüfung dienen (4.1); Nr. 10 verlangt die Strecken schon durch die Namen. „Skizze in Nr. 9“ übernommen.
+- Satzfehler nach der letzten Runde: In Nr. 8 berührt die Beschriftung B die Maßlinie „90 m“ (Kompiliergrenze erreicht, nicht mehr nachgesetzt).
+- `werkzeuge/duplikate.py` schreibt `duplikate.md` über alle 73 Einträge neu (Diff ~2000 Zeilen); nicht committet. Gemeldet für die neuen Zeilen nur B-327 (k6-s2-v4/v5, gleicher Bau mit anderen Zahlen, gewollt als „neue Zahlen“).
