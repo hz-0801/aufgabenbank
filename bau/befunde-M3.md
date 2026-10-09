@@ -78,7 +78,8 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
   voraus, dass beide Wege bekannt sind; vorn stünde nur der Weg aus E2.
   Widerspricht dem Wortlaut „Erkennen vor Rechnen“; beim Mischen zweier
   Verfahren gilt eher „Erkennen vor dem gemischten Rechnen“. (So gebaut;
-  am Ende von M3 klären.)
+  am Ende von M3 klären. Kritiker bestätigt (Fable, 09.10.): Reihenfolge
+  bleibt; nach dem Ankreuzen jetzt eine kurze Mischnummer mit Rechnen.)
 - Setzer: Form „frei“ mit Ankreuzzeilen je Teil (L3-5) geht nur über \kk
   im satz.text; die graue Musterzeile a) mit angekreuztem Kästchen
   ($\boxtimes$) steht von Hand im Text. (Wie P9H; hingenommen.)
