@@ -264,3 +264,36 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
   der Sprosse, weil der Prüfer ihn je Sprosse einheitlich verlangt.
 - Probetest ohne Vorrat-leichter (kein Beispiel im Abschnitt); Vorrat
   dort nur gleichwertig.
+
+## Brüche und Dezimalzahlen E1 „Bruch als Anteil“ (QG4, 10.10.2026, Fable-Bau)
+
+- Lage: Der Katalog nennt an der Einheit OS Kl. 5, die P10-Form fragt
+  aber fünf von neun Flächen-Originalen in Prozent (Voraussetzung
+  „Prozent als Hundertstel“, Kl. 7). Blatt auf Klasse 7 gesetzt (Verortung:
+  Oberschule 7–8 regulär). (Entscheidung des Agenten; Lehrer prüft, ob
+  Abschnitt E auf einem Kl.-5-Blatt wegfällt – dann „QG4 ohne E“.)
+- Setzer: `bilder()` nimmt nur ganze tikzpicture-Blöcke; die Bausteine der
+  alten Zeilen (\bruchrechteck, \bruchkreis, \kreisdiagramm) erscheinen in
+  den Sorten tisch/selbst nicht. Die alten E1-Zeilen sind darum in
+  Abschnittsform nicht setzbar, ohne grafik neu zu schreiben. (Alle 67
+  Zeilen mit eigenem TikZ gebaut; setzer.py nicht geändert.)
+- Setzer: Bei TikZ-Gittern mit `x=0.5cm` braucht `grid` die Angabe
+  `step=1`, sonst liegen die Linien bei 1 cm (jedes zweite Kästchen) –
+  Bildkontrolle fing es. Für bauauftrag.md „Zerlegen“ als Hinweis geeignet.
+- Setzer: Die Lösungsseite druckt links ergebnis und rechts loesung;
+  beginnt loesung mit dem Ergebnis (nötig für die Ergebnisstelle des
+  Prüfers), steht es doppelt. (Hingenommen; Vorschlag: weg() schneidet
+  ein führendes ergebnis ab, wie bei Ankreuzoptionen.)
+- Prüfer: Mengenwarnungen wie in M2/3Y5 (k1 s6 trägt jetzt 40 Varianten,
+  Originale bis 10×), weil alle P10-Formen – Prozent, Schraffieren,
+  Sektoren – an einer Prüfungssprosse hängen. Ein Abschnitt „Anteil in
+  Prozent“ hat keine eigene Sprosse; die Lernweg-Felder tragen die
+  Struktur. (Hingenommen.)
+- Katalog: Kein Thema-Weg vorhanden; angelegt mit der Katalogfolge 1–5 und
+  Begründung. Einheit 2 (Kürzen) wird auf diesem Blatt umgangen: Prozent
+  aus der Figur über „Figur : 4 = ein Viertel“ statt Kürzen (9/15 = 3/5).
+  Beim Bau von E2 prüfen, ob 2014-OS-B1i dort die Zielmarke bleibt.
+- Gestrichen aus dem Katalog-Typenvorrat: „Figur mit gegebenem Anteil
+  auswählen“ (2026-FOR-B1b) – kein eigener Abschnitt, keine neue Zeile;
+  die Bank hat drei alte (k1-s4). Beim Nachbestellen „mehr“ fehlt diese
+  Form in TikZ.

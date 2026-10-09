@@ -1,0 +1,62 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% gesetzt von werkzeuge/setzer.py (Sorte selbst) aus dem Lernweg QG4
+% und den Bankzeilen; Muster bau/proben/2026-10-09/hypotenuse-muster.
+\usepackage{enumitem}
+\newgeometry{a4paper,margin=18mm,top=15mm,bottom=20mm,footskip=9mm}
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\footnotesize\color{mbgrau}QG4 \textperiodcentered{} Lösungen \textperiodcentered{} Brüche: der Bruch als Anteil}
+\fancyfoot[R]{\footnotesize\color{mbgrau}\thepage}
+\setlength{\parskip}{3pt}
+\renewcommand{\kreuz}[1]{\mbox{$\square$\ #1}\quad}
+\newcommand{\kreuzl}[1]{\par\hangindent1.4em\hangafter1\noindent$\square$\ #1}
+\newcommand{\aufg}[3]{\par\noindent\makebox[0pt][r]{#3}\begin{minipage}[t]{\linewidth}#1\end{minipage}\par}
+\newcommand{\aufgg}[4]{\par\noindent\makebox[0pt][r]{#4}\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}#1\end{minipage}\hfill
+  \begin{minipage}[t]{0.37\linewidth}\vspace{0pt}\centering #2\end{minipage}\par}
+\newcommand{\nr}[1]{\makebox[7mm][l]{\textbf{#1}}}
+\newcommand{\lsg}[3]{\par\noindent\begin{minipage}[t]{9mm}\textbf{#1}\end{minipage}%
+  \begin{minipage}[t]{52mm}\raggedright\bfseries\boldmath #2\end{minipage}\hspace{3mm}%
+  \begin{minipage}[t]{\dimexpr\linewidth-64mm\relax}\raggedright\small #3\end{minipage}\par\vspace{4pt}}
+\newlength{\kr}
+\begin{document}
+
+\noindent{\Large\bfseries Lösungen}\hspace{1em}{\color{mbgrau}Brüche: der Bruch als Anteil}\par\smallskip
+\noindent{\small Links das Ergebnis, rechts der Weg in kurzen Schritten. Stimmt dein Ergebnis nicht, such den ersten Schritt, der anders ist.}\par
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut A}}\hspace{2mm}{\bfseries Anteil ablesen: Zähler und Nenner}\par\vspace{4pt}
+\lsg{1.}{$\frac{1}{6}$}{$\frac{1}{6}$: 1 von 6 gleich großen Teilen ist grau.}
+\lsg{2.}{$\frac{7}{12}$}{$\frac{7}{12}$: 7 von 12 Kästchen sind grau (nicht 7 von 5: die weißen sind nur der Rest).}
+\lsg{3.}{grau $\frac{4}{10}$, weiß $\frac{6}{10}$}{$\frac{4}{10}$; $\frac{6}{10}$. Grau: 4 von 10 Teilen, weiß: 6 von 10 Teilen; zusammen das Ganze $\frac{10}{10}$.}
+\lsg{4.}{$\frac{13}{24}$}{$\frac{13}{24}$: Mädchen $24 - 11 = 13$; das Ganze sind alle 24 Kinder.}
+\lsg{5.}{In beiden Klassen gleich: je die Hälfte.}{Gleich groß. 7a: $\frac{12}{24} = \frac{1}{2}$; 7b: $\frac{10}{20} = \frac{1}{2}$. In beiden Klassen trägt genau die Hälfte ein rotes Shirt – mehr Kinder heißt nicht größerer Anteil.}
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut B}}\hspace{2mm}{\bfseries Anteil einzeichnen}\par\vspace{4pt}
+\lsg{1.}{5 Teile}{5 Teile färben: Der Streifen hat 8 Teile, also ist jeder Teil ein Achtel.}
+\lsg{2.}{4 Teile}{4 Teile färben: $6 : 3 = 2$ Teile sind ein Drittel, $2 \cdot 2 = 4$ Teile sind zwei Drittel.}
+\lsg{3.}{20 Kästchen}{20 Kästchen schraffieren: $24 : 6 = 4$, $4 \cdot 5 = 20$.}
+\lsg{4.}{1 von 4 gleichen Teilen}{Ein Viertel: das Quadrat in 4 gleich große Teile teilen (zwei Mittellinien oder beide Diagonalen) und einen Teil färben.}
+\lsg{5.}{Ja, es reicht; 3 Felder bleiben frei.}{Ja; Tomaten $20 : 5 \cdot 3 = 12$ Felder, Salat $20 : 4 = 5$ Felder, zusammen $12 + 5 = 17$ Felder; frei bleiben $20 - 17 = 3$ Felder.}
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut C}}\hspace{2mm}{\bfseries Ungleiche Teile: erst gleich groß machen}\par\vspace{4pt}
+\lsg{1.}{$\frac{5}{16}$}{$\frac{5}{16}$: in halben Kästchen zählen – das Rechteck hat 16 halbe Kästchen, grau sind $2 \cdot 2 + 1 = 5$ halbe.}
+\lsg{2.}{$\frac{1}{6}$}{$\frac{1}{6}$: die großen Teile sind doppelt so groß wie die kleinen; in kleine Stücke geteilt hat der Kreis $2 + 2 + 1 + 1 = 6$ Stücke, grau ist 1.}
+\lsg{3.}{$\frac{3}{8}$}{kleinster Sektor ein Achtel; der Kreis hat 8 Achtel, markiert sind $2 + 1 = 3$ Achtel.}
+\lsg{4.}{$\frac{2}{8}$ $= \frac{1}{4}$}{$\frac{1}{4}$: grau sind 1 ganzes Kästchen und 2 halbe, zusammen 2 Kästchen von 8; $\frac{2}{8} = \frac{1}{4}$.}
+\lsg{5.}{$\frac{3}{12}$ $= \frac{1}{4}$, genau ein Viertel}{$\frac{3}{12}$, genau ein Viertel: in halben Stücken gezählt hat die Pizza 12 Stücke, Ben isst $2 + 1 = 3$; $\frac{3}{12} = \frac{1}{4}$.}
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut D}}\hspace{2mm}{\bfseries Bruchteil einer Zahl oder Größe berechnen}\par\vspace{4pt}
+\lsg{1.}{15\,min}{15\,min: $40 : 8 = 5$; $5 \cdot 3 = 15$.}
+\lsg{2.}{$1{,}5$\,l}{$1{,}5$\,l: $1{,}8 : 6 = 0{,}3$; $0{,}3 \cdot 5 = 1{,}5$.}
+\lsg{3.}{32\,l}{32\,l: gefüllt $80 : 5 \cdot 3 = 48$\,l; es fehlen $80 - 48 = 32$\,l (gefragt ist der Rest, nicht die Füllmenge).}
+\lsg{4.}{1\,750\,m}{1\,750\,m: $2{,}5$\,km $= 2\,500$\,m; $2\,500 : 10 = 250$; $250 \cdot 7 = 1\,750$.}
+\lsg{5.}{Ja: Rest $0{,}25$\,l, genau ein Viertelliter.}{Ja, genau: $0{,}75 : 3 = 0{,}25$; $0{,}25 \cdot 2 = 0{,}5$\,l getrunken; Rest $0{,}75 - 0{,}5 = 0{,}25$\,l, das ist genau ein Viertelliter.}
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut E}}\hspace{2mm}{\bfseries Anteil in Prozent}\par\vspace{4pt}
+\lsg{1.}{$\frac{5}{10}$ $= \frac{1}{2} = 50\,\%$}{$\frac{5}{10} = \frac{1}{2} = 50\,\%$: 5 von 10 Teilen, das ist die Hälfte.}
+\lsg{2.}{6 Kästchen}{6 Kästchen markieren: $20\,\% = \frac{1}{5}$; $30 : 5 = 6$.}
+\lsg{3.}{$\frac{15}{20}$ $= \frac{3}{4} = 75\,\%$}{$\frac{15}{20} = \frac{3}{4} = 75\,\%$: $20 : 4 = 5$ Kästchen sind ein Viertel, 15 Kästchen sind drei Viertel.}
+\lsg{4.}{2 Kästchen}{2 Kästchen markieren: $10\,\% = \frac{1}{10}$; $20 : 10 = 2$.}
+\lsg{5.}{Nein: $75\,\%$ belegt, unter $80\,\%$.}{Nein: $\frac{30}{40} = \frac{3}{4} = 75\,\%$ ($40 : 4 = 10$ Plätze sind ein Viertel, 30 Plätze drei Viertel); $75\,\% < 80\,\%$.}
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut T}}\hspace{2mm}{\bfseries Probetest}\par\vspace{4pt}
+\lsg{1.}{$\frac{8}{20}$ $= \frac{2}{5} = 40\,\%$}{$\frac{8}{20} = \frac{2}{5} = 40\,\%$: $20 : 5 = 4$ Kästchen sind ein Fünftel ($20\,\%$), 8 Kästchen sind zwei Fünftel.}
+\lsg{2.}{$\frac{4}{8}$}{kleinster Sektor ein Achtel; markiert sind $2 + 1 + 1 = 4$ Achtel – die Hälfte.}
+\lsg{3.}{15 Kästchen}{15 Kästchen schraffieren: $25 : 5 = 5$, $5 \cdot 3 = 15$.}
+\lsg{4.}{150\,l}{150\,l: gefüllt $900 : 6 \cdot 5 = 750$\,l; es passen noch $900 - 750 = 150$\,l hinein.}
+\lsg{5.}{2\,000\,g}{2\,000\,g: $3{,}2$\,kg $= 3\,200$\,g; $3\,200 : 8 = 400$; $400 \cdot 5 = 2\,000$.}
+\lsg{6.}{Nein: 290\,l, es bleiben 10\,l Platz.}{Nein: gefüllt $300 : 5 \cdot 4 = 240$\,l; $240 + 50 = 290$\,l, das sind 10\,l weniger als 300\,l.}
+\end{document}
