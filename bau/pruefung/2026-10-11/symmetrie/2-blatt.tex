@@ -1,0 +1,54 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Prüfungsblatt nach mathe-nachhilfe pruefung.md § 5 (Runde Dreiecke, 11.10.2026), Hand-Satz; Präambel des Setzers.
+\input{praeambel}
+\newcommand{\kennung}{NUB}
+\newcommand{\figbox}[2]{\begin{minipage}[b]{0.24\linewidth}\centering{\footnotesize #1}\par\smallskip #2\par\smallskip\linie{10mm}\ Achsen\end{minipage}}
+
+\begin{document}
+\pfheftstil
+\pfheftkopf[\kennung]{Symmetrie}{P10}
+
+\Needspace*{0.25\textheight}\pfstufekopf{Symmetrieachsen zählen}{geprüft 2025 \pkt{} 2022}
+
+% Bank symmetrie-abbildungen-e2-k2-s2-v3, s3-v1, s3-v3, s4-v3 (Päckchen: eine, zwei, drei, keine Achse)
+\begin{pfaufg}{}{1.}{}
+Wie viele Symmetrieachsen hat das Dreieck oder das Viereck?\par\medskip\noindent
+\figbox{a) gleichschenklig}{\begin{tikzpicture}[line width=0.7pt,scale=0.42]\draw (0,0) -- (3,0) -- (1.5,3.6) -- cycle;\end{tikzpicture}}\hfill
+\figbox{b) Raute}{\begin{tikzpicture}[line width=0.7pt,scale=0.42]\draw (0,1.6) -- (2.2,0) -- (4.4,1.6) -- (2.2,3.2) -- cycle;\end{tikzpicture}}\hfill
+\figbox{c) gleichseitig}{\begin{tikzpicture}[line width=0.7pt,scale=0.42]\draw (0,0) -- (3.6,0) -- (1.8,3.118) -- cycle;\end{tikzpicture}}\hfill
+\figbox{d) alle Seiten verschieden}{\begin{tikzpicture}[line width=0.7pt,scale=0.42]\draw (0,0) -- (4.4,0) -- (1.2,2.8) -- cycle;\end{tikzpicture}}
+\fusshilfe{\mbox{1:~a) 1; b) 2; c) 3; d) 0}}
+\end{pfaufg}
+
+% Bank symmetrie-abbildungen-e2-k2-s4-v1 (Fragerichtung umgekehrt, ohne Bild)
+\begin{pfaufg}{}{2.}{}
+Kreuze an, welches Viereck keine Symmetrieachse hat.\par\smallskip
+\pfkreuz{A}{Rechteck}\pfkreuz{B}{Parallelogramm}\pfkreuz{C}{Raute}
+\fusshilfe{\mbox{2:~B}}
+\end{pfaufg}
+
+% 2022-OS-B1i, herausgelöst (eigener Wortlaut; vier statt sechs Optionen, gemeinsam.md „Satz“)
+\begin{pfaufg}{nach~P10\\’22~\pkt{}~1i}{3.}{}
+Diese Figur ist ein gleichschenkliges Trapez. Kreuze an, wie viele Symmetrieachsen die Figur hat.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.9]\filldraw[fill=black!15] (0,0) -- (3,0) -- (2.5,1.6) -- (0.5,1.6) -- cycle;\end{tikzpicture}}{%
+\pfkreuz{A}{0}\pfkreuz{B}{1}\pfkreuz{C}{2}\pfkreuz{D}{4}}
+\fusshilfe{\mbox{3:~B}}
+\end{pfaufg}
+
+% 2025-OS-K2a, herausgelöst (nur die Symmetrieachsen; BF und AB im Blatt „Länge mit Pythagoras“, Maße weggelassen)
+\begin{pfaufg}{nach~P10\\’25~\pkt{}~2a}{4.}{}
+Die Figur zeigt das Drachenviereck $ABCD$. Seine Diagonalen $\overline{AC}$ und $\overline{BD}$ schneiden sich im Punkt $F$ im rechten Winkel. Kreuze an, wie viele Symmetrieachsen das Drachenviereck hat.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.042]
+\coordinate (A) at (-25,0);\coordinate (C) at (25,0);\coordinate (D) at (0,25);\coordinate (B) at (0,-55);\coordinate (F) at (0,0);
+\draw (A) -- (B) -- (C) -- (D) -- cycle;\draw[dashed] (A) -- (C);\draw[dashed] (B) -- (D);\mbrwmarke{(F)}{(C)}{(D)}
+\node[font=\small,anchor=east] at (A) {$A$};\node[font=\small,anchor=north] at (B) {$B$};\node[font=\small,anchor=west] at (C) {$C$};\node[font=\small,anchor=south] at (D) {$D$};\node[font=\small,anchor=north east] at (F) {$F$};
+\end{tikzpicture}}{%
+\pfkreuz{A}{0}\pfkreuz{B}{1}\pfkreuz{C}{2}\pfkreuz{D}{4}}
+\fusshilfe{\mbox{4:~B}}
+\end{pfaufg}
+
+\pfblattende{11}{26 FOR & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17 & 16}%
+{ & 2a & & & 1i & 1j & & & & & }%
+{Weiter: Flächeninhalt und Umfang}
+\end{document}
