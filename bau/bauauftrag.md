@@ -20,8 +20,14 @@ Aus der Bestellung; fehlt sie, gilt die Standardlage:
 
 Der Schüler soll (1) sehen, was alles dazugehört, und (2) jede Fertigkeit
 allein lernen und üben können, bis zur Zielaufgabe. Erfolgskriterium: Ein
-unsicherer Schüler kommt ohne Hilfe durch jeden Abschnitt. Wenig Text,
-nichts Nebulöses. Jedes Element muss ihm nützen; im Zweifel weglassen.
+unsicherer Schüler kommt ohne Hilfe durch jeden Abschnitt. Brille: der
+schwache Schüler, der oft scheitert und nur bestehen will. Wenig Text,
+nichts Nebulöses. Lieber mehr Aufgaben; jedes Element muss dem Schüler
+nützen. Keine Seitengrenze.
+
+Maß für das Tischblatt (tisch-alt): T6B und M74 ohne Nr. 2 und 3
+(`bau/proben/2026-10-09/hypotenuse-berechnen/2-blatt.pdf`); so nachgerüstet:
+H7U (`bau/proben/2026-10-10/nachruest-test/`).
 
 ## Eingaben – sparsam
 
@@ -40,16 +46,31 @@ Nur mit grep/awk/Python-Filter, nie ganze große Dateien:
    typischen Zielaufgaben – was muss er dafür können, in welcher Folge?
    Plan aufschreiben (plan.md im Bauordner). Den Thema-Weg prüfen,
    ergänzen, umordnen, auch um Ungenanntes, das zur Zielaufgabe gehört.
-2. **Je Abschnitt** (etwa eine Seite): Kennung (A, B, …); ein Merksatz –
-   ein klarer Satz, höchstens zwei; Formel; ein vollständig vorgerechnetes
-   Beispiel in Schritten, knapp, mit Skizze, wo sie hilft; 3–5 Aufgaben
-   von leicht bis Zielniveau, jede Stufe ändert eine Sache; erst erkennen
-   und aufstellen, dann rechnen. Ein roter Faden ist erlaubt.
-3. **Ziel**: Jeder Abschnitt und das Ganze (Probetest am Ende) enden mit
-   einer Aufgabe, in der der Schüler das Modell selbst erkennt (kein
-   gezeichnetes Dreieck, keine vorgegebene Gleichung) und danach
-   entscheidet oder vergleicht (reicht es? passt es? um wie viel?).
-   Gegenbeispiel: ein fertiges Dreieck mit bloßer Geschichte drumherum.
+2. **Je Abschnitt**: Kennung (A, B, …); ein Merksatz – ein klarer Satz,
+   höchstens zwei; Formel; ein vollständig vorgerechnetes Beispiel in
+   Schritten, mit Skizze, wo sie hilft – schritte nur die Rechnung, die
+   erklärenden Sätze ins Feld erklaerung (nur Selbstlernheft; im
+   Tischblatt steht als graues a) nur die Rechnung, knapp wie M74);
+   Aufgaben von leicht bis Zielniveau, jede Stufe ändert eine Sache, jede
+   trägt stufe (basis, kern, ziel; bank.md).
+   - **Erkennen zuerst:** Die erste Stufe des Lernwegs fragt nur „Wo ist
+     …, welche … ist …?“ an mehreren Figuren in verschiedener Lage, ohne
+     Rechnen (wie M74 Nr. 1); dann aufstellen, dann rechnen.
+   - **Päckchen:** je Rechenschritt eine Nummer mit 3–6 Teilaufgaben
+     (bank.md paeckchen, teil, probe; im Block mit „+“ verbunden), a)
+     grau vorgerechnet, Rest selbst, mit Probe, wo sinnvoll (wie M74
+     Nr. 4/6, T6B Nr. 5). Zerfällt ein Verfahren in Schritte, erst je
+     Schritt ein Päckchen (nur Schritt 1, nur Schritt 2), dann beide.
+   - **Einstieg wirklich leicht:** je Schritt beginnt es mit basis: ein
+     Schritt, kleine Zahlen, teils vorgemacht.
+3. **Ziel**: Die Denk-Sach-Aufgaben, in denen der Schüler das Modell
+   selbst erkennt (kein gezeichnetes Dreieck, keine vorgegebene
+   Gleichung) und danach entscheidet oder vergleicht (reicht es? passt
+   es? um wie viel?), stehen gesteigert am Ende des Lernwegs, die
+   stärkste zuletzt (wie M74 Nr. 7/8) – nicht mitten im Blatt. Ein
+   Abschnitt davor darf mit einer kleineren Zielaufgabe enden. Am Ende
+   muss kein Original stehen. Gegenbeispiel: ein fertiges Dreieck mit
+   bloßer Geschichte drumherum.
 4. **Nicht:** Rätsel- oder Herleitungsbilder (Quadrate zählen,
    Zerlegungsbeweis), Fehler-finden-Aufgaben, Merkkasten neben dem
    Beispiel, vorgegebene Ergebnisform, die einen Schritt erspart.
@@ -67,7 +88,8 @@ Nur mit grep/awk/Python-Filter, nie ganze große Dateien:
 - **Bank** `bank/<eintrag>/e<n>.jsonl`: jede Aufgabe, jedes Beispiel und
   jeder Vorrat als Zeile im Format von `bank.md` (in die passende Kette
   und Sprosse, neue Variante), mit den Lernweg-Feldern und abschnitt,
-  rolle, modell_selbst_finden, ergebnis, schritte (Beispiel). Blattzeilen
+  rolle, modell_selbst_finden, ergebnis, stufe, schritte und erklaerung
+  (Beispiel), paeckchen, teil, probe (Päckchen). Blattzeilen
   status gut erst nach dem Kritiker; Vorrat ohne status.
 - **Lernweg-Block** im Katalog unter „Lernweg“ in der Form `abschnitte`
   (Muster: `katalog/pythagoras.md`, Lerneinheit 1, Kennung H7U): Kopf

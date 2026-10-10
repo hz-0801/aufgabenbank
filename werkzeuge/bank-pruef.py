@@ -157,11 +157,14 @@ FELDER_WAHL = ["herkunft", "ruht", "bild",
                "satz",
                # neue Form (bau/bauauftrag.md 10.10.2026, bank.md)
                "abschnitt", "rolle", "modell_selbst_finden", "ergebnis",
-               "schritte"]  # herkunft seit bank.md 6. Fassung (Blatt-Chats); ruht seit 06.10.
+               "schritte",
+               # Nachrüstung H7U (bank.md, 10.10.2026)
+               "stufe", "erklaerung", "paeckchen", "teil", "probe"]  # herkunft seit bank.md 6. Fassung (Blatt-Chats); ruht seit 06.10.
 # („kopie von <id>“, werkzeuge/vielfalt.py: stillgelegte Kopie, nicht gelöscht)
 FELDER_BASIS = ["ergebnis", "tipp", "ist_original", "verfremdung",
                 "vorstufe"]  # v0.14, nur bank/_basis/
 VERFREMDUNG = ["form", "kontext", "zahlen"]
+STUFEN = ["basis", "kern", "ziel"]  # Feld stufe (bank.md)
 HOEHEN = ["vorstufe", "grundfall", "sprosse", "pruefung", "pflicht"]
 PFLICHT = ["fehler", "begruenden", "darstellung", "anwendung"]
 FORMEN = ["teil", "gleichungsraster", "dreisatz", "streifenfeld",
@@ -907,6 +910,12 @@ def pruefe_zeile(a, eintrag, einheit, ctx=None, basis=False):
             b.append("verfremdung genau dann, wenn ist_original")
     if extra:
         b.append("unbekanntes Feld: " + ", ".join(sorted(extra)))
+    if "stufe" in a and a["stufe"] not in STUFEN:
+        b.append(f"stufe {a['stufe']!r} unbekannt")
+    if "erklaerung" in a and not (
+            isinstance(a["erklaerung"], list)
+            and len(a["erklaerung"]) == len(a.get("schritte") or [])):
+        b.append("erklaerung keine Liste so lang wie schritte")
     if a["eintrag"] != eintrag:
         b.append(f"eintrag {a['eintrag']!r} statt {eintrag!r}")
     if a["einheit"] != einheit:

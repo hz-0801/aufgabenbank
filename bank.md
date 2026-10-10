@@ -245,6 +245,25 @@ Zeilen in Abschnittsform brauchen kein satz; der Setzer
 loesung und schritte. Ankreuzoptionen stehen als \kreuz{…} in aufgabe,
 ohne Satzbefehle; loesung beginnt mit der gewählten Option.
 
+Dazu seit 10.10.2026 (Nachrüstung H7U; Wahlfelder, `werkzeuge/setzer.py`):
+
+    stufe         an jeder Lernweg-Aufgabe: "basis" (ein Schritt, kleine
+                  Zahlen, teils vorgemacht) | "kern" | "ziel"
+                  (Prüfungsniveau P10)
+    erklaerung    nur neben schritte: Liste gleich lang wie schritte;
+                  Eintrag i ist der erklärende Satz zu Schritt i ("" =
+                  keiner). Das Selbstlernheft setzt ihn vor die
+                  Rechnung; im Tischblatt (tisch-alt) steht nur die
+                  Rechnung aus schritte
+    paeckchen     Auftrag einer Nummer mit Teilaufgaben, an der ersten
+                  Zeile des Päckchens (im Lernweg-Block mit „+“
+                  verbunden); eine Zeile mit rolle beispiel darin wird
+                  das graue a)
+    teil          kurzer Text der Zeile als Teilaufgabe im Päckchen
+                  („Katheten 5\,cm und 12\,cm“); aufgabe bleibt der
+                  vollständige Auftrag
+    probe         Satz nach dem Päckchen (Probe), an einer seiner Zeilen
+
 ## Mengen je Kette
 
 Ziel (Beschluss 05.10.): 12 Aufgaben je Kern-Stufe, 6 je übriger

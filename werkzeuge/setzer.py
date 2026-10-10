@@ -31,6 +31,8 @@ Sorten (--sorte, Vorgabe tisch-alt):
 - tisch-alt: wie bisher (Muster T6B/M74): Nummern, Lösungen im Fuß,
   Vorher/Weiter; tisch-alt-uebersicht, tisch-alt, tisch-alt-loesungen.
   Aus Abschnitten: das Beispiel als grau vorgerechnetes a) vor der ersten Aufgabe.
+  Mit „+“ verbundene Zeilen mit paeckchen: eine Nummer a), b), c) …
+  (graues a) nur die Rechnung aus schritte, ohne erklaerung).
 - tisch: kompakt je Abschnitt (Muster Prüfstein tisch.pdf), ohne
   Beispiel und Formel; tisch, tisch-loesungen.
 - selbst: Übersicht mit „kann ich“, Formel auf einen Blick, je
@@ -210,10 +212,14 @@ def lies_abschnitte(block, titel, serie, praefix):
             c = zellen_von(z)
             leer = lambda s: "" if s in ("–", "-") else s  # noqa: E731
             ids = lambda s: [i for i in re.split(r"[,\s]+", leer(s)) if i]  # noqa: E731,E501
+            # „+“ verbindet Bankzeilen zu einer Nummer (Päckchen)
+            gruppen = [[i.strip() for i in g.split("+") if i.strip()]
+                       for g in leer(c[5]).split(",") if g.strip()]
             lw["abschnitte"].append(dict(
                 id=c[0], buchstabe=c[0][len(praefix):], name=c[1],
                 satz=leer(c[2]), formel=leer(c[3]), beispiel=leer(c[4]),
-                aufgaben=ids(c[5]), vorrat=ids(c[6]) if len(c) > 6 else []))
+                aufgaben=[i for g in gruppen for i in g], gruppen=gruppen,
+                vorrat=ids(c[6]) if len(c) > 6 else []))
     if not lw["abschnitte"]:
         sys.exit(f"Block in Abschnittsform ohne Zeilen {praefix}…")
     return lw
@@ -642,20 +648,132 @@ def loes_bild(a):
 
 
 def gruppen_abschnitte(lw):
-    """Nummern für tisch-alt: Beispiel + erste Aufgabe, dann je eine."""
+    """Nummern für tisch-alt: je Gruppe („+“) eine Nummer; das Beispiel
+    des Abschnitts vor die erste, wenn es in keiner Gruppe steht."""
     gruppen, von = [], {}
     for ab in lw["abschnitte"]:
-        for k, i in enumerate(ab["aufgaben"]):
-            g = [ab["beispiel"], i] if k == 0 and ab["beispiel"] else [i]
+        drin = ab["beispiel"] in ab["aufgaben"]
+        for k, g in enumerate(ab["gruppen"]):
+            if k == 0 and ab["beispiel"] and not drin:
+                g = [ab["beispiel"]] + g
             gruppen.append(g)
             for x in g:
                 von[x] = f"{ab['id']}: {ab['name']}"
     return gruppen, von
 
 
+def ist_paeckchen(zeilen):
+    """Päckchen: die erste Zeile der Nummer trägt paeckchen (bank.md)."""
+    return bool(zeilen and zeilen[0].get("paeckchen"))
+
+
+def rechnung(a):
+    """Grau vorgerechnet, knapp: nur die Rechnung (schritte), ohne
+    erklaerung; in einer Zeile mit ⇒."""
+    return "\\quad$\\Rightarrow$\\quad ".join(a.get("schritte", []))
+
+
+def erklaert(a):
+    """schritte mit den erklärenden Sätzen davor (nur Selbstlernheft)."""
+    erk = a.get("erklaerung") or [""] * len(a.get("schritte", []))
+    return [(f"{e}\\newline {s}" if e else s)
+            for e, s in zip(erk, a.get("schritte", []))]
+
+
+def paeckchen_tex(zeilen, karo=True, grau=True, erkl=False, start=0,
+                  kopf=None):
+    """Rumpf eines Päckchens (bank.md paeckchen, teil, probe): Kopf,
+    grau vorgerechnete Teile (rolle beispiel), dann die Teile zum
+    Selbstrechnen – mit Bild in Spalten zu dritt, sonst zu zweit (Karo
+    bei antwortform rechnen, sonst Linie). Gibt (tex, [(marke, zeile)]
+    der offenen Teile) zurück."""
+    if not grau:
+        zeilen = [a for a in zeilen if a.get("rolle") != "beispiel"]
+    if kopf is None:
+        kopf = zeilen[0].get("paeckchen", "") if zeilen else ""
+    out = [kopf]
+    marken = [(BUCHST[start + i] + ")", a) for i, a in enumerate(zeilen)]
+    offen = [(m, a) for m, a in marken if a.get("rolle") != "beispiel"]
+    text = lambda a: a.get("teil") or optionen(a["aufgabe"])[0]  # noqa: E731
+
+    def grauteil(m, a, mitbild):
+        r = rechnung(a)
+        e = [x for x in (a.get("erklaerung") or []) if x] if erkl else []
+        zus = ("\\par{\\small " + " ".join(e) + "}") if e else ""
+        if mitbild:
+            return f"\\grau{{\\small {m}\\ {r}}}{zus}"
+        return f"\\grau{{{m}\\ {a.get('teil', '')}:\\quad {r}}}{zus}"
+
+    # Spalten mit Bild nur, wenn jeder offene Teil ein Bild hat; sonst
+    # Text-Päckchen (das Bild des grauen Beispiels fällt dort weg).
+    if offen and all(bild(a) for _, a in offen):
+        out[0] += "\\par\\medskip"
+        spalten = []
+        for m, a in marken:
+            _, opts = optionen(a["aufgabe"])
+            if a.get("rolle") == "beispiel":
+                inhalt = grauteil(m, a, True)
+            elif opts:
+                inhalt = (f"{{\\small {m}\\ }}"
+                          + "".join(f"\\kk{{{o}}}" for o in opts))
+            else:
+                inhalt = f"{{\\small {m}\\ {text(a)}}}\\linie{{20mm}}"
+            spalten.append("\\begin{minipage}[b]{0.32\\linewidth}\\centering\n"
+                           f"{bild(a)}\\par\\smallskip\n{inhalt}\n"
+                           "\\end{minipage}")
+        for i in range(0, len(spalten), 3):
+            reihe = spalten[i:i + 3]
+            reihe += ["\\begin{minipage}[b]{0.32\\linewidth}\\end{minipage}"
+                      ] * (3 - len(reihe))
+            out.append("\\par\\noindent" + "\\hfill\n".join(reihe)
+                       + "\\par\\medskip")
+    else:
+        out[0] += "\\par\\smallskip"
+        for m, a in marken:
+            if a.get("rolle") == "beispiel":
+                out.append(grauteil(m, a, False) + "\\par\\medskip")
+        teile = [(m, a) for m, a in marken if a.get("rolle") != "beispiel"]
+        # Karo je Teil: so viele Rechenschritte wie im grauen Beispiel
+        # plus einer, höchstens 3 (Bauregel 6.9: n Schritte = n mal 10 mm)
+        vor = [a for a in zeilen if a.get("rolle") == "beispiel"]
+        n = min(3, len(vor[0].get("schritte", [])) + 1) if vor else 3
+        for i in range(0, len(teile), 2):
+            paar = []
+            for m, a in teile[i:i + 2]:
+                if a.get("antwortform", "rechnen") == "rechnen" and karo:
+                    rest = f"\n\\karo{{{n}}}"
+                elif a.get("antwortform", "rechnen") == "rechnen":
+                    rest = ""
+                else:
+                    rest = "\\linie{25mm}"
+                paar.append("\\begin{minipage}[t]{0.48\\linewidth}"
+                            "\\raggedright\n"
+                            f"{m}\\ {text(a)}{rest}\n\\end{{minipage}}")
+            out.append("\\noindent" + "\\hfill\n".join(paar)
+                       + "\\par\\smallskip")
+    probe = next((a["probe"] for a in zeilen if a.get("probe")), None)
+    if probe:
+        out.append(f"\\par{{\\small {probe}}}")
+    return "\n".join(out), offen
+
+
 def setze_nummer_neu(nr, zeilen, kommentar):
     """Nummer aus Bankzeilen ohne satz (tisch-alt): ein Beispiel wird
-    grau vorgerechnetes a), die Aufgabe b) mit Karo."""
+    grau vorgerechnetes a) – nur die Rechnung, ohne erklaerung –, die
+    Aufgabe b) mit Karo; ein Päckchen (paeckchen) a), b), c) …"""
+    if ist_paeckchen(zeilen):
+        rumpf, offen = paeckchen_tex(zeilen)
+        fuss = "; ".join(f"{m} {kurz(a.get('ergebnis', a['loesung']))}"
+                         for m, a in offen)
+        lz = [f"\\lz{{{(str(nr) + m) if k == 0 else m}}}"
+              f"{{{a.get('ergebnis', '')}}}{{{weg(a)}{loes_bild(a)}}}{{}}"
+              for k, (m, a) in enumerate(offen)]
+        return ("\n".join([f"% {kommentar}",
+                           f"\\begin{{pfaufg}}{{}}{{{nr}.}}{{}}", rumpf,
+                           f"\\fusshilfe{{\\mbox{{{nr}:~{fuss}}}}}",
+                           "\\end{pfaufg}"]),
+                "\\begin{pfloesung}{}\n" + "\n".join(lz)
+                + "\n\\end{pfloesung}")
     bsp = [a for a in zeilen if a.get("rolle") == "beispiel"]
     auf = [a for a in zeilen if a.get("rolle") != "beispiel"]
     out = [f"% {kommentar}", f"\\begin{{pfaufg}}{{}}{{{nr}.}}{{}}"]
@@ -707,6 +825,9 @@ PRAEAMBEL_NEU = r"""\documentclass[11pt]{article}
 \fancyfoot[R]{\footnotesize\color{mbgrau}\thepage}
 \setlength{\parskip}{3pt}
 \renewcommand{\kreuz}[1]{\mbox{$\square$\ #1}\quad}
+\providecommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\providecommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\providecommand{\grau}[1]{{\color{mbgrau}#1}}
 \newcommand{\kreuzl}[1]{\par\hangindent1.4em\hangafter1\noindent$\square$\ #1}
 \newcommand{\aufg}[3]{\par\noindent\makebox[0pt][r]{#3}\begin{minipage}[t]{\linewidth}#1\end{minipage}\par}
 \newcommand{\aufgg}[4]{\par\noindent\makebox[0pt][r]{#4}\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}#1\end{minipage}\hfill
@@ -774,6 +895,40 @@ def zeilen_von(ab, bank):
     return [bank[i] for i in ab["aufgaben"]]
 
 
+def nummern_von(ab, bank, sorte):
+    """Nummern eines Abschnitts für tisch und selbst: [(kopf, zeilen)];
+    kopf ist der Päckchenkopf (sonst None). Das Beispiel des Abschnitts
+    fällt heraus (selbst zeigt es oben; tisch hat keins); tisch lässt
+    auch die grauen Teile der Päckchen weg."""
+    zeilen_von(ab, bank)
+    aus = []
+    for g in ab["gruppen"]:
+        roh = [bank[i] for i in g]
+        if ist_paeckchen(roh):
+            z = [a for a in roh if a["id"] != ab["beispiel"] and not (
+                sorte == "tisch" and a.get("rolle") == "beispiel")]
+            probe = next((x["probe"] for x in roh if x.get("probe")), None)
+            if z and probe and not any(x.get("probe") for x in z):
+                z[0] = dict(z[0], probe=probe)
+            aus.append((roh[0]["paeckchen"], z))
+        else:
+            aus += [(None, [a]) for a in roh if a.get("rolle") != "beispiel"]
+    return aus
+
+
+def nummer_tex(kopf, zeilen, nummer, sorte):
+    """Eine Nummer für tisch/selbst: Päckchen eingerückt unter der
+    Nummer, sonst wie bisher \\aufg."""
+    if kopf is None:
+        return aufgabe_tex(zeilen[0], nummer)
+    rumpf, _ = paeckchen_tex(zeilen, karo=False, erkl=sorte == "selbst",
+                             kopf=kopf)
+    ziel = ZIEL if any(a.get("rolle") == "ziel" for a in zeilen) else ""
+    return (f"\\aufg{{\\nr{{{nummer}}}\\begin{{minipage}}[t]{{\\dimexpr"
+            f"\\linewidth-7mm\\relax}}{rumpf}\\end{{minipage}}}}{{}}"
+            f"{{{ziel}}}\n\\medskip")
+
+
 def titel_von(lw):
     return lw.get("titel_blatt") or \
         f"{lw['titel']}: {lw['name']}"
@@ -794,8 +949,8 @@ def tex_tisch(lw, kennung, bank):
         t.append("\\par\\Needspace{25mm}\\noindent\\colorbox{black!12}{"
                  f"\\makebox[7mm]{{\\bfseries\\strut {ab['buchstabe']}}}}}"
                  f"\\hspace{{2mm}}{{\\bfseries {ab['name']}}}\\par\\smallskip")
-        for k, a in enumerate(zeilen_von(ab, bank), 1):
-            t.append(aufgabe_tex(a, f"{ab['buchstabe']}{k}"))
+        for k, (kopf, z) in enumerate(nummern_von(ab, bank, "tisch"), 1):
+            t.append(nummer_tex(kopf, z, f"{ab['buchstabe']}{k}", "tisch"))
     return "\n".join(t) + "\n\\end{document}\n"
 
 
@@ -874,7 +1029,7 @@ def tex_selbst(lw, kennung, bank):
             schritte = "".join(
                 "\\par\\noindent\\hangindent6mm\\hangafter1\\makebox[6mm][l]"
                 f"{{\\textbf{{{i}}}}}{s}\\par\\smallskip"
-                for i, s in enumerate(b.get("schritte", []), 1))
+                for i, s in enumerate(erklaert(b), 1))
             g = bild(b)
             if g:
                 t.append("\\noindent\\begin{minipage}[t]{0.6\\linewidth}"
@@ -889,8 +1044,8 @@ def tex_selbst(lw, kennung, bank):
                  f"{{mbgrau}}\\karohinweis{{{bu}}}{{Rechne unten im Karo.}}"
                  "{Rechne auf einem extra Blatt.} Vergleiche jede Aufgabe "
                  "gleich mit dem Lösungsheft.}\\par\\smallskip")
-        for k, a in enumerate(zeilen_von(ab, bank), 1):
-            t.append(aufgabe_tex(a, f"{k}."))
+        for k, (kopf, z) in enumerate(nummern_von(ab, bank, "selbst"), 1):
+            t.append(nummer_tex(kopf, z, f"{k}.", "selbst"))
         t.append(KARO_REST % bu)
     return "\n".join(t) + "\n\\end{document}\n"
 
@@ -910,10 +1065,18 @@ def tex_loesungen_neu(lw, kennung, bank, sorte):
         t.append("\\par\\Needspace{25mm}\\vspace{6pt}\\noindent\\colorbox"
                  f"{{black!12}}{{\\makebox[7mm]{{\\bfseries\\strut {bu}}}}}"
                  f"\\hspace{{2mm}}{{\\bfseries {ab['name']}}}\\par\\vspace{{4pt}}")
-        for k, a in enumerate(zeilen_von(ab, bank), 1):
+        for k, (kopf, z) in enumerate(nummern_von(ab, bank, sorte), 1):
             nummer = f"{bu}{k}" if sorte == "tisch" else f"{k}."
-            t.append(f"\\lsg{{{nummer}}}{{{a.get('ergebnis', '')}}}"
-                     f"{{{weg(a)}{loes_bild(a)}}}")
+            if kopf is None:
+                teile = [("", z[0])]
+            else:
+                teile = [(BUCHST[i] + ")", a) for i, a in enumerate(z)
+                         if a.get("rolle") != "beispiel"]
+            for j, (m, a) in enumerate(teile):
+                n = (nummer.rstrip(".") + m if m else nummer) if j == 0 \
+                    else m
+                t.append(f"\\lsg{{{n}}}{{{a.get('ergebnis', '')}}}"
+                         f"{{{weg(a)}{loes_bild(a)}}}")
     return "\n".join(t) + "\n\\end{document}\n"
 
 
