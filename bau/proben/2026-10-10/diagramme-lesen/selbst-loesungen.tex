@@ -1,0 +1,55 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% gesetzt von werkzeuge/setzer.py (Sorte selbst) aus dem Lernweg T74
+% und den Bankzeilen; Muster bau/proben/2026-10-09/hypotenuse-muster.
+\usepackage{enumitem}
+\usepackage{adjustbox,varwidth}
+\newgeometry{a4paper,margin=18mm,top=15mm,bottom=20mm,footskip=9mm}
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\footnotesize\color{mbgrau}T74 \textperiodcentered{} Lösungen \textperiodcentered{} Diagramme lesen und zeichnen}
+\fancyfoot[R]{\footnotesize\color{mbgrau}\thepage}
+\setlength{\parskip}{3pt}
+\renewcommand{\kreuz}[1]{\mbox{$\square$\ #1}\quad}
+\newcommand{\kreuzl}[1]{\par\hangindent1.4em\hangafter1\noindent$\square$\ #1}
+\newcommand{\aufg}[3]{\par\noindent\makebox[0pt][r]{#3}\begin{minipage}[t]{\linewidth}#1\end{minipage}\par}
+\newcommand{\aufgg}[4]{\par\noindent\makebox[0pt][r]{#4}\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}#1\end{minipage}\hfill
+  \begin{minipage}[t]{0.37\linewidth}\vspace{0pt}\centering #2\end{minipage}\par}
+\newcommand{\nr}[1]{\makebox[7mm][l]{\textbf{#1}}}
+\newcommand{\lsg}[3]{\par\noindent\begin{minipage}[t]{9mm}\textbf{#1}\end{minipage}%
+  \begin{minipage}[t]{52mm}\raggedright\bfseries\boldmath #2\end{minipage}\hspace{3mm}%
+  \begin{minipage}[t]{\dimexpr\linewidth-64mm\relax}\raggedright\small #3\end{minipage}\par\vspace{4pt}}
+\newlength{\kr}
+\makeatletter
+\newcommand{\karomerk}[2]{\protected@write\@auxout{}{\string\karoseite{#1}{#2}{\thepage}}}
+\newcommand{\karoseite}[3]{\expandafter\xdef\csname karo@#1@#2\endcsname{#3}}
+\newcommand{\karohinweis}[3]{\karomerk{h}{#1}\ifcsname karo@k@#1\endcsname
+  \ifnum\csname karo@k@#1\endcsname=0\csname karo@h@#1\endcsname\relax#2\else#3\fi
+  \else#3\fi}
+\makeatother
+\begin{document}
+
+\noindent{\Large\bfseries Lösungen}\hspace{1em}{\color{mbgrau}Diagramme lesen und zeichnen}\par\smallskip
+\noindent{\small Links das Ergebnis, rechts der Weg in kurzen Schritten. Stimmt dein Ergebnis nicht, such den ersten Schritt, der anders ist.}\par
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut A}}\hspace{2mm}{\bfseries Säulen ablesen}\par\vspace{4pt}
+\lsg{1.}{\mbox{a) $10$} \mbox{b) $25$} \mbox{c) $0{,}1$}}{a) $50 : 5 = 10$; b) $100 : 4 = 25$; c) $1 : 10 = 0{,}1$}
+\lsg{2.}{Ben $6$, Cem $14$ Bücher}{ein Kästchen: $10 : 5 = 2$; Ben: $3 \cdot 2 = 6$; Cem: $10 + 2 \cdot 2 = 14$}
+\lsg{3.}{\mbox{a) $35\,000$} \mbox{b) $120\,000$} \mbox{c) $2\,500$}}{a) $35 \cdot 1000 = 35\,000$; b) $120 \cdot 1000 = 120\,000$; c) $2{,}5 \cdot 1000 = 2\,500$}
+\lsg{4.}{Ja, im Juli $13\,000$ Gäste}{Ja; im Juli kamen $13 \cdot 1000 = 13\,000$ Gäste, mehr als $12\,000$.}
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut B}}\hspace{2mm}{\bfseries Werte vergleichen und auswählen}\par\vspace{4pt}
+\lsg{1.}{$50$ Punkte}{Gelb $90$, Blau $40$: $90 - 40 = 50$}
+\lsg{2.}{Montag und Freitag}{Mo $175$, Fr $200$; Dienstag mit genau $150$ zählt nicht.}
+\lsg{3.}{$150$\,€ (Mi, Fr, Sa)}{$150$\,€; mehr als $120$ Karten: Mi $140$, Fr $180$, Sa $200$ (Di mit genau $120$ zählt nicht); $3 \cdot 50 = 150$}
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut C}}\hspace{2mm}{\bfseries Liniendiagramme lesen}\par\vspace{4pt}
+\lsg{1.}{$6$\,°C; $7$\,°C wärmer}{Mittwoch $6$\,°C; $13 - 6 = 7$\,°C wärmer}
+\lsg{2.}{2022, $10$ weniger}{2022: $30 - 20 = 10$ Mitglieder weniger}
+\lsg{3.}{im Juni (um $30$\,cm gesunken)}{Im Juni: $70 - 40 = 30$\,cm, mehr als $20$\,cm. Im Mai sank er nur um $90 - 70 = 20$\,cm.}
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut D}}\hspace{2mm}{\bfseries Säulen zeichnen und Achse einteilen}\par\vspace{4pt}
+\lsg{1.}{Balken $9$ Kästchen lang (bis $45$)}{Balken Mi $9$ Kästchen lang; ein Kästchen: $20 : 4 = 5$; $45 : 5 = 9$\par\smallskip \adjustbox{max width=\linewidth,max height=4cm}{\begin{varwidth}{50cm}\begin{tikzpicture}[x=0.0700cm,y=0.55cm,line width=0.6pt]\draw[mbgitter,line width=0.3pt] (0,0) -- (0,4.4);\draw[mbgitter,line width=0.3pt] (5,0) -- (5,4.4);\draw[mbgitter,line width=0.3pt] (10,0) -- (10,4.4);\draw[mbgitter,line width=0.3pt] (15,0) -- (15,4.4);\draw[mbgitter,line width=0.3pt] (20,0) -- (20,4.4);\draw[mbgitter,line width=0.3pt] (25,0) -- (25,4.4);\draw[mbgitter,line width=0.3pt] (30,0) -- (30,4.4);\draw[mbgitter,line width=0.3pt] (35,0) -- (35,4.4);\draw[mbgitter,line width=0.3pt] (40,0) -- (40,4.4);\draw[mbgitter,line width=0.3pt] (45,0) -- (45,4.4);\draw[mbgitter,line width=0.3pt] (50,0) -- (50,4.4);\draw[mbgitter,line width=0.3pt] (55,0) -- (55,4.4);\draw[mbgitter,line width=0.3pt] (60,0) -- (60,4.4);\draw[black!45,line width=0.3pt] (0,0) -- (0,4.4);\node[below,font=\small,inner sep=3pt] at (0,0) {0};\draw[black!45,line width=0.3pt] (20,0) -- (20,4.4);\node[below,font=\small,inner sep=3pt] at (20,0) {20};\draw[black!45,line width=0.3pt] (40,0) -- (40,4.4);\node[below,font=\small,inner sep=3pt] at (40,0) {40};\draw[black!45,line width=0.3pt] (60,0) -- (60,4.4);\node[below,font=\small,inner sep=3pt] at (60,0) {60};\filldraw[fill=mbkasten,draw=black,line width=0.7pt] (0,3.70) rectangle (30,4.30);\node[left,font=\small,inner sep=4pt] at (0,4) {Mo};\filldraw[fill=mbkasten,draw=black,line width=0.7pt] (0,2.70) rectangle (50,3.30);\node[left,font=\small,inner sep=4pt] at (0,3) {Di};\filldraw[fill=mbkasten,draw=black,line width=0.7pt] (0,1.70) rectangle (45,2.30);\node[left,font=\small,inner sep=4pt] at (0,2) {Mi};\filldraw[fill=mbkasten,draw=black,line width=0.7pt] (0,0.70) rectangle (25,1.30);\node[left,font=\small,inner sep=4pt] at (0,1) {Do};\draw[-{Stealth[length=2mm]}] (0,0) -- (72.000,0) node[below right,font=\small,inner sep=2pt] {Gäste};\draw[-{Stealth[length=2mm]}] (0,0) -- (0,4.7);\end{tikzpicture}\end{varwidth}}}
+\lsg{2.}{B $105$, C $75$ Stimmen}{ein Kästchen: $60 : 4 = 15$; B: $7 \cdot 15 = 105$; C: $5 \cdot 15 = 75$}
+\lsg{3.}{\mbox{a) Schwimmen} \mbox{b) $3$ Kästchen hoch}}{a) Schwimmen: ein Kästchen $240 : 8 = 30$; $6 \cdot 30 = 180$; b) $90 : 30 = 3$ Kästchen\par\smallskip \adjustbox{max width=\linewidth,max height=4cm}{\begin{varwidth}{50cm}\saeulenab[ymax=9,ystep=1,yfein=1,ylabel=Mitglieder,hoehe=1.9,breite=0.8,ohnezahlen]{Fußball/8,Schwimmen/6,Tennis/3}\end{varwidth}}}
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut T}}\hspace{2mm}{\bfseries Probetest}\par\vspace{4pt}
+\lsg{1.}{$2\,500$ Fahrgäste}{$2\,500$; ein Kästchen: $1 : 2 = 0{,}5$; $2 + 0{,}5 = 2{,}5$; $2{,}5 \cdot 1000 = 2\,500$}
+\lsg{2.}{Di und Do; $40$ mehr}{Dienstag und Donnerstag ($90$ und $70$; Montag mit genau $60$ zählt nicht); $90 - 50 = 40$ Brötchen mehr}
+\lsg{3.}{im März, $3$\,kg}{im März: $7 - 4 = 3$\,kg}
+\lsg{4.}{\mbox{a) $8$ Kästchen hoch} \mbox{b) $45$\,€ mehr}}{a) ein Kästchen: $90 : 6 = 15$; $120 : 15 = 8$ Kästchen; b) Di: $5 \cdot 15 = 75$; $120 - 75 = 45$\,€\par\smallskip \adjustbox{max width=\linewidth,max height=4cm}{\begin{varwidth}{50cm}\saeulenab[ymax=9,ystep=1,yfein=1,ylabel=Einnahmen,hoehe=1.9,breite=0.8,ohnezahlen]{Mo/6,Di/5,Sa/8}\end{varwidth}}}
+\end{document}

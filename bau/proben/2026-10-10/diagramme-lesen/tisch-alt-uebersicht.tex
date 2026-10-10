@@ -1,0 +1,28 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% gesetzt von werkzeuge/setzer.py; Übersicht nach bau/bauregeln.md „Übersicht und Serie“.
+\newcommand{\kennung}{T74}
+\newcommand{\bereich}[1]{\par\addvspace{14pt}\noindent{\large\bfseries #1}\par\nobreak\vspace{4pt}}
+\newcommand{\bl}[1]{\par\noindent #1\par\vspace{3pt}}
+\newcommand{\blrand}[1]{\par\noindent{\color{mbgrau}#1}\par\vspace{3pt}}
+\newcommand{\blhier}[1]{\par\noindent\llap{$\blacktriangleright$\hspace{0.5em}}\textbf{#1}\par\vspace{3pt}}
+\begin{document}
+\pfheftstil
+\fancyfoot[C]{{\footnotesize\color{mbgrau}\kennung\hfill\thepage}}
+\pfheftkopf{Daten}{Klasse 6}
+
+\bereich{Vorher}
+\bl{Zahlen ordnen und Skalen ablesen}
+
+\bereich{Daten darstellen}
+\bl{Häufigkeiten}
+\blhier{Säulen-, Balken- und Liniendiagramme}
+\bl{Streifen- und Kreisdiagramm}
+
+\bereich{Daten auswerten}
+\bl{Kenngrößen}
+\bl{Diagramme beurteilen und Boxplot}
+
+\bereich{Weiter}
+\bl{Vierfeldertafel}
+\end{document}

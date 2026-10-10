@@ -536,3 +536,26 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
 - Thema-Weg trägt: Zehnerbruch vor Zahlenstrahl vor Erweitern vor
   Teilen. Achtel über Division statt Erweitern auf 1000; Vergleichen
   bleibt in E5 und kommt in E4 nur über die Sache (Gramm, Zeiten) vor.
+## Daten E2 „Säulen-, Balken- und Liniendiagramme“ (T74, 10.10.2026)
+
+- Erster Bau des Themas: Thema-Weg und Lernweg in katalog/daten.md neu.
+  A Säulen ablesen, B Werte vergleichen und auswählen, C Liniendiagramme
+  lesen, D Säulen zeichnen und Achse einteilen, T. Selbstlernheft
+  6 Seiten, Lösungen 2. Kritiker offen.
+- Ziele wechseln die Antwortform: Preis ja/nein (A), Betrag aus Anzahl
+  Tage (B), welcher Monat? (C), zuordnen und zeichnen (D), zeichnen und
+  um wie viel (T).
+- Rechenplatz: Mit Diagrammen von 3 cm hatten A, C, D keinen Karo mehr
+  (9 Seiten). Säulen und Linien auf 1,9 cm, höchstens 12 Hilfslinien;
+  Kästchenwert-Aufgaben als einzeilige Päckchen ohne Bild.
+- `\balkenab` (mathblatt.sty) setzt je Kategorie mindestens 0,73 cm und
+  ordnet die erste Kategorie unten an; in der rechten Spalte zu hoch,
+  und „Mo“ unten liest sich verkehrt. Balken darum als eigenes TikZ
+  (0,55 cm je Zeile, erste oben). Vorschlag: Schlüssel zeilenhoehe und
+  Reihenfolge oben→unten in `\balkenab`.
+- Setzer: Jede Sorte schreibt 1-uebersicht/2-blatt/3-loesungen in
+  denselben Ordner; die zweite Sorte überschreibt die erste. Umbenannt
+  nach dem Satz.
+- bank-pruef: 0 Abweichungen (Mengenwarnungen k2 s0–s12 aus Blatt- und
+  Vorratszeilen wie bei den anderen Bauten); duplikate.py: keine neue
+  id betroffen.

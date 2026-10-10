@@ -1,0 +1,138 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% gesetzt von werkzeuge/setzer.py (Sorte selbst) aus dem Lernweg T74
+% und den Bankzeilen; Muster bau/proben/2026-10-09/hypotenuse-muster.
+\usepackage{enumitem}
+\usepackage{adjustbox,varwidth}
+\newgeometry{a4paper,margin=18mm,top=15mm,bottom=20mm,footskip=9mm}
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\footnotesize\color{mbgrau}T74 \textperiodcentered{} Diagramme lesen und zeichnen}
+\fancyfoot[R]{\footnotesize\color{mbgrau}\thepage}
+\setlength{\parskip}{3pt}
+\renewcommand{\kreuz}[1]{\mbox{$\square$\ #1}\quad}
+\newcommand{\kreuzl}[1]{\par\hangindent1.4em\hangafter1\noindent$\square$\ #1}
+\newcommand{\aufg}[3]{\par\noindent\makebox[0pt][r]{#3}\begin{minipage}[t]{\linewidth}#1\end{minipage}\par}
+\newcommand{\aufgg}[4]{\par\noindent\makebox[0pt][r]{#4}\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}#1\end{minipage}\hfill
+  \begin{minipage}[t]{0.37\linewidth}\vspace{0pt}\centering #2\end{minipage}\par}
+\newcommand{\nr}[1]{\makebox[7mm][l]{\textbf{#1}}}
+\newcommand{\lsg}[3]{\par\noindent\begin{minipage}[t]{9mm}\textbf{#1}\end{minipage}%
+  \begin{minipage}[t]{52mm}\raggedright\bfseries\boldmath #2\end{minipage}\hspace{3mm}%
+  \begin{minipage}[t]{\dimexpr\linewidth-64mm\relax}\raggedright\small #3\end{minipage}\par\vspace{4pt}}
+\newlength{\kr}
+\makeatletter
+\newcommand{\karomerk}[2]{\protected@write\@auxout{}{\string\karoseite{#1}{#2}{\thepage}}}
+\newcommand{\karoseite}[3]{\expandafter\xdef\csname karo@#1@#2\endcsname{#3}}
+\newcommand{\karohinweis}[3]{\karomerk{h}{#1}\ifcsname karo@k@#1\endcsname
+  \ifnum\csname karo@k@#1\endcsname=0\csname karo@h@#1\endcsname\relax#2\else#3\fi
+  \else#3\fi}
+\makeatother
+\begin{document}
+
+\noindent{\LARGE\bfseries Diagramme lesen und zeichnen}\par\smallskip
+\noindent{\small\color{mbgrau}Selbstlernheft Klasse 6 \textperiodcentered{} mit Lösungsheft \textperiodcentered{} Kennung T74}\par\medskip
+\noindent\textbf{So nutzt du das Heft:} Lies im Abschnitt das Beispiel. Rechne dann die Aufgaben der Reihe nach und vergleiche jede sofort mit dem Lösungsheft. Kreuze „kann ich“ an, wenn du die letzte Aufgabe (\emph{Ziel}) allein schaffst.\par
+\noindent Mehr Aufgaben zu einem Abschnitt: Kennung deinem Nachhilfelehrer schicken (z.\,B. „T74 mehr B“).\par\medskip
+{\arrayrulecolor{mbgrau}\renewcommand{\arraystretch}{1.3}
+\noindent\begin{tabular}{|>{\bfseries}p{10mm}|p{112mm}|>{\raggedleft\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{14mm}|}\hline
+\rowcolor{black!8} & \textbf{Abschnitt} & \textbf{Seite} & \textbf{kann ich}\\\hline
+A & Säulen ablesen & \pageref{s:A} & $\square$\\\hline
+B & Werte vergleichen und auswählen & \pageref{s:B} & $\square$\\\hline
+C & Liniendiagramme lesen & \pageref{s:C} & $\square$\\\hline
+D & Säulen zeichnen und Achse einteilen & \pageref{s:D} & $\square$\\\hline
+T & Probetest & \pageref{s:T} & $\square$\\\hline
+\end{tabular}}\par\bigskip
+
+\begin{tcolorbox}[colback=mbkasten,colframe=mbgrau,boxrule=0.5pt,arc=1mm,left=3mm,right=3mm,top=2mm,bottom=2mm,title={\bfseries Formel auf einen Blick},coltitle=black,colbacktitle=black!10]
+{\Large Kästchenwert $=$ Abstand zweier Zahlen an der Achse $:$ Zahl der Kästchen dazwischen}\par\medskip
+In Worten: Ein Kästchen reicht von einer Hilfslinie bis zur nächsten. Erst wenn du weißt, wie viel es wert ist, kannst du ablesen und zeichnen.\par\medskip
+\textbf{So gehst du vor}\par
+\nr{1}Achse lesen: Was wird gezählt, in welcher Einheit?\par
+\nr{2}Kästchenwert bestimmen\par
+\nr{3}ablesen oder zeichnen, dann rechnen\par
+\nr{4}Antwort mit Einheit\par
+\medskip
+\end{tcolorbox}
+\medskip\noindent\textbf{Typische Fehler – so nicht}\par\smallskip
+\noindent\nr{$\times$}Säule ohne Namen nach der Reihenfolge der Tabelle zugeordnet. Richtig: erst ihren Wert ausrechnen, dann zuordnen.\par
+\noindent\nr{$\times$}Beim Balkendiagramm die Zahlen links gesucht. Bei Balken stehen die Zahlen unten.\par
+\clearpage\label{s:A}\noindent\colorbox{black!12}{\makebox[10mm]{\Large\bfseries\strut A}}\hspace{3mm}{\Large\bfseries Säulen ablesen}\par\smallskip
+\noindent Bevor du einen Wert abliest, bestimmst du, wie viel ein Kästchen wert ist. Steht an der Achse „in Tausend“, ist jede Zahl mal $1000$ gemeint.\par\medskip
+\noindent\textbf{Formel}\par\nopagebreak\noindent\hspace*{4mm}\begin{minipage}{\dimexpr\linewidth-4mm\relax}Wert $=$ Zahl an der Linie darunter $+$ Kästchen darüber $\cdot$ Kästchenwert\end{minipage}\par\medskip
+\noindent\textbf{Beispiel}\quad Das Säulendiagramm zeigt, wie viele Kinder an vier Tagen ins Hallenbad kamen. Wie viele Kinder kamen am Mittwoch?\par\smallskip
+\noindent\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{1}}Von $0$ bis $20$ sind es $4$ Kästchen: $20 : 4 = 5$. Ein Kästchen ist $5$ Kinder wert.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{2}}Die Säule Mittwoch endet $1$ Kästchen über der $40$.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{3}}$40 + 5 = 45$. Am Mittwoch kamen $45$ Kinder.\par\smallskip\end{minipage}\hfill
+\begin{minipage}[t]{0.37\linewidth}\vspace{0pt}\centering \adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\saeulenab[ymax=60,ystep=20,yfein=5,ylabel=Kinder,hoehe=1.9,breite=0.8]{Mo/35,Di/50,Mi/45,Do/25}\end{varwidth}}\end{minipage}\par\medskip
+\noindent\textbf{Aufgaben}\hspace{1em}{\small\color{mbgrau}\karohinweis{A}{Rechne unten im Karo.}{Rechne auf einem extra Blatt.} Vergleiche jede Aufgabe gleich mit dem Lösungsheft.}\par\smallskip
+\aufg{\hangindent7mm\hangafter1\nr{1.}Wie viel ist ein Kästchen wert?\par\vspace{3pt} a)~$0$ bis $50$: $5$ Kästchen \quad b)~$0$ bis $100$: $4$ Kästchen \quad c)~$0$ bis $1$: $10$ Kästchen}{}{}
+\medskip
+\aufgg{\hangindent7mm\hangafter1\nr{2.}Das Säulendiagramm zeigt, wie viele Bücher vier Kinder in den Ferien gelesen haben. Lies ab, wie viele Bücher Ben und wie viele Cem gelesen hat.}{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\saeulenab[ymax=20,ystep=10,yfein=2,ylabel=Bücher,hoehe=1.9,breite=0.8]{Anna/12,Ben/6,Cem/14,Dana/10}\end{varwidth}}}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{3.}An der Achse eines Säulendiagramms steht „Besucher in Tausend“. Wie viele Besucher zeigt die Säule? Schreibe die Zahl vollständig.\par\vspace{3pt} a)~Die Säule endet bei $35$. \quad b)~bei $120$. \quad c)~bei $2{,}5$.}{}{}
+\medskip
+\aufgg{\hangindent7mm\hangafter1\nr{4.}Ein Freibad bekommt einen Preis der Stadt, wenn in einem Monat mehr als $12\,000$ Gäste kamen. Das Säulendiagramm zeigt die Gäste im Sommer. Bekommt das Freibad den Preis? Begründe mit einem Wert.}{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\saeulenab[ymax=15,ystep=5,yfein=1,ylabel=Gäste in Tausend,hoehe=1.9,breite=0.8]{Mai/6,Juni/11,Juli/13,Aug/9}\end{varwidth}}}{}{{\scriptsize\color{mbgrau}Ziel\hspace{2mm}}}
+\medskip
+\par\vspace{3mm}\setlength{\kr}{\dimexpr\pagegoal-\pagetotal-10mm\relax}%
+\ifdim\kr>12mm\karomerk{k}{A}\noindent{\scriptsize\color{mbgrau}Platz zum Rechnen}\par\nointerlineskip\vspace{1mm}\noindent
+\begin{tikzpicture}\clip (0,0) rectangle ({\linewidth-0.5mm},\kr);\draw[black!16,line width=0.3pt,step=5mm] (0,0) grid (\linewidth,\kr);\end{tikzpicture}\fi\par
+\clearpage\label{s:B}\noindent\colorbox{black!12}{\makebox[10mm]{\Large\bfseries\strut B}}\hspace{3mm}{\Large\bfseries Werte vergleichen und auswählen}\par\smallskip
+\noindent Zum Vergleichen liest du erst jeden Wert ab, dann rechnest du. „Mehr als $150$“ heißt: Genau $150$ zählt nicht mit.\par\medskip
+\noindent\textbf{Formel}\par\nopagebreak\noindent\hspace*{4mm}\begin{minipage}{\dimexpr\linewidth-4mm\relax}Unterschied $=$ größerer Wert $-$ kleinerer Wert\end{minipage}\par\medskip
+\noindent\textbf{Beispiel}\quad Das Balkendiagramm zeigt, wie viele Seiten vier Kinder in einer Woche gelesen haben. Wer hat am meisten gelesen, wer am wenigsten? Wie viele Seiten liegen dazwischen?\par\smallskip
+\noindent\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{1}}Von $0$ bis $100$ sind es $5$ Kästchen: Ein Kästchen ist $20$ Seiten wert.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{2}}Längster Balken: Mia, $200 + 20 = 220$ Seiten. Kürzester Balken: Tom, $4 \cdot 20 = 80$ Seiten.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{3}}$220 - 80 = 140$. Mia hat $140$ Seiten mehr gelesen als Tom.\par\smallskip\end{minipage}\hfill
+\begin{minipage}[t]{0.37\linewidth}\vspace{0pt}\centering \begin{tikzpicture}[x=0.0175cm,y=0.55cm,line width=0.6pt]\draw[mbgitter,line width=0.3pt] (0,0) -- (0,4.4);\draw[mbgitter,line width=0.3pt] (20,0) -- (20,4.4);\draw[mbgitter,line width=0.3pt] (40,0) -- (40,4.4);\draw[mbgitter,line width=0.3pt] (60,0) -- (60,4.4);\draw[mbgitter,line width=0.3pt] (80,0) -- (80,4.4);\draw[mbgitter,line width=0.3pt] (100,0) -- (100,4.4);\draw[mbgitter,line width=0.3pt] (120,0) -- (120,4.4);\draw[mbgitter,line width=0.3pt] (140,0) -- (140,4.4);\draw[mbgitter,line width=0.3pt] (160,0) -- (160,4.4);\draw[mbgitter,line width=0.3pt] (180,0) -- (180,4.4);\draw[mbgitter,line width=0.3pt] (200,0) -- (200,4.4);\draw[mbgitter,line width=0.3pt] (220,0) -- (220,4.4);\draw[mbgitter,line width=0.3pt] (240,0) -- (240,4.4);\draw[black!45,line width=0.3pt] (0,0) -- (0,4.4);\node[below,font=\small,inner sep=3pt] at (0,0) {0};\draw[black!45,line width=0.3pt] (100,0) -- (100,4.4);\node[below,font=\small,inner sep=3pt] at (100,0) {100};\draw[black!45,line width=0.3pt] (200,0) -- (200,4.4);\node[below,font=\small,inner sep=3pt] at (200,0) {200};\filldraw[fill=mbkasten,draw=black,line width=0.7pt] (0,3.70) rectangle (160,4.30);\node[left,font=\small,inner sep=4pt] at (0,4) {Lea};\filldraw[fill=mbkasten,draw=black,line width=0.7pt] (0,2.70) rectangle (80,3.30);\node[left,font=\small,inner sep=4pt] at (0,3) {Tom};\filldraw[fill=mbkasten,draw=black,line width=0.7pt] (0,1.70) rectangle (220,2.30);\node[left,font=\small,inner sep=4pt] at (0,2) {Mia};\filldraw[fill=mbkasten,draw=black,line width=0.7pt] (0,0.70) rectangle (140,1.30);\node[left,font=\small,inner sep=4pt] at (0,1) {Jan};\draw[-{Stealth[length=2mm]}] (0,0) -- (300.000,0) node[below right,font=\small,inner sep=2pt] {Seiten};\draw[-{Stealth[length=2mm]}] (0,0) -- (0,4.7);\end{tikzpicture}\end{minipage}\par\medskip
+\noindent\textbf{Aufgaben}\hspace{1em}{\small\color{mbgrau}\karohinweis{B}{Rechne unten im Karo.}{Rechne auf einem extra Blatt.} Vergleiche jede Aufgabe gleich mit dem Lösungsheft.}\par\smallskip
+\aufgg{\hangindent7mm\hangafter1\nr{1.}Das Balkendiagramm zeigt die Punkte von vier Teams beim Schulquiz. Wie viele Punkte hat das beste Team mehr als das schlechteste?}{\begin{tikzpicture}[x=0.0420cm,y=0.55cm,line width=0.6pt]\draw[mbgitter,line width=0.3pt] (0,0) -- (0,4.4);\draw[mbgitter,line width=0.3pt] (10,0) -- (10,4.4);\draw[mbgitter,line width=0.3pt] (20,0) -- (20,4.4);\draw[mbgitter,line width=0.3pt] (30,0) -- (30,4.4);\draw[mbgitter,line width=0.3pt] (40,0) -- (40,4.4);\draw[mbgitter,line width=0.3pt] (50,0) -- (50,4.4);\draw[mbgitter,line width=0.3pt] (60,0) -- (60,4.4);\draw[mbgitter,line width=0.3pt] (70,0) -- (70,4.4);\draw[mbgitter,line width=0.3pt] (80,0) -- (80,4.4);\draw[mbgitter,line width=0.3pt] (90,0) -- (90,4.4);\draw[mbgitter,line width=0.3pt] (100,0) -- (100,4.4);\draw[black!45,line width=0.3pt] (0,0) -- (0,4.4);\node[below,font=\small,inner sep=3pt] at (0,0) {0};\draw[black!45,line width=0.3pt] (50,0) -- (50,4.4);\node[below,font=\small,inner sep=3pt] at (50,0) {50};\draw[black!45,line width=0.3pt] (100,0) -- (100,4.4);\node[below,font=\small,inner sep=3pt] at (100,0) {100};\filldraw[fill=mbkasten,draw=black,line width=0.7pt] (0,3.70) rectangle (70,4.30);\node[left,font=\small,inner sep=4pt] at (0,4) {Rot};\filldraw[fill=mbkasten,draw=black,line width=0.7pt] (0,2.70) rectangle (40,3.30);\node[left,font=\small,inner sep=4pt] at (0,3) {Blau};\filldraw[fill=mbkasten,draw=black,line width=0.7pt] (0,1.70) rectangle (90,2.30);\node[left,font=\small,inner sep=4pt] at (0,2) {Gelb};\filldraw[fill=mbkasten,draw=black,line width=0.7pt] (0,0.70) rectangle (60,1.30);\node[left,font=\small,inner sep=4pt] at (0,1) {Grün};\draw[-{Stealth[length=2mm]}] (0,0) -- (130.000,0) node[below right,font=\small,inner sep=2pt] {Punkte};\draw[-{Stealth[length=2mm]}] (0,0) -- (0,4.7);\end{tikzpicture}}{}{}
+\medskip
+\aufgg{\hangindent7mm\hangafter1\nr{2.}Das Säulendiagramm zeigt die Besucher einer Bücherei an fünf Tagen. An welchen Tagen kamen mehr als $150$ Besucher?}{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\saeulenab[ymax=200,ystep=50,yfein=25,ylabel=Besucher,hoehe=1.9,breite=0.8]{Mo/175,Di/150,Mi/100,Do/125,Fr/200}\end{varwidth}}}{}{}
+\medskip
+\aufgg{\hangindent7mm\hangafter1\nr{3.}Ein Kino zeigt einen neuen Film. Für jeden Tag mit mehr als $120$ verkauften Karten zahlt es dem Filmverleih $50$\,€ extra. Das Säulendiagramm zeigt die verkauften Karten. Wie viel Euro muss das Kino extra zahlen?}{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\saeulenab[ymax=200,ystep=100,yfein=20,ylabel=Karten,hoehe=1.9,breite=0.8]{Mo/80,Di/120,Mi/140,Do/100,Fr/180,Sa/200}\end{varwidth}}}{}{{\scriptsize\color{mbgrau}Ziel\hspace{2mm}}}
+\medskip
+\par\vspace{3mm}\setlength{\kr}{\dimexpr\pagegoal-\pagetotal-10mm\relax}%
+\ifdim\kr>12mm\karomerk{k}{B}\noindent{\scriptsize\color{mbgrau}Platz zum Rechnen}\par\nointerlineskip\vspace{1mm}\noindent
+\begin{tikzpicture}\clip (0,0) rectangle ({\linewidth-0.5mm},\kr);\draw[black!16,line width=0.3pt,step=5mm] (0,0) grid (\linewidth,\kr);\end{tikzpicture}\fi\par
+\clearpage\label{s:C}\noindent\colorbox{black!12}{\makebox[10mm]{\Large\bfseries\strut C}}\hspace{3mm}{\Large\bfseries Liniendiagramme lesen}\par\smallskip
+\noindent Ein Liniendiagramm zeigt, wie sich ein Wert von Zeitpunkt zu Zeitpunkt ändert. Je steiler die Linie zwischen zwei Punkten, desto größer die Änderung.\par\medskip
+\noindent\textbf{Formel}\par\nopagebreak\noindent\hspace*{4mm}\begin{minipage}{\dimexpr\linewidth-4mm\relax}Änderung $=$ späterer Wert $-$ früherer Wert \qquad {\small (Linie steigt: Zunahme; Linie fällt: Abnahme)}\end{minipage}\par\medskip
+\noindent\textbf{Beispiel}\quad Ole spart. Das Liniendiagramm zeigt, wie viel Geld am Ende jedes Monats in seiner Spardose war. In welchem Monat kam am meisten dazu? Wie viel?\par\smallskip
+\noindent\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{1}}Von $0$ bis $20$ sind es $2$ Kästchen: Ein Kästchen ist $10$\,€ wert.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{2}}Am steilsten steigt die Linie von Februar bis März: von $30$\,€ auf $60$\,€.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{3}}$60 - 30 = 30$. Im März kamen $30$\,€ dazu, so viel wie in keinem anderen Monat.\par\smallskip\end{minipage}\hfill
+\begin{minipage}[t]{0.37\linewidth}\vspace{0pt}\centering \adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\liniendia[ymax=100,ystep=20,yfein=10,ylabel=Geld in €,hoehe=1.9,breite=0.8]{Jan/20,Feb/30,Mär/60,Apr/80,Mai/90}\end{varwidth}}\end{minipage}\par\medskip
+\noindent\textbf{Aufgaben}\hspace{1em}{\small\color{mbgrau}\karohinweis{C}{Rechne unten im Karo.}{Rechne auf einem extra Blatt.} Vergleiche jede Aufgabe gleich mit dem Lösungsheft.}\par\smallskip
+\aufgg{\hangindent7mm\hangafter1\nr{1.}Das Liniendiagramm zeigt die Temperatur an fünf Tagen, jeden Morgen um 7 Uhr. Wie warm war es am Mittwoch? Um wie viel Grad wurde es von Mittwoch bis Freitag wärmer?}{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\liniendia[ymax=15,ystep=5,yfein=1,ylabel=Temperatur in °C,hoehe=1.9,breite=0.8]{Mo/4,Di/7,Mi/6,Do/10,Fr/13}\end{varwidth}}}{}{}
+\medskip
+\aufgg{\hangindent7mm\hangafter1\nr{2.}Das Liniendiagramm zeigt die Mitglieder einer Schach-AG am Ende jedes Schuljahres. In welchem Jahr hatte die AG weniger Mitglieder als im Jahr davor? Um wie viele?}{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\liniendia[ymax=40,ystep=10,yfein=5,ylabel=Mitglieder,hoehe=1.9,breite=0.8]{2020/25,2021/30,2022/20,2023/35,2024/40}\end{varwidth}}}{}{}
+\medskip
+\aufgg{\hangindent7mm\hangafter1\nr{3.}Ein Bauer hat einen Wassertank für seine Felder. Das Liniendiagramm zeigt den Wasserstand am Ende jedes Monats. Sinkt der Stand in einem Monat um mehr als $20$\,cm, muss er Wasser nachkaufen. In welchem Monat musste er nachkaufen?}{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\liniendia[ymax=100,ystep=20,yfein=10,ylabel=Stand in cm,hoehe=1.9,breite=0.8]{Apr/90,Mai/70,Juni/40,Juli/30,Aug/20}\end{varwidth}}}{}{{\scriptsize\color{mbgrau}Ziel\hspace{2mm}}}
+\medskip
+\par\vspace{3mm}\setlength{\kr}{\dimexpr\pagegoal-\pagetotal-10mm\relax}%
+\ifdim\kr>12mm\karomerk{k}{C}\noindent{\scriptsize\color{mbgrau}Platz zum Rechnen}\par\nointerlineskip\vspace{1mm}\noindent
+\begin{tikzpicture}\clip (0,0) rectangle ({\linewidth-0.5mm},\kr);\draw[black!16,line width=0.3pt,step=5mm] (0,0) grid (\linewidth,\kr);\end{tikzpicture}\fi\par
+\clearpage\label{s:D}\noindent\colorbox{black!12}{\makebox[10mm]{\Large\bfseries\strut D}}\hspace{3mm}{\Large\bfseries Säulen zeichnen und Achse einteilen}\par\smallskip
+\noindent Zum Zeichnen rechnest du erst aus, wie viele Kästchen hoch die Säule wird. Fehlen die Zahlen an der Achse, findest du den Kästchenwert mit einer Säule, deren Wert du kennst.\par\medskip
+\noindent\textbf{Formel}\par\nopagebreak\noindent\hspace*{4mm}\begin{minipage}{\dimexpr\linewidth-4mm\relax}Kästchen $=$ Wert $:$ Kästchenwert \qquad Kästchenwert $=$ bekannter Wert $:$ Kästchen dieser Säule\end{minipage}\par\medskip
+\noindent\textbf{Beispiel}\quad Eine Bäckerei zeichnet ein Säulendiagramm der verkauften Brote. Am Donnerstag waren es $70$ Brote. Zeichne die Säule für Donnerstag ein.\par\smallskip
+\noindent\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{1}}Von $0$ bis $20$ sind es $2$ Kästchen: Ein Kästchen ist $10$ Brote wert.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{2}}$70 : 10 = 7$. Die Säule wird $7$ Kästchen hoch.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{3}}Die Säule über „Do“ zeichnen, so breit wie die anderen.\par\smallskip\end{minipage}\hfill
+\begin{minipage}[t]{0.37\linewidth}\vspace{0pt}\centering \adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\saeulenab[ymax=100,ystep=20,yfein=10,ylabel=Brote,hoehe=1.9,breite=0.8]{Mo/60,Di/80,Mi/50,Do/70}\end{varwidth}}\end{minipage}\par\medskip
+\noindent\textbf{Aufgaben}\hspace{1em}{\small\color{mbgrau}\karohinweis{D}{Rechne unten im Karo.}{Rechne auf einem extra Blatt.} Vergleiche jede Aufgabe gleich mit dem Lösungsheft.}\par\smallskip
+\aufgg{\hangindent7mm\hangafter1\nr{1.}Das Balkendiagramm zeigt die Gäste eines Cafés. Am Mittwoch kamen $45$ Gäste. Zeichne den Balken für Mittwoch ein.}{\begin{tikzpicture}[x=0.0700cm,y=0.55cm,line width=0.6pt]\draw[mbgitter,line width=0.3pt] (0,0) -- (0,4.4);\draw[mbgitter,line width=0.3pt] (5,0) -- (5,4.4);\draw[mbgitter,line width=0.3pt] (10,0) -- (10,4.4);\draw[mbgitter,line width=0.3pt] (15,0) -- (15,4.4);\draw[mbgitter,line width=0.3pt] (20,0) -- (20,4.4);\draw[mbgitter,line width=0.3pt] (25,0) -- (25,4.4);\draw[mbgitter,line width=0.3pt] (30,0) -- (30,4.4);\draw[mbgitter,line width=0.3pt] (35,0) -- (35,4.4);\draw[mbgitter,line width=0.3pt] (40,0) -- (40,4.4);\draw[mbgitter,line width=0.3pt] (45,0) -- (45,4.4);\draw[mbgitter,line width=0.3pt] (50,0) -- (50,4.4);\draw[mbgitter,line width=0.3pt] (55,0) -- (55,4.4);\draw[mbgitter,line width=0.3pt] (60,0) -- (60,4.4);\draw[black!45,line width=0.3pt] (0,0) -- (0,4.4);\node[below,font=\small,inner sep=3pt] at (0,0) {0};\draw[black!45,line width=0.3pt] (20,0) -- (20,4.4);\node[below,font=\small,inner sep=3pt] at (20,0) {20};\draw[black!45,line width=0.3pt] (40,0) -- (40,4.4);\node[below,font=\small,inner sep=3pt] at (40,0) {40};\draw[black!45,line width=0.3pt] (60,0) -- (60,4.4);\node[below,font=\small,inner sep=3pt] at (60,0) {60};\filldraw[fill=mbkasten,draw=black,line width=0.7pt] (0,3.70) rectangle (30,4.30);\node[left,font=\small,inner sep=4pt] at (0,4) {Mo};\filldraw[fill=mbkasten,draw=black,line width=0.7pt] (0,2.70) rectangle (50,3.30);\node[left,font=\small,inner sep=4pt] at (0,3) {Di};\node[left,font=\small,inner sep=4pt] at (0,2) {Mi};\filldraw[fill=mbkasten,draw=black,line width=0.7pt] (0,0.70) rectangle (25,1.30);\node[left,font=\small,inner sep=4pt] at (0,1) {Do};\draw[-{Stealth[length=2mm]}] (0,0) -- (72.000,0) node[below right,font=\small,inner sep=2pt] {Gäste};\draw[-{Stealth[length=2mm]}] (0,0) -- (0,4.7);\end{tikzpicture}}{}{}
+\medskip
+\aufgg{\hangindent7mm\hangafter1\nr{2.}Bei der Wahl zur Schülersprecherin stehen an der Achse keine Zahlen. Die Säule A steht für $60$ Stimmen. Wie viele Stimmen bekamen B und C?}{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\saeulenab[ymax=9,ystep=1,yfein=1,ylabel=Stimmen,hoehe=1.9,breite=0.8,ohnezahlen]{A/4,B/7,C/5}\end{varwidth}}}{}{}
+\medskip
+\aufgg{\hangindent7mm\hangafter1\nr{3.}Ein Sportverein hat so viele Mitglieder: Fußball $240$, Turnen $150$, Tennis $90$, Schwimmen $180$. Im Säulendiagramm fehlen die Zahlen an der Achse.\par\vspace{3pt} a)~Zu welcher Sportart gehört die Säule ohne Namen?\par b)~Zeichne die Säule für Tennis ein.}{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\saeulenab[ymax=9,ystep=1,yfein=1,ylabel=Mitglieder,hoehe=1.9,breite=0.8,ohnezahlen]{Fußball/8,?/6,Tennis/}\end{varwidth}}}{}{{\scriptsize\color{mbgrau}Ziel\hspace{2mm}}}
+\medskip
+\par\vspace{3mm}\setlength{\kr}{\dimexpr\pagegoal-\pagetotal-10mm\relax}%
+\ifdim\kr>12mm\karomerk{k}{D}\noindent{\scriptsize\color{mbgrau}Platz zum Rechnen}\par\nointerlineskip\vspace{1mm}\noindent
+\begin{tikzpicture}\clip (0,0) rectangle ({\linewidth-0.5mm},\kr);\draw[black!16,line width=0.3pt,step=5mm] (0,0) grid (\linewidth,\kr);\end{tikzpicture}\fi\par
+\clearpage\label{s:T}\noindent\colorbox{black!12}{\makebox[10mm]{\Large\bfseries\strut T}}\hspace{3mm}{\Large\bfseries Probetest}\par\smallskip
+\noindent Gemischt wie in der Prüfung, ohne Beispiel. Etwa 20 Minuten.\par\medskip
+\noindent\textbf{Aufgaben}\hspace{1em}{\small\color{mbgrau}\karohinweis{T}{Rechne unten im Karo.}{Rechne auf einem extra Blatt.} Vergleiche jede Aufgabe gleich mit dem Lösungsheft.}\par\smallskip
+\aufgg{\hangindent7mm\hangafter1\nr{1.}Das Säulendiagramm zeigt die Fahrgäste von drei Buslinien an einem Tag. Wie viele Fahrgäste fuhren mit Linie A? Gib die Zahl vollständig an.}{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\saeulenab[ymax=4,ystep=1,yfein=0.5,ylabel=Fahrgäste in Tausend,hoehe=1.9,breite=0.8]{A/2.5,B/3.5,C/1.5}\end{varwidth}}}{}{}
+\medskip
+\aufgg{\hangindent7mm\hangafter1\nr{2.}Das Balkendiagramm zeigt, wie viele Brötchen ein Bäcker verkauft hat. An welchen Tagen waren es mehr als $60$? Wie viele Brötchen waren es am besten Tag mehr als am schlechtesten?}{\begin{tikzpicture}[x=0.0420cm,y=0.55cm,line width=0.6pt]\draw[mbgitter,line width=0.3pt] (0,0) -- (0,4.4);\draw[mbgitter,line width=0.3pt] (10,0) -- (10,4.4);\draw[mbgitter,line width=0.3pt] (20,0) -- (20,4.4);\draw[mbgitter,line width=0.3pt] (30,0) -- (30,4.4);\draw[mbgitter,line width=0.3pt] (40,0) -- (40,4.4);\draw[mbgitter,line width=0.3pt] (50,0) -- (50,4.4);\draw[mbgitter,line width=0.3pt] (60,0) -- (60,4.4);\draw[mbgitter,line width=0.3pt] (70,0) -- (70,4.4);\draw[mbgitter,line width=0.3pt] (80,0) -- (80,4.4);\draw[mbgitter,line width=0.3pt] (90,0) -- (90,4.4);\draw[mbgitter,line width=0.3pt] (100,0) -- (100,4.4);\draw[black!45,line width=0.3pt] (0,0) -- (0,4.4);\node[below,font=\small,inner sep=3pt] at (0,0) {0};\draw[black!45,line width=0.3pt] (20,0) -- (20,4.4);\node[below,font=\small,inner sep=3pt] at (20,0) {20};\draw[black!45,line width=0.3pt] (40,0) -- (40,4.4);\node[below,font=\small,inner sep=3pt] at (40,0) {40};\draw[black!45,line width=0.3pt] (60,0) -- (60,4.4);\node[below,font=\small,inner sep=3pt] at (60,0) {60};\draw[black!45,line width=0.3pt] (80,0) -- (80,4.4);\node[below,font=\small,inner sep=3pt] at (80,0) {80};\draw[black!45,line width=0.3pt] (100,0) -- (100,4.4);\node[below,font=\small,inner sep=3pt] at (100,0) {100};\filldraw[fill=mbkasten,draw=black,line width=0.7pt] (0,3.70) rectangle (60,4.30);\node[left,font=\small,inner sep=4pt] at (0,4) {Mo};\filldraw[fill=mbkasten,draw=black,line width=0.7pt] (0,2.70) rectangle (90,3.30);\node[left,font=\small,inner sep=4pt] at (0,3) {Di};\filldraw[fill=mbkasten,draw=black,line width=0.7pt] (0,1.70) rectangle (50,2.30);\node[left,font=\small,inner sep=4pt] at (0,2) {Mi};\filldraw[fill=mbkasten,draw=black,line width=0.7pt] (0,0.70) rectangle (70,1.30);\node[left,font=\small,inner sep=4pt] at (0,1) {Do};\draw[-{Stealth[length=2mm]}] (0,0) -- (112.000,0) node[below right,font=\small,inner sep=2pt] {Brötchen};\draw[-{Stealth[length=2mm]}] (0,0) -- (0,4.7);\end{tikzpicture}}{}{}
+\medskip
+\aufgg{\hangindent7mm\hangafter1\nr{3.}Ein Hundewelpe wird am Ende jedes Monats gewogen. In welchem Monat nahm er am meisten zu? Wie viel?}{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\liniendia[ymax=10,ystep=2,yfein=1,ylabel=Gewicht in kg,hoehe=1.9,breite=0.8]{Jan/2,Feb/4,Mär/7,Apr/9,Mai/10}\end{varwidth}}}{}{}
+\medskip
+\aufgg{\hangindent7mm\hangafter1\nr{4.}Ein Kiosk zeichnet seine Einnahmen als Säulendiagramm. An der Achse fehlen die Zahlen. Am Montag nahm er $90$\,€ ein, am Samstag $120$\,€.\par\vspace{3pt} a)~Zeichne die Säule für Samstag ein.\par b)~Um wie viel Euro nahm er am Samstag mehr ein als am Dienstag?}{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\saeulenab[ymax=9,ystep=1,yfein=1,ylabel=Einnahmen,hoehe=1.9,breite=0.8,ohnezahlen]{Mo/6,Di/5,Sa/}\end{varwidth}}}{}{{\scriptsize\color{mbgrau}Ziel\hspace{2mm}}}
+\medskip
+\par\vspace{3mm}\setlength{\kr}{\dimexpr\pagegoal-\pagetotal-10mm\relax}%
+\ifdim\kr>12mm\karomerk{k}{T}\noindent{\scriptsize\color{mbgrau}Platz zum Rechnen}\par\nointerlineskip\vspace{1mm}\noindent
+\begin{tikzpicture}\clip (0,0) rectangle ({\linewidth-0.5mm},\kr);\draw[black!16,line width=0.3pt,step=5mm] (0,0) grid (\linewidth,\kr);\end{tikzpicture}\fi\par
+\end{document}

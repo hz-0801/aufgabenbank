@@ -1,0 +1,139 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\usepackage{adjustbox,varwidth}
+% gesetzt von werkzeuge/setzer.py aus dem Lernweg (L2-A · L2-B · L2-C · L2-D · L2-T) und den Bankzeilen; Muster T6B.
+\input{praeambel}
+\newcommand{\kennung}{T74}
+\newcommand{\grau}[1]{{\color{mbgrau}#1}}
+
+\begin{document}
+\pfheftstil
+\fancyfoot[C]{\parbox[t]{\textwidth}{\mbfhbox\par\vspace{1.5mm}{\footnotesize\color{mbgrau}{\scriptsize \kennung}\hfill\thepage}}}
+\pfheftkopf{Säulen-, Balken- und Liniendiagramme}{Klasse 6}
+% L2-A: Säulen ablesen
+\begin{pfaufg}{}{1.}{}
+\gzwei{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\saeulenab[ymax=60,ystep=20,yfein=5,ylabel=Kinder,hoehe=1.9,breite=0.8]{Mo/35,Di/50,Mi/45,Do/25}\end{varwidth}}}{\grau{a)\ Das Säulendiagramm zeigt, wie viele Kinder an vier Tagen ins Hallenbad kamen. Wie viele Kinder kamen am Mittwoch?\par\smallskip Von $0$ bis $20$ sind es $4$ Kästchen: $20 : 4 = 5$. Ein Kästchen ist $5$ Kinder wert.\par Die Säule Mittwoch endet $1$ Kästchen über der $40$.\par $40 + 5 = 45$. Am Mittwoch kamen $45$ Kinder.}}
+\par\medskip
+b)\ Wie viel ist ein Kästchen wert?\par\vspace{3pt} a)~$0$ bis $50$: $5$ Kästchen \quad b)~$0$ bis $100$: $4$ Kästchen \quad c)~$0$ bis $1$: $10$ Kästchen\karo{3}
+\fusshilfe{\mbox{1:~b) \mbox{a) $10$} \mbox{b) $25$} \mbox{c) $0{,}1$}}}
+\end{pfaufg}
+
+% L2-A: Säulen ablesen
+\begin{pfaufg}{}{2.}{}
+\gzwei{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\saeulenab[ymax=20,ystep=10,yfein=2,ylabel=Bücher,hoehe=1.9,breite=0.8]{Anna/12,Ben/6,Cem/14,Dana/10}\end{varwidth}}}{%
+Das Säulendiagramm zeigt, wie viele Bücher vier Kinder in den Ferien gelesen haben. Lies ab, wie viele Bücher Ben und wie viele Cem gelesen hat.\karo{3}}
+\fusshilfe{\mbox{2:~Ben $6$, Cem $14$ Bücher}}
+\end{pfaufg}
+
+% L2-A: Säulen ablesen
+\begin{pfaufg}{}{3.}{}
+An der Achse eines Säulendiagramms steht „Besucher in Tausend“. Wie viele Besucher zeigt die Säule? Schreibe die Zahl vollständig.\par\vspace{3pt} a)~Die Säule endet bei $35$. \quad b)~bei $120$. \quad c)~bei $2{,}5$.\karo{3}
+\fusshilfe{\mbox{3:~\mbox{a) $35\,000$} \mbox{b) $120\,000$} \mbox{c) $2\,500$}}}
+\end{pfaufg}
+
+% L2-A: Säulen ablesen
+\begin{pfaufg}{}{4.}{}
+\gzwei{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\saeulenab[ymax=15,ystep=5,yfein=1,ylabel=Gäste in Tausend,hoehe=1.9,breite=0.8]{Mai/6,Juni/11,Juli/13,Aug/9}\end{varwidth}}}{%
+Ein Freibad bekommt einen Preis der Stadt, wenn in einem Monat mehr als $12\,000$ Gäste kamen. Das Säulendiagramm zeigt die Gäste im Sommer. Bekommt das Freibad den Preis? Begründe mit einem Wert.\karo{3}}
+\fusshilfe{\mbox{4:~Ja, im Juli $13\,000$ Gäste}}
+\end{pfaufg}
+
+% L2-B: Werte vergleichen und auswählen
+\begin{pfaufg}{}{5.}{}
+\gzwei{\begin{tikzpicture}[x=0.0175cm,y=0.55cm,line width=0.6pt]\draw[mbgitter,line width=0.3pt] (0,0) -- (0,4.4);\draw[mbgitter,line width=0.3pt] (20,0) -- (20,4.4);\draw[mbgitter,line width=0.3pt] (40,0) -- (40,4.4);\draw[mbgitter,line width=0.3pt] (60,0) -- (60,4.4);\draw[mbgitter,line width=0.3pt] (80,0) -- (80,4.4);\draw[mbgitter,line width=0.3pt] (100,0) -- (100,4.4);\draw[mbgitter,line width=0.3pt] (120,0) -- (120,4.4);\draw[mbgitter,line width=0.3pt] (140,0) -- (140,4.4);\draw[mbgitter,line width=0.3pt] (160,0) -- (160,4.4);\draw[mbgitter,line width=0.3pt] (180,0) -- (180,4.4);\draw[mbgitter,line width=0.3pt] (200,0) -- (200,4.4);\draw[mbgitter,line width=0.3pt] (220,0) -- (220,4.4);\draw[mbgitter,line width=0.3pt] (240,0) -- (240,4.4);\draw[black!45,line width=0.3pt] (0,0) -- (0,4.4);\node[below,font=\small,inner sep=3pt] at (0,0) {0};\draw[black!45,line width=0.3pt] (100,0) -- (100,4.4);\node[below,font=\small,inner sep=3pt] at (100,0) {100};\draw[black!45,line width=0.3pt] (200,0) -- (200,4.4);\node[below,font=\small,inner sep=3pt] at (200,0) {200};\filldraw[fill=mbkasten,draw=black,line width=0.7pt] (0,3.70) rectangle (160,4.30);\node[left,font=\small,inner sep=4pt] at (0,4) {Lea};\filldraw[fill=mbkasten,draw=black,line width=0.7pt] (0,2.70) rectangle (80,3.30);\node[left,font=\small,inner sep=4pt] at (0,3) {Tom};\filldraw[fill=mbkasten,draw=black,line width=0.7pt] (0,1.70) rectangle (220,2.30);\node[left,font=\small,inner sep=4pt] at (0,2) {Mia};\filldraw[fill=mbkasten,draw=black,line width=0.7pt] (0,0.70) rectangle (140,1.30);\node[left,font=\small,inner sep=4pt] at (0,1) {Jan};\draw[-{Stealth[length=2mm]}] (0,0) -- (300.000,0) node[below right,font=\small,inner sep=2pt] {Seiten};\draw[-{Stealth[length=2mm]}] (0,0) -- (0,4.7);\end{tikzpicture}}{\grau{a)\ Das Balkendiagramm zeigt, wie viele Seiten vier Kinder in einer Woche gelesen haben. Wer hat am meisten gelesen, wer am wenigsten? Wie viele Seiten liegen dazwischen?\par\smallskip Von $0$ bis $100$ sind es $5$ Kästchen: Ein Kästchen ist $20$ Seiten wert.\par Längster Balken: Mia, $200 + 20 = 220$ Seiten. Kürzester Balken: Tom, $4 \cdot 20 = 80$ Seiten.\par $220 - 80 = 140$. Mia hat $140$ Seiten mehr gelesen als Tom.}}
+\par\medskip
+\gzwei{\begin{tikzpicture}[x=0.0420cm,y=0.55cm,line width=0.6pt]\draw[mbgitter,line width=0.3pt] (0,0) -- (0,4.4);\draw[mbgitter,line width=0.3pt] (10,0) -- (10,4.4);\draw[mbgitter,line width=0.3pt] (20,0) -- (20,4.4);\draw[mbgitter,line width=0.3pt] (30,0) -- (30,4.4);\draw[mbgitter,line width=0.3pt] (40,0) -- (40,4.4);\draw[mbgitter,line width=0.3pt] (50,0) -- (50,4.4);\draw[mbgitter,line width=0.3pt] (60,0) -- (60,4.4);\draw[mbgitter,line width=0.3pt] (70,0) -- (70,4.4);\draw[mbgitter,line width=0.3pt] (80,0) -- (80,4.4);\draw[mbgitter,line width=0.3pt] (90,0) -- (90,4.4);\draw[mbgitter,line width=0.3pt] (100,0) -- (100,4.4);\draw[black!45,line width=0.3pt] (0,0) -- (0,4.4);\node[below,font=\small,inner sep=3pt] at (0,0) {0};\draw[black!45,line width=0.3pt] (50,0) -- (50,4.4);\node[below,font=\small,inner sep=3pt] at (50,0) {50};\draw[black!45,line width=0.3pt] (100,0) -- (100,4.4);\node[below,font=\small,inner sep=3pt] at (100,0) {100};\filldraw[fill=mbkasten,draw=black,line width=0.7pt] (0,3.70) rectangle (70,4.30);\node[left,font=\small,inner sep=4pt] at (0,4) {Rot};\filldraw[fill=mbkasten,draw=black,line width=0.7pt] (0,2.70) rectangle (40,3.30);\node[left,font=\small,inner sep=4pt] at (0,3) {Blau};\filldraw[fill=mbkasten,draw=black,line width=0.7pt] (0,1.70) rectangle (90,2.30);\node[left,font=\small,inner sep=4pt] at (0,2) {Gelb};\filldraw[fill=mbkasten,draw=black,line width=0.7pt] (0,0.70) rectangle (60,1.30);\node[left,font=\small,inner sep=4pt] at (0,1) {Grün};\draw[-{Stealth[length=2mm]}] (0,0) -- (130.000,0) node[below right,font=\small,inner sep=2pt] {Punkte};\draw[-{Stealth[length=2mm]}] (0,0) -- (0,4.7);\end{tikzpicture}}{%
+b)\ Das Balkendiagramm zeigt die Punkte von vier Teams beim Schulquiz. Wie viele Punkte hat das beste Team mehr als das schlechteste?\karo{3}}
+\fusshilfe{\mbox{5:~b) $50$ Punkte}}
+\end{pfaufg}
+
+% L2-B: Werte vergleichen und auswählen
+\begin{pfaufg}{}{6.}{}
+\gzwei{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\saeulenab[ymax=200,ystep=50,yfein=25,ylabel=Besucher,hoehe=1.9,breite=0.8]{Mo/175,Di/150,Mi/100,Do/125,Fr/200}\end{varwidth}}}{%
+Das Säulendiagramm zeigt die Besucher einer Bücherei an fünf Tagen. An welchen Tagen kamen mehr als $150$ Besucher?\karo{3}}
+\fusshilfe{\mbox{6:~Montag und Freitag}}
+\end{pfaufg}
+
+% L2-B: Werte vergleichen und auswählen
+\begin{pfaufg}{}{7.}{}
+\gzwei{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\saeulenab[ymax=200,ystep=100,yfein=20,ylabel=Karten,hoehe=1.9,breite=0.8]{Mo/80,Di/120,Mi/140,Do/100,Fr/180,Sa/200}\end{varwidth}}}{%
+Ein Kino zeigt einen neuen Film. Für jeden Tag mit mehr als $120$ verkauften Karten zahlt es dem Filmverleih $50$\,€ extra. Das Säulendiagramm zeigt die verkauften Karten. Wie viel Euro muss das Kino extra zahlen?\karo{3}}
+\fusshilfe{\mbox{7:~$150$\,€ (Mi, Fr, Sa)}}
+\end{pfaufg}
+
+% L2-C: Liniendiagramme lesen
+\begin{pfaufg}{}{8.}{}
+\gzwei{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\liniendia[ymax=100,ystep=20,yfein=10,ylabel=Geld in €,hoehe=1.9,breite=0.8]{Jan/20,Feb/30,Mär/60,Apr/80,Mai/90}\end{varwidth}}}{\grau{a)\ Ole spart. Das Liniendiagramm zeigt, wie viel Geld am Ende jedes Monats in seiner Spardose war. In welchem Monat kam am meisten dazu? Wie viel?\par\smallskip Von $0$ bis $20$ sind es $2$ Kästchen: Ein Kästchen ist $10$\,€ wert.\par Am steilsten steigt die Linie von Februar bis März: von $30$\,€ auf $60$\,€.\par $60 - 30 = 30$. Im März kamen $30$\,€ dazu, so viel wie in keinem anderen Monat.}}
+\par\medskip
+\gzwei{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\liniendia[ymax=15,ystep=5,yfein=1,ylabel=Temperatur in °C,hoehe=1.9,breite=0.8]{Mo/4,Di/7,Mi/6,Do/10,Fr/13}\end{varwidth}}}{%
+b)\ Das Liniendiagramm zeigt die Temperatur an fünf Tagen, jeden Morgen um 7 Uhr. Wie warm war es am Mittwoch? Um wie viel Grad wurde es von Mittwoch bis Freitag wärmer?\karo{3}}
+\fusshilfe{\mbox{8:~b) $6$\,°C; $7$\,°C wärmer}}
+\end{pfaufg}
+
+% L2-C: Liniendiagramme lesen
+\begin{pfaufg}{}{9.}{}
+\gzwei{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\liniendia[ymax=40,ystep=10,yfein=5,ylabel=Mitglieder,hoehe=1.9,breite=0.8]{2020/25,2021/30,2022/20,2023/35,2024/40}\end{varwidth}}}{%
+Das Liniendiagramm zeigt die Mitglieder einer Schach-AG am Ende jedes Schuljahres. In welchem Jahr hatte die AG weniger Mitglieder als im Jahr davor? Um wie viele?\karo{3}}
+\fusshilfe{\mbox{9:~2022, $10$ weniger}}
+\end{pfaufg}
+
+% L2-C: Liniendiagramme lesen
+\begin{pfaufg}{}{10.}{}
+\gzwei{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\liniendia[ymax=100,ystep=20,yfein=10,ylabel=Stand in cm,hoehe=1.9,breite=0.8]{Apr/90,Mai/70,Juni/40,Juli/30,Aug/20}\end{varwidth}}}{%
+Ein Bauer hat einen Wassertank für seine Felder. Das Liniendiagramm zeigt den Wasserstand am Ende jedes Monats. Sinkt der Stand in einem Monat um mehr als $20$\,cm, muss er Wasser nachkaufen. In welchem Monat musste er nachkaufen?\karo{3}}
+\fusshilfe{\mbox{10:~im Juni (um $30$\,cm gesunken)}}
+\end{pfaufg}
+
+% L2-D: Säulen zeichnen und Achse einteilen
+\begin{pfaufg}{}{11.}{}
+\gzwei{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\saeulenab[ymax=100,ystep=20,yfein=10,ylabel=Brote,hoehe=1.9,breite=0.8]{Mo/60,Di/80,Mi/50,Do/70}\end{varwidth}}}{\grau{a)\ Eine Bäckerei zeichnet ein Säulendiagramm der verkauften Brote. Am Donnerstag waren es $70$ Brote. Zeichne die Säule für Donnerstag ein.\par\smallskip Von $0$ bis $20$ sind es $2$ Kästchen: Ein Kästchen ist $10$ Brote wert.\par $70 : 10 = 7$. Die Säule wird $7$ Kästchen hoch.\par Die Säule über „Do“ zeichnen, so breit wie die anderen.}}
+\par\medskip
+\gzwei{\begin{tikzpicture}[x=0.0700cm,y=0.55cm,line width=0.6pt]\draw[mbgitter,line width=0.3pt] (0,0) -- (0,4.4);\draw[mbgitter,line width=0.3pt] (5,0) -- (5,4.4);\draw[mbgitter,line width=0.3pt] (10,0) -- (10,4.4);\draw[mbgitter,line width=0.3pt] (15,0) -- (15,4.4);\draw[mbgitter,line width=0.3pt] (20,0) -- (20,4.4);\draw[mbgitter,line width=0.3pt] (25,0) -- (25,4.4);\draw[mbgitter,line width=0.3pt] (30,0) -- (30,4.4);\draw[mbgitter,line width=0.3pt] (35,0) -- (35,4.4);\draw[mbgitter,line width=0.3pt] (40,0) -- (40,4.4);\draw[mbgitter,line width=0.3pt] (45,0) -- (45,4.4);\draw[mbgitter,line width=0.3pt] (50,0) -- (50,4.4);\draw[mbgitter,line width=0.3pt] (55,0) -- (55,4.4);\draw[mbgitter,line width=0.3pt] (60,0) -- (60,4.4);\draw[black!45,line width=0.3pt] (0,0) -- (0,4.4);\node[below,font=\small,inner sep=3pt] at (0,0) {0};\draw[black!45,line width=0.3pt] (20,0) -- (20,4.4);\node[below,font=\small,inner sep=3pt] at (20,0) {20};\draw[black!45,line width=0.3pt] (40,0) -- (40,4.4);\node[below,font=\small,inner sep=3pt] at (40,0) {40};\draw[black!45,line width=0.3pt] (60,0) -- (60,4.4);\node[below,font=\small,inner sep=3pt] at (60,0) {60};\filldraw[fill=mbkasten,draw=black,line width=0.7pt] (0,3.70) rectangle (30,4.30);\node[left,font=\small,inner sep=4pt] at (0,4) {Mo};\filldraw[fill=mbkasten,draw=black,line width=0.7pt] (0,2.70) rectangle (50,3.30);\node[left,font=\small,inner sep=4pt] at (0,3) {Di};\node[left,font=\small,inner sep=4pt] at (0,2) {Mi};\filldraw[fill=mbkasten,draw=black,line width=0.7pt] (0,0.70) rectangle (25,1.30);\node[left,font=\small,inner sep=4pt] at (0,1) {Do};\draw[-{Stealth[length=2mm]}] (0,0) -- (72.000,0) node[below right,font=\small,inner sep=2pt] {Gäste};\draw[-{Stealth[length=2mm]}] (0,0) -- (0,4.7);\end{tikzpicture}}{%
+b)\ Das Balkendiagramm zeigt die Gäste eines Cafés. Am Mittwoch kamen $45$ Gäste. Zeichne den Balken für Mittwoch ein.\karo{3}}
+\fusshilfe{\mbox{11:~b) Balken $9$ Kästchen lang (bis $45$)}}
+\end{pfaufg}
+
+% L2-D: Säulen zeichnen und Achse einteilen
+\begin{pfaufg}{}{12.}{}
+\gzwei{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\saeulenab[ymax=9,ystep=1,yfein=1,ylabel=Stimmen,hoehe=1.9,breite=0.8,ohnezahlen]{A/4,B/7,C/5}\end{varwidth}}}{%
+Bei der Wahl zur Schülersprecherin stehen an der Achse keine Zahlen. Die Säule A steht für $60$ Stimmen. Wie viele Stimmen bekamen B und C?\karo{3}}
+\fusshilfe{\mbox{12:~B $105$, C $75$ Stimmen}}
+\end{pfaufg}
+
+% L2-D: Säulen zeichnen und Achse einteilen
+\begin{pfaufg}{}{13.}{}
+\gzwei{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\saeulenab[ymax=9,ystep=1,yfein=1,ylabel=Mitglieder,hoehe=1.9,breite=0.8,ohnezahlen]{Fußball/8,?/6,Tennis/}\end{varwidth}}}{%
+Ein Sportverein hat so viele Mitglieder: Fußball $240$, Turnen $150$, Tennis $90$, Schwimmen $180$. Im Säulendiagramm fehlen die Zahlen an der Achse.\par\vspace{3pt} a)~Zu welcher Sportart gehört die Säule ohne Namen?\par b)~Zeichne die Säule für Tennis ein.\karo{3}}
+\fusshilfe{\mbox{13:~\mbox{a) Schwimmen} \mbox{b) $3$ Kästchen hoch}}}
+\end{pfaufg}
+
+% L2-T: Probetest
+\begin{pfaufg}{}{14.}{}
+\gzwei{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\saeulenab[ymax=4,ystep=1,yfein=0.5,ylabel=Fahrgäste in Tausend,hoehe=1.9,breite=0.8]{A/2.5,B/3.5,C/1.5}\end{varwidth}}}{%
+Das Säulendiagramm zeigt die Fahrgäste von drei Buslinien an einem Tag. Wie viele Fahrgäste fuhren mit Linie A? Gib die Zahl vollständig an.\karo{3}}
+\fusshilfe{\mbox{14:~$2\,500$ Fahrgäste}}
+\end{pfaufg}
+
+% L2-T: Probetest
+\begin{pfaufg}{}{15.}{}
+\gzwei{\begin{tikzpicture}[x=0.0420cm,y=0.55cm,line width=0.6pt]\draw[mbgitter,line width=0.3pt] (0,0) -- (0,4.4);\draw[mbgitter,line width=0.3pt] (10,0) -- (10,4.4);\draw[mbgitter,line width=0.3pt] (20,0) -- (20,4.4);\draw[mbgitter,line width=0.3pt] (30,0) -- (30,4.4);\draw[mbgitter,line width=0.3pt] (40,0) -- (40,4.4);\draw[mbgitter,line width=0.3pt] (50,0) -- (50,4.4);\draw[mbgitter,line width=0.3pt] (60,0) -- (60,4.4);\draw[mbgitter,line width=0.3pt] (70,0) -- (70,4.4);\draw[mbgitter,line width=0.3pt] (80,0) -- (80,4.4);\draw[mbgitter,line width=0.3pt] (90,0) -- (90,4.4);\draw[mbgitter,line width=0.3pt] (100,0) -- (100,4.4);\draw[black!45,line width=0.3pt] (0,0) -- (0,4.4);\node[below,font=\small,inner sep=3pt] at (0,0) {0};\draw[black!45,line width=0.3pt] (20,0) -- (20,4.4);\node[below,font=\small,inner sep=3pt] at (20,0) {20};\draw[black!45,line width=0.3pt] (40,0) -- (40,4.4);\node[below,font=\small,inner sep=3pt] at (40,0) {40};\draw[black!45,line width=0.3pt] (60,0) -- (60,4.4);\node[below,font=\small,inner sep=3pt] at (60,0) {60};\draw[black!45,line width=0.3pt] (80,0) -- (80,4.4);\node[below,font=\small,inner sep=3pt] at (80,0) {80};\draw[black!45,line width=0.3pt] (100,0) -- (100,4.4);\node[below,font=\small,inner sep=3pt] at (100,0) {100};\filldraw[fill=mbkasten,draw=black,line width=0.7pt] (0,3.70) rectangle (60,4.30);\node[left,font=\small,inner sep=4pt] at (0,4) {Mo};\filldraw[fill=mbkasten,draw=black,line width=0.7pt] (0,2.70) rectangle (90,3.30);\node[left,font=\small,inner sep=4pt] at (0,3) {Di};\filldraw[fill=mbkasten,draw=black,line width=0.7pt] (0,1.70) rectangle (50,2.30);\node[left,font=\small,inner sep=4pt] at (0,2) {Mi};\filldraw[fill=mbkasten,draw=black,line width=0.7pt] (0,0.70) rectangle (70,1.30);\node[left,font=\small,inner sep=4pt] at (0,1) {Do};\draw[-{Stealth[length=2mm]}] (0,0) -- (112.000,0) node[below right,font=\small,inner sep=2pt] {Brötchen};\draw[-{Stealth[length=2mm]}] (0,0) -- (0,4.7);\end{tikzpicture}}{%
+Das Balkendiagramm zeigt, wie viele Brötchen ein Bäcker verkauft hat. An welchen Tagen waren es mehr als $60$? Wie viele Brötchen waren es am besten Tag mehr als am schlechtesten?\karo{3}}
+\fusshilfe{\mbox{15:~Di und Do; $40$ mehr}}
+\end{pfaufg}
+
+% L2-T: Probetest
+\begin{pfaufg}{}{16.}{}
+\gzwei{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\liniendia[ymax=10,ystep=2,yfein=1,ylabel=Gewicht in kg,hoehe=1.9,breite=0.8]{Jan/2,Feb/4,Mär/7,Apr/9,Mai/10}\end{varwidth}}}{%
+Ein Hundewelpe wird am Ende jedes Monats gewogen. In welchem Monat nahm er am meisten zu? Wie viel?\karo{3}}
+\fusshilfe{\mbox{16:~im März, $3$\,kg}}
+\end{pfaufg}
+
+% L2-T: Probetest
+\begin{pfaufg}{}{17.}{}
+\gzwei{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\saeulenab[ymax=9,ystep=1,yfein=1,ylabel=Einnahmen,hoehe=1.9,breite=0.8,ohnezahlen]{Mo/6,Di/5,Sa/}\end{varwidth}}}{%
+Ein Kiosk zeichnet seine Einnahmen als Säulendiagramm. An der Achse fehlen die Zahlen. Am Montag nahm er $90$\,€ ein, am Samstag $120$\,€.\par\vspace{3pt} a)~Zeichne die Säule für Samstag ein.\par b)~Um wie viel Euro nahm er am Samstag mehr ein als am Dienstag?\karo{3}}
+\fusshilfe{\mbox{17:~\mbox{a) $8$ Kästchen hoch} \mbox{b) $45$\,€ mehr}}}
+\end{pfaufg}
+
+\par\vfill\noindent{\footnotesize Vorher: Häufigkeiten\quad\textbullet\quad Weiter: Streifen- und Kreisdiagramm\par}
+\end{document}
