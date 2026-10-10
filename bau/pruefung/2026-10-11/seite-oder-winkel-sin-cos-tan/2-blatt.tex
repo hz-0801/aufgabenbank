@@ -1,0 +1,129 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Prüfungsblatt nach mathe-nachhilfe pruefung.md § 5 (Runde Dreiecke, 11.10.2026), Hand-Satz nach dem Muster P4Z; Präambel des Setzers.
+\input{praeambel}
+\newcommand{\kennung}{GYW}
+\newcommand{\tsin}{\mathrm{sin}\,}\newcommand{\tcos}{\mathrm{cos}\,}\newcommand{\ttan}{\mathrm{tan}\,}
+
+\begin{document}
+\pfheftstil
+\pfheftkopf[\kennung]{Seite oder Winkel mit sin, cos, tan}{P10}
+
+% ===================== Stufe 1 =====================
+\Needspace*{0.25\textheight}\pfstufekopf{Seitenverhältnis benennen}{geprüft 2025}
+
+% Bank trigonometrie-e1-k3-s1-v8 (Grundfall: drei Brüche zum Winkel α)
+\begin{pfaufg}{}{1.}{}
+Schreibe $\sin\alpha$, $\cos\alpha$ und $\tan\alpha$ als Bruch aus zwei Seiten.
+\gzwei{\begin{tikzpicture}[scale=0.7,font=\small]\draw[line width=0.8pt] (0.000,0.000) -- (4.200,2.800) -- (4.200,0.000) -- cycle;\draw[line width=0.5pt] (4.200,0.445) arc (90.00:180.00:0.445);\fill (4.043,0.157) circle (0.035);\draw[line width=0.5pt] (0.988,0.000) arc (0.00:33.69:0.988);\node at (1.537,0.465) {$\alpha$};\node[anchor=south east,inner sep=2pt] at (2.066,1.451) {$t$};\node[anchor=west,inner sep=2pt] at (4.262,1.400) {$r$};\node[anchor=north,inner sep=2pt] at (2.100,-0.062) {$s$};\end{tikzpicture}}{%
+$\sin\alpha =$\linie{18mm}\par\medskip $\cos\alpha =$\linie{18mm}\par\medskip $\tan\alpha =$\linie{18mm}}
+\fusshilfe{\mbox{1:~$\frac{r}{t}$; $\frac{s}{t}$; $\frac{r}{s}$}}
+\end{pfaufg}
+
+% Bank trigonometrie-e1-k3-s1-v6 (Rückwärts, zweiter spitzer Winkel)
+\begin{pfaufg}{}{2.}{}
+Ergänze den fehlenden Winkel oder die fehlende Funktion.
+\gzwei{\rwbei{B}\dreieck{(0,0)}{(4.2,0)}{(4.2,2.5)}{r}{t}{s}{\alpha}{}{\beta}}{%
+\textbf{a)}\ $\mathrm{sin}$\linie{10mm}$= \frac{r}{t}$\hspace{2em}\textbf{b)}\ $\mathrm{cos}$\linie{10mm}$= \frac{r}{t}$\par\medskip
+\textbf{c)}\ \linie{10mm}$\alpha = \frac{s}{t}$\hspace{2em}\textbf{d)}\ $\mathrm{tan}$\linie{10mm}$= \frac{s}{r}$}
+\fusshilfe{\mbox{2:~a) $\alpha$; b) $\beta$; c) cos; d) $\beta$}}
+\end{pfaufg}
+
+% 2025-OS-B1g (innermathematisch, wörtlich)
+\begin{pfaufg}{nach~P10\\’25~\pkt{}~1g}{3.}{}
+Ergänze die Gleichung passend zur Abbildung.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.85]\coordinate (P1) at (0,0);\coordinate (P2) at (3.2,0);\coordinate (P3) at (3.2,2.0);\draw (P1) -- (P2) -- (P3) -- cycle;\mbrwmarke{(P2)}{(P1)}{(P3)}\mbwinkelbogen{P3}{P1}{P2}{\gamma}
+\node[font=\small,anchor=north] at (1.6,-0.08) {$u$};\node[font=\small,anchor=west] at (3.28,1.0) {$v$};\node[font=\small,anchor=south east] at (1.56,1.04) {$w$};\end{tikzpicture}}{%
+$\tsin\gamma =$\linie{18mm}}
+\fusshilfe{\mbox{3:~$\frac{u}{w}$}}
+\end{pfaufg}
+
+% ===================== Stufe 2 =====================
+\Needspace*{0.25\textheight}\pfstufekopf{Winkel berechnen}{geprüft 2026 \pkt{} 2024 \pkt{} 2022}
+
+% Bank trigonometrie-e2-k1-s11-v2 (Mischsprosse: Funktion selbst wählen)
+\begin{pfaufg}{}{4.}{}
+Berechne jeweils den Winkel $\alpha$. Wähle selbst $\mathrm{sin}^{-1}$, $\mathrm{cos}^{-1}$ oder $\mathrm{tan}^{-1}$. Runde auf eine Stelle nach dem Komma.\par\smallskip
+\gzwei{\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm\relax}{\raggedright \textbf{a)}\ Gegenkathete $9$~m, Ankathete $4$~m}}{\karo{2}}
+\gzwei{\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm\relax}{\raggedright \textbf{b)}\ Ankathete $2{,}4$~cm, Hypotenuse $50$~mm}}{\karo{2}}
+\gzwei{\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm\relax}{\raggedright \textbf{c)}\ Gegenkathete $0{,}8$~km, Hypotenuse $2{,}5$~km}}{\karo{2}}
+\fusshilfe{\mbox{4:~a) 66,0°; b) 61,3°; c) 18,7°}}
+\end{pfaufg}
+
+% 2024-OS-K6b, herausgelöst (C, β2 und α nur für 6d, weggelassen)
+\begin{pfaufg}{nach~P10\\’24~\pkt{}~6b}{5.}{}
+Eine Seilbahn führt vom Ort $B$ im Tal zum Ort $A$ auf einem Berg. Der Punkt $F$ liegt senkrecht unter $A$ auf der Höhe von $B$. Bestimme den Winkel $\beta_1$, unter dem die Seilbahn von $B$ nach $A$ ansteigt.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=1]\coordinate (A) at (0,2.296);\coordinate (F) at (0,0);\coordinate (B) at (2.04,0);\draw (A) -- (F) -- (B) -- cycle;\mbrwmarke{(F)}{(B)}{(A)}\mbwinkelbogen{B}{A}{F}{\beta_1}
+\node[font=\small,anchor=south] at (A) {$A$};\node[font=\small,anchor=north east] at (F) {$F$};\node[font=\small,anchor=north west] at (B) {$B$};
+\node[font=\small,anchor=north] at (1.02,-0.08) {$255$ m};\node[font=\small,anchor=south west] at (1.06,1.18) {$384$ m};\end{tikzpicture}}{%
+\karo{2}}
+\fusshilfe{\mbox{5:~48,4°}}
+\end{pfaufg}
+
+% 2026-FOR-K4b, herausgelöst (EBR-Zwilling 2026-EBR-K3b; Höhe h nur für 4a/4c, Name weggelassen)
+\begin{pfaufg}{nach~P10\\’26~\pkt{}~4b}{6.}{}
+Im Viereck $ABCD$ sind gegenüberliegende Seiten parallel. Die Seite $\overline{AB}$ ist über $B$ hinaus bis $F$ verlängert. Die Strecke $\overline{CF}$ steht senkrecht auf dieser Verlängerung. Weise nach, dass der Winkel $\varepsilon$ etwa $66^\circ$ groß ist.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=1.25]\coordinate (A) at (0,0);\coordinate (B) at (3.564,0);\coordinate (F) at (4.344,0);\coordinate (C) at (4.344,1.754);\coordinate (D) at (0.78,1.754);\draw (A) -- (B) -- (C) -- (D) -- cycle;\draw (B) -- (F);\draw[dashed] (F) -- (C);\mbrwmarke{(F)}{(C)}{(B)}\draw[mbgrau,line width=0.5pt] ($(B)+(0:0.28)$) arc (0:66:0.28);\node[font=\scriptsize] at ($(B)+(33:0.47)$) {$\varepsilon$};
+\node[font=\small,anchor=north east] at (A) {$A$};\node[font=\small,anchor=north east] at (B) {$B$};\node[font=\small,anchor=north west] at (F) {$F$};\node[font=\small,anchor=south west] at (C) {$C$};\node[font=\small,anchor=south east] at (D) {$D$};
+\node[font=\small,anchor=south east] at (3.9,0.95) {$32$ cm};\node[font=\small,anchor=north] at (3.98,-0.06) {$13$ cm};\end{tikzpicture}}{%
+\karo{2}}
+\fusshilfe{\mbox{6:~$\varepsilon \approx 66{,}0^\circ$}}
+\end{pfaufg}
+
+% ===================== Stufe 3 =====================
+\Needspace*{0.25\textheight}\pfstufekopf{Seite berechnen}{geprüft 2026 \pkt{} 2023 \pkt{} 2022}
+
+% Bank trigonometrie-e1-k3-s4-v1, e1-k3-s7-v1 (Stolperstein: erst mal sin, dann geteilt durch sin)
+\begin{pfaufg}{}{7.}{}
+Berechne die Länge $x$. Runde auf eine Stelle nach dem Komma.\par\smallskip
+\gzwei{\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm\relax}{\raggedright \textbf{a)}\ $\alpha = 31^\circ$, Hypotenuse $8$~cm, $x$ ist die Gegenkathete von $\alpha$}}{\karo{2}}
+\gzwei{\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm\relax}{\raggedright \textbf{b)}\ $\alpha = 44^\circ$, Gegenkathete von $\alpha$ $6$~cm, $x$ ist die Hypotenuse}}{\karo{2}}
+\fusshilfe{\mbox{7:~a) 4,1 cm; b) 8,6 cm}}
+\end{pfaufg}
+
+% 2022-OS-K5d, herausgelöst (AC und γ1 nur für 5a–5c, weggelassen)
+\begin{pfaufg}{nach~P10\\’22~\pkt{}~5d}{8.}{}
+Das Dreieck $ABC$ hat keinen rechten Winkel. Die Höhe $h_c$ geht von $C$ senkrecht auf die Seite $\overline{AB}$, ihr Fußpunkt heißt $D$. Berechne die Länge der Seite $a$.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.85,every node/.style={transform shape=false}]\coordinate (A) at (0,0);\coordinate (B) at (6.41,0);\coordinate (C) at (4.32,2.66);\coordinate (D) at (4.32,0);\draw (A) -- (B) -- (C) -- cycle;\draw[dashed] (C) -- (D);\mbrwmarke{(D)}{(B)}{(C)}\mbwinkelbogen{B}{C}{A}{52^\circ}
+\node[font=\small,anchor=north east] at (A) {$A$};\node[font=\small,anchor=north west] at (B) {$B$};\node[font=\small,anchor=south] at (C) {$C$};\node[font=\small,anchor=north] at (D) {$D$};
+\node[font=\small,anchor=south west] at (5.40,1.35) {$a$};\node[font=\small,anchor=east] at (4.28,1.15) {$h_c = 7{,}4$ m};\end{tikzpicture}}{%
+\karo{2}}
+\fusshilfe{\mbox{8:~9,4 m}}
+\end{pfaufg}
+
+% 2023-OS-K7b, herausgelöst (Schraffur und 7a weggelassen) – schwerste echte des Handgriffs
+\begin{pfaufg}{nach~P10\\’23~\pkt{}~7b}{9.}{}
+Im Dreieck $ABC$ liegt der Punkt $F$ auf der Seite $\overline{AC}$. Die Strecke $\overline{BF}$ steht senkrecht auf $\overline{AC}$. Weise nach, dass $\overline{BF}$ und $\overline{AF}$ jeweils etwa $93{,}0$~cm lang sind. Berechne die Länge der Strecke $\overline{BC}$.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.9]\coordinate (C) at (-3.99,0);\coordinate (F) at (0,0);\coordinate (A) at (1.86,0);\coordinate (B) at (0,1.86);\draw (A) -- (B) -- (C) -- cycle;\draw (B) -- (F);\mbrwmarke{(F)}{(A)}{(B)}\mbwinkelbogen{A}{B}{C}{45^\circ}
+\draw[mbgrau,line width=0.5pt] ($(B)+(-90:0.55)$) arc (-90:-155:0.55);\node[font=\scriptsize] at ($(B)+(-122:0.95)$) {$65^\circ$};
+\draw[mbgrau,line width=0.5pt] ($(B)+(-90:0.4)$) arc (-90:-45:0.4);\node[font=\scriptsize] at ($(B)+(-67:0.75)$) {$45^\circ$};
+\node[font=\small,anchor=north east] at (C) {$C$};\node[font=\small,anchor=north west] at (A) {$A$};\node[font=\small,anchor=south] at (B) {$B$};\node[font=\small,anchor=north] at (F) {$F$};
+\node[font=\small,anchor=south west] at (0.93,0.95) {$131{,}5$ cm};\end{tikzpicture}}{%
+\karo{3}}
+\fusshilfe{\mbox{9:~$\overline{BF}=\overline{AF}\approx 93{,}0$ cm; $\overline{BC}\approx 220{,}0$ cm}}
+\end{pfaufg}
+
+% ===================== Stufe 4 =====================
+\Needspace*{0.25\textheight}\pfstufekopf{erst entscheiden, dann rechnen}{nicht geprüft}
+
+% Bank trigonometrie-e3-k1-s14-v1 (Mischsprosse: Winkelfunktion, Probe mit Pythagoras)
+\begin{pfaufg}{}{10.}{}
+Ein rechtwinkliges Dreieck hat den Winkel $\alpha = 33^\circ$. Die Hypotenuse ist $9$~cm lang. Berechne die Gegenkathete und die Ankathete von $\alpha$. Prüfe die Ergebnisse mit dem Satz des Pythagoras.
+\karo{3}
+\fusshilfe{\mbox{10:~4,90 cm; 7,55 cm}}
+\end{pfaufg}
+
+% 2025-OS-K4a, ganz (Länge mit Pythagoras, Winkel mit tan; Wortlaut eigen, Maße in der Skizze)
+\begin{pfaufg}{nach~P10\\’25~\pkt{}~4a}{11.}{}
+Familie Yücel baut an die Stufe vor der Haustür eine feste Rampe für Rollstühle. Berechne die Länge $x$ der Rampe. Berechne den Anstiegswinkel $\alpha$.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.75]\coordinate (P1) at (0,0);\coordinate (P2) at (5.95,0);\coordinate (P3) at (5.95,0.9);\draw (P1) -- (P2) -- (P3) -- cycle;\mbrwmarke{(P2)}{(P1)}{(P3)}
+\draw[mbgrau,line width=0.5pt] (1.4,0) arc (0:8.6:1.4);\node[font=\small] at (2.2,0.16) {$\alpha$};
+\node[font=\small,anchor=north] at (2.97,-0.08) {$170$ cm};\node[font=\small,anchor=west] at (6.03,0.45) {$16$ cm};\node[font=\small,anchor=south east] at (2.95,0.48) {$x$};\end{tikzpicture}}{%
+\karo{3}}
+\fusshilfe{\mbox{11:~$x \approx 170{,}8$ cm; $\alpha \approx 5{,}4^\circ$}}
+\end{pfaufg}
+
+\pfblattende{11}{26 FOR & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17 & 16}%
+{4a 4b 4c & 1g 4a & 6a 6b & 2c 7b & 5a 5b 5d 5e & 3a 3b & 1c 1j 5b & 1h 3b & 1g 4d & 1j 4b & 7c}%
+{Weiter: Winkel ohne Rechnung bestimmen oder begründen}
+\end{document}
