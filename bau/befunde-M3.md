@@ -317,3 +317,28 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
 - duplikate.py: erste Fassung von D1 (Münze dreimal, 1/8) war A-Dublette
   zu kombinatorik-zone-f4-v2; ersetzt durch Stern-Rad (1/64).
 - Prüfer: Mengenwarnungen k3 s1–s11 aus dem verlangten Vorrat, wie E2.
+## Brüche E2 „Kürzen und Erweitern“ (A5D, 10.10.2026)
+
+- Lage: Standardlage Klasse 6 laut Katalog; E1 (QG4) steht auf Klasse 7.
+  Die Serie hat damit zwei Klassen. Abschnitt C nutzt Prozent über den
+  Nenner 100 mit der Hilfe „1/100 = 1 %“ in der Aufgabe. (Nicht
+  geändert; Lehrer entscheidet, ob die Brüche-Serie einheitlich Kl. 6
+  oder Kl. 7 heißt.)
+- Satz: Brüche im Fließtext (\frac) sind für Kl. 6 in Päckchen zu klein
+  (zweistellige Zähler). Päckchen nach \par als \dfrac, davor
+  \vspace{3pt}; \smallskip lehnt bank-pruef ab (nicht in STANDARD).
+  (So gesetzt; Vorschlag: smallskip/medskip in STANDARD.)
+- Setzer: Die Ergebnisspalte der Lösungen ist schmal; Päckchen-Ergebnisse
+  mit zwei Brüchen je Teil brechen um. ergebnis kurz gefasst („Nenner
+  12; 15; 24“), die Brüche stehen im Weg. (Hingenommen.)
+- Ablauf: Parallele Bau-Agenten teilen sich das Scratchpad; ein gleich
+  benanntes Bauskript (bau_e2.py) wurde von einem anderen Bau (BP8)
+  überschrieben und einmal ausgeführt (schreibt nur in dessen Klon
+  /root/work/w2b, wiederholbar). (Eigene Skripte danach in einem
+  Unterordner je Kennung; Vorschlag für bauauftrag.md: Hilfsdateien im
+  Scratchpad unter <Kennung>/.)
+- Prüfer: Mengenwarnungen wie bei QG4 (k1 s3 13 Zeilen, s4 10), weil der
+  Bauauftrag Vorrat verlangt. (Hingenommen.)
+- Thema-Weg trägt: Gleichnamigmachen gehört in E2 (E3 wendet es nur an);
+  2014-OS-B1i bleibt Zielmarke – als Probetest-Aufgabe (14/40 = 7/20 =
+  35 %), nicht als Ziel, weil die Figur das Modell vorgibt.
