@@ -351,3 +351,14 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
 - Achsenzahlen: Bei Parabeln nah an der y-Achse liegt der Bogen auf den Zahlen neben dem Scheitel. Die Zahlen sind dort weggelassen (Prüfung im Bauskript); der Schüler zählt dann Kästchen. Vorschlag: Achsenzahlen mit weißem Grund über dem Bogen als Baustein in mathblatt.sty.
 - bank-pruef: Ein Ergebnis „f(x) = (x − 4)² + 1“ hat keine Zahl an der Ergebnisstelle; Behelf wie im Bestand: Scheitel als Punkt in die Lösung, pruef [d, e].
 - Thema-Weg: „Was der Scheitel verrät“ (Nullstellen zählen, steigen/fallen, Lage) steht vor „Verschieben und spiegeln“, weil die Hauptmarke 2018-OS-K5d beides verlangt; im Thema-Weg ergänzt.
+
+
+## Lineare Funktionen E2 „Lineare Funktion f(x) = m·x + n“ (NKP, 10.10.2026)
+
+- Setzer: Der Name der Einheit wird aus der Kopfzeile bis zur ersten Klammer genommen; „f(x) = m·x + n (Abschnitte …)“ wird zu „Lineare Funktion f“ (Register lerneinheit=, Titel von tisch-alt). Das Selbstlernheft trägt den Titel aus „Titel:“ richtig. (setzer.py nicht geändert; Vorschlag: nur die letzte Klammer abschneiden.)
+- Heft auf 6 Seiten nur mit kleinen Koordinatensystemen (Karo 4 mm) und zwei Geraden je Päckchen in einem System; die Seiten A–C haben darum keinen „Platz zum Rechnen“. Für Zeichenabschnitte trägt die Seitengrenze (eine Seite je Abschnitt) höchstens drei Zeichenaufgaben plus Beispiel.
+- Prüfer: Zuordnen mit nummerierten Gleichungen „(1) … (6)“ findet die Lösungszahlen nicht an der Ergebnisstelle; mit Buchstaben (A)–(F) und Zahlen nach „=“ in der Begründung geht es. Sperre trifft gewollt kurze Distraktoren (y = −2x, y = x − 2, 3x + 1 aus 2019-OS-K2c/2021-OS-K2a); Zahlen gewechselt.
+- Prüfer: Tabellen- oder Ankreuzzeilen mit mehreren Teilen (steigt/fällt/waagerecht für a–d) gibt es nicht; \begin{tabular}, \hfill, \smallskip sind in aufgabe verboten. (Als Zeilen mit \par und $\square$ gesetzt.)
+- Beschriftung von Geraden am Rand des Systems lässt ein kurzes Linienstück zwischen Rand und weißem Etikett stehen; Etiketten mindestens eine Einheit nach innen gesetzt.
+- Bestand E2: Wertetabelle als Zeichenweg (k4-s1 bis s3) und Fehler finden (k7-s1) nicht genommen; m = 0 hat keine eigene Sprosse (steht in k5-s6 und k6-s1).
+- Mengenwarnungen wie bisher durch die Vorratszeilen (k4-s4/s5/s6/s8, k5-s2 bis s6, k6-s1, pflicht begruenden/darstellung).
