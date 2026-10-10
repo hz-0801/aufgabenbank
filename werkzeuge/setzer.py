@@ -26,6 +26,10 @@ Zwei Blockformen:
   Vorgehen, Achtung, Bild, Fehler, Tisch; Bankzeilen mit rolle,
   ergebnis, schritte (bank.md). Die Kennung steht im Block; fehlt sie
   im Register, wird sie eingetragen.
+  Wahlkopfzeilen (nur tisch-alt): „Grau: L1-B …“ – das Beispiel grau
+  nur in diesen Abschnitten; „Layout: voll“ – Rechen-Päckchen zu zweit
+  mit Karo und kleinem Bild, Einzelnummern mit Auftrag über die Breite,
+  darunter Bild und Karo.
 
 Sorten (--sorte, Vorgabe tisch-alt):
 - tisch-alt: wie bisher (Muster T6B/M74): Nummern, Lösungen im Fuß,
@@ -191,7 +195,7 @@ def lies_abschnitte(block, titel, serie, praefix):
               form="abschnitte", fehler=[], abschnitte=[], schritte=[])
     for z in block.splitlines():
         m = re.match(r"^(Titel|Formel|In Worten|Vorgehen|Achtung|Bild|"
-                     r"Tisch|Fehler|Blatt|Stand): (.+)$", z)
+                     r"Tisch|Fehler|Blatt|Stand|Layout|Grau): (.+)$", z)
         if m and m.group(1) == "Fehler":
             lw["fehler"].append(m.group(2).strip())
         elif m and m.group(1) == "Blatt":
@@ -649,10 +653,13 @@ def loes_bild(a):
 
 def gruppen_abschnitte(lw):
     """Nummern für tisch-alt: je Gruppe („+“) eine Nummer; das Beispiel
-    des Abschnitts vor die erste, wenn es in keiner Gruppe steht."""
+    des Abschnitts vor die erste, wenn es in keiner Gruppe steht – mit
+    Kopfzeile „Grau: L1-B …“ nur in den genannten Abschnitten."""
     gruppen, von = [], {}
+    grau = lw.get("grau", "").replace(",", " ").split()
     for ab in lw["abschnitte"]:
-        drin = ab["beispiel"] in ab["aufgaben"]
+        drin = ab["beispiel"] in ab["aufgaben"] or bool(
+            grau and ab["id"] not in grau)
         for k, g in enumerate(ab["gruppen"]):
             if k == 0 and ab["beispiel"] and not drin:
                 g = [ab["beispiel"]] + g
@@ -681,12 +688,15 @@ def erklaert(a):
 
 
 def paeckchen_tex(zeilen, karo=True, grau=True, erkl=False, start=0,
-                  kopf=None):
+                  kopf=None, voll=False):
     """Rumpf eines Päckchens (bank.md paeckchen, teil, probe): Kopf,
     grau vorgerechnete Teile (rolle beispiel), dann die Teile zum
     Selbstrechnen – mit Bild in Spalten zu dritt, sonst zu zweit (Karo
-    bei antwortform rechnen, sonst Linie). Gibt (tex, [(marke, zeile)]
-    der offenen Teile) zurück."""
+    bei antwortform rechnen, sonst Linie). voll (Kopfzeile „Layout:
+    voll“, nur tisch-alt): Spalten mit Bild nur ohne Rechenteil, dann
+    bis zu vier nebeneinander; Rechenteile zu zweit mit Karo, das Bild
+    klein daneben. Gibt (tex, [(marke, zeile)] der offenen Teile)
+    zurück."""
     if not grau:
         zeilen = [a for a in zeilen if a.get("rolle") != "beispiel"]
     if kopf is None:
@@ -706,7 +716,11 @@ def paeckchen_tex(zeilen, karo=True, grau=True, erkl=False, start=0,
 
     # Spalten mit Bild nur, wenn jeder offene Teil ein Bild hat; sonst
     # Text-Päckchen (das Bild des grauen Beispiels fällt dort weg).
-    if offen and all(bild(a) for _, a in offen):
+    rechnet = any(a.get("antwortform", "rechnen") == "rechnen"
+                  for _, a in offen)
+    n_sp = len(marken) if voll and 2 <= len(marken) <= 4 else 3
+    b_sp = {2: "0.48", 3: "0.32", 4: "0.24"}[n_sp]
+    if offen and all(bild(a) for _, a in offen) and not (voll and rechnet):
         out[0] += "\\par\\medskip"
         spalten = []
         for m, a in marken:
@@ -718,13 +732,13 @@ def paeckchen_tex(zeilen, karo=True, grau=True, erkl=False, start=0,
                           + "".join(f"\\kk{{{o}}}" for o in opts))
             else:
                 inhalt = f"{{\\small {m}\\ {text(a)}}}\\linie{{20mm}}"
-            spalten.append("\\begin{minipage}[b]{0.32\\linewidth}\\centering\n"
-                           f"{bild(a)}\\par\\smallskip\n{inhalt}\n"
-                           "\\end{minipage}")
-        for i in range(0, len(spalten), 3):
-            reihe = spalten[i:i + 3]
-            reihe += ["\\begin{minipage}[b]{0.32\\linewidth}\\end{minipage}"
-                      ] * (3 - len(reihe))
+            spalten.append(f"\\begin{{minipage}}[b]{{{b_sp}\\linewidth}}"
+                           f"\\centering\n{bild(a)}\\par\\smallskip\n"
+                           f"{inhalt}\n\\end{{minipage}}")
+        for i in range(0, len(spalten), n_sp):
+            reihe = spalten[i:i + n_sp]
+            reihe += [f"\\begin{{minipage}}[b]{{{b_sp}\\linewidth}}"
+                      "\\end{minipage}"] * (n_sp - len(reihe))
             out.append("\\par\\noindent" + "\\hfill\n".join(reihe)
                        + "\\par\\medskip")
     else:
@@ -746,9 +760,17 @@ def paeckchen_tex(zeilen, karo=True, grau=True, erkl=False, start=0,
                     rest = ""
                 else:
                     rest = "\\linie{25mm}"
+                kl = bild(a, hoehe="16mm") if voll else ""
+                kopf_t = f"{m}\\ {text(a)}"
+                if kl:
+                    kopf_t = ("\\begin{minipage}[t]{0.5\\linewidth}"
+                              f"\\vspace{{0pt}}\\raggedright {kopf_t}"
+                              "\\end{minipage}\\hfill\\begin{minipage}[t]"
+                              "{0.48\\linewidth}\\vspace{0pt}\\raggedleft "
+                              f"{kl}\\end{{minipage}}")
                 paar.append("\\begin{minipage}[t]{0.48\\linewidth}"
                             "\\raggedright\n"
-                            f"{m}\\ {text(a)}{rest}\n\\end{{minipage}}")
+                            f"{kopf_t}{rest}\n\\end{{minipage}}")
             out.append("\\noindent" + "\\hfill\n".join(paar)
                        + "\\par\\smallskip")
     probe = next((a["probe"] for a in zeilen if a.get("probe")), None)
@@ -757,12 +779,12 @@ def paeckchen_tex(zeilen, karo=True, grau=True, erkl=False, start=0,
     return "\n".join(out), offen
 
 
-def setze_nummer_neu(nr, zeilen, kommentar):
+def setze_nummer_neu(nr, zeilen, kommentar, voll=False):
     """Nummer aus Bankzeilen ohne satz (tisch-alt): ein Beispiel wird
     grau vorgerechnetes a) – nur die Rechnung, ohne erklaerung –, die
     Aufgabe b) mit Karo; ein Päckchen (paeckchen) a), b), c) …"""
     if ist_paeckchen(zeilen):
-        rumpf, offen = paeckchen_tex(zeilen)
+        rumpf, offen = paeckchen_tex(zeilen, voll=voll)
         fuss = "; ".join(f"{m} {kurz(a.get('ergebnis', a['loesung']))}"
                          for m, a in offen)
         lz = [f"\\lz{{{(str(nr) + m) if k == 0 else m}}}"
@@ -799,10 +821,19 @@ def setze_nummer_neu(nr, zeilen, kommentar):
                 rechts += "\\par\\smallskip " + "\\par ".join(
                     "".join(f"\\gkreuz{{{o}}}" for o in opts[i:i + 2])
                     for i in range(0, len(opts), 2))
+        elif voll and not bsp:
+            # Layout voll: Auftrag über die ganze Breite, darunter Bild
+            # links und Karo rechts (ohne Bild: Karo über die Breite)
+            g = bild(a)
+            out.append(rechts)
+            out.append(f"\\gzwei{{{g}}}{{\\karo{{3}}}}" if g
+                       else "\\karo{3}")
+            rechts = None
         else:
             rechts += "\\karo{3}"
-        g = bild(a)
-        out.append(f"\\gzwei{{{g}}}{{%\n{rechts}}}" if g else rechts)
+        if rechts is not None:
+            g = bild(a)
+            out.append(f"\\gzwei{{{g}}}{{%\n{rechts}}}" if g else rechts)
         fuss.append(f"{marke} {kurz(a.get('ergebnis', a['loesung']))}"
                     .strip())
         lz.append(f"\\lz{{{nr}{marke or '.'}}}{{{a.get('ergebnis', '')}}}"
@@ -1326,7 +1357,8 @@ def main():
                 n, l = setze_nummer(nr, zeilen, schritt_von.get(g[0], g[0]))
             else:
                 n, l = setze_nummer_neu(nr, zeilen,
-                                        schritt_von.get(g[0], g[0]))
+                                        schritt_von.get(g[0], g[0]),
+                                        voll=lw.get("layout") == "voll")
             nummern.append(n)
             loesungen.append(l)
         shutil.copy(HIER / "setzer-praeambel.tex", aus / "praeambel.tex")
