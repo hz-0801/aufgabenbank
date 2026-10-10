@@ -12,7 +12,7 @@
 \pfheftkopf{Kreisfläche}{Klasse 8}
 % L2-A: Fläche aus Radius oder Durchmesser
 \begin{pfaufg}{}{1.}{}
-\gzwei{\begin{tikzpicture}[scale=0.72,font=\small]\draw[line width=0.8pt] (0,0) circle (1.5);\fill (0,0) circle (1.3pt);\draw[line width=0.6pt] (0,0) -- (1.500,0.000);\node[anchor=south,inner sep=2pt] at (0.675,0.000) {3\,cm};\node[font=\small] at (-1.7,1.5) {a)};\draw[line width=0.8pt] (4.0,0) circle (1.5);\fill (4.0,0) circle (1.3pt);\draw[line width=0.6pt] (2.5,0) -- (5.5,0);\node[anchor=south,inner sep=2pt] at (4.0,0) {1{,}2\,m};\node[font=\small] at (2.3,1.5) {b)};\end{tikzpicture}}{\grau{a)\ (a) Berechne die Fläche des Kreises mit $r = 3$\,cm. (b) Ein runder Tisch hat 1,2\,m Durchmesser. Ein Topf Lack reicht für 1\,m². Reicht er für die Tischplatte?\par\smallskip (a) Gegeben ist der Radius (vom Mittelpunkt zum Rand): $r = 3$\,cm.\par $A = \pi \cdot 3^2 = \pi \cdot 9$. Tippe $\pi \cdot 9$ in den Taschenrechner: $28{,}274\ldots$ Erst jetzt runden: $A \approx 28{,}3$\,cm².\par (b) Gegeben ist der Durchmesser. Erst halbieren: $r = 1{,}2 : 2 = 0{,}6$\,m.\par $A = \pi \cdot 0{,}6^2 = \pi \cdot 0{,}36 \approx 1{,}13$\,m² (auf zwei Stellen, damit man den Unterschied sieht).\par Vergleichen: $1{,}13 > 1$. Der Lack reicht nicht, es fehlen etwa $0{,}13$\,m².}}
+\gzwei{\begin{tikzpicture}[scale=0.72,font=\small]\draw[line width=0.8pt] (0,0) circle (1.5);\fill (0,0) circle (1.3pt);\draw[line width=0.6pt] (0,0) -- (1.500,0.000);\node[anchor=south,inner sep=2pt] at (0.675,0.000) {3\,cm};\node[font=\small] at (-1.7,1.5) {a)};\draw[line width=0.8pt] (4.0,0) circle (1.5);\fill (4.0,0) circle (1.3pt);\draw[line width=0.6pt] (2.5,0) -- (5.5,0);\node[anchor=south,inner sep=2pt] at (4.0,0) {1{,}2\,m};\node[font=\small] at (2.3,1.5) {b)};\end{tikzpicture}}{\grau{a)\ (a) Berechne die Fläche des Kreises mit $r = 3$\,cm. (b) Ein runder Tisch hat 1,2\,m Durchmesser. Ein Topf Lack reicht für 1\,m². Reicht er für die Tischplatte?\par\smallskip (a) Gegeben ist der Radius (vom Mittelpunkt zum Rand): $r = 3$\,cm. Steht die Zahl an einer Linie vom Mittelpunkt zum Bogen, ist es der Radius.\par $A = \pi \cdot 3^2 = \pi \cdot 9$. Tippe $\pi \cdot 9$ in den Taschenrechner: $28{,}274\ldots$ Erst jetzt runden: $A \approx 28{,}3$\,cm².\par (b) Gegeben ist der Durchmesser. Erst halbieren: $r = 1{,}2 : 2 = 0{,}6$\,m.\par $A = \pi \cdot 0{,}6^2 = \pi \cdot 0{,}36 \approx 1{,}13$\,m² (auf zwei Stellen, damit man den Unterschied sieht).\par Vergleichen: $1{,}13 > 1$. Der Lack reicht nicht, es fehlen etwa $0{,}13$\,m².}}
 \par\medskip
 b)\ Berechne die Fläche des Kreises. (a) $r = 5$\,cm\quad (b) $r = 10$\,cm\quad (c) $r = 4$\,m\karo{3}
 \fusshilfe{\mbox{1:~b) (a) 78,5\,cm² (b) 314,2\,cm² (c) 50,3\,m²}}
@@ -55,8 +55,8 @@ Der Viertelkreis hat den Radius $a$. Welcher Term gibt seine Fläche an? Kreuze 
 
 % L2-B: Halbkreis und Viertelkreis
 \begin{pfaufg}{}{7.}{}
-\gzwei{\begin{tikzpicture}[scale=0.8,font=\small]\draw[line width=0.8pt] (0,0) -- (3.6,0) arc (-90:90:1) -- (0,2) arc (90:270:1);\draw[dashed,line width=0.5pt] (0,0) -- (0,2);\draw[dashed,line width=0.5pt] (3.6,0) -- (3.6,2);\node[anchor=north,inner sep=2.5pt] at (1.8,0) {90\,m};\node[anchor=west,inner sep=2pt] at (0,1) {50\,m};\end{tikzpicture}}{%
-Ein Sportplatz besteht aus einem Rechteck und zwei Halbkreisen. (a) Wie groß sind die beiden Halbkreise zusammen? (b) Wie groß ist der ganze Platz?\karo{3}}
+\gzwei{\begin{tikzpicture}[scale=0.8,font=\small]\draw[line width=0.8pt] (0,0) -- (3.6,0) arc (-90:90:1) -- (0,2) arc (90:270:1);\draw[dashed,line width=0.5pt] (0,0) -- (0,2);\draw[dashed,line width=0.5pt] (3.6,0) -- (3.6,2);\draw[line width=0.4pt] (0,-0.3) -- (3.6,-0.3);\draw[line width=0.4pt] (0,-0.18) -- (0,-0.42);\draw[line width=0.4pt] (3.6,-0.18) -- (3.6,-0.42);\node[anchor=north,inner sep=2.5pt] at (1.8,-0.3) {90\,m};\node[anchor=west,inner sep=2pt] at (0,1) {50\,m};\end{tikzpicture}}{%
+Ein Sportplatz besteht aus einem Rechteck und zwei Halbkreisen. Das Rechteck ist 90\,m lang und 50\,m breit. (a) Wie groß sind die beiden Halbkreise zusammen? (b) Wie groß ist der ganze Platz?\karo{3}}
 \fusshilfe{\mbox{7:~(a) 1\,963,5\,m² (b) 6\,463,5\,m²}}
 \end{pfaufg}
 
@@ -120,8 +120,8 @@ Familie Kaya legt einen runden Teich mit 3\,m Durchmesser an. Um den Rand legt s
 
 % L2-T: Probetest
 \begin{pfaufg}{}{17.}{}
-Um eine runde Tischdecke wird eine Spitzenborte genäht. Welche Formel brauchst du für die Länge der Borte? Kreuze an.\par\smallskip \gkreuz{$A = \pi \cdot r^2$}\gkreuz{$u = \pi \cdot d$}\par \gkreuz{$A = \pi \cdot r^2 : 2$}\gkreuz{$u = 2 \cdot r$}
-\fusshilfe{\mbox{17:~$u = \pi \cdot d$}}
+Um eine runde Tischdecke wird eine Spitzenborte genäht. Welche Formel passt für die Länge der Borte? Kreuze alle passenden an.\par\smallskip \gkreuz{$A = \pi \cdot r^2$}\gkreuz{$u = \pi \cdot d$}\par \gkreuz{$A = \pi \cdot r^2 : 2$}\gkreuz{$u = 2 \cdot \pi \cdot r$}
+\fusshilfe{\mbox{17:~$u = \pi \cdot d$ und $u = 2 \cdot \pi \cdot r$}}
 \end{pfaufg}
 
 % L2-T: Probetest
