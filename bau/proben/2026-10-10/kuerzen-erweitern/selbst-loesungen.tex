@@ -19,6 +19,13 @@
   \begin{minipage}[t]{52mm}\raggedright\bfseries\boldmath #2\end{minipage}\hspace{3mm}%
   \begin{minipage}[t]{\dimexpr\linewidth-64mm\relax}\raggedright\small #3\end{minipage}\par\vspace{4pt}}
 \newlength{\kr}
+\makeatletter
+\newcommand{\karomerk}[2]{\protected@write\@auxout{}{\string\karoseite{#1}{#2}{\thepage}}}
+\newcommand{\karoseite}[3]{\expandafter\xdef\csname karo@#1@#2\endcsname{#3}}
+\newcommand{\karohinweis}[3]{\karomerk{h}{#1}\ifcsname karo@k@#1\endcsname
+  \ifnum\csname karo@k@#1\endcsname=0\csname karo@h@#1\endcsname\relax#2\else#3\fi
+  \else#3\fi}
+\makeatother
 \begin{document}
 
 \noindent{\Large\bfseries Lösungen}\hspace{1em}{\color{mbgrau}Brüche: kürzen und erweitern}\par\smallskip
@@ -31,7 +38,7 @@
 \lsg{5.}{gleich viel}{Beide gleich viel: Lena $\frac{3}{4}$, Tom $\frac{9}{12} = \frac{9 : 3}{12 : 3} = \frac{3}{4}$.}
 \par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut B}}\hspace{2mm}{\bfseries Vollständig kürzen}\par\vspace{4pt}
 \lsg{1.}{a) $\frac{3}{4}$ \quad b) $\frac{2}{3}$ \quad c) $\frac{2}{5}$}{a) $\frac{6}{8} = \frac{3}{4}$ (durch 2); b) $\frac{10}{15} = \frac{2}{3}$ (durch 5); c) $\frac{8}{20} = \frac{2}{5}$ (durch 4)}
-\lsg{2.}{a) $\frac{3}{4}$ \quad b) $\frac{3}{5}$ \quad c) $\frac{2}{3}$}{a) $\frac{18}{24} = \frac{9}{12} = \frac{3}{4}$ (durch 6); b) $\frac{36}{60} = \frac{18}{30} = \frac{3}{5}$ (durch 12); c) $\frac{48}{72} = \frac{24}{36} = \frac{2}{3}$ (durch 24)}
+\lsg{2.}{a) $\frac{3}{4}$ \quad b) $\frac{3}{5}$ \quad c) $\frac{2}{3}$ \quad d) $\frac{3}{4}$}{a) $\frac{18}{24} = \frac{9}{12} = \frac{3}{4}$ (durch 6); b) $\frac{36}{60} = \frac{18}{30} = \frac{3}{5}$ (durch 12); c) $\frac{48}{72} = \frac{24}{36} = \frac{2}{3}$ (durch 24); d) größte Zahl, die 36 und 48 teilt: 12; $\frac{36}{48} = \frac{36 : 12}{48 : 12} = \frac{3}{4}$}
 \lsg{3.}{$\frac{16}{24} = \frac{2}{3}$}{16 von 24 Kästchen sind grau; durch 8 gekürzt.}
 \lsg{4.}{a) $\frac{5}{6}$ \quad b) $\frac{3}{4}$ \quad c) $\frac{7}{20}$}{a) 1 h = 60 min: $\frac{50}{60} = \frac{5}{6}$; b) 1 kg = 1\,000 g: $\frac{750}{1\,000} = \frac{3}{4}$; c) 1 m = 100 cm: $\frac{35}{100} = \frac{7}{20}$}
 \lsg{5.}{Ja}{$\frac{21}{28} = \frac{21 : 7}{28 : 7} = \frac{3}{4}$.}
