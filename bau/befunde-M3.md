@@ -714,3 +714,26 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
 - Satz: \leerfeld-Reihen mit vier Teilen umbrechen nach c); lesbar,
   aber unruhig. (Belassen; Vorschlag Setzer: Vergleichszeichen-Päckchen
   in zwei Spalten.)
+
+## Winkel und Dreiecke E2 „Winkel an Geradenkreuzungen und Parallelen“ (FP6, 10.10.2026)
+
+- Seitengrenze: Sechs Seiten mit Karo auf jeder Aufgabenseite tragen bei
+  Figuraufgaben nur drei Aufgaben je Abschnitt (Skizze rechts bestimmt die
+  Zeilenhöhe). B und C von vier auf drei gekürzt, das Gekürzte im Vorrat.
+  (Vorschlag: Bauauftrag nennt „3 Aufgaben, wenn jede eine Skizze hat“.)
+- Erster Bau des Themas: Thema-Weg (vorläufig) und Lernweg-Abschnitt neu
+  angelegt; Teilwinkel und verlängerte Seiten als eigener Abschnitt B vor
+  den Parallelen (beides braucht nur Scheitel- und Nebenwinkel).
+- Katalogtext „drei Geraden durch einen Punkt“ (Typen Einheit 2): Eine
+  volle dritte Gerade teilt beide Scheitelwinkel, der Winkel α wäre dann
+  selbst geteilt. Auf dem Blatt ist k ein Strahl ab dem Schnittpunkt.
+  (Katalog nicht geändert; beim Abgleich „Strahl“ statt „Gerade“ erwägen.)
+- Setzer: mathblatt-Bausteine \geradenkreuzung/\parallelenpaar setzen die
+  Beschriftung fest auf Radius 1,05; bei spitzen Winkeln unter 40° liegt die
+  Zahl auf der Linie. Alle Figuren als eigene TikZ mit Abstand nach
+  Winkelgröße gebaut. (Hingenommen; Vorschlag: Bausteine rechnen den
+  Abstand aus der Winkelgröße.)
+- bank-pruef: Mengenwarnungen durch die Vorratszeilen (k2 s1–s10) wie bei
+  allen Bauten; neu „s11 Prüfungshöhe ohne Original“ – zwei neue
+  Prüfungszeilen nach 2015-OS-B1d ohne original-Feld, weil Zahlen und
+  Wortlaut neu sind. (Hingenommen.)

@@ -1,0 +1,57 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% gesetzt von werkzeuge/setzer.py (Sorte selbst) aus dem Lernweg FP6
+% und den Bankzeilen; Muster bau/proben/2026-10-09/hypotenuse-muster.
+\usepackage{enumitem}
+\usepackage{adjustbox,varwidth}
+\newgeometry{a4paper,margin=18mm,top=15mm,bottom=20mm,footskip=9mm}
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\footnotesize\color{mbgrau}FP6 \textperiodcentered{} Lösungen \textperiodcentered{} Winkel an Geradenkreuzungen und Parallelen}
+\fancyfoot[R]{\footnotesize\color{mbgrau}\thepage}
+\setlength{\parskip}{3pt}
+\renewcommand{\kreuz}[1]{\mbox{$\square$\ #1}\quad}
+\newcommand{\kreuzl}[1]{\par\hangindent1.4em\hangafter1\noindent$\square$\ #1}
+\newcommand{\aufg}[3]{\par\noindent\makebox[0pt][r]{#3}\begin{minipage}[t]{\linewidth}#1\end{minipage}\par}
+\newcommand{\aufgg}[4]{\par\noindent\makebox[0pt][r]{#4}\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}#1\end{minipage}\hfill
+  \begin{minipage}[t]{0.37\linewidth}\vspace{0pt}\centering #2\end{minipage}\par}
+\newcommand{\nr}[1]{\makebox[7mm][l]{\textbf{#1}}}
+\newcommand{\lsg}[3]{\par\noindent\begin{minipage}[t]{9mm}\textbf{#1}\end{minipage}%
+  \begin{minipage}[t]{52mm}\raggedright\bfseries\boldmath #2\end{minipage}\hspace{3mm}%
+  \begin{minipage}[t]{\dimexpr\linewidth-64mm\relax}\raggedright\small #3\end{minipage}\par\vspace{4pt}}
+\newlength{\kr}
+\makeatletter
+\newcommand{\karomerk}[2]{\protected@write\@auxout{}{\string\karoseite{#1}{#2}{\thepage}}}
+\newcommand{\karoseite}[3]{\expandafter\xdef\csname karo@#1@#2\endcsname{#3}}
+\newcommand{\karohinweis}[3]{\karomerk{h}{#1}\ifcsname karo@k@#1\endcsname
+  \ifnum\csname karo@k@#1\endcsname=0\csname karo@h@#1\endcsname\relax#2\else#3\fi
+  \else#3\fi}
+\makeatother
+\begin{document}
+
+\noindent{\Large\bfseries Lösungen}\hspace{1em}{\color{mbgrau}Winkel an Geradenkreuzungen und Parallelen}\par\smallskip
+\noindent{\small Links das Ergebnis, rechts der Weg in kurzen Schritten. Stimmt dein Ergebnis nicht, such den ersten Schritt, der anders ist.}\par
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut A}}\hspace{2mm}{\bfseries Scheitel- und Nebenwinkel}\par\vspace{4pt}
+\lsg{1.}{$\beta = 140^\circ$, $\gamma = 40^\circ$, $\delta = 140^\circ$}{$\gamma = 40^\circ$ (Scheitelwinkel); $\beta = 180^\circ - 40^\circ = 140^\circ$ (Nebenwinkel); $\delta = 140^\circ$ (Scheitelwinkel von $\beta$)}
+\lsg{2.}{$\alpha = 52^\circ$, $\gamma = 52^\circ$, $\delta = 128^\circ$}{$\alpha = 180^\circ - 128^\circ = 52^\circ$ (Nebenwinkel von $\beta$); $\gamma = 52^\circ$ (Scheitelwinkel von $\alpha$); $\delta = 128^\circ$ (Scheitelwinkel von $\beta$)}
+\lsg{3.}{$72{,}5^\circ$, $107{,}5^\circ$ und $107{,}5^\circ$}{Gegenüber: $72{,}5^\circ$ (Scheitelwinkel); daneben: $180^\circ - 72{,}5^\circ = 107{,}5^\circ$ (Nebenwinkel), zweimal}
+\lsg{4.}{Nein: die Klingen sind nur $34^\circ$ geöffnet.}{Nein; Griffe und Klingen sind zwei Geraden, die sich am Niet kreuzen. Der Winkel zwischen den Klingen liegt dem Winkel zwischen den Griffen gegenüber: Scheitelwinkel, also $34^\circ$. $34^\circ < 40^\circ$.}
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut B}}\hspace{2mm}{\bfseries Kreuzungen in Figuren}\par\vspace{4pt}
+\lsg{1.}{$\beta = 43^\circ$}{Der Winkel unten links zwischen $g$ und $h$ ist Scheitelwinkel zu $74^\circ$, also $74^\circ$; $k$ teilt ihn: $\beta = 74^\circ - 31^\circ = 43^\circ$}
+\lsg{2.}{$\beta = 38^\circ$}{Der Winkel unten links zwischen $g$ und $h$ ist Nebenwinkel zu $114^\circ$: $180^\circ - 114^\circ = 66^\circ$; $k$ teilt ihn: $\beta = 66^\circ - 28^\circ = 38^\circ$}
+\lsg{3.}{Mit der anderen Straße: $58^\circ$, also $6^\circ$ mehr.}{Der Radweg liegt im stumpfen Winkel: $180^\circ - 70^\circ = 110^\circ$ (Nebenwinkel). Zur anderen Straße: $110^\circ - 52^\circ = 58^\circ$. $58^\circ - 52^\circ = 6^\circ$: Mit der waagerechten Straße bildet er den größeren Winkel, um $6^\circ$.}
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut C}}\hspace{2mm}{\bfseries Winkel an Parallelen}\par\vspace{4pt}
+\lsg{1.}{$\alpha = 56^\circ$, $\beta = 56^\circ$}{$\alpha = 56^\circ$ (Stufenwinkel: gleiche Stelle an $h$ wie $56^\circ$ an $g$); $\beta = 56^\circ$ (Wechselwinkel: über Kreuz zwischen den Parallelen)}
+\lsg{2.}{$\alpha = 132^\circ$}{Stufenwinkel zu $48^\circ$ an $h$: $48^\circ$ (oben rechts); $\alpha$ liegt daneben: $\alpha = 180^\circ - 48^\circ = 132^\circ$}
+\lsg{3.}{Sicher: spitzer Winkel an beiden Schienen $62^\circ$.}{Spitzer Winkel an Schiene 1: $180^\circ - 118^\circ = 62^\circ$ (Nebenwinkel); an Schiene 2 ebenso, weil die Schienen parallel sind (Stufenwinkel); $62^\circ > 60^\circ$.}
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut D}}\hspace{2mm}{\bfseries Parallelogramm und Trapez}\par\vspace{4pt}
+\lsg{1.}{$\beta = 122^\circ$, $\gamma = 58^\circ$, $\delta = 122^\circ$}{$\beta = 180^\circ - 58^\circ = 122^\circ$; $\gamma = 58^\circ$; $\delta = 180^\circ - 58^\circ = 122^\circ$}
+\lsg{2.}{$\gamma = 101^\circ$, $\delta = 114^\circ$}{$\delta = 180^\circ - 66^\circ = 114^\circ$ (an der Seite $AD$); $\gamma = 180^\circ - 79^\circ = 101^\circ$ (an der Seite $BC$)}
+\lsg{3.}{$\beta = 96^\circ$, $\delta = 83^\circ$}{$\beta = 180^\circ - 84^\circ = 96^\circ$ (an der Seite $AB$); $\delta = 180^\circ - 97^\circ = 83^\circ$ (an der Seite $CD$)}
+\lsg{4.}{Nein: links $34^\circ$ (zu steil), rechts $28^\circ$.}{Nein; Krone und Boden sind parallel, links unten $180^\circ - 146^\circ = 34^\circ$, rechts unten $180^\circ - 152^\circ = 28^\circ$; links $34^\circ > 30^\circ$: zu steil.}
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut T}}\hspace{2mm}{\bfseries Probetest}\par\vspace{4pt}
+\lsg{1.}{$112^\circ$}{$\beta = 180^\circ - 68^\circ = 112^\circ$ (Nachbarwinkel)}
+\lsg{2.}{$\beta = 38^\circ$}{Scheitelwinkel zu $67^\circ$: $67^\circ$; $\beta = 67^\circ - 29^\circ = 38^\circ$}
+\lsg{3.}{$\alpha = 39^\circ$}{$\alpha$ ist Scheitelwinkel zu $39^\circ$: $\alpha = 39^\circ$; die $61^\circ$ bei $B$ werden nicht gebraucht.}
+\lsg{4.}{$\alpha = 123^\circ$}{Stufenwinkel an $h$: $57^\circ$ (oben rechts); $\alpha$ liegt darunter: $\alpha = 180^\circ - 57^\circ = 123^\circ$}
+\lsg{5.}{$65^\circ$: $\alpha$, $\gamma$; \ $115^\circ$: $\beta$, $\delta$}{$65^\circ$: $\alpha$ (Stufenwinkel) und $\gamma$ (Scheitelwinkel zum Stufenwinkel); $115^\circ$: $\beta$ und $\delta$, je $180^\circ - 65^\circ = 115^\circ$ (Nebenwinkel).}
+\end{document}
