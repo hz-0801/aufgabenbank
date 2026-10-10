@@ -1,0 +1,65 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\usepackage{adjustbox,varwidth}
+% gesetzt von werkzeuge/setzer.py; Lösungen nach bau/bauregeln.md „Lösungen“.
+\newcommand{\kennung}{TCQ}
+\begin{document}
+\pfheftstil
+\fancyfoot[C]{{\footnotesize\color{mbgrau}\kennung\hfill\thepage}}
+\pfheftkopf{Lineares und exponentielles Wachstum unterscheiden}{Klasse 10 \textperiodcentered{} Lösungen}
+
+\begin{pfloesung}{}
+\lz{1b)}{linear: jede Minute $+30$ Liter}{Differenzen $30$, $30$, $30$: immer gleich, also linear; jede Minute $30$ Liter mehr.}{}
+\end{pfloesung}
+\begin{pfloesung}{}
+\lz{2.}{exponentiell, Faktor $1{,}25$ ($+25\,\%$)}{Quotienten $400 : 320 = 1{,}25$, $500 : 400 = 1{,}25$, $625 : 500 = 1{,}25$ (Differenzen $80$, $100$, $125$): exponentiell, jedes Jahr $25\,\%$ mehr.}{}
+\end{pfloesung}
+\begin{pfloesung}{}
+\lz{3.}{exponentiell, Faktor $0{,}8$ ($-20\,\%$)}{Quotienten $1\,600 : 2\,000 = 0{,}8$, $1\,280 : 1\,600 = 0{,}8$, $1\,024 : 1\,280 = 0{,}8$: exponentiell; Faktor $0{,}8$, also jedes Jahr $20\,\%$ weniger.}{}
+\end{pfloesung}
+\begin{pfloesung}{}
+\lz{4.}{„um $10\,\%$“ und „Abnahme wird kleiner“}{Außerdem richtig: „Die Abnahme in mg wird jede Stunde kleiner.“ Quotienten immer $0{,}9$; Abnahmen $30$, $27$, $24{,}3$ mg.}{}
+\end{pfloesung}
+\begin{pfloesung}{}
+\lz{5b)}{a) L ab \ b) E zu \ c) E ab \ d) L zu}{a) L, ab; b) E, zu; c) E, ab; d) L, zu}{}
+\end{pfloesung}
+\begin{pfloesung}{}
+\lz{6.}{Nein; Verlust $3\,600\,€$, dann $3\,060\,€$}{Nein; $24\,000 \cdot 0{,}85 = 20\,400$, $20\,400 \cdot 0{,}85 = 17\,340$; Verlust $3\,600\,€$, dann nur $3\,060\,€$.}{}
+\end{pfloesung}
+\begin{pfloesung}{}
+\lz{7.}{Nein; $900$ Nutzer, nicht $800$}{Nein; $400 \cdot 1{,}5 = 600$, $600 \cdot 1{,}5 = 900$; doppelt wären $800$.}{}
+\end{pfloesung}
+\begin{pfloesung}{}
+\lz{8.}{Woche 4: A; B ab Woche $6$}{Woche 4: A $= 64\,€$, B $\approx 60{,}84\,€$, also A. Ab Woche 6 zahlt B mehr: $80{,}45\,€ > 80\,€$. (A linear: $40$, $48$, $56$, $64$, $72$, $80$. B exponentiell: $40$, $46$, $52{,}90$, $60{,}84$, $69{,}96$, $80{,}45$.)}{}
+\end{pfloesung}
+\begin{pfloesung}{}
+\lz{9b)}{$f$ Gerade, steigt, $100$; $g$ Kurve, fällt, $400$; $h$ Kurve, steigt, $50$}{Startwerte $100$, $400$, $50$. $f$: Gerade, steigt; $g$: Kurve, fällt; $h$: Kurve, steigt.}{}
+\end{pfloesung}
+\begin{pfloesung}{}
+\lz{10.}{$g$}{jede Minute derselbe Betrag, also eine Gerade, und sie beginnt bei $150$.}{}
+\end{pfloesung}
+\begin{pfloesung}{}
+\lz{11.}{$g$}{beginnt bei $400$ und wird immer steiler. $f$ nicht: Gerade, also jedes Jahr derselbe Betrag. $h$ nicht: beginnt bei $0$, nicht bei $400$.}{}
+\end{pfloesung}
+\begin{pfloesung}{}
+\lz{12b)}{Punkte $(0|10)$, $(1|20)$, $(2|40)$, $(3|80)$}{\par\smallskip \adjustbox{max width=\linewidth,max height=4cm}{\begin{varwidth}{50cm}\begin{ksys}[xmin=0,xmax=5,ymin=0,ymax=80,xstep=1,ystep=10,karo=0.35,xlabel=Monat,ylabel=Mitglieder] \punkt{0}{10}{} \punkt{1}{20}{} \punkt{2}{40}{} \punkt{3}{80}{} \end{ksys}\end{varwidth}}}{}
+\end{pfloesung}
+\begin{pfloesung}{}
+\lz{13.}{Punkte $(0|40)$ bis $(4|154)$, Kurve}{Punkte $(0|40)$, $(1|56)$, $(2|78)$, $(3|110)$, $(4|154)$; glatte Kurve, immer steiler.\par\smallskip \adjustbox{max width=\linewidth,max height=4cm}{\begin{varwidth}{50cm}\begin{ksys}[xmin=0,xmax=5,ymin=0,ymax=160,xstep=1,ystep=20,karo=0.35,xlabel=Stunde,ylabel=Zellen] \punkt{0}{40}{} \punkt{1}{56}{} \punkt{2}{78}{} \punkt{3}{110}{} \punkt{4}{154}{} \funktionab{40*1.4^\x}{}{0}{4} \end{ksys}\end{varwidth}}}{}
+\end{pfloesung}
+\begin{pfloesung}{}
+\lz{14.}{exponentiell: Punkte auf einer immer steileren Kurve}{Exponentiell; $y$: 1 Kästchen = 5 Tausend; Punkte $(0|8)$, $(1|12)$, $(2|18)$, $(3|27)$, $(4|40{,}5)$ liegen auf einer Kurve, die immer steiler wird (Quotient immer $1{,}5$).\par\smallskip \adjustbox{max width=\linewidth,max height=4cm}{\begin{varwidth}{50cm}\begin{ksys}[xmin=0,xmax=5,ymin=0,ymax=45,xstep=1,ystep=5,karo=0.3,xlabel=Woche,ylabel=Tausend] \punkt{0}{8}{} \punkt{1}{12}{} \punkt{2}{18}{} \punkt{3}{27}{} \punkt{4}{40.5}{} \funktionab{8*1.5^\x}{}{0}{4} \end{ksys}\end{varwidth}}}{}
+\end{pfloesung}
+\begin{pfloesung}{}
+\lz{15.}{exponentiell, Faktor $1{,}04$}{Exponentiell; jeder Wert ist das $1{,}04$-Fache des vorigen ($52\,000 : 50\,000 = 1{,}04$, $54\,080 : 52\,000 = 1{,}04$); die Zuwächse ($2\,000$, dann $2\,080$) werden größer.}{}
+\end{pfloesung}
+\begin{pfloesung}{}
+\lz{16.}{$g$}{beginnt bei $800$, fällt und wird flacher. $f$ ist eine Gerade, $h$ beginnt bei $600$.}{}
+\end{pfloesung}
+\begin{pfloesung}{}
+\lz{17.}{Punkte $(0|25)$ bis $(4|164)$, Kurve}{Punkte $(0|25)$, $(1|40)$, $(2|64)$, $(3|102)$, $(4|164)$; glatte Kurve.\par\smallskip \adjustbox{max width=\linewidth,max height=4cm}{\begin{varwidth}{50cm}\begin{ksys}[xmin=0,xmax=5,ymin=0,ymax=180,xstep=1,ystep=20,karo=0.3,xlabel=Stunde,ylabel=Bakterien] \punkt{0}{25}{} \punkt{1}{40}{} \punkt{2}{64}{} \punkt{3}{102}{} \punkt{4}{164}{} \funktionab{25*1.6^\x}{}{0}{4} \end{ksys}\end{varwidth}}}{}
+\end{pfloesung}
+\begin{pfloesung}{}
+\lz{18.}{Nein; nach $6$ Wochen bedeckt}{Verdoppeln ist exponentiell: $3$, $6$, $12$, $24$, $48$, $96$, $192$ m². Nach $5$ Wochen $96$ m², nach $6$ Wochen wären es $192$ m² $> 120$ m². Danach ist kein Platz mehr.}{}
+\end{pfloesung}
+\end{document}

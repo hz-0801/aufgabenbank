@@ -1,0 +1,138 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\usepackage{adjustbox,varwidth}
+% gesetzt von werkzeuge/setzer.py aus dem Lernweg (L1-A · L1-B · L1-C · L1-D · L1-T) und den Bankzeilen; Muster T6B.
+\input{praeambel}
+\newcommand{\kennung}{TCQ}
+\newcommand{\grau}[1]{{\color{mbgrau}#1}}
+
+\begin{document}
+\pfheftstil
+\fancyfoot[C]{\parbox[t]{\textwidth}{\mbfhbox\par\vspace{1.5mm}{\footnotesize\color{mbgrau}{\scriptsize \kennung}\hfill\thepage}}}
+\pfheftkopf{Lineares und exponentielles Wachstum unterscheiden}{Klasse 10}
+% L1-A: An der Tabelle erkennen
+\begin{pfaufg}{}{1.}{}
+\grau{a)\ Die Tabelle zeigt die Zahl der Abonnenten eines Kanals. Wächst sie linear oder exponentiell? \adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\wertetabelle[400,440,484,532{,}4]{\text{Monat}}{\text{Abonnenten}}{0,1,2,3}\end{varwidth}}\par\smallskip Differenzen: $440 - 400 = 40$; \ $484 - 440 = 44$; \ $532{,}4 - 484 = 48{,}4$. Nicht gleich, also nicht linear.\par Quotienten: $440 : 400 = 1{,}1$; \ $484 : 440 = 1{,}1$; \ $532{,}4 : 484 = 1{,}1$. Immer gleich, also exponentiell.\par Der Faktor $1{,}1$ heißt: jeden Monat $10\,\%$ mehr.\par Antwort: Die Zahl wächst exponentiell mit dem Faktor $1{,}1$.}
+\par\medskip
+b)\ Die Tabelle zeigt, wie viel Wasser in einem Becken ist. Bilde die Differenzen. Wächst die Menge linear? \adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\wertetabelle[250,280,310,340]{\text{Minute}}{\text{Liter}}{0,1,2,3}\end{varwidth}}\karo{3}
+\fusshilfe{\mbox{1:~b) linear: jede Minute $+30$ Liter}}
+\end{pfaufg}
+
+% L1-A: An der Tabelle erkennen
+\begin{pfaufg}{}{2.}{}
+Die Tabelle zeigt die Zahl der Fische in einem Teich. Bilde Differenzen und Quotienten. Wächst die Zahl linear oder exponentiell? Gib den Faktor und den Prozentsatz an. \adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\wertetabelle[320,400,500,625]{\text{Jahr}}{\text{Fische}}{0,1,2,3}\end{varwidth}}\karo{3}
+\fusshilfe{\mbox{2:~exponentiell, Faktor $1{,}25$ ($+25\,\%$)}}
+\end{pfaufg}
+
+% L1-A: An der Tabelle erkennen
+\begin{pfaufg}{}{3.}{}
+Die Tabelle zeigt den Wert eines Motorrollers. Linear oder exponentiell? Gib an, um wie viel Prozent der Wert jedes Jahr abnimmt. \adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\wertetabelle[2000,1600,1280,1024]{\text{Jahr}}{\text{Wert in €}}{0,1,2,3}\end{varwidth}}\karo{3}
+\fusshilfe{\mbox{3:~exponentiell, Faktor $0{,}8$ ($-20\,\%$)}}
+\end{pfaufg}
+
+% L1-A: An der Tabelle erkennen
+\begin{pfaufg}{}{4.}{}
+Nach einer Spritze wird ein Medikament im Blut abgebaut. Die Tabelle zeigt die Menge. Kreuze die zwei richtigen Aussagen an. \adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\wertetabelle[300,270,243,218{,}7]{\text{Stunde}}{\text{Menge in mg}}{0,1,2,3}\end{varwidth}}\pfkreuzzeile{Jede Stunde nimmt die Menge um $30$ mg ab.}\pfkreuzzeile{Jede Stunde nimmt die Menge um $10\,\%$ ab.}\pfkreuzzeile{Die Menge nimmt linear ab.}\pfkreuzzeile{Die Abnahme in mg wird jede Stunde kleiner.}
+\fusshilfe{\mbox{4:~„um $10\,\%$“ und „Abnahme wird kleiner“}}
+\end{pfaufg}
+
+% L1-B: Am Text erkennen
+\begin{pfaufg}{}{5.}{}
+\grau{a)\ Auf einem Konto liegen $800\,€$. Jedes Jahr kommen $5\,\%$ Zinsen dazu. Ben sagt: „Das sind jedes Jahr $40\,€$ mehr.“ Hat er recht?\par\smallskip „$5\,\%$ jedes Jahr“: gleicher Faktor $1{,}05$, also exponentiell. („$40\,€$ jedes Jahr“ wäre linear.)\par Zwei Jahre rechnen, jedes Mal vom letzten Wert aus: \ $800 \cdot 1{,}05 = 840$; \ $840 \cdot 1{,}05 = 882$.\par Zuwächse vergleichen: $840 - 800 = 40$; \ $882 - 840 = 42$. Der Zuwachs wird größer.\par Antwort: Nein. Nur im ersten Jahr sind es $40\,€$, danach mehr.}
+\par\medskip
+b)\ Linear oder exponentiell? Schreib L oder E und dazu „zu“ oder „ab“. \par a) Eine Kerze wird jede Stunde $2$ cm kürzer. \par b) Die Zahl der Follower wächst jede Woche um $8\,\%$. \par c) Ein Handy verliert jedes Jahr $30\,\%$ seines Werts. \par d) In ein Becken laufen jede Minute $15$ Liter.\karo{3}
+\fusshilfe{\mbox{5:~b) a) L ab \ b) E zu \ c) E ab \ d) L zu}}
+\end{pfaufg}
+
+% L1-B: Am Text erkennen
+\begin{pfaufg}{}{6.}{}
+Ein Auto kostet neu $24\,000\,€$. Es verliert jedes Jahr $15\,\%$ seines Werts. Tim sagt: „Das Auto verliert jedes Jahr $3\,600\,€$.“ Rechne zwei Jahre. Hat Tim recht?\karo{3}
+\fusshilfe{\mbox{6:~Nein; Verlust $3\,600\,€$, dann $3\,060\,€$}}
+\end{pfaufg}
+
+% L1-B: Am Text erkennen
+\begin{pfaufg}{}{7.}{}
+Eine App hat $400$ Nutzer. Die Zahl steigt zwei Monate lang um je $50\,\%$. Ali sagt: „Dann sind es doppelt so viele.“ Rechne nach. Hat Ali recht?\karo{3}
+\fusshilfe{\mbox{7:~Nein; $900$ Nutzer, nicht $800$}}
+\end{pfaufg}
+
+% L1-B: Am Text erkennen
+\begin{pfaufg}{}{8.}{}
+Für einen Ferienjob gibt es zwei Angebote. In Woche $1$ zahlen beide $40\,€$. Angebot A: danach jede Woche $8\,€$ mehr. Angebot B: danach jede Woche $15\,\%$ mehr. Welches Angebot zahlt in Woche $4$ mehr? In welcher Woche zahlt B zum ersten Mal mehr als A?\karo{3}
+\fusshilfe{\mbox{8:~Woche 4: A; B ab Woche $6$}}
+\end{pfaufg}
+
+% L1-C: Den passenden Graphen finden
+\begin{pfaufg}{}{9.}{}
+\gzwei{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\begin{ksys}[xmin=0,xmax=4,ymin=0,ymax=800,xstep=0.5,ystep=100,karo=0.3,xlabel=Jahr,ylabel=€] \funktionab[3.0]{300*1.25^\x}{f}{0}{4} \gerade[3.9]{75}{300}{g} \funktionab[2.6]{45*\x^2}{h}{0}{4} \end{ksys}\end{varwidth}}}{\grau{a)\ Auf einem Konto liegen zu Beginn $300\,€$. Das Guthaben wächst jedes Jahr um $25\,\%$. Welcher Graph passt?\par\smallskip Startwert $300\,€$: Der Graph beginnt bei $(0\,|\,300)$. $h$ beginnt bei $0$, passt nicht.\par „$25\,\%$ jedes Jahr“: gleicher Faktor, also eine Kurve. $g$ ist eine Gerade, passt nicht.\par $f$ bleibt: beginnt bei $300$ und wird immer steiler. Bei Abnahme fällt die Kurve und wird flacher.\par Antwort: Graph $f$.}}
+\par\medskip
+\gzwei{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\begin{ksys}[xmin=0,xmax=5,ymin=0,ymax=450,xstep=0.5,ystep=50,karo=0.28,xlabel=Jahr,ylabel=Wert] \funktionab[0.8]{400*0.8^\x}{g}{0}{5} \gerade[4.6]{40}{100}{f} \funktionab[3.4]{50*1.4^\x}{h}{0}{5} \end{ksys}\end{varwidth}}}{%
+b)\ Das Koordinatensystem zeigt drei Graphen. Schreib zu jedem: Gerade oder Kurve? Steigt er oder fällt er? Wo beginnt er?\karo{3}}
+\fusshilfe{\mbox{9:~b) $f$ Gerade, steigt, $100$}}
+\end{pfaufg}
+
+% L1-C: Den passenden Graphen finden
+\begin{pfaufg}{}{10.}{}
+\gzwei{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\begin{ksys}[xmin=0,xmax=6,ymin=0,ymax=600,xstep=0.5,ystep=100,karo=0.28,xlabel=Minute,ylabel=Liter] \funktionab[5.2]{150*1.25^\x}{f}{0}{6} \gerade[5.5]{30}{150}{g} \gerade[4.5]{30}{0}{h} \end{ksys}\end{varwidth}}}{%
+Ein Tank enthält $150$ Liter Wasser. Jede Minute laufen $30$ Liter dazu. Kreuze den passenden Graphen an und begründe in einem Satz.\par\smallskip \gkreuz{$f$}\gkreuz{$g$}\par \gkreuz{$h$}}
+\fusshilfe{\mbox{10:~$g$}}
+\end{pfaufg}
+
+% L1-C: Den passenden Graphen finden
+\begin{pfaufg}{}{11.}{}
+\gzwei{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\begin{ksys}[xmin=0,xmax=8,ymin=0,ymax=1000,xstep=1,ystep=100,karo=0.28,xlabel=Jahr,ylabel=Mitglieder] \gerade[6.5]{48}{400}{f} \funktionab[7.3]{400*1.12^\x}{g}{0}{8} \funktionab[5.5]{12*\x^2}{h}{0}{8} \end{ksys}\end{varwidth}}}{%
+Ein Fitnessstudio hat $400$ Mitglieder. Jedes Jahr kommen $12\,\%$ dazu. Kreuze den Graphen an, der die Zahl der Mitglieder zeigt. Begründe für die beiden anderen Graphen, warum sie nicht passen.\par\smallskip \gkreuz{$f$}\gkreuz{$g$}\par \gkreuz{$h$}}
+\fusshilfe{\mbox{11:~$g$}}
+\end{pfaufg}
+
+% L1-D: Wertepaare als Punkte eintragen
+\begin{pfaufg}{}{12.}{}
+\gzwei{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\begin{ksys}[xmin=0,xmax=5,ymin=0,ymax=120,xstep=1,ystep=20,karo=0.32,xlabel=Tag,ylabel=cm$^2$] \punkt{0}{7}{} \punkt{1}{14}{} \punkt{2}{28}{} \punkt{3}{56}{} \punkt{4}{112}{} \funktionab{7*2^\x}{}{0}{4} \end{ksys}\end{varwidth}}}{\grau{a)\ Die Tabelle zeigt die Fläche eines Schimmelflecks. Stelle die Werte in einem Koordinatensystem dar. \adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\wertetabelle[7,14,28,56,112]{\text{Tag}}{\text{Fläche in cm²}}{0,1,2,3,4}\end{varwidth}}\par\smallskip Größter Wert: $112$. Die senkrechte Achse muss darüber reichen.\par 1 Kästchen $= 20$ cm² (bis $120$), waagerecht 1 Kästchen $=$ 1 Tag. Achsen beschriften.\par Punkte eintragen: $(0\,|\,7)$ gut ein Drittel Kästchen hoch, $(1\,|\,14)$ knapp drei Viertel, dann $(2\,|\,28)$, $(3\,|\,56)$, $(4\,|\,112)$.\par Frei Hand verbinden, ohne Ecken. Die Kurve wird steiler: exponentiell.}}
+\par\medskip
+\gzwei{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\begin{ksys}[xmin=0,xmax=5,ymin=0,ymax=80,xstep=1,ystep=10,karo=0.3,xlabel=Monat,ylabel=Mitglieder]  \end{ksys}\end{varwidth}}}{%
+b)\ Die Tabelle zeigt die Mitglieder eines Online-Clubs. Trage die Wertepaare als Punkte in das Koordinatensystem ein. \adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\wertetabelle[10,20,40,80]{\text{Monat}}{\text{Mitglieder}}{0,1,2,3}\end{varwidth}}\karo{3}}
+\fusshilfe{\mbox{12:~b) Punkte $(0|10)$, $(1|20)$, $(2|40)$, $(3|80)$}}
+\end{pfaufg}
+
+% L1-D: Wertepaare als Punkte eintragen
+\begin{pfaufg}{}{13.}{}
+\gzwei{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\begin{ksys}[xmin=0,xmax=5,ymin=0,ymax=160,xstep=1,ystep=20,karo=0.3,xlabel=Stunde,ylabel=Zellen]  \end{ksys}\end{varwidth}}}{%
+Die Tabelle zeigt die Zahl der Hefezellen (in Tausend). Trage die Punkte ein und verbinde sie zu einer Kurve. \adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\wertetabelle[40,56,78,110,154]{\text{Stunde}}{\text{Zellen}}{0,1,2,3,4}\end{varwidth}}\karo{3}}
+\fusshilfe{\mbox{13:~Punkte $(0|40)$ bis $(4|154)$, Kurve}}
+\end{pfaufg}
+
+% L1-D: Wertepaare als Punkte eintragen
+\begin{pfaufg}{}{14.}{}
+\gzwei{\begin{tikzpicture}[x=0.36cm,y=0.36cm]\draw[black!35,line width=0.4pt] (0,0) grid[step=1] (8,8);\draw[-stealth,line width=0.6pt] (0,0) -- (8.6,0);\draw[-stealth,line width=0.6pt] (0,0) -- (0,8.6);\end{tikzpicture}}{%
+Die Tabelle zeigt die Downloads einer App (in Tausend). Teile die Achsen selbst ein, beschrifte sie und trage die Punkte ein. Wachsen die Downloads linear oder exponentiell? Begründe am Graphen. \adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\wertetabelle[8,12,18,27,40{,}5]{\text{Woche}}{\text{Downloads}}{0,1,2,3,4}\end{varwidth}}\karo{3}}
+\fusshilfe{\mbox{14:~exponentiell}}
+\end{pfaufg}
+
+% L1-T: Probetest
+\begin{pfaufg}{}{15.}{}
+Der Umsatz eines Ladens steigt jedes Jahr um $4\,\%$. Die Tabelle zeigt den Umsatz. Ist das Wachstum linear oder exponentiell? Begründe. \adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\wertetabelle[50\,000,52\,000,54\,080]{\text{Jahr}}{\text{Umsatz in €}}{2022,2023,2024}\end{varwidth}}\karo{3}
+\fusshilfe{\mbox{15:~exponentiell, Faktor $1{,}04$}}
+\end{pfaufg}
+
+% L1-T: Probetest
+\begin{pfaufg}{}{16.}{}
+\gzwei{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\begin{ksys}[xmin=0,xmax=6,ymin=0,ymax=900,xstep=0.5,ystep=100,karo=0.32,xlabel=Jahr,ylabel=€] \gerade[4.4]{-160}{800}{f} \funktionab[0.6]{800*0.75^\x}{g}{0}{6} \funktionab[2.0]{600*0.75^\x}{h}{0}{6} \end{ksys}\end{varwidth}}}{%
+Ein Handy kostet neu $800\,€$. Es verliert jedes Jahr $25\,\%$ seines Werts. Kreuze den passenden Graphen an.\par\smallskip \gkreuz{$f$}\gkreuz{$g$}\par \gkreuz{$h$}}
+\fusshilfe{\mbox{16:~$g$}}
+\end{pfaufg}
+
+% L1-T: Probetest
+\begin{pfaufg}{}{17.}{}
+\gzwei{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\begin{ksys}[xmin=0,xmax=5,ymin=0,ymax=180,xstep=1,ystep=20,karo=0.4,xlabel=Stunde,ylabel=Bakterien]  \end{ksys}\end{varwidth}}}{%
+Die Tabelle zeigt die Zahl der Bakterien (in Tausend). Trage die Wertepaare als Punkte ein und verbinde sie zu einer Kurve. \adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\wertetabelle[25,40,64,102,164]{\text{Stunde}}{\text{Bakterien}}{0,1,2,3,4}\end{varwidth}}\karo{3}}
+\fusshilfe{\mbox{17:~Punkte $(0|25)$ bis $(4|164)$, Kurve}}
+\end{pfaufg}
+
+% L1-T: Probetest
+\begin{pfaufg}{}{18.}{}
+Auf einem Teich von $120$ m² bedecken Seerosen $3$ m². Die Fläche der Seerosen verdoppelt sich jede Woche. Tom sagt: „Jede Woche kommen $3$ m² dazu, also ist der Teich nach $39$ Wochen voll.“ Hat Tom recht? Nach wie vielen Wochen ist der Teich bedeckt? Warum geht das Wachstum danach nicht so weiter?\karo{3}
+\fusshilfe{\mbox{18:~Nein; nach $6$ Wochen bedeckt}}
+\end{pfaufg}
+
+\par\vfill\noindent{\footnotesize Vorher: Wachstumsfaktor (Prozentrechnung)\quad\textbullet\quad Weiter: Wachstumsfaktor und Wachstumstabelle\par}
+\end{document}

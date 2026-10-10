@@ -913,3 +913,20 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
   die heutige Zeile 101). Mengenwarnungen aus Blatt und Vorrat wie bei
   den anderen Bauten; duplikate.py ohne Treffer in e5.
 - Kritiker: offen (startet der Chat).
+## Potenz- und Exponentialfunktionen E1 „Lineares und exponentielles Wachstum unterscheiden“ (TCQ, 10.10.2026)
+
+- Graphen-Seiten sprengen leicht die eine Seite je Abschnitt: vier
+  Aufgaben mit je einem Koordinatensystem plus Beispielbild ergaben je
+  zwei Seiten (Heft 8 statt 6). (Je Abschnitt C und D drei Aufgaben,
+  breite flache Systeme mit xstep 0.5; die vierte Aufgabe in den Vorrat.)
+- Ein leeres Kästchenfeld zum Selbsteinteilen der Achsen (ohne Zahlen)
+  kennt mathblatt.sty nicht; ksys beziffert immer. TikZ-grid ohne
+  „step=1“ zeichnet in cm statt in Kästchen. (Eigenes tikzpicture mit
+  grid[step=1]; Vorschlag: Baustein „ksysleer“.)
+- Ankreuzlösung „$g$ – …“ erscheint auf dem Lösungsblatt als „– …“, weil
+  der Setzer die Option abschneidet. (Doppelpunkt statt Gedankenstrich.)
+- Zwei richtige Optionen (P10-Form 2016-OS-K4d) passen nicht zur Regel
+  „Lösung nennt genau eine Option“; mit pruef auf die eine Zahloption
+  geht es durch. (Zweite Option als „Außerdem richtig: …“.)
+- Mengenwarnungen (k1 s1–s8, k2, k3) aus den Zusatzzeilen, wie bei
+  allen Bauten.
