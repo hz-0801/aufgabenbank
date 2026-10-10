@@ -386,3 +386,23 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
 - Skizzen klein (D: drei Dreiecke in 6,4 cm Spalte): steile Dreiecke
   (7 : 4) waren zu schmal für Winkelmarke und Fragezeichen; Zahlen auf
   flache Dreiecke geändert.
+
+## Brüche E3 „Brüche vergleichen“ (FS9, 10.10.2026)
+
+- Lage: Standardlage Klasse 6 laut Katalog (wie A5D). Heft 6 Seiten:
+  Übersicht, A–D, Probetest; jede Seite mit Rechenplatz.
+- Satz: Ankreuzoptionen mit \dfrac stoßen im Setzer zeilenweise
+  aneinander (zwei Optionen je Zeile, kein Zeilenabstand für hohe
+  Brüche). In \kreuz daher \frac. (Vorschlag Setzer: \kreuz-Zeilen mit
+  \strut oder größerem Abstand, wenn eine Option \dfrac trägt.)
+- Setzer: Mehrdeutige Ankreuzaufgabe („alle ankreuzen, die …“) lässt
+  bank-pruef nicht zu (genau eine Option); D4 und T5 deshalb mit genau
+  einer richtigen Option. (Hingenommen.)
+- Prüfer: Päckchen „Setze < oder >“ haben kein Ergebnis an der
+  Ergebnisstelle; pruef trägt den ersten Bruch, die eigentliche Prüfung
+  lief mit Fraction im Bauskript. Mengenwarnungen wie bei QG4/A5D.
+- duplikate.py: B-119 (Päckchen „Setze < oder >“) sind gewollte
+  Zahlvarianten.
+- Thema-Weg trägt: Vergleich mit 1/2 und 1 steht beim Zahlenstrahl (C),
+  nicht als eigener Abschnitt; die Zielmarke 2014-OS-B1c ist Abschnitt
+  D und T4.
