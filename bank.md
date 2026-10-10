@@ -669,3 +669,32 @@ erst die Lage, dann genau eine Aufforderung; die Frage nennt ihren
 Bezug; keine Stichwörter mit Doppelpunkt; Division als Bruch.
 Gilt für neue und geänderte Zeilen. Abnahme durch den Lehrer
 offen (mathe-nachhilfe uebergabe.md § 5, K2).
+
+## Aufgaben ohne Treppe (seit 10.10.2026, Lehrer)
+
+Neue Aufgaben tragen, was der Schüler tut und was an ihnen besonders
+ist, nicht ihren Platz auf einer Treppe. Die Treppe ist eine eigene
+Liste und wählt nach diesen Feldern; eine andere Treppe heißt neue
+Liste, keine Aufgabe wird angefasst. Die alten Zeilen (e<n>.jsonl,
+Ketten und Sprossen) bleiben unverändert als Vorrat.
+
+    Datei         bank/<eintrag>/a<n>.jsonl (n = Lerneinheit)
+    id            "<eintrag>-a<n>-<nnn>", laufend, ohne Kette/Sprosse
+    eintrag, einheit   wie oben
+    taetigkeit    "erkennen" | "notieren" | "aufstellen" | "rechnen"
+                  | "sache" (genau eins)
+    merkmale      Liste aus bank/<eintrag>/merkmale.md, Abschnitt der
+                  Einheit; nur Werte, die dort stehen
+    stufe         "basis" | "kern" | "ziel" (wie oben)
+    aufgabe       vollständiger Auftrag, ein Verb vorn
+    teil          Kurztext als Teilaufgabe im Päckchen
+    grafik        TikZ, Skizze passt zu den Zahlen
+    ergebnis, loesung   wie oben; schritte nur, wo die Zeile als graues
+                  a) vorgerechnet werden kann
+    darstellung, sache  wie oben
+    herkunft      "fuell <Datum>"
+
+Treppe: bank/<eintrag>/treppe-e<n>-<name>.md. Je Stufe eine Zeile:
+Nummer, Auftrag der Nummer (bei Päckchen), taetigkeit, Pflicht- und
+Wahlmerkmale, Zahl auf dem Blatt, Zahl im Vorrat. Gefüllt wird nach
+bau/fuellauftrag.md.
