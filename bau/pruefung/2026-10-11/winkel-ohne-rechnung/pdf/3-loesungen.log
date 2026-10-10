@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2026.10.2)  10 OCT 2026 23:07
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2026.10.2)  10 OCT 2026 23:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -23,7 +23,7 @@ File: size11.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
 \belowcaptionskip=\skip49
 \bibindent=\dimen140
 ) (/home/claude/blattbau/mathblatt.sty
-Package: mathblatt 2026/10/11 Nachhilfe-Arbeitsblatt 2026-10-11
+Package: mathblatt 2026/10/11 Nachhilfe-Arbeitsblatt 2026-10-11c
 (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
@@ -1147,20 +1147,11 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 13.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[1
+) [1
 
 
 
-] 
+] [2] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (pdf/3-loesungen.aux)
  ***********
@@ -1171,12 +1162,12 @@ Package rerunfilecheck Info: File `3-loesungen.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 37313 strings out of 476872
- 901435 string characters out of 5804586
+ 37325 strings out of 476872
+ 901566 string characters out of 5804586
  1946627 words of memory out of 5000000
- 58589 multiletter control sequences out of 15000+600000
+ 58601 multiletter control sequences out of 15000+600000
  567938 words of font info for 121 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  117i,14n,121p,759b,479s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on pdf/3-loesungen.pdf (1 page).
+Output written on pdf/3-loesungen.pdf (2 pages).

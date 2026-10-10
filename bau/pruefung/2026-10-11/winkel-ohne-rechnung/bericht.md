@@ -36,3 +36,20 @@ Neue Bankzeilen: keine (keine Lücke). Herausgelöst: herausgeloest.csv (7 Zeile
 - Lösung: Stufenköpfe wortgleich als Zwischenüberschriften, Nummer- und Buchstabenspalte; 1 Seite.
 - Umfang: Übersicht 1, Blatt 3, Lösung 1 Seite.
 - mathblatt.sty 2026-10-11b neu: \pfstufenzeile{…}, \pflaufkopf{Name}{Kennung} (nach \pfheftstil; \pfkopfzeile war belegt), \pfseitevon (Seitenzahl „n/N“ mittig, lastpage), \pfteil{a)}{Text}, Umgebung pfloesungb mit \lzb{Nr}{Bst}{Ergebnis}{Weg}; alles zusätzlich, Bestehendes unverändert.
+
+## Nachzug 11.10. (zweite Durchsicht)
+
+- Dauer: 23:41–23:55 (date). Seiten: Übersicht 1, Blatt 3, Lösung 2 (Stufe 4 auf Seite 2).
+- 1 Winkelbeziehungen: neue Stufe statt „Eigenschaften kennen“; Nr. 1 Markieren (Schülerfrage „gleich groß? zusammen 180°?“) an Kreuzung und Parallelen, Nr. 2 kleine Berechnung an denselben Figuren ohne neue Skizze; Kopf „letzte 5 Jahre: 2026 · 2022 · 2018“. Raute und 2026-FOR-B1c raus (→ Vierecke), B1c und die Raute-Fundstelle 2016-OS-B1e aus der Fundstellentabelle, B1c-Zeile aus herausgeloest.csv.
+- 2 Innenwinkelsumme: Nr. 3 a) Dreieck mit Skizze, b) Viereck mit Skizzenfeld, c) gestrichen; Nr. 4 Winkel γ₁ statt ε, Skizzenfeld.
+- 3 gleichschenklig: Nr. 8 neu – zwei Dreiecke (gleichschenklig mit 64°, gleichseitig), „Was unterscheidet die beiden? Trage alle Winkel ein.“; danach 2023-OS-B1g und -K7a wie bisher.
+- 4 rechter Winkel: Nr. 11 neu mit dem Handgriff von 2025-OS-K2c (msa/wortlaut-eigen-dreiecke.csv: gleich lange Strecken am rechten Winkel → zwei gleichschenklig-rechtwinklige Teildreiecke, 45° + 45°), Längen in der Skizze, Hilfe „erst die Winkel eintragen“.
+- 5 Skizzen: alle Winkelwerte und -namen innen im Bogen (\pfwinkel), Längen außen; Ausnahme: γ in Nr. 11 und 12 leicht neben der Mittellinie, weil die Teilungslinie durch den Bogen geht. Nr. 7 jetzt maßstäblich bis auf γ (10° statt 5°, sonst passt γ nicht in den Bogen; Original ist ohnehin nicht maßstabsgerecht).
+- 6 Kopf: links „P10 · Prüfung“ (Folgeseiten „· Winkel“), rechts T2U auf jeder Seite, Titel „Winkel“, Stufenzeile; Fuß „n/N“ mittig. Gilt auch für Übersicht und Lösung.
+- 7 Skizzenfeld bei Nr. 3b und Nr. 4.
+- 8 Blattende: Fundstellentabelle, darunter grau „Vorher: Pythagoras · sin, cos, tan“, „▸ Winkel“, „Weiter: Sinussatz · Vierecke“.
+- 9 Übersicht: Gruppen „Rechtwinklige Dreiecke“ (Pythagoras · sin, cos, tan) und „Alle Dreiecke und Vierecke“ (▸ Winkel mit Stufen, Sinussatz und Vierecke grau); „Weiter: Flächeninhalt und Umfang“. Gliederung dreiecke.md: Zeile „Gruppen:“, Eigenschaft erkennen → Zuschnitt „Vierecke: Symmetrie und Eigenschaften“ mit Hinweis.
+- 10 Lösung: Stufenköpfe wortgleich, Nummer-/Buchstabenspalte, Markier-Aufgaben als „gleich: α = γ, β = δ; 180°: …“.
+- Neue Makros (mathblatt.sty 2026-10-11c): \pflaufkopf[Sorte]{Name}{Kennung} (rückwärtskompatibel), \pfskizzenfeld[breite]{n}, \pfwinkel[r][f]{(x,y)}{von}{bis}{Wert} (Wert innen), \pfrw[r]{(x,y)}{Richtung}, \pfausschnitt{Vorher}{Name}{Weiter}; \geradenkreuzung, \parallelenpaar, \winkel, \mbwinkelbogen setzen Beschriftungen jetzt innen.
+- Neue Bankzeilen: winkel-dreiecke-e2-k2-s0-v5, -e2-k2-s0-v6, -e2-k2-s3-v10, -e2-k2-s10-v9, -e3-k2-s0-v5, -e3-k2-s9-v8 (bank-pruef: 0 Abweichungen; neue Warnungen nur Mengen je Sprosse).
+- Bankzeile e3-k2-s7-v7: ε → γ₁ (Sprachregel). Offen: Raute/B1c-Inhalt liegt jetzt beim Blatt Vierecke, das es noch nicht gibt.
