@@ -849,3 +849,20 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
   Differenzen darum ausgeschrieben („90 − 80 = 10“).
 - Mengenwarnungen (k1 s1–s10, k2, k4, k5; 2026-FOR-B1f 4×) aus den
   Zusatzzeilen, wie bei L75 gewollt.
+## Quadratische Gleichungen E2 „Normalform und p-q-Formel“ (2TB, 10.10.2026)
+
+- Bank und Katalog zählen die Einheiten verschieden: seit dem Tausch vom
+  27.09. ist Katalog-Einheit 2 die p-q-Formel, die Bank führt sie aber in
+  `e3.jsonl` (e2 = Nullprodukt, `bank/quadratische-gleichungen/stand.md`).
+  Der Auftrag nannte e2.jsonl; die neuen Zeilen stehen darum als neue
+  Varianten in e3.jsonl (k3, k4) und, für die Sachgleichungen, in
+  e4.jsonl (k1). Ein Bau von Katalog-Einheit 3 (Nullprodukt) findet
+  seine Kette in e2.jsonl. (Vorschlag für „Später“: Bankdateien e2/e3
+  umbenennen samt ids, oder im Katalog vermerken – hier im Lernweg-Kopf
+  vermerkt.)
+- Schritt-Beispiel-Abgleich: Teilen durch −1 fehlte im ersten Entwurf in
+  jedem Beispiel (nur Merksatz); Beispiel C hat darum −2 vor x², und es
+  beginnt mit (x + 2)², damit die binomische Formel einen Schritt hat.
+- Sperre traf eigene Zahlen fünfmal (x(x+5), (x−2)², (x+3)², (x+4)²,
+  x²+2x−1 aus Originalen, Fehlerliste, Merkkasten); gewechselt.
+- Mengenwarnungen wie bei allen Bauten (Zusatzzeilen je Sprosse).
