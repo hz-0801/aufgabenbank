@@ -622,12 +622,12 @@ def kreuz_bruch(opts):
 def weg(a):
     """loesung für die Lösungsseite; beginnt sie mit der gewählten
     Ankreuzoption (bank-pruef) oder mit dem ergebnis, das links schon
-    steht, fällt der Anfang weg."""
+    steht, fällt der Anfang weg (samt Trennstrich „–“)."""
     _, opts = optionen(a["aufgabe"])
     lo = a["loesung"]
     for o in sorted(opts, key=len, reverse=True):
         if lo.startswith(o):
-            return lo[len(o):].lstrip(" :;")
+            return lo[len(o):].lstrip(" :;–—")
     erg = (a.get("ergebnis") or "").strip().rstrip(".")
     if erg and lo.startswith(erg) and (
             len(lo) == len(erg) or lo[len(erg)] in " .,:;\n"):
