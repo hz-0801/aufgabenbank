@@ -1,0 +1,137 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% gesetzt von werkzeuge/setzer.py (Sorte selbst) aus dem Lernweg FWE
+% und den Bankzeilen; Muster bau/proben/2026-10-09/hypotenuse-muster.
+\usepackage{enumitem}
+\usepackage{adjustbox,varwidth}
+\newgeometry{a4paper,margin=18mm,top=15mm,bottom=20mm,footskip=9mm}
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\footnotesize\color{mbgrau}FWE \textperiodcentered{} Streifen- und Kreisdiagramme}
+\fancyfoot[R]{\footnotesize\color{mbgrau}\thepage}
+\setlength{\parskip}{3pt}
+\renewcommand{\kreuz}[1]{\mbox{$\square$\ #1}\quad}
+\newcommand{\kreuzl}[1]{\par\hangindent1.4em\hangafter1\noindent$\square$\ #1}
+\newcommand{\aufg}[3]{\par\noindent\makebox[0pt][r]{#3}\begin{minipage}[t]{\linewidth}#1\end{minipage}\par}
+\newcommand{\aufgg}[4]{\par\noindent\makebox[0pt][r]{#4}\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}#1\end{minipage}\hfill
+  \begin{minipage}[t]{0.37\linewidth}\vspace{0pt}\centering #2\end{minipage}\par}
+\newcommand{\nr}[1]{\makebox[7mm][l]{\textbf{#1}}}
+\newcommand{\lsg}[3]{\par\noindent\begin{minipage}[t]{9mm}\textbf{#1}\end{minipage}%
+  \begin{minipage}[t]{52mm}\raggedright\bfseries\boldmath #2\end{minipage}\hspace{3mm}%
+  \begin{minipage}[t]{\dimexpr\linewidth-64mm\relax}\raggedright\small #3\end{minipage}\par\vspace{4pt}}
+\newlength{\kr}
+\makeatletter
+\newcommand{\karomerk}[2]{\protected@write\@auxout{}{\string\karoseite{#1}{#2}{\thepage}}}
+\newcommand{\karoseite}[3]{\expandafter\xdef\csname karo@#1@#2\endcsname{#3}}
+\newcommand{\karohinweis}[3]{\karomerk{h}{#1}\ifcsname karo@k@#1\endcsname
+  \ifnum\csname karo@k@#1\endcsname=0\csname karo@h@#1\endcsname\relax#2\else#3\fi
+  \else#3\fi}
+\makeatother
+\begin{document}
+
+\noindent{\LARGE\bfseries Streifen- und Kreisdiagramme}\par\smallskip
+\noindent{\small\color{mbgrau}Selbstlernheft Klasse 7 \textperiodcentered{} mit Lösungsheft \textperiodcentered{} Kennung FWE}\par\medskip
+\noindent\textbf{So nutzt du das Heft:} Lies im Abschnitt das Beispiel. Rechne dann die Aufgaben der Reihe nach und vergleiche jede sofort mit dem Lösungsheft. Kreuze „kann ich“ an, wenn du die letzte Aufgabe (\emph{Ziel}) allein schaffst.\par
+\noindent Mehr Aufgaben zu einem Abschnitt: Kennung deinem Nachhilfelehrer schicken (z.\,B. „FWE mehr B“).\par\medskip
+{\arrayrulecolor{mbgrau}\renewcommand{\arraystretch}{1.3}
+\noindent\begin{tabular}{|>{\bfseries}p{10mm}|p{112mm}|>{\raggedleft\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{14mm}|}\hline
+\rowcolor{black!8} & \textbf{Abschnitt} & \textbf{Seite} & \textbf{kann ich}\\\hline
+A & Streifendiagramm zeichnen & \pageref{s:A} & $\square$\\\hline
+B & Mittelpunktswinkel berechnen & \pageref{s:B} & $\square$\\\hline
+C & Kreisdiagramm zeichnen & \pageref{s:C} & $\square$\\\hline
+D & Kreisdiagramme lesen und zuordnen & \pageref{s:D} & $\square$\\\hline
+T & Probetest & \pageref{s:T} & $\square$\\\hline
+\end{tabular}}\par\bigskip
+
+\begin{tcolorbox}[colback=mbkasten,colframe=mbgrau,boxrule=0.5pt,arc=1mm,left=3mm,right=3mm,top=2mm,bottom=2mm,title={\bfseries Formel auf einen Blick},coltitle=black,colbacktitle=black!10]
+{\Large $100\,\%$ $=$ ganzer Streifen $=$ ganzer Kreis $= 360^\circ$}\par\medskip
+In Worten: Streifen und Kreis zeigen Anteile. Das Ganze ist immer $100\,\%$; jeder Abschnitt oder Sektor ist so groß wie sein Anteil.\par\medskip
+\textbf{So gehst du vor}\par
+\nr{1}Anteil bestimmen (Prozent, Bruch oder Teil von Ganzem)\par
+\nr{2}in Länge oder Winkel umrechnen\par
+\nr{3}Summe prüfen\par
+\nr{4}zeichnen und beschriften\par
+\medskip
+\end{tcolorbox}
+\medskip\noindent\textbf{Typische Fehler – so nicht}\par\smallskip
+\noindent\nr{$\times$}Prozent als Grad eingetragen: $16\,\%$ als $16^\circ$. Richtig: $0{,}16 \cdot 360^\circ$.\par
+\noindent\nr{$\times$}Den Winkel mit der Zahl der Befragten gerechnet: $16\,\%$ von $750$. Richtig: Der Winkel ist ein Anteil von $360^\circ$.\par
+\clearpage\label{s:A}\noindent\colorbox{black!12}{\makebox[10mm]{\Large\bfseries\strut A}}\hspace{3mm}{\Large\bfseries Streifendiagramm zeichnen}\par\smallskip
+\noindent Ein Streifendiagramm zeigt Anteile als Abschnitte eines Streifens. Der ganze Streifen ist $100\,\%$; bei $10$ cm Länge ist $1\,\%$ genau $1$ mm.\par\medskip
+\noindent\textbf{Formel}\par\nopagebreak\noindent\hspace*{4mm}\begin{minipage}{\dimexpr\linewidth-4mm\relax}Länge in cm $=$ Prozentsatz $: 10$ \qquad Rest $= 100\,\% -$ alle anderen Anteile\end{minipage}\par\medskip
+\noindent\textbf{Beispiel}\quad So kommt die Klasse 7b zur Schule: Rad $40\,\%$, Bus $25\,\%$, Auto $10\,\%$, der Rest zu Fuß. Stelle das in einem Streifen dar, der $10$ cm lang ist.\par\smallskip
+\noindent\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{1}}Rest: $100\,\% - 40\,\% - 25\,\% - 10\,\% = 25\,\%$ gehen zu Fuß.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{2}}Längen ($1\,\% = 1$ mm): Rad $4$ cm, Bus $2{,}5$ cm, Auto $1$ cm, zu Fuß $2{,}5$ cm.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{3}}Kontrolle: $4 + 2{,}5 + 1 + 2{,}5 = 10$ cm.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{4}}Von links nacheinander abmessen, Trennstrich ziehen, jeden Abschnitt beschriften.\par\streifenvoll{Rad/40,Bus/25,Auto/10,zu Fuß/25}\par\smallskip\par\medskip
+\noindent\textbf{Aufgaben}\hspace{1em}{\small\color{mbgrau}\karohinweis{A}{Rechne unten im Karo.}{Rechne auf einem extra Blatt.} Vergleiche jede Aufgabe gleich mit dem Lösungsheft.}\par\smallskip
+\aufg{\hangindent7mm\hangafter1\nr{1.}Ein Streifen ist $10$ cm lang und steht für $100\,\%$. Wie lang wird der Abschnitt?\par a)~$30\,\%$ \quad b)~$45\,\%$ \quad c)~$8\,\%$ \quad d)~$62\,\%$}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{2.}Beim Schulfest wurden Getränke verkauft: Wasser $30\,\%$, Apfelsaft $25\,\%$, Kakao $15\,\%$, der Rest Eistee. Trage alle Anteile in den Streifen ein und beschrifte sie.\par\streifenleer}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{3.}Die Klassen 7a und 7b wurden nach dem Schulweg gefragt. 7a: Rad $45\,\%$, Bus $30\,\%$, der Rest zu Fuß. 7b: Rad $35\,\%$, Bus $50\,\%$, der Rest zu Fuß. Stelle jede Klasse in einem Streifen dar. In welcher Klasse ist der Anteil „zu Fuß“ größer? Woran siehst du es am Streifen?\par 7a\par\streifenleer[0]\par 7b\par\streifenleer[0]}{}{{\scriptsize\color{mbgrau}Ziel\hspace{2mm}}}
+\medskip
+\par\vspace{3mm}\setlength{\kr}{\dimexpr\pagegoal-\pagetotal-10mm\relax}%
+\ifdim\kr>12mm\karomerk{k}{A}\noindent{\scriptsize\color{mbgrau}Platz zum Rechnen}\par\nointerlineskip\vspace{1mm}\noindent
+\begin{tikzpicture}\clip (0,0) rectangle ({\linewidth-0.5mm},\kr);\draw[black!16,line width=0.3pt,step=5mm] (0,0) grid (\linewidth,\kr);\end{tikzpicture}\fi\par
+\clearpage\label{s:B}\noindent\colorbox{black!12}{\makebox[10mm]{\Large\bfseries\strut B}}\hspace{3mm}{\Large\bfseries Mittelpunktswinkel berechnen}\par\smallskip
+\noindent Im Kreisdiagramm ist der ganze Kreis $100\,\%$, also $360^\circ$. Jeder Sektor bekommt seinen Anteil von $360^\circ$.\par\medskip
+\noindent\textbf{Formel}\par\nopagebreak\noindent\hspace*{4mm}\begin{minipage}{\dimexpr\linewidth-4mm\relax}Winkel $=$ Anteil $\cdot\, 360^\circ$ \qquad Anteil $= \frac{p}{100}$ oder Anteil $=$ Teil $:$ Ganzes\end{minipage}\par\medskip
+\noindent\textbf{Beispiel}\quad Berechne den Mittelpunktswinkel. a)~Ein Sektor steht für $30\,\%$. b)~$12$ von $500$ Befragten antworten „weiß nicht“.\par\smallskip
+\noindent\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{1}}a) Anteil: $30\,\% = 0{,}30$. Winkel: $0{,}30 \cdot 360^\circ = 108^\circ$.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{2}}b) Anteil: $12 : 500 = 0{,}024$.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{3}}Winkel: $0{,}024 \cdot 360^\circ = 8{,}64^\circ \approx 8{,}6^\circ$ (auf eine Stelle nach dem Komma runden).\par\smallskip\end{minipage}\hfill
+\begin{minipage}[t]{0.37\linewidth}\vspace{0pt}\centering \adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\kreissektor{108}{$108^\circ$}\end{varwidth}}\end{minipage}\par\medskip
+\noindent\textbf{Aufgaben}\hspace{1em}{\small\color{mbgrau}\karohinweis{B}{Rechne unten im Karo.}{Rechne auf einem extra Blatt.} Vergleiche jede Aufgabe gleich mit dem Lösungsheft.}\par\smallskip
+\aufg{\hangindent7mm\hangafter1\nr{1.}Wie groß ist der Mittelpunktswinkel?\par a)~$25\,\%$ \quad b)~$50\,\%$ \quad c)~$10\,\%$ \quad d)~$75\,\%$}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{2.}Wie groß ist der Mittelpunktswinkel?\par a)~$35\,\%$ \quad b)~$12\,\%$ \quad c)~$62{,}5\,\%$ \quad d)~$4{,}5\,\%$}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{3.}Berechne den Mittelpunktswinkel.\par a)~$9$ von $24$ Kindern haben ein Haustier. \quad b)~$14$ von $400$ Losen gewinnen.}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{4.}Bei einer Umfrage unter $540$ Personen antworten $14$ mit „Sonstiges“. Im Kreisdiagramm soll jeder Sektor mindestens $10^\circ$ groß sein, sonst passt keine Beschriftung hinein. Reicht der Platz für „Sonstiges“?}{}{{\scriptsize\color{mbgrau}Ziel\hspace{2mm}}}
+\medskip
+\par\vspace{3mm}\setlength{\kr}{\dimexpr\pagegoal-\pagetotal-10mm\relax}%
+\ifdim\kr>12mm\karomerk{k}{B}\noindent{\scriptsize\color{mbgrau}Platz zum Rechnen}\par\nointerlineskip\vspace{1mm}\noindent
+\begin{tikzpicture}\clip (0,0) rectangle ({\linewidth-0.5mm},\kr);\draw[black!16,line width=0.3pt,step=5mm] (0,0) grid (\linewidth,\kr);\end{tikzpicture}\fi\par
+\clearpage\label{s:C}\noindent\colorbox{black!12}{\makebox[10mm]{\Large\bfseries\strut C}}\hspace{3mm}{\Large\bfseries Kreisdiagramm zeichnen}\par\smallskip
+\noindent Erst rechnest du alle Winkel aus und prüfst, ob sie zusammen $360^\circ$ ergeben. Dann trägst du die Sektoren mit dem Geodreieck nacheinander ab, jeden an der Linie des vorigen.\par\medskip
+\noindent\textbf{Formel}\par\nopagebreak\noindent\hspace*{4mm}\begin{minipage}{\dimexpr\linewidth-4mm\relax}Ganzes $=$ Summe aller Teile \qquad Kontrolle: alle Winkel zusammen $360^\circ$\end{minipage}\par\medskip
+\noindent\textbf{Beispiel}\quad So kommen die Kinder der 7c zur Schule: $14$ mit dem Rad, $12$ mit dem Bus, $9$ zu Fuß. Zeichne ein Kreisdiagramm.\par\smallskip
+\noindent\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{1}}Alle zusammen: $14 + 12 + 9 = 35$ Kinder.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{2}}Winkel: Rad $14 : 35 \cdot 360^\circ = 144^\circ$; Bus $12 : 35 \cdot 360^\circ \approx 123{,}4^\circ \approx 123^\circ$; zu Fuß $9 : 35 \cdot 360^\circ \approx 92{,}6^\circ \approx 93^\circ$. Zum Zeichnen auf ganze Grad runden.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{3}}Kontrolle: $144^\circ + 123^\circ + 93^\circ = 360^\circ$.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{4}}Geodreieck mit dem Nullpunkt auf $M$, die $0^\circ$-Linie auf den Radius nach oben. $144^\circ$ abtragen, Linie ziehen. An dieser Linie $123^\circ$ abtragen. Der Rest ist zu Fuß.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{5}}Jeden Sektor beschriften.\par\smallskip\end{minipage}\hfill
+\begin{minipage}[t]{0.37\linewidth}\vspace{0pt}\centering \adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\kreisdiagramm[1.6]{Rad/144,Bus/123,zu Fuß/93}\end{varwidth}}\end{minipage}\par\medskip
+\noindent\textbf{Aufgaben}\hspace{1em}{\small\color{mbgrau}\karohinweis{C}{Rechne unten im Karo.}{Rechne auf einem extra Blatt.} Vergleiche jede Aufgabe gleich mit dem Lösungsheft.}\par\smallskip
+\aufgg{\hangindent7mm\hangafter1\nr{1.}Zeichne ein Kreisdiagramm mit drei Sektoren: $180^\circ$, $120^\circ$ und $60^\circ$. Beginne am Radius.}{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\kreisleer[1.6]\end{varwidth}}}{}{}
+\medskip
+\aufgg{\hangindent7mm\hangafter1\nr{2.}Getränke beim Sportfest: Wasser $42\,\%$, Saft $33\,\%$, der Rest Tee. Berechne die Winkel und zeichne das Kreisdiagramm.}{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\kreisleer[1.6]\end{varwidth}}}{}{}
+\medskip
+\aufgg{\hangindent7mm\hangafter1\nr{3.}Die $36$ Kinder der Theater-AG haben verschiedene Aufgaben: $15$ spielen mit, $9$ bauen die Bühne, $6$ nähen Kostüme, die übrigen machen Licht und Ton. Stelle das in einem Kreisdiagramm dar.}{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\kreisleer[1.6]\end{varwidth}}}{}{{\scriptsize\color{mbgrau}Ziel\hspace{2mm}}}
+\medskip
+\par\vspace{3mm}\setlength{\kr}{\dimexpr\pagegoal-\pagetotal-10mm\relax}%
+\ifdim\kr>12mm\karomerk{k}{C}\noindent{\scriptsize\color{mbgrau}Platz zum Rechnen}\par\nointerlineskip\vspace{1mm}\noindent
+\begin{tikzpicture}\clip (0,0) rectangle ({\linewidth-0.5mm},\kr);\draw[black!16,line width=0.3pt,step=5mm] (0,0) grid (\linewidth,\kr);\end{tikzpicture}\fi\par
+\clearpage\label{s:D}\noindent\colorbox{black!12}{\makebox[10mm]{\Large\bfseries\strut D}}\hspace{3mm}{\Large\bfseries Kreisdiagramme lesen und zuordnen}\par\smallskip
+\noindent Der größte Anteil hat den größten Sektor. Ein Halbkreis ist die Hälfte, ein rechter Winkel ein Viertel.\par\medskip
+\noindent\textbf{Formel}\par\nopagebreak\noindent\hspace*{4mm}\begin{minipage}{\dimexpr\linewidth-4mm\relax}Hälfte $= 50\,\% = 180^\circ$ \qquad Viertel $= 25\,\% = 90^\circ$\end{minipage}\par\medskip
+\noindent\textbf{Beispiel}\quad $200$ Befragte kommen so zur Arbeit: Auto $90$, Bahn $60$, Rad $30$, zu Fuß $20$. Welcher Sektor gehört zu welchem Verkehrsmittel? Wie groß ist der Winkel für zu Fuß?\par\smallskip
+\noindent\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{1}}Angaben nach Größe ordnen: Auto $90$, Bahn $60$, Rad $30$, zu Fuß $20$.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{2}}Sektoren nach Größe ordnen: B, D, A, C. Also B Auto, D Bahn, A Rad, C zu Fuß.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{3}}Prüfen: Auto ist $90$ von $200$, knapp die Hälfte – B ist fast ein Halbkreis. Bahn ist $60$ von $200$, also $30\,\%$, etwas mehr als ein Viertel – D ist etwas größer als ein rechter Winkel.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{4}}Winkel für zu Fuß: $20 : 200 = 0{,}1$; $0{,}1 \cdot 360^\circ = 36^\circ$.\par\smallskip\end{minipage}\hfill
+\begin{minipage}[t]{0.37\linewidth}\vspace{0pt}\centering \adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\kreisdiagramm[1.4]{A/30,B/90,C/20,D/60}\end{varwidth}}\end{minipage}\par\medskip
+\noindent\textbf{Aufgaben}\hspace{1em}{\small\color{mbgrau}\karohinweis{D}{Rechne unten im Karo.}{Rechne auf einem extra Blatt.} Vergleiche jede Aufgabe gleich mit dem Lösungsheft.}\par\smallskip
+\aufgg{\hangindent7mm\hangafter1\nr{1.}Mia teilt ihr Taschengeld ein: Freizeit $50\,\%$, Essen $30\,\%$, Sparen $20\,\%$. Schreibe an jeden Sektor, wofür er steht.}{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\kreisdiagrammleer[1.1]{Essen/30,Freizeit/50,Sparen/20}\end{varwidth}}}{}{}
+\medskip
+\aufgg{\hangindent7mm\hangafter1\nr{2.}Schätze für jeden Sektor: Ist er die Hälfte, ein Viertel oder weniger als ein Viertel? Wie viel Prozent sind C und D zusammen?}{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\kreisdiagramm[1.1]{A/25,B/50,C/15,D/10}\end{varwidth}}}{}{}
+\medskip
+\aufgg{\hangindent7mm\hangafter1\nr{3.}Eine Familie verbraucht an einem Tag $480$ Liter Wasser: Duschen $168$ l, Toilette $126$ l, Wäsche $96$ l, Geschirr $60$ l, Kochen und Trinken $30$ l. Im Kreisdiagramm ist nur „Duschen“ beschriftet. a)~Welcher Buchstabe gehört zu welchem Teil? b)~Wie groß ist der Winkel für Kochen und Trinken?}{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\kreisdiagramm[1.3]{Duschen/168,A/96,B/30,C/126,D/60}\end{varwidth}}}{}{{\scriptsize\color{mbgrau}Ziel\hspace{2mm}}}
+\medskip
+\par\vspace{3mm}\setlength{\kr}{\dimexpr\pagegoal-\pagetotal-10mm\relax}%
+\ifdim\kr>12mm\karomerk{k}{D}\noindent{\scriptsize\color{mbgrau}Platz zum Rechnen}\par\nointerlineskip\vspace{1mm}\noindent
+\begin{tikzpicture}\clip (0,0) rectangle ({\linewidth-0.5mm},\kr);\draw[black!16,line width=0.3pt,step=5mm] (0,0) grid (\linewidth,\kr);\end{tikzpicture}\fi\par
+\clearpage\label{s:T}\noindent\colorbox{black!12}{\makebox[10mm]{\Large\bfseries\strut T}}\hspace{3mm}{\Large\bfseries Probetest}\par\smallskip
+\noindent Gemischt wie in der Prüfung, ohne Beispiel. Etwa 20 Minuten.\par\medskip
+\noindent\textbf{Aufgaben}\hspace{1em}{\small\color{mbgrau}\karohinweis{T}{Rechne unten im Karo.}{Rechne auf einem extra Blatt.} Vergleiche jede Aufgabe gleich mit dem Lösungsheft.}\par\smallskip
+\aufg{\hangindent7mm\hangafter1\nr{1.}In einer Umfrage zur Freizeit nennen $20\,\%$ Sport, $15\,\%$ Musik, $45\,\%$ Medien, der Rest Freunde treffen. Stelle das Ergebnis in einem Streifendiagramm dar.\par\streifenleer[0]}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{2.}$650$ Jugendliche wurden befragt. $18\,\%$ von ihnen lesen nie Zeitung. Wie groß ist der Mittelpunktswinkel für „nie“ im Kreisdiagramm?}{}{}
+\medskip
+\aufgg{\hangindent7mm\hangafter1\nr{3.}Wohin ging die letzte Urlaubsreise? Meer $46{,}5\,\%$, Berge $27{,}5\,\%$, Stadt $26\,\%$. Zeichne ein Kreisdiagramm.}{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\kreisleer[1.6]\end{varwidth}}}{}{}
+\medskip
+\aufgg{\hangindent7mm\hangafter1\nr{4.}Ein Schulfest bringt $1\,250$~€ ein: Kuchen $450$~€, Getränke $375$~€, Spiele $250$~€, Tombola $150$~€, Bastelstand $25$~€. Im Kreisdiagramm ist nur „Kuchen“ beschriftet. a)~Welcher Buchstabe gehört zu welchem Teil? b)~Lisa sagt: „Kuchen und Getränke bringen zusammen mehr als die Hälfte.“ Hat sie recht?}{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\kreisdiagramm[1.4]{Kuchen/450,A/150,B/375,C/25,D/250}\end{varwidth}}}{}{{\scriptsize\color{mbgrau}Ziel\hspace{2mm}}}
+\medskip
+\par\vspace{3mm}\setlength{\kr}{\dimexpr\pagegoal-\pagetotal-10mm\relax}%
+\ifdim\kr>12mm\karomerk{k}{T}\noindent{\scriptsize\color{mbgrau}Platz zum Rechnen}\par\nointerlineskip\vspace{1mm}\noindent
+\begin{tikzpicture}\clip (0,0) rectangle ({\linewidth-0.5mm},\kr);\draw[black!16,line width=0.3pt,step=5mm] (0,0) grid (\linewidth,\kr);\end{tikzpicture}\fi\par
+\end{document}

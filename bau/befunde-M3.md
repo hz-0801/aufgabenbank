@@ -650,3 +650,22 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
   id betroffen.
 - Setzer tisch-alt: Wertetabelle steht über dem Auftragstext (Grafik vor
   Text). Hingenommen.
+## Daten E3 „Streifen- und Kreisdiagramm“ (FWE, 10.10.2026)
+
+- Setzer: Die Bildspalte (0,37 Zeilenbreite ≈ 6,4 cm) verkleinert einen
+  10-cm-Streifen; zum Zeichnen muss er aber echt 10 cm lang sein
+  (1 % = 1 mm). Streifen darum in aufgabe gesetzt (volle Breite, ohne
+  grafik). Der Prüfer verlangt bei „Zeichne“ eine grafik; Wortlaut darum
+  „Trage ein“ / „Stelle dar“. (Vorschlag: grafik-Option „breit“ – Bild
+  unter dem Text in voller Breite; setzer.py nicht geändert.)
+- Setzer: Im Beispiel setzt die Bildspalte \streifenvoll so klein, dass
+  „Auto“ (10 %) kaum lesbar ist; Streifen darum im letzten Schritt
+  (schritte) in voller Breite. In tisch-alt bleibt er klein, aber lesbar.
+- Seitenmaß: Mit Kreisen r = 2 cm (\kreisleer) und vier Aufgaben liefen C
+  und D über (8 Seiten). Auf drei Aufgaben je Abschnitt, Zeichenkreise
+  r = 1,6 cm und Lesediagramme r = 1,1–1,6 cm gekürzt; je eine Aufgabe in
+  den Vorrat. Heft 6 Seiten, jede Aufgabenseite mit Rechenplatz.
+- Lösungsheft: \mbox um lange Zuordnungsergebnisse läuft über die
+  52-mm-Spalte; lange Ergebnisse ohne \mbox schreiben.
+- Prüfer: Mengenwarnungen k1 s1–s12 und k2 s1 aus dem Vorrat, wie bei den
+  anderen Bauten; duplikate.py nur B-Treffer (gewollte Zahlvarianten).
