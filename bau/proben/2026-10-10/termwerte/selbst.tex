@@ -1,0 +1,137 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% gesetzt von werkzeuge/setzer.py (Sorte selbst) aus dem Lernweg MZE
+% und den Bankzeilen; Muster bau/proben/2026-10-09/hypotenuse-muster.
+\usepackage{enumitem}
+\usepackage{adjustbox,varwidth}
+\newgeometry{a4paper,margin=18mm,top=15mm,bottom=20mm,footskip=9mm}
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\footnotesize\color{mbgrau}MZE \textperiodcentered{} Termwerte berechnen}
+\fancyfoot[R]{\footnotesize\color{mbgrau}\thepage}
+\setlength{\parskip}{3pt}
+\renewcommand{\kreuz}[1]{\mbox{$\square$\ #1}\quad}
+\newcommand{\kreuzl}[1]{\par\hangindent1.4em\hangafter1\noindent$\square$\ #1}
+\newcommand{\aufg}[3]{\par\noindent\makebox[0pt][r]{#3}\begin{minipage}[t]{\linewidth}#1\end{minipage}\par}
+\newcommand{\aufgg}[4]{\par\noindent\makebox[0pt][r]{#4}\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}#1\end{minipage}\hfill
+  \begin{minipage}[t]{0.37\linewidth}\vspace{0pt}\centering #2\end{minipage}\par}
+\newcommand{\nr}[1]{\makebox[7mm][l]{\textbf{#1}}}
+\newcommand{\lsg}[3]{\par\noindent\begin{minipage}[t]{9mm}\textbf{#1}\end{minipage}%
+  \begin{minipage}[t]{52mm}\raggedright\bfseries\boldmath #2\end{minipage}\hspace{3mm}%
+  \begin{minipage}[t]{\dimexpr\linewidth-64mm\relax}\raggedright\small #3\end{minipage}\par\vspace{4pt}}
+\newlength{\kr}
+\makeatletter
+\newcommand{\karomerk}[2]{\protected@write\@auxout{}{\string\karoseite{#1}{#2}{\thepage}}}
+\newcommand{\karoseite}[3]{\expandafter\xdef\csname karo@#1@#2\endcsname{#3}}
+\newcommand{\karohinweis}[3]{\karomerk{h}{#1}\ifcsname karo@k@#1\endcsname
+  \ifnum\csname karo@k@#1\endcsname=0\csname karo@h@#1\endcsname\relax#2\else#3\fi
+  \else#3\fi}
+\makeatother
+\begin{document}
+
+\noindent{\LARGE\bfseries Termwerte berechnen}\par\smallskip
+\noindent{\small\color{mbgrau}Selbstlernheft Klasse 7 \textperiodcentered{} mit Lösungsheft \textperiodcentered{} Kennung MZE}\par\medskip
+\noindent\textbf{So nutzt du das Heft:} Lies im Abschnitt das Beispiel. Rechne dann die Aufgaben der Reihe nach und vergleiche jede sofort mit dem Lösungsheft. Kreuze „kann ich“ an, wenn du die letzte Aufgabe (\emph{Ziel}) allein schaffst.\par
+\noindent Mehr Aufgaben zu einem Abschnitt: Kennung deinem Nachhilfelehrer schicken (z.\,B. „MZE mehr B“).\par\medskip
+{\arrayrulecolor{mbgrau}\renewcommand{\arraystretch}{1.3}
+\noindent\begin{tabular}{|>{\bfseries}p{10mm}|p{112mm}|>{\raggedleft\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{14mm}|}\hline
+\rowcolor{black!8} & \textbf{Abschnitt} & \textbf{Seite} & \textbf{kann ich}\\\hline
+A & Zahl einsetzen und ausrechnen & \pageref{s:A} & $\square$\\\hline
+B & Negative Zahlen einsetzen & \pageref{s:B} & $\square$\\\hline
+C & Quadrate & \pageref{s:C} & $\square$\\\hline
+D & Zwei Variablen und Bruchstrich & \pageref{s:D} & $\square$\\\hline
+T & Probetest & \pageref{s:T} & $\square$\\\hline
+\end{tabular}}\par\bigskip
+
+\begin{tcolorbox}[colback=mbkasten,colframe=mbgrau,boxrule=0.5pt,arc=1mm,left=3mm,right=3mm,top=2mm,bottom=2mm,title={\bfseries Formel auf einen Blick},coltitle=black,colbacktitle=black!10]
+{\Large Klammer $\to$ Hochzahl $\to$ Punkt ($\cdot$\,,\,$:$) $\to$ Strich ($+$\,,\,$-$)}\par\medskip
+In Worten: Malnehmen und Teilen: gleiche Vorzeichen ergeben Plus, verschiedene Minus: $(-2) \cdot (-3) = 6$, \ $(-6) : 2 = -3$.\par\medskip
+\end{tcolorbox}
+\medskip\noindent\textbf{Typische Fehler – so nicht}\par\smallskip
+\noindent\nr{$\times$}$3 \cdot 4 = 12 + 6 = 18$ ist falsch geschrieben, denn $3 \cdot 4$ ist nicht $18$. Richtig: $3 \cdot 4 + 6 = 12 + 6 = 18$.\par
+\clearpage\label{s:A}\noindent\colorbox{black!12}{\makebox[10mm]{\Large\bfseries\strut A}}\hspace{3mm}{\Large\bfseries Zahl einsetzen und ausrechnen}\par\smallskip
+\noindent Ein \textbf{Term} wie $4x - 3$ enthält eine \textbf{Variable} $x$: einen Platzhalter für eine Zahl. Setzt du für $x$ eine Zahl ein und rechnest aus, erhältst du den \textbf{Termwert}.\par\medskip
+\noindent\textbf{Formel}\par\nopagebreak\noindent\hspace*{4mm}\begin{minipage}{\dimexpr\linewidth-4mm\relax}$4x - 3$ \ für \ $x = 5$: \quad $4 \cdot 5 - 3 = 20 - 3 = 17$\end{minipage}\par\medskip
+\noindent\textbf{Beispiel}\quad Berechne den Wert des Terms $3x + 2 \cdot (x - 1)$ für $x = 4$.\par\smallskip
+\noindent\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{1}}Für jedes $x$ die $4$ einsetzen; aus $3x$ wird $3 \cdot 4$: \quad $3 \cdot 4 + 2 \cdot (4 - 1)$\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{2}}Klammer zuerst: \quad $4 - 1 = 3$, \ also \ $3 \cdot 4 + 2 \cdot 3$\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{3}}Punkt vor Strich: \quad $12 + 6 = 18$\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{4}}Der Termwert ist $18$.\par\smallskip\par\medskip
+\noindent\textbf{Aufgaben}\hspace{1em}{\small\color{mbgrau}\karohinweis{A}{Rechne unten im Karo.}{Rechne auf einem extra Blatt.} Vergleiche jede Aufgabe gleich mit dem Lösungsheft.}\par\smallskip
+\aufg{\hangindent7mm\hangafter1\nr{1.}Berechne den Wert von $5x - 4$ für \ a)~$x = 2$ \qquad b)~$x = 3$ \qquad c)~$x = 10$.}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{2.}Berechne den Wert für $x = 3$. \par\vspace{3pt} a)~$7 + 2x$ \qquad b)~$4 \cdot (x + 2)$ \qquad c)~$20 - 3x$ \qquad d)~$2x + x - 1$}{}{}
+\medskip
+\aufgg{\hangindent7mm\hangafter1\nr{3.}Berechne die Termwerte von $3x - 2$ und trage sie in die Tabelle ein.}{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\wertetabelle{x}{3x - 2}{1,2,3,4,5}\end{varwidth}}}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{4.}Ein Fahrradverleih berechnet den Preis in Euro mit dem Term $4 + 3h$ ($h$: Anzahl der Stunden). Tom hat 20\,€ und möchte das Rad 6 Stunden leihen. Reicht sein Geld? Wie viel bleibt übrig oder fehlt?}{}{{\scriptsize\color{mbgrau}Ziel\hspace{2mm}}}
+\medskip
+\par\vspace{3mm}\setlength{\kr}{\dimexpr\pagegoal-\pagetotal-10mm\relax}%
+\ifdim\kr>12mm\karomerk{k}{A}\noindent{\scriptsize\color{mbgrau}Platz zum Rechnen}\par\nointerlineskip\vspace{1mm}\noindent
+\begin{tikzpicture}\clip (0,0) rectangle ({\linewidth-0.5mm},\kr);\draw[black!16,line width=0.3pt,step=5mm] (0,0) grid (\linewidth,\kr);\end{tikzpicture}\fi\par
+\clearpage\label{s:B}\noindent\colorbox{black!12}{\makebox[10mm]{\Large\bfseries\strut B}}\hspace{3mm}{\Large\bfseries Negative Zahlen einsetzen}\par\smallskip
+\noindent Eine negative Zahl setzt du in Klammern ein: Aus $3x$ wird $3 \cdot (-2)$. Dann rechnest du in der Reihenfolge von Seite 1.\par\medskip
+\noindent\textbf{Formel}\par\nopagebreak\noindent\hspace*{4mm}\begin{minipage}{\dimexpr\linewidth-4mm\relax}$2x + 9$ \ für \ $x = -3$: \quad $2 \cdot (-3) + 9 = -6 + 9 = 3$ \par\vspace{3pt} $10 - x$ \ für \ $x = -4$: \quad $10 - (-4) = 10 + 4 = 14$ \par\vspace{3pt} $-2x$ \ für \ $x = -3$: \quad $-2 \cdot (-3) = 6$\end{minipage}\par\medskip
+\noindent\textbf{Beispiel}\quad Berechne den Wert des Terms $7 - 3 \cdot (x + 2)$ für $x = -5$.\par\smallskip
+\noindent\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{1}}$-5$ einsetzen: \quad $7 - 3 \cdot (-5 + 2)$\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{2}}Klammer zuerst: \quad $-5 + 2 = -3$, \ also \ $7 - 3 \cdot (-3)$\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{3}}Punkt vor Strich: \quad $3 \cdot (-3) = -9$, \ also \ $7 - (-9)$\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{4}}Minus vor Minus wird Plus: \quad $7 + 9 = 16$\par\smallskip\par\medskip
+\noindent\textbf{Aufgaben}\hspace{1em}{\small\color{mbgrau}\karohinweis{B}{Rechne unten im Karo.}{Rechne auf einem extra Blatt.} Vergleiche jede Aufgabe gleich mit dem Lösungsheft.}\par\smallskip
+\aufg{\hangindent7mm\hangafter1\nr{1.}Berechne den Wert von $3x + 10$ für \ a)~$x = -2$ \qquad b)~$x = -5$ \qquad c)~$x = -1$.}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{2.}Berechne den Wert für $x = -3$. \par\vspace{3pt} a)~$8 - x$ \qquad b)~$-2x$ \qquad c)~$5 - 4x$ \qquad d)~$x - 6$}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{3.}Berechne. \par\vspace{3pt} a)~$6 \cdot (x - 1) + 20$ für $x = -2$ \qquad b)~$10 - 2 \cdot (x + 3)$ für $x = -7$}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{4.}Welcher Term hat für $x = -2$ den größeren Wert: $3 - 4x$ oder $2 \cdot (x + 6)$? Um wie viel ist er größer?}{}{{\scriptsize\color{mbgrau}Ziel\hspace{2mm}}}
+\medskip
+\par\vspace{3mm}\setlength{\kr}{\dimexpr\pagegoal-\pagetotal-10mm\relax}%
+\ifdim\kr>12mm\karomerk{k}{B}\noindent{\scriptsize\color{mbgrau}Platz zum Rechnen}\par\nointerlineskip\vspace{1mm}\noindent
+\begin{tikzpicture}\clip (0,0) rectangle ({\linewidth-0.5mm},\kr);\draw[black!16,line width=0.3pt,step=5mm] (0,0) grid (\linewidth,\kr);\end{tikzpicture}\fi\par
+\clearpage\label{s:C}\noindent\colorbox{black!12}{\makebox[10mm]{\Large\bfseries\strut C}}\hspace{3mm}{\Large\bfseries Quadrate}\par\smallskip
+\noindent Setz eine negative Zahl auch beim Quadrat in Klammern ein. Dann gilt das Quadrat für die ganze Zahl mit Minus, und es kommt immer eine positive Zahl heraus.\par\medskip
+\noindent\textbf{Formel}\par\nopagebreak\noindent\hspace*{4mm}\begin{minipage}{\dimexpr\linewidth-4mm\relax}$(-3)^2 = (-3) \cdot (-3) = 9$ \qquad $x^2 + 1$ \ für \ $x = -3$: \quad $(-3)^2 + 1 = 9 + 1 = 10$\end{minipage}\par\medskip
+\noindent\textbf{Beispiel}\quad Berechne den Wert des Terms $2x^2 - 3x$ für $x = -4$.\par\smallskip
+\noindent\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{1}}$-4$ in Klammern einsetzen: \quad $2 \cdot (-4)^2 - 3 \cdot (-4)$\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{2}}Hochzahl zuerst: \quad $(-4)^2 = (-4) \cdot (-4) = 16$, \ also \ $2 \cdot 16 - 3 \cdot (-4)$\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{3}}Punkt vor Strich: \quad $2 \cdot 16 = 32$ \ und \ $3 \cdot (-4) = -12$, \ also \ $32 - (-12)$\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{4}}Minus vor Minus wird Plus: \quad $32 + 12 = 44$\par\smallskip\par\medskip
+\noindent\textbf{Aufgaben}\hspace{1em}{\small\color{mbgrau}\karohinweis{C}{Rechne unten im Karo.}{Rechne auf einem extra Blatt.} Vergleiche jede Aufgabe gleich mit dem Lösungsheft.}\par\smallskip
+\aufg{\hangindent7mm\hangafter1\nr{1.}Berechne den Wert von $x^2$ für \ a)~$x = 5$ \qquad b)~$x = -5$ \qquad c)~$x = -1$ \qquad d)~$x = -10$.}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{2.}Berechne den Wert für $x = -2$. \par\vspace{3pt} a)~$4x^2$ \qquad b)~$x^2 + 4$ \qquad c)~$x^2 - x$}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{3.}Berechne. \par\vspace{3pt} a)~$10 - x^2$ für $x = -3$ \qquad b)~$2x^2 + 5x$ für $x = -1$}{}{}
+\medskip
+\aufgg{\hangindent7mm\hangafter1\nr{4.}Berechne die Termwerte von $x^2 - 2x$ und trage sie in die Tabelle ein. Für welche Zahl $x$ ist der Termwert negativ?}{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\wertetabelle{x}{x^2 - 2x}{-2,-1,0,1,2,3}\end{varwidth}}}{}{{\scriptsize\color{mbgrau}Ziel\hspace{2mm}}}
+\medskip
+\par\vspace{3mm}\setlength{\kr}{\dimexpr\pagegoal-\pagetotal-10mm\relax}%
+\ifdim\kr>12mm\karomerk{k}{C}\noindent{\scriptsize\color{mbgrau}Platz zum Rechnen}\par\nointerlineskip\vspace{1mm}\noindent
+\begin{tikzpicture}\clip (0,0) rectangle ({\linewidth-0.5mm},\kr);\draw[black!16,line width=0.3pt,step=5mm] (0,0) grid (\linewidth,\kr);\end{tikzpicture}\fi\par
+\clearpage\label{s:D}\noindent\colorbox{black!12}{\makebox[10mm]{\Large\bfseries\strut D}}\hspace{3mm}{\Large\bfseries Zwei Variablen und Bruchstrich}\par\smallskip
+\noindent Jede Variable bekommt ihre eigene Zahl. Ein Bruchstrich wirkt wie eine Klammer um Zähler und Nenner: erst oben und unten ausrechnen, dann teilen.\par\medskip
+\noindent\textbf{Formel}\par\nopagebreak\noindent\hspace*{4mm}\begin{minipage}{\dimexpr\linewidth-4mm\relax}$\dfrac{a + b}{c} = (a + b) : c$\end{minipage}\par\medskip
+\noindent\textbf{Beispiel}\quad Berechne den Wert des Terms $\dfrac{a + b}{c}$ für $a = 3$, $b = -9$ und $c = -2$.\par\smallskip
+\noindent\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{1}}Jede Variable durch ihre Zahl ersetzen: \quad $\dfrac{3 + (-9)}{-2}$\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{2}}Oben und unten zuerst: \quad Zähler $3 + (-9) = -6$, \ Nenner $-2$\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{3}}Teilen: \quad $(-6) : (-2) = 3$\par\smallskip\par\medskip
+\noindent\textbf{Aufgaben}\hspace{1em}{\small\color{mbgrau}\karohinweis{D}{Rechne unten im Karo.}{Rechne auf einem extra Blatt.} Vergleiche jede Aufgabe gleich mit dem Lösungsheft.}\par\smallskip
+\aufg{\hangindent7mm\hangafter1\nr{1.}Berechne für $a = 4$ und $b = -3$. \par\vspace{3pt} a)~$a + b$ \qquad b)~$2a - b$ \qquad c)~$a \cdot b$ \qquad d)~$b - a$}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{2.}Berechne den Wert des Terms $\dfrac{a - b}{c}$ für $a = 1$, $b = -7$ und $c = -4$.}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{3.}Berechne den Wert des Terms $\dfrac{a + b}{c}$ für $a = 6$, $b = -1$ und $c = -2$.}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{4.}Für $a = -2$ und $b = 4$: Welcher Term hat den größten Wert? Kreuze an.\par\smallskip\leftskip7mm \kreuz{$a \cdot b$}\ \kreuz{$\dfrac{b}{a}$}\par\kreuz{$b - a$}\ \kreuz{$a - b$}}{}{{\scriptsize\color{mbgrau}Ziel\hspace{2mm}}}
+\medskip
+\par\vspace{3mm}\setlength{\kr}{\dimexpr\pagegoal-\pagetotal-10mm\relax}%
+\ifdim\kr>12mm\karomerk{k}{D}\noindent{\scriptsize\color{mbgrau}Platz zum Rechnen}\par\nointerlineskip\vspace{1mm}\noindent
+\begin{tikzpicture}\clip (0,0) rectangle ({\linewidth-0.5mm},\kr);\draw[black!16,line width=0.3pt,step=5mm] (0,0) grid (\linewidth,\kr);\end{tikzpicture}\fi\par
+\clearpage\label{s:T}\noindent\colorbox{black!12}{\makebox[10mm]{\Large\bfseries\strut T}}\hspace{3mm}{\Large\bfseries Probetest}\par\smallskip
+\noindent Gemischt wie in der Prüfung, ohne Beispiel und ohne Taschenrechner. Etwa 20 Minuten.\par\medskip
+\noindent\textbf{Aufgaben}\hspace{1em}{\small\color{mbgrau}\karohinweis{T}{Rechne unten im Karo.}{Rechne auf einem extra Blatt.} Vergleiche jede Aufgabe gleich mit dem Lösungsheft.}\par\smallskip
+\aufg{\hangindent7mm\hangafter1\nr{1.}Berechne den Wert von $6 - 2x$ für $x = -4$.}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{2.}Welchen Wert hat der Term $4 \cdot (x - 2)$ für $x = -3$? Kreuze an.\par\smallskip\leftskip7mm \kreuz{$-20$}\ \kreuz{$-14$}\par\kreuz{$-4$}\ \kreuz{$20$}}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{3.}Berechne den Wert von $2x^2 + x$ für $x = -3$.}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{4.}Berechne den Wert des Terms $\dfrac{a - b}{c}$ für $a = -1$, $b = 5$ und $c = -4$.}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{5.}Berechne den Wert von $a^2 - b$ für $a = -3$ und $b = -5$.}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{6.}Fahrschulen rechnen mit dieser Faustformel für den Anhalteweg in Metern ($v$: Geschwindigkeit in km/h): \par\vspace{3pt}\hspace*{15mm}$3 \cdot \dfrac{v}{10} + \left(\dfrac{v}{10}\right)^2$\par\vspace{3pt} 20\,m vor einem Auto läuft ein Kind auf die Straße. Kommt das Auto vor dem Kind zum Stehen, wenn es a)~30\,km/h fährt, b)~50\,km/h fährt?}{}{{\scriptsize\color{mbgrau}Ziel\hspace{2mm}}}
+\medskip
+\par\vspace{3mm}\setlength{\kr}{\dimexpr\pagegoal-\pagetotal-10mm\relax}%
+\ifdim\kr>12mm\karomerk{k}{T}\noindent{\scriptsize\color{mbgrau}Platz zum Rechnen}\par\nointerlineskip\vspace{1mm}\noindent
+\begin{tikzpicture}\clip (0,0) rectangle ({\linewidth-0.5mm},\kr);\draw[black!16,line width=0.3pt,step=5mm] (0,0) grid (\linewidth,\kr);\end{tikzpicture}\fi\par
+\end{document}

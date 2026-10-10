@@ -631,3 +631,22 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
   Mengenwarnungen k1 s0–s10 aus dem Vorrat, wie bei den anderen Bauten.
   duplikate.py: nur D3 gegen seinen Vorrat (Nachweis, andere Zahlen),
   gewollt.
+
+## Terme E5 „Termwerte berechnen“ (MZE, 10.10.2026)
+
+- Erster Bau des Themas: Thema-Weg und Lernweg in katalog/terme.md neu.
+  Der Thema-Weg stellt Termwerte (E5) und Aufstellen (E6) vor das
+  Zusammenfassen (E1), weil die Variable als Platzhalter die
+  Grundvorstellung ist und die Lehrwerke sie in Kl. 6–7 bringen; die
+  Blattfolge „terme“ (Muster 4, Lehrer 01.10.) ist nicht geändert.
+  (Linie des Lehrers, offen.)
+- Katalogkette Termwert ohne Bruchstrich, obwohl 2016-OS-B1i und
+  2021-OS-B1g ihn verlangen; Sprossen 7–13 ergänzt (Zeile 110).
+- Abschnitte A–D plus T, Heft 6 Seiten, Lösungen 2. Schritt-Zuordnung
+  jeder Aufgabe zu einem Beispiel in plan.md des Probenordners.
+- Prüfer: Sperre trifft Merkkastenzahlen (2·(x+5), 3x² bei x = −2) –
+  gewechselt. \smallskip ist kein Baustein; \vspace{3pt} genommen.
+  Mengenwarnungen aus dem Vorrat wie bisher. duplikate.py: keine neue
+  id betroffen.
+- Setzer tisch-alt: Wertetabelle steht über dem Auftragstext (Grafik vor
+  Text). Hingenommen.
