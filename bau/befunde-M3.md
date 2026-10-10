@@ -342,3 +342,12 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
 - Thema-Weg trägt: Gleichnamigmachen gehört in E2 (E3 wendet es nur an);
   2014-OS-B1i bleibt Zielmarke – als Probetest-Aufgabe (14/40 = 7/20 =
   35 %), nicht als Ziel, weil die Figur das Modell vorgibt.
+
+## Quadratische Funktionen E2 „Scheitelpunktform“ (BP8, 10.10.2026)
+
+- Setzer: Ein „|“ in Satz oder Formel einer Lernweg-Zeile (S(d|e)) zerschneidet die Tabellenzelle; der Setzer bricht mit KeyError ab statt mit der Zeile. (Im Block {\vert} geschrieben wie in E1.)
+- Setzer: Alle Sorten schreiben 1-uebersicht/2-blatt/3-loesungen in denselben --aus-Ordner und überschreiben sich; je Sorte ein eigener Ordner, dann umbenannt. (So gemacht.)
+- Setzer (selbst): „Rechne unten im Karo“ steht auch auf Seiten, auf denen kein Karo mehr Platz hat (A, B). Der Schüler sucht das Karo. (Hingenommen.)
+- Achsenzahlen: Bei Parabeln nah an der y-Achse liegt der Bogen auf den Zahlen neben dem Scheitel. Die Zahlen sind dort weggelassen (Prüfung im Bauskript); der Schüler zählt dann Kästchen. Vorschlag: Achsenzahlen mit weißem Grund über dem Bogen als Baustein in mathblatt.sty.
+- bank-pruef: Ein Ergebnis „f(x) = (x − 4)² + 1“ hat keine Zahl an der Ergebnisstelle; Behelf wie im Bestand: Scheitel als Punkt in die Lösung, pruef [d, e].
+- Thema-Weg: „Was der Scheitel verrät“ (Nullstellen zählen, steigen/fallen, Lage) steht vor „Verschieben und spiegeln“, weil die Hauptmarke 2018-OS-K5d beides verlangt; im Thema-Weg ergänzt.
