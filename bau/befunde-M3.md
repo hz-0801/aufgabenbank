@@ -866,3 +866,25 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
 - Sperre traf eigene Zahlen fünfmal (x(x+5), (x−2)², (x+3)², (x+4)²,
   x²+2x−1 aus Originalen, Fehlerliste, Merkkasten); gewechselt.
 - Mengenwarnungen wie bei allen Bauten (Zusatzzeilen je Sprosse).
+
+
+## Kreis E2 „Kreisfläche“ (E69, 10.10.2026)
+
+- Erster Bau des Themas: Thema-Weg und Lernweg in katalog/kreis.md neu.
+  Kreisumfang (E1) fehlt noch; Radius, Durchmesser und π stehen darum im
+  Beispiel A, u = π · d kurz im Beispiel D. Wird E1 gebaut, können diese
+  Schritte dort hin und hier kürzer werden.
+- Schritt-Beispiel-Abgleich ergab drei Ergänzungen der Beispiele vor dem
+  Setzen: Vergleichen/Differenz (A, für die Pizza), „zwei Halbkreise sind
+  ein Kreis, Rechteck extra“ (B, für den Sportplatz), Einheit umrechnen
+  und Anzahl aufrunden (D, für den Teich).
+- bank-pruef: \hline in einer \sachtabelle zählt als fremder Baustein;
+  Zeilen nur mit \\ trennen. Anzahl nach „aufrunden:“ steht nicht an der
+  Ergebnisstelle; geschrieben als „$n = 48$“.
+- Ankreuz-Lösung, die nur mit der Option beginnt („…; für a = 8“), lässt
+  der Setzer nach dem Abschneiden mit „;“ beginnen; Lösung darum mit
+  einem Halbsatz nach der Option. Ergebnis in $…$ braucht {,}, sonst
+  steht „3, 91“.
+- tisch-alt setzt das Beispiel als „a) (a) …“ (Teilaufgaben im Beispiel
+  plus Marke a); Setzerfrage, hier nicht geändert.
+- Mengenwarnungen e2 (16) aus den Zusatzzeilen, wie bei allen Bauten.

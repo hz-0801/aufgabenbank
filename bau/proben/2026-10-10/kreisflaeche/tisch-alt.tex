@@ -1,0 +1,146 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\usepackage{adjustbox,varwidth}
+% gesetzt von werkzeuge/setzer.py aus dem Lernweg (L2-A · L2-B · L2-C · L2-D · L2-T) und den Bankzeilen; Muster T6B.
+\input{praeambel}
+\newcommand{\kennung}{E69}
+\newcommand{\grau}[1]{{\color{mbgrau}#1}}
+
+\begin{document}
+\pfheftstil
+\fancyfoot[C]{\parbox[t]{\textwidth}{\mbfhbox\par\vspace{1.5mm}{\footnotesize\color{mbgrau}{\scriptsize \kennung}\hfill\thepage}}}
+\pfheftkopf{Kreisfläche}{Klasse 8}
+% L2-A: Fläche aus Radius oder Durchmesser
+\begin{pfaufg}{}{1.}{}
+\gzwei{\begin{tikzpicture}[scale=0.72,font=\small]\draw[line width=0.8pt] (0,0) circle (1.5);\fill (0,0) circle (1.3pt);\draw[line width=0.6pt] (0,0) -- (1.500,0.000);\node[anchor=south,inner sep=2pt] at (0.675,0.000) {3\,cm};\node[font=\small] at (-1.7,1.5) {a)};\draw[line width=0.8pt] (4.0,0) circle (1.5);\fill (4.0,0) circle (1.3pt);\draw[line width=0.6pt] (2.5,0) -- (5.5,0);\node[anchor=south,inner sep=2pt] at (4.0,0) {1{,}2\,m};\node[font=\small] at (2.3,1.5) {b)};\end{tikzpicture}}{\grau{a)\ (a) Berechne die Fläche des Kreises mit $r = 3$\,cm. (b) Ein runder Tisch hat 1,2\,m Durchmesser. Ein Topf Lack reicht für 1\,m². Reicht er für die Tischplatte?\par\smallskip (a) Gegeben ist der Radius (vom Mittelpunkt zum Rand): $r = 3$\,cm.\par $A = \pi \cdot 3^2 = \pi \cdot 9$. Tippe $\pi \cdot 9$ in den Taschenrechner: $28{,}274\ldots$ Erst jetzt runden: $A \approx 28{,}3$\,cm².\par (b) Gegeben ist der Durchmesser. Erst halbieren: $r = 1{,}2 : 2 = 0{,}6$\,m.\par $A = \pi \cdot 0{,}6^2 = \pi \cdot 0{,}36 \approx 1{,}13$\,m² (auf zwei Stellen, damit man den Unterschied sieht).\par Vergleichen: $1{,}13 > 1$. Der Lack reicht nicht, es fehlen etwa $0{,}13$\,m².}}
+\par\medskip
+b)\ Berechne die Fläche des Kreises. (a) $r = 5$\,cm\quad (b) $r = 10$\,cm\quad (c) $r = 4$\,m\karo{3}
+\fusshilfe{\mbox{1:~b) (a) 78,5\,cm² (b) 314,2\,cm² (c) 50,3\,m²}}
+\end{pfaufg}
+
+% L2-A: Fläche aus Radius oder Durchmesser
+\begin{pfaufg}{}{2.}{}
+\gzwei{\begin{tikzpicture}[scale=0.72,font=\small]\draw[line width=0.8pt] (0,0) circle (1.3);\fill (0,0) circle (1.3pt);\draw[line width=0.6pt] (0,0) -- (1.300,0.000);\node[anchor=south,inner sep=2pt] at (0.585,0.000) {7\,cm};\node[font=\small] at (-1.5,1.3) {a)};\draw[line width=0.8pt] (2.9,0) circle (1.3);\fill (2.9,0) circle (1.3pt);\draw[line width=0.6pt] (1.5999999999999999,0) -- (4.2,0);\node[anchor=south,inner sep=2pt] at (2.9,0) {12\,cm};\node[font=\small] at (1.4,1.3) {b)};\draw[line width=0.8pt] (5.8,0) circle (1.3);\fill (5.8,0) circle (1.3pt);\draw[line width=0.6pt] (4.5,0) -- (7.1,0);\node[anchor=south,inner sep=2pt] at (5.8,0) {9\,m};\node[font=\small] at (4.3,1.3) {c)};\end{tikzpicture}}{%
+Radius oder Durchmesser? Berechne die Fläche.\karo{3}}
+\fusshilfe{\mbox{2:~(a) 153,9\,cm² (b) 113,1\,cm² (c) 63,6\,m²}}
+\end{pfaufg}
+
+% L2-A: Fläche aus Radius oder Durchmesser
+\begin{pfaufg}{}{3.}{}
+Berechne die Fläche. Runde auf zwei Stellen nach dem Komma. (a) $r = 2{,}5$\,cm\quad (b) $d = 1{,}8$\,m\karo{3}
+\fusshilfe{\mbox{3:~(a) 19,63\,cm² (b) 2,54\,m²}}
+\end{pfaufg}
+
+% L2-A: Fläche aus Radius oder Durchmesser
+\begin{pfaufg}{}{4.}{}
+In der Pizzeria gibt es runde Pizzen: groß mit 32\,cm Durchmesser, klein mit 22\,cm Durchmesser. Lena überlegt: eine große oder zwei kleine? Wobei bekommt sie mehr Pizza? Um wie viel? Runde auf ganze cm².\karo{3}
+\fusshilfe{\mbox{4:~eine große, etwa 44\,cm² mehr}}
+\end{pfaufg}
+
+% L2-B: Halbkreis und Viertelkreis
+\begin{pfaufg}{}{5.}{}
+\gzwei{\begin{tikzpicture}[scale=0.8,font=\small]\draw[line width=0.8pt] (-1.3,0) -- (1.3,0) arc (0:180:1.3);\fill (0,0) circle (1.3pt);\node[anchor=north,inner sep=2.5pt] at (0,0) {10\,cm};\node[font=\small] at (-1.5,1.3) {a)};\draw[line width=0.8pt] (2.4,0) -- (4.0,0) arc (0:90:1.6) -- cycle;\draw[line width=0.5pt] (2.912,0) arc (0:90:0.512);\fill (2.6048,0.2048) circle (0.8pt);\node[anchor=north,inner sep=2.5pt] at (3.2,0) {6\,m};\node[anchor=east,inner sep=2.5pt] at (2.4,0.8) {6\,m};\node[font=\small] at (2.0,1.6) {b)};\end{tikzpicture}}{\grau{a)\ (a) Berechne die Fläche des Halbkreises. (b) Ein Rasensprenger steht in der Ecke eines Gartens und spritzt 6\,m weit. Wie groß ist die Fläche, die er nass macht?\par\smallskip (a) Die gerade Seite des Halbkreises ist der Durchmesser. Erst halbieren: $r = 10 : 2 = 5$\,cm.\par Ganzer Kreis mit diesem Radius, dann die Hälfte: $A = \pi \cdot 5^2 : 2 = 39{,}26\ldots \approx 39{,}3$\,cm².\par (b) Der Sprenger erreicht alles bis 6\,m: Das ist ein Kreis mit $r = 6$\,m. Die Ecke ist ein rechter Winkel, darum liegt nur ein Viertel des Kreises im Garten. Skizze: zwei Radien mit rechtem Winkel, dazwischen der Bogen.\par $A = \pi \cdot 6^2 : 4 = \pi \cdot 36 : 4 \approx 28{,}3$\,m².\par Merke: Zwei gleiche Halbkreise sind zusammen ein ganzer Kreis. Gehört noch ein Rechteck dazu, rechne es extra und zähle die Flächen zusammen.}}
+\par\medskip
+\gzwei{\begin{tikzpicture}[scale=0.8,font=\small]\draw[line width=0.8pt] (-1.25,0) -- (1.25,0) arc (0:180:1.25);\fill (0,0) circle (1.3pt);\draw[line width=0.6pt] (0,0) -- (0,1.25);\node[anchor=west,inner sep=2pt] at (0,0.475) {4\,cm};\node[font=\small] at (-1.45,1.25) {a)};\draw[line width=0.8pt] (2.0,0) -- (3.6,0) arc (0:90:1.6) -- cycle;\draw[line width=0.5pt] (2.512,0) arc (0:90:0.512);\fill (2.2048,0.2048) circle (0.8pt);\node[anchor=north,inner sep=2.5pt] at (2.8,0) {10\,cm};\node[font=\small] at (1.6,1.6) {b)};\draw[line width=0.8pt] (4.050000000000001,0) -- (6.35,0) arc (0:180:1.15);\fill (5.2,0) circle (1.3pt);\node[anchor=north,inner sep=2.5pt] at (5.2,0) {12\,m};\node[font=\small] at (3.8500000000000005,1.15) {c)};\end{tikzpicture}}{%
+b)\ Berechne die Fläche der Figur.\karo{3}}
+\fusshilfe{\mbox{5:~b) (a) 25,1\,cm² (b) 78,5\,cm² (c) 56,5\,m²}}
+\end{pfaufg}
+
+% L2-B: Halbkreis und Viertelkreis
+\begin{pfaufg}{}{6.}{}
+\gzwei{\begin{tikzpicture}[scale=0.8,font=\small]\draw[line width=0.8pt] (0,0) -- (1.8,0) arc (0:90:1.8) -- cycle;\draw[line width=0.5pt] (0.5760000000000001,0) arc (0:90:0.5760000000000001);\fill (0.23040000000000005,0.23040000000000005) circle (0.8pt);\node[anchor=north,inner sep=2.5pt] at (0.9,0) {$a$};\node[anchor=east,inner sep=2.5pt] at (0,0.9) {$a$};\end{tikzpicture}}{%
+Der Viertelkreis hat den Radius $a$. Welcher Term gibt seine Fläche an? Kreuze an. Rechne ihn dann für $a = 8$\,cm aus.\par\smallskip \gkreuz{$\pi \cdot a^2 : 2$}\gkreuz{$\pi \cdot a^2 : 4$}\par \gkreuz{$2 \cdot \pi \cdot a : 4$}\gkreuz{$\pi \cdot (a : 4)^2$}}
+\fusshilfe{\mbox{6:~$\pi \cdot a^2 : 4$; 50,3\,cm²}}
+\end{pfaufg}
+
+% L2-B: Halbkreis und Viertelkreis
+\begin{pfaufg}{}{7.}{}
+\gzwei{\begin{tikzpicture}[scale=0.8,font=\small]\draw[line width=0.8pt] (0,0) -- (3.6,0) arc (-90:90:1) -- (0,2) arc (90:270:1);\draw[dashed,line width=0.5pt] (0,0) -- (0,2);\draw[dashed,line width=0.5pt] (3.6,0) -- (3.6,2);\node[anchor=north,inner sep=2.5pt] at (1.8,0) {90\,m};\node[anchor=west,inner sep=2pt] at (0,1) {50\,m};\end{tikzpicture}}{%
+Ein Sportplatz besteht aus einem Rechteck und zwei Halbkreisen. (a) Wie groß sind die beiden Halbkreise zusammen? (b) Wie groß ist der ganze Platz?\karo{3}}
+\fusshilfe{\mbox{7:~(a) 1\,963,5\,m² (b) 6\,463,5\,m²}}
+\end{pfaufg}
+
+% L2-B: Halbkreis und Viertelkreis
+\begin{pfaufg}{}{8.}{}
+Ein Rasensprenger steht an einer langen, geraden Hecke, genau in der Mitte. Er spritzt 5\,m weit und dreht sich nur auf der Rasenseite. Eine Tüte Rasensamen reicht für 35\,m². Reicht eine Tüte für die Fläche, die er nass macht? Begründe mit einer Rechnung.\karo{3}
+\fusshilfe{\mbox{8:~Nein, 39,3\,m² > 35\,m²}}
+\end{pfaufg}
+
+% L2-C: Radius aus der Fläche
+\begin{pfaufg}{}{9.}{}
+\grau{a)\ Ein Kreis hat die Fläche 154\,cm². Wie lang sind Radius und Durchmesser?\par\smallskip Formel aufschreiben und die Fläche einsetzen: $\pi \cdot r^2 = 154$.\par Durch $\pi$ teilen: $r^2 = 154 : \pi = 49{,}01\ldots$ Nicht runden, mit dem Wert im Rechner weiter.\par Wurzel ziehen: $r = \sqrt{49{,}01\ldots} \approx 7{,}0$\,cm. Achtung: $49{,}01$ ist erst $r^2$, noch nicht $r$.\par Durchmesser: $d = 2 \cdot r \approx 14{,}0$\,cm.\par Probe: $\pi \cdot 7^2 \approx 153{,}9 \approx 154$. Passt.}
+\par\medskip
+b)\ Berechne den Radius. (a) $A = 314$\,cm²\quad (b) $A = 78{,}5$\,m²\quad (c) $A = 12{,}6$\,cm²\karo{3}
+\fusshilfe{\mbox{9:~b) (a) 10,0\,cm (b) 5,0\,m (c) 2,0\,cm}}
+\end{pfaufg}
+
+% L2-C: Radius aus der Fläche
+\begin{pfaufg}{}{10.}{}
+Berechne den Durchmesser. (a) $A = 50$\,cm²\quad (b) $A = 2$\,m²\karo{3}
+\fusshilfe{\mbox{10:~(a) 8,0\,cm (b) 1,6\,m}}
+\end{pfaufg}
+
+% L2-C: Radius aus der Fläche
+\begin{pfaufg}{}{11.}{}
+Ein rundes Sonnensegel soll 12\,m² Schatten geben. Welchen Durchmesser muss es haben? Runde auf zwei Stellen.\karo{3}
+\fusshilfe{\mbox{11:~$d \approx 3{,}91$\,m}}
+\end{pfaufg}
+
+% L2-C: Radius aus der Fläche
+\begin{pfaufg}{}{12.}{}
+Eine Ziege wird mit einem Strick an einen Pflock auf der Wiese gebunden. Sie soll mindestens 45\,m² Gras zum Fressen haben. Im Schuppen liegen Stricke mit 3\,m, 4\,m und 5\,m Länge. Welches ist der kürzeste Strick, der reicht? Kreuze an.\par\smallskip \gkreuz{3\,m}\gkreuz{4\,m}\par \gkreuz{5\,m}
+\fusshilfe{\mbox{12:~4\,m}}
+\end{pfaufg}
+
+% L2-D: Fläche oder Umfang?
+\begin{pfaufg}{}{13.}{}
+\grau{a)\ Ein rundes Beet hat 6\,m Durchmesser. (a) Um das Beet kommen Kantensteine. Wie lang ist der Rand? (b) Wie groß ist die Fläche zum Bepflanzen? (c) Ein Kantenstein ist 40\,cm lang. Wie viele Steine braucht man?\par\smallskip (a) Kantensteine liegen am Rand: gefragt ist der Umfang, Einheit m. $u = \pi \cdot d = \pi \cdot 6 \approx 18{,}8$\,m. Der Umfang ist gut dreimal so lang wie der Durchmesser.\par (b) Bepflanzen: gefragt ist die Fläche innen, Einheit m². Erst $r = 6 : 2 = 3$\,m, dann $A = \pi \cdot 3^2 \approx 28{,}3$\,m².\par (c) Gleiche Einheit: 40\,cm $= 0{,}4$\,m. $18{,}85 : 0{,}4 = 47{,}1\ldots$\par 47 Steine reichen nicht ganz, darum aufrunden: 48 Steine.}
+\par\medskip
+b)\ Fläche oder Umfang? Schreib F oder U. (a) Zaun um einen runden Teich\quad (b) Folie für den Teichboden\quad (c) Borte am Rand einer runden Tischdecke\quad (d) Farbe für ein rundes Schild\quad (e) Weg, den ein Rad bei einer Umdrehung rollt\karo{3}
+\fusshilfe{\mbox{13:~b) (a) U (b) F (c) U (d) F (e) U}}
+\end{pfaufg}
+
+% L2-D: Fläche oder Umfang?
+\begin{pfaufg}{}{14.}{}
+Ergänze die Tabelle.\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\sachtabelle{lcccc}{ & $r$ & $d$ & $u$ & $A$}{(a) & 5\,cm & \leerzelle & \leerzelle & \leerzelle\\ (b) & \leerzelle & 8\,m & \leerzelle & \leerzelle\\ (c) & 1{,}5\,cm & \leerzelle & \leerzelle & \leerzelle}\end{varwidth}}\karo{3}
+\fusshilfe{\mbox{14:~(a) 10\,cm}}
+\end{pfaufg}
+
+% L2-D: Fläche oder Umfang?
+\begin{pfaufg}{}{15.}{}
+Entscheide erst: Fläche oder Umfang? Dann rechne. (a) Ein Rad hat 70\,cm Durchmesser. Wie weit rollt es bei einer Umdrehung? (b) Ein runder Spiegel hat 25\,cm Radius. Wie viel Glas braucht man? (c) Ein Reifen hat 45\,cm Radius. Wie lang ist das Rohr, aus dem er gebogen ist?\karo{3}
+\fusshilfe{\mbox{15:~(a) 219,9\,cm (b) 1\,963,5\,cm² (c) 282,7\,cm}}
+\end{pfaufg}
+
+% L2-D: Fläche oder Umfang?
+\begin{pfaufg}{}{16.}{}
+Familie Kaya legt einen runden Teich mit 3\,m Durchmesser an. Um den Rand legt sie Steine, jeder ist 25\,cm lang. Den Boden bedeckt sie mit Kies, ein Sack reicht für 2\,m². Wie viele Steine und wie viele Säcke Kies muss sie kaufen?\karo{3}
+\fusshilfe{\mbox{16:~38 Steine, 4 Säcke}}
+\end{pfaufg}
+
+% L2-T: Probetest
+\begin{pfaufg}{}{17.}{}
+Um eine runde Tischdecke wird eine Spitzenborte genäht. Welche Formel brauchst du für die Länge der Borte? Kreuze an.\par\smallskip \gkreuz{$A = \pi \cdot r^2$}\gkreuz{$u = \pi \cdot d$}\par \gkreuz{$A = \pi \cdot r^2 : 2$}\gkreuz{$u = 2 \cdot r$}
+\fusshilfe{\mbox{17:~$u = \pi \cdot d$}}
+\end{pfaufg}
+
+% L2-T: Probetest
+\begin{pfaufg}{}{18.}{}
+Beim Diskuswurf steht der Werfer in einem Kreis mit dem Durchmesser 2,50\,m. Berechne den Flächeninhalt dieses Kreises. Runde auf zwei Stellen nach dem Komma.\karo{3}
+\fusshilfe{\mbox{18:~$A \approx 4{,}91$\,m²}}
+\end{pfaufg}
+
+% L2-T: Probetest
+\begin{pfaufg}{}{19.}{}
+Ein rundes Sprungtuch soll 7\,m² groß sein. Welchen Radius muss es haben? Runde auf zwei Stellen.\karo{3}
+\fusshilfe{\mbox{19:~$r \approx 1{,}49$\,m}}
+\end{pfaufg}
+
+% L2-T: Probetest
+\begin{pfaufg}{}{20.}{}
+Marie näht eine runde Tischdecke mit 1,8\,m Durchmesser. Sie hat Stoff für 3\,m² und 5\,m Borte für den Rand. Reicht der Stoff? Reicht die Borte? Begründe beides mit einer Rechnung.\karo{3}
+\fusshilfe{\mbox{20:~Stoff ja (2,54\,m²), Borte nein (5,65\,m)}}
+\end{pfaufg}
+
+\par\vfill\noindent{\footnotesize Vorher: Kreisumfang\quad\textbullet\quad Weiter: Kreisteile\par}
+\end{document}
