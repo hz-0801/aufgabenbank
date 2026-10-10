@@ -1,0 +1,141 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% gesetzt von werkzeuge/setzer.py (Sorte selbst) aus dem Lernweg 4CR
+% und den Bankzeilen; Muster bau/proben/2026-10-09/hypotenuse-muster.
+\usepackage{enumitem}
+\usepackage{adjustbox,varwidth}
+\newgeometry{a4paper,margin=18mm,top=15mm,bottom=20mm,footskip=9mm}
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\footnotesize\color{mbgrau}4CR \textperiodcentered{} Kenngrößen}
+\fancyfoot[R]{\footnotesize\color{mbgrau}\thepage}
+\setlength{\parskip}{3pt}
+\renewcommand{\kreuz}[1]{\mbox{$\square$\ #1}\quad}
+\newcommand{\kreuzl}[1]{\par\hangindent1.4em\hangafter1\noindent$\square$\ #1}
+\newcommand{\aufg}[3]{\par\noindent\makebox[0pt][r]{#3}\begin{minipage}[t]{\linewidth}#1\end{minipage}\par}
+\newcommand{\aufgg}[4]{\par\noindent\makebox[0pt][r]{#4}\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}#1\end{minipage}\hfill
+  \begin{minipage}[t]{0.37\linewidth}\vspace{0pt}\centering #2\end{minipage}\par}
+\newcommand{\nr}[1]{\makebox[7mm][l]{\textbf{#1}}}
+\newcommand{\lsg}[3]{\par\noindent\begin{minipage}[t]{9mm}\textbf{#1}\end{minipage}%
+  \begin{minipage}[t]{52mm}\raggedright\bfseries\boldmath #2\end{minipage}\hspace{3mm}%
+  \begin{minipage}[t]{\dimexpr\linewidth-64mm\relax}\raggedright\small #3\end{minipage}\par\vspace{4pt}}
+\newlength{\kr}
+\makeatletter
+\newcommand{\karomerk}[2]{\protected@write\@auxout{}{\string\karoseite{#1}{#2}{\thepage}}}
+\newcommand{\karoseite}[3]{\expandafter\xdef\csname karo@#1@#2\endcsname{#3}}
+\newcommand{\karohinweis}[3]{\karomerk{h}{#1}\ifcsname karo@k@#1\endcsname
+  \ifnum\csname karo@k@#1\endcsname=0\csname karo@h@#1\endcsname\relax#2\else#3\fi
+  \else#3\fi}
+\makeatother
+\begin{document}
+
+\noindent{\LARGE\bfseries Kenngrößen}\par\smallskip
+\noindent{\small\color{mbgrau}Selbstlernheft Klasse 7 \textperiodcentered{} mit Lösungsheft \textperiodcentered{} Kennung 4CR}\par\medskip
+\noindent\textbf{So nutzt du das Heft:} Lies im Abschnitt das Beispiel. Rechne dann die Aufgaben der Reihe nach und vergleiche jede sofort mit dem Lösungsheft. Kreuze „kann ich“ an, wenn du die letzte Aufgabe (\emph{Ziel}) allein schaffst.\par
+\noindent Mehr Aufgaben zu einem Abschnitt: Kennung deinem Nachhilfelehrer schicken (z.\,B. „4CR mehr B“).\par\medskip
+{\arrayrulecolor{mbgrau}\renewcommand{\arraystretch}{1.3}
+\noindent\begin{tabular}{|>{\bfseries}p{10mm}|p{112mm}|>{\raggedleft\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{14mm}|}\hline
+\rowcolor{black!8} & \textbf{Abschnitt} & \textbf{Seite} & \textbf{kann ich}\\\hline
+A & Spannweite und Modalwert & \pageref{s:A} & $\square$\\\hline
+B & Median & \pageref{s:B} & $\square$\\\hline
+C & Arithmetisches Mittel & \pageref{s:C} & $\square$\\\hline
+D & Mittel rückwärts und Änderungen & \pageref{s:D} & $\square$\\\hline
+T & Probetest & \pageref{s:T} & $\square$\\\hline
+\end{tabular}}\par\bigskip
+
+\begin{tcolorbox}[colback=mbkasten,colframe=mbgrau,boxrule=0.5pt,arc=1mm,left=3mm,right=3mm,top=2mm,bottom=2mm,title={\bfseries Formel auf einen Blick},coltitle=black,colbacktitle=black!10]
+{\Large Spannweite $=$ Max $-$ Min \qquad Mittel $=$ Summe $:$ Anzahl \newline Median $=$ Mitte der geordneten Liste}\par\medskip
+In Worten: Kenngrößen fassen eine Liste in einer Zahl zusammen: wie stark die Werte schwanken (Spannweite) und welcher Wert typisch ist (Modalwert, Median, Mittel).\par\medskip
+\textbf{So gehst du vor}\par
+\nr{1}Werte ablesen und ordnen\par
+\nr{2}zählen, wie viele es sind\par
+\nr{3}Kenngröße bestimmen\par
+\nr{4}mit Einheit antworten oder die Aussage prüfen\par
+\medskip
+\end{tcolorbox}
+\medskip\noindent\textbf{Typische Fehler – so nicht}\par\smallskip
+\noindent\nr{$\times$}Den Median an der ungeordneten Liste abgelesen. Richtig: erst ordnen, dann die Mitte suchen.\par
+\noindent\nr{$\times$}Durch die falsche Anzahl geteilt, ein Tag oder eine $0$ vergessen. Richtig: alle Werte zählen.\par
+\clearpage\label{s:A}\noindent\colorbox{black!12}{\makebox[10mm]{\Large\bfseries\strut A}}\hspace{3mm}{\Large\bfseries Spannweite und Modalwert}\par\smallskip
+\noindent Ordne die Werte zuerst. Die Spannweite zeigt, wie stark die Werte schwanken; der Modalwert ist der Wert, der am häufigsten vorkommt.\par\medskip
+\noindent\textbf{Formel}\par\nopagebreak\noindent\hspace*{4mm}\begin{minipage}{\dimexpr\linewidth-4mm\relax}Spannweite $=$ Maximum $-$ Minimum \qquad Modalwert $=$ häufigster Wert\end{minipage}\par\medskip
+\noindent\textbf{Beispiel}\quad Ben springt siebenmal weit.\par\vspace{3pt} \adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\sachtabelle{lccccccc}{Versuch & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ & $7$}{Weite in m & $3{,}8$ & $4{,}1$ & $3{,}6$ & $4{,}1$ & $3{,}9$ & $4{,}1$ & $3{,}7$}\end{varwidth}}\par\vspace{3pt} Bestimme Minimum, Maximum, Spannweite und Modalwert. Tom sagt: „Die Spannweite ist $3{,}6$ m bis $4{,}1$ m.“ Stimmt das?\par\smallskip
+\noindent\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{1}}Ordnen: $3{,}6$; $3{,}7$; $3{,}8$; $3{,}9$; $4{,}1$; $4{,}1$; $4{,}1$.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{2}}Minimum: vorne, $3{,}6$\,m. Maximum: hinten, $4{,}1$\,m.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{3}}Spannweite $= 4{,}1\,\text{m} - 3{,}6\,\text{m} = 0{,}5$\,m.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{4}}Modalwert: $4{,}1$\,m kommt dreimal vor, öfter als jeder andere Wert.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{5}}Tom prüfen: Die Spannweite ist ein Abstand, also eine Zahl. Toms Aussage ist falsch; richtig ist $0{,}5$\,m.\par\smallskip\par\medskip
+\noindent\textbf{Aufgaben}\hspace{1em}{\small\color{mbgrau}\karohinweis{A}{Rechne unten im Karo.}{Rechne auf einem extra Blatt.} Vergleiche jede Aufgabe gleich mit dem Lösungsheft.}\par\smallskip
+\aufg{\hangindent7mm\hangafter1\nr{1.}Mia schreibt eine Woche lang auf, wie viele Minuten sie für die Hausaufgaben braucht: $25$, $40$, $15$, $30$, $45$, $20$, $35$. Bestimme Minimum, Maximum und Spannweite.}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{2.}Sechs Bäckereien verlangen für ein Brötchen (in €): $0{,}45$; $0{,}50$; $0{,}40$; $0{,}55$; $0{,}50$; $0{,}60$. Bestimme die Spannweite und den Modalwert.}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{3.}Die Tabelle zeigt die Preise einer Tankstelle in € je Liter.\par\vspace{3pt} \adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\sachtabelle{lccccc}{ & Mo & Di & Mi & Do & Fr}{Super & $1{,}79$ & $1{,}84$ & $1{,}76$ & $1{,}81$ & $1{,}85$\\ Diesel & $1{,}69$ & $1{,}66$ & $1{,}72$ & $1{,}70$ & $1{,}68$}\end{varwidth}}\par\vspace{3pt} Bei welcher Sorte schwankte der Preis in dieser Woche stärker?}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{4.}Die Kinder einer Schwimmgruppe sind so alt (in Jahren): $9$, $11$, $10$, $12$, $9$, $13$, $10$, $9$, $11$, $12$.\par Aussage 1: „Die Spannweite beträgt $4$ Jahre.“\par Aussage 2: „Der Modalwert beträgt $13$ Jahre.“\par Eine Aussage ist falsch. Kreuze sie an und berichtige sie.\par\smallskip\leftskip7mm \kreuz{Aussage 1}\ \kreuz{Aussage 2}}{}{{\scriptsize\color{mbgrau}Ziel\hspace{2mm}}}
+\medskip
+\par\vspace{3mm}\setlength{\kr}{\dimexpr\pagegoal-\pagetotal-10mm\relax}%
+\ifdim\kr>12mm\karomerk{k}{A}\noindent{\scriptsize\color{mbgrau}Platz zum Rechnen}\par\nointerlineskip\vspace{1mm}\noindent
+\begin{tikzpicture}\clip (0,0) rectangle ({\linewidth-0.5mm},\kr);\draw[black!16,line width=0.3pt,step=5mm] (0,0) grid (\linewidth,\kr);\end{tikzpicture}\fi\par
+\clearpage\label{s:B}\noindent\colorbox{black!12}{\makebox[10mm]{\Large\bfseries\strut B}}\hspace{3mm}{\Large\bfseries Median}\par\smallskip
+\noindent Der Median steht in der Mitte der geordneten Liste. Bei einer geraden Anzahl liegt er genau zwischen den beiden mittleren Werten.\par\medskip
+\noindent\textbf{Formel}\par\nopagebreak\noindent\hspace*{4mm}\begin{minipage}{\dimexpr\linewidth-4mm\relax}ungerade Anzahl: Median $=$ mittlerer Wert \newline gerade Anzahl: Median $=$ (linker $+$ rechter mittlerer Wert) $: 2$\end{minipage}\par\medskip
+\noindent\textbf{Beispiel}\quad Bestimme den Median. a)~Lena braucht an sieben Tagen so viele Minuten zur Schule: $12$, $8$, $15$, $10$, $8$, $20$, $11$. b)~Ole braucht an sechs Tagen: $18$, $21$, $16$, $19$, $23$, $17$.\par\smallskip
+\noindent\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{1}}a) Ordnen: $8,\ 8,\ 10,\ 11,\ 12,\ 15,\ 20$.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{2}}Von beiden Enden je einen Wert streichen, bis einer übrig bleibt: Bei $7$ Werten bleibt der $4.$ Wert. Median $= 11$\,min.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{3}}b) Ordnen: $16,\ 17,\ 18,\ 19,\ 21,\ 23$.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{4}}Bei $6$ Werten bleiben zwei in der Mitte übrig: $18$ und $19$.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{5}}Median $= (18 + 19) : 2 = 37 : 2 = 18{,}5$\,min.\par\smallskip\par\medskip
+\noindent\textbf{Aufgaben}\hspace{1em}{\small\color{mbgrau}\karohinweis{B}{Rechne unten im Karo.}{Rechne auf einem extra Blatt.} Vergleiche jede Aufgabe gleich mit dem Lösungsheft.}\par\smallskip
+\aufg{\hangindent7mm\hangafter1\nr{1.}Fünf Kinder werfen auf einen Korb. Sie treffen so oft: $7$, $3$, $9$, $4$, $6$. Bestimme den Median.}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{2.}Sechs Pflanzen sind so hoch (in cm): $14$, $9$, $12$, $20$, $11$, $16$. Bestimme den Median.}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{3.}Die Tabelle zeigt die höchste Temperatur an sechs Tagen.\par\vspace{3pt} \adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\sachtabelle{lcccccc}{Tag & Mo & Di & Mi & Do & Fr & Sa}{in °C & $23$ & $17$ & $20$ & $25$ & $19$ & $18$}\end{varwidth}}\par\vspace{3pt} Bestimme den Median.}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{4.}Tim hat in sieben Basketballspielen $12$, $18$, $9$, $15$, $21$, $14$, $10$ Punkte gemacht, Ali in sechs Spielen $16$, $8$, $13$, $22$, $11$, $17$ Punkte. Der Trainer vergleicht die Mediane der beiden. Wer liegt vorn?}{}{{\scriptsize\color{mbgrau}Ziel\hspace{2mm}}}
+\medskip
+\par\vspace{3mm}\setlength{\kr}{\dimexpr\pagegoal-\pagetotal-10mm\relax}%
+\ifdim\kr>12mm\karomerk{k}{B}\noindent{\scriptsize\color{mbgrau}Platz zum Rechnen}\par\nointerlineskip\vspace{1mm}\noindent
+\begin{tikzpicture}\clip (0,0) rectangle ({\linewidth-0.5mm},\kr);\draw[black!16,line width=0.3pt,step=5mm] (0,0) grid (\linewidth,\kr);\end{tikzpicture}\fi\par
+\clearpage\label{s:C}\noindent\colorbox{black!12}{\makebox[10mm]{\Large\bfseries\strut C}}\hspace{3mm}{\Large\bfseries Arithmetisches Mittel}\par\smallskip
+\noindent Das Mittel (der Durchschnitt) verteilt die Summe gleichmäßig auf alle Werte. Zähle jeden Wert mit, auch eine $0$.\par\medskip
+\noindent\textbf{Formel}\par\nopagebreak\noindent\hspace*{4mm}\begin{minipage}{\dimexpr\linewidth-4mm\relax}Mittel $=$ Summe aller Werte $:$ Anzahl der Werte\end{minipage}\par\medskip
+\noindent\textbf{Beispiel}\quad Das Säulendiagramm zeigt, wie viele Kunden an jedem Tag einer Woche an einem Kiosk eingekauft haben. Wie viele Kunden kamen im Durchschnitt pro Tag?\par\smallskip
+\noindent\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{1}}Ablesen: Von $0$ bis $20$ sind es $2$ Kästchen, ein Kästchen ist $10$ Kunden.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{2}}Werte: Mo $40$, Di $50$, Mi $30$, Do $60$, Fr $50$, Sa $70$, So $60$.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{3}}Anzahl: $7$ Tage, also $7$ Werte.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{4}}Summe: $40 + 50 + 30 + 60 + 50 + 70 + 60 = 360$.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{5}}Teilen: $360 : 7 = 51{,}42\ldots$\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{6}}Runden: Kunden zählt man ganz. Im Durchschnitt kamen etwa $51$ Kunden pro Tag.\par\smallskip\end{minipage}\hfill
+\begin{minipage}[t]{0.37\linewidth}\vspace{0pt}\centering \adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\saeulenab[ymax=80,ystep=20,yfein=10,ylabel=Kunden,hoehe=3.2,breite=0.8]{Mo/40,Di/50,Mi/30,Do/60,Fr/50,Sa/70,So/60}\end{varwidth}}\end{minipage}\par\medskip
+\noindent\textbf{Aufgaben}\hspace{1em}{\small\color{mbgrau}\karohinweis{C}{Rechne unten im Karo.}{Rechne auf einem extra Blatt.} Vergleiche jede Aufgabe gleich mit dem Lösungsheft.}\par\smallskip
+\aufg{\hangindent7mm\hangafter1\nr{1.}Ein Team schießt in fünf Spielen $3$, $1$, $4$, $0$, $2$ Tore. Berechne den Mittelwert.}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{2.}Pia springt viermal weit: $4{,}12$ m; $3{,}95$ m; $4{,}30$ m; $4{,}07$ m. Berechne ihre durchschnittliche Weite.}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{3.}Zu den $17$ Heimspielen eines Vereins kamen in einer Saison zusammen $412\,390$ Zuschauer. Wie viele Zuschauer kamen im Durchschnitt zu einem Spiel?}{}{}
+\medskip
+\aufgg{\hangindent7mm\hangafter1\nr{4.}Das Säulendiagramm zeigt die Besucher eines Freibads in einer Woche. Der Bademeister sagt: „Im Durchschnitt kamen mehr als $200$ Besucher am Tag.“ Hat er recht? Begründe mit einer Rechnung.}{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\saeulenab[ymax=350,ystep=100,yfein=50,ylabel=Besucher,hoehe=3.2,breite=0.8]{Mo/150,Di/100,Mi/150,Do/150,Fr/200,Sa/300,So/300}\end{varwidth}}}{}{{\scriptsize\color{mbgrau}Ziel\hspace{2mm}}}
+\medskip
+\par\vspace{3mm}\setlength{\kr}{\dimexpr\pagegoal-\pagetotal-10mm\relax}%
+\ifdim\kr>12mm\karomerk{k}{C}\noindent{\scriptsize\color{mbgrau}Platz zum Rechnen}\par\nointerlineskip\vspace{1mm}\noindent
+\begin{tikzpicture}\clip (0,0) rectangle ({\linewidth-0.5mm},\kr);\draw[black!16,line width=0.3pt,step=5mm] (0,0) grid (\linewidth,\kr);\end{tikzpicture}\fi\par
+\clearpage\label{s:D}\noindent\colorbox{black!12}{\makebox[10mm]{\Large\bfseries\strut D}}\hspace{3mm}{\Large\bfseries Mittel rückwärts und Änderungen}\par\smallskip
+\noindent Aus dem Mittel bekommst du die Summe zurück. Fehlt ein Wert oder fällt einer weg, rechnest du mit der Summe weiter.\par\medskip
+\noindent\textbf{Formel}\par\nopagebreak\noindent\hspace*{4mm}\begin{minipage}{\dimexpr\linewidth-4mm\relax}Summe $=$ Mittel $\cdot$ Anzahl \qquad fehlender Wert $=$ Summe $-$ bekannte Werte\end{minipage}\par\medskip
+\noindent\textbf{Beispiel}\quad Die Tabelle zeigt die Mittagstemperatur einer Woche. Der Sonntag fehlt. Im Mittel waren es $20$ °C.\par\vspace{3pt} \adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\sachtabelle{lccccccc}{Tag & Mo & Di & Mi & Do & Fr & Sa & So}{in °C & $18$ & $21$ & $19$ & $23$ & $20$ & $22$ & ?}\end{varwidth}}\par\vspace{3pt} a)~Wie warm war es am Sonntag? b)~Lisa streicht den wärmsten und den kältesten Tag. Wie ändert sich das Mittel?\par\smallskip
+\noindent\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{1}}a) Summe aller $7$ Werte $=$ Mittel $\cdot$ Anzahl $= 20 \cdot 7 = 140$.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{2}}Bekannte Werte: $18 + 21 + 19 + 23 + 20 + 22 = 123$.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{3}}Sonntag $= 140 - 123 = 17$\,°C. Probe: $(123 + 17) : 7 = 20$.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{4}}b) Wärmster Tag $23$\,°C, kältester $17$\,°C. Neue Summe: $140 - 23 - 17 = 100$. Neue Anzahl: $7 - 2 = 5$.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{5}}Neues Mittel: $100 : 5 = 20$\,°C. Es bleibt gleich, weil die zwei gestrichenen Werte zusammen $40 = 2 \cdot 20$ sind.\par\smallskip\par\medskip
+\noindent\textbf{Aufgaben}\hspace{1em}{\small\color{mbgrau}\karohinweis{D}{Rechne unten im Karo.}{Rechne auf einem extra Blatt.} Vergleiche jede Aufgabe gleich mit dem Lösungsheft.}\par\smallskip
+\aufg{\hangindent7mm\hangafter1\nr{1.}Drei Zahlen haben den Mittelwert $8$. Zwei davon sind $5$ und $9$. Wie heißt die dritte Zahl?}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{2.}Tom läuft vier Runden. Im Mittel braucht er $62$ s für eine Runde. Die ersten drei Runden dauern $60$ s, $65$ s und $59$ s. Wie lange dauert die vierte Runde?}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{3.}Fünf Kinder einer Gruppe sind im Mittel $12$ Jahre alt. Das älteste Kind ist $16$ Jahre alt und zieht weg. Wie alt sind die anderen vier im Mittel? Steigt oder sinkt das Mittel?}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{4.}Lea hat in vier Tests $14$, $17$, $12$ und $15$ Punkte. Im fünften Test gibt es höchstens $20$ Punkte. Am Ende will sie im Durchschnitt $15$ Punkte haben. Kann sie das noch schaffen? Wie viele Punkte braucht sie mindestens?}{}{{\scriptsize\color{mbgrau}Ziel\hspace{2mm}}}
+\medskip
+\par\vspace{3mm}\setlength{\kr}{\dimexpr\pagegoal-\pagetotal-10mm\relax}%
+\ifdim\kr>12mm\karomerk{k}{D}\noindent{\scriptsize\color{mbgrau}Platz zum Rechnen}\par\nointerlineskip\vspace{1mm}\noindent
+\begin{tikzpicture}\clip (0,0) rectangle ({\linewidth-0.5mm},\kr);\draw[black!16,line width=0.3pt,step=5mm] (0,0) grid (\linewidth,\kr);\end{tikzpicture}\fi\par
+\clearpage\label{s:T}\noindent\colorbox{black!12}{\makebox[10mm]{\Large\bfseries\strut T}}\hspace{3mm}{\Large\bfseries Probetest}\par\smallskip
+\noindent Gemischt wie in der Prüfung, ohne Beispiel. Etwa 20 Minuten.\par\medskip
+\noindent\textbf{Aufgaben}\hspace{1em}{\small\color{mbgrau}\karohinweis{T}{Rechne unten im Karo.}{Rechne auf einem extra Blatt.} Vergleiche jede Aufgabe gleich mit dem Lösungsheft.}\par\smallskip
+\aufg{\hangindent7mm\hangafter1\nr{1.}An sechs Tagen wird mittags die Temperatur gemessen (in °C): $21$, $17$, $24$, $19$, $16$, $22$. Bestimme den Median.}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{2.}Eine Bücherei zählt die Besucher einer Woche. Im Durchschnitt kamen $120$ Besucher am Tag. Der Wert für Donnerstag fehlt.\par\vspace{3pt} \adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\sachtabelle{lcccccc}{Tag & Mo & Di & Mi & Do & Fr & Sa}{Besucher & $95$ & $130$ & $110$ & \leerzelle & $140$ & $150$}\end{varwidth}}\par\vspace{3pt} Berechne die fehlende Zahl und trage sie ein.}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{3.}Neun Kinder nennen ihre Schuhgröße: $38$, $40$, $37$, $40$, $41$, $39$, $40$, $38$, $42$.\par Aussage 1: „Die Spannweite beträgt $5$.“\par Aussage 2: „Der Median beträgt $41$.“\par Eine Aussage ist falsch. Kreuze sie an und berichtige sie.\par\smallskip\leftskip7mm \kreuz{Aussage 1}\ \kreuz{Aussage 2}}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{4.}Ein Chor hat $11$ Mitglieder. Ihr Alter in Jahren: $47$, $39$, $61$, $52$, $68$, $35$, $58$, $44$, $24$, $29$, $49$. a)~Berechne das Durchschnittsalter. b)~Die älteste und die jüngste Person verlassen den Chor. Ändert sich dadurch das Durchschnittsalter? Begründe.}{}{{\scriptsize\color{mbgrau}Ziel\hspace{2mm}}}
+\medskip
+\par\vspace{3mm}\setlength{\kr}{\dimexpr\pagegoal-\pagetotal-10mm\relax}%
+\ifdim\kr>12mm\karomerk{k}{T}\noindent{\scriptsize\color{mbgrau}Platz zum Rechnen}\par\nointerlineskip\vspace{1mm}\noindent
+\begin{tikzpicture}\clip (0,0) rectangle ({\linewidth-0.5mm},\kr);\draw[black!16,line width=0.3pt,step=5mm] (0,0) grid (\linewidth,\kr);\end{tikzpicture}\fi\par
+\end{document}

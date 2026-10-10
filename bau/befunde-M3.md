@@ -758,3 +758,15 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
   ergaben sonst „Varianten nicht 1..n“). duplikate.py: s2-v4 ist
   gewollte Zahlvariante von s2-v2.
 - Setzer tisch-alt: Tabelle steht über dem Auftragstext (wie MZE).
+## Daten E4 „Kenngrößen“ (4CR, 10.10.2026)
+
+- bank-pruef: \smallskip ist kein Baustein; Tabellen im Aufgabentext mit
+  \par\vspace{3pt} absetzen (wie E2). Bei „Aussage prüfen“ (ankreuzen)
+  muss die berichtigte Zahl hinter „=“ stehen, sonst gilt sie nicht als
+  Ergebnisstelle. (Hingenommen.)
+- Formel-Zeile im Kopf und im Abschnitt: zwei lange Formeln mit \qquad
+  brechen mitten in der Formel um; \newline zwischen ihnen hilft.
+  (Vorschlag: Bauauftrag nennt „je Formel eine Zeile“.)
+- Notenspiegel (gewichtetes Mittel) und Ausreißer passen nicht in sechs
+  Seiten; sie bleiben Bank. (Vorschlag: eigener Zusatzabschnitt zum
+  Nachbestellen, wenn der Lehrer ihn will.)
