@@ -1411,6 +1411,11 @@ def pruefe_eintrag(eintrag, katalog=None, wurzel=Path("."), alle=False):
             da += 1
         if datei.stem == "weg":              # v0.15: Lösungswege (bau/weg-vorschlag.md), keine Bankzeilen
             continue
+        if re.fullmatch(r"a\d+", datei.stem):   # neue Form (bank.md „Aufgaben ohne Treppe“)
+            da += pruefe_a_datei(datei, eintrag, wurzel, ids)
+            abw += da
+            summe.append((datei.name, da, dw))
+            continue
         m = re.fullmatch(r"e(\d+)|zone", datei.stem)
         if not m:
             print(f"ABWEICHUNG {datei.name}: Dateiname")
@@ -1474,6 +1479,73 @@ def pruefe_eintrag(eintrag, katalog=None, wurzel=Path("."), alle=False):
 
 
 MENGE_BASIS = 10
+
+
+# --- Aufgaben ohne Treppe: bank/<eintrag>/a<n>.jsonl (bank.md, 10.10.2026)
+A_PFLICHT = ["id", "eintrag", "einheit", "taetigkeit", "merkmale", "stufe",
+             "aufgabe", "teil", "grafik", "ergebnis", "loesung",
+             "darstellung", "sache", "herkunft"]
+A_WAHL = ["schritte"]
+A_TAETIGKEIT = ["erkennen", "notieren", "aufstellen", "rechnen", "sache"]
+
+
+def a_merkmale(wurzel, eintrag, n):
+    """Werte aus bank/<eintrag>/merkmale.md, Abschnitt „Einheit n“."""
+    datei = wurzel / "bank" / eintrag / "merkmale.md"
+    if not datei.exists():
+        return None
+    werte, drin = set(), False
+    for z in datei.read_text(encoding="utf-8").split("\n"):
+        if z.startswith("## "):
+            drin = re.match(rf"## Einheit {n}\b", z) is not None
+            continue
+        if drin:
+            z = re.sub(r"\([^)]*\)?", "", re.sub(r"^\s*[\w-]+:", "", z))
+            werte |= set(re.findall(r"[a-z][a-z0-9]*(?:-[a-z0-9]+)*", z))
+    return werte
+
+
+def pruefe_a_datei(datei, eintrag, wurzel, ids):
+    """Prüft eine a<n>.jsonl; gibt die Zahl der Abweichungen zurück."""
+    n = int(datei.stem[1:])
+    erlaubt = a_merkmale(wurzel, eintrag, n)
+    da = 0
+    for a in lade(datei):
+        b = []
+        fehlt = [f for f in A_PFLICHT if f not in a]
+        if fehlt:
+            b.append("Feld fehlt: " + ", ".join(fehlt))
+        extra = set(a) - set(A_PFLICHT) - set(A_WAHL)
+        if extra:
+            b.append("Feld unbekannt: " + ", ".join(sorted(extra)))
+        aid = a.get("id", "?")
+        if not re.fullmatch(rf"{re.escape(eintrag)}-a{n}-\d{{3}}", str(aid)):
+            b.append("id-Form")
+        if a.get("eintrag") != eintrag or a.get("einheit") != n:
+            b.append("eintrag/einheit passt nicht zur Datei")
+        if a.get("taetigkeit") not in A_TAETIGKEIT:
+            b.append(f"taetigkeit {a.get('taetigkeit')!r}")
+        if a.get("stufe") not in STUFEN:
+            b.append(f"stufe {a.get('stufe')!r}")
+        mk = a.get("merkmale")
+        if not isinstance(mk, list):
+            b.append("merkmale keine Liste")
+        elif erlaubt is None:
+            b.append("merkmale.md fehlt")
+        else:
+            fremd = [x for x in mk if x not in erlaubt]
+            if fremd:
+                b.append("merkmal nicht in merkmale.md: " + ", ".join(fremd))
+        for f in ("aufgabe", "ergebnis", "loesung"):
+            if not str(a.get(f, "")).strip():
+                b.append(f"{f} leer")
+        if aid in ids:
+            b.append(f"id doppelt (auch {ids[aid]})")
+        ids[aid] = datei.name
+        if b:
+            da += 1
+            print(f"ABWEICHUNG {aid}: " + "; ".join(b))
+    return da
 
 
 def pruefe_basis(wurzel=Path("."), alle=False):
