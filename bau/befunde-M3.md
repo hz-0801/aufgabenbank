@@ -297,3 +297,23 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
   auswählen“ (2026-FOR-B1b) – kein eigener Abschnitt, keine neue Zeile;
   die Bank hat drei alte (k1-s4). Beim Nachbestellen „mehr“ fehlt diese
   Form in TikZ.
+
+## Wahrscheinlichkeit E3 „Baumdiagramm und Pfadregeln“ (6KD, 10.10.2026)
+
+- Vier Abschnitte plus Probetest, Selbstlernheft 6 Seiten. Roter Faden:
+  dasselbe Glücksrad in allen Beispielen, nur das Ereignis ändert sich.
+  Kritiker offen.
+- Zielaufgaben wechseln die Antwortform: belegen (A), fair? (B), um wie
+  viel daneben? (C), welches Spiel? (D), wie viele Kugeln? (T).
+- Bäume als TikZ in grafik (eigener Erzeuger im Bauskript): `\baumzwei`
+  aus mathblatt.sty trägt keine fetten Pfade und keine Kästchen zum
+  Eintragen in Schreibgröße; Kästchen 7 × 4 mm, Astwerte in
+  footnotesize. Wunsch (Später): Baum-Baustein mit Kästchen und
+  fettem Pfad in mathblatt.sty.
+- tisch-alt: 7 Seiten, die letzte trägt nur T5 – die Bäume sind höher als
+  die Skizzen anderer Einheiten. selbst hält 6 Seiten.
+- Lösungsheft selbst 3 Seiten wegen der Lösungsbäume (max. 4 cm); ohne
+  loesungsgrafik wären es 2.
+- duplikate.py: erste Fassung von D1 (Münze dreimal, 1/8) war A-Dublette
+  zu kombinatorik-zone-f4-v2; ersetzt durch Stern-Rad (1/64).
+- Prüfer: Mengenwarnungen k3 s1–s11 aus dem verlangten Vorrat, wie E2.

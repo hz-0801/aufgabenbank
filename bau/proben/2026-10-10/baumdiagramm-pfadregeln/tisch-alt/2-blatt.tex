@@ -1,0 +1,160 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% gesetzt von werkzeuge/setzer.py aus dem Lernweg (L3-A · L3-B · L3-C · L3-D · L3-T) und den Bankzeilen; Muster T6B.
+\input{praeambel}
+\newcommand{\kennung}{6KD}
+\newcommand{\grau}[1]{{\color{mbgrau}#1}}
+
+\begin{document}
+\pfheftstil
+\fancyfoot[C]{\parbox[t]{\textwidth}{\mbfhbox\par\vspace{1.5mm}{\footnotesize\color{mbgrau}{\scriptsize \kennung}\hfill\thepage}}}
+\pfheftkopf{Baumdiagramm und Pfadregeln}{Klasse 9}
+% L3-A: Baum und Pfadregel
+\begin{pfaufg}{}{1.}{}
+\gzwei{\begin{tikzpicture}[ak/.style={font=\small,inner sep=1.5pt,fill=white},wk/.style={font=\footnotesize,inner sep=1pt}]\fill (0,0) circle (1.4pt);\coordinate (s) at (0,0);\node[ak] (n0) at (2.30,0.850) {R};\node[ak] (n1) at (2.30,-0.850) {B};\node[ak] (n00) at (4.60,1.275) {R};\node[ak] (n01) at (4.60,0.425) {B};\node[ak] (n10) at (4.60,-0.425) {R};\node[ak] (n11) at (4.60,-1.275) {B};\draw[line width=1.5pt] (s) -- (n0) node[wk,above,pos=0.5] {$\frac{1}{4}$};\draw[line width=0.6pt] (s) -- (n1) node[wk,below,pos=0.5] {$\frac{3}{4}$};\draw[line width=1.5pt] (n0) -- (n00) node[wk,above,pos=0.5] {$\frac{1}{4}$};\draw[line width=0.6pt] (n0) -- (n01) node[wk,below,pos=0.5] {$\frac{3}{4}$};\draw[line width=0.6pt] (n1) -- (n10) node[wk,above,pos=0.5] {$\frac{1}{4}$};\draw[line width=0.6pt] (n1) -- (n11) node[wk,below,pos=0.5] {$\frac{3}{4}$};\end{tikzpicture}}{\grau{a)\ Ein Glücksrad hat 4 gleich große Felder: 1 rotes (R) und 3 blaue (B). Es wird zweimal gedreht. Wie groß ist die Wahrscheinlichkeit für zweimal Rot?\par\smallskip 1. Stufe: R $\frac{1}{4}$, B $\frac{3}{4}$ – zusammen 1.\par 2. Stufe: Das Rad ist dasselbe, also an jedem Punkt wieder $\frac{1}{4}$ und $\frac{3}{4}$.\par Pfad R – R nachfahren und multiplizieren: $\frac{1}{4} \cdot \frac{1}{4} = \frac{1}{16}$.\par Die Wahrscheinlichkeit für zweimal Rot ist $\frac{1}{16}$.}}
+\par\medskip
+\gzwei{\begin{tikzpicture}[ak/.style={font=\small,inner sep=1.5pt,fill=white},wk/.style={font=\footnotesize,inner sep=1pt}]\fill (0,0) circle (1.4pt);\coordinate (s) at (0,0);\node[ak] (n0) at (2.30,0.850) {K};\node[ak] (n1) at (2.30,-0.850) {Z};\node[ak] (n00) at (4.60,1.275) {K};\node[ak] (n01) at (4.60,0.425) {Z};\node[ak] (n10) at (4.60,-0.425) {K};\node[ak] (n11) at (4.60,-1.275) {Z};\draw[line width=0.6pt] (s) -- (n0) node[wk,above,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (s) -- (n1) node[wk,below,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (n0) -- (n00) node[wk,above,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (n0) -- (n01) node[wk,below,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (n1) -- (n10) node[wk,above,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (n1) -- (n11) node[wk,below,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\end{tikzpicture}}{%
+b)\ Eine Münze wird zweimal geworfen (K Kopf, Z Zahl). Trage im Baum an jeden Ast die Wahrscheinlichkeit ein. Wie groß ist die Wahrscheinlichkeit für zweimal Zahl?\karo{3}}
+\fusshilfe{\mbox{1:~b) Äste je $\frac{1}{2}$; $P = \frac{1}{4}$}}
+\end{pfaufg}
+
+% L3-A: Baum und Pfadregel
+\begin{pfaufg}{}{2.}{}
+\gzwei{\begin{tikzpicture}[ak/.style={font=\small,inner sep=1.5pt,fill=white},wk/.style={font=\footnotesize,inner sep=1pt}]\fill (0,0) circle (1.4pt);\coordinate (s) at (0,0);\node[ak] (n0) at (2.30,0.850) {gelb};\node[ak] (n1) at (2.30,-0.850) {grün};\node[ak] (n00) at (4.60,1.275) {gelb};\node[ak] (n01) at (4.60,0.425) {grün};\node[ak] (n10) at (4.60,-0.425) {gelb};\node[ak] (n11) at (4.60,-1.275) {grün};\draw[line width=0.6pt] (s) -- (n0) node[wk,above,pos=0.5] {$\frac{2}{5}$};\draw[line width=0.6pt] (s) -- (n1) node[wk,below,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (n0) -- (n00) node[wk,above,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (n0) -- (n01) node[wk,below,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (n1) -- (n10) node[wk,above,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (n1) -- (n11) node[wk,below,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\end{tikzpicture}}{%
+Ein Glücksrad hat 5 gleich große Felder: 2 gelbe und 3 grüne. Es wird zweimal gedreht. Im Baum steht nur eine Wahrscheinlichkeit. Ergänze die anderen. Wie groß ist die Wahrscheinlichkeit für zuerst Gelb, dann Grün?\karo{3}}
+\fusshilfe{\mbox{2:~$P = \frac{6}{25}$}}
+\end{pfaufg}
+
+% L3-A: Baum und Pfadregel
+\begin{pfaufg}{}{3.}{}
+\gzwei{\begin{tikzpicture}[font=\small]\draw[line width=0.5pt] (0.0,0) -- ++(90.00:1.0);\node at ([shift=(45.00:0.65)]0.0,0) {\textbf{A}};\draw[line width=0.5pt] (0.0,0) -- ++(0.00:1.0);\node at ([shift=(-45.00:0.65)]0.0,0) {\textbf{B}};\draw[line width=0.5pt] (0.0,0) -- ++(-90.00:1.0);\node at ([shift=(-135.00:0.65)]0.0,0) {\textbf{B}};\draw[line width=0.5pt] (0.0,0) -- ++(-180.00:1.0);\node at ([shift=(-225.00:0.65)]0.0,0) {\textbf{B}};\draw[line width=0.8pt] (0.0,0) circle (1.0);\fill (0.0,0.95) -- ++(-0.13,0.33) -- ++(0.26,0) -- cycle;\draw[line width=0.5pt] (2.8,0) -- ++(90.00:1.0);\node at ([shift=(45.00:0.65)]2.8,0) {\textbf{A}};\draw[line width=0.5pt] (2.8,0) -- ++(0.00:1.0);\node at ([shift=(-45.00:0.65)]2.8,0) {\textbf{B}};\draw[line width=0.5pt] (2.8,0) -- ++(-90.00:1.0);\node at ([shift=(-135.00:0.65)]2.8,0) {\textbf{A}};\draw[line width=0.5pt] (2.8,0) -- ++(-180.00:1.0);\node at ([shift=(-225.00:0.65)]2.8,0) {\textbf{B}};\draw[line width=0.8pt] (2.8,0) circle (1.0);\fill (2.8,0.95) -- ++(-0.13,0.33) -- ++(0.26,0) -- cycle;\end{tikzpicture}}{%
+Zwei Glücksräder haben je 4 gleich große Felder (Bild). Erst wird das linke, dann das rechte gedreht. Wie groß ist die Wahrscheinlichkeit für zweimal A?\karo{3}}
+\fusshilfe{\mbox{3:~$P = \frac{1}{8}$}}
+\end{pfaufg}
+
+% L3-A: Baum und Pfadregel
+\begin{pfaufg}{}{4.}{}
+\gzwei{\begin{tikzpicture}[font=\small]\draw[line width=0.5pt] (0.0,0) -- ++(90.00:1.0);\draw[line width=0.5pt] (0.0,0) -- ++(0.00:1.0);\draw[line width=0.5pt] (0.0,0) -- ++(-90.00:1.0);\draw[line width=0.5pt] (0.0,0) -- ++(-180.00:1.0);\draw[line width=0.8pt] (0.0,0) circle (1.0);\fill (0.0,0.95) -- ++(-0.13,0.33) -- ++(0.26,0) -- cycle;\draw[line width=0.5pt] (2.8,0) -- ++(90.00:1.0);\draw[line width=0.5pt] (2.8,0) -- ++(0.00:1.0);\draw[line width=0.5pt] (2.8,0) -- ++(-90.00:1.0);\draw[line width=0.5pt] (2.8,0) -- ++(-180.00:1.0);\draw[line width=0.8pt] (2.8,0) circle (1.0);\fill (2.8,0.95) -- ++(-0.13,0.33) -- ++(0.26,0) -- cycle;\end{tikzpicture}}{%
+Zwei Glücksräder haben je 4 gleich große Felder, noch ohne Buchstaben (Bild). Erst wird das linke, dann das rechte gedreht. Schreibe in jedes Feld A oder B, sodass „zweimal A“ die Wahrscheinlichkeit $\frac{3}{16}$ hat. Zeige es mit einer Rechnung.\karo{3}}
+\fusshilfe{\mbox{4:~links 3-mal A, rechts 1-mal A (oder umgekehrt)}}
+\end{pfaufg}
+
+% L3-B: Mehrere Pfade: plus
+\begin{pfaufg}{}{5.}{}
+\gzwei{\begin{tikzpicture}[ak/.style={font=\small,inner sep=1.5pt,fill=white},wk/.style={font=\footnotesize,inner sep=1pt}]\fill (0,0) circle (1.4pt);\coordinate (s) at (0,0);\node[ak] (n0) at (2.30,0.850) {R};\node[ak] (n1) at (2.30,-0.850) {B};\node[ak] (n00) at (4.60,1.275) {R};\node[ak] (n01) at (4.60,0.425) {B};\node[ak] (n10) at (4.60,-0.425) {R};\node[ak] (n11) at (4.60,-1.275) {B};\draw[line width=1.5pt] (s) -- (n0) node[wk,above,pos=0.5] {$\frac{1}{4}$};\draw[line width=1.5pt] (s) -- (n1) node[wk,below,pos=0.5] {$\frac{3}{4}$};\draw[line width=0.6pt] (n0) -- (n00) node[wk,above,pos=0.5] {$\frac{1}{4}$};\draw[line width=1.5pt] (n0) -- (n01) node[wk,below,pos=0.5] {$\frac{3}{4}$};\draw[line width=1.5pt] (n1) -- (n10) node[wk,above,pos=0.5] {$\frac{1}{4}$};\draw[line width=0.6pt] (n1) -- (n11) node[wk,below,pos=0.5] {$\frac{3}{4}$};\end{tikzpicture}}{\grau{a)\ Ein Glücksrad hat 4 gleich große Felder: 1 rotes (R) und 3 blaue (B). Es wird zweimal gedreht. Wie groß ist die Wahrscheinlichkeit für genau einmal Rot?\par\smallskip Genau einmal Rot: zwei Pfade, R – B und B – R.\par R – B: $\frac{1}{4} \cdot \frac{3}{4} = \frac{3}{16}$; \quad B – R: $\frac{3}{4} \cdot \frac{1}{4} = \frac{3}{16}$.\par Addieren: $\frac{3}{16} + \frac{3}{16} = \frac{6}{16} = \frac{3}{8}$.\par Die Wahrscheinlichkeit für genau einmal Rot ist $\frac{3}{8}$.}}
+\par\medskip
+\gzwei{\begin{tikzpicture}[ak/.style={font=\small,inner sep=1.5pt,fill=white},wk/.style={font=\footnotesize,inner sep=1pt}]\fill (0,0) circle (1.4pt);\coordinate (s) at (0,0);\node[ak] (n0) at (2.30,0.850) {T};\node[ak] (n1) at (2.30,-0.850) {D};\node[ak] (n00) at (4.60,1.275) {T};\node[ak] (n01) at (4.60,0.425) {D};\node[ak] (n10) at (4.60,-0.425) {T};\node[ak] (n11) at (4.60,-1.275) {D};\draw[line width=0.6pt] (s) -- (n0) node[wk,above,pos=0.5] {$0{,}6$};\draw[line width=0.6pt] (s) -- (n1) node[wk,below,pos=0.5] {$0{,}4$};\draw[line width=0.6pt] (n0) -- (n00) node[wk,above,pos=0.5] {$0{,}6$};\draw[line width=0.6pt] (n0) -- (n01) node[wk,below,pos=0.5] {$0{,}4$};\draw[line width=0.6pt] (n1) -- (n10) node[wk,above,pos=0.5] {$0{,}6$};\draw[line width=0.6pt] (n1) -- (n11) node[wk,below,pos=0.5] {$0{,}4$};\end{tikzpicture}}{%
+b)\ Ole wirft zweimal auf den Korb. Der Baum zeigt, wie wahrscheinlich er trifft (T Treffer, D daneben). Wie groß ist die Wahrscheinlichkeit, dass er genau einmal trifft?\karo{3}}
+\fusshilfe{\mbox{5:~b) $P = 0{,}48 = 48\,\%$}}
+\end{pfaufg}
+
+% L3-B: Mehrere Pfade: plus
+\begin{pfaufg}{}{6.}{}
+\gzwei{\begin{tikzpicture}[font=\small]\draw[line width=0.5pt] (0.0,0) -- ++(90.00:1.0);\node at ([shift=(45.00:0.65)]0.0,0) {\textbf{3}};\draw[line width=0.5pt] (0.0,0) -- ++(0.00:1.0);\node at ([shift=(-45.00:0.65)]0.0,0) {\textbf{4}};\draw[line width=0.5pt] (0.0,0) -- ++(-90.00:1.0);\node at ([shift=(-135.00:0.65)]0.0,0) {\textbf{4}};\draw[line width=0.5pt] (0.0,0) -- ++(-180.00:1.0);\node at ([shift=(-225.00:0.65)]0.0,0) {\textbf{4}};\draw[line width=0.8pt] (0.0,0) circle (1.0);\fill (0.0,0.95) -- ++(-0.13,0.33) -- ++(0.26,0) -- cycle;\draw[line width=0.5pt] (2.8,0) -- ++(90.00:1.0);\node at ([shift=(45.00:0.65)]2.8,0) {\textbf{3}};\draw[line width=0.5pt] (2.8,0) -- ++(0.00:1.0);\node at ([shift=(-45.00:0.65)]2.8,0) {\textbf{3}};\draw[line width=0.5pt] (2.8,0) -- ++(-90.00:1.0);\node at ([shift=(-135.00:0.65)]2.8,0) {\textbf{4}};\draw[line width=0.5pt] (2.8,0) -- ++(-180.00:1.0);\node at ([shift=(-225.00:0.65)]2.8,0) {\textbf{3}};\draw[line width=0.8pt] (2.8,0) circle (1.0);\fill (2.8,0.95) -- ++(-0.13,0.33) -- ++(0.26,0) -- cycle;\end{tikzpicture}}{%
+Zwei Glücksräder haben je 4 gleich große Felder (Bild). Erst wird das linke, dann das rechte gedreht. Die beiden Ziffern ergeben eine Zahl. Wie groß ist die Wahrscheinlichkeit für 34 oder 43?\karo{3}}
+\fusshilfe{\mbox{6:~$P = \frac{5}{8}$}}
+\end{pfaufg}
+
+% L3-B: Mehrere Pfade: plus
+\begin{pfaufg}{}{7.}{}
+In einem Beutel liegen 2 rote, 3 blaue und 5 gelbe Kugeln. Es wird zweimal mit Zurücklegen gezogen. Wie groß ist die Wahrscheinlichkeit für zweimal dieselbe Farbe?\karo{3}
+\fusshilfe{\mbox{7:~$P = \frac{19}{50} = 38\,\%$}}
+\end{pfaufg}
+
+% L3-B: Mehrere Pfade: plus
+\begin{pfaufg}{}{8.}{}
+\gzwei{\begin{tikzpicture}[font=\small]\fill[red!45] (0.0,0) -- ++(90.00:1.0) arc (90.00:30.00:1.0) -- cycle;\draw[line width=0.5pt] (0.0,0) -- ++(90.00:1.0);\node at ([shift=(60.00:0.65)]0.0,0) {\textbf{R}};\fill[blue!35] (0.0,0) -- ++(30.00:1.0) arc (30.00:-30.00:1.0) -- cycle;\draw[line width=0.5pt] (0.0,0) -- ++(30.00:1.0);\node at ([shift=(0.00:0.65)]0.0,0) {\textbf{B}};\fill[red!45] (0.0,0) -- ++(-30.00:1.0) arc (-30.00:-90.00:1.0) -- cycle;\draw[line width=0.5pt] (0.0,0) -- ++(-30.00:1.0);\node at ([shift=(-60.00:0.65)]0.0,0) {\textbf{R}};\fill[green!45] (0.0,0) -- ++(-90.00:1.0) arc (-90.00:-150.00:1.0) -- cycle;\draw[line width=0.5pt] (0.0,0) -- ++(-90.00:1.0);\node at ([shift=(-120.00:0.65)]0.0,0) {\textbf{G}};\fill[red!45] (0.0,0) -- ++(-150.00:1.0) arc (-150.00:-210.00:1.0) -- cycle;\draw[line width=0.5pt] (0.0,0) -- ++(-150.00:1.0);\node at ([shift=(-180.00:0.65)]0.0,0) {\textbf{R}};\fill[blue!35] (0.0,0) -- ++(-210.00:1.0) arc (-210.00:-270.00:1.0) -- cycle;\draw[line width=0.5pt] (0.0,0) -- ++(-210.00:1.0);\node at ([shift=(-240.00:0.65)]0.0,0) {\textbf{B}};\draw[line width=0.8pt] (0.0,0) circle (1.0);\fill (0.0,0.95) -- ++(-0.13,0.33) -- ++(0.26,0) -- cycle;\end{tikzpicture}}{%
+Mia und Tom spielen mit dem Glücksrad im Bild (6 gleich große Felder). Es wird zweimal gedreht. Kommt zweimal dieselbe Farbe, gewinnt Mia, sonst Tom. Ist das Spiel fair? Begründe mit den Wahrscheinlichkeiten.\karo{3}}
+\fusshilfe{\mbox{8:~Nein}}
+\end{pfaufg}
+
+% L3-C: Mindestens einmal: über das Gegenteil
+\begin{pfaufg}{}{9.}{}
+\gzwei{\begin{tikzpicture}[ak/.style={font=\small,inner sep=1.5pt,fill=white},wk/.style={font=\footnotesize,inner sep=1pt}]\fill (0,0) circle (1.4pt);\coordinate (s) at (0,0);\node[ak] (n0) at (2.30,0.850) {R};\node[ak] (n1) at (2.30,-0.850) {B};\node[ak] (n00) at (4.60,1.275) {R};\node[ak] (n01) at (4.60,0.425) {B};\node[ak] (n10) at (4.60,-0.425) {R};\node[ak] (n11) at (4.60,-1.275) {B};\draw[line width=0.6pt] (s) -- (n0) node[wk,above,pos=0.5] {$\frac{1}{4}$};\draw[line width=1.5pt] (s) -- (n1) node[wk,below,pos=0.5] {$\frac{3}{4}$};\draw[line width=0.6pt] (n0) -- (n00) node[wk,above,pos=0.5] {$\frac{1}{4}$};\draw[line width=0.6pt] (n0) -- (n01) node[wk,below,pos=0.5] {$\frac{3}{4}$};\draw[line width=0.6pt] (n1) -- (n10) node[wk,above,pos=0.5] {$\frac{1}{4}$};\draw[line width=1.5pt] (n1) -- (n11) node[wk,below,pos=0.5] {$\frac{3}{4}$};\end{tikzpicture}}{\grau{a)\ Ein Glücksrad hat 4 gleich große Felder: 1 rotes (R) und 3 blaue (B). Es wird zweimal gedreht. Wie groß ist die Wahrscheinlichkeit für mindestens einmal Rot?\par\smallskip Mindestens einmal Rot: drei Pfade (R – R, R – B, B – R). Das Gegenteil, keinmal Rot, ist nur B – B.\par $P(\text{B – B}) = \frac{3}{4} \cdot \frac{3}{4} = \frac{9}{16}$\par $P(\text{mindestens einmal Rot}) = 1 - \frac{9}{16} = \frac{7}{16}$\par Die Wahrscheinlichkeit für mindestens einmal Rot ist $\frac{7}{16}$.}}
+\par\medskip
+\gzwei{\begin{tikzpicture}[ak/.style={font=\small,inner sep=1.5pt,fill=white},wk/.style={font=\footnotesize,inner sep=1pt}]\fill (0,0) circle (1.4pt);\coordinate (s) at (0,0);\node[ak] (n0) at (2.30,0.850) {G};\node[ak] (n1) at (2.30,-0.850) {N};\node[ak] (n00) at (4.60,1.275) {G};\node[ak] (n01) at (4.60,0.425) {N};\node[ak] (n10) at (4.60,-0.425) {G};\node[ak] (n11) at (4.60,-1.275) {N};\draw[line width=0.6pt] (s) -- (n0) node[wk,above,pos=0.5] {$\frac{2}{5}$};\draw[line width=0.6pt] (s) -- (n1) node[wk,below,pos=0.5] {$\frac{3}{5}$};\draw[line width=0.6pt] (n0) -- (n00) node[wk,above,pos=0.5] {$\frac{2}{5}$};\draw[line width=0.6pt] (n0) -- (n01) node[wk,below,pos=0.5] {$\frac{3}{5}$};\draw[line width=0.6pt] (n1) -- (n10) node[wk,above,pos=0.5] {$\frac{2}{5}$};\draw[line width=0.6pt] (n1) -- (n11) node[wk,below,pos=0.5] {$\frac{3}{5}$};\end{tikzpicture}}{%
+b)\ Ein Glücksrad hat 5 gleich große Felder, 2 davon sind gold. Es wird zweimal gedreht (G Gold, N nicht Gold). Wie groß ist die Wahrscheinlichkeit für mindestens einmal Gold?\karo{3}}
+\fusshilfe{\mbox{9:~b) $P = \frac{16}{25}$}}
+\end{pfaufg}
+
+% L3-C: Mindestens einmal: über das Gegenteil
+\begin{pfaufg}{}{10.}{}
+\gzwei{\begin{tikzpicture}[font=\small]\fill[red!45] (0.0,0) -- ++(90.00:1.0) arc (90.00:-30.00:1.0) -- cycle;\draw[line width=0.5pt] (0.0,0) -- ++(90.00:1.0);\node at ([shift=(30.00:0.65)]0.0,0) {\textbf{R}};\fill[red!45] (0.0,0) -- ++(-30.00:1.0) arc (-30.00:-150.00:1.0) -- cycle;\draw[line width=0.5pt] (0.0,0) -- ++(-30.00:1.0);\node at ([shift=(-90.00:0.65)]0.0,0) {\textbf{R}};\fill[blue!35] (0.0,0) -- ++(-150.00:1.0) arc (-150.00:-270.00:1.0) -- cycle;\draw[line width=0.5pt] (0.0,0) -- ++(-150.00:1.0);\node at ([shift=(-210.00:0.65)]0.0,0) {\textbf{B}};\draw[line width=0.8pt] (0.0,0) circle (1.0);\fill (0.0,0.95) -- ++(-0.13,0.33) -- ++(0.26,0) -- cycle;\end{tikzpicture}}{%
+Das Glücksrad im Bild hat 3 gleich große Felder. Es wird zweimal gedreht. Wie groß ist die Wahrscheinlichkeit, dass nicht zweimal Rot kommt? Kreuze an.\par\smallskip \gkreuz{$\frac{1}{9}$}\gkreuz{$\frac{4}{9}$}\par \gkreuz{$\frac{5}{9}$}\gkreuz{$\frac{8}{9}$}}
+\fusshilfe{\mbox{10:~$\frac{5}{9}$}}
+\end{pfaufg}
+
+% L3-C: Mindestens einmal: über das Gegenteil
+\begin{pfaufg}{}{11.}{}
+Ein roter Würfel trägt die Zahlen 1, 2, 2, 3, 4, 6. Ein blauer Würfel trägt die Zahlen 1, 3, 3, 4, 5, 6. Erst wird der rote, dann der blaue geworfen. Wie groß ist die Wahrscheinlichkeit, dass nicht zweimal eine gerade Zahl fällt?\karo{3}
+\fusshilfe{\mbox{11:~$P = \frac{7}{9}$}}
+\end{pfaufg}
+
+% L3-C: Mindestens einmal: über das Gegenteil
+\begin{pfaufg}{}{12.}{}
+Bei einem Brettspiel darf Ben zweimal würfeln, um eine 6 zu bekommen. Ben sagt: „Meine Chance ist $\frac{1}{6} + \frac{1}{6} = \frac{1}{3}$.“ Stimmt das? Um wie viel liegt Ben daneben?\karo{3}
+\fusshilfe{\mbox{12:~Nein}}
+\end{pfaufg}
+
+% L3-D: Drei Stufen
+\begin{pfaufg}{}{13.}{}
+\gzwei{\begin{tikzpicture}[ak/.style={font=\small,inner sep=1.5pt,fill=white},wk/.style={font=\footnotesize,inner sep=1pt}]\fill (0,0) circle (1.4pt);\coordinate (s) at (0,0);\node[ak] (n0) at (2.10,1.560) {R};\node[ak] (n1) at (2.10,-1.560) {B};\node[ak] (n00) at (4.20,2.340) {R};\node[ak] (n01) at (4.20,0.780) {B};\node[ak] (n10) at (4.20,-0.780) {R};\node[ak] (n11) at (4.20,-2.340) {B};\node[ak] (n000) at (6.30,2.730) {R};\node[ak] (n001) at (6.30,1.950) {B};\node[ak] (n010) at (6.30,1.170) {R};\node[ak] (n011) at (6.30,0.390) {B};\node[ak] (n100) at (6.30,-0.390) {R};\node[ak] (n101) at (6.30,-1.170) {B};\node[ak] (n110) at (6.30,-1.950) {R};\node[ak] (n111) at (6.30,-2.730) {B};\draw[line width=1.5pt] (s) -- (n0) node[wk,above,pos=0.5] {$\frac{1}{4}$};\draw[line width=1.5pt] (s) -- (n1) node[wk,below,pos=0.5] {$\frac{3}{4}$};\draw[line width=1.5pt] (n0) -- (n00) node[wk,above,pos=0.5] {$\frac{1}{4}$};\draw[line width=1.5pt] (n0) -- (n01) node[wk,below,pos=0.5] {$\frac{3}{4}$};\draw[line width=1.5pt] (n1) -- (n10) node[wk,above,pos=0.5] {$\frac{1}{4}$};\draw[line width=0.6pt] (n1) -- (n11) node[wk,below,pos=0.5] {$\frac{3}{4}$};\draw[line width=0.6pt] (n00) -- (n000) node[wk,above,pos=0.5] {$\frac{1}{4}$};\draw[line width=1.5pt] (n00) -- (n001) node[wk,below,pos=0.5] {$\frac{3}{4}$};\draw[line width=1.5pt] (n01) -- (n010) node[wk,above,pos=0.5] {$\frac{1}{4}$};\draw[line width=0.6pt] (n01) -- (n011) node[wk,below,pos=0.5] {$\frac{3}{4}$};\draw[line width=1.5pt] (n10) -- (n100) node[wk,above,pos=0.5] {$\frac{1}{4}$};\draw[line width=0.6pt] (n10) -- (n101) node[wk,below,pos=0.5] {$\frac{3}{4}$};\draw[line width=0.6pt] (n11) -- (n110) node[wk,above,pos=0.5] {$\frac{1}{4}$};\draw[line width=0.6pt] (n11) -- (n111) node[wk,below,pos=0.5] {$\frac{3}{4}$};\end{tikzpicture}}{\grau{a)\ Ein Glücksrad hat 4 gleich große Felder: 1 rotes (R) und 3 blaue (B). Es wird dreimal gedreht. Wie groß ist die Wahrscheinlichkeit für genau zweimal Rot?\par\smallskip Genau zweimal Rot: R – R – B, R – B – R, B – R – R.\par Jeder Pfad hat zweimal $\frac{1}{4}$ und einmal $\frac{3}{4}$: $\frac{1}{4} \cdot \frac{1}{4} \cdot \frac{3}{4} = \frac{3}{64}$.\par Drei Pfade addieren: $3 \cdot \frac{3}{64} = \frac{9}{64}$.\par Die Wahrscheinlichkeit für genau zweimal Rot ist $\frac{9}{64}$.}}
+\par\medskip
+b)\ Ein Glücksrad hat 4 gleich große Felder, eins davon mit Stern. Es wird dreimal gedreht. Wie groß ist die Wahrscheinlichkeit für dreimal Stern?\karo{3}
+\fusshilfe{\mbox{13:~b) $P = \frac{1}{64}$}}
+\end{pfaufg}
+
+% L3-D: Drei Stufen
+\begin{pfaufg}{}{14.}{}
+\gzwei{\begin{tikzpicture}[ak/.style={font=\small,inner sep=1.5pt,fill=white},wk/.style={font=\footnotesize,inner sep=1pt}]\fill (0,0) circle (1.4pt);\coordinate (s) at (0,0);\node[ak] (n0) at (2.10,1.560) {6};\node[ak] (n1) at (2.10,-1.560) {k};\node[ak] (n00) at (4.20,2.340) {6};\node[ak] (n01) at (4.20,0.780) {k};\node[ak] (n10) at (4.20,-0.780) {6};\node[ak] (n11) at (4.20,-2.340) {k};\node[ak] (n000) at (6.30,2.730) {6};\node[ak] (n001) at (6.30,1.950) {k};\node[ak] (n010) at (6.30,1.170) {6};\node[ak] (n011) at (6.30,0.390) {k};\node[ak] (n100) at (6.30,-0.390) {6};\node[ak] (n101) at (6.30,-1.170) {k};\node[ak] (n110) at (6.30,-1.950) {6};\node[ak] (n111) at (6.30,-2.730) {k};\draw[line width=0.6pt] (s) -- (n0) node[wk,above,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (s) -- (n1) node[wk,below,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (n0) -- (n00) node[wk,above,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (n0) -- (n01) node[wk,below,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (n1) -- (n10) node[wk,above,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (n1) -- (n11) node[wk,below,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (n00) -- (n000) node[wk,above,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (n00) -- (n001) node[wk,below,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (n01) -- (n010) node[wk,above,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (n01) -- (n011) node[wk,below,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (n10) -- (n100) node[wk,above,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (n10) -- (n101) node[wk,below,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (n11) -- (n110) node[wk,above,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (n11) -- (n111) node[wk,below,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\end{tikzpicture}}{%
+Ein Würfel wird dreimal geworfen (6: eine Sechs, k: keine Sechs). Trage im Baum alle Wahrscheinlichkeiten ein. Wie groß ist die Wahrscheinlichkeit, dass keine 6 fällt?\karo{3}}
+\fusshilfe{\mbox{14:~$P = \frac{125}{216} \approx 57{,}9\,\%$}}
+\end{pfaufg}
+
+% L3-D: Drei Stufen
+\begin{pfaufg}{}{15.}{}
+Emma trifft beim Elfmeter mit der Wahrscheinlichkeit $0{,}8$. Sie schießt dreimal. Wie groß ist die Wahrscheinlichkeit für genau zwei Treffer?\karo{3}
+\fusshilfe{\mbox{15:~$P = 0{,}384 = 38{,}4\,\%$}}
+\end{pfaufg}
+
+% L3-D: Drei Stufen
+\begin{pfaufg}{}{16.}{}
+\gzwei{\begin{tikzpicture}[font=\small]\draw[line width=0.5pt] (0.0,0) -- ++(90.00:1.0);\node at ([shift=(54.00:0.65)]0.0,0) {\textbf{\Large$\star$}};\draw[line width=0.5pt] (0.0,0) -- ++(18.00:1.0);\draw[line width=0.5pt] (0.0,0) -- ++(-54.00:1.0);\node at ([shift=(-90.00:0.65)]0.0,0) {\textbf{\Large$\star$}};\draw[line width=0.5pt] (0.0,0) -- ++(-126.00:1.0);\draw[line width=0.5pt] (0.0,0) -- ++(-198.00:1.0);\draw[line width=0.8pt] (0.0,0) circle (1.0);\fill (0.0,0.95) -- ++(-0.13,0.33) -- ++(0.26,0) -- cycle;\end{tikzpicture}}{%
+Am Stand gibt es zwei Spiele mit dem Glücksrad im Bild. Spiel A: einmal drehen, du gewinnst bei Stern. Spiel B: dreimal drehen, du gewinnst bei mindestens zwei Sternen. Bei welchem Spiel ist die Gewinnchance größer?\karo{3}}
+\fusshilfe{\mbox{16:~Spiel A: $40\,\%$ gegen $35{,}2\,\%$}}
+\end{pfaufg}
+
+% L3-T: Probetest
+\begin{pfaufg}{}{17.}{}
+\gzwei{\begin{tikzpicture}[ak/.style={font=\small,inner sep=1.5pt,fill=white},wk/.style={font=\footnotesize,inner sep=1pt}]\fill (0,0) circle (1.4pt);\coordinate (s) at (0,0);\node[ak] (n0) at (2.30,0.850) {g};\node[ak] (n1) at (2.30,-0.850) {u};\node[ak] (n00) at (4.60,1.275) {g};\node[ak] (n01) at (4.60,0.425) {u};\node[ak] (n10) at (4.60,-0.425) {g};\node[ak] (n11) at (4.60,-1.275) {u};\draw[line width=0.6pt] (s) -- (n0) node[wk,above,pos=0.5] {$\frac{1}{3}$};\draw[line width=0.6pt] (s) -- (n1) node[wk,below,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (n0) -- (n00) node[wk,above,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (n0) -- (n01) node[wk,below,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (n1) -- (n10) node[wk,above,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (n1) -- (n11) node[wk,below,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\end{tikzpicture}}{%
+Ein grüner Würfel trägt die Zahlen 1, 1, 2, 3, 4, 5. Ein gelber Würfel trägt die Zahlen 2, 2, 4, 5, 6, 6. Erst wird der grüne, dann der gelbe geworfen. Man achtet nur darauf, ob die Zahl gerade (g) oder ungerade (u) ist. Ergänze den Baum. Wie groß ist die Wahrscheinlichkeit, dass beide Zahlen ungerade sind?\karo{3}}
+\fusshilfe{\mbox{17:~$P = \frac{1}{9}$}}
+\end{pfaufg}
+
+% L3-T: Probetest
+\begin{pfaufg}{}{18.}{}
+Im Beutel 1 liegen 2 rote und 3 weiße Kugeln, im Beutel 2 eine rote und eine weiße. Aus jedem Beutel wird eine Kugel gezogen. Wie groß ist die Wahrscheinlichkeit für zwei verschiedene Farben? Kreuze an.\par\smallskip \gkreuz{$\frac{1}{5}$}\gkreuz{$\frac{3}{10}$}\par \gkreuz{$\frac{1}{2}$}\gkreuz{$\frac{3}{5}$}
+\fusshilfe{\mbox{18:~$\frac{1}{2}$}}
+\end{pfaufg}
+
+% L3-T: Probetest
+\begin{pfaufg}{}{19.}{}
+Ein Glücksrad hat 8 gleich große Felder, 3 davon sind grün. Es wird zweimal gedreht. Wie groß ist die Wahrscheinlichkeit, mindestens einmal Grün zu drehen? Gib sie auch in Prozent an.\karo{3}
+\fusshilfe{\mbox{19:~$P = \frac{39}{64} \approx 60{,}9\,\%$}}
+\end{pfaufg}
+
+% L3-T: Probetest
+\begin{pfaufg}{}{20.}{}
+\gzwei{\begin{tikzpicture}[ak/.style={font=\small,inner sep=1.5pt,fill=white},wk/.style={font=\footnotesize,inner sep=1pt}]\fill (0,0) circle (1.4pt);\coordinate (s) at (0,0);\node[ak] (n0) at (2.10,1.560) {G};\node[ak] (n1) at (2.10,-1.560) {N};\node[ak] (n00) at (4.20,2.340) {G};\node[ak] (n01) at (4.20,0.780) {N};\node[ak] (n10) at (4.20,-0.780) {G};\node[ak] (n11) at (4.20,-2.340) {N};\node[ak] (n000) at (6.30,2.730) {G};\node[ak] (n001) at (6.30,1.950) {N};\node[ak] (n010) at (6.30,1.170) {G};\node[ak] (n011) at (6.30,0.390) {N};\node[ak] (n100) at (6.30,-0.390) {G};\node[ak] (n101) at (6.30,-1.170) {N};\node[ak] (n110) at (6.30,-1.950) {G};\node[ak] (n111) at (6.30,-2.730) {N};\draw[line width=0.6pt] (s) -- (n0) node[wk,above,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (s) -- (n1) node[wk,below,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (n0) -- (n00) node[wk,above,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (n0) -- (n01) node[wk,below,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (n1) -- (n10) node[wk,above,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (n1) -- (n11) node[wk,below,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (n00) -- (n000) node[wk,above,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (n00) -- (n001) node[wk,below,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (n01) -- (n010) node[wk,above,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (n01) -- (n011) node[wk,below,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (n10) -- (n100) node[wk,above,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (n10) -- (n101) node[wk,below,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (n11) -- (n110) node[wk,above,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (n11) -- (n111) node[wk,below,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\end{tikzpicture}}{%
+Ein Glücksrad hat 5 gleich große Felder, eins davon ist gold. Lukas dreht dreimal (G Gold, N nicht Gold). Er gewinnt, wenn mindestens zweimal Gold kommt. Beschrifte alle Äste des Baums. Berechne seine Gewinnwahrscheinlichkeit.\karo{3}}
+\fusshilfe{\mbox{20:~$P = \frac{13}{125} = 10{,}4\,\%$}}
+\end{pfaufg}
+
+% L3-T: Probetest
+\begin{pfaufg}{}{21.}{}
+In einen Beutel kommen 10 Kugeln, rote und weiße. Es wird zweimal mit Zurücklegen gezogen. Zweimal Rot soll die Wahrscheinlichkeit $36\,\%$ haben. Wie viele rote Kugeln müssen in den Beutel? Zeige es mit einer Rechnung.\karo{3}
+\fusshilfe{\mbox{21:~6 rote Kugeln}}
+\end{pfaufg}
+
+\par\vfill\noindent{\footnotesize Vorher: Wahrscheinlichkeit einstufig\quad\textbullet\quad Weiter: Ohne Zurücklegen\par}
+\end{document}
