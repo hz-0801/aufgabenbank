@@ -40,3 +40,8 @@ Dauer: 21:21–21:29 (date), etwa 8 min Wanduhr.
 - 1-uebersicht.pdf: 1 · 2-blatt.pdf: 5 · 3-loesungen.pdf: 1
 
 Neue Bankzeilen: keine (jede Lücke hatte eine passende Zeile). Zahlen mit python3 nachgerechnet.
+
+## Nacharbeit im Chat (10.10., Handwerk)
+- Umbruch von Hand vor Stufe 2 raus, Needspace auf 0,25 Seitenhöhe; Karo 3 → 2 Reihen; Skizzen Nr. 10 und 12 kleiner: Blatt 5 → 3 Seiten, Fundstellen auf der letzten Seite.
+- Fuß (kopfüber) braucht zwei xelatex-Läufe; mathblatt.sty über TEXINPUTS=../blattbau.
+- Messwert Bau: Agent 0,23 Mio Token, 38 Werkzeugaufrufe, 8 min.
