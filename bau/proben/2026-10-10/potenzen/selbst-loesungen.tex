@@ -1,0 +1,59 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% gesetzt von werkzeuge/setzer.py (Sorte selbst) aus dem Lernweg VUD
+% und den Bankzeilen; Muster bau/proben/2026-10-09/hypotenuse-muster.
+\usepackage{enumitem}
+\usepackage{adjustbox,varwidth}
+\newgeometry{a4paper,margin=18mm,top=15mm,bottom=20mm,footskip=9mm}
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\footnotesize\color{mbgrau}VUD \textperiodcentered{} Lösungen \textperiodcentered{} Potenzen}
+\fancyfoot[R]{\footnotesize\color{mbgrau}\thepage}
+\setlength{\parskip}{3pt}
+\renewcommand{\kreuz}[1]{\mbox{$\square$\ #1}\quad}
+\newcommand{\kreuzl}[1]{\par\hangindent1.4em\hangafter1\noindent$\square$\ #1}
+\newcommand{\aufg}[3]{\par\noindent\makebox[0pt][r]{#3}\begin{minipage}[t]{\linewidth}#1\end{minipage}\par}
+\newcommand{\aufgg}[4]{\par\noindent\makebox[0pt][r]{#4}\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}#1\end{minipage}\hfill
+  \begin{minipage}[t]{0.37\linewidth}\vspace{0pt}\centering #2\end{minipage}\par}
+\newcommand{\nr}[1]{\makebox[7mm][l]{\textbf{#1}}}
+\newcommand{\lsg}[3]{\par\noindent\begin{minipage}[t]{9mm}\textbf{#1}\end{minipage}%
+  \begin{minipage}[t]{52mm}\raggedright\bfseries\boldmath #2\end{minipage}\hspace{3mm}%
+  \begin{minipage}[t]{\dimexpr\linewidth-64mm\relax}\raggedright\small #3\end{minipage}\par\vspace{4pt}}
+\newlength{\kr}
+\makeatletter
+\newcommand{\karomerk}[2]{\protected@write\@auxout{}{\string\karoseite{#1}{#2}{\thepage}}}
+\newcommand{\karoseite}[3]{\expandafter\xdef\csname karo@#1@#2\endcsname{#3}}
+\newcommand{\karohinweis}[3]{\karomerk{h}{#1}\ifcsname karo@k@#1\endcsname
+  \ifnum\csname karo@k@#1\endcsname=0\csname karo@h@#1\endcsname\relax#2\else#3\fi
+  \else#3\fi}
+\makeatother
+\begin{document}
+
+\noindent{\Large\bfseries Lösungen}\hspace{1em}{\color{mbgrau}Potenzen}\par\smallskip
+\noindent{\small Links das Ergebnis, rechts der Weg in kurzen Schritten. Stimmt dein Ergebnis nicht, such den ersten Schritt, der anders ist.}\par
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut A}}\hspace{2mm}{\bfseries Potenz als Malkette}\par\vspace{4pt}
+\lsg{1.}{a) $32$ \ b) $10\,000$ \ c) $7^3 = 343$ \ d) $3^5 = 243$}{a) $2^5 = 2 \cdot 2 \cdot 2 \cdot 2 \cdot 2 = 32$; b) $10^4 = 10 \cdot 10 \cdot 10 \cdot 10 = 10\,000$; c) $7 \cdot 7 \cdot 7 = 7^3 = 343$; d) $3 \cdot 3 \cdot 3 \cdot 3 \cdot 3 = 3^5 = 243$}
+\lsg{2.}{a) $144$; $24$ \ b) $64$; $12$ \ c) $125$; $15$ \ d) $225$; $30$}{a) $12^2 = 12 \cdot 12 = 144$, \ $12 \cdot 2 = 24$; b) $2^6 = 2 \cdot 2 \cdot 2 \cdot 2 \cdot 2 \cdot 2 = 64$, \ $2 \cdot 6 = 12$; c) $5^3 = 5 \cdot 5 \cdot 5 = 125$, \ $5 \cdot 3 = 15$; d) $15^2 = 15 \cdot 15 = 225$, \ $15 \cdot 2 = 30$}
+\lsg{3.}{a) $2$; $4$; $8$ \ b) $2^{10} = 1024$}{a) $2$; $2 \cdot 2 = 4$; $2 \cdot 2 \cdot 2 = 8$; b) zehnmal mal $2$: $2^{10} = 1024$ Bakterien}
+\lsg{4.}{ja: $2^7 = 128$ Lagen, $12{,}8$\,mm}{Lagen: $2^7 = 128$; Dicke: $128 \cdot 0{,}1 = 12{,}8$\,mm $= 1{,}28$\,cm. Ja, der Stapel ist dicker als 1\,cm (um 2,8\,mm).}
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut B}}\hspace{2mm}{\bfseries Minus und Komma in der Potenz}\par\vspace{4pt}
+\lsg{1.}{a) $36$ \ b) $-32$ \ c) $1$ \ d) $-1000$}{a) $(-6) \cdot (-6) = 36$; b) $(-2) \cdot (-2) \cdot (-2) \cdot (-2) \cdot (-2) = -32$; c) $(-1)^8 = 1$; d) $(-10) \cdot (-10) \cdot (-10) = -1000$}
+\lsg{2.}{a) $49$; $-49$ \ b) $1$; $-1$ \ c) $-27$; $-27$}{a) $(-7)^2 = 49$, \ $-7^2 = -49$; b) $(-1)^4 = 1$, \ $-1^4 = -1$; c) $(-3)^3 = -27$, \ $-3^3 = -27$}
+\lsg{3.}{a) $0{,}25$ \ b) $1{,}44$ \ c) $0{,}008$ \ d) $\frac{4}{25}$ \ e) $\frac{1}{8}$}{a) $0{,}5 \cdot 0{,}5 = 0{,}25$; b) $1{,}2 \cdot 1{,}2 = 1{,}44$; c) $0{,}2 \cdot 0{,}2 \cdot 0{,}2 = 0{,}008$; d) $\frac{2 \cdot 2}{5 \cdot 5} = \frac{4}{25}$; e) $\frac{1 \cdot 1 \cdot 1}{2 \cdot 2 \cdot 2} = \frac{1}{8}$}
+\lsg{4.}{$-6^2$ (Wert $-36$)}{$-6^2 = -36$, $(-6)^2 = 36$, $(-3)^3 = -27$, $-0{,}5^2 = -0{,}25$ – die kleinste ist $-6^2$}
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut C}}\hspace{2mm}{\bfseries Vergleichen und Exponent finden}\par\vspace{4pt}
+\lsg{1.}{a) $>$ \ b) $<$ \ c) $=$ \ d) $<$}{a) $3^2 = 9 > 2^3 = 8$; b) $10^2 = 100 < 2^7 = 128$; c) $4^2 = 16 = 2^4$; d) $1^{10} = 1 < 10^1 = 10$}
+\lsg{2.}{a) $x = 6$ \ b) $x = 4$ \ c) $x = 5$ \ d) $x = 3$}{a) $2, 4, 8, 16, 32, 64$: $x = 6$; b) $5, 25, 125, 625$: $x = 4$; c) fünf Nullen: $x = 5$; d) $3, 9, 27$: $x = 3$}
+\lsg{3.}{$2^7$ (Wert $128$)}{$5^3 = 125$, $2^7 = 128$, $11^2 = 121$ – die größte ist $2^7$}
+\lsg{4.}{nein: $2^9 = 512$, nach $9$ Tagen}{$2^x = 512$: $2, 4, 8, 16, 32, 64, 128, 256, 512$, also $x = 9$. Nein, eine Woche (7 Tage) reicht nicht; es dauert 9 Tage, 2 Tage länger.}
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut D}}\hspace{2mm}{\bfseries Negative Hochzahl und hoch null}\par\vspace{4pt}
+\lsg{1.}{a) $\frac{1}{9}$ \ b) $\frac{1}{1000}$ \ c) $\frac{1}{16}$ \ d) $\frac{1}{7}$ \ e) $1$}{a) $3^{-2} = \frac{1}{3^2} = \frac{1}{9}$; b) $10^{-3} = \frac{1}{10^3} = \frac{1}{1000}$; c) $2^{-4} = \frac{1}{2^4} = \frac{1}{16}$; d) $7^{-1} = \frac{1}{7}$; e) $6^0 = 1$}
+\lsg{2.}{a) $\frac{1}{2} = 0{,}5$ \ b) $\frac{1}{5} = 0{,}2$ \ c) $\frac{1}{100} = 0{,}01$ \ d) $\frac{1}{4} = 0{,}25$}{a) $2^{-1} = \frac{1}{2} = 0{,}5$; b) $5^{-1} = \frac{1}{5} = 0{,}2$; c) $10^{-2} = \frac{1}{100} = 0{,}01$; d) $4^{-1} = \frac{1}{4} = 0{,}25$}
+\lsg{3.}{a) $>$ \ b) $<$ \ c) $>$ \ d) $>$}{a) $8^{-1} = \frac{1}{8} = 0{,}125 > 0{,}1$; b) $10^{-3} = \frac{1}{1000} = 0{,}001 < 0{,}01$; c) $2^{-2} = \frac{1}{4} = 0{,}25 > 0{,}2$; d) $3^0 = 1 > 0{,}9$}
+\lsg{4.}{$20^{-1} < 0{,}15 < 5^{-1} < 4^{-1} < 0{,}3$}{$20^{-1} = 0{,}05 < 0{,}15 < 5^{-1} = 0{,}2 < 4^{-1} = 0{,}25 < 0{,}3$}
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut T}}\hspace{2mm}{\bfseries Probetest}\par\vspace{4pt}
+\lsg{1.}{$x = 4$}{$8, 64, 512, 4096$: vier Faktoren, $x = 4$}
+\lsg{2.}{a) $-216$ \ b) $-36$ \ c) $0{,}064$ \ d) $1$ \ e) $0{,}1$}{a) $(-6) \cdot (-6) \cdot (-6) = -216$; b) $-(6 \cdot 6) = -36$; c) $0{,}4 \cdot 0{,}4 \cdot 0{,}4 = 0{,}064$; d) $(-5)^0 = 1$; e) $10^{-1} = \frac{1}{10} = 0{,}1$}
+\lsg{3.}{$4^4$ (Wert $256$)}{$4^4 = 256$, $3^5 = 243$, $15^2 = 225$ – die größte ist $4^4$}
+\lsg{4.}{$>$}{$2^{-4} = \frac{1}{16} = 0{,}0625 > 0{,}06$}
+\lsg{5.}{ja: $4^5 = 1024$}{$4^5 = 4 \cdot 4 \cdot 4 \cdot 4 \cdot 4 = 1024$. Ja, $1024 > 1000$.}
+\end{document}

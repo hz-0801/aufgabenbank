@@ -955,3 +955,22 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
   Prüfliste, damit quelle-Zeilen gültig bleiben.
 - Heft 5 Seiten, Lösungen 1 Seite; Mengenwarnungen (k2, k3, k5) aus den
   Zusatzzeilen wie bei allen Bauten.
+## Potenzen und Wurzeln E1 „Potenzen“ (VUD, 10.10.2026)
+- Reine Zahlabschnitte (B Minus und Komma, D negative Hochzahl) haben
+  kein Modell, das der Schüler selbst erkennen könnte; ihr Ziel ist
+  „alle Fälle ungeordnet, dann entscheiden/ordnen“. Sachziele nur in A,
+  C und T (Falten, Algen, Video). (Neue Sprosse 17 „Sache: wiederholtes
+  Vervielfachen“ in der Kette Potenzen.)
+- Ankreuzen mit Potenzen als Optionen ($5^3$, $2^7$ …) fällt im Prüfer
+  durch („Lösungszahl in 0 von 3 Optionen“), weil er die Ziffern der
+  Optionen als Zahlen liest. (P10-Form „Unterstreiche die größte“ als
+  Aufgabe ohne \kreuz; Antwortform bleibt ankreuzen.)
+- `\par` in aufgabe bricht aus dem Hängeeinzug der Nummer (zweite Zeile
+  am linken Rand); `\\` hält ihn. `\smallskip`, `\hspace` sind keine
+  Bausteine.
+- Brüche als Ergebnis: pruef nennt Zähler und Nenner einzeln
+  ([9, 16]), nicht 9/16 oder die Dezimalzahl.
+- Prüfer: Sachsprosse mit hoehe sprosse hinter der Prüfungshöhe gilt
+  als Abweichung („nach höherer Stufe“); hoehe pflicht, pflicht
+  anwendung geht durch (Warnung Menge).
+- Kritiker: offen (startet der Chat).

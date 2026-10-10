@@ -1,0 +1,26 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% gesetzt von werkzeuge/setzer.py; Übersicht nach bau/bauregeln.md „Übersicht und Serie“.
+\newcommand{\kennung}{VUD}
+\newcommand{\bereich}[1]{\par\addvspace{14pt}\noindent{\large\bfseries #1}\par\nobreak\vspace{4pt}}
+\newcommand{\bl}[1]{\par\noindent #1\par\vspace{3pt}}
+\newcommand{\blrand}[1]{\par\noindent{\color{mbgrau}#1}\par\vspace{3pt}}
+\newcommand{\blhier}[1]{\par\noindent\llap{$\blacktriangleright$\hspace{0.5em}}\textbf{#1}\par\vspace{3pt}}
+\begin{document}
+\pfheftstil
+\fancyfoot[C]{{\footnotesize\color{mbgrau}\kennung\hfill\thepage}}
+\pfheftkopf{Potenzen, Zehnerpotenzen und Quadratwurzeln}{Klasse 9}
+
+\bereich{Vorher}
+\bl{Rechnen mit negativen Zahlen}
+\bl{Dezimalzahlen und Brüche malnehmen}
+
+\bereich{Potenzen und Wurzeln}
+\blhier{Potenzen}
+\bl{Zehnerpotenzen}
+\bl{Quadratwurzeln}
+
+\bereich{Weiter}
+\bl{Satz des Pythagoras}
+\bl{Exponentielles Wachstum}
+\end{document}
