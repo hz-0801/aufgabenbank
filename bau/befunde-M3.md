@@ -362,3 +362,27 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
 - Beschriftung von Geraden am Rand des Systems lässt ein kurzes Linienstück zwischen Rand und weißem Etikett stehen; Etiketten mindestens eine Einheit nach innen gesetzt.
 - Bestand E2: Wertetabelle als Zeichenweg (k4-s1 bis s3) und Fehler finden (k7-s1) nicht genommen; m = 0 hat keine eigene Sprosse (steht in k5-s6 und k6-s1).
 - Mengenwarnungen wie bisher durch die Vorratszeilen (k4-s4/s5/s6/s8, k5-s2 bis s6, k6-s1, pflicht begruenden/darstellung).
+
+## Trigonometrie E2 „Winkel berechnen“ (LT3, 10.10.2026)
+
+- Vier Abschnitte plus Probetest, Selbstlernheft 6 Seiten, Lösungen 2.
+  A Winkel aus zwei Seiten, B Steigungswinkel in Sachen, C Winkel in
+  Figuren und Nachweis, D Seite oder Winkel? (mischt mal und geteilt aus
+  E1 mit der Umkehrtaste), T. Thema-Weg Punkt 2 ergänzt. Kritiker offen.
+- Zielaufgaben wechseln die Antwortform: im Bereich? (A), um wie viel
+  steiler? (B), Behauptung prüfen (C), Mindestlänge und erlaubt? (D),
+  um wie viel länger? (T). Probetest prüft cos⁻¹, sin⁻¹, tan⁻¹, mal und
+  geteilt je einmal.
+- Jeder Hinweis einmal: SHIFT nur in Formel A, RAD nur bei den Fehlern,
+  90° − α nur in B; Formelkasten S. 1 ohne die Regel aus D.
+- Bank: neue Zeilen nach kette, sprosse, variante einsortiert; ans Ende
+  angehängt meldet der Prüfer „hoehe nach höherer Stufe“ (68×).
+  Mengenwarnungen k1 s1–s12 aus dem verlangten Vorrat, wie E1.
+- Setzer: Sorte selbst schreibt 2-blatt.pdf und 3-loesungen.pdf; von
+  Hand in selbst.pdf, selbst-loesungen.pdf (tisch-alt ebenso) umbenannt
+  wie in den anderen Probeordnern, .tex gelöscht.
+- duplikate.py: nur D-Beispiel und D-Vorrat-leichter (gleicher Auftrag,
+  andere Zahlen), gewollt.
+- Skizzen klein (D: drei Dreiecke in 6,4 cm Spalte): steile Dreiecke
+  (7 : 4) waren zu schmal für Winkelmarke und Fragezeichen; Zahlen auf
+  flache Dreiecke geändert.
