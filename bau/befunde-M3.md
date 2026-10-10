@@ -478,6 +478,7 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
 - Prüfer: Mengenwarnungen k1 s0–s18 aus Blatt- und Vorratszeilen, wie
   bei den anderen Bauten. duplikate.py: nur Vorrat gegen Blattzeile
   (gleicher Auftrag, andere Zahlen), gewollt.
+
 ## Quadratische Funktionen E3 „Normalform“ (7P7, 10.10.2026)
 
 - Vier Abschnitte plus Probetest, Selbstlernheft 6 Seiten, Lösungen 2.
