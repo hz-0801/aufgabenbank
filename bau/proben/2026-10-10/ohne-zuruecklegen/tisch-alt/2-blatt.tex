@@ -1,0 +1,151 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% gesetzt von werkzeuge/setzer.py aus dem Lernweg (L4-A · L4-B · L4-C · L4-D · L4-T) und den Bankzeilen; Muster T6B.
+\input{praeambel}
+\newcommand{\kennung}{XKT}
+\newcommand{\grau}[1]{{\color{mbgrau}#1}}
+
+\begin{document}
+\pfheftstil
+\fancyfoot[C]{\parbox[t]{\textwidth}{\mbfhbox\par\vspace{1.5mm}{\footnotesize\color{mbgrau}{\scriptsize \kennung}\hfill\thepage}}}
+\pfheftkopf{Ohne Zurücklegen}{Klasse 9}
+% L4-A: Zweimal ziehen: eins weniger
+\begin{pfaufg}{}{1.}{}
+\gzwei{\begin{tikzpicture}[ak/.style={font=\small,inner sep=1.5pt,fill=white},wk/.style={font=\footnotesize,inner sep=1pt}]\fill (0,0) circle (1.4pt);\coordinate (s) at (0,0);\node[ak] (nR) at (2.30,0.850) {R};\node[ak] (nRR) at (4.60,1.275) {R};\node[ak] (nRB) at (4.60,0.425) {B};\node[ak] (nB) at (2.30,-0.850) {B};\node[ak] (nBR) at (4.60,-0.425) {R};\node[ak] (nBB) at (4.60,-1.275) {B};\draw[line width=1.5pt] (s) -- (nR) node[wk,above,pos=0.5] {$\frac{3}{5}$};\draw[line width=1.5pt] (nR) -- (nRR) node[wk,above,pos=0.5] {$\frac{2}{4}$};\draw[line width=0.6pt] (nR) -- (nRB) node[wk,below,pos=0.5] {$\frac{2}{4}$};\draw[line width=0.6pt] (s) -- (nB) node[wk,below,pos=0.5] {$\frac{2}{5}$};\draw[line width=0.6pt] (nB) -- (nBR) node[wk,above,pos=0.5] {$\frac{3}{4}$};\draw[line width=0.6pt] (nB) -- (nBB) node[wk,below,pos=0.5] {$\frac{1}{4}$};\end{tikzpicture}}{\grau{a)\ In einem Beutel liegen 3 rote (R) und 2 blaue (B) Kugeln. Zwei Kugeln werden nacheinander gezogen, ohne Zurücklegen. Wie groß ist die Wahrscheinlichkeit für zweimal Rot?\par\smallskip 1. Zug: 5 Kugeln, davon 3 rote: R $\frac{3}{5}$, B $\frac{2}{5}$.\par Nach Rot liegen noch 4 Kugeln da, nur noch 2 rote: R $\frac{2}{4}$, B $\frac{2}{4}$. Nach Blau: R $\frac{3}{4}$, B $\frac{1}{4}$.\par Pfad R – R nachfahren und multiplizieren: $\frac{3}{5} \cdot \frac{2}{4} = \frac{6}{20} = \frac{3}{10}$.\par Die Wahrscheinlichkeit für zweimal Rot ist $\frac{3}{10}$.}}
+\par\medskip
+b)\ In einer Dose liegen 7 Kekse, 3 davon mit Schokolade. Lea isst einen Schokokeks. Wie viele Kekse liegen noch in der Dose, wie viele davon mit Schokolade? Wie groß ist jetzt die Wahrscheinlichkeit, einen Schokokeks zu greifen?\karo{3}
+\fusshilfe{\mbox{1:~b) 6 Kekse, 2 mit Schokolade; $P = \frac{1}{3}$}}
+\end{pfaufg}
+
+% L4-A: Zweimal ziehen: eins weniger
+\begin{pfaufg}{}{2.}{}
+\gzwei{\begin{tikzpicture}[ak/.style={font=\small,inner sep=1.5pt,fill=white},wk/.style={font=\footnotesize,inner sep=1pt}]\fill (0,0) circle (1.4pt);\coordinate (s) at (0,0);\node[ak] (nG) at (2.30,0.850) {G};\node[ak] (nGG) at (4.60,1.275) {G};\node[ak] (nGW) at (4.60,0.425) {W};\node[ak] (nW) at (2.30,-0.850) {W};\node[ak] (nWG) at (4.60,-0.425) {G};\node[ak] (nWW) at (4.60,-1.275) {W};\draw[line width=0.6pt] (s) -- (nG) node[wk,above,pos=0.5] {$\frac{2}{6}$};\draw[line width=0.6pt] (nG) -- (nGG) node[wk,above,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (nG) -- (nGW) node[wk,below,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (s) -- (nW) node[wk,below,pos=0.5] {$\frac{4}{6}$};\draw[line width=0.6pt] (nW) -- (nWG) node[wk,above,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (nW) -- (nWW) node[wk,below,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\end{tikzpicture}}{%
+In einem Beutel liegen 2 gelbe (G) und 4 weiße (W) Kugeln. Zwei werden ohne Zurücklegen gezogen. Ergänze im Baum die Äste der 2. Stufe. Wie groß ist die Wahrscheinlichkeit für zuerst Gelb, dann Weiß?\karo{3}}
+\fusshilfe{\mbox{2:~$P = \frac{4}{15}$}}
+\end{pfaufg}
+
+% L4-A: Zweimal ziehen: eins weniger
+\begin{pfaufg}{}{3.}{}
+Von 10 Losen sind 3 Gewinne. Tom zieht nacheinander zwei Lose und behält sie. Wie groß ist die Wahrscheinlichkeit, dass beide gewinnen?\karo{3}
+\fusshilfe{\mbox{3:~$P = \frac{1}{15}$}}
+\end{pfaufg}
+
+% L4-A: Zweimal ziehen: eins weniger
+\begin{pfaufg}{}{4.}{}
+Lisa darf aus einem von zwei Beuteln zwei Kugeln ziehen, ohne Zurücklegen. Bei zweimal Rot gewinnt sie. Im Beutel 1 liegen 3 rote und 1 blaue Kugel, im Beutel 2 liegen 6 rote und 2 blaue. Lisa meint: „Der Anteil Rot ist gleich, also ist es egal.“ Hat sie recht? Begründe mit den Wahrscheinlichkeiten.\karo{3}
+\fusshilfe{\mbox{4:~Nein}}
+\end{pfaufg}
+
+% L4-B: Mehrere Pfade, zweite Person
+\begin{pfaufg}{}{5.}{}
+\gzwei{\begin{tikzpicture}[ak/.style={font=\small,inner sep=1.5pt,fill=white},wk/.style={font=\footnotesize,inner sep=1pt}]\fill (0,0) circle (1.4pt);\coordinate (s) at (0,0);\node[ak] (nR) at (2.30,0.850) {R};\node[ak] (nRR) at (4.60,1.275) {R};\node[ak] (nRB) at (4.60,0.425) {B};\node[ak] (nB) at (2.30,-0.850) {B};\node[ak] (nBR) at (4.60,-0.425) {R};\node[ak] (nBB) at (4.60,-1.275) {B};\draw[line width=1.5pt] (s) -- (nR) node[wk,above,pos=0.5] {$\frac{3}{5}$};\draw[line width=1.5pt] (nR) -- (nRR) node[wk,above,pos=0.5] {$\frac{2}{4}$};\draw[line width=0.6pt] (nR) -- (nRB) node[wk,below,pos=0.5] {$\frac{2}{4}$};\draw[line width=1.5pt] (s) -- (nB) node[wk,below,pos=0.5] {$\frac{2}{5}$};\draw[line width=0.6pt] (nB) -- (nBR) node[wk,above,pos=0.5] {$\frac{3}{4}$};\draw[line width=1.5pt] (nB) -- (nBB) node[wk,below,pos=0.5] {$\frac{1}{4}$};\end{tikzpicture}}{\grau{a)\ In einem Beutel liegen 3 rote (R) und 2 blaue (B) Kugeln. Zwei werden ohne Zurücklegen gezogen. Wie groß ist die Wahrscheinlichkeit, dass beide dieselbe Farbe haben?\par\smallskip Dieselbe Farbe: die Pfade R – R und B – B.\par R – R: $\frac{3}{5} \cdot \frac{2}{4} = \frac{6}{20}$. B – B: $\frac{2}{5} \cdot \frac{1}{4} = \frac{2}{20}$.\par Addieren: $\frac{6}{20} + \frac{2}{20} = \frac{8}{20} = \frac{2}{5}$.\par Die Wahrscheinlichkeit für dieselbe Farbe ist $\frac{2}{5}$.}}
+\par\medskip
+\gzwei{\begin{tikzpicture}[ak/.style={font=\small,inner sep=1.5pt,fill=white},wk/.style={font=\footnotesize,inner sep=1pt}]\fill (0,0) circle (1.4pt);\coordinate (s) at (0,0);\node[ak] (nB) at (2.30,0.850) {B};\node[ak] (nBB) at (4.60,1.275) {B};\node[ak] (nBS) at (4.60,0.425) {S};\node[ak] (nS) at (2.30,-0.850) {S};\node[ak] (nSB) at (4.60,-0.425) {B};\node[ak] (nSS) at (4.60,-1.275) {S};\draw[line width=0.6pt] (s) -- (nB) node[wk,above,pos=0.5] {$\frac{4}{7}$};\draw[line width=0.6pt] (nB) -- (nBB) node[wk,above,pos=0.5] {$\frac{3}{6}$};\draw[line width=0.6pt] (nB) -- (nBS) node[wk,below,pos=0.5] {$\frac{3}{6}$};\draw[line width=0.6pt] (s) -- (nS) node[wk,below,pos=0.5] {$\frac{3}{7}$};\draw[line width=0.6pt] (nS) -- (nSB) node[wk,above,pos=0.5] {$\frac{4}{6}$};\draw[line width=0.6pt] (nS) -- (nSS) node[wk,below,pos=0.5] {$\frac{2}{6}$};\end{tikzpicture}}{%
+b)\ In Oles Mäppchen liegen 4 blaue (B) und 3 schwarze (S) Stifte. Er nimmt blind zwei heraus. Der Baum ist fertig. a) Wie groß ist die Wahrscheinlichkeit für zwei verschiedene Farben? b) Zu welchem Ereignis gehört die Rechnung $\frac{3}{7} \cdot \frac{2}{6}$?\karo{3}}
+\fusshilfe{\mbox{5:~b) a) $P = \frac{4}{7}$; b) zweimal Schwarz}}
+\end{pfaufg}
+
+% L4-B: Mehrere Pfade, zweite Person
+\begin{pfaufg}{}{6.}{}
+In Tims Schublade liegen 6 schwarze und 4 weiße Socken. Im Dunkeln nimmt er zwei heraus. Wie groß ist die Wahrscheinlichkeit, dass beide dieselbe Farbe haben? Schreib zuerst die passenden Pfade auf.\karo{3}
+\fusshilfe{\mbox{6:~$P = \frac{7}{15}$}}
+\end{pfaufg}
+
+% L4-B: Mehrere Pfade, zweite Person
+\begin{pfaufg}{}{7.}{}
+In einem Hut liegen 6 Zettel, auf einem steht „Joker“. Erst zieht Ali einen Zettel und behält ihn, dann zieht Bea. Wie groß ist die Wahrscheinlichkeit, dass Bea den Joker zieht?\karo{3}
+\fusshilfe{\mbox{7:~$P = \frac{1}{6}$}}
+\end{pfaufg}
+
+% L4-B: Mehrere Pfade, zweite Person
+\begin{pfaufg}{}{8.}{}
+In einer Box liegen 10 Lose, 2 davon sind Gewinne. Jonas zieht zuerst ein Los und behält es, dann zieht Emma. Emma sagt: „Als Zweite habe ich eine schlechtere Chance auf einen Gewinn.“ Hat sie recht? Vergleiche die Wahrscheinlichkeiten.\karo{3}
+\fusshilfe{\mbox{8:~Nein; beide $\frac{1}{5}$}}
+\end{pfaufg}
+
+% L4-C: Drei Züge
+\begin{pfaufg}{}{9.}{}
+\gzwei{\begin{tikzpicture}[ak/.style={font=\small,inner sep=1.5pt,fill=white},wk/.style={font=\footnotesize,inner sep=1pt}]\fill (0,0) circle (1.4pt);\coordinate (s) at (0,0);\node[ak] (nR) at (2.00,1.125) {R};\node[ak] (nRR) at (4.00,1.875) {R};\node[ak] (nRRR) at (6.50,2.250) {R};\node[ak] (nRRB) at (6.50,1.500) {B};\node[ak] (nRB) at (4.00,0.375) {B};\node[ak] (nRBR) at (6.50,0.750) {R};\node[ak] (nRBB) at (6.50,0.000) {B};\node[ak] (nB) at (2.00,-1.688) {B};\node[ak] (nBR) at (4.00,-1.125) {R};\node[ak] (nBRR) at (6.50,-0.750) {R};\node[ak] (nBRB) at (6.50,-1.500) {B};\node[ak] (nBB) at (4.00,-2.250) {B};\node[ak] (nBBR) at (6.50,-2.250) {R};\draw[line width=1.5pt] (s) -- (nR) node[wk,above,pos=0.5] {$\frac{3}{5}$};\draw[line width=1.5pt] (nR) -- (nRR) node[wk,above,pos=0.5] {$\frac{2}{4}$};\draw[line width=0.6pt] (nRR) -- (nRRR) node[wk,above,pos=0.5] {$\frac{1}{3}$};\draw[line width=1.5pt] (nRR) -- (nRRB) node[wk,below,pos=0.5] {$\frac{2}{3}$};\draw[line width=1.5pt] (nR) -- (nRB) node[wk,below,pos=0.5] {$\frac{2}{4}$};\draw[line width=1.5pt] (nRB) -- (nRBR) node[wk,above,pos=0.5] {$\frac{2}{3}$};\draw[line width=0.6pt] (nRB) -- (nRBB) node[wk,below,pos=0.5] {$\frac{1}{3}$};\draw[line width=1.5pt] (s) -- (nB) node[wk,below,pos=0.5] {$\frac{2}{5}$};\draw[line width=1.5pt] (nB) -- (nBR) node[wk,above,pos=0.5] {$\frac{3}{4}$};\draw[line width=1.5pt] (nBR) -- (nBRR) node[wk,above,pos=0.5] {$\frac{2}{3}$};\draw[line width=0.6pt] (nBR) -- (nBRB) node[wk,below,pos=0.5] {$\frac{1}{3}$};\draw[line width=0.6pt] (nB) -- (nBB) node[wk,below,pos=0.5] {$\frac{1}{4}$};\draw[line width=0.6pt] (nBB) -- (nBBR) node[wk,below,pos=0.5] {$\frac{3}{3}$};\end{tikzpicture}}{\grau{a)\ In einem Beutel liegen 3 rote (R) und 2 blaue (B) Kugeln. Drei werden ohne Zurücklegen gezogen. Wie groß ist die Wahrscheinlichkeit für genau eine blaue Kugel?\par\smallskip Nach jedem Zug ist eine Kugel weniger da: Nenner 5, 4, 3. Nach zwei blauen gibt es nur noch rote (ein Ast, $\frac{3}{3}$).\par Genau eine blaue: R – R – B, R – B – R, B – R – R.\par Jeder dieser Pfade: $\frac{3}{5} \cdot \frac{2}{4} \cdot \frac{2}{3} = \frac{12}{60}$ – nur die Reihenfolge der Zähler ist anders.\par Drei Pfade addieren: $3 \cdot \frac{12}{60} = \frac{36}{60} = \frac{3}{5}$.}}
+\par\medskip
+b)\ In einer Box liegen 8 Stifte, 3 davon grün. Mara nimmt nacheinander drei Stifte heraus, ohne zurückzulegen. Wie groß ist die Wahrscheinlichkeit, dass alle drei grün sind?\karo{3}
+\fusshilfe{\mbox{9:~b) $P = \frac{1}{56}$}}
+\end{pfaufg}
+
+% L4-C: Drei Züge
+\begin{pfaufg}{}{10.}{}
+\gzwei{\begin{tikzpicture}[ak/.style={font=\small,inner sep=1.5pt,fill=white},wk/.style={font=\footnotesize,inner sep=1pt}]\fill (0,0) circle (1.4pt);\coordinate (s) at (0,0);\node[ak] (nG) at (2.00,1.125) {G};\node[ak] (nGG) at (4.00,1.875) {G};\node[ak] (nGGG) at (6.50,2.250) {G};\node[ak] (nGGN) at (6.50,1.500) {N};\node[ak] (nGN) at (4.00,0.375) {N};\node[ak] (nGNG) at (6.50,0.750) {G};\node[ak] (nGNN) at (6.50,0.000) {N};\node[ak] (nN) at (2.00,-1.688) {N};\node[ak] (nNG) at (4.00,-1.125) {G};\node[ak] (nNGG) at (6.50,-0.750) {G};\node[ak] (nNGN) at (6.50,-1.500) {N};\node[ak] (nNN) at (4.00,-2.250) {N};\node[ak] (nNNG) at (6.50,-2.250) {G};\draw[line width=0.6pt] (s) -- (nG) node[wk,above,pos=0.5] {$\frac{4}{6}$};\draw[line width=0.6pt] (nG) -- (nGG) node[wk,above,pos=0.5] {$\frac{3}{5}$};\draw[line width=0.6pt] (nGG) -- (nGGG) node[wk,above,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (nGG) -- (nGGN) node[wk,below,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (nG) -- (nGN) node[wk,below,pos=0.5] {$\frac{2}{5}$};\draw[line width=0.6pt] (nGN) -- (nGNG) node[wk,above,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (nGN) -- (nGNN) node[wk,below,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (s) -- (nN) node[wk,below,pos=0.5] {$\frac{2}{6}$};\draw[line width=0.6pt] (nN) -- (nNG) node[wk,above,pos=0.5] {$\frac{4}{5}$};\draw[line width=0.6pt] (nNG) -- (nNGG) node[wk,above,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (nNG) -- (nNGN) node[wk,below,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (nN) -- (nNN) node[wk,below,pos=0.5] {$\frac{1}{5}$};\draw[line width=0.6pt] (nNN) -- (nNNG) node[wk,below,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\end{tikzpicture}}{%
+Von 6 Losen sind 4 Gewinne (G) und 2 Nieten (N). Drei Lose werden nacheinander gezogen und behalten. Ergänze die leeren Felder im Baum. Wie groß ist die Wahrscheinlichkeit für genau zwei Nieten?\karo{3}}
+\fusshilfe{\mbox{10:~$P = \frac{1}{5}$}}
+\end{pfaufg}
+
+% L4-C: Drei Züge
+\begin{pfaufg}{}{11.}{}
+Für einen Staffellauf wird die Reihenfolge von 8 Kindern ausgelost; jedes läuft genau einmal. Wie groß ist die Wahrscheinlichkeit, dass Nora unter den ersten drei Läufern ist? Gib sie auch in Prozent an.\karo{3}
+\fusshilfe{\mbox{11:~$P = \frac{3}{8} = 37{,}5\,\%$}}
+\end{pfaufg}
+
+% L4-C: Drei Züge
+\begin{pfaufg}{}{12.}{}
+In einer Dose liegen 15 Bonbons: 8 blaue, 4 gelbe und 3 rote. Ben nimmt blind drei. Er sagt: „Es gibt doppelt so viele blaue wie gelbe. Also ist dreimal Blau doppelt so wahrscheinlich wie dreimal Gelb.“ Stimmt das? Wievielmal so wahrscheinlich ist dreimal Blau?\karo{3}
+\fusshilfe{\mbox{12:~Nein}}
+\end{pfaufg}
+
+% L4-D: Mit oder ohne Zurücklegen?
+\begin{pfaufg}{}{13.}{}
+\grau{a)\ In einem Beutel liegen 3 rote und 2 blaue Kugeln. Zweimal wird eine Kugel gezogen. Vergleiche die Wahrscheinlichkeit für zweimal Rot mit und ohne Zurücklegen.\par\smallskip Mit Zurücklegen: Die Kugel kommt zurück, beide Male 3 rote von 5: $\frac{3}{5} \cdot \frac{3}{5} = \frac{9}{25} = 36\,\%$.\par Ohne Zurücklegen: beim 2. Zug nur noch 2 rote von 4: $\frac{3}{5} \cdot \frac{2}{4} = \frac{3}{10} = 30\,\%$.\par Ohne Zurücklegen ist zweimal Rot seltener, um $36\,\% - 30\,\% = 6$ Prozentpunkte.}
+\par\medskip
+b)\ Bei welchem Versuch ändern sich die Äste der 2. Stufe (ohne Zurücklegen)? Kreuze an.\pfkreuzzeile{Ein Würfel wird zweimal geworfen.}\pfkreuzzeile{Ein Glücksrad wird zweimal gedreht.}\pfkreuzzeile{Aus einer Tüte werden nacheinander zwei Gummibärchen gegessen.}\pfkreuzzeile{Ein Los wird gezogen, notiert und zurückgelegt; dann wird wieder gezogen.}
+\fusshilfe{\mbox{13:~b) Gummibärchen essen}}
+\end{pfaufg}
+
+% L4-D: Mit oder ohne Zurücklegen?
+\begin{pfaufg}{}{14.}{}
+In einem Hut liegen 6 Zettel, auf 2 davon steht „Pause“. Es wird zweimal ein Zettel gezogen. Wie groß ist die Wahrscheinlichkeit für zweimal „Pause“, a) wenn der erste Zettel zurückgelegt wird, b) wenn er draußen bleibt?\karo{3}
+\fusshilfe{\mbox{14:~a) $\frac{1}{9}$; b) $\frac{1}{15}$}}
+\end{pfaufg}
+
+% L4-D: Mit oder ohne Zurücklegen?
+\begin{pfaufg}{}{15.}{}
+Jeden Montag lost Frau Kaya aus einer Dose mit 5 Namenskärtchen ein Kind für den Tafeldienst aus. Danach steckt sie das Kärtchen wieder in die Dose. Wie groß ist die Wahrscheinlichkeit, dass Lina zwei Wochen hintereinander dran ist?\karo{3}
+\fusshilfe{\mbox{15:~$P = \frac{1}{25}$}}
+\end{pfaufg}
+
+% L4-D: Mit oder ohne Zurücklegen?
+\begin{pfaufg}{}{16.}{}
+Sophie dreht zweimal ein Glücksrad mit 6 gleich großen Feldern, 3 davon rot. Marc zieht aus einem Beutel mit 6 Kugeln, 3 davon rot, zwei Kugeln ohne Zurücklegen. Wer hat die größere Wahrscheinlichkeit für zweimal Rot? Um wie viele Prozentpunkte?\karo{3}
+\fusshilfe{\mbox{16:~Sophie, um 5 Prozentpunkte ($25\,\%$ gegen $20\,\%$)}}
+\end{pfaufg}
+
+% L4-T: Probetest
+\begin{pfaufg}{}{17.}{}
+\gzwei{\begin{tikzpicture}[ak/.style={font=\small,inner sep=1.5pt,fill=white},wk/.style={font=\footnotesize,inner sep=1pt}]\fill (0,0) circle (1.4pt);\coordinate (s) at (0,0);\node[ak] (nG) at (2.30,0.850) {G};\node[ak] (nGG) at (4.60,1.275) {G};\node[ak] (nGF) at (4.60,0.425) {F};\node[ak] (nF) at (2.30,-0.850) {F};\node[ak] (nFG) at (4.60,-0.425) {G};\node[ak] (nFF) at (4.60,-1.275) {F};\draw[line width=0.6pt] (s) -- (nG) node[wk,above,pos=0.5] {$\frac{5}{7}$};\draw[line width=0.6pt] (nG) -- (nGG) node[wk,above,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (nG) -- (nGF) node[wk,below,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (s) -- (nF) node[wk,below,pos=0.5] {$\frac{2}{7}$};\draw[line width=0.6pt] (nF) -- (nFG) node[wk,above,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\draw[line width=0.6pt] (nF) -- (nFF) node[wk,below,draw=black!55,fill=white,pos=0.5] {\rule{0pt}{4.2mm}\rule{7mm}{0pt}};\end{tikzpicture}}{%
+In einer Kiste liegen 7 Äpfel, 2 davon sind faul (F), die anderen gut (G). Ben nimmt blind zwei. Ergänze die leeren Felder im Baum. Wie groß ist die Wahrscheinlichkeit, dass beide gut sind?\karo{3}}
+\fusshilfe{\mbox{17:~$P = \frac{10}{21}$}}
+\end{pfaufg}
+
+% L4-T: Probetest
+\begin{pfaufg}{}{18.}{}
+In einem Glas sind 3 Kirsch- und 3 Zitronenbonbons. Ina nimmt blind zwei. Wie groß ist die Wahrscheinlichkeit für zwei gleiche Sorten? Kreuze an.\par\smallskip \gkreuz{$\frac{1}{4}$}\gkreuz{$\frac{2}{5}$}\par \gkreuz{$\frac{1}{2}$}\gkreuz{$\frac{3}{5}$}
+\fusshilfe{\mbox{18:~$\frac{2}{5}$}}
+\end{pfaufg}
+
+% L4-T: Probetest
+\begin{pfaufg}{}{19.}{}
+Im Lostopf der Klasse liegen 25 Zettel mit allen Namen. Jede Woche wird ein Zettel gezogen, wer ihn hat, macht den Wochendienst; danach kommt der Zettel zurück. Wie groß ist die Wahrscheinlichkeit, dass Tim zwei Wochen hintereinander dran ist? Gib sie auch in Prozent an.\karo{3}
+\fusshilfe{\mbox{19:~$P = \frac{1}{625} = 0{,}16\,\%$}}
+\end{pfaufg}
+
+% L4-T: Probetest
+\begin{pfaufg}{}{20.}{}
+In einer Lostrommel sind 10 Lose, 3 davon gewinnen. Kai zieht nacheinander drei Lose. Wie groß ist die Wahrscheinlichkeit, dass mindestens ein Gewinn dabei ist? Gib sie in Prozent an (eine Stelle nach dem Komma).\karo{3}
+\fusshilfe{\mbox{20:~$P = \frac{17}{24} \approx 70{,}8\,\%$}}
+\end{pfaufg}
+
+% L4-T: Probetest
+\begin{pfaufg}{}{21.}{}
+Auf einem Blech liegen 12 Muffins, die gleich aussehen: 9 mit Schokolade (S), 3 mit Kirsche (K). Jan nimmt nacheinander zwei. a) Schreibe alle Ergebnisse auf, bei denen mindestens ein Kirschmuffin dabei ist. b) Berechne die Wahrscheinlichkeit, dass beide mit Schokolade sind. c) Jan sagt: „Mindestens einen Kirschmuffin zu erwischen ist wahrscheinlicher als zwei mit Schokolade.“ Hat er recht?\karo{3}
+\fusshilfe{\mbox{21:~a) SK, KS, KK}}
+\end{pfaufg}
+
+\par\vfill\noindent{\footnotesize Vorher: Baumdiagramm und Pfadregeln\quad\textbullet\quad Weiter: Vierfeldertafel und bedingte Wahrscheinlichkeit\par}
+\end{document}

@@ -352,7 +352,6 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
 - bank-pruef: Ein Ergebnis „f(x) = (x − 4)² + 1“ hat keine Zahl an der Ergebnisstelle; Behelf wie im Bestand: Scheitel als Punkt in die Lösung, pruef [d, e].
 - Thema-Weg: „Was der Scheitel verrät“ (Nullstellen zählen, steigen/fallen, Lage) steht vor „Verschieben und spiegeln“, weil die Hauptmarke 2018-OS-K5d beides verlangt; im Thema-Weg ergänzt.
 
-
 ## Lineare Funktionen E2 „Lineare Funktion f(x) = m·x + n“ (NKP, 10.10.2026)
 
 - Setzer: Der Name der Einheit wird aus der Kopfzeile bis zur ersten Klammer genommen; „f(x) = m·x + n (Abschnitte …)“ wird zu „Lineare Funktion f“ (Register lerneinheit=, Titel von tisch-alt). Das Selbstlernheft trägt den Titel aus „Titel:“ richtig. (setzer.py nicht geändert; Vorschlag: nur die letzte Klammer abschneiden.)
@@ -406,3 +405,27 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
 - Thema-Weg trägt: Vergleich mit 1/2 und 1 steht beim Zahlenstrahl (C),
   nicht als eigener Abschnitt; die Zielmarke 2014-OS-B1c ist Abschnitt
   D und T4.
+
+## Wahrscheinlichkeit E4 „Ohne Zurücklegen“ (XKT, 10.10.2026)
+
+- Vier Abschnitte plus Probetest, Selbstlernheft 6 Seiten, tisch-alt 6
+  Seiten. Roter Faden: derselbe Beutel (3 rot, 2 blau) in allen vier
+  Beispielen. Kritiker offen.
+- Thema-Weg ergänzt: Abschnitt D „Mit oder ohne Zurücklegen?“ mischt
+  beide Fälle (am Text erkennen, beide rechnen, vergleichen); steht
+  zuletzt, weil man erst unterscheiden kann, was man beides kennt. Die
+  Vorstufe „mit oder ohne ankreuzen“, in E3 gestrichen, steht jetzt hier
+  (D1).
+- Zielaufgaben wechseln die Antwortform: Beutel wählen (A), Zweite im
+  Nachteil? (B), wievielmal statt doppelt? (C), um wie viele
+  Prozentpunkte? (D), aufzählen + rechnen + Behauptung (T, nach
+  2018-OS-K7c).
+- Neue Baumform dreistufig mit aufgebrauchter Sorte (ein Ast) im
+  C-Beispiel vorgegeben. Bei 0,62 cm Blattabstand überdeckten sich
+  Kästchen und Astwerte der 3. Stufe; 0,75 cm und 3. Stufe 0,5 cm
+  länger trägt es.
+- Probetest verlangt „Ergebnisse aufzählen“ und „Gegenteil in drei
+  Zügen“ nur, weil B2 (Pfade aufschreiben) und C3 (unter den ersten
+  drei) sie üben; „Rechnung → Ereignis“ als B1 b).
+- Prüfer: 0 Abweichungen; Mengenwarnungen k1 s0–s10 aus dem verlangten
+  Vorrat, wie E2/E3. duplikate.py: keine Gruppe mit e4.
