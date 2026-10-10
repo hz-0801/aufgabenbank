@@ -559,3 +559,25 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
 - bank-pruef: 0 Abweichungen (Mengenwarnungen k2 s0–s12 aus Blatt- und
   Vorratszeilen wie bei den anderen Bauten); duplikate.py: keine neue
   id betroffen.
+
+## Quadratische Funktionen E4 „Nullstellen und Schnittpunkte“ (GHD, 10.10.2026)
+
+- Vier Abschnitte plus Probetest, Selbstlernheft 6 Seiten, Lösungen 2.
+  A Nullstellen aus der Scheitelpunktform, B mit der p-q-Formel, C Zu
+  einem y-Wert die x-Werte, D Schnittpunkte von Parabel und Gerade, T.
+  Thema-Weg endgültig (Punkt 4 innen, Probetest um 2023-OS-K4c,
+  2014-OS-K7a/b ergänzt). Kritiker offen.
+- Ziele wechseln die Antwortform: Tom hat recht? (A), Ball landet
+  drüben, um wie viel? (B), Schild passt, wie viel Platz? (C), Gerade
+  angeben und nachrechnen (D), welcher Schnittpunkt höher? (T).
+- Setzer, tisch-alt: Der Fuß kürzt ein Ergebnis über 45 Zeichen am
+  ersten „: “, „. “ oder „; “ – auch innerhalb von \mbox{…} und nach
+  „z.\,B.“; dann bricht xelatex ab (\fusshilfe nicht geschlossen).
+  Ergebnisse darum nur mit Komma getrennt. Vorschlag: kurz() nur auf
+  Klammerebene 0 schneiden.
+- Sperre traf naheliegende Zahlen: x² − 4x und (x + 3)² (Typische
+  Fehler), −2x + 3, 2x − 3, x² − 4x + 2, (x − 1)² − 3 (Originale);
+  gewechselt.
+- Prüfer: Mengenwarnungen k1 s1–s21 und pflicht anwendung aus Blatt-
+  und Vorratszeilen, wie bei den anderen Bauten. duplikate.py: nur
+  gewollte Zahlvarianten (T1 gegen k1-s1-v1/v3/v5).
