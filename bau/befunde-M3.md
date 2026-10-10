@@ -770,3 +770,24 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
 - Notenspiegel (gewichtetes Mittel) und Ausreißer passen nicht in sechs
   Seiten; sie bleiben Bank. (Vorschlag: eigener Zusatzabschnitt zum
   Nachbestellen, wenn der Lehrer ihn will.)
+## Flächen E3 – Dreieck (SC4, 10.10.)
+
+- Lage: Klasse 7 laut Katalog. Das Parallelogramm (E2) ist ungebaut und
+  ohne P10-Typ; das Heft führt die Höhe darum selbst ein (A, B), statt
+  sie vorauszusetzen. Thema-Weg ergänzt.
+- Term zu Figur ins Heft (D, T3): ab Klasse 7 gibt es Variablen; damit
+  ist die Zielmarke 2024-OS-B1c/2022-OS-B1e abgedeckt, die 9WQ ausließ.
+- Setzer: weg() streicht vor der Lösung nur „ “ und „:“ nach der
+  Ankreuzoption, nicht „;“ – bei „Option; Grund“ stand „; …“ auf der
+  Lösungsseite. (Lösungen als „Option: Grund“ geschrieben.)
+- Skizzen: Beschriftungen an schrägen Linien mit Gradanker überschnitten
+  die Linie; mit Eckankern (south west …) liegt der Kasten ganz auf
+  einer Seite. Bei stumpfen Dreiecken die schräge Seite innen
+  beschriften, sonst trifft sie die Höhe außen. (Eigener Helfer, nicht
+  im Setzer; Vorschlag: Baustein für Dreieck mit Höhe in abbildung.py.)
+- Sperre: 9·4:2 (Drachen im Merkkasten) traf eine eigene Ankreuzaufgabe;
+  Zahlen gewechselt.
+- Mengenwarnungen k1/k2/k3, 2020-OS-K7b 6× und pflicht anwendung 7× aus
+  Blatt und Vorrat wie bei den anderen Bauten; duplikate.py nur die
+  gewollte Zahlvariante des Päckchens (k1-s4 v4/v5).
+- Kritiker: offen (startet der Chat).
