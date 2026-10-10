@@ -791,3 +791,26 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
   Blatt und Vorrat wie bei den anderen Bauten; duplikate.py nur die
   gewollte Zahlvariante des Päckchens (k1-s4 v4/v5).
 - Kritiker: offen (startet der Chat).
+## Körper E1 „Körper erkennen, Netze, Schrägbilder“ (L75, 10.10.2026)
+
+- Setzer: Bilder stehen immer in der rechten Spalte (37 %, höchstens
+  6,4 cm) und werden nur verkleinert; ein Netz in wahrer Größe (2
+  Kästchen = 1 cm) passt nur bis 6 cm Breite. Das Karo am Abschnittsende
+  fällt weg, sobald die Seite voll ist – bei Netz- und Schrägbildseiten
+  immer. (Zeichenaufgaben tragen ein eigenes Kästchenfeld als grafik;
+  Bilder mit scale 0,5–0,8 gesetzt; Abschnitt C ohne Formel, damit er auf
+  eine Seite passt. Vorschlag: grafik mit Breitenwunsch „voll“ unter dem
+  Text.)
+- bank-pruef: „aufgabe mit Umgebung“ verbietet ein Bild im Text; ein
+  Kästchenfeld ohne Inhalt muss darum als grafik stehen. Ziffern als
+  Bildmarken (1, 2, 3) verlangen pruef; Buchstaben genommen.
+- Würfelnetze mit einem kleinen Faltprogramm geprüft (Rollen des Würfels
+  über die Quadrate); lohnt als Werkzeug für alle Netzaufgaben der Bank
+  (Gegenflächen, gültig/ungültig). (Nur in tmp; nicht ins Repo.)
+- Lernweg: Die Regel „genau eine Fläche dazwischen“ trägt nur Netze mit
+  einer Reihe aus drei; Treppennetze (2-2-2) bleiben draußen. Körperhöhe
+  der Pyramide (2015-OS-K6b) hängt als Schritt 5 am Quader-Beispiel – ein
+  zweites Beispiel je Abschnitt kennt der Setzer nicht. Kegel im Quader
+  (2024-OS-K4b) nur im Bestand, nicht auf dem Blatt.
+- Mengenwarnungen (k1 s1–s10, Originale 2016-OS-B1j 5×, 2019-OS-B1f 6×)
+  aus den Zusatzzeilen, wie bei M74 und 3Y5 gewollt.

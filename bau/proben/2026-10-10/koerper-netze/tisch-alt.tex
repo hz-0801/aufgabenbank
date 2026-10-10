@@ -1,0 +1,164 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% gesetzt von werkzeuge/setzer.py aus dem Lernweg (L1-A · L1-B · L1-C · L1-D · L1-T) und den Bankzeilen; Muster T6B.
+\input{praeambel}
+\newcommand{\kennung}{L75}
+\newcommand{\grau}[1]{{\color{mbgrau}#1}}
+
+\begin{document}
+\pfheftstil
+\fancyfoot[C]{\parbox[t]{\textwidth}{\mbfhbox\par\vspace{1.5mm}{\footnotesize\color{mbgrau}{\scriptsize \kennung}\hfill\thepage}}}
+\pfheftkopf{Körper erkennen, Netze, Schrägbilder}{Klasse 6}
+% L1-A: Körper erkennen und zählen
+\begin{pfaufg}{}{1.}{}
+\gzwei{\begin{tikzpicture}[scale=0.6,font=\small,line join=round]\draw[line width=0.9pt] (0,0) -- (3,0);\draw[line width=0.9pt] (3,0) -- (1.5,2);\draw[line width=0.9pt] (0,0) -- (1.5,2);\draw[dashed,line width=0.6pt] (2,2) -- (5,2);\draw[line width=0.9pt] (5,2) -- (3.5,4);\draw[dashed,line width=0.6pt] (2,2) -- (3.5,4);\draw[line width=0.9pt] (3,0) -- (5,2);\draw[dashed,line width=0.6pt] (0,0) -- (2,2);\draw[line width=0.9pt] (1.5,2) -- (3.5,4);\end{tikzpicture}}{\grau{a)\ Ein Zelt hat die Form im Bild. Es soll als Kantenmodell aus Stäben und Knetkugeln gebaut werden. Wie heißt der Körper? Wie viele Stäbe und wie viele Kugeln braucht man? Wie viele Flächen hat er?\par\smallskip Vorn und hinten ist je ein gleiches Dreieck, dazwischen sind Rechtecke: ein \textbf{Dreiecksprisma}. Es liegt auf einem Rechteck.\par Kugeln = Ecken: vorn $3$, hinten $3$, also $3 + 3 = 6$.\par Stäbe = Kanten: vorn $3$, hinten $3$, von vorn nach hinten $3$, also $3 + 3 + 3 = 9$.\par Flächen: $2$ Dreiecke und $3$ Rechtecke, also $5$.}}
+\par\medskip
+\gzwei{\begin{tikzpicture}[scale=0.65,font=\small,line join=round]\begin{scope}[shift={(0,2.6)}]\draw[line width=0.9pt] (0,0) -- (1.6,0);\draw[line width=0.9pt] (1.6,0) -- (1.6,1.1);\draw[line width=0.9pt] (1.6,1.1) -- (0,1.1);\draw[line width=0.9pt] (0,0) -- (0,1.1);\draw[dashed,line width=0.6pt] (0.6,0.6) -- (2.2,0.6);\draw[line width=0.9pt] (2.2,0.6) -- (2.2,1.7);\draw[line width=0.9pt] (2.2,1.7) -- (0.6,1.7);\draw[dashed,line width=0.6pt] (0.6,0.6) -- (0.6,1.7);\draw[line width=0.9pt] (1.6,0) -- (2.2,0.6);\draw[dashed,line width=0.6pt] (0,0) -- (0.6,0.6);\draw[line width=0.9pt] (1.6,1.1) -- (2.2,1.7);\draw[line width=0.9pt] (0,1.1) -- (0.6,1.7);\end{scope}\node[font=\small\bfseries] at (-0.35,3.9) {A};\draw[line width=0.9pt] (3.3,4) -- (3.3,2.6) arc (180:360:0.7 and 0.3) -- (4.7,4);\draw[dashed,line width=0.6pt] (4.7,2.6) arc (0:180:0.7 and 0.3);\draw[line width=0.9pt] (4,4) ellipse (0.7 and 0.3);\node[font=\small\bfseries] at (2.95,3.9) {B};\begin{scope}[shift={(0,0)}]\draw[line width=0.9pt] (0,0) -- (1.6,0);\draw[line width=0.9pt] (1.6,0) -- (2.4,0.8);\draw[dashed,line width=0.6pt] (2.4,0.8) -- (0.8,0.8);\draw[dashed,line width=0.6pt] (0,0) -- (0.8,0.8);\draw[line width=0.9pt] (1.6,0) -- (1.2,2.1);\draw[line width=0.9pt] (0,0) -- (1.2,2.1);\draw[line width=0.9pt] (2.4,0.8) -- (1.2,2.1);\draw[dashed,line width=0.6pt] (0.8,0.8) -- (1.2,2.1);\end{scope}\node[font=\small\bfseries] at (-0.35,1.9) {C};\draw[line width=0.9pt] (3.3,0.2) -- (4,1.9) -- (4.7,0.2);\draw[line width=0.9pt] (3.3,0.2) arc (180:360:0.7 and 0.3);\draw[dashed,line width=0.6pt] (4.7,0.2) arc (0:180:0.7 and 0.3);\node[font=\small\bfseries] at (2.95,1.9) {D};\end{tikzpicture}}{%
+b)\ Wie heißen die vier Körper im Bild?\karo{3}}
+\fusshilfe{\mbox{1:~b) A Quader, B Zylinder, C Pyramide, D Kegel}}
+\end{pfaufg}
+
+% L1-A: Körper erkennen und zählen
+\begin{pfaufg}{}{2.}{}
+\gzwei{\begin{tikzpicture}[scale=0.6,font=\small,line join=round]\draw[line width=0.9pt] (0,0) -- (2.4,0);\draw[line width=0.9pt] (2.4,0) -- (3.6,1.2);\draw[dashed,line width=0.6pt] (3.6,1.2) -- (1.2,1.2);\draw[dashed,line width=0.6pt] (0,0) -- (1.2,1.2);\draw[line width=0.9pt] (2.4,0) -- (1.8,3);\draw[line width=0.9pt] (0,0) -- (1.8,3);\draw[line width=0.9pt] (3.6,1.2) -- (1.8,3);\draw[dashed,line width=0.6pt] (1.2,1.2) -- (1.8,3);\end{tikzpicture}}{%
+Ein Turmdach hat die Form im Bild: eine Pyramide mit quadratischer Grundfläche. Wie viele Ecken, Kanten und Flächen hat sie?\karo{3}}
+\fusshilfe{\mbox{2:~$5$ Ecken, $8$ Kanten, $5$ Flächen}}
+\end{pfaufg}
+
+% L1-A: Körper erkennen und zählen
+\begin{pfaufg}{}{3.}{}
+\gzwei{\begin{tikzpicture}[scale=0.6,font=\small,line join=round]\draw[dashed,line width=0.6pt] (2.074,0.499) -- (1.801,0.785);\draw[dashed,line width=0.6pt] (1.801,0.785) -- (0.927,0.686);\draw[dashed,line width=0.6pt] (0.927,0.686) -- (0.326,0.301);\draw[line width=0.9pt] (0.326,0.301) -- (0.599,0.015);\draw[line width=0.9pt] (0.599,0.015) -- (1.473,0.114);\draw[line width=0.9pt] (2.074,0.499) -- (1.473,0.114);\draw[line width=0.9pt] (2.074,2.899) -- (1.801,3.185);\draw[line width=0.9pt] (1.801,3.185) -- (0.927,3.086);\draw[line width=0.9pt] (0.927,3.086) -- (0.326,2.701);\draw[line width=0.9pt] (0.326,2.701) -- (0.599,2.415);\draw[line width=0.9pt] (0.599,2.415) -- (1.473,2.514);\draw[line width=0.9pt] (2.074,2.899) -- (1.473,2.514);\draw[dashed,line width=0.6pt] (1.801,0.785) -- (1.801,3.185);\draw[line width=0.9pt] (2.074,0.499) -- (2.074,2.899);\draw[dashed,line width=0.6pt] (0.927,0.686) -- (0.927,3.086);\draw[line width=0.9pt] (0.326,0.301) -- (0.326,2.701);\draw[line width=0.9pt] (0.599,0.015) -- (0.599,2.415);\draw[line width=0.9pt] (1.473,0.114) -- (1.473,2.514);\end{tikzpicture}}{%
+Das Bild zeigt ein Stück von einem ungespitzten Bleistift. Wie heißt der Körper genau? Wie viele Ecken, Kanten und Flächen hat er?\karo{3}}
+\fusshilfe{\mbox{3:~Sechseckprisma}}
+\end{pfaufg}
+
+% L1-A: Körper erkennen und zählen
+\begin{pfaufg}{}{4.}{}
+Ein Pavillondach hat die Form einer Pyramide mit sechseckiger Grundfläche. Tim baut ein Kantenmodell davon. Er hat $10$ Stäbe und $8$ Knetkugeln. Reicht das? Wie viele Stäbe oder Kugeln fehlen oder bleiben übrig?\karo{3}
+\fusshilfe{\mbox{4:~Nein}}
+\end{pfaufg}
+
+% L1-B: Würfelnetze: was liegt gegenüber?
+\begin{pfaufg}{}{5.}{}
+\gzwei{\begin{tikzpicture}[scale=0.75,font=\small,line join=round]\draw[black!18,line width=0.3pt,step=0.5] (-0.5,-0.5) grid (4.5,3.5);\draw[line width=0.9pt] (0,2) rectangle (1,3);\node at (0.5,2.5) {A};\draw[line width=0.9pt] (0,1) rectangle (1,2);\node at (0.5,1.5) {B};\draw[line width=0.9pt] (1,1) rectangle (2,2);\node at (1.5,1.5) {C};\draw[line width=0.9pt] (2,1) rectangle (3,2);\node at (2.5,1.5) {D};\draw[line width=0.9pt] (3,1) rectangle (4,2);\node at (3.5,1.5) {E};\draw[line width=0.9pt] (2,0) rectangle (3,1);\node at (2.5,0.5) {F};\end{tikzpicture}}{\grau{a)\ Vier Quadrate B, C, D, E liegen in einer Reihe. Oben an B hängt A, unten an D hängt F. Welche Flächen liegen sich gegenüber, wenn man daraus einen Würfel faltet?\par\smallskip Skizziere das Netz (Bild).\par In der Reihe B C D E: Zwischen B und D liegt genau C, also liegen B und D gegenüber. Zwischen C und E liegt D: C und E gegenüber.\par Übrig sind A und F. Sie berühren sich nicht, also liegen sie gegenüber.\par Jede Fläche hat genau eine Gegenfläche: Es ist ein Würfelnetz.}}
+\par\medskip
+\gzwei{\begin{tikzpicture}[scale=0.75,font=\small,line join=round]\draw[black!18,line width=0.3pt,step=0.5] (-0.5,-0.5) grid (4.5,3.5);\draw[line width=0.9pt] (1,2) rectangle (2,3);\node at (1.5,2.5) {P};\draw[line width=0.9pt] (0,1) rectangle (1,2);\node at (0.5,1.5) {Q};\draw[line width=0.9pt] (1,1) rectangle (2,2);\node at (1.5,1.5) {R};\draw[line width=0.9pt] (2,1) rectangle (3,2);\node at (2.5,1.5) {S};\draw[line width=0.9pt] (3,1) rectangle (4,2);\node at (3.5,1.5) {T};\draw[line width=0.9pt] (1,0) rectangle (2,1);\node at (1.5,0.5) {U};\end{tikzpicture}}{%
+b)\ Aus dem Netz im Bild wird ein Würfel gefaltet. Schreib die drei Paare von Flächen auf, die sich gegenüberliegen.\karo{3}}
+\fusshilfe{\mbox{5:~b) Q–S, R–T, P–U}}
+\end{pfaufg}
+
+% L1-B: Würfelnetze: was liegt gegenüber?
+\begin{pfaufg}{}{6.}{}
+\gzwei{\begin{tikzpicture}[scale=0.75,font=\small,line join=round]\draw[black!18,line width=0.3pt,step=0.5] (-0.5,-0.5) grid (5.5,2.5);\draw[line width=0.9pt] (2,1) rectangle (3,2);\node at (2.5,1.5) {F};\draw[line width=0.9pt] (0,0) rectangle (1,1);\node at (0.5,0.5) {A};\draw[line width=0.9pt] (1,0) rectangle (2,1);\node at (1.5,0.5) {B};\draw[line width=0.9pt] (2,0) rectangle (3,1);\node at (2.5,0.5) {C};\draw[line width=0.9pt] (3,0) rectangle (4,1);\node at (3.5,0.5) {D};\draw[line width=0.9pt] (4,0) rectangle (5,1);\node at (4.5,0.5) {E};\end{tikzpicture}}{%
+Kann man aus dem Netz im Bild einen Würfel falten? Begründe mit den Gegenflächen.\karo{3}}
+\fusshilfe{\mbox{6:~Nein: C hätte zwei Gegenflächen (A und E)}}
+\end{pfaufg}
+
+% L1-B: Würfelnetze: was liegt gegenüber?
+\begin{pfaufg}{}{7.}{}
+\gzwei{\begin{tikzpicture}[scale=0.75,font=\small,line join=round]\draw[black!18,line width=0.3pt,step=0.5] (-0.5,-0.5) grid (4.5,3.5);\draw[line width=0.9pt] (3,2) rectangle (4,3);\node at (3.5,2.5) {6};\draw[line width=0.9pt] (0,1) rectangle (1,2);\node at (0.5,1.5) {3};\draw[line width=0.9pt] (1,1) rectangle (2,2);\node at (1.5,1.5) {2};\draw[line width=0.9pt] (2,1) rectangle (3,2);\node at (2.5,1.5) {X};\draw[line width=0.9pt] (3,1) rectangle (4,2);\node at (3.5,1.5) {Y};\draw[line width=0.9pt] (0,0) rectangle (1,1);\node at (0.5,0.5) {Z};\end{tikzpicture}}{%
+Aus dem Netz wird ein Spielwürfel. Gegenüberliegende Augenzahlen ergeben zusammen $7$. Welche Zahlen gehören auf X, Y und Z?\karo{3}}
+\fusshilfe{\mbox{7:~$X = 4$, $Y = 5$, $Z = 1$}}
+\end{pfaufg}
+
+% L1-B: Würfelnetze: was liegt gegenüber?
+\begin{pfaufg}{}{8.}{}
+\gzwei{\begin{tikzpicture}[scale=1,font=\small,line join=round]\draw[black!18,line width=0.3pt,step=0.5] (0,0) grid (4.5,3);\draw[black!45,line width=0.4pt] (0,0) rectangle (4.5,3);\end{tikzpicture}}{%
+Mia bastelt einen Spielwürfel. Ihr Netz: vier Quadrate in einer Reihe mit $1$, $2$, $6$, $3$. Oben an der $2$ hängt die $5$, unten an der $3$ hängt die $4$. Auf einem Spielwürfel ergeben gegenüberliegende Zahlen $7$. Stimmt Mias Würfel? Wenn nicht: Welche zwei Zahlen muss sie tauschen? Skizziere zuerst.\karo{3}}
+\fusshilfe{\mbox{8:~Nein: $3$ und $5$ tauschen (oder $2$ und $4$)}}
+\end{pfaufg}
+
+% L1-C: Netze von Quader und anderen Körpern
+\begin{pfaufg}{}{9.}{}
+\gzwei{\begin{tikzpicture}[scale=0.55,font=\small,line join=round]\draw[black!18,line width=0.3pt,step=0.5] (-0.5,-0.5) grid (5.5,6.5);\draw[line width=0.9pt] (1,0) rectangle (4,1);\node[font=\scriptsize] at (2.5,0.5) {vorn};\draw[line width=0.9pt] (1,1) rectangle (4,3);\node[font=\scriptsize] at (2.5,2) {Boden};\draw[line width=0.9pt] (1,3) rectangle (4,4);\node[font=\scriptsize] at (2.5,3.5) {hinten};\draw[line width=0.9pt] (1,4) rectangle (4,6);\node[font=\scriptsize] at (2.5,5) {Deckel};\draw[line width=0.9pt] (0,1) rectangle (1,3);\draw[line width=0.9pt] (4,1) rectangle (5,3);\node[font=\scriptsize] at (2.5,-0.75) {3\,cm};\node[font=\scriptsize,rotate=90] at (-0.75,2) {2\,cm};\node[font=\scriptsize] at (4.5,0.5) {1\,cm};\node[font=\scriptsize,rotate=90] at (0.5,2) {Seite};\node[font=\scriptsize,rotate=90] at (4.5,2) {Seite};\end{tikzpicture}}{\grau{a)\ Eine Streichholzschachtel ist ein Quader: $3$\,cm lang, $2$\,cm breit, $1$\,cm hoch. Zeichne ihr Netz in wahrer Größe.\par\smallskip Drei Paare Rechtecke: Boden und Deckel $3 \times 2$, vorn und hinten $3 \times 1$, Seiten $2 \times 1$ (in cm).\par Streifen untereinander: vorn, Boden, hinten, Deckel. $3$\,cm sind $6$ Kästchen.\par Die Seiten links und rechts an den Boden.\par Prüfen: Kanten, die beim Falten aufeinandertreffen, sind gleich lang.\par Das Netz ist $1 + 3 + 1 = 5$\,cm breit und $1 + 2 + 1 + 2 = 6$\,cm hoch.}}
+\par\medskip
+\gzwei{\begin{tikzpicture}[scale=0.6,font=\small,line join=round]\draw[line width=0.9pt] (0,0.7) rectangle (0.8,2.2);\draw[line width=0.9pt] (0.8,0.7) rectangle (1.6,2.2);\draw[line width=0.9pt] (1.6,0.7) rectangle (2.4,2.2);\draw[line width=0.9pt] (0.8,2.2) -- (1.2,2.893) -- (1.6,2.2);\draw[line width=0.9pt] (0.8,0.7) -- (1.2,0.007) -- (1.6,0.7);\node[font=\small\bfseries] at (-0.3,3) {A};\draw[line width=0.9pt] (3.6,1) rectangle (4.6,2);\draw[line width=0.9pt] (3.6,2) -- (4.1,2.9) -- (4.6,2);\draw[line width=0.9pt] (3.6,1) -- (4.1,0.1) -- (4.6,1);\draw[line width=0.9pt] (3.6,1) -- (2.7,1.5) -- (3.6,2);\draw[line width=0.9pt] (4.6,1) -- (5.5,1.5) -- (4.6,2);\node[font=\small\bfseries] at (2.4,3) {B};\draw[line width=0.9pt] (5.6,0.8) rectangle (7.485,2);\draw[line width=0.9pt] (6.542,2.3) circle (0.3);\draw[line width=0.9pt] (6.542,0.5) circle (0.3);\node[font=\small\bfseries] at (5.4,3) {C};\end{tikzpicture}}{%
+b)\ Welcher Körper entsteht aus jedem Netz im Bild?\karo{3}}
+\fusshilfe{\mbox{9:~b) A Dreiecksprisma, B Pyramide, C Zylinder}}
+\end{pfaufg}
+
+% L1-C: Netze von Quader und anderen Körpern
+\begin{pfaufg}{}{10.}{}
+\gzwei{\begin{tikzpicture}[scale=0.5,font=\small,line join=round]\draw[black!18,line width=0.3pt,step=0.5] (-0.5,-0.5) grid (4.5,6.5);\draw[line width=0.9pt] (1,0) rectangle (4,1);\node[font=\scriptsize] at (2.5,0.5) {Boden};\draw[line width=0.9pt] (1,1) rectangle (4,3);\node[font=\scriptsize] at (2.5,2) {vorn};\draw[line width=0.9pt] (1,3) rectangle (4,4);\node[font=\scriptsize] at (2.5,3.5) {Deckel};\draw[line width=0.9pt] (1,4) rectangle (4,6);\node[font=\scriptsize] at (2.5,5) {hinten};\draw[line width=0.9pt] (0,1) rectangle (1,3);\draw[black!18,line width=0.3pt,step=0.5] (4,0) grid (5.5,6.5);\node[font=\scriptsize] at (2.5,-0.75) {3\,cm};\node[font=\scriptsize] at (4.6,0.5) {1\,cm};\node[font=\scriptsize] at (0.5,4.9) {2\,cm};\end{tikzpicture}}{%
+Im Netz des Quaders fehlt ein Rechteck. Wie lang und wie breit ist es, und wo muss es hin?\karo{3}}
+\fusshilfe{\mbox{10:~$1$\,cm $\times$ $2$\,cm, rechts an „vorn“}}
+\end{pfaufg}
+
+% L1-C: Netze von Quader und anderen Körpern
+\begin{pfaufg}{}{11.}{}
+\gzwei{\begin{tikzpicture}[scale=1,font=\small,line join=round]\draw[black!18,line width=0.3pt,step=0.5] (0,0) grid (6.5,4.5);\draw[black!45,line width=0.4pt] (0,0) rectangle (6.5,4.5);\end{tikzpicture}}{%
+Eine Packung Kaugummi ist ein Quader: $4$\,cm lang, $1$\,cm breit, $1$\,cm hoch. Zeichne ihr Netz in wahrer Größe in das Kästchenfeld.\karo{3}}
+\fusshilfe{\mbox{11:~Netz $6$\,cm $\times$ $4$\,cm (z.\,B}}
+\end{pfaufg}
+
+% L1-C: Netze von Quader und anderen Körpern
+\begin{pfaufg}{}{12.}{}
+\gzwei{\begin{tikzpicture}[scale=1,font=\small,line join=round]\draw[black!18,line width=0.3pt,step=0.5] (0,0) grid (4,3);\draw[black!45,line width=0.4pt] (0,0) rectangle (4,3);\end{tikzpicture}}{%
+Ben will eine Schachtel bauen: einen Quader, $6$\,cm lang, $4$\,cm breit und $2$\,cm hoch. Er hat ein Stück Karton, $12$\,cm $\times$ $12$\,cm. Skizziere ein Netz mit Maßen. Reicht der Karton?\karo{3}}
+\fusshilfe{\mbox{12:~Ja: Netz $10$\,cm $\times$ $12$\,cm}}
+\end{pfaufg}
+
+% L1-D: Schrägbilder
+\begin{pfaufg}{}{13.}{}
+\gzwei{\begin{tikzpicture}[scale=0.8,font=\small,line join=round]\draw[black!18,line width=0.3pt,step=0.5] (-0.5,-0.5) grid (4.5,3.5);\draw[line width=0.9pt] (0,0) -- (3,0);\draw[line width=0.9pt] (3,0) -- (3,2);\draw[line width=0.9pt] (3,2) -- (0,2);\draw[line width=0.9pt] (0,0) -- (0,2);\draw[dashed,line width=0.6pt] (1,1) -- (4,1);\draw[line width=0.9pt] (4,1) -- (4,3);\draw[line width=0.9pt] (4,3) -- (1,3);\draw[dashed,line width=0.6pt] (1,1) -- (1,3);\draw[line width=0.9pt] (3,0) -- (4,1);\draw[dashed,line width=0.6pt] (0,0) -- (1,1);\draw[line width=0.9pt] (3,2) -- (4,3);\draw[line width=0.9pt] (0,2) -- (1,3);\node[font=\scriptsize,below] at (1.5,0) {3\,cm};\node[font=\scriptsize,left] at (0,1) {2\,cm};\node[font=\scriptsize,right] at (3.5,0.5) {2\,cm};\end{tikzpicture}}{\grau{a)\ Ein Quader ist $3$\,cm lang, $2$\,cm tief und $2$\,cm hoch. Zeichne sein Schrägbild auf Kästchen.\par\smallskip Vorderfläche in wahrer Größe: $3$\,cm $\times$ $2$\,cm, also $6 \times 4$ Kästchen.\par Tiefe $2$\,cm: von den Ecken je $2$ Kästchendiagonalen nach rechts oben.\par Hintere Ecken verbinden. Kanten, die man nicht sieht, gestrichelt (hier $3$).\par Das Bild ist $3 + 1 = 4$\,cm breit und $2 + 1 = 3$\,cm hoch.\par Die Körperhöhe ($2$\,cm) steht senkrecht. Bei einer Pyramide geht sie von der Spitze senkrecht zur Mitte der Grundfläche – sie ist keine Kante.}}
+\par\medskip
+\gzwei{\begin{tikzpicture}[scale=1,font=\small,line join=round]\draw[black!18,line width=0.3pt,step=0.5] (0,0) grid (5,5);\draw[black!45,line width=0.4pt] (0,0) rectangle (5,5);\end{tikzpicture}}{%
+b)\ Ein Würfel hat $3$\,cm Kantenlänge. Zeichne sein Schrägbild in das Kästchenfeld.\karo{3}}
+\fusshilfe{\mbox{13:~b) Schrägbild wie im Bild}}
+\end{pfaufg}
+
+% L1-D: Schrägbilder
+\begin{pfaufg}{}{14.}{}
+\gzwei{\begin{tikzpicture}[scale=0.7,font=\small,line join=round]\draw[black!18,line width=0.3pt,step=0.5] (-0.5,-0.5) grid (6,4);\draw[line width=0.9pt] (0,0) -- (4,0);\draw[line width=0.9pt] (4,0) -- (4,2);\draw[line width=0.9pt] (4,2) -- (0,2);\draw[line width=0.9pt] (0,0) -- (0,2);\draw[dashed,line width=0.6pt] (1.5,1.5) -- (5.5,1.5);\draw[line width=0.9pt] (5.5,1.5) -- (5.5,3.5);\draw[line width=0.9pt] (5.5,3.5) -- (1.5,3.5);\draw[dashed,line width=0.6pt] (1.5,1.5) -- (1.5,3.5);\draw[line width=0.9pt] (4,0) -- (5.5,1.5);\draw[dashed,line width=0.6pt] (0,0) -- (1.5,1.5);\draw[line width=0.9pt] (4,2) -- (5.5,3.5);\draw[line width=0.9pt] (0,2) -- (1.5,3.5);\end{tikzpicture}}{%
+Das Bild zeigt das Schrägbild eines Quaders (2 Kästchen $=$ 1\,cm). Wie lang, wie hoch und wie tief ist der Quader wirklich? Wie viele Kanten sind verdeckt?\karo{3}}
+\fusshilfe{\mbox{14:~$4$\,cm lang, $2$\,cm hoch, $3$\,cm tief}}
+\end{pfaufg}
+
+% L1-D: Schrägbilder
+\begin{pfaufg}{}{15.}{}
+\gzwei{\begin{tikzpicture}[scale=0.75,font=\small,line join=round]\draw[line width=0.9pt] (0,0) -- (3,0);\draw[line width=0.9pt] (3,0) -- (4.5,1.5);\draw[dashed,line width=0.6pt] (4.5,1.5) -- (1.5,1.5);\draw[dashed,line width=0.6pt] (0,0) -- (1.5,1.5);\draw[line width=0.9pt] (3,0) -- (2.25,3.75);\draw[line width=0.9pt] (0,0) -- (2.25,3.75);\draw[line width=0.9pt] (4.5,1.5) -- (2.25,3.75);\draw[dashed,line width=0.6pt] (1.5,1.5) -- (2.25,3.75);\draw[line width=1.6pt,black!55] (2.25,3.75) -- (3,0);\draw[line width=1.6pt,black!55] (2.25,3.75) -- (1.5,0);\draw[line width=1.6pt,black!55,dashed] (2.25,3.75) -- (2.25,0.75);\fill (2.25,0.75) circle (1.2pt);\node[right] at (2.675,1.875) {$a$};\node[left] at (1.825,1.875) {$b$};\node[right,inner sep=1pt] at (2.25,1.2) {$c$};\end{tikzpicture}}{%
+Das Bild zeigt eine Pyramide mit quadratischer Grundfläche. Welche Strecke ist die Körperhöhe?\par\smallskip \gkreuz{Strecke $a$}\gkreuz{Strecke $b$}\par \gkreuz{Strecke $c$}}
+\fusshilfe{\mbox{15:~Strecke $c$}}
+\end{pfaufg}
+
+% L1-D: Schrägbilder
+\begin{pfaufg}{}{16.}{}
+Lisa zeichnet das Schrägbild eines Würfels mit $4$\,cm Kante auf ein Kärtchen. Welches Kärtchen ist das kleinste, auf das es passt? (Breite $\times$ Höhe)\par\smallskip \gkreuz{$5$\,cm $\times$ $5$\,cm}\gkreuz{$6$\,cm $\times$ $5$\,cm}\par \gkreuz{$6$\,cm $\times$ $6$\,cm}\gkreuz{$8$\,cm $\times$ $4$\,cm}
+\fusshilfe{\mbox{16:~$6$\,cm $\times$ $6$\,cm}}
+\end{pfaufg}
+
+% L1-T: Probetest
+\begin{pfaufg}{}{17.}{}
+Wie viele Kanten hat eine Pyramide mit quadratischer Grundfläche?\par\smallskip \gkreuz{$4$}\gkreuz{$5$}\par \gkreuz{$8$}\gkreuz{$12$}
+\fusshilfe{\mbox{17:~$8$}}
+\end{pfaufg}
+
+% L1-T: Probetest
+\begin{pfaufg}{}{18.}{}
+\gzwei{\begin{tikzpicture}[scale=0.75,font=\small,line join=round]\draw[black!18,line width=0.3pt,step=0.5] (-0.5,-0.5) grid (4.5,3.5);\draw[line width=0.9pt] (0,2) rectangle (1,3);\node at (0.5,2.5) {A};\draw[line width=0.9pt] (1,2) rectangle (2,3);\node at (1.5,2.5) {B};\draw[line width=0.9pt] (1,1) rectangle (2,2);\node at (1.5,1.5) {C};\draw[line width=0.9pt] (2,1) rectangle (3,2);\node at (2.5,1.5) {D};\draw[line width=0.9pt] (3,1) rectangle (4,2);\node at (3.5,1.5) {E};\draw[line width=0.9pt] (3,0) rectangle (4,1);\node at (3.5,0.5) {F};\end{tikzpicture}}{%
+Aus dem Netz im Bild wird ein Würfel gefaltet. Welche Fläche liegt C gegenüber?\karo{3}}
+\fusshilfe{\mbox{18:~E}}
+\end{pfaufg}
+
+% L1-T: Probetest
+\begin{pfaufg}{}{19.}{}
+\gzwei{\begin{tikzpicture}[scale=0.6,font=\small,line join=round]\draw[line width=0.9pt] (0,0) -- (3.2,0) -- (1.6,2.771) -- cycle;\draw[line width=0.9pt] (1.6,0) -- (2.4,1.386) -- (0.8,1.386) -- cycle;\end{tikzpicture}}{%
+Aus dem Netz im Bild wird ein Körper gefaltet. Welcher Körper entsteht?\par\smallskip \gkreuz{Dreiecksprisma}\gkreuz{Pyramide mit dreieckiger Grundfläche}\par \gkreuz{Pyramide mit quadratischer Grundfläche}}
+\fusshilfe{\mbox{19:~Pyramide mit dreieckiger Grundfläche}}
+\end{pfaufg}
+
+% L1-T: Probetest
+\begin{pfaufg}{}{20.}{}
+\gzwei{\begin{tikzpicture}[scale=1,font=\small,line join=round]\draw[black!18,line width=0.3pt,step=0.5] (0,0) grid (6,3.5);\draw[black!45,line width=0.4pt] (0,0) rectangle (6,3.5);\end{tikzpicture}}{%
+Ein Quader ist $4$\,cm lang, $1$\,cm tief und $2$\,cm hoch. Zeichne sein Schrägbild in das Kästchenfeld.\karo{3}}
+\fusshilfe{\mbox{20:~Schrägbild wie im Bild}}
+\end{pfaufg}
+
+% L1-T: Probetest
+\begin{pfaufg}{}{21.}{}
+Aus einem Draht von $1$\,m Länge soll das Kantenmodell eines Würfels mit $8$\,cm Kantenlänge gebogen werden. Reicht der Draht?\karo{3}
+\fusshilfe{\mbox{21:~Ja: $96$\,cm nötig, $4$\,cm übrig}}
+\end{pfaufg}
+
+\par\vfill\noindent{\footnotesize Vorher: Flächen (Rechteck, Quadrat, Dreieck)\quad\textbullet\quad Weiter: Quader und Würfel\par}
+\end{document}
