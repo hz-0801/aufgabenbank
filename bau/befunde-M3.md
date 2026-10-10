@@ -429,3 +429,31 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
   drei) sie üben; „Rechnung → Ereignis“ als B1 b).
 - Prüfer: 0 Abweichungen; Mengenwarnungen k1 s0–s10 aus dem verlangten
   Vorrat, wie E2/E3. duplikate.py: keine Gruppe mit e4.
+
+## Lineare Funktionen E3 „Punkte und Werte“ (ZLZ, 10.10.2026)
+
+- Vier Abschnitte plus Probetest, Selbstlernheft 6 Seiten, Lösungen 2:
+  A Funktionswert, B Punktprobe, C x zum Funktionswert, D Nullstelle und
+  Achsenschnittpunkte (mit Schnittpunkt zweier Geraden am Graphen), T.
+  24 Aufgaben auf dem Blatt, 23 im Vorrat. Thema-Weg Punkt 3 ergänzt.
+  Kritiker offen.
+- Zielaufgaben wechseln die Antwortform: reicht es? (A), ankreuzen (B),
+  aufrunden auf ganze Wochen (C), Reserve als Unterschied (D), welche
+  Kerze länger und um wie viel? (T).
+- Achsen: Bei karo unter 0,5 cm beziffert ksys die x-Achse nur jede
+  zweite Zahl, sobald dort negative Zahlen stehen (die breiteste Zahl
+  bestimmt die Ausdünnung; NKP-Bilder mit 0,36 sind betroffen). Hier
+  überall karo 0,5. Eine Gerade mit positiver Steigung und negativem n
+  läuft links über die y-Zahlen; im Beispiel D darum xmin = 0.
+- Prüfer: Ankreuzen mit zwei richtigen Optionen geht nicht („genau eine
+  Option“); Ziel B auf eine Option umgestellt. Punkte mit `\mid` und
+  negativer Koordinate erkennt er nicht als Ergebnis; in loesung und
+  ergebnis als `(0|{-8})` geschrieben (setzt sauber, ohne Abstand).
+- Setzer: Ein `|` in einer Zelle des Lernweg-Blocks (Formel
+  `\big|\,-n`) zerlegt die Zeile; Abbruch mit KeyError statt Meldung.
+  Formel mit `\xrightarrow{-n}` geschrieben. Ankreuzlösung „Option.
+  Text“ lässt im Lösungsheft „. Text“ stehen; mit „Option: Text“ geht es.
+  (setzer.py nicht geändert.)
+- Mengenwarnungen k2 s1–s7, k3 s1, pflicht anwendung aus dem verlangten
+  Vorrat, wie bisher. duplikate.py: nur gewollte Zahlvarianten
+  (Vorrat zu Blattzeilen; Wertetabelle in Form wie e2-k4-s1).
