@@ -6,11 +6,10 @@
 
 \begin{document}
 \pfheftstil
-\fancyfoot[C]{\parbox[t]{\textwidth}{\mbfhbox\par\vspace{1.5mm}{\footnotesize\color{mbgrau}{\scriptsize \kennung}\hfill\thepage}}}
-\pfheftkopf{Länge mit Pythagoras}{P10}
+\pfheftkopf[\kennung]{Länge mit Pythagoras}{P10}
 
 % ===================== Stufe 1 =====================
-\Needspace*{0.25\textheight}\pfstufekopf{Gleichung aufstellen}{in 3 der letzten 5 Prüfungen}
+\Needspace*{0.25\textheight}\pfstufekopf{Gleichung aufstellen}{geprüft 2026 \pkt{} 2024 \pkt{} 2022}
 
 % Bank pythagoras-e1-k2-s6 (Gleichung mit anderen Buchstaben, drei Lagen)
 \begin{pfaufg}{}{1.}{}
@@ -34,38 +33,37 @@ Schreibe für jedes Dreieck die Gleichung des Satzes des Pythagoras auf. Suche z
 \end{pfaufg}
 
 % 2026-FOR-B1j (EBR-Zwilling 2026-EBR-B1j)
-\begin{pfaufg}{nach P10 ’26}{2.}{}
+\begin{pfaufg}{nach~P10\\’26~\pkt{}~1j}{2.}{}
 Kreuze an, mit welcher Gleichung du die Länge der Seite $w$ berechnen kannst.
 \gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.85]\coordinate (P1) at (0,0);\coordinate (P2) at (2.8,0);\coordinate (P3) at (2.8,1.7);\draw (P1) -- (P2) -- (P3) -- cycle;\mbrwmarke{(P2)}{(P1)}{(P3)}
 \node[font=\small,anchor=north] at (1.4,-0.08) {$u$};\node[font=\small,anchor=west] at (2.88,0.85) {$v$};\node[font=\small,anchor=south east] at (1.36,0.9) {$w$};\end{tikzpicture}}{%
-\kk{$w=\sqrt{v^2-u^2}$}\par\smallskip\kk{$w=\sqrt{u^2-v^2}$}\par\smallskip\kk{$w=\sqrt{u^2+v^2}$}}
-\fusshilfe{\mbox{2:~$w=\sqrt{u^2+v^2}$}}
+\pfkreuzab{A}{$w=\sqrt{v^2-u^2}$}\smallskip\pfkreuzab{B}{$w=\sqrt{u^2-v^2}$}\smallskip\pfkreuzab{C}{$w=\sqrt{u^2+v^2}$}}
+\fusshilfe{\mbox{2:~C}}
 \end{pfaufg}
 
-% 2024-OS-B1f
-\begin{pfaufg}{nach P10 ’24}{3.}{}
-Kreuze an, mit welcher Gleichung du die Länge der Seite $z$ berechnen kannst.
-\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.85]\coordinate (P1) at (0,0);\coordinate (P2) at (3.0,0);\coordinate (P3) at (0,1.5);\draw (P1) -- (P2) -- (P3) -- cycle;\mbrwmarke{(P1)}{(P2)}{(P3)}
-\node[font=\small,anchor=north] at (1.5,-0.08) {$z$};\node[font=\small,anchor=east] at (-0.08,0.75) {$y$};\node[font=\small,anchor=south west] at (1.52,0.77) {$x$};\end{tikzpicture}}{%
-\kk{$z=x^2-y^2$}\par\smallskip\kk{$z=\sqrt{x^2+y^2}$}\par\smallskip\kk{$z=x+y$}\par\smallskip\kk{$z=\sqrt{x^2-y^2}$}}
-\fusshilfe{\mbox{3:~$z=\sqrt{x^2-y^2}$}}
+% 2022-OS-B1g, eigener Wortlaut (andere Sorte: Satz in Worten ankreuzen; 2024-OS-B1f nur in der Fundstellentabelle)
+\begin{pfaufg}{nach~P10\\’22~\pkt{}~1g}{3.}{}
+Kreuze an, welche Aussage in jedem rechtwinkligen Dreieck gilt.\par\smallskip
+\pfkreuzab{A}{Die Hypotenuse ist so lang wie die beiden Katheten zusammen.}
+\pfkreuzab{B}{Die Quadrate über den beiden Katheten haben zusammen denselben Flächeninhalt wie das Quadrat über der Hypotenuse.}
+\pfkreuzab{C}{Dem rechten Winkel liegt eine Kathete gegenüber.}
+\fusshilfe{\mbox{3:~B}}
 \end{pfaufg}
 
 % ===================== Stufe 2 =====================
-\Needspace*{0.25\textheight}\pfstufekopf{Hypotenuse gesucht}{in 1 der letzten 5 Prüfungen}
+\Needspace*{0.25\textheight}\pfstufekopf{Hypotenuse gesucht}{geprüft 2025}
 
 % Bank pythagoras-e1-k2-s1-v1, e1-k2-s2-v1, e1-k2-s3-v1 (Päckchen: Zahl, Lage, krumme Wurzel)
 \begin{pfaufg}{}{4.}{}
-Berechne die Länge der Hypotenuse.\par\smallskip
-\gzwei{\parbox[t]{0.3\linewidth}{\textbf{a)}\ Die Katheten sind $36$~cm und $15$~cm lang.}}{\karo{2}}
-\gzwei{\rwbei{C}\dreieck{(0,0)}{(5,0)}{(1.4,2.24)}{45\text{ cm}}{28\text{ cm}}{?}{}{}{}}{%
-\textbf{b)}\ Wie lang ist die Seite mit dem Fragezeichen?\karo{2}}
-\gzwei{\parbox[t]{0.3\linewidth}{\textbf{c)}\ Die Katheten sind $4$~cm und $9$~cm lang. Runde auf eine Stelle nach dem Komma.}}{\karo{2}}
+Berechne die Länge der Hypotenuse. Runde, wo nötig, auf eine Stelle nach dem Komma.\par\smallskip
+\gzwei{\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm\relax}{\raggedright \textbf{a)}\ Katheten $36$~cm und $15$~cm}}{\karo{2}}
+\gzwei{\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm\relax}{\raggedright \textbf{b)}\par\smallskip\rwbei{C}\dreieck{(0,0)}{(5,0)}{(1.4,2.24)}{45\text{ cm}}{28\text{ cm}}{?}{}{}{}}}{\karo{2}}
+\gzwei{\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm\relax}{\raggedright \textbf{c)}\ Katheten $4$~cm und $9$~cm}}{\karo{2}}
 \fusshilfe{\mbox{4:~a) 39 cm; b) 53 cm; c) 9,8 cm}}
 \end{pfaufg}
 
 % 2025-OS-K4a, herausgelöst (nur die Länge; der Winkel steht im Blatt „Seite oder Winkel mit sin, cos, tan“)
-\begin{pfaufg}{nach P10 ’25}{5.}{}
+\begin{pfaufg}{nach~P10\\’25~\pkt{}~4a}{5.}{}
 Familie Yücel baut an die Stufe vor der Haustür eine feste Rampe für Rollstühle. Berechne die Länge $x$ der Rampe.
 \gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.75]\coordinate (P1) at (0,0);\coordinate (P2) at (5.95,0);\coordinate (P3) at (5.95,0.9);\draw (P1) -- (P2) -- (P3) -- cycle;\mbrwmarke{(P2)}{(P1)}{(P3)}
 \node[font=\small,anchor=north] at (2.97,-0.08) {$170$ cm};\node[font=\small,anchor=west] at (6.03,0.45) {$16$ cm};\node[font=\small,anchor=south east] at (2.95,0.48) {$x$};\end{tikzpicture}}{%
@@ -74,18 +72,18 @@ Familie Yücel baut an die Stufe vor der Haustür eine feste Rampe für Rollstü
 \end{pfaufg}
 
 % ===================== Stufe 3 =====================
-\Needspace*{0.25\textheight}\pfstufekopf{Kathete gesucht}{in 3 der letzten 5 Prüfungen}
+\Needspace*{0.25\textheight}\pfstufekopf{Kathete gesucht}{geprüft 2026 \pkt{} 2024 \pkt{} 2022}
 
 % Bank pythagoras-e2-k3-s1-v1, e2-k3-s2-v1 (Päckchen: glatt, krumm)
 \begin{pfaufg}{}{6.}{}
-Die Hypotenuse und eine Kathete sind gegeben. Berechne die andere Kathete.\par\smallskip
-\gzwei{\parbox[t]{0.3\linewidth}{\textbf{a)}\ Hypotenuse $85$~cm, Kathete $13$~cm}}{\karo{2}}
-\gzwei{\parbox[t]{0.3\linewidth}{\textbf{b)}\ Hypotenuse $11$~cm, Kathete $6$~cm. Runde auf eine Stelle nach dem Komma.}}{\karo{2}}
+Die Hypotenuse und eine Kathete sind gegeben. Berechne die andere Kathete. Runde, wo nötig, auf eine Stelle nach dem Komma.\par\smallskip
+\gzwei{\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm\relax}{\raggedright \textbf{a)}\ Hypotenuse $85$~cm, Kathete $13$~cm}}{\karo{2}}
+\gzwei{\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm\relax}{\raggedright \textbf{b)}\ Hypotenuse $11$~cm, Kathete $6$~cm}}{\karo{2}}
 \fusshilfe{\mbox{6:~a) 84 cm; b) 9,2 cm}}
 \end{pfaufg}
 
 % 2024-OS-K6a, herausgelöst
-\begin{pfaufg}{nach P10 ’24}{7.}{}
+\begin{pfaufg}{nach~P10\\’24~\pkt{}~6a}{7.}{}
 Eine Seilbahn führt vom Ort $B$ im Tal zum Ort $A$ auf einem Berg. Der Punkt $F$ liegt senkrecht unter $A$ auf der Höhe von $B$. Die Strecke $\overline{FA}$ ist der Höhenunterschied zwischen $B$ und $A$. Berechne diesen Höhenunterschied.
 \gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.8]\coordinate (A) at (0,2.87);\coordinate (F) at (0,0);\coordinate (B) at (2.55,0);\draw (A) -- (F) -- (B) -- cycle;\mbrwmarke{(F)}{(B)}{(A)}
 \node[font=\small,anchor=south] at (0,2.92) {$A$};\node[font=\small,anchor=north east] at (0,0) {$F$};\node[font=\small,anchor=north west] at (2.55,0) {$B$};
@@ -95,7 +93,7 @@ Eine Seilbahn führt vom Ort $B$ im Tal zum Ort $A$ auf einem Berg. Der Punkt $F
 \end{pfaufg}
 
 % 2022-OS-K5a, herausgelöst (Winkel und Seite a nur für 5b–5d, weggelassen)
-\begin{pfaufg}{nach P10 ’22}{8.}{}
+\begin{pfaufg}{nach~P10\\’22~\pkt{}~5a}{8.}{}
 Das Dreieck $ABC$ hat keinen rechten Winkel. Die Höhe $h_c$ geht von $C$ senkrecht auf die Seite $\overline{AB}$, ihr Fußpunkt heißt $D$. Weise nach, dass die Strecke $\overline{AD}$ etwa $12{,}0$~m lang ist.
 \gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.36]\coordinate (A) at (0,0);\coordinate (B) at (17.8,0);\coordinate (C) at (12,7.4);\coordinate (D) at (12,0);\draw (A) -- (B) -- (C) -- cycle;\draw[dashed] (C) -- (D);\mbrwmarke{(D)}{(B)}{(C)}
 \node[font=\small,anchor=north east] at (A) {$A$};\node[font=\small,anchor=north west] at (B) {$B$};\node[font=\small,anchor=south] at (C) {$C$};\node[font=\small,anchor=north] at (D) {$D$};
@@ -105,7 +103,7 @@ Das Dreieck $ABC$ hat keinen rechten Winkel. Die Höhe $h_c$ geht von $C$ senkre
 \end{pfaufg}
 
 % 2026-FOR-K4a, herausgelöst (EBR-Zwilling 2026-EBR-K3a; Winkel ε nur für 4b)
-\begin{pfaufg}{nach P10 ’26}{9.}{}
+\begin{pfaufg}{nach~P10\\’26~\pkt{}~4a}{9.}{}
 Im Viereck $ABCD$ sind gegenüberliegende Seiten parallel. Die Seite $\overline{AB}$ ist über $B$ hinaus bis $F$ verlängert. Die Höhe $h$ steht bei $F$ senkrecht auf dieser Verlängerung. Berechne die Höhe $h$.
 \gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.075]\coordinate (A) at (0,0);\coordinate (B) at (45,0);\coordinate (F) at (58,0);\coordinate (C) at (58,29.2);\coordinate (D) at (13,29.2);\draw (A) -- (B) -- (C) -- (D) -- cycle;\draw (B) -- (F);\draw[dashed] (F) -- (C);\mbrwmarke{(F)}{(C)}{(B)}
 \node[font=\small,anchor=north east] at (A) {$A$};\node[font=\small,anchor=north] at (B) {$B$};\node[font=\small,anchor=north west] at (F) {$F$};\node[font=\small,anchor=south west] at (C) {$C$};\node[font=\small,anchor=south east] at (D) {$D$};
@@ -115,7 +113,7 @@ Im Viereck $ABCD$ sind gegenüberliegende Seiten parallel. Die Seite $\overline{
 \end{pfaufg}
 
 % ===================== Stufe 4 =====================
-\Needspace*{0.25\textheight}\pfstufekopf{Dreieck versteckt}{in 2 der letzten 5 Prüfungen}
+\Needspace*{0.25\textheight}\pfstufekopf{Dreieck versteckt}{geprüft 2026 \pkt{} 2022}
 
 % Bank pythagoras-e3-k2-s1-v1 (Grundfall: Höhe im gleichschenkligen Dreieck)
 \begin{pfaufg}{}{10.}{}
@@ -134,7 +132,7 @@ Ein Messbecher hat die Form eines Zylinders. Innen ist er $14$~cm hoch und hat d
 \end{pfaufg}
 
 % 2022-OS-K2c, herausgelöst (Sternchenaufgabe; Becher aus 2a, 2b, 2d weggelassen)
-\begin{pfaufg}{nach P10 ’22\,$\star$}{12.}{}
+\begin{pfaufg}{nach~P10\\’22~\pkt{}~2c\,$\star$}{12.}{}
 Ein Becher hat die Form eines Zylinders ohne Deckel. Er ist $7$~cm hoch und hat den Radius $3{,}2$~cm. Ein Rührstab steht schräg im Becher: Er berührt unten den Rand des Bodens und lehnt oben am gegenüberliegenden Rand. $2$~cm des Stabs ragen über den Becher hinaus. Bestimme die Länge des Stabs.
 \gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.65]
 \draw (0,2.8) ellipse (1.28 and 0.45);\draw (-1.28,0) -- (-1.28,2.8);\draw (1.28,0) -- (1.28,2.8);
@@ -145,5 +143,7 @@ Ein Becher hat die Form eines Zylinders ohne Deckel. Er ist $7$~cm hoch und hat 
 \fusshilfe{\mbox{12:~11,5 cm}}
 \end{pfaufg}
 
-\blattende{2026 FOR \pkt{} 1 \pkt{} j \quad 2026 FOR \pkt{} 2 \pkt{} c \quad 2026 FOR \pkt{} 4 \pkt{} a \quad 2025 \pkt{} 2 \pkt{} a \quad 2025 \pkt{} 4 \pkt{} a \quad 2024 \pkt{} 1 \pkt{} f \quad 2024 \pkt{} 6 \pkt{} a \quad 2022 \pkt{} 1 \pkt{} g \quad 2022 \pkt{} 2 \pkt{} c \quad 2022 \pkt{} 5 \pkt{} a \quad 2021 \pkt{} 1 \pkt{} h \quad 2020 \pkt{} 7 \pkt{} a \quad 2019 \pkt{} 2 \pkt{} d \quad 2019 \pkt{} 3 \pkt{} a \quad 2018 \pkt{} 6 \pkt{} d \quad 2017 \pkt{} 1 \pkt{} d \quad 2016 \pkt{} 7 \pkt{} b}{Vorher: Quadrat und Wurzel\quad\textbullet\quad Weiter: Seite oder Winkel mit sin, cos, tan}
+\pfblattende{11}{26 FOR & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17 & 16}%
+{1j 2c 4a & 2a 4a & 1f 6a & & 1g 2c 5a & 1h & 7a & 2d 3a & 6d & 1d & 7b}%
+{Weiter: Seite oder Winkel mit sin, cos, tan}
 \end{document}

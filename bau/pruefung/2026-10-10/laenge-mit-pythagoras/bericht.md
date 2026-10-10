@@ -45,3 +45,17 @@ Neue Bankzeilen: keine (jede Lücke hatte eine passende Zeile). Zahlen mit pytho
 - Umbruch von Hand vor Stufe 2 raus, Needspace auf 0,25 Seitenhöhe; Karo 3 → 2 Reihen; Skizzen Nr. 10 und 12 kleiner: Blatt 5 → 3 Seiten, Fundstellen auf der letzten Seite.
 - Fuß (kopfüber) braucht zwei xelatex-Läufe; mathblatt.sty über TEXINPUTS=../blattbau.
 - Messwert Bau: Agent 0,23 Mio Token, 38 Werkzeugaufrufe, 8 min.
+
+## Nachzug 11.10. (acht Festlegungen)
+- Stufenkopf: Jahre statt Zählung, Hauptplätze 2022–2026, jüngstes zuerst („geprüft 2026 · 2024 · 2022“, „geprüft 2025“, „geprüft 2026 · 2022“).
+- Kennung: `\pfheftkopf[\kennung]{…}{…}` rechts oben klein grau in allen drei Dateien; aus dem Fuß raus (Fuß = Standard von `\pfheftstil`).
+- Nr. 4: je Teilaufgabe eine `\gzwei`-Zeile – links Buchstabe, Angaben, bei b) die Skizze darunter; rechts das eigene Karo. Linke Breite `\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm`, damit `\gzwei` nicht untereinander stapelt.
+- Bank-Einstieg knapp: Nr. 4 und 6 nur die Angaben unter dem gemeinsamen Auftrag; Runden in den Auftrag gezogen.
+- Ankreuzen: `\pfkreuzab{A}{…}` mit Buchstaben A–C; Fuß und Lösung nennen den Buchstaben („2: C“, „3: B“). Nr. 2 untereinander, weil neben der Skizze nur die halbe Breite frei ist.
+- Marke mit Fundstelle: „nach P10 / ’26 · 1j“ (zwei Zeilen im Rand, mit `\\` getrennt), Stern bei Nr. 12 bleibt.
+- Blattende: `\pfblattende{11}{…}{…}{…}` – graue Tabelle 26 FOR … 16 mit allen 17 Originalen der Einheit (Gliederung), 23 leer; darunter nur „Weiter: Seite oder Winkel mit sin, cos, tan“ („Vorher“ entfällt).
+- Sorte = Erscheinungsform: Nr. 3 ist jetzt 2022-OS-B1g (Satz in Worten ankreuzen, eigener Wortlaut, Lösung B); 2024-OS-B1f (Gleichung ankreuzen wie Nr. 2) nur noch in der Tabelle. Herausgelöste Fassung 2022-OS-B1g-h1 an mathe-nachhilfe msa/herausgeloest-p10.csv angehängt.
+- Übersicht: Dreiecke in der Lernfolge (Pythagoras · sin, cos, tan · Winkel ohne Rechnung · Sinussatz · Symmetrie), „Vorher“ weg, „Weiter: Flächeninhalt und Umfang“ bleibt.
+- Neu in mathblatt.sty (Version 2026-10-11, blattbau): `\pfheftkopf` mit optionaler Kennung (rückwärtskompatibel), `\pfkreuz{A}{…}` (nebeneinander), `\pfkreuzab{A}{…}` (eigener Absatz, hängend), `\pfblattende{n}{Jahre}{Stellen}{Nachbarn}`.
+- Seiten: Übersicht 1 · Blatt 3 · Lösungen 1; Fuß kopfüber auf jeder Seite; kein Stufenkopf allein unten.
+- Offen: Nr. 11 („ja“/„nein“) ohne Buchstaben gelassen; der Setzer (werkzeuge/setzer.py, praeambel.tex mit `\blattende`, `\kk`) kennt die neuen Makros noch nicht.

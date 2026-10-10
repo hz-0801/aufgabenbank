@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2026.10.2)  10 OCT 2026 21:30
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2026.10.2)  10 OCT 2026 22:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -23,7 +23,7 @@ File: size11.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
 \belowcaptionskip=\skip49
 \bibindent=\dimen140
 ) (/home/claude/blattbau/mathblatt.sty
-Package: mathblatt 2026/10/06 Nachhilfe-Arbeitsblatt 2026-10-06c
+Package: mathblatt 2026/10/11 Nachhilfe-Arbeitsblatt 2026-10-11
 (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
@@ -1096,19 +1096,59 @@ Package geometry Warning: `a4paper': not available in `\newgeometry'; skipped.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 20.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 19.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 20.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 19.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+Overfull \hbox (2.09398pt too wide) in paragraph at lines 36--36
+ []|\TU/LatinModernRoman(0)/m/n/8 nach P10
+ []
 
 
-] [2] [3] (pdf/2-blatt.aux)
+Overfull \hbox (2.09398pt too wide) in paragraph at lines 45--45
+ []|\TU/LatinModernRoman(0)/m/n/8 nach P10
+ []
+
+
+Overfull \hbox (2.09398pt too wide) in paragraph at lines 66--66
+ []|\TU/LatinModernRoman(0)/m/n/8 nach P10
+ []
+
+[1
+
+
+]
+Overfull \hbox (2.09398pt too wide) in paragraph at lines 86--86
+ []|\TU/LatinModernRoman(0)/m/n/8 nach P10
+ []
+
+
+Overfull \hbox (2.09398pt too wide) in paragraph at lines 96--96
+ []|\TU/LatinModernRoman(0)/m/n/8 nach P10
+ []
+
+
+Overfull \hbox (2.09398pt too wide) in paragraph at lines 106--106
+ []|\TU/LatinModernRoman(0)/m/n/8 nach P10
+ []
+
+[2]
+Overfull \hbox (2.09398pt too wide) in paragraph at lines 135--135
+ []|\TU/LatinModernRoman(0)/m/n/8 nach P10
+ []
+
+
+Overfull \hbox (3.54967pt too wide) in paragraph at lines 135--135
+ []\TU/LatinModernRoman(0)/m/n/8 ’22 · 2c$\OML/cmm/m/it/8 ?$
+ []
+
+[3] (pdf/2-blatt.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -1117,10 +1157,10 @@ Package rerunfilecheck Info: File `2-blatt.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 37510 strings out of 476872
- 904963 string characters out of 5804586
- 1950627 words of memory out of 5000000
- 58804 multiletter control sequences out of 15000+600000
+ 37517 strings out of 476872
+ 905071 string characters out of 5804586
+ 1948627 words of memory out of 5000000
+ 58811 multiletter control sequences out of 15000+600000
  565152 words of font info for 110 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  117i,18n,121p,746b,855s stack positions out of 10000i,1000n,20000p,200000b,200000s
