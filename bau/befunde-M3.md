@@ -510,3 +510,29 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
   mitten im Term um; je Teil \mbox{…}.
 - duplikate.py: nur gewollte Zahlvarianten (Ziel D und Vorrat, T5 und
   Bestand k1-s10-v1).
+
+## Brüche E4 „Dezimalzahlen“ (DXZ, 10.10.2026)
+
+- Lage: Standardlage Klasse 6 laut Katalog (wie A5D, FS9; Katalog-Marke
+  OS Kl. 5, GYM Kl. 5–6). Heft 6 Seiten: Übersicht, A–D, Probetest;
+  jede Seite mit Rechenplatz.
+- Setzer: Ein zweiter Satz mit `--kennung` (tisch-alt nach selbst)
+  ergänzt sorten= im Register nicht; von Hand nachgetragen. (Vorschlag
+  Setzer: sorten= auch beim Neusatz mit --kennung ergänzen.)
+- Setzer: tisch-alt legt praeambel.tex in den Probenordner (von
+  tisch-alt-blatt.tex eingebunden); FS9 hat sie nicht. (Belassen.)
+- Satz: Ankreuzoptionen mit \frac sind bei Kl. 6 kaum lesbar; T5 mit
+  \dfrac gesetzt – die Zeilen liegen dicht, aber getrennt. D4 statt
+  Ankreuzen als Päckchen „ja oder nein“. (Vorschlag wie bei FS9:
+  \kreuz-Zeilen mit mehr Abstand.)
+- Prüfer: pruef muss ein String sein (Zahl führt zu „nicht
+  auswertbar“); periodische Ergebnisse brauchen pruef (hier „1/3“,
+  „4/9“). Ergebnis einer Differenz nur an der Ergebnisstelle, wenn es
+  hinter „=“ steht („750 − 700 = 50 g“). Mengenwarnungen wie bei
+  QG4/A5D/FS9.
+- duplikate.py: nur gewollte Zahlvarianten (Aufgabe und Vorrat
+  derselben Sprosse; A1/A2 gleicher Auftrag „Schreibe als
+  Dezimalzahl“).
+- Thema-Weg trägt: Zehnerbruch vor Zahlenstrahl vor Erweitern vor
+  Teilen. Achtel über Division statt Erweitern auf 1000; Vergleichen
+  bleibt in E5 und kommt in E4 nur über die Sache (Gramm, Zeiten) vor.

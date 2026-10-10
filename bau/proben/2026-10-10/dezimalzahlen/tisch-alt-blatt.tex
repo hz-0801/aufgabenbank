@@ -1,0 +1,182 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\usepackage{adjustbox,varwidth}
+% gesetzt von werkzeuge/setzer.py aus dem Lernweg (L4-A · L4-B · L4-C · L4-D · L4-T) und den Bankzeilen; Muster T6B.
+\input{praeambel}
+\newcommand{\kennung}{DXZ}
+\newcommand{\grau}[1]{{\color{mbgrau}#1}}
+
+\begin{document}
+\pfheftstil
+\fancyfoot[C]{\parbox[t]{\textwidth}{\mbfhbox\par\vspace{1.5mm}{\footnotesize\color{mbgrau}{\scriptsize \kennung}\hfill\thepage}}}
+\pfheftkopf{Dezimalzahlen}{Klasse 6}
+% L4-A: Zehntel, Hundertstel, Tausendstel
+\begin{pfaufg}{}{1.}{}
+\gzwei{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\sachtabelle{cccc}{Einer & Zehntel & Hundertstel & Tausendstel}{0 & 0 & 2 & 3}\end{varwidth}}}{\grau{a)\ Schreibe $\dfrac{23}{1000}$ als Dezimalzahl und trage sie in die Stellenwerttafel ein.\par\smallskip Der Nenner 1000 hat 3 Nullen: Die Zahl hat 3 Stellen nach dem Komma.\par 23 Tausendstel: Die 3 kommt in die Tausendstel-Spalte, die 2 in die Hundertstel-Spalte.\par Leere Spalten bekommen eine 0: 0 Zehntel, 0 Einer.\par Also $\dfrac{23}{1000} = 0{,}023$.}}
+\par\medskip
+b)\ Schreibe als Dezimalzahl. \par\vspace{3pt} a)~$\dfrac{3}{10}$ \qquad b)~$\dfrac{9}{10}$ \qquad c)~$\dfrac{47}{100}$ \qquad d)~$\dfrac{81}{100}$\karo{3}
+\fusshilfe{\mbox{1:~b) a) $0{,}3$ \quad b) $0{,}9$ \quad c) $0{,}47$ \quad d) $0{,}81$}}
+\end{pfaufg}
+
+% L4-A: Zehntel, Hundertstel, Tausendstel
+\begin{pfaufg}{}{2.}{}
+Schreibe als Dezimalzahl. \par\vspace{3pt} a)~$\dfrac{6}{100}$ \qquad b)~$\dfrac{6}{1000}$ \qquad c)~$\dfrac{52}{1000}$ \qquad d)~$\dfrac{9}{100}$\karo{3}
+\fusshilfe{\mbox{2:~a) $0{,}06$ \quad b) $0{,}006$ \quad c) $0{,}052$ \quad d) $0{,}09$}}
+\end{pfaufg}
+
+% L4-A: Zehntel, Hundertstel, Tausendstel
+\begin{pfaufg}{}{3.}{}
+\gzwei{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\sachtabelle{cccc}{Einer & Zehntel & Hundertstel & Tausendstel}{4 & 0 & 5 & 8}\end{varwidth}}}{%
+Welche Zahl zeigt die Stellenwerttafel? Schreibe sie als Dezimalzahl und als Zehnerbruch.\karo{3}}
+\fusshilfe{\mbox{3:~$4{,}058 = \frac{4058}{1000}$}}
+\end{pfaufg}
+
+% L4-A: Zehntel, Hundertstel, Tausendstel
+\begin{pfaufg}{}{4.}{}
+Schreibe als Zehnerbruch. \par\vspace{3pt} a)~$0{,}7$ \qquad b)~$0{,}13$ \qquad c)~$0{,}08$ \qquad d)~$2{,}019$\karo{3}
+\fusshilfe{\mbox{4:~a) $\frac{7}{10}$ \quad b) $\frac{13}{100}$ \quad c) $\frac{8}{100}$ \quad d) $\frac{2019}{1000}$}}
+\end{pfaufg}
+
+% L4-A: Zehntel, Hundertstel, Tausendstel
+\begin{pfaufg}{}{5.}{}
+Beim Sportfest läuft Ben die 100\,m in 12 Sekunden und 7 Hundertsteln, Ali in 12 Sekunden und 7 Zehnteln. Welche Anzeige zeigt Bens Zeit? Kreuze an. Wer war schneller?\par\smallskip \gkreuz{12{,}7\,s}\gkreuz{12{,}07\,s}\par \gkreuz{12{,}007\,s}\gkreuz{1{,}207\,s}
+\fusshilfe{\mbox{5:~$12{,}07$\,s; Ben}}
+\end{pfaufg}
+
+% L4-B: Am Zahlenstrahl: ablesen, eintragen, weiterzählen
+\begin{pfaufg}{}{6.}{}
+\gzwei{\begin{tikzpicture}[font=\small]\draw[->,line width=0.7pt] (0,0) -- (5.75,0);\draw[line width=0.7pt] (0.000,-0.17) -- (0.000,0.17);\node[below] at (0.000,-0.17) {$2$};\draw[line width=0.4pt] (0.540,-0.1) -- (0.540,0.1);\draw[line width=0.4pt] (1.080,-0.1) -- (1.080,0.1);\draw[line width=0.4pt] (1.620,-0.1) -- (1.620,0.1);\draw[line width=0.4pt] (2.160,-0.1) -- (2.160,0.1);\draw[line width=0.5pt] (2.700,-0.13) -- (2.700,0.13);\draw[line width=0.4pt] (3.240,-0.1) -- (3.240,0.1);\draw[line width=0.4pt] (3.780,-0.1) -- (3.780,0.1);\draw[line width=0.4pt] (4.320,-0.1) -- (4.320,0.1);\draw[line width=0.4pt] (4.860,-0.1) -- (4.860,0.1);\draw[line width=0.7pt] (5.400,-0.17) -- (5.400,0.17);\node[below] at (5.400,-0.17) {$3$};\fill (3.240,0) circle (1.7pt);\node[above] at (3.240,0.12) {$A$};\fill (1.890,0) circle (1.7pt);\node[above] at (1.890,0.12) {$2{,}35$};\end{tikzpicture}}{\grau{a)\ Lies $A$ ab. Trage $2{,}35$ ein.\par\smallskip Von 2 bis 3 sind es 10 Schritte: Ein Schritt ist $0{,}1$.\par $A$ liegt 6 Schritte hinter 2: $A = 2{,}6$.\par $2{,}35$ hat 3 Zehntel: Es liegt hinter $2{,}3$, vor $2{,}4$.\par 5 Hundertstel sind ein halber Zehntel-Schritt: genau in der Mitte.}}
+\par\medskip
+\gzwei{\begin{tikzpicture}[font=\small]\draw[->,line width=0.7pt] (0,0) -- (5.75,0);\draw[line width=0.7pt] (0.000,-0.17) -- (0.000,0.17);\node[below] at (0.000,-0.17) {$0$};\draw[line width=0.4pt] (0.270,-0.1) -- (0.270,0.1);\draw[line width=0.4pt] (0.540,-0.1) -- (0.540,0.1);\draw[line width=0.4pt] (0.810,-0.1) -- (0.810,0.1);\draw[line width=0.4pt] (1.080,-0.1) -- (1.080,0.1);\draw[line width=0.5pt] (1.350,-0.13) -- (1.350,0.13);\draw[line width=0.4pt] (1.620,-0.1) -- (1.620,0.1);\draw[line width=0.4pt] (1.890,-0.1) -- (1.890,0.1);\draw[line width=0.4pt] (2.160,-0.1) -- (2.160,0.1);\draw[line width=0.4pt] (2.430,-0.1) -- (2.430,0.1);\draw[line width=0.7pt] (2.700,-0.17) -- (2.700,0.17);\node[below] at (2.700,-0.17) {$1$};\draw[line width=0.4pt] (2.970,-0.1) -- (2.970,0.1);\draw[line width=0.4pt] (3.240,-0.1) -- (3.240,0.1);\draw[line width=0.4pt] (3.510,-0.1) -- (3.510,0.1);\draw[line width=0.4pt] (3.780,-0.1) -- (3.780,0.1);\draw[line width=0.5pt] (4.050,-0.13) -- (4.050,0.13);\draw[line width=0.4pt] (4.320,-0.1) -- (4.320,0.1);\draw[line width=0.4pt] (4.590,-0.1) -- (4.590,0.1);\draw[line width=0.4pt] (4.860,-0.1) -- (4.860,0.1);\draw[line width=0.4pt] (5.130,-0.1) -- (5.130,0.1);\draw[line width=0.7pt] (5.400,-0.17) -- (5.400,0.17);\node[below] at (5.400,-0.17) {$2$};\fill (1.080,0) circle (1.7pt);\node[above] at (1.080,0.12) {$A$};\fill (2.430,0) circle (1.7pt);\node[above] at (2.430,0.12) {$B$};\fill (3.510,0) circle (1.7pt);\node[above] at (3.510,0.12) {$C$};\end{tikzpicture}}{%
+b)\ Welche Zahlen gehören zu $A$, $B$ und $C$?\karo{3}}
+\fusshilfe{\mbox{6:~b) $A = 0{,}4$, \ $B = 0{,}9$, \ $C = 1{,}3$}}
+\end{pfaufg}
+
+% L4-B: Am Zahlenstrahl: ablesen, eintragen, weiterzählen
+\begin{pfaufg}{}{7.}{}
+\gzwei{\begin{tikzpicture}[font=\small]\draw[->,line width=0.7pt] (0,0) -- (5.75,0);\draw[line width=0.7pt] (0.000,-0.17) -- (0.000,0.17);\node[below] at (0.000,-0.17) {$0{,}4$};\draw[line width=0.4pt] (0.270,-0.1) -- (0.270,0.1);\draw[line width=0.4pt] (0.540,-0.1) -- (0.540,0.1);\draw[line width=0.4pt] (0.810,-0.1) -- (0.810,0.1);\draw[line width=0.4pt] (1.080,-0.1) -- (1.080,0.1);\draw[line width=0.5pt] (1.350,-0.13) -- (1.350,0.13);\draw[line width=0.4pt] (1.620,-0.1) -- (1.620,0.1);\draw[line width=0.4pt] (1.890,-0.1) -- (1.890,0.1);\draw[line width=0.4pt] (2.160,-0.1) -- (2.160,0.1);\draw[line width=0.4pt] (2.430,-0.1) -- (2.430,0.1);\draw[line width=0.7pt] (2.700,-0.17) -- (2.700,0.17);\node[below] at (2.700,-0.17) {$0{,}5$};\draw[line width=0.4pt] (2.970,-0.1) -- (2.970,0.1);\draw[line width=0.4pt] (3.240,-0.1) -- (3.240,0.1);\draw[line width=0.4pt] (3.510,-0.1) -- (3.510,0.1);\draw[line width=0.4pt] (3.780,-0.1) -- (3.780,0.1);\draw[line width=0.5pt] (4.050,-0.13) -- (4.050,0.13);\draw[line width=0.4pt] (4.320,-0.1) -- (4.320,0.1);\draw[line width=0.4pt] (4.590,-0.1) -- (4.590,0.1);\draw[line width=0.4pt] (4.860,-0.1) -- (4.860,0.1);\draw[line width=0.4pt] (5.130,-0.1) -- (5.130,0.1);\draw[line width=0.7pt] (5.400,-0.17) -- (5.400,0.17);\node[below] at (5.400,-0.17) {$0{,}6$};\end{tikzpicture}}{%
+Hier ist ein Schritt ein Hundertstel. Trage $0{,}43$, $0{,}49$ und $0{,}56$ ein.\karo{3}}
+\fusshilfe{\mbox{7:~3 hinter $0{,}4$}}
+\end{pfaufg}
+
+% L4-B: Am Zahlenstrahl: ablesen, eintragen, weiterzählen
+\begin{pfaufg}{}{8.}{}
+Zwischen welchen beiden Zehnteln liegt die Zahl? \par\vspace{3pt} a)~$3{,}46$ \qquad b)~$0{,}72$ \qquad c)~$5{,}09$ \qquad d)~$1{,}98$\karo{3}
+\fusshilfe{\mbox{8:~a) $3{,}4$ | $3{,}5$ \quad b) $0{,}7$ | $0{,}8$ \quad c) $5{,}0$ | $5{,}1$ \quad d) $1{,}9$ | $2{,}0$}}
+\end{pfaufg}
+
+% L4-B: Am Zahlenstrahl: ablesen, eintragen, weiterzählen
+\begin{pfaufg}{}{9.}{}
+Zähle drei Zahlen weiter. \par\vspace{3pt} a)~in $0{,}1$er-Schritten: $2{,}7$; $2{,}8$; … \par b)~in $0{,}2$er-Schritten: $0{,}6$; $0{,}8$; … \par c)~in $0{,}01$er-Schritten: $4{,}97$; $4{,}98$; …\karo{3}
+\fusshilfe{\mbox{9:~a) $2{,}9}}
+\end{pfaufg}
+
+% L4-B: Am Zahlenstrahl: ablesen, eintragen, weiterzählen
+\begin{pfaufg}{}{10.}{}
+Am Rand der Weitsprunggrube ist alle 10\,cm ein Strich. Mila springt $3{,}46$\,m. Zwischen welchen beiden Strichen landet sie? Welcher Strich ist näher?\karo{3}
+\fusshilfe{\mbox{10:~$3{,}4$\,m und $3{,}5$\,m}}
+\end{pfaufg}
+
+% L4-C: Bruch und Dezimalzahl: erweitern und kürzen
+\begin{pfaufg}{}{11.}{}
+\grau{a)\ Schreibe $\dfrac{7}{20}$ als Dezimalzahl. Schreibe dann $0{,}35$ zurück als gekürzten Bruch.\par\smallskip Welcher Zehnerbruch passt? $20 \cdot 5 = 100$: auf Hundertstel.\par Mit 5 erweitern: $\dfrac{7}{20} = \dfrac{7 \cdot 5}{20 \cdot 5} = \dfrac{35}{100}$\par 35 Hundertstel: $\dfrac{35}{100} = 0{,}35$.\par Zurück: $0{,}35 = \dfrac{35}{100}$, mit 5 kürzen: $\dfrac{7}{20}$.}
+\par\medskip
+b)\ Erweitere auf Zehntel und schreibe als Dezimalzahl. \par\vspace{3pt} a)~$\dfrac{1}{2}$ \qquad b)~$\dfrac{3}{5}$ \qquad c)~$\dfrac{4}{5}$ \qquad d)~$\dfrac{3}{2}$\karo{3}
+\fusshilfe{\mbox{11:~b) a) $0{,}5$ \quad b) $0{,}6$ \quad c) $0{,}8$ \quad d) $1{,}5$}}
+\end{pfaufg}
+
+% L4-C: Bruch und Dezimalzahl: erweitern und kürzen
+\begin{pfaufg}{}{12.}{}
+Erweitere auf Hundertstel und schreibe als Dezimalzahl. \par\vspace{3pt} a)~$\dfrac{3}{4}$ \qquad b)~$\dfrac{9}{20}$ \qquad c)~$\dfrac{6}{25}$ \qquad d)~$\dfrac{7}{50}$\karo{3}
+\fusshilfe{\mbox{12:~a) $0{,}75$ \quad b) $0{,}45$ \quad c) $0{,}24$ \quad d) $0{,}14$}}
+\end{pfaufg}
+
+% L4-C: Bruch und Dezimalzahl: erweitern und kürzen
+\begin{pfaufg}{}{13.}{}
+Schreibe als Zehnerbruch und kürze so weit wie möglich. \par\vspace{3pt} a)~$0{,}4$ \qquad b)~$0{,}25$ \qquad c)~$0{,}65$ \qquad d)~$1{,}2$\karo{3}
+\fusshilfe{\mbox{13:~a) $\frac{2}{5}$ \quad b) $\frac{1}{4}$ \quad c) $\frac{13}{20}$ \quad d) $\frac{6}{5}$}}
+\end{pfaufg}
+
+% L4-C: Bruch und Dezimalzahl: erweitern und kürzen
+\begin{pfaufg}{}{14.}{}
+Welche Zahlen sind gleich groß? Schreibe je einen Bruch und die passende Dezimalzahl als Paar auf. \par\vspace{3pt} $\dfrac{3}{5}$ \qquad $\dfrac{7}{20}$ \qquad $\dfrac{1}{4}$ \qquad $\dfrac{2}{25}$ \par\vspace{6pt} $0{,}25$ \qquad $0{,}08$ \qquad $0{,}6$ \qquad $0{,}35$\karo{3}
+\fusshilfe{\mbox{14:~$\frac{3}{5} = 0{,}6$, \ $\frac{7}{20} = 0{,}35$, \ $\frac{1}{4} = 0{,}25$, \ $\frac{2}{25} = 0{,}08$}}
+\end{pfaufg}
+
+% L4-C: Bruch und Dezimalzahl: erweitern und kürzen
+\begin{pfaufg}{}{15.}{}
+Frau Kaya möchte drei Viertel Kilogramm Hackfleisch kaufen. Die Waage zeigt $0{,}7$\,kg. Wie viel Gramm fehlen noch? (1\,kg $= 1000$\,g)\karo{3}
+\fusshilfe{\mbox{15:~50\,g fehlen}}
+\end{pfaufg}
+
+% L4-D: Teilen: Zähler durch Nenner, auch periodisch
+\begin{pfaufg}{}{16.}{}
+\grau{a)\ Schreibe $\dfrac{3}{8}$ als Dezimalzahl.\par\smallskip 8 lässt sich nicht bequem auf 10 oder 100 bringen: rechne $3 : 8$.\par $3 : 8 = 0$, Rest 3. Schreibe 0 und das Komma.\par Hänge eine 0 an: $30 : 8 = 3$, Rest 6. \quad $60 : 8 = 7$, Rest 4.\par $40 : 8 = 5$, Rest 0 – fertig: $\dfrac{3}{8} = 0{,}375$.}
+\par\medskip
+b)\ Teile Zähler durch Nenner. \par\vspace{3pt} a)~$\dfrac{1}{4}$ \qquad b)~$\dfrac{3}{4}$ \qquad c)~$\dfrac{1}{8}$ \qquad d)~$\dfrac{7}{8}$\karo{3}
+\fusshilfe{\mbox{16:~b) a) $0{,}25$ \quad b) $0{,}75$ \quad c) $0{,}125$ \quad d) $0{,}875$}}
+\end{pfaufg}
+
+% L4-D: Teilen: Zähler durch Nenner, auch periodisch
+\begin{pfaufg}{}{17.}{}
+Der Bruch ist größer als 1. Teile Zähler durch Nenner. \par\vspace{3pt} a)~$\dfrac{9}{4}$ \qquad b)~$\dfrac{11}{8}$ \qquad c)~$\dfrac{21}{8}$\karo{3}
+\fusshilfe{\mbox{17:~a) $2{,}25$ \quad b) $1{,}375$ \quad c) $2{,}625$}}
+\end{pfaufg}
+
+% L4-D: Teilen: Zähler durch Nenner, auch periodisch
+\begin{pfaufg}{}{18.}{}
+Teile Zähler durch Nenner. Die Division geht nicht auf: Schreib mit Strich. \par\vspace{3pt} a)~$\dfrac{1}{3}$ \qquad b)~$\dfrac{2}{3}$ \qquad c)~$\dfrac{5}{9}$ \qquad d)~$\dfrac{1}{6}$\karo{3}
+\fusshilfe{\mbox{18:~a) $0{,}\overline{3}$ \quad b) $0{,}\overline{6}$ \quad c) $0{,}\overline{5}$ \quad d) $0{,}1\overline{6}$}}
+\end{pfaufg}
+
+% L4-D: Teilen: Zähler durch Nenner, auch periodisch
+\begin{pfaufg}{}{19.}{}
+Geht die Division auf? Schreibe ja oder nein. \par\vspace{3pt} a)~$\dfrac{3}{8}$ \qquad b)~$\dfrac{7}{20}$ \qquad c)~$\dfrac{5}{6}$ \qquad d)~$\dfrac{9}{25}$\karo{3}
+\fusshilfe{\mbox{19:~a) ja \quad b) ja \quad c) nein \quad d) ja}}
+\end{pfaufg}
+
+% L4-D: Teilen: Zähler durch Nenner, auch periodisch
+\begin{pfaufg}{}{20.}{}
+Ein Band ist 5\,m lang. Es wird in 8 gleich lange Stücke geschnitten. Für eine Schleife braucht man 60\,cm. Reicht ein Stück für eine Schleife?\karo{3}
+\fusshilfe{\mbox{20:~Ja, $62{,}5$\,cm je Stück}}
+\end{pfaufg}
+
+% L4-T: Probetest
+\begin{pfaufg}{}{21.}{}
+Schreibe als Dezimalzahl. \par\vspace{3pt} a)~$\dfrac{9}{10}$ \qquad b)~$\dfrac{9}{100}$ \qquad c)~$\dfrac{45}{1000}$\karo{3}
+\fusshilfe{\mbox{21:~a) $0{,}9$ \quad b) $0{,}09$ \quad c) $0{,}045$}}
+\end{pfaufg}
+
+% L4-T: Probetest
+\begin{pfaufg}{}{22.}{}
+\gzwei{\begin{tikzpicture}[font=\small]\draw[->,line width=0.7pt] (0,0) -- (5.75,0);\draw[line width=0.7pt] (0.000,-0.17) -- (0.000,0.17);\node[below] at (0.000,-0.17) {$1{,}2$};\draw[line width=0.4pt] (0.270,-0.1) -- (0.270,0.1);\draw[line width=0.4pt] (0.540,-0.1) -- (0.540,0.1);\draw[line width=0.4pt] (0.810,-0.1) -- (0.810,0.1);\draw[line width=0.4pt] (1.080,-0.1) -- (1.080,0.1);\draw[line width=0.5pt] (1.350,-0.13) -- (1.350,0.13);\draw[line width=0.4pt] (1.620,-0.1) -- (1.620,0.1);\draw[line width=0.4pt] (1.890,-0.1) -- (1.890,0.1);\draw[line width=0.4pt] (2.160,-0.1) -- (2.160,0.1);\draw[line width=0.4pt] (2.430,-0.1) -- (2.430,0.1);\draw[line width=0.7pt] (2.700,-0.17) -- (2.700,0.17);\node[below] at (2.700,-0.17) {$1{,}3$};\draw[line width=0.4pt] (2.970,-0.1) -- (2.970,0.1);\draw[line width=0.4pt] (3.240,-0.1) -- (3.240,0.1);\draw[line width=0.4pt] (3.510,-0.1) -- (3.510,0.1);\draw[line width=0.4pt] (3.780,-0.1) -- (3.780,0.1);\draw[line width=0.5pt] (4.050,-0.13) -- (4.050,0.13);\draw[line width=0.4pt] (4.320,-0.1) -- (4.320,0.1);\draw[line width=0.4pt] (4.590,-0.1) -- (4.590,0.1);\draw[line width=0.4pt] (4.860,-0.1) -- (4.860,0.1);\draw[line width=0.4pt] (5.130,-0.1) -- (5.130,0.1);\draw[line width=0.7pt] (5.400,-0.17) -- (5.400,0.17);\node[below] at (5.400,-0.17) {$1{,}4$};\fill (1.620,0) circle (1.7pt);\node[above] at (1.620,0.12) {$A$};\fill (4.050,0) circle (1.7pt);\node[above] at (4.050,0.12) {$B$};\end{tikzpicture}}{%
+Welche Zahlen gehören zu $A$ und $B$? Zwischen welchen beiden Zehnteln liegt $A$?\karo{3}}
+\fusshilfe{\mbox{22:~$A = 1{,}26$, \ $B = 1{,}35$}}
+\end{pfaufg}
+
+% L4-T: Probetest
+\begin{pfaufg}{}{23.}{}
+Schreibe a)~$\dfrac{3}{5}$ und b)~$\dfrac{17}{20}$ als Dezimalzahl, c)~$0{,}45$ als gekürzten Bruch.\karo{3}
+\fusshilfe{\mbox{23:~a) $0{,}6$ \quad b) $0{,}85$ \quad c) $\frac{9}{20}$}}
+\end{pfaufg}
+
+% L4-T: Probetest
+\begin{pfaufg}{}{24.}{}
+Schreibe als Dezimalzahl. \par\vspace{3pt} a)~$\dfrac{7}{8}$ \qquad b)~$\dfrac{2}{3}$\karo{3}
+\fusshilfe{\mbox{24:~a) $0{,}875$ \quad b) $0{,}\overline{6}$}}
+\end{pfaufg}
+
+% L4-T: Probetest
+\begin{pfaufg}{}{25.}{}
+Welche Gleichung ist richtig? Kreuze an.\par\smallskip \gkreuz{$\dfrac{1}{5} = 1{,}5$}\gkreuz{$\dfrac{3}{100} = 0{,}3$}\par \gkreuz{$\dfrac{7}{20} = 0{,}35$}\gkreuz{$\dfrac{1}{3} = 0{,}3$}
+\fusshilfe{\mbox{25:~$\frac{7}{20} = 0{,}35$}}
+\end{pfaufg}
+
+% L4-T: Probetest
+\begin{pfaufg}{}{26.}{}
+Für einen Kuchen braucht Mara drei Achtel Kilogramm Mehl. Sie hat schon $0{,}4$\,kg in die Schüssel gefüllt. Ist das zu viel oder zu wenig? Um wie viel Gramm?\karo{3}
+\fusshilfe{\mbox{26:~25\,g zu viel}}
+\end{pfaufg}
+
+\par\vfill\noindent{\footnotesize Vorher: Brüche vergleichen\quad\textbullet\quad Weiter: Vergleichen, Ordnen, Runden\par}
+\end{document}
