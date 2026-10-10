@@ -110,7 +110,7 @@ def lies_lernweg(katalog, teil, kennung=None):
         return lies_abschnitte(block, titel, serie, praefix)
     kopf = block.splitlines()[0]
     name = re.sub(r"^#### Lerneinheit \S+ – ", "", kopf)
-    name = re.sub(r"\s*\(.*\)\s*$", "", name).strip()
+    name = name_ohne_zusatz(name)
     blatt = re.search(r"^Blatt: (.+)$", block, re.M)
     angaben = {}
     if blatt:
@@ -123,7 +123,7 @@ def lies_lernweg(katalog, teil, kennung=None):
     for z in block.splitlines():
         if not z.startswith(f"| {praefix}"):
             continue
-        zellen = [c.strip() for c in z.strip().strip("|").split("|")]
+        zellen = zellen_von(z)
         schritt, begreift, aufgaben = zellen[0], zellen[1], zellen[-1]
         blattteil = re.sub(r"\([^)]*\)", "", aufgaben)
         gruppen = [[i.strip() for i in g.split("+") if i.strip()]
@@ -131,6 +131,44 @@ def lies_lernweg(katalog, teil, kennung=None):
         schritte.append((schritt, begreift, gruppen))
     return dict(titel=titel, name=name, serie=serie.group(1) if serie
                 else "", schritte=schritte, **angaben)
+
+
+def name_ohne_zusatz(name):
+    """„Name (Zusatz)“ → „Name“; nur eine Schlussklammer mit Leerzeichen
+    davor fällt weg, „f(x) = m·x + n“ bleibt ganz."""
+    return re.sub(r"\s+\([^()]*\)\s*$", "", name).strip()
+
+
+def zellen_von(zeile):
+    """Tabellenzeile in Zellen teilen. Ein „|“ in $…$, als „\\|“ oder in
+    Klammern ohne Leerzeichen zu beiden Seiten trennt nicht (Koordinaten
+    (2|−1), Betrag $|x|$); „ | “ trennt immer außerhalb von $…$."""
+    inhalt = zeile.strip()
+    inhalt = inhalt[1:] if inhalt.startswith("|") else inhalt
+    inhalt = inhalt[:-1] if inhalt.endswith("|") and not \
+        inhalt.endswith("\\|") else inhalt
+    zellen, akt, tiefe, mathe, i = [], "", 0, False, 0
+    while i < len(inhalt):
+        ch = inhalt[i]
+        if ch == "\\" and inhalt[i + 1:i + 2] == "|":
+            akt += "|"
+            i += 2
+            continue
+        if ch == "$" and inhalt[i - 1:i] != "\\":
+            mathe = not mathe
+        elif ch in "([{" and not mathe:
+            tiefe += 1
+        elif ch in ")]}" and not mathe and tiefe:
+            tiefe -= 1
+        frei = inhalt[i - 1:i].isspace() and inhalt[i + 1:i + 2].isspace()
+        if ch == "|" and not mathe and (not tiefe or frei):
+            zellen.append(akt.strip())
+            akt = ""
+        else:
+            akt += ch
+        i += 1
+    zellen.append(akt.strip())
+    return zellen
 
 
 def blatt_teile(zeile):
@@ -144,7 +182,7 @@ def lies_abschnitte(block, titel, serie, praefix):
     """Lernweg-Block in Abschnittsform (bau/bauauftrag.md 10.10.2026)."""
     kopf = block.splitlines()[0]
     name = re.sub(r"^#### Lerneinheit \S+ – ", "", kopf)
-    name = re.sub(r"\s*\(.*\)\s*$", "", name).strip()
+    name = name_ohne_zusatz(name)
     lw = dict(titel=titel, name=name, serie=serie.group(1) if serie else "",
               form="abschnitte", fehler=[], abschnitte=[], schritte=[])
     for z in block.splitlines():
@@ -167,7 +205,7 @@ def lies_abschnitte(block, titel, serie, praefix):
         elif m:
             lw[m.group(1).lower().replace(" ", "_")] = m.group(2).strip()
         elif z.startswith(f"| {praefix}"):
-            c = [x.strip() for x in z.strip().strip("|").split("|")]
+            c = zellen_von(z)
             leer = lambda s: "" if s in ("–", "-") else s  # noqa: E731
             ids = lambda s: [i for i in re.split(r"[,\s]+", leer(s)) if i]  # noqa: E731,E501
             lw["abschnitte"].append(dict(
@@ -629,12 +667,20 @@ PRAEAMBEL_NEU = r"""\documentclass[11pt]{article}
   \begin{minipage}[t]{52mm}\raggedright\bfseries\boldmath #2\end{minipage}\hspace{3mm}%%
   \begin{minipage}[t]{\dimexpr\linewidth-64mm\relax}\raggedright\small #3\end{minipage}\par\vspace{4pt}}
 \newlength{\kr}
+\makeatletter
+\newcommand{\karomerk}[2]{\protected@write\@auxout{}{\string\karoseite{#1}{#2}{\thepage}}}
+\newcommand{\karoseite}[3]{\expandafter\xdef\csname karo@#1@#2\endcsname{#3}}
+\newcommand{\karohinweis}[3]{\karomerk{h}{#1}\ifcsname karo@k@#1\endcsname
+  \ifnum\csname karo@k@#1\endcsname=0\csname karo@h@#1\endcsname\relax#2\else#3\fi
+  \else#3\fi}
+\makeatother
 \begin{document}
 """
 ZIEL = "{\\scriptsize\\color{mbgrau}Ziel\\hspace{2mm}}"
 KARO_REST = (
     "\\par\\vspace{3mm}\\setlength{\\kr}{\\dimexpr\\pagegoal-\\pagetotal-10mm"
-    "\\relax}%\n\\ifdim\\kr>12mm\\noindent{\\scriptsize\\color{mbgrau}Platz "
+    "\\relax}%%\n\\ifdim\\kr>12mm\\karomerk{k}{%s}\\noindent{\\scriptsize"
+    "\\color{mbgrau}Platz "
     "zum Rechnen}\\par\\nointerlineskip\\vspace{1mm}\\noindent\n"
     "\\begin{tikzpicture}\\clip (0,0) rectangle ({\\linewidth-0.5mm},\\kr);"
     "\\draw[black!16,line width=0.3pt,step=5mm] (0,0) grid (\\linewidth,"
@@ -786,12 +832,15 @@ def tex_selbst(lw, kennung, bank):
                          f"\\centering {g}\\end{{minipage}}\\par\\medskip")
             else:
                 t.append(f"\\noindent{schritte}\\par\\medskip")
+        # Hinweis aufs Karo nur, wenn es auf derselben Seite steht
+        # (Seiten aus der .aux des Vorlaufs; Sorte selbst setzt zweimal).
         t.append("\\noindent\\textbf{Aufgaben}\\hspace{1em}{\\small\\color"
-                 "{mbgrau}Rechne unten im Karo. Vergleiche jede Aufgabe gleich "
-                 "mit dem Lösungsheft.}\\par\\smallskip")
+                 f"{{mbgrau}}\\karohinweis{{{bu}}}{{Rechne unten im Karo.}}"
+                 "{Rechne auf einem extra Blatt.} Vergleiche jede Aufgabe "
+                 "gleich mit dem Lösungsheft.}\\par\\smallskip")
         for k, a in enumerate(zeilen_von(ab, bank), 1):
             t.append(aufgabe_tex(a, f"{k}."))
-        t.append(KARO_REST)
+        t.append(KARO_REST % bu)
     return "\n".join(t) + "\n\\end{document}\n"
 
 
@@ -928,10 +977,13 @@ def tex_uebersicht(lw, kennung):
         name, _, blaetter = bereich.strip().partition(":")
         zeilen.append(f"\n\\bereich{{{name.strip()}}}")
         for b in blaetter.split(";"):
-            b = b.strip().replace("·", "\\textperiodcentered{}")
+            roh = b.strip()
+            b = roh.replace("·", "\\textperiodcentered{}")
+            gleich = (re.sub(r"[\s·]", "", roh)
+                      == re.sub(r"[\s·]", "", lw["name"]))
             if b.startswith("(") and b.endswith(")"):
                 zeilen.append(f"\\blrand{{{b[1:-1]}}}")
-            elif b == lw["name"]:
+            elif gleich:
                 zeilen.append(f"\\blhier{{{b}}}")
             else:
                 zeilen.append(f"\\bl{{{b}}}")
