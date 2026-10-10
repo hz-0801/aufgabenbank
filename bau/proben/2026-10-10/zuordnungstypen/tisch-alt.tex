@@ -1,0 +1,144 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% gesetzt von werkzeuge/setzer.py aus dem Lernweg (L4-A · L4-B · L4-C · L4-T) und den Bankzeilen; Muster T6B.
+\input{praeambel}
+\newcommand{\kennung}{FA5}
+\newcommand{\grau}[1]{{\color{mbgrau}#1}}
+
+\begin{document}
+\pfheftstil
+\fancyfoot[C]{\parbox[t]{\textwidth}{\mbfhbox\par\vspace{1.5mm}{\footnotesize\color{mbgrau}{\scriptsize \kennung}\hfill\thepage}}}
+\pfheftkopf{Zuordnungstypen erkennen und anwenden}{Klasse 7}
+% L4-A: Tabelle und Graph prüfen
+\begin{pfaufg}{}{1.}{}
+\gzwei{\begin{tikzpicture}[scale=0.85,transform shape]\node[inner sep=0pt] at (2.9,3.0) {\begin{minipage}{52mm}\centering \setlength{\mbzell}{0.8cm}\wertetabelle[12,8,6,4]{\text{Helfer}}{\text{Stunden}}{2,3,4,6} \end{minipage}};\begin{scope}[xshift=0.0cm]\draw[black!15,step=0.4] (0,0) grid (1.6,1.6);\draw[-{Stealth[length=1.5mm]},line width=0.5pt] (0,0) -- (1.8,0);\draw[-{Stealth[length=1.5mm]},line width=0.5pt] (0,0) -- (0,1.8);\draw[line width=0.9pt] (0,0) -- (1.6,1.4);\node[below,font=\scriptsize] at (0.8,-0.05) {proportional};\end{scope}\begin{scope}[xshift=2.05cm]\draw[black!15,step=0.4] (0,0) grid (1.6,1.6);\draw[-{Stealth[length=1.5mm]},line width=0.5pt] (0,0) -- (1.8,0);\draw[-{Stealth[length=1.5mm]},line width=0.5pt] (0,0) -- (0,1.8);\draw[line width=0.9pt,domain=0.24:1.6,samples=40] plot (\x,{0.36/\x});\node[below,font=\scriptsize] at (0.8,-0.05) {antiproportional};\end{scope}\begin{scope}[xshift=4.1cm]\draw[black!15,step=0.4] (0,0) grid (1.6,1.6);\draw[-{Stealth[length=1.5mm]},line width=0.5pt] (0,0) -- (1.8,0);\draw[-{Stealth[length=1.5mm]},line width=0.5pt] (0,0) -- (0,1.8);\draw[line width=0.9pt] (0,0.5) -- (1.6,1.5);\node[below,font=\scriptsize] at (0.8,-0.05) {keins};\end{scope}\end{tikzpicture}}{\grau{a)\ Beim Aufbau für das Schulfest gilt: 2 Helfer brauchen 12 Stunden, 3 Helfer 8 Stunden, 4 Helfer 6 Stunden und 6 Helfer 4 Stunden. Welcher Zuordnungstyp ist das?\par\smallskip Schreib die Wertepaare in eine Tabelle: $x$ = Helfer, $y$ = Stunden (Bild rechts).\par Quotienten $y : x$: \ $12 : 2 = 6$, \ $8 : 3 \approx 2{,}7$. Nicht gleich, also \emph{nicht} proportional.\par Produkte $x \cdot y$: \ $2 \cdot 12 = 24$, \ $3 \cdot 8 = 24$, \ $4 \cdot 6 = 24$, \ $6 \cdot 4 = 24$. Immer 24.\par Also \textbf{antiproportional}. Am Graphen erkennst du die drei Typen wie unter der Tabelle.}}
+\par\medskip
+\gzwei{\begin{tikzpicture}\node[inner sep=0pt]{\begin{minipage}{60mm}\centering \wertetabelle[6,12,15,24]{x}{y}{2,4,5,8} \end{minipage}};\end{tikzpicture}}{%
+b)\ Hefte $x$ und Preis $y$ in €. Welcher Zuordnungstyp ist das?\par\smallskip \gkreuz{proportional}\gkreuz{antiproportional}\par \gkreuz{keins von beiden}}
+\fusshilfe{\mbox{1:~b) proportional}}
+\end{pfaufg}
+
+% L4-A: Tabelle und Graph prüfen
+\begin{pfaufg}{}{2.}{}
+\gzwei{\begin{tikzpicture}\node[inner sep=0pt]{\begin{minipage}{60mm}\centering \wertetabelle[30,15,10,6]{x}{y}{1,2,3,5} \end{minipage}};\end{tikzpicture}}{%
+Welcher Zuordnungstyp ist das?\par\smallskip \gkreuz{proportional}\gkreuz{antiproportional}\par \gkreuz{keins von beiden}}
+\fusshilfe{\mbox{2:~antiproportional}}
+\end{pfaufg}
+
+% L4-A: Tabelle und Graph prüfen
+\begin{pfaufg}{}{3.}{}
+\gzwei{\begin{tikzpicture}\node[inner sep=0pt]{\begin{minipage}{60mm}\centering \wertetabelle[5,7,9,11]{x}{y}{1,2,3,4} \end{minipage}};\end{tikzpicture}}{%
+Welcher Zuordnungstyp ist das?\par\smallskip \gkreuz{proportional}\gkreuz{antiproportional}\par \gkreuz{keins von beiden}}
+\fusshilfe{\mbox{3:~keins von beiden}}
+\end{pfaufg}
+
+% L4-A: Tabelle und Graph prüfen
+\begin{pfaufg}{}{4.}{}
+\gzwei{\begin{tikzpicture}\begin{scope}[xshift=0.0cm]\draw[black!15,step=0.4] (0,0) grid (1.6,1.6);\draw[-{Stealth[length=1.5mm]},line width=0.5pt] (0,0) -- (1.8,0);\draw[-{Stealth[length=1.5mm]},line width=0.5pt] (0,0) -- (0,1.8);\draw[line width=0.9pt] (0,0.5) -- (1.6,1.5);\node[below,font=\scriptsize] at (0.8,-0.05) {(a)};\end{scope}\begin{scope}[xshift=2.3cm]\draw[black!15,step=0.4] (0,0) grid (1.6,1.6);\draw[-{Stealth[length=1.5mm]},line width=0.5pt] (0,0) -- (1.8,0);\draw[-{Stealth[length=1.5mm]},line width=0.5pt] (0,0) -- (0,1.8);\draw[line width=0.9pt] (0,0) -- (1.6,1.4);\node[below,font=\scriptsize] at (0.8,-0.05) {(b)};\end{scope}\begin{scope}[xshift=4.6cm]\draw[black!15,step=0.4] (0,0) grid (1.6,1.6);\draw[-{Stealth[length=1.5mm]},line width=0.5pt] (0,0) -- (1.8,0);\draw[-{Stealth[length=1.5mm]},line width=0.5pt] (0,0) -- (0,1.8);\draw[line width=0.9pt,domain=0.24:1.6,samples=40] plot (\x,{0.36/\x});\node[below,font=\scriptsize] at (0.8,-0.05) {(c)};\end{scope}\end{tikzpicture}}{%
+Schreib unter jeden Graphen: proportional, antiproportional oder keins von beiden.\karo{3}}
+\fusshilfe{\mbox{4:~(a) keins \ (b) proportional \ (c) antiproportional}}
+\end{pfaufg}
+
+% L4-A: Tabelle und Graph prüfen
+\begin{pfaufg}{}{5.}{}
+Ein Fahrradverleih verlangt für 2 Stunden 9\,€, für 4 Stunden 13\,€ und für 6 Stunden 17\,€. Welcher Zuordnungstyp ist das? Kann Ole den Preis für 8 Stunden mit dem Dreisatz aus dem Preis für 2 Stunden berechnen? Begründe mit einer Rechnung.\karo{3}
+\fusshilfe{\mbox{5:~keins von beiden; kein Dreisatz}}
+\end{pfaufg}
+
+% L4-B: Am Text erkennen, dann rechnen
+\begin{pfaufg}{}{6.}{}
+\grau{a)\ (a) 4 Flaschen Wasser kosten 3{,}20\,€. Was kosten 6 Flaschen? \ (b) Ein Wasservorrat reicht für 4 Wanderer 9 Tage. Wie lange reicht er für 6 Wanderer?\par\smallskip (a) Doppelt so viele Flaschen kosten doppelt so viel: \textbf{proportional}.\par Erst durch, dann mal: \ $3{,}20 : 4 = 0{,}80$\,€ für 1 Flasche; \ $0{,}80 \cdot 6 = 4{,}80$\,€.\par (b) Doppelt so viele Wanderer: Der Vorrat reicht nur halb so lange: \textbf{antiproportional}.\par Erst mal, dann durch: \ $4 \cdot 9 = 36$ Tage für 1 Wanderer; \ $36 : 6 = 6$ Tage.}
+\par\medskip
+b)\ 5 Brötchen kosten 2\,€. Was kosten 8 Brötchen?\karo{3}
+\fusshilfe{\mbox{6:~b) 3{,}20\,€}}
+\end{pfaufg}
+
+% L4-B: Am Text erkennen, dann rechnen
+\begin{pfaufg}{}{7.}{}
+3 gleiche Pumpen leeren einen Keller in 8 Stunden. Wie lange brauchen 4 solche Pumpen?\karo{3}
+\fusshilfe{\mbox{7:~6 Stunden}}
+\end{pfaufg}
+
+% L4-B: Am Text erkennen, dann rechnen
+\begin{pfaufg}{}{8.}{}
+Mit 12\,km/h braucht Lea für ihren Schulweg 20 Minuten. Wie lange braucht sie mit 15\,km/h?\karo{3}
+\fusshilfe{\mbox{8:~16 Minuten}}
+\end{pfaufg}
+
+% L4-B: Am Text erkennen, dann rechnen
+\begin{pfaufg}{}{9.}{}
+Ein Läufer schafft 4\,km in 22 Minuten. Wie lange braucht er bei gleichem Tempo für 6\,km?\karo{3}
+\fusshilfe{\mbox{9:~33 Minuten}}
+\end{pfaufg}
+
+% L4-B: Am Text erkennen, dann rechnen
+\begin{pfaufg}{}{10.}{}
+Die Miete für ein Ferienhaus wird gleich aufgeteilt. Bei 6 Freunden zahlt jeder 140\,€. Nun kommen noch 2 Freunde mit. Lea hat 100\,€ gespart. Reicht das für ihren Anteil?\karo{3}
+\fusshilfe{\mbox{10:~Nein, ihr Anteil ist 105\,€; es fehlen 5\,€.}}
+\end{pfaufg}
+
+% L4-C: Mit der Rate rechnen: Kosten, Tempo, Dauer
+\begin{pfaufg}{}{11.}{}
+\grau{a)\ (a) Ein Wasserkocher braucht im Jahr 75\,kWh Strom. 1\,kWh kostet 36\,ct. Wie viel Euro kostet das? \ (b) Eine Rolltreppe ist 45\,m lang und fährt 0{,}5\,m/s. Wie viele Minuten dauert die Fahrt?\par\smallskip (a) Kosten = Menge $\cdot$ Preis je kWh: \ $75 \cdot 36 = 2700$\,ct.\par 100\,ct sind 1\,€: \ $2700 : 100 = 27$. Das kostet 27\,€.\par (b) Zeit = Weg $:$ Geschwindigkeit: \ $45 : 0{,}5 = 90$\,s.\par 60\,s sind 1\,min: \ $90 : 60 = 1{,}5$. Die Fahrt dauert 1{,}5\,min.}
+\par\medskip
+b)\ Eine LED-Lampe braucht im Jahr 12\,kWh. 1\,kWh kostet 35\,ct. Wie viel Euro kostet der Strom im Jahr?\karo{3}
+\fusshilfe{\mbox{11:~b) 4{,}20\,€}}
+\end{pfaufg}
+
+% L4-C: Mit der Rate rechnen: Kosten, Tempo, Dauer
+\begin{pfaufg}{}{12.}{}
+Ein Skilift ist 900\,m lang und fährt 2{,}5\,m/s. Wie viele Minuten dauert die Fahrt?\karo{3}
+\fusshilfe{\mbox{12:~6 Minuten}}
+\end{pfaufg}
+
+% L4-C: Mit der Rate rechnen: Kosten, Tempo, Dauer
+\begin{pfaufg}{}{13.}{}
+Mila fährt mit dem Rad 4\,km in 15 Minuten. Wie schnell fährt sie in km/h?\karo{3}
+\fusshilfe{\mbox{13:~16\,km/h}}
+\end{pfaufg}
+
+% L4-C: Mit der Rate rechnen: Kosten, Tempo, Dauer
+\begin{pfaufg}{}{14.}{}
+Ein Bus fährt 18\,km mit durchschnittlich 24\,km/h. Wie viele Minuten dauert die Fahrt?\karo{3}
+\fusshilfe{\mbox{14:~45 Minuten}}
+\end{pfaufg}
+
+% L4-C: Mit der Rate rechnen: Kosten, Tempo, Dauer
+\begin{pfaufg}{}{15.}{}
+Familie Berg fährt im Jahr 12\,000\,km. Ihr Auto braucht 6\,l Benzin auf 100\,km, ein neues Auto nur 4{,}5\,l. 1\,l kostet 1{,}80\,€. Der Händler sagt: „Mit dem neuen Auto sparen Sie über 300\,€ im Jahr.“ Rechne nach und kreuze an.\par\smallskip \gkreuz{Das stimmt.}\gkreuz{Das stimmt nicht.}
+\fusshilfe{\mbox{15:~Das stimmt: 324\,€ gespart.}}
+\end{pfaufg}
+
+% L4-T: Probetest
+\begin{pfaufg}{}{16.}{}
+\gzwei{\begin{tikzpicture}\node[inner sep=0pt]{\begin{minipage}{60mm}\centering \wertetabelle[7,9,13]{x}{y}{10,20,40} \end{minipage}};\end{tikzpicture}}{%
+Ein Handytarif: Minuten $x$ und Preis $y$ in €. Welcher Zuordnungstyp ist das?\par\smallskip \gkreuz{proportional}\gkreuz{antiproportional}\par \gkreuz{keins von beiden}}
+\fusshilfe{\mbox{16:~keins von beiden}}
+\end{pfaufg}
+
+% L4-T: Probetest
+\begin{pfaufg}{}{17.}{}
+Ein Drucker druckt 45 Seiten in 3 Minuten. Wie lange braucht er für 120 Seiten?\karo{3}
+\fusshilfe{\mbox{17:~8 Minuten}}
+\end{pfaufg}
+
+% L4-T: Probetest
+\begin{pfaufg}{}{18.}{}
+8 Maler streichen eine Schule in 15 Tagen. Wie viele Tage brauchen 12 Maler?\karo{3}
+\fusshilfe{\mbox{18:~10 Tage}}
+\end{pfaufg}
+
+% L4-T: Probetest
+\begin{pfaufg}{}{19.}{}
+Ein Planschbecken fasst 5\,400\,l. Ein Schlauch füllt 40\,l je Minute. Wie lange dauert das Füllen in Stunden und Minuten?\karo{3}
+\fusshilfe{\mbox{19:~2\,h 15\,min}}
+\end{pfaufg}
+
+% L4-T: Probetest
+\begin{pfaufg}{}{20.}{}
+Ein Verein fährt zum Spiel. Ein Bus kostet 600\,€, die auf alle Mitfahrenden gleich verteilt werden. Mit der Bahn zahlt jeder 22\,€. Es fahren 25 Personen mit. Was ist für jeden günstiger? Ändert sich das, wenn 30 Personen mitfahren? Begründe mit einer Rechnung.\karo{3}
+\fusshilfe{\mbox{20:~25 Personen}}
+\end{pfaufg}
+
+\par\vfill\noindent{\footnotesize Vorher: Proportionale und antiproportionale Zuordnungen\quad\textbullet\quad Weiter: Proportionale Funktion\par}
+\end{document}

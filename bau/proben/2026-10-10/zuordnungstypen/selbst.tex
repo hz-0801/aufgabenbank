@@ -1,0 +1,132 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% gesetzt von werkzeuge/setzer.py (Sorte selbst) aus dem Lernweg FA5
+% und den Bankzeilen; Muster bau/proben/2026-10-09/hypotenuse-muster.
+\usepackage{enumitem}
+\usepackage{adjustbox,varwidth}
+\newgeometry{a4paper,margin=18mm,top=15mm,bottom=20mm,footskip=9mm}
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\footnotesize\color{mbgrau}FA5 \textperiodcentered{} Zuordnungstypen erkennen und anwenden}
+\fancyfoot[R]{\footnotesize\color{mbgrau}\thepage}
+\setlength{\parskip}{3pt}
+\renewcommand{\kreuz}[1]{\mbox{$\square$\ #1}\quad}
+\newcommand{\kreuzl}[1]{\par\hangindent1.4em\hangafter1\noindent$\square$\ #1}
+\newcommand{\aufg}[3]{\par\noindent\makebox[0pt][r]{#3}\begin{minipage}[t]{\linewidth}#1\end{minipage}\par}
+\newcommand{\aufgg}[4]{\par\noindent\makebox[0pt][r]{#4}\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}#1\end{minipage}\hfill
+  \begin{minipage}[t]{0.37\linewidth}\vspace{0pt}\centering #2\end{minipage}\par}
+\newcommand{\nr}[1]{\makebox[7mm][l]{\textbf{#1}}}
+\newcommand{\lsg}[3]{\par\noindent\begin{minipage}[t]{9mm}\textbf{#1}\end{minipage}%
+  \begin{minipage}[t]{52mm}\raggedright\bfseries\boldmath #2\end{minipage}\hspace{3mm}%
+  \begin{minipage}[t]{\dimexpr\linewidth-64mm\relax}\raggedright\small #3\end{minipage}\par\vspace{4pt}}
+\newlength{\kr}
+\makeatletter
+\newcommand{\karomerk}[2]{\protected@write\@auxout{}{\string\karoseite{#1}{#2}{\thepage}}}
+\newcommand{\karoseite}[3]{\expandafter\xdef\csname karo@#1@#2\endcsname{#3}}
+\newcommand{\karohinweis}[3]{\karomerk{h}{#1}\ifcsname karo@k@#1\endcsname
+  \ifnum\csname karo@k@#1\endcsname=0\csname karo@h@#1\endcsname\relax#2\else#3\fi
+  \else#3\fi}
+\makeatother
+\begin{document}
+
+\noindent{\LARGE\bfseries Zuordnungstypen erkennen und anwenden}\par\smallskip
+\noindent{\small\color{mbgrau}Selbstlernheft Klasse 7 \textperiodcentered{} mit Lösungsheft \textperiodcentered{} Kennung FA5}\par\medskip
+\noindent\textbf{So nutzt du das Heft:} Lies im Abschnitt das Beispiel. Rechne dann die Aufgaben der Reihe nach und vergleiche jede sofort mit dem Lösungsheft. Kreuze „kann ich“ an, wenn du die letzte Aufgabe (\emph{Ziel}) allein schaffst.\par
+\noindent Mehr Aufgaben zu einem Abschnitt: Kennung deinem Nachhilfelehrer schicken (z.\,B. „FA5 mehr B“).\par\medskip
+{\arrayrulecolor{mbgrau}\renewcommand{\arraystretch}{1.3}
+\noindent\begin{tabular}{|>{\bfseries}p{10mm}|p{112mm}|>{\raggedleft\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{14mm}|}\hline
+\rowcolor{black!8} & \textbf{Abschnitt} & \textbf{Seite} & \textbf{kann ich}\\\hline
+A & Tabelle und Graph prüfen & \pageref{s:A} & $\square$\\\hline
+B & Am Text erkennen, dann rechnen & \pageref{s:B} & $\square$\\\hline
+C & Mit der Rate rechnen: Kosten, Tempo, Dauer & \pageref{s:C} & $\square$\\\hline
+T & Probetest & \pageref{s:T} & $\square$\\\hline
+\end{tabular}}\par\bigskip
+
+\begin{tcolorbox}[colback=mbkasten,colframe=mbgrau,boxrule=0.5pt,arc=1mm,left=3mm,right=3mm,top=2mm,bottom=2mm,title={\bfseries Formel auf einen Blick},coltitle=black,colbacktitle=black!10]
+{\Large {\normalsize\renewcommand{\arraystretch}{1.25}\begin{tabular}{@{}>{\bfseries}l@{\quad}l@{}}proportional & $y : x$ immer gleich; doppelt $\to$ doppelt; Graph: Gerade durch $(0|0)$\\ antiproportional & $x \cdot y$ immer gleich; doppelt $\to$ halb; Graph: fallende Kurve\\ keins von beiden & weder noch (z.\,B. mit Grundgebühr): kein Dreisatz\\ Rate & Kosten $=$ Menge $\cdot$ Preis je Einheit\\  & Zeit $=$ Weg $:$ Geschwindigkeit \quad (Dauer $=$ Menge $:$ Rate)\\ Einheiten & 1\,h $=$ 60\,min \quad 1\,min $=$ 60\,s \quad 1\,€ $=$ 100\,ct \quad 1\,km $=$ 1000\,m\end{tabular}}}\par\medskip
+\textbf{So gehst du vor}\par
+\nr{1}Frag dich: Was passiert, wenn sich der eine Wert verdoppelt?\par
+\nr{2}Mit Zahlen prüfen: Quotienten $y : x$ oder Produkte $x \cdot y$\par
+\nr{3}Rechnen: proportional erst durch, dann mal – antiproportional erst mal, dann durch\par
+\nr{4}Einheiten angleichen, Antwort mit Einheit\par
+\medskip
+\end{tcolorbox}
+\medskip\noindent\textbf{Typische Fehler – so nicht}\par\smallskip
+\noindent\nr{$\times$}Mehr Kilometer, also weniger Minuten? Nein: Bei gleichem Tempo dauert der doppelte Weg doppelt so lange (proportional).\par
+\noindent\nr{$\times$}Dreisatz trotz Grundgebühr: Kosten 4\,km 12\,€, dann kosten 8\,km nicht 24\,€.\par
+\noindent\nr{$\times$}Mal statt geteilt: 900\,m mit 2{,}5\,m/s dauern $900 : 2{,}5$\,s, nicht $900 \cdot 2{,}5$.\par
+\noindent\nr{$\times$}Einheit vergessen: 2700\,ct sind 27\,€, nicht 2700\,€.\par
+\clearpage\label{s:A}\noindent\colorbox{black!12}{\makebox[10mm]{\Large\bfseries\strut A}}\hspace{3mm}{\Large\bfseries Tabelle und Graph prüfen}\par\smallskip
+\noindent Rechne in jeder Spalte $y : x$ und $x \cdot y$. Ist der Quotient immer gleich, ist die Zuordnung \textbf{proportional}; ist das Produkt immer gleich, \textbf{antiproportional}; sonst \textbf{keins von beiden}.\par\medskip
+\noindent\textbf{Formel}\par\nopagebreak\noindent\hspace*{4mm}\begin{minipage}{\dimexpr\linewidth-4mm\relax}Graph: Gerade durch $(0|0)$ $\to$ proportional; fallende Kurve $\to$ antiproportional; jeder andere Graph $\to$ keins von beiden\end{minipage}\par\medskip
+\noindent\textbf{Beispiel}\quad Beim Aufbau für das Schulfest gilt: 2 Helfer brauchen 12 Stunden, 3 Helfer 8 Stunden, 4 Helfer 6 Stunden und 6 Helfer 4 Stunden. Welcher Zuordnungstyp ist das?\par\smallskip
+\noindent\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{1}}Schreib die Wertepaare in eine Tabelle: $x$ = Helfer, $y$ = Stunden (Bild rechts).\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{2}}Quotienten $y : x$: \ $12 : 2 = 6$, \ $8 : 3 \approx 2{,}7$. Nicht gleich, also \emph{nicht} proportional.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{3}}Produkte $x \cdot y$: \ $2 \cdot 12 = 24$, \ $3 \cdot 8 = 24$, \ $4 \cdot 6 = 24$, \ $6 \cdot 4 = 24$. Immer 24.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{4}}Also \textbf{antiproportional}. Am Graphen erkennst du die drei Typen wie unter der Tabelle.\par\smallskip\end{minipage}\hfill
+\begin{minipage}[t]{0.37\linewidth}\vspace{0pt}\centering \begin{tikzpicture}[scale=0.85,transform shape]\node[inner sep=0pt] at (2.9,3.0) {\begin{minipage}{52mm}\centering \setlength{\mbzell}{0.8cm}\wertetabelle[12,8,6,4]{\text{Helfer}}{\text{Stunden}}{2,3,4,6} \end{minipage}};\begin{scope}[xshift=0.0cm]\draw[black!15,step=0.4] (0,0) grid (1.6,1.6);\draw[-{Stealth[length=1.5mm]},line width=0.5pt] (0,0) -- (1.8,0);\draw[-{Stealth[length=1.5mm]},line width=0.5pt] (0,0) -- (0,1.8);\draw[line width=0.9pt] (0,0) -- (1.6,1.4);\node[below,font=\scriptsize] at (0.8,-0.05) {proportional};\end{scope}\begin{scope}[xshift=2.05cm]\draw[black!15,step=0.4] (0,0) grid (1.6,1.6);\draw[-{Stealth[length=1.5mm]},line width=0.5pt] (0,0) -- (1.8,0);\draw[-{Stealth[length=1.5mm]},line width=0.5pt] (0,0) -- (0,1.8);\draw[line width=0.9pt,domain=0.24:1.6,samples=40] plot (\x,{0.36/\x});\node[below,font=\scriptsize] at (0.8,-0.05) {antiproportional};\end{scope}\begin{scope}[xshift=4.1cm]\draw[black!15,step=0.4] (0,0) grid (1.6,1.6);\draw[-{Stealth[length=1.5mm]},line width=0.5pt] (0,0) -- (1.8,0);\draw[-{Stealth[length=1.5mm]},line width=0.5pt] (0,0) -- (0,1.8);\draw[line width=0.9pt] (0,0.5) -- (1.6,1.5);\node[below,font=\scriptsize] at (0.8,-0.05) {keins};\end{scope}\end{tikzpicture}\end{minipage}\par\medskip
+\noindent\textbf{Aufgaben}\hspace{1em}{\small\color{mbgrau}\karohinweis{A}{Rechne unten im Karo.}{Rechne auf einem extra Blatt.} Vergleiche jede Aufgabe gleich mit dem Lösungsheft.}\par\smallskip
+\aufgg{\hangindent7mm\hangafter1\nr{1.}Hefte $x$ und Preis $y$ in €. Welcher Zuordnungstyp ist das?\par\smallskip\leftskip7mm \kreuz{proportional}\ \kreuz{antiproportional}\par\kreuz{keins von beiden}}{\begin{tikzpicture}\node[inner sep=0pt]{\begin{minipage}{60mm}\centering \wertetabelle[6,12,15,24]{x}{y}{2,4,5,8} \end{minipage}};\end{tikzpicture}}{}{}
+\medskip
+\aufgg{\hangindent7mm\hangafter1\nr{2.}Welcher Zuordnungstyp ist das?\par\smallskip\leftskip7mm \kreuz{proportional}\ \kreuz{antiproportional}\par\kreuz{keins von beiden}}{\begin{tikzpicture}\node[inner sep=0pt]{\begin{minipage}{60mm}\centering \wertetabelle[30,15,10,6]{x}{y}{1,2,3,5} \end{minipage}};\end{tikzpicture}}{}{}
+\medskip
+\aufgg{\hangindent7mm\hangafter1\nr{3.}Welcher Zuordnungstyp ist das?\par\smallskip\leftskip7mm \kreuz{proportional}\ \kreuz{antiproportional}\par\kreuz{keins von beiden}}{\begin{tikzpicture}\node[inner sep=0pt]{\begin{minipage}{60mm}\centering \wertetabelle[5,7,9,11]{x}{y}{1,2,3,4} \end{minipage}};\end{tikzpicture}}{}{}
+\medskip
+\aufgg{\hangindent7mm\hangafter1\nr{4.}Schreib unter jeden Graphen: proportional, antiproportional oder keins von beiden.}{\begin{tikzpicture}\begin{scope}[xshift=0.0cm]\draw[black!15,step=0.4] (0,0) grid (1.6,1.6);\draw[-{Stealth[length=1.5mm]},line width=0.5pt] (0,0) -- (1.8,0);\draw[-{Stealth[length=1.5mm]},line width=0.5pt] (0,0) -- (0,1.8);\draw[line width=0.9pt] (0,0.5) -- (1.6,1.5);\node[below,font=\scriptsize] at (0.8,-0.05) {(a)};\end{scope}\begin{scope}[xshift=2.3cm]\draw[black!15,step=0.4] (0,0) grid (1.6,1.6);\draw[-{Stealth[length=1.5mm]},line width=0.5pt] (0,0) -- (1.8,0);\draw[-{Stealth[length=1.5mm]},line width=0.5pt] (0,0) -- (0,1.8);\draw[line width=0.9pt] (0,0) -- (1.6,1.4);\node[below,font=\scriptsize] at (0.8,-0.05) {(b)};\end{scope}\begin{scope}[xshift=4.6cm]\draw[black!15,step=0.4] (0,0) grid (1.6,1.6);\draw[-{Stealth[length=1.5mm]},line width=0.5pt] (0,0) -- (1.8,0);\draw[-{Stealth[length=1.5mm]},line width=0.5pt] (0,0) -- (0,1.8);\draw[line width=0.9pt,domain=0.24:1.6,samples=40] plot (\x,{0.36/\x});\node[below,font=\scriptsize] at (0.8,-0.05) {(c)};\end{scope}\end{tikzpicture}}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{5.}Ein Fahrradverleih verlangt für 2 Stunden 9\,€, für 4 Stunden 13\,€ und für 6 Stunden 17\,€. Welcher Zuordnungstyp ist das? Kann Ole den Preis für 8 Stunden mit dem Dreisatz aus dem Preis für 2 Stunden berechnen? Begründe mit einer Rechnung.}{}{{\scriptsize\color{mbgrau}Ziel\hspace{2mm}}}
+\medskip
+\par\vspace{3mm}\setlength{\kr}{\dimexpr\pagegoal-\pagetotal-10mm\relax}%
+\ifdim\kr>12mm\karomerk{k}{A}\noindent{\scriptsize\color{mbgrau}Platz zum Rechnen}\par\nointerlineskip\vspace{1mm}\noindent
+\begin{tikzpicture}\clip (0,0) rectangle ({\linewidth-0.5mm},\kr);\draw[black!16,line width=0.3pt,step=5mm] (0,0) grid (\linewidth,\kr);\end{tikzpicture}\fi\par
+\clearpage\label{s:B}\noindent\colorbox{black!12}{\makebox[10mm]{\Large\bfseries\strut B}}\hspace{3mm}{\Large\bfseries Am Text erkennen, dann rechnen}\par\smallskip
+\noindent Ohne Tabelle fragst du: Was passiert, wenn sich der eine Wert verdoppelt? Doppelt $\to$ doppelt heißt proportional, doppelt $\to$ halb heißt antiproportional. Erst dann rechnest du.\par\medskip
+\noindent\textbf{Formel}\par\nopagebreak\noindent\hspace*{4mm}\begin{minipage}{\dimexpr\linewidth-4mm\relax}proportional: erst durch, dann mal \qquad antiproportional: erst mal (Produkt), dann durch\end{minipage}\par\medskip
+\noindent\textbf{Beispiel}\quad (a) 4 Flaschen Wasser kosten 3{,}20\,€. Was kosten 6 Flaschen? \ (b) Ein Wasservorrat reicht für 4 Wanderer 9 Tage. Wie lange reicht er für 6 Wanderer?\par\smallskip
+\noindent\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{1}}(a) Doppelt so viele Flaschen kosten doppelt so viel: \textbf{proportional}.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{2}}Erst durch, dann mal: \ $3{,}20 : 4 = 0{,}80$\,€ für 1 Flasche; \ $0{,}80 \cdot 6 = 4{,}80$\,€.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{3}}(b) Doppelt so viele Wanderer: Der Vorrat reicht nur halb so lange: \textbf{antiproportional}.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{4}}Erst mal, dann durch: \ $4 \cdot 9 = 36$ Tage für 1 Wanderer; \ $36 : 6 = 6$ Tage.\par\smallskip\par\medskip
+\noindent\textbf{Aufgaben}\hspace{1em}{\small\color{mbgrau}\karohinweis{B}{Rechne unten im Karo.}{Rechne auf einem extra Blatt.} Vergleiche jede Aufgabe gleich mit dem Lösungsheft.}\par\smallskip
+\aufg{\hangindent7mm\hangafter1\nr{1.}5 Brötchen kosten 2\,€. Was kosten 8 Brötchen?}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{2.}3 gleiche Pumpen leeren einen Keller in 8 Stunden. Wie lange brauchen 4 solche Pumpen?}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{3.}Mit 12\,km/h braucht Lea für ihren Schulweg 20 Minuten. Wie lange braucht sie mit 15\,km/h?}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{4.}Ein Läufer schafft 4\,km in 22 Minuten. Wie lange braucht er bei gleichem Tempo für 6\,km?}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{5.}Die Miete für ein Ferienhaus wird gleich aufgeteilt. Bei 6 Freunden zahlt jeder 140\,€. Nun kommen noch 2 Freunde mit. Lea hat 100\,€ gespart. Reicht das für ihren Anteil?}{}{{\scriptsize\color{mbgrau}Ziel\hspace{2mm}}}
+\medskip
+\par\vspace{3mm}\setlength{\kr}{\dimexpr\pagegoal-\pagetotal-10mm\relax}%
+\ifdim\kr>12mm\karomerk{k}{B}\noindent{\scriptsize\color{mbgrau}Platz zum Rechnen}\par\nointerlineskip\vspace{1mm}\noindent
+\begin{tikzpicture}\clip (0,0) rectangle ({\linewidth-0.5mm},\kr);\draw[black!16,line width=0.3pt,step=5mm] (0,0) grid (\linewidth,\kr);\end{tikzpicture}\fi\par
+\clearpage\label{s:C}\noindent\colorbox{black!12}{\makebox[10mm]{\Large\bfseries\strut C}}\hspace{3mm}{\Large\bfseries Mit der Rate rechnen: Kosten, Tempo, Dauer}\par\smallskip
+\noindent Eine Rate ist ein Wert je Einheit: Preis je kWh, Meter je Sekunde, Liter je Minute. Damit rechnest du in einem Schritt. Fragt die Aufgabe nach einer anderen Einheit, rechnest du am Ende um.\par\medskip
+\noindent\textbf{Formel}\par\nopagebreak\noindent\hspace*{4mm}\begin{minipage}{\dimexpr\linewidth-4mm\relax}Kosten $=$ Menge $\cdot$ Preis je Einheit \qquad Zeit $=$ Weg $:$ Geschwindigkeit\par km/h heißt: km in 1 Stunde (60\,min).\end{minipage}\par\medskip
+\noindent\textbf{Beispiel}\quad (a) Ein Wasserkocher braucht im Jahr 75\,kWh Strom. 1\,kWh kostet 36\,ct. Wie viel Euro kostet das? \ (b) Eine Rolltreppe ist 45\,m lang und fährt 0{,}5\,m/s. Wie viele Minuten dauert die Fahrt?\par\smallskip
+\noindent\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{1}}(a) Kosten = Menge $\cdot$ Preis je kWh: \ $75 \cdot 36 = 2700$\,ct.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{2}}100\,ct sind 1\,€: \ $2700 : 100 = 27$. Das kostet 27\,€.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{3}}(b) Zeit = Weg $:$ Geschwindigkeit: \ $45 : 0{,}5 = 90$\,s.\par\smallskip\par\noindent\hangindent6mm\hangafter1\makebox[6mm][l]{\textbf{4}}60\,s sind 1\,min: \ $90 : 60 = 1{,}5$. Die Fahrt dauert 1{,}5\,min.\par\smallskip\par\medskip
+\noindent\textbf{Aufgaben}\hspace{1em}{\small\color{mbgrau}\karohinweis{C}{Rechne unten im Karo.}{Rechne auf einem extra Blatt.} Vergleiche jede Aufgabe gleich mit dem Lösungsheft.}\par\smallskip
+\aufg{\hangindent7mm\hangafter1\nr{1.}Eine LED-Lampe braucht im Jahr 12\,kWh. 1\,kWh kostet 35\,ct. Wie viel Euro kostet der Strom im Jahr?}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{2.}Ein Skilift ist 900\,m lang und fährt 2{,}5\,m/s. Wie viele Minuten dauert die Fahrt?}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{3.}Mila fährt mit dem Rad 4\,km in 15 Minuten. Wie schnell fährt sie in km/h?}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{4.}Ein Bus fährt 18\,km mit durchschnittlich 24\,km/h. Wie viele Minuten dauert die Fahrt?}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{5.}Familie Berg fährt im Jahr 12\,000\,km. Ihr Auto braucht 6\,l Benzin auf 100\,km, ein neues Auto nur 4{,}5\,l. 1\,l kostet 1{,}80\,€. Der Händler sagt: „Mit dem neuen Auto sparen Sie über 300\,€ im Jahr.“ Rechne nach und kreuze an.\par\smallskip\leftskip7mm \kreuz{Das stimmt.}\ \kreuz{Das stimmt nicht.}}{}{{\scriptsize\color{mbgrau}Ziel\hspace{2mm}}}
+\medskip
+\par\vspace{3mm}\setlength{\kr}{\dimexpr\pagegoal-\pagetotal-10mm\relax}%
+\ifdim\kr>12mm\karomerk{k}{C}\noindent{\scriptsize\color{mbgrau}Platz zum Rechnen}\par\nointerlineskip\vspace{1mm}\noindent
+\begin{tikzpicture}\clip (0,0) rectangle ({\linewidth-0.5mm},\kr);\draw[black!16,line width=0.3pt,step=5mm] (0,0) grid (\linewidth,\kr);\end{tikzpicture}\fi\par
+\clearpage\label{s:T}\noindent\colorbox{black!12}{\makebox[10mm]{\Large\bfseries\strut T}}\hspace{3mm}{\Large\bfseries Probetest}\par\smallskip
+\noindent Gemischt wie in der Prüfung, ohne Beispiel. Taschenrechner erlaubt. Etwa 20 Minuten.\par\medskip
+\noindent\textbf{Aufgaben}\hspace{1em}{\small\color{mbgrau}\karohinweis{T}{Rechne unten im Karo.}{Rechne auf einem extra Blatt.} Vergleiche jede Aufgabe gleich mit dem Lösungsheft.}\par\smallskip
+\aufgg{\hangindent7mm\hangafter1\nr{1.}Ein Handytarif: Minuten $x$ und Preis $y$ in €. Welcher Zuordnungstyp ist das?\par\smallskip\leftskip7mm \kreuz{proportional}\ \kreuz{antiproportional}\par\kreuz{keins von beiden}}{\begin{tikzpicture}\node[inner sep=0pt]{\begin{minipage}{60mm}\centering \wertetabelle[7,9,13]{x}{y}{10,20,40} \end{minipage}};\end{tikzpicture}}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{2.}Ein Drucker druckt 45 Seiten in 3 Minuten. Wie lange braucht er für 120 Seiten?}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{3.}8 Maler streichen eine Schule in 15 Tagen. Wie viele Tage brauchen 12 Maler?}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{4.}Ein Planschbecken fasst 5\,400\,l. Ein Schlauch füllt 40\,l je Minute. Wie lange dauert das Füllen in Stunden und Minuten?}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{5.}Ein Verein fährt zum Spiel. Ein Bus kostet 600\,€, die auf alle Mitfahrenden gleich verteilt werden. Mit der Bahn zahlt jeder 22\,€. Es fahren 25 Personen mit. Was ist für jeden günstiger? Ändert sich das, wenn 30 Personen mitfahren? Begründe mit einer Rechnung.}{}{{\scriptsize\color{mbgrau}Ziel\hspace{2mm}}}
+\medskip
+\par\vspace{3mm}\setlength{\kr}{\dimexpr\pagegoal-\pagetotal-10mm\relax}%
+\ifdim\kr>12mm\karomerk{k}{T}\noindent{\scriptsize\color{mbgrau}Platz zum Rechnen}\par\nointerlineskip\vspace{1mm}\noindent
+\begin{tikzpicture}\clip (0,0) rectangle ({\linewidth-0.5mm},\kr);\draw[black!16,line width=0.3pt,step=5mm] (0,0) grid (\linewidth,\kr);\end{tikzpicture}\fi\par
+\end{document}

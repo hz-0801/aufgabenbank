@@ -1,0 +1,57 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% gesetzt von werkzeuge/setzer.py (Sorte selbst) aus dem Lernweg FA5
+% und den Bankzeilen; Muster bau/proben/2026-10-09/hypotenuse-muster.
+\usepackage{enumitem}
+\usepackage{adjustbox,varwidth}
+\newgeometry{a4paper,margin=18mm,top=15mm,bottom=20mm,footskip=9mm}
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\footnotesize\color{mbgrau}FA5 \textperiodcentered{} Lösungen \textperiodcentered{} Zuordnungstypen erkennen und anwenden}
+\fancyfoot[R]{\footnotesize\color{mbgrau}\thepage}
+\setlength{\parskip}{3pt}
+\renewcommand{\kreuz}[1]{\mbox{$\square$\ #1}\quad}
+\newcommand{\kreuzl}[1]{\par\hangindent1.4em\hangafter1\noindent$\square$\ #1}
+\newcommand{\aufg}[3]{\par\noindent\makebox[0pt][r]{#3}\begin{minipage}[t]{\linewidth}#1\end{minipage}\par}
+\newcommand{\aufgg}[4]{\par\noindent\makebox[0pt][r]{#4}\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}#1\end{minipage}\hfill
+  \begin{minipage}[t]{0.37\linewidth}\vspace{0pt}\centering #2\end{minipage}\par}
+\newcommand{\nr}[1]{\makebox[7mm][l]{\textbf{#1}}}
+\newcommand{\lsg}[3]{\par\noindent\begin{minipage}[t]{9mm}\textbf{#1}\end{minipage}%
+  \begin{minipage}[t]{52mm}\raggedright\bfseries\boldmath #2\end{minipage}\hspace{3mm}%
+  \begin{minipage}[t]{\dimexpr\linewidth-64mm\relax}\raggedright\small #3\end{minipage}\par\vspace{4pt}}
+\newlength{\kr}
+\makeatletter
+\newcommand{\karomerk}[2]{\protected@write\@auxout{}{\string\karoseite{#1}{#2}{\thepage}}}
+\newcommand{\karoseite}[3]{\expandafter\xdef\csname karo@#1@#2\endcsname{#3}}
+\newcommand{\karohinweis}[3]{\karomerk{h}{#1}\ifcsname karo@k@#1\endcsname
+  \ifnum\csname karo@k@#1\endcsname=0\csname karo@h@#1\endcsname\relax#2\else#3\fi
+  \else#3\fi}
+\makeatother
+\begin{document}
+
+\noindent{\Large\bfseries Lösungen}\hspace{1em}{\color{mbgrau}Zuordnungstypen erkennen und anwenden}\par\smallskip
+\noindent{\small Links das Ergebnis, rechts der Weg in kurzen Schritten. Stimmt dein Ergebnis nicht, such den ersten Schritt, der anders ist.}\par
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut A}}\hspace{2mm}{\bfseries Tabelle und Graph prüfen}\par\vspace{4pt}
+\lsg{1.}{proportional}{$6 : 2 = 12 : 4 = 15 : 5 = 24 : 8 = 3$}
+\lsg{2.}{antiproportional}{Quotienten $30$, $7{,}5$, … nicht gleich; Produkte $1 \cdot 30 = 2 \cdot 15 = 3 \cdot 10 = 5 \cdot 6 = 30$}
+\lsg{3.}{keins von beiden}{Quotienten $5 : 1 = 5$, $7 : 2 = 3{,}5$; Produkte $1 \cdot 5 = 5$, $2 \cdot 7 = 14$; beide nicht gleich}
+\lsg{4.}{(a) keins \ (b) proportional \ (c) antiproportional}{(a) Gerade, aber nicht durch den Ursprung; (b) Gerade durch den Ursprung; (c) fallende Kurve}
+\lsg{5.}{keins von beiden; kein Dreisatz}{Keins von beiden; Quotienten $9 : 2 = 4{,}5$, $13 : 4 = 3{,}25$ – nicht gleich; Produkte $2 \cdot 9 = 18$, $4 \cdot 13 = 52$ – nicht gleich. Also kein Dreisatz (der Verleih nimmt eine Grundgebühr von 5\,€ und 2\,€ je Stunde).}
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut B}}\hspace{2mm}{\bfseries Am Text erkennen, dann rechnen}\par\vspace{4pt}
+\lsg{1.}{3{,}20\,€}{proportional: $2 : 5 = 0{,}40$; $0{,}40 \cdot 8 = 3{,}20$\,€}
+\lsg{2.}{6 Stunden}{antiproportional: $3 \cdot 8 = 24$; $24 : 4 = 6$\,h}
+\lsg{3.}{16 Minuten}{antiproportional (doppelt so schnell, halb so lange): $12 \cdot 20 = 240$; $240 : 15 = 16$\,min}
+\lsg{4.}{33 Minuten}{proportional (doppelt so weit, doppelt so lange): $22 : 4 = 5{,}5$; $5{,}5 \cdot 6 = 33$\,min}
+\lsg{5.}{Nein, ihr Anteil ist 105\,€; es fehlen 5\,€.}{Nein; antiproportional: $6 \cdot 140 = 840$; $840 : 8 = 105$\,€; $105 - 100 = 5$\,€ fehlen.}
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut C}}\hspace{2mm}{\bfseries Mit der Rate rechnen: Kosten, Tempo, Dauer}\par\vspace{4pt}
+\lsg{1.}{4{,}20\,€}{$12 \cdot 35 = 420$\,ct $= 4{,}20$\,€}
+\lsg{2.}{6 Minuten}{$900 : 2{,}5 = 360$\,s; $360 : 60 = 6$\,min}
+\lsg{3.}{16\,km/h}{$15$\,min $\cdot 4 = 60$\,min; $4$\,km $\cdot 4 = 16$\,km in 1 Stunde}
+\lsg{4.}{45 Minuten}{$18 : 24 = 0{,}75$\,h; $0{,}75 \cdot 60 = 45$\,min}
+\lsg{5.}{Das stimmt: 324\,€ gespart.}{$12\,000 : 100 = 120$; $120 \cdot 6 = 720$\,l; $120 \cdot 4{,}5 = 540$\,l; $720 - 540 = 180$\,l; $180 \cdot 1{,}80 = 324$\,€ $> 300$\,€}
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut T}}\hspace{2mm}{\bfseries Probetest}\par\vspace{4pt}
+\lsg{1.}{keins von beiden}{Quotienten $0{,}7$, $0{,}45$; Produkte $70$, $180$; beide nicht gleich}
+\lsg{2.}{8 Minuten}{proportional: $45 : 3 = 15$ Seiten je Minute; $120 : 15 = 8$\,min}
+\lsg{3.}{10 Tage}{antiproportional: $8 \cdot 15 = 120$; $120 : 12 = 10$ Tage}
+\lsg{4.}{2\,h 15\,min}{$5400 : 40 = 135$\,min; $135 - 120 = 15$, also 2\,h 15\,min}
+\lsg{5.}{25 Personen: Bahn (Bus 24\,€); 30 Personen: Bus (20\,€)}{Bei 25: Bahn; Bus $600 : 25 = 24$\,€ $> 22$\,€. Bei 30: Bus; $600 : 30 = 20$\,€ $< 22$\,€.}
+\end{document}

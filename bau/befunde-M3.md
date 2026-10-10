@@ -930,3 +930,28 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
   geht es durch. (Zweite Option als „Außerdem richtig: …“.)
 - Mengenwarnungen (k1 s1–s8, k2, k3) aus den Zusatzzeilen, wie bei
   allen Bauten.
+
+## Zuordnungen E4 „Zuordnungstypen erkennen und anwenden“ (FA5, 10.10.2026)
+
+- Der Schüler verwechselt hier nicht die Rechnung, sondern den Typ: der
+  P10-Fehler ist „mehr Kilometer, weniger Minuten“. Darum steht Erkennen
+  vor dem Rechnen, und das B-Beispiel rechnet dieselben Zahlen (4 → 6)
+  einmal proportional, einmal antiproportional. (Abschnitt B.)
+- Schrittliste vor dem Setzen fand zwei Lücken: Tabelle aus dem Text
+  anlegen und „Gerade nicht durch den Ursprung = keins“ hatte kein
+  Beispiel. (A-Beispiel um Schritt 1 und das Bild mit drei Graphformen
+  ergänzt.)
+- Satz und Formel des Abschnitts sagten in A dasselbe (Quotient,
+  Produkt); „jeden Hinweis nur einmal“ ließ die Formel zur Graphregel
+  werden. (Lernweg-Block L4-A.)
+- \wertetabelle hat x/y vertauscht, wenn man die Beschriftungen in der
+  Reihenfolge Wert/Kopf denkt: erster Pflichtparameter ist die
+  Kopfzeile. (Nur Handwerk; im Bild gefunden.)
+- Ein Beispielbild aus Tabelle und drei Mini-Graphen ist in tisch-alt
+  breiter als die Bildspalte und überlappt den grauen Text; scale=0.85
+  mit transform shape löst es, \setlength{\mbzell} im Knoten wirkt
+  nicht. (Vorschlag: Setzer passt Bilder in tisch-alt auf die Spalte.)
+- Kein Thema-Weg und kein Lernweg im Katalog; beide angelegt, vor der
+  Prüfliste, damit quelle-Zeilen gültig bleiben.
+- Heft 5 Seiten, Lösungen 1 Seite; Mengenwarnungen (k2, k3, k5) aus den
+  Zusatzzeilen wie bei allen Bauten.
