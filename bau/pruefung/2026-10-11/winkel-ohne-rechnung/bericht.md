@@ -22,3 +22,17 @@ Neue Bankzeilen: keine (keine Lücke). Herausgelöst: herausgeloest.csv (7 Zeile
 - Antwortlinie für kurze Antwort ohne Rechnung (Nr. 8) rechts in der Zeile: `\hfill\linie{30mm}`; im Setzer nicht als Form.
 - Echte aus herausgeloest.csv mit Skizze: Feld abbildung ist Prosa, der Setzer braucht dafür Grafik-Code (wie Bankfeld grafik).
 - Sternmarke bei FOR-Sternchenaufgaben (2025-OS-K2c) aus dem Original-Vermerk.
+
+## Nachzug 11.10. (Durchsicht)
+
+- Namen: Titel „Winkel“ (P10), Stufen wortgleich in Übersicht, Titelzeile, Stufenköpfen und Lösung: Eigenschaften kennen · Innenwinkelsumme: Dreieck · Viereck · gleichschenklig: zwei gleiche Winkel · rechter Winkel: begründen. Übersicht: Pythagoras · sin, cos, tan – im rechtwinkligen Dreieck · ▸ Winkel · Sinussatz – in jedem Dreieck (grau) · Symmetrie (grau); „Weiter: Flächeninhalt und Umfang“. Blattende „Weiter: Sinussatz – in jedem Dreieck“.
+- Kopf: Seite 1 Titel, P10, rechts T2U, darunter graue Stufenzeile; Folgeseiten links „Winkel“, rechts T2U; Fuß mittig „n/3“, kopfüber-Ergebnisse unverändert.
+- Stufenkopf: „letzte 5 Jahre: 2026“ · „2026 · 2023 · 2022“ · „2023“ · „2025“.
+- Nummer und Buchstaben in zwei Spalten (Nr. 3 a–c; Lösung mit Buchstabenspalte).
+- Ankreuzen untereinander (Nr. 1, 2, 8); Nr. 9 als Lückentext, zwei Zeilen, Gleichheitszeichen und Lücke untereinander.
+- Skizzen: Nr. 1 kleine Raute; Nr. 3a Dreieck mit 52° und 71°; Nr. 8 (erste der Stufe gleichschenklig) Dreieck mit zwei 64°-Winkeln, dafür jetzt Ankreuzen „welche Seiten gleich lang“ statt Seite angeben (sonst Nr. 9 mit anderer Zahl); Nr. 4 ohne Skizze, Höhe im Text. Echte Aufgaben behalten ihre Skizze (Original hat eine: 5, 6, 7, 9, 10, 12; Nr. 2 ohne). Skizzen 7, 10, 12 verkleinert, damit das Blatt auf 3 Seiten bleibt.
+- Päckchen Nr. 3: a) Dreieck mit Skizze → b) Viereck im Text → c) Viereck krumm (86,5°; 97,3°; 101,4° → 74,8°, eigen); kein Hinweis.
+- Stern: geprüft gegen msa-katalog-kontext.csv/-basis.csv (Spalte stern) und gliederung/dreiecke.md. Nur 2025-OS-K2c (Nr. 12) ist Sternchenaufgabe – Stern stand schon. 2026-FOR-B1c und -B1i haben EBR-Zwillinge, also nicht nur im FOR-Heft: kein Stern. 2018-OS-K4b, 2022-OS-K5c, 2023-OS-B1g, 2023-OS-K7a: stern nein.
+- Lösung: Stufenköpfe wortgleich als Zwischenüberschriften, Nummer- und Buchstabenspalte; 1 Seite.
+- Umfang: Übersicht 1, Blatt 3, Lösung 1 Seite.
+- mathblatt.sty 2026-10-11b neu: \pfstufenzeile{…}, \pflaufkopf{Name}{Kennung} (nach \pfheftstil; \pfkopfzeile war belegt), \pfseitevon (Seitenzahl „n/N“ mittig, lastpage), \pfteil{a)}{Text}, Umgebung pfloesungb mit \lzb{Nr}{Bst}{Ergebnis}{Weg}; alles zusätzlich, Bestehendes unverändert.

@@ -3,20 +3,26 @@
 % Prüfungsblatt nach mathe-nachhilfe pruefung.md § 5 (Runde Dreiecke, 11.10.2026), Hand-Satz; Präambel des Setzers; Muster P4Z.
 \input{praeambel}
 \newcommand{\kennung}{T2U}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\makeatletter
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+\makeatother
 
 \begin{document}
 \pfheftstil
-\pfheftkopf[\kennung]{Winkel ohne Rechnung bestimmen oder begründen}{P10}
+\pflaufkopf{Winkel}{\kennung}\pfseitevon
+\pfheftkopf[\kennung]{Winkel}{P10}
+\pfstufenzeile{Eigenschaften kennen \pkt{} Innenwinkelsumme: Dreieck \pkt{} Viereck \pkt{} gleichschenklig: zwei gleiche Winkel \pkt{} rechter Winkel: begründen}
 
 % ===================== Stufe 1 =====================
-\Needspace*{0.25\textheight}\pfstufekopf{Eigenschaft erkennen}{geprüft 2026}
+\Needspace*{0.25\textheight}\pfstufekopf{Eigenschaften kennen}{letzte 5 Jahre: 2026}
 
 % Bank winkel-dreiecke-e3-k2-s10-v2 (Raute; Verfremdung von 2016-OS-B1e)
 \begin{pfaufg}{}{1.}{}
-Kreuze an, welche Aussage für jede Raute gilt.\par\smallskip
-\pfkreuzab{A}{Benachbarte Winkel sind gleich groß.}
+Kreuze an, welche Aussage für jede Raute gilt.
+\gzwei{\begin{tikzpicture}[line width=0.7pt]\draw (0,0)--(1.6,0)--(2.6,1.249)--(1.0,1.249)--cycle;\end{tikzpicture}}{\pfkreuzab{A}{Benachbarte Winkel sind gleich groß.}
 \pfkreuzab{B}{Gegenüberliegende Winkel sind gleich groß.}
-\pfkreuzab{C}{Alle vier Winkel sind gleich groß.}
+\pfkreuzab{C}{Alle vier Winkel sind gleich groß.}}
 \fusshilfe{\mbox{1:~B}}
 \end{pfaufg}
 
@@ -30,20 +36,21 @@ Kreuze an, welche Aussage für jedes Trapez gilt.\par\smallskip
 \end{pfaufg}
 
 % ===================== Stufe 2 =====================
-\Needspace*{0.25\textheight}\pfstufekopf{Winkelsumme}{geprüft 2026 \pkt{} 2023 \pkt{} 2022}
+\Needspace*{0.25\textheight}\pfstufekopf{Innenwinkelsumme: Dreieck \pkt{} Viereck}{letzte 5 Jahre: 2026 \pkt{} 2023 \pkt{} 2022}
 
-% Bank winkel-dreiecke-e3-k2-s1-v1, e3-k2-s6-v1 (Päckchen: Dreieck, Viereck)
+% Bank winkel-dreiecke-e3-k2-s1-v1, e3-k2-s6-v1, c) eigen (Päckchen: Skizze → Text → krumm, Durchsicht 11.10.)
 \begin{pfaufg}{}{3.}{}
 Berechne den fehlenden Winkel.\par\smallskip
-\gzwei{\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm\relax}{\raggedright \textbf{a)}\ Dreieck mit den Winkeln $52^\circ$ und $71^\circ$}}{\karo{2}}
-\gzwei{\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm\relax}{\raggedright \textbf{b)}\ Viereck mit den Winkeln $84^\circ$, $97^\circ$ und $103^\circ$}}{\karo{2}}
-\fusshilfe{\mbox{3:~a) 57°; b) 76°}}
+\gzwei{\gteil{a)}{Dreieck\par\smallskip\begin{tikzpicture}[line width=0.7pt]\draw (0,0)--(2.6,0)--(1.805,2.310)--cycle;\draw[mbgrau,line width=0.5pt] (0.4,0) arc (0:52:0.4);\node[inner sep=0pt,font=\footnotesize] at (0.66,0.31) {$52^\circ$};\draw[mbgrau,line width=0.5pt] (2.2,0) arc (180:109:0.4);\node[inner sep=0pt,font=\footnotesize] at (2.0,0.36) {$71^\circ$};\end{tikzpicture}}}{\karo{2}}
+\gzwei{\gteil{b)}{Viereck mit den Winkeln $84^\circ$, $97^\circ$ und $103^\circ$}}{\karo{2}}
+\gzwei{\gteil{c)}{Viereck mit den Winkeln $86{,}5^\circ$, $97{,}3^\circ$ und $101{,}4^\circ$}}{\karo{2}}
+\fusshilfe{\mbox{3:~a) 57°; b) 76°; c) 74,8°}}
 \end{pfaufg}
 
-% Bank winkel-dreiecke-e3-k2-s7-v7 (Teildreieck an der Höhe)
+% Bank winkel-dreiecke-e3-k2-s7-v7 (Teildreieck an der Höhe), Durchsicht 11.10.: ohne Skizze, Text
 \begin{pfaufg}{}{4.}{}
-Die Strecke $\overline{CD}$ ist die Höhe im Dreieck $ABC$. Berechne den Winkel $\varepsilon$.
-\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\footnotesize]\draw (0.000,0.000) -- (3.072,0.000) -- (1.797,2.300) -- cycle;\draw (1.797,2.300) -- (1.797,0.000);\draw[mbgrau,line width=0.5pt] (0.380,0.000) arc (0.00:52.00:0.38);\node[inner sep=0pt] at (0.649,0.317) {$52^\circ$};\draw[mbgrau,line width=0.5pt] (1.797,0.300) arc (90.00:180.00:0.3);\fill (1.701,0.095) circle (0.8pt);\draw[mbgrau,line width=0.5pt] (1.563,2.001) arc (-128.00:-90.00:0.38);\node[inner sep=0pt] at (1.596,1.717) {$\varepsilon$};\node[inner sep=0pt] at (-0.225,-0.110) {$A$};\node[inner sep=0pt] at (3.287,-0.127) {$B$};\node[inner sep=0pt] at (1.817,2.549) {$C$};\node[inner sep=0pt] at (1.797,-0.220) {$D$};\end{tikzpicture}}{\karo{2}}
+Im Dreieck $ABC$ ist $\alpha = 52^\circ$. Die Höhe $h_c$ geht von $C$ senkrecht auf die Seite $\overline{AB}$. Berechne den Winkel $\varepsilon$ zwischen $\overline{AC}$ und der Höhe.
+\karo{2}
 \fusshilfe{\mbox{4:~38°}}
 \end{pfaufg}
 
@@ -64,35 +71,38 @@ Das Dreieck $ABC$ hat keinen rechten Winkel. Die Höhe $h_c$ geht von $C$ senkre
 % 2018-OS-K4b, herausgelöst (Höhen 1,5 m und 12,0 m nur für 4c, 4d, weggelassen)
 \begin{pfaufg}{nach~P10\\’18~\pkt{}~4b}{7.}{}
 Lea will die Höhe eines Berges bestimmen. Auf der Bergspitze $C$ steht eine Aussichtsplattform, ihre Spitze heißt $D$. Lea peilt vom Punkt $A$ aus. Der Punkt $B$ liegt auf der Höhe von $A$ senkrecht unter $C$. Die Peillinie zu $C$ ist um $30^\circ$ gegen die Waagerechte geneigt. Zwischen den Peillinien zu $C$ und zu $D$ liegt der Winkel $\gamma = 5^\circ$. Lea sagt: „Der Winkel $\delta$ ist $55^\circ$ groß.“ Begründe, dass das stimmt.
-\gzwei{\begin{tikzpicture}[line width=0.7pt]\draw[dashed] (0, 0)--(4, 0);\draw (4, 0)--(4, 3.2);\draw (0, 0)--(4, 2.0);\draw (0, 0)--(4, 3.2);\draw[mbgrau,line width=0.5pt] (4.000,0.300) arc (90.00:180.00:0.3);\fill (3.908,0.092) circle (0.8pt);\draw[mbgrau,line width=0.5pt] (0.900,0.000) arc (0.00:26.57:0.9);\node[inner sep=0pt,font=\footnotesize] at (1.265,0.299) {$30^\circ$};\draw[mbgrau,line width=0.5pt] (1.968,0.984) arc (26.57:38.66:2.2);\node[inner sep=0pt,font=\footnotesize] at (2.148,1.374) {$\gamma$};\draw[mbgrau,line width=0.5pt] (3.610,2.888) arc (-141.34:-90.00:0.5);\node[inner sep=0pt,font=\footnotesize] at (3.653,2.479) {$\delta$};\node[font=\small,anchor=east] at (0.000,0.000) {$A$};\node[font=\small,anchor=north west] at (4.000,0.000) {$B$};\node[font=\small,anchor=west] at (4.000,2.000) {$C$};\node[font=\small,anchor=south] at (4.000,3.200) {$D$};\end{tikzpicture}}{\karo{4}}
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.8]\draw[dashed] (0, 0)--(4, 0);\draw (4, 0)--(4, 3.2);\draw (0, 0)--(4, 2.0);\draw (0, 0)--(4, 3.2);\draw[mbgrau,line width=0.5pt] (4.000,0.300) arc (90.00:180.00:0.3);\fill (3.908,0.092) circle (0.8pt);\draw[mbgrau,line width=0.5pt] (0.900,0.000) arc (0.00:26.57:0.9);\node[inner sep=0pt,font=\footnotesize] at (1.265,0.299) {$30^\circ$};\draw[mbgrau,line width=0.5pt] (1.968,0.984) arc (26.57:38.66:2.2);\node[inner sep=0pt,font=\footnotesize] at (2.148,1.374) {$\gamma$};\draw[mbgrau,line width=0.5pt] (3.610,2.888) arc (-141.34:-90.00:0.5);\node[inner sep=0pt,font=\footnotesize] at (3.653,2.479) {$\delta$};\node[font=\small,anchor=east] at (0.000,0.000) {$A$};\node[font=\small,anchor=north west] at (4.000,0.000) {$B$};\node[font=\small,anchor=west] at (4.000,2.000) {$C$};\node[font=\small,anchor=south] at (4.000,3.200) {$D$};\end{tikzpicture}}{\karo{4}}
 \fusshilfe{\mbox{7:~richtig, $\delta = 55^\circ$}}
 \end{pfaufg}
 
 % ===================== Stufe 3 =====================
-\Needspace*{0.25\textheight}\pfstufekopf{gleichschenkliges Dreieck}{geprüft 2023}
+\Needspace*{0.25\textheight}\pfstufekopf{gleichschenklig: zwei gleiche Winkel}{letzte 5 Jahre: 2023}
 
-% Bank winkel-dreiecke-e3-k2-s8-v1 (gleiche Winkel, gleiche Seiten)
+% nach Bank winkel-dreiecke-e3-k2-s8-v1 (gleiche Winkel, gleiche Seiten), Durchsicht 11.10.: Ankreuzen mit Skizze (erste der Stufe)
 \begin{pfaufg}{}{8.}{}
-Im Dreieck $ABC$ ist $\alpha = \beta = 64^\circ$. Die Seite $\overline{AC}$ ist $5$~cm lang. Gib an, welche Seite genauso lang ist wie $\overline{AC}$.\hfill\linie{30mm}
-\fusshilfe{\mbox{8:~BC = 5 cm}}
+Kreuze an, welche Seiten gleich lang sind.
+\gzwei{\begin{tikzpicture}[line width=0.7pt]\draw (0,0)--(2.4,0)--(1.2,2.46)--cycle;\draw[mbgrau,line width=0.5pt] (0.4,0) arc (0:64:0.4);\node[inner sep=0pt,font=\footnotesize] at (0.66,0.36) {$64^\circ$};\draw[mbgrau,line width=0.5pt] (2.0,0) arc (180:116:0.4);\node[inner sep=0pt,font=\footnotesize] at (1.74,0.36) {$64^\circ$};\node[font=\small,anchor=north east] at (0,0) {$A$};\node[font=\small,anchor=north west] at (2.4,0) {$B$};\node[font=\small,anchor=south] at (1.2,2.46) {$C$};\end{tikzpicture}}{\pfkreuzab{A}{$\overline{AB}$ und $\overline{AC}$}
+\pfkreuzab{B}{$\overline{AC}$ und $\overline{BC}$}
+\pfkreuzab{C}{$\overline{AB}$ und $\overline{BC}$}}
+\fusshilfe{\mbox{8:~B}}
 \end{pfaufg}
 
 % 2023-OS-B1g, eigener Wortlaut
 \begin{pfaufg}{nach~P10\\’23~\pkt{}~1g}{9.}{}
-Im Dreieck $ABC$ sind die Winkel bei $A$ und bei $B$ je $70^\circ$ groß. Gib die Länge der Seite $\overline{BC}$ an. Gib die Größe des Winkels $\gamma$ an.
-\gzwei{\begin{tikzpicture}[line width=0.7pt]\draw (0, 0)--(2.4, 0)--(1.2,3.297)--cycle;\draw[mbgrau,line width=0.5pt] (0.400,0.000) arc (0.00:70.00:0.4);\node[inner sep=0pt,font=\footnotesize] at (0.614,0.430) {$70^\circ$};\draw[mbgrau,line width=0.5pt] (2.263,0.376) arc (110.00:180.00:0.4);\node[inner sep=0pt,font=\footnotesize] at (1.786,0.430) {$70^\circ$};\draw[mbgrau,line width=0.5pt] (1.029,2.827) arc (-110.00:-70.00:0.5);\node[inner sep=0pt,font=\footnotesize] at (1.200,2.497) {$\gamma$};\node[font=\small,anchor=north east] at (0.000,0.000) {$A$};\node[font=\small,anchor=north west] at (2.400,0.000) {$B$};\node[font=\small,anchor=south] at (1.200,3.297) {$C$};\node[font=\small,anchor=east] at (0.500,1.648) {$6$ cm};\end{tikzpicture}}{\karo{2}}
+Im Dreieck $ABC$ sind die Winkel bei $A$ und bei $B$ je $70^\circ$ groß. Gib die Länge der Seite $\overline{BC}$ und die Größe des Winkels $\gamma$ an.
+\gzwei{\begin{tikzpicture}[line width=0.7pt]\draw (0, 0)--(2.4, 0)--(1.2,3.297)--cycle;\draw[mbgrau,line width=0.5pt] (0.400,0.000) arc (0.00:70.00:0.4);\node[inner sep=0pt,font=\footnotesize] at (0.614,0.430) {$70^\circ$};\draw[mbgrau,line width=0.5pt] (2.263,0.376) arc (110.00:180.00:0.4);\node[inner sep=0pt,font=\footnotesize] at (1.786,0.430) {$70^\circ$};\draw[mbgrau,line width=0.5pt] (1.029,2.827) arc (-110.00:-70.00:0.5);\node[inner sep=0pt,font=\footnotesize] at (1.200,2.497) {$\gamma$};\node[font=\small,anchor=north east] at (0.000,0.000) {$A$};\node[font=\small,anchor=north west] at (2.400,0.000) {$B$};\node[font=\small,anchor=south] at (1.200,3.297) {$C$};\node[font=\small,anchor=east] at (0.500,1.648) {$6$ cm};\end{tikzpicture}}{\vspace{4mm}\begin{tabular}{@{}r@{\;}l@{}}$\overline{BC}$ & $=$\linie{28mm}\\[5mm] $\gamma$ & $=$\linie{28mm}\end{tabular}}
 \fusshilfe{\mbox{9:~6 cm; 40°}}
 \end{pfaufg}
 
 % 2023-OS-K7a, herausgelöst (65° bei B und AB = 131,5 cm nur für 7b, weggelassen)
 \begin{pfaufg}{nach~P10\\’23~\pkt{}~7a}{10.}{}
 Im Dreieck $ABC$ liegt der Punkt $F$ auf der Seite $\overline{AC}$. Die Strecke $\overline{BF}$ steht senkrecht auf $\overline{AC}$. Begründe, dass das graue Dreieck $ABF$ gleichschenklig ist.
-\gzwei{\begin{tikzpicture}[line width=0.7pt]\fill[black!10] (5.0, 0)--(3.0, 2.0)--(3.0, 0)--cycle;\draw (0, 0)--(5.0, 0)--(3.0, 2.0)--cycle;\draw (3.0, 2.0)--(3.0, 0);\draw[mbgrau,line width=0.5pt] (3.300,0.000) arc (0.00:90.00:0.3);\fill (3.092,0.092) circle (0.8pt);\draw[mbgrau,line width=0.5pt] (4.682,0.318) arc (135.00:180.00:0.45);\node[inner sep=0pt,font=\footnotesize] at (4.215,0.325) {$45^\circ$};\draw[mbgrau,line width=0.5pt] (3.000,1.550) arc (-90.00:-45.00:0.45);\node[inner sep=0pt,font=\footnotesize] at (3.325,1.215) {$45^\circ$};\node[font=\small,anchor=north east] at (0.000,0.000) {$C$};\node[font=\small,anchor=north west] at (5.000,0.000) {$A$};\node[font=\small,anchor=south] at (3.000,2.000) {$B$};\node[font=\small,anchor=north] at (3.000,0.000) {$F$};\end{tikzpicture}}{\karo{3}}
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.85]\fill[black!10] (5.0, 0)--(3.0, 2.0)--(3.0, 0)--cycle;\draw (0, 0)--(5.0, 0)--(3.0, 2.0)--cycle;\draw (3.0, 2.0)--(3.0, 0);\draw[mbgrau,line width=0.5pt] (3.300,0.000) arc (0.00:90.00:0.3);\fill (3.092,0.092) circle (0.8pt);\draw[mbgrau,line width=0.5pt] (4.682,0.318) arc (135.00:180.00:0.45);\node[inner sep=0pt,font=\footnotesize] at (4.215,0.325) {$45^\circ$};\draw[mbgrau,line width=0.5pt] (3.000,1.550) arc (-90.00:-45.00:0.45);\node[inner sep=0pt,font=\footnotesize] at (3.325,1.215) {$45^\circ$};\node[font=\small,anchor=north east] at (0.000,0.000) {$C$};\node[font=\small,anchor=north west] at (5.000,0.000) {$A$};\node[font=\small,anchor=south] at (3.000,2.000) {$B$};\node[font=\small,anchor=north] at (3.000,0.000) {$F$};\end{tikzpicture}}{\karo{3}}
 \fusshilfe{\mbox{10:~zwei Winkel je 45°}}
 \end{pfaufg}
 
 % ===================== Stufe 4 =====================
-\Needspace*{0.25\textheight}\pfstufekopf{rechten Winkel begründen}{geprüft 2025}
+\Needspace*{0.25\textheight}\pfstufekopf{rechter Winkel: begründen}{letzte 5 Jahre: 2025}
 
 % Bank winkel-dreiecke-e3-k2-s9-v6 (zwei gleichschenklig-rechtwinklige Teildreiecke)
 \begin{pfaufg}{}{11.}{}
@@ -104,11 +114,11 @@ Die Strecke $\overline{CD}$ steht senkrecht auf $\overline{AB}$. Es gilt $\overl
 % 2025-OS-K2c, herausgelöst (Sternchenaufgabe; Symmetrieachsen 2a und Fläche 2b weggelassen)
 \begin{pfaufg}{nach~P10\\’25~\pkt{}~2c\,$\star$}{12.}{}
 Die Figur zeigt das Drachenviereck $ABCD$. Seine Diagonalen $\overline{AC}$ und $\overline{BD}$ sind $50$~cm und $80$~cm lang und schneiden sich im Punkt $F$. Die Strecke $\overline{DF}$ ist $25$~cm lang. Begründe, dass $\gamma = 90^\circ$ ist.
-\gzwei{\begin{tikzpicture}[line width=0.7pt]\draw (-1.25, 0)--(0, -2.75)--(1.25, 0)--(0, 1.25)--cycle;\draw (-1.25, 0)--(1.25, 0);\draw (0, -2.75)--(0, 1.25);\draw[mbgrau,line width=0.5pt] (0.220,0.000) arc (0.00:90.00:0.22);\fill (0.092,0.092) circle (0.8pt);\draw[mbgrau,line width=0.5pt] (-0.247,1.003) arc (-135.00:-45.00:0.35);\node[font=\footnotesize] at (-0.2,0.7) {$\gamma$};\node[font=\small,anchor=east] at (-1.250,0.000) {$A$};\node[font=\small,anchor=north] at (0.000,-2.750) {$B$};\node[font=\small,anchor=west] at (1.250,0.000) {$C$};\node[font=\small,anchor=south] at (0.000,1.250) {$D$};\node[font=\small,anchor=north west] at (0.000,0.000) {$F$};\end{tikzpicture}}{\karo{4}}
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.75]\draw (-1.25, 0)--(0, -2.75)--(1.25, 0)--(0, 1.25)--cycle;\draw (-1.25, 0)--(1.25, 0);\draw (0, -2.75)--(0, 1.25);\draw[mbgrau,line width=0.5pt] (0.220,0.000) arc (0.00:90.00:0.22);\fill (0.092,0.092) circle (0.8pt);\draw[mbgrau,line width=0.5pt] (-0.247,1.003) arc (-135.00:-45.00:0.35);\node[font=\footnotesize] at (-0.2,0.7) {$\gamma$};\node[font=\small,anchor=east] at (-1.250,0.000) {$A$};\node[font=\small,anchor=north] at (0.000,-2.750) {$B$};\node[font=\small,anchor=west] at (1.250,0.000) {$C$};\node[font=\small,anchor=south] at (0.000,1.250) {$D$};\node[font=\small,anchor=north west] at (0.000,0.000) {$F$};\end{tikzpicture}}{\karo{4}}
 \fusshilfe{\mbox{12:~45° + 45° = 90°}}
 \end{pfaufg}
 
 \pfblattende{11}{26 FOR & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17 & 16}%
 {1c 1i & 2c & & 1g 2a 7a & 5c & 1i & & & 4b & 4a & 1e}%
-{Weiter: Seite im allgemeinen Dreieck, Sinussatz}
+{Weiter: Sinussatz – in jedem Dreieck}
 \end{document}
