@@ -608,3 +608,26 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
   Hand umbenannt.
 - Mengenwarnungen k1 s0–s5, k2 s1, pflicht aus dem verlangten Vorrat,
   wie bisher. duplikate.py: keine neue id betroffen.
+
+## Trigonometrie E4 „Sinussatz“ (XAD, 10.10.2026)
+
+- Vier Abschnitte plus Probetest, Selbstlernheft 6 Seiten, Lösungen 2.
+  A Seite aus einem ganzen Paar, B Erst den dritten Winkel, C Winkel aus
+  der Figur (Nebenwinkel, Teilwinkel, stumpfer Winkel), D Ergebnis
+  weitergeben (Weg, Rest, Nachweis), T. Thema-Weg Punkt 4 ergänzt, Stand
+  und Probetest des Themas endgültig (2025-OS-K4c dazu). Kritiker offen.
+- Kosinussatz und Winkel mit dem Sinussatz nicht aufs Blatt: kein
+  P10-Original, nur RLP G; die Bank hat die Sprossen 12–14. Will der
+  Lehrer den Kosinussatz für FOR oder GYM, wäre das ein eigenes Blatt.
+  (Linie des Lehrers, nicht entschieden.)
+- Setzer: weg() streift nach der Ankreuzoption nur „ :“ ab; eine Lösung
+  „Option; …“ zeigt im Lösungsheft „; a ≈ 8,1“. Ankreuzlösungen darum
+  mit „:“ nach der Option geschrieben. (setzer.py nicht geändert.)
+- Skizzen: Viereck mit Diagonale und einem Winkel über die Diagonale
+  (140° bei C) erst lesbar, wenn die Figur gedreht ist (AC waagerecht);
+  je Ecke höchstens ein Winkel mit Zahl.
+- Prüfer: quelle muss je Sprosse einheitlich sein; neue Zeilen tragen
+  die alte Zeilennummer der Sprosse (105, 100), nicht die heutige.
+  Mengenwarnungen k1 s0–s10 aus dem Vorrat, wie bei den anderen Bauten.
+  duplikate.py: nur D3 gegen seinen Vorrat (Nachweis, andere Zahlen),
+  gewollt.
