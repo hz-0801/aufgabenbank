@@ -1,5 +1,10 @@
 # Bauregeln – wie ein Blatt aussieht
 
+> **Abgelöst am 10.10.2026** durch mathe-nachhilfe `gemeinsam.md`
+> (Handwerk) und `pruefung.md` (Sorte Prüfung). Nur noch Beleg; Archiv in
+> plan.md § 7 Schritt 3. Abweichung seit 10.10.: Prüfstein einmal je
+> Kapitel, nicht auf jedem Blatt (pruefung.md „Prüfstein“).
+
 Stand 09.10.2026. Die einzige Datei mit Regeln für den Bau von Blättern –
 für das Bauprogramm `werkzeuge/pruefheft.py`, den Bank-Prompt
 (`blattbau/bankblatt.md`) und jeden Chat, der ein Blatt baut oder beurteilt.
