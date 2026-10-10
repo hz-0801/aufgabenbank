@@ -19,6 +19,13 @@
   \begin{minipage}[t]{52mm}\raggedright\bfseries\boldmath #2\end{minipage}\hspace{3mm}%
   \begin{minipage}[t]{\dimexpr\linewidth-64mm\relax}\raggedright\small #3\end{minipage}\par\vspace{4pt}}
 \newlength{\kr}
+\makeatletter
+\newcommand{\karomerk}[2]{\protected@write\@auxout{}{\string\karoseite{#1}{#2}{\thepage}}}
+\newcommand{\karoseite}[3]{\expandafter\xdef\csname karo@#1@#2\endcsname{#3}}
+\newcommand{\karohinweis}[3]{\karomerk{h}{#1}\ifcsname karo@k@#1\endcsname
+  \ifnum\csname karo@k@#1\endcsname=0\csname karo@h@#1\endcsname\relax#2\else#3\fi
+  \else#3\fi}
+\makeatother
 \begin{document}
 
 \noindent{\Large\bfseries Lösungen}\hspace{1em}{\color{mbgrau}Brüche vergleichen und ordnen}\par\smallskip
@@ -35,7 +42,7 @@
 \lsg{4.}{Nein, es fehlt 1 Stimme.}{Nein; zugestimmt haben $\frac{17}{24}$, nötig sind $\frac{3}{4} = \frac{18}{24}$. Es fehlt 1 Stimme.}
 \par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut C}}\hspace{2mm}{\bfseries Am Zahlenstrahl: ablesen, eintragen, ordnen}\par\vspace{4pt}
 \lsg{1.}{$A = \frac{2}{5}$, \ $B = \frac{4}{5}$, \ $C = \frac{7}{5}$}{Ein Schritt ist $\frac{1}{5}$: $A = \frac{2}{5}$, $B = \frac{4}{5}$, $C = \frac{7}{5}$}
-\lsg{2.}{$\frac{4}{12}$, \ $\frac{9}{12}$, \ $\frac{10}{12}$}{$\frac{1}{3} = \frac{4}{12}$ (4. Strich), $\frac{3}{4} = \frac{9}{12}$ (9. Strich), $\frac{5}{6} = \frac{10}{12}$ (10. Strich)}
+\lsg{2.}{$\frac{2}{6}$, \ $\frac{3}{6}$, \ $\frac{5}{6}$}{$\frac{1}{3} = \frac{2}{6}$ (2. Strich), $\frac{1}{2} = \frac{3}{6}$ (3. Strich), $\frac{5}{6}$ (5. Strich)}
 \lsg{3.}{$\frac{3}{7}, \frac{2}{5}$ \,|\, $\frac{5}{9}, \frac{6}{11}$ \,|\, $\frac{8}{7}, \frac{11}{10}$}{kleiner als $\frac{1}{2}$: $\frac{3}{7}$, $\frac{2}{5}$; zwischen $\frac{1}{2}$ und 1: $\frac{5}{9}$, $\frac{6}{11}$; größer als 1: $\frac{8}{7}$, $\frac{11}{10}$}
 \lsg{4.}{$\frac{3}{8} < \frac{2}{5} < \frac{5}{6} < \frac{7}{4}$}{zwei liegen unter $\frac{1}{2}$: $\frac{3}{8} = \frac{15}{40} < \frac{16}{40} = \frac{2}{5}$}
 \lsg{5.}{$C < A < B < D$; $D$ am vollsten}{$D$ am vollsten; Reihenfolge $C < A < B < D$: $C = \frac{36}{80} = \frac{9}{20}$, $A = \frac{30}{50} = \frac{3}{5} = \frac{24}{40}$, $B = \frac{45}{72} = \frac{5}{8} = \frac{25}{40}$, $D = \frac{70}{80} = \frac{7}{8}$}
@@ -44,7 +51,7 @@
 \lsg{2.}{a) $\frac{7}{16}$ \quad b) $\frac{3}{10}$}{a) $\frac{7}{16}$ (mit 2 erweitert: $\frac{6}{16}$ und $\frac{8}{16}$); b) $\frac{3}{10}$ (aus $\frac{2}{10}$ und $\frac{4}{10}$)}
 \lsg{3.}{a) z.\,B. $\frac{1}{2}$ \quad b) $\frac{9}{20}$}{a) $\frac{1}{3} = \frac{4}{12}$, $\frac{3}{4} = \frac{9}{12}$, z.\,B. $\frac{6}{12} = \frac{1}{2}$; b) $\frac{4}{10}$ und $\frac{5}{10}$, mit 2: $\frac{8}{20}$ und $\frac{10}{20}$, dazwischen $\frac{9}{20}$}
 \lsg{4.}{$\frac{5}{12}$}{$\frac{1}{4} = \frac{3}{12}$ und $\frac{2}{3} = \frac{8}{12}$}
-\lsg{5.}{z.\,B. $\frac{22}{100}$\,m $=$ 22\,cm}{z.\,B. $\frac{22}{100}$\,m = 22\,cm; mit Nenner 100: $\frac{1}{5} = \frac{20}{100}$, $\frac{1}{4} = \frac{25}{100}$ (jede Länge zwischen 20\,cm und 25\,cm passt)}
+\lsg{5.}{z.\,B. $\frac{9}{40}$\,m $=$ 22{,}5\,cm}{$\frac{1}{5} = \frac{8}{40}$ und $\frac{1}{4} = \frac{10}{40}$, dazwischen liegt $\frac{9}{40}$; $\frac{9}{40}$\,m $= \frac{900}{40}$\,cm $= 22{,}5$\,cm. Zusatz: Mit Nenner 100 ($\frac{20}{100}$ und $\frac{25}{100}$) passt z.\,B. auch $\frac{22}{100}$\,m $=$ 22\,cm.}
 \par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut T}}\hspace{2mm}{\bfseries Probetest}\par\vspace{4pt}
 \lsg{1.}{a) $>$ \quad b) $<$ \quad c) $>$}{a) $\frac{5}{9} > \frac{4}{9}$; b) $\frac{2}{7} < \frac{2}{5}$; c) $\frac{3}{4} = \frac{15}{20} > \frac{14}{20} = \frac{7}{10}$}
 \lsg{2.}{$A = \frac{3}{4}$, \ $B = \frac{5}{4}$, \ $\frac{3}{2} = \frac{6}{4}$}{Ein Schritt ist $\frac{1}{4}$: $A = \frac{3}{4}$, $B = \frac{5}{4}$; $\frac{3}{2} = \frac{6}{4}$ (6. Strich)}
