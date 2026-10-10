@@ -814,3 +814,20 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
   (2024-OS-K4b) nur im Bestand, nicht auf dem Blatt.
 - Mengenwarnungen (k1 s1–s10, Originale 2016-OS-B1j 5×, 2019-OS-B1f 6×)
   aus den Zusatzzeilen, wie bei M74 und 3Y5 gewollt.
+## Winkel und Dreiecke E3 „Winkelsummen, Dreiecke und Vierecke“ (HDK, 10.10.2026)
+
+- Setzer: Winkelzahlen in \small passen in schmale Winkel nur, wenn die
+  Figur groß ist; mit \footnotesize und Platzprobe auf der
+  Winkelhalbierenden (Hilfsskript im Bau) standen alle Zahlen frei.
+  Eine Figur-Hilfe für Winkelbögen fehlt in mathblatt.sty. (Selbst gebaut;
+  Vorschlag: Baustein „winkelbogen mit freiem Label“.)
+- Eine gezeichnete Symmetrieachse im Drachen legt die Winkelzahlen an
+  den Achsenenden genau auf die Linie. (Achse weggelassen, Striche zeigen
+  den Drachen; Achse steht im Text.)
+- bank-pruef verlangt pruef auch bei Begründen-Zeilen außerhalb von
+  hoehe pflicht (s9 „rechten Winkel begründen“). (pruef mit den Zahlen
+  45 und 90 gesetzt.)
+- Mengenwarnungen wie bei allen Bauten (Zusatzzeilen je Sprosse).
+- Vierecks-Eigenschaft (C3, T4) ist Wissen, kein Rechenschritt; der
+  Schritt-Beispiel-Abgleich ordnet sie der Formelzeile zu, nicht einem
+  Beispielschritt. (Zu klären: reicht die Formelzeile als „Beispiel“?)

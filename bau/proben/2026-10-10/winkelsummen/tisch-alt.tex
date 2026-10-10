@@ -1,0 +1,161 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% gesetzt von werkzeuge/setzer.py aus dem Lernweg (L3-A · L3-B · L3-C · L3-D · L3-T) und den Bankzeilen; Muster T6B.
+\input{praeambel}
+\newcommand{\kennung}{HDK}
+\newcommand{\grau}[1]{{\color{mbgrau}#1}}
+
+\begin{document}
+\pfheftstil
+\fancyfoot[C]{\parbox[t]{\textwidth}{\mbfhbox\par\vspace{1.5mm}{\footnotesize\color{mbgrau}{\scriptsize \kennung}\hfill\thepage}}}
+\pfheftkopf{Winkelsummen, Dreiecke und Vierecke}{Klasse 7}
+% L3-A: Winkelsumme im Dreieck
+\begin{pfaufg}{}{1.}{}
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\footnotesize]\draw (0.000,0.000) -- (2.882,0.000) -- (2.002,2.600) -- cycle;\draw[mbgrau,line width=0.5pt] (0.380,0.000) arc (0.00:52.40:0.38);\node[inner sep=0pt] at (0.831,0.409) {$52{,}4^\circ$};\draw[mbgrau,line width=0.5pt] (2.760,0.360) arc (108.70:180.00:0.38);\node[inner sep=0pt] at (2.212,0.481) {$71{,}3^\circ$};\draw[mbgrau,line width=0.5pt] (1.770,2.299) arc (-127.60:-71.30:0.38);\node[inner sep=0pt] at (1.902,2.000) {$\gamma$};\node[inner sep=0pt] at (-0.224,-0.110) {$A$};\node[inner sep=0pt] at (3.085,-0.146) {$B$};\node[inner sep=0pt] at (2.043,2.847) {$C$};\draw (4.300,0.000) -- (7.100,0.000) -- (6.224,1.298) -- cycle;\draw[mbgrau,line width=0.5pt] (4.680,0.000) arc (0.00:34.00:0.38);\node[inner sep=0pt] at (5.214,0.279) {$34^\circ$};\draw[mbgrau,line width=0.5pt] (5.976,1.130) arc (-146.00:-56.00:0.3);\fill (6.199,1.166) circle (0.8pt);\draw[mbgrau,line width=0.5pt] (6.888,0.315) arc (124.00:180.00:0.38);\node[inner sep=0pt] at (6.568,0.283) {$\varepsilon$};\node[inner sep=0pt] at (4.061,-0.073) {$D$};\node[inner sep=0pt] at (7.321,-0.117) {$E$};\node[inner sep=0pt] at (6.272,1.543) {$F$};\end{tikzpicture}}{\grau{a)\ (a) Im Dreieck $ABC$ ist $\alpha = 52{,}4^\circ$ und $\beta = 71{,}3^\circ$. Berechne $\gamma$. (b) Im Dreieck $DEF$ ist der Winkel bei $F$ ein rechter, der Winkel bei $D$ ist $34^\circ$. Berechne $\varepsilon$.\par\smallskip (a) Die bekannten Winkel zusammen: \ $52{,}4^\circ + 71{,}3^\circ = 123{,}7^\circ$\par Der Rest bis $180^\circ$ ist $\gamma$: \ $\gamma = 180^\circ - 123{,}7^\circ = 56{,}3^\circ$\par (b) Bogen mit Punkt bei $F$: ein rechter Winkel, $90^\circ$. \ $90^\circ + 34^\circ = 124^\circ$\par $\varepsilon = 180^\circ - 124^\circ = 56^\circ$}}
+\par\medskip
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\footnotesize]\draw (0.000,0.000) -- (2.743,0.000) -- (2.944,2.300) -- cycle;\draw[mbgrau,line width=0.5pt] (0.380,0.000) arc (0.00:38.00:0.38);\node[inner sep=0pt] at (0.821,0.283) {$38^\circ$};\draw[mbgrau,line width=0.5pt] (2.776,0.379) arc (85.00:180.00:0.38);\node[inner sep=0pt] at (2.261,0.525) {$95^\circ$};\draw[mbgrau,line width=0.5pt] (2.644,2.066) arc (-142.00:-95.00:0.38);\node[inner sep=0pt] at (2.647,1.754) {$\gamma$};\node[inner sep=0pt] at (-0.236,-0.081) {$A$};\node[inner sep=0pt] at (2.912,-0.184) {$B$};\node[inner sep=0pt] at (3.063,2.520) {$C$};\end{tikzpicture}}{%
+b)\ Berechne den Winkel $\gamma$.\karo{3}}
+\fusshilfe{\mbox{1:~b) $\gamma = 47^\circ$}}
+\end{pfaufg}
+
+% L3-A: Winkelsumme im Dreieck
+\begin{pfaufg}{}{2.}{}
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\footnotesize]\draw (0.000,0.000) -- (2.509,0.000) -- (1.346,2.700) -- cycle;\draw[mbgrau,line width=0.5pt] (0.380,0.000) arc (0.00:63.50:0.38);\node[inner sep=0pt] at (0.706,0.437) {$63{,}5^\circ$};\draw[mbgrau,line width=0.5pt] (2.359,0.349) arc (113.30:180.00:0.38);\node[inner sep=0pt] at (2.000,0.335) {$\beta$};\draw[mbgrau,line width=0.5pt] (1.177,2.360) arc (-116.50:-66.70:0.38);\node[inner sep=0pt] at (1.317,1.646) {$49{,}8^\circ$};\node[inner sep=0pt] at (-0.213,-0.132) {$A$};\node[inner sep=0pt] at (2.718,-0.137) {$B$};\node[inner sep=0pt] at (1.353,2.950) {$C$};\end{tikzpicture}}{%
+Berechne den Winkel $\beta$.\karo{3}}
+\fusshilfe{\mbox{2:~$\beta = 66{,}7^\circ$}}
+\end{pfaufg}
+
+% L3-A: Winkelsumme im Dreieck
+\begin{pfaufg}{}{3.}{}
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\footnotesize]\draw (0.000,0.000) -- (3.000,0.000) -- (3.000,1.562) -- cycle;\draw[mbgrau,line width=0.5pt] (0.380,0.000) arc (0.00:27.50:0.38);\node[inner sep=0pt] at (1.335,0.327) {$27{,}5^\circ$};\draw[mbgrau,line width=0.5pt] (3.000,0.300) arc (90.00:180.00:0.3);\fill (2.905,0.095) circle (0.8pt);\draw[mbgrau,line width=0.5pt] (2.663,1.386) arc (-152.50:-90.00:0.38);\node[inner sep=0pt] at (2.677,1.030) {$\gamma$};\node[inner sep=0pt] at (-0.243,-0.059) {$A$};\node[inner sep=0pt] at (3.177,-0.177) {$B$};\node[inner sep=0pt] at (3.130,1.775) {$C$};\end{tikzpicture}}{%
+Das Dreieck $ABC$ hat bei $B$ einen rechten Winkel. Berechne $\gamma$.\karo{3}}
+\fusshilfe{\mbox{3:~$\gamma = 62{,}5^\circ$}}
+\end{pfaufg}
+
+% L3-A: Winkelsumme im Dreieck
+\begin{pfaufg}{}{4.}{}
+Ein dreieckiges Sonnensegel wird an drei Punkten gespannt. An zwei Ecken misst Jonas $66{,}5^\circ$ und $59{,}5^\circ$. Der Hersteller schreibt: Keine Ecke darf spitzer als $55^\circ$ sein, sonst reißt die Naht. Hält das Segel? Rechne nach.\karo{3}
+\fusshilfe{\mbox{4:~Nein: die dritte Ecke hat nur $54^\circ$.}}
+\end{pfaufg}
+
+% L3-B: Gleichschenklige Dreiecke
+\begin{pfaufg}{}{5.}{}
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\footnotesize]\draw (0.000,0.000) -- (1.859,0.000) -- (0.929,2.300) -- cycle;\draw[line width=0.6pt] (0.372,1.187) -- (0.557,1.113);\draw[line width=0.6pt] (1.301,1.113) -- (1.487,1.187);\draw[mbgrau,line width=0.5pt] (0.380,0.000) arc (0.00:68.00:0.38);\node[inner sep=0pt] at (0.599,0.404) {$68^\circ$};\draw[mbgrau,line width=0.5pt] (1.716,0.352) arc (112.00:180.00:0.38);\node[inner sep=0pt] at (1.353,0.341) {$\beta$};\draw[mbgrau,line width=0.5pt] (0.787,1.948) arc (-112.00:-68.00:0.38);\node[inner sep=0pt] at (0.929,1.705) {$\gamma$};\node[inner sep=0pt] at (-0.207,-0.140) {$A$};\node[inner sep=0pt] at (2.066,-0.140) {$B$};\node[inner sep=0pt] at (0.929,2.550) {$C$};\end{tikzpicture}}{\grau{a)\ Im Dreieck $ABC$ sind $AC$ und $BC$ gleich lang. Es ist $\alpha = 68^\circ$. Berechne $\beta$ und $\gamma$.\par\smallskip $AC$ und $BC$ gleich lang (Striche): Die Winkel an der dritten Seite $AB$ sind die \textbf{Basiswinkel}. \ $\beta = \alpha = 68^\circ$\par $\gamma = 180^\circ - 68^\circ - 68^\circ = 44^\circ$\par Ist die Spitze gegeben, z.\,B. $\gamma = 52^\circ$: \ $(180^\circ - 52^\circ) : 2 = 64^\circ$, also $\alpha = \beta = 64^\circ$}}
+\par\medskip
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\footnotesize]\draw (0.000,0.000) -- (1.766,0.000) -- (0.883,2.300) -- cycle;\draw[line width=0.6pt] (0.348,1.186) -- (0.535,1.114);\draw[line width=0.6pt] (1.231,1.114) -- (1.418,1.186);\draw[mbgrau,line width=0.5pt] (0.380,0.000) arc (0.00:69.00:0.38);\node[inner sep=0pt] at (0.503,0.346) {$\alpha$};\draw[mbgrau,line width=0.5pt] (1.630,0.355) arc (111.00:180.00:0.38);\node[inner sep=0pt] at (1.170,0.409) {$69^\circ$};\draw[mbgrau,line width=0.5pt] (0.747,1.945) arc (-111.00:-69.00:0.38);\node[inner sep=0pt] at (0.883,1.705) {$\gamma$};\node[inner sep=0pt] at (-0.206,-0.142) {$A$};\node[inner sep=0pt] at (1.972,-0.142) {$B$};\node[inner sep=0pt] at (0.883,2.550) {$C$};\end{tikzpicture}}{%
+b)\ Im Dreieck $ABC$ sind $AC$ und $BC$ gleich lang. Berechne $\alpha$ und $\gamma$.\karo{3}}
+\fusshilfe{\mbox{5:~b) $\alpha = 69^\circ$, $\gamma = 42^\circ$}}
+\end{pfaufg}
+
+% L3-B: Gleichschenklige Dreiecke
+\begin{pfaufg}{}{6.}{}
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\footnotesize]\draw (2.300,-1.100) -- (2.300,1.100) -- (0.000,0.000) -- cycle;\draw[line width=0.6pt] (1.107,-0.640) -- (1.193,-0.460);\draw[line width=0.6pt] (1.193,0.460) -- (1.107,0.640);\draw[mbgrau,line width=0.5pt] (0.343,-0.164) arc (-25.56:25.56:0.38);\node[inner sep=0pt] at (0.686,0.000) {$38^\circ$};\draw[mbgrau,line width=0.5pt] (2.300,-0.720) arc (90.00:154.44:0.38);\node[inner sep=0pt] at (1.968,-0.574) {$\beta$};\draw[mbgrau,line width=0.5pt] (1.957,0.936) arc (-154.44:-90.00:0.38);\node[inner sep=0pt] at (1.968,0.574) {$\gamma$};\node[inner sep=0pt] at (2.433,-1.312) {$B$};\node[inner sep=0pt] at (2.433,1.312) {$C$};\node[inner sep=0pt] at (-0.250,0.000) {$A$};\end{tikzpicture}}{%
+Im Dreieck $ABC$ sind $AB$ und $AC$ gleich lang, $\alpha = 38^\circ$. Berechne $\beta$ und $\gamma$.\karo{3}}
+\fusshilfe{\mbox{6:~$\beta = \gamma = 71^\circ$}}
+\end{pfaufg}
+
+% L3-B: Gleichschenklige Dreiecke
+\begin{pfaufg}{}{7.}{}
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\footnotesize]\draw (0.000,0.000) -- (2.145,0.000) -- (1.073,2.300) -- cycle;\node[inner sep=0pt] at (0.058,1.373) {5\,cm};\draw[mbgrau,line width=0.5pt] (0.380,0.000) arc (0.00:65.00:0.38);\node[inner sep=0pt] at (0.610,0.389) {$65^\circ$};\draw[mbgrau,line width=0.5pt] (1.984,0.344) arc (115.00:180.00:0.38);\node[inner sep=0pt] at (1.535,0.389) {$65^\circ$};\draw[mbgrau,line width=0.5pt] (0.912,1.956) arc (-115.00:-65.00:0.38);\node[inner sep=0pt] at (1.073,1.705) {$\gamma$};\node[inner sep=0pt] at (-0.211,-0.134) {$A$};\node[inner sep=0pt] at (2.356,-0.134) {$B$};\node[inner sep=0pt] at (1.073,2.550) {$C$};\end{tikzpicture}}{%
+Im Dreieck $ABC$ ist $\alpha = \beta = 65^\circ$. Die Seite $AC$ ist 5\,cm lang. Welche Seite ist auch 5\,cm lang? Berechne $\gamma$.\karo{3}}
+\fusshilfe{\mbox{7:~$BC = 5$\,cm, $\gamma = 50^\circ$}}
+\end{pfaufg}
+
+% L3-B: Gleichschenklige Dreiecke
+\begin{pfaufg}{}{8.}{}
+Bei einer Stehleiter sind beide Holme gleich lang; unten stehen sie auf dem Boden, oben treffen sie sich unter $32^\circ$. Die Leiter steht sicher, wenn jeder Holm mit dem Boden mindestens $70^\circ$ bildet. Kreuze an.\pfkreuzzeile{Sicher: Jeder Holm bildet $74^\circ$ mit dem Boden.}\pfkreuzzeile{Nicht sicher: Jeder Holm bildet nur $58^\circ$ mit dem Boden.}\pfkreuzzeile{Nicht sicher: Jeder Holm bildet nur $32^\circ$ mit dem Boden.}
+\fusshilfe{\mbox{8:~Sicher: $74^\circ$ an jedem Holm.}}
+\end{pfaufg}
+
+% L3-C: Winkelsumme im Viereck
+\begin{pfaufg}{}{9.}{}
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\footnotesize]\draw (0.000,0.000) -- (2.400,0.000) -- (2.944,1.496) -- (0.139,1.594) -- cycle;\draw[mbgrau,line width=0.5pt] (0.380,0.000) arc (0.00:85.00:0.38);\node[inner sep=0pt] at (0.529,0.485) {$85^\circ$};\draw[mbgrau,line width=0.5pt] (2.530,0.357) arc (70.00:180.00:0.38);\node[inner sep=0pt] at (1.970,0.615) {$110^\circ$};\draw[mbgrau,line width=0.5pt] (2.565,1.509) arc (178.00:250.00:0.38);\node[inner sep=0pt] at (2.345,1.092) {$72^\circ$};\draw[mbgrau,line width=0.5pt] (0.106,1.215) arc (-95.00:-2.00:0.38);\node[inner sep=0pt] at (0.551,1.129) {$\delta$};\node[inner sep=0pt] at (-0.184,-0.169) {$A$};\node[inner sep=0pt] at (2.543,-0.205) {$B$};\node[inner sep=0pt] at (3.152,1.636) {$C$};\node[inner sep=0pt] at (-0.026,1.781) {$D$};\draw[line width=0.6pt] (5.310,1.633) -- (5.140,1.527);\draw[line width=0.6pt] (4.460,1.527) -- (4.290,1.633);\draw[line width=0.6pt] (5.134,0.597) -- (5.262,0.444);\draw[line width=0.6pt] (5.188,0.642) -- (5.316,0.489);\draw[line width=0.6pt] (4.338,0.444) -- (4.466,0.597);\draw[line width=0.6pt] (4.284,0.489) -- (4.412,0.642);\draw (4.800,2.260) -- (5.650,0.900) -- (4.800,0.187) -- (3.950,0.900) -- cycle;\draw[mbgrau,line width=0.5pt] (4.599,1.938) arc (-122.00:-58.00:0.38);\node[inner sep=0pt] at (4.800,1.635) {$64^\circ$};\draw[mbgrau,line width=0.5pt] (5.091,0.431) arc (40.00:140.00:0.38);\node[inner sep=0pt] at (4.800,0.782) {$100^\circ$};\node[inner sep=0pt] at (4.800,2.510) {$K$};\node[inner sep=0pt] at (5.897,0.861) {$L$};\node[inner sep=0pt] at (4.800,-0.063) {$M$};\node[inner sep=0pt] at (3.703,0.861) {$N$};\end{tikzpicture}}{\grau{a)\ (a) Im Viereck $ABCD$ ist $\alpha = 85^\circ$, $\beta = 110^\circ$, $\gamma = 72^\circ$. Berechne $\delta$. (b) $KLMN$ ist ein Drachen mit der Symmetrieachse $KM$. Bei $K$ sind es $64^\circ$, bei $M$ $100^\circ$. Berechne die Winkel bei $L$ und $N$.\par\smallskip (a) Die bekannten Winkel zusammen: \ $85^\circ + 110^\circ + 72^\circ = 267^\circ$\par $\delta = 360^\circ - 267^\circ = 93^\circ$\par (b) $L$ und $N$ liegen neben der Achse $KM$: gleich groß. Für beide zusammen bleiben $360^\circ - 64^\circ - 100^\circ = 196^\circ$\par je $196^\circ : 2 = 98^\circ$}}
+\par\medskip
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\footnotesize]\draw (0.000,0.000) -- (2.800,0.000) -- (3.586,1.123) -- (0.312,1.467) -- cycle;\draw[mbgrau,line width=0.5pt] (0.380,0.000) arc (0.00:78.00:0.38);\node[inner sep=0pt] at (0.560,0.454) {$78^\circ$};\draw[mbgrau,line width=0.5pt] (3.018,0.311) arc (55.00:180.00:0.38);\node[inner sep=0pt] at (2.466,0.643) {$125^\circ$};\draw[mbgrau,line width=0.5pt] (3.208,1.163) arc (174.00:235.00:0.38);\node[inner sep=0pt] at (3.042,0.875) {$\gamma$};\draw[mbgrau,line width=0.5pt] (0.233,1.096) arc (-102.00:-6.00:0.38);\node[inner sep=0pt] at (0.725,0.899) {$96^\circ$};\node[inner sep=0pt] at (-0.194,-0.157) {$A$};\node[inner sep=0pt] at (2.915,-0.222) {$B$};\node[inner sep=0pt] at (3.814,1.227) {$C$};\node[inner sep=0pt] at (0.165,1.669) {$D$};\end{tikzpicture}}{%
+b)\ Berechne den Winkel $\gamma$ im Viereck $ABCD$.\karo{3}}
+\fusshilfe{\mbox{9:~b) $\gamma = 61^\circ$}}
+\end{pfaufg}
+
+% L3-C: Winkelsumme im Viereck
+\begin{pfaufg}{}{10.}{}
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\footnotesize]\draw[line width=0.6pt] (-1.084,-0.460) -- (-1.172,-0.640);\draw[line width=0.6pt] (-1.172,0.640) -- (-1.084,0.460);\draw[line width=0.6pt] (0.434,-0.572) -- (0.263,-0.468);\draw[line width=0.6pt] (0.398,-0.632) -- (0.227,-0.528);\draw[line width=0.6pt] (0.263,0.468) -- (0.434,0.572);\draw[line width=0.6pt] (0.227,0.528) -- (0.398,0.632);\draw (-2.255,0.000) -- (0.000,-1.100) -- (0.661,0.000) -- (0.000,1.100) -- cycle;\draw[mbgrau,line width=0.5pt] (-1.914,-0.167) arc (-26.00:26.00:0.38);\node[inner sep=0pt] at (-1.569,0.000) {$52^\circ$};\draw[mbgrau,line width=0.5pt] (0.196,-0.774) arc (59.00:154.00:0.38);\node[inner sep=0pt] at (-0.175,-0.510) {$\beta$};\draw[mbgrau,line width=0.5pt] (0.465,0.326) arc (121.00:239.00:0.38);\node[inner sep=0pt] at (-0.112,0.000) {$118^\circ$};\draw[mbgrau,line width=0.5pt] (-0.342,0.933) arc (-154.00:-59.00:0.38);\node[inner sep=0pt] at (-0.175,0.510) {$\delta$};\node[inner sep=0pt] at (-2.505,0.000) {$A$};\node[inner sep=0pt] at (0.071,-1.340) {$B$};\node[inner sep=0pt] at (0.911,0.000) {$C$};\node[inner sep=0pt] at (0.071,1.340) {$D$};\end{tikzpicture}}{%
+$ABCD$ ist ein Drachen mit der Symmetrieachse $AC$. Berechne $\beta$ und $\delta$.\karo{3}}
+\fusshilfe{\mbox{10:~$\beta = \delta = 95^\circ$}}
+\end{pfaufg}
+
+% L3-C: Winkelsumme im Viereck
+\begin{pfaufg}{}{11.}{}
+Welche Aussage gilt für jede Raute? Kreuze an.\par\smallskip \gkreuz{Alle vier Seiten sind gleich lang.}\gkreuz{Alle vier Winkel sind gleich groß.}\par \gkreuz{Nur zwei Seiten sind parallel.}\gkreuz{Benachbarte Winkel sind gleich groß.}
+\fusshilfe{\mbox{11:~Alle vier Seiten sind gleich lang.}}
+\end{pfaufg}
+
+% L3-C: Winkelsumme im Viereck
+\begin{pfaufg}{}{12.}{}
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\footnotesize]\fill[black!8] (0.000,1.111) -- (1.000,0.000) -- (0.000,-1.732) -- (-1.000,0.000) -- cycle;\draw (0.000,1.111) -- (1.000,0.000) -- (0.000,-1.732) -- (-1.000,0.000) -- cycle;\draw[line width=0.5pt] (0.000,-1.732) .. controls (0.350,-2.032) and (0.100,-2.382) .. (0.450,-2.682);\draw[mbgrau,line width=0.5pt] (-0.254,0.828) arc (-132.00:-48.00:0.38);\node[inner sep=0pt] at (0.000,0.516) {$84^\circ$};\draw[mbgrau,line width=0.5pt] (0.190,-1.403) arc (60.00:120.00:0.38);\node[inner sep=0pt] at (0.000,-1.077) {$60^\circ$};\draw[mbgrau,line width=0.5pt] (0.746,0.282) arc (132.00:240.00:0.38);\draw[mbgrau,line width=0.5pt] (-0.810,-0.329) arc (-60.00:48.00:0.38);\node[inner sep=0pt] at (1.420,0.000) {\textbf{?}};\node[inner sep=0pt] at (-1.420,0.000) {\textbf{?}};\end{tikzpicture}}{%
+Paul baut einen Flugdrachen aus zwei Leisten; die lange Leiste ist die Symmetrieachse. Im Bauplan steht: oben $84^\circ$, unten $60^\circ$, links und rechts je $106^\circ$. Kann das stimmen? Trag die richtigen Winkel links und rechts ins Bild ein.\karo{3}}
+\fusshilfe{\mbox{12:~Nein}}
+\end{pfaufg}
+
+% L3-D: Winkel in Teildreiecken
+\begin{pfaufg}{}{13.}{}
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\footnotesize]\draw (0.000,0.000) -- (3.600,0.000) -- (2.489,2.089) -- cycle;\draw (2.489,2.089) -- (1.930,0.000);\draw[mbgrau,line width=0.5pt] (0.380,0.000) arc (0.00:40.00:0.38);\node[inner sep=0pt] at (0.788,0.287) {$40^\circ$};\draw[mbgrau,line width=0.5pt] (3.422,0.336) arc (118.00:180.00:0.38);\node[inner sep=0pt] at (2.980,0.373) {$62^\circ$};\draw[mbgrau,line width=0.5pt] (2.198,1.845) arc (-140.00:-105.00:0.38);\node[inner sep=0pt] at (1.922,1.199) {$35^\circ$};\draw[mbgrau,line width=0.5pt] (2.391,1.722) arc (-105.00:-62.00:0.38);\node[inner sep=0pt] at (2.558,1.488) {$\varepsilon$};\node[inner sep=0pt] at (-0.235,-0.086) {$A$};\node[inner sep=0pt] at (3.814,-0.129) {$B$};\node[inner sep=0pt] at (2.537,2.334) {$C$};\node[inner sep=0pt] at (1.930,-0.220) {$D$};\end{tikzpicture}}{\grau{a)\ Im Dreieck $ABC$ liegt $D$ auf der Seite $AB$. Berechne den Winkel $\varepsilon$ zwischen $CD$ und $CB$.\par\smallskip Teildreieck $ADC$: \ Winkel bei $D$ $= 180^\circ - 40^\circ - 35^\circ = 105^\circ$\par $D$ liegt auf der Geraden $AB$: \textbf{Nebenwinkel}. Winkel $BDC = 180^\circ - 105^\circ = 75^\circ$\par Teildreieck $DBC$, darin liegt $\varepsilon$: \ $\varepsilon = 180^\circ - 75^\circ - 62^\circ = 43^\circ$\par Probe: $\gamma = 35^\circ + 43^\circ = 78^\circ$; \ $40^\circ + 62^\circ + 78^\circ = 180^\circ$}}
+\par\medskip
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\footnotesize]\draw (0.000,0.000) -- (3.243,0.000) -- (1.172,2.300) -- cycle;\draw (1.172,2.300) -- (1.172,0.000);\draw[mbgrau,line width=0.5pt] (0.380,0.000) arc (0.00:63.00:0.38);\node[inner sep=0pt] at (0.617,0.378) {$63^\circ$};\draw[mbgrau,line width=0.5pt] (2.989,0.282) arc (132.00:180.00:0.38);\node[inner sep=0pt] at (2.584,0.293) {$48^\circ$};\draw[mbgrau,line width=0.5pt] (1.172,0.300) arc (90.00:180.00:0.3);\fill (1.076,0.095) circle (0.8pt);\draw[mbgrau,line width=0.5pt] (0.999,1.961) arc (-117.00:-90.00:0.38);\node[inner sep=0pt] at (0.980,1.500) {$\varepsilon$};\draw[mbgrau,line width=0.5pt] (1.172,1.920) arc (-90.00:-48.00:0.38);\node[inner sep=0pt] at (1.393,1.723) {$\varphi$};\node[inner sep=0pt] at (-0.213,-0.131) {$A$};\node[inner sep=0pt] at (3.471,-0.102) {$B$};\node[inner sep=0pt] at (1.139,2.548) {$C$};\node[inner sep=0pt] at (1.172,-0.220) {$D$};\end{tikzpicture}}{%
+b)\ $CD$ ist die Höhe im Dreieck $ABC$. Berechne $\varepsilon$, $\varphi$ und den ganzen Winkel $\gamma$ bei $C$.\karo{3}}
+\fusshilfe{\mbox{13:~b) $\varepsilon = 27^\circ$, $\varphi = 42^\circ$, $\gamma = 69^\circ$}}
+\end{pfaufg}
+
+% L3-D: Winkel in Teildreiecken
+\begin{pfaufg}{}{14.}{}
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\footnotesize]\draw (0.000,0.000) -- (3.400,0.000) -- (2.679,2.093) -- cycle;\draw (2.679,2.093) -- (1.658,0.000);\draw[mbgrau,line width=0.5pt] (0.380,0.000) arc (0.00:38.00:0.38);\node[inner sep=0pt] at (0.849,0.292) {$38^\circ$};\draw[mbgrau,line width=0.5pt] (2.038,0.000) arc (0.00:64.00:0.38);\node[inner sep=0pt] at (2.272,0.383) {$64^\circ$};\draw[mbgrau,line width=0.5pt] (2.380,1.859) arc (-142.00:-116.00:0.38);\node[inner sep=0pt] at (2.118,1.400) {$\varepsilon$};\node[inner sep=0pt] at (-0.236,-0.081) {$A$};\node[inner sep=0pt] at (3.604,-0.145) {$B$};\node[inner sep=0pt] at (2.750,2.333) {$C$};\node[inner sep=0pt] at (1.658,-0.220) {$D$};\end{tikzpicture}}{%
+$D$ liegt auf der Seite $AB$. Berechne den Winkel $\varepsilon$.\karo{3}}
+\fusshilfe{\mbox{14:~$\varepsilon = 26^\circ$}}
+\end{pfaufg}
+
+% L3-D: Winkel in Teildreiecken
+\begin{pfaufg}{}{15.}{}
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\footnotesize]\draw (0.000,0.000) -- (3.000,0.000) -- (1.500,1.500) -- cycle;\draw (1.500,1.500) -- (1.500,0.000);\draw[line width=0.6pt] (0.750,0.100) -- (0.750,-0.100);\draw[line width=0.6pt] (2.250,0.100) -- (2.250,-0.100);\draw[line width=0.6pt] (1.400,0.750) -- (1.600,0.750);\draw[mbgrau,line width=0.5pt] (1.500,0.300) arc (90.00:180.00:0.3);\fill (1.405,0.095) circle (0.8pt);\node[inner sep=0pt] at (-0.231,-0.096) {$A$};\node[inner sep=0pt] at (3.231,-0.096) {$B$};\node[inner sep=0pt] at (1.500,1.750) {$C$};\node[inner sep=0pt] at (1.500,-0.220) {$D$};\end{tikzpicture}}{%
+$CD$ steht senkrecht auf $AB$, und $AD$, $DC$ und $DB$ sind gleich lang (Striche). Begründe, dass der Winkel $\gamma$ bei $C$ ein rechter ist.\karo{3}}
+\fusshilfe{\mbox{15:~zweimal $45^\circ$, zusammen $90^\circ$}}
+\end{pfaufg}
+
+% L3-D: Winkel in Teildreiecken
+\begin{pfaufg}{}{16.}{}
+In der Mitte eines Zelts steht eine senkrechte Stange, 1,4\,m hoch. Von ihrer Spitze gehen die beiden Zeltwände gerade zum Boden; sie sind links und rechts je 1,4\,m vom Fuß der Stange entfernt befestigt. Bilden die Zeltwände oben einen rechten Winkel? Begründe.\karo{3}
+\fusshilfe{\mbox{16:~Ja: oben $45^\circ + 45^\circ = 90^\circ$.}}
+\end{pfaufg}
+
+% L3-T: Probetest
+\begin{pfaufg}{}{17.}{}
+Ein Dreieck hat die Winkel $46{,}5^\circ$ und $71{,}8^\circ$. Wie groß ist der dritte Winkel?\par\smallskip \gkreuz{$61{,}7^\circ$}\gkreuz{$62{,}7^\circ$}\par \gkreuz{$118{,}3^\circ$}\gkreuz{$51{,}7^\circ$}
+\fusshilfe{\mbox{17:~$61{,}7^\circ$}}
+\end{pfaufg}
+
+% L3-T: Probetest
+\begin{pfaufg}{}{18.}{}
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\footnotesize]\draw (0.000,0.000) -- (3.200,0.000) -- (2.517,1.400) -- (0.482,1.400) -- cycle;\draw[-{Stealth[length=1.8mm,width=1.6mm]}] (1.600,0.000) -- (1.730,0.000);\draw[-{Stealth[length=1.8mm,width=1.6mm]}] (1.500,1.400) -- (1.630,1.400);\draw[mbgrau,line width=0.5pt] (0.380,0.000) arc (0.00:71.00:0.38);\node[inner sep=0pt] at (0.588,0.420) {$71^\circ$};\draw[mbgrau,line width=0.5pt] (3.033,0.342) arc (116.00:180.00:0.38);\node[inner sep=0pt] at (2.587,0.383) {$64^\circ$};\draw[mbgrau,line width=0.5pt] (2.137,1.400) arc (180.00:296.00:0.38);\node[inner sep=0pt] at (2.125,0.772) {$116^\circ$};\draw[mbgrau,line width=0.5pt] (0.358,1.041) arc (-109.00:0.00:0.38);\node[inner sep=0pt] at (0.843,0.893) {$\delta$};\node[inner sep=0pt] at (-0.204,-0.145) {$A$};\node[inner sep=0pt] at (3.412,-0.132) {$B$};\node[inner sep=0pt] at (2.650,1.612) {$C$};\node[inner sep=0pt] at (0.337,1.604) {$D$};\end{tikzpicture}}{%
+Im Trapez $ABCD$ ist $AB \parallel CD$. Berechne $\delta$.\karo{3}}
+\fusshilfe{\mbox{18:~$\delta = 109^\circ$}}
+\end{pfaufg}
+
+% L3-T: Probetest
+\begin{pfaufg}{}{19.}{}
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\footnotesize]\draw (0.000,0.000) -- (2.600,0.000) -- (1.656,1.776) -- cycle;\draw (2.600,0.000) -- (3.600,0.000);\draw[mbgrau,line width=0.5pt] (0.380,0.000) arc (0.00:47.00:0.38);\node[inner sep=0pt] at (0.716,0.312) {$47^\circ$};\draw[mbgrau,line width=0.5pt] (2.980,0.000) arc (0.00:118.00:0.38);\node[inner sep=0pt] at (2.980,0.632) {$118^\circ$};\draw[mbgrau,line width=0.5pt] (1.397,1.498) arc (-133.00:-62.00:0.38);\node[inner sep=0pt] at (1.577,1.175) {$\gamma$};\node[inner sep=0pt] at (-0.229,-0.100) {$A$};\node[inner sep=0pt] at (2.891,-0.175) {$B$};\node[inner sep=0pt] at (1.688,2.024) {$C$};\end{tikzpicture}}{%
+Die Seite $AB$ ist über $B$ hinaus verlängert. Berechne $\gamma$.\karo{3}}
+\fusshilfe{\mbox{19:~$\gamma = 71^\circ$}}
+\end{pfaufg}
+
+% L3-T: Probetest
+\begin{pfaufg}{}{20.}{}
+Welche Aussage gilt für jeden Drachen? Kreuze an.\pfkreuzzeile{Die Diagonalen stehen senkrecht aufeinander.}\pfkreuzzeile{Gegenüberliegende Seiten sind parallel.}\pfkreuzzeile{Alle vier Seiten sind gleich lang.}\pfkreuzzeile{Alle vier Winkel sind gleich groß.}
+\fusshilfe{\mbox{20:~Die Diagonalen stehen senkrecht aufeinander.}}
+\end{pfaufg}
+
+% L3-T: Probetest
+\begin{pfaufg}{}{21.}{}
+Zwei Häuser haben Satteldächer; links und rechts sind die Dachflächen gleich lang. Bei Haus 1 sind die Dachflächen um $35^\circ$ gegen den Dachboden geneigt. Bei Haus 2 misst der Winkel oben am First $104^\circ$. Welches Dach ist steiler? Um wie viel Grad?\karo{3}
+\fusshilfe{\mbox{21:~Haus 2, um $3^\circ$ ($38^\circ$ gegen $35^\circ$).}}
+\end{pfaufg}
+
+\par\vfill\noindent{\footnotesize Vorher: Winkel an Geradenkreuzungen und Parallelen\quad\textbullet\quad Weiter: Dreiecke konstruieren\par}
+\end{document}

@@ -1,0 +1,59 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% gesetzt von werkzeuge/setzer.py (Sorte selbst) aus dem Lernweg HDK
+% und den Bankzeilen; Muster bau/proben/2026-10-09/hypotenuse-muster.
+\usepackage{enumitem}
+\usepackage{adjustbox,varwidth}
+\newgeometry{a4paper,margin=18mm,top=15mm,bottom=20mm,footskip=9mm}
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\footnotesize\color{mbgrau}HDK \textperiodcentered{} Lösungen \textperiodcentered{} Winkelsummen, Dreiecke und Vierecke}
+\fancyfoot[R]{\footnotesize\color{mbgrau}\thepage}
+\setlength{\parskip}{3pt}
+\renewcommand{\kreuz}[1]{\mbox{$\square$\ #1}\quad}
+\newcommand{\kreuzl}[1]{\par\hangindent1.4em\hangafter1\noindent$\square$\ #1}
+\newcommand{\aufg}[3]{\par\noindent\makebox[0pt][r]{#3}\begin{minipage}[t]{\linewidth}#1\end{minipage}\par}
+\newcommand{\aufgg}[4]{\par\noindent\makebox[0pt][r]{#4}\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}#1\end{minipage}\hfill
+  \begin{minipage}[t]{0.37\linewidth}\vspace{0pt}\centering #2\end{minipage}\par}
+\newcommand{\nr}[1]{\makebox[7mm][l]{\textbf{#1}}}
+\newcommand{\lsg}[3]{\par\noindent\begin{minipage}[t]{9mm}\textbf{#1}\end{minipage}%
+  \begin{minipage}[t]{52mm}\raggedright\bfseries\boldmath #2\end{minipage}\hspace{3mm}%
+  \begin{minipage}[t]{\dimexpr\linewidth-64mm\relax}\raggedright\small #3\end{minipage}\par\vspace{4pt}}
+\newlength{\kr}
+\makeatletter
+\newcommand{\karomerk}[2]{\protected@write\@auxout{}{\string\karoseite{#1}{#2}{\thepage}}}
+\newcommand{\karoseite}[3]{\expandafter\xdef\csname karo@#1@#2\endcsname{#3}}
+\newcommand{\karohinweis}[3]{\karomerk{h}{#1}\ifcsname karo@k@#1\endcsname
+  \ifnum\csname karo@k@#1\endcsname=0\csname karo@h@#1\endcsname\relax#2\else#3\fi
+  \else#3\fi}
+\makeatother
+\begin{document}
+
+\noindent{\Large\bfseries Lösungen}\hspace{1em}{\color{mbgrau}Winkelsummen, Dreiecke und Vierecke}\par\smallskip
+\noindent{\small Links das Ergebnis, rechts der Weg in kurzen Schritten. Stimmt dein Ergebnis nicht, such den ersten Schritt, der anders ist.}\par
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut A}}\hspace{2mm}{\bfseries Winkelsumme im Dreieck}\par\vspace{4pt}
+\lsg{1.}{$\gamma = 47^\circ$}{$\gamma = 180^\circ - 38^\circ - 95^\circ = 47^\circ$}
+\lsg{2.}{$\beta = 66{,}7^\circ$}{$\beta = 180^\circ - 63{,}5^\circ - 49{,}8^\circ = 66{,}7^\circ$}
+\lsg{3.}{$\gamma = 62{,}5^\circ$}{$\gamma = 180^\circ - 90^\circ - 27{,}5^\circ = 62{,}5^\circ$}
+\lsg{4.}{Nein: die dritte Ecke hat nur $54^\circ$.}{Nein; dritte Ecke $180^\circ - 66{,}5^\circ - 59{,}5^\circ = 54^\circ$; $54^\circ < 55^\circ$: zu spitz.}
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut B}}\hspace{2mm}{\bfseries Gleichschenklige Dreiecke}\par\vspace{4pt}
+\lsg{1.}{$\alpha = 69^\circ$, $\gamma = 42^\circ$}{$\alpha = \beta = 69^\circ$ (Basiswinkel); $\gamma = 180^\circ - 69^\circ - 69^\circ = 42^\circ$}
+\lsg{2.}{$\beta = \gamma = 71^\circ$}{$\beta = \gamma = (180^\circ - 38^\circ) : 2 = 71^\circ$}
+\lsg{3.}{$BC = 5$\,cm, $\gamma = 50^\circ$}{$BC = 5$\,cm (gleiche Winkel bei $A$ und $B$, gegenüber liegen $BC$ und $AC$); $\gamma = 180^\circ - 65^\circ - 65^\circ = 50^\circ$}
+\lsg{4.}{Sicher: $74^\circ$ an jedem Holm.}{Holme und Boden bilden ein gleichschenkliges Dreieck mit der Spitze oben: $(180^\circ - 32^\circ) : 2 = 74^\circ$; $74^\circ > 70^\circ$.}
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut C}}\hspace{2mm}{\bfseries Winkelsumme im Viereck}\par\vspace{4pt}
+\lsg{1.}{$\gamma = 61^\circ$}{$\gamma = 360^\circ - 78^\circ - 125^\circ - 96^\circ = 61^\circ$}
+\lsg{2.}{$\beta = \delta = 95^\circ$}{$\beta = \delta = (360^\circ - 52^\circ - 118^\circ) : 2 = 95^\circ$}
+\lsg{3.}{Alle vier Seiten sind gleich lang.}{(Raute: Parallelogramm mit vier gleich langen Seiten; gleiche Winkel hat nur das Quadrat.)}
+\lsg{4.}{Nein: links und rechts je $108^\circ$ (nicht $106^\circ$).}{Nein; $84^\circ + 60^\circ + 106^\circ + 106^\circ = 356^\circ$, nicht $360^\circ$. Richtig: links und rechts je $(360^\circ - 84^\circ - 60^\circ) : 2 = 108^\circ$.}
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut D}}\hspace{2mm}{\bfseries Winkel in Teildreiecken}\par\vspace{4pt}
+\lsg{1.}{$\varepsilon = 27^\circ$, $\varphi = 42^\circ$, $\gamma = 69^\circ$}{$\varepsilon = 180^\circ - 90^\circ - 63^\circ = 27^\circ$; $\varphi = 180^\circ - 90^\circ - 48^\circ = 42^\circ$; $\gamma = 27^\circ + 42^\circ = 69^\circ$}
+\lsg{2.}{$\varepsilon = 26^\circ$}{Winkel $ADC = 180^\circ - 64^\circ = 116^\circ$ (Nebenwinkel); $\varepsilon = 180^\circ - 38^\circ - 116^\circ = 26^\circ$}
+\lsg{3.}{zweimal $45^\circ$, zusammen $90^\circ$}{Dreieck $ADC$ ist gleichschenklig ($AD = DC$) mit $90^\circ$ bei $D$: Basiswinkel $(180^\circ - 90^\circ) : 2 = 45^\circ$, also Winkel $ACD = 45^\circ$. Ebenso im Dreieck $DBC$: Winkel $DCB = 45^\circ$. $\gamma = 45^\circ + 45^\circ = 90^\circ$.}
+\lsg{4.}{Ja: oben $45^\circ + 45^\circ = 90^\circ$.}{Ja; Stange und Boden bilden links und rechts je ein rechtwinkliges Dreieck mit zwei gleich langen Seiten (1,4\,m). Seine Basiswinkel sind $(180^\circ - 90^\circ) : 2 = 45^\circ$, oben also zweimal $45^\circ$: $45^\circ + 45^\circ = 90^\circ$.}
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut T}}\hspace{2mm}{\bfseries Probetest}\par\vspace{4pt}
+\lsg{1.}{$61{,}7^\circ$}{$180^\circ - 46{,}5^\circ - 71{,}8^\circ = 61{,}7^\circ$}
+\lsg{2.}{$\delta = 109^\circ$}{$\delta = 360^\circ - 71^\circ - 64^\circ - 116^\circ = 109^\circ$ (oder: $\delta = 180^\circ - 71^\circ = 109^\circ$, an der Seite $AD$ zwischen den Parallelen)}
+\lsg{3.}{$\gamma = 71^\circ$}{$\beta = 180^\circ - 118^\circ = 62^\circ$ (Nebenwinkel); $\gamma = 180^\circ - 47^\circ - 62^\circ = 71^\circ$}
+\lsg{4.}{Die Diagonalen stehen senkrecht aufeinander.}{}
+\lsg{5.}{Haus 2, um $3^\circ$ ($38^\circ$ gegen $35^\circ$).}{Haus 2: Neigung $(180^\circ - 104^\circ) : 2 = 38^\circ$; $38^\circ - 35^\circ = 3^\circ$: Das Dach von Haus 2 ist um $3^\circ$ steiler.}
+\end{document}
