@@ -997,3 +997,22 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
   gerundeten Tabellenwert dasselbe gibt (im Bau geprüft).
 - Mengenwarnungen (k1 s1–s7, k2 s1–s8) aus den Zusatzzeilen, wie bei
   allen Bauten.
+
+## Lehrer zum Nachrüst-Test und zur eigenen Vorlage (10.10.2026, Chat)
+
+Gesammelt, keine Regel (Lehrer: „bitte nicht gleich Regeln übernehmen“).
+- Runde 2 ist gedriftet: Abschnittsform, Seitengrenze, Ziel je Abschnitt,
+  Hinweise in den Aufgaben. T6B tisch-alt „nah an dem, was früher war“.
+- Nachrüst-Test 1: „mehr Teilaufgaben, Skizzen fehlen“. Test 2: „besser“.
+- „Du führst den Schüler ein klein wenig zu sehr“ (Nicht-Sachaufgaben):
+  Hinweise, doppelt Gesagtes (Text und Skizze), zwei Antwortformen.
+- Erkennen schlicht prüfen; Text und Skizze nicht doppelt; ruhigeres
+  Layout; Sachaufgaben weniger reichen auch.
+- Beispiel a): Rechenweg untereinander, Umformungsstrich nur beim
+  Umstellen; Beispiel vom Ende her denken (gesuchte Größe bleibt links).
+- Eigene Vorlage: bau/proben/2026-10-10/vorlage-holger/ – Gegenbeispiel,
+  Falle statt Tipp, Tafelwerkseite trägt der Schüler ein, Leiter als Anstieg.
+- Kern: „Ich wollte bessere, andere, weitere Aufgaben für den Katalog.“
+  Die Stufenketten der Bank (z. B. pythagoras e1 Kette Hypotenuse 0–15)
+  enthalten den Aufbau schon; die Aufträge hatten Agenten angewiesen, ihn
+  nicht zu befolgen bzw. nicht zu lesen – darum war kein Bau wiederholbar.
