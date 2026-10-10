@@ -684,3 +684,33 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
   („$32 - 30 = 2$ m² mehr“), nicht nur als Zahl im Satz.
 - Mengenwarnungen k2/k3 aus dem Vorrat wie bei den anderen Bauten;
   duplikate.py ohne Treffer an den neuen Zeilen.
+
+
+
+## Brüche E5 „Vergleichen, Ordnen, Runden“ (HMF, 10.10.2026)
+
+- Lage: Standardlage Klasse 6 laut Katalog (wie DXZ). Heft 6 Seiten:
+  Übersicht, A Vergleichen und ordnen, B Runden, C Dazwischen und Mitte,
+  D Bruch, Prozent, Quadrat erst umwandeln, T. Jede Zielaufgabe und
+  jede T-Aufgabe Schritt für Schritt einem Beispielschritt zugeordnet
+  (plan.md § 3); dabei fiel auf, dass das Mitte-Beispiel „Komma zwei
+  Stellen zurück“ für 0,04/0,05 (Tausendstel) nicht passte – Schritt
+  allgemein gefasst. Kritiker offen.
+- Thema-Weg endgültig: Vorher-Check (Zone, je Feld eine Zeile) und
+  Probetest mit allen 17 Originalen des Themas nachgetragen (Form wie
+  trigonometrie.md, quadratische-funktionen.md).
+- Mitte über „ohne Komma rechnen, halber Abstand“ statt (a + b) : 2:
+  Kl. 6 halbiert eine Dezimalzahl allein noch nicht sicher.
+- Bank: Die alten E5-Zeilen (v1–v3) tragen schon die naheliegenden
+  Zahlen (3,864 runden; 7,06/7,6/7,006 ordnen; 0,64/0,68); duplikate.py
+  fand zwei wörtliche Treffer, Zahlen geändert. Neue Zeilen nur noch
+  gewollte Zahlvarianten derselben Sprosse.
+- Prüfer: Sperre greift auf „0,4² = 0,8“ auch als falsche
+  Ankreuzoption (D4 nun 0,3² = 0,6). Ankreuzen mit Zahloptionen
+  verlangt pruef = Zahl einer Option (bei „0,2²“ also 0,2, nicht
+  0,04). Ordnen: Lösung als Liste „a; b; c; d“, sonst steht nur die
+  erste Zahl an der Ergebnisstelle. Mengenwarnungen aus dem Vorrat wie
+  bei DXZ.
+- Satz: \leerfeld-Reihen mit vier Teilen umbrechen nach c); lesbar,
+  aber unruhig. (Belassen; Vorschlag Setzer: Vergleichszeichen-Päckchen
+  in zwei Spalten.)
