@@ -457,3 +457,24 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
 - Mengenwarnungen k2 s1–s7, k3 s1, pflicht anwendung aus dem verlangten
   Vorrat, wie bisher. duplikate.py: nur gewollte Zahlvarianten
   (Vorrat zu Blattzeilen; Wertetabelle in Form wie e2-k4-s1).
+
+## Trigonometrie E3 „Teildreiecke in Figuren und Vermessung“ (56N, 10.10.2026)
+
+- Vier Abschnitte plus Probetest, Selbstlernheft 6 Seiten, Lösungen 2.
+  A Teildreieck in der Figur, B Hilfslinie: Kathete als Unterschied,
+  C Vermessung: Höhenwinkel und Gerätehöhe, D Zwei Schritte (Teilwinkel,
+  zwei Dreiecke an derselben Höhe), T. Thema-Weg Punkt 3 ergänzt.
+  Kritiker offen.
+- Parallelogramm, Stützdreieck (Pyramide, Kegel), zweiter Weg mit
+  Pythagoras nicht aufs Blatt: sonst sieben Seiten; Bestand bleibt.
+- „Höhenwinkel“ führt kein früherer Abschnitt und kein Formelkasten
+  ein; steht jetzt im Satz von C. begriffe.md prüfen, ob das Wort dort
+  fehlt. (Nicht geändert, nicht meine Datei.)
+- Teilwinkel-Skizze: Zwei Bögen am selben Punkt mit zwei Zahlen lesen
+  sich mehrdeutig (die Zahl des großen Winkels landet im kleinen Feld).
+  Darum nur der Teilwinkel mit Zahl, der große Winkel steht im Text.
+- Seiten C und D waren mit fünf Skizzen ohne Rechenplatz; Skizzen auf
+  höchstens 2,2 cm Höhe begrenzt, dann bleiben vier bis fünf Karozeilen.
+- Prüfer: Mengenwarnungen k1 s0–s18 aus Blatt- und Vorratszeilen, wie
+  bei den anderen Bauten. duplikate.py: nur Vorrat gegen Blattzeile
+  (gleicher Auftrag, andere Zahlen), gewollt.
