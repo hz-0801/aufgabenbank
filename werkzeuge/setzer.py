@@ -627,7 +627,7 @@ def weg(a):
     lo = a["loesung"]
     for o in sorted(opts, key=len, reverse=True):
         if lo.startswith(o):
-            return lo[len(o):].lstrip(" :")
+            return lo[len(o):].lstrip(" :;")
     erg = (a.get("ergebnis") or "").strip().rstrip(".")
     if erg and lo.startswith(erg) and (
             len(lo) == len(erg) or lo[len(erg)] in " .,:;\n"):
