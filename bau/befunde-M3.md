@@ -737,3 +737,24 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
   allen Bauten; neu „s11 Prüfungshöhe ohne Original“ – zwei neue
   Prüfungszeilen nach 2015-OS-B1d ohne original-Feld, weil Zahlen und
   Wortlaut neu sind. (Hingenommen.)
+
+## Terme E6 „Terme aufstellen“ (BGG, 10.10.2026)
+
+- Thema-Weg aus MZE gehalten; bei Schritt 2 ergänzt, dass Umfang und
+  Fläche des Rechtecks vorausgesetzt sind und x + x = 2x nur als
+  „gleiche Seiten mit Malpunkt“ vorkommt (Zusammenfassen folgt in E1).
+- Abschnitte A Rechenwörter · B Klammer · C Term zur Figur · D Sachterme
+  · T; Heft 6 Seiten, Lösungen 2; 26 Zeilen auf dem Blatt, 19 Vorrat.
+  Schritt-Zuordnung jeder Aufgabe in plan.md des Probenordners.
+- Neue Sprosse 11 „Sachterm mit Klammer: mehrere gleiche Pakete“ (Kino,
+  Zug, Busse): die Klammer kommt in der P10 nicht nur aus Rechenwörtern.
+  hoehe pflicht/anwendung, weil sie hinter der Prüfungshöhe steht.
+- Setzer: Text nach den \kreuz-Optionen fällt im Satz still weg (Ziel B
+  zuerst mit Teil b nach den Optionen – Teil b fehlte). Optionen ans
+  Ende gestellt. Kandidat für bank.md: „\kreuz steht am Ende von
+  aufgabe“ oder Prüfer-Warnung.
+- Prüfer-Sperre traf 3·(x + 4) (Merkkasten E3) – auf x + 5 gewechselt.
+- e6.jsonl nach Kette, Sprosse, Variante sortiert (angehängte Zeilen
+  ergaben sonst „Varianten nicht 1..n“). duplikate.py: s2-v4 ist
+  gewollte Zahlvariante von s2-v2.
+- Setzer tisch-alt: Tabelle steht über dem Auftragstext (wie MZE).
