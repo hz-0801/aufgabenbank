@@ -27,10 +27,13 @@ erlaubt (π), wie in den P10-Kontextaufgaben.
 | D | Umfang | Fläche gegen Umfang; Schnittlinie zählt nicht; Bogen |
 | T | Probetest | Rechnung ankreuzen, beide P10-Formen, Sache mit zwei Weg-Teilen |
 
-Ziele (Modell selbst, Antwortform wechselt): A reicht eine Dose?
-(nein, 2 m² fehlen) · B welcher Garten mehr frei, um wie viel · C wie
-viele Säcke (aufrunden) · D hat Mia recht? (nein, nur 951 m) · T reichen
-3 Säcke? (nein, 4 nötig).
+Ziele (Modell selbst, Antwortform wechselt): A für welche von zwei
+Wänden reicht eine Dose (Dreiecks- gegen Trapezgiebel) · B welcher
+Garten mehr frei, um wie viel · C wie viele Säcke (Halbkreise dazu,
+Teich weg, aufrunden) · D hat Tom recht? (nein, die Seite am Halbkreis
+zählt nicht) · T reichen 3 Säcke? (nein, 4 nötig).
+Nachbesserung 10.10. nach Kritiker: Ziele A4, C4, D4 und T3 b) waren
+Kopien der Beispiele und sind neu.
 
 Thema-Weg: E5 baut auf E1 (Rechtecke) und E3 (Dreieck) auf; Trapez
 (E4) wird nicht gebraucht (Trapez = Rechteck + zwei Dreiecke, A3). Der
