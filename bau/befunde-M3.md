@@ -669,3 +669,18 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
   52-mm-Spalte; lange Ergebnisse ohne \mbox schreiben.
 - Prüfer: Mengenwarnungen k1 s1–s12 und k2 s1 aus dem Vorrat, wie bei den
   anderen Bauten; duplikate.py nur B-Treffer (gewollte Zahlvarianten).
+## Flächen E1 – Rechteck, Quadrat, Umfang (9WQ, 10.10.)
+
+- Term zu Figur (Zielmarke 2025-OS-B1i, 2014-OS-B1g) nicht ins Heft:
+  Der Katalog nennt Klasse 5, dort gibt es noch keine Variablen. Der
+  Typ bleibt im Bestand (k2-s8, k5-s4); wenn der Lehrer ihn will, ein
+  eigenes Blatt ab Klasse 7. (Linie des Lehrers, nicht entschieden.)
+- Quadratseite aus der Fläche braucht die Wurzel (Kl. 8 laut Katalog);
+  im Heft nur als „Zahl, die mal sich selbst A ergibt“ mit
+  Quadratzahlen, das Zeichen √ einmal in der Formel erklärt.
+- Einheiten wechseln (cm und m gemischt) nicht im Heft: kein Beispiel
+  auf 6 Seiten frei; gehört zum Thema Einheiten.
+- Prüfer: Ergebnisstelle verlangt Unterschiede als Rechnung
+  („$32 - 30 = 2$ m² mehr“), nicht nur als Zahl im Satz.
+- Mengenwarnungen k2/k3 aus dem Vorrat wie bei den anderen Bauten;
+  duplikate.py ohne Treffer an den neuen Zeilen.
