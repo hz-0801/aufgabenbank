@@ -66,7 +66,7 @@ Für einen Ferienjob gibt es zwei Angebote. In Woche $1$ zahlen beide $40\,€$.
 \begin{pfaufg}{}{9.}{}
 \gzwei{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\begin{ksys}[xmin=0,xmax=4,ymin=0,ymax=800,xstep=0.5,ystep=100,karo=0.3,xlabel=Jahr,ylabel=€] \funktionab[3.0]{300*1.25^\x}{f}{0}{4} \gerade[3.9]{75}{300}{g} \funktionab[2.6]{45*\x^2}{h}{0}{4} \end{ksys}\end{varwidth}}}{\grau{a)\ Auf einem Konto liegen zu Beginn $300\,€$. Das Guthaben wächst jedes Jahr um $25\,\%$. Welcher Graph passt?\par\smallskip Startwert $300\,€$: Der Graph beginnt bei $(0\,|\,300)$. $h$ beginnt bei $0$, passt nicht.\par „$25\,\%$ jedes Jahr“: gleicher Faktor, also eine Kurve. $g$ ist eine Gerade, passt nicht.\par $f$ bleibt: beginnt bei $300$ und wird immer steiler. Bei Abnahme fällt die Kurve und wird flacher.\par Antwort: Graph $f$.}}
 \par\medskip
-\gzwei{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\begin{ksys}[xmin=0,xmax=5,ymin=0,ymax=450,xstep=0.5,ystep=50,karo=0.28,xlabel=Jahr,ylabel=Wert] \funktionab{400*0.8^\x}{}{0}{5} \gerade{40}{100}{} \funktionab{50*1.4^\x}{}{0}{5} \node[anchor=south west,inner sep=2pt,font=\small] at (0.8,334) {$g$};\node[anchor=south east,inner sep=2pt,font=\small] at (4.5,280) {$f$};\node[anchor=north west,inner sep=2pt,font=\small] at (2,98) {$h$}; \end{ksys}\end{varwidth}}}{%
+\gzwei{\begin{tikzpicture}\node[inner sep=0pt]{\begin{ksys}[xmin=0,xmax=5,ymin=0,ymax=450,xstep=0.5,ystep=50,karo=0.28,xlabel=Jahr,ylabel=Wert] \funktionab{400*0.8^\x}{}{0}{5} \gerade{40}{100}{} \funktionab{50*1.4^\x}{}{0}{5} \node[anchor=south west,inner sep=2pt,font=\small] at (0.8,334) {$g$};\node[anchor=south east,inner sep=2pt,font=\small] at (4.5,280) {$f$};\node[anchor=north west,inner sep=2pt,font=\small] at (2,98) {$h$}; \end{ksys}};\end{tikzpicture}}{%
 b)\ Das Koordinatensystem zeigt drei Graphen. Schreib zu jedem: Gerade oder Kurve? Steigt er oder fällt er? Wo beginnt er?\karo{3}}
 \fusshilfe{\mbox{9:~b) $f$ Gerade, steigt, $100$}}
 \end{pfaufg}
@@ -80,7 +80,7 @@ Ein Tank enthält $150$ Liter Wasser. Jede Minute laufen $30$ Liter dazu. Kreuze
 
 % L1-C: Den passenden Graphen finden
 \begin{pfaufg}{}{11.}{}
-\gzwei{\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\begin{ksys}[xmin=0,xmax=8,ymin=0,ymax=1000,xstep=1,ystep=100,karo=0.28,xlabel=Jahr,ylabel=Mitglieder] \gerade{48}{400}{} \funktionab{400*1.12^\x}{}{0}{8} \funktionab{12*\x^2}{}{0}{8} \node[anchor=north west,inner sep=2pt,font=\small] at (2,496) {$f$};\node[anchor=south east,inner sep=2pt,font=\small] at (6.3,814) {$g$};\node[anchor=north west,inner sep=2pt,font=\small] at (6,432) {$h$}; \end{ksys}\end{varwidth}}}{%
+\gzwei{\begin{tikzpicture}\node[inner sep=0pt]{\begin{ksys}[xmin=0,xmax=8,ymin=0,ymax=1000,xstep=1,ystep=100,karo=0.28,xlabel=Jahr,ylabel=Mitglieder] \gerade{48}{400}{} \funktionab{400*1.12^\x}{}{0}{8} \funktionab{12*\x^2}{}{0}{8} \node[anchor=north west,inner sep=2pt,font=\small] at (2,496) {$f$};\node[anchor=south east,inner sep=2pt,font=\small] at (6.3,814) {$g$};\node[anchor=north west,inner sep=2pt,font=\small] at (6,432) {$h$}; \end{ksys}};\end{tikzpicture}}{%
 Ein Fitnessstudio hat $400$ Mitglieder. Jedes Jahr kommen $12\,\%$ dazu. Kreuze den Graphen an, der die Zahl der Mitglieder zeigt. Begründe für die beiden anderen Graphen, warum sie nicht passen.\par\smallskip \gkreuz{$f$}\gkreuz{$g$}\par \gkreuz{$h$}}
 \fusshilfe{\mbox{11:~$g$}}
 \end{pfaufg}
