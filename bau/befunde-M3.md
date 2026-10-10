@@ -888,3 +888,28 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
 - tisch-alt setzt das Beispiel als „a) (a) …“ (Teilaufgaben im Beispiel
   plus Marke a); Setzerfrage, hier nicht geändert.
 - Mengenwarnungen e2 (16) aus den Zusatzzeilen, wie bei allen Bauten.
+
+## Flächen E5 „Zusammengesetzte Figuren“ (V28, 10.10.2026)
+
+- Lage: Klasse 7 laut Katalog (GYM 5–7, LS 7); der Kreis steht in der
+  Serie erst danach. Das Heft gibt nur π·r², π·d und r = d : 2 als
+  Formel mit Taschenrechner (wie P10-Kontextaufgaben); Tisch-Zeile
+  „Taschenrechner erlaubt“ statt „ohne“ wie bei E1/E3.
+- Trapez (E4, ungebaut) nicht vorausgesetzt: A3 zerlegt es in Rechteck
+  und zwei Dreiecke. Thema-Weg ergänzt.
+- Schritt-Abgleich fand vier Lücken, im Beispiel geschlossen: Runden
+  am Ende mit Regel (C), Säcke aufrunden (C), ein einzelner Halbkreis
+  bzw. Bogen (C, D in Klammern), „mal Rundenzahl“ (D).
+- Bank-Kette passt nur grob: „Rechteck mit einem Halbkreis“ hat keine
+  Sprosse; C1 liegt in k1-s7 (P10-Form) ohne Original. Sprosse
+  „Rechteck und Halbkreis“ erwägen.
+- Setzer: Karo nur bei Restplatz > 12 mm; mit vier Skizzen-Aufgaben
+  musste jede Skizze auf etwa 2 cm Höhe, sonst kein Rechenplatz und
+  7 Seiten. Ankreuzen mit langen Termen bricht im tisch-alt unschön um.
+- Skizzen: Höhenbeschriftung neben einer gestrichelten Höhe trifft bei
+  kleinen Maßstäben die schräge Seite; Dreiecke breiter gewählt bzw.
+  Höhe weggelassen (D2).
+- Prüfer: quelle muss je Sprosse einheitlich sein (Bestand 104, nicht
+  die heutige Zeile 101). Mengenwarnungen aus Blatt und Vorrat wie bei
+  den anderen Bauten; duplikate.py ohne Treffer in e5.
+- Kritiker: offen (startet der Chat).
