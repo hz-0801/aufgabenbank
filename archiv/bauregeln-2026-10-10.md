@@ -1,7 +1,7 @@
 # Bauregeln – wie ein Blatt aussieht
 
 > **Abgelöst am 10.10.2026** durch mathe-nachhilfe `gemeinsam.md`
-> (Handwerk) und `pruefung.md` (Sorte Prüfung). Nur noch Beleg; Archiv in
+> (Handwerk) und `pruefung.md` (Sorte Prüfung). Nur noch Beleg, archiviert
 > plan.md § 7 Schritt 3. Abweichung seit 10.10.: Prüfstein einmal je
 > Kapitel, nicht auf jedem Blatt (pruefung.md „Prüfstein“).
 

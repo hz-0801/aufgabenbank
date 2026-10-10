@@ -430,7 +430,7 @@ Verfahrenskette ist daher nicht immer k1.
   (das Prüfungsheft lässt sie aus, das Unterrichtsblatt führt sie).
 - Zahlen so, dass Ergebnisse endlich sind und leichte Aufgaben im
   Kopf gehen; periodische Dezimalbrüche tragen einen Hinweis.
-- Zahlen wachsen mit der Leiter: bauregeln.md „Leiter“ und „Zahlen“;
+- Zahlen wachsen mit der Leiter: gemeinsam.md „Leiter“ und „Zahlen“;
   für die Bank heißt das: je Stufe unten genug glatte, kopfrechenbare
   Vorstufen.
 - Ergebnisse in loesung exakt zuerst, dann gerundet („25\sqrt{2}
@@ -440,7 +440,7 @@ Verfahrenskette ist daher nicht immer k1.
   geänderte Zeilen.
   Dreisatz-Zahlen der Zone im Kopf rechenbar.
 - Keine Aufgabe doppelt, auch nicht über Ketten hinweg.
-- Herkunft, eigene und herausgelöste Aufgaben: bauregeln.md „Herkunft“. Für
+- Herkunft, eigene und herausgelöste Aufgaben: gemeinsam.md „Satz“ (Herkunft auf dem Blatt), pruefung.md § 5 (Marken). Für
   die Bank: eigene Zeilen sparsam, zwei eigene einer Sprosse in
   mindestens zwei Merkmalen verschieden (Sache, Darstellung,
   Fragerichtung, Sprachform); Kopien nur mit anderer Zahl ruhen (Feld
@@ -510,7 +510,7 @@ Verfahrenskette ist daher nicht immer k1.
 
 ## Option „schwach“
 
-Was „schwach“ auf dem Blatt ändert: bauregeln.md „Offen“ (Einstieg unten). Die Bank braucht
+Was „schwach“ auf dem Blatt ändert: gemeinsam.md „Lieferung“ (Einstieg unten). Die Bank braucht
 dafür je Stufe mindestens drei Zeilen und je Zeile Zwischenergebnisse in
 loesung.
 
@@ -524,7 +524,7 @@ Form: Abschnitt „## e<n> k<k> <kette>“, die
 Aufgabe des Grundfalls mit eigenen Zahlen (nicht aus dem Päckchen),
 darunter eine Tabelle Schritt | Zeile, eine Zeile je Umformung, das
 Ergebnis als letzte Zeile. Reine Daten ohne Bausteine; die Form auf
-dem Blatt regeln die Bauregeln (bau/bauregeln.md).
+dem Blatt regelt mathe-nachhilfe gemeinsam.md.
 Liefert der Lehrer ein Beispiel, gilt seins (ziel.md).
 
 ## Basisvorrat

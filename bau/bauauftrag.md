@@ -5,7 +5,7 @@ Stand 10.10.2026 (Lehrer: Go für den Musterauftrag). Kern ist
 7 min, Lehrer: „die Aufgaben sind gut“): Lage und Zweck statt Regeln
 (Befund `mathe-nachhilfe/befund-selbstlernheft-2026-10-09.md`). Der
 frühere Auftrag liegt in `bau/archiv/bauauftrag-2026-10-09.md`.
-Handwerk bei Zweifel: `bau/bauregeln.md`; Zeilenform: `bank.md`.
+Handwerk bei Zweifel: mathe-nachhilfe `gemeinsam.md`; Zeilenform: `bank.md`.
 
 ## Lage
 
@@ -99,7 +99,7 @@ Nur mit grep/awk/Python-Filter, nie ganze große Dateien:
   mit Bank-ids. Gibt es schon einen Block, bleibt er darunter als
   „frühere Fassung (<Kennung>)“; nichts löschen. Den Thema-Weg anlegen
   oder ergänzen, wenn der Bau die Folge ändert.
-- **Kennung** nach `bau/bauregeln.md` „Kennung“; die Registerzeile in
+- **Kennung** nach mathe-nachhilfe `gemeinsam.md` „Satz“; die Registerzeile in
   `bau/register.csv` schreibt der Setzer beim ersten Satz. Die Kennung
   zu Beginn des Baus reservieren: `python3 werkzeuge/setzer.py <eintrag>
   <teil> --reserviere` (Zeile „reserviert“ im Register, gepusht).

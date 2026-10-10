@@ -47,7 +47,7 @@ Dateinamen tragen die Sorte: mehrere Sorten gehen in denselben Ordner,
 das Register ergänzt sorten= (setzt nichts zurück).
 tisch und selbst brauchen einen Block in Abschnittsform.
 
-Kennung (Schrittform): neu nach bau/bauregeln.md „Kennung“ (drei Zeichen
+Kennung (Schrittform): neu nach mathe-nachhilfe gemeinsam.md „Satz“ (drei Zeichen
 aus 2–9 und A–Z ohne I und O, gegen bau/register.csv eindeutig) und eine
 Zeile ins Register mit den gesetzten ids (Gruppen einer Nummer mit „+“).
 Mit --kennung K wird ein Blatt aus dem Register wieder gesetzt: dieselben
@@ -1209,7 +1209,7 @@ FUSS_HILFE = ("\\fancyfoot[C]{\\parbox[t]{\\textwidth}{\\mbfhbox\\par"
 
 def tex_uebersicht(lw, kennung):
     zeilen = [KOPF + f"% gesetzt von werkzeuge/setzer.py; Übersicht nach "
-              "bau/bauregeln.md „Übersicht und Serie“.",
+              "mathe-nachhilfe gemeinsam.md „Übersicht und Serie“.",
               f"\\newcommand{{\\kennung}}{{{kennung}}}",
               "\\newcommand{\\bereich}[1]{\\par\\addvspace{14pt}\\noindent"
               "{\\large\\bfseries #1}\\par\\nobreak\\vspace{4pt}}",
@@ -1258,7 +1258,7 @@ def tex_blatt(lw, kennung, nummern):
 def tex_loesungen(lw, kennung, loesungen):
     return "\n".join([
         KOPF + "% gesetzt von werkzeuge/setzer.py; Lösungen nach "
-        "bau/bauregeln.md „Lösungen“.",
+        "mathe-nachhilfe gemeinsam.md „Lösungen“.",
         f"\\newcommand{{\\kennung}}{{{kennung}}}",
         "\\begin{document}", "\\pfheftstil", FUSS_EINFACH,
         f"\\pfheftkopf{{{lw['name']}}}{{{lw.get('niveau', '')} "
