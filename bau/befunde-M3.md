@@ -581,3 +581,30 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
 - Prüfer: Mengenwarnungen k1 s1–s21 und pflicht anwendung aus Blatt-
   und Vorratszeilen, wie bei den anderen Bauten. duplikate.py: nur
   gewollte Zahlvarianten (T1 gegen k1-s1-v1/v3/v5).
+
+
+## Lineare Funktionen E5 „Anwendungen“ (PRC, 10.10.2026)
+
+- Vier Abschnitte plus Probetest, Selbstlernheft 6 Seiten, Lösungen 2:
+  A Gleichung aus dem Text, B Graph und Gleichung in der Sache, C
+  Endwert und rückwärts, D Tarife vergleichen, T. 21 Aufgaben auf dem
+  Blatt, 23 im Vorrat. Thema-Weg Punkt 5 ergänzt. Kritiker offen.
+- E4 (Gleichsetzen) ist noch nicht gebaut; „ab wann günstiger“ ist darum
+  in D vollständig vorgerechnet und in B am Graphen vorbereitet. Wird E4
+  gebaut, kann D kürzer werden. (So gebaut.)
+- Graphen kosten Platz: Mit vier Sachgraphen auf Seite B (Karo 0,5)
+  fiel das Rechenkaro weg. „Graph zu Tarif zuordnen“ darum in den
+  Vorrat, auf dem Blatt eine Deute-Aufgabe ohne Bild; y-Achsen in 2er-,
+  4er-, 15er-Schritten, damit die Bilder höchstens 8 Kästchen hoch sind.
+  Zuordnen steckt nur noch im Ziel B (welche Gerade ist das Abo?).
+- Ziele wechseln die Antwortform: Unterschied von m (A), Schnittpunkt
+  ablesen und entscheiden (B), reicht es / wie viel länger (C), wer ist
+  günstiger und ab wann der andere (D, T).
+- Prüfer: Ergebnisstelle verlangt jede pruef-Zahl nach „=“; bei
+  Rundungsaufgaben die gerundete ganze Zahl („nach 22 Minuten“) aus
+  pruef genommen, der ungerundete Wert bleibt; die Rundung steht in
+  tmp-sympy. Zuordnen ohne Zahl: pruef aus „bei $y = 8$“ gebildet.
+  Setzer schreibt 2-blatt.pdf/3-loesungen.pdf, im Probenordner von
+  Hand umbenannt.
+- Mengenwarnungen k1 s0–s5, k2 s1, pflicht aus dem verlangten Vorrat,
+  wie bisher. duplikate.py: keine neue id betroffen.
