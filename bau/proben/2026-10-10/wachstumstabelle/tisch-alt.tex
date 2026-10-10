@@ -1,0 +1,142 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\usepackage{adjustbox,varwidth}
+% gesetzt von werkzeuge/setzer.py aus dem Lernweg (L2-A · L2-B · L2-C · L2-D · L2-T) und den Bankzeilen; Muster T6B.
+\input{praeambel}
+\newcommand{\kennung}{SLM}
+\newcommand{\grau}[1]{{\color{mbgrau}#1}}
+
+\begin{document}
+\pfheftstil
+\fancyfoot[C]{\parbox[t]{\textwidth}{\mbfhbox\par\vspace{1.5mm}{\footnotesize\color{mbgrau}{\scriptsize \kennung}\hfill\thepage}}}
+\pfheftkopf{Wachstumsfaktor und Wachstumstabelle}{Klasse 10}
+% L2-A: Faktor und Prozentsatz
+\begin{pfaufg}{}{1.}{}
+\grau{a)\ Gib den Faktor an: a) Eine Miete steigt jedes Jahr um $3\,\%$. b) Ein Akku verliert jeden Monat $4\,\%$ seiner Ladung. Gib den Prozentsatz an: c) Ein Wert wird jedes Jahr mit $0{,}85$ multipliziert. d) Ein Wert wird jedes Jahr mit $1{,}2$ multipliziert.\par\smallskip Zunahme oder Abnahme? „steigt“: Zunahme. „verliert“: Abnahme.\par Zunahme: $q = 1 + \frac{3}{100} = 1{,}03$. Das Komma rückt zwei Stellen nach links: $1{,}9\,\%$ gibt $1 + 0{,}019 = 1{,}019$.\par Abnahme: $q = 1 - \frac{4}{100} = 0{,}96$.\par Vom Faktor zum Prozentsatz: Abstand zu $1$. $0{,}85$ ist kleiner als $1$: $1 - 0{,}85 = 0{,}15$, also $15\,\%$ weniger. $1{,}2$ ist größer als $1$: $1{,}2 - 1 = 0{,}2$, also $20\,\%$ mehr.}
+\par\medskip
+b)\ Gib den Faktor $q$ an. a) Ein Preis steigt um $7\,\%$. b) Ein Bestand sinkt um $7\,\%$. c) Eine Fläche wächst um $40\,\%$. d) Ein Wert nimmt um $2\,\%$ ab.\karo{3}
+\fusshilfe{\mbox{1:~b) a) $1{,}07$ \ b) $0{,}93$ \ c) $1{,}4$ \ d) $0{,}98$}}
+\end{pfaufg}
+
+% L2-A: Faktor und Prozentsatz
+\begin{pfaufg}{}{2.}{}
+Gib den Faktor $q$ an. a) Eine Miete steigt um $1{,}9\,\%$. b) Ein Wald verliert $12{,}5\,\%$ seiner Bäume. c) Ein Guthaben wächst um $0{,}5\,\%$. d) Eine Menge halbiert sich.\karo{3}
+\fusshilfe{\mbox{2:~a) $1{,}019$ \ b) $0{,}875$ \ c) $1{,}005$ \ d) $0{,}5$}}
+\end{pfaufg}
+
+% L2-A: Faktor und Prozentsatz
+\begin{pfaufg}{}{3.}{}
+Ein Wert wird bei jedem Schritt mit dem Faktor multipliziert. Um wie viel Prozent nimmt er zu oder ab? a) $1{,}08$ \ b) $0{,}92$ \ c) $1{,}35$ \ d) $0{,}6$\karo{3}
+\fusshilfe{\mbox{3:~a) $+8\,\%$ \ b) $-8\,\%$ \ c) $+35\,\%$ \ d) $-40\,\%$}}
+\end{pfaufg}
+
+% L2-A: Faktor und Prozentsatz
+\begin{pfaufg}{}{4.}{}
+Vier Banken werben für ein Sparkonto. Kreuze alle Angebote an, bei denen das Guthaben jedes Jahr um $2{,}5\,\%$ wächst.\par\smallskip \gkreuz{Bank A: $2{,}5\,\%$ Zinsen pro Jahr}\gkreuz{Bank B: Guthaben jedes Jahr mal $1{,}025$}\par \gkreuz{Bank C: Guthaben jedes Jahr mal $1{,}25$}\gkreuz{Bank D: Guthaben jedes Jahr mal $0{,}975$}
+\fusshilfe{\mbox{4:~Bank A und Bank B}}
+\end{pfaufg}
+
+% L2-B: Faktor aus der Tabelle
+\begin{pfaufg}{}{5.}{}
+\grau{a)\ Die Tabelle zeigt die Zahl der Bakterien in einer Probe. Weise nach, dass die Zahl jede Stunde um $30\,\%$ wächst. \newline\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\wertetabelle[200,260,338,439{,}4]{\text{Stunde}}{\text{Bakterien in Tausend}}{0,1,2,3}\end{varwidth}}\par\smallskip Quotienten von Wert zu Wert, immer neu $:$ alt: $260 : 200 = 1{,}3$; \ $338 : 260 = 1{,}3$; \ $439{,}4 : 338 = 1{,}3$.\par Alle Quotienten sind gleich, also ist $q = 1{,}3$. Wäre einer anders, wüchse die Zahl nicht jede Stunde um denselben Prozentsatz.\par Prozentsatz: $1{,}3 - 1 = 0{,}3$, also $30\,\%$ mehr.\par Antwort: Jede Stunde wird die Zahl mit $1{,}3$ multipliziert, sie wächst also um $30\,\%$.}
+\par\medskip
+b)\ Die Tabelle zeigt, wie viele Leute ein Video gesehen haben. Bilde die Quotienten. Gib den Faktor und den Prozentsatz an. \newline\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\wertetabelle[50,60,72,86{,}4]{\text{Tag}}{\text{Aufrufe in Tausend}}{0,1,2,3}\end{varwidth}}\karo{3}
+\fusshilfe{\mbox{5:~b) $q = 1{,}2$, $+20\,\%$ je Tag}}
+\end{pfaufg}
+
+% L2-B: Faktor aus der Tabelle
+\begin{pfaufg}{}{6.}{}
+Die Tabelle zeigt den Wert eines E-Bikes. Bilde die Quotienten. Gib den Faktor und den Prozentsatz an. \newline\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\wertetabelle[1\,500,1\,200,960,768]{\text{Jahr}}{\text{Wert in €}}{0,1,2,3}\end{varwidth}}\karo{3}
+\fusshilfe{\mbox{6:~$q = 0{,}8$, $-20\,\%$ je Jahr}}
+\end{pfaufg}
+
+% L2-B: Faktor aus der Tabelle
+\begin{pfaufg}{}{7.}{}
+Die Tabelle zeigt die Zahl der Mitglieder eines Sportvereins. Weise nach, dass die Zahl jedes Jahr um $4\,\%$ gestiegen ist. \newline\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\wertetabelle[1\,250,1\,300,1\,352]{\text{Jahr}}{\text{Mitglieder}}{2023,2024,2025}\end{varwidth}}\karo{3}
+\fusshilfe{\mbox{7:~beide Quotienten $1{,}04$: $+4\,\%$}}
+\end{pfaufg}
+
+% L2-B: Faktor aus der Tabelle
+\begin{pfaufg}{}{8.}{}
+In der Zeitung steht: „Die Zahl der E-Autos in unserer Stadt wächst jedes Jahr um $25\,\%$.“ Stimmt das für alle Jahre der Tabelle? Begründe. \newline\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\wertetabelle[2\,400,3\,000,3\,750,4\,500]{\text{Jahr}}{\text{E-Autos}}{2022,2023,2024,2025}\end{varwidth}}\karo{3}
+\fusshilfe{\mbox{8:~nein: zuletzt Faktor $1{,}2$, nur $+20\,\%$}}
+\end{pfaufg}
+
+% L2-C: Tabelle fortschreiben
+\begin{pfaufg}{}{9.}{}
+\grau{a)\ Auf einem See bedecken Algen zu Beginn $50\,\mathrm{m}^2$. Die Fläche wächst jede Woche um $20\,\%$. Ergänze die Tabelle. \newline\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\wertetabelle[,60,,86{,}4,]{\text{Woche}}{\text{Fläche in m²}}{0,1,2,3,6}\end{varwidth}}\par\smallskip Faktor: $20\,\%$ mehr, also $q = 1{,}2$.\par Woche $0$: Der Startwert steht im Text. Trage $50$ ein, ohne zu rechnen.\par Lücke in Woche $2$: $60 \cdot 1{,}2 = 72$. Probe mit dem nächsten Wert: $72 \cdot 1{,}2 = 86{,}4$ \checkmark\par Woche $6$: Schritte zählen, $6 - 3 = 3$. Also $86{,}4 \cdot 1{,}2^3 = 149{,}2992 \approx 149{,}3$. Eintragen: $149{,}3$.}
+\par\medskip
+b)\ Auf einem Sparkonto liegen zu Beginn $2\,000\,€$. Das Guthaben wächst jedes Jahr um $5\,\%$. Ergänze die Tabelle. \newline\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\wertetabelle[2\,000,,,]{\text{Jahr}}{\text{Guthaben in €}}{0,1,2,3}\end{varwidth}}\karo{3}
+\fusshilfe{\mbox{9:~b) $2\,100{,}00\,€$}}
+\end{pfaufg}
+
+% L2-C: Tabelle fortschreiben
+\begin{pfaufg}{}{10.}{}
+In einem Pool sind zu Beginn $640$ g Chlor. Jeden Tag nimmt die Menge um $25\,\%$ ab. Ergänze die Tabelle. \newline\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\wertetabelle[,480,,,]{\text{Tag}}{\text{Chlor in g}}{0,1,2,3,4}\end{varwidth}}\karo{3}
+\fusshilfe{\mbox{10:~$640$; \ $360$; \ $270$; \ $202{,}5$}}
+\end{pfaufg}
+
+% L2-C: Tabelle fortschreiben
+\begin{pfaufg}{}{11.}{}
+Eine Stadt hat im Jahr $2020$ genau $40\,000$ Einwohner. Die Zahl wächst jedes Jahr um $2\,\%$. Ergänze die Tabelle. \newline\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\wertetabelle[40\,000,,,]{\text{Jahr}}{\text{Einwohner}}{2020,2021,2022,2030}\end{varwidth}}\karo{3}
+\fusshilfe{\mbox{11:~$40\,800$; \ $41\,616$; \ $\approx 48\,760$}}
+\end{pfaufg}
+
+% L2-C: Tabelle fortschreiben
+\begin{pfaufg}{}{12.}{}
+Ein Kalb wiegt bei der Geburt $40$ kg. In den ersten Wochen nimmt es jede Woche um $15\,\%$ zu. Ergänze die Tabelle. Um wie viel kg hat das Kalb in den $8$ Wochen zugenommen? \newline\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\wertetabelle[,46,,,]{\text{Woche}}{\text{Masse in kg}}{0,1,2,4,8}\end{varwidth}}\karo{3}
+\fusshilfe{\mbox{12:~$40$}}
+\end{pfaufg}
+
+% L2-D: Zurückrechnen und fehlende Zeit
+\begin{pfaufg}{}{13.}{}
+\gzwei{\begin{tikzpicture}[x=1cm,y=-0.62cm,font=\small]\fill[black!8] (0,-1.5) rectangle (3.6,-0.5);\draw[black!50] (0,-1.5) rectangle (1.4,-0.5);\draw[black!50] (1.4,-1.5) rectangle (3.6,-0.5);\node[font=\footnotesize] at (0.7,-1) {Stunde};\node[font=\footnotesize] at (2.5,-1) {Menge in mg};\foreach \zs/\zw [count=\i from 0] in {0/200,1/180,2/162,3/145{,}8,4/131{,}22}{\draw[black!50] (0,\i-0.5) rectangle (1.4,\i+0.5);\draw[black!50] (1.4,\i-0.5) rectangle (3.6,\i+0.5);\node at (0.7,\i) {$\zs$}; \node at (2.5,\i) {$\zw$};}\foreach \i in {0,1,2,3}{\draw[->,thick] (3.7,\i+0.1) to[bend left=50] node[right] {$\cdot\,0{,}9$} (3.7,\i+0.9);}\draw[->,thick] (-0.1,0.9) to[bend left=50] node[left] {$:\,0{,}9$} (-0.1,0.1);\end{tikzpicture}}{\grau{a)\ Ein Stoff wird abgebaut: Jede Stunde ist $10\,\%$ weniger da. Ergänze die Tabelle. \newline\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\wertetabelle[,180,162,131{,}22,]{\text{Stunde}}{\text{Menge in mg}}{0,1,2,?,6}\end{varwidth}}\par\smallskip Faktor: $10\,\%$ weniger, also $q = 0{,}9$. Probe: $162 : 180 = 0{,}9$ \checkmark\par Einen Schritt zurück: durch $q$ teilen. Stunde $0$: $180 : 0{,}9 = 200$. (Zwei Schritte zurück: durch $q^2$.)\par Fehlende Zeit: weiter mal $q$, bis $131{,}22$ herauskommt: $162 \cdot 0{,}9 = 145{,}8$ (Stunde $3$), $145{,}8 \cdot 0{,}9 = 131{,}22$ (Stunde $4$). Es fehlt die $4$.\par Stunde $6$: $200 \cdot 0{,}9^6 = 106{,}288\ldots \approx 106{,}3$.}}
+\par\medskip
+b)\ a) Ein Guthaben wächst jedes Jahr um $4\,\%$. Nach einem Jahr sind es $520\,€$. Wie viel war es zu Beginn? b) Ein Auto verliert jedes Jahr $15\,\%$ seines Werts. Nach einem Jahr ist es $17\,000\,€$ wert. Was hat es neu gekostet?\karo{3}
+\fusshilfe{\mbox{13:~b) a) $500\,€$ \ b) $20\,000\,€$}}
+\end{pfaufg}
+
+% L2-D: Zurückrechnen und fehlende Zeit
+\begin{pfaufg}{}{14.}{}
+Eine Wasserpflanze bedeckt einen Teich. Ihre Fläche wächst jede Woche um $50\,\%$. In Woche $2$ sind es $45\,\mathrm{m}^2$. Wie groß war die Fläche in Woche $0$?\karo{3}
+\fusshilfe{\mbox{14:~$20\,\mathrm{m}^2$}}
+\end{pfaufg}
+
+% L2-D: Zurückrechnen und fehlende Zeit
+\begin{pfaufg}{}{15.}{}
+Die Zahl der Follower eines Kanals wächst jeden Monat um $20\,\%$. In der Tabelle fehlt ein Monat. Welcher Monat gehört dorthin? \newline\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\wertetabelle[500,600,1\,036{,}8]{\text{Monat}}{\text{Follower}}{0,1,?}\end{varwidth}}\karo{3}
+\fusshilfe{\mbox{15:~Monat $4$}}
+\end{pfaufg}
+
+% L2-D: Zurückrechnen und fehlende Zeit
+\begin{pfaufg}{}{16.}{}
+Ein Patient bekommt ein Schmerzmittel. Jede Stunde baut der Körper $20\,\%$ der Menge ab. a) Wie viel mg hat er zu Beginn bekommen? b) Welche Zeit fehlt in der Tabelle? c) Die Ärztin sagt: „Nach $6$ Stunden ist weniger als ein Viertel der Anfangsmenge übrig.“ Stimmt das? \newline\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\wertetabelle[40,32,20{,}48,]{\text{Stunde}}{\text{Menge in mg}}{1,2,?,6}\end{varwidth}}\karo{3}
+\fusshilfe{\mbox{16:~a) $50$ mg \ b) Stunde $4$ \ c) nein}}
+\end{pfaufg}
+
+% L2-T: Probetest
+\begin{pfaufg}{}{17.}{}
+Ein Start-up hatte im Jahr $2023$ einen Umsatz von $450\,000\,€$, $2024$ waren es $486\,000\,€$ und $2025$ dann $524\,880\,€$. Weise nach, dass der Umsatz jedes Jahr um $8\,\%$ gestiegen ist.\karo{3}
+\fusshilfe{\mbox{17:~beide Quotienten $1{,}08$: $+8\,\%$}}
+\end{pfaufg}
+
+% L2-T: Probetest
+\begin{pfaufg}{}{18.}{}
+Eine Miete steigt jedes Jahr um $1{,}8\,\%$. Mit welchem Faktor rechnest du die Miete im nächsten Jahr aus?\par\smallskip \gkreuz{$1{,}8$}\gkreuz{$1{,}18$}\par \gkreuz{$1{,}018$}\gkreuz{$0{,}982$}
+\fusshilfe{\mbox{18:~$1{,}018$}}
+\end{pfaufg}
+
+% L2-T: Probetest
+\begin{pfaufg}{}{19.}{}
+Die Miete aus Aufgabe $2$ beträgt im Jahr $2026$ genau $700\,€$ im Monat. Ergänze die Tabelle. \newline\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\wertetabelle[,,,]{\text{Jahr}}{\text{Miete in €}}{2026,2027,2028,2031}\end{varwidth}}\karo{3}
+\fusshilfe{\mbox{19:~$700{,}00$}}
+\end{pfaufg}
+
+% L2-T: Probetest
+\begin{pfaufg}{}{20.}{}
+Der Luftdruck nimmt mit jedem Kilometer Höhe um $12\,\%$ ab. a) Wie groß ist der Luftdruck auf Meereshöhe ($0$ km)? b) Welche Höhe fehlt in der Tabelle? c) Tim sagt: „Von $0$ bis $2$ km sinkt der Luftdruck um $24\,\%$.“ Stimmt das? Begründe. \newline\adjustbox{max width=\linewidth}{\begin{varwidth}{50cm}\wertetabelle[,774{,}4,527{,}7]{\text{Höhe in km}}{\text{Luftdruck in hPa}}{0,2,?}\end{varwidth}}\karo{3}
+\fusshilfe{\mbox{20:~a) $1\,000$ hPa \ b) $5$ km \ c) nein, $22{,}56\,\%$}}
+\end{pfaufg}
+
+\par\vfill\noindent{\footnotesize Vorher: Lineares und exponentielles Wachstum unterscheiden\quad\textbullet\quad Weiter: Exponentialfunktion aufstellen und auswerten\par}
+\end{document}

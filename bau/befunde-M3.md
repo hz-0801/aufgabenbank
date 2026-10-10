@@ -974,3 +974,26 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
   als Abweichung („nach höherer Stufe“); hoehe pflicht, pflicht
   anwendung geht durch (Warnung Menge).
 - Kritiker: offen (startet der Chat).
+## Potenz- und Exponentialfunktionen E2 „Wachstumsfaktor und Wachstumstabelle“ (SLM, 10.10.2026)
+
+- Setzer: \wertetabelle direkt hinter dem Auftrag steht auf der
+  Grundlinie neben dem letzten Satzstück („Ergänze die / Tabelle.“).
+  (In aufgabe \newline vor die Tabelle gesetzt; Vorschlag: der Setzer
+  bricht vor Tabellen selbst um.)
+- Setzer: Die Kopfformel steht in \Large; fünf Formelzeilen für vier
+  Abschnitte brechen in der Kastenspalte um. (\large an den Anfang des
+  Felds Formel; Vorschlag: ab drei Zeilen kleiner setzen.)
+- Setzer: weg() schneidet bei Ankreuzlösungen die Option ab; folgt
+  „. Außerdem richtig“, beginnt der Weg mit einem Punkt (auch TCQ
+  L1-A Ziel). (Hier „; außerdem“ geschrieben.)
+- Prüfer: Prozentsätze wie „15 % weniger“ und Zeitangaben wie „Stunde 4“
+  gelten nicht als Ergebnisstelle. (Als Kette „1 − 0,85 = 0,15 = 15 %“
+  und „t = 4 h“ geschrieben; liest sich für den Schüler gut.)
+- Katalog: Wachstumsrate aus nicht benachbarten Werten (k1-s6) braucht
+  eine Wurzel (q² = 1,44); ohne Gleichung passt sie nicht in E2. Nur im
+  Bestand gelassen, nicht auf dem Blatt; Vorschlag: nach Einheit 3.
+- Rundung: Eine Regel im Kasten („erst beim Eintragen runden, mit dem
+  genauen Wert weiter“), Zahlen so gewählt, dass Weiterrechnen mit dem
+  gerundeten Tabellenwert dasselbe gibt (im Bau geprüft).
+- Mengenwarnungen (k1 s1–s7, k2 s1–s8) aus den Zusatzzeilen, wie bei
+  allen Bauten.

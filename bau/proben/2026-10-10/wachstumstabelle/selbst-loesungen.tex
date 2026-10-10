@@ -1,0 +1,58 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% gesetzt von werkzeuge/setzer.py (Sorte selbst) aus dem Lernweg SLM
+% und den Bankzeilen; Muster bau/proben/2026-10-09/hypotenuse-muster.
+\usepackage{enumitem}
+\usepackage{adjustbox,varwidth}
+\newgeometry{a4paper,margin=18mm,top=15mm,bottom=20mm,footskip=9mm}
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\footnotesize\color{mbgrau}SLM \textperiodcentered{} Lösungen \textperiodcentered{} Wachstum: Faktor und Tabelle}
+\fancyfoot[R]{\footnotesize\color{mbgrau}\thepage}
+\setlength{\parskip}{3pt}
+\renewcommand{\kreuz}[1]{\mbox{$\square$\ #1}\quad}
+\newcommand{\kreuzl}[1]{\par\hangindent1.4em\hangafter1\noindent$\square$\ #1}
+\newcommand{\aufg}[3]{\par\noindent\makebox[0pt][r]{#3}\begin{minipage}[t]{\linewidth}#1\end{minipage}\par}
+\newcommand{\aufgg}[4]{\par\noindent\makebox[0pt][r]{#4}\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}#1\end{minipage}\hfill
+  \begin{minipage}[t]{0.37\linewidth}\vspace{0pt}\centering #2\end{minipage}\par}
+\newcommand{\nr}[1]{\makebox[7mm][l]{\textbf{#1}}}
+\newcommand{\lsg}[3]{\par\noindent\begin{minipage}[t]{9mm}\textbf{#1}\end{minipage}%
+  \begin{minipage}[t]{52mm}\raggedright\bfseries\boldmath #2\end{minipage}\hspace{3mm}%
+  \begin{minipage}[t]{\dimexpr\linewidth-64mm\relax}\raggedright\small #3\end{minipage}\par\vspace{4pt}}
+\newlength{\kr}
+\makeatletter
+\newcommand{\karomerk}[2]{\protected@write\@auxout{}{\string\karoseite{#1}{#2}{\thepage}}}
+\newcommand{\karoseite}[3]{\expandafter\xdef\csname karo@#1@#2\endcsname{#3}}
+\newcommand{\karohinweis}[3]{\karomerk{h}{#1}\ifcsname karo@k@#1\endcsname
+  \ifnum\csname karo@k@#1\endcsname=0\csname karo@h@#1\endcsname\relax#2\else#3\fi
+  \else#3\fi}
+\makeatother
+\begin{document}
+
+\noindent{\Large\bfseries Lösungen}\hspace{1em}{\color{mbgrau}Wachstum: Faktor und Tabelle}\par\smallskip
+\noindent{\small Links das Ergebnis, rechts der Weg in kurzen Schritten. Stimmt dein Ergebnis nicht, such den ersten Schritt, der anders ist.}\par
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut A}}\hspace{2mm}{\bfseries Faktor und Prozentsatz}\par\vspace{4pt}
+\lsg{1.}{a) $1{,}07$ \ b) $0{,}93$ \ c) $1{,}4$ \ d) $0{,}98$}{a) $q = 1{,}07$; b) $q = 0{,}93$; c) $q = 1{,}4$; d) $q = 0{,}98$}
+\lsg{2.}{a) $1{,}019$ \ b) $0{,}875$ \ c) $1{,}005$ \ d) $0{,}5$}{a) $q = 1{,}019$; b) $q = 0{,}875$; c) $q = 1{,}005$; d) $q = 0{,}5$ (die Hälfte ist $50\,\%$ weniger)}
+\lsg{3.}{a) $+8\,\%$ \ b) $-8\,\%$ \ c) $+35\,\%$ \ d) $-40\,\%$}{a) $1{,}08 - 1 = 0{,}08 = 8\,\%$ mehr; b) $1 - 0{,}92 = 0{,}08 = 8\,\%$ weniger; c) $1{,}35 - 1 = 0{,}35 = 35\,\%$ mehr; d) $1 - 0{,}6 = 0{,}4 = 40\,\%$ weniger}
+\lsg{4.}{Bank A und Bank B}{außerdem richtig: Bank B, denn $1 + 0{,}025 = 1{,}025$. Bank C: $1{,}25$ heißt $25\,\%$ mehr. Bank D: $0{,}975$ heißt $2{,}5\,\%$ weniger.}
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut B}}\hspace{2mm}{\bfseries Faktor aus der Tabelle}\par\vspace{4pt}
+\lsg{1.}{$q = 1{,}2$, $+20\,\%$ je Tag}{$q = 1{,}2$ ($60 : 50 = 72 : 60 = 86{,}4 : 72 = 1{,}2$), $1{,}2 - 1 = 0{,}2 = 20\,\%$ mehr je Tag}
+\lsg{2.}{$q = 0{,}8$, $-20\,\%$ je Jahr}{$q = 0{,}8$ ($1\,200 : 1\,500 = 960 : 1\,200 = 768 : 960 = 0{,}8$), $1 - 0{,}8 = 0{,}2 = 20\,\%$ weniger je Jahr}
+\lsg{3.}{beide Quotienten $1{,}04$: $+4\,\%$}{$1\,300 : 1\,250 = 1{,}04$ und $1\,352 : 1\,300 = 1{,}04$; $1{,}04 - 1 = 0{,}04$, also jedes Jahr $4\,\%$ mehr.}
+\lsg{4.}{nein: zuletzt Faktor $1{,}2$, nur $+20\,\%$}{Nein. $3\,000 : 2\,400 = 1{,}25$ und $3\,750 : 3\,000 = 1{,}25$, aber $4\,500 : 3\,750 = 1{,}2$: von $2024$ bis $2025$ nur $0{,}2 = 20\,\%$ mehr.}
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut C}}\hspace{2mm}{\bfseries Tabelle fortschreiben}\par\vspace{4pt}
+\lsg{1.}{$2\,100{,}00\,€$; \ $2\,205{,}00\,€$; \ $2\,315{,}25\,€$}{$2\,000 \cdot 1{,}05 = 2\,100{,}00$; $2\,100 \cdot 1{,}05 = 2\,205{,}00$; $2\,205 \cdot 1{,}05 = 2\,315{,}25$}
+\lsg{2.}{$640$; \ $360$; \ $270$; \ $202{,}5$}{Startwert $640$ in Tag $0$; $480 \cdot 0{,}75 = 360$; $360 \cdot 0{,}75 = 270$; $270 \cdot 0{,}75 = 202{,}5$}
+\lsg{3.}{$40\,800$; \ $41\,616$; \ $\approx 48\,760$}{$40\,000 \cdot 1{,}02 = 40\,800$; $40\,800 \cdot 1{,}02 = 41\,616$; $2030 - 2020 = 10$ Schritte: $40\,000 \cdot 1{,}02^{10} \approx 48\,760$}
+\lsg{4.}{$40$; \ $52{,}9$; \ $70{,}0$; \ $122{,}4$; \ $+82{,}4$ kg}{Startwert $40$ in Woche $0$; $46 \cdot 1{,}15 = 52{,}9$; Woche $4$: $40 \cdot 1{,}15^4 \approx 70{,}0$; Woche $8$: $40 \cdot 1{,}15^8 \approx 122{,}4$; Zunahme: $122{,}4 - 40 = 82{,}4$ kg}
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut D}}\hspace{2mm}{\bfseries Zurückrechnen und fehlende Zeit}\par\vspace{4pt}
+\lsg{1.}{a) $500\,€$ \ b) $20\,000\,€$}{a) $520 : 1{,}04 = 500$ €; b) $17\,000 : 0{,}85 = 20\,000$ €}
+\lsg{2.}{$20\,\mathrm{m}^2$}{$45 : 1{,}5^2 = 20$ m² (oder $45 : 1{,}5 = 30$, $30 : 1{,}5 = 20$)}
+\lsg{3.}{Monat $4$}{$600 \cdot 1{,}2 = 720$ (Monat $2$), $864$ (Monat $3$), $1\,036{,}8$ (Monat $4$); Kontrolle $500 \cdot 1{,}2^4 = 1\,036{,}8$}
+\lsg{4.}{a) $50$ mg \ b) Stunde $4$ \ c) nein: $\approx 13{,}1 > 12{,}5$}{a) $40 : 0{,}8 = 50$ mg; b) $t = 4$ h ($32 \cdot 0{,}8 = 25{,}6$, $25{,}6 \cdot 0{,}8 = 20{,}48$); c) $50 \cdot 0{,}8^6 \approx 13{,}1$ mg; ein Viertel von $50$ ist $12{,}5$ mg. $13{,}1 > 12{,}5$: Das stimmt nicht.}
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut T}}\hspace{2mm}{\bfseries Probetest}\par\vspace{4pt}
+\lsg{1.}{beide Quotienten $1{,}08$: $+8\,\%$}{$486\,000 : 450\,000 = 1{,}08$ und $524\,880 : 486\,000 = 1{,}08$; $1{,}08 - 1 = 0{,}08$, also jedes Jahr $8\,\%$ mehr.}
+\lsg{2.}{$1{,}018$}{($1 + 0{,}018$)}
+\lsg{3.}{$700{,}00$; \ $712{,}60$; \ $725{,}43$; \ $765{,}31$ (in €)}{Startwert $700{,}00$ in $2026$; $700 \cdot 1{,}018 = 712{,}60$; $712{,}60 \cdot 1{,}018 \approx 725{,}43$; $2031 - 2026 = 5$ Schritte: $700 \cdot 1{,}018^5 \approx 765{,}31$}
+\lsg{4.}{a) $1\,000$ hPa \ b) $5$ km \ c) nein, $22{,}56\,\%$}{a) $774{,}4 : 0{,}88^2 = 1\,000$ hPa; b) $h = 5$ km ($774{,}4 \cdot 0{,}88 \approx 681{,}5$; $\approx 599{,}7$; $\approx 527{,}7$); c) Nein: $0{,}88^2 = 0{,}7744$, also $1 - 0{,}7744 = 0{,}2256 = 22{,}56\,\%$, nicht $24\,\%$. Die $12\,\%$ gelten jedes Mal vom kleineren Wert.}
+\end{document}
