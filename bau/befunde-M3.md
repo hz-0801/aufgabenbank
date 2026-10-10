@@ -478,3 +478,34 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
 - Prüfer: Mengenwarnungen k1 s0–s18 aus Blatt- und Vorratszeilen, wie
   bei den anderen Bauten. duplikate.py: nur Vorrat gegen Blattzeile
   (gleicher Auftrag, andere Zahlen), gewollt.
+## Quadratische Funktionen E3 „Normalform“ (7P7, 10.10.2026)
+
+- Vier Abschnitte plus Probetest, Selbstlernheft 6 Seiten, Lösungen 2.
+  A Normalform lesen und einsetzen, B Von der Scheitelpunktform zur
+  Normalform, C Scheitelpunktform aus dem Graphen, D Die passende Form
+  wählen, T. Thema-Weg Punkt 3 ergänzt. Kritiker offen.
+- Ziele wechseln die Antwortform: liegt Q darauf? (A), hat Lena recht?
+  (B), um wie viel über (0|10)? (C), alle Gleichungen angeben (D),
+  Halfpipe am Rand zu hoch? (T).
+- Achsenzahlen: eigene TikZ-Graphen (ksys setzt die Zahlen unter den
+  Bogen). Jede ganze Zahl beziffert; kreuzt der Graph die Zahl, wechselt
+  sie auf die andere Seite der Achse (x auch leicht seitlich); nur am
+  y-Achsenabschnitt bleibt sie mit weißem Grund, der Bogen hat dort eine
+  kleine Lücke. Vorschlag wie bei BP8: diese Wahl als Baustein in
+  mathblatt.sty.
+- Seitengrenze: Mit drei Graphen trug C keinen Platz zum Rechnen mehr;
+  die Ankreuzaufgabe „welche Scheitelpunktform passt?“ steht darum in D
+  (Paare vergleichen). Raster 3,2 mm je Einheit für Aufgabengraphen.
+- Sperre: Normalformen der Originale (x² − 6x + 7, x² − 2x − 3,
+  x² − 4x + 2, x² + 2x − 1, x² + 4x + 3 u. a.) und Terme der Typischen
+  Fehler ((x + 3)² − 2, x² + 4x) treffen naheliegende eigene Zahlen;
+  Zahlen gewechselt.
+- bank-pruef: Bei „Weise nach“ und Päckchen von Normalformen steht an
+  der Ergebnisstelle nur die erste Zahl; pruef trägt wie im Bestand nur
+  sie, die übrigen Werte prüft das Bauskript mit sympy.
+- Setzer: Bei Ankreuzaufgaben bleibt ein „;“ nach der Option am Anfang
+  des Wegs stehen (weg() streicht nur Leerzeichen und „:“); Option mit
+  „:“ abgetrennt. Mehrteilige Ergebnisse brechen in der 52-mm-Spalte
+  mitten im Term um; je Teil \mbox{…}.
+- duplikate.py: nur gewollte Zahlvarianten (Ziel D und Vorrat, T5 und
+  Bestand k1-s10-v1).
