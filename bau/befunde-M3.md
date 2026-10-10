@@ -346,7 +346,7 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
 ## Quadratische Funktionen E2 „Scheitelpunktform“ (BP8, 10.10.2026)
 
 - Setzer: Ein „|“ in Satz oder Formel einer Lernweg-Zeile (S(d|e)) zerschneidet die Tabellenzelle; der Setzer bricht mit KeyError ab statt mit der Zeile. (Im Block {\vert} geschrieben wie in E1.)
-- Setzer: Alle Sorten schreiben 1-uebersicht/2-blatt/3-loesungen in denselben --aus-Ordner und überschreiben sich; je Sorte ein eigener Ordner, dann umbenannt. (So gemacht.)
+- Setzer: Alle Sorten schreiben 1-uebersicht/2-blatt/3-loesungen in denselben --aus-Ordner und überschreiben sich; je Sorte ein eigener Ordner, dann umbenannt. (So gemacht.) – *erledigt 10.10.: setzer.py, Dateinamen je Sorte (selbst, tisch-alt …), Register ergänzt sorten=*
 - Setzer (selbst): „Rechne unten im Karo“ steht auch auf Seiten, auf denen kein Karo mehr Platz hat (A, B). Der Schüler sucht das Karo. (Hingenommen.)
 - Achsenzahlen: Bei Parabeln nah an der y-Achse liegt der Bogen auf den Zahlen neben dem Scheitel. Die Zahlen sind dort weggelassen (Prüfung im Bauskript); der Schüler zählt dann Kästchen. Vorschlag: Achsenzahlen mit weißem Grund über dem Bogen als Baustein in mathblatt.sty.
 - bank-pruef: Ein Ergebnis „f(x) = (x − 4)² + 1“ hat keine Zahl an der Ergebnisstelle; Behelf wie im Bestand: Scheitel als Punkt in die Lösung, pruef [d, e].
@@ -393,7 +393,7 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
 - Satz: Ankreuzoptionen mit \dfrac stoßen im Setzer zeilenweise
   aneinander (zwei Optionen je Zeile, kein Zeilenabstand für hohe
   Brüche). In \kreuz daher \frac. (Vorschlag Setzer: \kreuz-Zeilen mit
-  \strut oder größerem Abstand, wenn eine Option \dfrac trägt.)
+  \strut oder größerem Abstand, wenn eine Option \dfrac trägt.) – *erledigt 10.10.: setzer.py, Ankreuzbrüche als \dfrac in einer Zeile mit Abstand*
 - Setzer: Mehrdeutige Ankreuzaufgabe („alle ankreuzen, die …“) lässt
   bank-pruef nicht zu (genau eine Option); D4 und T5 deshalb mit genau
   einer richtigen Option. (Hingenommen.)
@@ -518,13 +518,13 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
   jede Seite mit Rechenplatz.
 - Setzer: Ein zweiter Satz mit `--kennung` (tisch-alt nach selbst)
   ergänzt sorten= im Register nicht; von Hand nachgetragen. (Vorschlag
-  Setzer: sorten= auch beim Neusatz mit --kennung ergänzen.)
+  Setzer: sorten= auch beim Neusatz mit --kennung ergänzen.) – *erledigt 10.10.: setzer.py, Dateinamen je Sorte (selbst, tisch-alt …), Register ergänzt sorten=*
 - Setzer: tisch-alt legt praeambel.tex in den Probenordner (von
   tisch-alt-blatt.tex eingebunden); FS9 hat sie nicht. (Belassen.)
 - Satz: Ankreuzoptionen mit \frac sind bei Kl. 6 kaum lesbar; T5 mit
   \dfrac gesetzt – die Zeilen liegen dicht, aber getrennt. D4 statt
   Ankreuzen als Päckchen „ja oder nein“. (Vorschlag wie bei FS9:
-  \kreuz-Zeilen mit mehr Abstand.)
+  \kreuz-Zeilen mit mehr Abstand.) – *erledigt 10.10.: setzer.py, Ankreuzbrüche als \dfrac in einer Zeile mit Abstand*
 - Prüfer: pruef muss ein String sein (Zahl führt zu „nicht
   auswertbar“); periodische Ergebnisse brauchen pruef (hier „1/3“,
   „4/9“). Ergebnis einer Differenz nur an der Ergebnisstelle, wenn es
@@ -555,7 +555,7 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
   Reihenfolge oben→unten in `\balkenab`.
 - Setzer: Jede Sorte schreibt 1-uebersicht/2-blatt/3-loesungen in
   denselben Ordner; die zweite Sorte überschreibt die erste. Umbenannt
-  nach dem Satz.
+  nach dem Satz. – *erledigt 10.10.: setzer.py, Dateinamen je Sorte (selbst, tisch-alt …), Register ergänzt sorten=*
 - bank-pruef: 0 Abweichungen (Mengenwarnungen k2 s0–s12 aus Blatt- und
   Vorratszeilen wie bei den anderen Bauten); duplikate.py: keine neue
   id betroffen.
@@ -574,7 +574,7 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
   ersten „: “, „. “ oder „; “ – auch innerhalb von \mbox{…} und nach
   „z.\,B.“; dann bricht xelatex ab (\fusshilfe nicht geschlossen).
   Ergebnisse darum nur mit Komma getrennt. Vorschlag: kurz() nur auf
-  Klammerebene 0 schneiden.
+  Klammerebene 0 schneiden. – *erledigt 10.10.: setzer.py, kurz() schneidet nur auf Klammerebene 0 außerhalb $…$, nicht nach z.\,B.*
 - Sperre traf naheliegende Zahlen: x² − 4x und (x + 3)² (Typische
   Fehler), −2x + 3, 2x − 3, x² − 4x + 2, (x − 1)² − 3 (Originale);
   gewechselt.

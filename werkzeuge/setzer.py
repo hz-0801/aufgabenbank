@@ -29,14 +29,16 @@ Zwei Blockformen:
 
 Sorten (--sorte, Vorgabe tisch-alt):
 - tisch-alt: wie bisher (Muster T6B/M74): Nummern, Lösungen im Fuß,
-  Vorher/Weiter; 1-uebersicht, 2-blatt, 3-loesungen. Aus Abschnitten:
-  das Beispiel als grau vorgerechnetes a) vor der ersten Aufgabe.
+  Vorher/Weiter; tisch-alt-uebersicht, tisch-alt, tisch-alt-loesungen.
+  Aus Abschnitten: das Beispiel als grau vorgerechnetes a) vor der ersten Aufgabe.
 - tisch: kompakt je Abschnitt (Muster Prüfstein tisch.pdf), ohne
-  Beispiel und Formel; 2-blatt, 3-loesungen.
+  Beispiel und Formel; tisch, tisch-loesungen.
 - selbst: Übersicht mit „kann ich“, Formel auf einen Blick, je
   Abschnitt eine Seite (Satz, Formel, Beispiel, Aufgaben, Karo);
-  Lösungen als eigenes PDF (Muster Prüfstein selbst.pdf); 2-blatt,
-  3-loesungen.
+  Lösungen als eigenes PDF (Muster Prüfstein selbst.pdf); selbst,
+  selbst-loesungen.
+Dateinamen tragen die Sorte: mehrere Sorten gehen in denselben Ordner,
+das Register ergänzt sorten= (setzt nichts zurück).
 tisch und selbst brauchen einen Block in Abschnittsform.
 
 Kennung (Schrittform): neu nach bau/bauregeln.md „Kennung“ (drei Zeichen
@@ -565,11 +567,56 @@ def lang(opts):
     return any(len(re.sub(r"\\[a-z]+|[${}]", "", o)) > 40 for o in opts)
 
 
+ABK = re.compile(r"(?:\\b|^)(?:z\.\\,B|z\.\s?B|d\.\\,h|d\.\s?h|u\.\\,a|"
+                 r"bzw|ca|vgl|usw|Nr|S)$")
+
+
 def kurz(ergebnis):
-    """Ergebnis für den Fuß: kurz, sonst bis zum ersten „:“ oder „.“."""
+    """Ergebnis für den Fuß: kurz, sonst bis zum ersten „: “, „; “ oder
+    „. “ auf Klammerebene 0 außerhalb von $…$ (nicht nach z.\\,B. o. ä.);
+    ohne solche Stelle das ganze Ergebnis."""
     if len(ergebnis) <= 45:
         return ergebnis
-    return re.split(r":\s|\.\s|;\s", ergebnis, maxsplit=1)[0]
+    tiefe, mathe, i = 0, False, 0
+    while i < len(ergebnis) - 1:
+        c = ergebnis[i]
+        if c == "\\":
+            i += 2
+            continue
+        if c == "{":
+            tiefe += 1
+        elif c == "}":
+            tiefe -= 1
+        elif c == "$":
+            mathe = not mathe
+        elif (c in ":;." and tiefe == 0 and not mathe
+              and ergebnis[i + 1] == " "
+              and not (c == "." and ABK.search(ergebnis[:i]))):
+            vorn = ergebnis[:i].rstrip()
+            if vorn:
+                return vorn
+        i += 1
+    return ergebnis
+
+
+def kreuz_bruch(opts):
+    """Ankreuzoptionen mit Brüchen: \\dfrac in normaler Größe, alle in
+    einer Zeile mit deutlichem Abstand (zu breit: je zwei mit Abstand)."""
+    if not any("\\frac" in o or "\\dfrac" in o for o in opts):
+        return None
+    gross = [re.sub(r"\\(?:d|t)?frac", r"\\dfrac", o) for o in opts]
+    kaesten = [f"\\mbox{{$\\square$\\ {o}}}" for o in gross]
+    breit = sum(len(re.sub(r"\\[a-z]+|[${}]", "", o)) for o in opts)
+    trenn = "\\hspace{10mm}"
+    if breit <= 48:
+        zeilen = [trenn.join(kaesten)]
+    else:
+        zeilen = [trenn.join(kaesten[i:i + 2])
+                  for i in range(0, len(kaesten), 2)]
+    return ("\\par\\medskip\\noindent\\hspace*{7mm}"
+            + "\\par\\medskip\\noindent\\hspace*{7mm}".join(
+                z + "\\rule[-3mm]{0pt}{8mm}" for z in zeilen)
+            + "\\par\\smallskip ")
 
 
 def weg(a):
@@ -628,6 +675,8 @@ def setze_nummer_neu(nr, zeilen, kommentar):
         if opts:
             if lang(opts):
                 rechts += "".join(f"\\pfkreuzzeile{{{o}}}" for o in opts)
+            elif kreuz_bruch(opts):
+                rechts += kreuz_bruch(opts)
             else:
                 rechts += "\\par\\smallskip " + "\\par ".join(
                     "".join(f"\\gkreuz{{{o}}}" for o in opts[i:i + 2])
@@ -699,6 +748,8 @@ def aufgabe_tex(a, nummer):
         if lang(opts):
             text += "\\par\\smallskip\\leftskip7mm " + "".join(
                 f"\\kreuzl{{{o}}}" for o in opts)
+        elif kreuz_bruch(opts):
+            text += kreuz_bruch(opts)
         else:
             text += "\\par\\smallskip\\leftskip7mm " + "\\par".join(
                 "\\ ".join(f"\\kreuz{{{o}}}" for o in opts[i:i + 2])
@@ -931,6 +982,8 @@ def register_neu(kennung, lw, eintrag, teil, gruppen, sorte, datum=None,
             da = set(m.group(1).split()) | {sorte}
             alt[4] = (alt[4][:m.start(1)] + " ".join(
                 x for x in SORTEN if x in da) + alt[4][m.end(1):])
+        else:
+            alt[4] += f", sorten={sorte}"
         if len(alt) > 8 and alt[8].startswith("–") and pfad != "–":
             alt[8] = pfad
         register_schreibe(kennung, alt)
@@ -1114,18 +1167,20 @@ def main():
             nummern.append(n)
             loesungen.append(l)
         shutil.copy(HIER / "setzer-praeambel.tex", aus / "praeambel.tex")
-        dateien = {"1-uebersicht": tex_uebersicht(lw, kennung),
-                   "2-blatt": tex_blatt(lw, kennung, nummern),
-                   "3-loesungen": tex_loesungen(lw, kennung, loesungen)}
-        laeufe = {"1-uebersicht": 1, "2-blatt": 2, "3-loesungen": 1}
+        dateien = {"tisch-alt-uebersicht": tex_uebersicht(lw, kennung),
+                   "tisch-alt": tex_blatt(lw, kennung, nummern),
+                   "tisch-alt-loesungen": tex_loesungen(lw, kennung,
+                                                        loesungen)}
+        laeufe = {"tisch-alt-uebersicht": 1, "tisch-alt": 2,
+                  "tisch-alt-loesungen": 1}
     else:
         blatt = (tex_tisch if arg.sorte == "tisch" else tex_selbst)(
             lw, kennung, bank)
-        dateien = {"2-blatt": blatt,
-                   "3-loesungen": tex_loesungen_neu(lw, kennung, bank,
-                                                    arg.sorte)}
-        laeufe = {"2-blatt": 2 if arg.sorte == "selbst" else 1,
-                  "3-loesungen": 1}
+        dateien = {arg.sorte: blatt,
+                   f"{arg.sorte}-loesungen": tex_loesungen_neu(
+                       lw, kennung, bank, arg.sorte)}
+        laeufe = {arg.sorte: 2 if arg.sorte == "selbst" else 1,
+                  f"{arg.sorte}-loesungen": 1}
     for name, inhalt in dateien.items():
         if (inhalt.startswith(KOPF) and "\\adjustbox{" in inhalt
                 and "{adjustbox,varwidth}" not in inhalt):
