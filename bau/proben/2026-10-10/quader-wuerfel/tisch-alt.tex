@@ -1,0 +1,149 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% gesetzt von werkzeuge/setzer.py aus dem Lernweg (L2-A · L2-B · L2-C · L2-D · L2-T) und den Bankzeilen; Muster T6B.
+\input{praeambel}
+\newcommand{\kennung}{FEU}
+\newcommand{\grau}[1]{{\color{mbgrau}#1}}
+
+\begin{document}
+\pfheftstil
+\fancyfoot[C]{\parbox[t]{\textwidth}{\mbfhbox\par\vspace{1.5mm}{\footnotesize\color{mbgrau}{\scriptsize \kennung}\hfill\thepage}}}
+\pfheftkopf{Quader und Würfel}{Klasse 6}
+% L2-A: Volumen von Quader und Würfel
+\begin{pfaufg}{}{1.}{}
+\gzwei{\begin{tikzpicture}[scale=0.62,font=\footnotesize,line join=round]\draw[black!45,line width=0.35pt] (1,0) -- (1,4) -- (2.5,5.5);\draw[black!45,line width=0.35pt] (2,0) -- (2,4) -- (3.5,5.5);\draw[black!45,line width=0.35pt] (3,0) -- (3,4) -- (4.5,5.5);\draw[black!45,line width=0.35pt] (4,0) -- (4,4) -- (5.5,5.5);\draw[black!45,line width=0.35pt] (0,1) -- (5,1) -- (6.5,2.5);\draw[black!45,line width=0.35pt] (0,2) -- (5,2) -- (6.5,3.5);\draw[black!45,line width=0.35pt] (0,3) -- (5,3) -- (6.5,4.5);\draw[black!45,line width=0.35pt] (0.5,4.5) -- (5.5,4.5) -- (5.5,0.5);\draw[black!45,line width=0.35pt] (1,5) -- (6,5) -- (6,1);\draw[line width=0.9pt] (0,0) rectangle (5,4);\draw[line width=0.9pt] (5,0) -- (6.5,1.5) -- (6.5,5.5) -- (1.5,5.5) -- (0,4);\draw[line width=0.9pt] (5,4) -- (6.5,5.5);\draw[dashed,line width=0.6pt] (0,0) -- (1.5,1.5) -- (6.5,1.5);\draw[dashed,line width=0.6pt] (1.5,1.5) -- (1.5,5.5);\node[below] at (2.5,0) {5\,cm};\node[left] at (0,2) {4\,cm};\node[below right] at (5.75,0.75) {3\,cm};\end{tikzpicture}}{\grau{a)\ Eine Schachtel ist $5$\,cm lang, $3$\,cm breit und $4$\,cm hoch. Wie viele Zentimeterwürfel passen hinein? Wie groß ist ihr Volumen?\par\smallskip Unten liegt eine Schicht: Länge mal Breite, $5 \cdot 3 = 15$ Würfel.\par Die Schachtel ist $4$\,cm hoch, also $4$ Schichten: $15 \cdot 4 = 60$ Würfel.\par Jeder Würfel ist $1$\,cm³. Volumen $V = 5 \cdot 3 \cdot 4 = 60$\,cm³. Misst du in dm, heißt die Einheit dm³.\par Beim Würfel sind alle Kanten gleich. Kante $5$\,cm: $V = 5 \cdot 5 \cdot 5 = 125$\,cm³ (nicht $5 \cdot 5$).}}
+\par\medskip
+\gzwei{\begin{tikzpicture}[scale=0.75,font=\footnotesize,line join=round]\draw[black!45,line width=0.35pt] (1,0) -- (1,3) -- (2,4);\draw[black!45,line width=0.35pt] (2,0) -- (2,3) -- (3,4);\draw[black!45,line width=0.35pt] (3,0) -- (3,3) -- (4,4);\draw[black!45,line width=0.35pt] (0,1) -- (4,1) -- (5,2);\draw[black!45,line width=0.35pt] (0,2) -- (4,2) -- (5,3);\draw[black!45,line width=0.35pt] (0.5,3.5) -- (4.5,3.5) -- (4.5,0.5);\draw[line width=0.9pt] (0,0) rectangle (4,3);\draw[line width=0.9pt] (4,0) -- (5,1) -- (5,4) -- (1,4) -- (0,3);\draw[line width=0.9pt] (4,3) -- (5,4);\draw[dashed,line width=0.6pt] (0,0) -- (1,1) -- (5,1);\draw[dashed,line width=0.6pt] (1,1) -- (1,4);\node[below] at (2,0) {4\,cm};\node[left] at (0,1.5) {3\,cm};\node[below right] at (4.5,0.5) {2\,cm};\end{tikzpicture}}{%
+b)\ Der Quader im Bild ist aus Zentimeterwürfeln gebaut. Wie viele Würfel liegen in einer Schicht? Wie viele Schichten sind es? Wie groß ist das Volumen?\karo{3}}
+\fusshilfe{\mbox{1:~b) $8$ Würfel, $3$ Schichten, $V = 24$\,cm³}}
+\end{pfaufg}
+
+% L2-A: Volumen von Quader und Würfel
+\begin{pfaufg}{}{2.}{}
+Berechne das Volumen eines Quaders mit $7$\,cm Länge, $4$\,cm Breite und $3$\,cm Höhe.\karo{3}
+\fusshilfe{\mbox{2:~$V = 84$\,cm³}}
+\end{pfaufg}
+
+% L2-A: Volumen von Quader und Würfel
+\begin{pfaufg}{}{3.}{}
+Ein Holzwürfel hat $6$\,cm Kantenlänge. Berechne sein Volumen.\karo{3}
+\fusshilfe{\mbox{3:~$V = 216$\,cm³}}
+\end{pfaufg}
+
+% L2-A: Volumen von Quader und Würfel
+\begin{pfaufg}{}{4.}{}
+Für den Umzug gibt es zwei Kisten. Die eine ist $6$\,dm lang, $4$\,dm breit und $3$\,dm hoch. Die andere ist ein Würfel mit $5$\,dm Kantenlänge. In welche Kiste passt mehr hinein, und um wie viel?\karo{3}
+\fusshilfe{\mbox{4:~In den Würfel, $53$\,dm³ mehr}}
+\end{pfaufg}
+
+% L2-B: Oberfläche
+\begin{pfaufg}{}{5.}{}
+\gzwei{\begin{tikzpicture}[scale=0.4,font=\scriptsize,line join=round]\draw[line width=0.8pt] (3,0) rectangle (9,3);\node at (6.0,1.5) {vorn};\draw[line width=0.8pt] (3,3) rectangle (9,7);\node at (6.0,5.0) {Boden};\draw[line width=0.8pt] (3,7) rectangle (9,10);\node at (6.0,8.5) {hinten};\draw[line width=0.8pt] (3,10) rectangle (9,14);\node at (6.0,12.0) {Deckel};\draw[line width=0.8pt] (0,3) rectangle (3,7);\node at (1.5,5.0) {links};\draw[line width=0.8pt] (9,3) rectangle (12,7);\node at (10.5,5.0) {rechts};\node[below] at (6,0) {6\,cm};\node[right] at (9,1.5) {3\,cm};\node[left] at (0,5) {4\,cm};\node[below] at (1.5,3) {3\,cm};\end{tikzpicture}}{\grau{a)\ Eine Schachtel ist $6$\,cm lang, $4$\,cm breit und $3$\,cm hoch. Wie viel Pappe braucht man für sie? Wie viel ohne Deckel?\par\smallskip Boden und Deckel: je $6 \cdot 4 = 24$\,cm².\par Vorn und hinten: je $6 \cdot 3 = 18$\,cm².\par Links und rechts: je $4 \cdot 3 = 12$\,cm².\par Alle sechs zusammen: $O = 2 \cdot 24 + 2 \cdot 18 + 2 \cdot 12 = 108$\,cm². Flächen haben die Einheit cm².\par Ohne Deckel fehlt ein Rechteck: $108 - 24 = 84$\,cm².\par Beim Würfel sind alle sechs Flächen gleiche Quadrate: $O = 6 \cdot a \cdot a$.}}
+\par\medskip
+\gzwei{\begin{tikzpicture}[scale=0.55,font=\footnotesize,line join=round]\draw[line width=0.9pt] (0,0) rectangle (8,2);\draw[line width=0.9pt] (8,0) -- (10,2) -- (10,4) -- (2,4) -- (0,2);\draw[line width=0.9pt] (8,2) -- (10,4);\draw[dashed,line width=0.6pt] (0,0) -- (2,2) -- (10,2);\draw[dashed,line width=0.6pt] (2,2) -- (2,4);\node[below] at (4,0) {8\,cm};\node[left] at (0,1) {2\,cm};\node[below right] at (9,1) {4\,cm};\end{tikzpicture}}{%
+b)\ Berechne die Oberfläche des Quaders im Bild.\karo{3}}
+\fusshilfe{\mbox{5:~b) $O = 112$\,cm²}}
+\end{pfaufg}
+
+% L2-B: Oberfläche
+\begin{pfaufg}{}{6.}{}
+Ein Holzwürfel hat $10$\,cm Kantenlänge. Berechne seine Oberfläche.\karo{3}
+\fusshilfe{\mbox{6:~$O = 600$\,cm²}}
+\end{pfaufg}
+
+% L2-B: Oberfläche
+\begin{pfaufg}{}{7.}{}
+Eine Kiste aus Holz hat keinen Deckel. Sie ist $5$\,dm lang, $4$\,dm breit und $2$\,dm hoch. Wie viele dm² Holz braucht man?\karo{3}
+\fusshilfe{\mbox{7:~$56$\,dm²}}
+\end{pfaufg}
+
+% L2-B: Oberfläche
+\begin{pfaufg}{}{8.}{}
+Tom baut ein Aquarium ohne Deckel aus Glas. Es soll $60$\,cm lang, $30$\,cm breit und $40$\,cm hoch werden. Er hat Glasplatten mit zusammen $8\,000$\,cm². Reicht das Glas? Begründe mit einer Rechnung.\karo{3}
+\fusshilfe{\mbox{8:~Nein, er braucht $9\,000$\,cm²}}
+\end{pfaufg}
+
+% L2-C: Liter und Kubikzentimeter
+\begin{pfaufg}{}{9.}{}
+\gzwei{\begin{tikzpicture}[scale=0.85,font=\footnotesize,line join=round]\draw[line width=0.9pt] (0,0) rectangle (4,3);\draw[line width=0.9pt] (4,0) -- (5.25,1.25) -- (5.25,4.25) -- (1.25,4.25) -- (0,3);\draw[line width=0.9pt] (4,3) -- (5.25,4.25);\draw[dashed,line width=0.6pt] (0,0) -- (1.25,1.25) -- (5.25,1.25);\draw[dashed,line width=0.6pt] (1.25,1.25) -- (1.25,4.25);\node[below] at (2,0) {40\,cm};\node[left] at (0,1.5) {30\,cm};\node[below right] at (4.625,0.625) {25\,cm};\end{tikzpicture}}{\grau{a)\ Ein Aquarium ist innen $40$\,cm lang, $25$\,cm breit und $30$\,cm hoch. Wie viele Liter Wasser passen hinein?\par\smallskip Volumen in cm³: $V = 40 \cdot 25 \cdot 30 = 30\,000$\,cm³.\par $1\,000$\,cm³ sind $1$ Liter. Also durch $1\,000$ teilen: $30\,000 : 1\,000 = 30$, das sind $30$ Liter.\par Rückwärts mal $1\,000$: $2$ Liter $= 2\,000$\,cm³. Ein dm³ ist genau ein Liter: $2$\,dm³ $= 2$ Liter.\par Große Becken misst man in m: $1$\,m³ $= 1\,000$ Liter, also $3$\,m³ $= 3\,000$ Liter.}}
+\par\medskip
+b)\ Rechne um: $5\,000$\,cm³ in Liter; \quad $3$ Liter in cm³; \quad $2\,500$\,cm³ in Liter; \quad $4$\,m³ in Liter.\karo{3}
+\fusshilfe{\mbox{9:~b) $5$ Liter}}
+\end{pfaufg}
+
+% L2-C: Liter und Kubikzentimeter
+\begin{pfaufg}{}{10.}{}
+Ein Karton ist innen $30$\,cm lang, $20$\,cm breit und $10$\,cm hoch. Wie viele Liter passen hinein?\karo{3}
+\fusshilfe{\mbox{10:~$6$ Liter}}
+\end{pfaufg}
+
+% L2-C: Liter und Kubikzentimeter
+\begin{pfaufg}{}{11.}{}
+Ein Wasserbecken im Garten ist ein Quader: $3$\,m lang, $2$\,m breit und $1$\,m tief. Wie viele Liter Wasser passen hinein?\karo{3}
+\fusshilfe{\mbox{11:~$6\,000$ Liter}}
+\end{pfaufg}
+
+% L2-C: Liter und Kubikzentimeter
+\begin{pfaufg}{}{12.}{}
+Im Prospekt steht über ein Aquarium: „innen $60$\,cm lang, $30$\,cm breit, $35$\,cm hoch, fasst $72$ Liter“. Stimmt die Angabe?\par\smallskip \gkreuz{Ja, es passen $72$ Liter hinein.}\gkreuz{Nein, es passt weniger hinein.}\par \gkreuz{Nein, es passt mehr hinein.}
+\fusshilfe{\mbox{12:~Nein, weniger: $63$ Liter}}
+\end{pfaufg}
+
+% L2-D: Höhe aus dem Volumen
+\begin{pfaufg}{}{13.}{}
+\gzwei{\begin{tikzpicture}[scale=0.62,font=\footnotesize,line join=round]\fill[black!10] (0,0) -- (5,0) -- (6.5,1.5) -- (6.5,4.5) -- (1.5,4.5) -- (0,3) -- cycle;\fill[black!18] (0,3) -- (5,3) -- (6.5,4.5) -- (1.5,4.5) -- cycle;\draw[line width=0.5pt] (0,3) -- (5,3) -- (6.5,4.5);\draw[dashed,line width=0.4pt] (0,3) -- (1.5,4.5) -- (6.5,4.5);\draw[line width=0.9pt] (0,0) rectangle (5,4);\draw[line width=0.9pt] (5,0) -- (6.5,1.5) -- (6.5,5.5) -- (1.5,5.5) -- (0,4);\draw[line width=0.9pt] (5,4) -- (6.5,5.5);\draw[dashed,line width=0.6pt] (0,0) -- (1.5,1.5) -- (6.5,1.5);\draw[dashed,line width=0.6pt] (1.5,1.5) -- (1.5,5.5);\node[below] at (2.5,0) {50\,cm};\node[left] at (0,2) {40\,cm};\node[below right] at (5.75,0.75) {30\,cm};\end{tikzpicture}}{\grau{a)\ In ein Aquarium (innen $50$\,cm lang, $30$\,cm breit, $40$\,cm hoch) werden $45$ Liter Wasser gefüllt. Wie hoch steht das Wasser? Wie viel bleibt bis zum Rand frei?\par\smallskip Liter in cm³: $45$ Liter $= 45\,000$\,cm³.\par Grundfläche: Länge mal Breite, $50 \cdot 30 = 1\,500$\,cm².\par Höhe: Volumen durch Grundfläche, $45\,000 : 1\,500 = 30$\,cm.\par Probe: $50 \cdot 30 \cdot 30 = 45\,000$\,cm³. Stimmt.\par Bis zum Rand: $40 - 30 = 10$\,cm frei.}}
+\par\medskip
+b)\ Ein Quader hat das Volumen $60$\,cm³. Er ist $5$\,cm lang und $4$\,cm breit. Wie hoch ist er?\karo{3}
+\fusshilfe{\mbox{13:~b) $3$\,cm hoch}}
+\end{pfaufg}
+
+% L2-D: Höhe aus dem Volumen
+\begin{pfaufg}{}{14.}{}
+Ein Karton fasst $12$ Liter. Er ist innen $30$\,cm lang und $20$\,cm breit. Wie hoch ist er innen?\karo{3}
+\fusshilfe{\mbox{14:~$20$\,cm hoch}}
+\end{pfaufg}
+
+% L2-D: Höhe aus dem Volumen
+\begin{pfaufg}{}{15.}{}
+Ein Aquarium ist innen $60$\,cm lang und $25$\,cm breit. Es werden $30$ Liter Wasser eingefüllt. Wie hoch steht das Wasser?\karo{3}
+\fusshilfe{\mbox{15:~$20$\,cm hoch}}
+\end{pfaufg}
+
+% L2-D: Höhe aus dem Volumen
+\begin{pfaufg}{}{16.}{}
+Max füllt $98$ Liter Wasser in sein Aquarium. Es ist innen $70$\,cm lang, $40$\,cm breit und $45$\,cm hoch. Seine Fische springen gern, darum sollen bis zum Rand mindestens $8$\,cm frei bleiben. Ist das so?\karo{3}
+\fusshilfe{\mbox{16:~Ja, $10$\,cm bleiben frei}}
+\end{pfaufg}
+
+% L2-T: Probetest
+\begin{pfaufg}{}{17.}{}
+Ein Würfel hat die Kantenlänge $4$\,cm. Wie groß ist sein Volumen?\par\smallskip \gkreuz{$16$\,cm³}\gkreuz{$48$\,cm³}\par \gkreuz{$64$\,cm³}\gkreuz{$96$\,cm³}
+\fusshilfe{\mbox{17:~$64$\,cm³}}
+\end{pfaufg}
+
+% L2-T: Probetest
+\begin{pfaufg}{}{18.}{}
+Wie viele Liter sind $6\,500$\,cm³?\karo{3}
+\fusshilfe{\mbox{18:~$6{,}5$ Liter}}
+\end{pfaufg}
+
+% L2-T: Probetest
+\begin{pfaufg}{}{19.}{}
+Ein Quader ist $6$\,cm lang, $5$\,cm breit und $3$\,cm hoch. Berechne sein Volumen und seine Oberfläche.\karo{3}
+\fusshilfe{\mbox{19:~$V = 90$\,cm³, $O = 126$\,cm²}}
+\end{pfaufg}
+
+% L2-T: Probetest
+\begin{pfaufg}{}{20.}{}
+Eine Schachtel fasst $2$ Liter. Sie ist innen $20$\,cm lang und $10$\,cm breit. Wie hoch ist sie innen?\karo{3}
+\fusshilfe{\mbox{20:~$10$\,cm hoch}}
+\end{pfaufg}
+
+% L2-T: Probetest
+\begin{pfaufg}{}{21.}{}
+Ein Aquarium ist innen $80$\,cm lang, $30$\,cm breit und $50$\,cm hoch. Es soll bis $10$\,cm unter den Rand gefüllt werden. Reichen $100$ Liter Wasser?\karo{3}
+\fusshilfe{\mbox{21:~Ja, man braucht $96$ Liter}}
+\end{pfaufg}
+
+\par\vfill\noindent{\footnotesize Vorher: Körper erkennen, Netze, Schrägbilder\quad\textbullet\quad Weiter: Prisma\par}
+\end{document}

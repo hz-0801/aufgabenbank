@@ -831,3 +831,21 @@ Je Zeile ein Befund aus einem Bau, der über die Einheit hinausgeht; Entscheidun
 - Vierecks-Eigenschaft (C3, T4) ist Wissen, kein Rechenschritt; der
   Schritt-Beispiel-Abgleich ordnet sie der Formelzeile zu, nicht einem
   Beispielschritt. (Zu klären: reicht die Formelzeile als „Beispiel“?)
+## Körper E2 „Quader und Würfel“ (FEU, 10.10.2026)
+
+- Einheit „l“ hinter einer Zahl liest sich im Satz wie eine 1 („45 l“
+  sieht aus wie 451). Im ganzen Heft „Liter“ ausgeschrieben, auch in
+  Formel und Kopf. (Vorschlag für bauregeln: Liter ausschreiben.)
+- Teilaufgaben mit eigenen Buchstaben a) b) kollidieren in tisch-alt mit
+  den Buchstaben des Setzers („b) Rechne um. a) …“). Umrechnen als Liste
+  mit Semikolon gesetzt.
+- Lernweg: „aus zwei Quadern zusammengesetzt“ an Einheit 5 abgegeben
+  (dort „zwei Quader (4×)“); Würfelkante aus V und Maßzahlvergleich
+  bleiben Bestand. Heft so in 6 Seiten (A–D, T), Karo auf jeder Seite.
+- Schritt-Beispiel-Abgleich: „Wasserhöhe = Gefäßhöhe minus Abstand zum
+  Rand“ (T5) brauchte Schritt 5 im D-Beispiel („bis zum Rand“); ohne ihn
+  fehlte er. Einheit dm³ (A-Ziel) als Satz im A-Beispiel ergänzt.
+- bank-pruef will jede pruef-Zahl an einer Ergebnisstelle („= …“);
+  Differenzen darum ausgeschrieben („90 − 80 = 10“).
+- Mengenwarnungen (k1 s1–s10, k2, k4, k5; 2026-FOR-B1f 4×) aus den
+  Zusatzzeilen, wie bei L75 gewollt.

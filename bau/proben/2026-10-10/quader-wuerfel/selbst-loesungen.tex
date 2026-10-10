@@ -1,0 +1,59 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% gesetzt von werkzeuge/setzer.py (Sorte selbst) aus dem Lernweg FEU
+% und den Bankzeilen; Muster bau/proben/2026-10-09/hypotenuse-muster.
+\usepackage{enumitem}
+\usepackage{adjustbox,varwidth}
+\newgeometry{a4paper,margin=18mm,top=15mm,bottom=20mm,footskip=9mm}
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\footnotesize\color{mbgrau}FEU \textperiodcentered{} Lösungen \textperiodcentered{} Quader und Würfel}
+\fancyfoot[R]{\footnotesize\color{mbgrau}\thepage}
+\setlength{\parskip}{3pt}
+\renewcommand{\kreuz}[1]{\mbox{$\square$\ #1}\quad}
+\newcommand{\kreuzl}[1]{\par\hangindent1.4em\hangafter1\noindent$\square$\ #1}
+\newcommand{\aufg}[3]{\par\noindent\makebox[0pt][r]{#3}\begin{minipage}[t]{\linewidth}#1\end{minipage}\par}
+\newcommand{\aufgg}[4]{\par\noindent\makebox[0pt][r]{#4}\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}#1\end{minipage}\hfill
+  \begin{minipage}[t]{0.37\linewidth}\vspace{0pt}\centering #2\end{minipage}\par}
+\newcommand{\nr}[1]{\makebox[7mm][l]{\textbf{#1}}}
+\newcommand{\lsg}[3]{\par\noindent\begin{minipage}[t]{9mm}\textbf{#1}\end{minipage}%
+  \begin{minipage}[t]{52mm}\raggedright\bfseries\boldmath #2\end{minipage}\hspace{3mm}%
+  \begin{minipage}[t]{\dimexpr\linewidth-64mm\relax}\raggedright\small #3\end{minipage}\par\vspace{4pt}}
+\newlength{\kr}
+\makeatletter
+\newcommand{\karomerk}[2]{\protected@write\@auxout{}{\string\karoseite{#1}{#2}{\thepage}}}
+\newcommand{\karoseite}[3]{\expandafter\xdef\csname karo@#1@#2\endcsname{#3}}
+\newcommand{\karohinweis}[3]{\karomerk{h}{#1}\ifcsname karo@k@#1\endcsname
+  \ifnum\csname karo@k@#1\endcsname=0\csname karo@h@#1\endcsname\relax#2\else#3\fi
+  \else#3\fi}
+\makeatother
+\begin{document}
+
+\noindent{\Large\bfseries Lösungen}\hspace{1em}{\color{mbgrau}Quader und Würfel}\par\smallskip
+\noindent{\small Links das Ergebnis, rechts der Weg in kurzen Schritten. Stimmt dein Ergebnis nicht, such den ersten Schritt, der anders ist.}\par
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut A}}\hspace{2mm}{\bfseries Volumen von Quader und Würfel}\par\vspace{4pt}
+\lsg{1.}{$8$ Würfel, $3$ Schichten, $V = 24$\,cm³}{$4 \cdot 2 = 8$ Würfel je Schicht; $3$ Schichten; $8 \cdot 3 = 24$\,cm³}
+\lsg{2.}{$V = 84$\,cm³}{$V = 7 \cdot 4 \cdot 3 = 84$\,cm³}
+\lsg{3.}{$V = 216$\,cm³}{$V = 6 \cdot 6 \cdot 6 = 216$\,cm³}
+\lsg{4.}{In den Würfel, $53$\,dm³ mehr}{Kiste: $6 \cdot 4 \cdot 3 = 72$\,dm³; Würfel: $5 \cdot 5 \cdot 5 = 125$\,dm³; $125 - 72 = 53$\,dm³}
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut B}}\hspace{2mm}{\bfseries Oberfläche}\par\vspace{4pt}
+\lsg{1.}{$O = 112$\,cm²}{$8 \cdot 4 = 32$; $8 \cdot 2 = 16$; $4 \cdot 2 = 8$; $O = 2 \cdot 32 + 2 \cdot 16 + 2 \cdot 8 = 112$\,cm²}
+\lsg{2.}{$O = 600$\,cm²}{$10 \cdot 10 = 100$\,cm²; $O = 6 \cdot 100 = 600$\,cm²}
+\lsg{3.}{$56$\,dm²}{Boden $5 \cdot 4 = 20$; vorn und hinten $2 \cdot 5 \cdot 2 = 20$; Seiten $2 \cdot 4 \cdot 2 = 16$; $20 + 20 + 16 = 56$\,dm²}
+\lsg{4.}{Nein, er braucht $9\,000$\,cm²}{Nein; Boden $60 \cdot 30 = 1\,800$; vorn und hinten $2 \cdot 60 \cdot 40 = 4\,800$; Seiten $2 \cdot 30 \cdot 40 = 2\,400$; $1\,800 + 4\,800 + 2\,400 = 9\,000$\,cm²; es fehlen $9\,000 - 8\,000 = 1\,000$\,cm²}
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut C}}\hspace{2mm}{\bfseries Liter und Kubikzentimeter}\par\vspace{4pt}
+\lsg{1.}{$5$ Liter; $3\,000$\,cm³; $2{,}5$ Liter; $4\,000$ Liter}{$5\,000 : 1\,000 = 5$ Liter; $3 \cdot 1\,000 = 3\,000$\,cm³; $2\,500 : 1\,000 = 2{,}5$ Liter; $4 \cdot 1\,000 = 4\,000$ Liter}
+\lsg{2.}{$6$ Liter}{$V = 30 \cdot 20 \cdot 10 = 6\,000$\,cm³ $= 6$ Liter}
+\lsg{3.}{$6\,000$ Liter}{$V = 3 \cdot 2 \cdot 1 = 6$\,m³; $6 \cdot 1\,000 = 6\,000$ Liter}
+\lsg{4.}{Nein, weniger: $63$ Liter}{$V = 60 \cdot 30 \cdot 35 = 63\,000$\,cm³ $= 63$ Liter}
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut D}}\hspace{2mm}{\bfseries Höhe aus dem Volumen}\par\vspace{4pt}
+\lsg{1.}{$3$\,cm hoch}{Grundfläche $5 \cdot 4 = 20$\,cm²; $60 : 20 = 3$\,cm}
+\lsg{2.}{$20$\,cm hoch}{$12$ Liter $= 12\,000$\,cm³; $30 \cdot 20 = 600$\,cm²; $12\,000 : 600 = 20$\,cm}
+\lsg{3.}{$20$\,cm hoch}{$30$ Liter $= 30\,000$\,cm³; $60 \cdot 25 = 1\,500$\,cm²; $30\,000 : 1\,500 = 20$\,cm}
+\lsg{4.}{Ja, $10$\,cm bleiben frei}{Ja; $98$ Liter $= 98\,000$\,cm³; $70 \cdot 40 = 2\,800$\,cm²; $98\,000 : 2\,800 = 35$\,cm; frei $45 - 35 = 10$\,cm}
+\par\Needspace{25mm}\vspace{6pt}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut T}}\hspace{2mm}{\bfseries Probetest}\par\vspace{4pt}
+\lsg{1.}{$64$\,cm³}{$4 \cdot 4 \cdot 4 = 64$ (nicht $4 \cdot 4$, nicht die Oberfläche $96$)}
+\lsg{2.}{$6{,}5$ Liter}{$6\,500 : 1\,000 = 6{,}5$ Liter}
+\lsg{3.}{$V = 90$\,cm³, $O = 126$\,cm²}{$V = 6 \cdot 5 \cdot 3 = 90$\,cm³; $O = 2 \cdot 30 + 2 \cdot 18 + 2 \cdot 15 = 126$\,cm²}
+\lsg{4.}{$10$\,cm hoch}{$2$ Liter $= 2\,000$\,cm³; $20 \cdot 10 = 200$\,cm²; $2\,000 : 200 = 10$\,cm}
+\lsg{5.}{Ja, man braucht $96$ Liter}{Ja; Wasserhöhe $50 - 10 = 40$\,cm; $80 \cdot 30 \cdot 40 = 96\,000$\,cm³ $= 96$ Liter; $100 - 96 = 4$ Liter bleiben übrig}
+\end{document}
