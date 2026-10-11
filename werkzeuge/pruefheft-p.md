@@ -82,3 +82,12 @@ fehlt: Stufe „Winkelbeziehungen“ ohne Hauptplatz (nur im Muster), Schüler-
 - Bank-Einstieg mit `form` zeichnen oder Grafik `\rechenplatz{n}`: Karo über
   die volle Breite (n Zeilen, höchstens 5).
 - Noch offen: Anzeigename der Einheit (Kopfzeile `Anzeigenamen:` oben).
+- Nachzug 12.10. (H37 Flächen): Einstieg nur aus der ersten Sprosse in
+  bank_sprossen (Lernfolge; bis dahin niedrigste Höhe über alle Sprossen);
+  liegt sie auf Prüfungshöhe, entfällt der Einstieg (die Bank ergänzt nur
+  unten, plan.md Linie 4) – im TeX „% Einstieg entfällt“. `form` zusätzlich
+  `linie` (Gleichung angeben: „A = ____“ rechts). Ankreuzen neben einer
+  Skizze: eine Option je Zeile (`\gkreuzzeile`). Antwortfeld des Einstiegs
+  ungeteilt (`\mbox`). Lösung: Klammern mit Operator sind Term („(b + c)“),
+  nur Klammern ohne Zahl und Operator sind Vermerk; Doppelpunkt trennt nur
+  direkt nach einem Wort („Nein: …“), „d · e : 2“ bleibt Geteiltzeichen.

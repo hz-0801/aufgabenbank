@@ -72,6 +72,25 @@ LXA Sinussatz · NUB Symmetrie (bau/pruefung/2026-10-10, 2026-10-11).
 - Gliederung koerper.md hat keine „Gruppen:“-Zeile – die Übersicht zeigt
   die zwei Einheiten ohne Überschrift.
 
+## Aus dem Datenlauf 12.10. (H37 Flächen, Flächeninhalt und Umfang)
+
+- Offen (Lehrer): Stufe „Anteil in Prozent“ hat in der Bank keine
+  leichtere Sprosse als die echte (Brett-Verschnitt ist Niveau III, die
+  Bankfassung des Kreissektors Prüfungshöhe); der Setzer lässt den
+  Einstieg weg – reicht die Schülerfrage, oder soll eine Bankzeile
+  unter der echten gebaut werden?
+- Offen (Lehrer): Reihenfolge in einer Stufe folgt schwere, dann rang
+  (Quelle, Jahr); „zerlegen“ (2018-6a) und „Strecke erst“ (2023-2c)
+  sind beide II – zählt bei gleicher Schwere das Jahr oder der
+  Handgriff?
+- Offen (Lehrer): Kapitel mit einer Einheit (Flächen) – braucht die
+  Übersicht eine Gruppenzeile, oder steht die Einheit allein?
+- Länge: fünf Stufen mit Schülerfrage, Einstieg und echten passen nur
+  mit Karo 0,5 auf zwei Seiten; Gleichung angeben 2022-1e (die
+  Schülerfrage fragt dasselbe), Drachenviereck 2025-2b, Dreieck QBC
+  2020-7b und Restfläche 2018-6a sind deshalb im Mehr-Block (Grafik
+  liegt in mehr-p10.csv bereit).
+
 ## Setzer (werkzeuge/setzer.py) braucht für Sorte P
 
 Aus bericht.md P4Z: \pfheftkopf[Kennung], \pfstufekopf mit Jahren,

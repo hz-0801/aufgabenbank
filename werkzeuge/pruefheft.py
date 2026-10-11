@@ -5304,6 +5304,7 @@ P_PRAEAMBEL = r"""% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortg
 \let\gSchrift\relax
 \renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
 \newsavebox{\gbox}\newlength{\gLinks}
 \newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
@@ -5474,18 +5475,19 @@ def p_rang(r):
 
 
 def p_einstieg(D, z):
-    """Leichteste passende Bankzeile der Stufe (Spalte bank_sprossen): niedrigste Höhe, dann die erste
-    Sprosse der Liste (Lernfolge der Gliederung), dann Variante; ruhende Zeilen nie."""
-    kand = []
-    for pos, sp in enumerate((z.get('bank_sprossen') or '').split()):
-        sp = re.sub(r'\(i\)$|\[.*\]$', '', sp)
-        for iid, r in D.bank.items():
-            if iid.startswith(sp + '-v') and not ruht(r):
-                kand.append((P_HOEHE.get(r.get('hoehe'), 2), pos, int(r.get('variante') or 0), iid, r))
-    if not kand:
-        return None
-    kand.sort(key=lambda k: k[:4])
-    return kand[0][4]
+    """Leichteste Zeile der ersten Sprosse in bank_sprossen (Lernfolge der Gliederung; pruefheft-p.md):
+    niedrigste Höhe, dann Variante; ruhende Zeilen nie. Liegt die erste Sprosse schon auf Prüfungshöhe
+    (Bankfassung des Originals), entfällt der Einstieg – die Bank ergänzt nur unten (plan.md Linie 4);
+    Rückgabe dann 'entfaellt'. Bis 11.10. galt: niedrigste Höhe über alle Sprossen der Stufe (12.10., Flächen)."""
+    sprossen = [re.sub(r'\(i\)$|\[.*\]$', '', sp) for sp in (z.get('bank_sprossen') or '').split()]
+    for sp in sprossen[:1]:
+        kand = [(P_HOEHE.get(r.get('hoehe'), 2), int(r.get('variante') or 0), iid, r)
+                for iid, r in D.bank.items() if iid.startswith(sp + '-v') and not ruht(r)]
+        if not kand:
+            return None
+        kand.sort(key=lambda k: k[:3])
+        return 'entfaellt' if kand[0][0] >= P_HOEHE['pruefung'] else kand[0][3]
+    return None
 
 
 def p_jahre(D, z, letzte5):
@@ -5580,7 +5582,7 @@ def p_einstieg_tex(D, r, nr, stufe):
     elif a.abb:
         out.append('\\gzwei{' + a.abb + '}{' + rechts + '}')
     elif a.antwort:
-        out.append('\\hfill ' + a.antwort)
+        out.append('\\hfill \\mbox{' + a.antwort + '}')   # Antwortfeld ungeteilt, notfalls in eigener Zeile rechts
     else:
         out.append('\\karo{2}')
     fuss = a.kurz
@@ -5713,10 +5715,17 @@ def p_echt_tex(D, r, nr, heraus, faktor=1.0):
         rechts = f'\\karo{{{n}}}'
     form = (r.get('form') or '').strip()
     grafik = (r.get('grafik') or '').strip()
+    if form == 'linie' and not optionen and not luecke:
+        # Gleichung oder Term angeben: „A = ____“ rechts (12.10., Flächen)
+        lhs = re.split(r'\s*(=|≈)\s*', ergebnisse[0])[0] if ergebnisse else ''
+        rechts = '\\hfill ' + tx(lhs) + ' $=$\\linie{30mm}'
     if form == 'teil' and not optionen and not luecke:
         # kurze Antwort rechts in derselben Zeile, Einheit aus der Lösung (gemeinsam.md „Antwortfeld“)
         m = re.search(r'\d\s*([a-zA-Zµ€%]+[²³]?)\s*$', ergebnisse[0] if ergebnisse else '')
         rechts = '\\hfill\\linie{30mm} ' + tx(m.group(1)) if m else '\\hfill\\linie{30mm}'
+    if grafik and optionen:
+        # neben der Skizze ist die Spalte schmal: eine Option je Zeile (gemeinsam.md „Ankreuzen“; 12.10., Flächen)
+        rechts = ''.join(f'\\gkreuzzeile{{{"ABCD"[i]}}}{{{tx(o)}}}' for i, o in enumerate(optionen[:4]))
     if grafik:
         out.append('\\gzwei{' + grafik + '}{' + (rechts or f'\\karo{{{n}}}') + '}')
     elif form == 'skizze':
@@ -5759,13 +5768,13 @@ def p_ergebnis(r):
             ergebnisse.append('ABCD'['erste zweite dritte vierte'.split().index(m.group(1))])
             continue
         # Klammern ohne Zahl sind Vermerke („(erste Option)“), Klammern mit Zahl Rechnung („(π · 7,5)“)
-        t = re.sub(r'\s*\((?![^()]*\d)[^()]*\)', '', teil).strip()
+        t = re.sub(r'\s*\((?![^()]*[\d+−·:=])[^()]*\)', '', teil).strip()   # „(b + c)“ bleibt (12.10., Flächen)
         m = re.match(r'^(ja|nein|richtig|falsch|stimmt nicht|stimmt)\b[,:]?', t, re.I)
         if m:   # Begründen: das Urteil ist das Ergebnis (gemeinsam.md „Lösungen“)
             ergebnisse.append(m.group(1))
             continue
         # Schritte trennen „;“, „⇒“ und ein Doppelpunkt nach einem Wort („Torte: …“), nicht das Geteiltzeichen
-        schritt = re.split(r'\s*;\s*|\s*⇒\s*|(?<=[A-Za-zäöüßÄÖÜ])\s*:\s+', t)[-1].strip()
+        schritt = re.split(r'\s*;\s*|\s*⇒\s*|(?<=[A-Za-zäöüßÄÖÜ]):\s+', t)[-1].strip()   # „e : 2“ ist Geteiltzeichen
         segs = re.split(r'\s*(=|≈)\s*', schritt)
         if len(segs) >= 3:
             lhs = segs[0] if len(segs[0]) <= 20 else ''
@@ -5824,7 +5833,9 @@ def p_blatt_tex(D, einheit, kenn, stufen_daten, ausschnitt, fund, faktor=1.0):
             out.append(p_frage_tex(s['frage'], nr))
         elif not s.get('kurzfrage'):
             out.append('% SETZER: fehlt – Schülerfrage zur Stufe (Gliederung: Schülerfrage, -Fälle, -Form, -Weg; oder Frage)')
-        if s['einstieg']:
+        if s['einstieg'] == 'entfaellt':
+            out.append('% Einstieg entfällt: die erste Sprosse der Stufe liegt schon auf Prüfungshöhe (p_einstieg)')
+        elif s['einstieg']:
             nr += 1
             t, a = p_einstieg_tex(D, s['einstieg'], nr, s['name'])
             s['nr_einstieg'], s['einstieg_a'] = nr, a
@@ -5916,7 +5927,7 @@ def p_register(args, kenn, ordner, seiten, einheit, stufen_daten):
     pfad = os.path.relpath(ordner, BANK)
     zeilen = [z for z in zeilen if not z.endswith(';' + pfad)]
     ids = [r['id'] for s in stufen_daten for r in s['echte']]
-    bank = [s['einstieg']['id'] for s in stufen_daten if s['einstieg']]
+    bank = [s['einstieg']['id'] for s in stufen_daten if s['einstieg'] and s['einstieg'] != 'entfaellt']
     best = (f'kapitel={args.kapitel}, art=p, einheit={einheit}, stufen={len(stufen_daten)}, '
             f'echte={len(ids)}, ids={" ".join(ids)}, bank={" ".join(bank)}, seiten={seiten}'
             + (f', schueler={args.schueler}' if args.schueler else ''))
@@ -5996,7 +6007,7 @@ def p_bau(args):
     print('Ordner:', ordner)
     print(f'Einheit: {einheit}; Kennung {kenn}; Stufen: ' + ' | '.join(
         f'{s["name"]} ({", ".join(str(j) for j in s["jahre"]) or "–"}; Einstieg '
-        f'{s["einstieg"]["id"] if s["einstieg"] else "–"}; echte {len(s["echte"])})' for s in stufen_daten))
+        f'{s["einstieg"]["id"] if s["einstieg"] and s["einstieg"] != "entfaellt" else "–"}; echte {len(s["echte"])})' for s in stufen_daten))
     print('Fundstellen:', ' '.join(ids))
     fehlt = sum(t.count('% SETZER: fehlt') for t in (blatt, loes, ueb))
     print(f'Rechenraum: Faktor {faktor_gesetzt}; Blatt {seiten} Seiten')
