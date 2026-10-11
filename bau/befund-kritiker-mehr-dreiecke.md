@@ -3,7 +3,7 @@
 Urteil: Die Zahlenregel trägt (alle 42 Rechnungen stimmen, Glätte und
 Zahltyp passen), aber Familien mit Vorspann wurden je Teil einzeln neu
 bezahlt; die neun Kapitel können so gebaut werden, wenn die Regel um
-„eine Zahlenwahl je Vorspann“ ergänzt und fünf Familien nachgezogen sind.
+„eine Zahlenwahl je Vorspann“ ergänzt wird und fünf Familien folgen.
 
 Schwer (Schüler merkt es):
 - 2022-OS-K5a–d: h_c 6,8 / 7,1 / 7,9 m, b 13,4 / 13,2 m je Teil
@@ -26,8 +26,7 @@ Mittel (Glätte, Schwere):
 - 2020-OS-K5b: Grundseite und rechte Seite beide 13 cm; Original
   hatte drei verschiedene Zahlen, Verwechslung wahrscheinlicher.
 - 2019-OS-K3b schwere II, 2022-OS-K5b gleicher Handgriff schwere I.
-Leicht: 2019-OS-K3c umformuliert (vier Kinder statt „ein viertes“);
-Vorspann-Familien tragen je Teil nur einen Ausschnitt des Vorspanns.
+Leicht: 2019-OS-K3c umformuliert; Vorspann je Teil nur ausschnittweise.
 
 Stufen: Gleichung aufstellen, Kathete/Hypotenuse direkt, Dreieck erst
 finden – je eigener Handgriff, aber falsch belegt: Rampe 2025-K4a ist
@@ -37,6 +36,6 @@ hierher. Winkel berechnen / Seite berechnen – zwei Handgriffe (Umkehr-
 funktion vs. Umstellen). Sinussatz – eigen. Eigenschaft erkennen und
 Symmetrieachsen zählen – Wissen, je eigen; 2025-K2a ist zu 3/4
 Pythagoras, falsch belegt. Winkelsumme, gleichschenklig, rechten Winkel
-begründen – je eigener erster Schritt. Rang: stimmt mit der Gruppenregel.
+begründen – je eigener erster Schritt. Rang stimmt mit der Gruppenregel.
 Regel unklar: Vorspann-Familien (eine Zahlenwahl, Gegeben-Werte
 nachziehen) und Originale mit glattem Ergebnis sind nicht geregelt.
