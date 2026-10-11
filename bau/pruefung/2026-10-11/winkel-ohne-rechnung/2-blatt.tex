@@ -17,7 +17,7 @@
 \pfheftstil
 \pflaufkopf[P10 \pkt{} Prüfung]{Winkel}{\kennung}\pfseitevon
 \pfheftkopf{Winkel}{}
-\pfstufenzeile{Winkelbeziehungen: Geraden kreuzen \pkt{} Parallelen \pkt{} Innenwinkelsumme: Dreieck \pkt{} Viereck \pkt{} gleichschenklig: zwei gleiche Winkel \pkt{} rechter Winkel: begründen}
+\pfstufenzeile{Winkelbeziehungen: Geraden kreuzen \pkt{} Parallelen \pkt{} Innenwinkelsumme \pkt{} gleichschenklig: zwei gleiche Winkel \pkt{} rechter Winkel: begründen}
 
 % ===================== Stufe 1 =====================
 \Needspace*{0.25\textheight}\pfstufekopf{Winkelbeziehungen: Geraden kreuzen \pkt{} Parallelen}{letzte 5 Jahre: 2026 \pkt{} 2022 \pkt{} 2018}
@@ -39,113 +39,97 @@ Welche Winkel sind gleich groß? Welche ergänzen sich zu $180^\circ$? Markiere 
 \fusshilfe{\mbox{1:~a) $\alpha=\gamma$, $\beta=\delta$; b) $\alpha=\gamma$, $\beta=\delta$}}
 \end{pfaufg}
 
-% Bank winkel-dreiecke-e2-k2-s3-v10 und e2-k2-s10-v9, neu 11.10.: kleine Berechnung an den Figuren von Nr. 1 (Skizze nur bei der ersten der Stufe)
-\begin{pfaufg}{}{2.}{}
-Gib die fehlenden Winkel an.\par\smallskip
-\begin{tabular}{@{}l@{\hspace{1em}}l@{\;}l@{\hspace{1.2em}}r@{\;}l@{\hspace{1.2em}}r@{\;}l@{\hspace{1.2em}}r@{\;}l@{}}
-\textbf{a)} & Figur 1a), $\alpha = 48^\circ$: & $\beta =$\linie{18mm} & $\gamma$ & $=$\linie{18mm} & $\delta$ & $=$\linie{18mm}\\[5mm]
-\textbf{b)} & Figur 1b), $\alpha = 62^\circ$: & $\beta =$\linie{18mm} & $\gamma$ & $=$\linie{18mm} & $\delta$ & $=$\linie{18mm}
-\end{tabular}
-\fusshilfe{\mbox{2:~a) 132°, 48°, 132°; b) 118°, 62°, 118°}}
-\end{pfaufg}
-
 % ===================== Stufe 2 =====================
-\Needspace*{0.25\textheight}\pfstufekopf{Innenwinkelsumme: Dreieck \pkt{} Viereck}{letzte 5 Jahre: 2026 \pkt{} 2023 \pkt{} 2022}
+\Needspace*{0.25\textheight}\pfstufekopf{Innenwinkelsumme}{letzte 5 Jahre: 2026 \pkt{} 2023 \pkt{} 2022}
 
 % Bank winkel-dreiecke-e3-k2-s1-v1, e3-k2-s6-v1 (Päckchen: Skizze → Text; c gestrichen, Lehrer 11.10.)
-\begin{pfaufg}{}{3.}{}
+\begin{pfaufg}{}{2.}{}
 Berechne den fehlenden Winkel.
 \gzwei{\gteil{a)}{Dreieck\par\smallskip\begin{tikzpicture}[line width=0.7pt,scale=0.62]\draw (0,0)--(3.4,0)--(2.360,3.021)--cycle;
 \pfwinkel[1.3][0.6]{(0,0)}{0}{52}{52^\circ}\pfwinkel[1.3][0.6]{(3.4,0)}{109}{180}{71^\circ}\end{tikzpicture}}}{\karo{2}}
-\gzwei{\gteil{b)}{Viereck: $84^\circ$, $97^\circ$, $103^\circ$\par\smallskip\pfskizzenfeld[50mm]{2}}}{\karo{2}}
-\fusshilfe{\mbox{3:~a) 57°; b) 76°}}
-\end{pfaufg}
-
-% Bank winkel-dreiecke-e3-k2-s7-v7 (Teildreieck an der Höhe), Winkel γ₁ statt ε (Lehrer 11.10.), Skizzenfeld
-\begin{pfaufg}{}{4.}{}
-Im Dreieck $ABC$ ist $\alpha = 52^\circ$. Die Höhe $h_c$ geht von $C$ senkrecht auf die Seite $\overline{AB}$, ihr Fußpunkt heißt $D$. Berechne den Winkel $\gamma_1$ zwischen $\overline{AC}$ und der Höhe.
-\gzwei{\pfskizzenfeld[60mm]{2}}{\karo{2}}
-\fusshilfe{\mbox{4:~38°}}
+\gzwei{\gteil{b)}{Viereck\par\smallskip\begin{tikzpicture}[line width=0.7pt,scale=0.62]\draw (0,0)--(3.6,0)--(3.0,2.6)--(0.5,2.3)--cycle;
+\pfwinkel[1.0][0.62]{(0,0)}{0}{78}{84^\circ}\pfwinkel[1.0][0.62]{(3.6,0)}{103}{180}{97^\circ}\pfwinkel[1.0][0.62]{(3.0,2.6)}{187}{283}{103^\circ}\pfwinkel*[1.0]{(0.5,2.3)}{258}{367}{}\end{tikzpicture}}}{\karo{2}}
+\fusshilfe{\mbox{2:~a) 57°; b) 76°}}
 \end{pfaufg}
 
 % 2026-FOR-B1i (EBR-Zwilling 2026-EBR-B1i), eigener Wortlaut
-\begin{pfaufg}{nach~P10\\’26~\pkt{}~1i}{5.}{}
+\begin{pfaufg}{nach~P10\\’26~\pkt{}~1i}{3.}{}
 Die Figur zeigt das Parallelogramm $ABCD$. Ein Winkel ist $75^\circ$ groß. Bestimme den Winkel $\beta$.
 \gzwei{\begin{tikzpicture}[line width=0.7pt]\draw (0,0)--(3.2,0)--(3.614,1.545)--(0.414,1.545)--cycle;
 \pfwinkel[0.85][0.6]{(0,0)}{0}{75}{75^\circ}\pfwinkel[0.6][0.6]{(3.2,0)}{75}{180}{\beta}
 \node[font=\small,anchor=north east] at (0,0) {$A$};\node[font=\small,anchor=north west] at (3.2,0) {$B$};\node[font=\small,anchor=south west] at (3.614,1.545) {$C$};\node[font=\small,anchor=south east] at (0.414,1.545) {$D$};\end{tikzpicture}}{\karo{2}}
-\fusshilfe{\mbox{5:~105°}}
+\fusshilfe{\mbox{3:~105°}}
 \end{pfaufg}
 
 % 2022-OS-K5c, herausgelöst (Seite b, Höhe 7,4 m und 52° bei B nur für 5a, 5b, 5d, weggelassen)
-\begin{pfaufg}{nach~P10\\’22~\pkt{}~5c}{6.}{}
+\begin{pfaufg}{nach~P10\\’22~\pkt{}~5c}{4.}{}
 Das Dreieck $ABC$ hat keinen rechten Winkel. Die Höhe $h_c$ geht von $C$ senkrecht auf die Seite $\overline{AB}$, ihr Fußpunkt heißt $D$. Der Winkel $\alpha$ ist etwa $31{,}7^\circ$ groß. Ermittle die Größe des Winkels $\gamma_1$ zwischen $\overline{AC}$ und der Höhe.
 \gzwei{\begin{tikzpicture}[line width=0.7pt]\draw (0,0)--(4.45,0)--(3.0,1.85)--cycle;\draw[dashed] (3.0,1.85)--(3.0,0);
 \pfrw{(3,0)}{0}\pfwinkel[2.0][0.72]{(0,0)}{0}{31.66}{31{,}7^\circ}\pfwinkel[0.75][0.6]{(3,1.85)}{-148.34}{-90}{\gamma_1}
 \node[font=\small,anchor=north east] at (0,0) {$A$};\node[font=\small,anchor=north west] at (4.45,0) {$B$};\node[font=\small,anchor=south] at (3,1.85) {$C$};\node[font=\small,anchor=north] at (3,0) {$D$};\node[font=\small,anchor=west] at (3.05,0.75) {$h_c$};\end{tikzpicture}}{\karo{2}}
-\fusshilfe{\mbox{6:~58,3°}}
+\fusshilfe{\mbox{4:~58,3°}}
 \end{pfaufg}
 
 % 2018-OS-K4b, herausgelöst (Höhen 1,5 m und 12,0 m nur für 4c, 4d, weggelassen); nicht maßstabsgerecht wie das Original
-\begin{pfaufg}{nach~P10\\’18~\pkt{}~4b}{7.}{}
+\begin{pfaufg}{nach~P10\\’18~\pkt{}~4b}{5.}{}
 Lea will die Höhe eines Berges bestimmen. Auf der Bergspitze $C$ steht eine Aussichtsplattform, ihre Spitze heißt $D$. Lea peilt vom Punkt $A$ aus. Der Punkt $B$ liegt auf der Höhe von $A$ senkrecht unter $C$. Die Peillinie zu $C$ ist um $30^\circ$ gegen die Waagerechte geneigt. Zwischen den Peillinien zu $C$ und zu $D$ liegt der Winkel $\gamma = 5^\circ$. Lea sagt: „Der Winkel $\delta$ ist $55^\circ$ groß.“ Begründe, dass das stimmt.
 \gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.7]\draw[dashed] (0,0)--(4,0);\draw (4,0)--(4,3.356);\draw (0,0)--(4,2.309);\draw (0,0)--(4,3.356);
 \pfrw{(4,0)}{90}\pfwinkel[2.0][0.7]{(0,0)}{0}{30}{30^\circ}\pfwinkel[3.6][0.86]{(0,0)}{30}{40}{\gamma}\pfwinkel[0.75][0.6]{(4,3.356)}{-140}{-90}{\delta}
 \node[font=\small,anchor=east] at (0,0) {$A$};\node[font=\small,anchor=north west] at (4,0) {$B$};\node[font=\small,anchor=west] at (4,2.309) {$C$};\node[font=\small,anchor=south] at (4,3.356) {$D$};\end{tikzpicture}}{\karo{4}}
-\fusshilfe{\mbox{7:~richtig, $\delta = 55^\circ$}}
+\fusshilfe{\mbox{5:~richtig, $\delta = 55^\circ$}}
 \end{pfaufg}
 
 % ===================== Stufe 3 =====================
 \Needspace*{0.25\textheight}\pfstufekopf{gleichschenklig: zwei gleiche Winkel}{letzte 5 Jahre: 2023}
 
 % Bank winkel-dreiecke-e3-k2-s0-v5, neu 11.10.: Schülerfrage Unterscheiden (gleichschenklig gegen gleichseitig)
-\begin{pfaufg}{}{8.}{}
+\begin{pfaufg}{}{6.}{}
 Was unterscheidet die beiden Dreiecke? Trage alle Winkel ein.
 \gzwei{\begin{tikzpicture}[line width=0.7pt]\draw (0,0)--(2.4,0)--(1.2,2.46)--cycle;\strich{(0,0)}{(1.2,2.46)}\strich{(2.4,0)}{(1.2,2.46)}
 \pfwinkel[0.8][0.6]{(0,0)}{0}{64}{64^\circ}\pfwinkel*[0.8]{(2.4,0)}{116}{180}{}\pfwinkel*[0.6]{(1.2,2.46)}{-116}{-64}{}
 \begin{scope}[xshift=3.1cm]\draw (0,0)--(2.4,0)--(1.2,2.078)--cycle;\strich{(0,0)}{(2.4,0)}\strich{(0,0)}{(1.2,2.078)}\strich{(2.4,0)}{(1.2,2.078)}
 \pfwinkel*[0.7]{(0,0)}{0}{60}{}\pfwinkel*[0.7]{(2.4,0)}{120}{180}{}\pfwinkel*[0.7]{(1.2,2.078)}{-120}{-60}{}\end{scope}\end{tikzpicture}}{\vspace{8mm}Unterschied:\linie{50mm}\par\vspace{6mm}\noindent\linie{72mm}}
-\fusshilfe{\mbox{8:~64°, 64°, 52°; 60°, 60°, 60°}}
+\fusshilfe{\mbox{6:~64°, 64°, 52°; 60°, 60°, 60°}}
 \end{pfaufg}
 
 % 2023-OS-B1g, eigener Wortlaut
-\begin{pfaufg}{nach~P10\\’23~\pkt{}~1g}{9.}{}
+\begin{pfaufg}{nach~P10\\’23~\pkt{}~1g}{7.}{}
 Im Dreieck $ABC$ sind die Winkel bei $A$ und bei $B$ je $70^\circ$ groß. Gib die Länge der Seite $\overline{BC}$ und die Größe des Winkels $\gamma$ an.
 \gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.62]\draw (0,0)--(2.4,0)--(1.2,3.297)--cycle;
 \pfwinkel[1.2][0.6]{(0,0)}{0}{70}{70^\circ}\pfwinkel[1.2][0.6]{(2.4,0)}{110}{180}{70^\circ}\pfwinkel[0.9][0.6]{(1.2,3.297)}{-110}{-70}{\gamma}
 \node[font=\small,anchor=north east] at (0,0) {$A$};\node[font=\small,anchor=north west] at (2.4,0) {$B$};\node[font=\small,anchor=south] at (1.2,3.297) {$C$};\node[font=\small,anchor=east] at (0.5,1.648) {$6$ cm};\end{tikzpicture}}{\vspace{4mm}\begin{tabular}{@{}r@{\;}l@{}}$\overline{BC}$ & $=$\linie{28mm}\\[5mm] $\gamma$ & $=$\linie{28mm}\end{tabular}}
-\fusshilfe{\mbox{9:~6 cm; 40°}}
+\fusshilfe{\mbox{7:~6 cm; 40°}}
 \end{pfaufg}
 
 % 2023-OS-K7a, herausgelöst (65° bei B und AB = 131,5 cm nur für 7b, weggelassen)
-\begin{pfaufg}{nach~P10\\’23~\pkt{}~7a}{10.}{}
+\begin{pfaufg}{nach~P10\\’23~\pkt{}~7a}{8.}{}
 Im Dreieck $ABC$ liegt der Punkt $F$ auf der Seite $\overline{AC}$. Die Strecke $\overline{BF}$ steht senkrecht auf $\overline{AC}$. Begründe, dass das graue Dreieck $ABF$ gleichschenklig ist.
 \gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.7]\fill[black!10] (5,0)--(3,2)--(3,0)--cycle;\draw (0,0)--(5,0)--(3,2)--cycle;\draw (3,2)--(3,0);
 \pfrw{(3,0)}{0}\pfwinkel[1.4][0.64]{(5,0)}{135}{180}{45^\circ}\pfwinkel[1.4][0.64]{(3,2)}{-90}{-45}{45^\circ}
 \node[font=\small,anchor=north east] at (0,0) {$C$};\node[font=\small,anchor=north west] at (5,0) {$A$};\node[font=\small,anchor=south] at (3,2) {$B$};\node[font=\small,anchor=north] at (3,0) {$F$};\end{tikzpicture}}{\karo{3}}
-\fusshilfe{\mbox{10:~zwei Winkel je 45°}}
+\fusshilfe{\mbox{8:~zwei Winkel je 45°}}
 \end{pfaufg}
 
 % ===================== Stufe 4 =====================
 \Needspace*{0.25\textheight}\pfstufekopf{rechter Winkel: begründen}{letzte 5 Jahre: 2025}
 
 % Bank winkel-dreiecke-e3-k2-s9-v8, neu 11.10.: derselbe Handgriff wie 2025-OS-K2c (gleich lange Strecken am rechten Winkel → je 45°)
-\begin{pfaufg}{}{11.}{}
+\begin{pfaufg}{}{9.}{}
 In der Figur steht $\overline{CD}$ senkrecht auf $\overline{AB}$. Begründe, warum der Winkel $\gamma$ $90^\circ$ groß ist. Trage zuerst die Winkel in den Dreiecken $ADC$ und $DBC$ ein.
 \gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.9]\draw (0,0)--(3,0)--(1.5,1.5)--cycle;\draw (1.5,1.5)--(1.5,0);
 \pfrw[0.28]{(1.5,0)}{0}\pfwinkel*[0.7]{(1.5,1.5)}{-135}{-45}{}\node[inner sep=0pt,font=\footnotesize] at ($(1.5,1.5)+(-108:0.45)$) {$\gamma$};
 \node[font=\small,anchor=north east] at (0,0) {$A$};\node[font=\small,anchor=north west] at (3,0) {$B$};\node[font=\small,anchor=south] at (1.5,1.5) {$C$};\node[font=\small,anchor=north] at (1.5,-0.02) {$D$};
 \node[font=\footnotesize,anchor=north] at (0.75,-0.02) {$3$ cm};\node[font=\footnotesize,anchor=north] at (2.25,-0.02) {$3$ cm};\node[font=\footnotesize,anchor=east] at (1.47,0.3) {$3$ cm};\end{tikzpicture}}{\karo{3}}
-\fusshilfe{\mbox{11:~45° + 45° = 90°}}
+\fusshilfe{\mbox{9:~45° + 45° = 90°}}
 \end{pfaufg}
 
 % 2025-OS-K2c, herausgelöst (Sternchenaufgabe; Symmetrieachsen 2a und Fläche 2b weggelassen)
-\begin{pfaufg}{nach~P10\\’25~\pkt{}~2c\,$\star$}{12.}{}
+\begin{pfaufg}{nach~P10\\’25~\pkt{}~2c\,$\star$}{10.}{}
 Die Figur zeigt das Drachenviereck $ABCD$. Seine Diagonalen $\overline{AC}$ und $\overline{BD}$ sind $50$~cm und $80$~cm lang und schneiden sich im Punkt $F$. Die Strecke $\overline{DF}$ ist $25$~cm lang. Begründe, dass $\gamma = 90^\circ$ ist.
 \gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.6]\draw (-1.25,0)--(0,-2.75)--(1.25,0)--(0,1.25)--cycle;\draw (-1.25,0)--(1.25,0);\draw (0,-2.75)--(0,1.25);
 \pfrw[0.25]{(0,0)}{0}\pfwinkel*[0.85]{(0,1.25)}{-135}{-45}{}\node[inner sep=0pt,font=\footnotesize] at ($(0,1.25)+(-112:0.55)$) {$\gamma$};
 \node[font=\small,anchor=east] at (-1.25,0) {$A$};\node[font=\small,anchor=north] at (0,-2.75) {$B$};\node[font=\small,anchor=west] at (1.25,0) {$C$};\node[font=\small,anchor=south] at (0,1.25) {$D$};\node[font=\small,anchor=north west] at (0,0) {$F$};\end{tikzpicture}}{\karo{4}}
-\fusshilfe{\mbox{12:~45° + 45° = 90°}}
+\fusshilfe{\mbox{10:~45° + 45° = 90°}}
 \end{pfaufg}
 
 \pfblattende{11}{26 FOR & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17 & 16}%

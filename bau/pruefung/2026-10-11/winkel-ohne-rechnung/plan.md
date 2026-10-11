@@ -16,7 +16,7 @@ Kein Hauptplatz; Jahre der echten Aufgaben, die den Schritt brauchen (Parallelog
 - Nr. 2 a) e2-k2-s3-v10 (neu), b) e2-k2-s10-v9 (neu): kleine Berechnung an den
   Figuren von Nr. 1 (ein Winkel gegeben, drei angeben); Skizze nur bei der ersten.
 
-## 2 Innenwinkelsumme: Dreieck · Viereck – 2026 · 2023 · 2022
+## 2 Innenwinkelsumme – 2026 · 2023 · 2022
 - Schülerfrage: „Wie viel geben die Winkel zusammen – im Dreieck, im Viereck?“
 - Nr. 3 Päckchen e3-k2-s1-v1 · e3-k2-s6-v1: a) Dreieck mit Skizze (Werte im
   Bogen), b) Viereck nur Text mit Skizzenfeld; c) gestrichen (Lehrer).

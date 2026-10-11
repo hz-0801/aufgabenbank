@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2026.10.2)  10 OCT 2026 23:52
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2026.10.2)  11 OCT 2026 00:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1152,7 +1152,12 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 27.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (2.09398pt too wide) in paragraph at lines 72--72
+Overfull \hbox (2.09398pt too wide) in paragraph at lines 56--56
+ []|\TU/LatinModernRoman(0)/m/n/8 nach P10
+ []
+
+
+Overfull \hbox (2.09398pt too wide) in paragraph at lines 65--65
  []|\TU/LatinModernRoman(0)/m/n/8 nach P10
  []
 
@@ -1161,32 +1166,27 @@ Overfull \hbox (2.09398pt too wide) in paragraph at lines 72--72
 
 
 ]
-Overfull \hbox (2.09398pt too wide) in paragraph at lines 81--81
+Overfull \hbox (2.09398pt too wide) in paragraph at lines 74--74
  []|\TU/LatinModernRoman(0)/m/n/8 nach P10
  []
 
 
-Overfull \hbox (2.09398pt too wide) in paragraph at lines 90--90
+Overfull \hbox (2.09398pt too wide) in paragraph at lines 96--96
  []|\TU/LatinModernRoman(0)/m/n/8 nach P10
  []
 
 
-Overfull \hbox (2.09398pt too wide) in paragraph at lines 112--112
+Overfull \hbox (2.09398pt too wide) in paragraph at lines 105--105
  []|\TU/LatinModernRoman(0)/m/n/8 nach P10
  []
 
 [2]
-Overfull \hbox (2.09398pt too wide) in paragraph at lines 121--121
+Overfull \hbox (2.09398pt too wide) in paragraph at lines 127--127
  []|\TU/LatinModernRoman(0)/m/n/8 nach P10
  []
 
 
-Overfull \hbox (2.09398pt too wide) in paragraph at lines 143--143
- []|\TU/LatinModernRoman(0)/m/n/8 nach P10
- []
-
-
-Overfull \hbox (3.54967pt too wide) in paragraph at lines 143--143
+Overfull \hbox (3.54967pt too wide) in paragraph at lines 127--127
  []\TU/LatinModernRoman(0)/m/n/8 ’25 · 2c$\OML/cmm/m/it/8 ?$
  []
 
@@ -1201,10 +1201,10 @@ Package rerunfilecheck Info: File `2-blatt.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 37697 strings out of 476872
- 909358 string characters out of 5804586
+ 37709 strings out of 476872
+ 909560 string characters out of 5804586
  1947627 words of memory out of 5000000
- 58977 multiletter control sequences out of 15000+600000
+ 58989 multiletter control sequences out of 15000+600000
  566697 words of font info for 116 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  117i,18n,121p,746b,844s stack positions out of 10000i,1000n,20000p,200000b,200000s
