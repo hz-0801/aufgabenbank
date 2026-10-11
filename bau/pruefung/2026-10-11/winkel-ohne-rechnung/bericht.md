@@ -53,3 +53,12 @@ Neue Bankzeilen: keine (keine Lücke). Herausgelöst: herausgeloest.csv (7 Zeile
 - Neue Makros (mathblatt.sty 2026-10-11c): \pflaufkopf[Sorte]{Name}{Kennung} (rückwärtskompatibel), \pfskizzenfeld[breite]{n}, \pfwinkel[r][f]{(x,y)}{von}{bis}{Wert} (Wert innen), \pfrw[r]{(x,y)}{Richtung}, \pfausschnitt{Vorher}{Name}{Weiter}; \geradenkreuzung, \parallelenpaar, \winkel, \mbwinkelbogen setzen Beschriftungen jetzt innen.
 - Neue Bankzeilen: winkel-dreiecke-e2-k2-s0-v5, -e2-k2-s0-v6, -e2-k2-s3-v10, -e2-k2-s10-v9, -e3-k2-s0-v5, -e3-k2-s9-v8 (bank-pruef: 0 Abweichungen; neue Warnungen nur Mengen je Sprosse).
 - Bankzeile e3-k2-s7-v7: ε → γ₁ (Sprachregel). Offen: Raute/B1c-Inhalt liegt jetzt beim Blatt Vierecke, das es noch nicht gibt.
+
+## Nachzug 12.10. (nach Befundlisten; Lehrer 11.10.: ein Handgriff)
+
+- Geändert: ohne Stufen – eine Stufe „fehlende Winkel finden und begründen“ (letzte 5 Jahre: 2026 · 2025 · 2023 · 2022) als Titelzeile, Stufenkopf, Übersicht und Lösung; Zwischenüberschriften weggelassen, weil die Reihe ohne sie lesbar ist (jede Aufgabe sagt, was sie zeigt). Reihe: 1 Markieren (Kreuzung, Parallelen) · 2 fehlender Winkel (Dreieck mit Skizze, Viereck als Text mit Skizzenfeld) · 3 gleichschenklig gegen gleichseitig · 4 Parallelogramm ’26 · 5 gleichschenklig ’23 · 6 Teildreieck an der Höhe ’22 · 7 Begründen gleichschenklig ’23 · 8 Einstieg rechter Winkel · 9 Drachen ’25 (schwerste, Ende).
+- Andere Zahlen (pruefung.md § 5, aus msa/mehr-p10.csv): Nr. 4 68° → 112°; Nr. 5 65°, 7 cm → 7 cm, 50°; Nr. 6 α ≈ 33,6° → γ₁ ≈ 56,4°; Nr. 9 Diagonalen 56 cm und 96 cm, DF 28 cm. Nr. 7 behält 45° (tragende Zahl, mehr-p10.csv). Alle Ergebnisse mit Python nachgerechnet.
+- In den Mehr-Block: 2018-OS-K4b (Lea, Begründen über Nebenwinkel) – älter als fünf Jahre, eigene Erscheinungsform, aber das Blatt endet nach „Blatt + Mehr“ mit der typischen schwersten der letzten fünf Jahre (Drachen ’25); steht in mehr-p10.csv mit neuen Zahlen (30°, γ = 4°, δ = 56°).
+- Aufgaben: 10 → 9 Nummern, echte 6 → 5. Seiten: Übersicht 1, Blatt 3, Lösung 1.
+- Nicht umgesetzt: keine Befundliste für T2U (dritte Fassung war Muster); die Stufen-Frage aus der Warum-Liste (Regel 2, „Winkel: offen“) ist mit „ein Handgriff“ beantwortet.
+- herausgeloest.csv unverändert (Fassungen mit Originalzahlen); die Zahlen des Blatts stehen in mehr-p10.csv.

@@ -1,5 +1,7 @@
 # Plan – Prüfungsblatt Winkel (T2U), Stand zweite Durchsicht 11.10.
 
+> Nachzug 12.10.: ohne Stufen (ein Handgriff), Zahlen neu – siehe bericht.md „Nachzug 12.10.“; die Stufen unten sind der Stand vom 11.10.
+
 Grundlage: mathe-nachhilfe pruefung.md § 5 („Blattnamen und Stufen“, „Gruppen“,
 „Stufenkopf“, „Marke“), gemeinsam.md („Übersicht und Serie“, „Leiter“, „Satz“,
 „Sprache“, „Lösungen“), msa/gliederung/dreiecke.md. Stufen wortgleich in Übersicht,
