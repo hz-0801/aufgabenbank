@@ -14,10 +14,11 @@ bau/pruefheft/<kapitel>-<art>[-p<n>|-fokus-<wort>][-ebr]-<datum>/ (Unterordner s
   --kurs EBR|FOR (Vorgabe FOR): Heft ab 2026 nach Kurs (Fundstellen), * an FOR-only-Aufgaben
   --art mehr --einheit "<Einheit>" --portion n [--schueler S07]: Mehr-Block (v0.5, pruefung.md § 5), eine Seite
   je Portion aus msa/mehr-p10.csv (auf_blatt = nein, Ordnung rang); Kurzanleitung werkzeuge/pruefheft-mehr.md
-  --art p --einheit "<Einheit>": Prüfungsblatt der Sorte P (v0.6, pruefung.md § 5) nach bau/pruefheft/<kapitel>-p-
+  --art p --einheit "<Einheit>": Prüfungsblatt der Sorte P (v0.7, pruefung.md § 5) nach bau/pruefheft/<kapitel>-p-
   <einheit>-<datum>/ – 1-uebersicht, 2-blatt, 3-loesungen (src/, pdf/); Einheit = Zuschnitt der Gliederung, Stufen
-  aus der Zuordnung, Einstieg aus der Bank, echte Aufgaben aus msa/mehr-p10.csv (auf_blatt = ja, andere Zahlen);
-  Muster bau/pruefung/2026-10-11/winkel-ohne-rechnung/; Kurzanleitung werkzeuge/pruefheft-p.md
+  aus der Zuordnung (Frage, Anzeigename aus der Gliederung), Einstieg aus der Bank, echte Aufgaben aus
+  msa/mehr-p10.csv (auf_blatt = ja, andere Zahlen, grafik, form); Muster bau/pruefung/2026-10-11/
+  winkel-ohne-rechnung/; Kurzanleitung werkzeuge/pruefheft-p.md
   Pfade: --mn ../mathe-nachhilfe --bb ../blattbau (Voreinstellung: Nachbarordner des Repos)
 
 Daten (alle gelesen; geschrieben wird nur bau/register.csv, eine Zeile je Bau):
@@ -5290,7 +5291,8 @@ def mehr_bau(args):
 
 
 # ---------------------------------------------------------------------------
-# Art p (v0.6, 11.10.2026): Prüfungsblatt der Sorte P aus Daten, ohne Modell (pruefung.md § 5,
+# Art p (v0.6, 11.10.2026; v0.7, 12.10.: Frage, Anzeigename, grafik, form): Prüfungsblatt der Sorte P aus Daten,
+# ohne Modell (pruefung.md § 5,
 # gemeinsam.md „Satz“, „Lösungen“, „Übersicht und Serie“). Muster: bau/pruefung/2026-10-11/
 # winkel-ohne-rechnung/ (Hand-Satz T2U). Drei Dateien: 1-uebersicht, 2-blatt, 3-loesungen.
 # Was die Daten nicht hergeben, steht im TeX als „% SETZER: fehlt – …“ (werkzeuge/pruefheft-p.md).
@@ -5337,6 +5339,9 @@ P_PRAEAMBEL = r"""% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortg
 \newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
 \newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
 \newcommand{\pkt}{\textperiodcentered{}}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{0.32\linewidth}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
 """
 P_UEBERSICHT = r"""\newcommand{\bereich}[1]{\par\addvspace{14pt}\noindent{\large\bfseries #1}\par\nobreak\vspace{4pt}}
 \newcommand{\bl}[1]{\par\noindent #1\par\vspace{3pt}}
@@ -5383,11 +5388,13 @@ def p_gliederung(mn, kapitel):
         if m:
             st = m.group(1).strip()
             g['stufen'][st] = {'zuschnitt': '', 'hinweis': '', 'kern': '', 'anzeigename': '', 'schülerfrage': '',
-                               'schülerfrage-fälle': '', 'schülerfrage-form': '', 'schülerfrage-weg': ''}
+                               'schülerfrage-fälle': '', 'schülerfrage-form': '', 'schülerfrage-weg': '', 'frage': ''}
             continue
-        m = re.match(r'^- \*\*(Zuschnitt|Hinweis|Kern|Anzeigename|Schülerfrage(?:-Fälle|-Form|-Weg)?):\*\*\s*(.*)$', z)
+        # 12.10.: Schülerfrage(-Fälle, -Form, -Weg) = Frage als erste Aufgabe der Stufe (Volumen); Frage = kurze
+        # Schülerfrage kursiv unter dem Stufenkopf (Netz); Anzeigename = Name in Schülersprache (pruefheft-p.md)
+        m = re.match(r'^- \*\*(Zuschnitt|Hinweis|Kern|Anzeigename|Frage|Schülerfrage(?:-Fälle|-Form|-Weg)?):\*\*\s*(.*)$', z)
         if m and st:
-            g['stufen'][st][m.group(1).lower()] = m.group(2).strip()
+            g['stufen'][st][m.group(1).lower()] = m.group(2).strip().strip('„“"')
     return g
 
 
@@ -5491,9 +5498,14 @@ def p_jahre(D, z, letzte5):
     return sorted(jahre, reverse=True)
 
 
-def p_stufenkopf(name, jahre):
+def p_stufenkopf(name, jahre, frage='', vorhalt=0.16):
+    """Stufenkopf mit Jahren; darunter kursiv die Schülerfrage der Stufe (Gliederung „Frage“, v0.7). vorhalt:
+    Anteil der Seitenhöhe, der frei sein muss (Kopf + erste Aufgabe; nie eine Überschrift allein unten)."""
     j = ' \\pkt{} '.join(str(x) for x in jahre) if jahre else '–'
-    return f'\\Needspace*{{0.16\\textheight}}\\pfstufekopf{{{tx(name)}}}{{letzte 5 Jahre: {j}}}'
+    out = f'\\Needspace*{{{vorhalt}\\textheight}}\\pfstufekopf{{{tx(name)}}}{{letzte 5 Jahre: {j}}}'
+    if frage:
+        out += f'\\gfrage{{{tx(frage)}}}'
+    return out
 
 
 def p_skizze(text):
@@ -5545,6 +5557,13 @@ def p_frage_tex(f, nr):
     return '\n'.join(out)
 
 
+def p_karo_aus_rechenplatz(g):
+    """Bank-Grafik „\\rechenplatz{n}“ (leere Zeilen für Zeichnen-Aufgaben) -> Karo mit n Zeilen; sie taugt nicht
+    als Bild in \\gzwei (vertikaler Block in einer LR-Box). Sonst None."""
+    m = re.match(r'^\\rechenplatz(?:\[[^\]]*\])?\{(\d+)\}$', (g or '').strip())
+    return int(m.group(1)) if m else None
+
+
 def p_einstieg_tex(D, r, nr, stufe):
     a = bank_aufgabe(D, r, stufe)
     out = [f'% Einstieg aus der Bank: {r["id"]} ({r.get("hoehe", "")}, {r.get("sprosse_text", "")})',
@@ -5553,7 +5572,12 @@ def p_einstieg_tex(D, r, nr, stufe):
         out.append('\\par\\smallskip\\noindent' + ''.join(
             f'\\pfkreuz{{{"ABCD"[i]}}}{{{o}}}' for i, o in enumerate(a.optionen[:4])))
     rechts = ('\\vspace{3mm}' + a.antwort) if a.antwort else '\\karo{2}'
-    if a.abb:
+    n_zeichnen = p_karo_aus_rechenplatz(r.get('grafik', ''))
+    if n_zeichnen is not None or (a.form == 'zeichnen' and not a.abb):
+        # Zeichnen-Aufgabe (v0.7): Karo über die volle Breite, Höhe wie der Rechenplatz der Bank (n Zeilen à
+        # 12 mm), höchstens 5 Karozeilen (Schrägbild 6 × 4 × 3 cm braucht 5 cm)
+        out.append(f'\\karo{{{min(5, n_zeichnen or 4)}}}')
+    elif a.abb:
         out.append('\\gzwei{' + a.abb + '}{' + rechts + '}')
     elif a.antwort:
         out.append('\\hfill ' + a.antwort)
@@ -5567,6 +5591,86 @@ def p_einstieg_tex(D, r, nr, stufe):
     return '\n'.join(out), a
 
 
+def p_kreuz(text):
+    """Wie mehr_kreuz, dazu (v0.7) der Satz nach der letzten Option („… / 26 cm × 51 cm × 61 cm. Begründe deine
+    Wahl.“) als dritter Wert: (Frage, Optionen, Rest)."""
+    frage, optionen = mehr_kreuz(text)
+    if not optionen:
+        return frage, [], ''
+    m = re.match(r'^(.*?[^\s.])\.\s+([A-ZÄÖÜ].*)$', optionen[-1])
+    if m:
+        optionen[-1], rest = m.group(1), m.group(2)
+        return frage, optionen, rest
+    return frage, optionen, ''
+
+
+def p_form_tex(t_rest, grafik, form, optionen, ergebnisse, n, faktor):
+    """Antwortteil einer echten Aufgabe nach den Spalten form und grafik (v0.7, werkzeuge/pruefheft-p.md):
+    ankreuzen  – Textoptionen aus dem Wortlaut rechts neben der Grafik (untereinander), oder Bildoptionen
+                 („||“ in grafik) als Reihe mit Buchstabe und Kästchen darunter;
+    einzeichnen – die Grafik ist das Antwortfeld (Fläche markieren, Netz vervollständigen, Höhe einzeichnen):
+                 volle Breite, kein Karo;
+    zeichnen   – Grafik links, Karo rechts (ohne Grafik: Karo voll, 4 Zeilen);
+    teil       – je Ergebnis „Name = ___“ rechts in einer Zeile;
+    karo       – Karo mit n Zeilen (Rechnen, Begründen).
+    Teile mit „+“ in der Reihenfolge, in der sie auf dem Blatt stehen; der Rest des Wortlauts nach den
+    Optionen (t_rest) kommt vor dem Karo."""
+    out = []
+    teile = [x.strip() for x in form.split('+') if x.strip()]
+    bild = [b.strip() for b in grafik.split('||')] if '||' in grafik else []
+    g = '' if bild else grafik
+    grafik_gesetzt = False
+    for teil in teile:
+        if teil == 'ankreuzen':
+            if bild:
+                # Bildoptionen in einer Reihe, gleich hoch, Buchstabe und Kästchen unten auf einer Linie
+                out.append('\\par\\smallskip\\noindent\\sbox{\\gbox}{\\vbox{' + '\\par'.join(bild[:4]) + '}}'
+                           + '\\hfill'.join(f'\\gbildoption{{{"ABCD"[i]}}}{{{b}}}{{\\dimexpr\\ht\\gbox/{min(4, len(bild))}+\\baselineskip\\relax}}'
+                                             for i, b in enumerate(bild[:4])) + '\\par')
+            else:
+                opt = ''.join(f'\\pfkreuzab{{{"ABCD"[i]}}}{{{tx(o)}}}' for i, o in enumerate(optionen[:4]))
+                if g and not grafik_gesetzt:
+                    out.append('\\gzwei{' + g + '}{\\vspace{2mm}' + opt + '}')
+                    grafik_gesetzt = True
+                else:
+                    out.append(opt)
+        elif teil == 'einzeichnen':
+            if g and not grafik_gesetzt and not ('ankreuzen' in teile and optionen and not bild):
+                out.append('\\par\\smallskip\\noindent' + g + '\\par')
+                grafik_gesetzt = True
+        elif teil == 'zeichnen':
+            k = max(3, round(4 * faktor))   # Skizze braucht Platz: nie unter 3 Zeilen
+            if g and not grafik_gesetzt:
+                out.append('\\gzwei{' + g + '}{' + f'\\karo{{{k}}}' + '}')
+                grafik_gesetzt = True
+            else:
+                out.append(f'\\karo{{{k}}}')
+        elif teil == 'teil':
+            felder = [re.split(r'\s*(=|≈)\s*', e)[0] for e in ergebnisse if re.search(r'\s(=|≈)\s', e)]
+            for f in felder:
+                out.append('\\par\\noindent\\hfill ' + tx(f) + ' $=$\\linie{30mm}')
+        elif teil == 'karo':
+            if t_rest:
+                out.append('\\par\\smallskip\\noindent ' + t_rest)
+                t_rest = ''
+            if len(teile) > 1:
+                # Karo nach Ankreuzen/Einzeichnen: nur die gerechneten Teile zählen (Schritte + 1, mindestens 2)
+                n_rechnen = sum(1 for e in ergebnisse if re.search(r'\s(=|≈)\s', e) and re.search(r'\d', e))
+                n = max(2, round(max(2, n_rechnen + 1) * faktor))   # Begründen: nie unter 2 Zeilen
+            if g and not grafik_gesetzt:
+                out.append('\\gzwei{' + g + '}{' + f'\\karo{{{n}}}' + '}')
+                grafik_gesetzt = True
+            else:
+                out.append(f'\\karo{{{n}}}')
+        else:
+            out.append(f'% SETZER: fehlt – form „{teil}“ unbekannt (ankreuzen, einzeichnen, zeichnen, teil, karo)')
+    if t_rest:
+        out.append('\\par\\smallskip\\noindent ' + t_rest)
+    if g and not grafik_gesetzt:
+        out.append('\\par\\smallskip\\noindent' + g + '\\par')
+    return out
+
+
 def p_echt_tex(D, r, nr, heraus, faktor=1.0):
     """Echte Aufgabe mit anderen Zahlen (msa/mehr-p10.csv, auf_blatt = ja): Marke mit Fundstelle und
     Stern, Wortlaut, Skizze als Text links, Karo rechts; Fuß mit dem Ergebnis."""
@@ -5574,7 +5678,7 @@ def p_echt_tex(D, r, nr, heraus, faktor=1.0):
     h = [x['id'] for x in heraus if x.get('eltern_id') == eid]
     out = [f'% {r["id"]} (Original {eid}, Schwere {r["schwere"]}, rang {r.get("rang", "")}; herausgelöste Fassung: '
            + (', '.join(h) if h else 'keine') + ')']
-    text, optionen = mehr_kreuz((r.get('wortlaut') or '').strip())
+    text, optionen, rest = p_kreuz((r.get('wortlaut') or '').strip())
     luecke = '___' in text
     t = tx(text.replace('___', '\x00')).replace('\x00', '\\linie{25mm}')
     marke = mehr_marke(r) + ('\\,$\\star$' if stern_fuer(D, eid) else '')
@@ -5582,8 +5686,24 @@ def p_echt_tex(D, r, nr, heraus, faktor=1.0):
     ergebnisse, _ = p_ergebnis(r)
     rechnet = bool(re.search(r'\d', r.get('loesung') or ''))
     n = max(1, round(max(2, min(4, mehr_schritte(r) + 1)) * faktor))
+    grafik = (r.get('grafik') or '').strip()
+    form = (r.get('form') or '').strip()
+    if '||' in grafik or '+' in form or form in ('ankreuzen', 'einzeichnen', 'zeichnen', 'karo'):
+        # v0.7 (Netz): Spalte grafik mit Bildoptionen („||“) und form als Folge von Teilen („+“: ankreuzen,
+        # einzeichnen, zeichnen, teil, karo) aus msa/mehr-p10.csv; form „teil“, „skizze“ und grafik allein gehen
+        # den Weg unten (Volumen, 12.10.) – werkzeuge/pruefheft-p.md
+        out += p_form_tex(t_rest=tx(rest) if rest else '', grafik=grafik, form=form or 'karo', optionen=optionen,
+                          ergebnisse=ergebnisse, n=n, faktor=faktor)
+        bildoptionen = [] if optionen or '||' not in grafik else grafik.split('||')
+        fuss = '; '.join(p_fusswerte(ergebnisse, optionen or bildoptionen, r))
+        if fuss:
+            out.append(f'\\fusshilfe{{\\mbox{{{nr}:~{fuss}}}}}')
+        out.append('\\end{pfaufg}')
+        return '\n'.join(out)
     if optionen:
         rechts = '\\par\\smallskip\\noindent' + ''.join(f'\\pfkreuz{{{"ABCD"[i]}}}{{{tx(o)}}}' for i, o in enumerate(optionen[:4]))
+        if rest:
+            rechts += '\\par\\smallskip\\noindent ' + tx(rest)
     elif luecke:
         rechts = ''
     elif not rechnet:
@@ -5615,6 +5735,16 @@ def p_echt_tex(D, r, nr, heraus, faktor=1.0):
     return '\n'.join(out)
 
 
+def p_fusswerte(ergebnisse, optionen, r):
+    """Fußwerte (v0.7): beim Ankreuzen der Buchstabe für das Ergebnis der Wahl (das ohne „=“/„≈“), sonst je
+    Ergebnis der Wert hinter dem letzten Operator."""
+    out = []
+    for e in ergebnisse:
+        segs = re.split(r'\s*(=|≈)\s*', e)
+        out.append(tx(segs[-1]) if len(segs) >= 3 else tx(e))
+    return out
+
+
 def p_ergebnis(r):
     """Aus der Spalte loesung: (Ergebnisse, Weg) für die Lösungsdatei (gemeinsam.md „Lösungen“: links das
     gefragte Ergebnis, Begründen: das Urteil). Teile durch „|“ sind Teilfragen; Klammern fallen weg;
@@ -5623,6 +5753,11 @@ def p_ergebnis(r):
     lo = (r.get('loesung') or '').strip()
     ergebnisse = []
     for teil in [t.strip() for t in lo.split('|') if t.strip()]:
+        m = re.search(r'\((erste|zweite|dritte|vierte)\s+Option', teil)
+        if m:
+            # Ankreuz-Teil (v0.7): das Ergebnis ist der Buchstabe (gemeinsam.md „Buchstaben vor Optionen“)
+            ergebnisse.append('ABCD'['erste zweite dritte vierte'.split().index(m.group(1))])
+            continue
         # Klammern ohne Zahl sind Vermerke („(erste Option)“), Klammern mit Zahl Rechnung („(π · 7,5)“)
         t = re.sub(r'\s*\((?![^()]*\d)[^()]*\)', '', teil).strip()
         m = re.match(r'^(ja|nein|richtig|falsch|stimmt nicht|stimmt)\b[,:]?', t, re.I)
@@ -5678,13 +5813,17 @@ def p_blatt_tex(D, einheit, kenn, stufen_daten, ausschnitt, fund, faktor=1.0):
     nr = 0
     for s in stufen_daten:
         out.append(f'\n% ===================== Stufe: {s["name"]} =====================')
-        out.append(p_stufenkopf(s['anzeige'], s['jahre']))
+        # Vorhalt: Kopf und erste Aufgabe zusammen; ein Zeichen-Einstieg (Karo volle Breite) braucht 0,36
+        ein = s['einstieg'] or {}
+        zeichnet = not s['frage'] and ein and (p_karo_aus_rechenplatz(ein.get('grafik', '')) is not None
+                                               or (ein.get('form') == 'zeichnen' and not ein.get('grafik')))
+        out.append(p_stufenkopf(s['anzeige'], s['jahre'], s.get('kurzfrage', ''), 0.36 if zeichnet else 0.16))
         if s['frage']:
             nr += 1
             s['nr_frage'] = nr
             out.append(p_frage_tex(s['frage'], nr))
-        else:
-            out.append('% SETZER: fehlt – Schülerfrage zur Stufe (Gliederung: Schülerfrage, -Fälle, -Form, -Weg)')
+        elif not s.get('kurzfrage'):
+            out.append('% SETZER: fehlt – Schülerfrage zur Stufe (Gliederung: Schülerfrage, -Fälle, -Form, -Weg; oder Frage)')
         if s['einstieg']:
             nr += 1
             t, a = p_einstieg_tex(D, s['einstieg'], nr, s['name'])
@@ -5713,7 +5852,7 @@ def p_loesung_tex(D, einheit, kenn, stufen_daten):
            '\\pfstufenzeile{' + ' \\pkt{} '.join(tx(s['anzeige']) for s in stufen_daten) + '}']
     for s in stufen_daten:
         out.append('')
-        out.append(p_stufenkopf(s['anzeige'], s['jahre']))
+        out.append(p_stufenkopf(s['anzeige'], s['jahre'], s.get('kurzfrage', '')))
         if s['frage']:
             out.append('\\begin{pfloesungb}{}')
             out.append(f'\\lzb{{{s["nr_frage"]}.}}{{}}{{{p_frage_ergebnis(s["frage"])}}}{{{tx(s["frage"]["weg"])}}}')
@@ -5728,7 +5867,9 @@ def p_loesung_tex(D, einheit, kenn, stufen_daten):
             ergebnisse, weg = p_ergebnis(r)
             _, optionen = mehr_kreuz((r.get('wortlaut') or '').strip())
             b = mehr_buchstabe(r, optionen)
-            erg = (b + ': ' if b else '') + '; '.join(tx(e) for e in ergebnisse)
+            if b and not any(len(e) == 1 for e in ergebnisse):
+                ergebnisse = [b] + ergebnisse   # Buchstabe ohne eigenen Teil in loesung (Art p vor v0.7)
+            erg = '; '.join(tx(e) for e in ergebnisse)
             out.append('\\begin{pfloesungb}{}')
             out.append(f'\\lzb{{{nr}.}}{{}}{{{erg}}}{{{tx(weg)}}}')
             out.append('\\end{pfloesungb}')
@@ -5782,7 +5923,7 @@ def p_register(args, kenn, ordner, seiten, einheit, stufen_daten):
     commit = subprocess.run(['git', 'rev-parse', '--short', 'HEAD'], cwd=BANK, capture_output=True,
                             text=True).stdout.strip()
     zeilen.append(f'{kenn};{args.datum};{args.kapitel};P;{best};{commit};'
-                  f'pruefheft.py v0.6;Version 2026-10-11d;{pfad}')
+                  f'pruefheft.py v0.7;Version 2026-10-11d;{pfad}')
     open(p_reg, 'w', encoding='utf-8').write('\n'.join(zeilen) + '\n')
 
 
@@ -5809,6 +5950,7 @@ def p_bau(args):
         info = gl['stufen'].get(name, {})
         stufen_daten.append({'name': name, 'anzeige': info.get('anzeigename') or name, 'z': z,
                              'jahre': p_jahre(D, z, letzte5), 'einstieg': p_einstieg(D, z), 'frage': p_frage(info),
+                             'kurzfrage': info.get('frage', ''),
                              'echte': echte, 'heraus': [h for h in heraus if h.get('stufe', '').strip() == name]})
     ids = list(OrderedDict((i, 1) for i in ids))
     namen = list(einheiten)

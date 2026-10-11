@@ -1,0 +1,84 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+\newsavebox{\gbox}\newlength{\gLinks}
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr0.5\textwidth-\gEin-\mbpfnr\relax}%
+  \ifdim\wd\gbox>\dimexpr\gLinks-4mm\relax
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf ohne die festen 14 Zeilen Platz der Vorlage (Nachzug 12.10., Wunsch GYW): der Setzer
+% fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + Schülerfrage), mehr nicht
+\RenewDocumentCommand{\pfstufekopf}{o m m}{\par\addvspace{10pt}%
+  \noindent\IfValueT{#1}{\hypertarget{#1}{}\label{#1}}{\large\bfseries #2}%
+  \ifblank{#3}{}{\hspace{0.8em}{\small\color{mbgrau}#3}}\par\nobreak\vspace{2pt}}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{0.32\linewidth}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} Prüfung]{Netz und Schrägbild \pkt{} Lösungen}{EF4}\pfseitevon
+\pfheftkopf{Netz und Schrägbild}{Lösungen}
+\pfstufenzeile{Netz erkennen \pkt{} Netz mit Maßen skizzieren \pkt{} Schrägbild skizzieren}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Netz erkennen}{letzte 5 Jahre: 2022}\gfrage{Welche Form haben die Flächen, und wie viele sind es?}
+\begin{pfloesungb}{}
+\lzb{1.}{}{Quader}{}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{2.}{}{das mittlere Quadrat der senkrechten Dreierreihe}{das mittlere Quadrat der senkrechten Dreierreihe (zwischen ihm und dem grauen liegt genau eine Fläche)}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{3.}{}{C; Länge $\approx$ 21,4 cm; Breite = 7,5 cm}{drittes Netz (dritte Option; ein Kreis, Rechteck etwa dreimal so lang wie der Kreis breit); Länge = 2$\pi$ · 3,4 cm $\approx$ 21,4 cm; Breite = h = 7,5 cm}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Netz mit Maßen skizzieren}{letzte 5 Jahre: 2023}\gfrage{Welche Kanten liegen nach dem Falten aneinander? Die sind gleich lang.}
+\begin{pfloesungb}{}
+\lzb{4.}{}{sechs Rechtecke, je zwei gleich: $4 \times 2$, $4 \times 1$ und $2 \times 1$ , so aneinander, dass sie zu einem Quader falten}{in cm}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{5.}{}{a $\approx$ 22,0 cm; b = 7 cm}{Rechteck a × b, a ist der Umfang des Kreises; a = 2$\pi$ · 3,5 cm $\approx$ 22,0 cm; b = h = 7 cm}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{6.}{}{drittes Rechteck 6 × 5 Kästchen an das rechte, zweites Dreieck oben an ein Rechteck; a = 1,80 m}{drittes Rechteck 6 × 5 Kästchen an das rechte, zweites Dreieck oben an ein Rechteck; a = 1,80 m}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Schrägbild skizzieren}{letzte 5 Jahre: 2024}\gfrage{Was liegt vorn in wahrer Größe, was läuft schräg nach hinten?}
+\begin{pfloesungb}{}
+\lzb{7.}{}{Tiefe $4$ cm schräg als $2$ cm}{Vorderseite $6$ cm $\times$ $3$ cm in wahrer Größe; Kästchendiagonalen}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{8.}{}{Kegel steht auf dem Boden, Grundkreis als Ellipse, Spitze mittig oben; C; je 1 cm mehr als Durchmesser 50 cm und Höhe 60 cm – 26 cm sind schmaler als der Durchmesser, 81 cm sind unnötig hoch}{Kegel steht auf dem Boden, Grundkreis als Ellipse, Spitze mittig oben; 51 cm × 51 cm × 61 cm (dritte Option); je 1 cm mehr als Durchmesser 50 cm und Höhe 60 cm – 26 cm sind schmaler als der Durchmesser, 81 cm sind unnötig hoch}
+\end{pfloesungb}
+\end{document}

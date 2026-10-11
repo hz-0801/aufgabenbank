@@ -1,4 +1,4 @@
-# pruefheft.py – Art p: Prüfungsblatt der Sorte P aus Daten (v0.6, 11.10.2026; Datenfelder 12.10.)
+# pruefheft.py – Art p: Prüfungsblatt der Sorte P aus Daten (v0.7, 12.10.2026; Datenfelder 12.10.)
 
     python3 werkzeuge/pruefheft.py --kapitel dreiecke --art p \
         --einheit "Winkel ohne Rechnung bestimmen oder begründen"
@@ -66,3 +66,19 @@ fehlt: Stufe „Winkelbeziehungen“ ohne Hauptplatz (nur im Muster), Schüler-
 - Noch offen: herausgelöste Fassung mit anderen Zahlen (Spalte `herausgeloest`
   oder h-Zeile); Makrowunsch `\winkelbei{V}{P}{Q}{Label}`, graues Teildreieck
   (mathblatt.sty unverändert).
+## Ergänzt im Lauf EF4 (Netz und Schrägbild, 12.10.; Zeichen-Aufgaben)
+- Gliederung je Stufe: `- **Frage:** „…“` = kurze Schülerfrage kursiv unter
+  dem Stufenkopf (Blatt und Lösung), wo die Stufe keine Frage mit Fällen hat.
+- `grafik`: „||“ trennt Bildoptionen zum Ankreuzen (Reihe, Buchstabe und
+  Kästchen darunter; Lösung nennt den Buchstaben).
+- `form` als Folge von Teilen mit „+“ in Blattfolge: `ankreuzen` (Text-
+  optionen aus dem Wortlaut rechts neben der Grafik, oder Bildoptionen),
+  `einzeichnen` (die Grafik ist das Antwortfeld, kein Karo), `zeichnen`
+  (Grafik links, Karo rechts, 4 Zeilen), `teil` (je Ergebnis „Name = ___“),
+  `karo` (gerechnete Teile + 1, mindestens 2). Der Satz nach der letzten
+  Option („Begründe deine Wahl.“) steht vor dem Karo. `teil`, `skizze` und
+  `grafik` allein gehen den Weg oben.
+- `loesung`: Teil mit „(dritte Option)“ → Ergebnis ist der Buchstabe.
+- Bank-Einstieg mit `form` zeichnen oder Grafik `\rechenplatz{n}`: Karo über
+  die volle Breite (n Zeilen, höchstens 5).
+- Noch offen: Anzeigename der Einheit (Kopfzeile `Anzeigenamen:` oben).

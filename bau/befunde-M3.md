@@ -53,6 +53,24 @@ LXA Sinussatz · NUB Symmetrie (bau/pruefung/2026-10-10, 2026-10-11).
   Zylinder allgemein) – Vorspann kürzen oder wie im Heft lassen?
 - Datenform festgehalten in werkzeuge/pruefheft-p.md (Schülerfrage in
   der Gliederung, grafik und form in mehr-p10.csv).
+## Aus Daten gesetzt: EF4 Netz und Schrägbild (12.10.)
+
+- Offen (Lehrer): Blatt 3 Seiten statt 2 – Zeichenfelder (Karo 5 Zeilen je
+  Zeichen-Einstieg, Netz auf Karoraster 9,5 × 8 cm). 2015-OS-K6b (Höhe in
+  die Pyramide einzeichnen, I) und 2018-OS-B1i (Körper zum Netz ankreuzen,
+  I) deshalb in den Mehr-Block; beide sind eigene Sorten (mit 2015: 4 Seiten).
+- Offen (Lehrer): Platz der Schülerfrage – kursiv unter dem Stufenkopf
+  (EF4, Gliederung „Frage“) oder als erste Aufgabe mit Fällen (AZL,
+  „Schülerfrage“); der Setzer kann beides, pruefung.md „Stufenkopf“ sagt nur
+  „Wegweiser, kein Aufgabentext“.
+- Offen (Lehrer): Karo-Höhe bei Zeichen-Aufgaben – „Zeilen = Rechenschritte
+  + 1“ passt nicht; EF4 nimmt den Rechenplatz der Bank (6 cm → 5 Zeilen)
+  und 4 Zeilen bei echten Skizzen (Mantelfläche der Dose).
+- Offen (Lehrer): Stufe „Körper im Schrägbild skizzieren“ heißt auf dem
+  Blatt „Schrägbild skizzieren“ (Anzeigename, Reihe gleicher Form); die
+  Zuordnung behält den langen Namen.
+- Gliederung koerper.md hat keine „Gruppen:“-Zeile – die Übersicht zeigt
+  die zwei Einheiten ohne Überschrift.
 
 ## Setzer (werkzeuge/setzer.py) braucht für Sorte P
 

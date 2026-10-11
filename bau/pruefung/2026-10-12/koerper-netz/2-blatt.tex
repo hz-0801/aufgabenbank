@@ -1,0 +1,118 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+\newsavebox{\gbox}\newlength{\gLinks}
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr0.5\textwidth-\gEin-\mbpfnr\relax}%
+  \ifdim\wd\gbox>\dimexpr\gLinks-4mm\relax
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf ohne die festen 14 Zeilen Platz der Vorlage (Nachzug 12.10., Wunsch GYW): der Setzer
+% fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + Schülerfrage), mehr nicht
+\RenewDocumentCommand{\pfstufekopf}{o m m}{\par\addvspace{10pt}%
+  \noindent\IfValueT{#1}{\hypertarget{#1}{}\label{#1}}{\large\bfseries #2}%
+  \ifblank{#3}{}{\hspace{0.8em}{\small\color{mbgrau}#3}}\par\nobreak\vspace{2pt}}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{0.32\linewidth}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} Prüfung]{Netz und Schrägbild}{EF4}\pfseitevon
+\pfheftkopf{Netz und Schrägbild}{}
+\pfstufenzeile{Netz erkennen \pkt{} Netz mit Maßen skizzieren \pkt{} Schrägbild skizzieren}
+
+% ===================== Stufe: Netz erkennen =====================
+\Needspace*{0.16\textheight}\pfstufekopf{Netz erkennen}{letzte 5 Jahre: 2022}\gfrage{Welche Form haben die Flächen, und wie viele sind es?}
+% Einstieg aus der Bank: koerper-e1-k1-s1-v1 (grundfall, Körper aus Schrägbild benennen)
+\begin{pfaufg}{}{1.}{}
+Ein Schuhkarton hat die Form im Bild. Wie heißt dieser Körper?
+\gzwei{\quader{4}{2}{2.5}{}{}{}}{\vspace{3mm}\leerfeld }
+\fusshilfe{\mbox{1:~Quader}}
+\end{pfaufg}
+% 2016-OS-B1j-m1 (Original 2016-OS-B1j, Schwere I, rang 6; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’16~\pkt{}~1j}{2.}{}
+Aus dem abgebildeten Netz wird ein Würfel gefaltet. Nach dem Falten liegt die graue Fläche oben. Markiere die Fläche, die dann unten liegt.
+\par\smallskip\noindent\begin{tikzpicture}[scale=0.8,line width=0.8pt]\fill[black!25] (-2,1) rectangle (-1,2);\draw (0,0) rectangle (1,3);\draw (0,1) -- (1,1) (0,2) -- (1,2);\draw (-2,1) rectangle (0,2);\draw (-1,1) -- (-1,2);\draw (1,0) rectangle (2,1);\end{tikzpicture}\par
+\fusshilfe{\mbox{2:~das mittlere Quadrat der senkrechten Dreierreihe}}
+\end{pfaufg}
+% 2022-OS-K2a-m1 (Original 2022-OS-K2a, Schwere II, rang 3; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’22~\pkt{}~2a}{3.}{}
+Ein Becher hat die Form eines Zylinders ohne Deckel. Er ist h = 7,5 cm hoch und hat den Radius r = 3,4 cm. Kreuze an, welches der drei Netze zum Becher passt. Ermittle die Länge und die Breite der Mantelfläche.
+\par\smallskip\noindent\sbox{\gbox}{\vbox{\begin{tikzpicture}[line width=0.8pt]\draw (0,0) rectangle (2.72,1.5);\draw (3.4,0.75) circle (0.68);\end{tikzpicture}\par\begin{tikzpicture}[line width=0.8pt]\draw (0,0) rectangle (4.9,1.5);\draw (2.45,2.18) circle (0.68);\end{tikzpicture}\par\begin{tikzpicture}[line width=0.8pt]\draw (0,0) rectangle (4.27,1.5);\draw (3.59,2.18) circle (0.68);\end{tikzpicture}}}\gbildoption{A}{\begin{tikzpicture}[line width=0.8pt]\draw (0,0) rectangle (2.72,1.5);\draw (3.4,0.75) circle (0.68);\end{tikzpicture}}{\dimexpr\ht\gbox/3+\baselineskip\relax}\hfill\gbildoption{B}{\begin{tikzpicture}[line width=0.8pt]\draw (0,0) rectangle (4.9,1.5);\draw (2.45,2.18) circle (0.68);\end{tikzpicture}}{\dimexpr\ht\gbox/3+\baselineskip\relax}\hfill\gbildoption{C}{\begin{tikzpicture}[line width=0.8pt]\draw (0,0) rectangle (4.27,1.5);\draw (3.59,2.18) circle (0.68);\end{tikzpicture}}{\dimexpr\ht\gbox/3+\baselineskip\relax}\par
+\karo{3}
+\fusshilfe{\mbox{3:~C; 21,4 cm; 7,5 cm}}
+\end{pfaufg}
+
+% ===================== Stufe: Netz mit Maßen skizzieren =====================
+\Needspace*{0.36\textheight}\pfstufekopf{Netz mit Maßen skizzieren}{letzte 5 Jahre: 2023}\gfrage{Welche Kanten liegen nach dem Falten aneinander? Die sind gleich lang.}
+% Einstieg aus der Bank: koerper-e1-k1-s5-v1 (sprosse, Quadernetz mit Maßen zeichnen)
+\begin{pfaufg}{}{4.}{}
+Zeichne das Netz einer Streichholzschachtel. Die Schachtel ist ein Quader. Sie ist $4$ cm lang, $2$ cm breit und $1$ cm hoch.
+\karo{5}
+\fusshilfe{\mbox{4:~sechs Rechtecke, je zwei gleich: $4 \times 2$, $4 \times 1$ und $2 \times 1$, so aneinander, dass sie zu einem Quader falten}}
+\end{pfaufg}
+% 2023-OS-K5a-m1 (Original 2023-OS-K5a, Schwere II, rang 2; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’23~\pkt{}~5a}{5.}{}
+Eine Konservendose hat die Form eines Zylinders mit dem Radius 3,5 cm und der Höhe 7 cm. Skizziere die Mantelfläche der Dose. Bestimme ihre Länge a und ihre Breite b und schreibe beide an deine Skizze.
+\gzwei{\zylinder{1.1}{2.4}{r}{h}}{\karo{4}}
+\fusshilfe{\mbox{5:~22,0 cm; 7 cm}}
+\end{pfaufg}
+% 2019-OS-K4a-m1 (Original 2019-OS-K4a, Schwere II, rang 9; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’19~\pkt{}~4a}{6.}{}
+Auf einem Mast sitzt ein dreiseitiges Prisma. Seine drei Seitenflächen sind Rechtecke mit 1,80 m Breite und 1,50 m Höhe; Grund- und Deckfläche sind gleichseitige Dreiecke. Das Netz des Prismas ist schon begonnen. Vervollständige das Netz. Gib die Länge a an.
+\par\smallskip\noindent\begin{tikzpicture}[scale=0.5,line width=0.8pt]\draw[black!14,line width=0.3pt] (0,0) grid (19,16);\draw (0.5,5.5) rectangle (6.5,10.5);\draw (6.5,5.5) rectangle (12.5,10.5);\draw (6.5,5.5) -- (12.5,5.5) -- (9.5,0.304) -- cycle;\node[font=\small,right,inner sep=1.5pt] at (11.1,2.7) {$a$};\node[font=\scriptsize,mbgrau,below right,inner sep=1pt] at (0,0) {1 Kästchen $\mathrel{\widehat{=}}$ 0,30 m};\end{tikzpicture}\par
+\par\noindent\hfill a $=$\linie{30mm}
+\fusshilfe{\mbox{6:~drittes Rechteck 6 × 5 Kästchen an das rechte, zweites Dreieck oben an ein Rechteck; 1,80 m}}
+\end{pfaufg}
+
+% ===================== Stufe: Körper im Schrägbild skizzieren =====================
+\Needspace*{0.36\textheight}\pfstufekopf{Schrägbild skizzieren}{letzte 5 Jahre: 2024}\gfrage{Was liegt vorn in wahrer Größe, was läuft schräg nach hinten?}
+% Einstieg aus der Bank: koerper-e1-k1-s6-v1 (sprosse, Schrägbild eines Quaders zeichnen)
+\begin{pfaufg}{}{7.}{}
+Ein Quader ist $6$ cm lang, $4$ cm tief und $3$ cm hoch. Zeichne sein Schrägbild auf Kästchenpapier.
+\karo{5}
+\fusshilfe{\mbox{7:~Tiefe $4$ cm schräg als $2$ cm}}
+\end{pfaufg}
+% 2024-OS-K4b-m1 (Original 2024-OS-K4b, Schwere II, rang 1; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’24~\pkt{}~4b}{8.}{}
+Eine Firma stellt Kegel mit dem Radius r = 25 cm und der Höhe h = 60 cm her. Der Kegel soll in einem quaderförmigen Karton verschickt werden, der möglichst klein ist, in den der Kegel aber ganz hineinpasst. Skizziere den Kegel in den Karton. Kreuze die kleinste passende Größe an (Länge × Breite × Höhe):
+\gzwei{\quader{2.2}{2.2}{4.4}{}{}{}}{\vspace{2mm}\pfkreuzab{A}{26 cm × 26 cm × 61 cm}\pfkreuzab{B}{51 cm × 51 cm × 81 cm}\pfkreuzab{C}{51 cm × 51 cm × 61 cm}\pfkreuzab{D}{26 cm × 51 cm × 61 cm}}
+\par\smallskip\noindent Begründe deine Wahl.
+\karo{2}
+\fusshilfe{\mbox{8:~Kegel steht auf dem Boden, Grundkreis als Ellipse, Spitze mittig oben; C; je 1 cm mehr als Durchmesser 50 cm und Höhe 60 cm – 26 cm sind schmaler als der Durchmesser, 81 cm sind unnötig hoch}}
+\end{pfaufg}
+
+\pfblattende{11}{26 & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17 & 16}{ &  & 4b & 5a & 2a &  & 5a & 4a & 1i & 1c & 1j}%
+{\pfausschnitt{Volumen und Oberfläche}{Netz und Schrägbild}{}}
+\end{document}
