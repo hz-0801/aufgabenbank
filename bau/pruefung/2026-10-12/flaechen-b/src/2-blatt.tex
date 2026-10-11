@@ -51,13 +51,13 @@
 \pfheftstil
 \pflaufkopf[P10 \pkt{} Prüfung]{Fläche und Umfang}{H37}\pfseitevon
 \pfheftkopf{Fläche und Umfang}{}
-\pfstufenzeile{Formeln \pkt{} Fläche gesucht \pkt{} Umfang gesucht \pkt{} Formeln umstellen}
+\pfstufenzeile{Formeln \pkt{} Fläche gesucht \pkt{} Umfang gesucht \pkt{} Formeln umstellen \pkt{} Anteil in Prozent}
 
 % ===================== Stufe: Formeln =====================
 \Needspace*{0.16\textheight}\pfstufekopf{Formeln}{letzte 5 Jahre: 2024 \pkt{} 2022}
 % Schülerfrage der Stufe (Gliederung)
 \begin{pfaufg}{}{1.}{}
-In der Prüfung hast du die Formelsammlung. Auf welcher Seite stehen die Flächenformeln (Rechteck, Dreieck, Trapez, Kreis)? Schlag nach.
+Auf welcher Seite stehen die Flächenformeln (Rechteck, Dreieck, Trapez, Kreis)? Schlag nach.
 \par\smallskip
 \par\noindent Seite\hfill\linie{30mm}
 \par\fusshilfe{\mbox{1:~nachschlagen (je nach Ausgabe)}}
@@ -80,17 +80,11 @@ Die Abbildung zeigt ein Rechteck. Kreuze die Gleichung an, mit der man seinen ge
 \gzwei{\begin{tikzpicture}[line width=0.8pt,font=\small]\draw (0,0) rectangle (3.2,1.8);\draw[line width=0.5pt] (0,1.2) -- (3.2,1.2);\node[above] at (1.6,1.8) {$a$};\node[right] at (3.2,1.5) {$b$};\node[right] at (3.2,0.6) {$c$};\end{tikzpicture}}{\gkreuzzeile{A}{$A=2\cdot(a+b+c)$}\gkreuzzeile{B}{$A=a+2\cdot a\cdot b$}\gkreuzzeile{C}{$A=a\cdot(b+c)$}\gkreuzzeile{D}{$A=a\cdot b\cdot c$}}
 \fusshilfe{\mbox{3:~C}}
 \end{pfaufg}
-% 2025-OS-B1e-m1 (Original 2025-OS-B1e, Schwere I, rang 3; herausgelöste Fassung: keine)
-\begin{pfaufg}{nach~P10\\’25~\pkt{}~1e}{4.}{}
-Bestimme, wie viel Prozent der Kreisfläche grau gefärbt sind.
-\gzwei{\kreissektor[1.0]{125}{125°}}{\karo{2}}
-\fusshilfe{\mbox{4:~34,7 \%}}
-\end{pfaufg}
 % 2024-OS-K4a-m1 (Original 2024-OS-K4a, Schwere I, rang 6; herausgelöste Fassung: keine)
-\begin{pfaufg}{nach~P10\\’24~\pkt{}~4a}{5.}{}
+\begin{pfaufg}{nach~P10\\’24~\pkt{}~4a}{4.}{}
 Eine Firma stellt Kegel mit dem Radius r = 25 cm und der Höhe h = 60 cm her. Berechne den Flächeninhalt der Grundfläche eines Kegels.
 \gzwei{\kegel{0.9}{1.7}{r}{h}{}}{\karo{2}}
-\fusshilfe{\mbox{5:~1963,5 cm²}}
+\fusshilfe{\mbox{4:~1963,5 cm²}}
 \end{pfaufg}
 
 % ===================== Stufe: Umfang gesucht =====================
@@ -98,33 +92,44 @@ Eine Firma stellt Kegel mit dem Radius r = 25 cm und der Höhe h = 60 cm her. Be
 % keine Schülerfrage gesetzt (Gliederung: Schülerfrage, -Fälle, -Form, -Weg; oder Frage) – dann keine (12.10.)
 % kein Einstieg: Gliederung „Einstieg: nein“ (pruefung.md § 5 „Eigene Aufgaben sparsam“)
 % 2026-FOR-B1h-m1 (Original 2026-FOR-B1h, Schwere I, rang 1; herausgelöste Fassung: keine)
-\begin{pfaufg}{nach~P10\\’26~\pkt{}~1h}{6.}{}
+\begin{pfaufg}{nach~P10\\’26~\pkt{}~1h}{5.}{}
 Ein Rechteck ist a = 4,5 cm lang und b = 2,5 cm breit. Gib seinen Umfang an.
 \gzwei{\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm\relax}{\small\itshape Skizze}}{\karo{2}}
-\fusshilfe{\mbox{6:~14 cm}}
+\fusshilfe{\mbox{5:~14 cm}}
 \end{pfaufg}
 % 2023-OS-K2c-m1 (Original 2023-OS-K2c, Schwere II, rang 10; herausgelöste Fassung: keine)
-\begin{pfaufg}{nach~P10\\’23~\pkt{}~2c\,$\star$}{7.}{}
+\begin{pfaufg}{nach~P10\\’23~\pkt{}~2c\,$\star$}{6.}{}
 Gegeben ist ein Trapez mit den parallelen Seiten 24,20 m (unten) und 16,20 m (oben). Es ist 7,50 m hoch. Die beiden Winkel an der unteren Seite sind je 62° groß. Berechne den Umfang des Trapezes.
 \gzwei{\begin{tikzpicture}[line width=0.8pt,font=\small]\coordinate (A) at (0,0);\coordinate (B) at (4.2,0);\coordinate (C) at (3.5,1.3);\coordinate (D) at (0.7,1.3);\draw (A)--(B)--(C)--(D)--cycle;\draw[dashed,line width=0.5pt] (2.1,0)--(2.1,1.3);\pfrw[0.25]{(2.1,0)}{0}\node[right] at (2.1,0.65) {$h$};\pfwinkel[0.75][0.65]{(A)}{0}{62}{62^\circ}\pfwinkel[0.75][0.65]{(B)}{118}{180}{62^\circ}\node[below left] at (A) {$A$};\node[below right] at (B) {$B$};\node[above right] at (C) {$C$};\node[above left] at (D) {$D$};\end{tikzpicture}}{\karo{3}}
-\fusshilfe{\mbox{7:~57,4 m}}
+\fusshilfe{\mbox{6:~57,4 m}}
 \end{pfaufg}
 
 % ===================== Stufe: Formeln umstellen =====================
 \Needspace*{0.16\textheight}\pfstufekopf{Formeln umstellen}{letzte 5 Jahre: 2023}
 % Schülerfrage der Stufe (Gliederung)
-\begin{pfaufg}{}{8.}{}
+\begin{pfaufg}{}{7.}{}
 Stelle die Formel um, rechne nicht.
 \par\smallskip
 \par\noindent Rechteck: A = a · b, nach a umgestellt\hfill\linie{30mm}
-\par\fusshilfe{\mbox{8:~a = A : b}}
+\par\fusshilfe{\mbox{7:~a = A : b}}
 \end{pfaufg}
 % kein Einstieg: Gliederung „Einstieg: nein“ (pruefung.md § 5 „Eigene Aufgaben sparsam“)
 % 2023-OS-B1c-m1 (Original 2023-OS-B1c, Schwere I, rang 7; herausgelöste Fassung: keine)
-\begin{pfaufg}{nach~P10\\’23~\pkt{}~1c}{9.}{}
+\begin{pfaufg}{nach~P10\\’23~\pkt{}~1c}{8.}{}
 Ein Rechteck ist 350 mm breit und hat den Flächeninhalt 38 500 mm². Gib seine Länge an.
 \gzwei{\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm\relax}{\small\itshape Skizze}}{\karo{2}}
-\fusshilfe{\mbox{9:~110 mm}}
+\fusshilfe{\mbox{8:~110 mm}}
+\end{pfaufg}
+
+% ===================== Stufe: Anteil in Prozent =====================
+\Needspace*{0.16\textheight}\pfstufekopf{Anteil in Prozent}{letzte 5 Jahre: 2025 \pkt{} 2023}
+% keine Schülerfrage gesetzt (Gliederung: Schülerfrage, -Fälle, -Form, -Weg; oder Frage) – dann keine (12.10.)
+% kein Einstieg: Gliederung „Einstieg: nein“ (pruefung.md § 5 „Eigene Aufgaben sparsam“)
+% 2025-OS-B1e-m1 (Original 2025-OS-B1e, Schwere I, rang 3; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’25~\pkt{}~1e}{9.}{}
+Bestimme, wie viel Prozent der Kreisfläche grau gefärbt sind.
+\gzwei{\kreissektor[1.0]{125}{125°}}{\karo{2}}
+\fusshilfe{\mbox{9:~34,7 \%}}
 \end{pfaufg}
 
 \pfblattende{11}{26 FOR & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17 & 16}{1h & 1e 1i 2b & 1c 4a & 1c 2b 2c 5c & 1e 5e &  & 1d 7b & 1e 4c & 1f 6a & 3a 3b & 3b}%

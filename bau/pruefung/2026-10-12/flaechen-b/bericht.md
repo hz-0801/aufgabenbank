@@ -24,3 +24,8 @@ Offen (Lehrer): Ausgabe der Formelsammlung (Seite für Nr. 1); 2024-1c als
 siebte echte oder nur sechs; „Fläche oder Umfang?“ (Teppich/Zaun) weg oder als
 Einstieg von „Fläche gesucht“; skript-zuschnitt-p10.csv Dreiecke-Zeile 2026-FOR-B1c
 weicht von gliederung/dreiecke.md ab (nicht angefasst).
+
+Nachtrag (Lehrer 12.10.): Stufe „Anteil in Prozent“ ist als fünfte Stufe
+zurück (2025-OS-B1e auf dem Blatt als Nr. 9, 2023-OS-K5c nur im Mehr-Block, ohne
+Einstieg); Nr. 1 ohne den Satz zur Formelsammlung. Nummern je Stufe: Formeln 1–2,
+Fläche gesucht 3–4, Umfang gesucht 5–6, Formeln umstellen 7–8, Anteil in Prozent 9; 2 Seiten.
