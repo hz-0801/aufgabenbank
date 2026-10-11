@@ -7,7 +7,6 @@ Ausgabe: `bau/pruefheft/<kapitel>-p-<einheit-kurz>-<datum>/` (`src/`, `pdf/`:
 1-uebersicht, 2-blatt, 3-loesungen), Zeile in bau/register.csv (Rezept P).
 Regeln: pruefung.md § 5, gemeinsam.md „Satz“, „Lösungen“, „Übersicht und
 Serie“. Muster (Hand-Satz T2U): bau/pruefung/2026-10-11/winkel-ohne-rechnung/.
-
 Daten (nur gelesen): gliederung/<kapitel>.md (Name, Folge, Gruppen, Zuschnitt
 je Stufe = Einheit), zuordnung-<kapitel>.csv (Stufen, katalog_ids, bank_sprossen,
 jahre_letzte5), msa-katalog-*.csv (Jahr, Papier, Stern), mehr-p10.csv (echte
@@ -23,7 +22,6 @@ Blattende: Fundstellentabelle (jüngstes Jahr … −10, „26 FOR“/„26 EBR�
 Kursheften, alle Originale der Einheit), Ausschnitt Vorher/▸/Weiter. Karo voll;
 steht die Tabelle allein auf einer Seite, Faktor 0,75, 0,5. Lösung: Stufenköpfe
 wortgleich, Nummer-/Buchstabenspalte, links Ergebnis oder Urteil, rechts Weg.
-
 ## Vergleich mit dem Muster T2U (Winkel)
 gleich: Kopf mit Sorte und Kennung, Titel, graue Stufenzeile, Stufenköpfe
   mit Jahren (2026 · 2023 · 2022 / 2023 / 2025), Einstieg → echte → schwerste,
@@ -41,7 +39,6 @@ anders: Stufen- und Blattnamen wie in Gliederung/Zuordnung („Winkelsumme“
 fehlt: Stufe „Winkelbeziehungen“ ohne Hauptplatz (nur im Muster), Schüler-
   frage je Stufe, Antwortlinien statt Karo bei Angeben-Aufgaben (Nr. 7 Muster),
   TikZ-Skizzen, Lückentext.
-
 ## Datenbedarf (im TeX als „% SETZER: fehlt – …“)
 - Skizze als Grafik: Feld `grafik` (Bausteinaufruf wie Bank) in mehr-p10.csv;
   Prosa in `abbildung` reicht nur für den Text.
