@@ -1,5 +1,7 @@
 # Plan – Prüfungsblatt Seite oder Winkel mit sin, cos, tan (GYW)
 
+> Nachzug 12.10.: Stufen umbenannt (Gleichung aufstellen · Winkel gesucht · Seite gesucht · Pythagoras oder sin, cos, tan?), Schülerfrage je Stufe, Zahlen neu – siehe bericht.md „Nachzug 12.10.“; unten der Stand vom 11.10. (2020-OS-B1j gehört zu Seite gesucht).
+
 Grundlage: mathe-nachhilfe pruefung.md § 5, gemeinsam.md, msa/gliederung/dreiecke.md
 Z. 41–69 (Zuschnitt: msa/skript-zuschnitt-p10.md Z. 16–21). Stufenkopf gezählt über
 die Hauptplätze 2022–2026 je Stufe.
