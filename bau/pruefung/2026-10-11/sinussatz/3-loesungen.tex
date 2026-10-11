@@ -1,28 +1,33 @@
 \documentclass[11pt]{article}
 \usepackage{mathblatt}
-% Lösungen nach mathe-nachhilfe gemeinsam.md „Lösungen“ und pruefung.md § 6.
+% Lösungen nach mathe-nachhilfe gemeinsam.md „Lösungen“ und pruefung.md § 6; Stufenkopf wortgleich wie im Blatt (Nachzug 12.10.).
 \newcommand{\kennung}{LXA}
+\newcommand{\pkt}{\textperiodcentered{}}
 \begin{document}
 \pfheftstil
-\pfheftkopf[\kennung]{Seite im allgemeinen Dreieck, Sinussatz}{P10 \textperiodcentered{} Lösungen}
+\pflaufkopf[P10 \pkt{} Prüfung]{Sinussatz \pkt{} Lösungen}{\kennung}\pfseitevon
+\pfheftkopf{Sinussatz}{Lösungen}
+\pfstufenzeile{Seite gesucht: Paar aus Seite und Gegenwinkel}
 
-\begin{pfloesung}{}
-\lz{1.}{$\beta = 110^\circ$, $\gamma = 30^\circ$}{Nebenwinkel: $\beta = 180^\circ - 70^\circ$; Winkelsumme: $\gamma = 180^\circ - 40^\circ - 110^\circ$}{}
-\end{pfloesung}
-\begin{pfloesung}{}
-\lz{2.}{$34^\circ$}{im Dreieck $ABC$ zählt $\beta_2$, nicht $\beta_1$: $180^\circ - 38^\circ - 108^\circ$}{}
-\end{pfloesung}
-\begin{pfloesung}{}
-\lz{3.}{B}{$b$ liegt $\beta$ gegenüber; von $c$ fehlt die Länge}{}
-\end{pfloesung}
-\begin{pfloesung}{}
-\lz{4a)}{$b \approx 6{,}0$ cm}{$b = \dfrac{8 \cdot \sin 45^\circ}{\sin 70^\circ}$}{}
-\lz{b)}{$a \approx 5{,}6$ cm}{$\gamma = 68^\circ$; $a = \dfrac{7 \cdot \sin 48^\circ}{\sin 68^\circ}$}{}
-\end{pfloesung}
-\begin{pfloesung}{}
-\lz{5.}{$s \approx 4{,}4$ m}{$\beta = 110^\circ$, $\gamma = 32^\circ$; $s = \dfrac{2{,}5 \cdot \sin 110^\circ}{\sin 32^\circ}$}{}
-\end{pfloesung}
-\begin{pfloesung}{}
-\lz{6.}{$y \approx 180{,}1$ cm}{dritter Winkel $34^\circ$; $y = \dfrac{160 \cdot \sin 141^\circ}{\sin 34^\circ}$}{}
-\end{pfloesung}
+\pfstufekopf{Seite gesucht: Paar aus Seite und Gegenwinkel}{letzte 5 Jahre: 2025 \pkt{} 2024}
+\begin{pfloesungb}{}
+\lzb{1.}{}{b) und c)}{kein rechter Winkel – Pythagoras und sin, cos, tan gehen nicht; a) hat einen rechten Winkel}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{2.}{a)}{B}{$b$ liegt $\beta$ gegenüber; von $c$ fehlt die Länge}
+\lzb{}{b)}{$\dfrac{c}{\sin\gamma} = \dfrac{b}{\sin\beta}$}{gesuchte Seite mit ihrem Gegenwinkel, fertiges Paar daneben}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{3.}{a)}{$b \approx 6{,}0$ cm}{$b = \dfrac{8 \cdot \sin 45^\circ}{\sin 70^\circ}$}
+\lzb{}{b)}{$a \approx 5{,}6$ cm}{erst $\gamma = 180^\circ - 48^\circ - 64^\circ = 68^\circ$; $a = \dfrac{7 \cdot \sin 48^\circ}{\sin 68^\circ}$}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{4.}{}{$s \approx 4{,}4$ m}{$\gamma = 180^\circ - 38^\circ - 110^\circ = 32^\circ$; $s = \dfrac{2{,}5 \cdot \sin 110^\circ}{\sin 32^\circ}$}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{5.}{}{$\overline{BC} \approx 443{,}8$ m}{Winkel bei $C$: $180^\circ - 40^\circ - 105^\circ = 35^\circ$; $\overline{BC} = \dfrac{396 \cdot \sin 40^\circ}{\sin 35^\circ}$}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{6.}{}{$y \approx 205{,}9$ cm}{dritter Winkel $180^\circ - 6^\circ - 139^\circ = 35^\circ$; $y = \dfrac{180 \cdot \sin 139^\circ}{\sin 35^\circ}$}
+\end{pfloesungb}
 \end{document}

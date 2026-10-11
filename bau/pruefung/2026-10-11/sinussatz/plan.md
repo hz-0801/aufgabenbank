@@ -1,5 +1,7 @@
 # Plan – Prüfungsblatt Seite im allgemeinen Dreieck, Sinussatz (LXA)
 
+> Nachzug 12.10.: ohne Stufen (ein Handgriff), Seilbahn ’24 ganz statt nur Winkel, Zahlen neu – siehe bericht.md „Nachzug 12.10.“; unten der Stand vom 11.10.
+
 Grundlage: mathe-nachhilfe pruefung.md § 5 und § 2 (Stolperstein
 Sinussatz), gemeinsam.md, msa/gliederung/dreiecke.md Z. 70–77,
 msa/skript-zuschnitt-p10.md Z. 22–24. Rand-Einheit: zwei echte in den

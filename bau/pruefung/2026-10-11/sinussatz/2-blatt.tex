@@ -1,82 +1,94 @@
 \documentclass[11pt]{article}
 \usepackage{mathblatt}
 % Prüfungsblatt nach mathe-nachhilfe pruefung.md § 5 (Runde Dreiecke, 11.10.2026), Hand-Satz; Präambel des Setzers.
+% Nachzug 12.10. nach befund-kritiker-2026-10-11.md und befund-kritiker-mehr-dreiecke.md („Sinussatz – eigen“, ein Handgriff):
+% ohne Stufen wie T2U – Einstieg (kein rechter Winkel → Sinussatz; Paar aus Seite und Gegenwinkel), dann Reihe leicht → schwer;
+% Form aus T2U; Zahlen der echten Aufgaben neu nach msa/mehr-p10.csv.
 \input{praeambel}
 \newcommand{\kennung}{LXA}
+\makeatletter
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+\makeatother
+\newcommand{\fall}[2]{\begin{minipage}[t]{0.32\linewidth}\vspace{0pt}\makebox[\mbpfteil][l]{\textbf{#1}}\begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\vspace{0pt}#2\end{minipage}\end{minipage}}
 
 \begin{document}
 \pfheftstil
-\pfheftkopf[\kennung]{Seite im allgemeinen Dreieck, Sinussatz}{P10}
+\pflaufkopf[P10 \pkt{} Prüfung]{Sinussatz}{\kennung}\pfseitevon
+\pfheftkopf{Sinussatz}{}
+\pfstufenzeile{Seite gesucht: Paar aus Seite und Gegenwinkel}
 
-% ===================== Stufe 1 =====================
-\Needspace*{0.25\textheight}\pfstufekopf{Dritten Winkel finden}{geprüft 2025 \pkt{} 2024}
+\Needspace*{0.25\textheight}\pfstufekopf{Seite gesucht: Paar aus Seite und Gegenwinkel}{letzte 5 Jahre: 2025 \pkt{} 2024}
 
-% Bank trigonometrie-e4-k1-s5-v7 (Nebenwinkel, dann Winkelsumme; nichts mit Sinus)
+% neu 12.10. (Schülerfrage, Kritiker): woran sehe ich, dass Pythagoras und sin, cos, tan hier nicht gehen
 \begin{pfaufg}{}{1.}{}
-Die Punkte $A$, $B$ und $D$ liegen auf einer Geraden. Berechne die Winkel $\beta$ und $\gamma$ im Dreieck $ABC$.
-\gzwei{\begin{tikzpicture}[font=\small]\draw[line width=0.8pt] (0.000,0.000) -- (1.821,0.000) -- (2.622,2.200) -- cycle;\draw[line width=0.8pt] (1.821,0.000) -- (3.441,0.000);\draw[line width=0.5pt] (0.420,0.000) arc (0.00:40.00:0.42);\node at (0.651,0.237) {$40^\circ$};\draw[line width=0.5pt] (2.241,0.000) arc (0.00:70.00:0.42);\node at (2.386,0.396) {$70^\circ$};\node[anchor=north,inner sep=2pt] at (0.911,-0.050) {5\,cm};\node[anchor=north east,inner sep=2pt] at (0.000,0.000) {$A$};\node[anchor=north,inner sep=2pt] at (1.821,0.000) {$B$};\node[anchor=south,inner sep=2pt] at (2.622,2.200) {$C$};\node[anchor=north,inner sep=2pt] at (3.441,0.000) {$D$};\end{tikzpicture}}{%
-\karo{2}}
-\fusshilfe{\mbox{1:~$\beta = 110^\circ$, $\gamma = 30^\circ$}}
+Gesucht ist jeweils die Seite $x$. Kreuze an, in welchen Dreiecken du den Sinussatz brauchst.\par\medskip\noindent
+\fall{a)}{\begin{tikzpicture}[line width=0.7pt,baseline=(current bounding box.north)]\draw (0,0)--(2.2,0)--(2.2,1.3)--cycle;\pfrw[0.25]{(2.2,0)}{90}
+\node[font=\footnotesize,anchor=north] at (1.1,-0.05) {$6$ cm};\node[font=\footnotesize,anchor=west] at (2.25,0.65) {$4$ cm};\node[font=\footnotesize,anchor=south east] at (1.05,0.7) {$x$};\end{tikzpicture}\par\smallskip\kk{Sinussatz}}\hfill
+\fall{b)}{\begin{tikzpicture}[line width=0.7pt,baseline=(current bounding box.north)]\draw (0,0)--(2.4,0)--(0.9,1.5)--cycle;\pfwinkel[0.6][0.66]{(0,0)}{0}{59}{59^\circ}\pfwinkel[0.6][0.66]{(2.4,0)}{135}{180}{45^\circ}
+\node[font=\footnotesize,anchor=north] at (1.2,-0.05) {$6$ cm};\node[font=\footnotesize,anchor=south west] at (1.7,0.8) {$x$};\end{tikzpicture}\par\smallskip\kk{Sinussatz}}\hfill
+\fall{c)}{\begin{tikzpicture}[line width=0.7pt,baseline=(current bounding box.north)]\draw (0,0)--(2.4,0)--(2.9,1.2)--cycle;\pfwinkel[0.75][0.7]{(0,0)}{0}{22}{22^\circ}\pfwinkel[0.4][0.7]{(2.4,0)}{67}{180}{113^\circ}
+\node[font=\footnotesize,anchor=north] at (1.2,-0.05) {$6$ cm};\node[font=\footnotesize,anchor=west] at (2.7,0.55) {$x$};\end{tikzpicture}\par\smallskip\kk{Sinussatz}}
+\fusshilfe{\mbox{1:~b) und c) (kein rechter Winkel)}}
 \end{pfaufg}
 
-% 2024-OS-K6d, herausgelöst (nur der Winkel bei C; Länge BC steht in der Fundstellentabelle), eigener Wortlaut
-\begin{pfaufg}{nach~P10\\’24~\pkt{}~6d}{2.}{}
-Eine Seilbahn führt vom Ort $B$ im Tal zum Ort $A$ auf einem Berg. Eine zweite Seilbahn verbindet $B$ mit dem Ort $C$ auf einem anderen Berg. Bei $A$ ist $\alpha = 38^\circ$, bei $B$ ist $\beta_2 = 108^\circ$. Berechne den Winkel bei $C$ im Dreieck $ABC$.
-\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.62]
-\coordinate (A) at (0,2.87);\coordinate (F) at (0,0);\coordinate (B) at (2.55,0);\coordinate (C) at (6.42,1.69);
-\draw (A) -- (F) -- (B) -- cycle;\draw (B) -- (C) -- (A);\mbrwmarke{(F)}{(B)}{(A)}
-\draw[line width=0.5pt] ($(A)+(-48.4:0.55)$) arc (-48.4:-10.4:0.55);\node[font=\small] at ($(A)+(-29:0.95)$) {$\alpha$};
-\draw[line width=0.5pt] ($(B)+(131.6:0.5)$) arc (131.6:180:0.5);\node[font=\small] at ($(B)+(156:0.95)$) {$\beta_1$};
-\draw[line width=0.5pt] ($(B)+(23.6:0.4)$) arc (23.6:131.6:0.4);\node[font=\small] at ($(B)+(78:0.75)$) {$\beta_2$};
-\node[font=\small,anchor=south] at (A) {$A$};\node[font=\small,anchor=north east] at (F) {$F$};\node[font=\small,anchor=north] at (B) {$B$};\node[font=\small,anchor=south west] at (C) {$C$};
-\end{tikzpicture}}{%
-\karo{1}}
-\fusshilfe{\mbox{2:~$34^\circ$}}
+% Bank trigonometrie-e4-k1-s0-v6 (vollständiges Paar finden), dazu die Gleichung aufschreiben (Kritiker: wie Pythagoras Nr. 1)
+\begin{pfaufg}{}{2.}{}
+Im Dreieck $ABC$ kennst du $b = 7$~cm, $\beta = 62^\circ$ und $\gamma = 49^\circ$.
+\gzwei{\begin{tikzpicture}[font=\small]\draw[line width=0.8pt] (0.000,0.000) -- (3.362,0.000) -- (1.276,2.400) -- cycle;\pfwinkel[0.55][0.66]{(0,0)}{0}{62}{\alpha}\pfwinkel[0.55][0.66]{(3.362,0)}{131}{180}{\beta}\pfwinkel[0.55][0.66]{(1.276,2.4)}{-118}{-49}{\gamma}\node[anchor=north,inner sep=2pt] at (1.681,-0.050) {$c$};\node[anchor=south west,inner sep=2pt] at (2.357,1.233) {$a$};\node[anchor=south east,inner sep=2pt] at (0.594,1.223) {$b$};\node[anchor=north east,inner sep=2pt] at (0.000,0.000) {$A$};\node[anchor=north west,inner sep=2pt] at (3.362,0.000) {$B$};\node[anchor=south,inner sep=2pt] at (1.276,2.400) {$C$};\end{tikzpicture}}{%
+\pfteil{a)}{Kreuze an, welches Paar aus Seite und Gegenwinkel ganz bekannt ist.}\smallskip
+\pfkreuzab{A}{$b$ und $\gamma$}\smallskip\pfkreuzab{B}{$b$ und $\beta$}\smallskip\pfkreuzab{C}{$c$ und $\gamma$}\medskip
+\pfteil{b)}{Schreibe die Gleichung auf, mit der du $c$ berechnest.}\smallskip
+\noindent\hspace*{\mbpfteil}\linie{50mm}}
+\fusshilfe{\mbox{2:~a) B; b) $\frac{c}{\sin\gamma} = \frac{b}{\sin\beta}$}}
 \end{pfaufg}
 
-% ===================== Stufe 2 =====================
-\Needspace*{0.25\textheight}\pfstufekopf{Seite berechnen}{geprüft 2025 \pkt{} 2024}
-
-% Bank trigonometrie-e4-k1-s0-v6 (vollständiges Paar finden, nichts rechnen)
+% Bank trigonometrie-e4-k1-s1-v6, e4-k1-s3-v4 (Päckchen: Paar fertig mit Skizze; Paar erst nach der Winkelsumme, Text)
 \begin{pfaufg}{}{3.}{}
-Im Dreieck $ABC$ kennst du $b = 7$~cm, $\beta = 62^\circ$ und $\gamma = 49^\circ$. Kreuze an, welches Paar aus Seite und Gegenwinkel ganz bekannt ist.
-\gzwei{\begin{tikzpicture}[font=\small]\draw[line width=0.8pt] (0.000,0.000) -- (3.362,0.000) -- (1.276,2.400) -- cycle;\draw[line width=0.5pt] (0.420,0.000) arc (0.00:62.00:0.42);\node at (0.591,0.355) {$\alpha$};\draw[line width=0.5pt] (3.087,0.317) arc (131.00:180.00:0.42);\node at (2.696,0.304) {$\beta$};\draw[line width=0.5pt] (1.079,2.029) arc (-118.00:-49.00:0.42);\node at (1.366,1.608) {$\gamma$};\node[anchor=north,inner sep=2pt] at (1.681,-0.050) {$c$};\node[anchor=south west,inner sep=2pt] at (2.357,1.233) {$a$};\node[anchor=south east,inner sep=2pt] at (0.594,1.223) {$b$};\node[anchor=north east,inner sep=2pt] at (0.000,0.000) {$A$};\node[anchor=north west,inner sep=2pt] at (3.362,0.000) {$B$};\node[anchor=south,inner sep=2pt] at (1.276,2.400) {$C$};\end{tikzpicture}}{%
-\pfkreuzab{A}{$b$ und $\gamma$}\smallskip\pfkreuzab{B}{$b$ und $\beta$}\smallskip\pfkreuzab{C}{$c$ und $\gamma$}}
-\fusshilfe{\mbox{3:~B}}
+Berechne die gesuchte Seite. Runde auf eine Stelle nach dem Komma.
+\gzwei{\gteil{a)}{\smallskip\begin{tikzpicture}[font=\small,line width=0.8pt]\draw (0,0)--(3.3,0)--(0.88,2.42)--cycle;\pfwinkel[0.6][0.66]{(0,0)}{0}{70}{70^\circ}\pfwinkel[0.75][0.66]{(3.3,0)}{135}{180}{45^\circ}
+\node[anchor=north east,inner sep=2pt] at (0,0) {$A$};\node[anchor=north west,inner sep=2pt] at (3.3,0) {$B$};\node[anchor=south,inner sep=2pt] at (0.88,2.42) {$C$};
+\node[anchor=south west,inner sep=2pt] at (2.1,1.25) {$8$ cm};\node[anchor=south east,inner sep=2pt] at (0.42,1.25) {$b$};\end{tikzpicture}}}{\karo{2}}
+\gzwei{\gteil{b)}{$c = 7$~cm, $\alpha = 48^\circ$, $\beta = 64^\circ$; gesucht: $a$}}{\karo{3}}
+\fusshilfe{\mbox{3:~a) 6,0 cm; b) 5,6 cm}}
 \end{pfaufg}
 
-% Bank trigonometrie-e4-k1-s1-v6, e4-k1-s3-v4 (Päckchen: Paar bekannt; Paar erst nach der Winkelsumme)
+% Bank trigonometrie-e4-k1-s4-v4 (Sache, stumpfer Winkel im Paar); Kritiker: stumpfer Winkel direkt angegeben, D weg
 \begin{pfaufg}{}{4.}{}
-Berechne die gesuchte Seite. Runde auf eine Stelle nach dem Komma.\par\smallskip
-\gzwei{\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm\relax}{\raggedright \textbf{a)}\ $a = 8$~cm, $\alpha = 70^\circ$, $\beta = 45^\circ$; gesucht: $b$}}{\karo{2}}
-\gzwei{\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm\relax}{\raggedright \textbf{b)}\ $c = 7$~cm, $\alpha = 48^\circ$, $\beta = 64^\circ$; gesucht: $a$}}{\karo{2}}
-\fusshilfe{\mbox{4:~a) 6,0 cm; b) 5,6 cm}}
-\end{pfaufg}
-
-% Bank trigonometrie-e4-k1-s4-v4 (Sache, Nebenwinkel, stumpfer Winkel im Paar)
-\begin{pfaufg}{}{5.}{}
-Eine Zeltstange $\overline{BC}$ steht schräg. Ein Seil $s$ hält sie vom Hering $A$ aus. Die Punkte $A$, $B$ und $D$ liegen auf einer Geraden. Wie lang ist das Seil?
-\gzwei{\begin{tikzpicture}[font=\small]\draw[line width=0.8pt] (0.000,0.000) -- (1.802,0.000) -- (2.519,1.968) -- cycle;\draw[line width=0.8pt] (1.802,0.000) -- (3.600,0.000);\draw[line width=0.5pt] (0.420,0.000) arc (0.00:38.00:0.42);\node at (0.683,0.235) {$38^\circ$};\draw[line width=0.5pt] (2.222,0.000) arc (0.00:70.00:0.42);\node at (2.368,0.396) {$70^\circ$};\node[anchor=north,inner sep=2pt] at (0.901,-0.050) {2{,}5\,m};\node[anchor=south east,inner sep=2pt] at (1.229,1.023) {$s$};\node[anchor=north east,inner sep=2pt] at (0.000,0.000) {$A$};\node[anchor=north,inner sep=2pt] at (1.802,0.000) {$B$};\node[anchor=south,inner sep=2pt] at (2.519,1.968) {$C$};\node[anchor=north,inner sep=2pt] at (3.600,0.000) {$D$};\end{tikzpicture}}{%
+Eine Zeltstange $\overline{BC}$ steht schräg. Ein Seil $s$ hält sie vom Hering $A$ aus. Wie lang ist das Seil?
+\gzwei{\begin{tikzpicture}[font=\small]\draw[line width=0.8pt] (0.000,0.000) -- (1.802,0.000) -- (2.519,1.968) -- cycle;\pfwinkel[0.6][0.66]{(0,0)}{0}{38}{38^\circ}\pfwinkel[0.45][0.72]{(1.802,0)}{70}{180}{110^\circ}\node[anchor=north,inner sep=2pt] at (0.901,-0.050) {2{,}5\,m};\node[anchor=south east,inner sep=2pt] at (1.229,1.023) {$s$};\node[anchor=north east,inner sep=2pt] at (0.000,0.000) {$A$};\node[anchor=north,inner sep=2pt] at (1.802,-0.05) {$B$};\node[anchor=south,inner sep=2pt] at (2.519,1.968) {$C$};\end{tikzpicture}}{%
 \karo{3}}
-\fusshilfe{\mbox{5:~4,4 m}}
+\fusshilfe{\mbox{4:~4,4 m}}
 \end{pfaufg}
 
-% 2025-OS-K4c, eigener Wortlaut (Sternchenaufgabe; Rampe vorn aus 4a, 4b weggelassen)
-\begin{pfaufg}{nach~P10\\’25~\pkt{}~4c\,$\star$}{6.}{}
-Am Hinterausgang soll eine mobile Rampe $y$ zwei Stufen überwinden. Vom Fuß der Rampe bis zum Fuß der Treppe sind es waagerecht $160$~cm. Die Rampe steigt unter $5^\circ$ an. Die gestrichelte Linie vom Fuß der Treppe zur oberen Stufenkante bildet mit dem Boden einen Winkel von $141^\circ$. Berechne die Länge $y$ der Rampe.
-\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=1.15]
-\coordinate (R) at (0,0);\coordinate (T) at (4,0);\coordinate (S) at (4.93,0.75);
-\fill[black!15] (4,0) -- (4.465,0) -- (4.465,0.375) -- (4.93,0.375) -- (4.93,0.75) -- (5.5,0.75) -- (5.5,0) -- cycle;
-\draw (R) -- (5.5,0);\draw[line width=1.1pt] (R) -- (S);\draw[dashed] (T) -- (S);
-\draw[line width=0.5pt] (1.6,0) arc (0:8.65:1.6);\node[font=\scriptsize,anchor=west,inner sep=1pt] at (1.66,0.11) {$5^\circ$};
-\draw[line width=0.5pt] ($(T)+(38.9:0.3)$) arc (38.9:180:0.3);\node[font=\small,anchor=east] at ($(T)+(170:0.32)$) {$141^\circ$};
-\node[font=\small,anchor=north] at (2.6,-0.05) {$160$ cm};\node[font=\small,anchor=south east] at (2.4,0.37) {$y$};
+% 2024-OS-K6d, herausgelöst (Seilbahn; β1 und F nur für 6a, 6b, weggelassen); Zahlen nach mehr-p10.csv (38°, 108°, 384 m → 40°, 105°, 396 m)
+\begin{pfaufg}{nach~P10\\’24~\pkt{}~6d}{5.}{}
+Eine Seilbahn führt vom Ort $B$ im Tal zum Ort $A$ auf einem Berg; die Strecke $\overline{AB}$ ist $396$~m lang. Eine zweite Seilbahn verbindet $B$ mit dem Ort $C$ auf einem anderen Berg. Bei $A$ ist $\alpha = 40^\circ$, bei $B$ ist $\beta_2 = 105^\circ$. Berechne die Länge der Strecke $\overline{BC}$.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.62]
+\coordinate (A) at (0,2.87);\coordinate (B) at (2.55,0);\coordinate (C) at (6.40,1.93);
+\draw (A) -- (B) -- (C) -- cycle;
+\pfwinkel[1.1][0.7]{(A)}{-48.4}{-8.4}{\alpha}\pfwinkel[0.7][0.7]{(B)}{26.6}{131.6}{\beta_2}
+\node[font=\small,anchor=south] at (A) {$A$};\node[font=\small,anchor=north] at (B) {$B$};\node[font=\small,anchor=south west] at (C) {$C$};
+\node[font=\small,anchor=north east] at (1.2,1.5) {$396$ m};
 \end{tikzpicture}}{%
 \karo{3}}
-\fusshilfe{\mbox{6:~180,1 cm}}
+\fusshilfe{\mbox{5:~443,8 m}}
 \end{pfaufg}
 
-\pfblattende{11}{26 & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17 & 16}%
+% 2025-OS-K4c, eigener Wortlaut (Sternchenaufgabe; Rampe vorn aus 4a, 4b weggelassen); Zahlen nach mehr-p10.csv (160 cm, 5°, 141° → 180 cm, 6°, 139°)
+\begin{pfaufg}{nach~P10\\’25~\pkt{}~4c\,$\star$}{6.}{}
+Am Hinterausgang soll eine mobile Rampe $y$ zwei Stufen überwinden. Vom Fuß der Rampe bis zum Fuß der Treppe sind es waagerecht $180$~cm. Die Rampe steigt unter $6^\circ$ an. Die gestrichelte Linie vom Fuß der Treppe zur oberen Stufenkante bildet mit dem Boden einen Winkel von $139^\circ$. Berechne die Länge $y$ der Rampe.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=1.15]
+\coordinate (R) at (0,0);\coordinate (T) at (4,0);\coordinate (S) at (4.55,0.48);
+\fill[black!15] (4,0) -- (4.28,0) -- (4.28,0.24) -- (4.55,0.24) -- (4.55,0.48) -- (5.3,0.48) -- (5.3,0) -- cycle;
+\draw (R) -- (5.3,0);\draw[line width=1.1pt] (R) -- (S);\draw[dashed] (T) -- (S);
+\pfwinkel[1.7][0.8]{(R)}{0}{6}{6^\circ}\pfwinkel[0.3][0.75]{(T)}{41}{180}{}\node[font=\small,anchor=east] at ($(T)+(165:0.36)$) {$139^\circ$};
+\node[font=\small,anchor=north] at (2.6,-0.05) {$180$ cm};\node[font=\small,anchor=south east] at (2.4,0.28) {$y$};
+\end{tikzpicture}}{%
+\karo{3}}
+\fusshilfe{\mbox{6:~205,9 cm}}
+\end{pfaufg}
+
+\pfblattende{11}{26 FOR & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17 & 16}%
 { & 4c & 6d & & & 3c & 7c & 3c & 4c & 4c & }%
-{Weiter: Symmetrie}
+{\pfausschnitt{Winkel}{Sinussatz}{Vierecke}}
 \end{document}
