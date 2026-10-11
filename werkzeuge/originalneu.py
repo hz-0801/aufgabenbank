@@ -195,6 +195,9 @@ def register_tex(aufgaben, kat):
 
 
 def heft_tex(heft, jahr, papier, aufgaben, kat):
+    q = aufgaben[0][3][0].get("quelle", {}).get("datei", "")
+    qname = (q[:-4] if q.endswith(".pdf") else q) or "26_P10_Ma_%s_A" % papier
+    qname = qname.replace("_", "\\_")
     gesamt = sum(gp for _, _, gp, _ in aufgaben)
     reg, fehlt = register_tex(aufgaben, kat)
     kopf = [
@@ -208,9 +211,9 @@ def heft_tex(heft, jahr, papier, aufgaben, kat):
         "\\pfheftkopf{Prüfung am Ende der Jahrgangsstufe 10 · %d %s}{}"
         % (jahr, papier),
         "\\pfstufenzeile{Mathematik · Aufgaben %s · %d Punkte · "
-        "neu gesetzt nach 26\\_P10\\_Ma\\_%s\\_A · nur für den Lehrer · "
+        "neu gesetzt nach %s · nur für den Lehrer · "
         "\\hyperlink{loesungen}{Lösungen und Register am Ende}}"
-        % ("1–%d" % aufgaben[-1][0], gesamt, papier),
+        % ("1–%d" % aufgaben[-1][0], gesamt, qname),
     ]
     # Übersicht der Aufgaben mit Sprungmarken
     kopf.append("\\par\\medskip\\noindent\\begin{tabular}{@{}llr@{}}")
