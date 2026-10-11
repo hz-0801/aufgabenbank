@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""pruefheft.py – setzt ein Prüfungsheft (Skript) aus Daten, ohne Modell (v0.3, 06.10.2026).
+"""pruefheft.py – setzt ein Prüfungsheft (Skript) aus Daten, ohne Modell (v0.5, 11.10.2026).
 
 Bestellung auf der Befehlszeile, Ausgabe .tex und PDF (Heft und eigene Lösungsdatei) nach
 bau/pruefheft/<kapitel>-<art>[-p<n>|-fokus-<wort>][-ebr]-<datum>/ (Unterordner src/ und pdf/).
@@ -12,6 +12,8 @@ bau/pruefheft/<kapitel>-<art>[-p<n>|-fokus-<wort>][-ebr]-<datum>/ (Unterordner s
   Steckbriefe liest werkzeuge/steckbrief.py seit 08.10.2026 aus mathe-nachhilfe/msa/gliederung/<kapitel>.md (Block „## Fokus <name>“)
   Steckbrief mit Teil 5 „Arten“: Fokusblatt in Grundform G1 (Beschlüsse 07.10., g1_bau; v0.4)
   --kurs EBR|FOR (Vorgabe FOR): Heft ab 2026 nach Kurs (Fundstellen), * an FOR-only-Aufgaben
+  --art mehr --einheit "<Einheit>" --portion n [--schueler S07]: Mehr-Block (v0.5, pruefung.md § 5), eine Seite
+  je Portion aus msa/mehr-p10.csv (auf_blatt = nein, Ordnung rang); Kurzanleitung werkzeuge/pruefheft-mehr.md
   Pfade: --mn ../mathe-nachhilfe --bb ../blattbau (Voreinstellung: Nachbarordner des Repos)
 
 Daten (alle gelesen; geschrieben wird nur bau/register.csv, eine Zeile je Bau):
@@ -4998,14 +5000,302 @@ def g1_bau_einmal(D, args, auswahl):
 
 
 
+# ---------------------------------------------------------------------------
+# Art „mehr“ (v0.5, 11.10.2026): Mehr-Block der Prüfung P10 (pruefung.md § 5 „Mehr-Block“)
+#   Daten: msa/mehr-p10.csv (nur Zeilen der Einheit mit auf_blatt = nein, Ordnung rang); je „mehr“ eine
+#   Portion = eine Seite, reihum aus leicht (I), mittel (II), schwer (III), endet mit der schwersten;
+#   nur Originale, nichts Erfundenes. Kein Modell, keine Grafik: die Abbildung steht als Text
+#   („Skizze: …“) kursiv unter der Aufgabe. Form wie Sorte P (bau/pruefung/2026-10-11/
+#   winkel-ohne-rechnung, Lehrer 11.10.): pfaufg mit Randmarke, Karo als Rechenraum, Lösung in
+#   pfloesungb/\lzb.
+# ---------------------------------------------------------------------------
+MEHR_PRAEAMBEL = r"""\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (Bauregel 6.4)
+\makeatother
+% Rechenraum als Karo (Bauregel 6.9): n Rechenschritte = n mal 10 mm
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+"""
+MEHR_STUFEN = ('I', 'II', 'III')
+MEHR_MIN, MEHR_MAX = 6, 8   # Aufgaben je Portion (Auftrag 11.10.)
+
+
+def mehr_kurz(einheit):
+    """Ordnername aus der Einheit: klein, Umlaute umschrieben, Rest zu Bindestrichen."""
+    t = einheit.lower()
+    for a, b in (('ä', 'ae'), ('ö', 'oe'), ('ü', 'ue'), ('ß', 'ss')):
+        t = t.replace(a, b)
+    t = re.sub(r'[^a-z0-9]+', '-', t).strip('-')
+    return t[:40].rstrip('-')
+
+
+def mehr_zeilen(mn, kapitel, einheit):
+    """Zeilen der Einheit mit auf_blatt = nein, nach rang. --einheit: genau, sonst eindeutiger Teil
+    (ohne Groß/Klein)."""
+    p = os.path.join(mn, 'msa', 'mehr-p10.csv')
+    if not os.path.exists(p):
+        sys.exit(f'fehlt: {p}')
+    alle = [r for r in lies_csv(p) if r.get('kapitel') == kapitel]
+    if not alle:
+        sys.exit(f'mehr-p10.csv: keine Zeile mit kapitel={kapitel}')
+    einheiten = list(OrderedDict((r['einheit'], 1) for r in alle))
+    treffer = [e for e in einheiten if e == einheit] or \
+              [e for e in einheiten if einheit.lower() in e.lower()]
+    if len(treffer) != 1:
+        sys.exit('--einheit nicht eindeutig; vorhanden: ' + ' | '.join(einheiten))
+    zeilen = [r for r in alle if r['einheit'] == treffer[0] and r.get('auf_blatt', '').strip() == 'nein']
+    if not zeilen:
+        sys.exit(f'Einheit „{treffer[0]}“: keine Zeile mit auf_blatt = nein')
+    for r in zeilen:
+        if r.get('schwere', '').strip() not in MEHR_STUFEN:
+            r['schwere'] = 'II'   # Entscheidung: fehlende oder fremde Schwere zählt als mittel
+    zeilen.sort(key=lambda r: (int(re.sub(r'\D', '', r.get('rang') or '') or 10 ** 6), r['id']))
+    return treffer[0], zeilen
+
+
+def mehr_portionen(zeilen):
+    """Schneidet die Liste in gleich große Portionen von 6–8 Aufgaben. Verteilung: Stufen von schwer
+    nach leicht, darin nach rang, reihum auf die Portionen (ein Zähler über alle Stufen, damit die
+    Portionen gleich groß werden). Innerhalb der Portion reihum I, II, III, …; die schwerste Aufgabe
+    der Portion (die letzte ihrer Stufe nach rang) steht am Ende. Fehlen Stufen, nimmt die Portion,
+    was da ist (pruefung.md § 5)."""
+    n = len(zeilen)
+    anz = max(1, -(-n // MEHR_MAX))          # so wenige Portionen wie möglich mit höchstens 8
+    if n > MEHR_MAX and n / anz < MEHR_MIN:
+        anz = max(1, n // MEHR_MIN)           # lieber 8 als Portionen unter 6
+    toepfe = [[] for _ in range(anz)]
+    i = 0
+    for st in reversed(MEHR_STUFEN):
+        for r in zeilen:                      # zeilen ist nach rang sortiert
+            if r['schwere'] == st:
+                toepfe[i % anz].append(r)
+                i += 1
+    portionen = []
+    for t in toepfe:
+        schlangen = {st: [r for r in t if r['schwere'] == st] for st in MEHR_STUFEN}
+        schluss = None
+        for st in reversed(MEHR_STUFEN):
+            if schlangen[st]:
+                schluss = schlangen[st].pop()   # die schwerste (letzte ihrer Stufe) ans Ende
+                break
+        folge = []
+        while any(schlangen.values()):
+            for st in MEHR_STUFEN:
+                if schlangen[st]:
+                    folge.append(schlangen[st].pop(0))
+        if schluss is not None:
+            folge.append(schluss)
+        portionen.append(folge)
+    return portionen
+
+
+def mehr_marke(r):
+    """Randmarke wie im Blatt der Sorte P: „nach P10 ’25 · 1g“ (Spalte marke, Teilaufgabe aus quelle)."""
+    m = (r.get('marke') or '').strip()
+    q = (r.get('quelle') or '').strip()
+    teil = q.split('·')[-1].strip() if '·' in q else ''
+    # zwei Zeilen wie im Blatt: „nach P10“ / „’22 · 5b“ (Rand 13 mm; eine Zeile wäre zu breit)
+    mm = re.match(r'^(.*?)\s+(’\d\d)$', m)
+    if mm:
+        return f'{mm.group(1).replace(" ", "~")}\\\\{mm.group(2)}' + (f'~\\pkt{{}}~{teil}' if teil else '')
+    return m.replace(' ', '~') + (f'~\\pkt{{}}~{teil}' if teil else '')
+
+
+def mehr_loesung(r):
+    """Aus der Spalte loesung: (Ergebnisse als Liste, Weg). Teile durch „|“ sind Teilfragen, „;“ und „⇒“
+    Schritte; das Ergebnis eines Teils ist die letzte Gleichung seines letzten Schritts, auf
+    „Name op Wert“ verkürzt."""
+    lo = (r.get('loesung') or '').strip()
+    ergebnisse = []
+    for teil in [t.strip() for t in lo.split('|') if t.strip()]:
+        schritt = re.split(r'\s*[;⇒]\s*', teil)[-1].strip()
+        segs = re.split(r'\s*(=|≈)\s*', schritt)
+        if len(segs) >= 3:
+            ergebnisse.append(f'{segs[0]} {segs[-2]} {segs[-1]}')
+        else:
+            ergebnisse.append(schritt)
+    weg = lo.replace(' | ', '; ')
+    return ergebnisse, weg
+
+
+def mehr_kreuz(text):
+    """Ankreuzaufgabe („Kreuze … an: a / b / c“) -> (Frage, Optionen) oder (text, [])."""
+    if 'Kreuze' not in text or ' / ' not in text:
+        return text, []
+    i = text.rfind(':', 0, text.find(' / '))
+    if i < 0:
+        return text, []
+    return text[:i + 1], [o.strip() for o in text[i + 1:].split(' / ') if o.strip()]
+
+
+def mehr_schritte(r):
+    lo = (r.get('loesung') or '')
+    return len([s for s in re.split(r'[;|⇒]', lo) if s.strip()])
+
+
+def mehr_aufgabe_tex(r, nr, faktor=1.0):
+    """Eine Aufgabe in pfaufg: Text, dann Ankreuzzeile, Lücke, Antwortfeld oder Karo; Abbildung als
+    Text kursiv („Skizze: …“); Fuß mit dem Ergebnis (Bauregel 6.2)."""
+    text, optionen = mehr_kreuz((r.get('wortlaut') or '').strip())
+    luecke = '___' in text
+    text = text.replace('___', '\x00')
+    t = tx(text).replace('\x00', '\\linie{25mm}')
+    out = [f'\\begin{{pfaufg}}{{{mehr_marke(r)}}}{{{nr}.}}{{}}', t]
+    ergebnisse, _ = mehr_loesung(r)
+    if r.get('abbildung', '').strip():
+        out.append('\\par\\smallskip\\noindent{\\small\\itshape Skizze: ' + tx(r['abbildung'].strip()) + '}\\par')
+    rechnet = bool(re.search(r'\d', r.get('loesung') or ''))
+    if optionen:
+        out.append('\\par\\smallskip\\noindent' + ''.join(
+            f'\\pfkreuz{{{"ABCD"[i]}}}{{{tx(o)}}}' for i, o in enumerate(optionen[:4])))
+    elif luecke:
+        pass
+    elif not rechnet:
+        # keine Zahlen (Seitenverhältnis benennen): Antwortfeld rechts in derselben Zeile (gemeinsam.md)
+        lhs = re.split(r'\s*(=|≈)\s*', ergebnisse[0])[0] if ergebnisse else ''
+        out.append('\\hfill ' + tx(lhs) + ' $=$\\linie{30mm}')
+    else:
+        n = min(8, max(2, mehr_schritte(r) + 1))
+        n = max(1, round(n * faktor))
+        out.append(f'\\karo{{{n}}}')
+    fuss = '; '.join(tx(mehr_fusswert(e, optionen, r)) for e in ergebnisse)
+    if fuss:
+        out.append(f'\\fusshilfe{{\\mbox{{{nr}:~{fuss}}}}}')
+    out.append('\\end{pfaufg}')
+    return '\n'.join(out)
+
+
+def mehr_fusswert(e, optionen, r):
+    """Fußwert: Buchstabe beim Ankreuzen, sonst der Wert hinter dem letzten op."""
+    b = mehr_buchstabe(r, optionen)
+    if b:
+        return b
+    segs = re.split(r'\s*(=|≈)\s*', e)
+    return segs[-1] if len(segs) >= 3 else e
+
+
+def mehr_buchstabe(r, optionen):
+    if not optionen:
+        return ''
+    m = re.search(r'\((erste|zweite|dritte|vierte)\s+Option\)', r.get('loesung') or '')
+    return 'ABCD'['erste zweite dritte vierte'.split().index(m.group(1))] if m else ''
+
+
+def mehr_blatt_tex(einheit, kenn, p, anz, folge, faktor=1.0):
+    stufen = list(OrderedDict((r.get('stufe', '').strip(), 1) for r in folge if r.get('stufe', '').strip()))
+    out = [KOPF.replace('\\begin{document}', MEHR_PRAEAMBEL + '\\begin{document}'), '\\pfheftstil',
+           f'\\pflaufkopf[P10 \\pkt{{}} mehr]{{{tx(einheit)}}}{{{kenn}}}\\pfseitevon',
+           f'\\pfheftkopf{{{tx(einheit)}}}{{Portion {p} von {anz}}}']
+    if stufen:
+        out.append('\\pfstufenzeile{' + ' \\pkt{} '.join(tx(s) for s in stufen) + '}')
+    for i, r in enumerate(folge, 1):
+        out.append(f'% {r["id"]} (Schwere {r["schwere"]}, rang {r.get("rang", "")})')
+        out.append(mehr_aufgabe_tex(r, i, faktor))
+    orig = ', '.join((r.get('quelle') or r['id']).replace('·', '\\pkt{}') for r in folge)
+    out.append('\\par\\vfill\\noindent{\\scriptsize\\color{mbgrau}Originale: ' + tx(orig) + '\\par}')
+    out.append('\\end{document}')
+    return '\n'.join(out)
+
+
+def mehr_loesung_tex(einheit, kenn, p, anz, folge):
+    out = [KOPF.replace('\\begin{document}', MEHR_PRAEAMBEL + '\\begin{document}'), '\\pfheftstil',
+           f'\\pflaufkopf[P10 \\pkt{{}} mehr]{{{tx(einheit)} \\pkt{{}} Lösungen}}{{{kenn}}}\\pfseitevon',
+           f'\\pfheftkopf{{{tx(einheit)}}}{{Lösungen \\pkt{{}} Portion {p} von {anz}}}']
+    for i, r in enumerate(folge, 1):
+        ergebnisse, weg = mehr_loesung(r)
+        _, optionen = mehr_kreuz((r.get('wortlaut') or '').strip())
+        b = mehr_buchstabe(r, optionen)
+        erg = (b + ': ' if b else '') + '; '.join(tx(e) for e in ergebnisse)
+        out.append('\\begin{pfloesungb}{}')
+        out.append(f'\\lzb{{{i}.}}{{}}{{{erg}}}{{{tx(weg)}}}')
+        out.append('\\end{pfloesungb}')
+    out.append('\\end{document}')
+    return '\n'.join(out)
+
+
+def mehr_register(args, kenn, ordner, seiten, folge, p, anz, einheit):
+    p_reg = os.path.join(BANK, 'bau', 'register.csv')
+    zeilen = open(p_reg, encoding='utf-8').read().splitlines()
+    pfad = os.path.relpath(ordner, BANK)
+    zeilen = [z for z in zeilen if not z.endswith(';' + pfad)]
+    best = (f'kapitel={args.kapitel}, art=mehr, einheit={einheit}, portion={p}/{anz}, '
+            f'aufgaben={len(folge)}, schwere={",".join(r["schwere"] for r in folge)}, '
+            f'ids={" ".join(r["id"] for r in folge)}, seiten={seiten}'
+            + (f', schueler={args.schueler}' if args.schueler else ''))
+    commit = subprocess.run(['git', 'rev-parse', '--short', 'HEAD'], cwd=BANK, capture_output=True,
+                            text=True).stdout.strip()
+    zeilen.append(f'{kenn};{args.datum};{args.kapitel};PH;{best};{commit};'
+                  f'pruefheft.py v0.5;Version 2026-10-11c;{pfad}')
+    open(p_reg, 'w', encoding='utf-8').write('\n'.join(zeilen) + '\n')
+
+
+def mehr_bau(args):
+    if not args.einheit:
+        sys.exit('--art mehr braucht --einheit')
+    einheit, zeilen = mehr_zeilen(args.mn, args.kapitel, args.einheit)
+    portionen = mehr_portionen(zeilen)
+    anz = len(portionen)
+    p = args.portion or 1
+    if not 1 <= p <= anz:
+        sys.exit(f'Portion {p} gibt es nicht – die Einheit hat {anz} Portion(en) aus {len(zeilen)} Aufgaben')
+    folge = portionen[p - 1]
+    name = f'{args.kapitel}-mehr-{mehr_kurz(einheit)}-p{p}'
+    ordner = args.aus or os.path.join(BANK, 'bau', 'pruefheft', f'{name}-{args.datum}')
+    kenn = g1_kennung(os.path.relpath(ordner, BANK))
+    arbeit = tempfile.mkdtemp(prefix='pruefheft-mehr-')
+    # eine Seite: erst voller Rechenraum, dann kleiner (Entscheidung: lieber knapper Raum als zwei Seiten)
+    # eine Seite: erst voller Rechenraum, dann kleiner; reicht auch der halbe nicht, bleibt der volle
+    # auf zwei Seiten (ein Blatt, Vorder- und Rückseite) – Entscheidung, Abnahme „≤ 1 Blatt“
+    tex, erg, faktor_gesetzt = None, None, 1.0
+    for faktor in (1.0, 0.75, 0.5):
+        t = mehr_blatt_tex(einheit, kenn, p, anz, folge, faktor)
+        e = xelatex(t, args.bb, 'probe', arbeit)
+        if faktor == 1.0 or e['seiten'] <= 1 or e['fehler']:
+            tex, erg, faktor_gesetzt = t, e, faktor
+        if e['seiten'] <= 1 or e['fehler']:
+            break
+    ltex = mehr_loesung_tex(einheit, kenn, p, anz, folge)
+    os.makedirs(os.path.join(ordner, 'src'), exist_ok=True)
+    os.makedirs(os.path.join(ordner, 'pdf'), exist_ok=True)
+    bericht, seiten = [], 0
+    for nm, t in ((name, tex), (name + '-loesung', ltex)):
+        e = xelatex(t, args.bb, nm, arbeit)
+        with open(os.path.join(ordner, 'src', nm + '.tex'), 'w', encoding='utf-8') as f:
+            f.write(t)
+        if e['pdf']:
+            shutil.copy(e['pdf'], os.path.join(ordner, 'pdf', nm + '.pdf'))
+        if nm == name:
+            seiten = e['seiten']
+        bericht.append(f'{nm}: {e["seiten"]} Seiten, Fehler {len(e["fehler"])}, '
+                       f'Missing character {e["missing"]}, Overfull {e["overfull"]}')
+        bericht += ['   ' + fl for fl in e['fehler'][:5]]
+    if not args.ohne_register:
+        mehr_register(args, kenn, ordner, seiten, folge, p, anz, einheit)
+    print('\n'.join(bericht))
+    print('Ordner:', ordner)
+    print(f'Einheit: {einheit}; {len(zeilen)} Aufgaben (auf_blatt = nein) in {anz} Portion(en); Kennung {kenn}')
+    for i, pt in enumerate(portionen, 1):
+        print(f'Portion {i}{" (gesetzt)" if i == p else ""}: ' +
+              ', '.join(f'{r["id"]} ({r["schwere"]})' for r in pt))
+    print(f'Rechenraum: Faktor {faktor_gesetzt}' + (f'; Portion {p} braucht {seiten} Seiten (ein Blatt), auch '
+          f'mit halbem Rechenraum nicht eine' if seiten > 1 else ''))
+
+
 def main():
     ap = argparse.ArgumentParser(description='Prüfungsheft aus Daten setzen')
     ap.add_argument('--kapitel', required=True)
     ap.add_argument('--pruefung', choices=sorted(PROFIL), default='p10',
                     help='Prüfungsprofil: p10 (Vorgabe) oder abi-gk (Abitur Grundkurs)')
-    ap.add_argument('--art', choices=['normal', 'schwach'], default='normal')
+    ap.add_argument('--art', choices=['normal', 'schwach', 'mehr'], default='normal',
+                    help='mehr: Mehr-Block einer Einheit aus msa/mehr-p10.csv (v0.5), braucht --einheit')
     ap.add_argument('--portion', type=int)
     ap.add_argument('--fokus')
+    ap.add_argument('--einheit', help='nur --art mehr: Einheit (Spalte einheit, genau oder eindeutiger Teil)')
+    ap.add_argument('--schueler', help='nur --art mehr: Vermerk im Register (Nummer, nie Name)')
     ap.add_argument('--kurs', choices=['EBR', 'FOR'], default='FOR',
                     help='Heft ab 2026 nach Kurs (Beschluss 27); Vorgabe FOR')
     ap.add_argument('--seiten', type=int, default=2, help='Startmaß einer Portion in Seiten (Serie)')
@@ -5022,6 +5312,9 @@ def main():
                          'parallele Bauten mit --ohne-register, danach je Bau einmal --nur-register)')
     args = ap.parse_args()
 
+    if args.art == 'mehr':
+        mehr_bau(args)   # v0.5: eigener Weg, liest nur msa/mehr-p10.csv; bestehende Arten unberührt
+        return
     global D_AKT, FOKUS_LAUF
     FOKUS_LAUF = bool(args.fokus)
     D = Daten(args.mn, args.kapitel, args.pruefung)

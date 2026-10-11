@@ -1,0 +1,39 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (Bauregel 6.4)
+\makeatother
+% Rechenraum als Karo (Bauregel 6.9): n Rechenschritte = n mal 10 mm
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} mehr]{Seite oder Winkel mit sin, cos, tan \pkt{} Lösungen}{B8X}\pfseitevon
+\pfheftkopf{Seite oder Winkel mit sin, cos, tan}{Lösungen \pkt{} Portion 2 von 2}
+\begin{pfloesungb}{}
+\lzb{1.}{}{AB $\approx$ 1118 m}{AB = 1400 · sin 53° $\approx$ 1118,1 m $\approx$ 1118 m}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{2.}{}{AC $\approx$ 84,7 cm}{sin 24° = 34,47 : AC $\Rightarrow$ AC = 34,47 : sin 24° $\approx$ 84,7 cm}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{3.}{}{tan $\alpha$ = r/s}{tan $\alpha$ = r/s}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{4.}{}{$\alpha$ $\approx$ 65°}{cos $\alpha$ = 5 : 12 $\Rightarrow$ $\alpha$ = cos$^{-1}$($\tfrac{5}{12}$) $\approx$ 65,4° $\approx$ 65°}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{5.}{}{sin $\alpha$ = r/t}{sin $\alpha$ = r/t}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{6.}{}{sin $\beta$ = r/t}{sin $\beta$ = r/t}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{7.}{}{PB $\approx$ 1,85 m}{PB = 1,35 : tan 36,1° $\approx$ 1,85 m}
+\end{pfloesungb}
+\end{document}

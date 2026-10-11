@@ -1,0 +1,39 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (Bauregel 6.4)
+\makeatother
+% Rechenraum als Karo (Bauregel 6.9): n Rechenschritte = n mal 10 mm
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} mehr]{Seite oder Winkel mit sin, cos, tan \pkt{} Lösungen}{PVV}\pfseitevon
+\pfheftkopf{Seite oder Winkel mit sin, cos, tan}{Lösungen \pkt{} Portion 1 von 2}
+\begin{pfloesungb}{}
+\lzb{1.}{}{$\alpha$ $\approx$ 33,6°}{sin $\alpha$ = 7,3 : 13,2 $\Rightarrow$ $\alpha$ = sin$^{-1}$(7,3/13,2) $\approx$ 33,6°}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{2.}{}{$\alpha$ $\approx$ 54,0°}{Unterschied der Seiten 14 $-$ 6 = 8 cm; tan $\alpha$ = 11 : 8 $\Rightarrow$ $\alpha$ = tan$^{-1}$($\tfrac{11}{8}$) $\approx$ 54,0°}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{3.}{}{AD $\approx$ 842,5 m}{AD = 1400 · cos 53° $\approx$ 842,5 m}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{4.}{}{Berghöhe $\approx$ 61,0 m; D liegt auf 61,0 + 10,0 $\approx$ 71,0 m}{BC = 118,8 · sin 30° $\approx$ 59,4 m; Berghöhe = BC + 1,6 $\approx$ 61,0 m; D liegt auf 61,0 + 10,0 $\approx$ 71,0 m}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{5.}{}{x = 18}{x = 9 : sin 30° = 9 : 0,5 = 18}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{6.}{}{C: sin $\beta$ = b/a (dritte Option)}{sin $\beta$ = b/a (dritte Option)}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{7.}{}{BD $\approx$ 440 m}{$\angle$CAD = 90° $-$ 52° = 38°; $\angle$DAB = 71° $-$ 38° = 33°; BD = 677 · tan 33° $\approx$ 440 m}
+\end{pfloesungb}
+\end{document}
