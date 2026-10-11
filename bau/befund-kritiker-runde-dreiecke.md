@@ -1,5 +1,4 @@
 # Befund Kritiker 11.10. nachts – Runde Dreiecke (P4Z, GYW, LXA, NUB)
-
 ## Über alle vier gleich falsch (wird Regel)
 1. Form aus der ersten Fassung: alter Kopf ohne Laufkopf, Stufenzeile, Seitenzahl und Ausschnitt;
    Stufenköpfe „geprüft …“ statt „letzte 5 Jahre: …“; Übersicht mit einer Gruppe „Dreiecke“ und
@@ -13,7 +12,6 @@
    „Variante“.
 5. Nur GYW hat eine Schlussstufe, und sie rechnet statt zu entscheiden. Die anderen drei fragen
    nirgends „welches Werkzeug?“ (LXA: kein rechter Winkel → Sinussatz).
-
 ## Wo die Warum-Liste selbst unklar oder widersprüchlich ist
 - Regel 4: Schlussstufe ohne eigene echte – welche Jahre stehen im Kopf („nicht geprüft“, Nebenplätze, nichts)?
 - Regel 5 und 6: Schülerfrage (Erkennen) und Einstieg (Handgriff der ersten echten) sind zwei

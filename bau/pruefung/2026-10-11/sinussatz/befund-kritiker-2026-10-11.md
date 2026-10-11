@@ -1,12 +1,10 @@
 # Befund Kritiker 11.10. – LXA Sinussatz (gegen bau/warum-2026-10-11.md)
-
 ## Stufen (Vorschlag nach dem Muster Pythagoras)
 Einheit „Sinussatz“ (statt „Seite im allgemeinen Dreieck, Sinussatz“), Gruppe „Alle Dreiecke und Vierecke“.
 Stufen: Gleichung aufstellen: Paar aus Seite und Gegenwinkel · dritter Winkel zuerst · Seite gesucht
 (jetzt: Dritten Winkel finden · Seite berechnen). Grund: die Schülerfrage „woran erkenne ich, was ich
 brauche?“ (Nr. 3) steht heute hinter der ersten echten (Nr. 2) – Regel 5. Jahre: Stufe 1 und 3
 „letzte 5 Jahre: 2025 · 2024“, Stufe 2 ebenso (beide echten brauchen den Schritt).
-
 ## Je Aufgabe
 - Behalten ohne Kommentar: 1, 2, 6.
 - 3 ändern: nach vorn in Stufe 1 (Regel 5); dazu eine Bankzeile „Schreibe die Gleichung auf“
@@ -17,17 +15,14 @@ brauche?“ (Nr. 3) steht heute hinter der ersten echten (Nr. 2) – Regel 5. Ja
 - 5 ändern: braucht Nebenwinkel (70° → 110°) und Winkelsumme; die echte Nr. 6 gibt den stumpfen
   Winkel 141° direkt. Nr. 5 ist damit schwerer als die leichteste echte (Regel 7) – stumpfen
   Winkel direkt angeben, D weglassen; der Nebenwinkel bleibt in Nr. 1.
-
 ## Fehlende Aufgaben (Schülerfrage je Stufe, Regel 5)
 - Blatt-Einstieg: „Woran sehe ich, dass Pythagoras und sin, cos, tan hier nicht gehen?“ (kein
   rechter Winkel – unterscheiden an 2–3 Dreiecken).
 - Gleichung aufstellen: „Welches Paar Seite–Gegenwinkel ist fertig?“ – Nr. 3 fragt es, am falschen Ort.
 - dritter Winkel zuerst: „Reicht, was ich kenne – oder fehlt der Winkel gegenüber?“ (ankreuzen).
 - Seite gesucht: keine Lücke.
-
 ## Reihenfolge (Regel 7)
 Nr. 5 schwerer als Nr. 6 (oben). Nr. 2 (echte) vor Nr. 3 (Erkennen) – Stufenschnitt (oben).
-
 ## Form (nur Abweichungen)
 - Kopf alt: kein Laufkopf/Kennung je Seite, keine Stufenzeile, keine Seitenzahl, kein Ausschnitt
   „Winkel ▸ Sinussatz Weiter: Vierecke“ (Regel 1); „Weiter: Symmetrie“ ist der alte Name (Regel 3).
@@ -37,7 +32,6 @@ Nr. 5 schwerer als Nr. 6 (oben). Nr. 2 (echte) vor Nr. 3 (Erkennen) – Stufensc
 - Nr. 2: Marke „nach P10 ’24 · 6d“ steht an einer Aufgabe, die nur den Vorschritt (Winkel) fragt,
   nicht die Seite – im Stark-Heft findet der Schüler eine andere Frage (Regel 13). Satz dazu in der
   Marke oder Zeile „Vorschritt zu 6d“ in der Lösung.
-
 ## Was ich dem Lehrer zeigen würde
 - Die Frage „welches Paar ist fertig?“ (Nr. 3) kommt erst, nachdem der Schüler schon eine echte
   gerechnet hat – er lernt den Sinussatz rückwärts.

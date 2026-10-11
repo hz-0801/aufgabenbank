@@ -1,10 +1,8 @@
 # Befund Kritiker 11.10. – GYW sin, cos, tan (gegen bau/warum-2026-10-11.md)
-
 ## Stufen
 Einheit „sin, cos, tan“ (statt „Seite oder Winkel mit sin, cos, tan“), Gruppe „Rechtwinklige Dreiecke“.
 Stufen: Gleichung aufstellen · Winkel gesucht · Seite gesucht · Pythagoras oder sin, cos, tan?
 (jetzt: Seitenverhältnis benennen · Winkel berechnen · Seite berechnen · erst entscheiden, dann rechnen).
-
 ## Je Aufgabe
 - Behalten ohne Kommentar: 1, 3, 5, 6, 8, 9, 11.
 - 2 ändern: a)–d) stehen 2×2 nebeneinander, Lücke in c) an anderer Stelle (Funktion fehlt) als in
@@ -17,7 +15,6 @@ Stufen: Gleichung aufstellen · Winkel gesucht · Seite gesucht · Pythagoras od
 - 10 streichen: rechnet beide Katheten und prüft mit Pythagoras – das ist kein Entscheiden, sondern
   beides tun. Stufe 4 nach Lehrer 11.10.: 5–6 Mini-Fälle (gegeben/gesucht in einer Skizze, nur
   ankreuzen „Pythagoras“ oder „sin, cos, tan“, nichts rechnen), dann Nr. 11 als echte.
-
 ## Fehlende Aufgaben (Schülerfrage je Stufe, Regel 5)
 - Gleichung aufstellen: „Welche Seite ist Gegenkathete, Ankathete, Hypotenuse von α?“
   (Beschriften/Markieren) – Nr. 1 setzt es voraus.
@@ -26,10 +23,8 @@ Stufen: Gleichung aufstellen · Winkel gesucht · Seite gesucht · Pythagoras od
 - Seite gesucht: „Steht x oben oder unten im Bruch – mal oder geteilt?“ (ankreuzen, nicht rechnen);
   der Stolperstein aus Nr. 7b wird sonst erst beim Rechnen bemerkt.
 - Pythagoras oder sin, cos, tan?: die Mini-Fälle (oben) – fehlen ganz.
-
 ## Reihenfolge (Regel 7)
 Nr. 4b (Einheiten) schwerer als Nr. 5. Sonst in Ordnung; Nr. 9 bleibt das Ende der Stufe.
-
 ## Form (nur Abweichungen)
 - Kopf alt: kein Laufkopf „P10 · Prüfung“/Kennung je Seite, keine Stufenzeile, keine Seitenzahl,
   kein Ausschnitt Vorher/▸/Weiter (Regel 1).
@@ -37,7 +32,6 @@ Nr. 4b (Einheiten) schwerer als Nr. 5. Sonst in Ordnung; Nr. 9 bleibt das Ende d
   Vorschlag: Jahre der Nebenplätze (2026 · 2025 · 2024 · 2022), dort wurde entschieden.
 - Übersicht: eine Gruppe „Dreiecke“, alte Namen (Regel 2/3).
 - Nr. 10 rundet auf zwei Stellen, der Rest auf eine (Regel 3, entfällt mit Streichen).
-
 ## Was ich dem Lehrer zeigen würde
 - Nr. 4: „Wähle selbst …“ nimmt dem Schüler die einzige Entscheidung der Stufe ab; die drei Fälle
   sind dann drei gleiche Rechnungen.
