@@ -1,5 +1,7 @@
 # Plan – Prüfungsblatt Länge mit Pythagoras (P4Z)
 
+> Nachzug 12.10.: Stufen umbenannt (Gleichung aufstellen · Hypotenuse gesucht · Kathete gesucht · in Figuren versteckt), Schülerfrage je Stufe, Zahlen neu – siehe bericht.md „Nachzug 12.10.“; unten der Stand vom 11.10.
+
 Grundlage: mathe-nachhilfe pruefung.md § 5, gemeinsam.md, msa/gliederung/dreiecke.md
 (Zuschnitt: msa/skript-zuschnitt-p10.md). Stufenkopf gezählt über die Jahrgänge
 2022–2026 der Hauptplätze je Stufe.

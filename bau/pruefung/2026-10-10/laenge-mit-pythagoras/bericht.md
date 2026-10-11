@@ -59,3 +59,14 @@ Neue Bankzeilen: keine (jede Lücke hatte eine passende Zeile). Zahlen mit pytho
 - Neu in mathblatt.sty (Version 2026-10-11, blattbau): `\pfheftkopf` mit optionaler Kennung (rückwärtskompatibel), `\pfkreuz{A}{…}` (nebeneinander), `\pfkreuzab{A}{…}` (eigener Absatz, hängend), `\pfblattende{n}{Jahre}{Stellen}{Nachbarn}`.
 - Seiten: Übersicht 1 · Blatt 3 · Lösungen 1; Fuß kopfüber auf jeder Seite; kein Stufenkopf allein unten.
 - Offen: Nr. 11 („ja“/„nein“) ohne Buchstaben gelassen; der Setzer (werkzeuge/setzer.py, praeambel.tex mit `\blattende`, `\kk`) kennt die neuen Makros noch nicht.
+
+## Nachzug 12.10. (nach befund-kritiker-2026-10-11.md)
+
+- Form aus T2U: Laufkopf, Titel „Pythagoras“, Stufenzeile, Seitenzahl n/N, Ausschnitt „▸ Pythagoras · Weiter: sin, cos, tan · Winkel · Sinussatz · Vierecke“ (kein Vorher: nichts Bestellbares); Stufenköpfe „letzte 5 Jahre: …“; Übersicht mit Gruppen. Stufen: Gleichung aufstellen · Hypotenuse gesucht · Kathete gesucht · in Figuren versteckt (gemeinsam.md „Namen“). Rampe ’25 bleibt in „Hypotenuse gesucht“ (direkt), Becher ’22 in „in Figuren versteckt“ (finden) – wie der Kritiker mehr-dreiecke sagt.
+- Je Stufe die Schülerfrage zuerst (Regel 5), Hilfssätze raus: Nr. 1 „Markiere die Hypotenuse“ statt des Satzes „sie liegt dem rechten Winkel gegenüber“, Lücken untereinander mit Buchstabenspalte; Nr. 4 „in welchen Dreiecken ist die Hypotenuse gesucht?“ (ankreuzen); Nr. 7 Gleichung ankreuzen mit gesuchter Kathete (plus oder minus – die Form von 2024-OS-B1f, die im Mehr-Block liegt); Nr. 12 „zeichne das rechtwinklige Dreieck ein“ an gleichschenkligem Dreieck, Rechteck mit Diagonale und Zylinder von vorn; Nr. 13 ohne „Die Höhe teilt …“.
+- Befunde umgesetzt: Satz in Worten ’22 (Nr. 2) vor der Wurzelformel ’26 (Nr. 3); Päckchen Nr. 5 Skizze → Text → krumm, Nr. 8a mit Skizze; „Runde, wo nötig“ weg (Nr. 5, 8).
+- Gestrichen: alte Nr. 11 (Löffel im Messbecher, Bank) – der Schritt „Zylinder von vorn“ steht jetzt in Nr. 12c, und Nr. 14 ist die echte dazu; das Blatt bleibt schlank.
+- Andere Zahlen (msa/mehr-p10.csv): Nr. 6 200 cm, 17 cm → 200,7 cm; Nr. 9 262 m, 396 m → 296,9 m; Nr. 10 13,2 m, 7,3 m → 11,0 m; Nr. 11 38 cm, 16 cm → 34,5 cm; Nr. 14 7,5 cm, 3,4 cm, 2 cm → 12,1 cm. Nr. 2, 3 ohne Zahlen. Alle Ergebnisse mit Python nachgerechnet.
+- Aufgaben je Stufe (echte): Gleichung aufstellen 3 (2) · Hypotenuse gesucht 3 (1) · Kathete gesucht 5 (3) · in Figuren versteckt 3 (1) – 14 Nummern, 7 echte (vorher 12 / 7).
+- Nicht umgesetzt: Blatt auf 3 Seiten – es sind 4 (eine Stufe je Seite; Stufenkopf fordert 14 Zeilen, Wunsch in nachzug-2026-10-12.md). Drei echte in „Kathete gesucht“ bleiben (Kern, drei Erscheinungsformen: Sache, Teildreieck mit Höhe und „Weise nach“, Parallelogramm).
+- Seiten: Übersicht 1, Blatt 4, Lösung 2. herausgeloest.csv (Originalzahlen) unverändert.
