@@ -1,0 +1,178 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+\newsavebox{\gbox}\newlength{\gLinks}
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr0.5\textwidth-\gEin-\mbpfnr\relax}%
+  \ifdim\wd\gbox>\dimexpr\gLinks-4mm\relax
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf ohne die festen 14 Zeilen Platz der Vorlage (Nachzug 12.10., Wunsch GYW): der Setzer
+% fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + Schülerfrage), mehr nicht
+\RenewDocumentCommand{\pfstufekopf}{o m m}{\par\addvspace{10pt}%
+  \noindent\IfValueT{#1}{\hypertarget{#1}{}\label{#1}}{\large\bfseries #2}%
+  \ifblank{#3}{}{\hspace{0.8em}{\small\color{mbgrau}#3}}\par\nobreak\vspace{2pt}}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} Prüfung]{Volumen und Oberfläche}{AZL}\pfseitevon
+\pfheftkopf{Volumen und Oberfläche}{}
+\pfstufenzeile{Volumen berechnen \pkt{} Radius oder Höhe aus dem Volumen \pkt{} Restvolumen \pkt{} Mantelfläche und Kosten \pkt{} vergleichen und urteilen}
+
+% ===================== Stufe: Volumen direkt =====================
+\Needspace*{0.16\textheight}\pfstufekopf{Volumen berechnen}{letzte 5 Jahre: 2026 \pkt{} 2023 \pkt{} 2022}
+% Schülerfrage der Stufe (Gliederung)
+\begin{pfaufg}{}{1.}{}
+Welche Formel brauchst du? Schreibe nur die Formel auf, rechne nicht.
+\par\smallskip
+\par\noindent\makebox[\mbpfteil][l]{\textbf{a)}}Konservendose, 7 cm hoch, Radius 3,5 cm\hfill\linie{30mm}
+\par\noindent\makebox[\mbpfteil][l]{\textbf{b)}}Fußball, Durchmesser 22 cm\hfill\linie{30mm}
+\par\noindent\makebox[\mbpfteil][l]{\textbf{c)}}Zelt, 4 m lang, Vorderseite ein Dreieck\hfill\linie{30mm}
+\par\noindent\makebox[\mbpfteil][l]{\textbf{d)}}Eistüte, Radius 3 cm, Höhe 12 cm\hfill\linie{30mm}
+\par\fusshilfe{\mbox{1:~a) Zylinder; b) Kugel; c) Prisma; d) Kegel}}
+\end{pfaufg}
+% Einstieg aus der Bank: koerper-e2-k1-s1-v1 (grundfall, V aus a, b, c mit ganzen Zahlen)
+\begin{pfaufg}{}{2.}{}
+Ein Quader ist $6$ cm lang, $3$ cm breit und $2$ cm hoch. Berechne das Volumen des Quaders.
+\hfill \leerfeld[cm³] 
+\fusshilfe{\mbox{2:~$36$ cm³}}
+\end{pfaufg}
+% 2023-OS-K5b-m1 (Original 2023-OS-K5b, Schwere I, rang 3; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’23~\pkt{}~5b}{3.}{}
+Eine Konservendose hat die Form eines Zylinders mit dem Radius 3,5 cm und der Höhe 7 cm. Auf der Dose steht: Inhalt etwa 270 ml. Weise nach, dass das stimmt (1 cm³ = 1 ml).
+\gzwei{\zylinder{0.8}{1.9}{}{}}{\karo{2}}
+\fusshilfe{\mbox{3:~269,4 cm³}}
+\end{pfaufg}
+
+% ===================== Stufe: rückwärts: Radius oder Höhe aus Volumen =====================
+\Needspace*{0.16\textheight}\pfstufekopf{Radius oder Höhe aus dem Volumen}{letzte 5 Jahre: 2023 \pkt{} 2022}
+% Schülerfrage der Stufe (Gliederung)
+\begin{pfaufg}{}{4.}{}
+Gegeben ist das Volumen. Kreuze an, wo du am Ende eine Wurzel ziehen musst.
+\par\smallskip
+\par\noindent\makebox[\mbpfteil][l]{\textbf{a)}}Zylinder: V und h bekannt, r gesucht\hfill\kk{Wurzel}
+\par\noindent\makebox[\mbpfteil][l]{\textbf{b)}}Zylinder: V und r bekannt, h gesucht\hfill\kk{Wurzel}
+\par\noindent\makebox[\mbpfteil][l]{\textbf{c)}}Würfel: V bekannt, Kante a gesucht\hfill\kk{Wurzel}
+\par\noindent\makebox[\mbpfteil][l]{\textbf{d)}}Quader: V, a und b bekannt, c gesucht\hfill\kk{Wurzel}
+\par\fusshilfe{\mbox{4:~a) und c)}}
+\end{pfaufg}
+% Einstieg aus der Bank: koerper-e2-k1-s6-v1 (sprosse, Kante aus V)
+\begin{pfaufg}{}{5.}{}
+Ein Quader hat das Volumen $90$ cm³. Er ist $5$ cm lang und $3$ cm breit. Wie hoch ist der Quader?
+\hfill \leerfeld[cm] 
+\fusshilfe{\mbox{5:~$6$ cm}}
+\end{pfaufg}
+% 2022-OS-K2d-m1 (Original 2022-OS-K2d, Schwere II, rang 8; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’22~\pkt{}~2d\,$\star$}{6.}{}
+Ein Becher hat die Form eines Zylinders ohne Deckel. Er ist h = 7,5 cm hoch und hat den Radius r = 3,4 cm. Ein größerer Becher soll 500 ml fassen und wieder 7,5 cm hoch sein. Berechne seinen Radius.
+\gzwei{\begin{tikzpicture}[baseline=(current bounding box.north),line width=0.7pt]\fill[black!12] (0,2) ellipse (0.8 and 0.28);\draw (0,2) ellipse (0.8 and 0.28);\draw (-0.8,0) -- (-0.8,2);\draw (0.8,0) -- (0.8,2);\draw (-0.8,0) arc (180:360:0.8 and 0.28);\draw[dashed,line width=0.5pt] (-0.8,0) arc (180:0:0.8 and 0.28);\end{tikzpicture}}{\karo{2}}
+\fusshilfe{\mbox{6:~4,6 cm}}
+\end{pfaufg}
+
+% ===================== Stufe: Restvolumen =====================
+\Needspace*{0.16\textheight}\pfstufekopf{Restvolumen}{letzte 5 Jahre: 2024}
+% Schülerfrage der Stufe (Gliederung)
+\begin{pfaufg}{}{7.}{}
+Welcher Körper ist außen, welcher innen? Schreibe nur den Ansatz auf: groß minus klein.
+\par\smallskip
+\par\noindent\makebox[\mbpfteil][l]{\textbf{a)}}Tennisball in einer Würfelschachtel\hfill\linie{30mm}
+\par\noindent\makebox[\mbpfteil][l]{\textbf{b)}}Kegel in einer zylinderförmigen Verpackung\hfill\linie{30mm}
+\par\noindent\makebox[\mbpfteil][l]{\textbf{c)}}Rohr: Außenzylinder und Innenzylinder\hfill\linie{30mm}
+\par\fusshilfe{\mbox{7:~außen ist immer der Körper, in dem der andere steckt}}
+\end{pfaufg}
+% Einstieg aus der Bank: koerper-e5-k1-s5-v1 (sprosse, Restvolumen)
+\begin{pfaufg}{}{8.}{}
+Ein Tortenkarton ist innen $24$ cm × $24$ cm × $9$ cm groß. Darin steht eine runde Torte mit $22$ cm Durchmesser und $8$ cm Höhe. Wie viel Luft bleibt im Karton? Runde auf eine Stelle nach dem Komma.
+\hfill \leerfeld[cm³] 
+\fusshilfe{\mbox{8:~$2\,142{,}9$ cm³}}
+\end{pfaufg}
+% 2024-OS-K4c-m1 (Original 2024-OS-K4c, Schwere II, rang 6; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’24~\pkt{}~4c\,$\star$}{9.}{}
+Eine Firma stellt Kegel mit dem Radius r = 25 cm und der Höhe h = 60 cm her. Eine andere Firma verschickt denselben Kegel in einer zylinderförmigen Verpackung; innen ist sie 61 cm hoch und hat den Radius 25,5 cm. Der freie Raum wird mit Füllmaterial ausgefüllt. Ermittle, wie viele cm³ Füllmaterial man braucht.
+\gzwei{\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm\relax}{\small\itshape Skizze}}{\karo{2}}
+\fusshilfe{\mbox{9:~85342 cm³}}
+\end{pfaufg}
+
+% ===================== Stufe: Mantelfläche mit Kosten =====================
+\Needspace*{0.16\textheight}\pfstufekopf{Mantelfläche und Kosten}{letzte 5 Jahre: 2026}
+% Schülerfrage der Stufe (Gliederung)
+\begin{pfaufg}{}{10.}{}
+Welche Fläche wird bezahlt? Schreibe hin: Mantel, Grundfläche oder ganze Oberfläche.
+\par\smallskip
+\par\noindent\makebox[\mbpfteil][l]{\textbf{a)}}Die Außenmauer eines runden Turms wird gestrichen\hfill\linie{30mm}
+\par\noindent\makebox[\mbpfteil][l]{\textbf{b)}}Ein Kegeldach wird mit Ziegeln gedeckt\hfill\linie{30mm}
+\par\noindent\makebox[\mbpfteil][l]{\textbf{c)}}Eine Geschenkbox (Quader) wird rundum mit Papier beklebt\hfill\linie{30mm}
+\par\noindent\makebox[\mbpfteil][l]{\textbf{d)}}Der Boden eines runden Beckens wird gefliest\hfill\linie{30mm}
+\par\fusshilfe{\mbox{10:~a) Mantel; b) Mantel; c) ganze Oberfläche; d) Grundfläche}}
+\end{pfaufg}
+% Einstieg aus der Bank: koerper-e4-k2-s6-v1 (sprosse, Mantel)
+\begin{pfaufg}{}{11.}{}
+Ein Zylinder hat den Radius $4$ cm und die Höhe $9$ cm. Berechne seinen Mantel. Runde auf eine Stelle nach dem Komma.
+\hfill \leerfeld[cm²] 
+\fusshilfe{\mbox{11:~$\approx 226{,}2$ cm²}}
+\end{pfaufg}
+% 2026-FOR-K2b-m1 (Original 2026-FOR-K2b, Schwere II, rang 5; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’26~\pkt{}~2b}{12.}{}
+Ein Turm besteht unten aus einem Zylinder, sein Dach ist ein Kegel. Bekannt sind: h = 22,0 m (Höhe des Zylinders), r = 4,2 m (Radius von Zylinder und Kegel) und s = 7,9 m (Mantellinie des Kegels). Das Dach wird mit Ziegeln gedeckt; 1 m² Ziegel kostet 24,00 €. Berechne die Kosten für die Ziegel.
+\gzwei{\begin{tikzpicture}[baseline=(current bounding box.north),line width=0.7pt]\draw (-0.9,0) arc (180:360:0.9 and 0.315);\draw[dashed,line width=0.5pt] (-0.9,0) arc (180:0:0.9 and 0.315);\draw (-0.9,0) -- (-0.9,2.4);\draw (0.9,0) -- (0.9,2.4);\draw (0,2.4) ellipse (0.9 and 0.315);\draw (-0.9,2.4) -- (0,3.9) -- (0.9,2.4);\node[right,font=\small] at (0.95,1.2) {$h$};\fill (0,0) circle (0.8pt);\draw[dashed,line width=0.5pt] (0,0) -- (0.9,0) node[midway,fill=white,inner sep=1pt,font=\small] {$r$};\path (0.9,2.4) -- (0,3.9) node[midway,above right,inner sep=1.5pt,font=\small] {$s$};\end{tikzpicture}}{\karo{3}}
+\fusshilfe{\mbox{12:~104,24 m²; 2501,71 €}}
+\end{pfaufg}
+
+% ===================== Stufe: vergleichen und urteilen =====================
+\Needspace*{0.16\textheight}\pfstufekopf{vergleichen und urteilen}{letzte 5 Jahre: 2026}
+% Schülerfrage der Stufe (Gliederung)
+\begin{pfaufg}{}{13.}{}
+Wie oft so groß wird das Volumen? Schätze, ohne zu rechnen.
+\par\smallskip
+\par\noindent\makebox[\mbpfteil][l]{\textbf{a)}}Zylinder, die Höhe wird verdoppelt\hfill\linie{30mm} -mal so groß
+\par\noindent\makebox[\mbpfteil][l]{\textbf{b)}}Zylinder, der Radius wird verdoppelt\hfill\linie{30mm} -mal so groß
+\par\noindent\makebox[\mbpfteil][l]{\textbf{c)}}Kugel, der Radius wird verdoppelt\hfill\linie{30mm} -mal so groß
+\par\noindent\makebox[\mbpfteil][l]{\textbf{d)}}Würfel, die Kante wird verdreifacht\hfill\linie{30mm} -mal so groß
+\par\fusshilfe{\mbox{13:~h steht einfach; r im Quadrat; r hoch drei; a hoch drei}}
+\end{pfaufg}
+% Einstieg aus der Bank: koerper-e4-k2-s14-v1 (sprosse, doppelter Radius begründen)
+\begin{pfaufg}{}{14.}{}
+Zylinder A hat den Radius $3$ cm und die Höhe $5$ cm. Zylinder B hat den Radius $6$ cm und die Höhe $5$ cm. Wie viel Mal so groß ist das Volumen von B wie das von A? Begründe mit einer Rechnung.
+\hfill \leerfeld[-mal]  so groß
+\fusshilfe{\mbox{14:~vierfach}}
+\end{pfaufg}
+% 2026-FOR-K2d-m1 (Original 2026-FOR-K2d, Schwere III, rang 9; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’26~\pkt{}~2d\,$\star$}{15.}{}
+Ein Turm besteht unten aus einem Zylinder, sein Dach ist ein Kegel. Bekannt sind: h = 22,0 m (Höhe des Zylinders), r = 4,2 m (Radius von Zylinder und Kegel) und s = 7,9 m (Mantellinie des Kegels). Ein Zylinder und ein Kegel sind gleich hoch. Jemand behauptet: „Ist der Radius des Kegels doppelt so groß wie der des Zylinders, haben beide dasselbe Volumen.“ Untersuche mit einer Rechnung, ob das stimmt.
+\karo{2}
+\fusshilfe{\mbox{15:~falsch}}
+\end{pfaufg}
+
+\pfblattende{11}{26 FOR & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17 & 16}{1f 2a 2b 2d &  & 4c & 5b 5d & 2b 2d & 4a 4b &  &  & 6b &  & 3c}%
+{\pfausschnitt{}{Volumen und Oberfläche}{Netz und Schrägbild}}
+\end{document}

@@ -5320,10 +5320,15 @@ P_PRAEAMBEL = r"""% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortg
  {\end{minipage}%
   \end{minipage}\end{lrbox}%
   \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
-  \par\addvspace{7pt}\Needspace*{\mbaufgabehoehe}%
-  \noindent\usebox{\mbaufgabebox}\par\addvspace{7pt}}
+  \par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
 \newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf ohne die festen 14 Zeilen Platz der Vorlage (Nachzug 12.10., Wunsch GYW): der Setzer
+% fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + Schülerfrage), mehr nicht
+\RenewDocumentCommand{\pfstufekopf}{o m m}{\par\addvspace{10pt}%
+  \noindent\IfValueT{#1}{\hypertarget{#1}{}\label{#1}}{\large\bfseries #2}%
+  \ifblank{#3}{}{\hspace{0.8em}{\small\color{mbgrau}#3}}\par\nobreak\vspace{2pt}}
 \makeatother
 \newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
   \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
@@ -5349,16 +5354,21 @@ def p_gliederung(mn, kapitel):
     p = os.path.join(mn, 'msa', 'gliederung', f'{kapitel}.md')
     if not os.path.exists(p):
         sys.exit(f'fehlt: {p}')
-    g = {'name': kapitel.capitalize(), 'folge': 0, 'gruppen': [], 'stufen': OrderedDict()}
+    g = {'name': kapitel.capitalize(), 'folge': 0, 'gruppen': [], 'stufen': OrderedDict(), 'anzeige': {}}
     st = None
     for z in open(p, encoding='utf-8').read().splitlines():
-        m = re.match(r'^(Name|Folge|Gruppen):\s*(.*)$', z)
+        m = re.match(r'^(Name|Folge|Gruppen|Anzeigenamen):\s*(.*)$', z)
         if m and st is None:
             k, v = m.group(1), m.group(2).strip()
             if k == 'Name':
                 g['name'] = v
             elif k == 'Folge':
                 g['folge'] = int(re.sub(r'\D', '', v) or 0)
+            elif k == 'Anzeigenamen':   # „Zuschnitt = Name in Schülersprache | …“, mehrere Zeilen erlaubt (12.10.)
+                for teil in v.split('|'):
+                    if '=' in teil:
+                        a, b = teil.split('=', 1)
+                        g['anzeige'][a.strip()] = b.strip()
             else:
                 for teil in v.split('|'):
                     if '=' in teil:
@@ -5372,9 +5382,10 @@ def p_gliederung(mn, kapitel):
         m = re.match(r'^### (.+)$', z)
         if m:
             st = m.group(1).strip()
-            g['stufen'][st] = {'zuschnitt': '', 'hinweis': '', 'kern': ''}
+            g['stufen'][st] = {'zuschnitt': '', 'hinweis': '', 'kern': '', 'anzeigename': '', 'schülerfrage': '',
+                               'schülerfrage-fälle': '', 'schülerfrage-form': '', 'schülerfrage-weg': ''}
             continue
-        m = re.match(r'^- \*\*(Zuschnitt|Hinweis|Kern):\*\*\s*(.*)$', z)
+        m = re.match(r'^- \*\*(Zuschnitt|Hinweis|Kern|Anzeigename|Schülerfrage(?:-Fälle|-Form|-Weg)?):\*\*\s*(.*)$', z)
         if m and st:
             g['stufen'][st][m.group(1).lower()] = m.group(2).strip()
     return g
@@ -5416,7 +5427,8 @@ def p_einheiten(D, gl):
                 eintrag = m.group(1)
                 break
         gruppe = next((gn for gn, eins in gl['gruppen'] if eintrag in eins), '')
-        x = einheiten.setdefault(e, {'name': e, 'gruppe': gruppe, 'stufen': [], 'kern': False})
+        x = einheiten.setdefault(e, {'name': e, 'anzeige': gl['anzeige'].get(e, e), 'gruppe': gruppe,
+                                     'stufen': [], 'kern': False})
         x['stufen'].append(z)
         if (z.get('kern') or '').strip() == 'ja':
             x['kern'] = True
@@ -5481,7 +5493,7 @@ def p_jahre(D, z, letzte5):
 
 def p_stufenkopf(name, jahre):
     j = ' \\pkt{} '.join(str(x) for x in jahre) if jahre else '–'
-    return f'\\Needspace*{{0.25\\textheight}}\\pfstufekopf{{{tx(name)}}}{{letzte 5 Jahre: {j}}}'
+    return f'\\Needspace*{{0.16\\textheight}}\\pfstufekopf{{{tx(name)}}}{{letzte 5 Jahre: {j}}}'
 
 
 def p_skizze(text):
@@ -5490,10 +5502,52 @@ def p_skizze(text):
             + tx(text) + '}')
 
 
+def p_frage(info):
+    """Schülerfrage der Stufe aus der Gliederung (12.10.): Frage, Fälle „Lage = Antwort | …“, Form
+    („linie“, „linie:<Nachsatz>“, „kreuz:<Label>“ mit Antworten ja/nein), Weg für die Lösung."""
+    frage = (info.get('schülerfrage') or '').strip()
+    if not frage:
+        return None
+    faelle = []
+    for teil in (info.get('schülerfrage-fälle') or '').split('|'):
+        if '=' in teil:
+            lage, antwort = teil.split('=', 1)
+            faelle.append((lage.strip(), antwort.strip()))
+    form = (info.get('schülerfrage-form') or 'linie').strip()
+    art, _, zusatz = form.partition(':')
+    return {'frage': frage, 'faelle': faelle, 'art': art, 'zusatz': zusatz.strip(), 'weg': (info.get('schülerfrage-weg') or '').strip()}
+
+
+def p_frage_ergebnis(f):
+    """Linke Spalte der Lösung: bei kreuz die Fälle mit „ja“, sonst je Fall die Antwort (mit Nachsatz)."""
+    if f['art'] == 'kreuz':
+        ja = [f'{"abcdefgh"[i]})' for i, (_, a) in enumerate(f['faelle']) if a.lower().startswith('ja')]
+        return tx(' und '.join(ja) if ja else 'keiner')
+    return '; '.join(f'{"abcdefgh"[i]}) {tx(a + f["zusatz"])}' for i, (_, a) in enumerate(f['faelle']))
+
+
+def p_frage_tex(f, nr):
+    """Schülerfrage als erste Aufgabe der Stufe: Frage, darunter die Fälle untereinander, je Fall eine
+    Zeile mit Antwortlinie oder Kästchen an derselben Stelle (gemeinsam.md „Lücken untereinander“)."""
+    out = ['% Schülerfrage der Stufe (Gliederung)', f'\\begin{{pfaufg}}{{}}{{{nr}.}}{{}}', tx(f['frage']), '\\par\\smallskip']
+    for i, (lage, _) in enumerate(f['faelle']):
+        b = 'abcdefgh'[i]
+        if f['art'] == 'kreuz':
+            rechts = '\\kk{' + tx(f['zusatz'] or 'ja') + '}'
+        else:
+            rechts = '\\linie{30mm}' + (' ' + tx(f['zusatz']) if f['zusatz'] else '')
+        out.append(f'\\par\\noindent\\makebox[\\mbpfteil][l]{{\\textbf{{{b})}}}}{tx(lage)}\\hfill{rechts}')
+    fuss = p_frage_ergebnis(f)
+    if len(fuss) > 60 and f['weg'] and len(f['weg']) < len(fuss):
+        fuss = tx(f['weg'])
+    out.append(f'\\par\\fusshilfe{{\\mbox{{{nr}:~{fuss}}}}}')
+    out.append('\\end{pfaufg}')
+    return '\n'.join(out)
+
+
 def p_einstieg_tex(D, r, nr, stufe):
     a = bank_aufgabe(D, r, stufe)
     out = [f'% Einstieg aus der Bank: {r["id"]} ({r.get("hoehe", "")}, {r.get("sprosse_text", "")})',
-           '% SETZER: fehlt – Schülerfrage zur Stufe (Muster: „Welche Winkel sind gleich groß?“); kein Datenfeld',
            f'\\begin{{pfaufg}}{{}}{{{nr}.}}{{}}', a.text]
     if a.optionen:
         out.append('\\par\\smallskip\\noindent' + ''.join(
@@ -5537,8 +5591,20 @@ def p_echt_tex(D, r, nr, heraus, faktor=1.0):
         rechts = '\\hfill ' + tx(lhs) + ' $=$\\linie{30mm}'
     else:
         rechts = f'\\karo{{{n}}}'
-    if r.get('abbildung', '').strip():
-        out.append('% SETZER: fehlt – Skizze als TikZ (Spalte abbildung ist Prosa); hier als Text kursiv')
+    form = (r.get('form') or '').strip()
+    grafik = (r.get('grafik') or '').strip()
+    if form == 'teil' and not optionen and not luecke:
+        # kurze Antwort rechts in derselben Zeile, Einheit aus der Lösung (gemeinsam.md „Antwortfeld“)
+        m = re.search(r'\d\s*([a-zA-Zµ€%]+[²³]?)\s*$', ergebnisse[0] if ergebnisse else '')
+        rechts = '\\hfill\\linie{30mm} ' + tx(m.group(1)) if m else '\\hfill\\linie{30mm}'
+    if grafik:
+        out.append('\\gzwei{' + grafik + '}{' + (rechts or f'\\karo{{{n}}}') + '}')
+    elif form == 'skizze':
+        # Skizzenfeld (gemeinsam.md): links das Wort „Skizze“, rechts das Karo
+        out.append('\\gzwei{\\parbox[t]{\\dimexpr0.5\\textwidth-\\gEin-\\mbpfnr-5mm\\relax}{\\small\\itshape Skizze}}{'
+                   + (rechts or f'\\karo{{{n}}}') + '}')
+    elif r.get('abbildung', '').strip():
+        out.append('% SETZER: fehlt – Skizze als TikZ (Spalte grafik leer, abbildung ist Prosa); hier als Text kursiv')
         out.append('\\gzwei{' + p_skizze(r['abbildung'].strip()) + '}{' + (rechts or f'\\karo{{{n}}}') + '}')
     elif rechts:
         out.append(rechts)
@@ -5557,11 +5623,18 @@ def p_ergebnis(r):
     lo = (r.get('loesung') or '').strip()
     ergebnisse = []
     for teil in [t.strip() for t in lo.split('|') if t.strip()]:
-        t = re.sub(r'\s*\([^()]*\)', '', teil).strip()
-        schritt = re.split(r'\s*[;⇒:]\s*', t)[-1].strip()
+        # Klammern ohne Zahl sind Vermerke („(erste Option)“), Klammern mit Zahl Rechnung („(π · 7,5)“)
+        t = re.sub(r'\s*\((?![^()]*\d)[^()]*\)', '', teil).strip()
+        m = re.match(r'^(ja|nein|richtig|falsch|stimmt nicht|stimmt)\b[,:]?', t, re.I)
+        if m:   # Begründen: das Urteil ist das Ergebnis (gemeinsam.md „Lösungen“)
+            ergebnisse.append(m.group(1))
+            continue
+        # Schritte trennen „;“, „⇒“ und ein Doppelpunkt nach einem Wort („Torte: …“), nicht das Geteiltzeichen
+        schritt = re.split(r'\s*;\s*|\s*⇒\s*|(?<=[A-Za-zäöüßÄÖÜ])\s*:\s+', t)[-1].strip()
         segs = re.split(r'\s*(=|≈)\s*', schritt)
         if len(segs) >= 3:
-            ergebnisse.append(f'{segs[0]} {segs[-2]} {segs[-1]}')
+            lhs = segs[0] if len(segs[0]) <= 20 else ''
+            ergebnisse.append(f'{lhs} {segs[-2]} {segs[-1]}'.strip())
         else:
             m = re.search(r'\b(?:daher|also|somit|deshalb)\s+(.*)$', schritt)
             ergebnisse.append((m.group(1) if m else schritt).rstrip('.'))
@@ -5601,11 +5674,17 @@ def p_blatt_tex(D, einheit, kenn, stufen_daten, ausschnitt, fund, faktor=1.0):
     out = [KOPF.replace('\\begin{document}', P_PRAEAMBEL + '\\begin{document}'), '\\pfheftstil',
            f'\\pflaufkopf[P10 \\pkt{{}} Prüfung]{{{tx(einheit)}}}{{{kenn}}}\\pfseitevon',
            f'\\pfheftkopf{{{tx(einheit)}}}{{}}',
-           '\\pfstufenzeile{' + ' \\pkt{} '.join(tx(s['name']) for s in stufen_daten) + '}']
+           '\\pfstufenzeile{' + ' \\pkt{} '.join(tx(s['anzeige']) for s in stufen_daten) + '}']
     nr = 0
     for s in stufen_daten:
         out.append(f'\n% ===================== Stufe: {s["name"]} =====================')
-        out.append(p_stufenkopf(s['name'], s['jahre']))
+        out.append(p_stufenkopf(s['anzeige'], s['jahre']))
+        if s['frage']:
+            nr += 1
+            s['nr_frage'] = nr
+            out.append(p_frage_tex(s['frage'], nr))
+        else:
+            out.append('% SETZER: fehlt – Schülerfrage zur Stufe (Gliederung: Schülerfrage, -Fälle, -Form, -Weg)')
         if s['einstieg']:
             nr += 1
             t, a = p_einstieg_tex(D, s['einstieg'], nr, s['name'])
@@ -5631,10 +5710,14 @@ def p_loesung_tex(D, einheit, kenn, stufen_daten):
     out = [KOPF.replace('\\begin{document}', P_PRAEAMBEL + '\\begin{document}'), '\\pfheftstil',
            f'\\pflaufkopf[P10 \\pkt{{}} Prüfung]{{{tx(einheit)} \\pkt{{}} Lösungen}}{{{kenn}}}\\pfseitevon',
            f'\\pfheftkopf{{{tx(einheit)}}}{{Lösungen}}',
-           '\\pfstufenzeile{' + ' \\pkt{} '.join(tx(s['name']) for s in stufen_daten) + '}']
+           '\\pfstufenzeile{' + ' \\pkt{} '.join(tx(s['anzeige']) for s in stufen_daten) + '}']
     for s in stufen_daten:
         out.append('')
-        out.append(p_stufenkopf(s['name'], s['jahre']))
+        out.append(p_stufenkopf(s['anzeige'], s['jahre']))
+        if s['frage']:
+            out.append('\\begin{pfloesungb}{}')
+            out.append(f'\\lzb{{{s["nr_frage"]}.}}{{}}{{{p_frage_ergebnis(s["frage"])}}}{{{tx(s["frage"]["weg"])}}}')
+            out.append('\\end{pfloesungb}')
         if s.get('einstieg_a'):
             a = s['einstieg_a']
             weg = '; '.join(a.zw) if a.zw else ''
@@ -5669,13 +5752,13 @@ def p_uebersicht_tex(gl, einheiten, einheit, kenn, stufen_daten, kapitel_namen):
             out.append(f'\\bereich{{{tx(g)}}}')
         for x in eins:
             if x['name'] == einheit:
-                out.append(f'\\blhier{{{tx(x["name"])}}}')
+                out.append(f'\\blhier{{{tx(x["anzeige"])}}}')
                 for s in stufen_daten:
-                    out.append(f'\\stufe{{{tx(s["name"])}}}')
+                    out.append(f'\\stufe{{{tx(s["anzeige"])}}}')
             elif x['kern']:
-                out.append(f'\\bl{{{tx(x["name"])}}}')
+                out.append(f'\\bl{{{tx(x["anzeige"])}}}')
             else:
-                out.append(f'\\blrand{{{tx(x["name"])}}}')
+                out.append(f'\\blrand{{{tx(x["anzeige"])}}}')
     vor, nach = kapitel_namen.get(gl['folge'] - 1), kapitel_namen.get(gl['folge'] + 1)
     out.append('')
     if vor:
@@ -5723,13 +5806,16 @@ def p_bau(args):
                         and r.get('auf_blatt', '').strip() == 'ja'], key=p_rang)
         kat_ids = (z.get('katalog_ids') or '').split()
         ids += kat_ids + [r['eltern_id'] for r in mehr if r.get('stufe', '').strip() == name and r.get('eltern_id')]
-        stufen_daten.append({'name': name, 'z': z, 'jahre': p_jahre(D, z, letzte5), 'einstieg': p_einstieg(D, z),
+        info = gl['stufen'].get(name, {})
+        stufen_daten.append({'name': name, 'anzeige': info.get('anzeigename') or name, 'z': z,
+                             'jahre': p_jahre(D, z, letzte5), 'einstieg': p_einstieg(D, z), 'frage': p_frage(info),
                              'echte': echte, 'heraus': [h for h in heraus if h.get('stufe', '').strip() == name]})
     ids = list(OrderedDict((i, 1) for i in ids))
     namen = list(einheiten)
     i = namen.index(einheit)
-    ausschnitt = (f'\\pfausschnitt{{{" \\pkt{} ".join(tx(n) for n in namen[:i])}}}{{{tx(einheit)}}}'
-                  f'{{{" \\pkt{} ".join(tx(n) for n in namen[i + 1:])}}}')
+    anz = lambda n: einheiten[n]['anzeige']
+    ausschnitt = (f'\\pfausschnitt{{{" \\pkt{} ".join(tx(anz(n)) for n in namen[:i])}}}{{{tx(anz(einheit))}}}'
+                  f'{{{" \\pkt{} ".join(tx(anz(n)) for n in namen[i + 1:])}}}')
     name = f'{args.kapitel}-p-{mehr_kurz(einheit)}'
     ordner = args.aus or os.path.join(BANK, 'bau', 'pruefheft', f'{name}-{args.datum}')
     kenn = g1_kennung(os.path.relpath(ordner, BANK))
@@ -5737,16 +5823,16 @@ def p_bau(args):
     fund = p_fundstellen(D, ids, letzte5)
     # Rechenraum: voller Karo; steht die Fundstellentabelle dann allein auf einer neuen Seite, kleinerer
     # Karo (0,75, 0,5); hilft das nicht, bleibt der volle (Entscheidung wie Art mehr)
-    blatt, faktor_gesetzt = None, 1.0
+    blatt, faktor_gesetzt, seiten_vorher = None, 1.0, 99
     for faktor in (1.0, 0.75, 0.5):
-        t = p_blatt_tex(D, einheit, kenn, stufen_daten, ausschnitt, fund, faktor)
+        t = p_blatt_tex(D, anz(einheit), kenn, stufen_daten, ausschnitt, fund, faktor)
         e = xelatex(t, args.bb, 'probe', arbeit)
-        e0 = xelatex(p_blatt_tex(D, einheit, kenn, stufen_daten, ausschnitt, '', faktor), args.bb, 'probe0', arbeit)
-        if faktor == 1.0 or e['seiten'] <= e0['seiten'] or e['fehler']:
-            blatt, faktor_gesetzt = t, faktor
-        if e['seiten'] <= e0['seiten'] or e['fehler']:
+        e0 = xelatex(p_blatt_tex(D, anz(einheit), kenn, stufen_daten, ausschnitt, '', faktor), args.bb, 'probe0', arbeit)
+        if faktor == 1.0 or e['seiten'] < seiten_vorher or e['fehler']:
+            blatt, faktor_gesetzt, seiten_vorher = t, faktor, e['seiten']
+        if (e['seiten'] <= e0['seiten'] and e['seiten'] <= 2) or e['fehler']:
             break
-    loes = p_loesung_tex(D, einheit, kenn, stufen_daten)
+    loes = p_loesung_tex(D, anz(einheit), kenn, stufen_daten)
     ueb = p_uebersicht_tex(gl, einheiten, einheit, kenn, stufen_daten, p_kapitelnamen(D.mn))
     os.makedirs(os.path.join(ordner, 'src'), exist_ok=True)
     os.makedirs(os.path.join(ordner, 'pdf'), exist_ok=True)

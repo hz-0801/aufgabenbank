@@ -1,4 +1,4 @@
-# pruefheft.py – Art p: Prüfungsblatt der Sorte P aus Daten (v0.6, 11.10.2026)
+# pruefheft.py – Art p: Prüfungsblatt der Sorte P aus Daten (v0.6, 11.10.2026; Datenfelder 12.10.)
 
     python3 werkzeuge/pruefheft.py --kapitel dreiecke --art p \
         --einheit "Winkel ohne Rechnung bestimmen oder begründen"
@@ -39,13 +39,30 @@ anders: Stufen- und Blattnamen wie in Gliederung/Zuordnung („Winkelsumme“
 fehlt: Stufe „Winkelbeziehungen“ ohne Hauptplatz (nur im Muster), Schüler-
   frage je Stufe, Antwortlinien statt Karo bei Angeben-Aufgaben (Nr. 7 Muster),
   TikZ-Skizzen, Lückentext.
-## Datenbedarf (im TeX als „% SETZER: fehlt – …“)
-- Skizze als Grafik: Feld `grafik` (Bausteinaufruf wie Bank) in mehr-p10.csv;
-  Prosa in `abbildung` reicht nur für den Text.
-- Schülerfrage je Stufe: Spalte in der Zuordnung oder Zeile in der Gliederung.
-- Anzeigenamen in Schülersprache für Stufe und Einheit (Übersicht, Köpfe).
-- Herausgelöste Fassung mit anderen Zahlen (mehr-p10.csv trägt den ganzen
-  Vorspann): Spalte `herausgeloest` oder h-Zeile mit neuen Zahlen.
-- Antwortform je echter Aufgabe (Linie, Tabelle, Karo): Spalte `form` wie Bank.
-- Makrowunsch (mathblatt.sty unverändert): `\winkelbei{V}{P}{Q}{Label}`, graues
-  Teildreieck – erst sinnvoll, wenn `grafik` da ist.
+## Datenfelder (seit 12.10., Lauf AZL Körper; fehlen sie, steht „% SETZER: fehlt – …“ im TeX)
+- Gliederung `msa/gliederung/<kapitel>.md`, Kopf: `Anzeigenamen: <Zuschnitt> =
+  <Name in Schülersprache> | …` (mehrere Zeilen erlaubt; fehlt der Name, gilt
+  der Zuschnitt). Je Stufe unter `### <Stufe>`:
+  `- **Anzeigename:** …` (Stufenkopf, Stufenzeile, Übersicht, Lösung; fehlt er,
+  der Stufenname), `- **Schülerfrage:** …` (Frage ohne Rechnen, erste Nummer der
+  Stufe), `- **Schülerfrage-Fälle:** <Lage> = <Antwort> | …` (a, b, c …
+  untereinander, Lücke an derselben Stelle), `- **Schülerfrage-Form:** linie`
+  | `linie:<Nachsatz>` (z. B. `-mal so groß`) | `kreuz:<Label>` (Kästchen je
+  Fall, Antwort ja/nein; Lösung nennt die Fälle mit ja),
+  `- **Schülerfrage-Weg:** …` (rechte Spalte der Lösung; steht im Fuß, wenn die
+  Antworten länger als 60 Zeichen sind).
+- `msa/mehr-p10.csv`, Spalten `grafik` (TikZ-Baustein der Vorlage oder freies
+  TikZ, Skizze zu den neuen Zahlen; ersetzt den Text aus `abbildung`) und
+  `form`: `text` (Karo), `teil` (Antwortlinie rechts in der Zeile, Einheit aus
+  `loesung`), `skizze` (Skizzenfeld: links „Skizze“, rechts Karo), leer = wie
+  bisher; `ankreuzen` kommt aus dem Wortlaut („Kreuze … an: a / b“).
+- Lösung: beginnt `loesung` mit ja/nein/richtig/falsch/stimmt, ist das Urteil
+  das Ergebnis; sonst „Name op Wert“ der letzten Gleichung (Name nur bis 20
+  Zeichen); Klammern mit Zahl bleiben Rechnung, ohne Zahl sind sie Vermerk.
+- Satz (nur Art p): `\pfstufekopf` ohne die 14 Zeilen Vorhalt der Vorlage, der
+  Setzer fordert 0,16 Seitenhöhe vor dem Kopf; Aufgabenabstand 5 pt; kleinerer
+  Karo (0,75, 0,5) auch, wenn das Blatt über zwei Seiten geht und der kleinere
+  Karo Seiten spart.
+- Noch offen: herausgelöste Fassung mit anderen Zahlen (Spalte `herausgeloest`
+  oder h-Zeile); Makrowunsch `\winkelbei{V}{P}{Q}{Label}`, graues Teildreieck
+  (mathblatt.sty unverändert).

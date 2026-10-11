@@ -1,0 +1,106 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+\newsavebox{\gbox}\newlength{\gLinks}
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr0.5\textwidth-\gEin-\mbpfnr\relax}%
+  \ifdim\wd\gbox>\dimexpr\gLinks-4mm\relax
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf ohne die festen 14 Zeilen Platz der Vorlage (Nachzug 12.10., Wunsch GYW): der Setzer
+% fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + Schülerfrage), mehr nicht
+\RenewDocumentCommand{\pfstufekopf}{o m m}{\par\addvspace{10pt}%
+  \noindent\IfValueT{#1}{\hypertarget{#1}{}\label{#1}}{\large\bfseries #2}%
+  \ifblank{#3}{}{\hspace{0.8em}{\small\color{mbgrau}#3}}\par\nobreak\vspace{2pt}}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} Prüfung]{Volumen und Oberfläche \pkt{} Lösungen}{AZL}\pfseitevon
+\pfheftkopf{Volumen und Oberfläche}{Lösungen}
+\pfstufenzeile{Volumen berechnen \pkt{} Radius oder Höhe aus dem Volumen \pkt{} Restvolumen \pkt{} Mantelfläche und Kosten \pkt{} vergleichen und urteilen}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Volumen berechnen}{letzte 5 Jahre: 2026 \pkt{} 2023 \pkt{} 2022}
+\begin{pfloesungb}{}
+\lzb{1.}{}{a) V = $\pi$ · r² · h; b) V = $\tfrac{4}{3}$ · $\pi$ · r³; c) V = G · h; d) V = $\tfrac{1}{3}$ · $\pi$ · r² · h}{a) Zylinder; b) Kugel; c) Prisma; d) Kegel}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{2.}{}{$36$ cm³}{$6 \cdot 3 \cdot 2$}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{3.}{}{V $\approx$ 269,4 cm³}{V = $\pi$ · 3,5² · 7 $\approx$ 269,4 cm³}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Radius oder Höhe aus dem Volumen}{letzte 5 Jahre: 2023 \pkt{} 2022}
+\begin{pfloesungb}{}
+\lzb{4.}{}{a) und c)}{a) r steht im Quadrat, c) a hoch drei; bei b) und d) nur teilen}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{5.}{}{$6$ cm}{$90 : (5 \cdot 3)$}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{6.}{}{r $\approx$ 4,6 cm}{r = √(500 : ($\pi$ · 7,5)) $\approx$ 4,6 cm}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Restvolumen}{letzte 5 Jahre: 2024}
+\begin{pfloesungb}{}
+\lzb{7.}{}{a) V(Würfel) $-$ V(Kugel); b) V(Zylinder) $-$ V(Kegel); c) V(außen) $-$ V(innen)}{außen ist immer der Körper, in dem der andere steckt}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{8.}{}{$2\,142{,}9$ cm³}{Karton $24 \cdot 24 \cdot 9 = 5\,184$ cm³; Torte $\pi \cdot 11^2 \cdot 8 \approx 3\,041{,}1$ cm³; $5\,184 - 3\,041{,}1$}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{9.}{}{$\approx$ 85342 cm³}{$\pi$ · 25,5² · 61 $-$ $\tfrac{1}{3}$ · $\pi$ · 25² · 60 $\approx$ 85342 cm³}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Mantelfläche und Kosten}{letzte 5 Jahre: 2026}
+\begin{pfloesungb}{}
+\lzb{10.}{}{a) Mantel; b) Mantel; c) ganze Oberfläche; d) Grundfläche}{bezahlt wird, was bearbeitet wird: Mauer und Dach sind Mäntel, Papier rundum ist die ganze Oberfläche, der Boden die Grundfläche}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{11.}{}{$\approx 226{,}2$ cm²}{$2 \cdot \pi \cdot 4 \cdot 9$}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{12.}{}{Dachfläche M $\approx$ 104,24 m²; Kosten $\approx$ 2501,71 €}{Dachfläche M = $\pi$ · 4,2 · 7,9 $\approx$ 104,24 m²; Kosten $\approx$ 2501,71 €}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{vergleichen und urteilen}{letzte 5 Jahre: 2026}
+\begin{pfloesungb}{}
+\lzb{13.}{}{a) 2-mal so groß; b) 4-mal so groß; c) 8-mal so groß; d) 27-mal so groß}{h steht einfach; r im Quadrat; r hoch drei; a hoch drei}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{14.}{}{vierfach, weil der Radius im Quadrat steht}{A: $\pi \cdot 3^2 \cdot 5 = \pi \cdot 45$; B: $\pi \cdot 6^2 \cdot 5 = \pi \cdot 180$; $180 : 45 = 4$}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{15.}{}{falsch}{falsch: V(Kegel) : V(Zylinder) = ($\tfrac{1}{3}$ · (2r)²) : r² = 1,33}
+\end{pfloesungb}
+\end{document}

@@ -36,6 +36,24 @@ LXA Sinussatz · NUB Symmetrie (bau/pruefung/2026-10-10, 2026-10-11).
 - Basis-Originale (B1…) als „herausgelöst“ markiert – ist richtig,
   solange der Wortlaut eigener ist.
 
+## Aus dem Datenlauf 12.10. (AZL Körper, Volumen und Oberfläche)
+
+- Offen (Lehrer): Fünf Stufen mit je Schülerfrage, Einstieg und einer
+  echten geben 15 Nummern und 3 Seiten, auch mit knappem Abstand und
+  ohne die zweite und dritte echte der Kern-Stufe (B1f Würfel, K2a
+  Turm in den Mehr-Block). Zwei Seiten nur, wenn die Einheit geteilt
+  wird (Volumen · rückwärts · Rest | Mantel · vergleichen) oder eine
+  Stufe ohne Bank-Einstieg bleibt, wo die Schülerfrage ihn ersetzt.
+- Offen (Lehrer): Stufe „Radius oder Höhe aus dem Volumen“ hat zwei
+  Fälle (Radius mit Wurzel, Höhe durch Teilen), beide nur je ein
+  Original; auf dem Blatt steht der Radius (2022-OS-K2d), weil der
+  Bank-Einstieg die Höhe deckt – ein Fall je Stufe oder beide?
+- Offen (Lehrer): echte Teilaufgabe, deren Vorspann für die Frage
+  nichts trägt (2026-FOR-K2d: Turmmaße, gefragt ist Kegel gegen
+  Zylinder allgemein) – Vorspann kürzen oder wie im Heft lassen?
+- Datenform festgehalten in werkzeuge/pruefheft-p.md (Schülerfrage in
+  der Gliederung, grafik und form in mehr-p10.csv).
+
 ## Setzer (werkzeuge/setzer.py) braucht für Sorte P
 
 Aus bericht.md P4Z: \pfheftkopf[Kennung], \pfstufekopf mit Jahren,
