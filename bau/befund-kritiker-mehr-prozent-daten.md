@@ -23,21 +23,18 @@ Leicht:
 - 2022-OS-B1f: „erhält kein Taschengeld“ wurde „kauft nie ein Buch“;
   Wortlaut außer Zahlen verändert, ohne Not.
 - 2015-OS-K7a: „Runde sinnvoll“, Lösung nennt 45137 statt ≈ 45 000.
-- 2019-OS-K5b: Korrektur „etwa zwei Drittel (69 %)“; 69 % ist näher
-  an sieben Zehnteln.
-- 2018-OS-K3c steht unter „Kreisdiagramm“, ist aber ein Streifen.
+- 2019-OS-K5b: „etwa zwei Drittel (69 %)“ – näher an sieben Zehnteln.
 
 Stufen prozent: Anteil umwandeln, Prozentwert, Prozentsatz, Grundwert,
 Erhöhung in Prozent, Zinseszins – je eigener Handgriff. Zinsen und
 Zinssatz nur Einkleidung von Prozentwert und Prozentsatz. Aussagen
 prüfen und Prozent aus einer Fläche: Einkleidung (rechnen, dann
 vergleichen); 2015-K2a (Terme prüfen) unter Prozentwert passt.
-Stufen daten: Spannweite, Mittelwert, Median, fehlender Wert
-rückwärts – je eigen. Diagramm ergänzen (Einteilung wählen) eigen;
-Aussage prüfen ist Einkleidung der Kenngrößen; falschen Eindruck
-erklären eigen (Achse). Kreiswinkel berechnen eigen; aus Prozent
-darstellen derselbe Handgriff plus Zeichnen. Auswirkung erklären
-(2025-K6c) eigen, 2025-K6a daneben ist nur Spannweite und Modalwert.
-Regel unklar: „gleiche Glätte“ bei Tabellen und Reihen – wie viele
-Werte dürfen runder werden, wenn die Summe (8,0 Mrd., 100 %) glatt
-bleiben muss? Und ob Jahreszahlen als Zahlen zählen (2021 → 2022).
+Stufen daten: Spannweite, Mittelwert, Median, fehlender Wert rückwärts
+– je eigen. Diagramm ergänzen (Einteilung wählen) eigen; Aussage
+prüfen Einkleidung der Kenngrößen; falschen Eindruck erklären eigen
+(Achse). Kreiswinkel berechnen eigen, aus Prozent darstellen derselbe
+Handgriff plus Zeichnen (2018-K3c ist ein Streifen, kein Kreis).
+Auswirkung erklären (2025-K6c) eigen; 2025-K6a nur Spannweite, Modus.
+Regel unklar: „gleiche Glätte“ bei Reihen – wie viele Werte dürfen
+runder werden, damit die Summe (8,0 Mrd., 100 %) glatt bleibt?
