@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""pruefheft.py – setzt ein Prüfungsheft (Skript) aus Daten, ohne Modell (v0.5, 11.10.2026).
+"""pruefheft.py – setzt ein Prüfungsheft (Skript) aus Daten, ohne Modell (v0.6, 11.10.2026).
 
 Bestellung auf der Befehlszeile, Ausgabe .tex und PDF (Heft und eigene Lösungsdatei) nach
 bau/pruefheft/<kapitel>-<art>[-p<n>|-fokus-<wort>][-ebr]-<datum>/ (Unterordner src/ und pdf/).
@@ -14,6 +14,10 @@ bau/pruefheft/<kapitel>-<art>[-p<n>|-fokus-<wort>][-ebr]-<datum>/ (Unterordner s
   --kurs EBR|FOR (Vorgabe FOR): Heft ab 2026 nach Kurs (Fundstellen), * an FOR-only-Aufgaben
   --art mehr --einheit "<Einheit>" --portion n [--schueler S07]: Mehr-Block (v0.5, pruefung.md § 5), eine Seite
   je Portion aus msa/mehr-p10.csv (auf_blatt = nein, Ordnung rang); Kurzanleitung werkzeuge/pruefheft-mehr.md
+  --art p --einheit "<Einheit>": Prüfungsblatt der Sorte P (v0.6, pruefung.md § 5) nach bau/pruefheft/<kapitel>-p-
+  <einheit>-<datum>/ – 1-uebersicht, 2-blatt, 3-loesungen (src/, pdf/); Einheit = Zuschnitt der Gliederung, Stufen
+  aus der Zuordnung, Einstieg aus der Bank, echte Aufgaben aus msa/mehr-p10.csv (auf_blatt = ja, andere Zahlen);
+  Muster bau/pruefung/2026-10-11/winkel-ohne-rechnung/; Kurzanleitung werkzeuge/pruefheft-p.md
   Pfade: --mn ../mathe-nachhilfe --bb ../blattbau (Voreinstellung: Nachbarordner des Repos)
 
 Daten (alle gelesen; geschrieben wird nur bau/register.csv, eine Zeile je Bau):
@@ -5285,17 +5289,504 @@ def mehr_bau(args):
           f'mit halbem Rechenraum nicht eine' if seiten > 1 else ''))
 
 
+# ---------------------------------------------------------------------------
+# Art p (v0.6, 11.10.2026): Prüfungsblatt der Sorte P aus Daten, ohne Modell (pruefung.md § 5,
+# gemeinsam.md „Satz“, „Lösungen“, „Übersicht und Serie“). Muster: bau/pruefung/2026-10-11/
+# winkel-ohne-rechnung/ (Hand-Satz T2U). Drei Dateien: 1-uebersicht, 2-blatt, 3-loesungen.
+# Was die Daten nicht hergeben, steht im TeX als „% SETZER: fehlt – …“ (werkzeuge/pruefheft-p.md).
+# ---------------------------------------------------------------------------
+P_PRAEAMBEL = r"""% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+\newsavebox{\gbox}\newlength{\gLinks}
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr0.5\textwidth-\gEin-\mbpfnr\relax}%
+  \ifdim\wd\gbox>\dimexpr\gLinks-4mm\relax
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \par\addvspace{7pt}\Needspace*{\mbaufgabehoehe}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{7pt}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+"""
+P_UEBERSICHT = r"""\newcommand{\bereich}[1]{\par\addvspace{14pt}\noindent{\large\bfseries #1}\par\nobreak\vspace{4pt}}
+\newcommand{\bl}[1]{\par\noindent #1\par\vspace{3pt}}
+\newcommand{\blrand}[1]{\par\noindent{\color{mbgrau}#1}\par\vspace{3pt}}
+\newcommand{\blhier}[1]{\par\noindent\llap{$\blacktriangleright$\hspace{0.5em}}\textbf{#1}\par\vspace{3pt}}
+\newcommand{\stufe}[1]{\par\noindent\hspace*{1.5em}{\small #1}\par\vspace{2pt}}
+\newcommand{\pkt}{\textperiodcentered{}}
+"""
+P_HOEHE = {'vorstufe': 0, 'grundfall': 1, 'sprosse': 2, 'pruefung': 3, 'pflicht': 4}
+
+
+def p_gliederung(mn, kapitel):
+    """Kopf und Stufen aus msa/gliederung/<kapitel>.md: Name, Folge, Gruppen (Name -> Bankeinträge),
+    je Stufe der Zuschnitt (= Einheit, pruefung.md § 5) und ein Hinweis („nach … verschoben“)."""
+    p = os.path.join(mn, 'msa', 'gliederung', f'{kapitel}.md')
+    if not os.path.exists(p):
+        sys.exit(f'fehlt: {p}')
+    g = {'name': kapitel.capitalize(), 'folge': 0, 'gruppen': [], 'stufen': OrderedDict()}
+    st = None
+    for z in open(p, encoding='utf-8').read().splitlines():
+        m = re.match(r'^(Name|Folge|Gruppen):\s*(.*)$', z)
+        if m and st is None:
+            k, v = m.group(1), m.group(2).strip()
+            if k == 'Name':
+                g['name'] = v
+            elif k == 'Folge':
+                g['folge'] = int(re.sub(r'\D', '', v) or 0)
+            else:
+                for teil in v.split('|'):
+                    if '=' in teil:
+                        gn, ein = teil.split('=', 1)
+                        g['gruppen'].append((gn.strip(), [e.strip() for e in ein.split(',') if e.strip()]))
+            continue
+        if z.startswith('## ') and st is not None:
+            st = None
+            if 'Stufen' not in z:
+                break
+        m = re.match(r'^### (.+)$', z)
+        if m:
+            st = m.group(1).strip()
+            g['stufen'][st] = {'zuschnitt': '', 'hinweis': '', 'kern': ''}
+            continue
+        m = re.match(r'^- \*\*(Zuschnitt|Hinweis|Kern):\*\*\s*(.*)$', z)
+        if m and st:
+            g['stufen'][st][m.group(1).lower()] = m.group(2).strip()
+    return g
+
+
+def p_kapitelnamen(mn):
+    """Folge -> Name aller Kapitel (für „Vorher“/„Weiter“ der Übersicht)."""
+    out = {}
+    for p in glob.glob(os.path.join(mn, 'msa', 'gliederung', '*.md')):
+        if os.path.basename(p).startswith('_'):
+            continue
+        name, folge = '', 0
+        for z in open(p, encoding='utf-8').read().splitlines()[:12]:
+            m = re.match(r'^(Name|Folge):\s*(.*)$', z)
+            if m:
+                if m.group(1) == 'Name':
+                    name = m.group(2).strip()
+                else:
+                    folge = int(re.sub(r'\D', '', m.group(2)) or 0)
+        if name and folge:
+            out[folge] = name
+    return out
+
+
+def p_einheiten(D, gl):
+    """Einheiten des Kapitels in Lernfolge (Reihenfolge der Stufen in der Zuordnung): Name = Zuschnitt
+    aus der Gliederung; Gruppe aus dem Bankeintrag der ersten Sprosse; kern = eine Stufe ist Kern."""
+    einheiten = OrderedDict()
+    for z in D.zu:
+        name = z['stufe'].strip()
+        info = gl['stufen'].get(name, {})
+        e = info.get('zuschnitt', '')
+        if not e:
+            continue
+        eintrag = ''
+        for sp in (z.get('bank_sprossen') or '').split():
+            m = re.match(r'^([a-z\-]+?)-e\d', sp)
+            if m:
+                eintrag = m.group(1)
+                break
+        gruppe = next((gn for gn, eins in gl['gruppen'] if eintrag in eins), '')
+        x = einheiten.setdefault(e, {'name': e, 'gruppe': gruppe, 'stufen': [], 'kern': False})
+        x['stufen'].append(z)
+        if (z.get('kern') or '').strip() == 'ja':
+            x['kern'] = True
+        if not x['gruppe']:
+            x['gruppe'] = gruppe
+    return einheiten
+
+
+def p_wahl(namen, wunsch, was):
+    treffer = [e for e in namen if e == wunsch] or [e for e in namen if wunsch.lower() in e.lower()]
+    if len(treffer) != 1:
+        sys.exit(f'--einheit nicht eindeutig ({was}); vorhanden: ' + ' | '.join(namen))
+    return treffer[0]
+
+
+def p_mehr(mn, kapitel, einheit):
+    """Alle Zeilen der Einheit aus msa/mehr-p10.csv (auf_blatt ja und nein; die Einheit heißt dort
+    gleich oder ist ein Teil des Zuschnittnamens)."""
+    p = os.path.join(mn, 'msa', 'mehr-p10.csv')
+    if not os.path.exists(p):
+        return []
+    alle = [r for r in lies_csv(p) if r.get('kapitel') == kapitel]
+    namen = list(OrderedDict((r['einheit'], 1) for r in alle))
+    tr = [e for e in namen if e == einheit] or [e for e in namen if e.lower() in einheit.lower() or einheit.lower() in e.lower()]
+    if len(tr) != 1:
+        return []
+    zeilen = [r for r in alle if r['einheit'] == tr[0]]
+    for r in zeilen:
+        if r.get('schwere', '').strip() not in MEHR_STUFEN:
+            r['schwere'] = 'II'
+    return zeilen
+
+
+def p_rang(r):
+    return (MEHR_STUFEN.index(r['schwere']), int(re.sub(r'\D', '', r.get('rang') or '') or 10 ** 6), r['id'])
+
+
+def p_einstieg(D, z):
+    """Leichteste passende Bankzeile der Stufe (Spalte bank_sprossen): niedrigste Höhe, dann die erste
+    Sprosse der Liste (Lernfolge der Gliederung), dann Variante; ruhende Zeilen nie."""
+    kand = []
+    for pos, sp in enumerate((z.get('bank_sprossen') or '').split()):
+        sp = re.sub(r'\(i\)$|\[.*\]$', '', sp)
+        for iid, r in D.bank.items():
+            if iid.startswith(sp + '-v') and not ruht(r):
+                kand.append((P_HOEHE.get(r.get('hoehe'), 2), pos, int(r.get('variante') or 0), iid, r))
+    if not kand:
+        return None
+    kand.sort(key=lambda k: k[:4])
+    return kand[0][4]
+
+
+def p_jahre(D, z, letzte5):
+    """Stufenkopf (pruefung.md § 5): Jahre der Hauptplätze aus den letzten fünf, jüngstes zuerst; ohne
+    Hauptplatz die Jahre aus jahre_letzte5 (echte Aufgaben, die den Schritt enthalten)."""
+    jahre = {int(D.kat[i]['jahr']) for i in (z.get('katalog_ids') or '').split() if i in D.kat}
+    jahre = {j for j in jahre if j in letzte5}
+    if not jahre:
+        jahre = {int(j) for j in re.findall(r'\d{4}', z.get('jahre_letzte5') or '')} & set(letzte5)
+    return sorted(jahre, reverse=True)
+
+
+def p_stufenkopf(name, jahre):
+    j = ' \\pkt{} '.join(str(x) for x in jahre) if jahre else '–'
+    return f'\\Needspace*{{0.25\\textheight}}\\pfstufekopf{{{tx(name)}}}{{letzte 5 Jahre: {j}}}'
+
+
+def p_skizze(text):
+    """Skizze als Text kursiv in der linken Spalte (keine Grafik in den Daten)."""
+    return ('\\parbox[t]{\\dimexpr0.5\\textwidth-\\gEin-\\mbpfnr-5mm\\relax}{\\raggedright\\small\\itshape Skizze: '
+            + tx(text) + '}')
+
+
+def p_einstieg_tex(D, r, nr, stufe):
+    a = bank_aufgabe(D, r, stufe)
+    out = [f'% Einstieg aus der Bank: {r["id"]} ({r.get("hoehe", "")}, {r.get("sprosse_text", "")})',
+           '% SETZER: fehlt – Schülerfrage zur Stufe (Muster: „Welche Winkel sind gleich groß?“); kein Datenfeld',
+           f'\\begin{{pfaufg}}{{}}{{{nr}.}}{{}}', a.text]
+    if a.optionen:
+        out.append('\\par\\smallskip\\noindent' + ''.join(
+            f'\\pfkreuz{{{"ABCD"[i]}}}{{{o}}}' for i, o in enumerate(a.optionen[:4])))
+    rechts = ('\\vspace{3mm}' + a.antwort) if a.antwort else '\\karo{2}'
+    if a.abb:
+        out.append('\\gzwei{' + a.abb + '}{' + rechts + '}')
+    elif a.antwort:
+        out.append('\\hfill ' + a.antwort)
+    else:
+        out.append('\\karo{2}')
+    fuss = a.kurz
+    if a.kreuz and a.optionen:
+        fuss = a.kurz
+    out.append(f'\\fusshilfe{{\\mbox{{{nr}:~{nur_ergebnis(fuss, latex=True) if fuss else ""}}}}}')
+    out.append('\\end{pfaufg}')
+    return '\n'.join(out), a
+
+
+def p_echt_tex(D, r, nr, heraus, faktor=1.0):
+    """Echte Aufgabe mit anderen Zahlen (msa/mehr-p10.csv, auf_blatt = ja): Marke mit Fundstelle und
+    Stern, Wortlaut, Skizze als Text links, Karo rechts; Fuß mit dem Ergebnis."""
+    eid = r.get('eltern_id', '')
+    h = [x['id'] for x in heraus if x.get('eltern_id') == eid]
+    out = [f'% {r["id"]} (Original {eid}, Schwere {r["schwere"]}, rang {r.get("rang", "")}; herausgelöste Fassung: '
+           + (', '.join(h) if h else 'keine') + ')']
+    text, optionen = mehr_kreuz((r.get('wortlaut') or '').strip())
+    luecke = '___' in text
+    t = tx(text.replace('___', '\x00')).replace('\x00', '\\linie{25mm}')
+    marke = mehr_marke(r) + ('\\,$\\star$' if stern_fuer(D, eid) else '')
+    out += [f'\\begin{{pfaufg}}{{{marke}}}{{{nr}.}}{{}}', t]
+    ergebnisse, _ = p_ergebnis(r)
+    rechnet = bool(re.search(r'\d', r.get('loesung') or ''))
+    n = max(1, round(max(2, min(4, mehr_schritte(r) + 1)) * faktor))
+    if optionen:
+        rechts = '\\par\\smallskip\\noindent' + ''.join(f'\\pfkreuz{{{"ABCD"[i]}}}{{{tx(o)}}}' for i, o in enumerate(optionen[:4]))
+    elif luecke:
+        rechts = ''
+    elif not rechnet:
+        lhs = re.split(r'\s*(=|≈)\s*', ergebnisse[0])[0] if ergebnisse else ''
+        rechts = '\\hfill ' + tx(lhs) + ' $=$\\linie{30mm}'
+    else:
+        rechts = f'\\karo{{{n}}}'
+    if r.get('abbildung', '').strip():
+        out.append('% SETZER: fehlt – Skizze als TikZ (Spalte abbildung ist Prosa); hier als Text kursiv')
+        out.append('\\gzwei{' + p_skizze(r['abbildung'].strip()) + '}{' + (rechts or f'\\karo{{{n}}}') + '}')
+    elif rechts:
+        out.append(rechts)
+    fuss = '; '.join(tx(mehr_fusswert(e, optionen, r)) for e in ergebnisse)
+    if fuss:
+        out.append(f'\\fusshilfe{{\\mbox{{{nr}:~{fuss}}}}}')
+    out.append('\\end{pfaufg}')
+    return '\n'.join(out)
+
+
+def p_ergebnis(r):
+    """Aus der Spalte loesung: (Ergebnisse, Weg) für die Lösungsdatei (gemeinsam.md „Lösungen“: links das
+    gefragte Ergebnis, Begründen: das Urteil). Teile durch „|“ sind Teilfragen; Klammern fallen weg;
+    „;“, „⇒“ und „:“ trennen Schritte; Ergebnis = letzte Gleichung als „Name op Wert“, ohne Gleichung
+    der Halbsatz nach „daher/also/somit/deshalb“."""
+    lo = (r.get('loesung') or '').strip()
+    ergebnisse = []
+    for teil in [t.strip() for t in lo.split('|') if t.strip()]:
+        t = re.sub(r'\s*\([^()]*\)', '', teil).strip()
+        schritt = re.split(r'\s*[;⇒:]\s*', t)[-1].strip()
+        segs = re.split(r'\s*(=|≈)\s*', schritt)
+        if len(segs) >= 3:
+            ergebnisse.append(f'{segs[0]} {segs[-2]} {segs[-1]}')
+        else:
+            m = re.search(r'\b(?:daher|also|somit|deshalb)\s+(.*)$', schritt)
+            ergebnisse.append((m.group(1) if m else schritt).rstrip('.'))
+    return ergebnisse, lo.replace(' | ', '; ')
+
+
+def p_teil(iid):
+    """Stelle im Heft aus der id: 2026-FOR-B1i -> 1i, 2023-OS-K7a -> 7a."""
+    m = re.match(r'^\d{4}-[A-Z]+-[A-Z](\d+[a-z]?)', iid)
+    return m.group(1) if m else iid
+
+
+def p_fundstellen(D, ids, letzte5):
+    """Fundstellentabelle (pruefung.md § 5): oben die Jahre jüngstes … jüngstes−10, 2026 als „26 FOR“
+    bzw. „26 EBR“, wenn das Heft nach Kurs getrennt ist; darunter je Jahr die Stellen, leer, wo nichts
+    dran kam."""
+    j_max = max(letzte5)
+    spalten = []
+    for j in range(j_max, j_max - 11, -1):
+        papiere = sorted({D.kat[i]['papier'] for i in ids if i in D.kat and int(D.kat[i]['jahr']) == j})
+        kurs = [p for p in papiere if p in ('FOR', 'EBR')]
+        if kurs:
+            for p in kurs:
+                spalten.append((j, p, f'{str(j)[2:]} {p}'))
+        else:
+            spalten.append((j, '', str(j)[2:]))
+    zellen = []
+    for j, p, _ in spalten:
+        st = sorted({p_teil(i) for i in ids if i in D.kat and int(D.kat[i]['jahr']) == j
+                     and (not p or D.kat[i]['papier'] == p)}, key=lambda s: (int(re.sub(r'\D', '', s) or 0), s))
+        zellen.append(' '.join(st))
+    return ('\\pfblattende{%d}{' % len(spalten) + ' & '.join(s[2] for s in spalten) + '}{'
+            + ' & '.join(zellen) + '}')
+
+
+def p_blatt_tex(D, einheit, kenn, stufen_daten, ausschnitt, fund, faktor=1.0):
+    out = [KOPF.replace('\\begin{document}', P_PRAEAMBEL + '\\begin{document}'), '\\pfheftstil',
+           f'\\pflaufkopf[P10 \\pkt{{}} Prüfung]{{{tx(einheit)}}}{{{kenn}}}\\pfseitevon',
+           f'\\pfheftkopf{{{tx(einheit)}}}{{}}',
+           '\\pfstufenzeile{' + ' \\pkt{} '.join(tx(s['name']) for s in stufen_daten) + '}']
+    nr = 0
+    for s in stufen_daten:
+        out.append(f'\n% ===================== Stufe: {s["name"]} =====================')
+        out.append(p_stufenkopf(s['name'], s['jahre']))
+        if s['einstieg']:
+            nr += 1
+            t, a = p_einstieg_tex(D, s['einstieg'], nr, s['name'])
+            s['nr_einstieg'], s['einstieg_a'] = nr, a
+            out.append(t)
+        else:
+            out.append('% SETZER: fehlt – keine Bankzeile für den Einstieg (bank_sprossen leer oder ruhend)')
+        s['nr_echt'] = []
+        for r in s['echte']:
+            nr += 1
+            s['nr_echt'].append(nr)
+            out.append(p_echt_tex(D, r, nr, s['heraus'], faktor))
+        if not s['echte']:
+            out.append('% SETZER: fehlt – keine echte Aufgabe mit auf_blatt = ja in msa/mehr-p10.csv')
+    out.append('')
+    if fund:
+        out.append(fund + '%\n{' + ausschnitt + '}')
+    out.append('\\end{document}')
+    return '\n'.join(out)
+
+
+def p_loesung_tex(D, einheit, kenn, stufen_daten):
+    out = [KOPF.replace('\\begin{document}', P_PRAEAMBEL + '\\begin{document}'), '\\pfheftstil',
+           f'\\pflaufkopf[P10 \\pkt{{}} Prüfung]{{{tx(einheit)} \\pkt{{}} Lösungen}}{{{kenn}}}\\pfseitevon',
+           f'\\pfheftkopf{{{tx(einheit)}}}{{Lösungen}}',
+           '\\pfstufenzeile{' + ' \\pkt{} '.join(tx(s['name']) for s in stufen_daten) + '}']
+    for s in stufen_daten:
+        out.append('')
+        out.append(p_stufenkopf(s['name'], s['jahre']))
+        if s.get('einstieg_a'):
+            a = s['einstieg_a']
+            weg = '; '.join(a.zw) if a.zw else ''
+            out.append('\\begin{pfloesungb}{}')
+            out.append(f'\\lzb{{{s["nr_einstieg"]}.}}{{}}{{{a.kurz}}}{{{weg}}}')
+            out.append('\\end{pfloesungb}')
+        for nr, r in zip(s['nr_echt'], s['echte']):
+            ergebnisse, weg = p_ergebnis(r)
+            _, optionen = mehr_kreuz((r.get('wortlaut') or '').strip())
+            b = mehr_buchstabe(r, optionen)
+            erg = (b + ': ' if b else '') + '; '.join(tx(e) for e in ergebnisse)
+            out.append('\\begin{pfloesungb}{}')
+            out.append(f'\\lzb{{{nr}.}}{{}}{{{erg}}}{{{tx(weg)}}}')
+            out.append('\\end{pfloesungb}')
+    out.append('\\end{document}')
+    return '\n'.join(out)
+
+
+def p_uebersicht_tex(gl, einheiten, einheit, kenn, stufen_daten, kapitel_namen):
+    """Übersicht (gemeinsam.md „Übersicht und Serie“): Gruppen als Überschrift, je Einheit eine Zeile,
+    die gelieferte ▸ fett mit ihren Stufen eingerückt, Einheiten ohne Kern-Stufe grau (Rand);
+    davor „Vorher“, danach „Weiter“ = Nachbarkapitel in der Folge."""
+    out = [KOPF.replace('\\begin{document}', P_UEBERSICHT + '\\begin{document}'), '\\pfheftstil',
+           f'\\pflaufkopf[P10 \\pkt{{}} Prüfung]{{{tx(gl["name"])}}}{{{kenn}}}\\pfseitevon',
+           f'\\pfheftkopf{{{tx(gl["name"])}}}{{}}']
+    gruppen = [gn for gn, _ in gl['gruppen']] or ['']
+    for g in gruppen + [x['gruppe'] for x in einheiten.values() if x['gruppe'] not in gruppen]:
+        eins = [x for x in einheiten.values() if x['gruppe'] == g]
+        if not eins:
+            continue
+        if g:
+            out.append(f'\\bereich{{{tx(g)}}}')
+        for x in eins:
+            if x['name'] == einheit:
+                out.append(f'\\blhier{{{tx(x["name"])}}}')
+                for s in stufen_daten:
+                    out.append(f'\\stufe{{{tx(s["name"])}}}')
+            elif x['kern']:
+                out.append(f'\\bl{{{tx(x["name"])}}}')
+            else:
+                out.append(f'\\blrand{{{tx(x["name"])}}}')
+    vor, nach = kapitel_namen.get(gl['folge'] - 1), kapitel_namen.get(gl['folge'] + 1)
+    out.append('')
+    if vor:
+        out.append(f'\\par\\addvspace{{14pt}}\\noindent Vorher: {tx(vor)}\\par')
+    if nach:
+        out.append(('\\par\\noindent' if vor else '\\par\\addvspace{14pt}\\noindent') + f' Weiter: {tx(nach)}\\par')
+    out.append('\\end{document}')
+    return '\n'.join(out)
+
+
+def p_register(args, kenn, ordner, seiten, einheit, stufen_daten):
+    p_reg = os.path.join(BANK, 'bau', 'register.csv')
+    zeilen = open(p_reg, encoding='utf-8').read().splitlines()
+    pfad = os.path.relpath(ordner, BANK)
+    zeilen = [z for z in zeilen if not z.endswith(';' + pfad)]
+    ids = [r['id'] for s in stufen_daten for r in s['echte']]
+    bank = [s['einstieg']['id'] for s in stufen_daten if s['einstieg']]
+    best = (f'kapitel={args.kapitel}, art=p, einheit={einheit}, stufen={len(stufen_daten)}, '
+            f'echte={len(ids)}, ids={" ".join(ids)}, bank={" ".join(bank)}, seiten={seiten}'
+            + (f', schueler={args.schueler}' if args.schueler else ''))
+    commit = subprocess.run(['git', 'rev-parse', '--short', 'HEAD'], cwd=BANK, capture_output=True,
+                            text=True).stdout.strip()
+    zeilen.append(f'{kenn};{args.datum};{args.kapitel};P;{best};{commit};'
+                  f'pruefheft.py v0.6;Version 2026-10-11d;{pfad}')
+    open(p_reg, 'w', encoding='utf-8').write('\n'.join(zeilen) + '\n')
+
+
+def p_bau(args):
+    if not args.einheit:
+        sys.exit('--art p braucht --einheit')
+    D = Daten(args.mn, args.kapitel, 'p10')
+    gl = p_gliederung(D.mn, args.kapitel)
+    einheiten = p_einheiten(D, gl)
+    if not einheiten:
+        sys.exit(f'Gliederung {args.kapitel}: keine Stufe mit Zuschnitt')
+    einheit = p_wahl(list(einheiten), args.einheit, 'Zuschnitt der Gliederung')
+    alle_j = sorted({int(j) for j in D.pruefjahre})
+    letzte5 = alle_j[-5:]
+    mehr = p_mehr(D.mn, args.kapitel, einheit)
+    heraus = [r for r in D.heraus if (r.get('art') or '') == 'herausgeloest']
+    stufen_daten, ids = [], []
+    for z in einheiten[einheit]['stufen']:
+        name = z['stufe'].strip()
+        echte = sorted([r for r in mehr if r.get('stufe', '').strip() == name
+                        and r.get('auf_blatt', '').strip() == 'ja'], key=p_rang)
+        kat_ids = (z.get('katalog_ids') or '').split()
+        ids += kat_ids + [r['eltern_id'] for r in mehr if r.get('stufe', '').strip() == name and r.get('eltern_id')]
+        stufen_daten.append({'name': name, 'z': z, 'jahre': p_jahre(D, z, letzte5), 'einstieg': p_einstieg(D, z),
+                             'echte': echte, 'heraus': [h for h in heraus if h.get('stufe', '').strip() == name]})
+    ids = list(OrderedDict((i, 1) for i in ids))
+    namen = list(einheiten)
+    i = namen.index(einheit)
+    ausschnitt = (f'\\pfausschnitt{{{" \\pkt{} ".join(tx(n) for n in namen[:i])}}}{{{tx(einheit)}}}'
+                  f'{{{" \\pkt{} ".join(tx(n) for n in namen[i + 1:])}}}')
+    name = f'{args.kapitel}-p-{mehr_kurz(einheit)}'
+    ordner = args.aus or os.path.join(BANK, 'bau', 'pruefheft', f'{name}-{args.datum}')
+    kenn = g1_kennung(os.path.relpath(ordner, BANK))
+    arbeit = tempfile.mkdtemp(prefix='pruefheft-p-')
+    fund = p_fundstellen(D, ids, letzte5)
+    # Rechenraum: voller Karo; steht die Fundstellentabelle dann allein auf einer neuen Seite, kleinerer
+    # Karo (0,75, 0,5); hilft das nicht, bleibt der volle (Entscheidung wie Art mehr)
+    blatt, faktor_gesetzt = None, 1.0
+    for faktor in (1.0, 0.75, 0.5):
+        t = p_blatt_tex(D, einheit, kenn, stufen_daten, ausschnitt, fund, faktor)
+        e = xelatex(t, args.bb, 'probe', arbeit)
+        e0 = xelatex(p_blatt_tex(D, einheit, kenn, stufen_daten, ausschnitt, '', faktor), args.bb, 'probe0', arbeit)
+        if faktor == 1.0 or e['seiten'] <= e0['seiten'] or e['fehler']:
+            blatt, faktor_gesetzt = t, faktor
+        if e['seiten'] <= e0['seiten'] or e['fehler']:
+            break
+    loes = p_loesung_tex(D, einheit, kenn, stufen_daten)
+    ueb = p_uebersicht_tex(gl, einheiten, einheit, kenn, stufen_daten, p_kapitelnamen(D.mn))
+    os.makedirs(os.path.join(ordner, 'src'), exist_ok=True)
+    os.makedirs(os.path.join(ordner, 'pdf'), exist_ok=True)
+    bericht, seiten = [], 0
+    for nm, t in (('1-uebersicht', ueb), ('2-blatt', blatt), ('3-loesungen', loes)):
+        e = xelatex(t, args.bb, nm, arbeit)
+        with open(os.path.join(ordner, 'src', nm + '.tex'), 'w', encoding='utf-8') as f:
+            f.write(t)
+        if e['pdf']:
+            shutil.copy(e['pdf'], os.path.join(ordner, 'pdf', nm + '.pdf'))
+        if nm == '2-blatt':
+            seiten = e['seiten']
+        bericht.append(f'{nm}: {e["seiten"]} Seiten, Fehler {len(e["fehler"])}, '
+                       f'Missing character {e["missing"]}, Overfull {e["overfull"]}')
+        bericht += ['   ' + fl for fl in e['fehler'][:5]]
+    if not args.ohne_register:
+        p_register(args, kenn, ordner, seiten, einheit, stufen_daten)
+    print('\n'.join(bericht))
+    print('Ordner:', ordner)
+    print(f'Einheit: {einheit}; Kennung {kenn}; Stufen: ' + ' | '.join(
+        f'{s["name"]} ({", ".join(str(j) for j in s["jahre"]) or "–"}; Einstieg '
+        f'{s["einstieg"]["id"] if s["einstieg"] else "–"}; echte {len(s["echte"])})' for s in stufen_daten))
+    print('Fundstellen:', ' '.join(ids))
+    fehlt = sum(t.count('% SETZER: fehlt') for t in (blatt, loes, ueb))
+    print(f'Rechenraum: Faktor {faktor_gesetzt}; Blatt {seiten} Seiten')
+    print(f'SETZER: fehlt – {fehlt} Stellen im TeX (werkzeuge/pruefheft-p.md, Datenbedarf)')
+
+
 def main():
     ap = argparse.ArgumentParser(description='Prüfungsheft aus Daten setzen')
     ap.add_argument('--kapitel', required=True)
     ap.add_argument('--pruefung', choices=sorted(PROFIL), default='p10',
                     help='Prüfungsprofil: p10 (Vorgabe) oder abi-gk (Abitur Grundkurs)')
-    ap.add_argument('--art', choices=['normal', 'schwach', 'mehr'], default='normal',
-                    help='mehr: Mehr-Block einer Einheit aus msa/mehr-p10.csv (v0.5), braucht --einheit')
+    ap.add_argument('--art', choices=['normal', 'schwach', 'mehr', 'p'], default='normal',
+                    help='mehr: Mehr-Block einer Einheit aus msa/mehr-p10.csv (v0.5), braucht --einheit; '
+                         'p: Prüfungsblatt der Sorte P aus Daten (v0.6), braucht --einheit')
     ap.add_argument('--portion', type=int)
     ap.add_argument('--fokus')
-    ap.add_argument('--einheit', help='nur --art mehr: Einheit (Spalte einheit, genau oder eindeutiger Teil)')
-    ap.add_argument('--schueler', help='nur --art mehr: Vermerk im Register (Nummer, nie Name)')
+    ap.add_argument('--einheit', help='nur --art mehr/p: Einheit (Spalte einheit bzw. Zuschnitt, genau oder eindeutiger Teil)')
+    ap.add_argument('--schueler', help='nur --art mehr/p: Vermerk im Register (Nummer, nie Name)')
     ap.add_argument('--kurs', choices=['EBR', 'FOR'], default='FOR',
                     help='Heft ab 2026 nach Kurs (Beschluss 27); Vorgabe FOR')
     ap.add_argument('--seiten', type=int, default=2, help='Startmaß einer Portion in Seiten (Serie)')
@@ -5314,6 +5805,9 @@ def main():
 
     if args.art == 'mehr':
         mehr_bau(args)   # v0.5: eigener Weg, liest nur msa/mehr-p10.csv; bestehende Arten unberührt
+        return
+    if args.art == 'p':
+        p_bau(args)      # v0.6: Prüfungsblatt der Sorte P (drei Dateien); bestehende Arten unberührt
         return
     global D_AKT, FOKUS_LAUF
     FOKUS_LAUF = bool(args.fokus)

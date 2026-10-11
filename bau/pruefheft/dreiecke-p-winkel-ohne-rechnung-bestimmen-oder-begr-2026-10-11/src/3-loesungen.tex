@@ -1,0 +1,79 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+\newsavebox{\gbox}\newlength{\gLinks}
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr0.5\textwidth-\gEin-\mbpfnr\relax}%
+  \ifdim\wd\gbox>\dimexpr\gLinks-4mm\relax
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \par\addvspace{7pt}\Needspace*{\mbaufgabehoehe}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{7pt}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} Prüfung]{Winkel ohne Rechnung bestimmen oder begründen \pkt{} Lösungen}{NKW}\pfseitevon
+\pfheftkopf{Winkel ohne Rechnung bestimmen oder begründen}{Lösungen}
+\pfstufenzeile{Winkelsumme \pkt{} gleichschenkliges Dreieck \pkt{} rechten Winkel begründen}
+
+\Needspace*{0.25\textheight}\pfstufekopf{Winkelsumme}{letzte 5 Jahre: 2026 \pkt{} 2023 \pkt{} 2022}
+\begin{pfloesungb}{}
+\lzb{1.}{}{$57^\circ$}{$\gamma = 180^\circ - 52^\circ - 71^\circ$}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{2.}{}{$\beta$ = 112°}{$\beta$ = 180° $-$ 68° = 112°}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{3.}{}{$\gamma_1$ = 56,4°}{Im Dreieck ADC ist der Winkel bei D 90°: $\gamma_1$ = 90° $-$ 33,6° = 56,4°}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{4.}{}{$\delta$ = 56°}{$\sphericalangle$ACB = 90° $-$ 30° = 60° $\Rightarrow$ $\sphericalangle$ACD = 180° $-$ 60° = 120° $\Rightarrow$ $\delta$ = 180° $-$ 120° $-$ 4° = 56°}
+\end{pfloesungb}
+
+\Needspace*{0.25\textheight}\pfstufekopf{gleichschenkliges Dreieck}{letzte 5 Jahre: 2023}
+\begin{pfloesungb}{}
+\lzb{5.}{}{$46^\circ$}{$180^\circ - 2 \cdot 67^\circ$}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{6.}{}{BC = 7 cm; $\gamma$ = 50°}{BC = 7 cm ($\alpha$ = $\beta$ $\Rightarrow$ gleichschenklig); $\gamma$ = 180° $-$ 65° $-$ 65° = 50°}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{7.}{}{gleichschenklig mit Basis AB}{Winkel bei A und bei B im Dreieck ABF sind je 45°, daher gleichschenklig mit Basis AB}
+\end{pfloesungb}
+
+\Needspace*{0.25\textheight}\pfstufekopf{rechten Winkel begründen}{letzte 5 Jahre: 2025}
+\begin{pfloesungb}{}
+\lzb{8.}{}{$90^\circ$}{$\alpha$ und $\beta$ messen je $45^\circ$, zusammen $90^\circ$; nach der Winkelsumme bleiben für $\gamma$ $180^\circ - 90^\circ$}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{9.}{}{$\gamma$ = 90°}{AF = FC = DF = 28 cm $\Rightarrow$ Dreiecke AFD und CFD gleichschenklig-rechtwinklig $\Rightarrow$ je 45° bei D $\Rightarrow$ $\gamma$ = 45° + 45° = 90°}
+\end{pfloesungb}
+\end{document}

@@ -1,0 +1,121 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+\newsavebox{\gbox}\newlength{\gLinks}
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr0.5\textwidth-\gEin-\mbpfnr\relax}%
+  \ifdim\wd\gbox>\dimexpr\gLinks-4mm\relax
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \par\addvspace{7pt}\Needspace*{\mbaufgabehoehe}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{7pt}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} Prüfung]{Winkel ohne Rechnung bestimmen oder begründen}{NKW}\pfseitevon
+\pfheftkopf{Winkel ohne Rechnung bestimmen oder begründen}{}
+\pfstufenzeile{Winkelsumme \pkt{} gleichschenkliges Dreieck \pkt{} rechten Winkel begründen}
+
+% ===================== Stufe: Winkelsumme =====================
+\Needspace*{0.25\textheight}\pfstufekopf{Winkelsumme}{letzte 5 Jahre: 2026 \pkt{} 2023 \pkt{} 2022}
+% Einstieg aus der Bank: winkel-dreiecke-e3-k2-s1-v1 (grundfall, dritter Winkel mit ganzen Graden)
+% SETZER: fehlt – Schülerfrage zur Stufe (Muster: „Welche Winkel sind gleich groß?“); kein Datenfeld
+\begin{pfaufg}{}{1.}{}
+Im Dreieck ABC ist $\alpha = 52^\circ$ und $\beta = 71^\circ$. Wie groß ist $\gamma$?
+\hfill $\gamma$ = \leerfeld[°] 
+\fusshilfe{\mbox{1:~$57^\circ$}}
+\end{pfaufg}
+% 2026-FOR-B1i-m1 (Original 2026-FOR-B1i, Schwere I, rang 1; herausgelöste Fassung: 2026-FOR-B1i-h1)
+\begin{pfaufg}{nach~P10\\’26~\pkt{}~1i}{2.}{}
+Im abgebildeten Parallelogramm ist ein Winkel 68° groß. Bestimme den Winkel $\beta$.
+% SETZER: fehlt – Skizze als TikZ (Spalte abbildung ist Prosa); hier als Text kursiv
+\gzwei{\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm\relax}{\raggedright\small\itshape Skizze: Viereck (Parallelogramm): lange Seiten waagerecht, nach rechts geneigt; 68° unten links, $\beta$ unten rechts; nicht maßstabsgerecht}}{\karo{2}}
+\fusshilfe{\mbox{2:~112°}}
+\end{pfaufg}
+% 2022-OS-K5c-m1 (Original 2022-OS-K5c, Schwere I, rang 4; herausgelöste Fassung: 2022-OS-K5c-h1)
+\begin{pfaufg}{nach~P10\\’22~\pkt{}~5c}{3.}{}
+Gegeben ist ein Dreieck ABC, das nicht rechtwinklig ist. Die Höhe $h_c$ von C auf die Seite AB ist etwa 7,3 m lang; ihr Fußpunkt heißt D. Die Seite b = AC ist 13,2 m lang, der Winkel bei B ist 49° groß. Der Winkel bei C zwischen AC und der Höhe heißt $\gamma_1$. Ermittle die Größe des Winkels $\gamma_1$. Gegeben: $\alpha$ $\approx$ 33,6°.
+% SETZER: fehlt – Skizze als TikZ (Spalte abbildung ist Prosa); hier als Text kursiv
+\gzwei{\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm\relax}{\raggedright\small\itshape Skizze: Dreieck: A links, B rechts, C oben; Höhe $h_c$ gestrichelt von C nach D auf AB, rechter Winkel bei D; $\alpha$ bei A, $\gamma_1$ bei C zwischen AC und $h_c$; nicht maßstabsgerecht}}{\karo{2}}
+\fusshilfe{\mbox{3:~56,4°}}
+\end{pfaufg}
+% 2018-OS-K4b-m1 (Original 2018-OS-K4b, Schwere II, rang 10; herausgelöste Fassung: 2018-OS-K4b-h1)
+\begin{pfaufg}{nach~P10\\’18~\pkt{}~4b}{4.}{}
+Lea will die Höhe eines Berges bestimmen. Auf der Bergspitze C steht eine 10,0 m hohe Aussichtsplattform, ihre Spitze heißt D. Lea peilt von einem Punkt A aus, der 1,6 m über dem Boden liegt. Zur Bergspitze C misst sie gegenüber der Waagerechten 30°, zur Plattformspitze D 34°. B ist der Punkt senkrecht unter C auf der Höhe von A; bei B ist ein rechter Winkel. Der Winkel zwischen den beiden Peillinien heißt $\gamma$, der Winkel bei D im Dreieck ACD heißt $\delta$. Lea sagt: „Der Winkel $\delta$ ist 56° groß.“ Begründe, dass das stimmt. Gegeben: $\gamma$ = 4°.
+% SETZER: fehlt – Skizze als TikZ (Spalte abbildung ist Prosa); hier als Text kursiv
+\gzwei{\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm\relax}{\raggedright\small\itshape Skizze: Lageskizze: A links; waagerechte Linie AB nach rechts, rechter Winkel bei B; C senkrecht über B, D über C; Peillinien AC (30°) und AD (34°); $\gamma$ zwischen den Peillinien bei A, $\delta$ bei D; nicht maßstabsgerecht}}{\karo{3}}
+\fusshilfe{\mbox{4:~56°}}
+\end{pfaufg}
+
+% ===================== Stufe: gleichschenkliges Dreieck =====================
+\Needspace*{0.25\textheight}\pfstufekopf{gleichschenkliges Dreieck}{letzte 5 Jahre: 2023}
+% Einstieg aus der Bank: winkel-dreiecke-e3-k2-s3-v1 (sprosse, gleichschenklig aus dem Basiswinkel)
+% SETZER: fehlt – Schülerfrage zur Stufe (Muster: „Welche Winkel sind gleich groß?“); kein Datenfeld
+\begin{pfaufg}{}{5.}{}
+Ein gleichschenkliges Dreieck hat zwei Basiswinkel von je $67^\circ$. Wie groß ist der Winkel an der Spitze?
+\hfill \leerfeld[°] 
+\fusshilfe{\mbox{5:~$46^\circ$}}
+\end{pfaufg}
+% 2023-OS-B1g-m1 (Original 2023-OS-B1g, Schwere I, rang 2; herausgelöste Fassung: 2023-OS-B1g-h2)
+\begin{pfaufg}{nach~P10\\’23~\pkt{}~1g}{6.}{}
+Im Dreieck ABC sind die Winkel bei A und bei B je 65° groß; die Seite AC ist 7 cm lang. Gib die Länge der Seite BC an. Gib die Größe des Winkels $\gamma$ an.
+% SETZER: fehlt – Skizze als TikZ (Spalte abbildung ist Prosa); hier als Text kursiv
+\gzwei{\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm\relax}{\raggedright\small\itshape Skizze: Dreieck: A links unten, B rechts unten, C oben; 65° bei A und bei B; AC = 7 cm; $\gamma$ bei C; nicht maßstabsgerecht}}{\karo{3}}
+\fusshilfe{\mbox{6:~7 cm; 50°}}
+\end{pfaufg}
+% 2023-OS-K7a-m1 (Original 2023-OS-K7a, Schwere II, rang 6; herausgelöste Fassung: 2023-OS-K7a-h2)
+\begin{pfaufg}{nach~P10\\’23~\pkt{}~7a}{7.}{}
+Gegeben ist das Dreieck ABC. Der Punkt F liegt auf der Seite AC, und BF steht senkrecht auf AC. Die Seite AB ist 128,9 cm lang. Bei B teilt BF den Winkel in 58° (zwischen BC und BF) und 45° (zwischen BF und BA). Der Winkel bei A ist 45° groß. Begründe, dass das Dreieck ABF gleichschenklig ist.
+% SETZER: fehlt – Skizze als TikZ (Spalte abbildung ist Prosa); hier als Text kursiv
+\gzwei{\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm\relax}{\raggedright\small\itshape Skizze: Dreieck: C links unten, A rechts, B oben; F auf CA, BF mit rechtem Winkel bei F; bei B 58° (links) und 45° (rechts); 45° bei A; Dreieck ABF schraffiert; nicht maßstabsgerecht}}{\karo{2}}
+\fusshilfe{\mbox{7:~gleichschenklig mit Basis AB}}
+\end{pfaufg}
+
+% ===================== Stufe: rechten Winkel begründen =====================
+\Needspace*{0.25\textheight}\pfstufekopf{rechten Winkel begründen}{letzte 5 Jahre: 2025}
+% Einstieg aus der Bank: winkel-dreiecke-e3-k2-s9-v1 (sprosse, rechten Winkel begründen (zwei Basiswinkel 45°))
+% SETZER: fehlt – Schülerfrage zur Stufe (Muster: „Welche Winkel sind gleich groß?“); kein Datenfeld
+\begin{pfaufg}{}{8.}{}
+Im Dreieck ABC sind die Winkel bei A und bei B je halb so groß wie ein rechter Winkel. Begründe, dass der Winkel bei C ein rechter ist.
+\karo{2}
+\fusshilfe{\mbox{8:~$90^\circ$}}
+\end{pfaufg}
+% 2025-OS-K2c-m1 (Original 2025-OS-K2c, Schwere II, rang 5; herausgelöste Fassung: 2025-OS-K2c-h2)
+\begin{pfaufg}{nach~P10\\’25~\pkt{}~2c\,$\star$}{9.}{}
+Ein Drachenviereck ABCD (A links, D oben, C rechts, B unten) hat die Diagonalen AC = 56 cm und BD = 96 cm. Sie schneiden sich in F im rechten Winkel. Die Strecke DF ist 28 cm lang. Der Winkel bei D heißt $\gamma$. Begründe, dass $\gamma$ = 90° ist.
+% SETZER: fehlt – Skizze als TikZ (Spalte abbildung ist Prosa); hier als Text kursiv
+\gzwei{\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm\relax}{\raggedright\small\itshape Skizze: Viereck (Drachenviereck): D oben, B unten, A links, C rechts; Diagonalen AC waagerecht, BD senkrecht, Schnittpunkt F mit rechtem Winkel; DF = 28 cm; $\gamma$ bei D; nicht maßstabsgerecht}}{\karo{3}}
+\fusshilfe{\mbox{9:~90°}}
+\end{pfaufg}
+
+\pfblattende{11}{26 FOR & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17 & 16}{1i & 2c &  & 1g 2a 7a & 5c & 1i &  &  & 4b & 4a & }%
+{\pfausschnitt{Länge mit Pythagoras \pkt{} Seite oder Winkel mit sin, cos, tan \pkt{} Seite im allgemeinen Dreieck (Sinussatz) \pkt{} Vierecke: Symmetrie und Eigenschaften}{Winkel ohne Rechnung bestimmen oder begründen}{Symmetrie}}
+\end{document}
