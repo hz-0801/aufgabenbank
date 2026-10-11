@@ -1,5 +1,7 @@
 # Plan – Prüfungsblatt Symmetrie (NUB)
 
+> Nachzug 12.10.: Blatt „Vierecke“ mit zwei Stufen (Eigenschaften: welche Aussage gilt · Symmetrieachsen zählen), Raute und 2026-FOR-B1c aufgenommen – siehe bericht.md „Nachzug 12.10.“; unten der Stand vom 11.10.
+
 Grundlage: mathe-nachhilfe pruefung.md § 5, gemeinsam.md, msa/gliederung/dreiecke.md
 Z. 102–108, Zuschnitt msa/skript-zuschnitt-p10.md Z. 31–33. Rand-Einheit, Blatt kurz.
 

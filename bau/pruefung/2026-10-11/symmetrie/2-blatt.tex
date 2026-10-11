@@ -1,54 +1,85 @@
 \documentclass[11pt]{article}
 \usepackage{mathblatt}
 % Prüfungsblatt nach mathe-nachhilfe pruefung.md § 5 (Runde Dreiecke, 11.10.2026), Hand-Satz; Präambel des Setzers.
+% Nachzug 12.10. nach befund-kritiker-2026-10-11.md: Blatt heißt „Vierecke“ (Lehrer 11.10.: Raute und 2026-FOR-B1c aus Winkel hierher);
+% Stufen Eigenschaften: welche Aussage gilt · Symmetrieachsen zählen; Form aus T2U; nur Vierecke auf dem Blatt.
 \input{praeambel}
 \newcommand{\kennung}{NUB}
-\newcommand{\figbox}[2]{\begin{minipage}[b]{0.24\linewidth}\centering{\footnotesize #1}\par\smallskip #2\par\smallskip\linie{10mm}\ Achsen\end{minipage}}
+\makeatletter
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+\makeatother
+\newcommand{\fall}[2]{\begin{minipage}[t]{0.24\linewidth}\vspace{0pt}\makebox[\mbpfteil][l]{\textbf{#1}}\begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\vspace{0pt}#2\end{minipage}\end{minipage}}
 
 \begin{document}
 \pfheftstil
-\pfheftkopf[\kennung]{Symmetrie}{P10}
+\pflaufkopf[P10 \pkt{} Prüfung]{Vierecke}{\kennung}\pfseitevon
+\pfheftkopf{Vierecke}{}
+\pfstufenzeile{Eigenschaften: welche Aussage gilt \pkt{} Symmetrieachsen zählen}
 
-\Needspace*{0.25\textheight}\pfstufekopf{Symmetrieachsen zählen}{geprüft 2025 \pkt{} 2022}
+% ===================== Stufe 1 =====================
+\Needspace*{0.25\textheight}\pfstufekopf{Eigenschaften: welche Aussage gilt}{letzte 5 Jahre: 2026}
 
-% Bank symmetrie-abbildungen-e2-k2-s2-v3, s3-v1, s3-v3, s4-v3 (Päckchen: eine, zwei, drei, keine Achse)
+% neu 12.10. (Schülerfrage, Kritiker): welche Vierecke sind Trapeze – parallele Seiten markieren
 \begin{pfaufg}{}{1.}{}
-Wie viele Symmetrieachsen hat das Dreieck oder das Viereck?\par\medskip\noindent
-\figbox{a) gleichschenklig}{\begin{tikzpicture}[line width=0.7pt,scale=0.42]\draw (0,0) -- (3,0) -- (1.5,3.6) -- cycle;\end{tikzpicture}}\hfill
-\figbox{b) Raute}{\begin{tikzpicture}[line width=0.7pt,scale=0.42]\draw (0,1.6) -- (2.2,0) -- (4.4,1.6) -- (2.2,3.2) -- cycle;\end{tikzpicture}}\hfill
-\figbox{c) gleichseitig}{\begin{tikzpicture}[line width=0.7pt,scale=0.42]\draw (0,0) -- (3.6,0) -- (1.8,3.118) -- cycle;\end{tikzpicture}}\hfill
-\figbox{d) alle Seiten verschieden}{\begin{tikzpicture}[line width=0.7pt,scale=0.42]\draw (0,0) -- (4.4,0) -- (1.2,2.8) -- cycle;\end{tikzpicture}}
-\fusshilfe{\mbox{1:~a) 1; b) 2; c) 3; d) 0}}
+Ein Trapez hat mindestens zwei parallele Seiten. Markiere in jedem Viereck die parallelen Seiten. Kreuze an, welche Vierecke Trapeze sind.\par\medskip\noindent
+\fall{a)}{\begin{tikzpicture}[line width=0.7pt,baseline=(current bounding box.north)]\draw (0,0)--(2.4,0)--(1.9,1.3)--(0.6,1.3)--cycle;\end{tikzpicture}\par\smallskip\kk{Trapez}}\hfill
+\fall{b)}{\begin{tikzpicture}[line width=0.7pt,baseline=(current bounding box.north)]\draw (0,0)--(2.0,0)--(2.6,1.3)--(0.6,1.3)--cycle;\end{tikzpicture}\par\smallskip\kk{Trapez}}\hfill
+\fall{c)}{\begin{tikzpicture}[line width=0.7pt,baseline=(current bounding box.north)]\draw (1.0,0)--(2.0,0.9)--(1.0,1.5)--(0,0.9)--cycle;\end{tikzpicture}\par\smallskip\kk{Trapez}}\hfill
+\fall{d)}{\begin{tikzpicture}[line width=0.7pt,baseline=(current bounding box.north)]\draw (0,0.7)--(1.3,0)--(2.6,0.7)--(1.3,1.4)--cycle;\end{tikzpicture}\par\smallskip\kk{Trapez}}
+\fusshilfe{\mbox{1:~a), b), d) (c ist ein Drachen)}}
 \end{pfaufg}
 
-% Bank symmetrie-abbildungen-e2-k2-s4-v1 (Fragerichtung umgekehrt, ohne Bild)
+% Bank winkel-dreiecke-e3-k2-s10-v2 (Raute; aus Winkel hierher, Lehrer 11.10.), Einstieg mit demselben Handgriff wie 2026-FOR-B1c
 \begin{pfaufg}{}{2.}{}
-Kreuze an, welches Viereck keine Symmetrieachse hat.\par\smallskip
-\pfkreuz{A}{Rechteck}\pfkreuz{B}{Parallelogramm}\pfkreuz{C}{Raute}
+Ein Satz beginnt so: „In jeder Raute …“ Kreuze an, wie er richtig weitergeht.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.8]\draw (0,0.9)--(1.6,0)--(3.2,0.9)--(1.6,1.8)--cycle;\end{tikzpicture}}{%
+\pfkreuzab{A}{sind benachbarte Winkel gleich groß.}\smallskip\pfkreuzab{B}{sind gegenüberliegende Winkel gleich groß.}\smallskip\pfkreuzab{C}{sind alle Winkel gleich groß.}}
 \fusshilfe{\mbox{2:~B}}
 \end{pfaufg}
 
-% 2022-OS-B1i, herausgelöst (eigener Wortlaut; vier statt sechs Optionen, gemeinsam.md „Satz“)
-\begin{pfaufg}{nach~P10\\’22~\pkt{}~1i}{3.}{}
-Diese Figur ist ein gleichschenkliges Trapez. Kreuze an, wie viele Symmetrieachsen die Figur hat.
-\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.9]\filldraw[fill=black!15] (0,0) -- (3,0) -- (2.5,1.6) -- (0.5,1.6) -- cycle;\end{tikzpicture}}{%
-\pfkreuz{A}{0}\pfkreuz{B}{1}\pfkreuz{C}{2}\pfkreuz{D}{4}}
+% 2026-FOR-B1c (EBR-Zwilling 2026-EBR-B1c), eigener Wortlaut; keine Zahlen
+\begin{pfaufg}{nach~P10\\’26~\pkt{}~1c}{3.}{}
+Kreuze an, welche Aussage für jedes Trapez gilt.\par\smallskip
+\pfkreuzab{A}{Alle vier Winkel sind gleich groß.}
+\pfkreuzab{B}{Mindestens zwei Seiten sind zueinander parallel.}
+\pfkreuzab{C}{Alle vier Seiten sind gleich lang.}
 \fusshilfe{\mbox{3:~B}}
 \end{pfaufg}
 
-% 2025-OS-K2a, herausgelöst (nur die Symmetrieachsen; BF und AB im Blatt „Länge mit Pythagoras“, Maße weggelassen)
-\begin{pfaufg}{nach~P10\\’25~\pkt{}~2a}{4.}{}
+% ===================== Stufe 2 =====================
+\Needspace*{0.25\textheight}\pfstufekopf{Symmetrieachsen zählen}{letzte 5 Jahre: 2025 \pkt{} 2022}
+
+% Bank symmetrie-abbildungen-e2-k2-s2…s4 (Päckchen), neu als Vierecke mit Einzeichnen (Kritiker: Figur links, Zahl rechts, untereinander)
+\begin{pfaufg}{}{4.}{}
+Zeichne alle Symmetrieachsen ein. Schreibe auf, wie viele es sind.
+\gzwei{\gteil{a)}{\smallskip\begin{tikzpicture}[line width=0.7pt]\draw (0,0) rectangle (2.6,1.4);\end{tikzpicture}}}{\vspace{5mm}\linie{10mm}\ Achsen}
+\gzwei{\gteil{b)}{\smallskip\begin{tikzpicture}[line width=0.7pt]\draw (0,0.8)--(1.5,0)--(3.0,0.8)--(1.5,1.6)--cycle;\end{tikzpicture}}}{\vspace{5mm}\linie{10mm}\ Achsen}
+\gzwei{\gteil{c)}{\smallskip\begin{tikzpicture}[line width=0.7pt]\draw (0,0)--(2.2,0)--(2.9,1.4)--(0.7,1.4)--cycle;\end{tikzpicture}}}{\vspace{5mm}\linie{10mm}\ Achsen}
+\gzwei{\gteil{d)}{\smallskip\begin{tikzpicture}[line width=0.7pt]\draw (0,0) rectangle (1.6,1.6);\end{tikzpicture}}}{\vspace{5mm}\linie{10mm}\ Achsen}
+\fusshilfe{\mbox{4:~a) 2; b) 2; c) 0; d) 4}}
+\end{pfaufg}
+
+% 2022-OS-B1i, herausgelöst (eigener Wortlaut; vier statt sechs Optionen, gemeinsam.md „Satz“); keine Zahlen
+\begin{pfaufg}{nach~P10\\’22~\pkt{}~1i}{5.}{}
+Diese Figur ist ein gleichschenkliges Trapez. Kreuze an, wie viele Symmetrieachsen die Figur hat.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.9]\filldraw[fill=black!15] (0,0) -- (3,0) -- (2.5,1.6) -- (0.5,1.6) -- cycle;\end{tikzpicture}}{%
+\vspace{3mm}\pfkreuz{A}{0}\pfkreuz{B}{1}\pfkreuz{C}{2}\pfkreuz{D}{4}}
+\fusshilfe{\mbox{5:~B}}
+\end{pfaufg}
+
+% 2025-OS-K2a, herausgelöst (nur die Symmetrieachsen; BF und AB im Blatt Pythagoras, Maße weggelassen); keine Zahlen auf dem Blatt
+\begin{pfaufg}{nach~P10\\’25~\pkt{}~2a}{6.}{}
 Die Figur zeigt das Drachenviereck $ABCD$. Seine Diagonalen $\overline{AC}$ und $\overline{BD}$ schneiden sich im Punkt $F$ im rechten Winkel. Kreuze an, wie viele Symmetrieachsen das Drachenviereck hat.
 \gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.042]
-\coordinate (A) at (-25,0);\coordinate (C) at (25,0);\coordinate (D) at (0,25);\coordinate (B) at (0,-55);\coordinate (F) at (0,0);
-\draw (A) -- (B) -- (C) -- (D) -- cycle;\draw[dashed] (A) -- (C);\draw[dashed] (B) -- (D);\mbrwmarke{(F)}{(C)}{(D)}
+\coordinate (A) at (-28,0);\coordinate (C) at (28,0);\coordinate (D) at (0,28);\coordinate (B) at (0,-68);\coordinate (F) at (0,0);
+\draw (A) -- (B) -- (C) -- (D) -- cycle;\draw[dashed] (A) -- (C);\draw[dashed] (B) -- (D);\pfrw[7]{(F)}{0}
 \node[font=\small,anchor=east] at (A) {$A$};\node[font=\small,anchor=north] at (B) {$B$};\node[font=\small,anchor=west] at (C) {$C$};\node[font=\small,anchor=south] at (D) {$D$};\node[font=\small,anchor=north east] at (F) {$F$};
 \end{tikzpicture}}{%
-\pfkreuz{A}{0}\pfkreuz{B}{1}\pfkreuz{C}{2}\pfkreuz{D}{4}}
-\fusshilfe{\mbox{4:~B}}
+\vspace{3mm}\pfkreuz{A}{0}\pfkreuz{B}{1}\pfkreuz{C}{2}\pfkreuz{D}{4}}
+\fusshilfe{\mbox{6:~B}}
 \end{pfaufg}
 
 \pfblattende{11}{26 FOR & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17 & 16}%
-{ & 2a & & & 1i & 1j & & & & & }%
-{Weiter: Flächeninhalt und Umfang}
+{1c & 2a & & & 1i & 1j & & & & & 1e}%
+{\pfausschnitt{Winkel \pkt{} Sinussatz}{Vierecke}{}}
 \end{document}

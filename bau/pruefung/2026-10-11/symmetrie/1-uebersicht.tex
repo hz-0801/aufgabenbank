@@ -1,7 +1,8 @@
 \documentclass[11pt]{article}
 \usepackage{mathblatt}
-% Übersicht nach mathe-nachhilfe gemeinsam.md „Übersicht und Serie“; Einheiten in der Lernfolge nach pruefung.md § 2 (Dreiecke, 11.10.); „Vorher“ entfällt (nichts Bestellbares).
+% Übersicht nach mathe-nachhilfe gemeinsam.md „Übersicht und Serie“; Einheiten in der Lernfolge nach pruefung.md § 2 (Dreiecke, 11.10.); „Vorher“ entfällt (nichts Bestellbares). Gruppen nach gemeinsam.md (Lehrer 11.10.); Form aus T2U (Nachzug 12.10.).
 \newcommand{\kennung}{NUB}
+\newcommand{\pkt}{\textperiodcentered{}}
 \newcommand{\bereich}[1]{\par\addvspace{14pt}\noindent{\large\bfseries #1}\par\nobreak\vspace{4pt}}
 \newcommand{\bl}[1]{\par\noindent #1\par\vspace{3pt}}
 \newcommand{\blrand}[1]{\par\noindent{\color{mbgrau}#1}\par\vspace{3pt}}
@@ -9,16 +10,18 @@
 \newcommand{\stufe}[1]{\par\noindent\hspace*{1.5em}{\small #1}\par\vspace{2pt}}
 \begin{document}
 \pfheftstil
-\pfheftkopf[\kennung]{Dreiecke}{P10}
+\pflaufkopf[P10 \pkt{} Prüfung]{Dreiecke}{\kennung}\pfseitevon
+\pfheftkopf{Dreiecke}{}
 
-\bereich{Dreiecke}
-\bl{Länge mit Pythagoras}
-\bl{Seite oder Winkel mit sin, cos, tan}
-\bl{Winkel ohne Rechnung bestimmen oder begründen}
-\blrand{Seite im allgemeinen Dreieck, Sinussatz}
-\blhier{Symmetrie}
+\bereich{Rechtwinklige Dreiecke}
+\bl{Pythagoras}
+\bl{sin, cos, tan}
+\bereich{Alle Dreiecke und Vierecke}
+\bl{Winkel}
+\blrand{Sinussatz}
+\blhier{Vierecke}
+\stufe{Eigenschaften: welche Aussage gilt}
 \stufe{Symmetrieachsen zählen}
 
-\bereich{Weiter}
-\bl{Flächeninhalt und Umfang}
+\par\addvspace{14pt}\noindent Weiter: Flächeninhalt und Umfang\par
 \end{document}
