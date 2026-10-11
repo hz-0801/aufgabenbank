@@ -51,129 +51,80 @@
 \pfheftstil
 \pflaufkopf[P10 \pkt{} Prüfung]{Fläche und Umfang}{H37}\pfseitevon
 \pfheftkopf{Fläche und Umfang}{}
-\pfstufenzeile{Formel zur Figur \pkt{} Fläche oder Umfang berechnen \pkt{} Seite aus Fläche oder Umfang \pkt{} Figur erst zerlegen \pkt{} Anteil in Prozent}
+\pfstufenzeile{Formeln \pkt{} Fläche gesucht \pkt{} Umfang gesucht \pkt{} Formeln umstellen}
 
-% ===================== Stufe: Formel oder Term zur Figur =====================
-\Needspace*{0.16\textheight}\pfstufekopf{Formel zur Figur}{letzte 5 Jahre: 2025 \pkt{} 2024 \pkt{} 2022}
+% ===================== Stufe: Formeln =====================
+\Needspace*{0.16\textheight}\pfstufekopf{Formeln}{letzte 5 Jahre: 2024 \pkt{} 2022}
 % Schülerfrage der Stufe (Gliederung)
 \begin{pfaufg}{}{1.}{}
-Welche Formel passt? Schreibe nur die Formel auf, rechne nicht.
+In der Prüfung hast du die Formelsammlung. Auf welcher Seite stehen die Flächenformeln (Rechteck, Dreieck, Trapez, Kreis)? Schlag nach.
 \par\smallskip
-\par\noindent\makebox[\mbpfteil][l]{\textbf{a)}}Rechteck, Fläche\hfill\linie{30mm}
-\par\noindent\makebox[\mbpfteil][l]{\textbf{b)}}Dreieck, Fläche\hfill\linie{30mm}
-\par\noindent\makebox[\mbpfteil][l]{\textbf{c)}}Kreis, Umfang\hfill\linie{30mm}
-\par\noindent\makebox[\mbpfteil][l]{\textbf{d)}}Trapez, Fläche\hfill\linie{30mm}
-\par\fusshilfe{\mbox{1:~Fläche: zwei Längen mal; Umfang: einmal herum}}
+\par\noindent Seite\hfill\linie{30mm}
+\par\fusshilfe{\mbox{1:~nachschlagen (je nach Ausgabe)}}
 \end{pfaufg}
-% Einstieg aus der Bank: flaechen-e1-k2-s8-v1 (sprosse, Term zu Figur)
-\begin{pfaufg}{}{2.}{}
-Ein Rechteck ist doppelt so lang wie breit. Die Breite ist $x$. Schreibe einen Term für den Umfang des Rechtecks.
-\hfill \mbox{u = \leerfeld }
-\fusshilfe{\mbox{2:~$6x$}}
+% kein Einstieg: Gliederung „Einstieg: nein“ (pruefung.md § 5 „Eigene Aufgaben sparsam“)
+% 2024-OS-B1c-m1 (Original 2024-OS-B1c, Schwere I, rang 5; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’24~\pkt{}~1c}{2.}{}
+Ein gleichseitiges Dreieck hat die Seitenlänge a. Kreuze die Formel für seinen Umfang u an:
+\par\smallskip\noindent\pfkreuz{A}{$u=a\cdot a\cdot a$}\pfkreuz{B}{$u=a^3$}\pfkreuz{C}{$u=3\cdot a$}\pfkreuz{D}{$u=\tfrac{a}{3}$}
+\fusshilfe{\mbox{2:~3 · a}}
 \end{pfaufg}
-% 2025-OS-B1i-m1 (Original 2025-OS-B1i, Schwere I, rang 3; herausgelöste Fassung: keine)
+
+% ===================== Stufe: Fläche gesucht =====================
+\Needspace*{0.16\textheight}\pfstufekopf{Fläche gesucht}{letzte 5 Jahre: 2025 \pkt{} 2024 \pkt{} 2023 \pkt{} 2022}
+% keine Schülerfrage gesetzt (Gliederung: Schülerfrage, -Fälle, -Form, -Weg; oder Frage) – dann keine (12.10.)
+% kein Einstieg: Gliederung „Einstieg: nein“ (pruefung.md § 5 „Eigene Aufgaben sparsam“)
+% 2025-OS-B1i-m1 (Original 2025-OS-B1i, Schwere I, rang 2; herausgelöste Fassung: keine)
 \begin{pfaufg}{nach~P10\\’25~\pkt{}~1i}{3.}{}
 Die Abbildung zeigt ein Rechteck. Kreuze die Gleichung an, mit der man seinen gesamten Flächeninhalt berechnet:
 \gzwei{\begin{tikzpicture}[line width=0.8pt,font=\small]\draw (0,0) rectangle (3.2,1.8);\draw[line width=0.5pt] (0,1.2) -- (3.2,1.2);\node[above] at (1.6,1.8) {$a$};\node[right] at (3.2,1.5) {$b$};\node[right] at (3.2,0.6) {$c$};\end{tikzpicture}}{\gkreuzzeile{A}{$A=2\cdot(a+b+c)$}\gkreuzzeile{B}{$A=a+2\cdot a\cdot b$}\gkreuzzeile{C}{$A=a\cdot(b+c)$}\gkreuzzeile{D}{$A=a\cdot b\cdot c$}}
 \fusshilfe{\mbox{3:~C}}
 \end{pfaufg}
+% 2025-OS-B1e-m1 (Original 2025-OS-B1e, Schwere I, rang 3; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’25~\pkt{}~1e}{4.}{}
+Bestimme, wie viel Prozent der Kreisfläche grau gefärbt sind.
+\gzwei{\kreissektor[1.0]{125}{125°}}{\karo{2}}
+\fusshilfe{\mbox{4:~34,7 \%}}
+\end{pfaufg}
+% 2024-OS-K4a-m1 (Original 2024-OS-K4a, Schwere I, rang 6; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’24~\pkt{}~4a}{5.}{}
+Eine Firma stellt Kegel mit dem Radius r = 25 cm und der Höhe h = 60 cm her. Berechne den Flächeninhalt der Grundfläche eines Kegels.
+\gzwei{\kegel{0.9}{1.7}{r}{h}{}}{\karo{2}}
+\fusshilfe{\mbox{5:~1963,5 cm²}}
+\end{pfaufg}
 
-% ===================== Stufe: Grundfigur berechnen =====================
-\Needspace*{0.16\textheight}\pfstufekopf{Fläche oder Umfang berechnen}{letzte 5 Jahre: 2026 \pkt{} 2025 \pkt{} 2024 \pkt{} 2023}
-% Schülerfrage der Stufe (Gliederung)
-\begin{pfaufg}{}{4.}{}
-Fläche oder Umfang? Kreuze an, wo die Fläche gefragt ist.
-\par\smallskip
-\par\noindent\makebox[\mbpfteil][l]{\textbf{a)}}Teppich für ein Zimmer\hfill\kk{Fläche}
-\par\noindent\makebox[\mbpfteil][l]{\textbf{b)}}Zaun um ein Beet\hfill\kk{Fläche}
-\par\noindent\makebox[\mbpfteil][l]{\textbf{c)}}Farbe für eine Wand\hfill\kk{Fläche}
-\par\noindent\makebox[\mbpfteil][l]{\textbf{d)}}Bordüre um eine Tischdecke\hfill\kk{Fläche}
-\par\fusshilfe{\mbox{4:~a) und c)}}
-\end{pfaufg}
-% Einstieg aus der Bank: flaechen-e1-k2-s1-v1 (grundfall, A und u aus ganzen Zahlen)
-\begin{pfaufg}{}{5.}{}
-Ein Rechteck hat die Länge $a = 8$ cm und die Breite $b = 3$ cm. Berechne die Fläche und den Umfang des Rechtecks.
-\hfill \mbox{A = \leerfeld[cm²] , u = \leerfeld[cm] }
-\fusshilfe{\mbox{5:~$22$ cm}}
-\end{pfaufg}
+% ===================== Stufe: Umfang gesucht =====================
+\Needspace*{0.16\textheight}\pfstufekopf{Umfang gesucht}{letzte 5 Jahre: 2026 \pkt{} 2023}
+% keine Schülerfrage gesetzt (Gliederung: Schülerfrage, -Fälle, -Form, -Weg; oder Frage) – dann keine (12.10.)
+% kein Einstieg: Gliederung „Einstieg: nein“ (pruefung.md § 5 „Eigene Aufgaben sparsam“)
 % 2026-FOR-B1h-m1 (Original 2026-FOR-B1h, Schwere I, rang 1; herausgelöste Fassung: keine)
 \begin{pfaufg}{nach~P10\\’26~\pkt{}~1h}{6.}{}
 Ein Rechteck ist a = 4,5 cm lang und b = 2,5 cm breit. Gib seinen Umfang an.
-\karo{1}
+\gzwei{\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm\relax}{\small\itshape Skizze}}{\karo{2}}
 \fusshilfe{\mbox{6:~14 cm}}
 \end{pfaufg}
-% 2024-OS-K4a-m1 (Original 2024-OS-K4a, Schwere I, rang 6; herausgelöste Fassung: keine)
-\begin{pfaufg}{nach~P10\\’24~\pkt{}~4a}{7.}{}
-Eine Firma stellt Kegel mit dem Radius r = 25 cm und der Höhe h = 60 cm her. Berechne den Flächeninhalt der Grundfläche eines Kegels.
-\gzwei{\kegel{0.9}{1.7}{r}{h}{}}{\karo{1}}
-\fusshilfe{\mbox{7:~1963,5 cm²}}
+% 2023-OS-K2c-m1 (Original 2023-OS-K2c, Schwere II, rang 10; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’23~\pkt{}~2c\,$\star$}{7.}{}
+Gegeben ist ein Trapez mit den parallelen Seiten 24,20 m (unten) und 16,20 m (oben). Es ist 7,50 m hoch. Die beiden Winkel an der unteren Seite sind je 62° groß. Berechne den Umfang des Trapezes.
+\gzwei{\begin{tikzpicture}[line width=0.8pt,font=\small]\coordinate (A) at (0,0);\coordinate (B) at (4.2,0);\coordinate (C) at (3.5,1.3);\coordinate (D) at (0.7,1.3);\draw (A)--(B)--(C)--(D)--cycle;\draw[dashed,line width=0.5pt] (2.1,0)--(2.1,1.3);\pfrw[0.25]{(2.1,0)}{0}\node[right] at (2.1,0.65) {$h$};\pfwinkel[0.75][0.65]{(A)}{0}{62}{62^\circ}\pfwinkel[0.75][0.65]{(B)}{118}{180}{62^\circ}\node[below left] at (A) {$A$};\node[below right] at (B) {$B$};\node[above right] at (C) {$C$};\node[above left] at (D) {$D$};\end{tikzpicture}}{\karo{3}}
+\fusshilfe{\mbox{7:~57,4 m}}
 \end{pfaufg}
 
-% ===================== Stufe: rückwärts: Seite aus Fläche =====================
-\Needspace*{0.16\textheight}\pfstufekopf{Seite aus Fläche oder Umfang}{letzte 5 Jahre: 2023}
+% ===================== Stufe: Formeln umstellen =====================
+\Needspace*{0.16\textheight}\pfstufekopf{Formeln umstellen}{letzte 5 Jahre: 2023}
 % Schülerfrage der Stufe (Gliederung)
 \begin{pfaufg}{}{8.}{}
-Was ist gesucht? Stelle die Formel nach der gesuchten Größe um, rechne nicht.
+Stelle die Formel um, rechne nicht.
 \par\smallskip
-\par\noindent\makebox[\mbpfteil][l]{\textbf{a)}}Rechteck: A und a bekannt, b gesucht\hfill\linie{30mm}
-\par\noindent\makebox[\mbpfteil][l]{\textbf{b)}}Quadrat: A bekannt, a gesucht\hfill\linie{30mm}
-\par\noindent\makebox[\mbpfteil][l]{\textbf{c)}}Rechteck: u und a bekannt, b gesucht\hfill\linie{30mm}
-\par\fusshilfe{\mbox{8:~a) b = A : a; b) a = √A; c) b = u : 2 $-$ a}}
+\par\noindent Rechteck: A = a · b, nach a umgestellt\hfill\linie{30mm}
+\par\fusshilfe{\mbox{8:~a = A : b}}
 \end{pfaufg}
-% Einstieg aus der Bank: flaechen-e1-k2-s5-v1 (sprosse, Seite aus A)
-\begin{pfaufg}{}{9.}{}
-Ein Rechteck hat die Fläche $A = 56$ cm² und die Länge $a = 8$ cm. Wie lang ist die Breite $b$ des Rechtecks?
-\hfill \mbox{b = \leerfeld[cm] }
-\fusshilfe{\mbox{9:~$7$ cm}}
-\end{pfaufg}
+% kein Einstieg: Gliederung „Einstieg: nein“ (pruefung.md § 5 „Eigene Aufgaben sparsam“)
 % 2023-OS-B1c-m1 (Original 2023-OS-B1c, Schwere I, rang 7; herausgelöste Fassung: keine)
-\begin{pfaufg}{nach~P10\\’23~\pkt{}~1c}{10.}{}
+\begin{pfaufg}{nach~P10\\’23~\pkt{}~1c}{9.}{}
 Ein Rechteck ist 350 mm breit und hat den Flächeninhalt 38 500 mm². Gib seine Länge an.
-\karo{1}
-\fusshilfe{\mbox{10:~110 mm}}
-\end{pfaufg}
-
-% ===================== Stufe: Figur erst zerlegen oder Strecke erst berechnen =====================
-\Needspace*{0.16\textheight}\pfstufekopf{Figur erst zerlegen}{letzte 5 Jahre: 2023 \pkt{} 2022}
-% Schülerfrage der Stufe (Gliederung)
-\begin{pfaufg}{}{11.}{}
-Aus welchen Grundfiguren besteht die Figur? Schreibe sie auf, mit Plus oder Minus.
-\par\smallskip
-\par\noindent\makebox[\mbpfteil][l]{\textbf{a)}}Pool: Rechteck mit zwei Halbkreisen\hfill\linie{30mm}
-\par\noindent\makebox[\mbpfteil][l]{\textbf{b)}}Hausumriss: Quadrat mit Dach\hfill\linie{30mm}
-\par\noindent\makebox[\mbpfteil][l]{\textbf{c)}}Rasen um einen runden Turm\hfill\linie{30mm}
-\par\fusshilfe{\mbox{11:~zusammensetzen heißt plus, ein Loch heißt minus}}
-\end{pfaufg}
-% Einstieg aus der Bank: flaechen-e5-k1-s1-v1 (grundfall, zwei Rechtecke)
-\begin{pfaufg}{}{12.}{}
-Ein Beet hat die Form eines L. Es besteht aus zwei Rechtecken. Das erste Rechteck hat die Seiten $8$ m und $3$ m. Das zweite hat die Seiten $3$ m und $4$ m. Berechne die Fläche des Beets.
-\hfill \mbox{A = \leerfeld[m²] }
-\fusshilfe{\mbox{12:~$36$ m²}}
-\end{pfaufg}
-% 2023-OS-K2c-m1 (Original 2023-OS-K2c, Schwere II, rang 10; herausgelöste Fassung: keine)
-\begin{pfaufg}{nach~P10\\’23~\pkt{}~2c\,$\star$}{13.}{}
-Gegeben ist ein Trapez mit den parallelen Seiten 24,20 m (unten) und 16,20 m (oben). Es ist 7,50 m hoch. Die beiden Winkel an der unteren Seite sind je 62° groß. Berechne den Umfang des Trapezes.
-\gzwei{\begin{tikzpicture}[line width=0.8pt,font=\small]\coordinate (A) at (0,0);\coordinate (B) at (4.2,0);\coordinate (C) at (3.5,1.3);\coordinate (D) at (0.7,1.3);\draw (A)--(B)--(C)--(D)--cycle;\draw[dashed,line width=0.5pt] (2.1,0)--(2.1,1.3);\pfrw[0.25]{(2.1,0)}{0}\node[right] at (2.1,0.65) {$h$};\pfwinkel[0.75][0.65]{(A)}{0}{62}{62^\circ}\pfwinkel[0.75][0.65]{(B)}{118}{180}{62^\circ}\node[below left] at (A) {$A$};\node[below right] at (B) {$B$};\node[above right] at (C) {$C$};\node[above left] at (D) {$D$};\end{tikzpicture}}{\karo{2}}
-\fusshilfe{\mbox{13:~57,4 m}}
-\end{pfaufg}
-
-% ===================== Stufe: Anteil in Prozent (Verschnitt) =====================
-\Needspace*{0.16\textheight}\pfstufekopf{Anteil in Prozent}{letzte 5 Jahre: 2025 \pkt{} 2023}
-% Schülerfrage der Stufe (Gliederung)
-\begin{pfaufg}{}{14.}{}
-Was ist hier das Ganze (100 \%)? Schreibe es auf.
-\par\smallskip
-\par\noindent\makebox[\mbpfteil][l]{\textbf{a)}}Grauer Sektor mit 125° im Kreis\hfill\linie{30mm}
-\par\noindent\makebox[\mbpfteil][l]{\textbf{b)}}Verschnitt beim Sägen aus einer Platte\hfill\linie{30mm}
-\par\noindent\makebox[\mbpfteil][l]{\textbf{c)}}Rasen auf einem Grundstück mit Haus\hfill\linie{30mm}
-\par\fusshilfe{\mbox{14:~a) 360°; b) die ganze Platte; c) das ganze Grundstück}}
-\end{pfaufg}
-% Einstieg entfällt: die erste Sprosse der Stufe liegt schon auf Prüfungshöhe (p_einstieg)
-% 2025-OS-B1e-m1 (Original 2025-OS-B1e, Schwere I, rang 2; herausgelöste Fassung: keine)
-\begin{pfaufg}{nach~P10\\’25~\pkt{}~1e}{15.}{}
-Bestimme, wie viel Prozent der Kreisfläche grau gefärbt sind.
-\gzwei{\kreissektor[1.0]{125}{125°}}{\karo{1}}
-\fusshilfe{\mbox{15:~34,7 \%}}
+\gzwei{\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm\relax}{\small\itshape Skizze}}{\karo{2}}
+\fusshilfe{\mbox{9:~110 mm}}
 \end{pfaufg}
 
 \pfblattende{11}{26 FOR & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17 & 16}{1h & 1e 1i 2b & 1c 4a & 1c 2b 2c 5c & 1e 5e &  & 1d 7b & 1e 4c & 1f 6a & 3a 3b & 3b}%

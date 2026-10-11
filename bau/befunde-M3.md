@@ -91,6 +91,23 @@ LXA Sinussatz · NUB Symmetrie (bau/pruefung/2026-10-10, 2026-10-11).
   2020-7b und Restfläche 2018-6a sind deshalb im Mehr-Block (Grafik
   liegt in mehr-p10.csv bereit).
 
+## Zweite Fassung H37 nach Lehrer 12.10. (Probe der vier Warum-Regeln)
+
+Blatt: bau/pruefung/2026-10-12/flaechen-b/. Vier Stufen nach dem
+Gesuchten (Formeln · Fläche gesucht · Umfang gesucht · Formeln
+umstellen), 9 Nummern, 7 echte, 2 eigene (Seite der Formelsammlung;
+A = a · b nach a umstellen). Setzer: `Einstieg: nein` in der
+Gliederung sperrt den Bank-Einstieg; kein Einstieg gesetzt = keiner.
+- Offen (Lehrer): Welche Formelsammlung (Ausgabe) – dann die Seite
+  in die Lösung von Nr. 1 eintragen.
+- Offen (Lehrer): 2024-1c (Umfangsformel ankreuzen) als siebte
+  echte unter „Formeln“ oder nur die sechs (Stufe dann ohne echte)?
+- Offen (Lehrer): „Fläche oder Umfang?“ (Teppich/Zaun) ganz weg
+  oder als einziger Einstieg von „Fläche gesucht“?
+- Entschieden im Lauf: 2023-2c als schwerste unter „Umfang gesucht“
+  (Gesuchtes ist der Umfang), nicht unter „Fläche gesucht“ wie im
+  Beispiel der Regel; „Anteil in Prozent“ nach „Fläche gesucht“.
+
 ## Setzer (werkzeuge/setzer.py) braucht für Sorte P
 
 Aus bericht.md P4Z: \pfheftkopf[Kennung], \pfstufekopf mit Jahren,

@@ -1,0 +1,132 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+\newsavebox{\gbox}\newlength{\gLinks}
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr0.5\textwidth-\gEin-\mbpfnr\relax}%
+  \ifdim\wd\gbox>\dimexpr\gLinks-4mm\relax
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf ohne die festen 14 Zeilen Platz der Vorlage (Nachzug 12.10., Wunsch GYW): der Setzer
+% fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + Schülerfrage), mehr nicht
+\RenewDocumentCommand{\pfstufekopf}{o m m}{\par\addvspace{10pt}%
+  \noindent\IfValueT{#1}{\hypertarget{#1}{}\label{#1}}{\large\bfseries #2}%
+  \ifblank{#3}{}{\hspace{0.8em}{\small\color{mbgrau}#3}}\par\nobreak\vspace{2pt}}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{0.32\linewidth}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} Prüfung]{Fläche und Umfang}{H37}\pfseitevon
+\pfheftkopf{Fläche und Umfang}{}
+\pfstufenzeile{Formeln \pkt{} Fläche gesucht \pkt{} Umfang gesucht \pkt{} Formeln umstellen}
+
+% ===================== Stufe: Formeln =====================
+\Needspace*{0.16\textheight}\pfstufekopf{Formeln}{letzte 5 Jahre: 2024 \pkt{} 2022}
+% Schülerfrage der Stufe (Gliederung)
+\begin{pfaufg}{}{1.}{}
+In der Prüfung hast du die Formelsammlung. Auf welcher Seite stehen die Flächenformeln (Rechteck, Dreieck, Trapez, Kreis)? Schlag nach.
+\par\smallskip
+\par\noindent Seite\hfill\linie{30mm}
+\par\fusshilfe{\mbox{1:~nachschlagen (je nach Ausgabe)}}
+\end{pfaufg}
+% kein Einstieg: Gliederung „Einstieg: nein“ (pruefung.md § 5 „Eigene Aufgaben sparsam“)
+% 2024-OS-B1c-m1 (Original 2024-OS-B1c, Schwere I, rang 5; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’24~\pkt{}~1c}{2.}{}
+Ein gleichseitiges Dreieck hat die Seitenlänge a. Kreuze die Formel für seinen Umfang u an:
+\par\smallskip\noindent\pfkreuz{A}{$u=a\cdot a\cdot a$}\pfkreuz{B}{$u=a^3$}\pfkreuz{C}{$u=3\cdot a$}\pfkreuz{D}{$u=\tfrac{a}{3}$}
+\fusshilfe{\mbox{2:~3 · a}}
+\end{pfaufg}
+
+% ===================== Stufe: Fläche gesucht =====================
+\Needspace*{0.16\textheight}\pfstufekopf{Fläche gesucht}{letzte 5 Jahre: 2025 \pkt{} 2024 \pkt{} 2023 \pkt{} 2022}
+% keine Schülerfrage gesetzt (Gliederung: Schülerfrage, -Fälle, -Form, -Weg; oder Frage) – dann keine (12.10.)
+% kein Einstieg: Gliederung „Einstieg: nein“ (pruefung.md § 5 „Eigene Aufgaben sparsam“)
+% 2025-OS-B1i-m1 (Original 2025-OS-B1i, Schwere I, rang 2; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’25~\pkt{}~1i}{3.}{}
+Die Abbildung zeigt ein Rechteck. Kreuze die Gleichung an, mit der man seinen gesamten Flächeninhalt berechnet:
+\gzwei{\begin{tikzpicture}[line width=0.8pt,font=\small]\draw (0,0) rectangle (3.2,1.8);\draw[line width=0.5pt] (0,1.2) -- (3.2,1.2);\node[above] at (1.6,1.8) {$a$};\node[right] at (3.2,1.5) {$b$};\node[right] at (3.2,0.6) {$c$};\end{tikzpicture}}{\gkreuzzeile{A}{$A=2\cdot(a+b+c)$}\gkreuzzeile{B}{$A=a+2\cdot a\cdot b$}\gkreuzzeile{C}{$A=a\cdot(b+c)$}\gkreuzzeile{D}{$A=a\cdot b\cdot c$}}
+\fusshilfe{\mbox{3:~C}}
+\end{pfaufg}
+% 2025-OS-B1e-m1 (Original 2025-OS-B1e, Schwere I, rang 3; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’25~\pkt{}~1e}{4.}{}
+Bestimme, wie viel Prozent der Kreisfläche grau gefärbt sind.
+\gzwei{\kreissektor[1.0]{125}{125°}}{\karo{2}}
+\fusshilfe{\mbox{4:~34,7 \%}}
+\end{pfaufg}
+% 2024-OS-K4a-m1 (Original 2024-OS-K4a, Schwere I, rang 6; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’24~\pkt{}~4a}{5.}{}
+Eine Firma stellt Kegel mit dem Radius r = 25 cm und der Höhe h = 60 cm her. Berechne den Flächeninhalt der Grundfläche eines Kegels.
+\gzwei{\kegel{0.9}{1.7}{r}{h}{}}{\karo{2}}
+\fusshilfe{\mbox{5:~1963,5 cm²}}
+\end{pfaufg}
+
+% ===================== Stufe: Umfang gesucht =====================
+\Needspace*{0.16\textheight}\pfstufekopf{Umfang gesucht}{letzte 5 Jahre: 2026 \pkt{} 2023}
+% keine Schülerfrage gesetzt (Gliederung: Schülerfrage, -Fälle, -Form, -Weg; oder Frage) – dann keine (12.10.)
+% kein Einstieg: Gliederung „Einstieg: nein“ (pruefung.md § 5 „Eigene Aufgaben sparsam“)
+% 2026-FOR-B1h-m1 (Original 2026-FOR-B1h, Schwere I, rang 1; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’26~\pkt{}~1h}{6.}{}
+Ein Rechteck ist a = 4,5 cm lang und b = 2,5 cm breit. Gib seinen Umfang an.
+\gzwei{\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm\relax}{\small\itshape Skizze}}{\karo{2}}
+\fusshilfe{\mbox{6:~14 cm}}
+\end{pfaufg}
+% 2023-OS-K2c-m1 (Original 2023-OS-K2c, Schwere II, rang 10; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’23~\pkt{}~2c\,$\star$}{7.}{}
+Gegeben ist ein Trapez mit den parallelen Seiten 24,20 m (unten) und 16,20 m (oben). Es ist 7,50 m hoch. Die beiden Winkel an der unteren Seite sind je 62° groß. Berechne den Umfang des Trapezes.
+\gzwei{\begin{tikzpicture}[line width=0.8pt,font=\small]\coordinate (A) at (0,0);\coordinate (B) at (4.2,0);\coordinate (C) at (3.5,1.3);\coordinate (D) at (0.7,1.3);\draw (A)--(B)--(C)--(D)--cycle;\draw[dashed,line width=0.5pt] (2.1,0)--(2.1,1.3);\pfrw[0.25]{(2.1,0)}{0}\node[right] at (2.1,0.65) {$h$};\pfwinkel[0.75][0.65]{(A)}{0}{62}{62^\circ}\pfwinkel[0.75][0.65]{(B)}{118}{180}{62^\circ}\node[below left] at (A) {$A$};\node[below right] at (B) {$B$};\node[above right] at (C) {$C$};\node[above left] at (D) {$D$};\end{tikzpicture}}{\karo{3}}
+\fusshilfe{\mbox{7:~57,4 m}}
+\end{pfaufg}
+
+% ===================== Stufe: Formeln umstellen =====================
+\Needspace*{0.16\textheight}\pfstufekopf{Formeln umstellen}{letzte 5 Jahre: 2023}
+% Schülerfrage der Stufe (Gliederung)
+\begin{pfaufg}{}{8.}{}
+Stelle die Formel um, rechne nicht.
+\par\smallskip
+\par\noindent Rechteck: A = a · b, nach a umgestellt\hfill\linie{30mm}
+\par\fusshilfe{\mbox{8:~a = A : b}}
+\end{pfaufg}
+% kein Einstieg: Gliederung „Einstieg: nein“ (pruefung.md § 5 „Eigene Aufgaben sparsam“)
+% 2023-OS-B1c-m1 (Original 2023-OS-B1c, Schwere I, rang 7; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’23~\pkt{}~1c}{9.}{}
+Ein Rechteck ist 350 mm breit und hat den Flächeninhalt 38 500 mm². Gib seine Länge an.
+\gzwei{\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm\relax}{\small\itshape Skizze}}{\karo{2}}
+\fusshilfe{\mbox{9:~110 mm}}
+\end{pfaufg}
+
+\pfblattende{11}{26 FOR & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17 & 16}{1h & 1e 1i 2b & 1c 4a & 1c 2b 2c 5c & 1e 5e &  & 1d 7b & 1e 4c & 1f 6a & 3a 3b & 3b}%
+{\pfausschnitt{}{Fläche und Umfang}{}}
+\end{document}

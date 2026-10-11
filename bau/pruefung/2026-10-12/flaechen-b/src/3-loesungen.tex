@@ -1,0 +1,90 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+\newsavebox{\gbox}\newlength{\gLinks}
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr0.5\textwidth-\gEin-\mbpfnr\relax}%
+  \ifdim\wd\gbox>\dimexpr\gLinks-4mm\relax
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf ohne die festen 14 Zeilen Platz der Vorlage (Nachzug 12.10., Wunsch GYW): der Setzer
+% fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + Schülerfrage), mehr nicht
+\RenewDocumentCommand{\pfstufekopf}{o m m}{\par\addvspace{10pt}%
+  \noindent\IfValueT{#1}{\hypertarget{#1}{}\label{#1}}{\large\bfseries #2}%
+  \ifblank{#3}{}{\hspace{0.8em}{\small\color{mbgrau}#3}}\par\nobreak\vspace{2pt}}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{0.32\linewidth}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} Prüfung]{Fläche und Umfang \pkt{} Lösungen}{H37}\pfseitevon
+\pfheftkopf{Fläche und Umfang}{Lösungen}
+\pfstufenzeile{Formeln \pkt{} Fläche gesucht \pkt{} Umfang gesucht \pkt{} Formeln umstellen}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Formeln}{letzte 5 Jahre: 2024 \pkt{} 2022}
+\begin{pfloesungb}{}
+\lzb{1.}{}{nachschlagen (je nach Ausgabe)}{Seite merken, in der Prüfung sofort aufschlagen}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{2.}{}{u = 3 · a}{u = 3 · a}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Fläche gesucht}{letzte 5 Jahre: 2025 \pkt{} 2024 \pkt{} 2023 \pkt{} 2022}
+\begin{pfloesungb}{}
+\lzb{3.}{}{C}{A = a · (b + c) (dritte Option)}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{4.}{}{Anteil grau $\approx$ 34,7 \%}{Anteil grau = 125 : 360 $\approx$ 34,7 \%}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{5.}{}{A $\approx$ 1963,5 cm²}{A = $\pi$ · 25² $\approx$ 1963,5 cm²}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Umfang gesucht}{letzte 5 Jahre: 2026 \pkt{} 2023}
+\begin{pfloesungb}{}
+\lzb{6.}{}{14 cm}{14 cm}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{7.}{}{u $\approx$ 57,4 m}{Schenkel = 7,50 : sin 62° $\approx$ 8,49 m; u = 24,20 + 16,20 + 2 · Schenkel $\approx$ 57,4 m}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Formeln umstellen}{letzte 5 Jahre: 2023}
+\begin{pfloesungb}{}
+\lzb{8.}{}{a = A : b}{erst die Formel, dann durch b teilen}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{9.}{}{110 mm}{110 mm}
+\end{pfloesungb}
+\end{document}

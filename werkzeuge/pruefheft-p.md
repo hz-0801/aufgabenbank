@@ -91,3 +91,11 @@ fehlt: Stufe „Winkelbeziehungen“ ohne Hauptplatz (nur im Muster), Schüler-
   ungeteilt (`\mbox`). Lösung: Klammern mit Operator sind Term („(b + c)“),
   nur Klammern ohne Zahl und Operator sind Vermerk; Doppelpunkt trennt nur
   direkt nach einem Wort („Nein: …“), „d · e : 2“ bleibt Geteiltzeichen.
+## Nachzug 12.10. (H37 Flächen, zweite Fassung; pruefung.md § 5 „Eigene Aufgaben sparsam“)
+- Gliederung je Stufe: `- **Einstieg:** nein` sperrt den Bank-Einstieg der Stufe
+  (im TeX „% kein Einstieg: Gliederung …“). Ohne Schülerfrage/Frage oder ohne
+  Bankzeile setzt Art p nichts und meldet nichts mehr („SETZER: fehlt“ entfällt
+  dafür) – ein Einstieg nur, wo die Stufe ihn braucht.
+- `Schülerfrage-Fälle`: Trenner „→“ statt „=“, wenn die Lage selbst ein „=“
+  trägt („Rechteck: A = a · b, nach a umgestellt → a = A : b“). Ein einziger
+  Fall steht ohne Buchstaben (Blatt und Lösung).

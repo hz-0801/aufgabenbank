@@ -5389,11 +5389,13 @@ def p_gliederung(mn, kapitel):
         if m:
             st = m.group(1).strip()
             g['stufen'][st] = {'zuschnitt': '', 'hinweis': '', 'kern': '', 'anzeigename': '', 'schülerfrage': '',
-                               'schülerfrage-fälle': '', 'schülerfrage-form': '', 'schülerfrage-weg': '', 'frage': ''}
+                               'schülerfrage-fälle': '', 'schülerfrage-form': '', 'schülerfrage-weg': '', 'frage': '',
+                               'einstieg': ''}
             continue
         # 12.10.: Schülerfrage(-Fälle, -Form, -Weg) = Frage als erste Aufgabe der Stufe (Volumen); Frage = kurze
-        # Schülerfrage kursiv unter dem Stufenkopf (Netz); Anzeigename = Name in Schülersprache (pruefheft-p.md)
-        m = re.match(r'^- \*\*(Zuschnitt|Hinweis|Kern|Anzeigename|Frage|Schülerfrage(?:-Fälle|-Form|-Weg)?):\*\*\s*(.*)$', z)
+        # Schülerfrage kursiv unter dem Stufenkopf (Netz); Anzeigename = Name in Schülersprache (pruefheft-p.md);
+        # Einstieg: nein = kein Bank-Einstieg der Stufe (12.10., Flächen zweite Fassung: Einstieg nur, wo die Stufe ihn braucht)
+        m = re.match(r'^- \*\*(Zuschnitt|Hinweis|Kern|Anzeigename|Frage|Einstieg|Schülerfrage(?:-Fälle|-Form|-Weg)?):\*\*\s*(.*)$', z)
         if m and st:
             g['stufen'][st][m.group(1).lower()] = m.group(2).strip().strip('„“"')
     return g
@@ -5524,8 +5526,10 @@ def p_frage(info):
         return None
     faelle = []
     for teil in (info.get('schülerfrage-fälle') or '').split('|'):
-        if '=' in teil:
-            lage, antwort = teil.split('=', 1)
+        # „Lage → Antwort“ (12.10.: wenn die Lage selbst ein „=“ trägt, etwa „A = a · b, nach a“), sonst „Lage = Antwort“
+        sep = '→' if '→' in teil else '='
+        if sep in teil:
+            lage, antwort = teil.split(sep, 1)
             faelle.append((lage.strip(), antwort.strip()))
     form = (info.get('schülerfrage-form') or 'linie').strip()
     art, _, zusatz = form.partition(':')
@@ -5537,6 +5541,8 @@ def p_frage_ergebnis(f):
     if f['art'] == 'kreuz':
         ja = [f'{"abcdefgh"[i]})' for i, (_, a) in enumerate(f['faelle']) if a.lower().startswith('ja')]
         return tx(' und '.join(ja) if ja else 'keiner')
+    if len(f['faelle']) == 1:   # ein Fall: ohne Buchstaben (12.10.)
+        return tx(f['faelle'][0][1] + f['zusatz'])
     return '; '.join(f'{"abcdefgh"[i]}) {tx(a + f["zusatz"])}' for i, (_, a) in enumerate(f['faelle']))
 
 
@@ -5550,7 +5556,8 @@ def p_frage_tex(f, nr):
             rechts = '\\kk{' + tx(f['zusatz'] or 'ja') + '}'
         else:
             rechts = '\\linie{30mm}' + (' ' + tx(f['zusatz']) if f['zusatz'] else '')
-        out.append(f'\\par\\noindent\\makebox[\\mbpfteil][l]{{\\textbf{{{b})}}}}{tx(lage)}\\hfill{rechts}')
+        buchstabe = ' ' if len(f['faelle']) == 1 else f'\\makebox[\\mbpfteil][l]{{\\textbf{{{b})}}}}'   # ein Fall: ohne Buchstaben
+        out.append(f'\\par\\noindent{buchstabe}{tx(lage)}\\hfill{rechts}')
     fuss = p_frage_ergebnis(f)
     if len(fuss) > 60 and f['weg'] and len(f['weg']) < len(fuss):
         fuss = tx(f['weg'])
@@ -5832,7 +5839,7 @@ def p_blatt_tex(D, einheit, kenn, stufen_daten, ausschnitt, fund, faktor=1.0):
             s['nr_frage'] = nr
             out.append(p_frage_tex(s['frage'], nr))
         elif not s.get('kurzfrage'):
-            out.append('% SETZER: fehlt – Schülerfrage zur Stufe (Gliederung: Schülerfrage, -Fälle, -Form, -Weg; oder Frage)')
+            out.append('% keine Schülerfrage gesetzt (Gliederung: Schülerfrage, -Fälle, -Form, -Weg; oder Frage) – dann keine (12.10.)')
         if s['einstieg'] == 'entfaellt':
             out.append('% Einstieg entfällt: die erste Sprosse der Stufe liegt schon auf Prüfungshöhe (p_einstieg)')
         elif s['einstieg']:
@@ -5840,8 +5847,10 @@ def p_blatt_tex(D, einheit, kenn, stufen_daten, ausschnitt, fund, faktor=1.0):
             t, a = p_einstieg_tex(D, s['einstieg'], nr, s['name'])
             s['nr_einstieg'], s['einstieg_a'] = nr, a
             out.append(t)
+        elif s.get('einstieg_gesperrt'):
+            out.append('% kein Einstieg: Gliederung „Einstieg: nein“ (pruefung.md § 5 „Eigene Aufgaben sparsam“)')
         else:
-            out.append('% SETZER: fehlt – keine Bankzeile für den Einstieg (bank_sprossen leer oder ruhend)')
+            out.append('% kein Einstieg gesetzt (keine Bankzeile: bank_sprossen leer oder ruhend) – dann keiner (12.10.)')
         s['nr_echt'] = []
         for r in s['echte']:
             nr += 1
@@ -5959,8 +5968,10 @@ def p_bau(args):
         kat_ids = (z.get('katalog_ids') or '').split()
         ids += kat_ids + [r['eltern_id'] for r in mehr if r.get('stufe', '').strip() == name and r.get('eltern_id')]
         info = gl['stufen'].get(name, {})
+        gesperrt = (info.get('einstieg') or '').strip().lower() in ('nein', 'keiner', 'kein')
         stufen_daten.append({'name': name, 'anzeige': info.get('anzeigename') or name, 'z': z,
-                             'jahre': p_jahre(D, z, letzte5), 'einstieg': p_einstieg(D, z), 'frage': p_frage(info),
+                             'jahre': p_jahre(D, z, letzte5), 'frage': p_frage(info),
+                             'einstieg': None if gesperrt else p_einstieg(D, z), 'einstieg_gesperrt': gesperrt,
                              'kurzfrage': info.get('frage', ''),
                              'echte': echte, 'heraus': [h for h in heraus if h.get('stufe', '').strip() == name]})
     ids = list(OrderedDict((i, 1) for i in ids))
