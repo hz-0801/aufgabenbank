@@ -12,11 +12,17 @@ ohne Meldung. Nummern je Stufe (Rang aus mehr-p10.csv, Ältere im Mehr-Block):
 - Punktprobe und Lösung prüfen (26 · 25 · 24 · 23): 8 (2023-1i ankreuzen),
   9 (2026-FOR-5b), 10 (2024-3c Parabel, T(−3|5) statt T(−4|10)); kein Einstieg
 - Lineare Funktion im Sachzusammenhang (23 · 22): 11 Schülerfrage
-  „Anfangswert oder Änderung je Schritt“, 12 (2022-6a), 13 (2023-3a Diagramme
-  A–D zuordnen), 14 (2022-6b, Stern), 15 (2023-3b, Stern, Ende)
+  „Anfangswert oder Änderung je Schritt“, 12 (2022-6a), 13 (2022-6b, Stern),
+  14 (2023-3a Diagramme A–D zuordnen), 15 (2023-3b, Stern, Ende)
 Daten: gliederung/lineare.md (drei Stufen, alte Handgriffe als Vermerk in den
 Plätzen), zuordnung-lineare.csv, handgriffe/skript-zuschnitt/herausgeloest
 nachgezogen, mehr-p10.csv (einheit, stufe, auf_blatt 14, grafik ksys/Bilder,
 form), pruefung.md Grenze Koordinatenfenster. Setzer: form bilder, wahrfalsch,
 linie; Bildbreite je Zahl. Offen (Lehrer): 4 statt 2 Seiten (Vorschlag zwei
 Blätter), 2025-1h in quadratische, schwerste nicht am Ende – bau/befunde-M3.md.
+Zweite Fassung (TAL, 12.10., Setzer vom Quadratische-Lauf): Punkte „(0|1)“ in
+Fuß und Lösung, Stufenkopf bleibt bei Nr. 1; Teile derselben Original-Aufgabe
+folgen aufeinander (rang 2022-6b = 2, 2023-3a = 3) und die zweite beginnt
+„Angaben wie in Nr. 12.“ statt mit dem ganzen Vorspann (pruefheft.py). Blatt
+bleibt 4 Seiten (Seite 4 halb; die fünf Koordinatensysteme füllen Seite 1–2,
+Karo 0,75/0,5 ändert nichts) – Offen (Lehrer) wie oben.

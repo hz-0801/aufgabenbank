@@ -157,6 +157,10 @@ Blatt: bau/pruefung/2026-10-12/flaechen-c/. 15 Nummern (12 echte,
 - Setzer: p_ergebnis streicht „(x)“ als Vermerk, darum heißt die Lösung
   einer Gleichung „y = …“ statt „f(x) = …“; Punkte in loesung ohne „|“
   (das trennt Teilfragen).
+- Zweite Fassung (TAL, 12.10.): Teile derselben Aufgabe nacheinander, die
+  zweite mit „Angaben wie in Nr. k.“ statt Vorspann (Setzer); bleibt bei
+  4 Seiten – die Koordinatensysteme der ersten Stufe füllen zwei Seiten,
+  Karo-Faktor wirkt nicht. Entscheidung Lehrer offen (zwei Blätter oder 4).
 
 ## Aus dem Datenlauf 12.10. (XU6 Quadratische, Parabel: Scheitelpunkt und Skizze)
 

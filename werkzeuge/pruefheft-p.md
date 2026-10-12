@@ -144,3 +144,9 @@ fehlt: Stufe „Winkelbeziehungen“ ohne Hauptplatz (nur im Muster), Schüler-
   zum Ankreuzen, A/B/C darunter). Koordinatensystem: `\begin{ksys}[xmin,xmax,ymin,
   ymax,karo=0.5]\parabel{a}{xs}{ys}{p}\end{ksys}`; Fenster je Zahlenwahl, Scheitel
   ganzzahlig wie im Original.
+- Nachzug 12.10. (TAL Lineare, zweite Fassung): folgen zwei Nummern derselben
+  Original-Aufgabe aufeinander (eltern_id bis auf den Buchstaben gleich), setzt
+  der Setzer bei der zweiten statt des gemeinsamen Vorspanns (ganze Sätze,
+  ≥ 40 Zeichen) „Angaben wie in Nr. k.“ – eine Zahlenwahl je Aufgabe
+  (pruefung.md § 5 „Andere Zahlen“); im TeX „% Vorspann wie Nr. k“. Dafür den
+  rang so setzen, dass die Teile nacheinander stehen.

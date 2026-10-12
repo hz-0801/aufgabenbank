@@ -26,8 +26,14 @@
  {\end{minipage}%
   \end{minipage}\end{lrbox}%
   \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
-  \par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
 % Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
 \newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
 % Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
@@ -51,7 +57,7 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Lineare Funktionen \pkt{} Lösungen}{QGC}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Lineare Funktionen \pkt{} Lösungen}{TAL}\pfseitevon
 \pfheftkopf[B = Basisteil, ohne Taschenrechner]{Lineare Funktionen}{Lösungen}
 \pfstufenzeile{Gerade zeichnen und ablesen \pkt{} Punktprobe und Lösung prüfen \pkt{} Lineare Funktion im Sachzusammenhang}
 
@@ -60,22 +66,22 @@
 \lzb{1.}{}{A}{erste Abbildung (erste Option; fallende Gerade)}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{2.}{}{Punkt (0; 1)}{Punkt (0|1)}
+\lzb{2.}{}{Punkt (0|1)}{Punkt (0|1)}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{3.}{}{Gerade durch (0; 3) und (1; 5), steil steigend}{Gerade durch (0|3) und (1|5), steil steigend}
+\lzb{3.}{}{Gerade durch (0|3) und (1|5), steil steigend}{Gerade durch (0|3) und (1|5), steil steigend}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{4.}{}{Gerade durch (0; 1) und (1; $-$2), fallend}{Gerade durch (0|1) und (1|$-$2), fallend}
+\lzb{4.}{}{Gerade durch (0|1) und (1|$-$2), fallend}{Gerade durch (0|1) und (1|$-$2), fallend}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{5.}{}{Gerade durch (0; 5) und (1; 3); x = 2,5}{Gerade durch (0|5) und (1|3); x = 2,5}
+\lzb{5.}{}{Gerade durch (0|5) und (1|3); x = 2,5}{Gerade durch (0|5) und (1|3); x = 2,5}
 \end{pfloesungb}
 \begin{pfloesungb}{}
 \lzb{6.}{}{Gerade durch A und B; Aussage 1 falsch, Aussage 2 wahr; y = $-$1,5x + 2}{Gerade durch A und B; Aussage 1 falsch, Aussage 2 wahr; y = $-$1,5x + 2}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{7.}{}{Gerade durch (0; $-$2) und (1; 1); S(2; 4); Aussage 2 wahr, Aussagen 1 und 3 falsch}{Gerade durch (0|$-$2) und (1|1); S(2|4); Aussage 2 wahr, Aussagen 1 und 3 falsch}
+\lzb{7.}{}{Gerade durch (0|$-$2) und (1|1); S(2|4); Aussage 2 wahr, Aussagen 1 und 3 falsch}{Gerade durch (0|$-$2) und (1|1); S(2|4); Aussage 2 wahr, Aussagen 1 und 3 falsch}
 \end{pfloesungb}
 
 \Needspace*{0.16\textheight}\pfstufekopf{Punktprobe und Lösung prüfen}{\pfjahre{26 \pkt{} 25 \pkt{} 24 \pkt{} 23}{17}}
@@ -97,10 +103,10 @@
 \lzb{12.}{}{1648 €}{1648 €}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{13.}{}{Angebot 1 = C; Angebot 2 = B}{Angebot 1 = C; Angebot 2 = B}
+\lzb{13.}{}{y = 65x + 820; 16 Monate}{y = 65x + 820; 16 Monate}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{14.}{}{y = 65x + 820; 16 Monate}{y = 65x + 820; 16 Monate}
+\lzb{14.}{}{Angebot 1 = C; Angebot 2 = B}{Angebot 1 = C; Angebot 2 = B}
 \end{pfloesungb}
 \begin{pfloesungb}{}
 \lzb{15.}{}{Angebot 1: 170,50 €; Angebot 2: 151,00 €; Angebot 2 günstiger; y = 0,08x + 115}{Angebot 1: 170,50 €; Angebot 2: 151,00 €; Angebot 2 günstiger; y = 0,08x + 115}

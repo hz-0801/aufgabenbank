@@ -5750,7 +5750,7 @@ def p_form_tex(t_rest, grafik, form, optionen, ergebnisse, n, faktor):
     return out
 
 
-def p_echt_tex(D, r, nr, heraus, faktor=1.0):
+def p_echt_tex(D, r, nr, heraus, faktor=1.0, vorige=None, nr_vorige=0):
     """Echte Aufgabe mit anderen Zahlen (msa/mehr-p10.csv, auf_blatt = ja): Marke mit Fundstelle und
     Stern, Wortlaut, Skizze als Text links, Karo rechts; Fuß mit dem Ergebnis."""
     eid = r.get('eltern_id', '')
@@ -5758,10 +5758,22 @@ def p_echt_tex(D, r, nr, heraus, faktor=1.0):
     out = [f'% {r["id"]} (Original {eid}, Schwere {r["schwere"]}, rang {r.get("rang", "")}; herausgelöste Fassung: '
            + (', '.join(h) if h else 'keine') + ')']
     form = (r.get('form') or '').strip()
+    wortlaut = (r.get('wortlaut') or '').strip()
+    if vorige is not None and nr_vorige and eid[:-1] == (vorige.get('eltern_id') or '')[:-1] and eid[:-1]:
+        # gemeinsamer Vorspann derselben Original-Aufgabe nur bei der ersten Nummer (pruefung.md § 5 „Andere
+        # Zahlen“: eine Zahlenwahl je Aufgabe; 12.10., Lineare: zwei Sachaufgaben zu je zwei Teilen, 3 statt 4 Seiten)
+        w0 = (vorige.get('wortlaut') or '').strip()
+        i = 0
+        while i < min(len(w0), len(wortlaut)) and w0[i] == wortlaut[i]:
+            i += 1
+        j = wortlaut.rfind('. ', 0, i + 1)
+        if j >= 40:
+            wortlaut = f'Angaben wie in Nr. {nr_vorige}. ' + wortlaut[j + 2:]
+            out.append(f'% Vorspann wie Nr. {nr_vorige} ({vorige["id"]}), gekürzt')
     if 'wahrfalsch' in form.split('+'):
-        text, optionen, rest = p_wahrfalsch((r.get('wortlaut') or '').strip())
+        text, optionen, rest = p_wahrfalsch(wortlaut)
     else:
-        text, optionen, rest = p_kreuz((r.get('wortlaut') or '').strip())
+        text, optionen, rest = p_kreuz(wortlaut)
     luecke = '___' in text
     t = tx(text.replace('___', '\x00')).replace('\x00', '\\linie{25mm}')
     marke = p_marke(D, r)
@@ -5943,10 +5955,12 @@ def p_blatt_tex(D, einheit, kenn, stufen_daten, ausschnitt, fund, faktor=1.0, en
             out.append('% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; '
                        'oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)')
         s['nr_echt'] = []
+        vorige, nr_vorige = None, 0
         for r in s['echte']:
             nr += 1
             s['nr_echt'].append(nr)
-            out.append(p_echt_tex(D, r, nr, s['heraus'], faktor))
+            out.append(p_echt_tex(D, r, nr, s['heraus'], faktor, vorige, nr_vorige))
+            vorige, nr_vorige = r, nr
         if not s['echte']:
             out.append('% SETZER: fehlt – keine echte Aufgabe mit auf_blatt = ja in msa/mehr-p10.csv')
     out.append('')
