@@ -119,3 +119,15 @@ fehlt: Stufe „Winkelbeziehungen“ ohne Hauptplatz (nur im Muster), Schüler-
   zuerst, ältere als fünf Jahre nach dem Strich und heller; ohne Jahr „–“. Der
   Stufenkopf ist der der Vorlage (Linie, Abstand, 13 pt); der Setzer setzt nur
   `\mbpfstufevorhalt` auf 0 pt und fordert 0,16 Seitenhöhe vor dem Kopf.
+## Nachzug 12.10. (QGC Lineare, ein Blatt mit drei Stufen)
+- `form`-Teile: `bilder` (Bildoptionen A–D aus `grafik` mit „||“, Buchstabe
+  ohne Kästchen, Antwort über `teil`: „Angebot 1 = ___“), `wahrfalsch`
+  (Aussagen aus „Entscheide, ob die Aussagen wahr oder falsch sind: … / …“,
+  je Zeile „(1) Aussage  wahr □ falsch □“; der Satz nach der letzten Aussage
+  steht vor dem nächsten Teil), `linie` auch als Teil („y = ____“, letzter
+  Lösungsteil mit „=“). Bildreihe: Breite je Bild nach ihrer Zahl
+  (`\gbildbreite`, vier Bilder 0,24).
+- Koordinatensystem als `grafik`: `\begin{ksys}[xmin=…,karo=0.35]…\end{ksys}`
+  der Vorlage; Fenster nach pruefung.md § 5 „Andere Zahlen“ (Schnittpunkte
+  im Bild). Sechs Systeme je Blatt geben mit 15 Nummern 4 Seiten.
+- Bau gibt je Karo-Faktor die Probeseitenzahl aus („Probe: Faktor …“).

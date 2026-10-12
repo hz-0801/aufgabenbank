@@ -5340,7 +5340,11 @@ P_PRAEAMBEL = r"""% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortg
 \newcommand{\pkt}{\textperiodcentered{}}
 % v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
 \newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
-\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{0.32\linewidth}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
 """
 P_UEBERSICHT = r"""\newcommand{\bereich}[1]{\par\addvspace{14pt}\noindent{\large\bfseries #1}\par\nobreak\vspace{4pt}}
 \newcommand{\bl}[1]{\par\noindent #1\par\vspace{3pt}}
@@ -5634,6 +5638,21 @@ def p_kreuz(text):
     return frage, optionen, ''
 
 
+def p_wahrfalsch(text):
+    """Aussagen zum Ankreuzen „Entscheide, ob die Aussagen wahr oder falsch sind: A. / B. Gib …“ (12.10., Lineare)
+    -> (Text davor samt Satz, Aussagen, Rest nach der letzten Aussage); sonst wie p_kreuz."""
+    m = re.search(r'(wahr oder falsch (?:sind|ist)):\s*', text)
+    if not m:
+        return p_kreuz(text)
+    vor, nach = text[:m.end()].rstrip(), text[m.end():]
+    optionen = [o.strip() for o in nach.split(' / ') if o.strip()]
+    rest = ''
+    mm = re.match(r'^(.*?[^\s.])\.\s+([A-ZÄÖÜ$].*)$', optionen[-1])
+    if mm:
+        optionen[-1], rest = mm.group(1), mm.group(2)
+    return vor, optionen, rest
+
+
 def p_form_tex(t_rest, grafik, form, optionen, ergebnisse, n, faktor):
     """Antwortteil einer echten Aufgabe nach den Spalten form und grafik (v0.7, werkzeuge/pruefheft-p.md):
     ankreuzen  – Textoptionen aus dem Wortlaut rechts neben der Grafik (untereinander), oder Bildoptionen
@@ -5650,13 +5669,31 @@ def p_form_tex(t_rest, grafik, form, optionen, ergebnisse, n, faktor):
     bild = [b.strip() for b in grafik.split('||')] if '||' in grafik else []
     g = '' if bild else grafik
     grafik_gesetzt = False
+    def bildreihe(makro):
+        # Bildoptionen in einer Reihe, gleich hoch, Buchstabe (und Kästchen) unten auf einer Linie; Breite je Bild
+        # nach ihrer Zahl (12.10., Lineare: vier Achsenkreuze nebeneinander)
+        k = min(4, len(bild))
+        return ('\\par\\smallskip\\noindent\\setlength{\\gbildbreite}{\\dimexpr0.96\\linewidth/' + str(k) + '\\relax}'
+                + '\\sbox{\\gbox}{\\vbox{' + '\\par'.join(bild[:4]) + '}}'
+                + '\\hfill'.join(f'\\{makro}{{{"ABCD"[i]}}}{{{b}}}{{\\dimexpr\\ht\\gbox/{k}+\\baselineskip\\relax}}'
+                                  for i, b in enumerate(bild[:4])) + '\\par')
     for teil in teile:
-        if teil == 'ankreuzen':
+        if teil == 'bilder' and bild:
+            out.append(bildreihe('gbildname'))   # Bilder A–D zum Zuordnen, Antwort über „teil“ (12.10., Lineare)
+        elif teil == 'wahrfalsch':
+            # Aussagen (1), (2), … je Zeile mit „wahr / falsch“ (12.10., Lineare); Aussagen = optionen
+            out.append(''.join(f'\\gwahrfalsch{{{i + 1}}}{{{tx(o)}}}' for i, o in enumerate(optionen[:5])))
+        elif teil == 'linie':
+            # Gleichung angeben: „f(x) = ____“ rechts, letzter Teil mit „=“ (12.10., Lineare); Rest des Wortlauts davor
+            if t_rest:
+                out.append('\\par\\smallskip\\noindent ' + t_rest)
+                t_rest = ''
+            felder = [re.split(r'\s*(=|≈)\s*', e)[0] for e in ergebnisse if re.search(r'\s(=|≈)\s', e)]
+            if felder:
+                out.append('\\par\\noindent\\hfill ' + tx(felder[-1]) + ' $=$\\linie{40mm}')
+        elif teil == 'ankreuzen':
             if bild:
-                # Bildoptionen in einer Reihe, gleich hoch, Buchstabe und Kästchen unten auf einer Linie
-                out.append('\\par\\smallskip\\noindent\\sbox{\\gbox}{\\vbox{' + '\\par'.join(bild[:4]) + '}}'
-                           + '\\hfill'.join(f'\\gbildoption{{{"ABCD"[i]}}}{{{b}}}{{\\dimexpr\\ht\\gbox/{min(4, len(bild))}+\\baselineskip\\relax}}'
-                                             for i, b in enumerate(bild[:4])) + '\\par')
+                out.append(bildreihe('gbildoption'))
             else:
                 opt = ''.join(f'\\pfkreuzab{{{"ABCD"[i]}}}{{{tx(o)}}}' for i, o in enumerate(optionen[:4]))
                 if g and not grafik_gesetzt:
@@ -5708,7 +5745,11 @@ def p_echt_tex(D, r, nr, heraus, faktor=1.0):
     h = [x['id'] for x in heraus if x.get('eltern_id') == eid]
     out = [f'% {r["id"]} (Original {eid}, Schwere {r["schwere"]}, rang {r.get("rang", "")}; herausgelöste Fassung: '
            + (', '.join(h) if h else 'keine') + ')']
-    text, optionen, rest = p_kreuz((r.get('wortlaut') or '').strip())
+    form = (r.get('form') or '').strip()
+    if 'wahrfalsch' in form.split('+'):
+        text, optionen, rest = p_wahrfalsch((r.get('wortlaut') or '').strip())
+    else:
+        text, optionen, rest = p_kreuz((r.get('wortlaut') or '').strip())
     luecke = '___' in text
     t = tx(text.replace('___', '\x00')).replace('\x00', '\\linie{25mm}')
     marke = p_marke(D, r)
@@ -5717,8 +5758,7 @@ def p_echt_tex(D, r, nr, heraus, faktor=1.0):
     rechnet = bool(re.search(r'\d', r.get('loesung') or ''))
     n = max(1, round(max(2, min(4, mehr_schritte(r) + 1)) * faktor))
     grafik = (r.get('grafik') or '').strip()
-    form = (r.get('form') or '').strip()
-    if '||' in grafik or '+' in form or form in ('ankreuzen', 'einzeichnen', 'zeichnen', 'karo'):
+    if '||' in grafik or '+' in form or form in ('ankreuzen', 'einzeichnen', 'zeichnen', 'karo', 'bilder', 'wahrfalsch'):
         # v0.7 (Netz): Spalte grafik mit Bildoptionen („||“) und form als Folge von Teilen („+“: ankreuzen,
         # einzeichnen, zeichnen, teil, karo) aus msa/mehr-p10.csv; form „teil“, „skizze“ und grafik allein gehen
         # den Weg unten (Volumen, 12.10.) – werkzeuge/pruefheft-p.md
@@ -6038,6 +6078,7 @@ def p_bau(args):
         t = p_blatt_tex(D, anz(einheit), kenn, stufen_daten, ausschnitt, fund, faktor)
         e = xelatex(t, args.bb, 'probe', arbeit)
         e0 = xelatex(p_blatt_tex(D, anz(einheit), kenn, stufen_daten, ausschnitt, '', faktor), args.bb, 'probe0', arbeit)
+        print(f'Probe: Faktor {faktor} -> {e["seiten"]} Seiten (ohne Fundstellen {e0["seiten"]})')
         if faktor == 1.0 or e['seiten'] < seiten_vorher or e['fehler']:
             blatt, faktor_gesetzt, seiten_vorher = t, faktor, e['seiten']
         if (e['seiten'] <= e0['seiten'] and e['seiten'] <= 2) or e['fehler']:

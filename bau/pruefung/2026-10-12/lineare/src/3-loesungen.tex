@@ -1,0 +1,108 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+\newsavebox{\gbox}\newlength{\gLinks}
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr0.5\textwidth-\gEin-\mbpfnr\relax}%
+  \ifdim\wd\gbox>\dimexpr\gLinks-4mm\relax
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} Prüfung]{Lineare Funktionen \pkt{} Lösungen}{QGC}\pfseitevon
+\pfheftkopf[B = Basisteil, ohne Taschenrechner]{Lineare Funktionen}{Lösungen}
+\pfstufenzeile{Gerade zeichnen und ablesen \pkt{} Punktprobe und Lösung prüfen \pkt{} Lineare Funktion im Sachzusammenhang}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Gerade zeichnen und ablesen}{\pfjahre{26 \pkt{} 25 \pkt{} 24 \pkt{} 23 \pkt{} 22}{21 \pkt{} 19 \pkt{} 17 \pkt{} 16 \pkt{} 15}}
+\begin{pfloesungb}{}
+\lzb{1.}{}{A}{erste Abbildung (erste Option; fallende Gerade)}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{2.}{}{Punkt (0; 1)}{Punkt (0|1)}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{3.}{}{Gerade durch (0; 3) und (1; 5), steil steigend}{Gerade durch (0|3) und (1|5), steil steigend}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{4.}{}{Gerade durch (0; 1) und (1; $-$2), fallend}{Gerade durch (0|1) und (1|$-$2), fallend}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{5.}{}{Gerade durch (0; 5) und (1; 3); x = 2,5}{Gerade durch (0|5) und (1|3); x = 2,5}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{6.}{}{Gerade durch A und B; Aussage 1 falsch, Aussage 2 wahr; y = $-$1,5x + 2}{Gerade durch A und B; Aussage 1 falsch, Aussage 2 wahr; y = $-$1,5x + 2}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{7.}{}{Gerade durch (0; $-$2) und (1; 1); S(2; 4); Aussage 2 wahr, Aussagen 1 und 3 falsch}{Gerade durch (0|$-$2) und (1|1); S(2|4); Aussage 2 wahr, Aussagen 1 und 3 falsch}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Punktprobe und Lösung prüfen}{\pfjahre{26 \pkt{} 25 \pkt{} 24 \pkt{} 23}{17}}
+\begin{pfloesungb}{}
+\lzb{8.}{}{B}{Punkt B liegt nicht auf f (zweite Option), denn $-$12 $\neq$ f(3) = $-$13}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{9.}{}{f($-$2) = 7, P liegt auf dem Graphen}{f($-$2) = $-$3 · ($-$2) + 1 = 7, P liegt auf dem Graphen}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{10.}{}{Nein}{Nein, 5 $\neq$ p($-$3) = ($-$3)² $-$ 5 = 4}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Lineare Funktion im Sachzusammenhang}{\pfjahre{23 \pkt{} 22}{21 \pkt{} 16}}
+\begin{pfloesungb}{}
+\lzb{11.}{}{a) 8 ist n, 0,09 ist m; b) 25 ist n, $-$2 ist m}{n steht am Anfang (x = 0), m ist das, was je Monat, Minute oder Stunde dazukommt oder weggeht}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{12.}{}{1648 €}{1648 €}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{13.}{}{Angebot 1 = C; Angebot 2 = B}{Angebot 1 = C; Angebot 2 = B}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{14.}{}{y = 65x + 820; 16 Monate}{y = 65x + 820; 16 Monate}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{15.}{}{Angebot 1: 170,50 €; Angebot 2: 151,00 €; Angebot 2 günstiger; y = 0,08x + 115}{Angebot 1: 170,50 €; Angebot 2: 151,00 €; Angebot 2 günstiger; y = 0,08x + 115}
+\end{pfloesungb}
+\end{document}

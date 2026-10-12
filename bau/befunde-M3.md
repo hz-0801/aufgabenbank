@@ -136,6 +136,27 @@ Blatt: bau/pruefung/2026-10-12/flaechen-c/. 15 Nummern (12 echte,
   2c“, nur der Basisteil trägt „’25 · B1e“; die Lösung des Einstiegs
   Nr. 11 zeigt „A : b“ (Antwort der Fälle), der Weg „beide Seiten
   durch b teilen“.
+## Aus dem Datenlauf 12.10. (QGC Lineare, ein Blatt mit drei Stufen)
+- Offen (Lehrer): Das Blatt hält keine zwei Seiten – 15 Nummern (14
+  Originale, eine Schülerfrage) mit sechs Koordinatensystemen und zwei
+  Bildreihen geben 4 Seiten (Karo 1,0; 0,75 und 0,5 ändern die
+  Seitenzahl nicht, die Systeme tragen die Höhe). Die Bedingung der Regel
+  vom 12.10. („solange das Blatt zwei Seiten hält“) gilt damit für Lineare
+  nicht. Vorschlag: zwei Blätter – „Gerade zeichnen und ablesen“ (7
+  Originale, ≈ 2 Seiten) und „Punktprobe und Sachzusammenhang“ (7,
+  ≈ 2 Seiten); oder 4 Seiten hinnehmen.
+- Offen (Lehrer): 2025-OS-B1h (Lösung einer Gleichung ankreuzen) hat
+  seinen Hauptplatz in der Stufe „Punktprobe und Lösung prüfen“, seine
+  Zeile liegt aber unter kapitel quadratische (dort gleichzeitig in
+  Arbeit) – nicht verschoben; der Setzer meldet „Jahr 2025 verlangt ja“.
+- Offen (Lehrer): Schwerste am Ende – die schwerste des Blatts (2023-4a,
+  Gerade in Parabel, wahr/falsch) steht am Ende der ersten Stufe; das
+  Blatt endet mit der schwersten Sachaufgabe (2023-3b, Stern).
+- 2019-OS-K2 (Punkte A, B, C des Originalgraphen fehlen, Kritiker) ist
+  älter als fünf Jahre, bleibt im Mehr-Block ohne grafik.
+- Setzer: p_ergebnis streicht „(x)“ als Vermerk, darum heißt die Lösung
+  einer Gleichung „y = …“ statt „f(x) = …“; Punkte in loesung ohne „|“
+  (das trennt Teilfragen).
 
 ## Setzer (werkzeuge/setzer.py) braucht für Sorte P
 
