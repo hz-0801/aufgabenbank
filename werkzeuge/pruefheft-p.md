@@ -1,4 +1,4 @@
-# pruefheft.py – Art p: Prüfungsblatt der Sorte P aus Daten (v0.7, 12.10.2026; Datenfelder 12.10.)
+# pruefheft.py – Art p: Prüfungsblatt der Sorte P aus Daten (v0.8, 12.10.2026; Datenfelder 12.10.)
 
     python3 werkzeuge/pruefheft.py --kapitel dreiecke --art p \
         --einheit "Winkel ohne Rechnung bestimmen oder begründen"
@@ -99,3 +99,23 @@ fehlt: Stufe „Winkelbeziehungen“ ohne Hauptplatz (nur im Muster), Schüler-
 - `Schülerfrage-Fälle`: Trenner „→“ statt „=“, wenn die Lage selbst ein „=“
   trägt („Rechteck: A = a · b, nach a umgestellt → a = A : b“). Ein einziger
   Fall steht ohne Buchstaben (Blatt und Lösung).
+## Nachzug 12.10. (H37 Flächen, dritte Fassung; pruefung.md § 5 vom 12.10., mathblatt.sty 2026-10-12)
+- Blatt = alle Originale der letzten fünf Jahre: je Stufe die Zeilen aus mehr-p10.csv
+  (Stufe im Kapitel, dazu Zeilen anderer Kapitel, deren Original hier in katalog_ids
+  steht, z. B. 2023-OS-K5c aus prozent) mit auf_blatt = ja, leicht → schwer (schwere,
+  rang). auf_blatt bleibt die Angabe der Daten (ja = Jahr in den letzten fünf, sonst
+  nein); weicht sie von der Jahresregel ab, meldet der Setzer „Hinweis: …“, ebenso,
+  wenn die schwerste echte nicht am Ende des Blatts steht (kein Abbruch).
+- Marke mit B: Basisaufgaben (Katalog block Basis bzw. id …-B…) „’25 · B1e“, einmal im
+  Blattkopf rechts „B = Basisteil, ohne Taschenrechner“ (\pfheftkopf[…]); Kontext-
+  aufgaben wie bisher „nach P10 ’23 · 2c“. Stern wie im Katalog.
+- Einstieg nur aus der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder
+  Frage), nie aus der Bank; bank_sprossen und `Einstieg: nein` sind für Art p ohne
+  Wirkung (Register: bank= leer). Neu `- **Schülerfrage-Skizze:** original` = die
+  Figur (grafik) des ersten Originals der Stufe links, die Fälle rechts untereinander;
+  sonst eigenes TikZ.
+- Jahre im Stufenkopf aus allen Daten (Katalogjahre der katalog_ids, ohne Hauptplatz
+  jahre_letzte5): `\pfjahre{25 · 24 · 23 · 22}{19 · 16}` – zweistellig, jüngstes
+  zuerst, ältere als fünf Jahre nach dem Strich und heller; ohne Jahr „–“. Der
+  Stufenkopf ist der der Vorlage (Linie, Abstand, 13 pt); der Setzer setzt nur
+  `\mbpfstufevorhalt` auf 0 pt und fordert 0,16 Seitenhöhe vor dem Kopf.
