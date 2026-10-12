@@ -4288,6 +4288,9 @@ def g1_kennung(pfad, schwach=False):
         if f[-1] == pfad and re.fullmatch(r'[2-9A-HJ-NP-Z]{3}( \+)?', f[0]):
             return f[0]
     belegt = {z.split(';')[0].replace(' +', '') for z in zeilen}
+    # v0.9: Kennungen fest je Einheit in der Gliederung (msa/gliederung/*.md, „Kennung: <Zuschnitt> = XYZ“) sind vergeben
+    for g in glob.glob(os.path.join(os.path.dirname(BANK), 'mathe-nachhilfe', 'msa', 'gliederung', '*.md')):
+        belegt |= set(re.findall(r'^Kennung:.*=\s*([2-9A-HJ-NP-Z]{3})\s*$', open(g, encoding='utf-8').read(), re.M))
     h = int(hashlib.sha1(pfad.encode()).hexdigest(), 16)
     while True:
         k = ''.join(KENN_ZEICHEN[(h >> (5 * i)) % 32] for i in range(3))
@@ -5316,9 +5319,23 @@ P_PRAEAMBEL = r"""% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortg
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung („Basis · ohne TR“, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par}
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
 \RenewDocumentEnvironment{pfaufg}{m m m}{%
   \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
-  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
   \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
   \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
  {\end{minipage}%
@@ -5369,16 +5386,20 @@ def p_gliederung(mn, kapitel):
     p = os.path.join(mn, 'msa', 'gliederung', f'{kapitel}.md')
     if not os.path.exists(p):
         sys.exit(f'fehlt: {p}')
-    g = {'name': kapitel.capitalize(), 'folge': 0, 'gruppen': [], 'stufen': OrderedDict(), 'anzeige': {}}
+    g = {'name': kapitel.capitalize(), 'folge': 0, 'gruppen': [], 'stufen': OrderedDict(), 'anzeige': {}, 'kennung': {}}
     st = None
     for z in open(p, encoding='utf-8').read().splitlines():
-        m = re.match(r'^(Name|Folge|Gruppen|Anzeigenamen):\s*(.*)$', z)
+        m = re.match(r'^(Name|Folge|Gruppen|Anzeigenamen|Kennung):\s*(.*)$', z)
         if m and st is None:
             k, v = m.group(1), m.group(2).strip()
             if k == 'Name':
                 g['name'] = v
             elif k == 'Folge':
                 g['folge'] = int(re.sub(r'\D', '', v) or 0)
+            elif k == 'Kennung':   # „<Zuschnitt> = TAL“, eine Zeile je Einheit (v0.9; gemeinsam.md „Kennung mit Fassung“)
+                if '=' in v:
+                    a, b = v.rsplit('=', 1)
+                    g['kennung'][a.strip()] = b.strip()
             elif k == 'Anzeigenamen':   # „Zuschnitt = Name in Schülersprache | …“, mehrere Zeilen erlaubt (12.10.)
                 for teil in v.split('|'):
                     if '=' in teil:
@@ -5515,14 +5536,25 @@ def p_jahre(D, z, letzte5):
     return jung, alt
 
 
+def p_haeufigkeit(jahre):
+    """Häufigkeitswort (pruefung.md § 5 „Häufigkeit im Stufenkopf“, Lehrer 12.10.): Zahl der letzten fünf
+    Prüfungsjahre mit der Stufe – 4–5 „immer“, 2–3 „oft“, 0–1 „selten“."""
+    n = len(jahre[0])
+    return 'immer' if n >= 4 else 'oft' if n >= 2 else 'selten'
+
+
 def p_jahre_tex(jahre):
-    """„25 · 24 · 23 | 19 · 16“: zweistellig, jüngstes zuerst, ältere als fünf Jahre nach dem Strich und
-    heller (\\pfjahre der Vorlage 2026-10-12); ohne Jahr „–“."""
+    """„oft · 25 · 23 | 19 · 16“: Häufigkeitswort, dann die Jahre zweistellig, jüngstes zuerst, ältere als fünf
+    Jahre nach dem Strich und heller (\\pfjahre der Vorlage 2026-10-12); bei „immer“ nur die jungen, bei
+    „selten“ alle (v0.9); ohne Jahr „selten · –“."""
     jung, alt = jahre
+    wort = p_haeufigkeit(jahre)
+    if wort == 'immer':
+        alt = []
     if not jung and not alt:
-        return '–'
+        return f'{wort} \\pkt{{}} –'
     f = lambda xs: ' \\pkt{} '.join(str(x)[2:] for x in xs)
-    return f'\\pfjahre{{{f(jung)}}}{{{f(alt)}}}'
+    return f'{wort}' + (' \\pkt{} ' if jung else ' ') + f'\\pfjahre{{{f(jung)}}}{{{f(alt)}}}'
 
 
 def p_stufenkopf(name, jahre, frage='', vorhalt=0.16):
@@ -5530,8 +5562,10 @@ def p_stufenkopf(name, jahre, frage='', vorhalt=0.16):
     vorhalt: Anteil der Seitenhöhe, der frei sein muss (Kopf + erste Aufgabe; nie eine Überschrift allein unten);
     None: ohne Vorhalt (der Kopf wird mit \\gkopfvor an die erste Aufgabe gebunden)."""
     out = (f'\\Needspace*{{{vorhalt}\\textheight}}' if vorhalt else '') + f'\\pfstufekopf{{{tx(name)}}}{{{p_jahre_tex(jahre)}}}'
-    if frage:
-        out += f'\\gfrage{{{tx(frage)}}}'
+    for fr in ([frage] if isinstance(frage, str) else frage):
+        if fr:
+            # „___“ = Lücke (Formel-Frage „Seite ___“, v0.9)
+            out += '\\gfrage{' + tx(fr.replace('___', '\x00')).replace('\x00', '\\linie{12mm}') + '}'
     return out
 
 
@@ -5719,7 +5753,11 @@ def p_form_tex(t_rest, grafik, form, optionen, ergebnisse, n, faktor):
                 grafik_gesetzt = True
         elif teil == 'zeichnen':
             k = max(3, round(4 * faktor))   # Skizze braucht Platz: nie unter 3 Zeilen
-            if g and not grafik_gesetzt:
+            if g and '{ksys}' in g and not grafik_gesetzt:
+                # Kein Karo bei „Zeichne“ (pruefung.md § 5, 12.10., TAL): das Koordinatensystem ist das Antwortfeld
+                out.append('\\par\\smallskip\\noindent\\gpassend{' + g + '}\\par')
+                grafik_gesetzt = True
+            elif g and not grafik_gesetzt:
                 out.append('\\gzwei{' + g + '}{' + f'\\karo{{{k}}}' + '}')
                 grafik_gesetzt = True
             else:
@@ -5750,13 +5788,17 @@ def p_form_tex(t_rest, grafik, form, optionen, ergebnisse, n, faktor):
     return out
 
 
-def p_echt_tex(D, r, nr, heraus, faktor=1.0, vorige=None, nr_vorige=0):
-    """Echte Aufgabe mit anderen Zahlen (msa/mehr-p10.csv, auf_blatt = ja): Marke mit Fundstelle und
-    Stern, Wortlaut, Skizze als Text links, Karo rechts; Fuß mit dem Ergebnis."""
+def p_echt_inhalt(D, r, nr, heraus, faktor=1.0, vorige=None, nr_vorige=0, schmal=False):
+    """Inhalt einer echten Aufgabe mit anderen Zahlen (msa/mehr-p10.csv, auf_blatt = ja) ohne Rahmen: Wortlaut,
+    Grafik oder Skizze links, Antwortfeld rechts. Rückgabe (Kommentare, Zeilen, Fuß). v0.9: der Rahmen (Marke,
+    Bedingungen, Nummer) kommt aus p_echt_tex oder – bei gebündelten Originalen – aus p_buendel_tex."""
     eid = r.get('eltern_id', '')
     h = [x['id'] for x in heraus if x.get('eltern_id') == eid]
-    out = [f'% {r["id"]} (Original {eid}, Schwere {r["schwere"]}, rang {r.get("rang", "")}; herausgelöste Fassung: '
-           + (', '.join(h) if h else 'keine') + ')']
+    kommentare = [f'% {r["id"]} (Original {eid}, Schwere {r["schwere"]}, rang {r.get("rang", "")}; herausgelöste Fassung: '
+                  + (', '.join(h) if h else 'keine') + ')']
+    if r.get('_ausgeblendet'):
+        kommentare.append('% Zweitthema ausgeblendet (Spalten <feld>_einheit, pruefheft-p.md v0.9)')
+    out = []
     form = (r.get('form') or '').strip()
     wortlaut = (r.get('wortlaut') or '').strip()
     if vorige is not None and nr_vorige and eid[:-1] == (vorige.get('eltern_id') or '')[:-1] and eid[:-1]:
@@ -5769,15 +5811,14 @@ def p_echt_tex(D, r, nr, heraus, faktor=1.0, vorige=None, nr_vorige=0):
         j = wortlaut.rfind('. ', 0, i + 1)
         if j >= 40:
             wortlaut = f'Angaben wie in Nr. {nr_vorige}. ' + wortlaut[j + 2:]
-            out.append(f'% Vorspann wie Nr. {nr_vorige} ({vorige["id"]}), gekürzt')
+            kommentare.append(f'% Vorspann wie Nr. {nr_vorige} ({vorige["id"]}), gekürzt')
     if 'wahrfalsch' in form.split('+'):
         text, optionen, rest = p_wahrfalsch(wortlaut)
     else:
         text, optionen, rest = p_kreuz(wortlaut)
     luecke = '___' in text
     t = tx(text.replace('___', '\x00')).replace('\x00', '\\linie{25mm}')
-    marke = p_marke(D, r)
-    out += [f'\\begin{{pfaufg}}{{{marke}}}{{{nr}.}}{{}}', t]
+    out.append(t)
     ergebnisse, _ = p_ergebnis(r)
     rechnet = bool(re.search(r'\d', r.get('loesung') or ''))
     n = max(1, round(max(2, min(4, mehr_schritte(r) + 1)) * faktor))
@@ -5789,11 +5830,7 @@ def p_echt_tex(D, r, nr, heraus, faktor=1.0, vorige=None, nr_vorige=0):
         out += p_form_tex(t_rest=tx(rest) if rest else '', grafik=grafik, form=form or 'karo', optionen=optionen,
                           ergebnisse=ergebnisse, n=n, faktor=faktor)
         bildoptionen = [] if optionen or '||' not in grafik else grafik.split('||')
-        fuss = '; '.join(p_fusswerte(ergebnisse, optionen or bildoptionen, r))
-        if fuss:
-            out.append(f'\\fusshilfe{{\\mbox{{{nr}:~{fuss}}}}}')
-        out.append('\\end{pfaufg}')
-        return '\n'.join(out)
+        return kommentare, out, '; '.join(p_fusswerte(ergebnisse, optionen or bildoptionen, r))
     if optionen:
         rechts = '\\par\\smallskip\\noindent' + ''.join(f'\\pfkreuz{{{"ABCD"[i]}}}{{{tx(o)}}}' for i, o in enumerate(optionen[:4]))
         if rest:
@@ -5818,7 +5855,19 @@ def p_echt_tex(D, r, nr, heraus, faktor=1.0, vorige=None, nr_vorige=0):
     if grafik and optionen:
         # neben der Skizze ist die Spalte schmal: eine Option je Zeile (gemeinsam.md „Ankreuzen“; 12.10., Flächen)
         rechts = ''.join(f'\\gkreuzzeile{{{"ABCD"[i]}}}{{{tx(o)}}}' for i, o in enumerate(optionen[:4]))
-    if grafik:
+    zeichne = bool(re.search(r'\b(Zeichne|Skizziere|zeichne|skizziere)\b', wortlaut))
+    if grafik and '{ksys}' in grafik and (zeichne or schmal) and not optionen:
+        # Kein Karo bei „Zeichne“ (pruefung.md § 5, 12.10.): das Koordinatensystem ist das Antwortfeld; im Bündel
+        # nebeneinander (schmal) steht das System unter dem Text, Antwortfeld darunter
+        out.append('\\par\\smallskip\\noindent\\gpassend{' + grafik + '}\\par')
+        if schmal and not zeichne:
+            # Bündel nebeneinander ohne Karo (pruefung.md § 5): je Gleichung im Ergebnis eine Antwortlinie „p(x) = ___“
+            for e in ergebnisse:
+                if re.search(r'\s(=|≈)\s', e):
+                    out.append('\\par\\smallskip\\noindent ' + tx(re.split(r'\s*(=|≈)\s*', e)[0]) + ' $=$\\linie{25mm}')
+        elif rechts and form in ('teil', 'linie'):
+            out.append('\\par\\noindent' + rechts)
+    elif grafik:
         out.append('\\gzwei{' + grafik + '}{' + (rechts or f'\\karo{{{n}}}') + '}')
     elif form == 'skizze':
         # Skizzenfeld (gemeinsam.md): links das Wort „Skizze“, rechts das Karo
@@ -5829,11 +5878,126 @@ def p_echt_tex(D, r, nr, heraus, faktor=1.0, vorige=None, nr_vorige=0):
         out.append('\\gzwei{' + p_skizze(r['abbildung'].strip()) + '}{' + (rechts or f'\\karo{{{n}}}') + '}')
     elif rechts:
         out.append(rechts)
-    fuss = '; '.join(tx(mehr_fusswert(e, optionen, r)) for e in ergebnisse)
+    return kommentare, out, '; '.join(tx(mehr_fusswert(e, optionen, r)) for e in ergebnisse)
+
+
+def p_echt_tex(D, r, nr, heraus, faktor=1.0, vorige=None, nr_vorige=0):
+    """Echte Aufgabe in pfaufg: Marke links (ohne Stern, v0.9), Bedingungen rechts („Basis · ohne TR“, „FOR“),
+    Inhalt aus p_echt_inhalt, Fuß mit dem Ergebnis."""
+    kommentare, zeilen, fuss = p_echt_inhalt(D, r, nr, heraus, faktor, vorige, nr_vorige)
+    out = kommentare + [f'\\begin{{pfaufg}}{{{p_marke(D, r)}}}{{{nr}.}}{{{p_bedingung_tex(D, r)}}}'] + zeilen
     if fuss:
         out.append(f'\\fusshilfe{{\\mbox{{{nr}:~{fuss}}}}}')
     out.append('\\end{pfaufg}')
     return '\n'.join(out)
+
+
+def p_buendel_schluessel(r):
+    """Spalte buendel (msa/mehr-p10.csv, v0.9): „<Schlüssel>“ oder „<Schlüssel>: <gemeinsamer Auftrag>“; Zeilen mit
+    gleichem Schlüssel in einer Stufe werden eine Nummer mit a), b) (pruefung.md § 5 „Gleichartige gebündelt“)."""
+    return (r.get('buendel') or '').split(':', 1)[0].strip()
+
+
+def p_posten(echte):
+    """Echte einer Stufe (nach p_rang) -> Posten: Liste von Zeilen; ein Bündel steht am Platz seines ersten Glieds."""
+    posten, wo = [], {}
+    for r in echte:
+        k = p_buendel_schluessel(r)
+        if k and k in wo:
+            posten[wo[k]].append(r)
+        else:
+            if k:
+                wo[k] = len(posten)
+            posten.append([r])
+    return posten
+
+
+def p_buendel_kopf(glieder):
+    """Gemeinsamer Auftrag des Bündels: Text hinter dem Doppelpunkt der Spalte buendel (erste Zeile, die einen hat),
+    sonst die Sätze, mit denen alle Glieder gleich beginnen. Rückgabe (Kopf, je Glied der Rest des Wortlauts)."""
+    auftrag = next((r['buendel'].split(':', 1)[1].strip() for r in glieder if ':' in (r.get('buendel') or '')), '')
+    saetze = [satz_split((r.get('wortlaut') or '').strip()) for r in glieder]
+    if auftrag:
+        # der gemeinsame Auftrag ersetzt in jedem Glied den Satz mit demselben Operator („Zeichne …“)
+        ops = {a.split()[0] for a in satz_split(auftrag) if a.split()}
+        return auftrag, [' '.join(x for x in sz if not (x.split() and x.split()[0] in ops)) for sz in saetze]
+    n = 0
+    while all(len(sz) > n + 1 for sz in saetze) and len({sz[n] for sz in saetze}) == 1:
+        n += 1
+    return ' '.join(saetze[0][:n]), [' '.join(sz[n:]) for sz in saetze]
+
+
+def p_buendel_tex(D, glieder, nr, heraus, faktor=1.0):
+    """Gleichartige Originale als eine Nummer mit a), b) (v0.9): je Glied Marke links und Bedingungen rechts auf der
+    Zeile des Buchstabens; haben alle Glieder ein Koordinatensystem (höchstens drei), stehen sie nebeneinander, je
+    mit eigenem kleinen System, ohne Karo (pruefung.md § 5 „Gleichartige Originale gebündelt“)."""
+    kopf, reste = p_buendel_kopf(glieder)
+    nebeneinander = len(glieder) <= 3 and all('{ksys}' in (r.get('grafik') or '') for r in glieder)
+    out = [f'% Bündel {p_buendel_schluessel(glieder[0])}: ' + ', '.join(r['id'] for r in glieder),
+           f'\\begin{{pfaufg}}{{}}{{{nr}.}}{{}}']
+    if kopf:
+        out.append(tx(kopf))
+    fuesse, spalten = [], []
+    for i, (r, rest) in enumerate(zip(glieder, reste)):
+        b = 'abcdefgh'[i] + ')'
+        r2 = dict(r, wortlaut=rest)
+        kommentare, zeilen, fuss = p_echt_inhalt(D, r2, nr, heraus, faktor, schmal=nebeneinander)
+        out += kommentare
+        if fuss:
+            fuesse.append(f'{b}~{fuss}')
+        if nebeneinander:
+            marke = p_marke(D, r).replace('\\\\', ' ')
+            bed = ' \\pkt{} '.join(tx(x) for x in p_bedingungen(D, r))
+            spalten.append(f'\\begin{{minipage}}[t]{{\\dimexpr\\linewidth/{len(glieder)}-2mm\\relax}}\\raggedright'
+                           f'\\textbf{{{b}}}\\hspace{{0.4em}}{{\\scriptsize\\color{{mbgrau}}{marke}'
+                           + (f' \\pkt{{}} {bed}' if bed else '') + '}\\par\\smallskip\n' + '\n'.join(zeilen)
+                           + '\n\\end{minipage}')
+        else:
+            if i == 0 and not kopf:
+                out.append('\\vspace*{-\\baselineskip}\\vspace*{-\\smallskipamount}')   # a) auf der Zeile der Nummer
+            out.append(f'\\begin{{gbteil}}{{{b}}}{{{p_marke(D, r)}}}{{{p_bedingung_tex(D, r)}}}')
+            out += zeilen
+            out.append('\\end{gbteil}')
+    if spalten:
+        # ohne gemeinsamen Text stehen a) und b) auf der Zeile der Nummer
+        out.append(('\\par\\smallskip' if kopf else '') + '\\noindent' + '\\hfill\n'.join(spalten) + '\\par')
+    if fuesse:
+        out.append(f'\\fusshilfe{{\\mbox{{{nr}:~{"; ".join(fuesse)}}}}}')
+    out.append('\\end{pfaufg}')
+    return '\n'.join(out)
+
+
+# Formel-Frage (pruefung.md § 5 „Formel-Frage einmal je Blatt“, Lehrer 12.10.): Denkanstoß „wo steht die Formel“ bei der
+# ersten Stufe mit Formel; die Formulierung wechselt je Blatt (fest je Einheit, damit ein Nachdruck gleich bleibt)
+P_FORMELFRAGE = ['Wo steht die Formel in deiner Formelsammlung? Seite ___',
+                 'Schlag zuerst die Formel nach. Formelsammlung, Seite ___',
+                 'Welche Formel aus der Formelsammlung brauchst du hier? Seite ___',
+                 'Bevor du rechnest: Auf welcher Seite der Formelsammlung steht die Formel? Seite ___']
+P_FORMEL = re.compile(r'(?:^|[\s(])([A-Za-z]{1,2}(?:_\w+)?|[a-z]\(x\))\s*=\s*([^=;]+)')
+P_FORMEL_RECHTS = re.compile(r'π|√|\b(?:sin|cos|tan)\b|(?<![A-Za-zÄÖÜäöüß])[a-zA-Z](?![A-Za-zÄÖÜäöüß²³])')
+
+
+def p_formel_in(verfahren):
+    """Gleichung mit Formelcharakter im Katalogfeld verfahren: rechts π, √, sin/cos/tan oder ein Buchstabe als Größe
+    („V = π · r² · h“, „p(x) = −(x − d)² + e“, „y = 55x + 990“), nicht „n = −1 ablesen“ oder Zahlen allein."""
+    for m in P_FORMEL.finditer(verfahren or ''):
+        rechts = m.group(2)
+        if rechts.count(')') > rechts.count('('):
+            continue   # Gleichung in einer Klammer („(AF = DF = 25) und …“)
+        if P_FORMEL_RECHTS.search(rechts):
+            return m.group(0).strip()
+    return ''
+
+
+def p_formelfrage(einheit):
+    import hashlib
+    return P_FORMELFRAGE[int(hashlib.sha1(einheit.encode()).hexdigest(), 16) % len(P_FORMELFRAGE)]
+
+
+def p_hat_formel(D, s):
+    """Stufe rechnet mit einer Formel: im Katalog (verfahren) eines Originals auf dem Blatt steht eine Gleichung mit
+    Buchstaben oder π rechts („V = π · r² · h“, „p(x) = −(x − d)² + e“), nicht nur Zahlen."""
+    return any(p_formel_in(D.kat.get(r.get('eltern_id', ''), {}).get('verfahren')) for r in s['echte'])
 
 
 def p_fusswerte(ergebnisse, optionen, r):
@@ -5879,15 +6043,40 @@ def p_ergebnis(r):
 
 
 def p_marke(D, r):
-    """Randmarke (pruefung.md § 5 „Marke mit B“, Lehrer 12.10.): Basisaufgaben „’25 · B1e“ (einmal im Blattkopf
-    „B = Basisteil, ohne Taschenrechner“), Kontextaufgaben wie bisher „nach P10 ’23 · 2c“ (mehr_marke); Stern
-    wie im Katalog."""
+    """Randmarke (pruefung.md § 5 „Marke mit B, Bedingungen rechts“, Lehrer 12.10. abends): Basisaufgaben
+    „’25 · B1e“, Kontextaufgaben wie bisher „nach P10 ’23 · 2c“ (mehr_marke). Der Stern entfällt (v0.9): FOR und
+    „Basis · ohne TR“ stehen als Bedingungen rechts (p_bedingungen)."""
     eid = r.get('eltern_id', '')
     k = D.kat.get(eid, {})
-    stern = '\\,$\\star$' if stern_fuer(D, eid) else ''
     if p_basis(D, eid):
-        return f"’{str(k['jahr'])[2:]}~\\pkt{{}}~B{p_teil(eid)}" + stern
-    return mehr_marke(r) + stern
+        return f"’{str(k['jahr'])[2:]}~\\pkt{{}}~B{p_teil(eid)}"
+    return mehr_marke(r)
+
+
+# Hilfsmittelregel der Zielprüfung (msa-vorgaben.md, FB 10: ab 2028 Basisteil 10 BE ohne Taschenrechner). Ändert sich
+# die Regel, ändert sich nur diese Zeile; hilfsmittel = nein im Katalog gilt immer (pruefung.md § 5 „Bedingungen rechts“)
+P_OHNE_TR_BLOCK = {'Basis'}
+
+
+def p_bedingungen(D, r):
+    """Bedingungen, unter denen die Aufgabe in der Prüfung vorkommt (v0.9), aus den Katalogfeldern block, hilfsmittel,
+    stern (stern_fuer: Stern ja oder FOR-Heft ohne EBR-Zwilling): [„Basis · ohne TR“], [„FOR“] oder beides."""
+    eid = r.get('eltern_id', '')
+    k = D.kat.get(eid, {})
+    out = []
+    if p_basis(D, eid):
+        ohne = (k.get('hilfsmittel') or '').strip() == 'nein' or (k.get('block') or 'Basis') in P_OHNE_TR_BLOCK
+        out.append('Basis · ohne TR' if ohne else 'Basis')
+    elif (k.get('hilfsmittel') or '').strip() == 'nein':
+        out.append('ohne TR')
+    if stern_fuer(D, eid):
+        out.append('FOR')
+    return out
+
+
+def p_bedingung_tex(D, r):
+    """Bedingungen für den rechten Rand: je Bedingung eine Zeile, „Basis ·“ / „ohne TR“ umbrochen (Rand 18 mm)."""
+    return '\\\\'.join(tx(b).replace(' · ', '~\\pkt{}\\\\') for b in p_bedingungen(D, r))
 
 
 def p_basis(D, iid):
@@ -5942,11 +6131,14 @@ def p_blatt_tex(D, einheit, kenn, stufen_daten, ausschnitt, fund, faktor=1.0, en
         out.append(f'\n% ===================== Stufe: {s["name"]} =====================')
         # Vorhalt: Kopf und erste Aufgabe zusammen; beginnt die Stufe mit einer Grafik (Koordinatensystem, Figur),
         # braucht das 0,36 Seitenhöhe (12.10., Quadratische: Kopf stand allein unten, die Grafik auf der nächsten Seite)
+        fragen = [x for x in (s.get('kurzfrage', ''), s.get('formelfrage', '')) if x]
+        if s.get('formelfrage'):
+            out.append('% Formel-Frage (einmal je Blatt, erste Stufe mit Formel; pruefung.md § 5)')
         if s['echte'] and not s['frage']:
             # Kopf und erste echte Aufgabe zusammen: die erste pfaufg setzt den Kopf, wenn beide Platz haben (\gkopfvor)
-            out.append('\\gkopfvor{' + p_stufenkopf(s['anzeige'], s['jahre'], s.get('kurzfrage', ''), None) + '}')
+            out.append('\\gkopfvor{' + p_stufenkopf(s['anzeige'], s['jahre'], fragen, None) + '}')
         else:
-            out.append(p_stufenkopf(s['anzeige'], s['jahre'], s.get('kurzfrage', ''), 0.16))
+            out.append(p_stufenkopf(s['anzeige'], s['jahre'], fragen, 0.16))
         if s['frage']:
             nr += 1
             s['nr_frage'] = nr
@@ -5954,11 +6146,18 @@ def p_blatt_tex(D, einheit, kenn, stufen_daten, ausschnitt, fund, faktor=1.0, en
         elif not s.get('kurzfrage'):
             out.append('% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; '
                        'oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)')
-        s['nr_echt'] = []
+        s['nr_echt'] = []   # je echte Zeile (Nummer, Buchstabe im Bündel)
         vorige, nr_vorige = None, 0
-        for r in s['echte']:
+        for glieder in p_posten(s['echte']):
             nr += 1
-            s['nr_echt'].append(nr)
+            if len(glieder) > 1:
+                # gleichartige Originale gebündelt (Spalte buendel, v0.9): eine Nummer mit a), b)
+                s['nr_echt'] += [(nr, 'abcdefgh'[i] + ')') for i in range(len(glieder))]
+                out.append(p_buendel_tex(D, glieder, nr, s['heraus'], faktor))
+                vorige, nr_vorige = None, 0
+                continue
+            r = glieder[0]
+            s['nr_echt'].append((nr, ''))
             out.append(p_echt_tex(D, r, nr, s['heraus'], faktor, vorige, nr_vorige))
             vorige, nr_vorige = r, nr
         if not s['echte']:
@@ -5982,7 +6181,7 @@ def p_loesung_tex(D, einheit, kenn, stufen_daten):
             out.append('\\begin{pfloesungb}{}')
             out.append(f'\\lzb{{{s["nr_frage"]}.}}{{}}{{{p_frage_ergebnis(s["frage"])}}}{{{tx(s["frage"]["weg"])}}}')
             out.append('\\end{pfloesungb}')
-        for nr, r in zip(s['nr_echt'], s['echte']):
+        for (nr, bst), r in zip(s['nr_echt'], s['echte']):
             ergebnisse, weg = p_ergebnis(r)
             _, optionen = mehr_kreuz((r.get('wortlaut') or '').strip())
             b = mehr_buchstabe(r, optionen)
@@ -5990,7 +6189,7 @@ def p_loesung_tex(D, einheit, kenn, stufen_daten):
                 ergebnisse = [b] + ergebnisse   # Buchstabe ohne eigenen Teil in loesung (Art p vor v0.7)
             erg = '; '.join(tx(e) for e in ergebnisse)
             out.append('\\begin{pfloesungb}{}')
-            out.append(f'\\lzb{{{nr}.}}{{}}{{{erg}}}{{{tx(weg)}}}')
+            out.append(f'\\lzb{{{"" if bst and bst != "a)" else str(nr) + "."}}}{{{bst}}}{{{erg}}}{{{tx(weg)}}}')
             out.append('\\end{pfloesungb}')
     out.append('\\end{document}')
     return '\n'.join(out)
@@ -6029,20 +6228,107 @@ def p_uebersicht_tex(gl, einheiten, einheit, kenn, stufen_daten, kapitel_namen):
     return '\n'.join(out)
 
 
-def p_register(args, kenn, ordner, seiten, einheit, stufen_daten):
+P_FASSUNGEN = os.path.join(BANK, 'bau', 'fassungen.csv')
+P_FASSUNG_KOPF = 'kennung;fassung;fingerabdruck;datum;kapitel;einheit;pfad;bemerkung'
+
+
+def p_fingerabdruck(D, stufen_daten):
+    """Fingerabdruck der Daten der Einheit (gemeinsam.md „Kennung mit Fassung“: die Fassung steigt nur, wenn sich die
+    Daten ändern): je Stufe Anzeigename, Jahre, Fragen der Gliederung; je echte Zeile die Felder aus mehr-p10.csv, die
+    auf dem Blatt stehen oder die Folge bestimmen, und die Katalogfelder der Bedingungen. Was der Setzer daraus macht
+    (Satz, Karo, Häufigkeitswort, Formel-Frage, Marke) zählt nicht: ein Nachdruck mit neuem Setzer bleibt dieselbe
+    Fassung."""
+    import hashlib
+    import json
+    felder = ('id', 'wortlaut', 'abbildung', 'grafik', 'form', 'loesung', 'schwere', 'rang', 'buendel') + tuple(
+        f + '_einheit' for f in P_EINHEIT_FELDER)
+    inhalt = []
+    for s in stufen_daten:
+        z = []
+        for r in s['echte']:
+            k = D.kat.get(r.get('eltern_id', ''), {})
+            z.append([r.get(f, '') or '' for f in felder] + [k.get(f, '') for f in ('jahr', 'papier', 'block',
+                                                                                      'hilfsmittel', 'stern')])
+        inhalt.append([s['anzeige'], s['jahre'], s.get('kurzfrage', ''),
+                       json.dumps(s['frage'], sort_keys=True, ensure_ascii=False) if s['frage'] else '', z])
+    return hashlib.sha1(json.dumps(inhalt, ensure_ascii=False).encode()).hexdigest()[:12]
+
+
+def p_fassungen():
+    if not os.path.exists(P_FASSUNGEN):
+        return []
+    return lies_csv(P_FASSUNGEN)
+
+
+def p_fassung(kenn, abdruck):
+    """Fassung des Blatts: die letzte Zeile der Kennung in bau/fassungen.csv; gleicher Fingerabdruck -> dieselbe
+    Fassung (Nachdruck), sonst die nächste. Rückgabe (Fassung, neu?)."""
+    zeilen = [z for z in p_fassungen() if z['kennung'] == kenn]
+    if not zeilen:
+        return 1, True
+    letzte = max(zeilen, key=lambda z: int(z['fassung']))
+    if letzte['fingerabdruck'] == abdruck:
+        return int(letzte['fassung']), False
+    return int(letzte['fassung']) + 1, True
+
+
+def p_fassung_schreiben(args, kenn, fassung, abdruck, einheit, ordner, bemerkung='pruefheft.py v0.9'):
+    p = P_FASSUNGEN
+    zeilen = open(p, encoding='utf-8').read().splitlines() if os.path.exists(p) else [P_FASSUNG_KOPF]
+    zeilen.append(';'.join([kenn, str(fassung), abdruck, args.datum, args.kapitel, einheit,
+                            os.path.relpath(ordner, BANK), bemerkung]))
+    open(p, 'w', encoding='utf-8').write('\n'.join(zeilen) + '\n')
+
+
+def p_kennung(gl, einheit, ordner, hinweise):
+    """Kennung der Einheit aus der Gliederung („Kennung: <Zuschnitt> = XYZ“, v0.9); fehlt sie, die alte Regel
+    (g1_kennung, je Ordner) mit Hinweis. Prüft das Zeichenmuster und dass das Register die Kennung keiner anderen
+    Einheit gibt."""
+    kenn = gl['kennung'].get(einheit, '')
+    if not kenn:
+        hinweise.append(f'Kennung fehlt in der Gliederung („Kennung: {einheit} = …“) – Ersatz nach Ordner')
+        return g1_kennung(os.path.relpath(ordner, BANK))
+    if not re.fullmatch(r'[2-9A-HJ-NP-Z]{3}', kenn):
+        sys.exit(f'Kennung „{kenn}“ der Gliederung verletzt das Muster (gemeinsam.md „Satz“: 2–9, A–Z ohne I, O)')
+    p_reg = os.path.join(BANK, 'bau', 'register.csv')
+    for z in open(p_reg, encoding='utf-8').read().splitlines()[1:]:
+        f = z.split(';')
+        if f[0] == kenn and len(f) > 4 and 'einheit=' in f[4] and f'einheit={einheit}' not in f[4]:
+            hinweise.append(f'Register: Kennung {kenn} steht auch bei „{f[4][:60]}…“ ({f[1]})')
+    return kenn
+
+
+def p_register(args, kenn, ordner, seiten, einheit, stufen_daten, fassung=1):
     p_reg = os.path.join(BANK, 'bau', 'register.csv')
     zeilen = open(p_reg, encoding='utf-8').read().splitlines()
     pfad = os.path.relpath(ordner, BANK)
     zeilen = [z for z in zeilen if not z.endswith(';' + pfad)]
     ids = [r['id'] for s in stufen_daten for r in s['echte']]
     best = (f'kapitel={args.kapitel}, art=p, einheit={einheit}, stufen={len(stufen_daten)}, '
-            f'echte={len(ids)}, ids={" ".join(ids)}, bank=, seiten={seiten}'
+            f'echte={len(ids)}, ids={" ".join(ids)}, bank=, seiten={seiten}, fassung={fassung}'
             + (f', schueler={args.schueler}' if args.schueler else ''))
     commit = subprocess.run(['git', 'rev-parse', '--short', 'HEAD'], cwd=BANK, capture_output=True,
                             text=True).stdout.strip()
     zeilen.append(f'{kenn};{args.datum};{args.kapitel};P;{best};{commit};'
-                  f'pruefheft.py v0.8;Version 2026-10-12;{pfad}')
+                  f'pruefheft.py v0.9;Version 2026-10-12;{pfad}')
     open(p_reg, 'w', encoding='utf-8').write('\n'.join(zeilen) + '\n')
+
+
+# Zweitthema ausblenden (pruefung.md § 5, Lehrer 12.10.; v0.9): Spalten <feld>_einheit in msa/mehr-p10.csv ersetzen
+# auf dem Einheitsblatt das Feld; die ungekürzte Zeile bleibt für das Gemischt-Blatt und den Mehr-Block
+P_EINHEIT_FELDER = ('wortlaut', 'loesung', 'pruef', 'grafik', 'form')
+
+
+def p_einheitsfassung(r):
+    if not any((r.get(f + '_einheit') or '').strip() for f in P_EINHEIT_FELDER):
+        return r
+    r = dict(r)
+    for f in P_EINHEIT_FELDER:
+        w = (r.get(f + '_einheit') or '').strip()
+        if w:
+            r[f] = w
+    r['_ausgeblendet'] = True
+    return r
 
 
 def p_bau(args):
@@ -6076,7 +6362,7 @@ def p_bau(args):
             soll = 'ja' if jahr in letzte5 else 'nein'
             if r.get('auf_blatt', '').strip() != soll:
                 hinweise.append(f'{r["id"]}: auf_blatt = {r.get("auf_blatt", "").strip() or "leer"}, Jahr {jahr} verlangt {soll}')
-        echte = sorted([r for r in zeilen if r.get('auf_blatt', '').strip() == 'ja'], key=p_rang)
+        echte = sorted([p_einheitsfassung(r) for r in zeilen if r.get('auf_blatt', '').strip() == 'ja'], key=p_rang)
         ids += kat_ids + [r['eltern_id'] for r in zeilen if r.get('eltern_id')]
         info = gl['stufen'].get(name, {})
         if not echte and not frage_vorhanden(info):
@@ -6110,7 +6396,28 @@ def p_bau(args):
                   f'{{{" \\pkt{} ".join(tx(anz(n)) for n in namen[i + 1:])}}}')
     name = f'{args.kapitel}-p-{mehr_kurz(einheit)}'
     ordner = args.aus or os.path.join(BANK, 'bau', 'pruefheft', f'{name}-{args.datum}')
-    kenn = g1_kennung(os.path.relpath(ordner, BANK))
+    kenn = p_kennung(gl, einheit, ordner, hinweise)
+    # Formel-Frage einmal je Blatt (v0.9): erste Stufe mit Formel; entfällt, wenn eine Frage der Gliederung auf dem
+    # Blatt schon nach der Formelsammlung fragt (Flächen „Auf welcher Seite stehen die Flächenformeln?“)
+    schon = any(re.search(r'Formelsammlung|Seite', (s['frage'] or {}).get('frage', '') + s.get('kurzfrage', ''))
+                for s in stufen_daten)
+    st_formel = next((s for s in stufen_daten if p_hat_formel(D, s)), None)
+    if st_formel and not schon:
+        st_formel['formelfrage'] = p_formelfrage(einheit)
+    elif st_formel:
+        hinweise.append('Formel-Frage entfällt: die Gliederung fragt auf dem Blatt schon nach der Formelsammlung')
+    # Kennung mit Fassung (gemeinsam.md, Lehrer 12.10.): Fassung steigt nur mit dem Inhalt (Fingerabdruck)
+    abdruck = p_fingerabdruck(D, stufen_daten)
+    fassung, fassung_neu = p_fassung(kenn, abdruck)
+    kenn_basis, kenn = kenn, f'{kenn}{fassung}'
+    if args.fassung_erfassen:
+        # Übergang (v0.9): der heutige Datenstand einer schon gelieferten Einheit gilt als Fassung 1, ohne zu setzen
+        if any(z['kennung'] == kenn_basis for z in p_fassungen()):
+            print(f'{kenn_basis}: schon im Fassungsregister (Fassung {fassung}, {"neu" if fassung_neu else "gleich"})')
+        else:
+            p_fassung_schreiben(args, kenn_basis, 1, abdruck, einheit, ordner, 'zuletzt geliefert = Fassung 1')
+            print(f'{kenn_basis}1 erfasst (Fingerabdruck {abdruck})')
+        return
     arbeit = tempfile.mkdtemp(prefix='pruefheft-p-')
     fund = p_fundstellen(D, ids, letzte5)
     # Rechenraum: voller Karo; steht die Fundstellentabelle dann allein auf einer neuen Seite, kleinerer
@@ -6142,9 +6449,13 @@ def p_bau(args):
                        f'Missing character {e["missing"]}, Overfull {e["overfull"]}')
         bericht += ['   ' + fl for fl in e['fehler'][:5]]
     if not args.ohne_register:
-        p_register(args, kenn, ordner, seiten, einheit, stufen_daten)
+        p_register(args, kenn_basis, ordner, seiten, einheit, stufen_daten, fassung)
+        if fassung_neu:
+            p_fassung_schreiben(args, kenn_basis, fassung, abdruck, einheit, ordner)
     print('\n'.join(bericht))
     print('Ordner:', ordner)
+    print(f'Kennung {kenn_basis}, Fassung {fassung} ({"neu" if fassung_neu else "Nachdruck"}; Fingerabdruck {abdruck})'
+          + (' – nicht ins Fassungsregister (--ohne-register)' if args.ohne_register else ''))
     print(f'Einheit: {einheit}; Kennung {kenn}; Stufen: ' + ' | '.join(
         f'{s["name"]} ({", ".join(str(j) for j in s["jahre"][0]) or "–"}' + (f' | {", ".join(str(j) for j in s["jahre"][1])}' if s["jahre"][1] else '')
         + f'; Einstieg {"Schülerfrage" if s["frage"] else "–"}; echte {len(s["echte"])})' for s in stufen_daten))
@@ -6178,6 +6489,9 @@ def main():
     ap.add_argument('--uebung', action='store_true', help='Anhang „Mehr zum Üben“ (nur auf Zuruf, Punkt 31)')
     ap.add_argument('--ohne-uebung', action='store_true', help='ohne Wirkung seit Punkt 31 (Anhang nie automatisch)')
     ap.add_argument('--ohne-register', action='store_true')
+    ap.add_argument('--fassung-erfassen', action='store_true',
+                    help='nur --art p: Datenstand der Einheit als Fassung 1 ins Fassungsregister (bau/fassungen.csv), '
+                         'nichts setzen – für schon gelieferte Einheiten (v0.9)')
     ap.add_argument('--alle', action='store_true', help='Fokusblatt mit allen Originalen, ohne Auswahl je Sorte (Bauregeln 2.1)')
     ap.add_argument('--nur-register', action='store_true',
                     help='nichts setzen, nur die Registerzeile des schon gebauten Ordners schreiben (Lauf C: '

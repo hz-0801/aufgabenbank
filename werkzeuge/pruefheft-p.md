@@ -1,10 +1,11 @@
-# pruefheft.py – Art p: Prüfungsblatt der Sorte P aus Daten (v0.8, 12.10.2026; Datenfelder 12.10.)
+# pruefheft.py – Art p: Prüfungsblatt der Sorte P aus Daten (v0.9, 12.10.2026; Datenfelder 12.10.)
 
     python3 werkzeuge/pruefheft.py --kapitel dreiecke --art p \
         --einheit "Winkel ohne Rechnung bestimmen oder begründen"
 
 Ausgabe: `bau/pruefheft/<kapitel>-p-<einheit-kurz>-<datum>/` (`src/`, `pdf/`:
-1-uebersicht, 2-blatt, 3-loesungen), Zeile in bau/register.csv (Rezept P).
+1-uebersicht, 2-blatt, 3-loesungen), Zeile in bau/register.csv (Rezept P, mit
+`fassung=`), neue Fassung in bau/fassungen.csv (v0.9, unten).
 Regeln: pruefung.md § 5, gemeinsam.md „Satz“, „Lösungen“, „Übersicht und
 Serie“. Muster (Hand-Satz T2U): bau/pruefung/2026-10-11/winkel-ohne-rechnung/.
 Daten (nur gelesen): gliederung/<kapitel>.md (Name, Folge, Gruppen, Zuschnitt
@@ -16,8 +17,8 @@ leichteste Zeile der ersten Sprosse in bank_sprossen, ruhende nie).
 
 Form je Stufe: Stufenkopf mit Jahren der Hauptplätze aus den letzten fünf (ohne
 Hauptplatz: jahre_letzte5), Einstieg aus der Bank, echte nach Schwere und rang
-(schwerste am Ende), Marke „nach P10 ’yy · 6a“ mit Stern (Katalog stern = ja
-oder FOR ohne EBR-Zwilling), Skizze als Text kursiv links, Karo rechts.
+(schwerste am Ende), Marke „nach P10 ’yy · 6a“ (seit v0.9 ohne Stern; Bedingungen
+rechts, unten), Skizze als Text kursiv links, Karo rechts.
 Blattende: Fundstellentabelle (jüngstes Jahr … −10, „26 FOR“/„26 EBR“ bei
 Kursheften, alle Originale der Einheit), Ausschnitt Vorher/▸/Weiter. Karo voll;
 steht die Tabelle allein auf einer Seite, Faktor 0,75, 0,5. Lösung: Stufenköpfe
@@ -150,3 +151,55 @@ fehlt: Stufe „Winkelbeziehungen“ ohne Hauptplatz (nur im Muster), Schüler-
   ≥ 40 Zeichen) „Angaben wie in Nr. k.“ – eine Zahlenwahl je Aufgabe
   (pruefung.md § 5 „Andere Zahlen“); im TeX „% Vorspann wie Nr. k“. Dafür den
   rang so setzen, dass die Teile nacheinander stehen.
+## v0.9 (12.10., Festlegungen des Lehrers vom 12.10.; pruefung.md § 5, gemeinsam.md „Satz“, „Kennung mit Fassung“)
+- **Bedingungen rechts:** am rechten Rand jeder echten Aufgabe klein grau, auf der Zeile der
+  Nummer, „Basis · ohne TR“, „FOR“ oder beides (`pfaufg` drittes Argument, `\gbedrand`). Aus
+  dem Katalog: block Basis (id …-B…) → „Basis · ohne TR“ (Regel `P_OHNE_TR_BLOCK` im Setzer:
+  ab 2028 ist der Basisteil hilfsmittelfrei; ändert sich das, eine Zeile), hilfsmittel =
+  nein → „ohne TR“; stern = ja oder FOR-Heft ohne EBR-Zwilling (`stern_fuer`) → „FOR“. Der
+  Stern an der Marke entfällt; Basisaufgaben „’25 · B1e“, Kontext „nach P10 ’23 · 2c“.
+- **Häufigkeitswort im Stufenkopf** vor den Jahren: Zahl der letzten fünf Prüfungsjahre mit
+  der Stufe (dieselben Jahre wie bisher) – 4–5 „immer“, 2–3 „oft“, 0–1 „selten“. Bei „immer“
+  nur die jungen Jahre, sonst auch die älteren nach dem Strich („selten · 26 | 14“).
+- **Gleichartige Originale gebündelt – neue Spalte `buendel` in msa/mehr-p10.csv:**
+  `<schlüssel>` oder `<schlüssel>: <gemeinsamer Auftrag>`. Zeilen derselben Stufe mit
+  gleichem Schlüssel werden eine Nummer mit a), b) am Platz des ersten Glieds (rang); je
+  Glied Marke links und Bedingungen rechts auf der Zeile des Buchstabens. Der gemeinsame
+  Auftrag steht einmal oben und ersetzt in jedem Glied den Satz, der mit demselben Wort
+  beginnt („Zeichne …“); ohne Auftrag stehen die gleichen Anfangssätze oben. Haben alle
+  Glieder (höchstens drei) ein Koordinatensystem in `grafik`, stehen sie nebeneinander, je
+  eigenes kleines System, kein Karo (Antwortlinie „p(x) = ___“ je Gleichung der Lösung);
+  sonst untereinander. Lösung: „5. a) …“, „b) …“; Fuß „5: a) … ; b) …“. Leer = kein Bündel.
+  Kennzeichnen (Schlüssel vergeben) machen die Bau-Agenten: nur Originale, die sich allein
+  in den Zahlen unterscheiden (pruefung.md § 5).
+- **Kein Karo bei „Zeichne“:** steht im Wortlaut „Zeichne/Skizziere“ und ist `grafik` ein
+  Koordinatensystem (`{ksys}`), ist das System das Antwortfeld (form `zeichnen` oder leer);
+  Karo nur, wo gerechnet wird. Breite höchstens die Spalte (`\gpassend`).
+- **Zweitthema ausblenden – neue Spalten `wortlaut_einheit`, `loesung_einheit`,
+  `pruef_einheit`, `grafik_einheit`, `form_einheit` in msa/mehr-p10.csv:** gefüllt ersetzen
+  sie auf dem Einheitsblatt das gleichnamige Feld (fremder Teil weggelassen,
+  Zwischenergebnis im Wortlaut gegeben, z. B. „… ist y = 4 gegeben (aus der Parabel)“);
+  leer = wie bisher. Die ungekürzte Zeile bleibt für das Gemischt-Blatt und den Mehr-Block.
+  Im TeX „% Zweitthema ausgeblendet“. `pruef_einheit` prüft `loesung_einheit` (mehr-pruef.py
+  kennt die neuen Spalten noch nicht – beim ersten Füllen nachziehen).
+- **Kennung mit Fassung:** Kennung fest je Einheit im Kopf der Gliederung
+  `msa/gliederung/<kapitel>.md`: `Kennung: <Zuschnitt> = XYZ` (eine Zeile je Einheit, alle
+  P10-Einheiten seit 12.10.); fehlt sie, Ersatz nach Ordner mit Hinweis. Auf dem Blatt
+  Kennung und Fassung ohne Trenner (TAL1, Kopf rechts). Fassung aus `bau/fassungen.csv`
+  (`kennung;fassung;fingerabdruck;datum;kapitel;einheit;pfad;bemerkung`): Fingerabdruck der
+  Daten der Einheit (je Stufe Anzeigename, Jahre, Fragen der Gliederung; je echte Zeile
+  wortlaut, abbildung, grafik, form, loesung, schwere, rang, buendel, *_einheit und die
+  Katalogfelder jahr, papier, block, hilfsmittel, stern). Gleicher Abdruck = Nachdruck,
+  gleiche Fassung; anderer = nächste Fassung, neue Zeile. Satz des Setzers zählt nicht. Kein
+  Baudatum auf dem Blatt. `--fassung-erfassen` schreibt den heutigen Datenstand als
+  Fassung 1, ohne zu setzen (so erfasst: AZL, EF4, Y5D, XU6, TAL aus dem Datenstand ihrer
+  Lieferung; P4Z, GYW, LXA, T2U, NUB als Handsatz ohne Abdruck – ihr erster Satz aus Daten
+  wird Fassung 2). Register: `fassung=` in der Bestellung; Lieferliste: `lieferung.py
+  --kennung TAL1` (Kennung mit Fassung).
+- **Formel-Frage einmal je Blatt:** bei der ersten Stufe, deren Original im Katalog
+  (verfahren) eine Formel hat (rechts π, √, sin/cos/tan oder eine Größe als Buchstabe),
+  kursiv unter dem Stufenkopf, eine von vier Formulierungen, fest je Einheit (wechselt von
+  Blatt zu Blatt, nicht beim Nachdruck). Entfällt, wenn eine Frage der Gliederung auf dem
+  Blatt schon nach der Formelsammlung fragt (Flächen).
+- Geprüft mit Parabel (XU61, 2 S.) und Volumen (AZL1, 3 S.); Bündel und Ausblenden an einer
+  Kopie der Daten (Lineare, Parabel, Flächen); Art mehr und normal unverändert.
