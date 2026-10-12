@@ -5116,7 +5116,7 @@ def mehr_loesung(r):
     „Name op Wert“ verkürzt."""
     lo = (r.get('loesung') or '').strip()
     ergebnisse = []
-    for teil in [t.strip() for t in lo.split('|') if t.strip()]:
+    for teil in [t.strip() for t in re.split(r'\s\|\s', lo) if t.strip()]:
         schritt = re.split(r'\s*[;⇒]\s*', teil)[-1].strip()
         segs = re.split(r'\s*(=|≈)\s*', schritt)
         if len(segs) >= 3:
@@ -5139,7 +5139,8 @@ def mehr_kreuz(text):
 
 def mehr_schritte(r):
     lo = (r.get('loesung') or '')
-    return len([s for s in re.split(r'[;|⇒]', lo) if s.strip()])
+    # Schritte: „;“, „⇒“ und der Teilfragen-Trenner „ | “; ein „|“ in S(3|−1) ist kein Schritt (12.10., Quadratische)
+    return len([s for s in re.split(r';|⇒|\s\|\s', lo) if s.strip()])
 
 
 def mehr_aufgabe_tex(r, nr, faktor=1.0):
@@ -5323,8 +5324,14 @@ P_PRAEAMBEL = r"""% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortg
  {\end{minipage}%
   \end{minipage}\end{lrbox}%
   \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
-  \par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
 % Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
 \newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
 % Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
@@ -5520,8 +5527,9 @@ def p_jahre_tex(jahre):
 
 def p_stufenkopf(name, jahre, frage='', vorhalt=0.16):
     """Stufenkopf mit Jahren (p_jahre_tex); darunter kursiv die Schülerfrage der Stufe (Gliederung „Frage“, v0.7).
-    vorhalt: Anteil der Seitenhöhe, der frei sein muss (Kopf + erste Aufgabe; nie eine Überschrift allein unten)."""
-    out = f'\\Needspace*{{{vorhalt}\\textheight}}\\pfstufekopf{{{tx(name)}}}{{{p_jahre_tex(jahre)}}}'
+    vorhalt: Anteil der Seitenhöhe, der frei sein muss (Kopf + erste Aufgabe; nie eine Überschrift allein unten);
+    None: ohne Vorhalt (der Kopf wird mit \\gkopfvor an die erste Aufgabe gebunden)."""
+    out = (f'\\Needspace*{{{vorhalt}\\textheight}}' if vorhalt else '') + f'\\pfstufekopf{{{tx(name)}}}{{{p_jahre_tex(jahre)}}}'
     if frage:
         out += f'\\gfrage{{{tx(frage)}}}'
     return out
@@ -5531,6 +5539,10 @@ def p_skizze(text):
     """Skizze als Text kursiv in der linken Spalte (keine Grafik in den Daten)."""
     return ('\\parbox[t]{\\dimexpr0.5\\textwidth-\\gEin-\\mbpfnr-5mm\\relax}{\\raggedright\\small\\itshape Skizze: '
             + tx(text) + '}')
+
+
+def frage_vorhanden(info):
+    return bool((info.get('schülerfrage') or '').strip() or (info.get('frage') or '').strip())
 
 
 def p_frage(info):
@@ -5829,14 +5841,15 @@ def p_ergebnis(r):
     der Halbsatz nach „daher/also/somit/deshalb“."""
     lo = (r.get('loesung') or '').strip()
     ergebnisse = []
-    for teil in [t.strip() for t in lo.split('|') if t.strip()]:
+    for teil in [t.strip() for t in re.split(r'\s\|\s', lo) if t.strip()]:
         m = re.search(r'\((erste|zweite|dritte|vierte)\s+Option', teil)
         if m:
             # Ankreuz-Teil (v0.7): das Ergebnis ist der Buchstabe (gemeinsam.md „Buchstaben vor Optionen“)
             ergebnisse.append('ABCD'['erste zweite dritte vierte'.split().index(m.group(1))])
             continue
         # Klammern ohne Zahl sind Vermerke („(erste Option)“), Klammern mit Zahl Rechnung („(π · 7,5)“)
-        t = re.sub(r'\s*\((?![^()]*[\d+−·:=])[^()]*\)', '', teil).strip()   # „(b + c)“ bleibt (12.10., Flächen)
+        # „(b + c)“ bleibt (12.10., Flächen); „p(x)“ bleibt: eine Klammer direkt hinter einem Buchstaben ist Funktionsschreibweise, kein Vermerk (12.10., Quadratische)
+        t = re.sub(r'\s*(?<![\w)])\((?![^()]*[\d+−·:=])[^()]*\)', '', teil).strip()
         m = re.match(r'^(ja|nein|richtig|falsch|stimmt nicht|stimmt)\b[,:]?', t, re.I)
         if m:   # Begründen: das Urteil ist das Ergebnis (gemeinsam.md „Lösungen“)
             ergebnisse.append(m.group(1))
@@ -5905,16 +5918,23 @@ def p_legende(D, stufen_daten):
     return '[B = Basisteil, ohne Taschenrechner]' if basis else ''
 
 
-def p_blatt_tex(D, einheit, kenn, stufen_daten, ausschnitt, fund, faktor=1.0):
+def p_blatt_tex(D, einheit, kenn, stufen_daten, ausschnitt, fund, faktor=1.0, entfallen=()):
     out = [KOPF.replace('\\begin{document}', P_PRAEAMBEL + '\\begin{document}'), '\\pfheftstil',
            f'\\pflaufkopf[P10 \\pkt{{}} Prüfung]{{{tx(einheit)}}}{{{kenn}}}\\pfseitevon',
            f'\\pfheftkopf{p_legende(D, stufen_daten)}{{{tx(einheit)}}}{{}}',
            '\\pfstufenzeile{' + ' \\pkt{} '.join(tx(s['anzeige']) for s in stufen_daten) + '}']
     nr = 0
+    for name in entfallen:
+        out.append(f'% Stufe entfällt: {name} – kein Original der letzten fünf Jahre (Mehr-Block, Fundstellen)')
     for s in stufen_daten:
         out.append(f'\n% ===================== Stufe: {s["name"]} =====================')
-        # Vorhalt: Kopf und erste Aufgabe zusammen
-        out.append(p_stufenkopf(s['anzeige'], s['jahre'], s.get('kurzfrage', ''), 0.16))
+        # Vorhalt: Kopf und erste Aufgabe zusammen; beginnt die Stufe mit einer Grafik (Koordinatensystem, Figur),
+        # braucht das 0,36 Seitenhöhe (12.10., Quadratische: Kopf stand allein unten, die Grafik auf der nächsten Seite)
+        if s['echte'] and not s['frage']:
+            # Kopf und erste echte Aufgabe zusammen: die erste pfaufg setzt den Kopf, wenn beide Platz haben (\gkopfvor)
+            out.append('\\gkopfvor{' + p_stufenkopf(s['anzeige'], s['jahre'], s.get('kurzfrage', ''), None) + '}')
+        else:
+            out.append(p_stufenkopf(s['anzeige'], s['jahre'], s.get('kurzfrage', ''), 0.16))
         if s['frage']:
             nr += 1
             s['nr_frage'] = nr
@@ -6025,7 +6045,7 @@ def p_bau(args):
     mehr = p_mehr(D.mn, args.kapitel, einheit)
     mehr_alle = lies_csv(os.path.join(D.mn, 'msa', 'mehr-p10.csv')) if os.path.exists(os.path.join(D.mn, 'msa', 'mehr-p10.csv')) else []
     heraus = [r for r in D.heraus if (r.get('art') or '') == 'herausgeloest']
-    stufen_daten, ids, hinweise = [], [], []
+    stufen_daten, ids, hinweise, entfallen = [], [], [], []
     for z in einheiten[einheit]['stufen']:
         name = z['stufe'].strip()
         kat_ids = (z.get('katalog_ids') or '').split()
@@ -6045,6 +6065,12 @@ def p_bau(args):
         echte = sorted([r for r in zeilen if r.get('auf_blatt', '').strip() == 'ja'], key=p_rang)
         ids += kat_ids + [r['eltern_id'] for r in zeilen if r.get('eltern_id')]
         info = gl['stufen'].get(name, {})
+        if not echte and not frage_vorhanden(info):
+            # Stufe ohne Original der letzten fünf Jahre (12.10., Quadratische „Punkt auf der Parabel prüfen“):
+            # entfällt auf dem Blatt, ihre Originale bleiben im Mehr-Block und in der Fundstellentabelle
+            # (pruefung.md § 5 „Blatt = alle Originale der letzten fünf Jahre“, Ältere in den Mehr-Block)
+            entfallen.append(name)
+            continue
         frage = p_frage(info)
         if frage and frage.get('skizze'):
             # Skizze des Einstiegs: „original“ = Figur (grafik) des ersten Originals der Stufe, sonst eigenes TikZ
@@ -6058,6 +6084,8 @@ def p_bau(args):
                              'echte': echte, 'heraus': [h for h in heraus if h.get('stufe', '').strip() == name]})
     ids = list(OrderedDict((i, 1) for i in ids))
     alle_echte = [r for s in stufen_daten for r in s['echte']]
+    for name in entfallen:
+        hinweise.append(f'Stufe „{name}“ entfällt auf dem Blatt: kein Original der letzten fünf Jahre (Mehr-Block)')
     if alle_echte and max(alle_echte, key=p_rang)['id'] != alle_echte[-1]['id']:
         hinweise.append(f'schwerste echte ({max(alle_echte, key=p_rang)["id"]}) steht nicht am Ende des Blatts '
                         f'(letzte: {alle_echte[-1]["id"]}; pruefung.md § 5 „am Ende die schwerste echte“)')
@@ -6075,7 +6103,7 @@ def p_bau(args):
     # Karo (0,75, 0,5); hilft das nicht, bleibt der volle (Entscheidung wie Art mehr)
     blatt, faktor_gesetzt, seiten_vorher = None, 1.0, 99
     for faktor in (1.0, 0.75, 0.5):
-        t = p_blatt_tex(D, anz(einheit), kenn, stufen_daten, ausschnitt, fund, faktor)
+        t = p_blatt_tex(D, anz(einheit), kenn, stufen_daten, ausschnitt, fund, faktor, entfallen)
         e = xelatex(t, args.bb, 'probe', arbeit)
         e0 = xelatex(p_blatt_tex(D, anz(einheit), kenn, stufen_daten, ausschnitt, '', faktor), args.bb, 'probe0', arbeit)
         print(f'Probe: Faktor {faktor} -> {e["seiten"]} Seiten (ohne Fundstellen {e0["seiten"]})')
