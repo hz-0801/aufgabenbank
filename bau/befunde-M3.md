@@ -161,6 +161,10 @@ Blatt: bau/pruefung/2026-10-12/flaechen-c/. 15 Nummern (12 echte,
   zweite mit „Angaben wie in Nr. k.“ statt Vorspann (Setzer); bleibt bei
   4 Seiten – die Koordinatensysteme der ersten Stufe füllen zwei Seiten,
   Karo-Faktor wirkt nicht. Entscheidung Lehrer offen (zwei Blätter oder 4).
+- TAL2 (12.10., aus Daten, v0.9): Stufen wie im Buch (fünf, Schnittpunkt ohne Original),
+  alle 15 Originale 2022–2026, Bündel ’24-3a/’26-5a, Parabel ausgeblendet; bleibt 4 Seiten
+  (Seite 4 halb) – fünf Koordinatensysteme und vier Sachaufgaben. Offen (Lehrer): Weg A 4 Seiten,
+  Weg B „Gleichung aus Text“ als eigenes Blatt (bau/pruefung/2026-10-12/lineare-neu/bericht.md).
 
 ## Aus dem Datenlauf 12.10. (XU6 Quadratische, Parabel: Scheitelpunkt und Skizze)
 
