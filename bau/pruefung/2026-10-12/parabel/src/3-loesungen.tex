@@ -1,0 +1,92 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+\newsavebox{\gbox}\newlength{\gLinks}
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr0.5\textwidth-\gEin-\mbpfnr\relax}%
+  \ifdim\wd\gbox>\dimexpr\gLinks-4mm\relax
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} Prüfung]{Parabel: Scheitelpunkt und Skizze \pkt{} Lösungen}{XU6}\pfseitevon
+\pfheftkopf[B = Basisteil, ohne Taschenrechner]{Parabel: Scheitelpunkt und Skizze}{Lösungen}
+\pfstufenzeile{Wertetabelle oder Skizze \pkt{} Scheitelpunkt angeben \pkt{} Gleichung in Scheitelpunktform \pkt{} Lage zweier Parabeln begründen}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Wertetabelle oder Skizze}{\pfjahre{26 \pkt{} 24}{15}}
+\begin{pfloesungb}{}
+\lzb{1.}{}{A}{Tabelle 1 (erste Option): 2 · 1² = 2, 2 · 2² = 8}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{2.}{}{S(0|$-$5)}{S(0|$-$5)}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Scheitelpunkt angeben}{\pfjahre{26 \pkt{} 22}{21 \pkt{} 20 \pkt{} 18 \pkt{} 17}}
+\begin{pfloesungb}{}
+\lzb{3.}{}{S(3|$-$1)}{S(3|$-$1)}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{4.}{}{S(4|$-$6)}{S(4|$-$6)}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Gleichung in Scheitelpunktform}{\pfjahre{25 \pkt{} 23}{20 \pkt{} 18 \pkt{} 17 \pkt{} 16 \pkt{} 15}}
+\begin{pfloesungb}{}
+\lzb{5.}{}{S(4|$-$3); p(x) = (x $-$ 4)² $-$ 3}{S(4|$-$3); p(x) = (x $-$ 4)² $-$ 3}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{6.}{}{S(1|5); p(x) = $-$(x $-$ 1)² + 5}{S(1|5); p(x) = $-$(x $-$ 1)² + 5}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Lage zweier Parabeln begründen}{\pfjahre{26}{14}}
+\begin{pfloesungb}{}
+\lzb{7.}{}{genau 1 gemeinsamer Punkt}{Scheitelpunkt beider Parabeln x = 3 und y = $-$1, p nach oben geöffnet, q nach unten $\Rightarrow$ genau 1 gemeinsamer Punkt}
+\end{pfloesungb}
+\end{document}

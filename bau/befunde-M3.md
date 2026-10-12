@@ -158,6 +158,23 @@ Blatt: bau/pruefung/2026-10-12/flaechen-c/. 15 Nummern (12 echte,
   einer Gleichung „y = …“ statt „f(x) = …“; Punkte in loesung ohne „|“
   (das trennt Teilfragen).
 
+## Aus dem Datenlauf 12.10. (XU6 Quadratische, Parabel: Scheitelpunkt und Skizze)
+
+- Blatt 2 Seiten (Karo 0,5), Lösung 1, Übersicht 1; 7 Nummern in vier
+  Stufen, alle Originale 2022–2026 der Einheit, kein Einstieg (Niveau I
+  bis auf die letzte). Stufe „Punkt auf der Parabel prüfen“ entfällt auf
+  dem Blatt (kein Original der letzten fünf Jahre, 2024-OS-K3c Hauptplatz
+  Einsetzen in lineare) – der Setzer lässt sie seit 8a93a1c selbst weg.
+- Offen (Lehrer): Nr. 6 (2023-4b, Scheitel und Gleichung ablesen) ist
+  die einzige Niveau-II-Aufgabe und steht vor Nr. 7 (2026-5d, Niveau III,
+  Begründung ohne Graph) – Blatt endet auf Prüfungshöhe, aber die
+  Begründung ohne Rechnung hat kein Original 2022–2025 als Vorlauf.
+- Offen (Lehrer): Lösung zu Nr. 2 (Parabel skizzieren) nennt nur den
+  Scheitel, keine Skizze – der Setzer druckt für form zeichnen kein
+  Lösungsbild.
+- Cosmetic: „nach P10“ in der Marke ragt 4,5 pt über (Overfull in jedem
+  Blatt der Sorte, Vorlage), kein Handlungsbedarf.
+
 ## Setzer (werkzeuge/setzer.py) braucht für Sorte P
 
 Aus bericht.md P4Z: \pfheftkopf[Kennung], \pfstufekopf mit Jahren,

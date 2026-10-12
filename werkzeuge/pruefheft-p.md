@@ -131,3 +131,16 @@ fehlt: Stufe „Winkelbeziehungen“ ohne Hauptplatz (nur im Muster), Schüler-
   der Vorlage; Fenster nach pruefung.md § 5 „Andere Zahlen“ (Schnittpunkte
   im Bild). Sechs Systeme je Blatt geben mit 15 Nummern 4 Seiten.
 - Bau gibt je Karo-Faktor die Probeseitenzahl aus („Probe: Faktor …“).
+## Nachzug 12.10. (XU6 Quadratische, Parabel: Scheitelpunkt und Skizze; pruefheft.py 8a93a1c)
+- Eine Stufe der Gliederung ohne Original der letzten fünf Jahre (und ohne Zeile mit
+  auf_blatt = ja) entfällt auf dem Blatt; der Setzer meldet „Hinweis: Stufe … entfällt
+  auf dem Blatt“ und zählt sie nicht in `stufen=` (Register). Ihre Originale bleiben im
+  Mehr-Block (hier „Punkt auf der Parabel prüfen“, 2024-OS-K3c Hauptplatz in lineare).
+- Stufenkopf bleibt bei der ersten Aufgabe der Stufe (`\gkopfvor`), kein Kopf allein am
+  Seitenende.
+- `loesung`: „ | “ trennt Teilfragen („S(4|−3) | p(x) = (x − 4)² − 3“), ebenso `pruef`;
+  „p(x) =“ bleibt in der Lösung stehen (kein Vermerk), nur „(x)“ ohne Gleichung wird
+  gestrichen. `grafik` mit `||` setzt mehrere Bausteine nebeneinander (Wertetabellen
+  zum Ankreuzen, A/B/C darunter). Koordinatensystem: `\begin{ksys}[xmin,xmax,ymin,
+  ymax,karo=0.5]\parabel{a}{xs}{ys}{p}\end{ksys}`; Fenster je Zahlenwahl, Scheitel
+  ganzzahlig wie im Original.
