@@ -1,0 +1,165 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+\newsavebox{\gbox}\newlength{\gLinks}
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr0.5\textwidth-\gEin-\mbpfnr\relax}%
+  \ifdim\wd\gbox>\dimexpr\gLinks-4mm\relax
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{0.32\linewidth}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} Prüfung]{Fläche und Umfang}{Y5D}\pfseitevon
+\pfheftkopf[B = Basisteil, ohne Taschenrechner]{Fläche und Umfang}{}
+\pfstufenzeile{Formeln \pkt{} Fläche gesucht \pkt{} Umfang gesucht \pkt{} Formeln umstellen \pkt{} Anteil in Prozent}
+
+% ===================== Stufe: Formeln =====================
+\Needspace*{0.16\textheight}\pfstufekopf{Formeln}{\pfjahre{24 \pkt{} 22}{}}
+% Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
+\begin{pfaufg}{}{1.}{}
+Auf welcher Seite stehen die Flächenformeln? Schlag nach.
+\par\smallskip
+\par\noindent Seite\hfill\linie{30mm}
+\par\fusshilfe{\mbox{1:~nachschlagen (je nach Ausgabe)}}
+\end{pfaufg}
+% 2024-OS-B1c-m1 (Original 2024-OS-B1c, Schwere I, rang 5; herausgelöste Fassung: keine)
+\begin{pfaufg}{’24~\pkt{}~B1c}{2.}{}
+Ein gleichseitiges Dreieck hat die Seitenlänge a. Kreuze die Formel für seinen Umfang u an:
+\par\smallskip\noindent\pfkreuz{A}{$u=a\cdot a\cdot a$}\pfkreuz{B}{$u=a^3$}\pfkreuz{C}{$u=3\cdot a$}\pfkreuz{D}{$u=\tfrac{a}{3}$}
+\fusshilfe{\mbox{2:~3 · a}}
+\end{pfaufg}
+% 2022-OS-B1e-m1 (Original 2022-OS-B1e, Schwere I, rang 9; herausgelöste Fassung: keine)
+\begin{pfaufg}{’22~\pkt{}~B1e}{3.}{}
+Gib eine Gleichung für den Flächeninhalt A des Dreiecks an.
+\gzwei{\begin{tikzpicture}[line width=0.8pt,font=\small]\draw (0,0) -- (3.2,0) -- (0,1.8) -- cycle;\pfrw{(0,0)}{0}\node[below] at (1.6,0) {$e$};\node[left] at (0,0.9) {$d$};\node[above right] at (1.6,0.9) {$c$};\end{tikzpicture}}{\hfill A $=$\linie{30mm}}
+\fusshilfe{\mbox{3:~d · e : 2}}
+\end{pfaufg}
+
+% ===================== Stufe: Fläche gesucht =====================
+\Needspace*{0.16\textheight}\pfstufekopf{Fläche gesucht}{\pfjahre{25 \pkt{} 24 \pkt{} 23 \pkt{} 22}{19 \pkt{} 18 \pkt{} 17 \pkt{} 16 \pkt{} 15}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% 2025-OS-B1i-m1 (Original 2025-OS-B1i, Schwere I, rang 2; herausgelöste Fassung: keine)
+\begin{pfaufg}{’25~\pkt{}~B1i}{4.}{}
+Die Abbildung zeigt ein Rechteck. Kreuze die Gleichung an, mit der man seinen gesamten Flächeninhalt berechnet:
+\gzwei{\begin{tikzpicture}[line width=0.8pt,font=\small]\draw (0,0) rectangle (3.2,1.8);\draw[line width=0.5pt] (0,1.2) -- (3.2,1.2);\node[above] at (1.6,1.8) {$a$};\node[right] at (3.2,1.5) {$b$};\node[right] at (3.2,0.6) {$c$};\end{tikzpicture}}{\gkreuzzeile{A}{$A=2\cdot(a+b+c)$}\gkreuzzeile{B}{$A=a+2\cdot a\cdot b$}\gkreuzzeile{C}{$A=a\cdot(b+c)$}\gkreuzzeile{D}{$A=a\cdot b\cdot c$}}
+\fusshilfe{\mbox{4:~C}}
+\end{pfaufg}
+% 2025-OS-K2b-m1 (Original 2025-OS-K2b, Schwere I, rang 4; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’25~\pkt{}~2b}{5.}{}
+Ein Drachenviereck ABCD hat die Diagonalen AC = 56 cm und BD = 96 cm; sie schneiden sich im rechten Winkel. Ermittle den Flächeninhalt des Drachenvierecks.
+\gzwei{\begin{tikzpicture}[line width=0.8pt,font=\small]\coordinate (A) at (0,2.0);\coordinate (B) at (0.98,0);\coordinate (C) at (1.96,2.0);\coordinate (D) at (0.98,3.36);\draw (A)--(B)--(C)--(D)--cycle;\draw[dashed,line width=0.5pt] (A)--(C) (B)--(D);\pfrw[0.25]{(0.98,2.0)}{0}\node[left] at (A) {$A$};\node[below] at (B) {$B$};\node[right] at (C) {$C$};\node[above] at (D) {$D$};\node[below left,inner sep=1pt] at (0.98,2.0) {$F$};\end{tikzpicture}}{\karo{2}}
+\fusshilfe{\mbox{5:~2688 cm²}}
+\end{pfaufg}
+% 2024-OS-K4a-m1 (Original 2024-OS-K4a, Schwere I, rang 6; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’24~\pkt{}~4a}{6.}{}
+Eine Firma stellt Kegel mit dem Radius r = 25 cm und der Höhe h = 60 cm her. Berechne den Flächeninhalt der Grundfläche eines Kegels.
+\gzwei{\kegel{0.9}{1.7}{r}{h}{}}{\karo{2}}
+\fusshilfe{\mbox{6:~1963,5 cm²}}
+\end{pfaufg}
+% 2023-OS-K2b-m1 (Original 2023-OS-K2b, Schwere I, rang 8; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’23~\pkt{}~2b}{7.}{}
+Gegeben ist ein Trapez mit den parallelen Seiten 24,20 m (unten) und 16,20 m (oben). Es ist 7,50 m hoch. Die beiden Winkel an der unteren Seite sind je 62° groß. Berechne den Flächeninhalt des Trapezes.
+\gzwei{\begin{tikzpicture}[line width=0.8pt,font=\small]\coordinate (A) at (0,0);\coordinate (B) at (4.2,0);\coordinate (C) at (3.5,1.3);\coordinate (D) at (0.7,1.3);\draw (A)--(B)--(C)--(D)--cycle;\draw[dashed,line width=0.5pt] (2.1,0)--(2.1,1.3);\pfrw[0.25]{(2.1,0)}{0}\node[right] at (2.1,0.65) {$h$};\pfwinkel[0.75][0.65]{(A)}{0}{62}{62^\circ}\pfwinkel[0.75][0.65]{(B)}{118}{180}{62^\circ}\node[below left] at (A) {$A$};\node[below right] at (B) {$B$};\node[above right] at (C) {$C$};\node[above left] at (D) {$D$};\end{tikzpicture}}{\karo{2}}
+\fusshilfe{\mbox{7:~151,5 m²}}
+\end{pfaufg}
+% 2022-OS-K5e-m1 (Original 2022-OS-K5e, Schwere II, rang 11; herausgelöste Fassung: 2022-OS-K5e-h2)
+\begin{pfaufg}{nach~P10\\’22~\pkt{}~5e\,$\star$}{8.}{}
+Im Dreieck ABC ist die Höhe $h_c$ $\approx$ 7,3 m; ihr Fußpunkt D liegt auf AB. Der Winkel bei B beträgt 49°. Gegeben: AD $\approx$ 11,0 m. Ermittle den Flächeninhalt des Dreiecks ABC.
+\gzwei{\begin{tikzpicture}[line width=0.8pt,font=\small]\coordinate (A) at (0,0);\coordinate (B) at (4.6,0);\coordinate (C) at (2.9,2.0);\coordinate (D) at (2.9,0);\draw (A)--(B)--(C)--cycle;\draw[dashed,line width=0.5pt] (C)--(D);\pfrw[0.25]{(D)}{90}\pfwinkel[0.7][0.6]{(B)}{130}{180}{49^\circ}\node[below left] at (A) {$A$};\node[below right] at (B) {$B$};\node[above] at (C) {$C$};\node[below] at (D) {$D$};\node[right] at (2.9,1.0) {$h_c$};\node[below] at (1.45,0) {$11{,}0$ m};\end{tikzpicture}}{\karo{3}}
+\fusshilfe{\mbox{8:~6,35 m; 63,3 m²}}
+\end{pfaufg}
+
+% ===================== Stufe: Umfang gesucht =====================
+\Needspace*{0.16\textheight}\pfstufekopf{Umfang gesucht}{\pfjahre{26 \pkt{} 23}{14}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% 2026-FOR-B1h-m1 (Original 2026-FOR-B1h, Schwere I, rang 1; herausgelöste Fassung: keine)
+\begin{pfaufg}{’26~\pkt{}~B1h}{9.}{}
+Ein Rechteck ist a = 4,5 cm lang und b = 2,5 cm breit. Gib seinen Umfang an.
+\gzwei{\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm\relax}{\small\itshape Skizze}}{\karo{2}}
+\fusshilfe{\mbox{9:~14 cm}}
+\end{pfaufg}
+% 2023-OS-K2c-m1 (Original 2023-OS-K2c, Schwere II, rang 10; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’23~\pkt{}~2c\,$\star$}{10.}{}
+Gegeben ist ein Trapez mit den parallelen Seiten 24,20 m (unten) und 16,20 m (oben). Es ist 7,50 m hoch. Die beiden Winkel an der unteren Seite sind je 62° groß. Berechne den Umfang des Trapezes.
+\gzwei{\begin{tikzpicture}[line width=0.8pt,font=\small]\coordinate (A) at (0,0);\coordinate (B) at (4.2,0);\coordinate (C) at (3.5,1.3);\coordinate (D) at (0.7,1.3);\draw (A)--(B)--(C)--(D)--cycle;\draw[dashed,line width=0.5pt] (2.1,0)--(2.1,1.3);\pfrw[0.25]{(2.1,0)}{0}\node[right] at (2.1,0.65) {$h$};\pfwinkel[0.75][0.65]{(A)}{0}{62}{62^\circ}\pfwinkel[0.75][0.65]{(B)}{118}{180}{62^\circ}\node[below left] at (A) {$A$};\node[below right] at (B) {$B$};\node[above right] at (C) {$C$};\node[above left] at (D) {$D$};\end{tikzpicture}}{\karo{3}}
+\fusshilfe{\mbox{10:~57,4 m}}
+\end{pfaufg}
+
+% ===================== Stufe: Formeln umstellen =====================
+\Needspace*{0.16\textheight}\pfstufekopf{Formeln umstellen}{\pfjahre{23}{20 \pkt{} 18 \pkt{} 14}}
+% Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
+\begin{pfaufg}{}{11.}{}
+Du kennst die Fläche A eines Rechtecks und die Seite b. Stelle A = a · b so um, dass du die andere Seite a ausrechnen kannst.
+\par\smallskip
+\par\noindent a =\hfill\linie{30mm}
+\par\fusshilfe{\mbox{11:~A : b}}
+\end{pfaufg}
+% 2023-OS-B1c-m1 (Original 2023-OS-B1c, Schwere I, rang 7; herausgelöste Fassung: keine)
+\begin{pfaufg}{’23~\pkt{}~B1c}{12.}{}
+Ein Rechteck ist 350 mm breit und hat den Flächeninhalt 38 500 mm². Gib seine Länge an.
+\gzwei{\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm\relax}{\small\itshape Skizze}}{\karo{2}}
+\fusshilfe{\mbox{12:~110 mm}}
+\end{pfaufg}
+
+% ===================== Stufe: Anteil in Prozent =====================
+\Needspace*{0.16\textheight}\pfstufekopf{Anteil in Prozent}{\pfjahre{25 \pkt{} 23}{}}
+% Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
+\begin{pfaufg}{}{13.}{}
+Teil : Ganzes – was ist hier der Teil, was das Ganze?
+\gzwei{\kreissektor[1.0]{125}{125°}}{\vspace{-\baselineskip}\par\noindent\makebox[\mbpfteil][l]{\textbf{a)}}Teil\hfill\linie{30mm}\par\noindent\makebox[\mbpfteil][l]{\textbf{b)}}Ganzes\hfill\linie{30mm}}
+\par\fusshilfe{\mbox{13:~a) 125° (grauer Sektor); b) 360° (ganzer Kreis)}}
+\end{pfaufg}
+% 2025-OS-B1e-m1 (Original 2025-OS-B1e, Schwere I, rang 3; herausgelöste Fassung: keine)
+\begin{pfaufg}{’25~\pkt{}~B1e}{14.}{}
+Bestimme, wie viel Prozent der Kreisfläche grau gefärbt sind.
+\gzwei{\kreissektor[1.0]{125}{125°}}{\karo{2}}
+\fusshilfe{\mbox{14:~34,7 \%}}
+\end{pfaufg}
+% 2023-OS-K5c-m1 (Original 2023-OS-K5c, Schwere III, rang 11; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’23~\pkt{}~5c\,$\star$}{15.}{}
+Für Konservendosen werden kreisrunde Deckel mit dem Radius 3,5 cm aus Blechstreifen ausgestanzt, die 7 cm breit und 1 m lang sind. Aus jedem Streifen sollen möglichst viele Deckel entstehen. Der Abfall darf höchstens 24 \% eines Streifens ausmachen. Überprüfe rechnerisch, ob diese Vorgabe eingehalten wird.
+\gzwei{\begin{tikzpicture}[line width=0.8pt,font=\small]\draw (0,0) rectangle (5.0,0.5);\foreach \x in {0.25,0.75,1.25,1.75} {\draw[line width=0.5pt] (\x,0.25) circle (0.25);}\node at (2.4,0.25) {$\cdots$};\draw[line width=0.5pt] (4.75,0.25) circle (0.25);\node[below] at (2.5,0) {1 m};\node[right] at (5.0,0.25) {7 cm};\end{tikzpicture}}{\karo{4}}
+\fusshilfe{\mbox{15:~14 Deckel; 161,2 cm²; 23,0 \%}}
+\end{pfaufg}
+
+\pfblattende{11}{26 FOR & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17 & 16}{1h & 1e 1i 2b & 1c 4a & 1c 2b 2c 5c & 1e 5e &  & 1d 7b & 1e 4c & 1f 6a & 3a 3b & 3b}%
+{\pfausschnitt{}{Fläche und Umfang}{}}
+\end{document}

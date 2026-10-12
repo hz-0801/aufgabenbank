@@ -1,0 +1,108 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+\newsavebox{\gbox}\newlength{\gLinks}
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr0.5\textwidth-\gEin-\mbpfnr\relax}%
+  \ifdim\wd\gbox>\dimexpr\gLinks-4mm\relax
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{0.32\linewidth}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} Prüfung]{Fläche und Umfang \pkt{} Lösungen}{Y5D}\pfseitevon
+\pfheftkopf[B = Basisteil, ohne Taschenrechner]{Fläche und Umfang}{Lösungen}
+\pfstufenzeile{Formeln \pkt{} Fläche gesucht \pkt{} Umfang gesucht \pkt{} Formeln umstellen \pkt{} Anteil in Prozent}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Formeln}{\pfjahre{24 \pkt{} 22}{}}
+\begin{pfloesungb}{}
+\lzb{1.}{}{nachschlagen (je nach Ausgabe)}{Seite merken, in der Prüfung sofort aufschlagen}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{2.}{}{u = 3 · a}{u = 3 · a}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{3.}{}{A = d · e : 2}{A = d · e : 2}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Fläche gesucht}{\pfjahre{25 \pkt{} 24 \pkt{} 23 \pkt{} 22}{19 \pkt{} 18 \pkt{} 17 \pkt{} 16 \pkt{} 15}}
+\begin{pfloesungb}{}
+\lzb{4.}{}{C}{A = a · (b + c) (dritte Option)}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{5.}{}{A = 2688 cm²}{A = ½ · 56 · 96 = 2688 cm²}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{6.}{}{A $\approx$ 1963,5 cm²}{A = $\pi$ · 25² $\approx$ 1963,5 cm²}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{7.}{}{A = 151,5 m²}{A = (24,20 + 16,20) : 2 · 7,50 = 151,5 m²}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{8.}{}{DB $\approx$ 6,35 m; A $\approx$ 63,3 m²}{DB = 7,3 : tan 49° $\approx$ 6,35 m; A = ½ · (11,0 + DB) · 7,3 $\approx$ 63,3 m²}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Umfang gesucht}{\pfjahre{26 \pkt{} 23}{14}}
+\begin{pfloesungb}{}
+\lzb{9.}{}{14 cm}{14 cm}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{10.}{}{u $\approx$ 57,4 m}{Schenkel = 7,50 : sin 62° $\approx$ 8,49 m; u = 24,20 + 16,20 + 2 · Schenkel $\approx$ 57,4 m}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Formeln umstellen}{\pfjahre{23}{20 \pkt{} 18 \pkt{} 14}}
+\begin{pfloesungb}{}
+\lzb{11.}{}{A : b}{beide Seiten durch b teilen}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{12.}{}{110 mm}{110 mm}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Anteil in Prozent}{\pfjahre{25 \pkt{} 23}{}}
+\begin{pfloesungb}{}
+\lzb{13.}{}{a) 125° (grauer Sektor); b) 360° (ganzer Kreis)}{erst Teil und Ganzes benennen, dann teilen: 125 : 360}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{14.}{}{Anteil grau $\approx$ 34,7 \%}{Anteil grau = 125 : 360 $\approx$ 34,7 \%}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{15.}{}{14 Deckel; $\approx$ 161,2 cm²; $\approx$ 23,0 \%}{14 Deckel; Abfall 700 $-$ 14 · 12,25$\pi$ $\approx$ 161,2 cm²; Vorgabe (höchstens 24 \%) erfüllt, Abfall $\approx$ 23,0 \%}
+\end{pfloesungb}
+\end{document}

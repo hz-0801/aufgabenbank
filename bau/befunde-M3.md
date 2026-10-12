@@ -108,6 +108,35 @@ Gliederung sperrt den Bank-Einstieg; kein Einstieg gesetzt = keiner.
   (Gesuchtes ist der Umfang), nicht unter „Fläche gesucht“ wie im
   Beispiel der Regel; „Anteil in Prozent“ nach „Fläche gesucht“.
 
+## Dritte Fassung H37 (12.10., alle Originale 2022–2026)
+
+Blatt: bau/pruefung/2026-10-12/flaechen-c/. 15 Nummern (12 echte,
+3 Einstiege aus der Gliederung), fünf Stufen, 3 Seiten.
+- Offen (Lehrer): Zwei Seiten sind mit 12 Originalen und 3 Einstiegen
+  nicht erreichbar – gemessen: Karo 0,5, Figuren auf 0,7 verkleinert,
+  ohne Vorhalt vor den Stufenköpfen und die Kreisfigur von Nr. 13/14
+  nur einmal ergeben noch 2,2 Seiten; die Figuren (Drachen 3,4 cm,
+  Dreieck, Trapez zweimal, Kegel) und die zwei Skizzenfelder tragen
+  die Höhe, nicht der Karo. Das Blatt steht mit vollem Karo auf drei
+  Seiten (wie Körper). Wege: (a) drei Seiten zulassen, wo die Einheit
+  mehr als etwa zehn Originale hat; (b) die zwei Einstiege mit Figur-
+  bezug (Nr. 13) und ohne (Nr. 1, 11) streichen – spart etwa 5 cm,
+  reicht allein nicht; (c) Figuren im Setzer auf 0,8 skalieren und Karo
+  0,75, wenn das Blatt über zwei Seiten geht – spart etwa 0,3 Seiten,
+  reicht allein auch nicht.
+- Offen (Lehrer): Nr. 13 und 14 zeigen dieselbe Kreisfigur zweimal
+  (Einstieg „an derselben Figur“). Einmal mit Verweis „Figur bei 13“
+  spart 2 cm, ändert den Wortlaut von Nr. 14 um einen Zusatz.
+- Offen (Lehrer): 2023-OS-K5c (Deckel, Sternchen, Niveau III) steht
+  als Hauptplatz im Kapitel Prozent; auf dem Flächenblatt kommt es über
+  katalog_ids der Stufe „Anteil in Prozent“ (auf_blatt = ja gilt damit
+  auch für das Prozent-Blatt, dort Stufe „Prozent aus einer berechneten
+  Fläche“, 2023 = junges Original).
+- Entschieden im Lauf: Marke für Kontextaufgaben bleibt „nach P10 ’23 ·
+  2c“, nur der Basisteil trägt „’25 · B1e“; die Lösung des Einstiegs
+  Nr. 11 zeigt „A : b“ (Antwort der Fälle), der Weg „beide Seiten
+  durch b teilen“.
+
 ## Setzer (werkzeuge/setzer.py) braucht für Sorte P
 
 Aus bericht.md P4Z: \pfheftkopf[Kennung], \pfstufekopf mit Jahren,
