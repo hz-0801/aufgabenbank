@@ -24,8 +24,7 @@ Quadratische Gleichung lösen (YYZ): 3 Seiten wie vorher.
   Gerade und eine Parabel schneiden …“ (vorher „beide“).
 - Gemischt-Abschnitt auf Lineare und Quadratische gleich (nicht angefasst).
 Rückwärts-Regel: keine Stufe sucht eine Größe aus einer Formel.
-Gemeldet, nicht gestrichen: Anstoß „m oder n“ (Gleichung aus Text) – er
-  verrät das Wort Änderung, trägt aber den ersten Schritt; bleibt.
+Gemeldet, nicht gestrichen: keine Heranführung, die ich streichen würde.
 Wunsch an den Setzer: „|“ trennt Schülerfrage-Fälle, auch in S(−2 | 1);
   ein Punkt in einem Fall zerfällt. Escape oder anderer Trenner.
 Offen (Lehrer): Anstoß bei „Nullstelle gesucht“ für eine Seite mehr?
