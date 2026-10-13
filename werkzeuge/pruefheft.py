@@ -13,16 +13,16 @@ bau/pruefheft/<kapitel>-<art>[-p<n>|-fokus-<wort>][-ebr]-<datum>/ (Unterordner s
   Steckbrief mit Teil 5 „Arten“: Fokusblatt in Grundform G1 (Beschlüsse 07.10., g1_bau; v0.4)
   --kurs EBR|FOR (Vorgabe FOR): Heft ab 2026 nach Kurs (Fundstellen), * an FOR-only-Aufgaben
   --art mehr --einheit "<Einheit>" --portion n [--schueler S07]: Mehr-Block (v0.5, pruefung.md § 5), eine Seite
-  je Portion aus msa/mehr-p10.csv (auf_blatt = nein, Ordnung rang); Kurzanleitung werkzeuge/pruefheft-mehr.md
+  je Portion aus msa/mehr-p10/*.csv (auf_blatt = nein, Ordnung rang); Kurzanleitung werkzeuge/pruefheft-mehr.md
   --art p --einheit "<Einheit>": Prüfungsblatt der Sorte P (v0.7, pruefung.md § 5) nach bau/pruefheft/<kapitel>-p-
   <einheit>-<datum>/ – 1-uebersicht, 2-blatt, 3-loesungen (src/, pdf/); Einheit = Zuschnitt der Gliederung, Stufen
   aus der Zuordnung (Frage, Anzeigename aus der Gliederung), Einstieg aus der Bank, echte Aufgaben aus
-  msa/mehr-p10.csv (auf_blatt = ja, andere Zahlen, grafik, form); Muster bau/pruefung/2026-10-11/
+  msa/mehr-p10/*.csv (auf_blatt = ja, andere Zahlen, grafik, form); Muster bau/pruefung/2026-10-11/
   winkel-ohne-rechnung/; Kurzanleitung werkzeuge/pruefheft-p.md
   v0.11 (13.10.2026, Runde 7, Lehrer 13.10.): Marke wie im Heft „’25 · 1f“, rechts „Basis“ als Wort; --pruefungsjahr
   (Vorgabe 2027, ab 2028 Basisaufgaben mit \\pfohnetr und Jahr im Kopf); Formelsammlungs-Hinweis einmal je Blatt;
   form „antwort:Name|Einheit;…“ (eine Zeile je Größe); leere Stufe aus älteren P10-Originalen (nicht im Mehr-Block);
-  Stufe „Gemischt: …“ aus der Gliederung als letzter Abschnitt (Zeilen der Einheit aus mehr-p10.csv)
+  Stufe „Gemischt: …“ aus der Gliederung als letzter Abschnitt (Zeilen der Einheit aus mehr-p10/*.csv)
   v0.10 (13.10.2026, Runde 6, Lehrer 13.10.): Bedingungen rechts ohne „Basis“, TR durchgestrichen (\\pfohnetr) nur bei
   hilfsmittel = nein, P_OHNE_TR_BLOCK leer; Legende „B = Basisteil“ weg; Stufenkopf „immer“/„fast immer“ aus der
   Gliederung („- **Häufigkeit:**“), sonst nur Jahre (nur P10-Hefte); \\gzwei ohne Halbierung (Antwort neben der
@@ -259,6 +259,14 @@ def tx(s, latex=False):
 def lies_csv(p):
     with open(p, encoding='utf-8') as f:
         return list(csv.DictReader(f, delimiter=';'))
+
+
+def lies_mehr(mn):
+    """Alle Zeilen aus msa/mehr-p10/*.csv (eine Datei je Kapitel, gleicher Kopf; Runde 8)."""
+    zeilen = []
+    for p in sorted(glob.glob(os.path.join(mn, 'msa', 'mehr-p10', '*.csv'))):
+        zeilen += lies_csv(p)
+    return zeilen
 
 
 def lies_jsonl(p):
@@ -5019,7 +5027,7 @@ def g1_bau_einmal(D, args, auswahl):
 
 # ---------------------------------------------------------------------------
 # Art „mehr“ (v0.5, 11.10.2026): Mehr-Block der Prüfung P10 (pruefung.md § 5 „Mehr-Block“)
-#   Daten: msa/mehr-p10.csv (nur Zeilen der Einheit mit auf_blatt = nein, Ordnung rang); je „mehr“ eine
+#   Daten: msa/mehr-p10/*.csv (nur Zeilen der Einheit mit auf_blatt = nein, Ordnung rang); je „mehr“ eine
 #   Portion = eine Seite, reihum aus leicht (I), mittel (II), schwer (III), endet mit der schwersten;
 #   nur Originale, nichts Erfundenes. Kein Modell, keine Grafik: die Abbildung steht als Text
 #   („Skizze: …“) kursiv unter der Aufgabe. Form wie Sorte P (bau/pruefung/2026-10-11/
@@ -5053,12 +5061,12 @@ def mehr_kurz(einheit):
 def mehr_zeilen(mn, kapitel, einheit):
     """Zeilen der Einheit mit auf_blatt = nein, nach rang. --einheit: genau, sonst eindeutiger Teil
     (ohne Groß/Klein)."""
-    p = os.path.join(mn, 'msa', 'mehr-p10.csv')
-    if not os.path.exists(p):
-        sys.exit(f'fehlt: {p}')
-    alle = [r for r in lies_csv(p) if r.get('kapitel') == kapitel]
+    p = os.path.join(mn, 'msa', 'mehr-p10')
+    if not glob.glob(os.path.join(p, '*.csv')):
+        sys.exit(f'fehlt: {p}/*.csv')
+    alle = [r for r in lies_mehr(mn) if r.get('kapitel') == kapitel]
     if not alle:
-        sys.exit(f'mehr-p10.csv: keine Zeile mit kapitel={kapitel}')
+        sys.exit(f'mehr-p10/*.csv: keine Zeile mit kapitel={kapitel}')
     einheiten = list(OrderedDict((r['einheit'], 1) for r in alle))
     treffer = [e for e in einheiten if e == einheit] or \
               [e for e in einheiten if einheit.lower() in e.lower()]
@@ -5508,12 +5516,9 @@ def p_wahl(namen, wunsch, was):
 
 
 def p_mehr(mn, kapitel, einheit):
-    """Alle Zeilen der Einheit aus msa/mehr-p10.csv (auf_blatt ja und nein; die Einheit heißt dort
+    """Alle Zeilen der Einheit aus msa/mehr-p10/*.csv (auf_blatt ja und nein; die Einheit heißt dort
     gleich oder ist ein Teil des Zuschnittnamens)."""
-    p = os.path.join(mn, 'msa', 'mehr-p10.csv')
-    if not os.path.exists(p):
-        return []
-    alle = [r for r in lies_csv(p) if r.get('kapitel') == kapitel]
+    alle = [r for r in lies_mehr(mn) if r.get('kapitel') == kapitel]
     namen = list(OrderedDict((r['einheit'], 1) for r in alle))
     tr = [e for e in namen if e == einheit] or [e for e in namen if e.lower() in einheit.lower() or einheit.lower() in e.lower()]
     if len(tr) != 1:
@@ -5547,7 +5552,7 @@ def p_gemischt(name):
 def p_mit_gemischt(gl, stufen, einheit, mehr_alle):
     """Stufen der Einheit; eine Stufe „Gemischt: …“ steht immer am Ende (pruefung.md § 5, Lehrer 13.10.). Nennt die
     Gliederung sie (### Gemischt: …, Zuschnitt = Einheit), ohne dass die Zuordnung sie kennt, kommt sie dazu; ihre
-    katalog_ids (für Jahre und Fundstellen) sind die Originale der Zeilen dieser Einheit in mehr-p10.csv."""
+    katalog_ids (für Jahre und Fundstellen) sind die Originale der Zeilen dieser Einheit in mehr-p10/*.csv."""
     out = [z for z in stufen if not p_gemischt(z['stufe'])]
     gem = [z for z in stufen if p_gemischt(z['stufe'])]
     da = {z['stufe'].strip() for z in stufen}
@@ -5885,7 +5890,7 @@ def p_antwort_groessen(teil):
 
 
 def p_echt_inhalt(D, r, nr, heraus, faktor=1.0, vorige=None, nr_vorige=0, schmal=False):
-    """Inhalt einer echten Aufgabe mit anderen Zahlen (msa/mehr-p10.csv, auf_blatt = ja) ohne Rahmen: Wortlaut,
+    """Inhalt einer echten Aufgabe mit anderen Zahlen (msa/mehr-p10/*.csv, auf_blatt = ja) ohne Rahmen: Wortlaut,
     Grafik oder Skizze links, Antwortfeld rechts. Rückgabe (Kommentare, Zeilen, Fuß). v0.9: der Rahmen (Marke,
     Bedingungen, Nummer) kommt aus p_echt_tex oder – bei gebündelten Originalen – aus p_buendel_tex."""
     eid = r.get('eltern_id', '')
@@ -5922,7 +5927,7 @@ def p_echt_inhalt(D, r, nr, heraus, faktor=1.0, vorige=None, nr_vorige=0, schmal
     if '||' in grafik or '+' in form or form in ('ankreuzen', 'einzeichnen', 'zeichnen', 'karo', 'bilder', 'wahrfalsch') \
             or form.startswith('antwort:'):
         # v0.7 (Netz): Spalte grafik mit Bildoptionen („||“) und form als Folge von Teilen („+“: ankreuzen,
-        # einzeichnen, zeichnen, teil, karo) aus msa/mehr-p10.csv; form „teil“, „skizze“ und grafik allein gehen
+        # einzeichnen, zeichnen, teil, karo) aus msa/mehr-p10/*.csv; form „teil“, „skizze“ und grafik allein gehen
         # den Weg unten (Volumen, 12.10.) – werkzeuge/pruefheft-p.md
         out += p_form_tex(t_rest=tx(rest) if rest else '', grafik=grafik, form=form or 'karo', optionen=optionen,
                           ergebnisse=ergebnisse, n=n, faktor=faktor)
@@ -5993,7 +5998,7 @@ def p_echt_tex(D, r, nr, heraus, faktor=1.0, vorige=None, nr_vorige=0):
 
 
 def p_buendel_schluessel(r):
-    """Spalte buendel (msa/mehr-p10.csv, v0.9): „<Schlüssel>“ oder „<Schlüssel>: <gemeinsamer Auftrag>“; Zeilen mit
+    """Spalte buendel (msa/mehr-p10/*.csv, v0.9): „<Schlüssel>“ oder „<Schlüssel>: <gemeinsamer Auftrag>“; Zeilen mit
     gleichem Schlüssel in einer Stufe werden eine Nummer mit a), b) (pruefung.md § 5 „Gleichartige gebündelt“)."""
     return (r.get('buendel') or '').split(':', 1)[0].strip()
 
@@ -6315,7 +6320,7 @@ def p_blatt_tex(D, einheit, kenn, stufen_daten, ausschnitt, fund, faktor=1.0, en
             if p_original(r):
                 frueher.setdefault(p_original(r), (r, nr))
         if not s['echte']:
-            out.append('% SETZER: fehlt – keine echte Aufgabe mit auf_blatt = ja in msa/mehr-p10.csv')
+            out.append('% SETZER: fehlt – keine echte Aufgabe mit auf_blatt = ja in msa/mehr-p10/*.csv')
     out.append('')
     if fund:
         out.append(fund + '%\n{' + ausschnitt + '}')
@@ -6388,7 +6393,7 @@ P_FASSUNG_KOPF = 'kennung;fassung;fingerabdruck;datum;kapitel;einheit;pfad;bemer
 
 def p_fingerabdruck(D, stufen_daten):
     """Fingerabdruck der Daten der Einheit (gemeinsam.md „Kennung mit Fassung“: die Fassung steigt nur, wenn sich die
-    Daten ändern): je Stufe Anzeigename, Jahre, Fragen der Gliederung; je echte Zeile die Felder aus mehr-p10.csv, die
+    Daten ändern): je Stufe Anzeigename, Jahre, Fragen der Gliederung; je echte Zeile die Felder aus mehr-p10/*.csv, die
     auf dem Blatt stehen oder die Folge bestimmen, und die Katalogfelder der Bedingungen. Was der Setzer daraus macht
     (Satz, Karo, Häufigkeitswort, Formel-Frage, Marke) zählt nicht: ein Nachdruck mit neuem Setzer bleibt dieselbe
     Fassung."""
@@ -6470,7 +6475,7 @@ def p_register(args, kenn, ordner, seiten, einheit, stufen_daten, fassung=1):
     open(p_reg, 'w', encoding='utf-8').write('\n'.join(zeilen) + '\n')
 
 
-# Zweitthema ausblenden (pruefung.md § 5, Lehrer 12.10.; v0.9): Spalten <feld>_einheit in msa/mehr-p10.csv ersetzen
+# Zweitthema ausblenden (pruefung.md § 5, Lehrer 12.10.; v0.9): Spalten <feld>_einheit in msa/mehr-p10/*.csv ersetzen
 # auf dem Einheitsblatt das Feld; die ungekürzte Zeile bleibt für das Gemischt-Blatt und den Mehr-Block
 P_EINHEIT_FELDER = ('wortlaut', 'loesung', 'pruef', 'grafik', 'form')
 
@@ -6501,7 +6506,7 @@ def p_bau(args):
     alle_j = sorted({int(j) for j in D.pruefjahre})
     letzte5 = alle_j[-5:]
     mehr = p_mehr(D.mn, args.kapitel, einheit)
-    mehr_alle = lies_csv(os.path.join(D.mn, 'msa', 'mehr-p10.csv')) if os.path.exists(os.path.join(D.mn, 'msa', 'mehr-p10.csv')) else []
+    mehr_alle = lies_mehr(D.mn)
     heraus = [r for r in D.heraus if (r.get('art') or '') == 'herausgeloest']
     stufen_daten, ids, hinweise, entfallen = [], [], [], []
     for z in p_mit_gemischt(gl, einheiten[einheit]['stufen'], einheit, mehr_alle):
@@ -6509,7 +6514,7 @@ def p_bau(args):
         kat_ids = (z.get('katalog_ids') or '').split()
         if p_gemischt(name):
             # v0.11 (pruefung.md § 5 „Gemischt als letzter Abschnitt“, Lehrer 13.10.): Zeilen der Einheit „Gemischt: …“
-            # aus mehr-p10.csv, gleich aus welchem Kapitel – so steht derselbe Abschnitt gleich auf beiden Blättern;
+            # aus mehr-p10/*.csv, gleich aus welchem Kapitel – so steht derselbe Abschnitt gleich auf beiden Blättern;
             # ungekürzt (keine Spalten <feld>_einheit)
             zeilen = [r for r in mehr_alle if r.get('einheit', '').strip() == name]
             for r in zeilen:
@@ -6519,7 +6524,7 @@ def p_bau(args):
             ids += [r['eltern_id'] for r in zeilen if r.get('eltern_id')]
             info = gl['stufen'].get(name, {})
             if not echte:
-                hinweise.append(f'Stufe „{name}“: keine Zeile mit einheit = {name} und auf_blatt = ja in mehr-p10.csv')
+                hinweise.append(f'Stufe „{name}“: keine Zeile mit einheit = {name} und auf_blatt = ja in mehr-p10/*.csv')
                 entfallen.append(name)
                 continue
             stufen_daten.append({'name': name, 'anzeige': info.get('anzeigename') or name, 'z': z,
@@ -6527,7 +6532,7 @@ def p_bau(args):
                                  'einstieg': None, 'kurzfrage': info.get('frage', ''), 'echte': echte, 'heraus': []})
             continue
         # Blatt = alle Originale der letzten fünf Jahre (pruefung.md § 5, Lehrer 12.10.): Zeilen der Stufe aus
-        # mehr-p10.csv, dazu Zeilen anderer Kapitel, deren Original hier Hauptplatz ist (katalog_ids); auf_blatt = ja
+        # mehr-p10/*.csv, dazu Zeilen anderer Kapitel, deren Original hier Hauptplatz ist (katalog_ids); auf_blatt = ja
         # ist die Angabe der Daten, die Jahresregel wird dagegen geprüft (Hinweis, kein Abbruch)
         zeilen = [r for r in mehr if r.get('stufe', '').strip() == name]
         zeilen += [r for r in mehr_alle if r.get('eltern_id') in kat_ids and r['id'] not in {x['id'] for x in zeilen}
@@ -6671,7 +6676,7 @@ def main():
     ap.add_argument('--pruefung', choices=sorted(PROFIL), default='p10',
                     help='Prüfungsprofil: p10 (Vorgabe) oder abi-gk (Abitur Grundkurs)')
     ap.add_argument('--art', choices=['normal', 'schwach', 'mehr', 'p'], default='normal',
-                    help='mehr: Mehr-Block einer Einheit aus msa/mehr-p10.csv (v0.5), braucht --einheit; '
+                    help='mehr: Mehr-Block einer Einheit aus msa/mehr-p10/*.csv (v0.5), braucht --einheit; '
                          'p: Prüfungsblatt der Sorte P aus Daten (v0.6), braucht --einheit')
     ap.add_argument('--portion', type=int)
     ap.add_argument('--fokus')
@@ -6699,7 +6704,7 @@ def main():
     args = ap.parse_args()
 
     if args.art == 'mehr':
-        mehr_bau(args)   # v0.5: eigener Weg, liest nur msa/mehr-p10.csv; bestehende Arten unberührt
+        mehr_bau(args)   # v0.5: eigener Weg, liest nur msa/mehr-p10/*.csv; bestehende Arten unberührt
         return
     if args.art == 'p':
         p_bau(args)      # v0.6: Prüfungsblatt der Sorte P (drei Dateien); bestehende Arten unberührt

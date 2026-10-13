@@ -32,7 +32,7 @@ Regeln: pruefung.md § 5, gemeinsam.md „Satz“, „Lösungen“, „Übersich
 Serie“. Muster (Hand-Satz T2U): bau/pruefung/2026-10-11/winkel-ohne-rechnung/.
 Daten (nur gelesen): gliederung/<kapitel>.md (Name, Folge, Gruppen, Zuschnitt
 je Stufe = Einheit), zuordnung-<kapitel>.csv (Stufen, katalog_ids, bank_sprossen,
-jahre_letzte5), msa-katalog-*.csv (Jahr, Papier, Stern), mehr-p10.csv (echte
+jahre_letzte5), msa-katalog-*.csv (Jahr, Papier, Stern), mehr-p10/*.csv (echte
 mit anderen Zahlen: auf_blatt = ja, stufe, schwere, rang, abbildung, loesung),
 herausgeloest-p10.csv (nur Vermerk im TeX), bank/<eintrag>/*.jsonl (Einstieg:
 leichteste Zeile der ersten Sprosse in bank_sprossen, ruhende nie).
@@ -55,7 +55,7 @@ gleich: Kopf mit Sorte und Kennung, Titel, graue Stufenzeile, Stufenköpfe
 anders: Stufen- und Blattnamen wie in Gliederung/Zuordnung („Winkelsumme“
   statt „Innenwinkelsumme“, Zuschnitt statt „Winkel“); eine Einstiegsaufgabe
   je Stufe (Muster: Päckchen a/b aus zwei Sprossen); echte Aufgaben mit den
-  Zahlen aus mehr-p10.csv und ganzem Vorspann (Muster: herausgelöst, Original-
+  Zahlen aus mehr-p10/*.csv und ganzem Vorspann (Muster: herausgelöst, Original-
   zahlen); Skizzen als Text (Muster: TikZ); Sinussatz unter „Rechtwinklige
   Dreiecke“ (Bank trigonometrie), Vierecke vor Winkel (Zuordnungsfolge);
   Blatt 2 statt 3 Seiten (Karo 0,75).
@@ -74,7 +74,7 @@ fehlt: Stufe „Winkelbeziehungen“ ohne Hauptplatz (nur im Muster), Schüler-
   Fall, Antwort ja/nein; Lösung nennt die Fälle mit ja),
   `- **Schülerfrage-Weg:** …` (rechte Spalte der Lösung; steht im Fuß, wenn die
   Antworten länger als 60 Zeichen sind).
-- `msa/mehr-p10.csv`, Spalten `grafik` (TikZ-Baustein der Vorlage oder freies
+- `msa/mehr-p10/*.csv`, Spalten `grafik` (TikZ-Baustein der Vorlage oder freies
   TikZ, Skizze zu den neuen Zahlen; ersetzt den Text aus `abbildung`) und
   `form`: `text` (Karo), `teil` (Antwortlinie rechts in der Zeile, Einheit aus
   `loesung`), `skizze` (Skizzenfeld: links „Skizze“, rechts Karo), leer = wie
@@ -123,7 +123,7 @@ fehlt: Stufe „Winkelbeziehungen“ ohne Hauptplatz (nur im Muster), Schüler-
   trägt („Rechteck: A = a · b, nach a umgestellt → a = A : b“). Ein einziger
   Fall steht ohne Buchstaben (Blatt und Lösung).
 ## Nachzug 12.10. (H37 Flächen, dritte Fassung; pruefung.md § 5 vom 12.10., mathblatt.sty 2026-10-12)
-- Blatt = alle Originale der letzten fünf Jahre: je Stufe die Zeilen aus mehr-p10.csv
+- Blatt = alle Originale der letzten fünf Jahre: je Stufe die Zeilen aus mehr-p10/*.csv
   (Stufe im Kapitel, dazu Zeilen anderer Kapitel, deren Original hier in katalog_ids
   steht, z. B. 2023-OS-K5c aus prozent) mit auf_blatt = ja, leicht → schwer (schwere,
   rang). auf_blatt bleibt die Angabe der Daten (ja = Jahr in den letzten fünf, sonst
@@ -183,7 +183,7 @@ fehlt: Stufe „Winkelbeziehungen“ ohne Hauptplatz (nur im Muster), Schüler-
 - **Häufigkeitswort im Stufenkopf** vor den Jahren: Zahl der letzten fünf Prüfungsjahre mit
   der Stufe (dieselben Jahre wie bisher) – 4–5 „immer“, 2–3 „oft“, 0–1 „selten“. Bei „immer“
   nur die jungen Jahre, sonst auch die älteren nach dem Strich („selten · 26 | 14“).
-- **Gleichartige Originale gebündelt – neue Spalte `buendel` in msa/mehr-p10.csv:**
+- **Gleichartige Originale gebündelt – neue Spalte `buendel` in msa/mehr-p10/*.csv:**
   `<schlüssel>` oder `<schlüssel>: <gemeinsamer Auftrag>`. Zeilen derselben Stufe mit
   gleichem Schlüssel werden eine Nummer mit a), b) am Platz des ersten Glieds (rang); je
   Glied Marke links und Bedingungen rechts auf der Zeile des Buchstabens. Der gemeinsame
@@ -198,7 +198,7 @@ fehlt: Stufe „Winkelbeziehungen“ ohne Hauptplatz (nur im Muster), Schüler-
   Koordinatensystem (`{ksys}`), ist das System das Antwortfeld (form `zeichnen` oder leer);
   Karo nur, wo gerechnet wird. Breite höchstens die Spalte (`\gpassend`).
 - **Zweitthema ausblenden – neue Spalten `wortlaut_einheit`, `loesung_einheit`,
-  `pruef_einheit`, `grafik_einheit`, `form_einheit` in msa/mehr-p10.csv:** gefüllt ersetzen
+  `pruef_einheit`, `grafik_einheit`, `form_einheit` in msa/mehr-p10/*.csv:** gefüllt ersetzen
   sie auf dem Einheitsblatt das gleichnamige Feld (fremder Teil weggelassen,
   Zwischenergebnis im Wortlaut gegeben, z. B. „… ist y = 4 gegeben (aus der Parabel)“);
   leer = wie bisher. Die ungekürzte Zeile bleibt für das Gemischt-Blatt und den Mehr-Block.
@@ -230,7 +230,7 @@ fehlt: Stufe „Winkelbeziehungen“ ohne Hauptplatz (nur im Muster), Schüler-
 Fragt eine Aufgabe nach mehreren Größen, bekommt jede eine eigene Zeile mit
 Namen und Einheit („Winkel: ___ °“, „Prozent: ___ %“). Warum: zwei Fragen,
 eine Zeile – Schüler verwechseln.
-- Original (msa/mehr-p10.csv, Spalte `form`, ebenso `form_einheit`):
+- Original (msa/mehr-p10/*.csv, Spalte `form`, ebenso `form_einheit`):
   `antwort:Winkel|°;Prozent|%` – Größen durch „;“ (oder „,“), je Größe
   `Name|Einheit`; Einheit darf fehlen (`Anzahl|`). Mit „+“ kombinierbar
   (`zeichnen+antwort:Steigung|`). Mit Figur (Spalte grafik): Zeilen direkt
@@ -240,7 +240,7 @@ eine Zeile – Schüler verwechseln.
 
 ## Leere Stufe aus älteren Originalen (v0.11)
 Hat eine Stufe kein Original der letzten fünf Jahre (auf_blatt = ja), setzt
-der Setzer ihre älteren P10-Originale aus mehr-p10.csv (auf_blatt = nein,
+der Setzer ihre älteren P10-Originale aus mehr-p10/*.csv (auf_blatt = nein,
 Papier OS/EBR/FOR/MUSTER-*, keine Gymnasialhefte), leicht → schwer; Art mehr
 lässt genau diese Zeilen weg (kein Doppel). Stufen mit einem jungen Original
 bleiben, wie sie sind. Probe: Lineare „Gleichung aus Graph“ (2019-OS-K2b, K2c).
@@ -249,7 +249,7 @@ Fehlt diesen Zeilen die Spalte grafik, steht die Skizze als Text kursiv.
 ## Gemischt als letzter Abschnitt (v0.11)
 Nennt die Gliederung eine Stufe `### Gemischt: <Name>` mit
 `- **Zuschnitt:** <Einheit>`, steht sie als letzter Abschnitt des Blatts
-(auch ohne Zeile in der Zuordnung). Aufgaben: alle Zeilen aus mehr-p10.csv
+(auch ohne Zeile in der Zuordnung). Aufgaben: alle Zeilen aus mehr-p10/*.csv
 mit `einheit = Gemischt: <Name>` und auf_blatt = ja, gleich aus welchem
 Kapitel, ungekürzt; so wird der Abschnitt auf zwei Blättern (Lineare,
 Quadratische) gleich gesetzt, nur die Nummern laufen weiter. Diese Zeilen

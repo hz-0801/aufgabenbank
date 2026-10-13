@@ -1,7 +1,7 @@
 # pruefheft.py – Art „mehr“ (v0.5, 11.10.2026)
 
 Setzt den Mehr-Block der Prüfung P10 (mathe-nachhilfe pruefung.md § 5
-„Mehr-Block“) ohne Modell aus `mathe-nachhilfe/msa/mehr-p10.csv`.
+„Mehr-Block“) ohne Modell aus `mathe-nachhilfe/msa/mehr-p10/*.csv`.
 
     python3 werkzeuge/pruefheft.py --kapitel dreiecke --art mehr \
         --einheit "Seite oder Winkel mit sin, cos, tan" --portion 1 [--schueler S07]
