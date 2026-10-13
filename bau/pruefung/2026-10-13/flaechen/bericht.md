@@ -1,4 +1,5 @@
 # Blatt P Flächeninhalt und Umfang, Y5D3 (13.10.2026, aus Daten, pruefheft.py v0.9; Runde 6, Lehrer 13.10.)
+Neu gesetzt 13.10. abends mit v0.11 (Y5D4): Marke „’24 · 1c“ mit „Basis“ rechts, Anstoß Anteil mit je einer Zeile für Winkel und Prozent.
 Blatt 3 Seiten (Seite 3 zur Hälfte: Anteil in Prozent und Fundstellen), Lösung 2, Übersicht 1;
 14 Nummern = alle 12 Originale 2022–2026 und zwei Anstöße mit Antwort (10, 12).
 Behoben (Kritiker 13.10., befund-kritiker-2026-10-13.md):

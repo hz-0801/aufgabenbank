@@ -204,3 +204,9 @@ praeambel.tex des Setzers kennt \blattende und \kk noch.
   LXA 0,16 / 6 · NUB 0,15 / 3; zusammen 0,72 Mio, Wanduhr 9 min.
 - Je Prüfungsblatt ≈ 0,15–0,23 Mio Token ohne Kritiker; keine neuen
   Bankzeilen in fünf Blättern (die Bank deckt den Einstieg).
+
+## Durchsicht Blatt für Blatt (13.10. abends)
+- Y5D4: über den Antwortzeilen der Schülerfrage steht noch der Fall
+  „Winkel und Prozent“ als Text – bei form antwort weglassen.
+- Y5D: Gemischt-Abschnitt Geometrie (’22-5e, ’23-2c ungekürzt) fehlt
+  in der Gliederung; kommt mit Dreiecke in Daten (Schritt B).
