@@ -19,6 +19,11 @@ bau/pruefheft/<kapitel>-<art>[-p<n>|-fokus-<wort>][-ebr]-<datum>/ (Unterordner s
   aus der Zuordnung (Frage, Anzeigename aus der Gliederung), Einstieg aus der Bank, echte Aufgaben aus
   msa/mehr-p10.csv (auf_blatt = ja, andere Zahlen, grafik, form); Muster bau/pruefung/2026-10-11/
   winkel-ohne-rechnung/; Kurzanleitung werkzeuge/pruefheft-p.md
+  v0.10 (13.10.2026, Runde 6, Lehrer 13.10.): Bedingungen rechts ohne „Basis“, TR durchgestrichen (\\pfohnetr) nur bei
+  hilfsmittel = nein, P_OHNE_TR_BLOCK leer; Legende „B = Basisteil“ weg; Stufenkopf „immer“/„fast immer“ aus der
+  Gliederung („- **Häufigkeit:**“), sonst nur Jahre (nur P10-Hefte); \\gzwei ohne Halbierung (Antwort neben der
+  Figur), Skizzenfeld \\gskizze ab dem linken Rand; Teile eines Originals direkt nacheinander = eine Nummer a), b);
+  Bündel nebeneinander nur, wenn die Systeme ungedrückt passen
   Pfade: --mn ../mathe-nachhilfe --bb ../blattbau (Voreinstellung: Nachbarordner des Repos)
 
 Daten (alle gelesen; geschrieben wird nur bau/register.csv, eine Zeile je Bau):
@@ -5311,9 +5316,11 @@ P_PRAEAMBEL = r"""% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortg
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
 \newsavebox{\gbox}\newlength{\gLinks}
+% v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
+% Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
 \newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
-  \setlength{\gLinks}{\dimexpr0.5\textwidth-\gEin-\mbpfnr\relax}%
-  \ifdim\wd\gbox>\dimexpr\gLinks-4mm\relax
+  \setlength{\gLinks}{\dimexpr\wd\gbox+6mm\relax}%
+  \ifdim\gLinks>0.62\linewidth
     \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
   \else
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
@@ -5332,7 +5339,14 @@ P_PRAEAMBEL = r"""% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortg
  {\end{minipage}\par}
 % Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
 \newsavebox{\gpbox}
-\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+% Skizzenfeld (v0.10, Lehrer 13.10.): Karo ab dem linken Rand über die Zeile, „Skizze“ klein grau oben links im Feld
+% (wie \pfskizzenfeld der Vorlage); der rechte Rand bleibt den Bedingungen
+\newcommand{\gskizze}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \node[anchor=north west,inner sep=2pt,font=\scriptsize,text=mbgrau,fill=white] at (0,{#1*10mm}) {Skizze};
+  \end{tikzpicture}\par}
 \RenewDocumentEnvironment{pfaufg}{m m m}{%
   \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
   \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
@@ -5866,11 +5880,14 @@ def p_echt_inhalt(D, r, nr, heraus, faktor=1.0, vorige=None, nr_vorige=0, schmal
         elif rechts and form in ('teil', 'linie'):
             out.append('\\par\\noindent' + rechts)
     elif grafik:
+        # Antwort direkt neben der Figur (v0.10, Lehrer 13.10.: nicht am rechten Rand)
+        rechts = re.sub(r'^\\hfill\s*', r'\\vspace{2mm}', rechts or '')
         out.append('\\gzwei{' + grafik + '}{' + (rechts or f'\\karo{{{n}}}') + '}')
     elif form == 'skizze':
-        # Skizzenfeld (gemeinsam.md): links das Wort „Skizze“, rechts das Karo
-        out.append('\\gzwei{\\parbox[t]{\\dimexpr0.5\\textwidth-\\gEin-\\mbpfnr-5mm\\relax}{\\small\\itshape Skizze}}{'
-                   + (rechts or f'\\karo{{{n}}}') + '}')
+        # Skizzenfeld (gemeinsam.md, v0.10): Karo ab dem linken Rand, „Skizze“ oben links im Feld; Antwortlinie darunter
+        out.append(f'\\gskizze{{{max(3, n + 1)}}}')
+        if rechts and not rechts.startswith('\\karo'):
+            out.append('\\par\\noindent' + rechts)
     elif r.get('abbildung', '').strip():
         out.append('% SETZER: fehlt – Skizze als TikZ (Spalte grafik leer, abbildung ist Prosa); hier als Text kursiv')
         out.append('\\gzwei{' + p_skizze(r['abbildung'].strip()) + '}{' + (rechts or f'\\karo{{{n}}}') + '}')
@@ -5894,6 +5911,25 @@ def p_buendel_schluessel(r):
     """Spalte buendel (msa/mehr-p10.csv, v0.9): „<Schlüssel>“ oder „<Schlüssel>: <gemeinsamer Auftrag>“; Zeilen mit
     gleichem Schlüssel in einer Stufe werden eine Nummer mit a), b) (pruefung.md § 5 „Gleichartige gebündelt“)."""
     return (r.get('buendel') or '').split(':', 1)[0].strip()
+
+
+def p_original(r):
+    """Aufgabe des Originals ohne Teilbuchstaben: 2022-OS-K6b -> 2022-OS-K6 (leer, wenn keiner da ist)."""
+    eid = (r.get('eltern_id') or '').strip()
+    return eid[:-1] if re.search(r'\d[a-z]$', eid) else ''
+
+
+def p_teile_zusammen(posten):
+    """Einzelne Posten, die direkt nacheinander Teile desselben Originals sind, werden ein Posten (v0.10).
+    Rückgabe: Liste (Glieder, teile?)"""
+    aus = []
+    for g in posten:
+        if (len(g) == 1 and aus and aus[-1][1] in (None, True) and p_original(g[0])
+                and p_original(g[0]) == p_original(aus[-1][0][-1]) and not p_buendel_schluessel(g[0])):
+            aus[-1] = (aus[-1][0] + g, True)
+        else:
+            aus.append((g, None if len(g) == 1 and not p_buendel_schluessel(g[0]) else False))
+    return aus
 
 
 def p_posten(echte):
@@ -5925,13 +5961,34 @@ def p_buendel_kopf(glieder):
     return ' '.join(saetze[0][:n]), [' '.join(sz[n:]) for sz in saetze]
 
 
-def p_buendel_tex(D, glieder, nr, heraus, faktor=1.0):
+def p_ksys_breite(grafik):
+    """Breite eines ksys in mm aus seinen Schlüsseln (xmin, xmax, xstep, karo; Vorgaben der Vorlage), dazu Pfeil und
+    Beschriftung (≈ 1,5 Karo + 6 mm). Grafik ohne ksys: 0."""
+    m = re.search(r'\\begin\{ksys\}\[([^\]]*)\]', grafik)
+    if not m:
+        return 0
+    w = dict(xmin=-4, xmax=4, xstep=1, karo=0.8)
+    for k, v in re.findall(r'(xmin|xmax|xstep|karo)\s*=\s*(-?[\d.]+)', m.group(1)):
+        w[k] = float(v)
+    if 'klein' in m.group(1).split(','):
+        w['karo'] = 0.35
+    return ((w['xmax'] - w['xmin']) / w['xstep'] + 1.5) * w['karo'] * 10 + 6
+
+
+def p_buendel_tex(D, glieder, nr, heraus, faktor=1.0, teile=False):
     """Gleichartige Originale als eine Nummer mit a), b) (v0.9): je Glied Marke links und Bedingungen rechts auf der
     Zeile des Buchstabens; haben alle Glieder ein Koordinatensystem (höchstens drei), stehen sie nebeneinander, je
-    mit eigenem kleinen System, ohne Karo (pruefung.md § 5 „Gleichartige Originale gebündelt“)."""
+    mit eigenem kleinen System, ohne Karo (pruefung.md § 5 „Gleichartige Originale gebündelt“).
+    teile=True (v0.10, Lehrer 13.10.): Teilaufgaben desselben Originals direkt nacheinander – eine Nummer, der
+    gemeinsame Vorspann einmal oben, dann a), b) wie im Heft; immer untereinander."""
     kopf, reste = p_buendel_kopf(glieder)
-    nebeneinander = len(glieder) <= 3 and all('{ksys}' in (r.get('grafik') or '') for r in glieder)
-    out = [f'% Bündel {p_buendel_schluessel(glieder[0])}: ' + ', '.join(r['id'] for r in glieder),
+    nebeneinander = not teile and len(glieder) <= 3 and all('{ksys}' in (r.get('grafik') or '') for r in glieder)
+    if nebeneinander and max(p_ksys_breite(r.get('grafik') or '') for r in glieder) > 160 / len(glieder) - 4:
+        # v0.10 (Lehrer 13.10.): Fenster und Karo kommen aus den Daten; passt ein System nicht in seine Spalte, wird
+        # es nicht verkleinert (\\gpassend), sondern die Glieder stehen untereinander
+        nebeneinander = False
+    out = [(f'% Teile eines Originals ({p_original(glieder[0])}): ' if teile else
+            f'% Bündel {p_buendel_schluessel(glieder[0])}: ') + ', '.join(r['id'] for r in glieder),
            f'\\begin{{pfaufg}}{{}}{{{nr}.}}{{}}']
     if kopf:
         out.append(tx(kopf))
@@ -5953,7 +6010,9 @@ def p_buendel_tex(D, glieder, nr, heraus, faktor=1.0):
         else:
             if i == 0 and not kopf:
                 out.append('\\vspace*{-\\baselineskip}\\vspace*{-\\smallskipamount}')   # a) auf der Zeile der Nummer
-            out.append(f'\\begin{{gbteil}}{{{b}}}{{{p_marke(D, r)}}}{{{p_bedingung_tex(D, r)}}}')
+            # Marke zweizeilig als \\shortstack (\\\\ direkt im Teil ist ein TeX-Fehler), links neben die Nummernspalte
+            out.append(f'\\begin{{gbteil}}{{{b}}}{{{p_marke(D, r).replace(chr(92) * 2, "~") if p_marke(D, r).count(chr(92) * 2) == 0 else
+                       "\\raisebox{\\dimexpr-\\height+\\ht\\strutbox\\relax}{\\shortstack[r]{" + p_marke(D, r) + "}}\\hspace*{\\mbpfnr}"}}}{{{p_bedingung_tex(D, r)}}}')
             out += zeilen
             out.append('\\end{gbteil}')
     if spalten:
@@ -6136,19 +6195,23 @@ def p_blatt_tex(D, einheit, kenn, stufen_daten, ausschnitt, fund, faktor=1.0, en
             out.append('% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; '
                        'oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)')
         s['nr_echt'] = []   # je echte Zeile (Nummer, Buchstabe im Bündel)
-        vorige, nr_vorige = None, 0
-        for glieder in p_posten(s['echte']):
+        frueher = {}   # Original -> (Zeile, Nummer): „Angaben wie in Nr. k“ nur, wenn die Teile getrennt stehen (v0.10)
+        for glieder, teile in p_teile_zusammen(p_posten(s['echte'])):
             nr += 1
             if len(glieder) > 1:
-                # gleichartige Originale gebündelt (Spalte buendel, v0.9): eine Nummer mit a), b)
+                # gleichartige Originale gebündelt (Spalte buendel, v0.9) oder Teile eines Originals direkt
+                # nacheinander (v0.10): eine Nummer mit a), b)
                 s['nr_echt'] += [(nr, 'abcdefgh'[i] + ')') for i in range(len(glieder))]
-                out.append(p_buendel_tex(D, glieder, nr, s['heraus'], faktor))
-                vorige, nr_vorige = None, 0
+                out.append(p_buendel_tex(D, glieder, nr, s['heraus'], faktor, teile=bool(teile)))
+                if teile:
+                    frueher[p_original(glieder[0])] = (glieder[0], nr)
                 continue
             r = glieder[0]
             s['nr_echt'].append((nr, ''))
+            vorige, nr_vorige = frueher.get(p_original(r), (None, 0)) if p_original(r) else (None, 0)
             out.append(p_echt_tex(D, r, nr, s['heraus'], faktor, vorige, nr_vorige))
-            vorige, nr_vorige = r, nr
+            if p_original(r):
+                frueher.setdefault(p_original(r), (r, nr))
         if not s['echte']:
             out.append('% SETZER: fehlt – keine echte Aufgabe mit auf_blatt = ja in msa/mehr-p10.csv')
     out.append('')

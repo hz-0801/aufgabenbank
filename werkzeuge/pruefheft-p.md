@@ -1,4 +1,16 @@
-# pruefheft.py – Art p: Prüfungsblatt der Sorte P aus Daten (v0.9, 12.10.2026; Datenfelder 12.10.)
+# pruefheft.py – Art p: Prüfungsblatt der Sorte P aus Daten (v0.10, 13.10.2026; Datenfelder 12.10.)
+
+v0.10 (Runde 6, Lehrer 13.10.): Bedingungen rechts = TR durchgestrichen
+(`\pfohnetr`, nur bei Katalog hilfsmittel = nein, keine Annahme über 2028)
+und „FOR“, kein „Basis“, keine Legende. Stufenkopf: steht in der
+Gliederung unter der Stufe „- **Häufigkeit:** fast immer“ (oder „immer“),
+nur dieses Wort; sonst nur die Jahre (nur P10-Hefte OS, EBR, FOR,
+MUSTER-*), kein „oft“/„selten“. Figur links, Antwort direkt daneben
+(Spalte so breit wie die Figur); Skizzenfeld als Karo ab dem linken Rand
+mit „Skizze“ oben links. Teile desselben Originals direkt nacheinander:
+eine Nummer, Vorspann einmal, a) b); „Angaben wie in Nr. k“ nur getrennt.
+Bündel nebeneinander nur, wenn jedes System in seine Spalte passt (sonst
+untereinander, nie verkleinert).
 
     python3 werkzeuge/pruefheft.py --kapitel dreiecke --art p \
         --einheit "Winkel ohne Rechnung bestimmen oder begründen"
