@@ -237,3 +237,20 @@ eine Zeile – Schüler verwechseln.
   neben der Figur, sonst rechtsbündig untereinander.
 - Schülerfrage (Gliederung): `- **Schülerfrage-Form:** antwort:Winkel|°;Prozent|%`
   – die Zeilen stehen rechts neben jedem Fall.
+
+## Leere Stufe aus älteren Originalen (v0.11)
+Hat eine Stufe kein Original der letzten fünf Jahre (auf_blatt = ja), setzt
+der Setzer ihre älteren P10-Originale aus mehr-p10.csv (auf_blatt = nein,
+Papier OS/EBR/FOR/MUSTER-*, keine Gymnasialhefte), leicht → schwer; Art mehr
+lässt genau diese Zeilen weg (kein Doppel). Stufen mit einem jungen Original
+bleiben, wie sie sind. Probe: Lineare „Gleichung aus Graph“ (2019-OS-K2b, K2c).
+Fehlt diesen Zeilen die Spalte grafik, steht die Skizze als Text kursiv.
+
+## Gemischt als letzter Abschnitt (v0.11)
+Nennt die Gliederung eine Stufe `### Gemischt: <Name>` mit
+`- **Zuschnitt:** <Einheit>`, steht sie als letzter Abschnitt des Blatts
+(auch ohne Zeile in der Zuordnung). Aufgaben: alle Zeilen aus mehr-p10.csv
+mit `einheit = Gemischt: <Name>` und auf_blatt = ja, gleich aus welchem
+Kapitel, ungekürzt; so wird der Abschnitt auf zwei Blättern (Lineare,
+Quadratische) gleich gesetzt, nur die Nummern laufen weiter. Diese Zeilen
+fallen aus den übrigen Stufen heraus. Jahre im Stufenkopf aus ihren Originalen.

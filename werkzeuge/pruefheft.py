@@ -19,6 +19,10 @@ bau/pruefheft/<kapitel>-<art>[-p<n>|-fokus-<wort>][-ebr]-<datum>/ (Unterordner s
   aus der Zuordnung (Frage, Anzeigename aus der Gliederung), Einstieg aus der Bank, echte Aufgaben aus
   msa/mehr-p10.csv (auf_blatt = ja, andere Zahlen, grafik, form); Muster bau/pruefung/2026-10-11/
   winkel-ohne-rechnung/; Kurzanleitung werkzeuge/pruefheft-p.md
+  v0.11 (13.10.2026, Runde 7, Lehrer 13.10.): Marke wie im Heft „’25 · 1f“, rechts „Basis“ als Wort; --pruefungsjahr
+  (Vorgabe 2027, ab 2028 Basisaufgaben mit \\pfohnetr und Jahr im Kopf); Formelsammlungs-Hinweis einmal je Blatt;
+  form „antwort:Name|Einheit;…“ (eine Zeile je Größe); leere Stufe aus älteren P10-Originalen (nicht im Mehr-Block);
+  Stufe „Gemischt: …“ aus der Gliederung als letzter Abschnitt (Zeilen der Einheit aus mehr-p10.csv)
   v0.10 (13.10.2026, Runde 6, Lehrer 13.10.): Bedingungen rechts ohne „Basis“, TR durchgestrichen (\\pfohnetr) nur bei
   hilfsmittel = nein, P_OHNE_TR_BLOCK leer; Legende „B = Basisteil“ weg; Stufenkopf „immer“/„fast immer“ aus der
   Gliederung („- **Häufigkeit:**“), sonst nur Jahre (nur P10-Hefte); \\gzwei ohne Halbierung (Antwort neben der
@@ -6462,7 +6466,7 @@ def p_register(args, kenn, ordner, seiten, einheit, stufen_daten, fassung=1):
     commit = subprocess.run(['git', 'rev-parse', '--short', 'HEAD'], cwd=BANK, capture_output=True,
                             text=True).stdout.strip()
     zeilen.append(f'{kenn};{args.datum};{args.kapitel};P;{best};{commit};'
-                  f'pruefheft.py v0.9;Version 2026-10-12;{pfad}')
+                  f'pruefheft.py v0.11;Version 2026-10-13;{pfad}')
     open(p_reg, 'w', encoding='utf-8').write('\n'.join(zeilen) + '\n')
 
 
