@@ -238,3 +238,28 @@ praeambel.tex des Setzers kennt \blattende und \kk noch.
   Versteckte Teilaufgaben (Spalte zwischenschritt) als Stoff für
   dünne Abschnitte: in Schritt C prüfen, heute ist die Spalte bei
   Körper fast leer.
+- AZL3 (Lehrer 13.10. spät), wiederholt (Flächen „Derselbe Handgriff
+  an einer anderen Formel“, Körper Nr. 4 und 6) → Regel:
+  Heranführung steht für sich. Warum: Der Schüler liest sie zuerst;
+  ein Satz, der die folgende Aufgabe voraussetzt („Rolle den Mantel
+  ab“ – welchen?), ist für ihn ein Rätsel. Beispiel: „Du schneidest
+  den Mantel eines Zylinders gerade auf und rollst ihn flach aus.“
+  Grenze: gedacht von der folgenden Aufgabe her, geschrieben für
+  jemanden, der sie nicht kennt. Kritiker prüft: Ist die Aufgabe
+  ohne die nächste lösbar und verständlich?
+- AZL3 (Lehrer 13.10. spät): Heranführung ist eine Anregung, keine
+  Reihe. Warum: Sie soll den Gedanken wecken, den die folgende
+  Aufgabe braucht, nicht einen Fall bis zum Ende durchspielen.
+  Beispiel: vor ’26 · 2d (Radius doppelt, Kegel gegen Zylinder) nur
+  drei Fälle – Höhe doppelt, Radius doppelt, Zylinder statt Kegel;
+  Kugel und Würfel raus. Grenze: meist ein bis zwei Teilaufgaben,
+  drei, wenn die folgende Aufgabe drei Gedanken braucht; jede
+  Teilaufgabe muss einen Gedanken der folgenden Aufgabe tragen.
+  Zweites Blatt bestätigt sie (Flächen-Anstöße prüfen in Schritt C).
+- AZL3: Lücke „Seite ___“ rutschte allein in die nächste Zeile –
+  Setzer bindet „Seite“ und Lücke (Handwerk, sofort).
+- AZL3: Seite 3 nur Fundstellen-Tabelle (Probe: ohne Tabelle 2
+  Seiten). Setzer: Tabelle in die Übersicht, wenn sie sonst allein
+  eine Seite füllt (Schritt C, alle Blätter).
+- Satz für den Schüler, nicht für den Lehrer: „Derselbe Handgriff an
+  einer anderen Formel“ in Flächen und Körper gestrichen.

@@ -5623,7 +5623,9 @@ def p_stufenkopf(name, jahre, frage='', vorhalt=0.16):
     for fr in ([frage] if isinstance(frage, str) else frage):
         if fr:
             # „___“ = Lücke (Formel-Frage „Seite ___“, v0.9)
-            out += '\\gfrage{' + tx(fr.replace('___', '\x00')).replace('\x00', '\\linie{12mm}') + '}'
+            # „Seite ___“ bleibt zusammen (Lehrer 13.10. spät: Lücke allein in der nächsten Zeile, AZL3)
+            out += '\\gfrage{' + tx(fr.replace('Seite ___', '\x02').replace('___', '\x00')).replace(
+                '\x02', 'Seite~\\linie{12mm}').replace('\x00', '\\linie{12mm}') + '}'
     return out
 
 
