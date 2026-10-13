@@ -269,3 +269,7 @@ praeambel.tex des Setzers kennt \blattende und \kk noch.
   kritiker-B.md). Sofort behoben: Symmetrie Schülerfrage (Parallelogramm
   „weder Rechteck noch Raute“ = 0 Achsen), Diagramme ’23 · 6d Gitter
   passend zur Achse (step 0,3 cm). Rest gesammelt für Schritt C.
+- Fassung: Die Blätter aus Runde 7/8 (HK31, 5ZQ1, K9X1, DGH1, VRK1, YYZ1)
+  standen nicht in fassungen.csv; der Neusatz 13.10. vergab wieder
+  Fassung 1, obwohl sich die Daten geändert haben – gleiche Kennung,
+  anderes Blatt. Setzer/Register in Schritt C prüfen.
