@@ -223,3 +223,18 @@ praeambel.tex des Setzers kennt \blattende und \kk noch.
 - Gliederung: Kreisumfang als Zwischenschritt in Körper-Aufgaben
   (’18 · 6b, ’22 · 2a, ’23 · 5a) fehlt in der Spalte zwischenschritt
   (handgriffe-p10.csv); Umfang ist dadurch zu selten gezählt.
+- AZL2 (Lehrer 13.10.): Anstoß für einen Abschnitt, der eine Größe
+  rückwärts sucht – Warum: Umstellen ist der Handgriff, Ankreuzen
+  „wo kommt eine Wurzel“ kostet Kraft und übt ihn nicht. Beispiel:
+  V = a² · h nach a umstellen (Körper), u = π · d nach d (Flächen).
+  Grenze: einfachere Formel derselben Art, ohne Zahlen, nicht die
+  Formel der Prüfungsaufgabe selbst. Zweites Blatt nach Flächen →
+  Regel; in Schritt C nach pruefung.md § 5. Passt auch bei
+  Grundwert und Hypotenuse.
+- AZL2: Anstoß ohne echten Fehler dahinter fällt weg („groß minus
+  klein“, „welche Fläche wird bezahlt“ mit geschenkten Fällen,
+  Lehrer: zwanghaft). Ein Abschnitt mit nur einer Aufgabe ist
+  trotzdem besser als keiner; eine gute Heranführung ist erwünscht.
+  Versteckte Teilaufgaben (Spalte zwischenschritt) als Stoff für
+  dünne Abschnitte: in Schritt C prüfen, heute ist die Spalte bei
+  Körper fast leer.
