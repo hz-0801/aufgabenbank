@@ -5060,7 +5060,10 @@ def mehr_zeilen(mn, kapitel, einheit):
               [e for e in einheiten if einheit.lower() in e.lower()]
     if len(treffer) != 1:
         sys.exit('--einheit nicht eindeutig; vorhanden: ' + ' | '.join(einheiten))
-    zeilen = [r for r in alle if r['einheit'] == treffer[0] and r.get('auf_blatt', '').strip() == 'nein']
+    # v0.11: ältere Originale einer Stufe ohne junges Original stehen auf dem Blatt (Art p), nicht noch einmal hier
+    weg = p_aeltere_stufen([r for r in alle if r['einheit'] == treffer[0]])
+    zeilen = [r for r in alle if r['einheit'] == treffer[0] and r.get('auf_blatt', '').strip() == 'nein'
+              and r['id'] not in weg]
     if not zeilen:
         sys.exit(f'Einheit „{treffer[0]}“: keine Zeile mit auf_blatt = nein')
     for r in zeilen:
@@ -5516,6 +5519,21 @@ def p_mehr(mn, kapitel, einheit):
         if r.get('schwere', '').strip() not in MEHR_STUFEN:
             r['schwere'] = 'II'
     return zeilen
+
+
+def p_aeltere(D, zeilen):
+    """Ältere P10-Originale einer Stufe (v0.11): auf_blatt = nein, Papier OS/EBR/FOR/MUSTER-* (keine GYM-Hefte)."""
+    return [r for r in zeilen if r.get('auf_blatt', '').strip() == 'nein'
+            and P10_PAPIER.match((D.kat.get(r.get('eltern_id', ''), {}).get('papier') or '').strip()
+                                 or (r.get('eltern_id', '').split('-') + ['', ''])[1])]
+
+
+def p_aeltere_stufen(zeilen):
+    """Ids der Zeilen, die das Blatt (Art p) als ältere Originale einer leeren Stufe setzt: Stufen der Einheit ohne
+    Zeile mit auf_blatt = ja, nur P10-Hefte. Der Mehr-Block lässt sie weg (kein Doppel, v0.11)."""
+    jung = {r.get('stufe', '').strip() for r in zeilen if r.get('auf_blatt', '').strip() == 'ja'}
+    return {r['id'] for r in zeilen if r.get('stufe', '').strip() and r.get('stufe', '').strip() not in jung
+            and r.get('auf_blatt', '').strip() == 'nein' and P10_PAPIER.match((r.get('eltern_id', '').split('-') + ['', ''])[1])}
 
 
 def p_rang(r):
@@ -6471,6 +6489,13 @@ def p_bau(args):
             if r.get('auf_blatt', '').strip() != soll:
                 hinweise.append(f'{r["id"]}: auf_blatt = {r.get("auf_blatt", "").strip() or "leer"}, Jahr {jahr} verlangt {soll}')
         echte = sorted([p_einheitsfassung(r) for r in zeilen if r.get('auf_blatt', '').strip() == 'ja'], key=p_rang)
+        if not echte:
+            # v0.11 (Lehrer 13.10.): Stufe ohne Original der letzten fünf Jahre nimmt die älteren P10-Originale der
+            # Stufe (keine Gymnasialhefte), leicht -> schwer; sie fehlen dafür im Mehr-Block (p_aeltere_stufen)
+            echte = sorted([p_einheitsfassung(r) for r in p_aeltere(D, zeilen)], key=p_rang)
+            if echte:
+                hinweise.append(f'Stufe „{name}“: kein junges Original, {len(echte)} ältere P10-Originale auf dem Blatt '
+                                f'({" ".join(r["eltern_id"] for r in echte)}; nicht im Mehr-Block)')
         ids += kat_ids + [r['eltern_id'] for r in zeilen if r.get('eltern_id')]
         info = gl['stufen'].get(name, {})
         if not echte and not frage_vorhanden(info):
