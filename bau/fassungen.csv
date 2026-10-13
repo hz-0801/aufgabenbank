@@ -16,3 +16,22 @@ Y5D;4;ee63e6e39f16;2026-10-13;flaechen;Flächeninhalt und Umfang;bau/pruefheft/f
 AZL;2;008abb125663;2026-10-13;koerper;Volumen und Oberfläche;bau/pruefheft/koerper-p-volumen-und-oberflaeche-2026-10-13;pruefheft.py v0.9
 EF4;2;3f0a58a09939;2026-10-13;koerper;Netz und Schrägbild;bau/pruefheft/koerper-p-netz-und-schraegbild-2026-10-13;pruefheft.py v0.9
 AZL;3;156bb09df293;2026-10-13;koerper;Volumen und Oberfläche;bau/pruefheft/koerper-p-volumen-und-oberflaeche-2026-10-13;pruefheft.py v0.9
+Y5D;5;34b27933b5cc;2026-10-13;flaechen;Flächeninhalt und Umfang;bau/pruefheft/flaechen-p-flaecheninhalt-und-umfang-2026-10-13;pruefheft.py v0.9
+AZL;4;414bf4816932;2026-10-13;koerper;Volumen und Oberfläche;bau/pruefheft/koerper-p-volumen-und-oberflaeche-2026-10-13;pruefheft.py v0.9
+EF4;3;98060bc4339f;2026-10-13;koerper;Netz und Schrägbild;bau/pruefheft/koerper-p-netz-und-schraegbild-2026-10-13;pruefheft.py v0.9
+P4Z;2;abb70f48b0b7;2026-10-13;dreiecke;Länge mit Pythagoras;bau/pruefheft/dreiecke-p-laenge-mit-pythagoras-2026-10-13;pruefheft.py v0.9
+GYW;2;a2cc2a2ecb93;2026-10-13;dreiecke;Seite oder Winkel mit sin, cos, tan;bau/pruefheft/dreiecke-p-seite-oder-winkel-mit-sin-cos-tan-2026-10-13;pruefheft.py v0.9
+T2U;2;03f644250250;2026-10-13;dreiecke;Winkel ohne Rechnung bestimmen oder begründen;bau/pruefheft/dreiecke-p-winkel-ohne-rechnung-bestimmen-oder-begr-2026-10-13;pruefheft.py v0.9
+LXA;2;0e42a552fa8a;2026-10-13;dreiecke;Seite im allgemeinen Dreieck (Sinussatz);bau/pruefheft/dreiecke-p-seite-im-allgemeinen-dreieck-sinussatz-2026-10-13;pruefheft.py v0.9
+22A;1;d0681d9121e8;2026-10-13;dreiecke;Vierecke: Symmetrie und Eigenschaften;bau/pruefheft/dreiecke-p-vierecke-symmetrie-und-eigenschaften-2026-10-13;pruefheft.py v0.9
+NUB;2;9c3ddb7f3e98;2026-10-13;dreiecke;Symmetrie;bau/pruefheft/dreiecke-p-symmetrie-2026-10-13;pruefheft.py v0.9
+TAL;3;085be39bd4bf;2026-10-13;lineare;Lineare Funktionen;bau/pruefheft/lineare-p-lineare-funktionen-2026-10-13;pruefheft.py v0.9
+XU6;2;c7bd7b08a3ec;2026-10-13;quadratische;Parabel: Scheitelpunkt und Skizze;bau/pruefheft/quadratische-p-parabel-scheitelpunkt-und-skizze-2026-10-13;pruefheft.py v0.9
+YYZ;1;8ae017ddc39a;2026-10-13;quadratische;Quadratische Gleichung lösen;bau/pruefheft/quadratische-p-quadratische-gleichung-loesen-2026-10-13;pruefheft.py v0.9
+93F;1;ecd67f1fd5d9;2026-10-13;gleichungssysteme;Gleichungssystem im Sachzusammenhang;bau/pruefheft/gleichungssysteme-p-gleichungssystem-im-sachzusammenhang-2026-10-13;pruefheft.py v0.9
+74A;1;c0c6f3912ed9;2026-10-13;wachstum;Exponentielles Wachstum;bau/pruefheft/wachstum-p-exponentielles-wachstum-2026-10-13;pruefheft.py v0.9
+HK3;1;f5694c4390db;2026-10-13;prozent;Grundwert;bau/pruefheft/prozent-p-grundwert-2026-10-13;pruefheft.py v0.9
+5ZQ;1;77a72ddf71d8;2026-10-13;prozent;Prozent;bau/pruefheft/prozent-p-prozent-2026-10-13;pruefheft.py v0.9
+K9X;1;bc2ab699041b;2026-10-13;daten;Kenngrößen;bau/pruefheft/daten-p-kenngroessen-2026-10-13;pruefheft.py v0.9
+DGH;1;3421e4ba925a;2026-10-13;daten;Diagramme;bau/pruefheft/daten-p-diagramme-2026-10-13;pruefheft.py v0.9
+VRK;1;69c5a4f67685;2026-10-13;wahrscheinlichkeit;Baumdiagramm und Pfadregeln;bau/pruefheft/wahrscheinlichkeit-p-baumdiagramm-und-pfadregeln-2026-10-13;pruefheft.py v0.9
