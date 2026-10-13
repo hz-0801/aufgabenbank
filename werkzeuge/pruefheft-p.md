@@ -1,4 +1,14 @@
-# pruefheft.py – Art p: Prüfungsblatt der Sorte P aus Daten (v0.10, 13.10.2026; Datenfelder 12.10.)
+# pruefheft.py – Art p: Prüfungsblatt der Sorte P aus Daten (v0.11, 13.10.2026; Datenfelder 12.10.)
+
+v0.11 (Runde 7, Lehrer 13.10.): Marke wie im Heft „’25 · 1f“ (ohne B); rechts
+„Basis“ als Wort, daneben „FOR“ und das durchgestrichene TR. `--pruefungsjahr`
+(Vorgabe 2027): ab 2028 (hilfsmittelfreier Teil, 10 BE, Fachbrief 10) tragen
+alle Basisaufgaben `\pfohnetr`, und der Kopf nennt „Prüfung 2028 · Basisteil
+ohne TR“; davor nur Originale mit hilfsmittel = nein, kein Jahr. Hinweis auf
+die Formelsammlung einmal je Blatt: der erste in Blattfolge (Frage unter dem
+Kopf, Formel-Frage, Schülerfrage mit „Formelsammlung“ oder „Seite ___“) bleibt,
+spätere entfallen (Hinweis im Lauf). Antwortzeilen je Größe (unten). Leere
+Stufe aus älteren Originalen (unten). Gemischt-Abschnitt (unten).
 
 v0.10 (Runde 6, Lehrer 13.10.): Bedingungen rechts = TR durchgestrichen
 (`\pfohnetr`, nur bei Katalog hilfsmittel = nein, keine Annahme über 2028)
@@ -215,3 +225,15 @@ fehlt: Stufe „Winkelbeziehungen“ ohne Hauptplatz (nur im Muster), Schüler-
   Blatt schon nach der Formelsammlung fragt (Flächen).
 - Geprüft mit Parabel (XU61, 2 S.) und Volumen (AZL1, 3 S.); Bündel und Ausblenden an einer
   Kopie der Daten (Lineare, Parabel, Flächen); Art mehr und normal unverändert.
+
+## Antwortzeilen je gefragte Größe (v0.11)
+Fragt eine Aufgabe nach mehreren Größen, bekommt jede eine eigene Zeile mit
+Namen und Einheit („Winkel: ___ °“, „Prozent: ___ %“). Warum: zwei Fragen,
+eine Zeile – Schüler verwechseln.
+- Original (msa/mehr-p10.csv, Spalte `form`, ebenso `form_einheit`):
+  `antwort:Winkel|°;Prozent|%` – Größen durch „;“ (oder „,“), je Größe
+  `Name|Einheit`; Einheit darf fehlen (`Anzahl|`). Mit „+“ kombinierbar
+  (`zeichnen+antwort:Steigung|`). Mit Figur (Spalte grafik): Zeilen direkt
+  neben der Figur, sonst rechtsbündig untereinander.
+- Schülerfrage (Gliederung): `- **Schülerfrage-Form:** antwort:Winkel|°;Prozent|%`
+  – die Zeilen stehen rechts neben jedem Fall.

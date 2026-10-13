@@ -5615,6 +5615,8 @@ def p_frage_ergebnis(f):
     if f['art'] == 'kreuz':
         ja = [f'{"abcdefgh"[i]})' for i, (_, a) in enumerate(f['faelle']) if a.lower().startswith('ja')]
         return tx(' und '.join(ja) if ja else 'keiner')
+    if f['art'] == 'antwort':   # v0.11: Nachsatz ist die Liste der Größen, nicht Teil der Antwort
+        f = dict(f, zusatz='')
     if len(f['faelle']) == 1:   # ein Fall: ohne Buchstaben (12.10.)
         return tx(f['faelle'][0][1] + f['zusatz'])
     return '; '.join(f'{"abcdefgh"[i]}) {tx(a + f["zusatz"])}' for i, (_, a) in enumerate(f['faelle']))
@@ -5630,6 +5632,10 @@ def p_frage_tex(f, nr):
         b = 'abcdefgh'[i]
         if f['art'] == 'kreuz':
             rechts = '\\kk{' + tx(f['zusatz'] or 'ja') + '}'
+        elif f['art'] == 'antwort':
+            # v0.11: je gefragte Größe eine Zeile („Schülerfrage-Form: antwort:Winkel|°;Prozent|%“)
+            rechts = '\\par\\noindent'.join('\\hfill ' + (tx(n) + ': ' if n else '') + '\\linie{30mm}'
+                                             + ('\\,' + tx(e) if e else '') for n, e in p_antwort_groessen('antwort:' + f['zusatz']))
         else:
             rechts = '\\linie{30mm}' + (' ' + tx(f['zusatz']) if f['zusatz'] else '')
         buchstabe = ' ' if len(f['faelle']) == 1 else f'\\makebox[\\mbpfteil][l]{{\\textbf{{{b})}}}}'   # ein Fall: ohne Buchstaben
@@ -5778,6 +5784,23 @@ def p_form_tex(t_rest, grafik, form, optionen, ergebnisse, n, faktor):
             felder = [re.split(r'\s*(=|≈)\s*', e)[0] for e in ergebnisse if re.search(r'\s(=|≈)\s', e)]
             for f in felder:
                 out.append('\\par\\noindent\\hfill ' + tx(f) + ' $=$\\linie{30mm}')
+        elif teil.startswith('antwort:'):
+            # v0.11 (Lehrer 13.10.): je gefragte Größe eine eigene Zeile mit Namen und Einheit, „Winkel: ___ °“
+            # (Warum: zwei Fragen, eine Zeile – Schüler verwechseln). Datenform: antwort:Name|Einheit,Name|Einheit
+            if t_rest:
+                out.append('\\par\\smallskip\\noindent ' + t_rest)
+                t_rest = ''
+            zeilen = []
+            for groesse in p_antwort_groessen(teil):
+                name, einheit = groesse
+                zeilen.append('\\par\\noindent ' + ('' if g and not grafik_gesetzt else '\\hfill ')   # neben der Figur: direkt daneben
+                              + (tx(name) + ': ' if name else '') + '\\linie{30mm}'
+                              + ('\\,' + tx(einheit) if einheit else '\\hphantom{\\,cm²}'))
+            if g and not grafik_gesetzt:
+                out.append('\\gzwei{' + g + '}{\\vspace{2mm}' + '\\par\\smallskip'.join(zeilen) + '}')
+                grafik_gesetzt = True
+            else:
+                out.append('\\par\\smallskip' + ''.join(zeilen))
         elif teil == 'karo':
             if t_rest:
                 out.append('\\par\\smallskip\\noindent ' + t_rest)
@@ -5792,11 +5815,22 @@ def p_form_tex(t_rest, grafik, form, optionen, ergebnisse, n, faktor):
             else:
                 out.append(f'\\karo{{{n}}}')
         else:
-            out.append(f'% SETZER: fehlt – form „{teil}“ unbekannt (ankreuzen, einzeichnen, zeichnen, teil, karo)')
+            out.append(f'% SETZER: fehlt – form „{teil}“ unbekannt (ankreuzen, einzeichnen, zeichnen, teil, karo, antwort:…)')
     if t_rest:
         out.append('\\par\\smallskip\\noindent ' + t_rest)
     if g and not grafik_gesetzt:
         out.append('\\par\\smallskip\\noindent' + g + '\\par')
+    return out
+
+
+def p_antwort_groessen(teil):
+    """„antwort:Winkel|°,Prozent|%“ -> [('Winkel', '°'), ('Prozent', '%')] (pruefheft-p.md „Antwortzeilen“, v0.11);
+    Einheit darf fehlen („Anzahl|“ oder „Anzahl“)."""
+    out = []
+    for g in re.split(r'[,;]', teil.split(':', 1)[1]):
+        if g.strip():
+            name, _, einheit = g.partition('|')
+            out.append((name.strip(), einheit.strip()))
     return out
 
 
@@ -5835,7 +5869,8 @@ def p_echt_inhalt(D, r, nr, heraus, faktor=1.0, vorige=None, nr_vorige=0, schmal
     rechnet = bool(re.search(r'\d', r.get('loesung') or ''))
     n = max(1, round(max(2, min(4, mehr_schritte(r) + 1)) * faktor))
     grafik = (r.get('grafik') or '').strip()
-    if '||' in grafik or '+' in form or form in ('ankreuzen', 'einzeichnen', 'zeichnen', 'karo', 'bilder', 'wahrfalsch'):
+    if '||' in grafik or '+' in form or form in ('ankreuzen', 'einzeichnen', 'zeichnen', 'karo', 'bilder', 'wahrfalsch') \
+            or form.startswith('antwort:'):
         # v0.7 (Netz): Spalte grafik mit Bildoptionen („||“) und form als Folge von Teilen („+“: ankreuzen,
         # einzeichnen, zeichnen, teil, karo) aus msa/mehr-p10.csv; form „teil“, „skizze“ und grafik allein gehen
         # den Weg unten (Volumen, 12.10.) – werkzeuge/pruefheft-p.md
