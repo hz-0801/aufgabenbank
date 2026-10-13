@@ -5536,6 +5536,25 @@ def p_aeltere_stufen(zeilen):
             and r.get('auf_blatt', '').strip() == 'nein' and P10_PAPIER.match((r.get('eltern_id', '').split('-') + ['', ''])[1])}
 
 
+def p_gemischt(name):
+    return (name or '').strip().startswith('Gemischt')
+
+
+def p_mit_gemischt(gl, stufen, einheit, mehr_alle):
+    """Stufen der Einheit; eine Stufe „Gemischt: …“ steht immer am Ende (pruefung.md § 5, Lehrer 13.10.). Nennt die
+    Gliederung sie (### Gemischt: …, Zuschnitt = Einheit), ohne dass die Zuordnung sie kennt, kommt sie dazu; ihre
+    katalog_ids (für Jahre und Fundstellen) sind die Originale der Zeilen dieser Einheit in mehr-p10.csv."""
+    out = [z for z in stufen if not p_gemischt(z['stufe'])]
+    gem = [z for z in stufen if p_gemischt(z['stufe'])]
+    da = {z['stufe'].strip() for z in stufen}
+    for name, info in gl['stufen'].items():
+        if p_gemischt(name) and info.get('zuschnitt', '') == einheit and name not in da:
+            ids = ' '.join(OrderedDict((r['eltern_id'], 1) for r in mehr_alle
+                                       if r.get('einheit', '').strip() == name and r.get('eltern_id')))
+            gem.append({'stufe': name, 'katalog_ids': ids, 'kern': '', 'bank_sprossen': '', 'jahre_letzte5': ''})
+    return out + gem
+
+
 def p_rang(r):
     return (MEHR_STUFEN.index(r['schwere']), int(re.sub(r'\D', '', r.get('rang') or '') or 10 ** 6), r['id'])
 
@@ -5602,7 +5621,16 @@ def p_stufenkopf(name, jahre, frage='', vorhalt=0.16):
 def p_skizze(text):
     """Skizze als Text kursiv in der linken Spalte (keine Grafik in den Daten)."""
     return ('\\parbox[t]{\\dimexpr0.5\\textwidth-\\gEin-\\mbpfnr-5mm\\relax}{\\raggedright\\small\\itshape Skizze: '
-            + tx(text) + '}')
+            + p_prosa(text) + '}')
+
+
+def p_prosa(text):
+    """Prosa-Skizze ohne Mathe-Modus (v0.11: ältere Originale bringen „(x+3)^2-5“ mit): Hochzahlen als ², Rest von ^/_
+    als Zeichen, damit der Satz nicht abbricht."""
+    if '$' not in text:
+        text = re.sub(r'\^(\d)', lambda m: '⁰¹²³⁴⁵⁶⁷⁸⁹'[int(m.group(1))], text)
+        return tx(text).replace('^', '\\textasciicircum{}').replace('_', '\\_')
+    return tx(text)
 
 
 def frage_vorhanden(info):
@@ -6472,14 +6500,34 @@ def p_bau(args):
     mehr_alle = lies_csv(os.path.join(D.mn, 'msa', 'mehr-p10.csv')) if os.path.exists(os.path.join(D.mn, 'msa', 'mehr-p10.csv')) else []
     heraus = [r for r in D.heraus if (r.get('art') or '') == 'herausgeloest']
     stufen_daten, ids, hinweise, entfallen = [], [], [], []
-    for z in einheiten[einheit]['stufen']:
+    for z in p_mit_gemischt(gl, einheiten[einheit]['stufen'], einheit, mehr_alle):
         name = z['stufe'].strip()
         kat_ids = (z.get('katalog_ids') or '').split()
+        if p_gemischt(name):
+            # v0.11 (pruefung.md § 5 „Gemischt als letzter Abschnitt“, Lehrer 13.10.): Zeilen der Einheit „Gemischt: …“
+            # aus mehr-p10.csv, gleich aus welchem Kapitel – so steht derselbe Abschnitt gleich auf beiden Blättern;
+            # ungekürzt (keine Spalten <feld>_einheit)
+            zeilen = [r for r in mehr_alle if r.get('einheit', '').strip() == name]
+            for r in zeilen:
+                if r.get('schwere', '').strip() not in MEHR_STUFEN:
+                    r['schwere'] = 'II'
+            echte = sorted([r for r in zeilen if r.get('auf_blatt', '').strip() == 'ja'], key=p_rang)
+            ids += [r['eltern_id'] for r in zeilen if r.get('eltern_id')]
+            info = gl['stufen'].get(name, {})
+            if not echte:
+                hinweise.append(f'Stufe „{name}“: keine Zeile mit einheit = {name} und auf_blatt = ja in mehr-p10.csv')
+                entfallen.append(name)
+                continue
+            stufen_daten.append({'name': name, 'anzeige': info.get('anzeigename') or name, 'z': z,
+                                 'jahre': p_jahre(D, z, letzte5, info.get('häufigkeit', '')), 'frage': p_frage(info),
+                                 'einstieg': None, 'kurzfrage': info.get('frage', ''), 'echte': echte, 'heraus': []})
+            continue
         # Blatt = alle Originale der letzten fünf Jahre (pruefung.md § 5, Lehrer 12.10.): Zeilen der Stufe aus
         # mehr-p10.csv, dazu Zeilen anderer Kapitel, deren Original hier Hauptplatz ist (katalog_ids); auf_blatt = ja
         # ist die Angabe der Daten, die Jahresregel wird dagegen geprüft (Hinweis, kein Abbruch)
         zeilen = [r for r in mehr if r.get('stufe', '').strip() == name]
-        zeilen += [r for r in mehr_alle if r.get('eltern_id') in kat_ids and r['id'] not in {x['id'] for x in zeilen}]
+        zeilen += [r for r in mehr_alle if r.get('eltern_id') in kat_ids and r['id'] not in {x['id'] for x in zeilen}
+                   and not p_gemischt(r.get('einheit', ''))]   # Gemischt-Zeilen nur im Gemischt-Abschnitt (v0.11)
         for r in zeilen:
             if r.get('schwere', '').strip() not in MEHR_STUFEN:
                 r['schwere'] = 'II'
