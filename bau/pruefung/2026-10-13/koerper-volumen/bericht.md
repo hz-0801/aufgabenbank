@@ -1,2 +1,2 @@
-# Blatt P Volumen und Oberfläche, AZL2 (13.10.2026 abends, aus Daten, pruefheft.py v0.11)
-Neusatz der Fassung vom 12.10. (bau/pruefung/2026-10-12/koerper-*) mit dem Setzer von heute, ohne Änderung an den Daten; Durchsicht Blatt für Blatt (plan.md § 7 A). Blatt 3 Seiten.
+# Blatt P Volumen und Oberfläche, AZL3 (13.10.2026 spät, aus Daten, pruefheft.py v0.11)
+Neusatz nach der Durchsicht des Lehrers (AZL2): Namen wie bei Flächen (Volumen gesucht, Formeln umstellen, Oberfläche gesucht, vergleichen und urteilen); Restvolumen ’24 · 4c unter „Volumen gesucht“ (Weg A); Anstöße neu: Formelsammlung als Suchauftrag, „Wie viel passt hinein?“ mit drei Fällen, V = a² · h nach a umstellen, Zylindermantel abrollen. Blatt 2 Seiten Aufgaben, Seite 3 nur die Fundstellen-Tabelle.
