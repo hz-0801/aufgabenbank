@@ -6101,31 +6101,48 @@ def p_ergebnis(r):
 
 def p_marke(D, r):
     """Randmarke (pruefung.md § 5 „Marke mit B, Bedingungen rechts“, Lehrer 12.10. abends): Basisaufgaben
-    „’25 · B1e“, Kontextaufgaben wie bisher „nach P10 ’23 · 2c“ (mehr_marke). Der Stern entfällt (v0.9): FOR und
+    „’25 · 1e“ wie im Heft (v0.11), Kontextaufgaben wie bisher „nach P10 ’23 · 2c“ (mehr_marke). Der Stern entfällt (v0.9): FOR und
     „Basis · ohne TR“ stehen als Bedingungen rechts (p_bedingungen)."""
     eid = r.get('eltern_id', '')
     k = D.kat.get(eid, {})
     if p_basis(D, eid):
-        return f"’{str(k['jahr'])[2:]}~\\pkt{{}}~B{p_teil(eid)}"
+        return f"’{str(k['jahr'])[2:]}~\\pkt{{}}~{p_teil(eid)}"   # wie im Heft „’25 · 1f“ (v0.11, Lehrer 13.10.)
     return mehr_marke(r)
 
 
 # Hilfsmittelregel (v0.10, Lehrer 13.10.): keine Annahme über 2028 – das durchgestrichene TR nur aus hilfsmittel = nein
 # des Originals. Gilt einmal für einen ganzen Block ein Rechnerverbot, kommt sein Name hierher.
 P_OHNE_TR_BLOCK = set()
+# v0.11 (Lehrer 13.10.): Prüfungsjahr des Schülers (--pruefungsjahr, Vorgabe 2027). Ab 2028 hat die P10 einen
+# hilfsmittelfreien Teil (10 BE, Fachbrief 10): dann tragen alle Basisaufgaben das durchgestrichene TR, und das Jahr
+# steht im Kopf. Warum: Der Schüler braucht den Kontext, ob er mit Rechner übt.
+P_JAHR_OHNE_TR = 2028
+P_PRUEFUNGSJAHR = 2027
 
 
 def p_bedingungen(D, r):
     """Bedingungen, unter denen die Aufgabe in der Prüfung vorkam (v0.10), als TeX: durchgestrichenes TR
-    (\\pfohnetr, mathblatt.sty 2026-10-13) bei hilfsmittel = nein, „FOR“ bei Stern; kein „Basis“ (das B der Marke)."""
+    (\\pfohnetr, mathblatt.sty 2026-10-13) bei hilfsmittel = nein oder (ab Prüfungsjahr 2028) bei jeder Basisaufgabe,
+    „FOR“ bei Stern; „Basis“ als Wort bei Basisaufgaben (v0.11)."""
     eid = r.get('eltern_id', '')
     k = D.kat.get(eid, {})
     out = []
-    if (k.get('hilfsmittel') or '').strip() == 'nein' or (k.get('block') or '').strip() in P_OHNE_TR_BLOCK:
+    basis = p_basis(D, eid)
+    if basis:
+        out.append('Basis')   # v0.11 (Lehrer 13.10.): das B links ist Katalogkürzel und fällt weg, rechts das Wort
+    if ((k.get('hilfsmittel') or '').strip() == 'nein' or (k.get('block') or '').strip() in P_OHNE_TR_BLOCK
+            or (basis and P_PRUEFUNGSJAHR >= P_JAHR_OHNE_TR)):
         out.append('\\pfohnetr')
     if stern_fuer(D, eid):
         out.append('FOR')
     return out
+
+
+def p_jahrkopf():
+    """Kopf ab Prüfungsjahr 2028 (v0.11): „Prüfung 2028 · Basisteil ohne TR“; davor leer (Blatt wie bisher)."""
+    if P_PRUEFUNGSJAHR < P_JAHR_OHNE_TR:
+        return ''
+    return f'Prüfung {P_PRUEFUNGSJAHR} \\pkt{{}} Basisteil ohne \\pfohnetr'
 
 
 def p_bedingung_tex(D, r):
@@ -6170,7 +6187,7 @@ def p_fundstellen(D, ids, letzte5):
 def p_blatt_tex(D, einheit, kenn, stufen_daten, ausschnitt, fund, faktor=1.0, entfallen=()):
     out = [KOPF.replace('\\begin{document}', P_PRAEAMBEL + '\\begin{document}'), '\\pfheftstil',
            f'\\pflaufkopf[P10 \\pkt{{}} Prüfung]{{{tx(einheit)}}}{{{kenn}}}\\pfseitevon',
-           f'\\pfheftkopf{{{tx(einheit)}}}{{}}',
+           f'\\pfheftkopf{{{tx(einheit)}}}{{{p_jahrkopf()}}}',
            '\\pfstufenzeile{' + ' \\pkt{} '.join(tx(s['anzeige']) for s in stufen_daten) + '}']
     nr = 0
     for name in entfallen:
@@ -6224,7 +6241,7 @@ def p_blatt_tex(D, einheit, kenn, stufen_daten, ausschnitt, fund, faktor=1.0, en
 def p_loesung_tex(D, einheit, kenn, stufen_daten):
     out = [KOPF.replace('\\begin{document}', P_PRAEAMBEL + '\\begin{document}'), '\\pfheftstil',
            f'\\pflaufkopf[P10 \\pkt{{}} Prüfung]{{{tx(einheit)} \\pkt{{}} Lösungen}}{{{kenn}}}\\pfseitevon',
-           f'\\pfheftkopf{{{tx(einheit)}}}{{Lösungen}}',
+           f'\\pfheftkopf{{{tx(einheit)}}}{{Lösungen{(" \\pkt{} " + p_jahrkopf()) if p_jahrkopf() else ""}}}',
            '\\pfstufenzeile{' + ' \\pkt{} '.join(tx(s['anzeige']) for s in stufen_daten) + '}']
     for s in stufen_daten:
         out.append('')
@@ -6303,6 +6320,8 @@ def p_fingerabdruck(D, stufen_daten):
                                                                                       'hilfsmittel', 'stern')])
         inhalt.append([s['anzeige'], s['jahre'], s.get('kurzfrage', ''),
                        json.dumps(s['frage'], sort_keys=True, ensure_ascii=False) if s['frage'] else '', z])
+    if P_PRUEFUNGSJAHR >= P_JAHR_OHNE_TR:
+        inhalt.append(['pruefungsjahr', P_PRUEFUNGSJAHR])   # v0.11: ab 2028 anderes Blatt (TR-Zeichen), andere Fassung
     return hashlib.sha1(json.dumps(inhalt, ensure_ascii=False).encode()).hexdigest()[:12]
 
 
@@ -6386,6 +6405,8 @@ def p_einheitsfassung(r):
 def p_bau(args):
     if not args.einheit:
         sys.exit('--art p braucht --einheit')
+    global P_PRUEFUNGSJAHR
+    P_PRUEFUNGSJAHR = args.pruefungsjahr
     D = Daten(args.mn, args.kapitel, 'p10')
     gl = p_gliederung(D.mn, args.kapitel)
     einheiten = p_einheiten(D, gl)
@@ -6541,6 +6562,8 @@ def main():
     ap.add_argument('--uebung', action='store_true', help='Anhang „Mehr zum Üben“ (nur auf Zuruf, Punkt 31)')
     ap.add_argument('--ohne-uebung', action='store_true', help='ohne Wirkung seit Punkt 31 (Anhang nie automatisch)')
     ap.add_argument('--ohne-register', action='store_true')
+    ap.add_argument('--pruefungsjahr', type=int, default=2027,
+                    help='nur --art p: Prüfungsjahr des Schülers; ab 2028 Basisaufgaben mit durchgestrichenem TR (v0.11)')
     ap.add_argument('--fassung-erfassen', action='store_true',
                     help='nur --art p: Datenstand der Einheit als Fassung 1 ins Fassungsregister (bau/fassungen.csv), '
                          'nichts setzen – für schon gelieferte Einheiten (v0.9)')
