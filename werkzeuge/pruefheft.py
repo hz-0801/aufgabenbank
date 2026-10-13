@@ -6472,13 +6472,26 @@ def p_bau(args):
     kenn = p_kennung(gl, einheit, ordner, hinweise)
     # Formel-Frage einmal je Blatt (v0.9): erste Stufe mit Formel; entfällt, wenn eine Frage der Gliederung auf dem
     # Blatt schon nach der Formelsammlung fragt (Flächen „Auf welcher Seite stehen die Flächenformeln?“)
-    schon = any(re.search(r'Formelsammlung|Seite', (s['frage'] or {}).get('frage', '') + s.get('kurzfrage', ''))
-                for s in stufen_daten)
+    # v0.11 (Lehrer 13.10.): Hinweis auf die Formelsammlung einmal je Blatt – stehen mehrere Anstöße der Gliederung, die
+    # zur Formelsammlung schicken, bleibt nur der erste in Blattfolge (Warum: sparsam, sonst stumpft der Hinweis ab)
+    fs = lambda t: bool(re.search(r'Formelsammlung|Seite\s*_{3}', t or ''))
     st_formel = next((s for s in stufen_daten if p_hat_formel(D, s)), None)
-    if st_formel and not schon:
+    if st_formel:
         st_formel['formelfrage'] = p_formelfrage(einheit)
-    elif st_formel:
-        hinweise.append('Formel-Frage entfällt: die Gliederung fragt auf dem Blatt schon nach der Formelsammlung')
+    schon = False
+    for s in stufen_daten:
+        # Folge auf dem Blatt: Frage unter dem Kopf, Formel-Frage, dann die Schülerfrage als erste Nummer
+        for feld in ('kurzfrage', 'formelfrage', 'frage'):
+            t = (s['frage'] or {}).get('frage', '') if feld == 'frage' else s.get(feld, '')
+            if not (t and (feld == 'formelfrage' or fs(t))):
+                continue
+            if schon:
+                hinweise.append(f'Formelsammlungs-Hinweis „{t[:40]}…“ ({s["name"]}) entfällt: einmal je Blatt')
+                if feld == 'frage':
+                    s['frage'] = None
+                else:
+                    s[feld] = ''
+            schon = True
     # Kennung mit Fassung (gemeinsam.md, Lehrer 12.10.): Fassung steigt nur mit dem Inhalt (Fingerabdruck)
     abdruck = p_fingerabdruck(D, stufen_daten)
     fassung, fassung_neu = p_fassung(kenn, abdruck)
