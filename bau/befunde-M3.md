@@ -136,6 +136,11 @@ Blatt: bau/pruefung/2026-10-12/flaechen-c/. 15 Nummern (12 echte,
   2c“, nur der Basisteil trägt „’25 · B1e“; die Lösung des Einstiegs
   Nr. 11 zeigt „A : b“ (Antwort der Fälle), der Weg „beide Seiten
   durch b teilen“.
+- Y5D2 (12./13.10., aus Daten, v0.9): 12 Nummern = 12 Originale, Einstiege
+  als Anstöße unter dem Stufenkopf, Kreisfigur einmal, „Term zu Figur“
+  unter Formeln, kein Bündel; bleibt 3 Seiten (gemessen 2,4 Textseiten,
+  Karo 0,5: 2,15, ohne Figuren 1,9). Offen (Lehrer): Weg A 3 Seiten,
+  Weg B eine Figur streichen (bau/pruefung/2026-10-12/flaechen-neu/bericht.md).
 ## Aus dem Datenlauf 12.10. (QGC Lineare, ein Blatt mit drei Stufen)
 - Offen (Lehrer): Das Blatt hält keine zwei Seiten – 15 Nummern (14
   Originale, eine Schülerfrage) mit sechs Koordinatensystemen und zwei

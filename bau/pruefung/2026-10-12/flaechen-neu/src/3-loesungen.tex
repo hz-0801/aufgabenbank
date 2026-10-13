@@ -1,0 +1,123 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+\newsavebox{\gbox}\newlength{\gLinks}
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr0.5\textwidth-\gEin-\mbpfnr\relax}%
+  \ifdim\wd\gbox>\dimexpr\gLinks-4mm\relax
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung („Basis · ohne TR“, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par}
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} Prüfung]{Fläche und Umfang \pkt{} Lösungen}{Y5D2}\pfseitevon
+\pfheftkopf[B = Basisteil, ohne Taschenrechner]{Fläche und Umfang}{Lösungen}
+\pfstufenzeile{Formeln \pkt{} Fläche gesucht \pkt{} Umfang gesucht \pkt{} Formeln umstellen \pkt{} Anteil in Prozent}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Formeln}{oft \pkt{} \pfjahre{25 \pkt{} 24 \pkt{} 22}{19 \pkt{} 14}}
+\begin{pfloesungb}{}
+\lzb{1.}{}{u = 3 · a}{u = 3 · a}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{2.}{}{C}{A = a · (b + c) (dritte Option)}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{3.}{}{A = d · e : 2}{A = d · e : 2}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Fläche gesucht}{immer \pkt{} \pfjahre{25 \pkt{} 24 \pkt{} 23 \pkt{} 22}{}}\gfrage{Schlag in deiner Formelsammlung Flächen und Umfänge auf: Seite \linie{12mm}}
+\begin{pfloesungb}{}
+\lzb{4.}{}{A = 2688 cm²}{A = ½ · 56 · 96 = 2688 cm²}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{5.}{}{A $\approx$ 1963,5 cm²}{A = $\pi$ · 25² $\approx$ 1963,5 cm²}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{6.}{}{A = 151,5 m²}{A = (24,20 + 16,20) : 2 · 7,50 = 151,5 m²}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{7.}{}{DB $\approx$ 6,35 m; A $\approx$ 63,3 m²}{DB = 7,3 : tan 49° $\approx$ 6,35 m; A = ½ · (11,0 + DB) · 7,3 $\approx$ 63,3 m²}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Umfang gesucht}{oft \pkt{} \pfjahre{26 \pkt{} 23}{}}
+\begin{pfloesungb}{}
+\lzb{8.}{}{14 cm}{14 cm}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{9.}{}{u $\approx$ 57,4 m}{Schenkel = 7,50 : sin 62° $\approx$ 8,49 m; u = 24,20 + 16,20 + 2 · Schenkel $\approx$ 57,4 m}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Formeln umstellen}{selten \pkt{} \pfjahre{23}{20 \pkt{} 18 \pkt{} 14}}\gfrage{Fläche bekannt, Seite gesucht: Wie wird aus A = a · b eine Rechnung für a? a = \linie{12mm}}
+\begin{pfloesungb}{}
+\lzb{10.}{}{a = 110 mm}{a = A : b = 38 500 : 350 = 110 mm}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Anteil in Prozent}{oft \pkt{} \pfjahre{25 \pkt{} 23}{}}\gfrage{Prozent heißt Anteil am Ganzen: Was ist hier das Ganze, was der Anteil davon?}
+\begin{pfloesungb}{}
+\lzb{11.}{}{Anteil grau $\approx$ 34,7 \%}{Anteil grau = 125 : 360 $\approx$ 34,7 \%}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{12.}{}{14 Deckel; $\approx$ 161,2 cm²; $\approx$ 23,0 \%}{14 Deckel; Abfall 700 $-$ 14 · 12,25$\pi$ $\approx$ 161,2 cm²; Vorgabe (höchstens 24 \%) erfüllt, Abfall $\approx$ 23,0 \%}
+\end{pfloesungb}
+\end{document}
