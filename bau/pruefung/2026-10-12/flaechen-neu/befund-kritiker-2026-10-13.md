@@ -66,5 +66,5 @@ passen: Formelsammlung bei „Fläche gesucht“ (Basis ohne Sammlung), Teil und
 ## 5 Gesamturteil: Note 2
 Fachlich sauber, alle zwölf jungen Originale mit neuen Zahlen und klarer Stufenfolge. Zu beheben:
 Nr. 11 mit kopfrechenbarem Winkel; der Lehrer entscheidet das Zweitthema in 7 und 9.
-Länge: Alle Behebungen sparen etwa 4 cm (Zweitthema ~2 cm, Nr. 10 ~2 cm), aus 2,4 werden rund 2,2 Textseiten –
-das Blatt bleibt bei 3 Seiten; Seite 3 trüge dann nur noch „Anteil in Prozent“ und die Fundstellen.
+Länge: Alle Behebungen sparen etwa 4 cm (Zweitthema ~2 cm, Nr. 10 ~2 cm), aus 2,4 werden rund
+2,2 Textseiten – das Blatt bleibt bei 3 Seiten; Seite 3 trüge nur noch Prozent und Fundstellen.
