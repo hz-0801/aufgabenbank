@@ -263,3 +263,9 @@ praeambel.tex des Setzers kennt \blattende und \kk noch.
   eine Seite füllt (Schritt C, alle Blätter).
 - Satz für den Schüler, nicht für den Lehrer: „Derselbe Handgriff an
   einer anderen Formel“ in Flächen und Körper gestrichen.
+
+## Runde 13.10. nachts (Schritt A und B, acht Agenten, Kritiker A/B)
+- Berichte und Kritik: bau/runde-2026-10-13/ (je Kapitel, kritiker-A.md,
+  kritiker-B.md). Sofort behoben: Symmetrie Schülerfrage (Parallelogramm
+  „weder Rechteck noch Raute“ = 0 Achsen), Diagramme ’23 · 6d Gitter
+  passend zur Achse (step 0,3 cm). Rest gesammelt für Schritt C.
