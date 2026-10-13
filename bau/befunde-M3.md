@@ -215,4 +215,11 @@ praeambel.tex des Setzers kennt \blattende und \kk noch.
   auf die Grundlinie der Nummer (Y5D4 Nr. 7, Lehrer 13.10.).
 - Y5D: Formelsammlungs-Frage gehört ganz oben, vor die erste Stufe
   „Formeln“ – auch dort hilft das Nachschlagen (Formelsammlung bis
-  2027 durchgehend erlaubt, msa/msa.md). Lehrer 13.10.
+  2027 durchgehend erlaubt, msa/msa.md). Lehrer 13.10. Ab 2028
+  (--pruefungsjahr) ist der Basisteil hilfsmittelfrei: dann gehört
+  die Frage vor die erste Stufe mit Hilfsmitteln (hier „Fläche
+  gesucht“), die Stufe „Formeln“ übt Auswendiges. Ort also nach
+  Prüfungsjahr, nicht fest.
+- Gliederung: Kreisumfang als Zwischenschritt in Körper-Aufgaben
+  (’18 · 6b, ’22 · 2a, ’23 · 5a) fehlt in der Spalte zwischenschritt
+  (handgriffe-p10.csv); Umfang ist dadurch zu selten gezählt.
