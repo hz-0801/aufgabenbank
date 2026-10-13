@@ -210,3 +210,9 @@ praeambel.tex des Setzers kennt \blattende und \kk noch.
   „Winkel und Prozent“ als Text – bei form antwort weglassen.
 - Y5D: Gemischt-Abschnitt Geometrie (’22-5e, ’23-2c ungekürzt) fehlt
   in der Gliederung; kommt mit Dreiecke in Daten (Schritt B).
+- Setzer: bei zweizeiliger Marke („nach P10“ / „’22 · 5e“) rutscht
+  die Bedingung rechts („FOR“, „Basis“) eine Zeile tiefer; sie gehört
+  auf die Grundlinie der Nummer (Y5D4 Nr. 7, Lehrer 13.10.).
+- Y5D: Formelsammlungs-Frage gehört ganz oben, vor die erste Stufe
+  „Formeln“ – auch dort hilft das Nachschlagen (Formelsammlung bis
+  2027 durchgehend erlaubt, msa/msa.md). Lehrer 13.10.
