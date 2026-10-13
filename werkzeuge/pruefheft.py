@@ -28,6 +28,7 @@ bau/pruefheft/<kapitel>-<art>[-p<n>|-fokus-<wort>][-ebr]-<datum>/ (Unterordner s
   Gliederung („- **Häufigkeit:**“), sonst nur Jahre (nur P10-Hefte); \\gzwei ohne Halbierung (Antwort neben der
   Figur), Skizzenfeld \\gskizze ab dem linken Rand; Teile eines Originals direkt nacheinander = eine Nummer a), b);
   Bündel nebeneinander nur, wenn die Systeme ungedrückt passen
+  v0.12 (14.10.2026, Probe Formelsammlung): Feld „Regine: S. n“ der Gliederung – Lösung der Seitenfrage „Seite ___“ = „S. n“
   Pfade: --mn ../mathe-nachhilfe --bb ../blattbau (Voreinstellung: Nachbarordner des Repos)
 
 Daten (alle gelesen; geschrieben wird nur bau/register.csv, eine Zeile je Bau):
@@ -5449,14 +5450,14 @@ def p_gliederung(mn, kapitel):
             st = m.group(1).strip()
             g['stufen'][st] = {'zuschnitt': '', 'hinweis': '', 'kern': '', 'anzeigename': '', 'schülerfrage': '',
                                'schülerfrage-fälle': '', 'schülerfrage-form': '', 'schülerfrage-weg': '', 'frage': '',
-                               'schülerfrage-skizze': '', 'einstieg': '', 'häufigkeit': ''}
+                               'schülerfrage-skizze': '', 'einstieg': '', 'häufigkeit': '', 'regine': ''}
             continue
         # 12.10.: Schülerfrage(-Fälle, -Form, -Weg) = Frage als erste Aufgabe der Stufe (Volumen); Frage = kurze
         # Schülerfrage kursiv unter dem Stufenkopf (Netz); Anzeigename = Name in Schülersprache (pruefheft-p.md);
         # Einstieg: nein = kein Bank-Einstieg der Stufe (12.10., Flächen zweite Fassung: Einstieg nur, wo die Stufe ihn braucht)
         # Schülerfrage-Skizze (12.10., Flächen dritte Fassung): „original“ = die Figur des ersten Originals der Stufe
         # (Spalte grafik), sonst eigenes TikZ; die Fälle stehen rechts daneben (Einstieg = erster Schritt des Originals)
-        m = re.match(r'^- \*\*(Zuschnitt|Hinweis|Kern|Anzeigename|Frage|Einstieg|Häufigkeit|Schülerfrage(?:-Fälle|-Form|-Weg|-Skizze)?):\*\*\s*(.*)$', z)
+        m = re.match(r'^- \*\*(Zuschnitt|Hinweis|Kern|Anzeigename|Frage|Einstieg|Häufigkeit|Regine|Schülerfrage(?:-Fälle|-Form|-Weg|-Skizze)?):\*\*\s*(.*)$', z)
         if m and st:
             g['stufen'][st][m.group(1).lower()] = m.group(2).strip().strip('„“"')
     return g
@@ -6337,7 +6338,11 @@ def p_loesung_tex(D, einheit, kenn, stufen_daten):
            '\\pfstufenzeile{' + ' \\pkt{} '.join(tx(s['anzeige']) for s in stufen_daten) + '}']
     for s in stufen_daten:
         out.append('')
-        out.append(p_stufenkopf(s['anzeige'], s['jahre'], s.get('kurzfrage', '')))
+        # v0.12 (14.10.): Seitenfrage „Seite ___“ in der Lösung mit der Seite aus Feld Regine („S. 18“)
+        kf = s.get('kurzfrage', '')
+        if 'Seite ___' in kf and s.get('regine'):
+            kf = kf.replace('Seite ___', s['regine'])
+        out.append(p_stufenkopf(s['anzeige'], s['jahre'], kf))
         if s['frage']:
             out.append('\\begin{pfloesungb}{}')
             out.append(f'\\lzb{{{s["nr_frage"]}.}}{{}}{{{p_frage_ergebnis(s["frage"])}}}{{{tx(s["frage"]["weg"])}}}')
@@ -6572,7 +6577,7 @@ def p_bau(args):
         stufen_daten.append({'name': name, 'anzeige': info.get('anzeigename') or name, 'z': z,
                              'jahre': p_jahre(D, z, letzte5, info.get('häufigkeit', '')), 'frage': frage,
                              'einstieg': None,   # Einstieg nur aus der Gliederung (Schülerfrage), nie aus der Bank (12.10.)
-                             'kurzfrage': info.get('frage', ''),
+                             'kurzfrage': info.get('frage', ''), 'regine': info.get('regine', ''),
                              'echte': echte, 'heraus': [h for h in heraus if h.get('stufe', '').strip() == name]})
     ids = list(OrderedDict((i, 1) for i in ids))
     alle_echte = [r for s in stufen_daten for r in s['echte']]
