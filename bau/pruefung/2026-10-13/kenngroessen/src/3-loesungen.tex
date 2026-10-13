@@ -1,0 +1,132 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+\newsavebox{\gbox}\newlength{\gLinks}
+% v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
+% Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr\wd\gbox+6mm\relax}%
+  \ifdim\gLinks>0.62\linewidth
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par}
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+% Skizzenfeld (v0.10, Lehrer 13.10.): Karo ab dem linken Rand über die Zeile, „Skizze“ klein grau oben links im Feld
+% (wie \pfskizzenfeld der Vorlage); der rechte Rand bleibt den Bedingungen
+\newcommand{\gskizze}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \node[anchor=north west,inner sep=2pt,font=\scriptsize,text=mbgrau,fill=white] at (0,{#1*10mm}) {Skizze};
+  \end{tikzpicture}\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} Prüfung]{Kenngrößen \pkt{} Lösungen}{K9X1}\pfseitevon
+\pfheftkopf{Kenngrößen}{Lösungen}
+\pfstufenzeile{Spannweite \pkt{} Median \pkt{} Mittelwert \pkt{} Fehlender Wert zum Mittelwert \pkt{} Aussagen zu Kenngrößen prüfen}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Spannweite}{\pfjahre{26 \pkt{} 24 \pkt{} 23}{21 \pkt{} 20 \pkt{} 19 \pkt{} 14}}
+\begin{pfloesungb}{}
+\lzb{1.}{}{Spannweite = 0,10 € pro Liter}{größter Wert 1,90 (So), kleinster 1,80 (Mi) $\Rightarrow$ Spannweite = 1,90 $-$ 1,80 = 0,10 € pro Liter}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{2.}{}{Minimum = 310 Mio.; Maximum = 1350 Mio.; Spannweite = 1040 Mio.}{Minimum = 310 Mio.; Maximum = 1350 Mio.; Spannweite = 1350 $-$ 310 = 1040 Mio.}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{3.}{}{Spannweite = 46,6 mm}{größter Wert 71,2 (Jun), kleinster 24,6 (Apr) $\Rightarrow$ Spannweite = 71,2 $-$ 24,6 = 46,6 mm}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Median}{\pfjahre{24}{15}}
+\begin{pfloesungb}{}
+\lzb{4.}{}{geordnet 2; 4; 5; 7; 9, Median 5}{erst ordnen, dann abzählen: bei fünf Werten ist der dritte die Mitte; bei sechs Werten liegt sie zwischen dem dritten und vierten (beide addieren, durch 2)}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{5.}{}{Median = 20 °C}{geordnet: 12, 15, 18, 22, 24, 24 $\Rightarrow$ Median = (18 + 22) : 2 = 20 °C}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Mittelwert}{\pfjahre{26 \pkt{} 24 \pkt{} 22}{21 \pkt{} 20 \pkt{} 17 \pkt{} 16 \pkt{} 15}}
+\begin{pfloesungb}{}
+\lzb{6.}{}{stimmt}{stimmt, 1,84 € wird unterschritten: (1,81 + 1,82 + 1,80 + 1,83 + 1,89) : 5 = 9,15 : 5 = 1,83 €}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{7.}{}{Minimum = 520; Maximum = 585; Mittelwert = 564}{kleinste Säule 2021 $\Rightarrow$ Minimum = 520; größte Säule 2020 $\Rightarrow$ Maximum = 585; Summe 580 + 560 + 575 + 585 + 520 = 2820 $\Rightarrow$ Mittelwert = 2820 : 5 = 564}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{8.}{}{Mittelwert = 46,4 mm}{Mittelwert = Summe : Anzahl = 556,8 : 12 = 46,4 mm}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Fehlender Wert zum Mittelwert}{\pfjahre{22}{}}
+\begin{pfloesungb}{}
+\lzb{9.}{}{Summe 18}{Durchschnitt = Summe : Anzahl, also Summe = Durchschnitt · Anzahl = 6 · 3 = 18; der fehlende Wert ist dann Summe minus die bekannten Werte}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{10.}{}{Samstag = 19 °C}{Summe 7 · 18 = 126 °C; bekannt 17 + 19 + 18 + 16 + 20 + 17 = 107 $\Rightarrow$ Samstag = 126 $-$ 107 = 19 °C}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Aussagen zu Kenngrößen prüfen}{\pfjahre{25}{}}
+\begin{pfloesungb}{}
+\lzb{11.}{a)}{B; Modalwert = 3 Jahre}{Spannweite 6 $-$ 1 = 5 stimmt, also Modalwert falsch (zweite Option); 3 kommt fünfmal vor, 5 nur dreimal $\Rightarrow$ Modalwert = 3 Jahre}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{}{b)}{Durchschnittsalter = 45 Jahre; neuer Schnitt = 45 Jahre}{Durchschnittsalter = 495 : 11 = 45 Jahre; bleibt gleich: 63 + 27 = 90 = 2 · 45 $\Rightarrow$ neuer Schnitt = (495 $-$ 90) : 9 = 405 : 9 = 45 Jahre}
+\end{pfloesungb}
+\end{document}
