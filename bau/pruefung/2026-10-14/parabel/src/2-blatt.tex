@@ -1,0 +1,194 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+\newsavebox{\gbox}\newlength{\gLinks}
+% v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
+% Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr\wd\gbox+6mm\relax}%
+  \ifdim\gLinks>0.62\linewidth
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\leavevmode\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par}
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+% Skizzenfeld (v0.10, Lehrer 13.10.): Karo ab dem linken Rand über die Zeile, „Skizze“ klein grau oben links im Feld
+% (wie \pfskizzenfeld der Vorlage); der rechte Rand bleibt den Bedingungen
+\newcommand{\gskizze}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \node[anchor=north west,inner sep=2pt,font=\scriptsize,text=mbgrau,fill=white] at (0,{#1*10mm}) {Skizze};
+  \end{tikzpicture}\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} Prüfung]{Parabel: Scheitelpunkt und Skizze}{XU62}\pfseitevon
+\pfheftkopf{Parabel: Scheitelpunkt und Skizze}{}
+\pfstufenzeile{Wertetabelle oder Skizze \pkt{} Scheitelpunkt angeben \pkt{} Punkt auf der Parabel prüfen \pkt{} Gleichung in Scheitelpunktform \pkt{} Lage zweier Parabeln begründen}
+
+% ===================== Stufe: Wertetabelle oder Skizze =====================
+\gkopfvor{\pfstufekopf{Wertetabelle oder Skizze}{\pfjahre{26 \pkt{} 24}{15}}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% 2026-FOR-B1e-m1 (Original 2026-FOR-B1e, Schwere I, rang 1; herausgelöste Fassung: keine)
+\begin{pfaufg}{’26~\pkt{}~1e}{1.}{Basis}
+Kreuze die Wertetabelle an, die zu $y = 2x^2$ gehört.
+\par\smallskip\noindent\setlength{\gbildbreite}{\dimexpr0.96\linewidth/3\relax}\sbox{\gbox}{\vbox{{\setlength{\mbzell}{5mm}\setlength{\tabcolsep}{4pt}\wertetabelle[8,2,0,2,8]{x}{y}{-2,-1,0,1,2}}\par{\setlength{\mbzell}{5mm}\setlength{\tabcolsep}{4pt}\wertetabelle[-4,-2,0,2,4]{x}{y}{-2,-1,0,1,2}}\par{\setlength{\mbzell}{5mm}\setlength{\tabcolsep}{4pt}\wertetabelle[16,4,0,4,16]{x}{y}{-2,-1,0,1,2}}}}\gbildoption{A}{{\setlength{\mbzell}{5mm}\setlength{\tabcolsep}{4pt}\wertetabelle[8,2,0,2,8]{x}{y}{-2,-1,0,1,2}}}{\dimexpr\ht\gbox/3+\baselineskip\relax}\hfill\gbildoption{B}{{\setlength{\mbzell}{5mm}\setlength{\tabcolsep}{4pt}\wertetabelle[-4,-2,0,2,4]{x}{y}{-2,-1,0,1,2}}}{\dimexpr\ht\gbox/3+\baselineskip\relax}\hfill\gbildoption{C}{{\setlength{\mbzell}{5mm}\setlength{\tabcolsep}{4pt}\wertetabelle[16,4,0,4,16]{x}{y}{-2,-1,0,1,2}}}{\dimexpr\ht\gbox/3+\baselineskip\relax}\par
+\fusshilfe{\mbox{1:~A}}
+\end{pfaufg}
+% 2024-OS-K3b-m1 (Original 2024-OS-K3b, Schwere I, rang 4; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’24~\pkt{}~3b}{2.}{}
+Die Gerade $f$ ist der Graph von $f(x) = 2x + 3$. Die Parabel $p$ ist der Graph von $p(x) = x^2 - 5$. Skizziere die Parabel $p$ in das Koordinatensystem. Gib ihren Scheitelpunkt an: $S(\ \ |\ \ )$.
+\par\smallskip\noindent\gpassend{\begin{ksys}[xmin=-4,xmax=4,ymin=-6,ymax=6,karo=0.5]\end{ksys}}\par
+\fusshilfe{\mbox{2:~S(0|$-$5)}}
+\end{pfaufg}
+
+% ===================== Stufe: Scheitelpunkt ablesen =====================
+\gkopfvor{\pfstufekopf{Scheitelpunkt angeben}{\pfjahre{26 \pkt{} 22}{21 \pkt{} 20 \pkt{} 18 \pkt{} 17}}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% 2026-FOR-K5c-m1 (Original 2026-FOR-K5c, Schwere I, rang 2; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’26~\pkt{}~5c}{3.}{}
+Die verschobene Normalparabel $p$ ist der Graph von $p(x) = (x-3)^2 - 1$ und ist im Koordinatensystem gezeichnet. Gib den Scheitelpunkt von $p$ an: $S(\ \ |\ \ )$.
+\gzwei{\begin{ksys}[xmin=-1,xmax=6,ymin=-2,ymax=6,karo=0.5]\parabel{1}{3}{-1}{p}\end{ksys}}{\karo{3}}
+\fusshilfe{\mbox{3:~S(3|$-$1)}}
+\end{pfaufg}
+% 2022-OS-K3b-m1 (Original 2022-OS-K3b, Schwere I, rang 5; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’22~\pkt{}~3b}{4.}{}
+Die lineare Funktion $f$ hat die Gleichung $f(x) = -2x + 5$. Die verschobene Normalparabel $p$ hat die Gleichung $p(x) = (x-4)^2 - 6$. Gib den Scheitelpunkt $S$ von $p$ an.
+\hfill\linie{30mm}
+\fusshilfe{\mbox{4:~S(4|$-$6)}}
+\end{pfaufg}
+
+% ===================== Stufe: Punkt auf der Parabel prüfen =====================
+% Formel-Frage (einmal je Blatt, erste Stufe mit Formel; pruefung.md § 5)
+\gkopfvor{\pfstufekopf{Punkt auf der Parabel prüfen}{\pfjahre{}{20 \pkt{} 18 \pkt{} 14}}\gfrage{Wo steht die Formel in deiner Formelsammlung? Seite~\linie{12mm}}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% Teile eines Originals (2020-OS-K3): 2020-OS-K3b-m1, 2020-OS-K3c-m1
+\begin{pfaufg}{}{5.}{}
+Die Parabel zu $f$ mit $y = (x+3)^2 - 5$ ist im Koordinatensystem gezeichnet.
+% 2020-OS-K3b-m1 (Original 2020-OS-K3b, Schwere I, rang 10; herausgelöste Fassung: keine)
+\begin{gbteil}{a)}{\raisebox{\dimexpr-\height+\ht\strutbox\relax}{\shortstack[r]{nach~P10\\’20~\pkt{}~3b}}\hspace*{\mbpfnr}}{}
+Genau einer dieser Punkte liegt nicht auf dem Graphen von $f$. Kreuze ihn an:
+\gzwei{\begin{ksys}[xmin=-7,xmax=2,ymin=-6,ymax=5,karo=0.5]\parabel{1}{-3}{-5}{f}\end{ksys}}{\vspace{2mm}\pfkreuzab{A}{$A(-5\,|\,-1)$}\pfkreuzab{B}{$B(-1\,|\,-1)$}\pfkreuzab{C}{$C(0\,|\,4)$}\pfkreuzab{D}{$D(-2{,}5\,|\,-4{,}5)$}}
+\end{gbteil}
+% 2020-OS-K3c-m1 (Original 2020-OS-K3c, Schwere I, rang 11; herausgelöste Fassung: keine)
+\begin{gbteil}{b)}{\raisebox{\dimexpr-\height+\ht\strutbox\relax}{\shortstack[r]{nach~P10\\’20~\pkt{}~3c}}\hspace*{\mbpfnr}}{}
+Der Punkt $A(2\,|\,y)$ liegt auf dem Graphen von $f$ mit $y = (x+3)^2 - 5$. Berechne $y$.
+\karo{2}
+\par\smallskip\par\noindent \hfill y: \linie{30mm}\hphantom{\,cm²}
+\end{gbteil}
+\fusshilfe{\mbox{5:~a)~D; b)~20}}
+\end{pfaufg}
+% 2018-OS-K5a-m1 (Original 2018-OS-K5a, Schwere II, rang 17; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’18~\pkt{}~5a}{6.}{}
+Im Koordinatensystem ist die Parabel $p$ mit $p(x) = x^2 + 2x - 2$ gezeichnet. Entscheide für jede Aussage, ob sie wahr oder falsch ist:
+\gwahrfalsch{1}{Der Punkt $(-3\,|\,1)$ liegt auf $p$.}\gwahrfalsch{2}{$p$ ist die Normalparabel, um 1 nach links und um 3 nach unten verschoben.}\gwahrfalsch{3}{$p$ schneidet die y-Achse im Punkt $(-2\,|\,0)$.}
+\par\smallskip\noindent\begin{ksys}[xmin=-5,xmax=4,ymin=-4,ymax=7,karo=0.5]\parabel{1}{-1}{-3}{p}\end{ksys}\par
+\fusshilfe{\mbox{6:~1; Aussage 2 wahr, Aussage 3 falsch (y-Achse bei (0|$-$2))}}
+\end{pfaufg}
+% 2014-OS-K7a-m1 (Original 2014-OS-K7a, Schwere II, rang 21; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’14~\pkt{}~7a}{7.}{FOR}
+Im Koordinatensystem sind die Parabel $p$ mit $p(x) = -x^2$ und die Gerade $g$ mit $g(x) = 3x - 4$ gezeichnet. Untersuche mit einer Rechnung, ob $S(-4\,|\,-16)$ ein gemeinsamer Punkt von $p$ und $g$ ist.
+\gzwei{\begin{ksys}[xmin=-6,xmax=6,ymin=-6,ymax=6,karo=0.5]\parabel{-1}{0}{0}{p}\gerade[2.5]{3}{-4}{g}\end{ksys}}{\karo{3}}
+\fusshilfe{\mbox{7:~$-$16; $-$16}}
+\end{pfaufg}
+
+% ===================== Stufe: Scheitelpunktform angeben =====================
+\Needspace*{0.16\textheight}\pfstufekopf{Gleichung in Scheitelpunktform}{\pfjahre{25 \pkt{} 23}{20 \pkt{} 18 \pkt{} 17 \pkt{} 16 \pkt{} 15}}
+% Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
+\begin{pfaufg}{}{8.}{}
+Eine nach oben geöffnete Normalparabel wird verschoben. Schreib ihre Gleichung in Scheitelpunktform.
+\par\smallskip
+\par\noindent 2 nach links und 1 nach oben\hfill\linie{30mm}
+\par\fusshilfe{\mbox{8:~$y = (x + 2)^2 + 1$}}
+\end{pfaufg}
+% 2025-OS-K5b-m1 (Original 2025-OS-K5b, Schwere I, rang 3; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’25~\pkt{}~5b}{9.}{}
+Die quadratische Funktion $p$ hat die Gleichung $p(x) = x^2 - 8x + 13$. Ihr Graph ist im Koordinatensystem gezeichnet. Gib den Scheitelpunkt $S$ von $p$ an: $S(\ \ |\ \ )$. Schreib die Gleichung von $p$ in Scheitelpunktform: $p(x) = \ldots$
+\gzwei{\begin{ksys}[xmin=-1,xmax=8,ymin=-4,ymax=6,karo=0.5]\parabel{1}{4}{-3}{p}\end{ksys}}{\karo{4}}
+\fusshilfe{\mbox{9:~S(4|$-$3); (x $-$ 4)² $-$ 3}}
+\end{pfaufg}
+% 2023-OS-K4b-m1 (Original 2023-OS-K4b, Schwere II, rang 6; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’23~\pkt{}~4b}{10.}{FOR}
+Gib den Scheitelpunkt der gezeichneten Normalparabel $p$ an: $S(\ \ |\ \ )$. Schreib eine Gleichung von $p$ in Scheitelpunktform.
+\gzwei{\begin{ksys}[xmin=-5,xmax=5,ymin=-4,ymax=6,karo=0.5]\parabel{-1}{1}{5}{p}\end{ksys}}{\karo{4}}
+\fusshilfe{\mbox{10:~S(1|5); $-$(x $-$ 1)² + 5}}
+\end{pfaufg}
+
+% ===================== Stufe: Lage zweier Parabeln ohne Rechnung begründen =====================
+\Needspace*{0.16\textheight}\pfstufekopf{Lage zweier Parabeln begründen}{\pfjahre{26}{14}}
+% Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
+\begin{pfaufg}{}{11.}{}
+Wohin ist die Parabel geöffnet, und wo liegt ihr Scheitel? Rechne nicht.
+\par\smallskip
+\par\noindent\makebox[\mbpfteil][l]{\textbf{a)}}$y = (x + 1)^2 + 2$\hfill\linie{30mm}
+\par\noindent\makebox[\mbpfteil][l]{\textbf{b)}}$y = -(x + 1)^2 + 2$\hfill\linie{30mm}
+\par\fusshilfe{\mbox{11:~a) nach oben, Scheitel bei x = $-$1, y = 2; b) nach unten, Scheitel bei x = $-$1, y = 2}}
+\end{pfaufg}
+% 2026-FOR-K5d-m1 (Original 2026-FOR-K5d, Schwere III, rang 7; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’26~\pkt{}~5d}{12.}{FOR}
+Die verschobene Normalparabel $p$ hat die Gleichung $p(x) = (x-3)^2 - 1$. Eine zweite Parabel $q$ hat die Gleichung $q(x) = -(x-3)^2 - 1$. Gib an, wie viele Punkte $p$ und $q$ gemeinsam haben. Begründe ohne zu rechnen.
+\karo{3}
+\fusshilfe{\mbox{12:~genau 1 gemeinsamer Punkt}}
+\end{pfaufg}
+
+\pfblattende{11}{26 FOR & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17 & 16}{1e 5c 5d & 5b & 3b & 4b & 3b & 1d & 3a 3b 3c 3d &  & 5a 5b 5c 5d & 5c 5e & 1g}%
+{\pfausschnitt{}{Parabel: Scheitelpunkt und Skizze}{Quadratische Gleichung lösen}}
+\end{document}

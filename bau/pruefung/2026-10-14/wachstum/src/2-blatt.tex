@@ -1,0 +1,151 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+\newsavebox{\gbox}\newlength{\gLinks}
+% v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
+% Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr\wd\gbox+6mm\relax}%
+  \ifdim\gLinks>0.62\linewidth
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\leavevmode\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par}
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+% Skizzenfeld (v0.10, Lehrer 13.10.): Karo ab dem linken Rand über die Zeile, „Skizze“ klein grau oben links im Feld
+% (wie \pfskizzenfeld der Vorlage); der rechte Rand bleibt den Bedingungen
+\newcommand{\gskizze}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \node[anchor=north west,inner sep=2pt,font=\scriptsize,text=mbgrau,fill=white] at (0,{#1*10mm}) {Skizze};
+  \end{tikzpicture}\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} Prüfung]{Exponentielles Wachstum}{74A1}\pfseitevon
+\pfheftkopf{Exponentielles Wachstum}{}
+\pfstufenzeile{Tabelle ergänzen \pkt{} Graph zeichnen \pkt{} Faktor und Gleichung gesucht \pkt{} Graph zuordnen}
+
+% ===================== Stufe: Tabelle ergänzen =====================
+\Needspace*{0.16\textheight}\pfstufekopf{Tabelle ergänzen}{\pfjahre{26}{20 \pkt{} 19 \pkt{} 17 \pkt{} 16}}
+% Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
+\begin{pfaufg}{}{1.}{}
+Ein Betrag wächst jedes Jahr um denselben Prozentsatz. Mit welcher Zahl multiplizierst du ihn, um den Betrag im nächsten Jahr zu bekommen?
+\par\smallskip
+\par\noindent\makebox[\mbpfteil][l]{\textbf{a)}}Wachstum um 5 \%\hfill\linie{30mm}
+\par\noindent\makebox[\mbpfteil][l]{\textbf{b)}}Wachstum um 2,3 \%\hfill\linie{30mm}
+\par\fusshilfe{\mbox{1:~a) 1,05; b) 1,023}}
+\end{pfaufg}
+% 2026-FOR-K7a-m1 (Original 2026-FOR-K7a, Schwere I, rang 1; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’26~\pkt{}~7a}{2.}{}
+Can bezieht Anfang 2026 eine neue Wohnung. Laut Mietvertrag steigt die Miete jedes Jahr um 2,3 \%. Im ersten Jahr zahlt er 590 € im Monat. Can legt eine Tabelle an. Vervollständige sie.
+\par\smallskip\noindent\begin{tabular}{|l|c|c|c|c|}\hline Jahr & 2026 & 2027 & 2028 & 2029\\\hline Miete in € & \leerzelle & 603,57 & 617,45 & \leerzelle\\\hline\end{tabular}\par
+\karo{2}
+\fusshilfe{\mbox{2:~2026: 590,00 €; 2029: 631,65 €}}
+\end{pfaufg}
+
+% ===================== Stufe: Punkte darstellen =====================
+\gkopfvor{\pfstufekopf{Graph zeichnen}{\pfjahre{25}{21 \pkt{} 17 \pkt{} 16}}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% 2025-OS-K7a-m1 (Original 2025-OS-K7a, Schwere I, rang 2; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’25~\pkt{}~7a}{3.}{}
+Man beobachtet einen Bakterienstamm, der exponentiell wächst. Die Tabelle zeigt die Zahl der Bakterien in den ersten 4 Stunden. Stelle das Wachstum der Bakterien im Koordinatensystem dar.
+\par\smallskip\noindent\begin{minipage}[t]{0.55\linewidth}\vspace{0pt}\begin{tabular}[t]{|l|c|c|c|c|c|}\hline Zeit in Stunden & 0 & 1 & 2 & 3 & 4\\\hline Anzahl der Bakterien & 70 & 91 & 118 & 154 & 200\\\hline\end{tabular}\end{minipage}\hfill\begin{minipage}[t]{0.4\linewidth}\vspace{0pt}\begin{ksys}[xmin=0,xmax=5,ymin=0,ymax=250,xstep=1,ystep=25,karo=0.42,xlabel=Zeit in h,ylabel=Anzahl]\end{ksys}\end{minipage}\par
+\fusshilfe{\mbox{3:~fünf Punkte (0|70), (1|91), (2|118), (3|154), (4|200), zunehmend steiler ansteigend}}
+\end{pfaufg}
+
+% ===================== Stufe: Faktor bestimmen, Gleichung aufstellen =====================
+\Needspace*{0.16\textheight}\pfstufekopf{Faktor und Gleichung gesucht}{\pfjahre{26 \pkt{} 25}{20 \pkt{} 19 \pkt{} 18 \pkt{} 17 \pkt{} 16}}
+% Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
+\begin{pfaufg}{}{4.}{}
+Eine Größe wächst in einem Jahr von 200 auf 210. Mit welcher Zahl wurde sie multipliziert, und um wie viel Prozent ist sie gewachsen?
+\par\smallskip
+\par\noindent von 200 auf 210\hfill\hfill Faktor: \linie{30mm}\par\noindent\hfill Wachstum: \linie{30mm}\,\%
+\par\fusshilfe{\mbox{4:~210 : 200 = 1,05; 5 \%}}
+\end{pfaufg}
+% 2026-FOR-K7c-m1 (Original 2026-FOR-K7c, Schwere II, rang 3; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’26~\pkt{}~7c}{5.}{FOR}
+Can bezieht Anfang 2026 eine neue Wohnung. Laut Mietvertrag steigt die Miete jedes Jahr um 2,3 \%. Im ersten Jahr zahlt er 590 € im Monat. Stelle eine Gleichung auf, mit der man die Monatsmiete nach beliebig vielen Jahren berechnen kann. Bestimme die Monatsmiete im Jahr 2040.
+\karo{3}
+\fusshilfe{\mbox{5:~590 · $1{,}023^{t}$; 811,17 €}}
+\end{pfaufg}
+% 2025-OS-K7b-m1 (Original 2025-OS-K7b, Schwere II, rang 4; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’25~\pkt{}~7b}{6.}{FOR}
+Man beobachtet einen Bakterienstamm, der exponentiell wächst. Die Tabelle zeigt die Zahl der Bakterien in den ersten 4 Stunden. Zeige, dass der Wachstumsfaktor 1,3 ist. Gib eine Gleichung an, die die Zahl der Bakterien nach $t$ Stunden beschreibt. Prüfe mit einer Rechnung, ob diese Aussage stimmt: „Nach 24 Stunden sind es mehr als 35000 Bakterien.“
+\par\smallskip\noindent\begin{tabular}[t]{|l|c|c|c|c|c|}\hline Zeit in Stunden & 0 & 1 & 2 & 3 & 4\\\hline Anzahl der Bakterien & 70 & 91 & 118 & 154 & 200\\\hline\end{tabular}\par
+\karo{4}
+\fusshilfe{\mbox{6:~1,3); 70 · $1{,}3^{t}$; 37996}}
+\end{pfaufg}
+
+% ===================== Stufe: Graph zuordnen und begründen =====================
+\gkopfvor{\pfstufekopf{Graph zuordnen}{\pfjahre{26}{19}}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% 2026-FOR-K7b-m1 (Original 2026-FOR-K7b, Schwere III, rang 5; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’26~\pkt{}~7b}{7.}{}
+Can bezieht Anfang 2026 eine neue Wohnung. Laut Mietvertrag steigt die Miete jedes Jahr um 2,3 \%. Im ersten Jahr zahlt er 590 € im Monat. Entscheide, welcher Graph zur Entwicklung der Miete passt, und kreuze ihn an. Erkläre bei den zwei übrigen Graphen jeweils, weshalb sie nicht passen.
+\par\smallskip\noindent\setlength{\gbildbreite}{\dimexpr0.96\linewidth/3\relax}\sbox{\gbox}{\vbox{\begin{tikzpicture}[x=0.5cm,y=0.5cm,line width=0.5pt]\draw[black!20,line width=0.3pt,step=0.5] (0,0) grid (4.5,3.5);\draw[-{Stealth[length=1.5mm]}] (0,0)--(4.8,0);\draw[-{Stealth[length=1.5mm]}] (0,0)--(0,3.8);\node[below,font=\tiny] at (2.4,0) {Zeit in Jahren};\node[right,font=\tiny] at (0,3.8) {Miete in €};\draw[line width=0.8pt,domain=0:4.2,samples=40,smooth] plot (\x,{0.3*(exp(0.55*\x)-1)});\end{tikzpicture}\par\begin{tikzpicture}[x=0.5cm,y=0.5cm,line width=0.5pt]\draw[black!20,line width=0.3pt,step=0.5] (0,0) grid (4.5,3.5);\draw[-{Stealth[length=1.5mm]}] (0,0)--(4.8,0);\draw[-{Stealth[length=1.5mm]}] (0,0)--(0,3.8);\node[below,font=\tiny] at (2.4,0) {Zeit in Jahren};\node[right,font=\tiny] at (0,3.8) {Miete in €};\draw[line width=0.8pt,domain=0:4.2,samples=40,smooth] plot (\x,{0.9*exp(0.3*\x)});\end{tikzpicture}\par\begin{tikzpicture}[x=0.5cm,y=0.5cm,line width=0.5pt]\draw[black!20,line width=0.3pt,step=0.5] (0,0) grid (4.5,3.5);\draw[-{Stealth[length=1.5mm]}] (0,0)--(4.8,0);\draw[-{Stealth[length=1.5mm]}] (0,0)--(0,3.8);\node[below,font=\tiny] at (2.4,0) {Zeit in Jahren};\node[right,font=\tiny] at (0,3.8) {Miete in €};\draw[line width=0.8pt] (0,0.9)--(4.2,3.1);\end{tikzpicture}}}\gbildoption{A}{\begin{tikzpicture}[x=0.5cm,y=0.5cm,line width=0.5pt]\draw[black!20,line width=0.3pt,step=0.5] (0,0) grid (4.5,3.5);\draw[-{Stealth[length=1.5mm]}] (0,0)--(4.8,0);\draw[-{Stealth[length=1.5mm]}] (0,0)--(0,3.8);\node[below,font=\tiny] at (2.4,0) {Zeit in Jahren};\node[right,font=\tiny] at (0,3.8) {Miete in €};\draw[line width=0.8pt,domain=0:4.2,samples=40,smooth] plot (\x,{0.3*(exp(0.55*\x)-1)});\end{tikzpicture}}{\dimexpr\ht\gbox/3+\baselineskip\relax}\hfill\gbildoption{B}{\begin{tikzpicture}[x=0.5cm,y=0.5cm,line width=0.5pt]\draw[black!20,line width=0.3pt,step=0.5] (0,0) grid (4.5,3.5);\draw[-{Stealth[length=1.5mm]}] (0,0)--(4.8,0);\draw[-{Stealth[length=1.5mm]}] (0,0)--(0,3.8);\node[below,font=\tiny] at (2.4,0) {Zeit in Jahren};\node[right,font=\tiny] at (0,3.8) {Miete in €};\draw[line width=0.8pt,domain=0:4.2,samples=40,smooth] plot (\x,{0.9*exp(0.3*\x)});\end{tikzpicture}}{\dimexpr\ht\gbox/3+\baselineskip\relax}\hfill\gbildoption{C}{\begin{tikzpicture}[x=0.5cm,y=0.5cm,line width=0.5pt]\draw[black!20,line width=0.3pt,step=0.5] (0,0) grid (4.5,3.5);\draw[-{Stealth[length=1.5mm]}] (0,0)--(4.8,0);\draw[-{Stealth[length=1.5mm]}] (0,0)--(0,3.8);\node[below,font=\tiny] at (2.4,0) {Zeit in Jahren};\node[right,font=\tiny] at (0,3.8) {Miete in €};\draw[line width=0.8pt] (0,0.9)--(4.2,3.1);\end{tikzpicture}}{\dimexpr\ht\gbox/3+\baselineskip\relax}\par
+\karo{2}
+\fusshilfe{\mbox{7:~B; jedes Jahr gleicher Betrag statt gleicher Prozentsatz}}
+\end{pfaufg}
+
+\pfblattende{11}{26 FOR & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17 & 16}{7a 7b 7c & 7a 7b &  &  &  & 6b & 4a 4c & 7a 7b 7c & 2a & 7a 7b 7c 7d & 4a 4b 4e}%
+{\pfausschnitt{}{Exponentielles Wachstum}{}}
+\end{document}

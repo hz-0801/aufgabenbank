@@ -1,0 +1,120 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+\newsavebox{\gbox}\newlength{\gLinks}
+% v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
+% Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr\wd\gbox+6mm\relax}%
+  \ifdim\gLinks>0.62\linewidth
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\leavevmode\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par}
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+% Skizzenfeld (v0.10, Lehrer 13.10.): Karo ab dem linken Rand über die Zeile, „Skizze“ klein grau oben links im Feld
+% (wie \pfskizzenfeld der Vorlage); der rechte Rand bleibt den Bedingungen
+\newcommand{\gskizze}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \node[anchor=north west,inner sep=2pt,font=\scriptsize,text=mbgrau,fill=white] at (0,{#1*10mm}) {Skizze};
+  \end{tikzpicture}\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} Prüfung]{Kreis- und Säulendiagramme \pkt{} Lösungen}{DGH2}\pfseitevon
+\pfheftkopf{Kreis- und Säulendiagramme}{Lösungen}
+\pfstufenzeile{Winkel gesucht \pkt{} Kreisdiagramm zeichnen \pkt{} Säule ergänzen \pkt{} Aussage prüfen \pkt{} Falschen Eindruck erklären}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Winkel gesucht}{\pfjahre{24 \pkt{} 22}{21 \pkt{} 17}}
+\begin{pfloesungb}{}
+\lzb{1.}{}{a) 36°; b) 90°}{Anteil · 360°: 0,10 · 360° = 36°; 30 : 120 = 0,25 und 0,25 · 360° = 90°}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{2.}{}{im Uhrzeigersinn nach „nie“: einmal pro Woche, einmal im Monat, mehrmals pro Woche; 12 \% von 360° = 43,2°}{im Uhrzeigersinn nach „nie“: einmal pro Woche (kleinster), einmal im Monat, mehrmals pro Woche (größter); 12 \% von 360° = 0,12 · 360° = 43,2°}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{3.}{}{Wäsche waschen = Sektor direkt vor „5 Gartenpflege“ (Reihenfolge 1 bis 6 im Uhrzeigersinn); Winkel = 7,5°}{Wäsche waschen = Sektor direkt vor „5 Gartenpflege“ (Reihenfolge 1 bis 6 im Uhrzeigersinn); Winkel = 10 : 480 · 360° = 7,5°}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Kreisdiagramm zeichnen}{\pfjahre{25}{18}}
+\begin{pfloesungb}{}
+\lzb{4.}{}{$\approx$ 54,5 \%; $\approx$ 196°}{6 von 11 sind jünger als 50: 6 : 11 $\approx$ 54,5 \%; Winkel 54,5 \% von 360° $\approx$ 196°}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Säule ergänzen}{\pfjahre{26 \pkt{} 23}{20 \pkt{} 18}}\gfrage{Wie viel ist ein Schritt an der Achse wert, von einer Linie zur nächsten? Steht dort keine Zahl, hilft eine bekannte Säule: ihr Wert durch ihre Schritte.}
+\begin{pfloesungb}{}
+\lzb{5.}{}{So = 1,90 € pro Liter}{eine Hilfslinie = 0,01 €; Säule So eine Hilfslinie höher als Fr $\Rightarrow$ So = 1,90 € pro Liter}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{6.}{}{1 Kästchen = 50 Mio.; Hindi; = 6,2 Kästchen hoch}{Spanisch 420 Mio. sind 8,4 Kästchen $\Rightarrow$ 1 Kästchen = 420 : 8,4 = 50 Mio.; zweite Säule 11,5 Kästchen · 50 = 575 Mio. $\Rightarrow$ Hindi; Säule Arabisch 310 : 50 = 6,2 Kästchen hoch}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Aussage prüfen}{\pfjahre{22}{19 \pkt{} 18}}
+\begin{pfloesungb}{}
+\lzb{7.}{}{falsch; 40 : 560 $\approx$ 7,1 \%}{falsch: von 2018 auf 2019 steigt die Zahl von 560 auf 575; Achse beginnt erst bei 500, darum sieht es nach mehr aus; Rückgang 2018 $\to$ 2021 nur 560 $-$ 520 = 40, nicht die Hälfte: 40 : 560 $\approx$ 7,1 \%}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Falschen Eindruck erklären}{\pfjahre{26}{14}}
+\begin{pfloesungb}{}
+\lzb{8.}{}{Säulen zeigen nur den Teil über 1,78: Do 0,05, Fr 0,11; $\approx$ 3,3 \%}{Achse beginnt bei 1,78 € statt bei 0 $\Rightarrow$ Säulen zeigen nur den Teil über 1,78: Do 0,05, Fr 0,11 (mehr als doppelt so hoch); Preis stieg nur um 1,89 $-$ 1,83 = 0,06 €, das sind 0,06 : 1,83 $\approx$ 3,3 \%}
+\end{pfloesungb}
+\end{document}
