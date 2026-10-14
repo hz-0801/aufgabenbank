@@ -70,6 +70,9 @@
 \newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
 \newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
 \newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
 % v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
 \newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
 \newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
@@ -80,13 +83,13 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Sinussatz}{LXA2}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Sinussatz}{PG70-2}\pfseitevon
 \pfheftkopf{Sinussatz}{}
 \pfstufenzeile{Seite gesucht}
 
 % ===================== Stufe: Seite berechnen (Sinussatz) =====================
 % Formel-Frage (einmal je Blatt, erste Stufe mit Formel; pruefung.md § 5)
-\Needspace*{0.16\textheight}\pfstufekopf{Seite gesucht}{\pfjahre{25 \pkt{} 24}{21 \pkt{} 20 \pkt{} 19 \pkt{} 18 \pkt{} 17 \pkt{} 15 \pkt{} 14}}\gfrage{Welche Formel aus der Formelsammlung brauchst du hier? Seite~\linie{12mm}}
+\Needspace*{0.16\textheight}\pfstufekopf{Seite gesucht}{\gpunkte[25 24]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}\gfrage{Welche Formel aus der Formelsammlung brauchst du hier? Seite~\linie{12mm}}
 % Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
 \begin{pfaufg}{}{1.}{}
 Im Sinussatz steht jede Seite mit dem Winkel, der ihr gegenüberliegt. Im Dreieck ABC kennst du die Seite c und die Winkel $\alpha$ und $\beta$; gesucht ist die Seite a.

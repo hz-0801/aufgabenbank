@@ -70,6 +70,9 @@
 \newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
 \newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
 \newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
 % v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
 \newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
 \newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
@@ -80,11 +83,11 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Lineare Funktionen \pkt{} Lösungen}{TAL6}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Lineare Funktionen \pkt{} Lösungen}{PA10-6}\pfseitevon
 \pfheftkopf{Lineare Funktionen}{Lösungen}
 \pfstufenzeile{Gerade zeichnen \pkt{} Gleichung ablesen \pkt{} Gleichung aus zwei Punkten \pkt{} Nullstelle gesucht \pkt{} Punktprobe \pkt{} Gleichung aus Text \pkt{} Gerade und Parabel}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Gerade zeichnen}{\pfjahre{26 \pkt{} 25 \pkt{} 24 \pkt{} 23}{21 \pkt{} 16}}\gfrage{Wo steht die Gleichung der linearen Funktion mit m und n? Formelsammlung, S. 31}
+\Needspace*{0.16\textheight}\pfstufekopf{Gerade zeichnen}{\gpunkte[26 25 24 23]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}\gfrage{Wo steht die Gleichung der linearen Funktion mit m und n? Formelsammlung, S. 31}
 \begin{pfloesungb}{}
 \lzb{1.}{}{a) und c)}{linear sind a) und c): a) m = $-$2, n = 3 (die Zahl vor x ist m, auch hinten); c) m = 0,5, n = 0; x² gibt keine Gerade}
 \end{pfloesungb}
@@ -98,7 +101,7 @@
 \lzb{4.}{}{Gerade durch (0|3) und (1|5)}{Startpunkt (0|3), Steigungsdreieck 1 nach rechts, 2 nach oben $\Rightarrow$ Gerade durch (0|3) und (1|5)}
 \end{pfloesungb}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Gleichung ablesen}{\pfjahre{}{19}}
+\Needspace*{0.16\textheight}\pfstufekopf{Gleichung ablesen}{\gzuletzt{19}}
 \begin{pfloesungb}{}
 \lzb{5.}{a)}{h}{Steigung $-$3: f; parallel zur x-Achse: h}
 \end{pfloesungb}
@@ -106,17 +109,17 @@
 \lzb{}{b)}{y = $-$1}{f: y = $-$3x + 3; g: y = x + 3; h: y = $-$1}
 \end{pfloesungb}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Gleichung aus zwei Punkten}{\pfjahre{25}{17 \pkt{} 15}}
+\Needspace*{0.16\textheight}\pfstufekopf{Gleichung aus zwei Punkten}{\gpunkte[25]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}
 \begin{pfloesungb}{}
 \lzb{6.}{}{Gerade durch A und B; Aussage 1 falsch, Aussage 2 wahr; y = $-$1,5x + 2}{A und B eintragen $\Rightarrow$ Gerade durch A und B; m < 0, n = 2 $\Rightarrow$ Aussage 1 falsch, Aussage 2 wahr; m = ($-$2,5 $-$ 5) : (3 $-$ ($-$2)) = $-$1,5; n = 5 $-$ ($-$1,5) · ($-$2) = 2 $\Rightarrow$ y = $-$1,5x + 2}
 \end{pfloesungb}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Nullstelle gesucht}{\pfjahre{22}{19}}
+\Needspace*{0.16\textheight}\pfstufekopf{Nullstelle gesucht}{\gpunkte[22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}
 \begin{pfloesungb}{}
 \lzb{7.}{}{Gerade durch (0|5) und (1|3); x = 2,5}{Startpunkt (0|5), 1 nach rechts, 2 nach unten $\Rightarrow$ Gerade durch (0|5) und (1|3); y = 0: $-$2x + 5 = 0 $\Rightarrow$ x = 2,5}
 \end{pfloesungb}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Punktprobe}{\pfjahre{26 \pkt{} 23}{17}}
+\Needspace*{0.16\textheight}\pfstufekopf{Punktprobe}{\gpunkte[26 23]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}
 \begin{pfloesungb}{}
 \lzb{8.}{}{B}{$-$12 $\neq$ f(3) = $-$5 · 3 + 2 = $-$13 (zweite Option)}
 \end{pfloesungb}
@@ -124,7 +127,7 @@
 \lzb{9.}{}{P liegt auf dem Graphen}{f($-$2) = $-$3 · ($-$2) + 1 = 7 = y-Wert von P $\Rightarrow$ P liegt auf dem Graphen}
 \end{pfloesungb}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Gleichung aus Text}{\pfjahre{23 \pkt{} 22}{21 \pkt{} 16}}
+\Needspace*{0.16\textheight}\pfstufekopf{Gleichung aus Text}{\gpunkte[23 22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}
 \begin{pfloesungb}{}
 \lzb{10.}{}{a) 8 ist n, 0,09 ist m; b) 25 ist n, $-$2 ist m}{n steht am Anfang (x = 0), m ist das, was je Monat, Minute oder Stunde dazukommt oder weggeht}
 \end{pfloesungb}
@@ -141,7 +144,7 @@
 \lzb{}{b)}{Angebot 1 = 170,50 €; Angebot 2 = 151,00 €; Angebot 2 günstiger; y = 0,08x + 115}{Angebot 1 = 5 · 25 + (450 $-$ 320) · 0,35 = 170,50 €; Angebot 2 = 115 + 450 · 0,08 = 151,00 €; 151,00 € < 170,50 € $\Rightarrow$ Angebot 2 günstiger; y = 0,08x + 115}
 \end{pfloesungb}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Gerade und Parabel}{\pfjahre{26 \pkt{} 25 \pkt{} 24 \pkt{} 23 \pkt{} 22}{}}
+\Needspace*{0.16\textheight}\pfstufekopf{Gerade und Parabel}{\gpunkte[26 25 24 23 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}
 \begin{pfloesungb}{}
 \lzb{13.}{}{D}{$-$3 · ($-$3 + 4) = $-$3 · 1 = $-$3 (vierte Option)}
 \end{pfloesungb}

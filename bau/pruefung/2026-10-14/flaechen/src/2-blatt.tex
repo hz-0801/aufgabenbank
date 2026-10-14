@@ -70,6 +70,9 @@
 \newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
 \newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
 \newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
 % v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
 \newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
 \newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
@@ -80,12 +83,12 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Fläche und Umfang}{Y5D7}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Fläche und Umfang}{PG40-7}\pfseitevon
 \pfheftkopf{Fläche und Umfang}{}
 \pfstufenzeile{Formeln \pkt{} Fläche gesucht \pkt{} Umfang gesucht \pkt{} Formeln umstellen \pkt{} Flächenanteil gesucht}
 
 % ===================== Stufe: Formeln =====================
-\gkopfvor{\pfstufekopf{Formeln}{\pfjahre{25 \pkt{} 24 \pkt{} 22}{19 \pkt{} 14}}\gfrage{Schlag in deiner Formelsammlung Flächen und Umfänge auf: Seite~\linie{12mm}}}
+\gkopfvor{\pfstufekopf{Formeln}{\gpunkte[25 24 22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}\gfrage{Schlag in deiner Formelsammlung Flächen und Umfänge auf: Seite~\linie{12mm}}}
 % 2024-OS-B1c-m1 (Original 2024-OS-B1c, Schwere I, rang 1; herausgelöste Fassung: keine)
 \begin{pfaufg}{’24~\pkt{}~1c}{1.}{Basis}
 Ein gleichseitiges Dreieck hat die Seitenlänge a. Kreuze die Formel für seinen Umfang u an:
@@ -106,7 +109,7 @@ Gib eine Gleichung für den Flächeninhalt A des Dreiecks an.
 \end{pfaufg}
 
 % ===================== Stufe: Fläche gesucht =====================
-\gkopfvor{\pfstufekopf{Fläche gesucht}{\pfjahre{25 \pkt{} 24 \pkt{} 23 \pkt{} 22}{19 \pkt{} 18 \pkt{} 17 \pkt{} 16 \pkt{} 15}}}
+\gkopfvor{\pfstufekopf{Fläche gesucht}{\gpunkte[25 24 23 22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}}
 % kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
 % 2025-OS-K2b-m1 (Original 2025-OS-K2b, Schwere I, rang 4; herausgelöste Fassung: keine)
 \begin{pfaufg}{nach~P10\\’25~\pkt{}~2b}{4.}{}
@@ -135,7 +138,7 @@ Im Dreieck ABC ist die Höhe $h_c$ = 7,3 m; ihr Fußpunkt D liegt auf AB. Gegebe
 \end{pfaufg}
 
 % ===================== Stufe: Umfang gesucht =====================
-\gkopfvor{\pfstufekopf{Umfang gesucht}{\pfjahre{26 \pkt{} 23}{}}}
+\gkopfvor{\pfstufekopf{Umfang gesucht}{\gpunkte[26 23]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}}
 % kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
 % 2026-FOR-B1h-m1 (Original 2026-FOR-B1h, Schwere I, rang 8; herausgelöste Fassung: keine)
 \begin{pfaufg}{’26~\pkt{}~1h}{8.}{Basis}
@@ -152,7 +155,7 @@ Gegeben ist ein Trapez mit den parallelen Seiten 24,20 m (unten) und 16,20 m (ob
 \end{pfaufg}
 
 % ===================== Stufe: Formeln umstellen =====================
-\Needspace*{0.16\textheight}\pfstufekopf{Formeln umstellen}{\pfjahre{23}{20 \pkt{} 18 \pkt{} 14}}
+\Needspace*{0.16\textheight}\pfstufekopf{Formeln umstellen}{\gpunkte[23]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}
 % Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
 \begin{pfaufg}{}{10.}{}
 Stelle die Formel nach der gesuchten Größe um.
@@ -168,7 +171,7 @@ Ein Rechteck ist 350 mm breit und hat den Flächeninhalt 38 500 mm². Gib seine 
 \end{pfaufg}
 
 % ===================== Stufe: Anteil in Prozent =====================
-\Needspace*{0.16\textheight}\pfstufekopf{Flächenanteil gesucht}{\pfjahre{25 \pkt{} 23}{}}
+\Needspace*{0.16\textheight}\pfstufekopf{Flächenanteil gesucht}{\gpunkte[25 23]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}
 % Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
 \begin{pfaufg}{}{12.}{}
 Teil und Ganzes am Kreis: Ein Viertel des Kreises ist grau. Wie groß ist sein Winkel, und wie viel Prozent sind grau?

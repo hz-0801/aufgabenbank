@@ -70,6 +70,9 @@
 \newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
 \newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
 \newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
 % v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
 \newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
 \newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
@@ -80,13 +83,13 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Quadratische Gleichung}{YYZ3}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Quadratische Gleichung}{PA40-3}\pfseitevon
 \pfheftkopf{Quadratische Gleichung}{}
 \pfstufenzeile{Nullstellen gesucht \pkt{} x-Wert gesucht \pkt{} Schnittpunkte gesucht \pkt{} Gerade und Parabel}
 
 % ===================== Stufe: Nullstellen berechnen =====================
 % Formel-Frage (einmal je Blatt, erste Stufe mit Formel; pruefung.md § 5)
-\Needspace*{0.16\textheight}\pfstufekopf{Nullstellen gesucht}{\pfjahre{25}{20 \pkt{} 17}}\gfrage{Wo steht die Formel in deiner Formelsammlung? Seite~\linie{12mm}}
+\Needspace*{0.16\textheight}\pfstufekopf{Nullstellen gesucht}{\gpunkte[25]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}\gfrage{Wo steht die Formel in deiner Formelsammlung? Seite~\linie{12mm}}
 % Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
 \begin{pfaufg}{}{1.}{}
 Welche Gleichung löst du mit der p-q-Formel? Bring sie auf die Form $x^2 + px + q = 0$. Rechne nicht weiter.
@@ -104,7 +107,7 @@ Die quadratische Funktion $p$ hat die Gleichung $p(x) = x^2 - 8x + 13$. Ihr Grap
 \end{pfaufg}
 
 % ===================== Stufe: x zu gegebenem y =====================
-\gkopfvor{\pfstufekopf{x-Wert gesucht}{\pfjahre{23}{}}\gfrage{Ist ein y-Wert gegeben, setzt du ihn für y ein und bringst alles auf eine Seite – nicht y = 0 wie bei den Nullstellen.}}
+\gkopfvor{\pfstufekopf{x-Wert gesucht}{\gpunkte[23]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}\gfrage{Ist ein y-Wert gegeben, setzt du ihn für y ein und bringst alles auf eine Seite – nicht y = 0 wie bei den Nullstellen.}}
 % 2023-OS-K4c-m1 (Original 2023-OS-K4c, Schwere II, rang 1; herausgelöste Fassung: keine)
 \begin{pfaufg}{nach~P10\\’23~\pkt{}~4c}{3.}{FOR}
 Die Parabel $p$ hat die Gleichung $p(x) = -x^2 + 2x + 4$. Bestimme die x-Koordinaten aller Punkte von $p$, deren y-Koordinate $-11$ ist.
@@ -114,7 +117,7 @@ Die Parabel $p$ hat die Gleichung $p(x) = -x^2 + 2x + 4$. Bestimme die x-Koordin
 \end{pfaufg}
 
 % ===================== Stufe: Gerade und Parabel gleichsetzen =====================
-\gkopfvor{\pfstufekopf{Schnittpunkte gesucht}{\pfjahre{24 \pkt{} 22}{21}}\gfrage{Wo sich eine Gerade und eine Parabel schneiden, haben beide denselben y-Wert: Setz die beiden Terme gleich.}}
+\gkopfvor{\pfstufekopf{Schnittpunkte gesucht}{\gpunkte[24 22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}\gfrage{Wo sich eine Gerade und eine Parabel schneiden, haben beide denselben y-Wert: Setz die beiden Terme gleich.}}
 % 2021-OS-K2c-m1 (Original 2021-OS-K2c, Schwere II, rang 6; herausgelöste Fassung: keine)
 \begin{pfaufg}{nach~P10\\’21~\pkt{}~2c}{4.}{FOR}
 Die Parabel mit $y = x^2 + 4x - 4$ und die Gerade mit $y = 2x - 1$ schneiden sich. Berechne die Koordinaten der Schnittpunkte.
@@ -124,7 +127,7 @@ Die Parabel mit $y = x^2 + 4x - 4$ und die Gerade mit $y = 2x - 1$ schneiden sic
 \end{pfaufg}
 
 % ===================== Stufe: Gemischt: Gerade und Parabel =====================
-\gkopfvor{\pfstufekopf{Gerade und Parabel}{\pfjahre{26 \pkt{} 25 \pkt{} 24 \pkt{} 23 \pkt{} 22}{}}}
+\gkopfvor{\pfstufekopf{Gerade und Parabel}{\gpunkte[26 25 24 23 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}}
 % kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
 % 2025-OS-B1h-m1 (Original 2025-OS-B1h, Schwere I, rang 1; herausgelöste Fassung: keine)
 \begin{pfaufg}{’25~\pkt{}~1h}{5.}{Basis}

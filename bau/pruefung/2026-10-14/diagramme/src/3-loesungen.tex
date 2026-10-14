@@ -70,6 +70,9 @@
 \newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
 \newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
 \newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
 % v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
 \newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
 \newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
@@ -80,11 +83,11 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Diagramme \pkt{} Lösungen}{DGH3}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Diagramme \pkt{} Lösungen}{PS40-3}\pfseitevon
 \pfheftkopf{Diagramme}{Lösungen}
 \pfstufenzeile{Winkel gesucht \pkt{} Kreisdiagramm zeichnen \pkt{} Säule ergänzen \pkt{} Aussagen prüfen \pkt{} falschen Eindruck erklären}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Winkel gesucht}{\pfjahre{24 \pkt{} 22}{21 \pkt{} 17}}
+\Needspace*{0.16\textheight}\pfstufekopf{Winkel gesucht}{\gpunkte[24 22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}
 \begin{pfloesungb}{}
 \lzb{1.}{}{a) 36°; b) 90°}{Anteil · 360°: 0,10 · 360° = 36°; 30 : 120 = 0,25 und 0,25 · 360° = 90°}
 \end{pfloesungb}
@@ -95,12 +98,12 @@
 \lzb{3.}{}{Wäsche waschen = Sektor direkt vor „5 Gartenpflege“ (Reihenfolge 1 bis 6 im Uhrzeigersinn); Winkel = 7,5°}{Wäsche waschen = Sektor direkt vor „5 Gartenpflege“ (Reihenfolge 1 bis 6 im Uhrzeigersinn); Winkel = 10 : 480 · 360° = 7,5°}
 \end{pfloesungb}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Kreisdiagramm zeichnen}{\pfjahre{25}{18}}
+\Needspace*{0.16\textheight}\pfstufekopf{Kreisdiagramm zeichnen}{\gpunkte[25]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}
 \begin{pfloesungb}{}
 \lzb{4.}{}{$\approx$ 54,5 \%; $\approx$ 196°}{6 von 11 sind jünger als 50: 6 : 11 $\approx$ 54,5 \%; Winkel 54,5 \% von 360° $\approx$ 196°}
 \end{pfloesungb}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Säule ergänzen}{\pfjahre{26 \pkt{} 23}{20 \pkt{} 18}}\gfrage{Wie viel ist ein Schritt an der Achse wert, von einer Linie zur nächsten? Steht dort keine Zahl, hilft eine bekannte Säule: ihr Wert durch ihre Schritte.}
+\Needspace*{0.16\textheight}\pfstufekopf{Säule ergänzen}{\gpunkte[26 23]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}\gfrage{Wie viel ist ein Schritt an der Achse wert, von einer Linie zur nächsten? Steht dort keine Zahl, hilft eine bekannte Säule: ihr Wert durch ihre Schritte.}
 \begin{pfloesungb}{}
 \lzb{5.}{}{So = 1,90 € pro Liter}{eine Hilfslinie = 0,01 €; Säule So eine Hilfslinie höher als Fr $\Rightarrow$ So = 1,90 € pro Liter}
 \end{pfloesungb}
@@ -108,12 +111,12 @@
 \lzb{6.}{}{1 Kästchen = 50 Mio.; Hindi; = 6,2 Kästchen hoch}{Spanisch 420 Mio. sind 8,4 Kästchen $\Rightarrow$ 1 Kästchen = 420 : 8,4 = 50 Mio.; zweite Säule 11,5 Kästchen · 50 = 575 Mio. $\Rightarrow$ Hindi; Säule Arabisch 310 : 50 = 6,2 Kästchen hoch}
 \end{pfloesungb}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Aussagen prüfen}{\pfjahre{22}{19 \pkt{} 18}}
+\Needspace*{0.16\textheight}\pfstufekopf{Aussagen prüfen}{\gpunkte[22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}
 \begin{pfloesungb}{}
 \lzb{7.}{}{falsch; 40 : 560 $\approx$ 7,1 \%}{falsch: von 2018 auf 2019 steigt die Zahl von 560 auf 575; Achse beginnt erst bei 500, darum sieht es nach mehr aus; Rückgang 2018 $\to$ 2021 nur 560 $-$ 520 = 40, nicht die Hälfte: 40 : 560 $\approx$ 7,1 \%}
 \end{pfloesungb}
 
-\Needspace*{0.16\textheight}\pfstufekopf{falschen Eindruck erklären}{\pfjahre{26}{14}}
+\Needspace*{0.16\textheight}\pfstufekopf{falschen Eindruck erklären}{\gpunkte[26]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}
 \begin{pfloesungb}{}
 \lzb{8.}{}{Säulen zeigen nur den Teil über 1,78: Do 0,05, Fr 0,11; $\approx$ 3,3 \%}{Achse beginnt bei 1,78 € statt bei 0 $\Rightarrow$ Säulen zeigen nur den Teil über 1,78: Do 0,05, Fr 0,11 (mehr als doppelt so hoch); Preis stieg nur um 1,89 $-$ 1,83 = 0,06 €, das sind 0,06 : 1,83 $\approx$ 3,3 \%}
 \end{pfloesungb}

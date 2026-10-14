@@ -70,6 +70,9 @@
 \newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
 \newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
 \newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
 % v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
 \newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
 \newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
@@ -80,11 +83,11 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Winkel \pkt{} Lösungen}{T2U4}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Winkel \pkt{} Lösungen}{PG10-4}\pfseitevon
 \pfheftkopf{Winkel}{Lösungen}
 \pfstufenzeile{Winkel gesucht \pkt{} Basiswinkel gesucht \pkt{} rechten Winkel begründen}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Winkel gesucht}{\pfjahre{26 \pkt{} 23 \pkt{} 22}{21 \pkt{} 18 \pkt{} 17 \pkt{} 15}}
+\Needspace*{0.16\textheight}\pfstufekopf{Winkel gesucht}{\gpunkte[26 23 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}
 \begin{pfloesungb}{}
 \lzb{1.}{}{180°}{Winkelsumme im Dreieck 180°; ein Viereck zerfällt längs einer Diagonale in zwei Dreiecke: 2 · 180° = 360°.}
 \end{pfloesungb}
@@ -98,7 +101,7 @@
 \lzb{4.}{}{= 56,4°}{Im Dreieck ADC ist der Winkel bei D 90°: $\gamma_1$ = 90° $-$ 33,6° = 56,4°}
 \end{pfloesungb}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Basiswinkel gesucht}{\pfjahre{23}{}}
+\Needspace*{0.16\textheight}\pfstufekopf{Basiswinkel gesucht}{\gpunkte[23]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}
 \begin{pfloesungb}{}
 \lzb{5.}{}{links zwei gleiche Winkel (64°, 64°, 52°), rechts alle drei gleich (60°)}{Links zwei gleich lange Seiten: die Winkel gegenüber sind gleich, 180° $-$ 2 · 64° = 52°. Rechts drei gleiche Seiten: 180° : 3 = 60°.}
 \end{pfloesungb}
@@ -109,7 +112,7 @@
 \lzb{7.}{}{gleichschenklig mit Basis AB}{Winkel bei A und bei B im Dreieck ABF sind je 45°, daher gleichschenklig mit Basis AB}
 \end{pfloesungb}
 
-\Needspace*{0.16\textheight}\pfstufekopf{rechten Winkel begründen}{\pfjahre{25}{}}
+\Needspace*{0.16\textheight}\pfstufekopf{rechten Winkel begründen}{\gpunkte[25]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}
 \begin{pfloesungb}{}
 \lzb{8.}{}{in beiden Dreiecken je 45° bei C: 45° + 45° = 90°}{ADC und DBC sind gleichschenklig-rechtwinklig (zwei Seiten 3 cm, rechter Winkel bei D), also je 45° an den beiden anderen Ecken.}
 \end{pfloesungb}

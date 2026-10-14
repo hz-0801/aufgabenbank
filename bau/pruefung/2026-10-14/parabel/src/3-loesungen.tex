@@ -70,6 +70,9 @@
 \newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
 \newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
 \newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
 % v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
 \newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
 \newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
@@ -80,11 +83,11 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Parabel \pkt{} Lösungen}{XU64}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Parabel \pkt{} Lösungen}{PA30-4}\pfseitevon
 \pfheftkopf{Parabel}{Lösungen}
 \pfstufenzeile{Parabel zeichnen \pkt{} Scheitelpunkt angeben \pkt{} Punktprobe \pkt{} Scheitelpunktform aufstellen \pkt{} Lage begründen}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Parabel zeichnen}{\pfjahre{26 \pkt{} 24}{15}}
+\Needspace*{0.16\textheight}\pfstufekopf{Parabel zeichnen}{\gpunkte[26 24]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}
 \begin{pfloesungb}{}
 \lzb{1.}{}{A}{Tabelle 1 (erste Option): 2 · 1² = 2, 2 · 2² = 8}
 \end{pfloesungb}
@@ -92,7 +95,7 @@
 \lzb{2.}{}{S(0|$-$5)}{Normalparabel um 5 nach unten verschoben, Punkte (±1|$-$4), (±2|$-$1), (±3|4) $\Rightarrow$ S(0|$-$5)}
 \end{pfloesungb}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Scheitelpunkt angeben}{\pfjahre{26 \pkt{} 22}{21 \pkt{} 20 \pkt{} 18 \pkt{} 17}}
+\Needspace*{0.16\textheight}\pfstufekopf{Scheitelpunkt angeben}{\gpunkte[26 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}
 \begin{pfloesungb}{}
 \lzb{3.}{}{S(3|$-$1)}{tiefster Punkt im Bild, passt zu (x $-$ 3)² $-$ 1 $\Rightarrow$ S(3|$-$1)}
 \end{pfloesungb}
@@ -100,7 +103,7 @@
 \lzb{4.}{}{S(4|$-$6)}{p(x) = (x $-$ 4)² $-$ 6 in Scheitelpunktform $\Rightarrow$ S(4|$-$6)}
 \end{pfloesungb}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Punktprobe}{\pfjahre{}{20 \pkt{} 18 \pkt{} 14}}
+\Needspace*{0.16\textheight}\pfstufekopf{Punktprobe}{\gzuletzt{20}}
 \begin{pfloesungb}{}
 \lzb{5.}{a)}{D}{D (vierte Option): f($-$2,5) = 0,25 $-$ 5 = $-$4,75}
 \end{pfloesungb}
@@ -114,7 +117,7 @@
 \lzb{7.}{}{p($-$4) = $-$16; g($-$4) = $-$16}{p($-$4) = $-$($-$4)² = $-$16; S liegt auf beiden Graphen: g($-$4) = 3 · ($-$4) $-$ 4 = $-$16}
 \end{pfloesungb}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Scheitelpunktform aufstellen}{\pfjahre{25 \pkt{} 23}{20 \pkt{} 18 \pkt{} 17 \pkt{} 16 \pkt{} 15}}
+\Needspace*{0.16\textheight}\pfstufekopf{Scheitelpunktform aufstellen}{\gpunkte[25 23]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}
 \begin{pfloesungb}{}
 \lzb{8.}{}{$y = (x + 2)^2 + 1$}{Scheitel S($-$2 | 1); in (x $-$ d)² steht d mit dem anderen Vorzeichen: nach links (d = $-$2) gibt x + 2; e = 1 steht hinten; Probe: x = $-$2 gibt y = 1}
 \end{pfloesungb}
@@ -125,7 +128,7 @@
 \lzb{10.}{}{S(1|5); p(x) = $-$(x $-$ 1)² + 5}{höchster Punkt im Bild $\Rightarrow$ S(1|5); nach unten geöffnete Normalparabel $\Rightarrow$ p(x) = $-$(x $-$ 1)² + 5}
 \end{pfloesungb}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Lage begründen}{\pfjahre{26}{14}}
+\Needspace*{0.16\textheight}\pfstufekopf{Lage begründen}{\gpunkte[26]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}
 \begin{pfloesungb}{}
 \lzb{11.}{}{a) nach oben, Scheitel bei x = $-$1, y = 2; b) nach unten, Scheitel bei x = $-$1, y = 2}{Das Minus vor der Klammer öffnet nach unten; Scheitel aus d und e. Gleicher Scheitel, eine nach oben, eine nach unten: Die Parabeln berühren sich nur im Scheitel}
 \end{pfloesungb}

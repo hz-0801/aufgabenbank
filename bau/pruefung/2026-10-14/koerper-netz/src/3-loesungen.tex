@@ -70,6 +70,9 @@
 \newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
 \newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
 \newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
 % v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
 \newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
 \newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
@@ -80,11 +83,11 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Netz und Schrägbild \pkt{} Lösungen}{EF44}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Netz und Schrägbild \pkt{} Lösungen}{PG80-4}\pfseitevon
 \pfheftkopf{Netz und Schrägbild}{Lösungen}
 \pfstufenzeile{Netz erkennen \pkt{} Netz skizzieren \pkt{} Schrägbild skizzieren}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Netz erkennen}{\pfjahre{22}{18 \pkt{} 17 \pkt{} 16}}
+\Needspace*{0.16\textheight}\pfstufekopf{Netz erkennen}{\gpunkte[22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}
 \begin{pfloesungb}{}
 \lzb{1.}{}{a) gegenüber; b) $\pi$ · d, gut dreimal so lang wie d}{zwei Flächen mit genau einer dazwischen liegen sich gegenüber; die lange Seite des Mantels ist der Kreisumfang $\pi$ · d}
 \end{pfloesungb}
@@ -95,7 +98,7 @@
 \lzb{3.}{}{C; Länge $\approx$ 21,4 cm; Breite = 7,5 cm}{drittes Netz (dritte Option; ein Kreis, Rechteck etwa dreimal so lang wie der Kreis breit); Länge = 2$\pi$ · 3,4 cm $\approx$ 21,4 cm; Breite = h = 7,5 cm}
 \end{pfloesungb}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Netz skizzieren}{\pfjahre{23}{20 \pkt{} 19 \pkt{} 14}}
+\Needspace*{0.16\textheight}\pfstufekopf{Netz skizzieren}{\gpunkte[23]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}
 \begin{pfloesungb}{}
 \lzb{4.}{}{2 cm und 5 cm}{Kanten, die nach dem Falten aneinanderliegen, sind gleich lang; die andere Seite ist die Höhe des Prismas}
 \end{pfloesungb}
@@ -106,7 +109,7 @@
 \lzb{6.}{}{drittes Rechteck 6 × 5 Kästchen an das rechte, zweites Dreieck oben an ein Rechteck; a = 1,80 m}{drittes Rechteck 6 × 5 Kästchen an das rechte, zweites Dreieck oben an ein Rechteck; a = 1,80 m}
 \end{pfloesungb}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Schrägbild skizzieren}{\pfjahre{24}{15}}
+\Needspace*{0.16\textheight}\pfstufekopf{Schrägbild skizzieren}{\gpunkte[24]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}
 \begin{pfloesungb}{}
 \lzb{7.}{}{a) 6 cm, so breit wie der Durchmesser; b) als flache Ellipse}{die Schachtel muss den ganzen Grundkreis fassen, also den Durchmesser 2 · r; ein liegender Kreis erscheint im Schrägbild flach gedrückt}
 \end{pfloesungb}

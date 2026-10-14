@@ -70,6 +70,9 @@
 \newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
 \newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
 \newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
 % v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
 \newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
 \newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
@@ -80,11 +83,11 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Quadratische Gleichung \pkt{} Lösungen}{YYZ3}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Quadratische Gleichung \pkt{} Lösungen}{PA40-3}\pfseitevon
 \pfheftkopf{Quadratische Gleichung}{Lösungen}
 \pfstufenzeile{Nullstellen gesucht \pkt{} x-Wert gesucht \pkt{} Schnittpunkte gesucht \pkt{} Gerade und Parabel}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Nullstellen gesucht}{\pfjahre{25}{20 \pkt{} 17}}
+\Needspace*{0.16\textheight}\pfstufekopf{Nullstellen gesucht}{\gpunkte[25]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}
 \begin{pfloesungb}{}
 \lzb{1.}{}{a) $x^2 - 6x + 5 = 0$; b) $x^2 + 4x - 5 = 0$ (durch 3 geteilt)}{Nullstelle heißt y = 0; vor x² muss eine 1 stehen, sonst durch die Zahl davor teilen}
 \end{pfloesungb}
@@ -92,17 +95,17 @@
 \lzb{2.}{}{N$_1$(x$_1$|0) mit x$_1$ $\approx$ 2,27; N$_2$(x$_2$|0) mit x$_2$ $\approx$ 5,73}{x² $-$ 8x + 13 = 0, p = $-$8, q = 13: x = 4 ± √(16 $-$ 13) $\Rightarrow$ N$_1$(x$_1$|0) mit x$_1$ = 4 $-$ √3 $\approx$ 2,27; N$_2$(x$_2$|0) mit x$_2$ = 4 + √3 $\approx$ 5,73}
 \end{pfloesungb}
 
-\Needspace*{0.16\textheight}\pfstufekopf{x-Wert gesucht}{\pfjahre{23}{}}\gfrage{Ist ein y-Wert gegeben, setzt du ihn für y ein und bringst alles auf eine Seite – nicht y = 0 wie bei den Nullstellen.}
+\Needspace*{0.16\textheight}\pfstufekopf{x-Wert gesucht}{\gpunkte[23]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}\gfrage{Ist ein y-Wert gegeben, setzt du ihn für y ein und bringst alles auf eine Seite – nicht y = 0 wie bei den Nullstellen.}
 \begin{pfloesungb}{}
 \lzb{3.}{}{x$_1$ = 5; x$_2$ = $-$3}{$-$x² + 2x + 4 = $-$11 $\Rightarrow$ x² $-$ 2x $-$ 15 = 0, p = $-$2, q = $-$15: x = 1 ± √16 $\Rightarrow$ x$_1$ = 5; x$_2$ = $-$3}
 \end{pfloesungb}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Schnittpunkte gesucht}{\pfjahre{24 \pkt{} 22}{21}}\gfrage{Wo sich eine Gerade und eine Parabel schneiden, haben beide denselben y-Wert: Setz die beiden Terme gleich.}
+\Needspace*{0.16\textheight}\pfstufekopf{Schnittpunkte gesucht}{\gpunkte[24 22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}\gfrage{Wo sich eine Gerade und eine Parabel schneiden, haben beide denselben y-Wert: Setz die beiden Terme gleich.}
 \begin{pfloesungb}{}
 \lzb{4.}{}{S$_1$(1|1); S$_2$($-$3|$-$7)}{x² + 4x $-$ 4 = 2x $-$ 1 $\Rightarrow$ x² + 2x $-$ 3 = 0 $\Rightarrow$ x$_1$ = 1, x$_2$ = $-$3 $\Rightarrow$ S$_1$(1|1); S$_2$($-$3|$-$7)}
 \end{pfloesungb}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Gerade und Parabel}{\pfjahre{26 \pkt{} 25 \pkt{} 24 \pkt{} 23 \pkt{} 22}{}}
+\Needspace*{0.16\textheight}\pfstufekopf{Gerade und Parabel}{\gpunkte[26 25 24 23 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}
 \begin{pfloesungb}{}
 \lzb{5.}{}{D}{$-$3 · ($-$3 + 4) = $-$3 · 1 = $-$3 (vierte Option)}
 \end{pfloesungb}

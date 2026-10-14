@@ -70,6 +70,9 @@
 \newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
 \newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
 \newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
 % v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
 \newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
 \newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
@@ -80,11 +83,11 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Fläche und Umfang \pkt{} Lösungen}{Y5D7}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Fläche und Umfang \pkt{} Lösungen}{PG40-7}\pfseitevon
 \pfheftkopf{Fläche und Umfang}{Lösungen}
 \pfstufenzeile{Formeln \pkt{} Fläche gesucht \pkt{} Umfang gesucht \pkt{} Formeln umstellen \pkt{} Flächenanteil gesucht}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Formeln}{\pfjahre{25 \pkt{} 24 \pkt{} 22}{19 \pkt{} 14}}\gfrage{Schlag in deiner Formelsammlung Flächen und Umfänge auf: S. 24 · 25 · 26}
+\Needspace*{0.16\textheight}\pfstufekopf{Formeln}{\gpunkte[25 24 22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}\gfrage{Schlag in deiner Formelsammlung Flächen und Umfänge auf: S. 24 · 25 · 26}
 \begin{pfloesungb}{}
 \lzb{1.}{}{C}{drei gleiche Seiten: a + a + a = 3 · a (dritte Option)}
 \end{pfloesungb}
@@ -95,7 +98,7 @@
 \lzb{3.}{}{A = d · e : 2}{Katheten d und e stehen senkrecht: A = d · e : 2}
 \end{pfloesungb}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Fläche gesucht}{\pfjahre{25 \pkt{} 24 \pkt{} 23 \pkt{} 22}{19 \pkt{} 18 \pkt{} 17 \pkt{} 16 \pkt{} 15}}
+\Needspace*{0.16\textheight}\pfstufekopf{Fläche gesucht}{\gpunkte[25 24 23 22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}
 \begin{pfloesungb}{}
 \lzb{4.}{}{A = 2688 cm²}{A = e · f : 2 = 56 · 96 : 2 = 2688 cm²}
 \end{pfloesungb}
@@ -109,7 +112,7 @@
 \lzb{7.}{}{A $\approx$ 63,3 m²}{c = 11,0 + 6,35 = 17,35 m; A = c · h : 2 = 17,35 · 7,3 : 2 $\approx$ 63,3 m²}
 \end{pfloesungb}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Umfang gesucht}{\pfjahre{26 \pkt{} 23}{}}
+\Needspace*{0.16\textheight}\pfstufekopf{Umfang gesucht}{\gpunkte[26 23]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}
 \begin{pfloesungb}{}
 \lzb{8.}{}{u = 14 cm}{u = 2 · (a + b) = 2 · (4,5 + 2,5) = 14 cm}
 \end{pfloesungb}
@@ -117,7 +120,7 @@
 \lzb{9.}{}{u = 57,40 m}{u = 24,20 + 16,20 + 2 · 8,50 = 57,40 m}
 \end{pfloesungb}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Formeln umstellen}{\pfjahre{23}{20 \pkt{} 18 \pkt{} 14}}
+\Needspace*{0.16\textheight}\pfstufekopf{Formeln umstellen}{\gpunkte[23]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}
 \begin{pfloesungb}{}
 \lzb{10.}{}{d = u : $\pi$}{$\pi$ steht mal d, also rückwärts durch $\pi$ teilen: d = u : $\pi$ (ebenso a = A : b beim Rechteck)}
 \end{pfloesungb}
@@ -125,7 +128,7 @@
 \lzb{11.}{}{a = 110 mm}{a = A : b = 38 500 : 350 = 110 mm}
 \end{pfloesungb}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Flächenanteil gesucht}{\pfjahre{25 \pkt{} 23}{}}
+\Needspace*{0.16\textheight}\pfstufekopf{Flächenanteil gesucht}{\gpunkte[25 23]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}
 \begin{pfloesungb}{}
 \lzb{12.}{}{90° von 360° = 25 \%}{das Ganze ist der volle Kreis (360°), der Teil der graue Winkel; 90 : 360 = 1 : 4 = 25 \%}
 \end{pfloesungb}

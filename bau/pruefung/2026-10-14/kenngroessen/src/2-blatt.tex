@@ -70,6 +70,9 @@
 \newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
 \newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
 \newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
 % v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
 \newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
 \newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
@@ -80,13 +83,13 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Kenngrößen}{K9X3}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Kenngrößen}{PS30-3}\pfseitevon
 \pfheftkopf{Kenngrößen}{}
 \pfstufenzeile{Spannweite gesucht \pkt{} Median gesucht \pkt{} Mittelwert gesucht \pkt{} fehlender Wert gesucht \pkt{} Aussagen prüfen}
 % Stufe entfällt: Modalwert – kein Original der letzten fünf Jahre (Mehr-Block, Fundstellen)
 
 % ===================== Stufe: Minimum, Maximum, Spannweite =====================
-\gkopfvor{\pfstufekopf{Spannweite gesucht}{\pfjahre{26 \pkt{} 24 \pkt{} 23}{21 \pkt{} 20 \pkt{} 19 \pkt{} 14}}\gfrage{Kenngrößen in deiner Formelsammlung: Seite~\linie{12mm}}}
+\gkopfvor{\pfstufekopf{Spannweite gesucht}{\gpunkte[26 24 23]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}\gfrage{Kenngrößen in deiner Formelsammlung: Seite~\linie{12mm}}}
 % 2026-FOR-K3a-m1 (Original 2026-FOR-K3a, Schwere I, rang 1; herausgelöste Fassung: keine)
 \begin{pfaufg}{nach~P10\\’26~\pkt{}~3a}{1.}{}
 Eine Tankstelle hat eine Woche lang jeden Tag um 18 Uhr den Benzinpreis notiert. Gib die Spannweite der Benzinpreise in € pro Liter an.
@@ -107,7 +110,7 @@ Das Säulendiagramm zeigt, wie viel Niederschlag 2022 in Brandenburg in jedem Mo
 \end{pfaufg}
 
 % ===================== Stufe: Median =====================
-\Needspace*{0.16\textheight}\pfstufekopf{Median gesucht}{\pfjahre{24}{15}}
+\Needspace*{0.16\textheight}\pfstufekopf{Median gesucht}{\gpunkte[24]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}
 % Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
 \begin{pfaufg}{}{4.}{}
 Zentralwert (Median): erst ordnen – die Mitte der ungeordneten Reihe ist es nicht.
@@ -124,7 +127,7 @@ Ermittle den Median (Zentralwert) dieser Datenreihe: 22 °C; 15 °C; 24 °C; 12 
 \end{pfaufg}
 
 % ===================== Stufe: Mittelwert =====================
-\gkopfvor{\pfstufekopf{Mittelwert gesucht}{\pfjahre{26 \pkt{} 24 \pkt{} 22}{21 \pkt{} 20 \pkt{} 17 \pkt{} 16 \pkt{} 15}}}
+\gkopfvor{\pfstufekopf{Mittelwert gesucht}{\gpunkte[26 24 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}}
 % kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
 % 2026-FOR-K3b-m1 (Original 2026-FOR-K3b, Schwere I, rang 1; herausgelöste Fassung: keine)
 \begin{pfaufg}{nach~P10\\’26~\pkt{}~3b}{6.}{}
@@ -147,7 +150,7 @@ Das Säulendiagramm zeigt, wie viel Niederschlag 2022 in Brandenburg in jedem Mo
 \end{pfaufg}
 
 % ===================== Stufe: rückwärts: fehlender Wert =====================
-\Needspace*{0.16\textheight}\pfstufekopf{fehlender Wert gesucht}{\pfjahre{22}{}}
+\Needspace*{0.16\textheight}\pfstufekopf{fehlender Wert gesucht}{\gpunkte[22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}
 % Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
 \begin{pfaufg}{}{9.}{}
 Stelle die Formel nach der gesuchten Größe um.
@@ -163,7 +166,7 @@ In einer Woche lag die Temperatur im Durchschnitt bei 18 °C. Ergänze die fehle
 \end{pfaufg}
 
 % ===================== Stufe: Aussagen prüfen, Auswirkung erklären =====================
-\gkopfvor{\pfstufekopf{Aussagen prüfen}{\pfjahre{25}{}}}
+\gkopfvor{\pfstufekopf{Aussagen prüfen}{\gpunkte[25]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}}
 % kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
 % Teile eines Originals (2025-OS-K6): 2025-OS-K6a-m1, 2025-OS-K6c-m1
 \begin{pfaufg}{}{11.}{}

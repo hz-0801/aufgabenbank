@@ -70,6 +70,9 @@
 \newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
 \newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
 \newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
 % v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
 \newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
 \newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
@@ -80,12 +83,12 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Wahrscheinlichkeit}{VRK2}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Wahrscheinlichkeit}{PS50-2}\pfseitevon
 \pfheftkopf{Wahrscheinlichkeit}{}
 \pfstufenzeile{Ergebnisse aufzählen \pkt{} Wahrscheinlichkeit gesucht \pkt{} Baum ergänzen \pkt{} Pfadregeln anwenden \pkt{} ohne Zurücklegen rechnen \pkt{} Zufallsgerät entwerfen}
 
 % ===================== Stufe: Ergebnisse aufzählen =====================
-\gkopfvor{\pfstufekopf{Ergebnisse aufzählen}{\pfjahre{25}{20 \pkt{} 17}}}
+\gkopfvor{\pfstufekopf{Ergebnisse aufzählen}{\gpunkte[25]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}}
 % kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
 % 2025-OS-K3a-m1 (Original 2025-OS-K3a, Schwere I, rang 1; herausgelöste Fassung: keine)
 \begin{pfaufg}{nach~P10\\’25~\pkt{}~3a}{1.}{}
@@ -95,7 +98,7 @@ Bei einem Spiel werden zwei Scheiben gleichzeitig gedreht. Bleiben sie stehen, l
 \end{pfaufg}
 
 % ===================== Stufe: Wahrscheinlichkeit angeben =====================
-\gkopfvor{\pfstufekopf{Wahrscheinlichkeit gesucht}{\pfjahre{26 \pkt{} 24}{19 \pkt{} 18 \pkt{} 17 \pkt{} 16 \pkt{} 15 \pkt{} 14}}}
+\gkopfvor{\pfstufekopf{Wahrscheinlichkeit gesucht}{\gpunkte[26 24]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}}
 % kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
 % 2026-FOR-K6a-m1 (Original 2026-FOR-K6a, Schwere I, rang 1; herausgelöste Fassung: keine)
 \begin{pfaufg}{nach~P10\\’26~\pkt{}~6a}{2.}{}
@@ -111,7 +114,7 @@ In Familie Siebert helfen alle 6 Kinder im Haushalt. Jede Aufgabe steht auf eine
 \end{pfaufg}
 
 % ===================== Stufe: Baum ergänzen =====================
-\Needspace*{0.16\textheight}\pfstufekopf{Baum ergänzen}{\pfjahre{26 \pkt{} 24}{20 \pkt{} 19 \pkt{} 15 \pkt{} 14}}
+\Needspace*{0.16\textheight}\pfstufekopf{Baum ergänzen}{\gpunkte[26 24]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}
 % Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
 \begin{pfaufg}{}{4.}{}
 Ein Los gewinnt mit der Wahrscheinlichkeit $\tfrac{3}{8}$. Mit welcher Wahrscheinlichkeit ist es eine Niete? Rechne im Kopf.
@@ -136,7 +139,7 @@ In Familie Siebert helfen alle 6 Kinder im Haushalt. Jede Aufgabe steht auf eine
 \end{pfaufg}
 
 % ===================== Stufe: Pfadregel =====================
-\Needspace*{0.16\textheight}\pfstufekopf{Pfadregeln anwenden}{\pfjahre{26 \pkt{} 25}{20 \pkt{} 14}}
+\Needspace*{0.16\textheight}\pfstufekopf{Pfadregeln anwenden}{\gpunkte[26 25]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}
 % Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
 \begin{pfaufg}{}{7.}{}
 Ein Glücksrad mit roten und blauen Feldern wird zweimal gedreht. Rechnest du mit den Wahrscheinlichkeiten mal oder plus? Rechne nicht.
@@ -171,7 +174,7 @@ Zwei Würfel sind mit Zahlen beschriftet. Würfel A trägt 2, 2, 2, 3, 4, 5; Wü
 \end{pfaufg}
 
 % ===================== Stufe: ohne Zurücklegen =====================
-\Needspace*{0.16\textheight}\pfstufekopf{ohne Zurücklegen rechnen}{\pfjahre{24}{19 \pkt{} 18}}
+\Needspace*{0.16\textheight}\pfstufekopf{ohne Zurücklegen rechnen}{\gpunkte[24]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}
 % Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
 \begin{pfaufg}{}{10.}{}
 In einer Dose liegen 5 Kugeln, 2 davon rot. Du ziehst eine blaue und legst sie nicht zurück. Was liegt jetzt noch in der Dose?
@@ -188,7 +191,7 @@ In Familie Siebert helfen alle 6 Kinder im Haushalt. Jede Aufgabe steht auf eine
 \end{pfaufg}
 
 % ===================== Stufe: Zufallsgerät entwerfen =====================
-\Needspace*{0.16\textheight}\pfstufekopf{Zufallsgerät entwerfen}{\pfjahre{26 \pkt{} 25}{19 \pkt{} 18}}
+\Needspace*{0.16\textheight}\pfstufekopf{Zufallsgerät entwerfen}{\gpunkte[26 25]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}
 % Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
 \begin{pfaufg}{}{12.}{}
 Zwei Glücksräder mit je 4 gleich großen Feldern werden gedreht. Die Wahrscheinlichkeit, dass beide auf Rot stehen bleiben, soll $\tfrac{3}{16}$ sein. Wie viele rote Felder bekommt jedes Rad?

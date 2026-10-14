@@ -70,6 +70,9 @@
 \newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
 \newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
 \newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
 % v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
 \newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
 \newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
@@ -80,13 +83,13 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Symmetrie}{NUB4}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Symmetrie}{PG20-4}\pfseitevon
 \pfheftkopf{Symmetrie}{}
 \pfstufenzeile{Symmetrieachsen gesucht}
 
 % ===================== Stufe: Symmetrieachsen zählen =====================
 % Formel-Frage (einmal je Blatt, erste Stufe mit Formel; pruefung.md § 5)
-\Needspace*{0.16\textheight}\pfstufekopf{Symmetrieachsen gesucht}{\pfjahre{25 \pkt{} 22}{21}}\gfrage{Bevor du rechnest: Auf welcher Seite der Formelsammlung steht die Formel? Seite~\linie{12mm}}
+\Needspace*{0.16\textheight}\pfstufekopf{Symmetrieachsen gesucht}{\gpunkte[25 22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}\gfrage{Bevor du rechnest: Auf welcher Seite der Formelsammlung steht die Formel? Seite~\linie{12mm}}
 % Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
 \begin{pfaufg}{}{1.}{}
 Eine Symmetrieachse teilt die Figur so, dass beim Falten beide Hälften genau aufeinanderliegen. Wie viele Symmetrieachsen hat die Figur?

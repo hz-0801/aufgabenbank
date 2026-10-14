@@ -12,36 +12,16 @@ Aufruf (aus aufgabenbank):
   python3 werkzeuge/gesamtheft.py --datum 2026-10-14 [--markiert grundwert,kenngroessen]
 Eingaben: bau/pruefung/<datum>/<ordner>/pdf/2-blatt.pdf,
 mathe-nachhilfe msa/skript-zuschnitt-p10.csv (Stufen),
-msa/gliederung/*.md (Kapitel-Schlüssel, Folge), Kennung aus src/2-blatt.tex.
-Ordner je Einheit: Liste EINHEITEN unten (Ordnernamen wie am 13.10.).
+msa/gliederung/*.md (Folge, Ordner, Stufen: werkzeuge/p10einheiten.py, seit 14.10. keine Liste im Skript),
+Kennung mit Fassung aus src/2-blatt.tex.
 Ausgabe: bau/pruefung/<datum>/gesamtheft-p10.pdf
 """
-import argparse, csv, glob, os, re, shutil, subprocess, tempfile
+import argparse, csv, glob, os, re, shutil, subprocess, sys, tempfile
 
 BANK = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# (Kapitel-Schlüssel, Einheit = Abschnitt im Zuschnitt, Ordner)
-EINHEITEN = [
-    ('dreiecke', 'Länge mit Pythagoras', 'pythagoras'),
-    ('dreiecke', 'Seite oder Winkel mit sin, cos, tan', 'sin-cos-tan'),
-    ('dreiecke', 'Seite im allgemeinen Dreieck (Sinussatz)', 'sinussatz'),
-    ('dreiecke', 'Vierecke: Symmetrie und Eigenschaften', 'vierecke'),
-    ('dreiecke', 'Winkel ohne Rechnung bestimmen oder begründen', 'winkel'),
-    ('dreiecke', 'Symmetrie', 'symmetrie'),
-    ('flaechen', 'Flächeninhalt und Umfang', 'flaechen'),
-    ('koerper', 'Volumen und Oberfläche', 'koerper-volumen'),
-    ('koerper', 'Netz und Schrägbild', 'koerper-netz'),
-    ('lineare', 'Lineare Funktionen', 'lineare'),
-    ('quadratische', 'Parabel: Scheitelpunkt und Skizze', 'parabel'),
-    ('quadratische', 'Quadratische Gleichung lösen', 'qgleichung'),
-    ('gleichungssysteme', 'Gleichungssystem im Sachzusammenhang', 'gleichungssysteme'),
-    ('wachstum', 'Exponentielles Wachstum', 'wachstum'),
-    ('prozent', 'Prozent', 'prozent'),
-    ('prozent', 'Grundwert', 'grundwert'),
-    ('daten', 'Kenngrößen', 'kenngroessen'),
-    ('daten', 'Diagramme', 'diagramme'),
-    ('wahrscheinlichkeit', 'Baumdiagramm und Pfadregeln', 'wahrscheinlichkeit'),
-]
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from p10einheiten import einheiten as p10_einheiten  # noqa: E402  Folge und Ordner aus den Gliederungen (14.10.)
 
 
 def tex(s):
@@ -92,20 +72,18 @@ def main():
     ap.add_argument('--markiert', default='', help='Ordner, die in der Karte als neu markiert werden')
     a = ap.parse_args()
     ziel = os.path.join(BANK, 'bau', 'pruefung', a.datum)
-    K, S = kopf(a.mn), stufen(a.mn)
     neu = {x for x in a.markiert.split(',') if x}
 
-    reihe = sorted(EINHEITEN, key=lambda e: (K[e[0]][0], EINHEITEN.index(e)))
     eintraege, fehlt = [], []
-    for kap, ein, ordner in reihe:
-        pdf = os.path.join(ziel, ordner, 'pdf', '2-blatt.pdf')
+    for e in p10_einheiten(a.mn):
+        pdf = os.path.join(ziel, e['ordner'], 'pdf', '2-blatt.pdf')
         if not os.path.exists(pdf):
-            fehlt.append(ordner)
+            fehlt.append(e['ordner'])
             continue
-        folge, name, gebiet = K[kap]
-        eintraege.append(dict(kap=kap, name=name, gebiet=gebiet, ein=ein, ordner=ordner,
-                              pdf=pdf, n=seiten(pdf), kennung=kennung(os.path.join(ziel, ordner)),
-                              stufen=S.get((name, ein), [])))
+        eintraege.append(dict(kap=e['kapitel'], name=e['kapitelname'], gebiet=e['gebiet'], ein=e['anzeige'],
+                              ordner=e['ordner'], pdf=pdf, n=seiten(pdf),
+                              kennung=kennung(os.path.join(ziel, e['ordner'])),
+                              stufen=[s for _, s in e['stufen']]))
     if fehlt:
         raise SystemExit('Blatt fehlt: ' + ', '.join(fehlt))
 

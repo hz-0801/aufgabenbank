@@ -70,6 +70,9 @@
 \newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
 \newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
 \newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
 % v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
 \newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
 \newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
@@ -80,12 +83,12 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Winkel}{T2U4}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Winkel}{PG10-4}\pfseitevon
 \pfheftkopf{Winkel}{}
 \pfstufenzeile{Winkel gesucht \pkt{} Basiswinkel gesucht \pkt{} rechten Winkel begründen}
 
 % ===================== Stufe: Winkelsumme =====================
-\Needspace*{0.16\textheight}\pfstufekopf{Winkel gesucht}{\pfjahre{26 \pkt{} 23 \pkt{} 22}{21 \pkt{} 18 \pkt{} 17 \pkt{} 15}}
+\Needspace*{0.16\textheight}\pfstufekopf{Winkel gesucht}{\gpunkte[26 23 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}
 % Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
 \begin{pfaufg}{}{1.}{}
 Im Viereck sind die Innenwinkel zusammen 360°. Wie viel Grad sind es im Dreieck?
@@ -113,7 +116,7 @@ Gegeben ist ein Dreieck ABC, das nicht rechtwinklig ist. Die Höhe $h_c$ von C a
 \end{pfaufg}
 
 % ===================== Stufe: gleichschenkliges Dreieck =====================
-\Needspace*{0.16\textheight}\pfstufekopf{Basiswinkel gesucht}{\pfjahre{23}{}}
+\Needspace*{0.16\textheight}\pfstufekopf{Basiswinkel gesucht}{\gpunkte[23]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}
 % Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
 \begin{pfaufg}{}{5.}{}
 Trage alle Winkel ein. Was unterscheidet die beiden Dreiecke?
@@ -134,7 +137,7 @@ Gegeben ist das Dreieck ABC. Der Punkt F liegt auf der Seite AC, und BF steht se
 \end{pfaufg}
 
 % ===================== Stufe: rechten Winkel begründen =====================
-\Needspace*{0.16\textheight}\pfstufekopf{rechten Winkel begründen}{\pfjahre{25}{}}
+\Needspace*{0.16\textheight}\pfstufekopf{rechten Winkel begründen}{\gpunkte[25]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}
 % Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
 \begin{pfaufg}{}{8.}{}
 CD steht senkrecht auf AB. Trage die Winkel in den Dreiecken ADC und DBC ein. Warum ist $\gamma$ = 90°?

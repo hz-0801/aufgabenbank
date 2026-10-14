@@ -29,6 +29,10 @@ bau/pruefheft/<kapitel>-<art>[-p<n>|-fokus-<wort>][-ebr]-<datum>/ (Unterordner s
   Figur), Skizzenfeld \\gskizze ab dem linken Rand; Teile eines Originals direkt nacheinander = eine Nummer a), b);
   Bündel nebeneinander nur, wenn die Systeme ungedrückt passen
   v0.12 (14.10.2026, Probe Formelsammlung): Feld „Regine: S. n“ der Gliederung – Lösung der Seitenfrage „Seite ___“ = „S. n“
+  v0.14 (14.10.2026, plan.md § 10, 14.10. b, c): Kennung sprechend aus der Gliederung („Kennung: <Zuschnitt> = PG50“),
+  rechts oben mit Fassung „PG50-3“; Stufenkopf mit fünf Punkten für die letzten fünf Jahre (voll = geprüft, nur
+  P10-Hefte), sind alle leer „zuletzt 19“; kein „fast immer“, keine Jahresliste. --art mehr --alle: alle Zeilen der
+  Einheit (auf_blatt = nein) nach rang, ohne Portionen (Mappe P10)
   Pfade: --mn ../mathe-nachhilfe --bb ../blattbau (Voreinstellung: Nachbarordner des Repos)
 
 Daten (alle gelesen; geschrieben wird nur bau/register.csv, eine Zeile je Bau):
@@ -4308,7 +4312,7 @@ def g1_kennung(pfad, schwach=False):
     belegt = {z.split(';')[0].replace(' +', '') for z in zeilen}
     # v0.9: Kennungen fest je Einheit in der Gliederung (msa/gliederung/*.md, „Kennung: <Zuschnitt> = XYZ“) sind vergeben
     for g in glob.glob(os.path.join(os.path.dirname(BANK), 'mathe-nachhilfe', 'msa', 'gliederung', '*.md')):
-        belegt |= set(re.findall(r'^Kennung:.*=\s*([2-9A-HJ-NP-Z]{3})\s*$', open(g, encoding='utf-8').read(), re.M))
+        belegt |= set(re.findall(r'^Kennung(?: alt)?:.*=\s*([2-9A-HJ-NP-Z]{3})\s*$', open(g, encoding='utf-8').read(), re.M))
     h = int(hashlib.sha1(pfad.encode()).hexdigest(), 16)
     while True:
         k = ''.join(KENN_ZEICHEN[(h >> (5 * i)) % 32] for i in range(3))
@@ -5219,7 +5223,7 @@ def mehr_blatt_tex(einheit, kenn, p, anz, folge, faktor=1.0):
     stufen = list(OrderedDict((r.get('stufe', '').strip(), 1) for r in folge if r.get('stufe', '').strip()))
     out = [KOPF.replace('\\begin{document}', MEHR_PRAEAMBEL + '\\begin{document}'), '\\pfheftstil',
            f'\\pflaufkopf[P10 \\pkt{{}} mehr]{{{tx(einheit)}}}{{{kenn}}}\\pfseitevon',
-           f'\\pfheftkopf{{{tx(einheit)}}}{{Portion {p} von {anz}}}']
+           f'\\pfheftkopf{{{tx(einheit)}}}{{{"mehr" if p is None else f"Portion {p} von {anz}"}}}']
     if stufen:
         out.append('\\pfstufenzeile{' + ' \\pkt{} '.join(tx(s) for s in stufen) + '}')
     for i, r in enumerate(folge, 1):
@@ -5234,7 +5238,7 @@ def mehr_blatt_tex(einheit, kenn, p, anz, folge, faktor=1.0):
 def mehr_loesung_tex(einheit, kenn, p, anz, folge):
     out = [KOPF.replace('\\begin{document}', MEHR_PRAEAMBEL + '\\begin{document}'), '\\pfheftstil',
            f'\\pflaufkopf[P10 \\pkt{{}} mehr]{{{tx(einheit)} \\pkt{{}} Lösungen}}{{{kenn}}}\\pfseitevon',
-           f'\\pfheftkopf{{{tx(einheit)}}}{{Lösungen \\pkt{{}} Portion {p} von {anz}}}']
+           f'\\pfheftkopf{{{tx(einheit)}}}{{Lösungen \\pkt{{}} ' + ('mehr' if p is None else f'Portion {p} von {anz}') + '}']
     for i, r in enumerate(folge, 1):
         ergebnisse, weg = mehr_loesung(r)
         _, optionen = mehr_kreuz((r.get('wortlaut') or '').strip())
@@ -5263,10 +5267,48 @@ def mehr_register(args, kenn, ordner, seiten, folge, p, anz, einheit):
     open(p_reg, 'w', encoding='utf-8').write('\n'.join(zeilen) + '\n')
 
 
+def mehr_kennung(args, einheit):
+    """v0.14 (Mappe P10): Kennung der Einheit aus der Gliederung mit der letzten Fassung (PG50-3); die Einheit des
+    Mehr-Blocks heißt in mehr-p10/*.csv teils anders als der Zuschnitt („Vierecke“), Vergleich über die Wörter."""
+    gl = p_gliederung(args.mn, args.kapitel)
+    w = lambda s: set(re.findall(r'\w+', s.lower()))
+    k = next((v for e, v in gl['kennung'].items() if e == einheit), '') or next(
+        (v for e, v in gl['kennung'].items() if w(einheit) <= w(e) or w(e) <= w(einheit)), '')
+    if not k:
+        return ''
+    f = [int(z['fassung']) for z in p_fassungen() if z['kennung'] == k]
+    return p_kennung_fassung(k, max(f)) if f else k
+
+
+def mehr_alle_bau(args, einheit, zeilen):
+    """--art mehr --alle (v0.14, Mappe P10, plan.md § 10, 14.10. f): alle Zeilen der Einheit mit auf_blatt = nein in
+    der Ordnung rang, ohne Portionen, mit Lösung; Kennung der Einheit mit Fassung. Kein Register (Teil der Mappe)."""
+    kenn = mehr_kennung(args, einheit) or g1_kennung(os.path.relpath(args.aus or BANK, BANK))
+    name = f'{args.kapitel}-mehr-{mehr_kurz(einheit)}-alle'
+    ordner = args.aus or os.path.join(BANK, 'bau', 'pruefheft', f'{name}-{args.datum}')
+    arbeit = tempfile.mkdtemp(prefix='pruefheft-mehr-')
+    os.makedirs(os.path.join(ordner, 'src'), exist_ok=True)
+    os.makedirs(os.path.join(ordner, 'pdf'), exist_ok=True)
+    for nm, t in (('mehr', mehr_blatt_tex(einheit, kenn, None, 1, zeilen)),
+                  ('mehr-loesung', mehr_loesung_tex(einheit, kenn, None, 1, zeilen))):
+        e = xelatex(t, args.bb, nm, arbeit)
+        open(os.path.join(ordner, 'src', nm + '.tex'), 'w', encoding='utf-8').write(t)
+        if e['pdf']:
+            shutil.copy(e['pdf'], os.path.join(ordner, 'pdf', nm + '.pdf'))
+        print(f'{nm}: {e["seiten"]} Seiten, Fehler {len(e["fehler"])}, Missing character {e["missing"]}, '
+              f'Overfull {e["overfull"]}')
+        for fl in e['fehler'][:5]:
+            print('   ', fl)
+    print(f'Einheit: {einheit}; {len(zeilen)} Aufgaben (auf_blatt = nein, alle); Kennung {kenn}; Ordner {ordner}')
+    print('ids:', ' '.join(r['id'] for r in zeilen))
+
+
 def mehr_bau(args):
     if not args.einheit:
         sys.exit('--art mehr braucht --einheit')
     einheit, zeilen = mehr_zeilen(args.mn, args.kapitel, args.einheit)
+    if args.alle:
+        return mehr_alle_bau(args, einheit, zeilen)
     portionen = mehr_portionen(zeilen)
     anz = len(portionen)
     p = args.portion or 1
@@ -5392,6 +5434,9 @@ P_PRAEAMBEL = r"""% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortg
 \newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
 \newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
 \newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
 % v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
 \newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
 \newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
@@ -5416,20 +5461,21 @@ def p_gliederung(mn, kapitel):
     p = os.path.join(mn, 'msa', 'gliederung', f'{kapitel}.md')
     if not os.path.exists(p):
         sys.exit(f'fehlt: {p}')
-    g = {'name': kapitel.capitalize(), 'folge': 0, 'gruppen': [], 'stufen': OrderedDict(), 'anzeige': {}, 'kennung': {}}
+    g = {'name': kapitel.capitalize(), 'folge': 0, 'gruppen': [], 'stufen': OrderedDict(), 'anzeige': {}, 'kennung': {},
+         'ordner': {}}
     st = None
     for z in open(p, encoding='utf-8').read().splitlines():
-        m = re.match(r'^(Name|Folge|Gruppen|Anzeigenamen|Kennung):\s*(.*)$', z)
+        m = re.match(r'^(Name|Folge|Gruppen|Anzeigenamen|Kennung|Ordner):\s*(.*)$', z)
         if m and st is None:
             k, v = m.group(1), m.group(2).strip()
             if k == 'Name':
                 g['name'] = v
             elif k == 'Folge':
                 g['folge'] = int(re.sub(r'\D', '', v) or 0)
-            elif k == 'Kennung':   # „<Zuschnitt> = TAL“, eine Zeile je Einheit (v0.9; gemeinsam.md „Kennung mit Fassung“)
+            elif k in ('Kennung', 'Ordner'):   # „<Zuschnitt> = PG50“ (v0.14) bzw. „<Zuschnitt> = pythagoras“ (Ausgabeordner)
                 if '=' in v:
                     a, b = v.rsplit('=', 1)
-                    g['kennung'][a.strip()] = b.strip()
+                    g[k.lower()][a.strip()] = b.strip()
             elif k == 'Anzeigenamen':   # „Zuschnitt = Name in Schülersprache | …“, mehrere Zeilen erlaubt (12.10.)
                 for teil in v.split('|'):
                     if '=' in teil:
@@ -5604,16 +5650,24 @@ def p_jahre(D, z, letzte5, wort=''):
     return jung, alt, (wort if wort in ('immer', 'fast immer') else '')
 
 
+P_LETZTE5 = [2026, 2025, 2024, 2023, 2022]   # p_bau setzt sie aus den Prüfungsjahren (jüngstes zuerst)
+
+
+def p_punkte_tex(jung, letzte5):
+    """Fünf Punkte wie auf der Bestellkarte (werkzeuge/bestellkarte.py): voll = in dem Jahr geprüft."""
+    return r'\,'.join(r'\textcolor{black!80}{$\bullet$}' if j in jung else r'\textcolor{black!25}{$\circ$}'
+                       for j in letzte5)
+
+
 def p_jahre_tex(jahre):
-    """„fast immer“ / „immer“ allein (Urteil der Gliederung), sonst nur die Jahre zweistellig, jüngstes zuerst, ältere
-    als fünf Jahre nach dem Strich und heller (\\pfjahre der Vorlage); kein „oft“/„selten“ (v0.10, 13.10.)."""
-    jung, alt, wort = jahre
-    if wort:
-        return wort
-    if not jung and not alt:
-        return '–'
-    f = lambda xs: ' \\pkt{} '.join(str(x)[2:] for x in xs)
-    return f'\\pfjahre{{{f(jung)}}}{{{f(alt)}}}'
+    """Stufenkopf (v0.14, plan.md § 10, 14.10. c; pruefung.md § 5 „Punkte im Stufenkopf“): fünf Punkte für die letzten
+    fünf Jahre, jüngstes links, voll = geprüft (nur P10-Hefte); sind alle fünf leer und gibt es ältere, „zuletzt 19“
+    (jüngstes Jahr mit Original, zweistellig). Kein „fast immer“, keine Jahresliste. \\gpunkte trägt die Jahre als
+    Option, damit die Bestellkarte sie aus dem TeX lesen kann."""
+    jung, alt, _ = jahre
+    if not jung and alt:
+        return f'\\gzuletzt{{{str(max(alt))[2:]}}}'
+    return f'\\gpunkte[{" ".join(str(j)[2:] for j in jung)}]{{{p_punkte_tex(jung, P_LETZTE5)}}}'
 
 
 def p_stufenkopf(name, jahre, frage='', vorhalt=0.16):
@@ -6397,7 +6451,7 @@ def p_uebersicht_tex(gl, einheiten, einheit, kenn, stufen_daten, kapitel_namen):
 
 
 P_FASSUNGEN = os.path.join(BANK, 'bau', 'fassungen.csv')
-P_FASSUNG_KOPF = 'kennung;fassung;fingerabdruck;datum;kapitel;einheit;pfad;bemerkung'
+P_FASSUNG_KOPF = 'kennung;fassung;fingerabdruck;datum;kapitel;einheit;pfad;bemerkung;kennung_alt'
 
 
 def p_fingerabdruck(D, stufen_daten):
@@ -6446,8 +6500,17 @@ def p_fassung_schreiben(args, kenn, fassung, abdruck, einheit, ordner, bemerkung
     p = P_FASSUNGEN
     zeilen = open(p, encoding='utf-8').read().splitlines() if os.path.exists(p) else [P_FASSUNG_KOPF]
     zeilen.append(';'.join([kenn, str(fassung), abdruck, args.datum, args.kapitel, einheit,
-                            os.path.relpath(ordner, BANK), bemerkung]))
+                            os.path.relpath(ordner, BANK), bemerkung, '']))   # Spalte kennung_alt (14.10.) leer
     open(p, 'w', encoding='utf-8').write('\n'.join(zeilen) + '\n')
+
+
+# Kennung sprechend (plan.md § 10, 14.10. b; gemeinsam.md „Kennung mit Fassung“): Sorte P/A/L/F/S (S mit Klasse),
+# Gebiet G/A/S/Z/B, Platz in der Lernfolge mit Zehnerlücken (PG50, S9G10); Fassung mit Bindestrich (PG50-3)
+P_KENN_MUSTER = r'[PALFS]\d*[GASZB]\d{2,3}'
+
+
+def p_kennung_fassung(kenn, fassung):
+    return f'{kenn}-{fassung}'
 
 
 def p_kennung(gl, einheit, ordner, hinweise):
@@ -6458,8 +6521,9 @@ def p_kennung(gl, einheit, ordner, hinweise):
     if not kenn:
         hinweise.append(f'Kennung fehlt in der Gliederung („Kennung: {einheit} = …“) – Ersatz nach Ordner')
         return g1_kennung(os.path.relpath(ordner, BANK))
-    if not re.fullmatch(r'[2-9A-HJ-NP-Z]{3}', kenn):
-        sys.exit(f'Kennung „{kenn}“ der Gliederung verletzt das Muster (gemeinsam.md „Satz“: 2–9, A–Z ohne I, O)')
+    if not re.fullmatch(P_KENN_MUSTER, kenn):
+        sys.exit(f'Kennung „{kenn}“ der Gliederung verletzt das Muster (gemeinsam.md „Kennung mit Fassung“: '
+                 f'Sorte · Gebiet · Platz, z. B. PG50)')
     p_reg = os.path.join(BANK, 'bau', 'register.csv')
     for z in open(p_reg, encoding='utf-8').read().splitlines()[1:]:
         f = z.split(';')
@@ -6514,6 +6578,8 @@ def p_bau(args):
     einheit = p_wahl(list(einheiten), args.einheit, 'Zuschnitt der Gliederung')
     alle_j = sorted({int(j) for j in D.pruefjahre})
     letzte5 = alle_j[-5:]
+    global P_LETZTE5
+    P_LETZTE5 = sorted(letzte5, reverse=True)
     mehr = p_mehr(D.mn, args.kapitel, einheit)
     mehr_alle = lies_mehr(D.mn)
     heraus = [r for r in D.heraus if (r.get('art') or '') == 'herausgeloest']
@@ -6621,7 +6687,7 @@ def p_bau(args):
     # Kennung mit Fassung (gemeinsam.md, Lehrer 12.10.): Fassung steigt nur mit dem Inhalt (Fingerabdruck)
     abdruck = p_fingerabdruck(D, stufen_daten)
     fassung, fassung_neu = p_fassung(kenn, abdruck)
-    kenn_basis, kenn = kenn, f'{kenn}{fassung}'
+    kenn_basis, kenn = kenn, p_kennung_fassung(kenn, fassung)
     if args.fassung_erfassen:
         # Übergang (v0.9): der heutige Datenstand einer schon gelieferten Einheit gilt als Fassung 1, ohne zu setzen
         if any(z['kennung'] == kenn_basis for z in p_fassungen()):
@@ -6706,7 +6772,8 @@ def main():
     ap.add_argument('--fassung-erfassen', action='store_true',
                     help='nur --art p: Datenstand der Einheit als Fassung 1 ins Fassungsregister (bau/fassungen.csv), '
                          'nichts setzen – für schon gelieferte Einheiten (v0.9)')
-    ap.add_argument('--alle', action='store_true', help='Fokusblatt mit allen Originalen, ohne Auswahl je Sorte (Bauregeln 2.1)')
+    ap.add_argument('--alle', action='store_true', help='Fokusblatt mit allen Originalen, ohne Auswahl je Sorte (Bauregeln 2.1); '
+                    'mit --art mehr: alle Zeilen der Einheit (auf_blatt = nein) nach rang, ohne Portionen (v0.14)')
     ap.add_argument('--nur-register', action='store_true',
                     help='nichts setzen, nur die Registerzeile des schon gebauten Ordners schreiben (Lauf C: '
                          'parallele Bauten mit --ohne-register, danach je Bau einmal --nur-register)')

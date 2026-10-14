@@ -70,6 +70,9 @@
 \newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
 \newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
 \newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
 % v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
 \newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
 \newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
@@ -80,11 +83,11 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Kenngrößen \pkt{} Lösungen}{K9X3}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Kenngrößen \pkt{} Lösungen}{PS30-3}\pfseitevon
 \pfheftkopf{Kenngrößen}{Lösungen}
 \pfstufenzeile{Spannweite gesucht \pkt{} Median gesucht \pkt{} Mittelwert gesucht \pkt{} fehlender Wert gesucht \pkt{} Aussagen prüfen}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Spannweite gesucht}{\pfjahre{26 \pkt{} 24 \pkt{} 23}{21 \pkt{} 20 \pkt{} 19 \pkt{} 14}}\gfrage{Kenngrößen in deiner Formelsammlung: S. 42}
+\Needspace*{0.16\textheight}\pfstufekopf{Spannweite gesucht}{\gpunkte[26 24 23]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}\gfrage{Kenngrößen in deiner Formelsammlung: S. 42}
 \begin{pfloesungb}{}
 \lzb{1.}{}{Spannweite = 0,10 € pro Liter}{größter Wert 1,90 (So), kleinster 1,80 (Mi) $\Rightarrow$ Spannweite = 1,90 $-$ 1,80 = 0,10 € pro Liter}
 \end{pfloesungb}
@@ -95,7 +98,7 @@
 \lzb{3.}{}{Spannweite = 46,6 mm}{größter Wert 71,2 (Jun), kleinster 24,6 (Apr) $\Rightarrow$ Spannweite = 71,2 $-$ 24,6 = 46,6 mm}
 \end{pfloesungb}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Median gesucht}{\pfjahre{24}{15}}
+\Needspace*{0.16\textheight}\pfstufekopf{Median gesucht}{\gpunkte[24]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}
 \begin{pfloesungb}{}
 \lzb{4.}{}{a) 5 (nicht 7); b) 5 (nicht 4)}{ungeordnet stünde 7 bzw. 2 und 6 in der Mitte; geordnet 2; 4; 5; 7; 9: der dritte, 5; geordnet 2; 4; 6; 8: zwischen 4 und 6, (4 + 6) : 2 = 5}
 \end{pfloesungb}
@@ -103,7 +106,7 @@
 \lzb{5.}{}{Median = 20 °C}{geordnet: 12, 15, 18, 22, 24, 24 $\Rightarrow$ Median = (18 + 22) : 2 = 20 °C}
 \end{pfloesungb}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Mittelwert gesucht}{\pfjahre{26 \pkt{} 24 \pkt{} 22}{21 \pkt{} 20 \pkt{} 17 \pkt{} 16 \pkt{} 15}}
+\Needspace*{0.16\textheight}\pfstufekopf{Mittelwert gesucht}{\gpunkte[26 24 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}
 \begin{pfloesungb}{}
 \lzb{6.}{}{stimmt}{stimmt, 1,84 € wird unterschritten: (1,81 + 1,82 + 1,80 + 1,83 + 1,89) : 5 = 9,15 : 5 = 1,83 €}
 \end{pfloesungb}
@@ -114,7 +117,7 @@
 \lzb{8.}{}{Mittelwert = 46,4 mm}{Mittelwert = Summe : Anzahl = 556,8 : 12 = 46,4 mm}
 \end{pfloesungb}
 
-\Needspace*{0.16\textheight}\pfstufekopf{fehlender Wert gesucht}{\pfjahre{22}{}}
+\Needspace*{0.16\textheight}\pfstufekopf{fehlender Wert gesucht}{\gpunkte[22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}
 \begin{pfloesungb}{}
 \lzb{9.}{}{x = 2 · m $-$ a}{rückwärts erst mal 2: a + x = 2 · m (aus dem Durchschnitt wird die Summe), dann a abziehen: x = 2 · m $-$ a}
 \end{pfloesungb}
@@ -122,7 +125,7 @@
 \lzb{10.}{}{Samstag = 19 °C}{Summe 7 · 18 = 126 °C; bekannt 17 + 19 + 18 + 16 + 20 + 17 = 107 $\Rightarrow$ Samstag = 126 $-$ 107 = 19 °C}
 \end{pfloesungb}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Aussagen prüfen}{\pfjahre{25}{}}
+\Needspace*{0.16\textheight}\pfstufekopf{Aussagen prüfen}{\gpunkte[25]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}
 \begin{pfloesungb}{}
 \lzb{11.}{a)}{B; Modalwert = 3 Jahre}{Spannweite 6 $-$ 1 = 5 stimmt, also Modalwert falsch (zweite Option); 3 kommt fünfmal vor, 5 nur dreimal $\Rightarrow$ Modalwert = 3 Jahre}
 \end{pfloesungb}

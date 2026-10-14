@@ -70,6 +70,9 @@
 \newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
 \newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
 \newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
 % v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
 \newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
 \newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
@@ -80,16 +83,16 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Prozent \pkt{} Lösungen}{5ZQ2}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Prozent \pkt{} Lösungen}{PS10-2}\pfseitevon
 \pfheftkopf{Prozent}{Lösungen}
 \pfstufenzeile{Prozent und Anteil umwandeln \pkt{} Prozentsatz gesucht \pkt{} Veränderung gesucht \pkt{} Aussagen prüfen \pkt{} Flächenanteil gesucht}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Prozent und Anteil umwandeln}{\pfjahre{22}{20}}
+\Needspace*{0.16\textheight}\pfstufekopf{Prozent und Anteil umwandeln}{\gpunkte[22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}
 \begin{pfloesungb}{}
 \lzb{1.}{}{B}{ein Zehntel = 10 von 100 = 10 \% (zweite Option)}
 \end{pfloesungb}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Prozentsatz gesucht}{\pfjahre{25 \pkt{} 23}{18 \pkt{} 15}}
+\Needspace*{0.16\textheight}\pfstufekopf{Prozentsatz gesucht}{\gpunkte[25 23]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}
 \begin{pfloesungb}{}
 \lzb{2.}{}{Teil 5, Ganzes 20, 25 \%}{Teil = die gezählten 5, Ganzes = alle 20; 5 : 20 = 1 : 4 = 25 \%}
 \end{pfloesungb}
@@ -100,7 +103,7 @@
 \lzb{4.}{}{Anteil = 15 \%}{Teil 1,2 Mrd., Ganzes 8,0 Mrd. $\Rightarrow$ Anteil = 1,2 : 8,0 = 0,15 = 15 \%}
 \end{pfloesungb}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Veränderung gesucht}{\pfjahre{26 \pkt{} 22}{21 \pkt{} 20 \pkt{} 16}}
+\Needspace*{0.16\textheight}\pfstufekopf{Veränderung gesucht}{\gpunkte[26 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}
 \begin{pfloesungb}{}
 \lzb{5.}{}{0,50 €, alter Preis 2 €, 25 \%}{erst der Unterschied 2,50 € $-$ 2 € = 0,50 €; das Ganze ist der alte Preis: 0,50 : 2 = 0,25 = 25 \%}
 \end{pfloesungb}
@@ -111,7 +114,7 @@
 \lzb{7.}{}{Steigerung $\approx$ 3,3 \%}{1,89 € $-$ 1,83 € = 0,06 €, Ganzes ist Donnerstag $\Rightarrow$ Steigerung = 0,06 : 1,83 $\approx$ 3,3 \%}
 \end{pfloesungb}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Aussagen prüfen}{\pfjahre{25 \pkt{} 23}{19 \pkt{} 17}}
+\Needspace*{0.16\textheight}\pfstufekopf{Aussagen prüfen}{\gpunkte[25 23]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}
 \begin{pfloesungb}{}
 \lzb{8.}{}{100 m und 8 m; ja}{8 \% = 8 von 100 $\Rightarrow$ 100 m und 8 m; ja, Frau Yücel hat recht: 8 \% < 14 : 130 $\approx$ 10,8 \%}
 \end{pfloesungb}
@@ -119,7 +122,7 @@
 \lzb{9.}{}{falsch; Kinder = 0,25, ein Viertel aller Menschen}{falsch: Aussage 2 (Aussage 1 stimmt, 4,0 : 8,0 = 0,5); berichtigt: Kinder = 2,0 : 8,0 = 0,25, ein Viertel aller Menschen}
 \end{pfloesungb}
 
-\Needspace*{0.16\textheight}\pfstufekopf{Flächenanteil gesucht}{\pfjahre{23}{}}
+\Needspace*{0.16\textheight}\pfstufekopf{Flächenanteil gesucht}{\gpunkte[23]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}
 \begin{pfloesungb}{}
 \lzb{10.}{}{14 Deckel; $\approx$ 161,2 cm²; ja}{14 Deckel; Abfall 700 $-$ 14 · 12,25$\pi$ $\approx$ 161,2 cm²; ja, eingehalten (höchstens 24 \%): 161,2 : 700 $\approx$ 23,0 \%}
 \end{pfloesungb}

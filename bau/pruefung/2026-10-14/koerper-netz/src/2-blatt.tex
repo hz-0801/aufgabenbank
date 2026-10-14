@@ -70,6 +70,9 @@
 \newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
 \newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
 \newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
 % v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
 \newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
 \newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
@@ -80,12 +83,12 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Netz und Schrägbild}{EF44}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Netz und Schrägbild}{PG80-4}\pfseitevon
 \pfheftkopf{Netz und Schrägbild}{}
 \pfstufenzeile{Netz erkennen \pkt{} Netz skizzieren \pkt{} Schrägbild skizzieren}
 
 % ===================== Stufe: Netz erkennen =====================
-\Needspace*{0.16\textheight}\pfstufekopf{Netz erkennen}{\pfjahre{22}{18 \pkt{} 17 \pkt{} 16}}
+\Needspace*{0.16\textheight}\pfstufekopf{Netz erkennen}{\gpunkte[22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}
 % Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
 \begin{pfaufg}{}{1.}{}
 Stell es dir im Kopf vor und antworte, ohne zu rechnen.
@@ -110,7 +113,7 @@ Ein Becher hat die Form eines Zylinders ohne Deckel. Er ist h = 7,5 cm hoch und 
 
 % ===================== Stufe: Netz mit Maßen skizzieren =====================
 % Formel-Frage (einmal je Blatt, erste Stufe mit Formel; pruefung.md § 5)
-\Needspace*{0.16\textheight}\pfstufekopf{Netz skizzieren}{\pfjahre{23}{20 \pkt{} 19 \pkt{} 14}}\gfrage{Bevor du rechnest: Auf welcher Seite der Formelsammlung steht die Formel? Seite~\linie{12mm}}
+\Needspace*{0.16\textheight}\pfstufekopf{Netz skizzieren}{\gpunkte[23]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}\gfrage{Bevor du rechnest: Auf welcher Seite der Formelsammlung steht die Formel? Seite~\linie{12mm}}
 % Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
 \begin{pfaufg}{}{4.}{}
 Ein Prisma hat als Grundfläche ein gleichseitiges Dreieck mit 2 cm Seitenlänge und ist 5 cm hoch. Im Netz hängt ein Rechteck des Mantels an einer Seite des Dreiecks.
@@ -133,7 +136,7 @@ Auf einem Mast sitzt ein dreiseitiges Prisma. Seine drei Seitenflächen sind Rec
 \end{pfaufg}
 
 % ===================== Stufe: Körper im Schrägbild skizzieren =====================
-\Needspace*{0.16\textheight}\pfstufekopf{Schrägbild skizzieren}{\pfjahre{24}{15}}
+\Needspace*{0.16\textheight}\pfstufekopf{Schrägbild skizzieren}{\gpunkte[24]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}
 % Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
 \begin{pfaufg}{}{7.}{}
 Ein Kegel mit dem Radius 3 cm und der Höhe 8 cm steht aufrecht in einer Schachtel.

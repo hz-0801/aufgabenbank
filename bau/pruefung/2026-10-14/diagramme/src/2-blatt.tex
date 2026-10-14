@@ -70,6 +70,9 @@
 \newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
 \newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
 \newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
 % v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
 \newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
 \newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
@@ -80,12 +83,12 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Diagramme}{DGH3}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Diagramme}{PS40-3}\pfseitevon
 \pfheftkopf{Diagramme}{}
 \pfstufenzeile{Winkel gesucht \pkt{} Kreisdiagramm zeichnen \pkt{} Säule ergänzen \pkt{} Aussagen prüfen \pkt{} falschen Eindruck erklären}
 
 % ===================== Stufe: Winkel berechnen und beschriften =====================
-\Needspace*{0.16\textheight}\pfstufekopf{Winkel gesucht}{\pfjahre{24 \pkt{} 22}{21 \pkt{} 17}}
+\Needspace*{0.16\textheight}\pfstufekopf{Winkel gesucht}{\gpunkte[24 22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}
 % Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
 \begin{pfaufg}{}{1.}{}
 Ein Sektor im Kreisdiagramm steht für einen Anteil. Wie viel Grad hat er? Der ganze Kreis hat 360°.
@@ -110,7 +113,7 @@ Familie Becker verbraucht am Tag etwa 480 Liter Leitungswasser: 1 Trinken und Ko
 \end{pfaufg}
 
 % ===================== Stufe: aus Prozent darstellen =====================
-\gkopfvor{\pfstufekopf{Kreisdiagramm zeichnen}{\pfjahre{25}{18}}}
+\gkopfvor{\pfstufekopf{Kreisdiagramm zeichnen}{\gpunkte[25]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}}
 % kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
 % 2025-OS-K6b-m1 (Original 2025-OS-K6b, Schwere II, rang 1; herausgelöste Fassung: keine)
 \begin{pfaufg}{nach~P10\\’25~\pkt{}~6b}{4.}{}
@@ -121,7 +124,7 @@ In einer Kita arbeiten 11 Erziehende. Sie sind so alt (in Jahren): 52, 36, 61, 2
 \end{pfaufg}
 
 % ===================== Stufe: ergänzen =====================
-\gkopfvor{\pfstufekopf{Säule ergänzen}{\pfjahre{26 \pkt{} 23}{20 \pkt{} 18}}\gfrage{Wie viel ist ein Schritt an der Achse wert, von einer Linie zur nächsten? Steht dort keine Zahl, hilft eine bekannte Säule: ihr Wert durch ihre Schritte.}}
+\gkopfvor{\pfstufekopf{Säule ergänzen}{\gpunkte[26 23]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}\gfrage{Wie viel ist ein Schritt an der Achse wert, von einer Linie zur nächsten? Steht dort keine Zahl, hilft eine bekannte Säule: ihr Wert durch ihre Schritte.}}
 % 2026-FOR-K3d-m1 (Original 2026-FOR-K3d, Schwere I, rang 1; herausgelöste Fassung: keine)
 \begin{pfaufg}{nach~P10\\’26~\pkt{}~3d}{5.}{}
 Eine Tankstelle hat eine Woche lang jeden Tag um 18 Uhr den Benzinpreis notiert. Preise in € pro Liter: Mo 1,81, Di 1,82, Mi 1,80, Do 1,83, Fr 1,89, Sa 1,86, So 1,90. Timo hat die Preise in ein Säulendiagramm übertragen. Die Säule für Sonntag fehlt noch. Zeichne sie ein.
@@ -136,7 +139,7 @@ Die fünf Sprachen mit den meisten Muttersprachlern (Anzahl in Millionen): Arabi
 \end{pfaufg}
 
 % ===================== Stufe: Aussage prüfen =====================
-\gkopfvor{\pfstufekopf{Aussagen prüfen}{\pfjahre{22}{19 \pkt{} 18}}}
+\gkopfvor{\pfstufekopf{Aussagen prüfen}{\gpunkte[22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}}
 % kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
 % 2022-OS-K4c-m1 (Original 2022-OS-K4c, Schwere II, rang 1; herausgelöste Fassung: keine)
 \begin{pfaufg}{nach~P10\\’22~\pkt{}~4c}{7.}{}
@@ -146,7 +149,7 @@ Von 2017 bis 2021 wurden jedes Jahr 1 500 Jugendliche gefragt, wie oft sie Büch
 \end{pfaufg}
 
 % ===================== Stufe: falschen Eindruck erklären =====================
-\gkopfvor{\pfstufekopf{falschen Eindruck erklären}{\pfjahre{26}{14}}}
+\gkopfvor{\pfstufekopf{falschen Eindruck erklären}{\gpunkte[26]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}}
 % kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
 % 2026-FOR-K3e-m1 (Original 2026-FOR-K3e, Schwere III, rang 1; herausgelöste Fassung: keine)
 \begin{pfaufg}{nach~P10\\’26~\pkt{}~3e}{8.}{FOR}
