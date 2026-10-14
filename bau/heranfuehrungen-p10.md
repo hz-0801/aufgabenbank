@@ -112,7 +112,7 @@ schickt schon dorthin.
 | Gerade zeichnen | Welche sind linear? m und n einer linearen | TAL2/TAL3 | abgenommen | ja |
 | Gerade zeichnen | mit Formelsammlung: allgemeine Gleichung, m und n | Lehrer 13.10. (TAL3 Nr. 1) | Vorschlag | ja, als Frage (Formelsammlungs-Stups des Blatts) |
 | Gleichung aus zwei Punkten | Steigung aus zwei Punkten: Formelsammlung, Seite ___ | TAL2/TAL3 | Daten | ja (entfällt auf dem Blatt: einmal je Blatt) |
-| Punkt auf der Geraden prüfen | Name statt „Punktprobe“ | Lehrer 13.10. | abgenommen | ja (Anzeigename) |
+| Punkt auf der Geraden prüfen | Name statt „Punktprobe“ | Lehrer 13.10. | abgelöst 14.10.: wieder „Punktprobe“ (plan.md § 10, 14.10. e) | ja (Anzeigename) |
 | Nullstelle gesucht | x- und y-Achsenpunkt (gegen „n ist die Nullstelle“) | Agent Runde 13.10. | Vorschlag, wieder heraus (Seite mehr) | nein |
 | Gleichung aus Text | Anfangswert oder Änderung je Schritt? … (m oder n) | TAL2/TAL3 Nr. 10 | abgenommen im Gedanken; Lehrer: Fassung zu lang | gekürzt: „Welche Zahl ist m, welche n?“ |
 
