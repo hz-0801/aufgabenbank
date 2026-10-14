@@ -5697,6 +5697,8 @@ def p_frage_tex(f, nr):
         else:
             rechts = '\\linie{30mm}' + (' ' + tx(f['zusatz']) if f['zusatz'] else '')
         buchstabe = ' ' if len(f['faelle']) == 1 else f'\\makebox[\\mbpfteil][l]{{\\textbf{{{b})}}}}'   # ein Fall: ohne Buchstaben
+        if f.get('skizze_tex') and len(f['faelle']) == 1:
+            lage = ''   # v0.13: die Skizze zeigt den Fall; keine Beschreibung daneben (gemeinsam.md „Kein Bedientext“, 14.10.)
         zeilen.append(f'\\par\\noindent{buchstabe}{tx(lage)}\\hfill{rechts}')
     if f.get('skizze_tex'):
         # Einstieg an derselben Figur wie das Original (pruefung.md § 5 „Einstieg = erster Schritt“): Skizze links,
