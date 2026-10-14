@@ -1,0 +1,57 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (Bauregel 6.4)
+\makeatother
+% Rechenraum als Karo (Bauregel 6.9): n Rechenschritte = n mal 10 mm
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} mehr]{Grundwert}{PS20-3}\pfseitevon
+\pfheftkopf{Grundwert}{mehr}
+\pfstufenzeile{Prozentwert \pkt{} Wert nach Erhöhung}
+% 2021-OS-B1c-m1 (Schwere I, rang 12)
+\begin{pfaufg}{nach~P10\\’21~\pkt{}~1c}{1.}{}
+Ein Fahrrad kostet 450 €. Wer bar bezahlt, bekommt 10 \% Rabatt. Kreuze an, wie viel Euro man dabei spart:
+\par\smallskip\noindent\pfkreuz{A}{90 €}\pfkreuz{B}{405 €}\pfkreuz{C}{45 €}\pfkreuz{D}{495 €.}
+\fusshilfe{\mbox{1:~45 €}}
+\end{pfaufg}
+% 2019-OS-K5a-m1 (Schwere I, rang 15)
+\begin{pfaufg}{nach~P10\\’19~\pkt{}~5a}{2.}{}
+In einer Studie wurden dieselben 1 500 Jugendlichen über mehrere Jahre befragt. 2014 hatten 64 \% von ihnen ein Smartphone, 2017 waren es 88 \%. Berechne, um wie viele Jugendliche die Zahl der Smartphone-Besitzer in dieser Zeit gestiegen ist.
+\karo{2}
+\fusshilfe{\mbox{2:~360 Jugendliche}}
+\end{pfaufg}
+% 2017-OS-B1b-m1 (Schwere I, rang 17)
+\begin{pfaufg}{nach~P10\\’17~\pkt{}~1b}{3.}{}
+Für eine Bohrmaschine zum Preis von 140,00 € gibt es an der Kasse 15 \% Nachlass. Gib an, wie viel Euro der Nachlass beträgt.
+\karo{2}
+\fusshilfe{\mbox{3:~21 €}}
+\end{pfaufg}
+% 2014-OS-B1a-m1 (Schwere I, rang 19)
+\begin{pfaufg}{nach~P10\\’14~\pkt{}~1a}{4.}{}
+Bestimme 17 \% von 40 €.
+\karo{2}
+\fusshilfe{\mbox{4:~6,80 €}}
+\end{pfaufg}
+% 2015-OS-K2a-m1 (Schwere II, rang 27)
+\begin{pfaufg}{nach~P10\\’15~\pkt{}~2a}{5.}{}
+Für den Berliner Fernsehturm gelten diese Eintrittspreise: Erwachsene zahlen 14,00 €, Kinder von 3 bis 16 Jahren 9,50 €. In den Wintermonaten gibt es auf den Eintritt 10 \% Rabatt (Rabatt heißt Preisnachlass). Im Winter kommen Vater und Mutter mit ihrem 12-jährigen Sohn und dem Großvater zum Fernsehturm und nutzen den Winterrabatt. Entscheide für jeden Term, ob er den Rabatt richtig berechnet. Kreuze richtig oder falsch an:
+\par\smallskip\noindent{\small\itshape Skizze: Ankreuztabelle: drei Terme, Spalten richtig/falsch}\par
+\par\smallskip\noindent\pfkreuz{A}{$(2\cdot 14\,€ + 2\cdot 9{,}50\,€)\cdot\tfrac{10}{100}$}\pfkreuz{B}{$\tfrac{1}{10}\cdot(42\,€ + 9{,}50\,€)$}\pfkreuz{C}{$\tfrac{10\cdot(14\,€ + 14\,€ + 14\,€ + 9{,}50\,€)}{100}$}
+\fusshilfe{\mbox{5:~Term 3 richtig}}
+\end{pfaufg}
+% 2015-OS-K2b-m1 (Schwere II, rang 28)
+\begin{pfaufg}{nach~P10\\’15~\pkt{}~2b}{6.}{}
+Für den Berliner Fernsehturm gelten diese Eintrittspreise: Erwachsene zahlen 14,00 €, Kinder von 3 bis 16 Jahren 9,50 €. In den Wintermonaten gibt es auf den Eintritt 10 \% Rabatt (Rabatt heißt Preisnachlass). Im Winter kommen Vater und Mutter mit ihrem 12-jährigen Sohn und dem Großvater zum Fernsehturm und nutzen den Winterrabatt. Berechne den Betrag in Euro, den diese Familie insgesamt für den Eintritt bezahlt.
+\karo{2}
+\fusshilfe{\mbox{6:~46,35 €}}
+\end{pfaufg}
+\par\vfill\noindent{\scriptsize\color{mbgrau}Originale: P10 2021 \pkt{} 1c, P10 2019 \pkt{} 5a, P10 2017 \pkt{} 1b, P10 2014 \pkt{} 1a, P10 2015 \pkt{} 2a, P10 2015 \pkt{} 2b\par}
+\end{document}

@@ -1,0 +1,39 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (Bauregel 6.4)
+\makeatother
+% Rechenraum als Karo (Bauregel 6.9): n Rechenschritte = n mal 10 mm
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} mehr]{Seite im allgemeinen Dreieck, Sinussatz \pkt{} Lösungen}{PG70-2}\pfseitevon
+\pfheftkopf{Seite im allgemeinen Dreieck, Sinussatz}{Lösungen \pkt{} mehr}
+\begin{pfloesungb}{}
+\lzb{1.}{}{AC $\approx$ 118,8 m}{Sinussatz im Dreieck ACD: AC : sin $\delta$ = CD : sin $\gamma$ $\Rightarrow$ AC = 10,0 · sin 56° : sin 4° $\approx$ 118,8 m}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{2.}{}{BC $\approx$ 7,50 m; 8,50 · (4,90 + 7,50) $\approx$ 105 m²}{BC = 4,90 · sin 64,4° : sin 36,1° $\approx$ 7,50 m; 8,50 · (4,90 + 7,50) $\approx$ 105 m²}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{3.}{}{BD $\approx$ 6,16 cm}{Winkel bei D: 180° $-$ 118° $-$ 34° = 28°; BD = 3,9 · sin 118° : sin 34° $\approx$ 6,16 cm}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{4.}{}{Weg: JR + 2400 $\approx$ 5390 m}{JR = 2600 · sin 65° : sin 52° $\approx$ 2990 m; Weg: JR + 2400 $\approx$ 5390 m}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{5.}{}{BC $\approx$ 1782 m; Aussage falsch (DC = 1950 m)}{$\angle$ABD = 90° $-$ 53° = 37°; $\angle$DBC = 112° $-$ 37° = 75°; BC = 1950 · sin 62° : sin 75° $\approx$ 1782 m; Aussage falsch (DC = 1950 m)}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{6.}{}{DP $\approx$ 2,9 m}{Winkel bei D: 180° $-$ 112° $-$ 18° = 50°; DE = 9 · sin 112° : sin 50° $\approx$ 10,89 m; DP = DE $-$ 8 $\approx$ 2,9 m}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{7.}{}{AD $\approx$ 10,5 m}{$\angle$ACB = 90° $-$ 65° = 25°; $\angle$ACD = 84° $-$ 25° = 59°; AD = 12 · sin 59° : sin 78° $\approx$ 10,5 m}
+\end{pfloesungb}
+\end{document}

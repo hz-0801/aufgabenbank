@@ -1,0 +1,42 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (Bauregel 6.4)
+\makeatother
+% Rechenraum als Karo (Bauregel 6.9): n Rechenschritte = n mal 10 mm
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} mehr]{Volumen und Oberfläche \pkt{} Lösungen}{PG90-5}\pfseitevon
+\pfheftkopf{Volumen und Oberfläche}{Lösungen \pkt{} mehr}
+\begin{pfloesungb}{}
+\lzb{1.}{}{64 cm³}{64 cm³}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{2.}{}{V $\approx$ 1219,2 m³}{V = $\pi$ · 4,2² · 22,0 $\approx$ 1219,2 m³}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{3.}{}{V $\approx$ 272,4 cm³}{V = $\pi$ · 3,4² · 7,5 $\approx$ 272,4 cm³}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{4.}{}{V $\approx$ 240,5 dm³}{V = $\pi$ · 2,7² · 10,5 $\approx$ 240,5 dm³}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{5.}{}{M $\approx$ 355,3 m²}{M = $\pi$ · 5,8 · 19,5 $\approx$ 355,3 m²}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{6.}{}{V = 504000 cm³}{V = 3360 · 150 = 504000 cm³}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{7.}{}{nein, Volumen verneunfacht sich: 240,5 l statt 2164,3 l}{nein, Volumen verneunfacht sich: 240,5 l statt 2164,3 l}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{8.}{}{V $\approx$ 696,9 cm³}{V = $\tfrac{4}{3}$ · $\pi$ · 5,5³ $\approx$ 696,9 cm³}
+\end{pfloesungb}
+\end{document}

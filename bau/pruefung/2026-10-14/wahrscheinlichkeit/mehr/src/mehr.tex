@@ -1,0 +1,162 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (Bauregel 6.4)
+\makeatother
+% Rechenraum als Karo (Bauregel 6.9): n Rechenschritte = n mal 10 mm
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} mehr]{Baumdiagramm und Pfadregeln}{PS50-2}\pfseitevon
+\pfheftkopf{Baumdiagramm und Pfadregeln}{mehr}
+\pfstufenzeile{Ergebnisse aufzählen \pkt{} Wahrscheinlichkeit angeben \pkt{} Zufallsgerät entwerfen \pkt{} Baum ergänzen \pkt{} Pfadregel \pkt{} ohne Zurücklegen}
+% 2020-OS-K6a-m1 (Schwere I, rang 4)
+\begin{pfaufg}{nach~P10\\’20~\pkt{}~6a}{1.}{}
+Wirft man einen Würfel zweimal hintereinander, gibt es 36 verschiedene Augenpaare. Dabei zählen zum Beispiel (3,1) und (1,3) als verschiedene Ergebnisse. Schreib alle Augenpaare auf, bei denen der zweite Wurf eine 4 zeigt. Ermittle die Wahrscheinlichkeit, im zweiten Wurf eine 4 zu würfeln, und gib sie in Prozent an.
+\karo{3}
+\fusshilfe{\mbox{1:~16,7 \%}}
+\end{pfaufg}
+% 2019-OS-K6a-m1 (Schwere I, rang 5)
+\begin{pfaufg}{nach~P10\\’19~\pkt{}~6a}{2.}{}
+In einer Kiste liegen 24 Buntstifte: 9 grüne, 5 rote, 4 gelbe und 6 blaue. Paul greift blind einen Stift heraus und legt ihn danach zurück. Gib die Wahrscheinlichkeit an, dass er einen gelben Stift gegriffen hat.
+\karo{2}
+\fusshilfe{\mbox{2:~16,7 \%}}
+\end{pfaufg}
+% 2017-OS-B1f-m1 (Schwere I, rang 6)
+\begin{pfaufg}{nach~P10\\’17~\pkt{}~1f}{3.}{}
+Drei gleiche Münzen werden zusammen geworfen. Man unterscheidet, ob Zahl (Z) oder Wappen (W) oben liegt. Gib an, wie viele Ergebnisse möglich sind.
+\karo{2}
+\fusshilfe{\mbox{3:~8 Ergebnisse (ZZZ, ZZW, ZWZ, ZWW, WZZ, WZW, WWZ, WWW)}}
+\end{pfaufg}
+% 2017-OS-K6a-m1 (Schwere I, rang 7)
+\begin{pfaufg}{nach~P10\\’17~\pkt{}~6a}{4.}{}
+An einem Zahlenschloss lässt sich jeder der drei Ringe auf eine Ziffer von 0 bis 7 stellen. Jan stellt die ersten beiden Ringe richtig ein. Die Ziffer für den dritten Ring weiß er nicht mehr. Gib als Bruch und in Prozent an, mit welcher Wahrscheinlichkeit er sie beim ersten Versuch trifft.
+\karo{2}
+\fusshilfe{\mbox{4:~12,5 \%}}
+\end{pfaufg}
+% 2016-OS-B1f-m1 (Schwere I, rang 8)
+\begin{pfaufg}{nach~P10\\’16~\pkt{}~1f}{5.}{}
+Von 50 Energiesparlampen in einer Kiste sind 3 defekt. Eine Lampe wird herausgenommen. Gib die Wahrscheinlichkeit an, dass sie defekt ist.
+\karo{2}
+\fusshilfe{\mbox{5:~6 \%}}
+\end{pfaufg}
+% 2016-OS-K5c-m1 (Schwere I, rang 9)
+\begin{pfaufg}{nach~P10\\’16~\pkt{}~5c}{6.}{}
+Mia und Lukas verkaufen Lose mit den Nummern 101 bis 700, jede Nummer genau einmal. Gezogen wird die Nummer 244. Den Hauptgewinn bekommt das Los 244. Einen Trostpreis bekommt jedes Los, das auf 44 endet, aber nicht die 244 ist. Mit einem einzigen Los gewinnt man den Hauptgewinn mit der Wahrscheinlichkeit $\tfrac{1}{600}$. Begründe das.
+\par\smallskip\noindent{\small\itshape Skizze: Gewinnplan-Kasten: Hauptgewinn: Los-Nr. 244; Trostpreis: Endung 44 (nicht 244)}\par
+\karo{3}
+\fusshilfe{\mbox{6:~$\tfrac{1}{600}$}}
+\end{pfaufg}
+% 2018-OS-B1j-m1 (Schwere I, rang 9)
+\begin{pfaufg}{nach~P10\\’18~\pkt{}~1j}{7.}{}
+Ein Glücksrad hat 10 gleich große Felder in den Farben Rot, Grün und Weiß. Mit 30 \% Wahrscheinlichkeit bleibt es bei einmaligem Drehen auf Rot stehen. Gib an, wie viele Felder rot sind.
+\karo{2}
+\fusshilfe{\mbox{7:~3 rote Felder}}
+\end{pfaufg}
+% 2014-OS-K6b-m1 (Schwere I, rang 10)
+\begin{pfaufg}{nach~P10\\’14~\pkt{}~6b}{8.}{}
+Für ein Kinderfest hat Pauls Vater ein Glücksrad gebaut. In einer Spielrunde wird es zweimal nacheinander gedreht. Alle Felder sind gleich groß und werden gleich wahrscheinlich getroffen. Trag im Baumdiagramm alle fehlenden Wahrscheinlichkeiten ein.
+\par\smallskip\noindent{\small\itshape Skizze: Baumdiagramm (Stufen: 1. Drehung | 2. Drehung): A: leer; B: leer; C: $\tfrac{3}{10}$; A>A, A>B, A>C, B>A, B>B, B>C, C>A, C>B, C>C: leer}\par
+\karo{3}
+\fusshilfe{\mbox{8:~2. Stufe an jedem Ast: A 4/10, B 3/10, C $\tfrac{3}{10}$}}
+\end{pfaufg}
+% 2015-OS-B1a-m1 (Schwere I, rang 10)
+\begin{pfaufg}{nach~P10\\’15~\pkt{}~1a}{9.}{}
+In jedem der drei Töpfe liegen acht Kugeln. Die Wahrscheinlichkeit, blind eine weiße Kugel zu ziehen, soll 25 \% sein. Kreuze an, aus welchem Topf gezogen werden muss: Topf 1:
+\par\smallskip\noindent{\small\itshape Skizze: Gefäße: drei Töpfe nebeneinander mit Ankreuzfeld; Topf 1: 4 weiß, 4 grau; Topf 2: 2 weiß, 6 grau; Topf 3: 6 weiß, 2 grau}\par
+\par\smallskip\noindent\pfkreuz{A}{4 weiße, 4 graue Kugeln}\pfkreuz{B}{Topf 2: 2 weiße, 6 graue Kugeln}\pfkreuz{C}{Topf 3: 6 weiße, 2 graue Kugeln}
+\fusshilfe{\mbox{9:~25 \%}}
+\end{pfaufg}
+% 2014-OS-B1b-m1 (Schwere I, rang 11)
+\begin{pfaufg}{nach~P10\\’14~\pkt{}~1b}{10.}{}
+In einer Lostrommel liegen 90 Nieten und 30 Gewinnlose. Gib die Wahrscheinlichkeit P(Gewinn) an.
+\karo{2}
+\fusshilfe{\mbox{10:~25 \%}}
+\end{pfaufg}
+% 2020-OS-K6b-m1 (Schwere II, rang 11)
+\begin{pfaufg}{nach~P10\\’20~\pkt{}~6b}{11.}{}
+Wirft man einen Würfel zweimal hintereinander, gibt es 36 verschiedene Augenpaare. Dabei zählen zum Beispiel (3,1) und (1,3) als verschiedene Ergebnisse. Max sagt: „Zwei gleiche Augenzahlen zu werfen ist wahrscheinlicher, als im ersten Wurf eine 5 zu werfen.“ Kreuze an:
+\par\smallskip\noindent\pfkreuz{A}{Max hat recht}\pfkreuz{B}{Max hat nicht recht. Begründe deine Entscheidung.}
+\fusshilfe{\mbox{11:~0,167}}
+\end{pfaufg}
+% 2014-OS-B1d-m1 (Schwere I, rang 12)
+\begin{pfaufg}{nach~P10\\’14~\pkt{}~1d}{12.}{}
+Ein Spielwürfel wird einmal geworfen. Gib die Wahrscheinlichkeit an, dass weder eine 2 noch eine 5 fällt.
+\karo{2}
+\fusshilfe{\mbox{12:~0,67}}
+\end{pfaufg}
+% 2019-OS-B1g-m1 (Schwere II, rang 12)
+\begin{pfaufg}{nach~P10\\’19~\pkt{}~1g}{13.}{}
+In einem Gefäß liegen schwarze und weiße Kugeln. Das Baumdiagramm zeigt, mit welcher Wahrscheinlichkeit man eine schwarze oder eine weiße Kugel zieht. Zeichne die fehlenden weißen Kugeln in das Gefäß.
+\par\smallskip\noindent{\small\itshape Skizze: Gefäß: 6 schwarze Kugeln, Platz für weitere; daneben Baumdiagramm (eine Stufe): schwarz: $\tfrac{3}{5}$; weiß: $\tfrac{2}{5}$}\par
+\karo{2}
+\fusshilfe{\mbox{13:~4 weiße Kugeln}}
+\end{pfaufg}
+% 2014-OS-K6a-m1 (Schwere I, rang 13)
+\begin{pfaufg}{nach~P10\\’14~\pkt{}~6a}{14.}{}
+Für ein Kinderfest hat Pauls Vater ein Glücksrad gebaut. In einer Spielrunde wird es zweimal nacheinander gedreht. Alle Felder sind gleich groß und werden gleich wahrscheinlich getroffen. Ermittle die Wahrscheinlichkeit, dass der Zeiger auf ein B zeigt. Gib das Ergebnis als Bruch und in Prozent an.
+\par\smallskip\noindent{\small\itshape Skizze: Glücksrad: 10 gleich große Felder, im Uhrzeigersinn ab 12 Uhr: A, B, C, A, B, A, C, A, B, C; Zeiger oben}\par
+\karo{3}
+\fusshilfe{\mbox{14:~$\tfrac{3}{10}$; 30 \%}}
+\end{pfaufg}
+% 2019-OS-K6b-m1 (Schwere II, rang 13)
+\begin{pfaufg}{nach~P10\\’19~\pkt{}~6b}{15.}{}
+In einer Kiste liegen 24 Buntstifte: 9 grüne, 5 rote, 4 gelbe und 6 blaue. Marie nimmt aus der vollen Kiste blind nacheinander drei Stifte heraus und legt keinen zurück. Ergänze im Baumdiagramm die Wahrscheinlichkeiten an den zwei leeren Stellen. Entscheide für den fett gezeichneten Pfad, ob die Aussagen wahr oder falsch sind, und kreuze an: „Marie zieht drei Stifte mit verschiedenen Farben.“ / „Marie legt jeden Stift nach dem Ziehen zurück.“ / „Der fette Pfad hat eine Wahrscheinlichkeit unter 1 \%.“
+\par\smallskip\noindent{\small\itshape Skizze: Baumdiagramm (Stufen: 1. Stift | 2. Stift | 3. Stift; Äste rot, nicht rot): rot: $\tfrac{5}{24}$; nicht rot: leer; rot>rot: $\tfrac{4}{23}$; rot>rot>rot: $\tfrac{3}{22}$ (Pfad fett); nicht rot>rot>rot: leer; übrige Äste ohne Eintrag; darunter Ankreuztabelle: drei Aussagen, Spalten wahr | falsch}\par
+\karo{4}
+\fusshilfe{\mbox{15:~nicht rot: $\tfrac{19}{24}$; nicht rot > rot > rot: $\tfrac{4}{22}$; 0,49 \%)}}
+\end{pfaufg}
+% 2015-OS-K7d-m1 (Schwere II, rang 14)
+\begin{pfaufg}{nach~P10\\’15~\pkt{}~7d}{16.}{}
+Beim Elfmetertraining stehen 13 Spieler bereit. Jeder schießt höchstens einmal; die Reihenfolge wird ausgelost. Die Fans wünschen sich, dass ihr Torjäger Ronny unter den ersten drei Schützen ist. Vervollständige das Baumdiagramm (R: Ronny schießt, nR: Ronny schießt nicht) und trag die fehlenden Wahrscheinlichkeiten ein. Berechne die Wahrscheinlichkeit, dass Ronny unter den ersten drei Schützen ist.
+\par\smallskip\noindent{\small\itshape Skizze: Baumdiagramm (Stufen: 1. Schütze | 2. Schütze | 3. Schütze; nur nR verzweigt weiter): R: $\tfrac{1}{13}$; nR: leer; nR>R: leer; nR>nR: $\tfrac{11}{12}$; nR>nR>R: leer; nR>nR>nR: leer}\par
+\karo{3}
+\fusshilfe{\mbox{16:~nR 12/13, nR>R 1/12, nR>nR>R 1/11, nR>nR>nR $\tfrac{10}{11}$; 0,23}}
+\end{pfaufg}
+% 2018-OS-K7b-m1 (Schwere II, rang 14)
+\begin{pfaufg}{nach~P10\\’18~\pkt{}~7b}{17.}{}
+Eva hat 40 Pfannkuchen gebacken: 37 mit Marmelade, 3 mit Senf; von außen sieht man die Füllung nicht. Tom nimmt sich zuerst zwei, beide mit Marmelade. Pia sagt: „Jetzt greift man mit der Wahrscheinlichkeit $\tfrac{3}{40}$ einen Senf-Pfannkuchen.“ Entscheide, ob Pia recht hat, und begründe.
+\karo{2}
+\fusshilfe{\mbox{17:~7,9 \%}}
+\end{pfaufg}
+% 2014-OS-K6c-m1 (Schwere II, rang 15)
+\begin{pfaufg}{nach~P10\\’14~\pkt{}~6c}{18.}{}
+Für ein Kinderfest hat Pauls Vater ein Glücksrad gebaut. In einer Spielrunde wird es zweimal nacheinander gedreht. Alle Felder sind gleich groß und werden gleich wahrscheinlich getroffen. Berechne die Wahrscheinlichkeit, dass der Zeiger bei beiden Drehungen auf denselben Buchstaben zeigt.
+\par\smallskip\noindent{\small\itshape Skizze: Glücksrad: 10 gleich große Felder, im Uhrzeigersinn ab 12 Uhr: A, B, C, A, B, A, C, A, B, C; Zeiger oben}\par
+\karo{2}
+\fusshilfe{\mbox{18:~0,34}}
+\end{pfaufg}
+% 2016-OS-K5d-m1 (Schwere III, rang 15)
+\begin{pfaufg}{nach~P10\\’16~\pkt{}~5d}{19.}{}
+Mia und Lukas verkaufen Lose mit den Nummern 101 bis 700, jede Nummer genau einmal. Gezogen wird die Nummer 244. Den Hauptgewinn bekommt das Los 244. Einen Trostpreis bekommt jedes Los, das auf 44 endet, aber nicht die 244 ist. Anne hat ein Los gekauft. Beim Öffnen sieht sie zuerst nur die letzte Ziffer: eine 4. Sie sagt: „Meine Chance auf einen Trostpreis liegt jetzt bei $\tfrac{5}{60}$.“ Hat Anne recht? Begründe.
+\par\smallskip\noindent{\small\itshape Skizze: Gewinnplan-Kasten: Hauptgewinn: Los-Nr. 244; Trostpreis: Endung 44 (nicht 244)}\par
+\karo{3}
+\fusshilfe{\mbox{19:~$\tfrac{5}{60}$}}
+\end{pfaufg}
+% 2020-OS-K6c-m1 (Schwere III, rang 16)
+\begin{pfaufg}{nach~P10\\’20~\pkt{}~6c}{20.}{}
+Wirft man einen Würfel zweimal hintereinander, gibt es 36 verschiedene Augenpaare. Dabei zählen zum Beispiel (3,1) und (1,3) als verschiedene Ergebnisse. Lisa und Max wollen ins Kino. Lisa würfelt dreimal hintereinander. Fällt dabei mindestens zweimal eine 4, bezahlt Max beide Karten. Vervollständige das Baumdiagramm. Berechne die Wahrscheinlichkeit, dass Max die Karten bezahlt.
+\par\smallskip\noindent{\small\itshape Skizze: Baumdiagramm (Stufen: 1. Wurf | 2. Wurf | 3. Wurf; Äste 4, keine 4): alle 14 Äste leer}\par
+\karo{3}
+\fusshilfe{\mbox{20:~7,4 \%}}
+\end{pfaufg}
+% 2019-OS-K6c-m1 (Schwere III, rang 17)
+\begin{pfaufg}{nach~P10\\’19~\pkt{}~6c}{21.}{}
+In einer Kiste liegen 24 Buntstifte: 9 grüne, 5 rote, 4 gelbe und 6 blaue. Marc sagt: „Zieht man ohne Zurücklegen drei Stifte aus der Kiste, ist es doppelt so wahrscheinlich, drei blaue zu bekommen wie drei gelbe.“ Zeige mit einer Rechnung, dass Marc sich irrt.
+\karo{4}
+\fusshilfe{\mbox{21:~0,99 \%; 0,20 \%; Behauptung falsch, es ist das 5-fache und nicht das Doppelte}}
+\end{pfaufg}
+% 2018-OS-K7c-m1 (Schwere III, rang 18)
+\begin{pfaufg}{nach~P10\\’18~\pkt{}~7c}{22.}{}
+Für ein anderes Fest backt Eva wieder 37 Pfannkuchen mit Marmelade (M) und 3 mit Senf (S). Der erste Gast nimmt blind nacheinander zwei Pfannkuchen. Er erwischt mindestens einen mit Senf: Nenne alle Ergebnisse, die dafür in Frage kommen. Ermittle die Wahrscheinlichkeit, dass beide Pfannkuchen des ersten Gastes Marmelade enthalten. Beschreibe in Worten das Ereignis E, dessen Wahrscheinlichkeit diese Rechnung angibt: $P(E) = \tfrac{3}{40}\cdot\tfrac{2}{39} + \tfrac{37}{40}\cdot\tfrac{36}{39}$
+\karo{7}
+\fusshilfe{\mbox{22:~S): 3 Ergebnisse; 0,854; 0,858}}
+\end{pfaufg}
+\par\vfill\noindent{\scriptsize\color{mbgrau}Originale: P10 2020 \pkt{} 6a, P10 2019 \pkt{} 6a, P10 2017 \pkt{} 1f, P10 2017 \pkt{} 6a, P10 2016 \pkt{} 1f, P10 2016 \pkt{} 5c, P10 2018 \pkt{} 1j, P10 2014 \pkt{} 6b, P10 2015 \pkt{} 1a, P10 2014 \pkt{} 1b, P10 2020 \pkt{} 6b, P10 2014 \pkt{} 1d, P10 2019 \pkt{} 1g, P10 2014 \pkt{} 6a, P10 2019 \pkt{} 6b, P10 2015 \pkt{} 7d, P10 2018 \pkt{} 7b, P10 2014 \pkt{} 6c, P10 2016 \pkt{} 5d, P10 2020 \pkt{} 6c, P10 2019 \pkt{} 6c, P10 2018 \pkt{} 7c\par}
+\end{document}

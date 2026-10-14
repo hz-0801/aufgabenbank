@@ -1,0 +1,30 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (Bauregel 6.4)
+\makeatother
+% Rechenraum als Karo (Bauregel 6.9): n Rechenschritte = n mal 10 mm
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} mehr]{Winkel ohne Rechnung bestimmen oder begründen \pkt{} Lösungen}{PG10-4}\pfseitevon
+\pfheftkopf{Winkel ohne Rechnung bestimmen oder begründen}{Lösungen \pkt{} mehr}
+\begin{pfloesungb}{}
+\lzb{1.}{}{$\alpha$ = 35° (parallele Seiten oben und unten)}{$\alpha$ = 180° $-$ 145° = 35° (parallele Seiten oben und unten)}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{2.}{}{$\gamma$ = 79,5°}{$\gamma$ = 180° $-$ 64,4° $-$ 36,1° = 79,5°}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{3.}{}{$\delta$ = 28°}{$\delta$ = 180° $-$ 118° $-$ 34° = 28°}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{4.}{}{$\delta$ = 56°}{$\sphericalangle$ACB = 90° $-$ 30° = 60° $\Rightarrow$ $\sphericalangle$ACD = 180° $-$ 60° = 120° $\Rightarrow$ $\delta$ = 180° $-$ 120° $-$ 4° = 56°}
+\end{pfloesungb}
+\end{document}

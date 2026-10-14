@@ -1,0 +1,36 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (Bauregel 6.4)
+\makeatother
+% Rechenraum als Karo (Bauregel 6.9): n Rechenschritte = n mal 10 mm
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} mehr]{Grundwert \pkt{} Lösungen}{PS20-3}\pfseitevon
+\pfheftkopf{Grundwert}{Lösungen \pkt{} mehr}
+\begin{pfloesungb}{}
+\lzb{1.}{}{45 €}{45 €}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{2.}{}{360 Jugendliche}{360 Jugendliche}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{3.}{}{21 €}{21 €}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{4.}{}{6,80 €}{6,80 €}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{5.}{}{Term 3 richtig}{Term 1 falsch; Term 2 richtig; Term 3 richtig}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{6.}{}{46,35 €}{46,35 €}
+\end{pfloesungb}
+\end{document}

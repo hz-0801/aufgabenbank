@@ -1,0 +1,111 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (Bauregel 6.4)
+\makeatother
+% Rechenraum als Karo (Bauregel 6.9): n Rechenschritte = n mal 10 mm
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} mehr]{Prozent}{PS10-2}\pfseitevon
+\pfheftkopf{Prozent}{mehr}
+\pfstufenzeile{Erhöhung und Veränderung in Prozent \pkt{} Prozent und Anteil umwandeln \pkt{} Prozentsatz \pkt{} Zinsen und Zinssatz \pkt{} Aussagen prüfen \pkt{} Zinseszins und Guthabentabelle}
+% 2021-OS-K5a-m1 (Schwere I, rang 13)
+\begin{pfaufg}{nach~P10\\’21~\pkt{}~5a}{1.}{}
+Das Säulendiagramm gibt an, wie viele Container (in Millionen) in den Jahren 2009 bis 2017 im Hamburger Hafen be- und entladen wurden. Berechne die Spannweite und den Durchschnitt (das arithmetische Mittel) dieser Containerzahlen. Berechne, um wie viel Prozent die Containerzahl von 2010 auf 2011 gestiegen ist.
+\par\smallskip\noindent{\small\itshape Skizze: Säulendiagramm, Container in Millionen: 2009: 6,6, 2010: 7,5, 2011: 8,6, 2012: 8,4, 2013: 9,1, 2014: 9,4, 2015: 8,4, 2016: 8,5, 2017: 9,1}\par
+\karo{4}
+\fusshilfe{\mbox{1:~Spannweite 2,8 Mio.; Mittel 8,4 Mio.; 14,7 \%}}
+\end{pfaufg}
+% 2020-OS-B1a-m1 (Schwere I, rang 14)
+\begin{pfaufg}{nach~P10\\’20~\pkt{}~1a}{2.}{}
+Ein Förster sagt: „Bei mir wachsen nur 7 \% der gepflanzten Bäume nicht an.“ Kreuze an, welche Aussage dasselbe bedeutet:
+\par\smallskip\noindent\pfkreuz{A}{Von 10 Bäumen wachsen 7 nicht an.}\pfkreuz{B}{Jeder siebte Baum wächst nicht an.}\pfkreuz{C}{Von 100 Bäumen wachsen 7 nicht an.}
+\fusshilfe{\mbox{2:~C}}
+\end{pfaufg}
+% 2018-OS-K7a-m1 (Schwere I, rang 16)
+\begin{pfaufg}{nach~P10\\’18~\pkt{}~7a}{3.}{}
+Für ein Fest backt Eva 40 Pfannkuchen: 37 füllt sie mit Marmelade, 3 mit Senf. Gib an, wie viel Prozent der Pfannkuchen eine Senffüllung haben.
+\karo{2}
+\fusshilfe{\mbox{3:~7,5 \%}}
+\end{pfaufg}
+% 2015-OS-B1e-m1 (Schwere I, rang 18)
+\begin{pfaufg}{nach~P10\\’15~\pkt{}~1e}{4.}{}
+Auf einem Konto liegen 600 €, die mit 3 \% im Jahr verzinst werden. Gib an, wie viel Euro Zinsen nach einem Jahr dazukommen.
+\karo{2}
+\fusshilfe{\mbox{4:~18 €}}
+\end{pfaufg}
+% 2014-OS-B1e-m1 (Schwere I, rang 20)
+\begin{pfaufg}{nach~P10\\’14~\pkt{}~1e}{5.}{}
+Auf einem Sparkonto liegen 5 000 €. Nach einem Jahr werden 135 € Zinsen gutgeschrieben. Bestimme den Zinssatz.
+\karo{2}
+\fusshilfe{\mbox{5:~2,7 \%}}
+\end{pfaufg}
+% 2014-OS-K3a-m1 (Schwere I, rang 21)
+\begin{pfaufg}{nach~P10\\’14~\pkt{}~3a}{6.}{}
+Lena zahlt seit ihrem 11. Geburtstag jedes Jahr an ihrem Geburtstag 300,00 € auf ein Sparbuch ein. Am 15. Geburtstag hält sie in einer Tabelle fest, wie sich ihr Guthaben entwickelt hat. Das Guthaben wird mit 3 \% pro Jahr verzinst. Weise dies anhand der Werte für das erste Jahr nach.
+\par\smallskip\noindent{\small\itshape Skizze: Tabelle (Spalten 11. bis 15. Geburtstag): Zinsen –, 9,00 €, 18,27 €, 27,82 €, 37,65 €; Einzahlung je 300,00 €; Guthaben 300,00 €, 609,00 €, 927,27 €, 1255,09 €, 1592,74 €}\par
+\karo{2}
+\fusshilfe{\mbox{6:~9,00 €}}
+\end{pfaufg}
+% 2020-OS-K2d-m1 (Schwere II, rang 22)
+\begin{pfaufg}{nach~P10\\’20~\pkt{}~2d}{7.}{}
+Das Säulendiagramm zeigt die Besucherzahlen eines Freibads an den Tagen der ersten Ferienwoche. Die beiden folgenden Aussagen sind richtig: „Die Besucherzahlen der ersten Ferienwoche haben eine Spannweite von 120.“ „Am Sonntag gab es ein Drittel mehr Besucher als am Mittwoch.“ Weise beide Aussagen rechnerisch nach.
+\par\smallskip\noindent{\small\itshape Skizze: Säulendiagramm Besucher je Wochentag: Mo 150, Di 120, Mi 180, Do 155, Fr 170, Sa 210, So 240}\par
+\karo{3}
+\fusshilfe{\mbox{7:~120; Sonntag}}
+\end{pfaufg}
+% 2020-OS-K4c-m1 (Schwere II, rang 23)
+\begin{pfaufg}{nach~P10\\’20~\pkt{}~4c}{8.}{}
+Nach einer Studie lag der Wasserverbrauch 2018 bei durchschnittlich 48 Tausend Litern pro Person und Jahr; er soll jedes Jahr um 4 \% steigen. Diese Vorhersage beschreibt die Gleichung $y = 48\cdot 1{,}04^{x}$ ($x$: Jahre ab 2018, $y$: Verbrauch pro Person in Tausend Litern). Eine zweite Studie erwartet, dass der Verbrauch pro Person von 2018 bis 2030 insgesamt um etwa 50 \% zunimmt. Untersuche, ob beide Studien für 2030 denselben Verbrauch vorhersagen.
+\karo{3}
+\fusshilfe{\mbox{8:~76,8; 72,0 Tausend Liter}}
+\end{pfaufg}
+% 2019-OS-K5b-m1 (Schwere II, rang 24)
+\begin{pfaufg}{nach~P10\\’19~\pkt{}~5b}{9.}{}
+Die Tabelle gibt an, welcher Anteil der Mädchen und der Jungen ein Medium in der Freizeit nutzt (Mädchen / Jungen): Smartphone 97 \% / 92 \%, Fernseher 69 \% / 80 \%, Konsolenspiele 11 \% / 67 \%, Bücher 52 \% / 33 \%. Zu der Tabelle gibt es zwei Aussagen: „Vier Fünftel der Mädchen sehen in ihrer Freizeit fern.“ „Bei Jungen sind Konsolenspiele deutlich beliebter als bei Mädchen.“ Kreuze die falsche Aussage an. Berichtige diese Aussage.
+\par\smallskip\noindent{\small\itshape Skizze: Tabelle: Medium | Mädchen | Jungen; Smartphone | 97 \% | 92 \%; Fernseher | 69 \% | 80 \%; Konsolenspiele | 11 \% | 67 \%; Bücher | 52 \% | 33 \%}\par
+\karo{3}
+\fusshilfe{\mbox{9:~Aussage 1 falsch; Etwa zwei Drittel (69 \%) der Mädchen nutzen einen Fernseher (vier Fünftel gilt für die Jungen)}}
+\end{pfaufg}
+% 2017-OS-K2b-m1 (Schwere II, rang 25)
+\begin{pfaufg}{nach~P10\\’17~\pkt{}~2b}{10.}{}
+Von allen Kindern, die 2015 in Deutschland zur Welt kamen, waren 48,7 \% das erste Kind ihrer Mutter, 35,1 \% das zweite, 11,8 \% das dritte und 4,4 \% das vierte oder ein späteres. Eine Forscherin folgert daraus: „Über die Hälfte dieser Kinder hat mindestens ein Geschwisterkind.“ Gib eine Begründung für diese Folgerung an.
+\karo{2}
+\fusshilfe{\mbox{10:~51,3 \%}}
+\end{pfaufg}
+% 2016-OS-K2c-m1 (Schwere II, rang 26)
+\begin{pfaufg}{nach~P10\\’16~\pkt{}~2c}{11.}{}
+Das Säulendiagramm zeigt, wie viele Besucher ein Filmpark in den Jahren 2007 bis 2015 hatte. Berechne, um wie viel Prozent die Besucherzahl von 2009 auf 2010 zugenommen hat.
+\par\smallskip\noindent{\small\itshape Skizze: Säulendiagramm, Besucher in Tausend: 2007: 700, 2008: 520, 2009: 450, 2010: 540, 2011: 380, 2012: 360, 2013: 395, 2014: 410, 2015: 370}\par
+\karo{2}
+\fusshilfe{\mbox{11:~20 \%}}
+\end{pfaufg}
+% 2015-OS-K7c-m1 (Schwere II, rang 29)
+\begin{pfaufg}{nach~P10\\’15~\pkt{}~7c}{12.}{}
+In einer Saison der 2. Fußball-Bundesliga wurden 87 Elfmeter gepfiffen; 76 davon führten zu einem Tor. Berechne, wie viel Prozent der Elfmeter nicht verwandelt wurden. Zeichne den Anteil als Sektor in den vorbereiteten Kreis ein. Gib an, wie groß der Mittelpunktswinkel dieses Sektors ist.
+\par\smallskip\noindent{\small\itshape Skizze: leerer Kreis mit markiertem Mittelpunkt und einem eingezeichneten Radius als Startlinie}\par
+\karo{4}
+\fusshilfe{\mbox{12:~12,6 \%; 46° ab dem vorgegebenen Radius; 46°}}
+\end{pfaufg}
+% 2014-OS-K3b-m1 (Schwere II, rang 30)
+\begin{pfaufg}{nach~P10\\’14~\pkt{}~3b}{13.}{}
+Lena zahlt seit ihrem 11. Geburtstag jedes Jahr an ihrem Geburtstag 300,00 € auf ein Sparbuch ein. Am 15. Geburtstag hält sie in einer Tabelle fest, wie sich ihr Guthaben entwickelt hat. Vervollständige die fehlenden Einträge der Tabelle.
+\par\smallskip\noindent{\small\itshape Skizze: Tabelle (Spalten 11. bis 15. Geburtstag): Zinsen –, 9,00 €, 18,27 €, 27,82 €, leer; Einzahlung je 300,00 €; Guthaben 300,00 €, 609,00 €, 927,27 €, leer, 1592,74 €}\par
+\karo{3}
+\fusshilfe{\mbox{13:~1255,09 €; 37,65 €}}
+\end{pfaufg}
+% 2014-OS-K3c-m1 (Schwere II, rang 31)
+\begin{pfaufg}{nach~P10\\’14~\pkt{}~3c}{14.}{}
+Lena zahlt seit ihrem 11. Geburtstag jedes Jahr an ihrem Geburtstag 300,00 € auf ein Sparbuch ein. Am 15. Geburtstag hält sie in einer Tabelle fest, wie sich ihr Guthaben entwickelt hat. Bei einer anderen Bank legt Lena 1 500 € für 4 Jahre an; der Zinssatz liegt bei 2 \% pro Jahr. Berechne das Guthaben auf diesem Konto nach den 4 Jahren.
+\karo{2}
+\fusshilfe{\mbox{14:~1623,65 €}}
+\end{pfaufg}
+\par\vfill\noindent{\scriptsize\color{mbgrau}Originale: P10 2021 \pkt{} 5a, P10 2020 \pkt{} 1a, P10 2018 \pkt{} 7a, P10 2015 \pkt{} 1e, P10 2014 \pkt{} 1e, P10 2014 \pkt{} 3a, P10 2020 \pkt{} 2d, P10 2020 \pkt{} 4c, P10 2019 \pkt{} 5b, P10 2017 \pkt{} 2b, P10 2016 \pkt{} 2c, P10 2015 \pkt{} 7c, P10 2014 \pkt{} 3b, P10 2014 \pkt{} 3c\par}
+\end{document}

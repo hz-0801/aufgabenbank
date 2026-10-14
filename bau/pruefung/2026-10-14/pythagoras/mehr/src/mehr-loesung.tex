@@ -1,0 +1,36 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (Bauregel 6.4)
+\makeatother
+% Rechenraum als Karo (Bauregel 6.9): n Rechenschritte = n mal 10 mm
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} mehr]{Länge mit Pythagoras \pkt{} Lösungen}{PG50-3}\pfseitevon
+\pfheftkopf{Länge mit Pythagoras}{Lösungen \pkt{} mehr}
+\begin{pfloesungb}{}
+\lzb{1.}{}{B: z = √(x² + y²) (zweite Option)}{z = √(x² + y²) (zweite Option)}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{2.}{}{AB $\approx$ 31,8 m}{AB = √(15² + 28²) = √1009 $\approx$ 31,8 m}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{3.}{}{BC $\approx$ 10,9 m}{BC = √(12² $-$ 5²) = √119 $\approx$ 10,9 m}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{4.}{}{D: z² = x² + y² (vierte Option)}{z² = x² + y² (vierte Option)}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{5.}{}{Radius 2,9 m und Dachhöhe als Katheten, Mantellinie als Hypotenuse: s = √(2,9² + h²)}{Radius 2,9 m und Dachhöhe als Katheten, Mantellinie als Hypotenuse: s = √(2,9² + h²)}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{6.}{}{AD $\approx$ 677 m}{AD = √(860² $-$ 530²) = √458700 $\approx$ 677 m}
+\end{pfloesungb}
+\end{document}

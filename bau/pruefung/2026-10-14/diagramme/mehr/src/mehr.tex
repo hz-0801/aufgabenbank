@@ -1,0 +1,76 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (Bauregel 6.4)
+\makeatother
+% Rechenraum als Karo (Bauregel 6.9): n Rechenschritte = n mal 10 mm
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} mehr]{Diagramme}{PS40-3}\pfseitevon
+\pfheftkopf{Diagramme}{mehr}
+\pfstufenzeile{Winkel berechnen und beschriften \pkt{} aus Prozent darstellen \pkt{} ergänzen \pkt{} Aussage prüfen \pkt{} falschen Eindruck erklären}
+% 2021-OS-K5b-m1 (Schwere I, rang 4)
+\begin{pfaufg}{nach~P10\\’21~\pkt{}~5b}{1.}{}
+Die Tabelle gibt an, welche Güter im Hamburger Hafen be- und entladen werden (Anteile in \%): Schrott 14, Flüssigkeiten ?, Container 62, Getreide 9, Sonstiges 2, gesamt 100. Ergänze den fehlenden Anteil für Flüssigkeiten. Schreib an jeden Sektor des Kreisdiagramms das passende Gut.
+\par\smallskip\noindent{\small\itshape Skizze: Kreisdiagramm: Sektoren im Uhrzeigersinn ab 12 Uhr: [leer, gepunktet] 32,4°, [leer, schraffiert] 46,8°, [leer, dunkel] 50,4°, [leer] 7,2°, [leer, hellgrau] 223,2°; an jedem Sektor eine Schreiblinie}\par
+\karo{3}
+\fusshilfe{\mbox{1:~Flüssigkeiten 13 \%}}
+\end{pfaufg}
+% 2018-OS-K3c-m1 (Schwere II, rang 5)
+\begin{pfaufg}{nach~P10\\’18~\pkt{}~3c}{2.}{}
+Frauen wurden gefragt, wie oft sie Fleisch oder Wurst essen. Das Säulendiagramm zeigt die Anteile der Antworten. Stelle die Anteile aus dem Säulendiagramm als Streifendiagramm dar. Der vorgezeichnete Streifen ist 15 cm lang.
+\par\smallskip\noindent{\small\itshape Skizze: leerer Streifen: 15 cm lang, 1,5 cm hoch, auf Karopapier // Säulendiagramm (Achse beginnt bei 0), Anteil in \%: nie: 4, 1- bis 3-mal pro Woche: 12, 4- bis 6-mal pro Woche: 60, täglich: 24}\par
+\karo{2}
+\fusshilfe{\mbox{2:~Streifen mit Abschnitten 0,6 cm (nie), 1,8 cm (1–3-mal), 9,0 cm (4–6-mal), 3,6 cm (täglich)}}
+\end{pfaufg}
+% 2020-OS-K2a-m1 (Schwere I, rang 5)
+\begin{pfaufg}{nach~P10\\’20~\pkt{}~2a}{3.}{}
+Ein Schwimmbad zählt in der ersten Woche der Sommerferien jeden Tag seine Besucher. Am Donnerstag kamen 155 Besucher. Im Balkendiagramm fehlt der Balken für Donnerstag noch. Zeichne im Diagramm den Balken für Donnerstag ein.
+\par\smallskip\noindent{\small\itshape Skizze: Balkendiagramm (Achse beginnt bei 0), Anzahl der Besucher: Mo: 150, Di: 120, Mi: 180, Do: leer, Fr: 170, Sa: 210, So: 240}\par
+\karo{2}
+\fusshilfe{\mbox{3:~waagerechter Balken bei Do bis 155}}
+\end{pfaufg}
+% 2017-OS-K2c-m1 (Schwere II, rang 6)
+\begin{pfaufg}{nach~P10\\’17~\pkt{}~2c}{4.}{}
+Die Tabelle zeigt, als wievieltes Kind ihrer Mutter die Kinder des Jahrgangs 2015 in Deutschland zur Welt kamen (Anteil in Prozent): erstes Kind 48,7 \%, zweites Kind 35,1 \%, drittes Kind 11,8 \%, viertes oder weiteres Kind 4,4 \%. Im Kreisdiagramm ist einer dieser Anteile grau gefärbt. Schreib an den grauen Sektor, zu welchem Anteil er gehört. Berechne, wie groß der Mittelpunktswinkel für „drittes Kind“ sein muss. Zeichne diesen Sektor in den Kreis ein und beschrifte ihn.
+\par\smallskip\noindent{\small\itshape Skizze: Kreisdiagramm: Sektoren gegen den Uhrzeigersinn ab 9 Uhr: [grau, Pfeil mit drei Schreiblinien] 16°, [leer, ohne weitere Trennlinie] 344°}\par
+\karo{3}
+\fusshilfe{\mbox{4:~16°); 42°}}
+\end{pfaufg}
+% 2018-OS-K3a-m1 (Schwere II, rang 6)
+\begin{pfaufg}{nach~P10\\’18~\pkt{}~3a}{5.}{}
+1100 Jugendliche haben ihr Lieblingsessen genannt: Schnitzel 100, Pizza 130, Kartoffelgerichte 180, Gemüsegerichte 180, Fischgerichte 150; die Zahlen für Pasta und Salat fehlen noch. Die fünf bekannten Zahlen sind in einem Balkendiagramm dargestellt. Die Achse „Anzahl“ hat aber noch keine Einteilung, und die Balken sind nur mit A bis E bezeichnet. Trag an der Achse eine passende Einteilung ein. Schreib zu jedem Balken das passende Gericht.
+\par\smallskip\noindent{\small\itshape Skizze: Balkendiagramm (Achse ohne Einteilung), Länge in Kästchen: A: 7,5, B: 5, C: 6,5, D: 9, E: 9; neben jedem Balken eine Schreiblinie}\par
+\karo{4}
+\fusshilfe{\mbox{5:~7,5 Kästchen}}
+\end{pfaufg}
+% 2018-OS-K3d-m1 (Schwere II, rang 7)
+\begin{pfaufg}{nach~P10\\’18~\pkt{}~3d}{6.}{}
+Frauen wurden gefragt, wie oft sie Fleisch oder Wurst essen. Das Säulendiagramm zeigt die Anteile der Antworten. Prüfe die beiden Aussagen zum Säulendiagramm. Kreuze jeweils an, ob sie richtig, falsch oder nicht entscheidbar ist, und begründe. Aussage 1: „Nicht einmal die Hälfte der Frauen isst 4- bis 6-mal pro Woche Fleisch oder Wurst.“ Aussage 2: „1- bis 3-mal pro Woche Fleisch oder Wurst isst jede 12. Frau.“
+\par\smallskip\noindent{\small\itshape Skizze: Ankreuztabelle: zwei Aussagen, Spalten richtig | falsch | nicht entscheidbar, unter jeder Aussage eine Zeile Begründung // Säulendiagramm (Achse beginnt bei 0), Anteil in \%: nie: 4, 1- bis 3-mal pro Woche: 12, 4- bis 6-mal pro Woche: 60, täglich: 24}\par
+\karo{3}
+\fusshilfe{\mbox{6:~Aussage 1 falsch (60 \% sind mehr als die Hälfte); Aussage 2 falsch (jede 12. wäre etwa 8,3 \%, tatsächlich 12 \%)}}
+\end{pfaufg}
+% 2019-OS-K5c-m1 (Schwere III, rang 8)
+\begin{pfaufg}{nach~P10\\’19~\pkt{}~5c}{7.}{}
+2016 erschien ein Zeitungsartikel mit der Überschrift „Bücherlesen bald out?“. Darin heißt es: Die Buchhändler klagen, dass jedes Jahr dramatisch weniger Jugendliche Bücher lesen. Man fürchte, dass schon bald kein einziger Jugendlicher mehr zu einem Buch greift. Neben dem Text steht das Säulendiagramm. Schüler einer 10. Klasse halten zwei Aussagen des Artikels für falsch. Nenne eine davon und berichtige sie.
+\par\smallskip\noindent{\small\itshape Skizze: Säulendiagramm (Achse beginnt bei 35), Bücher lesende Jugendliche in \%: 2012: 47, 2013: 45, 2014: 44, 2015: 42, 2016: 40}\par
+\karo{3}
+\fusshilfe{\mbox{7:~z. B.: „extrem abnimmt“ ist falsch, die abgeschnittene Achse übertreibt – Rückgang von rund 47 \% auf 40 \% in 4 Jahren, also nur 7 Prozentpunkte; oder: „in wenigen Jahren kein Jugendlicher mehr“ ist falsch – 2016 lesen noch 40 \%, bei gleichem Tempo erst in rund 23 Jahren}}
+\end{pfaufg}
+% 2014-OS-K3d-m1 (Schwere III, rang 9)
+\begin{pfaufg}{nach~P10\\’14~\pkt{}~3d}{8.}{}
+Eine andere Bank zahlt nur 0,4 \% Zinsen im Jahr. Für ihre Werbung „Tolle Zinsen!“ zeichnet sie ein Säulendiagramm, in dem das Guthaben kräftig zu wachsen scheint. Erkläre, mit welchem Trick die Grafik die Entwicklung des Guthabens besser aussehen lässt, als sie ist.
+\par\smallskip\noindent{\small\itshape Skizze: Säulendiagramm (Achse beginnt bei 1040), Guthaben in Euro: nach einem Jahr: 1044, nach zwei Jahren: 1048, nach drei Jahren: 1052}\par
+\karo{3}
+\fusshilfe{\mbox{8:~echter Zuwachs je Jahr nur 4 €}}
+\end{pfaufg}
+\par\vfill\noindent{\scriptsize\color{mbgrau}Originale: P10 2021 \pkt{} 5b, P10 2018 \pkt{} 3c, P10 2020 \pkt{} 2a, P10 2017 \pkt{} 2c, P10 2018 \pkt{} 3a, P10 2018 \pkt{} 3d, P10 2019 \pkt{} 5c, P10 2014 \pkt{} 3d\par}
+\end{document}

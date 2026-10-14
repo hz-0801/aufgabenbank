@@ -1,0 +1,55 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (Bauregel 6.4)
+\makeatother
+% Rechenraum als Karo (Bauregel 6.9): n Rechenschritte = n mal 10 mm
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} mehr]{Netz und Schrägbild}{PG80-4}\pfseitevon
+\pfheftkopf{Netz und Schrägbild}{mehr}
+\pfstufenzeile{Netz erkennen \pkt{} Körper im Schrägbild skizzieren \pkt{} Netz mit Maßen skizzieren}
+% 2018-OS-B1i-m1 (Schwere I, rang 4)
+\begin{pfaufg}{nach~P10\\’18~\pkt{}~1i}{1.}{}
+Kreuze an, welcher Körper zu dem abgebildeten Netz gehört:
+\par\smallskip\noindent{\small\itshape Skizze: Netz: großes Dreieck, durch die Verbindungen der Seitenmitten in vier Dreiecke geteilt}\par
+\par\smallskip\noindent\pfkreuz{A}{Prisma}\pfkreuz{B}{Pyramide}\pfkreuz{C}{Quader}
+\fusshilfe{\mbox{1:~B}}
+\end{pfaufg}
+% 2017-OS-B1c-m1 (Schwere I, rang 5)
+\begin{pfaufg}{nach~P10\\’17~\pkt{}~1c}{2.}{}
+Die Abbildung zeigt einen Körper im Schrägbild. Kreuze an, welcher Körper es ist:
+\par\smallskip\noindent{\small\itshape Skizze: Schrägbild: liegendes dreiseitiges Prisma, Dreieck vorn, Kanten nach hinten, verdeckte Kanten gestrichelt}\par
+\par\smallskip\noindent\pfkreuz{A}{Pyramide}\pfkreuz{B}{Prisma}\pfkreuz{C}{Quader}
+\fusshilfe{\mbox{2:~Prisma}}
+\end{pfaufg}
+% 2015-OS-K6b-m1 (Schwere I, rang 7)
+\begin{pfaufg}{nach~P10\\’15~\pkt{}~6b}{3.}{}
+Mia hat ein Modell einer Pyramide mit quadratischer Grundfläche gebaut: Es ist 0,70 m hoch, die Grundkante ist 0,90 m lang. Zeichne in das Schrägbild die Höhe der Pyramide ein. Beschrifte die Skizze mit den gegebenen Maßen.
+\par\smallskip\noindent{\small\itshape Skizze: Schrägbild: quadratische Pyramide ohne Beschriftung, Grundfläche als Parallelogramm, verdeckte Kanten gestrichelt; nicht maßstabsgerecht}\par
+\karo{4}
+\fusshilfe{\mbox{3:~0,70 m; 0,90 m}}
+\end{pfaufg}
+% 2020-OS-K5a-m1 (Schwere II, rang 8)
+\begin{pfaufg}{nach~P10\\’20~\pkt{}~5a}{4.}{}
+Eine Schachtel hat die Form eines Prismas. Ihre Grundfläche ist ein Rechteck, 11 cm breit und 10 cm tief. Die vordere Kante ist 6 cm hoch, die hintere 14 cm; die Deckfläche verläuft schräg und ist etwa 14 cm breit. Die beiden Seitenflächen sind Trapeze mit zwei rechten Winkeln. Ein Netz ist schon begonnen. Vervollständige das Netz.
+\par\smallskip\noindent{\small\itshape Skizze: Schrägbild: Prisma mit Grundfläche 11 cm × 10 cm, vordere Kante 6 cm, hintere Kante 14 cm, schräge Deckfläche 14 cm; nicht maßstabsgerecht. Netz auf Karoraster (1 Kästchen = 1 cm): drei Rechtecke in einer Reihe, je 10 Kästchen hoch, von links 13,6 Kästchen (Deckfläche), 6 Kästchen (Vorderfläche) und 11 Kästchen breit (Grundfläche); auf der oberen Seite der Grundfläche steht ein Trapez mit den senkrechten Seiten 6 und 14 Kästchen}\par
+\karo{3}
+\fusshilfe{\mbox{4:~Rückfläche 14 cm × 10 cm rechts an die Grundfläche; zweites Trapez unten an die Grundfläche}}
+\end{pfaufg}
+% 2014-OS-K5b-m1 (Schwere II, rang 10)
+\begin{pfaufg}{nach~P10\\’14~\pkt{}~5b}{5.}{}
+Für ein Café wird eine Kühlvitrine in Form eines Prismas gebaut. Die Grundfläche ist ein gleichschenkliges Trapez mit den parallelen Seiten 108 cm und 84 cm, den Schenkeln 37 cm und dem Flächeninhalt 3 360 cm². Die Vitrine ist 150 cm hoch. Ein Netz der Vitrine ist schon begonnen. Vervollständige das Netz. Gib die fehlenden Maße a, b und d an.
+\par\smallskip\noindent{\small\itshape Skizze: Netz (begonnen): zwei senkrechte Rechtecke nebeneinander, links schmal (Breite b), rechts breiter (Breite c = 84 cm), gemeinsame Höhe d; am rechten Rechteck oben und unten je ein Trapez mit der kurzen Seite am Rechteck, die lange Seite des unteren Trapezes heißt a; daneben Felder a = …, b = …, c = 84 cm, d = …}\par
+\karo{3}
+\fusshilfe{\mbox{5:~Netz um Rechtecke 37 cm × 150 cm und 108 cm × 150 cm ergänzt; 150 cm}}
+\end{pfaufg}
+\par\vfill\noindent{\scriptsize\color{mbgrau}Originale: P10 2018 \pkt{} 1i, P10 2017 \pkt{} 1c, P10 2015 \pkt{} 6b, P10 2020 \pkt{} 5a, P10 2014 \pkt{} 5b\par}
+\end{document}

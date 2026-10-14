@@ -1,0 +1,48 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (Bauregel 6.4)
+\makeatother
+% Rechenraum als Karo (Bauregel 6.9): n Rechenschritte = n mal 10 mm
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} mehr]{Winkel ohne Rechnung bestimmen oder begründen}{PG10-4}\pfseitevon
+\pfheftkopf{Winkel ohne Rechnung bestimmen oder begründen}{mehr}
+\pfstufenzeile{Winkelsumme}
+% 2021-OS-B1i-m1 (Schwere I, rang 7)
+\begin{pfaufg}{nach~P10\\’21~\pkt{}~1i}{1.}{}
+Bestimme die Größe des fehlenden Winkels $\alpha$ im abgebildeten Trapez.
+\par\smallskip\noindent{\small\itshape Skizze: Viereck (Trapez): lange Seite oben, kurze Seite unten (parallel); Innenwinkel $\alpha$ oben links, 60° oben rechts, 145° unten links, 120° unten rechts; nicht maßstabsgerecht}\par
+\karo{2}
+\fusshilfe{\mbox{1:~35° (parallele Seiten oben und unten)}}
+\end{pfaufg}
+% 2017-OS-K4a-m1 (Schwere I, rang 8)
+\begin{pfaufg}{nach~P10\\’17~\pkt{}~4a}{2.}{}
+Ein Dachboden hat als Querschnitt das Dreieck ABC. Die Dachschräge AC ist 4,90 m lang. Der Winkel bei A beträgt 64,4°, der Winkel bei B 36,1°; der Winkel bei C heißt $\gamma$. Gib die Größe von $\gamma$ an.
+\par\smallskip\noindent{\small\itshape Skizze: Dreieck: A links unten, B rechts unten, C oben links von der Mitte; 64,4° bei A, 36,1° bei B, $\gamma$ bei C; nicht maßstabsgerecht}\par
+\karo{2}
+\fusshilfe{\mbox{2:~79,5°}}
+\end{pfaufg}
+% 2015-OS-K5b-m1 (Schwere I, rang 9)
+\begin{pfaufg}{nach~P10\\’15~\pkt{}~5b}{3.}{}
+Gegeben ist ein Drachenviereck ABCD. Die Diagonale AC ist senkrecht, die Diagonale BD waagerecht; beide schneiden sich in E im rechten Winkel. Im Dreieck ABD ist der Winkel bei A 118° und der Winkel bei B 34° groß; der Winkel bei D heißt $\delta$. Gib die Größe des Winkels $\delta$ an.
+\par\smallskip\noindent{\small\itshape Skizze: Viereck (Drachenviereck): C oben, A unten, D weit links, B rechts; Diagonalen AC und BD mit Schnittpunkt E, rechter Winkel bei E; Winkel $\angle$DAB = 118°, $\angle$ABD = 34°, $\delta$ = $\angle$ADB; nicht maßstabsgerecht}\par
+\karo{2}
+\fusshilfe{\mbox{3:~28°}}
+\end{pfaufg}
+% 2018-OS-K4b-m1 (Schwere II, rang 10)
+\begin{pfaufg}{nach~P10\\’18~\pkt{}~4b}{4.}{}
+Lea will die Höhe eines Berges bestimmen. Auf der Bergspitze C steht eine 10,0 m hohe Aussichtsplattform, ihre Spitze heißt D. Lea peilt von einem Punkt A aus, der 1,6 m über dem Boden liegt. Zur Bergspitze C misst sie gegenüber der Waagerechten 30°, zur Plattformspitze D 34°. B ist der Punkt senkrecht unter C auf der Höhe von A; bei B ist ein rechter Winkel. Der Winkel zwischen den beiden Peillinien heißt $\gamma$, der Winkel bei D im Dreieck ACD heißt $\delta$. Lea sagt: „Der Winkel $\delta$ ist 56° groß.“ Begründe, dass das stimmt. Gegeben: $\gamma$ = 4°.
+\par\smallskip\noindent{\small\itshape Skizze: Lageskizze: A links; waagerechte Linie AB nach rechts, rechter Winkel bei B; C senkrecht über B, D über C; Peillinien AC (30°) und AD (34°); $\gamma$ zwischen den Peillinien bei A, $\delta$ bei D; nicht maßstabsgerecht}\par
+\karo{4}
+\fusshilfe{\mbox{4:~56°}}
+\end{pfaufg}
+\par\vfill\noindent{\scriptsize\color{mbgrau}Originale: P10 2021 \pkt{} 1i, P10 2017 \pkt{} 4a, P10 2015 \pkt{} 5b, P10 2018 \pkt{} 4b\par}
+\end{document}

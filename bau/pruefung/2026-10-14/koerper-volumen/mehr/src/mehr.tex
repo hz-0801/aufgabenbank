@@ -1,0 +1,72 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (Bauregel 6.4)
+\makeatother
+% Rechenraum als Karo (Bauregel 6.9): n Rechenschritte = n mal 10 mm
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} mehr]{Volumen und Oberfläche}{PG90-5}\pfseitevon
+\pfheftkopf{Volumen und Oberfläche}{mehr}
+\pfstufenzeile{Volumen direkt \pkt{} Mantelfläche mit Kosten \pkt{} vergleichen und urteilen}
+% 2026-FOR-B1f-m1 (Schwere I, rang 1)
+\begin{pfaufg}{nach~P10\\’26~\pkt{}~1f}{1.}{}
+Ein Würfel hat die Kantenlänge a = 4 cm. Gib sein Volumen an.
+\karo{2}
+\fusshilfe{\mbox{1:~64 cm³}}
+\end{pfaufg}
+% 2026-FOR-K2a-m1 (Schwere I, rang 2)
+\begin{pfaufg}{nach~P10\\’26~\pkt{}~2a}{2.}{}
+Ein Turm besteht unten aus einem Zylinder, sein Dach ist ein Kegel. Bekannt sind: h = 22,0 m (Höhe des Zylinders), r = 4,2 m (Radius von Zylinder und Kegel) und s = 7,9 m (Mantellinie des Kegels). Berechne das Volumen des zylinderförmigen Teils.
+\par\smallskip\noindent{\small\itshape Skizze: Schrägbild: Zylinder mit Höhe h und Radius r, darauf ein Kegel mit Mantellinie s; Maße h = 22,0 m, r = 4,2 m, s = 7,9 m; nicht maßstabsgerecht}\par
+\karo{2}
+\fusshilfe{\mbox{2:~1219,2 m³}}
+\end{pfaufg}
+% 2022-OS-K2b-m1 (Schwere I, rang 4)
+\begin{pfaufg}{nach~P10\\’22~\pkt{}~2b}{3.}{}
+Ein Becher hat die Form eines Zylinders ohne Deckel. Er ist h = 7,5 cm hoch und hat den Radius r = 3,4 cm. Zeige, dass 250 ml Flüssigkeit in den Becher passen (1 cm³ = 1 ml).
+\par\smallskip\noindent{\small\itshape Skizze: Schrägbild: stehender Zylinder ohne Deckel, grau; nicht maßstabsgerecht}\par
+\karo{2}
+\fusshilfe{\mbox{3:~272,4 cm³}}
+\end{pfaufg}
+% 2021-OS-K4a-m1 (Schwere I, rang 10)
+\begin{pfaufg}{nach~P10\\’21~\pkt{}~4a}{4.}{}
+Herr Gärtner stellt eine Regentonne in Form eines Zylinders auf. Sie ist h = 105 cm hoch und hat den Radius r = 27 cm. Der Hersteller gibt an, dass etwa 240 Liter Wasser in die Tonne passen. Bestätige diese Angabe mit einer Rechnung (1 l = 1 dm³).
+\par\smallskip\noindent{\small\itshape Skizze: Schrägbild: Zylinder (Tonne mit zwei Reifen); nicht maßstabsgerecht}\par
+\karo{2}
+\fusshilfe{\mbox{4:~240,5 dm³}}
+\end{pfaufg}
+% 2018-OS-K6b-m1 (Schwere I, rang 11)
+\begin{pfaufg}{nach~P10\\’18~\pkt{}~6b}{5.}{}
+Ein runder Turm hat 5,8 m Durchmesser. Seine zylinderförmige Außenmauer ist 19,5 m hoch und soll renoviert werden. Berechne die Fläche der Außenmauer.
+\karo{2}
+\fusshilfe{\mbox{5:~355,3 m²}}
+\end{pfaufg}
+% 2014-OS-K5a-m1 (Schwere I, rang 12)
+\begin{pfaufg}{nach~P10\\’14~\pkt{}~5a}{6.}{}
+Für ein Café wird eine Kühlvitrine in Form eines Prismas gebaut. Die Grundfläche ist ein gleichschenkliges Trapez mit den parallelen Seiten 108 cm und 84 cm, den Schenkeln 37 cm und dem Flächeninhalt 3 360 cm². Die Vitrine ist 150 cm hoch. Berechne das Volumen der Vitrine.
+\par\smallskip\noindent{\small\itshape Skizze: Schrägbild: stehendes Prisma mit Trapez als Grund- und Deckfläche; Trapez oben 108, unten 84, Schenkel 37, Trapezhöhe h; Prismenhöhe 150 (Maße in cm); nicht maßstabsgerecht}\par
+\karo{2}
+\fusshilfe{\mbox{6:~504000 cm³}}
+\end{pfaufg}
+% 2021-OS-K4b-m1 (Schwere II, rang 13)
+\begin{pfaufg}{nach~P10\\’21~\pkt{}~4b}{7.}{}
+Herr Gärtner stellt eine Regentonne in Form eines Zylinders auf. Sie ist h = 105 cm hoch und hat den Radius r = 27 cm. Herr Gärtner meint: „Eine Tonne mit dreifachem Radius würde genau dreimal so viel Wasser fassen.“ Entscheide, ob das stimmt. Begründe deine Entscheidung.
+\karo{2}
+\fusshilfe{\mbox{7:~nein, Volumen verneunfacht sich: 240,5 l statt 2164,3 l}}
+\end{pfaufg}
+% 2016-OS-K3c-m1 (Schwere II, rang 14)
+\begin{pfaufg}{nach~P10\\’16~\pkt{}~3c}{8.}{}
+Eine Kugel zum Kugelstoßen hat einen Durchmesser von 11 cm. Berechne ihr Volumen.
+\karo{2}
+\fusshilfe{\mbox{8:~696,9 cm³}}
+\end{pfaufg}
+\par\vfill\noindent{\scriptsize\color{mbgrau}Originale: P10 2026 \pkt{} 1f, P10 2026 \pkt{} 2a, P10 2022 \pkt{} 2b, P10 2021 \pkt{} 4a, P10 2018 \pkt{} 6b, P10 2014 \pkt{} 5a, P10 2021 \pkt{} 4b, P10 2016 \pkt{} 3c\par}
+\end{document}

@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""originalneu.py v0.1 – Prüfstein „Original neu“ (pruefung.md § 4) für ein
+"""originalneu.py v0.2 – „Original neu“ im Layout der Blätter (v0.2, 14.10.2026, plan.md § 10, 14.10. g; Ausgabe
+aufgabenbank-privat bau/original-neu/<heft>/, blatt.pdf und loesung.pdf); v0.1 mit --form alt:
+Prüfstein „Original neu“ (pruefung.md § 4) für ein
 P10-Heft: Schnitt und Stufen wie das Original, neu gesetzt, durchsuchbar,
 Punkte am Rand; am Ende Lösungsblatt mit Register nach der amtlichen
 Gliederung (jede Teilaufgabe unter Haupt- und Nebenthema, Sprungmarken).
@@ -15,6 +17,7 @@ aufgabenbank-privat/originalneu/<heft>/src/ und pdf/. Nur für den Lehrer.
 """
 import argparse
 import csv
+import re
 import json
 import os
 import shutil
@@ -24,7 +27,7 @@ from collections import defaultdict
 from pathlib import Path
 
 WURZEL = Path(__file__).resolve().parent.parent
-VERSION = "0.1"
+VERSION = "0.2"
 
 
 def finde(pfad_arg, env, kandidaten, name):
@@ -194,7 +197,8 @@ def register_tex(aufgaben, kat):
     return "\n".join(out), fehlt
 
 
-def heft_tex(heft, jahr, papier, aufgaben, kat):
+def heft_tex_alt(heft, jahr, papier, aufgaben, kat):
+    """v0.1 (Prüfstein mit Register, 04.10.) – abgelöst durch blatt_tex (14.10.), bleibt für --form alt."""
     q = aufgaben[0][3][0].get("quelle", {}).get("datei", "")
     qname = (q[:-4] if q.endswith(".pdf") else q) or "26_P10_Ma_%s_A" % papier
     qname = qname.replace("_", "\\_")
@@ -208,24 +212,171 @@ def heft_tex(heft, jahr, papier, aufgaben, kat):
         "\\pfheftstil",
         "\\pflaufkopf[P10 · Original neu]{%d %s}{%s}" % (jahr, papier, heft),
         "\\pfseitevon",
-        "\\pfheftkopf{Prüfung am Ende der Jahrgangsstufe 10 · %d %s}{}"
-        % (jahr, papier),
-        "\\pfstufenzeile{Mathematik · Aufgaben %s · %d Punkte · "
-        "neu gesetzt nach %s · nur für den Lehrer · "
-        "\\hyperlink{loesungen}{Lösungen und Register am Ende}}"
-        % ("1–%d" % aufgaben[-1][0], gesamt, qname),
+        "\\pfheftkopf{Prüfung am Ende der Jahrgangsstufe 10 · %d %s}{}" % (jahr, papier),
     ]
-    # Übersicht der Aufgaben mit Sprungmarken
-    kopf.append("\\par\\medskip\\noindent\\begin{tabular}{@{}llr@{}}")
-    for nr, titel, gp, zeilen in aufgaben:
-        kopf.append("\\hyperlink{aufg%d}{Aufgabe %d: %s} & S.\\,\\pageref*{%s} "
-                    "& {\\color{mbgrau}%d P}\\\\" % (nr, nr, titel, zeilen[0]["id"], gp))
-    kopf.append("\\end{tabular}\\par")
     koerper = [aufgabe_tex(nr, t, gp, z) for nr, t, gp, z in aufgaben]
-    # Aufgabe 1 beginnt nicht auf neuer Seite
     koerper[0] = koerper[0].replace("\\clearpage", "", 1)
     ende = [loesungen_tex(aufgaben), reg, "\\end{document}"]
     return "\n".join(kopf + koerper + ende), fehlt
+
+
+# ---------- v0.2: Original neu im Layout der Blätter (plan.md § 10, 14.10. g) ----------
+# Kopf links „P10 · Original ’JJ“, rechts Kennung mit Fassung; Buchstabenspalte (gemeinsam.md); keine Marke,
+# kein Mehr, keine Heranführung; Schnitt und Folge wie im Heft; Lösung nach gemeinsam.md „Lösungen“ (eigene Datei,
+# Tabelle je Teilaufgabe, links Ergebnis fett, rechts der Weg klein; keine Punkte). Kennung: P · O (Original) ·
+# Jahr, bei getrenntem Heft F/E (PO25, PO26F, PO26E) – Entscheidung des Setzers, Schema plan.md § 10, 14.10. b.
+
+PRAEAMBEL = r"""\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\usepackage{needspace}
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\pkt}{\textperiodcentered{}}
+% Teilaufgabe: Buchstabe in eigener Spalte neben der Nummernspalte (gemeinsam.md „Buchstabenspalte“)
+\newenvironment{onteil}[1]{\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\raggedright\strut\ignorespaces}{\end{minipage}}
+\begin{document}
+"""
+
+
+def kennung(jahr, papier):
+    return "PO%02d%s" % (jahr % 100, {"FOR": "F", "EBR": "E"}.get(papier, ""))
+
+
+def kopf_links(jahr, papier):
+    return "P10 \\pkt{} Original ’%02d%s" % (jahr % 100, "" if papier == "OS" else " " + papier)
+
+
+def grafik_neu(g):
+    if not g:
+        return ""
+    if g.lstrip().startswith("\\"):
+        return "\\par\\smallskip\\noindent " + g + "\\par"
+    return "\\par\\smallskip\\noindent{\\small\\itshape\\color{mbgrau}Abbildung: " + g + "}\\par"
+
+
+def raum(z):
+    """Rechenraum wie auf dem Blatt: Karo bei Rechnung, Begründung, Zeichnung ohne Vorlage; sonst die Antwortzeile."""
+    if z.get("antwort") or z.get("optionen"):
+        return ""
+    f = z.get("form", "")
+    if f in ("rechnung", "begruendung"):
+        return "\\karo{%d}" % min(6, max(2, z.get("punkte", 1) + 1))
+    if f == "zeichnen" and not z.get("grafik", "").lstrip().startswith("\\"):
+        return "\\karo{4}"
+    return ""
+
+
+def teil_tex(nr, z, erster):
+    inhalt = [z["aufgabe"], grafik_neu(z.get("grafik", "") if not z.get("_grafik_im_stamm") else ""),
+              optionen_tex(z.get("optionen") or []), antwortzeile(z.get("antwort", "")), raum(z)]
+    out = ["\\hypertarget{%s}{}\\label{%s}" % (z["id"], z["id"]),
+           "\\begin{pfaufg}{}{%s}{%d P}" % ("%d." % nr if erster else "", z["punkte"]),
+           "\\begin{onteil}{%s)}" % z["teil"]] + [x for x in inhalt if x] + ["\\end{onteil}", "\\end{pfaufg}"]
+    return "\n".join(out)
+
+
+def aufgabe_neu(nr, titel, zeilen):
+    out = ["\\Needspace*{0.18\\textheight}\\pfstufekopf{%d \\pkt{} %s}{}" % (nr, titel)]
+    stamm = next((z for z in zeilen if z.get("stamm")), None)
+    if stamm:
+        out.append("\\begin{pfaufg}{}{%d.}{}" % nr)
+        out.append(stamm["stamm"] + grafik_neu(stamm.get("grafik", "")))
+        out.append("\\end{pfaufg}")
+        stamm["_grafik_im_stamm"] = True
+    for i, z in enumerate(zeilen):
+        out.append(teil_tex(nr, z, i == 0 and not stamm))
+    return "\n".join(out)
+
+
+def blatt_tex(jahr, papier, kenn, aufgaben):
+    titel = " \\pkt{} ".join(t for _, t, _, _ in aufgaben)
+    out = [PRAEAMBEL, "\\pfheftstil",
+           "\\pflaufkopf[%s]{Original}{%s}\\pfseitevon" % (kopf_links(jahr, papier), kenn),
+           "\\pfheftkopf{Original ’%02d%s}{}" % (jahr % 100, "" if papier == "OS" else " " + papier),
+           "\\pfstufenzeile{%s}" % titel]
+    out += [aufgabe_neu(nr, t, z) for nr, t, _, z in aufgaben]
+    out.append("\\end{document}")
+    return "\n".join(out)
+
+
+def teile_aussen(s, sep=";"):
+    """s an sep teilen, nicht innerhalb von $…$."""
+    out, cur, m = [], "", False
+    for i, c in enumerate(s):
+        if c == "$" and (i == 0 or s[i - 1] != "\\"):
+            m = not m
+        if c == sep and not m:
+            out.append(cur)
+            cur = ""
+            continue
+        cur += c
+    return [x.strip() for x in out + [cur] if x.strip()]
+
+
+def ergebnis(lo):
+    """Ergebnis = je Teil (an „;“ außerhalb der Formel) die letzte Gleichung auf „Name op Wert“ verkürzt;
+    Weg = die ganze Lösung, wenn sie mehr als das Ergebnis zeigt."""
+    erg = []
+    for t in teile_aussen(lo):
+        m = re.fullmatch(r"\$([^$]*)\$(.*)", t)
+        if m and not m.group(2).strip():
+            f = m.group(1)
+            ops = [(x.start(), x.group(0)) for x in re.finditer(r"=|\\approx", f)]
+            if len(ops) >= 2:
+                lhs = f[:ops[0][0]].strip()
+                wert = f[ops[-1][0] + len(ops[-1][1]):].strip()
+                erg.append("$%s %s %s$" % (lhs, ops[-1][1], wert))
+                continue
+        erg.append(t)
+    e = "; ".join(erg)
+    return e, (lo if e != "; ".join(teile_aussen(lo)) else "")
+
+
+def loesung_tex(jahr, papier, kenn, aufgaben):
+    out = [PRAEAMBEL, "\\pfheftstil",
+           "\\pflaufkopf[%s]{Original \\pkt{} Lösungen}{%s}\\pfseitevon" % (kopf_links(jahr, papier), kenn),
+           "\\pfheftkopf{Original ’%02d%s}{Lösungen}" % (jahr % 100, "" if papier == "OS" else " " + papier),
+           "\\pfstufenzeile{%s}" % " \\pkt{} ".join(t for _, t, _, _ in aufgaben)]
+    for nr, t, _, zeilen in aufgaben:
+        out.append("\\pfstufekopf{%d \\pkt{} %s}{}" % (nr, t))
+        out.append("\\begin{pfloesungb}{}")
+        for i, z in enumerate(zeilen):
+            e, w = ergebnis(z.get("loesung", ""))
+            out.append("\\lzb{%s}{%s)}{%s}{%s}" % ("%d." % nr if i == 0 else "", z["teil"], e, w))
+        out.append("\\end{pfloesungb}")
+    out.append("\\end{document}")
+    return "\n".join(out)
+
+
+def fingerabdruck(aufgaben):
+    import hashlib
+    return hashlib.sha1(json.dumps([[nr, t, z] for nr, t, _, z in aufgaben], ensure_ascii=False,
+                                   sort_keys=True).encode()).hexdigest()[:12]
+
+
+def fassung(privat, kenn, abdruck, heft):
+    """Fassung wie bei den Blättern (gemeinsam.md „Kennung mit Fassung“): steigt nur mit den Daten. Register
+    privat (bau/original-neu/fassungen.csv), weil die Zeile den Heftpfad nennt."""
+    p = privat / "bau" / "original-neu" / "fassungen.csv"
+    zeilen = p.read_text(encoding="utf-8").splitlines() if p.exists() else ["kennung;fassung;fingerabdruck;heft"]
+    eig = [z.split(";") for z in zeilen[1:] if z.split(";")[0] == kenn]
+    if eig and eig[-1][2] == abdruck:
+        return int(eig[-1][1])
+    f = (int(eig[-1][1]) + 1) if eig else 1
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text("\n".join(zeilen + ["%s;%d;%s;%s" % (kenn, f, abdruck, heft)]) + "\n", encoding="utf-8")
+    return f
+
+
+def xe(src, name, vorlage):
+    shutil.copyfile(vorlage, src / "mathblatt.sty")
+    for _ in range(3):
+        subprocess.run(["xelatex", "-interaction=nonstopmode", name + ".tex"], cwd=src, capture_output=True)
+    log = (src / (name + ".log")).read_text(encoding="utf-8", errors="replace")
+    return [l for l in log.splitlines() if l.startswith("!")], (src / (name + ".pdf"))
 
 
 # ---------- Ablauf ----------
@@ -237,6 +388,9 @@ def main():
     ap.add_argument("--katalog")
     ap.add_argument("--vorlage")
     ap.add_argument("--kein-pdf", action="store_true")
+    ap.add_argument("--form", choices=["blatt", "alt"], default="blatt",
+                    help="blatt (v0.2, 14.10.): Layout der Blätter nach privat bau/original-neu/<heft>/; "
+                         "alt: Prüfstein v0.1 nach originalneu/<heft>/")
     a = ap.parse_args()
 
     jahr_s, papier = a.heft.split("-", 1)
@@ -271,7 +425,28 @@ def main():
                   % (n, sum(z["punkte"] for z in zl), gp))
         aufgaben.append((n, zl[0]["titel"], gp, zl))
 
-    tex, fehlt = heft_tex(a.heft, jahr, papier, aufgaben, kat)
+    if a.form == "blatt":
+        kenn = kennung(jahr, papier)
+        kenn = "%s-%d" % (kenn, fassung(privat, kenn, fingerabdruck(aufgaben), a.heft))
+        ziel = privat / "bau" / "original-neu" / a.heft
+        src, pdf = ziel / "src", ziel / "pdf"
+        src.mkdir(parents=True, exist_ok=True)
+        pdf.mkdir(parents=True, exist_ok=True)
+        fehler_alle = []
+        for name, tex in (("blatt", blatt_tex(jahr, papier, kenn, aufgaben)),
+                          ("loesung", loesung_tex(jahr, papier, kenn, aufgaben))):
+            (src / (name + ".tex")).write_text(tex, encoding="utf-8")
+            if a.kein_pdf:
+                continue
+            fehler, p = xe(src, name, vorlage)
+            fehler_alle += fehler
+            if p.is_file() and not fehler:
+                shutil.copyfile(p, pdf / (name + ".pdf"))
+            print("%s: %s" % (name, "Fehler: " + "; ".join(fehler[:3]) if fehler else "ok"))
+        print("Kennung %s; %d Teilaufgaben in %d Aufgaben; Ordner %s"
+              % (kenn, sum(len(z) for _, _, _, z in aufgaben), len(aufgaben), ziel))
+        sys.exit(1 if fehler_alle else 0)
+    tex, fehlt = heft_tex_alt(a.heft, jahr, papier, aufgaben, kat)
     ziel = privat / "originalneu" / a.heft
     src, pdf = ziel / "src", ziel / "pdf"
     src.mkdir(parents=True, exist_ok=True)

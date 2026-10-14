@@ -1,0 +1,109 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (Bauregel 6.4)
+\makeatother
+% Rechenraum als Karo (Bauregel 6.9): n Rechenschritte = n mal 10 mm
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} mehr]{Exponentielles Wachstum}{PA50-2}\pfseitevon
+\pfheftkopf{Exponentielles Wachstum}{mehr}
+\pfstufenzeile{Tabelle ergänzen \pkt{} Faktor bestimmen, Gleichung aufstellen \pkt{} Punkte darstellen \pkt{} Graph zuordnen und begründen}
+% 2020-OS-K4a-m1 (Schwere I, rang 6)
+\begin{pfaufg}{nach~P10\\’20~\pkt{}~4a}{1.}{}
+Laut einer Studie aus dem Jahr 2018 verbrauchte jeder Mensch im Jahr 2018 im Schnitt 48 Tausend Liter Wasser; der Verbrauch je Person soll in Zukunft jedes Jahr um 4 \% wachsen. Ergänze die Tabelle mit diesen Angaben.
+\par\smallskip\noindent{\small\itshape Skizze: Tabelle: Jahr | 2018 | 2019 | 2020 | 2021; Wasserverbrauch je Person in Tausend Litern | leer | 49,9 | 51,9 | leer}\par
+\karo{3}
+\fusshilfe{\mbox{1:~2018: 48; 2021: 54,0}}
+\end{pfaufg}
+% 2019-OS-K7a-m1 (Schwere I, rang 7)
+\begin{pfaufg}{nach~P10\\’19~\pkt{}~7a}{2.}{}
+Ein Ferkel wiegt 12 kg. Aus Erfahrung weiß man, dass seine Masse jede Woche um etwa 5 \% zunimmt. Zu Beginn jeder Woche wird es gewogen. Trag die drei fehlenden Werte in die Tabelle ein.
+\par\smallskip\noindent{\small\itshape Skizze: Tabelle: Zeit in Wochen | 0 | 1 | 2 | … | 5; Masse in kg | leer | 12,600 | leer | – | leer}\par
+\karo{4}
+\fusshilfe{\mbox{2:~0: 12 kg; 2: 13,230 kg; 15,315 kg}}
+\end{pfaufg}
+% 2018-OS-K2a-m1 (Schwere I, rang 8)
+\begin{pfaufg}{nach~P10\\’18~\pkt{}~2a}{3.}{}
+Ein junges Berliner Unternehmen zeigt in einer Tabelle, wie sein Umsatz gewachsen ist: 2013: 450 000 €, 2014: 477 000 €, 2015: 505 620 €, 2016: 535 957 €, 2017: 568 115 €. Es behauptet, der Umsatz wachse jedes Jahr um 6 \%. Zeige, dass das für 2014 stimmt.
+\par\smallskip\noindent{\small\itshape Skizze: Tabelle: Jahr | 2013 | 2014 | 2015 | 2016 | 2017; Umsatz in € | 450 000 | 477 000 | 505 620 | 535 957 | 568 115}\par
+\karo{2}
+\fusshilfe{\mbox{3:~477000 €}}
+\end{pfaufg}
+% 2017-OS-K7c-m1 (Schwere I, rang 9)
+\begin{pfaufg}{nach~P10\\’17~\pkt{}~7c}{4.}{}
+Auf Meereshöhe (0 km) misst man einen Luftdruck von ungefähr 1000 hPa (Hektopascal). Je höher man steigt, desto kleiner wird der Luftdruck: mit jedem Kilometer Höhe um 11 \%. Die Abnahme des Luftdrucks lässt sich mit einer Gleichung beschreiben ($x$: Höhe in km, $y$: Luftdruck in hPa). Kreuze die richtige an:
+\par\smallskip\noindent\pfkreuz{A}{$y = 0{,}89 \cdot x$}\pfkreuz{B}{$y = 1000 \cdot 0{,}89^x$}\pfkreuz{C}{$y = x^{1{,}11}$}\pfkreuz{D}{$y = 1000 \cdot 1{,}11^x$.}
+\fusshilfe{\mbox{4:~1000 · $0{,}89^{x}$}}
+\end{pfaufg}
+% 2021-OS-K6b-m1 (Schwere II, rang 10)
+\begin{pfaufg}{nach~P10\\’21~\pkt{}~6b}{5.}{}
+Eine 36 cm hohe Kerze brennt ab. Gegeben: Tabelle Zeit in Minuten 0, 10, 20, 30, 40, 80; Höhe in cm 36, 33, 30, 27, 24, 12. Stelle diese Werte als Graph im Koordinatensystem dar. Trag dazu zuerst die fehlende Einteilung der Achsen ein.
+\par\smallskip\noindent{\small\itshape Skizze: Achsenkreuz ohne Einteilung: Karoraster, Achsennamen „Zeit in Minuten“ (rechts) und „Höhe in cm“ (oben); 24 Kästchen nach rechts, 22 nach oben; keine Zahlen}\par
+\karo{2}
+\fusshilfe{\mbox{5:~2 cm)}}
+\end{pfaufg}
+% 2019-OS-K7b-m1 (Schwere II, rang 11)
+\begin{pfaufg}{nach~P10\\’19~\pkt{}~7b}{6.}{}
+Ein Ferkel wiegt 12 kg. Aus Erfahrung weiß man, dass seine Masse jede Woche um etwa 5 \% zunimmt. Zu Beginn jeder Woche wird es gewogen. Die Bäuerin Wilma berechnet die Masse des Ferkels nach $x$ Wochen mit $f(x) = 12 \cdot 1{,}05^x$. Schreib auf, was $12$, $1{,}05$ und $x$ in dieser Gleichung bedeuten.
+\par\smallskip\noindent{\small\itshape Skizze: Tabelle: Teil der Gleichung | Bedeutung; 12 | leer; 1,05 | leer; x | leer}\par
+\karo{4}
+\fusshilfe{\mbox{6:~x: Zeit in Wochen (Anzahl der Wochen)}}
+\end{pfaufg}
+% 2017-OS-K7a-m1 (Schwere II, rang 12)
+\begin{pfaufg}{nach~P10\\’17~\pkt{}~7a}{7.}{}
+Auf Meereshöhe (0 km) misst man einen Luftdruck von ungefähr 1000 hPa (Hektopascal). Je höher man steigt, desto kleiner wird der Luftdruck: mit jedem Kilometer Höhe um 11 \%. Trag die beiden fehlenden Werte in die Tabelle ein.
+\par\smallskip\noindent{\small\itshape Skizze: Tabelle: Höhe in km | 0 | 1 | 2 | 3 | 5 | 8 | 10; Luftdruck in hPa | 1000 | 890 | leer | 705 | 558 | leer | 312}\par
+\karo{3}
+\fusshilfe{\mbox{7:~792 hPa; 394 hPa}}
+\end{pfaufg}
+% 2017-OS-K7b-m1 (Schwere II, rang 13)
+\begin{pfaufg}{nach~P10\\’17~\pkt{}~7b}{8.}{}
+Auf Meereshöhe (0 km) misst man einen Luftdruck von ungefähr 1000 hPa (Hektopascal). Je höher man steigt, desto kleiner wird der Luftdruck: mit jedem Kilometer Höhe um 11 \%. Vervollständige das Koordinatensystem und zeichne den Luftdruck in Abhängigkeit von der Höhe. Gegeben: 0 km: 1000 hPa; 1 km: 890 hPa; 2 km: 792 hPa; 3 km: 705 hPa; 5 km: 558 hPa; 8 km: 394 hPa; 10 km: 312 hPa.
+\par\smallskip\noindent{\small\itshape Skizze: Achsenkreuz ohne Einteilung: Karoraster 24 × 24 Kästchen, Ursprung 2 Kästchen vom linken und vom unteren Rand, Pfeile; je Achse 22 Kästchen nutzbar; keine Zahlen, keine Achsennamen}\par
+\karo{4}
+\fusshilfe{\mbox{8:~x-Achse Höhe in km, 2 Kästchen je km; y-Achse Luftdruck in hPa, 1 Kästchen je 50 hPa; sieben Punkte, fallende Kurve}}
+\end{pfaufg}
+% 2017-OS-K7d-m1 (Schwere II, rang 14)
+\begin{pfaufg}{nach~P10\\’17~\pkt{}~7d}{9.}{}
+Auf Meereshöhe (0 km) misst man einen Luftdruck von ungefähr 1000 hPa (Hektopascal). Je höher man steigt, desto kleiner wird der Luftdruck: mit jedem Kilometer Höhe um 11 \%. Eine Bergsteigerin misst 627 hPa. Entscheide, ob sie ungefähr 4 km hoch sein kann, und begründe.
+\karo{2}
+\fusshilfe{\mbox{9:~627,4 hPa}}
+\end{pfaufg}
+% 2016-OS-K4a-m1 (Schwere II, rang 15)
+\begin{pfaufg}{nach~P10\\’16~\pkt{}~4a}{10.}{}
+Um Krankheiten der Schilddrüse zu erkennen, spritzt man dem Patienten eine Flüssigkeit, die eine kleine Menge radioaktives Technetium enthält. Die Masse des Technetiums im Körper wird jede Stunde um etwa 9 \% kleiner. Ergänze die beiden Lücken in der Tabelle: die Masse nach 1 Stunde und die Zeit, zu der noch 4,11 mg vorhanden sind.
+\par\smallskip\noindent{\small\itshape Skizze: Tabelle: Zeit in h | 0 | 1 | 2 | leer | 5 | 6 | 8; Masse in mg | 6,00 | leer | 4,97 | 4,11 | 3,74 | 3,41 | 2,82}\par
+\karo{3}
+\fusshilfe{\mbox{10:~1 h: 5,46 mg; 4,11 mg bei 4 h}}
+\end{pfaufg}
+% 2016-OS-K4b-m1 (Schwere II, rang 16)
+\begin{pfaufg}{nach~P10\\’16~\pkt{}~4b}{11.}{}
+Um Krankheiten der Schilddrüse zu erkennen, spritzt man dem Patienten eine Flüssigkeit, die eine kleine Menge radioaktives Technetium enthält. Die Masse des Technetiums im Körper wird jede Stunde um etwa 9 \% kleiner. Beschrifte die Achsen des Koordinatensystems passend zur Tabelle und zeichne ein, wie die Masse abnimmt. Gegeben: Tabelle 0 h: 6,00 mg; 1 h: 5,46 mg; 2 h: 4,97 mg; 4 h: 4,11 mg; 5 h: 3,74 mg; 6 h: 3,41 mg; 8 h: 2,82 mg.
+\par\smallskip\noindent{\small\itshape Skizze: Achsenkreuz ohne Einteilung: Karoraster 19 × 18 Kästchen, Ursprung 1 Kästchen vom linken und 2 vom unteren Rand; Teilstriche alle 2 Kästchen, x-Achse 8, y-Achse 7; keine Zahlen, keine Achsennamen}\par
+\karo{2}
+\fusshilfe{\mbox{11:~Achsen „Zeit in h“ (1 h je Teilstrich) und „Masse in mg“ (1 mg je Teilstrich), sieben Punkte, glatte fallende Kurve}}
+\end{pfaufg}
+% 2016-OS-K4e-m1 (Schwere II, rang 17)
+\begin{pfaufg}{nach~P10\\’16~\pkt{}~4e}{12.}{}
+Um Krankheiten der Schilddrüse zu erkennen, spritzt man dem Patienten eine Flüssigkeit, die eine kleine Menge radioaktives Technetium enthält. Die Masse des Technetiums im Körper wird jede Stunde um etwa 9 \% kleiner. Zu Beginn sind 6,00 mg im Körper. Berechne, wie viele Milligramm Technetium 24 Stunden nach der Spritze noch im Körper sind.
+\par\smallskip\noindent{\small\itshape Skizze: Tabelle: Zeit in h | 0 | 1 | 2 | leer | 5 | 6 | 8; Masse in mg | 6,00 | leer | 4,97 | 4,11 | 3,74 | 3,41 | 2,82}\par
+\karo{2}
+\fusshilfe{\mbox{12:~0,62 mg}}
+\end{pfaufg}
+% 2019-OS-K7c-m1 (Schwere III, rang 18)
+\begin{pfaufg}{nach~P10\\’19~\pkt{}~7c}{13.}{}
+Ein Ferkel wiegt 12 kg. Aus Erfahrung weiß man, dass seine Masse jede Woche um etwa 5 \% zunimmt. Zu Beginn jeder Woche wird es gewogen. Für jeden der drei Graphen: Entscheide, ob er zum Wachstum des Ferkels passt, und begründe.
+\par\smallskip\noindent{\small\itshape Skizze: Graphauswahl: drei Achsenkreuze ohne Einteilung (x: Zeit in Wochen, y: Masse in kg) mit Gitter, je Zeile Ankreuzfelder passt/passt nicht und Schreiblinie: 1 steigende Gerade ab positivem y-Achsenabschnitt; 2 nach oben gekrümmte, immer steilere Kurve ab positivem y-Achsenabschnitt; 3 nach oben gekrümmte, immer steilere Kurve aus dem Ursprung}\par
+\karo{4}
+\fusshilfe{\mbox{13:~Graph 3 passt nicht: beginnt bei 0 kg statt 12 kg}}
+\end{pfaufg}
+\par\vfill\noindent{\scriptsize\color{mbgrau}Originale: P10 2020 \pkt{} 4a, P10 2019 \pkt{} 7a, P10 2018 \pkt{} 2a, P10 2017 \pkt{} 7c, P10 2021 \pkt{} 6b, P10 2019 \pkt{} 7b, P10 2017 \pkt{} 7a, P10 2017 \pkt{} 7b, P10 2017 \pkt{} 7d, P10 2016 \pkt{} 4a, P10 2016 \pkt{} 4b, P10 2016 \pkt{} 4e, P10 2019 \pkt{} 7c\par}
+\end{document}

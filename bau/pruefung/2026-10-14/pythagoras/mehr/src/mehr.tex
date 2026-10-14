@@ -1,0 +1,62 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (Bauregel 6.4)
+\makeatother
+% Rechenraum als Karo (Bauregel 6.9): n Rechenschritte = n mal 10 mm
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} mehr]{Länge mit Pythagoras}{PG50-3}\pfseitevon
+\pfheftkopf{Länge mit Pythagoras}{mehr}
+\pfstufenzeile{Gleichung aufstellen \pkt{} Hypotenuse gesucht \pkt{} Kathete gesucht \pkt{} Dreieck erst in Figur oder Körper finden}
+% 2021-OS-B1h-m1 (Schwere I, rang 10)
+\begin{pfaufg}{nach~P10\\’21~\pkt{}~1h}{1.}{}
+Im abgebildeten Dreieck sind x und y die Katheten, z ist die Hypotenuse. Kreuze die Formel an, mit der man z berechnet:
+\par\smallskip\noindent{\small\itshape Skizze: rechtwinkliges Dreieck: rechter Winkel unten rechts zwischen x (unten) und y (rechts); Hypotenuse z links oben}\par
+\par\smallskip\noindent\pfkreuz{A}{$z=\sqrt{x^2-y^2}$}\pfkreuz{B}{$z=\sqrt{x^2+y^2}$}\pfkreuz{C}{$z=\sqrt{y^2-x^2}$}\pfkreuz{D}{$z=y^2+x^2$}
+\fusshilfe{\mbox{1:~B}}
+\end{pfaufg}
+% 2020-OS-K7a-m1 (Schwere I, rang 11)
+\begin{pfaufg}{nach~P10\\’20~\pkt{}~7a}{2.}{}
+Im Dreieck ABC ist bei C ein rechter Winkel. Die Strecke BC ist 15 m lang, die Strecke AC 28 m. Berechne die Länge der Strecke AB.
+\par\smallskip\noindent{\small\itshape Skizze: rechtwinkliges Dreieck: rechter Winkel bei C (oben links), B rechts von C, A senkrecht unter C; nicht maßstabsgerecht}\par
+\karo{2}
+\fusshilfe{\mbox{2:~31,8 m}}
+\end{pfaufg}
+% 2019-OS-K3a-m1 (Schwere I, rang 12)
+\begin{pfaufg}{nach~P10\\’19~\pkt{}~3a}{3.}{}
+Beim Fußballtraining spielen sich drei Kinder den Ball zu: Amir steht bei A, Ben bei B, Chris bei C. Zwischen Ben und Amir sind es 5 m, zwischen Amir und Chris 12 m. Bei B ist ein rechter Winkel; der Winkel bei A heißt $\alpha$. Ermittle den Abstand zwischen Ben und Chris.
+\par\smallskip\noindent{\small\itshape Skizze: rechtwinkliges Dreieck: rechter Winkel bei B (unten links), A senkrecht über B, C rechts von B; AB = 5 m, AC = 12 m; nicht maßstabsgerecht}\par
+\karo{2}
+\fusshilfe{\mbox{3:~10,9 m}}
+\end{pfaufg}
+% 2017-OS-B1d-m1 (Schwere I, rang 13)
+\begin{pfaufg}{nach~P10\\’17~\pkt{}~1d}{4.}{}
+Im abgebildeten Dreieck sind x und y die Katheten, z ist die Hypotenuse. Kreuze die Gleichung an, die für dieses Dreieck gilt:
+\par\smallskip\noindent{\small\itshape Skizze: rechtwinkliges Dreieck: rechter Winkel unten links; senkrechte Kathete x, waagerechte Kathete y, Hypotenuse z}\par
+\par\smallskip\noindent\pfkreuz{A}{$x^2=y^2+z^2$}\pfkreuz{B}{$z^2=x^2-y^2$}\pfkreuz{C}{$z^2\cdot y^2=x^2$}\pfkreuz{D}{$z^2=x^2+y^2$}
+\fusshilfe{\mbox{4:~D}}
+\end{pfaufg}
+% 2018-OS-K6d-m1 (Schwere II, rang 15)
+\begin{pfaufg}{nach~P10\\’18~\pkt{}~6d}{5.}{}
+Ein runder Turm mit 5,8 m Durchmesser hat ein Dach in Form eines Kegels. Die Höhe des Daches ist bekannt. Ein Dachbalken läuft von der Spitze bis zum Rand des Daches. Beschreibe, wie man die Länge eines Dachbalkens berechnen kann.
+\par\smallskip\noindent{\small\itshape Skizze: Schrägbild: Kegel (Dach) mit gestrichelter Grundkreisellipse; ein Pfeil „Dachbalken“ zeigt auf eine Mantellinie; nicht maßstabsgerecht}\par
+\karo{2}
+\fusshilfe{\mbox{5:~√(2,9² + h²)}}
+\end{pfaufg}
+% 2016-OS-K7b-m1 (Schwere II, rang 16)
+\begin{pfaufg}{nach~P10\\’16~\pkt{}~7b}{6.}{}
+An einem Fluss liegen der Bioladen C, eine Brücke D und eine Anlegestelle B auf einer Geraden am Ufer, in dieser Reihenfolge. Von einem Ausflugslokal A führt ein 860 m langer Weg zum Bioladen; vom Bioladen bis zur Brücke sind es 530 m. Die Strecke AD steht senkrecht auf dem Ufer. Am Bioladen ist der Winkel zwischen den Wegen nach A und nach D 52° groß, am Lokal der Winkel zwischen den Richtungen nach C und nach B 71°. Vom Lokal A soll ein neuer Weg direkt zur Brücke D führen. Ermittle die Länge von AD.
+\par\smallskip\noindent{\small\itshape Skizze: Lageskizze: Ufer als schräge Gerade oben mit C (links), D, B (rechts); A unten; AC = 860 m, CD = 530 m; rechter Winkel bei D zwischen DA und dem Ufer; AD gestrichelt; nicht maßstabsgerecht}\par
+\karo{2}
+\fusshilfe{\mbox{6:~677 m}}
+\end{pfaufg}
+\par\vfill\noindent{\scriptsize\color{mbgrau}Originale: P10 2021 \pkt{} 1h, P10 2020 \pkt{} 7a, P10 2019 \pkt{} 3a, P10 2017 \pkt{} 1d, P10 2018 \pkt{} 6d, P10 2016 \pkt{} 7b\par}
+\end{document}

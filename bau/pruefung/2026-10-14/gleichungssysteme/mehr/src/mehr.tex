@@ -1,0 +1,33 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (Bauregel 6.4)
+\makeatother
+% Rechenraum als Karo (Bauregel 6.9): n Rechenschritte = n mal 10 mm
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} mehr]{Gleichungssystem im Sachzusammenhang}{PA20-1}\pfseitevon
+\pfheftkopf{Gleichungssystem im Sachzusammenhang}{mehr}
+\pfstufenzeile{aufstellen}
+% 2021-OS-K7b-m1 (Schwere II, rang 5)
+\begin{pfaufg}{nach~P10\\’21~\pkt{}~7b}{1.}{}
+Zwei Familien besuchen in Paris den Eiffelturm. Familie Beyer (zwei Erwachsene, zwei Kinder) bezahlt 74,00 € Eintritt, Familie Gouvan (ein Erwachsener, drei Kinder) 61,80 €. Stelle zuerst zwei Gleichungen zu diesen Angaben auf. Bestimme dann den Eintrittspreis für einen Erwachsenen und für ein Kind.
+\par\smallskip\noindent{\small\itshape Skizze: Tabelle: Gleichung | Term; (I) | leer; (II) | leer}\par
+\karo{4}
+\fusshilfe{\mbox{1:~61,80; Erwachsener 24,60 €; Kind 12,40 €}}
+\end{pfaufg}
+% 2016-OS-K6d-m1 (Schwere II, rang 6)
+\begin{pfaufg}{nach~P10\\’16~\pkt{}~6d}{2.}{}
+Eine Jugendherberge hat nur Zimmer mit drei Betten und Zimmer mit fünf Betten. Die Klasse kann 14 Zimmer mit zusammen 58 Betten belegen. Bestimme, wie viele Dreibettzimmer und wie viele Fünfbettzimmer es sind.
+\karo{3}
+\fusshilfe{\mbox{2:~6 Drei-Bett-Zimmer; 8 Fünf-Bett-Zimmer}}
+\end{pfaufg}
+\par\vfill\noindent{\scriptsize\color{mbgrau}Originale: P10 2021 \pkt{} 7b, P10 2016 \pkt{} 6d\par}
+\end{document}

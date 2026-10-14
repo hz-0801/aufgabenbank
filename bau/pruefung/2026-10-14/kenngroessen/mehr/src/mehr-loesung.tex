@@ -1,0 +1,45 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (Bauregel 6.4)
+\makeatother
+% Rechenraum als Karo (Bauregel 6.9): n Rechenschritte = n mal 10 mm
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} mehr]{Kenngrößen \pkt{} Lösungen}{PS30-3}\pfseitevon
+\pfheftkopf{Kenngrößen}{Lösungen \pkt{} mehr}
+\begin{pfloesungb}{}
+\lzb{1.}{}{4,16 m}{4,16 m}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{2.}{}{175 Besucher}{175 Besucher}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{3.}{}{0,7 m}{0,7 m}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{4.}{}{2,2 m}{2,2 m}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{5.}{}{39}{39}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{6.}{}{6 °C}{6 °C}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{7.}{}{812467 : 18 $\approx$ 45137 Zuschauer}{812467 : 18 $\approx$ 45137 Zuschauer}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{8.}{}{Minimum am 01.07.: 151,8 ct; Maximum am 26.08.: 166,3 ct}{Minimum am 01.07.: 151,8 ct; Maximum am 26.08.: 166,3 ct}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{9.}{}{14,2 ct}{14,2 ct}
+\end{pfloesungb}
+\end{document}

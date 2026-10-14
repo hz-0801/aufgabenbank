@@ -5063,7 +5063,7 @@ def mehr_kurz(einheit):
     return t[:40].rstrip('-')
 
 
-def mehr_zeilen(mn, kapitel, einheit):
+def mehr_zeilen(mn, kapitel, einheit, alle_flag=False):
     """Zeilen der Einheit mit auf_blatt = nein, nach rang. --einheit: genau, sonst eindeutiger Teil
     (ohne Groß/Klein)."""
     p = os.path.join(mn, 'msa', 'mehr-p10')
@@ -5079,6 +5079,12 @@ def mehr_zeilen(mn, kapitel, einheit):
         sys.exit('--einheit nicht eindeutig; vorhanden: ' + ' | '.join(einheiten))
     # v0.11: ältere Originale einer Stufe ohne junges Original stehen auf dem Blatt (Art p), nicht noch einmal hier
     weg = p_aeltere_stufen([r for r in alle if r['einheit'] == treffer[0]])
+    if alle_flag:
+        # v0.14 (--alle, Mappe): nur weglassen, was das Blatt wirklich setzt – Stufen ohne Zuschnitt in der Gliederung
+        # (Prozent: Zinsen) stehen auf keinem Blatt und bleiben im Mehr
+        gl = p_gliederung(mn, kapitel)
+        auf_blatt = {n for n, i in gl['stufen'].items() if i.get('zuschnitt')}
+        weg = {i for i in weg if next((r for r in alle if r['id'] == i), {}).get('stufe', '').strip() in auf_blatt}
     zeilen = [r for r in alle if r['einheit'] == treffer[0] and r.get('auf_blatt', '').strip() == 'nein'
               and r['id'] not in weg]
     if not zeilen:
@@ -5181,7 +5187,10 @@ def mehr_aufgabe_tex(r, nr, faktor=1.0):
     out = [f'\\begin{{pfaufg}}{{{mehr_marke(r)}}}{{{nr}.}}{{}}', t]
     ergebnisse, _ = mehr_loesung(r)
     if r.get('abbildung', '').strip():
-        out.append('\\par\\smallskip\\noindent{\\small\\itshape Skizze: ' + tx(r['abbildung'].strip()) + '}\\par')
+        abb = r['abbildung'].strip()
+        if '$' not in abb:   # v0.14: Hochzahl im Klartext der Abbildung („(x+3)^2“) als Formel (Mehr --alle, 14.10.)
+            abb = re.sub(r'\^(\d+|\{[^}]*\})', lambda m: '$^{' + m.group(1).strip('{}') + '}$', abb)
+        out.append('\\par\\smallskip\\noindent{\\small\\itshape Skizze: ' + tx(abb) + '}\\par')
     rechnet = bool(re.search(r'\d', r.get('loesung') or ''))
     if optionen:
         out.append('\\par\\smallskip\\noindent' + ''.join(
@@ -5306,7 +5315,7 @@ def mehr_alle_bau(args, einheit, zeilen):
 def mehr_bau(args):
     if not args.einheit:
         sys.exit('--art mehr braucht --einheit')
-    einheit, zeilen = mehr_zeilen(args.mn, args.kapitel, args.einheit)
+    einheit, zeilen = mehr_zeilen(args.mn, args.kapitel, args.einheit, args.alle)
     if args.alle:
         return mehr_alle_bau(args, einheit, zeilen)
     portionen = mehr_portionen(zeilen)

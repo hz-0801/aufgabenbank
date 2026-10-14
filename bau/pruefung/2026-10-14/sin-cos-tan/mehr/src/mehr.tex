@@ -1,0 +1,103 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (Bauregel 6.4)
+\makeatother
+% Rechenraum als Karo (Bauregel 6.9): n Rechenschritte = n mal 10 mm
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} mehr]{Seite oder Winkel mit sin, cos, tan}{PG60-2}\pfseitevon
+\pfheftkopf{Seite oder Winkel mit sin, cos, tan}{mehr}
+\pfstufenzeile{Seite berechnen \pkt{} Seitenverhältnis benennen \pkt{} Winkel berechnen}
+% 2021-OS-K3a-m1 (Schwere I, rang 8)
+\begin{pfaufg}{nach~P10\\’21~\pkt{}~3a}{1.}{}
+Gegeben ist das Viereck ABCD mit der Diagonale BD = 1400 m. Bei A ist ein rechter Winkel. Die Seite DC ist 1950 m lang. Bei D ist der Winkel zwischen DA und DB 53° groß und der Winkel zwischen DB und DC 62°. Bei B ist der Innenwinkel $\angle$ABC = 112° groß. Zeige mit einer Rechnung, dass die Strecke AB etwa 1118 m lang ist.
+\par\smallskip\noindent{\small\itshape Skizze: Viereck: A rechts unten, B senkrecht über A, D links von A, C weit links oben; Diagonale BD = 1400 m; rechter Winkel bei A; $\angle$ADB = 53°; nicht maßstabsgerecht}\par
+\karo{2}
+\fusshilfe{\mbox{1:~1118 m}}
+\end{pfaufg}
+% 2021-OS-K3b-m1 (Schwere I, rang 9)
+\begin{pfaufg}{nach~P10\\’21~\pkt{}~3b}{2.}{}
+Gegeben ist das Viereck ABCD mit der Diagonale BD = 1400 m. Bei A ist ein rechter Winkel. Die Seite DC ist 1950 m lang. Bei D ist der Winkel zwischen DA und DB 53° groß und der Winkel zwischen DB und DC 62°. Bei B ist der Innenwinkel $\angle$ABC = 112° groß. Berechne die Länge der Strecke AD.
+\par\smallskip\noindent{\small\itshape Skizze: Viereck: A rechts unten, B senkrecht über A, D links von A, C weit links oben; Diagonale BD = 1400 m; rechter Winkel bei A; $\angle$ADB = 53°; nicht maßstabsgerecht}\par
+\karo{2}
+\fusshilfe{\mbox{2:~842,5 m}}
+\end{pfaufg}
+% 2020-OS-B1c-m1 (Schwere I, rang 10)
+\begin{pfaufg}{nach~P10\\’20~\pkt{}~1c}{3.}{}
+Schreibe $\tan\alpha$ als Verhältnis zweier Seiten des abgebildeten Dreiecks.
+\par\smallskip\noindent{\small\itshape Skizze: rechtwinkliges Dreieck: rechter Winkel an der oberen Ecke zwischen s (links) und r (rechts); Hypotenuse t unten; $\alpha$ unten links zwischen s und t}\par
+\hfill tan $\alpha$ $=$\linie{30mm}
+\fusshilfe{\mbox{3:~r/s}}
+\end{pfaufg}
+% 2020-OS-B1j-m1 (Schwere I, rang 11)
+\begin{pfaufg}{nach~P10\\’20~\pkt{}~1j}{4.}{}
+Für x gilt die Gleichung $\sin 30^\circ=\tfrac{9}{x}$. Gib den Wert von x an.
+\karo{2}
+\fusshilfe{\mbox{4:~18}}
+\end{pfaufg}
+% 2019-OS-B1h-m1 (Schwere I, rang 12)
+\begin{pfaufg}{nach~P10\\’19~\pkt{}~1h}{5.}{}
+Schreibe $\sin\alpha$ als Verhältnis zweier Seiten des abgebildeten Dreiecks.
+\par\smallskip\noindent{\small\itshape Skizze: rechtwinkliges Dreieck: rechter Winkel an der oberen Ecke; Hypotenuse t waagerecht unten; Seite s von links unten zur Spitze, Seite r von der Spitze nach rechts unten; Winkel $\alpha$ unten links zwischen s und t}\par
+\hfill sin $\alpha$ $=$\linie{30mm}
+\fusshilfe{\mbox{5:~r/t}}
+\end{pfaufg}
+% 2018-OS-B1g-m1 (Schwere I, rang 13)
+\begin{pfaufg}{nach~P10\\’18~\pkt{}~1g}{6.}{}
+Im abgebildeten Dreieck ist a die Hypotenuse, b die Kathete gegenüber von $\beta$. Kreuze die Gleichung an, mit der man $\beta$ berechnen kann:
+\par\smallskip\noindent{\small\itshape Skizze: rechtwinkliges Dreieck: rechter Winkel unten links; senkrechte Kathete b (links), Hypotenuse a, waagerechte Kathete unbeschriftet; Winkel $\beta$ unten rechts}\par
+\par\smallskip\noindent\pfkreuz{A}{$\sin\beta=\tfrac{a}{b}$}\pfkreuz{B}{$\cos\beta=\tfrac{a}{b}$}\pfkreuz{C}{$\sin\beta=\tfrac{b}{a}$}
+\fusshilfe{\mbox{6:~C}}
+\end{pfaufg}
+% 2017-OS-B1j-m1 (Schwere I, rang 14)
+\begin{pfaufg}{nach~P10\\’17~\pkt{}~1j}{7.}{}
+Schreibe $\sin\beta$ als Verhältnis zweier Seiten des abgebildeten Dreiecks.
+\par\smallskip\noindent{\small\itshape Skizze: rechtwinkliges Dreieck: rechter Winkel unten links; senkrechte Kathete r, waagerechte Kathete s, Hypotenuse t; Winkel $\beta$ unten rechts}\par
+\hfill sin $\beta$ $=$\linie{30mm}
+\fusshilfe{\mbox{7:~r/t}}
+\end{pfaufg}
+% 2020-OS-K5b-m1 (Schwere II, rang 15)
+\begin{pfaufg}{nach~P10\\’20~\pkt{}~5b}{8.}{}
+Eine Schachtel hat als Seitenfläche ein Trapez mit zwei rechten Winkeln: Die Grundseite ist 11 cm lang, die linke Seite 6 cm und die rechte Seite 14 cm hoch; beide stehen senkrecht auf der Grundseite. Die obere Seite verläuft schräg. Berechne den Winkel $\alpha$ oben rechts zwischen der rechten Seite und der schrägen Seite.
+\par\smallskip\noindent{\small\itshape Skizze: Viereck (Trapez): Grundseite 11 cm unten, linke Seite 6 cm, rechte Seite 14 cm, rechte Winkel unten; schräge Oberseite; gestrichelte Waagerechte von der linken oberen Ecke zur rechten Seite; $\alpha$ oben rechts; nicht maßstabsgerecht}\par
+\karo{4}
+\fusshilfe{\mbox{8:~54,0°}}
+\end{pfaufg}
+% 2019-OS-K3b-m1 (Schwere II, rang 16)
+\begin{pfaufg}{nach~P10\\’19~\pkt{}~3b}{9.}{}
+Beim Fußballtraining spielen sich drei Kinder den Ball zu: Amir steht bei A, Ben bei B, Chris bei C. Zwischen Ben und Amir sind es 5 m, zwischen Amir und Chris 12 m. Bei B ist ein rechter Winkel; der Winkel bei A heißt $\alpha$. Zeige mit einer Rechnung, dass $\alpha$ etwa 65° groß ist.
+\par\smallskip\noindent{\small\itshape Skizze: rechtwinkliges Dreieck: rechter Winkel bei B (unten links), A senkrecht über B, C rechts von B; AB = 5 m, AC = 12 m; $\alpha$ bei A; nicht maßstabsgerecht}\par
+\karo{3}
+\fusshilfe{\mbox{9:~65°}}
+\end{pfaufg}
+% 2018-OS-K4d-m1 (Schwere II, rang 17)
+\begin{pfaufg}{nach~P10\\’18~\pkt{}~4d}{10.}{}
+Lea will die Höhe eines Berges bestimmen. Auf der Bergspitze C steht eine 10,0 m hohe Aussichtsplattform, ihre Spitze heißt D. Lea peilt von einem Punkt A aus, der 1,6 m über dem Boden liegt. Zur Bergspitze C misst sie gegenüber der Waagerechten 30°, zur Plattformspitze D 34°. B ist der Punkt senkrecht unter C auf der Höhe von A; bei B ist ein rechter Winkel. Der Winkel zwischen den beiden Peillinien heißt $\gamma$, der Winkel bei D im Dreieck ACD heißt $\delta$. Gegeben: AC = 118,8 m. Ermittle die Höhe des Berges über dem Boden. Gib an, wie hoch über dem Boden die Spitze D der Plattform liegt.
+\par\smallskip\noindent{\small\itshape Skizze: Lageskizze: A links (Messgerät auf Stativ, 1,6 m über dem Boden); waagerechte Linie AB nach rechts, rechter Winkel bei B; C senkrecht über B, D 10,0 m über C; Peillinie AC (30°); Boden gestrichelt; nicht maßstabsgerecht}\par
+\karo{4}
+\fusshilfe{\mbox{10:~61,0 m; 71,0 m}}
+\end{pfaufg}
+% 2017-OS-K4b-m1 (Schwere II, rang 18)
+\begin{pfaufg}{nach~P10\\’17~\pkt{}~4b}{11.}{}
+Ein Dachboden hat als Querschnitt das Dreieck ABC. Die Dachschräge AC ist 4,90 m lang. Der Winkel bei A beträgt 64,4°, der Winkel bei B 36,1°; der Winkel bei C heißt $\gamma$. Auf dem Boden AB steht im Punkt P eine senkrechte Wand, die genau bis zur Dachschräge BC reicht. Sie ist 1,35 m hoch. Berechne den Abstand von P bis B.
+\par\smallskip\noindent{\small\itshape Skizze: Dreieck: A links unten, B rechts unten, C oben links von der Mitte; 36,1° bei B; senkrechte Wand von P auf AB (nahe B) bis zur Schräge BC, 1,35 m hoch; nicht maßstabsgerecht}\par
+\karo{2}
+\fusshilfe{\mbox{11:~1,85 m}}
+\end{pfaufg}
+% 2016-OS-K7c-m1 (Schwere III, rang 19)
+\begin{pfaufg}{nach~P10\\’16~\pkt{}~7c}{12.}{}
+An einem Fluss liegen der Bioladen C, eine Brücke D und eine Anlegestelle B auf einer Geraden am Ufer, in dieser Reihenfolge. Von einem Ausflugslokal A führt ein 860 m langer Weg zum Bioladen; vom Bioladen bis zur Brücke sind es 530 m. Die Strecke AD steht senkrecht auf dem Ufer. Am Bioladen ist der Winkel zwischen den Wegen nach A und nach D 52° groß, am Lokal der Winkel zwischen den Richtungen nach C und nach B 71°. Auch von der Anlegestelle B soll ein neuer Weg direkt zur Brücke D führen. Ermittle die Länge von BD. Gegeben: AD $\approx$ 677 m.
+\par\smallskip\noindent{\small\itshape Skizze: Lageskizze: Ufer als schräge Gerade oben mit C (links), D, B (rechts); A unten; AC = 860 m; rechter Winkel bei D zwischen DA und dem Ufer; Winkel 52° bei C, $\angle$CAB = 71° bei A; AD und BD gestrichelt; nicht maßstabsgerecht}\par
+\karo{4}
+\fusshilfe{\mbox{12:~440 m}}
+\end{pfaufg}
+\par\vfill\noindent{\scriptsize\color{mbgrau}Originale: P10 2021 \pkt{} 3a, P10 2021 \pkt{} 3b, P10 2020 \pkt{} 1c, P10 2020 \pkt{} 1j, P10 2019 \pkt{} 1h, P10 2018 \pkt{} 1g, P10 2017 \pkt{} 1j, P10 2020 \pkt{} 5b, P10 2019 \pkt{} 3b, P10 2018 \pkt{} 4d, P10 2017 \pkt{} 4b, P10 2016 \pkt{} 7c\par}
+\end{document}

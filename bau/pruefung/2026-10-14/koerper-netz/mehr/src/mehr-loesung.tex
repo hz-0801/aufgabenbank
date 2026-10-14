@@ -1,0 +1,33 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (Bauregel 6.4)
+\makeatother
+% Rechenraum als Karo (Bauregel 6.9): n Rechenschritte = n mal 10 mm
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} mehr]{Netz und Schrägbild \pkt{} Lösungen}{PG80-4}\pfseitevon
+\pfheftkopf{Netz und Schrägbild}{Lösungen \pkt{} mehr}
+\begin{pfloesungb}{}
+\lzb{1.}{}{B: Pyramide (zweite Option) – vier Dreiecke, drei davon klappen zur Spitze}{Pyramide (zweite Option) – vier Dreiecke, drei davon klappen zur Spitze}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{2.}{}{Prisma}{Prisma}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{3.}{}{h = 0,70 m; a = 0,90 m}{Höhe senkrecht von der Spitze zum Schnittpunkt der Diagonalen, gestrichelt; h = 0,70 m; a = 0,90 m}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{4.}{}{Rückfläche 14 cm × 10 cm rechts an die Grundfläche; zweites Trapez unten an die Grundfläche}{Rückfläche 14 cm × 10 cm rechts an die Grundfläche; zweites Trapez unten an die Grundfläche}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{5.}{}{Netz um Rechtecke 37 cm × 150 cm und 108 cm × 150 cm ergänzt; a = 150 cm}{Netz um Rechtecke 37 cm × 150 cm und 108 cm × 150 cm ergänzt; a = 108 cm, b = 37 cm, d = 150 cm}
+\end{pfloesungb}
+\end{document}

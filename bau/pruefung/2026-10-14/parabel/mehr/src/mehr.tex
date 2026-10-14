@@ -1,0 +1,102 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (Bauregel 6.4)
+\makeatother
+% Rechenraum als Karo (Bauregel 6.9): n Rechenschritte = n mal 10 mm
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} mehr]{Parabel: Scheitelpunkt und Skizze}{PA30-4}\pfseitevon
+\pfheftkopf{Parabel: Scheitelpunkt und Skizze}{mehr}
+\pfstufenzeile{Scheitelpunkt ablesen \pkt{} Scheitelpunktform angeben \pkt{} Wertetabelle oder Skizze \pkt{} Lage zweier Parabeln ohne Rechnung begründen}
+% 2021-OS-B1d-m1 (Schwere I, rang 8)
+\begin{pfaufg}{nach~P10\\’21~\pkt{}~1d}{1.}{}
+Kreuze den Scheitelpunkt der gezeichneten Parabel an:
+\par\smallskip\noindent{\small\itshape Skizze: Graph: (x+3)$^{2}$+1; x -6..0; y -1..5; Gitter ja}\par
+\par\smallskip\noindent\pfkreuz{A}{$S(3\,|\,1)$}\pfkreuz{B}{$S(-3\,|\,-1)$}\pfkreuz{C}{$S(1\,|\,-3)$}\pfkreuz{D}{$S(-3\,|\,1)$.}
+\fusshilfe{\mbox{1:~S($-$3|1)}}
+\end{pfaufg}
+% 2020-OS-K3a-m1 (Schwere I, rang 9)
+\begin{pfaufg}{nach~P10\\’20~\pkt{}~3a}{2.}{}
+Die Parabel zu $f$ mit $y = (x+3)^2 - 5$ ist im Koordinatensystem gezeichnet. $S$ ist der Scheitelpunkt des Graphen von $f$. Gib seine Koordinaten an.
+\par\smallskip\noindent{\small\itshape Skizze: Graph: f: (x+3)$^{2}$-5; x -5..7; y -5..5; Gitter ja}\par
+\karo{2}
+\fusshilfe{\mbox{2:~S($-$3|$-$5)}}
+\end{pfaufg}
+% 2018-OS-K5b-m1 (Schwere I, rang 12)
+\begin{pfaufg}{nach~P10\\’18~\pkt{}~5b}{3.}{}
+Im Koordinatensystem ist die Parabel $p$ mit $p(x) = x^2 + 2x - 2$ gezeichnet. Gib den Scheitelpunkt von $p$ an: $S(\ \ |\ \ )$.
+\par\smallskip\noindent{\small\itshape Skizze: Graph: p: x$^{2}$+2*x-2; x -5..4; y -4..7; Gitter ja}\par
+\karo{2}
+\fusshilfe{\mbox{3:~S($-$1|$-$3)}}
+\end{pfaufg}
+% 2017-OS-K5c-m1 (Schwere I, rang 13)
+\begin{pfaufg}{nach~P10\\’17~\pkt{}~5c}{4.}{}
+Die Parabel $p$ hat die Gleichung $y = (x+4)^2 - 3$ und ist im Koordinatensystem gezeichnet. Gib den Scheitelpunkt der Parabel $p$ an: $S(\ \ |\ \ )$.
+\par\smallskip\noindent{\small\itshape Skizze: Graph: p: (x+4)$^{2}$-3; x -8..0; y -4..4; Gitter ja}\par
+\karo{2}
+\fusshilfe{\mbox{4:~S($-$4|$-$3)}}
+\end{pfaufg}
+% 2016-OS-B1g-m1 (Schwere I, rang 14)
+\begin{pfaufg}{nach~P10\\’16~\pkt{}~1g}{5.}{}
+Der Scheitelpunkt einer verschobenen Normalparabel ist $S(4\,|\,2)$. Kreuze die Gleichung an, die passt:
+\par\smallskip\noindent\pfkreuz{A}{$y = (x+4)^2 + 2$}\pfkreuz{B}{$y = (x-4)^2 - 2$}\pfkreuz{C}{$y = (x-4)^2 + 2$.}
+\fusshilfe{\mbox{5:~(x $-$ 4)² + 2}}
+\end{pfaufg}
+% 2015-OS-B1i-m1 (Schwere I, rang 15)
+\begin{pfaufg}{nach~P10\\’15~\pkt{}~1i}{6.}{}
+Die gezeichnete Normalparabel wird um 3 Einheiten nach rechts verschoben. Gib den Scheitelpunkt der verschobenen Parabel an: $S(\ \ |\ \ )$.
+\par\smallskip\noindent{\small\itshape Skizze: Graph: x$^{2}$; x -2..2; y -1..4; Gitter ja}\par
+\karo{2}
+\fusshilfe{\mbox{6:~S(3|0)}}
+\end{pfaufg}
+% 2020-OS-K3d-m1 (Schwere II, rang 16)
+\begin{pfaufg}{nach~P10\\’20~\pkt{}~3d}{7.}{}
+Die Parabel zu $f$ mit $y = (x+3)^2 - 5$ ist im Koordinatensystem gezeichnet. Spiegelt man den Graphen von $f$ an der y-Achse, entsteht die Parabel $p$. Skizziere $p$ in das Koordinatensystem. Gib eine Gleichung von $p$ an.
+\par\smallskip\noindent{\small\itshape Skizze: Graph: f: (x+3)$^{2}$-5; x -5..7; y -5..5; Gitter ja}\par
+\karo{2}
+\fusshilfe{\mbox{7:~(x $-$ 3)² $-$ 5}}
+\end{pfaufg}
+% 2018-OS-K5c-m1 (Schwere II, rang 18)
+\begin{pfaufg}{nach~P10\\’18~\pkt{}~5c}{8.}{}
+Im Koordinatensystem ist die Parabel $p$ mit $p(x) = x^2 + 2x - 2$ gezeichnet. Schreib die Gleichung von $p$ in Scheitelpunktform.
+\karo{2}
+\fusshilfe{\mbox{8:~(x + 1)² $-$ 3}}
+\end{pfaufg}
+% 2017-OS-K5e-m1 (Schwere II, rang 19)
+\begin{pfaufg}{nach~P10\\’17~\pkt{}~5e}{9.}{}
+Die Parabel $p$ hat die Gleichung $y = (x+4)^2 - 3$ und ist im Koordinatensystem gezeichnet. Man verschiebt $p$ um 3 Einheiten nach oben und spiegelt das Ergebnis danach an der x-Achse. So entsteht die Parabel $q$. Gib eine Gleichung von $q$ an.
+\par\smallskip\noindent{\small\itshape Skizze: Graph: p: (x+4)$^{2}$-3; x -8..0; y -4..4; Gitter ja}\par
+\karo{2}
+\fusshilfe{\mbox{9:~$-$(x + 4)²}}
+\end{pfaufg}
+% 2015-OS-K4b-m1 (Schwere II, rang 20)
+\begin{pfaufg}{nach~P10\\’15~\pkt{}~4b}{10.}{}
+Lena verlässt ein Flugzeug mit dem Fallschirm. Die ersten 25 Sekunden stürzt sie frei, der Schirm ist noch zu; ihre Höhe sinkt dabei von 2750 m auf 1500 m. Der Graph zeigt ihre Höhe $h$ (in Metern) zur Zeit $t$ (in Sekunden). Welche Gleichung kann den Graphen in den ersten 25 Sekunden beschreiben? Kreuze an und begründe:
+\par\smallskip\noindent{\small\itshape Skizze: Graph: G: -2*x$^{2}$+2750 für 0..25 | G: -6*x+1650 für 25..275; x 0..300; y 0..3000; Gitter ja; Achsen Zeit t in Sekunden | Höhe h in Metern}\par
+\par\smallskip\noindent\pfkreuz{A}{$h(t) = 2t^2 + 2750$}\pfkreuz{B}{$h(t) = 2t^2 - 2750$}\pfkreuz{C}{$h(t) = -2t^2 + 2750$}\pfkreuz{D}{$h(t) = -2t^2 - 2750$.}
+\fusshilfe{\mbox{10:~$-$2t² + 2750 (Start bei 2750 m, Höhe sinkt: Parabel nach unten geöffnet)}}
+\end{pfaufg}
+% 2014-OS-K7b-m1 (Schwere II, rang 22)
+\begin{pfaufg}{nach~P10\\’14~\pkt{}~7b}{11.}{}
+Im Koordinatensystem sind die Parabel $p$ mit $p(x) = -x^2$ und die Gerade $g$ mit $g(x) = 3x - 4$ gezeichnet. Eine weitere Gerade $f$ soll die Parabel $p$ nirgends treffen. Gib eine Gleichung für eine solche Gerade an.
+\par\smallskip\noindent{\small\itshape Skizze: Graph: p: -x$^{2}$ | g: 3*x-4; x -6..6; y -6..6; Gitter ja}\par
+\karo{2}
+\fusshilfe{\mbox{11:~1 (jede waagerechte Gerade oberhalb des Scheitelpunkts trifft p nicht)}}
+\end{pfaufg}
+% 2018-OS-K5d-m1 (Schwere III, rang 23)
+\begin{pfaufg}{nach~P10\\’18~\pkt{}~5d}{12.}{}
+Im Koordinatensystem ist die Parabel $p$ mit $p(x) = x^2 + 2x - 2$ gezeichnet. Eine Normalparabel $q$ hat ihren Scheitelpunkt auf der y-Achse und keine Nullstelle. Skizziere eine solche Parabel in das Koordinatensystem und gib ihre Gleichung an. Spiegelt man $q$ an der x-Achse, entsteht $q^{\prime}$. Gib eine Gleichung von $q^{\prime}$ an.
+\par\smallskip\noindent{\small\itshape Skizze: Koordinatensystem: x -5..4; y -6..6; Gitter ja}\par
+\karo{3}
+\fusshilfe{\mbox{12:~$-$x² $-$ 2}}
+\end{pfaufg}
+\par\vfill\noindent{\scriptsize\color{mbgrau}Originale: P10 2021 \pkt{} 1d, P10 2020 \pkt{} 3a, P10 2018 \pkt{} 5b, P10 2017 \pkt{} 5c, P10 2016 \pkt{} 1g, P10 2015 \pkt{} 1i, P10 2020 \pkt{} 3d, P10 2018 \pkt{} 5c, P10 2017 \pkt{} 5e, P10 2015 \pkt{} 4b, P10 2014 \pkt{} 7b, P10 2018 \pkt{} 5d\par}
+\end{document}

@@ -1,0 +1,33 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (Bauregel 6.4)
+\makeatother
+% Rechenraum als Karo (Bauregel 6.9): n Rechenschritte = n mal 10 mm
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} mehr]{Vierecke}{PG30-2}\pfseitevon
+\pfheftkopf{Vierecke}{mehr}
+\pfstufenzeile{Symmetrieachsen zählen \pkt{} Eigenschaft erkennen}
+% 2021-OS-B1j-m1 (Schwere I, rang 4)
+\begin{pfaufg}{nach~P10\\’21~\pkt{}~1j}{1.}{}
+Wie viele Symmetrieachsen hat ein Quadrat? Kreuze an:
+\par\smallskip\noindent{\small\itshape Skizze: Viereck (Quadrat): grau gefüllt}\par
+\par\smallskip\noindent\pfkreuz{A}{0}\pfkreuz{B}{1}\pfkreuz{C}{2}\pfkreuz{D}{3}
+\fusshilfe{\mbox{1:~4 Symmetrieachsen (Option „4“)}}
+\end{pfaufg}
+% 2016-OS-B1e-m1 (Schwere I, rang 5)
+\begin{pfaufg}{nach~P10\\’16~\pkt{}~1e}{2.}{}
+Kreuze die Aussage an, die für jedes Parallelogramm gilt:
+\par\smallskip\noindent\pfkreuz{A}{Je zwei benachbarte Winkel sind gleich.}\pfkreuz{B}{Je zwei gegenüberliegende Winkel sind gleich.}\pfkreuz{C}{Alle vier Winkel sind gleich.}
+\fusshilfe{\mbox{2:~B}}
+\end{pfaufg}
+\par\vfill\noindent{\scriptsize\color{mbgrau}Originale: P10 2021 \pkt{} 1j, P10 2016 \pkt{} 1e\par}
+\end{document}

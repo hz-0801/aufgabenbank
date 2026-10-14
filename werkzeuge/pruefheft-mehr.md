@@ -11,6 +11,10 @@ Setzt den Mehr-Block der Prüfung P10 (mathe-nachhilfe pruefung.md § 5
 - `--portion n`: welche Portion (Vorgabe 1); das Skript sagt, wie viele
   es gibt, und zeigt alle Portionen mit Schwere je Aufgabe.
 - `--schueler`: nur ein Vermerk im Register (Nummer, nie Name).
+- `--alle` (v0.14, 14.10.): alle Zeilen der Einheit mit `auf_blatt = nein`
+  nach `rang`, ohne Portionen, mit Lösung (`mehr.pdf`, `mehr-loesung.pdf`);
+  Kennung der Einheit mit Fassung (PG50-3), kein Register. Für die Mappe P10
+  (`werkzeuge/mappe-p10.py`).
 - `--ohne-register`, `--aus`, `--datum`, `--mn`, `--bb` wie bisher.
 
 Regel im Skript: nur Zeilen der Einheit mit `auf_blatt = nein`, Ordnung

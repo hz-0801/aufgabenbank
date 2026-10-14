@@ -1,0 +1,69 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (Bauregel 6.4)
+\makeatother
+% Rechenraum als Karo (Bauregel 6.9): n Rechenschritte = n mal 10 mm
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} mehr]{Seite im allgemeinen Dreieck, Sinussatz}{PG70-2}\pfseitevon
+\pfheftkopf{Seite im allgemeinen Dreieck, Sinussatz}{mehr}
+\pfstufenzeile{Seite berechnen (Sinussatz)}
+% 2018-OS-K4c-m1 (Schwere II, rang 3)
+\begin{pfaufg}{nach~P10\\’18~\pkt{}~4c}{1.}{}
+Lea will die Höhe eines Berges bestimmen. Auf der Bergspitze C steht eine 10,0 m hohe Aussichtsplattform, ihre Spitze heißt D. Lea peilt von einem Punkt A aus, der 1,6 m über dem Boden liegt. Zur Bergspitze C misst sie gegenüber der Waagerechten 30°, zur Plattformspitze D 34°. B ist der Punkt senkrecht unter C auf der Höhe von A; bei B ist ein rechter Winkel. Der Winkel zwischen den beiden Peillinien heißt $\gamma$, der Winkel bei D im Dreieck ACD heißt $\delta$. Lea erhält für die Strecke AC 118,8 m. Bestätige diesen Wert mit einer Rechnung. Gegeben: $\gamma$ = 4°, $\delta$ = 56°.
+\par\smallskip\noindent{\small\itshape Skizze: Lageskizze: A links; C senkrecht über B (B auf der Höhe von A), D 10,0 m über C; Peillinien AC und AD; $\gamma$ zwischen den Peillinien bei A, $\delta$ bei D; nicht maßstabsgerecht}\par
+\karo{3}
+\fusshilfe{\mbox{1:~118,8 m}}
+\end{pfaufg}
+% 2017-OS-K4c-m1 (Schwere II, rang 4)
+\begin{pfaufg}{nach~P10\\’17~\pkt{}~4c}{2.}{}
+Ein Dachboden hat als Querschnitt das Dreieck ABC. Die Dachschräge AC ist 4,90 m lang. Der Winkel bei A beträgt 64,4°, der Winkel bei B 36,1°; der Winkel bei C heißt $\gamma$. Die beiden Dachflächen über AC und über BC sollen gedämmt werden; der Dachboden ist 8,50 m lang. Berechne die Länge der Dachschräge BC. Berechne, wie viele Quadratmeter Dachfläche zu dämmen sind.
+\par\smallskip\noindent{\small\itshape Skizze: Schrägbild: liegendes Dreiecksprisma (Querschnitt ABC), Länge 8,50 m; AC = 4,90 m, 64,4° bei A, 36,1° bei B; die Rechtecke über AC und BC grau}\par
+\karo{3}
+\fusshilfe{\mbox{2:~7,50 m; 105 m²}}
+\end{pfaufg}
+% 2015-OS-K5c-m1 (Schwere II, rang 5)
+\begin{pfaufg}{nach~P10\\’15~\pkt{}~5c}{3.}{}
+Gegeben ist ein Drachenviereck ABCD. Die Diagonale AC ist senkrecht, die Diagonale BD waagerecht; beide schneiden sich in E im rechten Winkel. Die Seite AD ist 3,9 cm lang. Im Dreieck ABD ist der Winkel bei A 118° und der Winkel bei B 34° groß. Berechne die Länge der Diagonale BD.
+\par\smallskip\noindent{\small\itshape Skizze: Viereck (Drachenviereck): C oben, A unten, D weit links, B rechts; Diagonalen AC und BD mit Schnittpunkt E, rechter Winkel bei E; AD = 3,9 cm; Winkel $\angle$DAB = 118°, $\angle$ABD = 34°; nicht maßstabsgerecht}\par
+\karo{3}
+\fusshilfe{\mbox{3:~6,16 cm}}
+\end{pfaufg}
+% 2014-OS-K2b-m1 (Schwere II, rang 6)
+\begin{pfaufg}{nach~P10\\’14~\pkt{}~2b}{4.}{}
+Von einer Jugendherberge J führt ein Weg zu einem Forsthaus F, 2600 m lang. Vom Forsthaus führt ein gerader Weg über eine Badestelle zu einem Restaurant R; die Badestelle liegt 2400 m vor dem Restaurant. Direkt von der Jugendherberge zum Restaurant gibt es ebenfalls einen geraden Weg. Am Forsthaus schließen die Wege nach J und nach R einen Winkel von 65° ein, am Restaurant die Wege nach F und nach J einen Winkel von 52°. Eine Gruppe läuft von der Jugendherberge zuerst zum Restaurant und dann weiter zur Badestelle. Berechne die Länge dieses Weges.
+\par\smallskip\noindent{\small\itshape Skizze: Lageskizze: Dreieck F (links), J (oben rechts), R (unten rechts); FJ = 2600 m; Badestelle auf FR, F bis Badestelle 1,4 km, Badestelle bis R 2400 m; Winkel 65° bei F, 52° bei R; nicht maßstabsgerecht}\par
+\karo{3}
+\fusshilfe{\mbox{4:~5390 m}}
+\end{pfaufg}
+% 2021-OS-K3c-m1 (Schwere III, rang 7)
+\begin{pfaufg}{nach~P10\\’21~\pkt{}~3c}{5.}{}
+Gegeben ist das Viereck ABCD mit der Diagonale BD = 1400 m. Bei A ist ein rechter Winkel. Die Seite DC ist 1950 m lang. Bei D ist der Winkel zwischen DA und DB 53° groß und der Winkel zwischen DB und DC 62°. Bei B ist der Innenwinkel $\angle$ABC = 112° groß. Jemand behauptet: „BC und DC sind gleich lang.“ Prüfe mit einer Rechnung, ob das stimmt.
+\par\smallskip\noindent{\small\itshape Skizze: Viereck: A rechts unten, B senkrecht über A, D links von A, C weit links oben; Diagonale BD = 1400 m; rechter Winkel bei A; $\angle$ADB = 53°, $\angle$BDC = 62°, $\angle$ABC = 112°; DC = 1950 m; nicht maßstabsgerecht}\par
+\karo{5}
+\fusshilfe{\mbox{5:~1782 m; 1950 m)}}
+\end{pfaufg}
+% 2020-OS-K7c-m1 (Schwere III, rang 8)
+\begin{pfaufg}{nach~P10\\’20~\pkt{}~7c}{6.}{}
+Im Dreieck DEF ist DF = 3,6 m und FE = 9 m. Der Winkel bei F ist 112° groß, der Winkel bei E 18°. Der Punkt P liegt auf der Strecke DE, und PE ist 8 m lang. Berechne die Länge der Strecke DP.
+\par\smallskip\noindent{\small\itshape Skizze: Dreieck: D links unten, E rechts, F oben links; P auf DE nahe D; DF = 3,6 m, FE = 9 m; Winkel 112° bei F, 18° bei E; nicht maßstabsgerecht}\par
+\karo{4}
+\fusshilfe{\mbox{6:~2,9 m}}
+\end{pfaufg}
+% 2019-OS-K3c-m1 (Schwere III, rang 9)
+\begin{pfaufg}{nach~P10\\’19~\pkt{}~3c}{7.}{}
+Beim Fußballtraining spielen sich vier Kinder den Ball zu: Amir steht bei A, Ben bei B, Chris bei C, Deniz bei D. Es entsteht das Viereck ABCD mit rechtem Winkel bei B. Die Diagonale AC ist 12 m lang. Der Winkel zwischen AB und AC beträgt 65°, der Winkel bei C zwischen CB und CD 84° und der Winkel bei D 78°. Berechne den Abstand zwischen Amir (A) und Deniz (D).
+\par\smallskip\noindent{\small\itshape Skizze: Viereck: B links unten (rechter Winkel), A senkrecht über B, C rechts unten, D rechts oben; Diagonale AC = 12 m gestrichelt; $\angle$BAC = 65°, $\angle$BCD = 84°, $\angle$ADC = 78°; nicht maßstabsgerecht}\par
+\karo{4}
+\fusshilfe{\mbox{7:~10,5 m}}
+\end{pfaufg}
+\par\vfill\noindent{\scriptsize\color{mbgrau}Originale: P10 2018 \pkt{} 4c, P10 2017 \pkt{} 4c, P10 2015 \pkt{} 5c, P10 2014 \pkt{} 2b, P10 2021 \pkt{} 3c, P10 2020 \pkt{} 7c, P10 2019 \pkt{} 3c\par}
+\end{document}

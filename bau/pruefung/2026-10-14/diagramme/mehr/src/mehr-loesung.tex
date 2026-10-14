@@ -1,0 +1,42 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (Bauregel 6.4)
+\makeatother
+% Rechenraum als Karo (Bauregel 6.9): n Rechenschritte = n mal 10 mm
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} mehr]{Diagramme \pkt{} Lösungen}{PS40-3}\pfseitevon
+\pfheftkopf{Diagramme}{Lösungen \pkt{} mehr}
+\begin{pfloesungb}{}
+\lzb{1.}{}{Flüssigkeiten 13 \%}{im Uhrzeigersinn ab 12 Uhr: Getreide, Flüssigkeiten, Schrott, Sonstiges, Container; Flüssigkeiten 13 \%}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{2.}{}{Streifen mit Abschnitten 0,6 cm (nie), 1,8 cm (1–3-mal), 9,0 cm (4–6-mal), 3,6 cm (täglich)}{Streifen mit Abschnitten 0,6 cm (nie), 1,8 cm (1–3-mal), 9,0 cm (4–6-mal), 3,6 cm (täglich)}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{3.}{}{waagerechter Balken bei Do bis 155}{waagerechter Balken bei Do bis 155}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{4.}{}{grauer Sektor: viertes oder weiteres Kind (4,4 \% von 360° $\approx$ 16°); drittes Kind: 11,8 \% von 360° $\approx$ 42°}{grauer Sektor: viertes oder weiteres Kind (4,4 \% von 360° $\approx$ 16°); drittes Kind: 11,8 \% von 360° $\approx$ 42°}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{5.}{}{Fisch 150 : 20 = 7,5 Kästchen}{Achse 0, 20, 40, … (20 je Gitterlinie); E und D: Kartoffelgerichte und Gemüsegerichte (Reihenfolge beliebig), C: Pizza, B: Schnitzel, A: Fischgerichte; Fisch 150 : 20 = 7,5 Kästchen}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{6.}{}{Aussage 1 falsch (60 \% sind mehr als die Hälfte); Aussage 2 falsch (jede 12. wäre etwa 8,3 \%, tatsächlich 12 \%)}{Aussage 1 falsch (60 \% sind mehr als die Hälfte); Aussage 2 falsch (jede 12. wäre etwa 8,3 \%, tatsächlich 12 \%)}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{7.}{}{z. B.: „extrem abnimmt“ ist falsch, die abgeschnittene Achse übertreibt – Rückgang von rund 47 \% auf 40 \% in 4 Jahren, also nur 7 Prozentpunkte; oder: „in wenigen Jahren kein Jugendlicher mehr“ ist falsch – 2016 lesen noch 40 \%, bei gleichem Tempo erst in rund 23 Jahren}{z. B.: „extrem abnimmt“ ist falsch, die abgeschnittene Achse übertreibt – Rückgang von rund 47 \% auf 40 \% in 4 Jahren, also nur 7 Prozentpunkte; oder: „in wenigen Jahren kein Jugendlicher mehr“ ist falsch – 2016 lesen noch 40 \%, bei gleichem Tempo erst in rund 23 Jahren}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{8.}{}{echter Zuwachs je Jahr nur 4 €}{abgeschnittene, gedehnte y-Achse (beginnt bei 1040 € statt bei 0): Unterschiede von wenigen Euro erscheinen als Verdreifachung; echter Zuwachs je Jahr nur 4 €}
+\end{pfloesungb}
+\end{document}

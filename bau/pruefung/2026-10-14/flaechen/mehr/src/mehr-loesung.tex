@@ -1,0 +1,60 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (Bauregel 6.4)
+\makeatother
+% Rechenraum als Karo (Bauregel 6.9): n Rechenschritte = n mal 10 mm
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} mehr]{Flächeninhalt und Umfang \pkt{} Lösungen}{PG40-7}\pfseitevon
+\pfheftkopf{Flächeninhalt und Umfang}{Lösungen \pkt{} mehr}
+\begin{pfloesungb}{}
+\lzb{1.}{}{9 cm}{9 cm}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{2.}{}{A = (a + b) · c}{A = (a + b) · c}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{3.}{}{b = 4 cm}{b = 30 : 2 $-$ 11 = 4 cm}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{4.}{}{Ein Rechteck und zwei Halbkreise (zusammen ein Kreis mit Durchmesser a)}{Ein Rechteck und zwei Halbkreise (zusammen ein Kreis mit Durchmesser a)}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{5.}{}{A $\approx$ 4,15 m²}{A = $\pi$ · 1,15² $\approx$ 4,15 m²}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{6.}{}{u = 24 · a}{u = 24 · a}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{7.}{}{QC = 16 m}{½ · 15 · QC = 120 $\Rightarrow$ QC = 2 · 120 : 15 = 16 m}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{8.}{}{A $\approx$ 1,40 m²; V $\approx$ 2,1 m³; 250 kg + 0,1 · V · 1 000 kg $\approx$ 461 kg}{A = ½ · 1,80 · 1,56 $\approx$ 1,40 m²; V = A · 1,50 $\approx$ 2,1 m³; 250 kg + 0,1 · V · 1 000 kg $\approx$ 461 kg}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{9.}{}{A $\approx$ 171,6 m²}{A = 18,0 · 11,0 $-$ $\pi$ · 2,9² $\approx$ 171,6 m²}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{10.}{}{A $\approx$ 94,3 m²}{A = 6 · 11 + $\pi$ · 3² $\approx$ 94,3 m²}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{11.}{}{Höhe der Seitenfläche s $\approx$ 0,83 m; A $\approx$ 0,37 m²}{Höhe der Seitenfläche s = √(0,70² + 0,45²) $\approx$ 0,83 m; A = ½ · 0,90 · s $\approx$ 0,37 m²}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{12.}{}{Kuchenplatten (30 cm) passen, denn h = 35 cm}{Kuchenplatten (30 cm) passen, denn h = 2 · 3360 : (108 + 84) = 35 cm}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{13.}{}{Nein: nötig sind 1,50 m, die Platte ist nur 1,8 : 1,25 = 1,44 m hoch}{Nein: nötig sind 1,50 m, die Platte ist nur 1,8 : 1,25 = 1,44 m hoch}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{14.}{}{Angaben: AD = 28°; AE $\approx$ 1,83 cm; ED $\approx$ 3,44 cm; A $\approx$ 3,15 cm²}{Angaben: AD = 3,9 cm, rechter Winkel bei E, $\delta$ = 28°; AE = 3,9 · sin 28° $\approx$ 1,83 cm; ED = 3,9 · cos 28° $\approx$ 3,44 cm; A = ½ · AE · ED $\approx$ 3,15 cm²}
+\end{pfloesungb}
+\end{document}

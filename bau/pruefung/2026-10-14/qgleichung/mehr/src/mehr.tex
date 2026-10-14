@@ -1,0 +1,33 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (Bauregel 6.4)
+\makeatother
+% Rechenraum als Karo (Bauregel 6.9): n Rechenschritte = n mal 10 mm
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} mehr]{Quadratische Gleichung lösen}{PA40-3}\pfseitevon
+\pfheftkopf{Quadratische Gleichung lösen}{mehr}
+\pfstufenzeile{Nullstellen berechnen}
+% 2020-OS-K3e-m1 (Schwere II, rang 7)
+\begin{pfaufg}{nach~P10\\’20~\pkt{}~3e}{1.}{}
+Berechne die Nullstellen der Funktion mit $y = 2x^2 + 6x - 20$.
+\karo{3}
+\fusshilfe{\mbox{1:~2; $-$5}}
+\end{pfaufg}
+% 2017-OS-K5d-m1 (Schwere III, rang 8)
+\begin{pfaufg}{nach~P10\\’17~\pkt{}~5d}{2.}{}
+Die Parabel $p$ hat die Gleichung $y = (x+4)^2 - 3$ und ist im Koordinatensystem gezeichnet. Zeige, dass man die Gleichung von $p$ auch als $y = x^2 + 8x + 13$ schreiben kann. Berechne die Nullstellen von $p$.
+\par\smallskip\noindent{\small\itshape Skizze: Graph: p: (x+4)$^{2}$-3; x -8..0; y -4..4; Gitter ja}\par
+\karo{4}
+\fusshilfe{\mbox{2:~x² + 8x + 13; $-$2,27; $-$5,73}}
+\end{pfaufg}
+\par\vfill\noindent{\scriptsize\color{mbgrau}Originale: P10 2020 \pkt{} 3e, P10 2017 \pkt{} 5d\par}
+\end{document}

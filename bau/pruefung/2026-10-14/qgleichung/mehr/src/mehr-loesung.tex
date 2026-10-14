@@ -1,0 +1,24 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (Bauregel 6.4)
+\makeatother
+% Rechenraum als Karo (Bauregel 6.9): n Rechenschritte = n mal 10 mm
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} mehr]{Quadratische Gleichung lösen \pkt{} Lösungen}{PA40-3}\pfseitevon
+\pfheftkopf{Quadratische Gleichung lösen}{Lösungen \pkt{} mehr}
+\begin{pfloesungb}{}
+\lzb{1.}{}{x$_1$ = 2; x$_2$ = $-$5}{x$_1$ = 2; x$_2$ = $-$5}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{2.}{}{(x + 4)² $-$ 3 = x² + 8x + 13; x $\approx$ $-$2,27; x$_2$ $\approx$ $-$5,73}{(x + 4)² $-$ 3 = x² + 8x + 13; x = $-$4 ± √3, also x$_1$ $\approx$ $-$2,27; x$_2$ $\approx$ $-$5,73}
+\end{pfloesungb}
+\end{document}
