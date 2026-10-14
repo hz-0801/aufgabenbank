@@ -18,7 +18,7 @@ JUNG = [2026, 2025, 2024, 2023, 2022]
 GEBIETE = [
     ('Geometrie', ['winkel', 'symmetrie', 'vierecke', 'flaechen', 'pythagoras', 'sin-cos-tan',
                    'sinussatz', 'koerper-netz', 'koerper-volumen']),
-    ('Funktionen', ['lineare', 'parabel', 'qgleichung', 'gleichungssysteme', 'wachstum']),
+    ('Funktionen', ['lineare', 'gleichungssysteme', 'parabel', 'qgleichung', 'wachstum']),
     ('Daten und Zufall', ['prozent', 'grundwert', 'kenngroessen', 'diagramme', 'wahrscheinlichkeit']),
 ]
 
