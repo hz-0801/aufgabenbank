@@ -147,12 +147,13 @@ def main():
 \usepackage[table]{xcolor}\usepackage{pdfpages}\usepackage{eso-pic}
 \usepackage[hidelinks,bookmarksopen,bookmarksopenlevel=1]{hyperref}
 \pagestyle{empty}
-\newcommand{\zurueck}{\AddToShipoutPictureFG*{\put(\LenToUnit{\paperwidth-30mm},\LenToUnit{\paperheight-9mm}){%%
-\hyperlink{karte}{\colorbox{white}{\footnotesize\sffamily\color{blue!60!black}$\uparrow$ Bestellkarte}}}}}
+\newcommand{\zurueck}{\AddToShipoutPictureFG*{\put(\LenToUnit{\paperwidth-14mm},\LenToUnit{7mm}){%%
+\hyperlink{karte}{\large\color{blue!60!black}$\uparrow$}}}}
 \begin{document}
 \pdfbookmark[1]{Bestellkarte}{karte}\hypertarget{karte}{}
 {\LARGE\bfseries Prüfung P10 -- alle Blätter}\par\smallskip
-{\small Stand %s \quad Bestellkarte und Inhalt: Einheit anklicken springt zum Blatt; auf jedem Blatt oben rechts zurück. Ohne Lösungen (die liegen je Einheit).}\par\medskip
+%%%s
+\medskip
 \renewcommand{\arraystretch}{1.15}
 \begin{longtable}{@{}p{0.66\textwidth}lrr@{}}
 \textbf{Einheit} \textcolor{black!60}{(Stufen)} & \textbf{Kennung} & \textbf{S.} & \textbf{ab}\\\hline\endhead

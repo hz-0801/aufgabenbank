@@ -70,7 +70,6 @@ def seite(gebiet, eintraege):
             z.append(r'\hspace*{1.2em}%s\enspace %s & %s\\' % (KASTEN, name, lohnt(wort, jahre)))
     return (r'{\LARGE\bfseries %s}\par\vspace{1ex}' % gebiet
             + r'\begin{tabular}{@{}p{0.7\textwidth}l@{}}'
-            + r' & {\footnotesize\color{black!60}26 \,\, 25 \,\, 24 \,\, 23 \,\, 22}\\[-0.6ex]'
             + '\n'.join(z) + r'\end{tabular}\clearpage')
 
 
