@@ -1,13 +1,31 @@
 {
- "kennung": "PG50-4", "name": "Pythagoras",
- "seiten": {"33": "Blatt S. 1"},
+ "kennung": "PG50-4",
+ "name": "Pythagoras",
+ "seiten": {
+  "33": "Blatt S. 1"
+ },
  "antworten": {
   "33": [
-   ["offen", "Das ist genau der Punkt, den du am 15.10. für Schritt C vorgemerkt hast (Merkkasten, plan.md § 10 j) – bisher gilt „kein Merkkasten, außer bestellt“. Mein Urteil: Ja, für die wenigen Formeln, die ein Schüler sicher können muss (Pythagoras, pq-Formel, Geradengleichung, sin/cos/tan, Scheitelpunktform). Aber nicht als eigener Merksatz, sondern als Kasten aus seiner Formelsammlung, so wie er ihn in der Prüfung aufschlägt – den Duden-Kasten „Rechtwinkliges Dreieck“ (S. 21) können wir aus den Tafelwerk-Daten schon einzeln setzen. Dann lernt er Formel und Fundort zugleich, und Blatt und Prüfung zeigen dasselbe Bild. Ort: oben unter dem Titel, an Stelle der Formelsammlungs-Zeile. Weg A: Kasten aus der Formelsammlung des Schülers (Duden oder Paetec). Weg B: eigener knapper Merksatz im Stil der Blätter. Ich empfehle Weg A."],
-   ["entschieden", "Das ist schon entschieden (15.10. o): Die Formelsammlungs-Frage steht einmal, ohne Nummer, direkt unter dem Titel, und nur, wo die Formelsammlung zum Handgriff etwas hat. Das Blatt ist älter als diese Entscheidung; in Schritt C wandert die Zeile nach oben, und die Zeilen in den Stufen fallen weg. Kommt der Kasten (Kommentar 1), ersetzt er die Zeile."],
-   ["ändern", "Verstanden, und du hast recht: Ich habe die Dreiecke a, b, c genannt und dann noch einmal „Dreieck a … Hypotenuse“ dahinter geschrieben – doppelt. Besser: Die gesuchten Seiten heißen x, y, z, und die Frage lautet nur „Bei welcher Seite ist die Hypotenuse gesucht?“ mit drei Kästchen x, y, z in einer Zeile. Dazu ein Handwerksfehler: Die drei Skizzen sind zu klein und überlappen, die Zahlen 44 und 5 stehen ohne Einheit mitten zwischen den Figuren. Ich trage es als Befund ein: Warum: Der Schüler soll die Frage auf einen Blick erfassen; jedes Wort, das nur auf etwas zeigt, was die Skizze schon zeigt, kostet Lesezeit. Beispiel: x, y, z statt „Dreieck a … Hypotenuse“. Grenze: keine – das gilt für jede Erkennen-Aufgabe. Du sagst „oft“; beim nächsten Blatt mit demselben Muster wird es Regel."],
-   ["ändern", "Ja, besser. „in Figuren versteckt“ sagt nicht, was versteckt ist; auf Seite 2 steht der Stufenkopf ohne Titel und muss allein verständlich sein. „Pythagoras versteckt“ sagt es."],
-   ["ändern", "Ja – passt zu „Pythagoras versteckt“, und „Gleichung“ allein sagt nicht, welche. Einziger Haken: Das Blatt sin, cos, tan hat dieselbe Stufe „Gleichung aufstellen“; dort würde ich es so lassen (dort ist es wirklich eine Gleichung mit sin, cos oder tan), sonst klingt es gezwungen."]
+   [
+    "entschieden",
+    "Das ist genau der Punkt, den du am 15.10. für Schritt C vorgemerkt hast (Merkkasten, plan.md § 10 j) – bisher gilt „kein Merkkasten, außer bestellt“. Mein Urteil: Ja, für die wenigen Formeln, die ein Schüler sicher können muss (Pythagoras, pq-Formel, Geradengleichung, sin/cos/tan, Scheitelpunktform). Aber nicht als eigener Merksatz, sondern als Kasten aus seiner Formelsammlung, so wie er ihn in der Prüfung aufschlägt – den Duden-Kasten „Rechtwinkliges Dreieck“ (S. 21) können wir aus den Tafelwerk-Daten schon einzeln setzen. Dann lernt er Formel und Fundort zugleich, und Blatt und Prüfung zeigen dasselbe Bild. Ort: oben unter dem Titel, an Stelle der Formelsammlungs-Zeile. Weg A: Kasten aus der Formelsammlung des Schülers (Duden oder Paetec). Weg B: eigener knapper Merksatz im Stil der Blätter. Ich empfehle Weg A. Entschieden 15.10. (t): Weg A als Versuch, mit „Tafelwerk S. n“ unter dem Kasten."
+   ],
+   [
+    "entschieden",
+    "Das ist schon entschieden (15.10. o): Die Formelsammlungs-Frage steht einmal, ohne Nummer, direkt unter dem Titel, und nur, wo die Formelsammlung zum Handgriff etwas hat. Das Blatt ist älter als diese Entscheidung; in Schritt C wandert die Zeile nach oben, und die Zeilen in den Stufen fallen weg. Kommt der Kasten (Kommentar 1), ersetzt er die Zeile."
+   ],
+   [
+    "ändern",
+    "Verstanden, und du hast recht: Ich habe die Dreiecke a, b, c genannt und dann noch einmal „Dreieck a … Hypotenuse“ dahinter geschrieben – doppelt. Besser: Die gesuchten Seiten heißen x, y, z, und die Frage lautet nur „Bei welcher Seite ist die Hypotenuse gesucht?“ mit drei Kästchen x, y, z in einer Zeile. Dazu ein Handwerksfehler: Die drei Skizzen sind zu klein und überlappen, die Zahlen 44 und 5 stehen ohne Einheit mitten zwischen den Figuren. Ich trage es als Befund ein: Warum: Der Schüler soll die Frage auf einen Blick erfassen; jedes Wort, das nur auf etwas zeigt, was die Skizze schon zeigt, kostet Lesezeit. Beispiel: x, y, z statt „Dreieck a … Hypotenuse“. Grenze: keine – das gilt für jede Erkennen-Aufgabe. Du sagst „oft“; beim nächsten Blatt mit demselben Muster wird es Regel."
+   ],
+   [
+    "ändern",
+    "Ja, besser. „in Figuren versteckt“ sagt nicht, was versteckt ist; auf Seite 2 steht der Stufenkopf ohne Titel und muss allein verständlich sein. „Pythagoras versteckt“ sagt es."
+   ],
+   [
+    "ändern",
+    "Ja – passt zu „Pythagoras versteckt“, und „Gleichung“ allein sagt nicht, welche. Einziger Haken: Das Blatt sin, cos, tan hat dieselbe Stufe „Gleichung aufstellen“; dort würde ich es so lassen (dort ist es wirklich eine Gleichung mit sin, cos oder tan), sonst klingt es gezwungen."
+   ]
   ]
  }
 }
