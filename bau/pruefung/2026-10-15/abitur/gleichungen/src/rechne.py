@@ -11,9 +11,9 @@ a = 2400*(1 - exp(-x**2/4)); s = nsolve(a.subs(x, x + 2) - a - 800, x, 2); p('B3
 p('B3 eindeutig >0:', [round(float(a.subs(x, v + 2) - a.subs(x, v) - 800), 1) for v in (0, 0.5, 1, 1.5, 2, 2.5, 3, 4)], 'Wendestelle', solve(diff(a, x, 2), x))
 # B4 2023-B2.2g  f - g
 f = x**3 - 9*x**2 + 24*x - 16; g = x**3/4 - 3*x**2 + 12*x - 16; p('B4', factor(f - g), solve_univariate_inequality(f - g > 0, x))
-# B5 2024-B2.2h  f = 0,5x⁴ - 3x² + 2,5, p = -2,5x² + 2,5, |p - f| <= 2 · 1/8 für x >= 1
-f = Rational(1, 2)*x**4 - 3*x**2 + Rational(5, 2); pp = -Rational(5, 2)*x**2 + Rational(5, 2)
-d = expand(f - pp); p('B5', d, solve(Eq(d, Rational(1, 4)), x), N(sqrt((1 + sqrt(3))/2), 4), solve(Eq(u**2 - u, Rational(1, 2)), u))
+# B5 2024-B2.2h  f = x⁴ - 6x² + 5, p = -5x² + 5, |p - f| <= 2 · 1/4 für x >= 1 (Kritiker 15.10.)
+f = x**4 - 6*x**2 + 5; pp = -5*x**2 + 5
+d = expand(f - pp); p('B5', d, solve(Eq(d, Rational(1, 2)), x), N(sqrt((1 + sqrt(3))/2), 4), solve(Eq(u**2 - u, Rational(1, 2)), u))
 # Mehr
 f = (-x**2/5 + 3*x)*exp(-x/5); h = -x*exp(-x/5); p('M1', solve(Eq(f, h), x), N(f.subs(x, 20), 4))
 g = x**2 - 5; h = -x**2 + 2*x + 7; p('M2', solve(Eq(g, h), x))
