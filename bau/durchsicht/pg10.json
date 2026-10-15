@@ -1,0 +1,32 @@
+{
+ "kennung": "PG10-5", "name": "Winkel", "offset": 2,
+ "seiten": {"10": "Blatt S. 1", "11": "Blatt S. 2", "12": "Blatt S. 3", "13": "Lösung", "14": "Mehr S. 1"},
+ "antworten": {
+  "10": [
+   ["offen", "Keine Buchstaben: a, b, c tragen schon die Teilaufgaben, A–D die Ankreuz-Optionen. Die Abschnitte trennen Linie und Überschrift. Die längste Stufenzeile (Wahrscheinlichkeit, sechs Stufen) braucht zwei Zeilen – das trägt. Empfehlung: lassen."],
+   ["ändern", "Nr. 1 neu: a) Nenne die Innenwinkelsumme im Dreieck. b) Skizze: Winkel 68° an einer Geraden, Nebenwinkel gesucht. Genau diese Rechnung brauchen Nr. 2 und 3 (180° − 68°, 180° − 62°). Die jetzige Nr. 1 verrät mit den 360° mehr, als sie fragt."],
+   ["Querschnitt", "Ja, einmal je Blatt (gilt seit 12.10.). Aber nicht egal: Winkel an Parallelen und die Winkelsumme kommen im Basisteil – ohne Hilfsmittel. Dort übt die Seitenfrage das Falsche; hier passt „Nenne …“. Die Seitenfrage gehört dahin, wo der Hauptteil mit Tafelwerk prüft. Entscheidung mit dem Thema Formelsammlung."],
+   ["Handwerk", "Überschrift allein unten verstößt gegen eine bestehende Regel. Der Setzer bindet den Stufenkopf an die erste Aufgabe darunter."],
+   ["Querschnitt", "Basiswinkel = die zwei gleichen Winkel an der Basis des gleichschenkligen Dreiecks, nicht des gleichseitigen. Ein Einzeiler fehlt hier gegen eine bestehende Regel (keine Begriffe, die das Blatt nicht einführt). Ob grau als Merkzeile, entscheiden wir einmal mit S. 17, 33, 50."]
+  ],
+  "11": [
+   ["entschieden", "Nr. 5 fällt weg (Lehrer 15.10.: das Prinzip steckt im Original, kein Gewinn)."],
+   ["ändern", "Nein, es geht in Basiswinkel auf: ’25 · 2c ist das einzige Original, und der Kern ist gleichschenklig-rechtwinklig ⇒ 45° + 45°. Nach deiner Bedingung: Stufen „Winkel gesucht · Winkel begründen“. ’23 · 1g zu gesucht, ’23 · 7a und ’25 · 2c zu begründen – jede Stufe mit zwei Originalen."],
+   ["ändern", "Regel: links Ergebnis fett, rechts ein Zwischenergebnis je Handgriff, kein Weg. Hier zu lang ist der Fuß kopfüber: bei Nr. 5 und 7 stehen Sätze statt Ergebnisse. Fuß künftig nur „52°“, „gleichschenklig“."]
+  ],
+  "12": [
+   ["Antwort", "Hier nur Winkel ohne Längen; sin, cos, tan verbinden einen Winkel mit Längen im rechtwinkligen Dreieck. Die Originale brauchen: Innenwinkelsumme (Dreieck, Viereck), Winkel an Parallelen, die zusammen 180° ergeben (Trapez, Parallelogramm), gleiche Basiswinkel, rechter Winkel aus „senkrecht“. Nicht genannt: Scheitel- und Wechselwinkel – nur Basisteil 2014, 2015, 2019, 2020, seitdem nicht. Die stehen auch nicht im Mehr; das ist eine Lücke."]
+  ],
+  "13": [
+   ["ändern", "„Lösungen · Winkel“: Auf einer losen Seite sagt das erste Wort, was für ein Blatt es ist – wie der Kopf, der zuerst die Sorte nennt."],
+   ["Querschnitt", "Du hattest am 11.10. „Stufenköpfe in der Lösung“ festgelegt. Die Nummern laufen durch; die Nummer findet die Stelle allein. Ich würde das zurücknehmen – Teil der Entscheidung Lösungsblatt."],
+   ["Querschnitt", "Stufenzeile unter dem Titel und die Punkte im Stufenkopf: auf der Lösung ohne Nutzen. Fallen mit dem Lösungsblatt weg."],
+   ["Querschnitt", "Mitliefern ist entschieden (15.10. k); das Gesamtheft ist ohne Lösungen, die Mappe ist deine Prüfkopie mit Lösungen. Layout: Weg A „wie Buch“ (Kopf „P10 · Lösung“, klein, zweispaltig, grauer Randstreifen, ohne Stufenköpfe) oder Weg B „entschlackt“ (nur Kopf/Titel, Stufenköpfe raus). Empfehlung A."]
+  ],
+  "14": [
+   ["ändern", "Titel „Winkel · weitere Prüfungsaufgaben“ – sagt genau, was es ist, auch wenn später andere Länder dazukommen. „Rest“ klingt nach Ausschuss. Dann braucht es keine Hinweiszeile."],
+   ["Querschnitt", "Alle vier gehören zu „Winkel gesucht“; zu „begründen“ gibt es im Mehr nichts. Ein Hinweis auf dem Blatt (etwa „+4 im Mehr“ klein am Stufenkopf) ist Inhalt, kein Bedientext. Entscheidung mit dem Thema Mehr (S. 21, 28)."],
+   ["Antwort", "Es hat eine: PG10-5, oben rechts. Mehr ist dieselbe Einheit; links steht „P10 · mehr“, bestellt wird mit „PG10 mehr“. Bleibt so."]
+  ]
+ }
+}
