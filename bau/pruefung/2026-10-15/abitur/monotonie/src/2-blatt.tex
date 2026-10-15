@@ -1,0 +1,146 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+\newsavebox{\gbox}\newlength{\gLinks}
+% v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
+% Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr\wd\gbox+6mm\relax}%
+  \ifdim\gLinks>0.62\linewidth
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\leavevmode\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par}
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+% Skizzenfeld (v0.10, Lehrer 13.10.): Karo ab dem linken Rand über die Zeile, „Skizze“ klein grau oben links im Feld
+% (wie \pfskizzenfeld der Vorlage); der rechte Rand bleibt den Bedingungen
+\newcommand{\gskizze}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \node[anchor=north west,inner sep=2pt,font=\scriptsize,text=mbgrau,fill=white] at (0,{#1*10mm}) {Skizze};
+  \end{tikzpicture}\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[Abitur GK \pkt{} Prüfung]{Monotonie}{AA60}\pfseitevon
+\pfheftkopf{Monotonie}{}
+\pfstufenzeile{Monotonie begründen \pkt{} Graph von f$'$ lesen \pkt{} Aussagen über f und f$'$ beurteilen}
+
+% ===================== Stufe: Monotonie begründen =====================
+\gkopfvor{\pfstufekopf{Monotonie begründen}{\gpunkte[24 23]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-monotonie-begrunden) [@thispage /XYZ @xpos @ypos null]}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% 2024-bebb-gk-A1.7a-m1 (Original 2024-bebb-gk-A1.7a, Schwere I, rang 1; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’24\\A1.7a}{1.}{\pfohnetr}
+Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = e^{0{,}25x} - e$; ihr Graph ist $G$. Weise nach, dass $G$ streng monoton steigend verläuft.
+\karo{4}
+\fusshilfe{\mbox{1:~0,25 · $e^{0{,}25x}$; G ist streng monoton steigend}}
+\end{pfaufg}
+% 2023-bebb-gk-B2.1e-m1 (Original 2023-bebb-gk-B2.1e, Schwere I, rang 2; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’23\\B2.1e}{2.}{}
+Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = 0{,}5 \cdot (x^2 - 9) \cdot e^x$ und $f'(x) = (0{,}5x^2 + x - 4{,}5) \cdot e^x$. Der Graph von $f$ hat bei $x = -1 + \sqrt{10}$ einen Tiefpunkt und für $x \ge 0$ keinen weiteren Extrempunkt. Gib das Monotonieverhalten von $f$ für $x \ge 0$ an.
+\karo{3}
+\fusshilfe{\mbox{2:~2,16: f fällt streng monoton; für x $\ge$ $-$1 + √10: f steigt streng monoton}}
+\end{pfaufg}
+
+% ===================== Stufe: Graph von f′ lesen =====================
+\gkopfvor{\pfstufekopf{Graph von f$'$ lesen}{\gpunkte[26 23 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-graph-von-f-lesen) [@thispage /XYZ @xpos @ypos null]}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% 2026-bb-gk-A1.7a-m1 (Original 2026-bb-gk-A1.7a, Schwere II, rang 3; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’26\\A1.7a}{3.}{\pfohnetr}
+Die Abbildung zeigt den Graphen der Ableitungsfunktion $f'$ einer in $\mathbb{R}$ definierten Funktion $f$. Die einzige Nullstelle von $f'$ ist $-2$. Begründe, dass $f$ für $x \le -2$ monoton fallend und für $x \ge -2$ monoton steigend ist.
+\gzwei{\begin{abiksys}[xmin=-4,xmax=4,ymin=-3,ymax=4,le=0.7]\funktion[3]{3*(\x+2)*exp(-(\x+1))}{G_{f'}}\end{abiksys}}{\karo{4}}
+\fusshilfe{\mbox{3:~f fällt für x $\le$ $-$2; f steigt für x $\ge$ $-$2}}
+\end{pfaufg}
+% 2022-bebb-gk-B2.1c-m1 (Original 2022-bebb-gk-B2.1c, Schwere II, rang 4; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’22\\B2.1c}{4.}{}
+Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = (x + 3) \cdot e^{-x}$ und ihrer Ableitung $f'(x) = -(x + 2) \cdot e^{-x}$. Die Abbildung zeigt die Graphen I und II von $f$ und $f'$ ohne Skalierung. Entscheide, welcher Graph $f'$ darstellt, und begründe deine Entscheidung.
+\gzwei{\begin{abiksys}[xmin=-4,xmax=3,ymin=-8,ymax=9,le=0.6,yle=0.18,ohnezahlen,ohnegitter]\funktion[-2.6]{(\x+3)*exp(-\x)}{\mathrm{I}}\funktion[2]{-(\x+2)*exp(-\x)}{\mathrm{II}}\end{abiksys}}{\karo{4}}
+\fusshilfe{\mbox{4:~f hat bei $-$2 einen Hochpunkt (f$'$ wechselt dort von + nach $-$); Graph II ist f$'$}}
+\end{pfaufg}
+% 2023-bebb-gk-B2.2f-m1 (Original 2023-bebb-gk-B2.2f, Schwere II, rang 5; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’23\\B2.2f}{5.}{}
+Gegeben ist die Funktion $g$ mit $g(x) = \tfrac{1}{4}x^3 - 3x^2 + 12x - 16$, $x \in \mathbb{R}$. Die Abbildung zeigt den Graphen von $g'$, eine nach oben geöffnete Parabel mit dem Scheitel $(4 \mid 0)$. Begründe mithilfe der Abbildung die beiden Aussagen: Der Graph von $g$ hat nur in einem Punkt eine waagerechte Tangente. Der Graph von $g$ hat keinen Extrempunkt.
+\gzwei{\begin{abiksys}[xmin=0,xmax=7,ymin=0,ymax=6,le=0.7]\funktion[6.6]{0.75*(\x-4)^2}{G_{g'}}\end{abiksys}}{\karo{4}}
+\fusshilfe{\mbox{5:~genau ein Punkt mit waagerechter Tangente; kein Extrempunkt}}
+\end{pfaufg}
+
+% ===================== Stufe: Aussagen über f und f′ beurteilen =====================
+\gkopfvor{\pfstufekopf{Aussagen über f und f$'$ beurteilen}{\gpunkte[26 23]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-aussagen-uber-f-und-f-beurteilen) [@thispage /XYZ @xpos @ypos null]}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% 2026-bb-gk-B2.1h-m1 (Original 2026-bb-gk-B2.1h, Schwere II, rang 6; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’26\\B2.1h}{6.}{}
+Der Schienenverlauf einer Modelleisenbahn ist in der Draufsicht symmetrisch zur $x$- und zur $y$-Achse (Abbildung, 1 LE = 1 m). Der obere Verlauf wird für $-1 \le x \le 0$ durch den Graphen $G$ von $g$ mit $g(x) = \tfrac{8}{3}x^3 + 4x^2$ beschrieben; er beginnt in $A\left(-1 \mid \tfrac{4}{3}\right)$. Oberer und unterer Verlauf sind durch zwei Halbkreise verbunden. Ein Sensor sitzt im Punkt $Q(x_Q \mid y_Q)$ mit $y_Q = -g(-x_Q)$ und $g'(-x_Q) = 0$, $x_Q \ne 0$. Beschreibe mithilfe der Abbildung die Lage des Sensors.
+\gzwei{\begin{abiksys}[xmin=-2.6,xmax=2.6,ymin=-1.6,ymax=1.6,le=1.2,xstep=0.5,ystep=0.5]\funktionab[-0.75]{8/3*\x^3+4*\x^2}{G}{-1}{0}\funktionab{-8/3*\x^3+4*\x^2}{}{0}{1}\funktionab{-8/3*\x^3-4*\x^2}{}{-1}{0}\funktionab{8/3*\x^3-4*\x^2}{}{0}{1}\draw[mbterm,line width=0.8pt] (-1,4/3) arc[start angle=90,end angle=270,radius=4/3];\draw[mbterm,line width=0.8pt] (1,-4/3) arc[start angle=-90,end angle=90,radius=4/3];\fill (-1,4/3) circle (1.6pt) node[above] {$A$};\end{abiksys}}{\karo{4}}
+\fusshilfe{\mbox{6:~1; Q(1|$-\tfrac{4}{3}$): tiefster Punkt des unteren Verlaufs rechts, wo er in den rechten Halbkreis übergeht}}
+\end{pfaufg}
+% 2023-bebb-gk-B2.1d-m1 (Original 2023-bebb-gk-B2.1d, Schwere II, rang 7; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’23\\B2.1d}{7.}{}
+Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = 0{,}5 \cdot (x^2 - 9) \cdot e^x$; ihr Graph $G$ hat genau zwei lokale Extrempunkte, einen im II. und einen im IV. Quadranten. $T\left(-1 + \sqrt{10} \mid f(-1 + \sqrt{10})\right)$ ist der Tiefpunkt. Entscheide ohne weitere Rechnung, ob die Aussagen wahr sind, und begründe. I: $f(-0{,}9 + \sqrt{10})$ ist kleiner als die $y$-Koordinate des Tiefpunkts. II: $f'(-0{,}9 + \sqrt{10})$ ist größer als null.
+\karo{4}
+\fusshilfe{\mbox{7:~f($-$0,9 + √10) > f($-$1 + √10); f$'$($-$0,9 + √10) > 0}}
+\end{pfaufg}
+
+\pfblattende{10}{26 & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17}{A1.7a B2.1h &  & A1.7a & B2.1d B2.1e B2.2f & B2.1c &  & B2.1d &  &  & }%
+{\pfausschnitt{Nullstellen \pkt{} Extrempunkte}{Monotonie}{Wendepunkte \pkt{} Gleichungen und Ungleichungen}}
+\end{document}
