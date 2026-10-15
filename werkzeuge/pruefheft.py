@@ -6806,7 +6806,7 @@ def p_bau(args):
 # ---------------------------------------------------------------------------
 # Abitur-Pfad (v0.16, 15.10.2026; plan.md § 7 M5 „Setzer mit Graphen“): Art p für --pruefung abitur (abi-gk).
 # Dieselben Satzbausteine wie P10 (p_blatt_tex, p_loesung_tex, p_uebersicht_tex, mehr_blatt_tex); anders sind nur die
-# Daten: Einheiten = „### …“ in abitur/gliederung/<kapitel>.md (nur gelesen), Stufen und echte Aufgaben mit anderen
+# Daten: Einheiten und Stufen aus dem Kopf von abitur/gliederung/<kapitel>.md (nur gelesen), echte Aufgaben mit anderen
 # Zahlen aus abitur/mehr-abi-gk/<kapitel>.csv (Spalten wie msa/mehr-p10, Spalte stufe = Stufe des Blatts), Katalog
 # abitur/abi-katalog.csv (hilfsmittel = nein -> TR durchgestrichen). Kopf „Abitur GK · Prüfung“, Marke „GK ’24 · B2.1a“,
 # fünf Punkte im Stufenkopf über die GK-Hefte 2022–2026, Fundstellentabelle nach GK-Heften (Teil A/B wie im Heft).
@@ -6817,40 +6817,58 @@ ABI_GK = re.compile(r'^(\d{4})-(?:bebb|bb|be)-gk(?:-cas)?-([AB]\d+(?:\.\d+)?[a-z
 
 
 def abi_gliederung(mn, kapitel):
-    """Kopf und Einheiten aus abitur/gliederung/<kapitel>.md: Name, Folge, Kennung (falls da), je „### …“ unter
-    „## Stufen“ eine Einheit mit Kern (ja/nein)."""
+    """Kopf und Einheiten aus abitur/gliederung/<kapitel>.md (Format abitur/gliederung/README.md, seit 15.10.2026):
+    Einheiten (Blätter) aus den Kopffeldern Anzeigenamen, Kennung, Ordner, Stufen („<Einheit> = a · b · c“); je Block
+    „### …“ mit „**Zuschnitt:** <Einheit>“ die Zuschnitt-Zeilen „- <Stufe> [ids]“ (Originale der Stufe) und Kern.
+    Fehlen die Kopffelder (Format vor 15.10.), ist jeder Block eine Einheit."""
     p = os.path.join(mn, 'abitur', 'gliederung', f'{kapitel}.md')
     if not os.path.exists(p):
         sys.exit(f'fehlt: {p}')
-    g = {'name': kapitel.capitalize(), 'folge': 0, 'gruppen': [], 'stufen': OrderedDict(), 'anzeige': {}, 'kennung': {}}
-    st, in_stufen = None, False
+    g = {'name': kapitel.capitalize(), 'folge': 0, 'gruppen': [], 'anzeige': {}, 'kennung': {}, 'ordner': {},
+         'einheiten': OrderedDict()}
+    neu_e = lambda e: g['einheiten'].setdefault(e, {'stufen': [], 'ids': OrderedDict(), 'kern': False})
+    block, in_stufen = None, False
     for z in open(p, encoding='utf-8').read().splitlines():
-        m = re.match(r'^(Name|Folge|Kennung):\s*(.*)$', z)
-        if m and st is None:
+        m = re.match(r'^(Name|Folge|Kennung|Anzeigenamen|Ordner|Stufen):\s*(.*)$', z)
+        if m and block is None and not in_stufen:
             k, v = m.group(1), m.group(2).strip()
             if k == 'Name':
                 g['name'] = v
             elif k == 'Folge':
                 g['folge'] = int(re.sub(r'\D', '', v) or 0)
             elif '=' in v:
-                a, b = v.rsplit('=', 1)
-                g['kennung'][a.strip()] = b.strip()
+                e, w = [x.strip() for x in v.split('=', 1)]
+                if k == 'Stufen':
+                    neu_e(e)['stufen'] = [x.strip() for x in w.split('·') if x.strip()]
+                else:
+                    g[{'Anzeigenamen': 'anzeige', 'Kennung': 'kennung', 'Ordner': 'ordner'}[k]][e] = w
+                    neu_e(e)
             continue
         if z.startswith('## '):
             in_stufen = 'Stufen' in z
-            st = None
+            block = None
             continue
         m = re.match(r'^### (.+)$', z)
         if m and in_stufen:
-            st = m.group(1).strip()
-            g['stufen'][st] = {'kern': False, 'anzeigename': ''}
+            block = {'name': m.group(1).strip(), 'kern': False, 'einheit': ''}
             continue
-        m = re.match(r'^- \*\*(Kern|Anzeigename):\*\*\s*(.*)$', z)
-        if m and st:
-            if m.group(1) == 'Kern':
-                g['stufen'][st]['kern'] = m.group(2).strip().startswith('ja')
-            else:
-                g['stufen'][st]['anzeigename'] = m.group(2).strip()
+        if not block:
+            continue
+        m = re.match(r'^- \*\*(Kern|Zuschnitt):\*\*\s*(.*)$', z)
+        if m and m.group(1) == 'Kern':
+            block['kern'] = m.group(2).strip().startswith('ja')
+        elif m:
+            block['einheit'] = m.group(2).strip()
+            x = neu_e(block['einheit'])
+            x['kern'] = x['kern'] or block['kern']
+        m = re.match(r'^\s+- (.+?)\s*\[([^\]]*)\]', z)
+        if m and block['einheit']:
+            x = neu_e(block['einheit'])
+            st = m.group(1).strip()
+            x['ids'].setdefault(st, [])
+            x['ids'][st] += m.group(2).split()
+            if st not in x['stufen']:
+                x['stufen'].append(st)
     return g
 
 
@@ -6910,14 +6928,17 @@ def p_bau_abi(args):
     letzte5 = sorted({int(j) for j in D.pruefjahre})[-5:]
     P_LETZTE5 = sorted(letzte5, reverse=True)
     gl = abi_gliederung(D.mn, args.kapitel)
-    einheit = p_wahl(list(gl['stufen']), args.einheit, 'Einheit der Abitur-Gliederung')
+    einheit = p_wahl(list(gl['einheiten']), args.einheit, 'Einheit (Blatt) der Abitur-Gliederung')
+    ge = gl['einheiten'][einheit]
     alle = [r for r in abi_mehr(D.mn, args.kapitel) if r.get('einheit', '').strip() == einheit]
     if not alle:
         sys.exit(f'abitur/mehr-abi-gk/{args.kapitel}.csv: keine Zeile mit einheit = {einheit}')
     hinweise = []
-    # Stufen des Blatts in der Folge ihrer ersten Zeile nach rang (leicht -> schwer)
-    folge = sorted(alle, key=lambda r: int(re.sub(r'\D', '', r.get('rang') or '') or 10 ** 6))
-    stufen = list(OrderedDict((r['stufe'].strip(), 1) for r in folge if r.get('stufe', '').strip()))
+    # Stufen des Blatts in Lernfolge aus der Gliederung („Stufen: <Einheit> = a · b · c“)
+    stufen = list(ge['stufen'])
+    for r in alle:
+        if r.get('stufe', '').strip() not in stufen:
+            hinweise.append(f'{r["id"]}: Stufe „{r.get("stufe", "")}“ steht nicht in der Gliederung ({" · ".join(stufen)})')
     stufen_daten = []
     for name in stufen:
         zeilen = [r for r in alle if r.get('stufe', '').strip() == name]
@@ -6932,7 +6953,7 @@ def p_bau_abi(args):
             hinweise.append(f'Stufe „{name}“ entfällt auf dem Blatt: kein Original der letzten fünf Jahre (Mehr-Block)')
             continue
         stufen_daten.append({'name': name, 'anzeige': name, 'z': {'stufe': name},
-                             'jahre': abi_jahre([r['eltern_id'] for r in zeilen], letzte5), 'frage': None,
+                             'jahre': abi_jahre([r['eltern_id'] for r in zeilen] + ge['ids'].get(name, []), letzte5), 'frage': None,
                              'einstieg': None, 'kurzfrage': '', 'regine': '', 'echte': echte, 'heraus': []})
     alle_echte = [r for s in stufen_daten for r in s['echte']]
     if alle_echte and max(alle_echte, key=p_rang)['id'] != alle_echte[-1]['id']:
@@ -6943,15 +6964,14 @@ def p_bau_abi(args):
         if ABI_GK.match(r.get('eltern_id', '')):
             hinweise.append(f'{r["id"]}: Original {r["eltern_id"]} fehlt in abi-katalog.csv')
     # Gliederung: Originale der Einheit, die keine Zeile haben (Vollständigkeit „alle Originale der letzten fünf Jahre“)
-    zu = {z['stufe'].strip(): z for z in D.zu}
-    soll_ids = (zu.get(einheit, {}).get('katalog_ids') or '').split()
+    soll_ids = [i for ids_ in ge['ids'].values() for i in ids_]
     da = {r['eltern_id'] for r in alle}
     for i in soll_ids:
         if i not in da:
-            hinweise.append(f'Original {i} der Zuordnung fehlt in mehr-abi-gk/{args.kapitel}.csv')
-    namen = list(gl['stufen'])
+            hinweise.append(f'Original {i} der Gliederung fehlt in mehr-abi-gk/{args.kapitel}.csv')
+    namen = list(gl['einheiten'])
     i = namen.index(einheit)
-    anz = lambda n: gl['stufen'][n].get('anzeigename') or n
+    anz = lambda n: gl['anzeige'].get(n) or n
     ausschnitt = (f'\\pfausschnitt{{{" \\pkt{} ".join(tx(anz(n)) for n in namen[max(0, i - 2):i])}}}{{{tx(anz(einheit))}}}'
                   f'{{{" \\pkt{} ".join(tx(anz(n)) for n in namen[i + 1:i + 3])}}}')
     kenn = gl['kennung'].get(einheit) or f'GK-{args.kapitel[:2].upper()}{10 * (i + 1)}'
@@ -6959,7 +6979,7 @@ def p_bau_abi(args):
         hinweise.append(f'Kennung fehlt in der Gliederung („Kennung: {einheit} = …“) – vorläufig {kenn}')
     ids = list(OrderedDict((r['eltern_id'], 1) for r in alle if r.get('eltern_id')))
     fund = abi_fundstellen(ids + soll_ids, letzte5)
-    ordner = args.aus or os.path.join(BANK, 'bau', 'pruefheft', f'{args.kapitel}-p-{mehr_kurz(einheit)}-{args.datum}')
+    ordner = args.aus or os.path.join(BANK, 'bau', 'pruefung', args.datum, 'abitur', gl['ordner'].get(einheit) or mehr_kurz(einheit))
     arbeit = tempfile.mkdtemp(prefix='pruefheft-abi-')
     blatt, faktor_gesetzt, seiten_vorher = None, 1.0, 99
     for faktor in (1.0, 0.75, 0.5):
@@ -6971,7 +6991,7 @@ def p_bau_abi(args):
         if e['seiten'] <= 2 or e['fehler']:
             break
     loes = p_loesung_tex(D, anz(einheit), kenn, stufen_daten)
-    einheiten = OrderedDict((n, {'name': n, 'anzeige': anz(n), 'gruppe': '', 'kern': gl['stufen'][n]['kern']})
+    einheiten = OrderedDict((n, {'name': n, 'anzeige': anz(n), 'gruppe': '', 'kern': gl['einheiten'][n]['kern']})
                             for n in namen)
     ueb = p_uebersicht_tex(gl, einheiten, einheit, kenn, stufen_daten, abi_kapitelnamen(D.mn))
     mehr = sorted([r for r in alle if r.get('auf_blatt', '').strip() == 'nein'],
