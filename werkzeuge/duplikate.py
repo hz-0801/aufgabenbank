@@ -201,7 +201,12 @@ def lies_bank():
 
 
 def sprosse(z):
-    return (z["eintrag"], z["einheit"], z["kette_nr"], z["sprosse"])
+    """Platz der Zeile. Zeilen ohne Treppe (a<n>.jsonl, bank.md „Aufgaben
+    ohne Treppe“, seit 10.10.2026) haben keine Kette und Sprosse; ihr Platz
+    ist Einheit und Stufe (basis/kern/ziel)."""
+    if "kette_nr" in z:
+        return (z["eintrag"], z["einheit"], z["kette_nr"], z["sprosse"])
+    return (z["eintrag"], z["einheit"], "stufe", z.get("stufe", ""))
 
 
 def reichweite(gruppe):
