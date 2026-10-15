@@ -1,0 +1,130 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+\newsavebox{\gbox}\newlength{\gLinks}
+% v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
+% Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr\wd\gbox+6mm\relax}%
+  \ifdim\gLinks>0.62\linewidth
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\leavevmode\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par}
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+% Skizzenfeld (v0.10, Lehrer 13.10.): Karo ab dem linken Rand über die Zeile, „Skizze“ klein grau oben links im Feld
+% (wie \pfskizzenfeld der Vorlage); der rechte Rand bleibt den Bedingungen
+\newcommand{\gskizze}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \node[anchor=north west,inner sep=2pt,font=\scriptsize,text=mbgrau,fill=white] at (0,{#1*10mm}) {Skizze};
+  \end{tikzpicture}\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[Abitur GK \pkt{} Prüfung]{Gleichungen und Ungleichungen}{AA100}\pfseitevon
+\pfheftkopf{Gleichungen und Ungleichungen}{}
+\pfstufenzeile{Schnittstelle gesucht \pkt{} Ungleichung lösen}
+
+% ===================== Stufe: Schnittstelle gesucht =====================
+\gkopfvor{\pfstufekopf{Schnittstelle gesucht}{\gpunkte[25 22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-schnittstelle-gesucht) [@thispage /XYZ @xpos @ypos null]}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% 2022-bebb-gk-B2.1d-m1 (Original 2022-bebb-gk-B2.1d, Schwere I, rang 1; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’22\\B2.1d}{1.}{}
+Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = (x + 3) \cdot e^{-x}$ und ihrer Ableitung $f'(x) = -(x + 2) \cdot e^{-x}$. Weise nach, dass sich die Graphen von $f$ und $f'$ an der Stelle $x = -2{,}5$ schneiden.
+\karo{2}
+\fusshilfe{\mbox{1:~$-$(x + 2) · $e^{-x}$; $-$2,5}}
+\end{pfaufg}
+% 2025-bebb-gk-A1.7a-m1 (Original 2025-bebb-gk-A1.7a, Schwere III, rang 2; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’25\\A1.7a}{2.}{\pfohnetr}
+Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = -x^2 + 6x - 4$; die Abbildung zeigt ihren Graphen. Gib einen Term der Ableitungsfunktion $f'$ an. Ermittle rechnerisch alle Lösungen der Gleichung $\tfrac{f(x) - 0}{x - 0} = f'(x)$.
+\gzwei{\begin{abiksys}[xmin=-2,xmax=7,ymin=-6,ymax=6,le=0.6]\funktion[5.6]{-\x^2+6*\x-4}{G_f}\end{abiksys}}{\karo{2}}
+\fusshilfe{\mbox{2:~$-$2x + 6; 2}}
+\end{pfaufg}
+% 2025-bebb-gk-B2.2g-m1 (Original 2025-bebb-gk-B2.2g, Schwere III, rang 3; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’25\\B2.2g}{3.}{}
+Die Anzahl der Likes für einen Internetbeitrag wird durch die Funktion $a$ beschrieben; $a(x)$ ist die Anzahl der seit 12:00 Uhr abgegebenen Likes, $x$ die Zeit in Stunden seit 12:00 Uhr. Die Abbildung zeigt den Graphen von $a$. Die Gleichung $a(x + 2) = a(x) + 800$ hat für $x > 0$ genau eine Lösung. Ermittle diese Lösung grafisch und interpretiere die Gleichung im Sachzusammenhang.
+\gzwei{\begin{abiksys}[xmin=0,xmax=7,ymin=0,ymax=3000,le=1.2,yle=0.0016,xstep=1,ystep=500,xlabel=$x$,ylabel=$a(x)$]\funktion[6]{2400*(1-exp(-\x*\x/4))}{a}\end{abiksys}}{\karo{2}}
+\fusshilfe{\mbox{3:~2350); um etwa 14:00 Uhr ist die Zahl der Likes um 800 kleiner als zwei Stunden später}}
+\end{pfaufg}
+
+% ===================== Stufe: Ungleichung lösen =====================
+\gkopfvor{\pfstufekopf{Ungleichung lösen}{\gpunkte[24 23]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-ungleichung-losen) [@thispage /XYZ @xpos @ypos null]}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% 2023-bebb-gk-B2.2g-m1 (Original 2023-bebb-gk-B2.2g, Schwere II, rang 4; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’23\\B2.2g}{4.}{}
+Gegeben sind die Funktionen $f$ mit $f(x) = x^3 - 9x^2 + 24x - 16$ und $g$ mit $g(x) = \tfrac{1}{4}x^3 - 3x^2 + 12x - 16$, $x \in \mathbb{R}$. Bestimme rechnerisch die Menge aller $x \in \mathbb{R}$, für die $f(x) > g(x)$ gilt.
+\karo{2}
+\fusshilfe{\mbox{4:~$\tfrac{3}{4}$ x · (x $-$ 4)²; 4; ∞[}}
+\end{pfaufg}
+% 2024-bebb-gk-B2.2h-m1 (Original 2024-bebb-gk-B2.2h, Schwere III, rang 5; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’24\\B2.2h}{5.}{}
+Gegeben ist die Funktion $f$ mit $f(x) = 0{,}5x^4 - 3x^2 + 2{,}5$, $x \in \mathbb{R}$. Für $-1 \le x \le 1$ wird $f$ durch $p$ mit $p(x) = -2{,}5x^2 + 2{,}5$ angenähert; dort ist die größte Differenz von $p$ und $f$ gleich $\tfrac{1}{8}$. Für $x \ge 1$ soll $p$ als Näherung gelten, solange der Betrag der Differenz höchstens doppelt so groß ist wie $\tfrac{1}{8}$. Beschreibe einen Lösungsweg, mit dem man alle $x \ge 1$ ermitteln kann, für die sich $p$ als Näherung eignet.
+\karo{2}
+\fusshilfe{\mbox{5:~Ungleichung |p(x) $-$ f(x)| $\le$ $\tfrac{1}{4}$ ansetzen; 0,5x$^{4}$ $-$ 0,5x² $\le$ $\tfrac{1}{4}$; 1,17; Lösung 1 $\le$ x $\le$ 1,17}}
+\end{pfaufg}
+
+\pfblattende{10}{26 & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17}{ & A1.7a B2.2g & B2.2h & B2.2g & B2.1d & B2.2g &  & B2.2g &  & }%
+{\pfausschnitt{Monotonie \pkt{} Wendepunkte}{Gleichungen und Ungleichungen}{Funktion aufstellen \pkt{} Verschieben, spiegeln, strecken}}
+\end{document}
