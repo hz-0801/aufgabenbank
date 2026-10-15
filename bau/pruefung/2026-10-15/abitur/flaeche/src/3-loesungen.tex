@@ -1,0 +1,125 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+\newsavebox{\gbox}\newlength{\gLinks}
+% v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
+% Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr\wd\gbox+6mm\relax}%
+  \ifdim\gLinks>0.62\linewidth
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\leavevmode\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par}
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+% Skizzenfeld (v0.10, Lehrer 13.10.): Karo ab dem linken Rand über die Zeile, „Skizze“ klein grau oben links im Feld
+% (wie \pfskizzenfeld der Vorlage); der rechte Rand bleibt den Bedingungen
+\newcommand{\gskizze}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \node[anchor=north west,inner sep=2pt,font=\scriptsize,text=mbgrau,fill=white] at (0,{#1*10mm}) {Skizze};
+  \end{tikzpicture}\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[Abitur GK \pkt{} Prüfung]{Flächeninhalt \pkt{} Lösungen}{AA150}\pfseitevon
+\pfheftkopf{Flächeninhalt}{Lösungen}
+\pfstufenzeile{Fläche gesucht \pkt{} Fläche im Sachzusammenhang gesucht \pkt{} Lösungsweg erklären}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Fläche gesucht}{\gpunkte[26 25 24]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-flache-gesucht) [@thispage /XYZ @xpos @ypos null]}
+\begin{pfloesungb}{}
+\lzb{1.}{}{Stammfunktion 2$e^{x}$ $-$ 2$e^{ - 1}$ · x; $\approx$ 0,53}{Stammfunktion 2$e^{x}$ $-$ 2$e^{ - 1}$ · x; Integral von $-$1 bis 0 = (2 $-$ 0) $-$ (2$e^{ - 1}$ + 2$e^{ - 1}$) = 2 $-$ 4$e^{ - 1}$ $\approx$ 0,53}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{2.}{}{Nullstellen $-$3, 0 und 3; A = $\tfrac{81}{2}$}{Nullstellen $-$3, 0 und 3; Integral von $-$3 bis 0 = [$\tfrac{1}{4}$ x$^{4}$ $-$ $\tfrac{9}{2}$ x²] = 0 $-$ ($\tfrac{81}{4}$ $-$ $\tfrac{81}{2}$) = $\tfrac{81}{4}$; Graph punktsymmetrisch $\Rightarrow$ A = 2 · $\tfrac{81}{4}$ = $\tfrac{81}{2}$}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{3.}{}{= 2 $-$ 2$e^{u}$}{Integral von u bis 0 über (f(x) $-$ 3) = [2$e^{x}$] von u bis 0 = 2 $-$ 2$e^{u}$}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Fläche im Sachzusammenhang gesucht}{\gpunkte[26 25 24 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-flache-im-sachzusammenhang-gesucht) [@thispage /XYZ @xpos @ypos null]}
+\begin{pfloesungb}{}
+\lzb{4.}{}{$\approx$ 9,8 cm²}{Integral von 3 bis 12 über f = F(12) $-$ F(3) = 9e $-$ 36$e^{ - 2}$ $\approx$ 19,59 $\Rightarrow$ Querschnitt 2 · 19,59 $\approx$ 39,18 LE²; 1 LE² = 0,25 cm² $\Rightarrow$ $\approx$ 9,8 cm²}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{5.}{}{= $\tfrac{5}{3}$; = 2$\pi$; gesamt $\tfrac{20}{3}$ + 4$\pi$ $\approx$ 19,2 m²}{Integral von $-$2 bis 0 über g = [$\tfrac{1}{16}$ x$^{4}$ + $\tfrac{1}{3}$ x³] = 0 $-$ (1 $-$ $\tfrac{8}{3}$) = $\tfrac{5}{3}$; Halbkreis mit Radius 2: $\tfrac{1}{2}$ · $\pi$ · 2² = 2$\pi$; ein Flächenstück 2 · $\tfrac{5}{3}$ + 2$\pi$ $\approx$ 9,62 $\Rightarrow$ gesamt $\tfrac{20}{3}$ + 4$\pi$ $\approx$ 19,2 m²}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{6.}{}{= 4; Dreieck unter AC (y = $-$2x von 0 bis 0,4): 0,16; A = 3,8 m²}{Integral von 0 bis 4 über h = 4; Dreieck unter AC (y = $-$2x von 0 bis 0,4): 0,16; g von 0,4 bis 4: Integral = $-$0,64 + 1 = 0,36 (Teil unter der Achse 0,64, über der Achse 1) $\Rightarrow$ A = 4 + 0,16 $-$ 0,36 = 3,8 m²}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{7.}{}{A1 $-$ A2 = Fläche im Kreis außerhalb der Flügel; A1 $-$ A2 $\approx$ 34,5}{A1 = Kreisfläche mit Radius |OA|; A2 = Fläche der vier Flügel $\Rightarrow$ A1 $-$ A2 = Fläche im Kreis außerhalb der Flügel; Integral von 0 bis 4 über (x/3 $-$ x³/12 + x) = $\tfrac{16}{3}$ $\Rightarrow$ A2 = $\tfrac{64}{3}$; A1 = $\tfrac{160}{9}$ · $\pi$ $\approx$ 55,85 $\Rightarrow$ A1 $-$ A2 $\approx$ 34,5}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Lösungsweg erklären}{\gpunkte[24 23 22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-losungsweg-erklaren) [@thispage /XYZ @xpos @ypos null]}
+\begin{pfloesungb}{}
+\lzb{8.}{}{(4) Flächenverhältnis 7 : 25}{(1) Schnittstellen von G\_f mit der Geraden durch ($-$1|0) und (0|2,5); (2) Fläche zwischen G\_f und dieser Geraden über [$-$1; 0]; (3) Dreieck aus dieser Geraden und den Achsen; (4) Flächenverhältnis 7 : 25}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{9.}{}{vier nach außen gewölbte Bögen von Spitze zu Spitze; mal 100 cm² $\approx$ 687 cm²}{Skizze: vier nach außen gewölbte Bögen von Spitze zu Spitze; je Quadrant: Fläche zwischen Sehne und Graph = Dreieck ($\tfrac{9}{2}$) $-$ |Integral von $-$3 bis 0 über f| $\approx$ 0,858; Zuwachs = 8 · 0,858 $\approx$ 6,87 LE² $\Rightarrow$ mal 100 cm² $\approx$ 687 cm²}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{10.}{}{A\_b = 3 $-$ (b + 3)$e^{ - b}$; $\approx$ 1,51)}{A\_b = $-$Integral von 0 bis b über f' = f(0) $-$ f(b) = 3 $-$ (b + 3)$e^{ - b}$; wächst mit b stetig von 0 gegen 3 $\Rightarrow$ der Wert 2 wird erreicht (b $\approx$ 1,51)}
+\end{pfloesungb}
+\end{document}
