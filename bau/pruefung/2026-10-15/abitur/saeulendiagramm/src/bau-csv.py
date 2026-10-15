@@ -53,14 +53,14 @@ def z(eid, einheit, stufe, auf_blatt, wortlaut, loesung, schwere, rang, bemerkun
 
 
 # Gemeinsame Vorspänne (eine Zahlenwahl je Original-Aufgabe, pruefung.md § 5 „Andere Zahlen“)
-TREUE = ('In einem Supermarkt sammeln 70 % der Kundschaft Treuepunkte. Es werden 12 Personen aus der Kundschaft '
+TREUE = ('In einem Supermarkt sammeln 80 % der Kundschaft Treuepunkte. Es werden 12 Personen aus der Kundschaft '
          'zufällig ausgewählt; die Zufallsgröße $X$ gibt an, wie viele davon Treuepunkte sammeln. $X$ wird als '
          'binomialverteilt angenommen. ')
 PAKET = ('In einem Paketzentrum werden täglich mehrere Millionen Pakete umgeschlagen. Von allen Paketen gehen 12 % '
-         'zum Ziel A und 6 % zum Ziel B, die übrigen an andere Ziele. ')
-LEHR = ('In einem Land arbeiten 30 % aller Lehrkräfte an einem Gymnasium; 18 % aller Lehrkräfte sind weiblich und '
-        'arbeiten an einem Gymnasium, insgesamt sind 70 % der Lehrkräfte weiblich. ')
-HAUS = ('In einer Großstadt gelten 8,55 % aller Haushalte als überbelegt. Es werden 800 Haushalte zufällig '
+         'zum Ziel A und 8 % zum Ziel B, die übrigen an andere Ziele. ')
+LEHR = ('In einem Land arbeiten 30 % aller Lehrkräfte an einem Gymnasium; 20 % aller Lehrkräfte sind weiblich und '
+        'arbeiten an einem Gymnasium, insgesamt sind 65 % der Lehrkräfte weiblich. ')
+HAUS = ('In einer Großstadt gelten 8,24 % aller Haushalte als überbelegt. Es werden 800 Haushalte zufällig '
         'ausgewählt; die Zufallsgröße $X$ gibt die Anzahl der überbelegten Haushalte unter ihnen an und wird als '
         'binomialverteilt angenommen. ')
 SYM19 = ('Die Abbildung zeigt die Wahrscheinlichkeitsverteilung einer binomialverteilten Zufallsgröße $X$ mit der '
@@ -78,15 +78,15 @@ z('2026-bb-gk-A1.3a', E, S1, 'ja',
   'höchstens einmal W = keinmal oder genau einmal ⇒ P(A) = (1/2)⁶ + 6 · (1/2) · (1/2)⁵ = 7/64',
   'I', 1, f'andere Zahlen (Original fünf Würfe, 3/16); {NR}', 'bruch')
 z('2026-bb-gk-B4a', E, S1, 'ja',
-  TREUE + 'Für ein Ereignis gilt $P(X = a) = \\binom{b}{4} \\cdot c^4 \\cdot 0{,}3^8$. Gib die Werte von $a$, $b$ und '
+  TREUE + 'Für ein Ereignis gilt $P(X = a) = \\binom{b}{4} \\cdot c^4 \\cdot 0{,}2^8$. Gib die Werte von $a$, $b$ und '
   '$c$ an und beschreibe das Ereignis im Sachzusammenhang.',
-  'n = 12, Treffer = sammelt, p = 0,7 ⇒ a = 4 | b = 12 | c = 0,7 | Ereignis: genau 4 der 12 Personen sammeln '
+  'n = 12, Treffer = sammelt, p = 0,8 ⇒ a = 4 | b = 12 | c = 0,8 | Ereignis: genau 4 der 12 Personen sammeln '
   'Treuepunkte',
   'I', 2, f'andere Zahlen (Original 75 %, n = 10, (b über 3) · c³ · 0,25⁷); {NR}')
 z('2022-bebb-gk-B4a', E, S1, 'ja',
   PAKET + 'Es werden 100 Pakete zufällig ausgewählt und darauf untersucht, ob sie das Ziel B haben. Begründe, dass '
   'man die Anzahl der Pakete mit dem Ziel B als binomialverteilt annehmen kann.',
-  'je Paket zwei Ausgänge (Ziel B oder nicht); feste Anzahl n = 100; p = 0,06 bleibt bei Millionen Paketen praktisch '
+  'je Paket zwei Ausgänge (Ziel B oder nicht); feste Anzahl n = 100; p = 0,08 bleibt bei Millionen Paketen praktisch '
   'gleich, die Pakete sind unabhängig ⇒ Bernoulli-Kette, also binomialverteilt',
   'II', 3, f'andere Zahlen (Original 10 % und 7 %); {NR}', 'ganz')
 z('2023-bebb-gk-B4.1e', E, S2, 'ja',
@@ -182,16 +182,16 @@ z('2020MgrundlegendAStochastik2-b', E, S2, 'nein',
 # ---------------------------------------------------------------- AS70 Binomialwahrscheinlichkeit
 E, S1, S2 = 'Binomialwahrscheinlichkeit', 'Wahrscheinlichkeit gesucht', 'n, p oder k gesucht'
 z('2026-bb-gk-B4b', E, S1, 'ja',
-  TREUE + 'Ermittle die Wahrscheinlichkeit dafür, dass weniger als 9 der 12 Personen Treuepunkte sammeln.',
-  'X ~ B(12; 0,7); weniger als 9 ⇒ P(X < 9) = P(X ≤ 8) ≈ 0,507',
+  TREUE + 'Ermittle die Wahrscheinlichkeit dafür, dass weniger als 10 der 12 Personen Treuepunkte sammeln.',
+  'X ~ B(12; 0,8); weniger als 10 ⇒ P(X < 10) = P(X ≤ 9) ≈ 0,442',
   'I', 1, f'andere Zahlen (Original 75 %, n = 10, P(X < 8) ≈ 0,474); Rechner wie im Original; {NR}')
 z('2022-bebb-gk-B4b', E, S1, 'ja',
   PAKET + 'Es werden 100 Pakete zufällig ausgewählt; $X$ ist die Anzahl der Pakete mit dem Ziel B. Bestimme mit '
-  'dem Tabellenausschnitt die Wahrscheinlichkeit dafür, dass genau acht der Pakete das Ziel B haben, und die '
-  'Wahrscheinlichkeit dafür, dass weniger als acht das Ziel B haben.',
-  'P(genau 8) = P(X ≤ 8) − P(X ≤ 7) = 0,8537 − 0,7483 ≈ 0,105 | weniger als acht ⇒ P(X < 8) = P(X ≤ 7) ≈ 0,748',
+  'dem Tabellenausschnitt die Wahrscheinlichkeit dafür, dass genau zehn der Pakete das Ziel B haben, und die '
+  'Wahrscheinlichkeit dafür, dass weniger als zehn das Ziel B haben.',
+  'P(genau 10) = P(X ≤ 10) − P(X ≤ 9) = 0,8243 − 0,7220 ≈ 0,102 | weniger als zehn ⇒ P(X < 10) = P(X ≤ 9) ≈ 0,722',
   'I', 2, f'andere Zahlen (Original 7 %, genau neun, 0,104 und 0,734); Tabelle wie die Anlage, nur Ausschnitt; {NR}',
-  grafik=tabelle(100, 0.06, [6, 7, 8, 9]))
+  grafik=tabelle(100, 0.08, [8, 9, 10, 11]))
 z('2023-bebb-gk-B4.1f', E, S2, 'ja',
   LEHR + 'Es werden Lehrkräfte zufällig ausgewählt. Ermittle, wie viele Lehrkräfte man mindestens auswählen muss, '
   'damit mit einer Wahrscheinlichkeit von mindestens 95 % mindestens eine davon an einem Gymnasium arbeitet.',
@@ -200,7 +200,7 @@ z('2023-bebb-gk-B4.1f', E, S2, 'ja',
 z('2022-bebb-gk-B4d', E, S2, 'ja',
   PAKET + 'Ermittle, wie viele Pakete man mindestens zufällig auswählen muss, damit mit einer Wahrscheinlichkeit '
   'von mindestens 90 % mindestens eines davon das Ziel B hat.',
-  '1 − 0,94^n ≥ 0,9 ⇒ 0,94^n ≤ 0,1 ⇒ n ≥ ln 0,1 / ln 0,94 ≈ 37,2 ⇒ n = 38',
+  '1 − 0,92^n ≥ 0,9 ⇒ 0,92^n ≤ 0,1 ⇒ n ≥ ln 0,1 / ln 0,92 ≈ 27,6 ⇒ n = 28',
   'II', 4, f'andere Zahlen (Original 7 %, 32 Pakete); {NR}', 'ganz')
 z('2022-bebb-gk-B4e', E, S2, 'ja',
   PAKET + 'Ein Teil der Pakete hat das Ziel C. Wählt man 20 Pakete zufällig aus, so hat mit einer '
@@ -210,7 +210,7 @@ z('2022-bebb-gk-B4e', E, S2, 'ja',
   'II', 5, f'andere Zahlen (Original 54 %, 3 %); {NR}')
 z('2025-bebb-gk-B4d', E, S2, 'ja',
   HAUS + 'Ermittle den kleinstmöglichen Wert von $k$, für den $P(X \\le k)$ mehr als 90 % beträgt.',
-  'P(X ≤ 78) ≈ 0,8975 < 0,9; P(X ≤ 79) ≈ 0,9175 > 0,9 ⇒ k = 79',
+  'P(X ≤ 75) ≈ 0,8895 < 0,9; P(X ≤ 76) ≈ 0,9110 > 0,9 ⇒ k = 76',
   'II', 6, f'andere Zahlen (Original 1000 Haushalte, 9,18 %, k = 104); Rechner wie im Original; {NR}', 'ganz')
 # Mehr AS70
 z('2021-be-gk-B4a', E, S1, 'nein',
@@ -310,11 +310,11 @@ z('2026-bb-gk-A1.6b', E, S1, 'ja',
   'ganz', grafik=G16)
 z('2026-bb-gk-B4c', E, S1, 'ja',
   TREUE + 'Die Abbildung zeigt die Wahrscheinlichkeitsverteilung der Zufallsgröße $Y$ mit $n = 12$ und '
-  '$p = 0{,}3$. Erläutere, wie man mit der Abbildung die Wahrscheinlichkeit $P(X = 8)$ ermitteln kann.',
-  'Y = 12 − X zählt die Personen, die nicht sammeln, p = 0,3 ⇒ genau 8 sammeln ⇔ genau 4 sammeln nicht, '
-  'P(X = 8) = P(Y = 4) ⇒ Säule von Y bei vier ablesen | Wert ≈ 0,23',
+  '$p = 0{,}2$. Erläutere, wie man mit der Abbildung die Wahrscheinlichkeit $P(X = 8)$ ermitteln kann.',
+  'Y = 12 − X zählt die Personen, die nicht sammeln, p = 0,2 ⇒ genau 8 sammeln ⇔ genau 4 sammeln nicht, '
+  'P(X = 8) = P(Y = 4) ⇒ Säule von Y bei vier ablesen | Wert ≈ 0,13',
   'II', 3, f'andere Zahlen (Original n = 10, p = 0,25, P(X = 6) = P(Y = 4)); {NR}',
-  grafik=saeulen(12, 0.3, ymax=0.3, ystep=0.1, yfein=0.05, hoehe=2.8, breite=0.5))
+  grafik=saeulen(12, 0.2, ymax=0.3, ystep=0.1, yfein=0.05, hoehe=2.8, breite=0.5))
 z('2025-bebb-gk-A1.9b', E, S1, 'ja',
   SYM19 + 'Es gilt $P(X \\ge 8) \\approx 0{,}82$ und $P(X = 11) \\approx 0{,}14$. Berechne mit diesen Werten einen '
   'Näherungswert für $P(X = 9)$.',
@@ -342,13 +342,13 @@ z('2025-bebb-gk-A1.9a', E, S2, 'ja',
   'II', 7, f'andere Zahlen (Original Säulen bei 10 und 11, n = 21); {NR}', 'ganz', grafik=G19)
 z('2025-bebb-gk-B4c', E, S2, 'ja',
   HAUS + 'Beurteile ohne Berechnung von Wahrscheinlichkeiten die Aussage: „Die Wahrscheinlichkeitsverteilung von '
-  '$X$ nimmt für $k = 70$ ihren größten Wert an.“',
-  'falsch: E(X) = 800 · 0,0855 = 68,4 ⇒ größter Wert bei 68 (Nachbar von 68,4), nicht bei 70',
+  '$X$ nimmt für $k = 64$ ihren größten Wert an.“',
+  'falsch: E(X) = 800 · 0,0824 = 65,92 ⇒ größter Wert bei 66 (Nachbar von 65,92), nicht bei 64',
   'II', 8, f'andere Zahlen (Original 1000, 9,18 %, Aussage 90, Maximum 92); {NR}')
 z('2022-bebb-gk-B4c', E, S3, 'ja',
-  PAKET + 'Unter 100 zufällig ausgewählten Paketen haben genau acht das Ziel B. Berechne, um wie viel Prozent '
+  PAKET + 'Unter 100 zufällig ausgewählten Paketen haben genau zehn das Ziel B. Berechne, um wie viel Prozent '
   'diese Anzahl vom Erwartungswert abweicht.',
-  'E(X) = 100 · 0,06 = 6 ⇒ Abweichung = (8 − 6) / 6 = 1/3 ≈ 33,3 %',
+  'E(X) = 100 · 0,08 = 8 ⇒ Abweichung = (10 − 8) / 8 = 1/4 = 25 %',
   'I', 9, f'andere Zahlen (Original 7 %, genau neun, 2/7 ≈ 28,6 %); {NR}')
 z('2026-bb-gk-A1.9a', E, S3, 'ja',
   'Die Zufallsgröße $X$ ist binomialverteilt mit dem Erwartungswert $\\mu = 36$ und der Standardabweichung '
