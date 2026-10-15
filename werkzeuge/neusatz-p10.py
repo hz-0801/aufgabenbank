@@ -4,9 +4,10 @@
 Anlass: plan.md § 7 Schritt 2 (14.10.): Neusatz per Skript statt Schleife von Hand. Einheiten, Folge und Ordner
 aus den Gliederungen (werkzeuge/p10einheiten.py). Je Einheit
   pruefheft.py --kapitel <k> --art p --einheit "<Zuschnitt>" --datum <d> --aus bau/pruefung/<d>/<ordner>
-(Register und Fassungsregister wie bei jedem Bau), danach bestellkarte.py und gesamtheft.py.
+(Register und Fassungsregister wie bei jedem Bau), danach bestellkarte.py (Karte und Handreichung) und
+gesamtheft.py; mit --mappe zuletzt mappe-p10.py (beide Ausgaben, Mehr und Original neu neu gesetzt).
 
-  python3 werkzeuge/neusatz-p10.py --datum 2026-10-14 [--nur pythagoras,winkel] [--ohne-heft]
+  python3 werkzeuge/neusatz-p10.py --datum 2026-10-14 [--nur pythagoras,winkel] [--ohne-heft] [--mappe]
 Rückgabe 1, wenn ein Blatt mit Fehler gesetzt wurde.
 """
 import argparse, os, re, subprocess, sys
@@ -23,6 +24,7 @@ def main():
     ap.add_argument('--mn', default=MN_VORGABE)
     ap.add_argument('--nur', default='')
     ap.add_argument('--ohne-heft', action='store_true')
+    ap.add_argument('--mappe', action='store_true', help='zuletzt mappe-p10.py (beide Ausgaben)')
     a = ap.parse_args()
     nur = {x for x in a.nur.split(',') if x}
     fehler = []
@@ -40,10 +42,12 @@ def main():
             fehler.append(e['ordner'])
             print(r.stdout[-1500:], r.stderr[-1500:])
     if not a.ohne_heft:
-        for skript in ('bestellkarte.py', 'gesamtheft.py'):
-            r = subprocess.run([sys.executable, os.path.join(HIER, skript), '--datum', a.datum, '--mn', a.mn],
+        for skript, *extra in (('bestellkarte.py',), ('bestellkarte.py', '--handreichung'), ('gesamtheft.py',)) + (
+                (('mappe-p10.py',),) if a.mappe else ()):
+            r = subprocess.run([sys.executable, os.path.join(HIER, skript), '--datum', a.datum, '--mn', a.mn] + extra,
                                capture_output=True, text=True, cwd=BANK)
-            print(skript, r.stdout.strip(), r.stderr.strip()[-800:])
+            print(skript, *extra, '\n'.join(r.stdout.strip().splitlines()[-2:]) if skript == 'mappe-p10.py' else r.stdout.strip(),
+                  r.stderr.strip()[-800:])
             if r.returncode:
                 fehler.append(skript)
     print('Fehler:', ', '.join(fehler) or 'keine')

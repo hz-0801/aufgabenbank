@@ -1,21 +1,24 @@
 #!/usr/bin/env python3
-"""mappe-p10.py – Mappe P10 für den Lehrer, ein Lauf, ohne Modell (plan.md § 10, 14.10. f).
+"""mappe-p10.py – Mappe P10 für den Lehrer, ein Lauf, ohne Modell (plan.md § 10, 14.10. f; 15.10. i).
 
-Folge: Bestellkarte (Gebiete, Blätter, Stufen mit fünf Punkten; jede Zeile springt zum Blatt) · je Einheit in
-Lernfolge Blatt, Lösung, Mehr, Mehr-Lösung · Basiszettel BAS-Z1–Z10 (Aufgaben, Ergebnisse) · Original neu je Jahr,
-jüngstes zuerst, mit Lösung · Original (Heft wie vom Bildungsserver) je Jahr, jüngstes zuerst ·
-Stichwortverzeichnis (Blattnamen, Stufen, Fachwörter der Gliederungen -> Seite) · Fundstellenregister („P10 ’JJ ·
-Nr.“ -> Seiten auf Blatt oder Mehr, Original neu, Original). Alle Seitenangaben springen.
+Folge: Bestellkarte (Gebiete, Blätter, Stufen mit fünf Punkten; jede Zeile springt zum Blatt) · Handreichung
+(bestellkarte.py --handreichung: alle Stufen der Gliederung, nie geprüfte grau) · Inhalt (Gebiet -> Blatt mit den
+Seiten von Blatt, Lösung, Mehr -> eingerückt die Abschnitte; Basiszettel, Original neu, Verzeichnisse) · je Einheit
+in Lernfolge Blatt, Lösung, Mehr, Mehr-Lösung · Basiszettel BAS-Z1–Z10 (Aufgaben, Ergebnisse) · Original neu je
+Jahr, jüngstes zuerst, mit Lösung (nur privat) · Stichwortverzeichnis (Blattnamen, Stufen, Fachwörter der
+Gliederungen -> Seite) · Fundstellenregister („P10 ’JJ · Nr.“ -> „Blatt 115“ bzw. „Mehr 115“, privat auch
+„Original neu“). Heftseiten (Original) stehen seit 15.10. in keiner Ausgabe. Alle Seitenangaben springen; der Lauf
+prüft jede Sprungmarke gegen das fertige PDF.
 
 Zwei Ausgaben aus einem Lauf:
-  aufgabenbank-privat bau/mappe/<datum>/mappe-p10.pdf        vollständig (Original neu und Original: Wortlaut)
-  aufgabenbank       bau/pruefung/<datum>/mappe-p10-ohne.pdf  ohne Original neu und Original
+  aufgabenbank-privat bau/mappe/<datum>/mappe-p10.pdf        mit Original neu (Wortlaut)
+  aufgabenbank       bau/pruefung/<datum>/mappe-p10-ohne.pdf  ohne Original neu
 Die Lösungen gehören zur Mappe; das Schülerheft (gesamtheft.py) bleibt ohne.
 
 Eingaben: Blätter bau/pruefung/<datum>/<ordner>/pdf/ (Neusatz: werkzeuge/neusatz-p10.py); Mehr wird hier gesetzt
 (pruefheft.py --art mehr --alle, nach bau/pruefung/<datum>/<ordner>/mehr/); Original neu wird hier gesetzt
-(originalneu.py, nach aufgabenbank-privat bau/original-neu/<heft>/); Hefte aufgabenbank-privat hefte/; Einheiten,
-Folge, Ordner, Stufen aus den Gliederungen (p10einheiten.py).
+(originalneu.py, nach aufgabenbank-privat bau/original-neu/<heft>/); Einheiten, Folge, Ordner, Stufen aus den
+Gliederungen (p10einheiten.py).
 
   python3 werkzeuge/mappe-p10.py --datum 2026-10-14 [--ohne-neubau]
 """
@@ -130,8 +133,8 @@ PRAEAMBEL = BK.PRAEAMBEL.replace(r'\usepackage[hidelinks]{hyperref}', r'\usepack
 '''
 
 
-def baue(teile, karte, register, ziel_pdf):
-    """teile: Liste dict(pdf, name, toc) in Folge; karte, register: TeX-Text. Erst Probe für die Kartenseiten."""
+def baue(teile, vorn, register, ziel_pdf):
+    """teile: Liste dict(pdf, name, toc) in Folge; vorn (Karte, Handreichung, Inhalt), register: TeX-Text."""
     tmp = tempfile.mkdtemp(prefix='mappe-')
     for i, t in enumerate(teile):
         shutil.copy(t['pdf'], os.path.join(tmp, f't{i}.pdf'))
@@ -140,8 +143,8 @@ def baue(teile, karte, register, ziel_pdf):
         toc = ','.join(t['toc'])
         inc.append(r'\includepdf[pages=-,link,linkname=%s%s]{t%d.pdf}'
                    % (t['name'], (',addtotoc={' + toc + '}') if toc else '', i))
-    doc = (PRAEAMBEL + r'\begin{document}' + '\n\\pdfbookmark[0]{Bestellkarte}{karte}\\hypertarget{karte}{}\n'
-           + karte + '\n' + '\n'.join(inc) + '\n' + register + '\n\\end{document}\n')
+    doc = (PRAEAMBEL + r'\begin{document}' + '\n' + vorn + '\n' + '\n'.join(inc) + '\n' + register
+           + '\n\\end{document}\n')
     open(os.path.join(tmp, 'm.tex'), 'w', encoding='utf-8').write(doc)
     for _ in range(2):
         r = subprocess.run(['pdflatex', '-interaction=nonstopmode', 'm.tex'], cwd=tmp, capture_output=True, text=True)
@@ -152,17 +155,67 @@ def baue(teile, karte, register, ziel_pdf):
     shutil.rmtree(tmp)
 
 
-def kartenseiten(E, ordner_pdf):
+def kartenseiten(E):
     """Bestellkarte wie bestellkarte.py (eine Seite je Gebiet), Zeilen springen zu <ordner>.1."""
     G = p10_gebiete([e['einheit'] for e in E])
-    return '\n'.join(BK.seite(g, [e for e in E if e['gebiet'] == g]) for g in G), len(G)
+    return '\n'.join(BK.seite(g, [e for e in E if e['gebiet'] == g]) for g in G)
 
 
-def register_tex(stich, fund, mit_original):
+def handreichung(E, mn):
+    """Handreichung wie bestellkarte.py --handreichung (plan.md § 10, 14.10. h), direkt hinter der Bestellkarte."""
+    G = p10_gebiete([e['einheit'] for e in E])
+    return '\n'.join(BK.handreichung_seite(g, [e for e in E if e['gebiet'] == g], mn) for g in G)
+
+
+def links(lst):
+    return ', '.join(r'\hyperlink{%s}{%d}' % (z, s) for z, s in lst)
+
+
+def inhalt_tex(eins, A, S, teile, mit_original):
+    """Inhalt (Auftrag 15.10. d): Gebiet -> Blatt (Seiten von Blatt, Lösung, Mehr) -> eingerückt die Abschnitte.
+    A: Teilname -> erste Seite; S: Ordner -> {Anzeigename: Seite im Blatt}."""
+    namen = {t['name'] for t in teile}
+    out = [r'\clearpage\pdfbookmark[0]{Inhalt}{inhalt}{\LARGE\bfseries Inhalt}\par\vspace{1ex}',
+           r'{\small\setlength{\parindent}{0pt}\setlength{\parskip}{0pt}']
+    zeile = lambda links_, rechts: r'%s\nobreak\dotfill\nobreak %s\par' % (links_, rechts)
+    gebiet = None
+    for e in eins:
+        o = e['ordner']
+        if e['gebiet'] != gebiet:
+            gebiet = e['gebiet']
+            out.append(r'\vspace{1.4ex}{\large\bfseries %s}\par\vspace{.4ex}' % tex(gebiet))
+        teile_r = [r'Blatt \hyperlink{%s.1}{%d}' % (o, A[o]), r'Lösung \hyperlink{%s-l.1}{%d}' % (o, A[o + '-l'])]
+        if o + '-m' in namen:
+            teile_r.append(r'Mehr \hyperlink{%s-m.1}{%d}' % (o, A[o + '-m']))
+        out.append(r'\vspace{.5ex}' + zeile(r'\hyperlink{%s.1}{\bfseries %s} {\color{black!55}%s}'
+                                             % (o, tex(e['anzeige']), e['kennung']), r' \enspace '.join(teile_r)))
+        for _, anz in e['stufen']:
+            if anz in S[o]:
+                out.append(zeile(r'\hspace*{1.5em}%s' % tex(anz),
+                                 r'\hyperlink{%s.%d}{%d}' % (o, S[o][anz], A[o] + S[o][anz] - 1)))
+    out.append(r'\vspace{1.4ex}' + zeile(r'{\large\bfseries Basiszettel}', r'\hyperlink{basz1.1}{%d}' % A['basz1']))
+    if mit_original:
+        out.append(r'\vspace{1.4ex}{\large\bfseries Original neu}\par\vspace{.4ex}')
+        for t in teile:
+            if t['name'].startswith('neu') and not t['name'].startswith('neul'):
+                out.append(zeile(r'\hspace*{1.5em}%s' % t['titel'],
+                                 r'\hyperlink{%s.1}{%d} \enspace Lösung \hyperlink{%s.1}{%d}'
+                                 % (t['name'], A[t['name']], 'neul' + t['name'][3:], A['neul' + t['name'][3:]])))
+    for marke, titel in (('stichwort', 'Stichwortverzeichnis'), ('fundstellen', 'Fundstellenregister')):
+        out.append(r'\vspace{1.4ex}' + zeile(r'{\large\bfseries %s}' % titel,
+                                             r'\hyperlink{%s}{\pageref*{%s}}' % (marke, marke)))
+    out.append('}')
+    return '\n'.join(out)
+
+
+ORT = (('blatt', 'Blatt'), ('mehr', 'Mehr'), ('neu', 'Original neu'))
+
+
+def register_tex(stich, fund):
     """stich: Liste (Wort, [(ziel, seite)]); fund: Liste (Marke, Schlüssel, {art: [(ziel, seite)]})."""
-    def links(lst):
-        return ', '.join(r'\hyperlink{%s}{%d}' % (z, s) for z, s in lst)
-    out = [r'\regkopf{Stichwortverzeichnis}', r'\begin{multicols}{2}\small\raggedright\setlength{\parindent}{0pt}']
+    out = [r'\clearpage\pdfbookmark[0]{Stichwortverzeichnis}{stichwort}\hypertarget{stichwort}{}\label{stichwort}'
+           r'{\LARGE\bfseries Stichwortverzeichnis}\par\vspace{1ex}',
+           r'\begin{multicols}{2}\small\raggedright\setlength{\parindent}{0pt}']
     buch = None
     for w, lst in stich:
         b = w[0].upper()
@@ -171,8 +224,8 @@ def register_tex(stich, fund, mit_original):
             out.append(r'\par\medskip{\bfseries %s}\par' % tex(b))
         out.append(r'\hangindent1em %s\enspace %s\par' % (tex(w), links(lst)))
     out.append(r'\end{multicols}')
-    spalten = [('blatt', 'Blatt oder Mehr')] + ([('neu', 'Original neu'), ('orig', 'Original')] if mit_original else [])
-    out.append(r'\regkopf{Fundstellenregister}')
+    out.append(r'\clearpage\pdfbookmark[0]{Fundstellenregister}{fundstellen}\hypertarget{fundstellen}{}'
+               r'\label{fundstellen}{\LARGE\bfseries Fundstellenregister}\par\vspace{1ex}')
     out.append(r'\begin{multicols}{2}\footnotesize\raggedright\setlength{\parindent}{0pt}')
     jahr = None
     for marke, schl, wo in fund:
@@ -180,13 +233,33 @@ def register_tex(stich, fund, mit_original):
         if j != jahr:
             jahr = j
             out.append(r'\par\medskip{\bfseries %s}\par' % marke.split(r' \pkt{}')[0])
-        teile = []
-        for k, name in spalten:
-            if wo.get(k):
-                teile.append(r'{\color{black!55}%s} %s' % (name, links(wo[k])))
+        teile = [r'{\color{black!55}%s} %s' % (name, links(wo[k])) for k, name in ORT if wo.get(k)]
         out.append(r'\hangindent1em %s\enspace %s\par' % (marke, r' \enspace '.join(teile) or '–'))
     out.append(r'\end{multicols}')
     return '\n'.join(out)
+
+
+def pruefe_sprungmarken(pdf, erwartet):
+    """Jede Sprungmarke trifft: erwartet = {(ziel, angezeigte Seite)}; jedes Ziel muss im PDF stehen und auf der
+    angezeigten Seite liegen; dazu jeder Link im PDF muss ein vorhandenes Ziel haben. Rückgabe Liste der Fehler."""
+    import pypdf
+    r = pypdf.PdfReader(pdf)
+    Z = {k: r.get_destination_page_number(v) + 1 for k, v in r.named_destinations.items()}
+    fehler = [f'{z}: zeigt {s}, liegt {Z.get(z, "fehlt")}' for z, s in sorted(erwartet) if Z.get(z) != s]
+    n = 0
+    for p in r.pages:
+        for a in p.get('/Annots') or []:
+            a = a.get_object()
+            if a.get('/Subtype') != '/Link':
+                continue
+            d = a.get('/Dest') or (a.get('/A') or {}).get('/D')
+            if d is None:
+                continue
+            n += 1
+            if isinstance(d, (str, bytes)) or hasattr(d, 'original_bytes'):
+                if str(d) not in Z:
+                    fehler.append(f'Link ohne Ziel: {d}')
+    return fehler, n
 
 
 def main():
@@ -213,8 +286,8 @@ def main():
             baue_originalneu(h, a.privat)
 
     # Teile in Folge
-    def teil(pdf, name, toc=()):
-        return dict(pdf=pdf, name=name, toc=list(toc), n=seiten(pdf))
+    def teil(pdf, name, toc=(), titel=''):
+        return dict(pdf=pdf, name=name, toc=list(toc), n=seiten(pdf), titel=titel)
     gebiet, T_ein = None, []
     for e in eins:
         o = os.path.join(ziel, e['ordner'], 'pdf')
@@ -232,22 +305,23 @@ def main():
     for i in range(1, 11):
         T_bas.append(teil(os.path.join(BANK, 'bau', 'zettel', f'BAS-Z{i}', f'BAS-Z{i}.pdf'), f'basz{i}',
                           (['1,section,1,{Basiszettel},basis'] if i == 1 else []) + [f'1,subsection,2,{{BAS-Z{i}}},bz{i}']))
-    T_neu, T_orig = [], []
+    T_neu = []
     for k, h in enumerate(HEFTE):
         d = os.path.join(a.privat, 'bau', 'original-neu', h, 'pdf')
         jj = h[2:4] + ('' if h.endswith('os') else ' ' + h[5:].upper())
         T_neu.append(teil(os.path.join(d, 'blatt.pdf'), f'neu{h}', (['1,section,1,{Original neu},origneu'] if k == 0 else [])
-                          + [f'1,subsection,2,{{Original neu ’{jj}}},n{h}']))
+                          + [f'1,subsection,2,{{Original neu ’{jj}}},n{h}'], titel=f'P10 ’{jj}'))
         T_neu.append(teil(os.path.join(d, 'loesung.pdf'), f'neul{h}'))
-        T_orig.append(teil(os.path.join(a.privat, 'hefte', h + '.pdf'), f'orig{h}',
-                           (['1,section,1,{Original},orig'] if k == 0 else []) + [f'1,subsection,2,{{Original ’{jj}}},o{h}']))
 
-    # Karte (Seiten zählen: eine je Gebiet)
+    # Karte und Handreichung (TeX); die Seitenzahl des Vorspanns misst der erste Satz
     E = BK.eintraege(ziel, 0, a.mn)
-    karte, n_karte = kartenseiten(E, ziel)
+    karte = r'\pdfbookmark[0]{Bestellkarte}{karte}\hypertarget{karte}{}' + kartenseiten(E)
+    hand = r'\pdfbookmark[0]{Handreichung}{handreichung}' + handreichung(E, a.mn)
+    S = {e['ordner']: stufenseiten(os.path.join(ziel, e['ordner'], 'pdf', '2-blatt.pdf'), [x for _, x in e['stufen']])
+         for e in eins}
 
-    def ab(teile):
-        s, out = n_karte + 1, {}
+    def ab(teile, vorn):
+        s, out = vorn + 1, {}
         for t in teile:
             out[t['name']] = s
             s += t['n']
@@ -263,17 +337,16 @@ def main():
             o = e['ordner']
             st.setdefault(e['anzeige'], []).append((f'{o}.1', A[o]))
             st.setdefault(e['kapitelname'], []).append((f'{o}.1', A[o]))
-            S = stufenseiten(os.path.join(ziel, o, 'pdf', '2-blatt.pdf'), [x for _, x in e['stufen']])
             for name, anz in e['stufen']:
-                if anz in S:
+                if anz in S[o]:
                     for w in {anz, name}:
-                        st.setdefault(w, []).append((f'{o}.{S[anz]}', A[o] + S[anz] - 1))
+                        st.setdefault(w, []).append((f'{o}.{S[o][anz]}', A[o] + S[o][anz] - 1))
             G = GL.lies(os.path.join(a.mn, 'msa', 'gliederung', e['kapitel'] + '.md'))
             for s in G['stufen']:
                 b = s['felder'].get('Begriff') or ''
                 m = re.match(r'^(?:Die\s+|Der\s+|Das\s+)?([A-ZÄÖÜ][\wäöüß]+)', b)
-                if m and s['abschnitt'] == e['einheit'] and (s['felder'].get('Anzeigename') or s['name']) in S:
-                    p = S[s['felder'].get('Anzeigename') or s['name']]
+                if m and s['abschnitt'] == e['einheit'] and (s['felder'].get('Anzeigename') or s['name']) in S[o]:
+                    p = S[o][s['felder'].get('Anzeigename') or s['name']]
                     st.setdefault(m.group(1), []).append((f'{o}.{p}', A[o] + p - 1))
         return sorted(((w, sorted(set(l), key=lambda x: x[1])) for w, l in st.items()), key=lambda x: x[0].casefold())
 
@@ -293,58 +366,78 @@ def main():
             if l.strip():
                 z = json.loads(l)
                 orig_daten[z['id']] = z
-    alle_ids_voll = alle_ids | set(orig_daten)
+    marken_cache = {}
 
     def fund_liste(teile, A, mit_original):
         wo = {}
         for t in teile:
-            if t['name'].endswith('-l') or t['name'].endswith('-ml') or not any(
-                    t['name'] in (e['ordner'], e['ordner'] + '-m') for e in eins):
+            ort = next((k for e in eins for k, nm in (('blatt', e['ordner']), ('mehr', e['ordner'] + '-m'))
+                        if t['name'] == nm), None)
+            if not ort:
                 continue
-            for s, ms in marken(t['pdf']).items():
+            if t['pdf'] not in marken_cache:
+                marken_cache[t['pdf']] = marken(t['pdf'])
+            for s, ms in marken_cache[t['pdf']].items():
                 for mk in ms:
-                    wo.setdefault(mk, {}).setdefault('blatt', []).append((f'{t["name"]}.{s}', A[t['name']] + s - 1))
+                    wo.setdefault(mk, {}).setdefault(ort, []).append((f'{t["name"]}.{s}', A[t['name']] + s - 1))
         if mit_original:
             for h in HEFTE:
                 Z = ziele(os.path.join(a.privat, 'bau', 'original-neu', h, 'pdf', 'blatt.pdf'))
                 for iid, s in Z.items():
                     if iid in orig_daten:
                         wo.setdefault(iid, {}).setdefault('neu', []).append((f'neu{h}.{s}', A[f'neu{h}'] + s - 1))
-            for iid, z in orig_daten.items():
-                h = f'{z["jahr"]}-{z["papier"].lower()}'
-                s = z['quelle']['seite']
-                wo.setdefault(iid, {}).setdefault('orig', []).append((f'orig{h}.{s}', A[f'orig{h}'] + s - 1))
         out, fehlt = [], []
-        for iid in sorted(alle_ids_voll if mit_original else alle_ids, key=lambda i: fundstelle(i)[2] if fundstelle(i) else (0,)):
+        ids = (alle_ids | set(orig_daten)) if mit_original else alle_ids
+        for iid in sorted(ids, key=lambda i: fundstelle(i)[2] if fundstelle(i) else (0,)):
             f = fundstelle(iid)
             if not f:
                 continue
             w = {}
-            jahr_pap = iid.split('-')[1]
             # Marke im Satz trägt kein Papier; 2026 hat auf Blatt und Mehr nur FOR
-            if f[1] in wo and (jahr_pap != 'EBR'):
-                w['blatt'] = sorted(set(wo[f[1]]['blatt']), key=lambda x: x[1])
-            for k in ('neu', 'orig'):
-                if iid in wo and k in wo[iid]:
-                    w[k] = wo[iid][k]
-            if iid in alle_ids and 'blatt' not in w:
+            if f[1] in wo and iid.split('-')[1] != 'EBR':
+                for k in ('blatt', 'mehr'):
+                    if k in wo[f[1]]:
+                        w[k] = sorted(set(wo[f[1]][k]), key=lambda x: x[1])
+            if iid in wo and 'neu' in wo[iid]:
+                w['neu'] = wo[iid]['neu']
+            if iid in alle_ids and not (w.get('blatt') or w.get('mehr')):
                 fehlt.append(iid)
             out.append((f[0], (iid[:4],) + f[2], w))
         return out, fehlt
 
     berichte = []
-    for name, teile, mit_orig, ausgabe in (
-            ('mappe-p10.pdf', T_ein + T_bas + T_neu + T_orig, True,
-             os.path.join(a.privat, 'bau', 'mappe', a.datum, 'mappe-p10.pdf')),
-            ('mappe-p10-ohne.pdf', T_ein + T_bas, False, os.path.join(ziel, 'mappe-p10-ohne.pdf'))):
-        A = ab(teile)
-        fund, fehlt = fund_liste(teile, A, mit_orig)
-        reg = register_tex(stichwoerter(A), fund, mit_orig)
-        reg = r'\pdfbookmark[0]{Stichwortverzeichnis}{stichwort}' + reg.replace(
-            r'\regkopf{Fundstellenregister}', r'\regkopf{Fundstellenregister}\pdfbookmark[0]{Fundstellenregister}{fundstellen}', 1)
-        baue(teile, karte, reg, ausgabe)
-        berichte.append(f'{ausgabe}: {seiten(ausgabe)} Seiten; Fundstellen {len(fund)}, ohne Seite auf Blatt/Mehr '
-                        f'{len(fehlt)}' + (f' ({" ".join(fehlt[:12])}{" …" if len(fehlt) > 12 else ""})' if fehlt else ''))
+    for teile, mit_orig, ausgabe in (
+            (T_ein + T_bas + T_neu, True, os.path.join(a.privat, 'bau', 'mappe', a.datum, 'mappe-p10.pdf')),
+            (T_ein + T_bas, False, os.path.join(ziel, 'mappe-p10-ohne.pdf'))):
+        vorn = 0
+        for _ in range(3):
+            A = ab(teile, vorn)
+            fund, fehlt = fund_liste(teile, A, mit_orig)
+            stich = stichwoerter(A)
+            reg = register_tex(stich, fund)
+            baue(teile, karte + '\n' + hand + '\n' + inhalt_tex(eins, A, S, teile, mit_orig), reg, ausgabe)
+            echt = ziele(ausgabe)[teile[0]['name'] + '.1'] - 1
+            if echt == vorn:
+                break
+            vorn = echt
+        erwartet = set()
+        for _, lst in stich:
+            erwartet |= set(lst)
+        for _, _, w in fund:
+            for lst in w.values():
+                erwartet |= set(lst)
+        for e in eins:
+            o = e['ordner']
+            erwartet |= {(f'{o}.{p}', A[o] + p - 1) for p in S[o].values()}
+        erwartet |= {(f'{t["name"]}.1', A[t['name']]) for t in teile}
+        fehler, n_links = pruefe_sprungmarken(ausgabe, erwartet)
+        berichte.append(f'{ausgabe}: {seiten(ausgabe)} Seiten (Vorspann {vorn}); Fundstellen {len(fund)}, ohne Seite '
+                        f'auf Blatt/Mehr {len(fehlt)}' + (f' ({" ".join(fehlt[:12])}{" …" if len(fehlt) > 12 else ""})'
+                                                           if fehlt else '')
+                        + f'; Sprungmarken {n_links}, Fehler {len(fehler)}' + (': ' + '; '.join(fehler[:8]) if fehler else ''))
+        if fehler:
+            print('\n'.join(berichte))
+            raise SystemExit('Sprungmarken treffen nicht')
     print('\n'.join(berichte))
 
 
