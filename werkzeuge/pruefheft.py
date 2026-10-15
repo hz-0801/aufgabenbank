@@ -149,6 +149,12 @@ def abi_tx(s):
     ⇔ als ⇒ (nur ⇒, Lösungsblatt 05.10.)."""
     if not s:
         return ''
+    return tx(_abi_kern(s)).replace('$$', '')
+
+
+def _abi_kern(s):
+    """Kern von abi_tx (v0.17 herausgelöst): Klartext mit e^(…), ^(…), √… -> Text mit $…$-Stellen; tx nutzt ihn
+    für Klartext-Teile mit „^(“ oder „√“ (Spalte loesung: „Missing $“)."""
     t = s.replace('⇔', '⇒').replace('′', "'").replace('″', "''")
     out, i = '', 0
     while i < len(t):
@@ -182,7 +188,7 @@ def abi_tx(s):
             continue
         out += c
         i += 1
-    return tx(out).replace('$$', '')
+    return out
 
 
 SUPZ = {'⁰': '0', '¹': '1', '²': '2', '³': '3', '⁴': '4', '⁵': '5', '⁶': '6', '⁷': '7', '⁸': '8', '⁹': '9'}
@@ -255,6 +261,9 @@ def tx(s, latex=False):
                 t = re.sub(r'_\{([^{}]*[äöüÄÖÜß][^{}]*)\}', r'_{\\text{\1}}', t)
             t = t.replace(r'\frac', r'\tfrac')
             res.append('$' + t + '$')
+        elif not latex and ('^(' in t or '√' in t):
+            # v0.17: e^(…), ^(…) und √… im Klartext (Spalte loesung) als Formel – sonst „Missing $“ bzw. Wurzel als Zeichen
+            res.append(tx(_abi_kern(t)))
         else:
             if '^' in t and not latex:
                 # a^b im Klartext (Katalog Wachstum: 1,4^24) -> Hochzahl (Lauf C)
