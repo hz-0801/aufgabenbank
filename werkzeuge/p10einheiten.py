@@ -9,6 +9,7 @@ Daten. Quelle: mathe-nachhilfe msa/gliederung/*.md, Kopfzeilen
 Folge: Gebiete in der Folge ihres ersten Kapitels (Feld Folge), darin nach dem Platz der Kennung
 (Lernfolge mit Zehnerlücken, über Kapitelgrenzen). Gebietsname aus „Gebiet:“, „+“ als „und“.
 
+  from p10einheiten import abi_einheiten  -> Abitur GK (abitur/gliederung, seit 15.10.2026), dazu ids je Stufe
   from p10einheiten import einheiten   ->  [dict(gebiet, kapitel, kapitelname, einheit, anzeige, kennung,
                                               ordner, folge, stufen=[(name, anzeige)])]
 """
@@ -74,6 +75,42 @@ def einheiten(mn=MN_VORGABE):
     for e in eins:
         if e['gebiet'] not in gebiete:
             gebiete.append(e['gebiet'])
+    for i, e in enumerate(eins):
+        e['folge'] = i + 1
+    return eins
+
+
+def abi_einheiten(mn=MN_VORGABE):
+    """Abitur GK (Zuschnitt 15.10.2026, mathe-nachhilfe abitur/gliederung/*.md): Blätter aus den Kopfpaaren Kennung,
+    Ordner, Anzeigenamen, Stufen; Stufe = Zuschnitt-Zeile, ids und neben über alle Blöcke der Einheit.
+    Gleiche Felder wie einheiten(), dazu ids={Stufe: ([ids], [neben])}."""
+    import sys
+    sys.path.insert(0, os.path.join(mn, 'werkzeuge'))
+    import gliederung as GL
+    eins, kap_folge = [], {}
+    for kap, G in GL.alle(mn, 'abitur').items():
+        gebiet = G['gebiet'].replace(' + ', ' und ')
+        for ein, d in G.get('einheiten', {}).items():
+            if 'kennung' not in d:
+                continue
+            m = re.fullmatch(r'([PALFS]\d*)([GASZB])(\d{2,3})', d['kennung'])
+            if not m or 'ordner' not in d:
+                raise SystemExit(f'{kap}: Kennung oder Ordner von „{ein}“ fehlt oder verletzt das Muster (AA10)')
+            kap_folge[gebiet] = min(kap_folge.get(gebiet, 99), G['folge'])
+            ids = {s: ([], []) for s in d.get('stufen', [])}
+            for st in G['stufen']:
+                if st['abschnitt'] != ein:
+                    continue
+                for zeile, i, n in GL.zuschnitt_zeilen(st):
+                    if zeile not in ids:
+                        raise SystemExit(f'{kap}: Zeile „{zeile}“ fehlt im Kopf „Stufen: {ein} = …“')
+                    ids[zeile][0].extend(i)
+                    ids[zeile][1].extend(n)
+            eins.append(dict(gebiet=gebiet, kapitel=kap, kapitelname=G['name'], einheit=ein,
+                             anzeige=d.get('anzeigenamen', ein), kennung=d['kennung'], ordner=d['ordner'],
+                             platz=int(m.group(3)), kapitelfolge=G['folge'],
+                             stufen=[(s, s) for s in d.get('stufen', [])], ids=ids))
+    eins.sort(key=lambda e: (kap_folge[e['gebiet']], e['platz']))
     for i, e in enumerate(eins):
         e['folge'] = i + 1
     return eins
