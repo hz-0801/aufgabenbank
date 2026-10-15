@@ -334,3 +334,14 @@ gesammelt umgesetzt in Schritt C (plan.md Linie 8).
 - S. 64 · PG90-6 · „“ → nur eine idee: Voliumenformel aufstellen (mit hilfe des taffel werks) Vulumen gesucht Volumenformel umstellen Mir fällt auf ; da beist sich vielelicht mit meinen zuvor formulierten wünschen in den komentaren
 - S. 64 · PG90-6 · „“ → volumenformel umstellen. besser?
 - S. 65 · PG90-6 · „“ → warum nicht skizze, warum nicht mehr figuren ? inkonsitenz zu anderen anregungen?
+
+### Tendenzen aus der Durchsicht (Chat Durchsicht, ab 15.10.)
+
+- Erkennen-Aufgaben knapp (PG50 Nr. 5, Lehrer 15.10.: „warum machst
+  du es oft so umständlich?“). Warum: Der Schüler soll die Frage auf
+  einen Blick erfassen; Wörter, die nur auf das zeigen, was die
+  Skizze schon zeigt, kosten Lesezeit. Beispiel: gesuchte Seiten x,
+  y, z, Frage „Bei welcher Seite ist die Hypotenuse gesucht?“, drei
+  Kästchen in einer Zeile – statt „a) Dreieck a … □ Hypotenuse“.
+  Grenze: keine bekannt. Tendenz (ein Blatt); wird Regel beim
+  zweiten.
