@@ -1,0 +1,144 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+\newsavebox{\gbox}\newlength{\gLinks}
+% v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
+% Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr\wd\gbox+6mm\relax}%
+  \ifdim\gLinks>0.62\linewidth
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\leavevmode\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par}
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+% Skizzenfeld (v0.10, Lehrer 13.10.): Karo ab dem linken Rand über die Zeile, „Skizze“ klein grau oben links im Feld
+% (wie \pfskizzenfeld der Vorlage); der rechte Rand bleibt den Bedingungen
+\newcommand{\gskizze}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \node[anchor=north west,inner sep=2pt,font=\scriptsize,text=mbgrau,fill=white] at (0,{#1*10mm}) {Skizze};
+  \end{tikzpicture}\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\makeatletter\setlength{\mbpfbe}{0mm}\makeatother
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} mehr]{Größen und Dreisatz}{PZ20-1}\pfseitevon
+\pfheftkopf{Größen und Dreisatz}{mehr}
+\pfstufenzeile{Größen umrechnen \pkt{} Dreisatz \pkt{} Dauer gesucht}
+% 2018-OS-B1e-m1 (Schwere I, rang 5)
+\begin{pfaufg}{nach~P10\\’18~\pkt{}~1e}{1.}{}
+Gib 4,5 Stunden in Minuten an.
+\karo{2}
+\fusshilfe{\mbox{1:~270 min}}
+\end{pfaufg}
+% 2019-OS-B1b-m1 (Schwere I, rang 6)
+\begin{pfaufg}{nach~P10\\’19~\pkt{}~1b}{2.}{}
+Setze das richtige Zeichen (<, > oder =) ein: 0,7 m \linie{25mm} 7 cm
+\fusshilfe{\mbox{2:~70 cm > 7 cm}}
+\end{pfaufg}
+% 2018-OS-B1b-m1 (Schwere II, rang 7)
+\begin{pfaufg}{nach~P10\\’18~\pkt{}~1b}{3.}{}
+Von einem 4 m langen Brett werden drei Stücke von je 40 cm abgesägt. Gib an, wie lang das Reststück ist.
+\karo{3}
+\fusshilfe{\mbox{3:~2,8 m}}
+\end{pfaufg}
+% 2021-OS-B1a-m1 (Schwere II, rang 8)
+\begin{pfaufg}{nach~P10\\’21~\pkt{}~1a}{4.}{}
+Eine Busfahrt dauert 1 Stunde und 45 Minuten. Der Bus fährt um 9:50 Uhr ab. Gib die Ankunftszeit an.
+\karo{3}
+\fusshilfe{\mbox{4:~11:35 Uhr}}
+\end{pfaufg}
+% 2016-OS-B1d-m1 (Schwere I, rang 12)
+\begin{pfaufg}{nach~P10\\’16~\pkt{}~1d}{5.}{}
+100 g Käse enthalten 25 g Fett. Gib an, wie viel Gramm Fett in 40 g Käse enthalten sind.
+\karo{3}
+\fusshilfe{\mbox{5:~10 g}}
+\end{pfaufg}
+% 2014-OS-K4c-m1 (Schwere II, rang 13)
+\begin{pfaufg}{nach~P10\\’14~\pkt{}~4c}{6.}{}
+Frau Lange fährt Taxi. Ihr Taxi verbraucht rund 7 Liter Diesel auf 100 Kilometer. In einem Jahr fährt sie 80 000 km, ein Liter Diesel kostet im Durchschnitt 1,62 €. Berechne ihre Kraftstoffkosten für dieses Jahr.
+\karo{4}
+\fusshilfe{\mbox{6:~9072 €}}
+\end{pfaufg}
+% 2017-OS-K3d-m1 (Schwere II, rang 15)
+\begin{pfaufg}{nach~P10\\’17~\pkt{}~3d}{7.}{}
+Eine Filterpumpe reinigt 15 000 Liter Wasser in einer Stunde. In einem Schwimmbecken sind 105 m³ Wasser. Ermittle, wie viele Stunden die Pumpe braucht, um das ganze Wasser einmal zu reinigen.
+\karo{3}
+\fusshilfe{\mbox{7:~7 h}}
+\end{pfaufg}
+% 2014-OS-K2c-m1 (Schwere II, rang 16)
+\begin{pfaufg}{nach~P10\\’14~\pkt{}~2c}{8.}{}
+Eine Wandergruppe geht mit einer durchschnittlichen Geschwindigkeit von $4\,\tfrac{\mathrm{km}}{\mathrm{h}}$. Um 10:45 Uhr erreicht sie eine Hütte, macht dort 30 Minuten Pause und wandert dann 3 km weiter zum See. Berechne, um wie viel Uhr die Gruppe am See ankommt.
+\karo{4}
+\fusshilfe{\mbox{8:~Ankunft 12:00 Uhr}}
+\end{pfaufg}
+% 2015-OS-K3c-m1 (Schwere III, rang 17)
+\begin{pfaufg}{nach~P10\\’15~\pkt{}~3c}{9.}{}
+Das Licht legt in einer Sekunde etwa $3 \cdot 10^5$ km zurück. Ein Stern ist etwa $4{,}73 \cdot 10^{15}$ km von der Sonne entfernt. Berechne, wie viele Sekunden das Licht von der Sonne bis zu diesem Stern braucht. Ermittle, wie viele Jahre das sind (1 Jahr = 365 Tage).
+\karo{4}
+\fusshilfe{\mbox{9:~1,58 · $10^{10}$ s; 500 Jahre}}
+\end{pfaufg}
+\par\vfill\noindent{\scriptsize\color{mbgrau}Originale: P10 2018 \pkt{} 1e, P10 2019 \pkt{} 1b, P10 2018 \pkt{} 1b, P10 2021 \pkt{} 1a, P10 2016 \pkt{} 1d, P10 2014 \pkt{} 4c, P10 2017 \pkt{} 3d, P10 2014 \pkt{} 2c, P10 2015 \pkt{} 3c\par}
+\end{document}

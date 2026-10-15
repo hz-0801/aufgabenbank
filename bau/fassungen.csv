@@ -76,3 +76,6 @@ PS20;4;734e59ff55fc;2026-10-15;prozent;Grundwert;bau/pruefung/2026-10-15/grundwe
 PS30;4;962c6f9a093a;2026-10-15;daten;Kenngrößen;bau/pruefung/2026-10-15/kenngroessen;pruefheft.py v0.9;
 PS40;4;6b5419225414;2026-10-15;daten;Diagramme;bau/pruefung/2026-10-15/diagramme;pruefheft.py v0.9;
 PS50;3;f538a3c72045;2026-10-15;wahrscheinlichkeit;Baumdiagramm und Pfadregeln;bau/pruefung/2026-10-15/wahrscheinlichkeit;pruefheft.py v0.9;
+PZ10;1;abae07ebcbe2;2026-10-15;zahlen;Brüche, Zahlen und Potenzen;bau/pruefung/2026-10-15/brueche;pruefheft.py v0.9;
+PZ20;1;a29e4847f906;2026-10-15;zahlen;Größen und Dreisatz;bau/pruefung/2026-10-15/dreisatz;pruefheft.py v0.9;
+PZ30;1;fb446d60a02b;2026-10-15;zahlen;Terme und Gleichungen;bau/pruefung/2026-10-15/terme;pruefheft.py v0.9;
