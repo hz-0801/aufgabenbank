@@ -279,3 +279,58 @@ praeambel.tex des Setzers kennt \blattende und \kk noch.
 - PG10 Winkel, Nr. 1: anders einsteigen, etwa „a) Nenne die
   Innenwinkelsumme im Dreieck.“ (Lehrer 15.10., Rest der Aufgabe
   noch offen).
+
+### Kommentare in der Mappe (Lehrer 15.10., 47 Stück, wörtlich)
+
+Quelle: kommentierte mappe-p10.pdf vom 15.10.; Seite der Mappe · Kennung
+· markierter Text → Kommentar. Viele sind Fragen an Claude („beurteile“,
+„lass uns diskutieren“); Antworten und Entscheidungen im Chat Durchsicht,
+gesammelt umgesetzt in Schritt C (plan.md Linie 8).
+
+- S. 10 · PG10-5 · „“ → kann /sollte man das strukurieren : zb A B C oder untereinandersetzten. mache vorschläge -überprüfe wie das bei blättren mit vielen abschnitten aussehen würde. sprich empfehlung aus
+- S. 10 · PG10-5 · „“ → besser?: nenne die innenwinkel summe eines dreicks ___? als anregung was hälst du davo , wenn eine skizze mit dr frage nach einen nebenwinkel folgt?
+- S. 10 · PG10-5 · „“ → du hast das tafelwerk der p10 schüler. angenommen auch in den folgenden jahren wird weiterhin das tafelwerk erlaubt bleiben,: macht es sinn immer , bei jedem blatt nach der seite zu fragen wo die dinge uzu finden sind die man bei der bearbeitung benötigt. beachte das du das vom ende des blattes machen soltest. sag, da es nur vorbereitung ist , ist eigentlich auch egal ob tafelwerk erlaubt ist oder nicht?!
+- S. 10 · PG10-5 · „“ → danach kommt ein seitenumbruch, verhindere da bitte in zukunft
+- S. 10 · PG10-5 · „“ → basiswinkel bezieht sich auf was : auf gleichseitige dreiecke? sollte eine bemerkung dazu auf dem blatt stehen Frage: bei begriffen könnte gelegentlich (zu mal wenn sie nicht oft gebraicht werden) könne ein einzeiler stehn als definition. lass uns diskutieren
+- S. 11 · PG10-5 · „“ → verzichte auf diese aufgabe. Warum?
+- S. 11 · PG10-5 · „“ → das begrunden , hat das was ordinar mit einem rechten winkel zu tuen oder ist es nicht so, das einfach nur ein winkel begrpndet werden muss? geht das in anderen abschnitt auf? , wenn nen , dann leieber : "Wineklgrüösse begründen". beurteile
+- S. 11 · PG10-5 · „“ → was hattest du als regel für lösungen auf eienem p10 lernblatt? mir war so wie knapp , nur lösung, oder nicht?
+- S. 12 · PG10-5 · „“ → was unterscheidet dies von sin cos tan: nebenwinkel , stufenwinkel, innenwinkelsumme, ist das was man können muss zu diesem lernblatt? gibt es etwas das ich icht benannt habe?
+- S. 13 · PG10-5 · „“ → finde es sollte heissen Lösungen winkel. warum?
+- S. 13 · PG10-5 · „“ → ich finde lösungen sollten kanpp gehalzten werden auch auf eienm extra lösungsblatt!verzichte auf die nennung der gleiderungen, oder nicht? hatte ich mal was anderes gesagt?
+- S. 13 · PG10-5 · „“ → diese infos sind auf lösungsblatt definitiv nicht wichtig
+- S. 13 · PG10-5 · „“ → Allgemein zu den extra Lösungsblättern: sollte wir das nicht ein wenig ändern im layout , damit man schneller erkennt das das was anderes sind als die aufgaben? wie machen das bücher , profis? in welchem stil. welchen stil findest du am besten Grundsätzlich ; lösungsblätter sollten immer bei bestellung itgeliefret werdn , in sammel pdf sind sie balast , oder nicht?
+- S. 14 · PG10-5 · „“ → bezeichnung liebr : mehr Winkel ? oder REst winkel? sollte eine hinweiszeile stehen wie z, b das sind alle aufgaben die nicht auf dem hauptpblatt stehen )andere besser formulierung wäre wünschens wert.
+- S. 14 · PG10-5 · „“ → haben wir nur aufgaben die zu diesem abschnitt passen? sag, sollte vielelicht auf dem hauptblatt ein hnweis stehen was auf dem "mhr" blatt zu finden ist . wie 5x? vorschläge
+- S. 14 · PG10-5 · „“ → warum hat das mehr blatt keine eigene kennung?
+- S. 17 · PG20-4 · „“ → wenn ein blatt nur einen abschnitt hat muss dann überhaupt ein abschnitts nahme gefunden und geschrieben angeziegt werden?
+- S. 17 · PG20-4 · „“ → sieh kommentar zuvor: direkt oben ? immer? und wenn dann biette einen hauptbegriff nenen so wie er in formelsammlung steht, damit nach dieser seite gefragt werden kann. übrigens sollten wir uns auf immer einigen , sollte die frage keine (aufgaben-)nummer bekommenbekömmen
+- S. 17 · PG20-4 · „“ → ich finde gut, das du erklärtst was symmetrie ist bzw was darunter zu verstehen ist. mehr ist als hheranfürung nicht notig. sollte das als defintion &bemerkung /oder besserer begriff hier aufgeführt werden? und dann besser nicht als frage, nicht nummerriert . beurteiele?
+- S. 17 · PG20-4 · „“ → mir gefällt a b c d doch nicht mehr gut, das war doch nur für die lösung zum schnellen vergleich oder? doch lieber darauf verzichten?
+- S. 17 · PG20-4 · „“ → muss das wirklich hier mit aufs blatt?
+- S. 17 · PG20-4 · „“ → ich stelle diese angabe zur disposition. mindesten auf das was vorher war sollte verzichtet werden. warum? wäre es nicht besser es käme hier nur der hinweis auf mehr hin?
+- S. 19 · PG30-2 · „“ → diese s blatt ist ein wenig knapp. gibt es nicht eine kategoriedie man weiter fassen könnte: nutzlich , wichtige Geometrische objekte. was unterscheidet qzuader von quadrat von würfel, was ist paralelgram oder raur´te? wenn du alle geio aufagben durchfüörstet liesse sich dazu nicht einlernblatt erstellen? das hier alleine : dann leiber darauf verzichten. ich finde wirklich eigenschaft viereck trifft einfach nicht den kern.
+- S. 21 · PG30-2 · „“ → allso wenn das hauptblatt nur ien aufgabe (hätte) dann kommt doch defintiv die paar aufgaben mehr mit aufs hauptblatt. hatten wir da nicht eine regel? wenn nicht mach eine!
+- S. 23 · PG40-7 · „“ → fläche und umfang : auf welche obkjekte bezieht sich das ?
+- S. 23 · PG40-7 · „“ → gab es im original kein skizze? wenn skizze dann immer mit zeigen
+- S. 24 · PG40-7 · „“ → besser formulieren. zb :stelle die folgende formel nach d um ...
+- S. 26 · PG40-7 · „“ → sag (grundsätzlich) : bei geteilt zeichen kriege ich das kotzen!!! insbesondere lässt sich die formel auch nicht auf einen blick wiedererkennen wenn man die fiorml sammlung heranzieht. verzichte man könnte sich auch fragen, wenn eine lösungsseite reicht (ob dann nicht auch untereinander geschrieben werden kann. lohnt sich das, wann geht es schief?
+- S. 28 · PG40-7 · „“ → zur diskusion : sollte immer wenn ich ein hautn+blatt bestelle neben den lösungen (vielelicht nehmen ich die wider raus) auch immer ungefragt das mehrplatt geliefer werden? wir mussen nur aufpasen das nicht zuviel geiefer wird(unübersichtlichkeit konnte die folge seien; übrigens rest ist irgendwie deutlicher) beurteiel
+- S. 32 · PG40-7 · „“ → zuvor habe ich schon mal gesagt das wir am kayout der lösungsblätter arbeiten sollte: dabei bleibe ich. ein aspekt der mit in den überlegungen eine rolle spielen sollte: die schrift grösse(nur ein aspekt...)
+- S. 33 · PG50-4 · „“ → ich weis nicht ob unter diesem abschnitt oder davor: ich finde der pythagoras ist so prominet da sollte ein kasten wie formelsammlung MErksatz irgendwas was nichzuklären ist hingehören, was meinst du? pq formel, leineare funktion, triginometrie, scheitelpunktform. allgemeine form wäre weitere sache die velelicht anders präsentiert werden sollten sind das nicht alles dinge die ein schüler wissen sollte (auh wenn es imtafelwerk zu finden ist) das wäre der ansatz den wir weiter verfolgen sollten!
+- S. 33 · PG50-4 · „“ → das suchen abngebn der seite sollte wenn dann immer (nur einmal) oben stehen, was hatten wir ausgemacht? was diskutieren wir nach mal (kommentrar?)
+- S. 33 · PG50-4 · „“ → wenn schon dies aufgabe, dann gibst du `eien kennzeichnung (x,y, z) und fragst danch. dann must du nicht sage das dreicheck a gemeint ist. versrethst? kommentierrst du wieder? warummachst du es (oft ) zu umstäb ndlich? gerne in zukunft vermeiden
+- S. 33 · PG50-4 · „“ → Pythagoras versteckt. ist das besser?
+- S. 33 · PG50-4 · „“ → Pythagoras aufstellen. besser
+- S. 41 · PG60-3 · „“ → waran erkennt der schüler bei der bestellung, das nicht sinussatz und oder kosinussatz gefragt wird? wäre triginometrie besser? alternative?
+- S. 41 · PG60-3 · „“ → sin, cios , tan aufstekken. besser?
+- S. 41 · PG60-3 · „“ → winkel ist verrutscht
+- S. 41 · PG60-3 · „“ → könnte auch in den karrierten bereich oder?
+- S. 41 · PG60-3 · „“ → waran erkennt der schüler das nicht innen winkel summe neben winkel usw hier reicht? gibt es soewas wie ein entscheidungsbaum?informiere mich
+- S. 43 · PG60-3 · „“ → (ohne Text)
+- S. 50 · PG70-2 · „“ → hatte ich an anderer stele schon mal kommentiert: hier muss der satz (mit skizze) stehen, oder nicht? nicht wiel ich es gesagt habe sondern weil du es auch findest.
+- S. 50 · PG70-2 · „“ → wenn dan skize, ich finde du darftst in geo gerne ofter skizze nutzen. geolebt (insbesondere bei schwachen schuern) von der anschaung. wann sollte auf skizze verzichtet werden?
+- S. 57 · PG80-5 · „“ → wieso oben und untern gerahmt
+- S. 64 · PG90-6 · „“ → nur eine idee: Voliumenformel aufstellen (mit hilfe des taffel werks) Vulumen gesucht Volumenformel umstellen Mir fällt auf ; da beist sich vielelicht mit meinen zuvor formulierten wünschen in den komentaren
+- S. 64 · PG90-6 · „“ → volumenformel umstellen. besser?
+- S. 65 · PG90-6 · „“ → warum nicht skizze, warum nicht mehr figuren ? inkonsitenz zu anderen anregungen?
