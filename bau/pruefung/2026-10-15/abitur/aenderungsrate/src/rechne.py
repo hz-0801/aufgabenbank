@@ -2,9 +2,9 @@
 from sympy import *
 x, t = symbols('x t', real=True)
 def p(*a): print(*a)
-# 1 2025-B2.2f Likes: a(x) = 2000(1 - e^(-0,6x^2)), 13 bis 15 Uhr
-a = 2000*(1-exp(-Rational(3, 5)*x**2))
-p('1 a(1)', N(a.subs(x, 1), 4), 'a(3)', N(a.subs(x, 3), 4), 'mittel', N((a.subs(x, 3)-a.subs(x, 1))/2, 4), 'abgelesen (2000-900)/2 =', (2000-900)/2,
+# 1 2025-B2.2f Likes: a(x) = 2400(1 - e^(-x^2/4)) wie B2.2e/g, 13 bis 15 Uhr
+a = 2400*(1-exp(-x**2/4))
+p('1 a(1)', N(a.subs(x, 1), 4), 'a(3)', N(a.subs(x, 3), 4), 'mittel', N((a.subs(x, 3)-a.subs(x, 1))/2, 4), 'abgelesen (2150-530)/2 =', (2150-530)/2,
   'Wendestelle', [N(s, 3) for s in solve(diff(a, x, 2), x) if s > 0])
 # 2 2026-B2.2h Ofen k(x) = 55e^(-x/300) + 18 (wie Pilot B2.2g), 50 Minuten
 k = 55*exp(-x/300)+18; kp = diff(k, x); assert simplify(kp + Rational(11, 60)*exp(-x/300)) == 0
