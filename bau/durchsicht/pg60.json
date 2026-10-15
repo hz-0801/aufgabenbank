@@ -12,16 +12,16 @@
     "Auf dem Blatt selbst ist es kein Problem: Sinussatz hat ein eigenes Blatt (PG70), Kosinussatz kam in der P10 nie dran. Das Problem ist die Bestellung – wer „Trigonometrie“ schreibt, meint vielleicht beides. „Trigonometrie“ als Name wäre schlechter: Es umfasst auch den Sinussatz und trennt also gerade nicht. Weg A: Name bleibt „sin, cos, tan“; die Gruppe „Rechtwinklige Dreiecke“ steht schon auf Karte und Übersicht, und die Bestellung „Trigonometrie“ liefert sin, cos, tan mit der Zeile „Sinussatz (nicht rechtwinklig): PG70“. Weg B: Name „sin, cos, tan im rechtwinkligen Dreieck“ – eindeutig, aber lang in jeder Kopfzeile. Ich empfehle Weg A. Entschieden 15.10. (v): Weg A."
    ],
    [
-    "ändern",
-    "Ja, gleich wie bei Pythagoras („Pythagoras aufstellen“) – dann lesen sich die beiden Blätter parallel. Ich hatte dort vorgeschlagen, hier „Gleichung aufstellen“ zu lassen; dein Vorschlag ist einheitlicher, ich nehme ihn zurück."
+    "entschieden",
+    "Ja, gleich wie bei Pythagoras („Pythagoras aufstellen“) – dann lesen sich die beiden Blätter parallel. Ich hatte dort vorgeschlagen, hier „Gleichung aufstellen“ zu lassen; dein Vorschlag ist einheitlicher, ich nehme ihn zurück. Entschieden 15.10. (y)."
    ],
    [
     "Handwerk",
     "Ja: Der Name γ sitzt oberhalb der Ecke statt im Bogen. Derselbe Fehler war in den Duden-Figuren und ist dort behoben (Winkelname im Bogen); in Schritt C ziehe ich die Blatt-Bausteine in mathblatt.sty genauso nach."
    ],
    [
-    "ändern",
-    "Hier steht beides – Antwortlinie und Karo –, und das ist eins zu viel. „Ergänze“ ist keine Rechnung, also braucht es keinen Rechenraum (Regel „Rechenraum nur bei Rechen- und Begründungsaufträgen“). Vorschlag: Das Karo fällt weg, und „sin γ = ____“ steht dort, wo jetzt das Karo ist, rechts neben der Figur. So siehst du es ja auch."
+    "entschieden",
+    "Hier steht beides – Antwortlinie und Karo –, und das ist eins zu viel. „Ergänze“ ist keine Rechnung, also braucht es keinen Rechenraum (Regel „Rechenraum nur bei Rechen- und Begründungsaufträgen“). Vorschlag: Das Karo fällt weg, und „sin γ = ____“ steht dort, wo jetzt das Karo ist, rechts neben der Figur. So siehst du es ja auch. Entschieden 15.10. (y)."
    ],
    [
     "entschieden",
