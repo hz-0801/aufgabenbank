@@ -273,3 +273,9 @@ praeambel.tex des Setzers kennt \blattende und \kk noch.
   standen nicht in fassungen.csv; der Neusatz 13.10. vergab wieder
   Fassung 1, obwohl sich die Daten geändert haben – gleiche Kennung,
   anderes Blatt. Setzer/Register in Schritt C prüfen.
+
+## Durchsicht Mappe P10 (Lehrer, ab 15.10.; gesammelt für Schritt C)
+
+- PG10 Winkel, Nr. 1: anders einsteigen, etwa „a) Nenne die
+  Innenwinkelsumme im Dreieck.“ (Lehrer 15.10., Rest der Aufgabe
+  noch offen).
