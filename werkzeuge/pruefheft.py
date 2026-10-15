@@ -4156,7 +4156,10 @@ def xelatex(tex, bb, name, arbeit):
         seiten = int(m.group(1)) if m else 0
     return {'pdf': pdf if os.path.exists(pdf) and not fehler else None, 'fehler': fehler,
             'missing': log.count('Missing character'),
-            'overfull': len(re.findall(r'Overfull \\hbox \((\d+\.\d+)pt', log)), 'seiten': seiten}
+            'overfull': len(re.findall(r'Overfull \\hbox \((\d+\.\d+)pt', log)), 'seiten': seiten,
+            # v0.17: Maße und Log für die Abitur-Prüfung (neusatz-abi.py: Overfull > 5 pt)
+            'overfull_pt': [float(x) for x in re.findall(r'Overfull \\[hv]box \((\d+\.\d+)pt', log)],
+            'log': os.path.join(arbeit, name + '.log')}
 
 
 SORT = []   # (Stufe, Nr., Gruppe, Aufgabe) des zuletzt gesetzten Hefts
@@ -6219,8 +6222,10 @@ def p_buendel_tex(D, glieder, nr, heraus, faktor=1.0, teile=False):
             if i == 0 and not kopf:
                 out.append('\\vspace*{-\\baselineskip}\\vspace*{-\\smallskipamount}')   # a) auf der Zeile der Nummer
             # Marke zweizeilig als \\shortstack (\\\\ direkt im Teil ist ein TeX-Fehler), links neben die Nummernspalte
+            # v0.17: ohne eigenes \\hspace*{\\mbpfnr} – den Abstand gibt \\gteilrand schon; doppelt war die Marke breiter
+            # als ihr Rand (\\mbpfrandmarke, 11 mm) und lief 24 pt über (AA70, AA130, AS20 …)
             out.append(f'\\begin{{gbteil}}{{{b}}}{{{p_marke(D, r).replace(chr(92) * 2, "~") if p_marke(D, r).count(chr(92) * 2) == 0 else
-                       "\\raisebox{\\dimexpr-\\height+\\ht\\strutbox\\relax}{\\shortstack[r]{" + p_marke(D, r) + "}}\\hspace*{\\mbpfnr}"}}}{{{p_bedingung_tex(D, r)}}}')
+                       "\\raisebox{\\dimexpr-\\height+\\ht\\strutbox\\relax}{\\shortstack[r]{" + p_marke(D, r) + "}}"}}}{{{p_bedingung_tex(D, r)}}}')
             out += zeilen
             out.append('\\end{gbteil}')
     if spalten:
@@ -7013,8 +7018,10 @@ def p_bau_abi(args):
         open(os.path.join(ordner, 'src', nm + '.tex'), 'w', encoding='utf-8').write(t)
         if e['pdf']:
             shutil.copy(e['pdf'], os.path.join(ordner, 'pdf', nm + '.pdf'))
+        shutil.copy(e['log'], os.path.join(ordner, 'src', nm + '.log'))   # v0.17: Log neben dem TeX
+        gross = [x for x in e['overfull_pt'] if x > 5]
         print(f'{nm}: {e["seiten"]} Seiten, Fehler {len(e["fehler"])}, Missing character {e["missing"]}, '
-              f'Overfull {e["overfull"]}')
+              f'Overfull {e["overfull"]} (über 5 pt: {len(gross)}{", max %.1f pt" % max(gross) if gross else ""})')
         for fl in e['fehler'][:5]:
             print('   ', fl)
     print('Ordner:', ordner)
