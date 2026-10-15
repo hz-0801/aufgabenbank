@@ -16,8 +16,8 @@ f = Rational(2, 3)*x**4 + Rational(4, 3)*x**3 + 2; m = diff(f, x).subs(x, -1); n
 z = symbols('z'); p('B5 Abstand Gerade y = 4/3x + n - z:', solve(Eq(z*Rational(3, 5), 4), z))
 # B6 2026-B2.2f  f = 2e^x + 3, k = 15 f(-x/300) = 30e^(-x/300) + 45
 f = 2*exp(x) + 3; p('B6', expand(15*f.subs(x, -x/300)))
-# B7 2023-B2.2j  f = x³ - 9x² + 24x - 16, h = 4x³ - 36x² + 96x + 20 = c (f + d)
-f = x**3 - 9*x**2 + 24*x - 16; c, d = symbols('c d'); hh = 4*x**3 - 36*x**2 + 96*x + 20
+# B7 2023-B2.2j  f = x³ - 9x² + 24x - 16, h = 10x³ - 90x² + 240x + 20 = c (f + d)
+f = x**3 - 9*x**2 + 24*x - 16; c, d = symbols('c d'); hh = 10*x**3 - 90*x**2 + 240*x + 20
 p('B7', solve(Poly(c*(f + d) - hh, x).all_coeffs(), [c, d]))
 # B8 2024-A1.4b  g = 3e^x - 3, h = e^x + 2
 g = 3*exp(x) - 3; h = exp(x) + 2; p('B8', diff(g, x).subs(x, 0), diff(h, x).subs(x, 0), simplify(h - g))

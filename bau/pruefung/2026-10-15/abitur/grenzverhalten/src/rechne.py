@@ -16,7 +16,7 @@ f = Rational(1, 3)*(x**2 - 9)*exp(x/2); p('B4', L(f, oo), L(f, -oo))
 # B5 2025-B2.2a
 f = (3 - x)*exp(x); p('B5', solve(f, x), L(f, -oo), L(f, oo), 'HP', solve(diff(f, x), x), f.subs(x, 2), N(f.subs(x, 2), 3))
 # B6 2024-A1.1a
-f = x**3 - 5*x; p('B6', simplify(f.subs(x, -x) + f) == 0)
+f = x**3 - 9*x; p('B6', simplify(f.subs(x, -x) + f) == 0)
 # B7 2024-B2.2a
 f = Rational(1, 2)*x**4 - 3*x**2 + Rational(5, 2); p('B7', simplify(f.subs(x, -x) - f) == 0)
 # B8 2025-B2.1a  (Extrempunkte (-3|3), (3|-3) auf y = -x wie im Original)

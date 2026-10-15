@@ -12,7 +12,7 @@ p('2023-B2.1l F', factor(simplify(F)), 'I', simplify(I), N(I, 5), 'Tisch', N(-4*
 f = x**3+2*x**2-3*x; p('2026-A1.1a', factor(f), integrate(f, (x, -1, 0)))
 f = (3-x)*exp(x); F = (4-x)*exp(x); assert simplify(diff(F, x)-f) == 0; I = F.subs(x, 2)-F.subs(x, -2)
 p('2025-B2.2d', simplify(I), N(I, 5), 'Näherung', N(2*E**2, 5), 'Abw %', N((2*E**2-I)/I*100, 3), 'HP', solve(diff(f, x), x))
-h = 4*x**3-45*x**2+162*x+20; p('2023-B2.2i', integrate(h, (x, 0, 5)), integrate(h, (x, 0, 5))/5, 'max', solve(diff(h, x), x), h.subs(x, 3), h.subs(x, 5))
+h = 10*x**3-90*x**2+240*x+20; p('2023-B2.2i', integrate(h, (x, 0, 5)), integrate(h, (x, 0, 5))/5, 'max', solve(diff(h, x), x), h.subs(x, 2), h.subs(x, 5))
 f = Rational(1, 2)*x**4-3*x**2+Rational(5, 2); I = integrate(f, (x, -1, 1)); p('2024-B2.2f', I, 'a', 1/I)
 p('2022-A1.3a', integrate(m*x-x**2, (x, m, 0)), solve(Eq(-m**3/6, Rational(9, 2)), m))
 u = -log(4); tot = 2-2*exp(u); p('2026-B2.2e', tot, solve(Eq(2-2*exp(x), tot/2), x), N(log(Rational(5, 8)), 3))

@@ -18,8 +18,8 @@ p('4 c', simplify((k-18)/kp))
 # 5 2022-B2.1m Tauchroboter h(t) = 1/8 t^3 - 9t^2 + 162t
 h = Rational(1, 8)*t**3-9*t**2+162*t; hp = diff(h, t)
 p('5 h\'', factor(hp), 'Max', h.subs(t, 12), 'h(36)', h.subs(t, 36), 'h\'=19,5:', solve(Eq(hp, Rational(39, 2)), t), expand(8*(hp-Rational(39, 2))/3))
-# 6 2025-A1.7b f(x) = -0,5x^2 + 3x - 2
-f = -x**2/2+3*x-2; p('6 Lösungen', solve(Eq(f/x, diff(f, x)), x), 'Tangente in 2:', expand(diff(f, x).subs(x, 2)*(x-2)+f.subs(x, 2)), 'in -2:', expand(diff(f, x).subs(x, -2)*(x+2)+f.subs(x, -2)))
+# 6 2025-A1.7b f(x) = -x^2 + 6x - 4 (wie A1.7a)
+f = -x**2+6*x-4; p('6 Lösungen', solve(Eq(f/x, diff(f, x)), x), 'Tangente in 2:', expand(diff(f, x).subs(x, 2)*(x-2)+f.subs(x, 2)), 'in -2:', expand(diff(f, x).subs(x, -2)*(x+2)+f.subs(x, -2)))
 # 7 2022-B2.2c f(x) = -1/18 x^3 + 1/3 x^2, [0; 4]
 f = -x**3/18+x**2/3; s = (f.subs(x, 4)-f.subs(x, 0))/4; xs = solve(Eq(diff(f, x), s), x)
 p('7 f(4)', f.subs(x, 4), 'Sekante', s, 'x0', xs, [N(v, 3) for v in xs], expand(-6*(diff(f, x)-s)))
