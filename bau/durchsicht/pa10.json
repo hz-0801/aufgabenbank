@@ -1,0 +1,93 @@
+{
+ "kennung": "PA10-7",
+ "name": "Lineare Funktionen",
+ "seiten": {
+  "1": "Blatt S. 1",
+  "2": "Blatt S. 2",
+  "3": "Blatt S. 3",
+  "4": "Blatt S. 4",
+  "5": "Blatt S. 5",
+  "6": "Blatt S. 6",
+  "7": "Blatt S. 7"
+ },
+ "antworten": {
+  "1": [
+   [
+    "offen",
+    "Ja, ich würde sie streichen. Nr. 2 (Original ’25 · 1f) übt dasselbe Erkennen, an Graphen statt an Termen, und m und n zeigt künftig der Formelkasten oben (y = mx + n, § 10 t). Nr. 1 ist damit doppelt. Das berührt deine Regel vom 12.10. („Einstieg Geraden = Erkennen“, vier Terme ankreuzen) – sie wäre durch das Original selbst erfüllt. Weg A: Nr. 1 fällt weg. Weg B: Nr. 1 bleibt."
+   ],
+   [
+    "offen",
+    "„Graph zeichnen“ – kurz und wie der Operator der Prüfung („Zeichne den Graphen von f“); dass es um lineare Funktionen geht, sagt der Titel. Zusammen mit deinem Vorschlag auf S. 3 lesen sich die Stufen dann als Reihe: Graph zeichnen · Gleichung aus Graph · Gleichung aus zwei Punkten · Nullstelle gesucht · Punktprobe · Gleichung aus Text · Gerade und Parabel."
+   ]
+  ],
+  "2": [
+   [
+    "Handwerk",
+    "Das Koordinatensystem selbst folgt der Regel (so groß wie nötig, Fenster wie im Original, Lösung nicht am Rand). Verschwendet wird der Platz durch den Umbruch: Nr. 4 steht allein auf S. 2, weil die nächste Stufe auf einer neuen Seite beginnt, und rechts neben dem System bleibt alles leer. Richtig: Stufen laufen auf der Seite weiter, und neben einem System steht, was man tut (Regel „Zwei Spalten“). Kommt in Schritt C in den Setzer; das Blatt wird dadurch deutlich kürzer."
+   ]
+  ],
+  "3": [
+   [
+    "offen",
+    "Gute Idee, und noch knapper: „Gleichung aus Graph“ – dann passt es zu „Gleichung aus zwei Punkten“ und „Gleichung aus Text“, drei Stufen gleicher Form. Siehe S. 1 (Reihe der Stufennamen)."
+   ],
+   [
+    "Antwort",
+    "Ja. ’19 · 2b fragte nach „Anstieg −2“ und „parallel zur x-Achse“; wir haben die Zahl geändert (−3, Regel „Andere Zahlen“) und „Anstieg“ durch „Steigung“ ersetzt, wie in der Formelsammlung. Die Stufe hat nur Originale von 2019, darum „zuletzt 19“."
+   ]
+  ],
+  "4": [
+   [
+    "Handwerk",
+    "Ja, verkackt: Die Aussagen (1), (2) und die Frage nach der Gleichung gehören rechts neben das Koordinatensystem (Regel „Zwei Spalten“: links, was man ansieht, rechts, was man tut). Kommt in Schritt C."
+   ],
+   [
+    "ändern",
+    "Ja, als Regel – es ist das zweite Blatt nach sin, cos, tan (§ 10 y: Antwortfeld rechts neben der Figur). Warum: Der Blick geht von der Frage zur Antwort, nicht über die Grafik hinweg nach unten. Beispiel: „x = ___“ rechts oben neben dem System, in Höhe der Frage. Grenze: wo kein Bild daneben steht, bleibt die Antwort rechts in der Zeile der Frage. Trage ich so ein, wenn du nicht widersprichst."
+   ]
+  ],
+  "5": [
+   [
+    "Antwort",
+    "Du hast recht, dass sie jedes Jahr vorkommt – die fünf vollen Punkte zeigen das (’26 · 5b, ’25 · 1h, ’24 · 3c, ’23 · 1i, ’22 · 1c). Auf dieser Stufe stehen aber nur zwei, weil die übrigen woanders ihren Platz haben: ’24 · 3c ist eine Punktprobe an der Parabel (hier Nr. 15a unter Gerade und Parabel, auch auf dem Parabel-Blatt), ’22 · 1c und ’25 · 1h prüfen die Lösung einer Gleichung durch Einsetzen (Basis, Blatt Terme und Gleichungen). Die älteren (’17, ’21) stehen im Mehr. Fehlen tut keine."
+   ],
+   [
+    "offen",
+    "Ja, hier ist die natürliche Naht: Bis Punktprobe ist alles innermathematisch an der Geraden, ab „Gleichung aus Text“ kommt die Sache dazu, danach die Parabel. Das Blatt hat 7 Seiten bei 17 Originalen – nach der Regel „zwei Seiten“ zu lang, auch wenn der Umbruch (S. 2) behoben ist. Weg A: Teilen – „Lineare Funktionen“ (Graph zeichnen bis Punktprobe) und „Lineare Funktionen im Alltag“ (Gleichung aus Text); Gerade und Parabel steht weiter am Ende von Quadratische und dem zweiten Teil. Weg B: ein Blatt, nur dichter gesetzt. Ich empfehle Weg A."
+   ],
+   [
+    "offen",
+    "Das geht nicht verloren, egal wie wir entscheiden: Die Regeln zum Heranführen stehen in gemeinsam.md und im Bauauftrag und gelten fürs Lernblatt weiter. Für P10 stimmt dein Argument: Der Schüler kennt das Thema, und Formelkasten oben, Begriff in der Stufe und Kern am Ende tragen jetzt die Erinnerung. Nr. 10 ist aber genau der erste Schritt von Nr. 11b (m und n aus dem Text finden) – dort stolpern Schüler wirklich. Weg A: Auf P10-Blättern keine eigenen Aufgaben mehr, nur Originale. Weg B: Ein Einstieg je Stufe höchstens, und nur, wo der erste Schritt des Originals nicht schon durch Formelkasten oder Begriff gezeigt ist (verschärft „Eigene Aufgaben sparsam“). Ich empfehle Weg B; Nr. 10 bliebe, Nr. 1 fiele."
+   ]
+  ],
+  "6": [
+   [
+    "Handwerk",
+    "Weil der Setzer jede Teilaufgabe einzeln aus dem Original löst und ihr die Marke gibt. Stammen a) und b) aus derselben Aufgabe, gehört die Marke einmal an die Nummer („nach P10 ’23 · 3“), wie bei Nr. 11. Kommt in Schritt C."
+   ],
+   [
+    "Antwort",
+    "Richtig: Kästchen ohne Buchstaben und Abschnitte mit A, B, C sind beschlossen (§ 10 l), aber noch nicht umgesetzt – die Mappe ist vom 15.10. morgens, und alles wird gesammelt in Schritt C umgesetzt. Vergessen ist nichts: 21 Entscheidungen in plan.md § 10 tragen den Vermerk „Umsetzung in Schritt C“, die Handwerksfehler stehen je Blatt in den Antwortdateien. Vor Schritt C mache ich daraus eine Prüfliste, gegen die der Kritiker jedes Blatt prüft."
+   ],
+   [
+    "ändern",
+    "Ja, auch dorthin: Der Zeichen-Teil von ’26 · 5a (und ebenso ’23 · 4a, S. 7) ist derselbe Handgriff wie Graph zeichnen. Er kommt gekürzt, ohne Parabel, zusätzlich unter Graph zeichnen (Regel „jede Teilaufgabe zu ihrem Handgriff“); ungekürzt bleibt er unter Gerade und Parabel. Die Stufe hat dann drei Originale statt einem."
+   ]
+  ],
+  "7": [
+   [
+    "Antwort",
+    "Ja: ’24 · 3c steht auf dem Parabel-Blatt unter „Punktprobe“ (dort ohne die Gerade). Hier steht sie nur, weil sie Teil der gemischten Aufgabe ist."
+   ],
+   [
+    "Antwort",
+    "Nach deiner Entscheidung vom 13.10. (Weg C) an beide Stellen: als letzter Abschnitt auf Lineare und auf Quadratische, gleich gesetzt, weil die P10 beides mischt. Wird Lineare geteilt (S. 5), steht er am Ende des zweiten Teils und auf Quadratische."
+   ],
+   [
+    "ändern",
+    "Ja – „Zeichne f“ ist Graph zeichnen; wie bei ’26 · 5a (S. 6) kommt der Teil gekürzt auch dorthin."
+   ]
+  ]
+ }
+}
