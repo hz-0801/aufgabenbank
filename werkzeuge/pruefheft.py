@@ -6729,6 +6729,10 @@ def p_bau(args):
     abdruck = p_fingerabdruck(D, stufen_daten)
     fassung, fassung_neu = p_fassung(kenn, abdruck)
     kenn_basis, kenn = kenn, p_kennung_fassung(kenn, fassung)
+    if getattr(args, 'nur_fassung', False):
+        # bestellen.py (M4, plan.md § 10, 15.10. k): Fassung ohne Satz, damit ein Blatt des Tages wiederverwendet wird
+        print(f'FASSUNG {kenn} {"neu" if fassung_neu else "gleich"}')
+        return
     if args.fassung_erfassen:
         # Übergang (v0.9): der heutige Datenstand einer schon gelieferten Einheit gilt als Fassung 1, ohne zu setzen
         if any(z['kennung'] == kenn_basis for z in p_fassungen()):
@@ -6815,6 +6819,9 @@ def main():
                          'nichts setzen – für schon gelieferte Einheiten (v0.9)')
     ap.add_argument('--alle', action='store_true', help='Fokusblatt mit allen Originalen, ohne Auswahl je Sorte (Bauregeln 2.1); '
                     'mit --art mehr: alle Zeilen der Einheit (auf_blatt = nein) nach rang, ohne Portionen (v0.14)')
+    ap.add_argument('--nur-fassung', action='store_true',
+                    help='nur --art p: Kennung mit Fassung ausgeben (FASSUNG PA30-5 gleich|neu), nichts setzen, nichts '
+                         'schreiben (bestellen.py)')
     ap.add_argument('--nur-register', action='store_true',
                     help='nichts setzen, nur die Registerzeile des schon gebauten Ordners schreiben (Lauf C: '
                          'parallele Bauten mit --ohne-register, danach je Bau einmal --nur-register)')
