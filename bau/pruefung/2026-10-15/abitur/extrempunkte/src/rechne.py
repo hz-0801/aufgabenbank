@@ -20,7 +20,7 @@ f = -x**3/18 + x**2/3; p('B5', ext(f))
 # B6 2023-B2.2b
 f = x**3 - 9*x**2 + 24*x - 16; p('B6', ext(f), factor(f))
 # B7 2024-B2.2c
-f = Rational(1, 2)*x**4 - 3*x**2 + Rational(5, 2); p('B7', ext(f))
+f = x**4 - 6*x**2 + 5; p('B7', ext(f))
 # B8 2025-B2.1b
 f = x**3/18 - Rational(3, 2)*x; p('B8', ext(f), 'Gerade durch beide: y = -x')
 # B9 2025-B2.2b
