@@ -26,7 +26,8 @@ for lfd, z in enumerate(zeilen, 1):
 <p class="lehrer">{html.escape(z['kommentar'] or '(ohne Text)')}</p>
 <p class="claude"><span class="chip {CHIP.get(marke, 'ans')}">{html.escape(marke)}</span> {html.escape(text)}</p></article>''')
 
-aus.write_text(f'''<title>Durchsicht {daten['kennung'].split('-')[0]} {html.escape(daten['name'])}</title>
+PRUEF = {'P': 'P10', 'A': 'Abitur GK', 'L': 'Abitur LK', 'F': 'FHR', 'S': 'Schulstoff'}
+aus.write_text(f'''<title>Durchsicht {PRUEF.get(daten['kennung'][0], '')}</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:ital@1&display=swap">
 <style>
