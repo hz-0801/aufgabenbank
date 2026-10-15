@@ -7002,7 +7002,15 @@ def p_bau_abi(args):
                              'einstieg': None, 'kurzfrage': '', 'regine': '', 'echte': echte, 'heraus': []})
     alle_echte = [r for s in stufen_daten for r in s['echte']]
     if alle_echte and max(alle_echte, key=p_rang)['id'] != alle_echte[-1]['id']:
-        hinweise.append(f'schwerste echte ({max(alle_echte, key=p_rang)["id"]}) steht nicht am Ende des Blatts')
+        # v0.17: die Reihenfolge folgt der Stufenfolge der Gliederung (Lernfolge); der Setzer ändert sie nicht, er nennt
+        # sie – ob die letzte Stufe leichter bleiben darf, entscheidet der Lehrer
+        sw = max(alle_echte, key=p_rang)
+        folge = ' · '.join(s['name'] for s in stufen_daten)
+        hinweise.append(f'schwerste echte ({sw["id"]}, Stufe „{sw.get("stufe", "").strip()}“) steht nicht am Ende: '
+                        + ('in der letzten Stufe nicht zuletzt (Ordnung rang)' if sw.get('stufe', '').strip() ==
+                           stufen_daten[-1]['name'] else
+                           f'Stufenfolge der Gliederung {folge}; letzte Stufe „{stufen_daten[-1]["name"]}“ ist leichter')
+                        + ' (Reihenfolge nicht geändert, Lehrer entscheidet)')
     for r in alle:
         if r.get('eltern_id') in D.kat:
             continue
