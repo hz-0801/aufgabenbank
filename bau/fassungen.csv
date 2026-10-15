@@ -61,3 +61,18 @@ PS50;2;5a33ee7c5730;2026-10-14;wahrscheinlichkeit;Baumdiagramm und Pfadregeln;ba
 PA10;6;090128a0f33c;2026-10-14;lineare;Lineare Funktionen;bau/pruefheft/lineare-p-lineare-funktionen-2026-10-14;pruefheft.py v0.9;TAL
 PA30;4;f8eee49180da;2026-10-14;quadratische;Parabel: Scheitelpunkt und Skizze;bau/pruefheft/quadratische-p-parabel-scheitelpunkt-und-skizze-2026-10-14;pruefheft.py v0.9;XU6
 PA40;3;e85c8d8fae16;2026-10-14;quadratische;Quadratische Gleichung lösen;bau/pruefheft/quadratische-p-quadratische-gleichung-loesen-2026-10-14;pruefheft.py v0.9;YYZ
+PG10;5;cd865b5fa8de;2026-10-15;dreiecke;Winkel ohne Rechnung bestimmen oder begründen;bau/pruefung/2026-10-15/winkel;pruefheft.py v0.9;
+PG50;4;0c3ac0dbb678;2026-10-15;dreiecke;Länge mit Pythagoras;bau/pruefung/2026-10-15/pythagoras;pruefheft.py v0.9;
+PG60;3;c695a6662ee9;2026-10-15;dreiecke;Seite oder Winkel mit sin, cos, tan;bau/pruefung/2026-10-15/sin-cos-tan;pruefheft.py v0.9;
+PG80;5;b38508045188;2026-10-15;koerper;Netz und Schrägbild;bau/pruefung/2026-10-15/koerper-netz;pruefheft.py v0.9;
+PG90;6;f53bf6db31f5;2026-10-15;koerper;Volumen und Oberfläche;bau/pruefung/2026-10-15/koerper-volumen;pruefheft.py v0.9;
+PA10;7;ca933334db6f;2026-10-15;lineare;Lineare Funktionen;bau/pruefung/2026-10-15/lineare;pruefheft.py v0.9;
+PA20;2;f8a69140dd84;2026-10-15;gleichungssysteme;Gleichungssystem im Sachzusammenhang;bau/pruefung/2026-10-15/gleichungssysteme;pruefheft.py v0.9;
+PA30;5;ad39f541d48b;2026-10-15;quadratische;Parabel: Scheitelpunkt und Skizze;bau/pruefung/2026-10-15/parabel;pruefheft.py v0.9;
+PA40;4;2e56e9a35718;2026-10-15;quadratische;Quadratische Gleichung lösen;bau/pruefung/2026-10-15/qgleichung;pruefheft.py v0.9;
+PA50;3;44bf2d6499da;2026-10-15;wachstum;Exponentielles Wachstum;bau/pruefung/2026-10-15/wachstum;pruefheft.py v0.9;
+PS10;3;05b45a8b3394;2026-10-15;prozent;Prozent;bau/pruefung/2026-10-15/prozent;pruefheft.py v0.9;
+PS20;4;734e59ff55fc;2026-10-15;prozent;Grundwert;bau/pruefung/2026-10-15/grundwert;pruefheft.py v0.9;
+PS30;4;962c6f9a093a;2026-10-15;daten;Kenngrößen;bau/pruefung/2026-10-15/kenngroessen;pruefheft.py v0.9;
+PS40;4;6b5419225414;2026-10-15;daten;Diagramme;bau/pruefung/2026-10-15/diagramme;pruefheft.py v0.9;
+PS50;3;f538a3c72045;2026-10-15;wahrscheinlichkeit;Baumdiagramm und Pfadregeln;bau/pruefung/2026-10-15/wahrscheinlichkeit;pruefheft.py v0.9;

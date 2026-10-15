@@ -1,0 +1,163 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+\newsavebox{\gbox}\newlength{\gLinks}
+% v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
+% Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr\wd\gbox+6mm\relax}%
+  \ifdim\gLinks>0.62\linewidth
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\leavevmode\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par}
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+% Skizzenfeld (v0.10, Lehrer 13.10.): Karo ab dem linken Rand über die Zeile, „Skizze“ klein grau oben links im Feld
+% (wie \pfskizzenfeld der Vorlage); der rechte Rand bleibt den Bedingungen
+\newcommand{\gskizze}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \node[anchor=north west,inner sep=2pt,font=\scriptsize,text=mbgrau,fill=white] at (0,{#1*10mm}) {Skizze};
+  \end{tikzpicture}\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} Prüfung]{Diagramme}{PS40-4}\pfseitevon
+\pfheftkopf{Diagramme}{}
+\pfstufenzeile{Winkel gesucht \pkt{} Kreisdiagramm zeichnen \pkt{} Säule ergänzen \pkt{} Aussagen prüfen \pkt{} falschen Eindruck erklären}
+
+% ===================== Stufe: Winkel berechnen und beschriften =====================
+\Needspace*{0.16\textheight}\pfstufekopf{Winkel gesucht}{\gpunkte[25 24 22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}
+% Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
+\begin{pfaufg}{}{1.}{}
+Ein Sektor im Kreisdiagramm steht für einen Anteil. Wie viel Grad hat er? Der ganze Kreis hat 360°.
+\par\smallskip
+\par\noindent\makebox[\mbpfteil][l]{\textbf{a)}}10 \%\hfill\linie{30mm} °
+\par\noindent\makebox[\mbpfteil][l]{\textbf{b)}}30 von 120 Befragten\hfill\linie{30mm} °
+\par\fusshilfe{\mbox{1:~a) 36°; b) 90°}}
+\end{pfaufg}
+% 2022-OS-K4d-m1 (Original 2022-OS-K4d, Schwere II, rang 1; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’22~\pkt{}~4d}{2.}{}
+900 Jugendliche wurden gefragt, wie oft sie Comics lesen. Ergebnis: mehrmals pro Woche 42 \%, einmal pro Woche 17 \%, einmal im Monat 29 \%, nie 12 \%. Im Kreisdiagramm ist nur der Sektor „nie“ beschriftet. Beschrifte die drei anderen Sektoren. Berechne den Mittelpunktswinkel für „nie“.
+\par\smallskip\noindent\begin{tikzpicture}[font=\footnotesize,line width=0.6pt]\filldraw[fill=black!6] (0,0) -- (90.00:1.25) arc (90.00:46.80:1.25) -- cycle;\draw[line width=0.4pt] (68.40:1.00) -- (1.0,1.6) node[right,inner sep=2pt] {nie};\filldraw[fill=black!18] (0,0) -- (46.80:1.25) arc (46.80:-14.40:1.25) -- cycle;\draw[line width=0.4pt] (16.20:1.00) -- (1.7,0.3) node[right,inner sep=2pt] {\rule{1.8cm}{0.4pt}};\filldraw[fill=black!30] (0,0) -- (-14.40:1.25) arc (-14.40:-118.80:1.25) -- cycle;\draw[line width=0.4pt] (-66.60:1.00) -- (0.9,-1.6) node[right,inner sep=2pt] {\rule{1.8cm}{0.4pt}};\filldraw[fill=black!42] (0,0) -- (-118.80:1.25) arc (-118.80:-270.00:1.25) -- cycle;\draw[line width=0.4pt] (-194.40:1.00) -- (-1.7,0.4) node[left,inner sep=2pt] {\rule{1.8cm}{0.4pt}};\draw (0,0) circle (1.25);\end{tikzpicture}\par
+\par\smallskip\par\noindent \hfill Winkel „nie“: \linie{30mm}\,°
+\fusshilfe{\mbox{2:~im Uhrzeigersinn nach „nie“: einmal pro Woche, einmal im Monat, mehrmals pro Woche; 43,2°}}
+\end{pfaufg}
+% 2024-OS-K2c-m1 (Original 2024-OS-K2c, Schwere II, rang 2; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’24~\pkt{}~2c}{3.}{FOR}
+Familie Becker verbraucht am Tag etwa 480 Liter Leitungswasser: 1 Trinken und Kochen 10 l, 2 Körperpflege 236 l, 3 Toilettenspülung 134 l, 4 Wäsche waschen 55 l, 5 Gartenpflege 15 l, 6 Sonstiges 30 l. Das Kreisdiagramm zeigt diese Anteile in derselben Reihenfolge; beschriftet sind nur „1 Trinken und Kochen“ und „5 Gartenpflege“. Beschrifte den Sektor für „Wäsche waschen“. Berechne den Mittelpunktswinkel für den Anteil „Trinken und Kochen“ am gesamten Verbrauch.
+\par\smallskip\noindent\begin{tikzpicture}[font=\footnotesize,line width=0.6pt]\filldraw[fill=black!6] (0,0) -- (90.00:1.25) arc (90.00:82.50:1.25) -- cycle;\draw[line width=0.4pt] (86.25:1.00) -- (0.8,1.7) node[right,inner sep=2pt] {1 Trinken und Kochen};\filldraw[fill=black!18] (0,0) -- (82.50:1.25) arc (82.50:-94.50:1.25) -- cycle;\filldraw[fill=black!30] (0,0) -- (-94.50:1.25) arc (-94.50:-195.00:1.25) -- cycle;\filldraw[fill=black!42] (0,0) -- (-195.00:1.25) arc (-195.00:-236.25:1.25) -- cycle;\filldraw[fill=black!6] (0,0) -- (-236.25:1.25) arc (-236.25:-247.50:1.25) -- cycle;\draw[line width=0.4pt] (-241.88:1.00) -- (-1.6,1.4) node[left,inner sep=2pt] {5 Gartenpflege};\filldraw[fill=black!18] (0,0) -- (-247.50:1.25) arc (-247.50:-270.00:1.25) -- cycle;\draw (0,0) circle (1.25);\end{tikzpicture}\par
+\par\smallskip\par\noindent \hfill Winkel Trinken und Kochen: \linie{30mm}\,°
+\fusshilfe{\mbox{3:~Sektor direkt vor „5 Gartenpflege“ (Reihenfolge 1 bis 6 im Uhrzeigersinn); 7,5°}}
+\end{pfaufg}
+
+% ===================== Stufe: aus Prozent darstellen =====================
+\gkopfvor{\pfstufekopf{Kreisdiagramm zeichnen}{\gpunkte[25]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% 2025-OS-K6b-m1 (Original 2025-OS-K6b, Schwere II, rang 1; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’25~\pkt{}~6b}{4.}{}
+In einer Kita arbeiten 11 Erziehende. Sie sind so alt (in Jahren): 52, 36, 61, 27, 58, 34, 63, 54, 32, 40, 38. Ermittle, wie viel Prozent der Erziehenden jünger als 50 Jahre sind. Stelle diesen Anteil in einem Kreisdiagramm dar.
+\gzwei{\kreisleer[1.5]}{\karo{3}}
+\par\smallskip\par\noindent \hfill jünger als 50: \linie{30mm}\,\%
+\fusshilfe{\mbox{4:~54,5 \%; 196°}}
+\end{pfaufg}
+
+% ===================== Stufe: ergänzen =====================
+\gkopfvor{\pfstufekopf{Säule ergänzen}{\gpunkte[26 23]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}\gfrage{Wie viel ist ein Schritt an der Achse wert, von einer Linie zur nächsten? Steht dort keine Zahl, hilft eine bekannte Säule: ihr Wert durch ihre Schritte.}}
+% 2026-FOR-K3d-m1 (Original 2026-FOR-K3d, Schwere I, rang 1; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’26~\pkt{}~3d}{5.}{}
+Eine Tankstelle hat eine Woche lang jeden Tag um 18 Uhr den Benzinpreis notiert. Preise in € pro Liter: Mo 1,81, Di 1,82, Mi 1,80, Do 1,83, Fr 1,89, Sa 1,86, So 1,90. Timo hat die Preise in ein Säulendiagramm übertragen. Die Säule für Sonntag fehlt noch. Zeichne sie ein.
+\par\smallskip\noindent\begin{tikzpicture}[x=0.8cm,y=1cm,font=\small,line width=0.6pt]\draw[black!15,line width=0.3pt] (0,0.000) -- (7.6,0.000);\draw[black!15,line width=0.3pt] (0,0.186) -- (7.6,0.186);\draw[black!15,line width=0.3pt] (0,0.371) -- (7.6,0.371);\draw[black!15,line width=0.3pt] (0,0.557) -- (7.6,0.557);\draw[black!15,line width=0.3pt] (0,0.743) -- (7.6,0.743);\draw[black!15,line width=0.3pt] (0,0.929) -- (7.6,0.929);\draw[black!15,line width=0.3pt] (0,1.114) -- (7.6,1.114);\draw[black!15,line width=0.3pt] (0,1.300) -- (7.6,1.300);\draw[black!15,line width=0.3pt] (0,1.486) -- (7.6,1.486);\draw[black!15,line width=0.3pt] (0,1.671) -- (7.6,1.671);\draw[black!15,line width=0.3pt] (0,1.857) -- (7.6,1.857);\draw[black!15,line width=0.3pt] (0,2.043) -- (7.6,2.043);\draw[black!15,line width=0.3pt] (0,2.229) -- (7.6,2.229);\draw[black!15,line width=0.3pt] (0,2.414) -- (7.6,2.414);\draw[black!15,line width=0.3pt] (0,2.600) -- (7.6,2.600);\draw[black!45,line width=0.3pt] (0,0.000) -- (7.6,0.000); \node[left,font=\footnotesize] at (0,0.000) {1,78};\draw[black!45,line width=0.3pt] (0,0.371) -- (7.6,0.371); \node[left,font=\footnotesize] at (0,0.371) {1,80};\draw[black!45,line width=0.3pt] (0,0.743) -- (7.6,0.743); \node[left,font=\footnotesize] at (0,0.743) {1,82};\draw[black!45,line width=0.3pt] (0,1.114) -- (7.6,1.114); \node[left,font=\footnotesize] at (0,1.114) {1,84};\draw[black!45,line width=0.3pt] (0,1.486) -- (7.6,1.486); \node[left,font=\footnotesize] at (0,1.486) {1,86};\draw[black!45,line width=0.3pt] (0,1.857) -- (7.6,1.857); \node[left,font=\footnotesize] at (0,1.857) {1,88};\draw[black!45,line width=0.3pt] (0,2.229) -- (7.6,2.229); \node[left,font=\footnotesize] at (0,2.229) {1,90};\draw[black!45,line width=0.3pt] (0,2.600) -- (7.6,2.600); \node[left,font=\footnotesize] at (0,2.600) {1,92};\filldraw[fill=black!15,draw=black,line width=0.6pt] (0.7,0) rectangle (1.3,0.557);\node[below,font=\footnotesize] at (1,0) {Mo};\filldraw[fill=black!15,draw=black,line width=0.6pt] (1.7,0) rectangle (2.3,0.743);\node[below,font=\footnotesize] at (2,0) {Di};\filldraw[fill=black!15,draw=black,line width=0.6pt] (2.7,0) rectangle (3.3,0.371);\node[below,font=\footnotesize] at (3,0) {Mi};\filldraw[fill=black!15,draw=black,line width=0.6pt] (3.7,0) rectangle (4.3,0.929);\node[below,font=\footnotesize] at (4,0) {Do};\filldraw[fill=black!15,draw=black,line width=0.6pt] (4.7,0) rectangle (5.3,2.043);\node[below,font=\footnotesize] at (5,0) {Fr};\filldraw[fill=black!15,draw=black,line width=0.6pt] (5.7,0) rectangle (6.3,1.486);\node[below,font=\footnotesize] at (6,0) {Sa};\node[below,font=\footnotesize] at (7,0) {So};\draw[-{Stealth[length=2mm]}] (0,0) -- (0,3.0) node[above right,font=\footnotesize,inner sep=1pt] {Benzinpreis in € pro Liter};\draw (0,0) -- (7.6,0);\end{tikzpicture}\par
+\fusshilfe{\mbox{5:~1,90 € pro Liter}}
+\end{pfaufg}
+% 2023-OS-K6d-m1 (Original 2023-OS-K6d, Schwere II, rang 2; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’23~\pkt{}~6d}{6.}{}
+Die fünf Sprachen mit den meisten Muttersprachlern (Anzahl in Millionen): Arabisch 310, Chinesisch 1 350, Englisch 480, Hindi 575, Spanisch 420. In einem Säulendiagramm sind zwei Werte schon als Säulen gezeichnet; die erste Säule gehört zu Spanisch. Trag an der senkrechten Achse eine passende Einteilung ein. Schreib unter die zweite Säule, zu welcher Sprache sie gehört. Zeichne die Säule für Arabisch ein.
+\par\smallskip\noindent\begin{tikzpicture}[x=0.3cm,y=0.3cm,font=\small,line width=0.6pt]\draw[black!20,line width=0.3pt,step=0.3cm] (0,0) grid (12,14);\filldraw[fill=black!15,draw=black] (1,0) rectangle (3,8.4);\filldraw[fill=black!15,draw=black] (5,0) rectangle (7,11.5);\node[below,font=\footnotesize] at (2,0) {Spanisch};\node[below] at (6,-0.3) {\rule{1.1cm}{0.4pt}};\node[below,font=\footnotesize] at (10,0) {Arabisch};\draw[-{Stealth[length=2mm]}] (0,0) -- (0,14.8) node[above right,font=\footnotesize,inner sep=1pt] {Anzahl in Mio.};\draw (0,0) -- (12,0);\end{tikzpicture}\par
+\fusshilfe{\mbox{6:~50 Mio.; Hindi; 6,2 Kästchen hoch}}
+\end{pfaufg}
+
+% ===================== Stufe: Aussage prüfen =====================
+\gkopfvor{\pfstufekopf{Aussagen prüfen}{\gpunkte[22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% 2022-OS-K4c-m1 (Original 2022-OS-K4c, Schwere II, rang 1; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’22~\pkt{}~4c}{7.}{}
+Von 2017 bis 2021 wurden jedes Jahr 1 500 Jugendliche gefragt, wie oft sie Bücher lesen. Das Säulendiagramm zeigt, wie viele von ihnen mehrmals pro Woche ein Buch lesen. Ben schaut auf das Diagramm und sagt: „Jedes Jahr lesen weniger Jugendliche Bücher. Von 2018 bis 2021 ist ihre Zahl um mehr als die Hälfte gesunken.“ Entscheide, ob Ben recht hat. Begründe deine Entscheidung.
+\gzwei{\begin{tikzpicture}[x=1.1cm,y=1cm,font=\small,line width=0.6pt]\draw[black!15,line width=0.3pt] (0,0.000) -- (5.6,0.000);\draw[black!15,line width=0.3pt] (0,0.280) -- (5.6,0.280);\draw[black!15,line width=0.3pt] (0,0.560) -- (5.6,0.560);\draw[black!15,line width=0.3pt] (0,0.840) -- (5.6,0.840);\draw[black!15,line width=0.3pt] (0,1.120) -- (5.6,1.120);\draw[black!15,line width=0.3pt] (0,1.400) -- (5.6,1.400);\draw[black!15,line width=0.3pt] (0,1.680) -- (5.6,1.680);\draw[black!15,line width=0.3pt] (0,1.960) -- (5.6,1.960);\draw[black!15,line width=0.3pt] (0,2.240) -- (5.6,2.240);\draw[black!15,line width=0.3pt] (0,2.520) -- (5.6,2.520);\draw[black!15,line width=0.3pt] (0,2.800) -- (5.6,2.800);\draw[black!45,line width=0.3pt] (0,0.000) -- (5.6,0.000); \node[left,font=\footnotesize] at (0,0.000) {500};\draw[black!45,line width=0.3pt] (0,0.280) -- (5.6,0.280); \node[left,font=\footnotesize] at (0,0.280) {510};\draw[black!45,line width=0.3pt] (0,0.560) -- (5.6,0.560); \node[left,font=\footnotesize] at (0,0.560) {520};\draw[black!45,line width=0.3pt] (0,0.840) -- (5.6,0.840); \node[left,font=\footnotesize] at (0,0.840) {530};\draw[black!45,line width=0.3pt] (0,1.120) -- (5.6,1.120); \node[left,font=\footnotesize] at (0,1.120) {540};\draw[black!45,line width=0.3pt] (0,1.400) -- (5.6,1.400); \node[left,font=\footnotesize] at (0,1.400) {550};\draw[black!45,line width=0.3pt] (0,1.680) -- (5.6,1.680); \node[left,font=\footnotesize] at (0,1.680) {560};\draw[black!45,line width=0.3pt] (0,1.960) -- (5.6,1.960); \node[left,font=\footnotesize] at (0,1.960) {570};\draw[black!45,line width=0.3pt] (0,2.240) -- (5.6,2.240); \node[left,font=\footnotesize] at (0,2.240) {580};\draw[black!45,line width=0.3pt] (0,2.520) -- (5.6,2.520); \node[left,font=\footnotesize] at (0,2.520) {590};\draw[black!45,line width=0.3pt] (0,2.800) -- (5.6,2.800); \node[left,font=\footnotesize] at (0,2.800) {600};\filldraw[fill=black!15,draw=black,line width=0.6pt] (0.7,0) rectangle (1.3,2.240);\node[above,font=\scriptsize,inner sep=1pt] at (1,2.240) {580};\node[below,font=\footnotesize] at (1,0) {2017};\filldraw[fill=black!15,draw=black,line width=0.6pt] (1.7,0) rectangle (2.3,1.680);\node[above,font=\scriptsize,inner sep=1pt] at (2,1.680) {560};\node[below,font=\footnotesize] at (2,0) {2018};\filldraw[fill=black!15,draw=black,line width=0.6pt] (2.7,0) rectangle (3.3,2.100);\node[above,font=\scriptsize,inner sep=1pt] at (3,2.100) {575};\node[below,font=\footnotesize] at (3,0) {2019};\filldraw[fill=black!15,draw=black,line width=0.6pt] (3.7,0) rectangle (4.3,2.380);\node[above,font=\scriptsize,inner sep=1pt] at (4,2.380) {585};\node[below,font=\footnotesize] at (4,0) {2020};\filldraw[fill=black!15,draw=black,line width=0.6pt] (4.7,0) rectangle (5.3,0.560);\node[above,font=\scriptsize,inner sep=1pt] at (5,0.560) {520};\node[below,font=\footnotesize] at (5,0) {2021};\draw[-{Stealth[length=2mm]}] (0,0) -- (0,3.1999999999999997) node[above right,font=\footnotesize,inner sep=1pt] {Anzahl der Jugendlichen};\draw (0,0) -- (5.6,0);\end{tikzpicture}}{\karo{3}}
+\fusshilfe{\mbox{7:~falsch; 7,1 \%}}
+\end{pfaufg}
+
+% ===================== Stufe: falschen Eindruck erklären =====================
+\gkopfvor{\pfstufekopf{falschen Eindruck erklären}{\gpunkte[26]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% 2026-FOR-K3e-m1 (Original 2026-FOR-K3e, Schwere III, rang 1; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’26~\pkt{}~3e}{8.}{FOR}
+Eine Tankstelle hat eine Woche lang jeden Tag um 18 Uhr den Benzinpreis notiert. Preise in € pro Liter: Mo 1,81, Di 1,82, Mi 1,80, Do 1,83, Fr 1,89, Sa 1,86, So 1,90. Timo schreibt zu seinem Säulendiagramm: „Mein Diagramm beweist: Von Donnerstag auf Freitag ist der Preis auf mehr als das Doppelte gestiegen.“ Begründe, wodurch Timos Diagramm diesen falschen Eindruck erweckt.
+\gzwei{\begin{tikzpicture}[x=0.8cm,y=1cm,font=\small,line width=0.6pt]\draw[black!15,line width=0.3pt] (0,0.000) -- (7.6,0.000);\draw[black!15,line width=0.3pt] (0,0.186) -- (7.6,0.186);\draw[black!15,line width=0.3pt] (0,0.371) -- (7.6,0.371);\draw[black!15,line width=0.3pt] (0,0.557) -- (7.6,0.557);\draw[black!15,line width=0.3pt] (0,0.743) -- (7.6,0.743);\draw[black!15,line width=0.3pt] (0,0.929) -- (7.6,0.929);\draw[black!15,line width=0.3pt] (0,1.114) -- (7.6,1.114);\draw[black!15,line width=0.3pt] (0,1.300) -- (7.6,1.300);\draw[black!15,line width=0.3pt] (0,1.486) -- (7.6,1.486);\draw[black!15,line width=0.3pt] (0,1.671) -- (7.6,1.671);\draw[black!15,line width=0.3pt] (0,1.857) -- (7.6,1.857);\draw[black!15,line width=0.3pt] (0,2.043) -- (7.6,2.043);\draw[black!15,line width=0.3pt] (0,2.229) -- (7.6,2.229);\draw[black!15,line width=0.3pt] (0,2.414) -- (7.6,2.414);\draw[black!15,line width=0.3pt] (0,2.600) -- (7.6,2.600);\draw[black!45,line width=0.3pt] (0,0.000) -- (7.6,0.000); \node[left,font=\footnotesize] at (0,0.000) {1,78};\draw[black!45,line width=0.3pt] (0,0.371) -- (7.6,0.371); \node[left,font=\footnotesize] at (0,0.371) {1,80};\draw[black!45,line width=0.3pt] (0,0.743) -- (7.6,0.743); \node[left,font=\footnotesize] at (0,0.743) {1,82};\draw[black!45,line width=0.3pt] (0,1.114) -- (7.6,1.114); \node[left,font=\footnotesize] at (0,1.114) {1,84};\draw[black!45,line width=0.3pt] (0,1.486) -- (7.6,1.486); \node[left,font=\footnotesize] at (0,1.486) {1,86};\draw[black!45,line width=0.3pt] (0,1.857) -- (7.6,1.857); \node[left,font=\footnotesize] at (0,1.857) {1,88};\draw[black!45,line width=0.3pt] (0,2.229) -- (7.6,2.229); \node[left,font=\footnotesize] at (0,2.229) {1,90};\draw[black!45,line width=0.3pt] (0,2.600) -- (7.6,2.600); \node[left,font=\footnotesize] at (0,2.600) {1,92};\filldraw[fill=black!15,draw=black,line width=0.6pt] (0.7,0) rectangle (1.3,0.557);\node[below,font=\footnotesize] at (1,0) {Mo};\filldraw[fill=black!15,draw=black,line width=0.6pt] (1.7,0) rectangle (2.3,0.743);\node[below,font=\footnotesize] at (2,0) {Di};\filldraw[fill=black!15,draw=black,line width=0.6pt] (2.7,0) rectangle (3.3,0.371);\node[below,font=\footnotesize] at (3,0) {Mi};\filldraw[fill=black!15,draw=black,line width=0.6pt] (3.7,0) rectangle (4.3,0.929);\node[below,font=\footnotesize] at (4,0) {Do};\filldraw[fill=black!15,draw=black,line width=0.6pt] (4.7,0) rectangle (5.3,2.043);\node[below,font=\footnotesize] at (5,0) {Fr};\filldraw[fill=black!15,draw=black,line width=0.6pt] (5.7,0) rectangle (6.3,1.486);\node[below,font=\footnotesize] at (6,0) {Sa};\node[below,font=\footnotesize] at (7,0) {So};\draw[-{Stealth[length=2mm]}] (0,0) -- (0,3.0) node[above right,font=\footnotesize,inner sep=1pt] {Benzinpreis in € pro Liter};\draw (0,0) -- (7.6,0);\end{tikzpicture}}{\karo{3}}
+\fusshilfe{\mbox{8:~Säulen zeigen nur den Teil über 1,78: Do 0,05, Fr 0,11; 3,3 \%}}
+\end{pfaufg}
+
+\pfblattende{11}{26 FOR & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17 & 16}{3d 3e & 6b & 2c & 6d & 4c 4d & 5b & 2a & 5c & 3a 3c 3d & 2c & }%
+{\pfausschnitt{Kenngrößen}{Diagramme}{}}
+\end{document}

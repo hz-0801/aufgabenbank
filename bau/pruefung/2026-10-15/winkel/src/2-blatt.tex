@@ -1,0 +1,156 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+\newsavebox{\gbox}\newlength{\gLinks}
+% v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
+% Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr\wd\gbox+6mm\relax}%
+  \ifdim\gLinks>0.62\linewidth
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\leavevmode\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par}
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+% Skizzenfeld (v0.10, Lehrer 13.10.): Karo ab dem linken Rand über die Zeile, „Skizze“ klein grau oben links im Feld
+% (wie \pfskizzenfeld der Vorlage); der rechte Rand bleibt den Bedingungen
+\newcommand{\gskizze}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \node[anchor=north west,inner sep=2pt,font=\scriptsize,text=mbgrau,fill=white] at (0,{#1*10mm}) {Skizze};
+  \end{tikzpicture}\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} Prüfung]{Winkel}{PG10-5}\pfseitevon
+\pfheftkopf{Winkel}{}
+\pfstufenzeile{Winkel gesucht \pkt{} Basiswinkel gesucht \pkt{} rechten Winkel begründen}
+
+% ===================== Stufe: Winkelsumme =====================
+\Needspace*{0.16\textheight}\pfstufekopf{Winkel gesucht}{\gpunkte[26 25 24 23 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}
+% Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
+\begin{pfaufg}{}{1.}{}
+Im Viereck sind die Innenwinkel zusammen 360°. Wie viel Grad sind es im Dreieck?
+\par\smallskip
+\par\noindent Dreieck\hfill\linie{30mm} °
+\par\fusshilfe{\mbox{1:~180°}}
+\end{pfaufg}
+% 2026-FOR-B1i-m1 (Original 2026-FOR-B1i, Schwere I, rang 1; herausgelöste Fassung: 2026-FOR-B1i-h1)
+\begin{pfaufg}{’26~\pkt{}~1i}{2.}{Basis}
+Im abgebildeten Parallelogramm ist ein Winkel 68° groß. Bestimme den Winkel $\beta$.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\small]\draw (0,0)--(3.2,0)--(3.799,1.483)--(0.599,1.483)--cycle;\pfwinkel[0.85][0.6]{(0,0)}{0}{68}{68^\circ}\pfwinkel[0.6][0.6]{(3.2,0)}{68}{180}{\beta}\node[anchor=north east] at (0,0) {$A$};\node[anchor=north west] at (3.2,0) {$B$};\node[anchor=south west] at (3.799,1.483) {$C$};\node[anchor=south east] at (0.599,1.483) {$D$};\end{tikzpicture}}{\karo{2}}
+\fusshilfe{\mbox{2:~112°}}
+\end{pfaufg}
+% 2023-OS-K2a-m1 (Original 2023-OS-K2a, Schwere I, rang 2; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’23~\pkt{}~2a}{3.}{}
+Ein Trapez hat die parallelen Seiten 24,20 m (unten) und 16,20 m (oben) und ist 7,50 m hoch. Die beiden Winkel an der unteren Seite sind je 62° groß. Gib die Größe des Winkels $\gamma$ oben rechts an.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\small,scale=0.9]\coordinate (A) at (0,0);\coordinate (B) at (4.0,0);\coordinate (C) at (3.28,1.36);\coordinate (D) at (0.72,1.36);\draw (A)--(B)--(C)--(D)--cycle;\draw[dashed,line width=0.5pt] (2,0)--(2,1.36);\pfrw[0.2]{(2,0)}{0}\pfwinkel[0.6][0.55]{(A)}{0}{62}{62^\circ}\pfwinkel[0.6][0.55]{(B)}{118}{180}{62^\circ}\pfwinkel[0.45][0.55]{(C)}{180}{298}{\gamma}\node[anchor=north east] at (A) {$A$};\node[anchor=north west] at (B) {$B$};\node[anchor=south west] at (C) {$C$};\node[anchor=south east] at (D) {$D$};\end{tikzpicture}}{\karo{2}}
+\fusshilfe{\mbox{3:~118°}}
+\end{pfaufg}
+% 2022-OS-K5c-m1 (Original 2022-OS-K5c, Schwere I, rang 3; herausgelöste Fassung: 2022-OS-K5c-h1)
+\begin{pfaufg}{nach~P10\\’22~\pkt{}~5c}{4.}{}
+Gegeben ist ein Dreieck ABC, das nicht rechtwinklig ist. Die Höhe $h_c$ von C auf die Seite AB ist etwa 7,3 m lang; ihr Fußpunkt heißt D. Die Seite b = AC ist 13,2 m lang, der Winkel bei B ist 49° groß. Der Winkel bei C zwischen AC und der Höhe heißt $\gamma_1$. Ermittle die Größe des Winkels $\gamma_1$. Gegeben: $\alpha$ $\approx$ 33,6°.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\small]\draw (0,0)--(4.45,0)--(3.0,1.99)--cycle;\draw[dashed] (3.0,1.99)--(3.0,0);\pfrw{(3,0)}{90}\pfwinkel[2.0][0.72]{(0,0)}{0}{33.6}{33{,}6^\circ}\pfwinkel[0.75][0.6]{(3,1.99)}{-146.4}{-90}{\gamma_1}\node[anchor=north east] at (0,0) {$A$};\node[anchor=north west] at (4.45,0) {$B$};\node[anchor=south] at (3,1.99) {$C$};\node[anchor=north] at (3,0) {$D$};\node[anchor=west] at (3.05,0.8) {$h_c$};\end{tikzpicture}}{\karo{2}}
+\fusshilfe{\mbox{4:~56,4°}}
+\end{pfaufg}
+
+% ===================== Stufe: gleichschenkliges Dreieck =====================
+\Needspace*{0.16\textheight}\pfstufekopf{Basiswinkel gesucht}{\gpunkte[25 23]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}
+% Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
+\begin{pfaufg}{}{5.}{}
+Trage alle Winkel ein. Was unterscheidet die beiden Dreiecke?
+\gzwei{\begin{tikzpicture}[line width=0.7pt]\draw (0,0)--(2.4,0)--(1.2,2.46)--cycle;\draw[line width=0.6pt] ($($(0,0)!0.5!(1.2,2.46)$)!0.11cm!90:(1.2,2.46)$) -- ($($(0,0)!0.5!(1.2,2.46)$)!0.11cm!-90:(1.2,2.46)$);\draw[line width=0.6pt] ($($(2.4,0)!0.5!(1.2,2.46)$)!0.11cm!90:(1.2,2.46)$) -- ($($(2.4,0)!0.5!(1.2,2.46)$)!0.11cm!-90:(1.2,2.46)$);\pfwinkel[0.8][0.6]{(0,0)}{0}{64}{64^\circ}\pfwinkel*[0.8]{(2.4,0)}{116}{180}{}\pfwinkel*[0.6]{(1.2,2.46)}{-116}{-64}{}\begin{scope}[xshift=3.1cm]\draw (0,0)--(2.4,0)--(1.2,2.078)--cycle;\draw[line width=0.6pt] ($($(0,0)!0.5!(2.4,0)$)!0.11cm!90:(2.4,0)$) -- ($($(0,0)!0.5!(2.4,0)$)!0.11cm!-90:(2.4,0)$);\draw[line width=0.6pt] ($($(0,0)!0.5!(1.2,2.078)$)!0.11cm!90:(1.2,2.078)$) -- ($($(0,0)!0.5!(1.2,2.078)$)!0.11cm!-90:(1.2,2.078)$);\draw[line width=0.6pt] ($($(2.4,0)!0.5!(1.2,2.078)$)!0.11cm!90:(1.2,2.078)$) -- ($($(2.4,0)!0.5!(1.2,2.078)$)!0.11cm!-90:(1.2,2.078)$);\pfwinkel*[0.7]{(0,0)}{0}{60}{}\pfwinkel*[0.7]{(2.4,0)}{120}{180}{}\pfwinkel*[0.7]{(1.2,2.078)}{-120}{-60}{}\end{scope}\end{tikzpicture}}{\vspace{-\baselineskip}\par\noindent \hfill\linie{30mm}}
+\par\fusshilfe{\mbox{5:~links zwei gleiche Winkel (64°, 64°, 52°), rechts alle drei gleich (60°)}}
+\end{pfaufg}
+% 2023-OS-B1g-m1 (Original 2023-OS-B1g, Schwere I, rang 4; herausgelöste Fassung: 2023-OS-B1g-h2)
+\begin{pfaufg}{’23~\pkt{}~1g}{6.}{Basis}
+Im Dreieck ABC sind die Winkel bei A und bei B je 65° groß; die Seite AC ist 7 cm lang. Gib die Länge der Seite BC an. Gib die Größe des Winkels $\gamma$ an.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\small,scale=0.62]\draw (0,0)--(2.4,0)--(1.2,2.573)--cycle;\pfwinkel[1.2][0.6]{(0,0)}{0}{65}{65^\circ}\pfwinkel[1.2][0.6]{(2.4,0)}{115}{180}{65^\circ}\pfwinkel[0.9][0.6]{(1.2,2.573)}{-115}{-65}{\gamma}\node[anchor=north east] at (0,0) {$A$};\node[anchor=north west] at (2.4,0) {$B$};\node[anchor=south] at (1.2,2.573) {$C$};\node[anchor=east] at (0.5,1.3) {$7$ cm};\end{tikzpicture}}{\vspace{2mm}\par\noindent BC: \linie{30mm}\,cm\par\smallskip\par\noindent $\gamma$: \linie{30mm}\,°}
+\fusshilfe{\mbox{6:~gleichschenklig); 50°}}
+\end{pfaufg}
+% 2023-OS-K7a-m1 (Original 2023-OS-K7a, Schwere II, rang 5; herausgelöste Fassung: 2023-OS-K7a-h2)
+\begin{pfaufg}{nach~P10\\’23~\pkt{}~7a}{7.}{}
+Gegeben ist das Dreieck ABC. Der Punkt F liegt auf der Seite AC, und BF steht senkrecht auf AC. Die Seite AB ist 128,9 cm lang. Bei B teilt BF den Winkel in 58° (zwischen BC und BF) und 45° (zwischen BF und BA). Der Winkel bei A ist 45° groß. Begründe, dass das Dreieck ABF gleichschenklig ist.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\small,scale=0.8]\coordinate (C) at (-2.98,0);\coordinate (F) at (0,0);\coordinate (A) at (1.86,0);\coordinate (B) at (0,1.86);\fill[black!10] (A)--(B)--(F)--cycle;\draw (A) -- (B) -- (C) -- cycle;\draw (B) -- (F);\pfrw[0.3]{(F)}{0}\pfwinkel[0.8][0.66]{(A)}{135}{180}{45^\circ}\pfwinkel[0.95][0.66]{(B)}{-148}{-90}{58^\circ}\pfwinkel[0.7][0.66]{(B)}{-90}{-45}{45^\circ}\node[anchor=north east] at (C) {$C$};\node[anchor=north west] at (A) {$A$};\node[anchor=south] at (B) {$B$};\node[anchor=north] at (F) {$F$};\end{tikzpicture}}{\karo{2}}
+\fusshilfe{\mbox{7:~gleichschenklig mit Basis AB}}
+\end{pfaufg}
+
+% ===================== Stufe: rechten Winkel begründen =====================
+\Needspace*{0.16\textheight}\pfstufekopf{rechten Winkel begründen}{\gpunkte[25]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}
+% Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
+\begin{pfaufg}{}{8.}{}
+CD steht senkrecht auf AB. Trage die Winkel in den Dreiecken ADC und DBC ein. Warum ist $\gamma$ = 90°?
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.9]\draw (0,0)--(3,0)--(1.5,1.5)--cycle;\draw (1.5,1.5)--(1.5,0);\pfrw[0.28]{(1.5,0)}{0}\pfwinkel*[0.7]{(1.5,1.5)}{-135}{-45}{}\node[inner sep=0pt,font=\footnotesize] at ($(1.5,1.5)+(-108:0.45)$) {$\gamma$};\node[font=\small,anchor=north east] at (0,0) {$A$};\node[font=\small,anchor=north west] at (3,0) {$B$};\node[font=\small,anchor=south] at (1.5,1.5) {$C$};\node[font=\small,anchor=north] at (1.5,-0.02) {$D$};\node[font=\footnotesize,anchor=north] at (0.75,-0.02) {$3$ cm};\node[font=\footnotesize,anchor=north] at (2.25,-0.02) {$3$ cm};\node[font=\footnotesize,anchor=east] at (1.47,0.3) {$3$ cm};\end{tikzpicture}}{\vspace{-\baselineskip}\par\noindent \hfill\linie{30mm}}
+\par\fusshilfe{\mbox{8:~in beiden Dreiecken je 45° bei C: 45° + 45° = 90°}}
+\end{pfaufg}
+% 2025-OS-K2c-m1 (Original 2025-OS-K2c, Schwere III, rang 6; herausgelöste Fassung: 2025-OS-K2c-h2)
+\begin{pfaufg}{nach~P10\\’25~\pkt{}~2c}{9.}{FOR}
+Ein Drachenviereck ABCD (A links, D oben, C rechts, B unten) hat die Diagonalen AC = 56 cm und BD = 96 cm. Sie schneiden sich in F im rechten Winkel. Die Strecke DF ist 28 cm lang. Der Winkel bei D heißt $\gamma$. Begründe, dass $\gamma$ = 90° ist.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\small,scale=0.042]\coordinate (A) at (-28,0);\coordinate (C) at (28,0);\coordinate (D) at (0,28);\coordinate (B) at (0,-68);\coordinate (F) at (0,0);\draw (A) -- (B) -- (C) -- (D) -- cycle;\draw[dashed] (A) -- (C);\draw[dashed] (B) -- (D);\pfrw[7]{(F)}{0}\pfwinkel*[16]{(D)}{-135}{-45}{}\node[font=\footnotesize] at ($(D)+(-100:10)$) {$\gamma$};\node[anchor=east] at (A) {$A$};\node[anchor=north] at (B) {$B$};\node[anchor=west] at (C) {$C$};\node[anchor=south] at (D) {$D$};\node[anchor=north east] at (F) {$F$};\node[anchor=west,font=\footnotesize] at (1,16) {$28$ cm};\end{tikzpicture}}{\karo{4}}
+\fusshilfe{\mbox{9:~90°}}
+\end{pfaufg}
+
+\pfblattende{11}{26 FOR & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17 & 16}{1i & 2c &  & 1g 2a 7a & 5c & 1i &  &  & 4b & 4a & }%
+{\pfausschnitt{Pythagoras \pkt{} sin, cos, tan \pkt{} Sinussatz \pkt{} Vierecke}{Winkel}{Symmetrie}}
+\end{document}

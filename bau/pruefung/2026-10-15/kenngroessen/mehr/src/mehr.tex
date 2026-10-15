@@ -1,0 +1,148 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+\newsavebox{\gbox}\newlength{\gLinks}
+% v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
+% Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr\wd\gbox+6mm\relax}%
+  \ifdim\gLinks>0.62\linewidth
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\leavevmode\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par}
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+% Skizzenfeld (v0.10, Lehrer 13.10.): Karo ab dem linken Rand über die Zeile, „Skizze“ klein grau oben links im Feld
+% (wie \pfskizzenfeld der Vorlage); der rechte Rand bleibt den Bedingungen
+\newcommand{\gskizze}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \node[anchor=north west,inner sep=2pt,font=\scriptsize,text=mbgrau,fill=white] at (0,{#1*10mm}) {Skizze};
+  \end{tikzpicture}\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\makeatletter\setlength{\mbpfbe}{0mm}\makeatother
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} mehr]{Kenngrößen}{PS30-4}\pfseitevon
+\pfheftkopf{Kenngrößen}{mehr}
+\pfstufenzeile{Mittelwert gesucht \pkt{} Spannweite gesucht \pkt{} Median gesucht}
+% 2021-OS-B1f-m1 (Schwere I, rang 11)
+\begin{pfaufg}{nach~P10\\’21~\pkt{}~1f}{1.}{}
+Jonas springt im Weitsprung 4,24 m, 3,96 m, 4,10 m und 4,34 m. Gib seine durchschnittliche Weite an.
+\karo{2}
+\fusshilfe{\mbox{1:~4,16 m}}
+\end{pfaufg}
+% 2020-OS-K2c-m1 (Schwere I, rang 12)
+\begin{pfaufg}{nach~P10\\’20~\pkt{}~2c}{2.}{}
+Ein Schwimmbad zählt in der ersten Woche der Sommerferien jeden Tag seine Besucher. Am Donnerstag kamen 155 Besucher. Im Balkendiagramm fehlt der Balken für Donnerstag noch. Berechne, wie viele Besucher in dieser Woche durchschnittlich an einem Tag im Schwimmbad waren.
+\par\smallskip\noindent\gpassend{\balkenab[xmax=250,xstep=50,xfein=10,xlabel=Anzahl der Besucher]{So/240,Sa/210,Fr/170,Do/,Mi/180,Di/120,Mo/150}}\par
+\karo{2}
+\fusshilfe{\mbox{2:~175 Besucher}}
+\end{pfaufg}
+% 2019-OS-B1i-m1 (Schwere I, rang 13)
+\begin{pfaufg}{nach~P10\\’19~\pkt{}~1i}{3.}{}
+Gib die Spannweite dieser Daten an: 8,4 m; 8,9 m; 8,6 m; 8,2 m; 8,7 m; 8,4 m
+\karo{2}
+\fusshilfe{\mbox{3:~0,7 m}}
+\end{pfaufg}
+% 2017-OS-B1h-m1 (Schwere I, rang 14)
+\begin{pfaufg}{nach~P10\\’17~\pkt{}~1h}{4.}{}
+Gib den Durchschnitt (das arithmetische Mittel) dieser Längen an: 2,4 m; 2,2 m; 2,0 m; 2,2 m
+\karo{2}
+\fusshilfe{\mbox{4:~2,2 m}}
+\end{pfaufg}
+% 2016-OS-B1a-m1 (Schwere I, rang 15)
+\begin{pfaufg}{nach~P10\\’16~\pkt{}~1a}{5.}{}
+Gib das arithmetische Mittel (den Durchschnitt) der Werte 12; 45; 60 an.
+\karo{2}
+\fusshilfe{\mbox{5:~39}}
+\end{pfaufg}
+% 2015-OS-B1f-m1 (Schwere I, rang 16)
+\begin{pfaufg}{nach~P10\\’15~\pkt{}~1f}{6.}{}
+Gib den Median (Zentralwert) dieser Messwerte an: 6 °C; 2 °C; 9 °C; 4 °C; 9 °C; 7 °C; 4 °C
+\karo{2}
+\fusshilfe{\mbox{6:~6 °C}}
+\end{pfaufg}
+% 2015-OS-K7a-m1 (Schwere I, rang 17)
+\begin{pfaufg}{nach~P10\\’15~\pkt{}~7a}{7.}{}
+Eine Fußballmannschaft hatte in einer Saison 18 Heimspiele. Zu diesen Spielen kamen zusammen 812 467 Zuschauer. Berechne, wie viele Zuschauer im Durchschnitt bei einem Heimspiel waren. Runde sinnvoll.
+\karo{2}
+\fusshilfe{\mbox{7:~45137 Zuschauer}}
+\end{pfaufg}
+% 2014-OS-K4a-m1 (Schwere I, rang 18)
+\begin{pfaufg}{nach~P10\\’14~\pkt{}~4a}{8.}{}
+Eine Tankstelle hat im Sommer 2013 zehn Wochen lang einmal pro Woche die Preise für die Kraftstoffe E 10 und Diesel notiert (in Cent pro Liter). Lies aus der Tabelle den niedrigsten und den höchsten Preis für E 10 ab (Minimum und Maximum).
+\par\smallskip\noindent\gpassend{{\footnotesize\setlength{\tabcolsep}{3.5pt}\renewcommand{\arraystretch}{1.25}\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|}\hline Datum & 01.07. & 08.07. & 15.07. & 22.07. & 29.07. & 05.08. & 12.08. & 19.08. & 26.08. & 02.09.\\\hline E 10 & 151,8 & 153,6 & 156,3 & 157,0 & 158,5 & 157,9 & 160,4 & 165,1 & 166,3 & 163,8\\\hline Diesel & 137,2 & 139,9 & 141,0 & 143,3 & 142,5 & 144,8 & 147,6 & 151,4 & 150,2 & 149,0\\\hline\end{tabular}}}\par
+\karo{3}
+\fusshilfe{\mbox{8:~Minimum am 01.07.: 151,8 ct; Maximum am 26.08.: 166,3 ct}}
+\end{pfaufg}
+% 2014-OS-K4b-m1 (Schwere I, rang 19)
+\begin{pfaufg}{nach~P10\\’14~\pkt{}~4b}{9.}{}
+Eine Tankstelle hat im Sommer 2013 zehn Wochen lang einmal pro Woche die Preise für die Kraftstoffe E 10 und Diesel notiert (in Cent pro Liter). Berechne die Spannweite der Dieselpreise in diesen zehn Wochen.
+\par\smallskip\noindent\gpassend{{\footnotesize\setlength{\tabcolsep}{3.5pt}\renewcommand{\arraystretch}{1.25}\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|}\hline Datum & 01.07. & 08.07. & 15.07. & 22.07. & 29.07. & 05.08. & 12.08. & 19.08. & 26.08. & 02.09.\\\hline E 10 & 151,8 & 153,6 & 156,3 & 157,0 & 158,5 & 157,9 & 160,4 & 165,1 & 166,3 & 163,8\\\hline Diesel & 137,2 & 139,9 & 141,0 & 143,3 & 142,5 & 144,8 & 147,6 & 151,4 & 150,2 & 149,0\\\hline\end{tabular}}}\par
+\karo{2}
+\fusshilfe{\mbox{9:~14,2 ct}}
+\end{pfaufg}
+\par\vfill\noindent{\scriptsize\color{mbgrau}Originale: P10 2021 \pkt{} 1f, P10 2020 \pkt{} 2c, P10 2019 \pkt{} 1i, P10 2017 \pkt{} 1h, P10 2016 \pkt{} 1a, P10 2015 \pkt{} 1f, P10 2015 \pkt{} 7a, P10 2014 \pkt{} 4a, P10 2014 \pkt{} 4b\par}
+\end{document}

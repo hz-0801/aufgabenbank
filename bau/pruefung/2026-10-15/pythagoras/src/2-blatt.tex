@@ -1,0 +1,186 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+\newsavebox{\gbox}\newlength{\gLinks}
+% v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
+% Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr\wd\gbox+6mm\relax}%
+  \ifdim\gLinks>0.62\linewidth
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\leavevmode\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par}
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+% Skizzenfeld (v0.10, Lehrer 13.10.): Karo ab dem linken Rand über die Zeile, „Skizze“ klein grau oben links im Feld
+% (wie \pfskizzenfeld der Vorlage); der rechte Rand bleibt den Bedingungen
+\newcommand{\gskizze}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \node[anchor=north west,inner sep=2pt,font=\scriptsize,text=mbgrau,fill=white] at (0,{#1*10mm}) {Skizze};
+  \end{tikzpicture}\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} Prüfung]{Pythagoras}{PG50-4}\pfseitevon
+\pfheftkopf{Pythagoras}{}
+\pfstufenzeile{Gleichung aufstellen \pkt{} Hypotenuse gesucht \pkt{} Kathete gesucht \pkt{} in Figuren versteckt}
+
+% ===================== Stufe: Gleichung aufstellen =====================
+\Needspace*{0.16\textheight}\pfstufekopf{Gleichung aufstellen}{\gpunkte[26 24 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}
+% Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
+\begin{pfaufg}{}{1.}{}
+Markiere die Hypotenuse. Schreib dann die Gleichung des Satzes des Pythagoras auf.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.8]\coordinate (P1) at (0,0);\coordinate (P2) at (2.5,0);\coordinate (P3) at (0.9,1.2);\draw (P1) -- (P2) -- (P3) -- cycle;\pfrw[0.35]{(P3)}{-126.9}\node[font=\small,anchor=north] at (1.25,-0.08) {$r$};\node[font=\small,anchor=south east] at (0.40,0.62) {$p$};\node[font=\small,anchor=south west] at (1.75,0.62) {$q$};\end{tikzpicture}}{\vspace{-\baselineskip}\par\noindent \hfill\linie{30mm}}
+\par\fusshilfe{\mbox{1:~r² = p² + q²}}
+\end{pfaufg}
+% 2022-OS-B1g-m1 (Original 2022-OS-B1g, Schwere I, rang 1; herausgelöste Fassung: 2022-OS-B1g-h1)
+\begin{pfaufg}{’22~\pkt{}~1g}{2.}{Basis}
+Kreuze die Aussage an, die für jedes rechtwinklige Dreieck stimmt:
+\par\smallskip\noindent\pfkreuz{A}{Die Seite gegenüber dem rechten Winkel ist eine Kathete.}\pfkreuz{B}{$c=a+b$}\pfkreuz{C}{Die beiden Kathetenquadrate haben zusammen denselben Flächeninhalt wie das Hypotenusenquadrat.}
+\fusshilfe{\mbox{2:~C}}
+\end{pfaufg}
+% 2026-FOR-B1j-m1 (Original 2026-FOR-B1j, Schwere I, rang 2; herausgelöste Fassung: 2026-FOR-B1j-h1)
+\begin{pfaufg}{’26~\pkt{}~1j}{3.}{Basis}
+Im abgebildeten Dreieck sind u und v die Katheten, w ist die Hypotenuse. Kreuze an, mit welcher Gleichung man w berechnen kann:
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\small,scale=0.85]\coordinate (P1) at (0,0);\coordinate (P2) at (2.8,0);\coordinate (P3) at (2.8,1.7);\draw (P1) -- (P2) -- (P3) -- cycle;\pfrw[0.35]{(P2)}{90}\node[anchor=north] at (1.4,-0.08) {$u$};\node[anchor=west] at (2.88,0.85) {$v$};\node[anchor=south east] at (1.36,0.9) {$w$};\end{tikzpicture}}{\gkreuzzeile{A}{$w=\sqrt{v^2-u^2}$}\gkreuzzeile{B}{$w=\sqrt{u^2-v^2}$}\gkreuzzeile{C}{$w=\sqrt{u^2+v^2}$}}
+\fusshilfe{\mbox{3:~C}}
+\end{pfaufg}
+% 2024-OS-B1f-m1 (Original 2024-OS-B1f, Schwere I, rang 3; herausgelöste Fassung: 2024-OS-B1f-h1)
+\begin{pfaufg}{’24~\pkt{}~1f}{4.}{Basis}
+Im abgebildeten Dreieck sind y und z die Katheten, x ist die Hypotenuse. Kreuze die Gleichung an, mit der man die Länge von z berechnen kann:
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\small,scale=0.85]\coordinate (P1) at (0,0);\coordinate (P2) at (2.8,0);\coordinate (P3) at (0,1.7);\draw (P1) -- (P2) -- (P3) -- cycle;\pfrw[0.35]{(P1)}{0}\node[anchor=north] at (1.4,-0.08) {$z$};\node[anchor=east] at (-0.08,0.85) {$y$};\node[anchor=south west] at (1.44,0.9) {$x$};\end{tikzpicture}}{\gkreuzzeile{A}{$z=x^2-y^2$}\gkreuzzeile{B}{$z=\sqrt{x^2+y^2}$}\gkreuzzeile{C}{$z=x+y$}\gkreuzzeile{D}{$z=\sqrt{x^2-y^2}$}}
+\fusshilfe{\mbox{4:~D}}
+\end{pfaufg}
+
+% ===================== Stufe: Hypotenuse gesucht =====================
+% Formel-Frage (einmal je Blatt, erste Stufe mit Formel; pruefung.md § 5)
+\Needspace*{0.16\textheight}\pfstufekopf{Hypotenuse gesucht}{\gpunkte[25]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}\gfrage{Schlag zuerst die Formel nach. Formelsammlung, Seite~\linie{12mm}}
+% Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
+\begin{pfaufg}{}{5.}{}
+Gesucht ist die Seite mit dem Fragezeichen. Kreuze an, wo die Hypotenuse gesucht ist.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.62,font=\footnotesize]\draw (0,0)--(2.2,0)--(2.2,1.3)--cycle;\pfrw[0.25]{(2.2,0)}{90}\node[anchor=north] at (1.1,-0.05) {$6$ cm};\node[anchor=west] at (2.25,0.65) {$4$};\node[anchor=south east] at (1.05,0.7) {?};\node[anchor=north] at (1.1,-0.6) {\textbf{a}};\begin{scope}[xshift=3.2cm]\draw (0,0)--(2.2,0)--(0,1.3)--cycle;\pfrw[0.25]{(0,0)}{0}\node[anchor=north] at (1.1,-0.05) {?};\node[anchor=east] at (-0.05,0.65) {$4$};\node[anchor=south west] at (1.15,0.7) {$7$ cm};\node[anchor=north] at (1.1,-0.6) {\textbf{b}};\end{scope}\begin{scope}[xshift=6.2cm]\draw (0,0.3)--(0.99,1.34)--(2.4,0)--cycle;\pfrw[0.25]{(0.99,1.34)}{-133.6}\node[anchor=south east] at (0.45,0.85) {$5$};\node[anchor=south west] at (1.75,0.75) {$6$ cm};\node[anchor=north] at (1.2,0.1) {?};\node[anchor=north] at (1.2,-0.6) {\textbf{c}};\end{scope}\end{tikzpicture}}{\vspace{-\baselineskip}\par\noindent\makebox[\mbpfteil][l]{\textbf{a)}}Dreieck a\hfill\kk{Hypotenuse}\par\noindent\makebox[\mbpfteil][l]{\textbf{b)}}Dreieck b\hfill\kk{Hypotenuse}\par\noindent\makebox[\mbpfteil][l]{\textbf{c)}}Dreieck c\hfill\kk{Hypotenuse}}
+\par\fusshilfe{\mbox{5:~a) und c)}}
+\end{pfaufg}
+% 2025-OS-K4a-m1 (Original 2025-OS-K4a, Schwere I, rang 4; herausgelöste Fassung: 2025-OS-K4a-h2)
+% Zweitthema ausgeblendet (Spalten <feld>_einheit, pruefheft-p.md v0.9)
+\begin{pfaufg}{nach~P10\\’25~\pkt{}~4a}{6.}{}
+Familie Yücel baut an die Stufe vor der Haustür eine feste Rampe für Rollstühle. Die Stufe ist 17 cm hoch; waagerecht ist die Rampe 200 cm lang. Berechne die Länge x der Rampe.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\small,scale=0.75]\coordinate (P1) at (0,0);\coordinate (P2) at (6.0,0);\coordinate (P3) at (6.0,0.9);\draw (P1) -- (P2) -- (P3) -- cycle;\pfrw[0.3]{(P2)}{90}\node[anchor=north] at (3.0,-0.08) {$200$ cm};\node[anchor=west] at (6.08,0.45) {$17$ cm};\node[anchor=south east] at (3.0,0.5) {$x$};\end{tikzpicture}}{\karo{2}}
+\fusshilfe{\mbox{6:~200,7 cm}}
+\end{pfaufg}
+
+% ===================== Stufe: Kathete gesucht =====================
+\Needspace*{0.16\textheight}\pfstufekopf{Kathete gesucht}{\gpunkte[26 24 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}
+% Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
+\begin{pfaufg}{}{7.}{}
+Kreuze an, mit welcher Gleichung du die Länge der Seite k berechnest.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.85]\coordinate (P1) at (0,0);\coordinate (P2) at (2.8,0);\coordinate (P3) at (0,1.7);\draw (P1) -- (P2) -- (P3) -- cycle;\pfrw[0.35]{(P1)}{0}\node[font=\small,anchor=north] at (1.4,-0.08) {$g$};\node[font=\small,anchor=east] at (-0.08,0.85) {$k$};\node[font=\small,anchor=south west] at (1.44,0.9) {$m$};\end{tikzpicture}}{\vspace{-\baselineskip}\par\noindent\makebox[\mbpfteil][l]{\textbf{a)}}$k = \sqrt{m^2 + g^2}$\hfill\kk{ja}\par\noindent\makebox[\mbpfteil][l]{\textbf{b)}}$k = \sqrt{m^2 - g^2}$\hfill\kk{ja}\par\noindent\makebox[\mbpfteil][l]{\textbf{c)}}$k = \sqrt{g^2 - m^2}$\hfill\kk{ja}}
+\par\fusshilfe{\mbox{7:~b)}}
+\end{pfaufg}
+% 2026-FOR-K4a-m1 (Original 2026-FOR-K4a, Schwere I, rang 5; herausgelöste Fassung: 2026-FOR-K4a-h1)
+\begin{pfaufg}{nach~P10\\’26~\pkt{}~4a}{8.}{}
+Im Viereck ABCD sind gegenüberliegende Seiten parallel. Die Seite BC ist 38 cm lang. Die Seite AB wird über B hinaus bis F verlängert; BF ist 16 cm lang. Die Höhe h = CF steht senkrecht auf AF. Der Winkel bei B zwischen BF und BC heißt $\varepsilon$. Berechne die Höhe h.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\small,scale=0.06]\coordinate (A) at (0,0);\coordinate (B) at (50,0);\coordinate (F) at (66,0);\coordinate (C) at (66,34.5);\coordinate (D) at (16,34.5);\draw (A) -- (B) -- (C) -- (D) -- cycle;\draw (B) -- (F);\draw[dashed] (F) -- (C);\pfrw[5]{(F)}{90}\node[anchor=north east] at (A) {$A$};\node[anchor=north east] at (B) {$B$};\node[anchor=north west] at (F) {$F$};\node[anchor=south west] at (C) {$C$};\node[anchor=south east] at (D) {$D$};\node[anchor=south east] at (57.5,17.2) {$38$ cm};\node[anchor=north] at (60,-1) {$16$ cm};\node[anchor=west] at (67,17.2) {$h$};\end{tikzpicture}}{\karo{2}}
+\fusshilfe{\mbox{8:~34,47 cm}}
+\end{pfaufg}
+% 2024-OS-K6a-m1 (Original 2024-OS-K6a, Schwere I, rang 6; herausgelöste Fassung: 2024-OS-K6a-h1)
+\begin{pfaufg}{nach~P10\\’24~\pkt{}~6a}{9.}{}
+Eine Seilbahn führt vom Ort B im Tal zum Ort A auf einem Berg. F liegt senkrecht unter A auf der Höhe von B; bei F ist ein rechter Winkel. FB ist 262 m lang, die Seilbahnstrecke AB 396 m. Eine zweite Seilbahn verbindet B mit dem Ort C auf einem anderen Berg. Bei B heißt der Winkel zwischen BF und BA $\beta_1$, der Winkel zwischen BA und BC $\beta_2$; bei A heißt der Winkel zwischen AB und AC $\alpha$. Die Strecke FA ist der Höhenunterschied zwischen B und A. Berechne diesen Höhenunterschied.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\small,scale=0.8]\coordinate (A) at (0,2.97);\coordinate (F) at (0,0);\coordinate (B) at (2.62,0);\draw (A) -- (F) -- (B) -- cycle;\pfrw[0.3]{(F)}{0}\node[anchor=south] at (A) {$A$};\node[anchor=north east] at (F) {$F$};\node[anchor=north west] at (B) {$B$};\node[anchor=north] at (1.31,-0.08) {$262$ m};\node[anchor=south west] at (1.36,1.52) {$396$ m};\end{tikzpicture}}{\karo{2}}
+\fusshilfe{\mbox{9:~296,9 m}}
+\end{pfaufg}
+% 2022-OS-K5a-m1 (Original 2022-OS-K5a, Schwere I, rang 7; herausgelöste Fassung: 2022-OS-K5a-h1)
+\begin{pfaufg}{nach~P10\\’22~\pkt{}~5a}{10.}{}
+Gegeben ist ein Dreieck ABC, das nicht rechtwinklig ist. Die Höhe $h_c$ von C auf die Seite AB ist etwa 7,3 m lang; ihr Fußpunkt heißt D. Die Seite b = AC ist 13,2 m lang, der Winkel bei B ist 49° groß. Der Winkel bei C zwischen AC und der Höhe heißt $\gamma_1$. Weise nach, dass die Strecke AD etwa 11,0 m lang ist.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\small,scale=0.3]\coordinate (A) at (0,0);\coordinate (B) at (17.4,0);\coordinate (C) at (11,7.3);\coordinate (D) at (11,0);\draw (A) -- (B) -- (C) -- cycle;\draw[dashed] (C) -- (D);\pfrw[0.9]{(D)}{90}\node[anchor=north east] at (A) {$A$};\node[anchor=north west] at (B) {$B$};\node[anchor=south] at (C) {$C$};\node[anchor=north] at (D) {$D$};\node[anchor=south east] at (5.5,3.7) {$13{,}2$ m};\node[anchor=west] at (11.8,3.2) {$h_c = 7{,}3$ m};\end{tikzpicture}}{\karo{2}}
+\fusshilfe{\mbox{10:~11,0 m}}
+\end{pfaufg}
+
+% ===================== Stufe: Dreieck erst in Figur oder Körper finden =====================
+\Needspace*{0.16\textheight}\pfstufekopf{in Figuren versteckt}{\gpunkte[26 25 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}
+% Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
+\begin{pfaufg}{}{11.}{}
+Welche Strecken bilden das rechtwinklige Dreieck? Nenne die beiden Katheten und die Hypotenuse.
+\par\smallskip
+\par\noindent\makebox[\mbpfteil][l]{\textbf{a)}}Kegel mit Radius r, Höhe h, Mantellinie s\hfill\linie{30mm}
+\par\noindent\makebox[\mbpfteil][l]{\textbf{b)}}Zylinder mit Radius r, Höhe h; Stab vom Rand des Bodens schräg zum gegenüberliegenden oberen Rand\hfill\linie{30mm}
+\par\fusshilfe{\mbox{11:~a) Katheten r und h, Hypotenuse s; b) Katheten 2 · r und h, Hypotenuse der Stab}}
+\end{pfaufg}
+% 2026-FOR-K2c-m1 (Original 2026-FOR-K2c, Schwere II, rang 8; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’26~\pkt{}~2c}{12.}{FOR}
+Ein Turm besteht aus einem Zylinder (Höhe 22,0 m, Radius 4,2 m) mit einem Kegeldach; die Mantellinie des Kegels ist 7,9 m lang, sein Radius ebenfalls 4,2 m. Bestimme die Gesamthöhe des Turms.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\small,scale=0.12]\draw (-4.2,0) arc (180:360:4.2 and 1.47);\draw[dashed,line width=0.5pt] (-4.2,0) arc (180:0:4.2 and 1.47);\draw (-4.2,0) -- (-4.2,22) (4.2,0) -- (4.2,22);\draw (-4.2,22) arc (180:360:4.2 and 1.47);\draw[dashed,line width=0.5pt] (-4.2,22) arc (180:0:4.2 and 1.47);\draw (-4.2,22) -- (0,28.69) -- (4.2,22);\draw[dashed,line width=0.5pt] (0,0) -- (4.2,0);\node[anchor=north] at (2.1,-1.6) {$r = 4{,}2$ m};\node[anchor=west] at (4.4,11) {$22{,}0$ m};\node[anchor=south west] at (2.2,25.4) {$7{,}9$ m};\end{tikzpicture}}{\karo{3}}
+\fusshilfe{\mbox{12:~28,7 m}}
+\end{pfaufg}
+% 2022-OS-K2c-m1 (Original 2022-OS-K2c, Schwere III, rang 10; herausgelöste Fassung: 2022-OS-K2c-h1)
+\begin{pfaufg}{nach~P10\\’22~\pkt{}~2c}{13.}{FOR}
+Ein Becher hat die Form eines Zylinders ohne Deckel; er ist 7,5 cm hoch und hat den Radius 3,4 cm. Ein Rührstab steht schräg im Becher: Er berührt unten den Rand des Bodens und lehnt oben am gegenüberliegenden Rand. 2 cm des Stabs ragen über den Becher hinaus. Bestimme die Länge des Stabs.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\small,scale=0.6]\draw (0,2.8) ellipse (1.28 and 0.45);\draw (-1.28,0) -- (-1.28,2.8);\draw (1.28,0) -- (1.28,2.8);\draw (-1.28,0) arc (180:360:1.28 and 0.45);\draw[dashed,line width=0.5pt] (-1.28,0) arc (180:0:1.28 and 0.45);\draw[line width=1.3pt] (-1.28,0) -- (1.28,2.8) -- ($(-1.28,0)!1.27!(1.28,2.8)$);\draw[dashed,line width=0.5pt] (0,0) -- (1.28,0);\node[anchor=north] at (0.64,-0.5) {$r = 3{,}4$ cm};\node[anchor=west] at (1.32,1.4) {$7{,}5$ cm};\end{tikzpicture}}{\karo{3}}
+\fusshilfe{\mbox{13:~12,1 cm}}
+\end{pfaufg}
+
+\pfblattende{11}{26 FOR & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17 & 16}{1j 2c 4a & 4a & 1f 6a &  & 1g 2c 5a & 1h & 7a & 2d 3a & 6d & 1d & 7b}%
+{\pfausschnitt{}{Pythagoras}{sin, cos, tan \pkt{} Sinussatz \pkt{} Vierecke \pkt{} Winkel \pkt{} Symmetrie}}
+\end{document}

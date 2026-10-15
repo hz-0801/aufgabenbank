@@ -1,0 +1,192 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+\newsavebox{\gbox}\newlength{\gLinks}
+% v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
+% Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr\wd\gbox+6mm\relax}%
+  \ifdim\gLinks>0.62\linewidth
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\leavevmode\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par}
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+% Skizzenfeld (v0.10, Lehrer 13.10.): Karo ab dem linken Rand über die Zeile, „Skizze“ klein grau oben links im Feld
+% (wie \pfskizzenfeld der Vorlage); der rechte Rand bleibt den Bedingungen
+\newcommand{\gskizze}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \node[anchor=north west,inner sep=2pt,font=\scriptsize,text=mbgrau,fill=white] at (0,{#1*10mm}) {Skizze};
+  \end{tikzpicture}\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} Prüfung]{Kenngrößen}{PS30-4}\pfseitevon
+\pfheftkopf{Kenngrößen}{}
+\pfstufenzeile{Spannweite gesucht \pkt{} Median gesucht \pkt{} Mittelwert gesucht \pkt{} fehlender Wert gesucht \pkt{} Aussagen prüfen}
+% Stufe entfällt: Modalwert – kein Original der letzten fünf Jahre (Mehr-Block, Fundstellen)
+
+% ===================== Stufe: Minimum, Maximum, Spannweite =====================
+\gkopfvor{\pfstufekopf{Spannweite gesucht}{\gpunkte[26 25 24 23 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}\gfrage{Kenngrößen in deiner Formelsammlung: Seite~\linie{12mm}}}
+% 2026-FOR-K3a-m1 (Original 2026-FOR-K3a, Schwere I, rang 1; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’26~\pkt{}~3a}{1.}{}
+Eine Tankstelle hat eine Woche lang jeden Tag um 18 Uhr den Benzinpreis notiert. Gib die Spannweite der Benzinpreise in € pro Liter an.
+\gzwei{{\small\renewcommand{\arraystretch}{1.2}\begin{tabular}{|l|c|c|c|c|c|c|c|}\hline Wochentag & Mo & Di & Mi & Do & Fr & Sa & So\\\hline Preis in €/l & 1,81 & 1,82 & 1,80 & 1,83 & 1,89 & 1,86 & 1,90\\\hline\end{tabular}}}{\vspace{2mm}\par\noindent Spannweite: \linie{30mm}\,€/l}
+\fusshilfe{\mbox{1:~0,10 € pro Liter}}
+\end{pfaufg}
+% 2023-OS-K6c-m1 (Original 2023-OS-K6c, Schwere I, rang 2; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’23~\pkt{}~6c}{2.}{}
+Auf der Welt werden wohl über 7 000 Sprachen gesprochen. Die Tabelle nennt die fünf Sprachen mit den meisten Muttersprachlern. Gib für diese fünf Werte das Minimum, das Maximum und die Spannweite an.
+\gzwei{{\small\renewcommand{\arraystretch}{1.2}\begin{tabular}{|l|r|}\hline Sprache & Muttersprachler in Mio.\\\hline Arabisch & 310\\\hline Chinesisch & 1\,350\\\hline Englisch & 480\\\hline Hindi & 575\\\hline Spanisch & 420\\\hline\end{tabular}}}{\vspace{2mm}\par\noindent Minimum: \linie{30mm}\,Mio.\par\smallskip\par\noindent Maximum: \linie{30mm}\,Mio.\par\smallskip\par\noindent Spannweite: \linie{30mm}\,Mio.}
+\fusshilfe{\mbox{2:~310 Mio.; 1350 Mio.; 1040 Mio.}}
+\end{pfaufg}
+% 2024-OS-K2a-m1 (Original 2024-OS-K2a, Schwere I, rang 3; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’24~\pkt{}~2a}{3.}{}
+Das Säulendiagramm zeigt, wie viel Niederschlag 2022 in Brandenburg in jedem Monat gefallen ist (in mm). Ermittle die Spannweite der monatlichen Niederschläge im Jahr 2022 in mm.
+\gzwei{\begin{tikzpicture}[x=0.78cm,y=1cm,font=\small,line width=0.6pt]\draw[black!15,line width=0.3pt] (0,0.000) -- (12.6,0.000);\draw[black!15,line width=0.3pt] (0,0.325) -- (12.6,0.325);\draw[black!15,line width=0.3pt] (0,0.650) -- (12.6,0.650);\draw[black!15,line width=0.3pt] (0,0.975) -- (12.6,0.975);\draw[black!15,line width=0.3pt] (0,1.300) -- (12.6,1.300);\draw[black!15,line width=0.3pt] (0,1.625) -- (12.6,1.625);\draw[black!15,line width=0.3pt] (0,1.950) -- (12.6,1.950);\draw[black!15,line width=0.3pt] (0,2.275) -- (12.6,2.275);\draw[black!15,line width=0.3pt] (0,2.600) -- (12.6,2.600);\draw[black!45,line width=0.3pt] (0,0.000) -- (12.6,0.000); \node[left,font=\footnotesize] at (0,0.000) {0};\draw[black!45,line width=0.3pt] (0,0.325) -- (12.6,0.325); \node[left,font=\footnotesize] at (0,0.325) {10};\draw[black!45,line width=0.3pt] (0,0.650) -- (12.6,0.650); \node[left,font=\footnotesize] at (0,0.650) {20};\draw[black!45,line width=0.3pt] (0,0.975) -- (12.6,0.975); \node[left,font=\footnotesize] at (0,0.975) {30};\draw[black!45,line width=0.3pt] (0,1.300) -- (12.6,1.300); \node[left,font=\footnotesize] at (0,1.300) {40};\draw[black!45,line width=0.3pt] (0,1.625) -- (12.6,1.625); \node[left,font=\footnotesize] at (0,1.625) {50};\draw[black!45,line width=0.3pt] (0,1.950) -- (12.6,1.950); \node[left,font=\footnotesize] at (0,1.950) {60};\draw[black!45,line width=0.3pt] (0,2.275) -- (12.6,2.275); \node[left,font=\footnotesize] at (0,2.275) {70};\draw[black!45,line width=0.3pt] (0,2.600) -- (12.6,2.600); \node[left,font=\footnotesize] at (0,2.600) {80};\filldraw[fill=black!15,draw=black,line width=0.6pt] (0.7,0) rectangle (1.3,1.456);\node[above,font=\scriptsize,inner sep=1pt] at (1,1.456) {44,8};\node[below,font=\footnotesize] at (1,0) {Jan};\filldraw[fill=black!15,draw=black,line width=0.6pt] (1.7,0) rectangle (2.3,1.895);\node[above,font=\scriptsize,inner sep=1pt] at (2,1.895) {58,3};\node[below,font=\footnotesize] at (2,0) {Feb};\filldraw[fill=black!15,draw=black,line width=0.6pt] (2.7,0) rectangle (3.3,0.894);\node[above,font=\scriptsize,inner sep=1pt] at (3,0.894) {27,5};\node[below,font=\footnotesize] at (3,0) {Mär};\filldraw[fill=black!15,draw=black,line width=0.6pt] (3.7,0) rectangle (4.3,0.800);\node[above,font=\scriptsize,inner sep=1pt] at (4,0.800) {24,6};\node[below,font=\footnotesize] at (4,0) {Apr};\filldraw[fill=black!15,draw=black,line width=0.6pt] (4.7,0) rectangle (5.3,1.264);\node[above,font=\scriptsize,inner sep=1pt] at (5,1.264) {38,9};\node[below,font=\footnotesize] at (5,0) {Mai};\filldraw[fill=black!15,draw=black,line width=0.6pt] (5.7,0) rectangle (6.3,2.314);\node[above,font=\scriptsize,inner sep=1pt] at (6,2.314) {71,2};\node[below,font=\footnotesize] at (6,0) {Jun};\filldraw[fill=black!15,draw=black,line width=0.6pt] (6.7,0) rectangle (7.3,1.680);\node[above,font=\scriptsize,inner sep=1pt] at (7,1.680) {51,7};\node[below,font=\footnotesize] at (7,0) {Jul};\filldraw[fill=black!15,draw=black,line width=0.6pt] (7.7,0) rectangle (8.3,2.145);\node[above,font=\scriptsize,inner sep=1pt] at (8,2.145) {66,0};\node[below,font=\footnotesize] at (8,0) {Aug};\filldraw[fill=black!15,draw=black,line width=0.6pt] (8.7,0) rectangle (9.3,1.085);\node[above,font=\scriptsize,inner sep=1pt] at (9,1.085) {33,4};\node[below,font=\footnotesize] at (9,0) {Sep};\filldraw[fill=black!15,draw=black,line width=0.6pt] (9.7,0) rectangle (10.3,2.031);\node[above,font=\scriptsize,inner sep=1pt] at (10,2.031) {62,5};\node[below,font=\footnotesize] at (10,0) {Okt};\filldraw[fill=black!15,draw=black,line width=0.6pt] (10.7,0) rectangle (11.3,0.972);\node[above,font=\scriptsize,inner sep=1pt] at (11,0.972) {29,9};\node[below,font=\footnotesize] at (11,0) {Nov};\filldraw[fill=black!15,draw=black,line width=0.6pt] (11.7,0) rectangle (12.3,1.560);\node[above,font=\scriptsize,inner sep=1pt] at (12,1.560) {48,0};\node[below,font=\footnotesize] at (12,0) {Dez};\draw[-{Stealth[length=2mm]}] (0,0) -- (0,3.0) node[above right,font=\footnotesize,inner sep=1pt] {Niederschlag in mm};\draw (0,0) -- (12.6,0);\end{tikzpicture}}{\vspace{2mm}\par\noindent Spannweite: \linie{30mm}\,mm}
+\fusshilfe{\mbox{3:~46,6 mm}}
+\end{pfaufg}
+
+% ===================== Stufe: Median =====================
+\Needspace*{0.16\textheight}\pfstufekopf{Median gesucht}{\gpunkte[24]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}
+% Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
+\begin{pfaufg}{}{4.}{}
+Zentralwert (Median): erst ordnen – die Mitte der ungeordneten Reihe ist es nicht.
+\par\smallskip
+\par\noindent\makebox[\mbpfteil][l]{\textbf{a)}}9; 4; 7; 2; 5\hfill\linie{30mm}
+\par\noindent\makebox[\mbpfteil][l]{\textbf{b)}}8; 2; 6; 4\hfill\linie{30mm}
+\par\fusshilfe{\mbox{4:~a) 5 (nicht 7); b) 5 (nicht 4)}}
+\end{pfaufg}
+% 2024-OS-B1h-m1 (Original 2024-OS-B1h, Schwere I, rang 1; herausgelöste Fassung: keine)
+\begin{pfaufg}{’24~\pkt{}~1h}{5.}{Basis}
+Ermittle den Median (Zentralwert) dieser Datenreihe: 22 °C; 15 °C; 24 °C; 12 °C; 24 °C; 18 °C
+\par\smallskip\par\noindent \hfill Median: \linie{30mm}\,°C
+\fusshilfe{\mbox{5:~20 °C}}
+\end{pfaufg}
+
+% ===================== Stufe: Mittelwert =====================
+\gkopfvor{\pfstufekopf{Mittelwert gesucht}{\gpunkte[26 25 24 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% 2026-FOR-K3b-m1 (Original 2026-FOR-K3b, Schwere I, rang 1; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’26~\pkt{}~3b}{6.}{}
+Eine Tankstelle hat eine Woche lang jeden Tag um 18 Uhr den Benzinpreis notiert. Ein Kunde meint: Von Montag bis Freitag hat ein Liter Benzin an dieser Tankstelle im Durchschnitt weniger als 1,84 € gekostet. Zeige mit einer Rechnung, dass er recht hat.
+\gzwei{{\small\renewcommand{\arraystretch}{1.2}\begin{tabular}{|l|c|c|c|c|c|c|c|}\hline Wochentag & Mo & Di & Mi & Do & Fr & Sa & So\\\hline Preis in €/l & 1,81 & 1,82 & 1,80 & 1,83 & 1,89 & 1,86 & 1,90\\\hline\end{tabular}}}{\karo{2}}
+\fusshilfe{\mbox{6:~stimmt}}
+\end{pfaufg}
+% 2022-OS-K4a-m1 (Original 2022-OS-K4a, Schwere I, rang 3; herausgelöste Fassung: 2022-OS-K4a-h1)
+\begin{pfaufg}{nach~P10\\’22~\pkt{}~4a}{7.}{}
+Von 2017 bis 2021 wurden jedes Jahr 1 500 Jugendliche gefragt, wie oft sie Bücher lesen. Das Säulendiagramm zeigt, wie viele von ihnen mehrmals pro Woche ein Buch lesen. Gib den kleinsten und den größten Wert im Diagramm an (Minimum und Maximum). Bestimme den Durchschnitt (das arithmetische Mittel) der fünf Werte.
+\gzwei{\begin{tikzpicture}[x=1.1cm,y=1cm,font=\small,line width=0.6pt]\draw[black!15,line width=0.3pt] (0,0.000) -- (5.6,0.000);\draw[black!15,line width=0.3pt] (0,0.280) -- (5.6,0.280);\draw[black!15,line width=0.3pt] (0,0.560) -- (5.6,0.560);\draw[black!15,line width=0.3pt] (0,0.840) -- (5.6,0.840);\draw[black!15,line width=0.3pt] (0,1.120) -- (5.6,1.120);\draw[black!15,line width=0.3pt] (0,1.400) -- (5.6,1.400);\draw[black!15,line width=0.3pt] (0,1.680) -- (5.6,1.680);\draw[black!15,line width=0.3pt] (0,1.960) -- (5.6,1.960);\draw[black!15,line width=0.3pt] (0,2.240) -- (5.6,2.240);\draw[black!15,line width=0.3pt] (0,2.520) -- (5.6,2.520);\draw[black!15,line width=0.3pt] (0,2.800) -- (5.6,2.800);\draw[black!45,line width=0.3pt] (0,0.000) -- (5.6,0.000); \node[left,font=\footnotesize] at (0,0.000) {500};\draw[black!45,line width=0.3pt] (0,0.280) -- (5.6,0.280); \node[left,font=\footnotesize] at (0,0.280) {510};\draw[black!45,line width=0.3pt] (0,0.560) -- (5.6,0.560); \node[left,font=\footnotesize] at (0,0.560) {520};\draw[black!45,line width=0.3pt] (0,0.840) -- (5.6,0.840); \node[left,font=\footnotesize] at (0,0.840) {530};\draw[black!45,line width=0.3pt] (0,1.120) -- (5.6,1.120); \node[left,font=\footnotesize] at (0,1.120) {540};\draw[black!45,line width=0.3pt] (0,1.400) -- (5.6,1.400); \node[left,font=\footnotesize] at (0,1.400) {550};\draw[black!45,line width=0.3pt] (0,1.680) -- (5.6,1.680); \node[left,font=\footnotesize] at (0,1.680) {560};\draw[black!45,line width=0.3pt] (0,1.960) -- (5.6,1.960); \node[left,font=\footnotesize] at (0,1.960) {570};\draw[black!45,line width=0.3pt] (0,2.240) -- (5.6,2.240); \node[left,font=\footnotesize] at (0,2.240) {580};\draw[black!45,line width=0.3pt] (0,2.520) -- (5.6,2.520); \node[left,font=\footnotesize] at (0,2.520) {590};\draw[black!45,line width=0.3pt] (0,2.800) -- (5.6,2.800); \node[left,font=\footnotesize] at (0,2.800) {600};\filldraw[fill=black!15,draw=black,line width=0.6pt] (0.7,0) rectangle (1.3,2.240);\node[above,font=\scriptsize,inner sep=1pt] at (1,2.240) {580};\node[below,font=\footnotesize] at (1,0) {2017};\filldraw[fill=black!15,draw=black,line width=0.6pt] (1.7,0) rectangle (2.3,1.680);\node[above,font=\scriptsize,inner sep=1pt] at (2,1.680) {560};\node[below,font=\footnotesize] at (2,0) {2018};\filldraw[fill=black!15,draw=black,line width=0.6pt] (2.7,0) rectangle (3.3,2.100);\node[above,font=\scriptsize,inner sep=1pt] at (3,2.100) {575};\node[below,font=\footnotesize] at (3,0) {2019};\filldraw[fill=black!15,draw=black,line width=0.6pt] (3.7,0) rectangle (4.3,2.380);\node[above,font=\scriptsize,inner sep=1pt] at (4,2.380) {585};\node[below,font=\footnotesize] at (4,0) {2020};\filldraw[fill=black!15,draw=black,line width=0.6pt] (4.7,0) rectangle (5.3,0.560);\node[above,font=\scriptsize,inner sep=1pt] at (5,0.560) {520};\node[below,font=\footnotesize] at (5,0) {2021};\draw[-{Stealth[length=2mm]}] (0,0) -- (0,3.1999999999999997) node[above right,font=\footnotesize,inner sep=1pt] {Anzahl der Jugendlichen};\draw (0,0) -- (5.6,0);\end{tikzpicture}}{\vspace{2mm}\par\noindent Minimum: \linie{30mm}\hphantom{\,cm²}\par\smallskip\par\noindent Maximum: \linie{30mm}\hphantom{\,cm²}\par\smallskip\par\noindent Mittelwert: \linie{30mm}\hphantom{\,cm²}}
+\fusshilfe{\mbox{7:~520; 585; 564}}
+\end{pfaufg}
+% 2024-OS-K2b-m1 (Original 2024-OS-K2b, Schwere II, rang 2; herausgelöste Fassung: keine)
+% Zweitthema ausgeblendet (Spalten <feld>_einheit, pruefheft-p.md v0.9)
+\begin{pfaufg}{nach~P10\\’24~\pkt{}~2b}{8.}{}
+Das Säulendiagramm zeigt, wie viel Niederschlag 2022 in Brandenburg in jedem Monat gefallen ist (in mm). Im ganzen Jahr 2022 fielen 556,8 mm Niederschlag. Zeige, dass im Durchschnitt pro Monat etwa 46,4 mm fielen.
+\gzwei{\begin{tikzpicture}[x=0.78cm,y=1cm,font=\small,line width=0.6pt]\draw[black!15,line width=0.3pt] (0,0.000) -- (12.6,0.000);\draw[black!15,line width=0.3pt] (0,0.325) -- (12.6,0.325);\draw[black!15,line width=0.3pt] (0,0.650) -- (12.6,0.650);\draw[black!15,line width=0.3pt] (0,0.975) -- (12.6,0.975);\draw[black!15,line width=0.3pt] (0,1.300) -- (12.6,1.300);\draw[black!15,line width=0.3pt] (0,1.625) -- (12.6,1.625);\draw[black!15,line width=0.3pt] (0,1.950) -- (12.6,1.950);\draw[black!15,line width=0.3pt] (0,2.275) -- (12.6,2.275);\draw[black!15,line width=0.3pt] (0,2.600) -- (12.6,2.600);\draw[black!45,line width=0.3pt] (0,0.000) -- (12.6,0.000); \node[left,font=\footnotesize] at (0,0.000) {0};\draw[black!45,line width=0.3pt] (0,0.325) -- (12.6,0.325); \node[left,font=\footnotesize] at (0,0.325) {10};\draw[black!45,line width=0.3pt] (0,0.650) -- (12.6,0.650); \node[left,font=\footnotesize] at (0,0.650) {20};\draw[black!45,line width=0.3pt] (0,0.975) -- (12.6,0.975); \node[left,font=\footnotesize] at (0,0.975) {30};\draw[black!45,line width=0.3pt] (0,1.300) -- (12.6,1.300); \node[left,font=\footnotesize] at (0,1.300) {40};\draw[black!45,line width=0.3pt] (0,1.625) -- (12.6,1.625); \node[left,font=\footnotesize] at (0,1.625) {50};\draw[black!45,line width=0.3pt] (0,1.950) -- (12.6,1.950); \node[left,font=\footnotesize] at (0,1.950) {60};\draw[black!45,line width=0.3pt] (0,2.275) -- (12.6,2.275); \node[left,font=\footnotesize] at (0,2.275) {70};\draw[black!45,line width=0.3pt] (0,2.600) -- (12.6,2.600); \node[left,font=\footnotesize] at (0,2.600) {80};\filldraw[fill=black!15,draw=black,line width=0.6pt] (0.7,0) rectangle (1.3,1.456);\node[above,font=\scriptsize,inner sep=1pt] at (1,1.456) {44,8};\node[below,font=\footnotesize] at (1,0) {Jan};\filldraw[fill=black!15,draw=black,line width=0.6pt] (1.7,0) rectangle (2.3,1.895);\node[above,font=\scriptsize,inner sep=1pt] at (2,1.895) {58,3};\node[below,font=\footnotesize] at (2,0) {Feb};\filldraw[fill=black!15,draw=black,line width=0.6pt] (2.7,0) rectangle (3.3,0.894);\node[above,font=\scriptsize,inner sep=1pt] at (3,0.894) {27,5};\node[below,font=\footnotesize] at (3,0) {Mär};\filldraw[fill=black!15,draw=black,line width=0.6pt] (3.7,0) rectangle (4.3,0.800);\node[above,font=\scriptsize,inner sep=1pt] at (4,0.800) {24,6};\node[below,font=\footnotesize] at (4,0) {Apr};\filldraw[fill=black!15,draw=black,line width=0.6pt] (4.7,0) rectangle (5.3,1.264);\node[above,font=\scriptsize,inner sep=1pt] at (5,1.264) {38,9};\node[below,font=\footnotesize] at (5,0) {Mai};\filldraw[fill=black!15,draw=black,line width=0.6pt] (5.7,0) rectangle (6.3,2.314);\node[above,font=\scriptsize,inner sep=1pt] at (6,2.314) {71,2};\node[below,font=\footnotesize] at (6,0) {Jun};\filldraw[fill=black!15,draw=black,line width=0.6pt] (6.7,0) rectangle (7.3,1.680);\node[above,font=\scriptsize,inner sep=1pt] at (7,1.680) {51,7};\node[below,font=\footnotesize] at (7,0) {Jul};\filldraw[fill=black!15,draw=black,line width=0.6pt] (7.7,0) rectangle (8.3,2.145);\node[above,font=\scriptsize,inner sep=1pt] at (8,2.145) {66,0};\node[below,font=\footnotesize] at (8,0) {Aug};\filldraw[fill=black!15,draw=black,line width=0.6pt] (8.7,0) rectangle (9.3,1.085);\node[above,font=\scriptsize,inner sep=1pt] at (9,1.085) {33,4};\node[below,font=\footnotesize] at (9,0) {Sep};\filldraw[fill=black!15,draw=black,line width=0.6pt] (9.7,0) rectangle (10.3,2.031);\node[above,font=\scriptsize,inner sep=1pt] at (10,2.031) {62,5};\node[below,font=\footnotesize] at (10,0) {Okt};\filldraw[fill=black!15,draw=black,line width=0.6pt] (10.7,0) rectangle (11.3,0.972);\node[above,font=\scriptsize,inner sep=1pt] at (11,0.972) {29,9};\node[below,font=\footnotesize] at (11,0) {Nov};\filldraw[fill=black!15,draw=black,line width=0.6pt] (11.7,0) rectangle (12.3,1.560);\node[above,font=\scriptsize,inner sep=1pt] at (12,1.560) {48,0};\node[below,font=\footnotesize] at (12,0) {Dez};\draw[-{Stealth[length=2mm]}] (0,0) -- (0,3.0) node[above right,font=\footnotesize,inner sep=1pt] {Niederschlag in mm};\draw (0,0) -- (12.6,0);\end{tikzpicture}}{\karo{2}}
+\fusshilfe{\mbox{8:~46,4 mm}}
+\end{pfaufg}
+
+% ===================== Stufe: rückwärts: fehlender Wert =====================
+\Needspace*{0.16\textheight}\pfstufekopf{fehlender Wert gesucht}{\gpunkte[22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}
+% Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
+\begin{pfaufg}{}{9.}{}
+Stelle die Formel nach der gesuchten Größe um.
+\par\smallskip
+\par\noindent Durchschnitt zweier Zahlen: m = (a + x) : 2, gesucht ist x\hfill\linie{30mm}
+\par\fusshilfe{\mbox{9:~x = 2 · m $-$ a}}
+\end{pfaufg}
+% 2022-OS-B1d-m1 (Original 2022-OS-B1d, Schwere II, rang 1; herausgelöste Fassung: keine)
+\begin{pfaufg}{’22~\pkt{}~1d}{10.}{Basis}
+In einer Woche lag die Temperatur im Durchschnitt bei 18 °C. Ergänze die fehlende Temperatur am Samstag.
+\gzwei{{\small\renewcommand{\arraystretch}{1.2}\begin{tabular}{|c|c|c|c|c|c|c|}\hline Mo & Di & Mi & Do & Fr & Sa & So\\\hline 17\,°C & 19\,°C & 18\,°C & 16\,°C & 20\,°C & \rule{0.9cm}{0.4pt} & 17\,°C\\\hline\end{tabular}}}{\vspace{2mm}\par\noindent Samstag: \linie{30mm}\,°C}
+\fusshilfe{\mbox{10:~19 °C}}
+\end{pfaufg}
+
+% ===================== Stufe: Aussagen prüfen, Auswirkung erklären =====================
+\gkopfvor{\pfstufekopf{Aussagen prüfen}{\gpunkte[25]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% Teile eines Originals (2025-OS-K6): 2025-OS-K6a-m1, 2025-OS-K6c-m1
+\begin{pfaufg}{}{11.}{}
+% 2025-OS-K6a-m1 (Original 2025-OS-K6a, Schwere I, rang 1; herausgelöste Fassung: keine)
+\vspace*{-\baselineskip}\vspace*{-\smallskipamount}
+\begin{gbteil}{a)}{\raisebox{\dimexpr-\height+\ht\strutbox\relax}{\shortstack[r]{nach~P10\\’25~\pkt{}~6a}}\hspace*{\mbpfnr}}{}
+In einer Kita-Gruppe sind die Kinder so alt (in Jahren): 6, 3, 1, 5, 3, 5, 3, 5, 3, 3. Eine der beiden Aussagen ist falsch. Kreuze die falsche Aussage an:
+\pfkreuzab{A}{Die Spannweite beträgt 5 Jahre.}\pfkreuzab{B}{Der Modalwert (der häufigste Wert) beträgt 5 Jahre}
+\par\smallskip\noindent Berichtige sie.
+\par\smallskip\par\noindent \hfill richtiger Modalwert: \linie{30mm}\,Jahre
+\end{gbteil}
+% 2025-OS-K6c-m1 (Original 2025-OS-K6c, Schwere III, rang 2; herausgelöste Fassung: keine)
+\begin{gbteil}{b)}{\raisebox{\dimexpr-\height+\ht\strutbox\relax}{\shortstack[r]{nach~P10\\’25~\pkt{}~6c}}\hspace*{\mbpfnr}}{FOR}
+In einer Kita arbeiten 11 Erziehende. Sie sind so alt (in Jahren): 52, 36, 61, 27, 58, 34, 63, 54, 32, 40, 38. Bestimme das Durchschnittsalter der Erziehenden. Die älteste und die jüngste Person verlassen die Kita. Erkläre, wie sich dadurch das Durchschnittsalter verändert.
+\par\smallskip\par\noindent \hfill Durchschnittsalter: \linie{30mm}\,Jahre
+\karo{3}
+\end{gbteil}
+\fusshilfe{\mbox{11:~a)~B; 3 Jahre; b)~45 Jahre; 45 Jahre}}
+\end{pfaufg}
+
+\pfblattende{11}{26 FOR & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17 & 16}{3a 3b & 6a 6c & 1h 2a 2b & 6c & 1d 4a & 1f 5a & 2c 2d & 1i &  & 1h & 1a}%
+{\pfausschnitt{}{Kenngrößen}{Diagramme}}
+\end{document}

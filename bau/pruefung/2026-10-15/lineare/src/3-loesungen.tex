@@ -1,0 +1,166 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+\newsavebox{\gbox}\newlength{\gLinks}
+% v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
+% Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr\wd\gbox+6mm\relax}%
+  \ifdim\gLinks>0.62\linewidth
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\leavevmode\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par}
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+% Skizzenfeld (v0.10, Lehrer 13.10.): Karo ab dem linken Rand über die Zeile, „Skizze“ klein grau oben links im Feld
+% (wie \pfskizzenfeld der Vorlage); der rechte Rand bleibt den Bedingungen
+\newcommand{\gskizze}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \node[anchor=north west,inner sep=2pt,font=\scriptsize,text=mbgrau,fill=white] at (0,{#1*10mm}) {Skizze};
+  \end{tikzpicture}\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} Prüfung]{Lineare Funktionen \pkt{} Lösungen}{PA10-7}\pfseitevon
+\pfheftkopf{Lineare Funktionen}{Lösungen}
+\pfstufenzeile{Gerade zeichnen \pkt{} Gleichung ablesen \pkt{} Gleichung aus zwei Punkten \pkt{} Nullstelle gesucht \pkt{} Punktprobe \pkt{} Gleichung aus Text \pkt{} Gerade und Parabel}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Gerade zeichnen}{\gpunkte[26 25 24 23 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}\gfrage{Wo steht die Gleichung der linearen Funktion mit m und n? Formelsammlung, S. 31}
+\begin{pfloesungb}{}
+\lzb{1.}{}{a) und c)}{linear sind a) und c): a) m = $-$2, n = 3 (die Zahl vor x ist m, auch hinten); c) m = 0,5, n = 0; x² gibt keine Gerade}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{2.}{}{A}{die einzige Gerade; B Hyperbelast, C Parabel, D kein Funktionsgraph (erste Option)}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{3.}{}{Punkt (0|1)}{n = 1 aus y = 1,5x + 1 $\Rightarrow$ Punkt (0|1)}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{4.}{}{Gerade durch (0|3) und (1|5)}{Startpunkt (0|3), Steigungsdreieck 1 nach rechts, 2 nach oben $\Rightarrow$ Gerade durch (0|3) und (1|5)}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Gleichung ablesen}{\gzuletzt{19}}
+\begin{pfloesungb}{}
+\lzb{5.}{a)}{h}{Steigung $-$3: f; parallel zur x-Achse: h}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{}{b)}{y = $-$1}{f: y = $-$3x + 3; g: y = x + 3; h: y = $-$1}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Gleichung aus zwei Punkten}{\gpunkte[25]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}
+\begin{pfloesungb}{}
+\lzb{6.}{}{Gerade durch A und B; Aussage 1 falsch, Aussage 2 wahr; y = $-$1,5x + 2}{A und B eintragen $\Rightarrow$ Gerade durch A und B; m < 0, n = 2 $\Rightarrow$ Aussage 1 falsch, Aussage 2 wahr; m = ($-$2,5 $-$ 5) : (3 $-$ ($-$2)) = $-$1,5; n = 5 $-$ ($-$1,5) · ($-$2) = 2 $\Rightarrow$ y = $-$1,5x + 2}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Nullstelle gesucht}{\gpunkte[22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}
+\begin{pfloesungb}{}
+\lzb{7.}{}{Gerade durch (0|5) und (1|3); x = 2,5}{Startpunkt (0|5), 1 nach rechts, 2 nach unten $\Rightarrow$ Gerade durch (0|5) und (1|3); y = 0: $-$2x + 5 = 0 $\Rightarrow$ x = 2,5}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Punktprobe}{\gpunkte[26 25 24 23 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}
+\begin{pfloesungb}{}
+\lzb{8.}{}{B}{$-$12 $\neq$ f(3) = $-$5 · 3 + 2 = $-$13 (zweite Option)}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{9.}{}{P liegt auf dem Graphen}{f($-$2) = $-$3 · ($-$2) + 1 = 7 = y-Wert von P $\Rightarrow$ P liegt auf dem Graphen}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Gleichung aus Text}{\gpunkte[23 22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}
+\begin{pfloesungb}{}
+\lzb{10.}{}{a) 8 ist n, 0,09 ist m; b) 25 ist n, $-$2 ist m}{n steht am Anfang (x = 0), m ist das, was je Monat, Minute oder Stunde dazukommt oder weggeht}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{11.}{a)}{Maxi = 1648 €}{Maxi = 1 360 + 12 · 24 = 1648 €}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{}{b)}{y = 65x + 820; 16 Monate}{y = 65x + 820; 65x + 820 $\ge$ 1800 $\Rightarrow$ x $\ge$ 980 : 65 $\approx$ 15,1 $\Rightarrow$ 16 Monate}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{12.}{a)}{Angebot 1 = C; Angebot 2 = B}{erst fest (320 km frei), dann gleichmäßig steigend $\Rightarrow$ Angebot 1 = C; Grundbetrag 115 €, dann gleichmäßig steigend $\Rightarrow$ Angebot 2 = B}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{}{b)}{Angebot 1 = 170,50 €; Angebot 2 = 151,00 €; Angebot 2 günstiger; y = 0,08x + 115}{Angebot 1 = 5 · 25 + (450 $-$ 320) · 0,35 = 170,50 €; Angebot 2 = 115 + 450 · 0,08 = 151,00 €; 151,00 € < 170,50 € $\Rightarrow$ Angebot 2 günstiger; y = 0,08x + 115}
+\end{pfloesungb}
+
+\Needspace*{0.16\textheight}\pfstufekopf{Gerade und Parabel}{\gpunkte[26 25 24 23 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}
+\begin{pfloesungb}{}
+\lzb{13.}{}{D}{$-$3 · ($-$3 + 4) = $-$3 · 1 = $-$3 (vierte Option)}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{14.}{}{Gerade durch (0|1) und (1|$-$2)}{Startpunkt (0|1), Steigungsdreieck 1 nach rechts, 3 nach unten $\Rightarrow$ Gerade durch (0|1) und (1|$-$2)}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{15.}{a)}{Nein}{Nein, 5 $\neq$ p($-$3) = ($-$3)² $-$ 5 = 4}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{}{b)}{S$_1$(4|11); S$_2$($-$2|$-$1)}{x² $-$ 5 = 2x + 3 $\Rightarrow$ x² $-$ 2x $-$ 8 = 0 $\Rightarrow$ x$_1$ = 4, x$_2$ = $-$2 $\Rightarrow$ S$_1$(4|11); S$_2$($-$2|$-$1)}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{16.}{}{Gerade durch (0|$-$2) und (1|1); S(2|4); Aussage 2 wahr, Aussagen 1 und 3 falsch}{Startpunkt (0|$-$2), 1 nach rechts, 3 nach oben $\Rightarrow$ Gerade durch (0|$-$2) und (1|1); Schnitt im Bild ablesen $\Rightarrow$ S(2|4); m = 3 > 0, zwei Schnittpunkte im Bild, y-Achse bei (0|$-$2) $\Rightarrow$ Aussage 2 wahr, Aussagen 1 und 3 falsch}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{17.}{}{S$_1$(1|3); S$_2$(5|$-$5)}{(x $-$ 4)² $-$ 6 = $-$2x + 5 $\Rightarrow$ x² $-$ 6x + 5 = 0 $\Rightarrow$ x$_1$ = 1, x$_2$ = 5 $\Rightarrow$ S$_1$(1|3); S$_2$(5|$-$5)}
+\end{pfloesungb}
+\end{document}

@@ -1,0 +1,180 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+\newsavebox{\gbox}\newlength{\gLinks}
+% v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
+% Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr\wd\gbox+6mm\relax}%
+  \ifdim\gLinks>0.62\linewidth
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\leavevmode\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par}
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+% Skizzenfeld (v0.10, Lehrer 13.10.): Karo ab dem linken Rand über die Zeile, „Skizze“ klein grau oben links im Feld
+% (wie \pfskizzenfeld der Vorlage); der rechte Rand bleibt den Bedingungen
+\newcommand{\gskizze}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \node[anchor=north west,inner sep=2pt,font=\scriptsize,text=mbgrau,fill=white] at (0,{#1*10mm}) {Skizze};
+  \end{tikzpicture}\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\makeatletter\setlength{\mbpfbe}{0mm}\makeatother
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} mehr]{Wachstum}{PA50-3}\pfseitevon
+\pfheftkopf{Wachstum}{mehr}
+\pfstufenzeile{Tabelle ergänzen \pkt{} Gleichung gesucht \pkt{} Graph zeichnen \pkt{} Graph zuordnen}
+% 2020-OS-K4a-m1 (Schwere I, rang 6)
+\begin{pfaufg}{nach~P10\\’20~\pkt{}~4a}{1.}{}
+Laut einer Studie aus dem Jahr 2018 verbrauchte jeder Mensch im Jahr 2018 im Schnitt 48 Tausend Liter Wasser; der Verbrauch je Person soll in Zukunft jedes Jahr um 4 \% wachsen. Ergänze die Tabelle mit diesen Angaben.
+\par\smallskip\noindent\gpassend{{\small\renewcommand{\arraystretch}{1.25}\begin{tabular}{|p{4.6cm}|c|c|c|c|}\hline Jahr & 2018 & 2019 & 2020 & 2021\\\hline Wasserverbrauch je Person in Tausend Litern & \leerzelle & 49,9 & 51,9 & \leerzelle\\\hline\end{tabular}}}\par
+\karo{3}
+\fusshilfe{\mbox{1:~2018: 48; 2021: 54,0}}
+\end{pfaufg}
+% 2019-OS-K7a-m1 (Schwere I, rang 7)
+\begin{pfaufg}{nach~P10\\’19~\pkt{}~7a}{2.}{}
+Ein Ferkel wiegt 12 kg. Aus Erfahrung weiß man, dass seine Masse jede Woche um etwa 5 \% zunimmt. Zu Beginn jeder Woche wird es gewogen. Trag die drei fehlenden Werte in die Tabelle ein.
+\par\smallskip\noindent\gpassend{{\small\renewcommand{\arraystretch}{1.25}\begin{tabular}{|l|c|c|c|c|c|}\hline Zeit in Wochen & 0 & 1 & 2 & \dots & 5\\\hline Masse in kg & \leerzelle & 12,600 & \leerzelle & -- & \leerzelle\\\hline\end{tabular}}}\par
+\karo{4}
+\fusshilfe{\mbox{2:~0: 12 kg; 2: 13,230 kg; 15,315 kg}}
+\end{pfaufg}
+% 2018-OS-K2a-m1 (Schwere I, rang 8)
+\begin{pfaufg}{nach~P10\\’18~\pkt{}~2a}{3.}{}
+Ein junges Berliner Unternehmen zeigt in einer Tabelle, wie sein Umsatz gewachsen ist: 2013: 450 000 €, 2014: 477 000 €, 2015: 505 620 €, 2016: 535 957 €, 2017: 568 115 €. Es behauptet, der Umsatz wachse jedes Jahr um 6 \%. Zeige, dass das für 2014 stimmt.
+\par\smallskip\noindent\gpassend{{\small\renewcommand{\arraystretch}{1.25}\begin{tabular}{|l|r|r|r|r|r|}\hline Jahr & 2013 & 2014 & 2015 & 2016 & 2017\\\hline Umsatz in € & 450\,000 & 477\,000 & 505\,620 & 535\,957 & 568\,115\\\hline\end{tabular}}}\par
+\karo{2}
+\fusshilfe{\mbox{3:~477000 €}}
+\end{pfaufg}
+% 2017-OS-K7c-m1 (Schwere I, rang 9)
+\begin{pfaufg}{nach~P10\\’17~\pkt{}~7c}{4.}{}
+Auf Meereshöhe (0 km) misst man einen Luftdruck von ungefähr 1000 hPa (Hektopascal). Je höher man steigt, desto kleiner wird der Luftdruck: mit jedem Kilometer Höhe um 11 \%. Die Abnahme des Luftdrucks lässt sich mit einer Gleichung beschreiben ($x$: Höhe in km, $y$: Luftdruck in hPa). Kreuze die richtige an:
+\par\smallskip\noindent\pfkreuz{A}{$y = 0{,}89 \cdot x$}\pfkreuz{B}{$y = 1000 \cdot 0{,}89^x$}\pfkreuz{C}{$y = x^{1{,}11}$}\pfkreuz{D}{$y = 1000 \cdot 1{,}11^x$.}
+\fusshilfe{\mbox{4:~1000 · $0{,}89^{x}$}}
+\end{pfaufg}
+% 2021-OS-K6b-m1 (Schwere II, rang 10)
+\begin{pfaufg}{nach~P10\\’21~\pkt{}~6b}{5.}{}
+Eine 36 cm hohe Kerze brennt ab. Gegeben: Tabelle Zeit in Minuten 0, 10, 20, 30, 40, 80; Höhe in cm 36, 33, 30, 27, 24, 12. Stelle diese Werte als Graph im Koordinatensystem dar. Trag dazu zuerst die fehlende Einteilung der Achsen ein.
+\par\smallskip\noindent\gpassend{\begin{tikzpicture}[x=0.45cm,y=0.45cm,line width=0.6pt]\draw[black!20,line width=0.3pt] (-1,-1) grid[step=1] (24,22);\draw[-{Stealth[length=2mm]}] (-1,0) -- (23.8,0) node[below left,font=\small,inner sep=2pt,yshift=-3pt] {Zeit in Minuten};\draw[-{Stealth[length=2mm]}] (0,-1) -- (0,21.8) node[right,font=\small,inner sep=3pt] {Höhe in cm};\end{tikzpicture}}\par
+\karo{2}
+\fusshilfe{\mbox{5:~2 cm)}}
+\end{pfaufg}
+% 2019-OS-K7b-m1 (Schwere II, rang 11)
+\begin{pfaufg}{nach~P10\\’19~\pkt{}~7b}{6.}{}
+Ein Ferkel wiegt 12 kg. Aus Erfahrung weiß man, dass seine Masse jede Woche um etwa 5 \% zunimmt. Zu Beginn jeder Woche wird es gewogen. Die Bäuerin Wilma berechnet die Masse des Ferkels nach $x$ Wochen mit $f(x) = 12 \cdot 1{,}05^x$. Schreib auf, was $12$, $1{,}05$ und $x$ in dieser Gleichung bedeuten.
+\par\smallskip\noindent\gpassend{{\small\renewcommand{\arraystretch}{1.25}\begin{tabular}{|c|p{9cm}|}\hline Teil der Gleichung & Bedeutung\\\hline \rule[-2.5ex]{0pt}{6.5ex}$12$ & \\\hline \rule[-2.5ex]{0pt}{6.5ex}$1{,}05$ & \\\hline \rule[-2.5ex]{0pt}{6.5ex}$x$ & \\\hline\end{tabular}}}\par
+\karo{4}
+\fusshilfe{\mbox{6:~x: Zeit in Wochen (Anzahl der Wochen)}}
+\end{pfaufg}
+% 2017-OS-K7a-m1 (Schwere II, rang 12)
+\begin{pfaufg}{nach~P10\\’17~\pkt{}~7a}{7.}{}
+Auf Meereshöhe (0 km) misst man einen Luftdruck von ungefähr 1000 hPa (Hektopascal). Je höher man steigt, desto kleiner wird der Luftdruck: mit jedem Kilometer Höhe um 11 \%. Trag die beiden fehlenden Werte in die Tabelle ein.
+\par\smallskip\noindent\gpassend{{\small\renewcommand{\arraystretch}{1.25}\begin{tabular}{|l|c|c|c|c|c|c|c|}\hline Höhe in km & 0 & 1 & 2 & 3 & 5 & 8 & 10\\\hline Luftdruck in hPa & 1000 & 890 & \leerzelle & 705 & 558 & \leerzelle & 312\\\hline\end{tabular}}}\par
+\karo{3}
+\fusshilfe{\mbox{7:~792 hPa; 394 hPa}}
+\end{pfaufg}
+% 2017-OS-K7b-m1 (Schwere II, rang 13)
+\begin{pfaufg}{nach~P10\\’17~\pkt{}~7b}{8.}{}
+Auf Meereshöhe (0 km) misst man einen Luftdruck von ungefähr 1000 hPa (Hektopascal). Je höher man steigt, desto kleiner wird der Luftdruck: mit jedem Kilometer Höhe um 11 \%. Vervollständige das Koordinatensystem und zeichne den Luftdruck in Abhängigkeit von der Höhe. Gegeben: 0 km: 1000 hPa; 1 km: 890 hPa; 2 km: 792 hPa; 3 km: 705 hPa; 5 km: 558 hPa; 8 km: 394 hPa; 10 km: 312 hPa.
+\par\smallskip\noindent\gpassend{\begin{tikzpicture}[x=0.45cm,y=0.45cm,line width=0.6pt]\draw[black!20,line width=0.3pt] (-2,-2) grid[step=1] (22,22);\draw[-{Stealth[length=2mm]}] (-2,0) -- (21.8,0);\draw[-{Stealth[length=2mm]}] (0,-2) -- (0,21.8);\end{tikzpicture}}\par
+\karo{4}
+\fusshilfe{\mbox{8:~x-Achse Höhe in km, 2 Kästchen je km; y-Achse Luftdruck in hPa, 1 Kästchen je 50 hPa; sieben Punkte, fallende Kurve}}
+\end{pfaufg}
+% 2017-OS-K7d-m1 (Schwere II, rang 14)
+\begin{pfaufg}{nach~P10\\’17~\pkt{}~7d}{9.}{}
+Auf Meereshöhe (0 km) misst man einen Luftdruck von ungefähr 1000 hPa (Hektopascal). Je höher man steigt, desto kleiner wird der Luftdruck: mit jedem Kilometer Höhe um 11 \%. Eine Bergsteigerin misst 627 hPa. Entscheide, ob sie ungefähr 4 km hoch sein kann, und begründe.
+\karo{2}
+\fusshilfe{\mbox{9:~627,4 hPa}}
+\end{pfaufg}
+% 2016-OS-K4a-m1 (Schwere II, rang 15)
+\begin{pfaufg}{nach~P10\\’16~\pkt{}~4a}{10.}{}
+Um Krankheiten der Schilddrüse zu erkennen, spritzt man dem Patienten eine Flüssigkeit, die eine kleine Menge radioaktives Technetium enthält. Die Masse des Technetiums im Körper wird jede Stunde um etwa 9 \% kleiner. Ergänze die beiden Lücken in der Tabelle: die Masse nach 1 Stunde und die Zeit, zu der noch 4,11 mg vorhanden sind.
+\par\smallskip\noindent\gpassend{{\small\renewcommand{\arraystretch}{1.25}\begin{tabular}{|l|c|c|c|c|c|c|c|}\hline Zeit in h & 0 & 1 & 2 & \leerzelle & 5 & 6 & 8\\\hline Masse in mg & 6,00 & \leerzelle & 4,97 & 4,11 & 3,74 & 3,41 & 2,82\\\hline\end{tabular}}}\par
+\karo{3}
+\fusshilfe{\mbox{10:~1 h: 5,46 mg; 4,11 mg bei 4 h}}
+\end{pfaufg}
+% 2016-OS-K4b-m1 (Schwere II, rang 16)
+\begin{pfaufg}{nach~P10\\’16~\pkt{}~4b}{11.}{}
+Um Krankheiten der Schilddrüse zu erkennen, spritzt man dem Patienten eine Flüssigkeit, die eine kleine Menge radioaktives Technetium enthält. Die Masse des Technetiums im Körper wird jede Stunde um etwa 9 \% kleiner. Beschrifte die Achsen des Koordinatensystems passend zur Tabelle und zeichne ein, wie die Masse abnimmt. Gegeben: Tabelle 0 h: 6,00 mg; 1 h: 5,46 mg; 2 h: 4,97 mg; 4 h: 4,11 mg; 5 h: 3,74 mg; 6 h: 3,41 mg; 8 h: 2,82 mg.
+\par\smallskip\noindent\gpassend{\begin{tikzpicture}[x=0.5cm,y=0.5cm,line width=0.6pt]\draw[black!20,line width=0.3pt] (-1,-2) grid[step=1] (18,16);\draw[-{Stealth[length=2mm]}] (-1,0) -- (17.8,0);\draw[-{Stealth[length=2mm]}] (0,-2) -- (0,15.8);\foreach \i in {1,...,8}{\draw ({2*\i},0.25) -- ({2*\i},-0.25);}\foreach \i in {1,...,7}{\draw (0.25,{2*\i}) -- (-0.25,{2*\i});}\end{tikzpicture}}\par
+\karo{2}
+\fusshilfe{\mbox{11:~Achsen „Zeit in h“ (1 h je Teilstrich) und „Masse in mg“ (1 mg je Teilstrich), sieben Punkte, glatte fallende Kurve}}
+\end{pfaufg}
+% 2016-OS-K4e-m1 (Schwere II, rang 17)
+\begin{pfaufg}{nach~P10\\’16~\pkt{}~4e}{12.}{}
+Um Krankheiten der Schilddrüse zu erkennen, spritzt man dem Patienten eine Flüssigkeit, die eine kleine Menge radioaktives Technetium enthält. Die Masse des Technetiums im Körper wird jede Stunde um etwa 9 \% kleiner. Zu Beginn sind 6,00 mg im Körper. Berechne, wie viele Milligramm Technetium 24 Stunden nach der Spritze noch im Körper sind.
+\par\smallskip\noindent\gpassend{{\small\renewcommand{\arraystretch}{1.25}\begin{tabular}{|l|c|c|c|c|c|c|c|}\hline Zeit in h & 0 & 1 & 2 & \leerzelle & 5 & 6 & 8\\\hline Masse in mg & 6,00 & \leerzelle & 4,97 & 4,11 & 3,74 & 3,41 & 2,82\\\hline\end{tabular}}}\par
+\karo{2}
+\fusshilfe{\mbox{12:~0,62 mg}}
+\end{pfaufg}
+% 2019-OS-K7c-m1 (Schwere III, rang 18)
+\begin{pfaufg}{nach~P10\\’19~\pkt{}~7c}{13.}{}
+Ein Ferkel wiegt 12 kg. Aus Erfahrung weiß man, dass seine Masse jede Woche um etwa 5 \% zunimmt. Zu Beginn jeder Woche wird es gewogen. Für jeden der drei Graphen: Entscheide, ob er zum Wachstum des Ferkels passt, und begründe.
+\par\smallskip\noindent\gpassend{\begin{tabular}[b]{@{}c@{}}\begin{tikzpicture}[x=0.5cm,y=0.5cm,line width=0.5pt]\draw[black!20,line width=0.3pt,step=0.5] (0,0) grid (4.5,3.5);\draw[-{Stealth[length=1.5mm]}] (0,0)--(4.8,0);\draw[-{Stealth[length=1.5mm]}] (0,0)--(0,3.8);\node[below,font=\tiny] at (2.4,0) {Zeit in Wochen};\node[right,font=\tiny] at (0,3.8) {Masse in kg};\draw[line width=0.8pt] (0,1)--(4.2,3.2);\end{tikzpicture}\\ \textsf{A}\end{tabular}\quad\begin{tabular}[b]{@{}c@{}}\begin{tikzpicture}[x=0.5cm,y=0.5cm,line width=0.5pt]\draw[black!20,line width=0.3pt,step=0.5] (0,0) grid (4.5,3.5);\draw[-{Stealth[length=1.5mm]}] (0,0)--(4.8,0);\draw[-{Stealth[length=1.5mm]}] (0,0)--(0,3.8);\node[below,font=\tiny] at (2.4,0) {Zeit in Wochen};\node[right,font=\tiny] at (0,3.8) {Masse in kg};\draw[line width=0.8pt,domain=0:4.2,samples=40,smooth] plot (\x,{1*exp(0.28*\x)});\end{tikzpicture}\\ \textsf{B}\end{tabular}\quad\begin{tabular}[b]{@{}c@{}}\begin{tikzpicture}[x=0.5cm,y=0.5cm,line width=0.5pt]\draw[black!20,line width=0.3pt,step=0.5] (0,0) grid (4.5,3.5);\draw[-{Stealth[length=1.5mm]}] (0,0)--(4.8,0);\draw[-{Stealth[length=1.5mm]}] (0,0)--(0,3.8);\node[below,font=\tiny] at (2.4,0) {Zeit in Wochen};\node[right,font=\tiny] at (0,3.8) {Masse in kg};\draw[line width=0.8pt,domain=0:4.2,samples=40,smooth] plot (\x,{0.35*(exp(0.55*\x)-1)});\end{tikzpicture}\\ \textsf{C}\end{tabular}}\par
+\karo{4}
+\fusshilfe{\mbox{13:~Graph 3 passt nicht: beginnt bei 0 kg statt 12 kg}}
+\end{pfaufg}
+\par\vfill\noindent{\scriptsize\color{mbgrau}Originale: P10 2020 \pkt{} 4a, P10 2019 \pkt{} 7a, P10 2018 \pkt{} 2a, P10 2017 \pkt{} 7c, P10 2021 \pkt{} 6b, P10 2019 \pkt{} 7b, P10 2017 \pkt{} 7a, P10 2017 \pkt{} 7b, P10 2017 \pkt{} 7d, P10 2016 \pkt{} 4a, P10 2016 \pkt{} 4b, P10 2016 \pkt{} 4e, P10 2019 \pkt{} 7c\par}
+\end{document}
