@@ -5050,6 +5050,8 @@ MEHR_PRAEAMBEL = r"""\makeatletter
 \newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
 \newcommand{\pkt}{\textperiodcentered{}}
 """
+MEHR_BE_NULL = r"""\makeatletter\setlength{\mbpfbe}{0mm}\makeatother
+"""   # v0.15: Mehr nutzt die Präambel der Blätter (Skizzen)
 MEHR_STUFEN = ('I', 'II', 'III')
 MEHR_MIN, MEHR_MAX = 6, 8   # Aufgaben je Portion (Auftrag 11.10.)
 
@@ -5186,7 +5188,18 @@ def mehr_aufgabe_tex(r, nr, faktor=1.0):
     t = tx(text).replace('\x00', '\\linie{25mm}')
     out = [f'\\begin{{pfaufg}}{{{mehr_marke(r)}}}{{{nr}.}}{{}}', t]
     ergebnisse, _ = mehr_loesung(r)
-    if r.get('abbildung', '').strip():
+    grafik = (r.get('grafik') or '').strip()
+    if grafik:
+        # v0.15 (15.10.): gezeichnete Skizze statt der kursiven Beschreibung (plan.md § 10, 15.10. i, Weg A);
+        # mehrere Bilder („||“) nebeneinander mit Buchstaben, wie auf dem Blatt
+        bilder = [b.strip() for b in grafik.split('||')]
+        if len(bilder) > 1:
+            out.append('\\par\\smallskip\\noindent\\gpassend{' + '\\quad'.join(
+                f'\\begin{{tabular}}[b]{{@{{}}c@{{}}}}{b}\\\\ \\textsf{{{"ABCDEFGH"[i]}}}\\end{{tabular}}'
+                for i, b in enumerate(bilder)) + '}\\par')
+        else:
+            out.append('\\par\\smallskip\\noindent\\gpassend{' + grafik + '}\\par')
+    elif r.get('abbildung', '').strip():
         abb = r['abbildung'].strip()
         if '$' not in abb:   # v0.14: Hochzahl im Klartext der Abbildung („(x+3)^2“) als Formel (Mehr --alle, 14.10.)
             abb = re.sub(r'\^(\d+|\{[^}]*\})', lambda m: '$^{' + m.group(1).strip('{}') + '}$', abb)
@@ -5246,7 +5259,7 @@ def mehr_anzeige(mn, kapitel, einheit):
 def mehr_blatt_tex(einheit, kenn, p, anz, folge, faktor=1.0):
     stufen = list(OrderedDict((MEHR_ANZEIGE.get(r.get('stufe', '').strip(), r.get('stufe', '').strip()), 1)
                               for r in folge if r.get('stufe', '').strip()))
-    out = [KOPF.replace('\\begin{document}', MEHR_PRAEAMBEL + '\\begin{document}'), '\\pfheftstil',
+    out = [KOPF.replace('\\begin{document}', P_PRAEAMBEL + MEHR_BE_NULL + '\\begin{document}'), '\\pfheftstil',
            f'\\pflaufkopf[P10 \\pkt{{}} mehr]{{{tx(einheit)}}}{{{kenn}}}\\pfseitevon',
            f'\\pfheftkopf{{{tx(einheit)}}}{{{"mehr" if p is None else f"Portion {p} von {anz}"}}}']
     if stufen:
@@ -5261,7 +5274,7 @@ def mehr_blatt_tex(einheit, kenn, p, anz, folge, faktor=1.0):
 
 
 def mehr_loesung_tex(einheit, kenn, p, anz, folge):
-    out = [KOPF.replace('\\begin{document}', MEHR_PRAEAMBEL + '\\begin{document}'), '\\pfheftstil',
+    out = [KOPF.replace('\\begin{document}', P_PRAEAMBEL + MEHR_BE_NULL + '\\begin{document}'), '\\pfheftstil',
            f'\\pflaufkopf[P10 \\pkt{{}} mehr]{{{tx(einheit)} \\pkt{{}} Lösungen}}{{{kenn}}}\\pfseitevon',
            f'\\pfheftkopf{{{tx(einheit)}}}{{Lösungen \\pkt{{}} ' + ('mehr' if p is None else f'Portion {p} von {anz}') + '}']
     for i, r in enumerate(folge, 1):
