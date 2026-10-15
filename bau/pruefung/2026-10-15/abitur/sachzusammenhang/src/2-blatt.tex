@@ -121,7 +121,7 @@ Gegeben ist die Funktion $f$ mit $f(x) = x^3 - 9x^2 + 24x - 16$. Ihr Graph hat d
 % 2026-bb-gk-A1.4a-m1 (Original 2026-bb-gk-A1.4a, Schwere I, rang 4; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’26\\A1.4a}{4.}{\pfohnetr}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = 2\sin x$. Die Eckpunkte des Dreiecks $ABC$ in der Abbildung sind drei direkt aufeinanderfolgende Extrempunkte des Graphen: $A\left(\tfrac{\pi}{2} \mid 2\right)$, $B\left(\tfrac{3\pi}{2} \mid -2\right)$, $C\left(\tfrac{5\pi}{2} \mid 2\right)$. Berechne den Flächeninhalt des Dreiecks $ABC$.
-\gzwei{\begin{abiksys}[xmin=0,xmax=9.6,ymin=-2.6,ymax=2.6,le=0.45,yle=0.4,ohnezahlen]\draw[mbterm,dashed,line width=0.8pt,domain=0:9.5,samples=100,smooth,variable=\u] plot (\u,{2*sin(deg(\u))});\draw[line width=0.8pt] (1.5708,2) -- (4.7124,-2) -- (7.854,2) -- cycle;\fill (1.5708,2) circle (1.6pt) node[above] {$A$};\fill (4.7124,-2) circle (1.6pt) node[below] {$B$};\fill (7.854,2) circle (1.6pt) node[above] {$C$};\end{abiksys}}{\karo{4}}
+\gzwei{\begin{abiksys}[xmin=0,xmax=9.6,ymin=-3.3,ymax=3.3,le=0.45,yle=0.4,ohnezahlen]\draw[mbterm,dashed,line width=0.8pt,domain=0:9.5,samples=100,smooth,variable=\u] plot (\u,{2*sin(deg(\u))});\draw[line width=0.8pt] (1.5708,2) -- (4.7124,-2) -- (7.854,2) -- cycle;\fill (1.5708,2) circle (1.6pt) node[above] {$A$};\fill (4.7124,-2) circle (1.6pt) node[below] {$B$};\fill (7.854,2) circle (1.6pt) node[above] {$C$};\end{abiksys}}{\karo{4}}
 \fusshilfe{\gfuss{4}{4; 4$\pi$}}
 \end{pfaufg}
 % 2022-bebb-gk-B2.1k-m1 (Original 2022-bebb-gk-B2.1k, Schwere II, rang 5; herausgelöste Fassung: keine)
@@ -136,7 +136,7 @@ Ein Tauchroboter bewegt sich nur senkrecht. Sein Abstand zur Wasseroberfläche i
 \vspace*{-\baselineskip}\vspace*{-\smallskipamount}
 \begin{gbteil}{a)}{\raisebox{\dimexpr-\height+\ht\strutbox\relax}{\shortstack[r]{GK~’26\\B2.1f}}}{}
 Der Schienenverlauf einer Modelleisenbahn ist in der Draufsicht symmetrisch zur $x$- und zur $y$-Achse (Abbildung, 1 LE = 1 m). Der obere Verlauf wird für $-1 \le x \le 0$ durch den Graphen $G$ von $g$ mit $g(x) = \tfrac{8}{3}x^3 + 4x^2$ beschrieben; er beginnt in $A\left(-1 \mid \tfrac{4}{3}\right)$. Oberer und unterer Verlauf sind durch zwei Halbkreise um $(\pm 1 \mid 0)$ verbunden. Weise nach, dass der Schienenverlauf auf eine Holzplatte mit 2,7 m × 4,7 m passt.
-\gzwei{\begin{abiksys}[xmin=-2.6,xmax=2.6,ymin=-1.6,ymax=1.6,le=0.9,xstep=0.5,ystep=0.5]\funktionab[-0.75]{8/3*\x^3+4*\x^2}{G}{-1}{0}\funktionab{-8/3*\x^3+4*\x^2}{}{0}{1}\funktionab{-8/3*\x^3-4*\x^2}{}{-1}{0}\funktionab{8/3*\x^3-4*\x^2}{}{0}{1}\draw[mbterm,line width=0.8pt] (-1,4/3) arc[start angle=90,end angle=270,radius=4/3];\draw[mbterm,line width=0.8pt] (1,-4/3) arc[start angle=-90,end angle=90,radius=4/3];\fill (-1,4/3) circle (1.6pt) node[above] {$A$};\end{abiksys}}{\karo{4}}
+\gzwei{\begin{abiksys}[xmin=-2.6,xmax=2.6,ymin=-1.9,ymax=1.9,le=0.9,xstep=0.5,ystep=0.5]\funktionab[-0.75]{8/3*\x^3+4*\x^2}{G}{-1}{0}\funktionab{-8/3*\x^3+4*\x^2}{}{0}{1}\funktionab{-8/3*\x^3-4*\x^2}{}{-1}{0}\funktionab{8/3*\x^3-4*\x^2}{}{0}{1}\draw[mbterm,line width=0.8pt] (-1,4/3) arc[start angle=90,end angle=270,radius=4/3];\draw[mbterm,line width=0.8pt] (1,-4/3) arc[start angle=-90,end angle=90,radius=4/3];\fill (-1,4/3) circle (1.6pt) node[above] {$A$};\end{abiksys}}{\karo{4}}
 \end{gbteil}
 % 2026-bb-gk-B2.1i-m1 (Original 2026-bb-gk-B2.1i, Schwere II, rang 7; herausgelöste Fassung: keine)
 \begin{gbteil}{b)}{\raisebox{\dimexpr-\height+\ht\strutbox\relax}{\shortstack[r]{GK~’26\\B2.1i}}}{}
