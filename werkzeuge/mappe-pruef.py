@@ -7,6 +7,9 @@ sie trägt; mit --seiten N die Seitenzahl. Mit --fund: jede Fundstelle aus mathe
 Datums) steht im Fundstellenregister. Mit --oeffentlich: das PDF enthält keinen Wortlaut der Originale (Satzvergleich
 gegen aufgabenbank-privat, Sätze ab 40 Zeichen ohne Zahlen-Unterschied).
   python3 werkzeuge/mappe-pruef.py <pdf> [--seiten 372] [--fund --datum 2026-10-14] [--oeffentlich]
+--pruefung abitur (15.10.2026, Mappe Abitur GK aus mappe-abi.py): Kennungen aus abitur/gliederung/*.md, Fundstellen
+(„GK ’24 · B2.1a“) aus abitur/mehr-abi-gk/*.csv, Wortlaut gegen aufgabenbank-privat abitur/wortlaut-*.csv.
+  python3 werkzeuge/mappe-pruef.py <pdf> --pruefung abitur --fund [--oeffentlich]
 """
 import argparse, csv, glob, json, os, re, sys
 import pypdf
@@ -59,12 +62,14 @@ def links(pdf):
     return n, lz, kaputt, len(r.pages)
 
 
-def kennungen_soll(mn):
-    """Kennungen der Einheiten aus msa/gliederung/*.md (Zeile „Kennung: <Zuschnitt> = PG50“)."""
+def kennungen_soll(mn, pruefung='p10'):
+    """Kennungen der Einheiten aus msa/gliederung/*.md (Zeile „Kennung: <Zuschnitt> = PG50“), Abitur aus
+    abitur/gliederung/*.md („Kennung: Nullstellen = AA20“)."""
     soll = set()
-    for f in glob.glob(os.path.join(mn, 'msa', 'gliederung', '*.md')):
+    ordner, muster = ('abitur', r'A[A-Z]\d{2,3}') if pruefung == 'abitur' else ('msa', r'P[A-Z]\d{2,3}')
+    for f in glob.glob(os.path.join(mn, ordner, 'gliederung', '*.md')):
         for z in open(f, encoding='utf-8'):
-            m = re.match(r'^Kennung:\s.*=\s*(P[A-Z]\d{2,3})\s*$', z.strip())
+            m = re.match(r'^Kennung:\s.*=\s*(' + muster + r')\s*$', z.strip())
             if m:
                 soll.add(m.group(1))
     return soll
@@ -92,7 +97,7 @@ def kennungen(pdf, soll, vorn=12):
             if a.get('/Subtype') == '/Link' and isinstance(ziel, list) and ziel:
                 marken.append((float(a['/Rect'][1]), float(a['/Rect'][3]), idx.get(getattr(ziel[0], 'idnum', None))))
         for y, z in zeilen.items():
-            for k in re.findall(r'P[A-Z]\d{2,3}', re.sub(r'\s+', '', z)):
+            for k in re.findall(r'[PA][A-Z]\d{2,3}', re.sub(r'\s+', '', z)):
                 if k not in soll or gefunden.get(k) is True:
                     continue
                 ziele = [t for (u, o, t) in marken if u - 2 <= y <= o + 2 and t is not None]
@@ -131,9 +136,38 @@ def fund(pdf, mn, datum):
     return len(ids), fehlt
 
 
-def oeffentlich(pdf, privat):
+ABI_GK = re.compile(r'^(\d{4})-(?:bebb|bb|be)-gk(?:-cas)?-([AB]\d+(?:\.\d+)?[a-z]?)$')
+
+
+def fund_abi(pdf, mn):
+    """Abitur: jede Fundstelle der GK-Hefte aus abitur/mehr-abi-gk/*.csv steht im Register als „GK ’24 · B2.1a“
+    mit Blatt- oder Mehr-Seite."""
+    text = re.sub(r'\s+', '', '\n'.join(p.extract_text() for p in pypdf.PdfReader(pdf).pages[-12:])).replace("'", '’')
+    ids = set()
+    for f in glob.glob(os.path.join(mn, 'abitur', 'mehr-abi-gk', '*.csv')):
+        for z in csv.DictReader(open(f, encoding='utf-8'), delimiter=';'):
+            if ABI_GK.match((z.get('eltern_id') or '').strip()):
+                ids.add(z['eltern_id'].strip())
+    fehlt = []
+    for i in sorted(ids):
+        j, st = ABI_GK.match(i).groups()
+        if not re.search(re.escape(f'GK’{j[2:]}·{st}') + r'(?:Blatt|Mehr)\d', text):
+            fehlt.append(i)
+    return len(ids), fehlt
+
+
+def oeffentlich(pdf, privat, pruefung='p10'):
     saetze = set()
-    for n in ('basis-originale.jsonl', 'hauptteil-originale.jsonl'):
+    if pruefung == 'abitur':
+        # Wortlaut der Abitur-Originale liegt nur privat (abitur/wortlaut-*.csv, Spalte wortlaut)
+        for f in glob.glob(os.path.join(privat, 'abitur', 'wortlaut-*.csv')):
+            for z in csv.DictReader(open(f, encoding='utf-8'), delimiter=';'):
+                s = re.sub(r'\\[a-zA-Z]+|[{}$~\\]', ' ', z.get('wortlaut') or '')
+                for satz in re.split(r'(?<=[.?!:])\s+', s):
+                    satz = re.sub(r'\s+', ' ', satz).strip()
+                    if len(satz) >= 40 and re.search(r'\d', satz):
+                        saetze.add(re.sub(r'\s+', '', satz).lower())
+    for n in (() if pruefung == 'abitur' else ('basis-originale.jsonl', 'hauptteil-originale.jsonl')):
         for l in open(os.path.join(privat, n), encoding='utf-8'):
             z = json.loads(l)
             for feld in ('stamm', 'aufgabe'):
@@ -152,6 +186,7 @@ def main():
     ap.add_argument('--fund', action='store_true')
     ap.add_argument('--oeffentlich', action='store_true')
     ap.add_argument('--datum', default='2026-10-14')
+    ap.add_argument('--pruefung', choices=['p10', 'abitur'], default='p10', help='Mappe P10 (Vorgabe) oder Abitur GK')
     ap.add_argument('--seiten', type=int, default=0, help='erwartete Seitenzahl (0: nicht prüfen)')
     ap.add_argument('--mn', default=os.path.join(ELTERN, 'mathe-nachhilfe'))
     ap.add_argument('--privat', default=os.path.join(ELTERN, 'aufgabenbank-privat'))
@@ -164,19 +199,19 @@ def main():
     if a.seiten and s != a.seiten:
         print(f'Seitenzahl {s}, erwartet {a.seiten}')
         rc = True
-    soll = kennungen_soll(a.mn)
+    soll = kennungen_soll(a.mn, a.pruefung)
     fk = kennungen(a.pdf, soll)
-    print(f'Kennungen aus msa/gliederung: {len(soll)}, ohne Ziel im Inhalt {len(fk)}')
+    print(f'Kennungen aus {"abitur" if a.pruefung == "abitur" else "msa"}/gliederung: {len(soll)}, ohne Ziel im Inhalt {len(fk)}')
     for k, b in fk.items():
         print(f'  {k}: {b}')
     rc |= bool(fk)
     if a.fund:
-        m, fehlt = fund(a.pdf, a.mn, a.datum)
-        print(f'Fundstellen: {m} Originale aus mehr-p10 und Register, fehlen im Register {len(fehlt)}'
+        m, fehlt = fund_abi(a.pdf, a.mn) if a.pruefung == 'abitur' else fund(a.pdf, a.mn, a.datum)
+        print(f'Fundstellen: {m} Originale aus {"mehr-abi-gk" if a.pruefung == "abitur" else "mehr-p10 und Register"}, fehlen im Register {len(fehlt)}'
               + (': ' + ' '.join(fehlt[:20]) if fehlt else ''))
         rc |= bool(fehlt)
     if a.oeffentlich:
-        t = oeffentlich(a.pdf, a.privat)
+        t = oeffentlich(a.pdf, a.privat, a.pruefung)
         print(f'Originalwortlaut (Sätze mit Zahl, ab 40 Zeichen): {len(t)} Treffer')
         rc |= bool(t)
     sys.exit(1 if rc else 0)
