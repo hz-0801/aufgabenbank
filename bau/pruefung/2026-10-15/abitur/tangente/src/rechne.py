@@ -16,9 +16,10 @@ f = x**3-9*x**2+24*x-16; m, y0, tt = tang(f, 0); assert tt == 24*x-16 and factor
 h = 6*t*exp(-t/20)+40; hp = diff(h, t); m = hp.subs(t, 60); n = h.subs(t, 60)-60*m
 print('2019-B2.2f m', N(m, 4), 'n', N(n, 5), 'g<=40 ab', simplify((40-n)/m))
 assert simplify((40-n)/m) == 90
-f = -x**3/60+Rational(3, 20)*x**2+x/10+Rational(1, 10); fp = diff(f, x)
-assert solve(diff(fp, x), x) == [3] and fp.subs(x, 3) == Rational(11, 20)
-print('2020-B2.2h', solve(Eq(fp, -Rational(11, 20)), x), [N(s, 3) for s in solve(Eq(fp, -Rational(11, 20)), x)])
+f = -Rational(2, 100)*(x - 6)*(x + 2)**2; fp = diff(f, x)
+assert expand(f - (-x**3/50 + x**2/25 + 2*x/5 + Rational(12, 25))) == 0
+assert solve(diff(fp, x), x) == [Rational(2, 3)] and fp.subs(x, Rational(2, 3)) == Rational(32, 75)
+print('2020-B2.2h', solve(Eq(fp, -Rational(32, 75)), x), [N(s, 3) for s in solve(Eq(fp, -Rational(32, 75)), x)])
 f = 4*exp(-x/2); assert tang(f, 0)[2] == -2*x+4                                  # IQB 2017 A11a
 r = -(x**2-2*x-1); s = exp(2*x); assert r.subs(x, 0) == s.subs(x, 0) == 1 and diff(r, x).subs(x, 0) == diff(s, x).subs(x, 0) == 2  # IQB 2023
 print('ok')

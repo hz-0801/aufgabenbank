@@ -21,5 +21,5 @@ print('2024-B2.1d f\'(9)', fp.subs(x, 9), 'AB', (E-0)/(4-3), 'Produkt', simplify
 h = -x**3/16+Rational(3, 8)*x**2; assert h.subs(x, 4) == 2 and simplify(h-Rational(9, 8)*(-x**3/18+x**2/3)) == 0
 s = solve(Eq(diff(h, x), Rational(1, 2)), x); print('2022-B2.2j x0', s, [N(v, 3) for v in s])
 assert solve(Eq(-2*x, x/2-1), x) == [Rational(2, 5)]
-b = symbols('b', positive=True); hh = -Rational(2, 3)*x*exp(-x/5)
-print('2021-B2.2f', diff(hh, x).subs(x, 0), solve(Eq(b**2/3, 48), b))
+b = symbols('b', positive=True); hh = -x*exp(-x/5)
+print('2021-B2.2f', diff(hh, x).subs(x, 0), solve(Eq(b**2/2, 32), b))
