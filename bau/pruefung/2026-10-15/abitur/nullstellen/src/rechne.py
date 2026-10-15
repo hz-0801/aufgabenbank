@@ -10,7 +10,7 @@ f=x**3-10*x**2+21*x; p('NS',solve(f,x), factor(f))
 # B4 2023-B2.2a
 f=x**3-9*x**2+24*x-16; p('fakt',factor(f), expand((x-4)*(x**2-5*x+4))==f, 'f0',f.subs(x,0), solve(f,x))
 # B5 2024-B2.2b
-f=Rational(1,2)*x**4-3*x**2+Rational(5,2); p('f(1)',f.subs(x,1),'f(-x)=f',simplify(f.subs(x,-x)-f)==0, solve(f,x), solve(Rational(1,2)*u**2-3*u+Rational(5,2),u))
+f=x**4-6*x**2+5; p('f(1)',f.subs(x,1),'f(-x)=f',simplify(f.subs(x,-x)-f)==0, solve(f,x), solve(u**2-6*u+5,u))
 # B6 2026-B2.2a
 f=2*exp(x)+3; p('min', limit(f,x,-oo))
 # B7 2024-B2.1a
