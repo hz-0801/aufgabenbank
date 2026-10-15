@@ -1,0 +1,12 @@
+{
+ "kennung": "PG30-2", "name": "Vierecke",
+ "seiten": {"19": "Blatt S. 1", "21": "Mehr S. 1"},
+ "antworten": {
+  "19": [
+   ["ändern", "Knapp ist es, und das verstößt schon gegen eine Regel: Einheiten mit höchstens vier Originalen in fünf Jahren werden Stufe der Nachbareinheit. Vierecke hat eins (’26 · 1c), Symmetrie zwei (’22 · 1i, ’25 · 2a). Mein Vorschlag: beide zu einem Blatt „Vierecke und Symmetrie“ mit zwei Abschnitten, A Eigenschaften prüfen, B Symmetrieachsen gesucht – fünf Originale mit den älteren, eine Seite. Weglassen würde ich es nicht: ’26 · 1c ist der jüngste Jahrgang. Ein Lernblatt „Figuren und Körper unterscheiden“ (Quadrat, Würfel, Raute, Parallelogramm) gehört zur Sorte Schulstoff, nicht aufs Prüfungsblatt – ich trage es unter „Später“ ein."]
+  ],
+  "21": [
+   ["ändern", "Es gibt keine solche Regel; bisher heißt es nur „Ältere ins Mehr“. Neue Regel (Warum – Beispiel – Grenze): Warum: Ein Mehr mit zwei Aufgaben ist ein eigenes Blatt für fast nichts; der Schüler soll alles zum Handgriff auf einmal sehen. Beispiel: Vierecke – zwei ältere Originale mit aufs Blatt, als letzter Abschnitt „Ältere Prüfungsaufgaben“. Grenze: nur solange das Blatt zwei Seiten hält; sonst bleibt das Mehr. Dazu ein Handwerksfehler: Die Symmetrie-Aufgabe ’21 · 1j steht hier im Mehr von Vierecke statt bei Symmetrie, ebenso die Stufe in der Kopfzeile."]
+  ]
+ }
+}
