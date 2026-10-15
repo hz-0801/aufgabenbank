@@ -33,6 +33,10 @@ bau/pruefheft/<kapitel>-<art>[-p<n>|-fokus-<wort>][-ebr]-<datum>/ (Unterordner s
   rechts oben mit Fassung „PG50-3“; Stufenkopf mit fünf Punkten für die letzten fünf Jahre (voll = geprüft, nur
   P10-Hefte), sind alle leer „zuletzt 19“; kein „fast immer“, keine Jahresliste. --art mehr --alle: alle Zeilen der
   Einheit (auf_blatt = nein) nach rang, ohne Portionen (Mappe P10)
+  v0.16 (15.10.2026, plan.md § 7 M5): --pruefung abitur --art p --einheit "<### der Gliederung>": Abitur-GK-Blatt aus
+  abitur/gliederung/<kapitel>.md und abitur/mehr-abi-gk/<kapitel>.csv (p_bau_abi): Kopf „Abitur GK · Prüfung“, Marke
+  „GK ’24“ / „B2.1a“, Punkte über die GK-Hefte 2022–2026, Fundstellen nach GK-Heften, dazu 4-mehr und 5-mehr-loesungen;
+  Grafik über die Spalte grafik mit abiksys, ksys3 (\\rstrecke, \\rvieleck), \\baumabi (mathblatt.sty 2026-10-15)
   Pfade: --mn ../mathe-nachhilfe --bb ../blattbau (Voreinstellung: Nachbarordner des Repos)
 
 Daten (alle gelesen; geschrieben wird nur bau/register.csv, eine Zeile je Bau):
@@ -307,6 +311,7 @@ PROFIL = {
                    papiere=lambda r: re.search(r'-(bebb|bb)-gk$', r['papier']) is not None,
                    stern=False, pruefstein=False, kennung='KUR-PH'),
 }
+PROFIL['abitur'] = PROFIL['abi-gk']   # v0.16: Name wie „Prüfung: abitur“ der Gliederung
 
 
 class Daten:
@@ -5139,6 +5144,9 @@ def mehr_marke(r):
     m = (r.get('marke') or '').strip()
     q = (r.get('quelle') or '').strip()
     teil = q.split('·')[-1].strip() if '·' in q else ''
+    if P_SORTE.startswith('Abitur') and teil:
+        # v0.16 (Abitur GK): „GK ’24“ / „B2.1a“ – die Stelle im Heft ist länger als bei P10 und passt nur allein in den Rand
+        return re.sub(r'^nach\s+', r'nach\\\\', m).replace(' ', '~') + f'\\\\{teil}'   # „nach“ in eigener Zeile
     # zwei Zeilen wie im Blatt: „nach P10“ / „’22 · 5b“ (Rand 13 mm; eine Zeile wäre zu breit)
     mm = re.match(r'^(.*?)\s+(’\d\d)$', m)
     if mm:
@@ -5260,7 +5268,7 @@ def mehr_blatt_tex(einheit, kenn, p, anz, folge, faktor=1.0):
     stufen = list(OrderedDict((MEHR_ANZEIGE.get(r.get('stufe', '').strip(), r.get('stufe', '').strip()), 1)
                               for r in folge if r.get('stufe', '').strip()))
     out = [KOPF.replace('\\begin{document}', P_PRAEAMBEL + MEHR_BE_NULL + '\\begin{document}'), '\\pfheftstil',
-           f'\\pflaufkopf[P10 \\pkt{{}} mehr]{{{tx(einheit)}}}{{{kenn}}}\\pfseitevon',
+           f'\\pflaufkopf[{P_SORTE} \\pkt{{}} mehr]{{{tx(einheit)}}}{{{kenn}}}\\pfseitevon',
            f'\\pfheftkopf{{{tx(einheit)}}}{{{"mehr" if p is None else f"Portion {p} von {anz}"}}}']
     if stufen:
         out.append('\\pfstufenzeile{' + ' \\pkt{} '.join(tx(s) for s in stufen) + '}')
@@ -5275,7 +5283,7 @@ def mehr_blatt_tex(einheit, kenn, p, anz, folge, faktor=1.0):
 
 def mehr_loesung_tex(einheit, kenn, p, anz, folge):
     out = [KOPF.replace('\\begin{document}', P_PRAEAMBEL + MEHR_BE_NULL + '\\begin{document}'), '\\pfheftstil',
-           f'\\pflaufkopf[P10 \\pkt{{}} mehr]{{{tx(einheit)} \\pkt{{}} Lösungen}}{{{kenn}}}\\pfseitevon',
+           f'\\pflaufkopf[{P_SORTE} \\pkt{{}} mehr]{{{tx(einheit)} \\pkt{{}} Lösungen}}{{{kenn}}}\\pfseitevon',
            f'\\pfheftkopf{{{tx(einheit)}}}{{Lösungen \\pkt{{}} ' + ('mehr' if p is None else f'Portion {p} von {anz}') + '}']
     for i, r in enumerate(folge, 1):
         ergebnisse, weg = mehr_loesung(r)
@@ -5691,6 +5699,7 @@ def p_jahre(D, z, letzte5, wort=''):
     return jung, alt, (wort if wort in ('immer', 'fast immer') else '')
 
 
+P_SORTE = 'P10'   # Sorte im Laufkopf (v0.16: „Abitur GK“ im Abitur-Pfad, p_bau_abi)
 P_LETZTE5 = [2026, 2025, 2024, 2023, 2022]   # p_bau setzt sie aus den Prüfungsjahren (jüngstes zuerst)
 
 
@@ -6380,7 +6389,7 @@ def p_fundstellen(D, ids, letzte5):
 
 def p_blatt_tex(D, einheit, kenn, stufen_daten, ausschnitt, fund, faktor=1.0, entfallen=()):
     out = [KOPF.replace('\\begin{document}', P_PRAEAMBEL + '\\begin{document}'), '\\pfheftstil',
-           f'\\pflaufkopf[P10 \\pkt{{}} Prüfung]{{{tx(einheit)}}}{{{kenn}}}\\pfseitevon',
+           f'\\pflaufkopf[{P_SORTE} \\pkt{{}} Prüfung]{{{tx(einheit)}}}{{{kenn}}}\\pfseitevon',
            f'\\pfheftkopf{{{tx(einheit)}}}{{{p_jahrkopf()}}}',
            '\\pfstufenzeile{' + ' \\pkt{} '.join(tx(s['anzeige']) for s in stufen_daten) + '}']
     nr = 0
@@ -6434,7 +6443,7 @@ def p_blatt_tex(D, einheit, kenn, stufen_daten, ausschnitt, fund, faktor=1.0, en
 
 def p_loesung_tex(D, einheit, kenn, stufen_daten):
     out = [KOPF.replace('\\begin{document}', P_PRAEAMBEL + '\\begin{document}'), '\\pfheftstil',
-           f'\\pflaufkopf[P10 \\pkt{{}} Prüfung]{{{tx(einheit)} \\pkt{{}} Lösungen}}{{{kenn}}}\\pfseitevon',
+           f'\\pflaufkopf[{P_SORTE} \\pkt{{}} Prüfung]{{{tx(einheit)} \\pkt{{}} Lösungen}}{{{kenn}}}\\pfseitevon',
            f'\\pfheftkopf{{{tx(einheit)}}}{{Lösungen{(" \\pkt{} " + p_jahrkopf()) if p_jahrkopf() else ""}}}',
            '\\pfstufenzeile{' + ' \\pkt{} '.join(tx(s['anzeige']) for s in stufen_daten) + '}']
     for s in stufen_daten:
@@ -6467,7 +6476,7 @@ def p_uebersicht_tex(gl, einheiten, einheit, kenn, stufen_daten, kapitel_namen):
     die gelieferte ▸ fett mit ihren Stufen eingerückt, Einheiten ohne Kern-Stufe grau (Rand);
     davor „Vorher“, danach „Weiter“ = Nachbarkapitel in der Folge."""
     out = [KOPF.replace('\\begin{document}', P_UEBERSICHT + '\\begin{document}'), '\\pfheftstil',
-           f'\\pflaufkopf[P10 \\pkt{{}} Prüfung]{{{tx(gl["name"])}}}{{{kenn}}}\\pfseitevon',
+           f'\\pflaufkopf[{P_SORTE} \\pkt{{}} Prüfung]{{{tx(gl["name"])}}}{{{kenn}}}\\pfseitevon',
            f'\\pfheftkopf{{{tx(gl["name"])}}}{{}}']
     gruppen = [gn for gn, _ in gl['gruppen']] or ['']
     for g in gruppen + [x['gruppe'] for x in einheiten.values() if x['gruppe'] not in gruppen]:
@@ -6794,11 +6803,210 @@ def p_bau(args):
     print(f'SETZER: fehlt – {fehlt} Stellen im TeX (werkzeuge/pruefheft-p.md, Datenbedarf)')
 
 
+# ---------------------------------------------------------------------------
+# Abitur-Pfad (v0.16, 15.10.2026; plan.md § 7 M5 „Setzer mit Graphen“): Art p für --pruefung abitur (abi-gk).
+# Dieselben Satzbausteine wie P10 (p_blatt_tex, p_loesung_tex, p_uebersicht_tex, mehr_blatt_tex); anders sind nur die
+# Daten: Einheiten = „### …“ in abitur/gliederung/<kapitel>.md (nur gelesen), Stufen und echte Aufgaben mit anderen
+# Zahlen aus abitur/mehr-abi-gk/<kapitel>.csv (Spalten wie msa/mehr-p10, Spalte stufe = Stufe des Blatts), Katalog
+# abitur/abi-katalog.csv (hilfsmittel = nein -> TR durchgestrichen). Kopf „Abitur GK · Prüfung“, Marke „GK ’24 · B2.1a“,
+# fünf Punkte im Stufenkopf über die GK-Hefte 2022–2026, Fundstellentabelle nach GK-Heften (Teil A/B wie im Heft).
+# Ein Lauf schreibt 1-uebersicht, 2-blatt, 3-loesungen, 4-mehr, 5-mehr-loesungen; kein Register, keine Fassung (Pilot).
+# Grafik: Bausteine abiksys, ksys3 mit \rstrecke/\rvieleck, \baumabi aus mathblatt.sty (2026-10-15).
+# ---------------------------------------------------------------------------
+ABI_GK = re.compile(r'^(\d{4})-(?:bebb|bb|be)-gk(?:-cas)?-([AB]\d+(?:\.\d+)?[a-z]?)$')
+
+
+def abi_gliederung(mn, kapitel):
+    """Kopf und Einheiten aus abitur/gliederung/<kapitel>.md: Name, Folge, Kennung (falls da), je „### …“ unter
+    „## Stufen“ eine Einheit mit Kern (ja/nein)."""
+    p = os.path.join(mn, 'abitur', 'gliederung', f'{kapitel}.md')
+    if not os.path.exists(p):
+        sys.exit(f'fehlt: {p}')
+    g = {'name': kapitel.capitalize(), 'folge': 0, 'gruppen': [], 'stufen': OrderedDict(), 'anzeige': {}, 'kennung': {}}
+    st, in_stufen = None, False
+    for z in open(p, encoding='utf-8').read().splitlines():
+        m = re.match(r'^(Name|Folge|Kennung):\s*(.*)$', z)
+        if m and st is None:
+            k, v = m.group(1), m.group(2).strip()
+            if k == 'Name':
+                g['name'] = v
+            elif k == 'Folge':
+                g['folge'] = int(re.sub(r'\D', '', v) or 0)
+            elif '=' in v:
+                a, b = v.rsplit('=', 1)
+                g['kennung'][a.strip()] = b.strip()
+            continue
+        if z.startswith('## '):
+            in_stufen = 'Stufen' in z
+            st = None
+            continue
+        m = re.match(r'^### (.+)$', z)
+        if m and in_stufen:
+            st = m.group(1).strip()
+            g['stufen'][st] = {'kern': False, 'anzeigename': ''}
+            continue
+        m = re.match(r'^- \*\*(Kern|Anzeigename):\*\*\s*(.*)$', z)
+        if m and st:
+            if m.group(1) == 'Kern':
+                g['stufen'][st]['kern'] = m.group(2).strip().startswith('ja')
+            else:
+                g['stufen'][st]['anzeigename'] = m.group(2).strip()
+    return g
+
+
+def abi_kapitelnamen(mn):
+    out = {}
+    for p in glob.glob(os.path.join(mn, 'abitur', 'gliederung', '*.md')):
+        if os.path.basename(p).startswith('_'):
+            continue
+        name, folge = '', 0
+        for z in open(p, encoding='utf-8').read().splitlines()[:12]:
+            m = re.match(r'^(Name|Folge):\s*(.*)$', z)
+            if m:
+                name, folge = (m.group(2).strip(), folge) if m.group(1) == 'Name' else (name, int(re.sub(r'\D', '', m.group(2)) or 0))
+        if name and folge:
+            out[folge] = name
+    return out
+
+
+def abi_mehr(mn, kapitel):
+    p = os.path.join(mn, 'abitur', 'mehr-abi-gk', f'{kapitel}.csv')
+    if not os.path.exists(p):
+        sys.exit(f'fehlt: {p}')
+    zeilen = lies_csv(p)
+    for r in zeilen:
+        if r.get('schwere', '').strip() not in MEHR_STUFEN:
+            r['schwere'] = 'II'
+    return zeilen
+
+
+def abi_jahre(ids, letzte5):
+    """Stufenkopf: Jahre, in denen ein GK-Heft (BE/BB, keine IQB-Poolzeilen) ein Original der Stufe hatte."""
+    jahre = {int(m.group(1)) for m in (ABI_GK.match(i) for i in ids) if m}
+    jung = sorted({j for j in jahre if j in letzte5}, reverse=True)
+    alt = sorted({j for j in jahre if j < min(letzte5)}, reverse=True)
+    return jung, alt, ''
+
+
+def abi_fundstellen(ids, letzte5):
+    """Fundstellentabelle nach GK-Heften (pruefung.md § 5): Jahre jüngstes … jüngstes − 9, je Jahr die Stellen wie im
+    Heft (A1.4a, B2.1a), leer, wo nichts dran kam; IQB-Poolzeilen zählen nicht (eigenes Heft)."""
+    j_max = max(letzte5)
+    spalten = list(range(j_max, j_max - 10, -1))
+    zellen = []
+    for j in spalten:
+        st = sorted({m.group(2) for m in (ABI_GK.match(i) for i in ids) if m and int(m.group(1)) == j})
+        zellen.append(' '.join(st))
+    return ('\\pfblattende{%d}{' % len(spalten) + ' & '.join(str(j)[2:] for j in spalten) + '}{'
+            + ' & '.join(zellen) + '}')
+
+
+def p_bau_abi(args):
+    if not args.einheit:
+        sys.exit('--art p (Abitur) braucht --einheit')
+    global P_SORTE, P_LETZTE5, MEHR_ANZEIGE
+    P_SORTE = 'Abitur GK'
+    D = Daten(args.mn, args.kapitel, 'abi-gk')
+    letzte5 = sorted({int(j) for j in D.pruefjahre})[-5:]
+    P_LETZTE5 = sorted(letzte5, reverse=True)
+    gl = abi_gliederung(D.mn, args.kapitel)
+    einheit = p_wahl(list(gl['stufen']), args.einheit, 'Einheit der Abitur-Gliederung')
+    alle = [r for r in abi_mehr(D.mn, args.kapitel) if r.get('einheit', '').strip() == einheit]
+    if not alle:
+        sys.exit(f'abitur/mehr-abi-gk/{args.kapitel}.csv: keine Zeile mit einheit = {einheit}')
+    hinweise = []
+    # Stufen des Blatts in der Folge ihrer ersten Zeile nach rang (leicht -> schwer)
+    folge = sorted(alle, key=lambda r: int(re.sub(r'\D', '', r.get('rang') or '') or 10 ** 6))
+    stufen = list(OrderedDict((r['stufe'].strip(), 1) for r in folge if r.get('stufe', '').strip()))
+    stufen_daten = []
+    for name in stufen:
+        zeilen = [r for r in alle if r.get('stufe', '').strip() == name]
+        for r in zeilen:
+            m = ABI_GK.match(r.get('eltern_id', ''))
+            soll = 'ja' if m and int(m.group(1)) in letzte5 else 'nein'
+            if r.get('auf_blatt', '').strip() != soll:
+                hinweise.append(f'{r["id"]}: auf_blatt = {r.get("auf_blatt", "")}, Jahr verlangt {soll}')
+        # Zweitthema ausblenden (pruefung.md § 5): Spalten <feld>_einheit ersetzen auf dem Blatt das Feld; Mehr ungekürzt
+        echte = sorted([p_einheitsfassung(r) for r in zeilen if r.get('auf_blatt', '').strip() == 'ja'], key=p_rang)
+        if not echte:
+            hinweise.append(f'Stufe „{name}“ entfällt auf dem Blatt: kein Original der letzten fünf Jahre (Mehr-Block)')
+            continue
+        stufen_daten.append({'name': name, 'anzeige': name, 'z': {'stufe': name},
+                             'jahre': abi_jahre([r['eltern_id'] for r in zeilen], letzte5), 'frage': None,
+                             'einstieg': None, 'kurzfrage': '', 'regine': '', 'echte': echte, 'heraus': []})
+    alle_echte = [r for s in stufen_daten for r in s['echte']]
+    if alle_echte and max(alle_echte, key=p_rang)['id'] != alle_echte[-1]['id']:
+        hinweise.append(f'schwerste echte ({max(alle_echte, key=p_rang)["id"]}) steht nicht am Ende des Blatts')
+    for r in alle:
+        if r.get('eltern_id') in D.kat:
+            continue
+        if ABI_GK.match(r.get('eltern_id', '')):
+            hinweise.append(f'{r["id"]}: Original {r["eltern_id"]} fehlt in abi-katalog.csv')
+    # Gliederung: Originale der Einheit, die keine Zeile haben (Vollständigkeit „alle Originale der letzten fünf Jahre“)
+    zu = {z['stufe'].strip(): z for z in D.zu}
+    soll_ids = (zu.get(einheit, {}).get('katalog_ids') or '').split()
+    da = {r['eltern_id'] for r in alle}
+    for i in soll_ids:
+        if i not in da:
+            hinweise.append(f'Original {i} der Zuordnung fehlt in mehr-abi-gk/{args.kapitel}.csv')
+    namen = list(gl['stufen'])
+    i = namen.index(einheit)
+    anz = lambda n: gl['stufen'][n].get('anzeigename') or n
+    ausschnitt = (f'\\pfausschnitt{{{" \\pkt{} ".join(tx(anz(n)) for n in namen[max(0, i - 2):i])}}}{{{tx(anz(einheit))}}}'
+                  f'{{{" \\pkt{} ".join(tx(anz(n)) for n in namen[i + 1:i + 3])}}}')
+    kenn = gl['kennung'].get(einheit) or f'GK-{args.kapitel[:2].upper()}{10 * (i + 1)}'
+    if not gl['kennung'].get(einheit):
+        hinweise.append(f'Kennung fehlt in der Gliederung („Kennung: {einheit} = …“) – vorläufig {kenn}')
+    ids = list(OrderedDict((r['eltern_id'], 1) for r in alle if r.get('eltern_id')))
+    fund = abi_fundstellen(ids + soll_ids, letzte5)
+    ordner = args.aus or os.path.join(BANK, 'bau', 'pruefheft', f'{args.kapitel}-p-{mehr_kurz(einheit)}-{args.datum}')
+    arbeit = tempfile.mkdtemp(prefix='pruefheft-abi-')
+    blatt, faktor_gesetzt, seiten_vorher = None, 1.0, 99
+    for faktor in (1.0, 0.75, 0.5):
+        t = p_blatt_tex(D, anz(einheit), kenn, stufen_daten, ausschnitt, fund, faktor)
+        e = xelatex(t, args.bb, 'probe', arbeit)
+        print(f'Probe: Faktor {faktor} -> {e["seiten"]} Seiten')
+        if faktor == 1.0 or e['seiten'] < seiten_vorher or e['fehler']:
+            blatt, faktor_gesetzt, seiten_vorher = t, faktor, e['seiten']
+        if e['seiten'] <= 2 or e['fehler']:
+            break
+    loes = p_loesung_tex(D, anz(einheit), kenn, stufen_daten)
+    einheiten = OrderedDict((n, {'name': n, 'anzeige': anz(n), 'gruppe': '', 'kern': gl['stufen'][n]['kern']})
+                            for n in namen)
+    ueb = p_uebersicht_tex(gl, einheiten, einheit, kenn, stufen_daten, abi_kapitelnamen(D.mn))
+    mehr = sorted([r for r in alle if r.get('auf_blatt', '').strip() == 'nein'],
+                  key=lambda r: (int(re.sub(r'\D', '', r.get('rang') or '') or 10 ** 6), r['id']))
+    MEHR_ANZEIGE = {}
+    dateien = [('1-uebersicht', ueb), ('2-blatt', blatt), ('3-loesungen', loes)]
+    if mehr:
+        dateien += [('4-mehr', mehr_blatt_tex(anz(einheit), kenn, None, 1, mehr)),
+                    ('5-mehr-loesungen', mehr_loesung_tex(anz(einheit), kenn, None, 1, mehr))]
+    os.makedirs(os.path.join(ordner, 'src'), exist_ok=True)
+    os.makedirs(os.path.join(ordner, 'pdf'), exist_ok=True)
+    for nm, t in dateien:
+        e = xelatex(t, args.bb, nm, arbeit)
+        open(os.path.join(ordner, 'src', nm + '.tex'), 'w', encoding='utf-8').write(t)
+        if e['pdf']:
+            shutil.copy(e['pdf'], os.path.join(ordner, 'pdf', nm + '.pdf'))
+        print(f'{nm}: {e["seiten"]} Seiten, Fehler {len(e["fehler"])}, Missing character {e["missing"]}, '
+              f'Overfull {e["overfull"]}')
+        for fl in e['fehler'][:5]:
+            print('   ', fl)
+    print('Ordner:', ordner)
+    print(f'Einheit: {einheit}; Kennung {kenn}; Stufen: ' + ' | '.join(
+        f'{s["name"]} ({" ".join(str(j)[2:] for j in s["jahre"][0]) or "–"}; echte {len(s["echte"])})'
+        for s in stufen_daten))
+    print(f'Mehr: {len(mehr)} ({" ".join(r["id"] for r in mehr)})')
+    print(f'Rechenraum: Faktor {faktor_gesetzt}')
+    for h in hinweise:
+        print('Hinweis:', h)
+
+
 def main():
     ap = argparse.ArgumentParser(description='Prüfungsheft aus Daten setzen')
     ap.add_argument('--kapitel', required=True)
     ap.add_argument('--pruefung', choices=sorted(PROFIL), default='p10',
-                    help='Prüfungsprofil: p10 (Vorgabe) oder abi-gk (Abitur Grundkurs)')
+                    help='Prüfungsprofil: p10 (Vorgabe) oder abitur/abi-gk (Abitur Grundkurs; mit --art p: p_bau_abi, v0.16)')
     ap.add_argument('--art', choices=['normal', 'schwach', 'mehr', 'p'], default='normal',
                     help='mehr: Mehr-Block einer Einheit aus msa/mehr-p10/*.csv (v0.5), braucht --einheit; '
                          'p: Prüfungsblatt der Sorte P aus Daten (v0.6), braucht --einheit')
@@ -6831,6 +7039,9 @@ def main():
                          'parallele Bauten mit --ohne-register, danach je Bau einmal --nur-register)')
     args = ap.parse_args()
 
+    if args.art in ('p', 'mehr') and args.pruefung in ('abitur', 'abi-gk'):
+        p_bau_abi(args)  # v0.16: Abitur GK – Blatt, Lösungen, Übersicht und Mehr in einem Lauf; P10 unberührt
+        return
     if args.art == 'mehr':
         mehr_bau(args)   # v0.5: eigener Weg, liest nur msa/mehr-p10/*.csv; bestehende Arten unberührt
         return
