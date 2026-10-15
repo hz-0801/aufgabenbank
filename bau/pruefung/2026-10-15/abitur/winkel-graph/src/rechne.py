@@ -8,8 +8,8 @@ m = diff(f, x).subs(x, 2); print('2022-B2.2e m', m, 'Winkel', d(atan(m)), 'y-Abs
 tq = tan(rad(31)); s = solve(Eq(diff(f, x), tq), x); print('2022-B2.2f tan31', N(tq, 4), [N(v, 4) for v in s], 'mit 0,6:', solve(Eq(diff(f, x), Rational(3, 5)), x))
 f = (x-3)*exp(-x/3+2); fp = diff(f, x); assert simplify(fp-(2-x/3)*exp(-x/3+2)) == 0
 print('2024-B2.1i f\'(3)', fp.subs(x, 3), d(atan(E)), 'alpha', N(2*deg(atan(E)), 4))
-f = x**3/12-x; g = x/3; k = diff(f, x).subs(x, 2*sqrt(3)); assert f.subs(x, 2*sqrt(3)) == 0 and k == 2
-print('2025-B2.1d Steigungswinkel', d(atan(2)), 'tan alpha', Abs((2-Rational(1, 3))/(1+2*Rational(1, 3))))
+f = x**3/18-Rational(3, 2)*x; g = x/2; k = diff(f, x).subs(x, 3*sqrt(3)); assert f.subs(x, 3*sqrt(3)) == 0 and k == 3
+print('2025-B2.1d Steigungswinkel', d(atan(3)), 'tan alpha', Abs((3-Rational(1, 2))/(1+3*Rational(1, 2))))
 f = (x+3)*exp(-x); fp = diff(f, x); fpp = diff(fp, x)
 assert simplify(fp+(x+2)*exp(-x)) == 0 and simplify(fpp-(x+1)*exp(-x)) == 0 and solve(Eq(f, fp), x) == [-Rational(5, 2)]
 m1, m2 = fp.subs(x, -Rational(5, 2)), fpp.subs(x, -Rational(5, 2)); tp = Abs((m1-m2)/(1+m1*m2))

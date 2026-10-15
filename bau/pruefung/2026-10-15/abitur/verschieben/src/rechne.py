@@ -14,8 +14,8 @@ f = x**3/18 - Rational(3, 2)*x; p('B4', solve(Eq(f, x/2), x), 'A(6|3), r²', 36 
 # B5 2026-B2.1e  t = 4/3 x + 8/3 (Tangente in (-1|4/3) an f = 2/3 x^4 + 4/3 x^3 + 2), Abstand 4
 f = Rational(2, 3)*x**4 + Rational(4, 3)*x**3 + 2; m = diff(f, x).subs(x, -1); n = f.subs(x, -1) - m*(-1); p('B5', m, n, 'z = 4 * 5/3 =', Rational(4)*Rational(5, 3), N(Rational(20, 3), 3))
 z = symbols('z'); p('B5 Abstand Gerade y = 4/3x + n - z:', solve(Eq(z*Rational(3, 5), 4), z))
-# B6 2026-B2.2f  f = 2e^x + 3, k = 15 f(-x/300) = 30e^(-x/300) + 45
-f = 2*exp(x) + 3; p('B6', expand(15*f.subs(x, -x/300)))
+# B6 2026-B2.2f  f = 2e^x + 3, k = 27,5 f(-x/300) - 64,5 = 55e^(-x/300) + 18 (wie B2.2g-i)
+f = 2*exp(x) + 3; p('B6', expand(Rational(55, 2)*f.subs(x, -x/300) - Rational(129, 2)))
 # B7 2023-B2.2j  f = x³ - 9x² + 24x - 16, h = 10x³ - 90x² + 240x + 20 = c (f + d)
 f = x**3 - 9*x**2 + 24*x - 16; c, d = symbols('c d'); hh = 10*x**3 - 90*x**2 + 240*x + 20
 p('B7', solve(Poly(c*(f + d) - hh, x).all_coeffs(), [c, d]))

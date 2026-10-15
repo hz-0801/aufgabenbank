@@ -28,11 +28,11 @@ f = 2*exp(x)-2*exp(-1); I = integrate(f, (x, -1, 0)); p('2025-A1.4b', simplify(I
 f = x**3-9*x; p('2024-A1.1b', solve(f, x), integrate(f, (x, -3, 0)), 2*integrate(f, (x, -3, 0)))
 u = symbols('u'); p('2026-B2.2d', integrate(2*exp(x), (x, u, 0)))
 F = -3*x*exp(-x/3+2); I = F.subs(x, 12)-F.subs(x, 3); p('2024-B2.1j', simplify(I), N(I, 4), 'cm²', N(2*I/4, 4))
-g = x**3/4+x**2; I = integrate(g, (x, -2, 0)); p('2026-B2.1g', g.subs(x, -2), I, 'gesamt', 2*(2*I+2*pi), N(2*(2*I+2*pi), 4))
+g = Rational(8, 3)*x**3+4*x**2; I = integrate(g, (x, -1, 0)); p('2026-B2.1g', g.subs(x, -1), I, 'gesamt', 4*I+pi*Rational(4, 3)**2, N(4*I+pi*Rational(4, 3)**2, 4))
 h = -x**3/16+Rational(3, 8)*x**2; A = integrate(h, (x, 0, 4))-integrate(-2*x, (x, 0, Rational(2, 5)))-integrate(x/2-1, (x, Rational(2, 5), 4))
 p('2022-B2.2h', integrate(h, (x, 0, 4)), integrate(-2*x, (x, 0, Rational(2, 5))), integrate(x/2-1, (x, Rational(2, 5), 4)), A)
-f = x**3/12-x; g = x/3; I = integrate(g-f, (x, 0, 4)); r2 = 4**2+Rational(4, 3)**2
-p('2025-B2.1e', f.subs(x, 4), r2, I, 4*I, 'A1', r2*pi, N(r2*pi, 4), 'A1-A2', N(r2*pi-4*I, 4))
+f = x**3/18-Rational(3, 2)*x; g = x/2; I = integrate(g-f, (x, 0, 6)); r2 = 6**2+3**2
+p('2025-B2.1e', f.subs(x, 6), g.subs(x, 6), r2, I, 4*I, 'A1', r2*pi, N(r2*pi, 4), 'A1-A2', N(r2*pi-4*I, 4))
 f = Rational(1, 2)*x**4-3*x**2+Rational(5, 2); s = Rational(5, 2)*x+Rational(5, 2)
 p('2024-B2.2e', [v for v in solve(f-s, x) if v.is_rational], integrate(f-s, (x, -1, 0)), Rational(1, 2)*f.subs(x, 0))
 f = Rational(1, 3)*(x**2-9)*exp(x/2); I = integrate(f, (x, -3, 0)); zw = Rational(9, 2)+I
@@ -49,7 +49,7 @@ f = (3-x)*exp(x); p('2025-B2.2c', f.subs(x, 2), N(2*E**2, 4), 'Sehne bei 0', N(E
 p('2022-B2.2i', integrate(x/2, (x, 0, 4)))
 f = x**3+2*x**2-3*x; p('2026-A1.1b', integrate(f, (x, -3, 0)), integrate(f, (x, 0, 1)))
 f = (x+3)*exp(-x); fp = diff(f, x); p('2022-B2.1f', simplify(integrate(fp, (x, -4, -3))), simplify(integrate(fp, (x, -1, 0))), N(integrate(fp, (x, -1, 0)), 3))
-fp = x**3/4+x**2; p('2026-B2.1b', factor(fp), solve(fp, x))
+fp = Rational(4, 3)*x**2*(2*x+3); p('2026-B2.1b', expand(fp), solve(fp, x))
 fp = 3*(x+2)*exp(-x-1); p('2026-A1.7b', solve(fp, x), solve(diff(fp, x), x), fp.subs(x, -1))
 f = (x-3)*exp(-x/3+2); p('2024-B2.1f', solve(diff(f, x), x))
 p('IQB19', solve(-x*(x-6)/3, x))
