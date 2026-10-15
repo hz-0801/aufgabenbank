@@ -93,15 +93,24 @@ def eintraege(ziel, ab_start, mn=MN_VORGABE):
 
 
 def letzte_jahre(mn, kapitel):
-    """Stufe -> Jahre der P10-Originale (Feld Originale der Gliederung; nur OS, EBR, FOR)."""
+    """Stufe -> Jahre, in denen ihr Handgriff in einem P10-Heft verlangt wurde (werkzeuge/p10punkte.py: Hauptplatz,
+    ganz auch, Zwischenschritt; dieselbe Quelle wie der Stufenkopf der Blätter, plan.md § 10, 15.10. i)."""
     sys.path.insert(0, os.path.join(mn, 'werkzeuge'))
     import gliederung as GL
+    from p10punkte import jahre
     G = GL.lies(os.path.join(mn, 'msa', 'gliederung', kapitel + '.md'))
-    return {s['name']: {int(i[:4]) for i in s['originale'] if re.match(r'^\d{4}-(OS|EBR|FOR)-', i)}
-            for s in G['stufen']}
+    return {s['name']: jahre(kapitel, s['name'], mn) for s in G['stufen']}
 
 
 GRAU = r'\textcolor{black!45}'
+
+
+def grau_wort(j):
+    """Rechte Spalte einer Stufe ohne Platz auf dem Blatt: Punkte, wenn ihr Handgriff in den letzten fünf Jahren
+    verlangt wurde (nur als Zwischenschritt oder ganz auch), sonst „nicht geprüft seit JJ“ bzw. „nie geprüft“."""
+    if j & set(JUNG):
+        return lohnt(None, j).replace('black!80', 'black!45')
+    return r'%s{\small %s}' % (GRAU, ('nicht geprüft seit %02d' % (max(j) % 100)) if j else 'nie geprüft')
 
 
 def handreichung_seite(gebiet, eintraege, mn):
@@ -117,9 +126,7 @@ def handreichung_seite(gebiet, eintraege, mn):
             if treffer:
                 z.append(r'\hspace*{1.2em}%s\enspace %s & %s\\' % (KASTEN, anz, lohnt(treffer[1], treffer[2])))
                 continue
-            j = J.get(name, set())
-            wort = ('nicht geprüft seit %02d' % (max(j) % 100)) if j else 'nie geprüft'
-            z.append(r'\hspace*{1.2em}%s{%s\enspace %s} & %s{\small %s}\\' % (GRAU, KASTEN, anz, GRAU, wort))
+            z.append(r'\hspace*{1.2em}%s{%s\enspace %s} & %s\\' % (GRAU, KASTEN, anz, grau_wort(J.get(name, set()))))
     # Stufen der Gliederung ohne Blatt (kein Zuschnitt, z. B. Zinsen): grau unter „ohne Blatt“
     sys.path.insert(0, os.path.join(mn, 'werkzeuge'))
     import gliederung as GL
@@ -128,10 +135,9 @@ def handreichung_seite(gebiet, eintraege, mn):
         G = GL.lies(os.path.join(mn, 'msa', 'gliederung', kap + '.md'))
         for s in G['stufen']:
             if not s['abschnitt']:
-                j = {int(i[:4]) for i in s['originale'] if re.match(r'^\d{4}-(OS|EBR|FOR)-', i)}
-                wort = ('nicht geprüft seit %02d' % (max(j) % 100)) if j else 'nie geprüft'
-                ohne.append(r'\hspace*{1.2em}%s{%s\enspace %s} & %s{\small %s}\\'
-                            % (GRAU, KASTEN, s['felder'].get('Anzeigename') or s['name'], GRAU, wort))
+                ohne.append(r'\hspace*{1.2em}%s{%s\enspace %s} & %s\\'
+                            % (GRAU, KASTEN, s['felder'].get('Anzeigename') or s['name'],
+                               grau_wort(letzte_jahre(mn, kap)[s['name']])))
     if ohne:
         z.append(r'\rule{0pt}{3.6ex}%s{\large\bfseries ohne Blatt} & \\' % GRAU)
         z += ohne

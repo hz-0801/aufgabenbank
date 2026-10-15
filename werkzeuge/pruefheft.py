@@ -5228,8 +5228,24 @@ def mehr_buchstabe(r, optionen):
     return 'ABCD'['erste zweite dritte vierte'.split().index(m.group(1))] if m else ''
 
 
+MEHR_ANZEIGE = {}   # Stufe der Gliederung -> Anzeigename (mehr_bau setzt es; Mehr trägt die Namen von Blatt und Karte)
+
+
+def mehr_anzeige(mn, kapitel, einheit):
+    """plan.md § 10, 15.10. (i), Auftrag b: Mehr-Seiten tragen die Namen der Gliederung, wie Blatt und Bestellkarte –
+    Einheit als Anzeigename des Zuschnitts (Vergleich über die Wörter wie mehr_kennung), Stufen als Anzeigename.
+    Rückgabe (Einheit, {Stufe: Anzeigename})."""
+    gl = p_gliederung(mn, kapitel)
+    w = lambda s: set(re.findall(r'\w+', s.lower()))
+    zu = next((e for e in gl['kennung'] if e == einheit), '') or next(
+        (e for e in gl['kennung'] if w(einheit) <= w(e) or w(e) <= w(einheit)), '')
+    return (gl['anzeige'].get(zu) or zu or einheit,
+            {n: (i.get('anzeigename') or n) for n, i in gl['stufen'].items()})
+
+
 def mehr_blatt_tex(einheit, kenn, p, anz, folge, faktor=1.0):
-    stufen = list(OrderedDict((r.get('stufe', '').strip(), 1) for r in folge if r.get('stufe', '').strip()))
+    stufen = list(OrderedDict((MEHR_ANZEIGE.get(r.get('stufe', '').strip(), r.get('stufe', '').strip()), 1)
+                              for r in folge if r.get('stufe', '').strip()))
     out = [KOPF.replace('\\begin{document}', MEHR_PRAEAMBEL + '\\begin{document}'), '\\pfheftstil',
            f'\\pflaufkopf[P10 \\pkt{{}} mehr]{{{tx(einheit)}}}{{{kenn}}}\\pfseitevon',
            f'\\pfheftkopf{{{tx(einheit)}}}{{{"mehr" if p is None else f"Portion {p} von {anz}"}}}']
@@ -5289,7 +5305,7 @@ def mehr_kennung(args, einheit):
     return p_kennung_fassung(k, max(f)) if f else k
 
 
-def mehr_alle_bau(args, einheit, zeilen):
+def mehr_alle_bau(args, einheit, zeilen, anz_einheit=None):
     """--art mehr --alle (v0.14, Mappe P10, plan.md § 10, 14.10. f): alle Zeilen der Einheit mit auf_blatt = nein in
     der Ordnung rang, ohne Portionen, mit Lösung; Kennung der Einheit mit Fassung. Kein Register (Teil der Mappe)."""
     kenn = mehr_kennung(args, einheit) or g1_kennung(os.path.relpath(args.aus or BANK, BANK))
@@ -5298,8 +5314,9 @@ def mehr_alle_bau(args, einheit, zeilen):
     arbeit = tempfile.mkdtemp(prefix='pruefheft-mehr-')
     os.makedirs(os.path.join(ordner, 'src'), exist_ok=True)
     os.makedirs(os.path.join(ordner, 'pdf'), exist_ok=True)
-    for nm, t in (('mehr', mehr_blatt_tex(einheit, kenn, None, 1, zeilen)),
-                  ('mehr-loesung', mehr_loesung_tex(einheit, kenn, None, 1, zeilen))):
+    zeige = anz_einheit or einheit
+    for nm, t in (('mehr', mehr_blatt_tex(zeige, kenn, None, 1, zeilen)),
+                  ('mehr-loesung', mehr_loesung_tex(zeige, kenn, None, 1, zeilen))):
         e = xelatex(t, args.bb, nm, arbeit)
         open(os.path.join(ordner, 'src', nm + '.tex'), 'w', encoding='utf-8').write(t)
         if e['pdf']:
@@ -5316,8 +5333,11 @@ def mehr_bau(args):
     if not args.einheit:
         sys.exit('--art mehr braucht --einheit')
     einheit, zeilen = mehr_zeilen(args.mn, args.kapitel, args.einheit, args.alle)
+    # Stufenzeile mit den Namen der Gliederung; in der Mappe (--alle) auch der Kopf (Kennung über die Einheit der Daten)
+    global MEHR_ANZEIGE
+    anz_einheit, MEHR_ANZEIGE = mehr_anzeige(args.mn, args.kapitel, einheit)
     if args.alle:
-        return mehr_alle_bau(args, einheit, zeilen)
+        return mehr_alle_bau(args, einheit, zeilen, anz_einheit)
     portionen = mehr_portionen(zeilen)
     anz = len(portionen)
     p = args.portion or 1
@@ -5645,14 +5665,13 @@ P10_PAPIER = re.compile(r'^(OS|EBR|FOR|MUSTER-.*)$')
 
 
 def p_jahre(D, z, letzte5, wort=''):
-    """Stufenkopf (pruefung.md § 5 „Jahre im Stufenkopf“, „Häufigkeit im Stufenkopf“, Lehrer 13.10.): alle Jahre der
-    Hauptplätze (katalog_ids, nur P10-Hefte: OS, EBR, FOR, MUSTER-*), jüngstes zuerst; ohne Hauptplatz die Jahre aus
-    jahre_letzte5. wort = Urteil der Gliederung („- **Häufigkeit:** fast immer“), nur „immer“/„fast immer“ zählen.
+    """Stufenkopf (pruefung.md § 5 „Punkte im Stufenkopf“; plan.md § 10, 15.10. i): Jahre, in denen der Handgriff der
+    Stufe in einem P10-Heft verlangt wurde – Hauptplatz, ganz auch, Zwischenschritt (werkzeuge/p10punkte.py, dieselbe
+    Quelle wie Bestellkarte und Handreichung); bis 15.10. nur die Hauptplätze (katalog_ids). wort = Urteil der
+    Gliederung („- **Häufigkeit:** fast immer“), nur „immer“/„fast immer“ zählen.
     Rückgabe: (junge Jahre ≤ fünf, ältere, Wort)."""
-    jahre = {int(D.kat[i]['jahr']) for i in (z.get('katalog_ids') or '').split()
-             if i in D.kat and P10_PAPIER.match((D.kat[i].get('papier') or '').strip())}
-    if not jahre:
-        jahre = {int(j) for j in re.findall(r'\d{4}', z.get('jahre_letzte5') or '')}
+    from p10punkte import jahre as p10_jahre
+    jahre = p10_jahre(D.kapitel, z['stufe'], D.mn)
     jung = sorted({j for j in jahre if j in letzte5}, reverse=True)
     alt = sorted({j for j in jahre if j not in letzte5 and j < min(letzte5)}, reverse=True)
     wort = (wort or '').strip().lower().rstrip('.')
