@@ -2,8 +2,8 @@
 from sympy import *
 x, t, u, a, b, c, d = symbols('x t u a b c d', real=True)
 def p(*z): print(*z)
-# B1 2022-B2.2g  Gerade durch C(0,4|-0,5), D(2|1,1)
-m = (Rational(11, 10) + Rational(1, 2))/(2 - Rational(2, 5)); n = Rational(11, 10) - 2*m; p('B1', m, n)
+# B1 2022-B2.2g  Gerade durch C(0,4|-0,8), D(4|1) (wie B2.2h–j)
+m = (1 + Rational(4, 5))/(4 - Rational(2, 5)); n = 1 - 4*m; p('B1', m, n)
 # B2 2022-B2.2k  k = a x^4 + b x^2, R(2|1), S(4|3,5)
 k = a*x**4 + b*x**2; mRS = (Rational(7, 2) - 1)/(4 - 2)
 s = solve([k.subs(x, 2) - 1, diff(k, x).subs(x, 2) - mRS], [a, b]); p('B2', mRS, s, diff(k, x).subs(x, 0), k.subs(x, 0))

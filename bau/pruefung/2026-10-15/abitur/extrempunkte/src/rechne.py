@@ -14,9 +14,9 @@ p('B2', simplify(fp - (x**2/6 + 2*x/3 - Rational(3, 2))*exp(x/2)) == 0, simplify
 # B3 2022-B2.1a (Nebenplatz) f = (x+3)e^-x, f' = -(x+2)e^-x
 f = (x + 3)*exp(-x); fp = diff(f, x); p('B3', simplify(fp + (x + 2)*exp(-x)) == 0, solve(fp, x), f.subs(x, -2), N(exp(2), 4), fp.subs(x, -3) > 0, fp.subs(x, -1) < 0)
 # B4 2023-A1.3a
-f = x**3 + 3*x**2; p('B4', solve(diff(f, x), x))
+f = x**3 - 6*x**2; p('B4', solve(diff(f, x), x))
 # B5 2022-B2.2b
-f = -x**3/3 + x**2; p('B5', ext(f))
+f = -x**3/18 + x**2/3; p('B5', ext(f))
 # B6 2023-B2.2b
 f = x**3 - 9*x**2 + 24*x - 16; p('B6', ext(f), factor(f))
 # B7 2024-B2.2c

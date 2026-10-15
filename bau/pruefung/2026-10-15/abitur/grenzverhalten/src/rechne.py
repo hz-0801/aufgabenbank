@@ -5,7 +5,7 @@ x, t = symbols('x t', real=True)
 def p(*a): print(*a)
 L = lambda f, s: (limit(f, x, s))
 # B1 2022-B2.2a
-f = -x**3/3 + x**2; p('B1', L(f, oo), L(f, -oo))
+f = -x**3/18 + x**2/3; p('B1', L(f, oo), L(f, -oo))
 # B2 2026-B2.1a  (f = 2/3 x^4 + 4/3 x^3 + 2; Wendestellen -1, 0; f'(-1) = 4/3)
 f = Rational(2, 3)*x**4 + Rational(4, 3)*x**3 + 2; fp = diff(f, x)
 p('B2', fp, L(fp, -oo), L(fp, oo), solve(diff(f, x, 2), x), fp.subs(x, -1))
