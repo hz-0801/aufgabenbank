@@ -33,7 +33,7 @@ z(E, 'Baum zeichnen', '2024-bebb-gk-A1.9a', BEF + ' Vervollständige das Baumdia
   'andere Zahlen (Original 60 % / 40 %); Baum mit 0,7 und p vorgegeben wie im Original',
   grafik='\\baumabi{F_1/{0,7}/{\\text{Ja}/{p},\\text{Nein}/},F_2//{\\text{Ja}/,\\text{Nein}/}}', form='einzeichnen')
 z(E, 'Baum zeichnen', '2024-bebb-gk-B4.2a', RAD + ' Stelle das Zufallsexperiment in einem beschrifteten Baumdiagramm dar.',
-  'P(4)² = 1/16 ⇒ P(4) = 1/4, P(2) = 3/4 | Baum: auf beiden Stufen 4 mit 1/4 und 2 mit 3/4', 'bruch', 'II',
+  'P(4)² = 1/16 ⇒ P(4) = 1/4 ⇒ P(2) = 1 − 1/4 = 3/4 | Baum: auf beiden Stufen 4 mit 1/4 und 2 mit 3/4', 'bruch', 'II',
   'andere Zahlen (Original Sektoren 5 und 2, 1/36; P(5) = 1/6)', form='zeichnen')
 z(E, 'Pfadwahrscheinlichkeit gesucht', '2024-bebb-gk-A1.6a', GLITZ + ' Drei Kinder erhalten je einen Ball. Zeige, dass die Wahrscheinlichkeit, dass jedes der drei Kinder einen glitzernden Ball erhält, kleiner als 3 % ist.',
   '0,3³ = 0,027 < 0,03', 'dezimal', 'I', 'andere Zahlen (Original 40 %, 0,064 < 10 %)')
@@ -80,7 +80,7 @@ z(E, 'Summe von Pfaden gesucht', '2021-be-gk-B4h', 'Beim täglichen Start eines 
 E = 'Ziehen ohne Zurücklegen'
 ST = 'Acht Stühle stehen in einer Reihe. Es gibt fünf Möglichkeiten, vier Stühle so auszuwählen, dass zwischen je zwei ausgewählten mindestens ein weiterer Stuhl steht.'
 z(E, 'Ergebnisse aufzählen', '2024-bebb-gk-A1.3a', ST + ' Gib diese fünf Möglichkeiten an.',
-  'Stühle 1, 3, 5, 7; 1, 3, 5, 8; 1, 3, 6, 8; 1, 4, 6, 8; 2, 4, 6, 8', 'ganz', 'I', 'andere Zahlen (Original sechs Stühle, drei, vier Möglichkeiten)', form='karo')
+  'Stühle (1, 3, 5, 7), (1, 3, 5, 8), (1, 3, 6, 8), (1, 4, 6, 8), (2, 4, 6, 8)', 'ganz', 'I', 'andere Zahlen (Original sechs Stühle, drei, vier Möglichkeiten)', form='karo')
 z(E, 'Ergebnisse aufzählen', '2024-bebb-gk-A1.3b', ST + ' Vier Freunde setzen sich so, dass zwischen je zweien mindestens ein Stuhl frei bleibt. Berechne die Anzahl der Möglichkeiten.',
   '5 Auswahlen, je 4! Anordnungen ⇒ 5 · 24 = 120', 'ganz', 'I', 'andere Zahlen (Original 4 · 3! = 24)')
 z(E, 'Ergebnisse aufzählen', '2026-bb-gk-A1.3b', 'Eine Münze wird fünfmal geworfen; die Ergebnisse sind Abfolgen von Z (Zahl) und W (Wappen). A: höchstens einmal Zahl; B: bei den letzten beiden Würfen mindestens einmal Zahl. Gib alle Ergebnisse an, bei denen weder A noch B eintritt.',
@@ -179,7 +179,7 @@ z(E, 'bedingte Wahrscheinlichkeit gesucht', '2022-bebb-gk-B4i', PAKET + ' Unter 
   'S ∩ Z = 0,012; nicht S ∩ Z = 0,108 ⇒ P_S(Z) = 0,012/0,06 = 0,2; P_nicht S(Z) = 0,108/0,94 ≈ 0,115 ⇒ nicht gleich', 'dezimal', 'II',
   'andere Zahlen (Original 0,16 und 0,097)')
 z(E, 'bedingte Wahrscheinlichkeit mit Parameter', '2025-bebb-gk-B4e', HH + ' Zwei Jahre später sind die Anteile ohne Kind unverändert; unter den Haushalten mit Kind ist der Anteil der überbelegten um $x$ gesunken. Die Funktion $f$ mit $f(x) = \\frac{0{,}315 \\cdot (0{,}142 - x)}{0{,}315 \\cdot (0{,}142 - x) + 0{,}685 \\cdot 0{,}055}$, $0 \\le x \\le 0{,}142$, ist abgebildet. Bestimme grafisch $x$ mit $f(x) = 0{,}4$ und deute $x$ und $f(x)$ im Sachzusammenhang.',
-  'x ≈ 0,06 (grafisch; rechnerisch 0,062) | x: Rückgang des Anteils überbelegter Haushalte unter denen mit Kind; f(x) = P_B(K) = 40 %: Anteil der Haushalte mit Kind unter den überbelegten', 'dezimal', 'III',
+  'x ≈ 0,06 (grafisch, rechnerisch 0,062) | x: Rückgang des Anteils überbelegter Haushalte unter denen mit Kind; f(x) = P_B(K) = 40 %: Anteil der Haushalte mit Kind unter den überbelegten', 'dezimal', 'III',
   'andere Zahlen (Original 0,285, 0,159, 0,065; x ≈ 0,05); Graph wie im Original, Fenster bis 0,16', grafik=FX, form='karo')
 z(E, 'bedingte Wahrscheinlichkeit mit Parameter', '2026-bb-gk-B4f', TREUE + ' Ein Jahr später sammeln weiterhin 80 % Treuepunkte, davon 70 % weiblich; der Anteil $a$ ist gestiegen. Beurteile die Aussage: Die Wahrscheinlichkeit, dass eine nicht weibliche Person Treuepunkte sammelt, ist größer als vor einem Jahr.',
   'P_nicht w(T) = 0,8 · 0,3/(0,8 · 0,3 + 0,2 · (1 − a)); a steigt ⇒ Nenner fällt ⇒ Quotient steigt ⇒ wahr', 'dezimal', 'III',
