@@ -257,14 +257,17 @@ def ist_tex(g):
 def lies_grafiken(privat):
     """Gezeichnete Figuren (v0.3, 15.10.): privat bau/original-neu/grafik/<id>.tex ersetzt den Beschreibungstext
     im Feld grafik; <id>-loesung.tex ist die fertige Zeichnung einer Lösung, die eine Zeichnung ist (ersetzt den
-    Teil „Skizze: …“ der Lösung). Eine Datei nur mit Kommentar (% entfällt …) = Schmuckbild ohne Information."""
+    Teil „Skizze: …“ der Lösung). Eine Datei nur mit Kommentar (% entfällt …) = Schmuckbild ohne Information;
+    erste Zeile „% karo“ = Zeichenaufgabe, die Figur zeigt nur den Gegenstand, Karo bleibt."""
     d = privat / "bau" / "original-neu" / "grafik"
     g = {}
     if d.is_dir():
         for p in sorted(d.glob("*.tex")):
-            t = "\n".join(l for l in p.read_text(encoding="utf-8").splitlines()
-                           if not l.lstrip().startswith("%")).strip()
+            roh = p.read_text(encoding="utf-8").splitlines()
+            t = "\n".join(l for l in roh if not l.lstrip().startswith("%")).strip()
             g[p.stem] = t
+            if roh and roh[0].strip() == "% karo":
+                g[p.stem + "-karo"] = "1"
     return g
 
 
@@ -298,7 +301,7 @@ def raum(z):
     f = z.get("form", "")
     if f in ("rechnung", "begruendung"):
         return "\\karo{%d}" % min(6, max(2, z.get("punkte", 1) + 1))
-    if f == "zeichnen" and not ist_tex(z.get("grafik", "")):
+    if f == "zeichnen" and (not ist_tex(z.get("grafik", "")) or z.get("_karo")):
         return "\\karo{4}"
     return ""
 
@@ -454,6 +457,8 @@ def main():
     for z in basis + haupt:
         if z["id"] in grafiken:
             z["grafik"] = grafiken[z["id"]]
+            if z["id"] + "-karo" in grafiken:
+                z["_karo"] = True
         if z["id"] + "-loesung" in grafiken:
             z["_loesung_grafik"] = grafiken[z["id"] + "-loesung"]
 
