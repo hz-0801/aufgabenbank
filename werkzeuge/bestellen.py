@@ -326,6 +326,12 @@ class Bestellung:
         roh = [w for w in re.split(r'[\s·,]+', self.eingabe.strip()) if w]
         S = schueler()
         # Name
+        # bekannter Name auch mitten im Freitext („was Leichteres zu Parabeln für Lena“, Probe 15.10.)
+        if roh and not any(x['name'].lower() == roh[0].lower() for x in S):
+            i = next((i for i, w in enumerate(roh) if any(x['name'].lower() == w.lower() for x in S)), None)
+            if i is not None:
+                vor = roh[i - 1].lower() if i else ''
+                roh = [roh[i]] + roh[:i - 1 if vor in ('für', 'fuer', 'an', 'von') else i] + roh[i + 1:]
         if roh:
             w = roh[0]
             s = next((x for x in S if x['name'].lower() == w.lower()), None)
