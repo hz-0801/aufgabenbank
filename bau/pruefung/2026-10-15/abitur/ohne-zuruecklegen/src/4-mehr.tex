@@ -1,0 +1,157 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+\newsavebox{\gbox}\newlength{\gLinks}
+% v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
+% Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr\wd\gbox+6mm\relax}%
+  \ifdim\gLinks>0.62\linewidth
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\leavevmode\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par}
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+% Skizzenfeld (v0.10, Lehrer 13.10.): Karo ab dem linken Rand über die Zeile, „Skizze“ klein grau oben links im Feld
+% (wie \pfskizzenfeld der Vorlage); der rechte Rand bleibt den Bedingungen
+\newcommand{\gskizze}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \node[anchor=north west,inner sep=2pt,font=\scriptsize,text=mbgrau,fill=white] at (0,{#1*10mm}) {Skizze};
+  \end{tikzpicture}\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\makeatletter\setlength{\mbpfbe}{0mm}\makeatother
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[Abitur GK \pkt{} mehr]{Ziehen ohne Zurücklegen}{AS20}\pfseitevon
+\pfheftkopf{Ziehen ohne Zurücklegen}{mehr}
+\pfstufenzeile{Ergebnisse aufzählen \pkt{} Wahrscheinlichkeit gesucht}
+% 2023-iqb-ga-A12a-m1 (Schwere I, rang 30)
+\begin{pfaufg}{IQB~’23\\A12a}{1.}{}
+Ein Würfel (1 bis 6) und eine Münze (Zahl, Wappen) werden je einmal geworfen. A: ungerade Zahl und Wappen; B: Zahl größer als 2. Gib die Ergebnisse an, die zu $A \cap B$ gehören.
+\karo{4}
+\fusshilfe{\mbox{1:~W)}}
+\end{pfaufg}
+% 2017-be-gk-B3.1a-m1 (Schwere I, rang 31)
+\begin{pfaufg}{GK~’17\\B3.1a}{2.}{}
+Ein Händler hat Geräte in sieben Farben. Für das Schaufenster sollen drei Farben ausgewählt werden. Bestimme die Anzahl der Möglichkeiten.
+\karo{2}
+\fusshilfe{\mbox{2:~35}}
+\end{pfaufg}
+% 2018-be-gk-B3.1a-m1 (Schwere I, rang 32)
+\begin{pfaufg}{GK~’18\\B3.1a}{3.}{}
+In einem Topf liegen 3 schwarze und 5 weiße Kugeln. Zwei Kugeln werden mit einem Griff gezogen; man gewinnt, wenn keine schwarze dabei ist. Weise nach, dass die Gewinnwahrscheinlichkeit $\tfrac{5}{14}$ beträgt.
+\karo{2}
+\fusshilfe{\mbox{3:~$\tfrac{5}{14}$}}
+\end{pfaufg}
+% 2020-be-gk-A1.5a-m1 (Schwere I, rang 33)
+\begin{pfaufg}{GK~’20\\A1.5a}{4.}{}
+In einem Behälter liegen vier blaue und zwei rote Kugeln. Zwei Kugeln werden ohne Zurücklegen entnommen. Berechne die Wahrscheinlichkeit für zwei verschiedene Farben.
+\karo{2}
+\fusshilfe{\mbox{4:~$\tfrac{8}{15}$}}
+\end{pfaufg}
+% 2018-iqb-ga-A11a-m1 (Schwere I, rang 34)
+\begin{pfaufg}{IQB~’18\\A11a}{5.}{}
+Zehn Karten, je zwei mit 1, 2, 3, 4 und 5, werden gemischt und nacheinander abgelegt. Bestimme die Wahrscheinlichkeit, dass die beiden ersten Karten mit 1 beschriftet sind.
+\karo{2}
+\fusshilfe{\mbox{5:~$\tfrac{1}{45}$}}
+\end{pfaufg}
+% 2019-be-gk-A1.4c-m1 (Schwere II, rang 35)
+\begin{pfaufg}{GK~’19\\A1.4c}{6.}{}
+Aus 12 Frauen und 8 Männern eines Chors werden zwei Personen zufällig ausgewählt. Gib einen Term für die Wahrscheinlichkeit an, dass eine Frau und ein Mann ausgewählt werden, und berechne sie.
+\karo{2}
+\fusshilfe{\mbox{6:~0,505}}
+\end{pfaufg}
+% 2018-iqb-ga-A11b-m1 (Schwere II, rang 36)
+\begin{pfaufg}{IQB~’18\\A11b}{7.}{}
+Zehn Karten, vier mit gerader und sechs mit ungerader Zahl, werden nacheinander aufgedeckt. Bestimme die Wahrscheinlichkeit, dass spätestens die dritte Karte eine gerade Zahl trägt.
+\karo{2}
+\fusshilfe{\mbox{7:~$\tfrac{5}{6}$}}
+\end{pfaufg}
+% 2017-be-gk-B3.1b-m1 (Schwere II, rang 37)
+\begin{pfaufg}{GK~’17\\B3.1b}{8.}{}
+Eine Lieferung umfasst 40 Geräte, davon sind vier fehlerhaft. Zehn Geräte werden zufällig ausgewählt. A: Keines der zehn ist fehlerhaft. B: Mindestens eines ist fehlerhaft. Berechne $P(A)$ und $P(B)$.
+\karo{3}
+\fusshilfe{\mbox{8:~0,393; 0,607}}
+\end{pfaufg}
+% 2021-be-gk-A1.7b-m1 (Schwere III, rang 38)
+\begin{pfaufg}{GK~’21\\A1.7b}{9.}{}
+In einer Urne liegen 7 weiße und 3 schwarze Kugeln. Bewerber ziehen nacheinander ohne Zurücklegen; wer weiß zieht, ist ausgewählt. Entscheide, ob der erste oder der dritte Bewerber die größere Chance hat, und begründe.
+\karo{4}
+\fusshilfe{\mbox{9:~gleiche Chance}}
+\end{pfaufg}
+% 2019-iqb-ga-A2b-m1 (Schwere III, rang 39)
+\begin{pfaufg}{IQB~’19\\A2b}{10.}{}
+Jemand hat acht Bonbons gewonnen, Zitrone oder Orange. Zwei werden zufällig ausgewählt und verschenkt. Die Wahrscheinlichkeit, dass ein Zitronen- und ein Orangenbonbon verschenkt werden, ist $\tfrac{4}{7}$. Ermittle die Anzahl der Orangenbonbons.
+\karo{4}
+\fusshilfe{\mbox{10:~4}}
+\end{pfaufg}
+% 2019-be-gk-B4.2f-m1 (Schwere III, rang 40)
+\begin{pfaufg}{GK~’19\\B4.2f}{11.}{}
+In einer Urne liegen 6 schwarze und 4 weiße Kugeln; 6 werden mit einem Griff gezogen. Die Zahl der schwarzen Kugeln gibt an, an wie vielen Tagen der Woche jemand den Müll hinunterbringt. Bestimme die Wahrscheinlichkeit, dass das weniger als viermal ist, und begründe den Ansatz.
+\karo{4}
+\fusshilfe{\mbox{11:~0,452}}
+\end{pfaufg}
+\par\vfill\noindent{\scriptsize\color{mbgrau}Originale: IQB GK 2023 \pkt{} A12a, Abi GK 2017 \pkt{} B3.1a, Abi GK 2018 \pkt{} B3.1a, Abi GK 2020 \pkt{} A1.5a, IQB GK 2018 \pkt{} A11a, Abi GK 2019 \pkt{} A1.4c, IQB GK 2018 \pkt{} A11b, Abi GK 2017 \pkt{} B3.1b, Abi GK 2021 \pkt{} A1.7b, IQB GK 2019 \pkt{} A2b, Abi GK 2019 \pkt{} B4.2f\par}
+\end{document}

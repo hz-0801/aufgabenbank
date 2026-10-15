@@ -29,7 +29,9 @@ def zeile(kap, einheit, stufe, eid, wortlaut, loesung, zahlart, schwere, rang, b
              eltern_id=eid, auf_blatt=auf, wortlaut=wortlaut, loesung=loesung, zahlart=zahlart, schwere=schwere,
              rang=str(rang), bemerkung=bem + '; ' + NZ, grafik=grafik, form=form)
     for f in ('loesung', 'wortlaut'):
-        r[f] = r[f].replace(' ∩ ', ' $\\cap$ ').replace('x₄', '$x_4$')
+        r[f] = r[f].replace(' ∩ ', ' $\\cap$ ').replace(' ∪ ', ' $\\cup$ ').replace('x₄', '$x_4$')
+    if r['grafik'].startswith('\\vierfeldertafel'):
+        r['grafik'] = '\\begin{minipage}{68mm}' + r['grafik'] + '\\end{minipage}'   # \\par der Tafel: im Mehr steht sie in \\gpassend (sbox)
     for k, v in ein.items():
         r[k] = v
     return r

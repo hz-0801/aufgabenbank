@@ -1,0 +1,149 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+\newsavebox{\gbox}\newlength{\gLinks}
+% v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
+% Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr\wd\gbox+6mm\relax}%
+  \ifdim\gLinks>0.62\linewidth
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\leavevmode\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par}
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+% Skizzenfeld (v0.10, Lehrer 13.10.): Karo ab dem linken Rand über die Zeile, „Skizze“ klein grau oben links im Feld
+% (wie \pfskizzenfeld der Vorlage); der rechte Rand bleibt den Bedingungen
+\newcommand{\gskizze}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \node[anchor=north west,inner sep=2pt,font=\scriptsize,text=mbgrau,fill=white] at (0,{#1*10mm}) {Skizze};
+  \end{tikzpicture}\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\makeatletter\setlength{\mbpfbe}{0mm}\makeatother
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[Abitur GK \pkt{} mehr]{Vierfeldertafel}{AS30}\pfseitevon
+\pfheftkopf{Vierfeldertafel}{mehr}
+\pfstufenzeile{Tafel ausfüllen \pkt{} Wahrscheinlichkeit aus der Tafel gesucht \pkt{} Unabhängigkeit prüfen}
+% 2026-iqb-ga-B2.1a-m1 (Schwere I, rang 49)
+\begin{pfaufg}{IQB~’26\\B2.1a}{1.}{}
+Von den Songs einer Playlist sind 35 \% Hip-Hop ($H$), 45 \% sind mindestens 4 Minuten lang ($L$), und $P(H \cap L) = 0{,}15$. Ergänze die fehlenden Wahrscheinlichkeiten der Vierfeldertafel.
+\par\smallskip\noindent\gpassend{\begin{minipage}{68mm}\vierfeldertafel{H}{L}{}\end{minipage}}\par
+\karo{5}
+\fusshilfe{\mbox{1:~nicht H $\cap$ nicht L 0,35}}
+\end{pfaufg}
+% 2018-be-gk-B3.2e-m1 (Schwere I, rang 50)
+\begin{pfaufg}{GK~’18\\B3.2e}{2.}{}
+Bei einem Bildschirm ist das Display mit 12,4 \% defekt ($D$), das Netzteil mit 3,5 \% ($N$); mit 85,4 \% ist keines von beiden defekt. Stelle den Sachverhalt in einer vollständigen Vierfeldertafel dar.
+\par\smallskip\noindent\gpassend{\begin{minipage}{68mm}\vierfeldertafel{D}{N}{}\end{minipage}}\par
+\karo{5}
+\fusshilfe{\mbox{2:~nicht D $\cap$ nicht N 0,854}}
+\end{pfaufg}
+% 2025-iqb-ga-B3.1a-m1 (Schwere I, rang 51)
+\begin{pfaufg}{IQB~’25\\B3.1a}{3.}{}
+Von den Mitgliedern eines Vereins sind 70 \% jünger als 50 Jahre ($J$); 20 \% sind jünger als 50 und leben nicht in einer Großstadt; 68 \% leben in einer Großstadt ($G$). Stelle den Sachverhalt in einer vollständigen Vierfeldertafel dar.
+\par\smallskip\noindent\gpassend{\begin{minipage}{68mm}\vierfeldertafel{G}{J}{}\end{minipage}}\par
+\karo{5}
+\fusshilfe{\mbox{3:~nicht G $\cap$ nicht J 0,12}}
+\end{pfaufg}
+% 2024-iqb-ga-B2.1b-m1 (Schwere II, rang 52)
+\begin{pfaufg}{IQB~’24\\B2.1b}{4.}{}
+60 \% der Schüler besitzen einen Laptop ($L$), 30 \% einen Desktop-PC ($D$), 25 \% keines von beiden. Stelle die Vierfeldertafel auf und gib die Wahrscheinlichkeit an, dass jemand einen Laptop, aber keinen Desktop-PC besitzt.
+\par\smallskip\noindent\gpassend{\begin{minipage}{68mm}\vierfeldertafel{L}{D}{}\end{minipage}}\par
+\karo{6}
+\fusshilfe{\mbox{4:~nicht L $\cap$ nicht D 0,25; 0,45}}
+\end{pfaufg}
+% 2019-be-gk-B4.1c-m1 (Schwere I, rang 53)
+\begin{pfaufg}{GK~’19\\B4.1c}{5.}{}
+Von 12 500 Prüflingen einer Fahrprüfung waren 2 600 mindestens 30 Jahre alt ($A$); 10 000 haben bestanden ($B$), davon 7 700 jünger als 30. Bestimme die Anzahl der Prüflinge, die jünger als 30 waren und nicht bestanden haben.
+\karo{3}
+\fusshilfe{\mbox{5:~2 200}}
+\end{pfaufg}
+% 2020-iqb-ga-A12a-m1 (Schwere I, rang 54)
+\begin{pfaufg}{IQB~’20\\A12a}{6.}{}
+Bei einem Fest sind 50 \% der Gäste Erwachsene; 15 \% aller Gäste sind verkleidete Erwachsene, und 70 \% der Jugendlichen sind verkleidet. Bestimme den Anteil der nicht Verkleideten unter allen Gästen.
+\karo{3}
+\fusshilfe{\mbox{6:~50 \%}}
+\end{pfaufg}
+% 2025-iqb-ga-B3.1b-m1 (Schwere II, rang 55)
+\begin{pfaufg}{IQB~’25\\B3.1b}{7.}{}
+Von den Mitgliedern eines Vereins sind 70 \% jünger als 50 Jahre ($J$); 20 \% sind jünger als 50 und leben nicht in einer Großstadt; 68 \% leben in einer Großstadt ($G$). Beurteile die Aussage: Weniger als 60 \% leben entweder in einer Großstadt oder sind nicht jünger als 50.
+\karo{3}
+\fusshilfe{\mbox{7:~falsch}}
+\end{pfaufg}
+% 2019-be-gk-B4.1d-m1 (Schwere II, rang 56)
+\begin{pfaufg}{GK~’19\\B4.1d}{8.}{}
+Von 12 500 Prüflingen einer Fahrprüfung waren 2 600 mindestens 30 Jahre alt ($A$); 10 000 haben bestanden ($B$), davon 7 700 jünger als 30. Untersuche, ob $P_A(B)$ und $P(B)$ übereinstimmen, ob $A$ und $B$ stochastisch unabhängig sind, und deute das Ergebnis.
+\karo{5}
+\fusshilfe{\mbox{8:~Ältere bestehen häufiger}}
+\end{pfaufg}
+% 2023-iqb-ga-B1.2e-m1 (Schwere III, rang 57)
+\begin{pfaufg}{IQB~’23\\B1.2e}{9.}{}
+Ein Kaffeesack hat zu viele Verunreinigungen ($M_1$) mit 2 \% und wiegt weniger als 60 kg ($M_2$); beide Mängel sind unabhängig. $P(\overline{M_1} \cap M_2) = 4{,}9\,\%$. Ermittle $P(M_2)$.
+\karo{3}
+\fusshilfe{\mbox{9:~5 \%}}
+\end{pfaufg}
+\par\vfill\noindent{\scriptsize\color{mbgrau}Originale: IQB GK 2026 \pkt{} B2.1a, Abi GK 2018 \pkt{} B3.2e, IQB GK 2025 \pkt{} B3.1a, IQB GK 2024 \pkt{} B2.1b, Abi GK 2019 \pkt{} B4.1c, IQB GK 2020 \pkt{} A12a, IQB GK 2025 \pkt{} B3.1b, Abi GK 2019 \pkt{} B4.1d, IQB GK 2023 \pkt{} B1.2e\par}
+\end{document}
