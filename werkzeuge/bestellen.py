@@ -188,7 +188,8 @@ def pruefungen():
                     kapitel=ein.get('Kapitel', ''), kapitelname=ein.get('Name', ''), einheit=einheit,
                     anzeige=paare.get('Anzeigenamen', {}).get(einheit, einheit),
                     ordner=paare.get('Ordner', {}).get(einheit, ''), kapitelfolge=int(re.sub(r'\D', '', ein.get(
-                        'Folge', '')) or 99), stufen=[(n, an) for n, z, an in st if z == einheit]))
+                        'Folge', '')) or 99), stufen=[(s.strip(), s.strip()) for s in paare['Stufen'][einheit].split(' · ')]
+                    if einheit in paare.get('Stufen', {}) else [(n, an) for n, z, an in st if z == einheit]))
         folge = {}
         for b in P['blaetter']:
             folge[b['gebiet']] = min(folge.get(b['gebiet'], 99), b['kapitelfolge'])
@@ -328,6 +329,7 @@ class Bestellung:
         self.liefer = []          # (eintrag, ordner, kennung, zusaetze)
         self.schueler = None
         self.name = None
+        self.genannt = None       # (P, Sorte), wenn die Bestellung die Prüfung nennt
 
     # eine Rückfrage: bei --wahl die gewählte Option, sonst Frage; nach einer Antwort keine zweite (Vorschlag)
     def frage(self, text, optionen, werte):
@@ -353,12 +355,40 @@ class Bestellung:
         return None, None
 
     def vorgabe(self):
-        P = next(P for P in self.P_alle if P['blaetter'])
+        """Ohne Namen: genannte Prüfung („Karte Abitur“, „Abitur GK ana“), sonst die erste mit setzbaren Blättern
+        (P10; seit 15.10. hat auch das Abitur Kennungen, aber noch keinen Setzer)."""
+        if self.genannt:
+            return self.genannt
+        P = next((P for P in self.P_alle if P['blaetter'] and P['felder'].get('Blatt')), None) or next(
+            P for P in self.P_alle if P['blaetter'])
         return P, P['sorten'][0][0]
+
+    def pruefwort(self, roh):
+        """Prüfung und Kurs als Wort der Bestellung („Abitur“, „P10“, „FHR“, dazu „GK“/„LK“) -> (P, Sorte), Rest."""
+        P, sorte, rest = None, None, []
+        for w in roh:
+            n = norm(w)
+            treffer = next((Q for Q in self.P_alle if n and (n == norm(Q['anzeige']) or n in Q['liste'])), None)
+            kurs = next(((Q, so) for Q in self.P_alle for so, k in Q['sorten'] if k and n == norm(k)), None)
+            if treffer:
+                P = treffer
+            elif kurs:
+                P, sorte = P or kurs[0], kurs[1]
+            else:
+                rest.append(w)
+        if P is None:
+            return None, roh
+        return (P, sorte or (P['sorten'][0][0] if P['sorten'] else '')), rest
 
     def plan(self):
         roh = [w for w in re.split(r'[\s·,]+', self.eingabe.strip()) if w]
         S = schueler()
+        self.genannt, roh = self.pruefwort(roh)
+        # Schülernummer statt Name („S15 ana“)
+        if roh and re.fullmatch(r'[Ss]\d{1,2}', roh[0]):
+            s = next((x for x in S if x['nr'].isdigit() and int(x['nr']) == int(roh[0][1:])), None)
+            if s:
+                roh[0] = s['name']
         # Name
         # bekannter Name auch mitten im Freitext („was Leichteres zu Parabeln für Lena“, Probe 15.10.)
         if roh and not any(x['name'].lower() == roh[0].lower() for x in S):
@@ -426,7 +456,7 @@ class Bestellung:
         # Gebiet über Kurzwort
         for gebiet, kws in P['gebiete'].items():
             if rest and rest[0] in kws and len([x for x in rest if x not in STOPP]) == 1:
-                if 'basis' in kws or gebiet.startswith('nur Basisteil'):
+                if 'basis' in kws or gebiet.startswith('nur '):
                     return self.basis()
                 return self.gebiet(gebiet, loes=loes, mehr=mehr)
         if not rest:
@@ -494,6 +524,13 @@ class Bestellung:
 
     def blatt(self, b, loes=False, mehr=False, hinweis=None):
         P = self.P
+        if not P['felder'].get('Blatt'):
+            # Prüfung ohne Setzer (Abitur seit 15.10.: Blätter mit Kennung im Zuschnitt, gebaut noch keins)
+            self.out['zeile'] = f'{self.kopf()} · {b["anzeige"]} ({b["kennung"]}): gibt es noch nicht'
+            st = ' · '.join(a for _, a in b['stufen'])
+            self.out['hinweis'] = (f'Blatt {b["anzeige"]} ({b["kennung"]}) gibt es noch nicht' + (f' (Stufen: {st})'
+                                   if st else '') + '; ' + (P['felder'].get('Fehlt') or '') + (f'; {hinweis}' if hinweis else ''))
+            return self.out
         kf = fassung(P, b)
         ordner = p(P['felder']['Blattordner'].format(datum=self.datum, ordner=b['ordner']))
         pdf = os.path.join(ordner, 'pdf')
@@ -534,7 +571,8 @@ class Bestellung:
     def basis(self):
         v = self.P['felder'].get('Basiszettel')
         if not v:
-            return self.fehlt(None)
+            wort = next((g[4:].split(' (')[0] for g in self.P['gebiete'] if g.startswith('nur ')), 'Basis')
+            return self.fehlt(f'{wort}-Zettel gibt es für {self.P["anzeige"]} noch nicht')
         alle = sorted(glob.glob(p(v).replace('{n}', '*')), key=lambda x: int(re.search(r'Z(\d+)\.pdf$', x).group(1)))
         kenn = lambda x: os.path.basename(x)[:-4]
         offen = [x for x in alle if not any((z.get('kennung') or '') == kenn(x) for z in self.geliefert)]
@@ -590,7 +628,7 @@ class Bestellung:
         if not x:
             return self.fehlt(f'{wort} ist noch nicht gesetzt')
         self.out['dateien'] = [x]
-        self.out['zeile'] = f'Du bekommst: {self.P["anzeige"]} · {wort}'
+        self.out['zeile'] = f'Du bekommst: {self.P["anzeige"]}{" " + kurs.upper() if kurs else ""} · {wort}'
         return self.out
 
     def liste(self):
