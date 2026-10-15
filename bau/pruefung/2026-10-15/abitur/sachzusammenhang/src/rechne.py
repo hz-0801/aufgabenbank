@@ -20,8 +20,8 @@ g = Rational(8, 3)*x**3 + 4*x**2; r = g.subs(x, -1)
 p('B6', 2*r, N(2*r, 4), 2*(1 + r), N(2*(1 + r), 4))
 L = Integral(sqrt(1 + diff(g, x)**2), (x, -1, 0)).evalf(); U = 4*Rational(17, 10) + 2*pi*r
 p('B7', round(L, 3), N(U, 4), N(U/3, 4), N((U/3 - 5)*60, 3))
-# B8 2023-B2.1k  Tisch: f = 0,5(x²-9)e^x, Spitzen (±3|0), (0|±4,5), 1 LE = 10 cm
-f = Rational(1, 2)*(x**2 - 9)*exp(x); p('B8', f.subs(x, 0), [N(f.subs(x, v), 3) for v in (-3, -2, -1, 0)], 'Kante 90 cm', 90*90*50/1000)
+# B8 2023-B2.1k  Tisch: f = 1/3(x²-9)e^(x/2), Spitzen (±3|0), (0|±3), 1 LE = 10 cm, Höhe 60 cm
+f = Rational(1, 3)*(x**2 - 9)*exp(x/2); p('B8', f.subs(x, 0), [N(f.subs(x, v), 3) for v in (-3, -2, -1, 0)], 'min', N(minimum(f, x, Interval(-3, 0)), 4), 'Kante 60 cm, Liter', 60*60*60/1000)
 # B9 2024-B2.1h  Knauf f = (x-3)e^(-x/3+2), 3 <= x <= 12, HP (6|3), 1 LE = 0,5 cm, Dichte 0,86
 f = (x - 3)*exp(-x/3 + 2); V = Rational(9, 2)*3*3; p('B9', f.subs(x, 6), V, N(V*Rational(86, 100), 4))
 # B10 2024-B2.1g neben  Sockel

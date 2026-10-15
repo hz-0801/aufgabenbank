@@ -24,9 +24,9 @@ f = Rational(2, 3)*x**4 + Rational(4, 3)*x**3 + 2; p('B5', factor(diff(f, x, 2))
 # B6 2024-B2.1c  f = (x-3)e^(-x/3+2)
 f = (x - 3)*exp(-x/3 + 2); f2 = diff(f, x, 2)
 p('B6', simplify(f2 - (x/9 - 1)*exp(-x/3 + 2)) == 0, solve(f2, x), f.subs(x, 9), N(f.subs(x, 9), 4), f2.subs(x, 8) < 0, f2.subs(x, 10) > 0)
-# B7 2023-B2.1f  f = 0,5(x²-9)e^x
-f = Rational(1, 2)*(x**2 - 9)*exp(x); f2 = diff(f, x, 2)
-p('B7', simplify(f2 - (x**2/2 + 2*x - Rational(7, 2))*exp(x)) == 0, [(s, N(s, 4), N(f.subs(x, s), 4)) for s in solve(f2, x)])
+# B7 2023-B2.1f  f = 1/3(x²-9)e^(x/2)
+f = Rational(1, 3)*(x**2 - 9)*exp(x/2); f2 = diff(f, x, 2)
+p('B7', simplify(f2 - (x**2/12 + 2*x/3 - Rational(1, 12))*exp(x/2)) == 0, [(s, N(s, 4), N(f.subs(x, s), 4)) for s in solve(f2, x)])
 # Mehr
 f = x**3/8 - x**2 + 2*x; p('M1', wp(f))
 f = (-x**2/5 + 3*x)*exp(-x/5); f2 = factor(diff(f, x, 2)); p('M2', f2, [(N(s, 4), N(f.subs(x, s), 4)) for s in solve(f2, x)])

@@ -2,8 +2,8 @@
 from sympy import *
 x, t, k = symbols('x t k', real=True)
 def p(*a): print(*a)
-# B1 2023-B2.1i  f = 0,5(x²-9)e^x, Spitzen (±3|0), (0|±4,5)
-f = Rational(1, 2)*(x**2 - 9)*exp(x); p('B1', solve(f, x), f.subs(x, 0), N(f.subs(x, -1.5), 3), 'Sehne', -Rational(9, 4))
+# B1 2023-B2.1i  f = 1/3(x²-9)e^(x/2), Spitzen (±3|0), (0|±3)
+f = Rational(1, 3)*(x**2 - 9)*exp(x/2); p('B1', solve(f, x), f.subs(x, 0), N(f.subs(x, -1.5), 3), 'Sehne', -Rational(3, 2))
 g = f.subs(x, -x); h = -f; kk = -f.subs(x, -x); p('B1 g(3)', g.subs(x, 3), 'h(-1)>0', N(h.subs(x, -1), 3), 'k(1)>0', N(kk.subs(x, 1), 3))
 # B2 2024-B2.1g  f = (x-3)e^(-x/3+2), Knauf 3 <= x <= 12
 f = (x - 3)*exp(-x/3 + 2); p('B2', -f, f.subs(x, 12), N(f.subs(x, 12), 4), 'Durchm. LE', N(2*f.subs(x, 12), 4), 'mm', N(2*f.subs(x, 12)*5, 3), 'HP', f.subs(x, 6))

@@ -8,9 +8,9 @@ def ext(f, v=x):
             for s in solve(fp, v)]
 # B1 2022-B2.1j Tauchroboter h = 1/8 t (t-36)^2, 0<=t<=36 (Original 9/40 t (t-30)^2, Max 900 m bei 10)
 h = t*(t - 36)**2/8; p('B1', expand(h), 'WP', solve(diff(h, t, 2), t), 'h18', h.subs(t, 18), 'Weg', 2*h.subs(t, 12) - h.subs(t, 18), diff(h, t), diff(h, t).subs(t, 12), diff(h, t, 2).subs(t, 12), h.subs(t, 12))
-# B2 2023-B2.1c f = 0,5(x²-9)e^x, Stelle -1+√10
-f = Rational(1, 2)*(x**2 - 9)*exp(x); fp = diff(f, x); s = -1 + sqrt(10)
-p('B2', simplify(fp - (x**2/2 + x - Rational(9, 2))*exp(x)) == 0, simplify(fp.subs(x, s)), simplify(f.subs(x, s)), N(f.subs(x, s), 4), N(s, 4))
+# B2 2023-B2.1c f = 1/3(x²-9)e^(x/2), Stelle -2+√13 (eine Zahlenwahl je Aufgabe wie B2.1g–m)
+f = Rational(1, 3)*(x**2 - 9)*exp(x/2); fp = diff(f, x); s = -2 + sqrt(13)
+p('B2', simplify(fp - (x**2/6 + 2*x/3 - Rational(3, 2))*exp(x/2)) == 0, simplify(fp.subs(x, s)), simplify(f.subs(x, s)), N(f.subs(x, s), 4), N(s, 4))
 # B3 2022-B2.1a (Nebenplatz) f = (x+3)e^-x, f' = -(x+2)e^-x
 f = (x + 3)*exp(-x); fp = diff(f, x); p('B3', simplify(fp + (x + 2)*exp(-x)) == 0, solve(fp, x), f.subs(x, -2), N(exp(2), 4), fp.subs(x, -3) > 0, fp.subs(x, -1) < 0)
 # B4 2023-A1.3a

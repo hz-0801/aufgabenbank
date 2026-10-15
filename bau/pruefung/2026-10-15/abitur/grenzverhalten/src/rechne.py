@@ -11,8 +11,8 @@ f = Rational(2, 3)*x**4 + Rational(4, 3)*x**3 + 2; fp = diff(f, x)
 p('B2', fp, L(fp, -oo), L(fp, oo), solve(diff(f, x, 2), x), fp.subs(x, -1))
 # B3 2022-B2.1b
 f = (x + 3)*exp(-x); p('B3', L(f, oo), simplify(diff(f, x) + (x + 2)*exp(-x)) == 0)
-# B4 2023-B2.1a
-f = Rational(1, 2)*(x**2 - 9)*exp(x); p('B4', L(f, oo), L(f, -oo))
+# B4 2023-B2.1a  f = 1/3(x²-9)e^(x/2)
+f = Rational(1, 3)*(x**2 - 9)*exp(x/2); p('B4', L(f, oo), L(f, -oo))
 # B5 2025-B2.2a
 f = (3 - x)*exp(x); p('B5', solve(f, x), L(f, -oo), L(f, oo), 'HP', solve(diff(f, x), x), f.subs(x, 2), N(f.subs(x, 2), 3))
 # B6 2024-A1.1a

@@ -18,7 +18,7 @@ f=(x-3)*exp(-x/3+2); fp=simplify(diff(f,x)); p('fp',fp, simplify(fp-(2-x/3)*exp(
 # B8 2022-B2.1a
 f=(x+3)*exp(-x); fp=diff(f,x); p(simplify(fp+(x+2)*exp(-x))==0, solve(f,x), f.subs(x,0), solve(fp,x), f.subs(x,-2), N(exp(2),4), 'vz', fp.subs(x,-3)>0, fp.subs(x,-1)<0)
 # B9 2023-B2.1b
-f=Rational(1,2)*(x**2-9)*exp(x); fp=diff(f,x); p(simplify(fp-(Rational(1,2)*x**2+x-Rational(9,2))*exp(x))==0, solve(f,x), f.subs(x,0))
+f=Rational(1,3)*(x**2-9)*exp(x/2); fp=diff(f,x); p(simplify(fp-(x**2/6+2*x/3-Rational(3,2))*exp(x/2))==0, solve(f,x), f.subs(x,0))
 # Mehr
 pp=-x**2+Rational(19,5)*x-Rational(48,25); p('M1',pp.subs(x,Rational(3,5)),pp.subs(x,Rational(16,5)))
 f=x**3/8-x**2+2*x; p('M2',factor(f),solve(f,x))
