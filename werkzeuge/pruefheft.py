@@ -5170,7 +5170,7 @@ def mehr_loesung(r):
     ergebnisse = []
     for teil in [t.strip() for t in re.split(r'\s\|\s', lo) if t.strip()]:
         schritt = re.split(r'\s*[;⇒]\s*', teil)[-1].strip()
-        segs = re.split(r'\s*(=|≈)\s*', schritt)
+        segs = ops_split(schritt)
         if len(segs) >= 3:
             ergebnisse.append(f'{segs[0]} {segs[-2]} {segs[-1]}')
         else:
@@ -5228,7 +5228,7 @@ def mehr_aufgabe_tex(r, nr, faktor=1.0):
         pass
     elif not rechnet:
         # keine Zahlen (Seitenverhältnis benennen): Antwortfeld rechts in derselben Zeile (gemeinsam.md)
-        lhs = re.split(r'\s*(=|≈)\s*', ergebnisse[0])[0] if ergebnisse else ''
+        lhs = ops_split(ergebnisse[0])[0] if ergebnisse else ''
         out.append('\\hfill ' + tx(lhs) + ' $=$\\linie{30mm}')
     else:
         n = min(8, max(2, mehr_schritte(r) + 1))
@@ -5241,12 +5241,31 @@ def mehr_aufgabe_tex(r, nr, faktor=1.0):
     return '\n'.join(out)
 
 
+def ops_split(s):
+    """v0.17: wie re.split(r'\\s*(=|≈)\\s*', s), aber nur an „=“/„≈“ außerhalb von Klammern – „P(X = 8) ≈ 0,105“ ergibt
+    ['P(X = 8)', '≈', '0,105'], nicht „P(X ≈ 0,105“ (Ergebnis im Fuß und in der Lösungszeile)."""
+    out, cur, tiefe, i = [], '', 0, 0
+    while i < len(s):
+        c = s[i]
+        tiefe += {'(': 1, '[': 1, '{': 1, ')': -1, ']': -1, '}': -1}.get(c, 0)
+        if c in '=≈' and tiefe <= 0:
+            out += [cur.rstrip(), c]
+            cur = ''
+            i += 1
+            while i < len(s) and s[i] == ' ':
+                i += 1
+            continue
+        cur += c
+        i += 1
+    return out + [cur]
+
+
 def mehr_fusswert(e, optionen, r):
     """Fußwert: Buchstabe beim Ankreuzen, sonst der Wert hinter dem letzten op."""
     b = mehr_buchstabe(r, optionen)
     if b:
         return b
-    segs = re.split(r'\s*(=|≈)\s*', e)
+    segs = ops_split(e)
     return segs[-1] if len(segs) >= 3 else e
 
 
@@ -5928,7 +5947,7 @@ def p_form_tex(t_rest, grafik, form, optionen, ergebnisse, n, faktor):
             if t_rest:
                 out.append('\\par\\smallskip\\noindent ' + t_rest)
                 t_rest = ''
-            felder = [re.split(r'\s*(=|≈)\s*', e)[0] for e in ergebnisse if re.search(r'\s(=|≈)\s', e)]
+            felder = [ops_split(e)[0] for e in ergebnisse if re.search(r'\s(=|≈)\s', e)]
             if felder:
                 out.append('\\par\\noindent\\hfill ' + tx(felder[-1]) + ' $=$\\linie{40mm}')
         elif teil == 'ankreuzen':
@@ -5957,7 +5976,7 @@ def p_form_tex(t_rest, grafik, form, optionen, ergebnisse, n, faktor):
             else:
                 out.append(f'\\karo{{{k}}}')
         elif teil == 'teil':
-            felder = [re.split(r'\s*(=|≈)\s*', e)[0] for e in ergebnisse if re.search(r'\s(=|≈)\s', e)]
+            felder = [ops_split(e)[0] for e in ergebnisse if re.search(r'\s(=|≈)\s', e)]
             for f in felder:
                 out.append('\\par\\noindent\\hfill ' + tx(f) + ' $=$\\linie{30mm}')
         elif teil.startswith('antwort:'):
@@ -6061,7 +6080,7 @@ def p_echt_inhalt(D, r, nr, heraus, faktor=1.0, vorige=None, nr_vorige=0, schmal
     elif luecke:
         rechts = ''
     elif not rechnet:
-        lhs = re.split(r'\s*(=|≈)\s*', ergebnisse[0])[0] if ergebnisse else ''
+        lhs = ops_split(ergebnisse[0])[0] if ergebnisse else ''
         rechts = '\\hfill ' + tx(lhs) + ' $=$\\linie{30mm}'
     else:
         rechts = f'\\karo{{{n}}}'
@@ -6069,7 +6088,7 @@ def p_echt_inhalt(D, r, nr, heraus, faktor=1.0, vorige=None, nr_vorige=0, schmal
     grafik = (r.get('grafik') or '').strip()
     if form == 'linie' and not optionen and not luecke:
         # Gleichung oder Term angeben: „A = ____“ rechts (12.10., Flächen)
-        lhs = re.split(r'\s*(=|≈)\s*', ergebnisse[0])[0] if ergebnisse else ''
+        lhs = ops_split(ergebnisse[0])[0] if ergebnisse else ''
         rechts = '\\hfill ' + tx(lhs) + ' $=$\\linie{30mm}'
     if form == 'teil' and not optionen and not luecke:
         # kurze Antwort rechts in derselben Zeile, Einheit aus der Lösung (gemeinsam.md „Antwortfeld“)
@@ -6087,7 +6106,7 @@ def p_echt_inhalt(D, r, nr, heraus, faktor=1.0, vorige=None, nr_vorige=0, schmal
             # Bündel nebeneinander ohne Karo (pruefung.md § 5): je Gleichung im Ergebnis eine Antwortlinie „p(x) = ___“
             for e in ergebnisse:
                 if re.search(r'\s(=|≈)\s', e):
-                    out.append('\\par\\smallskip\\noindent ' + tx(re.split(r'\s*(=|≈)\s*', e)[0]) + ' $=$\\linie{25mm}')
+                    out.append('\\par\\smallskip\\noindent ' + tx(ops_split(e)[0]) + ' $=$\\linie{25mm}')
         elif rechts and form in ('teil', 'linie'):
             out.append('\\par\\noindent' + rechts)
     elif grafik:
@@ -6275,7 +6294,7 @@ def p_fusswerte(ergebnisse, optionen, r):
     Ergebnis der Wert hinter dem letzten Operator."""
     out = []
     for e in ergebnisse:
-        segs = re.split(r'\s*(=|≈)\s*', e)
+        segs = ops_split(e)
         out.append(tx(segs[-1]) if len(segs) >= 3 else tx(e))
     return out
 
@@ -6302,7 +6321,7 @@ def p_ergebnis(r):
             continue
         # Schritte trennen „;“, „⇒“ und ein Doppelpunkt nach einem Wort („Torte: …“), nicht das Geteiltzeichen
         schritt = re.split(r'\s*;\s*|\s*⇒\s*|(?<=[A-Za-zäöüßÄÖÜ]):\s+', t)[-1].strip()   # „e : 2“ ist Geteiltzeichen
-        segs = re.split(r'\s*(=|≈)\s*', schritt)
+        segs = ops_split(schritt)
         if len(segs) >= 3:
             lhs = segs[0] if len(segs[0]) <= 20 else ''
             ergebnisse.append(f'{lhs} {segs[-2]} {segs[-1]}'.strip())
