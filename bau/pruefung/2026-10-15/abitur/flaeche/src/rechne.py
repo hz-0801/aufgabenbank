@@ -13,7 +13,7 @@ f = x**3+2*x**2-3*x; p('2026-A1.1a', factor(f), integrate(f, (x, -1, 0)))
 f = (3-x)*exp(x); F = (4-x)*exp(x); assert simplify(diff(F, x)-f) == 0; I = F.subs(x, 2)-F.subs(x, -2)
 p('2025-B2.2d', simplify(I), N(I, 5), 'Näherung', N(2*E**2, 5), 'Abw %', N((2*E**2-I)/I*100, 3), 'HP', solve(diff(f, x), x))
 h = 10*x**3-90*x**2+240*x+20; p('2023-B2.2i', integrate(h, (x, 0, 5)), integrate(h, (x, 0, 5))/5, 'max', solve(diff(h, x), x), h.subs(x, 2), h.subs(x, 5))
-f = Rational(1, 2)*x**4-3*x**2+Rational(5, 2); I = integrate(f, (x, -1, 1)); p('2024-B2.2f', I, 'a', 1/I)
+f = x**4 - 6*x**2 + 5; I = integrate(f, (x, -1, 1)); p('2024-B2.2f', I, 'a', 1/I)
 p('2022-A1.3a', integrate(m*x-x**2, (x, m, 0)), solve(Eq(-m**3/6, Rational(9, 2)), m))
 u = -log(4); tot = 2-2*exp(u); p('2026-B2.2e', tot, solve(Eq(2-2*exp(x), tot/2), x), N(log(Rational(5, 8)), 3))
 # Mehr AA140
@@ -33,7 +33,7 @@ h = -x**3/16+Rational(3, 8)*x**2; A = integrate(h, (x, 0, 4))-integrate(-2*x, (x
 p('2022-B2.2h', integrate(h, (x, 0, 4)), integrate(-2*x, (x, 0, Rational(2, 5))), integrate(x/2-1, (x, Rational(2, 5), 4)), A)
 f = x**3/18-Rational(3, 2)*x; g = x/2; I = integrate(g-f, (x, 0, 6)); r2 = 6**2+3**2
 p('2025-B2.1e', f.subs(x, 6), g.subs(x, 6), r2, I, 4*I, 'A1', r2*pi, N(r2*pi, 4), 'A1-A2', N(r2*pi-4*I, 4))
-f = Rational(1, 2)*x**4-3*x**2+Rational(5, 2); s = Rational(5, 2)*x+Rational(5, 2)
+f = x**4 - 6*x**2 + 5; s = 5*x+5
 p('2024-B2.2e', [v for v in solve(f-s, x) if v.is_rational], integrate(f-s, (x, -1, 0)), Rational(1, 2)*f.subs(x, 0))
 f = Rational(1, 3)*(x**2-9)*exp(x/2); I = integrate(f, (x, -3, 0)); zw = Rational(9, 2)+I
 p('2023-B2.1m Dreieck 9/2, Zwischenraum', N(zw, 4), 'Zuwachs', N(8*zw, 4), 'cm²', N(800*zw, 4))
