@@ -9,7 +9,7 @@ f = 2*exp(x)+3; m, y0, t = tang(f, 0); x0 = solve(t, x)[0]; hyp = sqrt(x0**2+y0*
 print('2026-B2.2c', t, x0, hyp, 'U', -x0+y0+hyp, N(-x0+y0+hyp, 4))
 f = (x+3)*exp(-x); m, y0, t = tang(f, 0); x0 = solve(t, x)[0]; hyp = sqrt(x0**2+y0**2)
 print('2022-B2.1g', t, x0, simplify(hyp), 'U', N(x0+y0+hyp, 4), 'M', (x0/2, y0/2), 'Abstand', N(hyp/2, 4), N(sqrt((x0/2)**2+(y0/2)**2), 4))
-f = Rational(1, 2)*x**4-3*x**2+Rational(5, 2); m, y0, t = tang(f, -1); n = expand(-1/m*(x+1)+y0)
+f = x**4 - 6*x**2 + 5; m, y0, t = tang(f, -1); n = expand(-1/m*(x+1)+y0)
 print('2024-B2.2d', t, n, 'Grundseite', t.subs(x, 0)-n.subs(x, 0), 'A', Rational(1, 2)*(t.subs(x, 0)-n.subs(x, 0))*1)
 f = Rational(1, 3)*(x**2-9)*exp(x/2); fp = diff(f, x); fpp = diff(fp, x)
 assert simplify(fp-(x**2/6+2*x/3-Rational(3, 2))*exp(x/2)) == 0
