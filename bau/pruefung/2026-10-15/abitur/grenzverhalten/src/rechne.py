@@ -23,7 +23,7 @@ f = Rational(1, 2)*x**4 - 3*x**2 + Rational(5, 2); p('B7', simplify(f.subs(x, -x
 f = x**3/18 - Rational(3, 2)*x; p('B8', simplify(f.subs(x, -x) + f) == 0, solve(f, x), N(3*sqrt(3), 3),
   [(s, f.subs(x, s)) for s in solve(diff(f, x), x)])
 # Mehr
-p('M1', L((x + 2)*exp(-x/4), oo))
+p('M1', L((x + 1)*exp(-x/3), oo), (x + 1)*exp(-x/3) > 0)
 f = (8*x - 2)*exp(-x); p('M2', L(f, oo), L(f, -oo))
 f = (-x**2/5 + 3*x)*exp(-x/5); p('M3', L(f, oo), L(f, -oo))
 h = 6*t*exp(-t/20) + 40; p('M4', limit(h, t, oo), h.subs(t, 0))

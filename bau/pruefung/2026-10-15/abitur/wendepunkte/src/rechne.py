@@ -31,7 +31,7 @@ p('B7', simplify(f2 - (x**2/12 + 2*x/3 - Rational(1, 12))*exp(x/2)) == 0, [(s, N
 f = x**3/8 - x**2 + 2*x; p('M1', wp(f))
 f = (-x**2/5 + 3*x)*exp(-x/5); f2 = factor(diff(f, x, 2)); p('M2', f2, [(N(s, 4), N(f.subs(x, s), 4)) for s in solve(f2, x)])
 f = -Rational(2, 100)*(x - 6)*(x + 2)**2; p('M3', solve(diff(f, x, 2), x), diff(f, x).subs(x, Rational(2, 3)))
-f = -x**3/540 + x**2/18 + 1; s = solve(diff(f, x, 2), x)[0]; m = diff(f, x).subs(x, s)
+f = -x**3/250 + 3*x**2/50 + 2; s = solve(diff(f, x, 2), x)[0]; m = diff(f, x).subs(x, s)
 p('M4', s, f.subs(x, s), N(f.subs(x, s), 3), m, N(atan(m)*180/pi, 4))
 g = -x*(x - 6)*(x - 12)/36 + 12; p('M5', wp(g), N(g.subs(x, 6 - 2*sqrt(3)), 3), N(g.subs(x, 6 + 2*sqrt(3)), 3), diff(g, x).subs(x, 6))
 f = (x**3 - 12*x**2 + 32*x)/8; p('M6', wp(f), diff(f, x).subs(x, 4), factor(f))

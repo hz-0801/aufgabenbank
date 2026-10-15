@@ -21,7 +21,7 @@ F = (-8*x-6)*exp(-x); assert simplify(diff(F, x)-(8*x-2)*exp(-x)) == 0; p('2020-
 F = (-3*x-12)*exp(-x/3); assert simplify(diff(F, x)-(x+1)*exp(-x/3)) == 0
 F = -(x**2-2*x+2)*exp(-x); assert simplify(diff(F, x)-(x**2-4*x+4)*exp(-x)) == 0
 h = 6*x*exp(-x/20)+40; p('2019-B2.2e', N(integrate(h, (x, 0, 60)), 6), N(integrate(h, (x, 0, 60))/60, 4))
-p('IQB23', integrate(x**4-2*x**3, (x, 0, 1)), 'IQB18', integrate((x**3-12*x**2+32*x)/6, (x, 0, 4)))
+p('IQB23', integrate(x**4-2*x**3, (x, 0, 1)), 'IQB18', integrate((x**3-12*x**2+32*x)/8, (x, 0, 4)))
 p('2020-A1.1', diff(3*x**4-2*x+5, x), '2019-A1.1a', diff(-4*x**4-6*x**2+x, x), integrate(-4*x**4-6*x**2+x, x))
 # --- AA150 Flächeninhalt
 f = 2*exp(x)-2*exp(-1); I = integrate(f, (x, -1, 0)); p('2025-A1.4b', simplify(I), N(I, 3))

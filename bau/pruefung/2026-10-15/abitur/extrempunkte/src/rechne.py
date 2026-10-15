@@ -30,7 +30,7 @@ f = (x - 3)*exp(-x/3 + 2); fp = diff(f, x); p('B10', simplify(fp - (2 - x/3)*exp
 # Mehr
 g = Rational(1, 1000)*(Rational(1, 1600)*x**4 - 8*x**2 + 25600)
 p('M1', factor(diff(g, x)), ext(g))
-f = (x + 2)*exp(-x/4); p('M2', factor(diff(f, x)), ext(f))
+f = (x + 1)*exp(-x/3); p('M2', factor(diff(f, x)), ext(f))
 h = 6*t*exp(-t/20) + 40; p('M3', factor(diff(h, t)), ext(h, t))
 f = -Rational(2, 100)*(x - 6)*(x + 2)**2; p('M4', ext(f))
 f = x**3 - 6*x**2 + 32; p('M5', diff(f, x).subs(x, 4), diff(f, x, 2).subs(x, 4), f.subs(x, 4))
