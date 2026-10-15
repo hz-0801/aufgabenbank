@@ -5716,6 +5716,10 @@ def p_stufenkopf(name, jahre, frage='', vorhalt=0.16):
     vorhalt: Anteil der Seitenhöhe, der frei sein muss (Kopf + erste Aufgabe; nie eine Überschrift allein unten);
     None: ohne Vorhalt (der Kopf wird mit \\gkopfvor an die erste Aufgabe gebunden)."""
     out = (f'\\Needspace*{{{vorhalt}\\textheight}}' if vorhalt else '') + f'\\pfstufekopf{{{tx(name)}}}{{{p_jahre_tex(jahre)}}}'
+    # Sprungziel je Stufenkopf (plan.md § 10, 15.10. k): „stufe-<slug>“ unter der Kopfzeile; Mappe und Gesamtheft
+    # machen daraus feste Seitenziele (werkzeuge/sprungziele.py). Ein Whatsit, keine Zeile, kein Umbruch.
+    from sprungziele import slug as _slug
+    out += '\\special{pdf:dest (stufe-' + _slug(name) + ') [@thispage /XYZ @xpos @ypos null]}'
     for fr in ([frage] if isinstance(frage, str) else frage):
         if fr:
             # „___“ = Lücke (Formel-Frage „Seite ___“, v0.9)

@@ -22,6 +22,7 @@ BANK = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from p10einheiten import einheiten as p10_einheiten  # noqa: E402  Folge und Ordner aus den Gliederungen (14.10.)
+from sprungziele import slug, stufenziele, feste_ziele, pruefe  # noqa: E402
 
 
 def tex(s):
@@ -83,7 +84,7 @@ def main():
         eintraege.append(dict(kap=e['kapitel'], name=e['kapitelname'], gebiet=e['gebiet'], ein=e['anzeige'],
                               ordner=e['ordner'], pdf=pdf, n=seiten(pdf),
                               kennung=kennung(os.path.join(ziel, e['ordner'])),
-                              stufen=[s for _, s in e['stufen']]))
+                              stufen=[s for _, s in e['stufen']], ziele=stufenziele(pdf)))
     if fehlt:
         raise SystemExit('Blatt fehlt: ' + ', '.join(fehlt))
 
@@ -106,7 +107,10 @@ def main():
                 kapitel = e['name']
                 zeilen.append(r'\multicolumn{4}{@{}l}{\rule{0pt}{2.4ex}\bfseries ' + tex(kapitel) + r'}\\')
             mark = r' \textcolor{red!70!black}{\small (neu)}' if e['ordner'] in neu else ''
-            st = r'\newline{\footnotesize\color{black!65}' + tex(' · '.join(e['stufen'])) + '}' if e['stufen'] else ''
+            # Abschnitte springen zum Stufenkopf im Blatt (plan.md § 10, 15.10. k; sprungziele.py)
+            st = (r'\newline{\footnotesize\color{black!65}' + ' · '.join(
+                (r'\hyperlink{%s@%s}{%s}' % (e['ordner'], slug(s), tex(s)) if slug(s) in e['ziele'] else tex(s))
+                for s in e['stufen']) + '}') if e['stufen'] else ''
             zeilen.append(r'\hyperlink{%s.1}{%s}%s%s & \hyperlink{%s.1}{\ttfamily %s} & %d & \hyperlink{%s.1}{S.~%d}\\'
                           % (e['ordner'], tex(e['ein']), mark, st, e['ordner'], e['kennung'],
                              e['n'], e['ordner'], e['ab']))
@@ -156,6 +160,18 @@ def main():
         ist = lauf(ist)
     aus = os.path.join(ziel, 'gesamtheft-p10.pdf')
     shutil.copy(os.path.join(tmp, 'g.pdf'), aus)
+    # feste Seitenziele (Handy, Edge); Abschnitte auf der Seite ihres Stufenkopfs
+    n, fehler = feste_ziele(aus, {e['ordner']: e['pdf'] for e in eintraege})
+    if not fehler:
+        erw = []
+        for e in eintraege:
+            for s, (sb, _) in stufenziele(e['pdf']).items():
+                if s in {slug(x) for x in e['stufen']}:
+                    erw.append((1 if ist == 1 else None, e['ab'] + sb, f'{e["ordner"]}@{s}'))
+        n, fehler = pruefe(aus, erw)
+    print(f'Sprungmarken {n}, Fehler {len(fehler)}' + (': ' + '; '.join(fehler[:8]) if fehler else ''))
+    if fehler:
+        raise SystemExit('Sprungmarken treffen nicht')
     print(f'{aus}: {seiten(aus)} Seiten, Karte {ist} S., {len(eintraege)} Blätter')
     shutil.rmtree(tmp)
 

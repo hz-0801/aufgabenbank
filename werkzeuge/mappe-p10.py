@@ -29,6 +29,7 @@ BANK = os.path.dirname(HIER)
 sys.path.insert(0, HIER)
 from p10einheiten import einheiten as p10_einheiten, gebiete as p10_gebiete, MN_VORGABE  # noqa: E402
 import bestellkarte as BK  # noqa: E402
+from sprungziele import slug, stufenziele, feste_ziele, pruefe as pruefe_fest  # noqa: E402
 
 PRIVAT_VORGABE = os.environ.get('PRIVAT') or os.path.join(os.path.dirname(BANK), 'aufgabenbank-privat')
 HEFTE = ['2026-for', '2026-ebr', '2025-os', '2024-os', '2023-os', '2022-os', '2021-os', '2020-os', '2019-os',
@@ -130,6 +131,9 @@ PRAEAMBEL = BK.PRAEAMBEL.replace(r'\usepackage[hidelinks]{hyperref}', r'\usepack
                                  r'\usepackage[hidelinks,bookmarksopen,bookmarksopenlevel=1]{hyperref}') + r'''
 \newcommand{\pkt}{\textperiodcentered{}}
 \newcommand{\regkopf}[1]{\clearpage{\LARGE\bfseries #1}\par\vspace{1ex}}
+\usepackage{eso-pic}
+\AddToShipoutPictureFG{\AtPageLowerLeft{\put(\LenToUnit{\paperwidth-13mm},\LenToUnit{7mm}){%
+\hyperlink{inhaltsziel}{\Large\color{black!55}$\uparrow$}}}}
 '''
 
 
@@ -175,7 +179,7 @@ def inhalt_tex(eins, A, S, teile, mit_original):
     """Inhalt (Auftrag 15.10. d): Gebiet -> Blatt (Seiten von Blatt, Lösung, Mehr) -> eingerückt die Abschnitte.
     A: Teilname -> erste Seite; S: Ordner -> {Anzeigename: Seite im Blatt}."""
     namen = {t['name'] for t in teile}
-    out = [r'\clearpage\pdfbookmark[0]{Inhalt}{inhalt}{\LARGE\bfseries Inhalt}\par\vspace{1ex}',
+    out = [r'\clearpage\pdfbookmark[0]{Inhalt}{inhalt}\hypertarget{inhaltsziel}{}{\LARGE\bfseries Inhalt}\par\vspace{1ex}',
            r'{\small\setlength{\parindent}{0pt}\setlength{\parskip}{0pt}']
     zeile = lambda links_, rechts: r'%s\nobreak\dotfill\nobreak %s\par' % (links_, rechts)
     gebiet = None
@@ -191,8 +195,9 @@ def inhalt_tex(eins, A, S, teile, mit_original):
                                              % (o, tex(e['anzeige']), e['kennung']), r' \enspace '.join(teile_r)))
         for _, anz in e['stufen']:
             if anz in S[o]:
-                out.append(zeile(r'\hspace*{1.5em}%s' % tex(anz),
-                                 r'\hyperlink{%s.%d}{%d}' % (o, S[o][anz], A[o] + S[o][anz] - 1)))
+                ziel = '%s@%s' % (o, slug(anz))   # Stufenkopf im Blatt (sprungziele.py), plan.md § 10, 15.10. k
+                out.append(zeile(r'\hspace*{1.5em}\hyperlink{%s}{%s}' % (ziel, tex(anz)),
+                                 r'\hyperlink{%s}{%d}' % (ziel, A[o] + S[o][anz] - 1)))
     out.append(r'\vspace{1.4ex}' + zeile(r'{\large\bfseries Basiszettel}', r'\hyperlink{basz1.1}{%d}' % A['basz1']))
     if mit_original:
         out.append(r'\vspace{1.4ex}{\large\bfseries Original neu}\par\vspace{.4ex}')
@@ -237,6 +242,29 @@ def register_tex(stich, fund):
         out.append(r'\hangindent1em %s\enspace %s\par' % (marke, r' \enspace '.join(teile) or '–'))
     out.append(r'\end{multicols}')
     return '\n'.join(out)
+
+
+def pfeile(pdf, vorn):
+    """„↑“ auf jeder Seite: ein Link unten rechts, der auf die Seite des Inhalts springt."""
+    import pypdf
+    r = pypdf.PdfReader(pdf)
+    seite = {p.indirect_reference.idnum: i + 1 for i, p in enumerate(r.pages)}
+    inhalt = None
+    for i, p in enumerate(r.pages):
+        if 'Inhalt' in (p.extract_text() or '')[:40] and i + 1 <= vorn:
+            inhalt = i + 1
+    fehler = []
+    for i, p in enumerate(r.pages):
+        ok = False
+        for a in p.get('/Annots') or []:
+            a = a.get_object()
+            d = a.get('/Dest')
+            rect = [float(x) for x in a.get('/Rect', [0, 0, 0, 0])]
+            if a.get('/Subtype') == '/Link' and d is not None and rect[1] < 60 and rect[0] > float(p.mediabox.right) - 80:
+                ok = seite.get(d[0].idnum) == inhalt
+        if not ok:
+            fehler.append(f'S. {i + 1}: kein ↑ zum Inhalt (S. {inhalt})')
+    return fehler
 
 
 def pruefe_sprungmarken(pdf, erwartet):
@@ -317,8 +345,14 @@ def main():
     E = BK.eintraege(ziel, 0, a.mn)
     karte = r'\pdfbookmark[0]{Bestellkarte}{karte}\hypertarget{karte}{}' + kartenseiten(E)
     hand = r'\pdfbookmark[0]{Handreichung}{handreichung}' + handreichung(E, a.mn)
-    S = {e['ordner']: stufenseiten(os.path.join(ziel, e['ordner'], 'pdf', '2-blatt.pdf'), [x for _, x in e['stufen']])
+    # Seite je Stufenkopf: aus dem Sprungziel des Setzers (stufe-<slug>), sonst aus dem Text; T = nur Text (Prüfung)
+    T = {e['ordner']: stufenseiten(os.path.join(ziel, e['ordner'], 'pdf', '2-blatt.pdf'), [x for _, x in e['stufen']])
          for e in eins}
+    S = {}
+    for e in eins:
+        Z = stufenziele(os.path.join(ziel, e['ordner'], 'pdf', '2-blatt.pdf'))
+        S[e['ordner']] = {x: (Z[slug(x)][0] + 1 if slug(x) in Z else T[e['ordner']][x])
+                          for _, x in e['stufen'] if slug(x) in Z or x in T[e['ordner']]}
 
     def ab(teile, vorn):
         s, out = vorn + 1, {}
@@ -431,6 +465,19 @@ def main():
             erwartet |= {(f'{o}.{p}', A[o] + p - 1) for p in S[o].values()}
         erwartet |= {(f'{t["name"]}.1', A[t['name']]) for t in teile}
         fehler, n_links = pruefe_sprungmarken(ausgabe, erwartet)
+        # feste Seitenziele (Handy, Edge); Abschnittslinks müssen auf der Seite landen, auf der der Text des
+        # Stufenkopfs steht (unabhängig vom Sprungziel gesucht)
+        n_fest, f_fest = feste_ziele(ausgabe, {e['ordner']: os.path.join(ziel, e['ordner'], 'pdf', '2-blatt.pdf')
+                                              for e in eins})
+        fehler += f_fest
+        if not f_fest:
+            ab_erw = [(None, A[e['ordner']] + T[e['ordner']][x] - 1, f'Abschnitt {e["ordner"]}: {x}')
+                      for e in eins for _, x in e['stufen'] if x in T[e['ordner']]]
+            ab_erw += [(None, A[e['ordner']] + p - 1, f'Abschnitt {e["ordner"]}: {x} (Ziel)')
+                       for e in eins for x, p in S[e['ordner']].items()]
+            n_links, f2 = pruefe_fest(ausgabe, ab_erw)
+            fehler += f2
+            fehler += pfeile(ausgabe, vorn)
         berichte.append(f'{ausgabe}: {seiten(ausgabe)} Seiten (Vorspann {vorn}); Fundstellen {len(fund)}, ohne Seite '
                         f'auf Blatt/Mehr {len(fehlt)}' + (f' ({" ".join(fehlt[:12])}{" …" if len(fehlt) > 12 else ""})'
                                                            if fehlt else '')

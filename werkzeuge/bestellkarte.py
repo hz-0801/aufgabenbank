@@ -17,6 +17,7 @@ import argparse, os, re, shutil, subprocess, sys, tempfile
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from p10einheiten import einheiten as p10_einheiten, gebiete as p10_gebiete, MN_VORGABE  # noqa: E402
+from sprungziele import slug  # noqa: E402
 
 BANK = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 JUNG = [2026, 2025, 2024, 2023, 2022]
@@ -64,12 +65,23 @@ def lohnt(wort, jahre):
                       for j in JUNG)
 
 
+def kopfzeile(e):
+    """Blattname (springt zum Blatt), dahinter die Kennung klein grau (plan.md § 10, 15.10. k)."""
+    return (r'\rule{0pt}{3.6ex}\hyperlink{%s.1}{\large\bfseries %s}\enspace{\small\color{black!45}%s} & \\'
+            % (e['ordner'], e['titel'], e['einheit']['kennung']))
+
+
+def abschnitt(e, name):
+    """Abschnitt springt zu seinem Stufenkopf im Blatt („<ordner>@<slug>“, aufgelöst von sprungziele.py)."""
+    return r'\hyperlink{%s@%s}{%s}' % (e['ordner'], slug(name), name)
+
+
 def seite(gebiet, eintraege):
     z = []
     for e in eintraege:
-        z.append(r'\rule{0pt}{3.6ex}\hyperlink{%s.1}{\large\bfseries %s} & \\' % (e['ordner'], e['titel']))
+        z.append(kopfzeile(e))
         for name, wort, jahre in e['stufen']:
-            z.append(r'\hspace*{1.2em}%s\enspace %s & %s\\' % (KASTEN, name, lohnt(wort, jahre)))
+            z.append(r'\hspace*{1.2em}%s\enspace %s & %s\\' % (KASTEN, abschnitt(e, name), lohnt(wort, jahre)))
     return (r'{\LARGE\bfseries %s}\par\vspace{1ex}' % gebiet
             + r'\begin{tabular}{@{}p{0.7\textwidth}l@{}}'
             + '\n'.join(z) + r'\end{tabular}\clearpage')
@@ -119,12 +131,12 @@ def handreichung_seite(gebiet, eintraege, mn):
     „zuletzt JJ“)."""
     z = []
     for e in eintraege:
-        z.append(r'\rule{0pt}{3.6ex}\hyperlink{%s.1}{\large\bfseries %s} & \\' % (e['ordner'], e['titel']))
+        z.append(kopfzeile(e))
         J = letzte_jahre(mn, e['einheit']['kapitel'])
         for (name, anz) in e['einheit']['stufen']:
             treffer = next((s for s in e['stufen'] if s[0] == anz), None)
             if treffer:
-                z.append(r'\hspace*{1.2em}%s\enspace %s & %s\\' % (KASTEN, anz, lohnt(treffer[1], treffer[2])))
+                z.append(r'\hspace*{1.2em}%s\enspace %s & %s\\' % (KASTEN, abschnitt(e, anz), lohnt(treffer[1], treffer[2])))
                 continue
             z.append(r'\hspace*{1.2em}%s{%s\enspace %s} & %s\\' % (GRAU, KASTEN, anz, grau_wort(J.get(name, set()))))
     # Stufen der Gliederung ohne Blatt (kein Zuschnitt, z. B. Zinsen): grau unter „ohne Blatt“
