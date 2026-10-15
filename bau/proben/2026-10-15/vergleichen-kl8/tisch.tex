@@ -1,0 +1,204 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% gesetzt von werkzeuge/setzer.py (Sorte tisch) aus dem Lernweg FUR
+% und den Bankzeilen; Muster bau/proben/2026-10-09/hypotenuse-muster.
+\usepackage{enumitem}
+\usepackage{adjustbox,varwidth}
+\newgeometry{a4paper,margin=18mm,top=15mm,bottom=20mm,footskip=9mm}
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\footnotesize\color{mbgrau}FUR \textperiodcentered{} Zahlen vergleichen – auch negativ, mit Bruch, Prozent, Quadrat und Wurzel \textperiodcentered{} Tischblatt}
+\fancyfoot[R]{\footnotesize\color{mbgrau}\thepage}
+\setlength{\parskip}{3pt}
+\renewcommand{\kreuz}[1]{\mbox{$\square$\ #1}\quad}
+\providecommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\providecommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\providecommand{\grau}[1]{{\color{mbgrau}#1}}
+\newcommand{\kreuzl}[1]{\par\hangindent1.4em\hangafter1\noindent$\square$\ #1}
+\newcommand{\aufg}[3]{\par\noindent\makebox[0pt][r]{#3}\begin{minipage}[t]{\linewidth}#1\end{minipage}\par}
+\newcommand{\aufgg}[4]{\par\noindent\makebox[0pt][r]{#4}\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}#1\end{minipage}\hfill
+  \begin{minipage}[t]{0.37\linewidth}\vspace{0pt}\centering #2\end{minipage}\par}
+\newcommand{\nr}[1]{\makebox[7mm][l]{\textbf{#1}}}
+\newcommand{\lsg}[3]{\par\noindent\begin{minipage}[t]{9mm}\textbf{#1}\end{minipage}%
+  \begin{minipage}[t]{52mm}\raggedright\bfseries\boldmath #2\end{minipage}\hspace{3mm}%
+  \begin{minipage}[t]{\dimexpr\linewidth-64mm\relax}\raggedright\small #3\end{minipage}\par\vspace{4pt}}
+\newlength{\kr}
+\makeatletter
+\newcommand{\karomerk}[2]{\protected@write\@auxout{}{\string\karoseite{#1}{#2}{\thepage}}}
+\newcommand{\karoseite}[3]{\expandafter\xdef\csname karo@#1@#2\endcsname{#3}}
+\newcommand{\karohinweis}[3]{\karomerk{h}{#1}\ifcsname karo@k@#1\endcsname
+  \ifnum\csname karo@k@#1\endcsname=0\csname karo@h@#1\endcsname\relax#2\else#3\fi
+  \else#3\fi}
+\makeatother
+\begin{document}
+
+\noindent{\Large\bfseries Zahlen vergleichen – auch negativ, mit Bruch, Prozent, Quadrat und Wurzel}\hfill{\small Name: \rule{40mm}{0.4pt}}\par\smallskip
+\noindent{\small\color{mbgrau}Rechne auf einem extra Blatt. Ohne Taschenrechner. \emph{Ziel} = Aufgabe am Ende eines Abschnitts.}\par\medskip
+\par\Needspace{25mm}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut A}}\hspace{2mm}{\bfseries Dezimalzahlen vergleichen}\par\smallskip
+\aufg{\nr{A1}\begin{minipage}[t]{\dimexpr\linewidth-7mm\relax}Wo entscheidet es sich? Nenne nur die Stelle, an der sich die zwei Zahlen zuerst unterscheiden (Einer, Zehntel, Hundertstel, Tausendstel). Noch kein Zeichen setzen.\par\smallskip
+\noindent\begin{minipage}[t]{0.48\linewidth}\raggedright
+a)\ $0{,}81$ und $0{,}91$\linie{25mm}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}\raggedright
+b)\ $12{,}305$ und $12{,}308$\linie{25mm}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{0.48\linewidth}\raggedright
+c)\ $7{,}25$ und $6{,}25$\linie{25mm}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}\raggedright
+d)\ $0{,}406$ und $0{,}46$\linie{25mm}
+\end{minipage}\par\smallskip\end{minipage}}{}{}
+\medskip
+\aufg{\nr{A2}\begin{minipage}[t]{\dimexpr\linewidth-7mm\relax}Hänge Nullen an, bis beide Zahlen gleich viele Stellen nach dem Komma haben. Setze dann $<$, $>$ oder $=$.\par\smallskip
+\noindent\begin{minipage}[t]{0.48\linewidth}\raggedright
+a)\ $2{,}4$ \fbox{\phantom{$<$}} $2{,}38$\linie{25mm}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}\raggedright
+b)\ $0{,}09$ \fbox{\phantom{$<$}} $0{,}1$\linie{25mm}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{0.48\linewidth}\raggedright
+c)\ $5{,}05$ \fbox{\phantom{$<$}} $5{,}5$\linie{25mm}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}\raggedright
+d)\ $1{,}250$ \fbox{\phantom{$<$}} $1{,}25$\linie{25mm}
+\end{minipage}\par\smallskip\end{minipage}}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{A3}Ordne von klein nach groß: $0{,}6$; \ $0{,}06$; \ $0{,}066$; \ $0{,}61$.}{}{{\scriptsize\color{mbgrau}Ziel\hspace{2mm}}}
+\medskip
+\par\Needspace{25mm}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut B}}\hspace{2mm}{\bfseries Negative Zahlen vergleichen}\par\smallskip
+\aufg{\nr{B1}\begin{minipage}[t]{\dimexpr\linewidth-7mm\relax}Welche Zahl liegt auf der Zahlengeraden weiter links? Schreib sie auf. Die liegt weiter links, ist die kleinere.\par\smallskip
+\noindent\begin{minipage}[t]{0.48\linewidth}\raggedright
+a)\ $-2$ und $1$\linie{25mm}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}\raggedright
+b)\ $-0{,}5$ und $0{,}3$\linie{25mm}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{0.48\linewidth}\raggedright
+c)\ $-3$ und $-1$\linie{25mm}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}\raggedright
+d)\ $0$ und $-0{,}1$\linie{25mm}
+\end{minipage}\par\smallskip\end{minipage}}{}{}
+\medskip
+\aufg{\nr{B2}\begin{minipage}[t]{\dimexpr\linewidth-7mm\relax}Setze $<$ oder $>$. Bei zwei negativen Zahlen: Die weiter von 0 weg ist, ist die kleinere.\par\smallskip
+\noindent\begin{minipage}[t]{0.48\linewidth}\raggedright
+a)\ $-1{,}2$ \fbox{\phantom{$<$}} $-1{,}02$\linie{25mm}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}\raggedright
+b)\ $-0{,}3$ \fbox{\phantom{$<$}} $0{,}1$\linie{25mm}
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{0.48\linewidth}\raggedright
+c)\ $-2{,}5$ \fbox{\phantom{$<$}} $-2{,}45$\linie{25mm}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}\raggedright
+d)\ $-0{,}09$ \fbox{\phantom{$<$}} $-0{,}1$\linie{25mm}
+\end{minipage}\par\smallskip\end{minipage}}{}{}
+\medskip
+\aufg{\nr{B3}\begin{minipage}[t]{\dimexpr\linewidth-7mm\relax}Welche Zahl liegt genau in der Mitte? Rechne den Abstand aus, halbiere ihn und geh von der kleineren Zahl so weit nach rechts.\par\smallskip
+\noindent\begin{minipage}[t]{0.48\linewidth}\raggedright
+a)\ $-0{,}4$ und $-0{,}2$
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}\raggedright
+b)\ $-1$ und $-0{,}6$
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{0.48\linewidth}\raggedright
+c)\ $-0{,}3$ und $0{,}1$
+\end{minipage}\par\smallskip
+\par{\small Probe: Die Mitte liegt zwischen den beiden Zahlen und ist von beiden gleich weit weg.}\end{minipage}}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{B4}Temperaturen am Morgen: Oslo $-3{,}5$\,°C, \ Riga $-3{,}05$\,°C, \ Wien $0{,}5$\,°C, \ Prag $-0{,}8$\,°C, \ Kiew $-4$\,°C. Ordne die Städte von kalt nach warm. Wo war es am kältesten?}{}{{\scriptsize\color{mbgrau}Ziel\hspace{2mm}}}
+\medskip
+\par\Needspace{25mm}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut C}}\hspace{2mm}{\bfseries Bruch und Prozent: erst umwandeln}\par\smallskip
+\aufg{\nr{C1}\begin{minipage}[t]{\dimexpr\linewidth-7mm\relax}Schreib den Bruch als Dezimalzahl: Erweitere den Nenner auf 10, 100 oder 1000.\par\smallskip
+\noindent\begin{minipage}[t]{0.48\linewidth}\raggedright
+a)\ $\dfrac{3}{4}$
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}\raggedright
+b)\ $\dfrac{7}{20}$
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{0.48\linewidth}\raggedright
+c)\ $\dfrac{1}{8}$
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}\raggedright
+d)\ $\dfrac{9}{25}$
+\end{minipage}\par\smallskip\end{minipage}}{}{}
+\medskip
+\aufg{\nr{C2}\begin{minipage}[t]{\dimexpr\linewidth-7mm\relax}Schreib als Dezimalzahl. Prozent heißt Hundertstel: Komma zwei Stellen nach links.\par\smallskip
+\noindent\begin{minipage}[t]{0.48\linewidth}\raggedright
+a)\ $45\,\%$
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}\raggedright
+b)\ $4{,}5\,\%$
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{0.48\linewidth}\raggedright
+c)\ $120\,\%$
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}\raggedright
+d)\ $0{,}5\,\%$
+\end{minipage}\par\smallskip\end{minipage}}{}{}
+\medskip
+\aufg{\nr{C3}\begin{minipage}[t]{\dimexpr\linewidth-7mm\relax}Wandle erst in Dezimalzahlen um, dann vergleiche. Setze $<$, $>$ oder $=$.\par\smallskip
+\noindent\begin{minipage}[t]{0.48\linewidth}\raggedright
+a)\ $6\,\%$ \fbox{\phantom{$<$}} $0{,}6$
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}\raggedright
+b)\ $0{,}35$ \fbox{\phantom{$<$}} $\dfrac{7}{20}$
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{0.48\linewidth}\raggedright
+c)\ $\dfrac{2}{5}$ \fbox{\phantom{$<$}} $45\,\%$
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}\raggedright
+d)\ $\dfrac{1}{8}$ \fbox{\phantom{$<$}} $0{,}13$
+\end{minipage}\par\smallskip\end{minipage}}{}{{\scriptsize\color{mbgrau}Ziel\hspace{2mm}}}
+\medskip
+\par\Needspace{25mm}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut D}}\hspace{2mm}{\bfseries Quadrat und Wurzel}\par\smallskip
+\aufg{\nr{D1}\begin{minipage}[t]{\dimexpr\linewidth-7mm\relax}Rechne das Quadrat aus: die Zahl mal sich selbst – nicht mal 2.\par\smallskip
+\noindent\begin{minipage}[t]{0.48\linewidth}\raggedright
+a)\ $0{,}2^2$
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}\raggedright
+b)\ $0{,}5^2$
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{0.48\linewidth}\raggedright
+c)\ $1{,}1^2$
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}\raggedright
+d)\ $0{,}1^2$
+\end{minipage}\par\smallskip\end{minipage}}{}{}
+\medskip
+\aufg{\nr{D2}\begin{minipage}[t]{\dimexpr\linewidth-7mm\relax}Zieh die Wurzel: Welche Zahl mal sich selbst gibt die Zahl unter der Wurzel? Prüfe mit dem Quadrat.\par\smallskip
+\noindent\begin{minipage}[t]{0.48\linewidth}\raggedright
+a)\ $\sqrt{0{,}09}$
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}\raggedright
+b)\ $\sqrt{1{,}44}$
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{0.48\linewidth}\raggedright
+c)\ $\sqrt{0{,}04}$
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}\raggedright
+d)\ $\sqrt{0{,}49}$
+\end{minipage}\par\smallskip\end{minipage}}{}{}
+\medskip
+\aufg{\nr{D3}\begin{minipage}[t]{\dimexpr\linewidth-7mm\relax}Die Wurzel geht nicht auf. Zwischen welchen zwei Zehnteln liegt sie? Probiere Quadrate, bis die Zahl dazwischen liegt.\par\smallskip
+\noindent\begin{minipage}[t]{0.48\linewidth}\raggedright
+a)\ $\sqrt{3}$
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}\raggedright
+b)\ $\sqrt{5}$
+\end{minipage}\par\smallskip
+\noindent\begin{minipage}[t]{0.48\linewidth}\raggedright
+c)\ $\sqrt{0{,}5}$
+\end{minipage}\par\smallskip\end{minipage}}{}{{\scriptsize\color{mbgrau}Ziel\hspace{2mm}}}
+\medskip
+\par\Needspace{25mm}\noindent\colorbox{black!12}{\makebox[7mm]{\bfseries\strut E}}\hspace{2mm}{\bfseries Alles gemischt: vergleichen und entscheiden}\par\smallskip
+\aufg{\hangindent7mm\hangafter1\nr{E1}Welcher Wert ist der kleinste? Kreuze an.\par\smallskip\leftskip7mm \kreuz{$0{,}9$}\ \kreuz{$0{,}3^2$}\par\kreuz{$8\,\%$}\ \kreuz{$0{,}085$}}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{E2}Ordne von klein nach groß: \ $0{,}3$; \ $-\frac{3}{4}$; \ $\sqrt{0{,}16}$; \ $-0{,}7$.}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{E3}Nur eine Aussage ist wahr. Kreuze sie an.\par\medskip\noindent\hspace*{7mm}\mbox{$\square$\ $\sqrt{2} > \dfrac{3}{2}$}\hspace{10mm}\mbox{$\square$\ $0{,}3^2 > 0{,}3$}\hspace{10mm}\mbox{$\square$\ $-0{,}5 < -\dfrac{3}{5}$}\hspace{10mm}\mbox{$\square$\ $\dfrac{5}{8} > 0{,}6$}\rule[-3mm]{0pt}{8mm}\par\smallskip }{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{E4}Drei Läden haben dieselbe Jacke. Laden A: „Ein Viertel billiger!“ \ Laden B: „22\,\% Rabatt“ \ Laden C: „Jeden fünften Euro schenken wir dir!“ \ Wo ist der Rabatt am größten? Um wie viele Prozentpunkte ist er größer als beim zweitbesten Laden?}{}{}
+\medskip
+\aufg{\hangindent7mm\hangafter1\nr{E5}Mia taucht in $4{,}8$\,m Tiefe, ihr Bruder in $2{,}4$\,m Tiefe. Genau in der Mitte zwischen beiden schwimmt ein Fisch. Ein Foto gelingt nur tiefer als $3{,}5$\,m. Kann Mia den Fisch fotografieren?}{}{{\scriptsize\color{mbgrau}Ziel\hspace{2mm}}}
+\medskip
+\end{document}
