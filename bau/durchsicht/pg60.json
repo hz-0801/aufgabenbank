@@ -1,16 +1,38 @@
 {
- "kennung": "PG60-3", "name": "sin, cos, tan",
- "seiten": {"41": "Blatt S. 1", "43": "Blatt S. 3"},
+ "kennung": "PG60-3",
+ "name": "sin, cos, tan",
+ "seiten": {
+  "41": "Blatt S. 1",
+  "43": "Blatt S. 3"
+ },
  "antworten": {
   "41": [
-   ["offen", "Auf dem Blatt selbst ist es kein Problem: Sinussatz hat ein eigenes Blatt (PG70), Kosinussatz kam in der P10 nie dran. Das Problem ist die Bestellung – wer „Trigonometrie“ schreibt, meint vielleicht beides. „Trigonometrie“ als Name wäre schlechter: Es umfasst auch den Sinussatz und trennt also gerade nicht. Weg A: Name bleibt „sin, cos, tan“; die Gruppe „Rechtwinklige Dreiecke“ steht schon auf Karte und Übersicht, und die Bestellung „Trigonometrie“ liefert sin, cos, tan mit der Zeile „Sinussatz (nicht rechtwinklig): PG70“. Weg B: Name „sin, cos, tan im rechtwinkligen Dreieck“ – eindeutig, aber lang in jeder Kopfzeile. Ich empfehle Weg A."],
-   ["ändern", "Ja, gleich wie bei Pythagoras („Pythagoras aufstellen“) – dann lesen sich die beiden Blätter parallel. Ich hatte dort vorgeschlagen, hier „Gleichung aufstellen“ zu lassen; dein Vorschlag ist einheitlicher, ich nehme ihn zurück."],
-   ["Handwerk", "Ja: Der Name γ sitzt oberhalb der Ecke statt im Bogen. Derselbe Fehler war in den Duden-Figuren und ist dort behoben (Winkelname im Bogen); in Schritt C ziehe ich die Blatt-Bausteine in mathblatt.sty genauso nach."],
-   ["ändern", "Hier steht beides – Antwortlinie und Karo –, und das ist eins zu viel. „Ergänze“ ist keine Rechnung, also braucht es keinen Rechenraum (Regel „Rechenraum nur bei Rechen- und Begründungsaufträgen“). Vorschlag: Das Karo fällt weg, und „sin γ = ____“ steht dort, wo jetzt das Karo ist, rechts neben der Figur. So siehst du es ja auch."],
-   ["Antwort", "Woran er es erkennt, übt die letzte Stufe des Blatts „Pythagoras oder sin, cos, tan?“ – dort kreuzt er an Skizzen nur das Werkzeug an (Pythagoras, sin/cos/tan, Winkelsumme). Ein Entscheidungsbaum in drei Fragen trägt das ganze Gebiet: 1. Rechter Winkel? Nein → Winkelsumme, wenn zwei Winkel bekannt; sonst Sinussatz. 2. Ja, und es kommen nur Seiten vor (zwei bekannt, eine gesucht) → Pythagoras. 3. Ein Winkel ist bekannt oder gesucht → sin, cos, tan. Als fertiger Kasten wäre das ein Merkkasten; besser wäre er als kurze Lückenaufgabe am Anfang der letzten Stufe, die der Schüler selbst ergänzt. Das gehört in die Umsetzung von Schritt C; wenn du willst, nehme ich ihn dort mit."]
+   [
+    "entschieden",
+    "Auf dem Blatt selbst ist es kein Problem: Sinussatz hat ein eigenes Blatt (PG70), Kosinussatz kam in der P10 nie dran. Das Problem ist die Bestellung – wer „Trigonometrie“ schreibt, meint vielleicht beides. „Trigonometrie“ als Name wäre schlechter: Es umfasst auch den Sinussatz und trennt also gerade nicht. Weg A: Name bleibt „sin, cos, tan“; die Gruppe „Rechtwinklige Dreiecke“ steht schon auf Karte und Übersicht, und die Bestellung „Trigonometrie“ liefert sin, cos, tan mit der Zeile „Sinussatz (nicht rechtwinklig): PG70“. Weg B: Name „sin, cos, tan im rechtwinkligen Dreieck“ – eindeutig, aber lang in jeder Kopfzeile. Ich empfehle Weg A. Entschieden 15.10. (v): Weg A."
+   ],
+   [
+    "ändern",
+    "Ja, gleich wie bei Pythagoras („Pythagoras aufstellen“) – dann lesen sich die beiden Blätter parallel. Ich hatte dort vorgeschlagen, hier „Gleichung aufstellen“ zu lassen; dein Vorschlag ist einheitlicher, ich nehme ihn zurück."
+   ],
+   [
+    "Handwerk",
+    "Ja: Der Name γ sitzt oberhalb der Ecke statt im Bogen. Derselbe Fehler war in den Duden-Figuren und ist dort behoben (Winkelname im Bogen); in Schritt C ziehe ich die Blatt-Bausteine in mathblatt.sty genauso nach."
+   ],
+   [
+    "ändern",
+    "Hier steht beides – Antwortlinie und Karo –, und das ist eins zu viel. „Ergänze“ ist keine Rechnung, also braucht es keinen Rechenraum (Regel „Rechenraum nur bei Rechen- und Begründungsaufträgen“). Vorschlag: Das Karo fällt weg, und „sin γ = ____“ steht dort, wo jetzt das Karo ist, rechts neben der Figur. So siehst du es ja auch."
+   ],
+   [
+    "Antwort",
+    "Woran er es erkennt, übt die letzte Stufe des Blatts „Pythagoras oder sin, cos, tan?“ – dort kreuzt er an Skizzen nur das Werkzeug an (Pythagoras, sin/cos/tan, Winkelsumme). Ein Entscheidungsbaum in drei Fragen trägt das ganze Gebiet: 1. Rechter Winkel? Nein → Winkelsumme, wenn zwei Winkel bekannt; sonst Sinussatz. 2. Ja, und es kommen nur Seiten vor (zwei bekannt, eine gesucht) → Pythagoras. 3. Ein Winkel ist bekannt oder gesucht → sin, cos, tan. Als fertiger Kasten wäre das ein Merkkasten; besser wäre er als kurze Lückenaufgabe am Anfang der letzten Stufe, die der Schüler selbst ergänzt. Das gehört in die Umsetzung von Schritt C; wenn du willst, nehme ich ihn dort mit."
+   ]
   ],
   "43": [
-   ["offen", "Hier hast du die Fundstellentabelle markiert, aber ohne Text. Darunter stehen noch Vorher, ▸ und Weiter – die fallen nach deiner Entscheidung vom 15.10. (o) weg (übrigens mit falscher Folge: Winkel gehört vor den Sinussatz). Die Tabelle selbst bleibt bisher. Was meintest du – soll sie weg, oder ist etwas daran falsch?"]
+   [
+    "offen",
+    "Hier hast du die Fundstellentabelle markiert, aber ohne Text. Darunter stehen noch Vorher, ▸ und Weiter – die fallen nach deiner Entscheidung vom 15.10. (o) weg (übrigens mit falscher Folge: Winkel gehört vor den Sinussatz). Die Tabelle selbst bleibt bisher. Was meintest du – soll sie weg, oder ist etwas daran falsch?"
+   ]
   ]
  }
 }
