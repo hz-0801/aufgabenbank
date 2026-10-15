@@ -1,0 +1,116 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+\newsavebox{\gbox}\newlength{\gLinks}
+% v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
+% Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr\wd\gbox+6mm\relax}%
+  \ifdim\gLinks>0.62\linewidth
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\leavevmode\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par}
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+% Skizzenfeld (v0.10, Lehrer 13.10.): Karo ab dem linken Rand über die Zeile, „Skizze“ klein grau oben links im Feld
+% (wie \pfskizzenfeld der Vorlage); der rechte Rand bleibt den Bedingungen
+\newcommand{\gskizze}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \node[anchor=north west,inner sep=2pt,font=\scriptsize,text=mbgrau,fill=white] at (0,{#1*10mm}) {Skizze};
+  \end{tikzpicture}\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\makeatletter\setlength{\mbpfbe}{0mm}\makeatother
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[Abitur GK \pkt{} mehr]{Extrempunkte \pkt{} Lösungen}{AA50}\pfseitevon
+\pfheftkopf{Extrempunkte}{Lösungen \pkt{} mehr}
+\begin{pfloesungb}{}
+\lzb{1.}{}{x = $-$80, 0, 80; Tiefpunkte ($-$80|0) und (80|0); U(80|0)}{g$'$(x) = 0 $\Rightarrow$ x · (x² $-$ 6400) = 0 $\Rightarrow$ x = $-$80, 0, 80; g$''$(x) = $\tfrac{1}{1000}$ · ($\tfrac{3}{400}$ x² $-$ 16): g$''$(0) < 0 $\Rightarrow$ Hochpunkt (0|25,6); g$''$(±80) = 0,032 > 0 $\Rightarrow$ Tiefpunkte ($-$80|0) und (80|0); der Hang liegt rechts von C $\Rightarrow$ U(80|0)}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{2.}{}{x = 2; höchster Punkt (2|2,43): 2 km nach dem Start, 2,43 km hoch}{f$'$(x) = 0 $\Rightarrow$ 0,5 $-$ 0,25x = 0 $\Rightarrow$ x = 2; f(2) = 4 · $e^{-0{,}5}$ $\approx$ 2,43 $\Rightarrow$ höchster Punkt (2|2,43): 2 km nach dem Start, 2,43 km hoch}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{3.}{}{t = 20; h(20) $\approx$ 84,1 \% nach 20 Tagen}{h$'$(t) = 0 $\Rightarrow$ 6 $-$ 0,3t = 0 $\Rightarrow$ t = 20; h(20) = 120 · $e^{-1}$ + 40 $\approx$ 84,1 \% nach 20 Tagen}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{4.}{}{x = $\tfrac{10}{3}$; Tiefpunkt ($-$2|0); Hochpunkt ($\tfrac{10}{3}$|$\tfrac{1024}{675}$) $\approx$ (3,33|1,52)}{f$'$(x) = $-\tfrac{3}{50}$ x² + $\tfrac{2}{25}$ x + $\tfrac{2}{5}$ = 0 $\Rightarrow$ 3x² $-$ 4x $-$ 20 = 0 $\Rightarrow$ x = $-$2 oder x = $\tfrac{10}{3}$; f$''$(x) = $-\tfrac{3}{25}$ x + $\tfrac{2}{25}$: f$''$($-$2) > 0 $\Rightarrow$ Tiefpunkt ($-$2|0); f$''$($\tfrac{10}{3}$) < 0 $\Rightarrow$ Hochpunkt ($\tfrac{10}{3}$|$\tfrac{1024}{675}$) $\approx$ (3,33|1,52)}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{5.}{}{f$'$(4) = 0; Extremstelle (Tiefpunkt)}{f$'$(x) = 3x² $-$ 12x $\Rightarrow$ f$'$(4) = 48 $-$ 48 = 0; f$''$(x) = 6x $-$ 12 $\Rightarrow$ f$''$(4) = 12 $\neq$ 0 $\Rightarrow$ Extremstelle (Tiefpunkt)}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{6.}{}{f$'$($\tfrac{4}{3}$) = 0; f$''$($\tfrac{4}{3}$) = $-$1 < 0; H($\tfrac{4}{3}$|$\tfrac{32}{27}$) ist Hochpunkt}{f$'$(x) = $\tfrac{3}{8}$ x² $-$ 2x + 2 $\Rightarrow$ f$'$($\tfrac{4}{3}$) = $\tfrac{2}{3}$ $-$ $\tfrac{8}{3}$ + 2 = 0; f$''$(x) = $\tfrac{3}{4}$ x $-$ 2 $\Rightarrow$ f$''$($\tfrac{4}{3}$) = $-$1 < 0; f($\tfrac{4}{3}$) = $\tfrac{32}{27}$ $\Rightarrow$ H($\tfrac{4}{3}$|$\tfrac{32}{27}$) ist Hochpunkt}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{7.}{}{x $\approx$ 3,49 oder 21,51; Hochpunkt $\approx$ (3,49|4,00); Tiefpunkt $\approx$ (21,51|$-$0,38)}{f$'$(x) = 0 $\Rightarrow$ x² $-$ 25x + 75 = 0 $\Rightarrow$ x = 12,5 ± 2,5√13 $\approx$ 3,49 oder 21,51; f$'$ wechselt bei 3,49 von + nach $-$ $\Rightarrow$ Hochpunkt $\approx$ (3,49|4,00); bei 21,51 von $-$ nach + $\Rightarrow$ Tiefpunkt $\approx$ (21,51|$-$0,38)}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{8.}{}{f$'$($-$2) = 0; Hochpunkt bei x = $-$2}{f$'$(x) = 3x² $-$ 12 $\Rightarrow$ f$'$($-$2) = 0; f$''$(x) = 6x $\Rightarrow$ f$''$($-$2) = $-$12 < 0 $\Rightarrow$ Hochpunkt bei x = $-$2}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{9.}{}{x = 3; f$''$(x) = 18 > 0 (Tiefpunkt)}{f$'$(x) = 3x² $-$ 27 = 0 $\Rightarrow$ x² = 9 $\Rightarrow$ x = $-$3 oder x = 3; f$''$(x) = 6x: f$''$($-$3) = $-$18 < 0 (Hochpunkt), f$''$(3) = 18 > 0 (Tiefpunkt)}
+\end{pfloesungb}
+\end{document}
