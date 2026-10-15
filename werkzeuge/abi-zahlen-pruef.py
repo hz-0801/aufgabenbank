@@ -99,7 +99,7 @@ WKT = re.compile(r"(?<![\w\\])(p|P\([^)]*\))\s*=\s*([0-9][0-9{},.%\\ ]*)")
 
 
 def festlegungen(text):
-    out = []
+    out, punkte = [], []
     for m in MATHE.finditer(text):
         t = m.group(1)
         for teil in re.split(r'\s(?:\\text\{\s*und\s*\}|und)\s|;', t):
@@ -116,9 +116,15 @@ def festlegungen(text):
             if g:
                 out.append(('Gerade ' + g.group(1), norm(g.group(2))))
         for p in PUNKT.finditer(t):
-            out.append(('Punkt ' + p.group(1), norm(p.group(2))))
+            punkte.append(p)
         for w in WKT.finditer(t):
             out.append(('Wkt ' + norm(w.group(1)), norm(w.group(2))))
+    # Punkte gehören zur ersten Funktion der Zeile: H von f und H von k
+    # (anderer Teil, andere Funktion) sind verschiedene Punkte.
+    zu = next((n.split()[1] for n, _ in out if n.startswith('Funktion')), '')
+    for p in punkte:
+        out.append((f'Punkt {p.group(1)}' + (f' (zu {zu})' if zu else ''),
+                    norm(p.group(2))))
     return out
 
 
