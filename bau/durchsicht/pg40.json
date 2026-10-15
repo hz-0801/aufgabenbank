@@ -1,0 +1,22 @@
+{
+ "kennung": "PG40-7", "name": "Fläche und Umfang",
+ "seiten": {"23": "Blatt S. 1", "24": "Blatt S. 2", "26": "Lösung S. 1", "28": "Mehr S. 1", "32": "Lösung Mehr"},
+ "antworten": {
+  "23": [
+   ["ändern", "Gemeint sind ebene Figuren: Dreieck, Viereck, Kreis und was daraus zusammengesetzt ist; Körper haben ihr eigenes Blatt (Volumen und Oberfläche). Der Name trennt also gegen Körper, sagt aber nicht, welche Figuren. Vorschlag: Der Titel bleibt kurz, und die neue Formelsammlungs-Zeile direkt darunter (Blattende-Entscheidung vom 15.10.) nennt die Figuren mit dem Stichwort der Formelsammlung: „Formelsammlung: Dreiecke · Vierecke · Kreis“. Dann weiß der Schüler sofort, worum es geht und wo es steht."],
+   ["Antwort", "Nein – das Original ’24 · 1c hat keine Skizze, nur den Satz „gleichseitiges Dreieck mit Seitenlänge a“ (Heft S. 2 nachgesehen). Die Regel steht schon so, wie du es willst: Eine echte Aufgabe hat eine Skizze genau dann, wenn das Original eine hat. In Schritt C prüft ein Skript über alle Blätter, ob irgendwo eine Skizze des Originals fehlt."]
+  ],
+  "24": [
+   ["ändern", "Stimmt: „nach der gesuchten Größe“ lässt den Schüler erst suchen, welche das ist. Neu: „Stelle die Formel u = π · d nach d um.“ – Formel und Zielgröße in einem Satz, auf allen eigenen Umstell-Aufgaben."]
+  ],
+  "26": [
+   ["ändern", "Geteilt-Zeichen: Du hast recht, und beide Formelsammlungen geben dir recht – Duden und Paetec schreiben die Rautenformel als Bruch, e mal f über 2. Bisher verlangt unsere Regel den Bruch nur außerhalb von Formeln. Neu (Warum – Beispiel – Grenze): Warum: Der Schüler soll die Formel aus der Formelsammlung auf Blatt und Lösung auf einen Blick wiedererkennen. Beispiel: A = e · f über 2 als Bruch, auch beim Einsetzen. Grenze: Der Doppelpunkt bleibt nur, wo die Aufgabe selbst ihn zeigt (Maßstab 1 : 100, Verhältnis). Untereinander statt zwei Spalten, knapp: Es lohnt sich bei langen Ergebnissen – Begründungen brechen in der schmalen fetten Spalte drei-, viermal um (S. 32, Nr. 13 und 14). Es geht schief, wo die Seite knapp ist (untereinander braucht mehr Höhe, eine Seite wird zwei) und beim schnellen Kontrollieren: Links untereinander alle Ergebnisse auf einen Blick, das geht verloren. Das gehört ins Gespräch über das Lösungsblatt."]
+  ],
+  "28": [
+   ["Antwort", "Mein Urteil: nicht immer mitliefern. Das Mehr hat hier 14 Aufgaben auf vier Seiten (S. 28–31) und eine Lösungsseite; mit Blatt und Lösung wären das zehn Seiten statt fünf für eine Bestellung. Der Schüler soll erst das Blatt fertig machen; das Mehr kommt, wenn er es braucht. Damit du es nicht vergisst: Das Blattende zeigt jetzt „Mehr: 14 Aufgaben“, und die Zeile „Du bekommst: …“ vor dem Setzen nennt es mit, ohne es zu liefern. Lösungen herausnehmen würde ich erst nach dem Gespräch über das Lösungsblatt entscheiden. Nebenbei ein Handwerksfehler: Die Stufenzeile des Mehr steht in falscher Folge (Formeln umstellen · Formeln · Fläche gesucht) statt wie auf dem Blatt. Falls du mit „deutlicher“ die Mehr-Seiten meinst: sag mir, was dort besser wirkt – das nehme ich mit."]
+  ],
+  "32": [
+   ["Handwerk", "Bleibt auf der Liste fürs Gespräch über das Lösungsblatt, Schriftgröße kommt dazu. Was ich hier sehe: Nr. 13 steht links und rechts wortgleich, und Nr. 14 ist falsch – links steht „AD = 28°“, richtig ist AD = 3,9 cm und δ = 28°. Ursache: Der erste Kontrollwert in den Daten ist nur der gegebene Winkel, und der Setzer hat ihn dem ersten Textstück (den Angaben) zugeordnet. Gegebenes ist kein Ergebnis; das wird in Schritt C repariert, mit einer Prüfung im Skript für alle Mehr-Lösungen."]
+  ]
+ }
+}
