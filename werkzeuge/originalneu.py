@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""originalneu.py v0.2 – „Original neu“ im Layout der Blätter (v0.2, 14.10.2026, plan.md § 10, 14.10. g; Ausgabe
+"""originalneu.py v0.3 (15.10.: gezeichnete Figuren aus privat bau/original-neu/grafik/<id>.tex statt Text) –
+v0.2 „Original neu“ im Layout der Blätter (v0.2, 14.10.2026, plan.md § 10, 14.10. g; Ausgabe
 aufgabenbank-privat bau/original-neu/<heft>/, blatt.pdf und loesung.pdf); v0.1 mit --form alt:
 Prüfstein „Original neu“ (pruefung.md § 4) für ein
 P10-Heft: Schnitt und Stufen wie das Original, neu gesetzt, durchsuchbar,
@@ -27,7 +28,7 @@ from collections import defaultdict
 from pathlib import Path
 
 WURZEL = Path(__file__).resolve().parent.parent
-VERSION = "0.2"
+VERSION = "0.3"
 
 
 def finde(pfad_arg, env, kandidaten, name):
@@ -249,10 +250,43 @@ def kopf_links(jahr, papier):
     return "P10 \\pkt{} Original ’%02d%s" % (jahr % 100, "" if papier == "OS" else " " + papier)
 
 
+def ist_tex(g):
+    return g.lstrip()[:1] in ("\\", "{")
+
+
+def lies_grafiken(privat):
+    """Gezeichnete Figuren (v0.3, 15.10.): privat bau/original-neu/grafik/<id>.tex ersetzt den Beschreibungstext
+    im Feld grafik; <id>-loesung.tex ist die fertige Zeichnung einer Lösung, die eine Zeichnung ist (ersetzt den
+    Teil „Skizze: …“ der Lösung). Eine Datei nur mit Kommentar (% entfällt …) = Schmuckbild ohne Information."""
+    d = privat / "bau" / "original-neu" / "grafik"
+    g = {}
+    if d.is_dir():
+        for p in sorted(d.glob("*.tex")):
+            t = "\n".join(l for l in p.read_text(encoding="utf-8").splitlines()
+                           if not l.lstrip().startswith("%")).strip()
+            g[p.stem] = t
+    return g
+
+
+def teile_klammer(s, sep=";"):
+    """s an sep teilen, nicht in $…$ und nicht in Klammern."""
+    out, cur, m, k = [], "", False, 0
+    for i, c in enumerate(s):
+        if c == "$" and (i == 0 or s[i - 1] != "\\"):
+            m = not m
+        k += (c == "(") - (c == ")")
+        if c == sep and not m and k <= 0:
+            out.append(cur)
+            cur = ""
+            continue
+        cur += c
+    return [x.strip() for x in out + [cur] if x.strip()]
+
+
 def grafik_neu(g):
     if not g:
         return ""
-    if g.lstrip().startswith("\\"):
+    if ist_tex(g):
         return "\\par\\smallskip\\noindent " + g + "\\par"
     return "\\par\\smallskip\\noindent{\\small\\itshape\\color{mbgrau}Abbildung: " + g + "}\\par"
 
@@ -264,7 +298,7 @@ def raum(z):
     f = z.get("form", "")
     if f in ("rechnung", "begruendung"):
         return "\\karo{%d}" % min(6, max(2, z.get("punkte", 1) + 1))
-    if f == "zeichnen" and not z.get("grafik", "").lstrip().startswith("\\"):
+    if f == "zeichnen" and not ist_tex(z.get("grafik", "")):
         return "\\karo{4}"
     return ""
 
@@ -344,7 +378,12 @@ def loesung_tex(jahr, papier, kenn, aufgaben):
         out.append("\\pfstufekopf{%d \\pkt{} %s}{}" % (nr, t))
         out.append("\\begin{pfloesungb}{}")
         for i, z in enumerate(zeilen):
-            e, w = ergebnis(z.get("loesung", ""))
+            lo, fig = z.get("loesung", ""), z.get("_loesung_grafik", "")
+            if fig:
+                lo = " ;  ".join(t for t in teile_klammer(lo) if not t.startswith("Skizze:"))
+            e, w = ergebnis(lo)
+            if fig:
+                e = (e + "\\newline " if e else "") + "{\\unboldmath\\mdseries " + fig + "}"
             out.append("\\lzb{%s}{%s)}{%s}{%s}" % ("%d." % nr if i == 0 else "", z["teil"], e, w))
         out.append("\\end{pfloesungb}")
     out.append("\\end{document}")
@@ -411,6 +450,12 @@ def main():
     if not basis and not haupt:
         sys.exit("keine Zeilen für %s" % a.heft)
     kat = lies_katalog(katalog, "%d-%s-" % (jahr, papier))
+    grafiken = lies_grafiken(privat)
+    for z in basis + haupt:
+        if z["id"] in grafiken:
+            z["grafik"] = grafiken[z["id"]]
+        if z["id"] + "-loesung" in grafiken:
+            z["_loesung_grafik"] = grafiken[z["id"] + "-loesung"]
 
     aufgaben = []
     if basis:
