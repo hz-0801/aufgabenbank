@@ -9,8 +9,11 @@ Alles aus Daten:
                              Schülerliste, Papier, Setzer- und Ablagepfade, Fehlt) – neue Prüfung = neuer Block
   Blätter, Lernfolge, Begriffe   */gliederung/*.md: Kennung, Ordner, Anzeigenamen, Kurzwort, Stufen (Anzeigename)
   Sorte                      erster Buchstabe der Kennung (P, A, L, F, S)
-  Lernblatt (Sorte S)        bau/register.csv (Kennung S…); sonst Katalog mathe-nachhilfe katalog/*.md
-                             („← Eingabe …“) -> Ausgabe „bauen“ (der Chat baut nach bau/bauauftrag.md)
+  Lernblatt                  zuerst bau/register.csv (gebaute Lernblätter, Sorte L/S mit lerneinheit=): Setzer
+                             setzt tisch-alt in bau/lernblatt/{datum}/{kennung}; Treffer über Katalog mathe-nachhilfe
+                             katalog/*.md (Titel, Lerneinheit, „← Eingabe …“) und Registernamen, Füllwörter zählen
+                             nicht; nur wenn nichts gebaut ist -> Ausgabe „bauen“ (der Chat baut nach
+                             bau/bauauftrag.md)
   Lieferliste                eingang/gebaut.csv (werkzeuge/lieferung.py)
 
   python3 werkzeuge/bestellen.py "Lena ana"                 -> JSON {zeile, frage, befehle, dateien, hinweis, bauen}
@@ -58,6 +61,11 @@ W_SCHWER = {'schwer', 'schwerer', 'schwereres', 'schwerere', 'schwieriger', 'sch
 STOPP = {'was', 'zu', 'zum', 'zur', 'mit', 'und', 'ein', 'eine', 'einen', 'etwas', 'bitte', 'für', 'fuer', 'die',
          'der', 'das', 'den', 'dem', 'von', 'im', 'in', 'aus', 'auf', 'an', 'ich', 'wir', 'brauche', 'möchte',
          'gib', 'mir', 'ihm', 'ihr', 'noch', 'nur', 'zu', 'über', 'ueber', 'thema', 'auch', 'bei', 'oder', 'mal'}
+# Füllwörter einer Lernblatt-Bestellung: zählen beim Treffer nicht („Kathete berechnen“ ≠ „Prozentsatz berechnen“)
+W_FUELL = {'berechnen', 'berechne', 'berechnung', 'bestimmen', 'bestimme', 'ausrechnen', 'rechnen', 'rechne',
+           'aufgabe', 'aufgaben', 'blatt', 'blaetter', 'blätter', 'arbeitsblatt', 'lernen', 'üben', 'ueben', 'übung',
+           'uebung', 'uebungen', 'übungen', 'zu', 'mit', 'dazu', 'thema', 'einheit', 'lerneinheit', 'neues', 'neu',
+           'schüler', 'schueler', 'seite', 'seiten', 'zeigen', 'erklären', 'erklaeren', 'können', 'koennen'}
 SCHLUESSEL = (W_MEHR | W_LOES | W_ORIG | W_NEU | W_PROBE | W_KARTE | W_HAND | W_GESAMT | W_MAPPE | W_LISTE |
               W_LERN | W_KLASSE)
 
@@ -198,6 +206,7 @@ def lieferliste(nummer):
 
 
 def katalog():
+    """Je Katalogeintrag Titel, Klasse und die Lerneinheiten aus „### Lerneinheiten“ (Nummer, Name, Text, Eingaben)."""
     out = []
     for f in sorted(glob.glob(os.path.join(MN, 'katalog', '*.md'))):
         stem = os.path.basename(f)[:-3]
@@ -206,10 +215,35 @@ def katalog():
         t = open(f, encoding='utf-8').read()
         titel = (re.search(r'^# (.+)$', t, re.M) or [None, stem])[1].strip()
         kl = re.search(r'Klasse\s+(\d+)', t)
+        a = t.find('\n### Lerneinheiten')
+        teil = t[a:].split('\n### ', 2)[1] if a >= 0 else ''
         einheiten = []
-        for m in re.finditer(r'^(\d+)\. (.+?) – .*?(?:← Eingabe (.*))?$', t, re.M):
-            einheiten.append((int(m.group(1)), m.group(2).strip(), m.group(3) or ''))
+        for m in re.finditer(r'^(\d+)\. (.+?) – (.*)$', teil, re.M):
+            text = m.group(3)
+            eingabe = text.split('← Eingabe', 1)[1] if '← Eingabe' in text else ''
+            einheiten.append(dict(nr=int(m.group(1)), name=m.group(2).strip(), text=text.split('← Eingabe')[0],
+                                  eingaben=[norm(x) for x in re.findall(r'„([^“]+)“', eingabe)]))
         out.append(dict(eintrag=stem, titel=titel, klasse=int(kl.group(1)) if kl else None, einheiten=einheiten))
+    return out
+
+
+def lernblaetter():
+    """Gebaute Lernblätter aus bau/register.csv (Sorte L oder S mit „lerneinheit=“, ohne Reservierungen)."""
+    reg = os.path.join(BANK, 'bau', 'register.csv')
+    out = []
+    if not os.path.exists(reg):
+        return out
+    with open(reg, encoding='utf-8', newline='') as f:
+        for i, z in enumerate(csv.DictReader(f, delimiter=';')):
+            b = z.get('bestellung') or ''
+            m = re.search(r'lerneinheit=(\d+)\s*([^,]*)', b)
+            if z.get('rezept') not in ('L', 'S') or not m or 'status=reserviert' in b:
+                continue
+            kl = re.search(r'klasse=(\d+)', b)
+            st = re.search(r'(?:schritte|abschnitte)=L([0-9a-z]+)-', b)
+            out.append(dict(kennung=z['kennung'], datum=z['datum'], eintrag=z['eintraege'], einheit=int(m.group(1)),
+                            name=re.sub(r'\s*\([^()]*\)\s*$', '', m.group(2)).strip(), klasse=int(kl.group(1)) if kl else None,
+                            teil=st.group(1) if st else m.group(1), folge=i))
     return out
 
 
@@ -613,58 +647,127 @@ class Bestellung:
                           else None)
 
     def lernblatt(self, w):
+        """Lernblatt: zuerst gebaute im Register (liefern wie ein Prüfungsblatt), nur sonst bauen (plan.md Linie 3).
+
+        Treffer über Katalog (Titel, Name, Text und Eingaben der Lerneinheit) und Namen im Register; Füllwörter
+        zählen nicht. Eine ausdrücklich genannte Klasse („Klasse 8“) gilt als Lage: geliefert wird nur ein Blatt
+        dieser Klasse, sonst gebaut. Ohne genannte Klasse passt jedes gebaute Blatt der Einheit."""
         klasse = next((int(x) for i, x in enumerate(w) if x.isdigit() and i and w[i - 1] in {norm(y) for y in W_KLASSE}),
                       None)
+        explizit = klasse
         if klasse is None and self.schueler:
             m = re.match(r'\d+', self.schueler.get('klasse', ''))
             klasse = int(m.group()) if m else None
-        such = [x for x in w if x not in {norm(y) for y in SCHLUESSEL} and not x.isdigit() and x not in STOPP]
+        weg = {norm(y) for y in SCHLUESSEL | STOPP | W_FUELL}
+        such = [x for x in w if x not in weg and not x.isdigit()]
         roh = [x for x in re.split(r'[\s·,]+', self.eingabe) if norm(x) in such]
         thema = ' '.join(roh) or ' '.join(such)
-        # Treffer in Sorte S: gesetzte Lernblätter mit Kennung S… (bau/register.csv)
-        reg = os.path.join(BANK, 'bau', 'register.csv')
-        if os.path.exists(reg) and such:
-            with open(reg, encoding='utf-8', newline='') as f:
-                for z in csv.DictReader(f, delimiter=';'):
-                    if re.match(r'^S\d+[GASZ]\d', z['kennung']) and any(
-                            stamm(s) in stamm(z['eintraege']) for s in such):
-                        o = os.path.join(BANK, z['pfad'], 'pdf')
-                        self.out['dateien'] = [os.path.join(o, n) for n in ('1-uebersicht.pdf', '2-blatt.pdf',
-                                                                            '3-loesungen.pdf')]
-                        self.out['zeile'] = (f'Du bekommst: {(self.name + " · ") if self.name else ""}Lernblatt '
-                                             f'{z["eintraege"]} ({z["kennung"]}): Übersicht, Blatt, Lösung')
-                        self.liefer.append((z['eintraege'], z['pfad'], z['kennung'], 'lernblatt'))
-                        return self.out
-        # sonst bauen: bester Katalogeintrag
-        best, pk, einheit = None, 0, None
+        wer = (self.name + ' · ') if self.name else ''
+        if not such:
+            self.out['zeile'] = f'Du bekommst: {wer}nichts'
+            self.out['hinweis'] = 'Lernblatt wozu? Thema oder Begriff nennen (z. B. „Lernblatt Hypotenuse“)'
+            return self.out
+        st = lambda text: {stamm(y) for y in norm(text).split()}
+        phrase = ' '.join(stamm(x) for x in such)
+        # Katalog: bester Eintrag und, wenn ein Wort über den Titel hinaus zeigt, beste Einheit
+        best, pk, eh = None, 0, None
+        reg = lernblaetter()
         for k in katalog():
-            texte = [(k['titel'], 3), (k['eintrag'].replace('-', ' '), 3)] + [(n + ' ' + e, 1) for _, n, e in
-                                                                               k['einheiten']]
-            s = sum(g for x in such for t, g in texte if stamm(x) in {stamm(y) for y in norm(t).split()})
-            # ganze Eingabe wie im Katalog („← Eingabe „brüche addieren““) zählt am meisten
-            s += sum(10 for _, _, e in k['einheiten'] if such and ' '.join(such) in
-                     [norm(x) for x in re.findall(r'„([^“]+)“', e)])
-            if s > pk:
-                best, pk = k, s
+            kopf = st(k['titel'] + ' ' + k['eintrag'].replace('-', ' '))
+            for e in k['einheiten'] or [None]:
+                pkt, eigen = 0, 0
+                namen = [e['name']] + [r['name'] for r in reg if r['eintrag'] == k['eintrag'] and r['einheit'] == e[
+                    'nr']] if e else []
+                for x in such:
+                    s = stamm(x)
+                    g = 0
+                    if s in kopf:
+                        g = 4
+                    elif e and any(s in st(n) for n in namen):
+                        g, eigen = 3, eigen + 1
+                    elif e and any(s in st(y) for y in e['eingaben']):
+                        g, eigen = 3, eigen + 1
+                    elif e and s in st(e['text']):
+                        g, eigen = 1, eigen + 1
+                    pkt += g
+                if e and any(phrase == ' '.join(stamm(y) for y in x.split()) for x in e['eingaben']):
+                    pkt += 10
+                if pkt and len(namen) > 1:
+                    pkt += 0.5          # bei Gleichstand die Einheit, zu der schon ein Blatt gebaut ist
+                if pkt > pk:
+                    best, pk, eh = k, pkt, (e if eigen else None)
         if not best:
-            self.out['zeile'] = f'Du bekommst: {(self.name + " · ") if self.name else ""}nichts'
+            self.out['zeile'] = f'Du bekommst: {wer}nichts'
             self.out['hinweis'] = f'Kein Katalogeintrag zu „{thema}“'
             return self.out
-        # Einheit nur, wenn ein Wort über den Titel hinaus auf sie zeigt
-        titel = {stamm(y) for y in norm(best['titel'] + ' ' + best['eintrag'].replace('-', ' ')).split()}
-        eigen = [x for x in such if stamm(x) not in titel]
-        treff = lambda e: sum(1 for x in eigen if stamm(x) in {stamm(y) for y in norm(e[1] + ' ' + e[2]).split()}) + (
-            10 if ' '.join(such) in [norm(x) for x in re.findall(r'„([^“]+)“', e[2])] else 0)
-        eh = max(best['einheiten'], key=treff, default=None)
-        if eh and not treff(eh):
-            eh = None
-        self.out['bauen'] = dict(thema=best['titel'] + (f' – {eh[1]}' if eh else ''), eintrag=best['eintrag'],
-                                 einheit=eh[0] if eh else None, klasse=klasse or best['klasse'])
+        # Register: gebaute Blätter dieser Einheit (oder des Eintrags), bester Name, das jüngste zuerst
+        alle = [r for r in reg if r['eintrag'] == best['eintrag'] and (eh is None or r['einheit'] == eh['nr'])]
+        passend = [r for r in alle if explizit is None or r['klasse'] == explizit]
+        if passend:
+            kopf = st(best['titel'] + ' ' + best['eintrag'].replace('-', ' '))
+            name_pk = lambda r: sum(1 for x in such if stamm(x) not in kopf and stamm(x) in st(r['name']))
+            top = max(name_pk(r) for r in passend)
+            passend = [r for r in passend if name_pk(r) == top]
+            # je Einheit und Teil nur das jüngste Blatt
+            je = {}
+            for r in sorted(passend, key=lambda r: (r['datum'], r['folge'])):
+                je[(r['einheit'], r['teil'])] = r
+            werte = sorted(je.values(), key=lambda r: (r['einheit'], r['teil']))
+            if len(werte) > 1:
+                gehabt = lambda r: self.hatte(r['kennung'])
+                offen = [r for r in werte if not gehabt(r)] or werte
+                werte = ([offen[0]] + [r for r in werte if r is not offen[0]])[:3]
+                opt = [f'{r["einheit"]} {r["name"]} ({r["kennung"]}, Kl. {r["klasse"]})' +
+                       (' – Vorschlag' if j == 0 else '') + (' – hatte schon' if gehabt(r) else '')
+                       for j, r in enumerate(werte)]
+                r = self.frage(f'{best["titel"]}: welches Lernblatt?', opt, werte)
+            else:
+                r = werte[0]
+            return self.lernblatt_liefern(best, r)
+        # nichts gebaut (oder nicht für die genannte Klasse): bauen
         kl = klasse or best['klasse']
-        self.out['zeile'] = (f'Du bekommst: {(self.name + " · ") if self.name else ""}Lernblatt '
-                             f'{self.out["bauen"]["thema"]}' + (f' (Kl. {kl})' if kl else '') + ': wird gebaut, ≈ 20 min')
-        self.out['hinweis'] = f'Lernblatt „{thema}“ gibt es noch nicht'
+        if eh is None and best['einheiten']:
+            # Einheit wählen: die, deren Text die Klasse nennt („Kl. 6–10“), sonst die erste ohne Blatt dieser Klasse
+            gebaut = {r['einheit'] for r in alle if explicit_or(kl, r)}
+            def nennt(e):
+                return any(int(a) <= (kl or 0) <= int(b or a) for a, b in
+                           re.findall(r'Kl\.\s*(\d+)(?:\s*[–-]\s*(\d+))?', e['text']))
+            eh = next((e for e in best['einheiten'] if nennt(e) and e['nr'] not in gebaut), None) or next(
+                (e for e in best['einheiten'] if e['nr'] not in gebaut), best['einheiten'][0])
+        self.out['bauen'] = dict(thema=best['titel'] + (f' – {eh["name"]}' if eh else ''), eintrag=best['eintrag'],
+                                 einheit=eh['nr'] if eh else None, klasse=kl)
+        self.out['zeile'] = (f'Du bekommst: {wer}Lernblatt {self.out["bauen"]["thema"]}' + (f' (Kl. {kl})' if kl else '')
+                             + ': wird gebaut, ≈ 20 min')
+        andere = [f'{r["kennung"]} {r["name"]} Kl. {r["klasse"]}' for r in alle]
+        self.out['hinweis'] = (f'Lernblatt „{thema}“ für Kl. {explizit} gibt es noch nicht; gebaut: ' + ', '.join(andere)
+                               if andere else f'Lernblatt „{thema}“ gibt es noch nicht')
         return self.out
+
+    def lernblatt_liefern(self, k, r):
+        """Gebautes Lernblatt: Setzer aus Lernweg und Bankzeilen in den Tagesordner, oder dessen PDFs (Sorte tisch-alt:
+        Übersicht, Blatt, Lösung)."""
+        ordner = os.path.join(BANK, 'bau', 'lernblatt', self.datum, r['kennung'])
+        namen = ('tisch-alt-uebersicht.pdf', 'tisch-alt.pdf', 'tisch-alt-loesungen.pdf')
+        dateien = [os.path.join(ordner, n) for n in namen]
+        if not all(os.path.exists(x) for x in dateien):
+            self.out['befehle'].append(' '.join(['python3', 'werkzeuge/setzer.py', r['eintrag'], r['teil'], '--kennung',
+                                                 r['kennung'], '--aus', shlex.quote(ordner), '--sorte', 'tisch-alt',
+                                                 '--kein-register', '--katalog',
+                                                 shlex.quote(os.path.join(MN, 'katalog'))]))
+        self.out['dateien'] = dateien
+        wer = (self.name + ' · ') if self.name else ''
+        self.out['zeile'] = (f'Du bekommst: {wer}Lernblatt {k["titel"]} – {r["name"]} ({r["kennung"]}, Kl. '
+                             f'{r["klasse"]}): Übersicht, Blatt, Lösung')
+        self.liefer.append((f'lernblatt {r["eintrag"]} L{r["teil"]}', os.path.relpath(ordner, BANK), r['kennung'],
+                            'lernblatt'))
+        if self.hatte(r['kennung']):
+            self.out['hinweis'] = f'hatte {r["kennung"]} schon'
+        return self.out
+
+
+def explicit_or(kl, r):
+    """Zählt ein gebautes Blatt für die Klasse kl als vorhanden? (ohne Klasse: ja)"""
+    return kl is None or r['klasse'] == kl
 
 
 # ---------------------------------------------------------------------------------------------- Ausführen

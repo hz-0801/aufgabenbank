@@ -60,6 +60,7 @@ def main():
         for p, inhalt in alt.items():
             open(p, 'w', encoding='utf-8').write(inhalt)
         shutil.rmtree(os.path.join(BANK, 'bau', 'pruefung', FRISCH), ignore_errors=True)
+        shutil.rmtree(os.path.join(BANK, 'bau', 'lernblatt', FRISCH), ignore_errors=True)
         print('aufgeräumt: schueler.md, gebaut.csv, register.csv, fassungen.csv, Tagesordner', FRISCH)
     n = len(ergebnis)
     print(f'{sum(ergebnis)} von {n} grün')
@@ -141,14 +142,53 @@ def faelle():
     d = b('Testb geo', '--wahl', str(fhr))
     pruef('FHR -> Zeile was fehlt', not d['dateien'] and 'FHR' in (d['hinweis'] or ''), d)
     d = b('Lena Lernblatt Terme')
-    pruef('Lernblatt Terme -> bauen mit Thema', d.get('bauen') and d['bauen']['eintrag'] == 'terme'
-          and 'wird gebaut' in d['zeile'], d)
+    pruef('Lernblatt Terme -> Wahl unter den gebauten (MZE, BGG), nicht bauen', not d.get('bauen') and d.get('frage')
+          and any('MZE' in o for o in d['frage']['optionen']), d)
     d = b('Lena Klasse 9 Brüche')
     pruef('Lena Klasse 9 Brüche -> bauen, Klasse 9', d.get('bauen') and d['bauen']['klasse'] == 9
           and 'br' in d['bauen']['eintrag'], d)
+    lernblatt()
     d = b('Lena PA10', '--datum', FRISCH, '--ausfuehren')
     pruef('frischer Satz eines P10-Blatts ≤ 60 s', len(d.get('pdf', [])) == 3 and d.get('befehle')
           and d['_zeit'] <= 60, d, f'{d["_zeit"]:.1f} s (Setzer)')
+
+
+
+def lernblatt():
+    """Lernblätter: gebaute aus bau/register.csv liefern, nur sonst bauen (plan.md Linie 3); Füllwörter zählen nicht."""
+    d = b('Lernblatt Hypotenuse')
+    pruef('Lernblatt Hypotenuse -> gebautes Blatt (H7U), nicht bauen', not d.get('bauen') and '(H7U' in d['zeile']
+          and endet(d, 'tisch-alt-uebersicht.pdf', 'tisch-alt.pdf', 'tisch-alt-loesungen.pdf'), d)
+    d = b('Lernblatt Kathete berechnen')
+    pruef('Lernblatt Kathete berechnen -> Pythagoras (3S2), nicht Prozentsatz', not d.get('bauen')
+          and 'Pythagoras' in d['zeile'] and '(3S2' in d['zeile'], d)
+    d = b('Lernblatt Prozentsatz')
+    pruef('Lernblatt Prozentsatz -> gebautes Blatt (4NT)', not d.get('bauen') and '(4NT' in d['zeile'], d)
+    d = b('Lernblatt Prozentsatz berechnen', '--datum', FRISCH, '--ausfuehren')
+    pruef('Lernblatt Prozentsatz --ausfuehren -> Setzer, drei PDFs, ≤ 60 s', len(d.get('pdf', [])) == 3
+          and d.get('befehle') and 'setzer.py' in d['befehle'][0] and d['_zeit'] <= 60, d, f'{d["_zeit"]:.1f} s')
+    d = b('Lernblatt Prozentsatz', '--datum', FRISCH)
+    pruef('Lernblatt Prozentsatz nochmal am Tag -> PDFs des Tages, kein Satz', not d.get('befehle')
+          and '(4NT' in d['zeile'], d)
+    d = b('Klasse 8 Brüche')
+    reg = open(os.path.join(BANK, 'bau', 'register.csv'), encoding='utf-8').read()
+    kl8 = [z.split(';')[0] for z in reg.splitlines() if ';brueche-dezimalzahlen;L;' in z and 'klasse=8,' in z
+           and 'status=reserviert' not in z]
+    if kl8:
+        pruef(f'Klasse 8 Brüche -> gebautes Kl.-8-Blatt ({kl8[-1]}), nicht bauen', not d.get('bauen')
+              and f'({kl8[-1]}, Kl. 8' in d['zeile'], d)
+    else:
+        pruef('Klasse 8 Brüche -> bauen Kl. 8 (Kl. 6/7 gebaut)', d.get('bauen') and d['bauen']['klasse'] == 8
+              and d['bauen']['eintrag'] == 'brueche-dezimalzahlen' and 'Kl. 6' in (d['hinweis'] or ''), d)
+    d = b('Lernblatt Brüche')
+    pruef('Lernblatt Brüche ohne Einheit -> eine Wahl unter gebauten', d.get('frage') and not d.get('bauen')
+          and 'Vorschlag' in d['frage']['optionen'][0], d)
+    d = b('Lernblatt Quaternionen')
+    pruef('Lernblatt Quaternionen (unbekannt) -> nichts, Hinweis', not d.get('bauen') and not d['dateien']
+          and 'Kein Katalogeintrag' in (d['hinweis'] or ''), d)
+    d = b('Lernblatt Brüche addieren')
+    pruef('Lernblatt Brüche addieren (nicht gebaut) -> bauen Bruchrechnung 1', d.get('bauen')
+          and d['bauen']['eintrag'] == 'bruchrechnung' and d['bauen']['einheit'] == 1, d)
 
 
 if __name__ == '__main__':
