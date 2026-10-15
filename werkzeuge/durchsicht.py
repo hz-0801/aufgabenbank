@@ -1,4 +1,4 @@
-"""Durchsicht-Ansicht für einen kleinen Bildschirm: je Kommentar der Ausschnitt der Seite (Markierung gelb),
+"""Durchsicht-Ansicht für einen kleinen Bildschirm: je Kommentar mit laufender Nummer (Lehrer 15.10.: ansprechen) der Ausschnitt der Seite (Markierung gelb),
 darunter der Kommentar des Lehrers und die Antwort; eine Spalte.
 Aufruf: python3 -I durchsicht.py <antworten.json> <kommentar-ordner> <aus.html>
 <kommentar-ordner> kommt aus werkzeuge/kommentare.py (kommentare.csv, k-<seite>-<nr>.png).
@@ -13,7 +13,7 @@ zeilen = [z for z in csv.DictReader(open(ordner / 'kommentare.csv', encoding='ut
           if z['kennung'] == daten['kennung']]
 CHIP = {'ändern': 'chg', 'entschieden': 'ok', 'Handwerk': 'hw', 'Querschnitt': 'qs', 'Antwort': 'ans', 'offen': 'qs'}
 teile = []
-for z in zeilen:
+for lfd, z in enumerate(zeilen, 1):
     antw = daten['antworten'].get(z['seite'], [])
     i = int(z['nr']) - 1
     if i >= len(antw):
@@ -21,7 +21,7 @@ for z in zeilen:
     marke, text = antw[i]
     b64 = base64.b64encode((ordner / f"k-{int(z['seite']):03d}-{z['nr']}.png").read_bytes()).decode()
     ort = f"S. {z['seite']} · {daten['seiten'].get(z['seite'], '')}"
-    teile.append(f'''<article><p class="ort">{html.escape(ort)}</p>
+    teile.append(f'''<article><p class="ort"><b class="nr">{lfd}</b> {html.escape(ort)}</p>
 <img src="data:image/png;base64,{b64}" alt="Ausschnitt {html.escape(ort)}">
 <p class="lehrer">{html.escape(z['kommentar'] or '(ohne Text)')}</p>
 <p class="claude"><span class="chip {CHIP.get(marke, 'ans')}">{html.escape(marke)}</span> {html.escape(text)}</p></article>''')
@@ -43,6 +43,7 @@ body {{ background:var(--bg); color:var(--fg); font:15px/1.5 var(--sans);
 main {{ max-width:720px; margin:0 auto; display:flex; flex-direction:column; gap:22px; }}
 h1 {{ font-size:1.15rem; margin:0; }}
 article {{ display:flex; flex-direction:column; gap:6px; padding-top:14px; border-top:1px solid var(--line); min-width:0; }}
+.nr {{ font-size:1rem; color:var(--fg); margin-right:6px; }}
 .ort {{ margin:0; font-size:.78rem; color:var(--muted); letter-spacing:.03em; }}
 img {{ width:100%; display:block; background:var(--paper); border:1px solid var(--line); }}
 p {{ margin:0; }}
