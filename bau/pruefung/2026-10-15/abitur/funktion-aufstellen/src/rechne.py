@@ -15,7 +15,7 @@ p('B3', s, diff(k, x, 2).subs(s).subs(x, 6))
 A = u*(u + 3)*exp(-u); Ap = simplify(diff(A, u)); us = [r for r in solve(Ap, u) if r > 0][0]
 p('B4', factor(Ap), us, N(us, 4), N((us + 3)*exp(-us), 4), N(A.subs(u, us), 4))
 # B5 2024-B2.2g  d = p - f
-f = Rational(1, 2)*x**4 - 3*x**2 + Rational(5, 2); pp = -Rational(5, 2)*x**2 + Rational(5, 2); dd = expand(pp - f)
+f = x**4 - 6*x**2 + 5; pp = -5*x**2 + 5; dd = expand(pp - f)
 p('B5', dd, solve(diff(dd, x), x), [dd.subs(x, v) for v in (0, 1, -1, 1/sqrt(2))])
 # Mehr
 g = Rational(1, 1000)*(x**4/1600 - 8*x**2 + 25600); fl = a*x**2 + b*x + 30
