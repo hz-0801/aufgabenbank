@@ -1,0 +1,164 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+\newsavebox{\gbox}\newlength{\gLinks}
+% v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
+% Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr\wd\gbox+6mm\relax}%
+  \ifdim\gLinks>0.62\linewidth
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\leavevmode\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par}
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+% Skizzenfeld (v0.10, Lehrer 13.10.): Karo ab dem linken Rand über die Zeile, „Skizze“ klein grau oben links im Feld
+% (wie \pfskizzenfeld der Vorlage); der rechte Rand bleibt den Bedingungen
+\newcommand{\gskizze}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \node[anchor=north west,inner sep=2pt,font=\scriptsize,text=mbgrau,fill=white] at (0,{#1*10mm}) {Skizze};
+  \end{tikzpicture}\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[Abitur GK \pkt{} Prüfung]{Baumdiagramm}{AS10}\pfseitevon
+\pfheftkopf{Baumdiagramm}{}
+\pfstufenzeile{Baum zeichnen \pkt{} Pfadwahrscheinlichkeit gesucht \pkt{} Summe von Pfaden gesucht}
+
+% ===================== Stufe: Baum zeichnen =====================
+\gkopfvor{\pfstufekopf{Baum zeichnen}{\gpunkte[25 24]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-baum-zeichnen) [@thispage /XYZ @xpos @ypos null]}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% 2025-bebb-gk-B4a-m1 (Original 2025-bebb-gk-B4a, Schwere I, rang 1; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’25\\B4a}{1.}{}
+In einer Stadt haben 31,5 \% der Haushalte mindestens ein Kind. Von diesen Haushalten sind 14,2 \% überbelegt, von den Haushalten ohne Kind sind es 5,5 \%. Ein Haushalt wird zufällig ausgewählt. Stelle den Sachverhalt in einem beschrifteten Baumdiagramm dar.
+\karo{4}
+\fusshilfe{\mbox{1:~K 0,315, nicht K 0,685; B unter K 0,142, nicht B 0,858; B unter nicht K 0,055, nicht B 0,945}}
+\end{pfaufg}
+% 2024-bebb-gk-A1.9a-m1 (Original 2024-bebb-gk-A1.9a, Schwere I, rang 2; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’24\\A1.9a}{2.}{\pfohnetr}
+Bei einer Befragung erhalten 70 \% der Jugendlichen die Frage F1 „Hast du schon einmal unentschuldigt gefehlt?“, die übrigen die Frage F2 „Hast du noch nie unentschuldigt gefehlt?“. Alle antworten wahrheitsgemäß mit Ja oder Nein. Der Anteil $p$ derer, die schon einmal gefehlt haben, ist unter den F1-Befragten so groß wie unter allen. Vervollständige das Baumdiagramm.
+\par\smallskip\noindent\baumabi{F_1/{0,7}/{\text{Ja}/{p},\text{Nein}/},F_2//{\text{Ja}/,\text{Nein}/}}\par
+\fusshilfe{\mbox{2:~F1 0,7: Ja p, Nein 1 $-$ p; F2 0,3: Ja 1 $-$ p, Nein p}}
+\end{pfaufg}
+% 2024-bebb-gk-B4.2a-m1 (Original 2024-bebb-gk-B4.2a, Schwere II, rang 3; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’24\\B4.2a}{3.}{}
+Ein Glücksrad hat Sektoren mit der Zahl 4 und Sektoren mit der Zahl 2. Es wird zweimal gedreht; der Rabatt in Prozent ist das Produkt der beiden Zahlen. Die Wahrscheinlichkeit, zweimal die 4 zu drehen, beträgt $\tfrac{1}{16}$. Stelle das Zufallsexperiment in einem beschrifteten Baumdiagramm dar.
+\karo{4}
+\fusshilfe{\mbox{3:~$\tfrac{3}{4}$; auf beiden Stufen 4 mit $\tfrac{1}{4}$ und 2 mit $\tfrac{3}{4}$}}
+\end{pfaufg}
+
+% ===================== Stufe: Pfadwahrscheinlichkeit gesucht =====================
+\gkopfvor{\pfstufekopf{Pfadwahrscheinlichkeit gesucht}{\gpunkte[26 24]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-pfadwahrscheinlichkeit-gesucht) [@thispage /XYZ @xpos @ypos null]}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% 2024-bebb-gk-A1.6a-m1 (Original 2024-bebb-gk-A1.6a, Schwere I, rang 4; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’24\\A1.6a}{4.}{\pfohnetr}
+Bei einer Werbeaktion erhält jedes Kind einen verpackten Ball; mit einer Wahrscheinlichkeit von 30 \% ist er glitzernd gefärbt. Drei Kinder erhalten je einen Ball. Zeige, dass die Wahrscheinlichkeit, dass jedes der drei Kinder einen glitzernden Ball erhält, kleiner als 3 \% ist.
+\karo{2}
+\fusshilfe{\mbox{4:~0,027 < 0,03}}
+\end{pfaufg}
+% 2026-bb-gk-B4d-m1 (Original 2026-bb-gk-B4d, Schwere II, rang 5; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’26\\B4d}{5.}{}
+In einem Supermarkt sammeln 80 \% der Kundschaft Treuepunkte ($T$). Unter den Sammelnden sind 70 \% weiblich ($w$), unter den übrigen ist der Anteil weiblicher Personen $a$. Es sei $a = 0{,}3$. Untersuche, ob die Wahrscheinlichkeit, dass eine zufällig ausgewählte Person weiblich ist und Treuepunkte sammelt, viermal so groß ist wie die Wahrscheinlichkeit, dass sie nicht weiblich ist und keine Treuepunkte sammelt.
+\gzwei{\baumabi{T/{0,8}/{w/{0,7},\overline{w}/},\overline{T}//{w/{a},\overline{w}/}}}{\karo{4}}
+\fusshilfe{\mbox{5:~ja}}
+\end{pfaufg}
+
+% ===================== Stufe: Summe von Pfaden gesucht =====================
+\gkopfvor{\pfstufekopf{Summe von Pfaden gesucht}{\gpunkte[25 24 23 22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-summe-von-pfaden-gesucht) [@thispage /XYZ @xpos @ypos null]}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% 2023-bebb-gk-A1.6a-m1 (Original 2023-bebb-gk-A1.6a, Schwere I, rang 6; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’23\\A1.6a}{6.}{\pfohnetr}
+In einer Urne liegen sechs Kugeln, vier rote und zwei weiße. Es werden zwei Kugeln mit Zurücklegen gezogen. Ermittle die Wahrscheinlichkeit, dass beide Kugeln dieselbe Farbe haben.
+\karo{2}
+\fusshilfe{\mbox{6:~$\tfrac{5}{9}$}}
+\end{pfaufg}
+% 2025-bebb-gk-B4b-m1 (Original 2025-bebb-gk-B4b, Schwere I, rang 7; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’25\\B4b}{7.}{}
+In einer Stadt haben 31,5 \% der Haushalte mindestens ein Kind. Von diesen Haushalten sind 14,2 \% überbelegt, von den Haushalten ohne Kind sind es 5,5 \%. Zeige, dass etwa 8,24 \% aller Haushalte überbelegt sind.
+\karo{3}
+\fusshilfe{\mbox{7:~etwa 8,24 \%}}
+\end{pfaufg}
+% 2025-bebb-gk-A1.3b-m1 (Original 2025-bebb-gk-A1.3b, Schwere II, rang 8; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’25\\A1.3b}{8.}{\pfohnetr}
+Ein Glücksrad hat acht gleich große Sektoren: fünfmal die 3, zweimal die 2 und einmal die 1. Es wird zweimal gedreht. Berechne die Wahrscheinlichkeit, dass die Summe der beiden Zahlen ungerade ist.
+\gzwei{\kreisdiagramm[1.1]{3/1,2/1,3/1,3/1,2/1,3/1,1/1,3/1}}{\karo{3}}
+\fusshilfe{\mbox{8:~$\tfrac{3}{8}$}}
+\end{pfaufg}
+% 2024-bebb-gk-B4.2b-m1 (Original 2024-bebb-gk-B4.2b, Schwere III, rang 9; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’24\\B4.2b}{9.}{}
+Ein Glücksrad hat Sektoren mit der Zahl 4 und Sektoren mit der Zahl 2. Es wird zweimal gedreht; der Rabatt in Prozent ist das Produkt der beiden Zahlen. Die Wahrscheinlichkeit, zweimal die 4 zu drehen, beträgt $\tfrac{1}{16}$. Sechs Personen drehen nacheinander. Berechne die Wahrscheinlichkeit, dass genau viermal der kleinstmögliche Rabatt erzielt wird, und zwar bei vier Personen unmittelbar hintereinander.
+\karo{4}
+\fusshilfe{\mbox{9:~0,0575}}
+\end{pfaufg}
+% 2022-bebb-gk-B4f-m1 (Original 2022-bebb-gk-B4f, Schwere III, rang 10; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’22\\B4f}{10.}{}
+In einem Paketzentrum haben 12 \% der Pakete das Ziel A und 8 \% das Ziel B; 6 \% aller Pakete sind schwer ($S$). Zwei Paketboten erhalten je 12 zufällig ausgewählte Pakete. Bestimme die Wahrscheinlichkeit, dass mindestens einer der beiden kein Paket mit dem Ziel A erhält.
+\karo{3}
+\fusshilfe{\mbox{10:~0,385}}
+\end{pfaufg}
+
+\pfblattende{10}{26 & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17}{B4d & A1.3b B4a B4b & A1.6a A1.9a B4.2a B4.2b & A1.6a & B4f & A1.7a B4g B4h & B4.1b B4.2e & B4.2a &  & B3.1c}%
+{\pfausschnitt{}{Baumdiagramm}{Ziehen ohne Zurücklegen \pkt{} Vierfeldertafel}}
+\end{document}
