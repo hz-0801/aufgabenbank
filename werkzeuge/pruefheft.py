@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""pruefheft.py – setzt ein Prüfungsheft (Skript) aus Daten, ohne Modell (v0.6, 11.10.2026).
+"""pruefheft.py – setzt ein Prüfungsheft (Skript) aus Daten, ohne Modell (v0.17, 15.10.2026).
 
 Bestellung auf der Befehlszeile, Ausgabe .tex und PDF (Heft und eigene Lösungsdatei) nach
 bau/pruefheft/<kapitel>-<art>[-p<n>|-fokus-<wort>][-ebr]-<datum>/ (Unterordner src/ und pdf/).
@@ -37,6 +37,9 @@ bau/pruefheft/<kapitel>-<art>[-p<n>|-fokus-<wort>][-ebr]-<datum>/ (Unterordner s
   abitur/gliederung/<kapitel>.md und abitur/mehr-abi-gk/<kapitel>.csv (p_bau_abi): Kopf „Abitur GK · Prüfung“, Marke
   „GK ’24“ / „B2.1a“, Punkte über die GK-Hefte 2022–2026, Fundstellen nach GK-Heften, dazu 4-mehr und 5-mehr-loesungen;
   Grafik über die Spalte grafik mit abiksys, ksys3 (\\rstrecke, \\rvieleck), \\baumabi (mathblatt.sty 2026-10-15)
+  v0.17 (15.10.2026, Abitur GK Nachbesserung): fehlende wortlaut-eigen-<kapitel>.csv geduldet; Fixes des Abitur-Pfads
+  (Einrückung neben Marke/Graph, Ergebnis im Fuß, tx-Formeln, Zeichen, Vierfeldertafel, Stufenkopf, Fußumbruch, Meldung
+  der Stufenfolge), siehe git log
   Pfade: --mn ../mathe-nachhilfe --bb ../blattbau (Voreinstellung: Nachbarordner des Repos)
 
 Daten (alle gelesen; geschrieben wird nur bau/register.csv, eine Zeile je Bau):
@@ -331,7 +334,9 @@ class Daten:
             for paar in (z.get('ebr_zwilling') or '').split():
                 f, e = paar.split('=')
                 self.zwilling_zu[f] = e
-        wl = lies_csv(os.path.join(mn, o, f'wortlaut-eigen-{kapitel}.csv'))
+        # v0.17: fehlende wortlaut-eigen-<kapitel>.csv dulden (Abitur: Wortlaut liegt im privaten Repo)
+        p_wl = os.path.join(mn, o, f'wortlaut-eigen-{kapitel}.csv')
+        wl = lies_csv(p_wl) if os.path.exists(p_wl) else []
         self.wort_eigen = {r['id'] for r in wl}
         # Teilaufgaben, die absichtlich nur einmal geschrieben sind, stehen in einer anderen
         # wortlaut-eigen-*.csv (Lauf C Nachbesserung): alle Dateien, eigene zuerst, erste gewinnt
