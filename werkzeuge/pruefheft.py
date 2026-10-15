@@ -5247,7 +5247,7 @@ def mehr_aufgabe_tex(r, nr, faktor=1.0):
         out.append(f'\\karo{{{n}}}')
     fuss = '; '.join(tx(mehr_fusswert(e, optionen, r)) for e in ergebnisse)
     if fuss:
-        out.append(f'\\fusshilfe{{\\mbox{{{nr}:~{fuss}}}}}')
+        out.append(f'\\fusshilfe{{\\gfuss{{{nr}}}{{{fuss}}}}}')
     out.append('\\end{pfaufg}')
     return '\n'.join(out)
 
@@ -5461,6 +5461,9 @@ P_PRAEAMBEL = r"""% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortg
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -5504,7 +5507,9 @@ P_PRAEAMBEL = r"""% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortg
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -5856,7 +5861,7 @@ def p_frage_tex(f, nr):
     fuss = p_frage_ergebnis(f)
     if len(fuss) > 60 and f['weg'] and len(f['weg']) < len(fuss):
         fuss = tx(f['weg'])
-    out.append(f'\\par\\fusshilfe{{\\mbox{{{nr}:~{fuss}}}}}')
+    out.append(f'\\par\\fusshilfe{{\\gfuss{{{nr}}}{{{fuss}}}}}')
     out.append('\\end{pfaufg}')
     return '\n'.join(out)
 
@@ -5890,7 +5895,7 @@ def p_einstieg_tex(D, r, nr, stufe):
     fuss = a.kurz
     if a.kreuz and a.optionen:
         fuss = a.kurz
-    out.append(f'\\fusshilfe{{\\mbox{{{nr}:~{nur_ergebnis(fuss, latex=True) if fuss else ""}}}}}')
+    out.append(f'\\fusshilfe{{\\gfuss{{{nr}}}{{{nur_ergebnis(fuss, latex=True) if fuss else ""}}}}}')
     out.append('\\end{pfaufg}')
     return '\n'.join(out), a
 
@@ -6143,7 +6148,7 @@ def p_echt_tex(D, r, nr, heraus, faktor=1.0, vorige=None, nr_vorige=0):
     kommentare, zeilen, fuss = p_echt_inhalt(D, r, nr, heraus, faktor, vorige, nr_vorige)
     out = kommentare + [f'\\begin{{pfaufg}}{{{p_marke(D, r)}}}{{{nr}.}}{{{p_bedingung_tex(D, r)}}}'] + zeilen
     if fuss:
-        out.append(f'\\fusshilfe{{\\mbox{{{nr}:~{fuss}}}}}')
+        out.append(f'\\fusshilfe{{\\gfuss{{{nr}}}{{{fuss}}}}}')
     out.append('\\end{pfaufg}')
     return '\n'.join(out)
 
@@ -6262,7 +6267,7 @@ def p_buendel_tex(D, glieder, nr, heraus, faktor=1.0, teile=False):
         # ohne gemeinsamen Text stehen a) und b) auf der Zeile der Nummer
         out.append(('\\par\\smallskip' if kopf else '') + '\\noindent' + '\\hfill\n'.join(spalten) + '\\par')
     if fuesse:
-        out.append(f'\\fusshilfe{{\\mbox{{{nr}:~{"; ".join(fuesse)}}}}}')
+        out.append(f'\\fusshilfe{{\\gfuss{{{nr}}}{{{"; ".join(fuesse)}}}}}')
     out.append('\\end{pfaufg}')
     return '\n'.join(out)
 
