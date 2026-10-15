@@ -82,7 +82,9 @@ UNI_MATH = {'⇒': r'\Rightarrow', '≈': r'\approx', '−': '-', '≤': r'\le',
             '▢': r'\square', '∢': r'\sphericalangle', '∛': r'\sqrt[3]{\;}', '∥': r'\parallel', 'ℓ': r'\ell',
             '↔': r'\leftrightarrow', '✓': r'\surd', '●': r'\bullet', '▲': r'\blacktriangle',
             '◼': r'\blacksquare', 'Δ': r'\Delta', 'ˣ': r'^{x}', '₅': r'_5', '₇': r'_7',
-            '⅓': r'\tfrac{1}{3}', '⅔': r'\tfrac{2}{3}', '⅖': r'\tfrac{2}{5}'}
+            '⅓': r'\tfrac{1}{3}', '⅔': r'\tfrac{2}{3}', '⅖': r'\tfrac{2}{5}',
+            # v0.17 (Abitur GK): zweite/dritte Ableitung, Hochzahl n, Standardabweichung
+            '″': r"''", '‴': r"'''", 'ⁿ': r'^{n}', 'σ': r'\sigma'}
 SUP = str.maketrans('⁰¹²³⁴⁵⁶⁷⁸⁹', '0123456789')
 
 
