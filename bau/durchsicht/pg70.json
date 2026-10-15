@@ -1,0 +1,19 @@
+{
+ "kennung": "PG70-2",
+ "name": "Sinussatz",
+ "seiten": {
+  "50": "Blatt S. 1"
+ },
+ "antworten": {
+  "50": [
+   [
+    "offen",
+    "Ja, finde ich auch – und hier noch mehr als bei Pythagoras: Das ganze Blatt übt eine einzige Formel. Jetzt fragt das Blatt nur „Welche Formel brauchst du? Seite __“ und lässt den Schüler dann mit einem Satz in Worten allein. Die Formelsammlung hat den Satz mit Figur (Formeln und Werte S. 27, Kasten „Sinussatz“: a/sin α = b/sin β = c/sin γ, Dreieck ABC mit a, b, c und α, β, γ). Weg A: Dieser Kasten steht oben unter dem Titel wie bei Pythagoras (§ 10 t) – dazu nehme ich den Sinussatz in die Liste der Formeln auf, die sitzen müssen; die Seitenfrage fällt dann weg. Weg B: Liste bleibt wie beschlossen, das Blatt behält die Seitenfrage. Ich empfehle Weg A. Unabhängig davon kommt der Kern ans Ende (§ 10 w): Seite und gegenüberliegender Winkel sind ein Paar · ein ganzes Paar und eine Hälfte des zweiten → Sinussatz · fehlt der Gegenwinkel, erst die Winkelsumme."
+   ],
+   [
+    "offen",
+    "Nr. 1 ohne Skizze ist ein Fehler, auch nach der jetzigen Regel („die erste Aufgabe jeder Stufe mit Skizze“) – Handwerk, kommt in Schritt C. Gerade hier ist die Skizze der Lernstoff: Der Schüler soll sehen, welche Seite welchem Winkel gegenüberliegt. Deine Frage, wann man verzichtet, trifft den schwachen Teil der Regel: „die folgenden ohne“ steht auf einem Blatt (Tendenz) und widerspricht der Prüfung – die P10-Originale in Geometrie zeigen fast immer eine Figur. Verzichten sollte man nur, wo die Figur nichts zeigt (zwei Winkel, dritter gesucht) oder wo die Prüfung keine gibt und der Schüler sie sich selbst machen muss – dann steht das Skizzenfeld. Weg A: In Geometrie hat jede Aufgabe eine Figur – unsere Skizze oder das Skizzenfeld –, nie nur Text; „die folgenden ohne“ fällt. Weg B: Regel bleibt, nur Nr. 1 bekommt eine Skizze. Ich empfehle Weg A; die Frage stelle ich dir nach der zu Nr. 1."
+   ]
+  ]
+ }
+}
