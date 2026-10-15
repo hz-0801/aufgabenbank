@@ -6978,6 +6978,11 @@ def p_bau_abi(args):
     alle = [r for r in abi_mehr(D.mn, args.kapitel) if r.get('einheit', '').strip() == einheit]
     if not alle:
         sys.exit(f'abitur/mehr-abi-gk/{args.kapitel}.csv: keine Zeile mit einheit = {einheit}')
+    if args.nur_fassung:
+        # v0.17 (bestellen.py): Kennung ohne Satz; das Abitur führt noch keine Fassungen (Pilot), also immer „gleich“
+        kenn = gl['kennung'].get(einheit) or einheit
+        print(f'FASSUNG {kenn} gleich')
+        return
     hinweise = []
     # Stufen des Blatts in Lernfolge aus der Gliederung („Stufen: <Einheit> = a · b · c“)
     stufen = list(ge['stufen'])

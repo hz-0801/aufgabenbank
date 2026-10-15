@@ -131,17 +131,31 @@ def faelle():
     abi = 1 + next(i for i, o in enumerate(d['frage']['optionen']) if o == 'Abitur GK')
     d = b('Testa ana', '--wahl', str(abi))
     eingetragen = '| Testa |' in open(SCHUELER, encoding='utf-8').read()
-    pruef('unbekannter Name --wahl Abitur GK -> eingetragen, keine zweite Frage, Zeile was fehlt', eingetragen and
-          not d['frage'] and 'Abitur' in (d['hinweis'] or '') and 'Abitur GK' in d['zeile'], d)
+    pruef('unbekannter Name --wahl Abitur GK -> eingetragen, keine zweite Frage, erstes Blatt AA10 (seit 15.10.)',
+          eingetragen and not d['frage'] and 'Abitur GK' in d['zeile'] and '(AA10' in d['zeile']
+          and endet(d, '1-uebersicht.pdf', '2-blatt.pdf', '3-loesungen.pdf'), d)
     d = b('Testa Handreichung')
     pruef('Abitur GK Handreichung -> Handreichung GK aus der Gliederung', endet(d, 'handreichung-abi-gk.pdf'), d)
     d = b('Karte Abitur')
     pruef('Karte Abitur (ohne Namen) -> Bestellkarte GK', endet(d, 'bestellkarte-abi-gk.pdf'), d)
     d = b('Abitur ana')
     pruef('Abitur ana (ohne Namen) -> Vorschlag AA10', d.get('frage') and 'AA10' in d['frage']['optionen'][0], d)
+    # Abitur GK seit 15.10.2026 mit Blättern (33, pruefheft.py v0.17; Felder Blatt, Blattordner, Mehrdateien in
+    # mathe-nachhilfe abitur/gliederung/README.md „Bestellung“)
+    abi_drei = ('1-uebersicht.pdf', '2-blatt.pdf', '3-loesungen.pdf')
     d = b('Testa AA30')
-    pruef('Abitur-Kennung -> Blatt gibt es noch nicht', not d['dateien'] and 'gibt es noch nicht' in (d['hinweis'] or '')
-          and '(AA30)' in d['zeile'], d)
+    pruef('Abitur-Kennung AA30 -> Übersicht, Blatt, Lösung', not d['frage'] and '(AA30' in d['zeile']
+          and endet(d, *abi_drei) and all(os.path.exists(x) for x in d['dateien']), d)
+    d = b('Testa Nullstellen')
+    pruef('Abitur Freitext Nullstellen -> AA20 ohne Frage', not d['frage'] and '(AA20' in d['zeile']
+          and endet(d, *abi_drei), d)
+    d = b('Testa AA20 mehr')
+    pruef('Abitur AA20 mehr -> Mehr + Lösung aus dem Blattordner', endet(d, '4-mehr.pdf', '5-mehr-loesungen.pdf')
+          and all(os.path.exists(x) for x in d['dateien']), d)
+    d = b('Testa AA20', '--datum', FRISCH, '--ausfuehren')
+    pruef('Abitur AA20 frisch --ausfuehren -> Setzer, drei PDFs, Lieferzeile, ≤ 90 s', len(d.get('pdf', [])) == 3
+          and d.get('befehle') and '--pruefung abitur' in d['befehle'][0] and d.get('lieferung')
+          and d['_zeit'] <= 90, d, f'{d["_zeit"]:.1f} s (Setzer)')
     d = b('Testa hmf')
     pruef('Abitur hilfsmittelfrei -> Zettel gibt es noch nicht', not d['dateien'] and 'Zettel' in (d['hinweis'] or ''), d)
     d = b('Testa Original 24')

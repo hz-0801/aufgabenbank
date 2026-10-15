@@ -356,10 +356,12 @@ class Bestellung:
 
     def vorgabe(self):
         """Ohne Namen: genannte Prüfung („Karte Abitur“, „Abitur GK ana“), sonst die erste mit setzbaren Blättern
-        (P10; seit 15.10. hat auch das Abitur Kennungen, aber noch keinen Setzer)."""
+        (Feld „Vorgabe: ja“, P10; seit 15.10. hat auch das Abitur Blätter)."""
         if self.genannt:
             return self.genannt
-        P = next((P for P in self.P_alle if P['blaetter'] and P['felder'].get('Blatt')), None) or next(
+        # 15.10.2026: seit das Abitur Blätter hat, entscheidet das Feld „Vorgabe: ja“ im Block „Bestellung“ (P10)
+        P = next((P for P in self.P_alle if P['felder'].get('Vorgabe', '').lower() == 'ja'), None) or next(
+            (P for P in self.P_alle if P['blaetter'] and P['felder'].get('Blatt')), None) or next(
             P for P in self.P_alle if P['blaetter'])
         return P, P['sorten'][0][0]
 
@@ -525,7 +527,7 @@ class Bestellung:
     def blatt(self, b, loes=False, mehr=False, hinweis=None):
         P = self.P
         if not P['felder'].get('Blatt'):
-            # Prüfung ohne Setzer (Abitur seit 15.10.: Blätter mit Kennung im Zuschnitt, gebaut noch keins)
+            # Prüfung ohne Setzer (FHR; Abitur bis 15.10. mittags – seitdem Feld „Blatt“ in abitur/gliederung/README.md)
             self.out['zeile'] = f'{self.kopf()} · {b["anzeige"]} ({b["kennung"]}): gibt es noch nicht'
             st = ' · '.join(a for _, a in b['stufen'])
             self.out['hinweis'] = (f'Blatt {b["anzeige"]} ({b["kennung"]}) gibt es noch nicht' + (f' (Stufen: {st})'
@@ -542,7 +544,12 @@ class Bestellung:
                                        + f' --datum {self.datum} --aus {shlex.quote(ordner)}'
                                        + (f' --schueler {self.nummer}' if self.nummer else ''))
         name = f'{b["anzeige"]} ({kf})'
-        if mehr:
+        if mehr and P['felder'].get('Mehrdateien'):
+            # Abitur (15.10.2026): der Blatt-Lauf setzt das Mehr mit (4-mehr, 5-mehr-loesungen im Blattordner)
+            self.out['dateien'] = [os.path.join(pdf, n.strip()) for n in P['felder']['Mehrdateien'].split('|')]
+            self.out['zeile'] = f'{self.kopf()} · {name}: Mehr (alle Seiten), Lösung'
+            self.liefer.append((f'{b["kennung"]} {b["ordner"]} mehr', os.path.relpath(pdf, BANK), kf, 'mehr'))
+        elif mehr:
             mo = os.path.join(ordner, 'mehr')
             if not all(os.path.exists(os.path.join(mo, 'pdf', n)) for n in ('mehr.pdf', 'mehr-loesung.pdf')) \
                     or not gleich:
