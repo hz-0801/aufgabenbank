@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -98,7 +103,7 @@
 \lzb{2.}{}{Vorgabe eingehalten}{f'(3) = e $\approx$ 2,72 $\Rightarrow$ Steigungswinkel arctan(e) $\approx$ 69,8° $\Rightarrow$ $\alpha$ = 2 · 69,8° $\approx$ 139,6° $\ge$ 135° $\Rightarrow$ Vorgabe eingehalten}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{3.}{}{$\approx$ 63,4°; ja, sin $\alpha$ = cos $\alpha$}{f'(x) = $\tfrac{1}{4}$ x² $-$ 1 $\Rightarrow$ f'(2$\sqrt{3}$) = 2 $\Rightarrow$ Steigungswinkel arctan 2 $\approx$ 63,4°; tan $\alpha$ = |(2 $-$ $\tfrac{1}{3}$)/(1 + 2 · $\tfrac{1}{3}$)| = 1 $\Rightarrow$ $\alpha$ = 45° $\Rightarrow$ ja, sin $\alpha$ = cos $\alpha$}
+\lzb{3.}{}{$\approx$ 71,6°; ja, sin $\alpha$ = cos $\alpha$}{f'(x) = $\tfrac{1}{6}$ x² $-$ $\tfrac{3}{2}$ $\Rightarrow$ f'(3$\sqrt{3}$) = $\tfrac{27}{6}$ $-$ $\tfrac{3}{2}$ = 3 $\Rightarrow$ Steigungswinkel arctan 3 $\approx$ 71,6°; tan $\alpha$ = |(3 $-$ $\tfrac{1}{2}$)/(1 + 3 · $\tfrac{1}{2}$)| = 1 $\Rightarrow$ $\alpha$ = 45° $\Rightarrow$ ja, sin $\alpha$ = cos $\alpha$}
 \end{pfloesungb}
 
 \Needspace*{0.16\textheight}\pfstufekopf{Schnittwinkel gesucht}{\gpunkte[23 22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-schnittwinkel-gesucht) [@thispage /XYZ @xpos @ypos null]}

@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -94,13 +99,13 @@
 \begin{pfaufg}{GK~’26\\B4b}{1.}{}
 In einem Supermarkt sammeln 70 \% der Kundschaft Treuepunkte. Es werden 12 Personen aus der Kundschaft zufällig ausgewählt; die Zufallsgröße $X$ gibt an, wie viele davon Treuepunkte sammeln. $X$ wird als binomialverteilt angenommen. Ermittle die Wahrscheinlichkeit dafür, dass weniger als 9 der 12 Personen Treuepunkte sammeln.
 \karo{3}
-\fusshilfe{\mbox{1:~0,507}}
+\fusshilfe{\gfuss{1}{0,507}}
 \end{pfaufg}
 % 2022-bebb-gk-B4b-m1 (Original 2022-bebb-gk-B4b, Schwere I, rang 2; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’22\\B4b}{2.}{}
 In einem Paketzentrum werden täglich mehrere Millionen Pakete umgeschlagen. Von allen Paketen gehen 12 \% zum Ziel A und 6 \% zum Ziel B, die übrigen an andere Ziele. Es werden 100 Pakete zufällig ausgewählt; $X$ ist die Anzahl der Pakete mit dem Ziel B. Bestimme mit dem Tabellenausschnitt die Wahrscheinlichkeit dafür, dass genau acht der Pakete das Ziel B haben, und die Wahrscheinlichkeit dafür, dass weniger als acht das Ziel B haben.
 \gzwei{{\small\begin{tabular}{|l|c|c|c|c|}\hline \multicolumn{5}{|c|}{$n = 100$, $p = 0{,}06$}\\\hline $k$ & 6 & 7 & 8 & 9\\\hline $P(X \le k)$ & 0,6064 & 0,7483 & 0,8537 & 0,9225\\\hline\end{tabular}}}{\karo{3}}
-\fusshilfe{\mbox{2:~0,105; 0,748}}
+\fusshilfe{\gfuss{2}{0,105; 0,748}}
 \end{pfaufg}
 
 % ===================== Stufe: n, p oder k gesucht =====================
@@ -110,28 +115,28 @@ In einem Paketzentrum werden täglich mehrere Millionen Pakete umgeschlagen. Von
 \begin{pfaufg}{GK~’23\\B4.1f}{3.}{}
 In einem Land arbeiten 30 \% aller Lehrkräfte an einem Gymnasium; 18 \% aller Lehrkräfte sind weiblich und arbeiten an einem Gymnasium, insgesamt sind 70 \% der Lehrkräfte weiblich. Es werden Lehrkräfte zufällig ausgewählt. Ermittle, wie viele Lehrkräfte man mindestens auswählen muss, damit mit einer Wahrscheinlichkeit von mindestens 95 \% mindestens eine davon an einem Gymnasium arbeitet.
 \karo{3}
-\fusshilfe{\mbox{3:~9}}
+\fusshilfe{\gfuss{3}{9}}
 \end{pfaufg}
 % Teile eines Originals (2022-bebb-gk-B4): 2022-bebb-gk-B4d-m1, 2022-bebb-gk-B4e-m1
 \begin{pfaufg}{}{4.}{}
 In einem Paketzentrum werden täglich mehrere Millionen Pakete umgeschlagen. Von allen Paketen gehen 12 \% zum Ziel A und 6 \% zum Ziel B, die übrigen an andere Ziele.
 % 2022-bebb-gk-B4d-m1 (Original 2022-bebb-gk-B4d, Schwere II, rang 4; herausgelöste Fassung: keine)
-\begin{gbteil}{a)}{\raisebox{\dimexpr-\height+\ht\strutbox\relax}{\shortstack[r]{GK~’22\\B4d}}\hspace*{\mbpfnr}}{}
+\begin{gbteil}{a)}{\raisebox{\dimexpr-\height+\ht\strutbox\relax}{\shortstack[r]{GK~’22\\B4d}}}{}
 Ermittle, wie viele Pakete man mindestens zufällig auswählen muss, damit mit einer Wahrscheinlichkeit von mindestens 90 \% mindestens eines davon das Ziel B hat.
 \karo{3}
 \end{gbteil}
 % 2022-bebb-gk-B4e-m1 (Original 2022-bebb-gk-B4e, Schwere II, rang 5; herausgelöste Fassung: keine)
-\begin{gbteil}{b)}{\raisebox{\dimexpr-\height+\ht\strutbox\relax}{\shortstack[r]{GK~’22\\B4e}}\hspace*{\mbpfnr}}{}
+\begin{gbteil}{b)}{\raisebox{\dimexpr-\height+\ht\strutbox\relax}{\shortstack[r]{GK~’22\\B4e}}}{}
 Ein Teil der Pakete hat das Ziel C. Wählt man 20 Pakete zufällig aus, so hat mit einer Wahrscheinlichkeit von etwa 67 \% keines davon das Ziel C. Ermittle den Anteil der Pakete mit dem Ziel C an allen Paketen.
 \karo{3}
 \end{gbteil}
-\fusshilfe{\mbox{4:~a)~38; b)~2 \%}}
+\fusshilfe{\gfuss{4}{a)~38; b)~2 \%}}
 \end{pfaufg}
 % 2025-bebb-gk-B4d-m1 (Original 2025-bebb-gk-B4d, Schwere II, rang 6; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’25\\B4d}{5.}{}
 In einer Großstadt gelten 8,55 \% aller Haushalte als überbelegt. Es werden 800 Haushalte zufällig ausgewählt; die Zufallsgröße $X$ gibt die Anzahl der überbelegten Haushalte unter ihnen an und wird als binomialverteilt angenommen. Ermittle den kleinstmöglichen Wert von $k$, für den $P(X \le k)$ mehr als 90 \% beträgt.
 \karo{3}
-\fusshilfe{\mbox{5:~79}}
+\fusshilfe{\gfuss{5}{79}}
 \end{pfaufg}
 
 \pfblattende{10}{26 & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17}{B4b & B4d &  & B4.1f & B4b B4d B4e & B4a B4e & B4.1c B4.2a & B4.1a B4.1b & B3.2a B3.2d & }%

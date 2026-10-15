@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -95,7 +100,7 @@
 \lzb{2.}{}{f$'$ = $-$2x + 6; x = 2}{f$'$(x) = $-$2x + 6; für x $\neq$ 0: $-$x² + 6x $-$ 4 = x · ($-$2x + 6) = $-$2x² + 6x $\Rightarrow$ x² = 4 $\Rightarrow$ x = $-$2 oder x = 2}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{3.}{}{x $\approx$ 2350); um etwa 14:00 Uhr ist die Zahl der Likes um 800 kleiner als zwei Stunden später}{gesucht ist die Stelle x, an der der Graph 2 Einheiten weiter rechts um 800 höher liegt $\Rightarrow$ x $\approx$ 2 (a(2) $\approx$ 1500, a(4) $\approx$ 2350); um etwa 14:00 Uhr ist die Zahl der Likes um 800 kleiner als zwei Stunden später}
+\lzb{3.}{}{x $\approx$ 2 (a(2) $\approx$ 1500, a(4) $\approx$ 2350); um etwa 14:00 Uhr ist die Zahl der Likes um 800 kleiner als zwei Stunden später}{gesucht ist die Stelle x, an der der Graph 2 Einheiten weiter rechts um 800 höher liegt $\Rightarrow$ x $\approx$ 2 (a(2) $\approx$ 1500, a(4) $\approx$ 2350); um etwa 14:00 Uhr ist die Zahl der Likes um 800 kleiner als zwei Stunden später}
 \end{pfloesungb}
 
 \Needspace*{0.16\textheight}\pfstufekopf{Ungleichung lösen}{\gpunkte[24 23]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-ungleichung-losen) [@thispage /XYZ @xpos @ypos null]}
@@ -103,6 +108,6 @@
 \lzb{4.}{}{f(x) $-$ g(x) = $\tfrac{3}{4}$ x · (x $-$ 4)²; = 4; ∞[}{f(x) $-$ g(x) = $\tfrac{3}{4}$ x³ $-$ 6x² + 12x = $\tfrac{3}{4}$ x · (x² $-$ 8x + 16) = $\tfrac{3}{4}$ x · (x $-$ 4)²; (x $-$ 4)² > 0 für x $\neq$ 4, = 0 für x = 4; $\tfrac{3}{4}$ x > 0 für x > 0 $\Rightarrow$ alle x > 0 außer 4: ]0; 4[ $\cup$ ]4; ∞[}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{5.}{}{Ungleichung |p(x) $-$ f(x)| $\le$ $\tfrac{1}{4}$ ansetzen; 0,5x$^{4}$ $-$ 0,5x² $\le$ $\tfrac{1}{4}$; x $\approx$ 1,17; Lösung 1 $\le$ x $\le$ 1,17}{Ungleichung |p(x) $-$ f(x)| $\le$ $\tfrac{1}{4}$ ansetzen; für x $\ge$ 1 ist f(x) $\ge$ p(x), also 0,5x$^{4}$ $-$ 0,5x² $\le$ $\tfrac{1}{4}$; Randgleichung 0,5x$^{4}$ $-$ 0,5x² = $\tfrac{1}{4}$ mit u = x² lösen: u = (1 + √3)/2 $\Rightarrow$ x $\approx$ 1,17; Lösung 1 $\le$ x $\le$ 1,17}
+\lzb{5.}{}{Ungleichung |p(x) $-$ f(x)| $\le$ $\tfrac{1}{4}$ ansetzen; 0,5x$^{4}$ $-$ 0,5x² $\le$ $\tfrac{1}{4}$; x $\approx$ 1,17; Lösung 1 $\le$ x $\le$ 1,17}{Ungleichung |p(x) $-$ f(x)| $\le$ $\tfrac{1}{4}$ ansetzen; für x $\ge$ 1 ist f(x) $\ge$ p(x), also 0,5x$^{4}$ $-$ 0,5x² $\le$ $\tfrac{1}{4}$; Randgleichung 0,5x$^{4}$ $-$ 0,5x² = $\tfrac{1}{4}$ mit u = x² lösen: u = (1 + $\sqrt{3}$)/2 $\Rightarrow$ x $\approx$ 1,17; Lösung 1 $\le$ x $\le$ 1,17}
 \end{pfloesungb}
 \end{document}

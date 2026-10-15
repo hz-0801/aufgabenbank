@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -92,7 +97,7 @@
 \lzb{1.}{}{P'(5|5|8)}{$\overrightarrow{PQ}$ = $\left(\begin{smallmatrix}2\\4\\4\end{smallmatrix}\right)$ $\Rightarrow$ $\overrightarrow{OP'}$ = $\overrightarrow{OQ}$ + $\overrightarrow{PQ}$ $\Rightarrow$ P'(5|5|8)}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{2.}{}{½ · (D + S) = W; T(0,5|$-$1,5|1,5)}{Mittelpunkt von DS: ½ · (D + S) = (0,5|1,5|1,5) = W; T ist das Spiegelbild von W an der xz-Ebene $\Rightarrow$ T(0,5|$-$1,5|1,5)}
+\lzb{2.}{}{$\tfrac{1}{2}$ · (D + S) = W; T(0,5|$-$1,5|1,5)}{Mittelpunkt von DS: $\tfrac{1}{2}$ · (D + S) = (0,5|1,5|1,5) = W; T ist das Spiegelbild von W an der xz-Ebene $\Rightarrow$ T(0,5|$-$1,5|1,5)}
 \end{pfloesungb}
 \begin{pfloesungb}{}
 \lzb{3.}{}{R($-$5|6|$-$4)}{$\overrightarrow{PQ}$ = $\left(\begin{smallmatrix}6\\-3\\6\end{smallmatrix}\right)$ $\Rightarrow$ $\overrightarrow{OR}$ = $\overrightarrow{OP}$ $-$ $\overrightarrow{PQ}$ $\Rightarrow$ R($-$5|6|$-$4)}
@@ -103,9 +108,9 @@
 \lzb{4.}{}{D(5|$-$3|3)}{ACBD wird eine Raute; Probe |DA| = |DB| = 6 $\Rightarrow$ D = A + B $-$ C $\Rightarrow$ D(5|$-$3|3)}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{5.}{}{B(0|0|5); z. B. C(4|$-$1|4)}{|MA| = 3; B = 2 · M $-$ A $\Rightarrow$ B(0|0|5); C mit |MC| = 3 und |CA| = |CB| = √18 $\Rightarrow$ z. B. C(4|$-$1|4) (viele Lösungen)}
+\lzb{5.}{}{B(0|0|5); z. B. C(4|$-$1|4)}{|MA| = 3; B = 2 · M $-$ A $\Rightarrow$ B(0|0|5); C mit |MC| = 3 und |CA| = |CB| = $\sqrt{18}$ $\Rightarrow$ z. B. C(4|$-$1|4) (viele Lösungen)}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{6.}{}{C' $\approx$ (8,20|8,20|0)}{Lotfußpunkt von C auf AB: M(3|3|0); |MC| = 3√6 $\Rightarrow$ C'(3 + 3√3|3 + 3√3|0); C' $\approx$ (8,20|8,20|0)}
+\lzb{6.}{}{C' $\approx$ (8,20|8,20|0)}{Lotfußpunkt von C auf AB: M(3|3|0); |MC| = 3$\sqrt{6}$ $\Rightarrow$ C'(3 + 3$\sqrt{3}$|3 + 3$\sqrt{3}$|0); C' $\approx$ (8,20|8,20|0)}
 \end{pfloesungb}
 \end{document}

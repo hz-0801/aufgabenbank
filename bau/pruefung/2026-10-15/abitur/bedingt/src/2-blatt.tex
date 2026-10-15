@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -94,19 +99,19 @@
 \begin{pfaufg}{GK~’22\\A1.7a}{1.}{\pfohnetr}
 Von den Kunden eines Reisebüros reisen 50 \% gerne in die Region A, 40 \% gerne in die Region B und 15 \% gerne in beide Regionen. Bestimme die Wahrscheinlichkeit, dass ein zufällig ausgewählter A-Kunde auch gerne nach B reist.
 \karo{2}
-\fusshilfe{\mbox{1:~0,3}}
+\fusshilfe{\gfuss{1}{0,3}}
 \end{pfaufg}
 % 2023-bebb-gk-B4.1c-m1 (Original 2023-bebb-gk-B4.1c, Schwere I, rang 59; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’23\\B4.1c}{2.}{}
 Von den Lehrkräften eines Landes arbeiten 30 \% an einem Gymnasium ($G$). 20 \% der Lehrkräfte sind weiblich ($W$) und arbeiten an einem Gymnasium; insgesamt sind 65 \% der Lehrkräfte weiblich. Eine zufällig ausgewählte Lehrkraft ist weiblich. Bestimme die Wahrscheinlichkeit, dass sie an einem Gymnasium arbeitet.
 \karo{2}
-\fusshilfe{\mbox{2:~31 \%}}
+\fusshilfe{\gfuss{2}{31 \%}}
 \end{pfaufg}
 % 2022-bebb-gk-B4i-m1 (Original 2022-bebb-gk-B4i, Schwere II, rang 60; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’22\\B4i}{3.}{}
 In einem Paketzentrum haben 12 \% der Pakete das Ziel A und 8 \% das Ziel B; 6 \% aller Pakete sind schwer ($S$). Unter den Paketen mit dem Ziel A ($Z$) sind 10 \% schwer. Untersuche, ob der Anteil der Pakete mit Ziel A unter den schweren Paketen ebenso groß ist wie unter den nicht schweren.
 \karo{4}
-\fusshilfe{\mbox{3:~nicht gleich}}
+\fusshilfe{\gfuss{3}{nicht gleich}}
 \end{pfaufg}
 
 % ===================== Stufe: bedingte Wahrscheinlichkeit mit Parameter =====================
@@ -116,13 +121,13 @@ In einem Paketzentrum haben 12 \% der Pakete das Ziel A und 8 \% das Ziel B; 6 \
 \begin{pfaufg}{GK~’25\\B4e}{4.}{}
 In einer Stadt haben 31,5 \% der Haushalte mindestens ein Kind. Von diesen Haushalten sind 14,2 \% überbelegt, von den Haushalten ohne Kind sind es 5,5 \%. Zwei Jahre später sind die Anteile ohne Kind unverändert; unter den Haushalten mit Kind ist der Anteil der überbelegten um $x$ gesunken. Die Funktion $f$ mit $f(x) = \tfrac{0{,}315 \cdot (0{,}142 - x)}{0{,}315 \cdot (0{,}142 - x) + 0{,}685 \cdot 0{,}055}$, $0 \le x \le 0{,}142$, ist abgebildet. Bestimme grafisch $x$ mit $f(x) = 0{,}4$ und deute $x$ und $f(x)$ im Sachzusammenhang.
 \gzwei{\begin{abiksys}[xmin=0,xmax=0.16,ymin=0,ymax=0.6,xstep=0.02,ystep=0.1,le=50,yle=8]\funktion[0.03]{0.315*(0.142-\x)/(0.315*(0.142-\x)+0.685*0.055)}{G_f}\end{abiksys}}{\karo{4}}
-\fusshilfe{\mbox{4:~rechnerisch 0,062); 40 \%: Anteil der Haushalte mit Kind unter den überbelegten}}
+\fusshilfe{\gfuss{4}{rechnerisch 0,062); 40 \%: Anteil der Haushalte mit Kind unter den überbelegten}}
 \end{pfaufg}
 % 2026-bb-gk-B4f-m1 (Original 2026-bb-gk-B4f, Schwere III, rang 62; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’26\\B4f}{5.}{}
 In einem Supermarkt sammeln 80 \% der Kundschaft Treuepunkte ($T$). Unter den Sammelnden sind 70 \% weiblich ($w$), unter den übrigen ist der Anteil weiblicher Personen $a$. Ein Jahr später sammeln weiterhin 80 \% Treuepunkte, davon 70 \% weiblich; der Anteil $a$ ist gestiegen. Beurteile die Aussage: Die Wahrscheinlichkeit, dass eine nicht weibliche Person Treuepunkte sammelt, ist größer als vor einem Jahr.
 \gzwei{\baumabi{T/{0,8}/{w/{0,7},\overline{w}/},\overline{T}//{w/{a},\overline{w}/}}}{\karo{4}}
-\fusshilfe{\mbox{5:~wahr}}
+\fusshilfe{\gfuss{5}{wahr}}
 \end{pfaufg}
 
 % ===================== Stufe: Terme deuten =====================
@@ -132,13 +137,13 @@ In einem Supermarkt sammeln 80 \% der Kundschaft Treuepunkte ($T$). Unter den Sa
 \begin{pfaufg}{GK~’22\\B4g}{6.}{}
 In einem Paketzentrum haben 12 \% der Pakete das Ziel A und 8 \% das Ziel B; 6 \% aller Pakete sind schwer ($S$). Unter den Paketen mit dem Ziel A ($Z$) sind 10 \% schwer. Gib die Bedeutung der Terme $P_Z(S)$ und $P(S \cap Z)$ im Sachzusammenhang an.
 \karo{3}
-\fusshilfe{\mbox{6:~P\_Z(S): Wahrscheinlichkeit, dass ein Paket mit Ziel A schwer ist (10 \%); 1,2 \%)}}
+\fusshilfe{\gfuss{6}{P\_Z(S): Wahrscheinlichkeit, dass ein Paket mit Ziel A schwer ist (10 \%); P(S $\cap$ Z): Wahrscheinlichkeit, dass ein Paket schwer ist und Ziel A hat (0,12 · 0,10 = 1,2 \%)}}
 \end{pfaufg}
 % 2024-bebb-gk-B4.1a-m1 (Original 2024-bebb-gk-B4.1a, Schwere I, rang 64; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’24\\B4.1a}{7.}{}
 Von der Kundschaft eines Baumarkts sind 70 \% Treuekunden ($T$) und 30 \% Morgenkunden ($M$), die vor 9 Uhr einkaufen. Es gilt $P(\overline{T} \cap M) = 0{,}06$. Deute die Gleichung im Sachzusammenhang.
 \karo{2}
-\fusshilfe{\mbox{7:~Die Wahrscheinlichkeit, dass eine zufällig ausgewählte Person Morgenkunde und kein Treuekunde ist, beträgt 6 \%}}
+\fusshilfe{\gfuss{7}{Die Wahrscheinlichkeit, dass eine zufällig ausgewählte Person Morgenkunde und kein Treuekunde ist, beträgt 6 \%}}
 \end{pfaufg}
 
 \pfblattende{10}{26 & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17}{B4f & B4e & B4.1a & B4.1c & A1.7a B4g B4i &  & B4.2f &  & B3.2f & B3.1d}%

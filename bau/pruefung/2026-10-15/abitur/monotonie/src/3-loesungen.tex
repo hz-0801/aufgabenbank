@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -92,7 +97,7 @@
 \lzb{1.}{}{f$'$ = 0,25 · $e^{0{,}25x}$; G ist streng monoton steigend}{f$'$(x) = 0,25 · $e^{0{,}25x}$; $e^{0{,}25x}$ > 0 für alle x $\Rightarrow$ f$'$(x) > 0 $\Rightarrow$ G ist streng monoton steigend}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{2.}{}{für 0 $\le$ x $\le$ $-$1 + √10 $\approx$ 2,16: f fällt streng monoton; für x $\ge$ $-$1 + √10: f steigt streng monoton}{für 0 $\le$ x $\le$ $-$1 + √10 $\approx$ 2,16: f fällt streng monoton; für x $\ge$ $-$1 + √10: f steigt streng monoton}
+\lzb{2.}{}{für 0 $\le$ x $\le$ $-$2 + $\sqrt{13}$ $\approx$ 1,61: f fällt streng monoton; für x $\ge$ $-$2 + $\sqrt{13}$: f steigt streng monoton}{für 0 $\le$ x $\le$ $-$2 + $\sqrt{13}$ $\approx$ 1,61: f fällt streng monoton; für x $\ge$ $-$2 + $\sqrt{13}$: f steigt streng monoton}
 \end{pfloesungb}
 
 \Needspace*{0.16\textheight}\pfstufekopf{Graph von f$'$ lesen}{\gpunkte[26 23 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-graph-von-f-lesen) [@thispage /XYZ @xpos @ypos null]}
@@ -111,6 +116,6 @@
 \lzb{6.}{}{x\_Q = 1; Q(1|$-\tfrac{4}{3}$): tiefster Punkt des unteren Verlaufs rechts, wo er in den rechten Halbkreis übergeht}{g$'$(x) = 8x² + 8x = 8x(x + 1) = 0 $\Rightarrow$ $-$x\_Q = $-$1 $\Rightarrow$ x\_Q = 1; y\_Q = $-$g($-$1) = $-\tfrac{4}{3}$ $\Rightarrow$ Q(1|$-\tfrac{4}{3}$): tiefster Punkt des unteren Verlaufs rechts, wo er in den rechten Halbkreis übergeht}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{7.}{}{f($-$0,9 + √10) > f($-$1 + √10); f$'$($-$0,9 + √10) > 0}{I falsch: der Tiefpunkt hat in seiner Umgebung den kleinsten Funktionswert $\Rightarrow$ f($-$0,9 + √10) > f($-$1 + √10); II wahr: rechts der Tiefstelle (bis zum nächsten Extrempunkt gibt es keinen) steigt G $\Rightarrow$ f$'$($-$0,9 + √10) > 0}
+\lzb{7.}{}{f($-$1,9 + $\sqrt{13}$) > f($-$2 + $\sqrt{13}$); f'($-$1,9 + $\sqrt{13}$) > 0}{I falsch: der Tiefpunkt hat in seiner Umgebung den kleinsten Funktionswert $\Rightarrow$ f($-$1,9 + $\sqrt{13}$) > f($-$2 + $\sqrt{13}$); II wahr: rechts der Tiefstelle (bis zum nächsten Extrempunkt gibt es keinen) steigt G $\Rightarrow$ f'($-$1,9 + $\sqrt{13}$) > 0}
 \end{pfloesungb}
 \end{document}

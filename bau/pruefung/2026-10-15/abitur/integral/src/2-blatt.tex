@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -94,19 +99,19 @@
 \begin{pfaufg}{GK~’24\\B2.1e}{1.}{}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = (x - 3) \cdot e^{-\tfrac{x}{3} + 2}$. Zeige, dass $F$ mit $F(x) = -3x \cdot e^{-\tfrac{x}{3} + 2}$ eine Stammfunktion von $f$ ist.
 \karo{2}
-\fusshilfe{\mbox{1:~f(x)}}
+\fusshilfe{\gfuss{1}{f(x)}}
 \end{pfaufg}
 % 2023-bebb-gk-B2.1l-m1 (Original 2023-bebb-gk-B2.1l, Schwere II, rang 3; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’23\\B2.1l}{2.}{}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = \tfrac{1}{3}(x^2 - 9) \cdot e^{\tfrac{x}{2}}$; ihr Graph ist $G$. Es gilt $\int \tfrac{1}{3}x^2 \cdot e^{\tfrac{x}{2}}\,dx = \left(\tfrac{2}{3}x^2 - \tfrac{8}{3}x + \tfrac{16}{3}\right) \cdot e^{\tfrac{x}{2}} + C$. Ermittle damit eine Stammfunktion von $f$. Die Abbildung zeigt die Draufsicht einer Tischplatte; ihr Rand ist symmetrisch zu beiden Achsen, im III. Quadranten ist er $G$. 1 LE entspricht 10 cm. Berechne den Flächeninhalt der Tischplatte in Quadratzentimetern.
 \gzwei{\begin{abiksys}[xmin=-3.5,xmax=3.5,ymin=-3.5,ymax=3.5,le=0.4]\funktionab[-1.5]{(\x^2-9)*exp(\x/2)/3}{G}{-3}{0}\funktionab{-(\x^2-9)*exp(\x/2)/3}{}{-3}{0}\funktionab{(\x^2-9)*exp(-\x/2)/3}{}{0}{3}\funktionab{-(\x^2-9)*exp(-\x/2)/3}{}{0}{3}\end{abiksys}}{\karo{4}}
-\fusshilfe{\mbox{2:~($\tfrac{2}{3}$ x² $-$ $\tfrac{8}{3}$ x $-$ $\tfrac{2}{3}$) · $e^{x/2}$; 1457 cm²}}
+\fusshilfe{\gfuss{2}{($\tfrac{2}{3}$ x² $-$ $\tfrac{8}{3}$ x $-$ $\tfrac{2}{3}$) · $e^{x/2}$; 1457 cm²}}
 \end{pfaufg}
 % 2022-bebb-gk-B2.2d-m1 (Original 2022-bebb-gk-B2.2d, Schwere III, rang 2; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’22\\B2.2d}{3.}{}
 Gegeben ist die Funktion $f$ mit $f(x) = -\tfrac{1}{18}x^3 + \tfrac{1}{3}x^2$, $x \in \mathbb{R}$, und die Funktion $F$ mit $F(x) = -\tfrac{1}{72}x^4 + \tfrac{1}{9}x^3$. Weise nach, dass $F$ eine Stammfunktion von $f$ ist. Es gilt: $x = 0$ und $x = 6$ sind die einzigen Nullstellen von $f$, und $F(8) = 0$. Begründe damit: Der Graph von $f$, die $x$-Achse und die Gerade $x = 8$ begrenzen zwei Flächenstücke mit gleichem Inhalt.
 \karo{4}
-\fusshilfe{\mbox{3:~f(x); gleicher Inhalt}}
+\fusshilfe{\gfuss{3}{f(x); gleicher Inhalt}}
 \end{pfaufg}
 
 % ===================== Stufe: Integral gesucht =====================
@@ -116,19 +121,19 @@ Gegeben ist die Funktion $f$ mit $f(x) = -\tfrac{1}{18}x^3 + \tfrac{1}{3}x^2$, $
 \begin{pfaufg}{GK~’26\\A1.1a}{4.}{\pfohnetr}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = x^3 + 2x^2 - 3x$; sie hat die Nullstellen $-3$, $0$ und $1$ (Abbildung). Berechne $\int_{-1}^{0} f(x)\,dx$.
 \gzwei{\begin{abiksys}[xmin=-3.5,xmax=1.5,ymin=-2,ymax=7,le=0.5]\funktion[1.3]{\x^3+2*\x^2-3*\x}{G_f}\end{abiksys}}{\karo{3}}
-\fusshilfe{\mbox{4:~$\tfrac{23}{12}$}}
+\fusshilfe{\gfuss{4}{$\tfrac{23}{12}$}}
 \end{pfaufg}
 % 2025-bebb-gk-B2.2d-m1 (Original 2025-bebb-gk-B2.2d, Schwere II, rang 5; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’25\\B2.2d}{5.}{}
 Gegeben ist die Funktion $f$ mit $f(x) = (3 - x) \cdot e^x$; $F$ mit $F(x) = (4 - x) \cdot e^x$ ist eine Stammfunktion von $f$. Als Näherungswert für $\int_{-2}^{2} f(x)\,dx$ wird $\tfrac{1}{2} \cdot e^2 \cdot 4$ verwendet. Berechne den exakten Wert des Integrals und die prozentuale Abweichung des Näherungswerts davon.
 \karo{4}
-\fusshilfe{\mbox{5:~13,97; 5,8 \%}}
+\fusshilfe{\gfuss{5}{13,97; 5,8 \%}}
 \end{pfaufg}
 % 2023-bebb-gk-B2.2i-m1 (Original 2023-bebb-gk-B2.2i, Schwere II, rang 6; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’23\\B2.2i}{6.}{}
-Die Temperatur in einem Backofen in °C wird in den ersten fünf Minuten nach dem Einschalten beschrieben durch $h(x) = 4x^3 - 45x^2 + 162x + 20$, $0 \le x \le 5$; $x$ ist die Zeit in Minuten. Berechne den Wert des Terms $\tfrac{1}{5} \cdot \int_{0}^{5} h(x)\,dx$ und deute ihn im Sachzusammenhang.
+Die Temperatur in einem Backofen in °C wird in den ersten fünf Minuten nach dem Einschalten beschrieben durch $h(x) = 10x^3 - 90x^2 + 240x + 20$, $0 \le x \le 5$; $x$ ist die Zeit in Minuten. Berechne den Wert des Terms $\tfrac{1}{5} \cdot \int_{0}^{5} h(x)\,dx$ und deute ihn im Sachzusammenhang.
 \karo{4}
-\fusshilfe{\mbox{6:~175; in den ersten fünf Minuten beträgt die Temperatur im Mittel 175 °C}}
+\fusshilfe{\gfuss{6}{182,5; in den ersten fünf Minuten beträgt die Temperatur im Mittel 182,5 °C}}
 \end{pfaufg}
 
 % ===================== Stufe: Grenze oder Parameter gesucht =====================
@@ -138,19 +143,19 @@ Die Temperatur in einem Backofen in °C wird in den ersten fünf Minuten nach de
 \begin{pfaufg}{GK~’24\\B2.2f}{7.}{}
 Gegeben ist die Funktion $f$ mit $f(x) = 0{,}5x^4 - 3x^2 + 2{,}5$, $x \in \mathbb{R}$. Der Graph von $h$ entsteht aus dem Graphen von $f$ durch Stauchung in Richtung der $y$-Achse mit dem Faktor $a$. Der Graph von $h$ und die $x$-Achse begrenzen für $-1 \le x \le 1$ eine Fläche mit dem Inhalt 1. Bestimme $a$.
 \karo{4}
-\fusshilfe{\mbox{7:~0,31}}
+\fusshilfe{\gfuss{7}{0,31}}
 \end{pfaufg}
 % 2022-bebb-gk-A1.3a-m1 (Original 2022-bebb-gk-A1.3a, Schwere III, rang 8; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’22\\A1.3a}{8.}{\pfohnetr}
 Gegeben ist die Funktion $f$ mit $f(x) = x^2$. Der Graph von $f$ und die Gerade mit der Gleichung $y = m \cdot x$, $m < 0$, schließen eine Fläche mit dem Inhalt $\tfrac{9}{2}$ ein. Bestimme $m$.
 \karo{4}
-\fusshilfe{\mbox{8:~Schnittstellen m und 0; $-$3}}
+\fusshilfe{\gfuss{8}{Schnittstellen m und 0; $-$3}}
 \end{pfaufg}
 % 2026-bb-gk-B2.2e-m1 (Original 2026-bb-gk-B2.2e, Schwere III, rang 9; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’26\\B2.2e}{9.}{}
 Gegeben ist die Funktion $f$ mit $f(x) = 2e^x + 3$. Der Graph von $f$, die Gerade $y = 3$, die $y$-Achse und die Gerade $x = u$ mit $u < 0$ begrenzen eine Fläche mit dem Inhalt $2 - 2e^u$. Für $u = -\ln 4$ teilt die Gerade $x = a$ diese Fläche in zwei inhaltsgleiche Teile. Ermittle $a$.
 \karo{4}
-\fusshilfe{\mbox{9:~$\tfrac{3}{2}$; $-$0,47}}
+\fusshilfe{\gfuss{9}{$\tfrac{3}{2}$; $-$0,47}}
 \end{pfaufg}
 
 \pfblattende{10}{26 & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17}{A1.1a B2.2e & B2.2d & B2.1e B2.2f & B2.1l B2.2i & A1.3a B2.2d &  & A1.1a B2.1h & A1.1a B2.2e & B1.2c & B1.2d}%

@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -94,25 +99,25 @@
 \begin{pfaufg}{GK~’22\\A1.4b}{1.}{\pfohnetr}
 Gegeben ist die Ebene $E\colon 2x - 5y = 0$. Beschreibe die Lage von $E$ im Koordinatensystem.
 \hfill E enthält die z-Achse $=$\linie{30mm}
-\fusshilfe{\mbox{1:~E enthält die z-Achse}}
+\fusshilfe{\gfuss{1}{E enthält die z-Achse}}
 \end{pfaufg}
 % 2024-bebb-gk-A1.2a-m1 (Original 2024-bebb-gk-A1.2a, Schwere I, rang 2; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’24\\A1.2a}{2.}{\pfohnetr}
 Gegeben sind $P(1 \mid 0 \mid 26)$ und $Q(5 \mid t \mid 23)$ mit $t \in \mathbb{R}$. Entscheide, ob es ein $t$ gibt, für das die Gerade PQ parallel zur xy-Ebene verläuft. Begründe.
 \karo{2}
-\fusshilfe{\mbox{2:~nein}}
+\fusshilfe{\gfuss{2}{nein}}
 \end{pfaufg}
 % 2022-bebb-gk-B3e-m1 (Original 2022-bebb-gk-B3e, Schwere I, rang 3; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’22\\B3e}{3.}{}
 Ein Kirchturmdach steht auf dem Quadrat ABCD mit $A(0 \mid 0 \mid 0)$, $B(6 \mid 0 \mid 0)$, $C(6 \mid 6 \mid 0)$, $D(0 \mid 6 \mid 0)$. Darüber liegen $E(3 \mid 0 \mid 5)$, $F(6 \mid 3 \mid 5)$, $G(3 \mid 6 \mid 5)$, $H(0 \mid 3 \mid 5)$ und die Spitze $S(3 \mid 3 \mid 10)$; 1 LE entspricht 1 m. Das Dach hat vier gleiche viereckige Dachflächen wie CGSF und vier dreieckige Giebelflächen. Gegeben sind die Ebenen $M_1\colon x = 6$, $M_2\colon x - y = 0$ und $M_3\colon z = 5$. Eine davon ist eine Symmetrieebene des Dachs. Gib sie an und beschreibe ihre Lage.
 \gzwei{\begin{ksys3}[xyz,x1min=0,x1max=6,x2min=0,x2max=6,x3min=0,x3max=10,karo=0.16]\rvieleck{6,0,0;6,6,0;6,3,5}\rvieleck{6,6,0;0,6,0;3,6,5}\rstrecke[dashed]{0,0,0}{6,0,0}\rstrecke{6,0,0}{6,6,0}\rstrecke{6,6,0}{0,6,0}\rstrecke[dashed]{0,6,0}{0,0,0}\rstrecke[dashed]{0,0,0}{3,0,5}\rstrecke{3,0,5}{6,0,0}\rstrecke{6,0,0}{6,3,5}\rstrecke{6,3,5}{6,6,0}\rstrecke{6,6,0}{3,6,5}\rstrecke{3,6,5}{0,6,0}\rstrecke{0,6,0}{0,3,5}\rstrecke[dashed]{0,3,5}{0,0,0}\rstrecke{3,0,5}{3,3,10}\rstrecke{6,3,5}{3,3,10}\rstrecke{3,6,5}{3,3,10}\rstrecke{0,3,5}{3,3,10}\rpunkt*[above left]{0}{0}{0}{A}\rpunkt*[below left]{6}{0}{0}{B}\rpunkt*[below right]{6}{6}{0}{C}\rpunkt*[above right]{0}{6}{0}{D}\rpunkt*[left]{3}{0}{5}{E}\rpunkt*[below right]{6}{3}{5}{F}\rpunkt*[right]{3}{6}{5}{G}\rpunkt*[above left]{0}{3}{5}{H}\rpunkt*[above]{3}{3}{10}{S}\end{ksys3}}{\karo{2}}
-\fusshilfe{\mbox{3:~sie enthält die z-Achse und die Diagonale AC und steht senkrecht auf der Grundfläche}}
+\fusshilfe{\gfuss{3}{sie enthält die z-Achse und die Diagonale AC und steht senkrecht auf der Grundfläche}}
 \end{pfaufg}
 % 2023-bebb-gk-B3b-m1 (Original 2023-bebb-gk-B3b, Schwere II, rang 4; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’23\\B3b}{4.}{}
 Die Punkte $A(6 \mid 0 \mid 0)$, $B(0 \mid 6 \mid 0)$ und $C(0 \mid 0 \mid 6)$ liegen in der Ebene $L_1\colon x + y + z = 6$, die Punkte $D(3{,}5 \mid 0 \mid 0)$, $E(0 \mid 3{,}5 \mid 0)$ und $F(0 \mid 0 \mid 3{,}5)$ in der Ebene $L_2\colon 2x + 2y + 2z = 7$. Sie sind die Ecken des Körpers ABCDEF. Begründe, dass die Ebenen $L_1$ und $L_2$ keinen gemeinsamen Punkt haben.
 \gzwei{\begin{ksys3}[xyz,x1min=0,x1max=6,x2min=0,x2max=6,x3min=0,x3max=6,karo=0.2]\rvieleck{6,0,0;0,6,0;0,0,6}\rstrecke{6,0,0}{3.5,0,0}\rstrecke{0,6,0}{0,3.5,0}\rstrecke{0,0,6}{0,0,3.5}\rstrecke[dashed]{3.5,0,0}{0,3.5,0}\rstrecke[dashed]{0,3.5,0}{0,0,3.5}\rstrecke[dashed]{0,0,3.5}{3.5,0,0}\rpunkt*[left]{6}{0}{0}{A}\rpunkt*[below]{0}{6}{0}{B}\rpunkt*[right]{0}{0}{6}{C}\rpunkt*[below left]{3.5}{0}{0}{D}\rpunkt*[below]{0}{3.5}{0}{E}\rpunkt*[left]{0}{0}{3.5}{F}\end{ksys3}}{\karo{2}}
-\fusshilfe{\mbox{4:~L$_1$ $\parallel$ L$_2$; kein gemeinsamer Punkt}}
+\fusshilfe{\gfuss{4}{L$_1$ $\parallel$ L$_2$; kein gemeinsamer Punkt}}
 \end{pfaufg}
 
 % ===================== Stufe: Schnittpunkt gesucht =====================
@@ -122,13 +127,13 @@ Die Punkte $A(6 \mid 0 \mid 0)$, $B(0 \mid 6 \mid 0)$ und $C(0 \mid 0 \mid 6)$ l
 \begin{pfaufg}{GK~’23\\B3d}{5.}{}
 Die Punkte $A(6 \mid 0 \mid 0)$, $B(0 \mid 6 \mid 0)$ und $C(0 \mid 0 \mid 6)$ liegen in der Ebene $L_1\colon x + y + z = 6$, die Punkte $D(3{,}5 \mid 0 \mid 0)$, $E(0 \mid 3{,}5 \mid 0)$ und $F(0 \mid 0 \mid 3{,}5)$ in der Ebene $L_2\colon 2x + 2y + 2z = 7$. Sie sind die Ecken des Körpers ABCDEF. M(3 | 3 | 0) ist der Mittelpunkt von AB. Die Gerade durch $P(0 \mid 0 \mid 3)$ und $M$ schneidet $L_2$ im Punkt $Q$. Ermittle die Koordinaten von $Q$.
 \gzwei{\begin{ksys3}[xyz,x1min=0,x1max=6,x2min=0,x2max=6,x3min=0,x3max=6,karo=0.2]\rvieleck{6,0,0;0,6,0;0,0,6}\rstrecke{6,0,0}{3.5,0,0}\rstrecke{0,6,0}{0,3.5,0}\rstrecke{0,0,6}{0,0,3.5}\rstrecke[dashed]{3.5,0,0}{0,3.5,0}\rstrecke[dashed]{0,3.5,0}{0,0,3.5}\rstrecke[dashed]{0,0,3.5}{3.5,0,0}\rpunkt*[left]{6}{0}{0}{A}\rpunkt*[below]{0}{6}{0}{B}\rpunkt*[right]{0}{0}{6}{C}\rpunkt*[below left]{3.5}{0}{0}{D}\rpunkt*[below]{0}{3.5}{0}{E}\rpunkt*[left]{0}{0}{3.5}{F}\end{ksys3}}{\karo{2}}
-\fusshilfe{\mbox{5:~Q(0,5|0,5|2,5)}}
+\fusshilfe{\gfuss{5}{Q(0,5|0,5|2,5)}}
 \end{pfaufg}
 % 2023-bebb-gk-A1.4b-m1 (Original 2023-bebb-gk-A1.4b, Schwere III, rang 6; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’23\\A1.4b}{6.}{\pfohnetr}
 Gegeben ist die Gerade $g\colon \vec{x} = \begin{pmatrix}1\\4\\-3\end{pmatrix} + s \cdot \begin{pmatrix}2\\0\\3\end{pmatrix}$, $s \in \mathbb{R}$. Die Gerade $h$ verläuft durch $A(5 \mid 0 \mid 0)$ und $B(6 \mid 1 \mid b)$ mit $b \in \mathbb{R}$. $g$ und $h$ haben einen gemeinsamen Punkt. Ermittle $b$.
 \karo{2}
-\fusshilfe{\mbox{6:~2,25}}
+\fusshilfe{\gfuss{6}{2,25}}
 \end{pfaufg}
 
 \pfblattende{10}{26 & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17}{ &  & A1.2a & A1.4b B3b B3d & A1.4b B3e & A1.4b & B3.1d & B3.1c &  & }%

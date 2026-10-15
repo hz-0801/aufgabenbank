@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -89,51 +94,51 @@
 \pfstufenzeile{Grenzverhalten mit e-Funktion \pkt{} Grenzverhalten gesucht \pkt{} Symmetrie begründen}
 % 2018-be-gk-B1.2a-m1 (Schwere I, rang 9)
 \begin{pfaufg}{nach\\GK~’18\\B1.2a}{1.}{}
-Gegeben ist die Funktion $f$ mit $f(x) = (x + 2) \cdot e^{-0{,}25x}$, $x \in \mathbb{R}$. Gib das Verhalten der Funktionswerte von $f$ für $x \to +\infty$ an und beschreibe, wie sich der Graph dort der $x$-Achse nähert.
+Gegeben ist die Funktion $f$ mit $f(x) = (x + 1) \cdot e^{-\tfrac{x}{3}}$, $x \in \mathbb{R}$. Gib das Verhalten der Funktionswerte von $f$ für $x \to +\infty$ an und beschreibe, wie sich der Graph dort der $x$-Achse nähert.
 \karo{5}
-\fusshilfe{\mbox{1:~f(x) $\to$ 0; Annäherung von oben}}
+\fusshilfe{\gfuss{1}{f(x) $\to$ 0; Annäherung von oben}}
 \end{pfaufg}
 % 2020-be-gk-B2.1b-m1 (Schwere I, rang 10)
 \begin{pfaufg}{GK~’20\\B2.1b}{2.}{}
 Gegeben ist die Funktion $f$ mit $f(x) = (8x - 2) \cdot e^{-x}$, $x \in \mathbb{R}$. Gib das Verhalten der Funktionswerte von $f$ für $x \to +\infty$ und für $x \to -\infty$ an.
 \karo{5}
-\fusshilfe{\mbox{2:~f(x) $\to$ 0; f(x) $\to$ $-$∞}}
+\fusshilfe{\gfuss{2}{f(x) $\to$ 0; f(x) $\to$ $-$∞}}
 \end{pfaufg}
 % 2021-be-gk-B2.2b-m1 (Schwere I, rang 11)
 \begin{pfaufg}{GK~’21\\B2.2b}{3.}{}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = \left(-\tfrac{1}{5}x^2 + 3x\right) \cdot e^{-0{,}2x}$. Gib das Verhalten von $f$ für $x \to +\infty$ und für $x \to -\infty$ an.
 \karo{5}
-\fusshilfe{\mbox{3:~f(x) $\to$ 0; f(x) $\to$ $-$∞}}
+\fusshilfe{\gfuss{3}{f(x) $\to$ 0; f(x) $\to$ $-$∞}}
 \end{pfaufg}
 % 2019-be-gk-B2.2a-m1 (Schwere I, rang 12)
 \begin{pfaufg}{GK~’19\\B2.2a}{4.}{}
 Der Spiegel eines Hormons im Blut wird in Prozent des Sollwerts beschrieben durch $h(t) = 6t \cdot e^{-0{,}05t} + 40$, $t \ge 0$; $t$ ist die Zeit in Tagen seit Beginn einer Behandlung. Gib das Verhalten der Funktionswerte von $h$ für $t \to +\infty$ an und deute es im Sachzusammenhang.
 \karo{4}
-\fusshilfe{\mbox{4:~h(t) $\to$ 40; der Hormonspiegel sinkt auf lange Sicht wieder auf den Anfangswert 40 \% des Sollwerts}}
+\fusshilfe{\gfuss{4}{h(t) $\to$ 40; der Hormonspiegel sinkt auf lange Sicht wieder auf den Anfangswert 40 \% des Sollwerts}}
 \end{pfaufg}
 % 2020-be-gk-B2.2b-m1 (Schwere I, rang 13)
 \begin{pfaufg}{nach\\GK~’20\\B2.2b}{5.}{}
 Gegeben ist die Funktion $f$ mit $f(x) = -0{,}02 \cdot (x - 6) \cdot (x + 2)^2$, $x \in \mathbb{R}$. Gib das Verhalten der Funktionswerte von $f$ für $x \to +\infty$ und für $x \to -\infty$ an.
 \karo{4}
-\fusshilfe{\mbox{5:~für x $\to$ +∞: f(x) $\to$ $-$∞; für x $\to$ $-$∞: f(x) $\to$ +∞}}
+\fusshilfe{\gfuss{5}{für x $\to$ +∞: f(x) $\to$ $-$∞; für x $\to$ $-$∞: f(x) $\to$ +∞}}
 \end{pfaufg}
 % 2026-iqb-ga-B2.1a-m1 (Schwere I, rang 14)
 \begin{pfaufg}{nach\\IQB~’26\\B2.1a}{6.}{}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = \tfrac{1}{4} \cdot (x^3 + 3x^2 - 4x - 12)$. Gib das Verhalten von $f$ für $x \to -\infty$ an.
 \karo{3}
-\fusshilfe{\mbox{6:~für x $\to$ $-$∞: f(x) $\to$ $-$∞}}
+\fusshilfe{\gfuss{6}{für x $\to$ $-$∞: f(x) $\to$ $-$∞}}
 \end{pfaufg}
 % 2020-iqb-ga-B2.1b-m1 (Schwere II, rang 15)
 \begin{pfaufg}{IQB~’20\\B2.1b}{7.}{}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = \tfrac{1}{8} \cdot x \cdot (4 - x) \cdot e^x$. Beschreibe den Verlauf des Graphen von $f$ für $x \to -\infty$ und begründe deine Beschreibung am Funktionsterm.
 \karo{6}
-\fusshilfe{\mbox{7:~f(x) < 0; der Graph nähert sich der x-Achse von unten}}
+\fusshilfe{\gfuss{7}{f(x) < 0; der Graph nähert sich der x-Achse von unten}}
 \end{pfaufg}
 % 2023-iqb-ga-B2.1a-m1 (Schwere I, rang 16)
 \begin{pfaufg}{IQB~’23\\B2.1a}{8.}{}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = \tfrac{1}{50}x^3 - \tfrac{1}{2}x$; ihr Graph hat den Wendepunkt $(0 \mid 0)$. Begründe, dass der Graph von $f$ symmetrisch zu seinem Wendepunkt ist. Berechne die Koordinaten der Schnittpunkte des Graphen mit den Koordinatenachsen.
 \karo{5}
-\fusshilfe{\mbox{8:~Wendepunkt; Schnittpunkte ($-$5|0), (0|0) und (5|0)}}
+\fusshilfe{\gfuss{8}{Wendepunkt; Schnittpunkte ($-$5|0), (0|0) und (5|0)}}
 \end{pfaufg}
 \par\vfill\noindent{\scriptsize\color{mbgrau}Originale: Abi GK 2018 \pkt{} B1.2a, Abi GK 2020 \pkt{} B2.1b, Abi GK 2021 \pkt{} B2.2b, Abi GK 2019 \pkt{} B2.2a, Abi GK 2020 \pkt{} B2.2b, IQB GK 2026 \pkt{} B2.1a, IQB GK 2020 \pkt{} B2.1b, IQB GK 2023 \pkt{} B2.1a\par}
 \end{document}

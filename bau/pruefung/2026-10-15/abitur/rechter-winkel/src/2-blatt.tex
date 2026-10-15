@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -94,19 +99,19 @@
 \begin{pfaufg}{GK~’26\\A1.5a}{1.}{\pfohnetr}
 Gegeben ist das Dreieck ABC mit $A(0 \mid 0 \mid 0)$, $B(4 \mid 4 \mid 7)$ und $C(t \mid -t \mid 0)$, $t > 0$. Zeige, dass das Dreieck in $A$ einen rechten Winkel hat.
 \karo{3}
-\fusshilfe{\mbox{1:~rechter Winkel in A}}
+\fusshilfe{\gfuss{1}{rechter Winkel in A}}
 \end{pfaufg}
 % 2025-bebb-gk-A1.2b-m1 (Original 2025-bebb-gk-A1.2b, Schwere I, rang 2; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’25\\A1.2b}{2.}{\pfohnetr}
 Gegeben ist die Gerade $g\colon \vec{x} = \begin{pmatrix}6\\2\\-2\end{pmatrix} + s \cdot \begin{pmatrix}-3\\0\\2\end{pmatrix}$, $s \in \mathbb{R}$. Die Gerade $h$ verläuft parallel zur y-Achse und schneidet $g$ im Punkt $(6 \mid 2 \mid -2)$. Untersuche, ob $g$ und $h$ senkrecht zueinander verlaufen.
 \karo{4}
-\fusshilfe{\mbox{2:~ja}}
+\fusshilfe{\gfuss{2}{ja}}
 \end{pfaufg}
 % 2024-bebb-gk-B3b-m1 (Original 2024-bebb-gk-B3b, Schwere I, rang 3; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’24\\B3b}{3.}{}
 Gegeben ist die Pyramide ABCDS mit $A(0 \mid 0 \mid 0)$, $B(3 \mid 0 \mid 0)$, $C(3 \mid 3 \mid 0)$, $D(0 \mid 6 \mid 0)$ und $S(0 \mid 0 \mid 5)$. Zeige, dass das Dreieck CDS rechtwinklig ist.
 \gzwei{\begin{ksys3}[xyz,x1min=0,x1max=3,x2min=0,x2max=6,x3min=0,x3max=5,karo=0.22]\rstrecke[dashed]{0,0,0}{3,0,0}\rstrecke{3,0,0}{3,3,0}\rstrecke{3,3,0}{0,6,0}\rstrecke[dashed]{0,6,0}{0,0,0}\rstrecke[dashed]{0,0,0}{0,0,5}\rstrecke{3,0,0}{0,0,5}\rstrecke{3,3,0}{0,0,5}\rstrecke{0,6,0}{0,0,5}\rpunkt*[above left]{0}{0}{0}{A}\rpunkt*[below left]{3}{0}{0}{B}\rpunkt*[below right]{3}{3}{0}{C}\rpunkt*[above right]{0}{6}{0}{D}\rpunkt*[above left]{0}{0}{5}{S}\end{ksys3}}{\karo{4}}
-\fusshilfe{\mbox{3:~rechter Winkel bei C}}
+\fusshilfe{\gfuss{3}{rechter Winkel bei C}}
 \end{pfaufg}
 
 % ===================== Stufe: Normalenvektor nachweisen =====================
@@ -116,13 +121,13 @@ Gegeben ist die Pyramide ABCDS mit $A(0 \mid 0 \mid 0)$, $B(3 \mid 0 \mid 0)$, $
 \begin{pfaufg}{GK~’25\\A1.8a}{4.}{\pfohnetr}
 Gegeben ist die Ebene $E\colon \vec{x} = \begin{pmatrix}2\\-1\\0\end{pmatrix} + r \cdot \begin{pmatrix}-4\\3\\1\end{pmatrix} + s \cdot \begin{pmatrix}4\\-3\\0\end{pmatrix}$, $r, s \in \mathbb{R}$. Zeige, dass der Vektor $\left(\begin{smallmatrix}3\\4\\0\end{smallmatrix}\right)$ senkrecht auf $E$ steht.
 \karo{4}
-\fusshilfe{\mbox{4:~senkrecht auf E}}
+\fusshilfe{\gfuss{4}{senkrecht auf E}}
 \end{pfaufg}
 % 2022-bebb-gk-B3c-m1 (Original 2022-bebb-gk-B3c, Schwere II, rang 5; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’22\\B3c}{5.}{}
 Ein Kirchturmdach steht auf dem Quadrat ABCD mit $A(0 \mid 0 \mid 0)$, $B(6 \mid 0 \mid 0)$, $C(6 \mid 6 \mid 0)$, $D(0 \mid 6 \mid 0)$. Darüber liegen $E(3 \mid 0 \mid 5)$, $F(6 \mid 3 \mid 5)$, $G(3 \mid 6 \mid 5)$, $H(0 \mid 3 \mid 5)$ und die Spitze $S(3 \mid 3 \mid 10)$; 1 LE entspricht 1 m. Das Dach hat vier gleiche viereckige Dachflächen wie CGSF und vier dreieckige Giebelflächen. Die Ebene L enthält C, G und F; die Ebene N ist parallel zu L und enthält B. Weise nach, dass $\left(\begin{smallmatrix}5\\5\\3\end{smallmatrix}\right)$ ein Normalenvektor von N ist. Bestimme eine Koordinatengleichung von N.
 \karo{4}
-\fusshilfe{\mbox{5:~Normalenvektor von L und N; 30}}
+\fusshilfe{\gfuss{5}{Normalenvektor von L und N; 30}}
 \end{pfaufg}
 
 % ===================== Stufe: Parameter oder Punkt gesucht =====================
@@ -132,25 +137,25 @@ Ein Kirchturmdach steht auf dem Quadrat ABCD mit $A(0 \mid 0 \mid 0)$, $B(6 \mid
 \begin{pfaufg}{GK~’22\\A1.4c}{6.}{\pfohnetr}
 Gegeben sind die Ebenen $E\colon 2x - 5y = 0$ und $F\colon 3x + sy + z = 4$. Bestimme $s$ so, dass $F$ senkrecht auf $E$ steht.
 \karo{3}
-\fusshilfe{\mbox{6:~1,2}}
+\fusshilfe{\gfuss{6}{1,2}}
 \end{pfaufg}
 % 2024-bebb-gk-A1.2b-m1 (Original 2024-bebb-gk-A1.2b, Schwere II, rang 7; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’24\\A1.2b}{7.}{\pfohnetr}
 Der Ursprung O, $P(1 \mid 0 \mid 26)$ und $Q(5 \mid t \mid 23)$ bilden ein Dreieck. Ermittle die Werte von $t$, für die das Dreieck in $Q$ einen rechten Winkel hat.
 \karo{3}
-\fusshilfe{\mbox{7:~7}}
+\fusshilfe{\gfuss{7}{7}}
 \end{pfaufg}
 % 2025-bebb-gk-B3d-m1 (Original 2025-bebb-gk-B3d, Schwere II, rang 8; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’25\\B3d}{8.}{}
 Gegeben ist die Pyramide ABCDS mit $A(0 \mid 0 \mid 0)$, $B(3 \mid 3 \mid 0)$, $C(0 \mid 8 \mid 0)$, $D(-3 \mid 3 \mid 0)$ und $S(0 \mid 0 \mid 6)$; ihre Grundfläche ABCD ist ein Drachenviereck. Der Punkt B wird parallel zur y-Achse nach B' verschoben, so dass das Viereck AB'CD in B' einen rechten Innenwinkel hat. Erläutere den Ansatz $\left(\begin{smallmatrix}3\\y\\0\end{smallmatrix}\right)$ · $\left(\begin{smallmatrix}3\\y  -  8\\0\end{smallmatrix}\right)$ = 0.
 \gzwei{\begin{ksys3}[xyz,x1min=-3,x1max=3,x2min=0,x2max=8,x3min=0,x3max=6,karo=0.2]\rstrecke{0,0,0}{3,3,0}\rstrecke{3,3,0}{0,8,0}\rstrecke[dashed]{0,8,0}{-3,3,0}\rstrecke[dashed]{-3,3,0}{0,0,0}\rstrecke{0,0,0}{0,0,6}\rstrecke{3,3,0}{0,0,6}\rstrecke{0,8,0}{0,0,6}\rstrecke[dashed]{-3,3,0}{0,0,6}\rpunkt*[below left]{0}{0}{0}{A}\rpunkt*[below]{3}{3}{0}{B}\rpunkt*[below right]{0}{8}{0}{C}\rpunkt*[above]{-3}{3}{0}{D}\rpunkt*[left]{0}{0}{6}{S}\end{ksys3}}{\karo{4}}
-\fusshilfe{\mbox{8:~rechter Winkel bei B'}}
+\fusshilfe{\gfuss{8}{rechter Winkel bei B'}}
 \end{pfaufg}
 % 2026-bb-gk-A1.8a-m1 (Original 2026-bb-gk-A1.8a, Schwere III, rang 9; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’26\\A1.8a}{9.}{\pfohnetr}
 Gegeben sind $A(1 \mid -2 \mid 0)$ und $B(7 \mid 1 \mid -3)$. Für den Punkt $C$ gilt: Seine z-Koordinate ist 5; die Geraden AB und AC stehen senkrecht zueinander; $C$ liegt in der Ebene $x + 2y = 0$. Ermittle die Koordinaten von $C$.
 \karo{4}
-\fusshilfe{\mbox{9:~C($\tfrac{10}{3}$|$-\tfrac{5}{3}$|5)}}
+\fusshilfe{\gfuss{9}{C($\tfrac{10}{3}$|$-\tfrac{5}{3}$|5)}}
 \end{pfaufg}
 
 \pfblattende{10}{26 & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17}{A1.5a A1.8a & A1.2b A1.8a B3d & A1.2b B3b &  & A1.4c B3c & B3a & B3.1f &  & B2.1b & }%

@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -87,7 +92,7 @@
 \pflaufkopf[Abitur GK \pkt{} mehr]{Verschieben, spiegeln, strecken \pkt{} Lösungen}{AA120}\pfseitevon
 \pfheftkopf{Verschieben, spiegeln, strecken}{Lösungen \pkt{} mehr}
 \begin{pfloesungb}{}
-\lzb{1.}{}{Maximum bei t = k · (1 $-$ 0,05t) · $e^{-0{,}05t}$); h\_k hat das größere Maximum (z. B. h\_8(20) $\approx$ 84,2)}{gemeinsam: Startwert h(0) = h\_k(0) = 40; Grenzwert 40 für t $\to$ ∞; Maximum bei t = 20 (h\_k$'$(t) = k · (1 $-$ 0,05t) · $e^{-0{,}05t}$); verschieden: für t > 0 liegt h\_k über h (Streckung des Anteils k · t · $e^{-0{,}05t}$ in y-Richtung); h\_k hat das größere Maximum (z. B. h\_8(20) $\approx$ 98,9 gegen h(20) $\approx$ 84,2)}
+\lzb{1.}{}{Maximum bei t = 20 (h\_k$'$(t) = k · (1 $-$ 0,05t) · $e^{-0{,}05t}$); h\_k hat das größere Maximum (z. B. h\_8(20) $\approx$ 98,9 gegen h(20) $\approx$ 84,2)}{gemeinsam: Startwert h(0) = h\_k(0) = 40; Grenzwert 40 für t $\to$ ∞; Maximum bei t = 20 (h\_k$'$(t) = k · (1 $-$ 0,05t) · $e^{-0{,}05t}$); verschieden: für t > 0 liegt h\_k über h (Streckung des Anteils k · t · $e^{-0{,}05t}$ in y-Richtung); h\_k hat das größere Maximum (z. B. h\_8(20) $\approx$ 98,9 gegen h(20) $\approx$ 84,2)}
 \end{pfloesungb}
 \begin{pfloesungb}{}
 \lzb{2.}{}{verschoben: $2^{x+3}$ = 8 · $2^x$; das ist der Graph von g, in y-Richtung mit dem Faktor 8 gestreckt}{verschoben: $2^{x+3}$ = $2^3$ · $2^x$ = 8 · $2^x$; das ist der Graph von g, in y-Richtung mit dem Faktor 8 gestreckt}

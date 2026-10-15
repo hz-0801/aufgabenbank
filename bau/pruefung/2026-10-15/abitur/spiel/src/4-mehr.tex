@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -91,49 +96,49 @@
 \begin{pfaufg}{GK~’18\\B3.1d}{1.}{}
 Bei einem Spiel beträgt der Einsatz 2 Euro. Mit der Wahrscheinlichkeit 0,3 werden 5 Euro ausgezahlt, sonst ist der Einsatz verloren. Zeige, dass das Spiel für den Anbieter auf lange Sicht gewinnbringend ist.
 \karo{3}
-\fusshilfe{\mbox{1:~Anbieter gewinnt im Mittel 0,50 Euro je Spiel}}
+\fusshilfe{\gfuss{1}{Anbieter gewinnt im Mittel 0,50 Euro je Spiel}}
 \end{pfaufg}
 % 2018-iqb-ga-A12b-m1 (Schwere I, rang 6)
 \begin{pfaufg}{IQB~’18\\A12b}{2.}{}
 Die Auszahlung $X$ in Euro hat die Werte 1, 3 und 9 mit den Wahrscheinlichkeiten $\tfrac{1}{2}$, $\tfrac{1}{3}$ und $\tfrac{1}{6}$. Der Einsatz beträgt 3 Euro. Berechne den Erwartungswert von $X$ und deute ihn unter Berücksichtigung des Einsatzes.
 \karo{3}
-\fusshilfe{\mbox{2:~auf lange Sicht gleichen sich Einsatz und Auszahlung aus (faires Spiel)}}
+\fusshilfe{\gfuss{2}{auf lange Sicht gleichen sich Einsatz und Auszahlung aus (faires Spiel)}}
 \end{pfaufg}
 % 2021-be-gk-A1.6b-m1 (Schwere II, rang 7)
 \begin{pfaufg}{GK~’21\\A1.6b}{3.}{}
 Ein roter und ein blauer Tetraeder (Zahlen 1 bis 4) werden geworfen. $X = 0$, wenn die rote Zahl kleiner als die blaue ist, $X = 1$ bei gleichen Zahlen und $X = 2$, wenn die rote Zahl größer ist. Ermittle den Erwartungswert von $X$.
 \karo{3}
-\fusshilfe{\mbox{3:~1}}
+\fusshilfe{\gfuss{3}{1}}
 \end{pfaufg}
 % 2024-iqb-ga-A12b-m1 (Schwere II, rang 8)
 \begin{pfaufg}{IQB~’24\\A12b}{4.}{}
 Bei einem Spiel zahlt man 3 Euro Einsatz und dreht ein Glücksrad zweimal; der grüne Sektor kommt mit 20 \%. Für jedes Grün gibt es 5 Euro. Die Wahrscheinlichkeit für genau einmal Grün ist 0,32. Begründe, dass der Veranstalter auf lange Sicht mehr einnimmt als auszahlt.
 \karo{4}
-\fusshilfe{\mbox{4:~Veranstalter nimmt mehr ein}}
+\fusshilfe{\gfuss{4}{Veranstalter nimmt mehr ein}}
 \end{pfaufg}
 % 2023-iqb-ga-A11a-m1 (Schwere I, rang 9)
 \begin{pfaufg}{IQB~’23\\A11a}{5.}{}
 Die Zufallsgröße $X$ nimmt die Werte 1, 2, 5 und $x_4$ mit den Wahrscheinlichkeiten $\tfrac{1}{2}$, $\tfrac{1}{4}$, $\tfrac{1}{8}$ und $\tfrac{1}{8}$ an; ihr Erwartungswert ist 3. Berechne $x_4$.
 \karo{4}
-\fusshilfe{\mbox{5:~11}}
+\fusshilfe{\gfuss{5}{11}}
 \end{pfaufg}
 % 2021-be-gk-B4i-m1 (Schwere II, rang 10)
 \begin{pfaufg}{GK~’21\\B4i}{6.}{}
 Beim täglichen Start eines Spiels gibt es 10 Bonuspunkte mit 60 \%, 20 Bonuspunkte mit 30 \% und 50 Bonuspunkte mit 10 \%. Die Wahrscheinlichkeiten für 10 und 20 Punkte werden so geändert, dass in 200 Tagen im Mittel 3 200 Bonuspunkte anfallen; 50 Punkte bleiben bei 10 \%. Ermittle die beiden neuen Wahrscheinlichkeiten.
 \karo{5}
-\fusshilfe{\mbox{6:~0,2}}
+\fusshilfe{\gfuss{6}{0,2}}
 \end{pfaufg}
 % 2025-iqb-ga-A22b-m1 (Schwere III, rang 11)
 \begin{pfaufg}{IQB~’25\\A22b}{7.}{}
 In einem Behälter liegen eine schwarze und $w$ weiße Kugeln ($w \ge 2$). Man zieht zweimal ohne Zurücklegen; Einsatz 3 Euro. Schwarz im ersten Zug bringt 9 Euro, schwarz im zweiten Zug 6 Euro, sonst nichts. Auf lange Sicht gleichen sich Einsätze und Auszahlungen aus. Ermittle $w$.
 \karo{5}
-\fusshilfe{\mbox{7:~4}}
+\fusshilfe{\gfuss{7}{4}}
 \end{pfaufg}
 % 2018-be-gk-B3.1e-m1 (Schwere III, rang 12)
 \begin{pfaufg}{GK~’18\\B3.1e}{8.}{}
 In einem Topf liegen 4 weiße und 3 schwarze Kugeln. Es kommen 11 weiße und $x$ schwarze hinzu. Zwei Kugeln werden mit einem Griff gezogen; man gewinnt, wenn keine schwarze dabei ist. Das Spiel ist fair, wenn die Gewinnwahrscheinlichkeit 0,5 beträgt. Zeige, dass $x = 2$ nicht zu 0,5 führt, und ermittle $x$ für ein faires Spiel.
 \karo{7}
-\fusshilfe{\mbox{8:~0,553 $\neq$ 0,5; $-$38 entfällt)}}
+\fusshilfe{\gfuss{8}{0,553 $\neq$ 0,5; 3 (x = $-$38 entfällt)}}
 \end{pfaufg}
 \par\vfill\noindent{\scriptsize\color{mbgrau}Originale: Abi GK 2018 \pkt{} B3.1d, IQB GK 2018 \pkt{} A12b, Abi GK 2021 \pkt{} A1.6b, IQB GK 2024 \pkt{} A12b, IQB GK 2023 \pkt{} A11a, Abi GK 2021 \pkt{} B4i, IQB GK 2025 \pkt{} A22b, Abi GK 2018 \pkt{} B3.1e\par}
 \end{document}

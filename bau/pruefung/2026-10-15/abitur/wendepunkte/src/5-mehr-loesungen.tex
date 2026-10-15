@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -90,13 +95,13 @@
 \lzb{1.}{}{f$'''$(x) = $\tfrac{3}{4}$ $\neq$ 0; genau ein Wendepunkt W($\tfrac{8}{3}$|$\tfrac{16}{27}$)}{f$''$(x) = $\tfrac{3}{4}$ x $-$ 2 = 0 $\Rightarrow$ x = $\tfrac{8}{3}$; f$'''$(x) = $\tfrac{3}{4}$ $\neq$ 0; f($\tfrac{8}{3}$) = $\tfrac{16}{27}$ $\Rightarrow$ genau ein Wendepunkt W($\tfrac{8}{3}$|$\tfrac{16}{27}$)}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{2.}{}{x = 17,5 ± 2,5√17; x\_R $\approx$ 7,19 (mit Vorzeichenwechsel); R(7,19|2,67)}{f$''$(x) = 0 $\Rightarrow$ x² $-$ 35x + 200 = 0 $\Rightarrow$ x = 17,5 ± 2,5√17; x\_R = 17,5 $-$ 2,5√17 $\approx$ 7,19 (mit Vorzeichenwechsel); f(7,19) $\approx$ 2,67 $\Rightarrow$ R(7,19|2,67)}
+\lzb{2.}{}{x = 17,5 $\pm$ 2,5$\sqrt{17}$; x\_R $\approx$ 7,19 (mit Vorzeichenwechsel); R(7,19|2,67)}{f''(x) = 0 $\Rightarrow$ x² $-$ 35x + 200 = 0 $\Rightarrow$ x = 17,5 $\pm$ 2,5$\sqrt{17}$; x\_R = 17,5 $-$ 2,5$\sqrt{17}$ $\approx$ 7,19 (mit Vorzeichenwechsel); f(7,19) $\approx$ 2,67 $\Rightarrow$ R(7,19|2,67)}
 \end{pfloesungb}
 \begin{pfloesungb}{}
 \lzb{3.}{}{der Graph von f hat bei x = $\tfrac{2}{3}$ einen Wendepunkt; dort ist seine Steigung am größten (f$'$($\tfrac{2}{3}$) = $\tfrac{32}{75}$ > 0)}{f$'$ hat bei $\tfrac{2}{3}$ ein Maximum $\Rightarrow$ f$''$($\tfrac{2}{3}$) = 0 mit Vorzeichenwechsel $\Rightarrow$ der Graph von f hat bei x = $\tfrac{2}{3}$ einen Wendepunkt; dort ist seine Steigung am größten (f$'$($\tfrac{2}{3}$) = $\tfrac{32}{75}$ > 0)}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{4.}{}{W(10|4,70); ja, die Lok schafft es}{f$''$(x) = $-\tfrac{1}{90}$ x + $\tfrac{1}{9}$ = 0 $\Rightarrow$ x = 10; f(10) = $\tfrac{127}{27}$ $\approx$ 4,70 $\Rightarrow$ W(10|4,70); f$'$(10) = $\tfrac{5}{9}$ $\Rightarrow$ tan $\alpha$ = $\tfrac{5}{9}$ $\Rightarrow$ $\alpha$ $\approx$ 29,1° < 32° $\Rightarrow$ ja, die Lok schafft es}
+\lzb{4.}{}{W(5|3); nein, die Lok schafft es nicht}{f$''$(x) = $-\tfrac{3}{125}$ x + $\tfrac{3}{25}$ = 0 $\Rightarrow$ x = 5; f(5) = $-\tfrac{1}{2}$ + $\tfrac{3}{2}$ + 2 = 3 $\Rightarrow$ W(5|3); f$'$(5) = $-$0,3 + 0,6 = 0,3 $\Rightarrow$ tan $\alpha$ = 0,3 $\Rightarrow$ $\alpha$ $\approx$ 16,7° > 16° $\Rightarrow$ nein, die Lok schafft es nicht}
 \end{pfloesungb}
 \begin{pfloesungb}{}
 \lzb{5.}{}{x = 6; nach 6 Monaten steigt die Temperatur am stärksten (1 °C pro Monat)}{g$''$(x) = $-\tfrac{1}{6}$ x + 1 = 0 $\Rightarrow$ x = 6; g$'$(6) = 1 > 0 ist die größte Steigung $\Rightarrow$ nach 6 Monaten steigt die Temperatur am stärksten (1 °C pro Monat)}

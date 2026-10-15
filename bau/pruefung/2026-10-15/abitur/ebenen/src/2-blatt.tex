@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -94,13 +99,13 @@
 \begin{pfaufg}{GK~’23\\A1.4a}{1.}{\pfohnetr}
 Gegeben ist die Gerade $g\colon \vec{x} = \begin{pmatrix}1\\4\\-3\end{pmatrix} + s \cdot \begin{pmatrix}2\\0\\3\end{pmatrix}$, $s \in \mathbb{R}$, und der Punkt $A(5 \mid 0 \mid 0)$. Begründe, dass $A$ nicht auf $g$ liegt.
 \karo{1}
-\fusshilfe{\mbox{1:~nein}}
+\fusshilfe{\gfuss{1}{nein}}
 \end{pfaufg}
 % 2025-bebb-gk-A1.2a-m1 (Original 2025-bebb-gk-A1.2a, Schwere I, rang 2; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’25\\A1.2a}{2.}{\pfohnetr}
 Gegeben ist die Gerade $g\colon \vec{x} = \begin{pmatrix}6\\2\\-2\end{pmatrix} + s \cdot \begin{pmatrix}-3\\0\\2\end{pmatrix}$, $s \in \mathbb{R}$, und der Punkt $P(3 \mid 2 \mid 2)$. Zeige, dass $P$ nicht auf $g$ liegt. Gib die Koordinaten eines Punkts $Q$ auf $g$ an, der sich nur in einer Koordinate von $P$ unterscheidet.
 \karo{2}
-\fusshilfe{\mbox{2:~P liegt nicht auf g; Q(3|2|0)}}
+\fusshilfe{\gfuss{2}{P liegt nicht auf g; Q(3|2|0)}}
 \end{pfaufg}
 
 % ===================== Stufe: Ebenengleichung gesucht =====================
@@ -110,34 +115,34 @@ Gegeben ist die Gerade $g\colon \vec{x} = \begin{pmatrix}6\\2\\-2\end{pmatrix} +
 \begin{pfaufg}{}{3.}{}
 Ein Kirchturmdach steht auf dem Quadrat ABCD mit $A(0 \mid 0 \mid 0)$, $B(6 \mid 0 \mid 0)$, $C(6 \mid 6 \mid 0)$, $D(0 \mid 6 \mid 0)$. Darüber liegen $E(3 \mid 0 \mid 5)$, $F(6 \mid 3 \mid 5)$, $G(3 \mid 6 \mid 5)$, $H(0 \mid 3 \mid 5)$ und die Spitze $S(3 \mid 3 \mid 10)$; 1 LE entspricht 1 m. Das Dach hat vier gleiche viereckige Dachflächen wie CGSF und vier dreieckige Giebelflächen. Die Ebene L enthält C, G und F.
 % 2022-bebb-gk-B3b-m1 (Original 2022-bebb-gk-B3b, Schwere I, rang 3; herausgelöste Fassung: keine)
-\begin{gbteil}{a)}{\raisebox{\dimexpr-\height+\ht\strutbox\relax}{\shortstack[r]{GK~’22\\B3b}}\hspace*{\mbpfnr}}{}
+\begin{gbteil}{a)}{\raisebox{\dimexpr-\height+\ht\strutbox\relax}{\shortstack[r]{GK~’22\\B3b}}}{}
 Gib eine Gleichung von L in Parameterform an. Zeige, dass S in L liegt.
 \karo{2}
 \end{gbteil}
 % 2022-bebb-gk-B3c-m2 (Original 2022-bebb-gk-B3c, Schwere I, rang 11; herausgelöste Fassung: keine)
-\begin{gbteil}{b)}{\raisebox{\dimexpr-\height+\ht\strutbox\relax}{\shortstack[r]{GK~’22\\B3c}}\hspace*{\mbpfnr}}{}
+\begin{gbteil}{b)}{\raisebox{\dimexpr-\height+\ht\strutbox\relax}{\shortstack[r]{GK~’22\\B3c}}}{}
 Die Ebene N ist parallel zu L und enthält B. Der Vektor $\left(\begin{smallmatrix}5\\5\\3\end{smallmatrix}\right)$ ist ein Normalenvektor von L. Bestimme eine Koordinatengleichung von N.
 \karo{2}
 \end{gbteil}
-\fusshilfe{\mbox{3:~a)~$\left(\begin{smallmatrix}6\\6\\0\end{smallmatrix}\right)$ + s · $\left(\begin{smallmatrix}-3\\0\\5\end{smallmatrix}\right)$ + t · $\left(\begin{smallmatrix}0\\-3\\5\end{smallmatrix}\right)$; S liegt in L; b)~30}}
+\fusshilfe{\gfuss{3}{a)~$\left(\begin{smallmatrix}6\\6\\0\end{smallmatrix}\right)$ + s · $\left(\begin{smallmatrix}-3\\0\\5\end{smallmatrix}\right)$ + t · $\left(\begin{smallmatrix}0\\-3\\5\end{smallmatrix}\right)$; S liegt in L; b)~30}}
 \end{pfaufg}
 % 2024-bebb-gk-B3d-m1 (Original 2024-bebb-gk-B3d, Schwere II, rang 4; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’24\\B3d}{4.}{}
 Gegeben ist die Pyramide ABCDS mit $A(0 \mid 0 \mid 0)$, $B(3 \mid 0 \mid 0)$, $C(3 \mid 3 \mid 0)$, $D(0 \mid 6 \mid 0)$ und $S(0 \mid 0 \mid 5)$. Die Seitenfläche CDS liegt in der Ebene E. Bestimme eine Gleichung von E in Koordinatenform. (Zur Kontrolle: $E\colon 5x + 5y + 6z = 30$)
 \karo{2}
-\fusshilfe{\mbox{4:~30}}
+\fusshilfe{\gfuss{4}{30}}
 \end{pfaufg}
 % 2025-bebb-gk-B3b-m1 (Original 2025-bebb-gk-B3b, Schwere II, rang 5; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’25\\B3b}{5.}{}
 Gegeben ist die Pyramide ABCDS mit $A(0 \mid 0 \mid 0)$, $B(3 \mid 3 \mid 0)$, $C(0 \mid 8 \mid 0)$, $D(-3 \mid 3 \mid 0)$ und $S(0 \mid 0 \mid 6)$; ihre Grundfläche ABCD ist ein Drachenviereck. Die Seitenfläche BCS liegt in der Ebene E. Ermittle eine Koordinatengleichung von E. (Zur Kontrolle: $E\colon 5x + 3y + 4z = 24$)
 \karo{2}
-\fusshilfe{\mbox{5:~24}}
+\fusshilfe{\gfuss{5}{24}}
 \end{pfaufg}
 % 2026-bb-gk-B3e-m1 (Original 2026-bb-gk-B3e, Schwere III, rang 6; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’26\\B3e}{6.}{}
 Gegeben ist die Pyramide ABCDS mit $A(0 \mid -3 \mid 0)$, $B(5 \mid -1{,}5 \mid 0)$, $C(5 \mid 1{,}5 \mid 0)$, $D(0 \mid 3 \mid 0)$ und $S(1 \mid 0 \mid 3)$; sie ist symmetrisch zur xz-Ebene. Die Ebene $z = 1{,}5$ schneidet die Seitenkanten in T, U, V und $W(0{,}5 \mid 1{,}5 \mid 1{,}5)$. Die Trapeze TUVW und BUVC liegen symmetrisch zueinander bezüglich einer Ebene H. Bestimme eine Gleichung von H.
 \gzwei{\begin{ksys3}[xyz,x1min=0,x1max=5,x2min=-3,x2max=3,x3min=0,x3max=3,karo=0.3]\rstrecke{0,-3,0}{5,-1.5,0}\rstrecke{5,-1.5,0}{5,1.5,0}\rstrecke{5,1.5,0}{0,3,0}\rstrecke[dashed]{0,3,0}{0,-3,0}\rstrecke{0,-3,0}{1,0,3}\rstrecke{5,-1.5,0}{1,0,3}\rstrecke{5,1.5,0}{1,0,3}\rstrecke{0,3,0}{1,0,3}\rvieleck{0.5,-1.5,1.5;3,-0.75,1.5;3,0.75,1.5;0.5,1.5,1.5}\rpunkt*[above left]{0}{-3}{0}{A}\rpunkt*[below left]{5}{-1.5}{0}{B}\rpunkt*[below right]{5}{1.5}{0}{C}\rpunkt*[above right]{0}{3}{0}{D}\rpunkt*[above left]{1}{0}{3}{S}\rpunkt*[left]{0.5}{-1.5}{1.5}{T}\rpunkt*[below]{3}{-0.75}{1.5}{U}\rpunkt*[right]{3}{0.75}{1.5}{V}\rpunkt*[above]{0.5}{1.5}{1.5}{W}\end{ksys3}}{\karo{2}}
-\fusshilfe{\mbox{6:~7,5}}
+\fusshilfe{\gfuss{6}{7,5}}
 \end{pfaufg}
 
 % ===================== Stufe: Punktprobe an der Ebene =====================
@@ -147,25 +152,25 @@ Gegeben ist die Pyramide ABCDS mit $A(0 \mid -3 \mid 0)$, $B(5 \mid -1{,}5 \mid 
 \begin{pfaufg}{GK~’22\\A1.4a}{7.}{\pfohnetr}
 Gegeben ist die Ebene $E\colon 2x - 5y = 0$. Prüfe, ob der Punkt $(5 \mid 2 \mid 3)$ in $E$ liegt.
 \karo{1}
-\fusshilfe{\mbox{7:~ja}}
+\fusshilfe{\gfuss{7}{ja}}
 \end{pfaufg}
 % 2025-bebb-gk-A1.5b-m1 (Original 2025-bebb-gk-A1.5b, Schwere I, rang 8; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’25\\A1.5b}{8.}{\pfohnetr}
 Gegeben sind $P(1 \mid -3 \mid 0)$, $Q(3 \mid 1 \mid 4)$ und die Ebene $E\colon x + 2y + 2z = 13$. Weise nach, dass $Q$ in $E$ liegt und dass $\overrightarrow{PQ}$ ein Normalenvektor von $E$ ist.
 \karo{2}
-\fusshilfe{\mbox{8:~Q liegt in E; kollinear zum Normalenvektor}}
+\fusshilfe{\gfuss{8}{Q liegt in E; kollinear zum Normalenvektor}}
 \end{pfaufg}
 % 2026-bb-gk-A1.2a-m1 (Original 2026-bb-gk-A1.2a, Schwere II, rang 9; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’26\\A1.2a}{9.}{\pfohnetr}
 Gegeben sind die Ebene $E\colon 2x - y + 2z = 3$ und die Gerade $g$ durch $P(1 \mid 3 \mid 2)$ und $Q(7 \mid 0 \mid 8)$. Zeige, dass $P$ in $E$ liegt. Begründe, dass $g$ senkrecht auf $E$ steht.
 \karo{2}
-\fusshilfe{\mbox{9:~P liegt in E; g steht senkrecht auf E}}
+\fusshilfe{\gfuss{9}{P liegt in E; g steht senkrecht auf E}}
 \end{pfaufg}
 % 2023-bebb-gk-B3f-m1 (Original 2023-bebb-gk-B3f, Schwere III, rang 10; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’23\\B3f}{10.}{}
 Die Punkte $A(6 \mid 0 \mid 0)$, $B(0 \mid 6 \mid 0)$ und $C(0 \mid 0 \mid 6)$ liegen in der Ebene $L_1\colon x + y + z = 6$, die Punkte $D(3{,}5 \mid 0 \mid 0)$, $E(0 \mid 3{,}5 \mid 0)$ und $F(0 \mid 0 \mid 3{,}5)$ in der Ebene $L_2\colon 2x + 2y + 2z = 7$. Sie sind die Ecken des Körpers ABCDEF. Seine Oberfläche besteht aus den Dreiecken ABC und DEF und drei Trapezen in den Koordinatenebenen. Begründe, dass $T(1 \mid 1 \mid 2)$ im Inneren des Körpers liegt.
 \gzwei{\begin{ksys3}[xyz,x1min=0,x1max=6,x2min=0,x2max=6,x3min=0,x3max=6,karo=0.2]\rvieleck{6,0,0;0,6,0;0,0,6}\rstrecke{6,0,0}{3.5,0,0}\rstrecke{0,6,0}{0,3.5,0}\rstrecke{0,0,6}{0,0,3.5}\rstrecke[dashed]{3.5,0,0}{0,3.5,0}\rstrecke[dashed]{0,3.5,0}{0,0,3.5}\rstrecke[dashed]{0,0,3.5}{3.5,0,0}\rpunkt*[left]{6}{0}{0}{A}\rpunkt*[below]{0}{6}{0}{B}\rpunkt*[right]{0}{0}{6}{C}\rpunkt*[below left]{3.5}{0}{0}{D}\rpunkt*[below]{0}{3.5}{0}{E}\rpunkt*[left]{0}{0}{3.5}{F}\end{ksys3}}{\karo{2}}
-\fusshilfe{\mbox{10:~T diesseits von L$_1$; T liegt zwischen den Ebenen, im Inneren}}
+\fusshilfe{\gfuss{10}{T diesseits von L$_1$; T liegt zwischen den Ebenen, im Inneren}}
 \end{pfaufg}
 
 \pfblattende{10}{26 & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17}{A1.2a B3e & A1.2a A1.5b B3b & B3d & A1.4a B3f & A1.4a B3b B3c & A1.4a A1.5a &  & B3.2e & B2.1a & }%

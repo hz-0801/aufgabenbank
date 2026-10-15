@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -91,67 +96,67 @@
 \begin{pfaufg}{IQB~’23\\A12a}{1.}{}
 Ein Würfel (1 bis 6) und eine Münze (Zahl, Wappen) werden je einmal geworfen. A: ungerade Zahl und Wappen; B: Zahl größer als 2. Gib die Ergebnisse an, die zu $A \cap B$ gehören.
 \karo{4}
-\fusshilfe{\mbox{1:~W)}}
+\fusshilfe{\gfuss{1}{W)}}
 \end{pfaufg}
 % 2017-be-gk-B3.1a-m1 (Schwere I, rang 31)
 \begin{pfaufg}{GK~’17\\B3.1a}{2.}{}
 Ein Händler hat Geräte in sieben Farben. Für das Schaufenster sollen drei Farben ausgewählt werden. Bestimme die Anzahl der Möglichkeiten.
 \karo{2}
-\fusshilfe{\mbox{2:~35}}
+\fusshilfe{\gfuss{2}{35}}
 \end{pfaufg}
 % 2018-be-gk-B3.1a-m1 (Schwere I, rang 32)
 \begin{pfaufg}{GK~’18\\B3.1a}{3.}{}
 In einem Topf liegen 3 schwarze und 5 weiße Kugeln. Zwei Kugeln werden mit einem Griff gezogen; man gewinnt, wenn keine schwarze dabei ist. Weise nach, dass die Gewinnwahrscheinlichkeit $\tfrac{5}{14}$ beträgt.
 \karo{2}
-\fusshilfe{\mbox{3:~$\tfrac{5}{14}$}}
+\fusshilfe{\gfuss{3}{$\tfrac{5}{14}$}}
 \end{pfaufg}
 % 2020-be-gk-A1.5a-m1 (Schwere I, rang 33)
 \begin{pfaufg}{GK~’20\\A1.5a}{4.}{}
 In einem Behälter liegen vier blaue und zwei rote Kugeln. Zwei Kugeln werden ohne Zurücklegen entnommen. Berechne die Wahrscheinlichkeit für zwei verschiedene Farben.
 \karo{2}
-\fusshilfe{\mbox{4:~$\tfrac{8}{15}$}}
+\fusshilfe{\gfuss{4}{$\tfrac{8}{15}$}}
 \end{pfaufg}
 % 2018-iqb-ga-A11a-m1 (Schwere I, rang 34)
 \begin{pfaufg}{IQB~’18\\A11a}{5.}{}
 Zehn Karten, je zwei mit 1, 2, 3, 4 und 5, werden gemischt und nacheinander abgelegt. Bestimme die Wahrscheinlichkeit, dass die beiden ersten Karten mit 1 beschriftet sind.
 \karo{2}
-\fusshilfe{\mbox{5:~$\tfrac{1}{45}$}}
+\fusshilfe{\gfuss{5}{$\tfrac{1}{45}$}}
 \end{pfaufg}
 % 2019-be-gk-A1.4c-m1 (Schwere II, rang 35)
 \begin{pfaufg}{GK~’19\\A1.4c}{6.}{}
 Aus 12 Frauen und 8 Männern eines Chors werden zwei Personen zufällig ausgewählt. Gib einen Term für die Wahrscheinlichkeit an, dass eine Frau und ein Mann ausgewählt werden, und berechne sie.
 \karo{2}
-\fusshilfe{\mbox{6:~0,505}}
+\fusshilfe{\gfuss{6}{0,505}}
 \end{pfaufg}
 % 2018-iqb-ga-A11b-m1 (Schwere II, rang 36)
 \begin{pfaufg}{IQB~’18\\A11b}{7.}{}
 Zehn Karten, vier mit gerader und sechs mit ungerader Zahl, werden nacheinander aufgedeckt. Bestimme die Wahrscheinlichkeit, dass spätestens die dritte Karte eine gerade Zahl trägt.
 \karo{2}
-\fusshilfe{\mbox{7:~$\tfrac{5}{6}$}}
+\fusshilfe{\gfuss{7}{$\tfrac{5}{6}$}}
 \end{pfaufg}
 % 2017-be-gk-B3.1b-m1 (Schwere II, rang 37)
 \begin{pfaufg}{GK~’17\\B3.1b}{8.}{}
 Eine Lieferung umfasst 40 Geräte, davon sind vier fehlerhaft. Zehn Geräte werden zufällig ausgewählt. A: Keines der zehn ist fehlerhaft. B: Mindestens eines ist fehlerhaft. Berechne $P(A)$ und $P(B)$.
 \karo{3}
-\fusshilfe{\mbox{8:~0,393; 0,607}}
+\fusshilfe{\gfuss{8}{0,393; 0,607}}
 \end{pfaufg}
 % 2021-be-gk-A1.7b-m1 (Schwere III, rang 38)
 \begin{pfaufg}{GK~’21\\A1.7b}{9.}{}
 In einer Urne liegen 7 weiße und 3 schwarze Kugeln. Bewerber ziehen nacheinander ohne Zurücklegen; wer weiß zieht, ist ausgewählt. Entscheide, ob der erste oder der dritte Bewerber die größere Chance hat, und begründe.
 \karo{4}
-\fusshilfe{\mbox{9:~gleiche Chance}}
+\fusshilfe{\gfuss{9}{gleiche Chance}}
 \end{pfaufg}
 % 2019-iqb-ga-A2b-m1 (Schwere III, rang 39)
 \begin{pfaufg}{IQB~’19\\A2b}{10.}{}
 Jemand hat acht Bonbons gewonnen, Zitrone oder Orange. Zwei werden zufällig ausgewählt und verschenkt. Die Wahrscheinlichkeit, dass ein Zitronen- und ein Orangenbonbon verschenkt werden, ist $\tfrac{4}{7}$. Ermittle die Anzahl der Orangenbonbons.
 \karo{4}
-\fusshilfe{\mbox{10:~4}}
+\fusshilfe{\gfuss{10}{4}}
 \end{pfaufg}
 % 2019-be-gk-B4.2f-m1 (Schwere III, rang 40)
 \begin{pfaufg}{GK~’19\\B4.2f}{11.}{}
 In einer Urne liegen 6 schwarze und 4 weiße Kugeln; 6 werden mit einem Griff gezogen. Die Zahl der schwarzen Kugeln gibt an, an wie vielen Tagen der Woche jemand den Müll hinunterbringt. Bestimme die Wahrscheinlichkeit, dass das weniger als viermal ist, und begründe den Ansatz.
 \karo{4}
-\fusshilfe{\mbox{11:~0,452}}
+\fusshilfe{\gfuss{11}{0,452}}
 \end{pfaufg}
 \par\vfill\noindent{\scriptsize\color{mbgrau}Originale: IQB GK 2023 \pkt{} A12a, Abi GK 2017 \pkt{} B3.1a, Abi GK 2018 \pkt{} B3.1a, Abi GK 2020 \pkt{} A1.5a, IQB GK 2018 \pkt{} A11a, Abi GK 2019 \pkt{} A1.4c, IQB GK 2018 \pkt{} A11b, Abi GK 2017 \pkt{} B3.1b, Abi GK 2021 \pkt{} A1.7b, IQB GK 2019 \pkt{} A2b, Abi GK 2019 \pkt{} B4.2f\par}
 \end{document}

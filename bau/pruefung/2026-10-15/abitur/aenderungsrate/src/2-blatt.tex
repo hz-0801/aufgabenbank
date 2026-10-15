@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -93,14 +98,14 @@
 % 2025-bebb-gk-B2.2f-m1 (Original 2025-bebb-gk-B2.2f, Schwere II, rang 1; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’25\\B2.2f}{1.}{}
 Die Abbildung zeigt den Graphen der Funktion $a$, die die Anzahl der Likes beschreibt, die ein Internetbeitrag seit 12:00 Uhr erhalten hat; $x$ ist die Zeit in Stunden seit 12:00 Uhr. Bestimme mithilfe der Abbildung, wie viele Likes von 13:00 Uhr bis 15:00 Uhr durchschnittlich pro Stunde abgegeben wurden.
-\gzwei{\begin{abiksys}[xmin=0,xmax=7,ymin=0,ymax=2500,le=0.7,yle=0.0016,ystep=250,xlabel=$x$,ylabel=$y$]\funktion[5.5]{2000*(1-exp(-0.6*\x^2))}{G_a}\end{abiksys}}{\karo{2}}
-\fusshilfe{\mbox{1:~550 Likes pro Stunde}}
+\gzwei{\begin{abiksys}[xmin=0,xmax=7,ymin=0,ymax=2500,le=0.7,yle=0.0016,ystep=250,xlabel=$x$,ylabel=$y$]\funktion[5.5]{2000*(1-exp(-0.6*\x^2))}{G_a}\end{abiksys}}{\karo{3}}
+\fusshilfe{\gfuss{1}{550 Likes pro Stunde}}
 \end{pfaufg}
 % 2026-bb-gk-B2.2h-m1 (Original 2026-bb-gk-B2.2h, Schwere II, rang 2; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’26\\B2.2h}{2.}{}
 Ein Speicherofen kühlt ab. Die Temperatur seiner Oberfläche in °C wird beschrieben durch $k(x) = 55e^{-\tfrac{x}{300}} + 18$ mit $k'(x) = -\tfrac{11}{60}e^{-\tfrac{x}{300}}$; $x$ ist die Zeit in Minuten seit Beginn des Abkühlens. Untersuche, ob die mittlere Änderungsrate der Temperatur in den ersten 50 Minuten um mehr als 10 \% von der momentanen Änderungsrate zum Zeitpunkt 50 Minuten abweicht.
-\karo{2}
-\fusshilfe{\mbox{2:~8,8 \% < 10 \%}}
+\karo{4}
+\fusshilfe{\gfuss{2}{8,8 \% < 10 \%}}
 \end{pfaufg}
 
 % ===================== Stufe: momentane Änderungsrate gesucht =====================
@@ -111,13 +116,13 @@ Ein Speicherofen kühlt ab. Die Temperatur seiner Oberfläche in °C wird beschr
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $g$ mit $g(x) = 3e^x - 3$; die Abbildung zeigt ihren Graphen. Berechne $g'(0)$. Veranschauliche in der Abbildung, wie man diesen Wert grafisch ermitteln kann.
 \par\smallskip\noindent\begin{abiksys}[xmin=-3,xmax=2,ymin=-4,ymax=6,le=0.5]\funktion[1.2]{3*exp(\x)-3}{G_g}\end{abiksys}\par
 \karo{2}
-\fusshilfe{\mbox{3:~3; 1 nach rechts, 3 nach oben}}
+\fusshilfe{\gfuss{3}{3; 1 nach rechts, 3 nach oben}}
 \end{pfaufg}
 % 2026-bb-gk-B2.2i-m1 (Original 2026-bb-gk-B2.2i, Schwere III, rang 4; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’26\\B2.2i}{4.}{}
 Für die Temperatur des Speicherofens gilt $k(x) = 55e^{-\tfrac{x}{300}} + 18$ mit $k'(x) = -\tfrac{11}{60}e^{-\tfrac{x}{300}}$; $k(x) - 18$ ist der Unterschied zur Raumtemperatur. Begründe, dass es eine Zahl $c$ gibt, so dass für alle $x$ gilt: $k(x) - 18 = c \cdot k'(x)$.
-\karo{2}
-\fusshilfe{\mbox{4:~$-$300}}
+\karo{3}
+\fusshilfe{\gfuss{4}{$-$300}}
 \end{pfaufg}
 
 % ===================== Stufe: Stelle zur Änderungsrate gesucht =====================
@@ -126,20 +131,20 @@ Für die Temperatur des Speicherofens gilt $k(x) = 55e^{-\tfrac{x}{300}} + 18$ m
 % 2022-bebb-gk-B2.1m-m1 (Original 2022-bebb-gk-B2.1m, Schwere II, rang 5; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’22\\B2.1m}{5.}{}
 Ein Tauchroboter bewegt sich senkrecht. Sein Abstand von der Wasseroberfläche in Metern wird für $0 \le t \le 36$ beschrieben durch $h(t) = \tfrac{1}{8}t^3 - 9t^2 + 162t$; $t$ ist die Zeit in Minuten (Abbildung). In den ersten 12 Minuten nimmt der Abstand zu. Berechne den Zeitraum in dieser Phase, in dem die Geschwindigkeit des Roboters mindestens 19,5 m/min beträgt.
-\gzwei{\begin{abiksys}[xmin=0,xmax=36,ymin=0,ymax=1000,le=0.15,yle=0.005,xstep=6,ystep=200,xlabel=$t$,ylabel=$h(t)$]\funktion[28]{\x*((0.125*\x-9)*\x+162)}{}\end{abiksys}}{\karo{2}}
-\fusshilfe{\mbox{5:~von 0 bis 10 Minuten}}
+\gzwei{\begin{abiksys}[xmin=0,xmax=36,ymin=0,ymax=1000,le=0.15,yle=0.005,xstep=6,ystep=200,xlabel=$t$,ylabel=$h(t)$]\funktion[28]{\x*((0.125*\x-9)*\x+162)}{}\end{abiksys}}{\karo{4}}
+\fusshilfe{\gfuss{5}{von 0 bis 10 Minuten}}
 \end{pfaufg}
 % 2025-bebb-gk-A1.7b-m1 (Original 2025-bebb-gk-A1.7b, Schwere III, rang 6; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’25\\A1.7b}{6.}{\pfohnetr}
-Gegeben ist die Funktion $f$ mit $f(x) = -0{,}5x^2 + 3x - 2$; die Abbildung zeigt ihren Graphen. Die Gleichung $\tfrac{f(x) - 0}{x - 0} = f'(x)$ hat die Lösungen $-2$ und $2$. Gib die geometrische Bedeutung dieser Gleichung für ihre Lösungen an.
-\gzwei{\begin{abiksys}[xmin=-3,xmax=7,ymin=-6,ymax=3,le=0.5]\funktion[5.6]{-0.5*\x^2+3*\x-2}{G_f}\end{abiksys}}{\karo{2}}
-\fusshilfe{\mbox{6:~2 geht die Tangente an den Graphen durch den Ursprung}}
+Gegeben ist die Funktion $f$ mit $f(x) = -x^2 + 6x - 4$; die Abbildung zeigt ihren Graphen. Die Gleichung $\tfrac{f(x) - 0}{x - 0} = f'(x)$ hat die Lösungen $-2$ und $2$. Gib die geometrische Bedeutung dieser Gleichung für ihre Lösungen an.
+\gzwei{\begin{abiksys}[xmin=-2,xmax=7,ymin=-6,ymax=6,le=0.5]\funktion[5.6]{-\x^2+6*\x-4}{G_f}\end{abiksys}}{\karo{4}}
+\fusshilfe{\gfuss{6}{2 geht die Tangente an den Graphen durch den Ursprung}}
 \end{pfaufg}
 % 2022-bebb-gk-B2.2c-m1 (Original 2022-bebb-gk-B2.2c, Schwere III, rang 7; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’22\\B2.2c}{7.}{}
 Gegeben ist die Funktion $f$ mit $f(x) = -\tfrac{1}{18}x^3 + \tfrac{1}{3}x^2$, $x \in \mathbb{R}$. Zeige, dass es mindestens ein $x_0 \in \mathbb{R}$ gibt mit $f'(x_0) = \tfrac{f(4) - f(0)}{4 - 0}$. Erläutere die geometrische Bedeutung dieser Gleichung.
-\karo{2}
-\fusshilfe{\mbox{7:~0,85 oder 3,15; Tangente in x0 ist parallel zur Sekante durch (0|0) und (4|$\tfrac{16}{9}$)}}
+\karo{4}
+\fusshilfe{\gfuss{7}{0,85 oder 3,15; Tangente in x0 ist parallel zur Sekante durch (0|0) und (4|$\tfrac{16}{9}$)}}
 \end{pfaufg}
 
 \pfblattende{10}{26 & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17}{B2.2h B2.2i & A1.7b B2.2f & A1.4a &  & B2.1m B2.2c &  &  & B2.2d &  & B1.1b}%

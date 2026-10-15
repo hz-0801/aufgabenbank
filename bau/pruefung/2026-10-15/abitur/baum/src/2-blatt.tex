@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -94,19 +99,19 @@
 \begin{pfaufg}{GK~’25\\B4a}{1.}{}
 In einer Stadt haben 31,5 \% der Haushalte mindestens ein Kind. Von diesen Haushalten sind 14,2 \% überbelegt, von den Haushalten ohne Kind sind es 5,5 \%. Ein Haushalt wird zufällig ausgewählt. Stelle den Sachverhalt in einem beschrifteten Baumdiagramm dar.
 \karo{4}
-\fusshilfe{\mbox{1:~K 0,315, nicht K 0,685; B unter K 0,142, nicht B 0,858; B unter nicht K 0,055, nicht B 0,945}}
+\fusshilfe{\gfuss{1}{K 0,315, nicht K 0,685; B unter K 0,142, nicht B 0,858; B unter nicht K 0,055, nicht B 0,945}}
 \end{pfaufg}
 % 2024-bebb-gk-A1.9a-m1 (Original 2024-bebb-gk-A1.9a, Schwere I, rang 2; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’24\\A1.9a}{2.}{\pfohnetr}
 Bei einer Befragung erhalten 70 \% der Jugendlichen die Frage F1 „Hast du schon einmal unentschuldigt gefehlt?“, die übrigen die Frage F2 „Hast du noch nie unentschuldigt gefehlt?“. Alle antworten wahrheitsgemäß mit Ja oder Nein. Der Anteil $p$ derer, die schon einmal gefehlt haben, ist unter den F1-Befragten so groß wie unter allen. Vervollständige das Baumdiagramm.
 \par\smallskip\noindent\baumabi{F_1/{0,7}/{\text{Ja}/{p},\text{Nein}/},F_2//{\text{Ja}/,\text{Nein}/}}\par
-\fusshilfe{\mbox{2:~F1 0,7: Ja p, Nein 1 $-$ p; F2 0,3: Ja 1 $-$ p, Nein p}}
+\fusshilfe{\gfuss{2}{F1 0,7: Ja p, Nein 1 $-$ p; F2 0,3: Ja 1 $-$ p, Nein p}}
 \end{pfaufg}
 % 2024-bebb-gk-B4.2a-m1 (Original 2024-bebb-gk-B4.2a, Schwere II, rang 3; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’24\\B4.2a}{3.}{}
 Ein Glücksrad hat Sektoren mit der Zahl 4 und Sektoren mit der Zahl 2. Es wird zweimal gedreht; der Rabatt in Prozent ist das Produkt der beiden Zahlen. Die Wahrscheinlichkeit, zweimal die 4 zu drehen, beträgt $\tfrac{1}{16}$. Stelle das Zufallsexperiment in einem beschrifteten Baumdiagramm dar.
 \karo{4}
-\fusshilfe{\mbox{3:~$\tfrac{3}{4}$; auf beiden Stufen 4 mit $\tfrac{1}{4}$ und 2 mit $\tfrac{3}{4}$}}
+\fusshilfe{\gfuss{3}{$\tfrac{3}{4}$; auf beiden Stufen 4 mit $\tfrac{1}{4}$ und 2 mit $\tfrac{3}{4}$}}
 \end{pfaufg}
 
 % ===================== Stufe: Pfadwahrscheinlichkeit gesucht =====================
@@ -116,13 +121,13 @@ Ein Glücksrad hat Sektoren mit der Zahl 4 und Sektoren mit der Zahl 2. Es wird 
 \begin{pfaufg}{GK~’24\\A1.6a}{4.}{\pfohnetr}
 Bei einer Werbeaktion erhält jedes Kind einen verpackten Ball; mit einer Wahrscheinlichkeit von 30 \% ist er glitzernd gefärbt. Drei Kinder erhalten je einen Ball. Zeige, dass die Wahrscheinlichkeit, dass jedes der drei Kinder einen glitzernden Ball erhält, kleiner als 3 \% ist.
 \karo{2}
-\fusshilfe{\mbox{4:~0,027 < 0,03}}
+\fusshilfe{\gfuss{4}{0,027 < 0,03}}
 \end{pfaufg}
 % 2026-bb-gk-B4d-m1 (Original 2026-bb-gk-B4d, Schwere II, rang 5; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’26\\B4d}{5.}{}
 In einem Supermarkt sammeln 80 \% der Kundschaft Treuepunkte ($T$). Unter den Sammelnden sind 70 \% weiblich ($w$), unter den übrigen ist der Anteil weiblicher Personen $a$. Es sei $a = 0{,}3$. Untersuche, ob die Wahrscheinlichkeit, dass eine zufällig ausgewählte Person weiblich ist und Treuepunkte sammelt, viermal so groß ist wie die Wahrscheinlichkeit, dass sie nicht weiblich ist und keine Treuepunkte sammelt.
 \gzwei{\baumabi{T/{0,8}/{w/{0,7},\overline{w}/},\overline{T}//{w/{a},\overline{w}/}}}{\karo{4}}
-\fusshilfe{\mbox{5:~ja}}
+\fusshilfe{\gfuss{5}{ja}}
 \end{pfaufg}
 
 % ===================== Stufe: Summe von Pfaden gesucht =====================
@@ -132,31 +137,31 @@ In einem Supermarkt sammeln 80 \% der Kundschaft Treuepunkte ($T$). Unter den Sa
 \begin{pfaufg}{GK~’23\\A1.6a}{6.}{\pfohnetr}
 In einer Urne liegen sechs Kugeln, vier rote und zwei weiße. Es werden zwei Kugeln mit Zurücklegen gezogen. Ermittle die Wahrscheinlichkeit, dass beide Kugeln dieselbe Farbe haben.
 \karo{2}
-\fusshilfe{\mbox{6:~$\tfrac{5}{9}$}}
+\fusshilfe{\gfuss{6}{$\tfrac{5}{9}$}}
 \end{pfaufg}
 % 2025-bebb-gk-B4b-m1 (Original 2025-bebb-gk-B4b, Schwere I, rang 7; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’25\\B4b}{7.}{}
 In einer Stadt haben 31,5 \% der Haushalte mindestens ein Kind. Von diesen Haushalten sind 14,2 \% überbelegt, von den Haushalten ohne Kind sind es 5,5 \%. Zeige, dass etwa 8,24 \% aller Haushalte überbelegt sind.
 \karo{3}
-\fusshilfe{\mbox{7:~etwa 8,24 \%}}
+\fusshilfe{\gfuss{7}{etwa 8,24 \%}}
 \end{pfaufg}
 % 2025-bebb-gk-A1.3b-m1 (Original 2025-bebb-gk-A1.3b, Schwere II, rang 8; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’25\\A1.3b}{8.}{\pfohnetr}
 Ein Glücksrad hat acht gleich große Sektoren: fünfmal die 3, zweimal die 2 und einmal die 1. Es wird zweimal gedreht. Berechne die Wahrscheinlichkeit, dass die Summe der beiden Zahlen ungerade ist.
 \gzwei{\kreisdiagramm[1.1]{3/1,2/1,3/1,3/1,2/1,3/1,1/1,3/1}}{\karo{3}}
-\fusshilfe{\mbox{8:~$\tfrac{3}{8}$}}
+\fusshilfe{\gfuss{8}{$\tfrac{3}{8}$}}
 \end{pfaufg}
 % 2024-bebb-gk-B4.2b-m1 (Original 2024-bebb-gk-B4.2b, Schwere III, rang 9; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’24\\B4.2b}{9.}{}
 Ein Glücksrad hat Sektoren mit der Zahl 4 und Sektoren mit der Zahl 2. Es wird zweimal gedreht; der Rabatt in Prozent ist das Produkt der beiden Zahlen. Die Wahrscheinlichkeit, zweimal die 4 zu drehen, beträgt $\tfrac{1}{16}$. Sechs Personen drehen nacheinander. Berechne die Wahrscheinlichkeit, dass genau viermal der kleinstmögliche Rabatt erzielt wird, und zwar bei vier Personen unmittelbar hintereinander.
 \karo{4}
-\fusshilfe{\mbox{9:~0,0575}}
+\fusshilfe{\gfuss{9}{0,0575}}
 \end{pfaufg}
 % 2022-bebb-gk-B4f-m1 (Original 2022-bebb-gk-B4f, Schwere III, rang 10; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’22\\B4f}{10.}{}
 In einem Paketzentrum haben 12 \% der Pakete das Ziel A und 8 \% das Ziel B; 6 \% aller Pakete sind schwer ($S$). Zwei Paketboten erhalten je 12 zufällig ausgewählte Pakete. Bestimme die Wahrscheinlichkeit, dass mindestens einer der beiden kein Paket mit dem Ziel A erhält.
 \karo{3}
-\fusshilfe{\mbox{10:~0,385}}
+\fusshilfe{\gfuss{10}{0,385}}
 \end{pfaufg}
 
 \pfblattende{10}{26 & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17}{B4d & A1.3b B4a B4b & A1.6a A1.9a B4.2a B4.2b & A1.6a & B4f & A1.7a B4g B4h & B4.1b B4.2e & B4.2a &  & B3.1c}%

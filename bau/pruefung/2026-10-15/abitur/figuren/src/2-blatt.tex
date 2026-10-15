@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -94,34 +99,34 @@
 \begin{pfaufg}{GK~’22\\A1.5a}{1.}{\pfohnetr}
 Gegeben sind $A(0 \mid 0 \mid 0)$, $B(12 \mid 5 \mid 0)$ und $C(6 \mid 2{,}5 \mid z)$ mit $z > 0$. Zeige, dass das Dreieck ABC gleichschenklig mit der Basis AB ist.
 \karo{3}
-\fusshilfe{\mbox{1:~gleichschenklig mit Basis AB}}
+\fusshilfe{\gfuss{1}{gleichschenklig mit Basis AB}}
 \end{pfaufg}
 % 2023-bebb-gk-A1.5a-m1 (Original 2023-bebb-gk-A1.5a, Schwere I, rang 2; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’23\\A1.5a}{2.}{\pfohnetr}
 Gegeben ist das Dreieck ABC mit $A(1 \mid 1 \mid 5)$, $B(7 \mid 1 \mid -1)$ und $C(3 \mid 5 \mid 1)$. Weise nach, dass $C$ von $A$ genauso weit entfernt ist wie von $B$.
 \karo{2}
-\fusshilfe{\mbox{2:~6}}
+\fusshilfe{\gfuss{2}{6}}
 \end{pfaufg}
 % Teile eines Originals (2022-bebb-gk-B3): 2022-bebb-gk-B3d-m1, 2022-bebb-gk-B3a-m1
 \begin{pfaufg}{}{3.}{}
 Ein Kirchturmdach steht auf dem Quadrat ABCD mit $A(0 \mid 0 \mid 0)$, $B(6 \mid 0 \mid 0)$, $C(6 \mid 6 \mid 0)$, $D(0 \mid 6 \mid 0)$. Darüber liegen $E(3 \mid 0 \mid 5)$, $F(6 \mid 3 \mid 5)$, $G(3 \mid 6 \mid 5)$, $H(0 \mid 3 \mid 5)$ und die Spitze $S(3 \mid 3 \mid 10)$; 1 LE entspricht 1 m. Das Dach hat vier gleiche viereckige Dachflächen wie CGSF und vier dreieckige Giebelflächen.
 % 2022-bebb-gk-B3d-m1 (Original 2022-bebb-gk-B3d, Schwere I, rang 3; herausgelöste Fassung: keine)
-\begin{gbteil}{a)}{\raisebox{\dimexpr-\height+\ht\strutbox\relax}{\shortstack[r]{GK~’22\\B3d}}\hspace*{\mbpfnr}}{}
+\begin{gbteil}{a)}{\raisebox{\dimexpr-\height+\ht\strutbox\relax}{\shortstack[r]{GK~’22\\B3d}}}{}
 Weise nach, dass das Viereck CGSF eine Raute ist.
 \gzwei{\begin{ksys3}[xyz,x1min=0,x1max=6,x2min=0,x2max=6,x3min=0,x3max=10,karo=0.16]\rvieleck{6,0,0;6,6,0;6,3,5}\rvieleck{6,6,0;0,6,0;3,6,5}\rstrecke[dashed]{0,0,0}{6,0,0}\rstrecke{6,0,0}{6,6,0}\rstrecke{6,6,0}{0,6,0}\rstrecke[dashed]{0,6,0}{0,0,0}\rstrecke[dashed]{0,0,0}{3,0,5}\rstrecke{3,0,5}{6,0,0}\rstrecke{6,0,0}{6,3,5}\rstrecke{6,3,5}{6,6,0}\rstrecke{6,6,0}{3,6,5}\rstrecke{3,6,5}{0,6,0}\rstrecke{0,6,0}{0,3,5}\rstrecke[dashed]{0,3,5}{0,0,0}\rstrecke{3,0,5}{3,3,10}\rstrecke{6,3,5}{3,3,10}\rstrecke{3,6,5}{3,3,10}\rstrecke{0,3,5}{3,3,10}\rpunkt*[above left]{0}{0}{0}{A}\rpunkt*[below left]{6}{0}{0}{B}\rpunkt*[below right]{6}{6}{0}{C}\rpunkt*[above right]{0}{6}{0}{D}\rpunkt*[left]{3}{0}{5}{E}\rpunkt*[below right]{6}{3}{5}{F}\rpunkt*[right]{3}{6}{5}{G}\rpunkt*[above left]{0}{3}{5}{H}\rpunkt*[above]{3}{3}{10}{S}\end{ksys3}}{\karo{3}}
 \end{gbteil}
 % 2022-bebb-gk-B3a-m1 (Original 2022-bebb-gk-B3a, Schwere I, rang 4; herausgelöste Fassung: keine)
-\begin{gbteil}{b)}{\raisebox{\dimexpr-\height+\ht\strutbox\relax}{\shortstack[r]{GK~’22\\B3a}}\hspace*{\mbpfnr}}{}
+\begin{gbteil}{b)}{\raisebox{\dimexpr-\height+\ht\strutbox\relax}{\shortstack[r]{GK~’22\\B3a}}}{}
 ABCD und EFGH sind Quadrate. Zeige, dass der Flächeninhalt von ABCD doppelt so groß ist wie der von EFGH.
 \karo{3}
 \end{gbteil}
-\fusshilfe{\mbox{3:~a)~Raute; b)~2 · 18}}
+\fusshilfe{\gfuss{3}{a)~Raute; b)~2 · 18}}
 \end{pfaufg}
 % 2023-bebb-gk-B3a-m1 (Original 2023-bebb-gk-B3a, Schwere II, rang 5; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’23\\B3a}{4.}{}
 Die Punkte $A(6 \mid 0 \mid 0)$, $B(0 \mid 6 \mid 0)$ und $C(0 \mid 0 \mid 6)$ liegen in der Ebene $L_1\colon x + y + z = 6$, die Punkte $D(3{,}5 \mid 0 \mid 0)$, $E(0 \mid 3{,}5 \mid 0)$ und $F(0 \mid 0 \mid 3{,}5)$ in der Ebene $L_2\colon 2x + 2y + 2z = 7$. Sie sind die Ecken des Körpers ABCDEF. Prüfe, ob das Dreieck ABC gleichseitig ist. Bestimme die Koordinaten des Punkts $G$ auf der Strecke AC mit $|AG| : |GC| = 1 : 3$.
 \gzwei{\begin{ksys3}[xyz,x1min=0,x1max=6,x2min=0,x2max=6,x3min=0,x3max=6,karo=0.2]\rvieleck{6,0,0;0,6,0;0,0,6}\rstrecke{6,0,0}{3.5,0,0}\rstrecke{0,6,0}{0,3.5,0}\rstrecke{0,0,6}{0,0,3.5}\rstrecke[dashed]{3.5,0,0}{0,3.5,0}\rstrecke[dashed]{0,3.5,0}{0,0,3.5}\rstrecke[dashed]{0,0,3.5}{3.5,0,0}\rpunkt*[left]{6}{0}{0}{A}\rpunkt*[below]{0}{6}{0}{B}\rpunkt*[right]{0}{0}{6}{C}\rpunkt*[below left]{3.5}{0}{0}{D}\rpunkt*[below]{0}{3.5}{0}{E}\rpunkt*[left]{0}{0}{3.5}{F}\end{ksys3}}{\karo{3}}
-\fusshilfe{\mbox{4:~gleichseitig; G(4,5|0|1,5)}}
+\fusshilfe{\gfuss{4}{gleichseitig; G(4,5|0|1,5)}}
 \end{pfaufg}
 
 % ===================== Stufe: Parameter gesucht =====================
@@ -131,13 +136,13 @@ Die Punkte $A(6 \mid 0 \mid 0)$, $B(0 \mid 6 \mid 0)$ und $C(0 \mid 0 \mid 6)$ l
 \begin{pfaufg}{GK~’26\\A1.5b}{5.}{\pfohnetr}
 Das Dreieck ABC mit $A(0 \mid 0 \mid 0)$, $B(4 \mid 4 \mid 7)$ und $C(t \mid -t \mid 0)$, $t > 0$, hat in $A$ einen rechten Winkel und ist gleichschenklig. Berechne $t$.
 \karo{3}
-\fusshilfe{\mbox{5:~6,36}}
+\fusshilfe{\gfuss{5}{6,36}}
 \end{pfaufg}
 % 2022-bebb-gk-A1.5b-m1 (Original 2022-bebb-gk-A1.5b, Schwere II, rang 7; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’22\\A1.5b}{6.}{\pfohnetr}
 Das Dreieck mit $A(0 \mid 0 \mid 0)$, $B(12 \mid 5 \mid 0)$ und $C(6 \mid 2{,}5 \mid z)$, $z > 0$, ist gleichschenklig mit der Basis AB und hat den Flächeninhalt 39. Bestimme $z$.
 \karo{3}
-\fusshilfe{\mbox{6:~6}}
+\fusshilfe{\gfuss{6}{6}}
 \end{pfaufg}
 
 % ===================== Stufe: parallele Seiten nachweisen =====================
@@ -148,13 +153,13 @@ Das Dreieck mit $A(0 \mid 0 \mid 0)$, $B(12 \mid 5 \mid 0)$ und $C(6 \mid 2{,}5 
 \begin{pfaufg}{GK~’24\\B3a}{7.}{}
 Gegeben ist die Pyramide ABCDS mit $A(0 \mid 0 \mid 0)$, $B(3 \mid 0 \mid 0)$, $C(3 \mid 3 \mid 0)$, $D(0 \mid 6 \mid 0)$ und $S(0 \mid 0 \mid 5)$. Begründe, dass die Grundfläche ABCD ein Trapez ist.
 \gzwei{\begin{ksys3}[xyz,x1min=0,x1max=3,x2min=0,x2max=6,x3min=0,x3max=5,karo=0.22]\rstrecke[dashed]{0,0,0}{3,0,0}\rstrecke{3,0,0}{3,3,0}\rstrecke{3,3,0}{0,6,0}\rstrecke[dashed]{0,6,0}{0,0,0}\rstrecke[dashed]{0,0,0}{0,0,5}\rstrecke{3,0,0}{0,0,5}\rstrecke{3,3,0}{0,0,5}\rstrecke{0,6,0}{0,0,5}\rpunkt*[above left]{0}{0}{0}{A}\rpunkt*[below left]{3}{0}{0}{B}\rpunkt*[below right]{3}{3}{0}{C}\rpunkt*[above right]{0}{6}{0}{D}\rpunkt*[above left]{0}{0}{5}{S}\end{ksys3}}{\karo{3}}
-\fusshilfe{\mbox{7:~Trapez}}
+\fusshilfe{\gfuss{7}{Trapez}}
 \end{pfaufg}
 % 2026-bb-gk-B3a-m1 (Original 2026-bb-gk-B3a, Schwere II, rang 8; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’26\\B3a}{8.}{}
 Gegeben ist die Pyramide ABCDS mit $A(0 \mid -3 \mid 0)$, $B(5 \mid -1{,}5 \mid 0)$, $C(5 \mid 1{,}5 \mid 0)$, $D(0 \mid 3 \mid 0)$ und $S(1 \mid 0 \mid 3)$; sie ist symmetrisch zur xz-Ebene. Zeige, dass die Grundfläche ABCD ein Trapez ist. Berechne ihren Flächeninhalt.
 \gzwei{\begin{ksys3}[xyz,x1min=0,x1max=5,x2min=-3,x2max=3,x3min=0,x3max=3,karo=0.3]\rstrecke{0,-3,0}{5,-1.5,0}\rstrecke{5,-1.5,0}{5,1.5,0}\rstrecke{5,1.5,0}{0,3,0}\rstrecke[dashed]{0,3,0}{0,-3,0}\rstrecke{0,-3,0}{1,0,3}\rstrecke{5,-1.5,0}{1,0,3}\rstrecke{5,1.5,0}{1,0,3}\rstrecke{0,3,0}{1,0,3}\rpunkt*[above left]{0}{-3}{0}{A}\rpunkt*[below left]{5}{-1.5}{0}{B}\rpunkt*[below right]{5}{1.5}{0}{C}\rpunkt*[above right]{0}{3}{0}{D}\rpunkt*[above left]{1}{0}{3}{S}\end{ksys3}}{\karo{3}}
-\fusshilfe{\mbox{8:~Trapez; 22,5}}
+\fusshilfe{\gfuss{8}{Trapez; 22,5}}
 \end{pfaufg}
 
 \pfblattende{10}{26 & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17}{A1.5b B3a &  & B3a & A1.5a B3a & A1.5a A1.5b B3a B3d &  & A1.4b B3.2a & B3.2b & B2.2b & }%

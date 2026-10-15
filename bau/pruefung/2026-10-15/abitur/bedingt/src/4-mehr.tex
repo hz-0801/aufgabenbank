@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -91,55 +96,55 @@
 \begin{pfaufg}{GK~’18\\B3.2f}{1.}{}
 Bei einem Bildschirm sind Display und Netzteil mit 1,3 \% beide defekt; das Display ist mit 12,4 \% defekt. Berechne die Wahrscheinlichkeit, dass ein Bildschirm mit defektem Display auch ein defektes Netzteil hat.
 \karo{2}
-\fusshilfe{\mbox{1:~10,5 \%}}
+\fusshilfe{\gfuss{1}{10,5 \%}}
 \end{pfaufg}
 % 2026-iqb-ga-B2.1b-m1 (Schwere I, rang 66)
 \begin{pfaufg}{IQB~’26\\B2.1b}{2.}{}
 Von den Songs einer Playlist sind 35 \% Hip-Hop ($H$); $P(H \cap L) = 0{,}15$, wobei $L$ heißt: mindestens 4 Minuten lang. Berechne $P_H(L)$.
 \karo{2}
-\fusshilfe{\mbox{2:~42,9 \%}}
+\fusshilfe{\gfuss{2}{42,9 \%}}
 \end{pfaufg}
 % 2024-iqb-ga-B2.1c-m1 (Schwere I, rang 67)
 \begin{pfaufg}{IQB~’24\\B2.1c}{3.}{}
 60 \% der Schüler besitzen einen Laptop ($L$), 30 \% einen Desktop-PC ($D$), 15 \% beides. Berechne $P_D(L)$.
 \karo{2}
-\fusshilfe{\mbox{3:~0,5}}
+\fusshilfe{\gfuss{3}{0,5}}
 \end{pfaufg}
 % 2017-be-gk-B3.1d-m1 (Schwere II, rang 68)
 \begin{pfaufg}{GK~’17\\B3.1d}{4.}{}
 Ein Gerät wird in vier Werken hergestellt: Werk A liefert 20 \%, B 30 \%, C 10 \% und D 40 \% aller Geräte; in A sind 4 \% fehlerhaft. Insgesamt sind 3,1 \% aller Geräte fehlerhaft. Ein zufällig ausgewähltes Gerät ist fehlerhaft. Berechne die Wahrscheinlichkeit, dass es aus Werk A stammt.
 \karo{3}
-\fusshilfe{\mbox{4:~0,258}}
+\fusshilfe{\gfuss{4}{0,258}}
 \end{pfaufg}
 % 2026-iqb-ga-A13b-m1 (Schwere II, rang 69)
 \begin{pfaufg}{IQB~’26\\A13b}{5.}{}
 Ein Versandhändler verschickt 50 \% seiner Sendungen mit dem Unternehmen A; 12 \% aller Sendungen gehen mit A und kommen verspätet, 12,5 \% gehen nicht mit A und kommen verspätet. Eine Sendung kommt verspätet. Untersuche, ob die Wahrscheinlichkeit, dass sie nicht mit A verschickt wurde, größer als 50 \% ist.
 \karo{3}
-\fusshilfe{\mbox{5:~ja}}
+\fusshilfe{\gfuss{5}{ja}}
 \end{pfaufg}
 % 2020-be-gk-B4.2f-m1 (Schwere II, rang 70)
 \begin{pfaufg}{GK~’20\\B4.2f}{6.}{}
 In einem Betrieb ist ein Viertel der Beschäftigten weiblich ($w$); 4 \% der weiblichen und 12 \% der übrigen Beschäftigten sind unzufrieden ($u$). Eine zufällig ausgewählte Person ist unzufrieden. Bestimme die Wahrscheinlichkeit, dass sie nicht weiblich ist.
 \karo{4}
-\fusshilfe{\mbox{6:~0,9}}
+\fusshilfe{\gfuss{6}{0,9}}
 \end{pfaufg}
 % 2022-iqb-ga-B2.1c-m1 (Schwere II, rang 71)
 \begin{pfaufg}{IQB~’22\\B2.1c}{7.}{}
 Ein Viertel aller Menschen infiziert sich im Laufe des Lebens mit einem Bakterium; bei 10 \% der Infizierten bricht die Krankheit aus, bei Nichtinfizierten nie. Bei einer Person bricht die Krankheit nicht aus. Bestimme die Wahrscheinlichkeit, dass sie sich infiziert hat.
 \karo{2}
-\fusshilfe{\mbox{7:~0,231}}
+\fusshilfe{\gfuss{7}{0,231}}
 \end{pfaufg}
 % 2020-iqb-ga-A12b-m1 (Schwere I, rang 72)
 \begin{pfaufg}{IQB~’20\\A12b}{8.}{}
 Bei einem Fest sind 50 \% der Gäste Erwachsene; 15 \% aller Gäste sind verkleidete Erwachsene, 70 \% der Jugendlichen sind verkleidet. Beschreibe die Bedeutung des Terms $\tfrac{0{,}15}{0{,}15 + 0{,}7 \cdot 0{,}5}$ im Sachzusammenhang.
 \karo{2}
-\fusshilfe{\mbox{8:~Anteil der Erwachsenen unter allen Verkleideten (Wert 0,3)}}
+\fusshilfe{\gfuss{8}{Anteil der Erwachsenen unter allen Verkleideten (Wert 0,3)}}
 \end{pfaufg}
 % 2021-iqb-ga-A11b-m1 (Schwere II, rang 73)
 \begin{pfaufg}{IQB~’21\\A11b}{9.}{}
 20 \% der Menschen haben Heuschnupfen; ein Test ist bei ihnen mit 90 \% positiv, bei den übrigen mit 3 \%. Deute den Term $\tfrac{0{,}2 \cdot 0{,}9}{0{,}2 \cdot 0{,}9 + 0{,}8 \cdot 0{,}03}$ im Sachzusammenhang.
 \karo{2}
-\fusshilfe{\mbox{9:~0,882)}}
+\fusshilfe{\gfuss{9}{Wahrscheinlichkeit, dass eine Person mit positivem Test tatsächlich Heuschnupfen hat (Wert $\approx$ 0,882)}}
 \end{pfaufg}
 \par\vfill\noindent{\scriptsize\color{mbgrau}Originale: Abi GK 2018 \pkt{} B3.2f, IQB GK 2026 \pkt{} B2.1b, IQB GK 2024 \pkt{} B2.1c, Abi GK 2017 \pkt{} B3.1d, IQB GK 2026 \pkt{} A13b, Abi GK 2020 \pkt{} B4.2f, IQB GK 2022 \pkt{} B2.1c, IQB GK 2020 \pkt{} A12b, IQB GK 2021 \pkt{} A11b\par}
 \end{document}

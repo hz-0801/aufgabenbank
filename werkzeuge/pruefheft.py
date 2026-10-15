@@ -77,7 +77,7 @@ UNI_MATH = {'⇒': r'\Rightarrow', '≈': r'\approx', '−': '-', '≤': r'\le',
             # Lauf C (Geometrie, Funktionen): fehlten in der Schrift (Missing character)
             'γ': r'\gamma', 'δ': r'\delta', 'ε': r'\varepsilon', 'φ': r'\varphi', 'μ': r'\mu',
             '≠': r'\neq', '∠': r'\angle', '₁': r'_1', '₂': r'_2', '₃': r'_3', '₀': r'_0', '′': r"'",
-            'ᵧ': r'_y',   # S_y (Bezeichnungen N4.18)
+            'ᵧ': r'_y', '⅓': r'\tfrac{1}{3}', '⅔': r'\tfrac{2}{3}', '⅙': r'\tfrac{1}{6}', '¼': r'\tfrac{1}{4}', '½': r'\tfrac{1}{2}',   # 15.10. Abitur-Daten   # S_y (Bezeichnungen N4.18)
             # Zeichen der neuen Daten (fremd, herausgelöst; Nachtrag 06.10.), die der Schrift fehlen
             '▢': r'\square', '∢': r'\sphericalangle', '∛': r'\sqrt[3]{\;}', '∥': r'\parallel', 'ℓ': r'\ell',
             '↔': r'\leftrightarrow', '✓': r'\surd', '●': r'\bullet', '▲': r'\blacktriangle',

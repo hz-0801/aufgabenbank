@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -94,19 +99,19 @@
 \begin{pfaufg}{GK~’25\\A1.4b}{1.}{\pfohnetr}
 Gegeben ist die Funktion $f$ mit $f(x) = 2e^x - 2e^{-1}$ mit der Nullstelle $-1$ (Abbildung). Der Graph von $f$ schließt mit den Koordinatenachsen eine Fläche ein. Berechne ihren Inhalt.
 \gzwei{\begin{abiksys}[xmin=-4,xmax=1,ymin=-1,ymax=5,le=0.4]\funktion[0.6]{2*exp(\x)-2*exp(-1)}{}\end{abiksys}}{\karo{2}}
-\fusshilfe{\mbox{1:~Stammfunktion 2$e^{x}$ $-$ 2$e^{ - 1}$ · x; 0,53}}
+\fusshilfe{\gfuss{1}{Stammfunktion 2$e^{x}$ $-$ 2$e^{ - 1}$ · x; 0,53}}
 \end{pfaufg}
 % 2024-bebb-gk-A1.1b-m1 (Original 2024-bebb-gk-A1.1b, Schwere II, rang 19; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’24\\A1.1b}{2.}{\pfohnetr}
 Gegeben ist die Funktion $f$ mit $f(x) = x^3 - 9x$. Der Graph von $f$ und die $x$-Achse schließen eine Fläche aus zwei Flächenstücken ein. Berechne ihren Inhalt.
 \karo{2}
-\fusshilfe{\mbox{2:~Nullstellen $-$3, 0 und 3; $\tfrac{81}{2}$}}
+\fusshilfe{\gfuss{2}{Nullstellen $-$3, 0 und 3; $\tfrac{81}{2}$}}
 \end{pfaufg}
 % 2026-bb-gk-B2.2d-m1 (Original 2026-bb-gk-B2.2d, Schwere II, rang 20; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’26\\B2.2d}{3.}{}
 Gegeben ist die Funktion $f$ mit $f(x) = 2e^x + 3$. Der Graph von $f$, die Gerade $y = 3$, die $y$-Achse und die Gerade $x = u$ mit $u < 0$ begrenzen eine Fläche. Weise nach, dass ihr Inhalt $2 - 2e^u$ beträgt.
 \karo{1}
-\fusshilfe{\mbox{3:~2 $-$ 2$e^{u}$}}
+\fusshilfe{\gfuss{3}{2 $-$ 2$e^{u}$}}
 \end{pfaufg}
 
 % ===================== Stufe: Fläche im Sachzusammenhang gesucht =====================
@@ -116,25 +121,25 @@ Gegeben ist die Funktion $f$ mit $f(x) = 2e^x + 3$. Der Graph von $f$, die Gerad
 \begin{pfaufg}{GK~’24\\B2.1j}{4.}{}
 Ein Schrankknauf hat den Querschnitt zwischen den Graphen von $f$ mit $f(x) = (x - 3) \cdot e^{-\tfrac{x}{3} + 2}$ und $-f$ für $3 \le x \le 12$; $F$ mit $F(x) = -3x \cdot e^{-\tfrac{x}{3} + 2}$ ist eine Stammfunktion von $f$. 1 LE entspricht 0,5 cm. Bestimme die Größe der Querschnittsfläche in cm².
 \karo{2}
-\fusshilfe{\mbox{4:~9,8 cm²}}
+\fusshilfe{\gfuss{4}{9,8 cm²}}
 \end{pfaufg}
 % 2026-bb-gk-B2.1g-m1 (Original 2026-bb-gk-B2.1g, Schwere II, rang 22; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’26\\B2.1g}{5.}{}
-Eine Modelleisenbahn (Draufsicht, 1 LE = 1 m) ist symmetrisch zu beiden Achsen; oben verläuft sie auf $[-2; 0]$ entlang $G$ mit $g(x) = \tfrac{1}{4}x^3 + x^2$, $A(-2 \mid 2)$, links und rechts schließen Halbkreise an. Berechne den Inhalt der eingeschlossenen Fläche in m².
-\gzwei{\begin{abiksys}[xmin=-4.5,xmax=4.5,ymin=-2.5,ymax=2.5,le=0.4]\funktionab[-1]{\x^3/4+\x^2}{G}{-2}{0}\funktionab{-(\x^3/4+\x^2)}{}{-2}{0}\funktionab{-\x^3/4+\x^2}{}{0}{2}\funktionab{\x^3/4-\x^2}{}{0}{2}\draw[line width=0.8pt] (-2,2) arc (90:270:2);\draw[line width=0.8pt] (2,-2) arc (-90:90:2);\punkt{-2}{2}{A}\end{abiksys}}{\karo{2}}
-\fusshilfe{\mbox{5:~$\tfrac{5}{3}$; 2$\pi$; 19,2 m²}}
+Eine Modelleisenbahn (Draufsicht, 1 LE = 1 m) ist symmetrisch zu beiden Achsen; oben verläuft sie auf $[-1; 0]$ entlang $G$ mit $g(x) = \tfrac{8}{3}x^3 + 4x^2$, $A\left(-1 \mid \tfrac{4}{3}\right)$, links und rechts schließen Halbkreise um $(\pm 1 \mid 0)$ an. Berechne den Inhalt der eingeschlossenen Fläche in m².
+\gzwei{\begin{abiksys}[xmin=-2.6,xmax=2.6,ymin=-1.6,ymax=1.6,le=0.9,xstep=0.5,ystep=0.5]\funktionab[-0.75]{8/3*\x^3+4*\x^2}{G}{-1}{0}\funktionab{-8/3*\x^3+4*\x^2}{}{0}{1}\funktionab{-8/3*\x^3-4*\x^2}{}{-1}{0}\funktionab{8/3*\x^3-4*\x^2}{}{0}{1}\draw[line width=0.8pt] (-1,4/3) arc[start angle=90,end angle=270,radius=4/3];\draw[line width=0.8pt] (1,-4/3) arc[start angle=-90,end angle=90,radius=4/3];\punkt{-1}{4/3}{A}\end{abiksys}}{\karo{2}}
+\fusshilfe{\gfuss{5}{$\tfrac{2}{3}$; $\tfrac{16}{9}$ $\pi$; 8,25 m²}}
 \end{pfaufg}
 % 2022-bebb-gk-B2.2h-m1 (Original 2022-bebb-gk-B2.2h, Schwere III, rang 23; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’22\\B2.2h}{6.}{}
 Ein Betonteil (1 LE = 1 m) hat den Querschnitt $ABDC$: oben der Graph von $h$ mit $h(x) = -\tfrac{1}{16}x^3 + \tfrac{3}{8}x^2$ von $A(0 \mid 0)$ bis $B(4 \mid 2)$, unten die Gerade $g$: $y = \tfrac{1}{2}x - 1$ von $C(0{,}4 \mid -0{,}8)$ bis $D(4 \mid 1)$, seitlich $AC$ und $BD$. Ermittle die Querschnittsfläche (Kontrolle: 3,8 m²).
 \karo{2}
-\fusshilfe{\mbox{6:~4; $-$2x von 0 bis 0,4): 0,16; 3,8 m²}}
+\fusshilfe{\gfuss{6}{4; Dreieck unter AC (y = $-$2x von 0 bis 0,4): 0,16; 3,8 m²}}
 \end{pfaufg}
 % 2025-bebb-gk-B2.1e-m1 (Original 2025-bebb-gk-B2.1e, Schwere III, rang 24; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’25\\B2.1e}{7.}{}
-Ein Windrad: Graph von $f$ mit $f(x) = \tfrac{1}{12}x^3 - x$ und Gerade $g$: $y = \tfrac{1}{3}x$ auf $[-4; 4]$, um 90° gedreht (gestrichelt); $A(4 \mid \tfrac{4}{3})$ liegt auf dem Kreis. Es ist $A_1 = \left(4^2 + \left(\tfrac{4}{3}\right)^2\right) \cdot \pi$ und $A_2 = 4 \cdot \int_{0}^{4} (g(x) - f(x))\,dx$. Beschreibe die Fläche $A_1 - A_2$ in der Abbildung und berechne ihren Inhalt.
-\gzwei{\begin{abiksys}[xmin=-5,xmax=5,ymin=-5,ymax=5,le=0.32]\draw[line width=0.6pt] (0,0) circle (4.216);\begin{scope}[rotate=90,dashed]\funktionab{\x^3/12-\x}{}{-4}{4}\funktionab{\x/3}{}{-4}{4}\end{scope}\funktionab{\x^3/12-\x}{G_f}{-4}{4}\funktionab{\x/3}{g}{-4}{4}\end{abiksys}}{\karo{2}}
-\fusshilfe{\mbox{7:~Fläche im Kreis außerhalb der Flügel; 34,5}}
+Ein Windrad: Graph von $f$ mit $f(x) = \tfrac{1}{18}x^3 - \tfrac{3}{2}x$ und Gerade $g$: $y = \tfrac{1}{2}x$ auf $[-6; 6]$, um 90° gedreht (gestrichelt); $A(6 \mid 3)$ liegt auf dem Kreis. Es ist $A_1 = \left(6^2 + 3^2\right) \cdot \pi$ und $A_2 = 4 \cdot \int_{0}^{6} (g(x) - f(x))\,dx$. Beschreibe die Fläche $A_1 - A_2$ in der Abbildung und berechne ihren Inhalt.
+\gzwei{\begin{abiksys}[xmin=-7,xmax=7,ymin=-7,ymax=7,le=0.25,xstep=2,ystep=2]\draw[line width=0.6pt] (0,0) circle (6.708);\begin{scope}[rotate=90,dashed]\funktionab{\x^3/18-1.5*\x}{}{-6}{6}\funktionab{\x/2}{}{-6}{6}\end{scope}\funktionab{\x^3/18-1.5*\x}{G_f}{-6}{6}\funktionab{\x/2}{g}{-6}{6}\end{abiksys}}{\karo{2}}
+\fusshilfe{\gfuss{7}{Fläche im Kreis außerhalb der Flügel; 69,4}}
 \end{pfaufg}
 
 % ===================== Stufe: Lösungsweg erklären =====================
@@ -145,20 +150,20 @@ Ein Windrad: Graph von $f$ mit $f(x) = \tfrac{1}{12}x^3 - x$ und Gerade $g$: $y 
 Gegeben ist die Funktion $f$ mit $f(x) = 0{,}5x^4 - 3x^2 + 2{,}5$; die Abbildung zeigt einen Ausschnitt ihres Graphen $G_f$. Lösungsweg: (1) $2{,}5x + 2{,}5 = f(x)$ hat für $-1 \le x \le 0$ die Lösungen $-1$ und $0$. (2) $\int_{-1}^{0} (f(x) - (2{,}5x + 2{,}5))\,dx = \tfrac{7}{20}$. (3) $\tfrac{1}{2} \cdot 1 \cdot f(0) = \tfrac{5}{4} = \tfrac{25}{20}$. (4) $7 : 25$. Beschreibe die geometrische Bedeutung jedes Schritts. Zeichne die zugehörigen Flächen in die Abbildung ein.
 \par\smallskip\noindent\begin{abiksys}[xmin=-1.5,xmax=1.5,ymin=-1,ymax=3,le=0.55]\funktion[0.9]{0.5*\x^4-3*\x^2+2.5}{G_f}\end{abiksys}\par
 \karo{2}
-\fusshilfe{\mbox{8:~(4) Flächenverhältnis 7 : 25}}
+\fusshilfe{\gfuss{8}{(4) Flächenverhältnis 7 : 25}}
 \end{pfaufg}
 % 2023-bebb-gk-B2.1m-m1 (Original 2023-bebb-gk-B2.1m, Schwere III, rang 26; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’23\\B2.1m}{9.}{}
 Tischplatte wie auf dem Blatt „Integral berechnen“ (Rand im III. Quadranten: Graph von $f$ mit $f(x) = \tfrac{1}{3}(x^2 - 9) \cdot e^{\tfrac{x}{2}}$, 1 LE = 10 cm). Jede Randlinie wird an der Geraden durch die beiden Achsenschnittpunkte ihres Quadranten gespiegelt. Skizziere die neuen Randlinien. Beschreibe einen Lösungsweg für den Zuwachs der Fläche in cm².
 \par\smallskip\noindent\begin{abiksys}[xmin=-3.5,xmax=3.5,ymin=-3.5,ymax=3.5,le=0.4]\funktionab[-1.5]{(\x^2-9)*exp(\x/2)/3}{G}{-3}{0}\funktionab{-(\x^2-9)*exp(\x/2)/3}{}{-3}{0}\funktionab{(\x^2-9)*exp(-\x/2)/3}{}{0}{3}\funktionab{-(\x^2-9)*exp(-\x/2)/3}{}{0}{3}\end{abiksys}\par
 \karo{2}
-\fusshilfe{\mbox{9:~vier nach außen gewölbte Bögen von Spitze zu Spitze; 687 cm²}}
+\fusshilfe{\gfuss{9}{vier nach außen gewölbte Bögen von Spitze zu Spitze; 687 cm²}}
 \end{pfaufg}
 % 2022-bebb-gk-B2.1i-m1 (Original 2022-bebb-gk-B2.1i, Schwere III, rang 27; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’22\\B2.1i}{10.}{}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = (x + 3) \cdot e^{-x}$ und $f'(x) = -(x + 2) \cdot e^{-x}$. Im 4. Quadranten schließen der Graph von $f'$, die Koordinatenachsen und die Gerade $x = b$ ($b > 0$) eine Fläche mit dem Inhalt $A_b$ ein. Begründe, dass es ein $b$ gibt mit $A_b = 2$.
 \karo{2}
-\fusshilfe{\mbox{10:~3 $-$ (b + 3)$e^{ - b}$; 1,51)}}
+\fusshilfe{\gfuss{10}{3 $-$ (b + 3)$e^{ - b}$; der Wert 2 wird erreicht (b $\approx$ 1,51)}}
 \end{pfaufg}
 
 \pfblattende{10}{26 & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17}{B2.1g B2.2d & A1.4b B2.1e & A1.1b B2.1j B2.2e & B2.1m & B2.1i B2.2h & A1.1b &  & A1.2b &  & }%

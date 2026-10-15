@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -92,21 +97,21 @@
 % kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
 % 2022-bebb-gk-B2.2g-m1 (Original 2022-bebb-gk-B2.2g, Schwere I, rang 1; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’22\\B2.2g}{1.}{}
-Die Abbildung zeigt den Querschnitt eines Betonteils für den Hochwasserschutz. Der untere Rand ist die Strecke zwischen $C(0{,}4 \mid -0{,}5)$ und $D(2 \mid 1{,}1)$ auf der Geraden $g$. Weise nach, dass $g(x) = x - 0{,}9$ eine Gleichung von $g$ ist.
-\gzwei{\begin{abiksys}[xmin=-0.3,xmax=2.5,ymin=-0.8,ymax=1.8,le=2,xstep=0.5,ystep=0.5]\funktionab[1]{-0.375*\x^3+1.125*\x^2}{h}{0}{2}\draw[line width=0.8pt] (0.4,-0.5) -- (2,1.1) node[midway,below right] {$g$};\draw[line width=0.6pt] (0,0) -- (0.4,-0.5) (2,1.5) -- (2,1.1);\punkt{0}{0}{A}\punkt{2}{1.5}{B}\punkt{0.4}{-0.5}{C}\punkt{2}{1.1}{D}\end{abiksys}}{\karo{3}}
-\fusshilfe{\mbox{1:~1; x $-$ 0,9}}
+Die Abbildung zeigt den Querschnitt eines Betonteils für den Hochwasserschutz. Der untere Rand ist die Strecke zwischen $C(0{,}4 \mid -0{,}8)$ und $D(4 \mid 1)$ auf der Geraden $g$. Weise nach, dass $g(x) = \tfrac{1}{2}x - 1$ eine Gleichung von $g$ ist.
+\gzwei{\begin{abiksys}[xmin=-0.5,xmax=4.5,ymin=-1.5,ymax=2.5,le=1.2,ystep=0.5]\funktionab[2.6]{-\x^3/16+3*\x^2/8}{h}{0}{4}\draw[line width=0.8pt] (0.4,-0.8) -- (4,1) node[midway,below right] {$g$};\draw[line width=0.6pt] (0,0) -- (0.4,-0.8) (4,2) -- (4,1);\punkt{0}{0}{A}\punkt{4}{2}{B}\punkt{0.4}{-0.8}{C}\punkt{4}{1}{D}\end{abiksys}}{\karo{3}}
+\fusshilfe{\gfuss{1}{$\tfrac{1}{2}$; $\tfrac{1}{2}$ x $-$ 1}}
 \end{pfaufg}
 % 2023-bebb-gk-B2.2k-m1 (Original 2023-bebb-gk-B2.2k, Schwere II, rang 2; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’23\\B2.2k}{2.}{}
 Für eine neue Backofenheizung wird der Temperaturverlauf in der Startphase durch eine ganzrationale Funktion $k$ dritten Grades beschrieben ($x$ in Minuten, $k(x)$ in °C). Es gilt: I $k(0) = 20$, II $k'(0) = 120$, III $H(6 \mid 272)$ ist Hochpunkt des Graphen von $k$. Ermittle eine Funktionsgleichung von $k$.
 \karo{3}
-\fusshilfe{\mbox{2:~120; $-$120; x³ $-$ 19x² + 120x + 20}}
+\fusshilfe{\gfuss{2}{120; $-$120; x³ $-$ 19x² + 120x + 20}}
 \end{pfaufg}
 % 2022-bebb-gk-B2.2k-m1 (Original 2022-bebb-gk-B2.2k, Schwere III, rang 3; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’22\\B2.2k}{3.}{}
 Der obere Rand eines größeren Betonteils verläuft zwischen $R(2 \mid 1)$ und $S(4 \mid 3{,}5)$ geradlinig; links und rechts schließen sich Kurvenstücke an, die knickfrei in $(0 \mid 0)$, $R$, $S$ und $(6 \mid 4{,}5)$ übergehen (Abbildung). Das Kurvenstück von $(0 \mid 0)$ bis $R$ soll Graph einer Funktion $k$ mit $k(x) = a \cdot x^4 + b \cdot x^2$ sein. Weise nach, dass $k$ dafür verwendet werden kann, und bestimme $a$ und $b$.
 \gzwei{\begin{abiksys}[xmin=0,xmax=6.5,ymin=0,ymax=5,le=0.8]\funktionab{\x^4/64+3*\x^2/16}{}{0}{2}\draw[mbterm,line width=0.8pt] (2,1) -- (4,3.5);\funktionab{4.5-(6-\x)^4/64-3*(6-\x)^2/16}{}{4}{6}\punkt{2}{1}{R}\punkt{4}{3.5}{S}\end{abiksys}}{\karo{3}}
-\fusshilfe{\mbox{3:~0 gelten für jede Wahl; 1,25; $\tfrac{3}{16}$}}
+\fusshilfe{\gfuss{3}{0 gelten für jede Wahl; 1,25; $\tfrac{3}{16}$}}
 \end{pfaufg}
 
 % ===================== Stufe: Zielfunktion aufstellen =====================
@@ -116,13 +121,13 @@ Der obere Rand eines größeren Betonteils verläuft zwischen $R(2 \mid 1)$ und 
 \begin{pfaufg}{GK~’24\\B2.2g}{4.}{}
 Gegeben ist die Funktion $f$ mit $f(x) = 0{,}5x^4 - 3x^2 + 2{,}5$, $x \in \mathbb{R}$. Für $-1 \le x \le 1$ wird $f$ durch $p$ mit $p(x) = -2{,}5x^2 + 2{,}5$ angenähert. Es gibt genau zwei Stellen in $[-1; 1]$, an denen die Differenz von $p$ und $f$ am größten ist. Zeige, dass diese größte Differenz $\tfrac{1}{8}$ beträgt.
 \karo{3}
-\fusshilfe{\mbox{4:~0,5x² $-$ 0,5x$^{4}$; ±1/√2; größte Differenz $\tfrac{1}{8}$}}
+\fusshilfe{\gfuss{4}{0,5x² $-$ 0,5x$^{4}$; $\pm$1/$\sqrt{2}$; größte Differenz $\tfrac{1}{8}$}}
 \end{pfaufg}
 % 2022-bebb-gk-B2.1h-m1 (Original 2022-bebb-gk-B2.1h, Schwere II, rang 5; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’22\\B2.1h}{5.}{}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = (x + 3) \cdot e^{-x}$ und $f'(x) = -(x + 2) \cdot e^{-x}$. Der Ursprung und der Punkt $P(u \mid v)$ des Graphen mit $u > 0$ sind gegenüberliegende Ecken eines Rechtecks, dessen Seiten parallel zu den Koordinatenachsen sind. Genau für ein $u$ ist der Flächeninhalt maximal. Zur Kontrolle: $A'(u) = (3 - u - u^2) \cdot e^{-u}$. Ermittle die Koordinaten von $P$ für den größten Flächeninhalt.
 \karo{3}
-\fusshilfe{\mbox{5:~(u² + 3u) · $e^{-u}$; 1,30; P(1,30|1,17)}}
+\fusshilfe{\gfuss{5}{(u² + 3u) · $e^{-u}$; 1,30; P(1,30|1,17)}}
 \end{pfaufg}
 
 \pfblattende{10}{26 & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17}{ &  & B2.2g & B2.2k & B2.1h B2.2g B2.2k & A1.3b B2.1k &  & B2.1c & B1.1e B1.1g & B1.1f}%

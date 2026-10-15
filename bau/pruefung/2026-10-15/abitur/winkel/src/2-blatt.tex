@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -94,14 +99,14 @@
 \begin{pfaufg}{GK~’26\\B3b}{1.}{}
 Gegeben ist die Pyramide ABCDS mit $A(0 \mid -3 \mid 0)$, $B(5 \mid -1{,}5 \mid 0)$, $C(5 \mid 1{,}5 \mid 0)$, $D(0 \mid 3 \mid 0)$ und $S(1 \mid 0 \mid 3)$; sie ist symmetrisch zur xz-Ebene. Bestimme die Größe des Winkels zwischen den Kanten CD und CS.
 \gzwei{\begin{ksys3}[xyz,x1min=0,x1max=5,x2min=-3,x2max=3,x3min=0,x3max=3,karo=0.3]\rstrecke{0,-3,0}{5,-1.5,0}\rstrecke{5,-1.5,0}{5,1.5,0}\rstrecke{5,1.5,0}{0,3,0}\rstrecke[dashed]{0,3,0}{0,-3,0}\rstrecke{0,-3,0}{1,0,3}\rstrecke{5,-1.5,0}{1,0,3}\rstrecke{5,1.5,0}{1,0,3}\rstrecke{0,3,0}{1,0,3}\rpunkt*[above left]{0}{-3}{0}{A}\rpunkt*[below left]{5}{-1.5}{0}{B}\rpunkt*[below right]{5}{1.5}{0}{C}\rpunkt*[above right]{0}{3}{0}{D}\rpunkt*[above left]{1}{0}{3}{S}\end{ksys3}}{\karo{4}}
-\fusshilfe{\mbox{1:~49,4°}}
+\fusshilfe{\gfuss{1}{49,4°}}
 \end{pfaufg}
 % 2022-bebb-gk-B3f-m1 (Original 2022-bebb-gk-B3f, Schwere II, rang 2; herausgelöste Fassung: keine)
 % Zweitthema ausgeblendet (Spalten <feld>_einheit, pruefheft-p.md v0.9)
 \begin{pfaufg}{GK~’22\\B3f}{2.}{}
 Ein Kirchturmdach steht auf dem Quadrat ABCD mit $A(0 \mid 0 \mid 0)$, $B(6 \mid 0 \mid 0)$, $C(6 \mid 6 \mid 0)$, $D(0 \mid 6 \mid 0)$. Darüber liegen $E(3 \mid 0 \mid 5)$, $F(6 \mid 3 \mid 5)$, $G(3 \mid 6 \mid 5)$, $H(0 \mid 3 \mid 5)$ und die Spitze $S(3 \mid 3 \mid 10)$; 1 LE entspricht 1 m. Das Dach hat vier gleiche viereckige Dachflächen wie CGSF und vier dreieckige Giebelflächen. Berechne die Größe des Innenwinkels der Raute CGSF bei S.
 \gzwei{\begin{ksys3}[xyz,x1min=0,x1max=6,x2min=0,x2max=6,x3min=0,x3max=10,karo=0.16]\rvieleck{6,0,0;6,6,0;6,3,5}\rvieleck{6,6,0;0,6,0;3,6,5}\rstrecke[dashed]{0,0,0}{6,0,0}\rstrecke{6,0,0}{6,6,0}\rstrecke{6,6,0}{0,6,0}\rstrecke[dashed]{0,6,0}{0,0,0}\rstrecke[dashed]{0,0,0}{3,0,5}\rstrecke{3,0,5}{6,0,0}\rstrecke{6,0,0}{6,3,5}\rstrecke{6,3,5}{6,6,0}\rstrecke{6,6,0}{3,6,5}\rstrecke{3,6,5}{0,6,0}\rstrecke{0,6,0}{0,3,5}\rstrecke[dashed]{0,3,5}{0,0,0}\rstrecke{3,0,5}{3,3,10}\rstrecke{6,3,5}{3,3,10}\rstrecke{3,6,5}{3,3,10}\rstrecke{0,3,5}{3,3,10}\rpunkt*[above left]{0}{0}{0}{A}\rpunkt*[below left]{6}{0}{0}{B}\rpunkt*[below right]{6}{6}{0}{C}\rpunkt*[above right]{0}{6}{0}{D}\rpunkt*[left]{3}{0}{5}{E}\rpunkt*[below right]{6}{3}{5}{F}\rpunkt*[right]{3}{6}{5}{G}\rpunkt*[above left]{0}{3}{5}{H}\rpunkt*[above]{3}{3}{10}{S}\end{ksys3}}{\karo{4}}
-\fusshilfe{\mbox{2:~42,7°}}
+\fusshilfe{\gfuss{2}{42,7°}}
 \end{pfaufg}
 
 % ===================== Stufe: Winkel zwischen Ebenen gesucht =====================
@@ -111,19 +116,19 @@ Ein Kirchturmdach steht auf dem Quadrat ABCD mit $A(0 \mid 0 \mid 0)$, $B(6 \mid
 \begin{pfaufg}{GK~’25\\B3c}{3.}{}
 Gegeben ist die Pyramide ABCDS mit $A(0 \mid 0 \mid 0)$, $B(3 \mid 3 \mid 0)$, $C(0 \mid 8 \mid 0)$, $D(-3 \mid 3 \mid 0)$ und $S(0 \mid 0 \mid 6)$; ihre Grundfläche ABCD ist ein Drachenviereck. Die Seitenfläche BCS liegt in der Ebene $E\colon 5x + 3y + 4z = 24$. Bestimme die Größe des Winkels zwischen $E$ und der xy-Ebene.
 \karo{3}
-\fusshilfe{\mbox{3:~55,6°}}
+\fusshilfe{\gfuss{3}{55,6°}}
 \end{pfaufg}
 % 2023-bebb-gk-B3e-m1 (Original 2023-bebb-gk-B3e, Schwere I, rang 4; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’23\\B3e}{4.}{}
 Die Punkte $A(6 \mid 0 \mid 0)$, $B(0 \mid 6 \mid 0)$ und $C(0 \mid 0 \mid 6)$ liegen in der Ebene $L_1\colon x + y + z = 6$, die Punkte $D(3{,}5 \mid 0 \mid 0)$, $E(0 \mid 3{,}5 \mid 0)$ und $F(0 \mid 0 \mid 3{,}5)$ in der Ebene $L_2\colon 2x + 2y + 2z = 7$. Sie sind die Ecken des Körpers ABCDEF. Bestimme die Größe des Winkels, den $L_2$ mit der xy-Ebene einschließt.
 \karo{3}
-\fusshilfe{\mbox{4:~54,7°}}
+\fusshilfe{\gfuss{4}{54,7°}}
 \end{pfaufg}
 % 2024-bebb-gk-B3e-m1 (Original 2024-bebb-gk-B3e, Schwere II, rang 5; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’24\\B3e}{5.}{}
 Gegeben ist die Pyramide ABCDS mit $A(0 \mid 0 \mid 0)$, $B(3 \mid 0 \mid 0)$, $C(3 \mid 3 \mid 0)$, $D(0 \mid 6 \mid 0)$ und $S(0 \mid 0 \mid 5)$. Die Seitenfläche CDS liegt in $E\colon 5x + 5y + 6z = 30$, die Seitenfläche ADS in der Ebene F. Berechne die Größe des Winkels zwischen $E$ und $F$.
 \karo{4}
-\fusshilfe{\mbox{5:~57,4°}}
+\fusshilfe{\gfuss{5}{57,4°}}
 \end{pfaufg}
 
 \pfblattende{10}{26 & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17}{B3b & B3c & B3e & B3e & B3f & B3d &  & B3.2c & B2.2c & }%

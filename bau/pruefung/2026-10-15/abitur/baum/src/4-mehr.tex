@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -91,62 +96,62 @@
 \begin{pfaufg}{IQB~’25\\A11a}{1.}{}
 In einem Computerspiel wird der Startpunkt A mit 30 \% zugewiesen, sonst B. Wer bei A startet, trifft mit 60 \% auf einen bestimmten Charakter. Bei 49 \% aller Spiele startet man bei B und trifft auf den Charakter. Stelle den Sachverhalt in einem beschrifteten Baumdiagramm dar.
 \karo{3}
-\fusshilfe{\mbox{1:~A 0,3: C 0,6, nicht C 0,4; 0,7, nicht C 0,3}}
+\fusshilfe{\gfuss{1}{A 0,3: C 0,6, nicht C 0,4; 0,7, nicht C 0,3}}
 \end{pfaufg}
 % 2020-be-gk-B4.1b-m1 (Schwere II, rang 12)
 \begin{pfaufg}{GK~’20\\B4.1b}{2.}{}
 Ein Würfel trägt auf zwei seiner sechs gleich wahrscheinlichen Seiten eine 6. Wer mit höchstens vier Würfen eine 6 wirft, darf anfangen. Erstelle ein Baumdiagramm und ermittle die Wahrscheinlichkeit, anfangen zu dürfen.
 \karo{3}
-\fusshilfe{\mbox{2:~0,802}}
+\fusshilfe{\gfuss{2}{0,802}}
 \end{pfaufg}
 % 2019-be-gk-B4.2a-m1 (Schwere I, rang 13)
 \begin{pfaufg}{GK~’19\\B4.2a}{3.}{}
 Zwei Personen würfeln mit einem fairen Würfel, erst die eine, dann die andere. Ist die erste Augenzahl kleiner als die zweite, bringt die erste Person den Müll hinunter, sonst die zweite. Bestimme die Wahrscheinlichkeit, dass die erste Person eine 3 würfelt und den Müll hinunterbringen muss.
 \karo{2}
-\fusshilfe{\mbox{3:~$\tfrac{1}{12}$}}
+\fusshilfe{\gfuss{3}{$\tfrac{1}{12}$}}
 \end{pfaufg}
 % 2021-be-gk-B4g-m1 (Schwere I, rang 14)
 \begin{pfaufg}{GK~’21\\B4g}{4.}{}
 Beim täglichen Start eines Spiels gibt es 10 Bonuspunkte mit 60 \%, 20 Bonuspunkte mit 30 \% und 50 Bonuspunkte mit 10 \%. Jemand startet an drei aufeinanderfolgenden Tagen. Bestimme die Wahrscheinlichkeit, von Tag zu Tag weniger Bonuspunkte zu erhalten.
 \karo{3}
-\fusshilfe{\mbox{4:~0,018}}
+\fusshilfe{\gfuss{4}{0,018}}
 \end{pfaufg}
 % 2021-iqb-ga-B1.1a-m1 (Schwere I, rang 15)
 \begin{pfaufg}{IQB~’21\\B1.1a}{5.}{}
 Unter jedem Deckel eines Joghurtbechers ist zufällig eines von acht Motiven, jedes mit gleicher Wahrscheinlichkeit. Drei Becher werden nacheinander geöffnet. Berechne die Wahrscheinlichkeit, dass nur im ersten und im dritten Becher das Motiv 1 ist.
 \karo{2}
-\fusshilfe{\mbox{5:~0,0137}}
+\fusshilfe{\gfuss{5}{0,0137}}
 \end{pfaufg}
 % 2020-be-gk-B4.2e-m1 (Schwere I, rang 16)
 \begin{pfaufg}{GK~’20\\B4.2e}{6.}{}
 In einem Betrieb ist ein Viertel der Beschäftigten weiblich ($w$). 4 \% der weiblichen und 12 \% der übrigen Beschäftigten sind unzufrieden ($u$). Im Baumdiagramm steht $x$ am Ast von $\overline{w}$ nach $\overline{u}$, $y$ am Ende des Pfads $w$, $u$. Ermittle $x$ und $y$.
 \par\smallskip\noindent\gpassend{\baumabi{w/{0,25}/{u/,\overline{u}/},\overline{w}//{u/,\overline{u}/{x}}}}\par
 \karo{3}
-\fusshilfe{\mbox{6:~0,88; 0,01}}
+\fusshilfe{\gfuss{6}{0,88; 0,01}}
 \end{pfaufg}
 % 2026-iqb-ga-A13a-m1 (Schwere II, rang 17)
 \begin{pfaufg}{IQB~’26\\A13a}{7.}{}
 Ein Versandhändler verschickt 50 \% seiner Sendungen mit dem Unternehmen A. 12 \% aller Sendungen werden mit A verschickt und verspätet zugestellt; von den übrigen Sendungen werden 25 \% verspätet zugestellt. Ermittle den Anteil $x$ der verspäteten unter den mit A verschickten Sendungen und weise nach, dass 12,5 \% aller Sendungen nicht mit A verschickt und verspätet zugestellt werden.
 \karo{3}
-\fusshilfe{\mbox{7:~0,24; 0,125}}
+\fusshilfe{\gfuss{7}{0,24; 0,125}}
 \end{pfaufg}
 % 2017-be-gk-B3.1c-m1 (Schwere I, rang 18)
 \begin{pfaufg}{GK~’17\\B3.1c}{8.}{}
 Ein Gerät wird in vier Werken hergestellt: Werk A liefert 20 \%, B 30 \%, C 10 \% und D 40 \% aller Geräte. Fehlerhaft sind in A 4 \%, in B 2 \%, in C 5 \% und in D 3 \% der dort hergestellten Geräte. Weise nach, dass 3,1 \% aller Geräte fehlerhaft sind.
 \karo{2}
-\fusshilfe{\mbox{8:~3,1 \%}}
+\fusshilfe{\gfuss{8}{3,1 \%}}
 \end{pfaufg}
 % 2021-be-gk-A1.7a-m1 (Schwere II, rang 19)
 \begin{pfaufg}{GK~’21\\A1.7a}{9.}{}
 In einer Urne liegen 7 weiße und 3 schwarze Kugeln. Zehn Bewerber ziehen nacheinander je eine Kugel ohne Zurücklegen; wer weiß zieht, ist ausgewählt. Zeige, dass der zweite Bewerber mit 70 \% ausgewählt wird.
 \karo{2}
-\fusshilfe{\mbox{9:~70 \%}}
+\fusshilfe{\gfuss{9}{70 \%}}
 \end{pfaufg}
 % 2021-be-gk-B4h-m1 (Schwere III, rang 20)
 \begin{pfaufg}{GK~’21\\B4h}{10.}{}
 Beim täglichen Start eines Spiels gibt es 10 Bonuspunkte mit 60 \%, 20 Bonuspunkte mit 30 \% und 50 Bonuspunkte mit 10 \%. Jemand startet an vier Tagen. Bestimme die Wahrscheinlichkeit, insgesamt 80 Bonuspunkte zu erhalten.
 \karo{3}
-\fusshilfe{\mbox{10:~0,0945}}
+\fusshilfe{\gfuss{10}{0,0945}}
 \end{pfaufg}
 \par\vfill\noindent{\scriptsize\color{mbgrau}Originale: IQB GK 2025 \pkt{} A11a, Abi GK 2020 \pkt{} B4.1b, Abi GK 2019 \pkt{} B4.2a, Abi GK 2021 \pkt{} B4g, IQB GK 2021 \pkt{} B1.1a, Abi GK 2020 \pkt{} B4.2e, IQB GK 2026 \pkt{} A13a, Abi GK 2017 \pkt{} B3.1c, Abi GK 2021 \pkt{} A1.7a, Abi GK 2021 \pkt{} B4h\par}
 \end{document}

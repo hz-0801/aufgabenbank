@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -94,31 +99,31 @@
 \begin{pfaufg}{GK~’24\\A1.7b}{1.}{\pfohnetr}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = e^{0{,}25x} - e$; ihr Graph ist $G$. $G$ wird entlang der $x$-Achse so verschoben, dass er durch den Koordinatenursprung verläuft; es entsteht der Graph einer Funktion $h$. Ermittle eine Gleichung von $h$.
 \karo{2}
-\fusshilfe{\mbox{1:~4; $e^{0{,}25x + 1}$ $-$ e}}
+\fusshilfe{\gfuss{1}{4; $e^{0{,}25x + 1}$ $-$ e}}
 \end{pfaufg}
 % 2023-bebb-gk-B2.1i-m1 (Original 2023-bebb-gk-B2.1i, Schwere II, rang 2; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’23\\B2.1i}{2.}{}
-Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = 0{,}5 \cdot (x^2 - 9) \cdot e^x$; ihr Graph ist $G$. Die Abbildung zeigt die Draufsicht einer symmetrischen Tischplatte. Ihre Randlinie im III. Quadranten ist der dort verlaufende Teil von $G$; die Randlinien im I., II. und IV. Quadranten sind Teile der Graphen der Funktionen $k$, $h$ und $g$. Gib Funktionsgleichungen von zwei dieser drei Funktionen an.
-\gzwei{\begin{abiksys}[xmin=-5,xmax=5,ymin=-5,ymax=5,le=0.45]\funktionab[-1.2]{0.5*(\x^2-9)*exp(\x)}{G}{-3}{0}\funktionab{0.5*(\x^2-9)*exp(-\x)}{}{0}{3}\funktionab{-0.5*(\x^2-9)*exp(\x)}{}{-3}{0}\funktionab{-0.5*(\x^2-9)*exp(-\x)}{}{0}{3}\end{abiksys}}{\karo{2}}
-\fusshilfe{\mbox{2:~0,5 · (x² $-$ 9) · $e^{-x}$; $-$0,5 · (x² $-$ 9) · $e^x$; $-$0,5 · (x² $-$ 9) · $e^{-x}$}}
+Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = \tfrac{1}{3}(x^2 - 9) \cdot e^{\tfrac{x}{2}}$; ihr Graph ist $G$. Die Abbildung zeigt die Draufsicht einer symmetrischen Tischplatte. Ihre Randlinie im III. Quadranten ist der dort verlaufende Teil von $G$; die Randlinien im I., II. und IV. Quadranten sind Teile der Graphen der Funktionen $k$, $h$ und $g$. Gib Funktionsgleichungen von zwei dieser drei Funktionen an.
+\gzwei{\begin{abiksys}[xmin=-5,xmax=5,ymin=-5,ymax=5,le=0.45]\funktionab[-1.2]{(\x^2-9)*exp(\x/2)/3}{G}{-3}{0}\funktionab{(\x^2-9)*exp(-\x/2)/3}{}{0}{3}\funktionab{-(\x^2-9)*exp(\x/2)/3}{}{-3}{0}\funktionab{-(\x^2-9)*exp(-\x/2)/3}{}{0}{3}\end{abiksys}}{\karo{2}}
+\fusshilfe{\gfuss{2}{$\tfrac{1}{3}$ · (x² $-$ 9) · $e^{-\tfrac{x}{2}}$; $-\tfrac{1}{3}$ · (x² $-$ 9) · $e^{\tfrac{x}{2}}$; $-\tfrac{1}{3}$ · (x² $-$ 9) · $e^{-\tfrac{x}{2}}$}}
 \end{pfaufg}
 % 2024-bebb-gk-B2.1g-m1 (Original 2024-bebb-gk-B2.1g, Schwere II, rang 3; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’24\\B2.1g}{3.}{}
 Ein Schrankknauf entsteht durch Rotation des Graphen von $f$ mit $f(x) = (x - 3) \cdot e^{-\tfrac{x}{3} + 2}$ um die $x$-Achse. Die Abbildung zeigt seinen Querschnitt für $3 \le x \le 12$; er wird von den Graphen von $f$ und $g$ begrenzt, wobei der Graph von $g$ durch Spiegelung des Graphen von $f$ an der $x$-Achse entsteht. 1 LE entspricht 0,5 cm; der Sockel liegt bei $x = 12$. Gib eine Funktionsgleichung von $g$ an. Bestimme den Durchmesser des Sockels in mm.
 \gzwei{\begin{abiksys}[xmin=0,xmax=13,ymin=-4,ymax=4,le=0.45]\funktionab[5]{(\x-3)*exp(-\x/3+2)}{G_f}{3}{12}\funktionab{-(\x-3)*exp(-\x/3+2)}{}{3}{12}\draw[line width=0.6pt] (12,-1.218) -- (12,1.218) node[above left,font=\small] {Sockel};\fill (3,0) circle (1.6pt) node[above left] {$S$};\end{abiksys}}{\karo{2}}
-\fusshilfe{\mbox{3:~$-$(x $-$ 3) · $e^{-\tfrac{x}{3} + 2}$; 12,2 mm}}
+\fusshilfe{\gfuss{3}{$-$(x $-$ 3) · $e^{-\tfrac{x}{3} + 2}$; 12,2 mm}}
 \end{pfaufg}
 % 2025-bebb-gk-B2.1c-m1 (Original 2025-bebb-gk-B2.1c, Schwere II, rang 4; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’25\\B2.1c}{4.}{}
 Für ein Windrad werden der Graph $G_f$ von $f$ mit $f(x) = \tfrac{1}{18}x^3 - \tfrac{3}{2}x$ und die Gerade $g$ mit $y = \tfrac{1}{2}x$ auf $[-6; 6]$ um $90^\circ$ gegen den Uhrzeigersinn um den Ursprung gedreht (Abbildung). Die gedrehte Gerade heißt $g^*$; $A(6 \mid 3)$ ist ein Schnittpunkt von $G_f$ und $g$. Begründe, dass $g^*(x) = -2x$ gilt. Gib die Koordinaten des gedrehten Punkts $A^*$ an.
 \gzwei{\begin{abiksys}[xmin=-7,xmax=7,ymin=-7,ymax=7,le=0.3,xstep=2,ystep=2]\draw[line width=0.6pt] (0,0) circle (6.708);\funktionab[4.5]{\x^3/18-1.5*\x}{G_f}{-6}{6}\draw[line width=0.8pt] (-6,-3) -- (6,3) node[right,font=\small] {$g$};\draw[dashed,line width=0.8pt] (3,-6) -- (-3,6) node[left,font=\small] {$g^*$};\fill (6,3) circle (1.6pt) node[below right,font=\small] {$A$};\fill (-6,-3) circle (1.6pt) node[above left,font=\small] {$B$};\end{abiksys}}{\karo{2}}
-\fusshilfe{\mbox{4:~$-$2x; A*($-$3|6)}}
+\fusshilfe{\gfuss{4}{$-$2x; A*($-$3|6)}}
 \end{pfaufg}
 % 2026-bb-gk-B2.1e-m1 (Original 2026-bb-gk-B2.1e, Schwere III, rang 5; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’26\\B2.1e}{5.}{}
 Gegeben ist die Gerade $t$ mit $t(x) = \tfrac{4}{3}x + \tfrac{8}{3}$. Die Gerade $h$ entsteht aus $t$ durch Verschiebung um $z$ in negative $y$-Richtung; der Abstand der beiden Geraden beträgt 4. Ermittle mithilfe der Abbildung (ohne Skalierung) einen Wert von $z$.
 \gzwei{\begin{abiksys}[xmin=-3,xmax=5,ymin=-6,ymax=6,le=0.4,ohnezahlen,ohnegitter]\funktion[4]{4/3*\x+8/3}{t}\funktion[4.4]{4/3*\x-4}{h}\draw[line width=0.5pt] (0,2.667) -- (3.2,0.267);\draw[mbgrau,line width=0.5pt] (2.84,0.537) -- (3.11,0.897) -- (3.47,0.627);\end{abiksys}}{\karo{2}}
-\fusshilfe{\mbox{5:~3 nach rechts, 4 nach oben, schräge Seite 5; 5 : 3; 6,67}}
+\fusshilfe{\gfuss{5}{3 nach rechts, 4 nach oben, schräge Seite 5; 5 : 3; 6,67}}
 \end{pfaufg}
 
 % ===================== Stufe: Abbildung gesucht =====================
@@ -126,15 +131,15 @@ Gegeben ist die Gerade $t$ mit $t(x) = \tfrac{4}{3}x + \tfrac{8}{3}$. Die Gerade
 % kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
 % 2026-bb-gk-B2.2f-m1 (Original 2026-bb-gk-B2.2f, Schwere II, rang 6; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’26\\B2.2f}{6.}{}
-Gegeben ist die Funktion $f$ mit $f(x) = 2e^x + 3$. Der Graph der Funktion $k$ mit $k(x) = 30e^{-\tfrac{x}{300}} + 45$ entsteht aus dem Graphen von $f$ durch Streckung in $y$-Richtung mit dem Faktor 15 und weitere Veränderungen, die durch den Faktor $-\tfrac{1}{300}$ im Exponenten entstehen. Gib diese weiteren Veränderungen an.
+Gegeben ist die Funktion $f$ mit $f(x) = 2e^x + 3$. Der Graph der Funktion $k$ mit $k(x) = 55e^{-\tfrac{x}{300}} + 18$ entsteht aus dem Graphen von $f$ durch eine Streckung und eine Verschiebung in $y$-Richtung und weitere Veränderungen, die durch den Faktor $-\tfrac{1}{300}$ im Exponenten entstehen. Gib diese weiteren Veränderungen an.
 \karo{2}
-\fusshilfe{\mbox{6:~15 · f($-$x/300); Spiegelung an der y-Achse (Vorzeichen $-$); Streckung in x-Richtung mit dem Faktor 300}}
+\fusshilfe{\gfuss{6}{27,5 · f($-$x/300) $-$ 64,5; Spiegelung an der y-Achse (Vorzeichen $-$); Streckung in x-Richtung mit dem Faktor 300}}
 \end{pfaufg}
 % 2023-bebb-gk-B2.2j-m1 (Original 2023-bebb-gk-B2.2j, Schwere II, rang 7; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’23\\B2.2j}{7.}{}
-Gegeben ist die Funktion $f$ mit $f(x) = x^3 - 9x^2 + 24x - 16$. Die Funktion $h$ mit $h(x) = 4x^3 - 36x^2 + 96x + 20$ entsteht aus $f$ durch $h(x) = c \cdot (f(x) + d)$. Ermittle die Werte von $c$ und $d$ und beschreibe, wie der Graph von $h$ aus dem Graphen von $f$ entsteht.
+Gegeben ist die Funktion $f$ mit $f(x) = x^3 - 9x^2 + 24x - 16$. Die Funktion $h$ mit $h(x) = 10x^3 - 90x^2 + 240x + 20$ entsteht aus $f$ durch $h(x) = c \cdot (f(x) + d)$. Ermittle die Werte von $c$ und $d$ und beschreibe, wie der Graph von $h$ aus dem Graphen von $f$ entsteht.
 \karo{2}
-\fusshilfe{\mbox{7:~4; 21; Graph von f um 21 nach oben verschieben, dann in y-Richtung mit dem Faktor 4 strecken}}
+\fusshilfe{\gfuss{7}{10; 18; Graph von f um 18 nach oben verschieben, dann in y-Richtung mit dem Faktor 10 strecken}}
 \end{pfaufg}
 
 % ===================== Stufe: Aussage beurteilen =====================
@@ -144,13 +149,13 @@ Gegeben ist die Funktion $f$ mit $f(x) = x^3 - 9x^2 + 24x - 16$. Die Funktion $h
 \begin{pfaufg}{GK~’26\\A1.4b}{8.}{\pfohnetr}
 Gegeben ist $f$ mit $f(x) = 2\sin x$; zwei direkt aufeinanderfolgende Extrempunkte sind $A\left(\tfrac{\pi}{2} \mid 2\right)$ und $B\left(\tfrac{3\pi}{2} \mid -2\right)$ (Abbildung). Gegeben ist außerdem die in $\mathbb{R}$ definierte Funktion $g$ mit $g(x) = 3\sin\left(\tfrac{1}{2}x\right)$. Betrachtet wird die Strecke zwischen zwei direkt aufeinanderfolgenden Extrempunkten des Graphen von $g$. Untersuche, ob diese Strecke kürzer ist als die Strecke $AB$.
 \gzwei{\begin{abiksys}[xmin=0,xmax=9.6,ymin=-2.6,ymax=2.6,le=0.55,yle=0.55,ohnezahlen]\draw[mbterm,dashed,line width=0.8pt,domain=0:9.5,samples=100,smooth,variable=\u] plot (\u,{2*sin(deg(\u))});\draw[line width=0.8pt] (1.5708,2) -- (4.7124,-2) -- (7.854,2) -- cycle;\fill (1.5708,2) circle (1.6pt) node[above] {$A$};\fill (4.7124,-2) circle (1.6pt) node[below] {$B$};\fill (7.854,2) circle (1.6pt) node[above] {$C$};\end{abiksys}}{\karo{2}}
-\fusshilfe{\mbox{8:~Abstände wachsen; nein}}
+\fusshilfe{\gfuss{8}{Abstände wachsen; nein}}
 \end{pfaufg}
 % 2024-bebb-gk-A1.4b-m1 (Original 2024-bebb-gk-A1.4b, Schwere III, rang 9; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’24\\A1.4b}{9.}{\pfohnetr}
 Gegeben sind die in $\mathbb{R}$ definierten Funktionen $g$ mit $g(x) = 3 \cdot e^x - 3$ und $h$ mit $h(x) = e^x + 2$; die Abbildung zeigt ihre Graphen. Es gilt $g'(0) = 3$. Beurteile die Aussage: Es gibt eine Verschiebung in $y$-Richtung, durch die der Graph von $h$ aus dem Graphen von $g$ erzeugt werden kann.
 \gzwei{\begin{abiksys}[xmin=-3,xmax=2,ymin=-3.5,ymax=5,le=0.8,yle=0.5]\funktion[1]{3*exp(\x)-3}{g}\funktion[-2]{exp(\x)+2}{h}\end{abiksys}}{\karo{2}}
-\fusshilfe{\mbox{9:~falsch; die Steigungen an derselben Stelle sind verschieden}}
+\fusshilfe{\gfuss{9}{falsch; die Steigungen an derselben Stelle sind verschieden}}
 \end{pfaufg}
 
 \pfblattende{10}{26 & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17}{A1.4b B2.1e B2.2f & B2.1c & A1.4b A1.7b B2.1g & B2.1i B2.2j &  &  &  & B2.2h &  & }%

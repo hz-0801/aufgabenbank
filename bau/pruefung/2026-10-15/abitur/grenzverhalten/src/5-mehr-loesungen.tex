@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -87,7 +92,7 @@
 \pflaufkopf[Abitur GK \pkt{} mehr]{Grenzverhalten und Symmetrie \pkt{} Lösungen}{AA10}\pfseitevon
 \pfheftkopf{Grenzverhalten und Symmetrie}{Lösungen \pkt{} mehr}
 \begin{pfloesungb}{}
-\lzb{1.}{}{f(x) $\to$ 0; Annäherung von oben}{$e^{-0{,}25x}$ $\to$ 0 wirkt stärker als x + 2 $\to$ +∞ $\Rightarrow$ f(x) $\to$ 0; f(x) > 0 für x > $-$2 $\Rightarrow$ Annäherung von oben}
+\lzb{1.}{}{f(x) $\to$ 0; Annäherung von oben}{$e^{-\tfrac{x}{3}}$ $\to$ 0 wirkt stärker als x + 1 $\to$ +∞ $\Rightarrow$ f(x) $\to$ 0; f(x) > 0 für x > $-$1 $\Rightarrow$ Annäherung von oben}
 \end{pfloesungb}
 \begin{pfloesungb}{}
 \lzb{2.}{}{f(x) $\to$ 0; f(x) $\to$ $-$∞}{für x $\to$ +∞: $e^{-x}$ $\to$ 0 wirkt stärker $\Rightarrow$ f(x) $\to$ 0; für x $\to$ $-$∞: 8x $-$ 2 $\to$ $-$∞ und $e^{-x}$ $\to$ +∞ $\Rightarrow$ f(x) $\to$ $-$∞}

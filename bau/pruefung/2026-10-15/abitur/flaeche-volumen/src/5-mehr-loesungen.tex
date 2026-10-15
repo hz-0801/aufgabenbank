@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -87,15 +92,15 @@
 \pflaufkopf[Abitur GK \pkt{} mehr]{Fläche und Volumen \pkt{} Lösungen}{AG80}\pfseitevon
 \pfheftkopf{Fläche und Volumen}{Lösungen \pkt{} mehr}
 \begin{pfloesungb}{}
-\lzb{1.}{}{Folie = 60 cm²}{Deckelhöhe 9 $-$ 5 = 4 cm; Seitenhöhe √(3² + 4²) = 5 cm $\Rightarrow$ Folie = 4 · ½ · 6 · 5 = 60 cm²}
+\lzb{1.}{}{Folie = 60 cm²}{Deckelhöhe 9 $-$ 5 = 4 cm; Seitenhöhe $\sqrt{3² + 4²}$ = 5 cm $\Rightarrow$ Folie = 4 · $\tfrac{1}{2}$ · 6 · 5 = 60 cm²}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{2.}{}{A $\approx$ 31,18}{Mitten M$_1$(4|0|4) von IL, M$_2$(1|6|1) von JK $\Rightarrow$ h = |M$_1$M$_2$| = 3√6 $\Rightarrow$ A = ½ · (4√2 + 2√2) · 3√6 = 18√3 $\approx$ 31,18}
+\lzb{2.}{}{A $\approx$ 31,18}{Mitten M$_1$(4|0|4) von IL, M$_2$(1|6|1) von JK $\Rightarrow$ h = |M$_1$M$_2$| = 3$\sqrt{6}$ $\Rightarrow$ A = $\tfrac{1}{2}$ · (4$\sqrt{2}$ + 2$\sqrt{2}$) · 3$\sqrt{6}$ = 18$\sqrt{3}$ $\approx$ 31,18}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{3.}{}{V = 20}{G = ½ · 4 · 6 = 12 (rechter Winkel bei O); h = 5 $\Rightarrow$ V = $\tfrac{1}{3}$ · 12 · 5 = 20}
+\lzb{3.}{}{V = 4}{G = $\tfrac{1}{2}$ · 2 · 4 = 4 (rechter Winkel bei O); h = 3 $\Rightarrow$ V = $\tfrac{1}{3}$ · 4 · 3 = 4}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{4.}{}{um 50 \% größer}{V\_Prisma : V\_Pyramide = (½ · |AB|² · |DE|) : ($\tfrac{1}{3}$ · |AB|² · |DE|) = 3 : 2 $\Rightarrow$ um 50 \% größer}
+\lzb{4.}{}{um 50 \% größer}{V\_Prisma : V\_Pyramide = ($\tfrac{1}{2}$ · |AB|² · |DE|) : ($\tfrac{1}{3}$ · |AB|² · |DE|) = 3 : 2 $\Rightarrow$ um 50 \% größer}
 \end{pfloesungb}
 \end{document}

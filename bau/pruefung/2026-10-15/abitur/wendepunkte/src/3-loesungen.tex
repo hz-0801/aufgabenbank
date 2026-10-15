@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -111,6 +116,6 @@
 \lzb{5.}{}{f$''$ = (x/9 $-$ 1) · $e^{-\tfrac{x}{3} + 2}$; f$''$(9) = 0 und f$''$ wechselt bei 9 das Vorzeichen (f$''$(8) < 0, f$''$(10) > 0); Wendepunkt (9|6/e)}{Produktregel: f$''$(x) = $-\tfrac{1}{3}e^{-\tfrac{x}{3} + 2} + \left(2 - \tfrac{x}{3}\right) \cdot \left(-\tfrac{1}{3}\right) e^{-\tfrac{x}{3} + 2}$ = (x/9 $-$ 1) · $e^{-\tfrac{x}{3} + 2}$; f$''$(9) = 0 und f$''$ wechselt bei 9 das Vorzeichen (f$''$(8) < 0, f$''$(10) > 0); f(9) = 6 · $e^{-1}$ $\approx$ 2,21 $\Rightarrow$ Wendepunkt (9|6/e)}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{6.}{}{f$''$ = (0,5x² + 2x $-$ 3,5) · $e^x$; x = $-$2 ± √11; W$_1$($-$5,32|0,05), W$_2$(1,32|$-$13,55)}{f$''$(x) = (x + 1) · $e^x$ + (0,5x² + x $-$ 4,5) · $e^x$ = (0,5x² + 2x $-$ 3,5) · $e^x$; f$''$(x) = 0 $\Rightarrow$ x² + 4x $-$ 7 = 0 $\Rightarrow$ x = $-$2 ± √11; W$_1$($-$5,32|0,05), W$_2$(1,32|$-$13,55)}
+\lzb{6.}{}{f$''$ = ($\tfrac{1}{12}$ · x² + $\tfrac{2}{3}$x $-$ $\tfrac{1}{12}$) · $e^{\tfrac{x}{2}}$; x = $-$4 $\pm$ $\sqrt{17}$; W$_1$($-$8,12|0,33), W$_2$(0,12|$-$3,19)}{f$''$(x) = ($\tfrac{1}{3}$x + $\tfrac{2}{3}$) · $e^{\tfrac{x}{2}}$ + $\tfrac{1}{2}$ · ($\tfrac{1}{6}$x² + $\tfrac{2}{3}$x $-$ $\tfrac{3}{2}$) · $e^{\tfrac{x}{2}}$ = ($\tfrac{1}{12}$ · x² + $\tfrac{2}{3}$x $-$ $\tfrac{1}{12}$) · $e^{\tfrac{x}{2}}$; f''(x) = 0 $\Rightarrow$ x² + 8x $-$ 1 = 0 $\Rightarrow$ x = $-$4 $\pm$ $\sqrt{17}$; W$_1$($-$8,12|0,33), W$_2$(0,12|$-$3,19)}
 \end{pfloesungb}
 \end{document}

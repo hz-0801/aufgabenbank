@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -94,20 +99,20 @@
 \begin{pfaufg}{GK~’22\\B2.1j}{1.}{}
 Ein Tauchroboter bewegt sich nur senkrecht. Sein Abstand zur Wasseroberfläche in Metern wird für $0 \le t \le 36$ beschrieben durch $h(t) = \tfrac{1}{8}t^3 - 9t^2 + 162t$; $t$ ist die Zeit in Minuten. Die Abbildung zeigt den Graphen von $h$. Weise nach, dass der Roboter nach 12 Minuten den größten Abstand zur Wasseroberfläche hat und dass dieser 864 m beträgt.
 \gzwei{\begin{abiksys}[xmin=0,xmax=37,ymin=0,ymax=1000,le=0.2,yle=0.005,xstep=6,ystep=200,xlabel=$t$,ylabel=$h(t)$]\funktion[30]{\x*(\x-36)^2/8}{h}\end{abiksys}}{\karo{4}}
-\fusshilfe{\mbox{1:~$\tfrac{3}{4}$ t $-$ 18; Maximum; 864 m}}
+\fusshilfe{\gfuss{1}{$\tfrac{3}{4}$ t $-$ 18; Maximum; 864 m}}
 \end{pfaufg}
 % 2023-bebb-gk-B2.1c-m1 (Original 2023-bebb-gk-B2.1c, Schwere II, rang 2; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’23\\B2.1c}{2.}{}
-Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = 0{,}5 \cdot (x^2 - 9) \cdot e^x$; ihr Graph ist $G$. Die erste Ableitung ist $f'(x) = (0{,}5x^2 + x - 4{,}5) \cdot e^x$. Zeige, dass $G$ an der Stelle $-1 + \sqrt{10}$ eine waagerechte Tangente hat. Berechne den Funktionswert an dieser Stelle.
+Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = \tfrac{1}{3}(x^2 - 9) \cdot e^{\tfrac{x}{2}}$; ihr Graph ist $G$. Die erste Ableitung ist $f'(x) = \left(\tfrac{1}{6}x^2 + \tfrac{2}{3}x - \tfrac{3}{2}\right) \cdot e^{\tfrac{x}{2}}$. Zeige, dass $G$ an der Stelle $-2 + \sqrt{13}$ eine waagerechte Tangente hat. Berechne den Funktionswert an dieser Stelle.
 \karo{4}
-\fusshilfe{\mbox{2:~waagerechte Tangente; $-$18,79}}
+\fusshilfe{\gfuss{2}{waagerechte Tangente; $-$4,78}}
 \end{pfaufg}
 % 2022-bebb-gk-B2.1a-m2 (Original 2022-bebb-gk-B2.1a, Schwere II, rang 3; herausgelöste Fassung: keine)
 % Zweitthema ausgeblendet (Spalten <feld>_einheit, pruefheft-p.md v0.9)
 \begin{pfaufg}{GK~’22\\B2.1a}{3.}{}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = (x + 3) \cdot e^{-x}$ und ihrer Ableitung $f'(x) = -(x + 2) \cdot e^{-x}$. Begründe, dass der Graph von $f$ einen Hochpunkt hat, und gib seine Koordinaten an.
 \karo{4}
-\fusshilfe{\mbox{3:~$-$2; ($-$2|7,39)}}
+\fusshilfe{\gfuss{3}{$-$2; ($-$2|7,39)}}
 \end{pfaufg}
 
 % ===================== Stufe: Extrempunkte gesucht =====================
@@ -115,33 +120,33 @@ Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = (x + 3) \cdo
 % kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
 % 2023-bebb-gk-A1.3a-m1 (Original 2023-bebb-gk-A1.3a, Schwere I, rang 4; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’23\\A1.3a}{4.}{\pfohnetr}
-Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = x^3 + 3x^2$; sie hat genau zwei Extremstellen. Berechne diese beiden Extremstellen.
+Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = x^3 - 6x^2$; sie hat genau zwei Extremstellen. Berechne diese beiden Extremstellen.
 \karo{3}
-\fusshilfe{\mbox{4:~Extremstellen $-$2 und 0}}
+\fusshilfe{\gfuss{4}{Extremstellen 0 und 4}}
 \end{pfaufg}
 % 2022-bebb-gk-B2.2b-m1 (Original 2022-bebb-gk-B2.2b, Schwere II, rang 5; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’22\\B2.2b}{5.}{}
-Gegeben ist die Funktion $f$ mit $f(x) = -\tfrac{1}{3}x^3 + x^2$, $x \in \mathbb{R}$. Ermittle die Lage und die Art aller Extrempunkte des Graphen von $f$.
+Gegeben ist die Funktion $f$ mit $f(x) = -\tfrac{1}{18}x^3 + \tfrac{1}{3}x^2$, $x \in \mathbb{R}$. Ermittle die Lage und die Art aller Extrempunkte des Graphen von $f$.
 \karo{4}
-\fusshilfe{\mbox{5:~2; Tiefpunkt (0|0); Hochpunkt (2|$\tfrac{4}{3}$)}}
+\fusshilfe{\gfuss{5}{4; Tiefpunkt (0|0); Hochpunkt (4|$\tfrac{16}{9}$)}}
 \end{pfaufg}
 % 2023-bebb-gk-B2.2b-m1 (Original 2023-bebb-gk-B2.2b, Schwere II, rang 6; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’23\\B2.2b}{6.}{}
 Gegeben ist die Funktion $f$ mit $f(x) = x^3 - 9x^2 + 24x - 16$, $x \in \mathbb{R}$. Der Term lässt sich auch schreiben als $f(x) = (x - 4) \cdot (x^2 - 5x + 4)$. Bestimme die Lage und die Art aller Extrempunkte des Graphen von $f$.
 \karo{4}
-\fusshilfe{\mbox{6:~4; Hochpunkt (2|4); Tiefpunkt (4|0)}}
+\fusshilfe{\gfuss{6}{4; Hochpunkt (2|4); Tiefpunkt (4|0)}}
 \end{pfaufg}
 % 2024-bebb-gk-B2.2c-m1 (Original 2024-bebb-gk-B2.2c, Schwere II, rang 7; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’24\\B2.2c}{7.}{}
 Gegeben ist die Funktion $f$ mit $f(x) = 0{,}5x^4 - 3x^2 + 2{,}5$, $x \in \mathbb{R}$; ihr Graph ist $G_f$. Bestimme die Lage und die Art der Extrempunkte von $G_f$.
 \karo{4}
-\fusshilfe{\mbox{7:~±√3; Hochpunkt (0|2,5); Tiefpunkte ($-$√3|$-$2) und (√3|$-$2)}}
+\fusshilfe{\gfuss{7}{$\pm\sqrt{3}$; Hochpunkt (0|2,5); Tiefpunkte ($-\sqrt{3}$|$-$2) und ($\sqrt{3}$|$-$2)}}
 \end{pfaufg}
 % 2025-bebb-gk-B2.1b-m1 (Original 2025-bebb-gk-B2.1b, Schwere II, rang 8; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’25\\B2.1b}{8.}{}
 Für ein Windrad wird die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = \tfrac{1}{18}x^3 - \tfrac{3}{2}x$ betrachtet; ihr Graph $G_f$ hat genau zwei Extrempunkte. Bestimme die Koordinaten der Extrempunkte. Zeige, dass die Gerade durch die beiden Extrempunkte die Winkelhalbierende des II. und IV. Quadranten ist.
 \karo{4}
-\fusshilfe{\mbox{8:~3; Hochpunkt ($-$3|3), Tiefpunkt (3|$-$3); $-$x, Winkelhalbierende des II. und IV. Quadranten}}
+\fusshilfe{\gfuss{8}{3; Hochpunkt ($-$3|3), Tiefpunkt (3|$-$3); $-$x, Winkelhalbierende des II. und IV. Quadranten}}
 \end{pfaufg}
 
 % ===================== Stufe: Hochpunkt mit e-Funktion gesucht =====================
@@ -151,13 +156,13 @@ Für ein Windrad wird die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = \t
 \begin{pfaufg}{GK~’25\\B2.2b}{9.}{}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = (3 - x) \cdot e^x$; die Abbildung zeigt ihren Graphen. Berechne die Koordinaten des Hochpunkts.
 \gzwei{\begin{abiksys}[xmin=-5,xmax=3.5,ymin=-1,ymax=8,le=0.8,yle=0.4,ystep=1]\funktion[1]{(3-\x)*exp(\x)}{G_f}\end{abiksys}}{\karo{4}}
-\fusshilfe{\mbox{9:~(2 $-$ x) · $e^{x}$; 2; (2|7,39)}}
+\fusshilfe{\gfuss{9}{(2 $-$ x) · $e^{x}$; 2; (2|7,39)}}
 \end{pfaufg}
 % 2024-bebb-gk-B2.1b-m1 (Original 2024-bebb-gk-B2.1b, Schwere II, rang 10; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’24\\B2.1b}{10.}{}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = (x - 3) \cdot e^{-\tfrac{x}{3} + 2}$ und ihrer Ableitung $f'(x) = \left(2 - \tfrac{x}{3}\right) \cdot e^{-\tfrac{x}{3} + 2}$. Die Abbildung zeigt $G_f$ und $G_{f'}$ ohne Skalierung. $G_f$ hat genau einen Hochpunkt. Bestimme seine Koordinaten.
 \gzwei{\begin{abiksys}[xmin=-1,xmax=10,ymin=-24,ymax=16,le=0.5,yle=0.06,ystep=5,ohnezahlen,ohnegitter]\funktion[1.5]{(\x-3)*exp(-\x/3+2)}{G_f}\funktion[1]{(2-\x/3)*exp(-\x/3+2)}{G_{f'}}\end{abiksys}}{\karo{4}}
-\fusshilfe{\mbox{10:~6; f$'$ wechselt bei 6 das Vorzeichen von + nach $-$; Hochpunkt (6|3)}}
+\fusshilfe{\gfuss{10}{6; f$'$ wechselt bei 6 das Vorzeichen von + nach $-$; Hochpunkt (6|3)}}
 \end{pfaufg}
 
 \pfblattende{10}{26 & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17}{ & B2.1b B2.2b & B2.1b B2.2c & A1.3a B2.1c B2.2b & B2.1a B2.1j B2.2b & A1.3a B2.1c B2.2d & B2.2c & B2.2b & B1.1c B1.2d & }%

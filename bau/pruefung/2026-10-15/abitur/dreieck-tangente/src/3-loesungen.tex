@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -103,7 +108,7 @@
 
 \Needspace*{0.16\textheight}\pfstufekopf{Normale begründen und deuten}{\gpunkte[24 23 22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-normale-begrunden-und-deuten) [@thispage /XYZ @xpos @ypos null]}
 \begin{pfloesungb}{}
-\lzb{5.}{a)}{Normale bei x $\approx$ $-$3,27; $\approx$ 1,6)}{Tangente schneidet die Achsen bei x $\approx$ $-$1,99 und y $\approx$ $-$3,00; Normale bei x $\approx$ 4,92 und y $\approx$ $-$3,27; beide Dreiecke rechtwinklig im Ursprung; Normale ⊥ Tangente $\Rightarrow$ Winkel der Tangente gegen die x-Achse = Winkel der Normalen gegen die y-Achse $\Rightarrow$ zwei gleiche Winkel $\Rightarrow$ ähnlich (Streckfaktor $\approx$ 1,6)}
+\lzb{5.}{a)}{Normale bei x $\approx$ $-$3,27; ähnlich (Streckfaktor $\approx$ 1,6)}{Tangente schneidet die Achsen bei x $\approx$ $-$1,99 und y $\approx$ $-$3,00; Normale bei x $\approx$ 4,92 und y $\approx$ $-$3,27; beide Dreiecke rechtwinklig im Ursprung; Normale senkrecht zur Tangente $\Rightarrow$ Winkel der Tangente gegen die x-Achse = Winkel der Normalen gegen die y-Achse $\Rightarrow$ zwei gleiche Winkel $\Rightarrow$ ähnlich (Streckfaktor $\approx$ 1,6)}
 \end{pfloesungb}
 \begin{pfloesungb}{}
 \lzb{}{b)}{die Tangente an G in a steht senkrecht auf der Tangente an den Graphen von f' in a}{f'(a) · f''(a) = $-$1 $\Rightarrow$ die Tangente an G in a steht senkrecht auf der Tangente an den Graphen von f' in a}
@@ -112,6 +117,6 @@
 \lzb{6.}{}{falsch; falsch}{falsch: stärkstes Gefälle an der Wendestelle, f'(9) = $-e^{ - 1}$; Steigung AB = 6$e^{ - 1}$/6 = $e^{ - 1}$; Produkt $-e^{ - 2}$ $\neq$ $-$1; falsch: f' hat bei 9 das Minimum $-e^{ - 1}$ $\Rightarrow$ y = $-e^{ - 1}$ berührt G\_f' in (9|$-e^{ - 1}$)}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{7.}{}{h'(x0) $\approx$ 0,85 und 3,15); Bohrung = Gerade mit Steigung $-$2 durch (x0|h(x0))}{Bohrung senkrecht zu g (Steigung $\tfrac{1}{2}$) $\Rightarrow$ Steigung $-$2; senkrecht zum oberen Rand $\Rightarrow$ dort Tangentensteigung $\tfrac{1}{2}$ $\Rightarrow$ h'(x0) = $\tfrac{1}{2}$ lösen (x0 = 2 ± $\tfrac{2}{3}$ $\sqrt{3}$ $\approx$ 0,85 und 3,15); Bohrung = Gerade mit Steigung $-$2 durch (x0|h(x0))}
+\lzb{7.}{}{h'(x0) = $\tfrac{1}{2}$ lösen (x0 = 2 ± $\tfrac{2}{3}$ $\sqrt{3}$ $\approx$ 0,85 und 3,15); Bohrung = Gerade mit Steigung $-$2 durch (x0|h(x0))}{Bohrung senkrecht zu g (Steigung $\tfrac{1}{2}$) $\Rightarrow$ Steigung $-$2; senkrecht zum oberen Rand $\Rightarrow$ dort Tangentensteigung $\tfrac{1}{2}$ $\Rightarrow$ h'(x0) = $\tfrac{1}{2}$ lösen (x0 = 2 ± $\tfrac{2}{3}$ $\sqrt{3}$ $\approx$ 0,85 und 3,15); Bohrung = Gerade mit Steigung $-$2 durch (x0|h(x0))}
 \end{pfloesungb}
 \end{document}

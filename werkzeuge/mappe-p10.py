@@ -147,7 +147,11 @@ def baue(teile, vorn, register, ziel_pdf):
         toc = ','.join(t['toc'])
         inc.append(r'\includepdf[pages=-,link,linkname=%s%s]{t%d.pdf}'
                    % (t['name'], (',addtotoc={' + toc + '}') if toc else '', i))
-    doc = (PRAEAMBEL + r'\begin{document}' + '\n' + vorn + '\n' + '\n'.join(inc) + '\n' + register
+    # 15.10.: Zeichen aus Stufennamen und Daten, die pdflatex nicht kennt (Mappe Abitur: „f′“, „⅙“)
+    uni = ''.join(r'\DeclareUnicodeCharacter{%s}{\texorpdfstring{\ensuremath{%s}}{%s}}' % (c, m, t) + '\n'
+                  for c, m, t in [('2032', "{}'", "'"), ('2033', "{}''", "''"), ('2153', r'\tfrac13', '1/3'),
+                                  ('2154', r'\tfrac23', '2/3'), ('2159', r'\tfrac16', '1/6')])
+    doc = (PRAEAMBEL + uni + r'\begin{document}' + '\n' + vorn + '\n' + '\n'.join(inc) + '\n' + register
            + '\n\\end{document}\n')
     open(os.path.join(tmp, 'm.tex'), 'w', encoding='utf-8').write(doc)
     for _ in range(2):

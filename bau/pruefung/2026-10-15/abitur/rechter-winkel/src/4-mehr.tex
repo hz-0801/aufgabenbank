@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -91,19 +96,19 @@
 \begin{pfaufg}{GK~’21\\B3a}{1.}{}
 Über dem Quadrat ABCD mit $A(0 \mid 0 \mid 0)$, $B(8 \mid 0 \mid 0)$, $C(8 \mid 8 \mid 0)$, $D(0 \mid 8 \mid 0)$ steht die Pyramide ABCDE mit $E(0 \mid 8 \mid 5)$. Zeige, dass das Dreieck BCE rechtwinklig ist.
 \karo{4}
-\fusshilfe{\mbox{1:~rechter Winkel bei C}}
+\fusshilfe{\gfuss{1}{rechter Winkel bei C}}
 \end{pfaufg}
 % 2018-be-gk-B2.1b-m1 (Schwere I, rang 11)
 \begin{pfaufg}{nach\\GK~’18\\B2.1b}{2.}{}
 Die Ebene $E\colon -12x + y = 0$ enthält die Streben einer Brücke; die Fahrbahn liegt in der xy-Ebene. Zeige, dass $E$ senkrecht auf der xy-Ebene steht.
 \karo{4}
-\fusshilfe{\mbox{2:~E senkrecht zur xy-Ebene}}
+\fusshilfe{\gfuss{2}{E senkrecht zur xy-Ebene}}
 \end{pfaufg}
 % 2020-be-gk-B3.1f-m1 (Schwere II, rang 12)
 \begin{pfaufg}{GK~’20\\B3.1f}{3.}{}
-Gegeben sind $A(4 \mid 0 \mid 0)$, $B(0 \mid 8 \mid 0)$ und $C(0 \mid 0 \mid 3)$. Auf der Geraden AB liegt der Punkt $P$ so, dass die Gerade PC senkrecht zur Geraden AB ist. Ermittle $P$.
+Gegeben sind $A(2 \mid 0 \mid 0)$, $B(0 \mid 4 \mid 0)$ und $C(0 \mid 0 \mid 3)$. Auf der Geraden AB liegt der Punkt $P$ so, dass die Gerade PC senkrecht zur Geraden AB ist. Ermittle $P$.
 \karo{6}
-\fusshilfe{\mbox{3:~P(3,2|1,6|0)}}
+\fusshilfe{\gfuss{3}{P(1,6|0,8|0)}}
 \end{pfaufg}
 \par\vfill\noindent{\scriptsize\color{mbgrau}Originale: Abi GK 2021 \pkt{} B3a, Abi GK 2018 \pkt{} B2.1b, Abi GK 2020 \pkt{} B3.1f\par}
 \end{document}

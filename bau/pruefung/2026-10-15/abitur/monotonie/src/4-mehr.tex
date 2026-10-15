@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -92,19 +97,19 @@
 Gegeben ist die Funktion $f$ mit $f(x) = (8x - 2) \cdot e^{-x}$, $x \in \mathbb{R}$; ihr Graph hat genau einen Extrempunkt, bei $x = 1{,}25$. Die Abbildung zeigt den Graphen von $f'$. Begründe mithilfe der Abbildung, dass der Extrempunkt ein Hochpunkt ist.
 \par\smallskip\noindent\gpassend{\begin{abiksys}[xmin=0,xmax=7,ymin=-3,ymax=11,le=0.7,yle=0.35,ystep=2]\funktion[1]{(10-8*\x)*exp(-\x)}{G_{f'}}\end{abiksys}}\par
 \karo{4}
-\fusshilfe{\mbox{1:~Hochpunkt}}
+\fusshilfe{\gfuss{1}{Hochpunkt}}
 \end{pfaufg}
 % 2026-iqb-ga-B1.1a-m1 (Schwere I, rang 9)
 \begin{pfaufg}{IQB~’26\\B1.1a}{2.}{}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = \tfrac{1}{2}x^3 - \tfrac{1}{2}$; ihr Graph ist $G$. Weise nach, dass $G$ monoton steigend ist.
 \karo{3}
-\fusshilfe{\mbox{2:~G ist monoton steigend}}
+\fusshilfe{\gfuss{2}{G ist monoton steigend}}
 \end{pfaufg}
 % 2025-iqb-ga-B1.1a-m1 (Schwere I, rang 10)
 \begin{pfaufg}{IQB~’25\\B1.1a}{3.}{}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = \tfrac{1}{3}x^3 - 3x + 2$. Berechne die Extremstellen von $f$ und gib das Monotonieverhalten von $f$ an.
 \karo{5}
-\fusshilfe{\mbox{3:~√3; f steigt für x $\le$ $-$√3, fällt für $-$√3 $\le$ x $\le$ √3, steigt für x $\ge$ √3}}
+\fusshilfe{\gfuss{3}{$\sqrt{3}$; f steigt für x $\le$ $-\sqrt{3{,}}$ fällt für $-\sqrt{3}$ $\le$ x $\le$ $\sqrt{3{,}}$ steigt für x $\ge$ $\sqrt{3}$}}
 \end{pfaufg}
 \par\vfill\noindent{\scriptsize\color{mbgrau}Originale: Abi GK 2020 \pkt{} B2.1d, IQB GK 2026 \pkt{} B1.1a, IQB GK 2025 \pkt{} B1.1a\par}
 \end{document}

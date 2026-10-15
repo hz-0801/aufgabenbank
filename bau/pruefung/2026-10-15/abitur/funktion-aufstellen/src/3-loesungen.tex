@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -89,7 +94,7 @@
 
 \Needspace*{0.16\textheight}\pfstufekopf{Funktionsgleichung gesucht}{\gpunkte[23 22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-funktionsgleichung-gesucht) [@thispage /XYZ @xpos @ypos null]}
 \begin{pfloesungb}{}
-\lzb{1.}{}{Steigung m = 1; = x $-$ 0,9}{Steigung m = (1,1 $-$ ($-$0,5))/(2 $-$ 0,4) = 1,6/1,6 = 1; g(2) = 2 $-$ 0,9 = 1,1 und g(0,4) = 0,4 $-$ 0,9 = $-$0,5 $\Rightarrow$ beide Punkte liegen auf g(x) = x $-$ 0,9}
+\lzb{1.}{}{Steigung m = $\tfrac{1}{2}$; = $\tfrac{1}{2}$ x $-$ 1}{Steigung m = (1 $-$ ($-$0,8))/(4 $-$ 0,4) = 1,8/3,6 = $\tfrac{1}{2}$; g(4) = 2 $-$ 1 = 1 und g(0,4) = 0,2 $-$ 1 = $-$0,8 $\Rightarrow$ beide Punkte liegen auf g(x) = $\tfrac{1}{2}$ x $-$ 1}
 \end{pfloesungb}
 \begin{pfloesungb}{}
 \lzb{2.}{}{c = 120; 108a + 12b = $-$120; k(x) = x³ $-$ 19x² + 120x + 20}{k(x) = ax³ + bx² + cx + d; I $\Rightarrow$ d = 20; II $\Rightarrow$ c = 120; k(6) = 272 $\Rightarrow$ 216a + 36b = $-$468; k$'$(6) = 0 $\Rightarrow$ 108a + 12b = $-$120; $\Rightarrow$ a = 1, b = $-$19 $\Rightarrow$ k(x) = x³ $-$ 19x² + 120x + 20}
@@ -100,9 +105,9 @@
 
 \Needspace*{0.16\textheight}\pfstufekopf{Zielfunktion aufstellen}{\gpunkte[24 22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-zielfunktion-aufstellen) [@thispage /XYZ @xpos @ypos null]}
 \begin{pfloesungb}{}
-\lzb{4.}{}{d(x) = 0,5x² $-$ 0,5x$^{4}$; x = ±1/√2; größte Differenz $\tfrac{1}{8}$}{d(x) = p(x) $-$ f(x) = 0,5x² $-$ 0,5x$^{4}$; d$'$(x) = x $-$ 2x³ = x(1 $-$ 2x²) = 0 $\Rightarrow$ x = 0 oder x = ±1/√2; d(0) = d(±1) = 0; d(±1/√2) = $\tfrac{1}{4}$ $-$ $\tfrac{1}{8}$ = $\tfrac{1}{8}$ $\Rightarrow$ größte Differenz $\tfrac{1}{8}$}
+\lzb{4.}{}{d(x) = 0,5x² $-$ 0,5x$^{4}$; x = $\pm$1/$\sqrt{2}$; größte Differenz $\tfrac{1}{8}$}{d(x) = p(x) $-$ f(x) = 0,5x² $-$ 0,5x$^{4}$; d'(x) = x $-$ 2x³ = x(1 $-$ 2x²) = 0 $\Rightarrow$ x = 0 oder x = $\pm$1/$\sqrt{2}$; d(0) = d($\pm$1) = 0; d($\pm$1/$\sqrt{2}$) = $\tfrac{1}{4}$ $-$ $\tfrac{1}{8}$ = $\tfrac{1}{8}$ $\Rightarrow$ größte Differenz $\tfrac{1}{8}$}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{5.}{}{A(u) = (u² + 3u) · $e^{-u}$; u $\approx$ 1,30; P(1,30|1,17)}{A(u) = u · f(u) = (u² + 3u) · $e^{-u}$; A$'$(u) = (2u + 3) · $e^{-u}$ $-$ (u² + 3u) · $e^{-u}$ = (3 $-$ u $-$ u²) · $e^{-u}$ = 0 $\Rightarrow$ u² + u $-$ 3 = 0 $\Rightarrow$ u = ($-$1 + √13)/2 $\approx$ 1,30; v = f(1,30) $\approx$ 1,17 $\Rightarrow$ P(1,30|1,17)}
+\lzb{5.}{}{A(u) = (u² + 3u) · $e^{-u}$; u $\approx$ 1,30; P(1,30|1,17)}{A(u) = u · f(u) = (u² + 3u) · $e^{-u}$; A$'$(u) = (2u + 3) · $e^{-u}$ $-$ (u² + 3u) · $e^{-u}$ = (3 $-$ u $-$ u²) · $e^{-u}$ = 0 $\Rightarrow$ u² + u $-$ 3 = 0 $\Rightarrow$ u = ($-$1 + $\sqrt{13}$)/2 $\approx$ 1,30; v = f(1,30) $\approx$ 1,17 $\Rightarrow$ P(1,30|1,17)}
 \end{pfloesungb}
 \end{document}

@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -91,19 +96,19 @@
 \begin{pfaufg}{GK~’21\\B2.2g}{1.}{}
 Der Querschnitt eines Flugzeugflügels wird durch die Graphen $G$ von $f$ mit $f(x) = \left(-\tfrac{1}{5}x^2 + 3x\right) \cdot e^{-0{,}2x}$ und $H$ von $h$ mit $h(x) = -x \cdot e^{-0{,}2x}$ zwischen ihren Schnittpunkten $S_1$ und $S_2$ beschrieben; 1 LE entspricht 1 dm. Die Länge des Flügels ist der waagerechte Abstand von $S_1$ und $S_2$. Weise nach, dass der Flügel 20 dm lang ist.
 \karo{6}
-\fusshilfe{\mbox{1:~20; 20 dm}}
+\fusshilfe{\gfuss{1}{20; 20 dm}}
 \end{pfaufg}
 % 2019-iqb-ga-A1.1a-m1 (Schwere I, rang 7)
 \begin{pfaufg}{IQB~’19\\A1.1a}{2.}{}
 Gegeben sind die in $\mathbb{R}$ definierten Funktionen $g$ mit $g(x) = x^2 - 5$ und $h$ mit $h(x) = -x^2 + 2x + 7$. Weise nach, dass sich die Graphen von $g$ und $h$ nur für $x = -2$ und $x = 3$ schneiden.
 \karo{6}
-\fusshilfe{\mbox{2:~3}}
+\fusshilfe{\gfuss{2}{3}}
 \end{pfaufg}
 % 2019-be-gk-B2.2g-m1 (Schwere II, rang 8)
 \begin{pfaufg}{GK~’19\\B2.2g}{3.}{}
 Bei erhöhter Wirkstoffmenge wird der Hormonspiegel in Prozent des Sollwerts beschrieben durch $h_k(t) = k \cdot t \cdot e^{-0{,}05t} + 40$, $t \ge 0$, $k \ge 0$; $t$ ist die Zeit in Tagen. Ermittle, ab welchem Wert von $k$ der Hormonspiegel am 60. Tag noch mindestens 80 \% beträgt.
 \karo{4}
-\fusshilfe{\mbox{3:~13,39}}
+\fusshilfe{\gfuss{3}{13,39}}
 \end{pfaufg}
 \par\vfill\noindent{\scriptsize\color{mbgrau}Originale: Abi GK 2021 \pkt{} B2.2g, IQB GK 2019 \pkt{} A1.1a, Abi GK 2019 \pkt{} B2.2g\par}
 \end{document}

@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -108,7 +113,7 @@
 
 \Needspace*{0.16\textheight}\pfstufekopf{Stammfunktion am Graphen lesen}{\gpunkte[26 24 23]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-stammfunktion-am-graphen-lesen) [@thispage /XYZ @xpos @ypos null]}
 \begin{pfloesungb}{}
-\lzb{6.}{}{Minimum bei $-$4}{f'(x) = x² · (x/4 + 1) < 0 für x < $-$4 und $\ge$ 0 für x > $-$4 (bei 0 kein Vorzeichenwechsel) $\Rightarrow$ jede Stammfunktion fällt bis $-$4 und steigt danach $\Rightarrow$ Minimum bei $-$4}
+\lzb{6.}{}{Minimum bei $-\tfrac{3}{2}$}{f'(x) = $\tfrac{4}{3}$ x² · (2x + 3) < 0 für x < $-\tfrac{3}{2}$ und $\ge$ 0 für x > $-\tfrac{3}{2}$ (bei 0 kein Vorzeichenwechsel) $\Rightarrow$ jede Stammfunktion fällt bis $-\tfrac{3}{2}$ und steigt danach $\Rightarrow$ Minimum bei $-\tfrac{3}{2}$}
 \end{pfloesungb}
 \begin{pfloesungb}{}
 \lzb{7.}{}{rechts immer flacher gegen etwa 8,5}{Graph durch (1|0), überall steigend (f > 0); links fast parallel zu y = x $-$ 1; steilster Anstieg bei x = 3 (Wendepunkt, F(3) $\approx$ 3,1); rechts immer flacher gegen etwa 8,5}

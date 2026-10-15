@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -91,19 +96,19 @@
 \begin{pfaufg}{nach\\GK~’18\\B2.2c}{1.}{}
 Eine Kletterwand liegt in der Ebene $L\colon 3x + 3y + 4z - 24 = 0$; der Untergrund ist die xy-Ebene, 1 LE entspricht 1 m. Bestimme die Größe des Winkels zwischen Kletterwand und Untergrund.
 \karo{3}
-\fusshilfe{\mbox{1:~46,7°}}
+\fusshilfe{\gfuss{1}{46,7°}}
 \end{pfaufg}
 % 2021-be-gk-B3d-m1 (Schwere I, rang 7)
 \begin{pfaufg}{GK~’21\\B3d}{2.}{}
 Die Seitenfläche BCE einer Pyramide liegt in der Ebene $L\colon 4x + 5z = 40$, die Grundfläche in der xy-Ebene. Berechne den Winkel zwischen Grundfläche und Seitenfläche BCE.
 \karo{3}
-\fusshilfe{\mbox{2:~38,7°}}
+\fusshilfe{\gfuss{2}{38,7°}}
 \end{pfaufg}
 % 2019-be-gk-B3.2c-m1 (Schwere I, rang 8)
 \begin{pfaufg}{GK~’19\\B3.2c}{3.}{}
 Die Punkte $I(6 \mid 0 \mid 2)$, $J(2 \mid 6 \mid 0)$, $K(0 \mid 6 \mid 2)$ und $L(2 \mid 0 \mid 6)$ bilden ein Trapez. Berechne die Größe des Innenwinkels bei I.
 \karo{4}
-\fusshilfe{\mbox{3:~79,1°}}
+\fusshilfe{\gfuss{3}{79,1°}}
 \end{pfaufg}
 \par\vfill\noindent{\scriptsize\color{mbgrau}Originale: Abi GK 2018 \pkt{} B2.2c, Abi GK 2021 \pkt{} B3d, Abi GK 2019 \pkt{} B3.2c\par}
 \end{document}

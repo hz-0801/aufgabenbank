@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -91,25 +96,25 @@
 \begin{pfaufg}{nach\\GK~’20\\B3.2a}{1.}{}
 Eine Lagerhalle hat die quadratische Grundfläche ABCD mit der Seitenlänge 8 m in der xy-Ebene, A im Ursprung, B auf der x-Achse, D auf der y-Achse; sie ist 5 m hoch, E, F, G, H liegen über A, B, C, D. Eine dreieckige Plane ist an $E(0 \mid 0 \mid 5)$, $K(1 \mid 8 \mid 5)$ und $L(8 \mid 0 \mid 4)$ befestigt; 1 LE entspricht 1 m. Gib die Koordinaten von H und G an. Untersuche, ob die Plane ein gleichschenkliges Dreieck ist.
 \karo{4}
-\fusshilfe{\mbox{1:~H(0|8|5), G(8|8|5); gleichschenklig mit Basis KL}}
+\fusshilfe{\gfuss{1}{H(0|8|5), G(8|8|5); gleichschenklig mit Basis KL}}
 \end{pfaufg}
 % 2020-be-gk-A1.4b-m1 (Schwere II, rang 11)
 \begin{pfaufg}{GK~’20\\A1.4b}{2.}{}
 Gegeben sind $A(6 \mid -2 \mid 4)$ und $B(2 \mid 1 \mid 4)$. Ermittle die Koordinaten eines Punkts $C$, so dass das Dreieck ABC gleichschenklig mit der Basis AB ist, den Flächeninhalt 15 hat und senkrecht zur xy-Ebene steht.
 \karo{7}
-\fusshilfe{\mbox{2:~C(4|$-$0,5|10) (oder (4|$-$0,5|$-$2))}}
+\fusshilfe{\gfuss{2}{C(4|$-$0,5|10) (oder (4|$-$0,5|$-$2))}}
 \end{pfaufg}
 % 2018-be-gk-B2.2b-m1 (Schwere I, rang 12)
 \begin{pfaufg}{nach\\GK~’18\\B2.2b}{3.}{}
 Eine Kletterwand hat die Eckpunkte $A(4 \mid 0 \mid 3)$, $B(0 \mid 4 \mid 3)$, $E(8 \mid 0 \mid 0)$ und $F(0 \mid 8 \mid 0)$; 1 LE entspricht 1 m. Zeige, dass die Kletterwand ein Trapez ist, in dem zwei gegenüberliegende Seiten gleich lang sind.
 \karo{5}
-\fusshilfe{\mbox{3:~Trapez; 5 m}}
+\fusshilfe{\gfuss{3}{Trapez; 5 m}}
 \end{pfaufg}
 % 2019-be-gk-B3.2b-m1 (Schwere II, rang 13)
 \begin{pfaufg}{GK~’19\\B3.2b}{4.}{}
 Ein Würfel hat die Kantenlänge 6 und liegt mit einer Ecke im Ursprung im ersten Oktanten. Die Punkte $I(6 \mid 0 \mid 2)$, $J(2 \mid 6 \mid 0)$, $K(0 \mid 6 \mid 2)$ und $L(2 \mid 0 \mid 6)$ liegen auf seinen Kanten. Begründe, dass IJKL ein Trapez mit zwei gleich langen Seiten ist. Weise nach, dass IL doppelt so lang ist wie JK.
 \karo{4}
-\fusshilfe{\mbox{4:~2 · |JK|; 2√14}}
+\fusshilfe{\gfuss{4}{2 · |JK|; 2$\sqrt{14}$}}
 \end{pfaufg}
 \par\vfill\noindent{\scriptsize\color{mbgrau}Originale: Abi GK 2020 \pkt{} B3.2a, Abi GK 2020 \pkt{} A1.4b, Abi GK 2018 \pkt{} B2.2b, Abi GK 2019 \pkt{} B3.2b\par}
 \end{document}

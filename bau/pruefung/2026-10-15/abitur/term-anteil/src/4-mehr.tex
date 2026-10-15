@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -91,31 +96,31 @@
 \begin{pfaufg}{IQB~’25\\A11b}{1.}{}
 In einem Computerspiel wird der Startpunkt A mit 30 \% zugewiesen, sonst B. Wer bei A startet, trifft mit 60 \% auf einen bestimmten Charakter; bei 49 \% aller Spiele startet man bei B und trifft auf ihn. Gib ein Ereignis an, dessen Wahrscheinlichkeit der Term $1 - (0{,}3 \cdot 0{,}6 + 0{,}49)$ angibt.
 \karo{2}
-\fusshilfe{\mbox{1:~Man trifft im Spiel nicht auf den Charakter (Wert 0,33)}}
+\fusshilfe{\gfuss{1}{Man trifft im Spiel nicht auf den Charakter (Wert 0,33)}}
 \end{pfaufg}
 % 2019-iqb-ga-B3.2a-m1 (Schwere II, rang 81)
 \begin{pfaufg}{IQB~’19\\B3.2a}{2.}{}
 In einer Urne liegen fünf Kugeln: zwei mit der Zahl 4, drei mit einer anderen Zahl. Gib ein Zufallsexperiment und ein Ereignis an, dessen Wahrscheinlichkeit der Term $1 - 0{,}4^3$ angibt.
 \karo{3}
-\fusshilfe{\mbox{2:~Ereignis: nicht jedes Mal die 4 (Wert 0,936)}}
+\fusshilfe{\gfuss{2}{Ereignis: nicht jedes Mal die 4 (Wert 0,936)}}
 \end{pfaufg}
 % 2021-be-gk-B4f-m1 (Schwere III, rang 82)
 \begin{pfaufg}{GK~’21\\B4f}{3.}{}
 Bei einem Spiel gibt es je Versuch mit 30 \% einen Stern; $X$ ist die Anzahl der Sterne bei zwölf Versuchen. Gib Werte für $a$ und $b$ an, sodass $1 - (a^{12} + 12 \cdot 0{,}3 \cdot a^b)$ eine Wahrscheinlichkeit im Sachzusammenhang ist, und beschreibe das Ereignis.
 \karo{3}
-\fusshilfe{\mbox{3:~0,915)}}
+\fusshilfe{\gfuss{3}{Ereignis: mindestens zwei Sterne bei zwölf Versuchen ($\approx$ 0,915)}}
 \end{pfaufg}
 % 2020-be-gk-B4.2g-m1 (Schwere II, rang 83)
 \begin{pfaufg}{GK~’20\\B4.2g}{4.}{}
 In einer Abteilung sind 5 \% der weiblichen und 10 \% der übrigen Beschäftigten unzufrieden. Der Anteil der unzufriedenen nicht weiblichen Beschäftigten ist dreimal so groß wie der der unzufriedenen weiblichen. Bestimme den Anteil der weiblichen Beschäftigten.
 \karo{4}
-\fusshilfe{\mbox{4:~0,4}}
+\fusshilfe{\gfuss{4}{0,4}}
 \end{pfaufg}
 % 2019-be-gk-B4.1e-m1 (Schwere III, rang 84)
 \begin{pfaufg}{GK~’19\\B4.1e}{5.}{}
 Der Anteil der Prüflinge, die beim ersten Mal bestehen, ist $q$. Wer nicht besteht, tritt ein zweites Mal an und besteht dann mit dem Anteil $\tfrac{q}{2}$. Insgesamt bestehen 84 \% spätestens beim zweiten Mal. Berechne $q$.
 \karo{4}
-\fusshilfe{\mbox{5:~2,255 entfällt)}}
+\fusshilfe{\gfuss{5}{0,745 (zweite Lösung $\approx$ 2,255 entfällt)}}
 \end{pfaufg}
 \par\vfill\noindent{\scriptsize\color{mbgrau}Originale: IQB GK 2025 \pkt{} A11b, IQB GK 2019 \pkt{} B3.2a, Abi GK 2021 \pkt{} B4f, Abi GK 2020 \pkt{} B4.2g, Abi GK 2019 \pkt{} B4.1e\par}
 \end{document}

@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -91,61 +96,61 @@
 \begin{pfaufg}{nach\\GK~’17\\B3.1f}{1.}{}
 In einem Werk sind 3 \% der hergestellten Smartphones fehlerhaft. Gegeben ist der Term $150 \cdot 0{,}97^s \cdot 0{,}03 + 0{,}97^{150}$. Gib einen Wert von $s$ an, für den der Term im Sachzusammenhang die Wahrscheinlichkeit eines Ereignisses angibt, und beschreibe dieses Ereignis.
 \karo{4}
-\fusshilfe{\mbox{1:~149; Ereignis: unter 150 zufällig ausgewählten Geräten ist höchstens eines fehlerhaft}}
+\fusshilfe{\gfuss{1}{149; Ereignis: unter 150 zufällig ausgewählten Geräten ist höchstens eines fehlerhaft}}
 \end{pfaufg}
 % 2019-be-gk-B4.2e-m1 (Schwere II, rang 7)
 \begin{pfaufg}{GK~’19\\B4.2e}{2.}{}
 Zwei Geschwister würfeln jeden Tag einmal mit je einem fairen Würfel. Ist die Augenzahl des älteren kleiner als die des jüngeren, bringt der ältere den Müll hinunter; das geschieht mit der Wahrscheinlichkeit $\tfrac{5}{12}$. $X$ ist die Anzahl der Tage, an denen der ältere den Müll hinunterbringt, in 24 Tagen. Gib die Bedeutung des Terms $\binom{24}{8} \cdot \left(\tfrac{5}{12}\right)^8 \cdot \left(\tfrac{7}{12}\right)^{16} + \binom{24}{9} \cdot \left(\tfrac{5}{12}\right)^9 \cdot \left(\tfrac{7}{12}\right)^{15} + \binom{24}{10} \cdot \left(\tfrac{5}{12}\right)^{10} \cdot \left(\tfrac{7}{12}\right)^{14}$ im Sachzusammenhang an.
 \karo{4}
-\fusshilfe{\mbox{2:~0,436; der ältere bringt in 24 Tagen mindestens 8-mal und höchstens 10-mal den Müll hinunter}}
+\fusshilfe{\gfuss{2}{0,436; der ältere bringt in 24 Tagen mindestens 8-mal und höchstens 10-mal den Müll hinunter}}
 \end{pfaufg}
 % 2020-be-gk-B4.2b-m1 (Schwere II, rang 8)
 \begin{pfaufg}{GK~’20\\B4.2b}{3.}{}
 In einem großen Unternehmen ist ein Drittel der Beschäftigten weiblich. Es werden 40 Beschäftigte zufällig ausgewählt; $X$ ist die Anzahl der weiblichen darunter. Gib die Bedeutung der Aussage $\binom{40}{12} \cdot \left(\tfrac{1}{3}\right)^{12} \cdot \left(\tfrac{2}{3}\right)^{28} + \binom{40}{13} \cdot \left(\tfrac{1}{3}\right)^{13} \cdot \left(\tfrac{2}{3}\right)^{27} \approx 0{,}256$ im Sachzusammenhang an.
 \karo{3}
-\fusshilfe{\mbox{3:~0,256; Die Wahrscheinlichkeit, dass unter den 40 genau 12 oder genau 13 weiblich sind, beträgt etwa 25,6 \%}}
+\fusshilfe{\gfuss{3}{0,256; Die Wahrscheinlichkeit, dass unter den 40 genau 12 oder genau 13 weiblich sind, beträgt etwa 25,6 \%}}
 \end{pfaufg}
 % 2018-be-gk-B3.2g-m1 (Schwere II, rang 9)
 \begin{pfaufg}{GK~’18\\B3.2g}{4.}{}
 Von 30 geprüften Bildschirmen sind 5 fehlerhaft. Aus diesen 30 werden nacheinander 8 zufällig ausgewählt, ohne sie zurückzulegen. Beurteile, ob die Anzahl der fehlerhaften Bildschirme unter den 8 ausgewählten binomialverteilt ist.
 \karo{3}
-\fusshilfe{\mbox{4:~keine Bernoulli-Kette}}
+\fusshilfe{\gfuss{4}{keine Bernoulli-Kette}}
 \end{pfaufg}
 % 2023-iqb-ga-B2.1a-m1 (Schwere I, rang 10)
 \begin{pfaufg}{IQB~’23\\B2.1a}{5.}{}
 Ein Würfel trägt auf zwei Seitenflächen die Zahl 5 und auf den übrigen vier Seitenflächen die Zahl 1. Er wird 24-mal geworfen; $X$ ist die Anzahl der Würfe mit einer 5. Begründe, dass $X$ binomialverteilt ist mit $p = \tfrac{1}{3}$.
 \karo{6}
-\fusshilfe{\mbox{5:~Bernoulli-Kette, also binomialverteilt}}
+\fusshilfe{\gfuss{5}{Bernoulli-Kette, also binomialverteilt}}
 \end{pfaufg}
 % 2020-iqb-ga-B2.1a-m1 (Schwere II, rang 11)
 \begin{pfaufg}{IQB~’20\\B2.1a}{6.}{}
 Ein Postunternehmen befördert jährlich etwa 50 Millionen Briefe und stellt 92 \% davon am ersten Werktag nach der Einlieferung zu. Für 1500 zufällig ausgewählte Briefe wird untersucht, ob sie am ersten Werktag zugestellt werden. Begründe, dass man die Anzahl der am ersten Werktag zugestellten Briefe mit der Binomialverteilung beschreiben kann.
 \karo{6}
-\fusshilfe{\mbox{6:~Binomialverteilung}}
+\fusshilfe{\gfuss{6}{Binomialverteilung}}
 \end{pfaufg}
 % 2021-iqb-ga-A2a-m1 (Schwere II, rang 12)
 \begin{pfaufg}{IQB~’21\\A2a}{7.}{}
 Die Zufallsgröße $X$ ist binomialverteilt mit $p = \tfrac{1}{3}$. Vervollständige die Gleichung $P(X = \square) = \binom{\square}{4} \cdot \left(\square\right)^3 \cdot \left(\tfrac{1}{3}\right)^4$.
 \karo{8}
-\fusshilfe{\mbox{7:~Kästchen der Reihe nach 4, 7 und $\tfrac{2}{3}$}}
+\fusshilfe{\gfuss{7}{Kästchen der Reihe nach 4, 7 und $\tfrac{2}{3}$}}
 \end{pfaufg}
 % 2024-iqb-ga-A12a-m1 (Schwere I, rang 13)
 \begin{pfaufg}{IQB~’24\\A12a}{8.}{}
 Ein Glücksrad hat gleich große Sektoren, 20 \% davon sind grün. Es wird zweimal gedreht. Weise nach, dass die Wahrscheinlichkeit dafür, genau einmal Grün zu erzielen, 32 \% beträgt.
 \karo{3}
-\fusshilfe{\mbox{8:~0,32}}
+\fusshilfe{\gfuss{8}{0,32}}
 \end{pfaufg}
 % 2026-iqb-ga-B2.1d-m1 (Schwere II, rang 14)
 \begin{pfaufg}{IQB~’26\\B2.1d}{9.}{}
 In einer Musik-Sammlung sind 28 \% der Lieder Hip-Hop-Songs. Es werden 25 Lieder zufällig ausgewählt; $X$ ist die Anzahl der Hip-Hop-Songs darunter. Gib die Bedeutung der Aussage $\sum_{k=0}^{9} \binom{25}{k} \cdot 0{,}28^k \cdot 0{,}72^{25-k} \approx 0{,}866$ im Sachzusammenhang an.
 \karo{4}
-\fusshilfe{\mbox{9:~0,866; Mit etwa 86,6 \% Wahrscheinlichkeit sind unter den 25 Liedern höchstens 9 Hip-Hop-Songs}}
+\fusshilfe{\gfuss{9}{0,866; Mit etwa 86,6 \% Wahrscheinlichkeit sind unter den 25 Liedern höchstens 9 Hip-Hop-Songs}}
 \end{pfaufg}
 % 2020-iqb-ga-A2b-m1 (Schwere III, rang 15)
 \begin{pfaufg}{IQB~’20\\A2b}{10.}{}
 Die Zufallsgröße $X$ ist binomialverteilt mit unbekanntem $n$ und $p = 0{,}25$. Formuliere eine Aufgabenstellung im Sachzusammenhang, die mit dem Ansatz $1 - 0{,}75^n < 0{,}5$ gelöst wird, und gib die Lösung an.
 \karo{5}
-\fusshilfe{\mbox{10:~z. B. Glücksrad mit Gewinn 25 \%: Wie oft darf man höchstens drehen, damit die Wahrscheinlichkeit für mindestens einen Gewinn unter 50 \% bleibt?; 2}}
+\fusshilfe{\gfuss{10}{z. B. Glücksrad mit Gewinn 25 \%: Wie oft darf man höchstens drehen, damit die Wahrscheinlichkeit für mindestens einen Gewinn unter 50 \% bleibt?; 2}}
 \end{pfaufg}
 \par\vfill\noindent{\scriptsize\color{mbgrau}Originale: Abi GK 2017 \pkt{} B3.1f, Abi GK 2019 \pkt{} B4.2e, Abi GK 2020 \pkt{} B4.2b, Abi GK 2018 \pkt{} B3.2g, IQB GK 2023 \pkt{} B2.1a, IQB GK 2020 \pkt{} B2.1a, IQB GK 2021 \pkt{} A2a, IQB GK 2024 \pkt{} A12a, IQB GK 2026 \pkt{} B2.1d, IQB GK 2020 \pkt{} A2b\par}
 \end{document}

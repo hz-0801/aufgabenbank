@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -91,25 +96,25 @@
 \begin{pfaufg}{GK~’19\\B2.2f}{1.}{}
 Der Hormonspiegel eines Patienten in Prozent des Sollwerts wird beschrieben durch $h(t) = 6t \cdot e^{-\tfrac{t}{20}} + 40$ mit $h'(t) = (6 - 0{,}3t) \cdot e^{-\tfrac{t}{20}}$; $t$ ist die Zeit in Tagen. Nach 60 Tagen wird das Pflaster entfernt; danach verläuft der Hormonspiegel entlang der Tangente $g$ an den Graphen von $h$ im Punkt $P(60 \mid h(60))$. Bestimme eine Gleichung von $g$. Ermittle, ab wann der Hormonspiegel nicht mehr über 40 \% liegt.
 \karo{7}
-\fusshilfe{\mbox{1:~$-$0,597t + 93,77; ab 90 Tagen}}
+\fusshilfe{\gfuss{1}{$-$0,597t + 93,77; ab 90 Tagen}}
 \end{pfaufg}
 % 2020-be-gk-B2.2h-m1 (Schwere II, rang 20)
 \begin{pfaufg}{GK~’20\\B2.2h}{2.}{}
-Das Profil einer Teststrecke wird für $-1 \le x \le 9$ beschrieben durch $f(x) = -\tfrac{1}{60}x^3 + \tfrac{3}{20}x^2 + \tfrac{1}{10}x + \tfrac{1}{10}$ (1 LE = 1 m). An der Stelle $x = 3$ ist die Steigung am größten, $f'(3) = 0{,}55$. Berechne die Stelle $x > 5$, an der die Tangente ein ebenso großes Gefälle hat.
+Das Profil einer Teststrecke wird für $-2 \le x \le 6$ beschrieben durch $f(x) = -0{,}02 \cdot (x - 6) \cdot (x + 2)^2 = -\tfrac{1}{50}x^3 + \tfrac{1}{25}x^2 + \tfrac{2}{5}x + \tfrac{12}{25}$ (1 LE = 1 m). An der Stelle $x = \tfrac{2}{3}$ ist die Steigung am größten, $f'\left(\tfrac{2}{3}\right) = \tfrac{32}{75}$. Berechne die Stelle $x > 2$, an der die Tangente ein ebenso großes Gefälle hat.
 \karo{5}
-\fusshilfe{\mbox{2:~7,69 (3 $-$ $\sqrt{22}$ < 5 entfällt)}}
+\fusshilfe{\gfuss{2}{4,44 ((2 $-$ 8$\sqrt{2}$)/3 < 2 entfällt)}}
 \end{pfaufg}
 % 2017-iqb-ga-A11a-m1 (Schwere I, rang 21)
 \begin{pfaufg}{IQB~’17\\A11a}{3.}{}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = 4e^{-\tfrac{1}{2}x}$ und $f'(x) = -2e^{-\tfrac{1}{2}x}$. Bestimme eine Gleichung der Tangente an den Graphen von $f$ in seinem Schnittpunkt mit der $y$-Achse.
 \karo{4}
-\fusshilfe{\mbox{3:~$-$2x + 4}}
+\fusshilfe{\gfuss{3}{$-$2x + 4}}
 \end{pfaufg}
 % 2023-iqb-ga-B1.1d-m1 (Schwere I, rang 22)
 \begin{pfaufg}{IQB~’23\\B1.1d}{4.}{}
 Gegeben sind die Funktionen $r$ mit $r(x) = -(x^2 - 2x - 1)$ und $s$ mit $s(x) = e^{2x}$. Ihre Graphen haben einen gemeinsamen Punkt auf der $y$-Achse. Weise nach, dass beide Graphen in diesem Punkt dieselbe Steigung haben, und gib eine Gleichung der gemeinsamen Tangente an.
 \karo{8}
-\fusshilfe{\mbox{4:~2x + 1}}
+\fusshilfe{\gfuss{4}{2x + 1}}
 \end{pfaufg}
 \par\vfill\noindent{\scriptsize\color{mbgrau}Originale: Abi GK 2019 \pkt{} B2.2f, Abi GK 2020 \pkt{} B2.2h, IQB GK 2017 \pkt{} A11a, IQB GK 2023 \pkt{} B1.1d\par}
 \end{document}

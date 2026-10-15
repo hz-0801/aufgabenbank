@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -92,58 +97,58 @@
 Von den Songs einer Playlist sind 35 \% Hip-Hop ($H$), 45 \% sind mindestens 4 Minuten lang ($L$), und $P(H \cap L) = 0{,}15$. Ergänze die fehlenden Wahrscheinlichkeiten der Vierfeldertafel.
 \par\smallskip\noindent\gpassend{\begin{minipage}{68mm}\vierfeldertafel{H}{L}{}\end{minipage}}\par
 \karo{5}
-\fusshilfe{\mbox{1:~nicht H $\cap$ nicht L 0,35}}
+\fusshilfe{\gfuss{1}{nicht H $\cap$ nicht L 0,35}}
 \end{pfaufg}
 % 2018-be-gk-B3.2e-m1 (Schwere I, rang 50)
 \begin{pfaufg}{GK~’18\\B3.2e}{2.}{}
 Bei einem Bildschirm ist das Display mit 12,4 \% defekt ($D$), das Netzteil mit 3,5 \% ($N$); mit 85,4 \% ist keines von beiden defekt. Stelle den Sachverhalt in einer vollständigen Vierfeldertafel dar.
 \par\smallskip\noindent\gpassend{\begin{minipage}{68mm}\vierfeldertafel{D}{N}{}\end{minipage}}\par
 \karo{5}
-\fusshilfe{\mbox{2:~nicht D $\cap$ nicht N 0,854}}
+\fusshilfe{\gfuss{2}{nicht D $\cap$ nicht N 0,854}}
 \end{pfaufg}
 % 2025-iqb-ga-B3.1a-m1 (Schwere I, rang 51)
 \begin{pfaufg}{IQB~’25\\B3.1a}{3.}{}
 Von den Mitgliedern eines Vereins sind 70 \% jünger als 50 Jahre ($J$); 20 \% sind jünger als 50 und leben nicht in einer Großstadt; 68 \% leben in einer Großstadt ($G$). Stelle den Sachverhalt in einer vollständigen Vierfeldertafel dar.
 \par\smallskip\noindent\gpassend{\begin{minipage}{68mm}\vierfeldertafel{G}{J}{}\end{minipage}}\par
 \karo{5}
-\fusshilfe{\mbox{3:~nicht G $\cap$ nicht J 0,12}}
+\fusshilfe{\gfuss{3}{nicht G $\cap$ nicht J 0,12}}
 \end{pfaufg}
 % 2024-iqb-ga-B2.1b-m1 (Schwere II, rang 52)
 \begin{pfaufg}{IQB~’24\\B2.1b}{4.}{}
 60 \% der Schüler besitzen einen Laptop ($L$), 30 \% einen Desktop-PC ($D$), 25 \% keines von beiden. Stelle die Vierfeldertafel auf und gib die Wahrscheinlichkeit an, dass jemand einen Laptop, aber keinen Desktop-PC besitzt.
 \par\smallskip\noindent\gpassend{\begin{minipage}{68mm}\vierfeldertafel{L}{D}{}\end{minipage}}\par
 \karo{6}
-\fusshilfe{\mbox{4:~nicht L $\cap$ nicht D 0,25; 0,45}}
+\fusshilfe{\gfuss{4}{nicht L $\cap$ nicht D 0,25; 0,45}}
 \end{pfaufg}
 % 2019-be-gk-B4.1c-m1 (Schwere I, rang 53)
 \begin{pfaufg}{GK~’19\\B4.1c}{5.}{}
 Von 12 500 Prüflingen einer Fahrprüfung waren 2 600 mindestens 30 Jahre alt ($A$); 10 000 haben bestanden ($B$), davon 7 700 jünger als 30. Bestimme die Anzahl der Prüflinge, die jünger als 30 waren und nicht bestanden haben.
 \karo{3}
-\fusshilfe{\mbox{5:~2 200}}
+\fusshilfe{\gfuss{5}{2 200}}
 \end{pfaufg}
 % 2020-iqb-ga-A12a-m1 (Schwere I, rang 54)
 \begin{pfaufg}{IQB~’20\\A12a}{6.}{}
 Bei einem Fest sind 50 \% der Gäste Erwachsene; 15 \% aller Gäste sind verkleidete Erwachsene, und 70 \% der Jugendlichen sind verkleidet. Bestimme den Anteil der nicht Verkleideten unter allen Gästen.
 \karo{3}
-\fusshilfe{\mbox{6:~50 \%}}
+\fusshilfe{\gfuss{6}{50 \%}}
 \end{pfaufg}
 % 2025-iqb-ga-B3.1b-m1 (Schwere II, rang 55)
 \begin{pfaufg}{IQB~’25\\B3.1b}{7.}{}
 Von den Mitgliedern eines Vereins sind 70 \% jünger als 50 Jahre ($J$); 20 \% sind jünger als 50 und leben nicht in einer Großstadt; 68 \% leben in einer Großstadt ($G$). Beurteile die Aussage: Weniger als 60 \% leben entweder in einer Großstadt oder sind nicht jünger als 50.
 \karo{3}
-\fusshilfe{\mbox{7:~falsch}}
+\fusshilfe{\gfuss{7}{falsch}}
 \end{pfaufg}
 % 2019-be-gk-B4.1d-m1 (Schwere II, rang 56)
 \begin{pfaufg}{GK~’19\\B4.1d}{8.}{}
 Von 12 500 Prüflingen einer Fahrprüfung waren 2 600 mindestens 30 Jahre alt ($A$); 10 000 haben bestanden ($B$), davon 7 700 jünger als 30. Untersuche, ob $P_A(B)$ und $P(B)$ übereinstimmen, ob $A$ und $B$ stochastisch unabhängig sind, und deute das Ergebnis.
 \karo{5}
-\fusshilfe{\mbox{8:~Ältere bestehen häufiger}}
+\fusshilfe{\gfuss{8}{Ältere bestehen häufiger}}
 \end{pfaufg}
 % 2023-iqb-ga-B1.2e-m1 (Schwere III, rang 57)
 \begin{pfaufg}{IQB~’23\\B1.2e}{9.}{}
 Ein Kaffeesack hat zu viele Verunreinigungen ($M_1$) mit 2 \% und wiegt weniger als 60 kg ($M_2$); beide Mängel sind unabhängig. $P(\overline{M_1} \cap M_2) = 4{,}9\,\%$. Ermittle $P(M_2)$.
 \karo{3}
-\fusshilfe{\mbox{9:~5 \%}}
+\fusshilfe{\gfuss{9}{5 \%}}
 \end{pfaufg}
 \par\vfill\noindent{\scriptsize\color{mbgrau}Originale: IQB GK 2026 \pkt{} B2.1a, Abi GK 2018 \pkt{} B3.2e, IQB GK 2025 \pkt{} B3.1a, IQB GK 2024 \pkt{} B2.1b, Abi GK 2019 \pkt{} B4.1c, IQB GK 2020 \pkt{} A12a, IQB GK 2025 \pkt{} B3.1b, Abi GK 2019 \pkt{} B4.1d, IQB GK 2023 \pkt{} B1.2e\par}
 \end{document}

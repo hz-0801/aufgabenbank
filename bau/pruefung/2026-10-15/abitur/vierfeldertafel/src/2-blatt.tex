@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -94,19 +99,19 @@
 \begin{pfaufg}{GK~’23\\B4.1a}{1.}{}
 Von den Lehrkräften eines Landes arbeiten 30 \% an einem Gymnasium ($G$). 20 \% der Lehrkräfte sind weiblich ($W$) und arbeiten an einem Gymnasium; insgesamt sind 65 \% der Lehrkräfte weiblich. Stelle den Sachverhalt in einer vollständig ausgefüllten Vierfeldertafel dar.
 \par\smallskip\noindent\begin{minipage}{68mm}\vierfeldertafel{G}{W}{}\end{minipage}\par
-\fusshilfe{\mbox{1:~nicht W $\cap$ nicht G 0,25; Ränder W 0,65, nicht W 0,35, G 0,30, nicht G 0,70}}
+\fusshilfe{\gfuss{1}{nicht W $\cap$ nicht G 0,25; Ränder W 0,65, nicht W 0,35, G 0,30, nicht G 0,70}}
 \end{pfaufg}
 % 2024-bebb-gk-B4.1b-m1 (Original 2024-bebb-gk-B4.1b, Schwere I, rang 42; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’24\\B4.1b}{2.}{}
 Von der Kundschaft eines Baumarkts sind 70 \% Treuekunden ($T$) und 30 \% Morgenkunden ($M$), die vor 9 Uhr einkaufen. Es gilt $P(\overline{T} \cap M) = 0{,}06$. Stelle den Sachverhalt in einer vollständigen Vierfeldertafel dar.
 \par\smallskip\noindent\begin{minipage}{68mm}\vierfeldertafel{T}{M}{}\end{minipage}\par
-\fusshilfe{\mbox{2:~nicht T $\cap$ nicht M 0,24; Ränder T 0,7, nicht T 0,3, M 0,3, nicht M 0,7}}
+\fusshilfe{\gfuss{2}{nicht T $\cap$ nicht M 0,24; Ränder T 0,7, nicht T 0,3, M 0,3, nicht M 0,7}}
 \end{pfaufg}
 % 2022-bebb-gk-B4h-m1 (Original 2022-bebb-gk-B4h, Schwere II, rang 43; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’22\\B4h}{3.}{}
 In einem Paketzentrum haben 12 \% der Pakete das Ziel A und 8 \% das Ziel B; 6 \% aller Pakete sind schwer ($S$). Unter den Paketen mit dem Ziel A ($Z$) sind 10 \% schwer. Stelle den Sachverhalt in einer vollständigen Vierfeldertafel dar.
 \par\smallskip\noindent\begin{minipage}{68mm}\vierfeldertafel{Z}{S}{}\end{minipage}\par
-\fusshilfe{\mbox{3:~nicht S $\cap$ nicht Z 0,832; Ränder S 0,06, nicht S 0,94, Z 0,12, nicht Z 0,88}}
+\fusshilfe{\gfuss{3}{nicht S $\cap$ nicht Z 0,832; Ränder S 0,06, nicht S 0,94, Z 0,12, nicht Z 0,88}}
 \end{pfaufg}
 
 % ===================== Stufe: Wahrscheinlichkeit aus der Tafel gesucht =====================
@@ -116,19 +121,19 @@ In einem Paketzentrum haben 12 \% der Pakete das Ziel A und 8 \% das Ziel B; 6 \
 \begin{pfaufg}{GK~’23\\B4.1b}{4.}{}
 Von den Lehrkräften eines Landes arbeiten 30 \% an einem Gymnasium ($G$). 20 \% der Lehrkräfte sind weiblich ($W$) und arbeiten an einem Gymnasium; insgesamt sind 65 \% der Lehrkräfte weiblich. Ermittle mit deiner Vierfeldertafel die Wahrscheinlichkeit, dass eine zufällig ausgewählte Lehrkraft weiblich ist oder an einem Gymnasium arbeitet.
 \karo{2}
-\fusshilfe{\mbox{4:~75 \%}}
+\fusshilfe{\gfuss{4}{75 \%}}
 \end{pfaufg}
 % 2024-bebb-gk-B4.1c-m1 (Original 2024-bebb-gk-B4.1c, Schwere I, rang 45; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’24\\B4.1c}{5.}{}
 Von der Kundschaft eines Baumarkts sind 70 \% Treuekunden ($T$) und 30 \% Morgenkunden ($M$), die vor 9 Uhr einkaufen. Es gilt $P(\overline{T} \cap M) = 0{,}06$. Ermittle mit deiner Vierfeldertafel die Wahrscheinlichkeit, dass eine zufällig ausgewählte Person entweder Treuekunde oder Morgenkunde ist.
 \karo{1}
-\fusshilfe{\mbox{5:~52 \%}}
+\fusshilfe{\gfuss{5}{52 \%}}
 \end{pfaufg}
 % 2022-bebb-gk-A1.7b-m1 (Original 2022-bebb-gk-A1.7b, Schwere II, rang 46; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’22\\A1.7b}{6.}{\pfohnetr}
 Von den Kunden eines Reisebüros reisen 50 \% gerne in die Region A, 40 \% gerne in die Region B und 15 \% gerne in beide Regionen. Berechne den Anteil der Kunden, die entweder nach A oder nach B gerne reisen.
 \karo{1}
-\fusshilfe{\mbox{6:~60 \%}}
+\fusshilfe{\gfuss{6}{60 \%}}
 \end{pfaufg}
 
 % ===================== Stufe: Unabhängigkeit prüfen =====================
@@ -138,13 +143,13 @@ Von den Kunden eines Reisebüros reisen 50 \% gerne in die Region A, 40 \% gerne
 \begin{pfaufg}{GK~’24\\B4.1d}{7.}{}
 Von der Kundschaft eines Baumarkts sind 70 \% Treuekunden ($T$) und 30 \% Morgenkunden ($M$), die vor 9 Uhr einkaufen. Es gilt $P(\overline{T} \cap M) = 0{,}06$. Untersuche, ob $T$ und $M$ stochastisch unabhängig sind.
 \karo{2}
-\fusshilfe{\mbox{7:~nicht unabhängig}}
+\fusshilfe{\gfuss{7}{nicht unabhängig}}
 \end{pfaufg}
 % 2022-bebb-gk-B4i-m2 (Original 2022-bebb-gk-B4i, Schwere III, rang 48; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’22\\B4i}{8.}{}
 In einem Paketzentrum haben 12 \% der Pakete das Ziel A und 8 \% das Ziel B; 6 \% aller Pakete sind schwer ($S$). Unter den Paketen mit dem Ziel A ($Z$) sind 10 \% schwer. Untersuche, ob der Anteil der Pakete mit Ziel A unter den schweren Paketen ebenso groß ist wie unter den nicht schweren.
 \karo{2}
-\fusshilfe{\mbox{8:~S und Z nicht unabhängig}}
+\fusshilfe{\gfuss{8}{S und Z nicht unabhängig}}
 \end{pfaufg}
 
 \pfblattende{10}{26 & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17}{ &  & B4.1b B4.1c B4.1d & B4.1a B4.1b & A1.7b B4h B4i &  &  & B4.1c B4.1d & B3.2e & }%

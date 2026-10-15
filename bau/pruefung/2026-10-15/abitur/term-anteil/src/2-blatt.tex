@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -94,19 +99,19 @@
 \begin{pfaufg}{GK~’25\\A1.3a}{1.}{\pfohnetr}
 Ein Glücksrad hat acht gleich große Sektoren: fünfmal die 3, zweimal die 2 und einmal die 1. Es wird zweimal gedreht. Deute den Term $\left(\tfrac{2}{8}\right)^2$ im Sachzusammenhang.
 \gzwei{\kreisdiagramm[1.1]{3/1,2/1,3/1,3/1,2/1,3/1,1/1,3/1}}{\karo{2}}
-\fusshilfe{\mbox{1:~Wahrscheinlichkeit, bei zweimaligem Drehen zweimal die 2 zu erhalten}}
+\fusshilfe{\gfuss{1}{Wahrscheinlichkeit, bei zweimaligem Drehen zweimal die 2 zu erhalten}}
 \end{pfaufg}
 % 2024-bebb-gk-A1.6b-m1 (Original 2024-bebb-gk-A1.6b, Schwere II, rang 75; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’24\\A1.6b}{2.}{\pfohnetr}
 Bei einer Werbeaktion erhält jedes Kind einen verpackten Ball; mit einer Wahrscheinlichkeit von 30 \% ist er glitzernd gefärbt. Beschreibe ein Zufallsexperiment und ein Ereignis, dessen Wahrscheinlichkeit der Term $\left(\tfrac{7}{10}\right)^4 + 4 \cdot \left(\tfrac{7}{10}\right)^3 \cdot \tfrac{3}{10}$ angibt.
 \karo{3}
-\fusshilfe{\mbox{2:~mindestens drei Bälle sind nicht glitzernd}}
+\fusshilfe{\gfuss{2}{mindestens drei Bälle sind nicht glitzernd}}
 \end{pfaufg}
 % 2025-bebb-gk-A1.6b-m1 (Original 2025-bebb-gk-A1.6b, Schwere II, rang 76; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’25\\A1.6b}{3.}{\pfohnetr}
 Eine Schwimmgruppe hat 16 Kinder; 6 von ihnen haben das Abzeichen Bronze. Gib die Bedeutung des Terms $\tfrac{\binom{6}{2} \cdot \binom{10}{3}}{\binom{16}{5}}$ im Sachzusammenhang an.
 \karo{2}
-\fusshilfe{\mbox{3:~Wahrscheinlichkeit, dass unter fünf zufällig ausgewählten Kindern genau zwei das Abzeichen Bronze haben}}
+\fusshilfe{\gfuss{3}{Wahrscheinlichkeit, dass unter fünf zufällig ausgewählten Kindern genau zwei das Abzeichen Bronze haben}}
 \end{pfaufg}
 
 % ===================== Stufe: unbekannter Anteil gesucht =====================
@@ -116,19 +121,19 @@ Eine Schwimmgruppe hat 16 Kinder; 6 von ihnen haben das Abzeichen Bronze. Gib di
 \begin{pfaufg}{GK~’24\\A1.9b}{4.}{\pfohnetr}
 Bei einer Befragung erhalten 70 \% der Jugendlichen die Frage F1 „Hast du schon einmal unentschuldigt gefehlt?“, die übrigen die Frage F2 „Hast du noch nie unentschuldigt gefehlt?“. Alle antworten wahrheitsgemäß mit Ja oder Nein. Der Anteil $p$ derer, die schon einmal gefehlt haben, ist unter den F1-Befragten so groß wie unter allen. Von 1 000 Befragten antworten 360 mit Ja. Berechne auf dieser Grundlage den Anteil $p$.
 \gzwei{\baumabi{F_1/{0,7}/{\text{Ja}/{p},\text{Nein}/{1-p}},F_2/{0,3}/{\text{Ja}/{1-p},\text{Nein}/{p}}}}{\karo{4}}
-\fusshilfe{\mbox{4:~0,15}}
+\fusshilfe{\gfuss{4}{0,15}}
 \end{pfaufg}
 % 2026-bb-gk-B4e-m1 (Original 2026-bb-gk-B4e, Schwere II, rang 78; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’26\\B4e}{5.}{}
 In einem Supermarkt sammeln 80 \% der Kundschaft Treuepunkte ($T$). Unter den Sammelnden sind 70 \% weiblich ($w$), unter den übrigen ist der Anteil weiblicher Personen $a$. Der Anteil der nicht weiblichen Personen in der Kundschaft beträgt 34 \%. Berechne $a$.
 \gzwei{\baumabi{T/{0,8}/{w/{0,7},\overline{w}/},\overline{T}//{w/{a},\overline{w}/}}}{\karo{4}}
-\fusshilfe{\mbox{5:~0,5}}
+\fusshilfe{\gfuss{5}{0,5}}
 \end{pfaufg}
 % 2022-bebb-gk-B4j-m1 (Original 2022-bebb-gk-B4j, Schwere III, rang 79; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’22\\B4j}{6.}{}
 In einem Paketzentrum haben 12 \% der Pakete das Ziel A und 8 \% das Ziel B; 6 \% aller Pakete sind schwer ($S$). Unter den Paketen mit Ziel A sind 10 \% schwer, unter denen mit Ziel B 2,5 \%. Untersuche, ob der Anteil schwerer Pakete unter denen mit anderem Ziel kleiner, gleich oder größer als 6 \% ist.
 \karo{4}
-\fusshilfe{\mbox{6:~kleiner}}
+\fusshilfe{\gfuss{6}{kleiner}}
 \end{pfaufg}
 
 \pfblattende{10}{26 & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17}{B4e & A1.3a A1.6b & A1.6b A1.9b &  & B4j & B4f & B4.2g & B4.1e &  & }%

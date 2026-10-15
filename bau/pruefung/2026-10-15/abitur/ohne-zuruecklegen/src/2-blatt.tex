@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -94,22 +99,22 @@
 \begin{pfaufg}{}{1.}{}
 Acht Stühle stehen in einer Reihe. Es gibt fünf Möglichkeiten, vier Stühle so auszuwählen, dass zwischen je zwei ausgewählten mindestens ein weiterer Stuhl steht.
 % 2024-bebb-gk-A1.3a-m1 (Original 2024-bebb-gk-A1.3a, Schwere I, rang 21; herausgelöste Fassung: keine)
-\begin{gbteil}{a)}{\raisebox{\dimexpr-\height+\ht\strutbox\relax}{\shortstack[r]{GK~’24\\A1.3a}}\hspace*{\mbpfnr}}{\pfohnetr}
+\begin{gbteil}{a)}{\raisebox{\dimexpr-\height+\ht\strutbox\relax}{\shortstack[r]{GK~’24\\A1.3a}}}{\pfohnetr}
 Gib diese fünf Möglichkeiten an.
 \karo{3}
 \end{gbteil}
 % 2024-bebb-gk-A1.3b-m1 (Original 2024-bebb-gk-A1.3b, Schwere I, rang 22; herausgelöste Fassung: keine)
-\begin{gbteil}{b)}{\raisebox{\dimexpr-\height+\ht\strutbox\relax}{\shortstack[r]{GK~’24\\A1.3b}}\hspace*{\mbpfnr}}{\pfohnetr}
+\begin{gbteil}{b)}{\raisebox{\dimexpr-\height+\ht\strutbox\relax}{\shortstack[r]{GK~’24\\A1.3b}}}{\pfohnetr}
 Vier Freunde setzen sich so, dass zwischen je zweien mindestens ein Stuhl frei bleibt. Berechne die Anzahl der Möglichkeiten.
 \karo{2}
 \end{gbteil}
-\fusshilfe{\mbox{1:~a)~2, 4, 6, 8; b)~120}}
+\fusshilfe{\gfuss{1}{a)~2, 4, 6, 8; b)~120}}
 \end{pfaufg}
 % 2026-bb-gk-A1.3b-m1 (Original 2026-bb-gk-A1.3b, Schwere II, rang 23; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’26\\A1.3b}{2.}{\pfohnetr}
 Eine Münze wird fünfmal geworfen; die Ergebnisse sind Abfolgen von Z (Zahl) und W (Wappen). A: höchstens einmal Zahl; B: bei den letzten beiden Würfen mindestens einmal Zahl. Gib alle Ergebnisse an, bei denen weder A noch B eintritt.
 \karo{3}
-\fusshilfe{\mbox{2:~ZZZWW, ZZWWW, ZWZWW, WZZWW}}
+\fusshilfe{\gfuss{2}{ZZZWW, ZZWWW, ZWZWW, WZZWW}}
 \end{pfaufg}
 
 % ===================== Stufe: Wahrscheinlichkeit gesucht =====================
@@ -119,39 +124,39 @@ Eine Münze wird fünfmal geworfen; die Ergebnisse sind Abfolgen von Z (Zahl) un
 \begin{pfaufg}{GK~’25\\A1.6a}{3.}{\pfohnetr}
 Eine Schwimmgruppe hat 16 Kinder; 6 von ihnen haben das Abzeichen Bronze. Zwei Kinder werden zufällig ausgewählt. Berechne die Wahrscheinlichkeit, dass beide das Abzeichen Bronze haben.
 \karo{2}
-\fusshilfe{\mbox{3:~$\tfrac{1}{8}$}}
+\fusshilfe{\gfuss{3}{$\tfrac{1}{8}$}}
 \end{pfaufg}
 % 2023-bebb-gk-B4.1g-m1 (Original 2023-bebb-gk-B4.1g, Schwere I, rang 25; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’23\\B4.1g}{4.}{}
 An einer Fortbildung nehmen 24 Lehrkräfte teil, davon 14 Frauen. Für eine Präsentation werden 5 von ihnen zufällig ausgewählt. Ermittle die Wahrscheinlichkeit, dass alle Ausgewählten Frauen sind.
 \karo{2}
-\fusshilfe{\mbox{4:~0,047}}
+\fusshilfe{\gfuss{4}{0,047}}
 \end{pfaufg}
 % 2022-bebb-gk-A1.6a-m1 (Original 2022-bebb-gk-A1.6a, Schwere II, rang 26; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’22\\A1.6a}{5.}{\pfohnetr}
 In einer Urne liegen drei rote und zwei grüne Kugeln. Drei Kugeln werden ohne Zurücklegen gezogen. Ermittle die Wahrscheinlichkeit, dass mindestens eine gezogene Kugel grün ist.
 \karo{2}
-\fusshilfe{\mbox{5:~$\tfrac{9}{10}$}}
+\fusshilfe{\gfuss{5}{$\tfrac{9}{10}$}}
 \end{pfaufg}
 % 2023-bebb-gk-A1.6b-m1 (Original 2023-bebb-gk-A1.6b, Schwere II, rang 27; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’23\\A1.6b}{6.}{\pfohnetr}
 In einer Urne liegen vier rote und zwei weiße Kugeln. Drei Kugeln werden nacheinander ohne Zurücklegen gezogen. Ermittle die Wahrscheinlichkeit, dass mehr rote als weiße Kugeln gezogen werden.
 \karo{3}
-\fusshilfe{\mbox{6:~$\tfrac{4}{5}$}}
+\fusshilfe{\gfuss{6}{$\tfrac{4}{5}$}}
 \end{pfaufg}
 % 2023-bebb-gk-B4.1h-m1 (Original 2023-bebb-gk-B4.1h, Schwere III, rang 28; herausgelöste Fassung: keine)
 % Vorspann wie Nr. 4 (2023-bebb-gk-B4.1g-m1), gekürzt
 \begin{pfaufg}{GK~’23\\B4.1h}{7.}{}
 Angaben wie in Nr. 4. Bestimme die Wahrscheinlichkeit, dass weniger als zwei Frauen ausgewählt werden.
 \karo{3}
-\fusshilfe{\mbox{7:~0,075}}
+\fusshilfe{\gfuss{7}{0,075}}
 \end{pfaufg}
 % 2022-bebb-gk-A1.6b-m1 (Original 2022-bebb-gk-A1.6b, Schwere III, rang 29; herausgelöste Fassung: keine)
 % Vorspann wie Nr. 5 (2022-bebb-gk-A1.6a-m1), gekürzt
 \begin{pfaufg}{GK~’22\\A1.6b}{8.}{\pfohnetr}
 Angaben wie in Nr. 5. Eine Kugel wird entfernt. Danach ist die Wahrscheinlichkeit, beim Ziehen von zwei Kugeln ohne Zurücklegen zwei verschiedene Farben zu erhalten, $\tfrac{2}{3}$. Entscheide, ob die entfernte Kugel rot oder grün ist, und begründe.
 \karo{3}
-\fusshilfe{\mbox{8:~rote Kugel entfernt}}
+\fusshilfe{\gfuss{8}{rote Kugel entfernt}}
 \end{pfaufg}
 
 \pfblattende{10}{26 & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17}{A1.3b & A1.6a & A1.3a A1.3b & A1.6b B4.1g B4.1h & A1.6a A1.6b & A1.7b & A1.5a & A1.4c B4.2f & B3.1a & B3.1a B3.1b}%

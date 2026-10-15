@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -91,46 +96,46 @@
 \begin{pfaufg}{GK~’20\\B4.2d}{1.}{}
 In einem großen Unternehmen ist ein Drittel der Beschäftigten weiblich. Es werden 40 Beschäftigte zufällig ausgewählt; $X$ ist die Anzahl der weiblichen darunter. Begründe ohne Berechnung von Wahrscheinlichkeiten, dass die Wahrscheinlichkeitsverteilung von $X$ für 13 oder 14 ihren größten Wert hat.
 \karo{3}
-\fusshilfe{\mbox{1:~größter Wert bei einem Nachbarn des Erwartungswerts, also 13 oder 14}}
+\fusshilfe{\gfuss{1}{größter Wert bei einem Nachbarn des Erwartungswerts, also 13 oder 14}}
 \end{pfaufg}
 % 2018-be-gk-B3.2b-m1 (Schwere I, rang 12)
 \begin{pfaufg}{GK~’18\\B3.2b}{2.}{}
 Die Anzahl $X$ der fehlerhaften Geräte unter 240 zufällig ausgewählten Bildschirmen ist binomialverteilt mit $p = 0{,}15$. Gib die Anzahl fehlerhafter Bildschirme an, die mit der größten Wahrscheinlichkeit auftritt.
 \karo{3}
-\fusshilfe{\mbox{2:~größte Wahrscheinlichkeit bei 36}}
+\fusshilfe{\gfuss{2}{größte Wahrscheinlichkeit bei 36}}
 \end{pfaufg}
 % 2019-be-gk-B4.2c-m1 (Schwere I, rang 13)
 \begin{pfaufg}{GK~’19\\B4.2c}{3.}{}
 Zwei Geschwister würfeln jeden Tag einmal; mit der Wahrscheinlichkeit $\tfrac{5}{12}$ bringt der ältere den Müll hinunter. Berechne den Erwartungswert dafür, wie oft der ältere in 24 Tagen den Müll hinunterbringt.
 \karo{2}
-\fusshilfe{\mbox{3:~10}}
+\fusshilfe{\gfuss{3}{10}}
 \end{pfaufg}
 % 2017-iqb-ga-A11a-m1 (Schwere I, rang 14)
 \begin{pfaufg}{IQB~’17\\A11a}{4.}{}
 Die Abbildung zeigt die Wahrscheinlichkeitsverteilung einer binomialverteilten Zufallsgröße $X$. Ermittle mit der Abbildung einen Näherungswert für $P(4 \le X \le 6)$.
 \par\smallskip\noindent\gpassend{\saeulenab[ymax=0.25,ystep=0.05,yfein=0.01,ylabel={$P(X=k)$},hoehe=2.8,breite=0.5]{0/0.0004,1/0.0042,2/0.0190,3/0.0547,4/0.1104,5/0.1664,6/0.1941,7/0.1792,8/0.1327,9/0.0794,10/0.0385,11/0.0151,12/0.0047,13/0.0012,14/0.0002}}\par
 \karo{2}
-\fusshilfe{\mbox{4:~0,47}}
+\fusshilfe{\gfuss{4}{0,47}}
 \end{pfaufg}
 % 2021-iqb-ga-A2b-m1 (Schwere III, rang 15)
 \begin{pfaufg}{IQB~’21\\A2b}{5.}{}
 Die Abbildung zeigt die Wahrscheinlichkeitsverteilung einer binomialverteilten Zufallsgröße $Y$ mit $p = 0{,}5$; sie ist symmetrisch zu $k = 11{,}5$. Es gilt $P(Y \le 13) \approx 0{,}80$ und $P(Y = 10) \approx 0{,}14$. Berechne mit diesen Werten einen Näherungswert für $P(Y = 12)$.
 \par\smallskip\noindent\gpassend{\saeulenab[ymax=0.2,ystep=0.05,yfein=0.05,ylabel={$P(X=k)$},hoehe=2.8,breite=0.5,ohnezahlen]{4/0.0011,5/0.0040,6/0.0120,7/0.0292,8/0.0584,9/0.0974,10/0.1364,11/0.1612,12/0.1612,13/0.1364,14/0.0974,15/0.0584,16/0.0292,17/0.0120,18/0.0040,19/0.0011}}\par
 \karo{4}
-\fusshilfe{\mbox{5:~0,16}}
+\fusshilfe{\gfuss{5}{0,16}}
 \end{pfaufg}
 % 2019-iqb-ga-A12b-m1 (Schwere II, rang 16)
 \begin{pfaufg}{IQB~’19\\A12b}{6.}{}
 In einer Urne liegen 4 rote und 6 weiße Kugeln. Es wird zehnmal mit Zurücklegen gezogen; $X$ ist die Anzahl der weißen Kugeln. Begründe ohne Berechnung von Wahrscheinlichkeiten, dass keines der Diagramme A und B die Verteilung von $X$ zeigt.
 \par\smallskip\noindent\gpassend{\begin{tabular}[b]{@{}c@{}}\saeulenab[ymax=0.3,ystep=0.1,yfein=0.05,ylabel={$P(X=k)$},hoehe=2.8,breite=0.5]{0/0.0060,1/0.0403,2/0.1209,3/0.2150,4/0.2508,5/0.2007,6/0.1115,7/0.0425,8/0.0106,9/0.0016,10/0.0001}\\ \textsf{A}\end{tabular}\quad\begin{tabular}[b]{@{}c@{}}\saeulenab[ymax=0.6,ystep=0.1,yfein=0.05,ylabel={$P(X=k)$},hoehe=2.8,breite=0.5]{0/0.0002,1/0.0031,2/0.0212,3/0.0849,4/0.2230,5/0.4013,6/0.5016,7/0.4300,8/0.2419,9/0.0806,10/0.0121}\\ \textsf{B}\end{tabular}}\par
 \karo{4}
-\fusshilfe{\mbox{6:~6; A: höchste Säule bei 4 statt bei 6; B: Säulen summieren sich auf etwa 2 > 1}}
+\fusshilfe{\gfuss{6}{6; A: höchste Säule bei 4 statt bei 6; B: Säulen summieren sich auf etwa 2 > 1}}
 \end{pfaufg}
 % 2020-iqb-ga-A2a-m1 (Schwere II, rang 17)
 \begin{pfaufg}{IQB~’20\\A2a}{7.}{}
 Die Zufallsgröße $X$ ist binomialverteilt mit $n = 6$ und dem Erwartungswert 2. Berechne $P(X = 6)$.
 \karo{4}
-\fusshilfe{\mbox{7:~$\tfrac{1}{729}$}}
+\fusshilfe{\gfuss{7}{$\tfrac{1}{729}$}}
 \end{pfaufg}
 \par\vfill\noindent{\scriptsize\color{mbgrau}Originale: Abi GK 2020 \pkt{} B4.2d, Abi GK 2018 \pkt{} B3.2b, Abi GK 2019 \pkt{} B4.2c, IQB GK 2017 \pkt{} A11a, IQB GK 2021 \pkt{} A2b, IQB GK 2019 \pkt{} A12b, IQB GK 2020 \pkt{} A2a\par}
 \end{document}

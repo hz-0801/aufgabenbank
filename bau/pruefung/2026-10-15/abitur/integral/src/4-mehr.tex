@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -91,49 +96,49 @@
 \begin{pfaufg}{GK~’20\\B2.1h}{1.}{}
 Gegeben ist die Funktion $f$ mit $f(x) = (8x - 2) \cdot e^{-x}$ und $F$ mit $F(x) = (-8x - 6) \cdot e^{-x}$. Beschreibe, wie man nachweist, dass $F$ eine Stammfunktion von $f$ ist. Gib die Stammfunktion $H$ von $f$ mit $H(0) = 10$ an.
 \karo{3}
-\fusshilfe{\mbox{1:~(8x $-$ 2)$e^{ - x}$; ($-$8x $-$ 6) · $e^{ - x}$ + 16}}
+\fusshilfe{\gfuss{1}{(8x $-$ 2)$e^{ - x}$; ($-$8x $-$ 6) · $e^{ - x}$ + 16}}
 \end{pfaufg}
 % 2018-be-gk-B1.2c-m1 (Schwere I, rang 11)
 \begin{pfaufg}{nach\\GK~’18\\B1.2c}{2.}{}
 Gegeben ist die Funktion $f$ mit $f(x) = (x + 1) \cdot e^{-\tfrac{x}{3}}$. Weise nach, dass $F$ mit $F(x) = (-3x - 12) \cdot e^{-\tfrac{x}{3}}$ eine Stammfunktion von $f$ ist.
 \karo{2}
-\fusshilfe{\mbox{2:~f(x)}}
+\fusshilfe{\gfuss{2}{f(x)}}
 \end{pfaufg}
 % 2017-be-gk-B1.2d-m1 (Schwere I, rang 12)
 \begin{pfaufg}{nach\\GK~’17\\B1.2d}{3.}{}
 Die Kante eines Dachelements wird für $0 \le x \le 2$ durch $f(x) = (x^2 - 4x + 4) \cdot e^{-x}$ beschrieben. Weise nach, dass $F$ mit $F(x) = -(x^2 - 2x + 2) \cdot e^{-x}$ eine Stammfunktion von $f$ ist.
 \karo{2}
-\fusshilfe{\mbox{3:~f(x)}}
+\fusshilfe{\gfuss{3}{f(x)}}
 \end{pfaufg}
 % 2020-be-gk-A1.1a-m1 (Schwere I, rang 13)
 \begin{pfaufg}{GK~’20\\A1.1a}{4.}{}
 Die Funktion $F$ mit $F(x) = 3x^4 - 2x + 5$ ist eine Stammfunktion einer Funktion $f$. Gib eine Gleichung von $f$ an.
 \karo{2}
-\fusshilfe{\mbox{4:~12x³ $-$ 2}}
+\fusshilfe{\gfuss{4}{12x³ $-$ 2}}
 \end{pfaufg}
 % 2019-be-gk-A1.1a-m1 (Schwere I, rang 14)
 \begin{pfaufg}{GK~’19\\A1.1a}{5.}{}
 Gegeben ist die Funktion $f$ mit $f(x) = -4x^4 - 6x^2 + x$. Gib eine Gleichung der Ableitungsfunktion $f'$ und eine Gleichung einer Stammfunktion $F$ von $f$ an.
 \karo{3}
-\fusshilfe{\mbox{5:~$-$16x³ $-$ 12x + 1; $-\tfrac{4}{5}$ x$^{5}$ $-$ 2x³ + $\tfrac{1}{2}$ x²}}
+\fusshilfe{\gfuss{5}{$-$16x³ $-$ 12x + 1; $-\tfrac{4}{5}$ x$^{5}$ $-$ 2x³ + $\tfrac{1}{2}$ x²}}
 \end{pfaufg}
 % 2019-be-gk-B2.2e-m1 (Schwere II, rang 15)
 \begin{pfaufg}{GK~’19\\B2.2e}{6.}{}
 Der Hormonspiegel eines Patienten in Prozent des Sollwerts wird beschrieben durch $h(t) = 6t \cdot e^{-\tfrac{t}{20}} + 40$; $t$ ist die Zeit in Tagen. Berechne den mittleren Hormonspiegel in den ersten 60 Tagen, $\tfrac{1}{60} \int_{0}^{60} h(t)\,dt$.
 \karo{4}
-\fusshilfe{\mbox{6:~im Mittel etwa 72 \% des Sollwerts}}
+\fusshilfe{\gfuss{6}{im Mittel etwa 72 \% des Sollwerts}}
 \end{pfaufg}
 % 2023-iqb-ga-A13a-m1 (Schwere I, rang 16)
 \begin{pfaufg}{IQB~’23\\A13a}{7.}{}
 Gegeben ist die Funktion $f$ mit $f(x) = x^4 - 2x^3$. Berechne $\int_{0}^{1} f(x)\,dx$.
 \karo{2}
-\fusshilfe{\mbox{7:~$-\tfrac{3}{10}$}}
+\fusshilfe{\gfuss{7}{$-\tfrac{3}{10}$}}
 \end{pfaufg}
 % 2018-iqb-ga-B1d-m1 (Schwere I, rang 17)
 \begin{pfaufg}{IQB~’18\\B1d}{8.}{}
-Gegeben ist die Funktion $f$ mit $f(x) = \tfrac{1}{6}(x^3 - 12x^2 + 32x)$. Berechne $\int_{0}^{4} f(x)\,dx$.
+Gegeben ist die Funktion $f$ mit $f(x) = \tfrac{1}{8}(x^3 - 12x^2 + 32x)$. Berechne $\int_{0}^{4} f(x)\,dx$.
 \karo{2}
-\fusshilfe{\mbox{8:~$\tfrac{32}{3}$}}
+\fusshilfe{\gfuss{8}{8}}
 \end{pfaufg}
 \par\vfill\noindent{\scriptsize\color{mbgrau}Originale: Abi GK 2020 \pkt{} B2.1h, Abi GK 2018 \pkt{} B1.2c, Abi GK 2017 \pkt{} B1.2d, Abi GK 2020 \pkt{} A1.1a, Abi GK 2019 \pkt{} A1.1a, Abi GK 2019 \pkt{} B2.2e, IQB GK 2023 \pkt{} A13a, IQB GK 2018 \pkt{} B1d\par}
 \end{document}

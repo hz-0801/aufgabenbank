@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -94,25 +99,25 @@
 \begin{pfaufg}{GK~’22\\A1.1b}{1.}{\pfohnetr}
 Gegeben ist die Funktion $f$ mit $f(x) = x^3 - 10x^2 + 21x$. Bestimme eine Gleichung der Tangente an den Graphen von $f$ im Punkt $P(1 \mid f(1))$.
 \karo{4}
-\fusshilfe{\mbox{1:~4x + 8}}
+\fusshilfe{\gfuss{1}{4x + 8}}
 \end{pfaufg}
 % 2025-bebb-gk-A1.1a-m1 (Original 2025-bebb-gk-A1.1a, Schwere I, rang 12; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’25\\A1.1a}{2.}{\pfohnetr}
 Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = \tfrac{1}{3}x^3 - x^2 + 2$; die Abbildung zeigt ihren Graphen $G$ und den Punkt $P(3 \mid 2)$. Bestimme rechnerisch eine Gleichung der Tangente $t$ an $G$ in $P$.
 \gzwei{\begin{abiksys}[xmin=-3,xmax=5,ymin=-5,ymax=6,le=0.5]\funktion[4.1]{\x^3/3-\x^2+2}{G}\punkt{3}{2}{P}\end{abiksys}}{\karo{4}}
-\fusshilfe{\mbox{2:~3x $-$ 7}}
+\fusshilfe{\gfuss{2}{3x $-$ 7}}
 \end{pfaufg}
 % 2026-bb-gk-B2.2b-m1 (Original 2026-bb-gk-B2.2b, Schwere I, rang 13; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’26\\B2.2b}{3.}{}
 Gegeben ist die Funktion $f$ mit $f(x) = 2e^x + 3$, $x \in \mathbb{R}$; ihr Graph ist $G_f$. Ermittle eine Gleichung der Tangente $t$ an $G_f$ im Schnittpunkt von $G_f$ mit der $y$-Achse (zur Kontrolle: $y = 2x + 5$).
 \karo{4}
-\fusshilfe{\mbox{3:~2x + 5}}
+\fusshilfe{\gfuss{3}{2x + 5}}
 \end{pfaufg}
 % 2023-bebb-gk-A1.1a-m1 (Original 2023-bebb-gk-A1.1a, Schwere II, rang 14; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’23\\A1.1a}{4.}{\pfohnetr}
 Der Graph einer Funktion $f$ ist symmetrisch zur $y$-Achse. Die Tangente $t_1$ an den Graphen im Punkt $(1 \mid f(1))$ hat die Gleichung $y = \tfrac{3}{4}x + 3$. Gib eine Gleichung der Tangente $t_2$ im Punkt $(-1 \mid f(-1))$ an und begründe deine Angabe.
 \karo{4}
-\fusshilfe{\mbox{4:~$-\tfrac{3}{4}$ x + 3}}
+\fusshilfe{\gfuss{4}{$-\tfrac{3}{4}$ x + 3}}
 \end{pfaufg}
 
 % ===================== Stufe: Tangente nachweisen =====================
@@ -120,15 +125,15 @@ Der Graph einer Funktion $f$ ist symmetrisch zur $y$-Achse. Die Tangente $t_1$ a
 % kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
 % 2026-bb-gk-B2.1d-m1 (Original 2026-bb-gk-B2.1d, Schwere I, rang 15; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’26\\B2.1d}{5.}{}
-Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = \tfrac{1}{64}x^4 + \tfrac{1}{8}x^3 + 2$ und ihrer Ableitung $f'(x) = \tfrac{1}{16}x^2 \cdot (x + 6)$. Weise nach, dass die Gerade $t$ mit $t(x) = 2x + 6$ den Graphen von $f$ im Punkt $(-4 \mid -2)$ berührt.
-\karo{3}
-\fusshilfe{\mbox{5:~t ist Tangente in ($-$4|$-$2)}}
+Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = \tfrac{2}{3}x^4 + \tfrac{4}{3}x^3 + 2$ und ihrer Ableitung $f'(x) = \tfrac{4}{3}x^2 \cdot (2x + 3)$. Weise nach, dass die Gerade $t$ mit $t(x) = \tfrac{4}{3}x + \tfrac{8}{3}$ den Graphen von $f$ im Punkt $\left(-1 \mid \tfrac{4}{3}\right)$ berührt.
+\karo{4}
+\fusshilfe{\gfuss{5}{$\tfrac{4}{3}$; t ist Tangente in ($-$1|$\tfrac{4}{3}$)}}
 \end{pfaufg}
 % 2023-bebb-gk-A1.3b-m1 (Original 2023-bebb-gk-A1.3b, Schwere II, rang 16; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’23\\A1.3b}{6.}{\pfohnetr}
 Gegeben sind die Funktionen $f$ mit $f(x) = x^3 - 6x^2$ und $g$ mit $g(x) = 15x + 8$ sowie der Punkt $P(-1 \mid -7)$. Begründe, dass sich die Graphen von $f$ und $g$ im Punkt $P$ berühren.
 \karo{4}
-\fusshilfe{\mbox{6:~die Graphen berühren sich}}
+\fusshilfe{\gfuss{6}{die Graphen berühren sich}}
 \end{pfaufg}
 
 % ===================== Stufe: Berührpunkt gesucht =====================
@@ -139,13 +144,13 @@ Gegeben sind die Funktionen $f$ mit $f(x) = x^3 - 6x^2$ und $g$ mit $g(x) = 15x 
 Gegeben ist die Funktion $f$ mit $f(x) = \tfrac{1}{3}x^3 - x^2 + 2$; die Abbildung zeigt ihren Graphen $G$. Die Tangente an $G$ im Punkt $P(3 \mid 2)$ hat die Steigung 3. Es gibt genau eine weitere Tangente an $G$, die zu ihr parallel ist. Bestimme ihren Berührpunkt und skizziere diese Tangente in der Abbildung.
 \par\smallskip\noindent\begin{abiksys}[xmin=-3,xmax=5,ymin=-5,ymax=6,le=0.5]\funktion[4.1]{\x^3/3-\x^2+2}{G}\punkt{3}{2}{P}\end{abiksys}\par
 \karo{2}
-\fusshilfe{\mbox{7:~Berührpunkt ($-$1|$\tfrac{2}{3}$), Tangente mit Steigung 3 durch diesen Punkt}}
+\fusshilfe{\gfuss{7}{Berührpunkt ($-$1|$\tfrac{2}{3}$), Tangente mit Steigung 3 durch diesen Punkt}}
 \end{pfaufg}
 % 2023-bebb-gk-B2.2d-m1 (Original 2023-bebb-gk-B2.2d, Schwere II, rang 18; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’23\\B2.2d}{8.}{}
 Gegeben ist die Funktion $f$ mit $f(x) = x^3 - 9x^2 + 24x - 16$, $x \in \mathbb{R}$. Die Tangente an den Graphen von $f$ im Punkt $S(0 \mid f(0))$ hat mit dem Graphen einen weiteren gemeinsamen Punkt. Bestimme seine Koordinaten.
 \karo{4}
-\fusshilfe{\mbox{8:~24x $-$ 16; weiterer Punkt (9|200)}}
+\fusshilfe{\gfuss{8}{24x $-$ 16; weiterer Punkt (9|200)}}
 \end{pfaufg}
 
 \pfblattende{10}{26 & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17}{B2.1d B2.2b & A1.1a A1.1b &  & A1.1a A1.3b B2.2d & A1.1b &  & B2.2h & B2.2f &  & }%

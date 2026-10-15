@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -89,27 +94,27 @@
 
 \Needspace*{0.16\textheight}\pfstufekopf{Figur nachweisen}{\gpunkte[23 22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-figur-nachweisen) [@thispage /XYZ @xpos @ypos null]}
 \begin{pfloesungb}{}
-\lzb{1.}{}{gleichschenklig mit Basis AB}{$\overrightarrow{AC}$ = $\left(\begin{smallmatrix}6\\2{,}5\\z\end{smallmatrix}\right)$, $\overrightarrow{BC}$ = $\left(\begin{smallmatrix}-6\\2{,}5\\z\end{smallmatrix}\right)$ $\Rightarrow$ |AC| = |BC| = √(42,25 + z²) $\Rightarrow$ gleichschenklig mit Basis AB}
+\lzb{1.}{}{gleichschenklig mit Basis AB}{$\overrightarrow{AC}$ = $\left(\begin{smallmatrix}6\\2{,}5\\z\end{smallmatrix}\right)$, $\overrightarrow{BC}$ = $\left(\begin{smallmatrix}-6\\2{,}5\\z\end{smallmatrix}\right)$ $\Rightarrow$ |AC| = |BC| = $\sqrt{42{,}25 + z²}$ $\Rightarrow$ gleichschenklig mit Basis AB}
 \end{pfloesungb}
 \begin{pfloesungb}{}
 \lzb{2.}{}{|CA| = 6}{$\overrightarrow{CA}$ = $\left(\begin{smallmatrix}-2\\-4\\4\end{smallmatrix}\right)$, $\overrightarrow{CB}$ = $\left(\begin{smallmatrix}4\\-4\\-2\end{smallmatrix}\right)$ $\Rightarrow$ |CA| = |CB| = 6}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{3.}{a)}{Raute}{|CG| = |CF| = |GS| = |FS| = √34 $\Rightarrow$ vier gleich lange Seiten $\Rightarrow$ Raute}
+\lzb{3.}{a)}{Raute}{|CG| = |CF| = |GS| = |FS| = $\sqrt{34}$ $\Rightarrow$ vier gleich lange Seiten $\Rightarrow$ Raute}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{}{b)}{36 = 2 · 18}{ABCD: Seite 6, Fläche 36; |EF| = √(9 + 9) = √18 $\Rightarrow$ EFGH: Fläche 18 $\Rightarrow$ 36 = 2 · 18}
+\lzb{}{b)}{36 = 2 · 18}{ABCD: Seite 6, Fläche 36; |EF| = $\sqrt{9 + 9}$ = $\sqrt{18}$ $\Rightarrow$ EFGH: Fläche 18 $\Rightarrow$ 36 = 2 · 18}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{4.}{}{gleichseitig; G(4,5|0|1,5)}{|AB| = |BC| = |AC| = 6√2 $\approx$ 8,49 $\Rightarrow$ gleichseitig; G = A + ¼ · $\overrightarrow{AC}$ $\Rightarrow$ G(4,5|0|1,5)}
+\lzb{4.}{}{gleichseitig; G(4,5|0|1,5)}{|AB| = |BC| = |AC| = 6$\sqrt{2}$ $\approx$ 8,49 $\Rightarrow$ gleichseitig; G = A + $\tfrac{1}{4}$ · $\overrightarrow{AC}$ $\Rightarrow$ G(4,5|0|1,5)}
 \end{pfloesungb}
 
 \Needspace*{0.16\textheight}\pfstufekopf{Parameter gesucht}{\gpunkte[26 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-parameter-gesucht) [@thispage /XYZ @xpos @ypos null]}
 \begin{pfloesungb}{}
-\lzb{5.}{}{t $\approx$ 6,36}{|AB| = 9; |AC| = √2 · t $\Rightarrow$ √2 · t = 9 $\Rightarrow$ t = 9/√2 $\approx$ 6,36}
+\lzb{5.}{}{t $\approx$ 6,36}{|AB| = 9; |AC| = $\sqrt{2}$ · t $\Rightarrow$ $\sqrt{2}$ · t = 9 $\Rightarrow$ t = 9/$\sqrt{2}$ $\approx$ 6,36}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{6.}{}{z = 6}{|AB| = 13; die Höhe ist z (C liegt über der Mitte (6|2,5|0)) $\Rightarrow$ ½ · 13 · z = 39 $\Rightarrow$ z = 6}
+\lzb{6.}{}{z = 6}{|AB| = 13; die Höhe ist z (C liegt über der Mitte (6|2,5|0)) $\Rightarrow$ $\tfrac{1}{2}$ · 13 · z = 39 $\Rightarrow$ z = 6}
 \end{pfloesungb}
 
 \Needspace*{0.16\textheight}\pfstufekopf{parallele Seiten nachweisen}{\gpunkte[26 24]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-parallele-seiten-nachweisen) [@thispage /XYZ @xpos @ypos null]}
@@ -117,6 +122,6 @@
 \lzb{7.}{}{Trapez}{$\overrightarrow{AD}$ = $\left(\begin{smallmatrix}0\\6\\0\end{smallmatrix}\right)$ = 2 · $\overrightarrow{BC}$ $\Rightarrow$ AD $\parallel$ BC $\Rightarrow$ Trapez}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{8.}{}{Trapez; A = 22,5}{$\overrightarrow{AD}$ = $\left(\begin{smallmatrix}0\\6\\0\end{smallmatrix}\right)$ = 2 · $\overrightarrow{BC}$ $\Rightarrow$ AD $\parallel$ BC $\Rightarrow$ Trapez; Höhe 5 $\Rightarrow$ A = ½ · (6 + 3) · 5 = 22,5}
+\lzb{8.}{}{Trapez; A = 22,5}{$\overrightarrow{AD}$ = $\left(\begin{smallmatrix}0\\6\\0\end{smallmatrix}\right)$ = 2 · $\overrightarrow{BC}$ $\Rightarrow$ AD $\parallel$ BC $\Rightarrow$ Trapez; Höhe 5 $\Rightarrow$ A = $\tfrac{1}{2}$ · (6 + 3) · 5 = 22,5}
 \end{pfloesungb}
 \end{document}

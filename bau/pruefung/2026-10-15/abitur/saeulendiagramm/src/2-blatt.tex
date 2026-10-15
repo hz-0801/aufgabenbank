@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -94,25 +99,25 @@
 \begin{pfaufg}{GK~’23\\A1.7a}{1.}{\pfohnetr}
 Die Abbildung zeigt die Wahrscheinlichkeitsverteilung einer binomialverteilten Zufallsgröße $X$. Bestimme mit der Abbildung einen Näherungswert für $P(4 < X < 7)$.
 \gzwei{\saeulenab[ymax=0.3,ystep=0.05,yfein=0.01,ylabel={$P(X=k)$},hoehe=2.8,breite=0.55]{0/0.0060,1/0.0403,2/0.1209,3/0.2150,4/0.2508,5/0.2007,6/0.1115,7/0.0425,8/0.0106,9/0.0016,10/0.0001}}{\karo{2}}
-\fusshilfe{\mbox{1:~0,31}}
+\fusshilfe{\gfuss{1}{0,31}}
 \end{pfaufg}
 % 2026-bb-gk-A1.6b-m1 (Original 2026-bb-gk-A1.6b, Schwere II, rang 2; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’26\\A1.6b}{2.}{\pfohnetr}
 Die Abbildung zeigt die Wahrscheinlichkeitsverteilung einer binomialverteilten Zufallsgröße $X$ mit $n = 16$ und unbekannter Trefferwahrscheinlichkeit $p$. Gib mit der Abbildung die natürlichen Zahlen $v$ und $w$ an, für die gilt: $P(X = v) \approx 0{,}18$ und $0{,}15 < P(X \le w) < 0{,}25$.
 \gzwei{\saeulenab[ymax=0.25,ystep=0.05,yfein=0.01,ylabel={$P(X=k)$},hoehe=2.8,breite=0.5]{0/0.0100,1/0.0535,2/0.1336,3/0.2079,4/0.2252,5/0.1802,6/0.1101,7/0.0524,8/0.0197,9/0.0058,10/0.0014,11/0.0002,12/0.0000}}{\karo{3}}
-\fusshilfe{\mbox{2:~5; 2}}
+\fusshilfe{\gfuss{2}{5; 2}}
 \end{pfaufg}
 % 2026-bb-gk-B4c-m1 (Original 2026-bb-gk-B4c, Schwere II, rang 3; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’26\\B4c}{3.}{}
 In einem Supermarkt sammeln 70 \% der Kundschaft Treuepunkte. Es werden 12 Personen aus der Kundschaft zufällig ausgewählt; die Zufallsgröße $X$ gibt an, wie viele davon Treuepunkte sammeln. $X$ wird als binomialverteilt angenommen. Die Abbildung zeigt die Wahrscheinlichkeitsverteilung der Zufallsgröße $Y$ mit $n = 12$ und $p = 0{,}3$. Erläutere, wie man mit der Abbildung die Wahrscheinlichkeit $P(X = 8)$ ermitteln kann.
 \gzwei{\saeulenab[ymax=0.3,ystep=0.1,yfein=0.05,ylabel={$P(X=k)$},hoehe=2.8,breite=0.5]{0/0.0138,1/0.0712,2/0.1678,3/0.2397,4/0.2311,5/0.1585,6/0.0792,7/0.0291,8/0.0078,9/0.0015,10/0.0002,11/0.0000,12/0.0000}}{\karo{3}}
-\fusshilfe{\mbox{3:~Säule von Y bei vier ablesen; 0,23}}
+\fusshilfe{\gfuss{3}{Säule von Y bei vier ablesen; 0,23}}
 \end{pfaufg}
 % 2025-bebb-gk-A1.9b-m1 (Original 2025-bebb-gk-A1.9b, Schwere III, rang 4; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’25\\A1.9b}{4.}{\pfohnetr}
 Die Abbildung zeigt die Wahrscheinlichkeitsverteilung einer binomialverteilten Zufallsgröße $X$ mit der Trefferwahrscheinlichkeit $p = 0{,}5$ und unbekanntem $n$. Die beiden höchsten Säulen bei $k = 9$ und $k = 10$ sind gleich hoch. Es gilt $P(X \ge 8) \approx 0{,}82$ und $P(X = 11) \approx 0{,}14$. Berechne mit diesen Werten einen Näherungswert für $P(X = 9)$.
 \gzwei{\saeulenab[ymax=0.2,ystep=0.05,yfein=0.05,ylabel={$P(X=k)$},hoehe=2.8,breite=0.5,ohnezahlen]{2/0.0003,3/0.0018,4/0.0074,5/0.0222,6/0.0518,7/0.0961,8/0.1442,9/0.1762,10/0.1762,11/0.1442,12/0.0961,13/0.0518,14/0.0222,15/0.0074,16/0.0018,17/0.0003}}{\karo{3}}
-\fusshilfe{\mbox{4:~0,18}}
+\fusshilfe{\gfuss{4}{0,18}}
 \end{pfaufg}
 
 % ===================== Stufe: Erwartungswert am Diagramm =====================
@@ -122,26 +127,26 @@ Die Abbildung zeigt die Wahrscheinlichkeitsverteilung einer binomialverteilten Z
 \begin{pfaufg}{GK~’26\\A1.6a}{5.}{\pfohnetr}
 Die Abbildung zeigt die Wahrscheinlichkeitsverteilung einer binomialverteilten Zufallsgröße $X$ mit $n = 16$ und unbekannter Trefferwahrscheinlichkeit $p$. Der Erwartungswert von $X$ ist ganzzahlig. Ermittle mit der Abbildung den Wert von $p$.
 \gzwei{\saeulenab[ymax=0.25,ystep=0.05,yfein=0.01,ylabel={$P(X=k)$},hoehe=2.8,breite=0.5]{0/0.0100,1/0.0535,2/0.1336,3/0.2079,4/0.2252,5/0.1802,6/0.1101,7/0.0524,8/0.0197,9/0.0058,10/0.0014,11/0.0002,12/0.0000}}{\karo{3}}
-\fusshilfe{\mbox{5:~0,25}}
+\fusshilfe{\gfuss{5}{0,25}}
 \end{pfaufg}
 % 2023-bebb-gk-A1.7b-m1 (Original 2023-bebb-gk-A1.7b, Schwere II, rang 6; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’23\\A1.7b}{6.}{\pfohnetr}
 Die Zufallsgröße $Y$ ist binomialverteilt mit $n = 15$ und $p = 0{,}2$. Genau eine der Abbildungen A, B und C zeigt die Wahrscheinlichkeitsverteilung von $Y$. Entscheide begründet, welche.
 \par\smallskip\noindent\setlength{\gbildbreite}{\dimexpr0.96\linewidth/3\relax}\sbox{\gbox}{\vbox{\resizebox{0.92\gbildbreite}{!}{\raisebox{\depth}{\saeulenab[ymax=0.3,ystep=0.1,yfein=0.05,ylabel={$P(X=k)$},hoehe=2.8,breite=0.5]{0/0.0023,1/0.0171,2/0.0599,3/0.1299,4/0.1948,5/0.2143,6/0.1786,7/0.1148,8/0.0574,9/0.0223,10/0.0067,11/0.0015,12/0.0003,13/0.0000,14/0.0000,15/0.0000}}}\par\resizebox{0.92\gbildbreite}{!}{\raisebox{\depth}{\saeulenab[ymax=0.3,ystep=0.1,yfein=0.05,ylabel={$P(X=k)$},hoehe=2.8,breite=0.5]{0/0.0352,1/0.1319,2/0.2309,3/0.2501,4/0.1876,5/0.1032,6/0.0430,7/0.0138,8/0.0035,9/0.0007,10/0.0001,11/0.0000,12/0.0000,13/0.0000,14/0.0000,15/0.0000}}}\par\resizebox{0.92\gbildbreite}{!}{\raisebox{\depth}{\saeulenab[ymax=0.6,ystep=0.1,yfein=0.05,ylabel={$P(X=k)$},hoehe=2.8,breite=0.5]{0/0.0704,1/0.2639,2/0.4618,3/0.5003,4/0.3752,5/0.2064,6/0.0860,7/0.0276,8/0.0069,9/0.0013,10/0.0002,11/0.0000,12/0.0000,13/0.0000,14/0.0000,15/0.0000}}}}}\gbildoption{A}{\resizebox{0.92\gbildbreite}{!}{\raisebox{\depth}{\saeulenab[ymax=0.3,ystep=0.1,yfein=0.05,ylabel={$P(X=k)$},hoehe=2.8,breite=0.5]{0/0.0023,1/0.0171,2/0.0599,3/0.1299,4/0.1948,5/0.2143,6/0.1786,7/0.1148,8/0.0574,9/0.0223,10/0.0067,11/0.0015,12/0.0003,13/0.0000,14/0.0000,15/0.0000}}}}{\dimexpr\ht\gbox/3+\baselineskip\relax}\hfill\gbildoption{B}{\resizebox{0.92\gbildbreite}{!}{\raisebox{\depth}{\saeulenab[ymax=0.3,ystep=0.1,yfein=0.05,ylabel={$P(X=k)$},hoehe=2.8,breite=0.5]{0/0.0352,1/0.1319,2/0.2309,3/0.2501,4/0.1876,5/0.1032,6/0.0430,7/0.0138,8/0.0035,9/0.0007,10/0.0001,11/0.0000,12/0.0000,13/0.0000,14/0.0000,15/0.0000}}}}{\dimexpr\ht\gbox/3+\baselineskip\relax}\hfill\gbildoption{C}{\resizebox{0.92\gbildbreite}{!}{\raisebox{\depth}{\saeulenab[ymax=0.6,ystep=0.1,yfein=0.05,ylabel={$P(X=k)$},hoehe=2.8,breite=0.5]{0/0.0704,1/0.2639,2/0.4618,3/0.5003,4/0.3752,5/0.2064,6/0.0860,7/0.0276,8/0.0069,9/0.0013,10/0.0002,11/0.0000,12/0.0000,13/0.0000,14/0.0000,15/0.0000}}}}{\dimexpr\ht\gbox/3+\baselineskip\relax}\par
 \karo{2}
-\fusshilfe{\mbox{6:~B; B hat die höchste Säule bei 3, A bei 5, und bei C ist die Summe der Säulen größer als 1}}
+\fusshilfe{\gfuss{6}{B; B hat die höchste Säule bei 3, A bei 5, und bei C ist die Summe der Säulen größer als 1}}
 \end{pfaufg}
 % 2025-bebb-gk-A1.9a-m1 (Original 2025-bebb-gk-A1.9a, Schwere II, rang 7; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’25\\A1.9a}{7.}{\pfohnetr}
 Die Abbildung zeigt die Wahrscheinlichkeitsverteilung einer binomialverteilten Zufallsgröße $X$ mit der Trefferwahrscheinlichkeit $p = 0{,}5$ und unbekanntem $n$. Die beiden höchsten Säulen bei $k = 9$ und $k = 10$ sind gleich hoch. Begründe, dass $n$ keine gerade Zahl ist.
 \gzwei{\saeulenab[ymax=0.2,ystep=0.05,yfein=0.05,ylabel={$P(X=k)$},hoehe=2.8,breite=0.5,ohnezahlen]{2/0.0003,3/0.0018,4/0.0074,5/0.0222,6/0.0518,7/0.0961,8/0.1442,9/0.1762,10/0.1762,11/0.1442,12/0.0961,13/0.0518,14/0.0222,15/0.0074,16/0.0018,17/0.0003}}{\karo{3}}
-\fusshilfe{\mbox{7:~19 ungerade}}
+\fusshilfe{\gfuss{7}{19 ungerade}}
 \end{pfaufg}
 % 2025-bebb-gk-B4c-m1 (Original 2025-bebb-gk-B4c, Schwere II, rang 8; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’25\\B4c}{8.}{}
 In einer Großstadt gelten 8,55 \% aller Haushalte als überbelegt. Es werden 800 Haushalte zufällig ausgewählt; die Zufallsgröße $X$ gibt die Anzahl der überbelegten Haushalte unter ihnen an und wird als binomialverteilt angenommen. Beurteile ohne Berechnung von Wahrscheinlichkeiten die Aussage: „Die Wahrscheinlichkeitsverteilung von $X$ nimmt für $k = 70$ ihren größten Wert an.“
 \karo{2}
-\fusshilfe{\mbox{8:~falsch}}
+\fusshilfe{\gfuss{8}{falsch}}
 \end{pfaufg}
 
 % ===================== Stufe: Erwartungswert berechnen =====================
@@ -151,13 +156,13 @@ In einer Großstadt gelten 8,55 \% aller Haushalte als überbelegt. Es werden 80
 \begin{pfaufg}{GK~’22\\B4c}{9.}{}
 In einem Paketzentrum werden täglich mehrere Millionen Pakete umgeschlagen. Von allen Paketen gehen 12 \% zum Ziel A und 6 \% zum Ziel B, die übrigen an andere Ziele. Unter 100 zufällig ausgewählten Paketen haben genau acht das Ziel B. Berechne, um wie viel Prozent diese Anzahl vom Erwartungswert abweicht.
 \karo{2}
-\fusshilfe{\mbox{9:~33,3 \%}}
+\fusshilfe{\gfuss{9}{33,3 \%}}
 \end{pfaufg}
 % 2026-bb-gk-A1.9a-m1 (Original 2026-bb-gk-A1.9a, Schwere III, rang 10; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’26\\A1.9a}{10.}{\pfohnetr}
 Die Zufallsgröße $X$ ist binomialverteilt mit dem Erwartungswert $\mu = 36$ und der Standardabweichung $\sigma = 3$. Bestimme einen Term ohne Parameter, mit dem man $P(X = 37)$ berechnen kann.
 \karo{3}
-\fusshilfe{\mbox{10:~Term (48 über 37) · 0,75$^{37}$ · 0,25$^{11}$; 0,128}}
+\fusshilfe{\gfuss{10}{Term (48 über 37) · 0,75$^{37}$ · 0,25$^{11}$; 0,128}}
 \end{pfaufg}
 
 \pfblattende{10}{26 & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17}{A1.6a A1.6b A1.9a B4c & A1.9a A1.9b B4c &  & A1.7a A1.7b & B4c &  & B4.2d & B4.2c & B3.2b & }%

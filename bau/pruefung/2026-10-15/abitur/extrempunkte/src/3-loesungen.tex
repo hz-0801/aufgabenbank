@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -92,7 +97,7 @@
 \lzb{1.}{}{h$''$ = $\tfrac{3}{4}$ t $-$ 18; Maximum; h(12) = 864 m}{h$'$(t) = $\tfrac{3}{8}$ t² $-$ 18t + 162; h$''$(t) = $\tfrac{3}{4}$ t $-$ 18; h$'$(12) = 54 $-$ 216 + 162 = 0 und h$''$(12) = $-$9 < 0 $\Rightarrow$ Maximum; h(12) = 216 $-$ 1296 + 1944 = 864 m}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{2.}{}{waagerechte Tangente; f($-$1 + √10) $\approx$ $-$18,79}{($-$1 + √10)² = 11 $-$ 2√10 $\Rightarrow$ 0,5 · (11 $-$ 2√10) + ($-$1 + √10) $-$ 4,5 = 0 $\Rightarrow$ f$'$($-$1 + √10) = 0 $\Rightarrow$ waagerechte Tangente; f($-$1 + √10) = 0,5 · (2 $-$ 2√10) · $e^{-1 + \sqrt{10}}$ = (1 $-$ √10) · $e^{\sqrt{10} - 1}$ $\approx$ $-$18,79}
+\lzb{2.}{}{waagerechte Tangente; f($-$2 + $\sqrt{13}$) $\approx$ $-$4,78}{($-$2 + $\sqrt{13}$)² = 17 $-$ 4$\sqrt{13}$ $\Rightarrow$ $\tfrac{1}{6}$ · (17 $-$ 4$\sqrt{13}$) + $\tfrac{2}{3}$ · ($-$2 + $\sqrt{13}$) $-$ $\tfrac{3}{2}$ = $\tfrac{17}{6}$ $-$ $\tfrac{8}{6}$ $-$ $\tfrac{9}{6}$ = 0 $\Rightarrow$ f'($-$2 + $\sqrt{13}$) = 0 $\Rightarrow$ waagerechte Tangente; f($-$2 + $\sqrt{13}$) = $\tfrac{1}{3}$ · (8 $-$ 4$\sqrt{13}$) · $e^{\tfrac{-2 + \sqrt{13}}{2}}$ = $\tfrac{4}{3}$ · (2 $-$ $\sqrt{13}$) · $e^{\tfrac{\sqrt{13}}{2} - 1}$ $\approx$ $-$4,78}
 \end{pfloesungb}
 \begin{pfloesungb}{}
 \lzb{3.}{}{f$'$ = $-$2; Hochpunkt ($-$2|e²) $\approx$ ($-$2|7,39)}{$e^{-x}$ > 0 $\Rightarrow$ f$'$(x) = 0 nur für x = $-$2; f$'$($-$3) = $e^3$ > 0, f$'$($-$1) = $-$e < 0 $\Rightarrow$ Vorzeichenwechsel von + nach $-$ $\Rightarrow$ Hochpunkt ($-$2|e²) $\approx$ ($-$2|7,39)}
@@ -100,16 +105,16 @@
 
 \Needspace*{0.16\textheight}\pfstufekopf{Extrempunkte gesucht}{\gpunkte[25 24 23 22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-extrempunkte-gesucht) [@thispage /XYZ @xpos @ypos null]}
 \begin{pfloesungb}{}
-\lzb{4.}{}{Extremstellen $-$2 und 0}{f$'$(x) = 3x² + 6x = 3x · (x + 2) = 0 $\Rightarrow$ Extremstellen $-$2 und 0}
+\lzb{4.}{}{Extremstellen 0 und 4}{f$'$(x) = 3x² $-$ 12x = 3x · (x $-$ 4) = 0 $\Rightarrow$ Extremstellen 0 und 4}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{5.}{}{x = 2; Tiefpunkt (0|0); Hochpunkt (2|$\tfrac{4}{3}$)}{f$'$(x) = $-$x² + 2x = $-$x(x $-$ 2) = 0 $\Rightarrow$ x = 0 oder x = 2; f$''$(x) = $-$2x + 2: f$''$(0) = 2 > 0 $\Rightarrow$ Tiefpunkt (0|0); f$''$(2) = $-$2 < 0 $\Rightarrow$ Hochpunkt (2|$\tfrac{4}{3}$)}
+\lzb{5.}{}{x = 4; Tiefpunkt (0|0); Hochpunkt (4|$\tfrac{16}{9}$)}{f$'$(x) = $-\tfrac{1}{6}$ x² + $\tfrac{2}{3}$ x = $-\tfrac{1}{6}$ x · (x $-$ 4) = 0 $\Rightarrow$ x = 0 oder x = 4; f$''$(x) = $-\tfrac{1}{3}$ x + $\tfrac{2}{3}$: f$''$(0) = $\tfrac{2}{3}$ > 0 $\Rightarrow$ Tiefpunkt (0|0); f$''$(4) = $-\tfrac{2}{3}$ < 0 $\Rightarrow$ Hochpunkt (4|$\tfrac{16}{9}$)}
 \end{pfloesungb}
 \begin{pfloesungb}{}
 \lzb{6.}{}{x = 4; Hochpunkt (2|4); Tiefpunkt (4|0)}{f$'$(x) = 3x² $-$ 18x + 24 = 3(x $-$ 2)(x $-$ 4) = 0 $\Rightarrow$ x = 2 oder x = 4; f$''$(x) = 6x $-$ 18: f$''$(2) = $-$6 < 0 $\Rightarrow$ Hochpunkt (2|4); f$''$(4) = 6 > 0 $\Rightarrow$ Tiefpunkt (4|0)}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{7.}{}{x = ±√3; Hochpunkt (0|2,5); Tiefpunkte ($-$√3|$-$2) und (√3|$-$2)}{f$'$(x) = 2x³ $-$ 6x = 2x(x² $-$ 3) = 0 $\Rightarrow$ x = 0 oder x = ±√3; f$''$(x) = 6x² $-$ 6: f$''$(0) = $-$6 < 0 $\Rightarrow$ Hochpunkt (0|2,5); f$''$(±√3) = 12 > 0 $\Rightarrow$ Tiefpunkte ($-$√3|$-$2) und (√3|$-$2)}
+\lzb{7.}{}{x = $\pm\sqrt{3}$; Hochpunkt (0|2,5); Tiefpunkte ($-\sqrt{3}$|$-$2) und ($\sqrt{3}$|$-$2)}{f'(x) = 2x³ $-$ 6x = 2x(x² $-$ 3) = 0 $\Rightarrow$ x = 0 oder x = $\pm\sqrt{3}$; f''(x) = 6x² $-$ 6: f''(0) = $-$6 < 0 $\Rightarrow$ Hochpunkt (0|2,5); f''($\pm\sqrt{3}$) = 12 > 0 $\Rightarrow$ Tiefpunkte ($-\sqrt{3}$|$-$2) und ($\sqrt{3}$|$-$2)}
 \end{pfloesungb}
 \begin{pfloesungb}{}
 \lzb{8.}{}{x = 3; Hochpunkt ($-$3|3), Tiefpunkt (3|$-$3); y = $-$x, Winkelhalbierende des II. und IV. Quadranten}{f$'$(x) = $\tfrac{1}{6}$ x² $-$ $\tfrac{3}{2}$ = 0 $\Rightarrow$ x² = 9 $\Rightarrow$ x = $-$3 oder x = 3; f($-$3) = 3, f(3) = $-$3; f$''$(x) = $\tfrac{1}{3}$ x $\Rightarrow$ Hochpunkt ($-$3|3), Tiefpunkt (3|$-$3); Steigung ($-$3 $-$ 3)/(3 + 3) = $-$1, durch den Ursprung $\Rightarrow$ y = $-$x, Winkelhalbierende des II. und IV. Quadranten}

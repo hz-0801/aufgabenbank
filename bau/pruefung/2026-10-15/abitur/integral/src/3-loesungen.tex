@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -106,7 +111,7 @@
 \lzb{5.}{}{F(2) $-$ F($-$2) $\approx$ 13,97; Abweichung $\approx$ 5,8 \%}{F(2) $-$ F($-$2) = 2e² $-$ 6$e^{ - 2}$ $\approx$ 13,97; Näherung 2e² $\approx$ 14,78 $\Rightarrow$ (14,78 $-$ 13,97)/13,97 $\approx$ 0,058 $\Rightarrow$ Abweichung $\approx$ 5,8 \%}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{6.}{}{$\tfrac{875}{5}$ = 175; in den ersten fünf Minuten beträgt die Temperatur im Mittel 175 °C}{Integral von 0 bis 5 = [x$^{4}$ $-$ 15x³ + 81x² + 20x] von 0 bis 5 = 875 $\Rightarrow$ $\tfrac{875}{5}$ = 175; in den ersten fünf Minuten beträgt die Temperatur im Mittel 175 °C}
+\lzb{6.}{}{912,5/5 = 182,5; in den ersten fünf Minuten beträgt die Temperatur im Mittel 182,5 °C}{Integral von 0 bis 5 = [2,5x$^{4}$ $-$ 30x³ + 120x² + 20x] von 0 bis 5 = 1562,5 $-$ 3750 + 3000 + 100 = 912,5 $\Rightarrow$ 912,5/5 = 182,5; in den ersten fünf Minuten beträgt die Temperatur im Mittel 182,5 °C}
 \end{pfloesungb}
 
 \Needspace*{0.16\textheight}\pfstufekopf{Grenze oder Parameter gesucht}{\gpunkte[26 24 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-grenze-oder-parameter-gesucht) [@thispage /XYZ @xpos @ypos null]}

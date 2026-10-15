@@ -9,6 +9,9 @@
 \newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
 \newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
 % links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
 \newsavebox{\gbox}\newlength{\gLinks}
 % v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
 % Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
@@ -52,7 +55,9 @@
   \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
     % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
     % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
-    \par\Needspace*{\dimexpr\mbaufgabehoehe+40pt\relax}\gkopfnach\gdef\gkopfnach{}\par\addvspace{5pt}}%
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
@@ -94,19 +99,19 @@
 \begin{pfaufg}{GK~’26\\A1.3a}{1.}{\pfohnetr}
 Eine Münze mit den Seiten Zahl (Z) und Wappen (W) wird sechsmal geworfen; ein Ergebnis ist eine Abfolge wie ZWZZWZ. Ereignis $A$: Es wird höchstens einmal Wappen geworfen. Gib einen Term an, mit dem man $P(A)$ berechnen kann.
 \karo{3}
-\fusshilfe{\mbox{1:~$\tfrac{7}{64}$}}
+\fusshilfe{\gfuss{1}{$\tfrac{7}{64}$}}
 \end{pfaufg}
 % 2026-bb-gk-B4a-m1 (Original 2026-bb-gk-B4a, Schwere I, rang 2; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’26\\B4a}{2.}{}
 In einem Supermarkt sammeln 70 \% der Kundschaft Treuepunkte. Es werden 12 Personen aus der Kundschaft zufällig ausgewählt; die Zufallsgröße $X$ gibt an, wie viele davon Treuepunkte sammeln. $X$ wird als binomialverteilt angenommen. Für ein Ereignis gilt $P(X = a) = \binom{b}{4} \cdot c^4 \cdot 0{,}3^8$. Gib die Werte von $a$, $b$ und $c$ an und beschreibe das Ereignis im Sachzusammenhang.
 \karo{4}
-\fusshilfe{\mbox{2:~4; 12; 0,7; genau 4 der 12 Personen sammeln Treuepunkte}}
+\fusshilfe{\gfuss{2}{4; 12; 0,7; genau 4 der 12 Personen sammeln Treuepunkte}}
 \end{pfaufg}
 % 2022-bebb-gk-B4a-m1 (Original 2022-bebb-gk-B4a, Schwere II, rang 3; herausgelöste Fassung: keine)
 \begin{pfaufg}{GK~’22\\B4a}{3.}{}
 In einem Paketzentrum werden täglich mehrere Millionen Pakete umgeschlagen. Von allen Paketen gehen 12 \% zum Ziel A und 6 \% zum Ziel B, die übrigen an andere Ziele. Es werden 100 Pakete zufällig ausgewählt und darauf untersucht, ob sie das Ziel B haben. Begründe, dass man die Anzahl der Pakete mit dem Ziel B als binomialverteilt annehmen kann.
 \karo{4}
-\fusshilfe{\mbox{3:~binomialverteilt}}
+\fusshilfe{\gfuss{3}{binomialverteilt}}
 \end{pfaufg}
 
 % ===================== Stufe: Term deuten =====================
@@ -116,16 +121,16 @@ In einem Paketzentrum werden täglich mehrere Millionen Pakete umgeschlagen. Von
 \begin{pfaufg}{}{4.}{}
 In einem Land arbeiten 30 \% aller Lehrkräfte an einem Gymnasium; 18 \% aller Lehrkräfte sind weiblich und arbeiten an einem Gymnasium, insgesamt sind 70 \% der Lehrkräfte weiblich. Es werden 100 Lehrkräfte zufällig ausgewählt; $X$ ist die Anzahl derer, die nicht an einem Gymnasium arbeiten.
 % 2023-bebb-gk-B4.1e-m1 (Original 2023-bebb-gk-B4.1e, Schwere II, rang 4; herausgelöste Fassung: keine)
-\begin{gbteil}{a)}{\raisebox{\dimexpr-\height+\ht\strutbox\relax}{\shortstack[r]{GK~’23\\B4.1e}}\hspace*{\mbpfnr}}{}
+\begin{gbteil}{a)}{\raisebox{\dimexpr-\height+\ht\strutbox\relax}{\shortstack[r]{GK~’23\\B4.1e}}}{}
 Gib an, was mit dem Term $\sum_{k=70}^{100} \binom{100}{k} \cdot 0{,}7^k \cdot 0{,}3^{100-k}$ im Sachzusammenhang berechnet wird.
 \karo{4}
 \end{gbteil}
 % 2023-bebb-gk-B4.1d-m1 (Original 2023-bebb-gk-B4.1d, Schwere II, rang 5; herausgelöste Fassung: keine)
-\begin{gbteil}{b)}{\raisebox{\dimexpr-\height+\ht\strutbox\relax}{\shortstack[r]{GK~’23\\B4.1d}}\hspace*{\mbpfnr}}{}
+\begin{gbteil}{b)}{\raisebox{\dimexpr-\height+\ht\strutbox\relax}{\shortstack[r]{GK~’23\\B4.1d}}}{}
 Bestimme die Wahrscheinlichkeit dafür, dass unter den 100 die Anzahl derer, die nicht an einem Gymnasium arbeiten, mindestens dreimal so groß ist wie die Anzahl derer, die an einem Gymnasium arbeiten.
 \karo{4}
 \end{gbteil}
-\fusshilfe{\mbox{4:~a)~0,549; Wahrscheinlichkeit, dass höchstens 30 der 100 Lehrkräfte an einem Gymnasium arbeiten; b)~0,163}}
+\fusshilfe{\gfuss{4}{a)~0,549; Wahrscheinlichkeit, dass höchstens 30 der 100 Lehrkräfte an einem Gymnasium arbeiten; b)~0,163}}
 \end{pfaufg}
 
 \pfblattende{10}{26 & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17}{A1.3a B4a &  &  & B4.1d B4.1e & B4a &  & B4.2b & B4.2e & B3.2g & B3.1f}%
