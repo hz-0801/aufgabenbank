@@ -6797,20 +6797,10 @@ def p_rechts(lo, links):
 
 
 def p_rechts_tex(zeilen):
-    """Rechte Spalte linksbündig (16.10.): je Handgriff eine Zeile; bei mehreren kurzen Gleichungen stehen die
-    Gleichheitszeichen untereinander (Spalten in natürlicher Breite, also am linken Rand)."""
+    """Rechte Spalte (16.10. m, gemeinsam.md „Form der Lösung“): zwei Handgriffe stehen mit „;“ in derselben
+    Zeile, linksbündig hinter der Punktlinie."""
     zeilen = [p_bruch(z) for z in zeilen if z.strip()]
-    if not zeilen:
-        return ''
-    if len(zeilen) == 1:
-        return tx(zeilen[0])
-    paare = [ops_split(z) if '$' not in z else [z] for z in zeilen]
-    if all(len(sg) >= 3 and len(sg[0]) <= 14 and len(z) <= 40 for sg, z in zip(paare, zeilen)):
-        return ('\\begin{tabular}[t]{@{}r@{\\,}l@{}}' + ''.join(
-            tx(sg[0].strip()) + ' & ' + tx(' '.join(x.strip() for x in sg[1:])) + '\\\\' for sg in paare)
-            + '\\end{tabular}')
-    return '\\newline '.join(tx(z) for z in zeilen)
-
+    return '; '.join(tx(z) for z in zeilen)
 
 def p_loesung_p10(D, einheit, kenn, stufen_daten):
     """Lösungsblatt P10 (plan.md § 10, 16.10. g): Kopf „Lösungen · Name“ mit kräftigem Strich, keine Stufenzeile,
