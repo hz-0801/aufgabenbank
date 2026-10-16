@@ -5388,8 +5388,20 @@ def lz_zeilen(r, nr, buchst='', optionen=None):
     \\lzz{Nr}{Buchst}{Ergebnis}{Ansatz}. Teile der Lösung durch „|“ werden a), b), … (ein Teil: der Buchstabe der
     Teilaufgabe, falls vorhanden); Ankreuz-Teile tragen das Stichwort aus bau/stichworte-p10.csv, sonst den Wert der Option."""
     lo = (r.get('loesung') or '').strip()
+    # v0.19 (16.10. n, Pflichtteil 6): „I: …, II: …“ in einem Teil sind zwei Zeilen „I.“, „II.“ (PA20 Nr. 6)
+    lo2 = re.sub(r'(?:^|(?<=\|\s))(I)\.?:\s*([^|]+?),\s*(II)\.?:\s*', r'\1. \2 | \3. ', lo)
+    if lo2 != lo:
+        r = dict(r, loesung=lo2)
+        lo = lo2
     ergebnisse, _ = p_ergebnis(r)
     teile = [t.strip() for t in re.split(r'\s\|\s', lo) if t.strip()]
+    for i, t in enumerate(teile):
+        m = re.match(r'^(I{1,3})\.\s+(.*)$', t)
+        if m and i < len(ergebnisse) and not ergebnisse[i].startswith(m.group(1) + '.'):
+            ergebnisse[i] = f'{m.group(1)}. {m.group(2)}'   # Zeile der Gleichung I./II. ganz, wie die Linie auf dem Blatt
+    # a), b) nur, wo das Blatt sie hat (pruefung.md § 5 Pflichtteil 6): Glieder eines Bündels (buchst) oder ein Wortlaut,
+    # der selbst a), b) zeigt; Antwortlinien „I.:“, „Apfelbaum:“ oder ein Karo tragen keine Buchstaben
+    hat_bst = len(re.findall(r'(?:^|[\s(])[a-h]\)', r.get('wortlaut') or '')) >= 2
     if optionen is None:
         optionen = mehr_kreuz((r.get('wortlaut') or '').strip())[1]
     b = mehr_buchstabe(r, optionen)
@@ -5400,7 +5412,7 @@ def lz_zeilen(r, nr, buchst='', optionen=None):
             nopt += 1   # Schlüssel: Zeilen-Id, die zweite Ankreuz-Antwort derselben Zeile „<Id>#2“
             e = stichwort(r.get('id', '') + ('' if nopt == 1 else f'#{nopt}')) or (b if (b and len(ergebnisse) == 1) else e)
         rechts = p_rechts_tex(p_rechts(teil, [ergebnisse[i]])) if teil else ''
-        bst = buchst if len(ergebnisse) == 1 else f'{"abcdefgh"[i]})'
+        bst = buchst if len(ergebnisse) == 1 else (f'{"abcdefgh"[i]})' if hat_bst else (buchst if i == 0 else ''))
         nummer = nr if i == 0 else ''
         out.append(f'\\lzz{{{nummer}}}{{{bst}}}{{{tx(p_bruch(e))}}}{{{rechts}}}')
     return out
@@ -5420,6 +5432,13 @@ def lz_frage_zeilen(f, nr):
             zeilen.append((('' if len(f['faelle']) == 1 else f'{"abcdefgh"[i]})'),
                            tx(stichwort('einstieg:' + a) or a) + (tx(zus) if zus and not stichwort('einstieg:' + a) else '')))
     wege = [w.strip() for w in weg.split(';') if w.strip()]
+    # v0.19 (16.10. n): „a) …; b) …“ im Weg – jeder Teil in die Zeile seiner Teilaufgabe, nie „a) …; b) …“ rechts in
+    # einer Zeile (PA20 Lösung Nr. 2); Teile ohne Buchstaben danach gehören zum letzten
+    stuecke = re.split(r'(?:^|;\s*)([a-h])\)\s*', weg)
+    if len(zeilen) > 1 and len(stuecke) >= 3 and stuecke[0].strip(' ;') == '':
+        bw = {stuecke[k]: stuecke[k + 1].strip(' ;') for k in range(1, len(stuecke) - 1, 2)}
+        if set(bw) == {'abcdefgh'[k] for k in range(len(zeilen))}:
+            wege = [bw['abcdefgh'[k]] for k in range(len(zeilen))]
     wege = wege if len(wege) == len(zeilen) and len(zeilen) > 1 else [weg] + [''] * (len(zeilen) - 1)
     out = []
     for i, ((bst, erg), w) in enumerate(zip(zeilen, wege)):
