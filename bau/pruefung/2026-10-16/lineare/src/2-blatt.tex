@@ -100,48 +100,74 @@
 % Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
 \newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
 \newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\usepackage{graphicx}\graphicspath{{/home/claude/aufgabenbank-privat/}}
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Lineare Funktionen}{PA10-7}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Lineare Funktionen}{PA10-8}\pfseitevon
 \pfheftkopf{Lineare Funktionen}{}
-\pfstufenzeile{A~Gerade zeichnen \pkt{} B~Gleichung ablesen \pkt{} C~Gleichung aus zwei Punkten \pkt{} D~Nullstelle gesucht \pkt{} E~Punktprobe \pkt{} F~Gleichung aus Text \pkt{} G~Gerade und Parabel}
+\pfstufenzeile{A~Graph zeichnen \pkt{} B~Gleichung aus Graph \pkt{} C~Gleichung aus zwei Punkten \pkt{} D~Nullstelle gesucht \pkt{} E~Punktprobe \pkt{} F~Gleichung aus Text}
+% Formelkasten (15.10. t, 16.10. a)
+{\small% duden-s29-y-f-x-m-2 – y = f(x) = m· x + n für m ≠ 0 (Duden S. 29), aus duden-sek1.md
+\providecommand\fsf[1]{\leavevmode\setbox0\hbox{\everymath{\displaystyle}#1}\ifdim\wd0>\linewidth\setbox0\hbox{\resizebox{\linewidth}{!}{\box0}}\fi
+ \vrule height\dimexpr\ht0+1.5pt\relax depth\dimexpr\dp0+1.5pt\relax width0pt\box0}
+\providecommand\fstab[1]{\leavevmode\setbox0\hbox{#1}\ifdim\wd0>\linewidth\resizebox{\linewidth}{!}{\box0}\else\box0\fi}
+\providecommand\fssic[1]{{\color{red!65!black}\footnotesize[sic?#1]}}
+\providecommand\fsunl[1]{{\color{red!65!black}\footnotesize[unleserlich#1]}}
+\providecommand\fsfigur[1]{{\footnotesize\color{mbgrau}\itshape Figur im Original: #1\par}}
+\providecommand\fsbild[1]{\leavevmode\hfill#1\par}
+\providecommand\fsbildbreite{4.6cm}
+\providecommand\fszeilebild[6]{\par\noindent\begin{minipage}[t]{\dimexpr\fsbreite-#6-6pt}\vspace{0pt}\renewcommand\fsbreite{\linewidth}\fszeile{#1}{#2}{#3}{}\end{minipage}\hfill
+ \begin{minipage}[t]{#6}\vspace{3pt}\includegraphics[width=#6]{#5}\end{minipage}\par}
+\usetikzlibrary{angles}\tikzset{fsfig/.style={line width=0.7pt,baseline=(current bounding box.north),font=\small},
+ fswinkel/.style={draw=mbgrau,line width=0.5pt,angle radius=5.5mm,angle eccentricity=0.62,pic text options={font=\footnotesize}},
+ fsrecht/.style={draw=mbgrau,line width=0.5pt,angle radius=2.6mm,angle eccentricity=0.5,pic text={\tiny$\bullet$}},
+ fslinie/.style={font=\scriptsize,sloped,inner sep=1.5pt},fsflaeche/.style={fill=mbgrau,fill opacity=0.18,draw=none}}
+\providecommand\fspkt[1]{\fill #1 circle (1.4pt);}
+\providecommand\fshinweis[1]{{\footnotesize\color{mbgrau}#1\par}}
+\providecommand\fspunkt{\ensuremath{\scriptstyle\blacksquare}\,}
+\providecommand\fsfuenf{\ensuremath{\rlap{$||||$}\diagup}}
+\providecommand\fsquelle[1]{\hfill{\footnotesize\color{mbgrau}#1}}
+\providecommand\fsbreite{\linewidth}
+\providecommand\fszeile[4]{\par\noindent{\renewcommand\arraystretch{1.25}\setlength\lineskip{4pt}\setlength\lineskiplimit{3pt}%
+ \ifblank{#2}%
+ {\begin{tabular}{>{\columncolor{mbkasten}\raggedright\hspace{0pt}}p{\dimexpr0.25\fsbreite-2\tabcolsep}>{\raggedright\arraybackslash}p{\dimexpr0.75\fsbreite-2\tabcolsep}}%
+  #1 & #3\ifblank{#4}{}{\\ & #4}\end{tabular}}%
+ {\begin{tabular}{>{\columncolor{mbkasten}\raggedright\hspace{0pt}}p{\dimexpr0.25\fsbreite-2\tabcolsep}>{\raggedright}p{\dimexpr0.33\fsbreite-2\tabcolsep}>{\raggedright\arraybackslash}p{\dimexpr0.42\fsbreite-2\tabcolsep}}%
+  #1 & #2 & #3\ifblank{#4}{}{\\ & \multicolumn{2}{>{\raggedright\arraybackslash}p{\dimexpr0.75\fsbreite-2\tabcolsep}}{#4}}\end{tabular}}}\par}
+\providecommand\fskastentitel[1]{\par\noindent\textbf{#1}\par}
+\uebersichtskasten{\renewcommand\fsbreite{\linewidth}
+\fszeilebild{$y = f(x) = m\cdot x + n$ für $m \neq 0$}{Gerade durch P(0; n)\newline Definitionsbereich: $x \in \mathbb{R}$\newline Wertebereich: $y \in \mathbb{R}$\newline n: Abschnitt auf y-Achse\newline Nullstelle: $x_0 = -\frac{n}{m}$ (blau)}{}{}{formelsammlung/figuren/duden-bild/duden-s29-y-f-x-m-2.png}{3.89cm}
+}
+}\vspace{-4pt}\par\noindent{\footnotesize\color{mbgrau}Formeln und Werte S.~29}\par\medskip
 
 % ===================== Stufe: Gerade zeichnen =====================
-\Needspace*{0.16\textheight}\gbstvor{A}\pfstufekopf{Gerade zeichnen}{\gpunkte[26 25 24 23 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-gerade-zeichnen) [@thispage /XYZ @xpos @ypos null]}\gfrage{Wo steht die Gleichung der linearen Funktion mit m und n? Formelsammlung, Seite~\linie{12mm}}
-% Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
-\begin{pfaufg}{}{1.}{}
-Welche Funktionen sind linear? Kreuze an. Wähl eine lineare aus und gib ihr m und n an: $m = \underline{\hspace{10mm}}$, $n = \underline{\hspace{10mm}}$.
-\par\smallskip
-\par\noindent\makebox[\mbpfteil][l]{\textbf{a)}}$f(x) = 3 - 2x$\hfill\kk{linear}
-\par\noindent\makebox[\mbpfteil][l]{\textbf{b)}}$f(x) = x^2 + 1$\hfill\kk{linear}
-\par\noindent\makebox[\mbpfteil][l]{\textbf{c)}}$f(x) = 0{,}5x$\hfill\kk{linear}
-\par\fusshilfe{\gfuss{1}{a) und c)}}
-\end{pfaufg}
+\gkopfvor{\gbstvor{A}\pfstufekopf{Graph zeichnen}{\gpunkte[26 25 24 23 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-graph-zeichnen) [@thispage /XYZ @xpos @ypos null]}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
 % 2025-OS-B1f-m1 (Original 2025-OS-B1f, Schwere I, rang 1; herausgelöste Fassung: keine)
-\begin{pfaufg}{’25~\pkt{}~1f}{2.}{Basis}
+\begin{pfaufg}{’25~\pkt{}~1f}{1.}{Basis}
 Kreuze das Bild an, das den Graphen einer linearen Funktion zeigt.
 \par\smallskip\noindent\setlength{\gbildbreite}{\dimexpr0.96\linewidth/4\relax}\sbox{\gbox}{\vbox{\begin{tikzpicture}[x=1.1cm,y=1.1cm,line width=0.6pt]\draw[-{Stealth[length=1.5mm]}] (-0.8,0)--(0.95,0);\draw[-{Stealth[length=1.5mm]}] (0,-0.6)--(0,1.05);\draw[line width=0.8pt] (-0.8,0.94)--(0.9,-0.42);\end{tikzpicture}\par\begin{tikzpicture}[x=1.1cm,y=1.1cm,line width=0.6pt]\draw[-{Stealth[length=1.5mm]}] (-0.8,0)--(0.95,0);\draw[-{Stealth[length=1.5mm]}] (0,-0.6)--(0,1.05);\draw[line width=0.8pt,domain=0.1:0.9,samples=40,smooth] plot (\x,{0.09/\x});\end{tikzpicture}\par\begin{tikzpicture}[x=1.1cm,y=1.1cm,line width=0.6pt]\draw[-{Stealth[length=1.5mm]}] (-0.8,0)--(0.95,0);\draw[-{Stealth[length=1.5mm]}] (0,-0.6)--(0,1.05);\draw[line width=0.8pt,domain=-0.6:0.6,samples=40,smooth] plot (\x,{3*\x*\x-0.4});\end{tikzpicture}\par\begin{tikzpicture}[x=1.1cm,y=1.1cm,line width=0.6pt]\draw[-{Stealth[length=1.5mm]}] (-0.8,0)--(0.95,0);\draw[-{Stealth[length=1.5mm]}] (0,-0.6)--(0,1.05);\draw[line width=0.8pt] (0.1,-0.3)--(0.5,0.5)--(0.1,0.7);\end{tikzpicture}}}\gbildoption{}{\begin{tikzpicture}[x=1.1cm,y=1.1cm,line width=0.6pt]\draw[-{Stealth[length=1.5mm]}] (-0.8,0)--(0.95,0);\draw[-{Stealth[length=1.5mm]}] (0,-0.6)--(0,1.05);\draw[line width=0.8pt] (-0.8,0.94)--(0.9,-0.42);\end{tikzpicture}}{\dimexpr\ht\gbox/4+\baselineskip\relax}\hfill\gbildoption{}{\begin{tikzpicture}[x=1.1cm,y=1.1cm,line width=0.6pt]\draw[-{Stealth[length=1.5mm]}] (-0.8,0)--(0.95,0);\draw[-{Stealth[length=1.5mm]}] (0,-0.6)--(0,1.05);\draw[line width=0.8pt,domain=0.1:0.9,samples=40,smooth] plot (\x,{0.09/\x});\end{tikzpicture}}{\dimexpr\ht\gbox/4+\baselineskip\relax}\hfill\gbildoption{}{\begin{tikzpicture}[x=1.1cm,y=1.1cm,line width=0.6pt]\draw[-{Stealth[length=1.5mm]}] (-0.8,0)--(0.95,0);\draw[-{Stealth[length=1.5mm]}] (0,-0.6)--(0,1.05);\draw[line width=0.8pt,domain=-0.6:0.6,samples=40,smooth] plot (\x,{3*\x*\x-0.4});\end{tikzpicture}}{\dimexpr\ht\gbox/4+\baselineskip\relax}\hfill\gbildoption{}{\begin{tikzpicture}[x=1.1cm,y=1.1cm,line width=0.6pt]\draw[-{Stealth[length=1.5mm]}] (-0.8,0)--(0.95,0);\draw[-{Stealth[length=1.5mm]}] (0,-0.6)--(0,1.05);\draw[line width=0.8pt] (0.1,-0.3)--(0.5,0.5)--(0.1,0.7);\end{tikzpicture}}{\dimexpr\ht\gbox/4+\baselineskip\relax}\par
-\fusshilfe{\gfuss{2}{die einzige Gerade; B Hyperbelast, C Parabel, D kein Funktionsgraph}}
+\fusshilfe{\gfuss{1}{die einzige Gerade; B Hyperbelast, C Parabel, D kein Funktionsgraph}}
 \end{pfaufg}
 % 2024-OS-B1i-m1 (Original 2024-OS-B1i, Schwere I, rang 2; herausgelöste Fassung: keine)
-\begin{pfaufg}{’24~\pkt{}~1i}{3.}{Basis}
+\begin{pfaufg}{’24~\pkt{}~1i}{2.}{Basis}
 Gegeben ist die Gerade $y = 1{,}5x + 1$. Zeichne den Punkt ein, an dem sie die y-Achse trifft.
 \par\smallskip\noindent\begin{ksys}[xmin=-3,xmax=3,ymin=-3,ymax=3,karo=0.5]\end{ksys}\par
-\fusshilfe{\gfuss{3}{Punkt (0|1)}}
+\fusshilfe{\gfuss{2}{Punkt (0|1)}}
 \end{pfaufg}
 % 2024-OS-K3a-m1 (Original 2024-OS-K3a, Schwere I, rang 3; herausgelöste Fassung: keine)
-\begin{pfaufg}{nach~P10\\’24~\pkt{}~3a}{4.}{}
+\begin{pfaufg}{nach~P10\\’24~\pkt{}~3a}{3.}{}
 Die lineare Funktion $f$ hat die Gleichung $f(x) = 2x + 3$. Zeichne ihren Graphen in das Koordinatensystem.
 \par\smallskip\noindent\gpassend{\begin{ksys}[xmin=-4,xmax=4,ymin=-5,ymax=8,karo=0.5]\end{ksys}}\par
-\fusshilfe{\gfuss{4}{Gerade durch (0|3) und (1|5)}}
+\fusshilfe{\gfuss{3}{Gerade durch (0|3) und (1|5)}}
 \end{pfaufg}
 
 % ===================== Stufe: Gleichung aus Graph =====================
-\gkopfvor{\gbstvor{B}\pfstufekopf{Gleichung ablesen}{\gzuletzt{19}}\special{pdf:dest (stufe-gleichung-ablesen) [@thispage /XYZ @xpos @ypos null]}}
+\gkopfvor{\gbstvor{B}\pfstufekopf{Gleichung aus Graph}{\gzuletzt{19}}\special{pdf:dest (stufe-gleichung-aus-graph) [@thispage /XYZ @xpos @ypos null]}}
 % kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
 % Teile eines Originals (2019-OS-K2): 2019-OS-K2b-m1, 2019-OS-K2c-m1
-\begin{pfaufg}{nach~P10\\’19~\pkt{}~2}{5.}{}
+\begin{pfaufg}{nach~P10\\’19~\pkt{}~2}{4.}{}
 In einem Koordinatensystem sind die Graphen $f$, $g$ und $h$ von drei linearen Funktionen gezeichnet.
 % 2019-OS-K2b-m1 (Original 2019-OS-K2b, Schwere I, rang 11; herausgelöste Fassung: keine)
 \begin{gbteil}{a)}{}{}
@@ -155,57 +181,57 @@ Schreib zu jeder Eigenschaft den Graphen ($f$, $g$ oder $h$), der sie hat: „De
 Ordne jedem Graphen $f$, $g$ und $h$ eine Gleichung aus dieser Liste zu: $y = -3x + 3$, $y = -\tfrac{1}{3}x + 3$, $y = -1$, $y = x + 3$, $y = -3x$, $y = x - 3$.
 \gzwei{\begin{ksys}[xmin=-5,xmax=5,ymin=-5,ymax=5,karo=0.5]\gerade[0.6]{-3}{3}{f}\gerade[1]{1}{3}{g}\gerade[3.5]{0}{-1}{h}\end{ksys}}{\vspace{1mm}\par\smallskip\par\noindent \hfill f: \linie{30mm}\hphantom{\,cm²}\par\noindent \hfill g: \linie{30mm}\hphantom{\,cm²}\par\noindent \hfill h: \linie{30mm}\hphantom{\,cm²}}
 \end{gbteil}
-\fusshilfe{\gfuss{5}{a)~h; b)~$-$1}}
+\fusshilfe{\gfuss{4}{a)~h; b)~$-$1}}
 \end{pfaufg}
 
 % ===================== Stufe: Gleichung aus zwei Punkten =====================
 \gkopfvor{\gbstvor{C}\pfstufekopf{Gleichung aus zwei Punkten}{\gpunkte[25]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-gleichung-aus-zwei-punkten) [@thispage /XYZ @xpos @ypos null]}}
 % kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
 % 2025-OS-K5a-m1 (Original 2025-OS-K5a, Schwere II, rang 6; herausgelöste Fassung: keine)
-\begin{pfaufg}{nach~P10\\’25~\pkt{}~5a}{6.}{}
+\begin{pfaufg}{nach~P10\\’25~\pkt{}~5a}{5.}{}
 Der Graph einer linearen Funktion $f$ geht durch die Punkte $A(-2\,|\,5)$ und $B(3\,|\,-2{,}5)$. Zeichne den Graphen von $f$ in das Koordinatensystem. Entscheide, ob die Aussagen wahr oder falsch sind:
 \gzwei{\begin{ksys}[xmin=-4,xmax=4,ymin=-4,ymax=8,karo=0.5]\end{ksys}}{\vspace{1mm}\gwahrfalsch{1}{Der Graph von $f$ steigt monoton.}\gwahrfalsch{2}{Der Graph von $f$ schneidet die y-Achse in $(0\,|\,2)$}\par\smallskip\noindent Gib eine Gleichung von $f$ an.\par\smallskip\noindent y $=$\linie{40mm}}
-\fusshilfe{\gfuss{6}{Gerade durch A und B; Aussage 1 falsch, Aussage 2 wahr; $-$1,5x + 2}}
+\fusshilfe{\gfuss{5}{Gerade durch A und B; Aussage 1 falsch, Aussage 2 wahr; $-$1,5x + 2}}
 \end{pfaufg}
 
 % ===================== Stufe: Nullstelle =====================
 \gkopfvor{\gbstvor{D}\pfstufekopf{Nullstelle gesucht}{\gpunkte[22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-nullstelle-gesucht) [@thispage /XYZ @xpos @ypos null]}}
 % kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
 % 2022-OS-K3a-m1 (Original 2022-OS-K3a, Schwere I, rang 7; herausgelöste Fassung: keine)
-\begin{pfaufg}{nach~P10\\’22~\pkt{}~3a}{7.}{}
+\begin{pfaufg}{nach~P10\\’22~\pkt{}~3a}{6.}{}
 Gegeben ist die lineare Funktion $f(x) = -2x + 5$. Zeichne den Graphen von $f$ in das Koordinatensystem. Gib die Nullstelle von $f$ an.
 \gzwei{\begin{ksys}[xmin=-4,xmax=5,ymin=-4,ymax=7,karo=0.5]\end{ksys}}{\vspace{1mm}\par\smallskip\noindent \mbox{x $=$\linie{30mm}}}
-\fusshilfe{\gfuss{7}{Gerade durch (0|5) und (1|3); 2,5}}
+\fusshilfe{\gfuss{6}{Gerade durch (0|5) und (1|3); 2,5}}
 \end{pfaufg}
 
 % ===================== Stufe: Punktprobe =====================
 \gkopfvor{\gbstvor{E}\pfstufekopf{Punktprobe}{\gpunkte[26 25 24 23 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-punktprobe) [@thispage /XYZ @xpos @ypos null]}}
 % kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
 % 2023-OS-B1i-m1 (Original 2023-OS-B1i, Schwere I, rang 8; herausgelöste Fassung: keine)
-\begin{pfaufg}{’23~\pkt{}~1i}{8.}{Basis}
+\begin{pfaufg}{’23~\pkt{}~1i}{7.}{Basis}
 Die Gerade $f$ hat die Gleichung $f(x) = -5x + 2$. Einer dieser Punkte liegt nicht auf $f$. Kreuze ihn an:
 \par\smallskip\noindent\pfkreuz{}{$(-2\,|\,12)$}\pfkreuz{}{$(3\,|\,-12)$}\pfkreuz{}{$(4\,|\,-18)$.}
-\fusshilfe{\gfuss{8}{$(3\,|\,-12)$}}
+\fusshilfe{\gfuss{7}{$(3\,|\,-12)$}}
 \end{pfaufg}
 % 2026-FOR-K5b-m1 (Original 2026-FOR-K5b, Schwere I, rang 10; herausgelöste Fassung: keine)
-\begin{pfaufg}{nach~P10\\’26~\pkt{}~5b}{9.}{}
+\begin{pfaufg}{nach~P10\\’26~\pkt{}~5b}{8.}{}
 Prüfe mit einer Rechnung, ob der Punkt $P(-2\,|\,7)$ auf dem Graphen von $f(x) = -3x + 1$ liegt.
-\karo{3}
-\fusshilfe{\gfuss{9}{P liegt auf dem Graphen}}
+\karo{2}
+\fusshilfe{\gfuss{8}{P liegt auf dem Graphen}}
 \end{pfaufg}
 
 % ===================== Stufe: Gleichung aus Text =====================
 \Needspace*{0.16\textheight}\gbstvor{F}\pfstufekopf{Gleichung aus Text}{\gpunkte[23 22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-gleichung-aus-text) [@thispage /XYZ @xpos @ypos null]}
 % Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
-\begin{pfaufg}{}{10.}{}
+\begin{pfaufg}{}{9.}{}
 Welche Zahl ist m, welche n? Rechne nicht.
 \par\smallskip
 \par\noindent\makebox[\mbpfteil][l]{\textbf{a)}}Handytarif: 8 € im Monat und 0,09 € je Minute\hfill\linie{30mm}
 \par\noindent\makebox[\mbpfteil][l]{\textbf{b)}}Kerze: 25 cm hoch, brennt je Stunde 2 cm ab\hfill\linie{30mm}
-\par\fusshilfe{\gfuss{10}{a) 8 ist n, 0,09 ist m; b) 25 ist n, $-$2 ist m}}
+\par\fusshilfe{\gfuss{9}{a) 8 ist n, 0,09 ist m; b) 25 ist n, $-$2 ist m}}
 \end{pfaufg}
 % Teile eines Originals (2022-OS-K6): 2022-OS-K6a-m1, 2022-OS-K6b-m1
-\begin{pfaufg}{nach~P10\\’22~\pkt{}~6}{11.}{}
+\begin{pfaufg}{nach~P10\\’22~\pkt{}~6}{10.}{}
 Maxi und Paula haben zum 16. Geburtstag Geld bekommen und legen jeden Monat etwas dazu, um den Führerschein zu bezahlen. Maxi beginnt mit 1 360 € und spart 24 € im Monat. Paula beginnt mit 820 € und spart 65 € im Monat.
 % 2022-OS-K6a-m1 (Original 2022-OS-K6a, Schwere I, rang 12; herausgelöste Fassung: keine)
 \begin{gbteil}{a)}{}{}
@@ -217,12 +243,12 @@ Nach einem Jahr hat Paula 1 600 € gespart. Berechne, wie viel Geld Maxi nach e
 % 2022-OS-K6b-m1 (Original 2022-OS-K6b, Schwere II, rang 13; herausgelöste Fassung: keine)
 \begin{gbteil}{b)}{}{FOR}
 Stelle eine Gleichung für Paulas Guthaben auf ($y$: Guthaben in €, $x$: Zahl der Monate). Für Fahrschule und Prüfung braucht Paula 1 800 €. Bestimme, wie viele Monate sie mindestens sparen muss.
-\karo{4}
+\karo{3}
 \end{gbteil}
-\fusshilfe{\gfuss{11}{a)~1648 €; b)~65x + 820; 16 Monate}}
+\fusshilfe{\gfuss{10}{a)~1648 €; b)~65x + 820; 16 Monate}}
 \end{pfaufg}
 % Teile eines Originals (2023-OS-K3): 2023-OS-K3a-m1, 2023-OS-K3b-m1
-\begin{pfaufg}{nach~P10\\’23~\pkt{}~3}{12.}{}
+\begin{pfaufg}{nach~P10\\’23~\pkt{}~3}{11.}{}
 Herr Mert braucht für seinen Umzug einen Transporter. Angebot 1: 25 € Miete je Tag, 320 km insgesamt frei, jeder weitere Kilometer kostet 0,35 €. Angebot 2: einmalig 115 € Miete für eine Woche, jeder Kilometer kostet 0,08 €.
 % 2023-OS-K3a-m1 (Original 2023-OS-K3a, Schwere II, rang 14; herausgelöste Fassung: keine)
 \begin{gbteil}{a)}{}{}
@@ -236,56 +262,9 @@ Die Kosten für einen Miettag sollen für beide Angebote in einem Diagramm darge
 % 2023-OS-K3b-m1 (Original 2023-OS-K3b, Schwere II, rang 15; herausgelöste Fassung: keine)
 \begin{gbteil}{b)}{}{FOR}
 Herr Mert mietet den Transporter von Montag bis Freitag und fährt insgesamt 450 km. Berechne die Kosten für beide Angebote. Gib an, welches billiger ist. Stelle für Angebot 2 eine Gleichung auf, mit der man die Kosten einer Woche für jede Kilometerzahl berechnen kann.
-\karo{4}
+\karo{3}
 \end{gbteil}
-\fusshilfe{\gfuss{12}{a)~C; B; b)~170,50 €; 151,00 €; Angebot 2 günstiger; 0,08x + 115}}
-\end{pfaufg}
-
-% ===================== Stufe: Gemischt: Gerade und Parabel =====================
-\gkopfvor{\gbstvor{G}\pfstufekopf{Gerade und Parabel}{\gpunkte[26 25 24 23 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-gerade-und-parabel) [@thispage /XYZ @xpos @ypos null]}}
-% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
-% 2025-OS-B1h-m1 (Original 2025-OS-B1h, Schwere I, rang 1; herausgelöste Fassung: keine)
-\begin{pfaufg}{’25~\pkt{}~1h}{13.}{Basis}
-Genau einer der Werte löst die Gleichung $x(x+4) = -3$. Kreuze ihn an:
-\pfkreuzab{}{$x = 1$}\pfkreuzab{}{$x = 3$}\pfkreuzab{}{$x = -2$}\pfkreuzab{}{$x = -3$.}
-\fusshilfe{\gfuss{13}{-3}}
-\end{pfaufg}
-% 2026-FOR-K5a-m1 (Original 2026-FOR-K5a, Schwere I, rang 2; herausgelöste Fassung: keine)
-\begin{pfaufg}{nach~P10\\’26~\pkt{}~5a}{14.}{FOR}
-Im Koordinatensystem ist die Normalparabel $p$ mit $p(x) = (x-3)^2 - 1$ gezeichnet. Die lineare Funktion $f$ hat die Gleichung $f(x) = -3x + 1$. Zeichne ihren Graphen in das Koordinatensystem.
-\par\smallskip\noindent\gpassend{\begin{ksys}[xmin=-3,xmax=6,ymin=-3,ymax=6,karo=0.5]\parabel{1}{3}{-1}{p}\end{ksys}}\par
-\fusshilfe{\gfuss{14}{Gerade durch (0|1) und (1|$-$2)}}
-\end{pfaufg}
-% Teile eines Originals (2024-OS-K3): 2024-OS-K3c-m1, 2024-OS-K3d-m1
-\begin{pfaufg}{nach~P10\\’24~\pkt{}~3}{15.}{}
-Die Gerade $f$ ist der Graph von $f(x) = 2x + 3$. Die Parabel $p$ ist der Graph von $p(x) = x^2 - 5$.
-% 2024-OS-K3c-m1 (Original 2024-OS-K3c, Schwere I, rang 3; herausgelöste Fassung: keine)
-\begin{gbteil}{a)}{}{}
-Prüfe mit einer Rechnung, ob der Punkt $T(-3\,|\,5)$ auf der Parabel $p$ liegt.
-\karo{2}
-\end{gbteil}
-\end{pfaufg}
-\begin{pfaufg}{}{}{}
-% 2024-OS-K3d-m1 (Original 2024-OS-K3d, Schwere II, rang 4; herausgelöste Fassung: keine)
-\begin{gbteil}{b)}{}{FOR}
-Die Graphen von $f$ und $p$ haben zwei Schnittpunkte. Berechne ihre Koordinaten.
-\karo{2}
-\par\smallskip\par\noindent \hfill S$_1$: \linie{30mm}\hphantom{\,cm²}\par\noindent \hfill S$_2$: \linie{30mm}\hphantom{\,cm²}
-\end{gbteil}
-\fusshilfe{\gfuss{15}{a)~Nein; b)~S$_1$(4|11); S$_2$($-$2|$-$1)}}
-\end{pfaufg}
-% 2023-OS-K4a-m1 (Original 2023-OS-K4a, Schwere II, rang 5; herausgelöste Fassung: keine)
-\begin{pfaufg}{nach~P10\\’23~\pkt{}~4a}{16.}{}
-Im Koordinatensystem ist eine nach unten geöffnete Normalparabel $p$ gezeichnet. Die Gerade $f$ hat die Gleichung $f(x) = 3x - 2$. Zeichne $f$ in das Koordinatensystem. Gib die Koordinaten eines Punktes an, in dem sich die beiden Graphen schneiden: $S(\ \ \ \,|\,\ \ \ )$. Entscheide, ob die Aussagen wahr oder falsch sind:
-\gzwei{\begin{ksys}[xmin=-5,xmax=5,ymin=-4,ymax=6,karo=0.5]\parabel{-1}{1}{5}{p}\end{ksys}}{\vspace{1mm}\gwahrfalsch{1}{Die Steigung von $f$ ist negativ.}\gwahrfalsch{2}{Gerade und Parabel haben zwei Schnittpunkte.}\gwahrfalsch{3}{$f$ schneidet die y-Achse in $(-2\,|\,0)$.}}
-\fusshilfe{\gfuss{16}{Gerade durch (0|$-$2) und (1|1); S(2|4); Aussage 2 wahr, Aussagen 1 und 3 falsch}}
-\end{pfaufg}
-% 2022-OS-K3c-m1 (Original 2022-OS-K3c, Schwere II, rang 6; herausgelöste Fassung: keine)
-\begin{pfaufg}{nach~P10\\’22~\pkt{}~3c}{17.}{FOR}
-Die lineare Funktion $f$ hat die Gleichung $f(x) = -2x + 5$. Die verschobene Normalparabel $p$ hat die Gleichung $p(x) = (x-4)^2 - 6$. Bestimme die Koordinaten der Punkte, in denen die Gerade $f$ die Parabel $p$ schneidet.
-\karo{2}
-\par\smallskip\par\noindent \hfill S$_1$: \linie{30mm}\hphantom{\,cm²}\par\noindent \hfill S$_2$: \linie{30mm}\hphantom{\,cm²}
-\fusshilfe{\gfuss{17}{S$_1$(1|3); S$_2$(5|$-$5)}}
+\fusshilfe{\gfuss{11}{a)~C; B; b)~170,50 €; 151,00 €; Angebot 2 günstiger; 0,08x + 115}}
 \end{pfaufg}
 
 \gmehr{14}

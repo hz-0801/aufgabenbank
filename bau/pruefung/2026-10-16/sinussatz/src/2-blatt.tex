@@ -100,22 +100,53 @@
 % Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
 \newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
 \newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\usepackage{graphicx}\graphicspath{{/home/claude/aufgabenbank-privat/}}
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Sinussatz}{PG70-2}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Sinussatz}{PG70-3}\pfseitevon
 \pfheftkopf{Sinussatz}{\gpunkte[25 24]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}
+% Formelkasten (15.10. t, 16.10. a)
+{\small% duden-s27-sinussatz – Sinussatz (Duden S. 27), aus duden-sek1.md
+\providecommand\fsf[1]{\leavevmode\setbox0\hbox{\everymath{\displaystyle}#1}\ifdim\wd0>\linewidth\setbox0\hbox{\resizebox{\linewidth}{!}{\box0}}\fi
+ \vrule height\dimexpr\ht0+1.5pt\relax depth\dimexpr\dp0+1.5pt\relax width0pt\box0}
+\providecommand\fstab[1]{\leavevmode\setbox0\hbox{#1}\ifdim\wd0>\linewidth\resizebox{\linewidth}{!}{\box0}\else\box0\fi}
+\providecommand\fssic[1]{{\color{red!65!black}\footnotesize[sic?#1]}}
+\providecommand\fsunl[1]{{\color{red!65!black}\footnotesize[unleserlich#1]}}
+\providecommand\fsfigur[1]{{\footnotesize\color{mbgrau}\itshape Figur im Original: #1\par}}
+\providecommand\fsbild[1]{\leavevmode\hfill#1\par}
+\providecommand\fsbildbreite{4.6cm}
+\providecommand\fszeilebild[6]{\par\noindent\begin{minipage}[t]{\dimexpr\fsbreite-#6-6pt}\vspace{0pt}\renewcommand\fsbreite{\linewidth}\fszeile{#1}{#2}{#3}{}\end{minipage}\hfill
+ \begin{minipage}[t]{#6}\vspace{3pt}\includegraphics[width=#6]{#5}\end{minipage}\par}
+\usetikzlibrary{angles}\tikzset{fsfig/.style={line width=0.7pt,baseline=(current bounding box.north),font=\small},
+ fswinkel/.style={draw=mbgrau,line width=0.5pt,angle radius=5.5mm,angle eccentricity=0.62,pic text options={font=\footnotesize}},
+ fsrecht/.style={draw=mbgrau,line width=0.5pt,angle radius=2.6mm,angle eccentricity=0.5,pic text={\tiny$\bullet$}},
+ fslinie/.style={font=\scriptsize,sloped,inner sep=1.5pt},fsflaeche/.style={fill=mbgrau,fill opacity=0.18,draw=none}}
+\providecommand\fspkt[1]{\fill #1 circle (1.4pt);}
+\providecommand\fshinweis[1]{{\footnotesize\color{mbgrau}#1\par}}
+\providecommand\fspunkt{\ensuremath{\scriptstyle\blacksquare}\,}
+\providecommand\fsfuenf{\ensuremath{\rlap{$||||$}\diagup}}
+\providecommand\fsquelle[1]{\hfill{\footnotesize\color{mbgrau}#1}}
+\providecommand\fsbreite{\linewidth}
+\providecommand\fszeile[4]{\par\noindent{\renewcommand\arraystretch{1.25}\setlength\lineskip{4pt}\setlength\lineskiplimit{3pt}%
+ \ifblank{#2}%
+ {\begin{tabular}{>{\columncolor{mbkasten}\raggedright\hspace{0pt}}p{\dimexpr0.25\fsbreite-2\tabcolsep}>{\raggedright\arraybackslash}p{\dimexpr0.75\fsbreite-2\tabcolsep}}%
+  #1 & #3\ifblank{#4}{}{\\ & #4}\end{tabular}}%
+ {\begin{tabular}{>{\columncolor{mbkasten}\raggedright\hspace{0pt}}p{\dimexpr0.25\fsbreite-2\tabcolsep}>{\raggedright}p{\dimexpr0.33\fsbreite-2\tabcolsep}>{\raggedright\arraybackslash}p{\dimexpr0.42\fsbreite-2\tabcolsep}}%
+  #1 & #2 & #3\ifblank{#4}{}{\\ & \multicolumn{2}{>{\raggedright\arraybackslash}p{\dimexpr0.75\fsbreite-2\tabcolsep}}{#4}}\end{tabular}}}\par}
+\providecommand\fskastentitel[1]{\par\noindent\textbf{#1}\par}
+\uebersichtskasten{\renewcommand\fsbreite{\linewidth}
+\fszeilebild{\textbf{Sinussatz}}{}{\fsf{$\frac{a}{\sin\alpha} = \frac{b}{\sin\beta} = \frac{c}{\sin\gamma}$}}{}{formelsammlung/figuren/duden-bild/duden-s27-sinussatz.png}{4.30cm}
+}
+}\vspace{-4pt}\par\noindent{\footnotesize\color{mbgrau}Formeln und Werte S.~27}\par\medskip
 
 % ===================== Stufe: Seite berechnen (Sinussatz) =====================
-% Formel-Frage (einmal je Blatt, erste Stufe mit Formel; pruefung.md § 5)
 %\pfstufekopf{Seite gesucht}{\gpunkte[25 24]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}
-\special{pdf:dest (stufe-seite-gesucht) [@thispage /XYZ @xpos @ypos null]}\gfrage{Welche Formel aus der Formelsammlung brauchst du hier? Seite~\linie{12mm}}
+\special{pdf:dest (stufe-seite-gesucht) [@thispage /XYZ @xpos @ypos null]}
 % Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
 \begin{pfaufg}{}{1.}{}
 Im Sinussatz steht jede Seite mit dem Winkel, der ihr gegenüberliegt. Im Dreieck ABC kennst du die Seite c und die Winkel $\alpha$ und $\beta$; gesucht ist die Seite a.
-\par\smallskip
-\par\noindent\makebox[\mbpfteil][l]{\textbf{a)}}Welchen Winkel rechnest du zuerst aus?\hfill\linie{30mm}
-\par\noindent\makebox[\mbpfteil][l]{\textbf{b)}}Welche Gleichung stellst du dann auf?\hfill\linie{30mm}
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\small,scale=0.9]\coordinate (A) at (0,0);\coordinate (B) at (3.4,0);\coordinate (C) at (1.1,1.9);\draw (A)--(B)--(C)--cycle;\pfwinkel[0.55][0.62]{(A)}{0}{59.9}{\alpha}\pfwinkel[0.55][0.62]{(B)}{140.4}{180}{\beta}\pfwinkel[0.45][0.62]{(C)}{-120.1}{-39.6}{\gamma}\node[anchor=north east] at (A) {$A$};\node[anchor=north west] at (B) {$B$};\node[anchor=south] at (C) {$C$};\node[anchor=north] at (1.7,0) {$c$};\node[anchor=south west] at (2.25,0.95) {$a$};\node[anchor=south east] at (0.55,0.95) {$b$};\end{tikzpicture}}{\vspace{-\baselineskip}\par\noindent\makebox[\mbpfteil][l]{\textbf{a)}}Welchen Winkel rechnest du zuerst aus?\hfill\linie{30mm}\par\noindent\makebox[\mbpfteil][l]{\textbf{b)}}Welche Gleichung stellst du dann auf?\hfill\linie{30mm}}
 \par\fusshilfe{\gfuss{1}{a) $\gamma$ = 180° $-$ $\alpha$ $-$ $\beta$; b) a : sin $\alpha$ = c : sin $\gamma$}}
 \end{pfaufg}
 % 2024-OS-K6d-m1 (Original 2024-OS-K6d, Schwere II, rang 1; herausgelöste Fassung: keine)

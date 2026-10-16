@@ -79,3 +79,12 @@ PS50;3;f538a3c72045;2026-10-15;wahrscheinlichkeit;Baumdiagramm und Pfadregeln;ba
 PZ10;1;abae07ebcbe2;2026-10-15;zahlen;Brüche, Zahlen und Potenzen;bau/pruefung/2026-10-15/brueche;pruefheft.py v0.9;
 PZ20;1;a29e4847f906;2026-10-15;zahlen;Größen und Dreisatz;bau/pruefung/2026-10-15/dreisatz;pruefheft.py v0.9;
 PZ30;1;fb446d60a02b;2026-10-15;zahlen;Terme und Gleichungen;bau/pruefung/2026-10-15/terme;pruefheft.py v0.9;
+PG10;6;dc0e19100028;2026-10-16;dreiecke;Winkel ohne Rechnung bestimmen oder begründen;bau/pruefung/2026-10-16/winkel;pruefheft.py v0.9;
+PG20;5;5569951e29f1;2026-10-16;dreiecke;Vierecke: Symmetrie und Eigenschaften;bau/pruefung/2026-10-16/figuren;pruefheft.py v0.9;
+PG40;8;0f18488beb63;2026-10-16;flaechen;Flächeninhalt und Umfang;bau/pruefung/2026-10-16/flaechen;pruefheft.py v0.9;
+PG50;5;5817f1d83f90;2026-10-16;dreiecke;Länge mit Pythagoras;bau/pruefung/2026-10-16/pythagoras;pruefheft.py v0.9;
+PG60;4;2c6fdd812b64;2026-10-16;dreiecke;Seite oder Winkel mit sin, cos, tan;bau/pruefung/2026-10-16/sin-cos-tan;pruefheft.py v0.9;
+PG70;3;2d52d3811009;2026-10-16;dreiecke;Seite im allgemeinen Dreieck (Sinussatz);bau/pruefung/2026-10-16/sinussatz;pruefheft.py v0.9;
+PG90;7;e616fcfe5cd3;2026-10-16;koerper;Volumen und Oberfläche;bau/pruefung/2026-10-16/koerper-volumen;pruefheft.py v0.9;
+PA10;8;aee9dcee1567;2026-10-16;lineare;Lineare Funktionen;bau/pruefung/2026-10-16/lineare;pruefheft.py v0.9;
+PA40;5;d09608df0353;2026-10-16;quadratische;Quadratische Gleichung lösen;bau/pruefung/2026-10-16/qgleichung;pruefheft.py v0.9;

@@ -100,15 +100,49 @@
 % Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
 \newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
 \newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\usepackage{graphicx}\graphicspath{{/home/claude/aufgabenbank-privat/}}
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Pythagoras}{PG50-4}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Pythagoras}{PG50-5}\pfseitevon
 \pfheftkopf{Pythagoras}{}
-\pfstufenzeile{A~Gleichung aufstellen \pkt{} B~Hypotenuse gesucht \pkt{} C~Kathete gesucht \pkt{} D~in Figuren versteckt}
+\pfstufenzeile{A~Pythagoras aufstellen \pkt{} B~Hypotenuse gesucht \pkt{} C~Kathete gesucht \pkt{} D~Pythagoras versteckt}
+% Formelkasten (15.10. t, 16.10. a)
+{\small% duden-s21-rechtwinkliges-dreieck – Rechtwinkliges Dreieck (Duden S. 21), aus duden-sek1.md
+\providecommand\fsf[1]{\leavevmode\setbox0\hbox{\everymath{\displaystyle}#1}\ifdim\wd0>\linewidth\setbox0\hbox{\resizebox{\linewidth}{!}{\box0}}\fi
+ \vrule height\dimexpr\ht0+1.5pt\relax depth\dimexpr\dp0+1.5pt\relax width0pt\box0}
+\providecommand\fstab[1]{\leavevmode\setbox0\hbox{#1}\ifdim\wd0>\linewidth\resizebox{\linewidth}{!}{\box0}\else\box0\fi}
+\providecommand\fssic[1]{{\color{red!65!black}\footnotesize[sic?#1]}}
+\providecommand\fsunl[1]{{\color{red!65!black}\footnotesize[unleserlich#1]}}
+\providecommand\fsfigur[1]{{\footnotesize\color{mbgrau}\itshape Figur im Original: #1\par}}
+\providecommand\fsbild[1]{\leavevmode\hfill#1\par}
+\providecommand\fsbildbreite{4.6cm}
+\providecommand\fszeilebild[6]{\par\noindent\begin{minipage}[t]{\dimexpr\fsbreite-#6-6pt}\vspace{0pt}\renewcommand\fsbreite{\linewidth}\fszeile{#1}{#2}{#3}{}\end{minipage}\hfill
+ \begin{minipage}[t]{#6}\vspace{3pt}\includegraphics[width=#6]{#5}\end{minipage}\par}
+\usetikzlibrary{angles}\tikzset{fsfig/.style={line width=0.7pt,baseline=(current bounding box.north),font=\small},
+ fswinkel/.style={draw=mbgrau,line width=0.5pt,angle radius=5.5mm,angle eccentricity=0.62,pic text options={font=\footnotesize}},
+ fsrecht/.style={draw=mbgrau,line width=0.5pt,angle radius=2.6mm,angle eccentricity=0.5,pic text={\tiny$\bullet$}},
+ fslinie/.style={font=\scriptsize,sloped,inner sep=1.5pt},fsflaeche/.style={fill=mbgrau,fill opacity=0.18,draw=none}}
+\providecommand\fspkt[1]{\fill #1 circle (1.4pt);}
+\providecommand\fshinweis[1]{{\footnotesize\color{mbgrau}#1\par}}
+\providecommand\fspunkt{\ensuremath{\scriptstyle\blacksquare}\,}
+\providecommand\fsfuenf{\ensuremath{\rlap{$||||$}\diagup}}
+\providecommand\fsquelle[1]{\hfill{\footnotesize\color{mbgrau}#1}}
+\providecommand\fsbreite{\linewidth}
+\providecommand\fszeile[4]{\par\noindent{\renewcommand\arraystretch{1.25}\setlength\lineskip{4pt}\setlength\lineskiplimit{3pt}%
+ \ifblank{#2}%
+ {\begin{tabular}{>{\columncolor{mbkasten}\raggedright\hspace{0pt}}p{\dimexpr0.25\fsbreite-2\tabcolsep}>{\raggedright\arraybackslash}p{\dimexpr0.75\fsbreite-2\tabcolsep}}%
+  #1 & #3\ifblank{#4}{}{\\ & #4}\end{tabular}}%
+ {\begin{tabular}{>{\columncolor{mbkasten}\raggedright\hspace{0pt}}p{\dimexpr0.25\fsbreite-2\tabcolsep}>{\raggedright}p{\dimexpr0.33\fsbreite-2\tabcolsep}>{\raggedright\arraybackslash}p{\dimexpr0.42\fsbreite-2\tabcolsep}}%
+  #1 & #2 & #3\ifblank{#4}{}{\\ & \multicolumn{2}{>{\raggedright\arraybackslash}p{\dimexpr0.75\fsbreite-2\tabcolsep}}{#4}}\end{tabular}}}\par}
+\providecommand\fskastentitel[1]{\par\noindent\textbf{#1}\par}
+\uebersichtskasten{\renewcommand\fsbreite{\linewidth}
+\fszeilebild{\textbf{Rechtwinkliges Dreieck}}{\fspunkt{} eine Hypotenuse und zwei Katheten\newline \fspunkt{} Hypotenuse (Seite gegenüber dem rechten Winkel) ist längste Seite}{\fsf{$c^2 = a^2 + b^2$ Satz des PYTHAGORAS}\newline \fsf{$h^2 = q\cdot p$ Höhensatz}\newline \fsf{$a^2 = c\cdot p$ Kathetensatz}\newline \fsf{$b^2 = c\cdot q$ Kathetensatz}\newline \fsf{$u = a+b+c$}\newline \fsf{$A = \frac{a\cdot b}{2}$}\newline Legende rechts oben: a, b Katheten\newline c Hypotenuse}{}{formelsammlung/figuren/duden-bild/duden-s21-rechtwinkliges-dreieck.png}{3.65cm}
+}
+}\vspace{-4pt}\par\noindent{\footnotesize\color{mbgrau}Formeln und Werte S.~21}\par\medskip
 
 % ===================== Stufe: Gleichung aufstellen =====================
-\Needspace*{0.16\textheight}\gbstvor{A}\pfstufekopf{Gleichung aufstellen}{\gpunkte[26 24 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-gleichung-aufstellen) [@thispage /XYZ @xpos @ypos null]}
+\Needspace*{0.16\textheight}\gbstvor{A}\pfstufekopf{Pythagoras aufstellen}{\gpunkte[26 24 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-pythagoras-aufstellen) [@thispage /XYZ @xpos @ypos null]}
 % Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
 \begin{pfaufg}{}{1.}{}
 Markiere die Hypotenuse. Schreib dann die Gleichung des Satzes des Pythagoras auf.
@@ -135,12 +169,11 @@ Im abgebildeten Dreieck sind y und z die Katheten, x ist die Hypotenuse. Kreuze 
 \end{pfaufg}
 
 % ===================== Stufe: Hypotenuse gesucht =====================
-% Formel-Frage (einmal je Blatt, erste Stufe mit Formel; pruefung.md § 5)
-\Needspace*{0.16\textheight}\gbstvor{B}\pfstufekopf{Hypotenuse gesucht}{\gpunkte[25]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-hypotenuse-gesucht) [@thispage /XYZ @xpos @ypos null]}\gfrage{Schlag zuerst die Formel nach. Formelsammlung, Seite~\linie{12mm}}
+\Needspace*{0.16\textheight}\gbstvor{B}\pfstufekopf{Hypotenuse gesucht}{\gpunkte[25]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-hypotenuse-gesucht) [@thispage /XYZ @xpos @ypos null]}
 % Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
 \begin{pfaufg}{}{5.}{}
-Gesucht ist die Seite mit dem Fragezeichen. Kreuze an, wo die Hypotenuse gesucht ist.
-\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.62,font=\footnotesize]\draw (0,0)--(2.2,0)--(2.2,1.3)--cycle;\pfrw[0.25]{(2.2,0)}{90}\node[anchor=north] at (1.1,-0.05) {$6$ cm};\node[anchor=west] at (2.25,0.65) {$4$};\node[anchor=south east] at (1.05,0.7) {?};\node[anchor=north] at (1.1,-0.6) {\textbf{a}};\begin{scope}[xshift=3.2cm]\draw (0,0)--(2.2,0)--(0,1.3)--cycle;\pfrw[0.25]{(0,0)}{0}\node[anchor=north] at (1.1,-0.05) {?};\node[anchor=east] at (-0.05,0.65) {$4$};\node[anchor=south west] at (1.15,0.7) {$7$ cm};\node[anchor=north] at (1.1,-0.6) {\textbf{b}};\end{scope}\begin{scope}[xshift=6.2cm]\draw (0,0.3)--(0.99,1.34)--(2.4,0)--cycle;\pfrw[0.25]{(0.99,1.34)}{-133.6}\node[anchor=south east] at (0.45,0.85) {$5$};\node[anchor=south west] at (1.75,0.75) {$6$ cm};\node[anchor=north] at (1.2,0.1) {?};\node[anchor=north] at (1.2,-0.6) {\textbf{c}};\end{scope}\end{tikzpicture}}{\vspace{-\baselineskip}\par\noindent\makebox[\mbpfteil][l]{\textbf{a)}}Dreieck a\hfill\kk{Hypotenuse}\par\noindent\makebox[\mbpfteil][l]{\textbf{b)}}Dreieck b\hfill\kk{Hypotenuse}\par\noindent\makebox[\mbpfteil][l]{\textbf{c)}}Dreieck c\hfill\kk{Hypotenuse}}
+Bei welcher Seite ist die Hypotenuse gesucht?
+\gzwei{\begin{tikzpicture}[line width=0.7pt,scale=0.7,font=\footnotesize]\draw (0,0)--(2.4,0)--(2.4,1.6)--cycle;\pfrw[0.25]{(2.4,0)}{90}\node[anchor=north] at (1.2,-0.05) {$6$ cm};\node[anchor=west] at (2.45,0.8) {$4$ cm};\node[anchor=south east] at (1.2,0.85) {$x$};\begin{scope}[xshift=4.8cm]\draw (0,0)--(2.4,0)--(0,1.6)--cycle;\pfrw[0.25]{(0,0)}{0}\node[anchor=north] at (1.2,-0.05) {$y$};\node[anchor=east] at (-0.05,0.8) {$4$ cm};\node[anchor=south west] at (1.25,0.85) {$7$ cm};\end{scope}\begin{scope}[xshift=9.6cm]\draw (0,0.3)--(0.99,1.34)--(2.4,0)--cycle;\pfrw[0.25]{(0.99,1.34)}{-133.6}\node[anchor=south east] at (0.45,0.85) {$5$ cm};\node[anchor=south west] at (1.75,0.75) {$6$ cm};\node[anchor=north] at (1.2,0.1) {$z$};\end{scope}\end{tikzpicture}}{\vspace{-\baselineskip}\par\noindent\makebox[\mbpfteil][l]{\textbf{a)}}x\hfill\kk{ja}\par\noindent\makebox[\mbpfteil][l]{\textbf{b)}}y\hfill\kk{ja}\par\noindent\makebox[\mbpfteil][l]{\textbf{c)}}z\hfill\kk{ja}}
 \par\fusshilfe{\gfuss{5}{a) und c)}}
 \end{pfaufg}
 % 2025-OS-K4a-m1 (Original 2025-OS-K4a, Schwere I, rang 4; herausgelöste Fassung: 2025-OS-K4a-h2)
@@ -179,7 +212,7 @@ Gegeben ist ein Dreieck ABC, das nicht rechtwinklig ist. Die Höhe $h_c$ von C a
 \end{pfaufg}
 
 % ===================== Stufe: Dreieck erst in Figur oder Körper finden =====================
-\Needspace*{0.16\textheight}\gbstvor{D}\pfstufekopf{in Figuren versteckt}{\gpunkte[26 25 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-in-figuren-versteckt) [@thispage /XYZ @xpos @ypos null]}
+\Needspace*{0.16\textheight}\gbstvor{D}\pfstufekopf{Pythagoras versteckt}{\gpunkte[26 25 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-pythagoras-versteckt) [@thispage /XYZ @xpos @ypos null]}
 % Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
 \begin{pfaufg}{}{11.}{}
 Welche Strecken bilden das rechtwinklige Dreieck? Nenne die beiden Katheten und die Hypotenuse.
@@ -201,5 +234,6 @@ Ein Becher hat die Form eines Zylinders ohne Deckel; er ist 7,5 cm hoch und hat 
 \fusshilfe{\gfuss{13}{12,1 cm}}
 \end{pfaufg}
 
+\gkern{Die Hypotenuse liegt dem rechten Winkel gegenüber; sie ist die längste Seite, die beiden anderen sind die Katheten.\par\smallskip\noindent a² + b² = c²: Die Quadrate über den Katheten sind zusammen so groß wie das Quadrat über der Hypotenuse c.\par\smallskip\noindent Hypotenuse gesucht: c = $\sqrt{a² + b²}$; Kathete gesucht: a = $\sqrt{c² - b²}$.\par\smallskip\noindent In Figur oder Körper: Such den rechten Winkel (eine Höhe steht senkrecht); die Strecken daran sind die Katheten (Höhe, Radius oder Durchmesser), gegenüber liegt die Hypotenuse.}
 \gmehr{6}
 \end{document}

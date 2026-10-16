@@ -103,25 +103,27 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Volumen und Oberfläche}{PG90-6}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Volumen und Oberfläche}{PG90-7}\pfseitevon
 \pfheftkopf{Volumen und Oberfläche}{}
-\pfstufenzeile{A~Volumen gesucht \pkt{} B~Formeln umstellen \pkt{} C~Oberfläche gesucht \pkt{} D~Körper vergleichen}
+\pfstufenzeile{A~Volumenformel aufstellen \pkt{} B~Volumen gesucht \pkt{} C~Volumenformel umstellen \pkt{} D~Oberfläche gesucht \pkt{} E~Körper vergleichen}
 
-% ===================== Stufe: Volumen direkt =====================
-\Needspace*{0.16\textheight}\gbstvor{A}\pfstufekopf{Volumen gesucht}{\gpunkte[26 24 23 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-volumen-gesucht) [@thispage /XYZ @xpos @ypos null]}\gfrage{Such in deiner Formelsammlung das Volumen des Zylinders: Seite~\linie{12mm}}
+% ===================== Stufe: Volumenformel aufstellen =====================
+\Needspace*{0.16\textheight}\gbstvor{A}\pfstufekopf{Volumenformel aufstellen}{\gpunkte[]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-volumenformel-aufstellen) [@thispage /XYZ @xpos @ypos null]}\gfrage{Such in deiner Formelsammlung das Volumen des Zylinders: Seite~\linie{12mm}}
 % Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
 \begin{pfaufg}{}{1.}{}
 Wie viel passt hinein? Schreibe nur die Formel auf, rechne nicht.
-\par\smallskip
-\par\noindent\makebox[\mbpfteil][l]{\textbf{a)}}Konservendose, 7 cm hoch, Radius 3,5 cm\hfill\linie{30mm}
-\par\noindent\makebox[\mbpfteil][l]{\textbf{b)}}Zelt, 4 m lang, Vorderseite ein Dreieck\hfill\linie{30mm}
-\par\noindent\makebox[\mbpfteil][l]{\textbf{c)}}Eistüte, Radius 3 cm, Höhe 12 cm\hfill\linie{30mm}
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\small]\draw (0,1.6) ellipse (0.5 and 0.17);\draw (-0.5,0)--(-0.5,1.6);\draw (0.5,0)--(0.5,1.6);\draw (-0.5,0) arc (180:360:0.5 and 0.17);\draw[dashed,line width=0.5pt] (-0.5,0) arc (180:0:0.5 and 0.17);\node at (0,-0.55) {a)};\draw (1.2,0)--(2.4,0)--(1.8,1.0)--cycle;\draw (2.4,0)--(3.1,0.5)--(2.5,1.5)--(1.8,1.0);\draw[dashed,line width=0.5pt] (1.2,0)--(1.9,0.5)--(3.1,0.5);\draw[dashed,line width=0.5pt] (1.9,0.5)--(2.5,1.5);\node at (2.1,-0.55) {b)};\draw (4.2,1.6) ellipse (0.5 and 0.17);\draw (3.7,1.6)--(4.2,0)--(4.7,1.6);\node at (4.2,-0.55) {c)};\end{tikzpicture}}{\vspace{-\baselineskip}\par\noindent\makebox[\mbpfteil][l]{\textbf{a)}}Konservendose, 7 cm hoch, Radius 3,5 cm\hfill\linie{30mm}\par\noindent\makebox[\mbpfteil][l]{\textbf{b)}}Zelt, 4 m lang, Vorderseite ein Dreieck\hfill\linie{30mm}\par\noindent\makebox[\mbpfteil][l]{\textbf{c)}}Eistüte, Radius 3 cm, Höhe 12 cm\hfill\linie{30mm}}
 \par\fusshilfe{\gfuss{1}{a) Zylinder; b) Prisma; c) Kegel}}
 \end{pfaufg}
+% SETZER: fehlt – keine echte Aufgabe mit auf_blatt = ja in msa/mehr-p10/*.csv
+
+% ===================== Stufe: Volumen direkt =====================
+\gkopfvor{\gbstvor{B}\pfstufekopf{Volumen gesucht}{\gpunkte[26 24 23 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-volumen-gesucht) [@thispage /XYZ @xpos @ypos null]}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
 % 2023-OS-K5b-m1 (Original 2023-OS-K5b, Schwere I, rang 3; herausgelöste Fassung: keine)
 \begin{pfaufg}{nach~P10\\’23~\pkt{}~5b}{2.}{}
 Eine Konservendose hat die Form eines Zylinders mit dem Radius 3,5 cm und der Höhe 7 cm. Auf der Dose steht: Inhalt etwa 270 ml. Weise nach, dass das stimmt (1 cm³ = 1 ml).
-\gzwei{\zylinder{0.8}{1.9}{}{}}{\karo{1}}
+\gzwei{\zylinder{0.8}{1.9}{}{}}{\karo{2}}
 \fusshilfe{\gfuss{2}{269,4 cm³}}
 \end{pfaufg}
 % 2024-OS-K4c-m1 (Original 2024-OS-K4c, Schwere II, rang 6; herausgelöste Fassung: 2024-OS-K4c-h1)
@@ -132,45 +134,43 @@ Eine Firma stellt Kegel mit dem Radius r = 25 cm und der Höhe h = 60 cm her. Ei
 \end{pfaufg}
 
 % ===================== Stufe: rückwärts: Radius oder Höhe aus Volumen =====================
-\Needspace*{0.16\textheight}\gbstvor{B}\pfstufekopf{Formeln umstellen}{\gpunkte[23 22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-formeln-umstellen) [@thispage /XYZ @xpos @ypos null]}
+\Needspace*{0.16\textheight}\gbstvor{C}\pfstufekopf{Volumenformel umstellen}{\gpunkte[23 22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-volumenformel-umstellen) [@thispage /XYZ @xpos @ypos null]}
 % Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
 \begin{pfaufg}{}{4.}{}
-Stelle die Formel nach der gesuchten Größe um.
-\par\smallskip
-\par\noindent Säule mit quadratischer Grundfläche: V = a² · h, gesucht ist a\hfill\linie{30mm}
-\par\fusshilfe{\gfuss{4}{a = $\sqrt{V : h}$}}
+Eine Säule hat eine quadratische Grundfläche. Stelle die Formel V = a² · h nach a um.
+\gzwei{\quader{0.7}{0.7}{1.6}{a}{a}{h}}{\vspace{-\baselineskip}\par\noindent \hfill\linie{30mm}}
+\par\fusshilfe{\gfuss{4}{$a = \sqrt{\tfrac{V}{h}}$}}
 \end{pfaufg}
 % 2023-OS-K5d-m1 (Original 2023-OS-K5d, Schwere II, rang 7; herausgelöste Fassung: keine)
 \begin{pfaufg}{nach~P10\\’23~\pkt{}~5d}{5.}{FOR}
 Eine Konservendose hat die Form eines Zylinders mit dem Radius 3,5 cm und der Höhe 7 cm. Mit denselben Deckeln (r = 3,5 cm) soll auch eine größere Dose mit 1 Liter Inhalt gebaut werden. Ermittle ihre Höhe.
-\gzwei{\zylinder{0.8}{1.9}{}{}}{\karo{1}}
+\gzwei{\zylinder{0.8}{1.9}{}{}}{\karo{2}}
 \fusshilfe{\gfuss{5}{26,0 cm}}
 \end{pfaufg}
 % 2022-OS-K2d-m1 (Original 2022-OS-K2d, Schwere II, rang 8; herausgelöste Fassung: keine)
 \begin{pfaufg}{nach~P10\\’22~\pkt{}~2d}{6.}{FOR}
 Ein Becher hat die Form eines Zylinders ohne Deckel. Er ist h = 7,5 cm hoch und hat den Radius r = 3,4 cm. Ein größerer Becher soll 500 ml fassen und wieder 7,5 cm hoch sein. Berechne seinen Radius.
-\gzwei{\begin{tikzpicture}[baseline=(current bounding box.north),line width=0.7pt]\fill[black!12] (0,2) ellipse (0.8 and 0.28);\draw (0,2) ellipse (0.8 and 0.28);\draw (-0.8,0) -- (-0.8,2);\draw (0.8,0) -- (0.8,2);\draw (-0.8,0) arc (180:360:0.8 and 0.28);\draw[dashed,line width=0.5pt] (-0.8,0) arc (180:0:0.8 and 0.28);\end{tikzpicture}}{\karo{1}}
+\gzwei{\begin{tikzpicture}[baseline=(current bounding box.north),line width=0.7pt]\fill[black!12] (0,2) ellipse (0.8 and 0.28);\draw (0,2) ellipse (0.8 and 0.28);\draw (-0.8,0) -- (-0.8,2);\draw (0.8,0) -- (0.8,2);\draw (-0.8,0) arc (180:360:0.8 and 0.28);\draw[dashed,line width=0.5pt] (-0.8,0) arc (180:0:0.8 and 0.28);\end{tikzpicture}}{\karo{2}}
 \fusshilfe{\gfuss{6}{4,6 cm}}
 \end{pfaufg}
 
 % ===================== Stufe: Mantelfläche mit Kosten =====================
-\Needspace*{0.16\textheight}\gbstvor{C}\pfstufekopf{Oberfläche gesucht}{\gpunkte[26]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-oberflache-gesucht) [@thispage /XYZ @xpos @ypos null]}
+\Needspace*{0.16\textheight}\gbstvor{D}\pfstufekopf{Oberfläche gesucht}{\gpunkte[26]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-oberflache-gesucht) [@thispage /XYZ @xpos @ypos null]}
 % Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
 \begin{pfaufg}{}{7.}{}
 Du schneidest den Mantel eines Zylinders gerade auf und rollst ihn flach aus. Welche Figur entsteht, und wie lang sind ihre Seiten?
-\par\smallskip
-\par\noindent Zylinder mit Radius r und Höhe h\hfill\linie{30mm}
+\gzwei{\zylinder{0.6}{1.5}{r}{h}}{\vspace{-\baselineskip}\par\noindent \hfill\linie{30mm}}
 \par\fusshilfe{\gfuss{7}{Rechteck, 2 · $\pi$ · r lang und h hoch}}
 \end{pfaufg}
 % 2026-FOR-K2b-m1 (Original 2026-FOR-K2b, Schwere II, rang 5; herausgelöste Fassung: keine)
 \begin{pfaufg}{nach~P10\\’26~\pkt{}~2b}{8.}{}
 Ein Turm besteht unten aus einem Zylinder, sein Dach ist ein Kegel. Bekannt sind: h = 22,0 m (Höhe des Zylinders), r = 4,2 m (Radius von Zylinder und Kegel) und s = 7,9 m (Mantellinie des Kegels). Das Dach wird mit Ziegeln gedeckt; 1 m² Ziegel kostet 24,00 €. Berechne die Kosten für die Ziegel.
-\gzwei{\begin{tikzpicture}[baseline=(current bounding box.north),line width=0.7pt]\draw (-0.9,0) arc (180:360:0.9 and 0.315);\draw[dashed,line width=0.5pt] (-0.9,0) arc (180:0:0.9 and 0.315);\draw (-0.9,0) -- (-0.9,2.4);\draw (0.9,0) -- (0.9,2.4);\draw (0,2.4) ellipse (0.9 and 0.315);\draw (-0.9,2.4) -- (0,3.9) -- (0.9,2.4);\node[right,font=\small] at (0.95,1.2) {$h$};\fill (0,0) circle (0.8pt);\draw[dashed,line width=0.5pt] (0,0) -- (0.9,0) node[midway,fill=white,inner sep=1pt,font=\small] {$r$};\path (0.9,2.4) -- (0,3.9) node[midway,above right,inner sep=1.5pt,font=\small] {$s$};\end{tikzpicture}}{\karo{2}}
+\gzwei{\begin{tikzpicture}[baseline=(current bounding box.north),line width=0.7pt]\draw (-0.9,0) arc (180:360:0.9 and 0.315);\draw[dashed,line width=0.5pt] (-0.9,0) arc (180:0:0.9 and 0.315);\draw (-0.9,0) -- (-0.9,2.4);\draw (0.9,0) -- (0.9,2.4);\draw (0,2.4) ellipse (0.9 and 0.315);\draw (-0.9,2.4) -- (0,3.9) -- (0.9,2.4);\node[right,font=\small] at (0.95,1.2) {$h$};\fill (0,0) circle (0.8pt);\draw[dashed,line width=0.5pt] (0,0) -- (0.9,0) node[midway,fill=white,inner sep=1pt,font=\small] {$r$};\path (0.9,2.4) -- (0,3.9) node[midway,above right,inner sep=1.5pt,font=\small] {$s$};\end{tikzpicture}}{\karo{3}}
 \fusshilfe{\gfuss{8}{104,24 m²; 2501,71 €}}
 \end{pfaufg}
 
 % ===================== Stufe: vergleichen und urteilen =====================
-\Needspace*{0.16\textheight}\gbstvor{D}\pfstufekopf{Körper vergleichen}{\gpunkte[26]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-korper-vergleichen) [@thispage /XYZ @xpos @ypos null]}
+\Needspace*{0.16\textheight}\gbstvor{E}\pfstufekopf{Körper vergleichen}{\gpunkte[26]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-korper-vergleichen) [@thispage /XYZ @xpos @ypos null]}
 % Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
 \begin{pfaufg}{}{9.}{}
 Wie oft so groß wird das Volumen? Schätze, ohne zu rechnen.
@@ -183,7 +183,7 @@ Wie oft so groß wird das Volumen? Schätze, ohne zu rechnen.
 % 2026-FOR-K2d-m1 (Original 2026-FOR-K2d, Schwere III, rang 9; herausgelöste Fassung: keine)
 \begin{pfaufg}{nach~P10\\’26~\pkt{}~2d}{10.}{FOR}
 Ein Turm besteht unten aus einem Zylinder, sein Dach ist ein Kegel. Bekannt sind: h = 22,0 m (Höhe des Zylinders), r = 4,2 m (Radius von Zylinder und Kegel) und s = 7,9 m (Mantellinie des Kegels). Ein Zylinder und ein Kegel sind gleich hoch. Jemand behauptet: „Ist der Radius des Kegels doppelt so groß wie der des Zylinders, haben beide dasselbe Volumen.“ Untersuche mit einer Rechnung, ob das stimmt.
-\karo{1}
+\gskizze{3}
 \fusshilfe{\gfuss{10}{falsch}}
 \end{pfaufg}
 
