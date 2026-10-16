@@ -345,3 +345,14 @@ gesammelt umgesetzt in Schritt C (plan.md Linie 8).
   Kästchen in einer Zeile – statt „a) Dreieck a … □ Hypotenuse“.
   Grenze: keine bekannt. Tendenz (ein Blatt); wird Regel beim
   zweiten.
+
+### Lösungen nach der Lösungszeile (16.10. Mittag, Chat Durchsicht 4)
+
+- Prozent (PS10-4): rechts teils Wörter statt Ansatz (Nr. 6
+  „65 weniger, Ganzes ist 2020“, Nr. 7 „Grundwert Donnerstag“),
+  Nr. 2 rechts wiederholt links in Worten, Nr. 10b „≈ 161,2 cm²“
+  ohne exakten Wert. loesung-pruef.py fängt das nicht (Wörter mit
+  Zahlen dazwischen zählen nicht als Satz). Für die Durchsicht ab
+  PA20; Prüfskript schärfen, wenn ein zweites Blatt es zeigt.
+- Einstieg mit mehreren Fällen: Ansatz steht je Fall, wenn die
+  „;“-Teile aufgehen, sonst in der ersten Zeile (Annahme des Agenten).
