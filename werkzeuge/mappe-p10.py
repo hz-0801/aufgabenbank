@@ -306,6 +306,10 @@ def main():
     # Bausteine
     mehr = {}
     for e in eins:
+        bt = os.path.join(ziel, e['ordner'], 'src', '2-blatt.tex')
+        if os.path.exists(bt) and 'Ältere Prüfungsaufgaben auf dem Blatt' in open(bt, encoding='utf-8').read():
+            mehr[e['ordner']] = None   # v0.19 (16.10. f): das Mehr steht als letzter Abschnitt auf dem Blatt
+            continue
         if a.ohne_neubau:
             d = os.path.join(ziel, e['ordner'], 'mehr', 'pdf')
             mehr[e['ordner']] = dict(blatt=os.path.join(d, 'mehr.pdf'), loesung=os.path.join(d, 'mehr-loesung.pdf')) \

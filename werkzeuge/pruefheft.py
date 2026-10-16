@@ -6640,12 +6640,15 @@ P_ZUSATZ = {}   # v0.18: nur P10 (p_bau) – Formelkasten, Kern, Mehr-Zahl, Buch
 
 def p_bst(stufen_daten):
     """Abschnittsbuchstaben (15.10. l): A, B, C …, bei einem Abschnitt keiner."""
-    return {s['name']: ('ABCDEFGHIJ'[i] if P_ZUSATZ and len(stufen_daten) > 1 else '') for i, s in enumerate(stufen_daten)}
+    # v0.19 (16.10. f): der Abschnitt „Ältere Prüfungsaufgaben“ zählt nicht mit; er bekommt den nächsten Buchstaben, wenn
+    # die Stufen welche haben
+    n = len([s for s in stufen_daten if not s.get('aeltere')])
+    return {s['name']: ('ABCDEFGHIJ'[i] if P_ZUSATZ and n > 1 else '') for i, s in enumerate(stufen_daten)}
 
 
 def p_blatt_tex(D, einheit, kenn, stufen_daten, ausschnitt, fund, faktor=1.0, entfallen=()):
     Z = P_ZUSATZ
-    einzeln = bool(Z) and len(stufen_daten) == 1
+    einzeln = bool(Z) and len([s for s in stufen_daten if not s.get('aeltere')]) == 1
     bst = p_bst(stufen_daten)
     kopf2 = p_jahrkopf()
     if einzeln:
@@ -6655,7 +6658,7 @@ def p_blatt_tex(D, einheit, kenn, stufen_daten, ausschnitt, fund, faktor=1.0, en
            f'\\pfheftkopf{{{tx(einheit)}}}{{{kopf2}}}']
     if not einzeln:
         # v0.19 (16.10. n): Stufenzeile ohne Buchstaben; die Abschnittsköpfe behalten A, B, C
-        out.append('\\pfstufenzeile{' + ' \\pkt{} '.join(tx(s['anzeige']) for s in stufen_daten) + '}')
+        out.append('\\pfstufenzeile{' + ' \\pkt{} '.join(tx(s['anzeige']) for s in stufen_daten if not s.get('aeltere')) + '}')
     if Z.get('fszeile'):
         out.append('% Formelsammlung (Tafelwerk-Feld, 16.10. n)\n' + Z['fszeile'])
     if Z.get('kasten'):
@@ -6670,7 +6673,12 @@ def p_blatt_tex(D, einheit, kenn, stufen_daten, ausschnitt, fund, faktor=1.0, en
         fragen = [x for x in (s.get('kurzfrage', ''), s.get('formelfrage', '')) if x]
         if s.get('formelfrage'):
             out.append('% Formel-Frage (einmal je Blatt, erste Stufe mit Formel; pruefung.md § 5)')
-        if s['echte'] and not s['frage']:
+        if s.get('aeltere'):
+            # v0.19 (16.10. f): Mehr-Aufgaben als letzter Abschnitt, Kopf ohne Punkte
+            out.append('% Ältere Prüfungsaufgaben auf dem Blatt (16.10. f): kein eigenes Mehr')
+            out.append('\\gkopfvor{' + (f'\\gbstvor{{{bst[s["name"]]}}}' if bst[s['name']] else '')
+                       + '\\pfstufekopf{' + tx(s['anzeige']) + '}{}}')
+        elif s['echte'] and not s['frage']:
             # Kopf und erste echte Aufgabe zusammen: die erste pfaufg setzt den Kopf, wenn beide Platz haben (\gkopfvor)
             out.append('\\gkopfvor{' + p_stufenkopf(s['anzeige'], s['jahre'], fragen, None, bst[s['name']], einzeln,
                                                      s.get('begriff', '')) + '}')
@@ -7227,11 +7235,39 @@ def p_bau(args):
             blatt, faktor_gesetzt, seiten_vorher = t, faktor, e['seiten']
         if (e['seiten'] <= e0['seiten'] and e['seiten'] <= 2) or e['fehler']:
             break
-    loes = p_loesung_tex(D, anz(einheit), kenn, stufen_daten)
-    ueb = p_uebersicht_tex(gl, einheiten, einheit, kenn, stufen_daten, p_kapitelnamen(D.mn))
     md = P_ZUSATZ.get('mehr_daten')
+    if md and seiten_vorher <= 2:
+        # v0.19 (16.10. f, pruefung.md § 5 Pflichtteil 4): Mehr aufs Blatt als letzter Abschnitt „Ältere
+        # Prüfungsaufgaben“, solange das Blatt zwei Seiten hält und mit der schwersten echten endet; sonst bleibt das
+        # Mehr. Figuren (PG20) lösen es über die Daten (auf_blatt = ja, rang am Ende der Stufe) und haben kein Mehr.
+        alt = sorted(md[1], key=lambda r: (MEHR_STUFEN.index(r['schwere']), int(re.sub(r'\D', '', r.get('rang') or '') or 10 ** 6), r['id']))
+        st_alt = {'name': 'Ältere Prüfungsaufgaben', 'anzeige': 'Ältere Prüfungsaufgaben', 'z': {}, 'jahre': ([], [], ''),
+                  'frage': None, 'einstieg': None, 'kurzfrage': '', 'begriff': '', 'echte': alt, 'heraus': [],
+                  'aeltere': True}
+        mit = stufen_daten + [st_alt]
+        alle_e = [r for s in mit for r in s['echte']]
+        schwer_ok = MEHR_STUFEN.index(alle_e[-1]['schwere']) >= max(MEHR_STUFEN.index(r['schwere']) for r in alle_e)
+        t2 = p_blatt_tex(D, anz(einheit), kenn, mit, ausschnitt, fund, faktor_gesetzt, entfallen)
+        e2 = xelatex(t2, args.bb, 'probe-aeltere', arbeit)
+        if not e2['fehler'] and e2['seiten'] <= 2 and schwer_ok:
+            stufen_daten, blatt, md = mit, t2, None
+            P_ZUSATZ['mehr_daten'], P_ZUSATZ['mehr_n'] = None, 0
+            # die Zeile „Mehr: n Aufgaben“ entfällt: Blatt ohne sie neu erzeugen
+            blatt = p_blatt_tex(D, anz(einheit), kenn, stufen_daten, ausschnitt, fund, faktor_gesetzt, entfallen)
+            hinweise.append(f'Mehr aufs Blatt: {len(alt)} ältere Aufgaben als letzter Abschnitt, {e2["seiten"]} Seiten; kein Mehr')
+        else:
+            # p_blatt_tex hat nr_echt neu gesetzt; der Satz ohne die Älteren braucht wieder seine Nummern
+            blatt = p_blatt_tex(D, anz(einheit), kenn, stufen_daten, ausschnitt, fund, faktor_gesetzt, entfallen)
+            hinweise.append(f'Mehr bleibt eigene Datei: mit Älteren {e2["seiten"]} Seiten'
+                            + ('' if schwer_ok else ', Blatt endete nicht mit der schwersten'))
+    loes = p_loesung_tex(D, anz(einheit), kenn, stufen_daten)
+    ueb = p_uebersicht_tex(gl, einheiten, einheit, kenn, [s for s in stufen_daten if not s.get('aeltere')],
+                           p_kapitelnamen(D.mn))
     mehr_teile = (('4-mehr', mehr_blatt_tex(md[0], kenn, None, 1, md[1])),
                   ('5-mehr-loesung', mehr_loesung_tex(md[0], kenn, None, 1, md[1]))) if md else ()
+    for alt in ('src/4-mehr.tex', 'src/5-mehr-loesung.tex', 'pdf/4-mehr.pdf', 'pdf/5-mehr-loesung.pdf'):
+        if not md and os.path.exists(os.path.join(ordner, alt)):
+            os.remove(os.path.join(ordner, alt))   # v0.19: kein altes Mehr neben einem Blatt mit den Älteren
     os.makedirs(os.path.join(ordner, 'src'), exist_ok=True)
     os.makedirs(os.path.join(ordner, 'pdf'), exist_ok=True)
     bericht, seiten = [], 0
