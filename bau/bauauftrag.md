@@ -81,7 +81,9 @@ Nur mit grep/awk/Python-Filter, nie ganze große Dateien:
    auf dem Blatt, damit beim Nachbestellen („mehr B“) nichts fehlt.
 6. **Zahlen und Lösungen:** alles mit sympy nachrechnen; Zahlen so wählen,
    dass glatte Werte herauskommen, wo das Rechnen nicht das Thema ist.
-   Lösung: Ergebnis kurz (Feld ergebnis), Weg in kurzen Schritten.
+   Lösung nach gemeinsam.md „Form der Lösung“ (16.10.): Ergebnis exakt,
+   dann gerundet; rechts nur der Ausgang der Rechnung mit den Namen der
+   Aufgabe; keine Sätze. Prüfen mit werkzeuge/loesung-pruef.py.
 
 ## Ablage (Zerlegen)
 
