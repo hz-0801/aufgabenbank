@@ -73,7 +73,7 @@ def lies(pfad):
 
 
 OPZ = re.compile(r'[0-9)²³][\s]*[+\-−·:×][\s]*[0-9(√π]')
-WEGW = re.compile(r'\b(ablesen|abgelesen|also|weil|daher|indem|gegen|wenn|dann|etwa|waagerecht|statt)\b', re.I)
+WEGW = re.compile(r'\b(ablesen|abgelesen|also|weil|denn|daher|indem|gegen|wenn|dann|etwa|waagerecht|statt)\b', re.I)
 
 
 def streng(links):
