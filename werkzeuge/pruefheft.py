@@ -5750,13 +5750,20 @@ def p_gliederung(mn, kapitel):
             st = m.group(1).strip()
             g['stufen'][st] = {'zuschnitt': '', 'hinweis': '', 'kern': '', 'anzeigename': '', 'schülerfrage': '',
                                'schülerfrage-fälle': '', 'schülerfrage-form': '', 'schülerfrage-weg': '', 'frage': '',
-                               'schülerfrage-skizze': '', 'einstieg': '', 'häufigkeit': '', 'regine': '', 'begriff': ''}
+                               'schülerfrage-skizze': '', 'einstieg': '', 'häufigkeit': '', 'regine': '', 'begriff': '',
+                               'teile': []}
             continue
         # 12.10.: Schülerfrage(-Fälle, -Form, -Weg) = Frage als erste Aufgabe der Stufe (Volumen); Frage = kurze
         # Schülerfrage kursiv unter dem Stufenkopf (Netz); Anzeigename = Name in Schülersprache (pruefheft-p.md);
         # Einstieg: nein = kein Bank-Einstieg der Stufe (12.10., Flächen zweite Fassung: Einstieg nur, wo die Stufe ihn braucht)
         # Schülerfrage-Skizze (12.10., Flächen dritte Fassung): „original“ = die Figur des ersten Originals der Stufe
         # (Spalte grafik), sonst eigenes TikZ; die Fälle stehen rechts daneben (Einstieg = erster Schritt des Originals)
+        m = re.match(r'^\s+- (\d{4}-[A-Z][\w-]*?-[A-Z]?\d+[a-z]?)\s+·\s+(.+?)\s+⇒\s+(.+)$', z)
+        if m and st and locals().get('in_teile'):
+            # v0.19 (16.10. n): Feld „Teile“ – abgetrennter Teil eines gemischten Originals (Original · Wortlaut ⇒ Lösung)
+            g['stufen'][st]['teile'].append((m.group(1), m.group(2).strip(), m.group(3).strip()))
+            continue
+        in_teile = bool(st and re.match(r'^- \*\*Teile\b', z)) or (locals().get('in_teile') and z.startswith('  '))
         m = re.match(r'^- \*\*(Zuschnitt|Hinweis|Kern|Anzeigename|Frage|Einstieg|Häufigkeit|Regine|Begriff|Schülerfrage(?:-Fälle|-Form|-Weg|-Skizze)?):\*\*\s*(.*)$', z)
         if m and st:
             g['stufen'][st][m.group(1).lower()] = m.group(2).strip().strip('„“"')
@@ -7019,6 +7026,38 @@ def p_register(args, kenn, ordner, seiten, einheit, stufen_daten, fassung=1):
 P_EINHEIT_FELDER = ('wortlaut', 'loesung', 'pruef', 'grafik', 'form')
 
 
+def p_teil_loesung(lo):
+    """Lösung eines Teils aus der Gliederung (Feld „Teile“, 16.10. n) in die Form der Lösung (gemeinsam.md): Vermerke in
+    Klammern, Nachsätze nach „;“ und Sätze nach „:“ fallen weg („r + t = 15: Der Strauß hat …“ -> „r + t = 15“);
+    „Minimum = 520, Maximum = 585“ wird zwei Teile. Rückgabe (loesung, Antwortnamen)."""
+    lo = re.sub(r'\s*\([^()]*[A-Za-zäöü]{4,}[^()]*\)', '', lo).split(';')[0].strip()
+    lo = re.split(r':\s+(?=[A-ZÄÖÜ][a-zäöüß]+\s)', lo)[0].strip().rstrip('.')
+    teile = [t.strip() for t in re.split(r',\s+(?=[A-Za-zÄÖÜäöü][\w ]*\s=\s)', lo) if t.strip()]
+    namen = [t.split(' = ')[0].strip() for t in teile] if len(teile) > 1 and all(' = ' in t for t in teile) else []
+    return ' | '.join(teile), namen
+
+
+def p_teil_zeile(D, teil, mehr_alle):
+    """Zeile wie eine echte Aufgabe aus dem Feld „Teile“ der Gliederung (16.10. n, pruefung.md § 5 Pflichtteil 5): Marke
+    „nach P10 ’24 · 3b“, Bild des Originals (Spalte grafik der Mutterzeile), wenn der Teil auf ein Bild zeigt; Antwortfeld
+    wie sonst: Namen -> Antwortlinien, kurzes Ergebnis ohne Rechnung -> Linie, sonst Karo."""
+    eid, wortlaut, lo = teil
+    k = D.kat.get(eid, {})
+    mutter = next((r for r in mehr_alle if r.get('eltern_id') == eid), {})
+    loesung, namen = p_teil_loesung(lo)
+    jahr = str(k.get('jahr') or eid[:4])
+    grafik = (mutter.get('grafik') or '').strip() if re.search(
+        r'gezeichnet|Diagramm|Koordinatensystem|Abbildung|Figur', wortlaut) else ''
+    # Rechnung (Nachweis, Wahrscheinlichkeit): Karo; kurzes Ergebnis („S(0|−5)“, „r + t = 15“): Linie rechts
+    rechnet = bool(re.search(r'\d\s*[·/:]\s*\d', loesung))
+    form = ('antwort:' + ';'.join(n + '|' for n in namen)) if namen else ('' if rechnet else 'teil')
+    return {'id': eid + '-teil', 'eltern_id': eid, 'wortlaut': wortlaut, 'loesung': loesung, 'grafik': grafik,
+            'form': form, 'abbildung': '', 'schwere': 'I', 'rang': mutter.get('rang', ''), 'auf_blatt': 'ja',
+            'marke': f'nach P10 ’{jahr[2:]}', 'quelle': f'P10 {jahr} · {re.sub(r"^.*-[A-Z]?", "", eid)}',
+            'buendel': '', 'stufe': '', 'einheit': mutter.get('einheit', ''), 'kapitel': mutter.get('kapitel', ''),
+            '_teil': True}
+
+
 def p_einheitsfassung(r):
     if not any((r.get(f + '_einheit') or '').strip() for f in P_EINHEIT_FELDER):
         return r
@@ -7143,7 +7182,8 @@ def p_bau(args):
             soll = 'ja' if jahr in letzte5 else 'nein'
             if r.get('auf_blatt', '').strip() != soll:
                 hinweise.append(f'{r["id"]}: auf_blatt = {r.get("auf_blatt", "").strip() or "leer"}, Jahr {jahr} verlangt {soll}')
-        echte = sorted([p_einheitsfassung(r) for r in zeilen if r.get('auf_blatt', '').strip() == 'ja'], key=p_rang)
+        echte = sorted([p_einheitsfassung(r) for r in zeilen if r.get('auf_blatt', '').strip() == 'ja']
+                       + [p_teil_zeile(D, t, mehr_alle) for t in gl['stufen'].get(name, {}).get('teile', [])], key=p_rang)
         if not echte:
             # v0.11 (Lehrer 13.10.): Stufe ohne Original der letzten fünf Jahre nimmt die älteren P10-Originale der
             # Stufe (keine Gymnasialhefte), leicht -> schwer; sie fehlen dafür im Mehr-Block (p_aeltere_stufen)

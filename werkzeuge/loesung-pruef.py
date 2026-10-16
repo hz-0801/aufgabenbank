@@ -283,6 +283,11 @@ def main():
             m = re.match(r'- \*\*(Schülerfrage-Weg|Abruf-Lösung|Schätzfrage-Lösung):\*\*\s*(.*)', z)
             if m:
                 pruefe(f'{os.path.basename(f)}:{stufe}:{m.group(1)}', '', m.group(2), aus)
+            m = re.match(r'^\s+- (\d{4}-[A-Z][\w-]*?-[A-Z]?\d+[a-z]?)\s+·\s+.+?\s+⇒\s+(.+)$', z)
+            if m:
+                # 16.10. n: Feld „Teile“ – geprüft wird, was der Setzer links druckt (pruefheft.p_teil_loesung)
+                import pruefheft as P
+                pruefe(f'{os.path.basename(f)}:{stufe}:Teile {m.group(1)}', P.p_teil_loesung(m.group(2))[0], '', aus)
     if not a.nur and not a.streng:
         for f in sorted(glob.glob(os.path.join(a.nh, 'msa', 'msa-katalog-*.csv'))):
             if 'gym' in f:
