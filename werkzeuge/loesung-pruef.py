@@ -89,8 +89,11 @@ def streng(links):
             return bool(OPZ.search(t))
         if ';' in seg or any(rechnung(t) for t in teile[:-1]):
             m.append('RECHNUNG'); break
-    if WEGW.search(links or ''):
-        m.append('WEG')
+    if WEGW.search(links or '') or re.search(r'[⇒→]', links or ''):
+        m.append('WEG')                                # Weg oder Begründungskette links
+    if re.search(r'(?<![A-Za-zα-ω₀-₉′])\((?![^()]*\d\s*[|;,]\s*-?\d)[^()]*(=|[A-Za-zäöüß]{4,})[^()]*\)', links or '') \
+            and not re.search(r'[√π]\(|\b(sin|cos|tan)⁻¹\(|\(Tausend|\(Mio', links or ''):
+        m.append('KLAMMER')                            # Erklärung in Klammern („(beliebige Lage)“, „(α = β …)“)
     return m
 
 
