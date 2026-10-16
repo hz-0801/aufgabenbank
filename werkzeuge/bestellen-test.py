@@ -44,7 +44,9 @@ def pruef(name, bed, d, mehr=''):
 
 
 def endet(d, *namen):
-    return [os.path.basename(x) for x in d.get('dateien', [])] == list(namen)
+    # „-blatt.pdf“ steht für <Kennung>-blatt.pdf (P10, 15.10. r): ein Name mit führendem „-“ prüft das Ende
+    ist = [os.path.basename(x) for x in d.get('dateien', [])]
+    return len(ist) == len(namen) and all(i.endswith(n) if n.startswith('-') else i == n for i, n in zip(ist, namen))
 
 
 def main():
