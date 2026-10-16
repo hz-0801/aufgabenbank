@@ -94,11 +94,83 @@ def streng(links):
     if re.search(r'(?<![A-Za-zα-ω₀-₉′])\((?![^()]*\d\s*[|;,]\s*-?\d)[^()]*(=|[A-Za-zäöüß]{4,})[^()]*\)', links or '') \
             and not re.search(r'[√π]\(|\b(sin|cos|tan)⁻¹\(|\(Tausend|\(Mio', links or ''):
         m.append('KLAMMER')                            # Erklärung in Klammern („(beliebige Lage)“, „(α = β …)“)
+    return m + streng2(links)
+
+
+# --- Schärfung 16.10. (plan.md § 7 Bau Punkt 1 b): Warum – der Lehrer prüft in Sekunden; links das Ergebnis,
+# rechts nur der Ausgang. Grenze: Begründen links nur das Urteil („ja: 256 ml < 375 ml“), Ankreuzen als
+# Stichwort, gefragte Rundung: exakt, dann diese.
+EINHEIT = {'cm', 'mm', 'dm', 'km', 'ml', 'cl', 'hl', 'kg', 'min', 'sek', 'std', 'liter', 'stück', 'grad', 'prozent',
+           'cent', 'euro', 'jahre', 'jahr', 'monate', 'tage', 'wochen', 'stunden', 'minuten', 'sekunden'}
+FUNK = {'sin', 'cos', 'tan'}
+URTEIL = re.compile(r'^\s*(ja|nein|wahr|falsch|richtig|stimmt|stimmt nicht)\b\s*([,:]?)', re.I)
+W3 = re.compile(r'(?<![\w\\])[A-Za-zÄÖÜäöüß]{3,}(?![\w(])')     # Wort ab 3 Buchstaben, nicht vor „(“ (P(…), M(t))
+
+
+def _worte(t):
+    """Inhaltswörter: ohne Einheiten, Winkelfunktionen, Namen vor „=“/„²“/„:“ (Größenname: „Kegelhöhe² =“, „Mittel =“)."""
+    t = re.sub(r'„[^“]*“', ' ', t)
+    t = re.sub(r'(?<=[A-Za-z])\([^()]*\)', '', t)           # Argument einer Funktion: P(beide ungerade), M(t)
+    aus = []
+    for m in W3.finditer(t):
+        w = m.group(0)
+        nach = t[m.end():m.end() + 3]
+        if w.lower() in EINHEIT | FUNK:
+            continue
+        if re.match(r'\s*[²³]?\s*(=|≈|<|>)', nach):
+            continue
+        aus.append(w)
+    return aus
+
+
+def streng2(links):
+    m = []
+    for seg in [s.strip() for s in re.split(r'\s\|\s', links or '') if s.strip()]:
+        u = URTEIL.match(seg)
+        rest = seg[u.end():] if u else seg
+        if u and u.group(2) == ',':
+            m.append('URTEIL'); continue           # „falsch, dreifaches Volumen“ – Begründung statt Vergleich
+        if seg.count('≈') > 1:
+            m.append('RUNDUNG')                    # mehr als ein „≈“ – exakt, dann die gefragte Rundung
+        mathe = bool(re.search(r'[=≈<>]', rest))
+        w = _worte(rest)
+        if mathe and w:
+            m.append('WORT')                       # Wörter neben dem Ergebnis außer Einheit und Größenname
+        elif not mathe and len(w) > 4:
+            m.append('WORT')                       # Stichwort höchstens vier Wörter
+    if re.search(r'z\.\s?B\.', links or ''):
+        m.append('ZB')
+    return sorted(set(m), key=m.index)
+
+
+def _wert(links):
+    """Endwert links (nach dem letzten = / ≈), ohne Einheit: der darf rechts nicht stehen."""
+    ws = []
+    for seg in re.split(r'\s\|\s', links or ''):
+        t = re.split(r'=|≈', seg)[-1].strip()
+        t = re.sub(r'\s*[A-Za-zÄÖÜäöüß€%³²]+\.?$', '', t).strip()
+        if re.search(r'\d', t) and len(norm(t)) >= 3:
+            ws.append(norm(t))
+    return ws
+
+
+def streng_rechts(links, rechts):
+    m = []
+    if not rechts:
+        return m
+    if re.search(r'[⇒→]', rechts):
+        m.append('R-WEG')
+    if _worte(rechts):
+        m.append('R-WORT')                         # rechts nur Namen der Aufgabe
+    if any(w and w in norm(rechts) for w in _wert(links)):
+        m.append('R-WERT')                         # der Wert von links steht rechts noch einmal
+    if len(re.findall(r'=|≈', rechts)) > 2:
+        m.append('R-GLEICH')                       # mehr als zwei Gleichungen
     return m
 
 
 def pruefe(id_, links, rechts, aus, strengs=False):
-    m = streng(links) if strengs else []
+    m = (streng(links) + streng_rechts(links, rechts)) if strengs else []
     if satz(links) or satz(rechts):
         m.append('SATZ')
     if rechts and len(norm(links)) >= 3 and (norm(rechts) == norm(links) or norm(links) in norm(rechts)):
@@ -160,6 +232,7 @@ def main():
     ap.add_argument('--nur', default='')
     ap.add_argument('--liste', action='store_true')
     ap.add_argument('--streng', action='store_true', help='nur Katalog P10, mit RECHNUNG/WEG links (Buch der Originale)')
+    ap.add_argument('--heft', default='', help='mit --streng: nur ein Heft, z. B. "2026 FOR"')
     a = ap.parse_args()
     aus = []
     if a.streng:
@@ -167,6 +240,8 @@ def main():
             if 'gym' in f:
                 continue
             for r in lies(f):
+                if a.heft and f"{r.get('jahr','')} {r.get('papier','')}" != a.heft:
+                    continue
                 pruefe(f'{os.path.basename(f)}:{r.get("id","")}', r.get('kurzloesung', ''), r.get('zwischenergebnis', ''), aus, True)
     for f in ([] if a.streng else sorted(glob.glob(os.path.join(a.nh, 'msa', 'mehr-p10', '*.csv')))):
         if a.nur and a.nur not in f:
