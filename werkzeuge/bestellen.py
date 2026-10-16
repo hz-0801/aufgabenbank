@@ -539,6 +539,9 @@ class Bestellung:
         tex = os.path.join(ordner, 'src', '2-blatt.tex')
         gleich = os.path.exists(tex) and re.search(re.escape(kf) + r'(?!\d)', open(tex, encoding='utf-8').read()) \
             and all(os.path.exists(os.path.join(pdf, n)) for n in ('1-uebersicht.pdf', '2-blatt.pdf', '3-loesungen.pdf'))
+        # P10 (v0.18, 15.10. r): Lieferung als <Kennung>-blatt, -loesung, -mehr (Mehr-Lösung hinten im Mehr)
+        drei = None if P['felder'].get('Mehrdateien') else [os.path.join(pdf, f'{kf}-{n}.pdf') for n in ('blatt', 'loesung', 'mehr')]
+        gleich = gleich and (drei is None or all(os.path.exists(x) for x in drei))
         if not gleich:
             self.out['befehle'].append(befehl(P['felder']['Blatt'], kapitel=b['kapitel'], einheit=b['einheit'])
                                        + f' --datum {self.datum} --aus {shlex.quote(ordner)}'
@@ -549,6 +552,10 @@ class Bestellung:
             self.out['dateien'] = [os.path.join(pdf, n.strip()) for n in P['felder']['Mehrdateien'].split('|')]
             self.out['zeile'] = f'{self.kopf()} · {name}: Mehr (alle Seiten), Lösung'
             self.liefer.append((f'{b["kennung"]} {b["ordner"]} mehr', os.path.relpath(pdf, BANK), kf, 'mehr'))
+        elif mehr and drei:
+            self.out['dateien'] = [drei[2]]
+            self.out['zeile'] = f'{self.kopf()} · {name}: Mehr (alle Seiten), Lösung'
+            self.liefer.append((f'{b["kennung"]} {b["ordner"]} mehr', os.path.relpath(drei[2], BANK), kf, 'mehr'))
         elif mehr:
             mo = os.path.join(ordner, 'mehr')
             if not all(os.path.exists(os.path.join(mo, 'pdf', n)) for n in ('mehr.pdf', 'mehr-loesung.pdf')) \
@@ -558,14 +565,18 @@ class Bestellung:
             self.out['dateien'] = [os.path.join(mo, 'pdf', 'mehr.pdf'), os.path.join(mo, 'pdf', 'mehr-loesung.pdf')]
             self.out['zeile'] = f'{self.kopf()} · {name}: Mehr (alle Seiten), Lösung'
             self.liefer.append((f'{b["kennung"]} {b["ordner"]} mehr', os.path.relpath(mo, BANK), kf, 'mehr'))
+        elif loes and drei:
+            self.out['dateien'] = [drei[1]]
+            self.out['zeile'] = f'{self.kopf()} · {name}: Lösung'
+            self.liefer.append((f'{b["kennung"]} {b["ordner"]}', os.path.relpath(drei[1], BANK), kf, 'nur lösung'))
         elif loes:
             self.out['dateien'] = [os.path.join(pdf, '3-loesungen.pdf')]
             self.out['zeile'] = f'{self.kopf()} · {name}: Lösung'
             self.liefer.append((f'{b["kennung"]} {b["ordner"]}', os.path.relpath(os.path.join(pdf, '3-loesungen.pdf'),
                                                                                  BANK), kf, 'nur lösung'))
         else:
-            self.out['dateien'] = [os.path.join(pdf, n) for n in ('1-uebersicht.pdf', '2-blatt.pdf', '3-loesungen.pdf')]
-            self.out['zeile'] = f'{self.kopf()} · {name}: Übersicht, Blatt, Lösung'
+            self.out['dateien'] = drei or [os.path.join(pdf, n) for n in ('1-uebersicht.pdf', '2-blatt.pdf', '3-loesungen.pdf')]
+            self.out['zeile'] = f'{self.kopf()} · {name}: ' + ('Blatt, Lösung, Mehr' if drei else 'Übersicht, Blatt, Lösung')
             self.liefer.append((f'{b["kennung"]} {b["ordner"]}', os.path.relpath(ordner, BANK), kf, ''))
             if self.hatte(b['kennung']) and not hinweis:
                 d = max(z['datum'] for z in self.geliefert if (z.get('kennung') or '').split('-')[0] == b['kennung'])

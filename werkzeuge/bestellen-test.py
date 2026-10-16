@@ -72,11 +72,11 @@ def faelle():
     pruef('Lena ana -> 1 Wahl, Vorschlag + 2', d.get('frage') and len(d['frage']['optionen']) == 3
           and 'Vorschlag' in d['frage']['optionen'][0] and 'PA10' in d['frage']['optionen'][0], d)
     d = b('Lena ana', '--wahl', '1')
-    pruef('Lena ana --wahl 1 -> Übersicht, Blatt, Lösung', endet(d, '1-uebersicht.pdf', '2-blatt.pdf',
-                                                               '3-loesungen.pdf') and 'Lena · P10' in d['zeile'], d)
+    pruef('Lena ana --wahl 1 -> <Kennung>-blatt, -loesung, -mehr', endet(d, '-blatt.pdf', '-loesung.pdf',
+                                                                         '-mehr.pdf') and 'Lena · P10' in d['zeile'], d)
     d = b('Lena Parabel')
     pruef('Lena Parabel -> keine Frage, PA30', not d['frage'] and '(PA30' in d['zeile']
-          and endet(d, '1-uebersicht.pdf', '2-blatt.pdf', '3-loesungen.pdf'), d)
+          and endet(d, '-blatt.pdf', '-loesung.pdf', '-mehr.pdf'), d)
     d = b('Lena PA30', '--ausfuehren')
     pruef('Lena PA30 --ausfuehren -> drei PDFs, Lieferzeile, ≤ 60 s', len(d.get('pdf', [])) == 3 and d.get('lieferung')
           and 'angehängt' in d['lieferung'][0] and d['_zeit'] <= 60, d, f'{d["_zeit"]:.1f} s (Tagesordner)')
@@ -86,10 +86,10 @@ def faelle():
     d = b('Lena ana')
     pruef('Lena ana nach PA30 -> Vorschlag PA40', d.get('frage') and 'PA40' in d['frage']['optionen'][0], d)
     d = b('Lena PA30 mehr', '--ausfuehren')
-    pruef('Lena PA30 mehr -> Mehr + Lösung', endet(d, 'mehr.pdf', 'mehr-loesung.pdf') and len(d.get('pdf', [])) == 2,
+    pruef('Lena PA30 mehr -> <Kennung>-mehr (Lösung hinten)', endet(d, '-mehr.pdf') and len(d.get('pdf', [])) == 1,
           d, f'{d["_zeit"]:.1f} s')
     d = b('Lena Lösung PA30')
-    pruef('Lena Lösung PA30 -> nur Lösung', endet(d, '3-loesungen.pdf'), d)
+    pruef('Lena Lösung PA30 -> nur Lösung', endet(d, '-loesung.pdf'), d)
     d = b('Lena basis')
     pruef('Lena basis -> 1 Wahl Zettel', d.get('frage') and 'BAS-Z1' in d['frage']['optionen'][0], d)
     d = b('Lena basis', '--wahl', '1', '--ausfuehren')

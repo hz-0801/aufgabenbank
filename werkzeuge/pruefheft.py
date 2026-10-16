@@ -5372,13 +5372,14 @@ def mehr_loesung_tex(einheit, kenn, p, anz, folge):
            f'\\pflaufkopf[{P_SORTE} \\pkt{{}} mehr]{{{tx(einheit)} \\pkt{{}} Lösungen}}{{{kenn}}}\\pfseitevon',
            f'\\pfheftkopf{{{tx(einheit)}}}{{Lösungen \\pkt{{}} ' + ('mehr' if p is None else f'Portion {p} von {anz}') + '}']
     for i, r in enumerate(folge, 1):
-        ergebnisse, weg = mehr_loesung(r)
+        # 16.10. (gemeinsam.md „Form der Lösung“): links exakt, dann gerundet; rechts nur der Ausgang
+        ergebnisse, _ = p_ergebnis(r)
         _, optionen = mehr_kreuz((r.get('wortlaut') or '').strip())
         b = mehr_buchstabe(r, optionen)
         erg = tx(p_bruch(b)) if b else '; '.join(tx(p_bruch(e)) for e in ergebnisse)
-        weg = p_bruch(weg)
+        rechts = p_rechts_tex(p_rechts(r.get('loesung'), [b] if b else ergebnisse))
         out.append('\\begin{pfloesungb}{}')
-        out.append(f'\\lzb{{{i}.}}{{}}{{{erg}}}{{{tx(weg)}}}')
+        out.append(f'\\lzb{{{i}.}}{{}}{{{erg}}}{{{rechts}}}')
         out.append('\\end{pfloesungb}')
     out.append('\\end{document}')
     return '\n'.join(out)
@@ -5524,6 +5525,19 @@ P_PRAEAMBEL = r"""% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortg
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -6188,8 +6202,16 @@ def p_echt_inhalt(D, r, nr, heraus, faktor=1.0, vorige=None, nr_vorige=0, schmal
         # v0.7 (Netz): Spalte grafik mit Bildoptionen („||“) und form als Folge von Teilen („+“: ankreuzen,
         # einzeichnen, zeichnen, teil, karo) aus msa/mehr-p10/*.csv; form „teil“, „skizze“ und grafik allein gehen
         # den Weg unten (Volumen, 12.10.) – werkzeuge/pruefheft-p.md
-        out += p_form_tex(t_rest=tx(rest) if rest else '', grafik=grafik, form=form or 'karo', optionen=optionen,
-                          ergebnisse=ergebnisse, n=n, faktor=faktor)
+        ft = p_form_tex(t_rest=tx(rest) if rest else '', grafik=grafik, form=form or 'karo', optionen=optionen,
+                        ergebnisse=ergebnisse, n=n, faktor=faktor)
+        m = re.match(r'^\\par\\smallskip\\noindent(?:\\gpassend\{)?(\\begin\{ksys\}.*\\end\{ksys\})\}?\\par$', ft[0], re.S) \
+            if ft and not schmal and out and out[-1] == t else None
+        if m:
+            # 16.10. (Lehrer, PA10 S. 1): Aufgabe links, System rechts daneben – die Aufgabe wird so hoch wie das
+            # System, nicht Text plus System; was folgt, läuft nach (keine halb leere Seite vor großen Systemen)
+            out[-1] = '\\gtextks{' + m.group(1) + '}{' + t + '}'
+            ft = ft[1:]
+        out += ft
         bildoptionen = [] if optionen or '||' not in grafik else grafik.split('||')
         return kommentare, out, '; '.join(p_fusswerte(ergebnisse, optionen or bildoptionen, r))
     if optionen:
@@ -6220,7 +6242,12 @@ def p_echt_inhalt(D, r, nr, heraus, faktor=1.0, vorige=None, nr_vorige=0, schmal
     if grafik and '{ksys}' in grafik and (zeichne or schmal) and not optionen:
         # Kein Karo bei „Zeichne“ (pruefung.md § 5, 12.10.): das Koordinatensystem ist das Antwortfeld; im Bündel
         # nebeneinander (schmal) steht das System unter dem Text, Antwortfeld darunter
-        out.append('\\par\\smallskip\\noindent\\gpassend{' + grafik + '}\\par')
+        if zeichne and not schmal and out and out[-1] == t and not (rechts and form in ('teil', 'linie')):
+            # 16.10. (Lehrer, PA10 S. 1): Aufgabe links, System rechts daneben – die Aufgabe wird so hoch wie das
+            # System, nicht Text plus System; was folgt, läuft nach (kein halb leere Seite vor großen Systemen)
+            out[-1] = '\\gtextks{' + grafik + '}{' + t + '}'
+        else:
+            out.append('\\par\\smallskip\\noindent\\gpassend{' + grafik + '}\\par')
         if schmal and not zeichne:
             # Bündel nebeneinander ohne Karo (pruefung.md § 5): je Gleichung im Ergebnis eine Antwortlinie „p(x) = ___“
             for e in ergebnisse:
@@ -6451,8 +6478,7 @@ def p_ergebnis(r):
         schritt = re.split(r'\s*;\s*|\s*⇒\s*|(?<=[A-Za-zäöüßÄÖÜ]):\s+', t)[-1].strip()   # „e : 2“ ist Geteiltzeichen
         segs = ops_split(schritt)
         if len(segs) >= 3:
-            lhs = segs[0] if len(segs[0]) <= 20 else ''
-            ergebnisse.append(f'{lhs} {segs[-2]} {segs[-1]}'.strip())
+            ergebnisse.append(p_kurz(schritt))
         else:
             m = re.search(r'\b(?:daher|also|somit|deshalb)\s+(.*)$', schritt)
             ergebnisse.append((m.group(1) if m else schritt).rstrip('.'))
@@ -6648,6 +6674,86 @@ def p_weg_tex(weg):
             '>{\\raggedright\\arraybackslash}p{0.6\\linewidth}@{}}' + ''.join(zeilen) + '\\end{tabular}')
 
 
+_EXAKT = re.compile(r'√|/|π|⁻¹|frac|:')
+_WURZEL = re.compile(r'^√\((.+?)\s*([+−])\s*([^()]+)\)$')
+_INV = re.compile(r'^(sin|cos|tan)⁻¹\s*\((.+)\)$')
+_OPTION = re.compile(r'\s*\((?:erste|zweite|dritte|vierte)\s+Option[^()]*\)')
+
+
+def p_kurz(schritt):
+    """Linke Spalte (gemeinsam.md „Form der Lösung“, 16.10.): das Ergebnis „Name = exakt ≈ gerundet“ – aus
+    „h = √(38² − 16²) = √1188 ≈ 34,47 cm“ wird „h = √1188 ≈ 34,47 cm“; ohne exakten Wert „Name op Wert“."""
+    segs = ops_split(schritt)
+    if len(segs) < 3:
+        return schritt
+    vals, ops = segs[0::2], segs[1::2]
+    lhs = vals[0] if len(vals[0]) <= 20 else ''
+    if '≈' in ops:
+        i = ops.index('≈')
+        ex = vals[i]
+        if i >= 1 and _EXAKT.search(ex) and len(ex) <= 30:
+            return (f'{lhs} = ' if lhs else '') + f'{ex} ≈ {vals[-1]}'
+    return f'{lhs} {ops[-1]} {vals[-1]}'.strip()
+
+
+def p_ausgang(teil):
+    """Rechte Spalte (16.10.): der Ausgang der Rechnung mit den Namen der Aufgabe, je Handgriff eine Zeile –
+    nicht die umgestellte Formel, nicht die Lösung noch einmal. Daten: „Ausgang ⇒ Ergebnis“ (Handgriffe durch
+    „;“); ohne „⇒“ aus der Kette: „h = √(38² − 16²)“ -> „h² + 16² = 38²“, „α = tan⁻¹(17/200)“ -> „tan α =
+    17/200“, „W = G · p = …“ -> „W = G · p“. Ankreuzen: leer."""
+    if _OPTION.search(teil):
+        return []
+    teil = re.sub(r'\s*(?<![\w)])\((?![^()]*[\d+−·:=])[^()]*\)', '', teil).strip()
+    if '⇒' in teil:
+        vor = teil.rsplit('⇒', 1)[0]
+        return [x.strip() for x in re.split(r'\s*;\s*|\s*⇒\s*', vor) if x.strip()]
+    st = [x.strip() for x in re.split(r'\s*;\s*', teil) if x.strip()]
+    if len(st) > 1:
+        return st[:-1]
+    segs = ops_split(st[0]) if st else []
+    if len(segs) < 3 or segs[1] != '=' or len(segs[0]) > 20 or not segs[0]:
+        return []
+    lhs, r1 = segs[0], segs[2]
+    m = _WURZEL.match(r1)
+    if m:
+        a, op, b = (x.strip() for x in m.groups())
+        return [f'{lhs}² + {b} = {a}' if op == '−' else f'{lhs}² = {a} + {b}']
+    m = _INV.match(r1)
+    if m:
+        return [f'{m.group(1)} {lhs} = {m.group(2)}']
+    if len(segs) >= 5:
+        return [f'{lhs} = {r1}']
+    return []
+
+
+def p_rechts(lo, links):
+    """Rechte Spalte aus der Spalte loesung; leer, wo sie nur die linke wiederholte (16.10.)."""
+    kl = _ohne_leer(' '.join(links))
+    out = []
+    for teil in [t.strip() for t in re.split(r'\s\|\s', lo or '') if t.strip()]:
+        for z in p_ausgang(teil):
+            zk = _ohne_leer(z)
+            if zk and zk not in kl and zk not in [_ohne_leer(x) for x in out]:
+                out.append(z)
+    return out
+
+
+def p_rechts_tex(zeilen):
+    """Rechte Spalte linksbündig (16.10.): je Handgriff eine Zeile; bei mehreren kurzen Gleichungen stehen die
+    Gleichheitszeichen untereinander (Spalten in natürlicher Breite, also am linken Rand)."""
+    zeilen = [p_bruch(z) for z in zeilen if z.strip()]
+    if not zeilen:
+        return ''
+    if len(zeilen) == 1:
+        return tx(zeilen[0])
+    paare = [ops_split(z) if '$' not in z else [z] for z in zeilen]
+    if all(len(sg) >= 3 and len(sg[0]) <= 14 and len(z) <= 40 for sg, z in zip(paare, zeilen)):
+        return ('\\begin{tabular}[t]{@{}r@{\\,}l@{}}' + ''.join(
+            tx(sg[0].strip()) + ' & ' + tx(' '.join(x.strip() for x in sg[1:])) + '\\\\' for sg in paare)
+            + '\\end{tabular}')
+    return '\\newline '.join(tx(z) for z in zeilen)
+
+
 def p_loesung_p10(D, einheit, kenn, stufen_daten):
     """Lösungsblatt P10 (plan.md § 10, 16.10. g): Kopf „Lösungen · Name“ mit kräftigem Strich, keine Stufenzeile,
     keine Punkte, Abschnitte klein grau als Zwischenzeile, Schrift eine Stufe kleiner; links das Ergebnis fett
@@ -6656,22 +6762,21 @@ def p_loesung_p10(D, einheit, kenn, stufen_daten):
     out = [KOPF.replace('\\begin{document}', P_PRAEAMBEL + '\\begin{document}'), '\\pfheftstil',
            f'\\pflaufkopf[{P_SORTE} \\pkt{{}} Prüfung]{{{tx(einheit)} \\pkt{{}} Lösungen}}{{{kenn}}}\\pfseitevon',
            f'\\glkopf{{{tx(einheit)}}}', '\\small']
+    # 16.10. (gemeinsam.md „Form der Lösung“): keine Abschnittsköpfe, keine Zwischenzeile – die Nummern laufen durch
     for s in stufen_daten:
-        out.append('')
-        if len(stufen_daten) > 1:
-            out.append(f'\\glzwischen{{{bst[s["name"]]}~{tx(s["anzeige"])}}}')
-        kf = s.get('kurzfrage', '')
-        if 'Seite ___' in kf and s.get('regine'):
-            out.append('\\noindent{\\footnotesize\\color{mbgrau}' + tx(kf.replace('Seite ___', s['regine'])) + '}\\par')
         if s['frage']:
+            erg = p_frage_ergebnis(s['frage'])
+            weg = s['frage']['weg'] or ''
+            rechts = '' if _ohne_leer(weg) in _ohne_leer(erg) else p_rechts_tex(p_rechts(weg, [erg]))
             out.append('\\begin{pfloesungb}{}')
-            out.append(f'\\lzb{{{s["nr_frage"]}.}}{{}}{{{p_frage_ergebnis(s["frage"])}}}{{{p_weg_tex(s["frage"]["weg"])}}}')
+            out.append(f'\\lzb{{{s["nr_frage"]}.}}{{}}{{{erg}}}{{{rechts}}}')
             out.append('\\end{pfloesungb}')
         for (nr, b), r in zip(s['nr_echt'], s['echte']):
-            ergebnisse, weg = p_ergebnis(r)
+            ergebnisse, _ = p_ergebnis(r)
             erg = '; '.join(tx(p_bruch(e)) for e in ergebnisse)
+            rechts = p_rechts_tex(p_rechts(r.get('loesung'), ergebnisse))
             out.append('\\begin{pfloesungb}{}')
-            out.append(f'\\lzb{{{"" if b and b != "a)" else str(nr) + "."}}}{{{b}}}{{{erg}}}{{{p_weg_tex(weg)}}}')
+            out.append(f'\\lzb{{{"" if b and b != "a)" else str(nr) + "."}}}{{{b}}}{{{erg}}}{{{rechts}}}')
             out.append('\\end{pfloesungb}')
     out.append('\\end{document}')
     return '\n'.join(out)
