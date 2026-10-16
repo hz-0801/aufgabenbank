@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -103,7 +116,7 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Wachstum}{PA50-3}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Wachstum}{PA50-4}\pfseitevon
 \pfheftkopf{Wachstum}{}
 \pfstufenzeile{A~Tabelle ergänzen \pkt{} B~Graph zeichnen \pkt{} C~Gleichung gesucht \pkt{} D~Graph zuordnen}
 
@@ -132,7 +145,7 @@ Can bezieht Anfang 2026 eine neue Wohnung. Laut Mietvertrag steigt die Miete jed
 \begin{pfaufg}{nach~P10\\’25~\pkt{}~7a}{3.}{}
 Man beobachtet einen Bakterienstamm, der exponentiell wächst. Die Tabelle zeigt die Zahl der Bakterien in den ersten 4 Stunden. Stelle das Wachstum der Bakterien im Koordinatensystem dar.
 \par\smallskip\noindent\begin{minipage}[t]{0.55\linewidth}\vspace{0pt}\begin{tabular}[t]{|l|c|c|c|c|c|}\hline Zeit in Stunden & 0 & 1 & 2 & 3 & 4\\\hline Anzahl der Bakterien & 70 & 91 & 118 & 154 & 200\\\hline\end{tabular}\end{minipage}\hfill\begin{minipage}[t]{0.4\linewidth}\vspace{0pt}\begin{ksys}[xmin=0,xmax=5,ymin=0,ymax=250,xstep=1,ystep=25,karo=0.42,xlabel=Zeit in h,ylabel=Anzahl]\end{ksys}\end{minipage}\par
-\fusshilfe{\gfuss{3}{fünf Punkte (0|70), (1|91), (2|118), (3|154), (4|200), zunehmend steiler ansteigend}}
+\fusshilfe{\gfuss{3}{Punkte (0|70), (1|91), (2|118), (3|154), (4|200), immer steiler}}
 \end{pfaufg}
 
 % ===================== Stufe: Faktor bestimmen, Gleichung aufstellen =====================
@@ -166,7 +179,7 @@ Man beobachtet einen Bakterienstamm, der exponentiell wächst. Die Tabelle zeigt
 Can bezieht Anfang 2026 eine neue Wohnung. Laut Mietvertrag steigt die Miete jedes Jahr um 2,3 \%. Im ersten Jahr zahlt er 590 € im Monat. Entscheide, welcher Graph zur Entwicklung der Miete passt, und kreuze ihn an. Erkläre bei den zwei übrigen Graphen jeweils, weshalb sie nicht passen.
 \par\smallskip\noindent\setlength{\gbildbreite}{\dimexpr0.96\linewidth/3\relax}\sbox{\gbox}{\vbox{\begin{tikzpicture}[x=0.5cm,y=0.5cm,line width=0.5pt]\draw[black!20,line width=0.3pt,step=0.5] (0,0) grid (4.5,3.5);\draw[-{Stealth[length=1.5mm]}] (0,0)--(4.8,0);\draw[-{Stealth[length=1.5mm]}] (0,0)--(0,3.8);\node[below,font=\tiny] at (2.4,0) {Zeit in Jahren};\node[right,font=\tiny] at (0,3.8) {Miete in €};\draw[line width=0.8pt,domain=0:4.2,samples=40,smooth] plot (\x,{0.3*(exp(0.55*\x)-1)});\end{tikzpicture}\par\begin{tikzpicture}[x=0.5cm,y=0.5cm,line width=0.5pt]\draw[black!20,line width=0.3pt,step=0.5] (0,0) grid (4.5,3.5);\draw[-{Stealth[length=1.5mm]}] (0,0)--(4.8,0);\draw[-{Stealth[length=1.5mm]}] (0,0)--(0,3.8);\node[below,font=\tiny] at (2.4,0) {Zeit in Jahren};\node[right,font=\tiny] at (0,3.8) {Miete in €};\draw[line width=0.8pt,domain=0:4.2,samples=40,smooth] plot (\x,{0.9*exp(0.3*\x)});\end{tikzpicture}\par\begin{tikzpicture}[x=0.5cm,y=0.5cm,line width=0.5pt]\draw[black!20,line width=0.3pt,step=0.5] (0,0) grid (4.5,3.5);\draw[-{Stealth[length=1.5mm]}] (0,0)--(4.8,0);\draw[-{Stealth[length=1.5mm]}] (0,0)--(0,3.8);\node[below,font=\tiny] at (2.4,0) {Zeit in Jahren};\node[right,font=\tiny] at (0,3.8) {Miete in €};\draw[line width=0.8pt] (0,0.9)--(4.2,3.1);\end{tikzpicture}}}\gbildoption{}{\begin{tikzpicture}[x=0.5cm,y=0.5cm,line width=0.5pt]\draw[black!20,line width=0.3pt,step=0.5] (0,0) grid (4.5,3.5);\draw[-{Stealth[length=1.5mm]}] (0,0)--(4.8,0);\draw[-{Stealth[length=1.5mm]}] (0,0)--(0,3.8);\node[below,font=\tiny] at (2.4,0) {Zeit in Jahren};\node[right,font=\tiny] at (0,3.8) {Miete in €};\draw[line width=0.8pt,domain=0:4.2,samples=40,smooth] plot (\x,{0.3*(exp(0.55*\x)-1)});\end{tikzpicture}}{\dimexpr\ht\gbox/3+\baselineskip\relax}\hfill\gbildoption{}{\begin{tikzpicture}[x=0.5cm,y=0.5cm,line width=0.5pt]\draw[black!20,line width=0.3pt,step=0.5] (0,0) grid (4.5,3.5);\draw[-{Stealth[length=1.5mm]}] (0,0)--(4.8,0);\draw[-{Stealth[length=1.5mm]}] (0,0)--(0,3.8);\node[below,font=\tiny] at (2.4,0) {Zeit in Jahren};\node[right,font=\tiny] at (0,3.8) {Miete in €};\draw[line width=0.8pt,domain=0:4.2,samples=40,smooth] plot (\x,{0.9*exp(0.3*\x)});\end{tikzpicture}}{\dimexpr\ht\gbox/3+\baselineskip\relax}\hfill\gbildoption{}{\begin{tikzpicture}[x=0.5cm,y=0.5cm,line width=0.5pt]\draw[black!20,line width=0.3pt,step=0.5] (0,0) grid (4.5,3.5);\draw[-{Stealth[length=1.5mm]}] (0,0)--(4.8,0);\draw[-{Stealth[length=1.5mm]}] (0,0)--(0,3.8);\node[below,font=\tiny] at (2.4,0) {Zeit in Jahren};\node[right,font=\tiny] at (0,3.8) {Miete in €};\draw[line width=0.8pt] (0,0.9)--(4.2,3.1);\end{tikzpicture}}{\dimexpr\ht\gbox/3+\baselineskip\relax}\par
 \karo{2}
-\fusshilfe{\gfuss{7}{B; jedes Jahr gleicher Betrag statt gleicher Prozentsatz}}
+\fusshilfe{\gfuss{7}{B; A falsch, Start 0 € statt 590 €; C linear statt gleicher Prozentsatz}}
 \end{pfaufg}
 
 \gmehr{13}

@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -104,7 +117,7 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} mehr]{Fläche und Umfang}{PG40-8}\pfseitevon
+\pflaufkopf[P10 \pkt{} mehr]{Fläche und Umfang}{PG40-9}\pfseitevon
 \pfheftkopf{Fläche und Umfang}{mehr}
 \pfstufenzeile{Formeln umstellen \pkt{} Formeln \pkt{} Fläche gesucht}
 % 2020-OS-B1d-m1 (Schwere I, rang 12)
@@ -131,8 +144,8 @@ Ein Rechteck hat den Umfang u = 30 cm; die Seite a ist 11 cm lang. Gib die Läng
 \begin{pfaufg}{nach~P10\\’17~\pkt{}~3a}{4.}{}
 Familie Sommer hat einen Swimmingpool gebaut. Seine Grundfläche ist ein Rechteck, an dessen kurze Seiten je ein Halbkreis angesetzt ist. Die kurze Seite des Rechtecks ist a = 6 m lang, die lange Seite b = 11 m. Gib an, aus welchen Teilflächen die Grundfläche des Pools besteht.
 \par\smallskip\noindent\gpassend{\begin{tikzpicture}[line width=0.8pt,font=\small]\filldraw[fill=black!12] (0,0)--(2.2,0) arc (-90:90:0.6)--(0,1.2) arc (90:270:0.6)--cycle;\draw[dashed,line width=0.5pt] (0,0)--(0,1.2) (2.2,0)--(2.2,1.2);\node[left] at (-0.6,0.6) {$a = 6$ m};\node[below] at (1.1,0) {$b = 11$ m};\end{tikzpicture}}\par
-\hfill Ein Rechteck und zwei Halbkreise (zusammen ein Kreis mit Durchmesser a) $=$\linie{30mm}
-\fusshilfe{\gfuss{4}{Ein Rechteck und zwei Halbkreise (zusammen ein Kreis mit Durchmesser a)}}
+\karo{2}
+\fusshilfe{\gfuss{4}{a}}
 \end{pfaufg}
 % 2016-OS-K3b-m1 (Schwere I, rang 16)
 \begin{pfaufg}{nach~P10\\’16~\pkt{}~3b}{5.}{}
@@ -178,7 +191,7 @@ Familie Sommer hat einen Swimmingpool gebaut. Seine Grundfläche ist ein Rechtec
 % 2015-OS-K6c-m1 (Schwere II, rang 22)
 \begin{pfaufg}{nach~P10\\’15~\pkt{}~6c}{11.}{}
 Mia baut das Modell einer Pyramide mit quadratischer Grundfläche: Die Grundkante ist 0,90 m lang, die Pyramide ist 0,70 m hoch. Die Seitenflächen sägt sie aus dünnem Sperrholz. Weise nach, dass sie für eine Seitenfläche etwa 0,37 m² Sperrholz braucht.
-\karo{3}
+\karo{5}
 \fusshilfe{\gfuss{11}{0,83 m; 0,37 m²}}
 \end{pfaufg}
 % 2014-OS-K5c-m1 (Schwere II, rang 23)
@@ -191,8 +204,8 @@ Eine Kühlvitrine hat die Form eines Prismas. Ihre Grundfläche ist ein gleichsc
 % 2014-OS-K5d-m1 (Schwere II, rang 24)
 \begin{pfaufg}{nach~P10\\’14~\pkt{}~5d}{13.}{}
 Die Rückwand derselben Vitrine ist ein Rechteck, 108 cm breit und 150 cm hoch. Sie soll aus einer rechteckigen Platte gesägt werden, die 1,25 m breit ist und einen Flächeninhalt von 1,8 m² hat. Entscheide mit einer Rechnung, ob die Platte dafür reicht.
-\karo{2}
-\fusshilfe{\gfuss{13}{1,44 m hoch}}
+\karo{3}
+\fusshilfe{\gfuss{13}{1,44 m}}
 \end{pfaufg}
 % 2015-OS-K5d-m1 (Schwere III, rang 25)
 \begin{pfaufg}{nach~P10\\’15~\pkt{}~5d}{14.}{}

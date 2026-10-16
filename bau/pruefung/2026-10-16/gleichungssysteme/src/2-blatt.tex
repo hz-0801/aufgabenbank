@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -103,7 +116,7 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Gleichungssystem}{PA20-2}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Gleichungssystem}{PA20-3}\pfseitevon
 \pfheftkopf{Gleichungssystem}{}
 \pfstufenzeile{A~Gleichungen aufstellen \pkt{} B~x und y gesucht \pkt{} C~Bedeutung gesucht}
 
@@ -142,13 +155,13 @@ Frau Bauer will in ihrem Garten Obstbäume pflanzen. Zusammen kosten ein Apfelba
 \begin{pfaufg}{nach~P10\\’22~\pkt{}~7a}{4.}{}
 Frau Bauer will in ihrem Garten Obstbäume pflanzen. Zusammen kosten ein Apfelbaum und ein Pflaumenbaum 58,00 €. Sie kauft 8 Apfelbäume und 4 Pflaumenbäume und zahlt dafür 330,40 €. Sie schreibt dazu zwei Gleichungen auf: I $x + y = 58$; II $8x + 4y = 330{,}40$. Gib an, wofür die Variablen $x$ und $y$ in Frau Bauers Gleichungen stehen.
 \par\smallskip\par\noindent \hfill x steht für: \linie{30mm}\hphantom{\,cm²}\par\noindent \hfill y steht für: \linie{30mm}\hphantom{\,cm²}
-\fusshilfe{\gfuss{4}{Preis eines Apfelbaums in €; Preis eines Pflaumenbaums in €}}
+\fusshilfe{\gfuss{4}{Preis Apfelbaum in €; Preis Pflaumenbaum in €}}
 \end{pfaufg}
 % 2024-OS-K7b-m1 (Original 2024-OS-K7b, Schwere II, rang 4; herausgelöste Fassung: keine)
 \begin{pfaufg}{nach~P10\\’24~\pkt{}~7b}{5.}{FOR}
 Die Brüder Daniel und Filip kaufen ihrer Mutter zum Muttertag je einen Blumenstrauß, Daniel in Laden A, Filip in Laden B. In Laden B kostet eine Rose 2,40 € und eine Tulpe 1,60 €. Filip schreibt zu seinem Strauß das Gleichungssystem I. $2{,}40r + 1{,}60t = 28{,}80$; II. $r + t = 15$. Schreib in einem Satz auf, was Gleichung II über den Strauß aussagt. Löse das Gleichungssystem.
 \par\smallskip\par\noindent \hfill Gleichung II bedeutet: \linie{30mm}\hphantom{\,cm²}\par\noindent \hfill Rosen: \linie{30mm}\hphantom{\,cm²}\par\noindent \hfill Tulpen: \linie{30mm}\hphantom{\,cm²}
-\fusshilfe{\gfuss{5}{Filip kauft zusammen 15 Blumen; 6 Rosen; 9 Tulpen}}
+\fusshilfe{\gfuss{5}{15 Blumen; 6 Rosen; 9 Tulpen}}
 \end{pfaufg}
 
 \gmehr{2}

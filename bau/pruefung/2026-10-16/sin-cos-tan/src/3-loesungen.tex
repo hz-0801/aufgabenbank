@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -106,48 +119,40 @@
 \pflaufkopf[P10 \pkt{} Prüfung]{sin, cos, tan \pkt{} Lösungen}{PG60-4}\pfseitevon
 \glkopf{sin, cos, tan}
 \small
-
-\glzwischen{A~sin, cos, tan aufstellen}
 \begin{pfloesungb}{}
-\lzb{1.}{}{Gegenkathete a, Ankathete b, Hypotenuse c}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Die Gegenkathete liegt $\alpha$ gegenüber, die Ankathete liegt an $\alpha$ und am rechten Winkel, die Hypotenuse liegt dem rechten Winkel gegenüber.}\\\end{tabular}}
+\lzb{1.}{}{Gegenkathete a, Ankathete b, Hypotenuse c}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{2.}{}{sin $\gamma$ = u/w}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}sin $\gamma$ & = u/w\\\end{tabular}}
-\end{pfloesungb}
-
-\glzwischen{B~Winkel gesucht}
-\begin{pfloesungb}{}
-\lzb{3.}{}{a) Gegenkathete und Hypotenuse: sin; b) Ankathete und Hypotenuse: cos}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Die Höhe an der Wand liegt dem Winkel am Boden gegenüber (sin), der Abstand zur Wand liegt an ihm an (cos)}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{die Leiter ist die Hypotenuse.}\\\end{tabular}}
+\lzb{2.}{}{sin $\gamma$ = u/w}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{4.}{}{$\alpha$ $\approx$ 33,6°}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}sin $\alpha$ & = $\tfrac{7{,}3}{13{,}2}$\\$\alpha$ & = sin$^{-1}$(7,3/13,2) $\approx$ 33,6°\\\end{tabular}}
+\lzb{3.}{}{a) Gegenkathete und Hypotenuse: sin; b) Ankathete und Hypotenuse: cos}{Die Höhe an der Wand liegt dem Winkel am Boden gegenüber, der Abstand zur Wand liegt an ihm an}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{5.}{}{$\beta_1$ $\approx$ 48,6°}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}cos $\beta_1$ & = $\tfrac{262}{396}$\\$\beta_1$ & = cos$^{-1}$($\tfrac{262}{396}$) $\approx$ 48,6°\\\end{tabular}}
+\lzb{4.}{}{$\alpha$ = sin$^{-1}$(7,3/13,2) $\approx$ 33,6°}{sin $\alpha$ = $\tfrac{7{,}3}{13{,}2}$}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{6.}{}{$\varepsilon$ $\approx$ 65°}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}cos $\varepsilon$ & = $\tfrac{16}{38}$\\$\varepsilon$ & = cos$^{-1}$($\tfrac{16}{38}$) $\approx$ 65,1° $\approx$ 65°\\\end{tabular}}
-\end{pfloesungb}
-
-\glzwischen{C~Seite gesucht}
-\begin{pfloesungb}{}
-\lzb{7.}{}{a) $a = c \cdot \sin\alpha$; b) $c = \tfrac{a}{\sin\alpha}$}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{steht die Seite oben im Bruch, mal sin $\alpha$}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{steht sie unten, a durch sin $\alpha$ teilen}\\\end{tabular}}
+\lzb{5.}{}{$\beta_1$ = cos$^{-1}$($\tfrac{262}{396}$) $\approx$ 48,6°}{cos $\beta_1$ = $\tfrac{262}{396}$}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{8.}{}{a $\approx$ 9,7 m}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}sin 49° & = $\tfrac{7{,}3}{a}$\\a & = $\tfrac{7{,}3}{\sin 49 ^\circ}$ $\approx$ 9,7 m\\\end{tabular}}
+\lzb{6.}{}{$\varepsilon$ = cos$^{-1}$($\tfrac{16}{38}$) $\approx$ 65°}{cos $\varepsilon$ = $\tfrac{16}{38}$}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{9.}{}{AC $\approx$ 84,7 cm}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}sin 24° & = 34,47 : AC\\AC & = $\tfrac{34{,}47}{\sin 24 ^\circ}$ $\approx$ 84,7 cm\\\end{tabular}}
+\lzb{7.}{}{a) $a = c \cdot \sin\alpha$; b) $c = \tfrac{a}{\sin\alpha}$}{steht die Seite oben im Bruch, mal sin $\alpha$}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{10.}{}{BF = AF; BC $\approx$ 172,0 cm}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}BF & = 128,9 · sin 45° $\approx$ 91,1 cm = AF\\BC & = BF : cos 58° $\approx$ 172,0 cm\\\end{tabular}}
-\end{pfloesungb}
-
-\glzwischen{D~Pythagoras oder sin, cos, tan?}
-\begin{pfloesungb}{}
-\lzb{11.}{}{a) Pythagoras; b) sin, cos, tan; c) sin, cos, tan}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Kommt ein Winkel vor (gegeben oder gesucht), dann sin, cos, tan}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{nur Seiten, dann Pythagoras.}\\\end{tabular}}
+\lzb{8.}{}{a = $\tfrac{7{,}3}{\sin 49 ^\circ}$ $\approx$ 9,7 m}{sin 49° = $\tfrac{7{,}3}{a}$}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{12.}{}{BC $\approx$ 5,83; $\beta$ $\approx$ 59,0°}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}AB & = 3, AC = 5\\BC & = $\sqrt{3² + 5²}$ = $\sqrt{34}$ $\approx$ 5,83\\$\beta$ & = tan$^{-1}$($\tfrac{5}{3}$) $\approx$ 59,0°\\\end{tabular}}
+\lzb{9.}{}{AC = $\tfrac{34{,}47}{\sin 24 ^\circ}$ $\approx$ 84,7 cm}{sin 24° = 34,47 : AC}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{10.}{}{BF = AF; BC = BF : cos 58° $\approx$ 172,0 cm}{BF = 128,9 · sin 45°}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{11.}{}{a) Pythagoras; b) sin, cos, tan; c) sin, cos, tan}{Kommt ein Winkel vor, dann sin, cos, tan}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{12.}{}{BC = $\sqrt{34}$ $\approx$ 5,83; $\beta$ = tan$^{-1}$($\tfrac{5}{3}$) $\approx$ 59,0°}{\begin{tabular}[t]{@{}r@{\,}l@{}}AB & = 3, AC = 5\\tan $\beta$ & = $\tfrac{5}{3}$\\\end{tabular}}
 \end{pfloesungb}
 \end{document}

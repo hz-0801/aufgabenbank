@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -117,7 +130,7 @@ Berechne die Nullstellen der Funktion mit $y = 2x^2 + 6x - 20$.
 \begin{pfaufg}{nach~P10\\’17~\pkt{}~5d}{2.}{}
 Die Parabel $p$ hat die Gleichung $y = (x+5)^2 - 3$ und ist im Koordinatensystem gezeichnet. Zeige, dass man die Gleichung von $p$ auch als $y = x^2 + 10x + 22$ schreiben kann. Berechne die Nullstellen von $p$.
 \par\smallskip\noindent\gpassend{\begin{ksys}[xmin=-9,xmax=1,ymin=-4,ymax=4,karo=0.5]\parabel{1}{-5}{-3}{p}\end{ksys}}\par
-\karo{4}
+\karo{6}
 \fusshilfe{\gfuss{2}{x² + 10x + 22; $-$3,27; $-$6,73}}
 \end{pfaufg}
 \par\vfill\noindent{\scriptsize\color{mbgrau}Originale: P10 2020 \pkt{} 3e, P10 2017 \pkt{} 5d\par}

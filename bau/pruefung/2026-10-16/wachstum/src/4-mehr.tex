@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -104,7 +117,7 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} mehr]{Wachstum}{PA50-3}\pfseitevon
+\pflaufkopf[P10 \pkt{} mehr]{Wachstum}{PA50-4}\pfseitevon
 \pfheftkopf{Wachstum}{mehr}
 \pfstufenzeile{Tabelle ergänzen \pkt{} Gleichung gesucht \pkt{} Graph zeichnen \pkt{} Graph zuordnen}
 % 2020-OS-K4a-m1 (Schwere I, rang 6)
@@ -138,15 +151,15 @@ Auf Meereshöhe (0 km) misst man einen Luftdruck von ungefähr 1000 hPa (Hektopa
 \begin{pfaufg}{nach~P10\\’21~\pkt{}~6b}{5.}{}
 Eine 36 cm hohe Kerze brennt ab. Gegeben: Tabelle Zeit in Minuten 0, 10, 20, 30, 40, 80; Höhe in cm 36, 33, 30, 27, 24, 12. Stelle diese Werte als Graph im Koordinatensystem dar. Trag dazu zuerst die fehlende Einteilung der Achsen ein.
 \par\smallskip\noindent\gpassend{\begin{tikzpicture}[x=0.45cm,y=0.45cm,line width=0.6pt]\draw[black!20,line width=0.3pt] (-1,-1) grid[step=1] (24,22);\draw[-{Stealth[length=2mm]}] (-1,0) -- (23.8,0) node[below left,font=\small,inner sep=2pt,yshift=-3pt] {Zeit in Minuten};\draw[-{Stealth[length=2mm]}] (0,-1) -- (0,21.8) node[right,font=\small,inner sep=3pt] {Höhe in cm};\end{tikzpicture}}\par
-\karo{2}
-\fusshilfe{\gfuss{5}{fallende Strecke durch (0|36), (10|33), (20|30), (30|27), (40|24), (80|12) mit beschrifteter Skala (x-Achse 1 Kästchen = 5 min, y-Achse 1 Kästchen = 2 cm)}}
+\karo{3}
+\fusshilfe{\gfuss{5}{Strecke durch (0|36), (10|33), (20|30), (30|27), (40|24), (80|12)}}
 \end{pfaufg}
 % 2019-OS-K7b-m1 (Schwere II, rang 11)
 \begin{pfaufg}{nach~P10\\’19~\pkt{}~7b}{6.}{}
 Ein Ferkel wiegt 12 kg. Aus Erfahrung weiß man, dass seine Masse jede Woche um etwa 5 \% zunimmt. Zu Beginn jeder Woche wird es gewogen. Die Bäuerin Wilma berechnet die Masse des Ferkels nach $x$ Wochen mit $f(x) = 12 \cdot 1{,}05^x$. Schreib auf, was $12$, $1{,}05$ und $x$ in dieser Gleichung bedeuten.
 \par\smallskip\noindent\gpassend{{\small\renewcommand{\arraystretch}{1.25}\begin{tabular}{|c|p{9cm}|}\hline Teil der Gleichung & Bedeutung\\\hline \rule[-2.5ex]{0pt}{6.5ex}$12$ & \\\hline \rule[-2.5ex]{0pt}{6.5ex}$1{,}05$ & \\\hline \rule[-2.5ex]{0pt}{6.5ex}$x$ & \\\hline\end{tabular}}}\par
 \karo{4}
-\fusshilfe{\gfuss{6}{x: Zeit in Wochen (Anzahl der Wochen)}}
+\fusshilfe{\gfuss{6}{Anfangsmasse in kg; Wachstumsfaktor, +5 \% je Woche; Zeit in Wochen}}
 \end{pfaufg}
 % 2017-OS-K7a-m1 (Schwere II, rang 12)
 \begin{pfaufg}{nach~P10\\’17~\pkt{}~7a}{7.}{}
@@ -179,8 +192,8 @@ Um Krankheiten der Schilddrüse zu erkennen, spritzt man dem Patienten eine Flü
 \begin{pfaufg}{nach~P10\\’16~\pkt{}~4b}{11.}{}
 Um Krankheiten der Schilddrüse zu erkennen, spritzt man dem Patienten eine Flüssigkeit, die eine kleine Menge radioaktives Technetium enthält. Die Masse des Technetiums im Körper wird jede Stunde um etwa 9 \% kleiner. Beschrifte die Achsen des Koordinatensystems passend zur Tabelle und zeichne ein, wie die Masse abnimmt. Gegeben: Tabelle 0 h: 6,00 mg; 1 h: 5,46 mg; 2 h: 4,97 mg; 4 h: 4,11 mg; 5 h: 3,74 mg; 6 h: 3,41 mg; 8 h: 2,82 mg.
 \par\smallskip\noindent\gpassend{\begin{tikzpicture}[x=0.5cm,y=0.5cm,line width=0.6pt]\draw[black!20,line width=0.3pt] (-1,-2) grid[step=1] (18,16);\draw[-{Stealth[length=2mm]}] (-1,0) -- (17.8,0);\draw[-{Stealth[length=2mm]}] (0,-2) -- (0,15.8);\foreach \i in {1,...,8}{\draw ({2*\i},0.25) -- ({2*\i},-0.25);}\foreach \i in {1,...,7}{\draw (0.25,{2*\i}) -- (-0.25,{2*\i});}\end{tikzpicture}}\par
-\karo{2}
-\fusshilfe{\gfuss{11}{Achsen „Zeit in h“ (1 h je Teilstrich) und „Masse in mg“ (1 mg je Teilstrich), sieben Punkte, glatte fallende Kurve}}
+\karo{3}
+\fusshilfe{\gfuss{11}{7 Punkte, fallende Kurve}}
 \end{pfaufg}
 % 2016-OS-K4e-m1 (Schwere II, rang 17)
 \begin{pfaufg}{nach~P10\\’16~\pkt{}~4e}{12.}{}
@@ -193,8 +206,8 @@ Um Krankheiten der Schilddrüse zu erkennen, spritzt man dem Patienten eine Flü
 \begin{pfaufg}{nach~P10\\’19~\pkt{}~7c}{13.}{}
 Ein Ferkel wiegt 12 kg. Aus Erfahrung weiß man, dass seine Masse jede Woche um etwa 5 \% zunimmt. Zu Beginn jeder Woche wird es gewogen. Für jeden der drei Graphen: Entscheide, ob er zum Wachstum des Ferkels passt, und begründe.
 \par\smallskip\noindent\gpassend{\begin{tabular}[b]{@{}c@{}}\begin{tikzpicture}[x=0.5cm,y=0.5cm,line width=0.5pt]\draw[black!20,line width=0.3pt,step=0.5] (0,0) grid (4.5,3.5);\draw[-{Stealth[length=1.5mm]}] (0,0)--(4.8,0);\draw[-{Stealth[length=1.5mm]}] (0,0)--(0,3.8);\node[below,font=\tiny] at (2.4,0) {Zeit in Wochen};\node[right,font=\tiny] at (0,3.8) {Masse in kg};\draw[line width=0.8pt] (0,1)--(4.2,3.2);\end{tikzpicture}\\ \textsf{A}\end{tabular}\quad\begin{tabular}[b]{@{}c@{}}\begin{tikzpicture}[x=0.5cm,y=0.5cm,line width=0.5pt]\draw[black!20,line width=0.3pt,step=0.5] (0,0) grid (4.5,3.5);\draw[-{Stealth[length=1.5mm]}] (0,0)--(4.8,0);\draw[-{Stealth[length=1.5mm]}] (0,0)--(0,3.8);\node[below,font=\tiny] at (2.4,0) {Zeit in Wochen};\node[right,font=\tiny] at (0,3.8) {Masse in kg};\draw[line width=0.8pt,domain=0:4.2,samples=40,smooth] plot (\x,{1*exp(0.28*\x)});\end{tikzpicture}\\ \textsf{B}\end{tabular}\quad\begin{tabular}[b]{@{}c@{}}\begin{tikzpicture}[x=0.5cm,y=0.5cm,line width=0.5pt]\draw[black!20,line width=0.3pt,step=0.5] (0,0) grid (4.5,3.5);\draw[-{Stealth[length=1.5mm]}] (0,0)--(4.8,0);\draw[-{Stealth[length=1.5mm]}] (0,0)--(0,3.8);\node[below,font=\tiny] at (2.4,0) {Zeit in Wochen};\node[right,font=\tiny] at (0,3.8) {Masse in kg};\draw[line width=0.8pt,domain=0:4.2,samples=40,smooth] plot (\x,{0.35*(exp(0.55*\x)-1)});\end{tikzpicture}\\ \textsf{C}\end{tabular}}\par
-\karo{4}
-\fusshilfe{\gfuss{13}{Graph 3 passt nicht: beginnt bei 0 kg statt 12 kg}}
+\karo{7}
+\fusshilfe{\gfuss{13}{Graph 1 nein; Graph 2 ja; Graph 3 nein}}
 \end{pfaufg}
 \par\vfill\noindent{\scriptsize\color{mbgrau}Originale: P10 2020 \pkt{} 4a, P10 2019 \pkt{} 7a, P10 2018 \pkt{} 2a, P10 2017 \pkt{} 7c, P10 2021 \pkt{} 6b, P10 2019 \pkt{} 7b, P10 2017 \pkt{} 7a, P10 2017 \pkt{} 7b, P10 2017 \pkt{} 7d, P10 2016 \pkt{} 4a, P10 2016 \pkt{} 4b, P10 2016 \pkt{} 4e, P10 2019 \pkt{} 7c\par}
 \end{document}

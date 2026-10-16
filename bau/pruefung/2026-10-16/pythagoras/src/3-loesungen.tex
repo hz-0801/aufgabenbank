@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -103,54 +116,46 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Pythagoras \pkt{} Lösungen}{PG50-5}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Pythagoras \pkt{} Lösungen}{PG50-6}\pfseitevon
 \glkopf{Pythagoras}
 \small
-
-\glzwischen{A~Pythagoras aufstellen}
 \begin{pfloesungb}{}
-\lzb{1.}{}{r² = p² + q²}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Die Hypotenuse r liegt dem rechten Winkel gegenüber}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{sie steht allein auf einer Seite der Gleichung.}\\\end{tabular}}
+\lzb{1.}{}{r² = p² + q²}{Die Hypotenuse r liegt dem rechten Winkel gegenüber}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{2.}{}{Die beiden Kathetenquadrate haben zusammen denselben Flächeninhalt wie das Hypotenusenquadrat}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Die beiden Kathetenquadrate haben zusammen denselben Flächeninhalt wie das Hypotenusenquadrat.}\\\end{tabular}}
+\lzb{2.}{}{Die beiden Kathetenquadrate haben zusammen denselben Flächeninhalt wie das Hypotenusenquadrat}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{3.}{}{$w=\sqrt{u^2+v^2}$}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}w & = $\sqrt{u² + v²}$\\\end{tabular}}
+\lzb{3.}{}{$w=\sqrt{u^2+v^2}$}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{4.}{}{$z=\sqrt{x^2-y^2}$}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}z & = $\sqrt{x² - y²}$\\\end{tabular}}
-\end{pfloesungb}
-
-\glzwischen{B~Hypotenuse gesucht}
-\begin{pfloesungb}{}
-\lzb{5.}{}{a) und c)}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Die Hypotenuse liegt dem rechten Winkel gegenüber: bei x und z ist sie gesucht, bei y ist sie gegeben (7 cm).}\\\end{tabular}}
+\lzb{4.}{}{$z=\sqrt{x^2-y^2}$}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{6.}{}{x $\approx$ 200,7 cm}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}x & = $\sqrt{200² + 17²}$ = $\sqrt{40289}$ $\approx$ 200,7 cm\\\end{tabular}}
-\end{pfloesungb}
-
-\glzwischen{C~Kathete gesucht}
-\begin{pfloesungb}{}
-\lzb{7.}{}{b)}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{m ist die Hypotenuse (gegenüber dem rechten Winkel), k eine Kathete: von m² wird g² abgezogen.}\\\end{tabular}}
+\lzb{5.}{}{a) und c)}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{8.}{}{h $\approx$ 34,47 cm}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}h & = $\sqrt{38² - 16²}$ = $\sqrt{1188}$ $\approx$ 34,47 cm\\\end{tabular}}
+\lzb{6.}{}{x = $\sqrt{40289}$ $\approx$ 200,7 cm}{x² = 200² + 17²}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{9.}{}{FA $\approx$ 296,9 m}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}FA & = $\sqrt{396² - 262²}$ = $\sqrt{88172}$ $\approx$ 296,9 m\\\end{tabular}}
+\lzb{7.}{}{b)}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{10.}{}{AD $\approx$ 11,0 m}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}AD & = $\sqrt{13{,}2² - 7{,}3²}$ = $\sqrt{120{,}95}$ $\approx$ 11,0 m\\\end{tabular}}
-\end{pfloesungb}
-
-\glzwischen{D~Pythagoras versteckt}
-\begin{pfloesungb}{}
-\lzb{11.}{}{a) Katheten r und h, Hypotenuse s; b) Katheten 2 · r und h, Hypotenuse der Stab}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Die Höhe steht senkrecht auf dem Boden}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{quer über den Boden geht beim Stab der Durchmesser 2 · r, beim Kegel nur der Radius.}\\\end{tabular}}
+\lzb{8.}{}{h = $\sqrt{1188}$ $\approx$ 34,47 cm}{h² + 16² = 38²}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{12.}{}{$\approx$ 28,7 m}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Kegelhöhe $\sqrt{7{,}9² - 4{,}2²}$ = $\sqrt{44{,}77}$}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Gesamthöhe 22,0 + $\sqrt{44{,}77}$ $\approx$ 28,7 m}\\\end{tabular}}
+\lzb{9.}{}{FA = $\sqrt{88172}$ $\approx$ 296,9 m}{FA² + 262² = 396²}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{13.}{}{$\sqrt{102{,}49}$ + 2 $\approx$ 12,1 cm}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Stab im Becher: $\sqrt{7{,}5² + 6{,}8²}$ = $\sqrt{102{,}49}$}\\Stab: $\sqrt{102{,}49}$ + 2 & $\approx$ 12,1 cm\\\end{tabular}}
+\lzb{10.}{}{AD = $\sqrt{120{,}95}$ $\approx$ 11,0 m}{AD² + 7,3² = 13,2²}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{11.}{}{a) Katheten r und h, Hypotenuse s; b) Katheten 2 · r und h, Hypotenuse der Stab}{Die Höhe steht senkrecht auf dem Boden}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{12.}{}{H = 22,0 + $\sqrt{44{,}77}$ $\approx$ 28,7 m}{\begin{tabular}[t]{@{}r@{\,}l@{}}h² + 4,2² & = 7,9²\\H & = 22,0 + h\\\end{tabular}}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{13.}{}{s = $\sqrt{102{,}49}$ + 2 $\approx$ 12,1 cm}{\begin{tabular}[t]{@{}r@{\,}l@{}}d² & = 7,5² + 6,8²\\s & = d + 2\\\end{tabular}}
 \end{pfloesungb}
 \end{document}

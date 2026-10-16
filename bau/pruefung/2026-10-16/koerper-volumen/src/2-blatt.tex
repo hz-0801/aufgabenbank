@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -103,7 +116,7 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Volumen und Oberfläche}{PG90-7}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Volumen und Oberfläche}{PG90-8}\pfseitevon
 \pfheftkopf{Volumen und Oberfläche}{}
 \pfstufenzeile{A~Volumenformel aufstellen \pkt{} B~Volumen gesucht \pkt{} C~Volumenformel umstellen \pkt{} D~Oberfläche gesucht \pkt{} E~Körper vergleichen}
 
@@ -165,7 +178,7 @@ Du schneidest den Mantel eines Zylinders gerade auf und rollst ihn flach aus. We
 % 2026-FOR-K2b-m1 (Original 2026-FOR-K2b, Schwere II, rang 5; herausgelöste Fassung: keine)
 \begin{pfaufg}{nach~P10\\’26~\pkt{}~2b}{8.}{}
 Ein Turm besteht unten aus einem Zylinder, sein Dach ist ein Kegel. Bekannt sind: h = 22,0 m (Höhe des Zylinders), r = 4,2 m (Radius von Zylinder und Kegel) und s = 7,9 m (Mantellinie des Kegels). Das Dach wird mit Ziegeln gedeckt; 1 m² Ziegel kostet 24,00 €. Berechne die Kosten für die Ziegel.
-\gzwei{\begin{tikzpicture}[baseline=(current bounding box.north),line width=0.7pt]\draw (-0.9,0) arc (180:360:0.9 and 0.315);\draw[dashed,line width=0.5pt] (-0.9,0) arc (180:0:0.9 and 0.315);\draw (-0.9,0) -- (-0.9,2.4);\draw (0.9,0) -- (0.9,2.4);\draw (0,2.4) ellipse (0.9 and 0.315);\draw (-0.9,2.4) -- (0,3.9) -- (0.9,2.4);\node[right,font=\small] at (0.95,1.2) {$h$};\fill (0,0) circle (0.8pt);\draw[dashed,line width=0.5pt] (0,0) -- (0.9,0) node[midway,fill=white,inner sep=1pt,font=\small] {$r$};\path (0.9,2.4) -- (0,3.9) node[midway,above right,inner sep=1.5pt,font=\small] {$s$};\end{tikzpicture}}{\karo{3}}
+\gzwei{\begin{tikzpicture}[baseline=(current bounding box.north),line width=0.7pt]\draw (-0.9,0) arc (180:360:0.9 and 0.315);\draw[dashed,line width=0.5pt] (-0.9,0) arc (180:0:0.9 and 0.315);\draw (-0.9,0) -- (-0.9,2.4);\draw (0.9,0) -- (0.9,2.4);\draw (0,2.4) ellipse (0.9 and 0.315);\draw (-0.9,2.4) -- (0,3.9) -- (0.9,2.4);\node[right,font=\small] at (0.95,1.2) {$h$};\fill (0,0) circle (0.8pt);\draw[dashed,line width=0.5pt] (0,0) -- (0.9,0) node[midway,fill=white,inner sep=1pt,font=\small] {$r$};\path (0.9,2.4) -- (0,3.9) node[midway,above right,inner sep=1.5pt,font=\small] {$s$};\end{tikzpicture}}{\karo{4}}
 \fusshilfe{\gfuss{8}{104,24 m²; 2501,71 €}}
 \end{pfaufg}
 

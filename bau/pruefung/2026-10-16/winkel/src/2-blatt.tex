@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -103,7 +116,7 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Winkel aus Winkeln}{PG10-6}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Winkel aus Winkeln}{PG10-7}\pfseitevon
 \pfheftkopf{Winkel aus Winkeln}{}
 \pfstufenzeile{A~Winkel gesucht \pkt{} B~Basiswinkel gesucht \pkt{} C~rechten Winkel begründen}
 
@@ -130,7 +143,7 @@ Ein Trapez hat die parallelen Seiten 24,20 m (unten) und 16,20 m (oben) und ist 
 % 2022-OS-K5c-m1 (Original 2022-OS-K5c, Schwere I, rang 3; herausgelöste Fassung: 2022-OS-K5c-h1)
 \begin{pfaufg}{nach~P10\\’22~\pkt{}~5c}{4.}{}
 Gegeben ist ein Dreieck ABC, das nicht rechtwinklig ist. Die Höhe $h_c$ von C auf die Seite AB ist etwa 7,3 m lang; ihr Fußpunkt heißt D. Die Seite b = AC ist 13,2 m lang, der Winkel bei B ist 49° groß. Der Winkel bei C zwischen AC und der Höhe heißt $\gamma_1$. Ermittle die Größe des Winkels $\gamma_1$. Gegeben: $\alpha$ $\approx$ 33,6°.
-\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\small]\draw (0,0)--(4.45,0)--(3.0,1.99)--cycle;\draw[dashed] (3.0,1.99)--(3.0,0);\pfrw{(3,0)}{90}\pfwinkel[2.0][0.72]{(0,0)}{0}{33.6}{33{,}6^\circ}\pfwinkel[0.75][0.6]{(3,1.99)}{-146.4}{-90}{\gamma_1}\node[anchor=north east] at (0,0) {$A$};\node[anchor=north west] at (4.45,0) {$B$};\node[anchor=south] at (3,1.99) {$C$};\node[anchor=north] at (3,0) {$D$};\node[anchor=west] at (3.05,0.8) {$h_c$};\end{tikzpicture}}{\karo{2}}
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\small]\draw (0,0)--(4.45,0)--(3.0,1.99)--cycle;\draw[dashed] (3.0,1.99)--(3.0,0);\pfrw{(3,0)}{90}\pfwinkel[2.0][0.72]{(0,0)}{0}{33.6}{33{,}6^\circ}\pfwinkel[0.75][0.6]{(3,1.99)}{-146.4}{-90}{\gamma_1}\node[anchor=north east] at (0,0) {$A$};\node[anchor=north west] at (4.45,0) {$B$};\node[anchor=south] at (3,1.99) {$C$};\node[anchor=north] at (3,0) {$D$};\node[anchor=west] at (3.05,0.8) {$h_c$};\end{tikzpicture}}{\karo{3}}
 \fusshilfe{\gfuss{4}{56,4°}}
 \end{pfaufg}
 
@@ -146,8 +159,8 @@ Im Dreieck ABC sind die Winkel bei A und bei B je 65° groß; die Seite AC ist 7
 % 2023-OS-K7a-m1 (Original 2023-OS-K7a, Schwere II, rang 5; herausgelöste Fassung: 2023-OS-K7a-h2)
 \begin{pfaufg}{nach~P10\\’23~\pkt{}~7a}{6.}{}
 Gegeben ist das Dreieck ABC. Der Punkt F liegt auf der Seite AC, und BF steht senkrecht auf AC. Die Seite AB ist 128,9 cm lang. Bei B teilt BF den Winkel in 58° (zwischen BC und BF) und 45° (zwischen BF und BA). Der Winkel bei A ist 45° groß. Begründe, dass das Dreieck ABF gleichschenklig ist.
-\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\small,scale=0.8]\coordinate (C) at (-2.98,0);\coordinate (F) at (0,0);\coordinate (A) at (1.86,0);\coordinate (B) at (0,1.86);\fill[black!10] (A)--(B)--(F)--cycle;\draw (A) -- (B) -- (C) -- cycle;\draw (B) -- (F);\pfrw[0.3]{(F)}{0}\pfwinkel[0.8][0.66]{(A)}{135}{180}{45^\circ}\pfwinkel[0.95][0.66]{(B)}{-148}{-90}{58^\circ}\pfwinkel[0.7][0.66]{(B)}{-90}{-45}{45^\circ}\node[anchor=north east] at (C) {$C$};\node[anchor=north west] at (A) {$A$};\node[anchor=south] at (B) {$B$};\node[anchor=north] at (F) {$F$};\end{tikzpicture}}{\karo{2}}
-\fusshilfe{\gfuss{6}{gleichschenklig mit Basis AB}}
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\small,scale=0.8]\coordinate (C) at (-2.98,0);\coordinate (F) at (0,0);\coordinate (A) at (1.86,0);\coordinate (B) at (0,1.86);\fill[black!10] (A)--(B)--(F)--cycle;\draw (A) -- (B) -- (C) -- cycle;\draw (B) -- (F);\pfrw[0.3]{(F)}{0}\pfwinkel[0.8][0.66]{(A)}{135}{180}{45^\circ}\pfwinkel[0.95][0.66]{(B)}{-148}{-90}{58^\circ}\pfwinkel[0.7][0.66]{(B)}{-90}{-45}{45^\circ}\node[anchor=north east] at (C) {$C$};\node[anchor=north west] at (A) {$A$};\node[anchor=south] at (B) {$B$};\node[anchor=north] at (F) {$F$};\end{tikzpicture}}{\karo{3}}
+\fusshilfe{\gfuss{6}{gleichschenklig, Basis AB}}
 \end{pfaufg}
 
 % ===================== Stufe: rechten Winkel begründen =====================

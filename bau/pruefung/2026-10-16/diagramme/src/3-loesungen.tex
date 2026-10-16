@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -103,41 +116,31 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Diagramme \pkt{} Lösungen}{PS40-4}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Diagramme \pkt{} Lösungen}{PS40-6}\pfseitevon
 \glkopf{Diagramme}
 \small
-
-\glzwischen{A~Winkel gesucht}
 \begin{pfloesungb}{}
-\lzb{1.}{}{a) 36°; b) 90°}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Anteil · 360°: 0,10 · 360° = 36°}\\$\tfrac{30}{120}$ & = 0,25 und 0,25 · 360° = 90°\\\end{tabular}}
+\lzb{1.}{}{a) 36°; b) 90°}{Anteil · 360°: 0,10 · 360° = 36°}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{2.}{}{im Uhrzeigersinn nach „nie“: einmal pro Woche, einmal im Monat, mehrmals pro Woche; 12 \% von 360° = 43,2°}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{im Uhrzeigersinn nach „nie“: einmal pro Woche (kleinster), einmal im Monat, mehrmals pro Woche (größter)}\\12 \% von 360° & = 0,12 · 360° = 43,2°\\\end{tabular}}
+\lzb{2.}{}{einmal pro Woche, einmal im Monat, mehrmals pro Woche; Winkel = 43,2°}{im Uhrzeigersinn nach „nie“\newline Winkel = 0,12 · 360°}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{3.}{}{Wäsche waschen = Sektor direkt vor „5 Gartenpflege“ (Reihenfolge 1 bis 6 im Uhrzeigersinn); Winkel = 7,5°}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}Wäsche waschen & = Sektor direkt vor „5 Gartenpflege“ (Reihenfolge 1 bis 6 im Uhrzeigersinn)\\Winkel & = $\tfrac{10}{480}$ · 360° = 7,5°\\\end{tabular}}
-\end{pfloesungb}
-
-\glzwischen{B~Kreisdiagramm zeichnen}
-\begin{pfloesungb}{}
-\lzb{4.}{}{$\approx$ 54,5 \%; $\approx$ 196°}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{6 von 11 sind jünger als 50: $\tfrac{6}{11}$ $\approx$ 54,5 \%}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Winkel 54,5 \% von 360° $\approx$ 196°}\\\end{tabular}}
-\end{pfloesungb}
-
-\glzwischen{C~Säule ergänzen}
-\begin{pfloesungb}{}
-\lzb{5.}{}{So = 1,90 € pro Liter}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}eine Hilfslinie & = 0,01 €\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Säule So eine Hilfslinie höher als Fr}\\So & = 1,90 € pro Liter\\\end{tabular}}
+\lzb{3.}{}{Wäsche waschen = Sektor vor „5 Gartenpflege“; Winkel = 7,5°}{Winkel = $\tfrac{10}{480}$ · 360°}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{6.}{}{1 Kästchen = 50 Mio.; Hindi; = 6,2 Kästchen hoch}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Spanisch 420 Mio. sind 8,4 Kästchen}\\1 Kästchen & = $\tfrac{420}{8{,}4}$ = 50 Mio.\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{zweite Säule 11,5 Kästchen · 50 = 575 Mio.}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Hindi}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Säule Arabisch $\tfrac{310}{50}$ = 6,2 Kästchen hoch}\\\end{tabular}}
+\lzb{4.}{}{$\tfrac{6}{11}$ $\approx$ 54,5 \%; Winkel = $\tfrac{6}{11}$ · 360° $\approx$ 196°}{6 von 11 jünger als 50}
 \end{pfloesungb}
-
-\glzwischen{D~Aussagen prüfen}
 \begin{pfloesungb}{}
-\lzb{7.}{}{falsch; $\tfrac{40}{560}$ $\approx$ 7,1 \%}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{falsch: von 2018 auf 2019 steigt die Zahl von 560 auf 575}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Achse beginnt erst bei 500, darum sieht es nach mehr aus}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Rückgang 2018 $\to$ 2021 nur 560 $-$ 520 = 40, nicht die Hälfte: $\tfrac{40}{560}$ $\approx$ 7,1 \%}\\\end{tabular}}
+\lzb{5.}{}{So = 1,90 € pro Liter}{1 Hilfslinie = 0,01 €}
 \end{pfloesungb}
-
-\glzwischen{E~falschen Eindruck erklären}
 \begin{pfloesungb}{}
-\lzb{8.}{}{Säulen zeigen nur den Teil über 1,78: Do 0,05, Fr 0,11; $\approx$ 3,3 \%}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Achse beginnt bei 1,78 € statt bei 0}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Säulen zeigen nur den Teil über 1,78: Do 0,05, Fr 0,11 (mehr als doppelt so hoch)}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Preis stieg nur um 1,89 $-$ 1,83 = 0,06 €, das sind $\tfrac{0{,}06}{1{,}83}$ $\approx$ 3,3 \%}\\\end{tabular}}
+\lzb{6.}{}{1 Kästchen = 50 Mio.; Hindi; = 6,2 Kästchen hoch}{Spanisch 420 Mio. sind 8,4 Kästchen\newline zweite Säule 11,5 Kästchen · 50 = 575 Mio.}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{7.}{}{falsch; $\tfrac{40}{560}$ $\approx$ 7,1 \%}{2018: 560, 2019: 575\newline Achse ab 500\newline Rückgang 560 $-$ 520 = 40}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{8.}{}{über 1,78 €: Do 0,05 €, Fr 0,11 €; Anstieg = $\tfrac{0{,}06}{1{,}83}$ $\approx$ 3,3 \%}{Achse ab 1,78 € statt ab 0\newline 1,89 $-$ 1,83 = 0,06 €}
 \end{pfloesungb}
 \end{document}

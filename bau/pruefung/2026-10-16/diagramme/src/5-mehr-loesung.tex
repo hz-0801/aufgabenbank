@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -104,30 +117,30 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} mehr]{Diagramme \pkt{} Lösungen}{PS40-4}\pfseitevon
+\pflaufkopf[P10 \pkt{} mehr]{Diagramme \pkt{} Lösungen}{PS40-6}\pfseitevon
 \pfheftkopf{Diagramme}{Lösungen \pkt{} mehr}
 \begin{pfloesungb}{}
-\lzb{1.}{}{Flüssigkeiten 13 \%}{im Uhrzeigersinn ab 12 Uhr: Getreide, Flüssigkeiten, Schrott, Sonstiges, Container; Flüssigkeiten 13 \%}
+\lzb{1.}{}{Flüssigkeiten 13 \%}{im Uhrzeigersinn ab 12 Uhr: Getreide, Flüssigkeiten, Schrott, Sonstiges, Container}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{2.}{}{Streifen mit Abschnitten 0,6 cm (nie), 1,8 cm (1–3-mal), 9,0 cm (4–6-mal), 3,6 cm (täglich)}{Streifen mit Abschnitten 0,6 cm (nie), 1,8 cm (1–3-mal), 9,0 cm (4–6-mal), 3,6 cm (täglich)}
+\lzb{2.}{}{0,6 cm nie, 1,8 cm 1–3-mal, 9,0 cm 4–6-mal, 3,6 cm täglich}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{3.}{}{waagerechter Balken bei Do bis 155}{waagerechter Balken bei Do bis 155}
+\lzb{3.}{}{Balken Do bis 155}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{4.}{}{grauer Sektor: viertes oder weiteres Kind (4,4 \% von 360° $\approx$ 16°); drittes Kind: 11,8 \% von 360° $\approx$ 42°}{grauer Sektor: viertes oder weiteres Kind (4,4 \% von 360° $\approx$ 16°); drittes Kind: 11,8 \% von 360° $\approx$ 42°}
+\lzb{4.}{}{grau = viertes oder weiteres Kind ($\approx$ 16°); drittes Kind $\approx$ 42°}{\begin{tabular}[t]{@{}r@{\,}l@{}}4,4 \% · 360° & $\approx$ 16°\\drittes Kind & = 11,8 \% · 360°\\\end{tabular}}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{5.}{}{Fisch $\tfrac{150}{20}$ = 7,5 Kästchen}{Achse 0, 20, 40, … (20 je Gitterlinie); E und D: Kartoffelgerichte und Gemüsegerichte (Reihenfolge beliebig), C: Pizza, B: Schnitzel, A: Fischgerichte; Fisch $\tfrac{150}{20}$ = 7,5 Kästchen}
+\lzb{5.}{}{Fisch $\tfrac{150}{20}$ = 7,5 Kästchen}{20 je Gitterlinie\newline E, D Kartoffel- und Gemüsegerichte, C Pizza, B Schnitzel, A Fischgerichte}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{6.}{}{Aussage 1 falsch (60 \% sind mehr als die Hälfte); Aussage 2 falsch (jede 12. wäre etwa 8,3 \%, tatsächlich 12 \%)}{Aussage 1 falsch (60 \% sind mehr als die Hälfte); Aussage 2 falsch (jede 12. wäre etwa 8,3 \%, tatsächlich 12 \%)}
+\lzb{6.}{}{Aussage 1 falsch (60 \%); Aussage 2 falsch (12 \%)}{50 \% < 60 \%\newline $\tfrac{1}{12}$ $\approx$ 8,3 \%}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{7.}{}{z. B.: „extrem abnimmt“ ist falsch, die abgeschnittene Achse übertreibt – Rückgang von rund 47 \% auf 40 \% in 4 Jahren, also nur 7 Prozentpunkte; oder: „in wenigen Jahren kein Jugendlicher mehr“ ist falsch – 2016 lesen noch 40 \%, bei gleichem Tempo erst in rund 23 Jahren}{z. B.: „extrem abnimmt“ ist falsch, die abgeschnittene Achse übertreibt – Rückgang von rund 47 \% auf 40 \% in 4 Jahren, also nur 7 Prozentpunkte; oder: „in wenigen Jahren kein Jugendlicher mehr“ ist falsch – 2016 lesen noch 40 \%, bei gleichem Tempo erst in rund 23 Jahren}
+\lzb{7.}{}{„extrem abnimmt“ falsch; „bald keiner mehr“ falsch}{47 \% $\to$ 40 \% in 4 Jahren = 7 Prozentpunkte\newline $\tfrac{40 \%}{7}$ Prozentpunkte · 4 Jahre $\approx$ 23 Jahre}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{8.}{}{echter Zuwachs je Jahr nur 4 €}{abgeschnittene, gedehnte y-Achse (beginnt bei 1040 € statt bei 0): Unterschiede von wenigen Euro erscheinen als Verdreifachung; echter Zuwachs je Jahr nur 4 €}
+\lzb{8.}{}{Zuwachs je Jahr nur 4 €}{y-Achse ab 1040 € statt 0\newline 1048 $-$ 1044 = 4 €}
 \end{pfloesungb}
 \end{document}

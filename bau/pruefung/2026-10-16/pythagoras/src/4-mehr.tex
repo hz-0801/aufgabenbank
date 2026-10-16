@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -104,7 +117,7 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} mehr]{Pythagoras}{PG50-5}\pfseitevon
+\pflaufkopf[P10 \pkt{} mehr]{Pythagoras}{PG50-6}\pfseitevon
 \pfheftkopf{Pythagoras}{mehr}
 \pfstufenzeile{Pythagoras aufstellen \pkt{} Hypotenuse gesucht \pkt{} Kathete gesucht \pkt{} Pythagoras versteckt}
 % 2021-OS-B1h-m1 (Schwere I, rang 10)
@@ -139,7 +152,7 @@ Im abgebildeten Dreieck sind x und y die Katheten, z ist die Hypotenuse. Kreuze 
 \begin{pfaufg}{nach~P10\\’18~\pkt{}~6d}{5.}{}
 Ein runder Turm mit 5,8 m Durchmesser hat ein Dach in Form eines Kegels. Die Höhe des Daches ist bekannt. Ein Dachbalken läuft von der Spitze bis zum Rand des Daches. Beschreibe, wie man die Länge eines Dachbalkens berechnen kann.
 \par\smallskip\noindent\gpassend{\begin{tikzpicture}[line width=0.7pt,font=\small]\draw[dashed,line width=0.5pt] (0,0) ellipse (1.3 and 0.4);\draw (-1.3,0) -- (0,1.7) -- (1.3,0);\draw[-{Stealth[length=1.5mm]},line width=0.5pt] (1.75,1.35) node[right,font=\footnotesize] {Dachbalken} -- (0.72,0.78);\end{tikzpicture}}\par
-\karo{2}
+\karo{4}
 \fusshilfe{\gfuss{5}{$\sqrt{2{,}9² + h²}$}}
 \end{pfaufg}
 % 2016-OS-K7b-m1 (Schwere II, rang 16)

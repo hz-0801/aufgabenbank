@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -103,28 +116,22 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Terme und Gleichungen \pkt{} Lösungen}{PZ30-1}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Terme und Gleichungen \pkt{} Lösungen}{PZ30-2}\pfseitevon
 \glkopf{Terme und Gleichungen}
 \small
-
-\glzwischen{A~Termwert gesucht}
 \begin{pfloesungb}{}
-\lzb{1.}{}{4 · ($-$1 $-$ 5) = $-$24}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}4 · ($-$1 $-$ 5) & = 4 · ($-$6) = $-$24\\\end{tabular}}
-\end{pfloesungb}
-
-\glzwischen{B~Term gesucht}
-\begin{pfloesungb}{}
-\lzb{2.}{}{$\tfrac{3a+7}{2}$}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{erst die Summe 3a + 7, dann halbieren: (3a + 7) durch 2}\\\end{tabular}}
-\end{pfloesungb}
-
-\glzwischen{C~Lösung gesucht}
-\begin{pfloesungb}{}
-\lzb{3.}{}{x = 4,5}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{ein Produkt ist 0, wenn die Klammer 0 ist: x $-$ 4,5 = 0}\\x & = 4,5\\\end{tabular}}
+\lzb{1.}{}{4 · ($-$1 $-$ 5) = $-$24}{4 · ($-$1 $-$ 5) = 4 · ($-$6)}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{4.}{}{x = 7}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}4 · (x $-$ 7) & = 0\\x $-$ 7 & = 0\\x & = 7\\\end{tabular}}
+\lzb{2.}{}{$\tfrac{3a+7}{2}$}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{5.}{}{x = 4}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{einsetzen: 7 $-$ 3 · 4 = $-$5 und 2 · 4 $-$ 13 = $-$5}\\x & = 4\\\end{tabular}}
+\lzb{3.}{}{x = 4,5}{x $-$ 4,5 = 0}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{4.}{}{x = 7}{\begin{tabular}[t]{@{}r@{\,}l@{}}4 · (x $-$ 7) & = 0\\x $-$ 7 & = 0\\\end{tabular}}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{5.}{}{x = 4}{}
 \end{pfloesungb}
 \end{document}

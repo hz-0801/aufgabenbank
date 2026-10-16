@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -104,48 +117,48 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} mehr]{Fläche und Umfang \pkt{} Lösungen}{PG40-8}\pfseitevon
+\pflaufkopf[P10 \pkt{} mehr]{Fläche und Umfang \pkt{} Lösungen}{PG40-9}\pfseitevon
 \pfheftkopf{Fläche und Umfang}{Lösungen \pkt{} mehr}
 \begin{pfloesungb}{}
-\lzb{1.}{}{9 cm}{9 cm}
+\lzb{1.}{}{9 cm}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{2.}{}{A = (a + b) · c}{A = (a + b) · c}
+\lzb{2.}{}{A = (a + b) · c}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{3.}{}{b = 4 cm}{b = $\tfrac{30}{2}$ $-$ 11 = 4 cm}
+\lzb{3.}{}{b = 4 cm}{b = $\tfrac{30}{2}$ $-$ 11}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{4.}{}{Ein Rechteck und zwei Halbkreise (zusammen ein Kreis mit Durchmesser a)}{Ein Rechteck und zwei Halbkreise (zusammen ein Kreis mit Durchmesser a)}
+\lzb{4.}{}{= a}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{5.}{}{A $\approx$ 4,15 m²}{A = $\pi$ · 1,15² $\approx$ 4,15 m²}
+\lzb{5.}{}{A = $\pi$ · 1,15² $\approx$ 4,15 m²}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{6.}{}{u = 24 · a}{u = 24 · a}
+\lzb{6.}{}{u = 24 · a}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{7.}{}{QC = 16 m}{$\tfrac{1}{2}$ · 15 · QC = 120 $\Rightarrow$ QC = 2 · $\tfrac{120}{15}$ = 16 m}
+\lzb{7.}{}{QC = 16 m}{$\tfrac{1}{2}$ · 15 · QC = 120}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{8.}{}{A $\approx$ 1,40 m²; V $\approx$ 2,1 m³; 250 kg + 0,1 · V · 1 000 kg $\approx$ 461 kg}{A = $\tfrac{1}{2}$ · 1,80 · 1,56 $\approx$ 1,40 m²; V = A · 1,50 $\approx$ 2,1 m³; 250 kg + 0,1 · V · 1 000 kg $\approx$ 461 kg}
+\lzb{8.}{}{A $\approx$ 1,40 m²; V $\approx$ 2,1 m³; $\approx$ 461 kg}{\begin{tabular}[t]{@{}r@{\,}l@{}}A & = $\tfrac{1}{2}$ · 1,80 · 1,56\\V & = A · 1,50\\\end{tabular}}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{9.}{}{A $\approx$ 171,6 m²}{A = 18,0 · 11,0 $-$ $\pi$ · 2,9² $\approx$ 171,6 m²}
+\lzb{9.}{}{A = 18,0 · 11,0 $-$ $\pi$ · 2,9² $\approx$ 171,6 m²}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{10.}{}{A $\approx$ 94,3 m²}{A = 6 · 11 + $\pi$ · 3² $\approx$ 94,3 m²}
+\lzb{10.}{}{A = 6 · 11 + $\pi$ · 3² $\approx$ 94,3 m²}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{11.}{}{Höhe der Seitenfläche s $\approx$ 0,83 m; A $\approx$ 0,37 m²}{Höhe der Seitenfläche s = $\sqrt{0{,}70² + 0{,}45²}$ $\approx$ 0,83 m; A = $\tfrac{1}{2}$ · 0,90 · s $\approx$ 0,37 m²}
+\lzb{11.}{}{s = $\sqrt{0{,}6925}$ $\approx$ 0,83 m; A = 0,45 · $\sqrt{0{,}6925}$ $\approx$ 0,37 m²}{\begin{tabular}[t]{@{}r@{\,}l@{}}s² & = 0,70² + 0,45²\\A & = $\tfrac{1}{2}$ · 0,90 · s\\\end{tabular}}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{12.}{}{Kuchenplatten (30 cm) passen, denn h = 35 cm}{Kuchenplatten (30 cm) passen, denn h = 2 · $\tfrac{3360}{108 + 84}$ = 35 cm}
+\lzb{12.}{}{= 35 cm}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{13.}{}{Nein: nötig sind 1,50 m, die Platte ist nur $\tfrac{1{,}8}{1{,}25}$ = 1,44 m hoch}{Nein: nötig sind 1,50 m, die Platte ist nur $\tfrac{1{,}8}{1{,}25}$ = 1,44 m hoch}
+\lzb{13.}{}{= 1,44 m}{1,50 m nötig}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{14.}{}{AE $\approx$ 1,83 cm; ED $\approx$ 3,44 cm; A $\approx$ 3,15 cm²}{gebraucht: die Katheten AE und ED; AE = 3,9 · sin 28° $\approx$ 1,83 cm; ED = 3,9 · cos 28° $\approx$ 3,44 cm; A = $\tfrac{1}{2}$ · AE · ED $\approx$ 3,15 cm²}
+\lzb{14.}{}{AE $\approx$ 1,83 cm; ED $\approx$ 3,44 cm; A $\approx$ 3,15 cm²}{gebraucht: die Katheten AE und ED\newline ED = 3,9 · cos 28°\newline A = $\tfrac{1}{2}$ · AE · ED}
 \end{pfloesungb}
 \end{document}

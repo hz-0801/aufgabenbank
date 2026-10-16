@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -103,40 +116,34 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Brüche und Potenzen \pkt{} Lösungen}{PZ10-1}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Brüche und Potenzen \pkt{} Lösungen}{PZ10-2}\pfseitevon
 \glkopf{Brüche und Potenzen}
 \small
-
-\glzwischen{A~Anteil gesucht}
 \begin{pfloesungb}{}
-\lzb{1.}{}{25 \% von 20 Kästchen = 5 Kästchen}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{beliebige Lage: 25 \% von 20 Kästchen = 5 Kästchen}\\\end{tabular}}
+\lzb{1.}{}{25 \% von 20 Kästchen = 5 Kästchen}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{2.}{}{30 \% von 30 Kästchen = 9 Kästchen}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{beliebige Lage: 30 \% von 30 Kästchen = 9 Kästchen}\\\end{tabular}}
+\lzb{2.}{}{30 \% von 30 Kästchen = 9 Kästchen}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{3.}{}{Anteil = 25 \%}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{das graue Dreieck ist eins von vier gleichen Dreiecken zwischen den Diagonalen: Anteil = $\tfrac{1}{4}$ = 25 \%}\\\end{tabular}}
+\lzb{3.}{}{Anteil = 25 \%}{4 gleiche Dreiecke}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{4.}{}{z. B. einen senkrechten Streifen, ein Drittel so breit wie das Rechteck (1 cm von 3 cm)}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{z. B. einen senkrechten Streifen, ein Drittel so breit wie das Rechteck (1 cm von 3 cm)}\\\end{tabular}}
+\lzb{4.}{}{Streifen 1 cm von 3 cm breit}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{5.}{}{Quadrat aus vier gleichen Teilquadraten, eines grau = $\tfrac{1}{4}$}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Quadrat aus vier gleichen Teilquadraten, eines grau = $\tfrac{1}{4}$}\\\end{tabular}}
-\end{pfloesungb}
-
-\glzwischen{B~Zahlen vergleichen}
-\begin{pfloesungb}{}
-\lzb{6.}{}{kleinster Wert 0,3² = 0,09}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}0,3² & = 0,09\\33 \% & = 0,33\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{kleinster Wert 0,3² = 0,09}\\\end{tabular}}
+\lzb{5.}{}{}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{7.}{}{$2^{ - 3}$ = 0,125 > 0,1, also >}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{$2^{ - 3}$ = $\tfrac{1}{8}$ = 0,125 > 0,1, also >}\\\end{tabular}}
-\end{pfloesungb}
-
-\glzwischen{C~Potenzen umwandeln}
-\begin{pfloesungb}{}
-\lzb{8.}{}{Exponent 6}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{das Komma rückt 6 Stellen nach links}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Exponent 6}\\\end{tabular}}
+\lzb{6.}{}{kleinster Wert 0,3² = 0,09}{33 \% = 0,33}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{9.}{}{x = 3}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}5 · 5 · 5 & = 125\\x & = 3\\\end{tabular}}
+\lzb{7.}{}{$2^{ - 3}$ = 0,125 > 0,1, also >}{$2^{ - 3}$ = $\tfrac{1}{8}$}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{8.}{}{Exponent 6}{das Komma rückt 6 Stellen nach links}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{9.}{}{x = 3}{5 · 5 · 5 = 125}
 \end{pfloesungb}
 \end{document}

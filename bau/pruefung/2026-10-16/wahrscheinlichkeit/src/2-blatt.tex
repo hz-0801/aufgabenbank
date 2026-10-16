@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -103,7 +116,7 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Wahrscheinlichkeit}{PS50-3}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Wahrscheinlichkeit}{PS50-5}\pfseitevon
 \pfheftkopf{Wahrscheinlichkeit}{}
 \pfstufenzeile{A~Ergebnisse aufzählen \pkt{} B~Wahrscheinlichkeit gesucht \pkt{} C~Baum ergänzen \pkt{} D~Pfadregeln anwenden \pkt{} E~ohne Zurücklegen rechnen \pkt{} F~Zufallsgerät entwerfen}
 
@@ -209,7 +222,7 @@ In einer Dose liegen 5 Kugeln, 2 davon rot. Du ziehst eine blaue und legst sie n
 In Familie Siebert helfen alle 6 Kinder im Haushalt. Jede Aufgabe steht auf einem Zettel: Müll rausbringen, Spülmaschine ausräumen, Staubsaugen, Einkaufen, Fenster putzen, Joker. Wer den Joker hat, hat die Woche frei. Zu Wochenbeginn zieht jedes Kind zufällig genau einen Zettel. Klara zieht immer als Zweite, direkt nach Benjamin. Ermittle, mit welcher Wahrscheinlichkeit Klara in Woche 1 den Joker bekommt.
 \karo{2}
 \par\smallskip\par\noindent \hfill P(Joker): \linie{30mm}\hphantom{\,cm²}
-\fusshilfe{\gfuss{11}{Benjamin zieht den Joker nicht ($\tfrac{5}{6}$), Klara aus 5 Zetteln ($\tfrac{1}{5}$); 0,167}}
+\fusshilfe{\gfuss{11}{$\tfrac{5}{6}$; 0,167}}
 \end{pfaufg}
 
 % ===================== Stufe: Zufallsgerät entwerfen =====================

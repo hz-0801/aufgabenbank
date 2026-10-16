@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -100,11 +113,11 @@
 % Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
 \newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
 \newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
-\usepackage{graphicx}\graphicspath{{/home/claude/aufgabenbank-privat/}}
+\usepackage{graphicx}\graphicspath{{/home/claude/agent-d1/aufgabenbank-privat/}}
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Pythagoras}{PG50-5}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Pythagoras}{PG50-6}\pfseitevon
 \pfheftkopf{Pythagoras}{}
 \pfstufenzeile{A~Pythagoras aufstellen \pkt{} B~Hypotenuse gesucht \pkt{} C~Kathete gesucht \pkt{} D~Pythagoras versteckt}
 % Formelkasten (15.10. t, 16.10. a)
@@ -137,7 +150,7 @@
   #1 & #2 & #3\ifblank{#4}{}{\\ & \multicolumn{2}{>{\raggedright\arraybackslash}p{\dimexpr0.75\fsbreite-2\tabcolsep}}{#4}}\end{tabular}}}\par}
 \providecommand\fskastentitel[1]{\par\noindent\textbf{#1}\par}
 \uebersichtskasten{\renewcommand\fsbreite{\linewidth}
-\fszeilebild{\textbf{Rechtwinkliges Dreieck}}{\fspunkt{} eine Hypotenuse und zwei Katheten\newline \fspunkt{} Hypotenuse (Seite gegenüber dem rechten Winkel) ist längste Seite}{\fsf{$c^2 = a^2 + b^2$ Satz des PYTHAGORAS}\newline \fsf{$h^2 = q\cdot p$ Höhensatz}\newline \fsf{$a^2 = c\cdot p$ Kathetensatz}\newline \fsf{$b^2 = c\cdot q$ Kathetensatz}\newline \fsf{$u = a+b+c$}\newline \fsf{$A = \frac{a\cdot b}{2}$}\newline Legende rechts oben: a, b Katheten\newline c Hypotenuse}{}{formelsammlung/figuren/duden-bild/duden-s21-rechtwinkliges-dreieck.png}{3.65cm}
+\fszeilebild{\textbf{Rechtwinkliges Dreieck}}{\fspunkt{} eine Hypotenuse und zwei Katheten\newline \fspunkt{} Hypotenuse (Seite gegenüber dem rechten Winkel) ist längste Seite}{\fsf{$c^2 = a^2 + b^2$ Satz des PYTHAGORAS}\newline \fsf{$h^2 = q\cdot p$ Höhensatz}\newline \fsf{$a^2 = c\cdot p$ Kathetensatz}\newline \fsf{$b^2 = c\cdot q$ Kathetensatz}\newline \fsf{$u = a+b+c$}\newline \fsf{$A = \frac{a\cdot b}{2}$}\newline a, b Katheten\newline c Hypotenuse}{}{formelsammlung/figuren/duden-bild/duden-s21-rechtwinkliges-dreieck.png}{3.65cm}
 }
 }\vspace{-4pt}\par\noindent{\footnotesize\color{mbgrau}Formeln und Werte S.~21}\par\medskip
 
@@ -224,13 +237,13 @@ Welche Strecken bilden das rechtwinklige Dreieck? Nenne die beiden Katheten und 
 % 2026-FOR-K2c-m1 (Original 2026-FOR-K2c, Schwere II, rang 8; herausgelöste Fassung: keine)
 \begin{pfaufg}{nach~P10\\’26~\pkt{}~2c}{12.}{FOR}
 Ein Turm besteht aus einem Zylinder (Höhe 22,0 m, Radius 4,2 m) mit einem Kegeldach; die Mantellinie des Kegels ist 7,9 m lang, sein Radius ebenfalls 4,2 m. Bestimme die Gesamthöhe des Turms.
-\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\small,scale=0.12]\draw (-4.2,0) arc (180:360:4.2 and 1.47);\draw[dashed,line width=0.5pt] (-4.2,0) arc (180:0:4.2 and 1.47);\draw (-4.2,0) -- (-4.2,22) (4.2,0) -- (4.2,22);\draw (-4.2,22) arc (180:360:4.2 and 1.47);\draw[dashed,line width=0.5pt] (-4.2,22) arc (180:0:4.2 and 1.47);\draw (-4.2,22) -- (0,28.69) -- (4.2,22);\draw[dashed,line width=0.5pt] (0,0) -- (4.2,0);\node[anchor=north] at (2.1,-1.6) {$r = 4{,}2$ m};\node[anchor=west] at (4.4,11) {$22{,}0$ m};\node[anchor=south west] at (2.2,25.4) {$7{,}9$ m};\end{tikzpicture}}{\karo{3}}
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\small,scale=0.12]\draw (-4.2,0) arc (180:360:4.2 and 1.47);\draw[dashed,line width=0.5pt] (-4.2,0) arc (180:0:4.2 and 1.47);\draw (-4.2,0) -- (-4.2,22) (4.2,0) -- (4.2,22);\draw (-4.2,22) arc (180:360:4.2 and 1.47);\draw[dashed,line width=0.5pt] (-4.2,22) arc (180:0:4.2 and 1.47);\draw (-4.2,22) -- (0,28.69) -- (4.2,22);\draw[dashed,line width=0.5pt] (0,0) -- (4.2,0);\node[anchor=north] at (2.1,-1.6) {$r = 4{,}2$ m};\node[anchor=west] at (4.4,11) {$22{,}0$ m};\node[anchor=south west] at (2.2,25.4) {$7{,}9$ m};\end{tikzpicture}}{\karo{4}}
 \fusshilfe{\gfuss{12}{28,7 m}}
 \end{pfaufg}
 % 2022-OS-K2c-m1 (Original 2022-OS-K2c, Schwere III, rang 10; herausgelöste Fassung: 2022-OS-K2c-h1)
 \begin{pfaufg}{nach~P10\\’22~\pkt{}~2c}{13.}{FOR}
 Ein Becher hat die Form eines Zylinders ohne Deckel; er ist 7,5 cm hoch und hat den Radius 3,4 cm. Ein Rührstab steht schräg im Becher: Er berührt unten den Rand des Bodens und lehnt oben am gegenüberliegenden Rand. 2 cm des Stabs ragen über den Becher hinaus. Bestimme die Länge des Stabs.
-\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\small,scale=0.6]\draw (0,2.8) ellipse (1.28 and 0.45);\draw (-1.28,0) -- (-1.28,2.8);\draw (1.28,0) -- (1.28,2.8);\draw (-1.28,0) arc (180:360:1.28 and 0.45);\draw[dashed,line width=0.5pt] (-1.28,0) arc (180:0:1.28 and 0.45);\draw[line width=1.3pt] (-1.28,0) -- (1.28,2.8) -- ($(-1.28,0)!1.27!(1.28,2.8)$);\draw[dashed,line width=0.5pt] (0,0) -- (1.28,0);\node[anchor=north] at (0.64,-0.5) {$r = 3{,}4$ cm};\node[anchor=west] at (1.32,1.4) {$7{,}5$ cm};\end{tikzpicture}}{\karo{3}}
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\small,scale=0.6]\draw (0,2.8) ellipse (1.28 and 0.45);\draw (-1.28,0) -- (-1.28,2.8);\draw (1.28,0) -- (1.28,2.8);\draw (-1.28,0) arc (180:360:1.28 and 0.45);\draw[dashed,line width=0.5pt] (-1.28,0) arc (180:0:1.28 and 0.45);\draw[line width=1.3pt] (-1.28,0) -- (1.28,2.8) -- ($(-1.28,0)!1.27!(1.28,2.8)$);\draw[dashed,line width=0.5pt] (0,0) -- (1.28,0);\node[anchor=north] at (0.64,-0.5) {$r = 3{,}4$ cm};\node[anchor=west] at (1.32,1.4) {$7{,}5$ cm};\end{tikzpicture}}{\karo{4}}
 \fusshilfe{\gfuss{13}{12,1 cm}}
 \end{pfaufg}
 

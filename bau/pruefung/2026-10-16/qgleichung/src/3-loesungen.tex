@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -106,42 +119,34 @@
 \pflaufkopf[P10 \pkt{} Prüfung]{Quadratische Gleichung \pkt{} Lösungen}{PA40-5}\pfseitevon
 \glkopf{Quadratische Gleichung}
 \small
-
-\glzwischen{A~Nullstellen gesucht}
 \begin{pfloesungb}{}
-\lzb{1.}{}{a) $x^2 - 6x + 5 = 0$; b) $x^2 + 4x - 5 = 0$ (durch 3 geteilt)}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}Nullstelle heißt y & = 0\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{vor x² muss eine 1 stehen, sonst durch die Zahl davor teilen}\\\end{tabular}}
+\lzb{1.}{}{a) $x^2 - 6x + 5 = 0$; b) $x^2 + 4x - 5 = 0$ (durch 3 geteilt)}{Nullstelle heißt y = 0}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{2.}{}{N$_1$(x$_1$|0) mit x$_1$ $\approx$ 2,27; N$_2$(x$_2$|0) mit x$_2$ $\approx$ 5,73}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}x² $-$ 8x + 13 & = 0, p = $-$8, q = 13: x = 4 $\pm$ $\sqrt{16 - 13}$\\N$_1$(x$_1$|0) mit x$_1$ & = 4 $-$ $\sqrt{3}$ $\approx$ 2,27\\N$_2$(x$_2$|0) mit x$_2$ & = 4 + $\sqrt{3}$ $\approx$ 5,73\\\end{tabular}}
-\end{pfloesungb}
-
-\glzwischen{B~x-Wert gesucht}
-\begin{pfloesungb}{}
-\lzb{3.}{}{x$_1$ = 5; x$_2$ = $-$3}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}$-$x² + 2x + 4 & = $-$11\\x² $-$ 2x $-$ 15 & = 0, p = $-$2, q = $-$15: x = 1 $\pm$ $\sqrt{16}$\\x$_1$ & = 5\\x$_2$ & = $-$3\\\end{tabular}}
-\end{pfloesungb}
-
-\glzwischen{C~Schnittpunkte gesucht}
-\begin{pfloesungb}{}
-\lzb{4.}{}{S$_1$(1|1); S$_2$($-$3|$-$7)}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}x² + 4x $-$ 4 & = 2x $-$ 1\\x² + 2x $-$ 3 & = 0\\x$_1$ & = 1, x$_2$ = $-$3\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{S$_1$(1|1)}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{S$_2$($-$3|$-$7)}\\\end{tabular}}
-\end{pfloesungb}
-
-\glzwischen{D~Gerade und Parabel}
-\begin{pfloesungb}{}
-\lzb{5.}{}{$x = -3$}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}$-$3 · ($-$3 + 4) & = $-$3 · 1 = $-$3\\\end{tabular}}
+\lzb{2.}{}{N$_1$(x$_1$|0) mit x$_1$ = 4 $-$ $\sqrt{3}$ $\approx$ 2,27; N$_2$(x$_2$|0) mit x$_2$ = 4 + $\sqrt{3}$ $\approx$ 5,73}{x² $-$ 8x + 13 = 0, p = $-$8, q = 13: x = 4 $\pm$ $\sqrt{16 - 13}$}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{6.}{}{Gerade durch (0|1) und (1|$-$2)}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Startpunkt (0|1), Steigungsdreieck 1 nach rechts, 3 nach unten}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Gerade durch (0|1) und (1|$-$2)}\\\end{tabular}}
+\lzb{3.}{}{x$_1$ = 5; x$_2$ = $-$3}{$-$x² + 2x + 4 = $-$11\newline x² $-$ 2x $-$ 15 = 0, p = $-$2, q = $-$15: x = 1 $\pm$ $\sqrt{16}$}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{7.}{a)}{Nein}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}Nein, 5 $\neq$ p($-$3) & = ($-$3)² $-$ 5 = 4\\\end{tabular}}
+\lzb{4.}{}{S$_1$(1|1); S$_2$($-$3|$-$7)}{\begin{tabular}[t]{@{}r@{\,}l@{}}x² + 4x $-$ 4 & = 2x $-$ 1\\x² + 2x $-$ 3 & = 0\\x$_1$ & = 1, x$_2$ = $-$3\\\end{tabular}}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{}{b)}{S$_1$(4|11); S$_2$($-$2|$-$1)}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}x² $-$ 5 & = 2x + 3\\x² $-$ 2x $-$ 8 & = 0\\x$_1$ & = 4, x$_2$ = $-$2\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{S$_1$(4|11)}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{S$_2$($-$2|$-$1)}\\\end{tabular}}
+\lzb{5.}{}{$x = -3$}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{8.}{}{Gerade durch (0|$-$2) und (1|1); S(2|4); Aussage 2 wahr, Aussagen 1 und 3 falsch}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Startpunkt (0|$-$2), 1 nach rechts, 3 nach oben}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Gerade durch (0|$-$2) und (1|1)}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Schnitt im Bild ablesen}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{S(2|4)}\\m & = 3 > 0, zwei Schnittpunkte im Bild, y-Achse bei (0|$-$2)\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Aussage 2 wahr, Aussagen 1 und 3 falsch}\\\end{tabular}}
+\lzb{6.}{}{Gerade durch (0|1) und (1|$-$2)}{Startpunkt (0|1), Steigungsdreieck 1 nach rechts, 3 nach unten}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{9.}{}{S$_1$(1|3); S$_2$(5|$-$5)}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}(x $-$ 4)² $-$ 6 & = $-$2x + 5\\x² $-$ 6x + 5 & = 0\\x$_1$ & = 1, x$_2$ = 5\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{S$_1$(1|3)}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{S$_2$(5|$-$5)}\\\end{tabular}}
+\lzb{7.}{a)}{Nein}{Nein, 5 $\neq$ p($-$3) = ($-$3)² $-$ 5}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{}{b)}{S$_1$(4|11); S$_2$($-$2|$-$1)}{\begin{tabular}[t]{@{}r@{\,}l@{}}x² $-$ 5 & = 2x + 3\\x² $-$ 2x $-$ 8 & = 0\\x$_1$ & = 4, x$_2$ = $-$2\\\end{tabular}}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{8.}{}{Gerade durch (0|$-$2) und (1|1); S(2|4); Aussage 2 wahr, Aussagen 1 und 3 falsch}{Startpunkt (0|$-$2), 1 nach rechts, 3 nach oben\newline Schnitt im Bild ablesen\newline m = 3 > 0, zwei Schnittpunkte im Bild, y-Achse bei (0|$-$2)}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{9.}{}{S$_1$(1|3); S$_2$(5|$-$5)}{\begin{tabular}[t]{@{}r@{\,}l@{}}(x $-$ 4)² $-$ 6 & = $-$2x + 5\\x² $-$ 6x + 5 & = 0\\x$_1$ & = 1, x$_2$ = 5\\\end{tabular}}
 \end{pfloesungb}
 \end{document}

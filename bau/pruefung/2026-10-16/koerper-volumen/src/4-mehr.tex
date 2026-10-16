@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -104,7 +117,7 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} mehr]{Volumen und Oberfläche}{PG90-7}\pfseitevon
+\pflaufkopf[P10 \pkt{} mehr]{Volumen und Oberfläche}{PG90-8}\pfseitevon
 \pfheftkopf{Volumen und Oberfläche}{mehr}
 \pfstufenzeile{Volumen gesucht \pkt{} Oberfläche gesucht \pkt{} Körper vergleichen}
 % 2026-FOR-B1f-m1 (Schwere I, rang 1)
@@ -150,8 +163,8 @@ Für ein Café wird eine Kühlvitrine in Form eines Prismas gebaut. Die Grundfl�
 % 2021-OS-K4b-m1 (Schwere II, rang 13)
 \begin{pfaufg}{nach~P10\\’21~\pkt{}~4b}{7.}{}
 Herr Gärtner stellt eine Regentonne in Form eines Zylinders auf. Sie ist h = 105 cm hoch und hat den Radius r = 27 cm. Herr Gärtner meint: „Eine Tonne mit dreifachem Radius würde genau dreimal so viel Wasser fassen.“ Entscheide, ob das stimmt. Begründe deine Entscheidung.
-\karo{2}
-\fusshilfe{\gfuss{7}{nein, Volumen verneunfacht sich: 240,5 l statt 2164,3 l}}
+\karo{3}
+\fusshilfe{\gfuss{7}{2164,3 l}}
 \end{pfaufg}
 % 2016-OS-K3c-m1 (Schwere II, rang 14)
 \begin{pfaufg}{nach~P10\\’16~\pkt{}~3c}{8.}{}

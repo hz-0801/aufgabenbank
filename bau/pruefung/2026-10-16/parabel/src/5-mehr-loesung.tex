@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -104,42 +117,42 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} mehr]{Parabel \pkt{} Lösungen}{PA30-5}\pfseitevon
+\pflaufkopf[P10 \pkt{} mehr]{Parabel \pkt{} Lösungen}{PA30-6}\pfseitevon
 \pfheftkopf{Parabel}{Lösungen \pkt{} mehr}
 \begin{pfloesungb}{}
-\lzb{1.}{}{S($-$3|1)}{S($-$3|1)}
+\lzb{1.}{}{S($-$3|1)}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{2.}{}{S($-$3|$-$5)}{S($-$3|$-$5)}
+\lzb{2.}{}{S($-$3|$-$5)}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{3.}{}{S(3|$-$3)}{S(3|$-$3)}
+\lzb{3.}{}{S(3|$-$3)}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{4.}{}{S($-$5|$-$3)}{S($-$5|$-$3)}
+\lzb{4.}{}{S($-$5|$-$3)}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{5.}{}{y = (x $-$ 4)² + 2}{y = (x $-$ 4)² + 2}
+\lzb{5.}{}{y = (x $-$ 4)² + 2}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{6.}{}{S(3|0)}{S(3|0)}
+\lzb{6.}{}{S(3|0)}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{7.}{}{p(x) = (x $-$ 3)² $-$ 5}{p(x) = (x $-$ 3)² $-$ 5}
+\lzb{7.}{}{p(x) = (x $-$ 3)² $-$ 5}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{8.}{}{p(x) = (x $-$ 3)² $-$ 3}{p(x) = (x $-$ 3)² $-$ 3}
+\lzb{8.}{}{p(x) = (x $-$ 3)² $-$ 3}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{9.}{}{q(x) = $-$(x + 5)²}{q(x) = $-$(x + 5)²}
+\lzb{9.}{}{q(x) = $-$(x + 5)²}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{10.}{}{h(t) = $-$2t² + 2750 (Start bei 2750 m, Höhe sinkt: Parabel nach unten geöffnet)}{h(t) = $-$2t² + 2750 (Start bei 2750 m, Höhe sinkt: Parabel nach unten geöffnet)}
+\lzb{10.}{}{h(t) = $-$2t² + 2750}{Start 2750 m, Parabel nach unten}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{11.}{}{Beispiel: f(x) = 1 (jede waagerechte Gerade oberhalb des Scheitelpunkts trifft p nicht)}{Beispiel: f(x) = 1 (jede waagerechte Gerade oberhalb des Scheitelpunkts trifft p nicht)}
+\lzb{11.}{}{z. B. f(x) = 1}{jede Gerade y = c mit c > 0}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{12.}{}{q$'$(x) = $-$x² $-$ 2}{Beispiel: q(x) = x² + 2; q$'$(x) = $-$x² $-$ 2}
+\lzb{12.}{}{q$'$ = $-$x² $-$ 2}{Beispiel: q(x) = x² + 2}
 \end{pfloesungb}
 \end{document}

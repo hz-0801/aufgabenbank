@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -103,37 +116,31 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Netz und Schrägbild \pkt{} Lösungen}{PG80-5}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Netz und Schrägbild \pkt{} Lösungen}{PG80-6}\pfseitevon
 \glkopf{Netz und Schrägbild}
 \small
-
-\glzwischen{A~Netz erkennen}
 \begin{pfloesungb}{}
-\lzb{1.}{}{a) gegenüber; b) $\pi$ · d, gut dreimal so lang wie d}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{zwei Flächen mit genau einer dazwischen liegen sich gegenüber}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{die lange Seite des Mantels ist der Kreisumfang $\pi$ · d}\\\end{tabular}}
+\lzb{1.}{}{a) gegenüber; b) $\pi$ · d, gut dreimal so lang wie d}{zwei Flächen mit genau einer dazwischen liegen sich gegenüber}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{2.}{}{das mittlere Quadrat der senkrechten Dreierreihe}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{das mittlere Quadrat der senkrechten Dreierreihe (zwischen ihm und dem grauen liegt genau eine Fläche)}\\\end{tabular}}
+\lzb{2.}{}{mittleres Quadrat}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{3.}{}{drittes Netz; Länge $\approx$ 21,4 cm; Breite = 7,5 cm}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{drittes Netz (dritte Option}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{ein Kreis, Rechteck etwa dreimal so lang wie der Kreis breit)}\\Länge & = 2$\pi$ · 3,4 cm $\approx$ 21,4 cm\\Breite & = h = 7,5 cm\\\end{tabular}}
-\end{pfloesungb}
-
-\glzwischen{B~Netz skizzieren}
-\begin{pfloesungb}{}
-\lzb{4.}{}{2 cm und 5 cm}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Kanten, die nach dem Falten aneinanderliegen, sind gleich lang}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{die andere Seite ist die Höhe des Prismas}\\\end{tabular}}
+\lzb{3.}{}{drittes Netz; Länge = 2$\pi$ · 3,4 cm $\approx$ 21,4 cm; Breite = 7,5 cm}{Breite = h}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{5.}{}{a $\approx$ 22,0 cm; b = 7 cm}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Rechteck a × b, a ist der Umfang des Kreises}\\a & = 2$\pi$ · 3,5 cm $\approx$ 22,0 cm\\b & = h = 7 cm\\\end{tabular}}
+\lzb{4.}{}{2 cm und 5 cm}{Kanten, die nach dem Falten aneinanderliegen, sind gleich lang}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{6.}{}{drittes Rechteck 6 × 5 Kästchen an das rechte, zweites Dreieck oben an ein Rechteck; a = 1,80 m}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{drittes Rechteck 6 × 5 Kästchen an das rechte, zweites Dreieck oben an ein Rechteck}\\a & = 1,80 m\\\end{tabular}}
-\end{pfloesungb}
-
-\glzwischen{C~Schrägbild skizzieren}
-\begin{pfloesungb}{}
-\lzb{7.}{}{a) 6 cm, so breit wie der Durchmesser; b) als flache Ellipse}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{die Schachtel muss den ganzen Grundkreis fassen, also den Durchmesser 2 · r}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{ein liegender Kreis erscheint im Schrägbild flach gedrückt}\\\end{tabular}}
+\lzb{5.}{}{a = 7$\pi$ cm $\approx$ 22,0 cm; b = 7 cm}{\begin{tabular}[t]{@{}r@{\,}l@{}}a & = Umfang Kreis\\b & = h\\\end{tabular}}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{8.}{}{Kegel steht auf dem Boden, Grundkreis als Ellipse, Spitze mittig oben; 51 cm × 51 cm × 61 cm; je 1 cm mehr als Durchmesser 50 cm und Höhe 60 cm – 26 cm sind schmaler als der Durchmesser, 81 cm sind unnötig hoch}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Kegel steht auf dem Boden, Grundkreis als Ellipse, Spitze mittig oben}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{51 cm × 51 cm × 61 cm}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{je 1 cm mehr als Durchmesser 50 cm und Höhe 60 cm – 26 cm sind schmaler als der Durchmesser, 81 cm sind unnötig hoch}\\\end{tabular}}
+\lzb{6.}{}{3. Rechteck 6 × 5 Kästchen rechts, 2. Dreieck oben an Rechteck; a = 1,80 m}{}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{7.}{}{a) 6 cm, so breit wie der Durchmesser; b) als flache Ellipse}{die Schachtel muss den ganzen Grundkreis fassen, also den Durchmesser 2 · r}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{8.}{}{Grundkreis = Ellipse, Spitze über Mitte; 51 cm × 51 cm × 61 cm; 26 cm zu schmal, 81 cm unnötig hoch}{je 1 cm über d = 50 cm und h = 60 cm}
 \end{pfloesungb}
 \end{document}

@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -100,11 +113,11 @@
 % Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
 \newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
 \newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
-\usepackage{graphicx}\graphicspath{{/home/claude/aufgabenbank-privat/}}
+\usepackage{graphicx}\graphicspath{{/home/claude/agent-d1/aufgabenbank-privat/}}
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Lineare Funktionen}{PA10-8}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Lineare Funktionen}{PA10-9}\pfseitevon
 \pfheftkopf{Lineare Funktionen}{}
 \pfstufenzeile{A~Graph zeichnen \pkt{} B~Gleichung aus Graph \pkt{} C~Gleichung aus zwei Punkten \pkt{} D~Nullstelle gesucht \pkt{} E~Punktprobe \pkt{} F~Gleichung aus Text}
 % Formelkasten (15.10. t, 16.10. a)
@@ -137,7 +150,7 @@
   #1 & #2 & #3\ifblank{#4}{}{\\ & \multicolumn{2}{>{\raggedright\arraybackslash}p{\dimexpr0.75\fsbreite-2\tabcolsep}}{#4}}\end{tabular}}}\par}
 \providecommand\fskastentitel[1]{\par\noindent\textbf{#1}\par}
 \uebersichtskasten{\renewcommand\fsbreite{\linewidth}
-\fszeilebild{$y = f(x) = m\cdot x + n$ für $m \neq 0$}{Gerade durch P(0; n)\newline Definitionsbereich: $x \in \mathbb{R}$\newline Wertebereich: $y \in \mathbb{R}$\newline n: Abschnitt auf y-Achse\newline Nullstelle: $x_0 = -\frac{n}{m}$ (blau)}{}{}{formelsammlung/figuren/duden-bild/duden-s29-y-f-x-m-2.png}{3.89cm}
+\fszeilebild{$y = f(x) = m\cdot x + n$ für $m \neq 0$}{Gerade durch P(0; n)\newline Definitionsbereich: $x \in \mathbb{R}$\newline Wertebereich: $y \in \mathbb{R}$\newline n: Abschnitt auf y-Achse\newline Nullstelle: $x_0 = -\frac{n}{m}$}{}{}{formelsammlung/figuren/duden-bild/duden-s29-y-f-x-m-2.png}{3.89cm}
 }
 }\vspace{-4pt}\par\noindent{\footnotesize\color{mbgrau}Formeln und Werte S.~29}\par\medskip
 
@@ -148,18 +161,15 @@
 \begin{pfaufg}{’25~\pkt{}~1f}{1.}{Basis}
 Kreuze das Bild an, das den Graphen einer linearen Funktion zeigt.
 \par\smallskip\noindent\setlength{\gbildbreite}{\dimexpr0.96\linewidth/4\relax}\sbox{\gbox}{\vbox{\begin{tikzpicture}[x=1.1cm,y=1.1cm,line width=0.6pt]\draw[-{Stealth[length=1.5mm]}] (-0.8,0)--(0.95,0);\draw[-{Stealth[length=1.5mm]}] (0,-0.6)--(0,1.05);\draw[line width=0.8pt] (-0.8,0.94)--(0.9,-0.42);\end{tikzpicture}\par\begin{tikzpicture}[x=1.1cm,y=1.1cm,line width=0.6pt]\draw[-{Stealth[length=1.5mm]}] (-0.8,0)--(0.95,0);\draw[-{Stealth[length=1.5mm]}] (0,-0.6)--(0,1.05);\draw[line width=0.8pt,domain=0.1:0.9,samples=40,smooth] plot (\x,{0.09/\x});\end{tikzpicture}\par\begin{tikzpicture}[x=1.1cm,y=1.1cm,line width=0.6pt]\draw[-{Stealth[length=1.5mm]}] (-0.8,0)--(0.95,0);\draw[-{Stealth[length=1.5mm]}] (0,-0.6)--(0,1.05);\draw[line width=0.8pt,domain=-0.6:0.6,samples=40,smooth] plot (\x,{3*\x*\x-0.4});\end{tikzpicture}\par\begin{tikzpicture}[x=1.1cm,y=1.1cm,line width=0.6pt]\draw[-{Stealth[length=1.5mm]}] (-0.8,0)--(0.95,0);\draw[-{Stealth[length=1.5mm]}] (0,-0.6)--(0,1.05);\draw[line width=0.8pt] (0.1,-0.3)--(0.5,0.5)--(0.1,0.7);\end{tikzpicture}}}\gbildoption{}{\begin{tikzpicture}[x=1.1cm,y=1.1cm,line width=0.6pt]\draw[-{Stealth[length=1.5mm]}] (-0.8,0)--(0.95,0);\draw[-{Stealth[length=1.5mm]}] (0,-0.6)--(0,1.05);\draw[line width=0.8pt] (-0.8,0.94)--(0.9,-0.42);\end{tikzpicture}}{\dimexpr\ht\gbox/4+\baselineskip\relax}\hfill\gbildoption{}{\begin{tikzpicture}[x=1.1cm,y=1.1cm,line width=0.6pt]\draw[-{Stealth[length=1.5mm]}] (-0.8,0)--(0.95,0);\draw[-{Stealth[length=1.5mm]}] (0,-0.6)--(0,1.05);\draw[line width=0.8pt,domain=0.1:0.9,samples=40,smooth] plot (\x,{0.09/\x});\end{tikzpicture}}{\dimexpr\ht\gbox/4+\baselineskip\relax}\hfill\gbildoption{}{\begin{tikzpicture}[x=1.1cm,y=1.1cm,line width=0.6pt]\draw[-{Stealth[length=1.5mm]}] (-0.8,0)--(0.95,0);\draw[-{Stealth[length=1.5mm]}] (0,-0.6)--(0,1.05);\draw[line width=0.8pt,domain=-0.6:0.6,samples=40,smooth] plot (\x,{3*\x*\x-0.4});\end{tikzpicture}}{\dimexpr\ht\gbox/4+\baselineskip\relax}\hfill\gbildoption{}{\begin{tikzpicture}[x=1.1cm,y=1.1cm,line width=0.6pt]\draw[-{Stealth[length=1.5mm]}] (-0.8,0)--(0.95,0);\draw[-{Stealth[length=1.5mm]}] (0,-0.6)--(0,1.05);\draw[line width=0.8pt] (0.1,-0.3)--(0.5,0.5)--(0.1,0.7);\end{tikzpicture}}{\dimexpr\ht\gbox/4+\baselineskip\relax}\par
-\fusshilfe{\gfuss{1}{die einzige Gerade; B Hyperbelast, C Parabel, D kein Funktionsgraph}}
 \end{pfaufg}
 % 2024-OS-B1i-m1 (Original 2024-OS-B1i, Schwere I, rang 2; herausgelöste Fassung: keine)
 \begin{pfaufg}{’24~\pkt{}~1i}{2.}{Basis}
-Gegeben ist die Gerade $y = 1{,}5x + 1$. Zeichne den Punkt ein, an dem sie die y-Achse trifft.
-\par\smallskip\noindent\begin{ksys}[xmin=-3,xmax=3,ymin=-3,ymax=3,karo=0.5]\end{ksys}\par
+\gtextks{\begin{ksys}[xmin=-3,xmax=3,ymin=-3,ymax=3,karo=0.5]\end{ksys}}{Gegeben ist die Gerade $y = 1{,}5x + 1$. Zeichne den Punkt ein, an dem sie die y-Achse trifft.}
 \fusshilfe{\gfuss{2}{Punkt (0|1)}}
 \end{pfaufg}
 % 2024-OS-K3a-m1 (Original 2024-OS-K3a, Schwere I, rang 3; herausgelöste Fassung: keine)
 \begin{pfaufg}{nach~P10\\’24~\pkt{}~3a}{3.}{}
-Die lineare Funktion $f$ hat die Gleichung $f(x) = 2x + 3$. Zeichne ihren Graphen in das Koordinatensystem.
-\par\smallskip\noindent\gpassend{\begin{ksys}[xmin=-4,xmax=4,ymin=-5,ymax=8,karo=0.5]\end{ksys}}\par
+\gtextks{\begin{ksys}[xmin=-4,xmax=4,ymin=-5,ymax=8,karo=0.5]\end{ksys}}{Die lineare Funktion $f$ hat die Gleichung $f(x) = 2x + 3$. Zeichne ihren Graphen in das Koordinatensystem.}
 \fusshilfe{\gfuss{3}{Gerade durch (0|3) und (1|5)}}
 \end{pfaufg}
 
@@ -216,8 +226,8 @@ Die Gerade $f$ hat die Gleichung $f(x) = -5x + 2$. Einer dieser Punkte liegt nic
 % 2026-FOR-K5b-m1 (Original 2026-FOR-K5b, Schwere I, rang 10; herausgelöste Fassung: keine)
 \begin{pfaufg}{nach~P10\\’26~\pkt{}~5b}{8.}{}
 Prüfe mit einer Rechnung, ob der Punkt $P(-2\,|\,7)$ auf dem Graphen von $f(x) = -3x + 1$ liegt.
-\karo{2}
-\fusshilfe{\gfuss{8}{P liegt auf dem Graphen}}
+\karo{3}
+\fusshilfe{\gfuss{8}{ja}}
 \end{pfaufg}
 
 % ===================== Stufe: Gleichung aus Text =====================
@@ -243,7 +253,7 @@ Nach einem Jahr hat Paula 1 600 € gespart. Berechne, wie viel Geld Maxi nach e
 % 2022-OS-K6b-m1 (Original 2022-OS-K6b, Schwere II, rang 13; herausgelöste Fassung: keine)
 \begin{gbteil}{b)}{}{FOR}
 Stelle eine Gleichung für Paulas Guthaben auf ($y$: Guthaben in €, $x$: Zahl der Monate). Für Fahrschule und Prüfung braucht Paula 1 800 €. Bestimme, wie viele Monate sie mindestens sparen muss.
-\karo{3}
+\karo{4}
 \end{gbteil}
 \fusshilfe{\gfuss{10}{a)~1648 €; b)~65x + 820; 16 Monate}}
 \end{pfaufg}
@@ -262,7 +272,7 @@ Die Kosten für einen Miettag sollen für beide Angebote in einem Diagramm darge
 % 2023-OS-K3b-m1 (Original 2023-OS-K3b, Schwere II, rang 15; herausgelöste Fassung: keine)
 \begin{gbteil}{b)}{}{FOR}
 Herr Mert mietet den Transporter von Montag bis Freitag und fährt insgesamt 450 km. Berechne die Kosten für beide Angebote. Gib an, welches billiger ist. Stelle für Angebot 2 eine Gleichung auf, mit der man die Kosten einer Woche für jede Kilometerzahl berechnen kann.
-\karo{3}
+\karo{4}
 \end{gbteil}
 \fusshilfe{\gfuss{11}{a)~C; B; b)~170,50 €; 151,00 €; Angebot 2 günstiger; 0,08x + 115}}
 \end{pfaufg}

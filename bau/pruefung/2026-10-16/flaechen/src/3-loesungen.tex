@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -103,59 +116,49 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Fläche und Umfang \pkt{} Lösungen}{PG40-8}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Fläche und Umfang \pkt{} Lösungen}{PG40-9}\pfseitevon
 \glkopf{Fläche und Umfang}
 \small
-
-\glzwischen{A~Formeln}
 \begin{pfloesungb}{}
-\lzb{1.}{}{$u=3\cdot a$}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{drei gleiche Seiten: a + a + a = 3 · a}\\\end{tabular}}
+\lzb{1.}{}{$u=3\cdot a$}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{2.}{}{$A=a\cdot(b+c)$}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}A & = a · (b + c)\\\end{tabular}}
+\lzb{2.}{}{$A=a\cdot(b+c)$}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{3.}{}{A = d · $\tfrac{e}{2}$}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Katheten d und e stehen senkrecht: A = d · $\tfrac{e}{2}$}\\\end{tabular}}
-\end{pfloesungb}
-
-\glzwischen{B~Fläche gesucht}
-\begin{pfloesungb}{}
-\lzb{4.}{}{A = 2688 cm²}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}A & = e · $\tfrac{f}{2}$ = 56 · $\tfrac{96}{2}$ = 2688 cm²\\\end{tabular}}
+\lzb{3.}{}{A = d · $\tfrac{e}{2}$}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{5.}{}{A $\approx$ 1963,5 cm²}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}A & = $\pi$ · r² = $\pi$ · 25² $\approx$ 1963,5 cm²\\\end{tabular}}
+\lzb{4.}{}{A = 2688 cm²}{A = e · $\tfrac{f}{2}$}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{6.}{}{A = 151,5 m²}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}A & = $\tfrac{24{,}20 + 16{,}20}{2}$ · 7,50 = 151,5 m²\\\end{tabular}}
+\lzb{5.}{}{A = $\pi$ · 25² $\approx$ 1963,5 cm²}{A = $\pi$ · r²}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{7.}{}{A $\approx$ 63,3 m²}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}c & = 11,0 + 6,35 = 17,35 m\\A & = c · $\tfrac{h}{2}$ = 17,35 · $\tfrac{7{,}3}{2}$ $\approx$ 63,3 m²\\\end{tabular}}
-\end{pfloesungb}
-
-\glzwischen{C~Umfang gesucht}
-\begin{pfloesungb}{}
-\lzb{8.}{}{u = 14 cm}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}u & = 2 · (a + b) = 2 · (4,5 + 2,5) = 14 cm\\\end{tabular}}
+\lzb{6.}{}{A = 151,5 m²}{A = $\tfrac{24{,}20 + 16{,}20}{2}$ · 7,50}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{9.}{}{u = 57,40 m}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}u & = 24,20 + 16,20 + 2 · 8,50 = 57,40 m\\\end{tabular}}
-\end{pfloesungb}
-
-\glzwischen{D~Formeln umstellen}
-\begin{pfloesungb}{}
-\lzb{10.}{}{$d = \tfrac{u}{\pi}$}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{$\pi$ steht mal d, also rückwärts durch $\pi$ teilen: d = $\tfrac{u}{\pi}$ (ebenso a = $\tfrac{A}{b}$ beim Rechteck)}\\\end{tabular}}
+\lzb{7.}{}{A = 17,35 · $\tfrac{7{,}3}{2}$ $\approx$ 63,3 m²}{c = 11,0 + 6,35 = 17,35 m}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{11.}{}{a = 110 mm}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}a & = $\tfrac{A}{b}$ = $\tfrac{38\,500}{350}$ = 110 mm\\\end{tabular}}
-\end{pfloesungb}
-
-\glzwischen{E~Flächenanteil gesucht}
-\begin{pfloesungb}{}
-\lzb{12.}{}{90° von 360° = 25 \%}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{das Ganze ist der volle Kreis (360°), der Teil der graue Winkel}\\$\tfrac{90}{360}$ & = $\tfrac{1}{4}$ = 25 \%\\\end{tabular}}
+\lzb{8.}{}{u = 14 cm}{u = 2 · (a + b)}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{13.}{}{$\tfrac{144}{360}$ = 40 \%}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Teil 144° vom Ganzen 360°}\\$\tfrac{144}{360}$ & = 0,4 = 40 \%\\\end{tabular}}
+\lzb{9.}{}{u = 57,40 m}{u = 24,20 + 16,20 + 2 · 8,50}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{14.}{}{14 Deckel; $\approx$ 161,2 cm²; ja}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{14 Deckel}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Abfall 700 $-$ 14 · 12,25$\pi$ $\approx$ 161,2 cm²}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{ja, eingehalten (höchstens 24 \%): $\tfrac{161{,}2}{700}$ $\approx$ 23,0 \%}\\\end{tabular}}
+\lzb{10.}{}{$d = \tfrac{u}{\pi}$}{}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{11.}{}{a = 110 mm}{a = $\tfrac{A}{b}$}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{12.}{}{90° von 360° = 25 \%}{das Ganze ist der volle Kreis (360°), der Teil der graue Winkel}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{13.}{}{$\tfrac{144}{360}$ = 40 \%}{Teil 144° vom Ganzen 360°}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{14.}{}{14 Deckel; $\approx$ 161,2 cm²; ja}{}
 \end{pfloesungb}
 \end{document}

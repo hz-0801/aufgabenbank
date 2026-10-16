@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -103,48 +116,37 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Volumen und Oberfläche \pkt{} Lösungen}{PG90-7}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Volumen und Oberfläche \pkt{} Lösungen}{PG90-8}\pfseitevon
 \glkopf{Volumen und Oberfläche}
 \small
-
-\glzwischen{A~Volumenformel aufstellen}
-\noindent{\footnotesize\color{mbgrau}Such in deiner Formelsammlung das Volumen des Zylinders: S. 26 · 27}\par
 \begin{pfloesungb}{}
-\lzb{1.}{}{a) V = $\pi$ · r² · h; b) V = G · h; c) V = $\tfrac{1}{3}$ · $\pi$ · r² · h}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{a) Zylinder}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{b) Prisma}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{c) Kegel}\\\end{tabular}}
-\end{pfloesungb}
-
-\glzwischen{B~Volumen gesucht}
-\begin{pfloesungb}{}
-\lzb{2.}{}{V $\approx$ 269,4 cm³}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}V & = $\pi$ · 3,5² · 7 $\approx$ 269,4 cm³\\\end{tabular}}
+\lzb{1.}{}{a) V = $\pi$ · r² · h; b) V = G · h; c) V = $\tfrac{1}{3}$ · $\pi$ · r² · h}{a) Zylinder\newline b) Prisma}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{3.}{}{$\approx$ 85342 cm³}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{$\pi$ · 25,5² · 61 $-$ $\tfrac{1}{3}$ · $\pi$ · 25² · 60 $\approx$ 85342 cm³}\\\end{tabular}}
-\end{pfloesungb}
-
-\glzwischen{C~Volumenformel umstellen}
-\begin{pfloesungb}{}
-\lzb{4.}{}{$a = \sqrt{\tfrac{V}{h}}$}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{erst durch h teilen: a² = V/h, dann die Wurzel ziehen (ebenso r beim Zylinder, nur mit $\pi$)}\\\end{tabular}}
+\lzb{2.}{}{V = $\pi$ · 3,5² · 7 $\approx$ 269,4 cm³}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{5.}{}{h $\approx$ 26,0 cm}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}h & = $\tfrac{1000}{\pi \cdot 3{,}5^2}$ $\approx$ 26,0 cm\\\end{tabular}}
+\lzb{3.}{}{$\approx$ 85342 cm³}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{6.}{}{r $\approx$ 4,6 cm}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}r & = $\sqrt{\tfrac{500}{\pi \cdot 7{,}5}}$ $\approx$ 4,6 cm\\\end{tabular}}
-\end{pfloesungb}
-
-\glzwischen{D~Oberfläche gesucht}
-\begin{pfloesungb}{}
-\lzb{7.}{}{Rechteck, 2 · $\pi$ · r lang und h hoch}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Rechteck}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{eine Seite ist der Kreisumfang 2 · $\pi$ · r, die andere die Höhe h}\\Mantel & = 2 · $\pi$ · r · h\\\end{tabular}}
+\lzb{4.}{}{$a = \sqrt{\tfrac{V}{h}}$}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{8.}{}{Dachfläche M $\approx$ 104,24 m²; Kosten $\approx$ 2501,71 €}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}Dachfläche M & = $\pi$ · 4,2 · 7,9 $\approx$ 104,24 m²\\Kosten & $\approx$ 2501,71 €\\\end{tabular}}
-\end{pfloesungb}
-
-\glzwischen{E~Körper vergleichen}
-\begin{pfloesungb}{}
-\lzb{9.}{}{a) 2-mal so groß; b) 4-mal so groß; c) 3-mal so groß}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{h steht einfach}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{r steht im Quadrat}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{der Kegel ist ein Drittel des Zylinders}\\\end{tabular}}
+\lzb{5.}{}{h = $\tfrac{1000}{\pi \cdot 3{,}5^2}$ $\approx$ 26,0 cm}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{10.}{}{falsch}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{falsch: V(Kegel) : V(Zylinder) = $\tfrac{\tfrac{1}{3} \cdot (2r)^2}{r^2}$ = 1,33}\\\end{tabular}}
+\lzb{6.}{}{r = $\sqrt{\tfrac{500}{\pi \cdot 7{,}5}}$ $\approx$ 4,6 cm}{}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{7.}{}{Rechteck, 2 · $\pi$ · r lang und h hoch}{eine Seite ist der Kreisumfang 2 · $\pi$ · r, die andere die Höhe h}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{8.}{}{M = 33,18$\pi$ m² $\approx$ 104,24 m²; Kosten = 796,32$\pi$ € $\approx$ 2501,71 €}{\begin{tabular}[t]{@{}r@{\,}l@{}}M & = $\pi$ · r · s\\Kosten & = M · 24 €\\\end{tabular}}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{9.}{}{a) 2-mal so groß; b) 4-mal so groß; c) 3-mal so groß}{h steht einfach\newline r steht im Quadrat}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{10.}{}{falsch}{}
 \end{pfloesungb}
 \end{document}

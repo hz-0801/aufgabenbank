@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -104,14 +117,14 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} mehr]{Prozent}{PS10-3}\pfseitevon
+\pflaufkopf[P10 \pkt{} mehr]{Prozent}{PS10-5}\pfseitevon
 \pfheftkopf{Prozent}{mehr}
 \pfstufenzeile{Veränderung gesucht \pkt{} Prozent und Anteil umwandeln \pkt{} Prozentsatz gesucht \pkt{} Zinsen und Zinssatz \pkt{} Aussagen prüfen \pkt{} Zinseszins und Guthabentabelle}
 % 2021-OS-K5a-m1 (Schwere I, rang 13)
 \begin{pfaufg}{nach~P10\\’21~\pkt{}~5a}{1.}{}
 Das Säulendiagramm gibt an, wie viele Container (in Millionen) in den Jahren 2010 bis 2018 im Hamburger Hafen be- und entladen wurden. Berechne die Spannweite und den Durchschnitt (das arithmetische Mittel) dieser Containerzahlen. Berechne, um wie viel Prozent die Containerzahl von 2011 auf 2012 gestiegen ist.
 \par\smallskip\noindent\gpassend{\begin{tikzpicture}[x=0.8cm,y=0.3cm,font=\scriptsize]\draw[black!15] (0,0)--(9.4,0);\draw (-0.1,0)--(0,0) node[left]{0};\draw[black!15] (0,1)--(9.4,1);\draw (-0.1,1)--(0,1) node[left]{1};\draw[black!15] (0,2)--(9.4,2);\draw (-0.1,2)--(0,2) node[left]{2};\draw[black!15] (0,3)--(9.4,3);\draw (-0.1,3)--(0,3) node[left]{3};\draw[black!15] (0,4)--(9.4,4);\draw (-0.1,4)--(0,4) node[left]{4};\draw[black!15] (0,5)--(9.4,5);\draw (-0.1,5)--(0,5) node[left]{5};\draw[black!15] (0,6)--(9.4,6);\draw (-0.1,6)--(0,6) node[left]{6};\draw[black!15] (0,7)--(9.4,7);\draw (-0.1,7)--(0,7) node[left]{7};\draw[black!15] (0,8)--(9.4,8);\draw (-0.1,8)--(0,8) node[left]{8};\draw[black!15] (0,9)--(9.4,9);\draw (-0.1,9)--(0,9) node[left]{9};\draw[black!15] (0,10)--(9.4,10);\draw (-0.1,10)--(0,10) node[left]{10};\draw[->] (0,0)--(9.6,0);\draw[->] (0,0)--(0,11.2) node[above]{Container in Mio.};\fill[black!35] (0.25,0) rectangle (0.85,6.6);\node[above] at (0.55,6.6){6{,}6};\node[below] at (0.55,0){2010};\fill[black!35] (1.25,0) rectangle (1.85,7.5);\node[above] at (1.55,7.5){7{,}5};\node[below] at (1.55,0){2011};\fill[black!35] (2.25,0) rectangle (2.85,8.6);\node[above] at (2.55,8.6){8{,}6};\node[below] at (2.55,0){2012};\fill[black!35] (3.25,0) rectangle (3.85,8.4);\node[above] at (3.55,8.4){8{,}4};\node[below] at (3.55,0){2013};\fill[black!35] (4.25,0) rectangle (4.85,9.1);\node[above] at (4.55,9.1){9{,}1};\node[below] at (4.55,0){2014};\fill[black!35] (5.25,0) rectangle (5.85,9.4);\node[above] at (5.55,9.4){9{,}4};\node[below] at (5.55,0){2015};\fill[black!35] (6.25,0) rectangle (6.85,8.4);\node[above] at (6.55,8.4){8{,}4};\node[below] at (6.55,0){2016};\fill[black!35] (7.25,0) rectangle (7.85,8.5);\node[above] at (7.55,8.5){8{,}5};\node[below] at (7.55,0){2017};\fill[black!35] (8.25,0) rectangle (8.85,9.1);\node[above] at (8.55,9.1){9{,}1};\node[below] at (8.55,0){2018};\end{tikzpicture}}\par
-\karo{4}
+\karo{5}
 \fusshilfe{\gfuss{1}{Spannweite 2,8 Mio.; Mittel 8,4 Mio.; 14,7 \%}}
 \end{pfaufg}
 % 2020-OS-B1a-m1 (Schwere I, rang 14)
@@ -163,7 +176,7 @@ Nach einer Studie lag der Wasserverbrauch 2018 bei durchschnittlich 48 Tausend L
 Die Tabelle gibt an, welcher Anteil der Mädchen und der Jungen ein Medium in der Freizeit nutzt (Mädchen / Jungen): Smartphone 97 \% / 92 \%, Fernseher 69 \% / 80 \%, Konsolenspiele 11 \% / 67 \%, Bücher 52 \% / 33 \%. Zu der Tabelle gibt es zwei Aussagen: „Vier Fünftel der Mädchen sehen in ihrer Freizeit fern.“ „Bei Jungen sind Konsolenspiele deutlich beliebter als bei Mädchen.“ Kreuze die falsche Aussage an. Berichtige diese Aussage.
 \par\smallskip\noindent\gpassend{{\small\renewcommand{\arraystretch}{1.2}\begin{tabular}{|l|r|r|}\hline Medium & Mädchen & Jungen\\\hline Smartphone & 97 \% & 92 \%\\\hline Fernseher & 69 \% & 80 \%\\\hline Konsolenspiele & 11 \% & 67 \%\\\hline Bücher & 52 \% & 33 \%\\\hline\end{tabular}}}\par
 \karo{3}
-\fusshilfe{\gfuss{9}{Aussage 1 falsch; Etwa zwei Drittel (69 \%) der Mädchen nutzen einen Fernseher (vier Fünftel gilt für die Jungen)}}
+\fusshilfe{\gfuss{9}{Aussage 1 falsch; zwei Drittel (vier Fünftel: Jungen)}}
 \end{pfaufg}
 % 2017-OS-K2b-m1 (Schwere II, rang 25)
 \begin{pfaufg}{nach~P10\\’17~\pkt{}~2b}{10.}{}
@@ -183,7 +196,7 @@ Das Säulendiagramm zeigt, wie viele Besucher ein Filmpark in den Jahren 2007 bi
 In einer Saison der 2. Fußball-Bundesliga wurden 87 Elfmeter gepfiffen; 76 davon führten zu einem Tor. Berechne, wie viel Prozent der Elfmeter nicht verwandelt wurden. Zeichne den Anteil als Sektor in den vorbereiteten Kreis ein. Gib an, wie groß der Mittelpunktswinkel dieses Sektors ist.
 \par\smallskip\noindent\gpassend{\begin{tikzpicture}[line width=0.8pt]\draw (0,0) circle (1.3);\fill (0,0) circle (1.3pt);\draw (0,0)--(0,1.3);\end{tikzpicture}}\par
 \karo{4}
-\fusshilfe{\gfuss{12}{12,6 \%; 46° ab dem vorgegebenen Radius; 46°}}
+\fusshilfe{\gfuss{12}{12,6 \%; Sektor 46° einzeichnen; 46°}}
 \end{pfaufg}
 % 2014-OS-K3b-m1 (Schwere II, rang 30)
 \begin{pfaufg}{nach~P10\\’14~\pkt{}~3b}{13.}{}

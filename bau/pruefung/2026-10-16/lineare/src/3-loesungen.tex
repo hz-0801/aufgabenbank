@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -103,61 +116,49 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Lineare Funktionen \pkt{} Lösungen}{PA10-8}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Lineare Funktionen \pkt{} Lösungen}{PA10-9}\pfseitevon
 \glkopf{Lineare Funktionen}
 \small
-
-\glzwischen{A~Graph zeichnen}
 \begin{pfloesungb}{}
-\lzb{1.}{}{die einzige Gerade; B Hyperbelast, C Parabel, D kein Funktionsgraph}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{die einzige Gerade}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{B Hyperbelast, C Parabel, D kein Funktionsgraph}\\\end{tabular}}
+\lzb{1.}{}{}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{2.}{}{Punkt (0|1)}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}n & = 1 aus y = 1,5x + 1\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Punkt (0|1)}\\\end{tabular}}
+\lzb{2.}{}{Punkt (0|1)}{n = 1 aus y = 1,5x + 1}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{3.}{}{Gerade durch (0|3) und (1|5)}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Startpunkt (0|3), Steigungsdreieck 1 nach rechts, 2 nach oben}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Gerade durch (0|3) und (1|5)}\\\end{tabular}}
-\end{pfloesungb}
-
-\glzwischen{B~Gleichung aus Graph}
-\begin{pfloesungb}{}
-\lzb{4.}{a)}{h}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Steigung $-$3: f}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{parallel zur x-Achse: h}\\\end{tabular}}
+\lzb{3.}{}{Gerade durch (0|3) und (1|5)}{Startpunkt (0|3), Steigungsdreieck 1 nach rechts, 2 nach oben}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{}{b)}{y = $-$1}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}f: y & = $-$3x + 3\\g: y & = x + 3\\h: y & = $-$1\\\end{tabular}}
-\end{pfloesungb}
-
-\glzwischen{C~Gleichung aus zwei Punkten}
-\begin{pfloesungb}{}
-\lzb{5.}{}{Gerade durch A und B; Aussage 1 falsch, Aussage 2 wahr; y = $-$1,5x + 2}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{A und B eintragen}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Gerade durch A und B}\\m < 0, n & = 2\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Aussage 1 falsch, Aussage 2 wahr}\\m & = $\tfrac{- 2{,}5 - 5}{3 - ( - 2)}$ = $-$1,5\\n & = 5 $-$ ($-$1,5) · ($-$2) = 2\\y & = $-$1,5x + 2\\\end{tabular}}
-\end{pfloesungb}
-
-\glzwischen{D~Nullstelle gesucht}
-\begin{pfloesungb}{}
-\lzb{6.}{}{Gerade durch (0|5) und (1|3); x = 2,5}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Startpunkt (0|5), 1 nach rechts, 2 nach unten}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Gerade durch (0|5) und (1|3)}\\y & = 0: $-$2x + 5 = 0\\x & = 2,5\\\end{tabular}}
-\end{pfloesungb}
-
-\glzwischen{E~Punktprobe}
-\begin{pfloesungb}{}
-\lzb{7.}{}{$(3\,|\,-12)$}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}$-$12 $\neq$ f(3) & = $-$5 · 3 + 2 = $-$13\\\end{tabular}}
+\lzb{4.}{a)}{h}{Steigung $-$3: f}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{8.}{}{P liegt auf dem Graphen}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}f($-$2) & = $-$3 · ($-$2) + 1 = 7 = y-Wert von P\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{P liegt auf dem Graphen}\\\end{tabular}}
-\end{pfloesungb}
-
-\glzwischen{F~Gleichung aus Text}
-\begin{pfloesungb}{}
-\lzb{9.}{}{a) 8 ist n, 0,09 ist m; b) 25 ist n, $-$2 ist m}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{n steht am Anfang (x = 0), m ist das, was je Monat, Minute oder Stunde dazukommt oder weggeht}\\\end{tabular}}
+\lzb{}{b)}{y = $-$1}{\begin{tabular}[t]{@{}r@{\,}l@{}}f: y & = $-$3x + 3\\g: y & = x + 3\\\end{tabular}}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{10.}{a)}{Maxi = 1648 €}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}Maxi & = 1 360 + 12 · 24 = 1648 €\\\end{tabular}}
+\lzb{5.}{}{Gerade durch A und B; Aussage 1 falsch, Aussage 2 wahr; y = $-$1,5x + 2}{m < 0, n = 2\newline m = $\tfrac{- 2{,}5 - 5}{3 - ( - 2)}$\newline n = 5 $-$ m · ($-$2)}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{}{b)}{y = 65x + 820; 16 Monate}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}y & = 65x + 820\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{65x + 820 $\ge$ 1800}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{x $\ge$ $\tfrac{980}{65}$ $\approx$ 15,1}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{16 Monate}\\\end{tabular}}
+\lzb{6.}{}{Gerade durch (0|5) und (1|3); x = 2,5}{Startpunkt (0|5), 1 nach rechts, 2 nach unten\newline y = 0: $-$2x + 5 = 0}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{11.}{a)}{Angebot 1 = C; Angebot 2 = B}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{erst fest (320 km frei), dann gleichmäßig steigend}\\Angebot 1 & = C\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Grundbetrag 115 €, dann gleichmäßig steigend}\\Angebot 2 & = B\\\end{tabular}}
+\lzb{7.}{}{$(3\,|\,-12)$}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{}{b)}{Angebot 1 = 170,50 €; Angebot 2 = 151,00 €; Angebot 2 günstiger; y = 0,08x + 115}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}Angebot 1 & = 5 · 25 + (450 $-$ 320) · 0,35 = 170,50 €\\Angebot 2 & = 115 + 450 · 0,08 = 151,00 €\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{151,00 € < 170,50 €}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Angebot 2 günstiger}\\y & = 0,08x + 115\\\end{tabular}}
+\lzb{8.}{}{ja}{f($-$2) = $-$3 · ($-$2) + 1 = 7 = y-Wert von P}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{9.}{}{a) 8 ist n, 0,09 ist m; b) 25 ist n, $-$2 ist m}{}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{10.}{a)}{Maxi = 1648 €}{Maxi = 1 360 + 12 · 24}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{}{b)}{y = 65x + 820; 16 Monate}{65x + 820 $\ge$ 1800\newline x $\ge$ $\tfrac{980}{65}$ $\approx$ 15,1}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{11.}{a)}{Angebot 1 = C; Angebot 2 = B}{konstant bis 320 km, danach linear\newline Grundbetrag 115 €, danach linear}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{}{b)}{Angebot 1 = 170,50 €; Angebot 2 = 151,00 €; Angebot 2 günstiger; y = 0,08x + 115}{Angebot 1 = 5 · 25 + (450 $-$ 320) · 0,35\newline Angebot 2 = 115 + 450 · 0,08\newline 151,00 € < 170,50 €}
 \end{pfloesungb}
 \end{document}

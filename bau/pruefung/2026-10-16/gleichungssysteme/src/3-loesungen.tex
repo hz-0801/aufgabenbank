@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -103,28 +116,22 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Gleichungssystem \pkt{} Lösungen}{PA20-2}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Gleichungssystem \pkt{} Lösungen}{PA20-3}\pfseitevon
 \glkopf{Gleichungssystem}
 \small
-
-\glzwischen{A~Gleichungen aufstellen}
 \begin{pfloesungb}{}
-\lzb{1.}{}{I. x + y = 3,60; II. 7x + 4y = 20,70}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}I. x + y & = 3,60\\II. 7x + 4y & = 20,70\\\end{tabular}}
-\end{pfloesungb}
-
-\glzwischen{B~x und y gesucht}
-\begin{pfloesungb}{}
-\lzb{2.}{}{a) y = 10 $-$ x; b) 3x + 2 · (10 $-$ x) = 24}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{a) x auf die andere Seite: y = 10 $-$ x}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{b) statt y die ganze Klammer (10 $-$ x)}\\ausgerechnet x & = 4, y = 6\\\end{tabular}}
+\lzb{1.}{}{I. x + y = 3,60; II. 7x + 4y = 20,70}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{3.}{}{Apfelbaum 24,60 €; Pflaumenbaum 33,40 €}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Apfelbaum 24,60 €}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Pflaumenbaum 33,40 €}\\\end{tabular}}
-\end{pfloesungb}
-
-\glzwischen{C~Bedeutung gesucht}
-\begin{pfloesungb}{}
-\lzb{4.}{}{x = Preis eines Apfelbaums in €; y = Preis eines Pflaumenbaums in €}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}x & = Preis eines Apfelbaums in €\\y & = Preis eines Pflaumenbaums in €\\\end{tabular}}
+\lzb{2.}{}{a) y = 10 $-$ x; b) 3x + 2 · (10 $-$ x) = 24}{a) x auf die andere Seite: y = 10 $-$ x\newline b) statt y die ganze Klammer (10 $-$ x)}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{5.}{}{Filip kauft zusammen 15 Blumen; r = 6 Rosen; t = 9 Tulpen}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Filip kauft zusammen 15 Blumen}\\r & = 6 Rosen\\t & = 9 Tulpen\\\end{tabular}}
+\lzb{3.}{}{Apfelbaum 24,60 €; Pflaumenbaum 33,40 €}{}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{4.}{}{x = Preis Apfelbaum in €; y = Preis Pflaumenbaum in €}{}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{5.}{}{r + t = 15 Blumen; r = 6 Rosen; t = 9 Tulpen}{}
 \end{pfloesungb}
 \end{document}

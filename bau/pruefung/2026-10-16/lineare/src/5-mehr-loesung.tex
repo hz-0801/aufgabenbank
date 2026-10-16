@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -104,48 +117,48 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} mehr]{Lineare Funktionen \pkt{} Lösungen}{PA10-8}\pfseitevon
+\pflaufkopf[P10 \pkt{} mehr]{Lineare Funktionen \pkt{} Lösungen}{PA10-9}\pfseitevon
 \pfheftkopf{Lineare Funktionen}{Lösungen \pkt{} mehr}
 \begin{pfloesungb}{}
-\lzb{1.}{}{y = $-$6}{y = $-$6}
+\lzb{1.}{}{y = $-$6}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{2.}{}{0 min: 36 cm; 80 min: 12 cm}{0 min: 36 cm; 80 min: 12 cm}
+\lzb{2.}{}{36 cm; 12 cm}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{3.}{}{120 min}{120 min}
+\lzb{3.}{}{120 min}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{4.}{}{Fitnesscenter $\to$ y = 4x + 15}{Fahrpreis $\to$ y = 0,30x + 4; Fitnesscenter $\to$ y = 4x + 15}
+\lzb{4.}{}{Fitnesscenter $\to$ y = 4x + 15}{Fahrpreis $\to$ y = 0,30x + 4}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{5.}{}{II beginnt bei 150 € (Grundpreis bei 0 km) und steigt flacher (1,20 €/km)}{I Reiselust, II Sonnenschein; II beginnt bei 150 € (Grundpreis bei 0 km) und steigt flacher (1,20 €/km)}
+\lzb{5.}{}{I Reiselust, II Sonnenschein}{II: 150 € bei 0 km, flacher (1,20 €/km)}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{6.}{}{Gerade durch (0|$-$1) und (1|1)}{Gerade durch (0|$-$1) und (1|1)}
+\lzb{6.}{}{Gerade durch (0|$-$1) und (1|1)}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{7.}{}{Der Graph steigt monoton}{f$'$ = 2 > 0: Der Graph steigt monoton (zweite Option); f(0) = 2 · 0 $-$ 1 = $-$1: Der Graph trifft die y-Achse in P(0|$-$1) (dritte Option)}
+\lzb{7.}{}{Der Graph steigt monoton}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{8.}{}{36: Anfangshöhe der Kerze in cm}{y: Höhe der Kerze in cm; x: Zeit in Minuten seit dem Anzünden; 36: Anfangshöhe der Kerze in cm}
+\lzb{8.}{}{y = Höhe der Kerze in cm; x = Zeit in min ab Anzünden; 36 = Anfangshöhe in cm}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{9.}{}{Reiselust billiger: Sonnenschein 414 € gegen Reiselust 396; nein: bei 280 km Reiselust 504 €, Sonnenschein 486}{Reiselust billiger: Sonnenschein 414 € gegen Reiselust 396; nein: bei 280 km Reiselust 504 €, Sonnenschein 486}
+\lzb{9.}{}{Sonnenschein 414 € gegen Reiselust 396; nein}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{10.}{}{x = $-$3}{x = $-$3}
+\lzb{10.}{}{x = $-$3}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{11.}{}{y = 1,2x + 150 (x in km, y in €)}{y = 1,2x + 150 (x in km, y in €)}
+\lzb{11.}{}{y = 1,2x + 150}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{12.}{}{f}{f}
+\lzb{12.}{}{f}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{13.}{}{Gerade durch K und L (y-Achsenabschnitt 2, Nullstelle $-$3); n = $\tfrac{2}{3}$x + 2}{Gerade durch K und L (y-Achsenabschnitt 2, Nullstelle $-$3); m = $\tfrac{6}{9}$ = $\tfrac{2}{3}$; n = 4 $-$ $\tfrac{2}{3}$ · 3 = 2, also y = $\tfrac{2}{3}$x + 2}
+\lzb{13.}{}{Gerade durch K und L (y-Achsenabschnitt 2, Nullstelle $-$3); n = $\tfrac{2}{3}$x + 2}{m = $\tfrac{6}{9}$ = $\tfrac{2}{3}$}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{14.}{}{h(t) = $-$6t + 1650}{h(t) = $-$6t + 1650}
+\lzb{14.}{}{h(t) = $-$6t + 1650}{}
 \end{pfloesungb}
 \end{document}

@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -103,7 +116,7 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Prozent}{PS10-3}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Prozent}{PS10-5}\pfseitevon
 \pfheftkopf{Prozent}{}
 \pfstufenzeile{A~Prozent und Anteil umwandeln \pkt{} B~Prozentsatz gesucht \pkt{} C~Veränderung gesucht \pkt{} D~Aussagen prüfen \pkt{} E~Flächenanteil gesucht}
 
@@ -168,13 +181,13 @@ An einer Tankstelle wurde eine Woche lang täglich um 18 Uhr der Benzinpreis not
 \begin{pfaufg}{nach~P10\\’25~\pkt{}~4b}{8.}{}
 Eine Rampe für Rollstühle darf höchstens 8 \% Steigung haben, damit man sie ohne fremde Hilfe hinauffahren kann. Vervollständige den Satz: „Bei 8 \% Steigung steigt man auf \linie{25mm} Metern waagerechter Strecke um \linie{25mm} Meter an.“ Am Hauseingang soll eine Rampe eine 14 cm hohe Stufe überwinden; waagerecht ist sie 130 cm lang. Frau Yücel meint: „Unsere Rampe wird zu steil, ihre Steigung liegt über 8 \%.“ Überprüfe, ob Frau Yücel recht hat.
 \gzwei{\begin{tikzpicture}[x=0.035cm,y=0.035cm,line width=0.8pt,font=\small]\draw (0,0)--(130,0)--(130,14)--cycle;\draw[line width=0.4pt] (124,0)--(124,6)--(130,6);\node[below] at (65,0){130 cm};\node[right] at (130,7){14 cm};\node[above left] at (65,7){Rampe};\end{tikzpicture}}{\karo{4}}
-\fusshilfe{\gfuss{8}{100 m und 8 m; ja}}
+\fusshilfe{\gfuss{8}{100 m und 8 m; 10,8 \%}}
 \end{pfaufg}
 % 2023-OS-K6b-m1 (Original 2023-OS-K6b, Schwere II, rang 10; herausgelöste Fassung: keine)
 \begin{pfaufg}{nach~P10\\’23~\pkt{}~6b}{9.}{}
 Im Jahr 2022 gab es auf der Erde rund 8,0 Milliarden Menschen. Die Tabelle teilt sie nach dem Alter auf. Eine der beiden folgenden Aussagen widerspricht der Tabelle: „2022 war jeder zweite Mensch auf der Erde im mittleren Alter.“ „2022 war ein Drittel aller Menschen im Kindesalter.“ Kreuze die falsche Aussage an. Formuliere eine berichtigte Aussage, die zur Tabelle passt.
-\gzwei{\begin{tabular}{@{}lr@{}}\hline Altersgruppe & Anzahl in Mrd.\\\hline Kinder (0 bis 14 J.) & 2{,}0\\ Jugendliche (15 bis 24 J.) & 1{,}2\\ mittleres Alter (25 bis 64 J.) & 4{,}0\\ höheres Alter (ab 65 J.) & 0{,}8\\\hline\end{tabular}}{\karo{3}}
-\fusshilfe{\gfuss{9}{falsch; 0,25, ein Viertel aller Menschen}}
+\gzwei{\begin{tabular}{@{}lr@{}}\hline Altersgruppe & Anzahl in Mrd.\\\hline Kinder (0 bis 14 J.) & 2{,}0\\ Jugendliche (15 bis 24 J.) & 1{,}2\\ mittleres Alter (25 bis 64 J.) & 4{,}0\\ höheres Alter (ab 65 J.) & 0{,}8\\\hline\end{tabular}}{\karo{4}}
+\fusshilfe{\gfuss{9}{Aussage 2 falsch (Aussage 1 = 0,5); ein Viertel}}
 \end{pfaufg}
 
 % ===================== Stufe: Prozent aus einer berechneten Fläche =====================

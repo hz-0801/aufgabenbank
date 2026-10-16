@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -103,37 +116,31 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Winkel aus Winkeln \pkt{} Lösungen}{PG10-6}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Winkel aus Winkeln \pkt{} Lösungen}{PG10-7}\pfseitevon
 \glkopf{Winkel aus Winkeln}
 \small
-
-\glzwischen{A~Winkel gesucht}
 \begin{pfloesungb}{}
-\lzb{1.}{}{a) 180°; b) 112°}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Im Dreieck sind die Innenwinkel zusammen 180°}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{an einer Geraden ergänzen sich zwei Winkel zu 180°: 180° $-$ 68° = 112° (wie in den Originalen danach).}\\\end{tabular}}
+\lzb{1.}{}{a) 180°; b) 112°}{Im Dreieck sind die Innenwinkel zusammen 180°}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{2.}{}{$\beta$ = 112°}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}$\beta$ & = 180° $-$ 68° = 112°\\\end{tabular}}
+\lzb{2.}{}{$\beta$ = 112°}{$\beta$ = 180° $-$ 68°}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{3.}{}{$\gamma$ = 118°}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}$\gamma$ & = 180° $-$ 62° = 118°\\\end{tabular}}
+\lzb{3.}{}{$\gamma$ = 118°}{$\gamma$ = 180° $-$ 62°}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{4.}{}{= 56,4°}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Im Dreieck ADC ist der Winkel bei D 90°: $\gamma_1$ = 90° $-$ 33,6° = 56,4°}\\\end{tabular}}
-\end{pfloesungb}
-
-\glzwischen{B~Basiswinkel gesucht}
-\begin{pfloesungb}{}
-\lzb{5.}{}{gleichschenklig); $\gamma$ = 50°}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}BC & = 7 cm ($\alpha$ = $\beta$\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{gleichschenklig)}\\$\gamma$ & = 180° $-$ 65° $-$ 65° = 50°\\\end{tabular}}
+\lzb{4.}{}{$\gamma_1$ = 56,4°}{$\gamma_1$ + 33,6° = 90°}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{6.}{}{gleichschenklig mit Basis AB}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Winkel bei A und bei B im Dreieck ABF sind je 45°, daher gleichschenklig mit Basis AB}\\\end{tabular}}
-\end{pfloesungb}
-
-\glzwischen{C~rechten Winkel begründen}
-\begin{pfloesungb}{}
-\lzb{7.}{}{in beiden Dreiecken je 45° bei C: 45° + 45° = 90°}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{ADC und DBC sind gleichschenklig-rechtwinklig (zwei Seiten 3 cm, rechter Winkel bei D), also je 45° an den beiden anderen Ecken.}\\\end{tabular}}
+\lzb{5.}{}{gleichschenklig); $\gamma$ = 50°}{\begin{tabular}[t]{@{}r@{\,}l@{}}BC & = 7 cm ($\alpha$ = $\beta$\\$\gamma$ & = 180° $-$ 65° $-$ 65°\\\end{tabular}}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{8.}{}{$\gamma$ = 90°}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}AF & = FC = DF = 28 cm\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{Dreiecke AFD und CFD gleichschenklig-rechtwinklig}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{je 45° bei D}\\$\gamma$ & = 45° + 45° = 90°\\\end{tabular}}
+\lzb{6.}{}{gleichschenklig, Basis AB}{$\sphericalangle$A = $\sphericalangle$B = 45°}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{7.}{}{in beiden Dreiecken je 45° bei C: 45° + 45° = 90°}{}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{8.}{}{$\gamma$ = 90°}{\begin{tabular}[t]{@{}r@{\,}l@{}}AF & = FC = DF = 28 cm\\$\sphericalangle$ADF & = $\sphericalangle$FDC = 45°\\\end{tabular}}
 \end{pfloesungb}
 \end{document}

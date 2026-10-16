@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -104,30 +117,30 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} mehr]{Volumen und Oberfläche \pkt{} Lösungen}{PG90-7}\pfseitevon
+\pflaufkopf[P10 \pkt{} mehr]{Volumen und Oberfläche \pkt{} Lösungen}{PG90-8}\pfseitevon
 \pfheftkopf{Volumen und Oberfläche}{Lösungen \pkt{} mehr}
 \begin{pfloesungb}{}
-\lzb{1.}{}{64 cm³}{64 cm³}
+\lzb{1.}{}{64 cm³}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{2.}{}{V $\approx$ 1219,2 m³}{V = $\pi$ · 4,2² · 22,0 $\approx$ 1219,2 m³}
+\lzb{2.}{}{V = $\pi$ · 4,2² · 22,0 $\approx$ 1219,2 m³}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{3.}{}{V $\approx$ 272,4 cm³}{V = $\pi$ · 3,4² · 7,5 $\approx$ 272,4 cm³}
+\lzb{3.}{}{V = $\pi$ · 3,4² · 7,5 $\approx$ 272,4 cm³}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{4.}{}{V $\approx$ 240,5 dm³}{V = $\pi$ · 2,7² · 10,5 $\approx$ 240,5 dm³}
+\lzb{4.}{}{V = $\pi$ · 2,7² · 10,5 $\approx$ 240,5 dm³}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{5.}{}{M $\approx$ 355,3 m²}{M = $\pi$ · 5,8 · 19,5 $\approx$ 355,3 m²}
+\lzb{5.}{}{M = $\pi$ · 5,8 · 19,5 $\approx$ 355,3 m²}{}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{6.}{}{V = 504000 cm³}{V = 3360 · 150 = 504000 cm³}
+\lzb{6.}{}{V = 504000 cm³}{V = 3360 · 150}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{7.}{}{nein, Volumen verneunfacht sich: 240,5 l statt 2164,3 l}{nein, Volumen verneunfacht sich: 240,5 l statt 2164,3 l}
+\lzb{7.}{}{nein, V = 2164,3 l}{V = 240,5 l · 9}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{8.}{}{V $\approx$ 696,9 cm³}{V = $\tfrac{4}{3}$ · $\pi$ · 5,5³ $\approx$ 696,9 cm³}
+\lzb{8.}{}{V = $\tfrac{4}{3}$ · $\pi$ · 5,5³ $\approx$ 696,9 cm³}{}
 \end{pfloesungb}
 \end{document}

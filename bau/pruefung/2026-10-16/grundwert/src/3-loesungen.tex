@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -106,26 +119,19 @@
 \pflaufkopf[P10 \pkt{} Prüfung]{Prozentwert und Grundwert \pkt{} Lösungen}{PS20-4}\pfseitevon
 \glkopf{Prozentwert und Grundwert}
 \small
-
-\glzwischen{A~Prozentwert gesucht}
-\noindent{\footnotesize\color{mbgrau}Prozentrechnung in deiner Formelsammlung: S. 18}\par
 \begin{pfloesungb}{}
-\lzb{1.}{}{0,4 · 60 € = 24 €}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}40 \% & = 0,4\\0,4 · 60 € & = 24 €\\\end{tabular}}
-\end{pfloesungb}
-
-\glzwischen{B~neuer Wert gesucht}
-\begin{pfloesungb}{}
-\lzb{2.}{}{4,50 € + 0,45 € = 4,95 €}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}10 \% von 4,50 € & = 0,45 €\\4,50 € + 0,45 € & = 4,95 €\\\end{tabular}}
-\end{pfloesungb}
-
-\glzwischen{C~Grundwert gesucht}
-\begin{pfloesungb}{}
-\lzb{3.}{}{6 Kinder = W; gesucht G (die ganze Klasse)}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{6 Kinder sind ein Teil: W = 6}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{das Ganze fehlt: G gesucht, G = W · $\tfrac{100}{p}$ = 6 · $\tfrac{100}{20}$ = 30}\\\end{tabular}}
+\lzb{1.}{}{0,4 · 60 € = 24 €}{40 \% = 0,4}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{4.}{}{$\tfrac{270 \text{€}}{30}$ · 100 = 900 €}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{270 € sind 30 \%}\\\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{0.97\linewidth}@{}}{$\tfrac{270 \text{€}}{30}$ · 100 = 900 €}\\\end{tabular}}
+\lzb{2.}{}{4,50 € + 0,45 € = 4,95 €}{10 \% von 4,50 € = 0,45 €}
 \end{pfloesungb}
 \begin{pfloesungb}{}
-\lzb{5.}{}{7 € · 4 = 28 €}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{0.34\linewidth}@{\,}>{\raggedright\arraybackslash}p{0.6\linewidth}@{}}7 € sind 25 \% & = ein Viertel\\7 € · 4 & = 28 €\\\end{tabular}}
+\lzb{3.}{}{6 Kinder = W; gesucht G (die ganze Klasse)}{6 Kinder sind ein Teil: W = 6}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{4.}{}{$\tfrac{270 \text{€}}{30}$ · 100 = 900 €}{270 € sind 30 \%}
+\end{pfloesungb}
+\begin{pfloesungb}{}
+\lzb{5.}{}{7 € · 4 = 28 €}{7 € sind 25 \% = ein Viertel}
 \end{pfloesungb}
 \end{document}
