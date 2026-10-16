@@ -116,9 +116,11 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Wahrscheinlichkeit}{PS50-4}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Wahrscheinlichkeit}{PS50-5}\pfseitevon
 \pfheftkopf{Wahrscheinlichkeit}{}
-\pfstufenzeile{A~Ergebnisse aufzählen \pkt{} B~Wahrscheinlichkeit gesucht \pkt{} C~Baum ergänzen \pkt{} D~Pfadregeln anwenden \pkt{} E~ohne Zurücklegen rechnen \pkt{} F~Zufallsgerät entwerfen}
+\pfstufenzeile{Ergebnisse aufzählen \pkt{} Wahrscheinlichkeit gesucht \pkt{} Baum ergänzen \pkt{} Pfadregeln anwenden \pkt{} ohne Zurücklegen rechnen \pkt{} Zufallsgerät entwerfen}
+% Formelsammlung (Tafelwerk-Feld, 16.10. n)
+\par\noindent{\footnotesize\color{mbgrau}Formeln und Werte S. 36: Baumdiagramm, Produktregel, Summenregel}\par\medskip
 
 % ===================== Stufe: Ergebnisse aufzählen =====================
 \gkopfvor{\gbstvor{A}\pfstufekopf{Ergebnisse aufzählen}{\gpunkte[25]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-ergebnisse-aufzahlen) [@thispage /XYZ @xpos @ypos null]}}
@@ -156,19 +158,18 @@ Ein Los gewinnt mit der Wahrscheinlichkeit $\tfrac{3}{8}$. Mit welcher Wahrschei
 \par\fusshilfe{\gfuss{4}{$\tfrac{5}{8}$}}
 \end{pfaufg}
 % 2026-FOR-K6b-m1 (Original 2026-FOR-K6b, Schwere II, rang 1; herausgelöste Fassung: keine)
+% Zweitthema ausgeblendet (Spalten <feld>_einheit, pruefheft-p.md v0.9)
 \begin{pfaufg}{nach~P10\\’26~\pkt{}~6b}{5.}{}
-Zwei Würfel sind mit Zahlen beschriftet. Würfel A trägt 2, 2, 2, 3, 4, 5; Würfel B trägt 1, 3, 3, 4, 5, 6. Erst wird Würfel A geworfen, dann Würfel B. Man achtet nur darauf, ob die Zahl gerade oder ungerade ist. Ergänze die Wahrscheinlichkeiten im Baumdiagramm. Ermittle die Wahrscheinlichkeit, dass beide Würfel eine ungerade Zahl zeigen.
+Zwei Würfel sind mit Zahlen beschriftet. Würfel A trägt 2, 2, 2, 3, 4, 5; Würfel B trägt 1, 3, 3, 4, 5, 6. Erst wird Würfel A geworfen, dann Würfel B. Man achtet nur darauf, ob die Zahl gerade oder ungerade ist. Ergänze die Wahrscheinlichkeiten im Baumdiagramm.
 \par\smallskip\noindent\baumzwei{\text{gerade}/\tfrac{4}{6},\text{ungerade}/}{\text{gerade}/\tfrac{2}{6},\text{ungerade}/}{\text{gerade}/,\text{ungerade}/}\par
-\karo{2}
-\par\smallskip\par\noindent \hfill P(beide ungerade): \linie{30mm}\hphantom{\,cm²}
-\fusshilfe{\gfuss{5}{gerade 2/6, ungerade $\tfrac{4}{6}$; 0,222}}
+\fusshilfe{\gfuss{5}{gerade 2/6, ungerade $\tfrac{4}{6}$}}
 \end{pfaufg}
 % 2024-OS-K5b-m1 (Original 2024-OS-K5b, Schwere II, rang 2; herausgelöste Fassung: keine)
+% Zweitthema ausgeblendet (Spalten <feld>_einheit, pruefheft-p.md v0.9)
 \begin{pfaufg}{nach~P10\\’24~\pkt{}~5b}{6.}{}
-In Familie Siebert helfen alle 6 Kinder im Haushalt. Jede Aufgabe steht auf einem Zettel: Müll rausbringen, Spülmaschine ausräumen, Staubsaugen, Einkaufen, Fenster putzen, Joker. Wer den Joker hat, hat die Woche frei. Zu Wochenbeginn zieht jedes Kind zufällig genau einen Zettel. Benjamin ist der Jüngste und zieht jede Woche als Erster aus allen sechs Zetteln. Ergänze die Wahrscheinlichkeiten im Baumdiagramm. Benjamin zieht in beiden Wochen den Joker: Weise nach, dass das die Wahrscheinlichkeit $\tfrac{1}{36}$ hat.
+In Familie Siebert helfen alle 6 Kinder im Haushalt. Jede Aufgabe steht auf einem Zettel: Müll rausbringen, Spülmaschine ausräumen, Staubsaugen, Einkaufen, Fenster putzen, Joker. Wer den Joker hat, hat die Woche frei. Zu Wochenbeginn zieht jedes Kind zufällig genau einen Zettel. Benjamin ist der Jüngste und zieht jede Woche als Erster aus allen sechs Zetteln. Ergänze die Wahrscheinlichkeiten im Baumdiagramm.
 \par\smallskip\noindent\baumzwei{\text{kein Joker}/,\text{Joker}/}{\text{kein Joker}/\tfrac{5}{6},\text{Joker}/}{\text{kein Joker}/,\text{Joker}/}\par
-\karo{2}
-\fusshilfe{\gfuss{6}{kein Joker 5/6, Joker $\tfrac{1}{6}$; 0,028}}
+\fusshilfe{\gfuss{6}{kein Joker 5/6, Joker $\tfrac{1}{6}$}}
 \end{pfaufg}
 
 % ===================== Stufe: Pfadregel =====================
@@ -181,8 +182,20 @@ Ein Glücksrad mit roten und blauen Feldern wird zweimal gedreht. Rechnest du mi
 \par\noindent\makebox[\mbpfteil][l]{\textbf{b)}}einmal rot und einmal blau, egal in welcher Folge\hfill\linie{30mm}
 \par\fusshilfe{\gfuss{7}{a) mal; b) je Pfad mal, dann plus}}
 \end{pfaufg}
+% 2026-FOR-K6b-teil (Original 2026-FOR-K6b, Schwere I, rang 1; herausgelöste Fassung: 2026-FOR-K6b-h1)
+\begin{pfaufg}{nach~P10\\’26~\pkt{}~6b}{8.}{}
+Ermittle die Wahrscheinlichkeit, dass beide Würfel eine ungerade Zahl zeigen.
+\karo{2}
+\fusshilfe{\gfuss{8}{0,222}}
+\end{pfaufg}
+% 2024-OS-K5b-teil (Original 2024-OS-K5b, Schwere I, rang 2; herausgelöste Fassung: 2024-OS-K5b-h1)
+\begin{pfaufg}{nach~P10\\’24~\pkt{}~5b}{9.}{}
+Benjamin zieht in beiden Wochen den Joker: Weise nach, dass das die Wahrscheinlichkeit $\tfrac{1}{36}$ hat.
+\karo{2}
+\fusshilfe{\gfuss{9}{$\tfrac{1}{36}$}}
+\end{pfaufg}
 % Teile eines Originals (2025-OS-K3): 2025-OS-K3b-m1, 2025-OS-K3c-m1
-\begin{pfaufg}{nach~P10\\’25~\pkt{}~3}{8.}{}
+\begin{pfaufg}{nach~P10\\’25~\pkt{}~3}{10.}{}
 Bei einem Spiel werden zwei Scheiben gleichzeitig gedreht. Bleiben sie stehen, liest man an den Pfeilen erst die Ziffer der linken, dann die der rechten Scheibe ab. Im Bild entsteht so die Zahl 24. Alle Sektoren sind gleich groß.
 % 2025-OS-K3b-m1 (Original 2025-OS-K3b, Schwere II, rang 1; herausgelöste Fassung: keine)
 \begin{gbteil}{a)}{}{}
@@ -198,56 +211,57 @@ Bestimme die Wahrscheinlichkeit, eine 24 oder eine 33 zu drehen.
 \karo{2}
 \par\smallskip\par\noindent \hfill P(24 oder 33): \linie{30mm}\hphantom{\,cm²}
 \end{gbteil}
-\fusshilfe{\gfuss{8}{a)~0,125; falsch; b)~18,75 \%}}
+\fusshilfe{\gfuss{10}{a)~0,125; falsch; b)~18,75 \%}}
 \end{pfaufg}
 % 2026-FOR-K6c-m1 (Original 2026-FOR-K6c, Schwere II, rang 3; herausgelöste Fassung: 2026-FOR-K6c-h1)
-\begin{pfaufg}{nach~P10\\’26~\pkt{}~6c}{9.}{FOR}
+\begin{pfaufg}{nach~P10\\’26~\pkt{}~6c}{11.}{FOR}
 Zwei Würfel sind mit Zahlen beschriftet. Würfel A trägt 2, 2, 2, 3, 4, 5; Würfel B trägt 1, 3, 3, 4, 5, 6. Erst wird Würfel A geworfen, dann Würfel B. Bestimme die Wahrscheinlichkeit für das Ereignis E: „Nicht beide Würfel zeigen eine gerade Zahl.“
 \karo{2}
 \par\smallskip\par\noindent \hfill P(E): \linie{30mm}\hphantom{\,cm²}
-\fusshilfe{\gfuss{9}{Gegenereignis „beide gerade“; 0,778}}
+\fusshilfe{\gfuss{11}{Gegenereignis „beide gerade“; 0,778}}
 \end{pfaufg}
 
 % ===================== Stufe: ohne Zurücklegen =====================
 \Needspace*{0.16\textheight}\gbstvor{E}\pfstufekopf{ohne Zurücklegen rechnen}{\gpunkte[24]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-ohne-zurucklegen-rechnen) [@thispage /XYZ @xpos @ypos null]}
 % Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
-\begin{pfaufg}{}{10.}{}
+\begin{pfaufg}{}{12.}{}
 In einer Dose liegen 5 Kugeln, 2 davon rot. Du ziehst eine blaue und legst sie nicht zurück. Was liegt jetzt noch in der Dose?
 \par\smallskip
 \par\noindent nach dem Ziehen\hfill\hfill Kugeln: \linie{30mm}\par\noindent\hfill davon rote: \linie{30mm}
-\par\fusshilfe{\gfuss{10}{4 Kugeln, davon 2 rote}}
+\par\fusshilfe{\gfuss{12}{4 Kugeln, davon 2 rote}}
 \end{pfaufg}
 % 2024-OS-K5c-m1 (Original 2024-OS-K5c, Schwere II, rang 1; herausgelöste Fassung: keine)
-\begin{pfaufg}{nach~P10\\’24~\pkt{}~5c}{11.}{FOR}
+\begin{pfaufg}{nach~P10\\’24~\pkt{}~5c}{13.}{FOR}
 In Familie Siebert helfen alle 6 Kinder im Haushalt. Jede Aufgabe steht auf einem Zettel: Müll rausbringen, Spülmaschine ausräumen, Staubsaugen, Einkaufen, Fenster putzen, Joker. Wer den Joker hat, hat die Woche frei. Zu Wochenbeginn zieht jedes Kind zufällig genau einen Zettel. Klara zieht immer als Zweite, direkt nach Benjamin. Ermittle, mit welcher Wahrscheinlichkeit Klara in Woche 1 den Joker bekommt.
 \karo{2}
 \par\smallskip\par\noindent \hfill P(Joker): \linie{30mm}\hphantom{\,cm²}
-\fusshilfe{\gfuss{11}{$\tfrac{5}{6}$; 0,167}}
+\fusshilfe{\gfuss{13}{$\tfrac{5}{6}$; 0,167}}
 \end{pfaufg}
 
 % ===================== Stufe: Zufallsgerät entwerfen =====================
 \Needspace*{0.16\textheight}\gbstvor{F}\pfstufekopf{Zufallsgerät entwerfen}{\gpunkte[26 25]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-zufallsgerat-entwerfen) [@thispage /XYZ @xpos @ypos null]}
 % Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
-\begin{pfaufg}{}{12.}{}
+\begin{pfaufg}{}{14.}{}
 Zwei Glücksräder mit je 4 gleich großen Feldern werden gedreht. Die Wahrscheinlichkeit, dass beide auf Rot stehen bleiben, soll $\tfrac{3}{16}$ sein. Wie viele rote Felder bekommt jedes Rad?
 \par\smallskip
 \par\noindent rote Felder\hfill\hfill erstes Rad: \linie{30mm}\par\noindent\hfill zweites Rad: \linie{30mm}
-\par\fusshilfe{\gfuss{12}{3 und 1}}
+\par\fusshilfe{\gfuss{14}{3 und 1}}
 \end{pfaufg}
 % 2025-OS-K3d-m1 (Original 2025-OS-K3d, Schwere III, rang 1; herausgelöste Fassung: keine)
-\begin{pfaufg}{nach~P10\\’25~\pkt{}~3d}{13.}{FOR}
+\begin{pfaufg}{nach~P10\\’25~\pkt{}~3d}{15.}{FOR}
 Bei einem Spiel werden zwei Scheiben gleichzeitig gedreht. Bleiben sie stehen, liest man an den Pfeilen erst die Ziffer der linken, dann die der rechten Scheibe ab. Im Bild entsteht so die Zahl 24. Alle Sektoren sind gleich groß. Trag in die beiden leeren Scheiben Ziffern so ein, dass man mit 12,5 \% Wahrscheinlichkeit eine 42 dreht. Begründe deine Einträge mit einer Rechnung.
 \par\smallskip\noindent\begin{tikzpicture}[line width=0.7pt,font=\small]\draw (0,0) circle (0.9);\draw (0.64,0.64) -- (-0.64,-0.64);\draw (-0.64,0.64) -- (0.64,-0.64);\draw[-{Stealth},line width=1pt] (0,1.45) -- (0,0.95);\draw (2.5,0) circle (0.9);\draw (3.14,0.64) -- (1.8599999999999999,-0.64);\draw (1.8599999999999999,0.64) -- (3.14,-0.64);\draw[-{Stealth},line width=1pt] (2.5,1.45) -- (2.5,0.95);\end{tikzpicture}\par
 \karo{2}
-\fusshilfe{\gfuss{13}{z. B. links 4, 4, 2, 3 und rechts 2, 3, 4, 3; 12,5 \%}}
+\fusshilfe{\gfuss{15}{z. B. links 4, 4, 2, 3 und rechts 2, 3, 4, 3; 12,5 \%}}
 \end{pfaufg}
 % 2026-FOR-K6d-m1 (Original 2026-FOR-K6d, Schwere III, rang 2; herausgelöste Fassung: keine)
-\begin{pfaufg}{nach~P10\\’26~\pkt{}~6d}{14.}{FOR}
+\begin{pfaufg}{nach~P10\\’26~\pkt{}~6d}{16.}{FOR}
 Zwei Würfel sind mit Zahlen beschriftet. Würfel A trägt 2, 2, 2, 3, 4, 5; Würfel B trägt 1, 3, 3, 4, 5, 6. Die Abbildung zeigt ihre Netze. Auf Würfel B wird genau eine Zahl geändert. Dann werden beide Würfel nacheinander geworfen. Beschrifte das leere Netz von Würfel B (neu) so, dass die Summe 3 mit der Wahrscheinlichkeit $\tfrac{1}{6}$ fällt. Zeige mit einer Rechnung, dass deine Beschriftung passt.
 \par\smallskip\noindent\begin{tikzpicture}[line width=0.7pt,font=\small]\node[above] at (1.1,1.1) {Würfel A};\draw (0.55,0.55) rectangle (1.1,1.1);\node at (0.8250000000000001,0.8250000000000001) {2};\draw (0.0,0.0) rectangle (0.55,0.55);\node at (0.275,0.275) {3};\draw (0.55,0.0) rectangle (1.1,0.55);\node at (0.8250000000000001,0.275) {2};\draw (1.1,0.0) rectangle (1.6500000000000001,0.55);\node at (1.375,0.275) {4};\draw (1.6500000000000001,0.0) rectangle (2.2,0.55);\node at (1.9250000000000003,0.275) {2};\draw (0.55,-0.55) rectangle (1.1,0.0);\node at (0.8250000000000001,-0.275) {5};\node[above] at (3.9,1.1) {Würfel B (neu)};\draw (3.3499999999999996,0.55) rectangle (3.9,1.1);\draw (2.8,0.0) rectangle (3.3499999999999996,0.55);\draw (3.3499999999999996,0.0) rectangle (3.9,0.55);\draw (3.9,0.0) rectangle (4.45,0.55);\draw (4.45,0.0) rectangle (5.0,0.55);\draw (3.3499999999999996,-0.55) rectangle (3.9,0.0);\end{tikzpicture}\par
 \karo{2}
-\fusshilfe{\gfuss{14}{z. B. B neu 1, 1, 3, 4, 5, 6 (eine 3 durch 1 ersetzt); 0,167}}
+\fusshilfe{\gfuss{16}{z. B. B neu 1, 1, 3, 4, 5, 6 (eine 3 durch 1 ersetzt); 0,167}}
 \end{pfaufg}
 
+\gkern{Ergebnisse aufzählen: jede Möglichkeit der ersten Stufe mit jeder der zweiten.\par\smallskip\noindent Eine Stufe: Wahrscheinlichkeit = günstige : mögliche Ergebnisse; die Äste an einem Punkt ergeben zusammen 1.\par\smallskip\noindent Pfadregel: längs eines Pfades malnehmen, mehrere Pfade addieren; „nicht beide …“: 1 $-$ Wahrscheinlichkeit des Gegenteils.\par\smallskip\noindent Ohne Zurücklegen: auf der zweiten Stufe ist einer weniger im Topf – Zähler und Nenner ändern sich.}
 \gmehr{22}
 \end{document}

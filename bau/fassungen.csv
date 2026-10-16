@@ -109,3 +109,9 @@ PS50;4;239403a8f55c;2026-10-16;wahrscheinlichkeit;Baumdiagramm und Pfadregeln;ba
 PZ10;2;99e29035e94d;2026-10-16;zahlen;Brüche, Zahlen und Potenzen;bau/pruefung/2026-10-16/brueche;pruefheft.py v0.9;
 PZ20;2;a11c6c6b9b2c;2026-10-16;zahlen;Größen und Dreisatz;bau/pruefung/2026-10-16/dreisatz;pruefheft.py v0.9;
 PZ30;2;4bf6bd603b51;2026-10-16;zahlen;Terme und Gleichungen;bau/pruefung/2026-10-16/terme;pruefheft.py v0.9;
+PA20;4;953abcb008f7;2026-10-16;gleichungssysteme;Gleichungssystem im Sachzusammenhang;bau/pruefung/2026-10-16/gleichungssysteme;pruefheft.py v0.9;
+PA30;7;665766d4df59;2026-10-16;quadratische;Parabel: Scheitelpunkt und Skizze;bau/pruefung/2026-10-16/parabel;pruefheft.py v0.9;
+PS20;6;d58b040ebdd1;2026-10-16;prozent;Grundwert;bau/pruefung/2026-10-16/grundwert;pruefheft.py v0.9;
+PS30;6;9d43d73a741b;2026-10-16;daten;Kenngrößen;bau/pruefung/2026-10-16/kenngroessen;pruefheft.py v0.9;
+PS50;5;7b33622ea595;2026-10-16;wahrscheinlichkeit;Baumdiagramm und Pfadregeln;bau/pruefung/2026-10-16/wahrscheinlichkeit;pruefheft.py v0.9;
+PZ20;3;d4051abc652f;2026-10-16;zahlen;Größen und Dreisatz;bau/pruefung/2026-10-16/dreisatz;pruefheft.py v0.9;

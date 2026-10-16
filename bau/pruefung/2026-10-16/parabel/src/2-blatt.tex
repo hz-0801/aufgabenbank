@@ -113,12 +113,46 @@
 % Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
 \newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
 \newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\usepackage{graphicx}\graphicspath{{/home/claude/aufgabenbank-privat/}}
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Parabel}{PA30-6}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Parabel}{PA30-7}\pfseitevon
 \pfheftkopf{Parabel}{}
-\pfstufenzeile{A~Parabel zeichnen \pkt{} B~Scheitelpunkt angeben \pkt{} C~Punktprobe \pkt{} D~Scheitelpunktform aufstellen \pkt{} E~Lage begründen}
+\pfstufenzeile{Parabel zeichnen \pkt{} Scheitelpunkt angeben \pkt{} Punktprobe \pkt{} Scheitelpunktform aufstellen \pkt{} Lage begründen}
+% Formelkasten (15.10. t, 16.10. a)
+{\small% duden-s30-scheitelpunktform – Scheitelpunktform (Duden S. 30), aus duden-sek1.md
+\providecommand\fsf[1]{\leavevmode\setbox0\hbox{\everymath{\displaystyle}#1}\ifdim\wd0>\linewidth\setbox0\hbox{\resizebox{\linewidth}{!}{\box0}}\fi
+ \vrule height\dimexpr\ht0+1.5pt\relax depth\dimexpr\dp0+1.5pt\relax width0pt\box0}
+\providecommand\fstab[1]{\leavevmode\setbox0\hbox{#1}\ifdim\wd0>\linewidth\resizebox{\linewidth}{!}{\box0}\else\box0\fi}
+\providecommand\fssic[1]{{\color{red!65!black}\footnotesize[sic?#1]}}
+\providecommand\fsunl[1]{{\color{red!65!black}\footnotesize[unleserlich#1]}}
+\providecommand\fsfigur[1]{{\footnotesize\color{mbgrau}\itshape Figur im Original: #1\par}}
+\providecommand\fsbild[1]{\leavevmode\hfill#1\par}
+\providecommand\fsbildbreite{4.6cm}
+\providecommand\fszeilebild[6]{\par\noindent\begin{minipage}[t]{\dimexpr\fsbreite-#6-6pt}\vspace{0pt}\renewcommand\fsbreite{\linewidth}\fszeile{#1}{#2}{#3}{}\end{minipage}\hfill
+ \begin{minipage}[t]{#6}\vspace{3pt}\includegraphics[width=#6]{#5}\end{minipage}\par}
+\usetikzlibrary{angles}\tikzset{fsfig/.style={line width=0.7pt,baseline=(current bounding box.north),font=\small},
+ fswinkel/.style={draw=mbgrau,line width=0.5pt,angle radius=5.5mm,angle eccentricity=0.62,pic text options={font=\footnotesize}},
+ fsrecht/.style={draw=mbgrau,line width=0.5pt,angle radius=2.6mm,angle eccentricity=0.5,pic text={\tiny$\bullet$}},
+ fslinie/.style={font=\scriptsize,sloped,inner sep=1.5pt},fsflaeche/.style={fill=mbgrau,fill opacity=0.18,draw=none}}
+\providecommand\fspkt[1]{\fill #1 circle (1.4pt);}
+\providecommand\fshinweis[1]{{\footnotesize\color{mbgrau}#1\par}}
+\providecommand\fspunkt{\ensuremath{\scriptstyle\blacksquare}\,}
+\providecommand\fsfuenf{\ensuremath{\rlap{$||||$}\diagup}}
+\providecommand\fsquelle[1]{\hfill{\footnotesize\color{mbgrau}#1}}
+\providecommand\fsbreite{\linewidth}
+\providecommand\fszeile[4]{\par\noindent{\renewcommand\arraystretch{1.25}\setlength\lineskip{4pt}\setlength\lineskiplimit{3pt}%
+ \ifblank{#2}%
+ {\begin{tabular}{>{\columncolor{mbkasten}\raggedright\hspace{0pt}}p{\dimexpr0.25\fsbreite-2\tabcolsep}>{\raggedright\arraybackslash}p{\dimexpr0.75\fsbreite-2\tabcolsep}}%
+  #1 & #3\ifblank{#4}{}{\\ & #4}\end{tabular}}%
+ {\begin{tabular}{>{\columncolor{mbkasten}\raggedright\hspace{0pt}}p{\dimexpr0.25\fsbreite-2\tabcolsep}>{\raggedright}p{\dimexpr0.33\fsbreite-2\tabcolsep}>{\raggedright\arraybackslash}p{\dimexpr0.42\fsbreite-2\tabcolsep}}%
+  #1 & #2 & #3\ifblank{#4}{}{\\ & \multicolumn{2}{>{\raggedright\arraybackslash}p{\dimexpr0.75\fsbreite-2\tabcolsep}}{#4}}\end{tabular}}}\par}
+\providecommand\fskastentitel[1]{\par\noindent\textbf{#1}\par}
+\uebersichtskasten{\renewcommand\fsbreite{\linewidth}
+\fszeile{\textbf{Scheitelpunktform}}{kann über die quadratische Ergänzung ermittelt werden (\ensuremath{\nearrow} S. 14)}{\fsf{$y = (x+d)^2 + e$ mit $S(-d; e)$ bzw. $y = (x+d)^2$ mit $S(-d; 0)$}}{}
+}
+}\vspace{-4pt}\par\noindent{\footnotesize\color{mbgrau}Formeln und Werte S.~30}\par\medskip
 
 % ===================== Stufe: Wertetabelle oder Skizze =====================
 \gkopfvor{\gbstvor{A}\pfstufekopf{Parabel zeichnen}{\gpunkte[26 24]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-parabel-zeichnen) [@thispage /XYZ @xpos @ypos null]}}
@@ -130,13 +164,14 @@ Kreuze die Wertetabelle an, die zu $y = 2x^2$ gehört.
 \fusshilfe{\gfuss{1}{Tabelle 1}}
 \end{pfaufg}
 % 2024-OS-K3b-m1 (Original 2024-OS-K3b, Schwere I, rang 4; herausgelöste Fassung: keine)
+% Zweitthema ausgeblendet (Spalten <feld>_einheit, pruefheft-p.md v0.9)
 \begin{pfaufg}{nach~P10\\’24~\pkt{}~3b}{2.}{}
-\gtextks{\begin{ksys}[xmin=-4,xmax=4,ymin=-6,ymax=6,karo=0.5]\end{ksys}}{Die Gerade $f$ ist der Graph von $f(x) = 2x + 3$. Die Parabel $p$ ist der Graph von $p(x) = x^2 - 5$. Skizziere die Parabel $p$ in das Koordinatensystem. Gib ihren Scheitelpunkt an: $S(\ \ |\ \ )$.}
-\fusshilfe{\gfuss{2}{S(0|$-$5)}}
+\gtextks{\begin{ksys}[xmin=-4,xmax=4,ymin=-6,ymax=6,karo=0.5]\end{ksys}}{Die Parabel $p$ ist der Graph von $p(x) = x^2 - 5$. Skizziere die Parabel $p$ in das Koordinatensystem.}
+\fusshilfe{\gfuss{2}{Punkte (±1|$-$4), (±2|$-$1), (±3|4)}}
 \end{pfaufg}
 
 % ===================== Stufe: Scheitelpunkt ablesen =====================
-\gkopfvor{\gbstvor{B}\pfstufekopf{Scheitelpunkt angeben}{\gpunkte[26 25 24 23 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-scheitelpunkt-angeben) [@thispage /XYZ @xpos @ypos null]}}
+\gkopfvor{\gbstvor{B}\pfstufekopf{Scheitelpunkt angeben}{\gpunkte[26 25 24 23 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-scheitelpunkt-angeben) [@thispage /XYZ @xpos @ypos null]}\gbegriff{\textbf{Scheitelpunkt:} der tiefste Punkt der Parabel, bei einer nach unten geöffneten der höchste.}}
 % kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
 % 2026-FOR-K5c-m1 (Original 2026-FOR-K5c, Schwere I, rang 2; herausgelöste Fassung: keine)
 \begin{pfaufg}{nach~P10\\’26~\pkt{}~5c}{3.}{}
@@ -144,19 +179,36 @@ Die verschobene Normalparabel $p$ ist der Graph von $p(x) = (x-3)^2 - 1$ und ist
 \gzwei{\begin{ksys}[xmin=-1,xmax=6,ymin=-2,ymax=6,karo=0.5]\parabel{1}{3}{-1}{p}\end{ksys}}{\karo{3}}
 \fusshilfe{\gfuss{3}{S(3|$-$1)}}
 \end{pfaufg}
+% 2025-OS-K5b-teil (Original 2025-OS-K5b, Schwere I, rang 3; herausgelöste Fassung: 2025-OS-K5b-h1)
+\begin{pfaufg}{nach~P10\\’25~\pkt{}~5b}{4.}{}
+Die quadratische Funktion $p$ hat die Gleichung $p(x) = x^2 - 8x + 13$; ihr Graph ist gezeichnet. Gib den Scheitelpunkt $S$ von $p$ an: $S(\ \ |\ \ )$.
+\gzwei{\begin{ksys}[xmin=-1,xmax=8,ymin=-4,ymax=6,karo=0.5]\parabel{1}{4}{-3}{p}\end{ksys}}{\vspace{2mm}\linie{30mm}}
+\fusshilfe{\gfuss{4}{S(4|$-$3)}}
+\end{pfaufg}
+% 2024-OS-K3b-teil (Original 2024-OS-K3b, Schwere I, rang 4; herausgelöste Fassung: 2024-OS-K3b-h1)
+\begin{pfaufg}{nach~P10\\’24~\pkt{}~3b}{5.}{}
+Die Parabel $p$ ist der Graph von $p(x) = x^2 - 5$. Gib ihren Scheitelpunkt an: $S(\ \ |\ \ )$.
+\hfill\linie{30mm}
+\fusshilfe{\gfuss{5}{S(0|$-$5)}}
+\end{pfaufg}
 % 2022-OS-K3b-m1 (Original 2022-OS-K3b, Schwere I, rang 5; herausgelöste Fassung: keine)
-\begin{pfaufg}{nach~P10\\’22~\pkt{}~3b}{4.}{}
+\begin{pfaufg}{nach~P10\\’22~\pkt{}~3b}{6.}{}
 Die lineare Funktion $f$ hat die Gleichung $f(x) = -2x + 5$. Die verschobene Normalparabel $p$ hat die Gleichung $p(x) = (x-4)^2 - 6$. Gib den Scheitelpunkt $S$ von $p$ an.
 \hfill\linie{30mm}
-\fusshilfe{\gfuss{4}{S(4|$-$6)}}
+\fusshilfe{\gfuss{6}{S(4|$-$6)}}
+\end{pfaufg}
+% 2023-OS-K4b-teil (Original 2023-OS-K4b, Schwere I, rang 6; herausgelöste Fassung: 2023-OS-K4b-h1)
+\begin{pfaufg}{nach~P10\\’23~\pkt{}~4b}{7.}{FOR}
+Gib den Scheitelpunkt der gezeichneten Normalparabel $p$ an: $S(\ \ |\ \ )$.
+\gzwei{\begin{ksys}[xmin=-5,xmax=5,ymin=-4,ymax=6,karo=0.5]\parabel{-1}{1}{5}{p}\end{ksys}}{\vspace{2mm}\linie{30mm}}
+\fusshilfe{\gfuss{7}{S(1|5)}}
 \end{pfaufg}
 
 % ===================== Stufe: Punkt auf der Parabel prüfen =====================
-% Formel-Frage (einmal je Blatt, erste Stufe mit Formel; pruefung.md § 5)
-\gkopfvor{\gbstvor{C}\pfstufekopf{Punktprobe}{\gpunkte[24]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-punktprobe) [@thispage /XYZ @xpos @ypos null]}\gfrage{Wo steht die Formel in deiner Formelsammlung? Seite~\linie{12mm}}}
+\gkopfvor{\gbstvor{C}\pfstufekopf{Punktprobe}{\gpunkte[24]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-punktprobe) [@thispage /XYZ @xpos @ypos null]}}
 % kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
 % Teile eines Originals (2020-OS-K3): 2020-OS-K3b-m1, 2020-OS-K3c-m1
-\begin{pfaufg}{nach~P10\\’20~\pkt{}~3}{5.}{}
+\begin{pfaufg}{nach~P10\\’20~\pkt{}~3}{8.}{}
 Die Parabel zu $f$ mit $y = (x+3)^2 - 5$ ist im Koordinatensystem gezeichnet.
 % 2020-OS-K3b-m1 (Original 2020-OS-K3b, Schwere I, rang 10; herausgelöste Fassung: keine)
 \begin{gbteil}{a)}{}{}
@@ -171,59 +223,62 @@ Der Punkt $A(2\,|\,y)$ liegt auf dem Graphen von $f$ mit $y = (x+3)^2 - 5$. Bere
 \karo{2}
 \par\smallskip\par\noindent \hfill y: \linie{30mm}\hphantom{\,cm²}
 \end{gbteil}
-\fusshilfe{\gfuss{5}{a)~$D(-2{,}5\,|\,-4{,}5)$; b)~20}}
+\fusshilfe{\gfuss{8}{a)~$D(-2{,}5\,|\,-4{,}5)$; b)~20}}
 \end{pfaufg}
 % 2018-OS-K5a-m1 (Original 2018-OS-K5a, Schwere II, rang 17; herausgelöste Fassung: keine)
-\begin{pfaufg}{nach~P10\\’18~\pkt{}~5a}{6.}{}
+\begin{pfaufg}{nach~P10\\’18~\pkt{}~5a}{9.}{}
 Im Koordinatensystem ist die Parabel $p$ mit $p(x) = x^2 - 6x + 6$ gezeichnet. Entscheide für jede Aussage, ob sie wahr oder falsch ist:
 \gzwei{\begin{ksys}[xmin=-3,xmax=7,ymin=-4,ymax=7,karo=0.5]\parabel{1}{3}{-3}{p}\end{ksys}}{\vspace{1mm}\gwahrfalsch{1}{Der Punkt $(5\,|\,1)$ liegt auf $p$.}\gwahrfalsch{2}{$p$ ist die Normalparabel, um 3 nach rechts und um 3 nach unten verschoben.}\gwahrfalsch{3}{$p$ schneidet die y-Achse im Punkt $(6\,|\,0)$.}}
-\fusshilfe{\gfuss{6}{1; Aussage 2 wahr, Aussage 3 falsch (y-Achse bei (0|6))}}
+\fusshilfe{\gfuss{9}{1; Aussage 2 wahr, Aussage 3 falsch (y-Achse bei (0|6))}}
 \end{pfaufg}
 % 2014-OS-K7a-m1 (Original 2014-OS-K7a, Schwere II, rang 21; herausgelöste Fassung: keine)
-\begin{pfaufg}{nach~P10\\’14~\pkt{}~7a}{7.}{FOR}
+\begin{pfaufg}{nach~P10\\’14~\pkt{}~7a}{10.}{FOR}
 Im Koordinatensystem sind die Parabel $p$ mit $p(x) = -x^2$ und die Gerade $g$ mit $g(x) = 3x - 4$ gezeichnet. Untersuche mit einer Rechnung, ob $S(-4\,|\,-16)$ ein gemeinsamer Punkt von $p$ und $g$ ist.
 \gzwei{\begin{ksys}[xmin=-6,xmax=6,ymin=-6,ymax=6,karo=0.5]\parabel{-1}{0}{0}{p}\gerade[2.5]{3}{-4}{g}\end{ksys}}{\karo{4}}
-\fusshilfe{\gfuss{7}{$-$16; S auf beiden Graphen}}
+\fusshilfe{\gfuss{10}{$-$16; S auf beiden Graphen}}
 \end{pfaufg}
 
 % ===================== Stufe: Scheitelpunktform angeben =====================
-\Needspace*{0.16\textheight}\gbstvor{D}\pfstufekopf{Scheitelpunktform aufstellen}{\gpunkte[25 23]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-scheitelpunktform-aufstellen) [@thispage /XYZ @xpos @ypos null]}
+\Needspace*{0.16\textheight}\gbstvor{D}\pfstufekopf{Scheitelpunktform aufstellen}{\gpunkte[25 23]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-scheitelpunktform-aufstellen) [@thispage /XYZ @xpos @ypos null]}\gbegriff{\textbf{Scheitelpunktform:} y = (x + d)² + e – an ihr liest du den Scheitelpunkt S($-$d | e) ab.}
 % Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
-\begin{pfaufg}{}{8.}{}
+\begin{pfaufg}{}{11.}{}
 Eine nach oben geöffnete Normalparabel wird verschoben. Schreib ihre Gleichung in Scheitelpunktform.
 \par\smallskip
 \par\noindent 2 nach links und 1 nach oben\hfill\linie{30mm}
-\par\fusshilfe{\gfuss{8}{$y = (x + 2)^2 + 1$}}
+\par\fusshilfe{\gfuss{11}{$y = (x + 2)^2 + 1$}}
 \end{pfaufg}
 % 2025-OS-K5b-m1 (Original 2025-OS-K5b, Schwere I, rang 3; herausgelöste Fassung: keine)
-\begin{pfaufg}{nach~P10\\’25~\pkt{}~5b}{9.}{}
-Die quadratische Funktion $p$ hat die Gleichung $p(x) = x^2 - 8x + 13$. Ihr Graph ist im Koordinatensystem gezeichnet. Gib den Scheitelpunkt $S$ von $p$ an: $S(\ \ |\ \ )$. Schreib die Gleichung von $p$ in Scheitelpunktform: $p(x) = \ldots$
-\gzwei{\begin{ksys}[xmin=-1,xmax=8,ymin=-4,ymax=6,karo=0.5]\parabel{1}{4}{-3}{p}\end{ksys}}{\karo{4}}
-\fusshilfe{\gfuss{9}{S(4|$-$3); (x $-$ 4)² $-$ 3}}
+% Zweitthema ausgeblendet (Spalten <feld>_einheit, pruefheft-p.md v0.9)
+\begin{pfaufg}{nach~P10\\’25~\pkt{}~5b}{12.}{}
+Die quadratische Funktion $p$ hat die Gleichung $p(x) = x^2 - 8x + 13$. Ihr Graph ist im Koordinatensystem gezeichnet. Schreib die Gleichung von $p$ in Scheitelpunktform: $p(x) = \ldots$
+\gzwei{\begin{ksys}[xmin=-1,xmax=8,ymin=-4,ymax=6,karo=0.5]\parabel{1}{4}{-3}{p}\end{ksys}}{\karo{3}}
+\fusshilfe{\gfuss{12}{(x $-$ 4)² $-$ 3}}
 \end{pfaufg}
 % 2023-OS-K4b-m1 (Original 2023-OS-K4b, Schwere II, rang 6; herausgelöste Fassung: keine)
-\begin{pfaufg}{nach~P10\\’23~\pkt{}~4b}{10.}{FOR}
-Gib den Scheitelpunkt der gezeichneten Normalparabel $p$ an: $S(\ \ |\ \ )$. Schreib eine Gleichung von $p$ in Scheitelpunktform.
-\gzwei{\begin{ksys}[xmin=-5,xmax=5,ymin=-4,ymax=6,karo=0.5]\parabel{-1}{1}{5}{p}\end{ksys}}{\karo{4}}
-\fusshilfe{\gfuss{10}{S(1|5); $-$(x $-$ 1)² + 5}}
+% Zweitthema ausgeblendet (Spalten <feld>_einheit, pruefheft-p.md v0.9)
+\begin{pfaufg}{nach~P10\\’23~\pkt{}~4b}{13.}{FOR}
+Schreib eine Gleichung der gezeichneten Normalparabel $p$ in Scheitelpunktform.
+\gzwei{\begin{ksys}[xmin=-5,xmax=5,ymin=-4,ymax=6,karo=0.5]\parabel{-1}{1}{5}{p}\end{ksys}}{\karo{3}}
+\fusshilfe{\gfuss{13}{$-$(x $-$ 1)² + 5}}
 \end{pfaufg}
 
 % ===================== Stufe: Lage zweier Parabeln ohne Rechnung begründen =====================
 \Needspace*{0.16\textheight}\gbstvor{E}\pfstufekopf{Lage begründen}{\gpunkte[26]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-lage-begrunden) [@thispage /XYZ @xpos @ypos null]}
 % Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
-\begin{pfaufg}{}{11.}{}
+\begin{pfaufg}{}{14.}{}
 Wohin ist die Parabel geöffnet, und wo liegt ihr Scheitel? Rechne nicht.
 \par\smallskip
 \par\noindent\makebox[\mbpfteil][l]{\textbf{a)}}$y = (x + 1)^2 + 2$\hfill\linie{30mm}
 \par\noindent\makebox[\mbpfteil][l]{\textbf{b)}}$y = -(x + 1)^2 + 2$\hfill\linie{30mm}
-\par\fusshilfe{\gfuss{11}{a) nach oben, Scheitel bei x = $-$1, y = 2; b) nach unten, Scheitel bei x = $-$1, y = 2}}
+\par\fusshilfe{\gfuss{14}{a) nach oben, Scheitel bei x = $-$1, y = 2; b) nach unten, Scheitel bei x = $-$1, y = 2}}
 \end{pfaufg}
 % 2026-FOR-K5d-m1 (Original 2026-FOR-K5d, Schwere III, rang 7; herausgelöste Fassung: keine)
-\begin{pfaufg}{nach~P10\\’26~\pkt{}~5d}{12.}{FOR}
+\begin{pfaufg}{nach~P10\\’26~\pkt{}~5d}{15.}{FOR}
 Die verschobene Normalparabel $p$ hat die Gleichung $p(x) = (x-3)^2 - 1$. Eine zweite Parabel $q$ hat die Gleichung $q(x) = -(x-3)^2 - 1$. Gib an, wie viele Punkte $p$ und $q$ gemeinsam haben. Begründe ohne zu rechnen.
 \karo{4}
-\fusshilfe{\gfuss{12}{genau 1 gemeinsamer Punkt}}
+\fusshilfe{\gfuss{15}{genau 1 gemeinsamer Punkt}}
 \end{pfaufg}
 
+\gkern{Scheitelpunkt: der tiefste Punkt der Parabel, bei einer nach unten geöffneten der höchste.\par\smallskip\noindent Scheitelpunktform: y = (x + d)² + e – an ihr liest du den Scheitelpunkt S($-$d | e) ab.\par\smallskip\noindent Normalparabel vom Scheitelpunkt aus: 1 nach rechts 1 hoch, 2 $\to$ 4, 3 $\to$ 9; mit Minus davor (an der x-Achse gespiegelt) nach unten geöffnet.\par\smallskip\noindent Punkt prüfen: x einsetzen, ausrechnen, mit y vergleichen; Lage ohne Rechnung: Scheitelpunkt und Öffnung vergleichen.}
 \gmehr{12}
 \end{document}
