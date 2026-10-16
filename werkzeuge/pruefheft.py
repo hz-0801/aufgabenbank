@@ -7106,7 +7106,8 @@ def p_zusatz(D, gl, einheit, args):
                            + str(e.get('seite', '')) + '}\\par\\medskip')
         else:
             Z['fehlt'].append(f'Formelkasten „{kid}“ nicht gesetzt: {r.stderr.strip()[-200:]}')
-    aussagen = [a.strip() for a in wert('Kern am Ende').split('|') if a.strip()][:4]
+    # „|“ in einer Klammer („S(−d | e)“) trennt keine Aussagen (v0.19, PA30)
+    aussagen = [a.strip() for a in re.split(r'\|(?![^()]*\))', wert('Kern am Ende')) if a.strip()][:4]
     bild = wert('Kern-Bild')
     if aussagen or bild:
         pf = os.path.join(D.mn, bild) if bild else ''
