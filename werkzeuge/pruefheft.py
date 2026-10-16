@@ -7305,21 +7305,27 @@ def p_bau(args):
                   'frage': None, 'einstieg': None, 'kurzfrage': '', 'begriff': '', 'echte': alt, 'heraus': [],
                   'aeltere': True}
         mit = stufen_daten + [st_alt]
-        alle_e = [r for s in mit for r in s['echte']]
-        schwer_ok = MEHR_STUFEN.index(alle_e[-1]['schwere']) >= max(MEHR_STUFEN.index(r['schwere']) for r in alle_e)
-        t2 = p_blatt_tex(D, anz(einheit), kenn, mit, ausschnitt, fund, faktor_gesetzt, entfallen)
-        e2 = xelatex(t2, args.bb, 'probe-aeltere', arbeit)
-        if not e2['fehler'] and e2['seiten'] <= 2 and schwer_ok:
-            stufen_daten, blatt, md = mit, t2, None
+        # v0.19 (16.10. f, Nachauftrag): erst voller Rechenraum, dann kleiner (0,75; 0,5) wie bei der Probe oben; die
+        # Älteren stehen in sich leicht -> schwer (Sortierung), das ist keine Sperre
+        e2, t2 = {'seiten': 99, 'fehler': []}, ''
+        for fk in [f for f in (1.0, 0.75, 0.5) if f <= faktor_gesetzt]:
+            t2 = p_blatt_tex(D, anz(einheit), kenn, mit, ausschnitt, fund, fk, entfallen)
+            e2 = xelatex(t2, args.bb, 'probe-aeltere', arbeit)
+            print(f'Probe mit Älteren: Faktor {fk} -> {e2["seiten"]} Seiten')
+            if not e2['fehler'] and e2['seiten'] <= 2:
+                break
+        if not e2['fehler'] and e2['seiten'] <= 2:
+            stufen_daten, md = mit, None
             P_ZUSATZ['mehr_daten'], P_ZUSATZ['mehr_n'] = None, 0
+            faktor_gesetzt = fk
             # die Zeile „Mehr: n Aufgaben“ entfällt: Blatt ohne sie neu erzeugen
             blatt = p_blatt_tex(D, anz(einheit), kenn, stufen_daten, ausschnitt, fund, faktor_gesetzt, entfallen)
-            hinweise.append(f'Mehr aufs Blatt: {len(alt)} ältere Aufgaben als letzter Abschnitt, {e2["seiten"]} Seiten; kein Mehr')
+            hinweise.append(f'Mehr aufs Blatt: {len(alt)} ältere Aufgaben als letzter Abschnitt, Faktor {fk}, '
+                            f'{e2["seiten"]} Seiten; kein Mehr')
         else:
             # p_blatt_tex hat nr_echt neu gesetzt; der Satz ohne die Älteren braucht wieder seine Nummern
             blatt = p_blatt_tex(D, anz(einheit), kenn, stufen_daten, ausschnitt, fund, faktor_gesetzt, entfallen)
-            hinweise.append(f'Mehr bleibt eigene Datei: mit Älteren {e2["seiten"]} Seiten'
-                            + ('' if schwer_ok else ', Blatt endete nicht mit der schwersten'))
+            hinweise.append(f'Mehr bleibt eigene Datei: mit Älteren auch bei Faktor 0,5 {e2["seiten"]} Seiten')
     loes = p_loesung_tex(D, anz(einheit), kenn, stufen_daten)
     ueb = p_uebersicht_tex(gl, einheiten, einheit, kenn, [s for s in stufen_daten if not s.get('aeltere')],
                            p_kapitelnamen(D.mn))
