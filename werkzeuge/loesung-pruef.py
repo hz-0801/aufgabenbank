@@ -143,6 +143,21 @@ def streng2(links):
     return sorted(set(m), key=m.index)
 
 
+def ohne_name(links, fmt):
+    """Lehrer 16.10.: ein Wert mit Einheit trägt seinen Namen („V = 27 cm³“, nicht „27 cm³“) – der Lehrer sieht, welche
+    Größe es ist. Grenze: Ankreuzen, Eintragen, Zeichnen, Urteil und Zahlen ohne Einheit (Termwert „−25“) ohne Namen."""
+    erstes = (fmt or '').split('|')[0].strip()
+    if erstes not in ('Rechnung', 'Kurzantwort'):
+        return False
+    for seg in [x.strip() for x in re.split(r'\s\|\s', links or '') if x.strip()]:
+        if URTEIL.match(seg) or re.match(r'^\d{4}:', seg):
+            continue
+        einheit = re.search(r'\d\s*(€|%|°|[mckd]?m[²³]?|l|ml|kg|g|h|min|s)(?!\w)|\d\s*%|\d°', seg)
+        if einheit and not re.search(r'[=:]', seg):
+            return True
+    return False
+
+
 def _wert(links):
     """Endwert links (nach dem letzten = / ≈), ohne Einheit: der darf rechts nicht stehen."""
     ws = []
@@ -243,6 +258,8 @@ def main():
                 if a.heft and f"{r.get('jahr','')} {r.get('papier','')}" != a.heft:
                     continue
                 pruefe(f'{os.path.basename(f)}:{r.get("id","")}', r.get('kurzloesung', ''), r.get('zwischenergebnis', ''), aus, True)
+                if ohne_name(r.get('kurzloesung', ''), r.get('format', '')):
+                    aus.append((f'{os.path.basename(f)}:{r.get("id","")}', ['NAME'], r.get('kurzloesung', '')[:60], ''))
     for f in ([] if a.streng else sorted(glob.glob(os.path.join(a.nh, 'msa', 'mehr-p10', '*.csv')))):
         if a.nur and a.nur not in f:
             continue
