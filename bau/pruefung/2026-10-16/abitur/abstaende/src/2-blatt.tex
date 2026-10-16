@@ -1,0 +1,156 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
+\newsavebox{\gbox}\newlength{\gLinks}
+% v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
+% Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr\wd\gbox+6mm\relax}%
+  \ifdim\gLinks>0.62\linewidth
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\leavevmode\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par\addvspace{6pt}}% v0.18 (PG80 Nr. 1): Abstand, damit die Linie von a) nicht an b) rutscht
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+% Skizzenfeld (v0.10, Lehrer 13.10.): Karo ab dem linken Rand über die Zeile, „Skizze“ klein grau oben links im Feld
+% (wie \pfskizzenfeld der Vorlage); der rechte Rand bleibt den Bedingungen
+\newcommand{\gskizze}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \node[anchor=north west,inner sep=2pt,font=\scriptsize,text=mbgrau,fill=white] at (0,{#1*10mm}) {Skizze};
+  \end{tikzpicture}\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% v0.18 (plan.md § 10, 15.10. l): Abschnittsbuchstabe A, B, C vor dem Namen im Kopf – als Vorsatz, damit der
+% Name im TeX gleich bleibt (Bestellkarte, Sprungziele lesen ihn)
+\def\gbstakt{}\newcommand{\gbstvor}[1]{\gdef\gbstakt{#1}}
+\NewCommandCopy\gpfstufekopfalt\pfstufekopf
+\RenewDocumentCommand{\pfstufekopf}{o m m}{\IfValueTF{#1}{\gpfstufekopfalt[#1]}{\gpfstufekopfalt}%
+  {\ifx\gbstakt\empty\else\gbstakt\enspace\fi #2}{#3}\gdef\gbstakt{}}
+% v0.18 (16.10. e): Begriff grau, ohne Nummer, ohne Rahmen über der ersten Aufgabe der Stufe
+\newcommand{\gbegriff}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}\parbox[t]{\dimexpr\linewidth-\mbpfnr\relax}{\raggedright\small\color{mbgrau}#1}\par\nobreak\addvspace{3pt}}
+% v0.18 (16.10. g): Lösungsblatt – Kopf mit kräftigem Strich, Abschnitt klein grau als Zwischenzeile
+\newcommand{\glkopf}[1]{\noindent{\large\bfseries Lösungen \textperiodcentered{} #1}\par\vspace{3pt}\hrule height 1.2pt\par\medskip}
+\newcommand{\glzwischen}[1]{\par\addvspace{8pt}\Needspace*{4\baselineskip}\noindent{\footnotesize\color{mbgrau}#1}\par\nobreak\vspace{1pt}}
+% v0.18 (15.10. o, w): Blattende – Kern ohne Rahmen, dann graue Zeile „Mehr: n Aufgaben“
+\newcommand{\gkern}[1]{\par\addvspace{14pt}\Needspace*{6\baselineskip}\noindent{\bfseries Kern}\par\nobreak\smallskip
+  {\small\raggedright #1\par}}
+\newcommand{\gmehr}[1]{\par\addvspace{10pt}\noindent{\footnotesize\color{mbgrau}Mehr: #1 Aufgaben}\par}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[Abitur GK \pkt{} Prüfung]{Abstände}{AG70}\pfseitevon
+\pfheftkopf{Abstände}{}
+\pfstufenzeile{Abstand gesucht \pkt{} Lotfußpunkt gesucht}
+
+% ===================== Stufe: Abstand gesucht =====================
+\gkopfvor{\pfstufekopf{Abstand gesucht}{\gpunkte[25 23 22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-abstand-gesucht) [@thispage /XYZ @xpos @ypos null]}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% 2023-bebb-gk-B3c-m1 (Original 2023-bebb-gk-B3c, Schwere I, rang 1; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’23\\B3c}{1.}{}
+Die Punkte $A(6 \mid 0 \mid 0)$, $B(0 \mid 6 \mid 0)$ und $C(0 \mid 0 \mid 6)$ liegen in der Ebene $L_1\colon x + y + z = 6$, die Punkte $D(3{,}5 \mid 0 \mid 0)$, $E(0 \mid 3{,}5 \mid 0)$ und $F(0 \mid 0 \mid 3{,}5)$ in der Ebene $L_2\colon 2x + 2y + 2z = 7$. Sie sind die Ecken des Körpers ABCDEF. Entscheide, ob der Abstand der Punkte B und E kleiner, größer oder genauso groß ist wie der Abstand der Ebenen $L_1$ und $L_2$. Begründe.
+\gzwei{\begin{ksys3}[xyz,x1min=0,x1max=6,x2min=0,x2max=6,x3min=0,x3max=6,karo=0.2]\rvieleck{6,0,0;0,6,0;0,0,6}\rstrecke{6,0,0}{3.5,0,0}\rstrecke{0,6,0}{0,3.5,0}\rstrecke{0,0,6}{0,0,3.5}\rstrecke[dashed]{3.5,0,0}{0,3.5,0}\rstrecke[dashed]{0,3.5,0}{0,0,3.5}\rstrecke[dashed]{0,0,3.5}{3.5,0,0}\rpunkt*[left]{6}{0}{0}{A}\rpunkt*[below]{0}{6}{0}{B}\rpunkt*[right]{0}{0}{6}{C}\rpunkt*[below left]{3.5}{0}{0}{D}\rpunkt*[below]{0}{3.5}{0}{E}\rpunkt*[left]{0}{0}{3.5}{F}\end{ksys3}}{\karo{4}}
+\fusshilfe{\gfuss{1}{größer}}
+\end{pfaufg}
+% 2022-bebb-gk-B3g-m1 (Original 2022-bebb-gk-B3g, Schwere II, rang 2; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’22\\B3g}{2.}{}
+Ein Kirchturmdach steht auf dem Quadrat ABCD mit $A(0 \mid 0 \mid 0)$, $B(6 \mid 0 \mid 0)$, $C(6 \mid 6 \mid 0)$, $D(0 \mid 6 \mid 0)$. Darüber liegen $E(3 \mid 0 \mid 5)$, $F(6 \mid 3 \mid 5)$, $G(3 \mid 6 \mid 5)$, $H(0 \mid 3 \mid 5)$ und die Spitze $S(3 \mid 3 \mid 10)$; 1 LE entspricht 1 m. Das Dach hat vier gleiche viereckige Dachflächen wie CGSF und vier dreieckige Giebelflächen. Die Gerade durch S und F schneidet die xy-Ebene in $Q_1$, die Gerade durch S und G in $Q_2$. Gib das Verhältnis des Abstands von $Q_1$ und $Q_2$ zum Abstand von F und G an. Begründe.
+\gzwei{\begin{ksys3}[xyz,x1min=0,x1max=6,x2min=0,x2max=6,x3min=0,x3max=10,karo=0.16]\rvieleck{6,0,0;6,6,0;6,3,5}\rvieleck{6,6,0;0,6,0;3,6,5}\rstrecke[dashed]{0,0,0}{6,0,0}\rstrecke{6,0,0}{6,6,0}\rstrecke{6,6,0}{0,6,0}\rstrecke[dashed]{0,6,0}{0,0,0}\rstrecke[dashed]{0,0,0}{3,0,5}\rstrecke{3,0,5}{6,0,0}\rstrecke{6,0,0}{6,3,5}\rstrecke{6,3,5}{6,6,0}\rstrecke{6,6,0}{3,6,5}\rstrecke{3,6,5}{0,6,0}\rstrecke{0,6,0}{0,3,5}\rstrecke[dashed]{0,3,5}{0,0,0}\rstrecke{3,0,5}{3,3,10}\rstrecke{6,3,5}{3,3,10}\rstrecke{3,6,5}{3,3,10}\rstrecke{0,3,5}{3,3,10}\rpunkt*[above left]{0}{0}{0}{A}\rpunkt*[below left]{6}{0}{0}{B}\rpunkt*[below right]{6}{6}{0}{C}\rpunkt*[above right]{0}{6}{0}{D}\rpunkt*[left]{3}{0}{5}{E}\rpunkt*[below right]{6}{3}{5}{F}\rpunkt*[right]{3}{6}{5}{G}\rpunkt*[above left]{0}{3}{5}{H}\rpunkt*[above]{3}{3}{10}{S}\end{ksys3}}{\karo{4}}
+\fusshilfe{\gfuss{2}{2 · |FG| (Q$_1$(9|3|0), Q$_2$(3|9|0))}}
+\end{pfaufg}
+% 2025-bebb-gk-A1.8b-m1 (Original 2025-bebb-gk-A1.8b, Schwere III, rang 3; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’25\\A1.8b}{3.}{\pfohnetr}
+Gegeben ist die Ebene $E\colon \vec{x} = \begin{pmatrix}2\\-1\\0\end{pmatrix} + r \cdot \begin{pmatrix}-4\\3\\1\end{pmatrix} + s \cdot \begin{pmatrix}4\\-3\\0\end{pmatrix}$, $r, s \in \mathbb{R}$; $\left(\begin{smallmatrix}3\\4\\0\end{smallmatrix}\right)$ ist ein Normalenvektor von $E$. Bestimme die Koordinaten eines Punkts $P$, dessen Spiegelbild an $E$ von $P$ den Abstand 30 hat.
+\karo{4}
+\fusshilfe{\gfuss{3}{P(11|11|0) (oder ($-$7|$-$13|0))}}
+\end{pfaufg}
+
+% ===================== Stufe: Lotfußpunkt gesucht =====================
+\gkopfvor{\pfstufekopf{Lotfußpunkt gesucht}{\gpunkte[26 23 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-lotfusspunkt-gesucht) [@thispage /XYZ @xpos @ypos null]}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% 2026-bb-gk-B3c-m1 (Original 2026-bb-gk-B3c, Schwere I, rang 4; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’26\\B3c}{4.}{}
+Gegeben ist die Pyramide ABCDS mit $A(0 \mid -3 \mid 0)$, $B(5 \mid -1{,}5 \mid 0)$, $C(5 \mid 1{,}5 \mid 0)$, $D(0 \mid 3 \mid 0)$ und $S(1 \mid 0 \mid 3)$; sie ist symmetrisch zur xz-Ebene. Mit den Gleichungen I $\overrightarrow{OP}$ = $\overrightarrow{OC}$ + t · $\overrightarrow{CS}$ und II $\overrightarrow{DP}$ · $\overrightarrow{CS}$ = 0 erhält man gemeinsam einen Wert von $t$. Gib die Bedeutung des Punkts P für diesen Wert von $t$ an.
+\gzwei{\begin{ksys3}[xyz,x1min=0,x1max=5,x2min=-3,x2max=3,x3min=0,x3max=3,karo=0.3]\rstrecke{0,-3,0}{5,-1.5,0}\rstrecke{5,-1.5,0}{5,1.5,0}\rstrecke{5,1.5,0}{0,3,0}\rstrecke[dashed]{0,3,0}{0,-3,0}\rstrecke{0,-3,0}{1,0,3}\rstrecke{5,-1.5,0}{1,0,3}\rstrecke{5,1.5,0}{1,0,3}\rstrecke{0,3,0}{1,0,3}\rpunkt*[above left]{0}{-3}{0}{A}\rpunkt*[below left]{5}{-1.5}{0}{B}\rpunkt*[below right]{5}{1.5}{0}{C}\rpunkt*[above right]{0}{3}{0}{D}\rpunkt*[above left]{1}{0}{3}{S}\end{ksys3}}{\karo{4}}
+\fusshilfe{\gfuss{4}{P ist der Lotfußpunkt von D auf der Geraden CS}}
+\end{pfaufg}
+% 2022-bebb-gk-B3i-m1 (Original 2022-bebb-gk-B3i, Schwere II, rang 5; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’22\\B3i}{5.}{}
+Ein Kirchturmdach steht auf dem Quadrat ABCD mit $A(0 \mid 0 \mid 0)$, $B(6 \mid 0 \mid 0)$, $C(6 \mid 6 \mid 0)$, $D(0 \mid 6 \mid 0)$. Darüber liegen $E(3 \mid 0 \mid 5)$, $F(6 \mid 3 \mid 5)$, $G(3 \mid 6 \mid 5)$, $H(0 \mid 3 \mid 5)$ und die Spitze $S(3 \mid 3 \mid 10)$; 1 LE entspricht 1 m. Das Dach hat vier gleiche viereckige Dachflächen wie CGSF und vier dreieckige Giebelflächen. Vom Mittelpunkt eines Stahlträgers EG führt eine möglichst kurze Stütze zum Balken SF; sie trifft ihn im Punkt R (R $\neq$ S, F). Beschreibe, wie man die Koordinaten von R ermitteln kann.
+\karo{4}
+\fusshilfe{\gfuss{5}{(5,21|3|6,32)}}
+\end{pfaufg}
+% 2023-bebb-gk-B3h-m1 (Original 2023-bebb-gk-B3h, Schwere III, rang 6; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’23\\B3h}{6.}{}
+Die Punkte $A(6 \mid 0 \mid 0)$, $B(0 \mid 6 \mid 0)$ und $C(0 \mid 0 \mid 6)$ liegen in der Ebene $L_1\colon x + y + z = 6$, die Punkte $D(3{,}5 \mid 0 \mid 0)$, $E(0 \mid 3{,}5 \mid 0)$ und $F(0 \mid 0 \mid 3{,}5)$ in der Ebene $L_2\colon 2x + 2y + 2z = 7$. Sie sind die Ecken des Körpers ABCDEF. Jemand rechnet: I $g\colon \vec{x} = \begin{pmatrix}3{,}5\\0\\0\end{pmatrix} + t \cdot \begin{pmatrix}1\\1\\0\end{pmatrix}$; II $3{,}5 + t + t = 6 \Rightarrow t = 1{,}25 \Rightarrow R(4{,}75 \mid 1{,}25 \mid 0)$; III $\sqrt{(3{,}5 - 4{,}75)^2 + 1{,}25^2} \approx 1{,}77$. Erläutere die Schritte. Gib die geometrische Bedeutung des Ergebnisses an.
+\gzwei{\begin{ksys3}[xyz,x1min=0,x1max=6,x2min=0,x2max=6,x3min=0,x3max=6,karo=0.2]\rvieleck{6,0,0;0,6,0;0,0,6}\rstrecke{6,0,0}{3.5,0,0}\rstrecke{0,6,0}{0,3.5,0}\rstrecke{0,0,6}{0,0,3.5}\rstrecke[dashed]{3.5,0,0}{0,3.5,0}\rstrecke[dashed]{0,3.5,0}{0,0,3.5}\rstrecke[dashed]{0,0,3.5}{3.5,0,0}\rpunkt*[left]{6}{0}{0}{A}\rpunkt*[below]{0}{6}{0}{B}\rpunkt*[right]{0}{0}{6}{C}\rpunkt*[below left]{3.5}{0}{0}{D}\rpunkt*[below]{0}{3.5}{0}{E}\rpunkt*[left]{0}{0}{3.5}{F}\end{ksys3}}{\karo{4}}
+\fusshilfe{\gfuss{6}{Gerade durch D, in der xy-Ebene senkrecht zu AB; Lotfußpunkt R; 1,77}}
+\end{pfaufg}
+
+\pfblattende{10}{26 & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17}{B3c & A1.8b &  & B3c B3h & B3g B3i &  & B3.1c B3.2d &  &  & }%
+{\pfausschnitt{Rechter Winkel \pkt{} Winkel}{Abstände}{}}
+\end{document}

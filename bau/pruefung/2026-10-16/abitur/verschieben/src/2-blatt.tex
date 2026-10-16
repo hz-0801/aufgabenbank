@@ -1,0 +1,178 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
+\newsavebox{\gbox}\newlength{\gLinks}
+% v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
+% Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr\wd\gbox+6mm\relax}%
+  \ifdim\gLinks>0.62\linewidth
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\leavevmode\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par\addvspace{6pt}}% v0.18 (PG80 Nr. 1): Abstand, damit die Linie von a) nicht an b) rutscht
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+% Skizzenfeld (v0.10, Lehrer 13.10.): Karo ab dem linken Rand über die Zeile, „Skizze“ klein grau oben links im Feld
+% (wie \pfskizzenfeld der Vorlage); der rechte Rand bleibt den Bedingungen
+\newcommand{\gskizze}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \node[anchor=north west,inner sep=2pt,font=\scriptsize,text=mbgrau,fill=white] at (0,{#1*10mm}) {Skizze};
+  \end{tikzpicture}\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% v0.18 (plan.md § 10, 15.10. l): Abschnittsbuchstabe A, B, C vor dem Namen im Kopf – als Vorsatz, damit der
+% Name im TeX gleich bleibt (Bestellkarte, Sprungziele lesen ihn)
+\def\gbstakt{}\newcommand{\gbstvor}[1]{\gdef\gbstakt{#1}}
+\NewCommandCopy\gpfstufekopfalt\pfstufekopf
+\RenewDocumentCommand{\pfstufekopf}{o m m}{\IfValueTF{#1}{\gpfstufekopfalt[#1]}{\gpfstufekopfalt}%
+  {\ifx\gbstakt\empty\else\gbstakt\enspace\fi #2}{#3}\gdef\gbstakt{}}
+% v0.18 (16.10. e): Begriff grau, ohne Nummer, ohne Rahmen über der ersten Aufgabe der Stufe
+\newcommand{\gbegriff}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}\parbox[t]{\dimexpr\linewidth-\mbpfnr\relax}{\raggedright\small\color{mbgrau}#1}\par\nobreak\addvspace{3pt}}
+% v0.18 (16.10. g): Lösungsblatt – Kopf mit kräftigem Strich, Abschnitt klein grau als Zwischenzeile
+\newcommand{\glkopf}[1]{\noindent{\large\bfseries Lösungen \textperiodcentered{} #1}\par\vspace{3pt}\hrule height 1.2pt\par\medskip}
+\newcommand{\glzwischen}[1]{\par\addvspace{8pt}\Needspace*{4\baselineskip}\noindent{\footnotesize\color{mbgrau}#1}\par\nobreak\vspace{1pt}}
+% v0.18 (15.10. o, w): Blattende – Kern ohne Rahmen, dann graue Zeile „Mehr: n Aufgaben“
+\newcommand{\gkern}[1]{\par\addvspace{14pt}\Needspace*{6\baselineskip}\noindent{\bfseries Kern}\par\nobreak\smallskip
+  {\small\raggedright #1\par}}
+\newcommand{\gmehr}[1]{\par\addvspace{10pt}\noindent{\footnotesize\color{mbgrau}Mehr: #1 Aufgaben}\par}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[Abitur GK \pkt{} Prüfung]{Verschieben, spiegeln, strecken}{AA120}\pfseitevon
+\pfheftkopf{Verschieben, spiegeln, strecken}{}
+\pfstufenzeile{Term gesucht \pkt{} Abbildung gesucht \pkt{} Aussage beurteilen}
+
+% ===================== Stufe: Term gesucht =====================
+\gkopfvor{\pfstufekopf{Term gesucht}{\gpunkte[26 25 24 23]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-term-gesucht) [@thispage /XYZ @xpos @ypos null]}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% 2024-bebb-gk-A1.7b-m1 (Original 2024-bebb-gk-A1.7b, Schwere II, rang 1; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’24\\A1.7b}{1.}{\pfohnetr}
+Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = e^{0{,}25x} - e$; ihr Graph ist $G$. $G$ wird entlang der $x$-Achse so verschoben, dass er durch den Koordinatenursprung verläuft; es entsteht der Graph einer Funktion $h$. Ermittle eine Gleichung von $h$.
+\karo{2}
+\fusshilfe{\gfuss{1}{4; $e^{0{,}25x + 1}$ $-$ e}}
+\end{pfaufg}
+% 2023-bebb-gk-B2.1i-m1 (Original 2023-bebb-gk-B2.1i, Schwere II, rang 2; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’23\\B2.1i}{2.}{}
+Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = \tfrac{1}{3}(x^2 - 9) \cdot e^{\tfrac{x}{2}}$; ihr Graph ist $G$. Die Abbildung zeigt die Draufsicht einer symmetrischen Tischplatte. Ihre Randlinie im III. Quadranten ist der dort verlaufende Teil von $G$; die Randlinien im I., II. und IV. Quadranten sind Teile der Graphen der Funktionen $k$, $h$ und $g$. Gib Funktionsgleichungen von zwei dieser drei Funktionen an.
+\gzwei{\begin{abiksys}[xmin=-5,xmax=5,ymin=-5,ymax=5,le=0.45]\funktionab[-1.2]{(\x^2-9)*exp(\x/2)/3}{G}{-3}{0}\funktionab{(\x^2-9)*exp(-\x/2)/3}{}{0}{3}\funktionab{-(\x^2-9)*exp(\x/2)/3}{}{-3}{0}\funktionab{-(\x^2-9)*exp(-\x/2)/3}{}{0}{3}\end{abiksys}}{\karo{2}}
+\fusshilfe{\gfuss{2}{$\tfrac{1}{3}$ · (x² $-$ 9) · $e^{-\tfrac{x}{2}}$; $-\tfrac{1}{3}$ · (x² $-$ 9) · $e^{\tfrac{x}{2}}$; $-\tfrac{1}{3}$ · (x² $-$ 9) · $e^{-\tfrac{x}{2}}$}}
+\end{pfaufg}
+% 2024-bebb-gk-B2.1g-m1 (Original 2024-bebb-gk-B2.1g, Schwere II, rang 3; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’24\\B2.1g}{3.}{}
+Ein Schrankknauf entsteht durch Rotation des Graphen von $f$ mit $f(x) = (x - 3) \cdot e^{-\tfrac{x}{3} + 2}$ um die $x$-Achse. Die Abbildung zeigt seinen Querschnitt für $3 \le x \le 12$; er wird von den Graphen von $f$ und $g$ begrenzt, wobei der Graph von $g$ durch Spiegelung des Graphen von $f$ an der $x$-Achse entsteht. 1 LE entspricht 0,5 cm; der Sockel liegt bei $x = 12$. Gib eine Funktionsgleichung von $g$ an. Bestimme den Durchmesser des Sockels in mm.
+\gzwei{\begin{abiksys}[xmin=0,xmax=13,ymin=-4,ymax=4,le=0.45]\funktionab[5]{(\x-3)*exp(-\x/3+2)}{G_f}{3}{12}\funktionab{-(\x-3)*exp(-\x/3+2)}{}{3}{12}\draw[line width=0.6pt] (12,-1.218) -- (12,1.218) node[above left,font=\small] {Sockel};\fill (3,0) circle (1.6pt) node[above left] {$S$};\end{abiksys}}{\karo{2}}
+\fusshilfe{\gfuss{3}{$-$(x $-$ 3) · $e^{-\tfrac{x}{3} + 2}$; 12,2 mm}}
+\end{pfaufg}
+% 2025-bebb-gk-B2.1c-m1 (Original 2025-bebb-gk-B2.1c, Schwere II, rang 4; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’25\\B2.1c}{4.}{}
+Für ein Windrad werden der Graph $G_f$ von $f$ mit $f(x) = \tfrac{1}{18}x^3 - \tfrac{3}{2}x$ und die Gerade $g$ mit $y = \tfrac{1}{2}x$ auf $[-6; 6]$ um $90^\circ$ gegen den Uhrzeigersinn um den Ursprung gedreht (Abbildung). Die gedrehte Gerade heißt $g^*$; $A(6 \mid 3)$ ist ein Schnittpunkt von $G_f$ und $g$. Begründe, dass $g^*(x) = -2x$ gilt. Gib die Koordinaten des gedrehten Punkts $A^*$ an.
+\gzwei{\begin{abiksys}[xmin=-7,xmax=7,ymin=-7,ymax=7,le=0.3,xstep=2,ystep=2]\draw[line width=0.6pt] (0,0) circle (6.708);\funktionab[4.5]{\x^3/18-1.5*\x}{G_f}{-6}{6}\draw[line width=0.8pt] (-6,-3) -- (6,3) node[right,font=\small] {$g$};\draw[dashed,line width=0.8pt] (3,-6) -- (-3,6) node[left,font=\small] {$g^*$};\fill (6,3) circle (1.6pt) node[below right,font=\small] {$A$};\fill (-6,-3) circle (1.6pt) node[above left,font=\small] {$B$};\end{abiksys}}{\karo{2}}
+\fusshilfe{\gfuss{4}{$-$2x; A*($-$3|6)}}
+\end{pfaufg}
+% 2026-bb-gk-B2.1e-m1 (Original 2026-bb-gk-B2.1e, Schwere III, rang 5; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’26\\B2.1e}{5.}{}
+Gegeben ist die Gerade $t$ mit $t(x) = \tfrac{4}{3}x + \tfrac{8}{3}$. Die Gerade $h$ entsteht aus $t$ durch Verschiebung um $z$ in negative $y$-Richtung; der Abstand der beiden Geraden beträgt 4. Ermittle mithilfe der Abbildung (ohne Skalierung) einen Wert von $z$.
+\gzwei{\begin{abiksys}[xmin=-3,xmax=5,ymin=-6,ymax=6,le=0.4,ohnezahlen,ohnegitter]\funktion[4]{4/3*\x+8/3}{t}\funktion[4.4]{4/3*\x-4}{h}\draw[line width=0.5pt] (0,2.667) -- (3.2,0.267);\draw[mbgrau,line width=0.5pt] (2.84,0.537) -- (3.11,0.897) -- (3.47,0.627);\end{abiksys}}{\karo{2}}
+\fusshilfe{\gfuss{5}{3 nach rechts, 4 nach oben, schräge Seite 5; 5 : 3; 6,67}}
+\end{pfaufg}
+
+% ===================== Stufe: Abbildung gesucht =====================
+\gkopfvor{\pfstufekopf{Abbildung gesucht}{\gpunkte[26 23]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-abbildung-gesucht) [@thispage /XYZ @xpos @ypos null]}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% 2026-bb-gk-B2.2f-m1 (Original 2026-bb-gk-B2.2f, Schwere II, rang 6; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’26\\B2.2f}{6.}{}
+Gegeben ist die Funktion $f$ mit $f(x) = 2e^x + 3$. Der Graph der Funktion $k$ mit $k(x) = 55e^{-\tfrac{x}{300}} + 18$ entsteht aus dem Graphen von $f$ durch eine Streckung und eine Verschiebung in $y$-Richtung und weitere Veränderungen, die durch den Faktor $-\tfrac{1}{300}$ im Exponenten entstehen. Gib diese weiteren Veränderungen an.
+\karo{2}
+\fusshilfe{\gfuss{6}{27,5 · f($-$x/300) $-$ 64,5; Spiegelung an der y-Achse (Vorzeichen $-$); Streckung in x-Richtung mit dem Faktor 300}}
+\end{pfaufg}
+% 2023-bebb-gk-B2.2j-m1 (Original 2023-bebb-gk-B2.2j, Schwere II, rang 7; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’23\\B2.2j}{7.}{}
+Gegeben ist die Funktion $f$ mit $f(x) = x^3 - 9x^2 + 24x - 16$. Die Funktion $h$ mit $h(x) = 10x^3 - 90x^2 + 240x + 20$ entsteht aus $f$ durch $h(x) = c \cdot (f(x) + d)$. Ermittle die Werte von $c$ und $d$ und beschreibe, wie der Graph von $h$ aus dem Graphen von $f$ entsteht.
+\karo{2}
+\fusshilfe{\gfuss{7}{10; 18; Graph von f um 18 nach oben verschieben, dann in y-Richtung mit dem Faktor 10 strecken}}
+\end{pfaufg}
+
+% ===================== Stufe: Aussage beurteilen =====================
+\gkopfvor{\pfstufekopf{Aussage beurteilen}{\gpunkte[26 24]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-aussage-beurteilen) [@thispage /XYZ @xpos @ypos null]}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% 2026-bb-gk-A1.4b-m1 (Original 2026-bb-gk-A1.4b, Schwere II, rang 8; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’26\\A1.4b}{8.}{\pfohnetr}
+Gegeben ist $f$ mit $f(x) = 2\sin x$; zwei direkt aufeinanderfolgende Extrempunkte sind $A\left(\tfrac{\pi}{2} \mid 2\right)$ und $B\left(\tfrac{3\pi}{2} \mid -2\right)$ (Abbildung). Gegeben ist außerdem die in $\mathbb{R}$ definierte Funktion $g$ mit $g(x) = 3\sin\left(\tfrac{1}{2}x\right)$. Betrachtet wird die Strecke zwischen zwei direkt aufeinanderfolgenden Extrempunkten des Graphen von $g$. Untersuche, ob diese Strecke kürzer ist als die Strecke $AB$.
+\gzwei{\begin{abiksys}[xmin=0,xmax=9.6,ymin=-2.6,ymax=2.6,le=0.55,yle=0.55,ohnezahlen]\draw[mbterm,dashed,line width=0.8pt,domain=0:9.5,samples=100,smooth,variable=\u] plot (\u,{2*sin(deg(\u))});\draw[line width=0.8pt] (1.5708,2) -- (4.7124,-2) -- (7.854,2) -- cycle;\fill (1.5708,2) circle (1.6pt) node[above] {$A$};\fill (4.7124,-2) circle (1.6pt) node[below] {$B$};\fill (7.854,2) circle (1.6pt) node[above] {$C$};\end{abiksys}}{\karo{2}}
+\fusshilfe{\gfuss{8}{Abstände wachsen; nein}}
+\end{pfaufg}
+% 2024-bebb-gk-A1.4b-m1 (Original 2024-bebb-gk-A1.4b, Schwere III, rang 9; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’24\\A1.4b}{9.}{\pfohnetr}
+Gegeben sind die in $\mathbb{R}$ definierten Funktionen $g$ mit $g(x) = 3 \cdot e^x - 3$ und $h$ mit $h(x) = e^x + 2$; die Abbildung zeigt ihre Graphen. Es gilt $g'(0) = 3$. Beurteile die Aussage: Es gibt eine Verschiebung in $y$-Richtung, durch die der Graph von $h$ aus dem Graphen von $g$ erzeugt werden kann.
+\gzwei{\begin{abiksys}[xmin=-3,xmax=2,ymin=-3.5,ymax=5,le=0.8,yle=0.5]\funktion[1]{3*exp(\x)-3}{g}\funktion[-2]{exp(\x)+2}{h}\end{abiksys}}{\karo{2}}
+\fusshilfe{\gfuss{9}{falsch; die Steigungen an derselben Stelle sind verschieden}}
+\end{pfaufg}
+
+\pfblattende{10}{26 & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17}{A1.4b B2.1e B2.2f & B2.1c & A1.4b A1.7b B2.1g & B2.1i B2.2j &  &  &  & B2.2h &  & }%
+{\pfausschnitt{Gleichungen und Ungleichungen \pkt{} Funktion aufstellen}{Verschieben, spiegeln, strecken}{Graph im Sachzusammenhang}}
+\end{document}

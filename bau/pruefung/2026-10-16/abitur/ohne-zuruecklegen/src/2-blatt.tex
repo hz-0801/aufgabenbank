@@ -1,0 +1,179 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
+\newsavebox{\gbox}\newlength{\gLinks}
+% v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
+% Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr\wd\gbox+6mm\relax}%
+  \ifdim\gLinks>0.62\linewidth
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\leavevmode\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par\addvspace{6pt}}% v0.18 (PG80 Nr. 1): Abstand, damit die Linie von a) nicht an b) rutscht
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+% Skizzenfeld (v0.10, Lehrer 13.10.): Karo ab dem linken Rand über die Zeile, „Skizze“ klein grau oben links im Feld
+% (wie \pfskizzenfeld der Vorlage); der rechte Rand bleibt den Bedingungen
+\newcommand{\gskizze}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \node[anchor=north west,inner sep=2pt,font=\scriptsize,text=mbgrau,fill=white] at (0,{#1*10mm}) {Skizze};
+  \end{tikzpicture}\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% v0.18 (plan.md § 10, 15.10. l): Abschnittsbuchstabe A, B, C vor dem Namen im Kopf – als Vorsatz, damit der
+% Name im TeX gleich bleibt (Bestellkarte, Sprungziele lesen ihn)
+\def\gbstakt{}\newcommand{\gbstvor}[1]{\gdef\gbstakt{#1}}
+\NewCommandCopy\gpfstufekopfalt\pfstufekopf
+\RenewDocumentCommand{\pfstufekopf}{o m m}{\IfValueTF{#1}{\gpfstufekopfalt[#1]}{\gpfstufekopfalt}%
+  {\ifx\gbstakt\empty\else\gbstakt\enspace\fi #2}{#3}\gdef\gbstakt{}}
+% v0.18 (16.10. e): Begriff grau, ohne Nummer, ohne Rahmen über der ersten Aufgabe der Stufe
+\newcommand{\gbegriff}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}\parbox[t]{\dimexpr\linewidth-\mbpfnr\relax}{\raggedright\small\color{mbgrau}#1}\par\nobreak\addvspace{3pt}}
+% v0.18 (16.10. g): Lösungsblatt – Kopf mit kräftigem Strich, Abschnitt klein grau als Zwischenzeile
+\newcommand{\glkopf}[1]{\noindent{\large\bfseries Lösungen \textperiodcentered{} #1}\par\vspace{3pt}\hrule height 1.2pt\par\medskip}
+\newcommand{\glzwischen}[1]{\par\addvspace{8pt}\Needspace*{4\baselineskip}\noindent{\footnotesize\color{mbgrau}#1}\par\nobreak\vspace{1pt}}
+% v0.18 (15.10. o, w): Blattende – Kern ohne Rahmen, dann graue Zeile „Mehr: n Aufgaben“
+\newcommand{\gkern}[1]{\par\addvspace{14pt}\Needspace*{6\baselineskip}\noindent{\bfseries Kern}\par\nobreak\smallskip
+  {\small\raggedright #1\par}}
+\newcommand{\gmehr}[1]{\par\addvspace{10pt}\noindent{\footnotesize\color{mbgrau}Mehr: #1 Aufgaben}\par}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[Abitur GK \pkt{} Prüfung]{Ziehen ohne Zurücklegen}{AS20}\pfseitevon
+\pfheftkopf{Ziehen ohne Zurücklegen}{}
+\pfstufenzeile{Ergebnisse aufzählen \pkt{} Wahrscheinlichkeit gesucht}
+
+% ===================== Stufe: Ergebnisse aufzählen =====================
+\gkopfvor{\pfstufekopf{Ergebnisse aufzählen}{\gpunkte[26 24]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-ergebnisse-aufzahlen) [@thispage /XYZ @xpos @ypos null]}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% Teile eines Originals (2024-bebb-gk-A1.3): 2024-bebb-gk-A1.3a-m1, 2024-bebb-gk-A1.3b-m1
+\begin{pfaufg}{}{1.}{}
+Acht Stühle stehen in einer Reihe. Es gibt fünf Möglichkeiten, vier Stühle so auszuwählen, dass zwischen je zwei ausgewählten mindestens ein weiterer Stuhl steht.
+% 2024-bebb-gk-A1.3a-m1 (Original 2024-bebb-gk-A1.3a, Schwere I, rang 21; herausgelöste Fassung: keine)
+\begin{gbteil}{a)}{\raisebox{\dimexpr-\height+\ht\strutbox\relax}{\shortstack[r]{GK~’24\\A1.3a}}}{\pfohnetr}
+Gib diese fünf Möglichkeiten an.
+\karo{2}
+\end{gbteil}
+% 2024-bebb-gk-A1.3b-m1 (Original 2024-bebb-gk-A1.3b, Schwere I, rang 22; herausgelöste Fassung: keine)
+\begin{gbteil}{b)}{\raisebox{\dimexpr-\height+\ht\strutbox\relax}{\shortstack[r]{GK~’24\\A1.3b}}}{\pfohnetr}
+Vier Freunde setzen sich so, dass zwischen je zweien mindestens ein Stuhl frei bleibt. Berechne die Anzahl der Möglichkeiten.
+\karo{2}
+\end{gbteil}
+\fusshilfe{\gfuss{1}{a)~Stühle (1, 3, 5, 7), (1, 3, 5, 8), (1, 3, 6, 8), (1, 4, 6, 8), (2, 4, 6, 8); b)~120}}
+\end{pfaufg}
+% 2026-bb-gk-A1.3b-m1 (Original 2026-bb-gk-A1.3b, Schwere II, rang 23; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’26\\A1.3b}{2.}{\pfohnetr}
+Eine Münze wird fünfmal geworfen; die Ergebnisse sind Abfolgen von Z (Zahl) und W (Wappen). A: höchstens einmal Zahl; B: bei den letzten beiden Würfen mindestens einmal Zahl. Gib alle Ergebnisse an, bei denen weder A noch B eintritt.
+\karo{3}
+\fusshilfe{\gfuss{2}{ZZZWW, ZZWWW, ZWZWW, WZZWW}}
+\end{pfaufg}
+
+% ===================== Stufe: Wahrscheinlichkeit gesucht =====================
+\gkopfvor{\pfstufekopf{Wahrscheinlichkeit gesucht}{\gpunkte[25 23 22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-wahrscheinlichkeit-gesucht) [@thispage /XYZ @xpos @ypos null]}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% 2025-bebb-gk-A1.6a-m1 (Original 2025-bebb-gk-A1.6a, Schwere I, rang 24; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’25\\A1.6a}{3.}{\pfohnetr}
+Eine Schwimmgruppe hat 16 Kinder; 6 von ihnen haben das Abzeichen Bronze. Zwei Kinder werden zufällig ausgewählt. Berechne die Wahrscheinlichkeit, dass beide das Abzeichen Bronze haben.
+\karo{2}
+\fusshilfe{\gfuss{3}{$\tfrac{1}{8}$}}
+\end{pfaufg}
+% 2023-bebb-gk-B4.1g-m1 (Original 2023-bebb-gk-B4.1g, Schwere I, rang 25; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’23\\B4.1g}{4.}{}
+An einer Fortbildung nehmen 24 Lehrkräfte teil, davon 14 Frauen. Für eine Präsentation werden 5 von ihnen zufällig ausgewählt. Ermittle die Wahrscheinlichkeit, dass alle Ausgewählten Frauen sind.
+\karo{2}
+\fusshilfe{\gfuss{4}{0,047}}
+\end{pfaufg}
+% 2022-bebb-gk-A1.6a-m1 (Original 2022-bebb-gk-A1.6a, Schwere II, rang 26; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’22\\A1.6a}{5.}{\pfohnetr}
+In einer Urne liegen drei rote und zwei grüne Kugeln. Drei Kugeln werden ohne Zurücklegen gezogen. Ermittle die Wahrscheinlichkeit, dass mindestens eine gezogene Kugel grün ist.
+\karo{2}
+\fusshilfe{\gfuss{5}{$\tfrac{9}{10}$}}
+\end{pfaufg}
+% 2023-bebb-gk-A1.6b-m1 (Original 2023-bebb-gk-A1.6b, Schwere II, rang 27; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’23\\A1.6b}{6.}{\pfohnetr}
+In einer Urne liegen vier rote und zwei weiße Kugeln. Drei Kugeln werden nacheinander ohne Zurücklegen gezogen. Ermittle die Wahrscheinlichkeit, dass mehr rote als weiße Kugeln gezogen werden.
+\karo{3}
+\fusshilfe{\gfuss{6}{$\tfrac{4}{5}$}}
+\end{pfaufg}
+% 2023-bebb-gk-B4.1h-m1 (Original 2023-bebb-gk-B4.1h, Schwere III, rang 28; herausgelöste Fassung: keine)
+% Vorspann wie Nr. 4 (2023-bebb-gk-B4.1g-m1), gekürzt
+\begin{pfaufg}{GK~’23\\B4.1h}{7.}{}
+Angaben wie in Nr. 4. Bestimme die Wahrscheinlichkeit, dass weniger als zwei Frauen ausgewählt werden.
+\karo{3}
+\fusshilfe{\gfuss{7}{0,075}}
+\end{pfaufg}
+% 2022-bebb-gk-A1.6b-m1 (Original 2022-bebb-gk-A1.6b, Schwere III, rang 29; herausgelöste Fassung: keine)
+% Vorspann wie Nr. 5 (2022-bebb-gk-A1.6a-m1), gekürzt
+\begin{pfaufg}{GK~’22\\A1.6b}{8.}{\pfohnetr}
+Angaben wie in Nr. 5. Eine Kugel wird entfernt. Danach ist die Wahrscheinlichkeit, beim Ziehen von zwei Kugeln ohne Zurücklegen zwei verschiedene Farben zu erhalten, $\tfrac{2}{3}$. Entscheide, ob die entfernte Kugel rot oder grün ist, und begründe.
+\karo{3}
+\fusshilfe{\gfuss{8}{rote Kugel entfernt}}
+\end{pfaufg}
+
+\pfblattende{10}{26 & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17}{A1.3b & A1.6a & A1.3a A1.3b & A1.6b B4.1g B4.1h & A1.6a A1.6b & A1.7b & A1.5a & A1.4c B4.2f & B3.1a & B3.1a B3.1b}%
+{\pfausschnitt{Baumdiagramm}{Ziehen ohne Zurücklegen}{Vierfeldertafel \pkt{} Bedingte Wahrscheinlichkeit}}
+\end{document}

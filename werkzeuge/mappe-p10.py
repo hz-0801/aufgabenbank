@@ -83,7 +83,7 @@ def baue_originalneu(heft, privat):
 
 # --------------------------------------------------------------------------- Seiten finden
 
-MARKE = re.compile(r'’(\d\d)·(\d+)([a-j]?)')
+MARKE = re.compile(r'’(\d\d)·(\d)([a-j]?)')   # Aufgaben der P10 einstellig; die Nummer klebt sonst an der Marke („’25·38“, 16.10.)
 
 
 def marken(pdf):
@@ -428,10 +428,12 @@ def main():
                 continue
             w = {}
             # Marke im Satz trägt kein Papier; 2026 hat auf Blatt und Mehr nur FOR
-            if f[1] in wo and iid.split('-')[1] != 'EBR':
-                for k in ('blatt', 'mehr'):
-                    if k in wo[f[1]]:
-                        w[k] = sorted(set(wo[f[1]][k]), key=lambda x: x[1])
+            # seit 16.10. trägt eine Nummer mit Teilen desselben Originals die Marke einmal ohne Buchstaben („’25 · 3“)
+            for key in (f[1], re.sub(r'[a-z]$', '', f[1])):
+                if key in wo and iid.split('-')[1] != 'EBR':
+                    for k in ('blatt', 'mehr'):
+                        if k in wo[key] and k not in w:
+                            w[k] = sorted(set(wo[key][k]), key=lambda x: x[1])
             if iid in wo and 'neu' in wo[iid]:
                 w['neu'] = wo[iid]['neu']
             if iid in alle_ids and not (w.get('blatt') or w.get('mehr')):

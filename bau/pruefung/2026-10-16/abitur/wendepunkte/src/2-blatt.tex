@@ -1,0 +1,170 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
+\newsavebox{\gbox}\newlength{\gLinks}
+% v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
+% Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr\wd\gbox+6mm\relax}%
+  \ifdim\gLinks>0.62\linewidth
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\leavevmode\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par\addvspace{6pt}}% v0.18 (PG80 Nr. 1): Abstand, damit die Linie von a) nicht an b) rutscht
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+% Skizzenfeld (v0.10, Lehrer 13.10.): Karo ab dem linken Rand über die Zeile, „Skizze“ klein grau oben links im Feld
+% (wie \pfskizzenfeld der Vorlage); der rechte Rand bleibt den Bedingungen
+\newcommand{\gskizze}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \node[anchor=north west,inner sep=2pt,font=\scriptsize,text=mbgrau,fill=white] at (0,{#1*10mm}) {Skizze};
+  \end{tikzpicture}\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% v0.18 (plan.md § 10, 15.10. l): Abschnittsbuchstabe A, B, C vor dem Namen im Kopf – als Vorsatz, damit der
+% Name im TeX gleich bleibt (Bestellkarte, Sprungziele lesen ihn)
+\def\gbstakt{}\newcommand{\gbstvor}[1]{\gdef\gbstakt{#1}}
+\NewCommandCopy\gpfstufekopfalt\pfstufekopf
+\RenewDocumentCommand{\pfstufekopf}{o m m}{\IfValueTF{#1}{\gpfstufekopfalt[#1]}{\gpfstufekopfalt}%
+  {\ifx\gbstakt\empty\else\gbstakt\enspace\fi #2}{#3}\gdef\gbstakt{}}
+% v0.18 (16.10. e): Begriff grau, ohne Nummer, ohne Rahmen über der ersten Aufgabe der Stufe
+\newcommand{\gbegriff}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}\parbox[t]{\dimexpr\linewidth-\mbpfnr\relax}{\raggedright\small\color{mbgrau}#1}\par\nobreak\addvspace{3pt}}
+% v0.18 (16.10. g): Lösungsblatt – Kopf mit kräftigem Strich, Abschnitt klein grau als Zwischenzeile
+\newcommand{\glkopf}[1]{\noindent{\large\bfseries Lösungen \textperiodcentered{} #1}\par\vspace{3pt}\hrule height 1.2pt\par\medskip}
+\newcommand{\glzwischen}[1]{\par\addvspace{8pt}\Needspace*{4\baselineskip}\noindent{\footnotesize\color{mbgrau}#1}\par\nobreak\vspace{1pt}}
+% v0.18 (15.10. o, w): Blattende – Kern ohne Rahmen, dann graue Zeile „Mehr: n Aufgaben“
+\newcommand{\gkern}[1]{\par\addvspace{14pt}\Needspace*{6\baselineskip}\noindent{\bfseries Kern}\par\nobreak\smallskip
+  {\small\raggedright #1\par}}
+\newcommand{\gmehr}[1]{\par\addvspace{10pt}\noindent{\footnotesize\color{mbgrau}Mehr: #1 Aufgaben}\par}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[Abitur GK \pkt{} Prüfung]{Wendepunkte}{AA70}\pfseitevon
+\pfheftkopf{Wendepunkte}{}
+\pfstufenzeile{Wendepunkt ablesen und deuten \pkt{} Wendepunkte gesucht \pkt{} Wendepunkt mit e-Funktion gesucht}
+
+% ===================== Stufe: Wendepunkt ablesen und deuten =====================
+\gkopfvor{\pfstufekopf{Wendepunkt ablesen und deuten}{\gpunkte[22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-wendepunkt-ablesen-und-deuten) [@thispage /XYZ @xpos @ypos null]}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% Teile eines Originals (2022-bebb-gk-A1.2): 2022-bebb-gk-A1.2a-m1, 2022-bebb-gk-A1.2b-m1
+\begin{pfaufg}{}{1.}{}
+Die Abbildung zeigt den Graphen einer Funktion $f$.
+% 2022-bebb-gk-A1.2a-m1 (Original 2022-bebb-gk-A1.2a, Schwere II, rang 1; herausgelöste Fassung: keine)
+\begin{gbteil}{a)}{\raisebox{\dimexpr-\height+\ht\strutbox\relax}{\shortstack[r]{GK~’22\\A1.2a}}}{\pfohnetr}
+Gib je einen Wert für $a$ und $b$ an, sodass $f'(0{,}3) = a$ und $f''(b) = 0$ gilt.
+\gzwei{\begin{abiksys}[xmin=0,xmax=2.2,ymin=-0.15,ymax=0.3,le=4.2,yle=9,xstep=0.1,ystep=0.05]\funktion[2.1]{(((((2.2016*\x-14.5305)*\x+37.5151)*\x-47.9594)*\x+31.3799)*\x-9.3742)*\x+0.9128}{G_f}\end{abiksys}}{\vspace{2mm}\par\noindent a: \linie{30mm}\hphantom{\,cm²}\par\smallskip\par\noindent b: \linie{30mm}\hphantom{\,cm²}}
+\end{gbteil}
+% 2022-bebb-gk-A1.2b-m1 (Original 2022-bebb-gk-A1.2b, Schwere II, rang 2; herausgelöste Fassung: keine)
+\begin{gbteil}{b)}{\raisebox{\dimexpr-\height+\ht\strutbox\relax}{\shortstack[r]{GK~’22\\A1.2b}}}{\pfohnetr}
+Für den Punkt $P(x_P \mid f(x_P))$ des Graphen gilt $f''(x_P) = 0$ und $f'(x_P) < 0$. Markiere $P$ in der Abbildung und begründe deine Wahl.
+\par\smallskip\noindent\begin{abiksys}[xmin=0,xmax=2.2,ymin=-0.15,ymax=0.3,le=4.2,yle=9,xstep=0.1,ystep=0.05]\funktion[2.1]{(((((2.2016*\x-14.5305)*\x+37.5151)*\x-47.9594)*\x+31.3799)*\x-9.3742)*\x+0.9128}{G_f}\end{abiksys}\par
+\karo{3}
+\end{gbteil}
+\fusshilfe{\gfuss{1}{a)~0; 0,5; b)~(1,75|0,17); f$'$ < 0; 0}}
+\end{pfaufg}
+% 2022-bebb-gk-B2.1l-m1 (Original 2022-bebb-gk-B2.1l, Schwere II, rang 3; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’22\\B2.1l}{2.}{}
+Ein Tauchroboter bewegt sich nur senkrecht. Sein Abstand zur Wasseroberfläche in Metern wird für $0 \le t \le 36$ beschrieben durch $h(t) = \tfrac{1}{8}t^3 - 9t^2 + 162t$; $t$ ist die Zeit in Minuten. Die Abbildung zeigt den Graphen von $h$. Beschreibe die Bedeutung des Wendepunkts des Graphen für die Bewegung des Roboters.
+\gzwei{\begin{abiksys}[xmin=0,xmax=37,ymin=0,ymax=1000,le=0.2,yle=0.005,xstep=6,ystep=200,xlabel=$t$,ylabel=$h(t)$]\funktion[30]{\x*(\x-36)^2/8}{h}\end{abiksys}}{\karo{4}}
+\fusshilfe{\gfuss{2}{24; $-$54, dort ist h$'$ am kleinsten; nach 24 Minuten steigt der Roboter am schnellsten auf (54 m pro Minute)}}
+\end{pfaufg}
+
+% ===================== Stufe: Wendepunkte gesucht =====================
+\gkopfvor{\pfstufekopf{Wendepunkte gesucht}{\gpunkte[26 23]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-wendepunkte-gesucht) [@thispage /XYZ @xpos @ypos null]}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% 2023-bebb-gk-B2.2c-m1 (Original 2023-bebb-gk-B2.2c, Schwere I, rang 4; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’23\\B2.2c}{3.}{}
+Gegeben ist die Funktion $f$ mit $f(x) = x^3 - 9x^2 + 24x - 16$, $x \in \mathbb{R}$. Der Graph von $f$ hat genau einen Wendepunkt. Berechne seine Koordinaten.
+\karo{4}
+\fusshilfe{\gfuss{3}{3; W(3|2)}}
+\end{pfaufg}
+% 2026-bb-gk-B2.1c-m1 (Original 2026-bb-gk-B2.1c, Schwere II, rang 5; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’26\\B2.1c}{4.}{}
+Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = \tfrac{2}{3}x^4 + \tfrac{4}{3}x^3 + 2$ und ihrer Ableitung $f'(x) = \tfrac{8}{3}x^3 + 4x^2$. Der Graph $G_f$ hat genau zwei Wendepunkte. Berechne ihre Koordinaten.
+\karo{4}
+\fusshilfe{\gfuss{4}{Stellen $-$1 und 0; 8 $\neq$ 0; W$_1$($-$1|$\tfrac{4}{3}$), W$_2$(0|2)}}
+\end{pfaufg}
+
+% ===================== Stufe: Wendepunkt mit e-Funktion gesucht =====================
+\gkopfvor{\pfstufekopf{Wendepunkt mit e-Funktion gesucht}{\gpunkte[24 23]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-wendepunkt-mit-e-funktion-gesucht) [@thispage /XYZ @xpos @ypos null]}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% 2024-bebb-gk-B2.1c-m1 (Original 2024-bebb-gk-B2.1c, Schwere II, rang 6; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’24\\B2.1c}{5.}{}
+Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = (x - 3) \cdot e^{-\tfrac{x}{3} + 2}$ und ihrer Ableitung $f'(x) = \left(2 - \tfrac{x}{3}\right) \cdot e^{-\tfrac{x}{3} + 2}$; $G_f$ hat genau einen Wendepunkt. Zeige, dass $f''(x) = \left(\tfrac{x}{9} - 1\right) \cdot e^{-\tfrac{x}{3} + 2}$ gilt. Weise nach, dass $\left(9 \mid 6e^{-1}\right)$ der Wendepunkt ist.
+\karo{4}
+\fusshilfe{\gfuss{5}{(x/9 $-$ 1) · $e^{-\tfrac{x}{3} + 2}$; 0 und f$''$ wechselt bei 9 das Vorzeichen (f$''$(8) < 0, f$''$(10) > 0); Wendepunkt (9|6/e)}}
+\end{pfaufg}
+% 2023-bebb-gk-B2.1f-m1 (Original 2023-bebb-gk-B2.1f, Schwere II, rang 7; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’23\\B2.1f}{6.}{}
+Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = \tfrac{1}{3}(x^2 - 9) \cdot e^{\tfrac{x}{2}}$ und $f'(x) = \left(\tfrac{1}{6}x^2 + \tfrac{2}{3}x - \tfrac{3}{2}\right) \cdot e^{\tfrac{x}{2}}$; ihr Graph $G$ hat zwei Wendepunkte. Berechne die Koordinaten beider Wendepunkte, auf zwei Nachkommastellen gerundet.
+\karo{4}
+\fusshilfe{\gfuss{6}{($\tfrac{1}{12}$ · x² + $\tfrac{2}{3}$x $-$ $\tfrac{1}{12}$) · $e^{\tfrac{x}{2}}$; $-$4 $\pm$ $\sqrt{17}$; W$_1$($-$8,12|0,33), W$_2$(0,12|$-$3,19)}}
+\end{pfaufg}
+
+\pfblattende{10}{26 & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17}{B2.1c &  & B2.1c & B2.1f B2.2c & A1.2a A1.2b B2.1l & B2.1d B2.2l & B2.2e &  &  & B1.1c}%
+{\pfausschnitt{Extrempunkte \pkt{} Monotonie}{Wendepunkte}{Gleichungen und Ungleichungen \pkt{} Funktion aufstellen}}
+\end{document}

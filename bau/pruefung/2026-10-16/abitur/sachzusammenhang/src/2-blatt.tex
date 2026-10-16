@@ -1,0 +1,192 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
+\newsavebox{\gbox}\newlength{\gLinks}
+% v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
+% Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr\wd\gbox+6mm\relax}%
+  \ifdim\gLinks>0.62\linewidth
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\leavevmode\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par\addvspace{6pt}}% v0.18 (PG80 Nr. 1): Abstand, damit die Linie von a) nicht an b) rutscht
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+% Skizzenfeld (v0.10, Lehrer 13.10.): Karo ab dem linken Rand über die Zeile, „Skizze“ klein grau oben links im Feld
+% (wie \pfskizzenfeld der Vorlage); der rechte Rand bleibt den Bedingungen
+\newcommand{\gskizze}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \node[anchor=north west,inner sep=2pt,font=\scriptsize,text=mbgrau,fill=white] at (0,{#1*10mm}) {Skizze};
+  \end{tikzpicture}\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% v0.18 (plan.md § 10, 15.10. l): Abschnittsbuchstabe A, B, C vor dem Namen im Kopf – als Vorsatz, damit der
+% Name im TeX gleich bleibt (Bestellkarte, Sprungziele lesen ihn)
+\def\gbstakt{}\newcommand{\gbstvor}[1]{\gdef\gbstakt{#1}}
+\NewCommandCopy\gpfstufekopfalt\pfstufekopf
+\RenewDocumentCommand{\pfstufekopf}{o m m}{\IfValueTF{#1}{\gpfstufekopfalt[#1]}{\gpfstufekopfalt}%
+  {\ifx\gbstakt\empty\else\gbstakt\enspace\fi #2}{#3}\gdef\gbstakt{}}
+% v0.18 (16.10. e): Begriff grau, ohne Nummer, ohne Rahmen über der ersten Aufgabe der Stufe
+\newcommand{\gbegriff}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}\parbox[t]{\dimexpr\linewidth-\mbpfnr\relax}{\raggedright\small\color{mbgrau}#1}\par\nobreak\addvspace{3pt}}
+% v0.18 (16.10. g): Lösungsblatt – Kopf mit kräftigem Strich, Abschnitt klein grau als Zwischenzeile
+\newcommand{\glkopf}[1]{\noindent{\large\bfseries Lösungen \textperiodcentered{} #1}\par\vspace{3pt}\hrule height 1.2pt\par\medskip}
+\newcommand{\glzwischen}[1]{\par\addvspace{8pt}\Needspace*{4\baselineskip}\noindent{\footnotesize\color{mbgrau}#1}\par\nobreak\vspace{1pt}}
+% v0.18 (15.10. o, w): Blattende – Kern ohne Rahmen, dann graue Zeile „Mehr: n Aufgaben“
+\newcommand{\gkern}[1]{\par\addvspace{14pt}\Needspace*{6\baselineskip}\noindent{\bfseries Kern}\par\nobreak\smallskip
+  {\small\raggedright #1\par}}
+\newcommand{\gmehr}[1]{\par\addvspace{10pt}\noindent{\footnotesize\color{mbgrau}Mehr: #1 Aufgaben}\par}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[Abitur GK \pkt{} Prüfung]{Graph im Sachzusammenhang}{AA130}\pfseitevon
+\pfheftkopf{Graph im Sachzusammenhang}{}
+\pfstufenzeile{Graph lesen und skizzieren \pkt{} Länge gesucht \pkt{} Maß mit Maßstab gesucht}
+
+% ===================== Stufe: Graph lesen und skizzieren =====================
+\gkopfvor{\pfstufekopf{Graph lesen und skizzieren}{\gpunkte[25 23]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-graph-lesen-und-skizzieren) [@thispage /XYZ @xpos @ypos null]}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% 2023-bebb-gk-B2.2h-m1 (Original 2023-bebb-gk-B2.2h, Schwere I, rang 1; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’23\\B2.2h}{1.}{}
+Ein Hersteller testet Steuerungen für Backöfen: Nach dem Einschalten steigt die Temperatur; bei der Soll-Temperatur schaltet die Heizung ab, unter einem bestimmten Wert wieder ein. Die Abbildung zeigt den Temperaturverlauf ($x$ in Minuten, $T$ in °C). Bis 5 Minuten heißt Startphase, danach Dauerphase. Gib näherungsweise die durchschnittliche Temperatur in der Dauerphase an.
+\gzwei{\begin{abiksys}[xmin=0,xmax=20,ymin=0,ymax=260,le=0.34,yle=0.013,xstep=2,ystep=20,xlabel=$x$,ylabel=$T$]\begin{scope}\clip (0,0) rectangle (20,260);\draw[mbterm,line width=0.8pt,domain=0:20,samples=300,smooth,variable=\u] plot (\u,{195-175*exp(-0.8*\u)+13*sin(deg(pi*(\u-3)/2))*(1-exp(-0.8*\u))});\end{scope}\end{abiksys}}{\vspace{2mm}\par\noindent Temperatur: \linie{30mm}\,°C}
+\fusshilfe{\gfuss{1}{in der Dauerphase schwankt die Temperatur zwischen etwa 181 °C und 208 °C; 195 °C (190 °C bis 200 °C vertretbar)}}
+\end{pfaufg}
+% 2025-bebb-gk-B2.2e-m1 (Original 2025-bebb-gk-B2.2e, Schwere II, rang 2; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’25\\B2.2e}{2.}{}
+Die Anzahl der Likes für einen Internetbeitrag wird durch die Funktion $a$ beschrieben; $a(x)$ ist die Anzahl der seit 12:00 Uhr abgegebenen Likes, $x$ die Zeit in Stunden seit 12:00 Uhr. Die Abbildung zeigt den Graphen von $a$. Beschreibe den Verlauf des Graphen im Sachzusammenhang.
+\gzwei{\begin{abiksys}[xmin=0,xmax=7,ymin=0,ymax=3000,le=0.8,yle=0.0009,xstep=1,ystep=500,xlabel=$x$,ylabel=$a(x)$]\funktion[6]{2400*(1-exp(-\x*\x/4))}{a}\end{abiksys}}{\karo{3}}
+\fusshilfe{\gfuss{2}{die Zahl der Likes nimmt zunächst immer stärker zu (bis etwa 13:25 Uhr, Wendestelle $\approx$ 1,4); danach nimmt sie immer schwächer zu und nähert sich 2400}}
+\end{pfaufg}
+% 2023-bebb-gk-B2.2e-m1 (Original 2023-bebb-gk-B2.2e, Schwere III, rang 3; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’23\\B2.2e}{3.}{}
+Gegeben ist die Funktion $f$ mit $f(x) = x^3 - 9x^2 + 24x - 16$. Ihr Graph hat den Hochpunkt $H(2 \mid 4)$, den Tiefpunkt $T(4 \mid 0)$ und den Wendepunkt $W(3 \mid 2)$. Skizziere den Graphen von $f$ für $0 \le x \le 6$. Beurteile mithilfe der Skizze die Aussage: Jede Tangente an den Graphen von $f$ hat zwei gemeinsame Punkte mit dem Graphen.
+\par\smallskip\noindent\begin{abiksys}[xmin=0,xmax=6.5,ymin=-16,ymax=22,le=0.8,yle=0.085,ystep=4]\end{abiksys}\par
+\karo{2}
+\fusshilfe{\gfuss{3}{Skizze durch (0|$-$16), H(2|4), W(3|2), T(4|0), (6|20); falsch}}
+\end{pfaufg}
+
+% ===================== Stufe: Länge gesucht =====================
+\gkopfvor{\pfstufekopf{Länge gesucht}{\gpunkte[26 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-lange-gesucht) [@thispage /XYZ @xpos @ypos null]}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% 2026-bb-gk-A1.4a-m1 (Original 2026-bb-gk-A1.4a, Schwere I, rang 4; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’26\\A1.4a}{4.}{\pfohnetr}
+Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = 2\sin x$. Die Eckpunkte des Dreiecks $ABC$ in der Abbildung sind drei direkt aufeinanderfolgende Extrempunkte des Graphen: $A\left(\tfrac{\pi}{2} \mid 2\right)$, $B\left(\tfrac{3\pi}{2} \mid -2\right)$, $C\left(\tfrac{5\pi}{2} \mid 2\right)$. Berechne den Flächeninhalt des Dreiecks $ABC$.
+\gzwei{\begin{abiksys}[xmin=0,xmax=9.6,ymin=-3.3,ymax=3.3,le=0.45,yle=0.4,ohnezahlen]\draw[mbterm,dashed,line width=0.8pt,domain=0:9.5,samples=100,smooth,variable=\u] plot (\u,{2*sin(deg(\u))});\draw[line width=0.8pt] (1.5708,2) -- (4.7124,-2) -- (7.854,2) -- cycle;\fill (1.5708,2) circle (1.6pt) node[above] {$A$};\fill (4.7124,-2) circle (1.6pt) node[below] {$B$};\fill (7.854,2) circle (1.6pt) node[above] {$C$};\end{abiksys}}{\karo{4}}
+\fusshilfe{\gfuss{4}{4; 4$\pi$}}
+\end{pfaufg}
+% 2022-bebb-gk-B2.1k-m1 (Original 2022-bebb-gk-B2.1k, Schwere II, rang 5; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’22\\B2.1k}{5.}{}
+Ein Tauchroboter bewegt sich nur senkrecht. Sein Abstand zur Wasseroberfläche in Metern wird für $0 \le t \le 36$ beschrieben durch $h(t) = \tfrac{1}{8}t^3 - 9t^2 + 162t$; $t$ ist die Zeit in Minuten. Der größte Abstand ist 864 m nach 12 Minuten. Berechne den Weg, den der Roboter in den ersten 18 Minuten zurücklegt.
+\gzwei{\begin{abiksys}[xmin=0,xmax=37,ymin=0,ymax=1000,le=0.14,yle=0.0028,xstep=6,ystep=200,xlabel=$t$,ylabel=$h(t)$]\funktion[30]{\x*(\x-36)^2/8}{h}\end{abiksys}}{\karo{4}}
+\fusshilfe{\gfuss{5}{12: 864 m; 135 m; 999 m}}
+\end{pfaufg}
+% Teile eines Originals (2026-bb-gk-B2.1): 2026-bb-gk-B2.1f-m1, 2026-bb-gk-B2.1i-m1
+\begin{pfaufg}{}{6.}{}
+% 2026-bb-gk-B2.1f-m1 (Original 2026-bb-gk-B2.1f, Schwere II, rang 6; herausgelöste Fassung: keine)
+\vspace*{-\baselineskip}\vspace*{-\smallskipamount}
+\begin{gbteil}{a)}{\raisebox{\dimexpr-\height+\ht\strutbox\relax}{\shortstack[r]{GK~’26\\B2.1f}}}{}
+Der Schienenverlauf einer Modelleisenbahn ist in der Draufsicht symmetrisch zur $x$- und zur $y$-Achse (Abbildung, 1 LE = 1 m). Der obere Verlauf wird für $-1 \le x \le 0$ durch den Graphen $G$ von $g$ mit $g(x) = \tfrac{8}{3}x^3 + 4x^2$ beschrieben; er beginnt in $A\left(-1 \mid \tfrac{4}{3}\right)$. Oberer und unterer Verlauf sind durch zwei Halbkreise um $(\pm 1 \mid 0)$ verbunden. Weise nach, dass der Schienenverlauf auf eine Holzplatte mit 2,7 m × 4,7 m passt.
+\gzwei{\begin{abiksys}[xmin=-2.6,xmax=2.6,ymin=-1.9,ymax=1.9,le=0.9,xstep=0.5,ystep=0.5]\funktionab[-0.75]{8/3*\x^3+4*\x^2}{G}{-1}{0}\funktionab{-8/3*\x^3+4*\x^2}{}{0}{1}\funktionab{-8/3*\x^3-4*\x^2}{}{-1}{0}\funktionab{8/3*\x^3-4*\x^2}{}{0}{1}\draw[mbterm,line width=0.8pt] (-1,4/3) arc[start angle=90,end angle=270,radius=4/3];\draw[mbterm,line width=0.8pt] (1,-4/3) arc[start angle=-90,end angle=90,radius=4/3];\fill (-1,4/3) circle (1.6pt) node[above] {$A$};\end{abiksys}}{\karo{4}}
+\end{gbteil}
+% 2026-bb-gk-B2.1i-m1 (Original 2026-bb-gk-B2.1i, Schwere II, rang 7; herausgelöste Fassung: keine)
+\begin{gbteil}{b)}{\raisebox{\dimexpr-\height+\ht\strutbox\relax}{\shortstack[r]{GK~’26\\B2.1i}}}{}
+Für den Schienenverlauf der Modelleisenbahn (Abbildung in a), $g(x) = \tfrac{8}{3}x^3 + 4x^2$ auf $[-1; 0]$, Halbkreise um $(\pm 1 \mid 0)$ mit Radius $\tfrac{4}{3}$, 1 LE = 1 m) gilt: Der Bogen von $A$ bis zum Ursprung ist etwa 1,7 m lang. Ein Zug fährt 3 m pro Minute. Ermittle die Zeit für eine volle Umrundung.
+\karo{4}
+\end{gbteil}
+\fusshilfe{\gfuss{6}{a)~Halbkreisradius $\tfrac{4}{3}$; 2,67 m $\le$ 2,7 m; passt; b)~6,8 m; 8,38 m; 5 min 4 s}}
+\end{pfaufg}
+
+% ===================== Stufe: Maß mit Maßstab gesucht =====================
+\gkopfvor{\pfstufekopf{Maß mit Maßstab gesucht}{\gpunkte[24 23]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-mass-mit-massstab-gesucht) [@thispage /XYZ @xpos @ypos null]}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% 2023-bebb-gk-B2.1k-m1 (Original 2023-bebb-gk-B2.1k, Schwere II, rang 8; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’23\\B2.1k}{7.}{}
+Die Abbildung zeigt die Draufsicht einer symmetrischen Tischplatte mit den Spitzen $(\pm 3 \mid 0)$ und $(0 \mid \pm 3)$; 1 LE entspricht 10 cm. Der Beistelltisch ist 0,6 m hoch und soll in einem quaderförmigen Karton mit quadratischer Grundfläche geliefert werden. Bestimme das Mindestvolumen des Kartons in Litern.
+\gzwei{\begin{abiksys}[xmin=-5,xmax=5,ymin=-5,ymax=5,le=0.36]\funktionab[-1.2]{(\x^2-9)*exp(\x/2)/3}{G}{-3}{0}\funktionab{(\x^2-9)*exp(-\x/2)/3}{}{0}{3}\funktionab{-(\x^2-9)*exp(\x/2)/3}{}{-3}{0}\funktionab{-(\x^2-9)*exp(-\x/2)/3}{}{0}{3}\end{abiksys}}{\karo{4}}
+\fusshilfe{\gfuss{7}{quadratische Grundfläche mindestens 60 cm × 60 cm; Höhe 60 cm; 216 l}}
+\end{pfaufg}
+% Teile eines Originals (2024-bebb-gk-B2.1): 2024-bebb-gk-B2.1g-m2, 2024-bebb-gk-B2.1h-m1
+\begin{pfaufg}{}{8.}{}
+% 2024-bebb-gk-B2.1g-m2 (Original 2024-bebb-gk-B2.1g, Schwere II, rang 9; herausgelöste Fassung: keine)
+% Zweitthema ausgeblendet (Spalten <feld>_einheit, pruefheft-p.md v0.9)
+\vspace*{-\baselineskip}\vspace*{-\smallskipamount}
+\begin{gbteil}{a)}{\raisebox{\dimexpr-\height+\ht\strutbox\relax}{\shortstack[r]{GK~’24\\B2.1g}}}{}
+Ein Schrankknauf entsteht durch Rotation des Graphen von $f$ mit $f(x) = (x - 3) \cdot e^{-\tfrac{x}{3} + 2}$ um die $x$-Achse; die Abbildung zeigt seinen Querschnitt für $3 \le x \le 12$. 1 LE entspricht 0,5 cm; der Sockel liegt bei $x = 12$. Bestimme den Durchmesser des Sockels in mm.
+\gzwei{\begin{abiksys}[xmin=0,xmax=13,ymin=-4,ymax=4,le=0.38]\funktionab[5]{(\x-3)*exp(-\x/3+2)}{G_f}{3}{12}\funktionab{-(\x-3)*exp(-\x/3+2)}{}{3}{12}\draw[line width=0.6pt] (12,-1.218) -- (12,1.218) node[above left,font=\small] {Sockel};\fill (3,0) circle (1.6pt) node[above left] {$S$};\end{abiksys}}{\karo{4}}
+\end{gbteil}
+% 2024-bebb-gk-B2.1h-m1 (Original 2024-bebb-gk-B2.1h, Schwere II, rang 10; herausgelöste Fassung: keine)
+\begin{gbteil}{b)}{\raisebox{\dimexpr-\height+\ht\strutbox\relax}{\shortstack[r]{GK~’24\\B2.1h}}}{}
+Der Schrankknauf (Rotationskörper des Graphen von $f$ mit $f(x) = (x - 3) \cdot e^{-\tfrac{x}{3} + 2}$ für $3 \le x \le 12$; Hochpunkt $(6 \mid 3)$; 1 LE entspricht 0,5 cm) wird aus einem quaderförmigen Holzstück gedreht. Holz hat die Dichte $0{,}86\,\tfrac{\text{g}}{\text{cm}^3}$. Gib die Mindestmaße des Holzquaders an und berechne seine Masse.
+\karo{4}
+\end{gbteil}
+\fusshilfe{\gfuss{8}{a)~1,218 LE; 2,436 LE; 12,2 mm; b)~4,5 cm; 3 cm; 34,8 g}}
+\end{pfaufg}
+
+\pfblattende{10}{26 & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17}{A1.4a B2.1f B2.1i & B2.2e & B2.1g B2.1h & B2.1k B2.2e B2.2h & B2.1k & B2.2h &  &  & B1.1a & }%
+{\pfausschnitt{Funktion aufstellen \pkt{} Verschieben, spiegeln, strecken}{Graph im Sachzusammenhang}{}}
+\end{document}

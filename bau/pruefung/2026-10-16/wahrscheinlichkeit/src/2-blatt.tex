@@ -1,0 +1,240 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
+\newsavebox{\gbox}\newlength{\gLinks}
+% v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
+% Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr\wd\gbox+6mm\relax}%
+  \ifdim\gLinks>0.62\linewidth
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\leavevmode\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par\addvspace{6pt}}% v0.18 (PG80 Nr. 1): Abstand, damit die Linie von a) nicht an b) rutscht
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+% Skizzenfeld (v0.10, Lehrer 13.10.): Karo ab dem linken Rand über die Zeile, „Skizze“ klein grau oben links im Feld
+% (wie \pfskizzenfeld der Vorlage); der rechte Rand bleibt den Bedingungen
+\newcommand{\gskizze}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \node[anchor=north west,inner sep=2pt,font=\scriptsize,text=mbgrau,fill=white] at (0,{#1*10mm}) {Skizze};
+  \end{tikzpicture}\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% v0.18 (plan.md § 10, 15.10. l): Abschnittsbuchstabe A, B, C vor dem Namen im Kopf – als Vorsatz, damit der
+% Name im TeX gleich bleibt (Bestellkarte, Sprungziele lesen ihn)
+\def\gbstakt{}\newcommand{\gbstvor}[1]{\gdef\gbstakt{#1}}
+\NewCommandCopy\gpfstufekopfalt\pfstufekopf
+\RenewDocumentCommand{\pfstufekopf}{o m m}{\IfValueTF{#1}{\gpfstufekopfalt[#1]}{\gpfstufekopfalt}%
+  {\ifx\gbstakt\empty\else\gbstakt\enspace\fi #2}{#3}\gdef\gbstakt{}}
+% v0.18 (16.10. e): Begriff grau, ohne Nummer, ohne Rahmen über der ersten Aufgabe der Stufe
+\newcommand{\gbegriff}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}\parbox[t]{\dimexpr\linewidth-\mbpfnr\relax}{\raggedright\small\color{mbgrau}#1}\par\nobreak\addvspace{3pt}}
+% v0.18 (16.10. g): Lösungsblatt – Kopf mit kräftigem Strich, Abschnitt klein grau als Zwischenzeile
+\newcommand{\glkopf}[1]{\noindent{\large\bfseries Lösungen \textperiodcentered{} #1}\par\vspace{3pt}\hrule height 1.2pt\par\medskip}
+\newcommand{\glzwischen}[1]{\par\addvspace{8pt}\Needspace*{4\baselineskip}\noindent{\footnotesize\color{mbgrau}#1}\par\nobreak\vspace{1pt}}
+% v0.18 (15.10. o, w): Blattende – Kern ohne Rahmen, dann graue Zeile „Mehr: n Aufgaben“
+\newcommand{\gkern}[1]{\par\addvspace{14pt}\Needspace*{6\baselineskip}\noindent{\bfseries Kern}\par\nobreak\smallskip
+  {\small\raggedright #1\par}}
+\newcommand{\gmehr}[1]{\par\addvspace{10pt}\noindent{\footnotesize\color{mbgrau}Mehr: #1 Aufgaben}\par}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} Prüfung]{Wahrscheinlichkeit}{PS50-3}\pfseitevon
+\pfheftkopf{Wahrscheinlichkeit}{}
+\pfstufenzeile{A~Ergebnisse aufzählen \pkt{} B~Wahrscheinlichkeit gesucht \pkt{} C~Baum ergänzen \pkt{} D~Pfadregeln anwenden \pkt{} E~ohne Zurücklegen rechnen \pkt{} F~Zufallsgerät entwerfen}
+
+% ===================== Stufe: Ergebnisse aufzählen =====================
+\gkopfvor{\gbstvor{A}\pfstufekopf{Ergebnisse aufzählen}{\gpunkte[25]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-ergebnisse-aufzahlen) [@thispage /XYZ @xpos @ypos null]}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% 2025-OS-K3a-m1 (Original 2025-OS-K3a, Schwere I, rang 1; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’25~\pkt{}~3a}{1.}{}
+Bei einem Spiel werden zwei Scheiben gleichzeitig gedreht. Bleiben sie stehen, liest man an den Pfeilen erst die Ziffer der linken, dann die der rechten Scheibe ab. Im Bild entsteht so die Zahl 24. Alle Sektoren sind gleich groß. Schreib alle Zahlen auf, die beim Drehen entstehen können.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\small]\draw (0,0) circle (0.9);\draw (0.64,0.64) -- (-0.64,-0.64);\draw (-0.64,0.64) -- (0.64,-0.64);\draw[-{Stealth},line width=1pt] (0,1.45) -- (0,0.95);\node at (0,0.55) {2};\node at (0.55,0) {3};\node at (0,-0.55) {3};\node at (-0.55,0) {4};\draw (2.5,0) circle (0.9);\draw (3.14,0.64) -- (1.8599999999999999,-0.64);\draw (1.8599999999999999,0.64) -- (3.14,-0.64);\draw[-{Stealth},line width=1pt] (2.5,1.45) -- (2.5,0.95);\node at (2.5,0.55) {4};\node at (3.05,0) {2};\node at (2.5,-0.55) {3};\node at (1.95,0) {2};\end{tikzpicture}}{\karo{2}}
+\fusshilfe{\gfuss{1}{22, 23, 24, 32, 33, 34, 42, 43, 44}}
+\end{pfaufg}
+
+% ===================== Stufe: Wahrscheinlichkeit angeben =====================
+\gkopfvor{\gbstvor{B}\pfstufekopf{Wahrscheinlichkeit gesucht}{\gpunkte[26 24]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-wahrscheinlichkeit-gesucht) [@thispage /XYZ @xpos @ypos null]}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% 2026-FOR-K6a-m1 (Original 2026-FOR-K6a, Schwere I, rang 1; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’26~\pkt{}~6a}{2.}{}
+Zwei Würfel sind mit Zahlen beschriftet. Würfel A trägt 2, 2, 2, 3, 4, 5; Würfel B trägt 1, 3, 3, 4, 5, 6. Die Abbildung zeigt ihre Netze. Würfel A wird einmal geworfen. Gib die Wahrscheinlichkeit an, eine 2 zu würfeln.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\small]\node[above] at (1.1,1.1) {Würfel A};\draw (0.55,0.55) rectangle (1.1,1.1);\node at (0.8250000000000001,0.8250000000000001) {2};\draw (0.0,0.0) rectangle (0.55,0.55);\node at (0.275,0.275) {3};\draw (0.55,0.0) rectangle (1.1,0.55);\node at (0.8250000000000001,0.275) {2};\draw (1.1,0.0) rectangle (1.6500000000000001,0.55);\node at (1.375,0.275) {4};\draw (1.6500000000000001,0.0) rectangle (2.2,0.55);\node at (1.9250000000000003,0.275) {2};\draw (0.55,-0.55) rectangle (1.1,0.0);\node at (0.8250000000000001,-0.275) {5};\node[above] at (3.9,1.1) {Würfel B};\draw (3.3499999999999996,0.55) rectangle (3.9,1.1);\node at (3.625,0.8250000000000001) {3};\draw (2.8,0.0) rectangle (3.3499999999999996,0.55);\node at (3.0749999999999997,0.275) {6};\draw (3.3499999999999996,0.0) rectangle (3.9,0.55);\node at (3.625,0.275) {1};\draw (3.9,0.0) rectangle (4.45,0.55);\node at (4.175,0.275) {4};\draw (4.45,0.0) rectangle (5.0,0.55);\node at (4.725,0.275) {5};\draw (3.3499999999999996,-0.55) rectangle (3.9,0.0);\node at (3.625,-0.275) {3};\end{tikzpicture}}{\vspace{1mm}\par\smallskip\par\noindent \hfill P(2): \linie{30mm}\hphantom{\,cm²}}
+\fusshilfe{\gfuss{2}{50 \%}}
+\end{pfaufg}
+% 2024-OS-K5a-m1 (Original 2024-OS-K5a, Schwere I, rang 2; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’24~\pkt{}~5a}{3.}{}
+In Familie Siebert helfen alle 6 Kinder im Haushalt. Jede Aufgabe steht auf einem Zettel: Müll rausbringen, Spülmaschine ausräumen, Staubsaugen, Einkaufen, Fenster putzen, Joker. Wer den Joker hat, hat die Woche frei. Zu Wochenbeginn zieht jedes Kind zufällig genau einen Zettel. Gib die Wahrscheinlichkeit an, dass das erste Kind den Zettel „Staubsaugen“ zieht.
+\par\smallskip\par\noindent \hfill P(Staubsaugen): \linie{30mm}\hphantom{\,cm²}
+\fusshilfe{\gfuss{3}{16,7 \%}}
+\end{pfaufg}
+
+% ===================== Stufe: Baum ergänzen =====================
+\Needspace*{0.16\textheight}\gbstvor{C}\pfstufekopf{Baum ergänzen}{\gpunkte[26 24]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-baum-erganzen) [@thispage /XYZ @xpos @ypos null]}
+% Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
+\begin{pfaufg}{}{4.}{}
+Ein Los gewinnt mit der Wahrscheinlichkeit $\tfrac{3}{8}$. Mit welcher Wahrscheinlichkeit ist es eine Niete? Rechne im Kopf.
+\par\smallskip
+\par\noindent P(Niete)\hfill\linie{30mm}
+\par\fusshilfe{\gfuss{4}{$\tfrac{5}{8}$}}
+\end{pfaufg}
+% 2026-FOR-K6b-m1 (Original 2026-FOR-K6b, Schwere II, rang 1; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’26~\pkt{}~6b}{5.}{}
+Zwei Würfel sind mit Zahlen beschriftet. Würfel A trägt 2, 2, 2, 3, 4, 5; Würfel B trägt 1, 3, 3, 4, 5, 6. Erst wird Würfel A geworfen, dann Würfel B. Man achtet nur darauf, ob die Zahl gerade oder ungerade ist. Ergänze die Wahrscheinlichkeiten im Baumdiagramm. Ermittle die Wahrscheinlichkeit, dass beide Würfel eine ungerade Zahl zeigen.
+\par\smallskip\noindent\baumzwei{\text{gerade}/\tfrac{4}{6},\text{ungerade}/}{\text{gerade}/\tfrac{2}{6},\text{ungerade}/}{\text{gerade}/,\text{ungerade}/}\par
+\karo{2}
+\par\smallskip\par\noindent \hfill P(beide ungerade): \linie{30mm}\hphantom{\,cm²}
+\fusshilfe{\gfuss{5}{gerade 2/6, ungerade $\tfrac{4}{6}$; 0,222}}
+\end{pfaufg}
+% 2024-OS-K5b-m1 (Original 2024-OS-K5b, Schwere II, rang 2; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’24~\pkt{}~5b}{6.}{}
+In Familie Siebert helfen alle 6 Kinder im Haushalt. Jede Aufgabe steht auf einem Zettel: Müll rausbringen, Spülmaschine ausräumen, Staubsaugen, Einkaufen, Fenster putzen, Joker. Wer den Joker hat, hat die Woche frei. Zu Wochenbeginn zieht jedes Kind zufällig genau einen Zettel. Benjamin ist der Jüngste und zieht jede Woche als Erster aus allen sechs Zetteln. Ergänze die Wahrscheinlichkeiten im Baumdiagramm. Benjamin zieht in beiden Wochen den Joker: Weise nach, dass das die Wahrscheinlichkeit $\tfrac{1}{36}$ hat.
+\par\smallskip\noindent\baumzwei{\text{kein Joker}/,\text{Joker}/}{\text{kein Joker}/\tfrac{5}{6},\text{Joker}/}{\text{kein Joker}/,\text{Joker}/}\par
+\karo{2}
+\fusshilfe{\gfuss{6}{kein Joker 5/6, Joker $\tfrac{1}{6}$; 0,028}}
+\end{pfaufg}
+
+% ===================== Stufe: Pfadregel =====================
+\Needspace*{0.16\textheight}\gbstvor{D}\pfstufekopf{Pfadregeln anwenden}{\gpunkte[26 25 24]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-pfadregeln-anwenden) [@thispage /XYZ @xpos @ypos null]}
+% Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
+\begin{pfaufg}{}{7.}{}
+Ein Glücksrad mit roten und blauen Feldern wird zweimal gedreht. Rechnest du mit den Wahrscheinlichkeiten mal oder plus? Rechne nicht.
+\par\smallskip
+\par\noindent\makebox[\mbpfteil][l]{\textbf{a)}}erst rot, dann blau\hfill\linie{30mm}
+\par\noindent\makebox[\mbpfteil][l]{\textbf{b)}}einmal rot und einmal blau, egal in welcher Folge\hfill\linie{30mm}
+\par\fusshilfe{\gfuss{7}{a) mal; b) je Pfad mal, dann plus}}
+\end{pfaufg}
+% Teile eines Originals (2025-OS-K3): 2025-OS-K3b-m1, 2025-OS-K3c-m1
+\begin{pfaufg}{nach~P10\\’25~\pkt{}~3}{8.}{}
+Bei einem Spiel werden zwei Scheiben gleichzeitig gedreht. Bleiben sie stehen, liest man an den Pfeilen erst die Ziffer der linken, dann die der rechten Scheibe ab. Im Bild entsteht so die Zahl 24. Alle Sektoren sind gleich groß.
+% 2025-OS-K3b-m1 (Original 2025-OS-K3b, Schwere II, rang 1; herausgelöste Fassung: keine)
+\begin{gbteil}{a)}{}{}
+Berechne die Wahrscheinlichkeit, eine 34 zu drehen. Esra sagt: „Eine 24 ist genauso wahrscheinlich wie eine 34.“ Entscheide, ob Esra recht hat, und begründe.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\small]\draw (0,0) circle (0.9);\draw (0.64,0.64) -- (-0.64,-0.64);\draw (-0.64,0.64) -- (0.64,-0.64);\draw[-{Stealth},line width=1pt] (0,1.45) -- (0,0.95);\node at (0,0.55) {2};\node at (0.55,0) {3};\node at (0,-0.55) {3};\node at (-0.55,0) {4};\draw (2.5,0) circle (0.9);\draw (3.14,0.64) -- (1.8599999999999999,-0.64);\draw (1.8599999999999999,0.64) -- (3.14,-0.64);\draw[-{Stealth},line width=1pt] (2.5,1.45) -- (2.5,0.95);\node at (2.5,0.55) {4};\node at (3.05,0) {2};\node at (2.5,-0.55) {3};\node at (1.95,0) {2};\end{tikzpicture}}{\karo{2}}
+\par\smallskip\par\noindent \hfill P(34): \linie{30mm}\hphantom{\,cm²}
+\end{gbteil}
+\end{pfaufg}
+\begin{pfaufg}{}{}{}
+% 2025-OS-K3c-m1 (Original 2025-OS-K3c, Schwere II, rang 2; herausgelöste Fassung: keine)
+\begin{gbteil}{b)}{}{FOR}
+Bestimme die Wahrscheinlichkeit, eine 24 oder eine 33 zu drehen.
+\karo{2}
+\par\smallskip\par\noindent \hfill P(24 oder 33): \linie{30mm}\hphantom{\,cm²}
+\end{gbteil}
+\fusshilfe{\gfuss{8}{a)~0,125; falsch; b)~18,75 \%}}
+\end{pfaufg}
+% 2026-FOR-K6c-m1 (Original 2026-FOR-K6c, Schwere II, rang 3; herausgelöste Fassung: 2026-FOR-K6c-h1)
+\begin{pfaufg}{nach~P10\\’26~\pkt{}~6c}{9.}{FOR}
+Zwei Würfel sind mit Zahlen beschriftet. Würfel A trägt 2, 2, 2, 3, 4, 5; Würfel B trägt 1, 3, 3, 4, 5, 6. Erst wird Würfel A geworfen, dann Würfel B. Bestimme die Wahrscheinlichkeit für das Ereignis E: „Nicht beide Würfel zeigen eine gerade Zahl.“
+\karo{2}
+\par\smallskip\par\noindent \hfill P(E): \linie{30mm}\hphantom{\,cm²}
+\fusshilfe{\gfuss{9}{Gegenereignis „beide gerade“; 0,778}}
+\end{pfaufg}
+
+% ===================== Stufe: ohne Zurücklegen =====================
+\Needspace*{0.16\textheight}\gbstvor{E}\pfstufekopf{ohne Zurücklegen rechnen}{\gpunkte[24]{\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-ohne-zurucklegen-rechnen) [@thispage /XYZ @xpos @ypos null]}
+% Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
+\begin{pfaufg}{}{10.}{}
+In einer Dose liegen 5 Kugeln, 2 davon rot. Du ziehst eine blaue und legst sie nicht zurück. Was liegt jetzt noch in der Dose?
+\par\smallskip
+\par\noindent nach dem Ziehen\hfill\hfill Kugeln: \linie{30mm}\par\noindent\hfill davon rote: \linie{30mm}
+\par\fusshilfe{\gfuss{10}{4 Kugeln, davon 2 rote}}
+\end{pfaufg}
+% 2024-OS-K5c-m1 (Original 2024-OS-K5c, Schwere II, rang 1; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’24~\pkt{}~5c}{11.}{FOR}
+In Familie Siebert helfen alle 6 Kinder im Haushalt. Jede Aufgabe steht auf einem Zettel: Müll rausbringen, Spülmaschine ausräumen, Staubsaugen, Einkaufen, Fenster putzen, Joker. Wer den Joker hat, hat die Woche frei. Zu Wochenbeginn zieht jedes Kind zufällig genau einen Zettel. Klara zieht immer als Zweite, direkt nach Benjamin. Ermittle, mit welcher Wahrscheinlichkeit Klara in Woche 1 den Joker bekommt.
+\karo{2}
+\par\smallskip\par\noindent \hfill P(Joker): \linie{30mm}\hphantom{\,cm²}
+\fusshilfe{\gfuss{11}{Benjamin zieht den Joker nicht ($\tfrac{5}{6}$), Klara aus 5 Zetteln ($\tfrac{1}{5}$); 0,167}}
+\end{pfaufg}
+
+% ===================== Stufe: Zufallsgerät entwerfen =====================
+\Needspace*{0.16\textheight}\gbstvor{F}\pfstufekopf{Zufallsgerät entwerfen}{\gpunkte[26 25]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-zufallsgerat-entwerfen) [@thispage /XYZ @xpos @ypos null]}
+% Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
+\begin{pfaufg}{}{12.}{}
+Zwei Glücksräder mit je 4 gleich großen Feldern werden gedreht. Die Wahrscheinlichkeit, dass beide auf Rot stehen bleiben, soll $\tfrac{3}{16}$ sein. Wie viele rote Felder bekommt jedes Rad?
+\par\smallskip
+\par\noindent rote Felder\hfill\hfill erstes Rad: \linie{30mm}\par\noindent\hfill zweites Rad: \linie{30mm}
+\par\fusshilfe{\gfuss{12}{3 und 1}}
+\end{pfaufg}
+% 2025-OS-K3d-m1 (Original 2025-OS-K3d, Schwere III, rang 1; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’25~\pkt{}~3d}{13.}{FOR}
+Bei einem Spiel werden zwei Scheiben gleichzeitig gedreht. Bleiben sie stehen, liest man an den Pfeilen erst die Ziffer der linken, dann die der rechten Scheibe ab. Im Bild entsteht so die Zahl 24. Alle Sektoren sind gleich groß. Trag in die beiden leeren Scheiben Ziffern so ein, dass man mit 12,5 \% Wahrscheinlichkeit eine 42 dreht. Begründe deine Einträge mit einer Rechnung.
+\par\smallskip\noindent\begin{tikzpicture}[line width=0.7pt,font=\small]\draw (0,0) circle (0.9);\draw (0.64,0.64) -- (-0.64,-0.64);\draw (-0.64,0.64) -- (0.64,-0.64);\draw[-{Stealth},line width=1pt] (0,1.45) -- (0,0.95);\draw (2.5,0) circle (0.9);\draw (3.14,0.64) -- (1.8599999999999999,-0.64);\draw (1.8599999999999999,0.64) -- (3.14,-0.64);\draw[-{Stealth},line width=1pt] (2.5,1.45) -- (2.5,0.95);\end{tikzpicture}\par
+\karo{2}
+\fusshilfe{\gfuss{13}{z. B. links 4, 4, 2, 3 und rechts 2, 3, 4, 3; 12,5 \%}}
+\end{pfaufg}
+% 2026-FOR-K6d-m1 (Original 2026-FOR-K6d, Schwere III, rang 2; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’26~\pkt{}~6d}{14.}{FOR}
+Zwei Würfel sind mit Zahlen beschriftet. Würfel A trägt 2, 2, 2, 3, 4, 5; Würfel B trägt 1, 3, 3, 4, 5, 6. Die Abbildung zeigt ihre Netze. Auf Würfel B wird genau eine Zahl geändert. Dann werden beide Würfel nacheinander geworfen. Beschrifte das leere Netz von Würfel B (neu) so, dass die Summe 3 mit der Wahrscheinlichkeit $\tfrac{1}{6}$ fällt. Zeige mit einer Rechnung, dass deine Beschriftung passt.
+\par\smallskip\noindent\begin{tikzpicture}[line width=0.7pt,font=\small]\node[above] at (1.1,1.1) {Würfel A};\draw (0.55,0.55) rectangle (1.1,1.1);\node at (0.8250000000000001,0.8250000000000001) {2};\draw (0.0,0.0) rectangle (0.55,0.55);\node at (0.275,0.275) {3};\draw (0.55,0.0) rectangle (1.1,0.55);\node at (0.8250000000000001,0.275) {2};\draw (1.1,0.0) rectangle (1.6500000000000001,0.55);\node at (1.375,0.275) {4};\draw (1.6500000000000001,0.0) rectangle (2.2,0.55);\node at (1.9250000000000003,0.275) {2};\draw (0.55,-0.55) rectangle (1.1,0.0);\node at (0.8250000000000001,-0.275) {5};\node[above] at (3.9,1.1) {Würfel B (neu)};\draw (3.3499999999999996,0.55) rectangle (3.9,1.1);\draw (2.8,0.0) rectangle (3.3499999999999996,0.55);\draw (3.3499999999999996,0.0) rectangle (3.9,0.55);\draw (3.9,0.0) rectangle (4.45,0.55);\draw (4.45,0.0) rectangle (5.0,0.55);\draw (3.3499999999999996,-0.55) rectangle (3.9,0.0);\end{tikzpicture}\par
+\karo{2}
+\fusshilfe{\gfuss{14}{z. B. B neu 1, 1, 3, 4, 5, 6 (eine 3 durch 1 ersetzt); 0,167}}
+\end{pfaufg}
+
+\gmehr{22}
+\end{document}

@@ -1,0 +1,160 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
+\newsavebox{\gbox}\newlength{\gLinks}
+% v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
+% Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr\wd\gbox+6mm\relax}%
+  \ifdim\gLinks>0.62\linewidth
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\leavevmode\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par\addvspace{6pt}}% v0.18 (PG80 Nr. 1): Abstand, damit die Linie von a) nicht an b) rutscht
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+% Skizzenfeld (v0.10, Lehrer 13.10.): Karo ab dem linken Rand über die Zeile, „Skizze“ klein grau oben links im Feld
+% (wie \pfskizzenfeld der Vorlage); der rechte Rand bleibt den Bedingungen
+\newcommand{\gskizze}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \node[anchor=north west,inner sep=2pt,font=\scriptsize,text=mbgrau,fill=white] at (0,{#1*10mm}) {Skizze};
+  \end{tikzpicture}\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% v0.18 (plan.md § 10, 15.10. l): Abschnittsbuchstabe A, B, C vor dem Namen im Kopf – als Vorsatz, damit der
+% Name im TeX gleich bleibt (Bestellkarte, Sprungziele lesen ihn)
+\def\gbstakt{}\newcommand{\gbstvor}[1]{\gdef\gbstakt{#1}}
+\NewCommandCopy\gpfstufekopfalt\pfstufekopf
+\RenewDocumentCommand{\pfstufekopf}{o m m}{\IfValueTF{#1}{\gpfstufekopfalt[#1]}{\gpfstufekopfalt}%
+  {\ifx\gbstakt\empty\else\gbstakt\enspace\fi #2}{#3}\gdef\gbstakt{}}
+% v0.18 (16.10. e): Begriff grau, ohne Nummer, ohne Rahmen über der ersten Aufgabe der Stufe
+\newcommand{\gbegriff}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}\parbox[t]{\dimexpr\linewidth-\mbpfnr\relax}{\raggedright\small\color{mbgrau}#1}\par\nobreak\addvspace{3pt}}
+% v0.18 (16.10. g): Lösungsblatt – Kopf mit kräftigem Strich, Abschnitt klein grau als Zwischenzeile
+\newcommand{\glkopf}[1]{\noindent{\large\bfseries Lösungen \textperiodcentered{} #1}\par\vspace{3pt}\hrule height 1.2pt\par\medskip}
+\newcommand{\glzwischen}[1]{\par\addvspace{8pt}\Needspace*{4\baselineskip}\noindent{\footnotesize\color{mbgrau}#1}\par\nobreak\vspace{1pt}}
+% v0.18 (15.10. o, w): Blattende – Kern ohne Rahmen, dann graue Zeile „Mehr: n Aufgaben“
+\newcommand{\gkern}[1]{\par\addvspace{14pt}\Needspace*{6\baselineskip}\noindent{\bfseries Kern}\par\nobreak\smallskip
+  {\small\raggedright #1\par}}
+\newcommand{\gmehr}[1]{\par\addvspace{10pt}\noindent{\footnotesize\color{mbgrau}Mehr: #1 Aufgaben}\par}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\makeatletter\setlength{\mbpfbe}{0mm}\makeatother
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} mehr]{Sinussatz}{PG70-2}\pfseitevon
+\pfheftkopf{Sinussatz}{mehr}
+\pfstufenzeile{Seite gesucht}
+% 2018-OS-K4c-m1 (Schwere II, rang 3)
+\begin{pfaufg}{nach~P10\\’18~\pkt{}~4c}{1.}{}
+Lea will die Höhe eines Berges bestimmen. Auf der Bergspitze C steht eine 10,0 m hohe Aussichtsplattform, ihre Spitze heißt D. Lea peilt von einem Punkt A aus, der 1,6 m über dem Boden liegt. Zur Bergspitze C misst sie gegenüber der Waagerechten 30°, zur Plattformspitze D 34°. B ist der Punkt senkrecht unter C auf der Höhe von A; bei B ist ein rechter Winkel. Der Winkel zwischen den beiden Peillinien heißt $\gamma$, der Winkel bei D im Dreieck ACD heißt $\delta$. Lea erhält für die Strecke AC 118,8 m. Bestätige diesen Wert mit einer Rechnung. Gegeben: $\gamma$ = 4°, $\delta$ = 56°.
+\par\smallskip\noindent\gpassend{\begin{tikzpicture}[line width=0.7pt,font=\small]\draw[dashed,line width=0.5pt] (-0.4,0) -- (4.8,0);\draw[line width=1.2pt] (0,0) -- (0,0.7);\draw (0,0.7) -- (4.2,0.7);\draw (4.2,0.7) -- (4.2,3.12);\draw[line width=1.4pt] (4.2,3.12) -- (4.2,4.02);\draw (0,0.7) -- (4.2,3.12);\draw (0,0.7) -- (4.2,4.02);\pfrw[0.25]{(4.2,0.7)}{90}\node[anchor=south east,inner sep=1.5pt] at (0,0.7) {$A$};\node[anchor=north west,inner sep=1.5pt] at (4.2,0.7) {$B$};\node[anchor=north west,inner sep=1.5pt] at (4.2,3.12) {$C$};\node[anchor=south,inner sep=1.5pt] at (4.2,4.02) {$D$};\pfwinkel[2.6][1.12]{(0,0.7)}{30}{38.37}{\gamma}\pfwinkel[0.7][0.62]{(4.2,4.02)}{218.37}{270}{\delta}\node[anchor=west,inner sep=1pt] at (4.3,3.57) {$10{,}0$ m};\end{tikzpicture}}\par
+\karo{3}
+\fusshilfe{\gfuss{1}{118,8 m}}
+\end{pfaufg}
+% 2017-OS-K4c-m1 (Schwere II, rang 4)
+\begin{pfaufg}{nach~P10\\’17~\pkt{}~4c}{2.}{}
+Ein Dachboden hat als Querschnitt das Dreieck ABC. Die Dachschräge AC ist 4,90 m lang. Der Winkel bei A beträgt 64,4°, der Winkel bei B 36,1°; der Winkel bei C heißt $\gamma$. Die beiden Dachflächen über AC und über BC sollen gedämmt werden; der Dachboden ist 8,50 m lang. Berechne die Länge der Dachschräge BC. Berechne, wie viele Quadratmeter Dachfläche zu dämmen sind.
+\par\smallskip\noindent\gpassend{\begin{tikzpicture}[line width=0.7pt,font=\small]\fill[black!15] (0,0) -- (0.89,1.86) -- (0.39,3.46) -- (-0.5,1.6) -- cycle;\fill[black!15] (3.43,0) -- (0.89,1.86) -- (0.39,3.46) -- (2.93,1.6) -- cycle;\draw (0,0) -- (3.43,0) -- (0.89,1.86) -- cycle;\draw (0,0) -- (-0.5,1.6);\draw (3.43,0) -- (2.93,1.6);\draw (0.89,1.86) -- (0.39,3.46);\draw (-0.5,1.6) -- (0.39,3.46);\draw (0.39,3.46) -- (2.93,1.6);\node[anchor=north east,inner sep=1.5pt] at (0,0) {$A$};\node[anchor=north,inner sep=1.5pt] at (3.43,0) {$B$};\node[anchor=south east,inner sep=1.5pt] at (0.89,1.86) {$C$};\node[anchor=north west,inner sep=1pt] at (0.68,1.23) {$4{,}90$ m};\node[anchor=west,inner sep=1pt] at (3.26,0.82) {$8{,}50$ m};\pfwinkel[0.75][0.6]{(0,0)}{0}{64.4}{64{,}4^\circ}\pfwinkel[1.2][0.72]{(3.43,0)}{143.9}{180}{36{,}1^\circ}\end{tikzpicture}}\par
+\karo{3}
+\fusshilfe{\gfuss{2}{7,50 m; 105 m²}}
+\end{pfaufg}
+% 2015-OS-K5c-m1 (Schwere II, rang 5)
+\begin{pfaufg}{nach~P10\\’15~\pkt{}~5c}{3.}{}
+Gegeben ist ein Drachenviereck ABCD. Die Diagonale AC ist senkrecht, die Diagonale BD waagerecht; beide schneiden sich in E im rechten Winkel. Die Seite AD ist 3,9 cm lang. Im Dreieck ABD ist der Winkel bei A 118° und der Winkel bei B 34° groß. Berechne die Länge der Diagonale BD.
+\par\smallskip\noindent\gpassend{\begin{tikzpicture}[line width=0.7pt,font=\small]\draw (0,-1.46) -- (2.17,0) -- (0,1.46) -- (-2.75,0) -- cycle;\draw[line width=0.5pt] (0,-1.46) -- (0,1.46);\draw[line width=0.5pt] (-2.75,0) -- (2.17,0);\pfrw[0.2]{(0,0)}{0}\node[anchor=north,inner sep=1.5pt] at (0,-1.46) {$A$};\node[anchor=west,inner sep=1.5pt] at (2.17,0) {$B$};\node[anchor=south,inner sep=1.5pt] at (0,1.46) {$C$};\node[anchor=east,inner sep=1.5pt] at (-2.75,0) {$D$};\node[anchor=south east,inner sep=1.5pt] at (0,0) {$E$};\pfwinkel*[0.6]{(0,-1.46)}{34}{152}{}\node[inner sep=0pt,font=\footnotesize] at (-0.23,-1.17) {$118^\circ$};\pfwinkel[0.8][0.68]{(2.17,0)}{180}{214}{34^\circ}\pfwinkel[0.9][0.68]{(-2.75,0)}{332}{360}{}\node[anchor=north east,inner sep=1pt] at (-1.41,-0.8) {$3{,}9$ cm};\end{tikzpicture}}\par
+\karo{3}
+\fusshilfe{\gfuss{3}{6,16 cm}}
+\end{pfaufg}
+% 2014-OS-K2b-m1 (Schwere II, rang 6)
+\begin{pfaufg}{nach~P10\\’14~\pkt{}~2b}{4.}{}
+Von einer Jugendherberge J führt ein Weg zu einem Forsthaus F, 2600 m lang. Vom Forsthaus führt ein gerader Weg über eine Badestelle zu einem Restaurant R; die Badestelle liegt 2400 m vor dem Restaurant. Direkt von der Jugendherberge zum Restaurant gibt es ebenfalls einen geraden Weg. Am Forsthaus schließen die Wege nach J und nach R einen Winkel von 65° ein, am Restaurant die Wege nach F und nach J einen Winkel von 52°. Eine Gruppe läuft von der Jugendherberge zuerst zum Restaurant und dann weiter zur Badestelle. Berechne die Länge dieses Weges.
+\par\smallskip\noindent\gpassend{\begin{tikzpicture}[line width=0.7pt,font=\small]\draw (0,0) -- (1.72,2.28) -- (3.16,-0.67) -- cycle;\fill (0.58,-0.12) circle (1.3pt);\node[font=\footnotesize,anchor=north east] at (0.68,-0.24) {Badestelle};\node[anchor=east,inner sep=1.5pt] at (0,0) {$F$};\node[anchor=south,inner sep=1.5pt] at (1.72,2.28) {$J$};\node[anchor=north west,inner sep=1.5pt] at (3.16,-0.67) {$R$};\node[anchor=south east,inner sep=1pt] at (0.8,1.19) {$2600$ m};\node[anchor=north,inner sep=1pt] at (2.11,-0.53) {$2400$ m};\pfwinkel[0.55][0.62]{(0,0)}{348}{413}{65^\circ}\pfwinkel[0.55][0.62]{(3.16,-0.67)}{116}{168}{52^\circ}\end{tikzpicture}}\par
+\karo{3}
+\fusshilfe{\gfuss{4}{5390 m}}
+\end{pfaufg}
+% 2021-OS-K3c-m1 (Schwere III, rang 7)
+\begin{pfaufg}{nach~P10\\’21~\pkt{}~3c}{5.}{}
+Gegeben ist das Viereck ABCD mit der Diagonale BD = 1400 m. Bei A ist ein rechter Winkel. Die Seite DC ist 1950 m lang. Bei D ist der Winkel zwischen DA und DB 53° groß und der Winkel zwischen DB und DC 62°. Bei B ist der Innenwinkel $\angle$ABC = 112° groß. Jemand behauptet: „BC und DC sind gleich lang.“ Prüfe mit einer Rechnung, ob das stimmt.
+\par\smallskip\noindent\gpassend{\begin{tikzpicture}[line width=0.7pt,font=\small]\draw (2.19,0) -- (2.19,2.91) -- (-2.14,4.59) -- (0,0) -- cycle;\draw[line width=0.5pt] (0,0) -- (2.19,2.91);\pfrw[0.25]{(2.19,0)}{90}\node[anchor=north west,inner sep=1.5pt] at (2.19,0) {$A$};\node[anchor=south west,inner sep=1.5pt] at (2.19,2.91) {$B$};\node[anchor=south east,inner sep=1.5pt] at (-2.14,4.59) {$C$};\node[anchor=north east,inner sep=1.5pt] at (0,0) {$D$};\node[anchor=south east,inner sep=1pt] at (1.31,1.84) {$1400$ m};\pfwinkel[0.85][0.64]{(0,0)}{0}{53}{53^\circ}\pfwinkel[0.85][0.64]{(0,0)}{53}{115}{62^\circ}\pfwinkel[0.6][0.6]{(2.19,2.91)}{158.72}{270}{112^\circ}\node[anchor=north east,inner sep=1pt] at (-1.14,2.26) {$1950$ m};\end{tikzpicture}}\par
+\karo{5}
+\fusshilfe{\gfuss{5}{1782 m; Aussage falsch (DC = 1950 m)}}
+\end{pfaufg}
+% 2020-OS-K7c-m1 (Schwere III, rang 8)
+\begin{pfaufg}{nach~P10\\’20~\pkt{}~7c}{6.}{}
+Im Dreieck DEF ist DF = 3,6 m und FE = 9 m. Der Winkel bei F ist 112° groß, der Winkel bei E 18°. Der Punkt P liegt auf der Strecke DE, und PE ist 8 m lang. Berechne die Länge der Strecke DP.
+\par\smallskip\noindent\gpassend{\begin{tikzpicture}[line width=0.7pt,font=\small]\draw (0,0) -- (5.45,0) -- (1.16,1.38) -- cycle;\fill (1.45,0) circle (1.2pt);\node[anchor=north east,inner sep=1.5pt] at (0,0) {$D$};\node[anchor=north west,inner sep=1.5pt] at (5.45,0) {$E$};\node[anchor=south,inner sep=1.5pt] at (1.16,1.38) {$F$};\node[anchor=north,inner sep=1.5pt] at (1.45,0) {$P$};\node[anchor=south east,inner sep=1pt] at (0.52,0.74) {$3{,}6$ m};\node[anchor=south,inner sep=1pt] at (3.33,0.77) {$9$ m};\pfwinkel[0.6][0.6]{(1.16,1.38)}{230}{342.18}{112^\circ}\pfwinkel[1.7][0.76]{(5.45,0)}{162}{180}{18^\circ}\end{tikzpicture}}\par
+\karo{4}
+\fusshilfe{\gfuss{6}{2,9 m}}
+\end{pfaufg}
+% 2019-OS-K3c-m1 (Schwere III, rang 9)
+\begin{pfaufg}{nach~P10\\’19~\pkt{}~3c}{7.}{}
+Beim Fußballtraining spielen sich vier Kinder den Ball zu: Amir steht bei A, Ben bei B, Chris bei C, Deniz bei D. Es entsteht das Viereck ABCD mit rechtem Winkel bei B. Die Diagonale AC ist 12 m lang. Der Winkel zwischen AB und AC beträgt 65°, der Winkel bei C zwischen CB und CD 84° und der Winkel bei D 78°. Berechne den Abstand zwischen Amir (A) und Deniz (D).
+\par\smallskip\noindent\gpassend{\begin{tikzpicture}[line width=0.7pt,font=\small]\draw (0,0) -- (3.26,0) -- (3,2.5) -- (0,1.52) -- cycle;\draw[dashed,line width=0.5pt] (0,1.52) -- (3.26,0);\pfrw[0.25]{(0,0)}{0}\node[anchor=south east,inner sep=1.5pt] at (0,1.52) {$A$};\node[anchor=north east,inner sep=1.5pt] at (0,0) {$B$};\node[anchor=north west,inner sep=1.5pt] at (3.26,0) {$C$};\node[anchor=south west,inner sep=1.5pt] at (3,2.5) {$D$};\node[anchor=south west,inner sep=1pt] at (1.83,0.76) {$12$ m};\pfwinkel[0.6][0.62]{(0,1.52)}{270}{335}{65^\circ}\pfwinkel[0.6][0.62]{(3.26,0)}{96}{180}{84^\circ}\pfwinkel[0.6][0.62]{(3,2.5)}{198}{276}{78^\circ}\end{tikzpicture}}\par
+\karo{4}
+\fusshilfe{\gfuss{7}{10,5 m}}
+\end{pfaufg}
+\par\vfill\noindent{\scriptsize\color{mbgrau}Originale: P10 2018 \pkt{} 4c, P10 2017 \pkt{} 4c, P10 2015 \pkt{} 5c, P10 2014 \pkt{} 2b, P10 2021 \pkt{} 3c, P10 2020 \pkt{} 7c, P10 2019 \pkt{} 3c\par}
+\end{document}

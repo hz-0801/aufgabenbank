@@ -1,0 +1,202 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
+\newsavebox{\gbox}\newlength{\gLinks}
+% v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
+% Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr\wd\gbox+6mm\relax}%
+  \ifdim\gLinks>0.62\linewidth
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\leavevmode\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par\addvspace{6pt}}% v0.18 (PG80 Nr. 1): Abstand, damit die Linie von a) nicht an b) rutscht
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+% Skizzenfeld (v0.10, Lehrer 13.10.): Karo ab dem linken Rand über die Zeile, „Skizze“ klein grau oben links im Feld
+% (wie \pfskizzenfeld der Vorlage); der rechte Rand bleibt den Bedingungen
+\newcommand{\gskizze}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \node[anchor=north west,inner sep=2pt,font=\scriptsize,text=mbgrau,fill=white] at (0,{#1*10mm}) {Skizze};
+  \end{tikzpicture}\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% v0.18 (plan.md § 10, 15.10. l): Abschnittsbuchstabe A, B, C vor dem Namen im Kopf – als Vorsatz, damit der
+% Name im TeX gleich bleibt (Bestellkarte, Sprungziele lesen ihn)
+\def\gbstakt{}\newcommand{\gbstvor}[1]{\gdef\gbstakt{#1}}
+\NewCommandCopy\gpfstufekopfalt\pfstufekopf
+\RenewDocumentCommand{\pfstufekopf}{o m m}{\IfValueTF{#1}{\gpfstufekopfalt[#1]}{\gpfstufekopfalt}%
+  {\ifx\gbstakt\empty\else\gbstakt\enspace\fi #2}{#3}\gdef\gbstakt{}}
+% v0.18 (16.10. e): Begriff grau, ohne Nummer, ohne Rahmen über der ersten Aufgabe der Stufe
+\newcommand{\gbegriff}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}\parbox[t]{\dimexpr\linewidth-\mbpfnr\relax}{\raggedright\small\color{mbgrau}#1}\par\nobreak\addvspace{3pt}}
+% v0.18 (16.10. g): Lösungsblatt – Kopf mit kräftigem Strich, Abschnitt klein grau als Zwischenzeile
+\newcommand{\glkopf}[1]{\noindent{\large\bfseries Lösungen \textperiodcentered{} #1}\par\vspace{3pt}\hrule height 1.2pt\par\medskip}
+\newcommand{\glzwischen}[1]{\par\addvspace{8pt}\Needspace*{4\baselineskip}\noindent{\footnotesize\color{mbgrau}#1}\par\nobreak\vspace{1pt}}
+% v0.18 (15.10. o, w): Blattende – Kern ohne Rahmen, dann graue Zeile „Mehr: n Aufgaben“
+\newcommand{\gkern}[1]{\par\addvspace{14pt}\Needspace*{6\baselineskip}\noindent{\bfseries Kern}\par\nobreak\smallskip
+  {\small\raggedright #1\par}}
+\newcommand{\gmehr}[1]{\par\addvspace{10pt}\noindent{\footnotesize\color{mbgrau}Mehr: #1 Aufgaben}\par}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} Prüfung]{sin, cos, tan}{PG60-3}\pfseitevon
+\pfheftkopf{sin, cos, tan}{}
+\pfstufenzeile{A~Gleichung aufstellen \pkt{} B~Winkel gesucht \pkt{} C~Seite gesucht \pkt{} D~Pythagoras oder sin, cos, tan?}
+
+% ===================== Stufe: Seitenverhältnis benennen =====================
+\Needspace*{0.16\textheight}\gbstvor{A}\pfstufekopf{Gleichung aufstellen}{\gpunkte[25]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-gleichung-aufstellen) [@thispage /XYZ @xpos @ypos null]}
+% Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
+\begin{pfaufg}{}{1.}{}
+Benenne die Seiten des Dreiecks aus Sicht des Winkels $\alpha$.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\small,scale=0.8]\coordinate (C) at (0,0);\coordinate (B) at (3,0);\coordinate (A) at (0,2);\draw (A) -- (B) -- (C) -- cycle;\pfrw[0.35]{(C)}{0}\pfwinkel[0.7][0.62]{(A)}{-90}{-56.3}{\alpha}\node[anchor=south] at (A) {$A$};\node[anchor=west] at (B) {$B$};\node[anchor=north east] at (C) {$C$};\node[anchor=north] at (1.5,0) {$a$};\node[anchor=east] at (0,1) {$b$};\node[anchor=south west] at (1.5,1) {$c$};\end{tikzpicture}}{\vspace{-\baselineskip}\par\noindent \hfill\hfill Gegenkathete: \linie{30mm}\par\noindent\hfill Ankathete: \linie{30mm}\par\noindent\hfill Hypotenuse: \linie{30mm}}
+\par\fusshilfe{\gfuss{1}{Gegenkathete a, Ankathete b, Hypotenuse c}}
+\end{pfaufg}
+% 2025-OS-B1g-m1 (Original 2025-OS-B1g, Schwere I, rang 2; herausgelöste Fassung: keine)
+\begin{pfaufg}{’25~\pkt{}~1g}{2.}{Basis}
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\small,scale=0.85]\coordinate (P1) at (0,0);\coordinate (P2) at (3.2,0);\coordinate (P3) at (3.2,2.0);\draw (P1) -- (P2) -- (P3) -- cycle;\pfrw[0.35]{(P2)}{90}\pfwinkel[0.7][0.62]{(P3)}{180}{212}{\gamma}\node[anchor=north] at (1.6,-0.08) {$u$};\node[anchor=west] at (3.28,1.0) {$v$};\node[anchor=south east] at (1.56,1.04) {$w$};\end{tikzpicture}}{Ergänze die Gleichung passend zur Abbildung: $\sin\gamma=$ \linie{25mm}}
+\fusshilfe{\gfuss{2}{u/w}}
+\end{pfaufg}
+
+% ===================== Stufe: Winkel berechnen =====================
+\Needspace*{0.16\textheight}\gbstvor{B}\pfstufekopf{Winkel gesucht}{\gpunkte[26 25 24 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-winkel-gesucht) [@thispage /XYZ @xpos @ypos null]}
+% Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
+\begin{pfaufg}{}{3.}{}
+Welche zwei Seiten kennst du aus Sicht des Winkels am Boden? Schreib sin oder cos dazu; rechne nicht.
+\par\smallskip
+\par\noindent\makebox[\mbpfteil][l]{\textbf{a)}}Leiter 5 m lang, sie reicht 4,8 m hoch an der Wand\hfill\linie{30mm}
+\par\noindent\makebox[\mbpfteil][l]{\textbf{b)}}Leiter 5 m lang, ihr Fuß steht 1,4 m vor der Wand\hfill\linie{30mm}
+\par\fusshilfe{\gfuss{3}{a) Gegenkathete und Hypotenuse: sin; b) Ankathete und Hypotenuse: cos}}
+\end{pfaufg}
+% 2022-OS-K5b-m1 (Original 2022-OS-K5b, Schwere I, rang 3; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’22~\pkt{}~5b}{4.}{}
+Gegeben ist ein Dreieck ABC, das nicht rechtwinklig ist. Die Höhe $h_c$ von C auf die Seite AB ist etwa 7,3 m lang; ihr Fußpunkt heißt D. Die Seite b = AC ist 13,2 m lang, der Winkel bei B ist 49° groß. Der Winkel bei C zwischen AC und der Höhe heißt $\gamma_1$. Berechne die Größe des Winkels $\alpha$.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\small,scale=0.3]\coordinate (A) at (0,0);\coordinate (B) at (17.4,0);\coordinate (C) at (11,7.3);\coordinate (D) at (11,0);\draw (A) -- (B) -- (C) -- cycle;\draw[dashed] (C) -- (D);\pfrw[0.9]{(D)}{90}\pfwinkel[4.5][0.7]{(A)}{0}{33.6}{\alpha}\node[anchor=north east] at (A) {$A$};\node[anchor=north west] at (B) {$B$};\node[anchor=south] at (C) {$C$};\node[anchor=north] at (D) {$D$};\node[anchor=south east] at (5.5,3.7) {$13{,}2$ m};\node[anchor=west] at (11.8,3.2) {$h_c = 7{,}3$ m};\end{tikzpicture}}{\karo{3}}
+\fusshilfe{\gfuss{4}{33,6°}}
+\end{pfaufg}
+% 2024-OS-K6b-m1 (Original 2024-OS-K6b, Schwere I, rang 4; herausgelöste Fassung: 2024-OS-K6b-h1)
+\begin{pfaufg}{nach~P10\\’24~\pkt{}~6b}{5.}{}
+Eine Seilbahn führt vom Ort B im Tal zum Ort A auf einem Berg. F liegt senkrecht unter A auf der Höhe von B; bei F ist ein rechter Winkel. FB ist 262 m lang, die Seilbahnstrecke AB 396 m. Eine zweite Seilbahn verbindet B mit dem Ort C auf einem anderen Berg. Bei B heißt der Winkel zwischen BF und BA $\beta_1$, der Winkel zwischen BA und BC $\beta_2$; bei A heißt der Winkel zwischen AB und AC $\alpha$. Bestimme den Winkel $\beta_1$, unter dem die Seilbahn von B nach A ansteigt.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\small,scale=0.8]\coordinate (A) at (0,2.97);\coordinate (F) at (0,0);\coordinate (B) at (2.62,0);\draw (A) -- (F) -- (B) -- cycle;\pfrw[0.3]{(F)}{0}\pfwinkel[0.8][0.66]{(B)}{131.4}{180}{\beta_1}\node[anchor=south] at (A) {$A$};\node[anchor=north east] at (F) {$F$};\node[anchor=north west] at (B) {$B$};\node[anchor=north] at (1.31,-0.08) {$262$ m};\node[anchor=south west] at (1.36,1.52) {$396$ m};\end{tikzpicture}}{\karo{3}}
+\fusshilfe{\gfuss{5}{48,6°}}
+\end{pfaufg}
+% 2026-FOR-K4b-m1 (Original 2026-FOR-K4b, Schwere I, rang 5; herausgelöste Fassung: 2026-FOR-K4b-h1)
+\begin{pfaufg}{nach~P10\\’26~\pkt{}~4b}{6.}{FOR}
+Im Viereck ABCD sind gegenüberliegende Seiten parallel. Die Seite BC ist 38 cm lang. Die Seite AB wird über B hinaus bis F verlängert; BF ist 16 cm lang. Die Höhe h = CF steht senkrecht auf AF. Der Winkel bei B zwischen BF und BC heißt $\varepsilon$. Weise nach, dass $\varepsilon$ etwa 65° groß ist.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\small,scale=0.06]\coordinate (A) at (0,0);\coordinate (B) at (50,0);\coordinate (F) at (66,0);\coordinate (C) at (66,34.5);\coordinate (D) at (16,34.5);\draw (A) -- (B) -- (C) -- (D) -- cycle;\draw (B) -- (F);\draw[dashed] (F) -- (C);\pfrw[5]{(F)}{90}\node[anchor=north east] at (A) {$A$};\node[anchor=north east] at (B) {$B$};\node[anchor=north west] at (F) {$F$};\node[anchor=south west] at (C) {$C$};\node[anchor=south east] at (D) {$D$};\pfwinkel[9][0.62]{(B)}{0}{65.1}{\varepsilon}\node[anchor=south east] at (57.5,17.2) {$38$ cm};\node[anchor=north] at (60,-1) {$16$ cm};\end{tikzpicture}}{\karo{3}}
+\fusshilfe{\gfuss{6}{65°}}
+\end{pfaufg}
+
+% ===================== Stufe: Seite berechnen =====================
+% Formel-Frage (einmal je Blatt, erste Stufe mit Formel; pruefung.md § 5)
+\Needspace*{0.16\textheight}\gbstvor{C}\pfstufekopf{Seite gesucht}{\gpunkte[26 23 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-seite-gesucht) [@thispage /XYZ @xpos @ypos null]}\gfrage{Bevor du rechnest: Auf welcher Seite der Formelsammlung steht die Formel? Seite~\linie{12mm}}
+% Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
+\begin{pfaufg}{}{7.}{}
+Stelle nach der gesuchten Seite um.
+\par\smallskip
+\par\noindent\makebox[\mbpfteil][l]{\textbf{a)}}sin $\alpha$ = a : c, gesucht ist a\hfill\linie{30mm}
+\par\noindent\makebox[\mbpfteil][l]{\textbf{b)}}sin $\alpha$ = a : c, gesucht ist c\hfill\linie{30mm}
+\par\fusshilfe{\gfuss{7}{a) a = c · sin $\alpha$; b) c = a : sin $\alpha$}}
+\end{pfaufg}
+% 2022-OS-K5d-m1 (Original 2022-OS-K5d, Schwere I, rang 6; herausgelöste Fassung: 2022-OS-K5d-h1)
+\begin{pfaufg}{nach~P10\\’22~\pkt{}~5d}{8.}{}
+Gegeben ist ein Dreieck ABC, das nicht rechtwinklig ist. Die Höhe $h_c$ von C auf die Seite AB ist etwa 7,3 m lang; ihr Fußpunkt heißt D. Die Seite b = AC ist 13,2 m lang, der Winkel bei B ist 49° groß. Der Winkel bei C zwischen AC und der Höhe heißt $\gamma_1$. Berechne die Länge der Seite a.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\small,scale=0.3]\coordinate (A) at (0,0);\coordinate (B) at (17.4,0);\coordinate (C) at (11,7.3);\coordinate (D) at (11,0);\draw (A) -- (B) -- (C) -- cycle;\draw[dashed] (C) -- (D);\pfrw[0.9]{(D)}{90}\pfwinkel[3][0.66]{(B)}{131}{180}{49^\circ}\node[anchor=north east] at (A) {$A$};\node[anchor=north west] at (B) {$B$};\node[anchor=south] at (C) {$C$};\node[anchor=north] at (D) {$D$};\node[anchor=south west] at (14.4,3.8) {$a$};\node[anchor=east] at (10.8,3.2) {$h_c = 7{,}3$ m};\end{tikzpicture}}{\karo{3}}
+\fusshilfe{\gfuss{8}{9,7 m}}
+\end{pfaufg}
+% 2026-FOR-K4c-m1 (Original 2026-FOR-K4c, Schwere II, rang 7; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’26~\pkt{}~4c}{9.}{FOR}
+Im Viereck ABCD sind gegenüberliegende Seiten parallel. Die Seite BC ist 38 cm lang. Die Seite AB wird über B hinaus bis F verlängert; BF ist 16 cm lang. Die Höhe h = CF steht senkrecht auf AF. Der Winkel bei B zwischen BF und BC heißt $\varepsilon$. Die Diagonale AC bildet mit AB einen Winkel von 24°. Bestimme die Länge von AC. Gegeben: h $\approx$ 34,47 cm.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\small,scale=0.06]\coordinate (A) at (0,0);\coordinate (B) at (50,0);\coordinate (F) at (66,0);\coordinate (C) at (66,34.5);\coordinate (D) at (16,34.5);\draw (A) -- (B) -- (C) -- (D) -- cycle;\draw (B) -- (F);\draw[dashed] (F) -- (C);\pfrw[5]{(F)}{90}\node[anchor=north east] at (A) {$A$};\node[anchor=north east] at (B) {$B$};\node[anchor=north west] at (F) {$F$};\node[anchor=south west] at (C) {$C$};\node[anchor=south east] at (D) {$D$};\draw (A) -- (C);\pfwinkel[22][0.75]{(A)}{0}{24}{24^\circ}\node[anchor=west] at (67,17.2) {$h$};\end{tikzpicture}}{\karo{3}}
+\fusshilfe{\gfuss{9}{84,7 cm}}
+\end{pfaufg}
+% 2023-OS-K7b-m1 (Original 2023-OS-K7b, Schwere III, rang 8; herausgelöste Fassung: 2023-OS-K7b-h1)
+\begin{pfaufg}{nach~P10\\’23~\pkt{}~7b}{10.}{}
+Gegeben ist das Dreieck ABC. Der Punkt F liegt auf der Seite AC, und BF steht senkrecht auf AC. Die Seite AB ist 128,9 cm lang. Bei B teilt BF den Winkel in 58° (zwischen BC und BF) und 45° (zwischen BF und BA). Der Winkel bei A ist 45° groß. Weise nach, dass BF und AF jeweils etwa 91,1 cm lang sind. Berechne die Länge der Strecke BC.
+\gzwei{\begin{tikzpicture}[line width=0.7pt,font=\small,scale=0.8]\coordinate (C) at (-2.98,0);\coordinate (F) at (0,0);\coordinate (A) at (1.86,0);\coordinate (B) at (0,1.86);\fill[black!10] (A)--(B)--(F)--cycle;\draw (A) -- (B) -- (C) -- cycle;\draw (B) -- (F);\pfrw[0.3]{(F)}{0}\pfwinkel[0.8][0.66]{(A)}{135}{180}{45^\circ}\pfwinkel[0.95][0.66]{(B)}{-148}{-90}{58^\circ}\pfwinkel[0.7][0.66]{(B)}{-90}{-45}{45^\circ}\node[anchor=north east] at (C) {$C$};\node[anchor=north west] at (A) {$A$};\node[anchor=south] at (B) {$B$};\node[anchor=north] at (F) {$F$};\node[anchor=south west] at (0.93,0.95) {$128{,}9$ cm};\end{tikzpicture}}{\karo{3}}
+\fusshilfe{\gfuss{10}{AF; 172,0 cm}}
+\end{pfaufg}
+
+% ===================== Stufe: erst entscheiden, dann rechnen =====================
+\Needspace*{0.16\textheight}\gbstvor{D}\pfstufekopf{Pythagoras oder sin, cos, tan?}{\gpunkte[26 25 24 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-pythagoras-oder-sin-cos-tan) [@thispage /XYZ @xpos @ypos null]}
+% Schülerfrage der Stufe (Gliederung; Einstieg nur von dort, nie aus der Bank – 12.10.)
+\begin{pfaufg}{}{11.}{}
+Womit rechnest du – Pythagoras oder sin, cos, tan? Rechne nicht.
+\par\smallskip
+\par\noindent\makebox[\mbpfteil][l]{\textbf{a)}}Du kennst zwei Seiten; gesucht ist die dritte Seite\hfill\linie{30mm}
+\par\noindent\makebox[\mbpfteil][l]{\textbf{b)}}Du kennst zwei Seiten; gesucht ist ein Winkel\hfill\linie{30mm}
+\par\noindent\makebox[\mbpfteil][l]{\textbf{c)}}Du kennst eine Seite und einen Winkel; gesucht ist eine Seite\hfill\linie{30mm}
+\par\fusshilfe{\gfuss{11}{a) Pythagoras; b) sin, cos, tan; c) sin, cos, tan}}
+\end{pfaufg}
+% 2019-OS-K2d-m1 (Original 2019-OS-K2d, Schwere II, rang 20; herausgelöste Fassung: keine)
+\begin{pfaufg}{nach~P10\\’19~\pkt{}~2d}{12.}{}
+Im Koordinatensystem bilden die Punkte A(0|$-$1), B(3|$-$1) und C(0|4) ein Dreieck. Berechne die Länge der Strecke BC. Berechne die Größe des Winkels $\beta$ bei B.
+\gzwei{\begin{ksys}[xmin=-2,xmax=5,ymin=-3,ymax=5,karo=0.5]\draw[line width=0.8pt] (0,-1) -- (3,-1) -- (0,4) -- cycle;\punkt{0}{-1}{A}\punkt{3}{-1}{B}\punkt{0}{4}{C}\end{ksys}}{\karo{4}}
+\fusshilfe{\gfuss{12}{5,83; 59,0°}}
+\end{pfaufg}
+
+\gmehr{12}
+\end{document}

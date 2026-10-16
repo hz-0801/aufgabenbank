@@ -1,0 +1,179 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
+\newsavebox{\gbox}\newlength{\gLinks}
+% v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
+% Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr\wd\gbox+6mm\relax}%
+  \ifdim\gLinks>0.62\linewidth
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\leavevmode\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par\addvspace{6pt}}% v0.18 (PG80 Nr. 1): Abstand, damit die Linie von a) nicht an b) rutscht
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+% Skizzenfeld (v0.10, Lehrer 13.10.): Karo ab dem linken Rand über die Zeile, „Skizze“ klein grau oben links im Feld
+% (wie \pfskizzenfeld der Vorlage); der rechte Rand bleibt den Bedingungen
+\newcommand{\gskizze}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \node[anchor=north west,inner sep=2pt,font=\scriptsize,text=mbgrau,fill=white] at (0,{#1*10mm}) {Skizze};
+  \end{tikzpicture}\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% v0.18 (plan.md § 10, 15.10. l): Abschnittsbuchstabe A, B, C vor dem Namen im Kopf – als Vorsatz, damit der
+% Name im TeX gleich bleibt (Bestellkarte, Sprungziele lesen ihn)
+\def\gbstakt{}\newcommand{\gbstvor}[1]{\gdef\gbstakt{#1}}
+\NewCommandCopy\gpfstufekopfalt\pfstufekopf
+\RenewDocumentCommand{\pfstufekopf}{o m m}{\IfValueTF{#1}{\gpfstufekopfalt[#1]}{\gpfstufekopfalt}%
+  {\ifx\gbstakt\empty\else\gbstakt\enspace\fi #2}{#3}\gdef\gbstakt{}}
+% v0.18 (16.10. e): Begriff grau, ohne Nummer, ohne Rahmen über der ersten Aufgabe der Stufe
+\newcommand{\gbegriff}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}\parbox[t]{\dimexpr\linewidth-\mbpfnr\relax}{\raggedright\small\color{mbgrau}#1}\par\nobreak\addvspace{3pt}}
+% v0.18 (16.10. g): Lösungsblatt – Kopf mit kräftigem Strich, Abschnitt klein grau als Zwischenzeile
+\newcommand{\glkopf}[1]{\noindent{\large\bfseries Lösungen \textperiodcentered{} #1}\par\vspace{3pt}\hrule height 1.2pt\par\medskip}
+\newcommand{\glzwischen}[1]{\par\addvspace{8pt}\Needspace*{4\baselineskip}\noindent{\footnotesize\color{mbgrau}#1}\par\nobreak\vspace{1pt}}
+% v0.18 (15.10. o, w): Blattende – Kern ohne Rahmen, dann graue Zeile „Mehr: n Aufgaben“
+\newcommand{\gkern}[1]{\par\addvspace{14pt}\Needspace*{6\baselineskip}\noindent{\bfseries Kern}\par\nobreak\smallskip
+  {\small\raggedright #1\par}}
+\newcommand{\gmehr}[1]{\par\addvspace{10pt}\noindent{\footnotesize\color{mbgrau}Mehr: #1 Aufgaben}\par}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[Abitur GK \pkt{} Prüfung]{Integral am Graphen}{AA160}\pfseitevon
+\pfheftkopf{Integral am Graphen}{}
+\pfstufenzeile{Integral schätzen \pkt{} Vorzeichen des Integrals beurteilen \pkt{} Stammfunktion am Graphen lesen}
+
+% ===================== Stufe: Integral schätzen =====================
+\gkopfvor{\pfstufekopf{Integral schätzen}{\gpunkte[25 23 22]{\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-integral-schatzen) [@thispage /XYZ @xpos @ypos null]}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% 2023-bebb-gk-A1.2a-m1 (Original 2023-bebb-gk-A1.2a, Schwere I, rang 31; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’23\\A1.2a}{1.}{\pfohnetr}
+Die Abbildung zeigt den Graphen einer in $\mathbb{R}$ definierten Funktion $f$ mit $f(x) \to 1$ für $x \to -\infty$ und $f(x) \to 0$ für $x \to \infty$; auf $[1; 3]$ steigt der Graph von $(1 \mid 1)$ zum Hochpunkt $(3 \mid 2)$. Gib einen Näherungswert für $\int_{1}^{3} f(x)\,dx$ an.
+\gzwei{\begin{abiksys}[xmin=-3,xmax=9,ymin=-1,ymax=3,le=0.5]\funktionab[7.5]{1/(1+exp(2*(\x-4)))+(\x>1)*1.4*(\x-1)^2*exp(-0.8*(\x-1))}{f}{-3}{8.5}\end{abiksys}}{\karo{3}}
+\fusshilfe{\gfuss{1}{3,1 (3,0 bis 3,3 vertretbar)}}
+\end{pfaufg}
+% 2025-bebb-gk-B2.2c-m1 (Original 2025-bebb-gk-B2.2c, Schwere II, rang 34; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’25\\B2.2c}{2.}{}
+Gegeben ist die Funktion $f$ mit $f(x) = (3 - x) \cdot e^x$; ihr Graph hat den Hochpunkt $(2 \mid e^2)$ (Abbildung). Als Näherungswert für $\int_{-2}^{2} f(x)\,dx$ wird der Term $\tfrac{1}{2} \cdot e^2 \cdot 4$ verwendet. Begründe geometrisch, dass dieser Term ein Näherungswert ist; trage dazu in die Abbildung ein.
+\par\smallskip\noindent\begin{abiksys}[xmin=-5,xmax=3,ymin=-1,ymax=8,le=0.4,yle=0.3,ystep=2]\funktion[-1]{(3-\x)*exp(\x)}{G_f}\end{abiksys}\par
+\karo{2}
+\fusshilfe{\gfuss{2}{Dreieck mit den Ecken ($-$2|0), (2|0) und (2|e²) einzeichnen; 14,8}}
+\end{pfaufg}
+% 2022-bebb-gk-B2.2i-m1 (Original 2022-bebb-gk-B2.2i, Schwere II, rang 35; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’22\\B2.2i}{3.}{}
+Für das Betonteil (oberer Rand Graph von $h$ mit $h(x) = -\tfrac{1}{16}x^3 + \tfrac{3}{8}x^2$ von $A(0 \mid 0)$ bis $B(4 \mid 2)$) wird vorgeschlagen, den oberen Rand als Strecke $AB$ zu gestalten. Untersuche, ob die Querschnittsfläche dadurch größer, kleiner oder gleich groß wäre.
+\karo{4}
+\fusshilfe{\gfuss{3}{gleich groß}}
+\end{pfaufg}
+
+% ===================== Stufe: Vorzeichen des Integrals beurteilen =====================
+\gkopfvor{\pfstufekopf{Vorzeichen des Integrals beurteilen}{\gpunkte[26 22]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}}}\special{pdf:dest (stufe-vorzeichen-des-integrals-beurteilen) [@thispage /XYZ @xpos @ypos null]}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% 2026-bb-gk-A1.1b-m1 (Original 2026-bb-gk-A1.1b, Schwere II, rang 32; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’26\\A1.1b}{4.}{\pfohnetr}
+Der Graph der Funktion $f$ mit $f(x) = x^3 + 2x^2 - 3x$ und die $x$-Achse schließen eine Fläche aus zwei Flächenstücken ein (Abbildung). Beurteile, ob der Wert des Terms $\int_{-3}^{0} f(x)\,dx + \int_{0}^{1} f(x)\,dx$ dem Inhalt dieser Fläche entspricht.
+\gzwei{\begin{abiksys}[xmin=-3.5,xmax=1.5,ymin=-2,ymax=7,le=0.4]\funktion[1.3]{\x^3+2*\x^2-3*\x}{G_f}\end{abiksys}}{\karo{4}}
+\fusshilfe{\gfuss{4}{nein}}
+\end{pfaufg}
+% 2022-bebb-gk-B2.1f-m1 (Original 2022-bebb-gk-B2.1f, Schwere II, rang 33; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’22\\B2.1f}{5.}{}
+Gegeben ist die in $\mathbb{R}$ definierte Funktion $f$ mit $f(x) = (x + 3) \cdot e^{-x}$ und $f'(x) = -(x + 2) \cdot e^{-x}$; die Abbildung zeigt die Graphen I und II von $f$ und $f'$ ohne Skalierung. Begründe ohne Rechnung: $\int_{-4}^{-3} f'(x)\,dx > \int_{-1}^{0} f'(x)\,dx$.
+\gzwei{\begin{abiksys}[xmin=-4.5,xmax=5,ymin=-3,ymax=9,le=0.4,yle=0.2,ohnezahlen,ohnegitter]\funktion[-1.2]{(\x+3)*exp(-\x)}{\mathrm{I}}\funktion[1.8]{-(\x+2)*exp(-\x)}{\mathrm{II}}\end{abiksys}}{\karo{4}}
+\fusshilfe{\gfuss{5}{Ungleichung gilt}}
+\end{pfaufg}
+
+% ===================== Stufe: Stammfunktion am Graphen lesen =====================
+\gkopfvor{\pfstufekopf{Stammfunktion am Graphen lesen}{\gpunkte[26 24 23]{\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!80}{$\bullet$}\,\textcolor{black!25}{$\circ$}}}\special{pdf:dest (stufe-stammfunktion-am-graphen-lesen) [@thispage /XYZ @xpos @ypos null]}}
+% kein Einstieg: keine Schülerfrage in der Gliederung (Schülerfrage, -Fälle, -Form, -Weg, -Skizze; oder Frage) – Einstieg nur von dort, nie aus der Bank (pruefung.md § 5, 12.10.)
+% 2026-bb-gk-B2.1b-m1 (Original 2026-bb-gk-B2.1b, Schwere II, rang 36; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’26\\B2.1b}{6.}{}
+Die Abbildung zeigt den Graphen der Funktion $f'$ mit $f'(x) = \tfrac{4}{3}x^2 \cdot (2x + 3)$. Begründe, dass jede Stammfunktion von $f'$ an der Stelle $-\tfrac{3}{2}$ ihr Minimum annimmt.
+\gzwei{\begin{abiksys}[xmin=-2,xmax=0.75,ymin=-6,ymax=3,le=1.5,yle=0.4,xstep=0.5]\funktion[-1.8]{4/3*\x^2*(2*\x+3)}{G_{f'}}\end{abiksys}}{\karo{4}}
+\fusshilfe{\gfuss{6}{Minimum bei $-\tfrac{3}{2}$}}
+\end{pfaufg}
+% 2023-bebb-gk-A1.2b-m1 (Original 2023-bebb-gk-A1.2b, Schwere II, rang 37; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’23\\A1.2b}{7.}{\pfohnetr}
+Für die Funktion $f$ aus der Abbildung ($f > 0$, $f(x) \to 1$ für $x \to -\infty$, Hochpunkt $(3 \mid 2)$, $f(x) \to 0$ für $x \to \infty$) gilt: $F$ ist eine Stammfunktion von $f$ mit $F(1) = 0$. Skizziere den Graphen von $F$ in der Abbildung.
+\par\smallskip\noindent\begin{abiksys}[xmin=-3,xmax=9,ymin=-1,ymax=9,le=0.4]\funktionab[7.5]{1/(1+exp(2*(\x-4)))+(\x>1)*1.4*(\x-1)^2*exp(-0.8*(\x-1))}{f}{-3}{8.5}\end{abiksys}\par
+\fusshilfe{\gfuss{7}{rechts immer flacher gegen etwa 8,5}}
+\end{pfaufg}
+% 2026-bb-gk-A1.7b-m1 (Original 2026-bb-gk-A1.7b, Schwere III, rang 38; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’26\\A1.7b}{8.}{\pfohnetr}
+Die Abbildung zeigt den Graphen der Ableitung $f'$ einer in $\mathbb{R}$ definierten Funktion $f$. Die einzige Nullstelle von $f'$ ist $-2$, dort wechselt $f'$ das Vorzeichen von minus nach plus. Es gilt $f(-2) = 1$. Beurteile die Aussage: Ist $F$ eine Stammfunktion von $f$, dann hat der Graph von $F$ keinen Extrempunkt.
+\gzwei{\begin{abiksys}[xmin=-4,xmax=4,ymin=-3,ymax=4,le=0.4]\funktion[3]{3*(\x+2)*exp(-\x-1)}{G_{f'}}\end{abiksys}}{\karo{4}}
+\fusshilfe{\gfuss{8}{kein Extrempunkt}}
+\end{pfaufg}
+% 2024-bebb-gk-B2.1f-m1 (Original 2024-bebb-gk-B2.1f, Schwere III, rang 39; herausgelöste Fassung: keine)
+\begin{pfaufg}{GK~’24\\B2.1f}{9.}{}
+Die Abbildung zeigt die Graphen von $f$ mit $f(x) = (x - 3) \cdot e^{-\tfrac{x}{3} + 2}$ und von $f'$ ohne Skalierung. Beurteile mithilfe der Abbildung die Aussage: Der Graph jeder Stammfunktion von $f$ ändert genau einmal sein Krümmungsverhalten.
+\gzwei{\begin{abiksys}[xmin=1,xmax=16,ymin=-2,ymax=4.5,le=0.3,yle=0.45,ohnezahlen,ohnegitter]\funktion[13]{(\x-3)*exp(-\x/3+2)}{G_f}\funktion[14]{(2-\x/3)*exp(-\x/3+2)}{G_{f'}}\end{abiksys}}{\karo{4}}
+\fusshilfe{\gfuss{9}{genau ein Krümmungswechsel}}
+\end{pfaufg}
+
+\pfblattende{10}{26 & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17}{A1.1b A1.7b B2.1b & B2.2c & B2.1f & A1.2a A1.2b & B2.1f B2.2i & A1.2b &  &  &  & }%
+{\pfausschnitt{Integral berechnen \pkt{} Flächeninhalt}{Integral am Graphen}{}}
+\end{document}

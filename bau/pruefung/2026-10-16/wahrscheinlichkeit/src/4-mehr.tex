@@ -1,0 +1,253 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
+\newsavebox{\gbox}\newlength{\gLinks}
+% v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
+% Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr\wd\gbox+6mm\relax}%
+  \ifdim\gLinks>0.62\linewidth
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\leavevmode\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par\addvspace{6pt}}% v0.18 (PG80 Nr. 1): Abstand, damit die Linie von a) nicht an b) rutscht
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+% Skizzenfeld (v0.10, Lehrer 13.10.): Karo ab dem linken Rand über die Zeile, „Skizze“ klein grau oben links im Feld
+% (wie \pfskizzenfeld der Vorlage); der rechte Rand bleibt den Bedingungen
+\newcommand{\gskizze}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \node[anchor=north west,inner sep=2pt,font=\scriptsize,text=mbgrau,fill=white] at (0,{#1*10mm}) {Skizze};
+  \end{tikzpicture}\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% v0.18 (plan.md § 10, 15.10. l): Abschnittsbuchstabe A, B, C vor dem Namen im Kopf – als Vorsatz, damit der
+% Name im TeX gleich bleibt (Bestellkarte, Sprungziele lesen ihn)
+\def\gbstakt{}\newcommand{\gbstvor}[1]{\gdef\gbstakt{#1}}
+\NewCommandCopy\gpfstufekopfalt\pfstufekopf
+\RenewDocumentCommand{\pfstufekopf}{o m m}{\IfValueTF{#1}{\gpfstufekopfalt[#1]}{\gpfstufekopfalt}%
+  {\ifx\gbstakt\empty\else\gbstakt\enspace\fi #2}{#3}\gdef\gbstakt{}}
+% v0.18 (16.10. e): Begriff grau, ohne Nummer, ohne Rahmen über der ersten Aufgabe der Stufe
+\newcommand{\gbegriff}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}\parbox[t]{\dimexpr\linewidth-\mbpfnr\relax}{\raggedright\small\color{mbgrau}#1}\par\nobreak\addvspace{3pt}}
+% v0.18 (16.10. g): Lösungsblatt – Kopf mit kräftigem Strich, Abschnitt klein grau als Zwischenzeile
+\newcommand{\glkopf}[1]{\noindent{\large\bfseries Lösungen \textperiodcentered{} #1}\par\vspace{3pt}\hrule height 1.2pt\par\medskip}
+\newcommand{\glzwischen}[1]{\par\addvspace{8pt}\Needspace*{4\baselineskip}\noindent{\footnotesize\color{mbgrau}#1}\par\nobreak\vspace{1pt}}
+% v0.18 (15.10. o, w): Blattende – Kern ohne Rahmen, dann graue Zeile „Mehr: n Aufgaben“
+\newcommand{\gkern}[1]{\par\addvspace{14pt}\Needspace*{6\baselineskip}\noindent{\bfseries Kern}\par\nobreak\smallskip
+  {\small\raggedright #1\par}}
+\newcommand{\gmehr}[1]{\par\addvspace{10pt}\noindent{\footnotesize\color{mbgrau}Mehr: #1 Aufgaben}\par}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\makeatletter\setlength{\mbpfbe}{0mm}\makeatother
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} mehr]{Wahrscheinlichkeit}{PS50-3}\pfseitevon
+\pfheftkopf{Wahrscheinlichkeit}{mehr}
+\pfstufenzeile{Ergebnisse aufzählen \pkt{} Wahrscheinlichkeit gesucht \pkt{} Zufallsgerät entwerfen \pkt{} Baum ergänzen \pkt{} Pfadregeln anwenden \pkt{} ohne Zurücklegen rechnen}
+% 2020-OS-K6a-m1 (Schwere I, rang 4)
+\begin{pfaufg}{nach~P10\\’20~\pkt{}~6a}{1.}{}
+Wirft man einen Würfel zweimal hintereinander, gibt es 36 verschiedene Augenpaare. Dabei zählen zum Beispiel (3,1) und (1,3) als verschiedene Ergebnisse. Schreib alle Augenpaare auf, bei denen der zweite Wurf eine 4 zeigt. Ermittle die Wahrscheinlichkeit, im zweiten Wurf eine 4 zu würfeln, und gib sie in Prozent an.
+\karo{3}
+\fusshilfe{\gfuss{1}{16,7 \%}}
+\end{pfaufg}
+% 2019-OS-K6a-m1 (Schwere I, rang 5)
+\begin{pfaufg}{nach~P10\\’19~\pkt{}~6a}{2.}{}
+In einer Kiste liegen 24 Buntstifte: 9 grüne, 5 rote, 4 gelbe und 6 blaue. Paul greift blind einen Stift heraus und legt ihn danach zurück. Gib die Wahrscheinlichkeit an, dass er einen gelben Stift gegriffen hat.
+\karo{2}
+\fusshilfe{\gfuss{2}{16,7 \%}}
+\end{pfaufg}
+% 2017-OS-B1f-m1 (Schwere I, rang 6)
+\begin{pfaufg}{nach~P10\\’17~\pkt{}~1f}{3.}{}
+Drei gleiche Münzen werden zusammen geworfen. Man unterscheidet, ob Zahl (Z) oder Wappen (W) oben liegt. Gib an, wie viele Ergebnisse möglich sind.
+\karo{2}
+\fusshilfe{\gfuss{3}{8 Ergebnisse (ZZZ, ZZW, ZWZ, ZWW, WZZ, WZW, WWZ, WWW)}}
+\end{pfaufg}
+% 2017-OS-K6a-m1 (Schwere I, rang 7)
+\begin{pfaufg}{nach~P10\\’17~\pkt{}~6a}{4.}{}
+An einem Zahlenschloss lässt sich jeder der drei Ringe auf eine Ziffer von 0 bis 7 stellen. Jan stellt die ersten beiden Ringe richtig ein. Die Ziffer für den dritten Ring weiß er nicht mehr. Gib als Bruch und in Prozent an, mit welcher Wahrscheinlichkeit er sie beim ersten Versuch trifft.
+\karo{2}
+\fusshilfe{\gfuss{4}{12,5 \%}}
+\end{pfaufg}
+% 2016-OS-B1f-m1 (Schwere I, rang 8)
+\begin{pfaufg}{nach~P10\\’16~\pkt{}~1f}{5.}{}
+Von 50 Energiesparlampen in einer Kiste sind 3 defekt. Eine Lampe wird herausgenommen. Gib die Wahrscheinlichkeit an, dass sie defekt ist.
+\karo{2}
+\fusshilfe{\gfuss{5}{6 \%}}
+\end{pfaufg}
+% 2016-OS-K5c-m1 (Schwere I, rang 9)
+\begin{pfaufg}{nach~P10\\’16~\pkt{}~5c}{6.}{}
+Mia und Lukas verkaufen Lose mit den Nummern 101 bis 700, jede Nummer genau einmal. Gezogen wird die Nummer 244. Den Hauptgewinn bekommt das Los 244. Einen Trostpreis bekommt jedes Los, das auf 44 endet, aber nicht die 244 ist. Mit einem einzigen Los gewinnt man den Hauptgewinn mit der Wahrscheinlichkeit $\tfrac{1}{600}$. Begründe das.
+\par\smallskip\noindent\gpassend{\fbox{\small\renewcommand{\arraystretch}{1.25}\begin{tabular}{@{}l@{}}\textbf{Gewinnplan}\\Hauptgewinn: Los-Nr.~244\\Trostpreis: Endung 44 (nicht 244)\end{tabular}}}\par
+\karo{3}
+\fusshilfe{\gfuss{6}{$\tfrac{1}{600}$}}
+\end{pfaufg}
+% 2018-OS-B1j-m1 (Schwere I, rang 9)
+\begin{pfaufg}{nach~P10\\’18~\pkt{}~1j}{7.}{}
+Ein Glücksrad hat 10 gleich große Felder in den Farben Rot, Grün und Weiß. Mit 30 \% Wahrscheinlichkeit bleibt es bei einmaligem Drehen auf Rot stehen. Gib an, wie viele Felder rot sind.
+\karo{2}
+\fusshilfe{\gfuss{7}{3 rote Felder}}
+\end{pfaufg}
+% 2014-OS-K6b-m1 (Schwere I, rang 10)
+\begin{pfaufg}{nach~P10\\’14~\pkt{}~6b}{8.}{}
+Für ein Kinderfest hat Pauls Vater ein Glücksrad gebaut. In einer Spielrunde wird es zweimal nacheinander gedreht. Alle Felder sind gleich groß und werden gleich wahrscheinlich getroffen. Trag im Baumdiagramm alle fehlenden Wahrscheinlichkeiten ein.
+\par\smallskip\noindent\gpassend{\begin{tikzpicture}[line width=0.6pt,ast/.style={font=\small,inner sep=1.5pt},wk/.style={font=\scriptsize,fill=white,inner sep=1pt}]\coordinate (P) at (0,-3.600);\node[ast,anchor=west] (P0) at (3.00,-0.900) {A};\draw[] (P) -- (P0.west) node[wk,pos=0.6] {\underline{\hspace{5mm}}};\node[ast,anchor=west] (P00) at (6.00,0.000) {A};\draw[] (P0.east) -- (P00.west) node[wk,pos=0.6] {\underline{\hspace{5mm}}};\node[ast,anchor=west] (P01) at (6.00,-0.900) {B};\draw[] (P0.east) -- (P01.west) node[wk,pos=0.6] {\underline{\hspace{5mm}}};\node[ast,anchor=west] (P02) at (6.00,-1.800) {C};\draw[] (P0.east) -- (P02.west) node[wk,pos=0.6] {\underline{\hspace{5mm}}};\node[ast,anchor=west] (P1) at (3.00,-3.600) {B};\draw[] (P) -- (P1.west) node[wk,pos=0.6] {\underline{\hspace{5mm}}};\node[ast,anchor=west] (P10) at (6.00,-2.700) {A};\draw[] (P1.east) -- (P10.west) node[wk,pos=0.6] {\underline{\hspace{5mm}}};\node[ast,anchor=west] (P11) at (6.00,-3.600) {B};\draw[] (P1.east) -- (P11.west) node[wk,pos=0.6] {\underline{\hspace{5mm}}};\node[ast,anchor=west] (P12) at (6.00,-4.500) {C};\draw[] (P1.east) -- (P12.west) node[wk,pos=0.6] {\underline{\hspace{5mm}}};\node[ast,anchor=west] (P2) at (3.00,-6.300) {C};\draw[] (P) -- (P2.west) node[wk,pos=0.6] {$\tfrac{3}{10}$};\node[ast,anchor=west] (P20) at (6.00,-5.400) {A};\draw[] (P2.east) -- (P20.west) node[wk,pos=0.6] {\underline{\hspace{5mm}}};\node[ast,anchor=west] (P21) at (6.00,-6.300) {B};\draw[] (P2.east) -- (P21.west) node[wk,pos=0.6] {\underline{\hspace{5mm}}};\node[ast,anchor=west] (P22) at (6.00,-7.200) {C};\draw[] (P2.east) -- (P22.west) node[wk,pos=0.6] {\underline{\hspace{5mm}}};\end{tikzpicture}}\par
+\karo{3}
+\fusshilfe{\gfuss{8}{2. Stufe an jedem Ast: A 4/10, B 3/10, C $\tfrac{3}{10}$}}
+\end{pfaufg}
+% 2015-OS-B1a-m1 (Schwere I, rang 10)
+\begin{pfaufg}{nach~P10\\’15~\pkt{}~1a}{9.}{}
+In jedem der drei Töpfe liegen acht Kugeln. Die Wahrscheinlichkeit, blind eine weiße Kugel zu ziehen, soll 25 \% sein. Kreuze an, aus welchem Topf gezogen werden muss: Topf 1:
+\par\smallskip\noindent\gpassend{\begin{tikzpicture}[line width=0.7pt,font=\small]\draw (0.00,2) -- (0.00,0) -- (3.00,0) -- (3.00,2);\filldraw[fill=white,line width=0.5pt] (0.45,0.40) circle (0.3);\filldraw[fill=white,line width=0.5pt] (1.15,0.40) circle (0.3);\filldraw[fill=white,line width=0.5pt] (1.85,0.40) circle (0.3);\filldraw[fill=white,line width=0.5pt] (2.55,0.40) circle (0.3);\filldraw[fill=black!45,line width=0.5pt] (0.45,1.10) circle (0.3);\filldraw[fill=black!45,line width=0.5pt] (1.15,1.10) circle (0.3);\filldraw[fill=black!45,line width=0.5pt] (1.85,1.10) circle (0.3);\filldraw[fill=black!45,line width=0.5pt] (2.55,1.10) circle (0.3);\node at (1.50,2.4) {Topf 1};\draw[line width=0.5pt] (1.30,-0.75) rectangle (1.70,-0.35);\draw (4.20,2) -- (4.20,0) -- (7.20,0) -- (7.20,2);\filldraw[fill=white,line width=0.5pt] (4.65,0.40) circle (0.3);\filldraw[fill=white,line width=0.5pt] (5.35,0.40) circle (0.3);\filldraw[fill=black!45,line width=0.5pt] (6.05,0.40) circle (0.3);\filldraw[fill=black!45,line width=0.5pt] (6.75,0.40) circle (0.3);\filldraw[fill=black!45,line width=0.5pt] (4.65,1.10) circle (0.3);\filldraw[fill=black!45,line width=0.5pt] (5.35,1.10) circle (0.3);\filldraw[fill=black!45,line width=0.5pt] (6.05,1.10) circle (0.3);\filldraw[fill=black!45,line width=0.5pt] (6.75,1.10) circle (0.3);\node at (5.70,2.4) {Topf 2};\draw[line width=0.5pt] (5.50,-0.75) rectangle (5.90,-0.35);\draw (8.40,2) -- (8.40,0) -- (11.40,0) -- (11.40,2);\filldraw[fill=white,line width=0.5pt] (8.85,0.40) circle (0.3);\filldraw[fill=white,line width=0.5pt] (9.55,0.40) circle (0.3);\filldraw[fill=white,line width=0.5pt] (10.25,0.40) circle (0.3);\filldraw[fill=white,line width=0.5pt] (10.95,0.40) circle (0.3);\filldraw[fill=white,line width=0.5pt] (8.85,1.10) circle (0.3);\filldraw[fill=white,line width=0.5pt] (9.55,1.10) circle (0.3);\filldraw[fill=black!45,line width=0.5pt] (10.25,1.10) circle (0.3);\filldraw[fill=black!45,line width=0.5pt] (10.95,1.10) circle (0.3);\node at (9.90,2.4) {Topf 3};\draw[line width=0.5pt] (9.70,-0.75) rectangle (10.10,-0.35);\end{tikzpicture}}\par
+\par\smallskip\noindent\pfkreuz{}{4 weiße, 4 graue Kugeln}\pfkreuz{}{Topf 2: 2 weiße, 6 graue Kugeln}\pfkreuz{}{Topf 3: 6 weiße, 2 graue Kugeln}
+\fusshilfe{\gfuss{9}{25 \%}}
+\end{pfaufg}
+% 2014-OS-B1b-m1 (Schwere I, rang 11)
+\begin{pfaufg}{nach~P10\\’14~\pkt{}~1b}{10.}{}
+In einer Lostrommel liegen 90 Nieten und 30 Gewinnlose. Gib die Wahrscheinlichkeit P(Gewinn) an.
+\karo{2}
+\fusshilfe{\gfuss{10}{25 \%}}
+\end{pfaufg}
+% 2020-OS-K6b-m1 (Schwere II, rang 11)
+\begin{pfaufg}{nach~P10\\’20~\pkt{}~6b}{11.}{}
+Wirft man einen Würfel zweimal hintereinander, gibt es 36 verschiedene Augenpaare. Dabei zählen zum Beispiel (3,1) und (1,3) als verschiedene Ergebnisse. Max sagt: „Zwei gleiche Augenzahlen zu werfen ist wahrscheinlicher, als im ersten Wurf eine 5 zu werfen.“ Kreuze an:
+\par\smallskip\noindent\pfkreuz{}{Max hat recht}\pfkreuz{}{Max hat nicht recht. Begründe deine Entscheidung.}
+\fusshilfe{\gfuss{11}{0,167}}
+\end{pfaufg}
+% 2014-OS-B1d-m1 (Schwere I, rang 12)
+\begin{pfaufg}{nach~P10\\’14~\pkt{}~1d}{12.}{}
+Ein Spielwürfel wird einmal geworfen. Gib die Wahrscheinlichkeit an, dass weder eine 2 noch eine 5 fällt.
+\karo{2}
+\fusshilfe{\gfuss{12}{0,67}}
+\end{pfaufg}
+% 2019-OS-B1g-m1 (Schwere II, rang 12)
+\begin{pfaufg}{nach~P10\\’19~\pkt{}~1g}{13.}{}
+In einem Gefäß liegen schwarze und weiße Kugeln. Das Baumdiagramm zeigt, mit welcher Wahrscheinlichkeit man eine schwarze oder eine weiße Kugel zieht. Zeichne die fehlenden weißen Kugeln in das Gefäß.
+\par\smallskip\noindent\gpassend{\begin{tikzpicture}[line width=0.7pt]\draw (0,3.4) -- (0,0) -- (3.6,0) -- (3.6,3.4);\fill (0.50,0.40) circle (0.32);\fill (1.35,0.40) circle (0.32);\fill (2.20,0.40) circle (0.32);\fill (3.05,0.40) circle (0.32);\fill (0.92,1.15) circle (0.32);\fill (1.77,1.15) circle (0.32);\end{tikzpicture}\hspace{1.2cm}\begin{tikzpicture}[line width=0.6pt,ast/.style={font=\small,inner sep=1.5pt},wk/.style={font=\scriptsize,fill=white,inner sep=1pt}]\coordinate (P) at (0,-0.700);\node[ast,anchor=west] (P0) at (3.00,0.000) {schwarz};\draw[] (P) -- (P0.west) node[wk,pos=0.6] {$\tfrac{3}{5}$};\node[ast,anchor=west] (P1) at (3.00,-1.400) {weiß};\draw[] (P) -- (P1.west) node[wk,pos=0.6] {$\tfrac{2}{5}$};\end{tikzpicture}}\par
+\karo{2}
+\fusshilfe{\gfuss{13}{4 weiße Kugeln}}
+\end{pfaufg}
+% 2014-OS-K6a-m1 (Schwere I, rang 13)
+\begin{pfaufg}{nach~P10\\’14~\pkt{}~6a}{14.}{}
+Für ein Kinderfest hat Pauls Vater ein Glücksrad gebaut. In einer Spielrunde wird es zweimal nacheinander gedreht. Alle Felder sind gleich groß und werden gleich wahrscheinlich getroffen. Ermittle die Wahrscheinlichkeit, dass der Zeiger auf ein B zeigt. Gib das Ergebnis als Bruch und in Prozent an.
+\par\smallskip\noindent\gpassend{\begin{tikzpicture}[line width=0.7pt,font=\small]\draw (0,0) circle (1.5);\draw (0,0) -- (108:1.5);\node at (90:1.05) {A};\draw (0,0) -- (72:1.5);\node at (54:1.05) {B};\draw (0,0) -- (36:1.5);\node at (18:1.05) {C};\draw (0,0) -- (0:1.5);\node at (-18:1.05) {A};\draw (0,0) -- (-36:1.5);\node at (-54:1.05) {B};\draw (0,0) -- (-72:1.5);\node at (-90:1.05) {A};\draw (0,0) -- (-108:1.5);\node at (-126:1.05) {C};\draw (0,0) -- (-144:1.5);\node at (-162:1.05) {A};\draw (0,0) -- (-180:1.5);\node at (-198:1.05) {B};\draw (0,0) -- (-216:1.5);\node at (-234:1.05) {C};\fill (0,0) circle (1.4pt);\draw[-{Stealth},line width=1pt] (0,2.05) -- (0,1.55);\end{tikzpicture}}\par
+\karo{3}
+\fusshilfe{\gfuss{14}{$\tfrac{3}{10}$; 30 \%}}
+\end{pfaufg}
+% 2019-OS-K6b-m1 (Schwere II, rang 13)
+\begin{pfaufg}{nach~P10\\’19~\pkt{}~6b}{15.}{}
+In einer Kiste liegen 24 Buntstifte: 9 grüne, 5 rote, 4 gelbe und 6 blaue. Marie nimmt aus der vollen Kiste blind nacheinander drei Stifte heraus und legt keinen zurück. Ergänze im Baumdiagramm die Wahrscheinlichkeiten an den zwei leeren Stellen. Entscheide für den fett gezeichneten Pfad, ob die Aussagen wahr oder falsch sind, und kreuze an: „Marie zieht drei Stifte mit verschiedenen Farben.“ / „Marie legt jeden Stift nach dem Ziehen zurück.“ / „Der fette Pfad hat eine Wahrscheinlichkeit unter 1 \%.“
+\par\smallskip\noindent\gpassend{\begin{tikzpicture}[line width=0.6pt,ast/.style={font=\small,inner sep=1.5pt},wk/.style={font=\scriptsize,fill=white,inner sep=1pt}]\coordinate (P) at (0,-2.450);\node[ast,anchor=west] (P0) at (3.00,-1.050) {rot};\draw[line width=1.6pt] (P) -- (P0.west) node[wk,pos=0.6] {$\tfrac{5}{24}$};\node[ast,anchor=west] (P00) at (6.00,-0.350) {rot};\draw[line width=1.6pt] (P0.east) -- (P00.west) node[wk,pos=0.6] {$\tfrac{4}{23}$};\node[ast,anchor=west] (P000) at (9.00,0.000) {rot};\draw[line width=1.6pt] (P00.east) -- (P000.west) node[wk,pos=0.6] {$\tfrac{3}{22}$};\node[ast,anchor=west] (P001) at (9.00,-0.700) {nicht rot};\draw[] (P00.east) -- (P001.west);\node[ast,anchor=west] (P01) at (6.00,-1.750) {nicht rot};\draw[] (P0.east) -- (P01.west);\node[ast,anchor=west] (P010) at (9.00,-1.400) {rot};\draw[] (P01.east) -- (P010.west);\node[ast,anchor=west] (P011) at (9.00,-2.100) {nicht rot};\draw[] (P01.east) -- (P011.west);\node[ast,anchor=west] (P1) at (3.00,-3.850) {nicht rot};\draw[] (P) -- (P1.west) node[wk,pos=0.6] {\underline{\hspace{5mm}}};\node[ast,anchor=west] (P10) at (6.00,-3.150) {rot};\draw[] (P1.east) -- (P10.west);\node[ast,anchor=west] (P100) at (9.00,-2.800) {rot};\draw[] (P10.east) -- (P100.west) node[wk,pos=0.6] {\underline{\hspace{5mm}}};\node[ast,anchor=west] (P101) at (9.00,-3.500) {nicht rot};\draw[] (P10.east) -- (P101.west);\node[ast,anchor=west] (P11) at (6.00,-4.550) {nicht rot};\draw[] (P1.east) -- (P11.west);\node[ast,anchor=west] (P110) at (9.00,-4.200) {rot};\draw[] (P11.east) -- (P110.west);\node[ast,anchor=west] (P111) at (9.00,-4.900) {nicht rot};\draw[] (P11.east) -- (P111.west);\end{tikzpicture}\par\medskip\noindent {\small\renewcommand{\arraystretch}{1.25}\begin{tabular}{|p{8.2cm}|c|c|}\hline Aussage & wahr & falsch\\\hline „Marie zieht drei Stifte mit verschiedenen Farben.“ &  & \\\hline „Marie legt jeden Stift nach dem Ziehen zurück.“ &  & \\\hline „Der fette Pfad hat eine Wahrscheinlichkeit unter 1\,\%.“ &  & \\\hline\end{tabular}}}\par
+\karo{4}
+\fusshilfe{\gfuss{15}{nicht rot: $\tfrac{19}{24}$; nicht rot > rot > rot: $\tfrac{4}{22}$; Aussage 1 falsch, Aussage 2 falsch, Aussage 3 wahr (P = $\tfrac{60}{12144}$ $\approx$ 0,49 \%)}}
+\end{pfaufg}
+% 2015-OS-K7d-m1 (Schwere II, rang 14)
+\begin{pfaufg}{nach~P10\\’15~\pkt{}~7d}{16.}{}
+Beim Elfmetertraining stehen 14 Spieler bereit. Jeder schießt höchstens einmal; die Reihenfolge wird ausgelost. Die Fans wünschen sich, dass ihr Torjäger Ronny unter den ersten drei Schützen ist. Vervollständige das Baumdiagramm (R: Ronny schießt, nR: Ronny schießt nicht) und trag die fehlenden Wahrscheinlichkeiten ein. Berechne die Wahrscheinlichkeit, dass Ronny unter den ersten drei Schützen ist.
+\par\smallskip\noindent\gpassend{\begin{tikzpicture}[line width=0.6pt,ast/.style={font=\small,inner sep=1.5pt},wk/.style={font=\scriptsize,fill=white,inner sep=1pt}]\coordinate (P) at (0,-0.700);\node[ast,anchor=west] (P0) at (3.00,0.000) {R};\draw[] (P) -- (P0.west) node[wk,pos=0.6] {$\tfrac{1}{14}$};\node[ast,anchor=west] (P1) at (3.00,-1.400) {nR};\draw[] (P) -- (P1.west) node[wk,pos=0.6] {\underline{\hspace{5mm}}};\node[ast,anchor=west] (P10) at (6.00,-0.800) {R};\draw[] (P1.east) -- (P10.west) node[wk,pos=0.6] {\underline{\hspace{5mm}}};\node[ast,anchor=west] (P11) at (6.00,-2.000) {nR};\draw[] (P1.east) -- (P11.west) node[wk,pos=0.6] {$\tfrac{12}{13}$};\node[ast,anchor=west] (P110) at (9.00,-1.600) {R};\draw[] (P11.east) -- (P110.west) node[wk,pos=0.6] {\underline{\hspace{5mm}}};\node[ast,anchor=west] (P111) at (9.00,-2.400) {nR};\draw[] (P11.east) -- (P111.west) node[wk,pos=0.6] {\underline{\hspace{5mm}}};\end{tikzpicture}}\par
+\karo{3}
+\fusshilfe{\gfuss{16}{nR 13/14, nR>R 1/13, nR>nR>R 1/12, nR>nR>nR $\tfrac{11}{12}$; 0,21}}
+\end{pfaufg}
+% 2018-OS-K7b-m1 (Schwere II, rang 14)
+\begin{pfaufg}{nach~P10\\’18~\pkt{}~7b}{17.}{}
+Eva hat 40 Pfannkuchen gebacken: 37 mit Marmelade, 3 mit Senf; von außen sieht man die Füllung nicht. Tom nimmt sich zuerst zwei, beide mit Marmelade. Pia sagt: „Jetzt greift man mit der Wahrscheinlichkeit $\tfrac{3}{40}$ einen Senf-Pfannkuchen.“ Entscheide, ob Pia recht hat, und begründe.
+\karo{2}
+\fusshilfe{\gfuss{17}{7,9 \%}}
+\end{pfaufg}
+% 2014-OS-K6c-m1 (Schwere II, rang 15)
+\begin{pfaufg}{nach~P10\\’14~\pkt{}~6c}{18.}{}
+Für ein Kinderfest hat Pauls Vater ein Glücksrad gebaut. In einer Spielrunde wird es zweimal nacheinander gedreht. Alle Felder sind gleich groß und werden gleich wahrscheinlich getroffen. Berechne die Wahrscheinlichkeit, dass der Zeiger bei beiden Drehungen auf denselben Buchstaben zeigt.
+\par\smallskip\noindent\gpassend{\begin{tikzpicture}[line width=0.7pt,font=\small]\draw (0,0) circle (1.5);\draw (0,0) -- (108:1.5);\node at (90:1.05) {A};\draw (0,0) -- (72:1.5);\node at (54:1.05) {B};\draw (0,0) -- (36:1.5);\node at (18:1.05) {C};\draw (0,0) -- (0:1.5);\node at (-18:1.05) {A};\draw (0,0) -- (-36:1.5);\node at (-54:1.05) {B};\draw (0,0) -- (-72:1.5);\node at (-90:1.05) {A};\draw (0,0) -- (-108:1.5);\node at (-126:1.05) {C};\draw (0,0) -- (-144:1.5);\node at (-162:1.05) {A};\draw (0,0) -- (-180:1.5);\node at (-198:1.05) {B};\draw (0,0) -- (-216:1.5);\node at (-234:1.05) {C};\fill (0,0) circle (1.4pt);\draw[-{Stealth},line width=1pt] (0,2.05) -- (0,1.55);\end{tikzpicture}}\par
+\karo{2}
+\fusshilfe{\gfuss{18}{0,34}}
+\end{pfaufg}
+% 2016-OS-K5d-m1 (Schwere III, rang 15)
+\begin{pfaufg}{nach~P10\\’16~\pkt{}~5d}{19.}{}
+Mia und Lukas verkaufen Lose mit den Nummern 101 bis 700, jede Nummer genau einmal. Gezogen wird die Nummer 244. Den Hauptgewinn bekommt das Los 244. Einen Trostpreis bekommt jedes Los, das auf 44 endet, aber nicht die 244 ist. Anne hat ein Los gekauft. Beim Öffnen sieht sie zuerst nur die letzte Ziffer: eine 4. Sie sagt: „Meine Chance auf einen Trostpreis liegt jetzt bei $\tfrac{5}{60}$.“ Hat Anne recht? Begründe.
+\par\smallskip\noindent\gpassend{\fbox{\small\renewcommand{\arraystretch}{1.25}\begin{tabular}{@{}l@{}}\textbf{Gewinnplan}\\Hauptgewinn: Los-Nr.~244\\Trostpreis: Endung 44 (nicht 244)\end{tabular}}}\par
+\karo{3}
+\fusshilfe{\gfuss{19}{$\tfrac{5}{60}$}}
+\end{pfaufg}
+% 2020-OS-K6c-m1 (Schwere III, rang 16)
+\begin{pfaufg}{nach~P10\\’20~\pkt{}~6c}{20.}{}
+Wirft man einen Würfel zweimal hintereinander, gibt es 36 verschiedene Augenpaare. Dabei zählen zum Beispiel (3,1) und (1,3) als verschiedene Ergebnisse. Lisa und Max wollen ins Kino. Lisa würfelt dreimal hintereinander. Fällt dabei mindestens zweimal eine 4, bezahlt Max beide Karten. Vervollständige das Baumdiagramm. Berechne die Wahrscheinlichkeit, dass Max die Karten bezahlt.
+\par\smallskip\noindent\gpassend{\begin{tikzpicture}[line width=0.6pt,ast/.style={font=\small,inner sep=1.5pt},wk/.style={font=\scriptsize,fill=white,inner sep=1pt}]\coordinate (P) at (0,-2.975);\node[ast,anchor=west] (P0) at (3.00,-1.275) {$4$};\draw[] (P) -- (P0.west) node[wk,pos=0.6] {\underline{\hspace{5mm}}};\node[ast,anchor=west] (P00) at (6.00,-0.425) {$4$};\draw[] (P0.east) -- (P00.west) node[wk,pos=0.6] {\underline{\hspace{5mm}}};\node[ast,anchor=west] (P000) at (9.00,0.000) {$4$};\draw[] (P00.east) -- (P000.west) node[wk,pos=0.6] {\underline{\hspace{5mm}}};\node[ast,anchor=west] (P001) at (9.00,-0.850) {keine 4};\draw[] (P00.east) -- (P001.west) node[wk,pos=0.6] {\underline{\hspace{5mm}}};\node[ast,anchor=west] (P01) at (6.00,-2.125) {keine 4};\draw[] (P0.east) -- (P01.west) node[wk,pos=0.6] {\underline{\hspace{5mm}}};\node[ast,anchor=west] (P010) at (9.00,-1.700) {$4$};\draw[] (P01.east) -- (P010.west) node[wk,pos=0.6] {\underline{\hspace{5mm}}};\node[ast,anchor=west] (P011) at (9.00,-2.550) {keine 4};\draw[] (P01.east) -- (P011.west) node[wk,pos=0.6] {\underline{\hspace{5mm}}};\node[ast,anchor=west] (P1) at (3.00,-4.675) {keine 4};\draw[] (P) -- (P1.west) node[wk,pos=0.6] {\underline{\hspace{5mm}}};\node[ast,anchor=west] (P10) at (6.00,-3.825) {$4$};\draw[] (P1.east) -- (P10.west) node[wk,pos=0.6] {\underline{\hspace{5mm}}};\node[ast,anchor=west] (P100) at (9.00,-3.400) {$4$};\draw[] (P10.east) -- (P100.west) node[wk,pos=0.6] {\underline{\hspace{5mm}}};\node[ast,anchor=west] (P101) at (9.00,-4.250) {keine 4};\draw[] (P10.east) -- (P101.west) node[wk,pos=0.6] {\underline{\hspace{5mm}}};\node[ast,anchor=west] (P11) at (6.00,-5.525) {keine 4};\draw[] (P1.east) -- (P11.west) node[wk,pos=0.6] {\underline{\hspace{5mm}}};\node[ast,anchor=west] (P110) at (9.00,-5.100) {$4$};\draw[] (P11.east) -- (P110.west) node[wk,pos=0.6] {\underline{\hspace{5mm}}};\node[ast,anchor=west] (P111) at (9.00,-5.950) {keine 4};\draw[] (P11.east) -- (P111.west) node[wk,pos=0.6] {\underline{\hspace{5mm}}};\end{tikzpicture}}\par
+\karo{3}
+\fusshilfe{\gfuss{20}{7,4 \%}}
+\end{pfaufg}
+% 2019-OS-K6c-m1 (Schwere III, rang 17)
+\begin{pfaufg}{nach~P10\\’19~\pkt{}~6c}{21.}{}
+In einer Kiste liegen 24 Buntstifte: 9 grüne, 5 rote, 4 gelbe und 6 blaue. Marc sagt: „Zieht man ohne Zurücklegen drei Stifte aus der Kiste, ist es doppelt so wahrscheinlich, drei blaue zu bekommen wie drei gelbe.“ Zeige mit einer Rechnung, dass Marc sich irrt.
+\karo{4}
+\fusshilfe{\gfuss{21}{0,99 \%; 0,20 \%; Behauptung falsch, es ist das 5-fache und nicht das Doppelte}}
+\end{pfaufg}
+% 2018-OS-K7c-m1 (Schwere III, rang 18)
+\begin{pfaufg}{nach~P10\\’18~\pkt{}~7c}{22.}{}
+Für ein anderes Fest backt Eva wieder 37 Pfannkuchen mit Marmelade (M) und 3 mit Senf (S). Der erste Gast nimmt blind nacheinander zwei Pfannkuchen. Er erwischt mindestens einen mit Senf: Nenne alle Ergebnisse, die dafür in Frage kommen. Ermittle die Wahrscheinlichkeit, dass beide Pfannkuchen des ersten Gastes Marmelade enthalten. Beschreibe in Worten das Ereignis E, dessen Wahrscheinlichkeit diese Rechnung angibt: $P(E) = \tfrac{3}{40}\cdot\tfrac{2}{39} + \tfrac{37}{40}\cdot\tfrac{36}{39}$
+\karo{7}
+\fusshilfe{\gfuss{22}{S): 3 Ergebnisse; 0,854; 0,858}}
+\end{pfaufg}
+\par\vfill\noindent{\scriptsize\color{mbgrau}Originale: P10 2020 \pkt{} 6a, P10 2019 \pkt{} 6a, P10 2017 \pkt{} 1f, P10 2017 \pkt{} 6a, P10 2016 \pkt{} 1f, P10 2016 \pkt{} 5c, P10 2018 \pkt{} 1j, P10 2014 \pkt{} 6b, P10 2015 \pkt{} 1a, P10 2014 \pkt{} 1b, P10 2020 \pkt{} 6b, P10 2014 \pkt{} 1d, P10 2019 \pkt{} 1g, P10 2014 \pkt{} 6a, P10 2019 \pkt{} 6b, P10 2015 \pkt{} 7d, P10 2018 \pkt{} 7b, P10 2014 \pkt{} 6c, P10 2016 \pkt{} 5d, P10 2020 \pkt{} 6c, P10 2019 \pkt{} 6c, P10 2018 \pkt{} 7c\par}
+\end{document}

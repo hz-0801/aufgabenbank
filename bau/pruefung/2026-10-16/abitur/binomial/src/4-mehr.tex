@@ -1,0 +1,186 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
+\newsavebox{\gbox}\newlength{\gLinks}
+% v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
+% Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr\wd\gbox+6mm\relax}%
+  \ifdim\gLinks>0.62\linewidth
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\leavevmode\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par\addvspace{6pt}}% v0.18 (PG80 Nr. 1): Abstand, damit die Linie von a) nicht an b) rutscht
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+% Skizzenfeld (v0.10, Lehrer 13.10.): Karo ab dem linken Rand über die Zeile, „Skizze“ klein grau oben links im Feld
+% (wie \pfskizzenfeld der Vorlage); der rechte Rand bleibt den Bedingungen
+\newcommand{\gskizze}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \node[anchor=north west,inner sep=2pt,font=\scriptsize,text=mbgrau,fill=white] at (0,{#1*10mm}) {Skizze};
+  \end{tikzpicture}\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% v0.18 (plan.md § 10, 15.10. l): Abschnittsbuchstabe A, B, C vor dem Namen im Kopf – als Vorsatz, damit der
+% Name im TeX gleich bleibt (Bestellkarte, Sprungziele lesen ihn)
+\def\gbstakt{}\newcommand{\gbstvor}[1]{\gdef\gbstakt{#1}}
+\NewCommandCopy\gpfstufekopfalt\pfstufekopf
+\RenewDocumentCommand{\pfstufekopf}{o m m}{\IfValueTF{#1}{\gpfstufekopfalt[#1]}{\gpfstufekopfalt}%
+  {\ifx\gbstakt\empty\else\gbstakt\enspace\fi #2}{#3}\gdef\gbstakt{}}
+% v0.18 (16.10. e): Begriff grau, ohne Nummer, ohne Rahmen über der ersten Aufgabe der Stufe
+\newcommand{\gbegriff}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}\parbox[t]{\dimexpr\linewidth-\mbpfnr\relax}{\raggedright\small\color{mbgrau}#1}\par\nobreak\addvspace{3pt}}
+% v0.18 (16.10. g): Lösungsblatt – Kopf mit kräftigem Strich, Abschnitt klein grau als Zwischenzeile
+\newcommand{\glkopf}[1]{\noindent{\large\bfseries Lösungen \textperiodcentered{} #1}\par\vspace{3pt}\hrule height 1.2pt\par\medskip}
+\newcommand{\glzwischen}[1]{\par\addvspace{8pt}\Needspace*{4\baselineskip}\noindent{\footnotesize\color{mbgrau}#1}\par\nobreak\vspace{1pt}}
+% v0.18 (15.10. o, w): Blattende – Kern ohne Rahmen, dann graue Zeile „Mehr: n Aufgaben“
+\newcommand{\gkern}[1]{\par\addvspace{14pt}\Needspace*{6\baselineskip}\noindent{\bfseries Kern}\par\nobreak\smallskip
+  {\small\raggedright #1\par}}
+\newcommand{\gmehr}[1]{\par\addvspace{10pt}\noindent{\footnotesize\color{mbgrau}Mehr: #1 Aufgaben}\par}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\makeatletter\setlength{\mbpfbe}{0mm}\makeatother
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[Abitur GK \pkt{} mehr]{Binomialwahrscheinlichkeit}{AS70}\pfseitevon
+\pfheftkopf{Binomialwahrscheinlichkeit}{mehr}
+\pfstufenzeile{Wahrscheinlichkeit gesucht \pkt{} n, p oder k gesucht}
+% 2021-be-gk-B4a-m1 (Schwere I, rang 7)
+\begin{pfaufg}{GK~’21\\B4a}{1.}{}
+Bei einem Handyspiel hat man jeden Sonntag zehn Versuche; bei jedem Versuch gewinnt man mit 35 \% Wahrscheinlichkeit einen Stern. $X$ ist die Anzahl der Sterne bei zehn Versuchen. Berechne mit dem Tabellenausschnitt die Wahrscheinlichkeiten der Ereignisse $A$: „mehr als sechs Sterne“ und $B$: „mindestens vier, höchstens sieben Sterne“.
+\par\smallskip\noindent\gpassend{{\small\begin{tabular}{|l|c|c|c|c|c|}\hline \multicolumn{6}{|c|}{$n = 10$, $p = 0{,}35$}\\\hline $k$ & 3 & 4 & 5 & 6 & 7\\\hline $P(X \le k)$ & 0,5138 & 0,7515 & 0,9051 & 0,9740 & 0,9952\\\hline\end{tabular}}}\par
+\karo{3}
+\fusshilfe{\gfuss{1}{0,026; 0,481}}
+\end{pfaufg}
+% 2020-be-gk-B4.2a-m1 (Schwere I, rang 8)
+\begin{pfaufg}{GK~’20\\B4.2a}{2.}{}
+In einem großen Unternehmen ist ein Drittel der Beschäftigten weiblich. Es werden 40 Beschäftigte zufällig ausgewählt; $X$ ist die Anzahl der weiblichen darunter. Ermittle die Wahrscheinlichkeit dafür, dass mindestens 15 der Ausgewählten weiblich sind.
+\karo{2}
+\fusshilfe{\gfuss{2}{0,342}}
+\end{pfaufg}
+% 2019-be-gk-B4.1a-m1 (Schwere II, rang 9)
+\begin{pfaufg}{GK~’19\\B4.1a}{3.}{}
+In einem Land besitzen 75 \% der Erwachsenen einen Führerschein. Es werden 100 Erwachsene zufällig ausgewählt; $X$ ist die Anzahl der Führerscheinbesitzer darunter. Berechne die Wahrscheinlichkeit dafür, dass genau 75 einen Führerschein besitzen, und mit dem Tabellenausschnitt die Wahrscheinlichkeit dafür, dass höchstens 70 einen Führerschein besitzen.
+\par\smallskip\noindent\gpassend{{\small\begin{tabular}{|l|c|c|c|c|}\hline \multicolumn{5}{|c|}{$n = 100$, $p = 0{,}25$}\\\hline $k$ & 28 & 29 & 30 & 31\\\hline $P(X \le k)$ & 0,7925 & 0,8505 & 0,8962 & 0,9307\\\hline\end{tabular}}}\par
+\karo{4}
+\fusshilfe{\gfuss{3}{0,092; 0,150}}
+\end{pfaufg}
+% 2018-be-gk-B3.2a-m1 (Schwere II, rang 10)
+\begin{pfaufg}{GK~’18\\B3.2a}{4.}{}
+Im Mittel sind 15 \% der Bildschirme einer Sorte fehlerhaft. Es werden 50 Bildschirme zufällig ausgewählt; $X$ ist die Anzahl der fehlerhaften. Bestimme mit dem Tabellenausschnitt die Wahrscheinlichkeiten der Ereignisse $A$: „höchstens 6 fehlerhaft“ und $B$: „mehr als 7 und weniger als 12 fehlerhaft“.
+\par\smallskip\noindent\gpassend{{\small\begin{tabular}{|l|c|c|c|c|}\hline \multicolumn{5}{|c|}{$n = 50$, $p = 0{,}15$}\\\hline $k$ & 6 & 7 & 8 & 11\\\hline $P(X \le k)$ & 0,3613 & 0,5188 & 0,6681 & 0,9372\\\hline\end{tabular}}}\par
+\karo{3}
+\fusshilfe{\gfuss{4}{0,361; 0,418}}
+\end{pfaufg}
+% 2019-be-gk-B4.1b-m1 (Schwere II, rang 11)
+\begin{pfaufg}{GK~’19\\B4.1b}{5.}{}
+In einem Land besitzen 75 \% der Erwachsenen einen Führerschein. Ermittle, wie viele Erwachsene man mindestens zufällig auswählen muss, damit mit einer Wahrscheinlichkeit von mindestens 99 \% mindestens eine Person ohne Führerschein darunter ist.
+\karo{5}
+\fusshilfe{\gfuss{5}{17}}
+\end{pfaufg}
+% 2020-be-gk-B4.1c-m1 (Schwere II, rang 12)
+\begin{pfaufg}{GK~’20\\B4.1c}{6.}{}
+Ein Glücksrad hat fünf gleich große Sektoren, einer davon ist rot. Ermittle, wie oft man mindestens drehen muss, um mit einer Wahrscheinlichkeit von mindestens 95 \% mindestens einmal Rot zu erhalten.
+\karo{5}
+\fusshilfe{\gfuss{6}{14}}
+\end{pfaufg}
+% 2021-be-gk-B4e-m1 (Schwere II, rang 13)
+\begin{pfaufg}{GK~’21\\B4e}{7.}{}
+Bei einem Handyspiel gewinnt man bei jedem Versuch mit 35 \% Wahrscheinlichkeit einen Stern. Ermittle, wie viele Versuche man mindestens braucht, um mit einer Wahrscheinlichkeit von mindestens 95 \% mindestens einen Stern zu gewinnen.
+\karo{5}
+\fusshilfe{\gfuss{7}{7}}
+\end{pfaufg}
+% 2018-be-gk-B3.2d-m1 (Schwere III, rang 14)
+\begin{pfaufg}{GK~’18\\B3.2d}{8.}{}
+Nach einer Verbesserung der Fertigung soll die Wahrscheinlichkeit dafür, dass unter 30 zufällig ausgewählten Bildschirmen keiner fehlerhaft ist, mindestens 20 \% betragen. Ermittle den höchsten Anteil fehlerhafter Bildschirme, der dafür zulässig ist.
+\karo{5}
+\fusshilfe{\gfuss{8}{höchstens etwa 5,2 \%}}
+\end{pfaufg}
+% 2021-iqb-ga-B2.1d-m1 (Schwere II, rang 15)
+\begin{pfaufg}{IQB~’21\\B2.1d}{9.}{}
+Bei einem Handyspiel hat man zehn Versuche; $X$ ist die Anzahl der gewonnenen Sterne. Nach einer Änderung der Gewinnwahrscheinlichkeit $p$ je Versuch beträgt die Wahrscheinlichkeit, höchstens zwei Sterne zu gewinnen, etwa 62 \%. Ermittle $p$ auf ganze Prozent.
+\karo{8}
+\fusshilfe{\gfuss{9}{22 \%}}
+\end{pfaufg}
+% 2022-iqb-ga-B2.2a-m1 (Schwere I, rang 16)
+\begin{pfaufg}{IQB~’22\\B2.2a}{10.}{}
+In einer Studie ist die Anzahl der Infizierten unter den Teilnehmenden binomialverteilt mit $p = \tfrac{1}{5}$; der Erwartungswert beträgt 150. Berechne die Anzahl der Teilnehmenden und die Wahrscheinlichkeit für genau 150 Infizierte.
+\karo{4}
+\fusshilfe{\gfuss{10}{750; 0,036}}
+\end{pfaufg}
+% 2026-iqb-ga-B2.1c-m1 (Schwere I, rang 17)
+\begin{pfaufg}{IQB~’26\\B2.1c}{11.}{}
+In einer Musik-Sammlung sind 28 \% der Lieder Hip-Hop-Songs. Es werden 25 Lieder zufällig ausgewählt. Ermittle die Wahrscheinlichkeit dafür, dass mehr als 6 Hip-Hop-Songs darunter sind.
+\karo{2}
+\fusshilfe{\gfuss{11}{0,575}}
+\end{pfaufg}
+% 2019-iqb-ga-B1.1a-m1 (Schwere II, rang 18)
+\begin{pfaufg}{IQB~’19\\B1.1a}{12.}{}
+In einem Land besitzen 60 \% der Jugendlichen ein Fahrrad mit Elektromotor. Es werden 250 Jugendliche zufällig ausgewählt; $X$ ist die Anzahl derer mit einem solchen Fahrrad. Berechne die Wahrscheinlichkeit dafür, dass $X$ um höchstens 5 \% vom Erwartungswert abweicht.
+\karo{5}
+\fusshilfe{\gfuss{12}{0,667}}
+\end{pfaufg}
+\par\vfill\noindent{\scriptsize\color{mbgrau}Originale: Abi GK 2021 \pkt{} B4a, Abi GK 2020 \pkt{} B4.2a, Abi GK 2019 \pkt{} B4.1a, Abi GK 2018 \pkt{} B3.2a, Abi GK 2019 \pkt{} B4.1b, Abi GK 2020 \pkt{} B4.1c, Abi GK 2021 \pkt{} B4e, Abi GK 2018 \pkt{} B3.2d, IQB GK 2021 \pkt{} B2.1d, IQB GK 2022 \pkt{} B2.2a, IQB GK 2026 \pkt{} B2.1c, IQB GK 2019 \pkt{} B1.1a\par}
+\end{document}

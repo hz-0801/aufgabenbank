@@ -1,0 +1,202 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
+\newsavebox{\gbox}\newlength{\gLinks}
+% v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
+% Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr\wd\gbox+6mm\relax}%
+  \ifdim\gLinks>0.62\linewidth
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\leavevmode\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par\addvspace{6pt}}% v0.18 (PG80 Nr. 1): Abstand, damit die Linie von a) nicht an b) rutscht
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+% Skizzenfeld (v0.10, Lehrer 13.10.): Karo ab dem linken Rand über die Zeile, „Skizze“ klein grau oben links im Feld
+% (wie \pfskizzenfeld der Vorlage); der rechte Rand bleibt den Bedingungen
+\newcommand{\gskizze}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \node[anchor=north west,inner sep=2pt,font=\scriptsize,text=mbgrau,fill=white] at (0,{#1*10mm}) {Skizze};
+  \end{tikzpicture}\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% v0.18 (plan.md § 10, 15.10. l): Abschnittsbuchstabe A, B, C vor dem Namen im Kopf – als Vorsatz, damit der
+% Name im TeX gleich bleibt (Bestellkarte, Sprungziele lesen ihn)
+\def\gbstakt{}\newcommand{\gbstvor}[1]{\gdef\gbstakt{#1}}
+\NewCommandCopy\gpfstufekopfalt\pfstufekopf
+\RenewDocumentCommand{\pfstufekopf}{o m m}{\IfValueTF{#1}{\gpfstufekopfalt[#1]}{\gpfstufekopfalt}%
+  {\ifx\gbstakt\empty\else\gbstakt\enspace\fi #2}{#3}\gdef\gbstakt{}}
+% v0.18 (16.10. e): Begriff grau, ohne Nummer, ohne Rahmen über der ersten Aufgabe der Stufe
+\newcommand{\gbegriff}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}\parbox[t]{\dimexpr\linewidth-\mbpfnr\relax}{\raggedright\small\color{mbgrau}#1}\par\nobreak\addvspace{3pt}}
+% v0.18 (16.10. g): Lösungsblatt – Kopf mit kräftigem Strich, Abschnitt klein grau als Zwischenzeile
+\newcommand{\glkopf}[1]{\noindent{\large\bfseries Lösungen \textperiodcentered{} #1}\par\vspace{3pt}\hrule height 1.2pt\par\medskip}
+\newcommand{\glzwischen}[1]{\par\addvspace{8pt}\Needspace*{4\baselineskip}\noindent{\footnotesize\color{mbgrau}#1}\par\nobreak\vspace{1pt}}
+% v0.18 (15.10. o, w): Blattende – Kern ohne Rahmen, dann graue Zeile „Mehr: n Aufgaben“
+\newcommand{\gkern}[1]{\par\addvspace{14pt}\Needspace*{6\baselineskip}\noindent{\bfseries Kern}\par\nobreak\smallskip
+  {\small\raggedright #1\par}}
+\newcommand{\gmehr}[1]{\par\addvspace{10pt}\noindent{\footnotesize\color{mbgrau}Mehr: #1 Aufgaben}\par}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\makeatletter\setlength{\mbpfbe}{0mm}\makeatother
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} mehr]{Prozent}{PS10-3}\pfseitevon
+\pfheftkopf{Prozent}{mehr}
+\pfstufenzeile{Veränderung gesucht \pkt{} Prozent und Anteil umwandeln \pkt{} Prozentsatz gesucht \pkt{} Zinsen und Zinssatz \pkt{} Aussagen prüfen \pkt{} Zinseszins und Guthabentabelle}
+% 2021-OS-K5a-m1 (Schwere I, rang 13)
+\begin{pfaufg}{nach~P10\\’21~\pkt{}~5a}{1.}{}
+Das Säulendiagramm gibt an, wie viele Container (in Millionen) in den Jahren 2010 bis 2018 im Hamburger Hafen be- und entladen wurden. Berechne die Spannweite und den Durchschnitt (das arithmetische Mittel) dieser Containerzahlen. Berechne, um wie viel Prozent die Containerzahl von 2011 auf 2012 gestiegen ist.
+\par\smallskip\noindent\gpassend{\begin{tikzpicture}[x=0.8cm,y=0.3cm,font=\scriptsize]\draw[black!15] (0,0)--(9.4,0);\draw (-0.1,0)--(0,0) node[left]{0};\draw[black!15] (0,1)--(9.4,1);\draw (-0.1,1)--(0,1) node[left]{1};\draw[black!15] (0,2)--(9.4,2);\draw (-0.1,2)--(0,2) node[left]{2};\draw[black!15] (0,3)--(9.4,3);\draw (-0.1,3)--(0,3) node[left]{3};\draw[black!15] (0,4)--(9.4,4);\draw (-0.1,4)--(0,4) node[left]{4};\draw[black!15] (0,5)--(9.4,5);\draw (-0.1,5)--(0,5) node[left]{5};\draw[black!15] (0,6)--(9.4,6);\draw (-0.1,6)--(0,6) node[left]{6};\draw[black!15] (0,7)--(9.4,7);\draw (-0.1,7)--(0,7) node[left]{7};\draw[black!15] (0,8)--(9.4,8);\draw (-0.1,8)--(0,8) node[left]{8};\draw[black!15] (0,9)--(9.4,9);\draw (-0.1,9)--(0,9) node[left]{9};\draw[black!15] (0,10)--(9.4,10);\draw (-0.1,10)--(0,10) node[left]{10};\draw[->] (0,0)--(9.6,0);\draw[->] (0,0)--(0,11.2) node[above]{Container in Mio.};\fill[black!35] (0.25,0) rectangle (0.85,6.6);\node[above] at (0.55,6.6){6{,}6};\node[below] at (0.55,0){2010};\fill[black!35] (1.25,0) rectangle (1.85,7.5);\node[above] at (1.55,7.5){7{,}5};\node[below] at (1.55,0){2011};\fill[black!35] (2.25,0) rectangle (2.85,8.6);\node[above] at (2.55,8.6){8{,}6};\node[below] at (2.55,0){2012};\fill[black!35] (3.25,0) rectangle (3.85,8.4);\node[above] at (3.55,8.4){8{,}4};\node[below] at (3.55,0){2013};\fill[black!35] (4.25,0) rectangle (4.85,9.1);\node[above] at (4.55,9.1){9{,}1};\node[below] at (4.55,0){2014};\fill[black!35] (5.25,0) rectangle (5.85,9.4);\node[above] at (5.55,9.4){9{,}4};\node[below] at (5.55,0){2015};\fill[black!35] (6.25,0) rectangle (6.85,8.4);\node[above] at (6.55,8.4){8{,}4};\node[below] at (6.55,0){2016};\fill[black!35] (7.25,0) rectangle (7.85,8.5);\node[above] at (7.55,8.5){8{,}5};\node[below] at (7.55,0){2017};\fill[black!35] (8.25,0) rectangle (8.85,9.1);\node[above] at (8.55,9.1){9{,}1};\node[below] at (8.55,0){2018};\end{tikzpicture}}\par
+\karo{4}
+\fusshilfe{\gfuss{1}{Spannweite 2,8 Mio.; Mittel 8,4 Mio.; 14,7 \%}}
+\end{pfaufg}
+% 2020-OS-B1a-m1 (Schwere I, rang 14)
+\begin{pfaufg}{nach~P10\\’20~\pkt{}~1a}{2.}{}
+Ein Förster sagt: „Bei mir wachsen nur 7 \% der gepflanzten Bäume nicht an.“ Kreuze an, welche Aussage dasselbe bedeutet:
+\par\smallskip\noindent\pfkreuz{}{Von 10 Bäumen wachsen 7 nicht an.}\pfkreuz{}{Jeder siebte Baum wächst nicht an.}\pfkreuz{}{Von 100 Bäumen wachsen 7 nicht an.}
+\fusshilfe{\gfuss{2}{Von 100 Bäumen wachsen 7 nicht an}}
+\end{pfaufg}
+% 2018-OS-K7a-m1 (Schwere I, rang 16)
+\begin{pfaufg}{nach~P10\\’18~\pkt{}~7a}{3.}{}
+Für ein Fest backt Eva 40 Pfannkuchen: 37 füllt sie mit Marmelade, 3 mit Senf. Gib an, wie viel Prozent der Pfannkuchen eine Senffüllung haben.
+\karo{2}
+\fusshilfe{\gfuss{3}{7,5 \%}}
+\end{pfaufg}
+% 2015-OS-B1e-m1 (Schwere I, rang 18)
+\begin{pfaufg}{nach~P10\\’15~\pkt{}~1e}{4.}{}
+Auf einem Konto liegen 600 €, die mit 3 \% im Jahr verzinst werden. Gib an, wie viel Euro Zinsen nach einem Jahr dazukommen.
+\karo{2}
+\fusshilfe{\gfuss{4}{18 €}}
+\end{pfaufg}
+% 2014-OS-B1e-m1 (Schwere I, rang 20)
+\begin{pfaufg}{nach~P10\\’14~\pkt{}~1e}{5.}{}
+Auf einem Sparkonto liegen 5 000 €. Nach einem Jahr werden 135 € Zinsen gutgeschrieben. Bestimme den Zinssatz.
+\karo{2}
+\fusshilfe{\gfuss{5}{2,7 \%}}
+\end{pfaufg}
+% 2014-OS-K3a-m1 (Schwere I, rang 21)
+\begin{pfaufg}{nach~P10\\’14~\pkt{}~3a}{6.}{}
+Lena zahlt seit ihrem 11. Geburtstag jedes Jahr an ihrem Geburtstag 300,00 € auf ein Sparbuch ein. Am 15. Geburtstag hält sie in einer Tabelle fest, wie sich ihr Guthaben entwickelt hat. Das Guthaben wird mit 3 \% pro Jahr verzinst. Weise dies anhand der Werte für das erste Jahr nach.
+\par\smallskip\noindent\gpassend{{\small\renewcommand{\arraystretch}{1.2}\begin{tabular}{|l|r|r|r|r|r|}\hline Geburtstag & 11. & 12. & 13. & 14. & 15.\\\hline Zinsen & & 9,00 € & 18,27 € & 27,82 € & \\\hline Einzahlung & 300,00 € & 300,00 € & 300,00 € & 300,00 € & 300,00 €\\\hline Guthaben & 300,00 € & 609,00 € & 927,27 € & & 1592,74 €\\\hline\end{tabular}}}\par
+\karo{2}
+\fusshilfe{\gfuss{6}{9,00 €}}
+\end{pfaufg}
+% 2020-OS-K2d-m1 (Schwere II, rang 22)
+\begin{pfaufg}{nach~P10\\’20~\pkt{}~2d}{7.}{}
+Das Säulendiagramm zeigt die Besucherzahlen eines Freibads an den Tagen der ersten Ferienwoche. Die beiden folgenden Aussagen sind richtig: „Die Besucherzahlen der ersten Ferienwoche haben eine Spannweite von 120.“ „Am Sonntag gab es ein Drittel mehr Besucher als am Mittwoch.“ Weise beide Aussagen rechnerisch nach.
+\par\smallskip\noindent\gpassend{\begin{tikzpicture}[x=0.8cm,y=0.012cm,font=\scriptsize]\draw[black!15] (0,0)--(7.4,0);\draw (-0.1,0)--(0,0) node[left]{0};\draw[black!15] (0,50)--(7.4,50);\draw (-0.1,50)--(0,50) node[left]{50};\draw[black!15] (0,100)--(7.4,100);\draw (-0.1,100)--(0,100) node[left]{100};\draw[black!15] (0,150)--(7.4,150);\draw (-0.1,150)--(0,150) node[left]{150};\draw[black!15] (0,200)--(7.4,200);\draw (-0.1,200)--(0,200) node[left]{200};\draw[black!15] (0,250)--(7.4,250);\draw (-0.1,250)--(0,250) node[left]{250};\draw[->] (0,0)--(7.6,0);\draw[->] (0,0)--(0,280) node[above]{Besucher};\fill[black!35] (0.25,0) rectangle (0.85,150);\node[above] at (0.55,150){150};\node[below] at (0.55,0){Mo};\fill[black!35] (1.25,0) rectangle (1.85,120);\node[above] at (1.55,120){120};\node[below] at (1.55,0){Di};\fill[black!35] (2.25,0) rectangle (2.85,180);\node[above] at (2.55,180){180};\node[below] at (2.55,0){Mi};\fill[black!35] (3.25,0) rectangle (3.85,155);\node[above] at (3.55,155){155};\node[below] at (3.55,0){Do};\fill[black!35] (4.25,0) rectangle (4.85,170);\node[above] at (4.55,170){170};\node[below] at (4.55,0){Fr};\fill[black!35] (5.25,0) rectangle (5.85,210);\node[above] at (5.55,210){210};\node[below] at (5.55,0){Sa};\fill[black!35] (6.25,0) rectangle (6.85,240);\node[above] at (6.55,240){240};\node[below] at (6.55,0){So};\end{tikzpicture}}\par
+\karo{3}
+\fusshilfe{\gfuss{7}{120; Sonntag}}
+\end{pfaufg}
+% 2020-OS-K4c-m1 (Schwere II, rang 23)
+\begin{pfaufg}{nach~P10\\’20~\pkt{}~4c}{8.}{}
+Nach einer Studie lag der Wasserverbrauch 2018 bei durchschnittlich 48 Tausend Litern pro Person und Jahr; er soll jedes Jahr um 4 \% steigen. Diese Vorhersage beschreibt die Gleichung $y = 48\cdot 1{,}04^{x}$ ($x$: Jahre ab 2018, $y$: Verbrauch pro Person in Tausend Litern). Eine zweite Studie erwartet, dass der Verbrauch pro Person von 2018 bis 2030 insgesamt um etwa 50 \% zunimmt. Untersuche, ob beide Studien für 2030 denselben Verbrauch vorhersagen.
+\karo{3}
+\fusshilfe{\gfuss{8}{76,8; 72,0 Tausend Liter}}
+\end{pfaufg}
+% 2019-OS-K5b-m1 (Schwere II, rang 24)
+\begin{pfaufg}{nach~P10\\’19~\pkt{}~5b}{9.}{}
+Die Tabelle gibt an, welcher Anteil der Mädchen und der Jungen ein Medium in der Freizeit nutzt (Mädchen / Jungen): Smartphone 97 \% / 92 \%, Fernseher 69 \% / 80 \%, Konsolenspiele 11 \% / 67 \%, Bücher 52 \% / 33 \%. Zu der Tabelle gibt es zwei Aussagen: „Vier Fünftel der Mädchen sehen in ihrer Freizeit fern.“ „Bei Jungen sind Konsolenspiele deutlich beliebter als bei Mädchen.“ Kreuze die falsche Aussage an. Berichtige diese Aussage.
+\par\smallskip\noindent\gpassend{{\small\renewcommand{\arraystretch}{1.2}\begin{tabular}{|l|r|r|}\hline Medium & Mädchen & Jungen\\\hline Smartphone & 97 \% & 92 \%\\\hline Fernseher & 69 \% & 80 \%\\\hline Konsolenspiele & 11 \% & 67 \%\\\hline Bücher & 52 \% & 33 \%\\\hline\end{tabular}}}\par
+\karo{3}
+\fusshilfe{\gfuss{9}{Aussage 1 falsch; Etwa zwei Drittel (69 \%) der Mädchen nutzen einen Fernseher (vier Fünftel gilt für die Jungen)}}
+\end{pfaufg}
+% 2017-OS-K2b-m1 (Schwere II, rang 25)
+\begin{pfaufg}{nach~P10\\’17~\pkt{}~2b}{10.}{}
+Von allen Kindern, die 2015 in Deutschland zur Welt kamen, waren 48,7 \% das erste Kind ihrer Mutter, 35,1 \% das zweite, 11,8 \% das dritte und 4,4 \% das vierte oder ein späteres. Eine Forscherin folgert daraus: „Über die Hälfte dieser Kinder hat mindestens ein Geschwisterkind.“ Gib eine Begründung für diese Folgerung an.
+\karo{2}
+\fusshilfe{\gfuss{10}{51,3 \%}}
+\end{pfaufg}
+% 2016-OS-K2c-m1 (Schwere II, rang 26)
+\begin{pfaufg}{nach~P10\\’16~\pkt{}~2c}{11.}{}
+Das Säulendiagramm zeigt, wie viele Besucher ein Filmpark in den Jahren 2007 bis 2015 hatte. Berechne, um wie viel Prozent die Besucherzahl von 2009 auf 2010 zugenommen hat.
+\par\smallskip\noindent\gpassend{\begin{tikzpicture}[x=0.8cm,y=0.0042cm,font=\scriptsize]\draw[black!15] (0,0)--(9.4,0);\draw (-0.1,0)--(0,0) node[left]{0};\draw[black!15] (0,100)--(9.4,100);\draw (-0.1,100)--(0,100) node[left]{100};\draw[black!15] (0,200)--(9.4,200);\draw (-0.1,200)--(0,200) node[left]{200};\draw[black!15] (0,300)--(9.4,300);\draw (-0.1,300)--(0,300) node[left]{300};\draw[black!15] (0,400)--(9.4,400);\draw (-0.1,400)--(0,400) node[left]{400};\draw[black!15] (0,500)--(9.4,500);\draw (-0.1,500)--(0,500) node[left]{500};\draw[black!15] (0,600)--(9.4,600);\draw (-0.1,600)--(0,600) node[left]{600};\draw[black!15] (0,700)--(9.4,700);\draw (-0.1,700)--(0,700) node[left]{700};\draw[->] (0,0)--(9.6,0);\draw[->] (0,0)--(0,784) node[above]{Besucher in Tausend};\fill[black!35] (0.25,0) rectangle (0.85,700);\node[above] at (0.55,700){700};\node[below] at (0.55,0){2007};\fill[black!35] (1.25,0) rectangle (1.85,520);\node[above] at (1.55,520){520};\node[below] at (1.55,0){2008};\fill[black!35] (2.25,0) rectangle (2.85,450);\node[above] at (2.55,450){450};\node[below] at (2.55,0){2009};\fill[black!35] (3.25,0) rectangle (3.85,540);\node[above] at (3.55,540){540};\node[below] at (3.55,0){2010};\fill[black!35] (4.25,0) rectangle (4.85,380);\node[above] at (4.55,380){380};\node[below] at (4.55,0){2011};\fill[black!35] (5.25,0) rectangle (5.85,360);\node[above] at (5.55,360){360};\node[below] at (5.55,0){2012};\fill[black!35] (6.25,0) rectangle (6.85,395);\node[above] at (6.55,395){395};\node[below] at (6.55,0){2013};\fill[black!35] (7.25,0) rectangle (7.85,410);\node[above] at (7.55,410){410};\node[below] at (7.55,0){2014};\fill[black!35] (8.25,0) rectangle (8.85,370);\node[above] at (8.55,370){370};\node[below] at (8.55,0){2015};\end{tikzpicture}}\par
+\karo{2}
+\fusshilfe{\gfuss{11}{20 \%}}
+\end{pfaufg}
+% 2015-OS-K7c-m1 (Schwere II, rang 29)
+\begin{pfaufg}{nach~P10\\’15~\pkt{}~7c}{12.}{}
+In einer Saison der 2. Fußball-Bundesliga wurden 87 Elfmeter gepfiffen; 76 davon führten zu einem Tor. Berechne, wie viel Prozent der Elfmeter nicht verwandelt wurden. Zeichne den Anteil als Sektor in den vorbereiteten Kreis ein. Gib an, wie groß der Mittelpunktswinkel dieses Sektors ist.
+\par\smallskip\noindent\gpassend{\begin{tikzpicture}[line width=0.8pt]\draw (0,0) circle (1.3);\fill (0,0) circle (1.3pt);\draw (0,0)--(0,1.3);\end{tikzpicture}}\par
+\karo{4}
+\fusshilfe{\gfuss{12}{12,6 \%; 46° ab dem vorgegebenen Radius; 46°}}
+\end{pfaufg}
+% 2014-OS-K3b-m1 (Schwere II, rang 30)
+\begin{pfaufg}{nach~P10\\’14~\pkt{}~3b}{13.}{}
+Lena zahlt seit ihrem 11. Geburtstag jedes Jahr an ihrem Geburtstag 300,00 € auf ein Sparbuch ein. Am 15. Geburtstag hält sie in einer Tabelle fest, wie sich ihr Guthaben entwickelt hat. Vervollständige die fehlenden Einträge der Tabelle.
+\par\smallskip\noindent\gpassend{{\small\renewcommand{\arraystretch}{1.2}\begin{tabular}{|l|r|r|r|r|r|}\hline Geburtstag & 11. & 12. & 13. & 14. & 15.\\\hline Zinsen & & 9,00 € & 18,27 € & 27,82 € & \\\hline Einzahlung & 300,00 € & 300,00 € & 300,00 € & 300,00 € & 300,00 €\\\hline Guthaben & 300,00 € & 609,00 € & 927,27 € & & 1592,74 €\\\hline\end{tabular}}}\par
+\karo{3}
+\fusshilfe{\gfuss{13}{1255,09 €; 37,65 €}}
+\end{pfaufg}
+% 2014-OS-K3c-m1 (Schwere II, rang 31)
+\begin{pfaufg}{nach~P10\\’14~\pkt{}~3c}{14.}{}
+Lena zahlt seit ihrem 11. Geburtstag jedes Jahr an ihrem Geburtstag 300,00 € auf ein Sparbuch ein. Am 15. Geburtstag hält sie in einer Tabelle fest, wie sich ihr Guthaben entwickelt hat. Bei einer anderen Bank legt Lena 1 500 € für 4 Jahre an; der Zinssatz liegt bei 2 \% pro Jahr. Berechne das Guthaben auf diesem Konto nach den 4 Jahren.
+\karo{2}
+\fusshilfe{\gfuss{14}{1623,65 €}}
+\end{pfaufg}
+\par\vfill\noindent{\scriptsize\color{mbgrau}Originale: P10 2021 \pkt{} 5a, P10 2020 \pkt{} 1a, P10 2018 \pkt{} 7a, P10 2015 \pkt{} 1e, P10 2014 \pkt{} 1e, P10 2014 \pkt{} 3a, P10 2020 \pkt{} 2d, P10 2020 \pkt{} 4c, P10 2019 \pkt{} 5b, P10 2017 \pkt{} 2b, P10 2016 \pkt{} 2c, P10 2015 \pkt{} 7c, P10 2014 \pkt{} 3b, P10 2014 \pkt{} 3c\par}
+\end{document}

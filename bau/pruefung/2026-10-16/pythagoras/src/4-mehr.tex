@@ -1,0 +1,153 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
+\newsavebox{\gbox}\newlength{\gLinks}
+% v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
+% Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr\wd\gbox+6mm\relax}%
+  \ifdim\gLinks>0.62\linewidth
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\leavevmode\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par\addvspace{6pt}}% v0.18 (PG80 Nr. 1): Abstand, damit die Linie von a) nicht an b) rutscht
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+% Skizzenfeld (v0.10, Lehrer 13.10.): Karo ab dem linken Rand über die Zeile, „Skizze“ klein grau oben links im Feld
+% (wie \pfskizzenfeld der Vorlage); der rechte Rand bleibt den Bedingungen
+\newcommand{\gskizze}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \node[anchor=north west,inner sep=2pt,font=\scriptsize,text=mbgrau,fill=white] at (0,{#1*10mm}) {Skizze};
+  \end{tikzpicture}\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% v0.18 (plan.md § 10, 15.10. l): Abschnittsbuchstabe A, B, C vor dem Namen im Kopf – als Vorsatz, damit der
+% Name im TeX gleich bleibt (Bestellkarte, Sprungziele lesen ihn)
+\def\gbstakt{}\newcommand{\gbstvor}[1]{\gdef\gbstakt{#1}}
+\NewCommandCopy\gpfstufekopfalt\pfstufekopf
+\RenewDocumentCommand{\pfstufekopf}{o m m}{\IfValueTF{#1}{\gpfstufekopfalt[#1]}{\gpfstufekopfalt}%
+  {\ifx\gbstakt\empty\else\gbstakt\enspace\fi #2}{#3}\gdef\gbstakt{}}
+% v0.18 (16.10. e): Begriff grau, ohne Nummer, ohne Rahmen über der ersten Aufgabe der Stufe
+\newcommand{\gbegriff}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}\parbox[t]{\dimexpr\linewidth-\mbpfnr\relax}{\raggedright\small\color{mbgrau}#1}\par\nobreak\addvspace{3pt}}
+% v0.18 (16.10. g): Lösungsblatt – Kopf mit kräftigem Strich, Abschnitt klein grau als Zwischenzeile
+\newcommand{\glkopf}[1]{\noindent{\large\bfseries Lösungen \textperiodcentered{} #1}\par\vspace{3pt}\hrule height 1.2pt\par\medskip}
+\newcommand{\glzwischen}[1]{\par\addvspace{8pt}\Needspace*{4\baselineskip}\noindent{\footnotesize\color{mbgrau}#1}\par\nobreak\vspace{1pt}}
+% v0.18 (15.10. o, w): Blattende – Kern ohne Rahmen, dann graue Zeile „Mehr: n Aufgaben“
+\newcommand{\gkern}[1]{\par\addvspace{14pt}\Needspace*{6\baselineskip}\noindent{\bfseries Kern}\par\nobreak\smallskip
+  {\small\raggedright #1\par}}
+\newcommand{\gmehr}[1]{\par\addvspace{10pt}\noindent{\footnotesize\color{mbgrau}Mehr: #1 Aufgaben}\par}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+\makeatletter\setlength{\mbpfbe}{0mm}\makeatother
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} mehr]{Pythagoras}{PG50-4}\pfseitevon
+\pfheftkopf{Pythagoras}{mehr}
+\pfstufenzeile{Gleichung aufstellen \pkt{} Hypotenuse gesucht \pkt{} Kathete gesucht \pkt{} in Figuren versteckt}
+% 2021-OS-B1h-m1 (Schwere I, rang 10)
+\begin{pfaufg}{nach~P10\\’21~\pkt{}~1h}{1.}{}
+Im abgebildeten Dreieck sind x und y die Katheten, z ist die Hypotenuse. Kreuze die Formel an, mit der man z berechnet:
+\par\smallskip\noindent\gpassend{\begin{tikzpicture}[line width=0.7pt,font=\small]\draw (0,0) -- (2.8,0) -- (2.8,1.7) -- cycle;\pfrw[0.3]{(2.8,0)}{90}\node[anchor=north,inner sep=1pt] at (1.4,-0.08) {$x$};\node[anchor=west,inner sep=1pt] at (2.88,0.85) {$y$};\node[anchor=south east,inner sep=1pt] at (1.36,0.92) {$z$};\end{tikzpicture}}\par
+\par\smallskip\noindent\pfkreuz{}{$z=\sqrt{x^2-y^2}$}\pfkreuz{}{$z=\sqrt{x^2+y^2}$}\pfkreuz{}{$z=\sqrt{y^2-x^2}$}\pfkreuz{}{$z=y^2+x^2$}
+\fusshilfe{\gfuss{1}{$z=\sqrt{x^2+y^2}$}}
+\end{pfaufg}
+% 2020-OS-K7a-m1 (Schwere I, rang 11)
+\begin{pfaufg}{nach~P10\\’20~\pkt{}~7a}{2.}{}
+Im Dreieck ABC ist bei C ein rechter Winkel. Die Strecke BC ist 15 m lang, die Strecke AC 28 m. Berechne die Länge der Strecke AB.
+\par\smallskip\noindent\gpassend{\begin{tikzpicture}[line width=0.7pt,font=\small]\draw (0,0) -- (1.5,2.8) -- (0,2.8) -- cycle;\pfrw[0.3]{(0,2.8)}{-90}\node[anchor=north,inner sep=1.5pt] at (0,0) {$A$};\node[anchor=west,inner sep=1.5pt] at (1.5,2.8) {$B$};\node[anchor=south east,inner sep=1.5pt] at (0,2.8) {$C$};\node[anchor=south,inner sep=1pt] at (0.75,2.88) {$15$ m};\node[anchor=east,inner sep=1pt] at (-0.08,1.4) {$28$ m};\end{tikzpicture}}\par
+\karo{2}
+\fusshilfe{\gfuss{2}{31,8 m}}
+\end{pfaufg}
+% 2019-OS-K3a-m1 (Schwere I, rang 12)
+\begin{pfaufg}{nach~P10\\’19~\pkt{}~3a}{3.}{}
+Beim Fußballtraining spielen sich drei Kinder den Ball zu: Amir steht bei A, Ben bei B, Chris bei C. Zwischen Ben und Amir sind es 5 m, zwischen Amir und Chris 12 m. Bei B ist ein rechter Winkel; der Winkel bei A heißt $\alpha$. Ermittle den Abstand zwischen Ben und Chris.
+\par\smallskip\noindent\gpassend{\begin{tikzpicture}[line width=0.7pt,font=\small]\draw (0,1.5) -- (0,0) -- (3.27,0) -- cycle;\pfrw[0.3]{(0,0)}{0}\node[anchor=south,inner sep=1.5pt] at (0,1.5) {$A$};\node[anchor=north east,inner sep=1.5pt] at (0,0) {$B$};\node[anchor=north west,inner sep=1.5pt] at (3.27,0) {$C$};\node[anchor=east,inner sep=1pt] at (-0.08,0.75) {$5$ m};\node[anchor=south west,inner sep=1pt] at (1.67,0.82) {$12$ m};\end{tikzpicture}}\par
+\karo{2}
+\fusshilfe{\gfuss{3}{10,9 m}}
+\end{pfaufg}
+% 2017-OS-B1d-m1 (Schwere I, rang 13)
+\begin{pfaufg}{nach~P10\\’17~\pkt{}~1d}{4.}{}
+Im abgebildeten Dreieck sind x und y die Katheten, z ist die Hypotenuse. Kreuze die Gleichung an, die für dieses Dreieck gilt:
+\par\smallskip\noindent\gpassend{\begin{tikzpicture}[line width=0.7pt,font=\small]\draw (0,0) -- (2.8,0) -- (0,1.7) -- cycle;\pfrw[0.3]{(0,0)}{0}\node[anchor=east,inner sep=1pt] at (-0.08,0.85) {$x$};\node[anchor=north,inner sep=1pt] at (1.4,-0.08) {$y$};\node[anchor=south west,inner sep=1pt] at (1.44,0.92) {$z$};\end{tikzpicture}}\par
+\par\smallskip\noindent\pfkreuz{}{$x^2=y^2+z^2$}\pfkreuz{}{$z^2=x^2-y^2$}\pfkreuz{}{$z^2\cdot y^2=x^2$}\pfkreuz{}{$z^2=x^2+y^2$}
+\fusshilfe{\gfuss{4}{$z^2=x^2+y^2$}}
+\end{pfaufg}
+% 2018-OS-K6d-m1 (Schwere II, rang 15)
+\begin{pfaufg}{nach~P10\\’18~\pkt{}~6d}{5.}{}
+Ein runder Turm mit 5,8 m Durchmesser hat ein Dach in Form eines Kegels. Die Höhe des Daches ist bekannt. Ein Dachbalken läuft von der Spitze bis zum Rand des Daches. Beschreibe, wie man die Länge eines Dachbalkens berechnen kann.
+\par\smallskip\noindent\gpassend{\begin{tikzpicture}[line width=0.7pt,font=\small]\draw[dashed,line width=0.5pt] (0,0) ellipse (1.3 and 0.4);\draw (-1.3,0) -- (0,1.7) -- (1.3,0);\draw[-{Stealth[length=1.5mm]},line width=0.5pt] (1.75,1.35) node[right,font=\footnotesize] {Dachbalken} -- (0.72,0.78);\end{tikzpicture}}\par
+\karo{2}
+\fusshilfe{\gfuss{5}{$\sqrt{2{,}9² + h²}$}}
+\end{pfaufg}
+% 2016-OS-K7b-m1 (Schwere II, rang 16)
+\begin{pfaufg}{nach~P10\\’16~\pkt{}~7b}{6.}{}
+An einem Fluss liegen der Bioladen C, eine Brücke D und eine Anlegestelle B auf einer Geraden am Ufer, in dieser Reihenfolge. Von einem Ausflugslokal A führt ein 860 m langer Weg zum Bioladen; vom Bioladen bis zur Brücke sind es 530 m. Die Strecke AD steht senkrecht auf dem Ufer. Am Bioladen ist der Winkel zwischen den Wegen nach A und nach D 52° groß, am Lokal der Winkel zwischen den Richtungen nach C und nach B 71°. Vom Lokal A soll ein neuer Weg direkt zur Brücke D führen. Ermittle die Länge von AD.
+\par\smallskip\noindent\gpassend{\begin{tikzpicture}[line width=0.7pt,font=\small]\draw (-3.09,1.57) -- (2.29,2.32);\draw (0.36,-0.55) -- (-1.99,1.72);\draw (0.36,-0.55) -- (1.65,2.23);\draw[dashed] (0.36,-0.55) -- (0,2);\pfrw[0.25]{(0,2)}{-82}\fill (-1.99,1.72) circle (1.2pt);\node[anchor=south,inner sep=1.5pt] at (-1.99,1.72) {$C$};\fill (0,2) circle (1.2pt);\node[anchor=south,inner sep=1.5pt] at (0,2) {$D$};\fill (1.65,2.23) circle (1.2pt);\node[anchor=south,inner sep=1.5pt] at (1.65,2.23) {$B$};\fill (0.36,-0.55) circle (1.2pt);\node[anchor=north,inner sep=1.5pt] at (0.36,-0.55) {$A$};\node[anchor=north east,inner sep=1pt] at (-0.87,0.53) {$860$ m};\node[anchor=north,inner sep=1pt] at (-0.99,1.8) {$530$ m};\node[font=\footnotesize,anchor=north] at (-2.7,1.54) {Ufer};\end{tikzpicture}}\par
+\karo{2}
+\fusshilfe{\gfuss{6}{677 m}}
+\end{pfaufg}
+\par\vfill\noindent{\scriptsize\color{mbgrau}Originale: P10 2021 \pkt{} 1h, P10 2020 \pkt{} 7a, P10 2019 \pkt{} 3a, P10 2017 \pkt{} 1d, P10 2018 \pkt{} 6d, P10 2016 \pkt{} 7b\par}
+\end{document}
