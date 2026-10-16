@@ -5693,9 +5693,10 @@ def p_gliederung(mn, kapitel):
     g = {'name': kapitel.capitalize(), 'folge': 0, 'gruppen': [], 'stufen': OrderedDict(), 'anzeige': {}, 'kennung': {},
          'ordner': {}}
     st = None
-    g['zusatz'] = []   # v0.18: Kopfzeilen „Formelkasten:“, „Kern am Ende:“, „Kern-Bild:“ (Feldname, Rest), je Einheit
+    g['zusatz'] = []   # v0.18: Kopfzeilen „Formelkasten:“, „Kern am Ende:“, „Kern-Bild:“ (Feldname, Rest), je Einheit;
+    # v0.19 (16.10. n): dazu „Formelsammlung:“ und „Tafelwerk: <Einheit> = keins – <Grund>“ (Tafelwerk-Feld, pruefung.md § 5)
     for z in open(p, encoding='utf-8').read().splitlines():
-        m = re.match(r'^(Formelkasten|Kern am Ende|Kern-Bild):\s*(.*)$', z)
+        m = re.match(r'^(Formelkasten|Formelsammlung|Tafelwerk|Kern am Ende|Kern-Bild):\s*(.*)$', z)
         if m and st is None:
             g['zusatz'].append((m.group(1), m.group(2).strip()))
             continue
@@ -6655,6 +6656,8 @@ def p_blatt_tex(D, einheit, kenn, stufen_daten, ausschnitt, fund, faktor=1.0, en
     if not einzeln:
         out.append('\\pfstufenzeile{' + ' \\pkt{} '.join((bst[s['name']] + '~' if bst[s['name']] else '') + tx(s['anzeige'])
                                                          for s in stufen_daten) + '}')
+    if Z.get('fszeile'):
+        out.append('% Formelsammlung (Tafelwerk-Feld, 16.10. n)\n' + Z['fszeile'])
     if Z.get('kasten'):
         out.append('% Formelkasten (15.10. t, 16.10. a)\n' + Z['kasten'])
     nr = 0
@@ -7005,11 +7008,25 @@ PRIVAT = os.environ.get('PRIVAT') or os.path.join(os.path.dirname(BANK), 'aufgab
 
 
 def p_zusatz(D, gl, einheit, args):
-    """v0.18 (P10): Formelkasten (15.10. t), Kern am Ende (w), Zahl des Mehr (o, r). Fehlt ein Feld, wird nichts
-    gedruckt. Die Felder stehen im Kopf der Gliederung als „<Feld>: <Einheit> = <Wert>“."""
-    Z = {'an': True}
+    """v0.18 (P10): Formelkasten (15.10. t), Kern am Ende (w), Zahl des Mehr (o, r). Die Felder stehen im Kopf der
+    Gliederung als „<Feld>: <Einheit> = <Wert>“.
+    v0.19 (16.10. n, pruefung.md § 5 „Pflichtteile eines P10-Blatts“): Tafelwerk-Feld = genau eins von Formelkasten,
+    Formelsammlung (graue Zeile ohne Nummer unter dem Titel) oder Tafelwerk („keins – <Grund>“, druckt nichts). Fehlt
+    das Tafelwerk-Feld oder „Kern am Ende“, steht das in Z['fehlt']; p_bau bricht dann ab (kein stilles Weglassen)."""
+    Z = {'an': True, 'fehlt': []}
     wert = lambda feld: next((v[len(einheit) + 3:].strip() for f, v in gl.get('zusatz', [])
                               if f == feld and v.startswith(einheit + ' = ')), '')
+    tafel = [f for f in ('Formelkasten', 'Formelsammlung', 'Tafelwerk') if wert(f)]
+    if len(tafel) != 1:
+        Z['fehlt'].append(f'Tafelwerk-Feld: {len(tafel)} statt genau eins von „Formelkasten:“, „Formelsammlung:“, '
+                          f'„Tafelwerk: … = keins – <Grund>“' + (f' ({", ".join(tafel)})' if tafel else ''))
+    if wert('Tafelwerk') and not re.match(r'^keins\s*[–-]\s*\S', wert('Tafelwerk')):
+        Z['fehlt'].append(f'„Tafelwerk: {einheit} = {wert("Tafelwerk")}“ – erwartet „keins – <Grund>“')
+    if not wert('Kern am Ende'):
+        Z['fehlt'].append('„Kern am Ende:“ fehlt')
+    Z['tafel'] = tafel[0] if len(tafel) == 1 else ''
+    if wert('Formelsammlung'):
+        Z['fszeile'] = ('\\par\\noindent{\\footnotesize\\color{mbgrau}' + tx(wert('Formelsammlung')) + '}\\par\\medskip')
     kid = wert('Formelkasten')
     if kid:
         j = os.path.join(PRIVAT, 'formelsammlung', 'duden-sek1.json')
@@ -7022,7 +7039,7 @@ def p_zusatz(D, gl, einheit, args):
             Z['kasten'] = ('{\\small' + sn + '}\\vspace{-4pt}\\par\\noindent{\\footnotesize\\color{mbgrau}Formeln und Werte S.~'
                            + str(e.get('seite', '')) + '}\\par\\medskip')
         else:
-            print(f'Hinweis: Formelkasten „{kid}“ nicht gesetzt: {r.stderr.strip()[-200:]}')
+            Z['fehlt'].append(f'Formelkasten „{kid}“ nicht gesetzt: {r.stderr.strip()[-200:]}')
     aussagen = [a.strip() for a in wert('Kern am Ende').split('|') if a.strip()][:4]
     bild = wert('Kern-Bild')
     if aussagen or bild:
@@ -7149,14 +7166,21 @@ def p_bau(args):
     fs = lambda t: bool(re.search(r'Formelsammlung|Seite\s*_{3}', t or ''))
     global P_ZUSATZ
     P_ZUSATZ = p_zusatz(D, gl, einheit, args)
-    if P_ZUSATZ.get('kasten'):
-        # v0.18 (15.10. t, 16.10. a): der Formelkasten ersetzt die Formelsammlungs-Frage
+    if P_ZUSATZ['fehlt'] and not getattr(args, 'nur_fassung', False) and not args.fassung_erfassen:
+        # v0.19 (16.10. n): kein stilles Weglassen – fehlt ein Pflichtteil der Gliederung, wird die Einheit nicht gesetzt
+        sys.stderr.write(f'{args.kapitel} „{einheit}“: Pflichtteile fehlen (pruefung.md § 5 „Pflichtteile eines '
+                         f'P10-Blatts“, Kopf von msa/gliederung/{args.kapitel}.md):\n'
+                         + ''.join(f'  - {x}\n' for x in P_ZUSATZ['fehlt']) + 'Nicht gesetzt.\n')
+        sys.exit(3)
+    if True:
+        # v0.18 (15.10. t, 16.10. a): der Formelkasten ersetzt die Formelsammlungs-Frage; v0.19 (16.10. n): im P10-Satz
+        # gibt es keine Frage nach der Seite mehr – das Tafelwerk-Feld (Kasten, Zeile oder „keins“) steht dafür
         for s in stufen_daten:
             if fs(s.get('kurzfrage')):
                 s['kurzfrage'] = ''
             if s['frage'] and fs(s['frage'].get('frage')):
                 s['frage'] = None
-    st_formel = None if P_ZUSATZ.get('kasten') else next((s for s in stufen_daten if p_hat_formel(D, s)), None)
+    st_formel = None   # v0.19 (16.10. n): „Schlag zuerst die Formel nach …“ entfällt im P10-Satz (p_formelfrage ruht)
     if st_formel:
         st_formel['formelfrage'] = p_formelfrage(einheit)
     schon = False
