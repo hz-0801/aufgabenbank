@@ -1,0 +1,55 @@
+schluessel;stichwort;herkunft
+2025-OS-K6a-m1;Modalwert;mehr-p10/daten.csv: Der Modalwert (der häufigste Wert) beträgt 5 Jahre. Berichti
+2022-OS-B1g-m1;Kathetenquadrate = Hypotenusenquadrat;mehr-p10/dreiecke.csv: Die beiden Kathetenquadrate haben zusammen denselben Flächen
+2024-OS-B1f-m1;z = √(x² − y²);mehr-p10/dreiecke.csv: $z=\sqrt{x^2-y^2}$
+2026-FOR-B1j-m1;w = √(u² + v²);mehr-p10/dreiecke.csv: $w=\sqrt{u^2+v^2}$
+2021-OS-B1h-m1;z = √(x² + y²);mehr-p10/dreiecke.csv: $z=\sqrt{x^2+y^2}$
+2017-OS-B1d-m1;z² = x² + y²;mehr-p10/dreiecke.csv: $z^2=x^2+y^2$
+2018-OS-B1g-m1;sin β = b/a;mehr-p10/dreiecke.csv: $\sin\beta=\frac{b}{a}$
+2026-FOR-B1c-m1;zwei Seiten parallel;mehr-p10/dreiecke.csv: Mindestens zwei Seiten sind zueinander parallel
+2016-OS-B1e-m1;gegenüberliegende Winkel gleich;mehr-p10/dreiecke.csv: Je zwei gegenüberliegende Winkel sind gleich
+2024-OS-B1c-m1;u = 3 · a;mehr-p10/flaechen.csv: $u=3\cdot a$
+2025-OS-B1i-m1;A = a · (b + c);mehr-p10/flaechen.csv: $A=a\cdot(b+c)$
+2022-OS-K2a-m1;drittes Netz;"mehr-p10/koerper.csv: drittes Netz (dritte Option; ein Kreis, Rechteck etwa dreima"
+2024-OS-K4b-m1;51 × 51 × 61 cm;mehr-p10/koerper.csv: 51 cm × 51 cm × 61 cm
+2018-OS-B1i-m1;Pyramide;mehr-p10/koerper.csv: Pyramide
+2025-OS-B1f-m1;1. Bild;mehr-p10/lineare.csv: (erste Option)
+2021-OS-K2b-m1;monoton steigend;mehr-p10/lineare.csv: Der Graph steigt monoton
+2021-OS-K2b-m1#2;y-Achse in P(0 | −1);mehr-p10/lineare.csv: zweite Ankreuz-Antwort
+2023-OS-B1i-m1;(3 | −12);mehr-p10/lineare.csv: $(3\,|\,-12)$
+2025-OS-B1h-m1;x = −3;mehr-p10/lineare.csv: $x = -3$
+2022-OS-B1f-m1;10 %;mehr-p10/prozent.csv: 10 %
+2020-OS-B1a-m1;7 von 100;mehr-p10/prozent.csv: Von 100 Bäumen wachsen 7 nicht an
+2026-FOR-B1e-m1;Tabelle 1;mehr-p10/quadratische.csv: Tabelle 1 (erste Option): 2 · 1² = 2, 2 · 2² = 8
+2020-OS-K3b-m1;D(−2,5 | −4,5);mehr-p10/quadratische.csv: $D(-2{,}5\,|\,-4{,}5)$
+2026-FOR-B1b-m1;2. Bild;mehr-p10/zahlen.csv: (zweite Option)
+2019-OS-B1c-m1;3/8;mehr-p10/zahlen.csv: $\frac{3}{8}$
+2017-OS-B1e-m1;−5³;mehr-p10/zahlen.csv: $−5^3$
+2015-OS-B1c-m1;7/4 > 3/2;mehr-p10/zahlen.csv: $\frac{7}{4} > \frac{3}{2}$
+2015-OS-B1j-m1;√((−5)²) = +5;mehr-p10/zahlen.csv: $\sqrt{(−5)^2} = +5$
+2024-OS-B1a-m1;165 min;mehr-p10/zahlen.csv: 165 min
+2015-OS-B1g-m1;immer positiv;mehr-p10/zahlen.csv: … immer positiv
+2023-OS-B1h-m1;(3a + 7)/2;mehr-p10/zahlen.csv: $\frac{3a+7}{2}$
+2017-OS-B1i-m1;4x − 7;mehr-p10/zahlen.csv: $4x−7$
+2021-OS-B1e-m1;3x + 7 = 25;mehr-p10/zahlen.csv: $3x+7 = 25$
+2022-OS-B1c-m1;x = 4;mehr-p10/zahlen.csv: x = 4
+einstieg:Katheten r und h, Hypotenuse s;r, h · s;gliederung/dreiecke.md · Dreieck erst in Figur oder Körper finden: Katheten r und h, Hypotenuse s
+einstieg:Katheten 2 · r und h, Hypotenuse der Stab;2r, h · Stab;gliederung/dreiecke.md · Dreieck erst in Figur oder Körper finden: Katheten 2 · r und h, Hypotenuse der Stab
+einstieg:Gegenkathete a, Ankathete b, Hypotenuse c;a, b · c;gliederung/dreiecke.md · Seitenverhältnis benennen: Gegenkathete a, Ankathete b, Hypotenuse c
+einstieg:Gegenkathete und Hypotenuse: sin;sin;gliederung/dreiecke.md · Winkel berechnen: Gegenkathete und Hypotenuse: sin
+einstieg:Ankathete und Hypotenuse: cos;cos;gliederung/dreiecke.md · Winkel berechnen: Ankathete und Hypotenuse: cos
+einstieg:in beiden Dreiecken je 45° bei C: 45° + 45° = 90°;45° + 45° = 90°;gliederung/dreiecke.md · rechten Winkel begründen: in beiden Dreiecken je 45° bei C: 45° + 45° = 90°
+einstieg:Rechteck, 2 · π · r lang und h hoch;2πr × h;gliederung/koerper.md · Mantelfläche mit Kosten: Rechteck, 2 · π · r lang und h hoch
+einstieg:π · d, gut dreimal so lang wie d;π · d;gliederung/koerper.md · Netz erkennen: π · d, gut dreimal so lang wie d
+einstieg:6 cm, so breit wie der Durchmesser;6 cm;gliederung/koerper.md · Körper im Schrägbild skizzieren: 6 cm, so breit wie der Durchmesser
+einstieg:als flache Ellipse;Ellipse;gliederung/koerper.md · Körper im Schrägbild skizzieren: als flache Ellipse
+einstieg:8 ist n, 0,09 ist m;"n = 8; m = 0,09";gliederung/lineare.md · Gleichung aus Text: 8 ist n, 0,09 ist m
+einstieg:25 ist n, −2 ist m;"n = 25; m = −2";gliederung/lineare.md · Gleichung aus Text: 25 ist n, −2 ist m
+einstieg:Teil 5, Ganzes 20, 25 %;"5; 20; 25 %";gliederung/prozent.md · Prozentsatz: Teil 5, Ganzes 20, 25 %
+"einstieg:6 Kinder = W; gesucht G (die ganze Klasse)";"W = 6; G gesucht";"gliederung/prozent.md · Grundwert: 6 Kinder = W; gesucht G (die ganze Klasse)"
+einstieg:0,50 €, alter Preis 2 €, 25 %;"0,50 €; 2 €; 25 %";gliederung/prozent.md · Erhöhung und Veränderung in Prozent: 0,50 €, alter Preis 2 €, 25 %
+einstieg:nach oben, Scheitel bei x = −1, y = 2;"oben; S(−1 | 2)";gliederung/quadratische.md · Lage zweier Parabeln ohne Rechnung begründen: nach oben, Scheitel bei x = −1, y = 2
+einstieg:nach unten, Scheitel bei x = −1, y = 2;"unten; S(−1 | 2)";gliederung/quadratische.md · Lage zweier Parabeln ohne Rechnung begründen: nach unten, Scheitel bei x = −1, y = 2
+einstieg:$x^2 + 4x - 5 = 0$ (durch 3 geteilt);x² + 4x − 5 = 0;gliederung/quadratische.md · Nullstellen berechnen: $x^2 + 4x - 5 = 0$ (durch 3 geteilt)
+einstieg:je Pfad mal, dann plus;mal, dann +;gliederung/wahrscheinlichkeit.md · Pfadregel: je Pfad mal, dann plus
+einstieg:4 Kugeln, davon 2 rote;"4; 2";gliederung/wahrscheinlichkeit.md · ohne Zurücklegen: 4 Kugeln, davon 2 rote

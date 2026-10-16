@@ -5393,11 +5393,12 @@ def lz_zeilen(r, nr, buchst='', optionen=None):
     if optionen is None:
         optionen = mehr_kreuz((r.get('wortlaut') or '').strip())[1]
     b = mehr_buchstabe(r, optionen)
-    out = []
+    out, nopt = [], 0
     for i, e in enumerate(ergebnisse):
         teil = teile[i] if i < len(teile) else ''
         if re.search(r'\((?:erste|zweite|dritte|vierte)\s+Option', teil):
-            e = stichwort(r.get('id', '')) or (b if (b and len(ergebnisse) == 1) else e)
+            nopt += 1   # Schlüssel: Zeilen-Id, die zweite Ankreuz-Antwort derselben Zeile „<Id>#2“
+            e = stichwort(r.get('id', '') + ('' if nopt == 1 else f'#{nopt}')) or (b if (b and len(ergebnisse) == 1) else e)
         rechts = p_rechts_tex(p_rechts(teil, [ergebnisse[i]])) if teil else ''
         bst = buchst if len(ergebnisse) == 1 else f'{"abcdefgh"[i]})'
         nummer = nr if i == 0 else ''
