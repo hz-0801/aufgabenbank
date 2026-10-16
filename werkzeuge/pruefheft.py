@@ -5234,7 +5234,7 @@ def mehr_aufgabe_tex(r, nr, faktor=1.0):
     rechnet = bool(re.search(r'\d', r.get('loesung') or ''))
     if optionen:
         out.append('\\par\\smallskip\\noindent' + ''.join(
-            f'\\pfkreuz{{{"ABCD"[i]}}}{{{tx(o)}}}' for i, o in enumerate(optionen[:4])))
+            f'\\pfkreuz{{}}{{{tx(o)}}}' for i, o in enumerate(optionen[:4])))
     elif luecke:
         pass
     elif not rechnet:
@@ -5271,6 +5271,49 @@ def ops_split(s):
     return out + [cur]
 
 
+# v0.18 (plan.md § 10, 15.10. q): Division als Bruch, auch in Formeln und beim Einsetzen; der Doppelpunkt bleibt
+# nur, wo die Aufgabe ihn zeigt (Maßstab, Verhältnis). Warum: die Formel der Formelsammlung auf einen Blick
+# wiedererkennen. Gilt für Lösung und Mehr-Lösung (Klartext der Spalte loesung), nicht für den Wortlaut.
+_B_OPD = (r'(?:\((?:[^()]|\([^()]*\))*\)'                       # Klammer (eine Ebene geschachtelt)
+          r'|(?:sin|cos|tan)\s*[\d,]+\s*°'                        # sin 24°
+          r'|[\d][\d.,]*(?:\s?(?:€|%|cm|mm|m|km|g|kg|l|h|s|min)(?![A-Za-zäöü]))?[²³]?'   # Zahl mit Einheit
+          r'|[A-Za-zα-ωΑ-Ω][₀-₉]?[²³]?(?![\w(]))')                 # Größe
+_B_DIV = re.compile(r'(?<![\w)])(' + _B_OPD + r')\s+:\s+(' + _B_OPD + r')')
+
+
+def _b_math(t):
+    t = t.strip()
+    if t.startswith('(') and t.endswith(')') and _klammer_ende(t, 0) == len(t) - 1:
+        t = t[1:-1].strip()
+    for k, v in UNI_MATH.items():
+        t = t.replace(k, ' ' + v + ' ')
+    t = t.replace('²', '^2').replace('³', '^3').replace(',', '{,}').replace('€', r'\text{€}').replace('%', r'\%')
+    t = re.sub(r'\b(sin|cos|tan)\b', r'\\\1', t)
+    return re.sub(r'\s+', ' ', t).strip()
+
+
+def p_bruch(s):
+    """„a : b“ -> gestapelter Bruch (LaTeX in $…$, tx lässt ihn stehen); √(a : b) als Ganzes. Mit „Maßstab“ oder
+    „Verhältnis“ im Text bleibt der Doppelpunkt."""
+    if not s or ' : ' not in s or re.search(r'Maßstab|Verhältnis', s):
+        return s
+    out, pos = [], 0
+    # √( … : … ) als ganze Formel
+    for m in re.finditer(r'√\(', s):
+        j = _klammer_ende(s, m.end() - 1)
+        innen = s[m.end():j]
+        if m.start() < pos or ' : ' not in innen or not _B_DIV.fullmatch(innen.strip()):
+            continue
+        d = _B_DIV.fullmatch(innen.strip())
+        out.append(s[pos:m.start()] + '$\\sqrt{\\tfrac{' + _b_math(d.group(1)) + '}{' + _b_math(d.group(2)) + '}}$')
+        pos = j + 1
+    s = ''.join(out) + s[pos:]
+    teile = re.split(r'(\$[^$]*\$)', s)
+    for i in range(0, len(teile), 2):
+        teile[i] = _B_DIV.sub(lambda m: '$\\tfrac{' + _b_math(m.group(1)) + '}{' + _b_math(m.group(2)) + '}$', teile[i])
+    return ''.join(teile)
+
+
 def mehr_fusswert(e, optionen, r):
     """Fußwert: Buchstabe beim Ankreuzen, sonst der Wert hinter dem letzten op."""
     b = mehr_buchstabe(r, optionen)
@@ -5281,10 +5324,12 @@ def mehr_fusswert(e, optionen, r):
 
 
 def mehr_buchstabe(r, optionen):
+    """v0.18 (15.10. l): statt des Buchstabens der Wert der angekreuzten Option."""
     if not optionen:
         return ''
     m = re.search(r'\((erste|zweite|dritte|vierte)\s+Option\)', r.get('loesung') or '')
-    return 'ABCD'['erste zweite dritte vierte'.split().index(m.group(1))] if m else ''
+    k = 'erste zweite dritte vierte'.split().index(m.group(1)) if m else -1
+    return optionen[k].rstrip('.') if 0 <= k < len(optionen) else ''
 
 
 MEHR_ANZEIGE = {}   # Stufe der Gliederung -> Anzeigename (mehr_bau setzt es; Mehr trägt die Namen von Blatt und Karte)
@@ -5327,7 +5372,8 @@ def mehr_loesung_tex(einheit, kenn, p, anz, folge):
         ergebnisse, weg = mehr_loesung(r)
         _, optionen = mehr_kreuz((r.get('wortlaut') or '').strip())
         b = mehr_buchstabe(r, optionen)
-        erg = (b + ': ' if b else '') + '; '.join(tx(e) for e in ergebnisse)
+        erg = tx(p_bruch(b)) if b else '; '.join(tx(p_bruch(e)) for e in ergebnisse)
+        weg = p_bruch(weg)
         out.append('\\begin{pfloesungb}{}')
         out.append(f'\\lzb{{{i}.}}{{}}{{{erg}}}{{{tx(weg)}}}')
         out.append('\\end{pfloesungb}')
@@ -5485,7 +5531,7 @@ P_PRAEAMBEL = r"""% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortg
 % \gzwei an derselben Stelle bleibt)
 \newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
   \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
- {\end{minipage}\par}
+ {\end{minipage}\par\addvspace{6pt}}% v0.18 (PG80 Nr. 1): Abstand, damit die Linie von a) nicht an b) rutscht
 % Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
 \newsavebox{\gpbox}
 \newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
@@ -5511,6 +5557,21 @@ P_PRAEAMBEL = r"""% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortg
     % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
     \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
   \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% v0.18 (plan.md § 10, 15.10. l): Abschnittsbuchstabe A, B, C vor dem Namen im Kopf – als Vorsatz, damit der
+% Name im TeX gleich bleibt (Bestellkarte, Sprungziele lesen ihn)
+\def\gbstakt{}\newcommand{\gbstvor}[1]{\gdef\gbstakt{#1}}
+\NewCommandCopy\gpfstufekopfalt\pfstufekopf
+\RenewDocumentCommand{\pfstufekopf}{o m m}{\IfValueTF{#1}{\gpfstufekopfalt[#1]}{\gpfstufekopfalt}%
+  {\ifx\gbstakt\empty\else\gbstakt\enspace\fi #2}{#3}\gdef\gbstakt{}}
+% v0.18 (16.10. e): Begriff grau, ohne Nummer, ohne Rahmen über der ersten Aufgabe der Stufe
+\newcommand{\gbegriff}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}\parbox[t]{\dimexpr\linewidth-\mbpfnr\relax}{\raggedright\small\color{mbgrau}#1}\par\nobreak\addvspace{3pt}}
+% v0.18 (16.10. g): Lösungsblatt – Kopf mit kräftigem Strich, Abschnitt klein grau als Zwischenzeile
+\newcommand{\glkopf}[1]{\noindent{\large\bfseries Lösungen \textperiodcentered{} #1}\par\vspace{3pt}\hrule height 1.2pt\par\medskip}
+\newcommand{\glzwischen}[1]{\par\addvspace{8pt}\Needspace*{4\baselineskip}\noindent{\footnotesize\color{mbgrau}#1}\par\nobreak\vspace{1pt}}
+% v0.18 (15.10. o, w): Blattende – Kern ohne Rahmen, dann graue Zeile „Mehr: n Aufgaben“
+\newcommand{\gkern}[1]{\par\addvspace{14pt}\Needspace*{6\baselineskip}\noindent{\bfseries Kern}\par\nobreak\smallskip
+  {\small\raggedright #1\par}}
+\newcommand{\gmehr}[1]{\par\addvspace{10pt}\noindent{\footnotesize\color{mbgrau}Mehr: #1 Aufgaben}\par}
 % Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
 \def\gkopfnach{}
 \newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
@@ -5557,7 +5618,12 @@ def p_gliederung(mn, kapitel):
     g = {'name': kapitel.capitalize(), 'folge': 0, 'gruppen': [], 'stufen': OrderedDict(), 'anzeige': {}, 'kennung': {},
          'ordner': {}}
     st = None
+    g['zusatz'] = []   # v0.18: Kopfzeilen „Formelkasten:“, „Kern am Ende:“, „Kern-Bild:“ (Feldname, Rest), je Einheit
     for z in open(p, encoding='utf-8').read().splitlines():
+        m = re.match(r'^(Formelkasten|Kern am Ende|Kern-Bild):\s*(.*)$', z)
+        if m and st is None:
+            g['zusatz'].append((m.group(1), m.group(2).strip()))
+            continue
         m = re.match(r'^(Name|Folge|Gruppen|Anzeigenamen|Kennung|Ordner):\s*(.*)$', z)
         if m and st is None:
             k, v = m.group(1), m.group(2).strip()
@@ -5589,16 +5655,21 @@ def p_gliederung(mn, kapitel):
             st = m.group(1).strip()
             g['stufen'][st] = {'zuschnitt': '', 'hinweis': '', 'kern': '', 'anzeigename': '', 'schülerfrage': '',
                                'schülerfrage-fälle': '', 'schülerfrage-form': '', 'schülerfrage-weg': '', 'frage': '',
-                               'schülerfrage-skizze': '', 'einstieg': '', 'häufigkeit': '', 'regine': ''}
+                               'schülerfrage-skizze': '', 'einstieg': '', 'häufigkeit': '', 'regine': '', 'begriff': ''}
             continue
         # 12.10.: Schülerfrage(-Fälle, -Form, -Weg) = Frage als erste Aufgabe der Stufe (Volumen); Frage = kurze
         # Schülerfrage kursiv unter dem Stufenkopf (Netz); Anzeigename = Name in Schülersprache (pruefheft-p.md);
         # Einstieg: nein = kein Bank-Einstieg der Stufe (12.10., Flächen zweite Fassung: Einstieg nur, wo die Stufe ihn braucht)
         # Schülerfrage-Skizze (12.10., Flächen dritte Fassung): „original“ = die Figur des ersten Originals der Stufe
         # (Spalte grafik), sonst eigenes TikZ; die Fälle stehen rechts daneben (Einstieg = erster Schritt des Originals)
-        m = re.match(r'^- \*\*(Zuschnitt|Hinweis|Kern|Anzeigename|Frage|Einstieg|Häufigkeit|Regine|Schülerfrage(?:-Fälle|-Form|-Weg|-Skizze)?):\*\*\s*(.*)$', z)
+        m = re.match(r'^- \*\*(Zuschnitt|Hinweis|Kern|Anzeigename|Frage|Einstieg|Häufigkeit|Regine|Begriff|Schülerfrage(?:-Fälle|-Form|-Weg|-Skizze)?):\*\*\s*(.*)$', z)
         if m and st:
             g['stufen'][st][m.group(1).lower()] = m.group(2).strip().strip('„“"')
+            weiter = m.group(1) == 'Begriff'   # v0.18 (16.10. e): Begriff darf umbrechen (Folgezeilen eingerückt)
+        elif st and z.startswith('  ') and z.strip() and locals().get('weiter'):
+            g['stufen'][st]['begriff'] += ' ' + z.strip()
+        elif z.startswith('- '):
+            weiter = False
     return g
 
 
@@ -5763,11 +5834,17 @@ def p_jahre_tex(jahre):
     return f'\\gpunkte[{" ".join(str(j)[2:] for j in jung)}]{{{p_punkte_tex(jung, P_LETZTE5)}}}'
 
 
-def p_stufenkopf(name, jahre, frage='', vorhalt=0.16):
+def p_stufenkopf(name, jahre, frage='', vorhalt=0.16, bst='', ohne_kopf=False, begriff=''):
     """Stufenkopf mit Jahren (p_jahre_tex); darunter kursiv die Schülerfrage der Stufe (Gliederung „Frage“, v0.7).
     vorhalt: Anteil der Seitenhöhe, der frei sein muss (Kopf + erste Aufgabe; nie eine Überschrift allein unten);
     None: ohne Vorhalt (der Kopf wird mit \\gkopfvor an die erste Aufgabe gebunden)."""
-    out = (f'\\Needspace*{{{vorhalt}\\textheight}}' if vorhalt else '') + f'\\pfstufekopf{{{tx(name)}}}{{{p_jahre_tex(jahre)}}}'
+    if ohne_kopf:
+        # v0.18 (15.10. l, o): Blatt mit einem Abschnitt – kein Kopf (Punkte am Titel); die Kopfzeile bleibt als
+        # Kommentar, damit Bestellkarte und Mappe Name und Jahre weiter aus dem TeX lesen
+        out = f'%\\pfstufekopf{{{tx(name)}}}{{{p_jahre_tex(jahre)}}}\n'
+    else:
+        out = (f'\\Needspace*{{{vorhalt}\\textheight}}' if vorhalt else '') + (f'\\gbstvor{{{bst}}}' if bst else '') \
+            + f'\\pfstufekopf{{{tx(name)}}}{{{p_jahre_tex(jahre)}}}'
     # Sprungziel je Stufenkopf (plan.md § 10, 15.10. k): „stufe-<slug>“ unter der Kopfzeile; Mappe und Gesamtheft
     # machen daraus feste Seitenziele (werkzeuge/sprungziele.py). Ein Whatsit, keine Zeile, kein Umbruch.
     from sprungziele import slug as _slug
@@ -5778,6 +5855,9 @@ def p_stufenkopf(name, jahre, frage='', vorhalt=0.16):
             # „Seite ___“ bleibt zusammen (Lehrer 13.10. spät: Lücke allein in der nächsten Zeile, AZL3)
             out += '\\gfrage{' + tx(fr.replace('Seite ___', '\x02').replace('___', '\x00')).replace(
                 '\x02', 'Seite~\\linie{12mm}').replace('\x00', '\\linie{12mm}') + '}'
+    if begriff:
+        w, sep, erkl = begriff.partition(':')
+        out += '\\gbegriff{' + (f'\\textbf{{{tx(w.strip())}:}} {tx(erkl.strip())}' if sep and len(w) <= 40 else tx(begriff)) + '}'
     return out
 
 
@@ -5943,6 +6023,16 @@ def p_form_tex(t_rest, grafik, form, optionen, ergebnisse, n, faktor):
     teile = [x.strip() for x in form.split('+') if x.strip()]
     bild = [b.strip() for b in grafik.split('||')] if '||' in grafik else []
     g = '' if bild else grafik
+    rechts_ok = {'teil', 'linie', 'wahrfalsch', 'ankreuzen'}
+    if P_ZUSATZ and g and not bild and any(t in rechts_ok or t.startswith('antwort:') for t in teile) \
+            and all(t in rechts_ok | {'zeichnen', 'einzeichnen'} or t.startswith('antwort:') for t in teile):
+        # v0.18 (gemeinsam.md „Zwei Spalten“, 15.10. y): links das Bild (auch das Koordinatensystem zum Zeichnen),
+        # rechts oben in Höhe der Frage, was der Schüler tut – Aussagen, Kästchen, Antwortfeld „x = ___“
+        innen = p_form_tex(t_rest, '', '+'.join(t for t in teile if t not in ('zeichnen', 'einzeichnen')), optionen,
+                           ergebnisse, n, faktor)
+        innen = [re.sub(r'^\\par\\smallskip\\noindent\\hfill\s*|^\\par\\noindent\\hfill\s*|^\\nobreak\\hfill',
+                        r'\\par\\smallskip\\noindent ', z) for z in innen]
+        return ['\\gzwei{' + g + '}{\\vspace{1mm}' + ''.join(innen) + '}']
     grafik_gesetzt = False
     def bildreihe(makro):
         # Bildoptionen in einer Reihe, gleich hoch, Buchstabe (und Kästchen) unten auf einer Linie; Breite je Bild
@@ -5950,7 +6040,7 @@ def p_form_tex(t_rest, grafik, form, optionen, ergebnisse, n, faktor):
         k = min(4, len(bild))
         return ('\\par\\smallskip\\noindent\\setlength{\\gbildbreite}{\\dimexpr0.96\\linewidth/' + str(k) + '\\relax}'
                 + '\\sbox{\\gbox}{\\vbox{' + '\\par'.join(bild[:4]) + '}}'
-                + '\\hfill'.join(f'\\{makro}{{{"ABCD"[i]}}}{{{b}}}{{\\dimexpr\\ht\\gbox/{k}+\\baselineskip\\relax}}'
+                + '\\hfill'.join(f'\\{makro}{{{"ABCD"[i] if makro == "gbildname" else ""}}}{{{b}}}{{\\dimexpr\\ht\\gbox/{k}+\\baselineskip\\relax}}'
                                   for i, b in enumerate(bild[:4])) + '\\par')
     for teil in teile:
         if teil == 'bilder' and bild:
@@ -5970,7 +6060,7 @@ def p_form_tex(t_rest, grafik, form, optionen, ergebnisse, n, faktor):
             if bild:
                 out.append(bildreihe('gbildoption'))
             else:
-                opt = ''.join(f'\\pfkreuzab{{{"ABCD"[i]}}}{{{tx(o)}}}' for i, o in enumerate(optionen[:4]))
+                opt = ''.join(f'\\pfkreuzab{{}}{{{tx(o)}}}' for i, o in enumerate(optionen[:4]))
                 if g and not grafik_gesetzt:
                     out.append('\\gzwei{' + g + '}{\\vspace{2mm}' + opt + '}')
                     grafik_gesetzt = True
@@ -5993,6 +6083,10 @@ def p_form_tex(t_rest, grafik, form, optionen, ergebnisse, n, faktor):
                 out.append(f'\\karo{{{k}}}')
         elif teil == 'teil':
             felder = [ops_split(e)[0] for e in ergebnisse if re.search(r'\s(=|≈)\s', e)]
+            if len(felder) == 1 and not out and not t_rest and P_ZUSATZ:
+                # v0.18 (PG80): eine Linie auf der Grundlinie der letzten Textzeile, nicht in eigener Zeile
+                out.append('\\nobreak\\hfill\\mbox{' + tx(felder[0]) + ' $=$\\linie{30mm}}')
+                felder = []
             for f in felder:
                 out.append('\\par\\noindent\\hfill ' + tx(f) + ' $=$\\linie{30mm}')
         elif teil.startswith('antwort:'):
@@ -6075,6 +6169,12 @@ def p_echt_inhalt(D, r, nr, heraus, faktor=1.0, vorige=None, nr_vorige=0, schmal
         text, optionen, rest = p_kreuz(wortlaut)
     luecke = '___' in text
     t = tx(text.replace('___', '\x00')).replace('\x00', '\\linie{25mm}')
+    grafik0 = (r.get('grafik') or '').strip()
+    if P_ZUSATZ and luecke and grafik0 and not optionen and '||' not in grafik0 and not form:
+        # v0.18 (15.10. y): „Ergänze sin γ = …“ – Text mit Antwortfeld rechts neben der Figur, oben in Höhe der Frage,
+        # kein Karo
+        ergebnisse, _ = p_ergebnis(r)
+        return kommentare, ['\\gzwei{' + grafik0 + '}{' + t + '}'], '; '.join(tx(mehr_fusswert(e, optionen, r)) for e in ergebnisse)
     out.append(t)
     ergebnisse, _ = p_ergebnis(r)
     rechnet = bool(re.search(r'\d', r.get('loesung') or ''))
@@ -6090,7 +6190,7 @@ def p_echt_inhalt(D, r, nr, heraus, faktor=1.0, vorige=None, nr_vorige=0, schmal
         bildoptionen = [] if optionen or '||' not in grafik else grafik.split('||')
         return kommentare, out, '; '.join(p_fusswerte(ergebnisse, optionen or bildoptionen, r))
     if optionen:
-        rechts = '\\par\\smallskip\\noindent' + ''.join(f'\\pfkreuz{{{"ABCD"[i]}}}{{{tx(o)}}}' for i, o in enumerate(optionen[:4]))
+        rechts = '\\par\\smallskip\\noindent' + ''.join(f'\\pfkreuz{{}}{{{tx(o)}}}' for i, o in enumerate(optionen[:4]))
         if rest:
             rechts += '\\par\\smallskip\\noindent ' + tx(rest)
     elif luecke:
@@ -6112,7 +6212,7 @@ def p_echt_inhalt(D, r, nr, heraus, faktor=1.0, vorige=None, nr_vorige=0, schmal
         rechts = '\\hfill\\linie{30mm} ' + tx(m.group(1)) if m else '\\hfill\\linie{30mm}'
     if grafik and optionen:
         # neben der Skizze ist die Spalte schmal: eine Option je Zeile (gemeinsam.md „Ankreuzen“; 12.10., Flächen)
-        rechts = ''.join(f'\\gkreuzzeile{{{"ABCD"[i]}}}{{{tx(o)}}}' for i, o in enumerate(optionen[:4]))
+        rechts = ''.join(f'\\gkreuzzeile{{}}{{{tx(o)}}}' for i, o in enumerate(optionen[:4]))
     zeichne = bool(re.search(r'\b(Zeichne|Skizziere|zeichne|skizziere)\b', wortlaut))
     if grafik and '{ksys}' in grafik and (zeichne or schmal) and not optionen:
         # Kein Karo bei „Zeichne“ (pruefung.md § 5, 12.10.): das Koordinatensystem ist das Antwortfeld; im Bündel
@@ -6235,7 +6335,7 @@ def p_buendel_tex(D, glieder, nr, heraus, faktor=1.0, teile=False):
         nebeneinander = False
     out = [(f'% Teile eines Originals ({p_original(glieder[0])}): ' if teile else
             f'% Bündel {p_buendel_schluessel(glieder[0])}: ') + ', '.join(r['id'] for r in glieder),
-           f'\\begin{{pfaufg}}{{}}{{{nr}.}}{{}}']
+           f'\\begin{{pfaufg}}{{{p_marke_ganz(D, glieder[0]) if teile and P_ZUSATZ else ""}}}{{{nr}.}}{{}}']
     if kopf:
         out.append(tx(kopf))
     fuesse, spalten = [], []
@@ -6259,10 +6359,15 @@ def p_buendel_tex(D, glieder, nr, heraus, faktor=1.0, teile=False):
             # Marke zweizeilig als \\shortstack (\\\\ direkt im Teil ist ein TeX-Fehler), links neben die Nummernspalte
             # v0.17: ohne eigenes \\hspace*{\\mbpfnr} – den Abstand gibt \\gteilrand schon; doppelt war die Marke breiter
             # als ihr Rand (\\mbpfrandmarke, 11 mm) und lief 24 pt über (AA70, AA130, AS20 …)
-            out.append(f'\\begin{{gbteil}}{{{b}}}{{{p_marke(D, r).replace(chr(92) * 2, "~") if p_marke(D, r).count(chr(92) * 2) == 0 else
+            out.append(f'\\begin{{gbteil}}{{{b}}}{{{"" if teile and P_ZUSATZ else p_marke(D, r).replace(chr(92) * 2, "~") if p_marke(D, r).count(chr(92) * 2) == 0 else
                        "\\raisebox{\\dimexpr-\\height+\\ht\\strutbox\\relax}{\\shortstack[r]{" + p_marke(D, r) + "}}"}}}{{{p_bedingung_tex(D, r)}}}')
             out += zeilen
             out.append('\\end{gbteil}')
+            if teile and P_ZUSATZ and i < len(glieder) - 1:
+                # v0.18 (Satz, 16.10.): Teile eines Originals sind je ein Block – die Seite füllt sich weiter, statt dass
+                # die ganze Nummer auf die nächste Seite rutscht (PA10 S. 2 halb leer)
+                out.append('\\end{pfaufg}')
+                out.append('\\begin{pfaufg}{}{}{}')
     if spalten:
         # ohne gemeinsamen Text stehen a) und b) auf der Zeile der Nummer
         out.append(('\\par\\smallskip' if kopf else '') + '\\noindent' + '\\hfill\n'.join(spalten) + '\\par')
@@ -6326,7 +6431,11 @@ def p_ergebnis(r):
         m = re.search(r'\((erste|zweite|dritte|vierte)\s+Option', teil)
         if m:
             # Ankreuz-Teil (v0.7): das Ergebnis ist der Buchstabe (gemeinsam.md „Buchstaben vor Optionen“)
-            ergebnisse.append('ABCD'['erste zweite dritte vierte'.split().index(m.group(1))])
+            # v0.18 (plan.md § 10, 15.10. l): Kästchen ohne Buchstaben – die Lösung nennt den Wert der Option
+            k = 'erste zweite dritte vierte'.split().index(m.group(1))
+            w = (r.get('wortlaut') or '').strip()
+            opt = (p_wahrfalsch(w) if 'wahrfalsch' in (r.get('form') or '') else p_kreuz(w))[1]
+            ergebnisse.append(opt[k].rstrip('.') if k < len(opt) else teil[:m.start()].strip())
             continue
         # Klammern ohne Zahl sind Vermerke („(erste Option)“), Klammern mit Zahl Rechnung („(π · 7,5)“)
         # „(b + c)“ bleibt (12.10., Flächen); „p(x)“ bleibt: eine Klammer direkt hinter einem Buchstaben ist Funktionsschreibweise, kein Vermerk (12.10., Quadratische)
@@ -6356,6 +6465,12 @@ def p_marke(D, r):
     if p_basis(D, eid):
         return f"’{str(k['jahr'])[2:]}~\\pkt{{}}~{p_teil(eid)}"   # wie im Heft „’25 · 1f“ (v0.11, Lehrer 13.10.)
     return mehr_marke(r)
+
+
+def p_marke_ganz(D, r):
+    """v0.18: Teile desselben Originals tragen die Marke einmal an der Nummer, ohne Teilbuchstaben
+    („nach P10 ’23 · 3“)."""
+    return re.sub(r'(\d)[a-z]$', r'\1', p_marke(D, r))
 
 
 # Hilfsmittelregel (v0.10, Lehrer 13.10.): keine Annahme über 2028 – das durchgestrichene TR nur aus hilfsmittel = nein
@@ -6432,11 +6547,29 @@ def p_fundstellen(D, ids, letzte5):
             + ' & '.join(zellen) + '}')
 
 
+P_ZUSATZ = {}   # v0.18: nur P10 (p_bau) – Formelkasten, Kern, Mehr-Zahl, Buchstaben; der Abitur-Pfad bleibt wie v0.17
+
+
+def p_bst(stufen_daten):
+    """Abschnittsbuchstaben (15.10. l): A, B, C …, bei einem Abschnitt keiner."""
+    return {s['name']: ('ABCDEFGHIJ'[i] if P_ZUSATZ and len(stufen_daten) > 1 else '') for i, s in enumerate(stufen_daten)}
+
+
 def p_blatt_tex(D, einheit, kenn, stufen_daten, ausschnitt, fund, faktor=1.0, entfallen=()):
-    out = [KOPF.replace('\\begin{document}', P_PRAEAMBEL + '\\begin{document}'), '\\pfheftstil',
+    Z = P_ZUSATZ
+    einzeln = bool(Z) and len(stufen_daten) == 1
+    bst = p_bst(stufen_daten)
+    kopf2 = p_jahrkopf()
+    if einzeln:
+        kopf2 = (kopf2 + ' \\pkt{} ' if kopf2 else '') + p_jahre_tex(stufen_daten[0]['jahre'])
+    out = [KOPF.replace('\\begin{document}', P_PRAEAMBEL + Z.get('pre', '') + '\\begin{document}'), '\\pfheftstil',
            f'\\pflaufkopf[{P_SORTE} \\pkt{{}} Prüfung]{{{tx(einheit)}}}{{{kenn}}}\\pfseitevon',
-           f'\\pfheftkopf{{{tx(einheit)}}}{{{p_jahrkopf()}}}',
-           '\\pfstufenzeile{' + ' \\pkt{} '.join(tx(s['anzeige']) for s in stufen_daten) + '}']
+           f'\\pfheftkopf{{{tx(einheit)}}}{{{kopf2}}}']
+    if not einzeln:
+        out.append('\\pfstufenzeile{' + ' \\pkt{} '.join((bst[s['name']] + '~' if bst[s['name']] else '') + tx(s['anzeige'])
+                                                         for s in stufen_daten) + '}')
+    if Z.get('kasten'):
+        out.append('% Formelkasten (15.10. t, 16.10. a)\n' + Z['kasten'])
     nr = 0
     for name in entfallen:
         out.append(f'% Stufe entfällt: {name} – kein Original der letzten fünf Jahre (Mehr-Block, Fundstellen)')
@@ -6449,9 +6582,10 @@ def p_blatt_tex(D, einheit, kenn, stufen_daten, ausschnitt, fund, faktor=1.0, en
             out.append('% Formel-Frage (einmal je Blatt, erste Stufe mit Formel; pruefung.md § 5)')
         if s['echte'] and not s['frage']:
             # Kopf und erste echte Aufgabe zusammen: die erste pfaufg setzt den Kopf, wenn beide Platz haben (\gkopfvor)
-            out.append('\\gkopfvor{' + p_stufenkopf(s['anzeige'], s['jahre'], fragen, None) + '}')
+            out.append('\\gkopfvor{' + p_stufenkopf(s['anzeige'], s['jahre'], fragen, None, bst[s['name']], einzeln,
+                                                     s.get('begriff', '')) + '}')
         else:
-            out.append(p_stufenkopf(s['anzeige'], s['jahre'], fragen, 0.16))
+            out.append(p_stufenkopf(s['anzeige'], s['jahre'], fragen, 0.16, bst[s['name']], einzeln, s.get('begriff', '')))
         if s['frage']:
             nr += 1
             s['nr_frage'] = nr
@@ -6480,13 +6614,69 @@ def p_blatt_tex(D, einheit, kenn, stufen_daten, ausschnitt, fund, faktor=1.0, en
         if not s['echte']:
             out.append('% SETZER: fehlt – keine echte Aufgabe mit auf_blatt = ja in msa/mehr-p10/*.csv')
     out.append('')
-    if fund:
+    if Z:
+        # v0.18 (15.10. o, x, w): keine Fundstellentabelle, kein Vorher/▸/Weiter; Kern, dann „Mehr: n Aufgaben“
+        if Z.get('kern'):
+            out.append(Z['kern'])
+        if Z.get('mehr_n'):
+            out.append(f'\\gmehr{{{Z["mehr_n"]}}}')
+    elif fund:
         out.append(fund + '%\n{' + ausschnitt + '}')
     out.append('\\end{document}')
     return '\n'.join(out)
 
 
+def p_weg_tex(weg):
+    """Rechte Spalte der Lösung (16.10. g): je Handgriff eine Zeile, Gleichheitszeichen untereinander; Vermerke
+    „(dritte Option)“ fallen weg; Division als Bruch (15.10. q)."""
+    weg = re.sub(r'\s*\((?:erste|zweite|dritte|vierte)\s+Option\)', '', weg or '')
+    schritte = [x.strip() for t in re.split(r'\s*;\s*', weg) for x in re.split(r'\s*⇒\s*', t) if x.strip()]
+    if not schritte:
+        return ''
+    zeilen = []
+    for st in schritte:
+        b = p_bruch(st)
+        segs = ops_split(b) if '$' not in st else [b]
+        if len(segs) >= 3 and segs[0].strip() and len(segs[0]) <= 18 and segs[0].count('(') == segs[0].count(')'):
+            zeilen.append(tx(segs[0].strip()) + ' & ' + tx(' '.join(x.strip() for x in segs[1:])) + '\\\\')
+        else:
+            zeilen.append('\\multicolumn{2}{@{}>{\\raggedright\\arraybackslash}p{0.97\\linewidth}@{}}{' + tx(b) + '}\\\\')
+    return ('\\begin{tabular}[t]{@{}>{\\raggedleft\\arraybackslash}p{0.34\\linewidth}@{\\,}'
+            '>{\\raggedright\\arraybackslash}p{0.6\\linewidth}@{}}' + ''.join(zeilen) + '\\end{tabular}')
+
+
+def p_loesung_p10(D, einheit, kenn, stufen_daten):
+    """Lösungsblatt P10 (plan.md § 10, 16.10. g): Kopf „Lösungen · Name“ mit kräftigem Strich, keine Stufenzeile,
+    keine Punkte, Abschnitte klein grau als Zwischenzeile, Schrift eine Stufe kleiner; links das Ergebnis fett
+    (Wert der Option statt Buchstabe, 15.10. l), rechts je Handgriff eine Zeile."""
+    bst = p_bst(stufen_daten)
+    out = [KOPF.replace('\\begin{document}', P_PRAEAMBEL + '\\begin{document}'), '\\pfheftstil',
+           f'\\pflaufkopf[{P_SORTE} \\pkt{{}} Prüfung]{{{tx(einheit)} \\pkt{{}} Lösungen}}{{{kenn}}}\\pfseitevon',
+           f'\\glkopf{{{tx(einheit)}}}', '\\small']
+    for s in stufen_daten:
+        out.append('')
+        if len(stufen_daten) > 1:
+            out.append(f'\\glzwischen{{{bst[s["name"]]}~{tx(s["anzeige"])}}}')
+        kf = s.get('kurzfrage', '')
+        if 'Seite ___' in kf and s.get('regine'):
+            out.append('\\noindent{\\footnotesize\\color{mbgrau}' + tx(kf.replace('Seite ___', s['regine'])) + '}\\par')
+        if s['frage']:
+            out.append('\\begin{pfloesungb}{}')
+            out.append(f'\\lzb{{{s["nr_frage"]}.}}{{}}{{{p_frage_ergebnis(s["frage"])}}}{{{p_weg_tex(s["frage"]["weg"])}}}')
+            out.append('\\end{pfloesungb}')
+        for (nr, b), r in zip(s['nr_echt'], s['echte']):
+            ergebnisse, weg = p_ergebnis(r)
+            erg = '; '.join(tx(p_bruch(e)) for e in ergebnisse)
+            out.append('\\begin{pfloesungb}{}')
+            out.append(f'\\lzb{{{"" if b and b != "a)" else str(nr) + "."}}}{{{b}}}{{{erg}}}{{{p_weg_tex(weg)}}}')
+            out.append('\\end{pfloesungb}')
+    out.append('\\end{document}')
+    return '\n'.join(out)
+
+
 def p_loesung_tex(D, einheit, kenn, stufen_daten):
+    if P_ZUSATZ:
+        return p_loesung_p10(D, einheit, kenn, stufen_daten)
     out = [KOPF.replace('\\begin{document}', P_PRAEAMBEL + '\\begin{document}'), '\\pfheftstil',
            f'\\pflaufkopf[{P_SORTE} \\pkt{{}} Prüfung]{{{tx(einheit)} \\pkt{{}} Lösungen}}{{{kenn}}}\\pfseitevon',
            f'\\pfheftkopf{{{tx(einheit)}}}{{Lösungen{(" \\pkt{} " + p_jahrkopf()) if p_jahrkopf() else ""}}}',
@@ -6506,9 +6696,10 @@ def p_loesung_tex(D, einheit, kenn, stufen_daten):
             ergebnisse, weg = p_ergebnis(r)
             _, optionen = mehr_kreuz((r.get('wortlaut') or '').strip())
             b = mehr_buchstabe(r, optionen)
-            if b and not any(len(e) == 1 for e in ergebnisse):
-                ergebnisse = [b] + ergebnisse   # Buchstabe ohne eigenen Teil in loesung (Art p vor v0.7)
-            erg = '; '.join(tx(e) for e in ergebnisse)
+            if b and b not in ergebnisse:
+                ergebnisse = [b] + [e for e in ergebnisse if 'Option' not in e]   # Wert der Option (v0.18)
+            erg = '; '.join(tx(p_bruch(e)) for e in ergebnisse)
+            weg = p_bruch(weg)
             out.append('\\begin{pfloesungb}{}')
             out.append(f'\\lzb{{{"" if bst and bst != "a)" else str(nr) + "."}}}{{{bst}}}{{{erg}}}{{{tx(weg)}}}')
             out.append('\\end{pfloesungb}')
@@ -6664,6 +6855,49 @@ def p_einheitsfassung(r):
     return r
 
 
+PRIVAT = os.environ.get('PRIVAT') or os.path.join(os.path.dirname(BANK), 'aufgabenbank-privat')
+
+
+def p_zusatz(D, gl, einheit, args):
+    """v0.18 (P10): Formelkasten (15.10. t), Kern am Ende (w), Zahl des Mehr (o, r). Fehlt ein Feld, wird nichts
+    gedruckt. Die Felder stehen im Kopf der Gliederung als „<Feld>: <Einheit> = <Wert>“."""
+    Z = {'an': True}
+    wert = lambda feld: next((v[len(einheit) + 3:].strip() for f, v in gl.get('zusatz', [])
+                              if f == feld and v.startswith(einheit + ' = ')), '')
+    kid = wert('Formelkasten')
+    if kid:
+        j = os.path.join(PRIVAT, 'formelsammlung', 'duden-sek1.json')
+        r = subprocess.run([sys.executable, os.path.join(PRIVAT, 'werkzeuge', 'formelsammlung-satz.py'), j, '--kasten', kid],
+                           capture_output=True, text=True, cwd=PRIVAT)
+        if r.returncode == 0 and r.stdout.strip():
+            e = next((x for x in json.load(open(j, encoding='utf-8'))['eintraege'] if x['id'] == kid), {})
+            sn = re.sub(r'\\fsquelle\{[^}]*\}', '', r.stdout)
+            Z['pre'] = '\\usepackage{graphicx}\\graphicspath{{' + PRIVAT + '/}}\n'
+            Z['kasten'] = ('{\\small' + sn + '}\\vspace{-4pt}\\par\\noindent{\\footnotesize\\color{mbgrau}Formeln und Werte S.~'
+                           + str(e.get('seite', '')) + '}\\par\\medskip')
+        else:
+            print(f'Hinweis: Formelkasten „{kid}“ nicht gesetzt: {r.stderr.strip()[-200:]}')
+    aussagen = [a.strip() for a in wert('Kern am Ende').split('|') if a.strip()][:4]
+    bild = wert('Kern-Bild')
+    if aussagen or bild:
+        pf = os.path.join(D.mn, bild) if bild else ''
+        Z['kern'] = '\\gkern{' + '\\par\\smallskip\\noindent '.join(tx(a) for a in aussagen) + (
+            ('\\par\\smallskip\\noindent\\includegraphics[width=0.6\\linewidth]{' + pf + '}') if pf and os.path.exists(pf) else '') + '}'
+        if bild and not os.path.exists(pf):
+            print(f'Hinweis: Kern-Bild fehlt: {pf}')
+        if pf and os.path.exists(pf):
+            Z['pre'] = Z.get('pre', '') + '\\usepackage{graphicx}\n'
+    try:
+        global MEHR_ANZEIGE
+        ein_m, zeilen = mehr_zeilen(D.mn, args.kapitel, einheit, True)
+        anz_e, MEHR_ANZEIGE = mehr_anzeige(D.mn, args.kapitel, ein_m)
+        Z['mehr_n'] = len(zeilen)
+        Z['mehr_daten'] = (anz_e, zeilen)
+    except SystemExit:
+        pass
+    return Z
+
+
 def p_bau(args):
     if not args.einheit:
         sys.exit('--art p braucht --einheit')
@@ -6745,6 +6979,7 @@ def p_bau(args):
                              'jahre': p_jahre(D, z, letzte5, info.get('häufigkeit', '')), 'frage': frage,
                              'einstieg': None,   # Einstieg nur aus der Gliederung (Schülerfrage), nie aus der Bank (12.10.)
                              'kurzfrage': info.get('frage', ''), 'regine': info.get('regine', ''),
+                             'begriff': info.get('begriff', ''),
                              'echte': echte, 'heraus': [h for h in heraus if h.get('stufe', '').strip() == name]})
     ids = list(OrderedDict((i, 1) for i in ids))
     alle_echte = [r for s in stufen_daten for r in s['echte']]
@@ -6766,7 +7001,16 @@ def p_bau(args):
     # v0.11 (Lehrer 13.10.): Hinweis auf die Formelsammlung einmal je Blatt – stehen mehrere Anstöße der Gliederung, die
     # zur Formelsammlung schicken, bleibt nur der erste in Blattfolge (Warum: sparsam, sonst stumpft der Hinweis ab)
     fs = lambda t: bool(re.search(r'Formelsammlung|Seite\s*_{3}', t or ''))
-    st_formel = next((s for s in stufen_daten if p_hat_formel(D, s)), None)
+    global P_ZUSATZ
+    P_ZUSATZ = p_zusatz(D, gl, einheit, args)
+    if P_ZUSATZ.get('kasten'):
+        # v0.18 (15.10. t, 16.10. a): der Formelkasten ersetzt die Formelsammlungs-Frage
+        for s in stufen_daten:
+            if fs(s.get('kurzfrage')):
+                s['kurzfrage'] = ''
+            if s['frage'] and fs(s['frage'].get('frage')):
+                s['frage'] = None
+    st_formel = None if P_ZUSATZ.get('kasten') else next((s for s in stufen_daten if p_hat_formel(D, s)), None)
     if st_formel:
         st_formel['formelfrage'] = p_formelfrage(einheit)
     schon = False
@@ -6815,6 +7059,9 @@ def p_bau(args):
             break
     loes = p_loesung_tex(D, anz(einheit), kenn, stufen_daten)
     ueb = p_uebersicht_tex(gl, einheiten, einheit, kenn, stufen_daten, p_kapitelnamen(D.mn))
+    md = P_ZUSATZ.get('mehr_daten')
+    mehr_teile = (('4-mehr', mehr_blatt_tex(md[0], kenn, None, 1, md[1])),
+                  ('5-mehr-loesung', mehr_loesung_tex(md[0], kenn, None, 1, md[1]))) if md else ()
     os.makedirs(os.path.join(ordner, 'src'), exist_ok=True)
     os.makedirs(os.path.join(ordner, 'pdf'), exist_ok=True)
     bericht, seiten = [], 0
@@ -6829,6 +7076,29 @@ def p_bau(args):
         bericht.append(f'{nm}: {e["seiten"]} Seiten, Fehler {len(e["fehler"])}, '
                        f'Missing character {e["missing"]}, Overfull {e["overfull"]}')
         bericht += ['   ' + fl for fl in e['fehler'][:5]]
+    # v0.18 (15.10. r): Lieferung als drei Dateien mit gleichem Anfang – <Kennung>-blatt, -loesung, -mehr (Lösung des
+    # Mehr hinten im Mehr); 2-blatt/3-loesungen bleiben für Karte, Gesamtheft, Mappe und Bestellung
+    pdfd = os.path.join(ordner, 'pdf')
+    for alt in glob.glob(os.path.join(pdfd, '*-blatt.pdf')) + glob.glob(os.path.join(pdfd, '*-loesung.pdf')) \
+            + glob.glob(os.path.join(pdfd, '*-mehr.pdf')):
+        if not os.path.basename(alt)[0].isdigit():
+            os.remove(alt)
+    for nm, quelle in (('blatt', '2-blatt'), ('loesung', '3-loesungen')):
+        if os.path.exists(os.path.join(pdfd, quelle + '.pdf')):
+            shutil.copy(os.path.join(pdfd, quelle + '.pdf'), os.path.join(pdfd, f'{kenn}-{nm}.pdf'))
+    if mehr_teile:
+        stuecke = []
+        for nm, t in mehr_teile:
+            e = xelatex(t, args.bb, nm, arbeit)
+            with open(os.path.join(ordner, 'src', nm + '.tex'), 'w', encoding='utf-8') as f:
+                f.write(t)
+            bericht.append(f'{nm}: {e["seiten"]} Seiten, Fehler {len(e["fehler"])}, '
+                           f'Missing character {e["missing"]}, Overfull {e["overfull"]}')
+            bericht += ['   ' + fl for fl in e['fehler'][:5]]
+            if e['pdf']:
+                stuecke.append(e['pdf'])
+        if len(stuecke) == len(mehr_teile):
+            subprocess.run(['pdfunite'] + stuecke + [os.path.join(pdfd, f'{kenn}-mehr.pdf')], check=True)
     if not args.ohne_register:
         p_register(args, kenn_basis, ordner, seiten, einheit, stufen_daten, fassung)
         if fassung_neu:
@@ -6969,6 +7239,8 @@ def p_bau_abi(args):
         sys.exit('--art p (Abitur) braucht --einheit')
     global P_SORTE, P_LETZTE5, MEHR_ANZEIGE
     P_SORTE = 'Abitur GK'
+    global P_ZUSATZ
+    P_ZUSATZ = {}
     D = Daten(args.mn, args.kapitel, 'abi-gk')
     letzte5 = sorted({int(j) for j in D.pruefjahre})[-5:]
     P_LETZTE5 = sorted(letzte5, reverse=True)

@@ -35,7 +35,7 @@ def main():
         r = subprocess.run([sys.executable, os.path.join(HIER, 'pruefheft.py'), '--kapitel', e['kapitel'], '--art', 'p',
                             '--einheit', e['einheit'], '--datum', a.datum, '--aus', aus, '--mn', a.mn],
                            capture_output=True, text=True, cwd=BANK)
-        zeilen = [z for z in r.stdout.splitlines() if re.match(r'^\d-\w+: ', z) or z.startswith('Kennung ')]
+        zeilen = [z for z in r.stdout.splitlines() if re.match(r'^\d-[\w-]+: ', z) or z.startswith('Kennung ')]
         f = r.returncode != 0 or any(not re.search(r'Fehler 0,', z) for z in zeilen if re.match(r'^\d-', z))
         print(f'{e["kennung"]} {e["ordner"]}: ' + ' | '.join(zeilen) + (' FEHLER' if f else ''), flush=True)
         if f:
