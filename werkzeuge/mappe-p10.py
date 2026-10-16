@@ -13,7 +13,8 @@ prüft jede Sprungmarke gegen das fertige PDF.
 Zwei Ausgaben aus einem Lauf:
   aufgabenbank-privat bau/mappe/<datum>/mappe-p10.pdf        mit Original neu (Wortlaut)
   aufgabenbank       bau/pruefung/<datum>/mappe-p10-ohne.pdf  ohne Original neu
-Die Lösungen gehören zur Mappe; das Schülerheft (gesamtheft.py) bleibt ohne.
+Seit 16.10. (plan.md § 10, 16.10. g) kommen keine Lösungen in die Mappe – sie gehen nur mit der Bestellung
+(<Kennung>-loesung.pdf, Mehr-Lösung hinten in <Kennung>-mehr.pdf).
 
 Eingaben: Blätter bau/pruefung/<datum>/<ordner>/pdf/ (Neusatz: werkzeuge/neusatz-p10.py); Mehr wird hier gesetzt
 (pruefheft.py --art mehr --alle, nach bau/pruefung/<datum>/<ordner>/mehr/); Original neu wird hier gesetzt
@@ -192,7 +193,7 @@ def inhalt_tex(eins, A, S, teile, mit_original):
         if e['gebiet'] != gebiet:
             gebiet = e['gebiet']
             out.append(r'\vspace{1.4ex}{\large\bfseries %s}\par\vspace{.4ex}' % tex(gebiet))
-        teile_r = [r'Blatt \hyperlink{%s.1}{%d}' % (o, A[o]), r'Lösung \hyperlink{%s-l.1}{%d}' % (o, A[o + '-l'])]
+        teile_r = [r'Blatt \hyperlink{%s.1}{%d}' % (o, A[o])]   # keine Lösungen in der Mappe (plan.md § 10, 16.10. g)
         if o + '-m' in namen:
             teile_r.append(r'Mehr \hyperlink{%s-m.1}{%d}' % (o, A[o + '-m']))
         out.append(r'\vspace{.5ex}' + zeile(r'\hyperlink{%s.1}{\bfseries %s} {\color{black!55}%s}'
@@ -207,9 +208,7 @@ def inhalt_tex(eins, A, S, teile, mit_original):
         out.append(r'\vspace{1.4ex}{\large\bfseries Original neu}\par\vspace{.4ex}')
         for t in teile:
             if t['name'].startswith('neu') and not t['name'].startswith('neul'):
-                out.append(zeile(r'\hspace*{1.5em}%s' % t['titel'],
-                                 r'\hyperlink{%s.1}{%d} \enspace Lösung \hyperlink{%s.1}{%d}'
-                                 % (t['name'], A[t['name']], 'neul' + t['name'][3:], A['neul' + t['name'][3:]])))
+                out.append(zeile(r'\hspace*{1.5em}%s' % t['titel'], r'\hyperlink{%s.1}{%d}' % (t['name'], A[t['name']])))
     for marke, titel in (('stichwort', 'Stichwortverzeichnis'), ('fundstellen', 'Fundstellenregister')):
         out.append(r'\vspace{1.4ex}' + zeile(r'{\large\bfseries %s}' % titel,
                                              r'\hyperlink{%s}{\pageref*{%s}}' % (marke, marke)))
@@ -329,10 +328,8 @@ def main():
             toc.append('1,section,1,{%s},geb%s' % (tex(gebiet), e['kennung']))
         toc.append('1,subsection,2,{%s (%s)},%s' % (tex(e['anzeige']), e['kennung'], e['ordner']))
         T_ein.append(teil(os.path.join(o, '2-blatt.pdf'), e['ordner'], toc))
-        T_ein.append(teil(os.path.join(o, '3-loesungen.pdf'), e['ordner'] + '-l'))
         if mehr[e['ordner']]:
             T_ein.append(teil(mehr[e['ordner']]['blatt'], e['ordner'] + '-m'))
-            T_ein.append(teil(mehr[e['ordner']]['loesung'], e['ordner'] + '-ml'))
     T_bas = []
     for i in range(1, 11):
         T_bas.append(teil(os.path.join(BANK, 'bau', 'zettel', f'BAS-Z{i}', f'BAS-Z{i}.pdf'), f'basz{i}',
@@ -343,7 +340,6 @@ def main():
         jj = h[2:4] + ('' if h.endswith('os') else ' ' + h[5:].upper())
         T_neu.append(teil(os.path.join(d, 'blatt.pdf'), f'neu{h}', (['1,section,1,{Original neu},origneu'] if k == 0 else [])
                           + [f'1,subsection,2,{{Original neu ’{jj}}},n{h}'], titel=f'P10 ’{jj}'))
-        T_neu.append(teil(os.path.join(d, 'loesung.pdf'), f'neul{h}'))
 
     # Karte und Handreichung (TeX); die Seitenzahl des Vorspanns misst der erste Satz
     E = BK.eintraege(ziel, 0, a.mn)

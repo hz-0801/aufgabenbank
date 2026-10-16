@@ -5276,9 +5276,10 @@ def ops_split(s):
 # wiedererkennen. Gilt für Lösung und Mehr-Lösung (Klartext der Spalte loesung), nicht für den Wortlaut.
 _B_OPD = (r'(?:\((?:[^()]|\([^()]*\))*\)'                       # Klammer (eine Ebene geschachtelt)
           r'|(?:sin|cos|tan)\s*[\d,]+\s*°'                        # sin 24°
-          r'|[\d][\d.,]*(?:\s?(?:€|%|cm|mm|m|km|g|kg|l|h|s|min)(?![A-Za-zäöü]))?[²³]?'   # Zahl mit Einheit
+          r'|(?:\d{1,3}(?:\s\d{3})+|\d+)(?:,\d+)?(?:\s?(?:€|%|cm|mm|m|km|g|kg|l|h|s|min)(?![\w/]))?[²³]?'   # Zahl, Einheit
           r'|[A-Za-zα-ωΑ-Ω][₀-₉]?[²³]?(?![\w(]))')                 # Größe
-_B_DIV = re.compile(r'(?<![\w)])(' + _B_OPD + r')\s+:\s+(' + _B_OPD + r')')
+# vorn kein Wortzeichen, „^“ oder Tausendergruppe davor; hinten keine Fortsetzung (Ziffern, „/“, „^“, „km/h“)
+_B_DIV = re.compile(r'(?<![\w)^])(?<!\d )(' + _B_OPD + r')\s+:\s+(' + _B_OPD + r')(?![\w/^]|\s\d{3}\b|\s?[A-Za-z]+/)')
 
 
 def _b_math(t):
@@ -5289,6 +5290,8 @@ def _b_math(t):
         t = t.replace(k, ' ' + v + ' ')
     t = t.replace('²', '^2').replace('³', '^3').replace(',', '{,}').replace('€', r'\text{€}').replace('%', r'\%')
     t = re.sub(r'\b(sin|cos|tan)\b', r'\\\1', t)
+    t = re.sub(r'(\d) (?=\d{3}\b)', r'\1\\,', t)                        # 80 000 -> 80\,000
+    t = re.sub(r'(\d)\s?(cm|mm|km|kg|min|m|g|l|h|s)\b', r'\1\\,\\text{\2}', t)   # Einheit aufrecht
     return re.sub(r'\s+', ' ', t).strip()
 
 
