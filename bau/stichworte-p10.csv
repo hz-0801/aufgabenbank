@@ -39,17 +39,17 @@ einstieg:Gegenkathete a, Ankathete b, Hypotenuse c;a, b · c;gliederung/dreiecke
 einstieg:Gegenkathete und Hypotenuse: sin;sin;gliederung/dreiecke.md · Winkel berechnen: Gegenkathete und Hypotenuse: sin
 einstieg:Ankathete und Hypotenuse: cos;cos;gliederung/dreiecke.md · Winkel berechnen: Ankathete und Hypotenuse: cos
 einstieg:in beiden Dreiecken je 45° bei C: 45° + 45° = 90°;45° + 45° = 90°;gliederung/dreiecke.md · rechten Winkel begründen: in beiden Dreiecken je 45° bei C: 45° + 45° = 90°
-einstieg:Rechteck, 2 · π · r lang und h hoch;2πr × h;gliederung/koerper.md · Mantelfläche mit Kosten: Rechteck, 2 · π · r lang und h hoch
+einstieg:Rechteck, 2 · π · r lang und h hoch;Rechteck 2πr × h;gliederung/koerper.md · Mantelfläche mit Kosten: Rechteck, 2 · π · r lang und h hoch
 einstieg:π · d, gut dreimal so lang wie d;π · d;gliederung/koerper.md · Netz erkennen: π · d, gut dreimal so lang wie d
 einstieg:6 cm, so breit wie der Durchmesser;6 cm;gliederung/koerper.md · Körper im Schrägbild skizzieren: 6 cm, so breit wie der Durchmesser
 einstieg:als flache Ellipse;Ellipse;gliederung/koerper.md · Körper im Schrägbild skizzieren: als flache Ellipse
 einstieg:8 ist n, 0,09 ist m;"n = 8; m = 0,09";gliederung/lineare.md · Gleichung aus Text: 8 ist n, 0,09 ist m
 einstieg:25 ist n, −2 ist m;"n = 25; m = −2";gliederung/lineare.md · Gleichung aus Text: 25 ist n, −2 ist m
-einstieg:Teil 5, Ganzes 20, 25 %;"5; 20; 25 %";gliederung/prozent.md · Prozentsatz: Teil 5, Ganzes 20, 25 %
+einstieg:Teil 5, Ganzes 20, 25 %;"Teil 5; Ganzes 20; 25 %";gliederung/prozent.md · Prozentsatz: Teil 5, Ganzes 20, 25 %
 "einstieg:6 Kinder = W; gesucht G (die ganze Klasse)";"W = 6; G gesucht";"gliederung/prozent.md · Grundwert: 6 Kinder = W; gesucht G (die ganze Klasse)"
-einstieg:0,50 €, alter Preis 2 €, 25 %;"0,50 €; 2 €; 25 %";gliederung/prozent.md · Erhöhung und Veränderung in Prozent: 0,50 €, alter Preis 2 €, 25 %
+einstieg:0,50 €, alter Preis 2 €, 25 %;"W = 0,50 €; G = 2 €; 25 %";gliederung/prozent.md · Erhöhung und Veränderung in Prozent: 0,50 €, alter Preis 2 €, 25 %
 einstieg:nach oben, Scheitel bei x = −1, y = 2;"oben; S(−1 | 2)";gliederung/quadratische.md · Lage zweier Parabeln ohne Rechnung begründen: nach oben, Scheitel bei x = −1, y = 2
 einstieg:nach unten, Scheitel bei x = −1, y = 2;"unten; S(−1 | 2)";gliederung/quadratische.md · Lage zweier Parabeln ohne Rechnung begründen: nach unten, Scheitel bei x = −1, y = 2
 einstieg:$x^2 + 4x - 5 = 0$ (durch 3 geteilt);x² + 4x − 5 = 0;gliederung/quadratische.md · Nullstellen berechnen: $x^2 + 4x - 5 = 0$ (durch 3 geteilt)
 einstieg:je Pfad mal, dann plus;mal, dann +;gliederung/wahrscheinlichkeit.md · Pfadregel: je Pfad mal, dann plus
-einstieg:4 Kugeln, davon 2 rote;"4; 2";gliederung/wahrscheinlichkeit.md · ohne Zurücklegen: 4 Kugeln, davon 2 rote
+einstieg:4 Kugeln, davon 2 rote;"4 Kugeln, 2 rote";gliederung/wahrscheinlichkeit.md · ohne Zurücklegen: 4 Kugeln, davon 2 rote
