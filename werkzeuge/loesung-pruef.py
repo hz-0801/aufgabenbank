@@ -72,8 +72,25 @@ def lies(pfad):
     return list(csv.DictReader(open(pfad, encoding='utf-8'), delimiter=d))
 
 
-def pruefe(id_, links, rechts, aus):
+OPZ = re.compile(r'[0-9)²³][\s]*[+\-−·:×][\s]*[0-9(√π]')
+WEGW = re.compile(r'\b(ablesen|abgelesen|also|weil|daher|indem|gegen|wenn|dann|etwa|waagerecht|statt)\b', re.I)
+
+
+def streng(links):
+    """Nur Katalog fürs Buch der Originale (--streng, Lehrer 16.10.): links steht nur das Ergebnis –
+    keine Rechnung (Rechenzeichen vor dem letzten = / ≈, „;“), kein Weg (ablesen, also, statt …)."""
     m = []
+    for seg in (links or '').split('|'):
+        teile = [t.strip() for t in re.split(r'=|≈', seg)]
+        if ';' in seg or any(OPZ.search(t) for t in teile[:-1]):
+            m.append('RECHNUNG'); break
+    if WEGW.search(links or ''):
+        m.append('WEG')
+    return m
+
+
+def pruefe(id_, links, rechts, aus, strengs=False):
+    m = streng(links) if strengs else []
     if satz(links) or satz(rechts):
         m.append('SATZ')
     if rechts and len(norm(links)) >= 3 and (norm(rechts) == norm(links) or norm(links) in norm(rechts)):
@@ -134,9 +151,16 @@ def main():
     ap.add_argument('--nh', default=os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'mathe-nachhilfe'))
     ap.add_argument('--nur', default='')
     ap.add_argument('--liste', action='store_true')
+    ap.add_argument('--streng', action='store_true', help='nur Katalog P10, mit RECHNUNG/WEG links (Buch der Originale)')
     a = ap.parse_args()
     aus = []
-    for f in sorted(glob.glob(os.path.join(a.nh, 'msa', 'mehr-p10', '*.csv'))):
+    if a.streng:
+        for f in sorted(glob.glob(os.path.join(a.nh, 'msa', 'msa-katalog-*.csv'))):
+            if 'gym' in f:
+                continue
+            for r in lies(f):
+                pruefe(f'{os.path.basename(f)}:{r.get("id","")}', r.get('kurzloesung', ''), r.get('zwischenergebnis', ''), aus, True)
+    for f in ([] if a.streng else sorted(glob.glob(os.path.join(a.nh, 'msa', 'mehr-p10', '*.csv')))):
         if a.nur and a.nur not in f:
             continue
         for r in lies(f):
@@ -145,7 +169,7 @@ def main():
             for g in gedruckt_ankreuz(r):   # was wirklich links gedruckt wird (16.10. m)
                 if satz(g):
                     aus.append((f'{os.path.basename(f)}:{r.get("id","")}:links', ['SATZ'], g[:60], ''))
-    for f in sorted(glob.glob(os.path.join(a.nh, 'msa', 'gliederung', '*.md'))):
+    for f in ([] if a.streng else sorted(glob.glob(os.path.join(a.nh, 'msa', 'gliederung', '*.md')))):
         if a.nur and a.nur not in f:
             continue
         for st, g in gedruckt_einstieg(f):
@@ -158,7 +182,7 @@ def main():
             m = re.match(r'- \*\*(Schülerfrage-Weg|Abruf-Lösung|Schätzfrage-Lösung):\*\*\s*(.*)', z)
             if m:
                 pruefe(f'{os.path.basename(f)}:{stufe}:{m.group(1)}', '', m.group(2), aus)
-    if not a.nur:
+    if not a.nur and not a.streng:
         for f in sorted(glob.glob(os.path.join(a.nh, 'msa', 'msa-katalog-*.csv'))):
             if 'gym' in f:
                 continue
