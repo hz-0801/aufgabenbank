@@ -102,7 +102,7 @@ def streng(links):
 # Stichwort, gefragte Rundung: exakt, dann diese.
 EINHEIT = {'cm', 'mm', 'dm', 'km', 'ml', 'cl', 'hl', 'kg', 'min', 'sek', 'std', 'liter', 'stück', 'grad', 'prozent',
            'cent', 'euro', 'jahre', 'jahr', 'monate', 'tage', 'wochen', 'stunden', 'minuten', 'sekunden',
-           'mio', 'mrd'}                               # „2,7 Mio.“ ist Teil der Zahl (16.10., Bau 4)
+           'mio', 'mrd', 'hpa'}                             # „2,7 Mio.“ ist Teil der Zahl (16.10., Bau 4)
 FUNK = {'sin', 'cos', 'tan'}
 URTEIL = re.compile(r'^\s*(ja|nein|wahr|falsch|richtig|stimmt|stimmt nicht)\b\s*([,:]?)', re.I)
 W3 = re.compile(r'(?<![\w\\])[A-Za-zÄÖÜäöüß]{3,}(?![\w(])')     # Wort ab 3 Buchstaben, nicht vor „(“ (P(…), M(t))
