@@ -5367,20 +5367,77 @@ def mehr_blatt_tex(einheit, kenn, p, anz, folge, faktor=1.0):
     return '\n'.join(out)
 
 
+_STICH = None
+
+
+def stichwort(schluessel):
+    """Stichwort für eine Ankreuz- oder Einstiegsantwort (bau/stichworte-p10.csv, Lehrer 16.10. m): das Gesetzte
+    links in der Lösung ist ein Stichwort, nie der Optionstext oder ein Satz. Leer, wenn keins eingetragen ist."""
+    global _STICH
+    if _STICH is None:
+        _STICH = {}
+        pf = os.path.join(BANK, 'bau', 'stichworte-p10.csv')
+        if os.path.exists(pf):
+            for z in csv.DictReader(open(pf, encoding='utf-8'), delimiter=';'):
+                _STICH[z['schluessel']] = (z['stichwort'] or '').strip()
+    return _STICH.get(schluessel, '')
+
+
+def lz_zeilen(r, nr, buchst='', optionen=None):
+    """Lösungszeilen (gemeinsam.md „Form der Lösung“, 16.10. m): eine Zeile je Teilaufgabe. Rückgabe: Liste TeX-Zeilen
+    \\lzz{Nr}{Buchst}{Ergebnis}{Ansatz}. Teile der Lösung durch „|“ werden a), b), … (ein Teil: der Buchstabe der
+    Teilaufgabe, falls vorhanden); Ankreuz-Teile tragen das Stichwort aus bau/stichworte-p10.csv, sonst den Wert der Option."""
+    lo = (r.get('loesung') or '').strip()
+    ergebnisse, _ = p_ergebnis(r)
+    teile = [t.strip() for t in re.split(r'\s\|\s', lo) if t.strip()]
+    if optionen is None:
+        optionen = mehr_kreuz((r.get('wortlaut') or '').strip())[1]
+    b = mehr_buchstabe(r, optionen)
+    out = []
+    for i, e in enumerate(ergebnisse):
+        teil = teile[i] if i < len(teile) else ''
+        if re.search(r'\((?:erste|zweite|dritte|vierte)\s+Option', teil):
+            e = stichwort(r.get('id', '')) or (b if (b and len(ergebnisse) == 1) else e)
+        rechts = p_rechts_tex(p_rechts(teil, [ergebnisse[i]])) if teil else ''
+        bst = buchst if len(ergebnisse) == 1 else f'{"abcdefgh"[i]})'
+        nummer = nr if i == 0 else ''
+        out.append(f'\\lzz{{{nummer}}}{{{bst}}}{{{tx(p_bruch(e))}}}{{{rechts}}}')
+    return out
+
+
+def lz_frage_zeilen(f, nr):
+    """Einstiegsfrage in Zeilen: je Fall eine Zeile (a), b), …), ein Fall ohne Buchstaben; Ankreuz-Frage eine Zeile.
+    Stichwort aus bau/stichworte-p10.csv (Schlüssel „einstieg:<Antwort>“), sonst die Antwort der Gliederung. Der Ansatz
+    (Schülerfrage-Weg) steht bei gleich vielen „;“-Teilen je Fall, sonst in der ersten Zeile."""
+    weg = f['weg'] or ''
+    if f['art'] == 'kreuz':
+        zeilen = [('', p_frage_ergebnis(f))]
+    else:
+        zus = '' if f['art'] == 'antwort' else f['zusatz']
+        zeilen = []
+        for i, (_, a) in enumerate(f['faelle']):
+            zeilen.append((('' if len(f['faelle']) == 1 else f'{"abcdefgh"[i]})'),
+                           tx(stichwort('einstieg:' + a) or a) + (tx(zus) if zus and not stichwort('einstieg:' + a) else '')))
+    wege = [w.strip() for w in weg.split(';') if w.strip()]
+    wege = wege if len(wege) == len(zeilen) and len(zeilen) > 1 else [weg] + [''] * (len(zeilen) - 1)
+    out = []
+    for i, ((bst, erg), w) in enumerate(zip(zeilen, wege)):
+        rechts = '' if (not w or _ohne_leer(w) in _ohne_leer(erg)) else p_rechts_tex(p_rechts(w, [erg]))
+        out.append(f'\\lzz{{{nr if i == 0 else ""}}}{{{bst}}}{{{erg}}}{{{rechts}}}')
+    return out
+
+
+def lz_umgebung(zeilen):
+    return ['\\begin{lzaufg}'] + zeilen + ['\\end{lzaufg}']
+
+
 def mehr_loesung_tex(einheit, kenn, p, anz, folge):
     out = [KOPF.replace('\\begin{document}', P_PRAEAMBEL + MEHR_BE_NULL + '\\begin{document}'), '\\pfheftstil',
            f'\\pflaufkopf[{P_SORTE} \\pkt{{}} mehr]{{{tx(einheit)} \\pkt{{}} Lösungen}}{{{kenn}}}\\pfseitevon',
            f'\\pfheftkopf{{{tx(einheit)}}}{{Lösungen \\pkt{{}} ' + ('mehr' if p is None else f'Portion {p} von {anz}') + '}']
     for i, r in enumerate(folge, 1):
-        # 16.10. (gemeinsam.md „Form der Lösung“): links exakt, dann gerundet; rechts nur der Ausgang
-        ergebnisse, _ = p_ergebnis(r)
-        _, optionen = mehr_kreuz((r.get('wortlaut') or '').strip())
-        b = mehr_buchstabe(r, optionen)
-        erg = tx(p_bruch(b)) if b else '; '.join(tx(p_bruch(e)) for e in ergebnisse)
-        rechts = p_rechts_tex(p_rechts(r.get('loesung'), [b] if b else ergebnisse))
-        out.append('\\begin{pfloesungb}{}')
-        out.append(f'\\lzb{{{i}.}}{{}}{{{erg}}}{{{rechts}}}')
-        out.append('\\end{pfloesungb}')
+        # 16.10. (gemeinsam.md „Form der Lösung“): eine Zeile je Teilaufgabe, links exakt, dann gerundet; rechts der Ansatz
+        out += lz_umgebung(lz_zeilen(r, f'{i}.'))
     out.append('\\end{document}')
     return '\n'.join(out)
 
@@ -6765,19 +6822,9 @@ def p_loesung_p10(D, einheit, kenn, stufen_daten):
     # 16.10. (gemeinsam.md „Form der Lösung“): keine Abschnittsköpfe, keine Zwischenzeile – die Nummern laufen durch
     for s in stufen_daten:
         if s['frage']:
-            erg = p_frage_ergebnis(s['frage'])
-            weg = s['frage']['weg'] or ''
-            rechts = '' if _ohne_leer(weg) in _ohne_leer(erg) else p_rechts_tex(p_rechts(weg, [erg]))
-            out.append('\\begin{pfloesungb}{}')
-            out.append(f'\\lzb{{{s["nr_frage"]}.}}{{}}{{{erg}}}{{{rechts}}}')
-            out.append('\\end{pfloesungb}')
+            out += lz_umgebung(lz_frage_zeilen(s['frage'], f'{s["nr_frage"]}.'))
         for (nr, b), r in zip(s['nr_echt'], s['echte']):
-            ergebnisse, _ = p_ergebnis(r)
-            erg = '; '.join(tx(p_bruch(e)) for e in ergebnisse)
-            rechts = p_rechts_tex(p_rechts(r.get('loesung'), ergebnisse))
-            out.append('\\begin{pfloesungb}{}')
-            out.append(f'\\lzb{{{"" if b and b != "a)" else str(nr) + "."}}}{{{b}}}{{{erg}}}{{{rechts}}}')
-            out.append('\\end{pfloesungb}')
+            out += lz_umgebung(lz_zeilen(r, '' if b and b != 'a)' else f'{nr}.', b or ''))
     out.append('\\end{document}')
     return '\n'.join(out)
 
