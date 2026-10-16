@@ -4,7 +4,7 @@
 Meldet je Zeile: SATZ (drei Wörter in Folge ohne Formel), DOPPELT (rechts steht dasselbe wie links),
 GERUNDET (≈ ohne exakten Wert davor, obwohl eine Wurzel/ein Bruch im Weg steht), LANG (rechts mehr als
 zwei Handgriffe). Felder: Mehr-CSV loesung (Ergebnis | Weg getrennt durch „⇒“/„;“), Katalog kurzloesung
-und zwischenergebnis.
+und zwischenergebnis; Gliederung Schülerfrage-Weg, Abruf-Lösung, Schätzfrage-Lösung (rechte Spalte).
   python3 werkzeuge/loesung-pruef.py [--nh ../mathe-nachhilfe] [--nur dreiecke] [--liste]
 Rückgabe 1, wenn etwas gemeldet wird."""
 import argparse, csv, glob, os, re, sys
@@ -101,6 +101,16 @@ def main():
         for r in lies(f):
             links, rechts = mehr_teile(r.get('loesung', ''))
             pruefe(f'{os.path.basename(f)}:{r.get("id","")}', links, rechts, aus)
+    for f in sorted(glob.glob(os.path.join(a.nh, 'msa', 'gliederung', '*.md'))):
+        if a.nur and a.nur not in f:
+            continue
+        stufe = ''
+        for z in open(f, encoding='utf-8'):
+            if z.startswith('### '):
+                stufe = z[4:].strip()
+            m = re.match(r'- \*\*(Schülerfrage-Weg|Abruf-Lösung|Schätzfrage-Lösung):\*\*\s*(.*)', z)
+            if m:
+                pruefe(f'{os.path.basename(f)}:{stufe}:{m.group(1)}', '', m.group(2), aus)
     if not a.nur:
         for f in sorted(glob.glob(os.path.join(a.nh, 'msa', 'msa-katalog-*.csv'))):
             if 'gym' in f:

@@ -7499,6 +7499,17 @@ def main():
                          'parallele Bauten mit --ohne-register, danach je Bau einmal --nur-register)')
     args = ap.parse_args()
 
+    # 16.10.: Form der Lösung erzwingen (gemeinsam.md „Form der Lösung“, Lehrer 16.10.) – P10 setzt nur,
+    # wenn loesung-pruef.py für das Kapitel nichts meldet; Abitur kommt später dazu.
+    if args.art in ('p', 'mehr') and args.pruefung not in ('abitur', 'abi-gk') and not os.environ.get('OHNE_LOESUNG_PRUEF'):
+        import subprocess as _sp
+        _k = getattr(args, 'kapitel', '') or ''
+        _r = _sp.run([sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'loesung-pruef.py'),
+                      '--liste'] + (['--nur', _k] if _k else []), capture_output=True, text=True)
+        if _r.returncode:
+            sys.stderr.write(_r.stdout + '\nLösungsfelder verletzen gemeinsam.md „Form der Lösung“ – nicht gesetzt.\n')
+            sys.exit(2)
+
     if args.art in ('p', 'mehr') and args.pruefung in ('abitur', 'abi-gk'):
         p_bau_abi(args)  # v0.16: Abitur GK – Blatt, Lösungen, Übersicht und Mehr in einem Lauf; P10 unberührt
         return
