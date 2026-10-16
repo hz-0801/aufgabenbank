@@ -6654,8 +6654,8 @@ def p_blatt_tex(D, einheit, kenn, stufen_daten, ausschnitt, fund, faktor=1.0, en
            f'\\pflaufkopf[{P_SORTE} \\pkt{{}} Prüfung]{{{tx(einheit)}}}{{{kenn}}}\\pfseitevon',
            f'\\pfheftkopf{{{tx(einheit)}}}{{{kopf2}}}']
     if not einzeln:
-        out.append('\\pfstufenzeile{' + ' \\pkt{} '.join((bst[s['name']] + '~' if bst[s['name']] else '') + tx(s['anzeige'])
-                                                         for s in stufen_daten) + '}')
+        # v0.19 (16.10. n): Stufenzeile ohne Buchstaben; die Abschnittsköpfe behalten A, B, C
+        out.append('\\pfstufenzeile{' + ' \\pkt{} '.join(tx(s['anzeige']) for s in stufen_daten) + '}')
     if Z.get('fszeile'):
         out.append('% Formelsammlung (Tafelwerk-Feld, 16.10. n)\n' + Z['fszeile'])
     if Z.get('kasten'):
