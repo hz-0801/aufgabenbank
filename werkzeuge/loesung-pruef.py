@@ -82,7 +82,12 @@ def streng(links):
     m = []
     for seg in (links or '').split('|'):
         teile = [t.strip() for t in re.split(r'=|≈', seg)]
-        if ';' in seg or any(OPZ.search(t) for t in teile[:-1]):
+        def rechnung(t):
+            t = re.sub(r'\b(1[89]|20)\d\d:', ' ', t)          # „2019: 54“ ist Beschriftung, kein Teilen
+            if re.search(r'[√π]|sin|cos|tan|⁻¹|[⁰¹²³⁴⁵⁶⁷⁸⁹ᵗ]', t):
+                return False                                   # exakter Wert: Wurzel, π, Winkelfunktion, Potenz („25 + √51,87“)
+            return bool(OPZ.search(t))
+        if ';' in seg or any(rechnung(t) for t in teile[:-1]):
             m.append('RECHNUNG'); break
     if WEGW.search(links or ''):
         m.append('WEG')
