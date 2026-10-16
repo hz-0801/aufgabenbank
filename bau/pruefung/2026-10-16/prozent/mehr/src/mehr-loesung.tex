@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -104,48 +117,56 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} mehr]{Prozent \pkt{} Lösungen}{PS10-3}\pfseitevon
+\pflaufkopf[P10 \pkt{} mehr]{Prozent \pkt{} Lösungen}{PS10-4}\pfseitevon
 \pfheftkopf{Prozent}{Lösungen \pkt{} mehr}
-\begin{pfloesungb}{}
-\lzb{1.}{}{Spannweite 2,8 Mio.; Mittel 8,4 Mio.; Erhöhung $\approx$ 14,7 \%}{Spannweite 2,8 Mio.; Mittel 8,4 Mio.; Erhöhung $\approx$ 14,7 \%}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{2.}{}{Von 100 Bäumen wachsen 7 nicht an}{7 von 100 Bäumen wachsen nicht an (dritte Option)}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{3.}{}{7,5 \%}{7,5 \%}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{4.}{}{18 €}{18 €}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{5.}{}{2,7 \%}{2,7 \%}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{6.}{}{300 € · 0,03 = 9,00 €}{300 € · 0,03 = 9,00 €}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{7.}{}{Spannweite 240 $-$ 120 = 120; Mittwoch 180 + 60 = Sonntag}{Spannweite 240 $-$ 120 = 120; Mittwoch 180 + 60 = 240 = Sonntag}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{8.}{}{nein: Studie 1 $\approx$ 76,8; Studie 2 = 72,0 Tausend Liter}{nein: Studie 1 $\approx$ 76,8; Studie 2 = 72,0 Tausend Liter}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{9.}{}{Aussage 1 falsch; Etwa zwei Drittel (69 \%) der Mädchen nutzen einen Fernseher (vier Fünftel gilt für die Jungen)}{Aussage 1 falsch; Etwa zwei Drittel (69 \%) der Mädchen nutzen einen Fernseher (vier Fünftel gilt für die Jungen)}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{10.}{}{35,1 \% + 11,8 \% + 4,4 \% = 51,3 \%}{35,1 \% + 11,8 \% + 4,4 \% = 51,3 \%}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{11.}{}{$\tfrac{90}{450}$ = 20 \%}{$\tfrac{90}{450}$ = 20 \%}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{12.}{}{$\tfrac{11}{87}$ $\approx$ 12,6 \%; Sektor mit $\approx$ 46° ab dem vorgegebenen Radius;  $\approx$ 46°}{$\tfrac{11}{87}$ $\approx$ 12,6 \%; Sektor mit $\approx$ 46° ab dem vorgegebenen Radius; $\approx$ 46°}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{13.}{}{Guthaben 14. Geburtstag: 927,27 € + 27,82 € + 300 € = 1255,09 €; Zinsen 15. Geburtstag: 1255,09 € · 0,03 = 37,65 €}{Guthaben 14. Geburtstag: 927,27 € + 27,82 € + 300 € = 1255,09 €; Zinsen 15. Geburtstag: 1255,09 € · 0,03 = 37,65 €}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{14.}{}{1500 € · 1,02$^{4}$ $\approx$ 1623,65 €}{1500 € · 1,02$^{4}$ $\approx$ 1623,65 €}
-\end{pfloesungb}
+\begin{lzaufg}
+\lzz{1.}{a)}{Spannweite 2,8 Mio}{}
+\lzz{}{b)}{Mittel 8,4 Mio}{}
+\lzz{}{c)}{p = $\tfrac{11}{75}$ $\approx$ 14,7 \%}{p = $\tfrac{8{,}6 - 7{,}5}{7{,}5}$}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{2.}{}{7 von 100}{}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{3.}{}{7,5 \%}{}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{4.}{}{18 €}{}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{5.}{}{2,7 \%}{}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{6.}{}{300 € · 0,03 = 9,00 €}{}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{7.}{a)}{Spannweite 240 $-$ 120 = 120}{}
+\lzz{}{b)}{Mittwoch 180 + 60 = Sonntag}{Mittwoch 180 + 60 = 240}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{8.}{a)}{nein}{}
+\lzz{}{b)}{Studie 2 = 72,0 Tausend Liter}{}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{9.}{a)}{Aussage 1 falsch}{}
+\lzz{}{b)}{Jungen)}{}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{10.}{}{= 51,3 \%}{}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{11.}{}{$\tfrac{90}{450}$ = 20 \%}{}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{12.}{a)}{$\tfrac{11}{87}$ $\approx$ 12,6 \%}{}
+\lzz{}{b)}{Sektor 46° einzeichnen}{}
+\lzz{}{c)}{Winkel = $\tfrac{11}{87}$ · 360° $\approx$ 46°}{}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{13.}{a)}{= 1255,09 €}{}
+\lzz{}{b)}{1255,09 € · 0,03 = 37,65 €}{}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{14.}{}{1500 € · 1,02$^{4}$ $\approx$ 1623,65 €}{}
+\end{lzaufg}
 \end{document}

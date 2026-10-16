@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -104,27 +117,29 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} mehr]{Sinussatz \pkt{} Lösungen}{PG70-2}\pfseitevon
+\pflaufkopf[P10 \pkt{} mehr]{Sinussatz \pkt{} Lösungen}{PG70-4}\pfseitevon
 \pfheftkopf{Sinussatz}{Lösungen \pkt{} mehr}
-\begin{pfloesungb}{}
-\lzb{1.}{}{AC $\approx$ 118,8 m}{Sinussatz im Dreieck ACD: AC : sin $\delta$ = CD : sin $\gamma$ $\Rightarrow$ AC = 10,0 · $\tfrac{\sin 56 ^\circ}{\sin 4 ^\circ}$ $\approx$ 118,8 m}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{2.}{}{BC $\approx$ 7,50 m; 8,50 · (4,90 + 7,50) $\approx$ 105 m²}{BC = 4,90 · $\tfrac{\sin 64{,}4 ^\circ}{\sin 36{,}1 ^\circ}$ $\approx$ 7,50 m; 8,50 · (4,90 + 7,50) $\approx$ 105 m²}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{3.}{}{BD $\approx$ 6,16 cm}{Winkel bei D: 180° $-$ 118° $-$ 34° = 28°; BD = 3,9 · $\tfrac{\sin 118 ^\circ}{\sin 34 ^\circ}$ $\approx$ 6,16 cm}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{4.}{}{Weg: JR + 2400 $\approx$ 5390 m}{JR = 2600 · $\tfrac{\sin 65 ^\circ}{\sin 52 ^\circ}$ $\approx$ 2990 m; Weg: JR + 2400 $\approx$ 5390 m}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{5.}{}{BC $\approx$ 1782 m; Aussage falsch (DC = 1950 m)}{$\angle$ABD = 90° $-$ 53° = 37°; $\angle$DBC = 112° $-$ 37° = 75°; BC = 1950 · $\tfrac{\sin 62 ^\circ}{\sin 75 ^\circ}$ $\approx$ 1782 m; Aussage falsch (DC = 1950 m)}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{6.}{}{DP $\approx$ 2,9 m}{Winkel bei D: 180° $-$ 112° $-$ 18° = 50°; DE = 9 · $\tfrac{\sin 112 ^\circ}{\sin 50 ^\circ}$ $\approx$ 10,89 m; DP = DE $-$ 8 $\approx$ 2,9 m}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{7.}{}{AD $\approx$ 10,5 m}{$\angle$ACB = 90° $-$ 65° = 25°; $\angle$ACD = 84° $-$ 25° = 59°; AD = 12 · $\tfrac{\sin 59 ^\circ}{\sin 78 ^\circ}$ $\approx$ 10,5 m}
-\end{pfloesungb}
+\begin{lzaufg}
+\lzz{1.}{}{AC = 10,0 · $\tfrac{\sin 56 ^\circ}{\sin 4 ^\circ}$ $\approx$ 118,8 m}{Sinussatz im Dreieck ACD: AC : sin $\delta$ = CD : sin $\gamma$}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{2.}{a)}{BC = 4,90 · $\tfrac{\sin 64{,}4 ^\circ}{\sin 36{,}1 ^\circ}$ $\approx$ 7,50 m}{}
+\lzz{}{b)}{8,50 · (4,90 + 7,50) $\approx$ 105 m²}{}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{3.}{}{BD = 3,9 · $\tfrac{\sin 118 ^\circ}{\sin 34 ^\circ}$ $\approx$ 6,16 cm}{Winkel bei D: 180° $-$ 118° $-$ 34° = 28°}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{4.}{}{JR + 2400 $\approx$ 5390 m}{JR = 2600 · $\tfrac{\sin 65 ^\circ}{\sin 52 ^\circ}$ $\approx$ 2990 m}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{5.}{a)}{BC = 1950 · $\tfrac{\sin 62 ^\circ}{\sin 75 ^\circ}$ $\approx$ 1782 m}{$\angle$ABD = 90° $-$ 53° = 37°; $\angle$DBC = 112° $-$ 37° = 75°}
+\lzz{}{b)}{Aussage falsch (DC = 1950 m)}{}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{6.}{}{DP $\approx$ 2,9 m}{Winkel bei D: 180° $-$ 112° $-$ 18° = 50°; DE = 9 · $\tfrac{\sin 112 ^\circ}{\sin 50 ^\circ}$ $\approx$ 10,89 m}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{7.}{}{AD = 12 · $\tfrac{\sin 59 ^\circ}{\sin 78 ^\circ}$ $\approx$ 10,5 m}{$\angle$ACB = 90° $-$ 65° = 25°; $\angle$ACD = 84° $-$ 25° = 59°}
+\end{lzaufg}
 \end{document}

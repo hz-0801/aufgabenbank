@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -104,24 +117,24 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} mehr]{Pythagoras \pkt{} Lösungen}{PG50-4}\pfseitevon
+\pflaufkopf[P10 \pkt{} mehr]{Pythagoras \pkt{} Lösungen}{PG50-6}\pfseitevon
 \pfheftkopf{Pythagoras}{Lösungen \pkt{} mehr}
-\begin{pfloesungb}{}
-\lzb{1.}{}{$z=\sqrt{x^2+y^2}$}{z = $\sqrt{x² + y²}$ (zweite Option)}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{2.}{}{AB $\approx$ 31,8 m}{AB = $\sqrt{15² + 28²}$ = $\sqrt{1009}$ $\approx$ 31,8 m}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{3.}{}{BC $\approx$ 10,9 m}{BC = $\sqrt{12² - 5²}$ = $\sqrt{119}$ $\approx$ 10,9 m}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{4.}{}{$z^2=x^2+y^2$}{z² = x² + y² (vierte Option)}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{5.}{}{Radius 2,9 m und Dachhöhe als Katheten, Mantellinie als Hypotenuse: s = $\sqrt{2{,}9² + h²}$}{Radius 2,9 m und Dachhöhe als Katheten, Mantellinie als Hypotenuse: s = $\sqrt{2{,}9² + h²}$}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{6.}{}{AD $\approx$ 677 m}{AD = $\sqrt{860² - 530²}$ = $\sqrt{458700}$ $\approx$ 677 m}
-\end{pfloesungb}
+\begin{lzaufg}
+\lzz{1.}{}{z = $\sqrt{x² + y²}$}{}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{2.}{}{AB = $\sqrt{1009}$ $\approx$ 31,8 m}{AB² = 15² + 28²}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{3.}{}{BC = $\sqrt{119}$ $\approx$ 10,9 m}{BC² + 5² = 12²}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{4.}{}{z² = x² + y²}{}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{5.}{}{s = $\sqrt{2{,}9² + h²}$}{Katheten r = 2,9 m und h; Hypotenuse s}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{6.}{}{AD = $\sqrt{458700}$ $\approx$ 677 m}{AD² + 530² = 860²}
+\end{lzaufg}
 \end{document}

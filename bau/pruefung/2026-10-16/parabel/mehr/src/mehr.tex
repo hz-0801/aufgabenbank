@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -104,7 +117,7 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} mehr]{Parabel}{PA30-5}\pfseitevon
+\pflaufkopf[P10 \pkt{} mehr]{Parabel}{PA30-6}\pfseitevon
 \pfheftkopf{Parabel}{mehr}
 \pfstufenzeile{Scheitelpunkt angeben \pkt{} Scheitelpunktform aufstellen \pkt{} Parabel zeichnen \pkt{} Lage begründen}
 % 2021-OS-B1d-m1 (Schwere I, rang 8)
@@ -173,14 +186,14 @@ Die Parabel $p$ hat die Gleichung $y = (x+5)^2 - 3$ und ist im Koordinatensystem
 Lena verlässt ein Flugzeug mit dem Fallschirm. Die ersten 25 Sekunden stürzt sie frei, der Schirm ist noch zu; ihre Höhe sinkt dabei von 2750 m auf 1500 m. Der Graph zeigt ihre Höhe $h$ (in Metern) zur Zeit $t$ (in Sekunden). Welche Gleichung kann den Graphen in den ersten 25 Sekunden beschreiben? Kreuze an und begründe:
 \par\smallskip\noindent\gpassend{\begin{ksys}[xmin=0,xmax=300,ymin=0,ymax=3000,xstep=25,ystep=250,karo=0.45,xlabel=$t$ in s,ylabel=$h$ in m]\funktionab{-2*\x^2+2750}{}{0}{25}\funktionab{-6*\x+1650}{}{25}{275}\end{ksys}}\par
 \par\smallskip\noindent\pfkreuz{}{$h(t) = 2t^2 + 2750$}\pfkreuz{}{$h(t) = 2t^2 - 2750$}\pfkreuz{}{$h(t) = -2t^2 + 2750$}\pfkreuz{}{$h(t) = -2t^2 - 2750$.}
-\fusshilfe{\gfuss{10}{$-$2t² + 2750 (Start bei 2750 m, Höhe sinkt: Parabel nach unten geöffnet)}}
+\fusshilfe{\gfuss{10}{$-$2t² + 2750}}
 \end{pfaufg}
 % 2014-OS-K7b-m1 (Schwere II, rang 22)
 \begin{pfaufg}{nach~P10\\’14~\pkt{}~7b}{11.}{}
 Im Koordinatensystem sind die Parabel $p$ mit $p(x) = -x^2$ und die Gerade $g$ mit $g(x) = 3x - 4$ gezeichnet. Eine weitere Gerade $f$ soll die Parabel $p$ nirgends treffen. Gib eine Gleichung für eine solche Gerade an.
 \par\smallskip\noindent\gpassend{\begin{ksys}[xmin=-6,xmax=6,ymin=-6,ymax=6,karo=0.5]\parabel{-1}{0}{0}{p}\gerade[2.5]{3}{-4}{g}\end{ksys}}\par
-\karo{2}
-\fusshilfe{\gfuss{11}{1 (jede waagerechte Gerade oberhalb des Scheitelpunkts trifft p nicht)}}
+\karo{3}
+\fusshilfe{\gfuss{11}{1}}
 \end{pfaufg}
 % 2018-OS-K5d-m1 (Schwere III, rang 23)
 \begin{pfaufg}{nach~P10\\’18~\pkt{}~5d}{12.}{}

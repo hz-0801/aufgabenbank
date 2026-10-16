@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -104,45 +117,56 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} mehr]{Wachstum \pkt{} Lösungen}{PA50-3}\pfseitevon
+\pflaufkopf[P10 \pkt{} mehr]{Wachstum \pkt{} Lösungen}{PA50-4}\pfseitevon
 \pfheftkopf{Wachstum}{Lösungen \pkt{} mehr}
-\begin{pfloesungb}{}
-\lzb{1.}{}{2018: 48; 2021: 54,0}{2018: 48; 2021: 54,0}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{2.}{}{0: 12 kg; 2: 13,230 kg; 5: $\approx$ 15,315 kg}{0: 12 kg; 2: 13,230 kg; 5: $\approx$ 15,315 kg}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{3.}{}{450000 € · 1,06 = 477000 €}{450000 € · 1,06 = 477000 €}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{4.}{}{y = 1000 · $0{,}89^{x}$}{y = 1000 · $0{,}89^{x}$}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{5.}{}{fallende Strecke durch (0|36), (10|33), (20|30), (30|27), (40|24), (80|12) mit beschrifteter Skala (x-Achse 1 Kästchen = 5 min, y-Achse 1 Kästchen = 2 cm)}{fallende Strecke durch (0|36), (10|33), (20|30), (30|27), (40|24), (80|12) mit beschrifteter Skala (x-Achse 1 Kästchen = 5 min, y-Achse 1 Kästchen = 2 cm)}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{6.}{}{x: Zeit in Wochen (Anzahl der Wochen)}{12: Anfangsmasse des Ferkels in kg (Woche 0); 1,05: Wachstumsfaktor, Zunahme um 5 \% je Woche; x: Zeit in Wochen (Anzahl der Wochen)}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{7.}{}{2 km: $\approx$ 792 hPa; 8 km: $\approx$ 394 hPa}{2 km: $\approx$ 792 hPa; 8 km: $\approx$ 394 hPa}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{8.}{}{x-Achse Höhe in km, 2 Kästchen je km; y-Achse Luftdruck in hPa, 1 Kästchen je 50 hPa; sieben Punkte, fallende Kurve}{x-Achse Höhe in km, 2 Kästchen je km; y-Achse Luftdruck in hPa, 1 Kästchen je 50 hPa; sieben Punkte, fallende Kurve}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{9.}{}{ja, passt zu 627 hPa: 1000 · 0,89$^{4}$ $\approx$ 627,4 hPa}{ja, passt zu 627 hPa: 1000 · 0,89$^{4}$ $\approx$ 627,4 hPa}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{10.}{}{1 h: 5,46 mg; 4,11 mg bei 4 h}{1 h: 5,46 mg; 4,11 mg bei 4 h}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{11.}{}{Achsen „Zeit in h“ (1 h je Teilstrich) und „Masse in mg“ (1 mg je Teilstrich), sieben Punkte, glatte fallende Kurve}{Achsen „Zeit in h“ (1 h je Teilstrich) und „Masse in mg“ (1 mg je Teilstrich), sieben Punkte, glatte fallende Kurve}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{12.}{}{ $\approx$ 0,62 mg}{$\approx$ 0,62 mg}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{13.}{}{Graph 3 passt nicht: beginnt bei 0 kg statt 12 kg}{Graph 1 passt nicht: linear, also jede Woche gleiche Zunahme statt 5 \%; Graph 2 passt: beginnt bei 12 kg, Zuwächse werden größer; Graph 3 passt nicht: beginnt bei 0 kg statt 12 kg}
-\end{pfloesungb}
+\begin{lzaufg}
+\lzz{1.}{a)}{2018: 48}{}
+\lzz{}{b)}{2021: 54,0}{}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{2.}{a)}{0: 12 kg}{}
+\lzz{}{b)}{2: 13,230 kg}{}
+\lzz{}{c)}{5: $\approx$ 15,315 kg}{}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{3.}{}{450000 € · 1,06 = 477000 €}{}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{4.}{}{y = 1000 · $0{,}89^{x}$}{}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{5.}{}{Strecke durch (0|36), (10|33), (20|30), (30|27), (40|24), (80|12)}{x-Achse 1 Kästchen = 5 min, y-Achse 1 Kästchen = 2 cm}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{6.}{a)}{12 = Anfangsmasse in kg}{}
+\lzz{}{b)}{1,05 = Wachstumsfaktor, +5 \% je Woche}{}
+\lzz{}{c)}{x = Zeit in Wochen}{}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{7.}{a)}{$\approx$ 792 hPa}{}
+\lzz{}{b)}{$\approx$ 394 hPa}{}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{8.}{a)}{x-Achse Höhe in km, 2 Kästchen je km}{}
+\lzz{}{b)}{y-Achse Luftdruck in hPa, 1 Kästchen je 50 hPa}{}
+\lzz{}{c)}{sieben Punkte, fallende Kurve}{}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{9.}{}{ja}{}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{10.}{a)}{5,46 mg}{}
+\lzz{}{b)}{4,11 mg bei 4 h}{}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{11.}{}{7 Punkte, fallende Kurve}{Achsen Zeit in h (1 h je Teilstrich), Masse in mg (1 mg je Teilstrich)}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{12.}{}{m(24) = 6,00 · 0,91$^{24}$ $\approx$ 0,62 mg}{}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{13.}{a)}{Graph 1 nein}{linear, gleiche Zunahme statt 5 \%}
+\lzz{}{b)}{Graph 2 ja}{Start 12 kg, Zuwächse wachsen}
+\lzz{}{c)}{Graph 3 nein}{Start 0 kg statt 12 kg}
+\end{lzaufg}
 \end{document}

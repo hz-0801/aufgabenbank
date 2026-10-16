@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -104,42 +117,43 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} mehr]{sin, cos, tan \pkt{} Lösungen}{PG60-3}\pfseitevon
+\pflaufkopf[P10 \pkt{} mehr]{sin, cos, tan \pkt{} Lösungen}{PG60-5}\pfseitevon
 \pfheftkopf{sin, cos, tan}{Lösungen \pkt{} mehr}
-\begin{pfloesungb}{}
-\lzb{1.}{}{AB $\approx$ 1118 m}{AB = 1400 · sin 53° $\approx$ 1118,1 m $\approx$ 1118 m}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{2.}{}{AD $\approx$ 842,5 m}{AD = 1400 · cos 53° $\approx$ 842,5 m}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{3.}{}{tan $\alpha$ = r/s}{tan $\alpha$ = r/s}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{4.}{}{x = 18}{x = $\tfrac{9}{\sin 30 ^\circ}$ = $\tfrac{9}{0{,}5}$ = 18}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{5.}{}{sin $\alpha$ = r/t}{sin $\alpha$ = r/t}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{6.}{}{$\sin\beta=\tfrac{b}{a}$}{sin $\beta$ = b/a (dritte Option)}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{7.}{}{sin $\beta$ = r/t}{sin $\beta$ = r/t}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{8.}{}{$\alpha$ $\approx$ 54,0°}{Unterschied der Seiten 14 $-$ 6 = 8 cm; tan $\alpha$ = $\tfrac{11}{8}$ $\Rightarrow$ $\alpha$ = tan$^{-1}$($\tfrac{11}{8}$) $\approx$ 54,0°}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{9.}{}{$\alpha$ $\approx$ 65°}{cos $\alpha$ = $\tfrac{5}{12}$ $\Rightarrow$ $\alpha$ = cos$^{-1}$($\tfrac{5}{12}$) $\approx$ 65,4° $\approx$ 65°}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{10.}{}{Berghöhe $\approx$ 61,0 m; D liegt auf 61,0 + 10,0 $\approx$ 71,0 m}{BC = 118,8 · sin 30° $\approx$ 59,4 m; Berghöhe = BC + 1,6 $\approx$ 61,0 m; D liegt auf 61,0 + 10,0 $\approx$ 71,0 m}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{11.}{}{PB $\approx$ 1,85 m}{PB = $\tfrac{1{,}35}{\tan 36{,}1 ^\circ}$ $\approx$ 1,85 m}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{12.}{}{BD $\approx$ 440 m}{$\angle$CAD = 90° $-$ 52° = 38°; $\angle$DAB = 71° $-$ 38° = 33°; BD = 677 · tan 33° $\approx$ 440 m}
-\end{pfloesungb}
+\begin{lzaufg}
+\lzz{1.}{}{AB $\approx$ 1118 m}{AB = 1400 · sin 53°}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{2.}{}{AD $\approx$ 842,5 m}{AD = 1400 · cos 53°}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{3.}{}{tan $\alpha$ = r/s}{}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{4.}{}{x = 18}{x = $\tfrac{9}{\sin 30 ^\circ}$}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{5.}{}{sin $\alpha$ = r/t}{}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{6.}{}{sin $\beta$ = b/a}{}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{7.}{}{sin $\beta$ = r/t}{}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{8.}{}{$\alpha$ = tan$^{-1}$($\tfrac{11}{8}$) $\approx$ 54,0°}{14 $-$ 6 = 8 cm; tan $\alpha$ = $\tfrac{11}{8}$}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{9.}{}{$\alpha$ = cos$^{-1}$($\tfrac{5}{12}$) $\approx$ 65°}{cos $\alpha$ = $\tfrac{5}{12}$}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{10.}{a)}{Berghöhe $\approx$ 61,0 m}{BC = 118,8 · sin 30° $\approx$ 59,4 m}
+\lzz{}{b)}{$\approx$ 71,0 m}{}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{11.}{}{PB = $\tfrac{1{,}35}{\tan 36{,}1 ^\circ}$ $\approx$ 1,85 m}{}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{12.}{}{BD $\approx$ 440 m}{$\angle$CAD = 90° $-$ 52° = 38°; $\angle$DAB = 71° $-$ 38° = 33°}
+\end{lzaufg}
 \end{document}

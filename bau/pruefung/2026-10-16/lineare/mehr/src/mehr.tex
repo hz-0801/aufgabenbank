@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -104,9 +117,9 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} mehr]{Lineare Funktionen}{PA10-7}\pfseitevon
+\pflaufkopf[P10 \pkt{} mehr]{Lineare Funktionen}{PA10-9}\pfseitevon
 \pfheftkopf{Lineare Funktionen}{mehr}
-\pfstufenzeile{Punktprobe \pkt{} Gleichung aus Text \pkt{} Gerade zeichnen \pkt{} Nullstelle gesucht \pkt{} Gleichung aus zwei Punkten}
+\pfstufenzeile{Punktprobe \pkt{} Gleichung aus Text \pkt{} Graph zeichnen \pkt{} Nullstelle gesucht \pkt{} Gleichung aus zwei Punkten}
 % 2017-OS-K5b-m1 (Schwere I, rang 4)
 \begin{pfaufg}{nach~P10\\’17~\pkt{}~5b}{1.}{}
 Die Gerade $g$ hat die Gleichung $y = \tfrac{2}{3}x + 2$. Auf ihr liegt der Punkt $A(-12\,|\,y)$. Berechne seine y-Koordinate.
@@ -139,7 +152,7 @@ Ordne jedem Sachverhalt die passende Gleichung zu. Sachverhalt 1: Eine Taxifahrt
 Die 10b fährt mit dem Bus in eine Jugendherberge. Zwei Busfirmen machen ein Angebot: „Sonnenschein“ verlangt 150 € Grundpreis und 1,20 € je gefahrenem Kilometer, „Reiselust“ keinen Grundpreis und 1,80 € je Kilometer. Die Grafik zeigt für beide Angebote die Fahrtkosten in Abhängigkeit von der Strecke. Gib zu jedem der beiden Graphen die passende Busfirma an. Begründe für „Sonnenschein“, warum dein Graph passt.
 \par\smallskip\noindent\gpassend{\begin{ksys}[xmin=0,xmax=350,ymin=0,ymax=700,xstep=25,ystep=50,karo=0.35,xlabel=Strecke in km,ylabel=Kosten in €]\gerade[300]{1.8}{0}{\mathrm{I}}\gerade[100]{1.2}{150}{\mathrm{II}}\end{ksys}}\par
 \karo{3}
-\fusshilfe{\gfuss{5}{II beginnt bei 150 € (Grundpreis bei 0 km) und steigt flacher (1,20 €/km)}}
+\fusshilfe{\gfuss{5}{I Reiselust, II Sonnenschein}}
 \end{pfaufg}
 % 2021-OS-K2a-m1 (Schwere I, rang 8)
 \begin{pfaufg}{nach~P10\\’21~\pkt{}~2a}{6.}{}
@@ -159,7 +172,7 @@ Die lineare Funktion $f$ hat die Gleichung $y = 2x - 1$. Kreuze die beiden Aussa
 Eine 36 cm hohe Kerze wird angezündet. Die Tabelle hält fest, wie hoch sie nach einigen Minuten noch ist. Das Abbrennen der Kerze beschreibt die Gleichung $y = -0{,}3x + 36$. Schreib zu $y$, $x$ und $36$, was sie hier bedeuten. Beispiel: $-0{,}3$ heißt, dass die Kerze in jeder Minute um 0,3 cm kürzer wird.
 \par\smallskip\noindent\gpassend{{\small\renewcommand{\arraystretch}{1.4}\begin{tabular}{|c|l|}\hline Teil der Gleichung & Bedeutung\\\hline $y$ & \rule[-0.5ex]{45mm}{0.4pt}\\\hline $-0{,}3$ & In jeder Minute wird die Kerze 0,3 cm kürzer.\\\hline $x$ & \rule[-0.5ex]{45mm}{0.4pt}\\\hline $36$ & \rule[-0.5ex]{45mm}{0.4pt}\\\hline\end{tabular}}}\par
 \karo{4}
-\fusshilfe{\gfuss{8}{36: Anfangshöhe der Kerze in cm}}
+\fusshilfe{\gfuss{8}{Höhe der Kerze in cm; Zeit in min ab Anzünden; Anfangshöhe in cm}}
 \end{pfaufg}
 % 2016-OS-K6b-m1 (Schwere II, rang 10)
 \begin{pfaufg}{nach~P10\\’16~\pkt{}~6b}{9.}{}

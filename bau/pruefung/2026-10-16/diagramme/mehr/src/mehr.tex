@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -104,7 +117,7 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} mehr]{Diagramme}{PS40-4}\pfseitevon
+\pflaufkopf[P10 \pkt{} mehr]{Diagramme}{PS40-5}\pfseitevon
 \pfheftkopf{Diagramme}{mehr}
 \pfstufenzeile{Winkel gesucht \pkt{} Kreisdiagramm zeichnen \pkt{} Säule ergänzen \pkt{} Aussagen prüfen \pkt{} falschen Eindruck erklären}
 % 2021-OS-K5b-m1 (Schwere I, rang 4)
@@ -119,21 +132,21 @@ Die Tabelle gibt an, welche Güter im Hamburger Hafen be- und entladen werden (A
 Frauen wurden gefragt, wie oft sie Fleisch oder Wurst essen. Das Säulendiagramm zeigt die Anteile der Antworten. Stelle die Anteile aus dem Säulendiagramm als Streifendiagramm dar. Der vorgezeichnete Streifen ist 15 cm lang.
 \par\smallskip\noindent\gpassend{\saeulenab[ymax=70,ystep=10,yfein=2,ylabel=Anteil in \%,breite=2.2]{nie/4,1- bis 3-mal pro Woche/12,4- bis 6-mal pro Woche/60,täglich/24}\par\medskip\noindent \begin{tikzpicture}[line width=0.6pt]\draw[black!20,line width=0.3pt,step=0.5cm] (-0.5,-0.5) grid (15.5,2);\draw[line width=0.8pt] (0,0) rectangle (15,1.5);\end{tikzpicture}}\par
 \karo{2}
-\fusshilfe{\gfuss{2}{Streifen mit Abschnitten 0,6 cm (nie), 1,8 cm (1–3-mal), 9,0 cm (4–6-mal), 3,6 cm (täglich)}}
+\fusshilfe{\gfuss{2}{0,6 cm nie, 1,8 cm 1–3-mal, 9,0 cm 4–6-mal, 3,6 cm täglich}}
 \end{pfaufg}
 % 2020-OS-K2a-m1 (Schwere I, rang 5)
 \begin{pfaufg}{nach~P10\\’20~\pkt{}~2a}{3.}{}
 Ein Schwimmbad zählt in der ersten Woche der Sommerferien jeden Tag seine Besucher. Am Donnerstag kamen 155 Besucher. Im Balkendiagramm fehlt der Balken für Donnerstag noch. Zeichne im Diagramm den Balken für Donnerstag ein.
 \par\smallskip\noindent\gpassend{\balkenab[xmax=250,xstep=50,xfein=10,xlabel=Anzahl der Besucher]{So/240,Sa/210,Fr/170,Do/,Mi/180,Di/120,Mo/150}}\par
 \karo{2}
-\fusshilfe{\gfuss{3}{waagerechter Balken bei Do bis 155}}
+\fusshilfe{\gfuss{3}{Balken Do bis 155}}
 \end{pfaufg}
 % 2017-OS-K2c-m1 (Schwere II, rang 6)
 \begin{pfaufg}{nach~P10\\’17~\pkt{}~2c}{4.}{}
 Die Tabelle zeigt, als wievieltes Kind ihrer Mutter die Kinder des Jahrgangs 2015 in Deutschland zur Welt kamen (Anteil in Prozent): erstes Kind 48,7 \%, zweites Kind 35,1 \%, drittes Kind 11,8 \%, viertes oder weiteres Kind 4,4 \%. Im Kreisdiagramm ist einer dieser Anteile grau gefärbt. Schreib an den grauen Sektor, zu welchem Anteil er gehört. Berechne, wie groß der Mittelpunktswinkel für „drittes Kind“ sein muss. Zeichne diesen Sektor in den Kreis ein und beschrifte ihn.
 \par\smallskip\noindent\gpassend{\begin{tikzpicture}[line width=0.6pt]\filldraw[fill=black!30] (0,0) -- (180:2.0) arc (180:195.84:2.0) -- cycle;\draw (0,0) circle (2.0);\fill (0,0) circle (1.4pt);\draw[-{Stealth[length=2mm]},line width=0.5pt] (-3.3,-0.9) -- (187.92:1.50);\draw[line width=0.4pt] (-6.3,-0.90) -- (-3.3,-0.90);\draw[line width=0.4pt] (-6.3,-1.50) -- (-3.3,-1.50);\draw[line width=0.4pt] (-6.3,-2.10) -- (-3.3,-2.10);\end{tikzpicture}}\par
-\karo{3}
-\fusshilfe{\gfuss{4}{grauer Sektor: viertes oder weiteres Kind (4,4 \% von 360° $\approx$ 16°); 42°}}
+\karo{4}
+\fusshilfe{\gfuss{4}{viertes oder weiteres Kind ($\approx$ 16°); 42°}}
 \end{pfaufg}
 % 2018-OS-K3a-m1 (Schwere II, rang 6)
 \begin{pfaufg}{nach~P10\\’18~\pkt{}~3a}{5.}{}
@@ -146,22 +159,22 @@ Die Tabelle zeigt, als wievieltes Kind ihrer Mutter die Kinder des Jahrgangs 201
 \begin{pfaufg}{nach~P10\\’18~\pkt{}~3d}{6.}{}
 Frauen wurden gefragt, wie oft sie Fleisch oder Wurst essen. Das Säulendiagramm zeigt die Anteile der Antworten. Prüfe die beiden Aussagen zum Säulendiagramm. Kreuze jeweils an, ob sie richtig, falsch oder nicht entscheidbar ist, und begründe. Aussage 1: „Nicht einmal die Hälfte der Frauen isst 4- bis 6-mal pro Woche Fleisch oder Wurst.“ Aussage 2: „1- bis 3-mal pro Woche Fleisch oder Wurst isst jede 12. Frau.“
 \par\smallskip\noindent\gpassend{\saeulenab[ymax=70,ystep=10,yfein=2,ylabel=Anteil in \%,breite=2.2]{nie/4,1- bis 3-mal pro Woche/12,4- bis 6-mal pro Woche/60,täglich/24}\par\medskip\noindent {\small\renewcommand{\arraystretch}{1.25}\begin{tabular}{|p{8.2cm}|c|c|c|}\hline Aussage & richtig & falsch & nicht entscheidbar\\\hline Aussage 1 &  &  & \\\hline Aussage 2 &  &  & \\\hline\end{tabular}}}\par
-\karo{3}
-\fusshilfe{\gfuss{6}{Aussage 1 falsch (60 \% sind mehr als die Hälfte); Aussage 2 falsch (jede 12. wäre etwa 8,3 \%, tatsächlich 12 \%)}}
+\karo{5}
+\fusshilfe{\gfuss{6}{Aussage 1 falsch (60 \%); Aussage 2 falsch (12 \%)}}
 \end{pfaufg}
 % 2019-OS-K5c-m1 (Schwere III, rang 8)
 \begin{pfaufg}{nach~P10\\’19~\pkt{}~5c}{7.}{}
 2016 erschien ein Zeitungsartikel mit der Überschrift „Bücherlesen bald out?“. Darin heißt es: Die Buchhändler klagen, dass jedes Jahr dramatisch weniger Jugendliche Bücher lesen. Man fürchte, dass schon bald kein einziger Jugendlicher mehr zu einem Buch greift. Neben dem Text steht das Säulendiagramm. Schüler einer 10. Klasse halten zwei Aussagen des Artikels für falsch. Nenne eine davon und berichtige sie.
 \par\smallskip\noindent\gpassend{\saeulenab[ymin=35,ymax=50,ystep=5,yfein=1,ylabel=Bücher lesende Jugendliche in \%]{2012/47,2013/45,2014/44,2015/42,2016/40}}\par
-\karo{3}
-\fusshilfe{\gfuss{7}{z. B.: „extrem abnimmt“ ist falsch, die abgeschnittene Achse übertreibt – Rückgang von rund 47 \% auf 40 \% in 4 Jahren, also nur 7 Prozentpunkte; oder: „in wenigen Jahren kein Jugendlicher mehr“ ist falsch – 2016 lesen noch 40 \%, bei gleichem Tempo erst in rund 23 Jahren}}
+\karo{5}
+\fusshilfe{\gfuss{7}{„extrem abnimmt“ falsch; „bald keiner mehr“ falsch}}
 \end{pfaufg}
 % 2014-OS-K3d-m1 (Schwere III, rang 9)
 \begin{pfaufg}{nach~P10\\’14~\pkt{}~3d}{8.}{}
 Eine andere Bank zahlt nur 0,4 \% Zinsen im Jahr. Für ihre Werbung „Tolle Zinsen!“ zeichnet sie ein Säulendiagramm, in dem das Guthaben kräftig zu wachsen scheint. Erkläre, mit welchem Trick die Grafik die Entwicklung des Guthabens besser aussehen lässt, als sie ist.
 \par\smallskip\noindent\gpassend{\saeulenab[ymin=1040,ymax=1054,ystep=2,yfein=1,ylabel=Guthaben in Euro,breite=2.2]{nach einem Jahr/1044,nach zwei Jahren/1048,nach drei Jahren/1052}}\par
-\karo{3}
-\fusshilfe{\gfuss{8}{echter Zuwachs je Jahr nur 4 €}}
+\karo{4}
+\fusshilfe{\gfuss{8}{Zuwachs je Jahr nur 4 €}}
 \end{pfaufg}
 \par\vfill\noindent{\scriptsize\color{mbgrau}Originale: P10 2021 \pkt{} 5b, P10 2018 \pkt{} 3c, P10 2020 \pkt{} 2a, P10 2017 \pkt{} 2c, P10 2018 \pkt{} 3a, P10 2018 \pkt{} 3d, P10 2019 \pkt{} 5c, P10 2014 \pkt{} 3d\par}
 \end{document}

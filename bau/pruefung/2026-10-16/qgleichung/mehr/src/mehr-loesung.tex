@@ -23,6 +23,19 @@
     \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
     \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
   \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
 % v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
 % der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
 \newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
@@ -104,12 +117,15 @@
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} mehr]{Quadratische Gleichung \pkt{} Lösungen}{PA40-4}\pfseitevon
+\pflaufkopf[P10 \pkt{} mehr]{Quadratische Gleichung \pkt{} Lösungen}{PA40-6}\pfseitevon
 \pfheftkopf{Quadratische Gleichung}{Lösungen \pkt{} mehr}
-\begin{pfloesungb}{}
-\lzb{1.}{}{x$_1$ = 2; x$_2$ = $-$5}{x$_1$ = 2; x$_2$ = $-$5}
-\end{pfloesungb}
-\begin{pfloesungb}{}
-\lzb{2.}{}{(x + 5)² $-$ 3 = x² + 10x + 22; x $\approx$ $-$3,27; x$_2$ $\approx$ $-$6,73}{(x + 5)² $-$ 3 = x² + 10x + 22; x = $-$5 $\pm$ $\sqrt{3{,}}$ also x$_1$ $\approx$ $-$3,27; x$_2$ $\approx$ $-$6,73}
-\end{pfloesungb}
+\begin{lzaufg}
+\lzz{1.}{a)}{x$_1$ = 2}{}
+\lzz{}{b)}{x$_2$ = $-$5}{}
+\end{lzaufg}
+\begin{lzaufg}
+\lzz{2.}{a)}{(x + 5)² $-$ 3 = x² + 10x + 22}{}
+\lzz{}{b)}{x$_1$ = $-$5 + $\sqrt{3}$ $\approx$ $-$3,27}{(x + 5)² = 3}
+\lzz{}{c)}{x$_2$ = $-$5 $-$ $\sqrt{3}$ $\approx$ $-$6,73}{(x + 5)² = 3}
+\end{lzaufg}
 \end{document}
