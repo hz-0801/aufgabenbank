@@ -9,17 +9,54 @@ und zwischenergebnis.
 Rückgabe 1, wenn etwas gemeldet wird."""
 import argparse, csv, glob, os, re, sys
 
-WORT = r'[A-Za-zÄÖÜäöüß]{3,}'
-SATZ = re.compile(rf'(?<![\\$])\b{WORT}\s+{WORT}\s+{WORT}\b')
-ERLAUBT = {'mit', 'und', 'oder'}
+OPTION = re.compile(r'\s*\((?:erste|zweite|dritte|vierte)\s+Option[^()]*\)')
+WORT = re.compile(r'(?<![\\$\w])[A-Za-zÄÖÜäöüß]{3,}(?![\w])')
+# Stichwort-Verbinder trennen eine Folge (Grenze: „viertes oder weiteres Kind“, „einmal pro Woche“ sind Stichwörter);
+# Artikel zählen nicht und trennen nicht („Hypotenuse liegt dem rechten Winkel …“ bleibt ein Satz)
+TRENNT = {'mit', 'und', 'oder', 'pro', 'je', 'bis', 'von', 'statt', 'bei', 'auf', 'ab', 'als', 'über', 'unter', 'vor', 'nach',
+          'zum', 'zur', 'im', 'in', 'aus', 'ohne'}
+ARTIKEL = {'der', 'die', 'das', 'dem', 'den', 'des', 'ein', 'eine', 'einen', 'einem', 'einer'}
 
 
 def satz(s):
-    for m in SATZ.finditer(s or ''):
-        w = m.group(0).split()
-        if not all(x.lower() in ERLAUBT for x in w[1:]):
+    """Satz = drei Inhaltswörter in Folge, nur durch Leerraum getrennt; Zitate „…“ (Wortlaut der Aufgabe) und der
+    Vermerk „(… Option)“ zählen nicht."""
+    s = OPTION.sub('', re.sub(r'„[^“]*“', ' 0 ', s or ''))
+    folge, ende = 0, -1
+    for m in WORT.finditer(s):
+        w = m.group(0).lower()
+        luecke = s[ende:m.start()] if ende >= 0 else ''
+        if ende >= 0 and luecke.strip():
+            folge = 0
+        ende = m.end()
+        if w in ARTIKEL:
+            continue
+        if w in TRENNT:
+            folge = 0
+            continue
+        folge += 1
+        if folge >= 3:
             return True
     return False
+
+
+
+
+def mehr_teile(l):
+    """Wie der Setzer (pruefheft.py p_ergebnis/p_ausgang, 16.10.): Teile durch „ | “; je Teil steht das Ergebnis
+    nach dem letzten „⇒“ (links), davor der Ausgang (rechts, Handgriffe durch „;“); ohne „⇒“ ist der letzte
+    Schritt nach „;“ das Ergebnis. Der Vermerk „(dritte Option)“ fällt weg (der Setzer druckt den Wert der Option)."""
+    links, rechts = [], []
+    for t in [x.strip() for x in re.split(r'\s\|\s', OPTION.sub('', l or '')) if x.strip()]:
+        if '⇒' in t:
+            v, e = t.rsplit('⇒', 1)
+        else:
+            st = [x.strip() for x in re.split(r'\s*;\s*', t) if x.strip()]
+            v, e = '; '.join(st[:-1]), (st[-1] if st else '')
+        links.append(e.strip())
+        if v.strip():
+            rechts.append(v.strip())
+    return ' | '.join(links), '; '.join(rechts)
 
 
 def norm(s):
@@ -37,11 +74,15 @@ def pruefe(id_, links, rechts, aus):
     m = []
     if satz(links) or satz(rechts):
         m.append('SATZ')
-    if rechts and norm(links) and (norm(rechts) == norm(links) or norm(links) in norm(rechts)):
+    if rechts and len(norm(links)) >= 3 and (norm(rechts) == norm(links) or norm(links) in norm(rechts)):
         m.append('DOPPELT')
-    if '≈' in links and not re.search(r'[√/]|frac|sqrt|π|pi', links) and re.search(r'√|sqrt|frac|/', rechts or ''):
+    # gerundet ohne exakten Wert davor: „x ≈ 200,7 cm“, „≈ 28,7 m“ statt „x = √40289 ≈ 200,7 cm“ (16.10.)
+    nur_name = any(re.search(r'(?:^|=)\s*(?:[A-Za-zα-ωΑ-Ω][\w₀-₉′]*(?:\([^()]*\))?)?\s*≈', t.strip())
+                   for t in links.split('|'))
+    if '≈' in links and (nur_name or (not re.search(r'[√/:]|frac|sqrt|π|pi|⁻¹', links)
+                                      and re.search(r'√|sqrt|frac|/', rechts or ''))):
         m.append('GERUNDET')
-    if rechts and len([x for x in re.split(r';|\n', rechts) if x.strip()]) > 2:
+    if rechts and len([x for x in re.split(r';|⇒|\n', rechts) if x.strip()]) > 3:
         m.append('LANG')
     if m:
         aus.append((id_, m, links[:60], (rechts or '')[:60]))
@@ -58,9 +99,7 @@ def main():
         if a.nur and a.nur not in f:
             continue
         for r in lies(f):
-            l = r.get('loesung', '')
-            teile = re.split(r'\s*⇒\s*', l, maxsplit=1)
-            links, rechts = (teile[-1], teile[0]) if len(teile) == 2 else (l, '')
+            links, rechts = mehr_teile(r.get('loesung', ''))
             pruefe(f'{os.path.basename(f)}:{r.get("id","")}', links, rechts, aus)
     if not a.nur:
         for f in sorted(glob.glob(os.path.join(a.nh, 'msa', 'msa-katalog-*.csv'))):

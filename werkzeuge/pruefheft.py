@@ -6674,7 +6674,7 @@ def p_weg_tex(weg):
             '>{\\raggedright\\arraybackslash}p{0.6\\linewidth}@{}}' + ''.join(zeilen) + '\\end{tabular}')
 
 
-_EXAKT = re.compile(r'√|/|π|⁻¹|frac|:')
+_EXAKT = re.compile(r'√|/|π|⁻¹|frac|:|\^|[⁰¹⁴⁵⁶⁷⁸⁹]')
 _WURZEL = re.compile(r'^√\((.+?)\s*([+−])\s*([^()]+)\)$')
 _INV = re.compile(r'^(sin|cos|tan)⁻¹\s*\((.+)\)$')
 _OPTION = re.compile(r'\s*\((?:erste|zweite|dritte|vierte)\s+Option[^()]*\)')
