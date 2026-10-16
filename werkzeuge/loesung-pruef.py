@@ -101,7 +101,8 @@ def streng(links):
 # rechts nur der Ausgang. Grenze: Begründen links nur das Urteil („ja: 256 ml < 375 ml“), Ankreuzen als
 # Stichwort, gefragte Rundung: exakt, dann diese.
 EINHEIT = {'cm', 'mm', 'dm', 'km', 'ml', 'cl', 'hl', 'kg', 'min', 'sek', 'std', 'liter', 'stück', 'grad', 'prozent',
-           'cent', 'euro', 'jahre', 'jahr', 'monate', 'tage', 'wochen', 'stunden', 'minuten', 'sekunden'}
+           'cent', 'euro', 'jahre', 'jahr', 'monate', 'tage', 'wochen', 'stunden', 'minuten', 'sekunden',
+           'mio', 'mrd'}                               # „2,7 Mio.“ ist Teil der Zahl (16.10., Bau 4)
 FUNK = {'sin', 'cos', 'tan'}
 URTEIL = re.compile(r'^\s*(ja|nein|wahr|falsch|richtig|stimmt|stimmt nicht)\b\s*([,:]?)', re.I)
 W3 = re.compile(r'(?<![\w\\])[A-Za-zÄÖÜäöüß]{3,}(?![\w(])')     # Wort ab 3 Buchstaben, nicht vor „(“ (P(…), M(t))
@@ -117,7 +118,7 @@ def _worte(t):
         nach = t[m.end():m.end() + 3]
         if w.lower() in EINHEIT | FUNK:
             continue
-        if re.match(r'\s*[²³]?\s*(=|≈|<|>)', nach):
+        if re.match(r'\s*[²³]?\s*(=|≈|<|>|:)', nach):   # „:“ wie im Docstring („Fahrpreis: y = …“, 16.10.)
             continue
         aus.append(w)
     return aus
@@ -136,8 +137,8 @@ def streng2(links):
         w = _worte(rest)
         if mathe and w:
             m.append('WORT')                       # Wörter neben dem Ergebnis außer Einheit und Größenname
-        elif not mathe and len(w) > 4:
-            m.append('WORT')                       # Stichwort höchstens vier Wörter
+        elif not mathe and max(len(_worte(g)) for g in rest.split(',')) > 4:
+            m.append('WORT')                       # Stichwort höchstens vier Wörter; Aufzählung je Glied (16.10.)
     if re.search(r'z\.\s?B\.', links or ''):
         m.append('ZB')
     return sorted(set(m), key=m.index)
