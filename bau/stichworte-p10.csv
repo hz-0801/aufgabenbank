@@ -6,8 +6,8 @@ schluessel;stichwort;herkunft
 2021-OS-B1h-m1;z = √(x² + y²);mehr-p10/dreiecke.csv: $z=\sqrt{x^2+y^2}$
 2017-OS-B1d-m1;z² = x² + y²;mehr-p10/dreiecke.csv: $z^2=x^2+y^2$
 2018-OS-B1g-m1;sin β = b/a;mehr-p10/dreiecke.csv: $\sin\beta=\frac{b}{a}$
-2026-FOR-B1c-m1;zwei Seiten parallel;mehr-p10/dreiecke.csv: Mindestens zwei Seiten sind zueinander parallel
-2016-OS-B1e-m1;gegenüberliegende Winkel gleich;mehr-p10/dreiecke.csv: Je zwei gegenüberliegende Winkel sind gleich
+2026-FOR-B1c-m1;Seitenpaar parallel;mehr-p10/dreiecke.csv: Mindestens zwei Seiten sind zueinander parallel
+2016-OS-B1e-m1;Gegenwinkel gleich;mehr-p10/dreiecke.csv: Je zwei gegenüberliegende Winkel sind gleich
 2024-OS-B1c-m1;u = 3 · a;mehr-p10/flaechen.csv: $u=3\cdot a$
 2025-OS-B1i-m1;A = a · (b + c);mehr-p10/flaechen.csv: $A=a\cdot(b+c)$
 2022-OS-K2a-m1;drittes Netz;"mehr-p10/koerper.csv: drittes Netz (dritte Option; ein Kreis, Rechteck etwa dreima"

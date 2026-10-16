@@ -9,6 +9,8 @@ und zwischenergebnis; Gliederung Schülerfrage-Weg, Abruf-Lösung, Schätzfrage-
 Rückgabe 1, wenn etwas gemeldet wird."""
 import argparse, csv, glob, os, re, sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
 OPTION = re.compile(r'\s*\((?:erste|zweite|dritte|vierte)\s+Option[^()]*\)')
 WORT = re.compile(r'(?<![\\$\w])[A-Za-zÄÖÜäöüß]{3,}(?![\w])')
 # Stichwort-Verbinder trennen eine Folge (Grenze: „viertes oder weiteres Kind“, „einmal pro Woche“ sind Stichwörter);
@@ -88,6 +90,45 @@ def pruefe(id_, links, rechts, aus):
         aus.append((id_, m, links[:60], (rechts or '')[:60]))
 
 
+def gedruckt_ankreuz(r):
+    """Was die Lösung links für die Ankreuz-Teile einer Mehr-Zeile druckt (wie pruefheft.lz_zeilen): das Stichwort aus
+    bau/stichworte-p10.csv, sonst der Optionstext (Wert der Option)."""
+    import pruefheft as P
+    lo = r.get('loesung', '') or ''
+    _, optionen = P.mehr_kreuz((r.get('wortlaut') or '').strip())
+    b = P.mehr_buchstabe(r, optionen)
+    ergs, _ = P.p_ergebnis(r)
+    teile = [t.strip() for t in re.split(r'\s\|\s', lo) if t.strip()]
+    aus, n = [], 0
+    for i, t in enumerate(teile):
+        if re.search(r'\((?:erste|zweite|dritte|vierte)\s+Option', t):
+            n += 1
+            aus.append(P.stichwort(r.get('id', '') + ('' if n == 1 else f'#{n}')) or (b if len(ergs) == 1 and b else (ergs[i] if i < len(ergs) else '')))
+    return aus
+
+
+def gedruckt_einstieg(f):
+    """Antworten der Einstiegsfragen einer Gliederungsdatei, wie sie links in der Lösung stehen (Stichwort oder Antwort)."""
+    import pruefheft as P
+    aus, info, stufe = [], {}, ''
+
+    def ab():
+        if info.get('schülerfrage'):
+            fr = P.p_frage(info)
+            if fr and fr['art'] != 'kreuz':
+                for _, a in fr['faelle']:
+                    aus.append((stufe, P.stichwort('einstieg:' + a) or a))
+    for z in open(f, encoding='utf-8'):
+        if z.startswith('### '):
+            ab()
+            info, stufe = {}, z[4:].strip()
+        m = re.match(r'- \*\*([^:*]+):\*\*\s*(.*)', z)
+        if m:
+            info[m.group(1).strip().lower()] = m.group(2)
+    ab()
+    return aus
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--nh', default=os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'mathe-nachhilfe'))
@@ -101,9 +142,15 @@ def main():
         for r in lies(f):
             links, rechts = mehr_teile(r.get('loesung', ''))
             pruefe(f'{os.path.basename(f)}:{r.get("id","")}', links, rechts, aus)
+            for g in gedruckt_ankreuz(r):   # was wirklich links gedruckt wird (16.10. m)
+                if satz(g):
+                    aus.append((f'{os.path.basename(f)}:{r.get("id","")}:links', ['SATZ'], g[:60], ''))
     for f in sorted(glob.glob(os.path.join(a.nh, 'msa', 'gliederung', '*.md'))):
         if a.nur and a.nur not in f:
             continue
+        for st, g in gedruckt_einstieg(f):
+            if satz(g):
+                aus.append((f'{os.path.basename(f)}:{st}:Einstiegsantwort', ['SATZ'], g[:60], ''))
         stufe = ''
         for z in open(f, encoding='utf-8'):
             if z.startswith('### '):
