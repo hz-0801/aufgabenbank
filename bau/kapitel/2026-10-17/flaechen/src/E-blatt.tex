@@ -152,14 +152,27 @@
 \pfheftstil
 \pflaufkopf[P10 \pkt{} Prüfung]{Fläche und Umfang}{PG40 E}\pfseitevon
 \pfheftkopf{Fläche und Umfang}{}
-\pfstufenzeile{Flächeninhalt von Drachen}
+\pfstufenzeile{Kreis}
 
-% ===================== E Flächeninhalt von Drachen =====================
-\gkopfvor{\gbstvor{E}\pfstufekopf{Flächeninhalt von Drachen}{}}
-% DRUCK 2025-OS-K2b deckt 2025-OS-K2b
-\begin{pfaufg}{nach~P10\\’25}{1.}{}
-\gtextkaro{\begin{tikzpicture}[line width=0.7pt,font=\small,scale=0.045]\coordinate (A) at (-25,0);\coordinate (C) at (25,0);\coordinate (D) at (0,25);\coordinate (B) at (0,-55);\coordinate (F) at (0,0);\draw (A) -- (D) -- (C) -- (B) -- cycle;\draw[line width=0.4pt] (A) -- (C) (D) -- (B);\pfrw[0.3]{(F)}{90}\pfrw[0.3]{(D)}{225}\node[anchor=east] at (A) {$A$};\node[anchor=west] at (C) {$C$};\node[anchor=south] at (D) {$D$};\node[anchor=north] at (B) {$B$};\node[anchor=north west] at (F) {$F$};\draw[line width=0.4pt,densely dotted] (-36,25) -- (0,25);\draw[line width=0.4pt,|-|] (-36,0) -- (-36,25);\node[rotate=90,anchor=south,font=\footnotesize] at (-36.5,12.5) {$25$ cm};\end{tikzpicture}}{Die Diagonalen des abgebildeten Drachenvierecks haben die Maße $\overline{AC} = 50$~cm und $\overline{BD} = 80$~cm. Ermittle den Flächeninhalt des Drachenvierecks $ABCD$.}{4}
+% ===================== E Kreis =====================
+\gkopfvor{\gbstvor{E}\pfstufekopf{Kreis}{}}
+% DRUCK 2024-OS-K4a deckt 2024-OS-K4a
+\begin{pfaufg}{nach~P10\\’24}{1.}{}
+\gtextkaro{\begin{tikzpicture}[line width=0.7pt]\fill[black!12] (0,0) ellipse (0.75 and 0.26);\draw (-0.75,0) -- (0,2.0) -- (0.75,0);\draw (-0.75,0) arc (180:360:0.75 and 0.26);\draw[dashed,line width=0.5pt] (-0.75,0) arc (180:0:0.75 and 0.26);\node[font=\scriptsize,color=mbgrau,anchor=north] at (current bounding box.south) {(nicht maßstabsgerecht)};\end{tikzpicture}}{Eine Firma stellt Kegel her. Der Kegel hat die Maße $r = 30$ cm und $h = 80$ cm. Berechne den Flächeninhalt der Grundfläche des Kegels.}{4}
+\par\medskip\noindent\hfill G $=$\linie{25mm}
+\fusshilfe{\gfuss{1}{2827,4 cm²}}
+\end{pfaufg}
+% DRUCK 2016-OS-K3b deckt 2016-OS-K3b
+\begin{pfaufg}{nach~P10\\’16}{2.}{}
+Der Abwurfring beim Kugelstoßen ist ein Kreis mit einem Durchmesser von ca. 2,14 m. Eine Kugelstoßanlage soll neu gebaut werden. Ermittle dazu den Flächeninhalt des Kreises, den der Abwurfring einschließt.
+\karo{4}
 \par\medskip\noindent\hfill A $=$\linie{25mm}
-\fusshilfe{\gfuss{1}{2000 cm²}}
+\fusshilfe{\gfuss{2}{3,60 m²}}
+\end{pfaufg}
+% DRUCK 2018-OS-K6a deckt 2018-OS-K6a
+\begin{pfaufg}{nach~P10\\’18}{3.}{}
+\gtextkaro{\begin{tikzpicture}[line width=0.7pt]\fill[black!6] (0,0) rectangle (4.0,2.4);\draw[densely dotted] (0,0) rectangle (4.0,2.4);\filldraw[fill=black!45,line width=0.8pt] (1.25,1.45) circle (0.6);\node[font=\scriptsize,color=mbgrau,anchor=north] at (current bounding box.south) {(nicht maßstabsgerecht)};\end{tikzpicture}}{Der Fuchsturm ist ein beliebtes Ausflugsziel in der Stadt Jena. Der Turm hat einen Durchmesser $d$ von 6,4 m. Die Rasenfläche um den Turm soll erneuert werden. Sie ist 20,0 m lang und 12,0 m breit. Berechne die zu erneuernde Rasenfläche.}{5}
+\par\medskip\noindent\hfill A $=$\linie{25mm}
+\fusshilfe{\gfuss{3}{207,8 m²}}
 \end{pfaufg}
 \end{document}

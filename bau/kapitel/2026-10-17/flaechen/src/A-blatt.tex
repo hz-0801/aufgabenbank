@@ -152,27 +152,24 @@
 \pfheftstil
 \pflaufkopf[P10 \pkt{} Prüfung]{Fläche und Umfang}{PG40 A}\pfseitevon
 \pfheftkopf{Fläche und Umfang}{}
-\pfstufenzeile{Kreis}
+\pfstufenzeile{Umfang und Flächeninhalt von Figuren}
 
-% ===================== A Kreis =====================
-\gkopfvor{\gbstvor{A}\pfstufekopf{Kreis}{}}
-% DRUCK 2024-OS-K4a deckt 2024-OS-K4a
-\begin{pfaufg}{nach~P10\\’24}{1.}{}
-\gtextkaro{\begin{tikzpicture}[line width=0.7pt]\fill[black!12] (0,0) ellipse (0.75 and 0.26);\draw (-0.75,0) -- (0,2.0) -- (0.75,0);\draw (-0.75,0) arc (180:360:0.75 and 0.26);\draw[dashed,line width=0.5pt] (-0.75,0) arc (180:0:0.75 and 0.26);\node[font=\scriptsize,color=mbgrau,anchor=north] at (current bounding box.south) {(nicht maßstabsgerecht)};\end{tikzpicture}}{Eine Firma stellt Kegel her. Der Kegel hat die Maße $r = 30$ cm und $h = 80$ cm. Berechne den Flächeninhalt der Grundfläche des Kegels.}{4}
-\par\medskip\noindent\hfill G $=$\linie{25mm}
-\fusshilfe{\gfuss{1}{2827,4 cm²}}
+% ===================== A Umfang und Flächeninhalt von Figuren =====================
+\gkopfvor{\gbstvor{A}\pfstufekopf{Umfang und Flächeninhalt von Figuren}{}}
+% DRUCK 2014-OS-K5d deckt 2014-OS-K5d
+\begin{pfaufg}{nach~P10\\’14}{1.}{}
+\gtextkaro{\begin{tikzpicture}[scale=0.7,line width=0.7pt,font=\small]\fill[black!10] (0,4.4) -- (2.2,4.4) -- (2.2,1.1) -- (1.9,0) -- (0.3,0) -- (0,1.1) -- cycle;\fill[black!22] (0.3,3.6) rectangle (1.9,1.1);\draw (0,4.4) -- (2.2,4.4) -- (1.9,3.6) -- (0.3,3.6) -- cycle;\draw (0,4.4) -- (0,1.1) (2.2,4.4) -- (2.2,1.1);\draw (0.3,3.6) -- (0.3,0) (1.9,3.6) -- (1.9,0);\draw[dashed,line width=0.5pt] (0,1.1) -- (2.2,1.1);\draw (0,1.1) -- (0.3,0) -- (1.9,0) -- (2.2,1.1);\draw[line width=0.5pt] (1.1,4.4) -- (1.1,3.6);\draw[line width=0.4pt] (1.1,3.75) -- (1.25,3.75) -- (1.25,3.6);\draw[line width=0.5pt] (1.1,1.1) -- (1.1,0) node[pos=0.4,left,inner sep=1pt] {$h$};\draw[line width=0.4pt] (1.1,0.15) -- (1.25,0.15) -- (1.25,0);\draw[line width=0.4pt,<->] (0,4.65) -- (2.2,4.65) node[midway,above,inner sep=1pt] {110};\draw[line width=0.4pt,<->] (2.45,4.4) -- (2.45,1.1) node[midway,right,inner sep=1pt] {165};\draw[line width=0.4pt,<->] (2.42,1.02) -- (2.12,-0.08) node[midway,right,inner sep=2pt] {57};\draw[line width=0.4pt,<->] (0.3,-0.25) -- (1.9,-0.25) node[midway,below,inner sep=1pt] {80};\node[font=\scriptsize,color=mbgrau,anchor=north] at (1.1,-0.75) {(Maße in cm; nicht maßstabsgerecht)};\end{tikzpicture}}{Bäckermeister Neumann lässt eine Kühlvitrine in Form eines Prismas bauen (Maße in cm). Die Rückwand der Vitrine soll aus einer rechteckigen Platte ausgesägt werden. Es steht eine 1,8 m² große Platte zur Verfügung. Sie ist 1,20 m breit. Kann die Platte verwendet werden? Entscheide mit Hilfe einer Rechnung.}{4}
+\fusshilfe{\gfuss{1}{nein}}
 \end{pfaufg}
-% DRUCK 2016-OS-K3b deckt 2016-OS-K3b
-\begin{pfaufg}{nach~P10\\’16}{2.}{}
-Der Abwurfring beim Kugelstoßen ist ein Kreis mit einem Durchmesser von ca. 2,14 m. Eine Kugelstoßanlage soll neu gebaut werden. Ermittle dazu den Flächeninhalt des Kreises, den der Abwurfring einschließt.
-\karo{4}
+% DRUCK 2017-OS-K3a deckt 2017-OS-K3a
+% DRUCK 2017-OS-K3b deckt 2017-OS-K3b
+\begin{pfaufg}{nach~P10\\’17}{2.}{}
+\gtextkaro{\begin{tikzpicture}[line width=0.8pt,font=\small]\fill[black!8] (0,0) -- (3.6,0) arc (-90:90:0.9) -- (0,1.8) arc (90:270:0.9) -- cycle;\draw (0,0) -- (3.6,0) arc (-90:90:0.9) -- (0,1.8) arc (90:270:0.9) -- cycle;\draw[dashed,line width=0.4pt] (0,0) -- (0,1.8) (3.6,0) -- (3.6,1.8);\draw[line width=0.4pt,<->] (-1.25,0) -- (-1.25,1.8) node[midway,left,inner sep=2pt] {$a = 5$ m};\draw[line width=0.4pt,<->] (0,-0.4) -- (3.6,-0.4) node[midway,below,inner sep=2pt] {$b = 10$ m};\draw[line width=0.4pt] (0,-0.25) -- (0,-0.55) (3.6,-0.25) -- (3.6,-0.55);\node[font=\scriptsize,color=mbgrau] at (1.8,-1.25) {(nicht maßstabsgerecht)};\end{tikzpicture}}{Familie Sommer hat einen Swimmingpool gebaut. Er hat folgende Grundfläche:\begin{gbteil}{a)}{}{}Gib an, aus welchen Teilflächen sich die Grundfläche des Swimmingpools zusammensetzt.\end{gbteil}}{3}
+\begin{gbteil}{b)}{}{}
+Berechne die Größe der Grundfläche des Swimmingpools.
+\karo{5}
 \par\medskip\noindent\hfill A $=$\linie{25mm}
-\fusshilfe{\gfuss{2}{3,60 m²}}
-\end{pfaufg}
-% DRUCK 2018-OS-K6a deckt 2018-OS-K6a
-\begin{pfaufg}{nach~P10\\’18}{3.}{}
-\gtextkaro{\begin{tikzpicture}[line width=0.7pt]\fill[black!6] (0,0) rectangle (4.0,2.4);\draw[densely dotted] (0,0) rectangle (4.0,2.4);\filldraw[fill=black!45,line width=0.8pt] (1.25,1.45) circle (0.6);\node[font=\scriptsize,color=mbgrau,anchor=north] at (current bounding box.south) {(nicht maßstabsgerecht)};\end{tikzpicture}}{Der Fuchsturm ist ein beliebtes Ausflugsziel in der Stadt Jena. Der Turm hat einen Durchmesser $d$ von 6,4 m. Die Rasenfläche um den Turm soll erneuert werden. Sie ist 20,0 m lang und 12,0 m breit. Berechne die zu erneuernde Rasenfläche.}{5}
-\par\medskip\noindent\hfill A $=$\linie{25mm}
-\fusshilfe{\gfuss{3}{207,8 m²}}
+\end{gbteil}
+\fusshilfe{\gfuss{2}{a) Rechteck und zwei Halbkreise; b) 69,6 m²}}
 \end{pfaufg}
 \end{document}
