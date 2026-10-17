@@ -31,11 +31,13 @@ import pruefheft as P   # noqa: E402
 
 TITEL = {'quadratische': 'Quadratische Funktionen', 'trigonometrie': 'Trigonometrie', 'pythagoras': 'Satz des Pythagoras',
          'koerper': 'Körper', 'wachstum': 'Exponentielles Wachstum', 'potenzen': 'Potenzen und Wurzeln',
-         'gleichungen': 'Gleichungen und Gleichungssysteme', 'daten': 'Daten', 'flaechen': 'Fläche und Umfang'}
+         'gleichungen': 'Gleichungen und Gleichungssysteme', 'daten': 'Daten', 'flaechen': 'Fläche und Umfang',
+         'prozent': 'Prozent und Zinsen', 'zuordnungen': 'Zuordnungen und Dreisatz'}
 KENN = {'quadratische': 'PA30', 'trigonometrie': 'PG60', 'pythagoras': 'PG50', 'koerper': 'PG90', 'wachstum': 'PA50',
-        'potenzen': 'PZ15', 'gleichungen': 'PA20', 'daten': 'PS30', 'flaechen': 'PG40'}
+        'potenzen': 'PZ15', 'gleichungen': 'PA20', 'daten': 'PS30', 'flaechen': 'PG40',
+        'prozent': 'PS10', 'zuordnungen': 'PZ20'}
 # Kapitelblatt -> Kapitel der alten Daten (msa/zuordnung-<kapitel>.csv, FOR-Regel): 17.10. Durchsicht P10 6
-DATEN = {'trigonometrie': 'dreiecke', 'pythagoras': 'dreiecke', 'potenzen': 'zahlen', 'gleichungen': 'gleichungssysteme'}   # 17.10.: Abschnitte bestellbar als „PA30 A“, „PA30 B1“, …
+DATEN = {'trigonometrie': 'dreiecke', 'pythagoras': 'dreiecke', 'potenzen': 'zahlen', 'gleichungen': 'gleichungssysteme', 'zuordnungen': 'zahlen'}   # 17.10.: Abschnitte bestellbar als „PA30 A“, „PA30 B1“, …
 
 KAP_PRAEAMBEL = r"""
 \newcommand{\gunter}[2]{\par\addvspace{6pt}\noindent{\bfseries #1\enspace #2}\par\nobreak\vspace{2pt}}
