@@ -1,0 +1,257 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
+\newsavebox{\gbox}\newlength{\gLinks}
+% v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
+% Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr\wd\gbox+6mm\relax}%
+  \ifdim\gLinks>0.62\linewidth
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\leavevmode\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par\addvspace{6pt}}% v0.18 (PG80 Nr. 1): Abstand, damit die Linie von a) nicht an b) rutscht
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+% Skizzenfeld (v0.10, Lehrer 13.10.): Karo ab dem linken Rand über die Zeile, „Skizze“ klein grau oben links im Feld
+% (wie \pfskizzenfeld der Vorlage); der rechte Rand bleibt den Bedingungen
+\newcommand{\gskizze}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \node[anchor=north west,inner sep=2pt,font=\scriptsize,text=mbgrau,fill=white] at (0,{#1*10mm}) {Skizze};
+  \end{tikzpicture}\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% v0.18 (plan.md § 10, 15.10. l): Abschnittsbuchstabe A, B, C vor dem Namen im Kopf – als Vorsatz, damit der
+% Name im TeX gleich bleibt (Bestellkarte, Sprungziele lesen ihn)
+\def\gbstakt{}\newcommand{\gbstvor}[1]{\gdef\gbstakt{#1}}
+\NewCommandCopy\gpfstufekopfalt\pfstufekopf
+\RenewDocumentCommand{\pfstufekopf}{o m m}{\IfValueTF{#1}{\gpfstufekopfalt[#1]}{\gpfstufekopfalt}%
+  {\ifx\gbstakt\empty\else\gbstakt\enspace\fi #2}{#3}\gdef\gbstakt{}}
+% v0.18 (16.10. e): Begriff grau, ohne Nummer, ohne Rahmen über der ersten Aufgabe der Stufe
+\newcommand{\gbegriff}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}\parbox[t]{\dimexpr\linewidth-\mbpfnr\relax}{\raggedright\small\color{mbgrau}#1}\par\nobreak\addvspace{3pt}}
+% v0.18 (16.10. g): Lösungsblatt – Kopf mit kräftigem Strich, Abschnitt klein grau als Zwischenzeile
+\newcommand{\glkopf}[1]{\noindent{\large\bfseries Lösungen \textperiodcentered{} #1}\par\vspace{3pt}\hrule height 1.2pt\par\medskip}
+\newcommand{\glzwischen}[1]{\par\addvspace{8pt}\Needspace*{4\baselineskip}\noindent{\footnotesize\color{mbgrau}#1}\par\nobreak\vspace{1pt}}
+% v0.18 (15.10. o, w): Blattende – Kern ohne Rahmen, dann graue Zeile „Mehr: n Aufgaben“
+\newcommand{\gkern}[1]{\par\addvspace{14pt}\Needspace*{6\baselineskip}\noindent{\bfseries Kern}\par\nobreak\smallskip
+  {\small\raggedright #1\par}}
+\newcommand{\gmehr}[1]{\par\addvspace{10pt}\noindent{\footnotesize\color{mbgrau}Mehr: #1 Aufgaben}\par}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+
+\newcommand{\gunter}[2]{\par\addvspace{6pt}\noindent{\bfseries #1\enspace #2}\par\nobreak\vspace{2pt}}
+\newcommand{\gsternzeile}{\par\vspace{-4pt}\noindent{\footnotesize\color{mbgrau}* nur FOR}\par\medskip}
+% 17.10.: Skizze oben bündig mit der ersten Textzeile (beide Spalten hängen an der Oberkante); der Rechenraum (Karo)
+% beginnt direkt unter dem Text, links neben dem Graph, und läuft unter dem Graph über die ganze Zeile weiter
+% (Streifen links = auf 5 mm aufgerundete Höhe des Graphen unter dem Text, Raster durchgehend; die Fläche des Streifens
+% wird von der Karohöhe unter dem Graph abgezogen, auf 0,5 cm aufgerundet – die Gesamtfläche Rechenraum bleibt mindestens #3 × Zeile); #3 = Zeilen Karo in cm
+% unter dem Graph (0 = kein Karo). Kein Verkleinern des Graphen.
+\newsavebox{\gtbox}\newlength{\gWl}\newlength{\gDh}
+\newcommand{\gkaroohne}[1]{\nointerlineskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\gtextkaro}[3]{\sbox{\gbox}{#1}%
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par\ifnum#3>0 \karo{#3}\fi
+  \else
+    \setlength{\gWl}{\dimexpr\linewidth-\wd\gbox-5mm\relax}%
+    \sbox{\gtbox}{\begin{minipage}[t]{\gWl}\raggedright #2\par\end{minipage}}%
+    \setlength{\gDh}{\dimexpr\ht\gbox+\dp\gbox-\ht\gtbox-\dp\gtbox-6pt\relax}%
+    \leavevmode
+    \ifnum#3>0\ifdim\gDh>0pt
+      \pgfmathsetmacro{\gxs}{floor(\gWl/5mm)*5mm}\pgfmathsetmacro{\gys}{ceil(\gDh/5mm)*5mm}%
+      \begin{minipage}[t]{\gWl}\usebox{\gtbox}\par\vspace{6pt}\nointerlineskip\noindent
+        \begin{tikzpicture}
+        \clip (0,0) rectangle (\gxs pt,\gys pt);
+        \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid (\gxs pt,\gys pt);
+        \end{tikzpicture}\par\end{minipage}%
+    \else\usebox{\gtbox}\fi\else\usebox{\gtbox}\fi
+    \hfill\begin{minipage}[t]{\wd\gbox}\vspace{-\dimexpr\ht\strutbox+2.4ex\relax}\usebox{\gbox}\end{minipage}\par
+    \ifnum#3>0 \ifdim\gDh>0pt
+      \pgfmathsetmacro{\gnn}{max(0,ceil(2*(#3-(\gys/28.4528)*(\gxs/\linewidth)))/2)}%
+      \ifdim\gnn pt>0pt\gkaroohne{\gnn}\fi
+    \else\karo{#3}\fi\fi
+  \fi}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} Prüfung]{Körper}{PG90 B}\pfseitevon
+\pfheftkopf{Körper}{}
+\pfstufenzeile{Prisma und Zylinder}
+\gsternzeile
+
+% ===================== B Prisma und Zylinder =====================
+\gkopfvor{\gbstvor{B}\pfstufekopf{Prisma und Zylinder}{}\gunter{B1}{Volumen}}
+% DRUCK 2026-FOR-B1f deckt 2026-FOR-B1f 2026-EBR-B1f
+\begin{pfaufg}{nach~P10\\’26}{1.}{Basis}
+Gib das Volumen eines Würfels mit der Kantenlänge $a = 3$ cm an.
+\par\medskip\noindent\hfill V $=$\linie{25mm}
+\fusshilfe{\gfuss{1}{27 cm³}}
+\end{pfaufg}\vspace{-6pt}
+% DRUCK 2026-FOR-K2a deckt 2026-FOR-K2a 2026-EBR-K2a
+\begin{pfaufg}{nach~P10\\’26}{2.}{}
+\gtextkaro{\begin{tikzpicture}[scale=0.6,line width=0.7pt]\fill[black!15] (-0.8,2.4) arc (180:360:0.8 and 0.28) -- (0.8,0) arc (0:-180:0.8 and 0.28) -- cycle;\draw (-0.8,0) -- (-0.8,2.4) (0.8,0) -- (0.8,2.4);\draw (-0.8,0) arc (180:360:0.8 and 0.28);\draw[dashed,line width=0.5pt] (-0.8,0) arc (180:0:0.8 and 0.28);\draw[dashed,line width=0.5pt] (0,2.4) ellipse (0.8 and 0.28);\draw (-0.8,2.4) -- (0,3.8) -- (0.8,2.4);\draw[line width=0.4pt] (1.1,0) -- (1.1,2.4) node[midway,right,font=\small] {$h$};\draw[line width=0.4pt] (1.0,0) -- (1.2,0) (1.0,2.4) -- (1.2,2.4);\fill (0,0) circle (0.9pt);\draw[line width=0.5pt] (0,0) -- (0.8,0) node[midway,above,font=\small,inner sep=1pt] {$r$};\node[font=\scriptsize,color=mbgrau,anchor=north] at (current bounding box.south) {(nicht maßstabsgerecht)};\end{tikzpicture}}{Der untere Teil des abgebildeten Turms hat die Form eines Zylinders mit $h = 25{,}0$ m und $r = 4{,}7$ m; sein Dach hat die Form eines Kegels. Berechne das Volumen des zylinderförmigen Teils des Turms.}{4}
+\par\medskip\noindent\hfill V $=$\linie{25mm}
+\fusshilfe{\gfuss{2}{1734,9 m³}}
+\end{pfaufg}\vspace{-6pt}
+% DRUCK 2023-OS-K5b deckt 2023-OS-K5b
+\begin{pfaufg}{nach~P10\\’23}{3.}{}
+\gtextkaro{\begin{tikzpicture}[line width=0.7pt]\draw (0,1.0) ellipse (0.5 and 0.175);\draw (-0.5,0) -- (-0.5,1.0) (0.5,0) -- (0.5,1.0);\draw (-0.5,0) arc (180:360:0.5 and 0.175);\draw[dashed,line width=0.5pt] (-0.5,0) arc (180:0:0.5 and 0.175);\node[font=\scriptsize,color=mbgrau,anchor=north] at (current bounding box.south) {(nicht maßstabsgerecht)};\end{tikzpicture}}{Eine zylinderförmige Konservendose hat den Radius 4 cm und die Höhe 8 cm. Laut Hersteller hat die Konservendose ein Volumen von ca. 400 ml. Weise nach, dass diese Angabe richtig ist. Hinweis: 1 cm³ entspricht 1 ml.}{4}
+\fusshilfe{\gfuss{3}{402,1 cm³}}
+\end{pfaufg}\vspace{-6pt}
+% DRUCK 2022-OS-K2b deckt 2022-OS-K2b
+\begin{pfaufg}{nach~P10\\’22}{4.}{}
+\gtextkaro{\begin{tikzpicture}[line width=0.7pt]\fill[black!14] (-0.45,1.0) arc (180:360:0.45 and 0.1575) -- (0.45,0) arc (0:-180:0.45 and 0.1575) -- cycle;\draw (0,1.0) ellipse (0.45 and 0.1575);\draw (-0.45,0) -- (-0.45,1.0) (0.45,0) -- (0.45,1.0);\draw (-0.45,0) arc (180:360:0.45 and 0.1575);\draw[dashed,line width=0.5pt] (-0.45,0) arc (180:0:0.45 and 0.1575);\draw[line width=0.5pt] (0,1.0) ellipse (0.3825 and 0.12600000000000003);\node[font=\scriptsize,color=mbgrau,anchor=north] at (current bounding box.south) {(nicht maßstabsgerecht)};\end{tikzpicture}}{Ein zylinderförmiger Becher ohne Deckel ist $h = 7$ cm hoch und hat den Radius $r = 3{,}2$ cm. Zeige, dass in den Becher 200 ml Flüssigkeit passen. Hinweis: 1 cm³ entspricht 1 ml.}{4}
+\fusshilfe{\gfuss{4}{225,2 cm³}}
+\end{pfaufg}\vspace{-6pt}
+% DRUCK 2021-OS-K4a deckt 2021-OS-K4a
+\begin{pfaufg}{nach~P10\\’21}{5.}{}
+\gtextkaro{\begin{tikzpicture}[line width=0.7pt]\fill[black!14] (-0.5,1.25) arc (180:360:0.5 and 0.175) -- (0.5,0) arc (0:-180:0.5 and 0.175) -- cycle;\draw (0,1.25) ellipse (0.5 and 0.175);\draw (-0.5,0) -- (-0.5,1.25) (0.5,0) -- (0.5,1.25);\draw (-0.5,0) arc (180:360:0.5 and 0.175);\draw[dashed,line width=0.5pt] (-0.5,0) arc (180:0:0.5 and 0.175);\draw[line width=1.1pt] (-0.5,0.42) arc (180:360:0.5 and 0.175);\draw[line width=1.1pt] (-0.5,0.83) arc (180:360:0.5 and 0.175);\node[font=\scriptsize,color=mbgrau,anchor=north] at (current bounding box.south) {(nicht maßstabsgerecht)};\end{tikzpicture}}{Herr Gärtner möchte in seinem Garten eine zylinderförmige Regentonne aufstellen. Sie ist $h = 95$ cm hoch und hat den Radius $r = 29$ cm. Laut Hersteller passen ca. 250 Liter Wasser in die Regentonne (1 $\ell$ $\mathrel{\widehat{=}}$ 1 dm³). Bestätige diese Angabe durch eine geeignete Rechnung.}{4}
+\fusshilfe{\gfuss{5}{251 l}}
+\end{pfaufg}\vspace{-6pt}
+% DRUCK 2014-OS-K5a deckt 2014-OS-K5a
+\begin{pfaufg}{nach~P10\\’14}{6.}{}
+\gtextkaro{\begin{tikzpicture}[scale=0.7,line width=0.7pt,font=\small]\fill[black!10] (0,4.4) -- (2.2,4.4) -- (2.2,1.1) -- (1.9,0) -- (0.3,0) -- (0,1.1) -- cycle;\fill[black!22] (0.3,3.6) rectangle (1.9,1.1);\draw (0,4.4) -- (2.2,4.4) -- (1.9,3.6) -- (0.3,3.6) -- cycle;\draw (0,4.4) -- (0,1.1) (2.2,4.4) -- (2.2,1.1);\draw (0.3,3.6) -- (0.3,0) (1.9,3.6) -- (1.9,0);\draw[dashed,line width=0.5pt] (0,1.1) -- (2.2,1.1);\draw (0,1.1) -- (0.3,0) -- (1.9,0) -- (2.2,1.1);\draw[line width=0.5pt] (1.1,4.4) -- (1.1,3.6);\draw[line width=0.4pt] (1.1,3.75) -- (1.25,3.75) -- (1.25,3.6);\draw[line width=0.5pt] (1.1,1.1) -- (1.1,0) node[pos=0.4,left,inner sep=1pt] {$h$};\draw[line width=0.4pt] (1.1,0.15) -- (1.25,0.15) -- (1.25,0);\draw[line width=0.4pt,<->] (0,4.65) -- (2.2,4.65) node[midway,above,inner sep=1pt] {110};\draw[line width=0.4pt,<->] (2.45,4.4) -- (2.45,1.1) node[midway,right,inner sep=1pt] {165};\draw[line width=0.4pt,<->] (2.42,1.02) -- (2.12,-0.08) node[midway,right,inner sep=2pt] {57};\draw[line width=0.4pt,<->] (0.3,-0.25) -- (1.9,-0.25) node[midway,below,inner sep=1pt] {80};\node[font=\scriptsize,color=mbgrau,anchor=north] at (1.1,-0.75) {(Maße in cm; nicht maßstabsgerecht)};\end{tikzpicture}}{Eine Kühlvitrine für ein Café soll die Form eines Prismas haben. Als Grundfläche ist ein gleichschenkliges Trapez mit einem Flächeninhalt von 5 225 cm² vorgesehen. Berechne das Volumen der Vitrine.}{3}
+\par\medskip\noindent\hfill V $=$\linie{25mm}
+\fusshilfe{\gfuss{6}{862 125 cm³}}
+\end{pfaufg}\vspace{-6pt}
+% DRUCK 2021-OS-K4b deckt 2021-OS-K4b
+\begin{pfaufg}{nach~P10\\’21}{7.\textsuperscript{*}}{}
+\gtextkaro{\begin{tikzpicture}[line width=0.7pt]\fill[black!14] (-0.5,1.25) arc (180:360:0.5 and 0.175) -- (0.5,0) arc (0:-180:0.5 and 0.175) -- cycle;\draw (0,1.25) ellipse (0.5 and 0.175);\draw (-0.5,0) -- (-0.5,1.25) (0.5,0) -- (0.5,1.25);\draw (-0.5,0) arc (180:360:0.5 and 0.175);\draw[dashed,line width=0.5pt] (-0.5,0) arc (180:0:0.5 and 0.175);\draw[line width=1.1pt] (-0.5,0.42) arc (180:360:0.5 and 0.175);\draw[line width=1.1pt] (-0.5,0.83) arc (180:360:0.5 and 0.175);\node[font=\scriptsize,color=mbgrau,anchor=north] at (current bounding box.south) {(nicht maßstabsgerecht)};\end{tikzpicture}}{Herr Gärtner möchte in seinem Garten eine zylinderförmige Regentonne aufstellen. Sie ist $h = 95$ cm hoch und hat den Radius $r = 29$ cm. Er möchte gerne mehr Wasser auffangen und überlegt: „Wenn ich eine Regentonne mit dem doppelten Radius hätte, könnte ich genau doppelt so viel Wasser auffangen.“ Entscheide, ob diese Überlegung zutrifft. Begründe deine Entscheidung.}{4}
+\fusshilfe{\gfuss{7}{nein}}
+\end{pfaufg}\vspace{-6pt}
+% DRUCK 2023-OS-K5d deckt 2023-OS-K5d
+\begin{pfaufg}{nach~P10\\’23}{8.\textsuperscript{*}}{}
+\gtextkaro{\begin{tikzpicture}[line width=0.7pt]\draw (0,1.0) ellipse (0.5 and 0.175);\draw (-0.5,0) -- (-0.5,1.0) (0.5,0) -- (0.5,1.0);\draw (-0.5,0) arc (180:360:0.5 and 0.175);\draw[dashed,line width=0.5pt] (-0.5,0) arc (180:0:0.5 and 0.175);\fill (0,1.0) circle (0.9pt);\draw[line width=0.5pt] (0,1.0) -- (0.5,1.0) node[midway,above,font=\small,inner sep=1pt] {$r$};\node[font=\scriptsize,color=mbgrau,anchor=north] at (current bounding box.south) {(nicht maßstabsgerecht)};\end{tikzpicture}}{Die Deckel einer zylinderförmigen Konservendose haben den Radius $r = 4$ cm. Sie sollen auch für größere Konservendosen mit einem Volumen von 1 Liter verwendet werden. Ermittle die Höhe der großen Konservendose.}{4}
+\par\medskip\noindent\hfill h $=$\linie{25mm}
+\fusshilfe{\gfuss{8}{19,9 cm}}
+\end{pfaufg}\vspace{-6pt}
+% DRUCK 2022-OS-K2d deckt 2022-OS-K2d
+\begin{pfaufg}{nach~P10\\’22}{9.\textsuperscript{*}}{}
+\gtextkaro{\begin{tikzpicture}[line width=0.7pt]\fill[black!14] (-0.45,1.0) arc (180:360:0.45 and 0.1575) -- (0.45,0) arc (0:-180:0.45 and 0.1575) -- cycle;\draw (0,1.0) ellipse (0.45 and 0.1575);\draw (-0.45,0) -- (-0.45,1.0) (0.45,0) -- (0.45,1.0);\draw (-0.45,0) arc (180:360:0.45 and 0.1575);\draw[dashed,line width=0.5pt] (-0.45,0) arc (180:0:0.45 and 0.1575);\draw[line width=0.5pt] (0,1.0) ellipse (0.3825 and 0.12600000000000003);\node[font=\scriptsize,color=mbgrau,anchor=north] at (current bounding box.south) {(nicht maßstabsgerecht)};\end{tikzpicture}}{Ein zylinderförmiger Becher ohne Deckel ist 7 cm hoch. Ein größerer Becher soll ein Volumen von 425 ml haben. Die Höhe von 7 cm wird beibehalten. Berechne den Radius dieses Bechers.}{4}
+\par\medskip\noindent\hfill r $=$\linie{25mm}
+\fusshilfe{\gfuss{9}{4,40 cm}}
+\end{pfaufg}\vspace{-6pt}
+% DRUCK 2019-OS-K4c deckt 2019-OS-K4c
+\begin{pfaufg}{nach~P10\\’19}{10.}{}
+\gtextkaro{\begin{tikzpicture}[scale=0.75,line width=0.7pt,font=\small]\fill[black!18] (0,0) -- (2.4,0) -- (1.2,2.08) -- cycle;\draw (0,0) -- (2.4,0) -- (1.2,2.08) -- cycle;\draw[dashed,line width=0.5pt] (1.2,0) -- (1.2,2.08);\draw[line width=0.4pt] (1.2,0.2) -- (1.4,0.2) -- (1.4,0);\draw[line width=0.4pt] (1.25,1.0) -- (2.2,1.3) node[right,inner sep=1pt] {$h_{\text{Deckfläche}}$};\node[font=\scriptsize,color=mbgrau,anchor=north] at (current bounding box.south) {(nicht maßstabsgerecht)};\end{tikzpicture}}{Auf einem Mast sitzt ein dreiseitiges Prisma. Jede der drei Seitenflächen ist 1,50 m breit und 1,20 m hoch. Die Höhe der dreieckigen Deckfläche beträgt 1,30 m. Ermittle den Flächeninhalt der Deckfläche. Durch ein Loch in der Deckfläche ist Regenwasser eingedrungen. Zeige rechnerisch, dass in das Prisma ca. 1,2 m³ Regenwasser passen. Das aufgesetzte Prisma hat leer eine Masse von 200 kg. Berechne die Masse des Prismas, wenn es zu 10 \% mit Regenwasser gefüllt ist. Hinweis: 1 m³ Regenwasser hat eine Masse von 1 000 kg.}{7}
+\fusshilfe{\gfuss{10}{0,975 m²; 1,2 m³; 317 kg}}
+\end{pfaufg}\vspace{-6pt}
+% DRUCK 2020-OS-K5c deckt 2020-OS-K5c
+\begin{pfaufg}{nach~P10\\’20}{11.\textsuperscript{*}}{}
+\gtextkaro{\begin{tikzpicture}[x={(0.12cm,0cm)},y={(0.06cm,0.06cm)},z={(0cm,0.12cm)},line width=0.7pt,font=\small]\draw (0,0,0) -- (14,0,0) -- (14,0,15) -- (0,0,6) -- cycle;\draw (14,0,0) -- (14,12,0) -- (14,12,15) -- (14,0,15);\draw (0,0,6) -- (0,12,6) -- (14,12,15);\draw[dashed,line width=0.5pt] (0,0,0) -- (0,12,0) -- (14,12,0) (0,12,0) -- (0,12,6);\draw[line width=0.4pt,<->] (0,0,-1.8) -- (14,0,-1.8) node[midway,below,inner sep=1pt] {14 cm};\draw[line width=0.4pt,<->] (15.2,0,-0.6) -- (15.2,12,-0.6) node[midway,below right,inner sep=1pt] {12 cm};\draw[line width=0.4pt,<->] (-1.2,0,0) -- (-1.2,0,6) node[midway,left,inner sep=1pt] {6 cm};\draw[line width=0.4pt,<->] (16,12,0) -- (16,12,15) node[midway,right,inner sep=1pt] {15 cm};\node[font=\scriptsize,color=mbgrau,anchor=north] at (current bounding box.south) {(nicht maßstabsgerecht)};\end{tikzpicture}}{Eine Schachtel hat die Form des abgebildeten Prismas. Mehrere Schachteln sollen in eine quaderförmige Kiste verpackt werden. Die Kiste hat die Abmessungen: Länge = 28 cm, Breite = 24 cm, Höhe = 22 cm. Gib die größtmögliche Anzahl der Schachteln an, die in die Kiste passen. Erläutere deinen Lösungsweg. Du kannst auch eine Skizze verwenden.}{4}
+\par\medskip\noindent\hfill Anzahl $=$\linie{25mm}
+\fusshilfe{\gfuss{11}{8 Schachteln}}
+\end{pfaufg}\vspace{-6pt}
+\gkopfvor{\gunter{B2}{Oberfläche}}
+% DRUCK 2018-OS-K6b deckt 2018-OS-K6b
+\begin{pfaufg}{nach~P10\\’18}{12.}{}
+Der Fuchsturm in Jena hat einen Durchmesser $d$ von 6,4 m. Die 21,7 m hohe Außenmauer des zylinderförmigen Turmes wurde renoviert. Berechne die Fläche der Außenmauer.
+\karo{3}
+\fusshilfe{\gfuss{12}{436,3 m²}}
+\end{pfaufg}\vspace{-6pt}
+% DRUCK 2020-OS-K5a deckt 2020-OS-K5a
+\begin{pfaufg}{nach~P10\\’20}{13.}{}
+\gtextkaro{\begin{tikzpicture}[x={(0.12cm,0cm)},y={(0.06cm,0.06cm)},z={(0cm,0.12cm)},line width=0.7pt,font=\small]\draw (0,0,0) -- (14,0,0) -- (14,0,15) -- (0,0,6) -- cycle;\draw (14,0,0) -- (14,12,0) -- (14,12,15) -- (14,0,15);\draw (0,0,6) -- (0,12,6) -- (14,12,15);\draw[dashed,line width=0.5pt] (0,0,0) -- (0,12,0) -- (14,12,0) (0,12,0) -- (0,12,6);\draw[line width=0.4pt,<->] (0,0,-1.8) -- (14,0,-1.8) node[midway,below,inner sep=1pt] {14 cm};\draw[line width=0.4pt,<->] (15.2,0,-0.6) -- (15.2,12,-0.6) node[midway,below right,inner sep=1pt] {12 cm};\draw[line width=0.4pt,<->] (-1.2,0,0) -- (-1.2,0,6) node[midway,left,inner sep=1pt] {6 cm};\draw[line width=0.4pt,<->] (16,12,0) -- (16,12,15) node[midway,right,inner sep=1pt] {15 cm};\node[font=\scriptsize,color=mbgrau,anchor=north] at (current bounding box.south) {(nicht maßstabsgerecht)};\end{tikzpicture}\hspace{4mm}\begin{tikzpicture}[x=0.45cm,y=0.45cm,line width=0.9pt]\draw[black!30,line width=0.3pt] (0,0) grid (22,23);\draw (1,9) rectangle (9.32,15);\draw (9.32,9) rectangle (12.32,15);\draw (12.32,9) rectangle (19.32,15);\draw (12.32,15) -- (12.32,18) -- (19.32,22.5) -- (19.32,15);\node[font=\scriptsize,color=mbgrau,anchor=south east,fill=white,inner sep=1pt] at (22,0) {1 Kästchen $\mathrel{\widehat{=}}$ 2 cm};\end{tikzpicture}}{Eine Schachtel hat die Form des abgebildeten Prismas. Martina hat angefangen, das Netz dieser Schachtel zu skizzieren. Vervollständige das Netz.}{0}
+\fusshilfe{\gfuss{13}{+ Rechteck 15 × 12 rechts, + Trapez unten}}
+\end{pfaufg}\vspace{-6pt}
+% DRUCK 2019-OS-K4a deckt 2019-OS-K4a
+\begin{pfaufg}{nach~P10\\’19}{14.}{}
+\gtextkaro{\begin{tikzpicture}[line width=0.7pt]\fill[black!45] (-0.06,-2.0) rectangle (0.06,0);\fill[black!25] (-0.9,0) -- (0.5,-0.25) -- (0.5,1.0) -- (-0.9,1.25) -- cycle;\draw (-0.9,0) -- (0.5,-0.25) -- (0.5,1.0) -- (-0.9,1.25) -- cycle;\fill[black!12] (0.5,-0.25) -- (0.95,0.3) -- (0.95,1.55) -- (0.5,1.0) -- cycle;\draw (0.5,-0.25) -- (0.95,0.3) -- (0.95,1.55) -- (0.5,1.0);\draw (-0.9,1.25) -- (-0.45,1.8) -- (0.95,1.55);\node[font=\scriptsize,color=mbgrau,anchor=north] at (current bounding box.south) {(nicht maßstabsgerecht)};\end{tikzpicture}\hspace{4mm}\begin{tikzpicture}[x=0.45cm,y=0.45cm,line width=0.9pt]\draw[black!30,line width=0.3pt] (0,0) grid (22,14);\draw (6,7) rectangle (11,11);\draw (11,7) rectangle (16,11);\draw (11,7) -- (13.5,2.67) -- (16,7);\node[font=\small,right,inner sep=2pt] at (14.75,4.8) {$a$};\end{tikzpicture}}{Auf einem zylinderförmigen Mast sitzt ein dreiseitiges Prisma. Jede der drei Seitenflächen des Prismas ist 1,50 m breit und 1,20 m hoch. Vervollständige das Netz des Prismas und gib die Länge von $a$ an.\par\medskip\noindent a $=$\linie{25mm}}{0}
+\fusshilfe{\gfuss{14}{+ 1 Rechteck, + 1 Dreieck; 1,50 m}}
+\end{pfaufg}\vspace{-6pt}
+% DRUCK 2023-OS-K5a deckt 2023-OS-K5a
+\begin{pfaufg}{nach~P10\\’23}{15.}{}
+\gtextkaro{\begin{tikzpicture}[line width=0.7pt]\draw (0,1.0) ellipse (0.5 and 0.175);\draw (-0.5,0) -- (-0.5,1.0) (0.5,0) -- (0.5,1.0);\draw (-0.5,0) arc (180:360:0.5 and 0.175);\draw[dashed,line width=0.5pt] (-0.5,0) arc (180:0:0.5 and 0.175);\node[font=\scriptsize,color=mbgrau,anchor=north] at (current bounding box.south) {(nicht maßstabsgerecht)};\end{tikzpicture}}{Eine zylinderförmige Konservendose hat den Radius 4 cm und die Höhe 8 cm. Skizziere die Mantelfläche der Konservendose. Bestimme die Länge $a$ und die Breite $b$ der Mantelfläche und beschrifte deine Skizze entsprechend.}{4}
+\par\medskip\noindent\hfill a $=$\linie{25mm}\quad b $=$\linie{25mm}
+\fusshilfe{\gfuss{15}{25,1 cm; 8 cm}}
+\end{pfaufg}\vspace{-6pt}
+% DRUCK 2022-OS-K2a deckt 2022-OS-K2a
+\begin{pfaufg}{nach~P10\\’22}{16.}{}
+Ein zylinderförmiger Becher ohne Deckel ist $h = 7$ cm hoch und hat den Radius $r = 3{,}2$ cm. Wähle aus den Skizzen das Netz aus, das zum Becher passt. Kreuze an. Ermittle die Länge und die Breite der Mantelfläche.
+\par\smallskip\noindent\setlength{\gbildbreite}{\dimexpr0.96\linewidth/3\relax}\sbox{\gbox}{\vbox{\begin{tikzpicture}[line width=0.7pt]\draw (0,0) rectangle (1.39,0.75);\draw (1.76,0.38) circle (0.375);\end{tikzpicture}\par\begin{tikzpicture}[line width=0.7pt]\draw (0,0) rectangle (2.70,0.82);\draw (1.35,1.19) circle (0.375);\end{tikzpicture}\par\begin{tikzpicture}[line width=0.7pt]\draw (0,0) rectangle (2.36,0.82);\draw (1.99,1.19) circle (0.375);\end{tikzpicture}}}\gbildoption{}{\begin{tikzpicture}[line width=0.7pt]\draw (0,0) rectangle (1.39,0.75);\draw (1.76,0.38) circle (0.375);\end{tikzpicture}}{\dimexpr\ht\gbox/3+\baselineskip\relax}\hfill\gbildoption{}{\begin{tikzpicture}[line width=0.7pt]\draw (0,0) rectangle (2.70,0.82);\draw (1.35,1.19) circle (0.375);\end{tikzpicture}}{\dimexpr\ht\gbox/3+\baselineskip\relax}\hfill\gbildoption{}{\begin{tikzpicture}[line width=0.7pt]\draw (0,0) rectangle (2.36,0.82);\draw (1.99,1.19) circle (0.375);\end{tikzpicture}}{\dimexpr\ht\gbox/3+\baselineskip\relax}\par
+\karo{3}
+\par\medskip\noindent\hfill Länge $=$\linie{25mm}\quad Breite $=$\linie{25mm}
+\fusshilfe{\gfuss{16}{Netz 3; 20,1 cm; 7 cm}}
+\end{pfaufg}\vspace{-6pt}
+% DRUCK 2014-OS-K5b deckt 2014-OS-K5b
+\begin{pfaufg}{nach~P10\\’14}{17.}{}
+\gtextkaro{\begin{tikzpicture}[scale=0.7,line width=0.7pt,font=\small]\fill[black!10] (0,4.4) -- (2.2,4.4) -- (2.2,1.1) -- (1.9,0) -- (0.3,0) -- (0,1.1) -- cycle;\fill[black!22] (0.3,3.6) rectangle (1.9,1.1);\draw (0,4.4) -- (2.2,4.4) -- (1.9,3.6) -- (0.3,3.6) -- cycle;\draw (0,4.4) -- (0,1.1) (2.2,4.4) -- (2.2,1.1);\draw (0.3,3.6) -- (0.3,0) (1.9,3.6) -- (1.9,0);\draw[dashed,line width=0.5pt] (0,1.1) -- (2.2,1.1);\draw (0,1.1) -- (0.3,0) -- (1.9,0) -- (2.2,1.1);\draw[line width=0.5pt] (1.1,4.4) -- (1.1,3.6);\draw[line width=0.4pt] (1.1,3.75) -- (1.25,3.75) -- (1.25,3.6);\draw[line width=0.5pt] (1.1,1.1) -- (1.1,0) node[pos=0.4,left,inner sep=1pt] {$h$};\draw[line width=0.4pt] (1.1,0.15) -- (1.25,0.15) -- (1.25,0);\draw[line width=0.4pt,<->] (0,4.65) -- (2.2,4.65) node[midway,above,inner sep=1pt] {110};\draw[line width=0.4pt,<->] (2.45,4.4) -- (2.45,1.1) node[midway,right,inner sep=1pt] {165};\draw[line width=0.4pt,<->] (2.42,1.02) -- (2.12,-0.08) node[midway,right,inner sep=2pt] {57};\draw[line width=0.4pt,<->] (0.3,-0.25) -- (1.9,-0.25) node[midway,below,inner sep=1pt] {80};\draw (3.60,1.10) rectangle (4.28,3.08);\draw (4.28,1.10) rectangle (5.24,3.08);\draw (4.28,3.08) -- (4.10,3.58) -- (5.42,3.58) -- (5.24,3.08);\draw (4.28,1.10) -- (4.10,0.60) -- (5.42,0.60) -- (5.24,1.10);\node[left] at (3.60,2.09) {$d$};\node[above] at (3.94,1.10) {$b$};\node[above] at (4.76,1.10) {$c$};\node[below] at (4.76,0.60) {$a$};\node[font=\scriptsize,color=mbgrau,anchor=north] at (1.1,-0.75) {(Maße in cm; nicht maßstabsgerecht)};\end{tikzpicture}}{Eine Kühlvitrine hat die Form eines Prismas; die Grundfläche ist ein gleichschenkliges Trapez. Vervollständige die Skizze des Netzes der Vitrine. Ergänze die fehlenden Maße; es ist $c = 80$ cm.\par\medskip\noindent a $=$\linie{25mm}\par\medskip\noindent b $=$\linie{25mm}\par\medskip\noindent d $=$\linie{25mm}}{0}
+\fusshilfe{\gfuss{17}{+ Rechteck 57 × 165, + Rechteck 110 × 165; 110 cm; 57 cm; 165 cm}}
+\end{pfaufg}\vspace{-6pt}
+\end{document}
