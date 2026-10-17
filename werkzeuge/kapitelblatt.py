@@ -7,7 +7,8 @@ Stufenpunkte. Jeder Abschnitt ist einzeln bestellbar (<Buchstabe>-blatt.pdf, <Bu
   python3 werkzeuge/kapitelblatt.py --kapitel quadratische --datum 2026-10-17
 
 Daten (nur gelesen):
-  mathe-nachhilfe  msa/buchkapitel-p10.csv          Kapitel, Abschnitt, Folge, gleich_mit (Zuordnung, Prüfgrundlage)
+  mathe-nachhilfe  msa/buchkapitel-p10.csv          blatt, Kapitel, Abschnitt, Folge, gleich_mit (Zuordnung, Prüfgrundlage;
+                                                    gelesen nur Zeilen mit blatt = --kapitel)
                    msa/kapitel-p10/<kapitel>.csv    je gedruckte Aufgabe: Wortlaut (Original, Du-Form), grafik, form,
                                                     karo (Zeilen Rechenraum), loesung (Ergebnis nach „⇒“), deckt
                                                     (alle Zeilen der Zuordnung, die sie vertritt: Marke)
@@ -358,7 +359,8 @@ def main():
     ap.add_argument('--mn', default=os.path.join(os.path.dirname(BANK), 'mathe-nachhilfe'))
     ap.add_argument('--bb', default=os.path.join(os.path.dirname(BANK), 'blattbau'))
     a = ap.parse_args()
-    buch = lies(os.path.join(a.mn, 'msa', 'buchkapitel-p10.csv'))
+    # Spalte blatt (17.10., Durchsicht P10 6): eine Zuordnung für alle Kapitelblätter, hier nur die eigenen Zeilen
+    buch = [b for b in lies(os.path.join(a.mn, 'msa', 'buchkapitel-p10.csv')) if b.get('blatt', a.kapitel) == a.kapitel]
     zeilen = lies(os.path.join(a.mn, 'msa', 'kapitel-p10', f'{a.kapitel}.csv'))
     D = P.Daten(a.mn, a.kapitel)
     titel, kenn = TITEL.get(a.kapitel, a.kapitel.capitalize()), KENN.get(a.kapitel, '')
