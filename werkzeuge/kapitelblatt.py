@@ -29,8 +29,13 @@ BANK = os.path.dirname(HIER)
 sys.path.insert(0, HIER)
 import pruefheft as P   # noqa: E402
 
-TITEL = {'quadratische': 'Quadratische Funktionen'}
-KENN = {'quadratische': 'PA30'}   # 17.10.: Abschnitte bestellbar als „PA30 A“, „PA30 B1“, …
+TITEL = {'quadratische': 'Quadratische Funktionen', 'trigonometrie': 'Trigonometrie', 'pythagoras': 'Satz des Pythagoras',
+         'koerper': 'Körper', 'wachstum': 'Exponentielles Wachstum', 'potenzen': 'Potenzen und Wurzeln',
+         'gleichungen': 'Gleichungen und Gleichungssysteme', 'daten': 'Daten', 'flaechen': 'Fläche und Umfang'}
+KENN = {'quadratische': 'PA30', 'trigonometrie': 'PG60', 'pythagoras': 'PG50', 'koerper': 'PG90', 'wachstum': 'PA50',
+        'potenzen': 'PZ15', 'gleichungen': 'PA20', 'daten': 'PS30', 'flaechen': 'PG40'}
+# Kapitelblatt -> Kapitel der alten Daten (msa/zuordnung-<kapitel>.csv, FOR-Regel): 17.10. Durchsicht P10 6
+DATEN = {'trigonometrie': 'dreiecke', 'pythagoras': 'dreiecke', 'potenzen': 'zahlen', 'gleichungen': 'gleichungssysteme'}   # 17.10.: Abschnitte bestellbar als „PA30 A“, „PA30 B1“, …
 
 KAP_PRAEAMBEL = r"""
 \newcommand{\gunter}[2]{\par\addvspace{6pt}\noindent{\bfseries #1\enspace #2}\par\nobreak\vspace{2pt}}
@@ -362,7 +367,7 @@ def main():
     # Spalte blatt (17.10., Durchsicht P10 6): eine Zuordnung für alle Kapitelblätter, hier nur die eigenen Zeilen
     buch = [b for b in lies(os.path.join(a.mn, 'msa', 'buchkapitel-p10.csv')) if b.get('blatt', a.kapitel) == a.kapitel]
     zeilen = lies(os.path.join(a.mn, 'msa', 'kapitel-p10', f'{a.kapitel}.csv'))
-    D = P.Daten(a.mn, a.kapitel)
+    D = P.Daten(a.mn, DATEN.get(a.kapitel, a.kapitel))
     titel, kenn = TITEL.get(a.kapitel, a.kapitel.capitalize()), KENN.get(a.kapitel, '')
     glied = gliedern(zeilen, buch)
     ordner = os.path.join(BANK, 'bau', 'kapitel', a.datum, a.kapitel)

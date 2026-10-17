@@ -66,7 +66,8 @@ def main():
     zeilen = lies(os.path.join(a.mn, 'msa', 'kapitel-p10', f'{a.kapitel}.csv'))
     sys.path.insert(0, os.path.join(BANK, 'werkzeuge'))
     import pruefheft as P   # dieselbe FOR-Regel wie der Setzer (stern_fuer)
-    D = P.Daten(a.mn, a.kapitel)
+    import kapitelblatt as K
+    D = P.Daten(a.mn, K.DATEN.get(a.kapitel, a.kapitel))
     meld = []
 
     def m(k, s):
