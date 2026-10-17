@@ -6740,7 +6740,7 @@ def p_blatt_tex(D, einheit, kenn, stufen_daten, ausschnitt, fund, faktor=1.0, en
     out.append('')
     if Z:
         # v0.18 (15.10. o, x, w): keine Fundstellentabelle, kein Vorher/▸/Weiter; Kern, dann „Mehr: n Aufgaben“
-        if Z.get('kern'):
+        if Z.get('kern') and False:   # 17.10. a: kein Kern
             out.append(Z['kern'])
         if Z.get('mehr_n'):
             out.append(f'\\gmehr{{{Z["mehr_n"]}}}')
@@ -7088,8 +7088,7 @@ def p_zusatz(D, gl, einheit, args):
                           f'„Tafelwerk: … = keins – <Grund>“' + (f' ({", ".join(tafel)})' if tafel else ''))
     if wert('Tafelwerk') and not re.match(r'^keins\s*[–-]\s*\S', wert('Tafelwerk')):
         Z['fehlt'].append(f'„Tafelwerk: {einheit} = {wert("Tafelwerk")}“ – erwartet „keins – <Grund>“')
-    if not wert('Kern am Ende'):
-        Z['fehlt'].append('„Kern am Ende:“ fehlt')
+    # Kern am Ende entfällt (plan.md § 10, 17.10. a): weder verlangt noch gedruckt
     Z['tafel'] = tafel[0] if len(tafel) == 1 else ''
     if wert('Formelsammlung'):
         Z['fszeile'] = ('\\par\\noindent{\\footnotesize\\color{mbgrau}' + tx(wert('Formelsammlung')) + '}\\par\\medskip')

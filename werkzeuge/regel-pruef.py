@@ -101,17 +101,7 @@ def main():
                 m(k, '1 Tafelwerk', f'„Tafelwerk: … = {w}“ – erwartet „keins – <Grund>“')
             if t == 'Formelsammlung' and not re.search(r'S\.\s*\d', w):
                 m(k, '1 Tafelwerk', f'Formelsammlungs-Zeile ohne Seite („S. 15“): {w[:50]}')
-        # 2 Kern am Ende
-        kern = f.get(('Kern am Ende', ein), [])
-        aussagen = [x for x in (re.split(r'\|(?![^()]*\))', kern[0]) if kern else []) if x.strip()]
-        if len(kern) != 1:
-            m(k, '2 Kern', f'{len(kern)} Zeilen „Kern am Ende: {ein} = …“ statt einer')
-        elif not 1 <= len(aussagen) <= 4:
-            m(k, '2 Kern', f'{len(aussagen)} Aussagen statt 1–4')
-        # 3 Begriff wortgleich im Kern
-        for st, b in begriffe(pf, {n for n, _ in e['stufen']}).items():
-            if kern and norm(b) not in norm(kern[0]):
-                m(k, '3 Begriff', f'Begriff der Stufe „{st}“ steht nicht wortgleich im Kern: „{b[:50]}…“')
+        # 2 Kern, 3 Begriff im Kern: entfallen (plan.md § 10, 17.10. a)
         if not a.datum:
             continue
         o = os.path.join(BANK, 'bau', 'pruefung', a.datum, e['ordner'])
