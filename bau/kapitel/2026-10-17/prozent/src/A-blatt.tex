@@ -1,0 +1,202 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
+\newsavebox{\gbox}\newlength{\gLinks}
+% v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
+% Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr\wd\gbox+6mm\relax}%
+  \ifdim\gLinks>0.62\linewidth
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\leavevmode\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par\addvspace{6pt}}% v0.18 (PG80 Nr. 1): Abstand, damit die Linie von a) nicht an b) rutscht
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+% Skizzenfeld (v0.10, Lehrer 13.10.): Karo ab dem linken Rand über die Zeile, „Skizze“ klein grau oben links im Feld
+% (wie \pfskizzenfeld der Vorlage); der rechte Rand bleibt den Bedingungen
+\newcommand{\gskizze}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \node[anchor=north west,inner sep=2pt,font=\scriptsize,text=mbgrau,fill=white] at (0,{#1*10mm}) {Skizze};
+  \end{tikzpicture}\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% v0.18 (plan.md § 10, 15.10. l): Abschnittsbuchstabe A, B, C vor dem Namen im Kopf – als Vorsatz, damit der
+% Name im TeX gleich bleibt (Bestellkarte, Sprungziele lesen ihn)
+\def\gbstakt{}\newcommand{\gbstvor}[1]{\gdef\gbstakt{#1}}
+\NewCommandCopy\gpfstufekopfalt\pfstufekopf
+\RenewDocumentCommand{\pfstufekopf}{o m m}{\IfValueTF{#1}{\gpfstufekopfalt[#1]}{\gpfstufekopfalt}%
+  {\ifx\gbstakt\empty\else\gbstakt\enspace\fi #2}{#3}\gdef\gbstakt{}}
+% v0.18 (16.10. e): Begriff grau, ohne Nummer, ohne Rahmen über der ersten Aufgabe der Stufe
+\newcommand{\gbegriff}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}\parbox[t]{\dimexpr\linewidth-\mbpfnr\relax}{\raggedright\small\color{mbgrau}#1}\par\nobreak\addvspace{3pt}}
+% v0.18 (16.10. g): Lösungsblatt – Kopf mit kräftigem Strich, Abschnitt klein grau als Zwischenzeile
+\newcommand{\glkopf}[1]{\noindent{\large\bfseries Lösungen \textperiodcentered{} #1}\par\vspace{3pt}\hrule height 1.2pt\par\medskip}
+\newcommand{\glzwischen}[1]{\par\addvspace{8pt}\Needspace*{4\baselineskip}\noindent{\footnotesize\color{mbgrau}#1}\par\nobreak\vspace{1pt}}
+% v0.18 (15.10. o, w): Blattende – Kern ohne Rahmen, dann graue Zeile „Mehr: n Aufgaben“
+\newcommand{\gkern}[1]{\par\addvspace{14pt}\Needspace*{6\baselineskip}\noindent{\bfseries Kern}\par\nobreak\smallskip
+  {\small\raggedright #1\par}}
+\newcommand{\gmehr}[1]{\par\addvspace{10pt}\noindent{\footnotesize\color{mbgrau}Mehr: #1 Aufgaben}\par}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+
+\newcommand{\gunter}[2]{\par\addvspace{6pt}\noindent{\bfseries #1\enspace #2}\par\nobreak\vspace{2pt}}
+\newcommand{\gsternzeile}{\par\vspace{-4pt}\noindent{\footnotesize\color{mbgrau}* nur FOR}\par\medskip}
+% 17.10.: Skizze oben bündig mit der ersten Textzeile (beide Spalten hängen an der Oberkante); der Rechenraum (Karo)
+% beginnt direkt unter dem Text, links neben dem Graph, und läuft unter dem Graph über die ganze Zeile weiter
+% (Streifen links = auf 5 mm aufgerundete Höhe des Graphen unter dem Text, Raster durchgehend; die Fläche des Streifens
+% wird von der Karohöhe unter dem Graph abgezogen, auf 0,5 cm aufgerundet – die Gesamtfläche Rechenraum bleibt mindestens #3 × Zeile); #3 = Zeilen Karo in cm
+% unter dem Graph (0 = kein Karo). Kein Verkleinern des Graphen.
+\newsavebox{\gtbox}\newlength{\gWl}\newlength{\gDh}
+\newcommand{\gkaroohne}[1]{\nointerlineskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\gtextkaro}[3]{\sbox{\gbox}{#1}%
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par\ifnum#3>0 \karo{#3}\fi
+  \else
+    \setlength{\gWl}{\dimexpr\linewidth-\wd\gbox-5mm\relax}%
+    \sbox{\gtbox}{\begin{minipage}[t]{\gWl}\raggedright #2\par\end{minipage}}%
+    \setlength{\gDh}{\dimexpr\ht\gbox+\dp\gbox-\ht\gtbox-\dp\gtbox-6pt\relax}%
+    \leavevmode
+    \ifnum#3>0\ifdim\gDh>0pt
+      \pgfmathsetmacro{\gxs}{floor(\gWl/5mm)*5mm}\pgfmathsetmacro{\gys}{ceil(\gDh/5mm)*5mm}%
+      \begin{minipage}[t]{\gWl}\usebox{\gtbox}\par\vspace{6pt}\nointerlineskip\noindent
+        \begin{tikzpicture}
+        \clip (0,0) rectangle (\gxs pt,\gys pt);
+        \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid (\gxs pt,\gys pt);
+        \end{tikzpicture}\par\end{minipage}%
+    \else\usebox{\gtbox}\fi\else\usebox{\gtbox}\fi
+    \hfill\begin{minipage}[t]{\wd\gbox}\vspace{-\dimexpr\ht\strutbox+2.4ex\relax}\usebox{\gbox}\end{minipage}\par
+    \ifnum#3>0 \ifdim\gDh>0pt
+      \pgfmathsetmacro{\gnn}{max(0,ceil(2*(#3-(\gys/28.4528)*(\gxs/\linewidth)))/2)}%
+      \ifdim\gnn pt>0pt\gkaroohne{\gnn}\fi
+    \else\karo{#3}\fi\fi
+  \fi}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} Prüfung]{Prozent und Zinsen}{PS10 A}\pfseitevon
+\pfheftkopf{Prozent und Zinsen}{}
+\pfstufenzeile{Prozentsatz}
+
+% ===================== A Prozentsatz =====================
+\gkopfvor{\gbstvor{A}\pfstufekopf{Prozentsatz}{}}
+% DRUCK 2018-OS-K7a deckt 2018-OS-K7a
+\begin{pfaufg}{nach~P10\\’18}{1.}{}
+Eva backt für eine Feier Pfannkuchen: 14 Pfannkuchen mit Marmeladenfüllung und 2 Pfannkuchen mit Senffüllung. Gib an, wie viel Prozent der Pfannkuchen mit Senf gefüllt sind.
+\karo{4}
+\par\medskip\noindent\hfill Anteil $=$\linie{45mm}
+\fusshilfe{\gfuss{1}{12,5 \%}}
+\end{pfaufg}
+% DRUCK 2023-OS-K6a deckt 2023-OS-K6a
+\begin{pfaufg}{nach~P10\\’23}{2.}{}
+\gtextkaro{{\footnotesize\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.2}\begin{tabular}{|l|r|}\hline \textbf{Alter} & \textbf{Anzahl}\\\hline Kinder (0 bis 14 Jahre) & 1,95 Milliarden\\\hline Jugendliche (15 bis 24 Jahre) & 1,25 Milliarden\\\hline mittleres Alter (25 bis 64 Jahre) & 3,9 Milliarden\\\hline höheres Alter (ab 65 Jahre) & 0,7 Milliarden\\\hline\end{tabular}}}{Im Jahr 2020 lebten auf der Erde etwa 7,8 Milliarden Menschen. Die Tabelle teilt sie nach dem Alter auf. Berechne, wie viel Prozent aller Menschen weltweit im Jahr 2020 Jugendliche waren.}{4}
+\par\medskip\noindent\hfill Anteil $=$\linie{45mm}
+\fusshilfe{\gfuss{2}{16,0 \%}}
+\end{pfaufg}
+% DRUCK 2022-OS-K4b deckt 2022-OS-K4b
+\begin{pfaufg}{nach~P10\\’22}{3.}{}
+\gtextkaro{\begin{tikzpicture}[font=\footnotesize,line width=0.6pt]\draw[black!14,line width=0.3pt] (0,0) -- (6.325,0);\draw[black!14,line width=0.3pt] (0,0.364) -- (6.325,0.364);\draw[black!14,line width=0.3pt] (0,0.727) -- (6.325,0.727);\draw[black!14,line width=0.3pt] (0,1.091) -- (6.325,1.091);\draw[black!14,line width=0.3pt] (0,1.455) -- (6.325,1.455);\draw[black!14,line width=0.3pt] (0,1.818) -- (6.325,1.818);\draw[black!14,line width=0.3pt] (0,2.182) -- (6.325,2.182);\draw[black!14,line width=0.3pt] (0,2.545) -- (6.325,2.545);\draw[black!14,line width=0.3pt] (0,2.909) -- (6.325,2.909);\draw[black!14,line width=0.3pt] (0,3.273) -- (6.325,3.273);\draw[black!14,line width=0.3pt] (0,3.636) -- (6.325,3.636);\draw[black!14,line width=0.3pt] (0,4) -- (6.325,4);\draw[black!40,line width=0.3pt] (0,0) -- (6.325,0);\node[left,inner sep=2pt] at (0,0) {390};\draw[black!40,line width=0.3pt] (0,0.364) -- (6.325,0.364);\node[left,inner sep=2pt] at (0,0.364) {400};\draw[black!40,line width=0.3pt] (0,0.727) -- (6.325,0.727);\node[left,inner sep=2pt] at (0,0.727) {410};\draw[black!40,line width=0.3pt] (0,1.091) -- (6.325,1.091);\node[left,inner sep=2pt] at (0,1.091) {420};\draw[black!40,line width=0.3pt] (0,1.455) -- (6.325,1.455);\node[left,inner sep=2pt] at (0,1.455) {430};\draw[black!40,line width=0.3pt] (0,1.818) -- (6.325,1.818);\node[left,inner sep=2pt] at (0,1.818) {440};\draw[black!40,line width=0.3pt] (0,2.182) -- (6.325,2.182);\node[left,inner sep=2pt] at (0,2.182) {450};\draw[black!40,line width=0.3pt] (0,2.545) -- (6.325,2.545);\node[left,inner sep=2pt] at (0,2.545) {460};\draw[black!40,line width=0.3pt] (0,2.909) -- (6.325,2.909);\node[left,inner sep=2pt] at (0,2.909) {470};\draw[black!40,line width=0.3pt] (0,3.273) -- (6.325,3.273);\node[left,inner sep=2pt] at (0,3.273) {480};\draw[black!40,line width=0.3pt] (0,3.636) -- (6.325,3.636);\node[left,inner sep=2pt] at (0,3.636) {490};\draw[black!40,line width=0.3pt] (0,4) -- (6.325,4);\node[left,inner sep=2pt] at (0,4) {500};\filldraw[fill=black!30,draw=black] (0.562,0) rectangle (1.162,2.836);\node[above,inner sep=1.5pt,font=\scriptsize\bfseries] at (0.862,2.836) {468};\node[below,inner sep=3pt] at (0.862,0) {2017};\filldraw[fill=black!30,draw=black] (1.712,0) rectangle (2.312,1.527);\node[above,inner sep=1.5pt,font=\scriptsize\bfseries] at (2.012,1.527) {432};\node[below,inner sep=3pt] at (2.012,0) {2018};\filldraw[fill=black!30,draw=black] (2.862,0) rectangle (3.462,3.455);\node[above,inner sep=1.5pt,font=\scriptsize\bfseries] at (3.162,3.455) {485};\node[below,inner sep=3pt] at (3.162,0) {2019};\filldraw[fill=black!30,draw=black] (4.013,0) rectangle (4.612,2.909);\node[above,inner sep=1.5pt,font=\scriptsize\bfseries] at (4.312,2.909) {470};\node[below,inner sep=3pt] at (4.312,0) {2020};\filldraw[fill=black!30,draw=black] (5.162,0) rectangle (5.762,0.364);\node[above,inner sep=1.5pt,font=\scriptsize\bfseries] at (5.462,0.364) {400};\node[below,inner sep=3pt] at (5.462,0) {2021};\draw[-{Stealth[length=2mm]}] (0,0) -- (0,4.45) node[above right,inner sep=1pt] {Anzahl der Jugendlichen};\draw[-{Stealth[length=2mm]}] (0,0) -- (6.625,0) node[below left,inner sep=2pt,yshift=-9pt] {Jahr};\node[above,font=\small\bfseries] at (3.162,4.75) {Bücher lesen von 2017 bis 2021};\end{tikzpicture}}{In den Jahren 2017 bis 2021 wurden jeweils 1\,200 Jugendliche in Deutschland befragt, wie oft sie Bücher lesen. Das Diagramm zeigt, wie viele der Befragten mehrmals pro Woche Bücher lesen. Ermittle, um wie viel Prozent die Anzahl der Jugendlichen im Diagramm von 2020 bis 2021 gesunken ist.}{5}
+\par\medskip\noindent\hfill Abnahme $=$\linie{45mm}
+\fusshilfe{\gfuss{3}{14,9 \%}}
+\end{pfaufg}
+% DRUCK 2026-FOR-K3c deckt 2026-FOR-K3c 2026-EBR-K4c
+\begin{pfaufg}{nach~P10\\’26}{4.}{}
+\gtextkaro{{\footnotesize\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.2}\begin{tabular}{|l|c|c|c|c|c|c|c|}\hline Wochentag & Mo & Di & Mi & Do & Fr & Sa & So\\\hline \begin{tabular}{@{}l@{}}Benzinpreis in\\€ pro Liter\end{tabular} & 1,77 & 1,78 & 1,77 & 1,79 & 1,84 & 1,82 & 1,85\\\hline\end{tabular}}}{An einer Tankstelle wurden die Benzinpreise eine Woche lang täglich um 18:00~Uhr notiert. Berechne, um wie viel Prozent der Benzinpreis von Donnerstag auf Freitag steigt.}{5}
+\par\medskip\noindent\hfill Steigerung $=$\linie{45mm}
+\fusshilfe{\gfuss{4}{2,8 \%}}
+\end{pfaufg}
+% DRUCK 2016-OS-K2c deckt 2016-OS-K2c
+\begin{pfaufg}{nach~P10\\’16}{5.}{}
+\gtextkaro{\begin{tikzpicture}[font=\footnotesize,line width=0.6pt]\draw[black!14,line width=0.3pt] (0,0) -- (6.84,0);\draw[black!14,line width=0.3pt] (0,0.12) -- (6.84,0.12);\draw[black!14,line width=0.3pt] (0,0.24) -- (6.84,0.24);\draw[black!14,line width=0.3pt] (0,0.36) -- (6.84,0.36);\draw[black!14,line width=0.3pt] (0,0.48) -- (6.84,0.48);\draw[black!14,line width=0.3pt] (0,0.6) -- (6.84,0.6);\draw[black!14,line width=0.3pt] (0,0.72) -- (6.84,0.72);\draw[black!14,line width=0.3pt] (0,0.84) -- (6.84,0.84);\draw[black!14,line width=0.3pt] (0,0.96) -- (6.84,0.96);\draw[black!14,line width=0.3pt] (0,1.08) -- (6.84,1.08);\draw[black!14,line width=0.3pt] (0,1.2) -- (6.84,1.2);\draw[black!14,line width=0.3pt] (0,1.32) -- (6.84,1.32);\draw[black!14,line width=0.3pt] (0,1.44) -- (6.84,1.44);\draw[black!14,line width=0.3pt] (0,1.56) -- (6.84,1.56);\draw[black!14,line width=0.3pt] (0,1.68) -- (6.84,1.68);\draw[black!14,line width=0.3pt] (0,1.8) -- (6.84,1.8);\draw[black!14,line width=0.3pt] (0,1.92) -- (6.84,1.92);\draw[black!14,line width=0.3pt] (0,2.04) -- (6.84,2.04);\draw[black!14,line width=0.3pt] (0,2.16) -- (6.84,2.16);\draw[black!14,line width=0.3pt] (0,2.28) -- (6.84,2.28);\draw[black!14,line width=0.3pt] (0,2.4) -- (6.84,2.4);\draw[black!14,line width=0.3pt] (0,2.52) -- (6.84,2.52);\draw[black!14,line width=0.3pt] (0,2.64) -- (6.84,2.64);\draw[black!14,line width=0.3pt] (0,2.76) -- (6.84,2.76);\draw[black!14,line width=0.3pt] (0,2.88) -- (6.84,2.88);\draw[black!14,line width=0.3pt] (0,3) -- (6.84,3);\draw[black!14,line width=0.3pt] (0,3.12) -- (6.84,3.12);\draw[black!14,line width=0.3pt] (0,3.24) -- (6.84,3.24);\draw[black!14,line width=0.3pt] (0,3.36) -- (6.84,3.36);\draw[black!14,line width=0.3pt] (0,3.48) -- (6.84,3.48);\draw[black!14,line width=0.3pt] (0,3.6) -- (6.84,3.6);\draw[black!14,line width=0.3pt] (0,3.72) -- (6.84,3.72);\draw[black!14,line width=0.3pt] (0,3.84) -- (6.84,3.84);\draw[black!14,line width=0.3pt] (0,3.96) -- (6.84,3.96);\draw[black!14,line width=0.3pt] (0,4.08) -- (6.84,4.08);\draw[black!14,line width=0.3pt] (0,4.2) -- (6.84,4.2);\draw[black!40,line width=0.3pt] (0,0) -- (6.84,0);\node[left,inner sep=2pt] at (0,0) {0};\draw[black!40,line width=0.3pt] (0,0.6) -- (6.84,0.6);\node[left,inner sep=2pt] at (0,0.6) {100};\draw[black!40,line width=0.3pt] (0,1.2) -- (6.84,1.2);\node[left,inner sep=2pt] at (0,1.2) {200};\draw[black!40,line width=0.3pt] (0,1.8) -- (6.84,1.8);\node[left,inner sep=2pt] at (0,1.8) {300};\draw[black!40,line width=0.3pt] (0,2.4) -- (6.84,2.4);\node[left,inner sep=2pt] at (0,2.4) {400};\draw[black!40,line width=0.3pt] (0,3) -- (6.84,3);\node[left,inner sep=2pt] at (0,3) {500};\draw[black!40,line width=0.3pt] (0,3.6) -- (6.84,3.6);\node[left,inner sep=2pt] at (0,3.6) {600};\draw[black!40,line width=0.3pt] (0,4.2) -- (6.84,4.2);\node[left,inner sep=2pt] at (0,4.2) {700};\filldraw[fill=black!45,draw=black] (0.35,0) rectangle (0.73,3.6);\node[below,inner sep=3pt] at (0.54,0) {2007};\filldraw[fill=black!45,draw=black] (1.07,0) rectangle (1.45,2.52);\node[below,inner sep=3pt] at (1.26,0) {2008};\filldraw[fill=black!45,draw=black] (1.79,0) rectangle (2.17,1.92);\node[below,inner sep=3pt] at (1.98,0) {2009};\filldraw[fill=black!45,draw=black] (2.51,0) rectangle (2.89,2.4);\node[below,inner sep=3pt] at (2.7,0) {2010};\filldraw[fill=black!45,draw=black] (3.23,0) rectangle (3.61,1.56);\node[below,inner sep=3pt] at (3.42,0) {2011};\filldraw[fill=black!45,draw=black] (3.95,0) rectangle (4.33,1.56);\node[below,inner sep=3pt] at (4.14,0) {2012};\filldraw[fill=black!45,draw=black] (4.67,0) rectangle (5.05,1.65);\node[below,inner sep=3pt] at (4.86,0) {2013};\filldraw[fill=black!45,draw=black] (5.39,0) rectangle (5.77,1.8);\node[below,inner sep=3pt] at (5.58,0) {2014};\filldraw[fill=black!45,draw=black] (6.11,0) rectangle (6.49,1.5);\node[below,inner sep=3pt] at (6.3,0) {2015};\draw[-{Stealth[length=2mm]}] (0,0) -- (0,4.65) node[above right,inner sep=1pt] {Besucher in Tausend};\draw[-{Stealth[length=2mm]}] (0,0) -- (7.14,0) node[below left,inner sep=2pt,yshift=-9pt] {Jahr};\node[above,font=\small\bfseries] at (3.42,4.95) {Filmpark-Besucher seit 2007};\end{tikzpicture}}{Im Filmpark Babelsberg wird in jedem Jahr die Anzahl der Besucher gezählt. Berechne, um wie viel Prozent die Besucherzahl von 2009 zu 2010 gestiegen ist.}{5}
+\par\medskip\noindent\hfill Zunahme $=$\linie{45mm}
+\fusshilfe{\gfuss{5}{25 \%}}
+\end{pfaufg}
+% DRUCK 2024-OS-K2b deckt 2024-OS-K2b
+\begin{pfaufg}{nach~P10\\’24}{6.}{}
+\gtextkaro{\begin{tikzpicture}[font=\footnotesize,line width=0.6pt]\draw[black!14,line width=0.3pt] (0,0) -- (8,0);\draw[black!14,line width=0.3pt] (0,0.378) -- (8,0.378);\draw[black!14,line width=0.3pt] (0,0.756) -- (8,0.756);\draw[black!14,line width=0.3pt] (0,1.133) -- (8,1.133);\draw[black!14,line width=0.3pt] (0,1.511) -- (8,1.511);\draw[black!14,line width=0.3pt] (0,1.889) -- (8,1.889);\draw[black!14,line width=0.3pt] (0,2.267) -- (8,2.267);\draw[black!14,line width=0.3pt] (0,2.644) -- (8,2.644);\draw[black!14,line width=0.3pt] (0,3.022) -- (8,3.022);\draw[black!14,line width=0.3pt] (0,3.4) -- (8,3.4);\draw[black!40,line width=0.3pt] (0,0) -- (8,0);\node[left,inner sep=2pt] at (0,0) {0};\draw[black!40,line width=0.3pt] (0,0.378) -- (8,0.378);\node[left,inner sep=2pt] at (0,0.378) {10};\draw[black!40,line width=0.3pt] (0,0.756) -- (8,0.756);\node[left,inner sep=2pt] at (0,0.756) {20};\draw[black!40,line width=0.3pt] (0,1.133) -- (8,1.133);\node[left,inner sep=2pt] at (0,1.133) {30};\draw[black!40,line width=0.3pt] (0,1.511) -- (8,1.511);\node[left,inner sep=2pt] at (0,1.511) {40};\draw[black!40,line width=0.3pt] (0,1.889) -- (8,1.889);\node[left,inner sep=2pt] at (0,1.889) {50};\draw[black!40,line width=0.3pt] (0,2.267) -- (8,2.267);\node[left,inner sep=2pt] at (0,2.267) {60};\draw[black!40,line width=0.3pt] (0,2.644) -- (8,2.644);\node[left,inner sep=2pt] at (0,2.644) {70};\draw[black!40,line width=0.3pt] (0,3.022) -- (8,3.022);\node[left,inner sep=2pt] at (0,3.022) {80};\draw[black!40,line width=0.3pt] (0,3.4) -- (8,3.4);\node[left,inner sep=2pt] at (0,3.4) {90};\filldraw[fill=black!30,draw=black] (0.28,0) rectangle (0.68,1.972);\node[above,inner sep=1.5pt,font=\scriptsize\bfseries] at (0.48,1.972) {52,2};\node[rotate=45,anchor=north east,inner sep=2pt] at (0.63,0) {Januar};\filldraw[fill=black!30,draw=black] (0.92,0) rectangle (1.32,1.496);\node[above,inner sep=1.5pt,font=\scriptsize\bfseries] at (1.12,1.496) {39,6};\node[rotate=45,anchor=north east,inner sep=2pt] at (1.27,0) {Februar};\filldraw[fill=black!30,draw=black] (1.56,0) rectangle (1.96,1.334);\node[above,inner sep=1.5pt,font=\scriptsize\bfseries] at (1.76,1.334) {35,3};\node[rotate=45,anchor=north east,inner sep=2pt] at (1.91,0) {März};\filldraw[fill=black!30,draw=black] (2.2,0) rectangle (2.6,0.725);\node[above,inner sep=1.5pt,font=\scriptsize\bfseries] at (2.4,0.725) {19,2};\node[rotate=45,anchor=north east,inner sep=2pt] at (2.55,0) {April};\filldraw[fill=black!30,draw=black] (2.84,0) rectangle (3.24,1.862);\node[above,inner sep=1.5pt,font=\scriptsize\bfseries] at (3.04,1.862) {49,3};\node[rotate=45,anchor=north east,inner sep=2pt] at (3.19,0) {Mai};\filldraw[fill=black!30,draw=black] (3.48,0) rectangle (3.88,3.215);\node[above,inner sep=1.5pt,font=\scriptsize\bfseries] at (3.68,3.215) {85,1};\node[rotate=45,anchor=north east,inner sep=2pt] at (3.83,0) {Juni};\filldraw[fill=black!30,draw=black] (4.12,0) rectangle (4.52,1.364);\node[above,inner sep=1.5pt,font=\scriptsize\bfseries] at (4.32,1.364) {36,1};\node[rotate=45,anchor=north east,inner sep=2pt] at (4.47,0) {Juli};\filldraw[fill=black!30,draw=black] (4.76,0) rectangle (5.16,3.113);\node[above,inner sep=1.5pt,font=\scriptsize\bfseries] at (4.96,3.113) {82,4};\node[rotate=45,anchor=north east,inner sep=2pt] at (5.11,0) {August};\filldraw[fill=black!30,draw=black] (5.4,0) rectangle (5.8,0.82);\node[above,inner sep=1.5pt,font=\scriptsize\bfseries] at (5.6,0.82) {21,7};\node[rotate=45,anchor=north east,inner sep=2pt] at (5.75,0) {September};\filldraw[fill=black!30,draw=black] (6.04,0) rectangle (6.44,2.063);\node[above,inner sep=1.5pt,font=\scriptsize\bfseries] at (6.24,2.063) {54,6};\node[rotate=45,anchor=north east,inner sep=2pt] at (6.39,0) {Oktober};\filldraw[fill=black!30,draw=black] (6.68,0) rectangle (7.08,2.422);\node[above,inner sep=1.5pt,font=\scriptsize\bfseries] at (6.88,2.422) {64,1};\node[rotate=45,anchor=north east,inner sep=2pt] at (7.03,0) {November};\filldraw[fill=black!30,draw=black] (7.32,0) rectangle (7.72,1.59);\node[above,inner sep=1.5pt,font=\scriptsize\bfseries] at (7.52,1.59) {42,1};\node[rotate=45,anchor=north east,inner sep=2pt] at (7.67,0) {Dezember};\draw[-{Stealth[length=2mm]}] (0,0) -- (0,3.85) node[above right,inner sep=1pt] {Niederschlag in mm};\draw[-{Stealth[length=2mm]}] (0,0) -- (8.3,0);\node[above,font=\small\bfseries] at (4,4.15) {Niederschlag in Brandenburg 2021};\end{tikzpicture}}{Im Diagramm sind die monatlichen Niederschläge des Jahres 2021 in Brandenburg dargestellt. Im gesamten Jahr 2021 fielen insgesamt 581,7~mm Niederschlag. Zeige, dass der Durchschnitt der monatlichen Niederschläge im Jahr 2021 ca. 48,5~mm beträgt. Ermittle, um wie viel Prozent der Niederschlag des Monats April unterhalb des monatlichen Durchschnitts liegt.}{7}
+\par\medskip\noindent\hfill Prozentsatz $=$\linie{45mm}
+\fusshilfe{\gfuss{6}{48,5 mm; 60,4 \%}}
+\end{pfaufg}
+% DRUCK 2021-OS-K5a deckt 2021-OS-K5a
+\begin{pfaufg}{nach~P10\\’21}{7.}{}
+\gtextkaro{\begin{tikzpicture}[font=\footnotesize,line width=0.6pt]\draw[black!14,line width=0.3pt] (0,0.0) -- (6.50,0.0);\draw[black!14,line width=0.3pt] (0,0.3) -- (6.50,0.3);\draw[black!14,line width=0.3pt] (0,0.6) -- (6.50,0.6);\draw[black!14,line width=0.3pt] (0,0.9) -- (6.50,0.9);\draw[black!14,line width=0.3pt] (0,1.2) -- (6.50,1.2);\draw[black!14,line width=0.3pt] (0,1.5) -- (6.50,1.5);\draw[black!14,line width=0.3pt] (0,1.8) -- (6.50,1.8);\draw[black!14,line width=0.3pt] (0,2.1) -- (6.50,2.1);\draw[black!14,line width=0.3pt] (0,2.4) -- (6.50,2.4);\draw[black!14,line width=0.3pt] (0,2.7) -- (6.50,2.7);\draw[black!14,line width=0.3pt] (0,3.0) -- (6.50,3.0);\draw[black!14,line width=0.3pt] (0,3.3) -- (6.50,3.3);\draw[black!14,line width=0.3pt] (0,3.6) -- (6.50,3.6);\draw[black!40,line width=0.3pt] (0,0.0) -- (6.50,0.0);\node[left,inner sep=2pt] at (0,0.0) {0,0};\draw[black!40,line width=0.3pt] (0,0.6) -- (6.50,0.6);\node[left,inner sep=2pt] at (0,0.6) {2,0};\draw[black!40,line width=0.3pt] (0,1.2) -- (6.50,1.2);\node[left,inner sep=2pt] at (0,1.2) {4,0};\draw[black!40,line width=0.3pt] (0,1.8) -- (6.50,1.8);\node[left,inner sep=2pt] at (0,1.8) {6,0};\draw[black!40,line width=0.3pt] (0,2.4) -- (6.50,2.4);\node[left,inner sep=2pt] at (0,2.4) {8,0};\draw[black!40,line width=0.3pt] (0,3.0) -- (6.50,3.0);\node[left,inner sep=2pt] at (0,3.0) {10,0};\draw[black!40,line width=0.3pt] (0,3.6) -- (6.50,3.6);\node[left,inner sep=2pt] at (0,3.6) {12,0};\filldraw[fill=black!30,draw=black] (0.20,0) rectangle (0.64,2.1);\node[above,inner sep=1.5pt,font=\scriptsize\bfseries] at (0.42,2.1) {7,0};\node[below,inner sep=3pt] at (0.42,0) {2009};\filldraw[fill=black!30,draw=black] (0.90,0) rectangle (1.34,2.37);\node[above,inner sep=1.5pt,font=\scriptsize\bfseries] at (1.12,2.37) {7,9};\node[below,inner sep=3pt] at (1.12,0) {2010};\filldraw[fill=black!30,draw=black] (1.60,0) rectangle (2.04,2.7);\node[above,inner sep=1.5pt,font=\scriptsize\bfseries] at (1.82,2.7) {9,0};\node[below,inner sep=3pt] at (1.82,0) {2011};\filldraw[fill=black!30,draw=black] (2.30,0) rectangle (2.74,2.67);\node[above,inner sep=1.5pt,font=\scriptsize\bfseries] at (2.52,2.67) {8,9};\node[below,inner sep=3pt] at (2.52,0) {2012};\filldraw[fill=black!30,draw=black] (3.00,0) rectangle (3.44,2.79);\node[above,inner sep=1.5pt,font=\scriptsize\bfseries] at (3.22,2.79) {9,3};\node[below,inner sep=3pt] at (3.22,0) {2013};\filldraw[fill=black!30,draw=black] (3.70,0) rectangle (4.14,2.91);\node[above,inner sep=1.5pt,font=\scriptsize\bfseries] at (3.92,2.91) {9,7};\node[below,inner sep=3pt] at (3.92,0) {2014};\filldraw[fill=black!30,draw=black] (4.40,0) rectangle (4.84,2.64);\node[above,inner sep=1.5pt,font=\scriptsize\bfseries] at (4.62,2.64) {8,8};\node[below,inner sep=3pt] at (4.62,0) {2015};\filldraw[fill=black!30,draw=black] (5.10,0) rectangle (5.54,2.67);\node[above,inner sep=1.5pt,font=\scriptsize\bfseries] at (5.32,2.67) {8,9};\node[below,inner sep=3pt] at (5.32,0) {2016};\filldraw[fill=black!30,draw=black] (5.80,0) rectangle (6.24,2.64);\node[above,inner sep=1.5pt,font=\scriptsize\bfseries] at (6.02,2.64) {8,8};\node[below,inner sep=3pt] at (6.02,0) {2017};\draw[-{Stealth[length=2mm]}] (0,0) -- (0,3.95) node[above right,inner sep=1pt] {Anzahl der bewegten Container (in Millionen)};\draw[-{Stealth[length=2mm]}] (0,0) -- (6.80,0) node[below left,inner sep=2pt,yshift=-9pt] {Jahr};\end{tikzpicture}}{Im Hamburger Hafen werden viele Schiffe beladen und entladen. Das Diagramm zeigt die Beladungen und Entladungen der Containerschiffe im Hamburger Hafen in den Jahren von 2009 bis 2017. Berechne für die Anzahl der bewegten Container aus dem Diagramm die Spannweite und den Durchschnitt (das arithmetische Mittel). Berechne, um wie viel Prozent sich die Anzahl der bewegten Container von 2010 bis 2011 erhöht hat.}{8}
+\par\medskip\noindent\hfill Spannweite $=$\linie{25mm}\quad Durchschnitt $=$\linie{25mm}\quad Erhöhung $=$\linie{25mm}
+\fusshilfe{\gfuss{7}{2,7 Mio.; 8,7 Mio.; 13,9 \%}}
+\end{pfaufg}
+\end{document}
