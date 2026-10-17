@@ -16,8 +16,9 @@ Muster, wird das Skript daran neu gelaufen, bevor es für die Breite gilt.
 
 Prüfungen (Kennung – Quelle):
   S1 DATEIEN    je bestellbarem Abschnitt Blatt und Lösung (17.10. Punkt 9)
-  S2 SEITEN     Abschnitt höchstens 3 Seiten, mit Unterabschnitten 4
-                (17.10. d)
+  S2 SEITEN     Hinweis (kein Fehler): Abschnitt über 3 Seiten, mit Unter-
+                abschnitten über 4 – 17.10. d erlaubt mehr, wenn sonst Originale
+                oder Rechenraum fehlten; das urteilt der Kritiker
   S3 KOPF       Kennung oben rechts auf Seite 1 (17.10. Punkt 3)
   S4 UEBERSCHR  keine Abschnittsüberschrift als letzte Zeile einer Seite
                 (Lehrer 15.10. PG10, gemeinsam.md „Ruhe“)
@@ -68,7 +69,7 @@ def main():
     import pruefheft as P   # dieselbe FOR-Regel wie der Setzer (stern_fuer)
     import kapitelblatt as K
     D = P.Daten(a.mn, K.DATEN.get(a.kapitel, a.kapitel))
-    meld = []
+    meld, hinweis = [], []
 
     def m(k, s):
         meld.append(f'{k}: {s}')
@@ -98,7 +99,7 @@ def main():
             if art == 'blatt' and s:
                 grenze = 4 if s in unter else 3
                 if n > grenze:
-                    m('S2 SEITEN', f'{vor}blatt {n} Seiten (höchstens {grenze})')
+                    hinweis.append(f'S2 SEITEN (Hinweis an den Kritiker): {vor}blatt {n} Seiten, Richtwert {grenze} – länger nur, wenn sonst Originale oder Rechenraum fehlten (17.10. d)')
             t = text(pdf)
             if art == 'blatt':
                 if not re.search(r'\bP[AGSZ]\d{2}\b', text(pdf, 1)[:3000]):
@@ -136,7 +137,7 @@ def main():
             m('S9 RECHENRAUM', f'{r["id"]}: {r["karo"] or 0} Zeilen')
         if not r['gruppe'] and re.search(r'(^|\s)a\)', r['wortlaut']):
             m('S11 TEILBUCHST', f'{r["id"]}: „a)“ ohne Gruppe')
-    for z in meld:
+    for z in meld + hinweis:
         print(z)
     print(f'satz-pruef {a.kapitel}: {len(meld)} Meldungen, {len(stuecke)} Stücke, {len(zeilen)} Aufgaben')
     sys.exit(1 if meld else 0)

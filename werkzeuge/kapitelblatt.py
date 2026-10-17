@@ -121,6 +121,8 @@ def antwort_teile(teil):
         return '\\quad '.join(P.tx(n) + ' $=$\\linie{25mm}' for n in teil[6:].split(','))
     if teil.startswith('linie:'):
         n = teil[6:].strip()
+        if n.endswith('.'):   # Gleichung I., II. eines Systems: Nummer vor der Linie, kein „=“ (17.10. PA20)
+            return P.tx(n) + '\\ \\linie{60mm}'
         return (P.tx(n) + ' $=$\\linie{45mm}') if n else '\\linie{60mm}'
     return ''
 
