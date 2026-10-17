@@ -63,8 +63,9 @@ def main():
     a = ap.parse_args()
     ordner = os.path.join(BANK, 'bau', 'kapitel', a.datum, a.kapitel)
     buch = [b for b in lies(os.path.join(a.mn, 'msa', 'buchkapitel-p10.csv'))
-            if b.get('blatt', a.kapitel) == a.kapitel]
-    zeilen = lies(os.path.join(a.mn, 'msa', 'kapitel-p10', f'{a.kapitel}.csv'))
+            if b.get('blatt', a.kapitel) == a.kapitel and not re.search(r'-B\d', b['id'])]   # 17.10. q
+    zeilen = [r for r in lies(os.path.join(a.mn, 'msa', 'kapitel-p10', f'{a.kapitel}.csv'))
+              if not all(re.search(r'-B\d', d) for d in r['deckt'].split())]
     sys.path.insert(0, os.path.join(BANK, 'werkzeuge'))
     import pruefheft as P   # dieselbe FOR-Regel wie der Setzer (stern_fuer)
     import kapitelblatt as K

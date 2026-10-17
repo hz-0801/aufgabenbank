@@ -153,32 +153,26 @@
 \pflaufkopf[P10 \pkt{} Prüfung]{Satz des Pythagoras}{PG50 A1}\pfseitevon
 \pfheftkopf{Satz des Pythagoras}{}
 \pfstufenzeile{Satz des Pythagoras}
+\gsternzeile
 
 % ===================== A Satz des Pythagoras =====================
-\gkopfvor{\gbstvor{A}\pfstufekopf{Satz des Pythagoras}{}\gunter{A1}{Gleichung aufstellen}}
-% DRUCK 2026-FOR-B1j deckt 2026-FOR-B1j 2026-EBR-B1j
-\begin{pfaufg}{nach~P10\\’26}{1.}{Basis}
-\gtextkaro{\begin{tikzpicture}[line width=0.7pt,font=\small]\draw (0,0) -- (2.4,0) -- (2.4,3.2) -- cycle;\pfrw[0.35]{(2.4,0)}{90}\node[anchor=south east] at (1.15,1.65) {$w$};\node[anchor=west] at (2.48,1.6) {$v$};\node[anchor=north] at (1.2,-0.08) {$u$};\end{tikzpicture}}{Kreuze an, mit welcher Gleichung die Länge der Seite $w$ des abgebildeten Dreiecks berechnet werden kann:\pfkreuzab{}{$w = \sqrt{v^2 - u^2}$}\pfkreuzab{}{$w = \sqrt{u^2 - v^2}$}\pfkreuzab{}{$w = \sqrt{u^2 + v^2}$}}{0}
-\fusshilfe{\gfuss{1}{$w = \sqrt{u^2 + v^2}$}}
+\gkopfvor{\gbstvor{A}\pfstufekopf{Satz des Pythagoras}{}\gunter{A1}{Hypotenuse gesucht}}
+% DRUCK 2020-OS-K7a deckt 2020-OS-K7a
+\begin{pfaufg}{nach~P10\\’20}{1.}{}
+\gtextkaro{\begin{tikzpicture}[line width=0.7pt,font=\small]\coordinate (A) at (0,0);\coordinate (B) at (1.3,3.6);\coordinate (C) at (0,3.6);\draw (A) -- (B) -- (C) -- cycle;\pfrw[0.3]{(C)}{-90}\node[anchor=north] at (A) {$A$};\node[anchor=south west] at (B) {$B$};\node[anchor=south east] at (C) {$C$};\node[anchor=south] at (0.65,3.62) {$12$ m};\node[anchor=east] at (-0.05,1.8) {$34$ m};\end{tikzpicture}}{Gegeben ist das rechtwinklige Dreieck $ABC$. Die Strecke $\overline{BC}$ ist 12~m lang und die Strecke $\overline{AC}$ hat eine Länge von 34~m. Berechne die Länge der Strecke $\overline{AB}$.}{5}
+\par\medskip\noindent\hfill AB $=$\linie{25mm}
+\fusshilfe{\gfuss{1}{36,1 m}}
 \end{pfaufg}
-% DRUCK 2024-OS-B1f deckt 2024-OS-B1f
-\begin{pfaufg}{nach~P10\\’24}{2.}{Basis}
-\gtextkaro{\begin{tikzpicture}[line width=0.7pt,font=\small]\draw (0,0) -- (3.3,0) -- (0,1.5) -- cycle;\pfrw[0.35]{(0,0)}{0}\node[anchor=east] at (-0.08,0.75) {$y$};\node[anchor=north] at (1.65,-0.08) {$z$};\node[anchor=south west] at (1.7,0.75) {$x$};\end{tikzpicture}}{Kreuze die Gleichung an, mit der die Länge der Dreiecksseite $z$ des nebenstehenden Dreiecks berechnet werden kann:\pfkreuzab{}{$z = x^2 - y^2$}\pfkreuzab{}{$z = \sqrt{x^2 + y^2}$}\pfkreuzab{}{$z = x + y$}\pfkreuzab{}{$z = \sqrt{x^2 - y^2}$}}{0}
-\fusshilfe{\gfuss{2}{$z = \sqrt{x^2 - y^2}$}}
+% DRUCK 2025-OS-K2a deckt 2025-OS-K2a
+\begin{pfaufg}{nach~P10\\’25}{2.}{}
+\gtextkaro{\begin{tikzpicture}[line width=0.7pt,font=\small,scale=0.045]\coordinate (A) at (-25,0);\coordinate (C) at (25,0);\coordinate (D) at (0,25);\coordinate (B) at (0,-55);\coordinate (F) at (0,0);\draw (A) -- (D) -- (C) -- (B) -- cycle;\draw[line width=0.4pt] (A) -- (C) (D) -- (B);\pfrw[0.3]{(F)}{90}\pfrw[0.3]{(D)}{225}\node[anchor=east] at (A) {$A$};\node[anchor=west] at (C) {$C$};\node[anchor=south] at (D) {$D$};\node[anchor=north] at (B) {$B$};\node[anchor=north west] at (F) {$F$};\draw[line width=0.4pt,densely dotted] (-36,25) -- (0,25);\draw[line width=0.4pt,|-|] (-36,0) -- (-36,25);\node[rotate=90,anchor=south,font=\footnotesize] at (-36.5,12.5) {$25$ cm};\end{tikzpicture}}{Die Diagonalen des abgebildeten Drachenvierecks haben die Maße $\overline{AC} = 50$~cm und $\overline{BD} = 80$~cm. Kreuze an, wie viele Symmetrieachsen das Drachenviereck hat:\pfkreuzab{}{0}\pfkreuzab{}{1}\pfkreuzab{}{2}\pfkreuzab{}{3}\pfkreuzab{}{4}\par\smallskip\noindent Bestätige rechnerisch, dass die Strecke $\overline{BF}$ eine Länge von 55~cm hat. Berechne die Länge der Strecke $\overline{AB}$.}{6}
+\par\medskip\noindent\hfill AB $=$\linie{25mm}
+\fusshilfe{\gfuss{2}{1; 55 cm; 60,4 cm}}
 \end{pfaufg}
-% DRUCK 2022-OS-B1g deckt 2022-OS-B1g
-\begin{pfaufg}{nach~P10\\’22}{3.}{Basis}
-Kreuze an, welche Aussage in einem rechtwinkligen Dreieck gilt:\pfkreuzab{}{Dem rechten Winkel liegt eine Kathete gegenüber.}\pfkreuzab{}{$c = a + b$}\pfkreuzab{}{Die Summe der Flächeninhalte der Kathetenquadrate ist gleich dem Flächeninhalt des Hypotenusenquadrates.}
-\fusshilfe{\gfuss{3}{c²}}
-\end{pfaufg}
-% DRUCK 2021-OS-B1h deckt 2021-OS-B1h
-\begin{pfaufg}{nach~P10\\’21}{4.}{Basis}
-\gtextkaro{\begin{tikzpicture}[line width=0.7pt,font=\small]\draw (0,0.6) -- (2.4,0) -- (2.94,2.16) -- cycle;\pfrw[0.35]{(2.4,0)}{76}\node[anchor=north] at (1.2,0.22) {$x$};\node[anchor=west] at (2.72,1.0) {$y$};\node[anchor=south east] at (1.45,1.4) {$z$};\end{tikzpicture}}{Kreuze die Formel zur Berechnung der Seite $z$ an:\pfkreuzab{}{$z = \sqrt{x^2 - y^2}$}\pfkreuzab{}{$z = \sqrt{x^2 + y^2}$}\pfkreuzab{}{$z = \sqrt{y^2 - x^2}$}\pfkreuzab{}{$z = y^2 + x^2$}}{0}
-\fusshilfe{\gfuss{4}{$z = \sqrt{x^2 + y^2}$}}
-\end{pfaufg}
-% DRUCK 2017-OS-B1d deckt 2017-OS-B1d
-\begin{pfaufg}{nach~P10\\’17}{5.}{Basis}
-\gtextkaro{\begin{tikzpicture}[line width=0.7pt,font=\small]\draw (0,0) -- (3.3,0) -- (0,1.5) -- cycle;\pfrw[0.35]{(0,0)}{0}\node[anchor=east] at (-0.08,0.75) {$x$};\node[anchor=north] at (1.65,-0.08) {$y$};\node[anchor=south west] at (1.7,0.75) {$z$};\end{tikzpicture}}{Kreuze an, welche der folgenden Gleichungen für dieses Dreieck gilt:\pfkreuzab{}{$x^2 = y^2 + z^2$}\pfkreuzab{}{$z^2 = x^2 - y^2$}\pfkreuzab{}{$z^2 \cdot y^2 = x^2$}\pfkreuzab{}{$z^2 = x^2 + y^2$}}{0}
-\fusshilfe{\gfuss{5}{$z^2 = x^2 + y^2$}}
+% DRUCK 2022-OS-K2c deckt 2022-OS-K2c
+\begin{pfaufg}{nach~P10\\’22}{3.\textsuperscript{*}}{}
+\gtextkaro{\begin{tikzpicture}[line width=0.7pt,font=\small,scale=0.4]\draw (0,7) ellipse (3.2 and 1.0);\draw (-3.2,0) -- (-3.2,7);\draw (3.2,0) -- (3.2,7);\draw (-3.2,0) arc (180:360:3.2 and 1.0);\draw[dashed,line width=0.5pt] (-3.2,0) arc (180:0:3.2 and 1.0);\draw[line width=1.4pt] (-3.2,0) -- ($(-3.2,0)!1.211!(3.2,7)$);\end{tikzpicture}}{Gegeben ist ein zylinderförmiger Becher ohne Deckel. Die Höhe beträgt $h = 7$~cm und der Radius $r = 3{,}2$~cm. Ein Stab wird zum Umrühren genutzt. Von dem Stab sind 2~cm außerhalb des Bechers, wenn er diagonal im Becher steht (siehe Skizze). Bestimme die Länge des Stabes.}{6}
+\par\medskip\noindent\hfill Stab $=$\linie{25mm}
+\fusshilfe{\gfuss{3}{11,5 cm}}
 \end{pfaufg}
 \end{document}

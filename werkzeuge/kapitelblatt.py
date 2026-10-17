@@ -92,6 +92,11 @@ def lies(p):
     return list(csv.DictReader(open(p, encoding='utf-8'), delimiter=';'))
 
 
+def basis(iid):
+    """Basisaufgabe der P10 (id …-B1x)."""
+    return bool(re.search(r'-B\d', iid))
+
+
 def original(iid):
     return re.sub(r'-\d$', '', iid)
 
@@ -367,8 +372,10 @@ def main():
     ap.add_argument('--bb', default=os.path.join(os.path.dirname(BANK), 'blattbau'))
     a = ap.parse_args()
     # Spalte blatt (17.10., Durchsicht P10 6): eine Zuordnung für alle Kapitelblätter, hier nur die eigenen Zeilen
-    buch = [b for b in lies(os.path.join(a.mn, 'msa', 'buchkapitel-p10.csv')) if b.get('blatt', a.kapitel) == a.kapitel]
-    zeilen = lies(os.path.join(a.mn, 'msa', 'kapitel-p10', f'{a.kapitel}.csv'))
+    # 17.10. q: Basisaufgaben nicht aufs Kapitelblatt (Lehrer nutzt sie zum Stundenbeginn); Zuordnung bleibt als Daten
+    buch = [b for b in lies(os.path.join(a.mn, 'msa', 'buchkapitel-p10.csv')) if b.get('blatt', a.kapitel) == a.kapitel and not basis(b['id'])]
+    zeilen = [r for r in lies(os.path.join(a.mn, 'msa', 'kapitel-p10', f'{a.kapitel}.csv'))
+              if not all(basis(d) for d in r['deckt'].split())]
     D = P.Daten(a.mn, DATEN.get(a.kapitel, a.kapitel))
     titel, kenn = TITEL.get(a.kapitel, a.kapitel.capitalize()), KENN.get(a.kapitel, '')
     glied = gliedern(zeilen, buch)
