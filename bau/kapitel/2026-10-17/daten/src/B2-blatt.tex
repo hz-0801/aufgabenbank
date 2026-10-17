@@ -1,0 +1,204 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
+\newsavebox{\gbox}\newlength{\gLinks}
+% v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
+% Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr\wd\gbox+6mm\relax}%
+  \ifdim\gLinks>0.62\linewidth
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\leavevmode\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par\addvspace{6pt}}% v0.18 (PG80 Nr. 1): Abstand, damit die Linie von a) nicht an b) rutscht
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+% Skizzenfeld (v0.10, Lehrer 13.10.): Karo ab dem linken Rand über die Zeile, „Skizze“ klein grau oben links im Feld
+% (wie \pfskizzenfeld der Vorlage); der rechte Rand bleibt den Bedingungen
+\newcommand{\gskizze}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \node[anchor=north west,inner sep=2pt,font=\scriptsize,text=mbgrau,fill=white] at (0,{#1*10mm}) {Skizze};
+  \end{tikzpicture}\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% v0.18 (plan.md § 10, 15.10. l): Abschnittsbuchstabe A, B, C vor dem Namen im Kopf – als Vorsatz, damit der
+% Name im TeX gleich bleibt (Bestellkarte, Sprungziele lesen ihn)
+\def\gbstakt{}\newcommand{\gbstvor}[1]{\gdef\gbstakt{#1}}
+\NewCommandCopy\gpfstufekopfalt\pfstufekopf
+\RenewDocumentCommand{\pfstufekopf}{o m m}{\IfValueTF{#1}{\gpfstufekopfalt[#1]}{\gpfstufekopfalt}%
+  {\ifx\gbstakt\empty\else\gbstakt\enspace\fi #2}{#3}\gdef\gbstakt{}}
+% v0.18 (16.10. e): Begriff grau, ohne Nummer, ohne Rahmen über der ersten Aufgabe der Stufe
+\newcommand{\gbegriff}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}\parbox[t]{\dimexpr\linewidth-\mbpfnr\relax}{\raggedright\small\color{mbgrau}#1}\par\nobreak\addvspace{3pt}}
+% v0.18 (16.10. g): Lösungsblatt – Kopf mit kräftigem Strich, Abschnitt klein grau als Zwischenzeile
+\newcommand{\glkopf}[1]{\noindent{\large\bfseries Lösungen \textperiodcentered{} #1}\par\vspace{3pt}\hrule height 1.2pt\par\medskip}
+\newcommand{\glzwischen}[1]{\par\addvspace{8pt}\Needspace*{4\baselineskip}\noindent{\footnotesize\color{mbgrau}#1}\par\nobreak\vspace{1pt}}
+% v0.18 (15.10. o, w): Blattende – Kern ohne Rahmen, dann graue Zeile „Mehr: n Aufgaben“
+\newcommand{\gkern}[1]{\par\addvspace{14pt}\Needspace*{6\baselineskip}\noindent{\bfseries Kern}\par\nobreak\smallskip
+  {\small\raggedright #1\par}}
+\newcommand{\gmehr}[1]{\par\addvspace{10pt}\noindent{\footnotesize\color{mbgrau}Mehr: #1 Aufgaben}\par}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+
+\newcommand{\gunter}[2]{\par\addvspace{6pt}\noindent{\bfseries #1\enspace #2}\par\nobreak\vspace{2pt}}
+\newcommand{\gsternzeile}{\par\vspace{-4pt}\noindent{\footnotesize\color{mbgrau}* nur FOR}\par\medskip}
+% 17.10.: Skizze oben bündig mit der ersten Textzeile (beide Spalten hängen an der Oberkante); der Rechenraum (Karo)
+% beginnt direkt unter dem Text, links neben dem Graph, und läuft unter dem Graph über die ganze Zeile weiter
+% (Streifen links = auf 5 mm aufgerundete Höhe des Graphen unter dem Text, Raster durchgehend; die Fläche des Streifens
+% wird von der Karohöhe unter dem Graph abgezogen, auf 0,5 cm aufgerundet – die Gesamtfläche Rechenraum bleibt mindestens #3 × Zeile); #3 = Zeilen Karo in cm
+% unter dem Graph (0 = kein Karo). Kein Verkleinern des Graphen.
+\newsavebox{\gtbox}\newlength{\gWl}\newlength{\gDh}
+\newcommand{\gkaroohne}[1]{\nointerlineskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\gtextkaro}[3]{\sbox{\gbox}{#1}%
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par\ifnum#3>0 \karo{#3}\fi
+  \else
+    \setlength{\gWl}{\dimexpr\linewidth-\wd\gbox-5mm\relax}%
+    \sbox{\gtbox}{\begin{minipage}[t]{\gWl}\raggedright #2\par\end{minipage}}%
+    \setlength{\gDh}{\dimexpr\ht\gbox+\dp\gbox-\ht\gtbox-\dp\gtbox-6pt\relax}%
+    \leavevmode
+    \ifnum#3>0\ifdim\gDh>0pt
+      \pgfmathsetmacro{\gxs}{floor(\gWl/5mm)*5mm}\pgfmathsetmacro{\gys}{ceil(\gDh/5mm)*5mm}%
+      \begin{minipage}[t]{\gWl}\usebox{\gtbox}\par\vspace{6pt}\nointerlineskip\noindent
+        \begin{tikzpicture}
+        \clip (0,0) rectangle (\gxs pt,\gys pt);
+        \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid (\gxs pt,\gys pt);
+        \end{tikzpicture}\par\end{minipage}%
+    \else\usebox{\gtbox}\fi\else\usebox{\gtbox}\fi
+    \hfill\begin{minipage}[t]{\wd\gbox}\vspace{-\dimexpr\ht\strutbox+2.4ex\relax}\usebox{\gbox}\end{minipage}\par
+    \ifnum#3>0 \ifdim\gDh>0pt
+      \pgfmathsetmacro{\gnn}{max(0,ceil(2*(#3-(\gys/28.4528)*(\gxs/\linewidth)))/2)}%
+      \ifdim\gnn pt>0pt\gkaroohne{\gnn}\fi
+    \else\karo{#3}\fi\fi
+  \fi}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} Prüfung]{Daten}{PS30 B2}\pfseitevon
+\pfheftkopf{Daten}{}
+\pfstufenzeile{Grafische Darstellungen}
+\gsternzeile
+
+% ===================== B Grafische Darstellungen =====================
+\gkopfvor{\gbstvor{B}\pfstufekopf{Grafische Darstellungen}{}\gunter{B2}{Diagramme zeichnen}}
+% DRUCK 2026-FOR-K3d deckt 2026-FOR-K3d 2026-EBR-K4d
+\begin{pfaufg}{nach~P10\\’26}{1.}{}
+\gtextkaro{\begin{tabular}[t]{@{}c@{}}{\footnotesize\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.2}\begin{tabular}{|l|c|c|c|c|c|c|c|}\hline Wochentag & Mo & Di & Mi & Do & Fr & Sa & So\\\hline \begin{tabular}{@{}l@{}}Benzinpreis in\\€ pro Liter\end{tabular} & 1,77 & 1,78 & 1,77 & 1,79 & 1,84 & 1,82 & 1,85\\\hline\end{tabular}}\\[2mm]\begin{tikzpicture}[font=\footnotesize,line width=0.6pt]\draw[black!14,line width=0.3pt] (0,0) -- (6.375,0);\draw[black!14,line width=0.3pt] (0,0.22) -- (6.375,0.22);\draw[black!14,line width=0.3pt] (0,0.44) -- (6.375,0.44);\draw[black!14,line width=0.3pt] (0,0.66) -- (6.375,0.66);\draw[black!14,line width=0.3pt] (0,0.88) -- (6.375,0.88);\draw[black!14,line width=0.3pt] (0,1.1) -- (6.375,1.1);\draw[black!14,line width=0.3pt] (0,1.32) -- (6.375,1.32);\draw[black!14,line width=0.3pt] (0,1.54) -- (6.375,1.54);\draw[black!14,line width=0.3pt] (0,1.76) -- (6.375,1.76);\draw[black!14,line width=0.3pt] (0,1.98) -- (6.375,1.98);\draw[black!14,line width=0.3pt] (0,2.2) -- (6.375,2.2);\draw[black!14,line width=0.3pt] (0,2.42) -- (6.375,2.42);\draw[black!14,line width=0.3pt] (0,2.64) -- (6.375,2.64);\draw[black!14,line width=0.3pt] (0,2.86) -- (6.375,2.86);\draw[black!14,line width=0.3pt] (0,3.08) -- (6.375,3.08);\draw[black!14,line width=0.3pt] (0,3.3) -- (6.375,3.3);\draw[black!40,line width=0.3pt] (0,0) -- (6.375,0);\node[left,inner sep=2pt] at (0,0) {1,75};\draw[black!40,line width=0.3pt] (0,1.1) -- (6.375,1.1);\node[left,inner sep=2pt] at (0,1.1) {1,80};\draw[black!40,line width=0.3pt] (0,2.2) -- (6.375,2.2);\node[left,inner sep=2pt] at (0,2.2) {1,85};\draw[black!40,line width=0.3pt] (0,3.3) -- (6.375,3.3);\node[left,inner sep=2pt] at (0,3.3) {1,90};\filldraw[fill=black!30,draw=black] (0.412,0) rectangle (0.862,0.44);\node[below,inner sep=3pt] at (0.637,0) {Mo};\filldraw[fill=black!30,draw=black] (1.262,0) rectangle (1.713,0.66);\node[below,inner sep=3pt] at (1.488,0) {Di};\filldraw[fill=black!30,draw=black] (2.112,0) rectangle (2.562,0.44);\node[below,inner sep=3pt] at (2.337,0) {Mi};\filldraw[fill=black!30,draw=black] (2.962,0) rectangle (3.413,0.88);\node[below,inner sep=3pt] at (3.188,0) {Do};\filldraw[fill=black!30,draw=black] (3.812,0) rectangle (4.262,1.98);\node[below,inner sep=3pt] at (4.037,0) {Fr};\filldraw[fill=black!30,draw=black] (4.663,0) rectangle (5.112,1.54);\node[below,inner sep=3pt] at (4.888,0) {Sa};\node[below,inner sep=3pt] at (5.737,0) {So};\draw[-{Stealth[length=2mm]}] (0,0) -- (0,3.75) node[above right,inner sep=1pt] {Benzinpreis in € pro Liter};\draw[-{Stealth[length=2mm]}] (0,0) -- (6.675,0) node[below left,inner sep=2pt,yshift=-9pt] {Wochentag};\end{tikzpicture}\end{tabular}}{An einer Tankstelle wurden die Benzinpreise eine Woche lang täglich um 18:00~Uhr notiert. Fabio erstellt aus den Daten der Tabelle dieses Diagramm. Zeichne die fehlende Säule im Diagramm ein.}{0}
+\fusshilfe{\gfuss{1}{Säule So bis 1,85 €}}
+\end{pfaufg}\vspace{-6pt}
+% DRUCK 2020-OS-K2a deckt 2020-OS-K2a
+\begin{pfaufg}{nach~P10\\’20}{2.}{}
+\gtextkaro{\begin{tikzpicture}[font=\footnotesize,line width=0.6pt]\draw[black!14,line width=0.3pt] (0,0) -- (0,3.552);\draw[black!14,line width=0.3pt] (0.22,0) -- (0.22,3.552);\draw[black!14,line width=0.3pt] (0.44,0) -- (0.44,3.552);\draw[black!14,line width=0.3pt] (0.66,0) -- (0.66,3.552);\draw[black!14,line width=0.3pt] (0.88,0) -- (0.88,3.552);\draw[black!14,line width=0.3pt] (1.1,0) -- (1.1,3.552);\draw[black!14,line width=0.3pt] (1.32,0) -- (1.32,3.552);\draw[black!14,line width=0.3pt] (1.54,0) -- (1.54,3.552);\draw[black!14,line width=0.3pt] (1.76,0) -- (1.76,3.552);\draw[black!14,line width=0.3pt] (1.98,0) -- (1.98,3.552);\draw[black!14,line width=0.3pt] (2.2,0) -- (2.2,3.552);\draw[black!14,line width=0.3pt] (2.42,0) -- (2.42,3.552);\draw[black!14,line width=0.3pt] (2.64,0) -- (2.64,3.552);\draw[black!14,line width=0.3pt] (2.86,0) -- (2.86,3.552);\draw[black!14,line width=0.3pt] (3.08,0) -- (3.08,3.552);\draw[black!14,line width=0.3pt] (3.3,0) -- (3.3,3.552);\draw[black!14,line width=0.3pt] (3.52,0) -- (3.52,3.552);\draw[black!14,line width=0.3pt] (3.74,0) -- (3.74,3.552);\draw[black!14,line width=0.3pt] (3.96,0) -- (3.96,3.552);\draw[black!14,line width=0.3pt] (4.18,0) -- (4.18,3.552);\draw[black!14,line width=0.3pt] (4.4,0) -- (4.4,3.552);\draw[black!14,line width=0.3pt] (4.62,0) -- (4.62,3.552);\draw[black!14,line width=0.3pt] (4.84,0) -- (4.84,3.552);\draw[black!14,line width=0.3pt] (5.06,0) -- (5.06,3.552);\draw[black!14,line width=0.3pt] (5.28,0) -- (5.28,3.552);\draw[black!14,line width=0.3pt] (5.5,0) -- (5.5,3.552);\draw[black!14,line width=0.3pt] (5.72,0) -- (5.72,3.552);\draw[black!14,line width=0.3pt] (5.94,0) -- (5.94,3.552);\draw[black!14,line width=0.3pt] (6.16,0) -- (6.16,3.552);\draw[black!14,line width=0.3pt] (6.38,0) -- (6.38,3.552);\draw[black!14,line width=0.3pt] (6.6,0) -- (6.6,3.552);\draw[black!40,line width=0.3pt] (0,0) -- (0,3.552);\node[below,inner sep=2pt] at (0,0) {0};\draw[black!40,line width=0.3pt] (1.1,0) -- (1.1,3.552);\node[below,inner sep=2pt] at (1.1,0) {50};\draw[black!40,line width=0.3pt] (2.2,0) -- (2.2,3.552);\node[below,inner sep=2pt] at (2.2,0) {100};\draw[black!40,line width=0.3pt] (3.3,0) -- (3.3,3.552);\node[below,inner sep=2pt] at (3.3,0) {150};\draw[black!40,line width=0.3pt] (4.4,0) -- (4.4,3.552);\node[below,inner sep=2pt] at (4.4,0) {200};\draw[black!40,line width=0.3pt] (5.5,0) -- (5.5,3.552);\node[below,inner sep=2pt] at (5.5,0) {250};\draw[black!40,line width=0.3pt] (6.6,0) -- (6.6,3.552);\node[below,inner sep=2pt] at (6.6,0) {300};\filldraw[fill=black!30,draw=black] (0,0.196) rectangle (3.74,0.476);\node[left,inner sep=3pt] at (0,0.336) {Mo};\filldraw[fill=black!30,draw=black] (0,0.676) rectangle (2.86,0.956);\node[left,inner sep=3pt] at (0,0.816) {Di};\filldraw[fill=black!30,draw=black] (0,1.156) rectangle (4.62,1.436);\node[left,inner sep=3pt] at (0,1.296) {Mi};\node[left,inner sep=3pt] at (0,1.776) {Do};\filldraw[fill=black!30,draw=black] (0,2.116) rectangle (4.18,2.396);\node[left,inner sep=3pt] at (0,2.256) {Fr};\filldraw[fill=black!30,draw=black] (0,2.596) rectangle (5.28,2.876);\node[left,inner sep=3pt] at (0,2.736) {Sa};\filldraw[fill=black!30,draw=black] (0,3.076) rectangle (6.16,3.356);\node[left,inner sep=3pt] at (0,3.216) {So};\draw[-{Stealth[length=2mm]}] (0,0) -- (7,0);\draw (0,0) -- (0,3.552);\node[below,inner sep=2pt,yshift=-12pt] at (3.3,0) {Anzahl der Besucher};\node[rotate=90,above,inner sep=14pt] at (0,1.776) {Wochentag};\node[above,font=\small\bfseries] at (3.3,3.602) {Besucher im Schwimmbad};\end{tikzpicture}}{In dem Diagramm soll die Anzahl der Besucher eines Schwimmbades in der ersten Ferienwoche der Sommerferien dargestellt werden. Am Donnerstag waren 180 Besucher im Schwimmbad. Ergänze im Diagramm den Balken für Donnerstag.}{0}
+\fusshilfe{\gfuss{2}{Balken Do bis 180}}
+\end{pfaufg}\vspace{-6pt}
+% DRUCK 2021-OS-K5b deckt 2021-OS-K5b
+\begin{pfaufg}{nach~P10\\’21}{3.}{}
+\gtextkaro{\begin{tabular}[t]{@{}c@{}}{\footnotesize\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.2}\begin{tabular}{|l|c|}\hline \textbf{Güter} & \textbf{Angaben in \%}\\\hline Schrott & 17\\\hline Flüssigkeiten & \\\hline Container & 66\\\hline Getreide & 6\\\hline Sonstiges & 1\\\hline \textbf{Gesamt} & \textbf{100}\\\hline\end{tabular}}\\[2mm]\begin{tikzpicture}[font=\footnotesize,line width=0.6pt]\filldraw[fill=black!8,draw=black,line width=0.5pt] (0,0) -- (90:1.5) arc (90:54:1.5) -- cycle;\filldraw[fill=black!55,draw=black,line width=0.5pt] (0,0) -- (54:1.5) arc (54:32.4:1.5) -- cycle;\filldraw[fill=black!75,draw=black,line width=0.5pt] (0,0) -- (32.4:1.5) arc (32.4:-28.8:1.5) -- cycle;\filldraw[fill=black!40,draw=black,line width=0.5pt] (0,0) -- (-28.8:1.5) arc (-28.8:-32.4:1.5) -- cycle;\filldraw[fill=black!22,draw=black,line width=0.5pt] (0,0) -- (-32.4:1.5) arc (-32.4:-270:1.5) -- cycle;\draw (0,0) circle (1.5);\draw[line width=0.4pt] (0.278,0.856) -- (2,1.75) -- (4,1.75);\draw[line width=0.4pt] (0.656,0.616) -- (2,0.95) -- (4,0.95);\draw[line width=0.4pt] (0.9,0.028) -- (2,-0.35) -- (4,-0.35);\draw[line width=0.4pt] (0.775,-0.458) -- (2,-1.25) -- (4,-1.25);\draw[line width=0.4pt] (-0.789,-0.434) -- (-2,1) -- (-4,1);\end{tikzpicture}\end{tabular}}{Die Tabelle zeigt die prozentualen Anteile der gesamten Beladungen und Entladungen im Hamburger Hafen. Ergänze in der Tabelle den fehlenden Prozentsatz für „Flüssigkeiten“. Beschrifte das Kreisdiagramm mit den entsprechenden Gütern.}{3}
+\fusshilfe{\gfuss{3}{10 \%; Flüssigkeiten, Getreide, Schrott, Sonstiges, Container}}
+\end{pfaufg}\vspace{-6pt}
+% DRUCK 2018-OS-K3c deckt 2018-OS-K3c
+\begin{pfaufg}{nach~P10\\’18}{4.}{}
+\gtextkaro{\begin{tabular}[t]{@{}c@{}}\begin{tikzpicture}[font=\footnotesize,line width=0.6pt]\draw[black!14,line width=0.3pt] (0,0) -- (7.875,0);\draw[black!14,line width=0.3pt] (0,0.433) -- (7.875,0.433);\draw[black!14,line width=0.3pt] (0,0.867) -- (7.875,0.867);\draw[black!14,line width=0.3pt] (0,1.3) -- (7.875,1.3);\draw[black!14,line width=0.3pt] (0,1.733) -- (7.875,1.733);\draw[black!14,line width=0.3pt] (0,2.167) -- (7.875,2.167);\draw[black!14,line width=0.3pt] (0,2.6) -- (7.875,2.6);\draw[black!40,line width=0.3pt] (0,0) -- (7.875,0);\draw[black!40,line width=0.3pt] (0,0.433) -- (7.875,0.433);\draw[black!40,line width=0.3pt] (0,0.867) -- (7.875,0.867);\draw[black!40,line width=0.3pt] (0,1.3) -- (7.875,1.3);\draw[black!40,line width=0.3pt] (0,1.733) -- (7.875,1.733);\draw[black!40,line width=0.3pt] (0,2.167) -- (7.875,2.167);\draw[black!40,line width=0.3pt] (0,2.6) -- (7.875,2.6);\draw (-0.08,0) -- (0.08,0); \node[left,inner sep=2pt] at (0,0) {0\,\%};\draw (-0.08,0.433) -- (0.08,0.433); \node[left,inner sep=2pt] at (0,0.433) {10\,\%};\draw (-0.08,0.867) -- (0.08,0.867); \node[left,inner sep=2pt] at (0,0.867) {20\,\%};\draw (-0.08,1.3) -- (0.08,1.3); \node[left,inner sep=2pt] at (0,1.3) {30\,\%};\draw (-0.08,1.733) -- (0.08,1.733); \node[left,inner sep=2pt] at (0,1.733) {40\,\%};\draw (-0.08,2.167) -- (0.08,2.167); \node[left,inner sep=2pt] at (0,2.167) {50\,\%};\draw (-0.08,2.6) -- (0.08,2.6); \node[left,inner sep=2pt] at (0,2.6) {60\,\%};\filldraw[fill=black!45,draw=black] (0.963,0) rectangle (1.663,0.433);\node[below,inner sep=3pt,align=center,text width=1.6cm] at (1.312,0) {nie};\filldraw[fill=black!45,draw=black] (2.712,0) rectangle (3.413,0.65);\node[below,inner sep=3pt,align=center,text width=1.6cm] at (3.062,0) {1-mal bis 3-mal pro Woche};\filldraw[fill=black!45,draw=black] (4.463,0) rectangle (5.162,2.383);\node[below,inner sep=3pt,align=center,text width=1.6cm] at (4.812,0) {4-mal bis 6-mal pro Woche};\filldraw[fill=black!45,draw=black] (6.213,0) rectangle (6.912,0.867);\node[below,inner sep=3pt,align=center,text width=1.6cm] at (6.562,0) {täglich};\draw[-{Stealth[length=2mm]}] (0,0) -- (0,3.05) node[above right,inner sep=1pt] {};\draw[-{Stealth[length=2mm]}] (0,0) -- (8.175,0);\node[above,font=\small\bfseries] at (3.938,3.35) {So oft essen Frauen Fleisch oder Wurst};\end{tikzpicture}\\[2mm]\begin{tikzpicture}\draw[black!16,line width=0.3pt,step=5mm] (0,0) grid (15,3);\draw[line width=1pt] (1,0.5) rectangle (11,2);\end{tikzpicture}\end{tabular}}{Frauen wurden nach ihrem Essverhalten befragt. Zeichne zu dem dargestellten Essverhalten der Frauen ein Streifendiagramm.}{0}
+\fusshilfe{\gfuss{4}{nie 1 cm, 1- bis 3-mal 1,5 cm, 4- bis 6-mal 5,5 cm, täglich 2 cm}}
+\end{pfaufg}\vspace{-6pt}
+% DRUCK 2025-OS-K6b deckt 2025-OS-K6b
+\begin{pfaufg}{nach~P10\\’25}{5.}{}
+\gtextkaro{\begin{tikzpicture}[line width=0.6pt]\draw (0,0) circle (1.8);\fill (0,0) circle (1.4pt);\end{tikzpicture}}{Die Liste zeigt das Alter der 11 Erziehenden in einer Kita: 52 \quad 57 \quad 33 \quad 44 \quad 31 \quad 30 \quad 66 \quad 58 \quad 61 \quad 41 \quad 55. Ermittle den prozentualen Anteil der Erziehenden, die jünger als 50 Jahre sind. Stelle diesen prozentualen Anteil im Kreisdiagramm dar.}{5}
+\par\medskip\noindent\hfill Anteil $=$\linie{45mm}
+\fusshilfe{\gfuss{5}{45,5 \%; 163,6°}}
+\end{pfaufg}\vspace{-6pt}
+% DRUCK 2024-OS-K2c deckt 2024-OS-K2c
+\begin{pfaufg}{nach~P10\\’24}{6.\textsuperscript{*}}{}
+\gtextkaro{\begin{tabular}[t]{@{}c@{}}{\footnotesize\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.2}\begin{tabular}{|r|l|r|}\hline 1 & Trinken und Kochen & 12 $\ell$\\\hline 2 & Körperpflege & 256 $\ell$\\\hline 3 & Toilettenspülung & 136 $\ell$\\\hline 4 & Wäsche waschen & 60 $\ell$\\\hline 5 & Gartenpflege & 16 $\ell$\\\hline 6 & Sonstiges & 28 $\ell$\\\hline\end{tabular}}\\[2mm]\begin{tikzpicture}[font=\footnotesize,line width=0.6pt]\filldraw[fill=white,draw=black,line width=0.5pt] (0,0) -- (90:1.5) arc (90:-91.417:1.5) -- cycle;\filldraw[fill=white,draw=black,line width=0.5pt] (0,0) -- (-91.417:1.5) arc (-91.417:-111.26:1.5) -- cycle;\filldraw[fill=white,draw=black,line width=0.5pt] (0,0) -- (-111.26:1.5) arc (-111.26:-153.78:1.5) -- cycle;\filldraw[fill=black!25,draw=black,line width=0.5pt] (0,0) -- (-153.78:1.5) arc (-153.78:-165.118:1.5) -- cycle;\filldraw[fill=white,draw=black,line width=0.5pt] (0,0) -- (-165.118:1.5) arc (-165.118:-261.496:1.5) -- cycle;\filldraw[fill=black!25,draw=black,line width=0.5pt] (0,0) -- (-261.496:1.5) arc (-261.496:-270:1.5) -- cycle;\draw (0,0) circle (1.5);\draw[line width=0.4pt] (-0.067,0.898) -- (2,1.95) -- (4,1.95);\node[anchor=south east,inner sep=2pt] at (4,1.95) {1 Trinken und Kochen};\draw[line width=0.4pt] (-0.843,-0.316) -- (-2,0.9) -- (-4,0.9);\node[anchor=south west,inner sep=2pt] at (-4,0.9) {5 Gartenpflege};\end{tikzpicture}\end{tabular}}{Familie Schulz verbraucht täglich ca. 508 Liter Leitungswasser. Die Tabelle zeigt ihren Verbrauch. Im Kreisdiagramm sind die Anteile aus der Tabelle dargestellt. Beschrifte den Anteil für „Wäsche waschen“ im Kreisdiagramm. Berechne die Winkelgröße für den Anteil 1 „Trinken und Kochen“ vom gesamten Wasserverbrauch.}{4}
+\par\medskip\noindent\hfill Winkel $=$\linie{45mm}
+\fusshilfe{\gfuss{6}{Sektor unter 5 Gartenpflege; 8,5°}}
+\end{pfaufg}\vspace{-6pt}
+% DRUCK 2022-OS-K4d deckt 2022-OS-K4d
+\begin{pfaufg}{nach~P10\\’22}{7.}{}
+\gtextkaro{\begin{tabular}[t]{@{}c@{}}{\footnotesize\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.2}\begin{tabular}{|l|r|}\hline mehrmals pro Woche & 39\,\%\\\hline einmal pro Woche & 18\,\%\\\hline einmal im Monat & 27\,\%\\\hline nie & 16\,\%\\\hline\end{tabular}}\\[2mm]\begin{tikzpicture}[font=\footnotesize,line width=0.6pt]\filldraw[fill=white,draw=black,line width=0.5pt] (0,0) -- (90:1.5) arc (90:32.4:1.5) -- cycle;\filldraw[fill=white,draw=black,line width=0.5pt] (0,0) -- (32.4:1.5) arc (32.4:-64.8:1.5) -- cycle;\filldraw[fill=white,draw=black,line width=0.5pt] (0,0) -- (-64.8:1.5) arc (-64.8:-129.6:1.5) -- cycle;\filldraw[fill=white,draw=black,line width=0.5pt] (0,0) -- (-129.6:1.5) arc (-129.6:-270:1.5) -- cycle;\draw (0,0) circle (1.5);\draw[line width=0.4pt] (0.434,0.789) -- (2,1.55) -- (4,1.55);\node[anchor=south east,inner sep=2pt] at (4,1.55) {nie};\draw[line width=0.4pt] (0.864,-0.251) -- (2,-0.2) -- (4,-0.2);\draw[line width=0.4pt] (-0.113,-0.893) -- (2,-1.75) -- (4,-1.75);\draw[line width=0.4pt] (-0.847,0.305) -- (-2,0.2) -- (-4,0.2);\end{tikzpicture}\end{tabular}}{750 Jugendliche wurden befragt, wie häufig sie Comic-Hefte lesen. Die Tabelle zeigt die prozentuale Verteilung. Beschrifte das Kreisdiagramm entsprechend der Tabelle. Berechne die Winkelgröße für den Anteil „nie“.}{3}
+\par\medskip\noindent\hfill Winkel $=$\linie{45mm}
+\fusshilfe{\gfuss{7}{rechts einmal im Monat, unten einmal pro Woche, links mehrmals pro Woche; 57,6°}}
+\end{pfaufg}\vspace{-6pt}
+% DRUCK 2017-OS-K2c deckt 2017-OS-K2c
+\begin{pfaufg}{nach~P10\\’17}{8.}{}
+\gtextkaro{\begin{tabular}[t]{@{}c@{}}{\footnotesize\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.2}\begin{tabular}{|l|r|}\hline \textbf{Im Jahr 2013 geboren als} & \begin{tabular}{@{}c@{}}\textbf{Anteil in}\\\textbf{Prozent (\%)}\end{tabular}\\\hline erstes Kind der Mutter & 49,4\\\hline zweites Kind der Mutter & 34,4\\\hline drittes Kind der Mutter & 11,2\\\hline \begin{tabular}{@{}l@{}}viertes oder weiteres\\Kind der Mutter\end{tabular} & 5,0\\\hline\end{tabular}}\\[2mm]\begin{tikzpicture}[font=\footnotesize,line width=0.6pt]\filldraw[fill=black!30,draw=black] (0,0) -- (180:1.8) arc (180:198:1.8) -- cycle;\draw (0,0) circle (1.8);\draw[-{Stealth[length=2mm]},line width=0.5pt] (-2.5,-1.35) -- (-1.45,-0.35);\foreach \y in {-1.6,-2.15,-2.7}{\draw[line width=0.4pt,dotted] (-4.4,\y) -- (-2.4,\y);}\end{tikzpicture}\end{tabular}}{Im Jahr 2013 wurden in Deutschland 682\,069 Kinder geboren. Im Kreisdiagramm ist ein Anteil aus der Tabelle farbig dargestellt. Beschrifte diesen farbigen Anteil. Berechne die Winkelgröße, die der Anteil für „drittes Kind der Mutter“ haben muss. Zeichne den Anteil für „drittes Kind der Mutter“ in das Kreisdiagramm ein und beschrifte diesen Anteil.}{3}
+\par\medskip\noindent\hfill Winkel $=$\linie{45mm}
+\fusshilfe{\gfuss{8}{viertes oder weiteres Kind; 40,32°}}
+\end{pfaufg}\vspace{-6pt}
+\end{document}
