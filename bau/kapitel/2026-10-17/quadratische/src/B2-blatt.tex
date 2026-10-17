@@ -141,7 +141,7 @@
         \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid (\gxs pt,\gys pt);
         \end{tikzpicture}\par\end{minipage}%
     \else\usebox{\gtbox}\fi\else\usebox{\gtbox}\fi
-    \hfill\begin{minipage}[t]{\wd\gbox}\vspace{-\ht\strutbox}\usebox{\gbox}\end{minipage}\par
+    \hfill\begin{minipage}[t]{\wd\gbox}\vspace{-\dimexpr\ht\strutbox+2.4ex\relax}\usebox{\gbox}\end{minipage}\par
     \ifnum#3>0 \ifdim\gDh>0pt
       \pgfmathsetmacro{\gnn}{max(0,ceil(2*(#3-(\gys/28.4528)*(\gxs/\linewidth)))/2)}%
       \ifdim\gnn pt>0pt\gkaroohne{\gnn}\fi
