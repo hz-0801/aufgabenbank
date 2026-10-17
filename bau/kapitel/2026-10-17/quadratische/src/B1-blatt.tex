@@ -130,18 +130,18 @@
   \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par\ifnum#3>0 \karo{#3}\fi
   \else
     \setlength{\gWl}{\dimexpr\linewidth-\wd\gbox-5mm\relax}%
-    \sbox{\gtbox}{\begin{minipage}[t]{\gWl}\raggedright\vspace{0pt}#2\par\end{minipage}}%
+    \sbox{\gtbox}{\begin{minipage}[t]{\gWl}\raggedright #2\par\end{minipage}}%
     \setlength{\gDh}{\dimexpr\ht\gbox+\dp\gbox-\ht\gtbox-\dp\gtbox-6pt\relax}%
-    \par\noindent
+    \leavevmode
     \ifnum#3>0\ifdim\gDh>0pt
       \pgfmathsetmacro{\gxs}{floor(\gWl/5mm)*5mm}\pgfmathsetmacro{\gys}{ceil(\gDh/5mm)*5mm}%
-      \begin{minipage}[t]{\gWl}\vspace{0pt}\usebox{\gtbox}\par\vspace{6pt}\nointerlineskip\noindent
+      \begin{minipage}[t]{\gWl}\usebox{\gtbox}\par\vspace{6pt}\nointerlineskip\noindent
         \begin{tikzpicture}
         \clip (0,0) rectangle (\gxs pt,\gys pt);
         \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid (\gxs pt,\gys pt);
         \end{tikzpicture}\par\end{minipage}%
     \else\usebox{\gtbox}\fi\else\usebox{\gtbox}\fi
-    \hfill\begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par
+    \hfill\begin{minipage}[t]{\wd\gbox}\vspace{-\ht\strutbox}\usebox{\gbox}\end{minipage}\par
     \ifnum#3>0 \ifdim\gDh>0pt
       \pgfmathsetmacro{\gnn}{max(0,ceil(2*(#3-(\gys/28.4528)*(\gxs/\linewidth)))/2)}%
       \ifdim\gnn pt>0pt\gkaroohne{\gnn}\fi
