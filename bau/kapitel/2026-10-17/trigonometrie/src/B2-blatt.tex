@@ -1,0 +1,214 @@
+\documentclass[11pt]{article}
+\usepackage{mathblatt}
+% Präambel des Setzers (werkzeuge/setzer-praeambel.tex, wortgleich); dazu \gteil (Muster T2U)
+\makeatletter
+\setlength{\mbpfbe}{0mm}% keine Punkte (pruefung.md § 5: nur beim Prüfstein)
+\newlength{\gEin}\setlength{\gEin}{0pt}
+\let\gSchrift\relax
+\renewcommand{\pfkreuzzeile}[1]{\par\noindent\hangindent3.2em\hangafter1\hspace*{1.6em}$\square$\ #1\par}
+\newcommand{\gkreuz}[1]{$\square$\ #1\hspace{2em}}
+\newcommand{\gkreuzzeile}[2]{\par\noindent\hangindent2.2em\hangafter1\mbox{#1\,$\square$}\ #2\par}% Buchstabe, Option: eine je Zeile (neben Skizze)
+% links, was man ansieht, rechts, was man tut; Spaltengrenze überall an derselben Stelle (gemeinsam.md „Satz“)
+% v0.17: Fußeintrag „Nr: Wert“ – kurz in einer Box (nie getrennt), lang umbrechbar mit der Nummer am Anfang
+% (vorher \mbox: lange Lösungen liefen über den Rand, AS40 138 pt); robust, weil \fusshilfe in die .aux schreibt
+\NewDocumentCommand{\gfuss}{m m}{\sbox0{#1:~#2}\ifdim\wd0<0.45\textwidth\mbox{#1:~#2}\else\mbox{#1:}\nobreak\ #2\fi}
+\newsavebox{\gbox}\newlength{\gLinks}
+% v0.10 (Lehrer 13.10.): keine starre Halbierung – die linke Spalte ist so breit wie die Figur (+ 6 mm), die
+% Antwort steht direkt daneben; ist die Figur breiter als 0,62 Zeile, steht die Antwort darunter
+\newcommand{\gzwei}[2]{\par\smallskip\noindent\sbox{\gbox}{#1}%
+  \setlength{\gLinks}{\dimexpr\wd\gbox+6mm\relax}%
+  \ifdim\gLinks>0.62\linewidth
+    \usebox{\gbox}\par\smallskip\noindent\begin{minipage}{\linewidth}#2\end{minipage}%
+  \else
+    \begin{minipage}[t]{\gLinks}\vspace{0pt}\usebox{\gbox}\end{minipage}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\gLinks\relax}\vspace{0pt}\raggedright #2\end{minipage}%
+  \fi\par}
+% 16.10. (Lehrer, PA10 S. 1): Text links, Koordinatensystem rechts daneben; ist das System breiter als 0,58 Zeile,
+% steht es wie bisher unter dem Text
+% Passt das System knapp nicht mehr auf die Seite (bis 25 % zu hoch), wird es auf den Rest verkleinert statt
+% die Seite halb leer zu lassen
+\newlength{\gRest}\newlength{\gHoch}
+\newcommand{\gtextks}[2]{\sbox{\gbox}{#1}%
+  \setlength{\gHoch}{\dimexpr\ht\gbox+\dp\gbox\relax}%
+  \ifdim\pagegoal<\maxdimen\setlength{\gRest}{\dimexpr\pagegoal-\pagetotal-4\baselineskip\relax}%
+    \ifdim\gHoch>\gRest\ifdim\gRest>0.75\gHoch
+      \sbox{\gbox}{\resizebox*{!}{\gRest}{\usebox{\gbox}}}\fi\fi\fi
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par
+  \else\begin{minipage}[t]{\dimexpr\linewidth-\wd\gbox-5mm\relax}\raggedright #2\end{minipage}\hfill
+    \begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par\fi}
+% v0.9 (12.10., pruefung.md § 5 „Marke mit B, Bedingungen rechts“): drittes Argument von pfaufg = Bedingungen
+% der Prüfung (v0.10: \pfohnetr = TR durchgestrichen, „FOR“), klein grau im rechten Rand auf der Grundlinie der Nummer, Zeilen mit \\
+\newcommand{\gbedrand}[2]{\ifblank{#2}{}{\rlap{\hspace*{\dimexpr#1+2mm\relax}%
+  \parbox[t]{15mm}{\raggedright\scriptsize\leavevmode\color{mbgrau}\strut#2}}}}
+% Teil eines Bündels (a, b …): Marke links im Rand, Bedingungen rechts im Rand, auf der Zeile des Teils
+\newcommand{\gteilrand}[2]{\llap{\mbpfrandmarke{#1}\hspace*{\mbpfnr}}\gbedrand{\linewidth}{#2}}
+% Teil eines Bündels: Buchstabe in eigener Spalte, Inhalt eingerückt (\gEin = Einzug, damit die Spaltengrenze von
+% \gzwei an derselben Stelle bleibt)
+\newenvironment{gbteil}[3]{\par\smallskip\noindent\gteilrand{#2}{#3}\makebox[\mbpfteil][l]{\textbf{#1}}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\mbpfteil\relax}\setlength{\gEin}{\mbpfteil}\raggedright\strut\ignorespaces}%
+ {\end{minipage}\par\addvspace{6pt}}% v0.18 (PG80 Nr. 1): Abstand, damit die Linie von a) nicht an b) rutscht
+% Grafik höchstens so breit wie die Spalte (Bündel nebeneinander, Koordinatensystem ohne Karo)
+\newsavebox{\gpbox}
+\newcommand{\gpassend}[1]{\sbox{\gpbox}{#1}\ifdim\wd\gpbox>\linewidth\typeout{GPASSEND: verkleinert \the\wd\gpbox\space auf \the\linewidth}\resizebox{\linewidth}{!}{\usebox{\gpbox}}\else\usebox{\gpbox}\fi}
+% Skizzenfeld (v0.10, Lehrer 13.10.): Karo ab dem linken Rand über die Zeile, „Skizze“ klein grau oben links im Feld
+% (wie \pfskizzenfeld der Vorlage); der rechte Rand bleibt den Bedingungen
+\newcommand{\gskizze}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \node[anchor=north west,inner sep=2pt,font=\scriptsize,text=mbgrau,fill=white] at (0,{#1*10mm}) {Skizze};
+  \end{tikzpicture}\par}
+\RenewDocumentEnvironment{pfaufg}{m m m}{%
+  \begin{lrbox}{\mbaufgabebox}\begin{minipage}[t]{\linewidth}%
+  \gSchrift\noindent\hspace*{\gEin}\mbpfrandmarke{#1}\gbedrand{\linewidth-\gEin}{#3}%
+  \begin{minipage}[t]{\mbpfnr}\strut\textbf{#2}\end{minipage}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\gEin-\mbpfnr\relax}\raggedright\strut\ignorespaces}%
+ {\end{minipage}%
+  \end{minipage}\end{lrbox}%
+  \setlength{\mbaufgabehoehe}{\dimexpr\ht\mbaufgabebox+\dp\mbaufgabebox\relax}%
+  \ifdefempty{\gkopfnach}{\par\addvspace{5pt}\Needspace*{\mbaufgabehoehe}}{%
+    % Stufenkopf, der mit dieser (ersten) Aufgabe zusammenbleibt: Platz für beide verlangen, dann den Kopf setzen
+    % (12.10., Quadratische: ein Kopf stand allein unten, die Aufgabe mit Koordinatensystem auf der nächsten Seite)
+    % v0.17 (AS40 „Terme deuten“ allein unten): hinter dem Kopf steht das Sprungziel (\special, ein Knoten, nach
+    % dem die Seite brechen durfte) – darum \nobreak nach dem Kopf; Vorhalt 56 pt = Kopf mit Linie und Abständen
+    \par\Needspace*{\dimexpr\mbaufgabehoehe+56pt\relax}\gkopfnach\par\nobreak\gdef\gkopfnach{}\addvspace{5pt}}%
+  \noindent\usebox{\mbaufgabebox}\par\addvspace{5pt}}
+% v0.18 (plan.md § 10, 15.10. l): Abschnittsbuchstabe A, B, C vor dem Namen im Kopf – als Vorsatz, damit der
+% Name im TeX gleich bleibt (Bestellkarte, Sprungziele lesen ihn)
+\def\gbstakt{}\newcommand{\gbstvor}[1]{\gdef\gbstakt{#1}}
+\NewCommandCopy\gpfstufekopfalt\pfstufekopf
+\RenewDocumentCommand{\pfstufekopf}{o m m}{\IfValueTF{#1}{\gpfstufekopfalt[#1]}{\gpfstufekopfalt}%
+  {\ifx\gbstakt\empty\else\gbstakt\enspace\fi #2}{#3}\gdef\gbstakt{}}
+% v0.18 (16.10. e): Begriff grau, ohne Nummer, ohne Rahmen über der ersten Aufgabe der Stufe
+\newcommand{\gbegriff}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}\parbox[t]{\dimexpr\linewidth-\mbpfnr\relax}{\raggedright\small\color{mbgrau}#1}\par\nobreak\addvspace{3pt}}
+% v0.18 (16.10. g): Lösungsblatt – Kopf mit kräftigem Strich, Abschnitt klein grau als Zwischenzeile
+\newcommand{\glkopf}[1]{\noindent{\large\bfseries Lösungen \textperiodcentered{} #1}\par\vspace{3pt}\hrule height 1.2pt\par\medskip}
+\newcommand{\glzwischen}[1]{\par\addvspace{8pt}\Needspace*{4\baselineskip}\noindent{\footnotesize\color{mbgrau}#1}\par\nobreak\vspace{1pt}}
+% v0.18 (15.10. o, w): Blattende – Kern ohne Rahmen, dann graue Zeile „Mehr: n Aufgaben“
+\newcommand{\gkern}[1]{\par\addvspace{14pt}\Needspace*{6\baselineskip}\noindent{\bfseries Kern}\par\nobreak\smallskip
+  {\small\raggedright #1\par}}
+\newcommand{\gmehr}[1]{\par\addvspace{10pt}\noindent{\footnotesize\color{mbgrau}Mehr: #1 Aufgaben}\par}
+% Stufenkopf vormerken: \gkopfvor{<Kopf>} – die nächste pfaufg setzt ihn, sobald beide zusammen Platz haben
+\def\gkopfnach{}
+\newcommand{\gkopfvor}[1]{\gdef\gkopfnach{#1}}
+% Teilaufgabe mit Skizze links in gzwei: Buchstabe in eigener Spalte, darunter Text und Skizze
+\newcommand{\gteil}[2]{\makebox[\mbpfteil][l]{\textbf{#1}}\parbox[t]{\dimexpr0.5\textwidth-\gEin-\mbpfnr-5mm-\mbpfteil\relax}{\raggedright #2}}
+% Stufenkopf der Vorlage (mathblatt.sty 2026-10-12: Linie, Abstand, 13 pt, \pfjahre) ohne ihren Vorhalt von
+% 14 Zeilen: der Setzer fordert vor dem Kopf 0,16 Seitenhöhe (Kopf + erste Aufgabe), mehr nicht
+\setlength{\mbpfstufevorhalt}{0pt}
+\makeatother
+\newcommand{\karo}[1]{\par\smallskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\kk}[1]{$\square$\,#1\hspace{0.9em}}
+\newcommand{\linie}[1]{\,{\color{black!45}\rule[-1pt]{#1}{0.4pt}}\,}
+\newcommand{\pkt}{\textperiodcentered{}}
+% v0.14 (14.10.): Stufenkopf mit fünf Punkten (Option = Jahre für die Bestellkarte) oder „zuletzt 19“
+\NewDocumentCommand{\gpunkte}{o m}{#2}
+\newcommand{\gzuletzt}[1]{zuletzt #1}
+% v0.7 (12.10.): Schülerfrage unter dem Stufenkopf; Ankreuzoption als Bild (Buchstabe und Kästchen darunter)
+\newcommand{\gfrage}[1]{\par\nobreak\noindent\hspace*{\mbpfnr}{\small\itshape #1}\par\nobreak\addvspace{2pt}}
+\newlength{\gbildbreite}\setlength{\gbildbreite}{0.32\linewidth}% Setzer setzt sie je Reihe (vier Bilder: 0,24)
+\newcommand{\gbildoption}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{#1\,$\square$}\end{minipage}}
+% Lineare (12.10.): Bild mit Buchstabe ohne Kästchen (Diagramm zuordnen); Aussage mit „wahr / falsch“ zum Ankreuzen
+\newcommand{\gbildname}[3]{\begin{minipage}[t][#3][b]{\gbildbreite}\centering #2\par\smallskip\mbox{\textbf{#1}}\end{minipage}}
+\newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
+
+\newcommand{\gunter}[2]{\par\addvspace{6pt}\noindent{\bfseries #1\enspace #2}\par\nobreak\vspace{2pt}}
+\newcommand{\gsternzeile}{\par\vspace{-4pt}\noindent{\footnotesize\color{mbgrau}* nur FOR}\par\medskip}
+% 17.10.: Skizze oben bündig mit der ersten Textzeile (beide Spalten hängen an der Oberkante); der Rechenraum (Karo)
+% beginnt direkt unter dem Text, links neben dem Graph, und läuft unter dem Graph über die ganze Zeile weiter
+% (Streifen links = auf 5 mm aufgerundete Höhe des Graphen unter dem Text, Raster durchgehend; die Fläche des Streifens
+% wird von der Karohöhe unter dem Graph abgezogen, auf 0,5 cm aufgerundet – die Gesamtfläche Rechenraum bleibt mindestens #3 × Zeile); #3 = Zeilen Karo in cm
+% unter dem Graph (0 = kein Karo). Kein Verkleinern des Graphen.
+\newsavebox{\gtbox}\newlength{\gWl}\newlength{\gDh}
+\newcommand{\gkaroohne}[1]{\nointerlineskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\gtextkaro}[3]{\sbox{\gbox}{#1}%
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par\ifnum#3>0 \karo{#3}\fi
+  \else
+    \setlength{\gWl}{\dimexpr\linewidth-\wd\gbox-5mm\relax}%
+    \sbox{\gtbox}{\begin{minipage}[t]{\gWl}\raggedright #2\par\end{minipage}}%
+    \setlength{\gDh}{\dimexpr\ht\gbox+\dp\gbox-\ht\gtbox-\dp\gtbox-6pt\relax}%
+    \leavevmode
+    \ifnum#3>0\ifdim\gDh>0pt
+      \pgfmathsetmacro{\gxs}{floor(\gWl/5mm)*5mm}\pgfmathsetmacro{\gys}{ceil(\gDh/5mm)*5mm}%
+      \begin{minipage}[t]{\gWl}\usebox{\gtbox}\par\vspace{6pt}\nointerlineskip\noindent
+        \begin{tikzpicture}
+        \clip (0,0) rectangle (\gxs pt,\gys pt);
+        \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid (\gxs pt,\gys pt);
+        \end{tikzpicture}\par\end{minipage}%
+    \else\usebox{\gtbox}\fi\else\usebox{\gtbox}\fi
+    \hfill\begin{minipage}[t]{\wd\gbox}\vspace{-\dimexpr\ht\strutbox+2.4ex\relax}\usebox{\gbox}\end{minipage}\par
+    \ifnum#3>0 \ifdim\gDh>0pt
+      \pgfmathsetmacro{\gnn}{max(0,ceil(2*(#3-(\gys/28.4528)*(\gxs/\linewidth)))/2)}%
+      \ifdim\gnn pt>0pt\gkaroohne{\gnn}\fi
+    \else\karo{#3}\fi\fi
+  \fi}
+\begin{document}
+
+\pfheftstil
+\pflaufkopf[P10 \pkt{} Prüfung]{Trigonometrie}{PG60 B2}\pfseitevon
+\pfheftkopf{Trigonometrie}{}
+\pfstufenzeile{Berechnungen im rechtwinkligen Dreieck}
+\gsternzeile
+
+% ===================== B Berechnungen im rechtwinkligen Dreieck =====================
+\gkopfvor{\gbstvor{B}\pfstufekopf{Berechnungen im rechtwinkligen Dreieck}{}\gunter{B2}{Seite gesucht}}
+% DRUCK 2020-OS-B1j deckt 2020-OS-B1j
+\begin{pfaufg}{nach~P10\\’20}{1.}{Basis}
+Für $x$ wurde die Gleichung $\sin 30^\circ = \tfrac{7}{x}$ aufgestellt. Gib den Wert von $x$ an.
+\karo{3}
+\par\medskip\noindent\hfill x $=$\linie{25mm}
+\fusshilfe{\gfuss{1}{14}}
+\end{pfaufg}\vspace{-6pt}
+% DRUCK 2022-OS-K5d deckt 2022-OS-K5d
+\begin{pfaufg}{nach~P10\\’22}{2.}{}
+\gtextkaro{\begin{tikzpicture}[baseline=(current bounding box.north),line width=0.7pt,font=\small]\draw (0,0) -- (7.11,0) -- (4.8,2.96) -- cycle;\draw[dashed] (4.8,2.96) -- (4.8,0);\pfrw[0.25]{(4.8,0)}{90}\node[anchor=north east,inner sep=1.5pt] at (0,0) {$A$};\node[anchor=north west,inner sep=1.5pt] at (7.11,0) {$B$};\node[anchor=south,inner sep=1.5pt] at (4.8,2.96) {$C$};\node[anchor=north,inner sep=1.5pt] at (4.8,0) {$D$};\node[anchor=west,inner sep=1.5pt] at (4.8,1.3) {$h_c$};\node[anchor=south west,inner sep=1.5pt] at (5.95,1.48) {$a$};\pfwinkel[0.8][0.62]{(7.11,0)}{128}{180}{52^\circ}\end{tikzpicture}}{Gegeben ist ein Dreieck $ABC$. Das Dreieck ist nicht rechtwinklig. Die Höhe $h_c$ beträgt ca. 7,4~m. Berechne die Länge der Seite $a$.}{4}
+\par\medskip\noindent\hfill a $=$\linie{25mm}
+\fusshilfe{\gfuss{2}{9,4 m}}
+\end{pfaufg}\vspace{-6pt}
+% DRUCK 2021-OS-K3a deckt 2021-OS-K3a
+% DRUCK 2021-OS-K3b deckt 2021-OS-K3b
+\begin{pfaufg}{nach~P10\\’21}{3.}{}
+\gtextkaro{\begin{tikzpicture}[baseline=(current bounding box.north),line width=0.7pt,font=\small]\draw (0,0) -- (0,1.966) -- (-2.732,2.906) -- (-1.377,0) -- cycle;\draw (-1.377,0) -- (0,1.966);\pfrw[0.25]{(0,0)}{90}\node[anchor=north west,inner sep=1.5pt] at (0,0) {$A$};\node[anchor=south west,inner sep=1.5pt] at (0,1.966) {$B$};\node[anchor=south east,inner sep=1.5pt] at (-2.732,2.906) {$C$};\node[anchor=north east,inner sep=1.5pt] at (-1.377,0) {$D$};\node[rotate=55,anchor=north,inner sep=2pt,font=\footnotesize] at (-0.69,0.98) {$1500$ m};\pfwinkel[0.55][0.62]{(-1.377,0)}{0}{55}{55^\circ}\end{tikzpicture}}{Gegeben ist das Viereck $ABCD$.\begin{gbteil}{a)}{}{}Zeige mit einer Rechnung, dass die Länge der Strecke $\overline{AB}$ ca. 1229~m beträgt.\end{gbteil}}{4}
+\begin{gbteil}{b)}{}{}
+Berechne die Länge der Strecke $\overline{AD}$.
+\karo{4}
+\par\medskip\noindent\hfill AD $=$\linie{25mm}
+\end{gbteil}
+\fusshilfe{\gfuss{3}{a) 1228,7 m; b) 860,4 m}}
+\end{pfaufg}\vspace{-6pt}
+% DRUCK 2017-OS-K4b deckt 2017-OS-K4b
+\begin{pfaufg}{nach~P10\\’17}{4.}{}
+\gtextkaro{\begin{tikzpicture}[baseline=(current bounding box.north),line width=0.7pt,font=\small]\draw (0,0) -- (4.68,0) -- (1.235,2.401) -- cycle;\node[anchor=north east,inner sep=1.5pt] at (0,0) {$A$};\node[anchor=north west,inner sep=1.5pt] at (4.68,0) {$B$};\node[anchor=south,inner sep=1.5pt] at (1.235,2.401) {$C$};\pfwinkel[0.8][0.68]{(4.68,0)}{145.1}{180}{34{,}9^\circ}\draw[line width=1.6pt] (3.648,0) -- (3.648,0.72);\node[anchor=north,inner sep=1.5pt] at (3.648,0) {$P$};\node[anchor=east,inner sep=1.5pt,font=\footnotesize] at (3.6,0.36) {$1{,}20$ m};\end{tikzpicture}}{Der Dachboden eines Hauses soll ausgebaut werden. Die Skizze zeigt den Querschnitt des Dachbodens. Im Dachboden soll eine senkrechte Wand gebaut werden. Sie reicht bis zur Dachschräge $\overline{BC}$ und ist 1,20~m hoch. Berechne, wie viel Meter der Fußpunkt $P$ der Wand vom Punkt $B$ entfernt sein muss.}{4}
+\par\medskip\noindent\hfill PB $=$\linie{25mm}
+\fusshilfe{\gfuss{4}{1,72 m}}
+\end{pfaufg}\vspace{-6pt}
+% DRUCK 2026-FOR-K4c deckt 2026-FOR-K4c
+\begin{pfaufg}{nach~P10\\’26}{5.\textsuperscript{*}}{}
+\gtextkaro{\begin{tikzpicture}[baseline=(current bounding box.north),line width=0.7pt,font=\small]\draw (0,0) -- (4.6,0) -- (5.9,2.92) -- (1.3,2.92) -- cycle;\draw[densely dotted] (4.6,0) -- (5.9,0) -- (5.9,2.92);\pfrw[0.25]{(5.9,0)}{90}\node[anchor=north east,inner sep=1.5pt] at (0,0) {$A$};\node[anchor=north east,inner sep=1.5pt] at (4.6,0) {$B$};\node[anchor=north west,inner sep=1.5pt] at (5.9,0) {$F$};\node[anchor=south west,inner sep=1.5pt] at (5.9,2.92) {$C$};\node[anchor=south east,inner sep=1.5pt] at (1.3,2.92) {$D$};\node[anchor=north,inner sep=1.5pt,font=\footnotesize] at (5.25,0) {$13$ cm};\node[anchor=west,inner sep=1.5pt] at (5.9,1.46) {$h$};\node[rotate=66,anchor=south,inner sep=2pt,font=\footnotesize] at (5.25,1.46) {$32$ cm};\draw (0,0) -- (5.9,2.92);\pfwinkel[1.6][0.75]{(0,0)}{0}{26.3}{22^\circ}\end{tikzpicture}}{Bei dem Viereck $ABCD$ sind die gegenüberliegenden Seiten jeweils parallel zueinander. Bestimme die Länge der Diagonale $\overline{AC}$.}{5}
+\par\medskip\noindent\hfill AC $=$\linie{25mm}
+\fusshilfe{\gfuss{5}{78,1 cm}}
+\end{pfaufg}\vspace{-6pt}
+% DRUCK 2023-OS-K7b deckt 2023-OS-K7b
+\begin{pfaufg}{nach~P10\\’23}{6.}{}
+\gtextkaro{\begin{tikzpicture}[baseline=(current bounding box.north),line width=0.7pt,font=\small]\fill[black!10] (2.05,0) -- (0,2.05) -- (0,0) -- cycle;\draw (2.05,0) -- (0,2.05) -- (-4.39,0) -- cycle;\draw (0,2.05) -- (0,0);\pfrw[0.25]{(0,0)}{90}\node[anchor=north,inner sep=1.5pt] at (0,0) {$F$};\node[anchor=north west,inner sep=1.5pt] at (2.05,0) {$A$};\node[anchor=south,inner sep=1.5pt] at (0,2.05) {$B$};\node[anchor=north east,inner sep=1.5pt] at (-4.39,0) {$C$};\pfwinkel[0.7][0.66]{(0,2.05)}{205}{270}{65^\circ}\pfwinkel[0.9][0.66]{(0,2.05)}{270}{315}{45^\circ}\pfwinkel[0.6][0.62]{(2.05,0)}{135}{180}{45^\circ}\node[rotate=-45,anchor=south,inner sep=2pt,font=\footnotesize] at (1.025,1.025) {$131{,}5$ cm};\end{tikzpicture}}{Gegeben ist das Dreieck $ABC$. Weise nach, dass die Länge der Strecken $\overline{BF}$ und $\overline{AF}$ jeweils ca. 93,0~cm beträgt. Berechne die Länge der Strecke $\overline{BC}$.}{5}
+\par\medskip\noindent\hfill BC $=$\linie{25mm}
+\fusshilfe{\gfuss{6}{93,0 cm; 220,0 cm}}
+\end{pfaufg}\vspace{-6pt}
+% DRUCK 2018-OS-K4d deckt 2018-OS-K4d
+\begin{pfaufg}{nach~P10\\’18}{7.}{}
+\gtextkaro{\begin{tikzpicture}[baseline=(current bounding box.north),line width=0.7pt,font=\small]\draw[dashed,line width=0.5pt] (-0.3,0) -- (5.2,0);\draw[line width=1.2pt] (0,0) -- (0,0.5);\draw (0,0.5) -- (4.6,0.5);\draw[dashed] (4.6,0.5) -- (4.6,3.156);\draw[line width=1.6pt] (4.6,3.156) -- (4.6,3.721);\draw (0,0.5) -- (4.6,3.156);\draw (0,0.5) -- (4.6,3.721);\pfrw[0.25]{(4.6,0.5)}{90}\node[anchor=south east,inner sep=1.5pt] at (0,0.5) {$A$};\node[anchor=north west,inner sep=1.5pt] at (4.6,0.5) {$B$};\node[anchor=west,inner sep=1.5pt] at (4.6,3.156) {$C$};\node[anchor=south,inner sep=1.5pt] at (4.6,3.721) {$D$};\node[anchor=west,inner sep=1.5pt,font=\footnotesize] at (4.68,3.44) {$12{,}0$ m};\node[anchor=east,inner sep=1.5pt,font=\footnotesize] at (-0.05,0.25) {$1{,}5$ m};\pfwinkel[1.3][0.75]{(0,0.5)}{0}{30}{30^\circ}\node[rotate=30,anchor=north,inner sep=2pt,font=\footnotesize] at (2.9,2.17) {$112{,}8$ m};\end{tikzpicture}}{Tim möchte mit einem Messgerät die Höhe des Hasenberges bestimmen. Auf der Bergspitze $C$ befindet sich eine 12,0~m hohe Aussichtsplattform $D$. Vom Punkt $A$ misst er die zwei Winkelgrößen $30^\circ$ und $35^\circ$. Der Punkt $A$ liegt 1,5~m über dem Boden. Tim hat für $\overline{AC}$ eine Länge von 112,8~m bestimmt. Ermittle die Höhe des Hasenberges. Gib an, auf welcher Höhe über dem Boden sich die Aussichtsplattform $D$ befindet.}{5}
+\par\medskip\noindent\hfill Berg $=$\linie{25mm}\quad D $=$\linie{25mm}
+\fusshilfe{\gfuss{7}{57,9 m; 69,9 m}}
+\end{pfaufg}\vspace{-6pt}
+% DRUCK 2016-OS-K7c deckt 2016-OS-K7c
+\begin{pfaufg}{nach~P10\\’16}{8.\textsuperscript{*}}{}
+\gtextkaro{\begin{tikzpicture}[baseline=(current bounding box.north),line width=0.7pt,font=\small]\draw[mbgrau,line width=0.5pt] (-0.4,0.18) -- (4.8,0.18);\node[anchor=south,inner sep=1.5pt,font=\footnotesize,text=mbgrau] at (1.1,0.18) {Spree};\draw[line width=1.1pt] (2.164,-2.977) -- (0,0) -- (2.164,0);\draw[dashed,line width=1.1pt] (2.164,0) -- (4.172,0);\draw (2.164,-2.977) -- (4.172,0);\draw[line width=0.5pt] (2.164,-2.977) -- (2.164,0);\pfrw[0.25]{(2.164,0)}{270}\node[anchor=south east,inner sep=1.5pt] at (0,0) {$C$};\node[anchor=south,inner sep=1.5pt] at (2.164,0) {$D$};\node[anchor=south west,inner sep=1.5pt] at (4.172,0) {$B$};\node[anchor=north,inner sep=1.5pt] at (2.164,-2.977) {$A$};\node[anchor=north east,inner sep=1.5pt,font=\footnotesize] at (-0.05,-0.05) {Bioladen};\node[anchor=south,inner sep=1.5pt,font=\footnotesize] at (2.164,0.45) {Brücke};\node[anchor=north west,inner sep=1.5pt,font=\footnotesize] at (4.2,-0.1) {Anlegestelle};\node[anchor=north,inner sep=1.5pt,font=\footnotesize] at (2.164,-3.25) {Ausflugslokal};\node[anchor=south,inner sep=1.5pt,font=\footnotesize] at (1.08,0) {$541$ m};\node[anchor=north east,inner sep=1.5pt,font=\footnotesize] at (0.9,-1.6) {$920$ m};\pfwinkel[0.6][0.62]{(0,0)}{306}{360}{54^\circ}\pfwinkel[0.7][0.62]{(2.164,-2.977)}{56}{126}{70^\circ}\end{tikzpicture}}{Im Spreewald gibt es viele sumpfige Wiesen. Um vom Ausflugslokal $A$ zur Brücke bei $D$ zu gelangen, musste man bisher am Bioladen $C$ vorbei. Um von der Anlegestelle $B$ direkt zur Brücke bei $D$ gehen zu können, wird ein neuer Weg $\overline{BD}$ gebaut. Ermittle die Länge des Weges $\overline{BD}$.}{5}
+\par\medskip\noindent\hfill BD $=$\linie{25mm}
+\fusshilfe{\gfuss{8}{502 m}}
+\end{pfaufg}\vspace{-6pt}
+\end{document}
