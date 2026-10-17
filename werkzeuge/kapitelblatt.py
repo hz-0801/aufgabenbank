@@ -17,7 +17,8 @@ werkzeuge/pruefheft.py (unverändert). form (Teile mit „+“): ankreuzen, wahr
 Koordinatensystem ist das Antwortfeld), punkt:S₁,S₂ („S₁( __ | __ )“), werte:x₁,x₂ („x₁ = __“), linie:p(x)
 („p(x) = ____“, leer: nur Linie). Zeilen mit gleicher Spalte gruppe = Teile eines Originals: eine Nummer, a), b),
 Vorspann und Grafik einmal.
-Ausgabe: bau/kapitel/<datum>/<kapitel>/ blatt.pdf, loesung.pdf, A-blatt.pdf, A-loesung.pdf, …, src/*.tex.
+Ausgabe: bau/kapitel/<datum>/<kapitel>/ (wird ersetzt) blatt.pdf, loesung.pdf, je Kapitel A-…, B-…, je Abschnitt B1-…, B2-…
+(<Abschnitt>-blatt.pdf, <Abschnitt>-loesung.pdf), src/*.tex.
 Prüfung im Lauf: jede Zeile der Zuordnung genau einmal vertreten, jede gedruckte Aufgabe genau einmal im Satz.
 """
 import argparse, csv, os, re, shutil, sys, tempfile
@@ -28,38 +29,48 @@ sys.path.insert(0, HIER)
 import pruefheft as P   # noqa: E402
 
 TITEL = {'quadratische': 'Quadratische Funktionen'}
-KENN = {'quadratische': 'QF'}
+KENN = {'quadratische': 'PA30'}   # 17.10.: Abschnitte bestellbar als „PA30 A“, „PA30 B1“, …
 
 KAP_PRAEAMBEL = r"""
 \newcommand{\gunter}[2]{\par\addvspace{6pt}\noindent{\bfseries #1\enspace #2}\par\nobreak\vspace{2pt}}
-\newcommand{\gnurfor}{\textcolor{black}{\textbf{nur FOR}}}
+\newcommand{\gsternzeile}{\par\vspace{-4pt}\noindent{\footnotesize\color{mbgrau}* nur FOR}\par\medskip}
+% 17.10.: Skizze oben bündig mit der ersten Textzeile (beide Spalten hängen an der Oberkante); der Rechenraum (Karo)
+% beginnt direkt unter dem Text, links neben dem Graph, und läuft unter dem Graph über die ganze Zeile weiter
+% (Streifen links = auf 5 mm aufgerundete Höhe des Graphen unter dem Text, Raster durchgehend; die Fläche des Streifens
+% wird von der Karohöhe unter dem Graph abgezogen, auf 0,5 cm aufgerundet – die Gesamtfläche Rechenraum bleibt mindestens #3 × Zeile); #3 = Zeilen Karo in cm
+% unter dem Graph (0 = kein Karo). Kein Verkleinern des Graphen.
+\newsavebox{\gtbox}\newlength{\gWl}\newlength{\gDh}
+\newcommand{\gkaroohne}[1]{\nointerlineskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\gtextkaro}[3]{\sbox{\gbox}{#1}%
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par\ifnum#3>0 \karo{#3}\fi
+  \else
+    \setlength{\gWl}{\dimexpr\linewidth-\wd\gbox-5mm\relax}%
+    \sbox{\gtbox}{\begin{minipage}[t]{\gWl}\raggedright\vspace{0pt}#2\par\end{minipage}}%
+    \setlength{\gDh}{\dimexpr\ht\gbox+\dp\gbox-\ht\gtbox-\dp\gtbox-6pt\relax}%
+    \par\noindent
+    \ifnum#3>0\ifdim\gDh>0pt
+      \pgfmathsetmacro{\gxs}{floor(\gWl/5mm)*5mm}\pgfmathsetmacro{\gys}{ceil(\gDh/5mm)*5mm}%
+      \begin{minipage}[t]{\gWl}\vspace{0pt}\usebox{\gtbox}\par\vspace{6pt}\nointerlineskip\noindent
+        \begin{tikzpicture}
+        \clip (0,0) rectangle (\gxs pt,\gys pt);
+        \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid (\gxs pt,\gys pt);
+        \end{tikzpicture}\par\end{minipage}%
+    \else\usebox{\gtbox}\fi\else\usebox{\gtbox}\fi
+    \hfill\begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par
+    \ifnum#3>0 \ifdim\gDh>0pt
+      \pgfmathsetmacro{\gnn}{max(0,ceil(2*(#3-(\gys/28.4528)*(\gxs/\linewidth)))/2)}%
+      \ifdim\gnn pt>0pt\gkaroohne{\gnn}\fi
+    \else\karo{#3}\fi\fi
+  \fi}
 """
-
-
-KARO_KLEIN = {'B': 0.35}   # Abschnitt -> Karo in cm statt 0,5 (nur Koordinatensysteme; Karo-Rechenzeilen bleiben)
-
-
-def klein(g):
-    """Karo-Kante je Koordinatensystem aus dem Wertebereich: Höhe höchstens ~3,4 cm, Kante zwischen 0,27 und 0,35 cm."""
-    if not g:
-        return g
-
-    def ersetze(m):
-        schl = m.group(1)
-        y = re.search(r'ymin=(-?[\d.]+),ymax=(-?[\d.]+)', schl)
-        if 'karo=0.45' in schl:
-            k = 0.27
-        elif y:
-            k = min(0.35, max(0.27, 3.4 / (float(y.group(2)) - float(y.group(1)))))
-        else:
-            return m.group(0)
-        return '\\begin{ksys}[' + re.sub(r'karo=[\d.]+', f'karo={k:.2f}', schl) + ']'
-    return re.sub(r'\\begin\{ksys\}\[([^\]]*)\]', ersetze, g)
 
 
 # 17.10. c: Aufgabe ohne Koordinatensystem rückt innerhalb ihres Unterabschnitts vor eine Aufgabe mit Graph, damit sie das
 # Seitenende füllt (Reihenfolge leicht -> schwer bleibt grob); (id, vor id)
-VORZIEHEN = [('2026-FOR-K5d', '2023-OS-K4b-2'), ('2015-OS-B1i', '2024-OS-K3b')]
+VORZIEHEN = [('2026-FOR-K5d', '2023-OS-K4b-2'), ('2022-OS-K3b', '2023-OS-K4b-1'), ('2015-OS-B1i', '2023-OS-K4b-1')]
 
 
 def vorziehen(zs):
@@ -88,13 +99,13 @@ def jahre_marke(ids):
 
 
 def bedingungen(D, r):
-    """Wie pruefheft.p_bedingungen; „FOR“ wird deutlich „nur FOR“, und nur, wenn jede vertretene Aufgabe nur FOR war."""
-    eid = original(r['id'])
-    b = [x for x in P.p_bedingungen(D, {'eltern_id': eid}) if x != 'FOR']
-    ids = set(r['deckt'].split()) | {eid}
-    if all(P.stern_fuer(D, i) for i in ids):
-        b.append('\\gnurfor')
-    return '\\\\'.join(b)
+    """Wie pruefheft.p_bedingungen; „FOR“ fällt weg (17.10.: Sternchen an der Nummer, siehe stern)."""
+    return '\\\\'.join(x for x in P.p_bedingungen(D, {'eltern_id': original(r['id'])}) if x != 'FOR')
+
+
+def stern(D, ids, eid):
+    """Nur FOR: jede vertretene Aufgabe ist nur FOR (wie bisher „nur FOR“, jetzt als Sternchen an der Nummer)."""
+    return all(P.stern_fuer(D, i) for i in set(ids) | {eid})
 
 
 def antwort_teile(teil):
@@ -108,8 +119,13 @@ def antwort_teile(teil):
     return ''
 
 
+# 17.10. Punkt 1: Umbruch in einer Aussage, damit „wahr / falsch“ auf eigener Zeile steht (id, Wortende)
+UMBRUCH = {('2018-OS-K5a', 'verschoben.')}
+
+
 def inhalt(r):
-    """(Zeilen, Fuß) einer Aufgabe ohne Rahmen."""
+    """(vorn, karo, nach, Fuß) einer Aufgabe ohne Rahmen. vorn = Text, Optionen, Wahr/falsch (links neben dem Graph, wenn
+    es einen gibt); karo = Zeilen Rechenraum (0 = keiner); nach = Antwortzeilen am Ende des Rechenraums."""
     form = [t.strip() for t in (r['form'] or '').split('+') if t.strip()]
     w = r['wortlaut'].strip()
     text, optionen, rest = (P.p_wahrfalsch(w) if 'wahrfalsch' in form else P.p_kreuz(w))
@@ -118,7 +134,7 @@ def inhalt(r):
     t = P.tx(text)
     g = (r.get('grafik') or '').strip()
     bild = '||' in g
-    kurz, lang, antw = [], [], []
+    kurz, lang, antw, karo = [], [], [], 0
     for teil in form:
         if teil == 'ankreuzen':
             if bild:
@@ -126,7 +142,14 @@ def inhalt(r):
             else:
                 kurz.append(''.join(f'\\pfkreuzab{{}}{{{P.tx(o)}}}' for o in optionen))
         elif teil == 'wahrfalsch':
-            lang.append(''.join(f'\\gwahrfalsch{{{i + 1}}}{{{P.tx(o)}}}' for i, o in enumerate(optionen)))
+            zs = []
+            for i, o in enumerate(optionen):
+                ot = P.tx(o)
+                for uid, wort in UMBRUCH:
+                    if uid == r['id'] and wort in ot:
+                        ot = ot.replace(wort, wort + '\\\\')
+                zs.append(f'\\gwahrfalsch{{{i + 1}}}{{{ot}}}')
+            lang.append(''.join(zs))
             if rest:
                 lang.append('\\par\\smallskip\\noindent ' + P.tx(rest))
                 rest = ''
@@ -134,7 +157,7 @@ def inhalt(r):
             if rest:
                 lang.append('\\par\\smallskip\\noindent ' + P.tx(rest))
                 rest = ''
-            lang.append(f'\\karo{{{int(r["karo"] or 3)}}}')
+            karo = int(r['karo'] or 3)
         elif teil == 'zeichnen':
             pass   # das Koordinatensystem ist das Antwortfeld (pruefung.md § 5)
         elif antwort_teile(teil):
@@ -143,39 +166,60 @@ def inhalt(r):
             sys.exit(f'{r["id"]}: form „{teil}“ unbekannt')
     if rest:
         kurz.append('\\par\\smallskip\\noindent ' + P.tx(rest))
-    out = []
+    vorn = [t + ''.join(kurz)] + lang
+    nach = []
     if g and not bild:
-        neben = t + ''.join(kurz)
-        if antw and 'karo' not in form:
-            neben += ''.join('\\par\\medskip\\noindent ' + a for a in antw)
-            antw = []
-        out.append('\\gtextks{' + g + '}{' + neben + '}')
+        if antw and not karo:
+            vorn.append(''.join('\\par\\medskip\\noindent ' + a for a in antw))
+        else:
+            nach = ['\\par\\medskip\\noindent\\hfill ' + a for a in antw]
     else:
-        out.append(t + ''.join(kurz))
-    out += lang
-    out += ['\\par\\medskip\\noindent\\hfill ' + a for a in antw]
+        nach = ['\\par\\medskip\\noindent\\hfill ' + a for a in antw]
     ergebnisse, _ = P.p_ergebnis(r)
     # Optionswert mit Formel ganz (p_fusswerte teilt am „=“ auch in $…$)
-    return out, '; '.join(e if '$' in e else P.p_fusswerte([e], optionen, r)[0] for e in ergebnisse)
+    return vorn, karo, nach, '; '.join(e if '$' in e else P.p_fusswerte([e], optionen, r)[0] for e in ergebnisse), g, bild
+
+
+def zeilen_von(r, g_ausserhalb=None):
+    """TeX-Zeilen einer Aufgabe (ohne Rahmen) und ihr Fuß."""
+    vorn, karo, nach, fuss, g, bild = inhalt(r)
+    if g and not bild:
+        return ['\\gtextkaro{' + g + '}{' + ''.join(vorn) + '}{' + str(karo) + '}'] + nach, fuss
+    out = vorn + ([f'\\karo{{{karo}}}'] if karo else []) + nach
+    return out, fuss
 
 
 def aufgabe_tex(D, posten, nr):
     """Ein Posten = eine Zeile oder die Teile eines Originals (gruppe)."""
     deckt = [i for r in posten for i in r['deckt'].split()] + [original(r['id']) for r in posten]
     kopf = [f'% DRUCK {r["id"]} deckt {r["deckt"] or "-"}' for r in posten]
-    bed = bedingungen(D, dict(posten[0], deckt=' '.join(deckt)))
-    out = kopf + [f'\\begin{{pfaufg}}{{{jahre_marke(deckt)}}}{{{nr}.}}{{{bed}}}']
+    bed = bedingungen(D, posten[0])
+    st = r'\textsuperscript{*}' if stern(D, deckt, original(posten[0]['id'])) else ''
+    out = kopf + [f'\\begin{{pfaufg}}{{{jahre_marke(deckt)}}}{{{nr}.{st}}}{{{bed}}}']
     fuesse = []
     if len(posten) == 1:
-        z, f = inhalt(posten[0])
+        z, f = zeilen_von(posten[0])
         out += z
         fuesse.append(f)
     else:
         g = posten[0]['grafik'].strip()
         v = P.tx(posten[0]['vorspann'])
-        out.append('\\gtextks{' + g + '}{' + v + '}' if g else v)
+        erste = 0
+        if g:
+            vorn, karo, nach, f0, _, _ = inhalt(dict(posten[0], grafik=''))
+            if karo:   # Teil a) mit Rechenraum: Vorspann und Teil a) links neben dem Graph, Rechenraum darunter
+                erste = 1
+                links = v + '\\begin{gbteil}{a)}{}{}' + ''.join(vorn) + '\\end{gbteil}'
+                out += ['\\gtextkaro{' + g + '}{' + links + '}{' + str(karo) + '}'] + nach
+                fuesse.append(f'a) {f0}')
+            else:
+                out.append('\\gtextkaro{' + g + '}{' + v + '}{0}')
+        else:
+            out.append(v)
         for i, r in enumerate(posten):
-            z, f = inhalt(dict(r, grafik=''))
+            if i < erste:
+                continue
+            z, f = zeilen_von(dict(r, grafik=''))
             b = 'abcdefgh'[i] + ')'
             out += [f'\\begin{{gbteil}}{{{b}}}{{}}{{}}'] + z + ['\\end{gbteil}']
             fuesse.append(f'{b} {f}')
@@ -212,43 +256,74 @@ def gliedern(zeilen, buch):
     return out
 
 
-def kopf_tex(titel, kenn, zeile, loesung=False):
+def kopf_tex(titel, kenn, zeile, loesung=False, stern=False):
     pre = P.KOPF.replace('\\begin{document}', P.P_PRAEAMBEL + KAP_PRAEAMBEL + '\\begin{document}')
     if loesung:
         return [pre, '\\pfheftstil',
                 f'\\pflaufkopf[P10 \\pkt{{}} Prüfung]{{{P.tx(titel)} \\pkt{{}} Lösungen}}{{{kenn}}}\\pfseitevon',
                 f'\\glkopf{{{P.tx(titel)}}}', '\\small']
     return [pre, '\\pfheftstil', f'\\pflaufkopf[P10 \\pkt{{}} Prüfung]{{{P.tx(titel)}}}{{{kenn}}}\\pfseitevon',
-            f'\\pfheftkopf{{{P.tx(titel)}}}{{}}', '\\pfstufenzeile{' + zeile + '}']
+            f'\\pfheftkopf{{{P.tx(titel)}}}{{}}', '\\pfstufenzeile{' + zeile + '}'] + (['\\gsternzeile'] if stern else [])
 
 
 def baue(D, titel, kenn, glied):
     """(Blatt-TeX, Lösungs-TeX) für die Kapitel in glied; Nummern ab 1."""
     zeile = ' \\pkt{} '.join(P.tx(kap) for _, kap, _ in glied)
-    blatt = kopf_tex(titel, kenn, zeile)
-    loes = kopf_tex(titel, kenn, zeile, True)
-    nr = 0
+    teile_tex, loes_tex = [], []
+    nr, hat_stern = 0, False
     for bst, kap, teile in glied:
-        blatt.append(f'\n% ===================== {bst} {kap} =====================')
+        teile_tex.append(f'\n% ===================== {bst} {kap} =====================')
         for j, (unter, ab, zs) in enumerate(teile):
             k = ''
             if j == 0:
                 k += f'\\gbstvor{{{bst}}}\\pfstufekopf{{{P.tx(kap)}}}{{}}'
             if unter:
                 k += f'\\gunter{{{unter}}}{{{P.tx(ab)}}}'
-            blatt.append('\\gkopfvor{' + k + '}')
+            teile_tex.append('\\gkopfvor{' + k + '}')
             for posten in posten_von(zs):
-                if bst in KARO_KLEIN:   # 17.10. c: kleineres Karo, wo der Wertebereich klein ist (Rechenraum bleibt)
-                    posten = [dict(r, grafik=klein(r['grafik'])) for r in posten]
                 nr += 1
-                blatt.append(aufgabe_tex(D, posten, nr) + ('\\vspace{-6pt}' if bst in KARO_KLEIN else ''))
+                t = aufgabe_tex(D, posten, nr)
+                hat_stern = hat_stern or '\\textsuperscript{*}' in t
+                teile_tex.append(t + ('\\vspace{-6pt}' if bst == 'B' else ''))   # B enger gesetzt (17.10. c): 4 Seiten
                 for i, r in enumerate(posten):
                     rr = dict(r, id='kapitel:' + r['id'])   # kein Stichwort der Mehr-Zeilen
                     b = 'abcdefgh'[i] + ')' if len(posten) > 1 else ''
-                    loes += P.lz_umgebung(P.lz_zeilen(rr, f'{nr}.' if i == 0 else '', b))
-    blatt.append('\\end{document}')
-    loes.append('\\end{document}')
+                    loes_tex += P.lz_umgebung(zusammen(r, P.lz_zeilen(rr, f'{nr}.' if i == 0 else '', b)))
+    blatt = kopf_tex(titel, kenn, zeile, stern=hat_stern) + teile_tex + ['\\end{document}']
+    loes = kopf_tex(titel, kenn, zeile, True) + loes_tex + ['\\end{document}']
     return '\n'.join(blatt), '\n'.join(loes)
+
+
+def lzz_args(z):
+    """Die vier Argumente von \\lzz{…}{…}{…}{…} (Klammern verschachtelt)."""
+    out, i = [], len('\\lzz')
+    while i < len(z) and len(out) < 4:
+        assert z[i] == '{', z
+        d, j = 0, i
+        while True:
+            d += {'{': 1, '}': -1}.get(z[j], 0)
+            j += 1
+            if d == 0:
+                break
+        out.append(z[i + 1:j - 1])
+        i = j
+    return out
+
+
+def zusammen(r, zeilen):
+    """17.10. Punkt 8: zwei Ergebnisse einer Teilaufgabe (x₁ und x₂, S₁ und S₂, N₁ und N₂) stehen in einer Zeile mit „;“:
+    die letzten k Lösungszeilen (k = Namen in werte:/punkt:) werden eine; der Ausgang rechts bleibt, gleiche entfallen."""
+    k = max([len(t.split(':', 1)[1].split(',')) for t in (r['form'] or '').split('+') if t.startswith(('werte:', 'punkt:'))] or [1])
+    if k < 2 or len(zeilen) < k:
+        return zeilen
+    a = [lzz_args(z) for z in zeilen[-k:]]
+    ergs = '; '.join(x[2] for x in a)
+    rechts = []
+    for x in a:
+        if x[3] and x[3] not in rechts:
+            rechts.append(x[3])
+    first = a[0]
+    return zeilen[:-k] + [f'\\lzz{{{first[0]}}}{{{first[1]}}}{{{ergs}}}{{{"; ".join(rechts)}}}']
 
 
 def pruefen(buch, zeilen, tex):
@@ -289,12 +364,17 @@ def main():
     titel, kenn = TITEL.get(a.kapitel, a.kapitel.capitalize()), KENN.get(a.kapitel, '')
     glied = gliedern(zeilen, buch)
     ordner = os.path.join(BANK, 'bau', 'kapitel', a.datum, a.kapitel)
+    shutil.rmtree(ordner, ignore_errors=True)   # Ausgabe ersetzen
     os.makedirs(os.path.join(ordner, 'src'), exist_ok=True)
     arbeit = tempfile.mkdtemp(prefix='kapitelblatt-')
-    stuecke = [('', glied)] + [(g[0] + '-', [g]) for g in glied]
+    # je bestellbarem Abschnitt ein Blatt und eine Lösung: Kapitel (A, B, C, D) und Unterabschnitte (B1, B2) – 17.10. Punkt 9
+    stuecke = [('', glied, kenn)] + [(g[0] + '-', [g], f'{kenn} {g[0]}') for g in glied]
+    for g in glied:
+        if len(g[2]) > 1:
+            stuecke += [(u + '-', [(g[0], g[1], [t])], f'{kenn} {u}') for u, _, _ in g[2] for t in g[2] if t[0] == u]
     gesamt_tex, bericht, fehlerzahl = '', [], 0
-    for vor, gl in stuecke:
-        blatt, loes = baue(D, titel, kenn, gl)
+    for vor, gl, kn in stuecke:
+        blatt, loes = baue(D, titel, kn, gl)
         if not vor:
             gesamt_tex = blatt
         for nm, t in ((vor + 'blatt', blatt), (vor + 'loesung', loes)):
@@ -305,7 +385,7 @@ def main():
             fehlerzahl += len(e['fehler'])
             bericht.append(f'{nm}: {e["seiten"]} Seiten, Fehler {len(e["fehler"])}, Missing {e["missing"]}, '
                            f'Overfull {e["overfull"]} ({", ".join(f"{x:.0f}" for x in e["overfull_pt"] if x > 1)})'
-                           + (' – ÜBER 3 SEITEN' if vor and nm.endswith('blatt') and e['seiten'] > 3 else ''))
+                           + (' – ÜBER 3 SEITEN' if vor and nm.endswith('blatt') and e['seiten'] > (4 if vor == 'B-' else 3) else ''))
             bericht += ['   ' + f for f in e['fehler'][:3]]
     fehler, n = pruefen(buch, zeilen, gesamt_tex)
     print('\n'.join(bericht))

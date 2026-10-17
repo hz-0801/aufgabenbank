@@ -115,11 +115,42 @@
 \newcommand{\gwahrfalsch}[2]{\par\noindent\hangindent2.2em\hangafter1\makebox[2.2em][l]{(#1)}#2\hfill\mbox{wahr $\square$\quad falsch $\square$}\par}
 
 \newcommand{\gunter}[2]{\par\addvspace{6pt}\noindent{\bfseries #1\enspace #2}\par\nobreak\vspace{2pt}}
-\newcommand{\gnurfor}{\textcolor{black}{\textbf{nur FOR}}}
+\newcommand{\gsternzeile}{\par\vspace{-4pt}\noindent{\footnotesize\color{mbgrau}* nur FOR}\par\medskip}
+% 17.10.: Skizze oben bündig mit der ersten Textzeile (beide Spalten hängen an der Oberkante); der Rechenraum (Karo)
+% beginnt direkt unter dem Text, links neben dem Graph, und läuft unter dem Graph über die ganze Zeile weiter
+% (Streifen links = auf 5 mm aufgerundete Höhe des Graphen unter dem Text, Raster durchgehend; die Fläche des Streifens
+% wird von der Karohöhe unter dem Graph abgezogen, auf 0,5 cm aufgerundet – die Gesamtfläche Rechenraum bleibt mindestens #3 × Zeile); #3 = Zeilen Karo in cm
+% unter dem Graph (0 = kein Karo). Kein Verkleinern des Graphen.
+\newsavebox{\gtbox}\newlength{\gWl}\newlength{\gDh}
+\newcommand{\gkaroohne}[1]{\nointerlineskip\noindent\begin{tikzpicture}
+  \clip (0,0) rectangle ({\linewidth-1mm},{#1*10mm});
+  \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid ({\linewidth},{#1*10mm});
+  \end{tikzpicture}\par}
+\newcommand{\gtextkaro}[3]{\sbox{\gbox}{#1}%
+  \ifdim\wd\gbox>0.58\linewidth #2\par\smallskip\noindent\gpassend{\usebox{\gbox}}\par\ifnum#3>0 \karo{#3}\fi
+  \else
+    \setlength{\gWl}{\dimexpr\linewidth-\wd\gbox-5mm\relax}%
+    \sbox{\gtbox}{\begin{minipage}[t]{\gWl}\raggedright\vspace{0pt}#2\par\end{minipage}}%
+    \setlength{\gDh}{\dimexpr\ht\gbox+\dp\gbox-\ht\gtbox-\dp\gtbox-6pt\relax}%
+    \par\noindent
+    \ifnum#3>0\ifdim\gDh>0pt
+      \pgfmathsetmacro{\gxs}{floor(\gWl/5mm)*5mm}\pgfmathsetmacro{\gys}{ceil(\gDh/5mm)*5mm}%
+      \begin{minipage}[t]{\gWl}\vspace{0pt}\usebox{\gtbox}\par\vspace{6pt}\nointerlineskip\noindent
+        \begin{tikzpicture}
+        \clip (0,0) rectangle (\gxs pt,\gys pt);
+        \draw[black!16,line width=0.3pt,step=5mm] (0,0) grid (\gxs pt,\gys pt);
+        \end{tikzpicture}\par\end{minipage}%
+    \else\usebox{\gtbox}\fi\else\usebox{\gtbox}\fi
+    \hfill\begin{minipage}[t]{\wd\gbox}\vspace{0pt}\usebox{\gbox}\end{minipage}\par
+    \ifnum#3>0 \ifdim\gDh>0pt
+      \pgfmathsetmacro{\gnn}{max(0,ceil(2*(#3-(\gys/28.4528)*(\gxs/\linewidth)))/2)}%
+      \ifdim\gnn pt>0pt\gkaroohne{\gnn}\fi
+    \else\karo{#3}\fi\fi
+  \fi}
 \begin{document}
 
 \pfheftstil
-\pflaufkopf[P10 \pkt{} Prüfung]{Quadratische Funktionen \pkt{} Lösungen}{QF}\pfseitevon
+\pflaufkopf[P10 \pkt{} Prüfung]{Quadratische Funktionen \pkt{} Lösungen}{PA30 A}\pfseitevon
 \glkopf{Quadratische Funktionen}
 \small
 \begin{lzaufg}
