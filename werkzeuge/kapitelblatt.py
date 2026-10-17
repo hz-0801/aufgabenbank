@@ -36,6 +36,41 @@ KAP_PRAEAMBEL = r"""
 """
 
 
+KARO_KLEIN = {'B': 0.35}   # Abschnitt -> Karo in cm statt 0,5 (nur Koordinatensysteme; Karo-Rechenzeilen bleiben)
+
+
+def klein(g):
+    """Karo-Kante je Koordinatensystem aus dem Wertebereich: Höhe höchstens ~3,4 cm, Kante zwischen 0,27 und 0,35 cm."""
+    if not g:
+        return g
+
+    def ersetze(m):
+        schl = m.group(1)
+        y = re.search(r'ymin=(-?[\d.]+),ymax=(-?[\d.]+)', schl)
+        if 'karo=0.45' in schl:
+            k = 0.27
+        elif y:
+            k = min(0.35, max(0.27, 3.4 / (float(y.group(2)) - float(y.group(1)))))
+        else:
+            return m.group(0)
+        return '\\begin{ksys}[' + re.sub(r'karo=[\d.]+', f'karo={k:.2f}', schl) + ']'
+    return re.sub(r'\\begin\{ksys\}\[([^\]]*)\]', ersetze, g)
+
+
+# 17.10. c: Aufgabe ohne Koordinatensystem rückt innerhalb ihres Unterabschnitts vor eine Aufgabe mit Graph, damit sie das
+# Seitenende füllt (Reihenfolge leicht -> schwer bleibt grob); (id, vor id)
+VORZIEHEN = [('2026-FOR-K5d', '2023-OS-K4b-2'), ('2015-OS-B1i', '2024-OS-K3b')]
+
+
+def vorziehen(zs):
+    for i, v in VORZIEHEN:
+        ids = [r['id'] for r in zs]
+        if i in ids and v in ids and ids.index(i) > ids.index(v):
+            r = zs.pop(ids.index(i))
+            zs.insert([x['id'] for x in zs].index(v), r)
+    return zs
+
+
 def lies(p):
     return list(csv.DictReader(open(p, encoding='utf-8'), delimiter=';'))
 
@@ -172,7 +207,7 @@ def gliedern(zeilen, buch):
         for j, ab in enumerate(abschn):
             zs = sorted([r for r in zeilen if r['kapitel'] == kap and r['abschnitt'] == ab],
                         key=lambda r: int(r['folge']))   # stabil: Dateifolge bei gleicher Folge
-            teile.append((f'{bst}{j + 1}' if len(abschn) > 1 else '', ab, zs))
+            teile.append((f'{bst}{j + 1}' if len(abschn) > 1 else '', ab, vorziehen(zs)))
         out.append((bst, kap, teile))
     return out
 
@@ -203,8 +238,10 @@ def baue(D, titel, kenn, glied):
                 k += f'\\gunter{{{unter}}}{{{P.tx(ab)}}}'
             blatt.append('\\gkopfvor{' + k + '}')
             for posten in posten_von(zs):
+                if bst in KARO_KLEIN:   # 17.10. c: kleineres Karo, wo der Wertebereich klein ist (Rechenraum bleibt)
+                    posten = [dict(r, grafik=klein(r['grafik'])) for r in posten]
                 nr += 1
-                blatt.append(aufgabe_tex(D, posten, nr))
+                blatt.append(aufgabe_tex(D, posten, nr) + ('\\vspace{-6pt}' if bst in KARO_KLEIN else ''))
                 for i, r in enumerate(posten):
                     rr = dict(r, id='kapitel:' + r['id'])   # kein Stichwort der Mehr-Zeilen
                     b = 'abcdefgh'[i] + ')' if len(posten) > 1 else ''
