@@ -261,7 +261,9 @@ def main():
                 pruefe(f'{os.path.basename(f)}:{r.get("id","")}', r.get('kurzloesung', ''), r.get('zwischenergebnis', ''), aus, True)
                 if ohne_name(r.get('kurzloesung', ''), r.get('format', '')):
                     aus.append((f'{os.path.basename(f)}:{r.get("id","")}', ['NAME'], r.get('kurzloesung', '')[:60], ''))
-    for f in ([] if a.streng else sorted(glob.glob(os.path.join(a.nh, 'msa', 'mehr-p10', '*.csv')))):
+    # 17.10.: dazu die Kapitelblätter (msa/kapitel-p10/*.csv, werkzeuge/kapitelblatt.py), gleiche Spalte loesung
+    for f in ([] if a.streng else sorted(glob.glob(os.path.join(a.nh, 'msa', 'mehr-p10', '*.csv'))
+                                          + glob.glob(os.path.join(a.nh, 'msa', 'kapitel-p10', '*.csv')))):
         if a.nur and a.nur not in f:
             continue
         for r in lies(f):
