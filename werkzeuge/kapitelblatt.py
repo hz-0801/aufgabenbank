@@ -279,9 +279,11 @@ def reihen(D, zs):
     def schl(p):
         deckt = [i for r in p for i in r['deckt'].split()]
         return (jahr_von(p) < JUNG_AB, stern(D, deckt, original(p[0]['id'])))
+    if len(ps) < TRENNER_AB:           # kleine Abschnitte: keine zwei Reihen, nur Sternchen zuletzt
+        return sorted(ps, key=lambda p: schl(p)[1])
     ps = sorted(ps, key=schl)          # stabil: innerhalb der Gruppen bleibt die Folge der Daten
     alt = [schl(p)[0] for p in ps]
-    if len(ps) >= TRENNER_AB and any(alt) and not all(alt):
+    if any(alt) and not all(alt):
         ps.insert(alt.index(True), 'TRENNER')
     return ps
 
