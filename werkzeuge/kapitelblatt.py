@@ -255,6 +255,37 @@ def posten_von(zeilen):
     return out
 
 
+JUNG_AB = 2022       # 17.10. r: die letzten fünf Jahre zuerst
+TRENNER_AB = 6       # Trennung erst ab so vielen gedruckten Aufgaben im Abschnitt
+TRENNER = ('\\par\\medskip\\noindent\\textcolor{mbgrau}{\\rule{\\linewidth}{0.3pt}}\\par\\nobreak'
+           '\\noindent{\\footnotesize\\textcolor{mbgrau}{JAHRE}}\\par\\nobreak\\smallskip')
+
+
+def jahr_von(posten):
+    """Jüngstes Jahr aller vertretenen Originale eines Postens."""
+    return max(int(i[:4]) for r in posten for i in (r['deckt'].split() or [r['id']]))
+
+
+def trenner_jahre(zs):
+    alt = [int(i[:4]) for r in zs for i in r['deckt'].split() if int(i[:4]) < JUNG_AB]
+    return f'{min(alt)}–{JUNG_AB - 1}' if alt else ''
+
+
+def reihen(D, zs):
+    """Folge im Abschnitt (Lehrer 17./18.10., plan.md § 10 17.10. r): erst die letzten fünf Jahre, dann die älteren
+    (graue Trennzeile ab TRENNER_AB Aufgaben); in jeder Reihe erst ohne, dann mit Sternchen (nur FOR); darin die
+    Folge der Daten (leicht → schwer). Teile eines Originals (gruppe) bleiben zusammen."""
+    ps = posten_von(zs)
+    def schl(p):
+        deckt = [i for r in p for i in r['deckt'].split()]
+        return (jahr_von(p) < JUNG_AB, stern(D, deckt, original(p[0]['id'])))
+    ps = sorted(ps, key=schl)          # stabil: innerhalb der Gruppen bleibt die Folge der Daten
+    alt = [schl(p)[0] for p in ps]
+    if len(ps) >= TRENNER_AB and any(alt) and not all(alt):
+        ps.insert(alt.index(True), 'TRENNER')
+    return ps
+
+
 def gliedern(zeilen, buch):
     """Kapitel in der Folge der Zuordnung -> [(Buchstabe, Kapitel, [(Unterkürzel, Abschnitt, [Zeilen])])]."""
     kapitel = list(dict.fromkeys(b['kapitel'] for b in buch))
@@ -295,7 +326,10 @@ def baue(D, titel, kenn, glied):
             if unter:
                 k += f'\\gunter{{{unter}}}{{{P.tx(ab)}}}'
             teile_tex.append('\\gkopfvor{' + k + '}')
-            for posten in posten_von(zs):
+            for posten in reihen(D, zs):
+                if posten == 'TRENNER':
+                    teile_tex.append(TRENNER.replace('JAHRE', trenner_jahre(zs)))
+                    continue
                 nr += 1
                 t = aufgabe_tex(D, posten, nr)
                 hat_stern = hat_stern or '\\textsuperscript{*}' in t
