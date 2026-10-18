@@ -255,7 +255,7 @@ def posten_von(zeilen):
     return out
 
 
-JUNG_AB = 2022       # 17.10. r: die letzten fünf Jahre zuerst
+JUNG_AB = 2022       # 18.10. c: die letzten fünf Jahre zuerst
 TRENNER_AB = 6       # Trennung erst ab so vielen gedruckten Aufgaben im Abschnitt
 TRENNER = ('\\par\\medskip\\noindent\\textcolor{mbgrau}{\\rule{\\linewidth}{0.3pt}}\\par\\nobreak'
            '\\noindent{\\footnotesize\\textcolor{mbgrau}{JAHRE}}\\par\\nobreak\\smallskip')
@@ -272,7 +272,7 @@ def trenner_jahre(zs):
 
 
 def reihen(D, zs):
-    """Folge im Abschnitt (Lehrer 17./18.10., plan.md § 10 17.10. r): erst die letzten fünf Jahre, dann die älteren
+    """Folge im Abschnitt (Lehrer 17./18.10., plan.md § 10 18.10. c): erst die letzten fünf Jahre, dann die älteren
     (graue Trennzeile ab TRENNER_AB Aufgaben); in jeder Reihe erst ohne, dann mit Sternchen (nur FOR); darin die
     Folge der Daten (leicht → schwer). Teile eines Originals (gruppe) bleiben zusammen."""
     ps = posten_von(zs)
